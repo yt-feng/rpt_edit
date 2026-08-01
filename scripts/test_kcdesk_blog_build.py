@@ -92,6 +92,38 @@ class BlogSanitizerTests(unittest.TestCase):
 
 
 class BlogBuildTests(unittest.TestCase):
+    def test_public_catalog_omits_internal_storage_and_ingestion_metadata(self) -> None:
+        catalog = {
+            "schema_version": 1,
+            "updated_at_bjt": "2026-08-02 10:00:00 +0800",
+            "dropbox_root": "/zip_backup",
+            "total_size_bytes": 123456,
+            "storage_limit_bytes": 8589934592,
+            "storage": {
+                "limit_bytes": 8589934592,
+                "total_size_bytes": 123456,
+                "last_pruned_at_bjt": "2026-08-02 09:00:00 +0800",
+                "pdf_pruned_this_run_dates": ["260601"],
+            },
+            "items": [{
+                "id": "report-1",
+                "title": "Public report",
+                "size_bytes": 42,
+                "present_in_latest_scan": True,
+                "pdf_archived_at_bjt": "2026-08-02 09:00:00 +0800",
+                "archive_reason": "pdf_storage_limit",
+            }],
+        }
+
+        public = builder.public_catalog(catalog)
+
+        self.assertEqual(1, public["item_count"])
+        self.assertEqual("report-1", public["items"][0]["id"])
+        for internal_key in ("dropbox_root", "total_size_bytes", "storage_limit_bytes", "storage"):
+            self.assertNotIn(internal_key, public)
+        for internal_key in ("present_in_latest_scan", "pdf_archived_at_bjt", "archive_reason"):
+            self.assertNotIn(internal_key, public["items"][0])
+
     def test_current_search_index_daily_shards_are_generated(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             output = Path(temporary) / "data" / "search_index_current"
@@ -204,11 +236,11 @@ class BlogBuildTests(unittest.TestCase):
 
             root_first_day = next(row for row in articles if row["title"] == "根目录首日文章")
             self.assertEqual("2026-07-27", root_first_day["date"])
-            self.assertTrue(root_first_day["slug"].startswith("20260727-root-"))
+            self.assertRegex(root_first_day["slug"], r"^20260727-[0-9a-f]{16}$")
 
             duplicate = next(row for row in articles if row["title"] == "重复文章")
             self.assertEqual("2026-07-27", duplicate["date"])
-            self.assertTrue(duplicate["slug"].startswith("20260727-xhs_notes-"))
+            self.assertRegex(duplicate["slug"], r"^20260727-[0-9a-f]{16}$")
             self.assertEqual(2, len(duplicate["origins"]))
             self.assertEqual({"xhs_notes", "institutions"}, {row["source"] for row in duplicate["origins"]})
             self.assertIn("https://mmbiz.qpic.cn/shared.jpg", duplicate["content"])
@@ -223,13 +255,24 @@ class BlogBuildTests(unittest.TestCase):
             self.assertIn('<time datetime="2026-07-27">2026-07-27</time>', index_html)
             self.assertIn("2026-07-30", index_html)
             self.assertIn("Content-Security-Policy", index_html)
+            self.assertIn('data-page="blog"', index_html)
+            self.assertIn('id="blogMarketViews"', index_html)
+            self.assertIn("每日 Market Views", index_html)
+            self.assertIn('src="../assets/app.js"', index_html)
 
             pages = sorted((output / "blog").glob("*.html"))
-            self.assertEqual(len(articles) + 1, len(pages))
+            self.assertGreater(len(pages), len(articles), "legacy source-bearing URLs remain as redirects")
             duplicate_page = (output / "blog" / f'{duplicate["slug"]}.html').read_text(encoding="utf-8")
             self.assertIn("跨目录重复正文", duplicate_page)
-            self.assertIn("外资研报（xhs_notes）", duplicate_page)
-            self.assertIn("研究机构（institutions）", duplicate_page)
+            self.assertIn("2026-07-27 · 外资研报", duplicate_page)
+            self.assertIn("2026-07-28 · 研究机构", duplicate_page)
+            self.assertNotIn("外资研报（xhs_notes）", duplicate_page)
+            self.assertNotIn("研究机构（institutions）", duplicate_page)
+            self.assertNotIn('title="xhs_notes"', duplicate_page)
+            self.assertNotIn("xhs_notes", index_html)
+            for internal_name in ("xhs_notes", "wechat_drafts", "draft_payload", "source_mineru", "shard_"):
+                self.assertNotIn(internal_name, duplicate_page)
+                self.assertNotIn(internal_name, index_html)
             self.assertNotIn("http://mmbiz.qpic.cn", duplicate_page)
 
             catalog = {"items": [], "item_count": 0, "updated_at_bjt": "2026-07-31 12:00:00"}
@@ -273,7 +316,7 @@ class BlogBuildTests(unittest.TestCase):
             )
             self.assertEqual(["Day 1"], [row["title"] for row in first_articles])
             self.assertEqual("2026-07-27", first_articles[0]["date"])
-            self.assertTrue(first_articles[0]["slug"].startswith("20260727-xhs_notes-"))
+            self.assertRegex(first_articles[0]["slug"], r"^20260727-[0-9a-f]{16}$")
             first_shards = list((archive / "20260727").glob("*.json"))
             self.assertEqual(1, len(first_shards))
             self.assertTrue((archive / "manifest.json").is_file())

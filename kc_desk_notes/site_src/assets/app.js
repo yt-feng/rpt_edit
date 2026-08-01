@@ -16,8 +16,6 @@
   const HOT_REPORT_SOURCE = "hot";
   const EXTERNAL_SOURCE = "external";
   const NEWSFEED_TOPIC_LIMIT = 10000;
-  const NEWSFEED_ACCOUNT_USERNAMES = new Set(["jacob"]);
-  const NEWSFEED_ACCOUNT_EMAILS = new Set(["jacob@bo-axis.com"]);
   const PDFJS_MODULE_URL = "/assets/vendor/pdfjs/pdf.mjs";
   const PDFJS_WORKER_URL = "/assets/vendor/pdfjs/pdf.worker.mjs";
   const APP_ASSET_VERSION = (() => {
@@ -467,6 +465,15 @@
     return Boolean(user && (user.role === "super" || user.is_super));
   }
 
+  function isTwotigersSession(session = loadAuthSession()) {
+    const user = session && session.user;
+    return Boolean(
+      isSuperSession(session)
+      && String(user.username || "").trim().toLowerCase().replace(/^@+/, "") === "twotigers"
+      && String(user.email || "").trim().toLowerCase() === "twotigers@users.kcdesk.com"
+    );
+  }
+
   function isOperatorSession(session = loadAuthSession()) {
     const user = session && session.user;
     return Boolean(user && (user.role === "operator" || user.is_operator));
@@ -478,10 +485,7 @@
 
   function isNewsfeedSession(session = loadAuthSession()) {
     const user = session && session.user;
-    if (!user) return false;
-    const username = String(user.username || "").trim().toLowerCase().replace(/^@+/, "");
-    const email = String(user.email || "").trim().toLowerCase();
-    return isSuperSession(session) || NEWSFEED_ACCOUNT_USERNAMES.has(username) || NEWSFEED_ACCOUNT_EMAILS.has(email);
+    return Boolean(user) && !user.disabled && user.account_status !== "disabled" && user.status !== "disabled";
   }
 
   function privateToolsUnlocked() {
@@ -4393,6 +4397,9 @@
     let currentPage = 1;
     let catalogAnalyticsTimer = 0;
     let lastCatalogAnalyticsKey = "";
+    let showInternalStorageMetadata = false;
+    let internalStorageMetadata = null;
+    let internalStorageRequestId = 0;
 
     initAccountGate(workerUrl);
     initAdminGate(workerUrl);
@@ -4519,13 +4526,12 @@
     setOptions(industryFilter, optionSummary(industryOptions), "All industries");
 
     function updateMeta() {
-      const availableBytes = catalog.total_size_bytes || (catalog.storage && catalog.storage.total_size_bytes);
       meta.textContent = `${items.length} reports`;
-      const totalSize = formatSize(availableBytes);
-      const limitSize = formatSize(catalog.storage_limit_bytes || (catalog.storage && catalog.storage.limit_bytes));
-      if (totalSize && limitSize) {
+      const totalSize = formatSize(internalStorageMetadata && internalStorageMetadata.total_size_bytes);
+      const limitSize = formatSize(internalStorageMetadata && internalStorageMetadata.limit_bytes);
+      if (showInternalStorageMetadata && totalSize && limitSize) {
         meta.textContent += ` | ${totalSize} / ${limitSize} PDF storage`;
-      } else if (totalSize) {
+      } else if (showInternalStorageMetadata && totalSize) {
         meta.textContent += ` | ${totalSize} PDF storage`;
       }
       if (catalog.updated_at_bjt) {
@@ -4533,6 +4539,31 @@
       }
       meta.textContent += ` | ${searchIndexLabel}`;
     }
+
+    async function refreshInternalStorageMetadata() {
+      const requestId = ++internalStorageRequestId;
+      showInternalStorageMetadata = isTwotigersSession();
+      internalStorageMetadata = null;
+      updateMeta();
+      if (!showInternalStorageMetadata || !workerUrl) return;
+      try {
+        const response = await fetch(`${workerUrl}/internal/pdf-storage`, {
+          cache: "no-store",
+          headers: authHeaders(),
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(data.detail || "PDF storage metadata is unavailable.");
+        if (requestId !== internalStorageRequestId || !isTwotigersSession()) return;
+        internalStorageMetadata = data;
+      } catch (_error) {
+        if (requestId !== internalStorageRequestId) return;
+        internalStorageMetadata = null;
+      }
+      updateMeta();
+    }
+
+    document.addEventListener("kcdesk-auth-change", refreshInternalStorageMetadata);
+    refreshInternalStorageMetadata();
 
     function passesFilters(item) {
       if (bankFilter.value && bankKey(item) !== bankFilter.value) return false;
@@ -5478,6 +5509,7 @@
 
     if (loginButton) loginButton.addEventListener("click", () => showAccountModal(workerUrl, { item, source: HOT_REPORT_SOURCE }));
     if (randomAlias && alias) randomAlias.addEventListener("click", () => {
+      if (!isSuperSession()) return;
       alias.value = randomHotCommentAlias();
       alias.focus();
     });
@@ -6902,6 +6934,8 @@
       saveEmail: "Save email",
       sendTestNow: "Send test now",
       sendNewsletterNow: "Send newsletter now",
+      newsletterTopic: "Newsletter",
+      noNewsletter: "Not subscribed",
       email: "Email",
       sendTime: "Send time",
       timezone: "Timezone",
@@ -6930,6 +6964,8 @@
       saveEmail: "保存邮箱",
       sendTestNow: "发送测试邮件",
       sendNewsletterNow: "立即发送 newsletter",
+      newsletterTopic: "Newsletter 主题",
+      noNewsletter: "不订阅",
       email: "邮箱",
       sendTime: "发送时间",
       timezone: "时区",
@@ -6958,6 +6994,8 @@
       saveEmail: "Save email",
       sendTestNow: "Send test now",
       sendNewsletterNow: "Send newsletter now",
+      newsletterTopic: "Newsletter",
+      noNewsletter: "Not subscribed",
       email: "Email",
       sendTime: "Send time",
       timezone: "Timezone",
@@ -6986,6 +7024,8 @@
       saveEmail: "Save email",
       sendTestNow: "Send test now",
       sendNewsletterNow: "Send newsletter now",
+      newsletterTopic: "Newsletter",
+      noNewsletter: "Not subscribed",
       email: "Email",
       sendTime: "Send time",
       timezone: "Timezone",
@@ -7187,7 +7227,7 @@
     return data;
   }
 
-  function renderNewsfeedAccess(app, workerUrl, message = "请登录已开通的账号继续。") {
+  function renderNewsfeedAccess(app, workerUrl, message = "请登录已注册且状态正常的账号继续。") {
     app.innerHTML = `
       <section class="newsfeed-access">
         <h1>Newsfeed</h1>
@@ -7327,10 +7367,24 @@
     `).join("");
   }
 
+  function newsfeedNewsletterOptions(state, selected = "") {
+    const topics = Array.isArray(state.topics) ? state.topics : [];
+    const options = [`<option value="">${escapeHtml(newsfeedText(state, "noNewsletter"))}</option>`];
+    const seen = new Set();
+    for (const topic of topics) {
+      const id = String(topic && topic.id || "").trim();
+      if (!id || seen.has(id)) continue;
+      seen.add(id);
+      options.push(`<option value="${escapeHtml(id)}" ${id === selected ? "selected" : ""}>${escapeHtml(topic.title || id)}</option>`);
+    }
+    return options.join("");
+  }
+
   function newsfeedEmailPayloadFromForm(state) {
+    const newsletterTopicId = document.getElementById("newsNewsletterTopic")?.value || "";
     return {
-      digest_email_enabled: Boolean(document.getElementById("newsEmailEnabled")?.checked),
-      digest_email: document.getElementById("newsEmailInput")?.value || "",
+      digest_email_enabled: Boolean(newsletterTopicId && document.getElementById("newsEmailEnabled")?.checked),
+      newsletter_topic_id: newsletterTopicId,
       digest_send_time: document.getElementById("newsEmailTime")?.value || "09:00",
       digest_timezone: document.getElementById("newsEmailTimezone")?.value || "Asia/Shanghai",
       digest_language: document.getElementById("newsEmailLanguage")?.value || state.outputLanguage || "en",
@@ -7387,6 +7441,7 @@
     const fallbackEmail = session && session.user && !session.user.email_is_generated ? session.user.email : "";
     const email = settings.digest_email || fallbackEmail || "";
     const enabled = Boolean(settings.digest_email_enabled);
+    const newsletterTopicId = enabled ? String(settings.newsletter_topic_id || "global-daily") : "";
     const providerNote = settings.email_provider_configured === false
       ? (state.interfaceLanguage === "zh-CN"
         ? "邮件服务还没配置好，请先配置 Brevo API key。"
@@ -7407,7 +7462,10 @@
         </div>
         <form id="newsEmailForm" class="news-email-form">
           <label>${escapeHtml(newsfeedText(state, "email"))}
-            <input id="newsEmailInput" type="email" autocomplete="email" placeholder="you@example.com" value="${escapeHtml(email)}">
+            <input id="newsEmailInput" type="email" autocomplete="email" value="${escapeHtml(email)}" readonly aria-readonly="true">
+          </label>
+          <label>${escapeHtml(newsfeedText(state, "newsletterTopic"))}
+            <select id="newsNewsletterTopic">${newsfeedNewsletterOptions(state, newsletterTopicId)}</select>
           </label>
           <label>${escapeHtml(newsfeedText(state, "sendTime"))}
             <input id="newsEmailTime" type="time" value="${escapeHtml(settings.digest_send_time || "09:00")}">
@@ -7420,7 +7478,7 @@
           </label>
           <label class="news-toggle-row">
             <input id="newsEmailEnabled" type="checkbox" ${enabled ? "checked" : ""}>
-            <span>${escapeHtml(newsfeedText(state, "sendDailyDigest"))}</span>
+            <span>${escapeHtml(newsfeedText(state, "sendDailyDigest"))} · ${state.interfaceLanguage === "zh-CN" ? "每个账号最多订阅一个，可随时取消或替换" : "one newsletter per account; cancel or replace it anytime"}</span>
           </label>
           <button id="newsEmailSubmit" class="primary" type="submit">${escapeHtml(newsfeedText(state, "saveEmail"))}</button>
           <button id="newsEmailSend" class="primary news-email-test" type="button" data-action="send-email-now">${escapeHtml(newsfeedText(state, "sendNewsletterNow"))}</button>
@@ -7814,10 +7872,8 @@
 
     if (!app) return;
     let session = loadAuthSession();
-    if (!isNewsfeedSession(session)) {
-      renderNewsfeedBoot(app, "Checking Newsfeed access...");
-      session = await refreshAuthSession(workerUrl);
-    }
+    renderNewsfeedBoot(app, "Checking Newsfeed access...");
+    session = await refreshAuthSession(workerUrl);
     if (!isNewsfeedSession(session)) {
       renderNewsfeedAccess(app, workerUrl);
       return;
@@ -8140,7 +8196,9 @@
             status.className = "status-line ok";
             status.textContent = state.settings.email_provider_configured === false
               ? "Settings saved. Email delivery starts after the email sender is configured."
-              : "Settings saved. Daily Digest will be sent at the selected time.";
+              : (state.settings.digest_email_enabled
+                ? "Newsletter subscription saved. It will be sent at the selected time."
+                : "Newsletter subscription canceled.");
           }
         } catch (error) {
           if (status) {
@@ -8174,6 +8232,14 @@
         if (target && target.id === "newsTopicLanguage") {
           state.outputLanguage = newsfeedLanguageCode(target.value || "en");
         }
+        if (target && target.id === "newsNewsletterTopic") {
+          const enabled = document.getElementById("newsEmailEnabled");
+          if (enabled) enabled.checked = Boolean(target.value);
+        }
+        if (target && target.id === "newsEmailEnabled" && target.checked) {
+          const topic = document.getElementById("newsNewsletterTopic");
+          if (topic && !topic.value) topic.value = "global-daily";
+        }
       } catch (error) {
         setNewsfeedStatus(error.message || "Could not save preferences.", "error");
       }
@@ -8204,6 +8270,110 @@
     window.location.replace(targetUrl);
   }
 
+  function blogMarketViewDateLabel(value) {
+    const text = String(value || "");
+    const match = text.match(/^(20\d{2})-(\d{2})-(\d{2})$/);
+    return match ? `${match[1]}-${match[2]}-${match[3]}` : text;
+  }
+
+  function blogMarketViewCard(item) {
+    const date = blogMarketViewDateLabel(item && item.date);
+    const size = formatSize(item && item.size_bytes);
+    return `
+      <article class="blog-market-view-card">
+        <time datetime="${escapeHtml(date)}">${escapeHtml(date || "每日更新")}</time>
+        <strong>${escapeHtml(item && item.title || "Market Views")}</strong>
+        ${size ? `<span class="subtle">PDF · ${escapeHtml(size)}</span>` : '<span class="subtle">PDF</span>'}
+        <button class="secondary-button blog-market-view-download" type="button" data-market-view-id="${escapeHtml(item && item.id || "")}">下载 PDF</button>
+      </article>
+    `;
+  }
+
+  async function initBlog() {
+    const workerUrl = "/api";
+    const list = document.getElementById("blogMarketViewsList");
+    const accessStatus = document.getElementById("blogMarketViewsAccess");
+    initAccountGate(workerUrl);
+    if (!list || !accessStatus) return;
+
+    function setAccessStatus(text, kind = "") {
+      accessStatus.className = kind ? `status-line ${kind}` : "status-line";
+      accessStatus.textContent = text || "";
+    }
+
+    async function refreshAccess() {
+      if (!loadAuthSession()) {
+        setAccessStatus("登录后可下载；开通时长至少 1 个月的任意会员均可使用。", "");
+        return;
+      }
+      setAccessStatus("正在核验会员资格…", "");
+      try {
+        const response = await fetch(`${workerUrl}/market-views/access`, {
+          cache: "no-store",
+          headers: authHeaders(),
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(data.detail || "会员资格核验失败。");
+        setAccessStatus(data.can_download
+          ? "当前账号可下载 Market Views PDF。"
+          : "Market Views PDF 面向开通时长至少 1 个月的会员。", data.can_download ? "ok" : "");
+      } catch (error) {
+        setAccessStatus(error.message || "会员资格核验失败。", "error");
+      }
+    }
+
+    async function loadMarketViews() {
+      try {
+        const response = await fetch(`${workerUrl}/market-views`, { cache: "no-store" });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(data.detail || "每日 PDF 读取失败。");
+        const items = Array.isArray(data.items) ? data.items : [];
+        list.innerHTML = items.length
+          ? items.map(blogMarketViewCard).join("")
+          : '<div class="empty-state">今日 Market Views PDF 正在准备中。</div>';
+      } catch (error) {
+        list.innerHTML = `<div class="error-state">${escapeHtml(error.message || "每日 PDF 暂时无法读取。")}</div>`;
+      }
+    }
+
+    list.addEventListener("click", async (event) => {
+      const button = event.target.closest("button[data-market-view-id]");
+      if (!button) return;
+      if (!loadAuthSession()) {
+        setAccessStatus("请先注册或登录。", "error");
+        showAccountModal(workerUrl);
+        return;
+      }
+      const id = String(button.dataset.marketViewId || "");
+      if (!id) return;
+      button.disabled = true;
+      setAccessStatus("正在准备 PDF…", "");
+      try {
+        const response = await fetch(`${workerUrl}/market-views/pdf?id=${encodeURIComponent(id)}`, {
+          cache: "no-store",
+          headers: authHeaders(),
+        });
+        if (!response.ok) {
+          const data = await response.json().catch(() => ({}));
+          throw new Error(data.detail || "PDF 下载失败。");
+        }
+        triggerBlobDownload(
+          await response.blob(),
+          response.headers.get("Content-Disposition"),
+          `${id.replace(/[^a-z0-9-]+/gi, "-") || "market-views"}.pdf`,
+        );
+        setAccessStatus("PDF 下载已开始。", "ok");
+      } catch (error) {
+        setAccessStatus(error.message || "PDF 下载失败。", "error");
+      } finally {
+        button.disabled = false;
+      }
+    });
+
+    document.addEventListener("kcdesk-auth-change", refreshAccess);
+    await Promise.all([loadMarketViews(), refreshAccess()]);
+  }
+
   const boot = page === "report"
     ? initReport
     : page === "external"
@@ -8214,6 +8384,8 @@
           ? initAnalyticsHistory
           : page === "newsfeed"
             ? initNewsfeed
+            : page === "blog"
+              ? initBlog
             : initIndex;
   boot().catch((error) => {
     const target = page === "report"
@@ -8226,6 +8398,8 @@
             ? document.getElementById("analyticsHistoryResults")
             : page === "newsfeed"
               ? document.getElementById("newsfeedApp")
+              : page === "blog"
+                ? document.getElementById("blogMarketViewsList")
               : document.getElementById("results");
     if (target) target.innerHTML = `<div class="error-state">${escapeHtml(error.message)}</div>`;
   });

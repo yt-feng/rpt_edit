@@ -15,7 +15,6 @@ DEFAULT_ROOTS = [
     "xhs_notes/consulting",
     "publish_ready_zips",
     "bank_report_catalogs",
-    "market_view_summaries",
     "bilingual_podcast_videos",
     "kc_translated_reports",
     "kc_translated_reports/institutions",

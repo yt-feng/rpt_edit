@@ -40,7 +40,9 @@ jobs:
             scripts/test_kcdesk_access_renewal.js
             scripts/test_kcdesk_daily_pick_topics.js
             scripts/test_kcdesk_hot_reports.js
+            scripts/test_kcdesk_market_views.js
             scripts/test_kcdesk_multi_institution_access.js
+            scripts/test_kcdesk_newsfeed_access.js
             scripts/test_kcdesk_text_only_pdf_upload.js
             scripts/test_kcdesk_text_only_text_access.js
             workers/kc-desk-notes-worker/src/index.js
@@ -57,9 +59,11 @@ jobs:
           node scripts/test_kcdesk_access_renewal.js
           node scripts/test_kcdesk_daily_pick_topics.js
           node scripts/test_kcdesk_hot_reports.js
+          node scripts/test_kcdesk_market_views.js
           node scripts/test_kcdesk_multi_institution_access.js
           node scripts/test_kcdesk_text_only_pdf_upload.js
           node scripts/test_kcdesk_text_only_text_access.js
+          node scripts/test_kcdesk_newsfeed_access.js
           python3 scripts/test_kcdesk_blog_build.py
 
       - name: Build static Pages artifact

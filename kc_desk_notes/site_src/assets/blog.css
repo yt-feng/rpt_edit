@@ -72,6 +72,68 @@
   font-size: 18px;
 }
 
+.blog-market-views {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 42px;
+  padding: clamp(22px, 4vw, 32px);
+  border: 1px solid rgba(15, 118, 110, 0.2);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.045);
+}
+
+.blog-market-views-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.blog-market-views-heading h2,
+.blog-market-views-heading p {
+  margin: 0;
+}
+
+.blog-market-views-heading h2 {
+  margin-top: 7px;
+  font-size: clamp(24px, 4vw, 34px);
+}
+
+.blog-market-views-heading > p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.blog-market-views-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.blog-market-view-card {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.blog-market-view-card time {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.blog-market-view-card strong {
+  line-height: 1.4;
+}
+
+.blog-market-view-download {
+  width: fit-content;
+}
+
 .blog-day + .blog-day {
   margin-top: 42px;
 }
@@ -311,6 +373,15 @@
   }
 
   .blog-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-market-views-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .blog-market-views-list {
     grid-template-columns: 1fr;
   }
 

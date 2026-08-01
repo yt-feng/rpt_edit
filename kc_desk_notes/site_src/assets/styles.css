@@ -12,6 +12,10 @@
   --shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
 }
 
+[hidden] {
+  display: none !important;
+}
+
 [data-kc-chinese-only][hidden],
 [data-kc-non-chinese-only][hidden] {
   display: none !important;
@@ -1084,6 +1088,12 @@ a.secondary-button {
 .hot-comment-form {
   display: grid;
   gap: 10px;
+}
+
+.hot-comment-login[hidden],
+.hot-comment-form[hidden],
+.hot-comment-admin-alias[hidden] {
+  display: none !important;
 }
 
 .hot-comment-form textarea,

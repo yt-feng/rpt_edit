@@ -37,13 +37,10 @@ PUBLIC_ITEM_KEYS = [
     "first_seen_at_bjt",
     "last_seen_at_bjt",
     "available",
-    "present_in_latest_scan",
     "industry",
     "sector",
     "category",
     "pdf_archived",
-    "pdf_archived_at_bjt",
-    "archive_reason",
     "page_count",
     "first_page_width",
     "first_page_height",
@@ -90,7 +87,7 @@ BLOG_SOURCE_LABELS = {
     "institutions": "研究机构",
     "consulting": "咨询公司",
     "ark": "ARK Invest",
-    "institutions_bis_repair": "研究机构修复稿",
+    "institutions_bis_repair": "研究机构",
     "root": "综合研报",
     "legacy": "历史稿件",
 }
@@ -778,29 +775,15 @@ def public_catalog(catalog: dict[str, Any]) -> dict[str, Any]:
     for item in catalog.get("items", []):
         public_item = {key: item.get(key) for key in PUBLIC_ITEM_KEYS if key in item}
         items.append(public_item)
-    total_size_bytes = catalog.get("total_size_bytes")
-    if not total_size_bytes:
-        total_size_bytes = sum(int(item.get("size_bytes") or 0) for item in items)
-    public = {
+    # Storage quotas, aggregate usage and pruning details are operational
+    # metadata.  They are served to the exact twotigers account by the Worker
+    # and must never be embedded in the public Pages catalog.
+    return {
         "schema_version": catalog.get("schema_version", 1),
         "updated_at_bjt": catalog.get("updated_at_bjt", ""),
-        "dropbox_root": catalog.get("dropbox_root", ""),
         "item_count": len(items),
-        "total_size_bytes": total_size_bytes,
-        "storage_limit_bytes": catalog.get("storage_limit_bytes", 0),
         "items": items,
     }
-    storage = catalog.get("storage")
-    if isinstance(storage, dict):
-        public["storage"] = {
-            "limit_bytes": storage.get("limit_bytes", 0),
-            "total_size_bytes": storage.get("total_size_bytes", public["total_size_bytes"]),
-            "last_pruned_at_bjt": storage.get("last_pruned_at_bjt", ""),
-            "pdf_pruned_this_run_count": storage.get("pdf_pruned_this_run_count", storage.get("pruned_this_run_count", 0)),
-            "pdf_pruned_this_run_size_bytes": storage.get("pdf_pruned_this_run_size_bytes", storage.get("pruned_this_run_size_bytes", 0)),
-            "pdf_pruned_this_run_dates": storage.get("pdf_pruned_this_run_dates", storage.get("pruned_this_run_dates", [])),
-        }
-    return public
 
 
 def public_password_rules(rules: dict[str, Any]) -> dict[str, Any]:
@@ -1363,6 +1346,16 @@ def blog_publication_date(source: str, folder_date: date) -> date:
     return folder_date + timedelta(days=BLOG_SOURCE_PUBLICATION_DAY_OFFSETS.get(source, 0))
 
 
+def blog_public_slug(date_value: date | str, fingerprint: str) -> str:
+    published = date_value if isinstance(date_value, date) else datetime.strptime(str(date_value), "%Y-%m-%d").date()
+    return f"{published.strftime('%Y%m%d')}-{fingerprint[:16]}"
+
+
+def blog_legacy_slug(date_value: date | str, source: str, fingerprint: str) -> str:
+    published = date_value if isinstance(date_value, date) else datetime.strptime(str(date_value), "%Y-%m-%d").date()
+    return f"{published.strftime('%Y%m%d')}-{source}-{fingerprint[:16]}"
+
+
 def sanitize_blog_style(value: str) -> str:
     safe: list[str] = []
     for declaration in str(value or "").split(";"):
@@ -1655,10 +1648,11 @@ def load_blog_draft_articles(drafts_root: Path, start_date: date) -> list[dict[s
             if not digest:
                 digest = blog_html_text(sanitized_content)[:220]
             display_title = title or digest[:80] or "未命名文章"
-            slug = f"{date_value.strftime('%Y%m%d')}-{source}-{fingerprint[:16]}"
+            slug = blog_public_slug(date_value, fingerprint)
             unique[fingerprint] = {
                 "fingerprint": fingerprint,
                 "slug": slug,
+                "legacy_slugs": [blog_legacy_slug(date_value, source, fingerprint)],
                 "title": display_title,
                 "author": compact_space(str(raw_article.get("author") or "KC桌面"))[:100],
                 "digest": digest,
@@ -1680,7 +1674,7 @@ def load_blog_draft_articles(drafts_root: Path, start_date: date) -> list[dict[s
 
 
 def blog_source_label(source: str) -> str:
-    return BLOG_SOURCE_LABELS.get(str(source or ""), compact_space(str(source or "")).replace("_", " ") or "其他来源")
+    return BLOG_SOURCE_LABELS.get(str(source or ""), "其他来源")
 
 
 def normalize_blog_origins(origins: list[dict[str, Any]]) -> list[dict[str, str]]:
@@ -1777,6 +1771,12 @@ def blog_archive_record(article: dict[str, Any]) -> dict[str, Any]:
         "schema_version": BLOG_ARCHIVE_SCHEMA_VERSION,
         "fingerprint": str(article.get("fingerprint") or ""),
         "slug": str(article.get("slug") or ""),
+        "legacy_slugs": sorted({
+            str(value)
+            for value in article.get("legacy_slugs", [])
+            if re.fullmatch(r"[a-z0-9_-]{8,160}", str(value))
+            and str(value) != str(article.get("slug") or "")
+        }),
         "title": str(article.get("title") or ""),
         "author": str(article.get("author") or "KC桌面"),
         "digest": str(article.get("digest") or ""),
@@ -1813,9 +1813,18 @@ def validate_blog_archive_record(data: Any, path: Path, start_date: date) -> dic
         raise ValueError(f"Invalid Blog archive date: {path}") from error
     if published < start_date or modified < published or path.parent.name != published.strftime("%Y%m%d"):
         raise ValueError(f"Blog archive path/date mismatch: {path}")
-    expected_slug = f"{published.strftime('%Y%m%d')}-{source}-{fingerprint[:16]}"
-    if slug != expected_slug:
+    expected_slug = blog_public_slug(published, fingerprint)
+    legacy_slug = blog_legacy_slug(published, source, fingerprint)
+    if slug not in {expected_slug, legacy_slug}:
         raise ValueError(f"Blog archive slug does not match its identity: {path}")
+    legacy_slugs = {
+        str(value)
+        for value in data.get("legacy_slugs", [])
+        if re.fullmatch(r"[a-z0-9_-]{8,160}", str(value))
+    }
+    if slug != expected_slug:
+        legacy_slugs.add(slug)
+    legacy_slugs.discard(expected_slug)
     content = str(data.get("content") or "")
     if not content or len(content) > BLOG_MAX_ARTICLE_HTML_CHARS or sanitize_blog_html(content) != content:
         raise ValueError(f"Blog archive contains unsanitized or invalid HTML: {path}")
@@ -1833,7 +1842,8 @@ def validate_blog_archive_record(data: Any, path: Path, start_date: date) -> dic
         raise ValueError(f"Blog archive origins are incomplete: {path}")
     return {
         "fingerprint": fingerprint,
-        "slug": slug,
+        "slug": expected_slug,
+        "legacy_slugs": sorted(legacy_slugs),
         "title": title,
         "author": compact_space(str(data.get("author") or "KC桌面"))[:100],
         "digest": compact_space(str(data.get("digest") or ""))[:300],
@@ -1887,6 +1897,10 @@ def merge_blog_articles(
         if existing is None:
             merged[fingerprint] = dict(draft)
             continue
+        existing["legacy_slugs"] = sorted({
+            *[str(value) for value in existing.get("legacy_slugs", []) if value],
+            *[str(value) for value in draft.get("legacy_slugs", []) if value],
+        })
         origins = normalize_blog_origins(list(existing.get("origins") or []) + list(draft.get("origins") or []))
         existing["origins"] = origins
         existing["last_date"] = max(
@@ -1923,13 +1937,14 @@ def blog_source_badges(article: dict[str, Any]) -> str:
     )
     for origin in origins:
         source = str(origin.get("source") or "")
-        if not source or source in seen:
+        label = str(origin.get("source_label") or BLOG_SOURCE_LABELS.get(source) or "其他来源")
+        if not source or label in seen:
             continue
-        seen.add(source)
-        label = str(origin.get("source_label") or BLOG_SOURCE_LABELS.get(source) or source)
-        badges.append(
-            f'<span class="blog-source-badge" title="{html_escape(source, quote=True)}">{html_escape(label)}</span>'
-        )
+        seen.add(label)
+        # `source` is an internal ingestion key (for example xhs_notes).  The
+        # public Blog should only expose the editorial label, including in
+        # hover text and accessibility output.
+        badges.append(f'<span class="blog-source-badge">{html_escape(label)}</span>')
     return "".join(badges)
 
 
@@ -1947,8 +1962,8 @@ def blog_origin_details(article: dict[str, Any]) -> str:
         if key in seen:
             continue
         seen.add(key)
-        label = str(origin.get("source_label") or BLOG_SOURCE_LABELS.get(source) or source)
-        rows.append(f"{html_escape(date_value)} · {html_escape(label)}（{html_escape(source)}）")
+        label = str(origin.get("source_label") or BLOG_SOURCE_LABELS.get(source) or "其他来源")
+        rows.append(f"{html_escape(date_value)} · {html_escape(label)}")
     return "；".join(rows)
 
 
@@ -1956,6 +1971,7 @@ def blog_csp_meta() -> str:
     return (
         '<meta http-equiv="Content-Security-Policy" '
         'content="default-src &#39;none&#39;; style-src &#39;self&#39; &#39;unsafe-inline&#39;; '
+        'script-src &#39;self&#39;; connect-src &#39;self&#39;; '
         'img-src &#39;self&#39; https: data:; font-src &#39;self&#39; data:; base-uri &#39;none&#39;; '
         'form-action &#39;none&#39;; frame-ancestors &#39;none&#39;">'
     )
@@ -2028,9 +2044,11 @@ def render_blog_index(articles: list[dict[str, Any]], base_url: str, start_date:
     {blog_csp_meta()}
     <link rel="stylesheet" href="../assets/styles.css">
     <link rel="stylesheet" href="../assets/blog.css">
+    <script defer src="../assets/contact.js"></script>
+    <script defer src="../assets/app.js"></script>
     <script type="application/ld+json">{render_json_ld(json_ld)}</script>
   </head>
-  <body class="blog-page">
+  <body class="blog-page" data-page="blog">
     <header class="topbar blog-topbar">
       <a class="brand compact" href="../index.html" aria-label="KC Desk Notes home">
         <img src="../assets/kc-mark.svg" alt="" width="30" height="30">
@@ -2039,7 +2057,9 @@ def render_blog_index(articles: list[dict[str, Any]], base_url: str, start_date:
       <nav class="topbar-actions" aria-label="站点导航">
         <a class="topbar-link" href="../index.html">首页</a>
         <a class="topbar-link is-active" href="index.html" aria-current="page">Blog</a>
+        <a class="topbar-link" href="../newsfeed.html">Newsfeed</a>
         <a class="topbar-link" href="../reports/index.html">报告索引</a>
+        <button id="accountGate" class="account-button" type="button">登录</button>
       </nav>
     </header>
     <main class="blog-shell">
@@ -2049,6 +2069,19 @@ def render_blog_index(articles: list[dict[str, Any]], base_url: str, start_date:
         <p>从 {html_escape(start_date.isoformat())} 起，完整保存每日公众号文章，按首次入库日期倒序展示。</p>
         <div class="blog-summary"><strong>{len(articles)}</strong> 篇文章</div>
       </header>
+      <section class="blog-market-views" id="blogMarketViews" aria-labelledby="blogMarketViewsTitle">
+        <div class="blog-market-views-heading">
+          <div>
+            <p class="blog-kicker">DAILY MARKET VIEWS</p>
+            <h2 id="blogMarketViewsTitle">每日 Market Views</h2>
+          </div>
+          <p>开通时长至少 1 个月的会员可下载 PDF。</p>
+        </div>
+        <div id="blogMarketViewsAccess" class="status-line" aria-live="polite"></div>
+        <div id="blogMarketViewsList" class="blog-market-views-list">
+          <div class="loading-state"><span class="loading-spinner" aria-hidden="true"></span><span>正在读取每日 PDF…</span></div>
+        </div>
+      </section>
       {"".join(sections)}
     </main>
     <footer class="legal-footer blog-footer">
@@ -2144,6 +2177,26 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
 """
 
 
+def render_blog_legacy_redirect(article: dict[str, Any], base_url: str) -> str:
+    target = f'{article["slug"]}.html'
+    canonical = url_join(base_url, f"blog/{target}")
+    return f"""<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,follow">
+    <meta http-equiv="refresh" content="0; url={html_escape(target, quote=True)}">
+    <link rel="canonical" href="{html_escape(canonical, quote=True)}">
+    <title>文章地址已更新 | KC Desk Blog</title>
+  </head>
+  <body>
+    <p>文章地址已更新，<a href="{html_escape(target, quote=True)}">点击继续阅读</a>。</p>
+  </body>
+</html>
+"""
+
+
 def build_blog(
     output: Path,
     drafts_root: Path,
@@ -2163,6 +2216,9 @@ def build_blog(
     write_text(blog_dir / "index.html", render_blog_index(articles, base_url, start_date))
     for article in articles:
         write_text(blog_dir / f'{article["slug"]}.html', render_blog_article(article, base_url))
+        for legacy_slug in article.get("legacy_slugs", []):
+            if legacy_slug and legacy_slug != article["slug"]:
+                write_text(blog_dir / f"{legacy_slug}.html", render_blog_legacy_redirect(article, base_url))
     return articles
 
 
@@ -2442,7 +2498,7 @@ def main() -> int:
         output_dir=output_dir / "data" / "search_index_history",
     )
     rules = public_password_rules(load_json(Path(args.password_rules)))
-    write_json(output_dir / "data" / "catalog.json", catalog)
+    write_json(output_dir / "data" / "catalog.json", public_catalog(catalog))
     write_json(output_dir / "data" / "search_index.json", search_index)
     write_json(output_dir / "data" / "password_rules.json", rules)
     write_json(output_dir / "data" / "config.json", {"worker_base_url": args.worker_base_url.rstrip("/")})

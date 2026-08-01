@@ -584,6 +584,16 @@ def main() -> int:
                 force_upload=args.force_upload,
             )
 
+        # The repository is public. Storage quotas, aggregate usage, pruning
+        # history and the Dropbox root are operational details, so persist only
+        # the report records needed by the next run and the site build.
+        for internal_key in ("dropbox_root", "total_size_bytes", "storage_limit_bytes", "storage"):
+            catalog.pop(internal_key, None)
+        for item in catalog.get("items", []):
+            if not isinstance(item, dict):
+                continue
+            for internal_key in ("present_in_latest_scan", "pdf_archived_at_bjt", "archive_reason"):
+                item.pop(internal_key, None)
         write_json(catalog_path, catalog)
         write_github_output("catalog_path", str(catalog_path))
         write_github_output("item_count", str(catalog.get("item_count", 0)))

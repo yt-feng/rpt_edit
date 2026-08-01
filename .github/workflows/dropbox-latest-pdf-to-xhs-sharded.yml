@@ -553,8 +553,7 @@ jobs:
             -f expected_bank_date="$DATE_FOLDER" \
             -f model="$MODEL" \
             -f deepseek_base_url="$DEEPSEEK_BASE_URL" \
-            -f compile_latex=false \
-            -f commit_results=true
+            -f compile_latex=false
 
   push-xhs-notes-wechat-drafts:
     needs: [resolve-inputs, select-macro-reports, package-publish-ready]

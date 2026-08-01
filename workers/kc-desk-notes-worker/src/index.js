@@ -157,6 +157,13 @@ const HOT_REPORT_MAX_COMMENTS = 500;
 const HOT_REPORT_MAX_PDF_BYTES = 95 * 1024 * 1024;
 const HOT_REPORT_MIN_MONTHS = 3;
 const HOT_REPORT_REQUIRED_PLAN = "3个月会员";
+const MARKET_VIEW_PREFIX = "_market-views";
+const MARKET_VIEW_ITEM_PREFIX = `${MARKET_VIEW_PREFIX}/items`;
+const MARKET_VIEW_PDF_PREFIX = `${MARKET_VIEW_PREFIX}/pdfs`;
+const MARKET_VIEW_ID_PATTERN = /^market-view:(\d{6})$/;
+const MARKET_VIEW_MAX_ITEMS = 1500;
+const MARKET_VIEW_MIN_MONTHS = 1;
+const MARKET_VIEW_REQUIRED_PLAN = "至少1个月会员";
 const CATALOG_PDF_OVERRIDE_PREFIX = "_catalog-pdf-overrides";
 const CATALOG_PDF_OVERRIDE_ITEM_PREFIX = `${CATALOG_PDF_OVERRIDE_PREFIX}/items`;
 const CATALOG_PDF_OVERRIDE_PDF_PREFIX = `${CATALOG_PDF_OVERRIDE_PREFIX}/pdfs`;
@@ -204,9 +211,9 @@ const SUPABASE_TIMEOUT_MS = 6500;
 const SUPABASE_WRITE_TIMEOUT_MS = 15000;
 const ADMIN_SNAPSHOT_PREFIX = "_account/admin-snapshots";
 const ADMIN_FILES_SNAPSHOT_KEY = `${ADMIN_SNAPSHOT_PREFIX}/files.json`;
-const ADMIN_PICKS_SNAPSHOT_KEY = `${ADMIN_SNAPSHOT_PREFIX}/picks-v2.json`;
-const ADMIN_PICKS_LEGACY_SNAPSHOT_KEY = `${ADMIN_SNAPSHOT_PREFIX}/picks.json`;
-const ADMIN_PICKS_TOPIC_VERSION = 2;
+const ADMIN_PICKS_SNAPSHOT_KEY = `${ADMIN_SNAPSHOT_PREFIX}/picks-v3.json`;
+const ADMIN_PICKS_LEGACY_SNAPSHOT_KEY = `${ADMIN_SNAPSHOT_PREFIX}/picks-v2.json`;
+const ADMIN_PICKS_TOPIC_VERSION = 3;
 const ADMIN_WECHAT_SNAPSHOT_KEY = `${ADMIN_SNAPSHOT_PREFIX}/wechat.json`;
 const ADMIN_ANALYTICS_SNAPSHOT_KEY = `${ADMIN_SNAPSHOT_PREFIX}/analytics.json`;
 const ADMIN_USERS_SNAPSHOT_KEY = `${ADMIN_SNAPSHOT_PREFIX}/users.json`;
@@ -846,13 +853,7 @@ function isPrivilegedAccount(user) {
 }
 
 function isNewsfeedAccount(user) {
-  if (!user) return false;
-  const username = normalizeUsername(user.username);
-  const email = normalizeEmail(user.email);
-  return isSuperAccount(user) || (
-    NEWSFEED_ACCOUNT_USERNAMES.has(username)
-    && NEWSFEED_ACCOUNT_EMAILS.has(email)
-  );
+  return Boolean(user) && !accountDisabled(user);
 }
 
 function accessErrorStatus(error) {
@@ -2746,6 +2747,66 @@ async function hotReportAccessForUser(env, user) {
     qualifying_months: hotReportAccessMonths(access),
     required_plan: HOT_REPORT_REQUIRED_PLAN,
     required_months: HOT_REPORT_MIN_MONTHS,
+  };
+}
+
+async function marketViewMembershipAccessForUser(env, user) {
+  if (!user || accountDisabled(user)) {
+    const inactive = publicAccessGrant({ source: "disabled" });
+    return {
+      can_download: false,
+      entitlement: publicEntitlement(null),
+      access: inactive,
+      effective_access: inactive,
+      qualifying_months: 0,
+      required_plan: MARKET_VIEW_REQUIRED_PLAN,
+      required_months: MARKET_VIEW_MIN_MONTHS,
+    };
+  }
+  if (isPrivilegedAccount(user)) {
+    const roleAccess = roleAccessForUser(user);
+    return {
+      can_download: true,
+      entitlement: superEntitlement(user),
+      access: roleAccess,
+      effective_access: roleAccess,
+      effective_access_kind: "role",
+      custom_access_matched: true,
+      entitlement_access_matched: false,
+      qualifying_months: Number.POSITIVE_INFINITY,
+      required_plan: MARKET_VIEW_REQUIRED_PLAN,
+      required_months: MARKET_VIEW_MIN_MONTHS,
+    };
+  }
+
+  const email = normalizeEmail(user.email);
+  const [entitlementRow, accessRow, trialAccessRow] = await Promise.all([
+    findEntitlement(env, email),
+    findAccessGrant(env, email),
+    findVid2PptTrialAccess(env, email),
+  ]);
+  const effectiveChoice = effectiveAccessChoiceForUser(user, entitlementRow, accessRow, trialAccessRow);
+  const membershipChoices = (Array.isArray(effectiveChoice.choices) ? effectiveChoice.choices : [])
+    .filter((choice) => choice && (choice.kind === "admin" || choice.kind === "entitlement") && choice.access && choice.access.active);
+  const primary = membershipChoices.length
+    ? membershipChoices.slice(1).reduce(broaderCurrentAccessChoice, membershipChoices[0])
+    : { kind: "none", access: publicAccessGrant(null) };
+  const result = {
+    can_download: membershipChoices.length > 0,
+    entitlement: publicEntitlement(entitlementRow),
+    access: publicAccessGrant(accessRow),
+    effective_access: publicAccessGrant(primary.access),
+    effective_access_kind: primary.kind,
+    custom_access_matched: membershipChoices.some((choice) => choice.kind === "admin"),
+    entitlement_access_matched: membershipChoices.some((choice) => choice.kind === "entitlement"),
+  };
+  const qualifyingMonths = hotReportAccessMonths(result);
+  return {
+    ...result,
+    can_download: reportTextAccessQualifies(user, result) && qualifyingMonths >= MARKET_VIEW_MIN_MONTHS,
+    qualifying_months: qualifyingMonths,
+    required_plan: MARKET_VIEW_REQUIRED_PLAN,
+    required_months: MARKET_VIEW_MIN_MONTHS,
   };
 }
 
@@ -5693,6 +5754,167 @@ async function handleHotReportsList(request, env) {
   }
 }
 
+function marketViewDateKeyFromId(value) {
+  const match = String(value || "").trim().toLowerCase().match(MARKET_VIEW_ID_PATTERN);
+  return match ? match[1] : "";
+}
+
+function marketViewDateIso(value) {
+  const key = String(value || "").trim();
+  if (!/^\d{6}$/.test(key)) return "";
+  const year = 2000 + Number(key.slice(0, 2));
+  const month = Number(key.slice(2, 4));
+  const day = Number(key.slice(4, 6));
+  const date = new Date(Date.UTC(year, month - 1, day));
+  if (
+    date.getUTCFullYear() !== year
+    || date.getUTCMonth() !== month - 1
+    || date.getUTCDate() !== day
+  ) return "";
+  return `${year}-${key.slice(2, 4)}-${key.slice(4, 6)}`;
+}
+
+function marketViewPdfKey(value) {
+  const dateKey = marketViewDateKeyFromId(value);
+  return dateKey ? `${MARKET_VIEW_PDF_PREFIX}/${dateKey}.pdf` : "";
+}
+
+function publicMarketViewItem(row) {
+  const id = String(row && row.id || "").trim().toLowerCase();
+  const dateKey = marketViewDateKeyFromId(id);
+  const date = marketViewDateIso(dateKey);
+  if (!dateKey || !date) return null;
+  return {
+    id,
+    date,
+    title: cleanHotReportText(row.title, 160) || `Market Views · ${date}`,
+    filename: safePdfFilename(row.filename || `market_views_${dateKey}.pdf`),
+    size_bytes: Math.max(0, Number(row.size_bytes || 0) || 0),
+    updated_at: String(row.updated_at || row.uploaded_at || ""),
+  };
+}
+
+async function listMarketViewItems(env) {
+  const archived = (await listR2JsonObjects(env, `${MARKET_VIEW_ITEM_PREFIX}/`, MARKET_VIEW_MAX_ITEMS))
+    .map(publicMarketViewItem)
+    .filter(Boolean);
+  return archived.sort((left, right) => right.date.localeCompare(left.date));
+}
+
+async function handleMarketViewsList(request, env) {
+  try {
+    const items = await listMarketViewItems(env);
+    return jsonResponse(request, env, 200, {
+      items,
+      total: items.length,
+      required_plan: MARKET_VIEW_REQUIRED_PLAN,
+      required_months: MARKET_VIEW_MIN_MONTHS,
+      generated_at: new Date().toISOString(),
+    });
+  } catch (error) {
+    return jsonResponse(request, env, 503, { detail: error.message || "Market Views 暂时无法读取。" });
+  }
+}
+
+async function handleMarketViewsAccess(request, env) {
+  try {
+    const user = await currentUserFromRequest(env, request);
+    const access = await marketViewMembershipAccessForUser(env, user);
+    return jsonResponse(request, env, 200, { user: publicUser(user), ...access });
+  } catch (error) {
+    const status = accessErrorStatus(error);
+    return jsonResponse(request, env, status, {
+      detail: status === 503 ? "会员资格暂时无法核验，请稍后重试。" : error.message || "请先登录。",
+      can_download: false,
+      required_plan: MARKET_VIEW_REQUIRED_PLAN,
+      required_months: MARKET_VIEW_MIN_MONTHS,
+    });
+  }
+}
+
+async function handleMarketViewsPdf(request, env) {
+  const id = String(new URL(request.url).searchParams.get("id") || "").trim().toLowerCase();
+  const dateKey = marketViewDateKeyFromId(id);
+  if (!dateKey || !marketViewDateIso(dateKey)) {
+    return jsonResponse(request, env, 400, { detail: "Market Views 日期无效。" });
+  }
+
+  let user;
+  try {
+    user = await currentUserFromRequest(env, request);
+  } catch (error) {
+    return jsonResponse(request, env, 401, { detail: error.message || "请先登录。" });
+  }
+  let access;
+  try {
+    access = await marketViewMembershipAccessForUser(env, user);
+  } catch (_error) {
+    return jsonResponse(request, env, 503, { detail: "会员资格暂时无法核验，请稍后重试。" });
+  }
+  if (!access.can_download) {
+    return jsonResponse(request, env, 402, {
+      detail: "Market Views PDF 面向开通时长至少 1 个月的会员。",
+      required_plan: MARKET_VIEW_REQUIRED_PLAN,
+      required_months: MARKET_VIEW_MIN_MONTHS,
+    });
+  }
+
+  const filename = `market_views_${dateKey}.pdf`;
+  const key = marketViewPdfKey(id);
+  if (!env.REPORT_BUCKET || typeof env.REPORT_BUCKET.get !== "function") {
+    return jsonResponse(request, env, 503, { detail: "Market Views 私有存储暂时不可用。" });
+  }
+  try {
+    const object = await env.REPORT_BUCKET.get(key);
+    if (!object) return jsonResponse(request, env, 404, { detail: "这一天的 Market Views PDF 暂不可用。" });
+    const headers = {
+      ...corsHeaders(request, env),
+      "Content-Type": "application/pdf",
+      "Content-Disposition": contentDisposition(filename),
+      "Cache-Control": "no-store, private",
+      "X-Content-Type-Options": "nosniff",
+    };
+    if (object.size) headers["Content-Length"] = String(object.size);
+    return new Response(object.body, { headers });
+  } catch (_error) {
+    return jsonResponse(request, env, 503, { detail: "Market Views 私有存储暂时不可用。" });
+  }
+}
+
+function internalPdfStorageLimitBytes(env) {
+  const explicitBytes = Number(env.PDF_STORAGE_LIMIT_BYTES || 0);
+  if (Number.isFinite(explicitBytes) && explicitBytes > 0) return Math.floor(explicitBytes);
+  const explicitGiB = Number(env.PDF_STORAGE_LIMIT_GB || 0);
+  if (Number.isFinite(explicitGiB) && explicitGiB > 0) return Math.floor(explicitGiB * 1024 * 1024 * 1024);
+  return 8 * 1024 * 1024 * 1024;
+}
+
+function availableCatalogPdfBytes(catalog) {
+  return (Array.isArray(catalog && catalog.items) ? catalog.items : []).reduce((total, item) => {
+    if (!item || item.available === false || item.pdf_archived) return total;
+    const size = Number(item.size_bytes || 0);
+    return total + (Number.isFinite(size) && size > 0 ? Math.floor(size) : 0);
+  }, 0);
+}
+
+async function handleInternalPdfStorage(request, env) {
+  try {
+    await requireSuperUser(request, env);
+  } catch (error) {
+    return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
+  }
+  try {
+    const catalog = await loadCatalog(env);
+    return jsonResponse(request, env, 200, {
+      total_size_bytes: availableCatalogPdfBytes(catalog),
+      limit_bytes: internalPdfStorageLimitBytes(env),
+      updated_at_bjt: String(catalog && catalog.updated_at_bjt || ""),
+    });
+  } catch (_error) {
+    return jsonResponse(request, env, 503, { detail: "PDF storage metadata is unavailable." });
+  }
+}
+
 async function handleHotReportItem(request, env) {
   const id = cleanHotReportId(new URL(request.url).searchParams.get("id"));
   if (!id) return jsonResponse(request, env, 400, { detail: "Invalid hot report id." });
@@ -6265,6 +6487,7 @@ function addUnique(list, value) {
 const DAILY_PICK_KOREA_PATTERN = /\b(?:south korea|s korea|korea|korean|krw|kospi|bok)\b|韩国|韩元|韩国央行/;
 const DAILY_PICK_JAPAN_PATTERN = /\b(?:japan|japanese|jpy|yen|boj|nikkei)\b|日本|日元|日本央行/;
 const DAILY_PICK_SEMICONDUCTOR_PATTERN = /\b(?:semiconductor|semiconductors|semis|semicap|memory|dram|nand|hbm|chip|chips|foundry|wafer|tsmc|cowos|advanced packaging|semiconductor(?: production)? equipment)\b|半导体|存储|芯片|晶圆|台积电|先进封装|半导体(?:生产)?设备/;
+const DAILY_PICK_INTERNAL_COPY_PATTERN = /(?:报告标题所示主题|正文摘要所示主题|核心内容以.+为准|是对.+的全面更新|内部(?:提示|说明|口径)|生成(?:要求|指令)|输出(?:要求|格式)|请(?:按|根据以下|生成|撰写|改写|输出)|你是(?:一名|一个)|不要对外(?:展示|公开)|仅供后台|(?:system|developer|assistant|user)\s+(?:prompt|message|instructions?)\s*[:：]|(?:follow|ignore)\s+(?:the\s+)?(?:above|previous|following)\s+instructions|output\s+(?:format|requirements)\s*[:：]|do not\s+(?:show|publish|display))/iu;
 
 const DAILY_PICK_THEME_RULES = [
   // Country + industry rules are intentionally first and cover both families.
@@ -6339,6 +6562,17 @@ const DAILY_PICK_THEME_RULES = [
       [/\b(?:telecom|telecommunications|communications services|it services|software)\b|电信|通信服务|信息技术服务|软件/],
     ],
     priority: 94,
+  },
+  {
+    theme: "亚洲量化选股与组合策略",
+    tag: "量化策略",
+    families: ["region:asia", "industry:equity"],
+    title_groups: [
+      [/\basia(?:n)?\b|亚洲/],
+      [/\bquant(?:itative)?\b|量化/],
+      [/\b(?:portfolio|stock selection|top picks?)\b|组合|选股|精选股|重点标的/],
+    ],
+    priority: 106,
   },
   {
     theme: "台积电、先进封装与半导体产业链",
@@ -6733,7 +6967,7 @@ function dailyPickTopicTags(item, bodyText = "") {
     if (tag && !tags.includes(tag)) tags.push(tag);
   };
   for (const topic of dailyPickDisplayTopicProfile(item, bodyText)) add(topic.tag);
-  const bank = String(item.bank_name || item.bank_code || "").replace(/\s+/g, "").trim();
+  const bank = dailyPickCleanPublicField(item.bank_name || item.bank_code || "").replace(/\s+/g, "").trim();
   if (bank && bank.length <= 12) add(bank);
   return tags.slice(0, 4);
 }
@@ -6761,6 +6995,7 @@ function dailyPickBodyInsights(item, bodyText = "") {
   const monetaryContext = hasClassifiedTheme(/央行政策|货币政策|利率与债券/);
   const tradeContext = hasClassifiedTheme(/贸易与出口|地缘政治/);
   const aiContext = hasClassifiedTheme(/人工智能|数字基础设施/);
+  const quantFundamentalContext = hasClassifiedTheme(/量化选股与组合策略/);
   const insights = [];
   const add = (value) => addUnique(insights, value);
 
@@ -6785,11 +7020,24 @@ function dailyPickBodyInsights(item, bodyText = "") {
   if (textMatches(text, [/recommend going long|going long.*bond|long inr|做多/])) {
     add("配置结论指向做多相关长期债券或利率品种");
   }
+  if (quantFundamentalContext
+    && textMatches(text, [/quantitative and fundamental research|quant.*fundamental|量化.*基本面|基本面.*量化/])) {
+    add("报告比较量化模型与基本面研究相结合的选股方法");
+  }
+  if (quantFundamentalContext
+    && textMatches(text, [/(?:highlighting|covers?|includes?) 17 stocks.*5 sectors|17 stocks in 5 sectors|17只.*5个行业|17只.*五个行业/])) {
+    const techHeavy = textMatches(text, [/(?:dominated|led|concentrated) by tech|tech(?:nology)? (?:dominates|is dominant)|科技(?:板块|股).*(?:占比较高|主导)/]);
+    add(`组合覆盖17只亚洲股票和5个行业${techHeavy ? "，正文显示科技板块占比较高" : ""}`);
+  }
+  if (quantFundamentalContext
+    && textMatches(text, [/both quant and fundamental approaches.*add value|combining the two techniques.*better results|量化.*基本面.*结合/])) {
+    add("正文回测比较了量化、基本面及二者结合策略的历史表现");
+  }
   if (!indiaContext && energyContext && textMatches(text, [/lower oil prices|oil prices.*came down|oil supply|oil demand|\bcrude\b|\bopec\b|能源价格|油价|原油供需/])) {
-    add("原油与能源供需变化会影响通胀预期、增长判断和政策路径");
+    add("正文讨论原油与能源供需，以及其与通胀、增长或政策判断的关系");
   }
   if (geopoliticsContext && textMatches(text, [/geopolitic|war|conflict|sanction|trade war|tariff|export control|地缘|战争|冲突|制裁|贸易战|关税|出口管制/])) {
-    add("地缘冲突与贸易政策变化会影响跨境供给、成本和市场预期");
+    add("正文涉及地缘冲突、贸易政策及其对跨境供给或成本的影响");
   }
 
   if (fedContext && textMatches(text, [/\bfed\b.*stays on hold|fed on hold|on hold through year end|no rate hikes|美联储.*观望/])) {
@@ -6809,18 +7057,18 @@ function dailyPickBodyInsights(item, bodyText = "") {
   }
 
   if (growthContext && textMatches(text, [/recession risk|recession probability|衰退/])) {
-    add("衰退风险评估是资产市场定价的重要约束");
+    add("正文包含对衰退情景的评估");
   }
   if (monetaryContext && textMatches(text, [/ecb|boe|boj|pboc|bok|rbi|central banks|央行/])) {
-    add("主要央行的政策分化会影响利率、汇率和风险资产定价");
+    add("正文比较主要央行的政策路径");
   }
   if (tradeContext && textMatches(text, [/tariff|trade|exports|imports|贸易|出口|进口/])) {
-    add("贸易和出口变化会影响增长结构与市场预期");
+    add("正文讨论贸易、出口或进口变化");
   }
   if (aiContext
     && textMatches(text, [/\bai\b|artificial intelligence|人工智能/])
     && textMatches(text, [/\bvaluation\b|估值/])) {
-    add("AI 与估值变化仍是风险资产需要跟踪的变量");
+    add("正文同时讨论 AI 与估值变化");
   }
 
   return insights.slice(0, 5);
@@ -6831,6 +7079,53 @@ function chineseJoin(values, fallback = "") {
   if (!clean.length) return fallback;
   if (clean.length === 1) return clean[0];
   return clean.join("、");
+}
+
+function dailyPickCleanPublicField(value, fallback = "") {
+  const clean = String(value || "")
+    .normalize("NFKC")
+    .replace(/[\u0000-\u001F\u007F]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (!clean || DAILY_PICK_INTERNAL_COPY_PATTERN.test(clean)) return fallback;
+  return clean.slice(0, 360);
+}
+
+function dailyPickPublicTitle(item) {
+  const title = dailyPickCleanPublicField(item && (item.title || item.filename));
+  const titleZh = dailyPickCleanPublicField(item && item.title_zh);
+  return (title || titleZh || "未命名报告").replace(/\.pdf$/i, "").trim();
+}
+
+function dailyPickTitleFacts(item) {
+  const raw = dailyPickCleanPublicField(`${item && item.title || ""} ${item && item.title_zh || ""}`);
+  if (!raw) return [];
+  const facts = [];
+  const add = (value) => addUnique(facts, value);
+  const quantFundamental = /\bquant(?:itative)?\b[\s\S]{0,80}\bfundamental\b|\bfundamental\b[\s\S]{0,80}\bquant(?:itative)?\b|量化[\s\S]{0,40}基本面|基本面[\s\S]{0,40}量化/iu.test(raw);
+  if (quantFundamental) {
+    add(/\basia(?:n)?\b|亚洲/iu.test(raw)
+      ? "报告聚焦亚洲市场的量化与基本面结合选股"
+      : "报告聚焦量化与基本面结合选股");
+  }
+
+  const pickMatch = raw.match(/\b(\d{1,3})\s+(?:top\s+)?(?:stock\s+)?picks?\b|(?:^|\D)(\d{1,3})\s*(?:只|个|大)?(?:精选股|重点标的)/iu);
+  const halfMatch = raw.match(/\b([12])H\s*(\d{2,4})\b|((?:19|20)\d{2})年\s*(上半年|下半年)/iu);
+  if (pickMatch) {
+    const count = Number(pickMatch[1] || pickMatch[2]);
+    let period = "";
+    if (halfMatch) {
+      if (halfMatch[1]) {
+        const shortYear = String(halfMatch[2]);
+        const year = shortYear.length === 2 ? `20${shortYear}` : shortYear;
+        period = `${year}年${halfMatch[1] === "1" ? "上半年" : "下半年"}`;
+      } else {
+        period = `${halfMatch[3]}年${halfMatch[4]}`;
+      }
+    }
+    if (Number.isFinite(count) && count > 0) add(`报告列出${period}${count}个重点标的`);
+  }
+  return facts.slice(0, 2);
 }
 
 function dailyPickMacroScore(item) {
@@ -6856,24 +7151,23 @@ function isLikelySingleStockReport(item) {
 }
 
 function dailyPickIntro(item, tags, bodyText = "") {
-  const bank = String(item.bank_name || item.bank_code || "机构").trim();
-  const title = reportEnglishTitle(item);
+  const bank = dailyPickCleanPublicField(item.bank_name || item.bank_code, "研究机构");
+  const title = dailyPickPublicTitle(item);
   const themes = dailyPickThemes(item, tags, bodyText);
   const insights = dailyPickBodyInsights(item, bodyText);
-  const topicText = chineseJoin(themes.slice(0, 3), "报告标题所示主题");
-  const landscapeText = reportIsLandscape(item) ? "这份 PDF 为横屏呈现，适合直接做会议讨论或素材摘图。" : "";
-  const pageText = reportPageCount(item) ? `报告共 ${reportPageCount(item)} 页，` : "";
-  const detailText = insights.length
-    ? `核心围绕${chineseJoin(insights.slice(0, 3))}。${insights[3] ? `同时，报告也提示：${insights.slice(3, 5).join("，")}。` : ""}`
-    : themes.length
-      ? `核心围绕${chineseJoin(themes.slice(0, 3))}展开，便于快速核对报告的主要判断与数据。`
-      : "核心内容以报告标题和正文摘要所示主题为准。";
-  const tagText = tags
-    .map((tag) => String(tag || "").trim())
+  const titleFacts = dailyPickTitleFacts(item);
+  const sentences = [`${bank}发布《${title}》。`];
+  if (themes.length) sentences.push(`报告聚焦${chineseJoin(themes.slice(0, 2))}。`);
+  const details = [];
+  for (const detail of [...insights, ...titleFacts]) addUnique(details, detail);
+  if (details.length) sentences.push(`${details.slice(0, 2).join("；")}。`);
+  if (reportPageCount(item)) sentences.push(`报告共${reportPageCount(item)}页。`);
+  const tagText = (Array.isArray(tags) ? tags : [])
+    .map((tag) => dailyPickCleanPublicField(tag))
     .filter(Boolean)
     .map((tag) => `#${tag}`)
     .join("  ");
-  return `${bank}报告《${title}》是对${topicText}的全面更新。${pageText}${detailText}${landscapeText}\n${tagText}`.trim();
+  return `${sentences.slice(0, 4).join("")}\n${tagText}`.trim();
 }
 
 function searchTextMapFromIndex(searchIndex) {
@@ -7325,6 +7619,7 @@ function defaultNewsfeedSettings(user = null) {
     user_email: normalizeEmail(user && user.email) || "",
     digest_email_enabled: false,
     digest_email: normalizeEmail(user && user.email) || "",
+    newsletter_topic_id: "",
     digest_send_time: NEWSFEED_EMAIL_DEFAULT_TIME,
     digest_timezone: NEWSFEED_EMAIL_DEFAULT_TIMEZONE,
     digest_language: "en",
@@ -7477,7 +7772,10 @@ function publicNewsfeedSettings(settings, user, env) {
   const preferredRegions = normalizeNewsfeedRegions(merged.preferred_regions);
   return {
     digest_email_enabled: Boolean(merged.digest_email_enabled),
-    digest_email: normalizeEmail(merged.digest_email),
+    digest_email: normalizeEmail(user && user.email),
+    newsletter_topic_id: Boolean(merged.digest_email_enabled)
+      ? String(merged.newsletter_topic_id || "global-daily")
+      : "",
     digest_send_time: normalizeNewsfeedTime(merged.digest_send_time),
     digest_timezone: normalizeNewsfeedTimezone(merged.digest_timezone),
     digest_language: normalizeNewsfeedLanguage(merged.digest_language),
@@ -7932,7 +8230,7 @@ async function fetchNewsfeedItems(env, spec, options = {}) {
 
 async function requireNewsfeedUser(request, env) {
   const user = await currentUserFromRequest(env, request);
-  if (!isNewsfeedAccount(user)) throw new Error("Newsfeed is not enabled for this account.");
+  if (!isNewsfeedAccount(user)) throw new Error(disabledAccountMessage());
   return user;
 }
 
@@ -7957,18 +8255,26 @@ function hasOwnField(object, field) {
 
 function nextNewsfeedSettingsFromPayload(settings, user, payload = {}) {
   const hasDigestEnabled = hasOwnField(payload, "digest_email_enabled") || hasOwnField(payload, "enabled");
-  const hasDigestEmail = hasOwnField(payload, "digest_email") || hasOwnField(payload, "email");
+  const hasNewsletterTopic = hasOwnField(payload, "newsletter_topic_id");
   const hasRegions = hasOwnField(payload, "preferred_regions") || hasOwnField(payload, "regions");
   const hasInterfaceLanguage = hasOwnField(payload, "interface_language") || hasOwnField(payload, "language");
+  const enabled = hasDigestEnabled
+    ? (hasOwnField(payload, "digest_email_enabled") ? Boolean(payload.digest_email_enabled) : Boolean(payload.enabled))
+    : Boolean(settings.digest_email_enabled);
   return {
     ...settings,
     user_key: newsfeedUserKey(user),
     username: String(user.username || ""),
     user_email: normalizeEmail(user.email) || "",
-    digest_email_enabled: hasDigestEnabled ? Boolean(payload.digest_email_enabled || payload.enabled) : Boolean(settings.digest_email_enabled),
-    digest_email: hasDigestEmail
-      ? normalizeEmail(payload.digest_email || payload.email)
-      : normalizeEmail(settings.digest_email || user.email),
+    digest_email_enabled: enabled,
+    // A Newsfeed subscription always belongs to the signed-in account. Do not
+    // let a request turn another person's address into a subscription target.
+    digest_email: normalizeEmail(user.email),
+    // One scalar selection is stored per account. Choosing another topic
+    // replaces it; disabling the subscription clears it.
+    newsletter_topic_id: enabled
+      ? String(hasNewsletterTopic ? payload.newsletter_topic_id : (settings.newsletter_topic_id || "global-daily")).trim().slice(0, 160)
+      : "",
     digest_send_time: normalizeNewsfeedTime(payload.digest_send_time || payload.send_time || settings.digest_send_time),
     digest_timezone: normalizeNewsfeedTimezone(payload.digest_timezone || payload.timezone || settings.digest_timezone),
     digest_language: normalizeNewsfeedLanguage(payload.digest_language || payload.output_language || settings.digest_language),
@@ -7979,6 +8285,15 @@ function nextNewsfeedSettingsFromPayload(settings, user, payload = {}) {
       ? (payload.preferred_regions || payload.regions)
       : settings.preferred_regions),
   };
+}
+
+async function validateNewsfeedNewsletterSelection(env, user, settings) {
+  if (!settings.digest_email_enabled) return { ...settings, newsletter_topic_id: "" };
+  const id = String(settings.newsletter_topic_id || "global-daily").trim();
+  if (!id) throw new Error("Choose one newsletter or turn the subscription off.");
+  const topics = await loadNewsfeedTopics(env, user);
+  if (!findNewsfeedTopic(topics, id)) throw new Error("That newsletter is not available for this account.");
+  return { ...settings, newsletter_topic_id: id };
 }
 
 async function loadNewsfeedCustomTopics(env, user) {
@@ -8347,8 +8662,13 @@ async function handleNewsfeedSettings(request, env) {
       return jsonResponse(request, env, 200, { settings: publicNewsfeedSettings(settings, user, env) });
     }
     const payload = await request.json().catch(() => ({}));
-    const next = nextNewsfeedSettingsFromPayload(settings, user, payload);
-    if (next.digest_email_enabled && !normalizeEmail(next.digest_email)) return jsonResponse(request, env, 400, { detail: "A valid email is required." });
+    let next = nextNewsfeedSettingsFromPayload(settings, user, payload);
+    if (next.digest_email_enabled && !normalizeEmail(next.digest_email)) return jsonResponse(request, env, 400, { detail: "A valid account email is required." });
+    try {
+      next = await validateNewsfeedNewsletterSelection(env, user, next);
+    } catch (error) {
+      return jsonResponse(request, env, 400, { detail: error.message || "Choose one newsletter." });
+    }
     await saveNewsfeedSettings(env, user, next);
     return jsonResponse(request, env, 200, { settings: publicNewsfeedSettings(next, user, env) });
   } catch (error) {
@@ -8362,7 +8682,15 @@ async function handleNewsfeedEmailSend(request, env, options = {}) {
     const user = await requireNewsfeedUser(request, env);
     const settings = await loadNewsfeedSettings(env, user);
     const payload = await request.json().catch(() => ({}));
-    const next = nextNewsfeedSettingsFromPayload(settings, user, payload);
+    let next = nextNewsfeedSettingsFromPayload(settings, user, payload);
+    try {
+      next = await validateNewsfeedNewsletterSelection(env, user, next);
+    } catch (error) {
+      return jsonResponse(request, env, 400, { detail: error.message || "Choose one newsletter." });
+    }
+    if (!next.digest_email_enabled) {
+      return jsonResponse(request, env, 400, { detail: "Choose one newsletter before sending." });
+    }
     const email = normalizeEmail(next.digest_email);
     if (!email) return jsonResponse(request, env, 400, { detail: "A valid email is required." });
     await saveNewsfeedSettings(env, user, next);
@@ -8372,8 +8700,8 @@ async function handleNewsfeedEmailSend(request, env, options = {}) {
     let recorded;
     try {
       ({ result } = await attemptNewsfeedDigestEmail(env, next, due, isTest
-        ? { subject: `${newsfeedEmailSubject(next, due)} · Test` }
-        : {}));
+        ? { subject: `${newsfeedEmailSubject(next, due)} · Test`, user }
+        : { user }));
       recorded = await recordNewsfeedEmailAttempt(env, newsfeedUserKey(user), next, result, due, { test: isTest });
     } catch (error) {
       result = { sent: false, detail: error.message || "Email send failed." };
@@ -8590,15 +8918,25 @@ function newsfeedEmailDue(settings, now = new Date()) {
   return { dateKey, parts };
 }
 
-async function fetchNewsfeedDigestPayload(env, settings = {}) {
+async function newsfeedNewsletterSpecs(env, settings = {}, user = null) {
   const globalSpec = NEWSFEED_DEFAULT_TOPICS.find((topic) => topic.id === "global-daily") || NEWSFEED_DEFAULT_TOPICS[0];
-  const defaultSpecs = NEWSFEED_DEFAULT_TOPICS.filter((topic) => topic.id !== "global-daily");
+  const id = String(settings.newsletter_topic_id || "global-daily").trim();
+  if (id === "global-daily") return [globalSpec, ...NEWSFEED_DEFAULT_TOPICS.filter((topic) => topic.id !== "global-daily")];
+  const topics = user ? await loadNewsfeedTopics(env, user) : NEWSFEED_DEFAULT_TOPICS;
+  const selected = findNewsfeedTopic(topics, id);
+  return selected ? [selected] : [globalSpec];
+}
+
+async function fetchNewsfeedDigestPayload(env, settings = {}, user = null) {
+  const specs = await newsfeedNewsletterSpecs(env, settings, user);
   const regions = normalizeNewsfeedRegions(settings.preferred_regions);
   const language = normalizeNewsfeedLanguage(settings.digest_language || settings.interface_language || "en");
-  const fetched = await Promise.all([
-    fetchNewsfeedItems(env, globalSpec, { limit: 20, includeGdelt: true, regions, language }),
-    ...defaultSpecs.map((topic) => fetchNewsfeedItems(env, topic, { limit: 10, regions, language })),
-  ]);
+  const fetched = await Promise.all(specs.map((topic, index) => fetchNewsfeedItems(env, topic, {
+    limit: index === 0 ? 20 : 10,
+    includeGdelt: index === 0,
+    regions,
+    language,
+  })));
   const headlines = dedupeNewsfeedItems(fetched.flatMap((row) => row.items || []))
     .sort((a, b) => newsfeedSortValue(b) - newsfeedSortValue(a))
     .slice(0, 24);
@@ -8608,6 +8946,8 @@ async function fetchNewsfeedDigestPayload(env, settings = {}) {
     headlines,
     regions,
     language,
+    newsletter_topic_id: String(settings.newsletter_topic_id || "global-daily"),
+    newsletter_title: specs.length === 1 ? String(specs[0].title || "Daily Digest") : "Global Daily",
   };
 }
 
@@ -8619,7 +8959,7 @@ function newsfeedEmailSubject(settings, due) {
 
 function newsfeedEmailText(payload) {
   const lines = [
-    "KC Desk Daily Digest",
+    `KC Desk · ${String(payload.newsletter_title || "Daily Digest")}`,
     "",
     ...((payload.daily_digest || []).map((line) => `- ${line}`)),
     "",
@@ -8642,7 +8982,7 @@ function newsfeedEmailHtml(payload) {
   return `
     <div style="margin:0;padding:24px;background:#f6f7fb;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#111827;">
       <div style="max-width:680px;margin:0 auto;background:#ffffff;border-radius:12px;padding:28px;">
-        <h1 style="margin:0 0 18px;font-size:24px;">KC Desk Daily Digest</h1>
+        <h1 style="margin:0 0 18px;font-size:24px;">KC Desk · ${escapeNewsfeedHtml(payload.newsletter_title || "Daily Digest")}</h1>
         <ul style="margin:0 0 24px;padding-left:20px;color:#374151;line-height:1.6;">${digest}</ul>
         <h2 style="margin:0 0 10px;font-size:18px;">Top headlines</h2>
         <table role="presentation" width="100%" cellspacing="0" cellpadding="0">${rows}</table>
@@ -8771,7 +9111,7 @@ async function handleOpsAlertEmail(request, env) {
 async function attemptNewsfeedDigestEmail(env, settings, due, options = {}) {
   const email = normalizeEmail(settings.digest_email);
   if (!email) return { result: { sent: false, detail: "No digest email is configured." }, payload: null };
-  const payload = await fetchNewsfeedDigestPayload(env, settings);
+  const payload = await fetchNewsfeedDigestPayload(env, settings, options.user || null);
   const result = await sendNewsfeedEmail(env, {
     to: email,
     subject: options.subject || newsfeedEmailSubject(settings, due),
@@ -8779,6 +9119,20 @@ async function attemptNewsfeedDigestEmail(env, settings, due, options = {}) {
     text: newsfeedEmailText(payload),
   });
   return { result, payload };
+}
+
+async function newsfeedUserForStoredSettings(env, settings = {}) {
+  const username = normalizeUsername(settings.username);
+  const userEmail = normalizeEmail(settings.user_email);
+  let user = username ? await findSiteUserByUsername(env, username) : null;
+  if (!user && userEmail) user = await findSiteUserByEmail(env, userEmail);
+  if (!user) return null;
+  user = await mergeSiteUserAdminState(env, user);
+  if (!isNewsfeedAccount(user)) return null;
+  if (settings.user_key && String(settings.user_key) !== newsfeedUserKey(user)) return null;
+  if (userEmail && userEmail !== normalizeEmail(user.email)) return null;
+  if (normalizeEmail(settings.digest_email) !== normalizeEmail(user.email)) return null;
+  return user;
 }
 
 async function recordNewsfeedEmailAttempt(env, userKey, settings, result, due = null, options = {}) {
@@ -8814,11 +9168,13 @@ async function sendDueNewsfeedDigestEmails(env) {
   for (const { settings, due } of dueRows) {
     const email = normalizeEmail(settings.digest_email);
     if (!email) continue;
+    const user = await newsfeedUserForStoredSettings(env, settings);
+    if (!user) continue;
     const userKey = settings.user_key || newsfeedUserKey({ email: settings.user_email || email, username: settings.username || "" });
     let result;
     let next;
     try {
-      ({ result } = await attemptNewsfeedDigestEmail(env, settings, due));
+      ({ result } = await attemptNewsfeedDigestEmail(env, settings, due, { user }));
       next = await recordNewsfeedEmailAttempt(env, userKey, settings, result, due);
     } catch (error) {
       result = { sent: false, detail: error.message || "Email send failed." };
@@ -10451,15 +10807,36 @@ function refreshAdminPicksSnapshotOnce(env) {
   return adminPicksRefreshPromise;
 }
 
+function upgradedLegacyAdminPicksData(data) {
+  const source = data && typeof data === "object" ? data : {};
+  const dailyPicks = Array.isArray(source.daily_picks) ? source.daily_picks : [];
+  return {
+    ...source,
+    topic_version: ADMIN_PICKS_TOPIC_VERSION,
+    daily_picks: dailyPicks.map((pick) => {
+      const item = {
+        ...pick,
+        bank_name: pick && (pick.bank_name || pick.bank) || "",
+      };
+      const tags = dailyPickTopicTags(item, "");
+      return {
+        ...pick,
+        tags,
+        intro: dailyPickIntro(item, tags, ""),
+      };
+    }),
+  };
+}
+
 async function loadAdminPicksSnapshotModule(env, options = {}) {
   const current = await safeR2GetJson(env, ADMIN_PICKS_SNAPSHOT_KEY);
   if (hasAdminSnapshot(current)) {
     return loadAdminSnapshotModule(env, ADMIN_PICKS_SNAPSHOT_KEY, options);
   }
 
-  // A missing v2 snapshot is expected immediately after deployment. Try to
+  // A missing v3 snapshot is expected immediately after deployment. Try to
   // build it within the normal request budget; if upstream data is temporarily
-  // unavailable, keep serving the verified v1 payload while a background
+  // unavailable, keep serving the verified v2 payload while a background
   // refresh continues.
   const legacy = await safeR2GetJson(env, ADMIN_PICKS_LEGACY_SNAPSHOT_KEY);
   const refresh = options.refresh;
@@ -10480,7 +10857,7 @@ async function loadAdminPicksSnapshotModule(env, options = {}) {
   }
   if (hasAdminSnapshot(legacy)) {
     return {
-      data: legacy.data,
+      data: upgradedLegacyAdminPicksData(legacy.data),
       status: {
         ...adminSnapshotStatus(legacy, Number(options.freshMs || ADMIN_SNAPSHOT_FRESH_MS)),
         state: "updating",
@@ -12928,6 +13305,22 @@ export default {
 
     if (pathname === "/hot-reports/comments/order" && request.method === "POST") {
       return handleHotReportCommentOrder(request, env);
+    }
+
+    if (pathname === "/market-views" && request.method === "GET") {
+      return handleMarketViewsList(request, env);
+    }
+
+    if (pathname === "/market-views/access" && request.method === "GET") {
+      return handleMarketViewsAccess(request, env);
+    }
+
+    if (pathname === "/market-views/pdf" && request.method === "GET") {
+      return handleMarketViewsPdf(request, env);
+    }
+
+    if (pathname === "/internal/pdf-storage" && request.method === "GET") {
+      return handleInternalPdfStorage(request, env);
     }
 
     if (pathname === "/external/search" && request.method === "GET") {

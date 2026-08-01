@@ -7,6 +7,7 @@ const root = path.resolve(__dirname, "..");
 const worker = fs.readFileSync(path.join(root, "workers/kc-desk-notes-worker/src/index.js"), "utf8");
 const app = fs.readFileSync(path.join(root, "kc_desk_notes/site_src/assets/app.js"), "utf8");
 const indexHtml = fs.readFileSync(path.join(root, "kc_desk_notes/site_src/index.html"), "utf8");
+const styles = fs.readFileSync(path.join(root, "kc_desk_notes/site_src/assets/styles.css"), "utf8");
 
 function extractFunction(source, name) {
   const start = source.indexOf(`function ${name}(`);
@@ -160,6 +161,33 @@ assert.match(
   /isHotReportItem\(item\)[\s\S]*?\$\{hotReportCommentsMarkup\(\)\}[\s\S]*?\$\{externalRelatedMarkup\(\)\}/,
   "hot-report comments must render before Related Reports",
 );
+assert.match(
+  styles,
+  /\.hot-comment-admin-alias\[hidden\][\s\S]*?display:\s*none\s*!important/,
+  "author CSS must not override the hidden state of administrator-only comment controls",
+);
+assert.match(
+  app,
+  /randomAlias\.addEventListener\("click", \(\) => \{\s*if \(!isSuperSession\(\)\) return;/,
+  "the random alias action must re-check the administrator session",
+);
+assert.match(
+  extractFunction(app, "updateMeta"),
+  /internalStorageMetadata && internalStorageMetadata\.total_size_bytes[\s\S]*?showInternalStorageMetadata && totalSize/,
+  "PDF storage capacity must stay out of the public header",
+);
+assert.match(
+  app,
+  /showInternalStorageMetadata = isTwotigersSession\(\)[\s\S]*?\/internal\/pdf-storage/,
+  "only the exact twotigers session may reveal storage capacity",
+);
+const internalStorageHandler = extractFunction(worker, "handleInternalPdfStorage");
+assert.match(
+  internalStorageHandler,
+  /await requireSuperUser\(request, env\)/,
+  "storage capacity must be authorized again by the Worker",
+);
+assert.match(worker, /pathname === "\/internal\/pdf-storage"[\s\S]*?handleInternalPdfStorage/);
 
 const uploadSandbox = {};
 const uploadPromise = vm.runInNewContext(`(async () => {
