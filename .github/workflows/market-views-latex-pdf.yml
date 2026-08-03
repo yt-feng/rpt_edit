@@ -17,6 +17,22 @@ on:
         description: "Private XHS handoff run id supplied by Final PDF to XHS notes"
         required: false
         default: ""
+      source_artifact_run_id:
+        description: "Historical Actions run containing final-dropbox-macro-shard artifacts"
+        required: false
+        default: ""
+      source_artifact_pattern:
+        description: "Artifact pattern used with source_artifact_run_id"
+        required: true
+        default: "final-dropbox-macro-shard-*"
+      expected_shards:
+        description: "Expected historical shard count; 0 disables the check"
+        required: true
+        default: "0"
+      expected_articles:
+        description: "Expected historical report count; 0 disables the check"
+        required: true
+        default: "0"
       model:
         description: "DeepSeek model for synthesis"
         required: true
@@ -32,6 +48,7 @@ on:
         default: false
 permissions:
   contents: read
+  actions: read
 
 env:
   PYTHONUNBUFFERED: "1"
@@ -64,6 +81,41 @@ jobs:
         with:
           python-version: "3.11"
           cache: "pip"
+
+      - name: Validate private input source
+        env:
+          SOURCE_HANDOFF_RUN_ID: ${{ github.event.inputs.source_handoff_run_id }}
+          SOURCE_ARTIFACT_RUN_ID: ${{ github.event.inputs.source_artifact_run_id }}
+          EXPECTED_BANK_DATE: ${{ github.event.inputs.expected_bank_date }}
+        run: |
+          if [ -n "$SOURCE_HANDOFF_RUN_ID" ] && [ -n "$SOURCE_ARTIFACT_RUN_ID" ]; then
+            echo "source_handoff_run_id and source_artifact_run_id are mutually exclusive." >&2
+            exit 1
+          fi
+          if { [ -n "$SOURCE_HANDOFF_RUN_ID" ] || [ -n "$SOURCE_ARTIFACT_RUN_ID" ]; } && \
+             ! printf '%s\n' "$EXPECTED_BANK_DATE" | grep -Eq '^[0-9]{6,8}$'; then
+            echo "A valid expected_bank_date is required with a private input source." >&2
+            exit 1
+          fi
+
+      - name: Download historical bank shard artifacts
+        if: ${{ github.event.inputs.source_artifact_run_id != '' }}
+        uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: ${{ github.event.inputs.source_artifact_run_id }}
+          pattern: ${{ github.event.inputs.source_artifact_pattern }}
+          path: _market_views_shard_artifacts
+
+      - name: Materialize historical bank shard artifacts
+        if: ${{ github.event.inputs.source_artifact_run_id != '' }}
+        run: |
+          python scripts/materialize_shard_artifacts.py \
+            --artifact-root _market_views_shard_artifacts \
+            --destination "xhs_notes/dropbox/${{ github.event.inputs.expected_bank_date }}" \
+            --expected-shards "${{ github.event.inputs.expected_shards || '0' }}" \
+            --expected-reports "${{ github.event.inputs.expected_articles || '0' }}"
 
       - name: Install private handoff dependency
         run: python -m pip install boto3
