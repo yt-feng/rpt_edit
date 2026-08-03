@@ -12,9 +12,9 @@ workers/portal-suite-worker/wrangler.toml
 _institution_latest_pdfs/
 _consulting_latest_pdfs/
 workers/portal-suite-worker/.wrangler/
-# Market Views contains paid PDFs and synthesis internals. The daily workflow
-# writes them only to its ephemeral workspace and archives the final PDF in
-# private R2; nothing under this directory belongs in the public repository.
+# Market Views synthesis internals remain runner-only. The daily workflow
+# explicitly force-adds only the public-safe market_views_<date>.pdf after the
+# private ending page has been removed; JSON, prompts, figures and logs stay ignored.
 market_view_summaries/
 
 # Generated publishing outputs live in private storage or ephemeral CI only.

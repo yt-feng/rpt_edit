@@ -176,7 +176,7 @@ market_view_summaries/<日期>/market_views_structured.json
 market_view_summaries/<日期>/figures/
 ```
 
-这个目录只存在于当次 runner 工作区，禁止提交到 Git、上传为 Actions artifact 或作为公开下载源。通过校验的最终 PDF 会写入私有 R2：
+该目录中的 `.tex`、JSON、prompt、figures 和日志只存在于当次 runner 工作区，禁止提交到 Git 或上传为 Actions artifact。通过校验的原版最终 PDF 会先写入私有 R2：
 
 ```text
 _market-views/pdfs/<YYMMDD>.pdf
@@ -184,6 +184,16 @@ _market-views/items/<YYMMDD>.json
 ```
 
 Portal Suite 只通过 Worker 的会员鉴权接口读取这些私有对象。
+
+R2 归档成功后，workflow 会删除 PDF 中单独成页的私有发布结尾页，并只把这个公开安全副本提交到：
+
+```text
+market_view_summaries/<YYMMDD>/market_views_<YYMMDD>.pdf
+```
+
+站内下载仍只读取私有 R2，不回退到 GitHub；公开副本不包含私有发布图片、域名或二维码。
+
+同一日期在 `main` 已有有效 PDF 时，重复 dispatch 默认直接跳过，不会再次调用模型或覆盖 R2；确需重建时手动设置 `force_rebuild=true`。
 
 说明：
 
@@ -628,7 +638,7 @@ wechat_drafts/institutions/
 
 `institution_feeds/`（原始 PDF 链接长期归档 + seen 去重状态）也由 Actions 维护并提交，但它不是按日期分目录、不参与按最近 3 天的清理，应长期保留。机构来源的原始下载 PDF 落在 `_institution_latest_pdfs/`，已 gitignore，不入库。
 
-Market Views 不属于上述 Git 生成目录：中间文件只在 runner 临时工作区，最终 PDF 和公开安全的索引元数据只保存在私有 R2，不能用 repo 或 artifact 充当备份。
+Market Views 的中间文件仍只在 runner 临时工作区，原版 PDF 和索引元数据保存在私有 R2；移除私有结尾页后的最终 PDF 另外保存在 `main` 的 `market_view_summaries/<日期>/`，但不会发布为 Actions artifact。
 
 本地修代码时不要用旧的本地生成目录覆盖远端。合并或 rebase 时的默认策略：
 
@@ -747,7 +757,7 @@ sensitive_content_guard_summary.json
 
 ### Market views 没看到 PDF
 
-检查 **Market views daily PDF** 的 Actions log，确认“Verify PDF exists”和“Archive exact Market Views PDF in private R2”步骤成功。工作流不会发布 PDF artifact；站内下载还必须通过 Worker 的会员鉴权。
+检查 **Market views daily PDF** 的 Actions log，确认“Verify PDF exists”、“Archive exact Market Views PDF in private R2”和“Commit public-safe Market Views PDF to main”步骤成功。工作流不会发布 PDF artifact；站内下载还必须通过 Worker 的会员鉴权。公开 `main` 只保存移除私有结尾页后的 PDF 副本。
 
 ### 小红书 note 里仍有不想要的词
 

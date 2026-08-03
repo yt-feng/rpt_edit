@@ -46,8 +46,13 @@ on:
         required: true
         type: boolean
         default: false
+      force_rebuild:
+        description: "Rebuild even when main already contains a valid PDF for the resolved date"
+        required: true
+        type: boolean
+        default: false
 permissions:
-  contents: read
+  contents: write
   actions: read
 
 env:
@@ -67,12 +72,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 1
           sparse-checkout: |
             .github/workflows
             scripts
             prompts
             requirements.txt
+            market_view_summaries
             xhs_notes/institutions
             xhs_notes/consulting
 
@@ -141,6 +148,7 @@ jobs:
         env:
           REQUESTED_DATE_FOLDER: ${{ github.event.inputs.date_folder || 'latest' }}
           EXPECTED_BANK_DATE: ${{ github.event.inputs.expected_bank_date || '' }}
+          FORCE_REBUILD: ${{ github.event.inputs.force_rebuild || 'false' }}
         run: |
           BUILD_DATE_FOLDER="$REQUESTED_DATE_FOLDER"
           PRIMARY_DATE_FOLDER="$REQUESTED_DATE_FOLDER"
@@ -190,7 +198,18 @@ jobs:
           echo "::notice::Primary bank date=$PRIMARY_DATE_FOLDER, expected issue date=$EXPECTED_DATE_FOLDER, parsed bank reports=$REPORT_COUNT, current inputs=$CURRENT_INPUT_COUNT."
           echo "BUILD_DATE_FOLDER=$BUILD_DATE_FOLDER" >> "$GITHUB_ENV"
           echo "EXPECTED_DATE_FOLDER=$EXPECTED_DATE_FOLDER" >> "$GITHUB_ENV"
-          echo "SHOULD_BUILD=true" >> "$GITHUB_ENV"
+          echo "DATE_FOLDER=$EXPECTED_DATE_FOLDER" >> "$GITHUB_ENV"
+
+          EXISTING_PDF="market_view_summaries/$EXPECTED_DATE_FOLDER/market_views_$EXPECTED_DATE_FOLDER.pdf"
+          if [ "$FORCE_REBUILD" != "true" ] && \
+             [ -f "$EXISTING_PDF" ] && \
+             [ "$(stat -c '%s' "$EXISTING_PDF")" -gt 1024 ] && \
+             [ "$(head -c 5 "$EXISTING_PDF")" = '%PDF-' ]; then
+            echo "::notice::main already contains a valid public Market Views PDF for $EXPECTED_DATE_FOLDER; skipping an idempotent rerun."
+            echo "SHOULD_BUILD=false" >> "$GITHUB_ENV"
+          else
+            echo "SHOULD_BUILD=true" >> "$GITHUB_ENV"
+          fi
 
       - name: Install and test private R2 archiver
         run: |
@@ -201,7 +220,11 @@ jobs:
         if: ${{ env.SHOULD_BUILD != 'false' }}
         run: |
           pip install -r requirements.txt
-          pip install reportlab pillow
+          pip install reportlab pillow pypdf
+
+      - name: Test public Market Views PDF exporter
+        if: ${{ env.SHOULD_BUILD != 'false' }}
+        run: python scripts/test_prepare_public_market_view_pdf.py
 
       - name: Install Chinese font for fast PDF renderer
         if: ${{ env.SHOULD_BUILD != 'false' }}
@@ -292,6 +315,7 @@ jobs:
           echo "::notice::Verified exact Market Views PDF: $PDF_PATH ($PDF_BYTES bytes)."
 
       - name: Archive exact Market Views PDF in private R2
+        if: ${{ env.SHOULD_BUILD != 'false' }}
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -307,6 +331,37 @@ jobs:
           python scripts/upload_market_view_to_r2.py \
             --date "$EXPECTED_DATE_FOLDER" \
             --pdf "$PDF_PATH"
+
+      - name: Prepare public-safe Market Views PDF
+        if: ${{ env.SHOULD_BUILD != 'false' }}
+        run: |
+          PDF_PATH="market_view_summaries/$DATE_FOLDER/market_views_$DATE_FOLDER.pdf"
+          PUBLIC_PDF="$RUNNER_TEMP/market_views_$DATE_FOLDER.public.pdf"
+          python scripts/prepare_public_market_view_pdf.py \
+            --source "$PDF_PATH" \
+            --output "$PUBLIC_PDF"
+          mv -- "$PUBLIC_PDF" "$PDF_PATH"
+
+          # The original private PDF is already archived. Restore the tracked
+          # neutral placeholder before scanning the public working tree.
+          git restore --source=HEAD --worktree -- prompts/zsxq_img.jpg
+
+          # Stage only for the identity guard. The commit helper refreshes the
+          # index from origin/main before creating the durable commit.
+          git add -f "$PDF_PATH"
+          python scripts/check_public_identity.py
+          git reset -- "$PDF_PATH"
+
+      - name: Commit public-safe Market Views PDF to main
+        if: ${{ env.SHOULD_BUILD != 'false' }}
+        run: |
+          PDF_PATH="market_view_summaries/$DATE_FOLDER/market_views_$DATE_FOLDER.pdf"
+          bash scripts/commit_output_dir.sh \
+            "$PDF_PATH" \
+            "Archive Market Views PDF $DATE_FOLDER" \
+            8 \
+            true \
+            true
 
   notify-failure:
     needs: [build-market-views-pdf]
