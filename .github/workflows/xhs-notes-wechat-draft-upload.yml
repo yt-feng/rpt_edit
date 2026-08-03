@@ -128,6 +128,12 @@ jobs:
             exit 1
           fi
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
       - name: Download historical shard artifacts
         if: ${{ github.event.inputs.source_run_id != '' }}
         uses: actions/download-artifact@v4
@@ -146,12 +152,6 @@ jobs:
             --destination "xhs_notes/dropbox/$RESOLVED_DATE_FOLDER" \
             --expected-shards "${{ github.event.inputs.expected_shards || '0' }}" \
             --expected-reports "${{ github.event.inputs.expected_articles || '0' }}"
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-          cache: "pip"
 
       - name: Install Python dependencies
         run: |
