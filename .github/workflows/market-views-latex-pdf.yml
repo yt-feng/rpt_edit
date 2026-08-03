@@ -355,8 +355,9 @@ jobs:
       - name: Commit public-safe Market Views PDF to main
         if: ${{ env.SHOULD_BUILD != 'false' }}
         run: |
+          PDF_PATH="market_view_summaries/$DATE_FOLDER/market_views_$DATE_FOLDER.pdf"
           bash scripts/commit_output_dir.sh \
-            "market_view_summaries/$DATE_FOLDER" \
+            "$PDF_PATH" \
             "Archive Market Views PDF $DATE_FOLDER" \
             8 \
             true \

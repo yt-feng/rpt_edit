@@ -159,8 +159,8 @@ const reader = { email: "reader@example.com" };
   assert.match(workflow, /Archive exact Market Views PDF in private R2\n\s*if: \$\{\{ env\.SHOULD_BUILD != 'false' \}\}/, "an idempotent rerun must not replace the private R2 original with the public copy");
   assert.match(
     workflow,
-    /commit_output_dir\.sh[\s\\]*\n\s*"market_view_summaries\/\$DATE_FOLDER"[\s\S]*?8[\s\\]*\n\s*true[\s\\]*\n\s*true/,
-    "only the exact dated directory may explicitly force-add its public-safe PDF",
+    /PDF_PATH="market_view_summaries\/\$DATE_FOLDER\/market_views_\$DATE_FOLDER\.pdf"[\s\S]*?commit_output_dir\.sh[\s\\]*\n\s*"\$PDF_PATH"[\s\S]*?8[\s\\]*\n\s*true[\s\\]*\n\s*true/,
+    "only the exact public-safe PDF may be force-added",
   );
   assert.doesNotMatch(workflow, /commit_output_dir\.sh\s+"market_view_summaries"/, "the synthesis root must never be committed wholesale");
   assert.match(workflow, /git restore --source=HEAD --worktree -- prompts\/zsxq_img\.jpg/, "the private publishing image must be restored before the public identity scan");

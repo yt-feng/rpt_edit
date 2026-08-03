@@ -34,8 +34,8 @@ if [ -z "$OUTPUT_DIR" ]; then
   exit 2
 fi
 
-if [ ! -d "$OUTPUT_DIR" ]; then
-  echo "Output directory does not exist: $OUTPUT_DIR"
+if [ ! -e "$OUTPUT_DIR" ]; then
+  echo "Output path does not exist: $OUTPUT_DIR"
   if [ "$REQUIRE_PUSH_SUCCESS" = "true" ]; then
     exit 2
   fi
@@ -56,9 +56,16 @@ for attempt in $(seq 1 "$MAX_ATTEMPTS"); do
 
   git add "$OUTPUT_DIR" || true
   # Public repos must not silently force ignored source/generated PDFs into Git.
-  # A caller must make that exceptional behavior explicit with argument 5.
+  # A caller must make that exceptional behavior explicit with argument 5. When
+  # the requested output is one file, force-add that exact file only.
   if [ "$ALLOW_FORCE_PDFS" = "true" ]; then
-    find "$OUTPUT_DIR" -type f -name "*.pdf" -print0 | xargs -0 -r git add -f
+    if [ -f "$OUTPUT_DIR" ]; then
+      case "$OUTPUT_DIR" in
+        *.pdf) git add -f -- "$OUTPUT_DIR" ;;
+      esac
+    else
+      find "$OUTPUT_DIR" -type f -name "*.pdf" -print0 | xargs -0 -r git add -f
+    fi
   fi
 
   echo "Files staged for commit:"
