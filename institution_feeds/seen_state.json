@@ -2512,6 +2512,62 @@
     "bruegel:5912": {
       "first_seen": "2026-07-31",
       "status": "downloaded"
+    },
+    "imf:c4ddb4ffd360f690a7645f76d59d48efe4b6aca82a97cff1c2bff32982d7": {
+      "first_seen": "2026-08-03",
+      "status": "downloaded"
+    },
+    "imf:b723d393ce2698885b26d8748b0dab6a358748df72f71468f19831b6810f": {
+      "first_seen": "2026-08-03",
+      "status": "downloaded"
+    },
+    "imf:b9e0299b6778dfca0c7a48379b6ae46741ef983f740cc455d23d9b996bcb": {
+      "first_seen": "2026-08-03",
+      "status": "downloaded"
+    },
+    "imf:6599bc7fceb34a1a89b351824dc5a1d10c93b9e6fdf897c9b27730d31b74": {
+      "first_seen": "2026-08-03",
+      "status": "downloaded"
+    },
+    "imf:0d7c17b8b3ecb291543872096d369c16a09ad29e051f48d5ad1406df253e": {
+      "first_seen": "2026-08-03",
+      "status": "too_old"
+    },
+    "imf:4f38700b396cc98c219f45a4dc159e9198859f7fa93c1783b2d4d740b2b6": {
+      "first_seen": "2026-08-03",
+      "status": "too_old"
+    },
+    "imf:80ef59d469f17792099dfbfd056dc89fbe51338734987b414242a7735f9a": {
+      "first_seen": "2026-08-03",
+      "status": "too_old"
+    },
+    "imf:c1c8409ca2040ae37e65ea0a5cff41940258a8bac6268d4b5622da2a0cb7": {
+      "first_seen": "2026-08-03",
+      "status": "too_old"
+    },
+    "imf:f3485f46a6dc7b83cd8a76d46e5b2ee344962b0f86d567f1b97aa61560a2": {
+      "first_seen": "2026-08-03",
+      "status": "too_old"
+    },
+    "imf:855a04ca835dab327465493b37e13dd5c0081af994ef78733f05ba0a1c88": {
+      "first_seen": "2026-08-03",
+      "status": "too_old"
+    },
+    "imf:eb4e0125d5abcd06795da403099a17de7c56e525b8cafdcef3259c455ad4": {
+      "first_seen": "2026-08-03",
+      "status": "too_old"
+    },
+    "imf:cdbd2412b5889ae3fd337b10144592cb8a1b778fdaf810a8f164f1f945b6": {
+      "first_seen": "2026-08-03",
+      "status": "too_old"
+    },
+    "oecd:https://www.oecd.org/en/publications/efficient-fiscal-policy-to-ensure-income-security-for-the-elderly_7d6550ec-en.html": {
+      "first_seen": "2026-08-03",
+      "status": "downloaded"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/dtech_03aug26_471_e.htm": {
+      "first_seen": "2026-08-03",
+      "status": "no_pdf"
     }
   }
 }
