@@ -143,7 +143,8 @@ def migrate(zone_id: str, pattern: str, origin: str, script_name: str) -> None:
     route = exact_route(zone_id, pattern)
     if route is not None and str(route.get("script") or "") != script_name:
         raise CutoverError("route_conflict")
-    if route is None:
+    created = route is None
+    if created:
         result = api_json(
             f"/zones/{zone_id}/workers/routes",
             method="POST",
@@ -156,11 +157,13 @@ def migrate(zone_id: str, pattern: str, origin: str, script_name: str) -> None:
         if not wait_for_edge(origin, expected=True):
             raise CutoverError("edge_verify")
     except Exception:
-        try:
-            delete_edge_route(zone_id, pattern, script_name)
-            wait_for_edge(origin, expected=False, attempts=18)
-        finally:
-            raise CutoverError from None
+        if created:
+            try:
+                delete_edge_route(zone_id, pattern, script_name)
+                wait_for_edge(origin, expected=False, attempts=18)
+            except Exception:
+                pass
+        raise
 
 
 def rollback(zone_id: str, pattern: str, origin: str, script_name: str) -> None:

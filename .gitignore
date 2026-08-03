@@ -4,6 +4,8 @@ __pycache__/
 mineru_result.zip
 .DS_Store
 _portal_suite_pages/
+_neutral_site/
+.neutral_edge_runtime/
 workers/portal-suite-worker/wrangler.toml
 # Transient institution-source PDFs: only an input for the WeChat pipeline.
 # We keep the original PDF link in institution_feeds/, never the PDF itself.
