@@ -153,10 +153,21 @@ const reader = { email: "reader@example.com" };
   assert.equal(snapshotResult.stale_groups.includes("market-views"), false, "legacy Market Views must not survive as a stale group");
 
   assert.doesNotMatch(workflow, /actions\/upload-artifact/, "paid PDFs must not be exposed as Actions artifacts");
-  assert.doesNotMatch(workflow, /commit_output_dir\.sh|\bgit\s+(?:add|commit|push)\b/, "paid PDFs and synthesis output must not be committed");
+  assert.match(workflow, /prepare_public_market_view_pdf\.py/, "the public copy must remove the private ending page");
+  assert.match(workflow, /force_rebuild:[\s\S]*?type: boolean[\s\S]*?default: false/, "same-date rebuilds must require an explicit opt-in");
+  assert.match(workflow, /main already contains a valid public Market Views PDF[\s\S]*?SHOULD_BUILD=false/, "a valid same-date main PDF must make reruns idempotent");
+  assert.match(workflow, /Archive exact Market Views PDF in private R2\n\s*if: \$\{\{ env\.SHOULD_BUILD != 'false' \}\}/, "an idempotent rerun must not replace the private R2 original with the public copy");
+  assert.match(
+    workflow,
+    /commit_output_dir\.sh[\s\\]*\n\s*"market_view_summaries\/\$DATE_FOLDER"[\s\S]*?8[\s\\]*\n\s*true[\s\\]*\n\s*true/,
+    "only the exact dated directory may explicitly force-add its public-safe PDF",
+  );
+  assert.doesNotMatch(workflow, /commit_output_dir\.sh\s+"market_view_summaries"/, "the synthesis root must never be committed wholesale");
+  assert.match(workflow, /git restore --source=HEAD --worktree -- prompts\/zsxq_img\.jpg/, "the private publishing image must be restored before the public identity scan");
+  assert.match(workflow, /git add -f "\$PDF_PATH"[\s\S]*?check_public_identity\.py[\s\S]*?git reset -- "\$PDF_PATH"/, "the exact public PDF must pass the identity guard before commit");
   assert.doesNotMatch(workflow, /actions:\s*write|migrate_legacy_artifacts|archive_existing_only|commit_results/, "one-time migration privileges must not remain in the daily workflow");
-  assert.match(workflow, /permissions:\s*\n\s*contents: read/, "the private generator must not have repository write permission");
-  assert.match(gitignore, /^market_view_summaries\/$/m, "local Market Views output must remain ignored by git");
+  assert.match(workflow, /permissions:\s*\n\s*contents: write\s*\n\s*actions: read/, "the generator needs narrowly scoped repository write permission");
+  assert.match(gitignore, /^market_view_summaries\/$/m, "Market Views synthesis output must remain ignored by git");
   assert.match(app, /data-market-view-id/);
   assert.match(app, /\/market-views\/access/);
   assert.match(app, /\/market-views\/pdf\?id=/);

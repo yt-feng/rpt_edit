@@ -9,7 +9,7 @@
    - `DEEPSEEK_API_KEY`
 2. 日常自动流程从 Dropbox `/zip_backup/<日期>/` 读取 PDF；临时手动处理 repo 内 PDF 时参考 `docs/pdf-to-xhs-workflow.md`。
 3. 打开 **Actions**，按需要运行对应 workflow。
-4. 生成结果默认写到 `xhs_notes/dropbox/`、`publish_ready_zips/`、`bilingual_podcast_videos/` 或 GitHub Pages。Market Views 只在 Actions 临时工作区生成，最终 PDF 仅存入私有 Cloudflare R2。
+4. 生成结果默认写到 `xhs_notes/dropbox/`、`publish_ready_zips/`、`bilingual_podcast_videos/` 或 GitHub Pages。Market Views 原版 PDF 存入私有 Cloudflare R2；移除私有结尾页后的公开备份同时写入 `main` 的 `market_view_summaries/<日期>/`。
 
 ## 输出内容
 
@@ -41,4 +41,4 @@
 
 仓库中的站点名称、域名、账号、外部仓库和存储标识均为公开别名。生产映射、验证文件和品牌资产只保存在 GitHub 加密 Secret 或加密资产包中，并由 Runner 在临时工作区物化；不得写回 Git、日志或 artifact。
 
-自动化默认由 `PORTAL_AUTOMATION_ENABLED=false` 冻结。重新启用前必须先配置私密部署 profile 与资产密钥，并通过 workflow 内的占位符检查。生成的发布包、草稿、视频和 Blog 缓存只进入私有存储或临时工作区，不再提交到公开仓库。
+自动化默认由 `PORTAL_AUTOMATION_ENABLED=false` 冻结。重新启用前必须先配置私密部署 profile 与资产密钥，并通过 workflow 内的占位符检查。生成的发布包、草稿、视频和 Blog 缓存只进入私有存储或临时工作区；Market Views 仅将移除私有结尾页后的最终 PDF 作为例外提交到公开仓库。

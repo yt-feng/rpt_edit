@@ -67,6 +67,7 @@ git -C "$PDF_REPO_DIR" remote add origin "$PDF_REMOTE_DIR"
 git -C "$PDF_REPO_DIR" push -q -u origin main
 mkdir -p "$PDF_REPO_DIR/generated"
 printf 'private pdf fixture\n' > "$PDF_REPO_DIR/generated/source.pdf"
+printf 'private synthesis fixture\n' > "$PDF_REPO_DIR/generated/report_inputs.json"
 
 (
   cd "$PDF_REPO_DIR"
@@ -83,6 +84,10 @@ fi
 )
 if ! git -C "$PDF_REPO_DIR" ls-tree -r --name-only origin/main | grep -q '^generated/source.pdf$'; then
   echo "The explicit allow_force_pdfs switch must retain compatibility."
+  exit 1
+fi
+if git -C "$PDF_REPO_DIR" ls-tree -r --name-only origin/main | grep -q '^generated/report_inputs.json$'; then
+  echo "Explicit PDF forcing must not commit ignored synthesis internals."
   exit 1
 fi
 
