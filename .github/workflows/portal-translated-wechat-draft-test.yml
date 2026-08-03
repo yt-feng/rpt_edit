@@ -1,0 +1,188 @@
+name: Portal translated WeChat draft test
+
+on:
+  workflow_dispatch:
+    inputs:
+      date_folder:
+        description: "Portal translated report date folder under portal_translated_reports, or latest"
+        required: true
+        default: "latest"
+      max_articles:
+        description: "Number of translated reports to convert into WeChat draft articles. Use all for every translated report."
+        required: true
+        default: "1"
+      article_offset:
+        description: "Skip this many translated report folders before selecting articles"
+        required: true
+        default: "0"
+      articles_per_draft:
+        description: "Number of articles in each WeChat draft item"
+        required: true
+        default: "8"
+      max_body_chars:
+        description: "Approximate visible Chinese character budget for each article"
+        required: true
+        default: "1200"
+      min_inline_images:
+        description: "Minimum body images per article; AI images fill missing slots"
+        required: true
+        default: "3"
+      max_inline_images:
+        description: "Max body images uploaded into each article body"
+        required: true
+        default: "3"
+      source_run_id:
+        description: "Optional run id of a Portal translated reports artifact to download before building drafts"
+        required: false
+        default: ""
+      source_artifact_name:
+        description: "Optional artifact name from source_run_id. Defaults to portal-translated-reports-<run_id>"
+        required: false
+        default: ""
+      dry_run:
+        description: "Build draft payloads without calling WeChat APIs"
+        required: true
+        type: boolean
+        default: true
+      publish:
+        description: "Submit the created WeChat draft for publishing. Keep false for draft-only tests."
+        required: true
+        type: boolean
+        default: false
+      commit_summary:
+        description: "Commit generated draft payload summaries back to repo"
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+env:
+  PYTHONUNBUFFERED: "1"
+
+concurrency:
+  group: portal-translated-wechat-draft-test
+  cancel-in-progress: false
+
+jobs:
+  build-wechat-drafts:
+    if: ${{ vars.PORTAL_AUTOMATION_ENABLED == 'true' }}
+    runs-on: [self-hosted, wechat-draft]
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          clean: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .github
+            scripts
+            prompts
+            requirements.txt
+            wechat_drafts
+
+      - name: Pull latest generated translated reports
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          DATE_FOLDER="${{ github.event.inputs.date_folder || 'latest' }}"
+          RESOLVED_DATE_FOLDER="$DATE_FOLDER"
+          git fetch --filter=blob:none --no-tags --prune --depth=1 origin +refs/heads/main:refs/remotes/origin/main
+          if [ "$DATE_FOLDER" = "latest" ]; then
+            RESOLVED_DATE_FOLDER="$(git ls-tree -d --name-only origin/main portal_translated_reports | sed 's#portal_translated_reports/##' | grep -E '^[0-9]{6,8}$' | sort -n | tail -1)"
+            if [ -z "$RESOLVED_DATE_FOLDER" ]; then
+              echo "No date-named folders found under portal_translated_reports"
+              exit 1
+            fi
+          fi
+          git sparse-checkout set --no-cone \
+            .github \
+            scripts \
+            prompts \
+            requirements.txt \
+            "portal_translated_reports/$RESOLVED_DATE_FOLDER" \
+            "wechat_drafts/$RESOLVED_DATE_FOLDER"
+          git reset --hard origin/main
+          git clean -fdx
+          echo "RESOLVED_DATE_FOLDER=$RESOLVED_DATE_FOLDER" >> "$GITHUB_ENV"
+
+      - name: Download translated reports artifact
+        if: ${{ github.event.inputs.source_run_id != '' }}
+        uses: actions/download-artifact@v4
+        with:
+          run-id: ${{ github.event.inputs.source_run_id }}
+          name: ${{ github.event.inputs.source_artifact_name || format('portal-translated-reports-{0}', github.event.inputs.source_run_id) }}
+          github-token: ${{ github.token }}
+          path: .
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Materialize private publishing image
+        env:
+          PORTAL_PRIVATE_PUBLISH_ASSET_KEY: ${{ secrets.PORTAL_PRIVATE_PUBLISH_ASSET_KEY }}
+        run: bash scripts/materialize_private_social_asset.sh prompts
+
+      - name: Build, upload, or publish WeChat draft payloads
+        env:
+          WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
+          WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+        run: |
+          set -o pipefail
+          DATE_FOLDER="${{ github.event.inputs.date_folder || 'latest' }}"
+          if [ "$DATE_FOLDER" = "latest" ]; then
+            DATE_FOLDER="${RESOLVED_DATE_FOLDER:-latest}"
+          fi
+          MAX_ARTICLES="${{ github.event.inputs.max_articles || '1' }}"
+          ARTICLE_OFFSET="${{ github.event.inputs.article_offset || '0' }}"
+          ARTICLES_PER_DRAFT="${{ github.event.inputs.articles_per_draft || '8' }}"
+          MAX_BODY_CHARS="${{ github.event.inputs.max_body_chars || '1200' }}"
+          MIN_INLINE_IMAGES="${{ github.event.inputs.min_inline_images || '3' }}"
+          MAX_INLINE_IMAGES="${{ github.event.inputs.max_inline_images || '3' }}"
+          DRY_RUN="${{ github.event.inputs.dry_run || 'true' }}"
+          PUBLISH="${{ github.event.inputs.publish || 'false' }}"
+
+          ARGS=()
+          if [ "$DRY_RUN" = "true" ]; then
+            ARGS+=(--dry-run)
+          fi
+          if [ "$PUBLISH" = "true" ]; then
+            ARGS+=(--publish)
+          fi
+
+          python scripts/push_portal_translated_to_wechat_drafts.py \
+            --translated-root "portal_translated_reports" \
+            --date-folder "$DATE_FOLDER" \
+            --output-root "wechat_drafts" \
+            --max-articles "$MAX_ARTICLES" \
+            --article-offset "$ARTICLE_OFFSET" \
+            --articles-per-draft "$ARTICLES_PER_DRAFT" \
+            --max-body-chars "$MAX_BODY_CHARS" \
+            --min-inline-images "$MIN_INLINE_IMAGES" \
+            --max-inline-images "$MAX_INLINE_IMAGES" \
+            "${ARGS[@]}" 2>&1 | tee wechat_drafts_progress.log
+
+      - name: Upload WeChat draft artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: portal-translated-wechat-drafts-${{ github.run_id }}
+          path: |
+            wechat_drafts
+            wechat_drafts_progress.log
+          if-no-files-found: error
+
+      - name: Commit WeChat draft summaries
+        if: ${{ github.event.inputs.commit_summary == 'true' }}
+        run: |
+          bash scripts/commit_output_dir.sh "wechat_drafts" "Generate Portal translated WeChat draft payloads" 8

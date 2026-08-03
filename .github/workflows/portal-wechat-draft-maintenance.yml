@@ -1,0 +1,222 @@
+name: Portal WeChat Draft Maintenance
+
+on:
+  workflow_dispatch:
+    inputs:
+      date_folder:
+        description: "Portal translated report date folder, e.g. 260703, or latest"
+        required: true
+        default: "latest"
+      summary_path:
+        description: "Existing WeChat draft summary to delete first. Empty uses wechat_drafts/<date_folder>/wechat_draft_summary.json"
+        required: false
+        default: ""
+      translated_root:
+        description: "Translated report root to upload from"
+        required: true
+        default: "portal_translated_reports"
+      output_root:
+        description: "WeChat draft output root"
+        required: true
+        default: "wechat_drafts"
+      include_institutions:
+        description: "Comma list of institution keys/names to upload, e.g. bis. Empty/all uploads every selected report."
+        required: false
+        default: ""
+      extra_media_ids:
+        description: "Comma/newline separated extra draft media_id values to delete"
+        required: false
+        default: ""
+      delete_existing:
+        description: "Delete media_id values from the existing summary before reuploading"
+        required: true
+        type: boolean
+        default: true
+      reupload:
+        description: "Upload Portal translated reports into new WeChat drafts"
+        required: true
+        type: boolean
+        default: true
+      max_articles:
+        description: "Number of Portal translated reports to upload; use all for every report"
+        required: true
+        default: "all"
+      article_offset:
+        description: "Zero-based offset into the Portal translated report list"
+        required: true
+        default: "0"
+      articles_per_draft:
+        description: "Number of articles in each WeChat draft item"
+        required: true
+        default: "8"
+      max_body_chars:
+        description: "Approximate visible Chinese character budget for each article"
+        required: true
+        default: "1200"
+      min_inline_images:
+        description: "Minimum body images per article"
+        required: true
+        default: "3"
+      max_inline_images:
+        description: "Maximum body images per article"
+        required: true
+        default: "3"
+      publish:
+        description: "Submit created drafts for publishing"
+        required: true
+        type: boolean
+        default: false
+      commit_results:
+        description: "Commit new WeChat draft summaries to main"
+        required: true
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+env:
+  PYTHONUNBUFFERED: "1"
+
+concurrency:
+  group: portal-wechat-draft-maintenance-${{ github.event.inputs.output_root || 'wechat_drafts' }}-${{ github.event.inputs.date_folder || 'latest' }}
+  cancel-in-progress: false
+
+jobs:
+  repair-portal-wechat-drafts:
+    if: ${{ vars.PORTAL_AUTOMATION_ENABLED == 'true' }}
+    runs-on: [self-hosted, wechat-draft]
+    timeout-minutes: 180
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          clean: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .github
+            scripts
+            prompts
+            requirements.txt
+            ${{ inputs.translated_root }}
+            ${{ inputs.output_root }}
+
+      - name: Pull latest main
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git sparse-checkout set --no-cone \
+            .github \
+            scripts \
+            prompts \
+            requirements.txt \
+            "${{ inputs.translated_root }}" \
+            "${{ inputs.output_root }}"
+          git fetch --filter=blob:none --no-tags --prune --depth=1 origin +refs/heads/main:refs/remotes/origin/main
+          git reset --hard origin/main
+          git clean -fdx
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Resolve date folder and summary path
+        run: |
+          DATE_FOLDER="${{ inputs.date_folder }}"
+          if [ "$DATE_FOLDER" = "latest" ]; then
+            DATE_FOLDER=$(python - <<'PY'
+          from pathlib import Path
+          import re
+
+          root = Path("${{ inputs.translated_root }}")
+          candidates = [p.name for p in root.iterdir() if p.is_dir() and re.fullmatch(r"\d{6,8}", p.name)]
+          if not candidates:
+              raise SystemExit(f"No date folders found under {root}")
+          print(max(candidates, key=lambda value: int(value)))
+          PY
+          )
+          fi
+          SUMMARY_PATH="${{ inputs.summary_path }}"
+          if [ -z "$SUMMARY_PATH" ]; then
+            SUMMARY_PATH="${{ inputs.output_root }}/$DATE_FOLDER/wechat_draft_summary.json"
+          fi
+          echo "DATE_FOLDER=$DATE_FOLDER" >> "$GITHUB_ENV"
+          echo "SUMMARY_PATH=$SUMMARY_PATH" >> "$GITHUB_ENV"
+          echo "WECHAT_DRAFT_DIR=${{ inputs.output_root }}/$DATE_FOLDER" >> "$GITHUB_ENV"
+          mkdir -p "${{ inputs.output_root }}/$DATE_FOLDER"
+          echo "::notice::date_folder=$DATE_FOLDER"
+          echo "::notice::summary_path=$SUMMARY_PATH"
+
+      - name: Delete existing WeChat drafts from summary
+        if: ${{ inputs.delete_existing == true }}
+        env:
+          WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
+          WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+        run: |
+          MEDIA_ARGS=()
+          while IFS= read -r media_id; do
+            media_id="$(echo "$media_id" | xargs)"
+            if [ -n "$media_id" ]; then
+              MEDIA_ARGS+=(--media-id "$media_id")
+            fi
+          done < <(printf '%s\n' "${{ inputs.extra_media_ids }}" | tr ',' '\n')
+          python scripts/delete_wechat_drafts.py \
+            --summary "$SUMMARY_PATH" \
+            --output "$WECHAT_DRAFT_DIR/deleted_drafts_summary.json" \
+            "${MEDIA_ARGS[@]}" \
+            --timeout 120
+
+      - name: Materialize private publishing image
+        env:
+          PORTAL_PRIVATE_PUBLISH_ASSET_KEY: ${{ secrets.PORTAL_PRIVATE_PUBLISH_ASSET_KEY }}
+        run: bash scripts/materialize_private_social_asset.sh prompts
+
+      - name: Upload Portal translated reports to WeChat drafts
+        if: ${{ inputs.reupload == true }}
+        env:
+          WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
+          WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+        run: |
+          PUBLISH_ARGS=()
+          if [ "${{ inputs.publish }}" = "true" ]; then
+            PUBLISH_ARGS+=(--publish)
+          fi
+          python scripts/push_portal_translated_to_wechat_drafts.py \
+            --translated-root "${{ inputs.translated_root }}" \
+            --date-folder "$DATE_FOLDER" \
+            --output-root "${{ inputs.output_root }}" \
+            --max-articles "${{ inputs.max_articles }}" \
+            --article-offset "${{ inputs.article_offset }}" \
+            --include-institutions "${{ inputs.include_institutions }}" \
+            --articles-per-draft "${{ inputs.articles_per_draft }}" \
+            --max-body-chars "${{ inputs.max_body_chars }}" \
+            --min-inline-images "${{ inputs.min_inline_images }}" \
+            --max-inline-images "${{ inputs.max_inline_images }}" \
+            "${PUBLISH_ARGS[@]}" 2>&1 | tee "$WECHAT_DRAFT_DIR/wechat_drafts_progress.log"
+
+      - name: Upload WeChat draft maintenance artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: portal-wechat-draft-maintenance-${{ env.DATE_FOLDER }}-${{ github.run_id }}
+          path: ${{ env.WECHAT_DRAFT_DIR }}
+          if-no-files-found: error
+
+      - name: Commit WeChat draft summaries
+        if: ${{ inputs.commit_results == true }}
+        run: |
+          bash scripts/commit_output_dir.sh "$WECHAT_DRAFT_DIR" "Repair Portal translated WeChat drafts $DATE_FOLDER" 8
+
+  notify-failure:
+    needs: [repair-portal-wechat-drafts]
+    if: ${{ vars.PORTAL_AUTOMATION_ENABLED == 'true' && always() && !cancelled() && needs.repair-portal-wechat-drafts.result == 'failure' }}
+    uses: ./.github/workflows/portal-ops-alert.yml
+    with:
+      source_workflow: Portal WeChat Draft Maintenance
+      source_results: maintenance=${{ needs.repair-portal-wechat-drafts.result }}
+    secrets: inherit

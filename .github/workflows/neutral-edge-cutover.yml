@@ -1,0 +1,316 @@
+name: Neutral edge hosting cutover
+run-name: Neutral edge hosting ${{ inputs.operation }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: "Choose migrate or rollback"
+        required: true
+        type: choice
+        options:
+          - migrate
+          - switch
+          - rollback
+        default: migrate
+
+permissions:
+  contents: read
+
+concurrency:
+  group: neutral-edge-hosting-cutover
+  cancel-in-progress: false
+
+jobs:
+  edge:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    steps:
+      - name: Checkout public source
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate public source
+        run: |
+          set -euo pipefail
+          python3 -B scripts/check_public_identity.py
+          node --input-type=module --check < workers/edge-static-host/src/index.js
+          python3 -m py_compile scripts/edge_route_cutover.py
+
+      - name: Prepare masked runtime context
+        env:
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+        run: |
+          set -euo pipefail
+          echo "::add-mask::$PORTAL_SITE_URL"
+          echo "::add-mask::$R2_BUCKET"
+          site_host="$(python3 - <<'PY'
+          import os
+          from urllib.parse import urlsplit
+
+          parsed = urlsplit(os.environ["PORTAL_SITE_URL"])
+          if parsed.scheme != "https" or not parsed.hostname or parsed.path not in {"", "/"}:
+              raise SystemExit("Configured site URL is not a bare HTTPS origin")
+          print(parsed.hostname)
+          PY
+          )"
+          release_id="$(openssl rand -hex 16)"
+          echo "::add-mask::$site_host"
+          echo "::add-mask::$release_id"
+          printf 'SITE_HOST=%s\n' "$site_host" >> "$GITHUB_ENV"
+          printf 'STATIC_RELEASE=%s\n' "$release_id" >> "$GITHUB_ENV"
+
+      - name: Install upload dependency
+        if: inputs.operation == 'migrate'
+        run: python3 -m pip install --disable-pip-version-check "boto3>=1.34,<2"
+
+      - name: Materialize private deployment profile
+        if: inputs.operation == 'migrate'
+        env:
+          PORTAL_PRIVATE_CONFIG_B64: ${{ secrets.PORTAL_PRIVATE_CONFIG_B64 }}
+          PORTAL_PRIVATE_ASSET_KEY: ${{ secrets.PORTAL_PRIVATE_ASSET_KEY }}
+          PORTAL_PRIVATE_PUBLISH_ASSET_KEY: ${{ secrets.PORTAL_PRIVATE_PUBLISH_ASSET_KEY }}
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+        run: |
+          set -euo pipefail
+          echo "::add-mask::$PORTAL_SITE_URL"
+          python3 scripts/render_private_config.py --github-add-mask
+          python3 scripts/render_private_config.py \
+            --root portal_suite/site_src \
+            --root scripts/build_portal_suite_site.py \
+            --root workers/portal-suite-worker/src/index.js
+          bash scripts/materialize_private_assets.sh portal_suite/site_src
+          test -s portal_suite/site_src/assets/contact-card.jpg
+
+      - name: Build private static release
+        if: inputs.operation == 'migrate'
+        env:
+          PORTAL_WORKER_URL: ${{ secrets.PORTAL_WORKER_URL }}
+        run: |
+          set -euo pipefail
+          echo "::add-mask::$PORTAL_WORKER_URL"
+          if ! python3 scripts/build_portal_suite_site.py \
+            --catalog-path portal_suite/data/catalog.json \
+            --password-rules portal_suite/password_rules.json \
+            --site-src portal_suite/site_src \
+            --wechat-drafts-root wechat_drafts \
+            --blog-archive-root portal_suite/data/blog_archive \
+            --output-dir _neutral_site \
+            --worker-base-url "$PORTAL_WORKER_URL" \
+            >"$RUNNER_TEMP/static-build.log" 2>&1
+          then
+            echo "Static build failed" >&2
+            exit 1
+          fi
+          test -s _neutral_site/index.html
+          test -s _neutral_site/assets/app.js
+          test -s _neutral_site/data/catalog.json
+          test -s _neutral_site/data/search_index.json
+          test -s _neutral_site/data/password_rules.json
+          python3 - <<'PY'
+          from pathlib import Path
+
+          root = Path("_neutral_site")
+          files = [path for path in root.rglob("*") if path.is_file() and not path.is_symlink()]
+          total = sum(path.stat().st_size for path in files)
+          if not 1000 <= len(files) <= 20000:
+              raise SystemExit("Static file count is outside the expected range")
+          if not 100_000_000 <= total <= 1_000_000_000:
+              raise SystemExit("Static release size is outside the expected range")
+          if any(path.is_symlink() for path in root.rglob("*")):
+              raise SystemExit("Static release contains a symbolic link")
+          print(f"static_files={len(files)} static_bytes={total}")
+          PY
+
+      - name: Upload immutable release to private object storage
+        if: inputs.operation == 'migrate'
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from __future__ import annotations
+
+          import mimetypes
+          import os
+          import sys
+          from concurrent.futures import ThreadPoolExecutor, as_completed
+          from pathlib import Path
+
+          import boto3
+          from boto3.s3.transfer import TransferConfig
+          from botocore.config import Config
+
+          def main() -> None:
+              root = Path("_neutral_site")
+              release = os.environ["STATIC_RELEASE"].strip().lower()
+              if len(release) != 32 or any(character not in "0123456789abcdef" for character in release):
+                  raise RuntimeError
+              prefix = f"edge-static/releases/{release}/"
+              bucket = os.environ["R2_BUCKET"]
+              account_id = os.environ["R2_ACCOUNT_ID"]
+              client = boto3.client(
+                  "s3",
+                  endpoint_url=f"https://{account_id}.r2.cloudflarestorage.com",
+                  aws_access_key_id=os.environ["R2_ACCESS_KEY_ID"],
+                  aws_secret_access_key=os.environ["R2_SECRET_ACCESS_KEY"],
+                  region_name="auto",
+                  config=Config(
+                      signature_version="s3v4",
+                      max_pool_connections=24,
+                      retries={"max_attempts": 8, "mode": "adaptive"},
+                  ),
+              )
+              transfer = TransferConfig(
+                  multipart_threshold=16 * 1024 * 1024,
+                  multipart_chunksize=16 * 1024 * 1024,
+                  max_concurrency=10,
+                  use_threads=True,
+              )
+              files = sorted(path for path in root.rglob("*") if path.is_file() and not path.is_symlink())
+              uploaded: set[str] = set()
+              total_bytes = 0
+
+              def upload(path: Path) -> tuple[str, int]:
+                  relative = path.relative_to(root).as_posix()
+                  key = prefix + relative
+                  content_type, content_encoding = mimetypes.guess_type(path.name)
+                  suffix = path.suffix.lower()
+                  extra: dict[str, str] = {
+                      "ContentType": content_type or "application/octet-stream",
+                      "CacheControl": (
+                          "public, max-age=0, must-revalidate"
+                          if suffix in {".html", ".json", ".xml", ".txt"}
+                          else "public, max-age=3600"
+                      ),
+                  }
+                  if content_encoding:
+                      extra["ContentEncoding"] = content_encoding
+                  client.upload_file(str(path), bucket, key, ExtraArgs=extra, Config=transfer)
+                  return key, path.stat().st_size
+
+              with ThreadPoolExecutor(max_workers=10) as executor:
+                  futures = {executor.submit(upload, path): path for path in files}
+                  for future in as_completed(futures):
+                      key, size = future.result()
+                      uploaded.add(key)
+                      total_bytes += size
+
+              if len(uploaded) != len(files):
+                  raise RuntimeError
+
+              runtime_data = (
+                  root / "data" / "catalog.json",
+                  root / "data" / "search_index.json",
+                  root / "data" / "password_rules.json",
+              )
+              for path in runtime_data:
+                  key = f"edge-static/runtime-data/{path.name}"
+                  client.upload_file(
+                      str(path),
+                      bucket,
+                      key,
+                      ExtraArgs={
+                          "ContentType": "application/json",
+                          "CacheControl": "no-store",
+                      },
+                      Config=transfer,
+                  )
+                  metadata = client.head_object(Bucket=bucket, Key=key)
+                  if int(metadata.get("ContentLength", -1)) != path.stat().st_size:
+                      raise RuntimeError
+              print(
+                  f"uploaded_files={len(uploaded)} uploaded_bytes={total_bytes} "
+                  f"runtime_data_files={len(runtime_data)}"
+              )
+
+          try:
+              main()
+          except Exception:
+              print("Static upload failed", file=sys.stderr)
+              raise SystemExit(1) from None
+          PY
+
+      - name: Prepare inactive neutral edge runtime
+        if: inputs.operation == 'migrate'
+        env:
+          PORTAL_PRIVATE_CONFIG_B64: ${{ secrets.PORTAL_PRIVATE_CONFIG_B64 }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+        run: |
+          set -euo pipefail
+          mkdir -p .neutral_edge_runtime
+          cp workers/edge-static-host/src/index.js .neutral_edge_runtime/index.js
+          cat > .neutral_edge_runtime/wrangler.toml <<EOF
+          name = "svc-04df8d213b73"
+          main = "index.js"
+          compatibility_date = "2026-08-01"
+          workers_dev = false
+          preview_urls = false
+
+          [vars]
+          STATIC_PREFIX = "edge-static/releases/$STATIC_RELEASE/"
+
+          [[r2_buckets]]
+          binding = "STATIC_BUCKET"
+          bucket_name = "$R2_BUCKET"
+
+          [[services]]
+          binding = "API"
+          service = "portal-suite-worker"
+
+          [observability]
+          enabled = false
+          EOF
+          python3 scripts/render_private_config.py \
+            --skip-generated-files \
+            --root .neutral_edge_runtime/wrangler.toml
+
+      - name: Deploy inactive neutral edge runtime
+        id: edge_deploy
+        if: inputs.operation == 'migrate'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID }}
+          workingDirectory: .neutral_edge_runtime
+          command: deploy
+
+      - name: Verify active edge route or switch
+        if: inputs.operation == 'migrate' || inputs.operation == 'switch'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          EDGE_SCRIPT_NAME: svc-04df8d213b73
+        run: |
+          set -euo pipefail
+          if curl --fail --silent --show-error --head --max-time 30 "https://$SITE_HOST/" | tr -d '\r' | grep -qi '^x-origin-class: edge-static$'
+          then
+            echo "Neutral edge route is already active."
+            exit 0
+          fi
+          python3 -B scripts/edge_route_cutover.py migrate
+
+      - name: Restore previous origin route
+        if: inputs.operation == 'rollback'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          EDGE_SCRIPT_NAME: svc-04df8d213b73
+        run: python3 -B scripts/edge_route_cutover.py rollback
+
+      - name: Automatic route rollback after failure
+        if: ${{ failure() && (inputs.operation == 'migrate' || inputs.operation == 'switch') }}
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          EDGE_SCRIPT_NAME: svc-04df8d213b73
+        run: python3 -B scripts/edge_route_cutover.py rollback || true

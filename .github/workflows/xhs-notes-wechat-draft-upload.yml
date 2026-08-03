@@ -1,0 +1,248 @@
+name: Upload XHS notes to WeChat drafts
+
+on:
+  workflow_dispatch:
+    inputs:
+      date_folder:
+        description: "xhs_notes/dropbox date folder, or latest"
+        required: true
+        default: "260801"
+      source_run_id:
+        description: "Actions run containing final-dropbox-macro-shard artifacts (recovery mode)"
+        required: false
+        default: ""
+      source_artifact_pattern:
+        description: "Artifact pattern in source_run_id"
+        required: true
+        default: "final-dropbox-macro-shard-*"
+      source_handoff_run_id:
+        description: "Private R2 handoff run id (retry mode; mutually exclusive with source_run_id)"
+        required: false
+        default: ""
+      expected_shards:
+        description: "Expected downloaded shard count; 0 disables the check"
+        required: true
+        default: "0"
+      expected_articles:
+        description: "Expected report/article count; 0 disables the check"
+        required: true
+        default: "0"
+      max_articles:
+        description: "Number of articles to upload. Use all for every article."
+        required: true
+        default: "all"
+      article_offset:
+        description: "Skip this many article folders before selecting articles"
+        required: true
+        default: "0"
+      articles_per_draft:
+        description: "Number of articles in each WeChat draft item"
+        required: true
+        default: "8"
+      max_body_chars:
+        description: "Approximate visible Chinese character budget for each article"
+        required: true
+        default: "1200"
+      min_inline_images:
+        description: "Minimum body images per article"
+        required: true
+        default: "3"
+      max_inline_images:
+        description: "Max body images uploaded into each article body"
+        required: true
+        default: "3"
+      dry_run:
+        description: "Build draft payloads without calling WeChat APIs"
+        required: true
+        type: boolean
+        default: false
+      publish:
+        description: "Submit created WeChat drafts for publishing. Keep false for draft-only uploads."
+        required: true
+        type: boolean
+        default: false
+      delete_existing:
+        description: "Delete existing drafts from wechat_drafts/xhs_notes/<date>/wechat_draft_summary.json before upload"
+        required: true
+        type: boolean
+        default: false
+      commit_summary:
+        description: "Legacy compatibility switch; keep false for the public repository"
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  actions: read
+
+env:
+  PYTHONUNBUFFERED: "1"
+  PRIVATE_HANDOFF_ROOT: "_private-workflow-handoff/xhs"
+
+concurrency:
+  group: xhs-notes-wechat-draft-upload
+  cancel-in-progress: false
+
+jobs:
+  upload-xhs-notes-drafts:
+    runs-on: [self-hosted, wechat-draft]
+    timeout-minutes: 180
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          clean: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .github
+            scripts
+            prompts
+            requirements.txt
+
+      - name: Prepare clean recovery workspace
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          DATE_FOLDER="${{ github.event.inputs.date_folder || 'latest' }}"
+          if ! printf '%s\n' "$DATE_FOLDER" | grep -Eq '^[0-9]{6,8}$'; then
+            echo "Recovery requires an explicit 6-8 digit date_folder." >&2
+            exit 1
+          fi
+          git clean -fdx
+          echo "RESOLVED_DATE_FOLDER=$DATE_FOLDER" >> "$GITHUB_ENV"
+
+      - name: Validate recovery source
+        env:
+          SOURCE_RUN_ID: ${{ github.event.inputs.source_run_id }}
+          SOURCE_HANDOFF_RUN_ID: ${{ github.event.inputs.source_handoff_run_id }}
+        run: |
+          if [ -n "$SOURCE_RUN_ID" ] && [ -n "$SOURCE_HANDOFF_RUN_ID" ]; then
+            echo "source_run_id and source_handoff_run_id are mutually exclusive." >&2
+            exit 1
+          fi
+          if [ -z "$SOURCE_RUN_ID" ] && [ -z "$SOURCE_HANDOFF_RUN_ID" ]; then
+            echo "Provide source_run_id or source_handoff_run_id." >&2
+            exit 1
+          fi
+
+      - name: Download historical shard artifacts
+        if: ${{ github.event.inputs.source_run_id != '' }}
+        uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: ${{ github.event.inputs.source_run_id }}
+          pattern: ${{ github.event.inputs.source_artifact_pattern }}
+          path: _recovery_shard_artifacts
+
+      - name: Materialize historical shard artifacts
+        if: ${{ github.event.inputs.source_run_id != '' }}
+        run: |
+          python scripts/materialize_shard_artifacts.py \
+            --artifact-root _recovery_shard_artifacts \
+            --destination "xhs_notes/dropbox/$RESOLVED_DATE_FOLDER" \
+            --expected-shards "${{ github.event.inputs.expected_shards || '0' }}" \
+            --expected-reports "${{ github.event.inputs.expected_articles || '0' }}"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+          python -m pip install boto3
+
+      - name: Download shards from private R2 handoff
+        if: ${{ github.event.inputs.source_handoff_run_id != '' }}
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python scripts/private_workflow_handoff.py download-shards \
+            --prefix "$PRIVATE_HANDOFF_ROOT/${{ github.event.inputs.source_handoff_run_id }}/$RESOLVED_DATE_FOLDER" \
+            --destination "xhs_notes/dropbox/$RESOLVED_DATE_FOLDER" \
+            --expected-count "${{ github.event.inputs.expected_shards || '0' }}"
+
+      - name: Materialize private publishing image
+        env:
+          PORTAL_PRIVATE_PUBLISH_ASSET_KEY: ${{ secrets.PORTAL_PRIVATE_PUBLISH_ASSET_KEY }}
+        run: bash scripts/materialize_private_social_asset.sh prompts
+
+      - name: Upload generated XHS notes to WeChat drafts
+        env:
+          WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
+          WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+        run: |
+          set -o pipefail
+          DATE_FOLDER="${{ github.event.inputs.date_folder || 'latest' }}"
+          RESOLVED_DATE_FOLDER="${RESOLVED_DATE_FOLDER:-$DATE_FOLDER}"
+          if [ "$DATE_FOLDER" = "latest" ]; then
+            DATE_FOLDER="$RESOLVED_DATE_FOLDER"
+          fi
+          MAX_ARTICLES="${{ github.event.inputs.max_articles || 'all' }}"
+          ARTICLE_OFFSET="${{ github.event.inputs.article_offset || '0' }}"
+          ARTICLES_PER_DRAFT="${{ github.event.inputs.articles_per_draft || '8' }}"
+          MAX_BODY_CHARS="${{ github.event.inputs.max_body_chars || '1200' }}"
+          MIN_INLINE_IMAGES="${{ github.event.inputs.min_inline_images || '3' }}"
+          MAX_INLINE_IMAGES="${{ github.event.inputs.max_inline_images || '3' }}"
+          DRY_RUN="${{ github.event.inputs.dry_run || 'false' }}"
+          PUBLISH="${{ github.event.inputs.publish || 'false' }}"
+          DELETE_EXISTING="${{ github.event.inputs.delete_existing || 'false' }}"
+
+          WECHAT_DRAFT_DIR="wechat_drafts/xhs_notes/$RESOLVED_DATE_FOLDER"
+          mkdir -p "$WECHAT_DRAFT_DIR"
+          if [ "$DELETE_EXISTING" = "true" ]; then
+            python scripts/delete_wechat_drafts.py \
+              --summary "$WECHAT_DRAFT_DIR/wechat_draft_summary.json" \
+              --output "$WECHAT_DRAFT_DIR/deleted_drafts_summary.json" \
+              --timeout 120
+          fi
+
+          ARGS=()
+          if [ "$DRY_RUN" = "true" ]; then
+            ARGS+=(--dry-run)
+          fi
+          if [ "$PUBLISH" = "true" ]; then
+            ARGS+=(--publish)
+          fi
+
+          python scripts/push_xhs_notes_to_wechat_drafts.py \
+            --dropbox-output-root "xhs_notes/dropbox" \
+            --date-folder "$DATE_FOLDER" \
+            --output-root "wechat_drafts/xhs_notes" \
+            --max-articles "$MAX_ARTICLES" \
+            --article-offset "$ARTICLE_OFFSET" \
+            --articles-per-draft "$ARTICLES_PER_DRAFT" \
+            --max-body-chars "$MAX_BODY_CHARS" \
+            --min-inline-images "$MIN_INLINE_IMAGES" \
+            --max-inline-images "$MAX_INLINE_IMAGES" \
+            "${ARGS[@]}" 2>&1 | tee wechat_drafts_progress.log
+
+          echo "WECHAT_DRAFT_DIR=$WECHAT_DRAFT_DIR" >> "$GITHUB_ENV"
+
+      - name: Upload WeChat draft artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: xhs-notes-wechat-drafts-${{ github.event.inputs.date_folder || 'latest' }}-${{ github.run_id }}
+          path: |
+            ${{ env.WECHAT_DRAFT_DIR }}
+            wechat_drafts_progress.log
+          if-no-files-found: error
+          retention-days: 2
+
+  notify-failure:
+    needs: [upload-xhs-notes-drafts]
+    if: ${{ always() && !cancelled() && needs.upload-xhs-notes-drafts.result == 'failure' }}
+    uses: ./.github/workflows/portal-ops-alert.yml
+    with:
+      source_workflow: Upload XHS notes to WeChat drafts
+      source_results: upload=${{ needs.upload-xhs-notes-drafts.result }}
+    secrets: inherit

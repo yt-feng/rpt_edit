@@ -1,0 +1,649 @@
+{
+  "version": 1,
+  "items": {
+    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/business%20functions/people%20and%20organizational%20performance/our%20insights/the%20state%20of%20organizations/2026/the-state-of-organizations-2026.pdf": {
+      "first_seen": "2026-06-28",
+      "status": "downloaded"
+    },
+    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/business%20functions/people%20and%20organizational%20performance/our%20insights/hr%20monitor%202026%20a%20turning%20point%20for%20the%20people%20function/hr-monitor-2026-a-turning-point-for-the-people-function_final.pdf": {
+      "first_seen": "2026-06-28",
+      "status": "downloaded"
+    },
+    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/business%20functions/quantumblack/our%20insights/the%20state%20of%20ai/march%202025/the-state-of-ai-how-organizations-are-rewiring-to-capture-value_final.pdf": {
+      "first_seen": "2026-06-28",
+      "status": "downloaded"
+    },
+    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/featured%20insights/people%20in%20progress%20blog/learning%20trends%202025/2025_mckinsey%20learning%20perspective.pdf": {
+      "first_seen": "2026-06-28",
+      "status": "downloaded"
+    },
+    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/mckinsey%20global%20institute/our%20research/at%20250%20sustaining%20americas%20competitive%20edge/at-250-sustaining-americas-competitive-edge-final.pdf": {
+      "first_seen": "2026-06-28",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/ai-for-ceos": {
+      "first_seen": "2026-06-28",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2025/video-gaming-report-2026-next-era-of-growth": {
+      "first_seen": "2026-06-28",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/collections/value-creators-report/insurance": {
+      "first_seen": "2026-06-28",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/soft-rates-and-big-risks-reshape-the-us-p-and-c-market": {
+      "first_seen": "2026-06-28",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2025/are-you-generating-value-from-ai-the-widening-gap": {
+      "first_seen": "2026-06-28",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/from-recovery-to-resurgence-in-global-fintech": {
+      "first_seen": "2026-06-28",
+      "status": "downloaded"
+    },
+    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/business%20functions/people%20and%20organizational%20performance/our%20insights/the%20state%20of%20organizations/2026/the-state-of-organizations-2026-vf.pdf": {
+      "first_seen": "2026-06-29",
+      "status": "downloaded"
+    },
+    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/business%20functions/quantumblack/our%20insights/the%20state%20of%20ai/november%202025/the-state-of-ai-2025-agents-innovation_cmyk-v1.pdf": {
+      "first_seen": "2026-06-29",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/a-new-playbook-for-commercial-real-estate-investors": {
+      "first_seen": "2026-06-29",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/how-the-factory-of-the-future-reshapes-manufacturing": {
+      "first_seen": "2026-06-29",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/how-cpg-retail-leaders-maximize-ai-roi": {
+      "first_seen": "2026-06-29",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/how-ai-is-reshaping-the-global-food-system": {
+      "first_seen": "2026-06-29",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/insurance-value-creation-an-early-look-at-returns": {
+      "first_seen": "2026-06-29",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/us-and-china-ai-strategy-causing-global-ai-divide": {
+      "first_seen": "2026-06-30",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/agentic-ai-pc-insurance-portfolio-management": {
+      "first_seen": "2026-06-30",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/value-creators-rankings-strong-markets-hard-choices": {
+      "first_seen": "2026-06-30",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/how-ai-first-banks-are-rewriting-the-rules-of-retail-banking": {
+      "first_seen": "2026-06-30",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/processed-and-pressured-cpgs-lost-decade-of-r-and-d": {
+      "first_seen": "2026-06-30",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/how-ceos-can-optimize-ai-token-costs": {
+      "first_seen": "2026-07-01",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2025/norway-the-transparency-act": {
+      "first_seen": "2026-07-01",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/managing-ai-token-costs": {
+      "first_seen": "2026-07-01",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/ai-is-moving-corporate-learning-out-of-the-classroom": {
+      "first_seen": "2026-07-01",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/the-era-of-token-based-competition-is-here": {
+      "first_seen": "2026-07-01",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/gulf-states-economic-resilience": {
+      "first_seen": "2026-07-01",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/the-four-gaps-in-next-best-action-programs": {
+      "first_seen": "2026-07-01",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/india-cybersecurity-in-the-age-of-ai-bfsi": {
+      "first_seen": "2026-07-01",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/scaling-blended-finance": {
+      "first_seen": "2026-07-01",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/why-we-still-need-a-cio-in-the-ai-first-era": {
+      "first_seen": "2026-07-01",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/the-future-of-influence-and-brand-discovery": {
+      "first_seen": "2026-07-01",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/rebuilding-asset-management-for-an-ai-first-world": {
+      "first_seen": "2026-07-01",
+      "status": "downloaded"
+    },
+    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/business%20functions/risk/our%20insights/mckinsey%20on%20risk%20number%2020/mckinsey-on-risk-and-resilience-number-20-2025.pdf": {
+      "first_seen": "2026-07-02",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/the-science-behind-next-best-action-programs": {
+      "first_seen": "2026-07-02",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/discover-the-agentic-era-of-next-best-action": {
+      "first_seen": "2026-07-02",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/agent-native-marketing-operating-model": {
+      "first_seen": "2026-07-02",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/cloud-ai-cost-beyond-token-pricing": {
+      "first_seen": "2026-07-02",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/the-ceos-guide-to-physical-ai": {
+      "first_seen": "2026-07-02",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/an-imperative-for-growth-and-the-new-economics-of-asset-management": {
+      "first_seen": "2026-07-02",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/harnessing-the-human-side-of-transformations": {
+      "first_seen": "2026-07-03",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/five-barriers-ceos-must-overcome-for-ai-impact": {
+      "first_seen": "2026-07-03",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/as-ai-investments-surge-ceos-take-the-lead": {
+      "first_seen": "2026-07-03",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/the-future-of-digital-assets-in-finance": {
+      "first_seen": "2026-07-03",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/global-wealth-growth-in-an-era-of-reordering": {
+      "first_seen": "2026-07-03",
+      "status": "downloaded"
+    },
+    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/industries/private%20equity%20and%20principal%20investors/our%20insights/mckinseys%20global%20private%20markets%20report/2026/global-private-markets-report-2026-full-report.pdf": {
+      "first_seen": "2026-07-04",
+      "status": "downloaded"
+    },
+    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/business%20functions/mckinsey%20digital/our%20insights/the%20top%20trends%20in%20tech%202025/mckinsey-technology-trends-outlook-2025.pdf": {
+      "first_seen": "2026-07-04",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/ai-will-reshape-more-jobs-than-it-replaces": {
+      "first_seen": "2026-07-04",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/smart-compliance-esrs-sustainability-reporting": {
+      "first_seen": "2026-07-06",
+      "status": "downloaded"
+    },
+    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/about%20us/social%20responsibility/2025%20esg%20report/2025%20sustainable%20and%20inclusive%20growth%20report.pdf": {
+      "first_seen": "2026-07-07",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2024/overcoming-retail-complexity-with-ai-powered-pricing": {
+      "first_seen": "2026-07-07",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2020/infographic-creating-integrated-supply-chain-in-retail-grocery": {
+      "first_seen": "2026-07-07",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/race-to-automate-the-last-mile-of-grocery-deliveries": {
+      "first_seen": "2026-07-07",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2013/retail-growth-omnichannel-alchemy-online-grocery-sales": {
+      "first_seen": "2026-07-07",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2020/private-brand-imperative-grocers": {
+      "first_seen": "2026-07-07",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2020/importance-of-offer-simplification-for-grocers": {
+      "first_seen": "2026-07-07",
+      "status": "downloaded"
+    },
+    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/industries/financial%20services/our%20insights/global%20banking%20annual%20review/global-banking-annual-review-2026-precision-with-speed-may-2026.pdf": {
+      "first_seen": "2026-07-08",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/eat-or-be-eaten-how-australian-restaurants-can-win-when-volumes-slow": {
+      "first_seen": "2026-07-08",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/luxury-healthier-foundations-and-genai": {
+      "first_seen": "2026-07-08",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/data-centres-are-the-new-critical-infrastructure-does-canada-want-its-own": {
+      "first_seen": "2026-07-08",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/middle-east-direct-to-device-in-mena-connectivity-and-resilience": {
+      "first_seen": "2026-07-08",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/building-climate-financial-resilience": {
+      "first_seen": "2026-07-08",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/reducing-clinical-procurement-costs-together": {
+      "first_seen": "2026-07-08",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/agentic-ai-strategy-cio-cto": {
+      "first_seen": "2026-07-08",
+      "status": "downloaded"
+    },
+    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/mckinsey%20global%20institute/our%20research/mckinsey%20global%20institute%202025%20in%20charts/mckinsey-global-institute-2025-in-charts.pdf": {
+      "first_seen": "2026-07-09",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/infrastructure-essentielle-centres-de-donnees": {
+      "first_seen": "2026-07-09",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/canadas-consumer-spending-is-up": {
+      "first_seen": "2026-07-09",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/how-ai-leaders-create-competitive-advantage": {
+      "first_seen": "2026-07-09",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2017/retail-consumer-products-how-discounters-are-remaking-the-grocery-industry": {
+      "first_seen": "2026-07-09",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2018/why-grocers-need-to-start-operating-like-consumer-brands": {
+      "first_seen": "2026-07-09",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2018/reset-operations-grocers-should-start-customer": {
+      "first_seen": "2026-07-09",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/retail-winning-strategies-retail-transformation-how-to-become-a-customer-centric-grocer": {
+      "first_seen": "2026-07-10",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2016/help-your-shelf-the-moves-mainstream-grocers-must-make-now": {
+      "first_seen": "2026-07-10",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2024/why-us-grocers-must-play-to-their-strengths": {
+      "first_seen": "2026-07-10",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/betting-on-grocery-store-tech-finally-makes-sense": {
+      "first_seen": "2026-07-10",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/reinventing-the-operating-system-of-work-with-ai": {
+      "first_seen": "2026-07-10",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/upstream-oil-gas-portfolio-longevity": {
+      "first_seen": "2026-07-10",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/how-ai-decision-agents-transform-strategy": {
+      "first_seen": "2026-07-10",
+      "status": "downloaded"
+    },
+    "mckinsey:https://pages.mckinsey.com/rs/473-ZYE-522/images/GEI_Global_Summary_July_2025.pdf": {
+      "first_seen": "2026-07-11",
+      "status": "downloaded"
+    },
+    "mckinsey:https://pages.mckinsey.com/rs/473-ZYE-522/images/2025%20MWC%20McKinsey%20Highlights.pdf": {
+      "first_seen": "2026-07-11",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/middle-east-mega-projects-powered-by-renewables-a-practical-playbook": {
+      "first_seen": "2026-07-12",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/ce-que-signifie-la-hausse-des-depenses-de-consommation": {
+      "first_seen": "2026-07-13",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/thailand-ai-infrastructure-strategic-opportunity": {
+      "first_seen": "2026-07-13",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/how-to-improve-defense-aviation-mission-readiness": {
+      "first_seen": "2026-07-13",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/india-pressing-the-throttle": {
+      "first_seen": "2026-07-14",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/measuring-incrementality-in-next-best-action-programs": {
+      "first_seen": "2026-07-14",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/the-four-pillars-cios-can-use-to-scale-agentic-ai": {
+      "first_seen": "2026-07-14",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/transforming-patient-access-centers-with-ai": {
+      "first_seen": "2026-07-14",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2020/industrial-products-makers-chart-new-path-digital": {
+      "first_seen": "2026-07-15",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/india-pharma-and-life-sciences-innovation-opportunity": {
+      "first_seen": "2026-07-15",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/ai-transforming-energy-trading": {
+      "first_seen": "2026-07-15",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/three-forces-that-are-reshaping-the-business-of-football": {
+      "first_seen": "2026-07-15",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/global-m-and-a-rebound-fueled-by-ai": {
+      "first_seen": "2026-07-15",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/how-agentic-ai-transforms-marketing": {
+      "first_seen": "2026-07-16",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2024/real-cost-of-shipping-decarbonization": {
+      "first_seen": "2026-07-16",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/ceos-and-boards-are-aligned-on-ai-in-theory-but-divided-in-practice": {
+      "first_seen": "2026-07-16",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/middle-east-how-early-decisions-shape-the-fate-of-large-scale-projects": {
+      "first_seen": "2026-07-16",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/how-boards-and-ceos-can-govern-ai-together": {
+      "first_seen": "2026-07-16",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2024/trust-imperative-4-0-genai-the-trust-multiplier-for-government": {
+      "first_seen": "2026-07-18",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/how-to-scale-defense-production-in-europe": {
+      "first_seen": "2026-07-18",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/how-ai-improves-defense-aviation-readiness": {
+      "first_seen": "2026-07-18",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/why-most-ai-cost-reduction-programs-fall-short": {
+      "first_seen": "2026-07-20",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/future-economics-of-defense-aviation": {
+      "first_seen": "2026-07-20",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/building-enterprise-ai-agents-in-regulated-industries": {
+      "first_seen": "2026-07-20",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/scaling-agentic-ai-in-tech-procurement": {
+      "first_seen": "2026-07-21",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/why-citizens-want-governments-to-accelerate-ai-adoption": {
+      "first_seen": "2026-07-21",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/advancing-africas-digital-and-ai-future-through-investment": {
+      "first_seen": "2026-07-22",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/australias-digital-infrastructure-challenge": {
+      "first_seen": "2026-07-22",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/why-ai-demands-a-new-insurance-talent-model": {
+      "first_seen": "2026-07-22",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/collections/ai-in-the-public-sector": {
+      "first_seen": "2026-07-22",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/collections/m-and-a-sentiment-index": {
+      "first_seen": "2026-07-22",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/how-ceos-scale-ai-value": {
+      "first_seen": "2026-07-22",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/large-cap-ceos-driving-growth-through-vitality": {
+      "first_seen": "2026-07-23",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/understanding-the-new-economics-of-ai-compute-markets": {
+      "first_seen": "2026-07-23",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/germany-european-chemicals-2030-2040": {
+      "first_seen": "2026-07-23",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2023/italy-more-than-a-space-programme": {
+      "first_seen": "2026-07-25",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/low-carbon-shipping-demand-falls-but-value-remains": {
+      "first_seen": "2026-07-25",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/the-ai-first-refiner-faster-decisions-better-margins": {
+      "first_seen": "2026-07-25",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/lessons-from-scaling-renewables-in-the-us-and-china": {
+      "first_seen": "2026-07-25",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2020/how-to-become-an-all-weather-resilient-company": {
+      "first_seen": "2026-07-25",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/design-your-company-for-ai-not-ai-for-your-company": {
+      "first_seen": "2026-07-26",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/south-korea-capital-efficiency-and-value-creation": {
+      "first_seen": "2026-07-26",
+      "status": "downloaded"
+    },
+    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/industries/financial%20services/our%20insights/global%20banking%20annual%20review%202025/why-precision-not-heft-defines-the-future-of-banking.pdf": {
+      "first_seen": "2026-07-27",
+      "status": "downloaded"
+    },
+    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/business%20functions/mckinsey%20analytics/our%20insights/the%20data%20driven%20enterprise%20of%202025/the-data-driven-enterprise-of-2025-final.pdf": {
+      "first_seen": "2026-07-27",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/ai-powered-transformation-office": {
+      "first_seen": "2026-07-27",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/how-ai-is-shaping-intelligent-cities": {
+      "first_seen": "2026-07-27",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2025/investor-perspective-series/overview": {
+      "first_seen": "2026-07-27",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/building-investor-confidence-in-ai-strategy": {
+      "first_seen": "2026-07-28",
+      "status": "downloaded"
+    },
+    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/business%20functions/quantumblack/our%20insights/the%20state%20of%20ai/2025/the-state-of-ai-how-organizations-are-rewiring-to-capture-value_final.pdf?trk=public_post_comment-text": {
+      "first_seen": "2026-07-29",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/built-to-change-how-cities-compete-for-the-future": {
+      "first_seen": "2026-07-29",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/improving-governance-in-joint-ventures": {
+      "first_seen": "2026-07-29",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/how-us-auto-dealers-can-stay-ahead-as-margins-tighten": {
+      "first_seen": "2026-07-29",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/air-travel-outlook-revenues-and-costs-are-rising": {
+      "first_seen": "2026-07-29",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/strait-of-hormuz-chokepoint-impacts-future-business": {
+      "first_seen": "2026-07-29",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/consumers-are-feeling-squeezed-heres-how-cpgs-can-adapt": {
+      "first_seen": "2026-07-29",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/as-scale-grows-so-does-investor-ambition": {
+      "first_seen": "2026-07-29",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/industrial-ai-commercialization": {
+      "first_seen": "2026-07-30",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2025/the-upside-of-uncertainty-in-dealmaking": {
+      "first_seen": "2026-07-30",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2022/how-to-execute-biopharma-deals-successfully": {
+      "first_seen": "2026-07-30",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2014/dont-miss-the-exit": {
+      "first_seen": "2026-07-30",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2014/mergers-acquisitions-divestitures-maximizing-value": {
+      "first_seen": "2026-07-30",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2020/mergers-acquisitions-report-alternative-deals-gain-traction": {
+      "first_seen": "2026-07-30",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2014/mergers-acquisitions-divestitures-2014-m-a-report": {
+      "first_seen": "2026-07-30",
+      "status": "duplicate_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/reinventing-service-operations-with-ai": {
+      "first_seen": "2026-07-30",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/closing-the-leadership-belief-gap": {
+      "first_seen": "2026-07-31",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/building-business-value-with-ai-investment": {
+      "first_seen": "2026-07-31",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2020/how-to-keep-merger-acquisition-deals-afloat-during-economic-downturn": {
+      "first_seen": "2026-07-31",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2020/asia-pacific-mergers-acquisitions-report-dealmaking-turbulent-times": {
+      "first_seen": "2026-07-31",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2021/five-merger-and-acquisition-trends-in-africa": {
+      "first_seen": "2026-07-31",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2019/infographic-delving-deeper-into-downturn-mergers-and-acquistions": {
+      "first_seen": "2026-07-31",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2019/mergers-and-acquisitions-report-shows-downturns-are-a-better-time-for-deal-hunting": {
+      "first_seen": "2026-08-01",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2019/increase-your-chance-success-transformative-mergers-acquisitions": {
+      "first_seen": "2026-08-01",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2019/mergers-and-acquisitions-report-how-to-master-in-downturn": {
+      "first_seen": "2026-08-01",
+      "status": "duplicate_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/southeast-asia-logistics-ai-opportunities": {
+      "first_seen": "2026-08-01",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/four-ways-to-accelerate-growth-with-ai-and-analytics": {
+      "first_seen": "2026-08-01",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/how-shipping-companies-can-maintain-focus-on-opex": {
+      "first_seen": "2026-08-01",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/industrial-asset-closures-are-inevitable-value-isnt": {
+      "first_seen": "2026-08-01",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/older-aircraft-too-few-technicians-the-aerospace-fix": {
+      "first_seen": "2026-08-01",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/industrial-techs-new-growth-engines-are-emerging": {
+      "first_seen": "2026-08-01",
+      "status": "downloaded"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+__pycache__/
+*.pyc
+.env
+mineru_result.zip
+.DS_Store
+_portal_suite_pages/
+workers/portal-suite-worker/wrangler.toml
+# Transient institution-source PDFs: only an input for the WeChat pipeline.
+# We keep the original PDF link in institution_feeds/, never the PDF itself.
+_institution_latest_pdfs/
+_consulting_latest_pdfs/
+workers/portal-suite-worker/.wrangler/
+# Market Views contains paid PDFs and synthesis internals. The daily workflow
+# writes them only to its ephemeral workspace and archives the final PDF in
+# private R2; nothing under this directory belongs in the public repository.
+market_view_summaries/
+
+# Generated publishing outputs live in private storage or ephemeral CI only.
+xhs_notes/
+publish_ready_zips/
+portal_translated_reports/
+wechat_drafts/
+bilingual_podcast_videos/
+podcast_video_tests/
+
+# Decrypted only inside the deployment runner.
+portal_suite/site_src/assets/contact-card.jpg
+portal_suite/data/blog_archive/

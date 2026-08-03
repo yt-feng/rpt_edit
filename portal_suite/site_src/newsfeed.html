@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Newsfeed | Portal Suite</title>
+    <meta name="robots" content="noindex,nofollow,noarchive,max-image-preview:none">
+    <link rel="stylesheet" href="assets/styles.css?v=portal-suite-20260726b">
+  </head>
+  <body data-page="newsfeed" class="newsfeed-page">
+    <header class="topbar newsfeed-topbar">
+      <a class="brand compact" href="index.html" aria-label="Portal Suite home">
+        <img src="assets/app-mark.svg" alt="" width="30" height="30">
+        <span>Portal Suite</span>
+      </a>
+      <div class="topbar-actions">
+        <a class="topbar-link" href="blog/">Blog</a>
+        <a id="newsfeedNav" class="topbar-link is-active" href="newsfeed.html" hidden>Newsfeed</a>
+        <button id="accountGate" class="account-button" type="button">登录</button>
+        <button id="adminGate" class="admin-gate" type="button" aria-label="Private tools"></button>
+      </div>
+    </header>
+
+    <main id="newsfeedApp" class="newsfeed-shell">
+      <section class="newsfeed-access" id="newsfeedAccess">
+        <h1>Newsfeed</h1>
+        <p>请登录已注册且状态正常的账号继续。</p>
+        <button id="newsfeedLogin" class="primary" type="button">登录 / 账号</button>
+      </section>
+    </main>
+
+    <script src="assets/contact.js"></script>
+    <script src="assets/app.js?v=portal-suite-20260726b"></script>
+  </body>
+</html>

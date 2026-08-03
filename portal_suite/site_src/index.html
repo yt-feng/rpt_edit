@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portal Suite | 中文金融研报检索与报告索引</title>
+    <meta name="description" content="Portal Suite 提供中文金融研报检索与报告索引，覆盖宏观策略、行业分析、公司研究、财报、招股书、国际智库和市场观点。">
+    <meta name="keywords" content="金融研报,宏观策略,行业研究,公司研究,投行报告,国际智库,市场观点,中文研报检索">
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+    <meta name="msvalidate.01" content="__SEARCH_VERIFY_MS__">
+    <meta name="sogou_site_verification" content="__SEARCH_VERIFY_SOGOU__">
+    <link rel="canonical" href="https://portal.example.invalid/">
+    <link rel="alternate" hreflang="zh-CN" href="https://portal.example.invalid/">
+    <link rel="alternate" hreflang="x-default" href="https://portal.example.invalid/">
+    <link rel="alternate" type="application/rss+xml" title="Portal Suite 最近报告" href="https://portal.example.invalid/feed.xml">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="Portal Suite">
+    <meta property="og:title" content="Portal Suite | 中文金融研报检索与报告索引">
+    <meta property="og:description" content="中文金融研报检索与报告索引，覆盖宏观策略、行业分析、公司研究、财报、招股书、国际智库和市场观点。">
+    <meta property="og:url" content="https://portal.example.invalid/">
+    <link rel="stylesheet" href="assets/styles.css?v=portal-suite-20260726b">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Portal Suite",
+        "url": "https://portal.example.invalid/",
+        "inLanguage": "zh-CN",
+        "description": "中文金融研报检索与报告索引，覆盖宏观策略、行业分析、公司研究、财报、招股书、国际智库和市场观点。",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://portal.example.invalid/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+  </head>
+  <body data-page="index">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Portal Suite home">
+        <img src="assets/app-mark.svg" alt="" width="34" height="34">
+        <span>Portal Suite</span>
+      </a>
+      <div class="topbar-actions">
+        <div class="catalog-meta" id="catalogMeta">Loading catalog...</div>
+        <a class="topbar-link" href="blog/">Blog</a>
+        <a id="newsfeedNav" class="topbar-link" href="newsfeed.html" hidden>Newsfeed</a>
+        <button id="accountGate" class="account-button" type="button">登录</button>
+        <button id="adminGate" class="admin-gate" type="button" aria-label="Private tools"></button>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="search-panel" aria-labelledby="searchTitle">
+        <div class="search-copy">
+          <h1 id="searchTitle">Portal Suite</h1>
+          <p class="subtle">Research notes and reports, indexed for fast lookup.</p>
+        </div>
+        <label class="search-box search-main">
+          <span>Search</span>
+          <input id="searchInput" type="search" autocomplete="off" placeholder="Topic, company, ticker, title, or keyword">
+        </label>
+        <div class="filter-grid" aria-label="Report filters">
+          <label class="filter-control">
+            <span>Institution</span>
+            <select id="bankFilter"></select>
+          </label>
+          <label class="filter-control">
+            <span>Industry</span>
+            <select id="industryFilter"></select>
+          </label>
+          <label class="filter-control">
+            <span>From</span>
+            <input id="startDate" type="date">
+          </label>
+          <label class="filter-control">
+            <span>To</span>
+            <input id="endDate" type="date">
+          </label>
+          <label class="filter-control">
+            <span>Search In</span>
+            <select id="scopeFilter">
+              <option value="all">Everything</option>
+              <option value="title">Title only</option>
+              <option value="catalog">Catalog fields</option>
+              <option value="fulltext">Document text</option>
+            </select>
+          </label>
+          <label class="filter-control">
+            <span>PDF</span>
+            <select id="availabilityFilter">
+              <option value="">All records</option>
+              <option value="available">PDF available</option>
+              <option value="textOnly">Text only</option>
+            </select>
+          </label>
+          <fieldset class="filter-control page-range-control" id="pageRangeFilter">
+            <legend>Pages</legend>
+            <div class="page-range-options">
+              <label>
+                <input type="checkbox" name="pageRange" value="under5">
+                <span>5页以下</span>
+              </label>
+              <label>
+                <input type="checkbox" name="pageRange" value="5_10">
+                <span>5-10页</span>
+              </label>
+              <label>
+                <input type="checkbox" name="pageRange" value="10_20">
+                <span>10-20页</span>
+              </label>
+              <label>
+                <input type="checkbox" name="pageRange" value="over20">
+                <span>20页以上</span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+        <div class="filter-actions">
+          <span id="activeFilters">No filters</span>
+          <button id="clearFilters" type="button">Clear</button>
+        </div>
+      </section>
+
+      <section class="results-section" aria-live="polite">
+        <div class="results-heading">
+          <h2>Reports</h2>
+          <span id="resultCount">0 items</span>
+        </div>
+        <div class="pagination-bar" aria-label="Report pages">
+          <button id="prevPage" type="button">Previous</button>
+          <span id="pageInfo">Page 1 / 1</span>
+          <label class="page-size">
+            <span>Rows</span>
+            <select id="pageSize">
+              <option value="25">25</option>
+              <option value="50" selected>50</option>
+              <option value="100">100</option>
+            </select>
+          </label>
+          <button id="nextPage" type="button">Next</button>
+        </div>
+        <div id="results" class="results-list"></div>
+      </section>
+
+      <section class="external-section hot-reports-section" id="hotReportsSection" aria-labelledby="hotReportsTitle" hidden>
+        <div class="results-heading">
+          <h2 id="hotReportsTitle">近期热门报告</h2>
+          <span id="hotReportsCount"></span>
+        </div>
+        <p class="subtle external-hint">精选近期热门 PDF；3个月及以上会员可下载全文。</p>
+        <div id="hotReportsResults" class="related-list"></div>
+        <div id="hotReportsStatus" class="status-line" aria-live="polite"></div>
+      </section>
+
+      <section class="external-section" id="thinkTankSection" aria-labelledby="thinkTankTitle" hidden>
+        <div class="results-heading">
+          <h2 id="thinkTankTitle">国际智库</h2>
+          <span id="thinkTankCount"></span>
+        </div>
+        <p class="subtle external-hint">国际机构与智库 PDF。可按报告标题或公众号文章标题检索。</p>
+        <div id="thinkTankResults" class="related-list"></div>
+        <div id="thinkTankStatus" class="status-line" aria-live="polite"></div>
+      </section>
+
+      <section class="external-section" id="externalSection" aria-labelledby="externalTitle" hidden>
+        <div class="results-heading">
+          <h2 id="externalTitle">其他报告</h2>
+          <span id="externalCount"></span>
+        </div>
+        <p class="subtle external-hint">更多报告。点击条目会打开新标签页；部分报告需要准备约 3-8 分钟，页面会自动检测并在准备好后开始下载。</p>
+        <div id="externalResults" class="related-list"></div>
+        <div id="externalStatus" class="status-line" aria-live="polite"></div>
+      </section>
+
+      <section class="external-section" id="reportASection" aria-labelledby="reportATitle" hidden>
+        <div class="results-heading">
+          <h2 id="reportATitle">报告A</h2>
+          <span id="reportACount"></span>
+        </div>
+        <p class="subtle external-hint" data-portal-chinese-only hidden>联系 Support Contact 获取原文。</p>
+        <p class="subtle external-hint" data-portal-non-chinese-only hidden>Contact <a href="mailto:support@portal.example.invalid">support@portal.example.invalid</a> to request the original report.</p>
+        <div id="reportAResults" class="related-list"></div>
+        <div id="reportAStatus" class="status-line" aria-live="polite"></div>
+      </section>
+
+      <section class="external-section authority-section" id="authoritySection" aria-labelledby="authorityTitle" hidden>
+        <div class="results-heading">
+          <h2 id="authorityTitle">高权报告</h2>
+          <span id="authorityCount"></span>
+        </div>
+        <p class="subtle external-hint" data-portal-chinese-only hidden>高权报告仅提供检索线索；具体获取请联系微信号 Support Contact。</p>
+        <p class="subtle external-hint" data-portal-non-chinese-only hidden>High-authority reports are search leads only. Contact <a href="mailto:support@portal.example.invalid">support@portal.example.invalid</a> to request the original.</p>
+        <div id="authorityResults" class="related-list"></div>
+        <div id="authorityStatus" class="status-line" aria-live="polite"></div>
+      </section>
+
+      <section class="external-section search-recommendations-section" id="searchRecommendationsSection" aria-labelledby="searchRecommendationsTitle" hidden>
+        <div class="results-heading">
+          <h2 id="searchRecommendationsTitle">相关推荐</h2>
+          <span id="searchRecommendationsCount"></span>
+        </div>
+        <p class="subtle external-hint">所有报告库均未找到匹配结果，先看看这些近期报告。</p>
+        <div id="searchRecommendationsResults" class="related-list"></div>
+      </section>
+
+      <section class="about-section" aria-labelledby="aboutTitle">
+        <div class="about-copy">
+          <h2 id="aboutTitle">关于我们</h2>
+          <p>平台全面覆盖宏观策略、行业分析、公司研究、财报、招股书、定制报告等内容。通过前沿的技术和便捷的产品体验，为金融从业人员、投资者、市场运营等提供信息获取和整合的专业服务。</p>
+        </div>
+        <img class="wechat-qr" src="assets/contact-card.jpg" alt="Support Contact 微信二维码" data-portal-chinese-only hidden>
+        <a class="about-contact-email" href="mailto:support@portal.example.invalid" data-portal-non-chinese-only hidden>
+          <span>Contact</span>
+          <strong>support@portal.example.invalid</strong>
+        </a>
+      </section>
+    </main>
+
+    <footer class="legal-footer">
+      <a href="blog/">Blog</a>
+      <a href="reports/index.html">报告索引</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <span data-portal-chinese-only hidden>Contact WeChat: Support Contact</span>
+      <a href="mailto:support@portal.example.invalid" data-portal-non-chinese-only hidden>Email: support@portal.example.invalid</a>
+    </footer>
+
+    <script src="assets/contact.js"></script>
+    <script src="assets/app.js?v=portal-suite-20260726b"></script>
+  </body>
+</html>

@@ -1,0 +1,324 @@
+name: Institution latest PDF to WeChat
+
+# Daily companion to the Dropbox main flow. Instead of Dropbox, it pulls the newest
+# public PDF reports from IMF / World Bank / BIS / OECD / ADB / WEF / UNCTAD / WTO /
+# Bruegel, runs them through the existing MinerU -> Portal translated -> WeChat draft
+# pipeline, and archives the original PDF links. The source PDFs themselves are
+# transient and never committed. Daily volume is bounded by max_total (default 100).
+
+on:
+  workflow_dispatch:
+    inputs:
+      institutions:
+        description: "Comma list of sources, or all (imf,worldbank,bis,oecd,adb,wef,unctad,wto,bruegel; rand/brookings only when named explicitly)"
+        required: true
+        default: "all"
+      since_days:
+        description: "Only fetch reports published within this many days"
+        required: true
+        default: "7"
+      max_per_institution:
+        description: "Cap new PDFs per institution (0 = no cap)"
+        required: true
+        default: "25"
+      max_total:
+        description: "Cap new PDFs across all institutions per run (0 = no cap)"
+        required: true
+        default: "100"
+      force_reprocess:
+        description: "Ignore seen-state and overwrite today's generated outputs"
+        required: true
+        type: boolean
+        default: false
+      max_translated:
+        description: "How many fetched reports to translate into WeChat articles. Use all."
+        required: true
+        default: "all"
+      articles_per_draft:
+        description: "Number of articles in each WeChat draft item"
+        required: true
+        default: "8"
+      dry_run:
+        description: "Build WeChat draft payloads without calling WeChat APIs"
+        required: true
+        type: boolean
+        default: false
+      publish:
+        description: "Submit created WeChat drafts for publishing (needs publish API access)"
+        required: true
+        type: boolean
+        default: false
+
+  schedule:
+    # 06:00 Beijing time (UTC+8), after the expected completion window of the
+    # Dropbox main flow that starts at 02:00.
+    - cron: "0 22 * * *"
+
+permissions:
+  contents: write
+
+env:
+  PYTHONUNBUFFERED: "1"
+  PRIVATE_HANDOFF_ROOT: "_private-workflow-handoff/institutions"
+
+concurrency:
+  group: institution-latest-pdf-to-wechat
+  cancel-in-progress: false
+
+jobs:
+  fetch-and-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    outputs:
+      date_folder: ${{ steps.fetch.outputs.date_folder }}
+      pdf_count: ${{ steps.fetch.outputs.pdf_count }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Pull latest main (archive + seen state)
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git fetch --no-tags --prune --depth=1 origin +refs/heads/main:refs/remotes/origin/main
+          git reset --hard origin/main
+          git clean -fdx
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install reportlab
+          python -m pip install boto3
+
+      - name: Install Chinese fonts
+        timeout-minutes: 5
+        continue-on-error: true
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends fonts-noto-cjk
+
+      - name: Fetch latest institution PDFs
+        id: fetch
+        env:
+          PROXY_SUBSCRIPTION_URL: ${{ secrets.PROXY_SUBSCRIPTION_URL }}
+        run: |
+          set -o pipefail
+          DATE="$(TZ=Asia/Shanghai date +%y%m%d)"
+          echo "date_folder=$DATE" >> "$GITHUB_OUTPUT"
+          python scripts/fetch_institution_latest_pdfs.py \
+            --output-dir _institution_latest_pdfs \
+            --date "$DATE" \
+            --institutions "${{ github.event.inputs.institutions || 'all' }}" \
+            --since-days "${{ github.event.inputs.since_days || '7' }}" \
+            --max-per-institution "${{ github.event.inputs.max_per_institution || '25' }}" \
+            --max-total "${{ github.event.inputs.max_total || '100' }}" \
+            --force-reprocess "${{ github.event.inputs.force_reprocess || 'false' }}" \
+            2>&1 | tee institution_fetch_progress.log
+
+      - name: Generate MinerU source text and notes
+        if: ${{ steps.fetch.outputs.pdf_count != '0' }}
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_API_KEY_BACKUP: ${{ secrets.DEEPSEEK_API_KEY_BACKUP }}
+          MINER_U: ${{ secrets.MINER_U }}
+          MINER_U_2: ${{ secrets.MINER_U_2 }}
+          MINER_U_3: ${{ secrets.MINER_U_3 }}
+          MINER_U_4: ${{ secrets.MINER_U_4 }}
+        run: |
+          set -o pipefail
+          DATE="${{ steps.fetch.outputs.date_folder }}"
+          SKIP_EXISTING="true"
+          if [ "${{ github.event.inputs.force_reprocess || 'false' }}" = "true" ]; then
+            rm -rf "xhs_notes/institutions/$DATE"
+            SKIP_EXISTING="false"
+          fi
+          python scripts/run_pdf_to_xhs_in_batches.py \
+            --input-dir _institution_latest_pdfs \
+            --output-dir "xhs_notes/institutions/$DATE" \
+            --batch-size 5 \
+            --skip-existing "$SKIP_EXISTING" 2>&1 | tee institution_xhs_progress.log
+
+      - name: Build Portal translated report PDFs
+        if: ${{ steps.fetch.outputs.pdf_count != '0' }}
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_API_KEY_BACKUP: ${{ secrets.DEEPSEEK_API_KEY_BACKUP }}
+          DEEPSEEK_BASE_URL: "https://api.deepseek.com"
+        run: |
+          set -o pipefail
+          DATE="${{ steps.fetch.outputs.date_folder }}"
+          if [ "${{ github.event.inputs.force_reprocess || 'false' }}" = "true" ]; then
+            rm -rf "portal_translated_reports/institutions/$DATE"
+          fi
+          python scripts/build_portal_translated_reports.py \
+            --dropbox-output-root "xhs_notes/institutions" \
+            --date-folder "$DATE" \
+            --output-root "portal_translated_reports/institutions" \
+            --max-reports "${{ github.event.inputs.max_translated || 'all' }}" \
+            --include-institutions "${{ github.event.inputs.institutions || 'all' }}" \
+            --exclude-institutions "rand,brookings" \
+            --title-guard \
+            2>&1 | tee institution_translated_progress.log
+
+      - name: Commit PDF link archive and seen state
+        run: |
+          bash scripts/commit_output_dir.sh "institution_feeds" "Update institution PDF link archive" 8
+
+      - name: Upload translated reports to private R2 handoff
+        if: ${{ steps.fetch.outputs.pdf_count != '0' }}
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          DATE="${{ steps.fetch.outputs.date_folder }}"
+          python scripts/private_workflow_handoff.py upload-dir \
+            --source "portal_translated_reports/institutions/$DATE" \
+            --key "$PRIVATE_HANDOFF_ROOT/${{ github.run_id }}/$DATE/translated.tar.gz"
+
+      - name: Upload run artifacts
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: institution-pdf-run-${{ steps.fetch.outputs.date_folder }}-${{ github.run_id }}
+          path: |
+            _institution_latest_pdfs/institution_run_manifest.json
+            institution_fetch_progress.log
+            institution_xhs_progress.log
+            institution_translated_progress.log
+          if-no-files-found: ignore
+          retention-days: 2
+
+  upload-wechat-drafts:
+    needs: fetch-and-build
+    if: ${{ needs.fetch-and-build.outputs.pdf_count != '0' }}
+    runs-on: [self-hosted, wechat-draft]
+    timeout-minutes: 120
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          clean: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .github
+            scripts
+            prompts
+            requirements.txt
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+          python -m pip install boto3
+
+      - name: Download translated reports from private R2
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          DATE="${{ needs.fetch-and-build.outputs.date_folder }}"
+          python scripts/private_workflow_handoff.py download-dir \
+            --key "$PRIVATE_HANDOFF_ROOT/${{ github.run_id }}/$DATE/translated.tar.gz" \
+            --destination "portal_translated_reports/institutions/$DATE"
+
+      - name: Materialize private publishing image
+        env:
+          PORTAL_PRIVATE_PUBLISH_ASSET_KEY: ${{ secrets.PORTAL_PRIVATE_PUBLISH_ASSET_KEY }}
+        run: bash scripts/materialize_private_social_asset.sh prompts
+
+      - name: Build and upload WeChat drafts
+        env:
+          WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
+          WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+        run: |
+          set -o pipefail
+          DATE="${{ needs.fetch-and-build.outputs.date_folder }}"
+          TRANSLATED_DIR="portal_translated_reports/institutions/$DATE"
+          if [ ! -d "$TRANSLATED_DIR" ]; then
+            echo "::warning::No translated reports at $TRANSLATED_DIR; nothing to upload."
+            exit 0
+          fi
+
+          ARGS=()
+          if [ "${{ github.event.inputs.dry_run || 'false' }}" = "true" ]; then
+            ARGS+=(--dry-run)
+          fi
+          if [ "${{ github.event.inputs.publish || 'false' }}" = "true" ]; then
+            ARGS+=(--publish)
+          fi
+
+          python scripts/push_portal_translated_to_wechat_drafts.py \
+            --translated-root "portal_translated_reports/institutions" \
+            --date-folder "$DATE" \
+            --output-root "wechat_drafts/institutions" \
+            --max-articles "${{ github.event.inputs.max_translated || 'all' }}" \
+            --include-institutions "${{ github.event.inputs.institutions || 'all' }}" \
+            --articles-per-draft "${{ github.event.inputs.articles_per_draft || '8' }}" \
+            --max-body-chars "1200" \
+            --min-inline-images "3" \
+            --max-inline-images "3" \
+            "${ARGS[@]}" 2>&1 | tee institution_wechat_progress.log
+
+      - name: Upload WeChat draft artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: institution-wechat-drafts-${{ needs.fetch-and-build.outputs.date_folder }}-${{ github.run_id }}
+          path: |
+            wechat_drafts/institutions
+            institution_wechat_progress.log
+          if-no-files-found: ignore
+          retention-days: 2
+
+  cleanup-private-handoff:
+    needs: [fetch-and-build, upload-wechat-drafts]
+    if: ${{ always() && needs.fetch-and-build.result == 'success' && needs.upload-wechat-drafts.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          sparse-checkout: scripts/private_workflow_handoff.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Delete completed private handoff
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python -m pip install boto3
+          python scripts/private_workflow_handoff.py delete-prefix \
+            --prefix "$PRIVATE_HANDOFF_ROOT/${{ github.run_id }}/${{ needs.fetch-and-build.outputs.date_folder }}"
+
+  notify-failure:
+    needs: [fetch-and-build, upload-wechat-drafts, cleanup-private-handoff]
+    if: ${{ always() && !cancelled() && contains(needs.*.result, 'failure') }}
+    uses: ./.github/workflows/portal-ops-alert.yml
+    with:
+      source_workflow: Institution latest PDF to WeChat
+      source_results: >-
+        build=${{ needs.fetch-and-build.result }},
+        wechat=${{ needs.upload-wechat-drafts.result }},
+        handoff_cleanup=${{ needs.cleanup-private-handoff.result }}
+    secrets: inherit

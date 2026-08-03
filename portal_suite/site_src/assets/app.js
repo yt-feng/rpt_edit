@@ -1,0 +1,8551 @@
+(function () {
+  const page = document.body.dataset.page;
+  const CONTACT_WECHAT = "Support Contact";
+  const CONTACT_EMAIL = "support@portal.example.invalid";
+  const ADMIN_TOKEN_KEY = "portal_admin_token";
+  const ADMIN_PLAIN_KEY = "portal_admin_plain_key";
+  const ADMIN_COOKIE_NAME = "portal_admin_token";
+  const ADMIN_COOKIE_MAX_AGE = 180 * 24 * 60 * 60;
+  const DOWNLOAD_PASSWORD_KEY = "portal_download_password";
+  const AUTH_SESSION_KEY = "portal_auth_session";
+  const VISITOR_ID_KEY = "portal_visitor_id";
+  const DOC_ITEM_CACHE_KEY = "portal_doc_item_cache";
+  const AUTHORITY_SOURCE = "authority";
+  const REPORT_A_SOURCE = "report-a";
+  const THINKTANK_SOURCE = "thinktank";
+  const HOT_REPORT_SOURCE = "hot";
+  const EXTERNAL_SOURCE = "external";
+  const NEWSFEED_TOPIC_LIMIT = 10000;
+  const PDFJS_MODULE_URL = "/assets/vendor/pdfjs/pdf.mjs";
+  const PDFJS_WORKER_URL = "/assets/vendor/pdfjs/pdf.worker.mjs";
+  const APP_ASSET_VERSION = (() => {
+    try {
+      const script = document.currentScript;
+      return script && script.src
+        ? new URL(script.src, document.baseURI).searchParams.get("v") || ""
+        : "";
+    } catch (_error) {
+      return "";
+    }
+  })();
+  let accountAdminDailyPicks = new Map();
+  let accountAdminMarketViews = new Map();
+  let accountAdminUsersByEmail = new Map();
+  let accountAdminAccessOptions = {};
+  let accountAdminLastSummary = null;
+  let accountAdminLastSummaryOwner = "";
+  let accountAdminRefreshTimer = null;
+  let pdfJsLoadPromise = null;
+  const activeAdminButtonActions = new WeakMap();
+
+  function versionedSiteAssetUrl(path) {
+    const url = new URL(String(path || ""), document.baseURI);
+    if (APP_ASSET_VERSION) url.searchParams.set("v", APP_ASSET_VERSION);
+    return url.href;
+  }
+
+  const INDUSTRY_RULES = [
+    ["Macro / FX / Rates", /\b(macro|fx|foreign exchange|currency|cny|yuan|dollar|usd|rate|rates|yield|fed|ecb|boj|inflation|cpi|pmi|gdp|economy|economic|recession|treasury|bond|nominal|real rate)\b/],
+    ["Equity Strategy", /\b(strategy|equity strategy|market strategy|asset allocation|portfolio|index|earnings revision|valuation|eps|target price)\b/],
+    ["Tech / AI / Semis", /\b(ai|artificial intelligence|semiconductor|semis|chip|chips|memory|dram|nand|hbm|gpu|server|software|cloud|data center|datacenter|robot|robotics)\b/],
+    ["Internet / Media", /\b(internet|media|gaming|game|music|streaming|advertising|ecommerce|e-commerce|platform|social|takeaway|food delivery|new media)\b/],
+    ["Autos / EV / Batteries", /\b(auto|autos|automotive|vehicle|ev|bev|battery|batteries|lithium|ess|adas|mobility|tesla|byd)\b/],
+    ["Energy / Utilities", /\b(energy|oil|gas|lng|solar|wind|power|utility|utilities|renewable|coal|electricity|grid)\b/],
+    ["Metals / Mining", /\b(metal|metals|mining|copper|aluminum|aluminium|steel|iron ore|gold|silver|nickel|commodity|commodities)\b/],
+    ["Healthcare / Biotech", /\b(healthcare|health care|biotech|pharma|pharmaceutical|drug|medical|hospital|medtech|vaccine|therapy)\b/],
+    ["Consumer / Retail", /\b(consumer|retail|apparel|luxury|brand|restaurant|food|beverage|travel retail|staples|discretionary)\b/],
+    ["Banks / Financials", /\b(bank|banks|banking|insurance|broker|brokerage|asset manager|fintech|exchange|financials|payment)\b/],
+    ["Real Estate", /\b(real estate|property|housing|developer|reit|mortgage|homebuilder|construction)\b/],
+    ["Industrials / Capex", /\b(industrial|industrials|machinery|automation|capex|capital goods|aerospace|defense|rail|shipping|logistics|transport)\b/],
+    ["Policy / Geopolitics", /\b(policy|politics|geopolitic|geopolitical|tariff|trade war|election|sanction|iran|russia|taiwan|strait|security)\b/],
+    ["ESG / Climate", /\b(esg|climate|carbon|decarbon|emission|sustainable|sustainability|green|transition)\b/],
+  ];
+
+  const STOPWORDS = new Set([
+    "the", "and", "for", "with", "from", "this", "that", "into", "after", "before", "report", "reports",
+    "global", "china", "asia", "update", "updates", "note", "notes", "research", "sector", "market",
+    "markets", "equity", "earnings", "preview", "review", "takeaways", "anchor", "model", "projection",
+    "slightly", "likely", "better", "daily", "weekly", "monthly", "nom", "jpm", "ubs", "citi",
+    "bofa", "barc", "jef", "jpmorgan", "morgan", "stanley", "goldman", "sachs", "nomura",
+  ]);
+
+  const PAGE_RANGE_FILTERS = [
+    { value: "under5", label: "5页以下", matches: (pages) => pages > 0 && pages <= 5 },
+    { value: "5_10", label: "5-10页", matches: (pages) => pages >= 5 && pages <= 10 },
+    { value: "10_20", label: "10-20页", matches: (pages) => pages >= 10 && pages <= 20 },
+    { value: "over20", label: "20页以上", matches: (pages) => pages >= 20 },
+  ];
+
+  function escapeHtml(value) {
+    return String(value || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function contactDetails() {
+    if (window.PortalSuiteContact && typeof window.PortalSuiteContact.details === "function") {
+      return window.PortalSuiteContact.details();
+    }
+    const languages = Array.isArray(navigator.languages) && navigator.languages.length
+      ? navigator.languages
+      : [navigator.language || ""];
+    const isChinese = /^zh(?:[-_]|$)/i.test(String(languages[0] || ""));
+    return {
+      isChinese,
+      channel: isChinese ? "wechat" : "email",
+      value: isChinese ? CONTACT_WECHAT : CONTACT_EMAIL,
+      label: isChinese ? "微信" : "邮箱",
+      href: isChinese ? "" : `mailto:${CONTACT_EMAIL}`,
+    };
+  }
+
+  function contactMethodText(uiLanguage = "zh") {
+    const contact = contactDetails();
+    const label = contact.channel === "wechat"
+      ? (uiLanguage === "en" ? "WeChat" : "微信")
+      : (uiLanguage === "en" ? "email" : "邮箱");
+    return `${label} ${contact.value}`;
+  }
+
+  function contactMethodHtml(uiLanguage = "zh") {
+    const contact = contactDetails();
+    const value = escapeHtml(contact.value);
+    const label = contact.channel === "wechat"
+      ? (uiLanguage === "en" ? "WeChat" : "微信")
+      : (uiLanguage === "en" ? "email" : "邮箱");
+    return contact.href
+      ? `${escapeHtml(label)} <a href="${escapeHtml(contact.href)}"><b>${value}</b></a>`
+      : `${escapeHtml(label)} <b>${value}</b>`;
+  }
+
+  function accessContactGuidanceText() {
+    const contact = contactDetails();
+    return contact.isChinese
+      ? `如需开通或调整下载权限，请联系微信 ${contact.value}。`
+      : `To activate or update download access, email ${contact.value}.`;
+  }
+
+  function accessContactGuidanceHtml() {
+    const contact = contactDetails();
+    if (contact.isChinese) {
+      return `如需开通或调整下载权限，请联系微信 <b>${escapeHtml(contact.value)}</b>。`;
+    }
+    return `To activate or update download access, email <a href="${escapeHtml(contact.href)}"><b>${escapeHtml(contact.value)}</b></a>.`;
+  }
+
+  function registrationNoticeText(mode = "login") {
+    if (!contactDetails().isChinese) {
+      return mode === "register"
+        ? `Use an email address you check regularly. Registration creates a login only. For download access, email ${CONTACT_EMAIL}.`
+        : `New here? Register with an email address you check regularly. For download access, email ${CONTACT_EMAIL}.`;
+    }
+    return mode === "register"
+      ? `请填写常用邮箱。注册仅创建登录账号；如需开通下载权限，请联系微信 ${CONTACT_WECHAT}。`
+      : `没有账号？请注册并填写常用邮箱。如需开通下载权限，请联系微信 ${CONTACT_WECHAT}。`;
+  }
+
+  function registrationCompleteText(emailDestination = {}) {
+    const verifyReminder = ["pending", "verified"].includes(String(emailDestination.status || ""))
+      ? (emailDestination.status === "pending" ? " 请同时留意收件箱并完成邮箱验证。" : "")
+      : "";
+    if (!contactDetails().isChinese) {
+      const reminder = emailDestination.status === "pending"
+        ? " Please also check your inbox and complete email verification."
+        : "";
+      return `Registration complete. For download access, email ${CONTACT_EMAIL}.${reminder}`;
+    }
+    return `注册成功。如需开通下载权限，请联系微信 ${CONTACT_WECHAT}。${verifyReminder}`;
+  }
+
+  function localizedContactText(value) {
+    const text = String(value || "");
+    if (!text || contactDetails().isChinese) return text;
+    return text
+      .replace(/Contact\s+WeChat\s*:\s*Support Contact/gi, `Email: ${CONTACT_EMAIL}`)
+      .replace(/WeChat\s*:\s*Support Contact/gi, `email ${CONTACT_EMAIL}`)
+      .replace(/联系微信号?\s*[:：]?\s*Support Contact/gi, `联系邮箱 ${CONTACT_EMAIL}`)
+      .replace(/联系\s+Support Contact/gi, `联系邮箱 ${CONTACT_EMAIL}`);
+  }
+
+  function normalize(value) {
+    return String(value || "")
+      .normalize("NFKC")
+      .toLowerCase()
+      .replace(/[^\p{L}\p{N}]+/gu, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function queryTokens(value) {
+    return normalize(value).split(" ").filter(Boolean);
+  }
+
+  function textMatches(text, query) {
+    if (!query) return true;
+    if (text.includes(query)) return true;
+    const tokens = query.split(" ").filter(Boolean);
+    return tokens.length > 0 && tokens.every((token) => text.includes(token));
+  }
+
+  function scoreText(text, query, weight) {
+    if (!query) return 0;
+    let score = 0;
+    if (text.includes(query)) score += 10 * weight;
+    for (const token of query.split(" ").filter(Boolean)) {
+      if (text.includes(token)) score += weight;
+    }
+    return score;
+  }
+
+  async function loadJson(path) {
+    const response = await fetch(path, { cache: "no-store" });
+    if (!response.ok) {
+      throw new Error(`Could not load ${path}: ${response.status}`);
+    }
+    return response.json();
+  }
+
+  async function loadOptionalJson(path, fallback) {
+    try {
+      return await loadJson(path);
+    } catch (error) {
+      console.warn(error);
+      return fallback;
+    }
+  }
+
+  function getCookie(name) {
+    const prefix = `${name}=`;
+    return document.cookie
+      .split(";")
+      .map((part) => part.trim())
+      .find((part) => part.startsWith(prefix))
+      ?.slice(prefix.length) || "";
+  }
+
+  function setCookie(name, value, maxAge) {
+    document.cookie = `${name}=${encodeURIComponent(value)}; Max-Age=${maxAge}; Path=/; SameSite=Lax; Secure`;
+  }
+
+  function clearCookie(name) {
+    document.cookie = `${name}=; Max-Age=0; Path=/; SameSite=Lax; Secure`;
+  }
+
+  function getAdminToken() {
+    try {
+      const stored = localStorage.getItem(ADMIN_TOKEN_KEY);
+      if (stored) {
+        const data = JSON.parse(stored);
+        if (!data.expiresAt || Date.parse(data.expiresAt) > Date.now()) return data.token || "";
+      }
+    } catch (_error) {
+      // Fall back to the cookie below.
+    }
+    return decodeURIComponent(getCookie(ADMIN_COOKIE_NAME) || "");
+  }
+
+  function setAdminToken(token, expiresAt) {
+    const value = String(token || "");
+    if (!value) return;
+    try {
+      localStorage.setItem(ADMIN_TOKEN_KEY, JSON.stringify({ token: value, expiresAt: expiresAt || "" }));
+    } catch (_error) {
+      // Cookie still keeps the device remembered.
+    }
+    setCookie(ADMIN_COOKIE_NAME, value, ADMIN_COOKIE_MAX_AGE);
+    document.dispatchEvent(new CustomEvent("portal-admin-change"));
+  }
+
+  function setAdminPlainKey(value) {
+    try {
+      localStorage.setItem(ADMIN_PLAIN_KEY, String(value || ""));
+    } catch (_error) {
+      // Admin token still keeps the device unlocked.
+    }
+  }
+
+  function getAdminPlainKey() {
+    try {
+      return localStorage.getItem(ADMIN_PLAIN_KEY) || "";
+    } catch (_error) {
+      return "";
+    }
+  }
+
+  function clearAdminToken() {
+    try {
+      localStorage.removeItem(ADMIN_TOKEN_KEY);
+      localStorage.removeItem(ADMIN_PLAIN_KEY);
+    } catch (_error) {
+      // Ignore localStorage access errors.
+    }
+    clearCookie(ADMIN_COOKIE_NAME);
+    document.dispatchEvent(new CustomEvent("portal-admin-change"));
+  }
+
+  function workerBaseUrl(config) {
+    const configured = String((config && config.worker_base_url) || "/api").replace(/\/$/, "");
+    try {
+      const url = new URL(configured, window.location.href);
+      if (url.hostname.endsWith("workers.dev") && window.location.hostname.endsWith("portal.example.invalid")) {
+        return "/api";
+      }
+    } catch (_error) {
+      // Relative URLs are fine.
+    }
+    return configured || "/api";
+  }
+
+  function loadAuthSession() {
+    try {
+      const raw = localStorage.getItem(AUTH_SESSION_KEY);
+      if (!raw) return null;
+      const session = JSON.parse(raw);
+      if (!session || !session.token || !session.user || !session.user.email) return null;
+      return session;
+    } catch (_error) {
+      return null;
+    }
+  }
+
+  function saveAuthSession(session) {
+    try {
+      localStorage.setItem(AUTH_SESSION_KEY, JSON.stringify(session));
+    } catch (_error) {
+      // Ignore storage errors; the current page still has the response.
+    }
+    document.dispatchEvent(new CustomEvent("portal-auth-change"));
+  }
+
+  function clearAuthSession() {
+    try {
+      localStorage.removeItem(AUTH_SESSION_KEY);
+    } catch (_error) {
+      // Ignore storage errors.
+    }
+    document.dispatchEvent(new CustomEvent("portal-auth-change"));
+  }
+
+  function authHeaders() {
+    const session = loadAuthSession();
+    return session && session.token ? { "Authorization": `Bearer ${session.token}` } : {};
+  }
+
+  function randomVisitorId() {
+    if (window.crypto && typeof window.crypto.randomUUID === "function") {
+      return window.crypto.randomUUID();
+    }
+    return `v-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 12)}`;
+  }
+
+  function visitorId() {
+    try {
+      let value = localStorage.getItem(VISITOR_ID_KEY) || "";
+      if (!value) {
+        value = randomVisitorId();
+        localStorage.setItem(VISITOR_ID_KEY, value);
+      }
+      return value;
+    } catch (_error) {
+      return "";
+    }
+  }
+
+  function currentAnalyticsPath() {
+    return `${window.location.pathname}${window.location.search}`.slice(0, 240);
+  }
+
+  function trackEvent(workerUrl, type, data = {}) {
+    if (!workerUrl) return;
+    const payload = {
+      type,
+      visitor_id: visitorId(),
+      path: currentAnalyticsPath(),
+      data: {
+        page,
+        referrer: document.referrer || "",
+        ...data,
+      },
+    };
+    try {
+      fetch(`${workerUrl}/analytics`, {
+        method: "POST",
+        cache: "no-store",
+        keepalive: true,
+        headers: { "Content-Type": "application/json", ...authHeaders() },
+        body: JSON.stringify(payload),
+      }).catch(() => {});
+    } catch (_error) {
+      // Analytics should never block the user flow.
+    }
+  }
+
+  function analyticsReportPayload(item, source = "catalog") {
+    return {
+      source,
+      report_id: item && item.id || "",
+      report_title: item ? (item.title || item.title_zh || item.filename || "") : "",
+      institution: item ? (item.institution || item.bank_code || item.bank_name || "") : "",
+    };
+  }
+
+  function authUserLabel(session) {
+    const user = session && session.user;
+    if (!user) return "登录";
+    return user.username || user.email || "账号";
+  }
+
+  function accountRightLabel(row = {}) {
+    if (!row || !row.active) return "";
+    if (row.access_mode === "all") return "全站报告下载权限";
+    if (row.access_mode === "filters") {
+      const institutions = Array.isArray(row.institutions) ? row.institutions.filter(Boolean) : [];
+      const industries = Array.isArray(row.industries) ? row.industries.filter(Boolean) : [];
+      if (institutions.length === 1 && !industries.length && !(row.page_ranges || []).length) {
+        return `${institutions[0]}报告下载权限`;
+      }
+      if (institutions.length) return `机构报告下载权限（${institutions.slice(0, 3).join("、")}）`;
+      if (industries.length) return `行业报告下载权限（${industries.slice(0, 3).join("、")}）`;
+      return "条件报告下载权限";
+    }
+    if (["vid2ppt_nova", "vid2ppt_atlas"].includes(row.source) || ["vid2ppt_nova", "vid2ppt_atlas"].includes(row.grant_source)) return "历史会员下载权益";
+    if (row.plan === "annual") return "会员下载权限";
+    if (row.plan === "super" || row.plan === "operator") return "账号下载权限";
+    return "下载权限";
+  }
+
+  function accountRightDurationText(row = {}) {
+    if (!row || !row.active || row.lifetime) return "";
+    const value = String(row.duration_value || "").trim();
+    if (value === "trial_3d") return "3天体验";
+    const months = Number(value);
+    if (!Number.isInteger(months) || months <= 0) return "";
+    if (months % 12 === 0) return `${months / 12}年`;
+    return `${months}个月`;
+  }
+
+  function accountRightExpiryText(row = {}) {
+    if (!row || !row.active) return "";
+    if (row.lifetime) return "长期有效";
+    const end = String(row.current_period_end || "").slice(0, 10);
+    return end ? `有效期至 ${end}` : "";
+  }
+
+  function accountRightUsageText(row = {}) {
+    const limit = Number(row.download_limit || 0);
+    if (!limit) return "";
+    const count = Math.max(0, Number(row.download_count || 0));
+    const remaining = Math.max(0, limit - count);
+    return `体验剩余 ${remaining}/${limit} 篇`;
+  }
+
+  function accountRightSummary(data = {}) {
+    const effective = data && data.effective_access;
+    if (effective) {
+      if (effective.source === "error") return "权限核验失败（已拒绝）";
+      if (effective.active) {
+        return [accountRightLabel(effective), accountRightDurationText(effective), accountRightExpiryText(effective), accountRightUsageText(effective)].filter(Boolean).join("，");
+      }
+      return "";
+    }
+    const access = data && data.access;
+    if (access && access.active) {
+      return [accountRightLabel(access), accountRightDurationText(access), accountRightExpiryText(access), accountRightUsageText(access)].filter(Boolean).join("，");
+    }
+    const entitlement = data && data.entitlement;
+    if (entitlement && entitlement.active && (entitlement.plan === "annual" || entitlement.plan === "super" || entitlement.plan === "operator")) {
+      return [accountRightLabel(entitlement), accountRightExpiryText(entitlement)].filter(Boolean).join("，");
+    }
+    return "";
+  }
+
+  function isSuperSession(session = loadAuthSession()) {
+    const user = session && session.user;
+    return Boolean(user && (user.role === "super" || user.is_super));
+  }
+
+  function isAdminASession(session = loadAuthSession()) {
+    const user = session && session.user;
+    return Boolean(
+      isSuperSession(session)
+      && String(user.username || "").trim().toLowerCase().replace(/^@+/, "") === "admin-a"
+      && String(user.email || "").trim().toLowerCase() === "admin-a@users.portal.example.invalid"
+    );
+  }
+
+  function isOperatorSession(session = loadAuthSession()) {
+    const user = session && session.user;
+    return Boolean(user && (user.role === "operator" || user.is_operator));
+  }
+
+  function canOpenOperationsPanel(session = loadAuthSession()) {
+    return isSuperSession(session) || isOperatorSession(session);
+  }
+
+  function isNewsfeedSession(session = loadAuthSession()) {
+    const user = session && session.user;
+    return Boolean(user) && !user.disabled && user.account_status !== "disabled" && user.status !== "disabled";
+  }
+
+  function privateToolsUnlocked() {
+    return Boolean(getAdminToken() || isSuperSession());
+  }
+
+  function canUseDeliveryTools(session = loadAuthSession()) {
+    if (canOpenOperationsPanel(session)) return true;
+    return !session && Boolean(getAdminToken());
+  }
+
+  async function refreshAuthSession(workerUrl) {
+    const session = loadAuthSession();
+    if (!session || !session.token || !workerUrl) return null;
+    try {
+      const response = await fetch(`${workerUrl}/auth`, {
+        cache: "no-store",
+        headers: authHeaders(),
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok || !data.token || !data.user) throw new Error(data.detail || "Session expired.");
+      saveAuthSession({ token: data.token, user: data.user });
+      return { token: data.token, user: data.user };
+    } catch (_error) {
+      clearAuthSession();
+      return null;
+    }
+  }
+
+  function initAccountGate(workerUrl) {
+    const gate = document.getElementById("accountGate");
+    if (!gate) return;
+    function update() {
+      const session = loadAuthSession();
+      gate.textContent = authUserLabel(session);
+      gate.classList.toggle("is-unlocked", Boolean(session));
+    }
+    update();
+    document.addEventListener("portal-auth-change", update);
+    gate.addEventListener("click", () => showAccountModal(workerUrl));
+    refreshAuthSession(workerUrl).then(update);
+  }
+
+  function initNewsfeedNav() {
+    const links = Array.from(document.querySelectorAll("#newsfeedNav"));
+    if (!links.length) return;
+    function update() {
+      const visible = isNewsfeedSession();
+      links.forEach((link) => {
+        link.hidden = !visible;
+      });
+    }
+    update();
+    document.addEventListener("portal-auth-change", update);
+  }
+
+  function accountModalMarkup(context = {}) {
+    const session = loadAuthSession();
+    const signedIn = Boolean(session);
+    const reportTitle = context.item ? titleText(context.item) : "";
+    const reportLine = reportTitle ? `<span>当前报告：${escapeHtml(reportTitle)}</span>` : "";
+    const reportHelp = `<span>${accessContactGuidanceHtml()}</span>`;
+    return `
+      <div class="admin-modal account-modal" id="accountModal" role="dialog" aria-modal="true" aria-labelledby="accountModalTitle">
+        <div class="admin-dialog account-dialog">
+          <button class="admin-close" id="accountClose" type="button" aria-label="Close">&times;</button>
+          <h3 id="accountModalTitle">账号管理</h3>
+          <form id="accountAuthForm" class="auth-form" ${signedIn ? "hidden" : ""}>
+            <div class="auth-grid">
+              <label>用户名<input id="accountUsername" type="text" autocomplete="username" placeholder="yourname" required></label>
+              <label id="accountEmailLabel" hidden>常用邮箱（必填）<input id="accountEmail" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com"></label>
+              <label>密码<input id="accountPassword" type="password" autocomplete="current-password" placeholder="至少 4 位" required></label>
+            </div>
+            <p class="auth-registration-notice" id="accountRegistrationNotice">${escapeHtml(registrationNoticeText("login"))}</p>
+            <label class="captcha-field">验证码
+              <div class="captcha-row">
+                <img id="accountCaptchaImage" alt="验证码">
+                <button class="secondary-button" id="accountRefreshCaptcha" type="button">换一张</button>
+              </div>
+              <input id="accountCaptchaAnswer" type="text" inputmode="numeric" autocomplete="off" placeholder="输入结果" required>
+            </label>
+            <div class="account-modal-actions">
+              <button class="primary" id="accountSubmit" type="submit">登录</button>
+              <button class="secondary-button" id="accountModeToggle" type="button">注册新账号</button>
+            </div>
+          </form>
+          <div id="accountSummary" class="account-summary" ${signedIn ? "" : "hidden"}>
+            <span>当前账号</span>
+            <strong id="accountName">${escapeHtml(authUserLabel(session))}</strong>
+            <span id="accountEmailText">${escapeHtml(session && session.user ? session.user.email : "")}</span>
+            <div class="account-modal-actions">
+              <button class="secondary-button quiet-admin-button" id="accountAdminOpen" type="button" hidden>管理后台</button>
+              <button class="secondary-button" id="accountLogout" type="button">退出登录</button>
+            </div>
+            <form id="accountPasswordForm" class="account-password-form">
+              <span>需要改密码可以在这里更新。</span>
+              <div class="account-password-grid">
+                <input id="accountCurrentPassword" type="password" autocomplete="current-password" placeholder="当前密码" required>
+                <input id="accountNewPassword" type="password" autocomplete="new-password" placeholder="新密码" required>
+                <input id="accountNewPasswordConfirm" type="password" autocomplete="new-password" placeholder="确认新密码" required>
+              </div>
+              <button class="secondary-button" id="accountPasswordSubmit" type="submit">修改密码</button>
+            </form>
+          </div>
+          <div class="contact-card" id="accountContactCard">
+            <strong>报告获取</strong>
+            ${reportLine}
+            ${reportHelp}
+          </div>
+          <div id="accountModalStatus" class="status-line" aria-live="polite"></div>
+        </div>
+      </div>
+    `;
+  }
+
+  async function loadAccountCaptcha(workerUrl, status) {
+    const image = document.getElementById("accountCaptchaImage");
+    const refresh = document.getElementById("accountRefreshCaptcha");
+    if (!image || !refresh) return "";
+    refresh.disabled = true;
+    try {
+      const response = await fetch(`${workerUrl}/captcha`, { cache: "no-store" });
+      const data = await response.json();
+      if (!response.ok || !data.image || !data.token) throw new Error(data.detail || "验证码加载失败。");
+      image.src = data.image;
+      return data.token;
+    } catch (error) {
+      status.textContent = error.message || "验证码加载失败。";
+      status.className = "status-line error";
+      return "";
+    } finally {
+      refresh.disabled = false;
+    }
+  }
+
+  async function showAccountModal(workerUrl, context = {}) {
+    if (!workerUrl) {
+      window.alert("Account service is temporarily unavailable.");
+      return "";
+    }
+    const existing = document.getElementById("accountModal");
+    if (existing) existing.remove();
+    document.body.insertAdjacentHTML("beforeend", accountModalMarkup(context));
+
+    const modal = document.getElementById("accountModal");
+    const close = document.getElementById("accountClose");
+    const form = document.getElementById("accountAuthForm");
+    const summary = document.getElementById("accountSummary");
+    const username = document.getElementById("accountUsername");
+    const emailLabel = document.getElementById("accountEmailLabel");
+    const email = document.getElementById("accountEmail");
+    const registrationNotice = document.getElementById("accountRegistrationNotice");
+    const password = document.getElementById("accountPassword");
+    const answer = document.getElementById("accountCaptchaAnswer");
+    const refresh = document.getElementById("accountRefreshCaptcha");
+    const submit = document.getElementById("accountSubmit");
+    const toggle = document.getElementById("accountModeToggle");
+    const logout = document.getElementById("accountLogout");
+    const adminOpen = document.getElementById("accountAdminOpen");
+    const passwordForm = document.getElementById("accountPasswordForm");
+    const currentPassword = document.getElementById("accountCurrentPassword");
+    const newPassword = document.getElementById("accountNewPassword");
+    const newPasswordConfirm = document.getElementById("accountNewPasswordConfirm");
+    const passwordSubmit = document.getElementById("accountPasswordSubmit");
+    const contactCard = document.getElementById("accountContactCard");
+    const status = document.getElementById("accountModalStatus");
+    let mode = "login";
+    let captchaToken = "";
+
+    function setStatus(text, kind) {
+      status.className = kind ? `status-line ${kind}` : "status-line";
+      status.textContent = localizedContactText(text);
+    }
+
+    function refreshUi(options = {}) {
+      const statusOverride = String(options.statusOverride || "");
+      const session = loadAuthSession();
+      const signedIn = Boolean(session);
+      form.hidden = signedIn;
+      summary.hidden = !signedIn;
+      if (contactCard) contactCard.hidden = false;
+      if (signedIn) {
+        document.getElementById("accountName").textContent = authUserLabel(session);
+        document.getElementById("accountEmailText").textContent = session.user.email || "";
+        if (adminOpen) {
+          adminOpen.hidden = !canOpenOperationsPanel(session);
+          adminOpen.textContent = isOperatorSession(session) && !isSuperSession(session)
+            ? "运营后台"
+            : "管理后台";
+        }
+        setStatus(statusOverride || (
+          isSuperSession(session)
+            ? "已登录，当前账号拥有管理员权限。"
+            : (isOperatorSession(session) ? "已登录，当前账号拥有运营权限。" : `已登录。如需开通下载权限，请联系${contactMethodText()}。`)
+        ), "ok");
+        fetch(`${workerUrl}/entitlement`, { cache: "no-store", headers: authHeaders() })
+          .then((response) => response.json())
+          .then((data) => {
+            const summary = accountRightSummary(data);
+            if (summary && !statusOverride) setStatus(`账号${summary}。`, "ok");
+          })
+          .catch(() => {});
+      } else {
+        if (adminOpen) adminOpen.hidden = true;
+        captchaToken = "";
+        loadAccountCaptcha(workerUrl, status).then((token) => { captchaToken = token; });
+      }
+    }
+
+    function setMode(nextMode) {
+      mode = nextMode;
+      emailLabel.hidden = mode !== "register";
+      email.required = mode === "register";
+      if (registrationNotice) registrationNotice.textContent = registrationNoticeText(mode);
+      password.autocomplete = mode === "register" ? "new-password" : "current-password";
+      submit.textContent = mode === "register" ? "注册并登录" : "登录";
+      toggle.textContent = mode === "register" ? "已有账号，去登录" : "注册新账号";
+      answer.value = "";
+      loadAccountCaptcha(workerUrl, status).then((token) => { captchaToken = token; });
+    }
+
+    function finish() {
+      modal.remove();
+    }
+
+    close.addEventListener("click", finish);
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) finish();
+    });
+    toggle.addEventListener("click", () => setMode(mode === "login" ? "register" : "login"));
+    refresh.addEventListener("click", () => loadAccountCaptcha(workerUrl, status).then((token) => { captchaToken = token; }));
+    if (logout) {
+      logout.addEventListener("click", () => {
+        const session = loadAuthSession();
+        trackEvent(workerUrl, "account_auth", {
+          target: authUserLabel(session),
+          action: "logout",
+          status: "success",
+        });
+        clearAuthSession();
+        setStatus("已退出登录。");
+        refreshUi();
+      });
+    }
+    if (adminOpen) {
+      adminOpen.addEventListener("click", () => showAccountAdminModal(workerUrl));
+    }
+    if (passwordForm) {
+      passwordForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        if (!loadAuthSession()) {
+          setStatus("请先登录。", "error");
+          return;
+        }
+        if (newPassword.value !== newPasswordConfirm.value) {
+          setStatus("两次输入的新密码不一致。", "error");
+          return;
+        }
+        passwordSubmit.disabled = true;
+        setStatus("正在修改密码…");
+        try {
+          const response = await fetch(`${workerUrl}/account/password`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", ...authHeaders() },
+            body: JSON.stringify({
+              current_password: currentPassword.value,
+              new_password: newPassword.value,
+            }),
+          });
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok || !data.token || !data.user) throw new Error(data.detail || "密码修改失败。");
+          saveAuthSession({ token: data.token, user: data.user });
+          trackEvent(workerUrl, "account_auth", {
+            target: data.user.username || data.user.email || "",
+            action: "password_change",
+            status: "success",
+          });
+          currentPassword.value = "";
+          newPassword.value = "";
+          newPasswordConfirm.value = "";
+          refreshUi();
+          setStatus("密码已更新。", "ok");
+        } catch (error) {
+          trackEvent(workerUrl, "account_auth", {
+            target: authUserLabel(loadAuthSession()),
+            action: "password_change",
+            status: "error",
+            error: error && error.message || "password_change_failed",
+          });
+          setStatus(error.message || "密码修改失败。", "error");
+        } finally {
+          passwordSubmit.disabled = false;
+        }
+      });
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      submit.disabled = true;
+      setStatus(mode === "register" ? "正在注册…" : "正在登录…");
+      try {
+        if (mode === "register" && (!email.value.trim() || !email.validity.valid)) {
+          throw new Error("注册必须填写有效的常用邮箱。");
+        }
+        const response = await fetch(`${workerUrl}/auth`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            action: mode,
+            username: username.value,
+            password: password.value,
+            email: mode === "register" ? email.value : "",
+            captcha_token: captchaToken,
+            captcha_answer: answer.value,
+          }),
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok || !data.token || !data.user) throw new Error(data.detail || "账号请求失败。");
+        saveAuthSession({ token: data.token, user: data.user });
+        trackEvent(workerUrl, "account_auth", {
+          target: data.user.username || data.user.email || username.value,
+          action: data.recovered ? "login_recovered" : mode,
+          status: "success",
+        });
+        password.value = "";
+        answer.value = "";
+        const registrationStatus = mode === "register"
+          ? registrationCompleteText(data.email_destination || {})
+          : "";
+        refreshUi({ statusOverride: registrationStatus });
+      } catch (error) {
+        trackEvent(workerUrl, "account_auth", {
+          target: username.value,
+          action: mode,
+          status: "error",
+          error: error && error.message || "account_request_failed",
+        });
+        setStatus(error.message || "账号请求失败。", "error");
+        answer.value = "";
+        captchaToken = await loadAccountCaptcha(workerUrl, status);
+      } finally {
+        submit.disabled = false;
+      }
+    });
+
+    refreshUi();
+    if (!loadAuthSession() && username) username.focus();
+  }
+
+  function accountAdminModalMarkup(options = {}) {
+    const title = options.title || "管理后台";
+    const showWechat = options.showWechat !== false;
+    const showUsers = options.showUsers !== false;
+    const showAnalytics = options.showAnalytics !== false;
+    const showHotReports = options.showHotReports !== false;
+    return `
+      <div class="admin-modal account-admin-modal" id="accountAdminModal" role="dialog" aria-modal="true" aria-labelledby="accountAdminTitle">
+        <div class="admin-dialog account-admin-dialog">
+          <button class="admin-close" id="accountAdminClose" type="button" aria-label="Close">&times;</button>
+          <div class="account-admin-top">
+            <h3 id="accountAdminTitle">${escapeHtml(title)}</h3>
+            <button class="secondary-button" id="accountAdminRefresh" type="button">刷新</button>
+          </div>
+          <div id="accountAdminStatus" class="status-line" aria-live="polite">正在读取后台信息…</div>
+          <section class="account-admin-section account-admin-picks-section">
+            <div class="account-admin-heading">
+              <strong>每日精选</strong>
+              <span id="accountAdminPickCount"></span>
+            </div>
+            <div id="accountAdminPicksNotice" class="account-admin-module-notice" hidden></div>
+            <div id="accountAdminPicks" class="account-admin-picks"></div>
+          </section>
+          <section class="account-admin-section account-admin-market-views-section" id="accountAdminMarketViewsSection">
+            <div class="account-admin-heading">
+              <strong>Market Views</strong>
+              <span id="accountAdminMarketViewCount"></span>
+            </div>
+            <div id="accountAdminMarketViewsNotice" class="account-admin-module-notice" hidden></div>
+            <div id="accountAdminMarketViews" class="account-admin-files"></div>
+          </section>
+          <section class="account-admin-section account-admin-wechat-section" id="accountAdminWechatSection" ${showWechat ? "" : "hidden"}>
+            <div class="account-admin-heading">
+              <strong>公众号发送时间</strong>
+              <span id="accountAdminWechatCount"></span>
+            </div>
+            <div id="accountAdminWechatNotice" class="account-admin-module-notice" hidden></div>
+            <div id="accountAdminWechatSchedule" class="account-admin-wechat-schedule"></div>
+          </section>
+          <section class="account-admin-section account-admin-hot-section" id="accountAdminHotReportsSection" ${showHotReports ? "" : "hidden"}>
+            <div class="account-admin-heading">
+              <strong>近期热门报告</strong>
+              <span id="accountAdminHotReportCount"></span>
+            </div>
+            <form id="accountAdminHotReportForm" class="account-admin-hot-form" enctype="multipart/form-data">
+              <div class="account-admin-form-grid">
+                <label>
+                  <span>英文/主标题</span>
+                  <input id="accountAdminHotReportTitle" name="title" type="text" maxlength="320" autocomplete="off" required>
+                </label>
+                <label>
+                  <span>中文标题（可选）</span>
+                  <input name="title_cn" type="text" maxlength="320" autocomplete="off">
+                </label>
+                <label>
+                  <span>机构（可选）</span>
+                  <input name="institution" type="text" maxlength="160" autocomplete="off">
+                </label>
+                <label>
+                  <span>报告日期</span>
+                  <input id="accountAdminHotReportDate" name="date" type="date" required>
+                </label>
+              </div>
+              <label class="account-admin-hot-description">
+                <span>简介（可选）</span>
+                <textarea name="description" rows="3" maxlength="1600" placeholder="显示在报告详情页"></textarea>
+              </label>
+              <label class="account-admin-hot-file">
+                <span>PDF 文件（最大 95 MB）</span>
+                <input id="accountAdminHotReportPdf" name="pdf" type="file" accept="application/pdf,.pdf" required>
+              </label>
+              <div class="account-admin-hot-actions">
+                <span>3个月及以上会员可下载全文。</span>
+                <button class="primary" type="submit">上传到近期热门报告</button>
+              </div>
+            </form>
+            <div id="accountAdminHotReportStatus" class="status-line" aria-live="polite"></div>
+            <div id="accountAdminHotReportList" class="account-admin-hot-list"></div>
+          </section>
+          <section class="account-admin-section">
+            <div class="account-admin-heading">
+              <strong>每日文件</strong>
+              <span>最近同步</span>
+            </div>
+            <div id="accountAdminFilesNotice" class="account-admin-module-notice" hidden></div>
+            <div id="accountAdminFiles" class="account-admin-files"></div>
+          </section>
+          <section class="account-admin-section" id="accountAdminAnalyticsSection" ${showAnalytics ? "" : "hidden"}>
+            <div class="account-admin-heading">
+              <strong>访问与搜索</strong>
+              <span id="accountAdminAnalyticsCount"></span>
+            </div>
+            <div id="accountAdminAnalyticsNotice" class="account-admin-module-notice" hidden></div>
+            <div id="accountAdminAnalytics" class="account-admin-analytics"></div>
+          </section>
+          <section class="account-admin-section" id="accountAdminUsersSection" ${showUsers ? "" : "hidden"}>
+            <div class="account-admin-heading">
+              <strong>用户信息</strong>
+              <span id="accountAdminUserCount"></span>
+              <button class="secondary-button" id="accountAdminExportUsers" type="button">导出 Excel</button>
+              <button class="secondary-button" id="accountAdminNewUser" type="button">新增用户</button>
+            </div>
+            <div id="accountAdminUsersNotice" class="account-admin-module-notice" hidden></div>
+            <form id="accountAdminUserCreator" class="account-admin-user-editor" hidden>
+              <div class="account-admin-user-editor-head">
+                <strong>新增用户</strong>
+                <button class="secondary-button" id="accountAdminUserCreatorClose" type="button">关闭</button>
+              </div>
+              <div class="account-admin-form-grid">
+                <label>
+                  <span>用户名</span>
+                  <input id="accountAdminNewUsername" type="text" autocomplete="off" placeholder="username">
+                </label>
+                <label>
+                  <span>邮箱</span>
+                  <input id="accountAdminNewEmail" type="email" autocomplete="off" placeholder="name@example.com">
+                </label>
+                <label>
+                  <span>临时密码</span>
+                  <input id="accountAdminNewPassword" type="text" autocomplete="off" placeholder="至少4位">
+                </label>
+              </div>
+              <div class="account-admin-user-editor-actions">
+                <button class="primary" type="submit">创建用户</button>
+              </div>
+            </form>
+            <form id="accountAdminUserEditor" class="account-admin-user-editor" hidden>
+              <div class="account-admin-user-editor-head">
+                <strong id="accountAdminUserEditorTitle">编辑用户权限</strong>
+                <button class="secondary-button" id="accountAdminUserEditorClose" type="button">关闭</button>
+              </div>
+              <input id="accountAdminAccessEmail" type="hidden">
+              <div class="account-admin-form-grid">
+                <label>
+                  <span>权限范围</span>
+                  <select id="accountAdminAccessMode"></select>
+                </label>
+                <label>
+                  <span>开通时长</span>
+                  <select id="accountAdminAccessDuration"></select>
+                </label>
+                <label>
+                  <span>到期日期（可精确指定）</span>
+                  <input id="accountAdminAccessExpiry" type="date">
+                </label>
+                <div class="account-admin-access-field">
+                  <div class="account-admin-access-field-head">
+                    <span>机构（可多选）</span>
+                    <span id="accountAdminAccessInstitutionCount">已选 0</span>
+                  </div>
+                  <input id="accountAdminAccessInstitutionSearch" type="search" autocomplete="off" placeholder="搜索机构">
+                  <div class="account-admin-access-checkboxes" id="accountAdminAccessInstitutions" role="group" aria-label="机构下载权限"></div>
+                  <small>直接勾选多个机构（最多 60 项）；已有但不在当前目录中的授权会标为“历史授权”并继续保留。</small>
+                </div>
+                <label>
+                  <span>Industry</span>
+                  <select id="accountAdminAccessIndustries" multiple></select>
+                </label>
+              </div>
+              <div class="account-admin-page-ranges" id="accountAdminAccessPageRanges"></div>
+              <label class="account-admin-note-field">
+                <span>备注</span>
+                <input id="accountAdminAccessNote" type="text" placeholder="可选">
+              </label>
+              <label class="account-admin-renew-field">
+                <span>续期</span>
+                <span class="account-admin-renew-choice"><input id="accountAdminAccessRenew" type="checkbox"> 从今天按所选时长重新计算到期日</span>
+                <small>不勾选时，只改范围不会自动延长；需要精确日期可直接修改上方到期日期。</small>
+              </label>
+              <div class="account-admin-user-editor-actions">
+                <button class="primary" type="submit">保存权限</button>
+              </div>
+            </form>
+            <div class="account-admin-table-wrap">
+              <table class="account-admin-table">
+                <thead>
+                  <tr>
+	                    <th>用户名</th>
+	                    <th>邮箱</th>
+	                    <th>注册站点</th>
+	                    <th>状态</th>
+                    <th>账号</th>
+                    <th>实际下载权限</th>
+                    <th>到期</th>
+                    <th>权限来源</th>
+                    <th>注册</th>
+                    <th>最近登录</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody id="accountAdminUsers"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </div>
+    `;
+  }
+
+  function adminUserEntitlementLabel(user) {
+    if (user && user.role === "super") return "super";
+    const entitlement = user && user.entitlement || {};
+    if (entitlement.active) return entitlement.plan || "active";
+    return "free";
+  }
+
+  function adminUserAccessLabel(user) {
+    const access = user && (user.effective_access || user.access) || {};
+    if (access.source === "disabled") return "账号已禁用（不可下载）";
+    if (access.source === "error") return "权限读取失败（已拒绝）";
+    if (!access.active) return "未开通";
+    const suffix = accountRightUsageText(access);
+    if (access.access_mode === "all") return suffix ? `全站报告 · ${suffix}` : "全站报告";
+    if (access.access_mode === "filters") {
+      const parts = [];
+      if (Array.isArray(access.institutions) && access.institutions.length) parts.push(`机构 ${access.institutions.length}`);
+      if (Array.isArray(access.industries) && access.industries.length) parts.push(`行业 ${access.industries.length}`);
+      if (Array.isArray(access.page_ranges) && access.page_ranges.length) parts.push(`页数 ${access.page_ranges.length}`);
+      const label = parts.length ? parts.join(" / ") : "条件报告";
+      return suffix ? `${label} · ${suffix}` : label;
+    }
+    const label = access.access_mode || "active";
+    return suffix ? `${label} · ${suffix}` : label;
+  }
+
+  function adminUserAccessExpiry(user) {
+    const access = user && (user.effective_access || user.access) || {};
+    if (access.source === "disabled") return "-";
+    if (access.source === "error") return "核验失败";
+    if (!access.active) return "-";
+    if (access.lifetime) return "长期";
+    return access.current_period_end ? String(access.current_period_end).slice(0, 10) : "-";
+  }
+
+  function adminUserAccessSource(user) {
+    const access = user && (user.effective_access || user.access) || {};
+    const entitlement = user && user.entitlement || {};
+    if (access.source === "role") return "账号角色";
+    if (access.source === "disabled") return "账号已禁用";
+    if (["vid2ppt_nova", "vid2ppt_atlas"].includes(access.source)) return "历史会员权益";
+    if (access.source === "entitlement+stored") return "会员权益 + 后台授权";
+    if (access.source === "entitlement") {
+      return ["vid2ppt_nova", "vid2ppt_atlas"].includes(entitlement.grant_source)
+        ? "历史会员权益"
+        : "会员权益";
+    }
+    if (access.source === "stored") return "后台授权";
+    if (access.source === "error") return "核验失败（已拒绝）";
+    return "未授权";
+  }
+
+  function adminUserViewModel(user) {
+    const disabled = Boolean(user && user.disabled);
+    const rawSiteOrigin = String(user && (user.site_origin || user.registered_site) || "portal");
+    const rawRegisteredSite = String(user && (user.registered_site || user.site_origin) || "portal");
+    const rawSourceSite = String(user && user.entitlement && user.entitlement.source_site || "");
+    const rawGrantSource = String(user && user.entitlement && user.entitlement.grant_source || "");
+    const historicalLinkedEntitlement = rawSourceSite === "vid2ppt" || ["vid2ppt_nova", "vid2ppt_atlas"].includes(rawGrantSource);
+    return {
+      username: String(user && user.username || ""),
+      email: String(user && user.email || ""),
+      site_origin: rawSiteOrigin === "vid2ppt" ? "historical" : rawSiteOrigin,
+      registered_site: rawRegisteredSite === "vid2ppt" ? "historical" : rawRegisteredSite,
+      entitlement_source_site: historicalLinkedEntitlement ? "historical" : rawSourceSite,
+      entitlement_grant_source: historicalLinkedEntitlement ? "historical_member" : rawGrantSource,
+      entitlement_plan_code: historicalLinkedEntitlement ? "" : String(user && user.entitlement && user.entitlement.source_plan_code || ""),
+      status: disabled ? "已禁用" : "正常",
+      account: adminUserEntitlementLabel(user),
+      access: adminUserAccessLabel(user),
+      expiry: adminUserAccessExpiry(user),
+      registered: String(user && user.created_at || "").slice(0, 10),
+      last_login: String(user && user.last_login_at || "").replace("T", " ").slice(0, 16),
+      access_source: adminUserAccessSource(user),
+      access_updated: String(user && (user.effective_access || user.access) && (user.effective_access || user.access).updated_at || "").replace("T", " ").slice(0, 19),
+      disabled,
+    };
+  }
+
+  function adminUserRow(user) {
+    const view = adminUserViewModel(user);
+    const email = view.email;
+    const canEditAccess = user.role === "user";
+    const canToggleStatus = user.role !== "super";
+    const disabled = view.disabled;
+    return `
+      <tr data-email="${escapeHtml(email)}"${disabled ? ' class="is-disabled-user"' : ""}>
+        <td>${escapeHtml(view.username)}</td>
+        <td>${escapeHtml(email)}</td>
+        <td>${escapeHtml(view.registered_site || view.site_origin)}</td>
+        <td><span class="account-admin-user-status${disabled ? " is-disabled" : ""}">${escapeHtml(view.status)}</span></td>
+        <td>${escapeHtml(view.account)}</td>
+        <td title="${escapeHtml(view.access_source)}">${escapeHtml(view.access)}</td>
+        <td>${escapeHtml(view.expiry)}</td>
+        <td>${escapeHtml(view.access_source)}</td>
+        <td>${escapeHtml(view.registered)}</td>
+        <td>${escapeHtml(view.last_login)}</td>
+        <td>${canEditAccess || canToggleStatus ? `
+          <div class="account-admin-row-actions">
+            ${canEditAccess ? `<button class="secondary-button account-admin-edit-user" type="button" data-email="${escapeHtml(email)}">编辑</button>` : ""}
+            ${canToggleStatus ? `<button class="secondary-button account-admin-toggle-user" type="button" data-email="${escapeHtml(email)}" data-disabled="${disabled ? "false" : "true"}">${disabled ? "启用" : "禁用"}</button>` : ""}
+          </div>
+        ` : ""}</td>
+      </tr>
+    `;
+  }
+
+  function renderAdminUserTable(targets) {
+    if (!targets || !targets.users) return;
+    const rows = [...accountAdminUsersByEmail.values()];
+    if (targets.userCount) targets.userCount.textContent = `${rows.length} users`;
+    targets.users.innerHTML = rows.length
+      ? rows.map(adminUserRow).join("")
+      : '<tr><td colspan="11">暂无用户。</td></tr>';
+  }
+
+  function optionMarkup(options = [], selected = []) {
+    const selectedSet = new Set((Array.isArray(selected) ? selected : []).map(String));
+    return (options || []).map((option) => {
+      const value = String(option.value || "");
+      return `<option value="${escapeHtml(value)}"${selectedSet.has(value) ? " selected" : ""}>${escapeHtml(option.label || value)}</option>`;
+    }).join("");
+  }
+
+  function setSelectValues(select, values = []) {
+    const selected = new Set((Array.isArray(values) ? values : []).map(String));
+    Array.from(select.options).forEach((option) => {
+      option.selected = selected.has(option.value);
+    });
+  }
+
+  function selectedSelectValues(select) {
+    return Array.from(select.selectedOptions || []).map((option) => option.value).filter(Boolean);
+  }
+
+  function accessOptionKey(value) {
+    return String(value || "").normalize("NFKC").replace(/\s+/g, " ").trim().toLowerCase();
+  }
+
+  function mergeAccessOptionRows(options = [], selected = []) {
+    const rows = Array.isArray(options) ? options : [];
+    const selectedValues = (Array.isArray(selected) ? selected : []).map(String).filter(Boolean);
+    const optionsByKey = new Map();
+    rows.forEach((option) => {
+      const value = String(option && option.value || "");
+      const key = accessOptionKey(value);
+      if (key && !optionsByKey.has(key)) optionsByKey.set(key, option);
+    });
+    const used = new Set();
+    const merged = [];
+    selectedValues.forEach((value) => {
+      const key = accessOptionKey(value);
+      if (!key || used.has(key)) return;
+      const current = optionsByKey.get(key);
+      merged.push(current
+        ? { ...current, value }
+        : { value, label: `${value}（历史授权，保留）`, legacy: true });
+      used.add(key);
+    });
+    rows.forEach((option) => {
+      const value = String(option && option.value || "");
+      const key = accessOptionKey(value);
+      if (!key || used.has(key)) return;
+      merged.push(option);
+      used.add(key);
+    });
+    return merged;
+  }
+
+  function renderAccessCheckboxOptions(target, options = [], selected = []) {
+    if (!target) return;
+    const selectedKeys = new Set((Array.isArray(selected) ? selected : []).map(accessOptionKey).filter(Boolean));
+    target.innerHTML = mergeAccessOptionRows(options, selected).map((option, index) => {
+      const value = String(option && option.value || "");
+      const label = String(option && option.label || value);
+      const inputId = `accountAdminInstitutionOption${index}`;
+      const checked = selectedKeys.has(accessOptionKey(value));
+      const searchText = `${value} ${label}`.normalize("NFKC").toLowerCase();
+      return `
+        <label class="account-admin-access-checkbox${option && option.legacy ? " is-legacy" : ""}" data-access-search="${escapeHtml(searchText)}">
+          <input id="${inputId}" type="checkbox" value="${escapeHtml(value)}"${checked ? " checked" : ""}>
+          <span>${escapeHtml(label)}</span>
+        </label>
+      `;
+    }).join("");
+  }
+
+  function selectedAccessCheckboxValues(target) {
+    return Array.from(target && target.querySelectorAll("input[type='checkbox']:checked") || [])
+      .map((input) => input.value)
+      .filter(Boolean);
+  }
+
+  function updateAccessCheckboxCount(target, countTarget) {
+    if (!countTarget) return;
+    countTarget.textContent = `已选 ${selectedAccessCheckboxValues(target).length}`;
+  }
+
+  function filterAccessCheckboxOptions(target, query) {
+    const normalized = String(query || "").normalize("NFKC").trim().toLowerCase();
+    Array.from(target && target.querySelectorAll(".account-admin-access-checkbox") || []).forEach((row) => {
+      row.hidden = Boolean(normalized) && !String(row.dataset.accessSearch || "").includes(normalized);
+    });
+  }
+
+  function accessScopeSnapshot(access = {}) {
+    return {
+      access_mode: String(access.access_mode || "none"),
+      institutions: (Array.isArray(access.institutions) ? access.institutions : []).map(String).filter(Boolean),
+      industries: (Array.isArray(access.industries) ? access.industries : []).map(String).filter(Boolean),
+      page_ranges: (Array.isArray(access.page_ranges) ? access.page_ranges : []).map(String).filter(Boolean),
+    };
+  }
+
+  function accessScopeNeedsConfirmation(previous = {}, next = {}) {
+    const before = accessScopeSnapshot(previous);
+    const after = accessScopeSnapshot(next);
+    if (before.access_mode !== after.access_mode) {
+      return before.access_mode !== "none" || after.access_mode === "all";
+    }
+    if (before.access_mode !== "filters") return false;
+    return ["institutions", "industries", "page_ranges"].some((field) => {
+      const nextKeys = new Set(after[field].map(accessOptionKey));
+      return before[field].some((value) => !nextKeys.has(accessOptionKey(value)));
+    });
+  }
+
+  function accessScopeConfirmationText(previous = {}, next = {}) {
+    if (String(next.access_mode || "") === "all") {
+      return "确认把该用户改为“全站报告”吗？这会移除原有的机构、行业和页数限制。";
+    }
+    if (String(next.access_mode || "") === "none") return "确认关闭该用户的下载权限吗？";
+    return "这次保存会移除部分已有机构、行业或页数权限。确认继续吗？";
+  }
+
+  function accessDurationPreviewDate(durationValue) {
+    const value = String(durationValue || "");
+    if (!value || value === "lifetime") return "";
+    const date = new Date();
+    if (value === "trial_3d") date.setUTCDate(date.getUTCDate() + 3);
+    else {
+      const months = Number(value);
+      if (!Number.isFinite(months) || months <= 0) return "";
+      date.setUTCMonth(date.getUTCMonth() + months);
+    }
+    return date.toISOString().slice(0, 10);
+  }
+
+  function prepareExpiredAccessRenewal(targets) {
+    if (!targets || targets.accessMode.value === "none" || targets.accessDuration.value === "lifetime") return;
+    if (targets.accessRenew) targets.accessRenew.checked = true;
+    if (targets.accessExpiry) targets.accessExpiry.value = accessDurationPreviewDate(targets.accessDuration.value);
+  }
+
+  function fillUserAccessEditor(user, targets) {
+    if (!user || !targets.userEditor) return;
+    const access = user.access || {};
+    const options = accountAdminAccessOptions || {};
+    const username = user.username || user.email || "";
+    targets.userEditor.hidden = false;
+    targets.userEditor.dataset.expectedChangeId = String(access.change_id || "");
+    targets.userEditor.dataset.expectedUpdatedAt = String(access.updated_at || "");
+    targets.userEditor.dataset.originalAccessActive = access.active ? "true" : "false";
+    targets.userEditor.dataset.originalAccessScope = JSON.stringify(accessScopeSnapshot(access));
+    targets.accessEmail.value = user.email || "";
+    targets.userEditorTitle.textContent = `编辑权限：${username}`;
+    targets.accessMode.innerHTML = optionMarkup(options.modes || [], [access.access_mode || "none"]);
+    targets.accessDuration.innerHTML = optionMarkup(options.durations || [], [access.lifetime ? "lifetime" : (access.duration_value || "12")]);
+    if (targets.accessExpiry) targets.accessExpiry.value = String(access.current_period_end || "").slice(0, 10);
+    renderAccessCheckboxOptions(targets.accessInstitutions, options.institutions || [], access.institutions || []);
+    targets.accessIndustries.innerHTML = optionMarkup(
+      mergeAccessOptionRows(options.industries || [], access.industries || []),
+      access.industries || [],
+    );
+    setSelectValues(targets.accessIndustries, access.industries || []);
+    if (targets.accessInstitutionSearch) targets.accessInstitutionSearch.value = "";
+    filterAccessCheckboxOptions(targets.accessInstitutions, "");
+    updateAccessCheckboxCount(targets.accessInstitutions, targets.accessInstitutionCount);
+    const selectedRanges = new Set(access.page_ranges || []);
+    targets.accessPageRanges.innerHTML = (options.page_ranges || []).map((option) => `
+      <label>
+        <input type="checkbox" name="adminAccessPageRange" value="${escapeHtml(option.value || "")}"${selectedRanges.has(option.value) ? " checked" : ""}>
+        <span>${escapeHtml(option.label || option.value || "")}</span>
+      </label>
+    `).join("");
+    targets.accessNote.value = access.note || "";
+    const needsRenewal = access.access_mode !== "none" && !access.active && !access.lifetime;
+    if (targets.accessRenew) targets.accessRenew.checked = needsRenewal;
+    if (needsRenewal) prepareExpiredAccessRenewal(targets);
+    targets.accessMode.dispatchEvent(new Event("change"));
+    if (targets.status) {
+      targets.status.className = "status-line ok";
+      targets.status.textContent = needsRenewal
+        ? `${username || "用户"} 的旧权限已过期；保存时将从今天按所选时长重新开通。`
+        : `正在编辑 ${username || "用户"} 的下载权限。`;
+    }
+    requestAnimationFrame(() => {
+      targets.userEditor.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      if (targets.accessMode) targets.accessMode.focus({ preventScroll: true });
+    });
+  }
+
+  function updateUserAccessEditorMode(targets) {
+    if (!targets || !targets.userEditor) return;
+    const filters = targets.accessMode.value === "filters";
+    const enabled = targets.accessMode.value !== "none";
+    if (targets.accessDuration) targets.accessDuration.disabled = !enabled;
+    if (targets.accessExpiry) targets.accessExpiry.disabled = !enabled || targets.accessDuration.value === "lifetime";
+    if (targets.accessRenew) targets.accessRenew.disabled = !enabled || targets.accessDuration.value === "lifetime";
+    targets.accessInstitutions.querySelectorAll("input").forEach((input) => {
+      input.disabled = !filters;
+    });
+    if (targets.accessInstitutionSearch) targets.accessInstitutionSearch.disabled = !filters;
+    targets.accessIndustries.disabled = !filters;
+    targets.accessPageRanges.querySelectorAll("input").forEach((input) => {
+      input.disabled = !filters;
+    });
+  }
+
+  async function saveUserAccess(workerUrl, targets) {
+    const email = targets.accessEmail.value || "";
+    const mode = targets.accessMode.value || "none";
+    const payload = {
+      email,
+      access_mode: mode,
+      duration_months: mode === "none" ? "" : (targets.accessDuration.value || "12"),
+      institutions: mode === "filters" ? selectedAccessCheckboxValues(targets.accessInstitutions) : [],
+      industries: mode === "filters" ? selectedSelectValues(targets.accessIndustries) : [],
+      page_ranges: mode === "filters"
+        ? Array.from(targets.accessPageRanges.querySelectorAll("input:checked")).map((input) => input.value)
+        : [],
+      note: targets.accessNote.value || "",
+      renew: Boolean(targets.accessRenew && targets.accessRenew.checked),
+      expires_on: mode === "none" ? "" : (targets.accessExpiry && targets.accessExpiry.value || ""),
+      expected_change_id: String(targets.userEditor.dataset.expectedChangeId || ""),
+      expected_updated_at: String(targets.userEditor.dataset.expectedUpdatedAt || ""),
+      confirm_scope_change: false,
+    };
+    if (mode === "filters" && !payload.institutions.length && !payload.industries.length && !payload.page_ranges.length) {
+      throw new Error("按条件筛选至少要勾选一个机构、行业或页数条件。");
+    }
+    let originalScope = {};
+    try {
+      const originalScopeText = targets.userEditor.dataset.originalAccessScope || "";
+      if (!originalScopeText) throw new Error("missing scope");
+      originalScope = JSON.parse(originalScopeText);
+    } catch (_error) {
+      throw new Error("原权限状态无法核验，请关闭编辑框并重新打开。");
+    }
+    if (accessScopeNeedsConfirmation(originalScope, payload)) {
+      if (!window.confirm(accessScopeConfirmationText(originalScope, payload))) return { cancelled: true };
+      payload.confirm_scope_change = true;
+    }
+    const response = await fetch(`${workerUrl}/account-admin/user-access`, {
+      method: "POST",
+      cache: "no-store",
+      headers: { "Content-Type": "application/json", ...authHeaders() },
+      body: JSON.stringify(payload),
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(data.detail || "保存权限失败。");
+    if (!data.verified) throw new Error("权限保存后读回校验失败，请重试。");
+    const savedAccess = data.access && typeof data.access === "object" ? data.access : {};
+    targets.userEditor.dataset.expectedChangeId = String(savedAccess.change_id || "");
+    targets.userEditor.dataset.expectedUpdatedAt = String(savedAccess.updated_at || "");
+    targets.userEditor.dataset.originalAccessActive = savedAccess.active ? "true" : "false";
+    targets.userEditor.dataset.originalAccessScope = JSON.stringify(accessScopeSnapshot(savedAccess));
+    if (targets.accessExpiry) targets.accessExpiry.value = String(savedAccess.current_period_end || "").slice(0, 10);
+    if (targets.accessRenew) targets.accessRenew.checked = false;
+    const updated = data.user || null;
+    if (updated && updated.email) accountAdminUsersByEmail.set(String(updated.email), updated);
+    else {
+      const existing = accountAdminUsersByEmail.get(email) || { email };
+      accountAdminUsersByEmail.set(email, { ...existing, access: data.access });
+    }
+    return data;
+  }
+
+  async function loadAdminUserAccess(workerUrl, email) {
+    const response = await fetch(`${workerUrl}/account-admin/user-access?email=${encodeURIComponent(email)}`, {
+      method: "GET",
+      cache: "no-store",
+      headers: authHeaders(),
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok || !data.user) throw new Error(data.detail || "读取最新用户权限失败。");
+    if (data.access_options && typeof data.access_options === "object") {
+      accountAdminAccessOptions = data.access_options;
+    }
+    return data.user;
+  }
+
+  async function createAdminUser(workerUrl, targets) {
+    const payload = {
+      username: targets.newUsername.value || "",
+      email: targets.newEmail.value || "",
+      password: targets.newPassword.value || "",
+    };
+    const response = await fetch(`${workerUrl}/account-admin/user`, {
+      method: "POST",
+      cache: "no-store",
+      headers: { "Content-Type": "application/json", ...authHeaders() },
+      body: JSON.stringify(payload),
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(data.detail || "创建用户失败。");
+    if (data.user && data.user.email) {
+      accountAdminUsersByEmail.set(String(data.user.email), data.user);
+    }
+    return data;
+  }
+
+  async function updateAdminUserStatus(workerUrl, email, disabled) {
+    const response = await fetch(`${workerUrl}/account-admin/user-status`, {
+      method: "POST",
+      cache: "no-store",
+      headers: { "Content-Type": "application/json", ...authHeaders() },
+      body: JSON.stringify({ email, disabled: Boolean(disabled) }),
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(data.detail || "账号状态更新失败。");
+    if (data.user && data.user.email) {
+      accountAdminUsersByEmail.set(String(data.user.email), data.user);
+    }
+    return data;
+  }
+
+  function adminFileRow(file) {
+    const key = file.type === "artifact" ? file.id : file.path;
+    const endpointAttr = file.type === "artifact" ? "artifact" : "file";
+    const note = file.note ? `<span>${escapeHtml(file.note)}</span>` : "";
+    const accountClass = file.recommended_account === "Portal Suite"
+      ? "is-desktop"
+      : (file.recommended_account === "Portal 娱乐" ? "is-entertain" : "is-bias");
+    const accountLabel = file.recommended_account
+      ? `
+        <div class="account-admin-file-label">
+          <span class="${accountClass}">适合：${escapeHtml(file.recommended_account)}</span>
+          <small>${escapeHtml(file.account_label_confidence || "低")}信心 · ${escapeHtml(file.account_label_reason || "")}</small>
+        </div>
+      `
+      : "";
+    const repo = file.repo || "";
+    return `
+      <div class="account-admin-file">
+        <div>
+          <strong>${escapeHtml(file.label || file.kind || "File")}</strong>
+          <span>${escapeHtml(file.date || "")} · ${escapeHtml(file.name || "")}${file.size_bytes ? ` · ${escapeHtml(formatSize(file.size_bytes))}` : ""}</span>
+          ${note}
+          ${accountLabel}
+          <div class="account-admin-progress" hidden>
+            <div class="account-admin-progress-track"><span></span></div>
+            <small>等待下载…</small>
+          </div>
+        </div>
+        <div class="account-admin-file-actions">
+          <button class="secondary-button account-admin-download" type="button"
+            data-kind="${escapeHtml(endpointAttr)}"
+            data-file-kind="${escapeHtml(file.kind || "")}"
+            data-key="${escapeHtml(key || "")}"
+            data-repo="${escapeHtml(repo)}"
+            data-size-bytes="${escapeHtml(String(file.size_bytes || 0))}"
+            data-name="${escapeHtml(file.name || "download")}">下载</button>
+        </div>
+      </div>
+    `;
+  }
+
+  function adminMarketViewRow(item) {
+    const id = String(item && item.id || "");
+    const name = String(item && item.filename || `${id || "market-views"}.pdf`);
+    return `
+      <div class="account-admin-file" data-market-view-id="${escapeHtml(id)}">
+        <div>
+          <strong>${escapeHtml(item && item.title || "Market Views")}</strong>
+          <span>${escapeHtml(item && item.date || "")}${item && item.size_bytes ? ` · ${escapeHtml(formatSize(item.size_bytes))}` : ""}</span>
+          <div class="account-admin-progress" hidden>
+            <div class="account-admin-progress-track"><span></span></div>
+            <small>等待下载…</small>
+          </div>
+        </div>
+        <div class="account-admin-file-actions">
+          <button class="secondary-button account-admin-market-view-download" type="button"
+            data-market-view-id="${escapeHtml(id)}"
+            data-name="${escapeHtml(name)}">下载 PDF</button>
+        </div>
+      </div>
+    `;
+  }
+
+  async function loadAccountAdminMarketViews(workerUrl, targets) {
+    if (!targets.marketViews) return [];
+    try {
+      const response = await fetch(`${workerUrl}/market-views`, { cache: "no-store" });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(data.detail || "Market Views 读取失败。");
+      const items = Array.isArray(data.items) ? data.items : [];
+      accountAdminMarketViews = new Map(items.map((item) => [String(item.id || ""), item]));
+      if (targets.marketViewCount) targets.marketViewCount.textContent = items.length ? `${items.length} PDFs` : "";
+      targets.marketViews.innerHTML = items.length
+        ? items.map(adminMarketViewRow).join("")
+        : '<div class="empty-state">Market Views PDF 正在准备中。</div>';
+      if (targets.marketViewsNotice) {
+        targets.marketViewsNotice.hidden = true;
+        targets.marketViewsNotice.textContent = "";
+      }
+      return items;
+    } catch (error) {
+      if (targets.marketViewsNotice) {
+        targets.marketViewsNotice.hidden = false;
+        targets.marketViewsNotice.className = "account-admin-module-notice error";
+        targets.marketViewsNotice.textContent = error.message || "Market Views 暂时无法读取。";
+      }
+      if (!accountAdminMarketViews.size) {
+        targets.marketViews.innerHTML = '<div class="empty-state">Market Views 暂时无法读取，请点击刷新重试。</div>';
+      }
+      throw error;
+    }
+  }
+
+  function adminPickMeta(pick) {
+    const parts = [
+      pick.bank,
+      pick.date_folder,
+      pick.page_count ? `${pick.page_count}页` : "页数待识别",
+      pick.first_page_landscape ? "横屏PDF" : "",
+      pick.size_bytes ? formatSize(pick.size_bytes) : "",
+    ].filter(Boolean);
+    return parts.join(" · ");
+  }
+
+  function adminDailyPickRow(pick) {
+    const intro = String(pick.intro || "").trim();
+    const title = pick.display_title || pick.title_zh || pick.title || "Untitled report";
+    const tags = Array.isArray(pick.tags) && pick.tags.length
+      ? `<div class="account-admin-pick-tags">${pick.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>`
+      : "";
+    return `
+      <article class="account-admin-pick" data-id="${escapeHtml(pick.id || "")}">
+        <div class="account-admin-pick-main">
+          <div class="account-admin-pick-title">
+            <strong>${escapeHtml(title)}</strong>
+            ${pick.title && pick.title !== title ? `<span>${escapeHtml(pick.title)}</span>` : ""}
+          </div>
+          <span class="account-admin-pick-meta">${escapeHtml(adminPickMeta(pick))}</span>
+          ${tags}
+          <textarea class="account-admin-pick-intro" readonly aria-label="介绍文字">${escapeHtml(intro)}</textarea>
+          <div class="account-admin-progress" hidden>
+            <div class="account-admin-progress-track"><span></span></div>
+            <small>等待下载…</small>
+          </div>
+        </div>
+        <div class="account-admin-file-actions account-admin-pick-actions">
+          <button class="secondary-button account-admin-copy-intro" type="button">复制文案</button>
+          <button class="secondary-button account-admin-report-download" type="button">下载报告</button>
+          <button class="secondary-button account-admin-cover-save" type="button">保存首图</button>
+        </div>
+      </article>
+    `;
+  }
+
+  function adminWechatArticleList(batch) {
+    const articles = Array.isArray(batch.articles) ? batch.articles.slice(0, 9) : [];
+    if (!articles.length) return `<div class="account-admin-wechat-empty">这个 batch 暂无标题明细。</div>`;
+    return `
+      <ol class="account-admin-wechat-articles">
+        ${articles.map((article, index) => `
+          <li>
+            <span>${escapeHtml(article.label || `${index + 1}条`)}</span>
+            <strong>${escapeHtml(article.title || "")}</strong>
+          </li>
+        `).join("")}
+      </ol>
+    `;
+  }
+
+  function adminWechatScheduleHeader(schedule) {
+    if (!schedule || !schedule.date_folder) return "还没有找到公众号草稿 batch。";
+    const dateText = schedule.date_iso || schedule.date_folder;
+    return `${dateText} · 推荐发送窗口 · ${schedule.window || "08:00 - 次日 00:30"}`;
+  }
+
+  function adminWechatSourceDateNote(schedule) {
+    const sourceDates = Array.isArray(schedule && schedule.source_dates) ? schedule.source_dates : [];
+    if (!sourceDates.length) return "";
+    const text = sourceDates
+      .map((entry) => {
+        const label = entry.source_label || "来源";
+        const date = entry.date_iso || entry.date_folder || "";
+        return `${label}: ${date}${entry.is_today ? "" : "（最近可用）"}`;
+      })
+      .join(" · ");
+    const prefix = sourceDates.some((entry) => !entry.is_today)
+      ? "部分来源今天还没有新草稿，已补入各来源最近可用 batch。"
+      : "素材日期：";
+    return `<div class="account-admin-wechat-note">${escapeHtml(prefix)} ${escapeHtml(text)}</div>`;
+  }
+
+  function adminWechatBatchRow(batch) {
+    const meta = [
+      batch.source_label,
+      batch.source_date_iso ? `素材 ${batch.source_date_iso}${batch.source_is_today ? "" : "（最近可用）"}` : "",
+      batch.article_count ? `${batch.article_count}篇` : "",
+      batch.total_batches ? `第 ${batch.schedule_index}/${batch.total_batches} 个 batch` : "",
+    ].filter(Boolean).join(" · ");
+    return `
+      <article class="account-admin-wechat-batch">
+        <div class="account-admin-wechat-time">
+          <strong>${escapeHtml(batch.scheduled_time || "")}</strong>
+          <span>${escapeHtml(batch.day_label || "")}</span>
+        </div>
+        <div class="account-admin-wechat-main">
+          <div class="account-admin-wechat-title">
+            <strong>${escapeHtml(batch.batch_label || `Batch ${batch.batch_no || ""}`)}</strong>
+            <span>${escapeHtml(meta)}</span>
+          </div>
+          ${adminWechatArticleList(batch)}
+        </div>
+      </article>
+    `;
+  }
+
+  function renderAdminWechatSchedule(schedule) {
+    const batches = Array.isArray(schedule && schedule.batches) ? schedule.batches : [];
+    if (!batches.length) {
+      return `
+        <div class="empty-state">
+          ${escapeHtml(adminWechatScheduleHeader(schedule))}
+        </div>
+      `;
+    }
+    const sourceDateNote = adminWechatSourceDateNote(schedule);
+    return `
+      <div class="account-admin-wechat-summary">
+        <strong>${escapeHtml(adminWechatScheduleHeader(schedule))}</strong>
+        <span>${escapeHtml(`${schedule.total_batches || batches.length} 个 batch · ${schedule.total_articles || 0} 篇文章`)}</span>
+      </div>
+      ${sourceDateNote}
+      ${batches.map(adminWechatBatchRow).join("")}
+    `;
+  }
+
+  function analyticsTime(value) {
+    return String(value || "").replace("T", " ").slice(0, 16);
+  }
+
+  function analyticsSourcesText(sources) {
+    if (!sources || typeof sources !== "object") return "";
+    return Object.entries(sources)
+      .sort((a, b) => Number(b[1] || 0) - Number(a[1] || 0))
+      .map(([source, count]) => `${source} ${count}`)
+      .join(" · ");
+  }
+
+  function analyticsEventFilterText(event) {
+    const filters = [];
+    if (event.page_range_labels) filters.push(`页数: ${event.page_range_labels}`);
+    if (event.bank) filters.push(`机构: ${event.bank}`);
+    if (event.industry) filters.push(`行业: ${event.industry}`);
+    if (event.start_date || event.end_date) filters.push(`日期: ${event.start_date || "开始"}-${event.end_date || "今天"}`);
+    if (event.scope && event.scope !== "all") filters.push(`范围: ${event.scope}`);
+    if (event.availability) filters.push(`PDF: ${event.availability}`);
+    return filters.join(" · ");
+  }
+
+  function analyticsMetric(label, value) {
+    return `
+      <div class="account-admin-metric">
+        <span>${escapeHtml(label)}</span>
+        <strong>${escapeHtml(String(value || 0))}</strong>
+      </div>
+    `;
+  }
+
+  function renderAnalyticsTopSearches(searches) {
+    const rows = Array.isArray(searches) ? searches.slice(0, 12) : [];
+    if (!rows.length) return '<div class="empty-state">还没有搜索记录。</div>';
+    return `
+      <div class="account-admin-table-wrap">
+        <table class="account-admin-table account-admin-analytics-table">
+          <thead>
+            <tr>
+              <th>搜索词</th>
+              <th>次数</th>
+              <th>访客</th>
+              <th>来源</th>
+              <th>最近</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rows.map((row) => `
+              <tr>
+                <td><strong>${escapeHtml(row.query || "")}</strong></td>
+                <td>${escapeHtml(row.count || 0)}</td>
+                <td>${escapeHtml(row.visitor_count || 0)}</td>
+                <td>${escapeHtml(analyticsSourcesText(row.sources))}</td>
+                <td>${escapeHtml(analyticsTime(row.last_at))}</td>
+              </tr>
+            `).join("")}
+          </tbody>
+        </table>
+      </div>
+    `;
+  }
+
+  function renderAnalyticsTopReports(reports) {
+    const rows = Array.isArray(reports) ? reports.slice(0, 10) : [];
+    if (!rows.length) return '<div class="empty-state">还没有报告点击记录。</div>';
+    return `
+      <div class="account-admin-files account-admin-analytics-list">
+        ${rows.map((row) => `
+          <div class="account-admin-file">
+            <div>
+              <strong>${escapeHtml(row.title || row.report_id || "")}</strong>
+              <span>${escapeHtml(row.source || "")} · 打开 ${escapeHtml(row.opens || 0)} · 下载 ${escapeHtml(row.downloads || 0)} · ${escapeHtml(analyticsTime(row.last_at))}</span>
+            </div>
+          </div>
+        `).join("")}
+      </div>
+    `;
+  }
+
+  function analyticsEventUserText(event) {
+    if (event.user && (event.user.username || event.user.email)) {
+      return `${event.user.username || ""}${event.user.email ? ` · ${event.user.email}` : ""}`;
+    }
+    const visitor = event.visitor_id || event.ip_hash || "";
+    return visitor ? String(visitor).slice(0, 18) : "匿名";
+  }
+
+  function analyticsEventContentText(event) {
+    if (event.query) return `${event.source || ""} 搜索：${event.query}`;
+    return event.report_title || event.report_id || event.target || event.path || "";
+  }
+
+  function analyticsEventStatusText(event) {
+    return [
+      event.result_count ? `${event.result_count}条` : "",
+      analyticsEventFilterText(event),
+      event.action || "",
+      event.cache_status || "",
+      event.status || "",
+      event.duration_ms ? `${event.duration_ms}ms` : "",
+      event.error || "",
+    ].filter(Boolean).join(" · ");
+  }
+
+  function renderAnalyticsRecentEvents(events, limit = 30) {
+    const sourceRows = Array.isArray(events) ? events : [];
+    const rows = limit > 0 ? sourceRows.slice(0, limit) : sourceRows;
+    if (!rows.length) return '<div class="empty-state">还没有最近事件。</div>';
+    return `
+      <div class="account-admin-table-wrap">
+        <table class="account-admin-table account-admin-analytics-table">
+          <thead>
+            <tr>
+              <th>时间</th>
+              <th>事件</th>
+              <th>用户/访客</th>
+              <th>内容</th>
+              <th>状态</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rows.map((event) => {
+              return `
+                <tr>
+                  <td>${escapeHtml(analyticsTime(event.ts))}</td>
+                  <td>${escapeHtml(event.type || "")}</td>
+                  <td>${escapeHtml(analyticsEventUserText(event))}</td>
+                  <td>${escapeHtml(analyticsEventContentText(event))}</td>
+                  <td>${escapeHtml(analyticsEventStatusText(event))}</td>
+                </tr>
+              `;
+            }).join("")}
+          </tbody>
+        </table>
+      </div>
+    `;
+  }
+
+  function renderAccountAdminAnalytics(analytics) {
+    if (!analytics || typeof analytics !== "object") {
+      return '<div class="empty-state">还没有可用的访问数据。</div>';
+    }
+    return `
+      <div class="account-admin-metrics">
+        ${analyticsMetric("访客", analytics.visitor_count)}
+        ${analyticsMetric("搜索", analytics.search_count)}
+        ${analyticsMetric("报告打开", analytics.report_open_count)}
+        ${analyticsMetric("下载", analytics.download_success_count)}
+        ${analyticsMetric("发货链接", analytics.delivery_link_count)}
+      </div>
+      <div class="account-admin-analytics-grid">
+        <section>
+          <h4>热门搜索</h4>
+          ${renderAnalyticsTopSearches(analytics.top_searches)}
+        </section>
+        <section>
+          <h4>热门报告</h4>
+          ${renderAnalyticsTopReports(analytics.top_reports)}
+        </section>
+      </div>
+      <section>
+        <div class="account-admin-analytics-heading">
+          <h4>最近事件</h4>
+          <a class="secondary-button" href="activity.html" target="_blank" rel="noopener">查看全部已采集记录</a>
+        </div>
+        ${renderAnalyticsRecentEvents(analytics.recent_events)}
+      </section>
+    `;
+  }
+
+  const ANALYTICS_EVENT_LABELS = {
+    page_view: "页面访问",
+    search: "搜索",
+    report_open: "打开报告",
+    download_attempt: "尝试下载",
+    download_success: "下载成功",
+    download_error: "下载失败",
+    download_pending: "等待报告",
+    delivery_link_generate: "生成发货链接",
+    account_auth: "账号操作",
+    admin_user_update: "用户权限操作",
+    daily_file_download: "每日文件下载",
+  };
+
+  function analyticsEventLabel(type) {
+    const value = String(type || "");
+    return ANALYTICS_EVENT_LABELS[value] || value || "其他事件";
+  }
+
+  function analyticsEventEnvironmentText(event) {
+    return [
+      event.country || "",
+      event.colo ? `节点 ${event.colo}` : "",
+      event.page ? `页面 ${event.page}` : "",
+      event.source ? `来源 ${event.source}` : "",
+    ].filter(Boolean).join(" · ");
+  }
+
+  function analyticsEventDetailText(event) {
+    return [
+      event.path ? `路径：${event.path}` : "",
+      event.referrer ? `来源页：${event.referrer}` : "",
+      event.user_agent ? `设备：${event.user_agent}` : "",
+      event.institution ? `机构：${event.institution}` : "",
+      event.target ? `对象：${event.target}` : "",
+      event.report_id ? `报告 ID：${event.report_id}` : "",
+      event.visitor_id ? `访客 ID：${event.visitor_id}` : "",
+      event.ip_hash ? `IP Hash：${event.ip_hash}` : "",
+    ].filter(Boolean).join("\n");
+  }
+
+  function renderAnalyticsHistoryEvents(events) {
+    const rows = Array.isArray(events) ? events : [];
+    if (!rows.length) {
+      return '<div class="empty-state">当前区间没有匹配事件。</div>';
+    }
+    return `
+      <div class="account-admin-table-wrap analytics-history-table-wrap">
+        <table class="account-admin-table analytics-history-table">
+          <thead>
+            <tr>
+              <th>时间</th>
+              <th>事件</th>
+              <th>用户 / 访客</th>
+              <th>内容</th>
+              <th>条件 / 状态</th>
+              <th>环境</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rows.map((event) => {
+              const detail = analyticsEventDetailText(event);
+              return `
+                <tr>
+                  <td class="analytics-history-time">${escapeHtml(analyticsTime(event.ts))}</td>
+                  <td>
+                    <strong>${escapeHtml(analyticsEventLabel(event.type))}</strong>
+                    <small>${escapeHtml(event.type || "")}</small>
+                  </td>
+                  <td>
+                    <strong>${escapeHtml(analyticsEventUserText(event))}</strong>
+                    <small>${escapeHtml(event.user && event.user.role || "")}</small>
+                  </td>
+                  <td class="analytics-history-content">
+                    <strong>${escapeHtml(analyticsEventContentText(event))}</strong>
+                    <small>${escapeHtml(event.institution || event.report_id || event.path || "")}</small>
+                  </td>
+                  <td>${escapeHtml(analyticsEventStatusText(event))}</td>
+                  <td>
+                    <span>${escapeHtml(analyticsEventEnvironmentText(event))}</span>
+                    ${detail ? `
+                      <details class="analytics-event-details">
+                        <summary>详细信息</summary>
+                        <pre>${escapeHtml(detail)}</pre>
+                      </details>
+                    ` : ""}
+                  </td>
+                </tr>
+              `;
+            }).join("")}
+          </tbody>
+        </table>
+      </div>
+    `;
+  }
+
+  const ANALYTICS_HISTORY_EXPORT_MAX_PAGES = 12000;
+  const ANALYTICS_HISTORY_EXPORT_MAX_ROWS = 1048575;
+  const ANALYTICS_HISTORY_EXPORT_PAGE_SIZE = 50;
+  const ANALYTICS_HISTORY_EXPORT_COLUMNS = [
+    { header: "时间（ISO）", key: "ts", width: 25 },
+    { header: "北京时间日期", key: "date", width: 14 },
+    { header: "事件", key: "event_label", width: 16 },
+    { header: "事件代码", key: "type", width: 24 },
+    { header: "用户名", key: "username", width: 18 },
+    { header: "邮箱", key: "email", width: 30 },
+    { header: "账号角色", key: "role", width: 14 },
+    { header: "访客 ID", key: "visitor_id", width: 28 },
+    { header: "IP Hash", key: "ip_hash", width: 28 },
+    { header: "国家", key: "country", width: 10 },
+    { header: "节点", key: "colo", width: 10 },
+    { header: "页面", key: "page", width: 18 },
+    { header: "路径", key: "path", width: 36 },
+    { header: "来源", key: "source", width: 18 },
+    { header: "搜索词", key: "query", width: 36 },
+    { header: "机构", key: "institution", width: 24 },
+    { header: "行业", key: "industry", width: 24 },
+    { header: "开始日期", key: "start_date", width: 14 },
+    { header: "结束日期", key: "end_date", width: 14 },
+    { header: "范围", key: "scope", width: 16 },
+    { header: "可用状态", key: "availability", width: 16 },
+    { header: "页码范围", key: "page_ranges", width: 20 },
+    { header: "页码标签", key: "page_range_labels", width: 24 },
+    { header: "结果数", key: "result_count", width: 12 },
+    { header: "总数", key: "total_count", width: 12 },
+    { header: "缓存状态", key: "cache_status", width: 16 },
+    { header: "报告 ID", key: "report_id", width: 28 },
+    { header: "报告标题", key: "report_title", width: 48 },
+    { header: "对象", key: "target", width: 32 },
+    { header: "动作", key: "action", width: 18 },
+    { header: "状态", key: "status", width: 18 },
+    { header: "耗时（ms）", key: "duration_ms", width: 14 },
+    { header: "错误", key: "error", width: 36 },
+    { header: "来源页", key: "referrer", width: 42 },
+    { header: "User-Agent", key: "user_agent", width: 54 },
+    { header: "事件 ID", key: "id", width: 38 },
+  ];
+
+  function analyticsHistoryExportRow(event) {
+    const value = event && typeof event === "object" ? event : {};
+    const user = value.user && typeof value.user === "object" ? value.user : {};
+    return {
+      ts: value.ts || "",
+      date: value.date || "",
+      event_label: analyticsEventLabel(value.type),
+      type: value.type || "",
+      username: user.username || "",
+      email: user.email || "",
+      role: user.role || "",
+      visitor_id: value.visitor_id || "",
+      ip_hash: value.ip_hash || "",
+      country: value.country || "",
+      colo: value.colo || "",
+      page: value.page || "",
+      path: value.path || "",
+      source: value.source || "",
+      query: value.query || "",
+      institution: value.institution || "",
+      industry: value.industry || "",
+      start_date: value.start_date || "",
+      end_date: value.end_date || "",
+      scope: value.scope || "",
+      availability: value.availability || "",
+      page_ranges: value.page_ranges || "",
+      page_range_labels: value.page_range_labels || "",
+      result_count: value.result_count || 0,
+      total_count: value.total_count || 0,
+      cache_status: value.cache_status || "",
+      report_id: value.report_id || "",
+      report_title: value.report_title || "",
+      target: value.target || "",
+      action: value.action || "",
+      status: value.status || "",
+      duration_ms: value.duration_ms || 0,
+      error: value.error || "",
+      referrer: value.referrer || "",
+      user_agent: value.user_agent || "",
+      id: value.id || "",
+    };
+  }
+
+  function analyticsHistoryExportFilename() {
+    const now = new Date();
+    const pad = (value) => String(value).padStart(2, "0");
+    return `portal-activity-history-${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}-${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}.xlsx`;
+  }
+
+  async function collectAnalyticsHistoryPages(fetchPage, options = {}) {
+    if (typeof fetchPage !== "function") throw new TypeError("fetchPage must be a function");
+    const requestedMaxPages = Number(options.maxPages);
+    const requestedMaxRows = Number(options.maxRows);
+    const maxPages = Number.isFinite(requestedMaxPages) && requestedMaxPages > 0
+      ? Math.floor(requestedMaxPages)
+      : ANALYTICS_HISTORY_EXPORT_MAX_PAGES;
+    const maxRows = Number.isFinite(requestedMaxRows) && requestedMaxRows > 0
+      ? Math.floor(requestedMaxRows)
+      : ANALYTICS_HISTORY_EXPORT_MAX_ROWS;
+    const requestedMaxAttempts = Number(options.maxAttemptsPerPage);
+    const maxAttemptsPerPage = Number.isFinite(requestedMaxAttempts) && requestedMaxAttempts > 0
+      ? Math.floor(requestedMaxAttempts)
+      : 1;
+    const requestedRetryDelayMs = Number(options.retryDelayMs);
+    const retryDelayMs = Number.isFinite(requestedRetryDelayMs) && requestedRetryDelayMs >= 0
+      ? requestedRetryDelayMs
+      : 800;
+    const onProgress = typeof options.onProgress === "function" ? options.onProgress : () => {};
+    const onPageStart = typeof options.onPageStart === "function" ? options.onPageStart : () => {};
+    const onRetry = typeof options.onRetry === "function" ? options.onRetry : () => {};
+    const sleep = typeof options.sleep === "function"
+      ? options.sleep
+      : (delay) => new Promise((resolve) => setTimeout(resolve, delay));
+    const events = [];
+    const seenEventIds = new Set();
+    const requestedCursors = new Set();
+    let cursor = "";
+    let pageCount = 0;
+    let scannedCount = 0;
+    let duplicateCount = 0;
+    let skippedCount = 0;
+
+    while (true) {
+      if (pageCount >= maxPages) {
+        throw new Error(`导出已读取 ${maxPages} 批仍未结束，请联系管理员检查存档数量或分页状态。`);
+      }
+      if (requestedCursors.has(cursor)) {
+        throw new Error("历史分页游标发生循环，导出已停止以避免生成不完整文件。");
+      }
+      requestedCursors.add(cursor);
+
+      let data;
+      let attempt = 0;
+      while (attempt < maxAttemptsPerPage) {
+        attempt += 1;
+        onPageStart({
+          pageNumber: pageCount + 1,
+          attempt,
+          maxAttempts: maxAttemptsPerPage,
+          eventCount: events.length,
+          scannedCount,
+        });
+        try {
+          data = await fetchPage(cursor, pageCount + 1, attempt);
+          break;
+        } catch (error) {
+          const statusCode = Number(error && error.status);
+          const retryable = Boolean(error && error.retryable === true)
+            || statusCode === 408
+            || statusCode === 425
+            || statusCode === 429
+            || statusCode >= 500;
+          if (!retryable || attempt >= maxAttemptsPerPage) throw error;
+          const delayMs = retryDelayMs * (2 ** (attempt - 1));
+          onRetry({
+            pageNumber: pageCount + 1,
+            attempt,
+            nextAttempt: attempt + 1,
+            maxAttempts: maxAttemptsPerPage,
+            delayMs,
+            status: statusCode || 0,
+            eventCount: events.length,
+            scannedCount,
+            error,
+          });
+          await sleep(delayMs);
+        }
+      }
+      if (!data || typeof data !== "object" || !Array.isArray(data.events)) {
+        throw new Error("历史接口返回的数据格式不完整。");
+      }
+      pageCount += 1;
+      const pageScannedCount = Number(data.scanned_count);
+      if (Number.isFinite(pageScannedCount) && pageScannedCount > 0) scannedCount += pageScannedCount;
+      const pageSkippedCount = Number(data.skipped_count);
+      if (Number.isFinite(pageSkippedCount) && pageSkippedCount > 0) skippedCount += pageSkippedCount;
+
+      for (const event of data.events) {
+        const eventId = String(event && event.id || "").trim();
+        if (eventId && seenEventIds.has(eventId)) {
+          duplicateCount += 1;
+          continue;
+        }
+        if (events.length >= maxRows) {
+          throw new Error(`匹配记录超过 Excel 的 ${maxRows} 条上限，无法生成完整文件。`);
+        }
+        if (eventId) seenEventIds.add(eventId);
+        events.push(event);
+      }
+
+      const nextCursor = String(data.next_cursor || "");
+      if (data.has_more === true && !nextCursor) {
+        throw new Error("历史接口提示还有记录，但没有返回下一页游标。");
+      }
+      if (data.has_more === false && nextCursor) {
+        throw new Error("历史接口分页状态不一致，导出已停止。");
+      }
+      onProgress({
+        pageCount,
+        eventCount: events.length,
+        scannedCount,
+        duplicateCount,
+        skippedCount,
+        hasMore: Boolean(nextCursor),
+      });
+      if (!nextCursor) break;
+      if (requestedCursors.has(nextCursor)) {
+        throw new Error("历史分页游标发生循环，导出已停止以避免生成不完整文件。");
+      }
+      cursor = nextCursor;
+    }
+
+    return { events, pageCount, scannedCount, duplicateCount, skippedCount };
+  }
+
+  function analyticsHistoryExportResponseError(response, responseText, payload = {}) {
+    const rawDetail = String(payload && payload.detail || responseText || "")
+      .replace(/<[^>]*>/g, " ")
+      .replace(/\s+/g, " ")
+      .trim()
+      .slice(0, 240);
+    const status = Number(response && response.status) || 0;
+    const statusText = String(response && response.statusText || "").trim();
+    const ray = response && response.headers && typeof response.headers.get === "function"
+      ? String(response.headers.get("cf-ray") || "").trim()
+      : "";
+    const diagnostic = rawDetail || statusText;
+    const suffix = [diagnostic, ray ? `CF-Ray ${ray}` : ""].filter(Boolean).join("；");
+    const error = new Error(`历史记录导出失败${status ? ` (${status})` : ""}${suffix ? `：${suffix}` : "。"}`);
+    error.status = status;
+    error.retryable = status === 0
+      || status === 408
+      || status === 425
+      || status === 429
+      || status >= 500;
+    return error;
+  }
+
+  function analyticsHistoryFilterSnapshot(fields = {}) {
+    const valueOf = (name) => String(fields[name] && fields[name].value || "").trim();
+    const requestedPageSize = Math.floor(Number(valueOf("pageSize")) || 100);
+    return {
+      type: valueOf("type"),
+      user: valueOf("user"),
+      query: valueOf("query"),
+      startDate: valueOf("startDate"),
+      endDate: valueOf("endDate"),
+      pageSize: Math.min(200, Math.max(1, requestedPageSize)),
+    };
+  }
+
+  function analyticsHistoryFilterKey(filters = {}) {
+    return [
+      filters.type,
+      filters.user,
+      filters.query,
+      filters.startDate,
+      filters.endDate,
+      filters.pageSize,
+    ].map((value) => String(value || "")).join("\u001f");
+  }
+
+  function analyticsHistorySearchParams(filters = {}, options = {}) {
+    const params = new URLSearchParams();
+    if (filters.type) params.set("type", filters.type);
+    if (filters.user) params.set("user", filters.user);
+    if (filters.query) params.set("q", filters.query);
+    if (filters.startDate) params.set("start_date", filters.startDate);
+    if (filters.endDate) params.set("end_date", filters.endDate);
+    const requestedPageSize = Math.floor(Number(options.pageSize) || Number(filters.pageSize) || 100);
+    params.set("page_size", String(Math.min(200, Math.max(1, requestedPageSize))));
+    const requestedCursor = String(options.cursor || "");
+    if (requestedCursor) params.set("cursor", requestedCursor);
+    return params;
+  }
+
+  const ANALYTICS_HISTORY_AUTO_SCAN_BATCH_LIMIT = 4;
+
+  function shouldContinueAnalyticsHistoryAutoScan(options = {}) {
+    if (!options.autoScan || !options.nextCursor) return false;
+    if (Number(options.eventCount) > 0) return false;
+    return Number(options.batchCount) < ANALYTICS_HISTORY_AUTO_SCAN_BATCH_LIMIT;
+  }
+
+  async function loadAnalyticsHistoryUserOptions(workerUrl, input, datalist) {
+    if (!input || !datalist) return 0;
+    const data = await fetchFreshAdminUsers(workerUrl);
+    const users = Array.isArray(data.users) ? data.users : [];
+    const values = new Map();
+    for (const user of users) {
+      const username = String(user && user.username || "").trim();
+      const email = String(user && user.email || "").trim();
+      const state = user && user.disabled ? "已禁用" : "正常";
+      if (username && !values.has(username.toLowerCase())) {
+        values.set(username.toLowerCase(), {
+          value: username,
+          label: email ? `${email} · ${state}` : state,
+        });
+      }
+      if (email && !values.has(email.toLowerCase())) {
+        values.set(email.toLowerCase(), {
+          value: email,
+          label: username ? `${username} · ${state}` : state,
+        });
+      }
+    }
+    const fragment = document.createDocumentFragment();
+    [...values.values()]
+      .sort((a, b) => a.value.localeCompare(b.value, "zh-CN", { sensitivity: "base" }))
+      .forEach((entry) => {
+        const option = document.createElement("option");
+        option.value = entry.value;
+        option.label = entry.label;
+        fragment.appendChild(option);
+      });
+    datalist.replaceChildren(fragment);
+    input.placeholder = `用户名或邮箱（${users.length} 个用户）`;
+    return users.length;
+  }
+
+  async function initAnalyticsHistory() {
+    const config = await loadOptionalJson("data/config.json", {});
+    const workerUrl = workerBaseUrl(config);
+    initAccountGate(workerUrl);
+
+    const form = document.getElementById("analyticsHistoryFilters");
+    const type = document.getElementById("analyticsHistoryType");
+    const userFilter = document.getElementById("analyticsHistoryUser");
+    const userOptions = document.getElementById("analyticsHistoryUserOptions");
+    const query = document.getElementById("analyticsHistoryQuery");
+    const startDate = document.getElementById("analyticsHistoryStartDate");
+    const endDate = document.getElementById("analyticsHistoryEndDate");
+    const pageSize = document.getElementById("analyticsHistoryPageSize");
+    const reset = document.getElementById("analyticsHistoryReset");
+    const refresh = document.getElementById("analyticsHistoryRefresh");
+    const exportAll = document.getElementById("analyticsHistoryExportAll");
+    const status = document.getElementById("analyticsHistoryStatus");
+    const meta = document.getElementById("analyticsHistoryMeta");
+    const results = document.getElementById("analyticsHistoryResults");
+    const previous = document.getElementById("analyticsHistoryPrev");
+    const next = document.getElementById("analyticsHistoryNext");
+    const pageLabel = document.getElementById("analyticsHistoryPage");
+    const coverage = document.getElementById("analyticsHistoryCoverage");
+    let cursor = "";
+    let cursorStack = [];
+    let nextCursor = "";
+    let pageNumber = 1;
+    let exportInProgress = false;
+    let pageLoadInProgress = false;
+    let activeFilters = null;
+    let pageLoadSequence = 0;
+    let pageLoadController = null;
+
+    function setStatus(message, kind = "") {
+      status.className = kind ? `status-line ${kind}` : "status-line";
+      status.textContent = message || "";
+    }
+
+    function resetPagination() {
+      cursor = "";
+      cursorStack = [];
+      nextCursor = "";
+      pageNumber = 1;
+    }
+
+    function currentHistoryFilters() {
+      return analyticsHistoryFilterSnapshot({
+        type,
+        user: userFilter,
+        query,
+        startDate,
+        endDate,
+        pageSize,
+      });
+    }
+
+    function historyFiltersChanged() {
+      return Boolean(activeFilters)
+        && analyticsHistoryFilterKey(currentHistoryFilters()) !== analyticsHistoryFilterKey(activeFilters);
+    }
+
+    function updateHistoryNavigation() {
+      const unavailable = pageLoadInProgress || exportInProgress || historyFiltersChanged();
+      previous.disabled = unavailable || cursorStack.length === 0;
+      next.disabled = unavailable || !nextCursor;
+    }
+
+    function analyticsHistoryExportParams() {
+      return new URLSearchParams({ page_size: String(ANALYTICS_HISTORY_EXPORT_PAGE_SIZE) });
+    }
+
+    function renderHistoryMeta(data) {
+      const range = data.newest_date || data.oldest_date
+        ? `${data.oldest_date || ""} 至 ${data.newest_date || ""}`
+        : "暂无存档日期";
+      meta.innerHTML = `
+        <span>历史范围：<strong>${escapeHtml(range)}</strong></span>
+        <span>已存档 ${escapeHtml((data.available_dates || []).length)} 天</span>
+        <span>本页 ${escapeHtml((data.events || []).length)} 条</span>
+        <span>扫描 ${escapeHtml(data.scanned_count || 0)} 条存档</span>
+        <span><strong>${data.has_more ? "还有更早记录" : "已到最早记录"}</strong></span>
+        <span>更新 ${escapeHtml(analyticsTime(data.generated_at))}</span>
+      `;
+      if (coverage) {
+        coverage.textContent = data.oldest_date
+          ? `原始埋点自 ${data.oldest_date} 开始保存；更早或当时未设置埋点的操作无法补录。记录按时间倒序分页，每页仅显示当前批次。`
+          : "当前还没有原始埋点存档。";
+      }
+    }
+
+    async function loadPage(options = {}) {
+      if (exportInProgress) return;
+      if (options.reset || !activeFilters) {
+        resetPagination();
+        activeFilters = currentHistoryFilters();
+      }
+      const loadFilters = { ...activeFilters };
+      const loadCursor = cursor;
+      const loadPageNumber = pageNumber;
+      const loadSequence = pageLoadSequence + 1;
+      pageLoadSequence = loadSequence;
+      if (pageLoadController) pageLoadController.abort();
+      const controller = typeof AbortController === "function" ? new AbortController() : null;
+      pageLoadController = controller;
+      pageLoadInProgress = true;
+      refresh.disabled = true;
+      if (exportAll) exportAll.disabled = true;
+      updateHistoryNavigation();
+      setStatus(`正在读取第 ${loadPageNumber} 页…`);
+      try {
+        const targetCount = loadFilters.pageSize;
+        const autoScan = Boolean(
+          loadFilters.type
+          || loadFilters.user
+          || loadFilters.query,
+        );
+        const events = [];
+        const seenEventIds = new Set();
+        const seenCursors = new Set();
+        let requestCursor = loadCursor;
+        let scannedCount = 0;
+        let batchCount = 0;
+        let firstData = null;
+        let lastData = null;
+
+        while (true) {
+          if (seenCursors.has(requestCursor)) throw new Error("历史查询游标发生循环，已停止读取。");
+          if (batchCount >= 1000) throw new Error("历史查询批次过多，已停止以避免返回不完整结果。");
+          seenCursors.add(requestCursor);
+          const remaining = Math.max(1, targetCount - events.length);
+          if (autoScan) {
+            setStatus(`正在查找第 ${loadPageNumber} 页：已扫描 ${scannedCount} 条，找到 ${events.length} 条…`);
+          }
+          const response = await fetch(`${workerUrl}/account-admin/analytics-events?${analyticsHistorySearchParams(loadFilters, {
+            cursor: requestCursor,
+            pageSize: remaining,
+          })}`, {
+            cache: "no-store",
+            headers: authHeaders(),
+            ...(controller ? { signal: controller.signal } : {}),
+          });
+          if (loadSequence !== pageLoadSequence) return;
+          const batchData = await response.json().catch(() => ({}));
+          if (loadSequence !== pageLoadSequence) return;
+          if (!response.ok) throw new Error(batchData.detail || `历史记录读取失败 (${response.status})。`);
+          if (!Array.isArray(batchData.events)) throw new Error("历史接口返回的数据格式不完整。");
+          batchCount += 1;
+          if (!firstData) firstData = batchData;
+          lastData = batchData;
+          const batchScanned = Number(batchData.scanned_count);
+          if (Number.isFinite(batchScanned) && batchScanned > 0) scannedCount += batchScanned;
+          for (const event of batchData.events) {
+            const eventId = String(event && event.id || "").trim();
+            if (eventId && seenEventIds.has(eventId)) continue;
+            if (eventId) seenEventIds.add(eventId);
+            events.push(event);
+          }
+          const batchNextCursor = String(batchData.next_cursor || "");
+          if (batchData.has_more === true && !batchNextCursor) {
+            throw new Error("历史接口提示还有记录，但没有返回下一页游标。");
+          }
+          if (!shouldContinueAnalyticsHistoryAutoScan({
+            autoScan,
+            batchCount,
+            eventCount: events.length,
+            nextCursor: batchNextCursor,
+          })) break;
+          requestCursor = batchNextCursor;
+        }
+
+        if (loadSequence !== pageLoadSequence) return;
+
+        const data = {
+          ...(firstData || {}),
+          ...(lastData || {}),
+          events,
+          scanned_count: scannedCount,
+        };
+        nextCursor = String(data.next_cursor || "");
+        results.innerHTML = renderAnalyticsHistoryEvents(events);
+        renderHistoryMeta(data);
+        if (!startDate.min && data.oldest_date) {
+          startDate.min = data.oldest_date;
+          startDate.max = data.newest_date || "";
+          endDate.min = data.oldest_date;
+          endDate.max = data.newest_date || "";
+        }
+        pageLabel.textContent = `第 ${loadPageNumber} 页`;
+        setStatus(events.length
+          ? (nextCursor
+            ? `${autoScan ? `已自动扫描 ${scannedCount} 条存档，` : ""}找到 ${events.length} 条事件；还有更早记录。`
+            : `${autoScan ? `已自动扫描 ${scannedCount} 条存档，` : ""}找到 ${events.length} 条事件，已到最早记录。`)
+          : (nextCursor
+            ? `已扫描 ${scannedCount} 条存档，当前页没有匹配事件；可继续查看更早记录。`
+            : `已扫描 ${scannedCount} 条存档，全历史没有匹配事件。`), "ok");
+      } catch (error) {
+        if (loadSequence !== pageLoadSequence || (controller && controller.signal.aborted)) return;
+        results.innerHTML = '<div class="empty-state">无法读取用户行为历史。</div>';
+        meta.textContent = "";
+        setStatus(error.message || "历史记录读取失败。", "error");
+      } finally {
+        if (loadSequence === pageLoadSequence) {
+          pageLoadInProgress = false;
+          if (pageLoadController === controller) pageLoadController = null;
+          refresh.disabled = false;
+          if (exportAll) exportAll.disabled = !isSuperSession();
+          updateHistoryNavigation();
+        }
+      }
+    }
+
+    async function exportAllHistory() {
+      if (!exportAll || exportInProgress || pageLoadInProgress) return;
+      const exportButtonLabel = exportAll.textContent || "导出全部历史";
+      exportInProgress = true;
+      exportAll.disabled = true;
+      exportAll.textContent = "正在准备…";
+      refresh.disabled = true;
+      updateHistoryNavigation();
+      const exportParams = analyticsHistoryExportParams();
+      setStatus("正在准备导出全部历史（不受当前页面筛选影响）…");
+      try {
+        const { buildXlsxWorkbook, downloadXlsx } = await import(versionedSiteAssetUrl("assets/xlsx-export.js"));
+        const collected = await collectAnalyticsHistoryPages(async (batchCursor) => {
+          const params = new URLSearchParams(exportParams);
+          if (batchCursor) params.set("cursor", batchCursor);
+          try {
+            const response = await fetch(`${workerUrl}/account-admin/analytics-events-export?${params}`, {
+              cache: "no-store",
+              headers: authHeaders(),
+            });
+            const responseText = await response.text();
+            let data = {};
+            if (responseText.trim()) {
+              try {
+                data = JSON.parse(responseText);
+              } catch (_error) {
+                if (response.ok) {
+                  throw analyticsHistoryExportResponseError(response, responseText, {
+                    detail: "历史接口返回了非 JSON 数据。",
+                  });
+                }
+              }
+            }
+            if (!response.ok) {
+              throw analyticsHistoryExportResponseError(response, responseText, data);
+            }
+            return data;
+          } catch (error) {
+            if (!Number(error && error.status)) error.retryable = true;
+            throw error;
+          }
+        }, {
+          maxAttemptsPerPage: 4,
+          retryDelayMs: 800,
+          onPageStart(progress) {
+            exportAll.textContent = `导出中 · ${progress.eventCount} 条`;
+            if (progress.attempt === 1) {
+              setStatus(`正在请求第 ${progress.pageNumber} 批；已保留 ${progress.eventCount} 条…`);
+            }
+          },
+          onRetry(progress) {
+            const reason = progress.status ? `HTTP ${progress.status}` : "网络中断";
+            const seconds = Math.max(0.1, progress.delayMs / 1000).toFixed(1);
+            setStatus(`第 ${progress.pageNumber} 批遇到 ${reason}，${seconds} 秒后进行第 ${progress.nextAttempt}/${progress.maxAttempts} 次尝试；已保留 ${progress.eventCount} 条。`);
+          },
+          onProgress(progress) {
+            exportAll.textContent = `导出中 · ${progress.eventCount} 条`;
+            const skippedNote = progress.skippedCount
+              ? `，跳过 ${progress.skippedCount} 次主备均不可读的存档读取`
+              : "";
+            setStatus(`已完成 ${progress.pageCount} 批：收集 ${progress.eventCount} 条，扫描 ${progress.scannedCount} 条存档${skippedNote}；正在继续…`);
+          },
+        });
+        exportAll.textContent = "正在生成 Excel…";
+        setStatus(`数据读取完成，共 ${collected.events.length} 条；正在生成 Excel…`);
+        const rows = [...collected.events]
+          .sort((a, b) => String(b && b.ts || "").localeCompare(String(a && a.ts || "")))
+          .map(analyticsHistoryExportRow);
+        const blob = buildXlsxWorkbook({
+          sheetName: "用户行为历史",
+          columns: ANALYTICS_HISTORY_EXPORT_COLUMNS,
+          rows,
+        });
+        downloadXlsx(blob, analyticsHistoryExportFilename());
+        const duplicateNote = collected.duplicateCount
+          ? `；已去除 ${collected.duplicateCount} 条重复事件`
+          : "";
+        const skippedNote = collected.skippedCount
+          ? `；已跳过 ${collected.skippedCount} 次主备均不可读的存档读取`
+          : "";
+        setStatus(`Excel 已导出：全部历史共 ${rows.length} 条事件，读取 ${collected.pageCount} 批${duplicateNote}${skippedNote}。`, "ok");
+      } catch (error) {
+        setStatus(error.message || "全部历史导出失败。", "error");
+      } finally {
+        exportInProgress = false;
+        exportAll.textContent = exportButtonLabel;
+        exportAll.disabled = !isSuperSession();
+        refresh.disabled = false;
+        updateHistoryNavigation();
+      }
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      loadPage({ reset: true });
+    });
+    form.addEventListener("input", updateHistoryNavigation);
+    reset.addEventListener("click", () => {
+      form.reset();
+      loadPage({ reset: true });
+    });
+    refresh.addEventListener("click", () => loadPage({ reset: historyFiltersChanged() }));
+    if (exportAll) exportAll.addEventListener("click", exportAllHistory);
+    previous.addEventListener("click", () => {
+      if (pageLoadInProgress || exportInProgress || !cursorStack.length || historyFiltersChanged()) return;
+      cursor = cursorStack.pop() || "";
+      pageNumber = Math.max(1, pageNumber - 1);
+      loadPage();
+    });
+    next.addEventListener("click", () => {
+      if (pageLoadInProgress || exportInProgress || !nextCursor || historyFiltersChanged()) return;
+      cursorStack.push(cursor);
+      cursor = nextCursor;
+      pageNumber += 1;
+      loadPage();
+    });
+
+    if (!isSuperSession()) {
+      if (exportAll) exportAll.disabled = true;
+      results.innerHTML = '<div class="empty-state">请先使用管理员账号登录。</div>';
+      setStatus("当前账号没有查看用户行为历史的权限。", "error");
+      return;
+    }
+    if (userFilter && userOptions) {
+      loadAnalyticsHistoryUserOptions(workerUrl, userFilter, userOptions).catch(() => {
+        userFilter.placeholder = "用户名或邮箱（可直接输入）";
+      });
+    }
+    await loadPage({ reset: true });
+  }
+
+  function resetDownloadProgress(progress) {
+    if (!progress) return;
+    const bar = progress.querySelector(".account-admin-progress-track span");
+    const text = progress.querySelector("small");
+    if (bar) bar.style.width = "0%";
+    if (text) text.textContent = "等待下载…";
+    progress.hidden = true;
+  }
+
+  function setDownloadProgress(progress, loaded, total) {
+    if (!progress) return;
+    const bar = progress.querySelector(".account-admin-progress-track span");
+    const text = progress.querySelector("small");
+    progress.hidden = false;
+    if (total > 0) {
+      const percent = Math.min(100, Math.round((loaded / total) * 100));
+      if (bar) bar.style.width = `${percent}%`;
+      if (text) text.textContent = `${percent}% · ${formatSize(loaded)} / ${formatSize(total)}`;
+    } else {
+      if (bar) bar.style.width = "35%";
+      if (text) text.textContent = `已下载 ${formatSize(loaded)}`;
+    }
+  }
+
+  async function responseBlobWithProgress(response, progress) {
+    const total = Number(response.headers.get("Content-Length") || 0);
+    if (!response.body || !response.body.getReader) {
+      const blob = await response.blob();
+      setDownloadProgress(progress, blob.size || total, blob.size || total);
+      return blob;
+    }
+    const reader = response.body.getReader();
+    const chunks = [];
+    let loaded = 0;
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      chunks.push(value);
+      loaded += value.byteLength || value.length || 0;
+      setDownloadProgress(progress, loaded, total);
+    }
+    setDownloadProgress(progress, loaded, total || loaded);
+    return new Blob(chunks, { type: response.headers.get("Content-Type") || "application/octet-stream" });
+  }
+
+  function contentRangeTotal(value) {
+    const match = String(value || "").match(/^bytes\s+\d+-\d+\/(\d+)$/i);
+    return match ? Number(match[1]) : 0;
+  }
+
+  function shouldUseSegmentedDownload(button) {
+    const name = String(button && button.dataset.name || "");
+    const size = Number(button && button.dataset.sizeBytes || 0) || 0;
+    if (/\.mp4$/i.test(name)) return true;
+    return size > 5 * 1024 * 1024 && /\.(mp4|pdf|zip)$/i.test(name);
+  }
+
+  function isVideoDownloadButton(button) {
+    return /\.mp4$/i.test(String(button && button.dataset.name || ""));
+  }
+
+  function setDownloadMessage(progress, message, percent = 12) {
+    if (!progress) return;
+    const bar = progress.querySelector(".account-admin-progress-track span");
+    const text = progress.querySelector("small");
+    progress.hidden = false;
+    if (bar) bar.style.width = `${Math.max(0, Math.min(100, percent))}%`;
+    if (text) text.textContent = message || "";
+  }
+
+  function adminActionButtons(button) {
+    const actions = button && button.closest(".account-admin-file-actions");
+    return actions ? Array.from(actions.querySelectorAll("button")) : [];
+  }
+
+  function cancelActiveAdminButton(button) {
+    const active = activeAdminButtonActions.get(button);
+    if (!active) return false;
+    active.controller.abort();
+    return true;
+  }
+
+  function startAdminButtonAction(button, controller) {
+    if (!button || !controller) return;
+    if (!button.dataset.idleLabel) button.dataset.idleLabel = button.textContent.trim() || "下载";
+    activeAdminButtonActions.set(button, { controller });
+    adminActionButtons(button).forEach((other) => {
+      other.disabled = other !== button;
+    });
+    button.disabled = false;
+    button.classList.add("is-cancel");
+    button.textContent = "取消";
+  }
+
+  function finishAdminButtonAction(button, label = "", restoreDelayMs = 0) {
+    if (!button) return;
+    activeAdminButtonActions.delete(button);
+    adminActionButtons(button).forEach((other) => {
+      other.disabled = false;
+    });
+    button.classList.remove("is-cancel");
+    const idle = button.dataset.idleLabel || "下载";
+    button.textContent = label || idle;
+    if (label && restoreDelayMs > 0) {
+      window.setTimeout(() => {
+        if (!activeAdminButtonActions.has(button)) button.textContent = idle;
+      }, restoreDelayMs);
+    }
+  }
+
+  function withDownloadToken(endpoint) {
+    const session = loadAuthSession();
+    const url = new URL(endpoint, window.location.href);
+    if (session && session.token) url.searchParams.set("download_token", session.token);
+    return url.toString();
+  }
+
+  function triggerNativeDownload(url, fallbackName) {
+    const link = document.createElement("a");
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.download = fallbackName || "download";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  }
+
+  function timeoutSignal(parentSignal, ms) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), ms);
+    const cleanup = () => clearTimeout(timer);
+    controller.signal.addEventListener("abort", cleanup, { once: true });
+    if (parentSignal) {
+      if (parentSignal.aborted) controller.abort();
+      else parentSignal.addEventListener("abort", () => controller.abort(), { once: true });
+    }
+    return controller.signal;
+  }
+
+  async function fetchRangeBlob(endpoint, start, end, signal) {
+    const response = await fetch(endpoint, {
+      headers: {
+        ...authHeaders(),
+        "Range": `bytes=${start}-${end}`,
+      },
+      signal,
+    });
+    if (response.status !== 206) {
+      if (response.ok && start === 0) return { response, blob: await response.blob(), total: Number(response.headers.get("Content-Length") || 0), full: true };
+      const data = await response.json().catch(() => ({}));
+      throw new Error(data.detail || `分段下载失败 (${response.status})。`);
+    }
+    return {
+      response,
+      blob: await response.blob(),
+      total: contentRangeTotal(response.headers.get("Content-Range")),
+      full: false,
+    };
+  }
+
+  async function segmentedAdminDownload(endpoint, fallbackName, progress, signal, options = {}) {
+    const chunkSize = options.chunkSize || 4 * 1024 * 1024;
+    const concurrency = options.concurrency || 4;
+    const firstSignal = options.firstChunkTimeoutMs ? timeoutSignal(signal, options.firstChunkTimeoutMs) : signal;
+    const first = await fetchRangeBlob(endpoint, 0, chunkSize - 1, firstSignal);
+    if (first.full) {
+      setDownloadProgress(progress, first.blob.size, first.total || first.blob.size);
+      return first.blob;
+    }
+    const total = first.total;
+    if (!total || total <= first.blob.size) {
+      setDownloadProgress(progress, first.blob.size, first.blob.size || total);
+      return first.blob;
+    }
+    const chunks = [];
+    chunks[0] = first.blob;
+    let loaded = first.blob.size;
+    setDownloadProgress(progress, loaded, total);
+    const ranges = [];
+    for (let start = chunkSize; start < total; start += chunkSize) {
+      ranges.push([start, Math.min(total - 1, start + chunkSize - 1), ranges.length + 1]);
+    }
+    let cursor = 0;
+    async function worker() {
+      while (cursor < ranges.length) {
+        const [start, end, index] = ranges[cursor];
+        cursor += 1;
+        const part = await fetchRangeBlob(endpoint, start, end, signal);
+        chunks[index] = part.blob;
+        loaded += part.blob.size;
+        setDownloadProgress(progress, loaded, total);
+      }
+    }
+    await Promise.all(Array.from({ length: Math.min(concurrency, ranges.length) }, () => worker()));
+    setDownloadProgress(progress, total, total);
+    return new Blob(chunks, { type: first.response.headers.get("Content-Type") || contentTypeFromFilename(fallbackName) });
+  }
+
+  async function prepareSegmentedAdminDownload(workerUrl, button, signal, progress, options = {}) {
+    const kind = String(button && button.dataset.kind || "");
+    if (kind !== "file" && kind !== "artifact") return;
+    const key = button.dataset.key || "";
+    const repo = button.dataset.repo || "";
+    const name = button.dataset.name || "download";
+    const url = new URL(`${workerUrl}/account-admin/prepare-github-download`);
+    url.searchParams.set("kind", kind);
+    if (kind === "artifact") {
+      url.searchParams.set("id", key);
+      url.searchParams.set("name", name);
+    } else {
+      url.searchParams.set("path", key);
+      if (repo) url.searchParams.set("repo", repo);
+    }
+    setDownloadProgress(progress, 1, 100);
+    const response = await fetch(url.toString(), {
+      cache: "no-store",
+      headers: authHeaders(),
+      signal: timeoutSignal(signal, options.timeoutMs || 25000),
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok || !data.ok) {
+      throw new Error(data.detail || "文件缓存准备失败，请稍后重试。");
+    }
+    setDownloadProgress(progress, 100, 100);
+    return data;
+  }
+
+  function contentTypeFromFilename(name) {
+    if (/\.mp4$/i.test(name)) return "video/mp4";
+    if (/\.pdf$/i.test(name)) return "application/pdf";
+    return "application/octet-stream";
+  }
+
+  function accountAdminReportEndpoint(workerUrl, id) {
+    return `${workerUrl}/account-admin/report-pdf?id=${encodeURIComponent(id)}`;
+  }
+
+  async function fetchAccountAdminReportBlob(workerUrl, pick, progress, signal) {
+    const response = await fetch(accountAdminReportEndpoint(workerUrl, pick.id), {
+      headers: authHeaders(),
+      signal,
+    });
+    if (!response.ok) {
+      const data = await response.json().catch(() => ({}));
+      throw new Error(data.detail || `报告读取失败 (${response.status})。`);
+    }
+    return responseBlobWithProgress(response, progress);
+  }
+
+  async function loadPdfJs() {
+    if (!pdfJsLoadPromise) {
+      pdfJsLoadPromise = import(PDFJS_MODULE_URL).then((pdfjs) => {
+        pdfjs.GlobalWorkerOptions.workerSrc = PDFJS_WORKER_URL;
+        return pdfjs;
+      });
+    }
+    return pdfJsLoadPromise;
+  }
+
+  function downloadDataUrl(dataUrl, filename) {
+    const link = document.createElement("a");
+    link.href = dataUrl;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  }
+
+  function imageFilenameForPick(pick) {
+    const base = String(pick.display_title || pick.title_zh || pick.title || pick.id || "report")
+      .replace(/[\r\n"\\/:*?<>|]+/g, " ")
+      .replace(/\s+/g, " ")
+      .trim()
+      .slice(0, 120);
+    return `${base || "report"}-page-1.png`;
+  }
+
+  async function saveFirstPageImageFromPdfBlob(blob, pick) {
+    const pdfjs = await loadPdfJs();
+    const data = new Uint8Array(await blob.arrayBuffer());
+    const pdf = await pdfjs.getDocument({ data }).promise;
+    const page = await pdf.getPage(1);
+    const baseViewport = page.getViewport({ scale: 1 });
+    const scale = Math.min(2.4, Math.max(1.2, 1600 / Math.max(baseViewport.width, baseViewport.height)));
+    const viewport = page.getViewport({ scale });
+    const canvas = document.createElement("canvas");
+    canvas.width = Math.ceil(viewport.width);
+    canvas.height = Math.ceil(viewport.height);
+    const context = canvas.getContext("2d", { alpha: false });
+    if (!context) throw new Error("浏览器无法创建图片画布。");
+    await page.render({ canvasContext: context, viewport }).promise;
+    downloadDataUrl(canvas.toDataURL("image/png"), imageFilenameForPick(pick));
+    if (pdf && typeof pdf.destroy === "function") pdf.destroy();
+  }
+
+  function formatAdminDateTime(value) {
+    const date = new Date(String(value || ""));
+    if (!Number.isFinite(date.getTime())) return "";
+    try {
+      return new Intl.DateTimeFormat("zh-CN", {
+        timeZone: "Asia/Shanghai",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false,
+      }).format(date).replaceAll("/", "-");
+    } catch (_error) {
+      return String(value || "").replace("T", " ").slice(0, 19);
+    }
+  }
+
+  function shanghaiDateInputValue(value = new Date()) {
+    const date = value instanceof Date ? value : new Date(value);
+    if (!Number.isFinite(date.getTime())) return "";
+    try {
+      const parts = new Intl.DateTimeFormat("en", {
+        timeZone: "Asia/Shanghai",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      }).formatToParts(date);
+      const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+      return `${values.year}-${values.month}-${values.day}`;
+    } catch (_error) {
+      return date.toISOString().slice(0, 10);
+    }
+  }
+
+  function mergeAccountAdminSummaryWithLast(data) {
+    if (!accountAdminLastSummary) return data;
+    const merged = { ...data, module_status: { ...(data.module_status || {}) } };
+    const modules = [
+      ["files", ["files"]],
+      ["picks", ["daily_picks", "access_options"]],
+      ["wechat", ["wechat_schedule"]],
+      ["analytics", ["analytics"]],
+      ["users", ["users"]],
+    ];
+    for (const [moduleName, fields] of modules) {
+      const status = merged.module_status[moduleName];
+      if (!status || status.has_data !== false) continue;
+      for (const field of fields) {
+        if (Object.prototype.hasOwnProperty.call(accountAdminLastSummary, field)) {
+          merged[field] = accountAdminLastSummary[field];
+        }
+      }
+      const previousStatus = accountAdminLastSummary.module_status && accountAdminLastSummary.module_status[moduleName];
+      merged.module_status[moduleName] = {
+        ...(previousStatus || {}),
+        ...status,
+        has_data: true,
+        state: "updating",
+        updated_at: previousStatus && previousStatus.updated_at || "",
+      };
+    }
+    return merged;
+  }
+
+  function renderAdminModuleNotice(target, status) {
+    if (!target) return;
+    const state = String(status && status.state || "fresh");
+    if (state === "fresh") {
+      target.hidden = true;
+      target.textContent = "";
+      return;
+    }
+    const updated = formatAdminDateTime(status && status.updated_at);
+    target.hidden = false;
+    target.textContent = status && status.has_data
+      ? `数据更新中，当前显示最近一次成功数据${updated ? `（北京时间 ${updated}）` : ""}。系统每 30 分钟自动刷新。`
+      : "数据正在首次同步，请约半小时后重新进入。";
+  }
+
+  function renderAccountAdminSummary(data, targets) {
+    const users = Array.isArray(data.users) ? data.users : [];
+    const files = Array.isArray(data.files) ? data.files : [];
+    const dailyPicks = Array.isArray(data.daily_picks) ? data.daily_picks : [];
+    const wechatSchedule = data.wechat_schedule && typeof data.wechat_schedule === "object" ? data.wechat_schedule : {};
+    const analytics = data.analytics && typeof data.analytics === "object" ? data.analytics : null;
+    const moduleStatus = data.module_status && typeof data.module_status === "object" ? data.module_status : {};
+    accountAdminUsersByEmail = new Map(users.map((user) => [String(user.email || ""), user]));
+    if (data.access_options && typeof data.access_options === "object") accountAdminAccessOptions = data.access_options;
+    const canViewUsers = data.can_view_users !== false;
+    const canViewWechat = data.can_view_wechat !== false;
+    const canViewAnalytics = data.can_view_analytics !== false;
+    if (targets.title && data.dashboard_title) targets.title.textContent = data.dashboard_title;
+    if (targets.usersSection) targets.usersSection.hidden = !canViewUsers;
+    if (targets.wechatSection) targets.wechatSection.hidden = !canViewWechat;
+    if (targets.analyticsSection) targets.analyticsSection.hidden = !canViewAnalytics;
+    accountAdminDailyPicks = new Map(dailyPicks.map((pick) => [String(pick.id || ""), pick]));
+    targets.pickCount.textContent = dailyPicks.length ? `${dailyPicks.length} reports` : "";
+    targets.picks.innerHTML = dailyPicks.length
+      ? dailyPicks.map(adminDailyPickRow).join("")
+      : `<div class="empty-state">数据正在同步，请约半小时后重新进入。</div>`;
+    renderAdminModuleNotice(targets.picksNotice, moduleStatus.picks);
+    if (canViewWechat && targets.wechatCount && targets.wechatSchedule) {
+      targets.wechatCount.textContent = wechatSchedule.total_batches ? `${wechatSchedule.total_batches} batches` : "";
+      targets.wechatSchedule.innerHTML = renderAdminWechatSchedule(wechatSchedule);
+      renderAdminModuleNotice(targets.wechatNotice, moduleStatus.wechat);
+    }
+    if (canViewUsers && targets.userCount && targets.users) {
+      renderAdminUserTable(targets);
+      renderAdminModuleNotice(targets.usersNotice, moduleStatus.users);
+    }
+    if (canViewAnalytics && targets.analytics && targets.analyticsCount) {
+      targets.analyticsCount.textContent = analytics
+        ? `近 ${analytics.range_days || 7} 天 · ${analytics.event_count || 0} events`
+        : "";
+      targets.analytics.innerHTML = analytics
+        ? renderAccountAdminAnalytics(analytics)
+        : `<div class="empty-state">数据正在同步，请约半小时后重新进入。</div>`;
+      renderAdminModuleNotice(targets.analyticsNotice, moduleStatus.analytics);
+    }
+    targets.files.innerHTML = files.length
+      ? files.map(adminFileRow).join("")
+      : `<div class="empty-state">数据正在同步，请约半小时后重新进入。</div>`;
+    renderAdminModuleNotice(targets.filesNotice, moduleStatus.files);
+    const statuses = Object.values(moduleStatus).filter(Boolean);
+    const updating = statuses.some((status) => String(status.state || "") !== "fresh");
+    targets.status.className = "status-line ok";
+    targets.status.textContent = updating
+      ? "后台已打开，部分数据正在更新；现有内容会继续保留。"
+      : `数据已同步：${formatAdminDateTime(data.generated_at)}`;
+  }
+
+  async function fetchAccountAdminSummary(workerUrl, options = {}) {
+    let lastError = null;
+    for (let attempt = 0; attempt < 2; attempt += 1) {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 22000);
+      try {
+        const endpoint = `${workerUrl}/account-admin/summary${options.forceRefresh ? "?refresh=1" : ""}`;
+        const response = await fetch(endpoint, {
+          cache: "no-store",
+          headers: authHeaders(),
+          signal: controller.signal,
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) {
+          const error = new Error(data.detail || "后台读取失败。");
+          error.status = response.status;
+          throw error;
+        }
+        return data;
+      } catch (error) {
+        lastError = error;
+        if (error && (error.status === 401 || error.status === 403)) break;
+        if (attempt === 0) await new Promise((resolve) => setTimeout(resolve, 600));
+      } finally {
+        clearTimeout(timer);
+      }
+    }
+    throw lastError || new Error("后台读取失败。");
+  }
+
+  async function loadAccountAdminSummary(workerUrl, targets, options = {}) {
+    targets.status.className = "status-line";
+    targets.status.textContent = accountAdminLastSummary
+      ? "正在刷新，当前内容会继续保留…"
+      : "正在读取最近一次成功数据…";
+    targets.refresh.disabled = true;
+    try {
+      const fetched = await fetchAccountAdminSummary(workerUrl, options);
+      const data = mergeAccountAdminSummaryWithLast(fetched);
+      accountAdminLastSummary = data;
+      renderAccountAdminSummary(data, targets);
+      const statuses = Object.values(data.module_status || {}).filter(Boolean);
+      if (!options.backgroundRetry && statuses.some((status) => String(status.state || "") !== "fresh")) {
+        if (accountAdminRefreshTimer) clearTimeout(accountAdminRefreshTimer);
+        accountAdminRefreshTimer = setTimeout(() => {
+          accountAdminRefreshTimer = null;
+          if (document.getElementById("accountAdminModal")) {
+            loadAccountAdminSummary(workerUrl, targets, { backgroundRetry: true }).then(() => {
+              if (targets.canManageUsers && targets.exportUsers && document.getElementById("accountAdminModal")) {
+                return loadFreshAdminUsers(workerUrl, targets);
+              }
+              return null;
+            }).catch(() => null);
+          }
+          }, 12000);
+      }
+      return data;
+    } catch (error) {
+      if (error && (error.status === 401 || error.status === 403)) {
+        targets.status.textContent = "登录状态已失效，请重新登录后打开后台。";
+        targets.status.className = "status-line error";
+      } else if (accountAdminLastSummary) {
+        renderAccountAdminSummary(accountAdminLastSummary, targets);
+        targets.status.textContent = "数据更新中，当前显示最近一次成功内容；请稍后刷新。";
+        targets.status.className = "status-line ok";
+      } else {
+        const message = "数据正在更新，请约半小时后重新进入。";
+        targets.status.textContent = message;
+        targets.status.className = "status-line";
+        [targets.picks, targets.wechatSchedule, targets.files, targets.analytics].filter(Boolean).forEach((target) => {
+          target.innerHTML = `<div class="empty-state">${message}</div>`;
+        });
+      }
+      if (options.throwOnError) throw error;
+      return null;
+    } finally {
+      targets.refresh.disabled = false;
+    }
+  }
+
+  function adminHotReportRow(item) {
+    const date = String(item && item.date || "");
+    const institution = String(item && item.institution || "");
+    const size = formatSize(item && item.size_bytes);
+    const meta = [institution, date, size].filter(Boolean).join(" · ");
+    const url = externalPageUrl({ ...item, source: HOT_REPORT_SOURCE }, "");
+    return `
+      <a class="account-admin-hot-row" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">
+        <span>
+          <strong>${escapeHtml(item && item.title || "近期热门报告")}</strong>
+          ${item && item.title_cn ? `<small>${escapeHtml(item.title_cn)}</small>` : ""}
+        </span>
+        <span>${escapeHtml(meta || "已上传")}</span>
+      </a>
+    `;
+  }
+
+  async function loadAdminHotReports(workerUrl, targets) {
+    if (!targets.hotReportSection || targets.hotReportSection.hidden || !targets.hotReportList) return [];
+    targets.hotReportStatus.className = "status-line";
+    targets.hotReportStatus.textContent = "正在读取已上传报告…";
+    try {
+      const response = await fetch(`${workerUrl}/hot-reports`, { cache: "no-store" });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(data.detail || "近期热门报告读取失败。");
+      const items = Array.isArray(data.items) ? data.items : [];
+      targets.hotReportList.innerHTML = items.length
+        ? items.map(adminHotReportRow).join("")
+        : '<div class="empty-state">还没有上传近期热门报告。</div>';
+      targets.hotReportCount.textContent = `${items.length} 条`;
+      targets.hotReportStatus.textContent = "";
+      return items;
+    } catch (error) {
+      targets.hotReportList.innerHTML = '<div class="empty-state">暂时无法读取已上传报告。</div>';
+      targets.hotReportCount.textContent = "";
+      targets.hotReportStatus.className = "status-line error";
+      targets.hotReportStatus.textContent = error.message || "近期热门报告读取失败。";
+      return [];
+    }
+  }
+
+  async function uploadAdminHotReport(workerUrl, targets) {
+    const file = targets.hotReportPdf && targets.hotReportPdf.files && targets.hotReportPdf.files[0];
+    if (!file) throw new Error("请选择 PDF 文件。");
+    if (file.size > 95 * 1024 * 1024) throw new Error("PDF 必须小于 95 MB。");
+    const formData = new FormData(targets.hotReportForm);
+    const response = await fetch(`${workerUrl}/account-admin/hot-report`, {
+      method: "POST",
+      headers: authHeaders(),
+      body: formData,
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok || !data.item) throw new Error(data.detail || "热门报告上传失败。");
+    return data.item;
+  }
+
+  function adminExportFilename() {
+    const now = new Date();
+    const pad = (value) => String(value).padStart(2, "0");
+    return `portal-users-${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}-${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}.xlsx`;
+  }
+
+  async function fetchFreshAdminUsers(workerUrl) {
+    const response = await fetch(`${workerUrl}/account-admin/users-export`, {
+      cache: "no-store",
+      headers: authHeaders(),
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(data.detail || `用户读取失败 (${response.status})。`);
+    if (!Array.isArray(data.users)) throw new Error("用户接口返回的数据格式不完整。");
+    return data;
+  }
+
+  async function loadFreshAdminUsers(workerUrl, targets) {
+    const data = await fetchFreshAdminUsers(workerUrl);
+    accountAdminUsersByEmail = new Map(data.users.map((user) => [String(user.email || "").toLowerCase(), user]));
+    if (accountAdminLastSummary) accountAdminLastSummary = { ...accountAdminLastSummary, users: data.users };
+    if (targets.usersNotice) {
+      targets.usersNotice.hidden = true;
+      targets.usersNotice.textContent = "";
+    }
+    renderAdminUserTable(targets);
+    return data;
+  }
+
+  function renderAdminUsersVerificationState(targets, message, kind = "") {
+    if (targets.userCount) targets.userCount.textContent = kind === "error" ? "未核验" : "核验中…";
+    if (targets.users) {
+      targets.users.innerHTML = `<tr><td colspan="11"><div class="empty-state">${escapeHtml(message)}</div></td></tr>`;
+    }
+    if (targets.usersNotice) {
+      targets.usersNotice.hidden = false;
+      targets.usersNotice.className = kind ? `account-admin-module-notice ${kind}` : "account-admin-module-notice";
+      targets.usersNotice.textContent = message;
+    }
+  }
+
+  async function exportAdminUsersToExcel(workerUrl, targets) {
+    if (!targets.exportUsers) return;
+    targets.exportUsers.disabled = true;
+    targets.status.className = "status-line";
+    targets.status.textContent = "正在现场读取全部用户最新状态并生成 Excel…";
+    try {
+      const data = await fetchFreshAdminUsers(workerUrl);
+      const users = data.users;
+      const rows = users.map(adminUserViewModel);
+      const { buildXlsxWorkbook, downloadXlsx } = await import(versionedSiteAssetUrl("assets/xlsx-export.js"));
+      const blob = buildXlsxWorkbook({
+        sheetName: "用户状态",
+        columns: [
+          { header: "用户名", key: "username", width: 18 },
+          { header: "邮箱", key: "email", width: 30 },
+          { header: "注册站点", key: "registered_site", width: 14 },
+          { header: "用户来源", key: "site_origin", width: 14 },
+          { header: "状态", key: "status", width: 12 },
+          { header: "账号", key: "account", width: 14 },
+          { header: "实际下载权限", key: "access", width: 28 },
+          { header: "到期", key: "expiry", width: 14 },
+          { header: "注册", key: "registered", width: 14 },
+          { header: "最近登录", key: "last_login", width: 20 },
+          { header: "权限来源", key: "access_source", width: 20 },
+          { header: "授权来源站点", key: "entitlement_source_site", width: 16 },
+          { header: "授权来源类型", key: "entitlement_grant_source", width: 18 },
+          { header: "授权代号", key: "entitlement_plan_code", width: 14 },
+          { header: "权限最后更新", key: "access_updated", width: 22 },
+        ],
+        rows,
+      });
+      downloadXlsx(blob, adminExportFilename());
+      targets.status.className = "status-line ok";
+      targets.status.textContent = `Excel 已导出：${rows.length} 个用户（使用点击时最新状态）。`;
+    } catch (error) {
+      targets.status.className = "status-line error";
+      targets.status.textContent = error.message || "Excel 导出失败。";
+    } finally {
+      targets.exportUsers.disabled = false;
+    }
+  }
+
+  function showAccountAdminModal(workerUrl) {
+    if (!workerUrl || !canOpenOperationsPanel()) return;
+    const session = loadAuthSession();
+    const isOperatorOnly = isOperatorSession(session) && !isSuperSession(session);
+    const canManageUsers = !isOperatorOnly;
+    const summaryOwner = String(session && session.user && (session.user.email || session.user.username) || "").toLowerCase();
+    if (accountAdminLastSummaryOwner && accountAdminLastSummaryOwner !== summaryOwner) accountAdminLastSummary = null;
+    accountAdminLastSummaryOwner = summaryOwner;
+    const existing = document.getElementById("accountAdminModal");
+    if (existing) existing.remove();
+    document.body.insertAdjacentHTML("beforeend", accountAdminModalMarkup({
+      title: isOperatorOnly ? "运营后台" : "管理后台",
+      showWechat: !isOperatorOnly,
+      showUsers: canManageUsers,
+      showAnalytics: !isOperatorOnly,
+      showHotReports: !isOperatorOnly,
+    }));
+
+    const modal = document.getElementById("accountAdminModal");
+    const title = document.getElementById("accountAdminTitle");
+    const close = document.getElementById("accountAdminClose");
+    const refresh = document.getElementById("accountAdminRefresh");
+    const status = document.getElementById("accountAdminStatus");
+    const pickCount = document.getElementById("accountAdminPickCount");
+    const picks = document.getElementById("accountAdminPicks");
+    const picksNotice = document.getElementById("accountAdminPicksNotice");
+    const marketViewCount = document.getElementById("accountAdminMarketViewCount");
+    const marketViews = document.getElementById("accountAdminMarketViews");
+    const marketViewsNotice = document.getElementById("accountAdminMarketViewsNotice");
+    const wechatCount = document.getElementById("accountAdminWechatCount");
+    const wechatSchedule = document.getElementById("accountAdminWechatSchedule");
+    const wechatNotice = document.getElementById("accountAdminWechatNotice");
+    const wechatSection = document.getElementById("accountAdminWechatSection");
+    const hotReportSection = document.getElementById("accountAdminHotReportsSection");
+    const hotReportCount = document.getElementById("accountAdminHotReportCount");
+    const hotReportForm = document.getElementById("accountAdminHotReportForm");
+    const hotReportTitle = document.getElementById("accountAdminHotReportTitle");
+    const hotReportDate = document.getElementById("accountAdminHotReportDate");
+    const hotReportPdf = document.getElementById("accountAdminHotReportPdf");
+    const hotReportStatus = document.getElementById("accountAdminHotReportStatus");
+    const hotReportList = document.getElementById("accountAdminHotReportList");
+    const userCount = document.getElementById("accountAdminUserCount");
+    const users = document.getElementById("accountAdminUsers");
+    const usersSection = document.getElementById("accountAdminUsersSection");
+    const exportUsers = document.getElementById("accountAdminExportUsers");
+    const newUser = document.getElementById("accountAdminNewUser");
+    const userCreator = document.getElementById("accountAdminUserCreator");
+    const userCreatorClose = document.getElementById("accountAdminUserCreatorClose");
+    const newUsername = document.getElementById("accountAdminNewUsername");
+    const newEmail = document.getElementById("accountAdminNewEmail");
+    const newPassword = document.getElementById("accountAdminNewPassword");
+    const userEditor = document.getElementById("accountAdminUserEditor");
+    const userEditorTitle = document.getElementById("accountAdminUserEditorTitle");
+    const userEditorClose = document.getElementById("accountAdminUserEditorClose");
+    const accessEmail = document.getElementById("accountAdminAccessEmail");
+    const accessMode = document.getElementById("accountAdminAccessMode");
+    const accessDuration = document.getElementById("accountAdminAccessDuration");
+    const accessExpiry = document.getElementById("accountAdminAccessExpiry");
+    const accessInstitutions = document.getElementById("accountAdminAccessInstitutions");
+    const accessInstitutionSearch = document.getElementById("accountAdminAccessInstitutionSearch");
+    const accessInstitutionCount = document.getElementById("accountAdminAccessInstitutionCount");
+    const accessIndustries = document.getElementById("accountAdminAccessIndustries");
+    const accessPageRanges = document.getElementById("accountAdminAccessPageRanges");
+    const accessNote = document.getElementById("accountAdminAccessNote");
+    const accessRenew = document.getElementById("accountAdminAccessRenew");
+    const files = document.getElementById("accountAdminFiles");
+    const filesNotice = document.getElementById("accountAdminFilesNotice");
+    const analyticsCount = document.getElementById("accountAdminAnalyticsCount");
+    const analytics = document.getElementById("accountAdminAnalytics");
+    const analyticsNotice = document.getElementById("accountAdminAnalyticsNotice");
+    const analyticsSection = document.getElementById("accountAdminAnalyticsSection");
+    const usersNotice = document.getElementById("accountAdminUsersNotice");
+    const targets = {
+      title,
+      status,
+      refresh,
+      pickCount,
+      picks,
+      picksNotice,
+      marketViewCount,
+      marketViews,
+      marketViewsNotice,
+      wechatCount,
+      wechatSchedule,
+      wechatNotice,
+      wechatSection,
+      hotReportSection,
+      hotReportCount,
+      hotReportForm,
+      hotReportTitle,
+      hotReportDate,
+      hotReportPdf,
+      hotReportStatus,
+      hotReportList,
+      analyticsCount,
+      analytics,
+      analyticsNotice,
+      analyticsSection,
+      userCount,
+      users,
+      usersSection,
+      exportUsers,
+      newUser,
+      userCreator,
+      userCreatorClose,
+      newUsername,
+      newEmail,
+      newPassword,
+      userEditor,
+      userEditorTitle,
+      userEditorClose,
+      accessEmail,
+      accessMode,
+      accessDuration,
+      accessExpiry,
+      accessInstitutions,
+      accessInstitutionSearch,
+      accessInstitutionCount,
+      accessIndustries,
+      accessPageRanges,
+      accessNote,
+      accessRenew,
+      files,
+      filesNotice,
+      usersNotice,
+      canManageUsers,
+    };
+
+    function finish() {
+      if (accountAdminRefreshTimer) {
+        clearTimeout(accountAdminRefreshTimer);
+        accountAdminRefreshTimer = null;
+      }
+      modal.remove();
+    }
+
+    close.addEventListener("click", finish);
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) finish();
+    });
+    refresh.addEventListener("click", async () => {
+      await Promise.allSettled([
+        loadAccountAdminSummary(workerUrl, targets, { forceRefresh: true }),
+        loadAccountAdminMarketViews(workerUrl, targets),
+        canManageUsers ? loadAdminHotReports(workerUrl, targets) : Promise.resolve([]),
+      ]);
+      if (canManageUsers && exportUsers) {
+        renderAdminUsersVerificationState(targets, "正在现场核验全部用户的最新权限…");
+        targets.status.className = "status-line";
+        targets.status.textContent = "正在同步读取最新用户状态…";
+        try {
+          const fresh = await loadFreshAdminUsers(workerUrl, targets);
+          targets.status.className = "status-line ok";
+          targets.status.textContent = `用户状态已同步：${fresh.users.length} 个用户。`;
+        } catch (error) {
+          renderAdminUsersVerificationState(
+            targets,
+            error.message || "最新用户状态读取失败；为避免误导，缓存权限列表已隐藏。",
+            "error",
+          );
+          targets.status.className = "status-line error";
+          targets.status.textContent = error.message || "最新用户状态读取失败。";
+        }
+      }
+    });
+    if (canManageUsers && exportUsers) {
+      exportUsers.addEventListener("click", () => exportAdminUsersToExcel(workerUrl, targets));
+    }
+    if (hotReportDate) {
+      hotReportDate.value = shanghaiDateInputValue();
+    }
+    if (hotReportPdf && hotReportTitle) {
+      hotReportPdf.addEventListener("change", () => {
+        const file = hotReportPdf.files && hotReportPdf.files[0];
+        if (file && !hotReportTitle.value.trim()) {
+          hotReportTitle.value = file.name.replace(/\.pdf$/i, "").replace(/[_-]+/g, " ").trim();
+        }
+      });
+    }
+    if (hotReportForm) {
+      hotReportForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const submit = hotReportForm.querySelector("button[type='submit']");
+        if (submit) submit.disabled = true;
+        hotReportStatus.className = "status-line";
+        hotReportStatus.textContent = "正在上传 PDF，请保持页面开启…";
+        try {
+          const item = await uploadAdminHotReport(workerUrl, targets);
+          hotReportStatus.className = "status-line ok";
+          hotReportStatus.textContent = `已上传：${item.title}`;
+          hotReportForm.reset();
+          if (hotReportDate) hotReportDate.value = String(item.date || "");
+          await loadAdminHotReports(workerUrl, targets);
+          hotReportStatus.className = "status-line ok";
+          hotReportStatus.textContent = `已上传并读回确认：${item.title}`;
+        } catch (error) {
+          hotReportStatus.className = "status-line error";
+          hotReportStatus.textContent = error.message || "热门报告上传失败。";
+        } finally {
+          if (submit) submit.disabled = false;
+        }
+      });
+    }
+    if (accessMode) accessMode.addEventListener("change", () => {
+      if (accessMode.value !== "none" && userEditor && userEditor.dataset.originalAccessActive !== "true") {
+        prepareExpiredAccessRenewal(targets);
+      }
+      updateUserAccessEditorMode(targets);
+    });
+    if (accessDuration) accessDuration.addEventListener("change", () => {
+      if (accessMode && accessMode.value !== "none" && accessDuration.value !== "lifetime") {
+        prepareExpiredAccessRenewal(targets);
+      }
+      updateUserAccessEditorMode(targets);
+    });
+    if (accessInstitutionSearch) {
+      accessInstitutionSearch.addEventListener("input", () => {
+        filterAccessCheckboxOptions(accessInstitutions, accessInstitutionSearch.value);
+      });
+    }
+    if (accessInstitutions) {
+      accessInstitutions.addEventListener("change", (event) => {
+        if (selectedAccessCheckboxValues(accessInstitutions).length > 60) {
+          if (event.target && event.target.matches("input[type='checkbox']")) event.target.checked = false;
+          status.className = "status-line error";
+          status.textContent = "机构最多选择 60 项。";
+        }
+        updateAccessCheckboxCount(accessInstitutions, accessInstitutionCount);
+      });
+    }
+    if (newUser && userCreator) {
+      newUser.addEventListener("click", () => {
+        userCreator.hidden = false;
+        if (userEditor) userEditor.hidden = true;
+        status.className = "status-line ok";
+        status.textContent = "正在新增用户。";
+        requestAnimationFrame(() => {
+          userCreator.scrollIntoView({ block: "nearest", behavior: "smooth" });
+          if (newUsername) newUsername.focus({ preventScroll: true });
+        });
+      });
+    }
+    if (userCreatorClose && userCreator) {
+      userCreatorClose.addEventListener("click", () => {
+        userCreator.hidden = true;
+      });
+    }
+    if (userCreator) {
+      userCreator.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const submit = userCreator.querySelector("button[type='submit']");
+        if (submit) submit.disabled = true;
+        status.className = "status-line";
+        status.textContent = "正在创建用户…";
+        try {
+          await createAdminUser(workerUrl, targets);
+          renderAdminUserTable(targets);
+          if (newUsername) newUsername.value = "";
+          if (newEmail) newEmail.value = "";
+          if (newPassword) newPassword.value = "";
+          status.textContent = "用户已创建。";
+          status.classList.add("ok");
+        } catch (error) {
+          status.textContent = error.message || "创建用户失败。";
+          status.classList.add("error");
+        } finally {
+          if (submit) submit.disabled = false;
+        }
+      });
+    }
+    if (userEditorClose) {
+      userEditorClose.addEventListener("click", () => {
+        if (userEditor) userEditor.hidden = true;
+      });
+    }
+    if (users) {
+      users.addEventListener("click", async (event) => {
+        const toggle = event.target.closest(".account-admin-toggle-user");
+        if (toggle) {
+          const email = String(toggle.dataset.email || "");
+          const disabled = toggle.dataset.disabled === "true";
+          toggle.disabled = true;
+          status.className = "status-line";
+          status.textContent = disabled ? "正在禁用账号…" : "正在启用账号…";
+          try {
+            await updateAdminUserStatus(workerUrl, email, disabled);
+            renderAdminUserTable(targets);
+            status.textContent = disabled ? "账号已禁用。" : "账号已启用。";
+            status.classList.add("ok");
+          } catch (error) {
+            status.textContent = error.message || "账号状态更新失败。";
+            status.classList.add("error");
+          } finally {
+            toggle.disabled = false;
+          }
+          return;
+        }
+        const button = event.target.closest(".account-admin-edit-user");
+        if (!button) return;
+        const email = String(button.dataset.email || "");
+        button.disabled = true;
+        status.className = "status-line";
+        status.textContent = "正在读取该用户的最新权限…";
+        try {
+          const user = await loadAdminUserAccess(workerUrl, email);
+          accountAdminUsersByEmail.set(String(user.email || email), user);
+          if (userCreator) userCreator.hidden = true;
+          fillUserAccessEditor(user, targets);
+        } catch (error) {
+          status.className = "status-line error";
+          status.textContent = error.message || "读取最新用户权限失败，请刷新后台后再试。";
+        } finally {
+          button.disabled = false;
+        }
+      });
+    }
+    if (userEditor) {
+      userEditor.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const submit = userEditor.querySelector("button[type='submit']");
+        if (submit) submit.disabled = true;
+        status.className = "status-line";
+        status.textContent = "正在保存用户权限…";
+        try {
+          const result = await saveUserAccess(workerUrl, targets);
+          if (result && result.cancelled) {
+            status.textContent = "已取消保存，用户权限没有变化。";
+            return;
+          }
+          renderAdminUserTable(targets);
+          status.textContent = "用户权限已保存，并已读回确认。";
+          status.classList.add("ok");
+        } catch (error) {
+          status.textContent = error.message || "保存权限失败。";
+          status.classList.add("error");
+        } finally {
+          if (submit) submit.disabled = false;
+        }
+      });
+    }
+    picks.addEventListener("click", async (event) => {
+      const row = event.target.closest(".account-admin-pick");
+      if (!row) return;
+      const pick = accountAdminDailyPicks.get(String(row.dataset.id || ""));
+      if (!pick) return;
+
+      const copyButton = event.target.closest(".account-admin-copy-intro");
+      if (copyButton) {
+        const text = String(pick.intro || "");
+        try {
+          await navigator.clipboard.writeText(text);
+          status.className = "status-line ok";
+          status.textContent = "文案已复制。";
+        } catch (_error) {
+          const textarea = row.querySelector(".account-admin-pick-intro");
+          if (textarea) textarea.select();
+          status.className = "status-line";
+          status.textContent = "已选中文案，可以手动复制。";
+        }
+        return;
+      }
+
+      const downloadButton = event.target.closest(".account-admin-report-download");
+      const imageButton = event.target.closest(".account-admin-cover-save");
+      if (!downloadButton && !imageButton) return;
+
+      const button = downloadButton || imageButton;
+      if (cancelActiveAdminButton(button)) {
+        status.className = "status-line";
+        status.textContent = "正在取消…";
+        return;
+      }
+      const progress = row.querySelector(".account-admin-progress");
+      const controller = new AbortController();
+      startAdminButtonAction(button, controller);
+      resetDownloadProgress(progress);
+      status.className = "status-line";
+      status.textContent = downloadButton ? "正在下载精选报告…" : "正在读取 PDF 并生成第一页图片…";
+      try {
+        const blob = await fetchAccountAdminReportBlob(workerUrl, pick, progress, controller.signal);
+        if (downloadButton) {
+          triggerBlobDownload(blob, "", pick.filename || `${pick.id}.pdf`);
+          status.textContent = "报告下载已开始。";
+        } else {
+          await saveFirstPageImageFromPdfBlob(blob, pick);
+          status.textContent = "第一页图片已保存。";
+        }
+        status.classList.add("ok");
+      } catch (error) {
+        if (error && error.name === "AbortError") {
+          status.textContent = "操作已取消。";
+        } else {
+          status.textContent = error.message || "操作失败。";
+          status.classList.add("error");
+        }
+      } finally {
+        finishAdminButtonAction(button);
+      }
+    });
+    if (marketViews) {
+      marketViews.addEventListener("click", async (event) => {
+        const button = event.target.closest(".account-admin-market-view-download");
+        if (!button) return;
+        const id = String(button.dataset.marketViewId || "");
+        const item = accountAdminMarketViews.get(id);
+        if (!id || !item) return;
+        if (cancelActiveAdminButton(button)) {
+          status.className = "status-line";
+          status.textContent = "正在取消…";
+          return;
+        }
+        const row = button.closest(".account-admin-file");
+        const progress = row && row.querySelector(".account-admin-progress");
+        const controller = new AbortController();
+        startAdminButtonAction(button, controller);
+        resetDownloadProgress(progress);
+        status.className = "status-line";
+        status.textContent = "正在下载 Market Views PDF…";
+        try {
+          const response = await fetch(`${workerUrl}/market-views/pdf?id=${encodeURIComponent(id)}`, {
+            cache: "no-store",
+            headers: authHeaders(),
+            signal: controller.signal,
+          });
+          if (!response.ok) {
+            const data = await response.json().catch(() => ({}));
+            throw new Error(data.detail || `PDF 下载失败 (${response.status})。`);
+          }
+          const blob = await responseBlobWithProgress(response, progress);
+          triggerBlobDownload(blob, response.headers.get("Content-Disposition") || "", item.filename || button.dataset.name || "market-views.pdf");
+          status.className = "status-line ok";
+          status.textContent = "Market Views PDF 下载已开始。";
+        } catch (error) {
+          status.className = error && error.name === "AbortError" ? "status-line" : "status-line error";
+          status.textContent = error && error.name === "AbortError" ? "下载已取消。" : (error.message || "PDF 下载失败。");
+        } finally {
+          finishAdminButtonAction(button);
+        }
+      });
+    }
+    files.addEventListener("click", async (event) => {
+      const button = event.target.closest(".account-admin-download");
+      if (!button) return;
+      const kind = button.dataset.kind;
+      const key = button.dataset.key || "";
+      const repo = button.dataset.repo || "";
+      const name = button.dataset.name || "download";
+      if (cancelActiveAdminButton(button)) {
+        trackEvent(workerUrl, "daily_file_download", {
+          target: name,
+          source: kind,
+          action: "download",
+          status: "cancel_requested",
+        });
+        status.className = "status-line";
+        status.textContent = "正在取消下载…";
+        return;
+      }
+      const segmented = (kind === "file" || kind === "artifact") && shouldUseSegmentedDownload(button);
+      const endpoint = kind === "artifact"
+        ? `${workerUrl}/account-admin/github-artifact?id=${encodeURIComponent(key)}`
+        : `${workerUrl}/account-admin/github-file?path=${encodeURIComponent(key)}${repo ? `&repo=${encodeURIComponent(repo)}` : ""}`;
+      const row = button.closest(".account-admin-file");
+      const progress = row && row.querySelector(".account-admin-progress");
+      const controller = new AbortController();
+      startAdminButtonAction(button, controller);
+      resetDownloadProgress(progress);
+      status.className = "status-line";
+      status.textContent = segmented ? "正在准备高速缓存…" : "正在准备下载…";
+      trackEvent(workerUrl, "daily_file_download", {
+        target: name,
+        source: kind,
+        action: "download",
+        status: "attempt",
+      });
+      let finalLabel = "";
+      let finalDelay = 0;
+      try {
+        let blob;
+        let disposition = "";
+        if (segmented && isVideoDownloadButton(button)) {
+          const directUrl = withDownloadToken(endpoint);
+          try {
+            status.textContent = "正在准备高速缓存，首次视频可能需要几十秒…";
+            setDownloadMessage(progress, "正在准备高速缓存，首次视频可能需要几十秒…", 8);
+            await prepareSegmentedAdminDownload(workerUrl, button, controller.signal, progress, { timeoutMs: 90000 });
+          } catch (error) {
+            if (error && error.name === "AbortError" && controller.signal.aborted) throw error;
+            status.textContent = "缓存准备较慢，正在尝试分段下载…";
+          }
+          try {
+            status.textContent = "正在从高速缓存分段下载…";
+            setDownloadMessage(progress, "正在从高速缓存分段下载…", 10);
+            blob = await segmentedAdminDownload(endpoint, name, progress, controller.signal, { firstChunkTimeoutMs: 30000 });
+          } catch (error) {
+            if (error && error.name === "AbortError" && controller.signal.aborted) throw error;
+            setDownloadMessage(progress, "高速缓存仍未就绪，已切换浏览器下载。", 18);
+            triggerNativeDownload(directUrl, name);
+            trackEvent(workerUrl, "daily_file_download", {
+              target: name,
+              source: kind,
+              action: "download",
+              status: "browser_download_started",
+            });
+            status.textContent = "已切换浏览器下载。";
+            status.classList.add("ok");
+            finalLabel = "已切换";
+            finalDelay = 1600;
+            return;
+          }
+        } else if (segmented) {
+          try {
+            await prepareSegmentedAdminDownload(workerUrl, button, controller.signal, progress);
+          } catch (error) {
+            if (error && error.name === "AbortError" && controller.signal.aborted) throw error;
+            status.textContent = "高速缓存准备较慢，正在改用直接下载…";
+          }
+          status.textContent = "正在分段下载…";
+          blob = await segmentedAdminDownload(endpoint, name, progress, controller.signal);
+        } else {
+          const response = await fetch(endpoint, { headers: authHeaders(), signal: controller.signal });
+          if (!response.ok) {
+            const data = await response.json().catch(() => ({}));
+            throw new Error(data.detail || `下载失败 (${response.status})。`);
+          }
+          disposition = response.headers.get("Content-Disposition") || "";
+          blob = await responseBlobWithProgress(response, progress);
+        }
+        triggerBlobDownload(blob, disposition, name);
+        trackEvent(workerUrl, "daily_file_download", {
+          target: name,
+          source: kind,
+          action: "download",
+          status: "success",
+        });
+        status.textContent = "下载已开始。";
+        status.classList.add("ok");
+      } catch (error) {
+        if (error && error.name === "AbortError") {
+          trackEvent(workerUrl, "daily_file_download", {
+            target: name,
+            source: kind,
+            action: "download",
+            status: "cancelled",
+          });
+          status.textContent = "下载已取消。";
+        } else {
+          trackEvent(workerUrl, "daily_file_download", {
+            target: name,
+            source: kind,
+            action: "download",
+            status: "error",
+            error: error && error.message || "download_failed",
+          });
+          status.textContent = error.message || "下载失败。";
+          status.classList.add("error");
+        }
+      } finally {
+        finishAdminButtonAction(button, finalLabel, finalDelay);
+      }
+    });
+
+    loadAccountAdminSummary(workerUrl, targets).then(() => {
+      if (canManageUsers && exportUsers && document.getElementById("accountAdminModal")) {
+        renderAdminUsersVerificationState(targets, "正在现场核验全部用户的最新权限…");
+        return loadFreshAdminUsers(workerUrl, targets).catch((error) => {
+          renderAdminUsersVerificationState(
+            targets,
+            error.message || "最新用户状态读取失败；为避免误导，缓存权限列表已隐藏。",
+            "error",
+          );
+          targets.status.className = "status-line error";
+          targets.status.textContent = error.message || "最新用户状态读取失败，请点击刷新重试。";
+          return null;
+        });
+      }
+      return null;
+    }).catch(() => null);
+    loadAccountAdminMarketViews(workerUrl, targets).catch(() => null);
+    if (canManageUsers) loadAdminHotReports(workerUrl, targets);
+  }
+
+  function adminModalMarkup() {
+    return `
+      <div class="admin-modal" id="adminModal" role="dialog" aria-modal="true" aria-labelledby="adminModalTitle">
+        <div class="admin-dialog">
+          <button class="admin-close" id="adminClose" type="button" aria-label="Close">&times;</button>
+          <h3 id="adminModalTitle">Private tools</h3>
+          <form id="adminLoginForm">
+            <label class="search-box">
+              <span>Key</span>
+              <input id="adminKeyInput" type="password" autocomplete="current-password" required>
+            </label>
+            <button class="primary" type="submit">Unlock</button>
+            <div id="adminLoginStatus" class="status-line" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    `;
+  }
+
+  function showAdminLogin(workerUrl) {
+    if (!workerUrl) {
+      window.alert("Private tools are temporarily unavailable.");
+      return Promise.resolve("");
+    }
+
+    const existing = document.getElementById("adminModal");
+    if (existing) existing.remove();
+    document.body.insertAdjacentHTML("beforeend", adminModalMarkup());
+
+    const modal = document.getElementById("adminModal");
+    const form = document.getElementById("adminLoginForm");
+    const input = document.getElementById("adminKeyInput");
+    const status = document.getElementById("adminLoginStatus");
+    const close = document.getElementById("adminClose");
+    const button = form.querySelector("button");
+    input.focus();
+
+    return new Promise((resolve) => {
+      function finish(token) {
+        modal.remove();
+        resolve(token || "");
+      }
+
+      close.addEventListener("click", () => finish(""));
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) finish("");
+      });
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        button.disabled = true;
+        status.className = "status-line";
+        status.textContent = "Checking...";
+        try {
+          const response = await fetch(`${workerUrl}/admin/login`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ key: input.value }),
+          });
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok) throw new Error(data.error || "Private key is incorrect.");
+          setAdminToken(data.token, data.expires_at);
+          setAdminPlainKey(input.value);
+          finish(data.token);
+        } catch (error) {
+          status.textContent = error.message || "Unlock failed.";
+          status.classList.add("error");
+        } finally {
+          button.disabled = false;
+        }
+      });
+    });
+  }
+
+  function getRememberedDownloadPassword(reportId = "") {
+    reportId = String(reportId || "");
+    try {
+      if (reportId) {
+        const scoped = localStorage.getItem(`${DOWNLOAD_PASSWORD_KEY}:${reportId}`) || "";
+        if (scoped) return scoped;
+      }
+      return localStorage.getItem(DOWNLOAD_PASSWORD_KEY) || "";
+    } catch (_error) {
+      return "";
+    }
+  }
+
+  function setRememberedDownloadPassword(value, reportId = "") {
+    reportId = String(reportId || "");
+    const password = String(value || "");
+    try {
+      localStorage.setItem(DOWNLOAD_PASSWORD_KEY, password);
+      if (reportId) localStorage.setItem(`${DOWNLOAD_PASSWORD_KEY}:${reportId}`, password);
+    } catch (_error) {
+      // Ignore private browsing/localStorage restrictions.
+    }
+    try {
+      if (reportId) sessionStorage.setItem(`${DOWNLOAD_PASSWORD_KEY}:${reportId}`, password);
+    } catch (_error) {
+      // Ignore private browsing/sessionStorage restrictions.
+    }
+  }
+
+  function clearRememberedDownloadPassword(reportId = "") {
+    reportId = String(reportId || "");
+    try {
+      localStorage.removeItem(DOWNLOAD_PASSWORD_KEY);
+      if (reportId) localStorage.removeItem(`${DOWNLOAD_PASSWORD_KEY}:${reportId}`);
+    } catch (_error) {
+      // Ignore private browsing/localStorage restrictions.
+    }
+    try {
+      if (reportId) sessionStorage.removeItem(`${DOWNLOAD_PASSWORD_KEY}:${reportId}`);
+    } catch (_error) {
+      // Ignore private browsing/sessionStorage restrictions.
+    }
+  }
+
+  function deliveryPasswordFromLocation(params) {
+    const query = params || new URLSearchParams(window.location.search);
+    const fromQuery = query.get("password") || "";
+    if (fromQuery) return fromQuery;
+    const hash = String(window.location.hash || "").replace(/^#\??/, "");
+    return hash ? new URLSearchParams(hash).get("password") || "" : "";
+  }
+
+  function deliveryPasswordFromHistory(reportId) {
+    const state = window.history.state;
+    if (!state || typeof state !== "object") return "";
+    const savedId = String(state.portalDeliveryReportId || "");
+    if (savedId && reportId && savedId !== String(reportId)) return "";
+    return String(state.portalDeliveryPassword || "");
+  }
+
+  function getRecoverableDownloadPassword(reportId, explicitPassword) {
+    const direct = String(explicitPassword || deliveryPasswordFromLocation() || "");
+    if (direct) return direct;
+    const fromHistory = deliveryPasswordFromHistory(reportId);
+    if (fromHistory) return fromHistory;
+    try {
+      const fromSession = sessionStorage.getItem(`${DOWNLOAD_PASSWORD_KEY}:${reportId}`) || "";
+      if (fromSession) return fromSession;
+    } catch (_error) {
+      // Ignore private browsing/sessionStorage restrictions.
+    }
+    return getRememberedDownloadPassword(reportId);
+  }
+
+  function rememberDeliveryPassword(reportId, value) {
+    const password = String(value || "");
+    if (!password) return;
+    setRememberedDownloadPassword(password, reportId);
+    try {
+      const current = window.history.state && typeof window.history.state === "object"
+        ? window.history.state
+        : {};
+      window.history.replaceState({
+        ...current,
+        portalDeliveryReportId: String(reportId || ""),
+        portalDeliveryPassword: password,
+      }, "", window.location.href);
+    } catch (_error) {
+      // The URL remains the primary fallback when history state is unavailable.
+    }
+  }
+
+  function initResilientPasswordInput(input, reportId, explicitPassword, setStatus) {
+    if (!input) return "";
+    const linkedPassword = String(explicitPassword || "");
+    const initialPassword = getRecoverableDownloadPassword(reportId, linkedPassword);
+    if (initialPassword) {
+      input.value = initialPassword;
+      rememberDeliveryPassword(reportId, initialPassword);
+      setStatus(linkedPassword
+        ? "Password filled from delivery link."
+        : "Password restored on this device.");
+    }
+
+    const restoreIfEmpty = () => {
+      if (!input.isConnected || input.value) return;
+      const recovered = getRecoverableDownloadPassword(reportId, linkedPassword);
+      if (!recovered) return;
+      input.value = recovered;
+      setStatus("Password restored from delivery link.");
+    };
+
+    window.addEventListener("pageshow", restoreIfEmpty);
+    window.addEventListener("focus", restoreIfEmpty);
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) restoreIfEmpty();
+    });
+    [0, 250, 1200, 2500].forEach((delay) => window.setTimeout(restoreIfEmpty, delay));
+    return initialPassword;
+  }
+
+  function initAdminGate(workerUrl) {
+    const gate = document.getElementById("adminGate");
+    if (!gate) return;
+    function update() {
+      const unlocked = isSuperSession();
+      gate.hidden = !unlocked;
+      gate.classList.toggle("is-unlocked", unlocked);
+    }
+    update();
+    document.addEventListener("portal-admin-change", update);
+    document.addEventListener("portal-auth-change", update);
+    gate.addEventListener("click", () => {
+      if (isSuperSession()) showAccountAdminModal(workerUrl);
+    });
+  }
+
+  function formatSize(bytes) {
+    const size = Number(bytes || 0);
+    if (!size) return "";
+    if (size >= 1024 * 1024 * 1024) return `${(size / 1024 / 1024 / 1024).toFixed(1)} GB`;
+    if (size >= 1024 * 1024) return `${(size / 1024 / 1024).toFixed(1)} MB`;
+    if (size >= 1024) return `${Math.round(size / 1024)} KB`;
+    return `${size} B`;
+  }
+
+  function isoDateFromValue(value) {
+    const text = String(value || "");
+    if (/^\d{6}$/.test(text)) {
+      return `20${text.slice(0, 2)}-${text.slice(2, 4)}-${text.slice(4, 6)}`;
+    }
+    if (/^\d{8}$/.test(text)) {
+      return `${text.slice(0, 4)}-${text.slice(4, 6)}-${text.slice(6, 8)}`;
+    }
+    const iso = text.match(/^(\d{4})-(\d{2})-(\d{2})/);
+    return iso ? `${iso[1]}-${iso[2]}-${iso[3]}` : "";
+  }
+
+  function displayDate(value) {
+    return isoDateFromValue(value) || String(value || "") || "-";
+  }
+
+  function itemDate(item) {
+    return isoDateFromValue(item.date_folder) || isoDateFromValue(item.client_modified) || "";
+  }
+
+  function dateSortValue(item) {
+    return Number(itemDate(item).replace(/-/g, "")) || 0;
+  }
+
+  function bankKey(item) {
+    return String(item.bank_code || item.bank_name || "Other").trim() || "Other";
+  }
+
+  function bankLabel(item) {
+    const code = String(item.bank_code || "").trim();
+    const name = String(item.bank_name || "").trim();
+    if (code && name && normalize(code) !== normalize(name)) return `${code} · ${name}`;
+    return code || name || "Other";
+  }
+
+  function titleText(item) {
+    return String(item.title || item.filename || "Untitled report").trim() || "Untitled report";
+  }
+
+  function titleZhText(item) {
+    return String(item.title_zh || "").trim();
+  }
+
+  function inferIndustry(item) {
+    const explicit = item.industry || item.sector || item.category;
+    if (explicit) return String(explicit);
+    const text = normalize([item.title, item.title_zh, item.filename].join(" "));
+    for (const [label, pattern] of INDUSTRY_RULES) {
+      if (pattern.test(text)) return label;
+    }
+    return "Other";
+  }
+
+  function isPdfAvailable(item) {
+    return item.available !== false;
+  }
+
+  function mergeCatalogPdfOverrides(items, overrides) {
+    const merged = (Array.isArray(items) ? items : []).map((item) => ({ ...item }));
+    const byId = new Map(merged.map((item) => [String(item.id || ""), item]));
+    for (const override of Array.isArray(overrides) ? overrides : []) {
+      const id = String(override && override.id || "").trim();
+      const item = byId.get(id);
+      if (!item || item.available !== false || !override || override.available !== true) continue;
+      const sizeBytes = Math.max(0, Number(override.size_bytes || 0) || 0);
+      if (!sizeBytes) continue;
+      Object.assign(item, {
+        available: true,
+        pdf_archived: false,
+        archive_reason: "",
+        manual_pdf: true,
+        size_bytes: sizeBytes,
+        pdf_uploaded_at: String(override.uploaded_at || ""),
+      });
+    }
+    return merged;
+  }
+
+  async function loadCatalogPdfOverrides(workerUrl) {
+    if (!workerUrl) return [];
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 6000);
+    try {
+      const response = await fetch(`${workerUrl}/catalog-pdf-overrides`, {
+        cache: "no-store",
+        signal: controller.signal,
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(data.detail || "PDF override status is unavailable.");
+      return Array.isArray(data.items) ? data.items : [];
+    } catch (_error) {
+      return [];
+    } finally {
+      window.clearTimeout(timeout);
+    }
+  }
+
+  function metadataText(item) {
+    return normalize([
+      item.title,
+      item.title_zh,
+      item.filename,
+      item.bank_code,
+      item.bank_name,
+      inferIndustry(item),
+      item.date_folder,
+      (item.date_folders || []).join(" "),
+      item.client_modified,
+      item.server_modified,
+    ].join(" "));
+  }
+
+  function selectedSearchText(item, queryScope, metadataById, searchTextById) {
+    const title = normalize([item.title, item.title_zh, item.filename].join(" "));
+    const catalog = metadataById.get(item.id) || "";
+    const fullText = searchTextById.get(item.id) || "";
+    if (queryScope === "title") return { title, catalog: "", fullText: "", combined: title };
+    if (queryScope === "catalog") return { title: "", catalog, fullText: "", combined: catalog };
+    if (queryScope === "fulltext") return { title: "", catalog: "", fullText, combined: fullText };
+    return { title, catalog, fullText, combined: `${title} ${catalog} ${fullText}` };
+  }
+
+  function scoreItem(item, query, queryScope, metadataById, searchTextById) {
+    if (!query) return 0;
+    const selected = selectedSearchText(item, queryScope, metadataById, searchTextById);
+    if (!textMatches(selected.combined, query)) return -1;
+    return (
+      scoreText(selected.title, query, 12) +
+      scoreText(selected.catalog, query, 5) +
+      scoreText(selected.fullText, query, 2)
+    );
+  }
+
+  function reportPageCountValue(item) {
+    const pages = Number(item && item.page_count);
+    return Number.isFinite(pages) && pages > 0 ? pages : 0;
+  }
+
+  function pageRangeForValue(value) {
+    return PAGE_RANGE_FILTERS.find((range) => range.value === value) || null;
+  }
+
+  function pageRangeLabel(value) {
+    const range = pageRangeForValue(value);
+    return range ? range.label : "";
+  }
+
+  function itemMatchesPageRanges(item, selectedRanges) {
+    if (!selectedRanges.length) return true;
+    const pages = reportPageCountValue(item);
+    if (!pages) return false;
+    return selectedRanges.some((value) => {
+      const range = pageRangeForValue(value);
+      return range ? range.matches(pages) : false;
+    });
+  }
+
+  function resultRow(item) {
+    const bank = item.bank_code || item.bank_name || "Other";
+    const size = formatSize(item.size_bytes);
+    const industry = inferIndustry(item);
+    const available = isPdfAvailable(item);
+    const pages = reportPageCountValue(item);
+    const statusParts = [
+      pages ? `${pages}页` : "",
+      available ? size : "Text only",
+    ].filter(Boolean);
+    const status = statusParts.join(" · ");
+    const zh = titleZhText(item);
+    const url = reportPageUrl(item.id);
+    return `
+      <a class="report-row report-link${available ? "" : " is-archived"}" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" data-id="${escapeHtml(item.id)}">
+        <span class="pill">${escapeHtml(bank)}</span>
+        <span class="date-text">${escapeHtml(displayDate(item.date_folder))}</span>
+        <span class="title-text">
+          <span class="title-en">${escapeHtml(titleText(item))}</span>
+          ${zh ? `<span class="title-zh">${escapeHtml(zh)}</span>` : ""}
+        </span>
+        <span class="industry-text">${escapeHtml(industry)}</span>
+        <span class="size-text${available ? "" : " archived"}">${escapeHtml(status)}</span>
+      </a>
+    `;
+  }
+
+  function relatedRow(item) {
+    const available = isPdfAvailable(item);
+    const zh = titleZhText(item);
+    const url = reportPageUrl(item.id);
+    return `
+      <a class="related-row report-link${available ? "" : " is-archived"}" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" data-id="${escapeHtml(item.id)}">
+        <span class="related-title">
+          <span>${escapeHtml(titleText(item))}</span>
+          ${zh ? `<span class="related-title-zh">${escapeHtml(zh)}</span>` : ""}
+        </span>
+        <span class="related-meta">${escapeHtml(bankLabel(item))} · ${escapeHtml(displayDate(item.date_folder))} · ${escapeHtml(inferIndustry(item))}${available ? "" : " · Text only"}</span>
+      </a>
+    `;
+  }
+
+  function externalMeta(item) {
+    const meta = [item.institution, item.date, item.file_type]
+      .map((value) => String(value || "").trim())
+      .filter(Boolean)
+      .join(" · ");
+    return meta;
+  }
+
+  function docItemCacheKey(item) {
+    return `${String(item && item.source || EXTERNAL_SOURCE)}:${String(item && item.id || "")}`;
+  }
+
+  function readDocItemCache() {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(DOC_ITEM_CACHE_KEY) || "{}");
+      return parsed && typeof parsed === "object" ? parsed : {};
+    } catch (_error) {
+      return {};
+    }
+  }
+
+  function writeDocItemCache(cache) {
+    try {
+      localStorage.setItem(DOC_ITEM_CACHE_KEY, JSON.stringify(cache));
+    } catch (_error) {
+      // The detail page can still fetch by id from the Worker.
+    }
+  }
+
+  function rememberDocItem(item) {
+    if (!item || !item.id) return;
+    const cache = readDocItemCache();
+    cache[docItemCacheKey(item)] = {
+      saved_at: Date.now(),
+      item: {
+        id: item.id,
+        source: item.source || EXTERNAL_SOURCE,
+        title: item.title || "",
+        title_cn: item.title_cn || "",
+        institution: item.institution || "",
+        date: item.date || "",
+        file_type: item.file_type || "",
+        kind: item.kind || "",
+        page_count: item.page_count || "",
+        size_bytes: item.size_bytes || 0,
+        report_type: item.report_type || "",
+        language: item.language || "",
+        category: item.category || "",
+        author: item.author || "",
+        rating: item.rating || "",
+        description: item.description || "",
+        filename: item.filename || "",
+        required_plan: item.required_plan || "",
+      },
+    };
+    const entries = Object.entries(cache)
+      .filter(([, value]) => Date.now() - Number(value && value.saved_at || 0) < 7 * 24 * 60 * 60 * 1000)
+      .sort((a, b) => Number(b[1].saved_at || 0) - Number(a[1].saved_at || 0))
+      .slice(0, 80);
+    writeDocItemCache(Object.fromEntries(entries));
+  }
+
+  function cachedDocItem(item) {
+    if (!item || !item.id) return null;
+    const cached = readDocItemCache()[docItemCacheKey(item)];
+    if (!cached || Date.now() - Number(cached.saved_at || 0) > 7 * 24 * 60 * 60 * 1000) return null;
+    return cached.item && typeof cached.item === "object" ? cached.item : null;
+  }
+
+  function authorityKindLabel(kind) {
+    return kind === "foreign-rt" ? "实时外文" : "普通外文";
+  }
+
+  function authorityMeta(item) {
+    const meta = [
+      authorityKindLabel(item.kind),
+      item.institution,
+      item.date,
+      item.page_count ? `${item.page_count}页` : "",
+      item.language,
+    ]
+      .map((value) => String(value || "").trim())
+      .filter(Boolean)
+      .join(" · ");
+    return meta;
+  }
+
+  function externalRow(item) {
+    const meta = externalMeta(item);
+    const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
+    rememberDocItem({ ...item, source: EXTERNAL_SOURCE });
+    const url = externalPageUrl(item, "");
+    return `
+      <a class="related-row external-row" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" data-id="${escapeHtml(item.id)}">
+        <span class="related-title">
+          <span>${escapeHtml(item.title)}</span>
+          ${zh ? `<span class="related-title-zh">${escapeHtml(zh)}</span>` : ""}
+        </span>
+        <span class="related-meta">${escapeHtml(meta)}</span>
+      </a>
+    `;
+  }
+
+  function thinkTankMeta(item) {
+    return [
+      item.institution,
+      item.date,
+      item.page_count ? `${item.page_count}页` : "",
+      formatSize(item.size_bytes),
+      item.file_type,
+    ]
+      .map((value) => String(value || "").trim())
+      .filter(Boolean)
+      .join(" · ");
+  }
+
+  function thinkTankRow(item) {
+    const meta = thinkTankMeta(item);
+    const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
+    const docItem = { ...item, source: THINKTANK_SOURCE };
+    rememberDocItem(docItem);
+    const url = externalPageUrl(docItem, "");
+    return `
+      <a class="related-row thinktank-row" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" data-id="${escapeHtml(item.id)}">
+        <span class="related-title">
+          <span>${escapeHtml(item.title)}</span>
+          ${zh ? `<span class="related-title-zh">${escapeHtml(zh)}</span>` : ""}
+        </span>
+        <span class="related-meta">${escapeHtml(meta)}</span>
+      </a>
+    `;
+  }
+
+  function hotReportRow(item) {
+    const docItem = { ...item, source: HOT_REPORT_SOURCE };
+    rememberDocItem(docItem);
+    const url = externalPageUrl(docItem, "");
+    const meta = [
+      item.institution,
+      item.date,
+      formatSize(item.size_bytes),
+      "3个月及以上会员",
+    ].map((value) => String(value || "").trim()).filter(Boolean).join(" · ");
+    const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
+    return `
+      <a class="related-row hot-report-row" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" data-id="${escapeHtml(item.id)}">
+        <span class="related-title">
+          <span>${escapeHtml(item.title || "近期热门报告")}</span>
+          ${zh ? `<span class="related-title-zh">${escapeHtml(zh)}</span>` : ""}
+        </span>
+        <span class="related-meta">${escapeHtml(meta)}</span>
+      </a>
+    `;
+  }
+
+  function reportAMeta(item) {
+    return [
+      item.institution,
+      item.date,
+      item.category,
+      item.page_count ? `${item.page_count}页` : "",
+      item.author,
+    ]
+      .map((value) => String(value || "").trim())
+      .filter(Boolean)
+      .join(" · ");
+  }
+
+  function reportARow(item) {
+    const meta = reportAMeta(item);
+    const docItem = { ...item, source: REPORT_A_SOURCE };
+    rememberDocItem(docItem);
+    const url = externalPageUrl(docItem, "");
+    return `
+      <a class="related-row report-a-row" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" data-id="${escapeHtml(item.id)}">
+        <span class="related-title">
+          <span>${escapeHtml(item.title)}</span>
+        </span>
+        <span class="related-meta">${escapeHtml(meta)}</span>
+      </a>
+    `;
+  }
+
+  function authorityRow(item) {
+    const meta = authorityMeta(item);
+    const docItem = { ...item, source: AUTHORITY_SOURCE };
+    rememberDocItem(docItem);
+    const url = externalPageUrl(docItem, "");
+    return `
+      <a class="related-row authority-row" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" data-id="${escapeHtml(item.id)}">
+        <span class="related-title">
+          <span>${escapeHtml(item.title)}</span>
+        </span>
+        <span class="related-meta">${escapeHtml(meta)}</span>
+      </a>
+    `;
+  }
+
+  function isNativeNewTabLink(row) {
+    return row && row.tagName === "A" && row.getAttribute("target") === "_blank" && row.getAttribute("href");
+  }
+
+  function setOptions(select, options, allLabel) {
+    const current = select.value;
+    const rows = [`<option value="">${escapeHtml(allLabel)}</option>`];
+    for (const option of options) {
+      rows.push(`<option value="${escapeHtml(option.value)}">${escapeHtml(option.label)}</option>`);
+    }
+    select.innerHTML = rows.join("");
+    if ([...select.options].some((option) => option.value === current)) {
+      select.value = current;
+    }
+  }
+
+  function optionSummary(map) {
+    return [...map.entries()]
+      .sort((a, b) => a[0].localeCompare(b[0]))
+      .map(([value, data]) => ({
+        value,
+        label: `${data.label} (${data.count})`,
+      }));
+  }
+
+  async function initIndex() {
+    const [catalog, config] = await Promise.all([
+      loadJson("data/catalog.json"),
+      loadOptionalJson("data/config.json", {}),
+    ]);
+    const workerUrl = workerBaseUrl(config);
+    const catalogPdfOverrides = await loadCatalogPdfOverrides(workerUrl);
+    const input = document.getElementById("searchInput");
+    const results = document.getElementById("results");
+    const count = document.getElementById("resultCount");
+    const meta = document.getElementById("catalogMeta");
+    const bankFilter = document.getElementById("bankFilter");
+    const industryFilter = document.getElementById("industryFilter");
+    const startDate = document.getElementById("startDate");
+    const endDate = document.getElementById("endDate");
+    const scopeFilter = document.getElementById("scopeFilter");
+    const availabilityFilter = document.getElementById("availabilityFilter");
+    const pageRangeInputs = Array.from(document.querySelectorAll('input[name="pageRange"]'));
+    const clearFilters = document.getElementById("clearFilters");
+    const activeFilters = document.getElementById("activeFilters");
+    const prevPage = document.getElementById("prevPage");
+    const nextPage = document.getElementById("nextPage");
+    const pageInfo = document.getElementById("pageInfo");
+    const pageSize = document.getElementById("pageSize");
+    const items = mergeCatalogPdfOverrides(catalog.items, catalogPdfOverrides);
+    const catalogById = new Map(items.map((item) => [String(item.id || ""), item]));
+    const metadataById = new Map(items.map((item) => [item.id, metadataText(item)]));
+    const searchTextById = new Map();
+    let searchIndexLabel = "Text index loading";
+    let currentPage = 1;
+    let catalogAnalyticsTimer = 0;
+    let lastCatalogAnalyticsKey = "";
+    let showInternalStorageMetadata = false;
+    let internalStorageMetadata = null;
+    let internalStorageRequestId = 0;
+
+    initAccountGate(workerUrl);
+    initAdminGate(workerUrl);
+    initNewsfeedNav();
+    trackEvent(workerUrl, "page_view", { page: "home", report_count: items.length });
+
+    const hotReportsSection = document.getElementById("hotReportsSection");
+    const hotReportsResults = document.getElementById("hotReportsResults");
+    const hotReportsCount = document.getElementById("hotReportsCount");
+    const hotReportsStatus = document.getElementById("hotReportsStatus");
+    const searchRecommendationsSection = document.getElementById("searchRecommendationsSection");
+    const searchRecommendationsResults = document.getElementById("searchRecommendationsResults");
+    const searchRecommendationsCount = document.getElementById("searchRecommendationsCount");
+    const hotReportItems = new Map();
+    const searchResultCounts = {
+      catalog: 0,
+      hot: workerUrl ? null : 0,
+      thinktank: 0,
+      external: 0,
+      reportA: 0,
+      authority: 0,
+    };
+    let hotReportsLoaded = !workerUrl;
+    let hotReportsFailed = false;
+    const fallbackRecommendations = items
+      .filter((item) => isPdfAvailable(item))
+      .slice()
+      .sort((left, right) => dateSortValue(right) - dateSortValue(left))
+      .slice(0, 6);
+
+    function setHotReportsStatus(text, kind) {
+      if (!hotReportsStatus) return;
+      hotReportsStatus.className = kind ? `status-line ${kind}` : "status-line";
+      hotReportsStatus.textContent = text || "";
+    }
+
+    function renderSearchRecommendations() {
+      if (!searchRecommendationsSection || !searchRecommendationsResults) return;
+      const query = String(input.value || "").trim();
+      const counts = Object.values(searchResultCounts);
+      const ready = counts.every((value) => Number.isFinite(value));
+      const noMatches = ready && counts.every((value) => value === 0);
+      if (!query || !noMatches || !fallbackRecommendations.length) {
+        searchRecommendationsSection.hidden = true;
+        searchRecommendationsResults.innerHTML = "";
+        if (searchRecommendationsCount) searchRecommendationsCount.textContent = "";
+        return;
+      }
+      searchRecommendationsSection.hidden = false;
+      if (searchRecommendationsCount) searchRecommendationsCount.textContent = `${fallbackRecommendations.length} 条`;
+      searchRecommendationsResults.innerHTML = fallbackRecommendations.map(relatedRow).join("");
+    }
+
+    function renderHotReports(query = "") {
+      if (!hotReportsSection || !hotReportsResults) return;
+      if (!hotReportsLoaded) {
+        hotReportsSection.hidden = false;
+        hotReportsResults.innerHTML = `
+          <div class="loading-state">
+            <span class="loading-spinner" aria-hidden="true"></span>
+            <span>正在读取近期热门报告…</span>
+          </div>
+        `;
+        searchResultCounts.hot = null;
+        renderSearchRecommendations();
+        return;
+      }
+      const normalizedQuery = normalize(query);
+      const tokens = queryTokens(normalizedQuery);
+      const allItems = [...hotReportItems.values()];
+      const matches = normalizedQuery
+        ? allItems.filter((item) => {
+          const text = normalize([item.title, item.title_cn, item.institution, item.description, item.date].filter(Boolean).join(" "));
+          return tokens.every((token) => text.includes(token));
+        })
+        : allItems;
+      searchResultCounts.hot = hotReportsFailed ? "error" : matches.length;
+      hotReportsSection.hidden = !allItems.length && !normalizedQuery;
+      if (hotReportsCount) hotReportsCount.textContent = matches.length ? `${matches.length} 条` : "";
+      hotReportsResults.innerHTML = matches.length
+        ? matches.map(hotReportRow).join("")
+        : '<div class="empty-state">暂无匹配结果。</div>';
+      renderSearchRecommendations();
+    }
+
+    async function loadHotReports() {
+      if (!workerUrl || !hotReportsSection || !hotReportsResults) return;
+      hotReportsLoaded = false;
+      hotReportsFailed = false;
+      renderHotReports(input.value.trim());
+      setHotReportsStatus("");
+      try {
+        const response = await fetch(`${workerUrl}/hot-reports`, { cache: "no-store" });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(data.detail || "近期热门报告读取失败。");
+        hotReportItems.clear();
+        for (const item of Array.isArray(data.items) ? data.items : []) {
+          if (item && item.id) hotReportItems.set(String(item.id), { ...item, source: HOT_REPORT_SOURCE });
+        }
+      } catch (error) {
+        hotReportItems.clear();
+        hotReportsFailed = true;
+        setHotReportsStatus(error.message || "近期热门报告暂时无法读取。", "error");
+      } finally {
+        hotReportsLoaded = true;
+        renderHotReports(input.value.trim());
+      }
+    }
+
+    const bankOptions = new Map();
+    const industryOptions = new Map();
+    for (const item of items) {
+      const bKey = bankKey(item);
+      const b = bankOptions.get(bKey) || { label: bankLabel(item), count: 0 };
+      b.count += 1;
+      bankOptions.set(bKey, b);
+
+      const industry = inferIndustry(item);
+      const i = industryOptions.get(industry) || { label: industry, count: 0 };
+      i.count += 1;
+      industryOptions.set(industry, i);
+    }
+    setOptions(bankFilter, optionSummary(bankOptions), "All institutions");
+    setOptions(industryFilter, optionSummary(industryOptions), "All industries");
+
+    function updateMeta() {
+      meta.textContent = `${items.length} reports`;
+      const totalSize = formatSize(internalStorageMetadata && internalStorageMetadata.total_size_bytes);
+      const limitSize = formatSize(internalStorageMetadata && internalStorageMetadata.limit_bytes);
+      const hotTotalSize = formatSize(internalStorageMetadata && internalStorageMetadata.hot_report_size_bytes);
+      const hotLimitSize = formatSize(internalStorageMetadata && internalStorageMetadata.hot_report_limit_bytes);
+      if (showInternalStorageMetadata && totalSize && limitSize) {
+        meta.textContent += ` | ${totalSize} / ${limitSize} PDF storage`;
+      } else if (showInternalStorageMetadata && totalSize) {
+        meta.textContent += ` | ${totalSize} PDF storage`;
+      }
+      if (showInternalStorageMetadata && hotTotalSize && hotLimitSize) {
+        meta.textContent += ` | ${hotTotalSize} / ${hotLimitSize} hot archive`;
+      }
+      if (catalog.updated_at_bjt) {
+        meta.textContent += ` | Updated ${catalog.updated_at_bjt}`;
+      }
+      meta.textContent += ` | ${searchIndexLabel}`;
+    }
+
+    async function refreshInternalStorageMetadata() {
+      const requestId = ++internalStorageRequestId;
+      showInternalStorageMetadata = isAdminASession();
+      internalStorageMetadata = null;
+      updateMeta();
+      if (!showInternalStorageMetadata || !workerUrl) return;
+      try {
+        const response = await fetch(`${workerUrl}/internal/pdf-storage`, {
+          cache: "no-store",
+          headers: authHeaders(),
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(data.detail || "PDF storage metadata is unavailable.");
+        if (requestId !== internalStorageRequestId || !isAdminASession()) return;
+        internalStorageMetadata = data;
+      } catch (_error) {
+        if (requestId !== internalStorageRequestId) return;
+        internalStorageMetadata = null;
+      }
+      updateMeta();
+    }
+
+    document.addEventListener("portal-auth-change", refreshInternalStorageMetadata);
+    refreshInternalStorageMetadata();
+
+    function passesFilters(item) {
+      if (bankFilter.value && bankKey(item) !== bankFilter.value) return false;
+      if (industryFilter.value && inferIndustry(item) !== industryFilter.value) return false;
+      if (availabilityFilter.value === "available" && !isPdfAvailable(item)) return false;
+      if (availabilityFilter.value === "textOnly" && isPdfAvailable(item)) return false;
+      if (!itemMatchesPageRanges(item, selectedPageRangeValues())) return false;
+      const date = itemDate(item);
+      if (startDate.value && (!date || date < startDate.value)) return false;
+      if (endDate.value && (!date || date > endDate.value)) return false;
+      return true;
+    }
+
+    function selectedPageRangeValues() {
+      return pageRangeInputs
+        .filter((input) => input.checked)
+        .map((input) => input.value);
+    }
+
+    function selectedPageRangeLabels() {
+      return selectedPageRangeValues()
+        .map(pageRangeLabel)
+        .filter(Boolean);
+    }
+
+    function updateActiveFilters() {
+      const labels = [];
+      if (bankFilter.value) labels.push(bankFilter.options[bankFilter.selectedIndex].text.replace(/\s+\(\d+\)$/, ""));
+      if (industryFilter.value) labels.push(industryFilter.value);
+      if (startDate.value || endDate.value) labels.push(`${startDate.value || "start"} to ${endDate.value || "today"}`);
+      if (availabilityFilter.value === "available") labels.push("PDF available");
+      if (availabilityFilter.value === "textOnly") labels.push("Text only");
+      const pageLabels = selectedPageRangeLabels();
+      if (pageLabels.length) labels.push(`Pages: ${pageLabels.join(", ")}`);
+      if (scopeFilter.value !== "all") labels.push(scopeFilter.options[scopeFilter.selectedIndex].text);
+      activeFilters.textContent = labels.length ? labels.join(" · ") : "No filters";
+    }
+
+    function render(options = {}) {
+      if (options.resetPage) currentPage = 1;
+      const query = normalize(input.value);
+      const rawQuery = input.value.trim();
+      const scoped = items
+        .filter(passesFilters)
+        .map((item) => ({
+          item,
+          score: scoreItem(item, query, scopeFilter.value, metadataById, searchTextById),
+        }))
+        .filter((entry) => !query || entry.score >= 0);
+
+      scoped.sort((a, b) => {
+        if (query && b.score !== a.score) return b.score - a.score;
+        return dateSortValue(b.item) - dateSortValue(a.item);
+      });
+
+      count.textContent = `${scoped.length} of ${items.length} reports`;
+      updateActiveFilters();
+      const rowsPerPage = Math.max(1, Number(pageSize.value) || 50);
+      const pageCount = Math.max(1, Math.ceil(scoped.length / rowsPerPage));
+      currentPage = Math.min(Math.max(currentPage, 1), pageCount);
+      const start = (currentPage - 1) * rowsPerPage;
+      const visible = scoped.slice(start, start + rowsPerPage);
+      pageInfo.textContent = scoped.length
+        ? `Page ${currentPage} / ${pageCount}`
+        : "Page 0 / 0";
+      prevPage.disabled = currentPage <= 1 || !scoped.length;
+      nextPage.disabled = currentPage >= pageCount || !scoped.length;
+      searchResultCounts.catalog = scoped.length;
+      renderSearchRecommendations();
+
+      if (!scoped.length) {
+        results.innerHTML = '<div class="empty-state">No matching reports.</div>';
+        scheduleCatalogSearchAnalytics(rawQuery, scoped.length);
+        return;
+      }
+      results.innerHTML = visible.map((entry) => resultRow(entry.item)).join("");
+      results.scrollTop = 0;
+      scheduleCatalogSearchAnalytics(rawQuery, scoped.length);
+    }
+
+    function activeFilterPayload() {
+      return {
+        bank: bankFilter.value,
+        industry: industryFilter.value,
+        start_date: startDate.value,
+        end_date: endDate.value,
+        scope: scopeFilter.value,
+        availability: availabilityFilter.value,
+        page_ranges: selectedPageRangeValues().join(","),
+        page_range_labels: selectedPageRangeLabels().join(", "),
+      };
+    }
+
+    function hasActiveFilters() {
+      const filters = activeFilterPayload();
+      return Object.values(filters).some(Boolean) && !(filters.scope === "all" && Object.values({ ...filters, scope: "" }).every((value) => !value));
+    }
+
+    function scheduleCatalogSearchAnalytics(rawQuery, resultCount) {
+      const cleanQuery = String(rawQuery || "").trim();
+      const filtersActive = hasActiveFilters();
+      if (cleanQuery.length < 2 && !filtersActive) return;
+      const payload = {
+        source: "catalog",
+        query: cleanQuery,
+        result_count: resultCount,
+        ...activeFilterPayload(),
+      };
+      const key = JSON.stringify(payload);
+      if (key === lastCatalogAnalyticsKey) return;
+      window.clearTimeout(catalogAnalyticsTimer);
+      catalogAnalyticsTimer = window.setTimeout(() => {
+        lastCatalogAnalyticsKey = key;
+        trackEvent(workerUrl, "search", payload);
+      }, 900);
+    }
+
+    function clearAllFilters() {
+      input.value = "";
+      bankFilter.value = "";
+      industryFilter.value = "";
+      startDate.value = "";
+      endDate.value = "";
+      scopeFilter.value = "all";
+      availabilityFilter.value = "";
+      pageRangeInputs.forEach((control) => {
+        control.checked = false;
+      });
+      render({ resetPage: true });
+    }
+
+    input.addEventListener("input", () => {
+      prepareRemoteSearch(input.value.trim());
+      render({ resetPage: true });
+      renderHotReports(input.value.trim());
+      scheduleExternalSearch();
+    });
+    [bankFilter, industryFilter, startDate, endDate, scopeFilter, availabilityFilter, ...pageRangeInputs].forEach((control) => {
+      control.addEventListener("change", () => render({ resetPage: true }));
+    });
+    pageSize.addEventListener("change", () => render({ resetPage: true }));
+    prevPage.addEventListener("click", () => {
+      currentPage -= 1;
+      render();
+    });
+    nextPage.addEventListener("click", () => {
+      currentPage += 1;
+      render();
+    });
+    clearFilters.addEventListener("click", clearAllFilters);
+    results.addEventListener("click", (event) => {
+      const row = event.target.closest(".report-link");
+      if (!row) return;
+      const item = catalogById.get(String(row.dataset.id || ""));
+      trackEvent(workerUrl, "report_open", analyticsReportPayload(item || { id: row.dataset.id }, "catalog"));
+      if (isNativeNewTabLink(row)) return;
+      event.preventDefault();
+      event.stopPropagation();
+      openReportPage(row.dataset.id);
+    });
+
+    // --- 其他报告 integration ---------------------------------------------
+    // Live search through the Worker proxy. Rows open the same password-gated
+    // detail flow used by primary reports.
+    const externalUrl = workerUrl;
+    const thinkTankSection = document.getElementById("thinkTankSection");
+    const thinkTankResults = document.getElementById("thinkTankResults");
+    const thinkTankCount = document.getElementById("thinkTankCount");
+    const thinkTankStatus = document.getElementById("thinkTankStatus");
+    const externalSection = document.getElementById("externalSection");
+    const externalResults = document.getElementById("externalResults");
+    const externalCount = document.getElementById("externalCount");
+    const externalStatus = document.getElementById("externalStatus");
+    const reportASection = document.getElementById("reportASection");
+    const reportAResults = document.getElementById("reportAResults");
+    const reportACount = document.getElementById("reportACount");
+    const reportAStatus = document.getElementById("reportAStatus");
+    const authoritySection = document.getElementById("authoritySection");
+    const authorityResults = document.getElementById("authorityResults");
+    const authorityCount = document.getElementById("authorityCount");
+    const authorityStatus = document.getElementById("authorityStatus");
+    let externalTimer = 0;
+    let thinkTankToken = 0;
+    let externalToken = 0;
+    let reportAToken = 0;
+    let authorityToken = 0;
+    let authorityQuery = "";
+    const thinkTankItems = new Map();
+    const externalItems = new Map();
+    const reportAItems = new Map();
+    const authorityItems = new Map();
+
+    function setThinkTankStatus(text, kind) {
+      if (!thinkTankStatus) return;
+      thinkTankStatus.className = kind ? `status-line ${kind}` : "status-line";
+      thinkTankStatus.textContent = text || "";
+    }
+
+    function hideThinkTankResults() {
+      thinkTankToken += 1;
+      if (thinkTankSection) thinkTankSection.hidden = true;
+      if (thinkTankResults) thinkTankResults.innerHTML = "";
+      thinkTankItems.clear();
+      if (thinkTankCount) thinkTankCount.textContent = "";
+      setThinkTankStatus("");
+      searchResultCounts.thinktank = 0;
+      renderSearchRecommendations();
+    }
+
+    function setExternalStatus(text, kind) {
+      if (!externalStatus) return;
+      externalStatus.className = kind ? `status-line ${kind}` : "status-line";
+      externalStatus.textContent = text || "";
+    }
+
+    function setReportAStatus(text, kind) {
+      if (!reportAStatus) return;
+      reportAStatus.className = kind ? `status-line ${kind}` : "status-line";
+      reportAStatus.textContent = text || "";
+    }
+
+    function hideReportAResults() {
+      reportAToken += 1;
+      if (reportASection) reportASection.hidden = true;
+      if (reportAResults) reportAResults.innerHTML = "";
+      reportAItems.clear();
+      if (reportACount) reportACount.textContent = "";
+      setReportAStatus("");
+      searchResultCounts.reportA = 0;
+      renderSearchRecommendations();
+    }
+
+    function setAuthorityStatus(text, kind) {
+      if (!authorityStatus) return;
+      authorityStatus.className = kind ? `status-line ${kind}` : "status-line";
+      authorityStatus.textContent = text || "";
+    }
+
+    function hideAuthorityResults() {
+      authorityQuery = "";
+      authorityToken += 1;
+      if (authoritySection) authoritySection.hidden = true;
+      if (authorityResults) authorityResults.innerHTML = "";
+      authorityItems.clear();
+      if (authorityCount) authorityCount.textContent = "";
+      setAuthorityStatus("");
+      searchResultCounts.authority = 0;
+      renderSearchRecommendations();
+    }
+
+    function prepareRemoteSearch(query) {
+      for (const source of ["thinktank", "external", "reportA", "authority"]) {
+        searchResultCounts[source] = query && externalUrl ? null : 0;
+      }
+      renderSearchRecommendations();
+    }
+
+    async function runThinkTankSearch(query) {
+      if (!thinkTankSection || !thinkTankResults) return;
+      if (!externalUrl || !query) {
+        hideThinkTankResults();
+        return;
+      }
+      const token = ++thinkTankToken;
+      thinkTankSection.hidden = false;
+      if (thinkTankCount) thinkTankCount.textContent = "搜索中…";
+      setThinkTankStatus("");
+      thinkTankResults.innerHTML = `
+        <div class="loading-state">
+          <span class="loading-spinner" aria-hidden="true"></span>
+          <span>正在搜索国际智库…</span>
+        </div>
+      `;
+      try {
+        const response = await fetch(
+          `${externalUrl}/thinktank/search?q=${encodeURIComponent(query)}`,
+          { cache: "no-store" },
+        );
+        if (!response.ok) throw new Error(`搜索失败 (${response.status})`);
+        const data = await response.json();
+        if (token !== thinkTankToken) return;
+        const items = Array.isArray(data.items) ? data.items : [];
+        searchResultCounts.thinktank = items.length;
+        thinkTankItems.clear();
+        items.forEach((item) => thinkTankItems.set(String(item.id), item));
+        if (thinkTankCount) thinkTankCount.textContent = items.length ? `${items.length} 条` : "";
+        thinkTankResults.innerHTML = items.length
+          ? items.map(thinkTankRow).join("")
+          : '<div class="empty-state">暂无匹配结果。</div>';
+        trackEvent(workerUrl, "search", {
+          source: THINKTANK_SOURCE,
+          query,
+          result_count: items.length,
+          total_count: data.total || 0,
+          cache_status: data.cache_status || "",
+        });
+        renderSearchRecommendations();
+      } catch (error) {
+        if (token !== thinkTankToken) return;
+        if (thinkTankCount) thinkTankCount.textContent = "";
+        thinkTankResults.innerHTML = "";
+        setThinkTankStatus(error.message || "搜索暂不可用。", "error");
+        searchResultCounts.thinktank = "error";
+        renderSearchRecommendations();
+      }
+    }
+
+    async function runExternalSearch(query) {
+      if (!externalSection || !externalResults) return;
+      if (!externalUrl || !query) {
+        externalSection.hidden = true;
+        externalResults.innerHTML = "";
+        externalItems.clear();
+        if (externalCount) externalCount.textContent = "";
+        setExternalStatus("");
+        searchResultCounts.external = 0;
+        renderSearchRecommendations();
+        hideAuthorityResults();
+        return;
+      }
+      const token = ++externalToken;
+      externalSection.hidden = false;
+      if (externalCount) externalCount.textContent = "搜索中…";
+      setExternalStatus("");
+      externalResults.innerHTML = `
+        <div class="loading-state">
+          <span class="loading-spinner" aria-hidden="true"></span>
+          <span>正在搜索其他报告…</span>
+        </div>
+      `;
+      try {
+        const response = await fetch(
+          `${externalUrl}/external/search?q=${encodeURIComponent(query)}`,
+          { cache: "no-store" },
+        );
+        if (!response.ok) throw new Error(`搜索失败 (${response.status})`);
+        const data = await response.json();
+        if (token !== externalToken) return; // a newer query superseded this one
+        const items = Array.isArray(data.items) ? data.items : [];
+        searchResultCounts.external = items.length;
+        externalItems.clear();
+        items.forEach((item) => externalItems.set(String(item.id), item));
+        if (externalCount) externalCount.textContent = items.length ? `${items.length} 条` : "";
+        externalResults.innerHTML = items.length
+          ? items.map(externalRow).join("")
+          : '<div class="empty-state">暂无匹配结果。</div>';
+        trackEvent(workerUrl, "search", {
+          source: EXTERNAL_SOURCE,
+          query,
+          result_count: items.length,
+          total_count: data.total_count || data.total_page || 0,
+          cache_status: data.cache_status || "",
+        });
+        renderSearchRecommendations();
+      } catch (error) {
+        if (token !== externalToken) return;
+        if (externalCount) externalCount.textContent = "";
+        externalResults.innerHTML = "";
+        setExternalStatus(error.message || "搜索暂不可用。", "error");
+        searchResultCounts.external = "error";
+        renderSearchRecommendations();
+      }
+    }
+
+    async function runReportASearch(query) {
+      if (!reportASection || !reportAResults) return;
+      if (!externalUrl || !query) {
+        hideReportAResults();
+        return;
+      }
+      const token = ++reportAToken;
+      reportASection.hidden = false;
+      if (reportACount) reportACount.textContent = "搜索中…";
+      setReportAStatus("");
+      reportAResults.innerHTML = `
+        <div class="loading-state">
+          <span class="loading-spinner" aria-hidden="true"></span>
+          <span>正在搜索报告A…</span>
+        </div>
+      `;
+      try {
+        const response = await fetch(
+          `${externalUrl}/report-a/search?q=${encodeURIComponent(query)}`,
+          { cache: "no-store" },
+        );
+        if (!response.ok) throw new Error(`搜索失败 (${response.status})`);
+        const data = await response.json();
+        if (token !== reportAToken) return;
+        const items = Array.isArray(data.items) ? data.items : [];
+        searchResultCounts.reportA = items.length;
+        reportAItems.clear();
+        items.forEach((item) => reportAItems.set(String(item.id), item));
+        if (reportACount) reportACount.textContent = items.length ? `${items.length} 条` : "";
+        reportAResults.innerHTML = items.length
+          ? items.map(reportARow).join("")
+          : '<div class="empty-state">暂无匹配结果。</div>';
+        trackEvent(workerUrl, "search", {
+          source: REPORT_A_SOURCE,
+          query,
+          result_count: items.length,
+          total_count: data.total || 0,
+          cache_status: data.cache_status || "",
+        });
+        renderSearchRecommendations();
+      } catch (error) {
+        if (token !== reportAToken) return;
+        if (reportACount) reportACount.textContent = "";
+        reportAResults.innerHTML = "";
+        setReportAStatus(error.message || "搜索暂不可用。", "error");
+        searchResultCounts.reportA = "error";
+        renderSearchRecommendations();
+      }
+    }
+
+    async function runAuthoritySearch(query) {
+      if (!authoritySection || !authorityResults) return;
+      if (!externalUrl || !query) {
+        hideAuthorityResults();
+        return;
+      }
+      const token = ++authorityToken;
+      authorityQuery = query;
+      authoritySection.hidden = false;
+      if (authorityCount) authorityCount.textContent = "搜索中…";
+      setAuthorityStatus("");
+      authorityResults.innerHTML = `
+        <div class="loading-state">
+          <span class="loading-spinner" aria-hidden="true"></span>
+          <span>正在搜索高权报告…</span>
+        </div>
+      `;
+      try {
+        const response = await fetch(
+          `${externalUrl}/authority/search?q=${encodeURIComponent(query)}`,
+          { cache: "no-store" },
+        );
+        if (!response.ok) throw new Error(`搜索失败 (${response.status})`);
+        const data = await response.json();
+        if (token !== authorityToken) return;
+        const items = Array.isArray(data.items) ? data.items : [];
+        searchResultCounts.authority = items.length;
+        authorityItems.clear();
+        items.forEach((item) => authorityItems.set(String(item.id), item));
+        if (authorityCount) authorityCount.textContent = items.length ? `${items.length} 条` : "";
+        authorityResults.innerHTML = items.length
+          ? items.map(authorityRow).join("")
+          : '<div class="empty-state">暂无匹配结果。</div>';
+        trackEvent(workerUrl, "search", {
+          source: AUTHORITY_SOURCE,
+          query,
+          result_count: items.length,
+          total_count: data.total || 0,
+          cache_status: data.cache_status || "",
+        });
+        renderSearchRecommendations();
+      } catch (error) {
+        if (token !== authorityToken) return;
+        if (authorityCount) authorityCount.textContent = "";
+        authorityResults.innerHTML = "";
+        setAuthorityStatus(error.message || "搜索暂不可用。", "error");
+        searchResultCounts.authority = "error";
+        renderSearchRecommendations();
+      }
+    }
+
+    function scheduleExternalSearch() {
+      window.clearTimeout(externalTimer);
+      const query = input.value.trim();
+      externalTimer = window.setTimeout(() => {
+        Promise.allSettled([
+          runThinkTankSearch(query),
+          runExternalSearch(query),
+          runReportASearch(query),
+          runAuthoritySearch(query),
+        ]).then(renderSearchRecommendations);
+      }, 400);
+    }
+
+    clearFilters.addEventListener("click", () => {
+      prepareRemoteSearch("");
+      hideThinkTankResults();
+      runExternalSearch("");
+      hideReportAResults();
+      hideAuthorityResults();
+      renderHotReports("");
+    });
+    if (thinkTankResults) {
+      thinkTankResults.addEventListener("click", (event) => {
+        const row = event.target.closest(".thinktank-row");
+        if (!row) return;
+        const item = thinkTankItems.get(String(row.dataset.id || ""));
+        if (item) {
+          rememberDocItem({ ...item, source: THINKTANK_SOURCE });
+          trackEvent(workerUrl, "report_open", analyticsReportPayload(item, THINKTANK_SOURCE));
+        }
+        if (isNativeNewTabLink(row)) return;
+        event.preventDefault();
+        event.stopPropagation();
+        if (item) openInNewTab(externalPageUrl({ ...item, source: THINKTANK_SOURCE }, ""));
+      });
+    }
+    externalResults.addEventListener("click", (event) => {
+      const row = event.target.closest(".external-row");
+      if (!row) return;
+      const item = externalItems.get(String(row.dataset.id));
+      if (item) {
+        rememberDocItem({ ...item, source: EXTERNAL_SOURCE });
+        trackEvent(workerUrl, "report_open", analyticsReportPayload(item, EXTERNAL_SOURCE));
+      }
+      if (isNativeNewTabLink(row)) return;
+      event.preventDefault();
+      event.stopPropagation();
+      if (item) openInNewTab(externalPageUrl(item, ""));
+    });
+    if (reportAResults) {
+      reportAResults.addEventListener("click", (event) => {
+        const row = event.target.closest(".report-a-row");
+        if (!row) return;
+        const item = reportAItems.get(String(row.dataset.id || ""));
+        if (item) {
+          rememberDocItem({ ...item, source: REPORT_A_SOURCE });
+          trackEvent(workerUrl, "report_open", analyticsReportPayload(item, REPORT_A_SOURCE));
+        }
+        if (isNativeNewTabLink(row)) return;
+        event.preventDefault();
+        event.stopPropagation();
+        if (item) openInNewTab(externalPageUrl({ ...item, source: REPORT_A_SOURCE }, ""));
+      });
+    }
+    if (authorityResults) {
+      authorityResults.addEventListener("click", (event) => {
+        const row = event.target.closest(".authority-row");
+        if (!row) return;
+        const item = authorityItems.get(String(row.dataset.id));
+        if (item) {
+          rememberDocItem({ ...item, source: AUTHORITY_SOURCE });
+          trackEvent(workerUrl, "report_open", analyticsReportPayload(item, AUTHORITY_SOURCE));
+        }
+        if (isNativeNewTabLink(row)) return;
+        event.preventDefault();
+        event.stopPropagation();
+        if (item) openInNewTab(externalPageUrl({ ...item, source: AUTHORITY_SOURCE }, ""));
+      });
+    }
+    if (hotReportsResults) {
+      hotReportsResults.addEventListener("click", (event) => {
+        const row = event.target.closest(".hot-report-row");
+        if (!row) return;
+        const item = hotReportItems.get(String(row.dataset.id || ""));
+        if (item) {
+          rememberDocItem({ ...item, source: HOT_REPORT_SOURCE });
+          trackEvent(workerUrl, "report_open", analyticsReportPayload(item, HOT_REPORT_SOURCE));
+        }
+      });
+    }
+    if (searchRecommendationsResults) {
+      searchRecommendationsResults.addEventListener("click", (event) => {
+        const row = event.target.closest(".report-link");
+        if (!row) return;
+        const item = catalogById.get(String(row.dataset.id || ""));
+        trackEvent(workerUrl, "report_open", analyticsReportPayload(item || { id: row.dataset.id }, "recommendation"));
+      });
+    }
+
+    const initialQuery = new URLSearchParams(window.location.search).get("q");
+    if (initialQuery && input) {
+      input.value = initialQuery.slice(0, 200);
+      prepareRemoteSearch(input.value.trim());
+      scheduleExternalSearch();
+    }
+
+    let searchIndexPrunedText = false;
+    let historyTextState = "idle";
+    const searchIndexStatusLabel = () => {
+      let label = `Text index ${searchTextById.size} reports`;
+      if (historyTextState === "loading") label += " +";
+      if (searchIndexPrunedText) label += " (recent text)";
+      return label;
+    };
+    const mergeSearchIndex = (searchIndex) => {
+      const searchItems = Array.isArray(searchIndex.items) ? searchIndex.items : [];
+      searchItems.forEach((entry) => {
+        if (!entry.id || !entry.text) return;
+        const existing = searchTextById.get(entry.id);
+        searchTextById.set(entry.id, existing ? `${existing} ${entry.text}` : String(entry.text));
+      });
+      if (searchIndex.text_pruned_dates && searchIndex.text_pruned_dates.length) {
+        searchIndexPrunedText = true;
+      }
+      searchIndexLabel = searchIndexStatusLabel();
+      updateMeta();
+      // Re-rendering matters only when full text can change visible results.
+      if (input && input.value.trim()) render();
+    };
+    // The whole text index is lazy: first paint only needs the catalog. The
+    // main index and the browser-only history shards start downloading once
+    // the page is idle or the visitor touches the search box. The Worker keeps
+    // loading the same small(er) search_index.json URL as before.
+    const startTextIndexLoad = () => {
+      if (historyTextState !== "idle") return;
+      historyTextState = "loading";
+      (async () => {
+        try {
+          mergeSearchIndex(await loadJson("data/search_index.json"));
+        } catch (error) {
+          console.warn(error);
+        }
+        try {
+          const manifest = await loadJson("data/search_index_history/manifest.json");
+          if (manifest.text_pruned_dates && manifest.text_pruned_dates.length) {
+            searchIndexPrunedText = true;
+          }
+          const shards = Array.isArray(manifest.shards) ? manifest.shards : [];
+          for (const shard of shards) {
+            if (!shard || !shard.file) continue;
+            mergeSearchIndex(await loadJson(`data/search_index_history/${shard.file}`));
+            // Yield between shards so parsing never blocks typing or scrolling.
+            await new Promise((resolve) => setTimeout(resolve, 30));
+          }
+          historyTextState = "done";
+        } catch (error) {
+          console.warn(error);
+          historyTextState = "failed";
+        }
+        searchIndexLabel = searchTextById.size ? searchIndexStatusLabel() : "Text index unavailable";
+        updateMeta();
+        render();
+      })();
+    };
+    if (input) {
+      input.addEventListener("focus", startTextIndexLoad);
+      input.addEventListener("input", startTextIndexLoad);
+    }
+    window.setTimeout(startTextIndexLoad, 3000);
+
+    updateMeta();
+    render();
+    renderHotReports(input.value.trim());
+    loadHotReports();
+  }
+
+  function filenameFromDisposition(disposition, fallback) {
+    const header = String(disposition || "");
+    const utfMatch = header.match(/filename\*=UTF-8''([^;]+)/i);
+    if (utfMatch) return decodeURIComponent(utfMatch[1]);
+    const plainMatch = header.match(/filename="?([^";]+)"?/i);
+    if (plainMatch) return plainMatch[1];
+    return fallback || "report.pdf";
+  }
+
+  function triggerBlobDownload(blob, disposition, fallbackName) {
+    const objectUrl = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = objectUrl;
+    link.download = filenameFromDisposition(disposition, fallbackName);
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(objectUrl);
+  }
+
+  function field(label, value) {
+    return `
+      <div class="detail-field">
+        <span>${escapeHtml(label)}</span>
+        <strong>${escapeHtml(value || "-")}</strong>
+      </div>
+    `;
+  }
+
+  function importantTokens(text) {
+    const counts = new Map();
+    for (const token of queryTokens(text)) {
+      if (token.length < 3 || STOPWORDS.has(token) || /^\d+$/.test(token)) continue;
+      counts.set(token, (counts.get(token) || 0) + 1);
+    }
+    return [...counts.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 16)
+      .map(([token]) => token);
+  }
+
+  function relatedReports(current, items, searchTextById) {
+    const currentIndustry = inferIndustry(current);
+    const currentBank = bankKey(current);
+    const currentDate = dateSortValue(current);
+    const keywords = importantTokens(`${current.title} ${current.title_zh || ""} ${(searchTextById.get(current.id) || "").slice(0, 6000)}`);
+
+    const scored = items
+      .filter((item) => item.id !== current.id)
+      .map((item) => {
+        let score = 0;
+        if (inferIndustry(item) === currentIndustry) score += 34;
+        if (bankKey(item) === currentBank) score += 18;
+        if (dateSortValue(item) === currentDate) score += 5;
+
+        const title = normalize(`${item.title || ""} ${item.title_zh || ""}`);
+        const text = searchTextById.get(item.id) || "";
+        for (const token of keywords) {
+          if (title.includes(token)) score += 8;
+          if (text.includes(token)) score += 2;
+        }
+        return { item, score };
+      })
+      .filter((entry) => entry.score > 0)
+      .sort((a, b) => {
+        if (b.score !== a.score) return b.score - a.score;
+        return dateSortValue(b.item) - dateSortValue(a.item);
+      });
+
+    return scored.slice(0, 6).map((entry) => entry.item);
+  }
+
+  function docDateSortValue(item) {
+    return Number((isoDateFromValue(item.date) || itemDate(item)).replace(/-/g, "")) || 0;
+  }
+
+  function relatedQueryForDoc(item) {
+    const title = [item.title_cn, item.title].filter(Boolean).join(" ");
+    const chunks = title
+      .split(/[\s,，:：;；|｜/\\()[\]（）【】「」"'“”‘’]+/u)
+      .map((part) => part.trim())
+      .filter((part) => part.length >= 2 && part.length <= 32)
+      .slice(0, 4);
+    const tokens = importantTokens(`${title} ${item.institution || ""} ${item.category || ""} ${item.report_type || ""}`)
+      .filter((token) => token.length <= 24)
+      .slice(0, 5);
+    const merged = [...chunks, ...tokens].filter(Boolean);
+    const deduped = [];
+    const seen = new Set();
+    for (const value of merged) {
+      const key = normalize(value);
+      if (!key || seen.has(key)) continue;
+      seen.add(key);
+      deduped.push(value);
+    }
+    return (deduped.join(" ") || title || item.institution || "").slice(0, 120).trim();
+  }
+
+  function catalogRelatedForDoc(current, items, searchTextById, limit = 4) {
+    const currentIndustry = inferIndustry(current);
+    const currentInstitution = normalize(current.institution || "");
+    const currentDate = docDateSortValue(current);
+    const keywords = queryTokens([
+      relatedQueryForDoc(current),
+      current.title,
+      current.title_cn,
+      current.institution,
+      current.category,
+      current.report_type,
+    ].join(" "))
+      .filter((token) => token.length >= 2 && !STOPWORDS.has(token) && !/^\d{1,3}$/.test(token))
+      .slice(0, 18);
+
+    return items
+      .map((item) => {
+        let score = 0;
+        if (currentIndustry !== "Other" && inferIndustry(item) === currentIndustry) score += 30;
+        if (currentInstitution && normalize(bankLabel(item)).includes(currentInstitution)) score += 20;
+        if (currentDate && Math.abs(dateSortValue(item) - currentDate) <= 7) score += 4;
+
+        const title = normalize(`${item.title || ""} ${item.title_zh || ""}`);
+        const meta = normalize(metadataText(item));
+        const text = searchTextById.get(item.id) || "";
+        for (const token of keywords) {
+          if (title.includes(token)) score += 10;
+          if (meta.includes(token)) score += 4;
+          if (text.includes(token)) score += 2;
+        }
+        return { item, score };
+      })
+      .filter((entry) => entry.score > 0)
+      .sort((a, b) => {
+        if (b.score !== a.score) return b.score - a.score;
+        return dateSortValue(b.item) - dateSortValue(a.item);
+      })
+      .slice(0, limit)
+      .map((entry) => entry.item);
+  }
+
+  async function fetchDocRelatedSource(workerUrl, endpoint, query, source, current, limit) {
+    if (!workerUrl || !query) return [];
+    const response = await fetch(`${workerUrl}/${endpoint}?q=${encodeURIComponent(query)}`, { cache: "no-store" });
+    if (!response.ok) return [];
+    const data = await response.json().catch(() => ({}));
+    const items = Array.isArray(data.items) ? data.items : [];
+    return items
+      .map((item) => ({ ...item, source: item.source || source }))
+      .filter((item) => !(item.source === current.source && String(item.id) === String(current.id)))
+      .slice(0, limit);
+  }
+
+  function hotReportCommentsMarkup() {
+    return `
+      <section class="hot-comments-section" id="hotReportComments" aria-labelledby="hotReportCommentsTitle">
+        <div class="related-heading hot-comments-heading">
+          <h3 id="hotReportCommentsTitle">评论</h3>
+          <span id="hotReportCommentCount"></span>
+        </div>
+        <div id="hotReportCommentList" class="hot-comment-list"></div>
+        <div id="hotReportCommentLogin" class="hot-comment-login" hidden>
+          <span>注册或登录后即可评论。</span>
+          <button class="secondary-button" id="hotReportCommentLoginButton" type="button">注册 / 登录</button>
+        </div>
+        <form id="hotReportCommentForm" class="hot-comment-form" hidden>
+          <div id="hotReportCommentAdminAlias" class="hot-comment-admin-alias" hidden>
+            <label>
+              <span>管理员评论昵称</span>
+              <input id="hotReportCommentAlias" type="text" maxlength="48" autocomplete="off" placeholder="随机用户名或自定义昵称">
+            </label>
+            <button class="secondary-button" id="hotReportRandomAlias" type="button">生成随机用户名</button>
+          </div>
+          <textarea id="hotReportCommentBody" rows="4" maxlength="1200" placeholder="写下你的评论…" required></textarea>
+          <div class="hot-comment-form-actions">
+            <span>最多 1200 字</span>
+            <button class="primary" type="submit">发布评论</button>
+          </div>
+        </form>
+        <div id="hotReportCommentStatus" class="status-line" aria-live="polite"></div>
+      </section>
+    `;
+  }
+
+  function randomHotCommentAlias() {
+    const prefixes = ["山岚", "星河", "远帆", "青禾", "云杉", "海盐", "南风", "北辰", "纸鸢", "松果"];
+    const suffixes = ["观察员", "研究者", "读报人", "分析室", "笔记本", "望远镜", "资料员", "思考者"];
+    return `${prefixes[Math.floor(Math.random() * prefixes.length)]}${suffixes[Math.floor(Math.random() * suffixes.length)]}${Math.floor(10 + Math.random() * 90)}`;
+  }
+
+  function hotCommentTime(value) {
+    const timestamp = Date.parse(value || "");
+    if (!Number.isFinite(timestamp)) return "";
+    return new Intl.DateTimeFormat("zh-CN", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+      timeZone: "Asia/Shanghai",
+    }).format(new Date(timestamp));
+  }
+
+  function hotCommentRow(comment, canOrder) {
+    return `
+      <article class="hot-comment" data-comment-id="${escapeHtml(comment.id)}">
+        <div class="hot-comment-meta">
+          <strong>${escapeHtml(comment.display_name || "Portal Suite 用户")}</strong>
+          <time>${escapeHtml(hotCommentTime(comment.created_at))}</time>
+          ${canOrder ? `
+            <span class="hot-comment-order-actions">
+              <button class="secondary-button" type="button" data-action="comment-up" data-id="${escapeHtml(comment.id)}" aria-label="评论上移">↑</button>
+              <button class="secondary-button" type="button" data-action="comment-down" data-id="${escapeHtml(comment.id)}" aria-label="评论下移">↓</button>
+            </span>
+          ` : ""}
+        </div>
+        <p>${escapeHtml(comment.body || "")}</p>
+      </article>
+    `;
+  }
+
+  function initHotReportComments(item, workerUrl) {
+    const section = document.getElementById("hotReportComments");
+    const list = document.getElementById("hotReportCommentList");
+    const count = document.getElementById("hotReportCommentCount");
+    const login = document.getElementById("hotReportCommentLogin");
+    const loginButton = document.getElementById("hotReportCommentLoginButton");
+    const form = document.getElementById("hotReportCommentForm");
+    const body = document.getElementById("hotReportCommentBody");
+    const submit = form && form.querySelector("button[type='submit']");
+    const adminAlias = document.getElementById("hotReportCommentAdminAlias");
+    const alias = document.getElementById("hotReportCommentAlias");
+    const randomAlias = document.getElementById("hotReportRandomAlias");
+    const status = document.getElementById("hotReportCommentStatus");
+    if (!section || !list || !form || !body || !submit || !status || !workerUrl) return;
+    let comments = [];
+
+    function setStatus(text, kind) {
+      status.className = kind ? `status-line ${kind}` : "status-line";
+      status.textContent = text || "";
+    }
+
+    function render() {
+      const session = loadAuthSession();
+      const canOrder = isSuperSession(session);
+      if (count) count.textContent = comments.length ? `${comments.length} 条` : "";
+      list.innerHTML = comments.length
+        ? comments.map((comment) => hotCommentRow(comment, canOrder)).join("")
+        : '<div class="empty-state">还没有评论，来写第一条吧。</div>';
+      if (login) login.hidden = Boolean(session);
+      form.hidden = !session;
+      if (adminAlias) adminAlias.hidden = !canOrder;
+    }
+
+    async function loadComments() {
+      setStatus("正在读取评论…");
+      try {
+        const response = await fetch(`${workerUrl}/hot-reports/comments?report_id=${encodeURIComponent(item.id)}`, { cache: "no-store" });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(data.detail || "评论读取失败。");
+        comments = Array.isArray(data.comments) ? data.comments : [];
+        setStatus("");
+        render();
+      } catch (error) {
+        setStatus(error.message || "评论暂时无法读取。", "error");
+      }
+    }
+
+    async function saveCommentOrder(nextComments) {
+      setStatus("正在保存评论顺序…");
+      const response = await fetch(`${workerUrl}/hot-reports/comments/order`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...authHeaders() },
+        body: JSON.stringify({
+          report_id: item.id,
+          ordered_ids: nextComments.map((comment) => comment.id),
+        }),
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(data.detail || "评论排序保存失败。");
+      comments = Array.isArray(data.comments) ? data.comments : nextComments;
+      setStatus("评论顺序已保存。", "ok");
+      render();
+    }
+
+    list.addEventListener("click", async (event) => {
+      const button = event.target.closest("button[data-action]");
+      if (!button || !isSuperSession()) return;
+      const index = comments.findIndex((comment) => comment.id === button.dataset.id);
+      const direction = button.dataset.action === "comment-up" ? -1 : 1;
+      const destination = index + direction;
+      if (index < 0 || destination < 0 || destination >= comments.length) return;
+      const next = comments.slice();
+      [next[index], next[destination]] = [next[destination], next[index]];
+      button.disabled = true;
+      try {
+        await saveCommentOrder(next);
+      } catch (error) {
+        setStatus(error.message || "评论排序保存失败。", "error");
+        await loadComments();
+      }
+    });
+
+    if (loginButton) loginButton.addEventListener("click", () => showAccountModal(workerUrl, { item, source: HOT_REPORT_SOURCE }));
+    if (randomAlias && alias) randomAlias.addEventListener("click", () => {
+      if (!isSuperSession()) return;
+      alias.value = randomHotCommentAlias();
+      alias.focus();
+    });
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!loadAuthSession()) {
+        showAccountModal(workerUrl, { item, source: HOT_REPORT_SOURCE });
+        return;
+      }
+      const text = String(body.value || "").trim();
+      if (!text) return;
+      submit.disabled = true;
+      setStatus("正在发布评论…");
+      try {
+        const response = await fetch(`${workerUrl}/hot-reports/comments`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", ...authHeaders() },
+          body: JSON.stringify({
+            report_id: item.id,
+            body: text,
+            author_alias: isSuperSession() && alias ? alias.value.trim() : "",
+          }),
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(data.detail || "评论发布失败。");
+        body.value = "";
+        setStatus("评论已发布。", "ok");
+        await loadComments();
+      } catch (error) {
+        setStatus(error.message || "评论发布失败。", "error");
+      } finally {
+        submit.disabled = false;
+      }
+    });
+    document.addEventListener("portal-auth-change", render);
+    render();
+    loadComments();
+  }
+
+  function externalRelatedMarkup() {
+    return `
+      <section class="related-section external-related-section" id="externalRelatedSection" hidden aria-labelledby="externalRelatedTitle">
+        <div class="related-heading">
+          <h3 id="externalRelatedTitle">Related Reports</h3>
+        </div>
+        <div id="externalRelatedStatus" class="status-line" aria-live="polite"></div>
+        <div class="related-list" id="externalRelatedList"></div>
+      </section>
+    `;
+  }
+
+  function docRelatedRow(item) {
+    if (item.source === HOT_REPORT_SOURCE) return hotReportRow(item);
+    if (item.source === EXTERNAL_SOURCE) return externalRow(item);
+    if (item.source === THINKTANK_SOURCE) return thinkTankRow(item);
+    if (item.source === REPORT_A_SOURCE) return reportARow(item);
+    if (item.source === AUTHORITY_SOURCE) return authorityRow(item);
+    return relatedRow(item);
+  }
+
+  async function initExternalRelated(item, workerUrl, catalogItems, searchTextById) {
+    const section = document.getElementById("externalRelatedSection");
+    const list = document.getElementById("externalRelatedList");
+    const status = document.getElementById("externalRelatedStatus");
+    if (!section || !list || !status) return;
+
+    const query = relatedQueryForDoc(item);
+    const rows = [];
+    const seen = new Set();
+    function append(sourceItems, source) {
+      for (const sourceItem of sourceItems) {
+        const key = `${source}:${sourceItem.id}`;
+        if (!sourceItem.id || seen.has(key)) continue;
+        seen.add(key);
+        rows.push({ ...sourceItem, source });
+      }
+    }
+
+    section.hidden = false;
+    status.className = "status-line";
+    status.textContent = "正在推荐相关报告…";
+    list.innerHTML = `
+      <div class="loading-state">
+        <span class="loading-spinner" aria-hidden="true"></span>
+        <span>正在推荐相关报告…</span>
+      </div>
+    `;
+
+    append(catalogRelatedForDoc(item, catalogItems, searchTextById, 4), "catalog");
+
+    const [thinkTankResult, externalResult, reportAResult, authorityResult] = await Promise.allSettled([
+      fetchDocRelatedSource(workerUrl, "thinktank/search", query, THINKTANK_SOURCE, item, 4),
+      fetchDocRelatedSource(workerUrl, "external/search", query, EXTERNAL_SOURCE, item, 4),
+      fetchDocRelatedSource(workerUrl, "report-a/search", query, REPORT_A_SOURCE, item, 3),
+      fetchDocRelatedSource(workerUrl, "authority/search", query, AUTHORITY_SOURCE, item, 3),
+    ]);
+
+    if (thinkTankResult.status === "fulfilled") append(thinkTankResult.value, THINKTANK_SOURCE);
+    if (externalResult.status === "fulfilled") append(externalResult.value, EXTERNAL_SOURCE);
+    if (reportAResult.status === "fulfilled") append(reportAResult.value, REPORT_A_SOURCE);
+    if (authorityResult.status === "fulfilled") append(authorityResult.value, AUTHORITY_SOURCE);
+
+    const rendered = rows.slice(0, 14);
+    if (!rendered.length) {
+      section.hidden = true;
+      return;
+    }
+    status.textContent = "";
+    list.innerHTML = rendered.map(docRelatedRow).join("");
+  }
+
+  function downloadErrorMessage(status, message, data) {
+    const text = String(message || "");
+    if (data && data.limit_exceeded) return localizedContactText(text || `3天体验下载已满 10 篇，请联系${contactMethodText()}。`);
+    if (
+      data && data.archived ||
+      status === 404 && /pdf|object|mirrored|archived|not found/i.test(text)
+    ) {
+      const contact = contactDetails();
+      return contact.isChinese
+        ? `PDF 暂不可用，请联系${contactMethodText()}。`
+        : `PDF is not currently available. Email: ${CONTACT_EMAIL}.`;
+    }
+    if (/password/i.test(text)) return localizedContactText(text);
+    if (/configured/i.test(text)) return "PDF download is temporarily unavailable. Please try again later.";
+    return localizedContactText(text) || "Download failed.";
+  }
+
+  function maybeAlertDownloadLimit(message) {
+    const text = String(message || "");
+    if (/体验下载已满|limit_exceeded|Support Contact/i.test(text) && /体验|limit_exceeded/i.test(text)) {
+      window.alert(localizedContactText(text || `3天体验下载已满 10 篇，请联系${contactMethodText()}。`));
+    }
+  }
+
+  function adminPanelMarkup() {
+    return `
+      <section class="admin-panel" id="adminPanel" hidden>
+        <div class="admin-panel-heading">
+          <h3>Delivery link</h3>
+          <span>Private</span>
+        </div>
+        <div class="delivery-row">
+          <button class="primary" id="generateDeliveryLink" type="button">Generate</button>
+          <input id="deliveryLinkInput" type="text" readonly aria-label="Delivery link">
+          <button id="copyDeliveryLink" type="button">Copy</button>
+        </div>
+        <div id="deliveryStatus" class="status-line" aria-live="polite"></div>
+      </section>
+    `;
+  }
+
+  function textOnlyPdfUploadMarkup() {
+    return `
+      <section class="text-only-pdf-upload" id="textOnlyPdfUpload" hidden>
+        <div class="admin-panel-heading">
+          <h3>补传 PDF</h3>
+          <span>仅 admin-a</span>
+        </div>
+        <p class="subtle">为当前 Text only 报告补充原始 PDF。上传成功后，原报告 id、标题、全文索引和权限规则保持不变。</p>
+        <form id="textOnlyPdfUploadForm" class="text-only-pdf-upload-form">
+          <input id="textOnlyPdfFile" name="pdf" type="file" accept="application/pdf,.pdf" required>
+          <button class="primary" id="textOnlyPdfUploadButton" type="submit">上传 PDF</button>
+        </form>
+        <div id="textOnlyPdfUploadStatus" class="status-line" aria-live="polite"></div>
+      </section>
+    `;
+  }
+
+  function textOnlyTextAccessMarkup() {
+    return `
+      <section class="text-only-text-access" id="textOnlyTextAccess">
+        <div class="admin-panel-heading">
+          <h3>原始文本（Text only）</h3>
+          <span>1个月及以上 · 须在授权范围</span>
+        </div>
+        <p class="subtle">这份报告目前没有可下载 PDF。登录后，会员时长达到 1 个月且报告在账号授权范围内，即可分页查看已保存的提取文本。</p>
+        <div class="text-only-text-actions">
+          <button class="primary" id="viewTextOnlyText" type="button">查看原始文本</button>
+        </div>
+        <p class="subtle">${accessContactGuidanceHtml()}</p>
+        <div id="textOnlyTextStatus" class="status-line" aria-live="polite"></div>
+        <div id="textOnlyTextContent" class="text-only-text-content" hidden>
+          <div id="textOnlyTextSource" class="text-only-text-source"></div>
+          <pre id="textOnlyTextBody" tabindex="0"></pre>
+          <button class="secondary-button" id="loadMoreTextOnlyText" type="button" hidden>继续加载</button>
+        </div>
+      </section>
+    `;
+  }
+
+  function initTextOnlyTextAccess(item, workerUrl) {
+    const panel = document.getElementById("textOnlyTextAccess");
+    const openButton = document.getElementById("viewTextOnlyText");
+    const status = document.getElementById("textOnlyTextStatus");
+    const content = document.getElementById("textOnlyTextContent");
+    const source = document.getElementById("textOnlyTextSource");
+    const body = document.getElementById("textOnlyTextBody");
+    const loadMore = document.getElementById("loadMoreTextOnlyText");
+    if (!panel || !openButton || !status || !content || !source || !body || !loadMore || !workerUrl) return;
+
+    let nextCursor = "";
+    let requestGeneration = 0;
+    let requestInProgress = false;
+    let activeSessionIdentity = null;
+    const loadedCursors = new Set();
+
+    function sessionIdentity(session) {
+      if (!session || !session.user) return "signed-out";
+      const user = session.user;
+      return [
+        "signed-in",
+        user.id,
+        String(user.email || "").trim().toLowerCase(),
+        String(user.username || "").trim().toLowerCase(),
+        user.role,
+        user.disabled === true ? "disabled" : "enabled",
+      ].map((value) => String(value || "")).join("\u001f");
+    }
+
+    function paginationError(message) {
+      const error = new Error(message);
+      error.pagination = true;
+      return error;
+    }
+
+    function resetText() {
+      requestGeneration += 1;
+      requestInProgress = false;
+      nextCursor = "";
+      loadedCursors.clear();
+      content.hidden = true;
+      source.textContent = "";
+      body.textContent = "";
+      loadMore.hidden = true;
+      loadMore.disabled = false;
+      openButton.disabled = false;
+    }
+
+    function refreshSession() {
+      const session = loadAuthSession();
+      const identity = sessionIdentity(session);
+      const identityChanged = identity !== activeSessionIdentity;
+      activeSessionIdentity = identity;
+      if (identityChanged) resetText();
+      openButton.textContent = session ? "查看原始文本" : "注册 / 登录后查看";
+      if (identityChanged) {
+        status.className = "status-line";
+        status.textContent = session
+          ? "点击后将核验这份报告的会员权限。"
+          : "请先注册或登录；需至少 1 个月会员且报告在账号授权范围内。";
+      }
+    }
+
+    async function loadText(cursor = "") {
+      if (requestInProgress) return;
+      const session = loadAuthSession();
+      if (!session) {
+        showAccountModal(workerUrl, { item, source: "catalog" });
+        return;
+      }
+      const requestedCursor = String(cursor || "");
+      if (requestedCursor && requestedCursor !== nextCursor) {
+        status.className = "status-line error";
+        status.textContent = "文本分页状态已变化，请重新点击“查看原始文本”。";
+        return;
+      }
+      const generation = requestGeneration;
+      const requestToken = String(session.token || "");
+      requestInProgress = true;
+      openButton.disabled = true;
+      loadMore.disabled = true;
+      status.className = "status-line";
+      status.textContent = requestedCursor ? "正在继续加载文本…" : "正在核验权限并读取文本…";
+      try {
+        const params = new URLSearchParams({ report_id: String(item.id || "") });
+        if (requestedCursor) params.set("cursor", requestedCursor);
+        const response = await fetch(`${workerUrl}/report-text?${params.toString()}`, {
+          cache: "no-store",
+          headers: { "Authorization": `Bearer ${requestToken}` },
+        });
+        const data = await response.json().catch(() => ({}));
+        if (generation !== requestGeneration) return;
+        if (!response.ok) {
+          if (response.status === 401) {
+            const currentSession = loadAuthSession();
+            if (String(currentSession && currentSession.token || "") === requestToken) {
+              clearAuthSession();
+              return;
+            }
+          }
+          const fallback = response.status === 401
+            ? "登录状态已更新，请重新点击查看。"
+            : response.status === 403
+              ? "当前账号无权查看这份原始文本；可能是会员时长不足，或报告 / 机构不在授权范围内。如需开通或调整权限，请联系微信 Support Contact。"
+              : response.status === 404
+                ? "这份报告暂时没有可读取的原始文本。"
+                : response.status === 400
+                  ? "文本分页已过期或无效，请重新点击“查看原始文本”。"
+                  : "原始文本读取失败，请稍后重试。";
+          const error = new Error([400, 401, 403, 404].includes(response.status) ? fallback : (data.detail || fallback));
+          error.status = response.status;
+          error.pagination = response.status === 400;
+          throw error;
+        }
+        if (typeof data.text !== "string" || typeof data.has_more !== "boolean") {
+          throw paginationError("原始文本接口返回的数据格式不完整。请重新点击查看。");
+        }
+        if (data.report_id !== undefined
+          && data.report_id !== null
+          && String(data.report_id) !== String(item.id || "")) {
+          throw paginationError("原始文本接口返回的报告不匹配。请重新点击查看。");
+        }
+        const responseCursor = String(data.next_cursor || "");
+        if (data.has_more && !responseCursor) {
+          throw paginationError("文本尚未加载完成，但接口没有返回下一页游标。请重新点击查看。");
+        }
+        if (!data.has_more && responseCursor) {
+          throw paginationError("原始文本分页状态不一致。请重新点击查看。");
+        }
+        if (responseCursor && (responseCursor === requestedCursor || loadedCursors.has(responseCursor))) {
+          throw paginationError("原始文本分页游标发生循环。请重新点击查看。");
+        }
+        loadedCursors.add(requestedCursor);
+        const chunk = data.text;
+        body.textContent += chunk;
+        source.textContent = String(data.source_label || "提取文本");
+        nextCursor = responseCursor;
+        content.hidden = false;
+        loadMore.hidden = !Boolean(data.has_more && nextCursor);
+        status.textContent = loadMore.hidden ? "文本已全部加载。" : "已加载部分文本，可继续加载。";
+        status.classList.add("ok");
+        trackEvent(workerUrl, "report_text_view", {
+          ...analyticsReportPayload(item, "catalog"),
+          action: requestedCursor ? "load_more" : "open",
+          source_label: String(data.source_label || ""),
+        });
+      } catch (error) {
+        if (generation !== requestGeneration) return;
+        if (Number(error && error.status) === 403) {
+          resetText();
+        }
+        if (error && error.pagination === true) {
+          nextCursor = "";
+          loadMore.hidden = true;
+        }
+        status.className = "status-line error";
+        status.textContent = localizedContactText(error.message || "原始文本读取失败，请稍后重试。");
+      } finally {
+        if (generation === requestGeneration) {
+          requestInProgress = false;
+          openButton.disabled = false;
+          loadMore.disabled = false;
+        }
+      }
+    }
+
+    openButton.addEventListener("click", () => {
+      if (!loadAuthSession()) {
+        showAccountModal(workerUrl, { item, source: "catalog" });
+        return;
+      }
+      resetText();
+      loadText();
+    });
+    loadMore.addEventListener("click", () => {
+      if (nextCursor) loadText(nextCursor);
+    });
+    document.addEventListener("portal-auth-change", refreshSession);
+    refreshSession();
+  }
+
+  function initTextOnlyPdfUpload(item, workerUrl) {
+    const panel = document.getElementById("textOnlyPdfUpload");
+    const form = document.getElementById("textOnlyPdfUploadForm");
+    const fileInput = document.getElementById("textOnlyPdfFile");
+    const button = document.getElementById("textOnlyPdfUploadButton");
+    const status = document.getElementById("textOnlyPdfUploadStatus");
+    if (!panel || !form || !fileInput || !button || !status || !workerUrl) return;
+
+    function refreshVisibility() {
+      panel.hidden = isPdfAvailable(item) || !isSuperSession();
+    }
+
+    refreshVisibility();
+    document.addEventListener("portal-auth-change", refreshVisibility);
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const pdf = fileInput.files && fileInput.files[0];
+      status.className = "status-line";
+      if (!isSuperSession()) {
+        status.textContent = "请先登录 admin-a 管理员账号。";
+        status.classList.add("error");
+        refreshVisibility();
+        return;
+      }
+      if (!pdf) {
+        status.textContent = "请选择 PDF 文件。";
+        status.classList.add("error");
+        return;
+      }
+      if (pdf.size <= 0 || pdf.size > 95 * 1024 * 1024) {
+        status.textContent = "PDF 必须不超过 95 MB。";
+        status.classList.add("error");
+        return;
+      }
+      const formData = new FormData();
+      formData.set("id", item.id);
+      formData.set("pdf", pdf, pdf.name);
+      button.disabled = true;
+      fileInput.disabled = true;
+      status.textContent = "正在上传并核验 PDF…";
+      try {
+        const response = await fetch(`${workerUrl}/account-admin/text-only-pdf`, {
+          method: "POST",
+          headers: authHeaders(),
+          body: formData,
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok || !data.ok) throw new Error(data.detail || "PDF 上传失败。");
+        status.textContent = "PDF 已上传并核验，正在刷新报告状态…";
+        status.classList.add("ok");
+        window.setTimeout(() => window.location.reload(), 350);
+      } catch (error) {
+        status.textContent = localizedContactText(error.message || "PDF 上传失败，请稍后重试。");
+        status.classList.add("error");
+        button.disabled = false;
+        fileInput.disabled = false;
+      }
+    });
+  }
+
+  function accountAccessMarkup(item = {}) {
+    return `
+      <section class="account-access" id="accountAccess" hidden>
+        <h3>Account access</h3>
+        <p class="subtle" id="accountAccessHint">登录后可查看账号下载权限。</p>
+        <div class="account-access-actions">
+          <button class="secondary-button" id="openAccountPanel" type="button">注册 / 登录</button>
+          <button class="primary" id="accountDownloadReport" type="button" hidden>账号下载</button>
+        </div>
+        <div id="accountAccessStatus" class="status-line" aria-live="polite"></div>
+        <div class="account-admin-progress" id="accountDownloadProgress" hidden>
+          <div class="account-admin-progress-track"><span></span></div>
+          <small>等待下载…</small>
+        </div>
+      </section>
+    `;
+  }
+
+  function setLineStatus(target, text, kind) {
+    if (!target) return;
+    target.className = kind ? `status-line ${kind}` : "status-line";
+    target.textContent = localizedContactText(text);
+  }
+
+  function setLineHtmlStatus(target, html, kind) {
+    if (!target) return;
+    target.className = kind ? `status-line ${kind}` : "status-line";
+    target.innerHTML = html || "";
+  }
+
+  async function fetchReportAccess(workerUrl, item, source) {
+    const session = loadAuthSession();
+    if (!session) return null;
+    const endpoint = source === HOT_REPORT_SOURCE
+      ? `${workerUrl}/hot-reports/access?report_id=${encodeURIComponent(item.id)}`
+      : `${workerUrl}/entitlement?report_id=${encodeURIComponent(item.id)}&source=${encodeURIComponent(source)}`;
+    const response = await fetch(
+      endpoint,
+      { cache: "no-store", headers: authHeaders() },
+    );
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      if (response.status === 401) clearAuthSession();
+      throw new Error(data.detail || "账号状态读取失败。");
+    }
+    return data;
+  }
+
+  async function downloadCatalogWithAccount(workerUrl, item, statusTarget) {
+    const progress = document.getElementById("accountDownloadProgress");
+    resetDownloadProgress(progress);
+    let waitingPercent = 6;
+    setDownloadMessage(progress, "正在建立安全下载连接…", waitingPercent);
+    statusTarget("正在检查账号权益并准备文件…");
+    const waitingTimer = window.setInterval(() => {
+      waitingPercent = Math.min(34, waitingPercent + 4);
+      setDownloadMessage(progress, "正在准备文件，请稍候…", waitingPercent);
+    }, 450);
+    trackEvent(workerUrl, "download_attempt", {
+      ...analyticsReportPayload(item, "catalog"),
+      action: "account_download",
+    });
+    let response;
+    try {
+      response = await fetch(`${workerUrl}/download`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...authHeaders() },
+        body: JSON.stringify({ id: item.id }),
+      });
+    } catch (error) {
+      resetDownloadProgress(progress);
+      throw error;
+    } finally {
+      window.clearInterval(waitingTimer);
+    }
+    if (!response.ok) {
+      resetDownloadProgress(progress);
+      const data = await response.json().catch(() => ({}));
+      if (response.status === 401) clearAuthSession();
+      trackEvent(workerUrl, "download_error", {
+        ...analyticsReportPayload(item, "catalog"),
+        action: "account_download",
+        status: String(response.status),
+        error: data.error || "Download failed.",
+      });
+      throw new Error(downloadErrorMessage(response.status, data.error || "Download failed.", data));
+    }
+    statusTarget("文件已就绪，正在下载…");
+    const blob = await responseBlobWithProgress(response, progress);
+    triggerBlobDownload(blob, response.headers.get("Content-Disposition"), item.filename);
+    setDownloadMessage(progress, "下载完成，浏览器正在保存文件。", 100);
+    trackEvent(workerUrl, "download_success", {
+      ...analyticsReportPayload(item, "catalog"),
+      action: "account_download",
+      status: "ok",
+    });
+    statusTarget("下载已开始。", "ok");
+  }
+
+  function initReportAccessControls(item, workerUrl, source, downloadHandler) {
+    const panel = document.getElementById("accountAccess");
+    if (!panel || !workerUrl) return;
+    const openAccount = document.getElementById("openAccountPanel");
+    const accountDownload = document.getElementById("accountDownloadReport");
+    const hint = document.getElementById("accountAccessHint");
+    const status = document.getElementById("accountAccessStatus");
+    const passwordForm = document.getElementById("unlockForm");
+    const isHotReport = source === HOT_REPORT_SOURCE;
+    const context = { item, source };
+
+    function statusTarget(text, kind) {
+      setLineStatus(status, text, kind);
+    }
+
+    function statusTargetHtml(html, kind) {
+      setLineHtmlStatus(status, html, kind);
+    }
+
+    async function refresh() {
+      const session = loadAuthSession();
+      panel.hidden = false;
+      if (passwordForm) passwordForm.hidden = false;
+      accountDownload.hidden = true;
+      openAccount.hidden = Boolean(session);
+      if (!session) {
+        hint.innerHTML = isHotReport
+          ? "登录后可查看热门报告下载权限；需至少 3 个月会员。"
+          : "登录后可查看账号下载权限。";
+        statusTargetHtml(`请先注册或登录。${accessContactGuidanceHtml()}`);
+        return;
+      }
+      hint.textContent = `当前账号：${authUserLabel(session)}`;
+      statusTarget("正在读取账号权益…");
+      try {
+        const access = await fetchReportAccess(workerUrl, item, source);
+        const summary = accountRightSummary(access);
+        if (access && access.can_download) {
+          accountDownload.hidden = false;
+          if (passwordForm) passwordForm.hidden = true;
+          hint.textContent = summary ? `当前账号已开通此报告下载权限，${summary}。` : "当前账号已开通此报告下载权限。";
+          statusTarget(summary ? `可直接使用账号下载；${summary}。` : "可直接使用账号下载。", "ok");
+        } else {
+          if (passwordForm) passwordForm.hidden = false;
+          if (isHotReport) {
+            statusTargetHtml(`当前权益未达到 3 个月。${accessContactGuidanceHtml()}`);
+          } else {
+            statusTarget(summary
+              ? `当前账号有${summary}，但不包含此报告。${accessContactGuidanceText()}`
+              : `当前账号尚未解锁此报告。${accessContactGuidanceText()}`);
+          }
+        }
+      } catch (error) {
+        if (passwordForm) passwordForm.hidden = false;
+        statusTarget(error.message || "账号状态读取失败。", "error");
+      }
+    }
+
+    openAccount.addEventListener("click", () => showAccountModal(workerUrl, context));
+    accountDownload.addEventListener("click", async () => {
+      const idleLabel = accountDownload.textContent || "账号下载";
+      accountDownload.disabled = true;
+      accountDownload.textContent = "准备中…";
+      try {
+        await downloadHandler(statusTarget);
+      } catch (error) {
+        const message = error.message || "下载失败。";
+        maybeAlertDownloadLimit(message);
+        statusTarget(message, "error");
+      } finally {
+        accountDownload.disabled = false;
+        accountDownload.textContent = idleLabel;
+      }
+    });
+    document.addEventListener("portal-auth-change", refresh);
+    refresh();
+  }
+
+  function reportPageUrl(id, options = {}) {
+    const url = new URL("report.html", window.location.href);
+    url.searchParams.set("id", id);
+    if (options.password) url.searchParams.set("password", options.password);
+    return url.toString();
+  }
+
+  function openInNewTab(url) {
+    const opened = window.open(url, "_blank");
+    if (opened) {
+      opened.opener = null;
+    }
+  }
+
+  function openReportPage(id) {
+    openInNewTab(reportPageUrl(id));
+  }
+
+  function deliveryPageUrl(id, password) {
+    return reportPageUrl(id, { password });
+  }
+
+  function externalPageUrl(item, password, options = {}) {
+    const url = new URL("doc.html", window.location.href);
+    url.searchParams.set("id", item.id);
+    if (password) url.searchParams.set("password", password);
+    return url.toString();
+  }
+
+  async function requestReportPassword(workerUrl, id) {
+    const token = getAdminToken();
+    if (!canUseDeliveryTools()) throw new Error("Private tools are locked.");
+    try {
+      const response = await fetch(`${workerUrl}/admin/report-password`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...authHeaders() },
+        body: JSON.stringify({ id, token }),
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        if (response.status === 401) clearAdminToken();
+        const fallback = response.status >= 500 ? getAdminPlainKey() : "";
+        if (fallback) return { id, password: fallback };
+        throw new Error(data.error || "Could not generate delivery link.");
+      }
+      return data;
+    } catch (error) {
+      const fallback = getAdminPlainKey();
+      if (fallback) return { id, password: fallback };
+      throw error;
+    }
+  }
+
+  async function requestExternalPassword(workerUrl, id, source = EXTERNAL_SOURCE) {
+    const token = getAdminToken();
+    if (!canUseDeliveryTools()) throw new Error("Private tools are locked.");
+    try {
+      const response = await fetch(`${workerUrl}/admin/report-password`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...authHeaders() },
+        body: JSON.stringify({ id, token, source }),
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        if (response.status === 401) clearAdminToken();
+        const fallback = response.status >= 500 ? getAdminPlainKey() : "";
+        if (fallback) return { id, password: fallback };
+        throw new Error(data.error || "Could not generate delivery link.");
+      }
+      return data;
+    } catch (error) {
+      const fallback = getAdminPlainKey();
+      if (fallback) return { id, password: fallback };
+      throw error;
+    }
+  }
+
+  function initDetailAdmin(item, workerUrl) {
+    const panel = document.getElementById("adminPanel");
+    const generate = document.getElementById("generateDeliveryLink");
+    const linkInput = document.getElementById("deliveryLinkInput");
+    const copy = document.getElementById("copyDeliveryLink");
+    const status = document.getElementById("deliveryStatus");
+    if (!panel || !generate || !linkInput || !copy || !status) return;
+
+    function refresh() {
+      panel.hidden = !canUseDeliveryTools();
+    }
+
+    refresh();
+    document.addEventListener("portal-admin-change", refresh);
+    document.addEventListener("portal-auth-change", refresh);
+
+    generate.addEventListener("click", async () => {
+      status.className = "status-line";
+      status.textContent = "Generating...";
+      generate.disabled = true;
+      try {
+        const data = await requestReportPassword(workerUrl, item.id);
+        linkInput.value = deliveryPageUrl(item.id, data.password);
+        trackEvent(workerUrl, "delivery_link_generate", analyticsReportPayload(item, "catalog"));
+        status.textContent = "Delivery link generated.";
+        status.classList.add("ok");
+      } catch (error) {
+        linkInput.value = "";
+        status.textContent = localizedContactText(error.message || "Could not generate delivery link.");
+        status.classList.add("error");
+      } finally {
+        generate.disabled = false;
+      }
+    });
+
+    copy.addEventListener("click", async () => {
+      if (!linkInput.value) return;
+      try {
+        await navigator.clipboard.writeText(linkInput.value);
+        status.className = "status-line ok";
+        status.textContent = "Copied.";
+      } catch (_error) {
+        linkInput.select();
+        status.className = "status-line";
+        status.textContent = "Select and copy the link.";
+      }
+    });
+  }
+
+  function detailTitleMarkup(item) {
+    const zh = titleZhText(item);
+    return `
+      <div>
+        <h1 class="detail-title">${escapeHtml(titleText(item))}</h1>
+        ${zh ? `<p class="detail-title-zh">${escapeHtml(zh)}</p>` : ""}
+        <p class="subtle">Indexed report record with password-protected PDF access when available.</p>
+      </div>
+    `;
+  }
+
+  function renderDetail(item, config, catalogItems, searchTextById, options = {}) {
+    const detail = document.getElementById("detail");
+    const workerUrl = workerBaseUrl(config);
+    const catalogById = new Map((catalogItems || []).map((row) => [String(row.id || ""), row]));
+    const available = isPdfAvailable(item);
+    const setupWarning = workerUrl || !available
+      ? ""
+      : '<div class="setup-warning">PDF download is temporarily unavailable. Please try again later.</div>';
+    const archiveNotice = available
+      ? ""
+      : '<div class="archive-notice">PDF 暂不可下载；符合条件的会员可在下方查看已保存的提取文本。</div>';
+    const related = relatedReports(item, catalogItems, searchTextById);
+    const relatedMarkup = related.length
+      ? `
+        <section class="related-section" aria-labelledby="relatedTitle">
+          <div class="related-heading">
+            <h3 id="relatedTitle">Related Reports</h3>
+          </div>
+          <div class="related-list">${related.map(relatedRow).join("")}</div>
+        </section>
+      `
+      : "";
+    const unlockMarkup = available
+      ? `
+        ${setupWarning}
+        ${workerUrl ? accountAccessMarkup(item) : ""}
+        <form class="unlock-box" id="unlockForm">
+          <h3>PDF Download</h3>
+          <p class="subtle">Enter the report password to download the PDF.</p>
+          <div class="password-row">
+            <input id="passwordInput" name="report-access-code" type="password" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="Password" required>
+            <button class="primary" type="submit">Download</button>
+          </div>
+          <div id="downloadStatus" class="status-line" aria-live="polite"></div>
+        </form>
+      `
+      : archiveNotice;
+    const textOnlyUpload = !available && workerUrl ? textOnlyPdfUploadMarkup() : "";
+    const textOnlyTextAccess = !available && workerUrl ? textOnlyTextAccessMarkup() : "";
+
+    detail.innerHTML = `
+      ${detailTitleMarkup(item)}
+      <div class="detail-grid">
+        ${field("Institution", bankLabel(item))}
+        ${field("Industry", inferIndustry(item))}
+        ${field("Date", displayDate(item.date_folder))}
+        ${field("PDF", available ? formatSize(item.size_bytes) || "Available" : "Text only")}
+      </div>
+      ${unlockMarkup}
+      ${textOnlyTextAccess}
+      ${textOnlyUpload}
+      ${workerUrl ? adminPanelMarkup() : ""}
+      ${relatedMarkup}
+    `;
+    trackEvent(workerUrl, "page_view", {
+      page: "report",
+      ...analyticsReportPayload(item, "catalog"),
+    });
+
+    detail.addEventListener("click", (event) => {
+      const row = event.target.closest(".report-link");
+      if (!row) return;
+      const relatedItem = catalogById.get(String(row.dataset.id || ""));
+      trackEvent(workerUrl, "report_open", analyticsReportPayload(relatedItem || { id: row.dataset.id }, "catalog"));
+      if (isNativeNewTabLink(row)) return;
+      event.preventDefault();
+      event.stopPropagation();
+      openReportPage(row.dataset.id);
+    });
+
+    initDetailAdmin(item, workerUrl);
+    initTextOnlyTextAccess(item, workerUrl);
+    initTextOnlyPdfUpload(item, workerUrl);
+    initReportAccessControls(item, workerUrl, "catalog", (statusTarget) => (
+      downloadCatalogWithAccount(workerUrl, item, statusTarget)
+    ));
+
+    if (!available) return;
+
+    const form = document.getElementById("unlockForm");
+    const input = document.getElementById("passwordInput");
+    const status = document.getElementById("downloadStatus");
+    const button = form.querySelector("button");
+    const deliveryPassword = String(options.password || "");
+    initResilientPasswordInput(input, item.id, deliveryPassword, (message) => {
+      status.textContent = message;
+    });
+
+    async function submitDownload(event) {
+      if (event) event.preventDefault();
+      status.className = "status-line";
+      if (!workerUrl) {
+        status.textContent = "PDF download is temporarily unavailable. Please try again later.";
+        status.classList.add("error");
+        return;
+      }
+
+      button.disabled = true;
+      const session = loadAuthSession();
+      const action = session ? "account_or_password_download" : "password_download";
+      status.textContent = session ? "Checking account access..." : "Checking password...";
+      let downloadErrorTracked = false;
+      trackEvent(workerUrl, "download_attempt", {
+        ...analyticsReportPayload(item, "catalog"),
+        action,
+      });
+      try {
+        const response = await fetch(`${workerUrl}/download`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", ...authHeaders() },
+          body: JSON.stringify({
+            id: item.id,
+            password: input.value,
+            password_group: item.password_group || "default",
+          }),
+        });
+
+        if (!response.ok) {
+          let data = {};
+          let message = `Download failed (${response.status}).`;
+          try {
+            data = await response.json();
+            if (data.error) message = data.error;
+          } catch (_err) {
+            // Ignore non-JSON errors.
+          }
+          if (response.status === 401) clearRememberedDownloadPassword(item.id);
+          trackEvent(workerUrl, "download_error", {
+            ...analyticsReportPayload(item, "catalog"),
+            action,
+            status: String(response.status),
+            error: message,
+          });
+          downloadErrorTracked = true;
+          throw new Error(downloadErrorMessage(response.status, message, data));
+        }
+
+        const blob = await response.blob();
+        triggerBlobDownload(blob, response.headers.get("Content-Disposition"), item.filename);
+        if (!session && input.value) rememberDeliveryPassword(item.id, input.value);
+        trackEvent(workerUrl, "download_success", {
+          ...analyticsReportPayload(item, "catalog"),
+          action,
+          status: "ok",
+        });
+        status.textContent = "Download started.";
+        status.classList.add("ok");
+      } catch (error) {
+        if (!downloadErrorTracked) {
+          trackEvent(workerUrl, "download_error", {
+            ...analyticsReportPayload(item, "catalog"),
+            action,
+            status: "exception",
+            error: error.message || "Download failed.",
+          });
+        }
+        const message = error.message || "Download failed.";
+        maybeAlertDownloadLimit(message);
+        status.textContent = message;
+        status.classList.add("error");
+      } finally {
+        button.disabled = false;
+      }
+    }
+
+    form.addEventListener("submit", submitDownload);
+  }
+
+  async function initReport() {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+    const [catalog, config] = await Promise.all([
+      loadJson("data/catalog.json"),
+      loadJson("data/config.json"),
+    ]);
+    const workerUrl = workerBaseUrl(config);
+    const catalogPdfOverrides = await loadCatalogPdfOverrides(workerUrl);
+    initAccountGate(workerUrl);
+    initAdminGate(workerUrl);
+    initNewsfeedNav();
+    const items = mergeCatalogPdfOverrides(catalog.items, catalogPdfOverrides);
+    const item = items.find((entry) => entry.id === id);
+    if (!item) {
+      document.getElementById("detail").innerHTML = '<div class="error-state">Report not found.</div>';
+      return;
+    }
+    const searchTextById = new Map();
+    document.title = `${titleText(item)} | Portal Suite`;
+    renderDetail(item, config, items, searchTextById, {
+      password: deliveryPasswordFromLocation(params),
+    });
+    // The text index only improves related-report ranking, so load it after
+    // the detail renders instead of blocking the page on a large download.
+    loadOptionalJson("data/search_index.json", { items: [] }).then((searchIndex) => {
+      const entries = Array.isArray(searchIndex.items) ? searchIndex.items : [];
+      if (!entries.length) return;
+      for (const entry of entries) {
+        if (entry.id && entry.text) searchTextById.set(entry.id, String(entry.text));
+      }
+      refreshRelatedReports(item, items, searchTextById);
+    });
+  }
+
+  function refreshRelatedReports(item, catalogItems, searchTextById) {
+    const detail = document.getElementById("detail");
+    if (!detail) return;
+    const related = relatedReports(item, catalogItems, searchTextById);
+    if (!related.length) return;
+    let section = detail.querySelector(".related-section");
+    if (!section) {
+      section = document.createElement("section");
+      section.className = "related-section";
+      section.setAttribute("aria-labelledby", "relatedTitle");
+      detail.appendChild(section);
+    }
+    section.innerHTML = `
+      <div class="related-heading">
+        <h3 id="relatedTitle">Related Reports</h3>
+      </div>
+      <div class="related-list">${related.map(relatedRow).join("")}</div>
+    `;
+  }
+
+  function externalItemFromParams(params) {
+    const id = String(params.get("id") || "").trim();
+    const rawSource = params.get("source");
+    const inferredSource = /^foreign(?:-rt)?:/.test(id)
+      ? AUTHORITY_SOURCE
+      : (/^report-a:/.test(id)
+        ? REPORT_A_SOURCE
+        : (/^thinktank:/.test(id)
+          ? THINKTANK_SOURCE
+          : (/^hot:[a-f0-9]{16}$/i.test(id) ? HOT_REPORT_SOURCE : EXTERNAL_SOURCE)));
+    const source = rawSource === AUTHORITY_SOURCE
+      ? AUTHORITY_SOURCE
+      : (rawSource === REPORT_A_SOURCE
+        ? REPORT_A_SOURCE
+        : (rawSource === THINKTANK_SOURCE
+          ? THINKTANK_SOURCE
+          : (rawSource === HOT_REPORT_SOURCE ? HOT_REPORT_SOURCE : inferredSource)));
+    return {
+      id,
+      source,
+      title: params.get("title") || "Report",
+      title_cn: params.get("title_cn") || "",
+      institution: params.get("institution") || "",
+      date: params.get("date") || "",
+      file_type: params.get("file_type") || "",
+      kind: params.get("kind") || "",
+      page_count: params.get("page_count") || "",
+      size_bytes: Number(params.get("size_bytes") || 0) || 0,
+      report_type: params.get("report_type") || "",
+      language: params.get("language") || "",
+      category: params.get("category") || "",
+      author: params.get("author") || "",
+      rating: params.get("rating") || "",
+      description: params.get("description") || "",
+      filename: params.get("filename") || "",
+      required_plan: params.get("required_plan") || "",
+    };
+  }
+
+  function isAuthorityItem(item) {
+    return item && item.source === AUTHORITY_SOURCE;
+  }
+
+  function isReportAItem(item) {
+    return item && item.source === REPORT_A_SOURCE;
+  }
+
+  function isThinkTankItem(item) {
+    return item && item.source === THINKTANK_SOURCE;
+  }
+
+  function isHotReportItem(item) {
+    return item && item.source === HOT_REPORT_SOURCE;
+  }
+
+  function isContactOnlyItem(item) {
+    return isAuthorityItem(item) || isReportAItem(item);
+  }
+
+  function docSourceLabel(item) {
+    if (isAuthorityItem(item)) return "高权报告";
+    if (isReportAItem(item)) return "报告A";
+    if (isThinkTankItem(item)) return "国际智库";
+    if (isHotReportItem(item)) return "近期热门报告";
+    return "其他报告";
+  }
+
+  function docEndpoint(item) {
+    if (isHotReportItem(item)) return "hot-reports";
+    if (isThinkTankItem(item)) return "thinktank";
+    return isAuthorityItem(item) ? "authority" : "external";
+  }
+
+  function validDocId(item) {
+    if (isAuthorityItem(item)) return /^(foreign|foreign-rt):[0-9]{1,25}$/.test(item.id);
+    if (isReportAItem(item)) return /^report-a:[a-f0-9]{16,64}$/i.test(item.id);
+    if (isThinkTankItem(item)) return /^thinktank:[A-Za-z0-9._-]{3,220}$/.test(item.id);
+    if (isHotReportItem(item)) return /^hot:[a-f0-9]{16}$/i.test(item.id);
+    return /^[0-9]{6,25}$/.test(item.id);
+  }
+
+  async function fetchExternalPdf(workerUrl, item, password, statusTarget, options = {}) {
+    statusTarget("正在获取报告…");
+    trackEvent(workerUrl, "download_attempt", {
+      ...analyticsReportPayload(item, item.source || EXTERNAL_SOURCE),
+      action: options.auth ? "account_download" : "password_download",
+    });
+    const response = await fetch(`${workerUrl}/${docEndpoint(item)}/pdf`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", ...(options.auth ? authHeaders() : {}) },
+      cache: "no-store",
+      body: JSON.stringify({ id: item.id, password: password || "" }),
+    });
+    if (response.status === 202) {
+      let data = {};
+      try {
+        data = await response.json();
+      } catch (_error) {
+        // Keep the generic pending state.
+      }
+      trackEvent(workerUrl, "download_pending", {
+        ...analyticsReportPayload(item, item.source || EXTERNAL_SOURCE),
+        action: "pending",
+        status: "202",
+      });
+      return { pending: true, wait_seconds: Number(data.wait_seconds || 0) || 480 };
+    }
+    if (!response.ok) {
+      let message = `下载失败 (${response.status})`;
+      let data = {};
+      try {
+        data = await response.json();
+        if (data.error) message = data.error;
+      } catch (_error) {
+        // Keep generic message.
+      }
+      if (response.status === 401) clearRememberedDownloadPassword(item.id);
+      trackEvent(workerUrl, "download_error", {
+        ...analyticsReportPayload(item, item.source || EXTERNAL_SOURCE),
+        action: options.auth ? "account_download" : "password_download",
+        status: String(response.status),
+        error: message,
+      });
+      throw new Error(downloadErrorMessage(response.status, message, data));
+    }
+    const blob = await response.blob();
+    triggerBlobDownload(blob, response.headers.get("Content-Disposition"), `${item.id}.pdf`);
+    rememberDeliveryPassword(item.id, password);
+    trackEvent(workerUrl, "download_success", {
+      ...analyticsReportPayload(item, item.source || EXTERNAL_SOURCE),
+      action: options.auth ? "account_download" : "password_download",
+      status: "ok",
+    });
+    statusTarget("下载已开始。", "ok");
+    return { pending: false };
+  }
+
+  function pollExternalDetail(workerUrl, id, password, statusTarget, onReady) {
+    let attempts = 0;
+    const maxAttempts = 40; // 10 minutes at 15s intervals
+    const startedAt = Date.now();
+    statusTarget("报告正在准备，页面每 15 秒自动检测一次。准备好后会自动开始下载。");
+    const timer = window.setInterval(async () => {
+      attempts += 1;
+      const elapsedSeconds = Math.max(15, Math.round((Date.now() - startedAt) / 1000));
+      const elapsedText = elapsedSeconds >= 60
+        ? `${Math.floor(elapsedSeconds / 60)} 分 ${elapsedSeconds % 60} 秒`
+        : `${elapsedSeconds} 秒`;
+      if (attempts > maxAttempts) {
+        window.clearInterval(timer);
+        statusTarget(`报告准备时间超过预期。请保留这个页面，稍后再次点击下载；如果多次失败请联系${contactMethodText()}。`, "error");
+        return;
+      }
+      try {
+        statusTarget(`报告仍在准备中，已等待 ${elapsedText}。页面会继续自动检测。`);
+        const response = await fetch(`${workerUrl}/external/status?id=${encodeURIComponent(id)}`, {
+          cache: "no-store",
+        });
+        const data = await response.json();
+        if (data.ready) {
+          window.clearInterval(timer);
+          statusTarget("报告已就绪，正在下载…", "ok");
+          onReady();
+        } else if (data.status === "failed") {
+          window.clearInterval(timer);
+          statusTarget(data.message || `报告准备失败，请联系${contactMethodText()}。`, "error");
+        }
+      } catch (_error) {
+        // Keep polling while the background grab runs.
+      }
+    }, 15000);
+  }
+
+  async function downloadExternalWithAccount(workerUrl, item, statusTarget) {
+    const result = await fetchExternalPdf(workerUrl, item, "", statusTarget, { auth: true });
+    if (result.pending) {
+      statusTarget("报告正在准备，通常约 3-8 分钟。页面会自动检测，准备好后开始下载。");
+      pollExternalDetail(workerUrl, item.id, "", statusTarget, () => (
+        downloadExternalWithAccount(workerUrl, item, statusTarget)
+      ));
+    }
+  }
+
+  async function fetchDocDetailItem(workerUrl, item) {
+    const cached = cachedDocItem(item);
+    let merged = cached ? { ...item, ...cached, source: item.source } : item;
+    if (!workerUrl || !validDocId(merged)) return merged;
+    let endpoint = "";
+    if (isHotReportItem(merged)) endpoint = "hot-reports/item";
+    else if (isThinkTankItem(merged)) endpoint = "thinktank/item";
+    else if (merged.source === EXTERNAL_SOURCE) endpoint = "external/item";
+    if (!endpoint) return merged;
+    try {
+      const response = await fetch(`${workerUrl}/${endpoint}?id=${encodeURIComponent(merged.id)}`, {
+        cache: "no-store",
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok || !data.item || !data.item.id) return merged;
+      merged = { ...merged, ...data.item, source: merged.source };
+      rememberDocItem(merged);
+      return merged;
+    } catch (_error) {
+      return merged;
+    }
+  }
+
+  async function initExternalDetail() {
+    const params = new URLSearchParams(window.location.search);
+    let item = externalItemFromParams(params);
+    const target = document.getElementById("externalDetail");
+    if (!validDocId(item)) {
+      target.innerHTML = '<div class="error-state">Report not found.</div>';
+      return;
+    }
+
+    const [config, catalog] = await Promise.all([
+      loadOptionalJson("data/config.json", {}),
+      loadOptionalJson("data/catalog.json", { items: [] }),
+    ]);
+    const workerUrl = workerBaseUrl(config);
+    const catalogItems = Array.isArray(catalog.items) ? catalog.items : [];
+    const searchTextById = new Map();
+    // Fetch the large text index in the background; related rendering below
+    // waits on this promise without blocking the detail render.
+    const searchIndexPromise = loadOptionalJson("data/search_index.json", { items: [] }).then((searchIndex) => {
+      for (const entry of Array.isArray(searchIndex.items) ? searchIndex.items : []) {
+        if (entry.id && entry.text) searchTextById.set(entry.id, String(entry.text));
+      }
+    });
+    initAccountGate(workerUrl);
+    initAdminGate(workerUrl);
+    initNewsfeedNav();
+    item = await fetchDocDetailItem(workerUrl, item);
+    const passwordFromLink = deliveryPasswordFromLocation(params);
+    const shortUrl = externalPageUrl(item, passwordFromLink);
+    if (shortUrl.length < window.location.href.length) {
+      window.history.replaceState({}, "", shortUrl);
+    }
+    trackEvent(workerUrl, "page_view", {
+      page: "doc",
+      ...analyticsReportPayload(item, item.source || EXTERNAL_SOURCE),
+    });
+
+    const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
+    document.title = `${item.title || "Report"} | Portal Suite`;
+    const detailFields = isAuthorityItem(item)
+      ? `
+        ${field("板块", docSourceLabel(item))}
+        ${field("Category", authorityKindLabel(item.kind))}
+        ${field("Institution", item.institution || "-")}
+        ${field("Date", item.date || "-")}
+        ${field("Pages", item.page_count ? `${item.page_count}页` : "-")}
+      `
+      : (isReportAItem(item) ? `
+        ${field("板块", docSourceLabel(item))}
+        ${field("Institution", item.institution || "-")}
+        ${field("Date", item.date || "-")}
+        ${field("Category", item.category || "-")}
+        ${field("Author", item.author || "-")}
+        ${field("Pages", item.page_count ? `${item.page_count}页` : "-")}
+      ` : (isHotReportItem(item) ? `
+        ${field("板块", docSourceLabel(item))}
+        ${field("Institution", item.institution || "-")}
+        ${field("Date", item.date || "-")}
+        ${field("PDF", formatSize(item.size_bytes) || "Available")}
+        ${field("全文权限", "3个月及以上会员")}
+      ` : (isThinkTankItem(item) ? `
+        ${field("板块", docSourceLabel(item))}
+        ${field("Institution", item.institution || "-")}
+        ${field("Date", item.date || "-")}
+        ${field("Pages", item.page_count ? `${item.page_count}页` : "-")}
+        ${field("PDF", formatSize(item.size_bytes) || "Available")}
+      ` : `
+        ${field("板块", docSourceLabel(item))}
+        ${field("Institution", item.institution || "-")}
+        ${field("Date", item.date || "-")}
+        ${field("Type", item.file_type || "-")}
+      `)));
+    const detailHeader = `
+      <div>
+        <h1 class="detail-title">${escapeHtml(item.title || "Report")}</h1>
+        ${zh ? `<p class="detail-title-zh">${escapeHtml(zh)}</p>` : ""}
+        <p class="subtle">${isContactOnlyItem(item)
+          ? `${docSourceLabel(item)}检索线索。`
+          : (isHotReportItem(item) ? "3个月及以上会员可下载全文。" : "Password-protected report delivery.")}</p>
+      </div>
+      <div class="detail-grid">
+        ${detailFields}
+      </div>
+    `;
+    if (isContactOnlyItem(item)) {
+      const hint = isAuthorityItem(item)
+        ? "高权报告仅提供检索线索，无法在本站直接下载。"
+        : `联系${contactMethodText()}获取原文。`;
+      target.innerHTML = `
+        ${detailHeader}
+        <section class="unlock-box authority-contact-box">
+          <h3>获取报告</h3>
+          <p class="subtle">${escapeHtml(hint)}</p>
+          <p class="contact-line">如需原文，请联系${contactMethodHtml()}。</p>
+        </section>
+        ${externalRelatedMarkup()}
+      `;
+      searchIndexPromise.then(() => initExternalRelated(item, workerUrl, catalogItems, searchTextById));
+      return;
+    }
+
+    if (isHotReportItem(item)) {
+      target.innerHTML = `
+        ${detailHeader}
+        ${item.description ? `<p class="hot-report-description">${escapeHtml(item.description)}</p>` : ""}
+        ${workerUrl ? accountAccessMarkup(item) : ""}
+        ${hotReportCommentsMarkup()}
+        ${externalRelatedMarkup()}
+      `;
+      initReportAccessControls(item, workerUrl, HOT_REPORT_SOURCE, (statusTarget) => (
+        downloadExternalWithAccount(workerUrl, item, statusTarget)
+      ));
+      initHotReportComments(item, workerUrl);
+      searchIndexPromise.then(() => initExternalRelated(item, workerUrl, catalogItems, searchTextById));
+      return;
+    }
+
+    target.innerHTML = `
+      ${detailHeader}
+      <form class="unlock-box" id="externalDetailForm">
+        <h3>PDF Download</h3>
+        <p class="subtle">Enter the report password to download the PDF.</p>
+        <div class="password-row">
+          <input id="externalDetailPassword" name="report-access-code" type="password" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="Password" required>
+          <button class="primary" type="submit">Download</button>
+        </div>
+        <div class="external-wait" id="externalDetailWait" hidden>
+          报告正在准备，通常约 3-8 分钟。这个页面会自动检测，文件准备好后会开始下载。
+        </div>
+        <div id="externalDetailStatus" class="status-line" aria-live="polite"></div>
+      </form>
+      ${workerUrl ? accountAccessMarkup(item) : ""}
+      <section class="admin-panel external-admin-tools" hidden>
+        <div class="admin-panel-heading">
+          <h3>Delivery link</h3>
+          <span>Private</span>
+        </div>
+        <div class="delivery-row">
+          <button class="primary" id="generateExternalDetailDeliveryLink" type="button">Generate</button>
+          <input id="externalDetailDeliveryLinkInput" type="text" readonly aria-label="Delivery link">
+          <button id="copyExternalDeliveryLink" type="button">Copy</button>
+        </div>
+        <div id="externalDetailDeliveryStatus" class="status-line" aria-live="polite"></div>
+      </section>
+      ${externalRelatedMarkup()}
+    `;
+    searchIndexPromise.then(() => initExternalRelated(item, workerUrl, catalogItems, searchTextById));
+
+    const form = document.getElementById("externalDetailForm");
+    const input = document.getElementById("externalDetailPassword");
+    const button = form.querySelector("button");
+    const status = document.getElementById("externalDetailStatus");
+    const wait = document.getElementById("externalDetailWait");
+    const adminTools = target.querySelector(".external-admin-tools");
+    const generate = document.getElementById("generateExternalDetailDeliveryLink");
+    const linkInput = document.getElementById("externalDetailDeliveryLinkInput");
+    const copy = document.getElementById("copyExternalDeliveryLink");
+    const deliveryStatus = document.getElementById("externalDetailDeliveryStatus");
+
+    function setStatus(text, kind) {
+      status.className = kind ? `status-line ${kind}` : "status-line";
+      status.textContent = localizedContactText(text);
+      wait.hidden = !/准备|等待|自动检测/.test(String(text || ""));
+    }
+
+    function refreshAdmin() {
+      adminTools.hidden = !canUseDeliveryTools();
+    }
+
+    async function submitDownload(event) {
+      if (event) event.preventDefault();
+      if (!input.value) {
+        setStatus("Password is required.", "error");
+        return;
+      }
+      button.disabled = true;
+      try {
+        const result = await fetchExternalPdf(workerUrl, item, input.value, setStatus);
+        if (result.pending) {
+          rememberDeliveryPassword(item.id, input.value);
+          setStatus("报告正在准备，通常约 3-8 分钟。页面会自动检测，准备好后开始下载。");
+          pollExternalDetail(workerUrl, item.id, input.value, setStatus, () => submitDownload());
+        }
+      } catch (error) {
+        const message = error.message || "下载失败。";
+        maybeAlertDownloadLimit(message);
+        setStatus(message, "error");
+      } finally {
+        button.disabled = false;
+      }
+    }
+
+    form.addEventListener("submit", submitDownload);
+    document.addEventListener("portal-admin-change", refreshAdmin);
+    document.addEventListener("portal-auth-change", refreshAdmin);
+    refreshAdmin();
+    initReportAccessControls(item, workerUrl, item.source, (statusTarget) => (
+      downloadExternalWithAccount(workerUrl, item, statusTarget)
+    ));
+
+    generate.addEventListener("click", async () => {
+      generate.disabled = true;
+      linkInput.value = "";
+      deliveryStatus.className = "status-line";
+      deliveryStatus.textContent = "Generating...";
+      try {
+        const data = await requestExternalPassword(workerUrl, item.id, item.source);
+        const deliveryItem = data.id ? { ...item, id: data.id, source: item.source } : item;
+        linkInput.value = externalPageUrl(deliveryItem, data.password);
+        trackEvent(workerUrl, "delivery_link_generate", analyticsReportPayload(item, item.source || EXTERNAL_SOURCE));
+        deliveryStatus.className = "status-line ok";
+        deliveryStatus.textContent = "Delivery link generated.";
+      } catch (error) {
+        deliveryStatus.className = "status-line error";
+        deliveryStatus.textContent = localizedContactText(error.message || "Could not generate delivery link.");
+      } finally {
+        generate.disabled = false;
+      }
+    });
+
+    copy.addEventListener("click", async () => {
+      if (!linkInput.value) return;
+      try {
+        await navigator.clipboard.writeText(linkInput.value);
+        deliveryStatus.className = "status-line ok";
+        deliveryStatus.textContent = "Copied.";
+      } catch (_error) {
+        linkInput.select();
+        deliveryStatus.className = "status-line";
+        deliveryStatus.textContent = "Select and copy the link.";
+      }
+    });
+
+    initResilientPasswordInput(input, item.id, passwordFromLink, setStatus);
+  }
+
+  function newsfeedLogoUrl(item) {
+    if (item && item.logo_url) return item.logo_url;
+    const domain = String(item && (item.domain || item.source_domain) || "").trim();
+    return domain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=64` : "";
+  }
+
+  function newsfeedTimeLabel(value) {
+    const timestamp = Date.parse(value || "");
+    if (!Number.isFinite(timestamp)) return "";
+    const diff = Date.now() - timestamp;
+    const minute = 60 * 1000;
+    const hour = 60 * minute;
+    const day = 24 * hour;
+    if (diff >= 0 && diff < hour) return `${Math.max(1, Math.round(diff / minute))}m ago`;
+    if (diff >= 0 && diff < day) return `${Math.max(1, Math.round(diff / hour))}h ago`;
+    if (diff >= 0 && diff < 3 * day) return `${Math.max(1, Math.round(diff / day))}d ago`;
+    return new Intl.DateTimeFormat("en", { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" }).format(new Date(timestamp));
+  }
+
+  function newsfeedSourceName(item) {
+    return String(item && (item.source || item.source_name || item.domain) || "News").replace(/^GDELT\s*\/\s*/i, "");
+  }
+
+  const NEWSFEED_UI_COPY = {
+    en: {
+      myFeed: "My feed",
+      explore: "Explore",
+      addTopics: "Add topics",
+      digestEmail: "Digest Email",
+      dailyDigest: "Daily Digest",
+      topHeadlines: "Top Headlines",
+      regions: "Regions",
+      language: "Language",
+      outputLanguage: "Output language",
+      suggestedTopics: "Suggested Topics",
+      sendDailyDigest: "Send daily digest",
+      saveEmail: "Save email",
+      sendTestNow: "Send test now",
+      sendNewsletterNow: "Send newsletter now",
+      newsletterTopic: "Newsletter",
+      noNewsletter: "Not subscribed",
+      email: "Email",
+      sendTime: "Send time",
+      timezone: "Timezone",
+      noHeadlines: "No headlines yet.",
+      loadingLatest: "Loading latest news...",
+      updating: "Updating full feed...",
+      playBriefing: "Play briefing",
+      nowPlaying: "Now Playing",
+      playlist: "Playlist",
+      readStory: "Read Story",
+      addRegion: "Add region",
+      customRegion: "Other region",
+    },
+    "zh-CN": {
+      myFeed: "我的新闻",
+      explore: "探索",
+      addTopics: "添加话题",
+      digestEmail: "邮件摘要",
+      dailyDigest: "每日摘要",
+      topHeadlines: "重点新闻",
+      regions: "区域",
+      language: "语言",
+      outputLanguage: "输出语言",
+      suggestedTopics: "热门话题",
+      sendDailyDigest: "发送每日摘要",
+      saveEmail: "保存邮箱",
+      sendTestNow: "发送测试邮件",
+      sendNewsletterNow: "立即发送 newsletter",
+      newsletterTopic: "Newsletter 主题",
+      noNewsletter: "不订阅",
+      email: "邮箱",
+      sendTime: "发送时间",
+      timezone: "时区",
+      noHeadlines: "暂无新闻。",
+      loadingLatest: "正在加载最新新闻...",
+      updating: "正在补全新闻流...",
+      playBriefing: "播放简报",
+      nowPlaying: "正在播放",
+      playlist: "播放列表",
+      readStory: "阅读新闻",
+      addRegion: "添加区域",
+      customRegion: "其他区域",
+    },
+    ja: {
+      myFeed: "My feed",
+      explore: "Explore",
+      addTopics: "Add topics",
+      digestEmail: "Digest Email",
+      dailyDigest: "Daily Digest",
+      topHeadlines: "Top Headlines",
+      regions: "Regions",
+      language: "Language",
+      outputLanguage: "Output language",
+      suggestedTopics: "Suggested Topics",
+      sendDailyDigest: "Send daily digest",
+      saveEmail: "Save email",
+      sendTestNow: "Send test now",
+      sendNewsletterNow: "Send newsletter now",
+      newsletterTopic: "Newsletter",
+      noNewsletter: "Not subscribed",
+      email: "Email",
+      sendTime: "Send time",
+      timezone: "Timezone",
+      noHeadlines: "No headlines yet.",
+      loadingLatest: "Loading latest news...",
+      updating: "Updating full feed...",
+      playBriefing: "Play briefing",
+      nowPlaying: "Now Playing",
+      playlist: "Playlist",
+      readStory: "Read Story",
+      addRegion: "Add region",
+      customRegion: "Other region",
+    },
+    ko: {
+      myFeed: "My feed",
+      explore: "Explore",
+      addTopics: "Add topics",
+      digestEmail: "Digest Email",
+      dailyDigest: "Daily Digest",
+      topHeadlines: "Top Headlines",
+      regions: "Regions",
+      language: "Language",
+      outputLanguage: "Output language",
+      suggestedTopics: "Suggested Topics",
+      sendDailyDigest: "Send daily digest",
+      saveEmail: "Save email",
+      sendTestNow: "Send test now",
+      sendNewsletterNow: "Send newsletter now",
+      newsletterTopic: "Newsletter",
+      noNewsletter: "Not subscribed",
+      email: "Email",
+      sendTime: "Send time",
+      timezone: "Timezone",
+      noHeadlines: "No headlines yet.",
+      loadingLatest: "Loading latest news...",
+      updating: "Updating full feed...",
+      playBriefing: "Play briefing",
+      nowPlaying: "Now Playing",
+      playlist: "Playlist",
+      readStory: "Read Story",
+      addRegion: "Add region",
+      customRegion: "Other region",
+    },
+  };
+
+  function newsfeedLanguageCode(value) {
+    return ["en", "zh-CN", "ja", "ko"].includes(value) ? value : "en";
+  }
+
+  function newsfeedText(state, key) {
+    const language = newsfeedLanguageCode(state && state.interfaceLanguage || "en");
+    return (NEWSFEED_UI_COPY[language] && NEWSFEED_UI_COPY[language][key]) || NEWSFEED_UI_COPY.en[key] || key;
+  }
+
+  function newsfeedImageMarkup(item) {
+    const image = String(item && item.image_url || "").trim();
+    if (!image) return "";
+    return `<img class="news-story-image" src="${escapeHtml(image)}" alt="">`;
+  }
+
+  function newsfeedLogoMarkup(item) {
+    const logo = newsfeedLogoUrl(item);
+    const label = newsfeedSourceName(item).slice(0, 1).toUpperCase() || "N";
+    return logo
+      ? `<img class="news-source-logo" src="${escapeHtml(logo)}" alt="">`
+      : `<span class="news-source-logo news-source-fallback">${escapeHtml(label)}</span>`;
+  }
+
+  function newsfeedSourceStack(items = []) {
+    const unique = [];
+    const seen = new Set();
+    for (const item of items) {
+      const key = String(item.domain || item.source || item.source_name || item.id || "");
+      if (!key || seen.has(key)) continue;
+      seen.add(key);
+      unique.push(item);
+      if (unique.length >= 5) break;
+    }
+    if (!unique.length) return "";
+    return `
+      <div class="news-source-stack" aria-label="Sources">
+        ${unique.map(newsfeedLogoMarkup).join("")}
+      </div>
+    `;
+  }
+
+  function newsfeedStoryMeta(item) {
+    return [newsfeedTimeLabel(item && item.published_at), newsfeedSourceName(item), item && item.category]
+      .filter(Boolean)
+      .join(" · ");
+  }
+
+  function newsfeedStoryCard(item, index = 0, options = {}) {
+    if (!item) return "";
+    const id = String(item.id || "");
+    const image = newsfeedImageMarkup(item);
+    const summary = item.summary ? `<p>${escapeHtml(item.summary)}</p>` : "";
+    const className = options.featured ? "news-story is-featured" : "news-story";
+    return `
+      <button class="${className}" type="button" data-action="open-article" data-id="${escapeHtml(id)}">
+        <span class="news-story-rank">${index ? escapeHtml(index) : ""}</span>
+        <span class="news-story-main">
+          <strong>${escapeHtml(item.title || "Untitled")}</strong>
+          ${summary}
+          <span class="news-story-meta">${escapeHtml(newsfeedStoryMeta(item))}</span>
+        </span>
+        ${image}
+        <span class="news-story-actions">${newsfeedLogoMarkup(item)}<span>···</span></span>
+      </button>
+    `;
+  }
+
+  function newsfeedSpinnerMarkup(label = "Loading") {
+    return `
+      <div class="newsfeed-loader" role="status" aria-live="polite">
+        <span></span>
+        <strong>${escapeHtml(label)}</strong>
+      </div>
+    `;
+  }
+
+  function newsfeedSkeletonMarkup(kind = "home", label = "Preparing Newsfeed") {
+    const rows = Array.from({ length: kind === "article" ? 5 : 4 }).map(() => `
+      <div class="news-skeleton-row">
+        <span></span>
+        <span></span>
+      </div>
+    `).join("");
+    return `
+      <section class="newsfeed-loading-panel">
+        ${newsfeedSpinnerMarkup(label)}
+        <div class="news-skeleton-block">
+          ${rows}
+        </div>
+      </section>
+    `;
+  }
+
+  function newsfeedDigestMarkup(digest = []) {
+    const rows = digest.slice(0, 4).map((line) => `<li>${escapeHtml(line)}</li>`).join("");
+    return rows || "<li>Fresh digest is loading.</li>";
+  }
+
+  function newsfeedTopicIcon(topic) {
+    if (topic && topic.pinned) return "◆";
+    if (topic && topic.kind === "custom") return "“";
+    return "◇";
+  }
+
+  function newsfeedTopicRow(topic) {
+    const id = String(topic && topic.id || "");
+    return `
+      <div class="news-topic-row" data-topic-id="${escapeHtml(id)}">
+        <button class="news-topic-open" type="button" data-action="open-topic" data-id="${escapeHtml(id)}">
+          <span>${escapeHtml(newsfeedTopicIcon(topic))}</span>
+          <strong>${escapeHtml(topic.title || "Topic")}</strong>
+          <small>${escapeHtml(topic.last_updated_label || topic.description || "")}</small>
+        </button>
+        <button class="news-topic-pin" type="button" data-action="pin-topic" data-id="${escapeHtml(id)}" aria-label="Pin topic">${topic && topic.pinned ? "●" : "○"}</button>
+      </div>
+    `;
+  }
+
+  function newsfeedShellMarkup() {
+    return `
+      <section class="newsfeed-layout">
+        <aside class="newsfeed-sidebar" id="newsfeedSidebar">
+          <div class="newsfeed-profile">
+            <span class="newsfeed-avatar">PS</span>
+            <strong>${escapeHtml(authUserLabel(loadAuthSession()))}</strong>
+          </div>
+          <div class="newsfeed-side-actions">
+            <button type="button" data-action="show-feed">My feed</button>
+            <button type="button" data-action="show-explore">Explore</button>
+            <button type="button" data-action="show-email">Digest Email</button>
+          </div>
+          <div class="newsfeed-following">
+            <div class="newsfeed-sidebar-heading">
+              <span>Following</span>
+              <strong id="newsfeedTopicCount">0 topics</strong>
+            </div>
+            <div id="newsfeedTopicList" class="newsfeed-topic-list"></div>
+          </div>
+          <button class="newsfeed-add-wide" type="button" data-action="show-add">+ Add Topics</button>
+        </aside>
+        <section class="newsfeed-main">
+          <div class="newsfeed-command">
+            <button class="news-icon-button" type="button" data-action="toggle-sidebar" aria-label="Topics">☰</button>
+            <h1 id="newsfeedTitle">Daily Digest</h1>
+            <div class="newsfeed-audio-actions">
+              <button id="newsBriefingButton" class="news-icon-button is-wide" type="button" data-action="play-briefing" aria-label="Audio">▥ ▶</button>
+            </div>
+          </div>
+          <div id="newsfeedPreferences" class="news-preference-bar"></div>
+          <div id="newsfeedStatus" class="newsfeed-status" aria-live="polite"></div>
+          <div id="newsfeedContent" class="newsfeed-content"></div>
+          <div id="newsBriefingPanel" class="news-briefing-panel" hidden></div>
+          <nav class="newsfeed-bottom-tabs" aria-label="Newsfeed sections">
+            <button type="button" data-action="show-feed" class="is-active"><span>▯</span>My feed</button>
+            <button type="button" data-action="show-add"><span>＋</span>Add topics</button>
+            <button type="button" data-action="show-explore"><span>◇</span>Explore</button>
+          </nav>
+        </section>
+      </section>
+    `;
+  }
+
+  function renderNewsfeedBoot(app, message = "Checking Newsfeed access...") {
+    app.innerHTML = `
+      <section class="newsfeed-access is-loading">
+        ${newsfeedSpinnerMarkup(message)}
+        <p>We are preparing your private Newsfeed workspace.</p>
+      </section>
+    `;
+  }
+
+  async function newsfeedJson(workerUrl, path, options = {}) {
+    const response = await fetch(`${workerUrl}${path}`, {
+      cache: "no-store",
+      ...options,
+      headers: {
+        ...(options.body ? { "Content-Type": "application/json" } : {}),
+        ...authHeaders(),
+        ...(options.headers || {}),
+      },
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(data.detail || data.error || "Newsfeed request failed.");
+    return data;
+  }
+
+  function renderNewsfeedAccess(app, workerUrl, message = "请登录已注册且状态正常的账号继续。") {
+    app.innerHTML = `
+      <section class="newsfeed-access">
+        <h1>Newsfeed</h1>
+        <p>${escapeHtml(message)}</p>
+        <button id="newsfeedLogin" class="primary" type="button">登录 / 账号</button>
+      </section>
+    `;
+    const login = document.getElementById("newsfeedLogin");
+    if (login) login.addEventListener("click", () => showAccountModal(workerUrl));
+  }
+
+  function setNewsfeedStatus(text, kind) {
+    const status = document.getElementById("newsfeedStatus");
+    if (!status) return;
+    status.className = kind ? `newsfeed-status ${kind}` : "newsfeed-status";
+    status.textContent = text || "";
+  }
+
+  function renderNewsfeedContentLoading(label, kind = "home") {
+    const content = document.getElementById("newsfeedContent");
+    if (content) content.innerHTML = newsfeedSkeletonMarkup(kind, label);
+    setNewsfeedStatus(label, "loading");
+  }
+
+  function setNewsfeedTitle(text) {
+    const title = document.getElementById("newsfeedTitle");
+    if (title) title.textContent = text || "Newsfeed";
+  }
+
+  function refreshNewsfeedChrome(state) {
+    const sideFeed = document.querySelector(".newsfeed-side-actions [data-action='show-feed']");
+    const sideExplore = document.querySelector(".newsfeed-side-actions [data-action='show-explore']");
+    const sideEmail = document.querySelector(".newsfeed-side-actions [data-action='show-email']");
+    if (sideFeed) sideFeed.textContent = newsfeedText(state, "myFeed");
+    if (sideExplore) sideExplore.textContent = newsfeedText(state, "explore");
+    if (sideEmail) sideEmail.textContent = newsfeedText(state, "digestEmail");
+    const bottomFeed = document.querySelector(".newsfeed-bottom-tabs [data-action='show-feed']");
+    const bottomAdd = document.querySelector(".newsfeed-bottom-tabs [data-action='show-add']");
+    const bottomExplore = document.querySelector(".newsfeed-bottom-tabs [data-action='show-explore']");
+    if (bottomFeed) bottomFeed.innerHTML = `<span>▯</span>${escapeHtml(newsfeedText(state, "myFeed"))}`;
+    if (bottomAdd) bottomAdd.innerHTML = `<span>＋</span>${escapeHtml(newsfeedText(state, "addTopics"))}`;
+    if (bottomExplore) bottomExplore.innerHTML = `<span>◇</span>${escapeHtml(newsfeedText(state, "explore"))}`;
+    const audio = document.getElementById("newsBriefingButton");
+    if (audio) audio.setAttribute("aria-label", newsfeedText(state, "playBriefing"));
+    renderNewsfeedPreferences(state);
+  }
+
+  function updateNewsfeedTabs(view) {
+    document.querySelectorAll(".newsfeed-bottom-tabs button").forEach((button) => {
+      const action = button.dataset.action || "";
+      button.classList.toggle(
+        "is-active",
+        (view === "feed" && action === "show-feed") ||
+          (view === "add" && action === "show-add") ||
+          (view === "explore" && action === "show-explore") ||
+          (view === "email" && action === "show-email"),
+      );
+    });
+  }
+
+  function normalizeNewsfeedRegionsClient(value) {
+    const raw = Array.isArray(value) ? value : String(value || "").split(",");
+    const out = [];
+    const seen = new Set();
+    for (const item of raw) {
+      const clean = String(item && (item.value || item) || "").trim().slice(0, 54);
+      const key = clean.toLowerCase();
+      if (!clean || seen.has(key)) continue;
+      seen.add(key);
+      out.push(clean);
+      if (out.length >= 8) break;
+    }
+    return out.length ? out : ["global"];
+  }
+
+  function newsfeedRegionOptions(state) {
+    const defaults = [
+      { value: "global", label: "Global" },
+      { value: "mena", label: "MENA" },
+      { value: "china", label: "China" },
+      { value: "usa", label: "USA" },
+    ];
+    const options = Array.isArray(state.regionOptions) && state.regionOptions.length ? state.regionOptions : defaults;
+    const selected = normalizeNewsfeedRegionsClient(state.preferredRegions);
+    const custom = selected
+      .filter((value) => !options.some((item) => item.value === value))
+      .map((value) => ({ value, label: value }));
+    return [...options, ...custom];
+  }
+
+  function newsfeedRegionLabel(state, value) {
+    const option = newsfeedRegionOptions(state).find((item) => item.value === value);
+    return option ? option.label : value;
+  }
+
+  function newsfeedPreferenceQuery(state, options = {}) {
+    const params = new URLSearchParams();
+    if (options.force || state.preferencesReady) {
+      normalizeNewsfeedRegionsClient(state.preferredRegions).forEach((region) => params.append("regions", region));
+      params.set("language", newsfeedLanguageCode(state.interfaceLanguage || state.outputLanguage || "en"));
+      const regions = params.getAll("regions");
+      params.delete("regions");
+      params.set("regions", regions.join(","));
+    }
+    return params.toString();
+  }
+
+  function applyNewsfeedSettings(state, settings = {}) {
+    state.settings = settings || state.settings || {};
+    state.interfaceLanguage = newsfeedLanguageCode(settings.interface_language || state.interfaceLanguage || "en");
+    state.outputLanguage = newsfeedLanguageCode(settings.interface_language || state.outputLanguage || settings.digest_language || "en");
+    state.preferredRegions = normalizeNewsfeedRegionsClient(settings.preferred_regions || state.preferredRegions || ["global"]);
+    state.preferencesReady = true;
+  }
+
+  function newsfeedLanguageOptions(selected = "en") {
+    const languages = [
+      ["en", "English"],
+      ["zh-CN", "中文"],
+      ["ja", "日本語"],
+      ["ko", "한국어"],
+    ];
+    return languages.map(([value, label]) => `
+      <option value="${escapeHtml(value)}" ${value === selected ? "selected" : ""}>${escapeHtml(label)}</option>
+    `).join("");
+  }
+
+  function newsfeedTimezoneOptions(selected = "Asia/Shanghai") {
+    const timezones = [
+      ["Asia/Shanghai", "China / Singapore"],
+      ["America/New_York", "New York"],
+      ["Europe/London", "London"],
+      ["UTC", "UTC"],
+    ];
+    return timezones.map(([value, label]) => `
+      <option value="${escapeHtml(value)}" ${value === selected ? "selected" : ""}>${escapeHtml(label)}</option>
+    `).join("");
+  }
+
+  function newsfeedNewsletterOptions(state, selected = "") {
+    const topics = Array.isArray(state.topics) ? state.topics : [];
+    const options = [`<option value="">${escapeHtml(newsfeedText(state, "noNewsletter"))}</option>`];
+    const seen = new Set();
+    for (const topic of topics) {
+      const id = String(topic && topic.id || "").trim();
+      if (!id || seen.has(id)) continue;
+      seen.add(id);
+      options.push(`<option value="${escapeHtml(id)}" ${id === selected ? "selected" : ""}>${escapeHtml(topic.title || id)}</option>`);
+    }
+    return options.join("");
+  }
+
+  function newsfeedEmailPayloadFromForm(state) {
+    const newsletterTopicId = document.getElementById("newsNewsletterTopic")?.value || "";
+    return {
+      digest_email_enabled: Boolean(newsletterTopicId && document.getElementById("newsEmailEnabled")?.checked),
+      newsletter_topic_id: newsletterTopicId,
+      digest_send_time: document.getElementById("newsEmailTime")?.value || "09:00",
+      digest_timezone: document.getElementById("newsEmailTimezone")?.value || "Asia/Shanghai",
+      digest_language: document.getElementById("newsEmailLanguage")?.value || state.outputLanguage || "en",
+      interface_language: state.interfaceLanguage || "en",
+      preferred_regions: state.preferredRegions || ["global"],
+    };
+  }
+
+  function newsfeedEmailLastStatus(settings = {}) {
+    const result = String(settings.digest_last_send_result || "").trim();
+    if (!result) return "";
+    const at = settings.digest_last_attempt_at || settings.digest_last_sent_at || "";
+    const when = at ? newsfeedTimeLabel(at) : "";
+    const detail = settings.digest_last_send_detail ? ` · ${settings.digest_last_send_detail}` : "";
+    return `Last email attempt: ${result}${when ? ` · ${when}` : ""}${detail}`;
+  }
+
+  function renderNewsfeedPreferences(state) {
+    const mount = document.getElementById("newsfeedPreferences");
+    if (!mount) return;
+    const selected = normalizeNewsfeedRegionsClient(state.preferredRegions);
+    const selectedLabels = selected.map((value) => newsfeedRegionLabel(state, value)).join(", ");
+    const options = newsfeedRegionOptions(state);
+    mount.innerHTML = `
+      <div class="news-region-picker">
+        <button id="newsRegionToggle" type="button" data-action="toggle-region-menu" aria-expanded="false">
+          <span>${escapeHtml(newsfeedText(state, "regions"))}</span>
+          <strong>${escapeHtml(selectedLabels || "Global")}</strong>
+          <span>▾</span>
+        </button>
+        <div id="newsRegionMenu" class="news-region-menu" hidden>
+          ${options.map((item) => `
+            <label>
+              <input type="checkbox" data-action="region-checkbox" value="${escapeHtml(item.value)}" ${selected.includes(item.value) ? "checked" : ""}>
+              <span>${escapeHtml(item.label)}</span>
+            </label>
+          `).join("")}
+          <form id="newsCustomRegionForm" class="news-custom-region-form">
+            <input id="newsCustomRegionInput" type="text" placeholder="${escapeHtml(newsfeedText(state, "customRegion"))}">
+            <button type="submit">${escapeHtml(newsfeedText(state, "addRegion"))}</button>
+          </form>
+        </div>
+      </div>
+      <label class="news-inline-select">
+        <span>${escapeHtml(newsfeedText(state, "language"))}</span>
+        <select id="newsInterfaceLanguage">${newsfeedLanguageOptions(state.interfaceLanguage || "en")}</select>
+      </label>
+    `;
+  }
+
+  function renderNewsfeedEmailSettings(state) {
+    const settings = state.settings || {};
+    const session = loadAuthSession();
+    const fallbackEmail = session && session.user && !session.user.email_is_generated ? session.user.email : "";
+    const email = settings.digest_email || fallbackEmail || "";
+    const enabled = Boolean(settings.digest_email_enabled);
+    const newsletterTopicId = enabled ? String(settings.newsletter_topic_id || "global-daily") : "";
+    const providerNote = settings.email_provider_configured === false
+      ? (state.interfaceLanguage === "zh-CN"
+        ? "邮件服务还没配置好，请先配置 Brevo API key。"
+        : "Email sender is not configured yet. Add the Brevo API key first.")
+      : (settings.email_provider === "brevo"
+        ? (state.interfaceLanguage === "zh-CN"
+          ? "Brevo 邮件服务已连接；保存后可立即发送 newsletter。"
+          : "Brevo email is connected. Save, then send a newsletter now.")
+        : (state.interfaceLanguage === "zh-CN"
+          ? "Cloudflare 邮件服务已连接；保存后可立即发送 newsletter。"
+          : "Cloudflare email is connected. Save, then send a newsletter now."));
+    const lastStatus = newsfeedEmailLastStatus(settings);
+    return `
+      <section class="news-email-settings">
+        <div class="news-email-copy">
+          <h2>${escapeHtml(newsfeedText(state, "digestEmail"))}</h2>
+          <p>${state.interfaceLanguage === "zh-CN" ? "每天定点发送最新摘要到邮箱。" : "Send the latest Daily Digest to your inbox once a day."}</p>
+        </div>
+        <form id="newsEmailForm" class="news-email-form">
+          <label>${escapeHtml(newsfeedText(state, "email"))}
+            <input id="newsEmailInput" type="email" autocomplete="email" value="${escapeHtml(email)}" readonly aria-readonly="true">
+          </label>
+          <label>${escapeHtml(newsfeedText(state, "newsletterTopic"))}
+            <select id="newsNewsletterTopic">${newsfeedNewsletterOptions(state, newsletterTopicId)}</select>
+          </label>
+          <label>${escapeHtml(newsfeedText(state, "sendTime"))}
+            <input id="newsEmailTime" type="time" value="${escapeHtml(settings.digest_send_time || "09:00")}">
+          </label>
+          <label>${escapeHtml(newsfeedText(state, "timezone"))}
+            <select id="newsEmailTimezone">${newsfeedTimezoneOptions(settings.digest_timezone || "Asia/Shanghai")}</select>
+          </label>
+          <label>${escapeHtml(newsfeedText(state, "language"))}
+            <select id="newsEmailLanguage">${newsfeedLanguageOptions(settings.digest_language || state.outputLanguage || "en")}</select>
+          </label>
+          <label class="news-toggle-row">
+            <input id="newsEmailEnabled" type="checkbox" ${enabled ? "checked" : ""}>
+            <span>${escapeHtml(newsfeedText(state, "sendDailyDigest"))} · ${state.interfaceLanguage === "zh-CN" ? "每个账号最多订阅一个，可随时取消或替换" : "one newsletter per account; cancel or replace it anytime"}</span>
+          </label>
+          <button id="newsEmailSubmit" class="primary" type="submit">${escapeHtml(newsfeedText(state, "saveEmail"))}</button>
+          <button id="newsEmailSend" class="primary news-email-test" type="button" data-action="send-email-now">${escapeHtml(newsfeedText(state, "sendNewsletterNow"))}</button>
+          <button id="newsEmailTest" class="secondary-button news-email-test" type="button" data-action="send-email-test">${escapeHtml(newsfeedText(state, "sendTestNow"))}</button>
+        </form>
+        <div id="newsEmailStatus" class="status-line" aria-live="polite">${escapeHtml(lastStatus || providerNote)}</div>
+      </section>
+    `;
+  }
+
+  function rememberNewsfeedArticles(state, items = [], topic = null) {
+    for (const item of items || []) {
+      if (!item || !item.id) continue;
+      const id = String(item.id);
+      const outputLanguage = item.output_language || topic && topic.output_language || state.outputLanguage || "en";
+      state.articles.set(id, item);
+      if (state.articleLanguages) state.articleLanguages.set(id, outputLanguage);
+    }
+  }
+
+  function renderNewsfeedSidebar(state) {
+    const list = document.getElementById("newsfeedTopicList");
+    const count = document.getElementById("newsfeedTopicCount");
+    if (!list) return;
+    const topics = [...(state.topics || [])].sort((a, b) => Number(Boolean(b.pinned)) - Number(Boolean(a.pinned)));
+    list.innerHTML = topics.map(newsfeedTopicRow).join("") || '<div class="newsfeed-empty">No topics yet.</div>';
+    if (count) count.textContent = `${topics.length}/${NEWSFEED_TOPIC_LIMIT} topics`;
+  }
+
+  function renderNewsfeedHome(state) {
+    const home = state.home || {};
+    const content = document.getElementById("newsfeedContent");
+    if (!content) return;
+    setNewsfeedTitle(newsfeedText(state, "dailyDigest"));
+    updateNewsfeedTabs("feed");
+    state.currentView = "feed";
+    state.topics = home.topics || state.topics || [];
+    rememberNewsfeedArticles(state, home.highlights || []);
+    rememberNewsfeedArticles(state, home.headlines || []);
+    renderNewsfeedSidebar(state);
+    const category = state.homeCategory || "Investment";
+    const categories = home.categories || ["Investment", "Tech", "Politics", "Industries"];
+    const filtered = (home.headlines || []).filter((item) => !category || item.category === category);
+    const visible = filtered.length ? filtered : (home.headlines || []);
+    content.innerHTML = `
+      <section class="news-digest-panel">
+        <div>
+          <div class="news-section-kicker">${escapeHtml(newsfeedText(state, "dailyDigest"))} <span>${escapeHtml(String(home.digest_count || 0).padStart(2, "0"))}</span></div>
+          <ul>${newsfeedDigestMarkup(home.daily_digest)}</ul>
+        </div>
+        ${newsfeedSourceStack(home.highlights || [])}
+      </section>
+      <section class="newsfeed-section">
+        <div class="newsfeed-section-heading">
+          <h2>${escapeHtml(newsfeedText(state, "topHeadlines"))}</h2>
+          <span>${escapeHtml(home.updated_label || "")}</span>
+        </div>
+        <div class="news-category-tabs">
+          ${categories.map((item) => `
+            <button type="button" data-action="home-category" data-category="${escapeHtml(item)}" class="${item === category ? "is-active" : ""}">${escapeHtml(item)}</button>
+          `).join("")}
+        </div>
+        <div class="news-story-list">
+          ${visible.slice(0, 12).map((item, index) => newsfeedStoryCard(item, index + 1)).join("") || `<div class="newsfeed-empty">${escapeHtml(newsfeedText(state, "noHeadlines"))}</div>`}
+        </div>
+      </section>
+    `;
+  }
+
+  function renderNewsfeedAdd(state) {
+    const content = document.getElementById("newsfeedContent");
+    if (!content) return;
+    const home = state.home || {};
+    const suggestions = home.suggested_topics || [];
+    setNewsfeedTitle(newsfeedText(state, "addTopics"));
+    updateNewsfeedTabs("add");
+    state.currentView = "add";
+    content.innerHTML = `
+      <section class="news-add-panel">
+        <div class="news-add-meta">
+          <strong>${escapeHtml(String((state.topics || []).length))}/${NEWSFEED_TOPIC_LIMIT} topics created</strong>
+          <span>${escapeHtml(newsfeedText(state, "suggestedTopics"))}</span>
+        </div>
+        <div class="news-suggested-list">
+          ${suggestions.map((topic) => `<button type="button" data-action="suggest-topic" data-topic="${escapeHtml(topic)}">${escapeHtml(topic)}</button>`).join("")}
+        </div>
+        <div class="news-language-row">
+          <label for="newsTopicLanguage">${escapeHtml(newsfeedText(state, "outputLanguage"))}</label>
+          <select id="newsTopicLanguage">
+            ${newsfeedLanguageOptions(state.outputLanguage || "en")}
+          </select>
+        </div>
+        <div id="newsTopicStatus" class="status-line" aria-live="polite"></div>
+        <form id="newsTopicForm" class="news-topic-form">
+          <textarea id="newsTopicInput" rows="4" placeholder="Type any topic you want to follow"></textarea>
+          <button id="newsTopicSubmit" class="primary" type="submit" aria-label="Create topic">↑</button>
+        </form>
+        ${renderNewsfeedEmailSettings(state)}
+      </section>
+    `;
+  }
+
+  function renderNewsfeedExplore(state) {
+    const content = document.getElementById("newsfeedContent");
+    if (!content) return;
+    const explore = state.explore || {};
+    const categories = explore.categories || ["Tech", "Industries", "Investment", "Politics"];
+    const category = state.exploreCategory || categories[0] || "";
+    const items = (explore.items || []).filter((item) => !category || item.category === category);
+    rememberNewsfeedArticles(state, explore.items || []);
+    setNewsfeedTitle(newsfeedText(state, "explore"));
+    updateNewsfeedTabs("explore");
+    state.currentView = "explore";
+    content.innerHTML = `
+      <section class="newsfeed-section">
+        <div class="news-category-tabs news-category-tabs-large">
+          ${categories.map((item) => `
+            <button type="button" data-action="explore-category" data-category="${escapeHtml(item)}" class="${item === category ? "is-active" : ""}">${escapeHtml(item)}</button>
+          `).join("")}
+        </div>
+        <div class="news-story-list news-story-list-cards">
+          ${items.slice(0, 24).map((item, index) => newsfeedStoryCard(item, index + 1)).join("") || '<div class="newsfeed-empty">No stories yet.</div>'}
+        </div>
+      </section>
+    `;
+  }
+
+  function renderNewsfeedEmailView(state) {
+    const content = document.getElementById("newsfeedContent");
+    if (!content) return;
+    setNewsfeedTitle(newsfeedText(state, "digestEmail"));
+    updateNewsfeedTabs("email");
+    state.currentView = "email";
+    content.innerHTML = renderNewsfeedEmailSettings(state);
+  }
+
+  function renderNewsfeedTopic(state, topic, items) {
+    const content = document.getElementById("newsfeedContent");
+    if (!content) return;
+    rememberNewsfeedArticles(state, items || [], topic);
+    setNewsfeedTitle(topic && topic.title || "Topic");
+    updateNewsfeedTabs("topic");
+    state.currentView = "topic";
+    state.currentTopic = topic;
+    state.currentTopicItems = items || [];
+    content.innerHTML = `
+      <section class="news-topic-hero">
+        <div>
+          <span class="news-topic-mark">“</span>
+          <h2>${escapeHtml(topic && topic.title || "Topic")}</h2>
+          <p>${escapeHtml(topic && topic.description || "")}</p>
+        </div>
+        <div class="news-topic-source-line">
+          <span>Sources</span>
+          ${newsfeedSourceStack(items || [])}
+        </div>
+      </section>
+      <section class="newsfeed-section">
+        <div class="newsfeed-section-heading">
+          <h2>Top Stories</h2>
+          <span>${escapeHtml(topic && topic.updated_label || "")}</span>
+        </div>
+        <div class="news-story-list news-story-list-cards">
+          ${(items || []).slice(0, 24).map((item, index) => newsfeedStoryCard(item, index + 1, { featured: index === 0 })).join("") || '<div class="newsfeed-empty">No stories yet.</div>'}
+        </div>
+      </section>
+    `;
+  }
+
+  async function renderNewsfeedArticle(state, article) {
+    const content = document.getElementById("newsfeedContent");
+    if (!content || !article) return;
+    state.currentView = "article";
+    setNewsfeedTitle("Story");
+    updateNewsfeedTabs("article");
+    content.innerHTML = `
+      <article class="news-article-detail">
+        <button class="news-icon-button" type="button" data-action="article-back" aria-label="Back">‹</button>
+        <header>
+          <div>
+            <h2>${escapeHtml(article.title || "Untitled")}</h2>
+            <p>${escapeHtml(newsfeedStoryMeta(article))}</p>
+          </div>
+          ${article.image_url ? `<img src="${escapeHtml(article.image_url)}" alt="">` : newsfeedLogoMarkup(article)}
+        </header>
+        <div class="news-article-source">
+          ${newsfeedLogoMarkup(article)}
+          <span>${escapeHtml(newsfeedSourceName(article))}</span>
+          ${article.url ? `<a href="${escapeHtml(article.url)}" target="_blank" rel="noopener noreferrer">Source</a>` : ""}
+        </div>
+        <div class="news-article-tabs">
+          <button type="button" class="is-active">Narrative</button>
+          <button type="button">Structured</button>
+        </div>
+        <section class="news-article-stream">
+          <h3>Summary</h3>
+          <div id="newsArticleSummary" class="news-stream-text"></div>
+          <h3>Narrative</h3>
+          <div id="newsArticleNarrative" class="news-stream-text"></div>
+        </section>
+      </article>
+    `;
+    await streamNewsfeedArticle(state.workerUrl, article);
+  }
+
+  async function streamNewsfeedArticle(workerUrl, article) {
+    const summary = document.getElementById("newsArticleSummary");
+    const narrative = document.getElementById("newsArticleNarrative");
+    if (!summary || !narrative) return;
+    summary.textContent = "Generating summary...";
+    narrative.textContent = "Writing narrative...";
+    try {
+      const response = await fetch(`${workerUrl}/newsfeed/article`, {
+        method: "POST",
+        cache: "no-store",
+        headers: { "Content-Type": "application/json", ...authHeaders() },
+        body: JSON.stringify({ article }),
+      });
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data.detail || "Could not load story.");
+      }
+      if (!response.body) {
+        const data = await response.json();
+        summary.textContent = data.summary || "";
+        narrative.textContent = data.narrative || "";
+        return;
+      }
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = "";
+      summary.textContent = "";
+      narrative.textContent = "";
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split("\n");
+        buffer = lines.pop() || "";
+        for (const line of lines) {
+          if (!line.trim()) continue;
+          const event = JSON.parse(line);
+          if (event.type === "summary") summary.textContent += event.text || "";
+          if (event.type === "narrative") narrative.textContent += event.text || "";
+        }
+      }
+    } catch (error) {
+      narrative.textContent = error.message || "Could not load story.";
+    }
+  }
+
+  function newsfeedBriefingItems(state) {
+    if (state.currentView === "topic") return state.currentTopicItems || [];
+    if (state.currentView === "explore") return state.explore && state.explore.items || [];
+    return state.home && state.home.headlines || [];
+  }
+
+  function renderNewsfeedBriefingPanel(state, options = {}) {
+    const panel = document.getElementById("newsBriefingPanel");
+    if (!panel) return;
+    const items = newsfeedBriefingItems(state).slice(0, 5);
+    const first = items[0] || {};
+    const progress = Math.max(0, Math.min(100, options.progress || 0));
+    panel.hidden = false;
+    panel.innerHTML = `
+      <div class="news-briefing-head">
+        <div>
+          <strong>${escapeHtml(options.countText || "0/5 stories listened today")}</strong>
+          <span>${escapeHtml(options.status || newsfeedText(state, "playBriefing"))}</span>
+        </div>
+        <button class="news-icon-button" type="button" data-action="close-briefing" aria-label="Close">×</button>
+      </div>
+      <div class="news-briefing-now">
+        <div>
+          <span>${escapeHtml(newsfeedText(state, "nowPlaying"))}</span>
+          <h2>${escapeHtml(first.title || newsfeedText(state, "dailyDigest"))}</h2>
+          ${first.id ? `<button type="button" data-action="open-article" data-id="${escapeHtml(first.id)}">${escapeHtml(newsfeedText(state, "readStory"))}</button>` : ""}
+        </div>
+        ${first.image_url ? `<img src="${escapeHtml(first.image_url)}" alt="">` : newsfeedLogoMarkup(first)}
+      </div>
+      <div class="news-briefing-playlist">
+        <h3>${escapeHtml(newsfeedText(state, "playlist"))}</h3>
+        ${items.slice(0, 4).map((item) => `
+          <button type="button" data-action="open-article" data-id="${escapeHtml(item.id || "")}">
+            <span>${escapeHtml(item.title || "Story")}</span>
+            ${item.image_url ? `<img src="${escapeHtml(item.image_url)}" alt="">` : ""}
+          </button>
+        `).join("")}
+      </div>
+      <div class="news-briefing-player">
+        <div class="news-briefing-progress"><span style="width:${progress}%"></span></div>
+        <div class="news-briefing-controls">
+          <button type="button" data-action="briefing-prev">‹</button>
+          <button type="button" data-action="play-briefing" class="is-primary">${options.playing ? "❚❚" : "▶"}</button>
+          <button type="button" data-action="briefing-next">›</button>
+        </div>
+        <small>${escapeHtml(options.voiceLabel || "browser speech")}</small>
+      </div>
+    `;
+  }
+
+  function stopNewsfeedBriefing(state) {
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+    if (state.briefingTimer) window.clearInterval(state.briefingTimer);
+    state.briefingTimer = null;
+    state.briefingPlaying = false;
+    const button = document.getElementById("newsBriefingButton");
+    if (button) {
+      button.classList.remove("is-playing", "is-loading");
+      button.innerHTML = "▥ ▶";
+    }
+  }
+
+  async function playNewsfeedBriefing(state) {
+    const button = document.getElementById("newsBriefingButton");
+    if (state.briefingPlaying) {
+      stopNewsfeedBriefing(state);
+      renderNewsfeedBriefingPanel(state, { status: "Paused", progress: state.briefingProgress || 0 });
+      return;
+    }
+    const items = newsfeedBriefingItems(state).slice(0, 8);
+    if (!items.length) {
+      renderNewsfeedBriefingPanel(state, { status: "No stories ready yet" });
+      return;
+    }
+    if (button) {
+      button.classList.add("is-loading");
+      button.innerHTML = "▥ …";
+    }
+    renderNewsfeedBriefingPanel(state, { status: "Preparing audio briefing...", playing: true });
+    try {
+      const data = await newsfeedJson(state.workerUrl, "/newsfeed/briefing", {
+        method: "POST",
+        body: JSON.stringify({
+          language: state.interfaceLanguage || state.outputLanguage || "en",
+          digest: state.home && state.home.daily_digest || [],
+          items,
+        }),
+      });
+      const script = data.script || "";
+      state.briefingScript = script;
+      state.briefingProgress = 0;
+      if (!("speechSynthesis" in window) || !script) {
+        renderNewsfeedBriefingPanel(state, { status: script || "Audio is not available in this browser.", progress: 100 });
+        return;
+      }
+      stopNewsfeedBriefing(state);
+      const utterance = new SpeechSynthesisUtterance(script);
+      utterance.lang = state.interfaceLanguage === "zh-CN" ? "zh-CN" : state.interfaceLanguage || "en-US";
+      utterance.rate = state.interfaceLanguage === "zh-CN" ? 1.05 : 1.08;
+      state.briefingPlaying = true;
+      if (button) {
+        button.classList.remove("is-loading");
+        button.classList.add("is-playing");
+        button.innerHTML = "▥ ❚❚";
+      }
+      const started = Date.now();
+      state.briefingTimer = window.setInterval(() => {
+        state.briefingProgress = Math.min(100, ((Date.now() - started) / 30000) * 100);
+        renderNewsfeedBriefingPanel(state, {
+          status: "Playing 30 sec briefing",
+          progress: state.briefingProgress,
+          playing: true,
+          voiceLabel: data.provider || "browser speech",
+        });
+      }, 800);
+      utterance.onend = () => {
+        stopNewsfeedBriefing(state);
+        state.briefingProgress = 100;
+        renderNewsfeedBriefingPanel(state, { status: "Briefing complete", progress: 100 });
+      };
+      utterance.onerror = () => {
+        stopNewsfeedBriefing(state);
+        renderNewsfeedBriefingPanel(state, { status: script, progress: 100 });
+      };
+      window.speechSynthesis.speak(utterance);
+    } catch (error) {
+      stopNewsfeedBriefing(state);
+      renderNewsfeedBriefingPanel(state, { status: error.message || "Could not prepare briefing." });
+    }
+  }
+
+  async function initNewsfeed() {
+    const app = document.getElementById("newsfeedApp");
+    if (app) renderNewsfeedBoot(app, "Checking account...");
+    const config = await loadOptionalJson("data/config.json", {});
+    const workerUrl = workerBaseUrl(config);
+    initAccountGate(workerUrl);
+    initAdminGate(workerUrl);
+    initNewsfeedNav();
+
+    if (!app) return;
+    let session = loadAuthSession();
+    renderNewsfeedBoot(app, "Checking Newsfeed access...");
+    session = await refreshAuthSession(workerUrl);
+    if (!isNewsfeedSession(session)) {
+      renderNewsfeedAccess(app, workerUrl);
+      return;
+    }
+
+    const state = {
+      workerUrl,
+      home: null,
+      explore: null,
+      settings: null,
+      topics: [],
+      articles: new Map(),
+      articleLanguages: new Map(),
+      currentView: "feed",
+      lastListView: "feed",
+      homeCategory: "Investment",
+      exploreCategory: "Tech",
+      outputLanguage: "en",
+      interfaceLanguage: "en",
+      preferredRegions: ["global"],
+      preferencesReady: false,
+      regionOptions: [],
+      briefingPlaying: false,
+      briefingProgress: 0,
+      briefingTimer: null,
+    };
+
+    app.innerHTML = newsfeedShellMarkup();
+    refreshNewsfeedChrome(state);
+    trackEvent(workerUrl, "page_view", { page: "newsfeed" });
+
+    async function loadHome() {
+      renderNewsfeedContentLoading(newsfeedText(state, "loadingLatest"), "home");
+      const query = newsfeedPreferenceQuery(state);
+      const fast = await newsfeedJson(workerUrl, `/newsfeed/home?fast=1&${query}`);
+      state.home = fast;
+      state.regionOptions = fast.regions || state.regionOptions || [];
+      state.topics = fast.topics || [];
+      applyNewsfeedSettings(state, fast.settings || state.settings || {});
+      refreshNewsfeedChrome(state);
+      renderNewsfeedHome(state);
+      setNewsfeedStatus(fast.pending ? newsfeedText(state, "updating") : "", fast.pending ? "loading" : "");
+      newsfeedJson(workerUrl, `/newsfeed/home?${newsfeedPreferenceQuery(state)}`)
+        .then((data) => {
+          state.home = data;
+          state.regionOptions = data.regions || state.regionOptions || [];
+          state.topics = data.topics || state.topics || [];
+          applyNewsfeedSettings(state, data.settings || state.settings || {});
+          refreshNewsfeedChrome(state);
+          setNewsfeedStatus("");
+          if (state.currentView === "feed") renderNewsfeedHome(state);
+          else renderNewsfeedSidebar(state);
+        })
+        .catch((error) => setNewsfeedStatus(error.message || "Newsfeed request failed.", "error"));
+    }
+
+    async function loadExplore(category = state.exploreCategory) {
+      renderNewsfeedContentLoading("Loading explore...", "explore");
+      const data = await newsfeedJson(workerUrl, `/newsfeed/explore?category=${encodeURIComponent(category || "")}&${newsfeedPreferenceQuery(state)}`);
+      state.explore = data;
+      state.regionOptions = data.regions || state.regionOptions || [];
+      state.exploreCategory = category || (data.categories && data.categories[0]) || "";
+      state.topics = data.topics || state.topics || [];
+      setNewsfeedStatus("");
+      refreshNewsfeedChrome(state);
+      renderNewsfeedSidebar(state);
+      renderNewsfeedExplore(state);
+    }
+
+    async function loadTopic(id) {
+      renderNewsfeedContentLoading("Preparing topic package...", "topic");
+      const data = await newsfeedJson(workerUrl, `/newsfeed/topic?id=${encodeURIComponent(id)}&${newsfeedPreferenceQuery(state)}`);
+      state.topics = data.topics || state.topics || [];
+      setNewsfeedStatus("");
+      refreshNewsfeedChrome(state);
+      renderNewsfeedSidebar(state);
+      renderNewsfeedTopic(state, data.topic, data.items || []);
+    }
+
+    async function reloadCurrentNewsfeed() {
+      if (state.currentView === "explore") return loadExplore(state.exploreCategory);
+      if (state.currentView === "topic" && state.currentTopic) return loadTopic(state.currentTopic.id);
+      if (state.currentView === "email") {
+        renderNewsfeedEmailView(state);
+        return null;
+      }
+      return loadHome();
+    }
+
+    async function saveNewsfeedPreferences(reload = true) {
+      state.preferencesReady = true;
+      refreshNewsfeedChrome(state);
+      const data = await newsfeedJson(workerUrl, "/newsfeed/settings", {
+        method: "POST",
+        body: JSON.stringify({
+          preferred_regions: state.preferredRegions,
+          interface_language: state.interfaceLanguage,
+        }),
+      });
+      applyNewsfeedSettings(state, data.settings || state.settings || {});
+      refreshNewsfeedChrome(state);
+      if (reload) await reloadCurrentNewsfeed();
+    }
+
+    function closeSidebar() {
+      const sidebar = document.getElementById("newsfeedSidebar");
+      if (sidebar) sidebar.classList.remove("is-open");
+    }
+
+    app.addEventListener("click", async (event) => {
+      const control = event.target.closest("[data-action]");
+      if (!control) return;
+      const action = control.dataset.action;
+      try {
+        if (action === "toggle-sidebar") {
+          document.getElementById("newsfeedSidebar")?.classList.toggle("is-open");
+          return;
+        }
+        if (action === "show-feed") {
+          closeSidebar();
+          if (!state.home) await loadHome();
+          else renderNewsfeedHome(state);
+          return;
+        }
+        if (action === "show-add") {
+          closeSidebar();
+          renderNewsfeedAdd(state);
+          return;
+        }
+        if (action === "show-explore") {
+          closeSidebar();
+          await loadExplore();
+          return;
+        }
+        if (action === "show-email") {
+          closeSidebar();
+          renderNewsfeedEmailView(state);
+          return;
+        }
+        if (action === "send-email-test" || action === "send-email-now") {
+          const isTest = action === "send-email-test";
+          const status = document.getElementById("newsEmailStatus");
+          const button = document.getElementById(isTest ? "newsEmailTest" : "newsEmailSend");
+          if (status) {
+            status.className = "status-line";
+            status.textContent = isTest ? "Sending test digest email..." : "Sending newsletter digest...";
+          }
+          if (button) {
+            button.disabled = true;
+            button.classList.add("is-loading");
+            button.textContent = "Sending...";
+          }
+          const data = await newsfeedJson(workerUrl, isTest ? "/newsfeed/email-test" : "/newsfeed/email-send", {
+            method: "POST",
+            body: JSON.stringify(newsfeedEmailPayloadFromForm(state)),
+          });
+          applyNewsfeedSettings(state, data.settings || state.settings || {});
+          renderNewsfeedEmailView(state);
+          const nextStatus = document.getElementById("newsEmailStatus");
+          if (nextStatus) {
+            nextStatus.className = data.sent ? "status-line ok" : "status-line error";
+            const idSuffix = data.message_id ? ` (${data.message_id})` : "";
+            nextStatus.textContent = data.sent
+              ? (isTest
+                ? `Test digest accepted by ${data.provider || "email provider"}.${idSuffix}`
+                : `Newsletter accepted by ${data.provider || "email provider"}.${idSuffix}`)
+              : (data.detail || state.settings.digest_last_send_detail || (isTest ? "Test email was not sent." : "Newsletter email was not sent."));
+          }
+          return;
+        }
+        if (action === "toggle-region-menu") {
+          const menu = document.getElementById("newsRegionMenu");
+          const toggle = document.getElementById("newsRegionToggle");
+          if (menu) {
+            const nextHidden = !menu.hidden ? true : false;
+            menu.hidden = nextHidden;
+            if (toggle) toggle.setAttribute("aria-expanded", String(!nextHidden));
+          }
+          return;
+        }
+        if (action === "play-briefing") {
+          await playNewsfeedBriefing(state);
+          return;
+        }
+        if (action === "close-briefing") {
+          stopNewsfeedBriefing(state);
+          const panel = document.getElementById("newsBriefingPanel");
+          if (panel) panel.hidden = true;
+          return;
+        }
+        if (action === "briefing-prev" || action === "briefing-next") {
+          renderNewsfeedBriefingPanel(state, {
+            status: state.briefingScript || newsfeedText(state, "playBriefing"),
+            progress: state.briefingProgress || 0,
+            playing: state.briefingPlaying,
+          });
+          return;
+        }
+        if (action === "home-category") {
+          state.homeCategory = control.dataset.category || "";
+          renderNewsfeedHome(state);
+          return;
+        }
+        if (action === "explore-category") {
+          state.exploreCategory = control.dataset.category || "";
+          renderNewsfeedExplore(state);
+          return;
+        }
+        if (action === "suggest-topic") {
+          const input = document.getElementById("newsTopicInput");
+          if (input) input.value = control.dataset.topic || "";
+          return;
+        }
+        if (action === "open-topic") {
+          closeSidebar();
+          await loadTopic(control.dataset.id || "");
+          return;
+        }
+        if (action === "pin-topic") {
+          const id = control.dataset.id || "";
+          const topic = (state.topics || []).find((item) => String(item.id) === id);
+          const pinned = !(topic && topic.pinned);
+          await newsfeedJson(workerUrl, "/newsfeed/topics/pin", {
+            method: "POST",
+            body: JSON.stringify({ id, pinned }),
+          });
+          if (topic) topic.pinned = pinned;
+          renderNewsfeedSidebar(state);
+          return;
+        }
+        if (action === "open-article") {
+          const id = String(control.dataset.id || "");
+          const article = state.articles.get(id);
+          state.lastListView = state.currentView === "article" ? state.lastListView : state.currentView;
+          await renderNewsfeedArticle(state, article ? { ...article, output_language: state.articleLanguages.get(id) || state.outputLanguage || "en" } : article);
+          return;
+        }
+        if (action === "article-back") {
+          if (state.lastListView === "explore") renderNewsfeedExplore(state);
+          else if (state.lastListView === "topic") renderNewsfeedTopic(state, state.currentTopic, state.currentTopicItems);
+          else renderNewsfeedHome(state);
+        }
+      } catch (error) {
+        setNewsfeedStatus(error.message || "Newsfeed request failed.", "error");
+      }
+    });
+
+    app.addEventListener("submit", async (event) => {
+      if (event.target && event.target.id === "newsTopicForm") {
+        event.preventDefault();
+        const input = document.getElementById("newsTopicInput");
+        const language = document.getElementById("newsTopicLanguage");
+        const status = document.getElementById("newsTopicStatus");
+        const submit = document.getElementById("newsTopicSubmit");
+        const topic = input ? input.value.trim() : "";
+        if (!topic) return;
+        const outputLanguage = language ? language.value : "en";
+        state.outputLanguage = outputLanguage || "en";
+        if (status) {
+          status.className = "status-line";
+          status.textContent = "Creating topic package...";
+        }
+        if (submit) {
+          submit.disabled = true;
+          submit.classList.add("is-loading");
+          submit.textContent = "…";
+        }
+        try {
+          const data = await newsfeedJson(workerUrl, "/newsfeed/topics", {
+            method: "POST",
+            body: JSON.stringify({ topic, output_language: outputLanguage, preferred_regions: state.preferredRegions }),
+          });
+          state.topics = data.topics || state.topics || [];
+          renderNewsfeedSidebar(state);
+          renderNewsfeedTopic(state, data.topic, data.items || []);
+          setNewsfeedStatus(data.pending ? "Topic created. Stories are loading; open it again in a moment." : "", data.pending ? "ok" : "");
+        } catch (error) {
+          if (status) {
+            status.className = "status-line error";
+            status.textContent = error.message || "Could not create topic.";
+          }
+        } finally {
+          if (submit) {
+            submit.disabled = false;
+            submit.classList.remove("is-loading");
+          submit.textContent = "↑";
+          }
+        }
+      }
+      if (event.target && event.target.id === "newsCustomRegionForm") {
+        event.preventDefault();
+        const input = document.getElementById("newsCustomRegionInput");
+        const value = input ? input.value.trim() : "";
+        if (!value) return;
+        state.preferredRegions = normalizeNewsfeedRegionsClient([...(state.preferredRegions || []), value]);
+        if (input) input.value = "";
+        await saveNewsfeedPreferences(true);
+      }
+      if (event.target && event.target.id === "newsEmailForm") {
+        event.preventDefault();
+        const status = document.getElementById("newsEmailStatus");
+        const submit = document.getElementById("newsEmailSubmit");
+        const payload = newsfeedEmailPayloadFromForm(state);
+        if (status) {
+          status.className = "status-line";
+          status.textContent = "Saving digest email settings...";
+        }
+        if (submit) {
+          submit.disabled = true;
+          submit.classList.add("is-loading");
+          submit.textContent = "Saving...";
+        }
+        try {
+          const data = await newsfeedJson(workerUrl, "/newsfeed/settings", {
+            method: "POST",
+            body: JSON.stringify(payload),
+          });
+          state.settings = data.settings || state.settings || {};
+          if (status) {
+            status.className = "status-line ok";
+            status.textContent = state.settings.email_provider_configured === false
+              ? "Settings saved. Email delivery starts after the email sender is configured."
+              : (state.settings.digest_email_enabled
+                ? "Newsletter subscription saved. It will be sent at the selected time."
+                : "Newsletter subscription canceled.");
+          }
+        } catch (error) {
+          if (status) {
+            status.className = "status-line error";
+            status.textContent = error.message || "Could not save email settings.";
+          }
+        } finally {
+          if (submit) {
+            submit.disabled = false;
+            submit.classList.remove("is-loading");
+            submit.textContent = newsfeedText(state, "saveEmail");
+          }
+        }
+      }
+    });
+
+    app.addEventListener("change", async (event) => {
+      const target = event.target;
+      try {
+        if (target && target.dataset && target.dataset.action === "region-checkbox") {
+          const selected = Array.from(document.querySelectorAll("[data-action='region-checkbox']:checked"))
+            .map((item) => item.value);
+          state.preferredRegions = normalizeNewsfeedRegionsClient(selected);
+          await saveNewsfeedPreferences(true);
+        }
+        if (target && target.id === "newsInterfaceLanguage") {
+          state.interfaceLanguage = newsfeedLanguageCode(target.value || "en");
+          state.outputLanguage = state.interfaceLanguage;
+          await saveNewsfeedPreferences(true);
+        }
+        if (target && target.id === "newsTopicLanguage") {
+          state.outputLanguage = newsfeedLanguageCode(target.value || "en");
+        }
+        if (target && target.id === "newsNewsletterTopic") {
+          const enabled = document.getElementById("newsEmailEnabled");
+          if (enabled) enabled.checked = Boolean(target.value);
+        }
+        if (target && target.id === "newsEmailEnabled" && target.checked) {
+          const topic = document.getElementById("newsNewsletterTopic");
+          if (topic && !topic.value) topic.value = "global-daily";
+        }
+      } catch (error) {
+        setNewsfeedStatus(error.message || "Could not save preferences.", "error");
+      }
+    });
+
+    await loadHome();
+  }
+
+  async function initDelivery() {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+    const password = deliveryPasswordFromLocation(params);
+    const target = document.getElementById("delivery");
+    if (!id || !password) {
+      target.innerHTML = '<div class="error-state">Delivery link is incomplete.</div>';
+      return;
+    }
+    const targetUrl = deliveryPageUrl(id, password);
+    target.innerHTML = `
+      <div>
+        <h1 class="detail-title">Opening report...</h1>
+        <p class="subtle">This delivery link now opens the report page directly.</p>
+      </div>
+      <div class="delivery-actions">
+        <a class="primary-link" href="${escapeHtml(targetUrl)}">Open report</a>
+      </div>
+    `;
+    window.location.replace(targetUrl);
+  }
+
+  function blogMarketViewDateLabel(value) {
+    const text = String(value || "");
+    const match = text.match(/^(20\d{2})-(\d{2})-(\d{2})$/);
+    return match ? `${match[1]}-${match[2]}-${match[3]}` : text;
+  }
+
+  function blogMarketViewCard(item) {
+    const date = blogMarketViewDateLabel(item && item.date);
+    const size = formatSize(item && item.size_bytes);
+    return `
+      <article class="blog-market-view-card">
+        <time datetime="${escapeHtml(date)}">${escapeHtml(date || "每日更新")}</time>
+        <strong>${escapeHtml(item && item.title || "Market Views")}</strong>
+        ${size ? `<span class="subtle">PDF · ${escapeHtml(size)}</span>` : '<span class="subtle">PDF</span>'}
+        <button class="secondary-button blog-market-view-download" type="button" data-market-view-id="${escapeHtml(item && item.id || "")}">下载 PDF</button>
+      </article>
+    `;
+  }
+
+  async function initBlog() {
+    const workerUrl = "/api";
+    const list = document.getElementById("blogMarketViewsList");
+    const accessStatus = document.getElementById("blogMarketViewsAccess");
+    initAccountGate(workerUrl);
+    if (!list || !accessStatus) return;
+
+    function setAccessStatus(text, kind = "") {
+      accessStatus.className = kind ? `status-line ${kind}` : "status-line";
+      accessStatus.textContent = text || "";
+    }
+
+    async function refreshAccess() {
+      if (!loadAuthSession()) {
+        setAccessStatus("登录后可下载；开通时长至少 1 个月的任意会员均可使用。", "");
+        return;
+      }
+      setAccessStatus("正在核验会员资格…", "");
+      try {
+        const response = await fetch(`${workerUrl}/market-views/access`, {
+          cache: "no-store",
+          headers: authHeaders(),
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(data.detail || "会员资格核验失败。");
+        setAccessStatus(data.can_download
+          ? "当前账号可下载 Market Views PDF。"
+          : "Market Views PDF 面向开通时长至少 1 个月的会员。", data.can_download ? "ok" : "");
+      } catch (error) {
+        setAccessStatus(error.message || "会员资格核验失败。", "error");
+      }
+    }
+
+    async function loadMarketViews() {
+      try {
+        const response = await fetch(`${workerUrl}/market-views`, { cache: "no-store" });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(data.detail || "每日 PDF 读取失败。");
+        const items = Array.isArray(data.items) ? data.items : [];
+        list.innerHTML = items.length
+          ? items.map(blogMarketViewCard).join("")
+          : '<div class="empty-state">今日 Market Views PDF 正在准备中。</div>';
+      } catch (error) {
+        list.innerHTML = `<div class="error-state">${escapeHtml(error.message || "每日 PDF 暂时无法读取。")}</div>`;
+      }
+    }
+
+    list.addEventListener("click", async (event) => {
+      const button = event.target.closest("button[data-market-view-id]");
+      if (!button) return;
+      if (!loadAuthSession()) {
+        setAccessStatus("请先注册或登录。", "error");
+        showAccountModal(workerUrl);
+        return;
+      }
+      const id = String(button.dataset.marketViewId || "");
+      if (!id) return;
+      button.disabled = true;
+      setAccessStatus("正在准备 PDF…", "");
+      try {
+        const response = await fetch(`${workerUrl}/market-views/pdf?id=${encodeURIComponent(id)}`, {
+          cache: "no-store",
+          headers: authHeaders(),
+        });
+        if (!response.ok) {
+          const data = await response.json().catch(() => ({}));
+          throw new Error(data.detail || "PDF 下载失败。");
+        }
+        triggerBlobDownload(
+          await response.blob(),
+          response.headers.get("Content-Disposition"),
+          `${id.replace(/[^a-z0-9-]+/gi, "-") || "market-views"}.pdf`,
+        );
+        setAccessStatus("PDF 下载已开始。", "ok");
+      } catch (error) {
+        setAccessStatus(error.message || "PDF 下载失败。", "error");
+      } finally {
+        button.disabled = false;
+      }
+    });
+
+    document.addEventListener("portal-auth-change", refreshAccess);
+    await Promise.all([loadMarketViews(), refreshAccess()]);
+  }
+
+  const boot = page === "report"
+    ? initReport
+    : page === "external"
+      ? initExternalDetail
+      : page === "delivery"
+        ? initDelivery
+        : page === "activity"
+          ? initAnalyticsHistory
+          : page === "newsfeed"
+            ? initNewsfeed
+            : page === "blog"
+              ? initBlog
+            : initIndex;
+  boot().catch((error) => {
+    const target = page === "report"
+      ? document.getElementById("detail")
+      : page === "external"
+        ? document.getElementById("externalDetail")
+        : page === "delivery"
+          ? document.getElementById("delivery")
+          : page === "activity"
+            ? document.getElementById("analyticsHistoryResults")
+            : page === "newsfeed"
+              ? document.getElementById("newsfeedApp")
+              : page === "blog"
+                ? document.getElementById("blogMarketViewsList")
+              : document.getElementById("results");
+    if (target) target.innerHTML = `<div class="error-state">${escapeHtml(error.message)}</div>`;
+  });
+}());

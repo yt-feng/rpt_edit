@@ -1,0 +1,896 @@
+name: Final PDF to XHS notes
+
+on:
+  workflow_dispatch:
+    inputs:
+      dropbox_root:
+        description: "Dropbox root folder containing date-named backup folders"
+        required: true
+        default: "/zip_backup"
+      model:
+        description: "DeepSeek model for report classification and content generation"
+        required: true
+        default: "deepseek-v4-flash"
+      deepseek_base_url:
+        description: "DeepSeek API base URL"
+        required: true
+        default: "https://api.deepseek.com"
+      mineru_model:
+        description: "MinerU model_version, usually vlm or pipeline"
+        required: true
+        default: "vlm"
+      language:
+        description: "MinerU OCR language code, e.g. en, ch, ch_server"
+        required: true
+        default: "en"
+      ocr:
+        description: "Enable OCR for scanned/image PDFs"
+        required: true
+        default: "true"
+      shard_count:
+        description: "Parallel shard count. 40 shards x 5 reports covers 200 reports."
+        required: true
+        default: "40"
+      reports_per_shard:
+        description: "Max reports each shard processes"
+        required: true
+        default: "5"
+      batch_size:
+        description: "How many PDFs to send to MinerU per batch inside each shard"
+        required: true
+        default: "5"
+      force_reprocess:
+        description: "Overwrite existing shard outputs for the latest Dropbox folder"
+        required: true
+        type: boolean
+        default: false
+      max_total_reports:
+        description: "Max reports after selection. 0 means all selected candidates."
+        required: true
+        default: "0"
+      report_selection_mode:
+        description: "Report selection mode: all publishes every downloaded PDF; macro keeps only macro/trend reports."
+        required: true
+        default: "all"
+      wechat_length:
+        description: "Target Chinese character count for WeChat article"
+        required: true
+        default: "1200"
+      community_cta:
+        description: "CTA style hint; DeepSeek rewrites it naturally for each article"
+        required: true
+        default: "更新信息参见portal.example.invalid"
+      podcast_minutes:
+        description: "Target length for Chinese and English podcast scripts. Audio/video are disabled here."
+        required: true
+        default: "5"
+      translated_report_count:
+        description: "Number of Portal translated Chinese PDF reports to render after shard generation. Use all for every successful MinerU report; 0 disables it."
+        required: true
+        default: "all"
+      wechat_draft_upload:
+        description: "Upload generated report articles into WeChat Official Account drafts. Requires WECHAT_MP_APPID/WECHAT_MP_APPSECRET."
+        required: true
+        type: boolean
+        default: true
+      wechat_draft_source:
+        description: "xhs_notes uploads generated wechat_article.md immediately; portal_translated waits for rendered Portal translated reports."
+        required: true
+        default: "xhs_notes"
+      wechat_freepublish:
+        description: "Submit created WeChat drafts for publishing after upload. Requires WeChat freepublish API permission."
+        required: true
+        type: boolean
+        default: false
+      wechat_draft_articles_per_draft:
+        description: "Number of articles in each WeChat draft item."
+        required: true
+        default: "8"
+      wechat_draft_max_body_chars:
+        description: "Approximate visible Chinese character budget for each WeChat draft article."
+        required: true
+        default: "1200"
+      wechat_draft_min_inline_images:
+        description: "Minimum body images per WeChat draft article; xhs_notes uses report images, portal_translated can fill missing slots."
+        required: true
+        default: "3"
+      wechat_draft_max_inline_images:
+        description: "Max body images uploaded into each WeChat draft article."
+        required: true
+        default: "3"
+      commit_results:
+        description: "Legacy compatibility switch. Generated/private outputs are never committed to the public repo."
+        required: true
+        type: boolean
+        default: false
+  schedule:
+    # 18:00 UTC = 02:00 Asia/Shanghai. Dropbox reports normally arrive by
+    # 00:30, leaving a 90-minute readiness buffer before the long stable run.
+    - cron: "0 18 * * *"
+
+permissions:
+  contents: write
+  actions: write
+
+env:
+  PYTHONUNBUFFERED: "1"
+  PRIVATE_HANDOFF_ROOT: "_private-workflow-handoff/xhs"
+
+concurrency:
+  group: final-pdf-to-xhs-notes
+  cancel-in-progress: false
+
+jobs:
+  resolve-inputs:
+    runs-on: ubuntu-latest
+    outputs:
+      dropbox_root: ${{ steps.vars.outputs.dropbox_root }}
+      model: ${{ steps.vars.outputs.model }}
+      deepseek_base_url: ${{ steps.vars.outputs.deepseek_base_url }}
+      mineru_model: ${{ steps.vars.outputs.mineru_model }}
+      language: ${{ steps.vars.outputs.language }}
+      ocr: ${{ steps.vars.outputs.ocr }}
+      shard_count: ${{ steps.vars.outputs.shard_count }}
+      reports_per_shard: ${{ steps.vars.outputs.reports_per_shard }}
+      batch_size: ${{ steps.vars.outputs.batch_size }}
+      force_reprocess: ${{ steps.vars.outputs.force_reprocess }}
+      max_total_reports: ${{ steps.vars.outputs.max_total_reports }}
+      report_selection_mode: ${{ steps.vars.outputs.report_selection_mode }}
+      wechat_length: ${{ steps.vars.outputs.wechat_length }}
+      community_cta: ${{ steps.vars.outputs.community_cta }}
+      podcast_minutes: ${{ steps.vars.outputs.podcast_minutes }}
+      translated_report_count: ${{ steps.vars.outputs.translated_report_count }}
+      wechat_draft_upload: ${{ steps.vars.outputs.wechat_draft_upload }}
+      wechat_draft_source: ${{ steps.vars.outputs.wechat_draft_source }}
+      wechat_freepublish: ${{ steps.vars.outputs.wechat_freepublish }}
+      wechat_draft_articles_per_draft: ${{ steps.vars.outputs.wechat_draft_articles_per_draft }}
+      wechat_draft_max_body_chars: ${{ steps.vars.outputs.wechat_draft_max_body_chars }}
+      wechat_draft_min_inline_images: ${{ steps.vars.outputs.wechat_draft_min_inline_images }}
+      wechat_draft_max_inline_images: ${{ steps.vars.outputs.wechat_draft_max_inline_images }}
+      commit_results: ${{ steps.vars.outputs.commit_results }}
+    steps:
+      - name: Resolve workflow inputs
+        id: vars
+        run: |
+          echo "dropbox_root=${{ github.event.inputs.dropbox_root || '/zip_backup' }}" >> "$GITHUB_OUTPUT"
+          echo "model=${{ github.event.inputs.model || 'deepseek-v4-flash' }}" >> "$GITHUB_OUTPUT"
+          echo "deepseek_base_url=${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}" >> "$GITHUB_OUTPUT"
+          echo "mineru_model=${{ github.event.inputs.mineru_model || 'vlm' }}" >> "$GITHUB_OUTPUT"
+          echo "language=${{ github.event.inputs.language || 'en' }}" >> "$GITHUB_OUTPUT"
+          echo "ocr=${{ github.event.inputs.ocr || 'true' }}" >> "$GITHUB_OUTPUT"
+          echo "shard_count=${{ github.event.inputs.shard_count || '40' }}" >> "$GITHUB_OUTPUT"
+          echo "reports_per_shard=${{ github.event.inputs.reports_per_shard || '5' }}" >> "$GITHUB_OUTPUT"
+          echo "batch_size=${{ github.event.inputs.batch_size || '5' }}" >> "$GITHUB_OUTPUT"
+          echo "force_reprocess=${{ github.event.inputs.force_reprocess || 'false' }}" >> "$GITHUB_OUTPUT"
+          echo "max_total_reports=${{ github.event.inputs.max_total_reports || '0' }}" >> "$GITHUB_OUTPUT"
+          echo "report_selection_mode=${{ github.event.inputs.report_selection_mode || 'all' }}" >> "$GITHUB_OUTPUT"
+          echo "wechat_length=${{ github.event.inputs.wechat_length || '1200' }}" >> "$GITHUB_OUTPUT"
+          echo "community_cta=${{ github.event.inputs.community_cta || '更新信息参见portal.example.invalid' }}" >> "$GITHUB_OUTPUT"
+          echo "podcast_minutes=${{ github.event.inputs.podcast_minutes || '5' }}" >> "$GITHUB_OUTPUT"
+          echo "translated_report_count=${{ github.event.inputs.translated_report_count || 'all' }}" >> "$GITHUB_OUTPUT"
+          echo "wechat_draft_upload=${{ github.event.inputs.wechat_draft_upload || 'true' }}" >> "$GITHUB_OUTPUT"
+          echo "wechat_draft_source=${{ github.event.inputs.wechat_draft_source || 'xhs_notes' }}" >> "$GITHUB_OUTPUT"
+          echo "wechat_freepublish=${{ github.event.inputs.wechat_freepublish || 'false' }}" >> "$GITHUB_OUTPUT"
+          echo "wechat_draft_articles_per_draft=${{ github.event.inputs.wechat_draft_articles_per_draft || '8' }}" >> "$GITHUB_OUTPUT"
+          echo "wechat_draft_max_body_chars=${{ github.event.inputs.wechat_draft_max_body_chars || '1200' }}" >> "$GITHUB_OUTPUT"
+          echo "wechat_draft_min_inline_images=${{ github.event.inputs.wechat_draft_min_inline_images || '3' }}" >> "$GITHUB_OUTPUT"
+          echo "wechat_draft_max_inline_images=${{ github.event.inputs.wechat_draft_max_inline_images || '3' }}" >> "$GITHUB_OUTPUT"
+          echo "commit_results=${{ github.event.inputs.commit_results || 'false' }}" >> "$GITHUB_OUTPUT"
+      - name: Print resolved plan
+        run: |
+          echo "::notice::Daily schedule is 02:00 Asia/Shanghai, 90 minutes after the usual 00:30 Dropbox readiness time. Audio/video are disabled."
+          echo "::notice::Report selection mode=${{ steps.vars.outputs.report_selection_mode }}. Default all mode keeps stock/company reports for long-tail WeChat search."
+          echo "::notice::Default plan processes ALL selected candidates, sharded as 40 x 5 = up to 200 reports."
+          echo "::notice::WeChat draft upload defaults to xhs_notes, so successful MinerU report articles can enter drafts without waiting for Portal translated PDFs."
+          echo "::notice::WeChat freepublish is opt-in because it requires separate Official Account API permission."
+          echo "::notice::At the end, publish-ready split ZIPs will be created from generated report folders, excluding MinerU raw files."
+
+  select-macro-reports:
+    needs: resolve-inputs
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    outputs:
+      latest_folder: ${{ steps.dropbox.outputs.latest_folder }}
+      pdf_count: ${{ steps.dropbox.outputs.pdf_count }}
+      macro_candidate_count: ${{ steps.select_macro.outputs.candidate_count }}
+      selected_count: ${{ steps.select_macro.outputs.process_count }}
+      shard_indices: ${{ steps.shard_matrix.outputs.shard_indices }}
+      effective_shard_count: ${{ steps.shard_matrix.outputs.effective_shard_count }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .github
+            scripts
+            prompts
+            requirements.txt
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+      - name: Download PDFs from latest Dropbox date folder
+        id: dropbox
+        env:
+          DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
+          DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
+          DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
+        run: |
+          echo "::notice::Downloading latest Dropbox PDFs once for report selection."
+          python scripts/download_dropbox_latest_pdfs.py --dropbox-root "${{ needs.resolve-inputs.outputs.dropbox_root }}" --output-dir "_dropbox_latest_pdfs"
+      - name: Select reports with DeepSeek
+        id: select_macro
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_API_KEY_BACKUP: ${{ secrets.DEEPSEEK_API_KEY_BACKUP }}
+          DEEPSEEK_BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
+        run: |
+          set -o pipefail
+          CANDIDATE_COUNT="${{ needs.resolve-inputs.outputs.max_total_reports }}"
+          if [ "$CANDIDATE_COUNT" = "0" ]; then CANDIDATE_COUNT="9999"; fi
+          echo "::notice::Classifying PDFs with DeepSeek. Selection mode=${{ needs.resolve-inputs.outputs.report_selection_mode }}; candidate cap=$CANDIDATE_COUNT."
+          python scripts/select_macro_trend_pdfs.py \
+            --input-dir "_dropbox_latest_pdfs" \
+            --output-dir "_selected_macro_pdfs" \
+            --candidate-count "$CANDIDATE_COUNT" \
+            --process-count "$CANDIDATE_COUNT" \
+            --selection-mode "${{ needs.resolve-inputs.outputs.report_selection_mode }}" \
+            --model "${{ needs.resolve-inputs.outputs.model }}" \
+            --deepseek-base-url "${{ needs.resolve-inputs.outputs.deepseek_base_url }}" 2>&1 | tee "macro_selection_progress.log"
+          cp "macro_selection_progress.log" "_selected_macro_pdfs/macro_selection_progress.log"
+      - name: Print selection result
+        run: |
+          echo "::notice::Latest Dropbox folder=${{ steps.dropbox.outputs.latest_folder }}, pdf_count=${{ steps.dropbox.outputs.pdf_count }}."
+          echo "::notice::Report candidates=${{ steps.select_macro.outputs.candidate_count }}, selected=${{ steps.select_macro.outputs.process_count }}."
+      - name: Compute shard matrix
+        id: shard_matrix
+        env:
+          SELECTED_COUNT: ${{ steps.select_macro.outputs.process_count }}
+          SHARD_COUNT: ${{ needs.resolve-inputs.outputs.shard_count }}
+          REPORTS_PER_SHARD: ${{ needs.resolve-inputs.outputs.reports_per_shard }}
+        run: |
+          python - <<'PY'
+          import json
+          import math
+          import os
+
+          selected = max(0, int(os.getenv("SELECTED_COUNT") or "0"))
+          shard_count = max(1, int(os.getenv("SHARD_COUNT") or "1"))
+          reports_per_shard = max(1, int(os.getenv("REPORTS_PER_SHARD") or "1"))
+          needed = max(1, math.ceil(selected / reports_per_shard))
+          effective = min(shard_count, needed)
+          indices = list(range(effective))
+          output = os.environ["GITHUB_OUTPUT"]
+          with open(output, "a", encoding="utf-8") as f:
+              f.write(f"shard_indices={json.dumps(indices)}\n")
+              f.write(f"effective_shard_count={effective}\n")
+          print(f"Selected {selected} PDF(s); running shard indices {indices}.")
+          PY
+      - name: Upload selected macro PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: selected-macro-pdfs-${{ github.run_id }}
+          path: _selected_macro_pdfs
+          if-no-files-found: error
+      - name: Upload lightweight selection manifest
+        uses: actions/upload-artifact@v4
+        with:
+          name: selected-macro-manifest-${{ github.run_id }}
+          path: _selected_macro_pdfs/selected_to_process_manifest.json
+          if-no-files-found: error
+
+  process-shard:
+    needs: [resolve-inputs, select-macro-reports]
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        shard_index: ${{ fromJson(needs.select-macro-reports.outputs.shard_indices) }}
+    steps:
+      - name: Gate shard
+        id: gate
+        run: |
+          if [ "${{ matrix.shard_index }}" -ge "${{ needs.resolve-inputs.outputs.shard_count }}" ]; then
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Shard ${{ matrix.shard_index }} skipped because shard_count=${{ needs.resolve-inputs.outputs.shard_count }}."
+          elif [ $(( ${{ matrix.shard_index }} * ${{ needs.resolve-inputs.outputs.reports_per_shard }} )) -ge "${{ needs.select-macro-reports.outputs.selected_count }}" ]; then
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Shard ${{ matrix.shard_index }} skipped because selected_count=${{ needs.select-macro-reports.outputs.selected_count }}."
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            echo "SHARD_STARTED_AT=$(date +%s)" >> "$GITHUB_ENV"
+            echo "::notice::Shard ${{ matrix.shard_index }} started."
+          fi
+      - name: Checkout repository
+        if: ${{ steps.gate.outputs.run == 'true' }}
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .github
+            scripts
+            prompts
+            requirements.txt
+            xhs_notes/dropbox/${{ needs.select-macro-reports.outputs.latest_folder }}/shard_${{ matrix.shard_index }}
+      - name: Download lightweight selection manifest
+        if: ${{ steps.gate.outputs.run == 'true' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: selected-macro-manifest-${{ github.run_id }}
+          path: _selected_macro_manifest
+      - name: Check for a matching completed shard
+        id: completed
+        if: ${{ steps.gate.outputs.run == 'true' }}
+        run: |
+          python scripts/check_completed_shard.py \
+            --output-dir "xhs_notes/dropbox/${{ needs.select-macro-reports.outputs.latest_folder }}/shard_${{ matrix.shard_index }}" \
+            --current-manifest "_selected_macro_manifest/selected_to_process_manifest.json" \
+            --shard-index "${{ matrix.shard_index }}" \
+            --selected-count "${{ needs.select-macro-reports.outputs.selected_count }}" \
+            --reports-per-shard "${{ needs.resolve-inputs.outputs.reports_per_shard }}" \
+            --force-reprocess "${{ needs.resolve-inputs.outputs.force_reprocess }}"
+      - name: Reuse completed shard
+        if: ${{ steps.gate.outputs.run == 'true' && steps.completed.outputs.complete == 'true' }}
+        run: echo "::notice::Shard ${{ matrix.shard_index }} is already complete; ${{ steps.completed.outputs.reason }}."
+      - name: Set up Python
+        if: ${{ steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+      - name: Install Chinese fonts for cover images
+        if: ${{ steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
+        timeout-minutes: 5
+        continue-on-error: true
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-cjk fonts-arphic-ukai
+      - name: Install Python dependencies
+        if: ${{ steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
+        run: |
+          pip install -r requirements.txt
+          python -m pip install boto3
+      - name: Download selected macro PDFs artifact
+        if: ${{ steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: selected-macro-pdfs-${{ github.run_id }}
+          path: _selected_macro_pdfs
+      - name: Generate shard outputs
+        if: ${{ steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
+        env:
+          MINER_U: ${{ secrets.MINER_U }}
+          MINER_U_2: ${{ secrets.MINER_U_2 }}
+          MINER_U_3: ${{ secrets.MINER_U_3 }}
+          MINER_U_4: ${{ secrets.MINER_U_4 }}
+          MINER_U_TOKEN_OFFSET: ${{ matrix.shard_index }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_API_KEY_BACKUP: ${{ secrets.DEEPSEEK_API_KEY_BACKUP }}
+          DEEPSEEK_BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
+        run: |
+          set -o pipefail
+          OUTPUT_DIR="xhs_notes/dropbox/${{ needs.select-macro-reports.outputs.latest_folder }}/shard_${{ matrix.shard_index }}"
+          echo "OUTPUT_DIR=$OUTPUT_DIR" >> "$GITHUB_ENV"
+          SKIP_EXISTING="true"
+          if [ "${{ needs.resolve-inputs.outputs.force_reprocess }}" = "true" ]; then
+            rm -rf "$OUTPUT_DIR"
+            SKIP_EXISTING="false"
+          fi
+          mkdir -p "$OUTPUT_DIR"
+          cp "_selected_macro_pdfs/macro_classification_all.json" "$OUTPUT_DIR/macro_classification_all.json" || true
+          cp "_selected_macro_pdfs/selected_macro_candidates.json" "$OUTPUT_DIR/selected_macro_candidates.json" || true
+          cp "_selected_macro_pdfs/selected_to_process_manifest.json" "$OUTPUT_DIR/selected_to_process_manifest.json" || true
+          cp "_selected_macro_pdfs/macro_selection_progress.log" "$OUTPUT_DIR/macro_selection_progress.log" || true
+          echo "::notice::Shard ${{ matrix.shard_index }} generating text/images from selected reports into $OUTPUT_DIR."
+          python scripts/run_pdf_to_xhs_in_batches.py \
+            --input-dir "_selected_macro_pdfs" \
+            --output-dir "$OUTPUT_DIR" \
+            --batch-size "${{ needs.resolve-inputs.outputs.batch_size }}" \
+            --continue-on-batch-error true \
+            --shard-index "${{ matrix.shard_index }}" \
+            --shard-count "${{ needs.resolve-inputs.outputs.shard_count }}" \
+            --max-reports-per-shard "${{ needs.resolve-inputs.outputs.reports_per_shard }}" \
+            --max-total-reports "${{ needs.resolve-inputs.outputs.max_total_reports }}" \
+            --skip-existing "$SKIP_EXISTING" \
+            --model "${{ needs.resolve-inputs.outputs.model }}" \
+            --deepseek-base-url "${{ needs.resolve-inputs.outputs.deepseek_base_url }}" \
+            --mineru-model "${{ needs.resolve-inputs.outputs.mineru_model }}" \
+            --language "${{ needs.resolve-inputs.outputs.language }}" \
+            --ocr "${{ needs.resolve-inputs.outputs.ocr }}" \
+            --poll-timeout 1800 \
+            --mineru-retries 0 \
+            --mineru-no-progress-timeout 300 \
+            --length 1000 \
+            --wechat-length "${{ needs.resolve-inputs.outputs.wechat_length }}" \
+            --community-cta "${{ needs.resolve-inputs.outputs.community_cta }}" 2>&1 | tee "$OUTPUT_DIR/generate_progress.log"
+      - name: Post-process shard articles and podcast scripts
+        if: ${{ steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_API_KEY_BACKUP: ${{ secrets.DEEPSEEK_API_KEY_BACKUP }}
+          DEEPSEEK_BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
+        run: |
+          set -o pipefail
+          python scripts/postprocess_podcast.py \
+            --output-dir "$OUTPUT_DIR" \
+            --model "${{ needs.resolve-inputs.outputs.model }}" \
+            --deepseek-base-url "${{ needs.resolve-inputs.outputs.deepseek_base_url }}" \
+            --podcast-minutes "${{ needs.resolve-inputs.outputs.podcast_minutes }}" \
+            --generate-audio false \
+            --tts-engine edge 2>&1 | tee "$OUTPUT_DIR/postprocess_progress.log"
+      - name: Finalize shard outputs
+        if: ${{ steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_API_KEY_BACKUP: ${{ secrets.DEEPSEEK_API_KEY_BACKUP }}
+          DEEPSEEK_BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
+        run: |
+          set -o pipefail
+          python scripts/finalize_outputs.py \
+            --output-dir "$OUTPUT_DIR" \
+            --model "${{ needs.resolve-inputs.outputs.model }}" \
+            --deepseek-base-url "${{ needs.resolve-inputs.outputs.deepseek_base_url }}" \
+            --generate-xianyu true 2>&1 | tee "$OUTPUT_DIR/finalize_progress.log"
+      - name: Write shard summary
+        if: ${{ steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
+        run: |
+          ENDED_AT=$(date +%s)
+          DURATION=$((ENDED_AT - SHARD_STARTED_AT))
+          REPORT_DIRS=$(find "$OUTPUT_DIR" -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')
+          cat > "$OUTPUT_DIR/shard_run_summary.md" <<EOF
+          # Shard ${{ matrix.shard_index }} summary
+
+          - Latest Dropbox folder: ${{ needs.select-macro-reports.outputs.latest_folder }}
+          - Dropbox PDF count before selection: ${{ needs.select-macro-reports.outputs.pdf_count }}
+          - Report candidates selected: ${{ needs.select-macro-reports.outputs.macro_candidate_count }}
+          - Selected PDFs available to shards: ${{ needs.select-macro-reports.outputs.selected_count }}
+          - Shard index: ${{ matrix.shard_index }}
+          - Shard count: ${{ needs.resolve-inputs.outputs.shard_count }}
+          - Reports per shard: ${{ needs.resolve-inputs.outputs.reports_per_shard }}
+          - Batch size: ${{ needs.resolve-inputs.outputs.batch_size }}
+          - Report directories generated: $REPORT_DIRS
+          - Audio/video generation: disabled
+          - Duration seconds: $DURATION
+          - Output directory: $OUTPUT_DIR
+          EOF
+          cat "$OUTPUT_DIR/shard_run_summary.md"
+          echo "::notice::Shard ${{ matrix.shard_index }} finished in $((DURATION / 60)) minutes with $REPORT_DIRS output directories."
+      - name: Upload shard to private R2 handoff
+        if: ${{ steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python scripts/private_workflow_handoff.py upload-dir \
+            --source "$OUTPUT_DIR" \
+            --key "$PRIVATE_HANDOFF_ROOT/${{ github.run_id }}/${{ needs.select-macro-reports.outputs.latest_folder }}/shard_${{ matrix.shard_index }}.tar.gz"
+      - name: Upload lightweight shard diagnostics
+        if: ${{ always() && steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: final-dropbox-shard-diagnostics-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ matrix.shard_index }}
+          path: |
+            ${{ env.OUTPUT_DIR }}/*.log
+            ${{ env.OUTPUT_DIR }}/*.json
+            ${{ env.OUTPUT_DIR }}/shard_run_summary.md
+          if-no-files-found: warn
+          retention-days: 2
+
+  package-publish-ready:
+    needs: [resolve-inputs, select-macro-reports, process-shard]
+    if: ${{ !cancelled() && needs.process-shard.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .github
+            scripts
+            requirements.txt
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+      - name: Install private handoff dependency
+        run: python -m pip install boto3
+      - name: Download generated shards from private R2
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python scripts/private_workflow_handoff.py download-shards \
+            --prefix "$PRIVATE_HANDOFF_ROOT/${{ github.run_id }}/${{ needs.select-macro-reports.outputs.latest_folder }}" \
+            --destination "xhs_notes/dropbox/${{ needs.select-macro-reports.outputs.latest_folder }}" \
+            --expected-count "${{ needs.select-macro-reports.outputs.effective_shard_count }}"
+      - name: Build split publish-ready ZIPs
+        id: package
+        run: |
+          set -o pipefail
+          DATE_DIR="xhs_notes/dropbox/${{ needs.select-macro-reports.outputs.latest_folder }}"
+          echo "::notice::Packaging publish-ready outputs from $DATE_DIR, excluding MinerU raw/source files."
+          echo "::notice::Using split ZIPs with --max-zip-mb 90 so every committed ZIP stays below GitHub's 100 MB file limit."
+          python scripts/package_publish_ready_outputs.py \
+            --date-dir "$DATE_DIR" \
+            --output-root "publish_ready_zips" \
+            --max-zip-mb 90 2>&1 | tee "publish_ready_package_progress.log"
+          echo "PACKAGE_DIR=publish_ready_zips/${{ needs.select-macro-reports.outputs.latest_folder }}" >> "$GITHUB_ENV"
+          find "publish_ready_zips/${{ needs.select-macro-reports.outputs.latest_folder }}" -maxdepth 1 -type f -printf '%s bytes %p\n' | sort -n
+      - name: Verify ZIP parts are GitHub-safe
+        run: |
+          TOO_BIG=$(find "$PACKAGE_DIR" -name '*.zip' -type f -size +99M -print || true)
+          if [ -n "$TOO_BIG" ]; then
+            echo "Some ZIP parts still exceed GitHub's 100 MB file limit:"
+            echo "$TOO_BIG"
+            exit 1
+          fi
+      - name: Upload split publish-ready ZIP artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: publish-ready-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ github.run_id }}
+          path: |
+            ${{ env.PACKAGE_DIR }}
+            publish_ready_package_progress.log
+          if-no-files-found: error
+          retention-days: 2
+
+  trigger-market-views:
+    needs: [resolve-inputs, select-macro-reports, package-publish-ready]
+    if: ${{ !cancelled() && needs.package-publish-ready.result == 'success' && needs.select-macro-reports.outputs.selected_count != '0' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Trigger Market Views from complete bank inputs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DATE_FOLDER: ${{ needs.select-macro-reports.outputs.latest_folder }}
+          MODEL: ${{ needs.resolve-inputs.outputs.model }}
+          DEEPSEEK_BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
+        run: |
+          echo "::notice::All bank-report shards for $DATE_FOLDER are in private R2. Dispatching the matching Market Views issue now."
+          RUN_URL="$(gh workflow run market-views-latex-pdf.yml \
+            --repo "$GITHUB_REPOSITORY" \
+            --ref main \
+            -f date_folder=latest \
+            -f expected_bank_date="$DATE_FOLDER" \
+            -f source_handoff_run_id="${{ github.run_id }}" \
+            -f model="$MODEL" \
+            -f deepseek_base_url="$DEEPSEEK_BASE_URL" \
+            -f compile_latex=false)"
+          MARKET_RUN_ID="${RUN_URL##*/}"
+          if ! printf '%s\n' "$MARKET_RUN_ID" | grep -Eq '^[0-9]+$'; then
+            echo "Unable to resolve dispatched Market Views run from: $RUN_URL" >&2
+            exit 1
+          fi
+          echo "::notice::Waiting for Market Views run $MARKET_RUN_ID."
+          gh run watch "$MARKET_RUN_ID" --repo "$GITHUB_REPOSITORY" --compact --exit-status --interval 15
+
+  push-xhs-notes-wechat-drafts:
+    needs: [resolve-inputs, select-macro-reports, package-publish-ready]
+    if: ${{ !cancelled() && needs.package-publish-ready.result == 'success' && needs.resolve-inputs.outputs.wechat_draft_upload == 'true' && needs.resolve-inputs.outputs.wechat_draft_source == 'xhs_notes' }}
+    runs-on: [self-hosted, wechat-draft]
+    timeout-minutes: 180
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          clean: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .github
+            scripts
+            prompts
+            requirements.txt
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+          python -m pip install boto3
+
+      - name: Download generated shards from private R2
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python scripts/private_workflow_handoff.py download-shards \
+            --prefix "$PRIVATE_HANDOFF_ROOT/${{ github.run_id }}/${{ needs.select-macro-reports.outputs.latest_folder }}" \
+            --destination "xhs_notes/dropbox/${{ needs.select-macro-reports.outputs.latest_folder }}" \
+            --expected-count "${{ needs.select-macro-reports.outputs.effective_shard_count }}"
+
+      - name: Materialize private publishing image
+        env:
+          PORTAL_PRIVATE_PUBLISH_ASSET_KEY: ${{ secrets.PORTAL_PRIVATE_PUBLISH_ASSET_KEY }}
+        run: bash scripts/materialize_private_social_asset.sh prompts
+
+      - name: Upload generated xhs notes to WeChat drafts
+        env:
+          WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
+          WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+        run: |
+          set -o pipefail
+          DATE_FOLDER="${{ needs.select-macro-reports.outputs.latest_folder }}"
+          MAX_ARTICLES="${{ needs.resolve-inputs.outputs.translated_report_count }}"
+          if [ "$MAX_ARTICLES" = "0" ]; then MAX_ARTICLES="all"; fi
+          PUBLISH_ARGS=()
+          if [ "${{ needs.resolve-inputs.outputs.wechat_freepublish }}" = "true" ]; then
+            PUBLISH_ARGS+=(--publish)
+            echo "::notice::Uploading and publishing generated xhs_notes articles from xhs_notes/dropbox/$DATE_FOLDER"
+          else
+            echo "::notice::Uploading generated xhs_notes articles to WeChat drafts from xhs_notes/dropbox/$DATE_FOLDER"
+          fi
+          python scripts/push_xhs_notes_to_wechat_drafts.py \
+            --dropbox-output-root "xhs_notes/dropbox" \
+            --date-folder "$DATE_FOLDER" \
+            --output-root "wechat_drafts/xhs_notes" \
+            --max-articles "$MAX_ARTICLES" \
+            --articles-per-draft "${{ needs.resolve-inputs.outputs.wechat_draft_articles_per_draft }}" \
+            --max-body-chars "${{ needs.resolve-inputs.outputs.wechat_draft_max_body_chars }}" \
+            --min-inline-images "${{ needs.resolve-inputs.outputs.wechat_draft_min_inline_images }}" \
+            --max-inline-images "${{ needs.resolve-inputs.outputs.wechat_draft_max_inline_images }}" \
+            "${PUBLISH_ARGS[@]}" 2>&1 | tee wechat_drafts_progress.log
+          echo "WECHAT_DRAFT_DIR=wechat_drafts/xhs_notes/$DATE_FOLDER" >> "$GITHUB_ENV"
+
+      - name: Upload WeChat draft summary artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: xhs-notes-wechat-drafts-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ github.run_id }}
+          path: |
+            ${{ env.WECHAT_DRAFT_DIR }}
+            wechat_drafts_progress.log
+          if-no-files-found: error
+          retention-days: 2
+
+  build-portal-translated-reports:
+    needs: [resolve-inputs, select-macro-reports, package-publish-ready]
+    if: ${{ !cancelled() && needs.package-publish-ready.result == 'success' && needs.resolve-inputs.outputs.translated_report_count != '0' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install reportlab
+          python -m pip install boto3
+
+      - name: Download generated shards from private R2
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python scripts/private_workflow_handoff.py download-shards \
+            --prefix "$PRIVATE_HANDOFF_ROOT/${{ github.run_id }}/${{ needs.select-macro-reports.outputs.latest_folder }}" \
+            --destination "xhs_notes/dropbox/${{ needs.select-macro-reports.outputs.latest_folder }}" \
+            --expected-count "${{ needs.select-macro-reports.outputs.effective_shard_count }}"
+
+      - name: Install Chinese fonts
+        timeout-minutes: 5
+        continue-on-error: true
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends fonts-noto-cjk
+
+      - name: Build Portal translated report PDFs
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_API_KEY_BACKUP: ${{ secrets.DEEPSEEK_API_KEY_BACKUP }}
+          DEEPSEEK_BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
+        run: |
+          set -o pipefail
+          DATE_FOLDER="${{ needs.select-macro-reports.outputs.latest_folder }}"
+          MAX_REPORTS="${{ needs.resolve-inputs.outputs.translated_report_count }}"
+          if [ "${{ needs.resolve-inputs.outputs.force_reprocess }}" = "true" ]; then
+            rm -rf "portal_translated_reports/$DATE_FOLDER"
+          fi
+          echo "::notice::Building $MAX_REPORTS Portal translated report PDF(s) from xhs_notes/dropbox/$DATE_FOLDER"
+          python scripts/build_portal_translated_reports.py \
+            --dropbox-output-root "xhs_notes/dropbox" \
+            --date-folder "$DATE_FOLDER" \
+            --output-root "portal_translated_reports" \
+            --max-reports "$MAX_REPORTS" \
+            --model "${{ needs.resolve-inputs.outputs.model }}" \
+            --deepseek-base-url "${{ needs.resolve-inputs.outputs.deepseek_base_url }}" \
+            --title-guard 2>&1 | tee portal_translated_reports_progress.log
+          echo "PORTAL_TRANSLATED_DIR=portal_translated_reports/$DATE_FOLDER" >> "$GITHUB_ENV"
+
+      - name: Verify translated PDFs exist
+        run: |
+          if ! find "$PORTAL_TRANSLATED_DIR" -name "portal_translated_report_*.pdf" -type f -size +1k | grep -q .; then
+            echo "No rendered portal_translated_report_*.pdf found. Failing the workflow so this is visible."
+            find "$PORTAL_TRANSLATED_DIR" -maxdepth 4 -type f -print || true
+            exit 1
+          fi
+          find "$PORTAL_TRANSLATED_DIR" -name "portal_translated_report_*.pdf" -type f -printf "%s bytes %p\n" | sort -n
+
+      - name: Upload Portal translated report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: portal-translated-reports-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ github.run_id }}
+          path: |
+            ${{ env.PORTAL_TRANSLATED_DIR }}
+            portal_translated_reports_progress.log
+          if-no-files-found: error
+          retention-days: 2
+
+  push-portal-translated-wechat-drafts:
+    needs: [resolve-inputs, select-macro-reports, build-portal-translated-reports]
+    if: ${{ !cancelled() && needs.build-portal-translated-reports.result == 'success' && needs.resolve-inputs.outputs.translated_report_count != '0' && needs.resolve-inputs.outputs.wechat_draft_upload == 'true' && needs.resolve-inputs.outputs.wechat_draft_source == 'portal_translated' }}
+    runs-on: [self-hosted, wechat-draft]
+    timeout-minutes: 180
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          clean: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .github
+            scripts
+            prompts
+            requirements.txt
+            wechat_drafts/${{ needs.select-macro-reports.outputs.latest_folder }}
+
+      - name: Download Portal translated reports
+        uses: actions/download-artifact@v4
+        with:
+          name: portal-translated-reports-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ github.run_id }}
+          path: .
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Materialize private publishing image
+        env:
+          PORTAL_PRIVATE_PUBLISH_ASSET_KEY: ${{ secrets.PORTAL_PRIVATE_PUBLISH_ASSET_KEY }}
+        run: bash scripts/materialize_private_social_asset.sh prompts
+
+      - name: Upload Portal translated reports to WeChat drafts
+        env:
+          WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
+          WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+        run: |
+          set -o pipefail
+          DATE_FOLDER="${{ needs.select-macro-reports.outputs.latest_folder }}"
+          MAX_ARTICLES="${{ needs.resolve-inputs.outputs.translated_report_count }}"
+          PUBLISH_ARGS=()
+          if [ "${{ needs.resolve-inputs.outputs.wechat_freepublish }}" = "true" ]; then
+            PUBLISH_ARGS+=(--publish)
+            echo "::notice::Uploading and publishing $MAX_ARTICLES Portal translated reports from portal_translated_reports/$DATE_FOLDER"
+          else
+            echo "::notice::Uploading $MAX_ARTICLES Portal translated reports to WeChat drafts from portal_translated_reports/$DATE_FOLDER"
+          fi
+          python scripts/push_portal_translated_to_wechat_drafts.py \
+            --translated-root "portal_translated_reports" \
+            --date-folder "$DATE_FOLDER" \
+            --output-root "wechat_drafts" \
+            --max-articles "$MAX_ARTICLES" \
+            --articles-per-draft "${{ needs.resolve-inputs.outputs.wechat_draft_articles_per_draft }}" \
+            --max-body-chars "${{ needs.resolve-inputs.outputs.wechat_draft_max_body_chars }}" \
+            --min-inline-images "${{ needs.resolve-inputs.outputs.wechat_draft_min_inline_images }}" \
+            --max-inline-images "${{ needs.resolve-inputs.outputs.wechat_draft_max_inline_images }}" \
+            "${PUBLISH_ARGS[@]}" 2>&1 | tee wechat_drafts_progress.log
+          echo "WECHAT_DRAFT_DIR=wechat_drafts/$DATE_FOLDER" >> "$GITHUB_ENV"
+
+      - name: Upload WeChat draft summary artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: portal-translated-wechat-drafts-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ github.run_id }}
+          path: |
+            ${{ env.WECHAT_DRAFT_DIR }}
+            wechat_drafts_progress.log
+          if-no-files-found: error
+          retention-days: 2
+
+  cleanup-private-handoff:
+    needs:
+      - resolve-inputs
+      - select-macro-reports
+      - package-publish-ready
+      - trigger-market-views
+      - push-xhs-notes-wechat-drafts
+      - build-portal-translated-reports
+      - push-portal-translated-wechat-drafts
+    if: >-
+      ${{
+        always() && !cancelled() &&
+        needs.package-publish-ready.result == 'success' &&
+        needs.trigger-market-views.result != 'failure' &&
+        needs.push-xhs-notes-wechat-drafts.result != 'failure' &&
+        needs.build-portal-translated-reports.result != 'failure' &&
+        needs.push-portal-translated-wechat-drafts.result != 'failure'
+      }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          sparse-checkout: |
+            scripts/private_workflow_handoff.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Delete completed private handoff
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python -m pip install boto3
+          python scripts/private_workflow_handoff.py delete-prefix \
+            --prefix "$PRIVATE_HANDOFF_ROOT/${{ github.run_id }}/${{ needs.select-macro-reports.outputs.latest_folder }}"
+
+  notify-failure:
+    needs:
+      - resolve-inputs
+      - select-macro-reports
+      - process-shard
+      - package-publish-ready
+      - trigger-market-views
+      - push-xhs-notes-wechat-drafts
+      - build-portal-translated-reports
+      - push-portal-translated-wechat-drafts
+      - cleanup-private-handoff
+    if: ${{ always() && !cancelled() && contains(needs.*.result, 'failure') }}
+    uses: ./.github/workflows/portal-ops-alert.yml
+    with:
+      source_workflow: Final PDF to XHS notes
+      source_results: >-
+        resolve=${{ needs.resolve-inputs.result }},
+        select=${{ needs.select-macro-reports.result }},
+        shards=${{ needs.process-shard.result }},
+        package=${{ needs.package-publish-ready.result }},
+        market_views=${{ needs.trigger-market-views.result }},
+        wechat=${{ needs.push-xhs-notes-wechat-drafts.result }},
+        translated=${{ needs.build-portal-translated-reports.result }},
+        translated_wechat=${{ needs.push-portal-translated-wechat-drafts.result }},
+        handoff_cleanup=${{ needs.cleanup-private-handoff.result }}
+    secrets: inherit

@@ -1,0 +1,42 @@
+name = "portal-suite-worker"
+main = "src/index.js"
+compatibility_date = "2026-05-01"
+
+[vars]
+# Explicit local/test mode. Production must use "supabase" and configure both
+# SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY as secrets.
+ACCOUNT_STORE_MODE = "r2"
+R2_OBJECT_PREFIX = "reports"
+# Set these to the GitHub Pages URLs after deployment.
+CATALOG_URL = "https://YOUR_GITHUB_PAGES_HOST/rpt_edit/data/catalog.json"
+PASSWORD_RULES_URL = "https://YOUR_GITHUB_PAGES_HOST/rpt_edit/data/password_rules.json"
+ALLOWED_ORIGIN = "https://YOUR_GITHUB_PAGES_HOST"
+# Reportify module: lets a gated-report click trigger the reportify-grab workflow.
+# GH_DISPATCH_TOKEN is a fine-grained PAT with Actions: read/write on this repo
+# (set it as a secret: `wrangler secret put GH_DISPATCH_TOKEN`).
+GH_REPO = "source/example"
+# Optional for custom topic plans and story narratives:
+# wrangler secret put DEEPSEEK_API_KEY
+# DEEPSEEK_BASE_URL = "https://api.deepseek.com"
+# DEEPSEEK_MODEL = "deepseek-v4-flash"
+# Optional for scheduled Newsfeed digest emails via Cloudflare Email Service:
+# NEWSFEED_EMAIL_PROVIDER = "cloudflare"
+# NEWSFEED_EMAIL_FROM = "Portal Suite Newsfeed <updates@portal.example.invalid>"
+# Optional signed workflow-failure alerts through the same email provider:
+# OPS_ALERT_EMAIL = "operator@example.com"
+# wrangler secret put OPS_ALERT_SIGNING_KEY
+# Optional: auto-create Cloudflare Destination Addresses on new user registration:
+# wrangler secret put CLOUDFLARE_EMAIL_ROUTING_API_TOKEN
+# wrangler secret put CLOUDFLARE_EMAIL_ROUTING_ACCOUNT_ID
+# Internal Vid2PPT -> portal ATLAS gift grant signing secret:
+# Keep PORTAL_VID2PPT_LINK_ENABLED unset in production. The legacy handler
+# structure remains available for a future, separately reviewed reactivation.
+# [[send_email]]
+# name = "EMAIL"
+
+[triggers]
+crons = ["*/30 * * * *"]
+
+[[r2_buckets]]
+binding = "REPORT_BUCKET"
+bucket_name = "portal-suite-pdfs"

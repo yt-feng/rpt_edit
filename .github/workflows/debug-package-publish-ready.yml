@@ -1,0 +1,96 @@
+name: Debug package publish-ready ZIP
+
+on:
+  workflow_dispatch:
+    inputs:
+      date_folder:
+        description: "Existing output date folder under xhs_notes/dropbox, e.g. 260515 or latest"
+        required: true
+        default: "latest"
+      max_zip_mb:
+        description: "Target max size per ZIP part; keep below 100 for GitHub commit"
+        required: true
+        default: "90"
+      commit_results:
+        description: "Commit ZIP parts back to repo. Artifact upload always happens."
+        required: true
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+env:
+  PYTHONUNBUFFERED: "1"
+
+concurrency:
+  group: debug-package-publish-ready
+  cancel-in-progress: false
+
+jobs:
+  debug-package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Pull latest outputs
+        run: git pull --rebase origin main || git pull origin main
+
+      - name: Resolve date folder
+        id: date
+        run: |
+          INPUT_DATE="${{ github.event.inputs.date_folder || 'latest' }}"
+          if [ "$INPUT_DATE" = "latest" ]; then
+            DATE_FOLDER=$(find xhs_notes/dropbox -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | grep -E '^[0-9]{6,8}$' | sort -n | tail -1)
+          else
+            DATE_FOLDER="$INPUT_DATE"
+          fi
+          if [ -z "$DATE_FOLDER" ]; then
+            echo "Could not resolve date folder."
+            exit 1
+          fi
+          if [ ! -d "xhs_notes/dropbox/$DATE_FOLDER" ]; then
+            echo "xhs_notes/dropbox/$DATE_FOLDER does not exist."
+            exit 1
+          fi
+          echo "date_folder=$DATE_FOLDER" >> "$GITHUB_OUTPUT"
+          echo "DATE_FOLDER=$DATE_FOLDER" >> "$GITHUB_ENV"
+          echo "::notice::Resolved date folder: $DATE_FOLDER"
+
+      - name: Build split ZIP package
+        run: |
+          set -o pipefail
+          python scripts/package_publish_ready_outputs.py \
+            --date-dir "xhs_notes/dropbox/$DATE_FOLDER" \
+            --output-root "publish_ready_zips" \
+            --max-zip-mb "${{ github.event.inputs.max_zip_mb || '90' }}" 2>&1 | tee publish_ready_package_debug.log
+          echo "PACKAGE_DIR=publish_ready_zips/$DATE_FOLDER" >> "$GITHUB_ENV"
+          echo "::notice::Package files:"
+          find "publish_ready_zips/$DATE_FOLDER" -maxdepth 1 -type f -printf '%s bytes %p\n' | sort -n
+
+      - name: Verify no ZIP exceeds GitHub limit
+        run: |
+          TOO_BIG=$(find "$PACKAGE_DIR" -name '*.zip' -type f -size +99M -print || true)
+          if [ -n "$TOO_BIG" ]; then
+            echo "Some ZIPs still exceed GitHub 100 MB file limit:"
+            echo "$TOO_BIG"
+            exit 1
+          fi
+
+      - name: Upload ZIP artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-publish-ready-${{ steps.date.outputs.date_folder }}-${{ github.run_id }}
+          path: |
+            ${{ env.PACKAGE_DIR }}
+            publish_ready_package_debug.log
+          if-no-files-found: error
+
+      - name: Commit ZIP parts and summary
+        if: ${{ github.event.inputs.commit_results == 'true' }}
+        run: |
+          bash scripts/commit_output_dir.sh "$PACKAGE_DIR" "Debug package publish-ready outputs $DATE_FOLDER" 8

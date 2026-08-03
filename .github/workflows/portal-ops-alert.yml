@@ -1,0 +1,69 @@
+name: Portal Suite operations alert
+
+on:
+  workflow_call:
+    inputs:
+      source_workflow:
+        description: Workflow name shown in the operations email
+        required: true
+        type: string
+      source_results:
+        description: Concise failed workflow job results
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  send-email:
+    if: ${{ vars.PORTAL_AUTOMATION_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout alert client
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            scripts/render_private_config.py
+            scripts/send_portal_ops_alert.py
+            scripts/test_send_portal_ops_alert.py
+
+      - name: Test public operations alert client
+        run: python -B scripts/test_send_portal_ops_alert.py
+
+      - name: Materialize private alert runtime values
+        env:
+          PORTAL_PRIVATE_CONFIG_B64: ${{ secrets.PORTAL_PRIVATE_CONFIG_B64 }}
+        run: |
+          python -B scripts/render_private_config.py \
+            --root scripts/send_portal_ops_alert.py \
+            --github-add-mask \
+            --skip-generated-files
+
+      - name: Send deduplicated Portal Suite operations email
+        env:
+          OPS_ALERT_SIGNING_KEY: ${{ secrets.OPS_ALERT_SIGNING_KEY || secrets.PASSWORD_SECRET }}
+          PORTAL_WORKER_URL: ${{ secrets.PORTAL_WORKER_URL }}
+          SOURCE_WORKFLOW: ${{ inputs.source_workflow }}
+          SOURCE_RESULTS: ${{ inputs.source_results }}
+        run: |
+          cat > "$RUNNER_TEMP/portal-ops-alert.txt" <<EOF
+          微信文章自动任务未成功完成，请打开 GitHub Action 查看失败步骤。
+
+          Workflow：$SOURCE_WORKFLOW
+          Job 结果：$SOURCE_RESULTS
+          触发方式：$GITHUB_EVENT_NAME
+          分支：$GITHUB_REF_NAME
+          运行地址：$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID
+
+          Final PDF 主流程已经依次尝试 MinerU key 池和 DeepSeek 主备 key。若生成步骤失败，请优先检查 API 余额、Token 到期状态及服务状态；若微信步骤失败，请检查固定 IP runner 和公众号接口状态。已完成的分片和已验证草稿会保留，修复后可续跑。
+          EOF
+          python scripts/send_portal_ops_alert.py \
+            --subject "Portal workflow failed | $SOURCE_WORKFLOW" \
+            --text-file "$RUNNER_TEMP/portal-ops-alert.txt" \
+            --dedupe-key "wechat-workflow:$GITHUB_RUN_ID" \
+            --severity critical

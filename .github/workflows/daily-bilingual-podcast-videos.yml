@@ -1,0 +1,197 @@
+name: Daily bilingual podcast videos
+
+on:
+  workflow_dispatch:
+    inputs:
+      dropbox_root:
+        description: "Dropbox root folder containing date-named backup folders"
+        required: true
+        default: "/zip_backup"
+      model:
+        description: "DeepSeek model"
+        required: true
+        default: "deepseek-v4-flash"
+      deepseek_base_url:
+        description: "DeepSeek API base URL"
+        required: true
+        default: "https://api.deepseek.com"
+      mineru_model:
+        description: "MinerU model_version"
+        required: true
+        default: "vlm"
+      language:
+        description: "MinerU OCR language code"
+        required: true
+        default: "en"
+      ocr:
+        description: "Enable OCR"
+        required: true
+        default: "true"
+      min_pages:
+        description: "Minimum PDF page count for each selected report"
+        required: true
+        default: "5"
+      video_count:
+        description: "How many macro-oriented bilingual videos to generate"
+        required: true
+        default: "3"
+      output_mode:
+        description: "Video outputs to generate"
+        required: true
+        type: choice
+        options:
+          - bilingual_only
+          - all
+        default: "bilingual_only"
+      podcast_minutes:
+        description: "Target minutes for generated podcast audio"
+        required: true
+        default: "5"
+      commit_results:
+        description: "Commit generated video outputs back to repo"
+        required: true
+        type: boolean
+        default: true
+  schedule:
+    # 23:00 UTC = 07:00 Asia/Shanghai.
+    - cron: "0 23 * * *"
+
+permissions:
+  contents: write
+
+env:
+  PYTHONUNBUFFERED: "1"
+
+concurrency:
+  group: daily-bilingual-podcast-videos
+  cancel-in-progress: true
+
+jobs:
+  daily-bilingual-podcast-videos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Pull latest main
+        run: git pull --rebase origin main || git pull origin main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install system packages
+        timeout-minutes: 10
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg fonts-noto-cjk fonts-arphic-ukai fonts-wqy-microhei fonts-wqy-zenhei
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Download latest Dropbox PDFs
+        id: dropbox
+        env:
+          DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
+          DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
+          DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
+        run: |
+          python scripts/download_dropbox_latest_pdfs.py \
+            --dropbox-root "${{ github.event.inputs.dropbox_root || '/zip_backup' }}" \
+            --output-dir "_daily_bilingual_latest_pdfs"
+
+      - name: Select macro/trend reports for video generation
+        id: select_macro
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_BASE_URL: ${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}
+        run: |
+          COUNT="${{ github.event.inputs.video_count || '3' }}"
+          CANDIDATE_COUNT=$((COUNT * 8))
+          if [ "$CANDIDATE_COUNT" -lt 12 ]; then
+            CANDIDATE_COUNT=12
+          fi
+          python scripts/select_macro_trend_pdfs.py \
+            --input-dir "_daily_bilingual_latest_pdfs" \
+            --output-dir "_daily_bilingual_macro_pdfs" \
+            --candidate-count "$CANDIDATE_COUNT" \
+            --process-count "$CANDIDATE_COUNT" \
+            --model "${{ github.event.inputs.model || 'deepseek-v4-flash' }}" \
+            --deepseek-base-url "${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}"
+
+      - name: Select page-qualified macro reports for video generation
+        id: select_pdf
+        run: |
+          python scripts/select_test_pdf.py \
+            --input-dir "_daily_bilingual_macro_pdfs" \
+            --output-dir "_daily_bilingual_selected_pdfs" \
+            --min-pages "${{ github.event.inputs.min_pages || '5' }}" \
+            --max-pdfs "${{ github.event.inputs.video_count || '3' }}"
+
+      - name: Convert selected PDFs to notes and chart assets
+        env:
+          MINER_U: ${{ secrets.MINER_U }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_BASE_URL: ${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}
+        run: |
+          set -o pipefail
+          OUTPUT_DIR="bilingual_podcast_videos/${{ steps.dropbox.outputs.latest_folder }}/${{ github.run_id }}"
+          mkdir -p "$OUTPUT_DIR"
+          echo "OUTPUT_DIR=$OUTPUT_DIR" >> "$GITHUB_ENV"
+          COUNT="${{ github.event.inputs.video_count || '3' }}"
+          python scripts/run_pdf_to_xhs_in_batches.py \
+            --input-dir "_daily_bilingual_selected_pdfs" \
+            --output-dir "$OUTPUT_DIR" \
+            --batch-size 1 \
+            --continue-on-batch-error false \
+            --shard-index 0 \
+            --shard-count 1 \
+            --max-reports-per-shard "$COUNT" \
+            --skip-existing false \
+            --model "${{ github.event.inputs.model || 'deepseek-v4-flash' }}" \
+            --deepseek-base-url "${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}" \
+            --mineru-model "${{ github.event.inputs.mineru_model || 'vlm' }}" \
+            --language "${{ github.event.inputs.language || 'en' }}" \
+            --ocr "${{ github.event.inputs.ocr || 'true' }}" \
+            --length 1000 \
+            --wechat-length 1800 \
+            --community-cta "欢迎来社群继续拆完整报告" \
+            --max-images 8 \
+            --watermark "Portal Suite" 2>&1 | tee "$OUTPUT_DIR/pdf_to_notes_progress.log"
+
+      - name: Generate ElevenLabs bilingual podcast and explainer videos
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_BASE_URL: ${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}
+          ELEVEN_KEY: ${{ secrets.ELEVEN_KEY }}
+        run: |
+          set -o pipefail
+          mkdir -p "$OUTPUT_DIR"
+          python scripts/generate_test_podcast_video_eleven_batch_v5.py \
+            --output-dir "$OUTPUT_DIR" \
+            --max-items "${{ github.event.inputs.video_count || '3' }}" \
+            --output-mode "${{ github.event.inputs.output_mode || 'bilingual_only' }}" \
+            --model "${{ github.event.inputs.model || 'deepseek-v4-flash' }}" \
+            --deepseek-base-url "${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}" \
+            --podcast-minutes "${{ github.event.inputs.podcast_minutes || '5' }}" 2>&1 | tee "$OUTPUT_DIR/podcast_video_progress.log"
+
+      - name: List generated outputs
+        run: |
+          find "$OUTPUT_DIR" -maxdepth 3 -type f -printf '%s bytes %p\n' | sort -n
+
+      - name: Upload podcast/video artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: bilingual-podcast-videos-${{ steps.dropbox.outputs.latest_folder }}-${{ github.run_id }}
+          path: ${{ env.OUTPUT_DIR }}
+          if-no-files-found: error
+
+      - name: Commit generated video outputs
+        if: ${{ github.event_name == 'schedule' || github.event.inputs.commit_results == 'true' }}
+        run: |
+          bash scripts/commit_output_dir.sh "$OUTPUT_DIR" "Generate daily bilingual podcast videos ${{ steps.dropbox.outputs.latest_folder }} ${{ github.run_id }}" 8

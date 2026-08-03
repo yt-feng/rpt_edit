@@ -1,0 +1,266 @@
+name: Market views daily PDF
+
+run-name: Market Views ${{ inputs.expected_bank_date || inputs.date_folder || github.event.workflow_run.name || 'source completion' }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      date_folder:
+        description: "Dropbox output date folder under xhs_notes/dropbox, or latest"
+        required: true
+        default: "latest"
+      expected_bank_date:
+        description: "Optional completed bank date asserted by the upstream parser"
+        required: false
+        default: ""
+      source_handoff_run_id:
+        description: "Private XHS handoff run id supplied by Final PDF to XHS notes"
+        required: false
+        default: ""
+      model:
+        description: "DeepSeek model for synthesis"
+        required: true
+        default: "deepseek-v4-flash"
+      deepseek_base_url:
+        description: "DeepSeek API base URL"
+        required: true
+        default: "https://api.deepseek.com"
+      compile_latex:
+        description: "Also compile the LaTeX .tex with XeLaTeX. Default false because ReportLab already creates the PDF much faster."
+        required: true
+        type: boolean
+        default: false
+permissions:
+  contents: read
+
+env:
+  PYTHONUNBUFFERED: "1"
+  PRIVATE_HANDOFF_ROOT: "_private-workflow-handoff/xhs"
+
+concurrency:
+  group: market-views-daily-pdf
+  cancel-in-progress: false
+
+jobs:
+  build-market-views-pdf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          sparse-checkout: |
+            .github/workflows
+            scripts
+            prompts
+            requirements.txt
+            xhs_notes/institutions
+            xhs_notes/consulting
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install private handoff dependency
+        run: python -m pip install boto3
+
+      - name: Download bank inputs from private R2
+        if: ${{ github.event.inputs.source_handoff_run_id != '' }}
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          EXPECTED_BANK_DATE="${{ github.event.inputs.expected_bank_date }}"
+          if ! printf '%s\n' "$EXPECTED_BANK_DATE" | grep -Eq '^[0-9]{6,8}$'; then
+            echo "A valid expected_bank_date is required with source_handoff_run_id." >&2
+            exit 1
+          fi
+          python scripts/private_workflow_handoff.py download-shards \
+            --prefix "$PRIVATE_HANDOFF_ROOT/${{ github.event.inputs.source_handoff_run_id }}/$EXPECTED_BANK_DATE" \
+            --destination "xhs_notes/dropbox/$EXPECTED_BANK_DATE"
+
+      - name: Resolve and validate primary bank source
+        env:
+          REQUESTED_DATE_FOLDER: ${{ github.event.inputs.date_folder || 'latest' }}
+          EXPECTED_BANK_DATE: ${{ github.event.inputs.expected_bank_date || '' }}
+        run: |
+          BUILD_DATE_FOLDER="$REQUESTED_DATE_FOLDER"
+          PRIMARY_DATE_FOLDER="$REQUESTED_DATE_FOLDER"
+          if [ "$PRIMARY_DATE_FOLDER" = "latest" ]; then
+            PRIMARY_DATE_FOLDER="$(find xhs_notes/dropbox -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | grep -E '^[0-9]{6,8}$' | sort -n | tail -1)"
+          fi
+          if ! printf '%s\n' "$PRIMARY_DATE_FOLDER" | grep -Eq '^[0-9]{6,8}$'; then
+            echo "Invalid or missing primary bank date folder: $PRIMARY_DATE_FOLDER" >&2
+            exit 1
+          fi
+          if [ -n "$EXPECTED_BANK_DATE" ] && [ "$PRIMARY_DATE_FOLDER" != "$EXPECTED_BANK_DATE" ]; then
+            echo "Upstream completed bank date $EXPECTED_BANK_DATE, but latest committed bank date is $PRIMARY_DATE_FOLDER." >&2
+            exit 1
+          fi
+
+          PRIMARY_DIR="xhs_notes/dropbox/$PRIMARY_DATE_FOLDER"
+          if [ ! -d "$PRIMARY_DIR" ]; then
+            echo "Primary bank source folder does not exist: $PRIMARY_DIR" >&2
+            exit 1
+          fi
+          REPORT_COUNT="$(find "$PRIMARY_DIR" -type f \( -name source_mineru.md -o -name wechat_article.md -o -name note.md \) -printf '%h\n' | sort -u | wc -l | tr -d ' ')"
+          if [ "$REPORT_COUNT" -eq 0 ]; then
+            echo "Primary bank source has no parsed report folders: $PRIMARY_DIR" >&2
+            exit 1
+          fi
+
+          SOURCE_DIRS=()
+          if [ "$BUILD_DATE_FOLDER" = "latest" ]; then
+            for SOURCE_ROOT in xhs_notes/dropbox xhs_notes/institutions xhs_notes/consulting; do
+              LATEST_SOURCE_DATE="$(find "$SOURCE_ROOT" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | grep -E '^[0-9]{6,8}$' | sort -n | tail -1)"
+              if [ -n "$LATEST_SOURCE_DATE" ]; then
+                SOURCE_DIRS+=("$SOURCE_ROOT/$LATEST_SOURCE_DATE")
+              fi
+            done
+          else
+            for SOURCE_ROOT in xhs_notes/dropbox xhs_notes/institutions xhs_notes/consulting; do
+              if [ -d "$SOURCE_ROOT/$BUILD_DATE_FOLDER" ]; then
+                SOURCE_DIRS+=("$SOURCE_ROOT/$BUILD_DATE_FOLDER")
+              fi
+            done
+          fi
+          EXPECTED_DATE_FOLDER="$(printf '%s\n' "${SOURCE_DIRS[@]}" | awk -F/ '{print $NF}' | sort -n | tail -1)"
+
+          CURRENT_INPUTS_FILE="$RUNNER_TEMP/market_views_current_inputs.txt"
+          find "${SOURCE_DIRS[@]}" -type f \( -name source_mineru.md -o -name wechat_article.md -o -name note.md \) -printf '%h\n' | sort -u > "$CURRENT_INPUTS_FILE"
+          CURRENT_INPUT_COUNT="$(wc -l < "$CURRENT_INPUTS_FILE" | tr -d ' ')"
+          echo "::notice::Primary bank date=$PRIMARY_DATE_FOLDER, expected issue date=$EXPECTED_DATE_FOLDER, parsed bank reports=$REPORT_COUNT, current inputs=$CURRENT_INPUT_COUNT."
+          echo "BUILD_DATE_FOLDER=$BUILD_DATE_FOLDER" >> "$GITHUB_ENV"
+          echo "EXPECTED_DATE_FOLDER=$EXPECTED_DATE_FOLDER" >> "$GITHUB_ENV"
+          echo "SHOULD_BUILD=true" >> "$GITHUB_ENV"
+
+      - name: Install and test private R2 archiver
+        run: |
+          python scripts/test_upload_market_view_to_r2.py
+          python scripts/test_private_workflow_handoff.py
+
+      - name: Install Python dependencies
+        if: ${{ env.SHOULD_BUILD != 'false' }}
+        run: |
+          pip install -r requirements.txt
+          pip install reportlab pillow
+
+      - name: Install Chinese font for fast PDF renderer
+        if: ${{ env.SHOULD_BUILD != 'false' }}
+        timeout-minutes: 5
+        continue-on-error: true
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends fonts-noto-cjk
+
+      - name: Optionally install minimal LaTeX
+        if: ${{ env.SHOULD_BUILD != 'false' && github.event.inputs.compile_latex == 'true' }}
+        timeout-minutes: 12
+        run: |
+          echo "::notice::Installing XeLaTeX only because compile_latex=true. Fast ReportLab PDF is always generated even if this is skipped."
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends texlive-xetex texlive-latex-recommended texlive-lang-chinese fonts-noto-cjk
+
+      - name: Materialize private publishing image
+        if: ${{ env.SHOULD_BUILD != 'false' }}
+        env:
+          PORTAL_PRIVATE_PUBLISH_ASSET_KEY: ${{ secrets.PORTAL_PRIVATE_PUBLISH_ASSET_KEY }}
+        run: bash scripts/materialize_private_social_asset.sh prompts
+
+      - name: Build market views data and LaTeX source
+        if: ${{ env.SHOULD_BUILD != 'false' }}
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_BASE_URL: ${{ inputs.deepseek_base_url || 'https://api.deepseek.com' }}
+        run: |
+          set -o pipefail
+          MODEL="${{ github.event.inputs.model || 'deepseek-v4-flash' }}"
+          BASE_URL="${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}"
+          COMPILE_LATEX="${{ github.event.inputs.compile_latex || 'false' }}"
+          echo "::notice::Building bank-led Market Views with dynamic topic planning and per-section DeepSeek coverage validation."
+          python scripts/build_market_views_pdf.py \
+            --dropbox-output-root "xhs_notes/dropbox" \
+            --extra-roots "xhs_notes/institutions,xhs_notes/consulting" \
+            --date-folder "$BUILD_DATE_FOLDER" \
+            --output-root "market_view_summaries" \
+            --model "$MODEL" \
+            --deepseek-base-url "$BASE_URL" \
+            --max-reports 0 \
+            --per-report-extract-chars 2200 \
+            --deepseek-max-tokens 8192 \
+            --max-figures 0 \
+            --max-selected-figures 0 \
+            --max-figures-per-report 5 \
+            --max-reports-per-bank-section 12 \
+            --max-section-figure-candidates 40 \
+            --figures-per-bank-section 4 \
+            --max-external-visuals-per-report 0 \
+            --compile "$COMPILE_LATEX" 2>&1 | tee market_views_build_progress.log
+          RESOLVED_DATE_FOLDER="$(grep -Eo 'MARKET_VIEWS_DATE_FOLDER=[0-9]+' market_views_build_progress.log | tail -1 | cut -d= -f2)"
+          if [ -z "$RESOLVED_DATE_FOLDER" ]; then
+            echo "Could not resolve generated market_view_summaries date folder." >&2
+            exit 1
+          fi
+          if [ "$RESOLVED_DATE_FOLDER" != "$EXPECTED_DATE_FOLDER" ]; then
+            echo "Expected issue date $EXPECTED_DATE_FOLDER but builder resolved $RESOLVED_DATE_FOLDER." >&2
+            exit 1
+          fi
+          echo "::notice::Resolved market views date folder: $RESOLVED_DATE_FOLDER"
+          echo "DATE_FOLDER=$RESOLVED_DATE_FOLDER" >> "$GITHUB_ENV"
+
+      - name: Render fast PDF without LaTeX install
+        if: ${{ env.SHOULD_BUILD != 'false' }}
+        run: |
+          set -o pipefail
+          echo "::notice::Rendering market_views_<date>.pdf with ReportLab."
+          python scripts/render_market_views_reportlab_pdf.py \
+            --summary-root "market_view_summaries" \
+            --date-folder "$DATE_FOLDER" 2>&1 | tee market_views_pdf_render_progress.log
+          find market_view_summaries -name "*.pdf" -print
+
+      - name: Verify PDF exists before upload and commit
+        if: ${{ env.SHOULD_BUILD != 'false' }}
+        run: |
+          PDF_PATH="market_view_summaries/$DATE_FOLDER/market_views_$DATE_FOLDER.pdf"
+          if [ ! -f "$PDF_PATH" ]; then
+            echo "Expected PDF was not rendered: $PDF_PATH" >&2
+            exit 1
+          fi
+          PDF_BYTES="$(stat -c '%s' "$PDF_PATH")"
+          if [ "$PDF_BYTES" -le 1024 ]; then
+            echo "Expected PDF is too small: $PDF_PATH ($PDF_BYTES bytes)" >&2
+            exit 1
+          fi
+          echo "::notice::Verified exact Market Views PDF: $PDF_PATH ($PDF_BYTES bytes)."
+
+      - name: Archive exact Market Views PDF in private R2
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET || 'portal-suite-pdfs' }}
+        run: |
+          PDF_PATH="market_view_summaries/$EXPECTED_DATE_FOLDER/market_views_$EXPECTED_DATE_FOLDER.pdf"
+          if [ ! -f "$PDF_PATH" ]; then
+            echo "Expected Market Views PDF is missing before private archive: $PDF_PATH" >&2
+            exit 1
+          fi
+          echo "::notice::Archiving the exact $EXPECTED_DATE_FOLDER Market Views PDF in private R2."
+          python scripts/upload_market_view_to_r2.py \
+            --date "$EXPECTED_DATE_FOLDER" \
+            --pdf "$PDF_PATH"
+
+  notify-failure:
+    needs: [build-market-views-pdf]
+    if: ${{ always() && !cancelled() && needs.build-market-views-pdf.result == 'failure' }}
+    uses: ./.github/workflows/portal-ops-alert.yml
+    with:
+      source_workflow: Market views daily PDF
+      source_results: build=${{ needs.build-market-views-pdf.result }}
+    secrets: inherit

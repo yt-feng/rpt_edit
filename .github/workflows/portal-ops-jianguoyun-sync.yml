@@ -1,0 +1,76 @@
+name: Portal Suite Ops Jianguoyun Sync
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_date:
+        description: "Last Beijing date to sync (YYYY-MM-DD; blank uses today)"
+        required: false
+        default: ""
+      sync_days:
+        description: "Number of dates to sync, ending at target_date"
+        required: true
+        default: "3"
+  repository_dispatch:
+    types:
+      - portal-ops-files-changed
+  schedule:
+    # Hourly fallback from 08:15 through 00:15 Beijing time. File discovery in
+    # the Portal Suite Worker dispatches this workflow immediately when the admin
+    # snapshot gains a new operations video.
+    - cron: "15 0-16 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portal-ops-jianguoyun-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: ${{ vars.PORTAL_AUTOMATION_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            scripts/render_private_config.py
+            scripts/sync_ops_videos_to_jianguoyun.py
+            scripts/test_sync_ops_videos_to_jianguoyun.py
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check requests
+
+      - name: Test Jianguoyun WebDAV client
+        run: python -B scripts/test_sync_ops_videos_to_jianguoyun.py
+
+      - name: Materialize private sync runtime values
+        env:
+          PORTAL_PRIVATE_CONFIG_B64: ${{ secrets.PORTAL_PRIVATE_CONFIG_B64 }}
+        run: |
+          python -B scripts/render_private_config.py \
+            --root scripts/sync_ops_videos_to_jianguoyun.py \
+            --github-add-mask \
+            --skip-generated-files
+
+      - name: Sync operations videos to Jianguoyun
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_READ_TOKEN || secrets.GH_DISPATCH_TOKEN || github.token }}
+          JIANGUOYUN_WEBDAV_URL: ${{ secrets.JIANGUOYUN_WEBDAV_URL }}
+          JIANGUOYUN_WEBDAV_USERNAME: ${{ secrets.JIANGUOYUN_WEBDAV_USERNAME }}
+          JIANGUOYUN_WEBDAV_PASSWORD: ${{ secrets.JIANGUOYUN_WEBDAV_PASSWORD }}
+        run: |
+          python scripts/sync_ops_videos_to_jianguoyun.py \
+            --target-date "${{ github.event.inputs.target_date || '' }}" \
+            --days "${{ github.event.inputs.sync_days || '3' }}" \
+            --retention-days 3 \
+            --remote-root "/我的坚果云/Portal Suite/Ops"

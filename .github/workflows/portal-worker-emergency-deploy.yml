@@ -1,0 +1,233 @@
+name: Portal Suite Worker Emergency Deploy
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portal-worker-emergency-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    if: ${{ vars.PORTAL_AUTOMATION_ENABLED == 'true' }}
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout Worker source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .gitignore
+            .github/workflows/portal-worker-emergency-deploy.yml
+            .github/workflows/market-views-latex-pdf.yml
+            workers/portal-suite-worker/src/index.js
+            portal_suite/site_src
+            scripts/build_portal_suite_site.py
+            scripts/check_public_identity.py
+            scripts/render_private_config.py
+            scripts/portal_r2_prefix.py
+            scripts/test_portal_catalog_object_keys.js
+            scripts/test_portal_entitlement_precedence.js
+            scripts/test_portal_legacy_access_compat.js
+            scripts/test_portal_access_renewal.js
+            scripts/test_portal_daily_pick_topics.js
+            scripts/test_portal_hot_report_auto_archive.js
+            scripts/test_portal_hot_retention_first_added.js
+            scripts/test_portal_hot_reports.js
+            scripts/test_portal_market_views.js
+            scripts/test_portal_multi_institution_access.js
+            scripts/test_portal_newsfeed_access.js
+            scripts/test_portal_text_only_pdf_upload.js
+            scripts/test_portal_text_only_text_access.js
+            scripts/test_portal_r2_prefix.py
+
+      - name: Validate legacy access compatibility
+        run: |
+          python3 -B scripts/check_public_identity.py
+          node --check workers/portal-suite-worker/src/index.js
+          node --check portal_suite/site_src/assets/app.js
+          node scripts/test_portal_entitlement_precedence.js
+          node scripts/test_portal_legacy_access_compat.js
+          node scripts/test_portal_access_renewal.js
+          node scripts/test_portal_daily_pick_topics.js
+          node scripts/test_portal_catalog_object_keys.js
+          node scripts/test_portal_hot_report_auto_archive.js
+          node scripts/test_portal_hot_retention_first_added.js
+          node scripts/test_portal_hot_reports.js
+          node scripts/test_portal_market_views.js
+          node scripts/test_portal_multi_institution_access.js
+          node scripts/test_portal_text_only_pdf_upload.js
+          node scripts/test_portal_text_only_text_access.js
+          node scripts/test_portal_newsfeed_access.js
+          python3 scripts/test_portal_r2_prefix.py
+
+      - name: Materialize private deployment values
+        env:
+          PORTAL_PRIVATE_CONFIG_B64: ${{ secrets.PORTAL_PRIVATE_CONFIG_B64 }}
+        run: |
+          python3 scripts/render_private_config.py \
+            --github-add-mask \
+            --skip-generated-files \
+            --root workers/portal-suite-worker/src \
+            --root portal_suite/site_src \
+            --root scripts/build_portal_suite_site.py
+
+      - name: Prepare Cloudflare Worker config
+        env:
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+          R2_OBJECT_PREFIX: ${{ secrets.R2_OBJECT_PREFIX || vars.R2_OBJECT_PREFIX }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          NEWSFEED_EMAIL_PROVIDER: ${{ vars.NEWSFEED_EMAIL_PROVIDER || 'cloudflare' }}
+          OPS_ALERT_EMAIL: ${{ secrets.OPS_ALERT_EMAIL || vars.OPS_ALERT_EMAIL || '' }}
+        run: |
+          for name in PORTAL_SITE_URL R2_BUCKET_NAME R2_OBJECT_PREFIX CLOUDFLARE_ACCOUNT_ID; do
+            if [ -z "${!name}" ]; then
+              echo "Required deployment value is not configured: $name" >&2
+              exit 1
+            fi
+          done
+          case "$PORTAL_SITE_URL" in
+            https://*) ;;
+            *)
+              echo "PORTAL_SITE_URL must use https" >&2
+              exit 1
+              ;;
+          esac
+          PORTAL_SITE_URL="${PORTAL_SITE_URL%/}"
+          R2_OBJECT_PREFIX="$(python3 scripts/portal_r2_prefix.py "$R2_OBJECT_PREFIX")"
+          export PORTAL_SITE_URL R2_OBJECT_PREFIX
+          cat > workers/portal-suite-worker/wrangler.toml <<EOF
+          name = "portal-suite-worker"
+          main = "src/index.js"
+          compatibility_date = "2026-05-01"
+
+          [vars]
+          ACCOUNT_STORE_MODE = "supabase"
+          R2_OBJECT_PREFIX = "$R2_OBJECT_PREFIX"
+          STATIC_DATA_PREFIX = "edge-static/runtime-data"
+          CATALOG_URL = "$PORTAL_SITE_URL/data/catalog.json"
+          SEARCH_INDEX_URL = "$PORTAL_SITE_URL/data/search_index.json"
+          PASSWORD_RULES_URL = "$PORTAL_SITE_URL/data/password_rules.json"
+          ALLOWED_ORIGIN = "$PORTAL_SITE_URL"
+          GH_REPO = "$GITHUB_REPOSITORY"
+          NEWSFEED_EMAIL_PROVIDER = "$NEWSFEED_EMAIL_PROVIDER"
+          OPS_ALERT_EMAIL = "$OPS_ALERT_EMAIL"
+
+          [triggers]
+          crons = [
+            "*/30 * * * *",
+            "*/10 17-18 * * *",
+            "*/10 23 * * *",
+            "*/10 0-3 * * *",
+            "*/10 5-6 * * *"
+          ]
+
+          [[r2_buckets]]
+          binding = "REPORT_BUCKET"
+          bucket_name = "$R2_BUCKET_NAME"
+          EOF
+          if [ "$NEWSFEED_EMAIL_PROVIDER" = "cloudflare" ]; then
+            cat >> workers/portal-suite-worker/wrangler.toml <<EOF
+
+          [[send_email]]
+          name = "EMAIL"
+          EOF
+          fi
+
+      - name: Materialize private Worker config
+        env:
+          PORTAL_PRIVATE_CONFIG_B64: ${{ secrets.PORTAL_PRIVATE_CONFIG_B64 }}
+        run: |
+          python3 scripts/render_private_config.py \
+            --skip-generated-files \
+            --root workers/portal-suite-worker/wrangler.toml
+
+      - name: Verify private deploy artifacts
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          roots = (
+              Path("workers/portal-suite-worker/src"),
+              Path("portal_suite/site_src"),
+              Path("scripts/build_portal_suite_site.py"),
+              Path("workers/portal-suite-worker/wrangler.toml"),
+          )
+          placeholders = (
+              "portal.example.invalid",
+              "portal-suite-pdfs",
+              "portal-suite-worker",
+              "portal-suite:",
+              "source/example",
+              "Portal Suite",
+          )
+          failures = []
+          for root in roots:
+              paths = (root,) if root.is_file() else root.rglob("*")
+              for path in paths:
+                  if not path.is_file() or path.is_symlink():
+                      continue
+                  try:
+                      text = path.read_text(encoding="utf-8")
+                  except UnicodeDecodeError:
+                      continue
+                  if any(marker in text for marker in placeholders):
+                      failures.append(str(path))
+          if failures:
+              for path in sorted(set(failures)):
+                  print(f"Public deployment placeholder remains in {path}")
+              raise SystemExit(1)
+          PY
+
+      - name: Deploy Cloudflare Worker
+        uses: cloudflare/wrangler-action@v3
+        env:
+          PASSWORD_SECRET: ${{ secrets.PASSWORD_SECRET }}
+          CALC_KEY: ${{ secrets.CALC_KEY }}
+          MASTER_KEY: ${{ secrets[vars.PORTAL_MASTER_SECRET_REF] || secrets[vars.PORTAL_DOWNLOAD_SECRET_REF] }}
+          AUTH_SECRET: ${{ secrets.AUTH_SECRET || secrets.PASSWORD_SECRET || 'unconfigured' }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL || vars.SUPABASE_URL || 'unconfigured' }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY || 'unconfigured' }}
+          GH_READ_TOKEN: ${{ secrets.GH_READ_TOKEN || secrets.GH_DISPATCH_TOKEN || 'unconfigured' }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY || 'unconfigured' }}
+          DEEPSEEK_BASE_URL: ${{ vars.DEEPSEEK_BASE_URL || 'https://api.deepseek.com' }}
+          DEEPSEEK_MODEL: ${{ vars.DEEPSEEK_MODEL || 'deepseek-v4-flash' }}
+          NEWSFEED_EMAIL_FROM: ${{ secrets.NEWSFEED_EMAIL_FROM || vars.NEWSFEED_EMAIL_FROM || 'unconfigured' }}
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY || 'unconfigured' }}
+          BREVO_SENDER_EMAIL: ${{ secrets.BREVO_SENDER_EMAIL || vars.BREVO_SENDER_EMAIL || 'unconfigured' }}
+          BREVO_SENDER_NAME: ${{ secrets.BREVO_SENDER_NAME || vars.BREVO_SENDER_NAME || 'Portal Suite Newsfeed' }}
+          CLOUDFLARE_EMAIL_ROUTING_API_TOKEN: ${{ secrets.CLOUDFLARE_EMAIL_ROUTING_API_TOKEN || secrets.CLOUDFLARE_API_TOKEN || 'unconfigured' }}
+          CLOUDFLARE_EMAIL_ROUTING_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_EMAIL_ROUTING_ACCOUNT_ID || secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID || 'unconfigured' }}
+          GH_DISPATCH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN || 'unconfigured' }}
+          OPS_ALERT_SIGNING_KEY: ${{ secrets.OPS_ALERT_SIGNING_KEY || secrets.PASSWORD_SECRET || 'unconfigured' }}
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          workingDirectory: workers/portal-suite-worker
+          command: deploy
+          secrets: |
+            PASSWORD_SECRET
+            CALC_KEY
+            MASTER_KEY
+            AUTH_SECRET
+            SUPABASE_URL
+            SUPABASE_SERVICE_ROLE_KEY
+            GH_READ_TOKEN
+            DEEPSEEK_API_KEY
+            DEEPSEEK_BASE_URL
+            DEEPSEEK_MODEL
+            NEWSFEED_EMAIL_FROM
+            BREVO_API_KEY
+            BREVO_SENDER_EMAIL
+            BREVO_SENDER_NAME
+            CLOUDFLARE_EMAIL_ROUTING_API_TOKEN
+            CLOUDFLARE_EMAIL_ROUTING_ACCOUNT_ID
+            GH_DISPATCH_TOKEN
+            OPS_ALERT_SIGNING_KEY

@@ -1,0 +1,33 @@
+{
+  "feed_url": "https://www.ark-invest.com/feed",
+  "date_folder": "260729",
+  "since_days": 1,
+  "max_pub_age_days": 120,
+  "include_types": [
+    "articles",
+    "crypto reports",
+    "newsletters",
+    "white papers"
+  ],
+  "feed_item_count": 1371,
+  "selected_count": 1,
+  "written": [
+    {
+      "source": "ark_invest_feed",
+      "institution_name": "木头姐ARK",
+      "title": "#518: Tesla Remained Patient On Robotaxi And Optimus While Its AI Ambitions Grew With Megapod, & More",
+      "type": "Newsletters",
+      "category": "Newsletters",
+      "source_url": "https://www.ark-invest.com/newsletters/issue-518",
+      "guid": "https://www.ark-invest.com/newsletters/issue-518",
+      "pub_date": "Tue, 28 Jul 2026 15:43:00 GMT",
+      "updated": "2026-07-28T19:52:49.205+00:00",
+      "event_datetime": "2026-07-28T19:52:49.205000+00:00",
+      "feed_key": "a740feb4ea642850",
+      "source_mineru": "source_mineru.md",
+      "note": "note.md",
+      "output_dir": "xhs_notes/ark/260729/0001-ARK_518-Tesla-Remained-Patient-On-Robotaxi-And-Optimus-While-Its-AI-Ambition_a740feb4ea642850"
+    }
+  ],
+  "status": "ok"
+}

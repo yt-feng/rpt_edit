@@ -1,0 +1,76 @@
+name: Bank report catalog
+
+on:
+  workflow_dispatch:
+    inputs:
+      dropbox_root:
+        description: "Dropbox root folder containing date-named backup folders"
+        required: true
+        default: "/zip_backup"
+      days:
+        description: "Latest date folders to include"
+        required: true
+        default: "5"
+      output_root:
+        description: "Output directory for per-bank TXT catalogs"
+        required: true
+        default: "bank_report_catalogs"
+  schedule:
+    # 06:00 Beijing time = 22:00 UTC on the previous day.
+    - cron: "0 22 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bank-report-catalog
+  cancel-in-progress: true
+
+env:
+  PYTHONUNBUFFERED: "1"
+
+jobs:
+  build-bank-report-catalog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: pip install requests
+
+      - name: Build per-bank report catalog TXT files
+        id: build_catalog
+        env:
+          DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
+          DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
+          DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
+        run: |
+          python scripts/build_bank_report_catalog.py \
+            --dropbox-root "${{ github.event.inputs.dropbox_root || '/zip_backup' }}" \
+            --days "${{ github.event.inputs.days || '5' }}" \
+            --output-root "${{ github.event.inputs.output_root || 'bank_report_catalogs' }}"
+
+      - name: List generated catalog files
+        run: |
+          find "${{ steps.build_catalog.outputs.output_dir }}" -maxdepth 1 -type f -printf '%s bytes %p\n' | sort -n
+
+      - name: Upload catalog artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: bank-report-catalog-${{ steps.build_catalog.outputs.latest_folder }}
+          path: ${{ steps.build_catalog.outputs.output_dir }}
+          if-no-files-found: error
+
+      - name: Commit catalog outputs
+        run: |
+          bash scripts/commit_output_dir.sh "${{ steps.build_catalog.outputs.output_dir }}" "Generate bank report catalogs ${{ steps.build_catalog.outputs.latest_folder }}" 8

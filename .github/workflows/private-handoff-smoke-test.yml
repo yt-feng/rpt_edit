@@ -1,0 +1,54 @@
+name: Private workflow handoff smoke test
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PYTHONUNBUFFERED: "1"
+  SMOKE_PREFIX: "_private-workflow-handoff/smoke/${{ github.run_id }}"
+
+jobs:
+  verify-private-r2-handoff:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          sparse-checkout: |
+            scripts/private_workflow_handoff.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependency
+        run: python -m pip install boto3
+      - name: Upload and download synthetic private payload
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/private-handoff-source/mineru_raw"
+          printf '%s\n' 'private handoff smoke test' > "$RUNNER_TEMP/private-handoff-source/wechat_article.md"
+          printf '%s\n' 'must not be archived' > "$RUNNER_TEMP/private-handoff-source/mineru_raw/origin.pdf"
+          python scripts/private_workflow_handoff.py upload-dir \
+            --source "$RUNNER_TEMP/private-handoff-source" \
+            --key "$SMOKE_PREFIX/sample.tar.gz"
+          python scripts/private_workflow_handoff.py download-dir \
+            --key "$SMOKE_PREFIX/sample.tar.gz" \
+            --destination "$RUNNER_TEMP/private-handoff-restored"
+          test -s "$RUNNER_TEMP/private-handoff-restored/wechat_article.md"
+          test ! -e "$RUNNER_TEMP/private-handoff-restored/mineru_raw/origin.pdf"
+      - name: Delete smoke object
+        if: ${{ always() }}
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python scripts/private_workflow_handoff.py delete-prefix --prefix "$SMOKE_PREFIX"
