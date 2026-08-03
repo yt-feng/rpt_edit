@@ -15,6 +15,7 @@ on:
           - migrate
           - switch
           - rollback
+          - inspect-source
         default: migrate
 
 permissions:
@@ -74,10 +75,101 @@ jobs:
           printf 'STATIC_RELEASE=%s\n' "$release_id" >> "$GITHUB_ENV"
 
       - name: Install refresh dependencies
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
+        if: github.event_name == 'schedule' || inputs.operation == 'migrate' || inputs.operation == 'inspect-source'
         run: >-
           python3 -m pip install --disable-pip-version-check
           "boto3>=1.34,<2" "pypdf>=4,<6" "requests>=2.31,<3"
+
+      - name: Inspect source namespace visibility
+        if: inputs.operation == 'inspect-source'
+        env:
+          DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
+          DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
+          DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          import os
+          import re
+
+          import requests
+
+          token_response = requests.post(
+              "https://api.dropboxapi.com/oauth2/token",
+              data={"grant_type": "refresh_token", "refresh_token": os.environ["DROPBOX_REFRESH_TOKEN"]},
+              auth=(os.environ["DROPBOX_APP_KEY"], os.environ["DROPBOX_APP_SECRET"]),
+              timeout=60,
+          )
+          token_response.raise_for_status()
+          token = token_response.json()["access_token"]
+          auth_headers = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
+
+          account_response = requests.post(
+              "https://api.dropboxapi.com/2/users/get_current_account",
+              headers=auth_headers,
+              data="null",
+              timeout=60,
+          )
+          account_response.raise_for_status()
+          root_info = account_response.json().get("root_info") or {}
+          root_namespace = str(root_info.get("root_namespace_id") or "")
+          home_namespace = str(root_info.get("home_namespace_id") or "")
+
+          def list_dates(path_root):
+              headers = dict(auth_headers)
+              if path_root:
+                  headers["Dropbox-API-Path-Root"] = json.dumps(
+                      {".tag": "root", "root": path_root}, separators=(",", ":")
+                  )
+              response = requests.post(
+                  "https://api.dropboxapi.com/2/files/list_folder",
+                  headers=headers,
+                  json={"path": "/zip_backup", "recursive": False, "include_deleted": False},
+                  timeout=90,
+              )
+              if response.status_code == 409:
+                  return False, []
+              response.raise_for_status()
+              payload = response.json()
+              entries = list(payload.get("entries") or [])
+              while payload.get("has_more"):
+                  response = requests.post(
+                      "https://api.dropboxapi.com/2/files/list_folder/continue",
+                      headers=headers,
+                      json={"cursor": payload["cursor"]},
+                      timeout=90,
+                  )
+                  response.raise_for_status()
+                  payload = response.json()
+                  entries.extend(payload.get("entries") or [])
+              dates = sorted(
+                  (
+                      str(entry.get("name") or "")
+                      for entry in entries
+                      if entry.get(".tag") == "folder" and re.fullmatch(r"\d{6,8}", str(entry.get("name") or ""))
+                  ),
+                  key=int,
+                  reverse=True,
+              )
+              return True, dates
+
+          default_found, default_dates = list_dates("")
+          print(
+              f"account_root_kind={root_info.get('.tag') or 'unknown'} "
+              f"root_differs_from_home={root_namespace != home_namespace}"
+          )
+          print(
+              f"default_path_found={default_found} default_date_count={len(default_dates)} "
+              f"default_latest={','.join(default_dates[:10]) or 'none'}"
+          )
+          if root_namespace and root_namespace != home_namespace:
+              root_found, root_dates = list_dates(root_namespace)
+              print(
+                  f"account_root_path_found={root_found} account_root_date_count={len(root_dates)} "
+                  f"account_root_latest={','.join(root_dates[:10]) or 'none'}"
+              )
+          PY
 
       - name: Materialize private deployment profile
         if: github.event_name == 'schedule' || inputs.operation == 'migrate'
