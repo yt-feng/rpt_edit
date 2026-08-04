@@ -39,6 +39,11 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Test cleanup staging
+        run: |
+          bash scripts/test_stage_pruned_generated_paths.sh
+          bash scripts/test_push_main_with_rebase_retry.sh
+
       - name: Prune old generated date folders
         run: |
           python scripts/prune_generated_date_dirs.py \
@@ -48,10 +53,18 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A xhs_notes/dropbox publish_ready_zips bank_report_catalogs bilingual_podcast_videos portal_translated_reports wechat_drafts
+          bash scripts/stage_pruned_generated_paths.sh \
+            xhs_notes/dropbox \
+            xhs_notes/institutions \
+            xhs_notes/consulting \
+            publish_ready_zips \
+            bank_report_catalogs \
+            bilingual_podcast_videos \
+            portal_translated_reports \
+            wechat_drafts
           if git diff --cached --quiet; then
             echo "No generated date folders to prune."
             exit 0
           fi
           git commit -m "Prune old generated date folders"
-          git push origin HEAD:main
+          bash scripts/push_main_with_rebase_retry.sh 5
