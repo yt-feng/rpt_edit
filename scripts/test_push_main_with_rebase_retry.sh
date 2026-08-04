@@ -27,14 +27,18 @@ git --git-dir="$REMOTE_DIR" symbolic-ref HEAD refs/heads/main
 
 git clone -q "$REMOTE_DIR" "$CLEANUP_DIR"
 git clone -q "$REMOTE_DIR" "$CONCURRENT_DIR"
+git -C "$CLEANUP_DIR" config user.name test
+git -C "$CLEANUP_DIR" config user.email test@example.com
+git -C "$CONCURRENT_DIR" config user.name test
+git -C "$CONCURRENT_DIR" config user.email test@example.com
 
 rm -rf -- "$CLEANUP_DIR/generated/260730"
 git -C "$CLEANUP_DIR" add -A generated
-git -C "$CLEANUP_DIR" -c user.name=test -c user.email=test@example.com commit -q -m cleanup
+git -C "$CLEANUP_DIR" commit -q -m cleanup
 
 printf 'concurrent\n' > "$CONCURRENT_DIR/concurrent.txt"
 git -C "$CONCURRENT_DIR" add concurrent.txt
-git -C "$CONCURRENT_DIR" -c user.name=test -c user.email=test@example.com commit -q -m concurrent
+git -C "$CONCURRENT_DIR" commit -q -m concurrent
 git -C "$CONCURRENT_DIR" push -q origin HEAD:main
 
 (
