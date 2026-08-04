@@ -41,6 +41,10 @@ on:
         required: true
         type: boolean
         default: false
+      market_views_bank_date:
+        description: "Bank Dropbox date to combine into Market Views. Empty uses yesterday in Asia/Shanghai."
+        required: false
+        default: ""
 
   schedule:
     # 06:30 Beijing time (UTC+8), after the institution flow at 06:00.
@@ -48,10 +52,12 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 env:
   PYTHONUNBUFFERED: "1"
   PRIVATE_HANDOFF_ROOT: "_private-workflow-handoff/consulting"
+  MARKET_VIEWS_HANDOFF_ROOT: "_private-workflow-handoff/market-views"
 
 concurrency:
   group: consulting-latest-pdf-to-wechat
@@ -155,6 +161,19 @@ jobs:
             --title-guard \
             2>&1 | tee consulting_translated_progress.log
 
+      - name: Upload Market Views source handoff
+        if: ${{ steps.fetch.outputs.pdf_count != '0' }}
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          DATE="${{ steps.fetch.outputs.date_folder }}"
+          python scripts/private_workflow_handoff.py upload-dir \
+            --source "xhs_notes/consulting/$DATE" \
+            --key "$MARKET_VIEWS_HANDOFF_ROOT/consulting/${{ github.run_id }}/$DATE/xhs_notes.tar.gz"
+
       - name: Commit PDF link archive and seen state
         run: |
           bash scripts/commit_output_dir.sh "institution_feeds" "Update consulting PDF link archive" 8
@@ -184,6 +203,52 @@ jobs:
             consulting_translated_progress.log
           if-no-files-found: ignore
           retention-days: 2
+
+  trigger-market-views:
+    needs: [fetch-and-build]
+    if: ${{ !cancelled() && needs.fetch-and-build.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Trigger Market Views with latest consulting inputs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DATE_FOLDER: ${{ needs.fetch-and-build.outputs.date_folder }}
+          PDF_COUNT: ${{ needs.fetch-and-build.outputs.pdf_count }}
+          MARKET_VIEWS_BANK_DATE: ${{ github.event.inputs.market_views_bank_date }}
+        run: |
+          BANK_DATE="$MARKET_VIEWS_BANK_DATE"
+          if [ -z "$BANK_DATE" ]; then
+            BANK_DATE="$(TZ=Asia/Shanghai date -d 'yesterday' +%y%m%d)"
+          fi
+          if ! printf '%s\n' "$BANK_DATE" | grep -Eq '^[0-9]{6,8}$'; then
+            echo "Invalid Market Views bank date: $BANK_DATE" >&2
+            exit 1
+          fi
+
+          ARGS=(
+            -f date_folder=latest
+            -f expected_bank_date="$BANK_DATE"
+            -f institution_handoff_date="$DATE_FOLDER"
+            -f consulting_handoff_date="$DATE_FOLDER"
+            -f compile_latex=false
+          )
+          if [ "$PDF_COUNT" != "0" ]; then
+            ARGS+=(-f consulting_handoff_run_id="${{ github.run_id }}")
+          fi
+
+          echo "::notice::Dispatching Market Views for bank date $BANK_DATE with consulting date $DATE_FOLDER."
+          RUN_URL="$(gh workflow run market-views-latex-pdf.yml \
+            --repo "$GITHUB_REPOSITORY" \
+            --ref main \
+            "${ARGS[@]}")"
+          MARKET_RUN_ID="${RUN_URL##*/}"
+          if ! printf '%s\n' "$MARKET_RUN_ID" | grep -Eq '^[0-9]+$'; then
+            echo "Unable to resolve dispatched Market Views run from: $RUN_URL" >&2
+            exit 1
+          fi
+          echo "::notice::Waiting for Market Views run $MARKET_RUN_ID."
+          gh run watch "$MARKET_RUN_ID" --repo "$GITHUB_REPOSITORY" --compact --exit-status --interval 15
 
   upload-wechat-drafts:
     needs: fetch-and-build
@@ -275,8 +340,8 @@ jobs:
           retention-days: 2
 
   cleanup-private-handoff:
-    needs: [fetch-and-build, upload-wechat-drafts]
-    if: ${{ always() && needs.fetch-and-build.result == 'success' && needs.upload-wechat-drafts.result == 'success' }}
+    needs: [fetch-and-build, trigger-market-views, upload-wechat-drafts]
+    if: ${{ always() && needs.fetch-and-build.result == 'success' && needs.trigger-market-views.result != 'failure' && needs.upload-wechat-drafts.result == 'success' }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -299,13 +364,14 @@ jobs:
             --prefix "$PRIVATE_HANDOFF_ROOT/${{ github.run_id }}/${{ needs.fetch-and-build.outputs.date_folder }}"
 
   notify-failure:
-    needs: [fetch-and-build, upload-wechat-drafts, cleanup-private-handoff]
+    needs: [fetch-and-build, trigger-market-views, upload-wechat-drafts, cleanup-private-handoff]
     if: ${{ always() && !cancelled() && contains(needs.*.result, 'failure') }}
     uses: ./.github/workflows/portal-ops-alert.yml
     with:
       source_workflow: Consulting latest PDF to WeChat
       source_results: >-
         build=${{ needs.fetch-and-build.result }},
+        market_views=${{ needs.trigger-market-views.result }},
         wechat=${{ needs.upload-wechat-drafts.result }},
         handoff_cleanup=${{ needs.cleanup-private-handoff.result }}
     secrets: inherit

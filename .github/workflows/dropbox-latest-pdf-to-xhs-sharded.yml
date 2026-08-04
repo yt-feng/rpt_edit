@@ -115,6 +115,7 @@ permissions:
 env:
   PYTHONUNBUFFERED: "1"
   PRIVATE_HANDOFF_ROOT: "_private-workflow-handoff/xhs"
+  MARKET_VIEWS_HANDOFF_ROOT: "_private-workflow-handoff/market-views"
 
 concurrency:
   group: final-pdf-to-xhs-notes
@@ -463,7 +464,7 @@ jobs:
           EOF
           cat "$OUTPUT_DIR/shard_run_summary.md"
           echo "::notice::Shard ${{ matrix.shard_index }} finished in $((DURATION / 60)) minutes with $REPORT_DIRS output directories."
-      - name: Upload shard to private R2 handoff
+      - name: Upload shard to private R2 handoffs
         if: ${{ steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
@@ -474,6 +475,9 @@ jobs:
           python scripts/private_workflow_handoff.py upload-dir \
             --source "$OUTPUT_DIR" \
             --key "$PRIVATE_HANDOFF_ROOT/${{ github.run_id }}/${{ needs.select-macro-reports.outputs.latest_folder }}/shard_${{ matrix.shard_index }}.tar.gz"
+          python scripts/private_workflow_handoff.py upload-dir \
+            --source "$OUTPUT_DIR" \
+            --key "$MARKET_VIEWS_HANDOFF_ROOT/dropbox/${{ github.run_id }}/${{ needs.select-macro-reports.outputs.latest_folder }}/shard_${{ matrix.shard_index }}.tar.gz"
       - name: Upload lightweight shard diagnostics
         if: ${{ always() && steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
         uses: actions/upload-artifact@v4
@@ -563,6 +567,7 @@ jobs:
           MODEL: ${{ needs.resolve-inputs.outputs.model }}
           DEEPSEEK_BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
         run: |
+          AUX_DATE="$(TZ=Asia/Shanghai date +%y%m%d)"
           echo "::notice::All bank-report shards for $DATE_FOLDER are in private R2. Dispatching the matching Market Views issue now."
           RUN_URL="$(gh workflow run market-views-latex-pdf.yml \
             --repo "$GITHUB_REPOSITORY" \
@@ -570,6 +575,10 @@ jobs:
             -f date_folder=latest \
             -f expected_bank_date="$DATE_FOLDER" \
             -f source_handoff_run_id="${{ github.run_id }}" \
+            -f institution_handoff_date="$AUX_DATE" \
+            -f consulting_handoff_date="$AUX_DATE" \
+            -f expected_shards="${{ needs.select-macro-reports.outputs.effective_shard_count }}" \
+            -f expected_articles="${{ needs.select-macro-reports.outputs.selected_count }}" \
             -f model="$MODEL" \
             -f deepseek_base_url="$DEEPSEEK_BASE_URL" \
             -f compile_latex=false)"
