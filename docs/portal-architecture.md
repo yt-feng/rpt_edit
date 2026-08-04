@@ -100,6 +100,8 @@ flowchart LR
 
 示例：伯恩斯坦 12 个月后台授权和全站 1 个月历史会员并存时，第 1 个月全站可下载；之后只保留伯恩斯坦范围。若无限量来源已经放行，不消耗 10 篇试用额度。
 
+近期热门报告默认要求至少 3 个月会员；super/operator 仍可通过 `/admin/report-password` 为 `hot:<id>` 生成单篇报告密码。带 `password` 的 `doc.html?id=hot:<id>` 链接会在前端预填密码，未注册用户仍需点击下载按钮，Worker 在 `/hot-reports/pdf` 校验该密码后返回 PDF。
+
 ### 7.2 管理员决定
 
 - super/operator 角色和账号禁用状态优先。
@@ -124,6 +126,8 @@ flowchart LR
 | `/report-text` | GET | 有权限的 Text only 原始文本。 |
 | `/hot-reports` | GET | 近期热门报告列表。 |
 | `/hot-reports/access` | GET | 热门报告权限。 |
+| `/hot-reports/pdf` | GET/POST | 热门报告 PDF 下载，支持账号权益或单篇报告密码。 |
+| `/admin/report-password` | POST | super/operator 生成 catalog、外部、智库和热门报告的单篇报告密码。 |
 | `/account-admin/*` | GET/POST | super 管理后台。 |
 | `/ops/*` | GET/POST | super/operator 运营后台。 |
 | `/paddle-config` | GET | 410；Portal Suite 不提供 checkout。 |

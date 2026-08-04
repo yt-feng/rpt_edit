@@ -140,12 +140,22 @@ assert.match(app, /fetch\(`\$\{workerUrl\}\/account-admin\/hot-report`, \{[\s\S]
 assert.match(app, /hot-reports\/access\?report_id=/, "hot-report detail pages must query the dedicated access endpoint");
 
 const pdfHandler = extractFunction(worker, "handleHotReportPdf");
+assert.match(pdfHandler, /const password = String\(payload\.password \|\| ""\)/);
+assert.match(pdfHandler, /sharedReportPasswordMatches\(env, id, password\)/);
+assert.match(pdfHandler, /Password is incorrect\./);
 assert.match(pdfHandler, /const access = await hotReportAccessForUser\(env, user\)/);
 assert.match(pdfHandler, /if \(!access\.can_download\)/);
 assert.match(pdfHandler, /return jsonResponse\(request, env, 402,/);
-assert.doesNotMatch(pdfHandler, /password|verifyPassword/i, "hot-report PDF access must not have a password bypass");
+const passwordHandler = extractFunction(worker, "handleAdminReportPassword");
+assert.match(passwordHandler, /source === HOT_REPORT_SOURCE/);
+assert.match(passwordHandler, /password: await derivedReportPassword\(env, id\)/);
 assert.match(worker, /pathname === "\/account-admin\/hot-report"[\s\S]*?handleAccountAdminHotReportUpload/);
 assert.match(worker, /pathname === "\/hot-reports\/pdf"[\s\S]*?handleHotReportPdf/);
+assert.match(
+  app,
+  /isHotReportItem\(item\)[\s\S]*?Delivery link[\s\S]*?requestExternalPassword\(workerUrl, item\.id, HOT_REPORT_SOURCE\)/,
+  "hot-report detail pages must expose administrator delivery links",
+);
 
 const publicCommentHandler = extractFunction(worker, "publicHotReportComment");
 assert.doesNotMatch(publicCommentHandler, /author_email|author_user_id/, "public comments must not expose private author identifiers");

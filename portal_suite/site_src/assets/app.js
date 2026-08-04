@@ -6167,7 +6167,7 @@
     const accountDownload = document.getElementById("accountDownloadReport");
     const hint = document.getElementById("accountAccessHint");
     const status = document.getElementById("accountAccessStatus");
-    const passwordForm = document.getElementById("unlockForm");
+    const passwordForm = document.getElementById("unlockForm") || document.getElementById("externalDetailForm");
     const isHotReport = source === HOT_REPORT_SOURCE;
     const context = { item, source };
 
@@ -6910,12 +6910,106 @@
         ${detailHeader}
         ${item.description ? `<p class="hot-report-description">${escapeHtml(item.description)}</p>` : ""}
         ${workerUrl ? accountAccessMarkup(item) : ""}
+        <form class="unlock-box" id="externalDetailForm">
+          <h3>PDF Download</h3>
+          <p class="subtle">Enter the report password to download the PDF.</p>
+          <div class="password-row">
+            <input id="externalDetailPassword" name="report-access-code" type="password" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="Password" required>
+            <button class="primary" type="submit">Download</button>
+          </div>
+          <div id="externalDetailStatus" class="status-line" aria-live="polite"></div>
+        </form>
+        <section class="admin-panel external-admin-tools" hidden>
+          <div class="admin-panel-heading">
+            <h3>Delivery link</h3>
+            <span>Private</span>
+          </div>
+          <div class="delivery-row">
+            <button class="primary" id="generateExternalDetailDeliveryLink" type="button">Generate</button>
+            <input id="externalDetailDeliveryLinkInput" type="text" readonly aria-label="Delivery link">
+            <button id="copyExternalDeliveryLink" type="button">Copy</button>
+          </div>
+          <div id="externalDetailDeliveryStatus" class="status-line" aria-live="polite"></div>
+        </section>
         ${hotReportCommentsMarkup()}
         ${externalRelatedMarkup()}
       `;
+      const form = document.getElementById("externalDetailForm");
+      const input = document.getElementById("externalDetailPassword");
+      const button = form.querySelector("button");
+      const status = document.getElementById("externalDetailStatus");
+      const adminTools = target.querySelector(".external-admin-tools");
+      const generate = document.getElementById("generateExternalDetailDeliveryLink");
+      const linkInput = document.getElementById("externalDetailDeliveryLinkInput");
+      const copy = document.getElementById("copyExternalDeliveryLink");
+      const deliveryStatus = document.getElementById("externalDetailDeliveryStatus");
+
+      function setStatus(text, kind) {
+        status.className = kind ? `status-line ${kind}` : "status-line";
+        status.textContent = localizedContactText(text);
+      }
+
+      async function submitDownload(event) {
+        if (event) event.preventDefault();
+        if (!input.value) {
+          setStatus("Password is required.", "error");
+          return;
+        }
+        button.disabled = true;
+        try {
+          await fetchExternalPdf(workerUrl, item, input.value, setStatus);
+        } catch (error) {
+          const message = error.message || "下载失败。";
+          maybeAlertDownloadLimit(message);
+          setStatus(message, "error");
+        } finally {
+          button.disabled = false;
+        }
+      }
+
+      function refreshAdmin() {
+        adminTools.hidden = !canUseDeliveryTools();
+      }
+
+      form.addEventListener("submit", submitDownload);
       initReportAccessControls(item, workerUrl, HOT_REPORT_SOURCE, (statusTarget) => (
         downloadExternalWithAccount(workerUrl, item, statusTarget)
       ));
+      document.addEventListener("portal-admin-change", refreshAdmin);
+      document.addEventListener("portal-auth-change", refreshAdmin);
+      refreshAdmin();
+      generate.addEventListener("click", async () => {
+        generate.disabled = true;
+        linkInput.value = "";
+        deliveryStatus.className = "status-line";
+        deliveryStatus.textContent = "Generating...";
+        try {
+          const data = await requestExternalPassword(workerUrl, item.id, HOT_REPORT_SOURCE);
+          const deliveryItem = data.id ? { ...item, id: data.id, source: HOT_REPORT_SOURCE } : item;
+          linkInput.value = externalPageUrl(deliveryItem, data.password);
+          trackEvent(workerUrl, "delivery_link_generate", analyticsReportPayload(item, HOT_REPORT_SOURCE));
+          deliveryStatus.className = "status-line ok";
+          deliveryStatus.textContent = "Delivery link generated.";
+        } catch (error) {
+          deliveryStatus.className = "status-line error";
+          deliveryStatus.textContent = localizedContactText(error.message || "Could not generate delivery link.");
+        } finally {
+          generate.disabled = false;
+        }
+      });
+      copy.addEventListener("click", async () => {
+        if (!linkInput.value) return;
+        try {
+          await navigator.clipboard.writeText(linkInput.value);
+          deliveryStatus.className = "status-line ok";
+          deliveryStatus.textContent = "Copied.";
+        } catch (_error) {
+          linkInput.select();
+          deliveryStatus.className = "status-line";
+          deliveryStatus.textContent = "Select and copy the link.";
+        }
+      });
+      initResilientPasswordInput(input, item.id, passwordFromLink, setStatus);
       initHotReportComments(item, workerUrl);
       searchIndexPromise.then(() => initExternalRelated(item, workerUrl, catalogItems, searchTextById));
       return;

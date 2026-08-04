@@ -4967,6 +4967,10 @@ async function handleAdminReportPassword(request, env) {
     if (!isExternalId(id)) {
       return jsonResponse(request, env, 400, { error: "Invalid report id." });
     }
+  } else if (source === HOT_REPORT_SOURCE) {
+    if (!cleanHotReportId(id)) {
+      return jsonResponse(request, env, 400, { error: "Invalid report id." });
+    }
   } else if (source === THINKTANK_SOURCE) {
     if (!parseThinkTankId(id)) {
       return jsonResponse(request, env, 400, { error: "Invalid report id." });
@@ -4997,6 +5001,27 @@ async function handleAdminReportPassword(request, env) {
       return jsonResponse(request, env, 200, {
         id,
         source,
+        password: await derivedReportPassword(env, id),
+      });
+    } catch (_error) {
+      return jsonResponse(request, env, 503, { error: "Could not calculate report password." });
+    }
+  }
+
+  if (source === HOT_REPORT_SOURCE) {
+    let found;
+    try {
+      found = await findHotReportRow(env, id);
+    } catch (_error) {
+      return jsonResponse(request, env, 503, { error: "Hot report storage is unavailable." });
+    }
+    if (!found) return jsonResponse(request, env, 404, { error: "Report not found." });
+    try {
+      return jsonResponse(request, env, 200, {
+        id,
+        source,
+        title: found.item.title || "",
+        title_cn: found.item.title_cn || "",
         password: await derivedReportPassword(env, id),
       });
     } catch (_error) {
@@ -7103,35 +7128,52 @@ async function handleHotReportAccess(request, env) {
 async function handleHotReportPdf(request, env) {
   let payload = {};
   try {
-    payload = request.method === "GET"
-      ? { id: new URL(request.url).searchParams.get("id") }
-      : await request.json();
+    if (request.method === "GET") {
+      const url = new URL(request.url);
+      payload = {
+        id: url.searchParams.get("id"),
+        password: url.searchParams.get("password"),
+      };
+    } else {
+      payload = await request.json();
+    }
   } catch (_error) {
     return jsonResponse(request, env, 400, { error: "Invalid request body." });
   }
   const id = cleanHotReportId(payload.id);
   if (!id) return jsonResponse(request, env, 400, { error: "Invalid hot report id." });
-  let user;
-  try {
-    user = await currentUserFromRequest(env, request);
-  } catch (error) {
-    return jsonResponse(request, env, 401, {
-      error: error.message || "请先登录。",
-      required_plan: HOT_REPORT_REQUIRED_PLAN,
-    });
+  const password = String(payload.password || "");
+  let passwordAllowed = false;
+  if (password) {
+    try {
+      passwordAllowed = await sharedReportPasswordMatches(env, id, password);
+    } catch (_error) {
+      passwordAllowed = false;
+    }
   }
   try {
-    const access = await hotReportAccessForUser(env, user);
-    if (!access.can_download) {
-      return jsonResponse(request, env, 402, {
-        error: accessContactMessage(
-          request,
-          "近期热门报告需至少 3 个月会员。",
-          "Recent featured reports require at least three months of membership. ",
-        ),
-        required_plan: HOT_REPORT_REQUIRED_PLAN,
-        required_months: HOT_REPORT_MIN_MONTHS,
-      });
+    if (!passwordAllowed) {
+      let user;
+      try {
+        user = await currentUserFromRequest(env, request);
+      } catch (error) {
+        return jsonResponse(request, env, 401, {
+          error: password ? "Password is incorrect." : error.message || "请先登录。",
+          required_plan: HOT_REPORT_REQUIRED_PLAN,
+        });
+      }
+      const access = await hotReportAccessForUser(env, user);
+      if (!access.can_download) {
+        return jsonResponse(request, env, 402, {
+          error: accessContactMessage(
+            request,
+            "近期热门报告需至少 3 个月会员。",
+            "Recent featured reports require at least three months of membership. ",
+          ),
+          required_plan: HOT_REPORT_REQUIRED_PLAN,
+          required_months: HOT_REPORT_MIN_MONTHS,
+        });
+      }
     }
     const found = await findHotReportRow(env, id);
     if (!found) return jsonResponse(request, env, 404, { error: "Hot report not found." });
