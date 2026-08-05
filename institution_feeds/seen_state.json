@@ -2604,6 +2604,30 @@
     "unctad:https://unctad.org/publication/trade-services-prevent-and-mitigate-plastic-pollution": {
       "first_seen": "2026-08-04",
       "status": "downloaded"
+    },
+    "imf:b0498e0f62cafd9e6475e3595b0b43c1736e6ae1e0684d78e849edc56fed": {
+      "first_seen": "2026-08-05",
+      "status": "too_old"
+    },
+    "imf:2b3e2cfae48fd5ee646f363c7d0aaecf82760e6e7343abdd73deb72731f9": {
+      "first_seen": "2026-08-05",
+      "status": "too_old"
+    },
+    "worldbank:099525308052699064": {
+      "first_seen": "2026-08-05",
+      "status": "downloaded"
+    },
+    "worldbank:099742208042637761": {
+      "first_seen": "2026-08-05",
+      "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publ/bisbull131.htm": {
+      "first_seen": "2026-08-05",
+      "status": "downloaded"
+    },
+    "adb:1166211": {
+      "first_seen": "2026-08-05",
+      "status": "downloaded"
     }
   }
 }
