@@ -4,7 +4,7 @@
 工作流、脚本边界、持久化状态、失败语义或恢复方式发生变化时，必须同步更新本文档和
 `docs/pipeline-overview-v2.md` 的对应入口说明。
 
-最后更新：2026-07-25。
+最后更新：2026-08-06。
 
 ## 1. 目标与范围
 
@@ -35,7 +35,7 @@ flowchart LR
   I --> J["Build HTML + upload images + pacing"]
   J --> K["WeChat draft/add"]
   K --> L["WeChat draft/get verification"]
-  L --> M["Draft summary committed to origin/main"]
+  L --> M["Diagnostic summary artifact: retry + non-blocking"]
   D --> N["Market views PDF"]
 ```
 
@@ -128,6 +128,7 @@ label 为 `wechat-draft`。负责微信 token、图片上传、`draft/add`、`dr
 | 汇总打包 | 仅当全部 shard 成功时执行；按当天目录稀疏检出，避免历史大文件使 checkout 超过 20 分钟；不完整结果不得进入微信上传 |
 | 微信 API | 网络、`-1 system busy` 和可重试状态最多 5 次；Portal 精译与 XHS 直传默认均按图片 3 秒、文章 12 秒、草稿 90 秒、回读 8 秒 pacing |
 | 微信草稿 | `draft/add` 后等待并执行 `draft/get`；文章数不一致视为失败 |
+| 微信诊断 Artifact | 草稿已经通过 `draft/get` 后，诊断附件上传失败会自动再试一次；两次均遇到 GitHub Artifact 服务超时则记 warning，不覆盖微信业务成功状态，也不触发重复补传 |
 | XHS 草稿批次 | 每完成一组最多 8 篇就立即 `draft/add` 和回读，不等待全天文章全部构建；后续单篇失败不抹掉已验证草稿，重跑按标题组复用 |
 | 失败邮件 | 主要生成、机构、咨询、ARK、Market Views 和微信维护 workflow 失败时调用统一 reusable workflow；请求以 HMAC 签名发送到 Portal Suite Worker，再复用 Newsfeed 邮件 provider 发信；同一 run 在 R2 中 24 小时去重 |
 
@@ -183,6 +184,9 @@ MinerU 个人 token 接口不提供可查询的未来到期日期，因此不能
 
 先看微信 errcode：固定 IP 白名单、token、图片大小和草稿文章总大小分别处理。
 只在没有成功 `draft/get` 校验时补跑；已有成功 `media_id` 时不要盲目重复创建。
+
+如果 `Upload generated ... to WeChat drafts` 成功、所有 `draft/get` 数量一致，而红灯仅来自后续
+Artifact `CreateArtifact` 超时，则草稿业务已经成功，不应重跑。诊断附件会二次重试；仍失败只记录 warning。
 
 ### 关键产物推送失败
 

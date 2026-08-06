@@ -228,8 +228,8 @@ jobs:
 
           echo "WECHAT_DRAFT_DIR=$WECHAT_DRAFT_DIR" >> "$GITHUB_ENV"
 
-      - name: Upload WeChat draft artifact
-        uses: actions/upload-artifact@v4
+      - name: Archive WeChat draft diagnostics
+        uses: ./.github/actions/resilient-diagnostic-artifact
         with:
           name: xhs-notes-wechat-drafts-${{ github.event.inputs.date_folder || 'latest' }}-${{ github.run_id }}
           path: |

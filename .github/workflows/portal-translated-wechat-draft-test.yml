@@ -173,8 +173,8 @@ jobs:
             --max-inline-images "$MAX_INLINE_IMAGES" \
             "${ARGS[@]}" 2>&1 | tee wechat_drafts_progress.log
 
-      - name: Upload WeChat draft artifact
-        uses: actions/upload-artifact@v4
+      - name: Archive WeChat draft diagnostics
+        uses: ./.github/actions/resilient-diagnostic-artifact
         with:
           name: portal-translated-wechat-drafts-${{ github.run_id }}
           path: |

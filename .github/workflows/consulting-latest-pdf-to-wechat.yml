@@ -264,8 +264,8 @@ jobs:
             --max-inline-images "3" \
             "${ARGS[@]}" 2>&1 | tee consulting_wechat_progress.log
 
-      - name: Upload WeChat draft artifact
-        uses: actions/upload-artifact@v4
+      - name: Archive WeChat draft diagnostics
+        uses: ./.github/actions/resilient-diagnostic-artifact
         with:
           name: consulting-wechat-drafts-${{ needs.fetch-and-build.outputs.date_folder }}-${{ github.run_id }}
           path: |

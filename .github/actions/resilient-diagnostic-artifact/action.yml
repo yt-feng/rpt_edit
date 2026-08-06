@@ -1,0 +1,64 @@
+name: Resilient diagnostic artifact upload
+description: Retry a non-critical diagnostic artifact without overriding the primary job result.
+
+inputs:
+  name:
+    description: Artifact name
+    required: true
+  path:
+    description: Files or directories to upload
+    required: true
+  if-no-files-found:
+    description: Behavior when no matching files exist
+    required: false
+    default: warn
+  retention-days:
+    description: Artifact retention period
+    required: false
+    default: "2"
+
+outputs:
+  uploaded:
+    description: Whether either artifact upload attempt succeeded
+    value: ${{ steps.result.outputs.uploaded }}
+
+runs:
+  using: composite
+  steps:
+    - name: Upload diagnostic artifact
+      id: primary
+      continue-on-error: true
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ inputs.name }}
+        path: ${{ inputs.path }}
+        if-no-files-found: ${{ inputs.if-no-files-found }}
+        retention-days: ${{ inputs.retention-days }}
+
+    - name: Retry diagnostic artifact upload
+      id: retry
+      if: ${{ steps.primary.outcome == 'failure' }}
+      continue-on-error: true
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ inputs.name }}
+        path: ${{ inputs.path }}
+        if-no-files-found: ${{ inputs.if-no-files-found }}
+        retention-days: ${{ inputs.retention-days }}
+        overwrite: true
+
+    - name: Report diagnostic artifact result
+      id: result
+      if: ${{ always() }}
+      shell: bash
+      env:
+        PRIMARY_OUTCOME: ${{ steps.primary.outcome }}
+        RETRY_OUTCOME: ${{ steps.retry.outcome }}
+        ARTIFACT_NAME: ${{ inputs.name }}
+      run: |
+        if [ "$PRIMARY_OUTCOME" = "success" ] || [ "$RETRY_OUTCOME" = "success" ]; then
+          echo "uploaded=true" >> "$GITHUB_OUTPUT"
+          exit 0
+        fi
+        echo "uploaded=false" >> "$GITHUB_OUTPUT"
+        echo "::warning::Diagnostic artifact '$ARTIFACT_NAME' could not be archived after two attempts. The primary workflow result is unchanged."

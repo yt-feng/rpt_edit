@@ -656,8 +656,8 @@ jobs:
             "${PUBLISH_ARGS[@]}" 2>&1 | tee wechat_drafts_progress.log
           echo "WECHAT_DRAFT_DIR=wechat_drafts/xhs_notes/$DATE_FOLDER" >> "$GITHUB_ENV"
 
-      - name: Upload WeChat draft summary artifact
-        uses: actions/upload-artifact@v4
+      - name: Archive WeChat draft diagnostics
+        uses: ./.github/actions/resilient-diagnostic-artifact
         with:
           name: xhs-notes-wechat-drafts-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ github.run_id }}
           path: |
@@ -818,8 +818,8 @@ jobs:
             "${PUBLISH_ARGS[@]}" 2>&1 | tee wechat_drafts_progress.log
           echo "WECHAT_DRAFT_DIR=wechat_drafts/$DATE_FOLDER" >> "$GITHUB_ENV"
 
-      - name: Upload WeChat draft summary artifact
-        uses: actions/upload-artifact@v4
+      - name: Archive WeChat draft diagnostics
+        uses: ./.github/actions/resilient-diagnostic-artifact
         with:
           name: portal-translated-wechat-drafts-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ github.run_id }}
           path: |

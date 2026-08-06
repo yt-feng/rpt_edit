@@ -362,6 +362,7 @@ scripts/push_portal_translated_to_wechat_drafts.py
 - 每篇公众号草稿正文末尾固定追加 `prompts/zsxq_img.jpg`，上传时会先通过微信 `uploadimg` 转成公众号可用图片 URL。
 - 中间 CTA 已禁用（`DEFAULT_BODY_HOOK=""`）；正文只保留 编辑评论。文章最结尾统一追加 `更新信息参见portal.example.invalid`。
 - 图文分组默认 `articles_per_draft=8`。如果微信 `draft/add` 返回 `45008 article size out of limit`，脚本会自动把该组拆小重试，优先保证草稿能保存成功；`wechat_freepublish=true` 时会按实际成功草稿组提交发布。
+- 草稿创建后必须以 `draft/get` 的文章数回读为业务成功标准。后续 Actions 诊断附件会自动重试一次；若 GitHub Artifact 服务仍超时，只记录 warning，不把已经回读成功的微信草稿判成失败，也不据此重复上传。
 
 主流程入口：
 
