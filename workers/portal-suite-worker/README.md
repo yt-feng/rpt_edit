@@ -1,68 +1,46 @@
-# Portal Suite Worker
+# Document Gateway Worker
 
-This Worker validates Portal Suite passwords and serves private PDFs from Cloudflare R2 as attachments.
+This Worker validates access and serves private document files from object storage as attachments. Public naming is intentionally generic; historical route and directory names remain for compatibility.
 
-Required Worker configuration:
+## Required Configuration
 
 - R2 binding: `REPORT_BUCKET`
 - Secrets: `PASSWORD_SECRET`, `CALC_KEY`
-- Vars: `CATALOG_URL`, `PASSWORD_RULES_URL`, `ALLOWED_ORIGIN`
+- Vars: `CATALOG_URL`, `PASSWORD_RULES_URL`, `ALLOWED_ORIGIN`, `ACCOUNT_STORE_MODE`
 - Optional var: `R2_OBJECT_PREFIX`, default `reports`
 
-Workflow failure email alerts reuse the configured Newsfeed mail provider:
+Production must set `ACCOUNT_STORE_MODE = "supabase"` and configure both the account-store URL and service-role credential. Missing, partial, or mixed account-store configuration fails closed; it never falls back to legacy object-storage user indexes. The object-storage account mode is reserved for local tests and controlled migration work.
 
-- Var `OPS_ALERT_EMAIL`: operations recipient.
-- Secret `OPS_ALERT_SIGNING_KEY`: HMAC key shared only by GitHub Actions and the Worker.
-- Endpoint `POST /ops/alerts/email`: accepts signed server-to-server requests, never accepts a caller-provided recipient, and deduplicates successful sends in R2 for 24 hours.
-- Headers: `X-Portal-Timestamp` and `X-Portal-Signature: sha256=<hmac(timestamp.body)>`.
+## Access Model
 
-## Reportify module
+The Worker supports multiple authorization paths:
 
-The Worker also proxies the public reportify.cn search and serves reportify PDFs for the
-"其他报告 · Reportify" section on the search page:
+- authenticated account access;
+- shared access phrase validation;
+- single-item derived access codes;
+- admin-created custom grants.
 
-- `GET /reportify/search?q=<keyword>&page=<n>` — proxies `api.reportify.cn/reports?query=...`
-  (no login) and returns a slim `{ items, page, total_page }`.
-- `GET /reportify/pdf?id=<report_id>` — three-step delivery:
-  1. directly readable reports → stream their presigned PDF (instant, no browser);
-  2. else if the PDF was already grabbed → stream it from R2 key `reportify/<id>.pdf`;
-  3. else (gated) → fire the `reportify-grab` GitHub workflow via `repository_dispatch` and
-     return `202 {status:"pending"}`. The grab uploads the PDF to R2; a later request serves it.
-- `GET /reportify/status?id=<report_id>` — `{ ready: bool }` (R2 object present), used for polling.
+Single-item codes are derived with HMAC-SHA256 over a private message domain and the item identifier, then base32-encoded, truncated, and grouped for display. See `docs/service-architecture.md` for the neutral architecture description.
 
-Extra config for this module (only needed so a gated click can trigger the grab):
+## Operational Alerts
 
-- Var `GH_REPO` — e.g. `source/example`.
-- Secret `GH_DISPATCH_TOKEN` — a fine-grained GitHub PAT with **Actions: read and write** on this
-  repo (`wrangler secret put GH_DISPATCH_TOKEN`). Without it, readable reports still work; gated
-  reports return a link to view on reportify.cn instead.
+Workflow failure email alerts use a signed server-to-server endpoint:
 
-The GitHub Actions deployment can keep `portal_suite/password_rules.json` as a template. If `PORTAL_DOWNLOAD_PASSWORD` and `PASSWORD_SECRET` are present as GitHub Actions secrets, the Pages artifact receives the generated password hash automatically.
+- the recipient is configured server-side;
+- requests carry a timestamp and HMAC signature;
+- successful sends are deduplicated in object storage for a bounded window;
+- callers cannot override the destination recipient.
 
-Per-report pseudo-passwords are also accepted. The rule is:
+## External Adapter Support
 
-```text
-PORTAL-<first 12 chars of base32(hmac_sha256(PASSWORD_SECRET, "portal-suite:" + report_id)) grouped as 4-4-4>
-```
+The Worker can proxy optional source adapters and cache prepared files in object storage. Public UI and documentation should describe these as generic source adapters rather than naming upstream brands.
 
-Use the hidden Worker calculator endpoint to avoid exposing `PASSWORD_SECRET`:
+Historical endpoints may remain available so existing frontend code keeps working. Do not add new public docs that market those route names as product features.
 
-```text
-https://<worker>/calc?id=<report_id>&key=<CALC_KEY>
-```
-
-The Pages workflow can generate a `wrangler.toml` during deployment when the GitHub repository has:
-
-- Secret `CLOUDFLARE_API_TOKEN`
-- Variable `CLOUDFLARE_ACCOUNT_ID`
-- Variable or secret `R2_BUCKET`
-- Variable `PORTAL_PAGES_URL`
-
-Manual setup:
+## Development Checks
 
 ```bash
-cp wrangler.toml.example wrangler.toml
-wrangler secret put PASSWORD_SECRET
-wrangler secret put CALC_KEY
-wrangler deploy
+node --check workers/portal-suite-worker/src/index.js
 ```
+
+Run the relevant Worker tests before deploying behavior changes.

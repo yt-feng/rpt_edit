@@ -1,0 +1,148 @@
+# Protected Document Service Architecture
+
+Last updated: 2026-08-06
+
+This document describes the protected document portal in neutral terms. It intentionally avoids public product names, upstream source brands, customer contact handles, and pricing copy.
+
+## Overview
+
+The service is a static frontend backed by a serverless gateway:
+
+- Static assets are built by GitHub Actions and deployed as a public site artifact.
+- The browser calls the gateway for authentication, search-adapter requests, analytics, and private file downloads.
+- Private binaries, cache objects, custom access records, audit files, and analytics events live in object storage.
+- The production account store is explicitly selected with `ACCOUNT_STORE_MODE=supabase`.
+- In production, missing or failing account-store configuration rejects account and authorization requests instead of falling back to legacy object-storage indexes.
+
+```mermaid
+flowchart LR
+  U["Browser"] --> S["Static site"]
+  S --> API["Serverless gateway"]
+  API --> OBJ["Object storage<br/>private files / cache / analytics"]
+  API --> ACC["Account store<br/>users / entitlements"]
+  API --> SRC["Source adapters<br/>proxied or cached"]
+  GHA["GitHub Actions"] --> S
+  GHA --> OBJ
+```
+
+## Core Components
+
+| Component | Role |
+| --- | --- |
+| Static site | Search UI, document detail views, account UI, and admin/operator tools. |
+| Gateway | Validates access, proxies selected requests, records events, and streams private files. |
+| Object storage | Stores private binaries, cached adapter output, audit records, and analytics. |
+| Account store | Authoritative users, subscriptions, item-level grants, and usage records. |
+| Build scripts | Generate catalogs, indexes, static assets, and storage sync plans. |
+
+## Public Data Boundary
+
+The static artifact can be fetched by anyone. It must not contain:
+
+- provider credentials;
+- direct private-file URLs;
+- object-storage keys or signed URLs;
+- upstream source credentials;
+- destination-channel labels;
+- customer contact handles;
+- pricing or fulfillment copy.
+
+The static artifact may contain approved metadata, filtered search text, normalized titles, and UI assets.
+
+## Private File Access
+
+Private files are returned only by the gateway. The gateway checks at least one valid authorization path before streaming the file:
+
+- an authenticated account with an active role or entitlement;
+- a configured shared access phrase;
+- a derived one-item access code;
+- an administrator-created custom grant.
+
+The gateway rechecks authorization immediately before sending the file body.
+
+## Derived Access-Code Mechanism
+
+Single-item access codes are deterministic, secret-backed identifiers. They are not stored in plaintext.
+
+```text
+raw = HMAC_SHA256(ACCESS_SECRET, ACCESS_DOMAIN + ":" + item_id)
+code = BASE32(raw)[0:12]
+display = group(code, 4, "-")
+```
+
+Rules:
+
+- `ACCESS_SECRET` is stored only as a secret.
+- `ACCESS_DOMAIN` is a private message-domain prefix and must not be reused for sessions, admin tools, captcha, or webhook verification.
+- `item_id` is the stable internal identifier for the private file.
+- Only the truncated, grouped code is shown to operators or users.
+- Rotating `ACCESS_SECRET` changes all derived codes.
+
+This is an access-code derivation scheme, not reversible encryption. The file itself remains private because the object is stored outside the public artifact and is served only after gateway authorization.
+
+## Token Separation
+
+User sessions, captcha tokens, administrator utility tokens, and webhook validation use separate HMAC message domains. Administrator tokens also verify explicit `kind`, `aud`, and `version` fields so they cannot be accepted as user tokens.
+
+## Account Store Mode
+
+`ACCOUNT_STORE_MODE` must be set explicitly:
+
+| Mode | Intended Use |
+| --- | --- |
+| `supabase` | Production account and entitlement authority. |
+| `r2` | Local tests or controlled migration work only. |
+
+Production requires both the account-store URL and service-role credential. Partial configuration fails closed. In production mode, legacy object-storage account indexes are not used as an automatic fallback.
+
+## Object Storage Layout
+
+Prefixes are implementation details, but the storage model is:
+
+| Area | Contents |
+| --- | --- |
+| Private files | Current downloadable binaries. |
+| Adapter cache | Cached source-adapter search results and prepared files. |
+| Account records | Custom grants, backups, audit logs, disabled states, and migration-only legacy records. |
+| Analytics | Search, open, download, and delivery events. |
+| Build cache | Files cached for admin/operator workflows. |
+
+Capacity controls may archive old private binaries while keeping metadata searchable.
+
+## Search Index Policy
+
+- Metadata can be public if it has been normalized and approved.
+- Full-text search fragments should be size-limited and filtered before publication.
+- Historical text can be split into lazy-loaded shards so the browser does not fetch everything at first paint.
+- Archived items can remain searchable as metadata-only records, while downloads continue to require gateway authorization.
+
+## Source Adapter Policy
+
+Public UI labels should stay generic, for example:
+
+- primary collection;
+- auxiliary collection;
+- high-authority collection;
+- external source adapter.
+
+The browser should not navigate directly to upstream source pages for protected flows. It should use the unified detail page and the gateway.
+
+## Admin And Operator Tools
+
+The admin surface can expose account, entitlement, analytics, and file-cache operations according to role. The operator surface should expose only the subset needed for daily operations.
+
+Access edits use version fields such as `change_id` or `updated_at` to avoid overwriting newer edits from another session. Limited-use grants should update counters with conditional writes.
+
+## Deployment Checks
+
+Before publishing gateway changes:
+
+1. Validate JavaScript syntax.
+2. Run the relevant worker tests.
+3. Confirm account-store schema and row-level access configuration.
+4. Confirm required repository variables mark schema and data-audit completion.
+5. Deploy the gateway before publishing frontend changes that depend on it.
+
+## Documentation Rule
+
+Public repository docs should stay architecture-level and English-first. Put channel-specific instructions, source-brand details, contact handles, pricing, and fulfillment wording in private notes instead.
