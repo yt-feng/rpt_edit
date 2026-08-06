@@ -1,12 +1,12 @@
 # Automation Pipeline Overview
 
-This document is a neutral public overview of the repository's automation system. It avoids destination-specific labels and upstream source branding on purpose.
+This document is a high-level overview of the repository's automation system.
 
 ## Purpose
 
 The repository automates a document-processing pipeline:
 
-1. Collect PDF inputs from configured source locations.
+1. Collect PDF inputs from source locations.
 2. Extract text, tables, and figures.
 3. Generate structured drafts and derivative assets.
 4. Package review-ready outputs.
@@ -35,23 +35,8 @@ PDF sources
 | Media rendering | Creates optional audio or video explainers from selected documents. |
 | Static index build | Produces a searchable metadata/index artifact for the document portal. |
 | Gateway deployment | Deploys the serverless API that validates access and serves private files. |
-| Alerting | Sends signed server-to-server operational notices through configured providers. |
+| Alerting | Sends signed server-to-server operational notices through enabled providers. |
 | Cleanup | Prunes generated date folders and large transient outputs. |
-
-## Configuration Categories
-
-The pipeline uses several classes of configuration:
-
-- extraction provider credentials;
-- text generation provider credentials;
-- cloud-folder credentials;
-- object-storage credentials;
-- account-store credentials;
-- serverless deployment credentials;
-- alerting credentials;
-- optional delivery-adapter credentials.
-
-Keep all credentials in managed secret stores. Public docs should describe credential categories, not account names, source brands, contact handles, or commercial terms.
 
 ## Data Boundaries
 
@@ -59,8 +44,7 @@ Keep all credentials in managed secret stores. Public docs should describe crede
 - Static index artifacts should contain only metadata and approved search text.
 - Private binaries are served through the gateway, not as direct public URLs.
 - Heavy generated outputs are transient unless a workflow explicitly commits them.
-- Logs, prompts, raw extraction archives, provider responses, and private deployment profiles should stay out of review packages.
-- Public-safe artifacts should be stripped of private appendices, contact copy, and internal fulfillment details before commit.
+- Logs, prompts, raw extraction archives, and provider responses should stay out of review packages.
 
 ## Output Categories
 
@@ -73,21 +57,6 @@ Keep all credentials in managed secret stores. Public docs should describe crede
 | Media | Optional rendered audio/video assets. |
 | Portal data | Catalogs, search indexes, account rules, and static assets. |
 | Operational alerts | Signed, deduplicated notifications for workflow failures. |
-
-## Naming Policy
-
-Use neutral public labels:
-
-- content package;
-- document portal;
-- source adapter;
-- delivery adapter;
-- protected file gateway;
-- review artifact;
-- generated draft;
-- operations alert.
-
-Avoid naming destination platforms, upstream source brands, personal contact handles, exact pricing, or internal customer operations in public repository docs.
 
 ## Compatibility Note
 

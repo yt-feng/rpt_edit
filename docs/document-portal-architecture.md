@@ -2,18 +2,13 @@
 
 Last updated: 2026-08-06
 
-This document describes the protected document portal in neutral public language. It avoids product names, destination-channel labels, personal contact handles, pricing copy, and upstream source branding.
+This document describes the protected document portal.
 
-## Current Boundary
+## Functional Boundary
 
 The portal provides account-based search, detail views, and protected downloads for private document files.
 
-Current public documentation rules:
-
-1. Do not document online checkout, partner redemption, or fulfillment copy in public repository docs.
-2. Do not expose destination-specific support instructions or personal contact handles.
-3. Preserve compatibility with historical account records without displaying historical brand names in user-facing UI.
-4. Keep old integration handlers behind disabled feature flags unless a controlled restoration plan updates docs, tests, and UI together.
+Historical account records remain compatible with the current account and entitlement model. Disabled integration handlers stay behind feature flags unless a controlled restoration plan updates code, tests, and UI together.
 
 ## Overview
 
@@ -62,7 +57,7 @@ Account and permission changes should deploy the gateway and frontend together w
 | External detail | Unified source-adapter detail page. |
 | Policy pages | Public policy and generic support instructions. |
 
-Support language and support channels should be configured through private deployment assets, not hard-coded public documentation.
+Support language and support channels are resolved by the deployed frontend.
 
 ## Accounts, Roles, And Sessions
 
@@ -116,23 +111,9 @@ The structured account store keeps users, entitlements, and usage records. Read 
 
 - Administrators can edit user scope, expiry, notes, disabled state, and roles.
 - Permission saves should read back server state and update the UI from the authoritative result.
-- Operator tools should be available to the configured operator role without requiring administrator-only checks.
+- Operator tools should be available to the operator role without requiring administrator-only checks.
 - Historical source labels should be neutralized in UI and exports while leaving raw storage unchanged.
 - All changes should write audit records.
-
-## Configuration Categories
-
-Public docs may list configuration categories, but not values:
-
-- account-store mode;
-- allowed origins;
-- catalog and search URLs;
-- object-storage prefixes;
-- session signing secret;
-- account-store service credential;
-- password or access-code secret;
-- administrator utility secret;
-- legacy feature flags.
 
 ## Regression Checks
 
@@ -142,7 +123,7 @@ Before release:
 2. Run contact-language tests where applicable.
 3. Run legacy-access compatibility tests.
 4. Run entitlement precedence, renewal, scope, featured-item, and text-only tests.
-5. Build the static site and inspect public source for destination-specific copy.
+5. Build the static site and inspect the output.
 
 After release:
 

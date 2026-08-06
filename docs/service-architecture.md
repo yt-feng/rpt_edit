@@ -2,7 +2,7 @@
 
 Last updated: 2026-08-06
 
-This document describes the protected document portal in neutral terms. It intentionally avoids public product names, upstream source brands, customer contact handles, and pricing copy.
+This document describes the protected document service.
 
 ## Overview
 
@@ -35,26 +35,16 @@ flowchart LR
 | Account store | Authoritative users, subscriptions, item-level grants, and usage records. |
 | Build scripts | Generate catalogs, indexes, static assets, and storage sync plans. |
 
-## Public Data Boundary
+## Data Boundary
 
-The static artifact can be fetched by anyone. It must not contain:
-
-- provider credentials;
-- direct private-file URLs;
-- object-storage keys or signed URLs;
-- upstream source credentials;
-- destination-channel labels;
-- customer contact handles;
-- pricing or fulfillment copy.
-
-The static artifact may contain approved metadata, filtered search text, normalized titles, and UI assets.
+The static artifact contains metadata, filtered search text, normalized titles, and UI assets. Private file bytes are served through the gateway.
 
 ## Private File Access
 
 Private files are returned only by the gateway. The gateway checks at least one valid authorization path before streaming the file:
 
 - an authenticated account with an active role or entitlement;
-- a configured shared access phrase;
+- a shared access phrase;
 - a derived one-item access code;
 - an administrator-created custom grant.
 
@@ -125,13 +115,13 @@ Public UI labels should stay generic, for example:
 - high-authority collection;
 - external source adapter.
 
-The browser should not navigate directly to upstream source pages for protected flows. It should use the unified detail page and the gateway.
+The browser should use the unified detail page and the gateway for protected flows.
 
 ## Admin And Operator Tools
 
 The admin surface can expose account, entitlement, analytics, and file-cache operations according to role. The operator surface should expose only the subset needed for daily operations.
 
-Access edits use version fields such as `change_id` or `updated_at` to avoid overwriting newer edits from another session. Limited-use grants should update counters with conditional writes.
+Access edits use version fields such as `change_id` or `updated_at` so a stale editor cannot overwrite newer edits from another session. Limited-use grants should update counters with conditional writes.
 
 ## Deployment Checks
 
@@ -142,7 +132,3 @@ Before publishing gateway changes:
 3. Confirm account-store schema and row-level access configuration.
 4. Confirm required repository variables mark schema and data-audit completion.
 5. Deploy the gateway before publishing frontend changes that depend on it.
-
-## Documentation Rule
-
-Public repository docs should stay architecture-level and English-first. Put channel-specific instructions, source-brand details, contact handles, pricing, and fulfillment wording in private notes instead.
