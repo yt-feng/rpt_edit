@@ -101,6 +101,7 @@ jobs:
             .github
             scripts
             prompts
+            portal_suite/data/blog_archive
             requirements.txt
 
       - name: Prepare clean recovery workspace
@@ -237,6 +238,25 @@ jobs:
             wechat_drafts_progress.log
           if-no-files-found: error
           retention-days: 2
+
+      - name: Update public Blog archive
+        run: |
+          python scripts/update_blog_archive_from_wechat_drafts.py \
+            --wechat-drafts-root wechat_drafts \
+            --blog-archive-root portal_suite/data/blog_archive
+
+      - name: Commit public Blog archive
+        run: |
+          DATE_FOLDER="${RESOLVED_DATE_FOLDER:-${{ github.event.inputs.date_folder || 'latest' }}}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- portal_suite/data/blog_archive
+          if git diff --cached --quiet; then
+            echo "No Blog archive changes for $DATE_FOLDER."
+            exit 0
+          fi
+          git commit -m "Archive Blog articles $DATE_FOLDER"
+          bash scripts/push_main_with_rebase_retry.sh 5
 
   notify-failure:
     needs: [upload-xhs-notes-drafts]
