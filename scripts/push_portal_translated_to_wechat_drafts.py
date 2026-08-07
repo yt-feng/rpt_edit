@@ -80,6 +80,10 @@ WECHAT_COVER_WIDTH = 1200
 WECHAT_COVER_HEIGHT = 675
 WECHAT_COVER_CROP_235_1 = "0_0.121693_1_0.878307"
 WECHAT_COVER_CROP_1_1 = "0.21875_0_0.78125_1"
+WECHAT_SAFE_COVER_WIDTH = 940
+WECHAT_SAFE_COVER_HEIGHT = 400
+WECHAT_SAFE_COVER_CROP_235_1 = "0_0_1_1"
+WECHAT_SAFE_COVER_CROP_1_1 = "0.287234_0_0.712766_1"
 WECHAT_REQUEST_MAX_ATTEMPTS = 5
 WECHAT_REQUEST_RETRY_BASE_SECONDS = 1.5
 WECHAT_REQUEST_RETRY_MAX_SECONDS = 20.0
@@ -2590,9 +2594,8 @@ def replacement_cover_media_id(
 ) -> str:
     fallback_png = output_dir / "_assets" / f"draft_{draft_index:02d}_replacement_cover.png"
     fallback_png.parent.mkdir(parents=True, exist_ok=True)
-    write_fallback_cover(fallback_png, WECHAT_COVER_WIDTH, WECHAT_COVER_HEIGHT)
-    fallback_jpg = prepare_cover_upload_image(fallback_png, output_dir, f"draft_{draft_index:02d}_replacement")
-    return upload_cover_material(session, access_token, fallback_jpg, timeout)
+    write_fallback_cover(fallback_png, WECHAT_SAFE_COVER_WIDTH, WECHAT_SAFE_COVER_HEIGHT)
+    return upload_cover_material(session, access_token, fallback_png, timeout)
 
 
 def article_payload(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -2809,10 +2812,28 @@ def main() -> int:
                         )
                         for article in articles:
                             article["thumb_media_id"] = safe_thumb_media_id
-                            article["pic_crop_235_1"] = WECHAT_COVER_CROP_235_1
-                            article["pic_crop_1_1"] = WECHAT_COVER_CROP_1_1
+                            article["pic_crop_235_1"] = WECHAT_SAFE_COVER_CROP_235_1
+                            article["pic_crop_1_1"] = WECHAT_SAFE_COVER_CROP_1_1
                         pacing_sleep(f"Before retrying WeChat draft {draft_index}", args.draft_delay_seconds, args.dry_run)
-                        media_id = add_draft(session, access_token, articles, args.timeout)
+                        try:
+                            media_id = add_draft(session, access_token, articles, args.timeout)
+                        except WeChatError as retry_exc:
+                            if not is_cover_crop_error(retry_exc):
+                                raise
+                            log(
+                                "WeChat still rejected the safe cover crop; retrying once "
+                                "without explicit cover crop fields."
+                            )
+                            for article in articles:
+                                article["thumb_media_id"] = safe_thumb_media_id
+                                article.pop("pic_crop_235_1", None)
+                                article.pop("pic_crop_1_1", None)
+                            pacing_sleep(
+                                f"Before retrying WeChat draft {draft_index} without crop fields",
+                                args.draft_delay_seconds,
+                                args.dry_run,
+                            )
+                            media_id = add_draft(session, access_token, articles, args.timeout)
                     elif is_article_size_error(exc) and len(group) > 1:
                         split_at = max(1, len(group) // 2)
                         log(

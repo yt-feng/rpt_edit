@@ -35,6 +35,8 @@ from push_portal_translated_to_wechat_drafts import (  # noqa: E402
     WECHAT_AUTHOR_MAX_BYTES,
     WECHAT_COVER_CROP_1_1,
     WECHAT_COVER_CROP_235_1,
+    WECHAT_SAFE_COVER_CROP_1_1,
+    WECHAT_SAFE_COVER_CROP_235_1,
     WECHAT_TITLE_MAX_CHARS,
     WeChatError,
     add_draft,
@@ -795,14 +797,32 @@ def main() -> int:
                         )
                         for article in articles:
                             article["thumb_media_id"] = safe_thumb_media_id
-                            article["pic_crop_235_1"] = WECHAT_COVER_CROP_235_1
-                            article["pic_crop_1_1"] = WECHAT_COVER_CROP_1_1
+                            article["pic_crop_235_1"] = WECHAT_SAFE_COVER_CROP_235_1
+                            article["pic_crop_1_1"] = WECHAT_SAFE_COVER_CROP_1_1
                         pacing_sleep(
                             f"Before retrying WeChat draft {draft_index}",
                             args.draft_delay_seconds,
                             args.dry_run,
                         )
-                        media_id = add_draft(session, access_token, articles, args.timeout)
+                        try:
+                            media_id = add_draft(session, access_token, articles, args.timeout)
+                        except WeChatError as retry_exc:
+                            if not is_cover_crop_error(retry_exc):
+                                raise
+                            log(
+                                "WeChat still rejected the safe cover crop; retrying once "
+                                "without explicit cover crop fields."
+                            )
+                            for article in articles:
+                                article["thumb_media_id"] = safe_thumb_media_id
+                                article.pop("pic_crop_235_1", None)
+                                article.pop("pic_crop_1_1", None)
+                            pacing_sleep(
+                                f"Before retrying WeChat draft {draft_index} without crop fields",
+                                args.draft_delay_seconds,
+                                args.dry_run,
+                            )
+                            media_id = add_draft(session, access_token, articles, args.timeout)
                     elif is_article_size_error(exc) and len(group) > 1:
                         split_at = max(1, len(group) // 2)
                         log(
