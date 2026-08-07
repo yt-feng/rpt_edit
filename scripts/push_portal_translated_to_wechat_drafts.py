@@ -2570,7 +2570,15 @@ def is_article_size_error(exc: WeChatError) -> bool:
 
 
 def is_cover_crop_error(exc: WeChatError) -> bool:
-    return exc.errcode == 53402 or "crop" in str(exc).lower() or "裁剪" in exc.errmsg
+    text = str(exc).lower()
+    return (
+        exc.errcode in {53401, 53402}
+        or "crop" in text
+        or "cover" in text
+        or "封面" in exc.errmsg
+        or "裁剪" in exc.errmsg
+        or "尺寸" in exc.errmsg
+    )
 
 
 def replacement_cover_media_id(
