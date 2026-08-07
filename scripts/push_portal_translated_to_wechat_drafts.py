@@ -2589,6 +2589,7 @@ def replacement_cover_media_id(
     timeout: int,
 ) -> str:
     fallback_png = output_dir / "_assets" / f"draft_{draft_index:02d}_replacement_cover.png"
+    fallback_png.parent.mkdir(parents=True, exist_ok=True)
     write_fallback_cover(fallback_png, WECHAT_COVER_WIDTH, WECHAT_COVER_HEIGHT)
     fallback_jpg = prepare_cover_upload_image(fallback_png, output_dir, f"draft_{draft_index:02d}_replacement")
     return upload_cover_material(session, access_token, fallback_jpg, timeout)
