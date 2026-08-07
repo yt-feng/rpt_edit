@@ -2843,7 +2843,8 @@ def main() -> int:
                         create_draft(group[:split_at])
                         create_draft(group[split_at:])
                         return
-                    raise
+                    else:
+                        raise
             log(f"Verifying WeChat draft {draft_index}: media_id={media_id}")
             pacing_sleep(f"Before verifying WeChat draft {draft_index}", args.draft_verify_delay_seconds, args.dry_run)
             draft_get = verify_draft_get(session, access_token, media_id, args.timeout, len(articles))
