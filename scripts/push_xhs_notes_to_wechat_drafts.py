@@ -33,6 +33,8 @@ from push_portal_translated_to_wechat_drafts import (  # noqa: E402
     DISPLAY_TITLE_MAX_CHARS,
     MD_IMAGE_RE,
     WECHAT_AUTHOR_MAX_BYTES,
+    WECHAT_COVER_CROP_1_1,
+    WECHAT_COVER_CROP_235_1,
     WECHAT_TITLE_MAX_CHARS,
     WeChatError,
     add_draft,
@@ -44,6 +46,7 @@ from push_portal_translated_to_wechat_drafts import (  # noqa: E402
     get_stable_access_token,
     find_recent_draft_by_titles,
     is_article_size_error,
+    is_cover_crop_error,
     log,
     neutralize_markdown_headings,
     pacing_sleep,
@@ -53,6 +56,7 @@ from push_portal_translated_to_wechat_drafts import (  # noqa: E402
     pollinations_prompt,
     prepare_article_upload_image,
     render_fitted_wechat_html,
+    replacement_cover_media_id,
     resolve_asset_path,
     resolve_repo_asset_path,
     sharpen_wechat_title,
@@ -515,6 +519,8 @@ def build_article(
         "thumb_media_id": thumb_media_id,
         "need_open_comment": 0,
         "only_fans_can_comment": 0,
+        "pic_crop_235_1": WECHAT_COVER_CROP_235_1,
+        "pic_crop_1_1": WECHAT_COVER_CROP_1_1,
     }
     if args.content_source_url:
         article["content_source_url"] = args.content_source_url
@@ -733,9 +739,14 @@ def main() -> int:
     def create_draft(group: list[dict[str, Any]]) -> None:
         articles = article_payload(group)
         payload_bytes = utf8_byte_count(json.dumps({"articles": articles}, ensure_ascii=False, separators=(",", ":")))
+        draft_index = len(drafts) + 1
+        log(
+            f"Preparing WeChat draft {draft_index}: articles={len(articles)} "
+            f"payload_bytes={payload_bytes}"
+        )
         if args.dry_run:
-            media_id = f"DRY_RUN_DRAFT_{len(drafts) + 1:02d}"
-            publish_id = f"DRY_RUN_PUBLISH_{len(drafts) + 1:02d}" if args.publish else ""
+            media_id = f"DRY_RUN_DRAFT_{draft_index:02d}"
+            publish_id = f"DRY_RUN_PUBLISH_{draft_index:02d}" if args.publish else ""
             reused_existing = False
             draft_get = {
                 "ok": True,
@@ -748,6 +759,7 @@ def main() -> int:
         else:
             if session is None or access_token is None:
                 raise RuntimeError("session and access_token are required outside dry-run")
+            log(f"Checking recent drafts before creating WeChat draft {draft_index}")
             existing_media_id = find_recent_draft_by_titles(
                 session,
                 access_token,
@@ -761,15 +773,37 @@ def main() -> int:
             else:
                 reused_existing = False
                 try:
-                    log(f"Creating WeChat draft {len(drafts) + 1}")
+                    log(f"Creating WeChat draft {draft_index}")
                     pacing_sleep(
-                        f"Before creating WeChat draft {len(drafts) + 1}",
+                        f"Before creating WeChat draft {draft_index}",
                         args.draft_delay_seconds,
                         args.dry_run,
                     )
                     media_id = add_draft(session, access_token, articles, args.timeout)
                 except WeChatError as exc:
-                    if is_article_size_error(exc) and len(group) > 1:
+                    if is_cover_crop_error(exc):
+                        log(
+                            "WeChat rejected a draft cover crop; replacing this draft group's "
+                            "cover images with a generated safe cover and retrying."
+                        )
+                        safe_thumb_media_id = replacement_cover_media_id(
+                            session,
+                            access_token,
+                            output_dir,
+                            draft_index,
+                            args.timeout,
+                        )
+                        for article in articles:
+                            article["thumb_media_id"] = safe_thumb_media_id
+                            article["pic_crop_235_1"] = WECHAT_COVER_CROP_235_1
+                            article["pic_crop_1_1"] = WECHAT_COVER_CROP_1_1
+                        pacing_sleep(
+                            f"Before retrying WeChat draft {draft_index}",
+                            args.draft_delay_seconds,
+                            args.dry_run,
+                        )
+                        media_id = add_draft(session, access_token, articles, args.timeout)
+                    elif is_article_size_error(exc) and len(group) > 1:
                         split_at = max(1, len(group) // 2)
                         log(
                             "WeChat rejected draft group as too large; "
@@ -779,15 +813,15 @@ def main() -> int:
                         create_draft(group[split_at:])
                         return
                     raise
+            log(f"Verifying WeChat draft {draft_index}: media_id={media_id}")
             pacing_sleep(
-                f"Before verifying WeChat draft {len(drafts) + 1}",
+                f"Before verifying WeChat draft {draft_index}",
                 args.draft_verify_delay_seconds,
                 args.dry_run,
             )
             draft_get = verify_draft_get(session, access_token, media_id, args.timeout, len(articles))
             publish_id = submit_publish(session, access_token, media_id, args.timeout) if args.publish else ""
 
-        draft_index = len(drafts) + 1
         payload_path = output_dir / f"draft_payload_{draft_index:02d}.json"
         write_json(payload_path, {"articles": articles})
         drafts.append(

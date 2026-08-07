@@ -178,6 +178,8 @@ jobs:
         run: bash scripts/materialize_private_social_asset.sh prompts
 
       - name: Upload generated XHS notes to WeChat drafts
+        id: upload_xhs_wechat
+        continue-on-error: true
         env:
           WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
           WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
@@ -200,6 +202,8 @@ jobs:
 
           WECHAT_DRAFT_DIR="wechat_drafts/xhs_notes/$RESOLVED_DATE_FOLDER"
           mkdir -p "$WECHAT_DRAFT_DIR"
+          echo "WECHAT_DRAFT_DIR=$WECHAT_DRAFT_DIR" >> "$GITHUB_ENV"
+          : > wechat_drafts_progress.log
           if [ "$DELETE_EXISTING" = "true" ]; then
             python scripts/delete_wechat_drafts.py \
               --summary "$WECHAT_DRAFT_DIR/wechat_draft_summary.json" \
@@ -225,27 +229,28 @@ jobs:
             --max-body-chars "$MAX_BODY_CHARS" \
             --min-inline-images "$MIN_INLINE_IMAGES" \
             --max-inline-images "$MAX_INLINE_IMAGES" \
-            "${ARGS[@]}" 2>&1 | tee wechat_drafts_progress.log
-
-          echo "WECHAT_DRAFT_DIR=$WECHAT_DRAFT_DIR" >> "$GITHUB_ENV"
+            "${ARGS[@]}" 2>&1 | tee -a wechat_drafts_progress.log
 
       - name: Archive WeChat draft diagnostics
+        if: ${{ always() }}
         uses: ./.github/actions/resilient-diagnostic-artifact
         with:
           name: xhs-notes-wechat-drafts-${{ github.event.inputs.date_folder || 'latest' }}-${{ github.run_id }}
           path: |
             ${{ env.WECHAT_DRAFT_DIR }}
             wechat_drafts_progress.log
-          if-no-files-found: error
+          if-no-files-found: warn
           retention-days: 2
 
       - name: Update public Blog archive
+        if: ${{ steps.upload_xhs_wechat.outcome == 'success' }}
         run: |
           python scripts/update_blog_archive_from_wechat_drafts.py \
             --wechat-drafts-root wechat_drafts \
             --blog-archive-root portal_suite/data/blog_archive
 
       - name: Commit public Blog archive
+        if: ${{ steps.upload_xhs_wechat.outcome == 'success' }}
         run: |
           DATE_FOLDER="${RESOLVED_DATE_FOLDER:-${{ github.event.inputs.date_folder || 'latest' }}}"
           git config user.name "github-actions[bot]"
@@ -257,6 +262,12 @@ jobs:
           fi
           git commit -m "Archive Blog articles $DATE_FOLDER"
           bash scripts/push_main_with_rebase_retry.sh 5
+
+      - name: Fail after archiving WeChat upload diagnostics
+        if: ${{ steps.upload_xhs_wechat.outcome == 'failure' }}
+        run: |
+          echo "WeChat draft upload failed; diagnostics were archived before marking the job failed." >&2
+          exit 1
 
   notify-failure:
     needs: [upload-xhs-notes-drafts]
