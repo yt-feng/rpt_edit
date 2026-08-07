@@ -26,5 +26,5 @@ for attempt in $(seq 1 "$max_attempts"); do
 
   echo "origin/main advanced; rebasing the cleanup commit before retrying."
   git fetch origin main
-  git rebase origin/main
+  git rebase --autostash origin/main
 done

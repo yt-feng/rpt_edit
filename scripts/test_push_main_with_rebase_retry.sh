@@ -35,6 +35,7 @@ git -C "$CONCURRENT_DIR" config user.email test@example.com
 rm -rf -- "$CLEANUP_DIR/generated/260730"
 git -C "$CLEANUP_DIR" add -A generated
 git -C "$CLEANUP_DIR" commit -q -m cleanup
+printf 'local temporary workflow file\n' > "$CLEANUP_DIR/README.md"
 
 printf 'concurrent\n' > "$CONCURRENT_DIR/concurrent.txt"
 git -C "$CONCURRENT_DIR" add concurrent.txt
@@ -44,6 +45,10 @@ git -C "$CONCURRENT_DIR" push -q origin HEAD:main
 (
   cd "$CLEANUP_DIR"
   bash "$SCRIPT_PATH" 3
+  if [ "$(cat README.md)" != "local temporary workflow file" ]; then
+    echo "The retry rebase did not restore pre-existing local worktree changes."
+    exit 1
+  fi
 )
 
 remote_paths="$(git --git-dir="$REMOTE_DIR" ls-tree -r --name-only main | sort)"
