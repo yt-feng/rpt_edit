@@ -660,6 +660,7 @@ jobs:
             --max-body-chars "${{ needs.resolve-inputs.outputs.wechat_draft_max_body_chars }}" \
             --min-inline-images "${{ needs.resolve-inputs.outputs.wechat_draft_min_inline_images }}" \
             --max-inline-images "${{ needs.resolve-inputs.outputs.wechat_draft_max_inline_images }}" \
+            --force-safe-cover \
             "${PUBLISH_ARGS[@]}" 2>&1 | tee -a wechat_drafts_progress.log
 
       - name: Archive WeChat draft diagnostics

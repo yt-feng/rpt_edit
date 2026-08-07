@@ -229,6 +229,7 @@ jobs:
             --max-body-chars "$MAX_BODY_CHARS" \
             --min-inline-images "$MIN_INLINE_IMAGES" \
             --max-inline-images "$MAX_INLINE_IMAGES" \
+            --force-safe-cover \
             "${ARGS[@]}" 2>&1 | tee -a wechat_drafts_progress.log
 
       - name: Archive WeChat draft diagnostics

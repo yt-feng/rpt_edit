@@ -591,6 +591,11 @@ def main() -> int:
     parser.add_argument("--timeout", type=int, default=120)
     parser.add_argument("--publish", action="store_true", help="Submit each created draft for publishing.")
     parser.add_argument("--dry-run", action="store_true", help="Build payloads without calling WeChat APIs.")
+    parser.add_argument(
+        "--force-safe-cover",
+        action="store_true",
+        help="Use a generated WeChat-safe cover for draft creation instead of report-derived thumbnails.",
+    )
     args = parser.parse_args()
 
     max_articles = parse_selection_limit(args.max_articles, "--max-articles")
@@ -737,8 +742,44 @@ def main() -> int:
             pacing_sleep("After uploading trailing image", args.image_upload_delay_seconds, args.dry_run)
 
     drafts: list[dict[str, Any]] = []
+    safe_cover_media_id = ""
+    use_safe_cover_for_future = args.force_safe_cover
+    safe_cover_without_crop = False
+
+    def ensure_safe_cover_media_id(draft_index: int) -> str:
+        nonlocal safe_cover_media_id
+        if args.dry_run:
+            return f"DRY_RUN_SAFE_THUMB_{draft_index:02d}"
+        if session is None or access_token is None:
+            raise RuntimeError("session and access_token are required outside dry-run")
+        if not safe_cover_media_id:
+            safe_cover_media_id = replacement_cover_media_id(
+                session,
+                access_token,
+                output_dir,
+                draft_index,
+                args.timeout,
+            )
+            log(f"Uploaded generated safe WeChat cover: media_id={safe_cover_media_id}")
+        return safe_cover_media_id
+
+    def apply_safe_cover_fields(
+        articles: list[dict[str, Any]],
+        thumb_media_id: str,
+        *,
+        include_crop_fields: bool,
+    ) -> None:
+        for article in articles:
+            article["thumb_media_id"] = thumb_media_id
+            if include_crop_fields:
+                article["pic_crop_235_1"] = WECHAT_SAFE_COVER_CROP_235_1
+                article["pic_crop_1_1"] = WECHAT_SAFE_COVER_CROP_1_1
+            else:
+                article.pop("pic_crop_235_1", None)
+                article.pop("pic_crop_1_1", None)
 
     def create_draft(group: list[dict[str, Any]]) -> None:
+        nonlocal use_safe_cover_for_future, safe_cover_without_crop
         articles = article_payload(group)
         payload_bytes = utf8_byte_count(json.dumps({"articles": articles}, ensure_ascii=False, separators=(",", ":")))
         draft_index = len(drafts) + 1
@@ -774,6 +815,17 @@ def main() -> int:
                 log(f"Reusing existing WeChat draft with the same article titles: media_id={media_id}")
             else:
                 reused_existing = False
+                safe_cover_applied_before_add = False
+                if use_safe_cover_for_future:
+                    safe_thumb_media_id = ensure_safe_cover_media_id(draft_index)
+                    apply_safe_cover_fields(
+                        articles,
+                        safe_thumb_media_id,
+                        include_crop_fields=not safe_cover_without_crop,
+                    )
+                    safe_cover_applied_before_add = True
+                    cover_mode = "without explicit crop fields" if safe_cover_without_crop else "with safe crop fields"
+                    log(f"Using generated safe cover for WeChat draft {draft_index} {cover_mode}.")
                 try:
                     log(f"Creating WeChat draft {draft_index}")
                     pacing_sleep(
@@ -784,45 +836,63 @@ def main() -> int:
                     media_id = add_draft(session, access_token, articles, args.timeout)
                 except WeChatError as exc:
                     if is_cover_crop_error(exc):
-                        log(
-                            "WeChat rejected a draft cover crop; replacing this draft group's "
-                            "cover images with a generated safe cover and retrying."
-                        )
-                        safe_thumb_media_id = replacement_cover_media_id(
-                            session,
-                            access_token,
-                            output_dir,
-                            draft_index,
-                            args.timeout,
-                        )
-                        for article in articles:
-                            article["thumb_media_id"] = safe_thumb_media_id
-                            article["pic_crop_235_1"] = WECHAT_SAFE_COVER_CROP_235_1
-                            article["pic_crop_1_1"] = WECHAT_SAFE_COVER_CROP_1_1
-                        pacing_sleep(
-                            f"Before retrying WeChat draft {draft_index}",
-                            args.draft_delay_seconds,
-                            args.dry_run,
-                        )
-                        try:
-                            media_id = add_draft(session, access_token, articles, args.timeout)
-                        except WeChatError as retry_exc:
-                            if not is_cover_crop_error(retry_exc):
-                                raise
+                        use_safe_cover_for_future = True
+                        safe_thumb_media_id = ensure_safe_cover_media_id(draft_index)
+                        if safe_cover_applied_before_add and safe_cover_without_crop:
+                            raise
+                        if safe_cover_applied_before_add:
                             log(
-                                "WeChat still rejected the safe cover crop; retrying once "
+                                "WeChat rejected the generated safe cover crop; retrying once "
                                 "without explicit cover crop fields."
                             )
-                            for article in articles:
-                                article["thumb_media_id"] = safe_thumb_media_id
-                                article.pop("pic_crop_235_1", None)
-                                article.pop("pic_crop_1_1", None)
+                            apply_safe_cover_fields(
+                                articles,
+                                safe_thumb_media_id,
+                                include_crop_fields=False,
+                            )
+                            safe_cover_without_crop = True
                             pacing_sleep(
                                 f"Before retrying WeChat draft {draft_index} without crop fields",
                                 args.draft_delay_seconds,
                                 args.dry_run,
                             )
                             media_id = add_draft(session, access_token, articles, args.timeout)
+                        else:
+                            log(
+                                "WeChat rejected a draft cover crop; replacing this draft group's "
+                                "cover images with a generated safe cover and retrying."
+                            )
+                            apply_safe_cover_fields(
+                                articles,
+                                safe_thumb_media_id,
+                                include_crop_fields=not safe_cover_without_crop,
+                            )
+                            pacing_sleep(
+                                f"Before retrying WeChat draft {draft_index}",
+                                args.draft_delay_seconds,
+                                args.dry_run,
+                            )
+                            try:
+                                media_id = add_draft(session, access_token, articles, args.timeout)
+                            except WeChatError as retry_exc:
+                                if not is_cover_crop_error(retry_exc):
+                                    raise
+                                log(
+                                    "WeChat still rejected the safe cover crop; retrying once "
+                                    "without explicit cover crop fields."
+                                )
+                                apply_safe_cover_fields(
+                                    articles,
+                                    safe_thumb_media_id,
+                                    include_crop_fields=False,
+                                )
+                                safe_cover_without_crop = True
+                                pacing_sleep(
+                                    f"Before retrying WeChat draft {draft_index} without crop fields",
+                                    args.draft_delay_seconds,
+                                    args.dry_run,
+                                )
+                                media_id = add_draft(session, access_token, articles, args.timeout)
                     elif is_article_size_error(exc) and len(group) > 1:
                         split_at = max(1, len(group) // 2)
                         log(
