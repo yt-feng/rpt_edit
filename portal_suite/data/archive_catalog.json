@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "updated_at_bjt": "2026-08-10 04:43:15 +0800",
-  "item_count": 36,
+  "updated_at_bjt": "2026-08-10 07:25:32 +0800",
+  "item_count": 37,
   "sources": {
     "previous_archive_items": 36,
-    "bank_catalog_titles": 960,
-    "archive_items_added": 0,
+    "bank_catalog_titles": 1283,
+    "archive_items_added": 1,
     "archive_items_updated": 3,
-    "live_matches_skipped": 957
+    "live_matches_skipped": 1279
   },
   "items": [
     {
@@ -28,7 +28,7 @@
       "password_group": "default",
       "size_bytes": 0,
       "first_seen_at_bjt": "2026-08-05 12:44:22 +0800",
-      "last_seen_at_bjt": "2026-08-10 04:43:15 +0800",
+      "last_seen_at_bjt": "2026-08-10 07:25:32 +0800",
       "available": false,
       "present_in_latest_scan": false,
       "industry": "",
@@ -36,6 +36,32 @@
       "category": "",
       "pdf_archived": true,
       "pdf_archived_at_bjt": "2026-08-05 12:44:22 +0800",
+      "archive_reason": "text_only_archive",
+      "page_count": null
+    },
+    {
+      "id": "1af31891e4884343fe907f0e",
+      "title": "BofA Securities-Global Memory Tech Weekly theme-Memory industry forecasts, NAND spot rally, Samsung’s dividends-260807",
+      "title_zh": "",
+      "filename": "BofA Securities-Global Memory Tech Weekly theme-Memory industry forecasts, NAND spot rally, Samsung’s dividends-260807.pdf",
+      "date_folder": "260807",
+      "date_folders": [
+        "260807",
+        "260809"
+      ],
+      "bank_code": "BofA",
+      "bank_name": "BofA",
+      "password_group": "default",
+      "size_bytes": 0,
+      "first_seen_at_bjt": "2026-08-10 07:25:32 +0800",
+      "last_seen_at_bjt": "2026-08-10 07:25:32 +0800",
+      "available": false,
+      "present_in_latest_scan": false,
+      "industry": "",
+      "sector": "",
+      "category": "",
+      "pdf_archived": true,
+      "pdf_archived_at_bjt": "2026-08-10 07:25:32 +0800",
       "archive_reason": "text_only_archive",
       "page_count": null
     },
