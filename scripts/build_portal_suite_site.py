@@ -82,7 +82,11 @@ LLMS_REPORT_LIMIT = 200
 BLOG_START_DATE = "2026-07-27"
 BLOG_PUBLIC_BRAND = "KC桌面"
 BLOG_TITLE_SUFFIX = f" | {BLOG_PUBLIC_BRAND}"
-PUBLIC_SITE_HOST_PLACEHOLDER = urlsplit(SITE_BASE_URL).hostname or "portal.example.invalid"
+# Keep the archive placeholder independent from SITE_BASE_URL. The deployment
+# materializer replaces SITE_BASE_URL with the live origin before this module
+# runs, while committed Blog archive HTML intentionally retains the neutral
+# placeholder and still needs a runtime substitution.
+PUBLIC_SITE_HOST_PLACEHOLDER = ".".join(("portal", "example", "invalid"))
 DEFAULT_SEARCH_INDEX_LIMIT_GIB = 0.09
 BLOG_ARCHIVE_SCHEMA_VERSION = 1
 BLOG_SOURCE_LABELS = {

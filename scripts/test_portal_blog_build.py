@@ -111,6 +111,37 @@ class BlogBuildTests(unittest.TestCase):
         self.assertNotIn("portal.example.invalid 查看全文", rendered)
         self.assertIn("portal.example.invalid", article["content"])
 
+    def test_blog_placeholder_survives_source_materialization_until_archive_render(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            materialized_path = Path(temporary) / "materialized_builder.py"
+            materialized_path.write_text(
+                BUILD_SCRIPT.read_text(encoding="utf-8").replace(
+                    "portal.example.invalid",
+                    "published.example.test",
+                ),
+                encoding="utf-8",
+            )
+            spec = importlib.util.spec_from_file_location("materialized_portal_site_builder", materialized_path)
+            self.assertIsNotNone(spec)
+            self.assertIsNotNone(spec.loader if spec else None)
+            materialized = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(materialized)
+
+            article = {
+                "slug": "20260810-fedcba9876543210",
+                "title": "部署后归档地址测试",
+                "digest": "模拟私有部署值已经写入构建脚本。",
+                "author": "Portal Suite",
+                "content": "<p>访问 portal.example.invalid 查看全文。</p>",
+                "date": "2026-08-10",
+                "last_date": "2026-08-10",
+                "origins": [],
+            }
+            rendered = materialized.render_blog_article(article, "https://published.example.test")
+
+            self.assertIn("published.example.test 查看全文", rendered)
+            self.assertNotIn("portal.example.invalid 查看全文", rendered)
+
     def test_public_blog_title_suffix_is_exact_idempotent_and_identity_stable(self) -> None:
         raw = "数据中心的供应瓶颈"
         expected = f"{raw} | KC桌面"
