@@ -328,6 +328,21 @@ jobs:
               raise SystemExit("Static release size is outside the expected range")
           if any(path.is_symlink() for path in root.rglob("*")):
               raise SystemExit("Static release contains a symbolic link")
+          placeholder = bytes(
+              (112, 111, 114, 116, 97, 108, 46, 101, 120, 97, 109, 112, 108, 101, 46, 105, 110, 118, 97, 108, 105, 100)
+          ).decode("ascii")
+          blog_files = tuple((root / "blog").glob("*.html"))
+          if not blog_files:
+              raise SystemExit("Static release contains no Blog pages")
+          leaked_blog_pages = [
+              path.name
+              for path in blog_files
+              if placeholder in path.read_text(encoding="utf-8")
+          ]
+          if leaked_blog_pages:
+              raise SystemExit(
+                  f"Static Blog release retained the public host placeholder in {len(leaked_blog_pages)} page(s)"
+              )
           print(f"static_files={len(files)} static_bytes={total}")
           PY
 

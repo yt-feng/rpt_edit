@@ -114,11 +114,12 @@ class BlogBuildTests(unittest.TestCase):
     def test_blog_placeholder_survives_source_materialization_until_archive_render(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             materialized_path = Path(temporary) / "materialized_builder.py"
-            materialized_path.write_text(
-                BUILD_SCRIPT.read_text(encoding="utf-8").replace(
+            materialized_source = BUILD_SCRIPT.read_text(encoding="utf-8").replace(
                     "portal.example.invalid",
                     "published.example.test",
-                ),
+                ).replace('"portal"', '"published-service"')
+            materialized_path.write_text(
+                materialized_source,
                 encoding="utf-8",
             )
             spec = importlib.util.spec_from_file_location("materialized_portal_site_builder", materialized_path)

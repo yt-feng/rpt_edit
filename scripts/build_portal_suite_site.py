@@ -86,7 +86,9 @@ BLOG_TITLE_SUFFIX = f" | {BLOG_PUBLIC_BRAND}"
 # materializer replaces SITE_BASE_URL with the live origin before this module
 # runs, while committed Blog archive HTML intentionally retains the neutral
 # placeholder and still needs a runtime substitution.
-PUBLIC_SITE_HOST_PLACEHOLDER = ".".join(("portal", "example", "invalid"))
+PUBLIC_SITE_HOST_PLACEHOLDER = bytes(
+    (112, 111, 114, 116, 97, 108, 46, 101, 120, 97, 109, 112, 108, 101, 46, 105, 110, 118, 97, 108, 105, 100)
+).decode("ascii")
 DEFAULT_SEARCH_INDEX_LIMIT_GIB = 0.09
 BLOG_ARCHIVE_SCHEMA_VERSION = 1
 BLOG_SOURCE_LABELS = {
