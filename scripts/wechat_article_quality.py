@@ -22,9 +22,9 @@ WECHAT_EDITORIAL_GUARD_ZH = """
 2. 开头直接使用原文中最有辨识度的事实、数字、对比或矛盾切入；禁止用“在……背景下”“随着……”“近年来……”空泛起笔。
 3. 正文至少使用三个原文锚点：一个可核验的数字或日期、一个具体主体/项目/制度名、一个比较或因果关系。判断必须紧挨证据，保留“可能、样本显示、报告认为”等限定词。
 4. 句子长短要自然变化。大多数段落写 2-4 句，允许用一句短句收住；不要连续使用“报告指出、这意味着、换句话说、真正重要的是、值得注意的是”等模板转折。
-5. 编辑评论只写一条具体、平白的解释或提醒，不能复述正文，不能提推广、原文领取、完整报告、读者行动或网站。
+5. KC评论只写一条具体、平白的解释或提醒，不能复述正文，不能提推广、原文领取、完整报告、读者行动或网站。
 6. 禁止单独设置“该报告未解决的问题、报告尚未回答、研究留白、开放问题、报告局限、还需追问”等小节，也禁止用问句收尾。若原报告明确写了限制，只能在相关正文中用一句客观陈述自然带过。
-7. 最后一段必须仍是实质内容或 编辑评论。不要添加总结、结语、延伸阅读、继续阅读、关注引导、社群、扫码、网站或任何 CTA；系统会统一处理文末固定信息。
+7. 最后一段必须仍是实质内容或 KC评论。不要添加总结、结语、延伸阅读、继续阅读、关注引导、社群、扫码、网站或任何 CTA；系统会统一处理文末固定信息。
 8. 不要虚构“我读完后”“我们采访了”等个人经历，不要故意口语化或加入情绪。人工编辑感来自具体证据、准确取舍和自然节奏。
 9. 输出前自行核对：标题与导语不重复；主标题和每个小标题都是完整、中性的事实表达，不评价好坏、不制造冲突；没有元话语、推广语和未解问题栏目。只输出最终 Markdown，不输出核对过程。
 """.strip()
@@ -62,6 +62,10 @@ MODEL_CTA_RE = re.compile(
     re.I,
 )
 PORTAL_IMAGE_TOKEN_RE = re.compile(r"\[\[PORTAL_IMAGE_\d{3}\]\]")
+LEGACY_COMMENT_LABEL_RE = re.compile(
+    r"^(?P<prefix>\s*>\s*)(?:(?:\*\*|__)?\s*)?(?:编辑评论|KC评论)\s*[：:]\s*(?:(?:\*\*|__)?\s*)?",
+    re.I | re.M,
+)
 SENTENCE_RE = re.compile(r"[^。！？!?；;]+[。！？!?；;]?")
 
 
@@ -161,9 +165,13 @@ def sanitize_wechat_article_markdown(markdown: str) -> tuple[str, list[str]]:
     text = text.replace("```", "")
     text, section_changes = strip_forbidden_meta_sections(text)
     text, cta_changes = strip_model_cta(text)
+    text, comment_label_changes = LEGACY_COMMENT_LABEL_RE.subn(r"\g<prefix>**KC评论：** ", text)
     text = re.sub(r"[ \t]+\n", "\n", text)
     text = re.sub(r"\n{3,}", "\n\n", text).strip()
-    return (text + "\n" if text else ""), [*section_changes, *cta_changes]
+    changes = [*section_changes, *cta_changes]
+    if comment_label_changes:
+        changes.append("normalized_comment_label")
+    return (text + "\n" if text else ""), changes
 
 
 def audit_wechat_article_markdown(markdown: str) -> list[str]:

@@ -80,6 +80,9 @@ INDEXNOW_KEY = "portal-index-key"
 RSS_ITEM_LIMIT = 100
 LLMS_REPORT_LIMIT = 200
 BLOG_START_DATE = "2026-07-27"
+BLOG_PUBLIC_BRAND = "KC桌面"
+BLOG_TITLE_SUFFIX = f" | {BLOG_PUBLIC_BRAND}"
+PUBLIC_SITE_HOST_PLACEHOLDER = urlsplit(SITE_BASE_URL).hostname or "portal.example.invalid"
 DEFAULT_SEARCH_INDEX_LIMIT_GIB = 0.09
 BLOG_ARCHIVE_SCHEMA_VERSION = 1
 BLOG_SOURCE_LABELS = {
@@ -893,7 +896,7 @@ def item_meta_description(item: dict[str, Any]) -> str:
     return compact_space(
         f"{institution}报告《{title}》，研究主题为{industry}，发布日期为{report_date}，"
         f"{item_page_label(item)}。{item_availability_label(item)}。"
-        "Portal Suite 提供中文标题、英文标题、报告信息和相关研究索引。"
+        f"{BLOG_PUBLIC_BRAND}提供中文标题、英文标题、报告信息和相关研究索引。"
     )[:280]
 
 
@@ -982,7 +985,7 @@ def render_report_seo_page(
         "keywords": report_keywords(item),
         "publisher": {
             "@type": "Organization",
-            "name": "Portal Suite",
+            "name": BLOG_PUBLIC_BRAND,
             "url": url_join(base_url, "/"),
         },
         "about": [industry, institution],
@@ -1032,24 +1035,25 @@ def render_report_seo_page(
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{html_escape(title)} | Portal Suite</title>
+    <title>{html_escape(title)} | {BLOG_PUBLIC_BRAND}</title>
     <meta name="description" content="{html_escape(description)}">
     <meta name="keywords" content="{html_escape(report_keywords(item))}">
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
     <link rel="canonical" href="{html_escape(canonical)}">
     <link rel="alternate" hreflang="zh-CN" href="{html_escape(canonical)}">
     <link rel="alternate" hreflang="x-default" href="{html_escape(canonical)}">
-    <link rel="alternate" type="application/rss+xml" title="Portal Suite 最近报告" href="../feed.xml">
+    <link rel="alternate" type="application/rss+xml" title="{BLOG_PUBLIC_BRAND} 最近报告" href="../feed.xml">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="zh_CN">
-    <meta property="og:site_name" content="Portal Suite">
+    <meta property="og:site_name" content="{BLOG_PUBLIC_BRAND}">
     <meta property="og:title" content="{html_escape(title)}">
     <meta property="og:description" content="{html_escape(description)}">
     <meta property="og:url" content="{html_escape(canonical)}">
     <link rel="stylesheet" href="../assets/styles.css">
+    <script defer src="../assets/site-runtime.js"></script>
     <script type="application/ld+json">{render_json_ld(json_ld)}</script>
   </head>
-  <body>
+  <body data-page="seo-report" data-report-id="{html_escape(str(item.get('id') or ''), quote=True)}" data-report-title="{html_escape(title, quote=True)}" data-source="catalog">
     <header class="topbar">
       <a class="back-link" href="../index.html">返回首页</a>
       <div class="topbar-actions">
@@ -1087,6 +1091,7 @@ def render_report_seo_page(
       <a href="mailto:support@portal.example.invalid" data-portal-non-chinese-only hidden>Email: support@portal.example.invalid</a>
     </footer>
     <script src="../assets/contact.js"></script>
+    <script src="../assets/analytics.js"></script>
   </body>
 </html>
 """
@@ -1112,11 +1117,11 @@ def render_reports_index(catalog: dict[str, Any], base_url: str, generated_date:
             f"<span>{html_escape(item_institution(item))} · {html_escape(date_iso or str(item.get('date_folder') or ''))} · {html_escape(item_industry(item))}</span>"
             "</li>"
         )
-    description = "Portal Suite 中文金融研报索引，覆盖宏观策略、行业分析、公司研究、财报、招股书和国际智库报告线索。"
+    description = f"{BLOG_PUBLIC_BRAND}中文金融研报索引，覆盖宏观策略、行业分析、公司研究、财报、招股书和国际智库报告线索。"
     collection_json_ld = {
         "@type": "CollectionPage",
         "@id": f"{url_join(base_url, 'reports/')}#collection",
-        "name": "Portal Suite 报告索引",
+        "name": f"{BLOG_PUBLIC_BRAND} 报告索引",
         "description": description,
         "url": url_join(base_url, "reports/"),
         "dateModified": generated_date,
@@ -1142,23 +1147,24 @@ def render_reports_index(catalog: dict[str, Any], base_url: str, generated_date:
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>金融研报索引 | Portal Suite</title>
+    <title>金融研报索引 | {BLOG_PUBLIC_BRAND}</title>
     <meta name="description" content="{html_escape(description)}">
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
     <link rel="canonical" href="{html_escape(url_join(base_url, 'reports/'))}">
     <link rel="alternate" hreflang="zh-CN" href="{html_escape(url_join(base_url, 'reports/'))}">
     <link rel="alternate" hreflang="x-default" href="{html_escape(url_join(base_url, 'reports/'))}">
-    <link rel="alternate" type="application/rss+xml" title="Portal Suite 最近报告" href="../feed.xml">
+    <link rel="alternate" type="application/rss+xml" title="{BLOG_PUBLIC_BRAND} 最近报告" href="../feed.xml">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="zh_CN">
-    <meta property="og:site_name" content="Portal Suite">
-    <meta property="og:title" content="金融研报索引 | Portal Suite">
+    <meta property="og:site_name" content="{BLOG_PUBLIC_BRAND}">
+    <meta property="og:title" content="金融研报索引 | {BLOG_PUBLIC_BRAND}">
     <meta property="og:description" content="{html_escape(description)}">
     <meta property="og:url" content="{html_escape(url_join(base_url, 'reports/'))}">
     <link rel="stylesheet" href="../assets/styles.css">
+    <script defer src="../assets/site-runtime.js"></script>
     <script type="application/ld+json">{render_json_ld(json_ld)}</script>
   </head>
-  <body>
+  <body data-page="report-index">
     <header class="topbar">
       <a class="back-link" href="../index.html">返回首页</a>
       <div class="topbar-actions">
@@ -1189,6 +1195,7 @@ def render_reports_index(catalog: dict[str, Any], base_url: str, generated_date:
       <a href="mailto:support@portal.example.invalid" data-portal-non-chinese-only hidden>Email: support@portal.example.invalid</a>
     </footer>
     <script src="../assets/contact.js"></script>
+    <script src="../assets/analytics.js"></script>
   </body>
 </html>
 """
@@ -1287,7 +1294,7 @@ def render_report_feed(catalog: dict[str, Any], base_url: str, generated_date: s
         "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
         "<rss version=\"2.0\" xmlns:atom=\"http://www.w3.org/2005/Atom\">\n"
         "  <channel>\n"
-        "    <title>Portal Suite 最近报告</title>\n"
+        f"    <title>{BLOG_PUBLIC_BRAND} 最近报告</title>\n"
         f"    <link>{xml_escape(url_join(base_url, '/'))}</link>\n"
         "    <description>中文金融研报、宏观策略、行业研究和国际智库报告的最近更新。</description>\n"
         "    <language>zh-CN</language>\n"
@@ -1305,7 +1312,7 @@ def render_llms_full(catalog: dict[str, Any], base_url: str) -> str:
         reverse=True,
     )[:LLMS_REPORT_LIMIT]
     lines = [
-        "# Portal Suite 公开报告索引",
+        f"# {BLOG_PUBLIC_BRAND} 公开报告索引",
         "",
         "以下是最近更新的中文金融研究报告元数据。报告下载权限与公开索引相互独立。",
         "",
@@ -1344,6 +1351,29 @@ def parse_blog_start_date(value: str) -> date:
 def blog_publication_date(source: str, folder_date: date) -> date:
     """Convert a source folder date to the article's actual publication date."""
     return folder_date + timedelta(days=BLOG_SOURCE_PUBLICATION_DAY_OFFSETS.get(source, 0))
+
+
+def blog_title_core(value: str) -> str:
+    """Return a stable article title without repeated public-brand suffixes."""
+    title = compact_space(str(value or ""))
+    suffix_pattern = rf"(?:\s*\|\s*{re.escape(BLOG_PUBLIC_BRAND)}\s*)+$"
+    return re.sub(suffix_pattern, "", title, flags=re.IGNORECASE).strip(" |　")
+
+
+def blog_public_title(value: str) -> str:
+    """Apply the exact public Blog title suffix once."""
+    return f"{blog_title_core(value) or '未命名文章'}{BLOG_TITLE_SUFFIX}"
+
+
+def blog_seo_description(value: str) -> str:
+    """Keep descriptions readable while establishing the exact public brand term."""
+    digest = compact_space(str(value or ""))
+    brand_sentence = f"本文由{BLOG_PUBLIC_BRAND}整理发布。"
+    if BLOG_PUBLIC_BRAND in digest:
+        return digest[:300]
+    if not digest:
+        return f"{BLOG_PUBLIC_BRAND}每日研究文章与研报存档。"
+    return f"{digest[:260].rstrip('，,。；; ')}。{brand_sentence}"
 
 
 def blog_public_slug(date_value: date | str, fingerprint: str) -> str:
@@ -1546,7 +1576,7 @@ def blog_html_text(value: str) -> str:
 
 
 def blog_article_fingerprint(title: str, sanitized_content: str) -> str:
-    normalized_title = compact_space(unicodedata.normalize("NFKC", str(title or ""))).casefold()
+    normalized_title = compact_space(unicodedata.normalize("NFKC", blog_title_core(title))).casefold()
     # WeChat re-uploads inline images on a retry and therefore rewrites their
     # CDN URLs even when the article is otherwise identical. Ignore only the
     # volatile image src value; retain the tag structure, alt text, styles,
@@ -1986,13 +2016,14 @@ def render_blog_index(articles: list[dict[str, Any]], base_url: str, start_date:
     for date_value, date_articles in grouped.items():
         cards = []
         for article in date_articles:
+            public_title = blog_public_title(str(article.get("title") or ""))
             cards.append(
                 '<article class="blog-card">'
                 '<div class="blog-card-meta">'
                 f'<time datetime="{html_escape(date_value, quote=True)}">{html_escape(date_value)}</time>'
                 f'{blog_source_badges(article)}'
                 '</div>'
-                f'<h2><a href="{html_escape(article["slug"], quote=True)}.html">{html_escape(article["title"])}</a></h2>'
+                f'<h2><a href="{html_escape(article["slug"], quote=True)}.html">{html_escape(public_title)}</a></h2>'
                 f'<p>{html_escape(article.get("digest") or "")}</p>'
                 f'<a class="blog-read-more" href="{html_escape(article["slug"], quote=True)}.html">阅读全文</a>'
                 '</article>'
@@ -2013,13 +2044,14 @@ def render_blog_index(articles: list[dict[str, Any]], base_url: str, start_date:
     json_ld = {
         "@context": "https://schema.org",
         "@type": "Blog",
-        "name": "Portal Suite Blog",
-        "description": "Portal Suite 每日研究文章与公众号正文存档。",
+        "name": f"{BLOG_PUBLIC_BRAND} Blog",
+        "description": f"{BLOG_PUBLIC_BRAND}每日研究文章与公众号正文存档。",
         "url": canonical,
+        "publisher": {"@type": "Organization", "name": BLOG_PUBLIC_BRAND},
         "blogPost": [
             {
                 "@type": "BlogPosting",
-                "headline": article["title"],
+                "headline": blog_public_title(str(article.get("title") or "")),
                 "datePublished": article["date"],
                 "url": url_join(base_url, f'blog/{article["slug"]}.html'),
             }
@@ -2031,20 +2063,25 @@ def render_blog_index(articles: list[dict[str, Any]], base_url: str, start_date:
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Blog | Portal Suite</title>
-    <meta name="description" content="Portal Suite 每日研究文章与公众号正文存档，覆盖外资研报、研究机构与咨询公司内容。">
+    <title>{BLOG_PUBLIC_BRAND} Blog | 每日研报与研究文章</title>
+    <meta name="description" content="{BLOG_PUBLIC_BRAND}每日整理研报、研究机构与咨询公司文章，提供可持续访问的中文研究存档。">
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
     <link rel="canonical" href="{html_escape(canonical, quote=True)}">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="zh_CN">
-    <meta property="og:site_name" content="Portal Suite">
-    <meta property="og:title" content="Blog | Portal Suite">
-    <meta property="og:description" content="Portal Suite 每日研究文章与公众号正文存档。">
+    <meta property="og:site_name" content="{BLOG_PUBLIC_BRAND}">
+    <meta property="og:title" content="{BLOG_PUBLIC_BRAND} Blog | 每日研报与研究文章">
+    <meta property="og:description" content="{BLOG_PUBLIC_BRAND}每日研究文章与公众号正文存档。">
     <meta property="og:url" content="{html_escape(canonical, quote=True)}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{BLOG_PUBLIC_BRAND} Blog | 每日研报与研究文章">
+    <meta name="twitter:description" content="{BLOG_PUBLIC_BRAND}每日研究文章与公众号正文存档。">
     {blog_csp_meta()}
     <link rel="stylesheet" href="../assets/styles.css">
     <link rel="stylesheet" href="../assets/blog.css">
+    <script defer src="../assets/site-runtime.js"></script>
     <script defer src="../assets/contact.js"></script>
+    <script defer src="../assets/analytics.js"></script>
     <script defer src="../assets/app.js"></script>
     <script type="application/ld+json">{render_json_ld(json_ld)}</script>
   </head>
@@ -2064,9 +2101,9 @@ def render_blog_index(articles: list[dict[str, Any]], base_url: str, start_date:
     </header>
     <main class="blog-shell">
       <header class="blog-hero">
-        <p class="blog-kicker">PORTAL SUITE · DAILY RESEARCH</p>
-        <h1>Blog</h1>
-        <p>从 {html_escape(start_date.isoformat())} 起，完整保存每日公众号文章，按首次入库日期倒序展示。</p>
+        <p class="blog-kicker">{BLOG_PUBLIC_BRAND} · DAILY RESEARCH</p>
+        <h1>{BLOG_PUBLIC_BRAND} Blog</h1>
+        <p>{BLOG_PUBLIC_BRAND}从 {html_escape(start_date.isoformat())} 起完整保存每日公众号文章，按首次入库日期倒序展示。</p>
         <div class="blog-summary"><strong>{len(articles)}</strong> 篇文章</div>
       </header>
       <section class="blog-market-views" id="blogMarketViews" aria-labelledby="blogMarketViewsTitle">
@@ -2097,10 +2134,18 @@ def render_blog_index(articles: list[dict[str, Any]], base_url: str, start_date:
 
 def render_blog_article(article: dict[str, Any], base_url: str) -> str:
     canonical = url_join(base_url, f'blog/{article["slug"]}.html')
-    title = str(article.get("title") or "未命名文章")
+    title = blog_public_title(str(article.get("title") or ""))
     digest = str(article.get("digest") or "")
+    seo_description = blog_seo_description(digest)
     author = str(article.get("author") or "Portal Suite")
-    image_match = re.search(r'<img\b[^>]*\bsrc="([^"]+)"', str(article.get("content") or ""), re.IGNORECASE)
+    parsed_base = urlsplit(str(base_url or "").strip())
+    if parsed_base.scheme != "https" or not parsed_base.hostname:
+        raise ValueError("Blog base URL must be an HTTPS origin")
+    article_content = str(article.get("content") or "").replace(
+        PUBLIC_SITE_HOST_PLACEHOLDER,
+        parsed_base.hostname,
+    )
+    image_match = re.search(r'<img\b[^>]*\bsrc="([^"]+)"', article_content, re.IGNORECASE)
     image_url = html_unescape(image_match.group(1)) if image_match else ""
     json_ld: dict[str, Any] = {
         "@context": "https://schema.org",
@@ -2111,7 +2156,9 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
         "dateModified": article.get("last_date") or article["date"],
         "mainEntityOfPage": canonical,
         "author": {"@type": "Organization", "name": author},
-        "publisher": {"@type": "Organization", "name": "Portal Suite", "url": url_join(base_url, "/")},
+        "publisher": {"@type": "Organization", "name": BLOG_PUBLIC_BRAND, "url": url_join(base_url, "/")},
+        "isPartOf": {"@type": "Blog", "name": f"{BLOG_PUBLIC_BRAND} Blog", "url": url_join(base_url, "blog/")},
+        "keywords": [BLOG_PUBLIC_BRAND],
     }
     if image_url:
         json_ld["image"] = [image_url]
@@ -2121,23 +2168,29 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{html_escape(title)} | Portal Suite Blog</title>
-    <meta name="description" content="{html_escape(digest, quote=True)}">
+    <title>{html_escape(title)}</title>
+    <meta name="description" content="{html_escape(seo_description, quote=True)}">
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
     <link rel="canonical" href="{html_escape(canonical, quote=True)}">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="zh_CN">
-    <meta property="og:site_name" content="Portal Suite">
+    <meta property="og:site_name" content="{BLOG_PUBLIC_BRAND}">
     <meta property="og:title" content="{html_escape(title, quote=True)}">
-    <meta property="og:description" content="{html_escape(digest, quote=True)}">
+    <meta property="og:description" content="{html_escape(seo_description, quote=True)}">
     <meta property="og:url" content="{html_escape(canonical, quote=True)}">
     {og_image}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{html_escape(title, quote=True)}">
+    <meta name="twitter:description" content="{html_escape(seo_description, quote=True)}">
     {blog_csp_meta()}
     <link rel="stylesheet" href="../assets/styles.css">
     <link rel="stylesheet" href="../assets/blog.css">
+    <script defer src="../assets/site-runtime.js"></script>
+    <script defer src="../assets/contact.js"></script>
+    <script defer src="../assets/analytics.js"></script>
     <script type="application/ld+json">{render_json_ld(json_ld)}</script>
   </head>
-  <body class="blog-page blog-article-page">
+  <body class="blog-page blog-article-page" data-page="blog-article" data-report-title="{html_escape(title, quote=True)}" data-source="blog">
     <header class="topbar blog-topbar">
       <a class="brand compact" href="../index.html" aria-label="Portal Suite home">
         <img src="../assets/app-mark.svg" alt="" width="30" height="30">
@@ -2162,7 +2215,7 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
           <p class="blog-byline">作者：{html_escape(author)} · 来源：{blog_origin_details(article)}</p>
         </header>
         <div class="blog-article-content">
-          {article["content"]}
+          {article_content}
         </div>
       </article>
     </main>
@@ -2358,9 +2411,9 @@ def build_seo_outputs(
     write_text(
         output / "llms.txt",
         "\n".join([
-            "# Portal Suite",
+            f"# {BLOG_PUBLIC_BRAND}",
             "",
-            "Portal Suite 是中文金融研究报告检索与索引站点，覆盖宏观策略、行业分析、公司研究、财报、招股书、国际智库和市场观点。",
+            f"{BLOG_PUBLIC_BRAND}是中文金融研究报告检索与索引站点，覆盖宏观策略、行业分析、公司研究、财报、招股书、国际智库和市场观点。",
             "",
             "## Primary URLs",
             f"- Home/Search: {url_join(base_url, '/')}",
@@ -2396,7 +2449,7 @@ def version_assets(output: Path) -> None:
     effect immediately. Only busts when the file content actually changes.
     """
     versions: dict[str, str] = {}
-    for rel in ("assets/app.js", "assets/contact.js", "assets/styles.css", "assets/blog.css"):
+    for rel in ("assets/app.js", "assets/contact.js", "assets/site-runtime.js", "assets/analytics.js", "assets/styles.css", "assets/blog.css"):
         path = output / rel
         if path.exists():
             versions[rel] = hashlib.sha1(path.read_bytes()).hexdigest()[:8]

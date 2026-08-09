@@ -22,3 +22,7 @@ This repository contains scripts and workflow glue for turning document batches 
 - `docs/service-architecture.md` describes the file gateway and access-code model.
 - `docs/document-portal-architecture.md` describes the document portal shape.
 - `docs/delivery-adapter-architecture.md` describes delivery-adapter boundaries.
+- `docs/blog-seo-wechat-output.md` describes Blog persistence, SEO, and WeChat output.
+- `docs/engagement-analytics-course-architecture.md` describes rewards, attribution, and Course access.
+- `docs/chart-search-architecture.md` describes incremental chart-text indexing.
+- `docs/source-lead-adapter.md` describes the neutral metadata-only search adapter.

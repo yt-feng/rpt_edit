@@ -53,10 +53,12 @@ from push_portal_translated_to_wechat_drafts import (  # noqa: E402
     neutralize_markdown_headings,
     pacing_sleep,
     parse_selection_limit,
+    materialize_private_article_payload,
     pollinations_context_snippets,
     payload_article_titles,
     pollinations_prompt,
     prepare_article_upload_image,
+    prepare_cover_upload_image,
     render_fitted_wechat_html,
     replacement_cover_media_id,
     resolve_asset_path,
@@ -72,6 +74,7 @@ from push_portal_translated_to_wechat_drafts import (  # noqa: E402
     verify_draft_get,
     write_json,
     write_wechat_title_log,
+    write_fallback_cover,
 )
 
 from institution_names import ensure_title_has_institution, infer_institution_name  # noqa: E402
@@ -295,7 +298,7 @@ def xhs_card_fallback_images(report_dir: Path, already: set[Path]) -> list[tuple
     return fallbacks
 
 
-def choose_cover_image(report_dir: Path, uploaded_paths: list[Path]) -> Path:
+def choose_cover_image(report_dir: Path, uploaded_paths: list[Path], fallback_dir: Path) -> Path:
     for candidate in [
         report_dir / "assets" / "cover.png",
         report_dir / "assets" / "cover.jpg",
@@ -307,10 +310,11 @@ def choose_cover_image(report_dir: Path, uploaded_paths: list[Path]) -> Path:
     for path in uploaded_paths:
         if path.exists() and path.is_file():
             return path
-    fallback = report_dir / "assets" / "cover.png"
-    if fallback.exists():
-        return fallback
-    raise RuntimeError(f"No cover image found for {report_dir}")
+    fallback_dir.mkdir(parents=True, exist_ok=True)
+    fallback = fallback_dir / f"{report_dir.name}_fallback_cover.png"
+    if not fallback.exists():
+        write_fallback_cover(fallback)
+    return fallback
 
 
 def upload_or_fake_article_image(
@@ -474,7 +478,12 @@ def build_article(
             args.dry_run,
         )
 
-    cover_image = choose_cover_image(report_dir, [p for p in uploaded_paths if p.exists()])
+    cover_source = choose_cover_image(
+        report_dir,
+        [p for p in uploaded_paths if p.exists()],
+        output_dir / "_assets",
+    )
+    cover_image = prepare_cover_upload_image(cover_source, output_dir, f"article_{index:02d}")
     if args.dry_run:
         thumb_media_id = f"DRY_RUN_THUMB_{index:02d}"
     else:
@@ -586,6 +595,7 @@ def main() -> int:
     parser.add_argument("--body-hook", default=DEFAULT_BODY_HOOK)
     parser.add_argument("--trailing-image", default=DEFAULT_TRAILING_IMAGE)
     parser.add_argument("--content-source-url", default="")
+    parser.add_argument("--site-url", default=os.getenv("PORTAL_SITE_URL", ""), help=argparse.SUPPRESS)
     parser.add_argument("--wechat-appid", default=os.getenv("WECHAT_MP_APPID", ""))
     parser.add_argument("--wechat-secret", default=os.getenv("WECHAT_MP_APPSECRET", ""))
     parser.add_argument("--timeout", type=int, default=120)
@@ -617,8 +627,12 @@ def main() -> int:
     ):
         if getattr(args, option) < 0:
             raise ValueError(f"--{option.replace('_', '-')} must be non-negative")
+    if args.site_url:
+        materialize_private_article_payload([], args.site_url)
     if not args.dry_run and (not args.wechat_appid or not args.wechat_secret):
         raise ValueError("WECHAT_MP_APPID and WECHAT_MP_APPSECRET are required unless --dry-run is set")
+    if not args.dry_run and not args.site_url:
+        raise ValueError("PORTAL_SITE_URL is required unless --dry-run is set")
 
     root = Path(args.dropbox_output_root)
     date_dir = latest_date_dir(root) if args.date_folder == "latest" else root / args.date_folder
@@ -780,7 +794,8 @@ def main() -> int:
 
     def create_draft(group: list[dict[str, Any]]) -> None:
         nonlocal use_safe_cover_for_future, safe_cover_without_crop
-        articles = article_payload(group)
+        public_articles = article_payload(group)
+        articles = materialize_private_article_payload(public_articles, args.site_url)
         payload_bytes = utf8_byte_count(json.dumps({"articles": articles}, ensure_ascii=False, separators=(",", ":")))
         draft_index = len(drafts) + 1
         log(
@@ -914,7 +929,8 @@ def main() -> int:
             publish_id = submit_publish(session, access_token, media_id, args.timeout) if args.publish else ""
 
         payload_path = output_dir / f"draft_payload_{draft_index:02d}.json"
-        write_json(payload_path, {"articles": articles})
+        # Keep the deployment hostname out of public Blog archive inputs.
+        write_json(payload_path, {"articles": public_articles})
         drafts.append(
             {
                 "draft_index": draft_index,

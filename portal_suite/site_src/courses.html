@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Course | Portal Suite</title>
+    <meta name="description" content="Portal Suite 会员课程入口。">
+    <meta name="robots" content="noindex,nofollow,noarchive">
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body data-page="course">
+    <header class="topbar">
+      <a class="brand compact" href="index.html" aria-label="Portal Suite home">
+        <img src="assets/app-mark.svg" alt="" width="30" height="30">
+        <span>Portal Suite</span>
+      </a>
+      <nav class="topbar-actions" aria-label="站点导航">
+        <a class="topbar-link" href="index.html">首页</a>
+        <a class="topbar-link" href="blog/">Blog</a>
+        <a class="topbar-link is-active" href="courses.html" aria-current="page">Course</a>
+        <a id="newsfeedNav" class="topbar-link" href="newsfeed.html" hidden>Newsfeed</a>
+        <button id="accountGate" class="account-button" type="button">登录</button>
+      </nav>
+    </header>
+
+    <main class="shell course-shell">
+      <section class="course-hero">
+        <p class="course-kicker">MEMBER LEARNING</p>
+        <h1>Course</h1>
+        <p>为仍有至少 30 天有效期的会员提供专业课程咨询入口。</p>
+      </section>
+
+      <section class="course-gate" id="courseGate" aria-live="polite">
+        <h2 id="courseGateTitle">正在核验会员资格…</h2>
+        <p id="courseGateMessage">请稍候。</p>
+        <button class="primary" id="courseLoginButton" type="button" hidden>注册 / 登录</button>
+      </section>
+
+      <section class="course-catalog" id="courseCatalog" hidden aria-label="可咨询课程"></section>
+    </main>
+
+    <footer class="legal-footer">
+      <a href="index.html">首页检索</a>
+      <a href="blog/">Blog</a>
+      <a href="courses.html">Course</a>
+      <a href="terms.html">Terms of Service</a>
+    </footer>
+
+    <script src="assets/site-runtime.js"></script>
+    <script src="assets/contact.js"></script>
+    <script src="assets/analytics.js"></script>
+    <script src="assets/app.js"></script>
+  </body>
+</html>

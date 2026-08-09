@@ -635,6 +635,7 @@ jobs:
         env:
           WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
           WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
         run: |
           set -o pipefail
           DATE_FOLDER="${{ needs.select-macro-reports.outputs.latest_folder }}"
@@ -660,7 +661,6 @@ jobs:
             --max-body-chars "${{ needs.resolve-inputs.outputs.wechat_draft_max_body_chars }}" \
             --min-inline-images "${{ needs.resolve-inputs.outputs.wechat_draft_min_inline_images }}" \
             --max-inline-images "${{ needs.resolve-inputs.outputs.wechat_draft_max_inline_images }}" \
-            --force-safe-cover \
             "${PUBLISH_ARGS[@]}" 2>&1 | tee -a wechat_drafts_progress.log
 
       - name: Archive WeChat draft diagnostics
@@ -831,6 +831,7 @@ jobs:
         env:
           WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
           WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
         run: |
           set -o pipefail
           DATE_FOLDER="${{ needs.select-macro-reports.outputs.latest_folder }}"
@@ -883,12 +884,64 @@ jobs:
           git commit -m "Archive portal translated Blog articles $DATE_FOLDER"
           bash scripts/push_main_with_rebase_retry.sh 5
 
+  trigger-chart-search-index:
+    needs: [resolve-inputs, select-macro-reports, process-shard]
+    if: >-
+      ${{
+        !cancelled() && needs.process-shard.result == 'success' &&
+        needs.select-macro-reports.outputs.selected_count != '0' &&
+        vars.CHART_SEARCH_ENABLED == 'true'
+      }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Dispatch daily incremental chart index
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DATE_FOLDER: ${{ needs.select-macro-reports.outputs.latest_folder }}
+          EXPECTED_SHARDS: ${{ needs.select-macro-reports.outputs.effective_shard_count }}
+          MAX_IMAGES: ${{ vars.VISION_INDEX_MAX_IMAGES_PER_RUN || '0' }}
+          SOURCE_RUN_ID: ${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          printf '%s' "$DATE_FOLDER" | grep -Eq '^[0-9]{6,8}$'
+          printf '%s' "$SOURCE_RUN_ID" | grep -Eq '^[0-9]+$'
+          EXPECTED_TITLE="Chart search $DATE_FOLDER $SOURCE_RUN_ID"
+          gh workflow run portal-chart-search-index.yml \
+            --repo "$GITHUB_REPOSITORY" \
+            --ref main \
+            -f date_folder="$DATE_FOLDER" \
+            -f source_handoff_run_id="$SOURCE_RUN_ID" \
+            -f expected_shards="$EXPECTED_SHARDS" \
+            -f max_images="$MAX_IMAGES"
+          CHART_RUN_ID=""
+          for ATTEMPT in $(seq 1 24); do
+            CHART_RUN_ID="$(gh run list \
+              --repo "$GITHUB_REPOSITORY" \
+              --workflow portal-chart-search-index.yml \
+              --event workflow_dispatch \
+              --branch main \
+              --limit 30 \
+              --json databaseId,displayTitle \
+              --jq ".[] | select(.displayTitle == \"$EXPECTED_TITLE\") | .databaseId" \
+              | head -n 1)"
+            if printf '%s\n' "$CHART_RUN_ID" | grep -Eq '^[0-9]+$'; then break; fi
+            sleep 5
+          done
+          if ! printf '%s\n' "$CHART_RUN_ID" | grep -Eq '^[0-9]+$'; then
+            echo "Unable to resolve dispatched chart-index run." >&2
+            exit 1
+          fi
+          echo "::notice::Waiting for chart-index run $CHART_RUN_ID."
+          gh run watch "$CHART_RUN_ID" --repo "$GITHUB_REPOSITORY" --compact --exit-status --interval 15
+
   cleanup-private-handoff:
     needs:
       - resolve-inputs
       - select-macro-reports
       - package-publish-ready
       - trigger-market-views
+      - trigger-chart-search-index
       - push-xhs-notes-wechat-drafts
       - build-portal-translated-reports
       - push-portal-translated-wechat-drafts
@@ -897,6 +950,7 @@ jobs:
         always() && !cancelled() &&
         needs.package-publish-ready.result == 'success' &&
         needs.trigger-market-views.result != 'failure' &&
+        needs.trigger-chart-search-index.result != 'failure' &&
         needs.push-xhs-notes-wechat-drafts.result != 'failure' &&
         needs.build-portal-translated-reports.result != 'failure' &&
         needs.push-portal-translated-wechat-drafts.result != 'failure'
@@ -930,6 +984,7 @@ jobs:
       - process-shard
       - package-publish-ready
       - trigger-market-views
+      - trigger-chart-search-index
       - push-xhs-notes-wechat-drafts
       - build-portal-translated-reports
       - push-portal-translated-wechat-drafts
@@ -944,6 +999,7 @@ jobs:
         shards=${{ needs.process-shard.result }},
         package=${{ needs.package-publish-ready.result }},
         market_views=${{ needs.trigger-market-views.result }},
+        chart_search=${{ needs.trigger-chart-search-index.result }},
         wechat=${{ needs.push-xhs-notes-wechat-drafts.result }},
         translated=${{ needs.build-portal-translated-reports.result }},
         translated_wechat=${{ needs.push-portal-translated-wechat-drafts.result }},

@@ -1,6 +1,6 @@
 # Protected Document Service Architecture
 
-Last updated: 2026-08-06
+Last updated: 2026-08-10
 
 This document describes the protected document service.
 
@@ -105,6 +105,9 @@ Capacity controls may archive old private binaries while keeping metadata search
 - Full-text search fragments should be size-limited and filtered before publication.
 - Historical text can be split into lazy-loaded shards so the browser does not fetch everything at first paint.
 - Archived items can remain searchable as metadata-only records, while downloads continue to require gateway authorization.
+- Extracted chart descriptions follow the incremental, hash-deduplicated pipeline in
+  [Chart Search Architecture](chart-search-architecture.md); public chart records use
+  opaque image ids and catalog report ids, never private filesystem or object paths.
 
 ## Source Adapter Policy
 
@@ -116,6 +119,33 @@ Public UI labels should stay generic, for example:
 - external source adapter.
 
 The browser should use the unified detail page and the gateway for protected flows.
+
+Metadata-only supplemental leads use the opaque-ID and redaction contract in
+[Supplemental Source-Lead Adapter](source-lead-adapter.md). Upstream locations,
+brands, private locators, and contact values remain deployment secrets; public
+responses expose only neutral labels and contact-only detail pages.
+
+## Engagement And Publication Extensions
+
+- Daily rewards, the 30-day Course gate, and privacy-preserving attribution are
+  defined in [Engagement, Analytics, and Course Access](engagement-analytics-course-architecture.md).
+- Blog persistence, title SEO, cover handling, and private hostname
+  materialization are defined in [Blog SEO and WeChat Output Contract](blog-seo-wechat-output.md).
+- Chart descriptions and image-hash checkpoints are defined in
+  [Chart Search Architecture](chart-search-architecture.md).
+
+## Hosting And Public-Identity Boundary
+
+The production hostname is served by an edge Worker backed by immutable object
+storage releases. It must not be configured as a GitHub Pages custom domain.
+Public source uses neutral placeholders; the production hostname, support
+identity, source origins, and deny-list markers are materialized only from
+encrypted deployment configuration in the short-lived Actions workspace.
+
+`check_public_identity.py` runs before public commits and again against the
+materialized release boundary. Workflow logs, artifacts, committed archives,
+and public API responses must not contain private deployment values. A release
+is switched only after the edge route and static identity checks succeed.
 
 ## Admin And Operator Tools
 

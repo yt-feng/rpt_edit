@@ -1,6 +1,14 @@
+import {
+  publicSourceLeadItem,
+  readStoredSourceLead,
+  searchSourceLeadMetadata,
+  sourceLeadAdapterEnabled,
+} from "./source-lead-adapter.js";
+
 const CACHE_TTL_MS = 5 * 60 * 1000;
 const DEFAULT_R2_PREFIX = "reports";
 const CONTACT_WECHAT = "Support Contact";
+const CONTACT_EMAIL = "support@portal.example.invalid";
 const ADMIN_TOKEN_TTL_SECONDS = 180 * 24 * 60 * 60;
 const USER_TOKEN_TTL_SECONDS = 30 * 24 * 60 * 60;
 const CAPTCHA_TTL_SECONDS = 10 * 60;
@@ -112,6 +120,8 @@ const AUTHORITY_ORIGIN = `https://${AUTHORITY_HOST}`;
 const AUTHORITY_SOURCE = "authority";
 const AUTHORITY_SEARCH_PAGE_SIZE = 20;
 const AUTHORITY_UA = "PortalSuiteAuthoritySearch/1.0";
+const AUTHORITY_DOMESTIC_LEAD_KIND = "domestic-lead";
+const AUTHORITY_DOMESTIC_LEAD_LABEL = "国内报告线索";
 const AUTHORITY_KINDS = {
   "foreign": {
     endpoint: "/reports/foreign/search",
@@ -202,6 +212,33 @@ const ANALYTICS_EXPORT_CURSOR_MAX_LENGTH = 4096;
 const ANALYTICS_EXPORT_NATIVE_CURSOR_MAX_LENGTH = 2048;
 const ANALYTICS_EXPORT_MAX_PAGE_SIZE = 50;
 const ANALYTICS_EXPORT_READ_CONCURRENCY = 4;
+const ANALYTICS_DAY_SUMMARY_BATCH_SIZE = 200;
+const ANALYTICS_DAY_SUMMARY_TOP_LIMIT = 20;
+const ANALYTICS_DAY_SUMMARY_JOB_PREFIX = "_account/analytics-summary-jobs";
+const ANALYTICS_DAY_SUMMARY_PREFIX = "_account/analytics-day-summaries";
+const ANALYTICS_DAY_SUMMARY_JOB_TTL_MS = 2 * 60 * 60 * 1000;
+const ANALYTICS_EVENT_MAX_BODY_BYTES = 24 * 1024;
+const PUBLIC_ANALYTICS_EVENT_TYPES = new Set([
+  "account_auth",
+  "daily_file_download",
+  "delivery_link_generate",
+  "download_attempt",
+  "download_error",
+  "download_pending",
+  "download_success",
+  "page_view",
+  "report_open",
+  "report_request",
+  "report_text_view",
+  "reward_checkin",
+  "reward_claim",
+  "search",
+]);
+const REWARD_BASE_POINTS = 10;
+const REWARD_POINTS_REPORT_COST = 70;
+const REWARD_R2_WRITE_RETRIES = 8;
+const COURSE_MIN_REMAINING_DAYS = 30;
+const COURSE_CATALOG = ["WSO", "WSP", "Fundamental Edge"];
 const ACCOUNT_ADMIN_EXPORT_PAGE_SIZE = 500;
 const ACCOUNT_ADMIN_EXPORT_MAX_USERS = 5000;
 const ACCOUNT_ADMIN_EXPORT_CONCURRENCY = 8;
@@ -1584,6 +1621,10 @@ async function findReportPurchase(env, email, reportId, source) {
     source: String(source || ""),
   };
   if (!expected.email || !expected.report_id || !expected.source) return null;
+  const r2Fallback = async () => validateReportPurchaseRow(
+    await r2GetJsonStrict(env, accountKey("purchases", expected.source, expected.report_id, expected.email)),
+    expected,
+  );
   if (hasSupabaseConfig(env)) {
     try {
       const query = queryString({
@@ -1595,12 +1636,9 @@ async function findReportPurchase(env, email, reportId, source) {
       });
       const rows = await supabaseRequest(env, "GET", `/rest/v1/report_purchases?${query}`);
       const row = Array.isArray(rows) && rows.length ? rows[0] : null;
-      return validateReportPurchaseRow(row, expected);
+      return validateReportPurchaseRow(row, expected) || await r2Fallback();
     } catch (error) {
-      const legacyRow = validateReportPurchaseRow(
-        await r2GetJsonStrict(env, accountKey("purchases", expected.source, expected.report_id, expected.email)),
-        expected,
-      );
+      const legacyRow = await r2Fallback();
       if (legacyRow) return legacyRow;
       const message = String(error && error.message || "");
       if (/PGRST205|report_purchases.*schema cache|relation .*report_purchases.*does not exist/i.test(message)) {
@@ -1632,36 +1670,342 @@ async function saveReportPurchaseInR2(env, fields, now = new Date().toISOString(
   };
   validateReportPurchaseRow(payload, expected);
   await r2PutJson(env, key, payload);
-  return validateReportPurchaseRow(await r2GetJsonStrict(env, key), expected);
+  // R2 is strongly consistent. Once the put resolves, the authorization is
+  // durably committed; a second read would create an ambiguous rollback window
+  // if that verification request alone failed.
+  return validateReportPurchaseRow(payload, expected);
 }
 
 async function saveReportPurchase(env, fields) {
   const now = new Date().toISOString();
-  if (!hasSupabaseConfig(env)) return saveReportPurchaseInR2(env, fields, now);
+  // The private R2 purchase is the durable authorization fallback. It is
+  // written first so a transient database failure cannot consume a reward
+  // without granting download access.
+  const r2Record = await saveReportPurchaseInR2(env, fields, now);
+  if (!hasSupabaseConfig(env)) return r2Record;
   const expected = { email: fields.email, report_id: fields.report_id, source: fields.source };
-  const query = queryString({
-    email: `eq.${fields.email}`,
-    report_id: `eq.${fields.report_id}`,
-    source: `eq.${fields.source}`,
-    order: "updated_at.desc",
-    limit: "1",
-  });
-  const existingRows = await supabaseRequest(env, "GET", `/rest/v1/report_purchases?${query}`);
-  const existing = Array.isArray(existingRows) && existingRows.length
-    ? validateReportPurchaseRow(existingRows[0], expected)
-    : null;
-  const payload = { ...fields, updated_at: now };
-  if (existing && existing.id) {
-    const patchQuery = queryString({ id: `eq.${existing.id}`, select: "*" });
-    const rows = await supabaseRequest(env, "PATCH", `/rest/v1/report_purchases?${patchQuery}`, payload, { preferReturn: true });
+  try {
+    const query = queryString({
+      email: `eq.${fields.email}`,
+      report_id: `eq.${fields.report_id}`,
+      source: `eq.${fields.source}`,
+      order: "updated_at.desc",
+      limit: "1",
+    });
+    const existingRows = await supabaseRequest(env, "GET", `/rest/v1/report_purchases?${query}`);
+    const existing = Array.isArray(existingRows) && existingRows.length
+      ? validateReportPurchaseRow(existingRows[0], expected)
+      : null;
+    const payload = { ...fields, updated_at: now };
+    if (existing && existing.id) {
+      const patchQuery = queryString({ id: `eq.${existing.id}`, select: "*" });
+      const rows = await supabaseRequest(env, "PATCH", `/rest/v1/report_purchases?${patchQuery}`, payload, { preferReturn: true });
+      return validateReportPurchaseRow(Array.isArray(rows) && rows.length ? rows[0] : payload, expected);
+    }
+    const rows = await supabaseRequest(env, "POST", "/rest/v1/report_purchases?select=*", {
+      ...payload,
+      purchased_at: now,
+      created_at: now,
+    }, { preferReturn: true });
     return validateReportPurchaseRow(Array.isArray(rows) && rows.length ? rows[0] : payload, expected);
+  } catch (_error) {
+    return r2Record;
   }
-  const rows = await supabaseRequest(env, "POST", "/rest/v1/report_purchases?select=*", {
-    ...payload,
-    purchased_at: now,
-    created_at: now,
-  }, { preferReturn: true });
-  return validateReportPurchaseRow(Array.isArray(rows) && rows.length ? rows[0] : payload, expected);
+}
+
+function emptyRewardState(email) {
+  return {
+    email: normalizeEmail(email),
+    points: 0,
+    current_streak: 0,
+    longest_streak: 0,
+    last_checkin_date: "",
+    checkins: {},
+    claims: {},
+    grants: {},
+    updated_at: "",
+  };
+}
+
+function validateRewardState(row, email) {
+  const expectedEmail = normalizeEmail(email);
+  if (!row) return emptyRewardState(expectedEmail);
+  if (!row || typeof row !== "object" || Array.isArray(row)) throw new Error("Reward state verification failed.");
+  const normalized = {
+    ...emptyRewardState(expectedEmail),
+    ...row,
+    email: normalizeEmail(row.email),
+    points: Math.max(0, Math.floor(Number(row.points) || 0)),
+    current_streak: Math.max(0, Math.floor(Number(row.current_streak) || 0)),
+    longest_streak: Math.max(0, Math.floor(Number(row.longest_streak) || 0)),
+    last_checkin_date: cleanAnalyticsHistoryDate(row.last_checkin_date),
+    checkins: row.checkins && typeof row.checkins === "object" && !Array.isArray(row.checkins) ? row.checkins : {},
+    claims: row.claims && typeof row.claims === "object" && !Array.isArray(row.claims) ? row.claims : {},
+    grants: row.grants && typeof row.grants === "object" && !Array.isArray(row.grants) ? row.grants : {},
+  };
+  if (!expectedEmail || normalized.email !== expectedEmail) throw new Error("Reward state verification failed.");
+  return normalized;
+}
+
+function rewardStateKey(email) {
+  return accountKey("rewards", normalizeEmail(email));
+}
+
+function rewardBonusForStreak(streak) {
+  const value = Math.max(0, Math.floor(Number(streak) || 0));
+  if (value > 0 && value % 30 === 0) return 100;
+  if (value > 0 && value % 7 === 0) return 20;
+  if (value > 0 && value % 3 === 0) return 5;
+  return 0;
+}
+
+function rewardNextBonus(currentStreak) {
+  const streak = Math.max(0, Math.floor(Number(currentStreak) || 0));
+  for (let offset = 1; offset <= 30; offset += 1) {
+    const bonus = rewardBonusForStreak(streak + offset);
+    if (bonus) return { days: offset, streak: streak + offset, points: bonus };
+  }
+  return { days: 30, streak: streak + 30, points: 100 };
+}
+
+function pruneRewardDateMap(value, keep = 90) {
+  const rows = Object.entries(value && typeof value === "object" ? value : {})
+    .filter(([date]) => /^\d{4}-\d{2}-\d{2}$/.test(date))
+    .sort(([left], [right]) => right.localeCompare(left))
+    .slice(0, keep);
+  return Object.fromEntries(rows);
+}
+
+async function rewardStateSnapshotR2(env, email) {
+  const snapshot = await r2GetJsonObjectStrict(env, rewardStateKey(email));
+  if (!snapshot) return { state: emptyRewardState(email), etag: "" };
+  const etag = String(snapshot.object && snapshot.object.etag || "");
+  if (!etag) throw new Error("Reward state version verification failed.");
+  return { state: validateRewardState(snapshot.value, email), etag };
+}
+
+async function mutateRewardStateR2(env, email, mutate) {
+  const normalized = normalizeEmail(email);
+  for (let attempt = 0; attempt < REWARD_R2_WRITE_RETRIES; attempt += 1) {
+    const snapshot = await rewardStateSnapshotR2(env, normalized);
+    const result = await mutate({
+      ...snapshot.state,
+      checkins: { ...snapshot.state.checkins },
+      claims: { ...snapshot.state.claims },
+      grants: { ...snapshot.state.grants },
+    });
+    if (result && result.skip_write) return { state: snapshot.state, result };
+    const next = validateRewardState({
+      ...(result && result.state || snapshot.state),
+      email: normalized,
+      checkins: pruneRewardDateMap(result && result.state && result.state.checkins || snapshot.state.checkins),
+      claims: pruneRewardDateMap(result && result.state && result.state.claims || snapshot.state.claims),
+      updated_at: new Date().toISOString(),
+    }, normalized);
+    const written = await accountBucket(env).put(rewardStateKey(normalized), JSON.stringify(next), {
+      onlyIf: snapshot.etag ? { etagMatches: snapshot.etag } : { etagDoesNotMatch: "*" },
+      httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "no-store" },
+    });
+    if (written !== null) return { state: next, result: result || {} };
+  }
+  throw new Error("Reward state changed concurrently. Please retry.");
+}
+
+function publicRewardStatus(state, date) {
+  const nextBonus = rewardNextBonus(state.current_streak);
+  return {
+    server_date: date,
+    points: Math.max(0, Math.floor(Number(state.points) || 0)),
+    points_report_cost: REWARD_POINTS_REPORT_COST,
+    current_streak: Math.max(0, Math.floor(Number(state.current_streak) || 0)),
+    longest_streak: Math.max(0, Math.floor(Number(state.longest_streak) || 0)),
+    checked_in_today: Boolean(state.checked_in_today),
+    daily_available: Boolean(state.checked_in_today && !state.daily_claim),
+    daily_claimed: Boolean(state.daily_claim),
+    daily_report_id: String(state.daily_claim && state.daily_claim.report_id || ""),
+    points_claimed_today: Boolean(state.points_claim),
+    points_report_id: String(state.points_claim && state.points_claim.report_id || ""),
+    next_bonus: nextBonus,
+  };
+}
+
+async function rewardStatusForUser(env, user) {
+  const email = normalizeEmail(user && user.email);
+  const date = analyticsBjtDateKey();
+  const { state } = await rewardStateSnapshotR2(env, email);
+  const claims = state.claims[date] && typeof state.claims[date] === "object" ? state.claims[date] : {};
+  return publicRewardStatus({
+    ...state,
+    checked_in_today: Boolean(state.checkins[date]),
+    daily_claim: claims.daily || null,
+    points_claim: claims.points || null,
+  }, date);
+}
+
+async function rewardCheckinForUser(env, user) {
+  const email = normalizeEmail(user && user.email);
+  const date = analyticsBjtDateKey();
+  await mutateRewardStateR2(env, email, (state) => {
+    if (state.checkins[date]) return { skip_write: true, duplicate: true };
+    const previousDate = new Date(`${date}T00:00:00+08:00`);
+    previousDate.setUTCDate(previousDate.getUTCDate() - 1);
+    const previousKey = analyticsBjtDateKey(previousDate.getTime());
+    const streak = state.last_checkin_date === previousKey ? state.current_streak + 1 : 1;
+    const bonus = rewardBonusForStreak(streak);
+    state.points += REWARD_BASE_POINTS + bonus;
+    state.current_streak = streak;
+    state.longest_streak = Math.max(state.longest_streak, streak);
+    state.last_checkin_date = date;
+    state.checkins[date] = { base_points: REWARD_BASE_POINTS, bonus_points: bonus, streak_after: streak };
+    return { state, duplicate: false };
+  });
+  return rewardStatusForUser(env, user);
+}
+
+async function rewardClaimForUser(env, user, kind, report) {
+  const email = normalizeEmail(user && user.email);
+  const date = analyticsBjtDateKey();
+  const reportId = String(report && report.id || "");
+  const title = reportDisplayTitle(report).slice(0, 320);
+  const mutation = await mutateRewardStateR2(env, email, (state) => {
+    const todayClaims = state.claims[date] && typeof state.claims[date] === "object" ? state.claims[date] : {};
+    if (todayClaims[kind]) return { skip_write: true, duplicate: true, claim: todayClaims[kind] };
+    if (kind === "daily" && !state.checkins[date]) throw new Error("请先完成今日签到。");
+    if (kind === "points" && state.points < REWARD_POINTS_REPORT_COST) throw new Error("积分不足。");
+    const pointsSpent = kind === "points" ? REWARD_POINTS_REPORT_COST : 0;
+    state.points -= pointsSpent;
+    state.claims[date] = {
+      ...todayClaims,
+      [kind]: { report_id: reportId, report_title: title, points_spent: pointsSpent, claimed_at: new Date().toISOString() },
+    };
+    state.grants[reportId] = {
+      report_id: reportId,
+      report_title: title,
+      reward_kind: kind,
+      granted_at: new Date().toISOString(),
+    };
+    return { state, duplicate: false, claim: state.claims[date][kind] };
+  });
+  const claim = mutation.result && mutation.result.claim;
+  if (mutation.result && mutation.result.duplicate) {
+    return {
+      result: {
+        duplicate: true,
+        claimed: false,
+        already_claimed_today: true,
+        report_id: String(claim && claim.report_id || ""),
+      },
+      status: await rewardStatusForUser(env, user),
+    };
+  }
+  // The atomically committed reward grant is the authorization source. The
+  // existing purchase record remains a compatibility mirror and may repair on
+  // a later request without changing the daily slot or points balance.
+  await saveReportPurchase(env, {
+      email,
+      report_id: reportId,
+      source: "catalog",
+      title,
+      status: "active",
+    }).catch(() => null);
+  return {
+    result: { duplicate: Boolean(mutation.result && mutation.result.duplicate), claimed: true, report_id: reportId },
+    status: await rewardStatusForUser(env, user),
+  };
+}
+
+async function rewardGrantForUser(env, email, reportId, source) {
+  if (source !== "catalog" || !reportId) return null;
+  const { state } = await rewardStateSnapshotR2(env, email);
+  const grant = state.grants && state.grants[reportId];
+  if (!grant || String(grant.report_id || "") !== String(reportId)) return null;
+  return {
+    report_id: String(reportId),
+    source: "catalog",
+    status: "active",
+    reward_kind: String(grant.reward_kind || ""),
+    granted_at: String(grant.granted_at || ""),
+  };
+}
+
+function rewardRequestErrorStatus(error) {
+  const text = String(error && error.message || "");
+  if (/daily check-in required|先完成今日签到/i.test(text)) return 409;
+  if (/insufficient reward points|积分不足/i.test(text)) return 409;
+  if (/concurrently|changed concurrently/i.test(text)) return 409;
+  return 503;
+}
+
+async function handleRewards(request, env) {
+  let user;
+  try {
+    user = await currentUserFromRequest(env, request);
+  } catch (error) {
+    return jsonResponse(request, env, 401, { detail: error.message || "Please log in." });
+  }
+  try {
+    if (request.method === "GET") return jsonResponse(request, env, 200, await rewardStatusForUser(env, user));
+    const status = await rewardCheckinForUser(env, user);
+    await insertUsageEvent(env, normalizeEmail(user.email), "reward_checkin", {
+      date: status.server_date,
+      current_streak: status.current_streak,
+      points: status.points,
+    }).catch(() => null);
+    return jsonResponse(request, env, 200, status);
+  } catch (error) {
+    return jsonResponse(request, env, rewardRequestErrorStatus(error), { detail: error.message || "签到暂时不可用。" });
+  }
+}
+
+async function handleRewardClaim(request, env) {
+  let user;
+  try {
+    user = await currentUserFromRequest(env, request);
+  } catch (error) {
+    return jsonResponse(request, env, 401, { detail: error.message || "Please log in." });
+  }
+  let payload = {};
+  try {
+    payload = await request.json();
+  } catch (_error) {
+    return jsonResponse(request, env, 400, { detail: "Invalid JSON body." });
+  }
+  const kind = String(payload.reward_kind || "").trim().toLowerCase();
+  const reportId = cleanCatalogReportId(payload.report_id);
+  if (!reportId || !["daily", "points"].includes(kind)) {
+    return jsonResponse(request, env, 400, { detail: "请选择有效的报告和兑换方式。" });
+  }
+  try {
+    const catalog = await loadCatalog(env);
+    const report = findReport(catalog, reportId);
+    const descriptor = await catalogReportPdfDescriptor(env, report, { verifyObject: true });
+    if (!report || !descriptor || !descriptor.available) {
+      return jsonResponse(request, env, 409, { detail: "该报告当前没有可领取的 PDF。" });
+    }
+    const currentAccess = await reportAccessForUser(env, user, reportId, "catalog");
+    if (currentAccess.can_download) {
+      return jsonResponse(request, env, 200, {
+        already_owned: true,
+        claimed: false,
+        report_id: reportId,
+        rewards: await rewardStatusForUser(env, user),
+      });
+    }
+    const claimed = await rewardClaimForUser(env, user, kind, report);
+    await insertUsageEvent(env, normalizeEmail(user.email), "reward_claim", {
+      date: claimed.status.server_date,
+      reward_kind: kind,
+      report_id: reportId,
+    }).catch(() => null);
+    return jsonResponse(request, env, 200, { ...claimed.result, rewards: claimed.status });
+  } catch (error) {
+    const status = rewardRequestErrorStatus(error);
+    const message = String(error && error.message || "");
+    const detail = /daily check-in required/i.test(message)
+      ? "请先完成今日签到。"
+      : (/insufficient reward points/i.test(message) ? "积分不足。" : (message || "报告领取暂时不可用。"));
+    return jsonResponse(request, env, status, { detail });
+  }
 }
 
 async function insertUsageEventInR2(env, email, eventType, metadata = {}) {
@@ -2692,12 +3036,22 @@ async function reportAccessForUser(env, user, reportId, source) {
   // custom grant. This also preserves legacy grants when the optional purchase
   // table has not been provisioned in the current account database.
   const baseAccess = Boolean(entitlementAccessMatched || customAccess || trialAccessMatched);
-  const purchase = reportId && !accessVerificationFailed && !baseAccess
+  let rewardGrant = null;
+  if (reportId && !accessVerificationFailed && !baseAccess) {
+    try {
+      rewardGrant = await rewardGrantForUser(env, email, reportId, source);
+    } catch (_error) {
+      rewardGrant = null;
+    }
+  }
+  const purchase = reportId && !accessVerificationFailed && !baseAccess && !rewardGrant
     ? await findReportPurchase(env, email, reportId, source)
     : null;
   const purchased = purchase && ACTIVE_STATUSES.has(String(purchase.status || ""));
   return {
-    can_download: Boolean(!accessVerificationFailed && (entitlementAccessMatched || customAccess || trialAccessMatched || purchased)),
+    can_download: Boolean(!accessVerificationFailed && (
+      entitlementAccessMatched || customAccess || trialAccessMatched || rewardGrant || purchased
+    )),
     entitlement,
     access,
     trial_access: trialAccess,
@@ -2705,9 +3059,11 @@ async function reportAccessForUser(env, user, reportId, source) {
     effective_access_kind: effectiveChoice.kind,
     effective_access_components: activeChoices,
     purchase: purchased ? purchase : null,
+    reward_grant: rewardGrant,
     custom_access_matched: customAccess,
     entitlement_access_matched: entitlementAccessMatched,
     trial_access_matched: trialAccessMatched,
+    reward_access_matched: Boolean(rewardGrant),
   };
 }
 
@@ -3177,6 +3533,93 @@ async function handleEntitlement(request, env) {
     return jsonResponse(request, env, status, {
       detail: status === 503 ? "下载权限暂时无法核验，请稍后重试。" : error.message || "Please log in.",
     });
+  }
+}
+
+function courseAccessCandidate(choice, nowMs = Date.now()) {
+  const access = publicAccessGrant(choice && choice.access);
+  const kind = String(choice && choice.kind || "");
+  const isMembershipEntitlement = kind === "entitlement" && access.access_mode === "all";
+  const isFullAdminMembership = kind === "admin" && access.access_mode === "all" && access.download_limit === 0;
+  if (!access.active || (!isMembershipEntitlement && !isFullAdminMembership)) return null;
+  if (access.lifetime) {
+    return {
+      eligible: true,
+      lifetime: true,
+      remaining_days: null,
+      current_period_end: "",
+      source: cleanAnalyticsText(access.source || choice.kind, 80),
+    };
+  }
+  const endMs = Date.parse(access.current_period_end || "");
+  if (!Number.isFinite(endMs)) return null;
+  const remainingMs = endMs - nowMs;
+  return {
+    eligible: remainingMs >= COURSE_MIN_REMAINING_DAYS * 24 * 60 * 60 * 1000,
+    lifetime: false,
+    remaining_days: Math.max(0, Math.floor(remainingMs / (24 * 60 * 60 * 1000))),
+    current_period_end: new Date(endMs).toISOString(),
+    source: cleanAnalyticsText(access.source || choice.kind, 80),
+  };
+}
+
+async function courseAccessForUser(env, user, nowMs = Date.now()) {
+  if (accountDisabled(user)) return { can_access: false, required_remaining_days: COURSE_MIN_REMAINING_DAYS };
+  if (isPrivilegedAccount(user)) {
+    return {
+      can_access: true,
+      required_remaining_days: COURSE_MIN_REMAINING_DAYS,
+      lifetime: true,
+      remaining_days: null,
+      current_period_end: "",
+      source: "role",
+    };
+  }
+  const email = normalizeEmail(user && user.email);
+  const [entitlementRow, accessRow, trialAccessRow] = await Promise.all([
+    findEntitlement(env, email),
+    findAccessGrant(env, email),
+    findVid2PptTrialAccess(env, email),
+  ]);
+  const effective = effectiveAccessChoiceForUser(user, entitlementRow, accessRow, trialAccessRow);
+  const candidates = (Array.isArray(effective.choices) ? effective.choices : [])
+    .map((choice) => courseAccessCandidate(choice, nowMs))
+    .filter(Boolean)
+    .sort((left, right) => {
+      if (left.lifetime !== right.lifetime) return left.lifetime ? -1 : 1;
+      return Number(right.remaining_days || 0) - Number(left.remaining_days || 0);
+    });
+  const best = candidates[0] || null;
+  return {
+    can_access: Boolean(best && best.eligible),
+    required_remaining_days: COURSE_MIN_REMAINING_DAYS,
+    lifetime: Boolean(best && best.lifetime),
+    remaining_days: best ? best.remaining_days : 0,
+    current_period_end: best && best.current_period_end || "",
+    source: best && best.source || "none",
+  };
+}
+
+async function handleCourseAccess(request, env) {
+  let user;
+  try {
+    user = await currentUserFromRequest(env, request);
+  } catch (error) {
+    return jsonResponse(request, env, 401, {
+      detail: error.message || "Please log in.",
+      can_access: false,
+      required_remaining_days: COURSE_MIN_REMAINING_DAYS,
+    });
+  }
+  try {
+    const access = await courseAccessForUser(env, user);
+    return jsonResponse(request, env, 200, {
+      ...access,
+      courses: access.can_access ? COURSE_CATALOG : [],
+      contact: access.can_access ? { wechat: CONTACT_WECHAT, email: CONTACT_EMAIL } : undefined,
+    });
+  } catch (_error) {
+    return jsonResponse(request, env, 503, { detail: "课程会员资格暂时无法核验。" });
   }
 }
 
@@ -5111,6 +5554,46 @@ function cleanAnalyticsNumber(value) {
   return Number.isFinite(number) ? number : 0;
 }
 
+function cleanAnalyticsBoolean(value) {
+  return value === true || value === 1 || /^(true|1|yes)$/i.test(String(value || ""));
+}
+
+function analyticsReferrerHost(value) {
+  const text = cleanAnalyticsText(value, 320);
+  if (!text) return "direct";
+  try {
+    return cleanAnalyticsText(new URL(text).hostname.toLowerCase(), 160) || "direct";
+  } catch (_error) {
+    return "invalid";
+  }
+}
+
+function analyticsDeviceType(userAgent, clientHint = "") {
+  const hinted = cleanAnalyticsText(clientHint, 24).toLowerCase();
+  if (["desktop", "mobile", "tablet", "bot", "other"].includes(hinted)) return hinted;
+  const ua = String(userAgent || "").toLowerCase();
+  if (!ua) return "unknown";
+  if (/bot|spider|crawl|slurp|headless|lighthouse|facebookexternalhit|bingpreview/.test(ua)) return "bot";
+  if (/ipad|tablet|kindle|silk|playbook/.test(ua)) return "tablet";
+  if (/mobile|iphone|ipod|android.*mobile|windows phone/.test(ua)) return "mobile";
+  return "desktop";
+}
+
+function analyticsBotFields(request, data) {
+  const cf = request.cf || {};
+  const bot = cf.botManagement && typeof cf.botManagement === "object" ? cf.botManagement : {};
+  const verified = Boolean(bot.verifiedBot || bot.verified_bot);
+  const rawScore = Number(bot.score);
+  const score = Number.isFinite(rawScore) && rawScore >= 1 && rawScore <= 99 ? rawScore : 0;
+  const clientHint = cleanAnalyticsText(data.bot_hint, 40).toLowerCase();
+  const ua = String(request.headers.get("User-Agent") || "");
+  let hint = verified ? "verified_bot" : "";
+  if (!hint && score) hint = score <= 29 ? "likely_bot" : (score >= 80 ? "likely_human" : "uncertain");
+  if (!hint && /bot|spider|crawl|slurp|headless|lighthouse|facebookexternalhit|bingpreview/i.test(ua)) hint = "user_agent_bot";
+  if (!hint && ["likely_bot", "likely_human", "unknown"].includes(clientHint)) hint = clientHint;
+  return { bot_hint: hint || "unknown", bot_score: score, verified_bot: verified };
+}
+
 function analyticsBjtDateKey(ms = Date.now()) {
   return new Date(ms + 8 * 60 * 60 * 1000).toISOString().slice(0, 10);
 }
@@ -5135,13 +5618,66 @@ function analyticsClientIp(request) {
 async function analyticsIpHash(request, env) {
   const ip = analyticsClientIp(request);
   if (!ip) return "";
-  let secret = "portal";
+  let secret = "";
   try {
     secret = accountSecret(env);
   } catch (_error) {
-    // Hashing without the account secret is still enough to avoid storing the raw IP.
+    return "";
   }
   return (await sha256Hex(`${secret}:analytics-ip:${ip}`)).slice(0, 24);
+}
+
+function sanitizeAnalyticsPath(value) {
+  const raw = cleanAnalyticsText(value, 2000);
+  if (!raw) return "";
+  try {
+    const parsed = new URL(raw, "https://portal.example.invalid");
+    if (!["http:", "https:"].includes(parsed.protocol)) return "";
+    return cleanAnalyticsText(parsed.pathname || "/", 240);
+  } catch (_error) {
+    const path = raw.split(/[?#]/, 1)[0];
+    return cleanAnalyticsText(path.startsWith("/") ? path : `/${path}`, 240);
+  }
+}
+
+function sanitizeAnalyticsReferrer(value) {
+  const raw = cleanAnalyticsText(value, 2000);
+  if (!raw) return "";
+  try {
+    const parsed = new URL(raw);
+    if (!["http:", "https:"].includes(parsed.protocol)) return "";
+    return cleanAnalyticsText(`${parsed.origin}${parsed.pathname || "/"}`, 320);
+  } catch (_error) {
+    return "";
+  }
+}
+
+function analyticsRequestOriginAllowed(request, env) {
+  const configured = String(env.ALLOWED_ORIGIN || "")
+    .split(",")
+    .map((value) => {
+      try {
+        return new URL(value.trim()).origin;
+      } catch (_error) {
+        return "";
+      }
+    })
+    .filter(Boolean);
+  if (!configured.length) return true;
+  let candidate = String(request.headers.get("Origin") || "").trim();
+  if (!candidate) {
+    try {
+      candidate = new URL(String(request.headers.get("Referer") || "")).origin;
+    } catch (_error) {
+      candidate = "";
+    }
+  }
+  try {
+    candidate = candidate ? new URL(candidate).origin : "";
+  } catch (_error) {
+    candidate = "";
+  }
+  return Boolean(candidate && configured.includes(candidate));
 }
 
 async function optionalAnalyticsUser(request, env) {
@@ -5162,15 +5698,23 @@ function analyticsEventFromPayload(request, payload, user, ipHash) {
   const now = new Date();
   const cf = request.cf || {};
   const data = payload && typeof payload.data === "object" && payload.data ? payload.data : {};
-  const pathFromPayload = cleanAnalyticsText(payload.path || data.path, 240);
-  const path = pathFromPayload || cleanAnalyticsText(new URL(request.url).pathname, 240);
+  const pathFromPayload = sanitizeAnalyticsPath(payload.path || data.path);
+  const path = pathFromPayload || sanitizeAnalyticsPath(new URL(request.url).pathname);
   const type = cleanAnalyticsText(payload.type || data.type || "event", 60).toLowerCase() || "event";
+  const referrer = sanitizeAnalyticsReferrer(data.referrer || request.headers.get("Referer"));
+  const userAgent = cleanAnalyticsText(request.headers.get("User-Agent"), 240);
+  const botFields = analyticsBotFields(request, data);
   return {
     id: crypto.randomUUID ? crypto.randomUUID() : randomHex(16),
     ts: now.toISOString(),
     date: analyticsBjtDateKey(now.getTime()),
     type,
     visitor_id: cleanAnalyticsText(payload.visitor_id || data.visitor_id, 96),
+    session_id: cleanAnalyticsText(payload.session_id || data.session_id, 96),
+    client_ts: cleanAnalyticsText(payload.client_ts || data.client_ts, 40),
+    first_seen_at: cleanAnalyticsText(data.first_seen_at || payload.first_seen_at, 40),
+    is_returning: cleanAnalyticsBoolean(data.is_returning ?? payload.is_returning),
+    landing_path: sanitizeAnalyticsPath(data.landing_path || payload.landing_path),
     path,
     page: cleanAnalyticsText(data.page || payload.page, 80),
     source: cleanAnalyticsText(data.source || payload.source, 80),
@@ -5194,12 +5738,23 @@ function analyticsEventFromPayload(request, payload, user, ipHash) {
     status: cleanAnalyticsText(data.status, 80),
     duration_ms: cleanAnalyticsNumber(data.duration_ms),
     error: cleanAnalyticsText(data.error, 180),
-    referrer: cleanAnalyticsText(data.referrer || request.headers.get("Referer"), 320),
+    referrer,
+    referrer_host: analyticsReferrerHost(data.referrer_host || referrer),
+    utm_source: cleanAnalyticsText(data.utm_source, 120),
+    utm_medium: cleanAnalyticsText(data.utm_medium, 120),
+    utm_campaign: cleanAnalyticsText(data.utm_campaign, 180),
+    utm_term: cleanAnalyticsText(data.utm_term, 180),
+    utm_content: cleanAnalyticsText(data.utm_content, 180),
+    language: cleanAnalyticsText(data.language, 40),
+    screen: cleanAnalyticsText(data.screen, 40),
+    navigation_type: cleanAnalyticsText(data.navigation_type, 40),
+    device_type: analyticsDeviceType(userAgent, data.device_type),
+    ...botFields,
     user,
     ip_hash: ipHash,
     country: cleanAnalyticsText(cf.country || request.headers.get("CF-IPCountry"), 16),
     colo: cleanAnalyticsText(cf.colo, 16),
-    user_agent: cleanAnalyticsText(request.headers.get("User-Agent"), 240),
+    user_agent: userAgent,
   };
 }
 
@@ -5238,11 +5793,34 @@ async function persistAnalyticsEvent(request, env, payload, userOverride = undef
 }
 
 async function handleAnalyticsEvent(request, env, ctx = null) {
-  let payload = {};
+  if (!analyticsRequestOriginAllowed(request, env)) {
+    return jsonResponse(request, env, 403, { detail: "Origin is not allowed." });
+  }
+  const declaredLength = Number(request.headers.get("Content-Length") || 0);
+  if (Number.isFinite(declaredLength) && declaredLength > ANALYTICS_EVENT_MAX_BODY_BYTES) {
+    return jsonResponse(request, env, 413, { detail: "Analytics body is too large." });
+  }
+  let rawBody = "";
   try {
-    payload = await request.json();
+    rawBody = await request.text();
   } catch (_error) {
     return jsonResponse(request, env, 400, { detail: "Invalid JSON body." });
+  }
+  if (new TextEncoder().encode(rawBody).byteLength > ANALYTICS_EVENT_MAX_BODY_BYTES) {
+    return jsonResponse(request, env, 413, { detail: "Analytics body is too large." });
+  }
+  let payload = {};
+  try {
+    payload = JSON.parse(rawBody);
+  } catch (_error) {
+    return jsonResponse(request, env, 400, { detail: "Invalid JSON body." });
+  }
+  if (!payload || typeof payload !== "object" || Array.isArray(payload)) {
+    return jsonResponse(request, env, 400, { detail: "Invalid analytics event." });
+  }
+  const eventType = cleanAnalyticsText(payload.type || (payload.data && payload.data.type), 60).toLowerCase();
+  if (!PUBLIC_ANALYTICS_EVENT_TYPES.has(eventType)) {
+    return jsonResponse(request, env, 400, { detail: "Unsupported analytics event." });
   }
   const write = persistAnalyticsEvent(request, env, payload).catch(() => null);
   if (ctx && typeof ctx.waitUntil === "function") {
@@ -5617,6 +6195,11 @@ function publicAnalyticsEvent(event) {
     date: event.date || "",
     type: event.type || "",
     visitor_id: event.visitor_id || "",
+    session_id: event.session_id || "",
+    client_ts: event.client_ts || "",
+    first_seen_at: event.first_seen_at || "",
+    is_returning: Boolean(event.is_returning),
+    landing_path: event.landing_path || "",
     ip_hash: event.ip_hash || "",
     user: event.user ? {
       username: event.user.username || "",
@@ -5649,8 +6232,228 @@ function publicAnalyticsEvent(event) {
     duration_ms: event.duration_ms || 0,
     error: event.error || "",
     referrer: event.referrer || "",
+    referrer_host: event.referrer_host || "",
+    utm_source: event.utm_source || "",
+    utm_medium: event.utm_medium || "",
+    utm_campaign: event.utm_campaign || "",
+    utm_term: event.utm_term || "",
+    utm_content: event.utm_content || "",
+    language: event.language || "",
+    screen: event.screen || "",
+    navigation_type: event.navigation_type || "",
+    device_type: event.device_type || "",
+    bot_hint: event.bot_hint || "unknown",
+    bot_score: Number.isFinite(Number(event.bot_score)) ? Number(event.bot_score) : 0,
+    verified_bot: Boolean(event.verified_bot),
     user_agent: event.user_agent || "",
   };
+}
+
+function analyticsDaySummaryJobKey(owner, date, jobId) {
+  return `${ANALYTICS_DAY_SUMMARY_JOB_PREFIX}/${encodeURIComponent(normalizeEmail(owner))}/${date}/${jobId}.json`;
+}
+
+function analyticsDaySummarySnapshotKey(date) {
+  return `${ANALYTICS_DAY_SUMMARY_PREFIX}/${date}.json`;
+}
+
+function analyticsSummaryPath(value) {
+  const text = cleanAnalyticsText(value, 240);
+  if (!text) return "/";
+  try {
+    return new URL(text, "https://portal.example.invalid").pathname || "/";
+  } catch (_error) {
+    return text.split("?", 1)[0] || "/";
+  }
+}
+
+function analyticsSummaryIncrement(map, key, limit = 5000) {
+  const cleanKey = cleanAnalyticsText(key, 240) || "unknown";
+  if (!Object.prototype.hasOwnProperty.call(map, cleanKey) && Object.keys(map).length >= limit) {
+    map.other = Math.max(0, Number(map.other) || 0) + 1;
+    return;
+  }
+  map[cleanKey] = Math.max(0, Number(map[cleanKey]) || 0) + 1;
+}
+
+function emptyAnalyticsDayAccumulator(date, owner, root, jobId) {
+  const now = new Date().toISOString();
+  return {
+    version: 1,
+    job_id: jobId,
+    owner: normalizeEmail(owner),
+    date,
+    root,
+    native_cursor: "",
+    created_at: now,
+    updated_at: now,
+    processed_count: 0,
+    skipped_count: 0,
+    event_count: 0,
+    page_view_count: 0,
+    returning_event_count: 0,
+    visitor_keys: {},
+    session_keys: {},
+    event_types: {},
+    paths: {},
+    referrers: {},
+    countries: {},
+    devices: {},
+    bot_hints: {},
+    utm_sources: {},
+    utm_campaigns: {},
+  };
+}
+
+function validateAnalyticsDayAccumulator(value, owner, date, jobId) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) throw new Error("Analytics summary job is invalid.");
+  if (
+    value.version !== 1
+    || value.job_id !== jobId
+    || normalizeEmail(value.owner) !== normalizeEmail(owner)
+    || value.date !== date
+    || ![ANALYTICS_PREFIX, ANALYTICS_BACKUP_PREFIX].includes(value.root)
+    || !value.created_at
+    || Date.now() - Date.parse(value.created_at) > ANALYTICS_DAY_SUMMARY_JOB_TTL_MS
+  ) throw new Error("Analytics summary job has expired.");
+  for (const field of ["visitor_keys", "session_keys", "event_types", "paths", "referrers", "countries", "devices", "bot_hints", "utm_sources", "utm_campaigns"]) {
+    if (!value[field] || typeof value[field] !== "object" || Array.isArray(value[field])) value[field] = {};
+  }
+  return value;
+}
+
+function addAnalyticsDaySummaryEvent(accumulator, event) {
+  if (!event || typeof event !== "object") return;
+  accumulator.event_count += 1;
+  if (String(event.type || "") === "page_view") accumulator.page_view_count += 1;
+  if (cleanAnalyticsBoolean(event.is_returning)) accumulator.returning_event_count += 1;
+  const visitor = analyticsEventVisitorKey(event);
+  if (visitor) accumulator.visitor_keys[visitor] = true;
+  const session = cleanAnalyticsText(event.session_id, 96);
+  if (session) accumulator.session_keys[session] = true;
+  analyticsSummaryIncrement(accumulator.event_types, event.type || "event", 200);
+  analyticsSummaryIncrement(accumulator.paths, analyticsSummaryPath(event.path), 5000);
+  analyticsSummaryIncrement(accumulator.referrers, event.referrer_host || analyticsReferrerHost(event.referrer), 2000);
+  analyticsSummaryIncrement(accumulator.countries, event.country || "unknown", 300);
+  analyticsSummaryIncrement(accumulator.devices, event.device_type || analyticsDeviceType(event.user_agent), 20);
+  const botFields = event.bot_hint
+    ? { bot_hint: event.bot_hint }
+    : analyticsBotFields({ cf: {}, headers: new Headers({ "User-Agent": event.user_agent || "" }) }, {});
+  analyticsSummaryIncrement(accumulator.bot_hints, botFields.bot_hint || "unknown", 20);
+  if (event.utm_source) analyticsSummaryIncrement(accumulator.utm_sources, event.utm_source, 1000);
+  if (event.utm_campaign) analyticsSummaryIncrement(accumulator.utm_campaigns, event.utm_campaign, 1000);
+}
+
+function analyticsSummaryTop(map, limit = ANALYTICS_DAY_SUMMARY_TOP_LIMIT) {
+  return Object.entries(map && typeof map === "object" ? map : {})
+    .map(([label, count]) => ({ label, count: Math.max(0, Math.floor(Number(count) || 0)) }))
+    .sort((left, right) => right.count - left.count || left.label.localeCompare(right.label))
+    .slice(0, limit);
+}
+
+function publicAnalyticsDaySummary(accumulator, complete = false) {
+  return {
+    date: accumulator.date,
+    complete: Boolean(complete),
+    event_count: Math.max(0, Number(accumulator.event_count) || 0),
+    page_view_count: Math.max(0, Number(accumulator.page_view_count) || 0),
+    unique_visitor_count: Object.keys(accumulator.visitor_keys || {}).length,
+    unique_session_count: Object.keys(accumulator.session_keys || {}).length,
+    returning_event_count: Math.max(0, Number(accumulator.returning_event_count) || 0),
+    processed_count: Math.max(0, Number(accumulator.processed_count) || 0),
+    skipped_count: Math.max(0, Number(accumulator.skipped_count) || 0),
+    top_paths: analyticsSummaryTop(accumulator.paths),
+    top_referrer_hosts: analyticsSummaryTop(accumulator.referrers),
+    countries: analyticsSummaryTop(accumulator.countries),
+    devices: analyticsSummaryTop(accumulator.devices),
+    bot_hints: analyticsSummaryTop(accumulator.bot_hints),
+    event_types: analyticsSummaryTop(accumulator.event_types),
+    utm_sources: analyticsSummaryTop(accumulator.utm_sources),
+    utm_campaigns: analyticsSummaryTop(accumulator.utm_campaigns),
+    generated_at: new Date().toISOString(),
+  };
+}
+
+async function advanceAnalyticsDaySummary(env, accumulator) {
+  const prefix = `${accumulator.root}/${accumulator.date}/`;
+  const listed = await env.REPORT_BUCKET.list({
+    prefix,
+    limit: ANALYTICS_DAY_SUMMARY_BATCH_SIZE,
+    cursor: accumulator.native_cursor || undefined,
+  });
+  if (!listed || !Array.isArray(listed.objects)) throw new Error("Analytics storage returned an invalid listing.");
+  const read = await readAnalyticsExportObjects(env, listed.objects, accumulator.root, accumulator.date);
+  for (const event of read.events) addAnalyticsDaySummaryEvent(accumulator, event);
+  accumulator.processed_count += listed.objects.length;
+  accumulator.skipped_count += read.skippedCount;
+  accumulator.updated_at = new Date().toISOString();
+  accumulator.native_cursor = listed.truncated ? String(listed.cursor || "") : "";
+  if (listed.truncated && !accumulator.native_cursor) throw new Error("Analytics summary pagination did not return a cursor.");
+  return { accumulator, complete: !listed.truncated };
+}
+
+async function handleAccountAdminAnalyticsDaySummary(request, env) {
+  let admin;
+  try {
+    admin = await requireSuperUser(request, env);
+  } catch (error) {
+    return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
+  }
+  if (!env.REPORT_BUCKET || typeof env.REPORT_BUCKET.list !== "function" || typeof env.REPORT_BUCKET.get !== "function") {
+    return jsonResponse(request, env, 503, { detail: "Analytics storage is unavailable." });
+  }
+  const url = new URL(request.url);
+  const date = cleanAnalyticsHistoryDate(url.searchParams.get("date"));
+  const owner = normalizeEmail(admin && admin.email) || normalizeEmail(admin && admin.username) || "admin";
+  const requestedJobId = cleanAnalyticsText(url.searchParams.get("job_id"), 64).toLowerCase();
+  const forceRefresh = url.searchParams.get("refresh") === "1";
+  if (!date || (requestedJobId && !/^[a-f0-9]{24}$/.test(requestedJobId))) {
+    return jsonResponse(request, env, 400, { detail: "请选择有效日期。" });
+  }
+  try {
+    if (!requestedJobId && !forceRefresh) {
+      const cached = await safeR2GetJson(env, analyticsDaySummarySnapshotKey(date));
+      if (cached && cached.date === date && cached.complete === true) {
+        return jsonResponse(request, env, 200, { ...cached, cached: true, job_id: "", has_more: false });
+      }
+    }
+
+    let jobId = requestedJobId;
+    let accumulator;
+    if (jobId) {
+      accumulator = validateAnalyticsDayAccumulator(
+        await r2GetJsonStrict(env, analyticsDaySummaryJobKey(owner, date, jobId)),
+        owner,
+        date,
+        jobId,
+      );
+    } else {
+      const dates = await listAnalyticsEventDateRows(env);
+      const row = dates.find((entry) => entry.date === date);
+      if (!row) return jsonResponse(request, env, 404, { detail: "该日期没有已归档的埋点事件。" });
+      const roots = new Set(row.prefix_roots || []);
+      const root = roots.has(ANALYTICS_PREFIX) ? ANALYTICS_PREFIX : ANALYTICS_BACKUP_PREFIX;
+      jobId = randomHex(12);
+      accumulator = emptyAnalyticsDayAccumulator(date, owner, root, jobId);
+    }
+
+    const advanced = await advanceAnalyticsDaySummary(env, accumulator);
+    const summary = publicAnalyticsDaySummary(advanced.accumulator, advanced.complete);
+    if (advanced.complete) {
+      await r2PutJson(env, analyticsDaySummarySnapshotKey(date), summary);
+    } else {
+      await r2PutJson(env, analyticsDaySummaryJobKey(owner, date, jobId), advanced.accumulator);
+    }
+    return jsonResponse(request, env, 200, {
+      ...summary,
+      cached: false,
+      job_id: advanced.complete ? "" : jobId,
+      has_more: !advanced.complete,
+    });
+  } catch (error) {
+    const status = /expired|invalid/i.test(String(error && error.message || "")) ? 409 : 503;
+    return jsonResponse(request, env, status, { detail: error.message || "按日汇总暂时不可用。" });
+  }
 }
 
 function cleanAnalyticsHistoryDate(value) {
@@ -5718,6 +6521,7 @@ function analyticsHistoryEventMatches(event, filters) {
   const haystack = normalizeText([
     event.type,
     event.visitor_id,
+    event.session_id,
     event.ip_hash,
     user.username,
     user.email,
@@ -5737,6 +6541,14 @@ function analyticsHistoryEventMatches(event, filters) {
     event.status,
     event.error,
     event.referrer,
+    event.referrer_host,
+    event.utm_source,
+    event.utm_medium,
+    event.utm_campaign,
+    event.utm_term,
+    event.utm_content,
+    event.device_type,
+    event.bot_hint,
     event.user_agent,
   ].filter(Boolean).join(" "));
   return normalizeText(filters.query).split(" ").filter(Boolean).every((token) => haystack.includes(token));
@@ -14202,6 +15014,43 @@ async function authoritySearchOne(kind, query, page) {
   };
 }
 
+function slimAuthorityDomesticLead(item) {
+  const id = String(item && item.id || "").trim();
+  const title = String(item && item.title || "").replace(/\s+/g, " ").trim();
+  if (!/^supplemental:[a-f0-9]{32}$/.test(id) || !title) return { id: "" };
+  return {
+    id,
+    source: AUTHORITY_SOURCE,
+    kind: AUTHORITY_DOMESTIC_LEAD_KIND,
+    kind_label: AUTHORITY_DOMESTIC_LEAD_LABEL,
+    title,
+    institution: String(item && item.institution || "").trim(),
+    date: String(item && item.date || "").trim(),
+    report_type: AUTHORITY_DOMESTIC_LEAD_LABEL,
+    page_count: Number(item && item.page_count || 0) || 0,
+    language: "",
+    stock_code: "",
+    stock_name: "",
+    author: "",
+    tags: Array.isArray(item && item.tags) ? item.tags.slice(0, 12) : [],
+    summary: String(item && item.summary || "").trim(),
+    file_type: "lead",
+    contact_only: true,
+  };
+}
+
+async function authorityDomesticLeadSearch(env, query, page) {
+  const payload = await searchSourceLeadMetadata({ env, query, page });
+  return {
+    kind: AUTHORITY_DOMESTIC_LEAD_KIND,
+    page: Number(payload.page || page),
+    total: Number(payload.total || 0),
+    items: (Array.isArray(payload.items) ? payload.items : [])
+      .map((item) => slimAuthorityDomesticLead(item))
+      .filter((item) => item.id && item.title),
+  };
+}
+
 async function handleAuthoritySearch(request, env) {
   const url = new URL(request.url);
   const query = String(url.searchParams.get("q") || "").trim();
@@ -14217,8 +15066,19 @@ async function handleAuthoritySearch(request, env) {
     total: 0,
     sources: [],
   }, async () => {
-    const kinds = AUTHORITY_KINDS[requestedKind] ? [requestedKind] : Object.keys(AUTHORITY_KINDS);
-    const results = await Promise.allSettled(kinds.map((kind) => authoritySearchOne(kind, query, page)));
+    const kinds = AUTHORITY_KINDS[requestedKind]
+      ? [requestedKind]
+      : requestedKind === AUTHORITY_DOMESTIC_LEAD_KIND
+        ? []
+        : Object.keys(AUTHORITY_KINDS);
+    const searches = kinds.map((kind) => authoritySearchOne(kind, query, page));
+    if (
+      (requestedKind === "both" || requestedKind === AUTHORITY_DOMESTIC_LEAD_KIND)
+      && sourceLeadAdapterEnabled(env)
+    ) {
+      searches.push(authorityDomesticLeadSearch(env, query, page));
+    }
+    const results = await Promise.allSettled(searches);
     const fulfilled = results
       .filter((result) => result.status === "fulfilled")
       .map((result) => result.value);
@@ -14246,7 +15106,23 @@ async function handleAuthoritySearch(request, env) {
       mirror_generated_at: result.generated_at,
       mirror_stale: result.mirror_stale,
     };
-  }), { skipFreshCache: true });
+  }));
+}
+
+async function handleAuthorityItem(request, env) {
+  const id = String(new URL(request.url).searchParams.get("id") || "").trim();
+  if (!/^supplemental:[a-f0-9]{32}$/.test(id)) {
+    return jsonResponse(request, env, 400, { error: "Invalid report id." });
+  }
+  const stored = await readStoredSourceLead(env, id);
+  if (!stored) {
+    return jsonResponse(request, env, 404, { error: "Report not found." });
+  }
+  const item = slimAuthorityDomesticLead(publicSourceLeadItem(stored));
+  if (!item.id) {
+    return jsonResponse(request, env, 404, { error: "Report not found." });
+  }
+  return jsonResponse(request, env, 200, { item });
 }
 
 async function handleAuthorityPdf(request, env) {
@@ -14326,6 +15202,18 @@ export default {
 
     if (pathname === "/entitlement" && request.method === "GET") {
       return handleEntitlement(request, env);
+    }
+
+    if (pathname === "/rewards" && (request.method === "GET" || request.method === "POST")) {
+      return handleRewards(request, env);
+    }
+
+    if (pathname === "/rewards/claim" && request.method === "POST") {
+      return handleRewardClaim(request, env);
+    }
+
+    if (pathname === "/course/access" && request.method === "GET") {
+      return handleCourseAccess(request, env);
     }
 
     if (pathname === "/report-text" && request.method === "GET") {
@@ -14428,6 +15316,10 @@ export default {
 
     if (pathname === "/account-admin/analytics-events-export" && request.method === "GET") {
       return handleAccountAdminAnalyticsEventsExport(request, env);
+    }
+
+    if (pathname === "/account-admin/analytics-day-summary" && request.method === "GET") {
+      return handleAccountAdminAnalyticsDaySummary(request, env);
     }
 
     if (pathname === "/account-admin/user-access" && request.method === "GET") {
@@ -14544,6 +15436,10 @@ export default {
 
     if (pathname === "/authority/search" && request.method === "GET") {
       return handleAuthoritySearch(request, env);
+    }
+
+    if (pathname === "/authority/item" && request.method === "GET") {
+      return handleAuthorityItem(request, env);
     }
 
     if (pathname === "/authority/pdf" && (request.method === "GET" || request.method === "POST")) {

@@ -3,31 +3,35 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Portal Suite | 中文金融研报检索与报告索引</title>
-    <meta name="description" content="Portal Suite 提供中文金融研报检索与报告索引，覆盖宏观策略、行业分析、公司研究、财报、招股书、国际智库和市场观点。">
-    <meta name="keywords" content="金融研报,宏观策略,行业研究,公司研究,投行报告,国际智库,市场观点,中文研报检索">
+    <title>KC桌面 | 中文金融研报检索与报告索引</title>
+    <meta name="description" content="KC桌面提供中文金融研报检索与报告索引，覆盖宏观策略、行业分析、公司研究、财报、招股书、国际智库和市场观点。">
+    <meta name="keywords" content="KC桌面,金融研报,宏观策略,行业研究,公司研究,投行报告,国际智库,市场观点,中文研报检索">
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
     <meta name="msvalidate.01" content="__SEARCH_VERIFY_MS__">
     <meta name="sogou_site_verification" content="__SEARCH_VERIFY_SOGOU__">
     <link rel="canonical" href="https://portal.example.invalid/">
     <link rel="alternate" hreflang="zh-CN" href="https://portal.example.invalid/">
     <link rel="alternate" hreflang="x-default" href="https://portal.example.invalid/">
-    <link rel="alternate" type="application/rss+xml" title="Portal Suite 最近报告" href="https://portal.example.invalid/feed.xml">
+    <link rel="alternate" type="application/rss+xml" title="KC桌面最近报告" href="https://portal.example.invalid/feed.xml">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="zh_CN">
-    <meta property="og:site_name" content="Portal Suite">
-    <meta property="og:title" content="Portal Suite | 中文金融研报检索与报告索引">
-    <meta property="og:description" content="中文金融研报检索与报告索引，覆盖宏观策略、行业分析、公司研究、财报、招股书、国际智库和市场观点。">
+    <meta property="og:site_name" content="KC桌面">
+    <meta property="og:title" content="KC桌面 | 中文金融研报检索与报告索引">
+    <meta property="og:description" content="KC桌面中文金融研报检索与报告索引，覆盖宏观策略、行业分析、公司研究、财报、招股书、国际智库和市场观点。">
     <meta property="og:url" content="https://portal.example.invalid/">
     <link rel="stylesheet" href="assets/styles.css?v=portal-suite-20260726b">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "Portal Suite",
+        "name": "KC桌面",
         "url": "https://portal.example.invalid/",
         "inLanguage": "zh-CN",
-        "description": "中文金融研报检索与报告索引，覆盖宏观策略、行业分析、公司研究、财报、招股书、国际智库和市场观点。",
+        "description": "KC桌面中文金融研报检索与报告索引，覆盖宏观策略、行业分析、公司研究、财报、招股书、国际智库和市场观点。",
+        "publisher": {
+          "@type": "Organization",
+          "name": "KC桌面"
+        },
         "potentialAction": {
           "@type": "SearchAction",
           "target": "https://portal.example.invalid/?q={search_term_string}",
@@ -54,8 +58,8 @@
     <main class="shell">
       <section class="search-panel" aria-labelledby="searchTitle">
         <div class="search-copy">
-          <h1 id="searchTitle">Portal Suite</h1>
-          <p class="subtle">Research notes and reports, indexed for fast lookup.</p>
+          <h1 id="searchTitle">KC桌面</h1>
+          <p class="subtle">KC桌面提供研究笔记与金融研报的快速检索和索引。</p>
         </div>
         <label class="search-box search-main">
           <span>Search</span>
@@ -85,6 +89,7 @@
               <option value="title">Title only</option>
               <option value="catalog">Catalog fields</option>
               <option value="fulltext">Document text</option>
+              <option value="charts">图表文字</option>
             </select>
           </label>
           <label class="filter-control">
@@ -142,6 +147,16 @@
           <button id="nextPage" type="button">Next</button>
         </div>
         <div id="results" class="results-list"></div>
+      </section>
+
+      <section class="external-section chart-search-section" id="chartSearchSection" aria-labelledby="chartSearchTitle" hidden>
+        <div class="results-heading">
+          <h2 id="chartSearchTitle">图表搜索</h2>
+          <span id="chartSearchCount"></span>
+        </div>
+        <p class="subtle external-hint">按公司、指标、时间、地区、单位或趋势检索报告中的图表解读。</p>
+        <div id="chartSearchResults" class="chart-search-results"></div>
+        <div id="chartSearchStatus" class="status-line" aria-live="polite"></div>
       </section>
 
       <section class="external-section hot-reports-section" id="hotReportsSection" aria-labelledby="hotReportsTitle" hidden>
@@ -227,7 +242,9 @@
       <a href="mailto:support@portal.example.invalid" data-portal-non-chinese-only hidden>Email: support@portal.example.invalid</a>
     </footer>
 
+    <script src="assets/site-runtime.js"></script>
     <script src="assets/contact.js"></script>
+    <script src="assets/analytics.js"></script>
     <script src="assets/app.js?v=portal-suite-20260726b"></script>
   </body>
 </html>

@@ -7,6 +7,7 @@ from datetime import date
 import importlib.util
 import json
 from pathlib import Path
+import re
 import shutil
 import tempfile
 import unittest
@@ -92,6 +93,36 @@ class BlogSanitizerTests(unittest.TestCase):
 
 
 class BlogBuildTests(unittest.TestCase):
+    def test_blog_placeholder_is_materialized_only_in_built_article(self) -> None:
+        article = {
+            "slug": "20260810-0123456789abcdef",
+            "title": "站点地址测试",
+            "digest": "检查公开归档与部署产物的边界。",
+            "author": "Portal Suite",
+            "content": "<p>访问 portal.example.invalid 查看全文。</p>",
+            "date": "2026-08-10",
+            "last_date": "2026-08-10",
+            "origins": [{"source": "legacy", "source_label": "历史稿件", "date": "2026-08-10"}],
+        }
+
+        rendered = builder.render_blog_article(article, "https://published.example.test")
+
+        self.assertIn("published.example.test 查看全文", rendered)
+        self.assertNotIn("portal.example.invalid 查看全文", rendered)
+        self.assertIn("portal.example.invalid", article["content"])
+
+    def test_public_blog_title_suffix_is_exact_idempotent_and_identity_stable(self) -> None:
+        raw = "数据中心的供应瓶颈"
+        expected = f"{raw} | KC桌面"
+
+        self.assertEqual(expected, builder.blog_public_title(raw))
+        self.assertEqual(expected, builder.blog_public_title(expected))
+        self.assertEqual(expected, builder.blog_public_title(f"{expected} | KC桌面"))
+        self.assertEqual(
+            builder.blog_article_fingerprint(raw, "<p>正文</p>"),
+            builder.blog_article_fingerprint(expected, "<p>正文</p>"),
+        )
+
     def test_public_catalog_omits_internal_storage_and_ingestion_metadata(self) -> None:
         catalog = {
             "schema_version": 1,
@@ -259,10 +290,30 @@ class BlogBuildTests(unittest.TestCase):
             self.assertIn('id="blogMarketViews"', index_html)
             self.assertIn("每日 Market Views", index_html)
             self.assertIn('src="../assets/app.js"', index_html)
+            self.assertIn('src="../assets/site-runtime.js"', index_html)
+            self.assertIn("<title>KC桌面 Blog | 每日研报与研究文章</title>", index_html)
+            self.assertIn('<meta property="og:site_name" content="KC桌面">', index_html)
+            self.assertIn("重复文章 | KC桌面", index_html)
 
             pages = sorted((output / "blog").glob("*.html"))
             self.assertGreater(len(pages), len(articles), "legacy source-bearing URLs remain as redirects")
             duplicate_page = (output / "blog" / f'{duplicate["slug"]}.html').read_text(encoding="utf-8")
+            public_title = "重复文章 | KC桌面"
+            self.assertIn(f"<title>{public_title}</title>", duplicate_page)
+            self.assertIn(f'<meta property="og:title" content="{public_title}">', duplicate_page)
+            self.assertIn(f'<meta name="twitter:title" content="{public_title}">', duplicate_page)
+            self.assertIn(f"<h1>{public_title}</h1>", duplicate_page)
+            self.assertIn('src="../assets/site-runtime.js"', duplicate_page)
+            self.assertNotIn(f"{public_title} | KC桌面", duplicate_page)
+            json_ld_match = re.search(
+                r'<script type="application/ld\+json">(.*?)</script>',
+                duplicate_page,
+                flags=re.S,
+            )
+            self.assertIsNotNone(json_ld_match)
+            article_schema = json.loads(json_ld_match.group(1))
+            self.assertEqual(public_title, article_schema["headline"])
+            self.assertEqual(["KC桌面"], article_schema["keywords"])
             self.assertIn("跨目录重复正文", duplicate_page)
             self.assertIn("2026-07-27 · 外资研报", duplicate_page)
             self.assertIn("2026-07-28 · 研究机构", duplicate_page)

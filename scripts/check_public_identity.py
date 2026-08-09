@@ -24,7 +24,9 @@ def private_markers() -> tuple[str, ...]:
         "-".join(("kc", "desk")),
         "/".join((owner, repository)),
         account,
-        "".join(("kc", "桌面")),
+        # The Chinese public-facing editorial term is intentionally allowed.
+        # Keep the private deployment domain and historical English identity
+        # blocked; the public term itself must remain indexable for SEO.
         "".join(("kc", "娱乐")),
         "".join(("x-", "kc")),
         base64.b64encode(compact + b".com").decode("ascii").rstrip("="),

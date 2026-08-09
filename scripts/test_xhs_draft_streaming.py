@@ -37,7 +37,7 @@ class XhsDraftStreamingTests(unittest.TestCase):
                     "article": {
                         "article_type": "news",
                         "title": title,
-                        "content": "<p>测试正文</p>",
+                        "content": "<p>测试正文</p><p>portal.example.invalid</p>",
                         "thumb_media_id": f"thumb-{index}",
                     },
                 }
@@ -55,6 +55,8 @@ class XhsDraftStreamingTests(unittest.TestCase):
                 "8",
                 "--trailing-image",
                 "",
+                "--site-url",
+                "https://private.example.invalid",
                 "--dry-run",
             ]
             with mock.patch.object(sys, "argv", argv), mock.patch.object(
@@ -69,6 +71,9 @@ class XhsDraftStreamingTests(unittest.TestCase):
             self.assertTrue(payload_path.is_file())
             payload = json.loads(payload_path.read_text(encoding="utf-8"))
             self.assertEqual(8, len(payload["articles"]))
+            serialized = json.dumps(payload, ensure_ascii=False)
+            self.assertIn("portal.example.invalid", serialized)
+            self.assertNotIn("private.example.invalid", serialized)
 
 
 if __name__ == "__main__":

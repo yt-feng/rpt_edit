@@ -73,6 +73,13 @@ class SeoOutputTests(unittest.TestCase):
             self.assertEqual(len(feed.findall("./channel/item")), 3)
             self.assertTrue((output / "llms-full.txt").exists())
 
+    def test_homepage_establishes_the_public_editorial_keyword(self) -> None:
+        page = (ROOT / "portal_suite" / "site_src" / "index.html").read_text(encoding="utf-8")
+        self.assertIn("<title>KC桌面 | 中文金融研报检索与报告索引</title>", page)
+        self.assertIn('<meta name="keywords" content="KC桌面,', page)
+        self.assertIn('<meta property="og:site_name" content="KC桌面">', page)
+        self.assertIn('"name": "KC桌面"', page)
+
     def test_static_report_has_canonical_schema_and_related_links(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory)

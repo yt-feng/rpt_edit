@@ -120,6 +120,10 @@
       : `${escapeHtml(label)} <b>${value}</b>`;
   }
 
+  function allContactMethodsHtml() {
+    return `微信 <b>${escapeHtml(CONTACT_WECHAT)}</b> · 邮箱 <a href="mailto:${escapeHtml(CONTACT_EMAIL)}"><b>${escapeHtml(CONTACT_EMAIL)}</b></a>`;
+  }
+
   function accessContactGuidanceText() {
     const contact = contactDetails();
     return contact.isChinese
@@ -354,18 +358,32 @@
   }
 
   function currentAnalyticsPath() {
-    return `${window.location.pathname}${window.location.search}`.slice(0, 240);
+    return String(window.location.pathname || "/").slice(0, 240);
+  }
+
+  function currentAnalyticsReferrer() {
+    try {
+      const url = new URL(String(document.referrer || ""), window.location.origin);
+      if (!/^https?:$/.test(url.protocol)) return "";
+      return `${url.origin}${url.pathname}`.slice(0, 320);
+    } catch (_error) {
+      return "";
+    }
   }
 
   function trackEvent(workerUrl, type, data = {}) {
     if (!workerUrl) return;
+    if (window.PortalSuiteAnalytics && typeof window.PortalSuiteAnalytics.track === "function") {
+      window.PortalSuiteAnalytics.track(type, { page, ...data });
+      return;
+    }
     const payload = {
       type,
       visitor_id: visitorId(),
       path: currentAnalyticsPath(),
       data: {
         page,
-        referrer: document.referrer || "",
+        referrer: currentAnalyticsReferrer(),
         ...data,
       },
     };
@@ -549,6 +567,17 @@
     const reportTitle = context.item ? titleText(context.item) : "";
     const reportLine = reportTitle ? `<span>当前报告：${escapeHtml(reportTitle)}</span>` : "";
     const reportHelp = `<span>${accessContactGuidanceHtml()}</span>`;
+    const rewardReportActions = context.item && String(context.source || "catalog") === "catalog"
+      ? `
+        <div class="account-reward-claim" id="accountRewardClaim">
+          <span>领取当前报告</span>
+          <div class="account-modal-actions">
+            <button class="secondary-button" id="accountRewardDailyClaim" type="button">使用今日免费领取</button>
+            <button class="secondary-button" id="accountRewardPointsClaim" type="button">使用 70 积分</button>
+          </div>
+        </div>
+      `
+      : "";
     return `
       <div class="admin-modal account-modal" id="accountModal" role="dialog" aria-modal="true" aria-labelledby="accountModalTitle">
         <div class="admin-dialog account-dialog">
@@ -590,6 +619,22 @@
               </div>
               <button class="secondary-button" id="accountPasswordSubmit" type="submit">修改密码</button>
             </form>
+            <section class="account-rewards" id="accountRewards" hidden>
+              <div class="account-rewards-heading">
+                <div>
+                  <span>每日签到</span>
+                  <strong><b id="accountRewardStreak">0</b> 天连续</strong>
+                </div>
+                <div>
+                  <span>可用积分</span>
+                  <strong><b id="accountRewardPoints">0</b> 分</strong>
+                </div>
+              </div>
+              <p id="accountRewardHint">每日签到可领取一份报告；70 积分还可额外领取一份。</p>
+              <button class="primary" id="accountRewardCheckin" type="button">今日签到 +10</button>
+              ${rewardReportActions}
+              <div id="accountRewardStatus" class="status-line" aria-live="polite"></div>
+            </section>
           </div>
           <div class="contact-card" id="accountContactCard">
             <strong>报告获取</strong>
@@ -653,12 +698,115 @@
     const passwordSubmit = document.getElementById("accountPasswordSubmit");
     const contactCard = document.getElementById("accountContactCard");
     const status = document.getElementById("accountModalStatus");
+    const rewards = document.getElementById("accountRewards");
+    const rewardPoints = document.getElementById("accountRewardPoints");
+    const rewardStreak = document.getElementById("accountRewardStreak");
+    const rewardHint = document.getElementById("accountRewardHint");
+    const rewardCheckin = document.getElementById("accountRewardCheckin");
+    const rewardDailyClaim = document.getElementById("accountRewardDailyClaim");
+    const rewardPointsClaim = document.getElementById("accountRewardPointsClaim");
+    const rewardStatus = document.getElementById("accountRewardStatus");
     let mode = "login";
     let captchaToken = "";
+    let currentRewardState = null;
 
     function setStatus(text, kind) {
       status.className = kind ? `status-line ${kind}` : "status-line";
       status.textContent = localizedContactText(text);
+    }
+
+    function setRewardStatus(text, kind) {
+      if (!rewardStatus) return;
+      rewardStatus.className = kind ? `status-line ${kind}` : "status-line";
+      rewardStatus.textContent = text || "";
+    }
+
+    function renderRewards(data) {
+      currentRewardState = data || {};
+      if (rewardPoints) rewardPoints.textContent = String(Math.max(0, Number(data && data.points || 0)));
+      if (rewardStreak) rewardStreak.textContent = String(Math.max(0, Number(data && data.current_streak || 0)));
+      if (rewardCheckin) {
+        rewardCheckin.disabled = Boolean(data && data.checked_in_today);
+        rewardCheckin.textContent = data && data.checked_in_today ? "今日已签到" : "今日签到 +10";
+      }
+      if (rewardDailyClaim) {
+        rewardDailyClaim.disabled = !data || !data.daily_available;
+        rewardDailyClaim.textContent = data && data.daily_claimed ? "今日免费报告已领取" : "使用今日免费领取";
+      }
+      if (rewardPointsClaim) {
+        const cost = Math.max(1, Number(data && data.points_report_cost || 70));
+        rewardPointsClaim.disabled = !data || data.points_claimed_today || Number(data.points || 0) < cost;
+        rewardPointsClaim.textContent = data && data.points_claimed_today ? "今日积分报告已领取" : `使用 ${cost} 积分`;
+      }
+      if (rewardHint) {
+        const next = data && data.next_bonus || {};
+        rewardHint.textContent = data && data.checked_in_today
+          ? `今日签到完成；再连续 ${Number(next.days || 1)} 天可得额外 ${Number(next.points || 0)} 分。`
+          : "每日签到可领取一份报告；70 积分还可额外领取一份。";
+      }
+    }
+
+    async function refreshRewards() {
+      if (!rewards || !loadAuthSession()) return null;
+      setRewardStatus("正在读取签到状态…");
+      try {
+        const response = await fetch(`${workerUrl}/rewards`, { cache: "no-store", headers: authHeaders() });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(data.detail || "签到状态读取失败。");
+        renderRewards(data);
+        setRewardStatus(data.daily_available ? "今日可免费领取一份报告。" : "");
+        return data;
+      } catch (error) {
+        setRewardStatus(error.message || "签到状态读取失败。", "error");
+        return null;
+      }
+    }
+
+    async function claimReward(kind) {
+      const item = context && context.item;
+      if (!item || !item.id) return;
+      const button = kind === "daily" ? rewardDailyClaim : rewardPointsClaim;
+      if (button) button.disabled = true;
+      setRewardStatus("正在领取报告…");
+      try {
+        const response = await fetch(`${workerUrl}/rewards/claim`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", ...authHeaders() },
+          body: JSON.stringify({ reward_kind: kind, report_id: item.id }),
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(data.detail || "报告领取失败。");
+        if (data.rewards) renderRewards(data.rewards);
+        if (data.already_claimed_today) {
+          trackEvent(workerUrl, "reward_claim", {
+            ...analyticsReportPayload(item, "catalog"),
+            action: kind,
+            status: "already_claimed_today",
+          });
+          setRewardStatus("今天的同类报告已经领取过，明天可以再领一份。", "error");
+          return;
+        }
+        if (data.already_owned) {
+          trackEvent(workerUrl, "reward_claim", {
+            ...analyticsReportPayload(item, "catalog"),
+            action: kind,
+            status: "already_owned",
+          });
+          setRewardStatus("当前账号已经拥有这份报告。", "ok");
+          return;
+        }
+        if (!data.claimed) throw new Error("报告未领取，请刷新签到状态后重试。");
+        trackEvent(workerUrl, "reward_claim", {
+          ...analyticsReportPayload(item, "catalog"),
+          action: kind,
+          status: "success",
+        });
+        setRewardStatus("领取成功，现在可直接账号下载。", "ok");
+        document.dispatchEvent(new CustomEvent("portal-reward-change", { detail: { report_id: item.id, reward_kind: kind } }));
+      } catch (error) {
+        setRewardStatus(error.message || "报告领取失败。", "error");
+        if (currentRewardState) renderRewards(currentRewardState);
+      }
     }
 
     function refreshUi(options = {}) {
@@ -667,6 +815,7 @@
       const signedIn = Boolean(session);
       form.hidden = signedIn;
       summary.hidden = !signedIn;
+      if (rewards) rewards.hidden = !signedIn;
       if (contactCard) contactCard.hidden = false;
       if (signedIn) {
         document.getElementById("accountName").textContent = authUserLabel(session);
@@ -689,6 +838,7 @@
             if (summary && !statusOverride) setStatus(`账号${summary}。`, "ok");
           })
           .catch(() => {});
+        refreshRewards();
       } else {
         if (adminOpen) adminOpen.hidden = true;
         captchaToken = "";
@@ -731,6 +881,29 @@
         refreshUi();
       });
     }
+    if (rewardCheckin) {
+      rewardCheckin.addEventListener("click", async () => {
+        rewardCheckin.disabled = true;
+        setRewardStatus("正在签到…");
+        try {
+          const response = await fetch(`${workerUrl}/rewards`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", ...authHeaders() },
+            body: "{}",
+          });
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok) throw new Error(data.detail || "签到失败。");
+          renderRewards(data);
+          trackEvent(workerUrl, "reward_checkin", { action: "daily", status: "success", current_streak: data.current_streak });
+          setRewardStatus("签到成功，今日免费报告已解锁。", "ok");
+        } catch (error) {
+          setRewardStatus(error.message || "签到失败。", "error");
+          if (currentRewardState) renderRewards(currentRewardState);
+        }
+      });
+    }
+    if (rewardDailyClaim) rewardDailyClaim.addEventListener("click", () => claimReward("daily"));
+    if (rewardPointsClaim) rewardPointsClaim.addEventListener("click", () => claimReward("points"));
     if (adminOpen) {
       adminOpen.addEventListener("click", () => showAccountAdminModal(workerUrl));
     }
@@ -1956,6 +2129,10 @@
     { header: "邮箱", key: "email", width: 30 },
     { header: "账号角色", key: "role", width: 14 },
     { header: "访客 ID", key: "visitor_id", width: 28 },
+    { header: "会话 ID", key: "session_id", width: 28 },
+    { header: "首次访问", key: "first_seen_at", width: 25 },
+    { header: "回访", key: "is_returning", width: 10 },
+    { header: "会话落地页", key: "landing_path", width: 36 },
     { header: "IP Hash", key: "ip_hash", width: 28 },
     { header: "国家", key: "country", width: 10 },
     { header: "节点", key: "colo", width: 10 },
@@ -1982,6 +2159,19 @@
     { header: "耗时（ms）", key: "duration_ms", width: 14 },
     { header: "错误", key: "error", width: 36 },
     { header: "来源页", key: "referrer", width: 42 },
+    { header: "来源域名", key: "referrer_host", width: 28 },
+    { header: "UTM Source", key: "utm_source", width: 22 },
+    { header: "UTM Medium", key: "utm_medium", width: 22 },
+    { header: "UTM Campaign", key: "utm_campaign", width: 30 },
+    { header: "UTM Term", key: "utm_term", width: 26 },
+    { header: "UTM Content", key: "utm_content", width: 26 },
+    { header: "设备", key: "device_type", width: 14 },
+    { header: "机器人提示", key: "bot_hint", width: 18 },
+    { header: "Bot Score", key: "bot_score", width: 12 },
+    { header: "Verified Bot", key: "verified_bot", width: 14 },
+    { header: "语言", key: "language", width: 14 },
+    { header: "屏幕", key: "screen", width: 14 },
+    { header: "导航类型", key: "navigation_type", width: 16 },
     { header: "User-Agent", key: "user_agent", width: 54 },
     { header: "事件 ID", key: "id", width: 38 },
   ];
@@ -1998,6 +2188,10 @@
       email: user.email || "",
       role: user.role || "",
       visitor_id: value.visitor_id || "",
+      session_id: value.session_id || "",
+      first_seen_at: value.first_seen_at || "",
+      is_returning: Boolean(value.is_returning),
+      landing_path: value.landing_path || "",
       ip_hash: value.ip_hash || "",
       country: value.country || "",
       colo: value.colo || "",
@@ -2024,6 +2218,19 @@
       duration_ms: value.duration_ms || 0,
       error: value.error || "",
       referrer: value.referrer || "",
+      referrer_host: value.referrer_host || "",
+      utm_source: value.utm_source || "",
+      utm_medium: value.utm_medium || "",
+      utm_campaign: value.utm_campaign || "",
+      utm_term: value.utm_term || "",
+      utm_content: value.utm_content || "",
+      device_type: value.device_type || "",
+      bot_hint: value.bot_hint || "",
+      bot_score: value.bot_score || 0,
+      verified_bot: Boolean(value.verified_bot),
+      language: value.language || "",
+      screen: value.screen || "",
+      navigation_type: value.navigation_type || "",
       user_agent: value.user_agent || "",
       id: value.id || "",
     };
@@ -2266,6 +2473,41 @@
     return users.length;
   }
 
+  function analyticsDaySummaryList(title, rows) {
+    const items = Array.isArray(rows) ? rows : [];
+    return `
+      <section class="analytics-day-summary-list">
+        <h3>${escapeHtml(title)}</h3>
+        ${items.length
+          ? `<ol>${items.map((row) => `<li><span>${escapeHtml(row.label || "unknown")}</span><strong>${Number(row.count || 0).toLocaleString("zh-CN")}</strong></li>`).join("")}</ol>`
+          : '<p class="subtle">暂无数据</p>'}
+      </section>
+    `;
+  }
+
+  function renderAnalyticsDaySummary(target, data) {
+    if (!target) return;
+    const metrics = [
+      ["唯一访客", data.unique_visitor_count],
+      ["事件", data.event_count],
+      ["页面访问", data.page_view_count],
+      ["会话", data.unique_session_count],
+    ];
+    target.innerHTML = `
+      <div class="analytics-day-summary-metrics">
+        ${metrics.map(([label, value]) => `<div><span>${escapeHtml(label)}</span><strong>${Number(value || 0).toLocaleString("zh-CN")}</strong></div>`).join("")}
+      </div>
+      <div class="analytics-day-summary-lists">
+        ${analyticsDaySummaryList("热门路径", data.top_paths)}
+        ${analyticsDaySummaryList("来源域名", data.top_referrer_hosts)}
+        ${analyticsDaySummaryList("国家/地区", data.countries)}
+        ${analyticsDaySummaryList("设备", data.devices)}
+        ${analyticsDaySummaryList("机器人提示", data.bot_hints)}
+        ${analyticsDaySummaryList("UTM 来源", data.utm_sources)}
+      </div>
+    `;
+  }
+
   async function initAnalyticsHistory() {
     const config = await loadOptionalJson("data/config.json", {});
     const workerUrl = workerBaseUrl(config);
@@ -2289,6 +2531,11 @@
     const next = document.getElementById("analyticsHistoryNext");
     const pageLabel = document.getElementById("analyticsHistoryPage");
     const coverage = document.getElementById("analyticsHistoryCoverage");
+    const daySummaryDate = document.getElementById("analyticsDaySummaryDate");
+    const daySummaryLoad = document.getElementById("analyticsDaySummaryLoad");
+    const daySummaryRefresh = document.getElementById("analyticsDaySummaryRefresh");
+    const daySummaryStatus = document.getElementById("analyticsDaySummaryStatus");
+    const daySummaryResults = document.getElementById("analyticsDaySummaryResults");
     let cursor = "";
     let cursorStack = [];
     let nextCursor = "";
@@ -2298,6 +2545,61 @@
     let activeFilters = null;
     let pageLoadSequence = 0;
     let pageLoadController = null;
+    let daySummarySequence = 0;
+
+    function setDaySummaryStatus(text, kind = "") {
+      if (!daySummaryStatus) return;
+      daySummaryStatus.className = kind ? `status-line ${kind}` : "status-line";
+      daySummaryStatus.textContent = text || "";
+    }
+
+    async function loadDaySummary(options = {}) {
+      const date = String(daySummaryDate && daySummaryDate.value || "");
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+        setDaySummaryStatus("请选择日期。", "error");
+        return;
+      }
+      const sequence = ++daySummarySequence;
+      if (daySummaryLoad) daySummaryLoad.disabled = true;
+      if (daySummaryRefresh) daySummaryRefresh.disabled = true;
+      let jobId = "";
+      let pageCount = 0;
+      try {
+        do {
+          const params = new URLSearchParams({ date });
+          if (jobId) params.set("job_id", jobId);
+          else if (options.refresh) params.set("refresh", "1");
+          const response = await fetch(`${workerUrl}/account-admin/analytics-day-summary?${params}`, {
+            cache: "no-store",
+            headers: authHeaders(),
+          });
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok) throw new Error(data.detail || "按日汇总读取失败。");
+          if (sequence !== daySummarySequence) return;
+          renderAnalyticsDaySummary(daySummaryResults, data);
+          setDaySummaryStatus(data.complete
+            ? `${date} 汇总完成，共扫描 ${Number(data.processed_count || 0).toLocaleString("zh-CN")} 条对象。`
+            : `正在扫描 ${date}：已处理 ${Number(data.processed_count || 0).toLocaleString("zh-CN")} 条…`, data.complete ? "ok" : "");
+          jobId = String(data.job_id || "");
+          pageCount += 1;
+          if (!data.has_more) break;
+          if (!jobId || pageCount >= 500) throw new Error("按日汇总分页未能完成，请重新扫描。");
+        } while (sequence === daySummarySequence);
+      } catch (error) {
+        if (sequence === daySummarySequence) setDaySummaryStatus(error.message || "按日汇总读取失败。", "error");
+      } finally {
+        if (sequence === daySummarySequence) {
+          if (daySummaryLoad) daySummaryLoad.disabled = false;
+          if (daySummaryRefresh) daySummaryRefresh.disabled = false;
+        }
+      }
+    }
+
+    if (daySummaryDate && !daySummaryDate.value) {
+      daySummaryDate.value = new Date(Date.now() + 8 * 60 * 60 * 1000).toISOString().slice(0, 10);
+    }
+    if (daySummaryLoad) daySummaryLoad.addEventListener("click", () => loadDaySummary());
+    if (daySummaryRefresh) daySummaryRefresh.addEventListener("click", () => loadDaySummary({ refresh: true }));
 
     function setStatus(message, kind = "") {
       status.className = kind ? `status-line ${kind}` : "status-line";
@@ -4169,19 +4471,21 @@
     ].join(" "));
   }
 
-  function selectedSearchText(item, queryScope, metadataById, searchTextById) {
+  function selectedSearchText(item, queryScope, metadataById, searchTextById, chartTextById) {
     const title = normalize([item.title, item.title_zh, item.filename].join(" "));
     const catalog = metadataById.get(item.id) || "";
     const fullText = searchTextById.get(item.id) || "";
+    const chartText = chartTextById && chartTextById.get(item.id) || "";
     if (queryScope === "title") return { title, catalog: "", fullText: "", combined: title };
     if (queryScope === "catalog") return { title: "", catalog, fullText: "", combined: catalog };
     if (queryScope === "fulltext") return { title: "", catalog: "", fullText, combined: fullText };
-    return { title, catalog, fullText, combined: `${title} ${catalog} ${fullText}` };
+    if (queryScope === "charts") return { title: "", catalog: "", fullText: chartText, combined: chartText };
+    return { title, catalog, fullText, combined: `${title} ${catalog} ${fullText} ${chartText}` };
   }
 
-  function scoreItem(item, query, queryScope, metadataById, searchTextById) {
+  function scoreItem(item, query, queryScope, metadataById, searchTextById, chartTextById) {
     if (!query) return 0;
-    const selected = selectedSearchText(item, queryScope, metadataById, searchTextById);
+    const selected = selectedSearchText(item, queryScope, metadataById, searchTextById, chartTextById);
     if (!textMatches(selected.combined, query)) return -1;
     return (
       scoreText(selected.title, query, 12) +
@@ -4299,6 +4603,7 @@
         date: item.date || "",
         file_type: item.file_type || "",
         kind: item.kind || "",
+        kind_label: item.kind_label || "",
         page_count: item.page_count || "",
         size_bytes: item.size_bytes || 0,
         report_type: item.report_type || "",
@@ -4325,13 +4630,15 @@
     return cached.item && typeof cached.item === "object" ? cached.item : null;
   }
 
-  function authorityKindLabel(kind) {
+  function authorityKindLabel(kind, kindLabel = "") {
+    if (String(kindLabel || "").trim()) return String(kindLabel).trim();
+    if (kind === "domestic-lead") return "国内报告线索";
     return kind === "foreign-rt" ? "实时外文" : "普通外文";
   }
 
   function authorityMeta(item) {
     const meta = [
-      authorityKindLabel(item.kind),
+      authorityKindLabel(item.kind, item.kind_label),
       item.institution,
       item.date,
       item.page_count ? `${item.page_count}页` : "",
@@ -4507,6 +4814,13 @@
     const catalogById = new Map(items.map((item) => [String(item.id || ""), item]));
     const metadataById = new Map(items.map((item) => [item.id, metadataText(item)]));
     const searchTextById = new Map();
+    const chartTextById = new Map();
+    const chartSearchSection = document.getElementById("chartSearchSection");
+    const chartSearchResults = document.getElementById("chartSearchResults");
+    const chartSearchCount = document.getElementById("chartSearchCount");
+    const chartSearchStatus = document.getElementById("chartSearchStatus");
+    let chartSearchReports = [];
+    let chartSearchPromise = null;
     let searchIndexLabel = "Text index loading";
     let currentPage = 1;
     let catalogAnalyticsTimer = 0;
@@ -4565,6 +4879,126 @@
       searchRecommendationsSection.hidden = false;
       if (searchRecommendationsCount) searchRecommendationsCount.textContent = `${fallbackRecommendations.length} 条`;
       searchRecommendationsResults.innerHTML = fallbackRecommendations.map(relatedRow).join("");
+    }
+
+    function chartRecordText(chart) {
+      const row = chart && typeof chart === "object" ? chart : {};
+      return normalize([
+        row.title,
+        row.chart_type,
+        row.description,
+        row.trend_summary,
+        ...(Array.isArray(row.metrics) ? row.metrics : []),
+        ...(Array.isArray(row.entities) ? row.entities : []),
+        ...(Array.isArray(row.periods) ? row.periods : []),
+        ...(Array.isArray(row.geographies) ? row.geographies : []),
+        ...(Array.isArray(row.units) ? row.units : []),
+        ...(Array.isArray(row.keywords) ? row.keywords : []),
+      ].filter(Boolean).join(" "));
+    }
+
+    function chartReportText(report) {
+      const row = report && typeof report === "object" ? report : {};
+      return normalize([
+        row.title,
+        row.search_text,
+        ...(Array.isArray(row.charts) ? row.charts.map(chartRecordText) : []),
+      ].filter(Boolean).join(" "));
+    }
+
+    function chartDetailChips(chart) {
+      const values = [
+        ...(Array.isArray(chart.metrics) ? chart.metrics : []),
+        ...(Array.isArray(chart.entities) ? chart.entities : []),
+        ...(Array.isArray(chart.periods) ? chart.periods : []),
+        ...(Array.isArray(chart.geographies) ? chart.geographies : []),
+        ...(Array.isArray(chart.units) ? chart.units : []),
+      ].map((value) => String(value || "").trim()).filter(Boolean);
+      return [...new Set(values)].slice(0, 8)
+        .map((value) => `<span>${escapeHtml(value)}</span>`)
+        .join("");
+    }
+
+    function chartSearchRow(report, chart) {
+      const reportId = String(report.report_id || "");
+      const catalogItem = catalogById.get(reportId);
+      const reportTitle = String(report.title || catalogItem && titleText(catalogItem) || "图表所在报告");
+      const title = String(chart.title || chart.description || "报告图表");
+      const summary = String(chart.description || chart.trend_summary || "");
+      const trend = String(chart.trend_summary || "");
+      return `
+        <a class="chart-search-card" href="${escapeHtml(reportPageUrl(reportId))}" target="_blank" rel="noopener noreferrer" data-id="${escapeHtml(reportId)}">
+          <span class="chart-search-kicker">${escapeHtml(chart.chart_type || "CHART")}</span>
+          <strong>${escapeHtml(title)}</strong>
+          ${summary ? `<p>${escapeHtml(summary)}</p>` : ""}
+          ${trend && trend !== summary ? `<p class="chart-search-trend">趋势：${escapeHtml(trend)}</p>` : ""}
+          <span class="chart-search-report">来自：${escapeHtml(reportTitle)}</span>
+          <span class="chart-search-chips">${chartDetailChips(chart)}</span>
+        </a>
+      `;
+    }
+
+    async function ensureChartSearchIndex() {
+      if (chartSearchPromise) return chartSearchPromise;
+      chartSearchPromise = loadOptionalJson("data/chart_search_index.json", { reports: [] })
+        .then((payload) => {
+          chartSearchReports = (Array.isArray(payload && payload.reports) ? payload.reports : [])
+            .filter((report) => {
+              const reportId = String(report && report.report_id || "");
+              return Boolean(reportId && catalogById.has(reportId));
+            });
+          chartTextById.clear();
+          chartSearchReports.forEach((report) => {
+            const reportId = String(report && report.report_id || "");
+            if (reportId) chartTextById.set(reportId, chartReportText(report));
+          });
+          return chartSearchReports;
+        })
+        .catch(() => {
+          chartSearchReports = [];
+          return chartSearchReports;
+        });
+      return chartSearchPromise;
+    }
+
+    function renderChartSearch(rawQuery) {
+      if (!chartSearchSection || !chartSearchResults) return;
+      const active = scopeFilter.value === "charts";
+      chartSearchSection.hidden = !active;
+      if (!active) {
+        chartSearchResults.innerHTML = "";
+        if (chartSearchCount) chartSearchCount.textContent = "";
+        if (chartSearchStatus) chartSearchStatus.textContent = "";
+        return;
+      }
+      const query = normalize(rawQuery);
+      const tokens = queryTokens(query);
+      if (tokens.length === 0) {
+        chartSearchResults.innerHTML = '<div class="empty-state">输入公司、指标、时间、地区、单位或趋势开始检索图表。</div>';
+        if (chartSearchCount) chartSearchCount.textContent = "";
+        if (chartSearchStatus) {
+          chartSearchStatus.className = "status-line";
+          chartSearchStatus.textContent = chartSearchReports.length ? `已载入 ${chartSearchReports.length} 份报告的图表索引。` : "暂无可用图表索引。";
+        }
+        return;
+      }
+      const matches = [];
+      chartSearchReports.forEach((report) => {
+        if (!tokens.every((token) => chartReportText(report).includes(token))) return;
+        const charts = (Array.isArray(report.charts) ? report.charts : [])
+          .filter((chart) => tokens.every((token) => chartRecordText(chart).includes(token)));
+        const visibleCharts = charts.length ? charts : (Array.isArray(report.charts) ? report.charts.slice(0, 1) : []);
+        visibleCharts.slice(0, 3).forEach((chart) => matches.push({ report, chart }));
+      });
+      const visible = matches.slice(0, 60);
+      chartSearchResults.innerHTML = visible.length
+        ? visible.map(({ report, chart }) => chartSearchRow(report, chart)).join("")
+        : '<div class="empty-state">暂无匹配的图表解读。</div>';
+      if (chartSearchCount) chartSearchCount.textContent = matches.length ? `${matches.length} 条图表` : "";
+      if (chartSearchStatus) {
+        chartSearchStatus.className = "status-line";
+        chartSearchStatus.textContent = matches.length > visible.length ? `显示前 ${visible.length} 条，请增加关键词缩小范围。` : "";
+      }
     }
 
     function renderHotReports(query = "") {
@@ -4729,7 +5163,7 @@
         .filter(passesFilters)
         .map((item) => ({
           item,
-          score: scoreItem(item, query, scopeFilter.value, metadataById, searchTextById),
+          score: scoreItem(item, query, scopeFilter.value, metadataById, searchTextById, chartTextById),
         }))
         .filter((entry) => !query || entry.score >= 0);
 
@@ -4751,6 +5185,7 @@
       prevPage.disabled = currentPage <= 1 || !scoped.length;
       nextPage.disabled = currentPage >= pageCount || !scoped.length;
       searchResultCounts.catalog = scoped.length;
+      renderChartSearch(rawQuery);
       renderSearchRecommendations();
 
       if (!scoped.length) {
@@ -4815,13 +5250,23 @@
     }
 
     input.addEventListener("input", () => {
-      prepareRemoteSearch(input.value.trim());
+      if (scopeFilter.value !== "charts") prepareRemoteSearch(input.value.trim());
       render({ resetPage: true });
-      renderHotReports(input.value.trim());
+      renderHotReports(scopeFilter.value === "charts" ? "" : input.value.trim());
       scheduleExternalSearch();
     });
-    [bankFilter, industryFilter, startDate, endDate, scopeFilter, availabilityFilter, ...pageRangeInputs].forEach((control) => {
+    [bankFilter, industryFilter, startDate, endDate, availabilityFilter, ...pageRangeInputs].forEach((control) => {
       control.addEventListener("change", () => render({ resetPage: true }));
+    });
+    scopeFilter.addEventListener("change", async () => {
+      if (scopeFilter.value === "charts") {
+        if (chartSearchSection) chartSearchSection.hidden = false;
+        if (chartSearchStatus) chartSearchStatus.textContent = "正在读取图表索引…";
+        await ensureChartSearchIndex();
+      }
+      render({ resetPage: true });
+      renderHotReports(scopeFilter.value === "charts" ? "" : input.value.trim());
+      scheduleExternalSearch();
     });
     pageSize.addEventListener("change", () => render({ resetPage: true }));
     prevPage.addEventListener("click", () => {
@@ -4843,6 +5288,14 @@
       event.stopPropagation();
       openReportPage(row.dataset.id);
     });
+    if (chartSearchResults) {
+      chartSearchResults.addEventListener("click", (event) => {
+        const row = event.target.closest(".chart-search-card");
+        if (!row) return;
+        const item = catalogById.get(String(row.dataset.id || ""));
+        trackEvent(workerUrl, "report_open", analyticsReportPayload(item || { id: row.dataset.id }, "chart-search"));
+      });
+    }
 
     // --- 其他报告 integration ---------------------------------------------
     // Live search through the Worker proxy. Rows open the same password-gated
@@ -5151,6 +5604,13 @@
     function scheduleExternalSearch() {
       window.clearTimeout(externalTimer);
       const query = input.value.trim();
+      if (scopeFilter.value === "charts") {
+        hideThinkTankResults();
+        runExternalSearch("");
+        hideReportAResults();
+        hideAuthorityResults();
+        return;
+      }
       externalTimer = window.setTimeout(() => {
         Promise.allSettled([
           runThinkTankSearch(query),
@@ -6184,7 +6644,8 @@
       panel.hidden = false;
       if (passwordForm) passwordForm.hidden = false;
       accountDownload.hidden = true;
-      openAccount.hidden = Boolean(session);
+      openAccount.hidden = false;
+      openAccount.textContent = session ? "签到 / 领取" : "注册 / 登录";
       if (!session) {
         hint.innerHTML = isHotReport
           ? "登录后可查看热门报告下载权限；需至少 3 个月会员。"
@@ -6235,6 +6696,7 @@
       }
     });
     document.addEventListener("portal-auth-change", refresh);
+    document.addEventListener("portal-reward-change", refresh);
     refresh();
   }
 
@@ -6601,7 +7063,7 @@
   function externalItemFromParams(params) {
     const id = String(params.get("id") || "").trim();
     const rawSource = params.get("source");
-    const inferredSource = /^foreign(?:-rt)?:/.test(id)
+    const inferredSource = /^(?:foreign(?:-rt)?:|supplemental:[a-f0-9]{32}$)/.test(id)
       ? AUTHORITY_SOURCE
       : (/^report-a:/.test(id)
         ? REPORT_A_SOURCE
@@ -6624,6 +7086,7 @@
       date: params.get("date") || "",
       file_type: params.get("file_type") || "",
       kind: params.get("kind") || "",
+      kind_label: params.get("kind_label") || "",
       page_count: params.get("page_count") || "",
       size_bytes: Number(params.get("size_bytes") || 0) || 0,
       report_type: params.get("report_type") || "",
@@ -6672,7 +7135,7 @@
   }
 
   function validDocId(item) {
-    if (isAuthorityItem(item)) return /^(foreign|foreign-rt):[0-9]{1,25}$/.test(item.id);
+    if (isAuthorityItem(item)) return /^(?:(?:foreign|foreign-rt):[0-9]{1,25}|supplemental:[a-f0-9]{32})$/.test(item.id);
     if (isReportAItem(item)) return /^report-a:[a-f0-9]{16,64}$/i.test(item.id);
     if (isThinkTankItem(item)) return /^thinktank:[A-Za-z0-9._-]{3,220}$/.test(item.id);
     if (isHotReportItem(item)) return /^hot:[a-f0-9]{16}$/i.test(item.id);
@@ -6788,6 +7251,7 @@
     let endpoint = "";
     if (isHotReportItem(merged)) endpoint = "hot-reports/item";
     else if (isThinkTankItem(merged)) endpoint = "thinktank/item";
+    else if (isAuthorityItem(merged) && /^supplemental:/.test(merged.id)) endpoint = "authority/item";
     else if (merged.source === EXTERNAL_SOURCE) endpoint = "external/item";
     if (!endpoint) return merged;
     try {
@@ -6846,7 +7310,7 @@
     const detailFields = isAuthorityItem(item)
       ? `
         ${field("板块", docSourceLabel(item))}
-        ${field("Category", authorityKindLabel(item.kind))}
+        ${field("Category", authorityKindLabel(item.kind, item.kind_label))}
         ${field("Institution", item.institution || "-")}
         ${field("Date", item.date || "-")}
         ${field("Pages", item.page_count ? `${item.page_count}页` : "-")}
@@ -6897,10 +7361,18 @@
         <section class="unlock-box authority-contact-box">
           <h3>获取报告</h3>
           <p class="subtle">${escapeHtml(hint)}</p>
-          <p class="contact-line">如需原文，请联系${contactMethodHtml()}。</p>
+          <p class="contact-line">如需原文，请联系${isAuthorityItem(item) ? allContactMethodsHtml() : contactMethodHtml()}。</p>
+          ${isAuthorityItem(item) ? `<a id="authorityReportRequest" class="primary-button" href="mailto:${escapeHtml(CONTACT_EMAIL)}?subject=${encodeURIComponent(`报告索取：${item.title || item.id || ""}`)}">索取这份报告</a>` : ""}
         </section>
         ${externalRelatedMarkup()}
       `;
+      const requestLink = document.getElementById("authorityReportRequest");
+      if (requestLink) {
+        requestLink.addEventListener("click", () => trackEvent(workerUrl, "report_request", {
+          ...analyticsReportPayload(item, AUTHORITY_SOURCE),
+          action: "contact",
+        }));
+      }
       searchIndexPromise.then(() => initExternalRelated(item, workerUrl, catalogItems, searchTextById));
       return;
     }
@@ -8613,6 +9085,93 @@
     await Promise.all([loadMarketViews(), refreshAccess()]);
   }
 
+  async function initCourse() {
+    const config = await loadOptionalJson("data/config.json", {});
+    const workerUrl = workerBaseUrl(config);
+    const gate = document.getElementById("courseGate");
+    const title = document.getElementById("courseGateTitle");
+    const message = document.getElementById("courseGateMessage");
+    const login = document.getElementById("courseLoginButton");
+    const catalog = document.getElementById("courseCatalog");
+    initAccountGate(workerUrl);
+    initNewsfeedNav();
+    if (!gate || !title || !message || !login || !catalog) return;
+
+    function locked(titleText, messageText, showLogin = false) {
+      gate.hidden = false;
+      gate.classList.remove("is-unlocked");
+      title.textContent = titleText;
+      message.textContent = messageText;
+      login.hidden = !showLogin;
+      catalog.hidden = true;
+      catalog.innerHTML = "";
+    }
+
+    function renderCourseCatalog(data) {
+      const courses = Array.isArray(data && data.courses)
+        ? data.courses.map((value) => String(value || "").trim()).filter(Boolean).slice(0, 12)
+        : [];
+      const contact = data && data.contact && typeof data.contact === "object" ? data.contact : {};
+      if (!courses.length) throw new Error("课程目录暂时不可用。");
+      const cards = courses.map((course, index) => `
+        <article class="course-card">
+          <span>${String(index + 1).padStart(2, "0")}</span>
+          <h2>${escapeHtml(course)}</h2>
+          <p>课程详情、适配方向和学习安排请通过会员专属联系人咨询。</p>
+        </article>
+      `).join("");
+      const wechat = String(contact.wechat || "").trim();
+      const email = String(contact.email || "").trim();
+      const contactRows = [
+        wechat ? `<p>微信：${escapeHtml(wechat)}</p>` : "",
+        email ? `<p>邮箱：<a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>` : "",
+      ].filter(Boolean).join("");
+      catalog.innerHTML = `${cards}
+        <aside class="course-contact">
+          <strong>咨询课程详情</strong>
+          ${contactRows || "<p>请通过账号中心联系支持。</p>"}
+        </aside>`;
+    }
+
+    async function refresh() {
+      if (!loadAuthSession()) {
+        locked("登录后查看 Course", "仅剩余有效期至少 30 天的会员可访问课程咨询入口。", true);
+        return;
+      }
+      locked("正在核验会员资格…", "请稍候。", false);
+      try {
+        const response = await fetch(`${workerUrl}/course/access`, { cache: "no-store", headers: authHeaders() });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) {
+          if (response.status === 401) clearAuthSession();
+          throw new Error(data.detail || "课程会员资格核验失败。");
+        }
+        if (!data.can_access) {
+          const remaining = Math.max(0, Number(data.remaining_days || 0));
+          locked(
+            "当前会员有效期不足 30 天",
+            remaining ? `当前约剩余 ${remaining} 天；续期后即可访问。` : "当前账号没有符合条件的会员有效期。",
+            false,
+          );
+          return;
+        }
+        gate.hidden = false;
+        gate.classList.add("is-unlocked");
+        title.textContent = "Course 已解锁";
+        message.textContent = data.lifetime ? "长期会员资格已通过核验。" : `会员资格已通过核验，当前约剩余 ${Number(data.remaining_days || 0)} 天。`;
+        login.hidden = true;
+        renderCourseCatalog(data);
+        catalog.hidden = false;
+      } catch (error) {
+        locked("暂时无法核验会员资格", error.message || "请稍后刷新重试。", false);
+      }
+    }
+
+    login.addEventListener("click", () => showAccountModal(workerUrl));
+    document.addEventListener("portal-auth-change", refresh);
+    await refresh();
+  }
+
   const boot = page === "report"
     ? initReport
     : page === "external"
@@ -8625,7 +9184,9 @@
             ? initNewsfeed
             : page === "blog"
               ? initBlog
-            : initIndex;
+              : page === "course"
+                ? initCourse
+              : initIndex;
   boot().catch((error) => {
     const target = page === "report"
       ? document.getElementById("detail")
@@ -8639,6 +9200,8 @@
               ? document.getElementById("newsfeedApp")
               : page === "blog"
                 ? document.getElementById("blogMarketViewsList")
+                : page === "course"
+                  ? document.getElementById("courseGate")
               : document.getElementById("results");
     if (target) target.innerHTML = `<div class="error-state">${escapeHtml(error.message)}</div>`;
   });

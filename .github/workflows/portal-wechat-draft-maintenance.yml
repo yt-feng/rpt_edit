@@ -182,6 +182,7 @@ jobs:
         env:
           WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
           WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
         run: |
           PUBLISH_ARGS=()
           if [ "${{ inputs.publish }}" = "true" ]; then

@@ -1140,7 +1140,7 @@ def evidence_title_fallback(
     candidates: list[tuple[int, str]] = []
     for index, raw in enumerate(re.split(r"[\n。！？!?；;]+", evidence_text or "")):
         clause = normalize_space(raw).strip(" ，,。；;：:、-—")
-        if not clause or re.search(r"(?:编辑评论|免责声明|仅供|公众号|星标|扫码|更新信息)", clause, re.I):
+        if not clause or re.search(r"(?:(?:编辑|KC)评论|免责声明|仅供|公众号|星标|扫码|更新信息)", clause, re.I):
             continue
         candidate = clean_filename_wechat_title(clause, institution_name, max_chars=max_chars)
         if missing_required_filename_terms(candidate, required_terms):

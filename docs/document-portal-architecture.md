@@ -1,6 +1,6 @@
 # Document Portal Architecture
 
-Last updated: 2026-08-06
+Last updated: 2026-08-10
 
 This document describes the protected document portal.
 
@@ -35,6 +35,10 @@ flowchart LR
 | Build scripts | Static artifact generation and storage sync. |
 | Workflows | Main build, emergency frontend deploy, and emergency gateway deploy. |
 
+Daily rewards, attribution fields, per-day analytics aggregation, and the
+server-enforced Course gate are specified in
+[`engagement-analytics-course-architecture.md`](engagement-analytics-course-architecture.md).
+
 ## Build And Deploy
 
 The main workflow should:
@@ -47,6 +51,15 @@ The main workflow should:
 6. Deploy the gateway.
 
 Account and permission changes should deploy the gateway and frontend together when either side depends on the other.
+For such a release, deploy and verify the gateway first, then switch the static
+edge release. `neutral-edge-cutover.yml` publishes immutable static objects and
+does not deploy the API gateway; `portal-worker-emergency-deploy.yml` owns the
+gateway deployment and its pre-deploy contract tests.
+
+The production hostname remains on the neutral edge route and is never bound
+to GitHub Pages. Repository workflows may create build artifacts, but the
+custom hostname and downloadable binaries are not served from repository
+Pages.
 
 ## Frontend Pages
 
@@ -55,6 +68,7 @@ Account and permission changes should deploy the gateway and frontend together w
 | Search | Search, filters, document list, and account entry. |
 | Detail | Catalog item detail and download entry. |
 | External detail | Unified source-adapter detail page. |
+| Course | Server-gated course catalog, materialized only after authorization. |
 | Policy pages | Public policy and generic support instructions. |
 
 Support language and support channels are resolved by the deployed frontend.

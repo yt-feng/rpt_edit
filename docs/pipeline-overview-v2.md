@@ -58,6 +58,22 @@ PDF sources
 | Portal data | Catalogs, search indexes, account rules, and static assets. |
 | Operational alerts | Signed, deduplicated notifications for workflow failures. |
 
+The optional chart-search stage and its resumable object-storage checkpoint are
+documented in [Chart Search Architecture](chart-search-architecture.md).
+
+## Explicitly Retained Public Outputs
+
+Heavy outputs remain transient by default. The daily Market Views PDF is the
+documented exception: after public-identity validation, its workflow force-adds
+only `market_view_summaries/<YYMMDD>/market_views_<YYMMDD>.pdf` to `main`.
+Source PDFs, extracted working folders, prompts, and private handoff objects are
+not committed. The same validated PDF may also be copied to private object
+storage for the website's member download path.
+
+Blog archive shards are another intentional small public output. Their
+sanitization, fingerprinting, concurrent-write handling, and edge publishing
+contract are documented in [Blog SEO and WeChat Output Contract](blog-seo-wechat-output.md).
+
 ## Compatibility Note
 
 Some paths, scripts, prompts, workflows, and environment variables still use historical names. Renaming them would require a migration across GitHub Actions, scripts, generated folders, and downstream references, so this documentation cleanup leaves runtime names intact.

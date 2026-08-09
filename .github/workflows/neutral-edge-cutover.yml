@@ -47,7 +47,16 @@ jobs:
           set -euo pipefail
           python3 -B scripts/check_public_identity.py
           node --input-type=module --check < workers/edge-static-host/src/index.js
+          node --input-type=module --check < workers/portal-suite-worker/src/index.js
+          node --input-type=module --check < workers/portal-suite-worker/src/source-lead-adapter.js
+          node scripts/test_source_lead_adapter.js
+          node scripts/test_portal_source_lead_integration.js
+          node scripts/test_portal_chart_search_frontend.js
           python3 -m py_compile scripts/edge_route_cutover.py
+          python3 -m py_compile \
+            scripts/build_chart_search_index.py \
+            scripts/chart_search_r2.py \
+            scripts/merge_chart_search_index.py
           python3 scripts/test_edge_route_cutover.py
 
       - name: Prepare masked runtime context
@@ -74,11 +83,48 @@ jobs:
           printf 'SITE_HOST=%s\n' "$site_host" >> "$GITHUB_ENV"
           printf 'STATIC_RELEASE=%s\n' "$release_id" >> "$GITHUB_ENV"
 
+      - name: Sync private supplemental-search Worker secrets
+        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID }}
+          SUPPLEMENTAL_SEARCH_URL: ${{ secrets.SUPPLEMENTAL_SEARCH_URL }}
+          SUPPLEMENTAL_SEARCH_HMAC_SECRET: ${{ secrets.SUPPLEMENTAL_SEARCH_HMAC_SECRET }}
+          SUPPLEMENTAL_SEARCH_REDACT_TERMS: ${{ secrets.SUPPLEMENTAL_SEARCH_REDACT_TERMS }}
+        run: |
+          set -euo pipefail
+          if [ -z "$SUPPLEMENTAL_SEARCH_URL" ] || [ "${#SUPPLEMENTAL_SEARCH_HMAC_SECRET}" -lt 16 ]; then
+            echo "Supplemental search is not fully configured; existing Worker secrets were left unchanged."
+            exit 0
+          fi
+          secret_file="$RUNNER_TEMP/supplemental-worker-secrets.json"
+          export secret_file
+          trap 'rm -f "$secret_file"' EXIT
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          payload = {
+              "SUPPLEMENTAL_SEARCH_URL": os.environ["SUPPLEMENTAL_SEARCH_URL"],
+              "SUPPLEMENTAL_SEARCH_HMAC_SECRET": os.environ["SUPPLEMENTAL_SEARCH_HMAC_SECRET"],
+              "SUPPLEMENTAL_SEARCH_REDACT_TERMS": os.environ.get("SUPPLEMENTAL_SEARCH_REDACT_TERMS") or "not-configured",
+          }
+          output = Path(os.environ["secret_file"])
+          output.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+          output.chmod(0o600)
+          PY
+          npx --yes wrangler@4 secret bulk "$secret_file" --name portal-suite-worker
+
       - name: Install refresh dependencies
         if: github.event_name == 'schedule' || inputs.operation == 'migrate' || inputs.operation == 'inspect-source'
         run: >-
           python3 -m pip install --disable-pip-version-check
-          "boto3>=1.34,<2" "pypdf>=4,<6" "requests>=2.31,<3"
+          "boto3>=1.34,<2" "pypdf>=4,<6" "requests>=2.31,<3" "Pillow>=10,<12"
+
+      - name: Test chart search indexing
+        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
+        run: python3 scripts/test_chart_search_index.py
 
       - name: Inspect source namespace visibility
         if: inputs.operation == 'inspect-source'
@@ -226,6 +272,17 @@ jobs:
             --deepseek-base-url "$DEEPSEEK_BASE_URL" \
             --workers 500
 
+      - name: Download private chart search index
+        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+        run: |
+          python3 scripts/chart_search_r2.py download \
+            --index _chart_search/index.json
+
       - name: Build private static release
         if: github.event_name == 'schedule' || inputs.operation == 'migrate'
         env:
@@ -248,10 +305,16 @@ jobs:
             echo "Static build failed" >&2
             exit 1
           fi
+          python3 scripts/merge_chart_search_index.py \
+            --search-index _neutral_site/data/search_index.json \
+            --chart-index _chart_search/index.json \
+            --catalog portal_suite/data/catalog.json \
+            --chart-output _neutral_site/data/chart_search_index.json
           test -s _neutral_site/index.html
           test -s _neutral_site/assets/app.js
           test -s _neutral_site/data/catalog.json
           test -s _neutral_site/data/search_index.json
+          test -s _neutral_site/data/chart_search_index.json
           test -s _neutral_site/data/password_rules.json
           python3 - <<'PY'
           from pathlib import Path

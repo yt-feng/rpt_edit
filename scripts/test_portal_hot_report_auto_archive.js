@@ -7,6 +7,15 @@ const vm = require("node:vm");
 const root = path.resolve(__dirname, "..");
 const workerPath = path.join(root, "workers/portal-suite-worker/src/index.js");
 const worker = fs.readFileSync(workerPath, "utf8");
+const workerWithoutImports = worker.replace(
+  /^import\s*\{[\s\S]*?\}\s*from\s*["']\.\/source-lead-adapter\.js["'];\s*/m,
+  `function publicSourceLeadItem() { return {}; }
+   async function readStoredSourceLead() { return null; }
+   async function searchSourceLeadMetadata() { return { items: [], total: 0 }; }
+   function sourceLeadAdapterEnabled() { return false; }
+  `,
+);
+assert.notEqual(workerWithoutImports, worker, "the Worker module import must be replaced for the VM harness");
 
 function extractFunction(source, name) {
   const marker = `function ${name}(`;
@@ -85,7 +94,7 @@ const exposedNames = [
   "listHotReportRows",
   "hotReportStorageStats",
 ];
-const runnableWorker = worker.replace(/\bexport default\s*\{/, "globalThis.__workerExport = {")
+const runnableWorker = workerWithoutImports.replace(/\bexport default\s*\{/, "globalThis.__workerExport = {")
   + `\nglobalThis.__hotArchiveTestApi = { ${exposedNames.join(", ")} };\n`;
 const sandbox = {
   AbortController,

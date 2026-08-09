@@ -144,6 +144,19 @@ class WeChatArticleQualityTests(unittest.TestCase):
         self.assertEqual(first, second)
         self.assertEqual([], audit_wechat_article_markdown(first))
 
+    def test_legacy_comment_label_is_normalized_idempotently(self) -> None:
+        source = """# 研究机构：主判断
+
+## 数据支持判断
+
+> **编辑评论：** 这个变化需要结合样本范围理解。
+"""
+        first = self.sanitize(source)
+        second = self.sanitize(first)
+        self.assertIn("> **KC评论：** 这个变化", first)
+        self.assertNotIn("编辑评论", first)
+        self.assertEqual(first, second)
+
 
 if __name__ == "__main__":
     unittest.main()

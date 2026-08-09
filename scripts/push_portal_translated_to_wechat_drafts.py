@@ -24,7 +24,7 @@ import time
 import zlib
 from pathlib import Path
 from typing import Any
-from urllib.parse import quote
+from urllib.parse import quote, urlsplit
 
 import requests
 from PIL import Image, ImageDraw
@@ -51,7 +51,8 @@ BOTTOM_DISCLAIMER = (
     "AI assistance based on source materials and may contain omissions or errors. Please verify independently. "
     "This is not investment, legal, tax, accounting, or other professional advice."
 )
-FINAL_CTA_TEXT = "更新信息参见portal.example.invalid"
+PUBLIC_SITE_HOST_PLACEHOLDER = "portal.example.invalid"
+FINAL_CTA_TEXT = PUBLIC_SITE_HOST_PLACEHOLDER
 DEFAULT_BODY_HOOK = ""
 DEFAULT_BODY_VISIBLE_CHARS = 1200
 DEFAULT_MIN_INLINE_IMAGES = 3
@@ -91,14 +92,14 @@ WECHAT_RETRYABLE_STATUS_CODES = {408, 425, 429, 500, 502, 503, 504}
 WECHAT_RETRYABLE_ERRCODES = {-1}
 MID_ARTICLE_CTA_RE = re.compile(
     r"(扫码|社群|知识星球|星球|加微信|朋友圈|设为星标|设置星标|每日汇编|每天会把|"
-    r"每天我会|国际信源汇编|完整报告与\s*编辑评论|完整报告和\s*编辑评论|更多国际信源|"
+    r"每天我会|国际信源汇编|完整报告与\s*(?:编辑|KC)评论|完整报告和\s*(?:编辑|KC)评论|更多国际信源|"
     r"喂给\s*AI|人工快速扫|市场\s*dynamics|图表合集|加入.*讨论|继续拆完整报告|"
     r"这篇可以沿着|几条线索看|重点不是复述报告|如果你是从|单篇文章只能解决|"
     r"更新信息参见|portal)",
     re.I,
 )
 MID_ARTICLE_CTA_CONTEXT_RE = re.compile(
-    r"(单篇(?:文章|报告)|每天|每日|汇编|完整报告|编辑评论|图表合集|这篇).{0,30}"
+    r"(单篇(?:文章|报告)|每天|每日|汇编|完整报告|(?:编辑|KC)评论|图表合集|这篇).{0,30}"
     r"(AI|汇编|社群|扫码|星球|图表合集|市场主线|横向比较|继续追问|几条线索|变量如何互相验证)",
     re.I,
 )
@@ -1168,14 +1169,41 @@ def paragraph_html(text: str) -> str:
 
 
 def portal_comment_html(text: str) -> str:
-    content = inline_markdown(normalize_space(text), context="comment")
+    normalized = normalize_space(text)
+    normalized = re.sub(
+        r"^(?:(?:\*\*|__)?\s*)?(?:编辑评论|KC评论)\s*[：:]\s*(?:(?:\*\*|__)?\s*)?",
+        "",
+        normalized,
+        flags=re.I,
+    )
+    content = inline_markdown(normalized, context="comment")
     if not content:
         return ""
     return (
         '<section style="margin:18px 0;padding:13px 15px;background:#F1F8F4;'
         'border-left:4px solid #2F8F5B;color:#223044;font-size:15px;line-height:1.75;">'
-        f"{content}"
+        f"<strong>KC评论：</strong> {content}"
         "</section>"
+    )
+
+
+def is_explicit_portal_comment(text: str) -> bool:
+    return bool(re.match(
+        r"^(?:(?:\*\*|__)?\s*)?(?:编辑评论|KC评论)\s*[：:]",
+        normalize_space(text),
+        flags=re.I,
+    ))
+
+
+def blockquote_html(text: str) -> str:
+    content = inline_markdown(normalize_space(text))
+    if not content:
+        return ""
+    return (
+        '<blockquote style="margin:16px 0;padding:10px 14px;border-left:3px solid #AAB4C3;'
+        'background:#F7F8FA;color:#4B5565;font-size:15px;line-height:1.75;">'
+        f"{content}"
+        "</blockquote>"
     )
 
 
@@ -1524,7 +1552,7 @@ def markdown_to_wechat_html(
                 continue
             fitted = fit_text(quote)
             if fitted:
-                parts.append(portal_comment_html(fitted))
+                parts.append(portal_comment_html(fitted) if is_explicit_portal_comment(quote) else blockquote_html(fitted))
                 maybe_insert_floating_image()
             continue
 
@@ -2602,6 +2630,48 @@ def article_payload(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return [dict(item["article"]) for item in items]
 
 
+def private_site_host(site_url: str) -> str:
+    """Validate a deployment-only URL and return only its display hostname."""
+    value = str(site_url or "").strip()
+    if not value:
+        return ""
+    parsed = urlsplit(value)
+    if (
+        parsed.scheme != "https"
+        or not parsed.hostname
+        or parsed.username
+        or parsed.password
+        or parsed.query
+        or parsed.fragment
+        or parsed.path not in {"", "/"}
+    ):
+        raise ValueError("--site-url must be an origin-only https URL")
+    if parsed.port not in {None, 443}:
+        raise ValueError("--site-url must use the default https port")
+    return parsed.hostname.lower().rstrip(".")
+
+
+def materialize_private_article_payload(
+    articles: list[dict[str, Any]],
+    site_url: str,
+) -> list[dict[str, Any]]:
+    """Replace the public site placeholder only in the in-memory WeChat request."""
+    host = private_site_host(site_url)
+    rendered: list[dict[str, Any]] = []
+    for raw_article in articles:
+        article = dict(raw_article)
+        if host:
+            article["content"] = str(article.get("content") or "").replace(
+                PUBLIC_SITE_HOST_PLACEHOLDER,
+                host,
+            )
+            source_url = str(article.get("content_source_url") or "")
+            if source_url:
+                article["content_source_url"] = source_url.replace(PUBLIC_SITE_HOST_PLACEHOLDER, host)
+        rendered.append(article)
+    return rendered
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Create WeChat Official Account drafts from Portal translated reports.")
     parser.add_argument("--translated-root", default="portal_translated_reports")
@@ -2622,6 +2692,7 @@ def main() -> int:
     parser.add_argument("--body-hook", default=DEFAULT_BODY_HOOK)
     parser.add_argument("--trailing-image", default=DEFAULT_TRAILING_IMAGE)
     parser.add_argument("--content-source-url", default="")
+    parser.add_argument("--site-url", default=os.getenv("PORTAL_SITE_URL", ""), help=argparse.SUPPRESS)
     parser.add_argument("--image-upload-delay-seconds", type=float, default=DEFAULT_WECHAT_IMAGE_UPLOAD_DELAY_SECONDS)
     parser.add_argument("--article-delay-seconds", type=float, default=DEFAULT_WECHAT_ARTICLE_DELAY_SECONDS)
     parser.add_argument("--draft-delay-seconds", type=float, default=DEFAULT_WECHAT_DRAFT_DELAY_SECONDS)
@@ -2652,8 +2723,12 @@ def main() -> int:
     ]:
         if getattr(args, attr) < 0:
             raise ValueError(f"--{attr.replace('_', '-')} must be non-negative")
+    if args.site_url:
+        private_site_host(args.site_url)
     if not args.dry_run and (not args.wechat_appid or not args.wechat_secret):
         raise ValueError("WECHAT_MP_APPID and WECHAT_MP_APPSECRET are required unless --dry-run is set")
+    if not args.dry_run and not args.site_url:
+        raise ValueError("PORTAL_SITE_URL is required unless --dry-run is set")
 
     root = Path(args.translated_root)
     date_dir = latest_date_dir(root) if args.date_folder == "latest" else root / args.date_folder
@@ -2758,7 +2833,8 @@ def main() -> int:
     drafts = []
 
     def create_draft(group: list[dict[str, Any]]) -> None:
-        articles = article_payload(group)
+        public_articles = article_payload(group)
+        articles = materialize_private_article_payload(public_articles, args.site_url)
         payload_bytes = utf8_byte_count(json.dumps({"articles": articles}, ensure_ascii=False, separators=(",", ":")))
         draft_index = len(drafts) + 1
         log(
@@ -2851,7 +2927,9 @@ def main() -> int:
             publish_id = submit_publish(session, access_token, media_id, args.timeout) if args.publish else ""
 
         payload_path = output_dir / f"draft_payload_{draft_index:02d}.json"
-        write_json(payload_path, {"articles": articles})
+        # Persist only the public template. The deployment hostname exists
+        # solely in the in-memory request sent to WeChat.
+        write_json(payload_path, {"articles": public_articles})
         drafts.append(
             {
                 "draft_index": draft_index,

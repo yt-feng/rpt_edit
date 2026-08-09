@@ -32,6 +32,22 @@
         </div>
       </div>
 
+      <section class="analytics-day-summary" aria-labelledby="analyticsDaySummaryTitle">
+        <div class="analytics-day-summary-heading">
+          <div>
+            <h2 id="analyticsDaySummaryTitle">按日期汇总</h2>
+            <p>汇总唯一访客、事件/页面访问、来源、国家、设备与机器人提示；不展示原始 IP 或哈希。</p>
+          </div>
+          <div class="analytics-day-summary-actions">
+            <label>日期<input id="analyticsDaySummaryDate" type="date"></label>
+            <button id="analyticsDaySummaryLoad" class="primary" type="button">读取汇总</button>
+            <button id="analyticsDaySummaryRefresh" class="secondary-button" type="button">重新扫描</button>
+          </div>
+        </div>
+        <div id="analyticsDaySummaryStatus" class="status-line" aria-live="polite"></div>
+        <div id="analyticsDaySummaryResults"></div>
+      </section>
+
       <form id="analyticsHistoryFilters" class="analytics-history-filters">
         <label>
           <span>事件类型</span>
@@ -99,7 +115,9 @@
       </nav>
     </main>
 
+    <script src="assets/site-runtime.js"></script>
     <script src="assets/contact.js"></script>
+    <script src="assets/analytics.js"></script>
     <script src="assets/app.js?v=portal-suite-20260726b"></script>
   </body>
 </html>

@@ -1,0 +1,300 @@
+name: Portal chart search index
+run-name: Chart search ${{ inputs.date_folder }} ${{ inputs.source_handoff_run_id || inputs.source_artifact_run_id }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      date_folder:
+        description: "Report date folder to index, for example YYMMDD"
+        required: true
+        type: string
+      source_handoff_run_id:
+        description: "Active private handoff run id (daily incremental mode)"
+        required: false
+        type: string
+      source_artifact_run_id:
+        description: "Historical Actions run id containing shard artifacts (manual backfill mode)"
+        required: false
+        type: string
+      source_artifact_pattern:
+        description: "Artifact name pattern for manual backfill"
+        required: false
+        default: "final-dropbox-macro-shard-*"
+        type: string
+      expected_shards:
+        description: "Expected shard count; 0 accepts every available shard"
+        required: true
+        default: "0"
+        type: string
+      max_images:
+        description: "Maximum new vision-model calls per pass; cached hashes do not count, 0 processes every selected image"
+        required: true
+        default: "0"
+        type: string
+
+permissions:
+  actions: read
+  contents: read
+
+concurrency:
+  group: portal-chart-search-index
+  cancel-in-progress: false
+
+env:
+  PYTHONUNBUFFERED: "1"
+  PRIVATE_HANDOFF_ROOT: "_private-workflow-handoff/xhs"
+
+jobs:
+  build-index:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 300
+    steps:
+      - name: Validate source selection
+        env:
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          HANDOFF_RUN_ID: ${{ inputs.source_handoff_run_id }}
+          ARTIFACT_RUN_ID: ${{ inputs.source_artifact_run_id }}
+          EXPECTED_SHARDS: ${{ inputs.expected_shards }}
+          MAX_IMAGES: ${{ inputs.max_images }}
+        run: |
+          set -euo pipefail
+          printf '%s' "$DATE_FOLDER" | grep -Eq '^[0-9]{6,8}$'
+          printf '%s' "$EXPECTED_SHARDS" | grep -Eq '^[0-9]+$'
+          printf '%s' "$MAX_IMAGES" | grep -Eq '^[0-9]+$'
+          if { [ -n "$HANDOFF_RUN_ID" ] && [ -n "$ARTIFACT_RUN_ID" ]; } || \
+             { [ -z "$HANDOFF_RUN_ID" ] && [ -z "$ARTIFACT_RUN_ID" ]; }; then
+            echo "::error::Choose exactly one source: private handoff or historical artifact run."
+            exit 1
+          fi
+          if [ -n "$HANDOFF_RUN_ID" ]; then printf '%s' "$HANDOFF_RUN_ID" | grep -Eq '^[0-9]+$'; fi
+          if [ -n "$ARTIFACT_RUN_ID" ]; then printf '%s' "$ARTIFACT_RUN_ID" | grep -Eq '^[0-9]+$'; fi
+
+      - name: Checkout public source
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .github
+            scripts
+            portal_suite/data/catalog.json
+            requirements.txt
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install chart indexing dependencies
+        run: python -m pip install --disable-pip-version-check "requests>=2.31,<3" "Pillow>=10,<12" "boto3>=1.34,<2"
+
+      - name: Download daily private shard handoff
+        if: inputs.source_handoff_run_id != ''
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          set -euo pipefail
+          EXPECT_ARGS=()
+          if [ "${{ inputs.expected_shards }}" != "0" ]; then
+            EXPECT_ARGS+=(--expected-count "${{ inputs.expected_shards }}")
+          fi
+          python scripts/private_workflow_handoff.py download-shards \
+            --prefix "$PRIVATE_HANDOFF_ROOT/${{ inputs.source_handoff_run_id }}/${{ inputs.date_folder }}" \
+            --destination "_chart_input/${{ inputs.date_folder }}" \
+            "${EXPECT_ARGS[@]}"
+
+      - name: Download historical shard artifacts
+        if: inputs.source_artifact_run_id != ''
+        uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.source_artifact_run_id }}
+          pattern: ${{ inputs.source_artifact_pattern }}
+          path: _chart_artifacts
+
+      - name: Materialize historical shard artifacts
+        if: inputs.source_artifact_run_id != ''
+        run: |
+          set -euo pipefail
+          EXPECT_ARGS=()
+          if [ "${{ inputs.expected_shards }}" != "0" ]; then
+            EXPECT_ARGS+=(--expected-shards "${{ inputs.expected_shards }}")
+          fi
+          python scripts/materialize_shard_artifacts.py \
+            --artifact-root _chart_artifacts \
+            --destination "_chart_input/${{ inputs.date_folder }}" \
+            "${EXPECT_ARGS[@]}"
+
+      - name: Validate private model configuration
+        env:
+          VISION_INDEX_API_KEY: ${{ secrets.VISION_INDEX_API_KEY }}
+          VISION_INDEX_API_BASE_URL: ${{ secrets.VISION_INDEX_API_BASE_URL }}
+          VISION_INDEX_MODEL: ${{ vars.VISION_INDEX_MODEL || 'qwen3-vl-flash' }}
+        run: |
+          set -euo pipefail
+          for name in VISION_INDEX_API_KEY VISION_INDEX_API_BASE_URL VISION_INDEX_MODEL; do
+            value="$(printenv "$name")"
+            if [ -z "$value" ]; then
+              echo "::error::Missing required chart-index configuration: $name"
+              exit 1
+            fi
+            echo "::add-mask::$value"
+          done
+
+      - name: Download incremental checkpoint
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python scripts/chart_search_r2.py download \
+            --state _chart_work/state.json \
+            --index _chart_work/previous-index.json
+
+      - name: Describe and index new chart hashes
+        env:
+          VISION_INDEX_API_KEY: ${{ secrets.VISION_INDEX_API_KEY }}
+          VISION_INDEX_API_BASE_URL: ${{ secrets.VISION_INDEX_API_BASE_URL }}
+          VISION_INDEX_MODEL: ${{ vars.VISION_INDEX_MODEL || 'qwen3-vl-flash' }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+          REQUEST_LIMIT: ${{ inputs.max_images }}
+          CHECKPOINT_BATCH_SIZE: ${{ vars.VISION_INDEX_CHECKPOINT_BATCH_SIZE || '20' }}
+        run: |
+          set -euo pipefail
+          printf '%s' "$REQUEST_LIMIT" | grep -Eq '^[0-9]+$'
+          printf '%s' "$CHECKPOINT_BATCH_SIZE" | grep -Eq '^[1-9][0-9]*$'
+          PREVIOUS_INDEX="_chart_work/previous-index.json"
+          TOTAL_MODEL_CALLS=0
+          MODEL_CALLS=0
+          RETRYABLE=0
+          STABLE_ERRORS=0
+          QUARANTINED=0
+          UNPROCESSED=1
+          FAILURES=0
+
+          run_checkpoint_batch() {
+            local CALL_LIMIT="$1"
+            local BUILD_STATUS=0
+            set +e
+            python scripts/build_chart_search_index.py \
+              --root "_chart_input/${{ inputs.date_folder }}" \
+              --catalog portal_suite/data/catalog.json \
+              --date-folder "${{ inputs.date_folder }}" \
+              --state _chart_work/state.json \
+              --previous-index "$PREVIOUS_INDEX" \
+              --output-index _chart_work/index.json \
+              --output-summary _chart_work/summary.json \
+              --asset-output-dir _chart_work/images \
+              --max-images "$CALL_LIMIT" \
+              --max-per-report "${{ vars.VISION_INDEX_MAX_PER_REPORT || '0' }}" \
+              --min-interval "${{ vars.VISION_INDEX_MIN_INTERVAL_SECONDS || '0.4' }}" \
+              --attempt-run-id "${GITHUB_RUN_ID}:${GITHUB_RUN_ATTEMPT}"
+            BUILD_STATUS=$?
+            set -e
+            # Publish the private state even when authentication/configuration fails
+            # or the Python circuit breaker stops a service-wide outage.
+            python scripts/chart_search_r2.py publish-state --state _chart_work/state.json
+            if [ "$BUILD_STATUS" -ne 0 ]; then
+              exit "$BUILD_STATUS"
+            fi
+            read -r MODEL_CALLS RETRYABLE STABLE_ERRORS QUARANTINED UNPROCESSED FAILURES < <(python - <<'PY'
+          import json
+          from pathlib import Path
+          row = json.loads(Path("_chart_work/summary.json").read_text(encoding="utf-8"))
+          print(
+              int(row.get("model_calls") or 0),
+              int(row.get("retryable_count") or 0),
+              int(row.get("stable_error_count") or 0),
+              int(row.get("quarantined_count") or 0),
+              int(row.get("unprocessed_count") or 0),
+              int(row.get("failures") or 0),
+          )
+          PY
+            )
+            TOTAL_MODEL_CALLS=$((TOTAL_MODEL_CALLS + MODEL_CALLS))
+            PREVIOUS_INDEX="_chart_work/index.json"
+          }
+
+          for BATCH in $(seq 1 200); do
+            CALL_LIMIT="$CHECKPOINT_BATCH_SIZE"
+            if [ "$REQUEST_LIMIT" -gt 0 ]; then
+              REMAINING=$((REQUEST_LIMIT - TOTAL_MODEL_CALLS))
+              if [ "$REMAINING" -le 0 ]; then break; fi
+              if [ "$REMAINING" -lt "$CALL_LIMIT" ]; then CALL_LIMIT="$REMAINING"; fi
+            fi
+            run_checkpoint_batch "$CALL_LIMIT"
+            if [ "$UNPROCESSED" = "0" ]; then break; fi
+            if [ "$MODEL_CALLS" = "0" ]; then
+              echo "::error::Chart indexing made no progress with $UNPROCESSED unprocessed hashes."
+              exit 1
+            fi
+          done
+
+          LIMIT_REACHED=0
+          if [ "$REQUEST_LIMIT" -gt 0 ] && [ "$TOTAL_MODEL_CALLS" -ge "$REQUEST_LIMIT" ]; then LIMIT_REACHED=1; fi
+          if [ "$UNPROCESSED" != "0" ] && [ "$LIMIT_REACHED" = "0" ]; then
+            echo "::error::Chart indexing exceeded the checkpoint batch guard with $UNPROCESSED hashes remaining."
+            exit 1
+          fi
+
+          export TOTAL_MODEL_CALLS QUARANTINED RETRYABLE STABLE_ERRORS UNPROCESSED LIMIT_REACHED
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          path = Path("_chart_work/summary.json")
+          row = json.loads(path.read_text(encoding="utf-8"))
+          row["workflow_model_calls"] = int(os.environ["TOTAL_MODEL_CALLS"])
+          row["workflow_quarantined_count"] = int(os.environ["QUARANTINED"])
+          row["workflow_retryable_count"] = int(os.environ["RETRYABLE"])
+          row["workflow_stable_error_count"] = int(os.environ["STABLE_ERRORS"])
+          row["workflow_unprocessed_count"] = int(os.environ["UNPROCESSED"])
+          row["request_limit_reached"] = os.environ["LIMIT_REACHED"] == "1"
+          path.write_text(json.dumps(row, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+          PY
+          if [ "$QUARANTINED" != "0" ]; then
+            echo "::warning::$QUARANTINED repeatedly unreadable chart images were quarantined; all successful descriptions will still publish."
+          fi
+          if [ "$UNPROCESSED" != "0" ]; then
+            echo "::error::The explicit request limit left $UNPROCESSED hashes incomplete; private state is saved and the source handoff must be retained."
+            exit 1
+          fi
+          if [ "$RETRYABLE" != "0" ]; then
+            echo "::error::$RETRYABLE transient chart failures remain retryable; private state is saved and the source handoff must be retained."
+            exit 1
+          fi
+          if [ "$STABLE_ERRORS" != "0" ]; then
+            echo "::error::$STABLE_ERRORS stable image failures require another workflow run before quarantine; private state is saved and the source handoff must be retained."
+            exit 1
+          fi
+
+      - name: Publish checkpoint and searchable index
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python scripts/chart_search_r2.py publish \
+            --state _chart_work/state.json \
+            --index _chart_work/index.json \
+            --asset-dir _chart_work/images
+
+      - name: Upload non-sensitive run summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: chart-search-summary-${{ inputs.date_folder }}-${{ github.run_id }}
+          path: _chart_work/summary.json
+          if-no-files-found: warn
+          retention-days: 14
