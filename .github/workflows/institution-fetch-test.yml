@@ -54,7 +54,10 @@ jobs:
           python - <<'PY'
           import json
           import re
+          import sys
           from urllib.parse import urlsplit
+
+          sys.path.insert(0, "scripts")
 
           import requests
           import fetch_institution_latest_pdfs as fetcher
