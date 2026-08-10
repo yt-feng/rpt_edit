@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "updated_at_bjt": "2026-08-10 11:28:24 +0800",
+  "updated_at_bjt": "2026-08-10 14:52:52 +0800",
   "item_count": 37,
   "sources": {
     "previous_archive_items": 37,
-    "bank_catalog_titles": 1283,
+    "bank_catalog_titles": 985,
     "archive_items_added": 0,
-    "archive_items_updated": 4,
-    "live_matches_skipped": 1279
+    "archive_items_updated": 3,
+    "live_matches_skipped": 982
   },
   "items": [
     {
@@ -28,7 +28,7 @@
       "password_group": "default",
       "size_bytes": 0,
       "first_seen_at_bjt": "2026-08-05 12:44:22 +0800",
-      "last_seen_at_bjt": "2026-08-10 11:28:24 +0800",
+      "last_seen_at_bjt": "2026-08-10 14:52:52 +0800",
       "available": false,
       "present_in_latest_scan": false,
       "industry": "",
@@ -54,7 +54,7 @@
       "password_group": "default",
       "size_bytes": 0,
       "first_seen_at_bjt": "2026-08-10 07:25:32 +0800",
-      "last_seen_at_bjt": "2026-08-10 11:28:24 +0800",
+      "last_seen_at_bjt": "2026-08-10 14:52:52 +0800",
       "available": false,
       "present_in_latest_scan": false,
       "industry": "",
