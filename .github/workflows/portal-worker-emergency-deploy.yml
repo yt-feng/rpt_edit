@@ -25,6 +25,7 @@ jobs:
           sparse-checkout: |
             .gitignore
             .github/workflows/portal-worker-emergency-deploy.yml
+            .github/workflows/course-directory-private-publish.yml
             .github/workflows/market-views-latex-pdf.yml
             workers/portal-suite-worker/src/index.js
             workers/portal-suite-worker/src/source-lead-adapter.js
