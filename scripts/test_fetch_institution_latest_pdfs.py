@@ -13,6 +13,10 @@ COUNTRY_REPORT_URL = (
     "https://www.imf.org/-/media/files/publications/cr/2026/english/"
     "1zweea2026002.pdf"
 )
+MONGOLIA_COUNTRY_REPORT_URL = (
+    "https://www.imf.org/-/media/files/publications/cr/2026/english/"
+    "1mngea2026001.pdf"
+)
 
 
 class FakeResponse:
@@ -40,6 +44,26 @@ class CoveoPreviewTests(unittest.TestCase):
         )
 
         self.assertEqual(candidates[0], COUNTRY_REPORT_URL)
+
+    def test_cached_stock_number_resolves_fresh_country_report(self) -> None:
+        cached_html = (
+            '<li><p>Stock No<!-- -->:</p>'
+            '<p role="presentation">1MNGEA2026001</p></li>'
+        )
+
+        candidates = fetcher.scrape_imf_preview_candidates(
+            cached_html,
+            (
+                "https://www.imf.org/en/publications/cr/issues/2026/08/05/"
+                "mongolia-2026-article-iv-consultation-discussions"
+            ),
+        )
+
+        self.assertEqual(candidates[0], MONGOLIA_COUNTRY_REPORT_URL)
+        self.assertEqual(
+            candidates[1],
+            MONGOLIA_COUNTRY_REPORT_URL.removesuffix(".pdf") + "-source-pdf.pdf",
+        )
 
     def test_coveo_items_keep_preview_id_and_filter_rollups(self) -> None:
         payload = {
