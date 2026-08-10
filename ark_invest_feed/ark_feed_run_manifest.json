@@ -1,6 +1,6 @@
 {
   "feed_url": "https://www.ark-invest.com/feed",
-  "date_folder": "260804",
+  "date_folder": "260811",
   "since_days": 1,
   "max_pub_age_days": 120,
   "include_types": [
@@ -9,24 +9,24 @@
     "newsletters",
     "white papers"
   ],
-  "feed_item_count": 1374,
+  "feed_item_count": 1379,
   "selected_count": 1,
   "written": [
     {
       "source": "ark_invest_feed",
       "institution_name": "木头姐ARK",
-      "title": "#519: The AI Capital Expenditure (Capex) Supercycle Is Accelerating",
+      "title": "#520: SpaceX’s First Earnings Call Included Several Key Takeaways, & More",
       "type": "Newsletters",
       "category": "Newsletters",
-      "source_url": "https://www.ark-invest.com/newsletters/issue-519",
-      "guid": "https://www.ark-invest.com/newsletters/issue-519",
-      "pub_date": "Mon, 03 Aug 2026 20:07:00 GMT",
-      "updated": "2026-08-04T00:11:37.853+00:00",
-      "event_datetime": "2026-08-04T00:11:37.853000+00:00",
-      "feed_key": "f715d90cb7c0388d",
+      "source_url": "https://www.ark-invest.com/newsletters/issue-520",
+      "guid": "https://www.ark-invest.com/newsletters/issue-520",
+      "pub_date": "Mon, 10 Aug 2026 16:00:00 GMT",
+      "updated": "2026-08-10T20:07:46.631+00:00",
+      "event_datetime": "2026-08-10T20:07:46.631000+00:00",
+      "feed_key": "a9858e74f0e213a2",
       "source_mineru": "source_mineru.md",
       "note": "note.md",
-      "output_dir": "xhs_notes/ark/260804/0001-ARK_519-The-AI-Capital-Expenditure-Capex-Supercycle-Is-Accelerating_f715d90cb7c0388d"
+      "output_dir": "xhs_notes/ark/260811/0001-ARK_520-SpaceX-s-First-Earnings-Call-Included-Several-Key-Takeaways-More_a9858e74f0e213a2"
     }
   ],
   "status": "ok"
