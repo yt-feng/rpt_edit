@@ -115,12 +115,13 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
         "token": "IMF",
         # IMF's site is a JS app behind Akamai (RSS is gone; the WAF blocks plain
         # requests by TLS fingerprint). Its publications search is powered by Coveo,
-        # which is a separate, non-WAF host we can query directly. Then we fetch each
-        # landing page's PDF on imf.org via curl_cffi Chrome impersonation.
+        # which is a separate, non-WAF host we can query directly. Resolve PDFs from
+        # Coveo's cached HTML preview first; use the IMF landing page only as fallback.
         "impersonate": True,
         "kind": "coveo_api",
         "pdf": "scrape",
         "coveo_url": "https://imfproduction561s308u.org.coveo.com/rest/search/v2?organizationId=imfproduction561s308u",
+        "coveo_organization_id": "imfproduction561s308u",
         # Public, browser-exposed Coveo search key. Static/long-lived; if IMF ever
         # rotates it, override via the IMF_COVEO_TOKEN env var (no code change needed).
         "coveo_token": "xx742a6c66-f427-4f5a-ae1e-770dc7264e8a",
@@ -1175,6 +1176,10 @@ def collect_coveo_items(cfg: dict[str, Any], session: requests.Session, timeout:
         if not landing:
             continue
         landing = _normalize_imf_host(landing)
+        # Search results can include Special Features roll-up pages, which are
+        # collections rather than individual publications with one report PDF.
+        if "/publications/sprolls/" in urlsplit(landing).path.lower():
+            continue
         epoch_ms = raw.get("imfdate")
         date_iso = ""
         if isinstance(epoch_ms, (int, float)):
@@ -1191,6 +1196,7 @@ def collect_coveo_items(cfg: dict[str, Any], session: requests.Session, timeout:
             "date": date_iso,
             "pdf_candidates": pdf_candidates,
             "scrape_url": "" if is_file else landing,
+            "coveo_unique_id": result.get("uniqueId") or result.get("UniqueId") or "",
         })
     log(f"  coveo -> {len(items)} publications (total {data.get('totalCount')})")
     return items
@@ -1230,6 +1236,40 @@ def scrape_pdf_candidates(html_text: str, base_url: str) -> list[str]:
         return value
 
     return sorted(candidates, key=score, reverse=True)
+
+
+def collect_coveo_preview_candidates(
+    cfg: dict[str, Any],
+    session: requests.Session,
+    unique_id: str,
+    base_url: str,
+    timeout: int,
+) -> list[str]:
+    """Resolve official PDF links from Coveo's cached HTML preview."""
+
+    unique_id = str(unique_id or "").strip()
+    if not unique_id:
+        return []
+
+    parsed = urlsplit(cfg["coveo_url"])
+    preview_url = f"{parsed.scheme}://{parsed.netloc}{parsed.path.rstrip('/')}/html"
+    token = os.getenv("IMF_COVEO_TOKEN") or cfg["coveo_token"]
+    response = http_get(
+        session,
+        preview_url,
+        timeout,
+        params={
+            "organizationId": cfg["coveo_organization_id"],
+            "uniqueId": unique_id,
+        },
+        headers={
+            "Authorization": f"Bearer {token}",
+            "Origin": "https://www.imf.org",
+            "Referer": "https://www.imf.org/",
+        },
+    )
+    response.raise_for_status()
+    return scrape_pdf_candidates(response.text, base_url)
 
 
 def download_pdf(session: requests.Session, urls: Iterable[str], dest: Path, timeout: int, max_bytes: int, impersonate: bool = False, profile: str | None = None, proxy: str | None = None) -> tuple[str | None, str]:
@@ -1479,6 +1519,19 @@ def main() -> int:
             eligible_count += 1
             candidates = list(item["pdf_candidates"])
             landing_attempted = False
+            preview_attempted = False
+            if not candidates and item.get("coveo_unique_id"):
+                preview_attempted = True
+                try:
+                    candidates = collect_coveo_preview_candidates(
+                        cfg,
+                        session,
+                        item["coveo_unique_id"],
+                        item["source_url"],
+                        args.request_timeout,
+                    )
+                except Exception as exc:  # noqa: BLE001 - use origin fallback
+                    warn(f"  Coveo preview fetch failed, will try landing page: {item['source_url']}: {exc}")
             if not candidates and item.get("scrape_url"):
                 landing_attempted = True
                 try:
@@ -1510,7 +1563,38 @@ def main() -> int:
             dest = output_dir / filename
             used_url, status = download_pdf(session, candidates[:3], dest, args.request_timeout, max_bytes, impersonate=cfg.get("impersonate", False), profile=cfg.get("impersonate_profile"), proxy=cfg.get("_proxy"))
             # A deterministic/direct candidate may have changed on the source site.
-            # If so, still try the landing page before declaring this item failed.
+            # Try Coveo's cached HTML before touching the WAF-protected landing page.
+            if (status != "ok" or used_url is None) and item.get("coveo_unique_id") and not preview_attempted:
+                preview_attempted = True
+                try:
+                    preview_candidates = collect_coveo_preview_candidates(
+                        cfg,
+                        session,
+                        item["coveo_unique_id"],
+                        item["source_url"],
+                        args.request_timeout,
+                    )
+                    if cfg.get("pdf_exclude"):
+                        preview_candidates = [
+                            candidate for candidate in preview_candidates
+                            if not re.search(cfg["pdf_exclude"], candidate, re.I)
+                        ]
+                    preview_candidates = [candidate for candidate in preview_candidates if candidate not in candidates]
+                    if preview_candidates:
+                        used_url, status = download_pdf(
+                            session,
+                            preview_candidates[:3],
+                            dest,
+                            args.request_timeout,
+                            max_bytes,
+                            impersonate=cfg.get("impersonate", False),
+                            profile=cfg.get("impersonate_profile"),
+                            proxy=cfg.get("_proxy"),
+                        )
+                except Exception as exc:  # noqa: BLE001 - use origin fallback
+                    if len(resolution_failure_samples) < 3:
+                        resolution_failure_samples.append(f"Coveo preview fallback: {type(exc).__name__}: {exc}")
+            # If Coveo cannot resolve the PDF, still try the landing page.
             if (status != "ok" or used_url is None) and item.get("scrape_url") and not landing_attempted:
                 landing_attempted = True
                 try:
