@@ -4218,12 +4218,131 @@ a.secondary-button {
 
 .course-catalog {
   display: grid;
+  gap: 24px;
+}
+
+.course-browser {
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) minmax(360px, 1.2fr);
+  gap: 24px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at top right, rgba(20, 184, 166, 0.1), transparent 38%),
+    var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.course-browser-copy,
+.course-browser-fields,
+.course-groups,
+.course-group {
+  display: grid;
+  gap: 12px;
+}
+
+.course-browser-copy > p,
+.course-browser-copy > strong,
+.course-browser-copy > span,
+.course-browser-status {
+  margin: 0;
+}
+
+.course-browser-copy > p,
+.course-group-heading p {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.course-browser-copy > strong {
+  font-size: 24px;
+  letter-spacing: -0.03em;
+}
+
+.course-browser-copy > span,
+.course-browser-status {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.course-browser-fields {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.course-browser-fields label {
+  display: grid;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.course-browser-fields input,
+.course-browser-fields select {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 13px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #ffffff;
+  color: var(--ink);
+  font: inherit;
+}
+
+.course-browser-status {
+  grid-column: 1 / -1;
+}
+
+.course-groups {
+  gap: 28px;
+}
+
+.course-group {
+  gap: 16px;
+}
+
+.course-group[hidden],
+.course-card[hidden] {
+  display: none;
+}
+
+.course-group-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.course-group-heading p,
+.course-group-heading h2 {
+  margin: 0;
+}
+
+.course-group-heading h2 {
+  margin-top: 6px;
+  font-size: clamp(24px, 3vw, 34px);
+  letter-spacing: -0.035em;
+}
+
+.course-group-heading > span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.course-grid {
+  display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
 }
 
 .course-card {
-  min-height: 240px;
+  display: flex;
+  min-height: 270px;
+  flex-direction: column;
   padding: 24px;
   border: 1px solid var(--line);
   border-radius: 20px;
@@ -4231,16 +4350,30 @@ a.secondary-button {
   box-shadow: var(--shadow);
 }
 
-.course-card > span {
-  color: var(--accent);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.14em;
+.course-card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
 
-.course-card h2 {
-  margin: 40px 0 12px;
-  font-size: 28px;
+.course-card-heading > span {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.course-card-heading > span:last-child {
+  color: var(--muted);
+}
+
+.course-card h3 {
+  margin: 34px 0 12px;
+  font-size: 23px;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
 }
 
 .course-card p,
@@ -4249,17 +4382,52 @@ a.secondary-button {
   line-height: 1.7;
 }
 
+.course-card-summary {
+  margin: 0;
+}
+
+.course-card-audience {
+  display: grid;
+  gap: 3px;
+  margin: auto 0 0;
+  padding-top: 18px;
+  font-size: 13px;
+}
+
+.course-card-audience strong {
+  color: var(--ink);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
 .course-contact {
-  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
   padding: 22px 24px;
   border-radius: 18px;
   background: #0f2f35;
   color: #ffffff;
 }
 
-.course-contact p {
-  margin-bottom: 0;
+.course-contact > div {
+  display: grid;
+  gap: 5px;
+}
+
+.course-contact > div > span {
   color: #c7e9e3;
+  font-size: 13px;
+}
+
+.course-contact p {
+  margin: 0;
+  color: #c7e9e3;
+}
+
+.course-contact a {
+  color: #ffffff;
 }
 
 /* Complete per-day analytics summaries */
@@ -4379,9 +4547,19 @@ a.secondary-button {
 }
 
 @media (max-width: 900px) {
-  .course-catalog,
+  .course-browser,
+  .course-grid,
   .analytics-day-summary-lists {
     grid-template-columns: 1fr;
+  }
+
+  .course-browser-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .course-contact {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .analytics-day-summary-heading,
@@ -4396,6 +4574,11 @@ a.secondary-button {
 }
 
 @media (max-width: 520px) {
+  .course-group-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
   .account-rewards-heading,
   .analytics-day-summary-metrics {
     grid-template-columns: 1fr;

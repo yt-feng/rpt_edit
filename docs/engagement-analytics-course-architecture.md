@@ -44,10 +44,28 @@ grant, and requires it to be lifetime or to expire at least 30 * 24 hours after
 the server check. Filtered grants, finite-download grants, and trials do not
 unlock Course. Privileged operational accounts remain eligible.
 
-The gated API catalog currently contains WSO, WSP, and Fundamental Edge.
+The gated API catalog contains 43 hand-authored, topic-based entries spanning
+financial modeling, capital markets, private investing, investment research,
+capital-markets law, legal professional skills, reference libraries, career
+development, and general professional education. Every entry has a neutral
+`id`, `category`, `title`, `summary`, and `audience`. These public-facing fields
+must describe subject matter only. They must never be copied from an upstream
+directory name, file name, provider label, community name, instructor name, or
+private storage locator. Investment-bank names may be retained when they are
+material to the subject matter.
+
+During the frontend rollout, an eligible response includes both `courses`, a
+title-only string array for the previous client, and `course_catalog`, the 43
+structured entries used by the current client. An anonymous response contains
+neither field, while an authenticated but ineligible response contains empty
+arrays. This keeps catalog details behind the same server-side membership gate
+throughout a Worker-first or static-site-first deployment.
+
 Contact details are returned only in the successful authenticated response and
 come from the private release injection process; do not place a real personal
-address in public source.
+address in public source. Raw inventory documents, exact resource counts,
+storage paths, and source file names remain outside the repository and are
+never serialized by this API.
 
 ## Analytics collection
 

@@ -5,6 +5,40 @@ import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const { default: worker } = await import(path.join(root, "workers/portal-suite-worker/src/index.js"));
+const restrictedCourseMarkers = [
+  ["W", "SP"],
+  ["W", "SO"],
+  ["股", "道场"],
+  ["并", "购圈"],
+  ["Fundamental", " Edge"],
+  ["Wall Street", " Prep"],
+  ["Wall Street", " Oasis"],
+  ["Breaking", " into VC"],
+  ["Breaking", "_into_VC"],
+  ["Breaking Into", " Wallstreet"],
+  ["BI", "WS"],
+  ["梧桐", "课堂"],
+  ["职", "未来"],
+  ["和", "君"],
+  ["青年", "金融家"],
+  ["i", "banker"],
+  ["优", "塾"],
+  ["万法", "通"],
+  ["法", "询"],
+  ["基小", "律"],
+  ["林立", "军"],
+  ["肖", "星"],
+  ["清", "华"],
+  ["Wi", "nd"],
+  ["Bloom", "berg"],
+  ["德", "勤"],
+  ["普华", "永道"],
+  ["P", "wC"],
+  ["罗兰", "贝格"],
+  ["埃森", "哲"],
+  ["MS", " Training"],
+  ["101", " primer"],
+].map((parts) => parts.join(""));
 
 class MemoryR2 {
   constructor() {
@@ -309,6 +343,12 @@ test("course API enforces at least 30 remaining days on the server", async () =>
   const bucket = new MemoryR2();
   bucket.seed("edge-static/runtime-data/catalog.json", { items: [] });
   const env = envFor(bucket);
+
+  const anonymous = await jsonRequest(env, "/course/access");
+  assert.equal(anonymous.response.status, 401);
+  assert.equal(Object.hasOwn(anonymous.data, "courses"), false);
+  assert.equal(Object.hasOwn(anonymous.data, "course_catalog"), false);
+
   const token = await register(env);
   const email = "reward-reader@example.com";
   const entitlementKey = `_account/entitlements/${encodeURIComponent(email)}`;
@@ -327,7 +367,25 @@ test("course API enforces at least 30 remaining days on the server", async () =>
   const allowed = await jsonRequest(env, "/course/access", { headers: bearer(token) });
   assert.equal(allowed.response.status, 200);
   assert.equal(allowed.data.can_access, true);
-  assert.deepEqual(allowed.data.courses, ["WSO", "WSP", "Fundamental Edge"]);
+  assert.equal(allowed.data.courses.length, 43);
+  assert.equal(allowed.data.course_catalog.length, 43);
+  assert.deepEqual(
+    allowed.data.courses,
+    allowed.data.course_catalog.map((course) => course.title),
+    "the legacy title array must stay compatible with the structured catalog",
+  );
+  assert.equal(new Set(allowed.data.course_catalog.map((course) => course.id)).size, 43);
+  for (const course of allowed.data.course_catalog) {
+    assert.deepEqual(Object.keys(course).sort(), ["audience", "category", "id", "summary", "title"]);
+    for (const field of ["id", "category", "title", "summary", "audience"]) {
+      assert.equal(typeof course[field], "string");
+      assert.ok(course[field].trim(), `${field} must be populated`);
+    }
+  }
+  const serializedCatalog = JSON.stringify(allowed.data.course_catalog).toLowerCase();
+  for (const marker of restrictedCourseMarkers) {
+    assert.equal(serializedCatalog.includes(marker.toLowerCase()), false, `restricted marker leaked: ${marker}`);
+  }
 
   bucket.seed(entitlementKey, {
     id: "entitlement-1",
@@ -344,6 +402,7 @@ test("course API enforces at least 30 remaining days on the server", async () =>
   assert.equal(denied.response.status, 200);
   assert.equal(denied.data.can_access, false);
   assert.deepEqual(denied.data.courses, []);
+  assert.deepEqual(denied.data.course_catalog, []);
 
   bucket.rows.delete(entitlementKey);
   const accessKey = `_account/access/${encodeURIComponent(email)}`;
@@ -366,6 +425,8 @@ test("course API enforces at least 30 remaining days on the server", async () =>
   bucket.seed(accessKey, { ...accessBase, access_mode: "filters", institutions: ["NOM"] });
   const filtered = await jsonRequest(env, "/course/access", { headers: bearer(token) });
   assert.equal(filtered.data.can_access, false, "a filtered report grant is not a membership");
+  assert.deepEqual(filtered.data.courses, []);
+  assert.deepEqual(filtered.data.course_catalog, []);
 
   bucket.seed(accessKey, {
     ...accessBase,
@@ -375,14 +436,34 @@ test("course API enforces at least 30 remaining days on the server", async () =>
   });
   const limited = await jsonRequest(env, "/course/access", { headers: bearer(token) });
   assert.equal(limited.data.can_access, false, "a limited report grant is not a membership");
+  assert.deepEqual(limited.data.courses, []);
+  assert.deepEqual(limited.data.course_catalog, []);
 });
 
 test("restricted course catalog and contact are absent from the unauthenticated static page", async () => {
   const { readFile } = await import("node:fs/promises");
   const html = await readFile(path.join(root, "portal_suite/site_src/courses.html"), "utf8");
-  assert.doesNotMatch(html, /WSO|WSP|Fundamental Edge/u);
+  const loweredHtml = html.toLowerCase();
+  for (const marker of restrictedCourseMarkers) {
+    assert.equal(loweredHtml.includes(marker.toLowerCase()), false, `restricted marker leaked: ${marker}`);
+  }
   assert.doesNotMatch(html, /Support Contact|support@portal\.example\.invalid|mailto:/u);
   assert.match(html, /id="courseCatalog"[^>]*hidden/u);
+});
+
+test("course frontend renders the complete structured catalog with topic filters", async () => {
+  const { readFile } = await import("node:fs/promises");
+  const source = await readFile(path.join(root, "portal_suite/site_src/assets/app.js"), "utf8");
+  const styles = await readFile(path.join(root, "portal_suite/site_src/assets/styles.css"), "utf8");
+  assert.match(source, /data\.course_catalog/u);
+  assert.match(source, /courseSearchInput/u);
+  assert.match(source, /courseCategoryFilter/u);
+  assert.match(source, /escapeHtml\(product\.title\)/u);
+  assert.match(source, /escapeHtml\(product\.summary\)/u);
+  assert.match(source, /escapeHtml\(product\.audience\)/u);
+  assert.doesNotMatch(source, /filter\(Boolean\)\.slice\(0, 12\)/u);
+  assert.match(styles, /\.course-grid\s*\{[\s\S]*?grid-template-columns:\s*repeat\(3,/u);
+  assert.match(styles, /\.course-card\[hidden\]\s*\{[\s\S]*?display:\s*none/u);
 });
 
 test("frontend distinguishes an already-used daily reward from a successful claim", async () => {

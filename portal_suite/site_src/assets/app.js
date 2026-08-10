@@ -9108,29 +9108,134 @@
     }
 
     function renderCourseCatalog(data) {
-      const courses = Array.isArray(data && data.courses)
-        ? data.courses.map((value) => String(value || "").trim()).filter(Boolean).slice(0, 12)
-        : [];
+      const rawCatalog = Array.isArray(data && data.course_catalog) && data.course_catalog.length
+        ? data.course_catalog
+        : (Array.isArray(data && data.courses) ? data.courses : []);
+      const products = rawCatalog.map((value, index) => {
+        if (value && typeof value === "object" && !Array.isArray(value)) {
+          const titleText = String(value.title || "").trim();
+          if (!titleText) return null;
+          return {
+            id: String(value.id || `COURSE-${index + 1}`).trim(),
+            category: String(value.category || "专业课程").trim() || "专业课程",
+            title: titleText,
+            summary: String(value.summary || "围绕该主题提供结构化课程与配套资料。").trim(),
+            audience: String(value.audience || "相关岗位学习者").trim(),
+          };
+        }
+        const titleText = String(value || "").trim();
+        return titleText ? {
+          id: `COURSE-${index + 1}`,
+          category: "专业课程",
+          title: titleText,
+          summary: "围绕该主题提供结构化课程与配套资料。",
+          audience: "相关岗位学习者",
+        } : null;
+      }).filter(Boolean).slice(0, 120);
       const contact = data && data.contact && typeof data.contact === "object" ? data.contact : {};
-      if (!courses.length) throw new Error("课程目录暂时不可用。");
-      const cards = courses.map((course, index) => `
-        <article class="course-card">
-          <span>${String(index + 1).padStart(2, "0")}</span>
-          <h2>${escapeHtml(course)}</h2>
-          <p>课程详情、适配方向和学习安排请通过会员专属联系人咨询。</p>
-        </article>
-      `).join("");
+      if (!products.length) throw new Error("课程目录暂时不可用。");
+      const categories = Array.from(new Set(products.map((product) => product.category)));
+      const groups = categories.map((category) => {
+        const categoryProducts = products
+          .map((product, index) => ({ product, index }))
+          .filter(({ product }) => product.category === category);
+        const cards = categoryProducts.map(({ product, index }) => `
+          <article class="course-card" data-course-index="${index}">
+            <div class="course-card-heading">
+              <span>${escapeHtml(product.id)}</span>
+              <span>主题课程</span>
+            </div>
+            <h3>${escapeHtml(product.title)}</h3>
+            <p class="course-card-summary">${escapeHtml(product.summary)}</p>
+            <p class="course-card-audience"><strong>适合</strong>${escapeHtml(product.audience)}</p>
+          </article>
+        `).join("");
+        return `
+          <section class="course-group" data-course-group data-course-category="${escapeHtml(category)}">
+            <header class="course-group-heading">
+              <div>
+                <p>LEARNING PATH</p>
+                <h2>${escapeHtml(category)}</h2>
+              </div>
+              <span data-course-group-count>${categoryProducts.length} 个主题</span>
+            </header>
+            <div class="course-grid">${cards}</div>
+          </section>
+        `;
+      }).join("");
       const wechat = String(contact.wechat || "").trim();
       const email = String(contact.email || "").trim();
       const contactRows = [
         wechat ? `<p>微信：${escapeHtml(wechat)}</p>` : "",
         email ? `<p>邮箱：<a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>` : "",
       ].filter(Boolean).join("");
-      catalog.innerHTML = `${cards}
+      catalog.innerHTML = `
+        <section class="course-browser" aria-label="课程目录筛选">
+          <div class="course-browser-copy">
+            <p>MEMBER CATALOG</p>
+            <strong>${products.length} 个主题化产品</strong>
+            <span>按学习方向归类，便于检索技能、岗位与内容主题。</span>
+          </div>
+          <div class="course-browser-fields">
+            <label>
+              <span>搜索主题</span>
+              <input id="courseSearchInput" type="search" placeholder="技能、岗位或关键词" autocomplete="off">
+            </label>
+            <label>
+              <span>学习方向</span>
+              <select id="courseCategoryFilter">
+                <option value="">全部方向</option>
+                ${categories.map((category) => `<option value="${escapeHtml(category)}">${escapeHtml(category)}</option>`).join("")}
+              </select>
+            </label>
+          </div>
+          <p class="course-browser-status" id="courseBrowserStatus" aria-live="polite"></p>
+        </section>
+        <div class="course-groups">${groups}</div>
         <aside class="course-contact">
-          <strong>咨询课程详情</strong>
+          <div>
+            <strong>咨询课程详情</strong>
+            <span>可咨询内容范围、学习顺序与适配岗位。</span>
+          </div>
           ${contactRows || "<p>请通过账号中心联系支持。</p>"}
         </aside>`;
+
+      const searchInput = catalog.querySelector("#courseSearchInput");
+      const categoryFilter = catalog.querySelector("#courseCategoryFilter");
+      const browserStatus = catalog.querySelector("#courseBrowserStatus");
+      const cards = Array.from(catalog.querySelectorAll("[data-course-index]"));
+      const courseGroups = Array.from(catalog.querySelectorAll("[data-course-group]"));
+      const applyFilters = () => {
+        const query = String(searchInput && searchInput.value || "").trim().toLocaleLowerCase("zh-CN");
+        const selectedCategory = String(categoryFilter && categoryFilter.value || "");
+        let visibleCount = 0;
+        cards.forEach((card) => {
+          const index = Number(card.dataset.courseIndex);
+          const product = Number.isInteger(index) ? products[index] : null;
+          const searchable = product
+            ? [product.id, product.category, product.title, product.summary, product.audience].join(" ").toLocaleLowerCase("zh-CN")
+            : "";
+          const visible = Boolean(
+            product
+            && (!selectedCategory || product.category === selectedCategory)
+            && (!query || searchable.includes(query))
+          );
+          card.hidden = !visible;
+          if (visible) visibleCount += 1;
+        });
+        courseGroups.forEach((group) => {
+          const visibleCards = Array.from(group.querySelectorAll("[data-course-index]")).filter((card) => !card.hidden);
+          group.hidden = visibleCards.length === 0;
+          const counter = group.querySelector("[data-course-group-count]");
+          if (counter) counter.textContent = `${visibleCards.length} 个主题`;
+        });
+        if (browserStatus) browserStatus.textContent = visibleCount
+          ? `当前显示 ${visibleCount} 个主题`
+          : "没有匹配主题，请更换关键词或方向。";
+      };
+      if (searchInput) searchInput.addEventListener("input", applyFilters);
+      if (categoryFilter) categoryFilter.addEventListener("change", applyFilters);
+      applyFilters();
     }
 
     async function refresh() {
