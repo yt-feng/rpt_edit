@@ -40,9 +40,9 @@ from wechat_title_optimizer import (
 )
 from sensitive_content_guard import sanitize_wechat_stock_language
 from wechat_article_quality import (
-    WECHAT_EDITORIAL_GUARD_ZH,
     WECHAT_EDITOR_SYSTEM_PROMPT,
     audit_wechat_article_markdown,
+    compose_wechat_editor_prompt,
     sanitize_wechat_article_markdown,
 )
 from deepseek_http import deepseek_api_keys_from_env, request_with_key_fallback
@@ -578,7 +578,7 @@ def build_wechat_prompt(template_path: Path, source_text: str, args: argparse.Na
         institution_name=institution_name or "可从报告标题识别的机构中文名",
         source_text=source_text,
     )
-    return f"{prompt.rstrip()}\n\n{WECHAT_EDITORIAL_GUARD_ZH}\n"
+    return compose_wechat_editor_prompt(prompt)
 
 
 def ensure_markdown_h1_institution(markdown: str, institution_name: str) -> str:

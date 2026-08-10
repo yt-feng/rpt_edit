@@ -57,9 +57,9 @@ from sensitive_content_guard import (
     wechat_title_neutrality_issues,
 )
 from wechat_article_quality import (
-    WECHAT_EDITORIAL_GUARD_ZH,
     WECHAT_EDITOR_SYSTEM_PROMPT,
     audit_wechat_article_markdown,
+    compose_wechat_editor_prompt,
     sanitize_wechat_article_markdown,
 )
 
@@ -881,7 +881,7 @@ def insert_article_tokens(markdown: str, tokens: list[str]) -> str:
 def build_article_style_prompt(markdown: str, title: str, institution_name: str, image_tokens: list[str]) -> str:
     token_text = ", ".join(image_tokens) if image_tokens else "无可用图表占位符"
     source = markdown[: min(len(markdown), 22_000)]
-    return f"""
+    prompt = f"""
 你是“Portal Suite”的微信公众号研究导读主笔。请把下面的公共机构/咨询公司英文报告，改写成和国际机构报告系列一致的中文微信文章。
 
 写作目标：
@@ -904,7 +904,7 @@ def build_article_style_prompt(markdown: str, title: str, institution_name: str,
 3. 开头 1-2 段要自然带出 4-6 个长尾关键词，例如国家/行业/政策/数据/公司/技术词，让读者从搜一搜进入也能立刻判断相关性。
 4. 使用 3 个 `##` 小节，每个小节标题都要是完整、中性的事实句，读标题就知道本节对象和信息，不使用好坏评价或冲突式措辞。
 5. 每个小节只保留 1 段，段落要像专业报告导读，避免散乱摘抄。每段必须以完整句结束，不能停在逗号、分号、冒号、连接词或半句话上；输出前修正“。，”“，。”等标点。
-6. 插入 1-2 条 `> KC评论：...`。标签只能写“KC评论”，禁止写“编辑评论”。KC评论要用大白话解释“这对市场/企业/政策观察意味着什么”，不要空泛，也不要夹带 CTA。
+6. 插入 1-2 条 `> **KC评论：** ...`，紧跟它所解释的正文或图表。每条写 2-3 个完整句：先锚定原文事实，再拆一层因果，最后指出一个更值得观察的变量；不要空泛，也不要夹带 CTA。
 7. 如有可用图表占位符，只能从这些 token 里选 1-3 个并原样插入，单独成行：{token_text}
 8. 不要输出任何 CTA、广告、扫码、社群、知识星球、每日汇编、喂给 AI、网站、域名、关注或星标表达；系统会在最结尾统一插入固定信息。
 9. 标题、正文和 KC评论不要直接输出“经济、投资、财经、金融、股票、股价、股市、理财、证券、券商、收益率、资产定价”等直白词；改成“宏观环境、研究、观察、资金、公司、报价、市场、回报表现、市场定价”等中性表达。
@@ -912,14 +912,13 @@ def build_article_style_prompt(markdown: str, title: str, institution_name: str,
 11. 如果是单一公司报告，只写公司情况、行业变化、业务进展、竞争格局和报告事实；禁止输出目标价、评级、买入、卖出、增持、减持、推荐、荐股、Buy、Sell、Overweight、Underweight、Outperform、Underperform、PT、TP、PO 等卖方操作口径。
 12. 不要输出代码块，不要输出英文原文，不要输出“以下是”等解释。
 
-{WECHAT_EDITORIAL_GUARD_ZH}
-
 机构中文名：{institution_name or "该机构"}
 原报告标题：{title}
 
 已清洗原文：
 {source}
 """.strip()
+    return compose_wechat_editor_prompt(prompt)
 
 
 def generate_article_style_markdown(

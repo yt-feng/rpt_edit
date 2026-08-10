@@ -69,6 +69,23 @@ The Blog renderer performs the same label normalization for immutable legacy
 archive records. It also cleans common adjacent-punctuation artifacts at
 render time; source archive JSON remains unchanged.
 
+## Reference editorial tone
+
+Both the primary-report generator and the institution/consulting generator
+append the shared tone card from `wechat_article_quality.py` before the hard
+delivery guard. The tone card was distilled from the maintained best-practice
+references and defines a three-step editorial rhythm: source evidence, a plain
+causal explanation, and an explicit choice of the next variable worth
+watching.
+
+`KC评论` is therefore a short editorial argument rather than a generic caveat.
+It must stay next to the evidence it explains, normally use two or three
+complete sentences, and may use restrained first-person wording such as
+`我的理解是` or `我更关注的是`. It may not invent holdings, interviews,
+historical calls, reader questions, or facts outside the source report. The
+reference material supplies tone and reasoning structure only; advice-like or
+sensitive source claims are not inherited.
+
 ## Public footer and private website value
 
 Every WeChat article ends with `更新信息参见` plus the runtime

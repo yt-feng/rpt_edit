@@ -57,6 +57,13 @@ Controlled self-hosted runners handle adapters that require fixed network identi
 - Title rewrites must not drop an otherwise valid item.
 - Sensitive wording should trigger rewrite or cooling, not silent deletion.
 - Generated content should follow the adapter's formatting and review rules.
+- All WeChat generation paths share one reference-tone contract: present a
+  source fact, explain its causal mechanism in plain language, then identify
+  the next variable worth watching. This contract is attached in code rather
+  than left to model-specific style interpretation.
+- `KC评论` should be a two- or three-sentence mini-argument grounded in adjacent
+  evidence. Restrained editorial first person is allowed; fabricated personal
+  experience, reader interaction, and generic observation boilerplate are not.
 - The public editorial label is exactly `KC评论`; upload and archive renderers
   normalize the historical label.
 - WeChat body budgeting preserves complete source sentences and never invents

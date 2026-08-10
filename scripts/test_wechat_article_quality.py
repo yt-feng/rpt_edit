@@ -3,7 +3,14 @@ from __future__ import annotations
 
 import unittest
 
-from wechat_article_quality import audit_wechat_article_markdown, sanitize_wechat_article_markdown
+from wechat_article_quality import (
+    WECHAT_EDITORIAL_GUARD_ZH,
+    WECHAT_EDITOR_SYSTEM_PROMPT,
+    WECHAT_REFERENCE_TONE_ZH,
+    audit_wechat_article_markdown,
+    compose_wechat_editor_prompt,
+    sanitize_wechat_article_markdown,
+)
 
 
 class WeChatArticleQualityTests(unittest.TestCase):
@@ -183,6 +190,21 @@ class WeChatArticleQualityTests(unittest.TestCase):
         self.assertIn("第一句。第二句。", cleaned)
         self.assertNotIn(public_host, cleaned)
         self.assertEqual([], audit_wechat_article_markdown(cleaned))
+
+    def test_reference_tone_contract_encodes_evidence_causality_and_editorial_choice(self) -> None:
+        self.assertIn("原文证据 -> 白话解释", WECHAT_REFERENCE_TONE_ZH)
+        self.assertIn("锚定紧邻正文中的一个事实或数字", WECHAT_REFERENCE_TONE_ZH)
+        self.assertIn("用大白话解释一层因果机制", WECHAT_REFERENCE_TONE_ZH)
+        self.assertIn("我更关注的是", WECHAT_REFERENCE_TONE_ZH)
+        self.assertIn("之前评论区有人问", WECHAT_REFERENCE_TONE_ZH)
+        self.assertIn("白话因果", WECHAT_EDITORIAL_GUARD_ZH)
+        self.assertIn("解释事实之间的因果", WECHAT_EDITOR_SYSTEM_PROMPT)
+
+    def test_prompt_composer_attaches_tone_before_hard_guard_once(self) -> None:
+        prompt = compose_wechat_editor_prompt("基础任务")
+        self.assertEqual(1, prompt.count("【参考稿语气卡】"))
+        self.assertEqual(1, prompt.count("【DeepSeek 交稿硬约束】"))
+        self.assertLess(prompt.index("【参考稿语气卡】"), prompt.index("【DeepSeek 交稿硬约束】"))
 
 
 if __name__ == "__main__":
