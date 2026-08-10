@@ -4145,16 +4145,27 @@ function courseDirectoryQueryText(value, limit = 80) {
   return cleanCourseDirectoryText(value, limit).toLowerCase();
 }
 
+function courseDirectorySearchPattern(term) {
+  const escaped = String(term || "").replace(/[.*+?^${}()|[\]\\]/gu, "\\$&");
+  return escaped ? new RegExp(escaped, "iu") : null;
+}
+
+function courseDirectoryItemMatchesPattern(item, pattern) {
+  if (pattern.test(item.name) || pattern.test(item.category) || pattern.test(item.file_type)) return true;
+  for (const folder of item.folders) {
+    if (pattern.test(folder)) return true;
+  }
+  for (const entity of item.entities) {
+    if (pattern.test(entity)) return true;
+  }
+  return false;
+}
+
 function courseDirectoryItemMatches(item, filters) {
   if (filters.courseId && item.course_id !== filters.courseId) return false;
   if (filters.category && item.category.toLowerCase() !== filters.category) return false;
   if (filters.fileType && item.file_type !== filters.fileType) return false;
-  if (!filters.terms.length) return true;
-  const searchable = [item.name, item.category, item.file_type, ...item.folders, ...item.entities]
-    .join(" ")
-    .normalize("NFKC")
-    .toLowerCase();
-  return filters.terms.every((term) => searchable.includes(term));
+  return filters.patterns.every((pattern) => courseDirectoryItemMatchesPattern(item, pattern));
 }
 
 async function handleCourseDirectory(request, env) {
@@ -4183,33 +4194,46 @@ async function handleCourseDirectory(request, env) {
     const courseId = String(url.searchParams.get("course_id") || "").trim().toLowerCase();
     const category = courseDirectoryQueryText(url.searchParams.get("category"), 80);
     const fileType = courseDirectoryQueryText(url.searchParams.get("file_type"), 24);
-    const terms = query.split(/\s+/u).filter(Boolean).slice(0, 12);
+    const patterns = query
+      .split(/\s+/u)
+      .filter(Boolean)
+      .slice(0, 12)
+      .map(courseDirectorySearchPattern)
+      .filter(Boolean);
     const directory = await loadCourseDirectory(env);
-    const matched = directory.items.filter((item) => courseDirectoryItemMatches(item, {
+    const filters = {
       courseId,
       category,
       fileType,
-      terms,
-    }));
+      patterns,
+    };
     const start = (page - 1) * pageSize;
-    const items = matched.slice(start, start + pageSize).map((item) => ({
-      id: item.id,
-      course_id: item.course_id,
-      category: item.category,
-      name: item.name,
-      folders: item.folders,
-      extension: item.extension,
-      size_label: item.size_label,
-      date: item.date,
-      entities: item.entities,
-    }));
+    let total = 0;
+    const items = [];
+    for (const item of directory.items) {
+      if (!courseDirectoryItemMatches(item, filters)) continue;
+      if (total >= start && items.length < pageSize) {
+        items.push({
+          id: item.id,
+          course_id: item.course_id,
+          category: item.category,
+          name: item.name,
+          folders: item.folders,
+          extension: item.extension,
+          size_label: item.size_label,
+          date: item.date,
+          entities: item.entities,
+        });
+      }
+      total += 1;
+    }
     return privateJsonResponse(request, env, 200, {
       items,
-      total: matched.length,
+      total,
       page,
       page_size: pageSize,
-      pages: Math.max(1, Math.ceil(matched.length / pageSize)),
-      has_more: start + items.length < matched.length,
+      pages: Math.max(1, Math.ceil(total / pageSize)),
+      has_more: start + items.length < total,
       facets: directory.facets,
       generated_at: directory.generated_at,
     });
