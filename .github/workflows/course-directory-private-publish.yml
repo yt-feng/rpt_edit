@@ -1,0 +1,259 @@
+name: Course Directory Private Publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      encrypted_asset:
+        description: Repository-relative AES-256-GCM bundle
+        required: false
+        default: .course-directory/course-directory-v1.json.aesgcm
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: course-directory-private-publish
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    if: ${{ vars.PORTAL_AUTOMATION_ENABLED == 'true' }}
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout encrypted directory bundle
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .course-directory
+            .github/workflows/course-directory-private-publish.yml
+
+      - name: Install private publishing dependencies
+        run: python -m pip install --disable-pip-version-check --quiet "boto3>=1.34,<2" "cryptography>=42,<47"
+
+      - name: Decrypt, validate, and publish private directory
+        env:
+          ENCRYPTED_ASSET: ${{ inputs.encrypted_asset }}
+          COURSE_DIRECTORY_BUNDLE_KEY_B64: ${{ secrets.COURSE_DIRECTORY_BUNDLE_KEY_B64 }}
+          COURSE_DIRECTORY_REDACT_TERMS: ${{ secrets.COURSE_DIRECTORY_REDACT_TERMS }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import os
+          import re
+
+          names = (
+              "COURSE_DIRECTORY_BUNDLE_KEY_B64",
+              "COURSE_DIRECTORY_REDACT_TERMS",
+              "R2_ACCOUNT_ID",
+              "R2_ACCESS_KEY_ID",
+              "R2_SECRET_ACCESS_KEY",
+              "R2_BUCKET",
+          )
+
+          def command_escape(value):
+              return value.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+
+          for name in names:
+              value = os.environ.get(name, "")
+              if not value:
+                  raise SystemExit(f"Required private directory setting is not configured: {name}")
+              values = [value]
+              if name == "COURSE_DIRECTORY_REDACT_TERMS":
+                  values.extend(part.strip() for part in re.split(r"[\r\n,，;；|]+", value) if part.strip())
+              for secret in values:
+                  print(f"::add-mask::{command_escape(secret)}")
+          PY
+          python - <<'PY'
+          import base64
+          import gzip
+          import hashlib
+          import io
+          import json
+          import os
+          import re
+          import unicodedata
+          from pathlib import Path, PurePosixPath
+
+          import boto3
+          from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+
+          MAX_PLAINTEXT_BYTES = 16 * 1024 * 1024
+          MAX_ITEMS = 45_000
+          AAD = b"course-directory-v1"
+          FORMAT = "course-directory-aes-256-gcm-v1"
+          OBJECT_KEY = "_course-directory/v1/directory.json"
+          CONTACT_PATTERNS = (
+              re.compile(r"(?i)(?<![A-Z0-9._%+-])[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}(?![A-Z0-9.-])"),
+              re.compile(r"(?i)(?:https?|ftp)\s*:\s*/\s*/\S*"),
+              re.compile(r"(?i)www\s*\.\s*\S*"),
+              re.compile(r"(?i)(?<![A-Z0-9-])(?:[A-Z0-9-]+\.)+(?:com|cn|net|org|io|co|edu|gov|info|biz|me)"
+                         r"(?:\.[A-Z]{2,})?(?:/\S*)?(?![A-Z0-9-])"),
+              re.compile(r"(?<!\d)(?:\+?86[-\s]?)?1[3-9]\d{9}(?!\d)"),
+              re.compile(r"(?i)(?:we\s*chat|wechat|vx|qq|telegram)[\s:：_-]*[A-Z0-9_-]{3,}"),
+              re.compile(r"(?:微信|微\s*信|公众号|联系(?:方式)?|群号|群聊|加群|提取码|网盘密码|解压密码)[\s:：_-]*[A-Za-z0-9_-]{2,}"),
+          )
+          COURSE_IDS = {
+              "fin-01", "fin-02", "fin-03", "fin-04", "fin-05", "fin-06",
+              "cap-01", "cap-02", "cap-03", "cap-04", "cap-05", "cap-06", "cap-07",
+              "inv-01", "inv-02", "inv-03", "inv-04",
+              "res-01", "res-02", "res-03", "res-04", "res-05",
+              "law-01", "law-02", "law-03", "law-04", "law-05", "law-06",
+              "lit-01", "lit-02", "lit-03", "lit-04",
+              "lib-01", "lib-02", "lib-03", "lib-04", "lib-05",
+              "career-01", "career-02", "career-03",
+              "alt-01", "alt-02", "alt-03",
+          }
+
+          def clean(value, limit):
+              text = unicodedata.normalize("NFKC", str(value or ""))
+              text = re.sub(r"[\x00-\x1f\x7f]", " ", text)
+              return re.sub(r"\s+", " ", text).strip()[:limit]
+
+          def split_terms(value):
+              return sorted({
+                  clean(term, 120).casefold()
+                  for term in re.split(r"[\r\n,，;；|]+", value or "")
+                  if len(clean(term, 120)) >= 2
+              })
+
+          restricted = split_terms(os.environ["COURSE_DIRECTORY_REDACT_TERMS"])
+          if not restricted:
+              raise SystemExit("Private directory redaction terms are empty")
+
+          asset_text = os.environ.get("ENCRYPTED_ASSET", "").strip()
+          asset = PurePosixPath(asset_text)
+          if (
+              asset.is_absolute()
+              or ".." in asset.parts
+              or not asset.parts
+              or asset.parts[0] != ".course-directory"
+              or asset.suffix != ".aesgcm"
+          ):
+              raise SystemExit("Encrypted asset path is invalid")
+          source = Path(*asset.parts)
+          if not source.is_file() or source.is_symlink():
+              raise SystemExit("Encrypted directory bundle is missing")
+
+          envelope = json.loads(source.read_text(encoding="utf-8"))
+          if not isinstance(envelope, dict) or envelope.get("format") != FORMAT:
+              raise SystemExit("Encrypted directory bundle format is invalid")
+          key = base64.b64decode(os.environ["COURSE_DIRECTORY_BUNDLE_KEY_B64"], validate=True)
+          nonce = base64.b64decode(str(envelope.get("nonce") or ""), validate=True)
+          ciphertext = base64.b64decode(str(envelope.get("ciphertext") or ""), validate=True)
+          if len(key) != 32 or len(nonce) != 12 or len(ciphertext) < 17:
+              raise SystemExit("Encrypted directory bundle parameters are invalid")
+          compressed = AESGCM(key).decrypt(nonce, ciphertext, AAD)
+          with gzip.GzipFile(fileobj=io.BytesIO(compressed), mode="rb") as archive:
+              plaintext = archive.read(MAX_PLAINTEXT_BYTES + 1)
+          if len(plaintext) > MAX_PLAINTEXT_BYTES:
+              raise SystemExit("Decrypted directory payload is too large")
+          payload = json.loads(plaintext.decode("utf-8"))
+          del plaintext, compressed, ciphertext, key
+
+          if not isinstance(payload, dict) or int(payload.get("schema_version") or 0) != 1:
+              raise SystemExit("Directory payload schema is invalid")
+          rows = payload.get("items")
+          if not isinstance(rows, list) or not rows or len(rows) > MAX_ITEMS:
+              raise SystemExit("Directory payload item count is invalid")
+
+          def safe_text(value, limit, required=True):
+              text = clean(value, limit)
+              lowered = text.casefold()
+              if required and not text:
+                  raise ValueError("required display text is empty")
+              if text and ("/" in text or "\\" in text):
+                  raise ValueError("display text contains a path separator")
+              if text and any(term in lowered for term in restricted):
+                  raise ValueError("display text contains a restricted marker")
+              if text and any(pattern.search(text) for pattern in CONTACT_PATTERNS):
+                  raise ValueError("display text contains private contact information")
+              return text
+
+          def safe_list(value, limit, text_limit):
+              if not isinstance(value, list):
+                  return []
+              result = []
+              for raw in value[:limit]:
+                  if not isinstance(raw, str):
+                      raise ValueError("display list contains a non-string value")
+                  text = safe_text(raw, text_limit)
+                  if text not in result:
+                      result.append(text)
+              return result
+
+          safe_items = []
+          seen = set()
+          for index, row in enumerate(rows):
+              if not isinstance(row, dict):
+                  raise SystemExit(f"Directory row {index} is invalid")
+              opaque_id = str(row.get("id") or "").strip().lower()
+              course_id = str(row.get("course_id") or "").strip().lower()
+              extension = str(row.get("extension") or "").strip().lower().lstrip(".")
+              if not re.fullmatch(r"[a-z0-9][a-z0-9_-]{7,79}", opaque_id) or opaque_id in seen:
+                  raise SystemExit(f"Directory row {index} has an invalid identifier")
+              if course_id not in COURSE_IDS:
+                  raise SystemExit(f"Directory row {index} has an invalid course identifier")
+              if extension and not re.fullmatch(r"[a-z0-9]{1,10}", extension):
+                  raise SystemExit(f"Directory row {index} has an invalid extension")
+              size_label = clean(row.get("size_label"), 32).upper()
+              if size_label and not re.fullmatch(r"\d+(?:\.\d+)?\s*(?:B|KB|MB|GB|TB)", size_label):
+                  size_label = ""
+              date = str(row.get("date") or "").strip()
+              if date and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", date):
+                  date = ""
+              try:
+                  safe_row = {
+                      "id": opaque_id,
+                      "course_id": course_id,
+                      "name": safe_text(row.get("name"), 240),
+                      "folders": safe_list(row.get("folders"), 8, 100),
+                      "extension": extension,
+                      "size_label": size_label,
+                      "date": date,
+                      "entities": safe_list(row.get("entities"), 8, 80),
+                  }
+              except ValueError as error:
+                  raise SystemExit(f"Directory row {index} failed display-field validation: {error}") from None
+              seen.add(opaque_id)
+              safe_items.append(safe_row)
+
+          generated_at = clean(payload.get("generated_at"), 40)
+          output = json.dumps({
+              "schema_version": 1,
+              "generated_at": generated_at,
+              "items": safe_items,
+          }, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+          if len(output) > MAX_PLAINTEXT_BYTES:
+              raise SystemExit("Validated directory payload is too large")
+          digest = hashlib.sha256(output).hexdigest()
+
+          client = boto3.client(
+              "s3",
+              endpoint_url=f"https://{os.environ['R2_ACCOUNT_ID']}.r2.cloudflarestorage.com",
+              aws_access_key_id=os.environ["R2_ACCESS_KEY_ID"],
+              aws_secret_access_key=os.environ["R2_SECRET_ACCESS_KEY"],
+              region_name="auto",
+          )
+          bucket = os.environ["R2_BUCKET"]
+          client.put_object(
+              Bucket=bucket,
+              Key=OBJECT_KEY,
+              Body=output,
+              ContentType="application/json; charset=utf-8",
+              CacheControl="private, no-store, max-age=0",
+              Metadata={"sha256": digest, "schema": "1"},
+          )
+          head = client.head_object(Bucket=bucket, Key=OBJECT_KEY)
+          if str(head.get("Metadata", {}).get("sha256") or "") != digest:
+              raise SystemExit("Private directory upload verification failed")
+          print("private course directory published")
+          PY

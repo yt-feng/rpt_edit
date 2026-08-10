@@ -9093,11 +9093,13 @@
     const message = document.getElementById("courseGateMessage");
     const login = document.getElementById("courseLoginButton");
     const catalog = document.getElementById("courseCatalog");
+    let directoryEpoch = 0;
     initAccountGate(workerUrl);
     initNewsfeedNav();
     if (!gate || !title || !message || !login || !catalog) return;
 
     function locked(titleText, messageText, showLogin = false) {
+      directoryEpoch += 1;
       gate.hidden = false;
       gate.classList.remove("is-unlocked");
       title.textContent = titleText;
@@ -9105,6 +9107,353 @@
       login.hidden = !showLogin;
       catalog.hidden = true;
       catalog.innerHTML = "";
+    }
+
+
+    function setupCourseDirectoryIndex(products) {
+      const directory = catalog.querySelector("#courseResourceDirectory");
+      if (!directory) return;
+
+      const categorySelect = directory.querySelector("#courseDirectoryCategory");
+      const productSelect = directory.querySelector("#courseDirectoryProduct");
+      const queryInput = directory.querySelector("#courseDirectorySearch");
+      const fileTypeSelect = directory.querySelector("#courseDirectoryFileType");
+      const popular = directory.querySelector("#courseDirectoryPopular");
+      const status = directory.querySelector("#courseDirectoryStatus");
+      const breadcrumb = directory.querySelector("#courseDirectoryBreadcrumb");
+      const results = directory.querySelector("#courseDirectoryResults");
+      const pagination = directory.querySelector("#courseDirectoryPagination");
+      const pageLabel = directory.querySelector("#courseDirectoryPageLabel");
+      const previousButton = directory.querySelector("#courseDirectoryPrevious");
+      const nextButton = directory.querySelector("#courseDirectoryNext");
+      const expandButton = directory.querySelector("#courseDirectoryExpand");
+      const collapseButton = directory.querySelector("#courseDirectoryCollapse");
+      if (!categorySelect || !productSelect || !queryInput || !fileTypeSelect || !popular || !status
+        || !breadcrumb || !results || !pagination || !pageLabel || !previousButton || !nextButton
+        || !expandButton || !collapseButton) return;
+
+      const instanceEpoch = ++directoryEpoch;
+      let activeController = null;
+      let searchTimer = 0;
+      let facetCourses = products.map((product) => ({ ...product, count: 0 }));
+      const state = {
+        category: "",
+        courseId: "",
+        query: "",
+        fileType: "",
+        page: 1,
+        pageSize: 36,
+      };
+
+      const integer = (value, fallback = 0) => {
+        const parsed = Number.parseInt(String(value || ""), 10);
+        return Number.isFinite(parsed) && parsed >= 0 ? parsed : fallback;
+      };
+
+      const normalizeEntity = (value) => {
+        if (typeof value === "string") {
+          const name = value.trim();
+          return name ? { name, count: 0 } : null;
+        }
+        if (!value || typeof value !== "object" || Array.isArray(value)) return null;
+        const name = String(value.name || value.title || "").trim();
+        return name ? { name, count: integer(value.count, 0) } : null;
+      };
+
+      const normalizeCourseFacet = (value) => {
+        if (!value || typeof value !== "object" || Array.isArray(value)) return null;
+        const id = String(value.id || value.course_id || "").trim();
+        const titleText = String(value.title || value.name || "").trim();
+        if (!id || !titleText) return null;
+        return {
+          id,
+          title: titleText,
+          category: String(value.category || "专业课程").trim() || "专业课程",
+          count: integer(value.count, 0),
+        };
+      };
+
+      const normalizeItem = (value) => {
+        if (!value || typeof value !== "object" || Array.isArray(value)) return null;
+        const id = String(value.id || "").trim();
+        const name = String(value.name || value.title || "").trim();
+        if (!id || !name) return null;
+        return {
+          id,
+          courseId: String(value.course_id || value.courseId || "").trim(),
+          category: String(value.category || "").trim(),
+          name,
+          folders: (Array.isArray(value.folders) ? value.folders : [])
+            .map((folder) => String(folder || "").trim())
+            .filter(Boolean),
+          extension: String(value.extension || value.ext || "").replace(/^\./, "").trim(),
+          sizeLabel: String(value.size_label || value.display_size || "").trim(),
+          date: String(value.date || value.modified_at || "").trim(),
+          entities: (Array.isArray(value.entities) ? value.entities : [])
+            .map(normalizeEntity)
+            .filter(Boolean),
+        };
+      };
+
+      const normalizeNamedFacets = (values, field = "name") => (Array.isArray(values) ? values : [])
+        .map((value) => {
+          if (typeof value === "string") return { name: value.trim(), count: 0 };
+          if (!value || typeof value !== "object") return null;
+          const name = String(value[field] || value.name || value.value || "").trim();
+          return name ? { name, count: integer(value.count, 0) } : null;
+        })
+        .filter(Boolean);
+
+      const normalizePayload = (value) => {
+        const payload = value && typeof value === "object" ? value : {};
+        const facets = payload.facets && typeof payload.facets === "object" ? payload.facets : {};
+        const items = (Array.isArray(payload.items) ? payload.items : []).map(normalizeItem).filter(Boolean);
+        const page = Math.max(1, integer(payload.page, state.page));
+        const pageSize = Math.max(1, integer(payload.page_size, state.pageSize));
+        const total = integer(payload.total, items.length);
+        const pages = Math.max(1, integer(payload.pages, Math.ceil(total / pageSize) || 1));
+        return {
+          items,
+          page,
+          pageSize,
+          total,
+          pages,
+          hasMore: Boolean(payload.has_more) || page < pages,
+          facets: {
+            courses: (Array.isArray(facets.courses) ? facets.courses : []).map(normalizeCourseFacet).filter(Boolean),
+            categories: normalizeNamedFacets(facets.categories),
+            fileTypes: normalizeNamedFacets(facets.file_types),
+            topEntities: (Array.isArray(facets.top_entities) ? facets.top_entities : [])
+              .map(normalizeEntity)
+              .filter(Boolean),
+          },
+        };
+      };
+
+      const requestUrl = () => {
+        const params = new URLSearchParams();
+        if (state.query) params.set("q", state.query);
+        if (state.courseId) params.set("course_id", state.courseId);
+        if (state.category) params.set("category", state.category);
+        if (state.fileType) params.set("file_type", state.fileType);
+        params.set("page", String(state.page));
+        params.set("page_size", String(state.pageSize));
+        return `${workerUrl}/course/directory?${params.toString()}`;
+      };
+
+      const courseTitleById = () => new Map([
+        ...products.map((product) => [product.id, product.title]),
+        ...facetCourses.map((product) => [product.id, product.title]),
+      ]);
+
+      const entityHtml = (entities) => entities.length ? `
+        <span class="course-directory-entities" aria-label="相关知名机构">
+          ${entities.map((entity) => `<span>${escapeHtml(entity.name)}</span>`).join("")}
+        </span>` : "";
+
+      const fileHtml = (item, titles) => {
+        const metadata = [];
+        const courseTitle = titles.get(item.courseId);
+        if (courseTitle) metadata.push(courseTitle);
+        if (item.category) metadata.push(item.category);
+        if (item.extension) metadata.push(item.extension.toUpperCase());
+        if (item.sizeLabel) metadata.push(item.sizeLabel);
+        if (item.date) metadata.push(item.date.slice(0, 10));
+        return `
+          <article class="course-directory-file" data-directory-file="${escapeHtml(item.id)}">
+            <span class="course-directory-kind">${escapeHtml(item.extension ? item.extension.toUpperCase() : "文件")}</span>
+            <span class="course-directory-item-copy">
+              <strong>${escapeHtml(item.name)}</strong>
+              ${item.folders.length ? `<span class="course-directory-path">${item.folders.map(escapeHtml).join(" / ")}</span>` : ""}
+              <span class="course-directory-meta">${metadata.map((value) => `<span>${escapeHtml(value)}</span>`).join("")}</span>
+              ${entityHtml(item.entities)}
+            </span>
+          </article>`;
+      };
+
+      const buildTree = (items) => {
+        const root = { title: "", children: new Map(), files: [] };
+        items.forEach((item) => {
+          let node = root;
+          item.folders.forEach((folder) => {
+            if (!node.children.has(folder)) node.children.set(folder, { title: folder, children: new Map(), files: [] });
+            node = node.children.get(folder);
+          });
+          node.files.push(item);
+        });
+        return root;
+      };
+
+      const nodeCount = (node) => node.files.length
+        + Array.from(node.children.values()).reduce((sum, child) => sum + nodeCount(child), 0);
+
+      const treeHtml = (node, titles) => {
+        const folders = Array.from(node.children.values()).map((child) => `
+          <details class="course-directory-tree" open>
+            <summary>
+              <span class="course-directory-kind is-folder">目录</span>
+              <strong>${escapeHtml(child.title)}</strong>
+              <span>${nodeCount(child)} 项</span>
+              <span class="course-directory-toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="course-directory-tree-children">
+              ${treeHtml(child, titles)}
+            </div>
+          </details>`).join("");
+        return `${folders}${node.files.map((item) => fileHtml(item, titles)).join("")}`;
+      };
+
+      const renderProductOptions = () => {
+        const available = facetCourses.filter((course) => !state.category || course.category === state.category);
+        if (state.courseId && !available.some((course) => course.id === state.courseId)) state.courseId = "";
+        productSelect.innerHTML = [
+          '<option value="">全部产品</option>',
+          ...available.map((course) => `<option value="${escapeHtml(course.id)}">${escapeHtml(course.title)}${course.count ? ` · ${course.count}` : ""}</option>`),
+        ].join("");
+        productSelect.value = state.courseId;
+      };
+
+      const updateFacets = (facets) => {
+        if (facets.courses.length) facetCourses = facets.courses;
+        const baseCategories = Array.from(new Set(products.map((product) => product.category)));
+        const categoryCount = new Map(facets.categories.map((entry) => [entry.name, entry.count]));
+        const categories = Array.from(new Set([...baseCategories, ...facets.categories.map((entry) => entry.name)]));
+        categorySelect.innerHTML = [
+          '<option value="">全部学习方向</option>',
+          ...categories.map((name) => `<option value="${escapeHtml(name)}">${escapeHtml(name)}${categoryCount.get(name) ? ` · ${categoryCount.get(name)}` : ""}</option>`),
+        ].join("");
+        categorySelect.value = state.category;
+        renderProductOptions();
+        fileTypeSelect.innerHTML = [
+          '<option value="">全部文件格式</option>',
+          ...facets.fileTypes.map((entry) => `<option value="${escapeHtml(entry.name)}">${escapeHtml(entry.name.toUpperCase())}${entry.count ? ` · ${entry.count}` : ""}</option>`),
+        ].join("");
+        if (facets.fileTypes.some((entry) => entry.name === state.fileType)) fileTypeSelect.value = state.fileType;
+        else state.fileType = "";
+        popular.innerHTML = facets.topEntities.length ? `
+          <span>热门机构与规则</span>
+          <div>${facets.topEntities.map((entity) => `
+            <button type="button" data-directory-entity="${escapeHtml(entity.name)}">${escapeHtml(entity.name)}${entity.count ? ` · ${entity.count}` : ""}</button>
+          `).join("")}</div>` : "";
+        popular.hidden = facets.topEntities.length === 0;
+      };
+
+      const renderBreadcrumb = () => {
+        const selectedCourse = facetCourses.find((course) => course.id === state.courseId);
+        const labels = ["全部文件"];
+        if (state.category) labels.push(state.category);
+        if (selectedCourse) labels.push(selectedCourse.title);
+        if (state.query) labels.push(`搜索：${state.query}`);
+        breadcrumb.innerHTML = labels.map((label, index) => `
+          ${index ? '<span aria-hidden="true">/</span>' : ""}<span>${escapeHtml(label)}</span>
+        `).join("");
+      };
+
+      const loadDirectory = async () => {
+        if (instanceEpoch !== directoryEpoch) return;
+        if (activeController) activeController.abort();
+        activeController = new AbortController();
+        const controller = activeController;
+        directory.classList.add("is-loading");
+        directory.setAttribute("aria-busy", "true");
+        status.textContent = state.query ? "正在搜索会员文件目录…" : "正在加载会员文件目录…";
+        results.innerHTML = '<p class="course-directory-loading">正在读取具体文件标题与目录层级…</p>';
+        pagination.hidden = true;
+        try {
+          const response = await fetch(requestUrl(), { cache: "no-store", headers: authHeaders(), signal: controller.signal });
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok) {
+            if (response.status === 401) clearAuthSession();
+            throw new Error(data.detail || data.error || "文件目录加载失败。");
+          }
+          if (instanceEpoch !== directoryEpoch || controller !== activeController) return;
+          const payload = normalizePayload(data);
+          state.page = payload.page;
+          state.pageSize = payload.pageSize;
+          updateFacets(payload.facets);
+          renderBreadcrumb();
+          const tree = buildTree(payload.items);
+          results.innerHTML = payload.items.length
+            ? treeHtml(tree, courseTitleById())
+            : '<p class="course-directory-empty">没有匹配的文件，请更换产品、学习方向或关键词。</p>';
+          const start = payload.total ? (payload.page - 1) * payload.pageSize + 1 : 0;
+          const end = Math.min(payload.total, payload.page * payload.pageSize);
+          status.textContent = `共 ${payload.total} 个具体文件，当前显示 ${start}–${end}`;
+          pageLabel.textContent = `第 ${payload.page} / ${payload.pages} 页`;
+          previousButton.disabled = payload.page <= 1;
+          nextButton.disabled = !payload.hasMore;
+          pagination.hidden = payload.pages <= 1;
+        } catch (error) {
+          if (error && error.name === "AbortError") return;
+          if (instanceEpoch !== directoryEpoch || controller !== activeController) return;
+          status.textContent = "文件目录暂时无法加载。";
+          breadcrumb.innerHTML = "";
+          results.innerHTML = `
+            <div class="course-directory-error">
+              <strong>${escapeHtml(error.message || "文件目录加载失败。")}</strong>
+              <button class="secondary" type="button" data-directory-retry>重新加载</button>
+            </div>`;
+        } finally {
+          if (controller === activeController) {
+            directory.classList.remove("is-loading");
+            directory.removeAttribute("aria-busy");
+          }
+        }
+      };
+
+      updateFacets({ courses: facetCourses, categories: [], fileTypes: [], topEntities: [] });
+      categorySelect.addEventListener("change", () => {
+        state.category = categorySelect.value;
+        state.courseId = "";
+        state.page = 1;
+        renderProductOptions();
+        loadDirectory();
+      });
+      productSelect.addEventListener("change", () => {
+        state.courseId = productSelect.value;
+        state.page = 1;
+        loadDirectory();
+      });
+      queryInput.addEventListener("input", () => {
+        window.clearTimeout(searchTimer);
+        searchTimer = window.setTimeout(() => {
+          state.query = queryInput.value.trim();
+          state.page = 1;
+          loadDirectory();
+        }, 320);
+      });
+      fileTypeSelect.addEventListener("change", () => {
+        state.fileType = fileTypeSelect.value;
+        state.page = 1;
+        loadDirectory();
+      });
+      previousButton.addEventListener("click", () => {
+        state.page = Math.max(1, state.page - 1);
+        loadDirectory();
+      });
+      nextButton.addEventListener("click", () => {
+        state.page += 1;
+        loadDirectory();
+      });
+      expandButton.addEventListener("click", () => {
+        results.querySelectorAll("details.course-directory-tree").forEach((details) => { details.open = true; });
+      });
+      collapseButton.addEventListener("click", () => {
+        results.querySelectorAll("details.course-directory-tree").forEach((details) => { details.open = false; });
+      });
+      directory.addEventListener("click", (event) => {
+        const entityButton = event.target.closest("[data-directory-entity]");
+        const retryButton = event.target.closest("[data-directory-retry]");
+        if (entityButton) {
+          state.query = entityButton.dataset.directoryEntity || "";
+          queryInput.value = state.query;
+          state.page = 1;
+          loadDirectory();
+        } else if (retryButton) {
+          loadDirectory();
+        }
+      });
+      loadDirectory();
     }
 
     function renderCourseCatalog(data) {
@@ -9191,6 +9540,50 @@
           </div>
           <p class="course-browser-status" id="courseBrowserStatus" aria-live="polite"></p>
         </section>
+        <section class="course-directory" id="courseResourceDirectory" aria-labelledby="courseDirectoryTitle">
+          <header class="course-directory-heading">
+            <div>
+              <p>MEMBER FILE INDEX</p>
+              <h2 id="courseDirectoryTitle">课程文件目录</h2>
+              <span>浏览具体文件标题、资料层级与相关知名机构；目录内容仅在会员资格核验通过后加载。</span>
+            </div>
+          </header>
+          <div class="course-directory-controls">
+            <label>
+              <span>学习方向</span>
+              <select id="courseDirectoryCategory"></select>
+            </label>
+            <label>
+              <span>产品</span>
+              <select id="courseDirectoryProduct"></select>
+            </label>
+            <label class="course-directory-search-field">
+              <span>搜索文件目录</span>
+              <input id="courseDirectorySearch" type="search" placeholder="例如：机构、律所、监管规则或项目名称" autocomplete="off">
+            </label>
+            <label>
+              <span>文件格式</span>
+              <select id="courseDirectoryFileType"><option value="">全部文件格式</option></select>
+            </label>
+          </div>
+          <div class="course-directory-popular" id="courseDirectoryPopular" hidden></div>
+          <div class="course-directory-summary">
+            <div>
+              <p id="courseDirectoryStatus" role="status" aria-live="polite">准备加载会员文件目录…</p>
+              <nav id="courseDirectoryBreadcrumb" aria-label="当前文件筛选"></nav>
+            </div>
+            <div class="course-directory-tree-actions">
+              <button type="button" id="courseDirectoryExpand">展开全部</button>
+              <button type="button" id="courseDirectoryCollapse">折叠全部</button>
+            </div>
+          </div>
+          <div class="course-directory-results" id="courseDirectoryResults"></div>
+          <footer class="course-directory-pagination" id="courseDirectoryPagination" hidden>
+            <button class="secondary" id="courseDirectoryPrevious" type="button">上一页</button>
+            <span id="courseDirectoryPageLabel"></span>
+            <button class="secondary" id="courseDirectoryNext" type="button">下一页</button>
+          </footer>
+        </section>
         <div class="course-groups">${groups}</div>
         <aside class="course-contact">
           <div>
@@ -9236,6 +9629,7 @@
       if (searchInput) searchInput.addEventListener("input", applyFilters);
       if (categoryFilter) categoryFilter.addEventListener("change", applyFilters);
       applyFilters();
+      setupCourseDirectoryIndex(products);
     }
 
     async function refresh() {

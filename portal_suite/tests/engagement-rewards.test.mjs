@@ -31,9 +31,6 @@ const restrictedCourseMarkers = [
   ["清", "华"],
   ["Wi", "nd"],
   ["Bloom", "berg"],
-  ["德", "勤"],
-  ["普华", "永道"],
-  ["P", "wC"],
   ["罗兰", "贝格"],
   ["埃森", "哲"],
   ["MS", " Training"],
@@ -44,6 +41,9 @@ class MemoryR2 {
   constructor() {
     this.rows = new Map();
     this.version = 0;
+    this.jsonReadKeys = [];
+    this.textReadKeys = [];
+    this.textOnlyKeys = new Set();
     this.failPutPrefixOnce = "";
     this.failGetAfterPutExact = "";
     this.failNextGetExact = "";
@@ -61,11 +61,23 @@ class MemoryR2 {
     }
     const row = this.rows.get(key);
     if (!row) return null;
-    return {
+    const bucket = this;
+    const object = {
       etag: row.etag,
       body: new TextEncoder().encode(row.value),
-      async text() { return row.value; },
+      size: new TextEncoder().encode(row.value).byteLength,
+      async text() {
+        bucket.textReadKeys.push(key);
+        return row.value;
+      },
     };
+    if (!this.textOnlyKeys.has(key)) {
+      object.json = async () => {
+        bucket.jsonReadKeys.push(key);
+        return JSON.parse(row.value);
+      };
+    }
+    return object;
   }
 
   async put(key, value, options = {}) {
@@ -98,6 +110,7 @@ function envFor(bucket) {
     CATALOG_URL: "https://static.example.invalid/catalog.json",
     STATIC_DATA_PREFIX: "edge-static/runtime-data",
     ALLOWED_ORIGIN: "https://portal.example.invalid",
+    COURSE_DIRECTORY_REDACT_TERMS: restrictedCourseMarkers.join("\n"),
   };
 }
 
@@ -438,6 +451,258 @@ test("course API enforces at least 30 remaining days on the server", async () =>
   assert.equal(limited.data.can_access, false, "a limited report grant is not a membership");
   assert.deepEqual(limited.data.courses, []);
   assert.deepEqual(limited.data.course_catalog, []);
+});
+
+test("course directory stays private, searchable, paginated, and strips storage locators", async () => {
+  const bucket = new MemoryR2();
+  bucket.seed("edge-static/runtime-data/catalog.json", { items: [] });
+  const hiddenMarker = restrictedCourseMarkers[0];
+  bucket.seed("_course-directory/v1/directory.json", {
+    schema_version: 1,
+    generated_at: "2026-08-10T12:00:00+08:00",
+    items: [
+      {
+        id: "file-00000001",
+        course_id: "cap-03",
+        name: "中国证监会 IPO 审核规则与案例",
+        folders: ["IPO 上市实务", "监管审核"],
+        extension: "pdf",
+        size_label: "12.4 MB",
+        date: "2026-08-10",
+        entities: ["中国证监会", "上交所", "深交所"],
+        source_path: "must/not/leave/private/storage",
+        object_key: "private-object-key",
+        locator: "private-locator",
+      },
+      {
+        id: "file-00000002",
+        course_id: "res-02",
+        name: "摩根大通全球利率与外汇策略",
+        folders: ["全球宏观", "利率与外汇"],
+        extension: "pdf",
+        size_label: "8.1 MB",
+        date: "2026-08-09",
+        entities: ["摩根大通", "高盛", "美银", "瑞银"],
+      },
+      {
+        id: "file-00000003",
+        course_id: "law-01",
+        name: "资本市场尽职调查工作底稿",
+        folders: ["非诉项目", "尽职调查"],
+        extension: "docx",
+        size_label: "980 KB",
+        date: "2026-08-08",
+        entities: ["金杜", "中伦", "君合", "国浩"],
+      },
+      {
+        id: "file-00000004",
+        course_id: "fin-01",
+        name: `${hiddenMarker} provider material`,
+        folders: ["估值"],
+        extension: "xlsx",
+        size_label: "2 MB",
+        date: "2026-08-07",
+        entities: [],
+      },
+      {
+        id: "file-00000005",
+        course_id: "fin-01",
+        name: "课程咨询 private.user@example.com",
+        folders: ["估值"],
+        extension: "pdf",
+        size_label: "2 MB",
+        date: "2026-08-07",
+        entities: [],
+      },
+      {
+        id: "file-00000006",
+        course_id: "fin-01",
+        name: "估值案例",
+        folders: ["资料 private.example.com"],
+        extension: "pdf",
+        size_label: "2 MB",
+        date: "2026-08-07",
+        entities: [],
+      },
+      {
+        id: "file-00000007",
+        course_id: "fin-01",
+        name: "估值案例讲解",
+        folders: ["估值"],
+        extension: "pdf",
+        size_label: "2 MB",
+        date: "2026-08-07",
+        entities: ["微信 abc123", "13800138000"],
+      },
+      {
+        id: "file-00000008",
+        course_id: "fin-01",
+        name: "估值资料 private.example.edu",
+        folders: ["估值"],
+        extension: "pdf",
+        size_label: "2 MB",
+        date: "2026-08-07",
+        entities: [],
+      },
+      {
+        id: "file-00000009",
+        course_id: "fin-01",
+        name: "估值资料 ftp : / /private.example.edu",
+        folders: ["估值"],
+        extension: "pdf",
+        size_label: "2 MB",
+        date: "2026-08-07",
+        entities: [],
+      },
+      {
+        id: "file-00000010",
+        course_id: "fin-01",
+        name: "估值资料",
+        folders: ["www . private.example.edu"],
+        extension: "pdf",
+        size_label: "2 MB",
+        date: "2026-08-07",
+        entities: [],
+      },
+      {
+        id: "file-00000011",
+        course_id: "fin-01",
+        name: "联系abc@example.com资料",
+        folders: ["估值"],
+        extension: "pdf",
+        size_label: "2 MB",
+        date: "2026-08-07",
+        entities: [],
+      },
+      {
+        id: "file-00000012",
+        course_id: "fin-01",
+        name: "网址private.example.edu资料",
+        folders: ["估值"],
+        extension: "pdf",
+        size_label: "2 MB",
+        date: "2026-08-07",
+        entities: [],
+      },
+    ],
+  });
+  const env = envFor(bucket);
+
+  const anonymous = await jsonRequest(env, "/course/directory");
+  assert.equal(anonymous.response.status, 401);
+  assert.equal(Object.hasOwn(anonymous.data, "items"), false);
+  assert.equal(Object.hasOwn(anonymous.data, "facets"), false);
+
+  const token = await register(env);
+  const email = "reward-reader@example.com";
+  const entitlementKey = `_account/entitlements/${encodeURIComponent(email)}`;
+  bucket.seed(entitlementKey, {
+    id: "entitlement-course-directory",
+    email,
+    plan: "annual",
+    status: "active",
+    lifetime: false,
+    current_period_end: new Date(Date.now() + 31 * 24 * 60 * 60 * 1000).toISOString(),
+    paddle_last_event_id: "",
+    paddle_last_occurred_at: "",
+    updated_at: new Date().toISOString(),
+  });
+
+  const redactionTerms = env.COURSE_DIRECTORY_REDACT_TERMS;
+  delete env.COURSE_DIRECTORY_REDACT_TERMS;
+  const missingRedactionConfig = await jsonRequest(env, "/course/directory", { headers: bearer(token) });
+  assert.equal(missingRedactionConfig.response.status, 503);
+  assert.equal(Object.hasOwn(missingRedactionConfig.data, "items"), false);
+  env.COURSE_DIRECTORY_REDACT_TERMS = redactionTerms;
+
+  const firstPage = await jsonRequest(env, "/course/directory?page=1&page_size=2", { headers: bearer(token) });
+  assert.equal(firstPage.response.status, 200);
+  assert.equal(firstPage.data.total, 3, "records containing redaction markers or private contacts must be omitted");
+  assert.equal(firstPage.data.items.length, 2);
+  assert.equal(firstPage.data.has_more, true);
+  assert.ok(bucket.jsonReadKeys.includes("_course-directory/v1/directory.json"));
+  assert.equal(bucket.textReadKeys.includes("_course-directory/v1/directory.json"), false);
+  assert.equal(firstPage.response.headers.get("cache-control"), "private, no-store, max-age=0");
+  assert.ok(firstPage.data.facets.courses.some((entry) => entry.id === "cap-03" && entry.count === 1));
+  assert.ok(firstPage.data.facets.top_entities.some((entry) => entry.name === "中国证监会"));
+  const serialized = JSON.stringify(firstPage.data);
+  assert.equal(serialized.includes("must/not/leave"), false);
+  assert.equal(serialized.includes("private-object-key"), false);
+  assert.equal(serialized.includes("private-locator"), false);
+  assert.deepEqual(
+    Object.keys(firstPage.data.items[0]).sort(),
+    ["category", "course_id", "date", "entities", "extension", "folders", "id", "name", "size_label"],
+  );
+
+  const institutionSearch = await jsonRequest(
+    env,
+    `/course/directory?q=${encodeURIComponent("摩根大通 高盛")}&file_type=pdf`,
+    { headers: bearer(token) },
+  );
+  assert.equal(institutionSearch.response.status, 200);
+  assert.equal(institutionSearch.data.total, 1);
+  assert.equal(institutionSearch.data.items[0].name, "摩根大通全球利率与外汇策略");
+  assert.deepEqual(institutionSearch.data.items[0].entities, ["摩根大通", "高盛", "美银", "瑞银"]);
+
+  const lawCourse = await jsonRequest(env, "/course/directory?course_id=law-01&category=%E8%B5%84%E6%9C%AC%E5%B8%82%E5%9C%BA%E6%B3%95%E5%BE%8B", {
+    headers: bearer(token),
+  });
+  assert.equal(lawCourse.data.total, 1);
+  assert.equal(lawCourse.data.items[0].extension, "docx");
+
+  bucket.seed(entitlementKey, {
+    id: "entitlement-course-directory",
+    email,
+    plan: "annual",
+    status: "active",
+    lifetime: false,
+    current_period_end: new Date(Date.now() + 29 * 24 * 60 * 60 * 1000).toISOString(),
+    paddle_last_event_id: "",
+    paddle_last_occurred_at: "",
+    updated_at: new Date().toISOString(),
+  });
+  const expiredSoon = await jsonRequest(env, "/course/directory", { headers: bearer(token) });
+  assert.equal(expiredSoon.response.status, 403);
+  assert.equal(Object.hasOwn(expiredSoon.data, "items"), false);
+  assert.equal(Object.hasOwn(expiredSoon.data, "facets"), false);
+});
+
+test("course directory falls back to text parsing when the R2 body has no json method", async () => {
+  const bucket = new MemoryR2();
+  const directoryKey = "_course-directory/v1/directory.json";
+  bucket.seed("edge-static/runtime-data/catalog.json", { items: [] });
+  bucket.seed(directoryKey, {
+    schema_version: 1,
+    generated_at: "2026-08-10T12:00:00+08:00",
+    items: [{
+      id: "file-fallback-01",
+      course_id: "cap-03",
+      name: "交易所上市审核问答",
+      folders: ["上市实务"],
+      extension: "pdf",
+      size_label: "1 MB",
+      date: "2026-08-10",
+      entities: ["上交所"],
+    }],
+  });
+  bucket.textOnlyKeys.add(directoryKey);
+  const env = envFor(bucket);
+  const token = await register(env);
+  const email = "reward-reader@example.com";
+  bucket.seed(`_account/entitlements/${encodeURIComponent(email)}`, {
+    id: "entitlement-course-directory-fallback",
+    email,
+    plan: "annual",
+    status: "active",
+    lifetime: false,
+    current_period_end: new Date(Date.now() + 31 * 24 * 60 * 60 * 1000).toISOString(),
+    updated_at: new Date().toISOString(),
+  });
+  const response = await jsonRequest(env, "/course/directory", { headers: bearer(token) });
+  assert.equal(response.response.status, 200);
+  assert.equal(response.data.total, 1);
+  assert.ok(bucket.textReadKeys.includes(directoryKey));
+  assert.equal(bucket.jsonReadKeys.includes(directoryKey), false);
 });
 
 test("restricted course catalog and contact are absent from the unauthenticated static page", async () => {

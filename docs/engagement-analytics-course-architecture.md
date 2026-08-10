@@ -67,6 +67,89 @@ address in public source. Raw inventory documents, exact resource counts,
 storage paths, and source file names remain outside the repository and are
 never serialized by this API.
 
+### Private file directory
+
+Eligible members can browse the concrete resource inventory through
+`GET /course/directory`. The endpoint calls `courseAccessForUser` before it
+reads directory storage. An anonymous request receives `401`; an authenticated
+account that does not meet the Course gate receives `403`. Neither response
+contains `items`, `facets`, entity names, counts, or generation metadata.
+
+The accepted query parameters are:
+
+- `q`: an 80-character, Unicode-normalized search across the display name,
+  neutral folder labels, category, derived file type, and allowed notable
+  entities;
+- `course_id`, `category`, and `file_type`: exact filters;
+- `page` and `page_size`: bounded pagination, with a maximum page size of 100.
+
+An eligible response contains `items`, `total`, `page`, `page_size`,
+`has_more`, private `facets`, and `generated_at`. Each item is reconstructed by
+the Worker from an allow-list and contains only `id`, `course_id`, `category`,
+`name`, `folders`, `extension`, `size_label`, `date`, and `entities`. The
+response never includes an upstream path, provider field, original directory
+root, R2 object key, download locator, or encrypted-bundle metadata. Large
+investment banks, law firms, exchanges, and regulators may remain in a display
+name or entity list when they materially identify the indexed content; source
+course, community, and instructor brands remain redacted.
+
+The validated index is a single private R2 JSON object at a neutral internal
+key. A Worker isolate retains the parsed allow-listed representation for five
+minutes, keyed by its R2 binding, so the roughly forty-thousand-row index is not
+read and parsed for every keystroke. The object is capped at 16 MiB and 45,000
+rows. Directory responses use `private, no-store` and never put the index in
+static-site assets or browser storage.
+
+### Encrypted directory publishing
+
+The plaintext inventory and mapping inputs stay outside Git. The repository may
+track only a sanitized AES-256-GCM bundle at
+`.course-directory/course-directory-v1.json.aesgcm`. Its JSON envelope is:
+
+```json
+{
+  "format": "course-directory-aes-256-gcm-v1",
+  "nonce": "base64-encoded 12-byte nonce",
+  "ciphertext": "base64-encoded ciphertext and authentication tag"
+}
+```
+
+The plaintext inside the envelope is a gzip-compressed schema-version-1 JSON
+index, encrypted with associated data `course-directory-v1`. The 32-byte key is
+base64-encoded in the `COURSE_DIRECTORY_BUNDLE_KEY_B64` GitHub Secret; it must
+never be written to the bundle, source tree, workflow input, artifact, or log.
+The same private redaction list is stored in
+`COURSE_DIRECTORY_REDACT_TERMS` and is supplied both to the publishing workflow
+and to the Worker deployment.
+
+After the private builder emits the flat sanitized index, create the tracked
+envelope with the public neutral helper:
+
+```sh
+node scripts/encrypt_member_course_directory.mjs \
+  --input /private/path/course-directory.json \
+  --output .course-directory/course-directory-v1.json.aesgcm
+```
+
+The helper reads `COURSE_DIRECTORY_BUNDLE_KEY_B64` by default. It also accepts
+`--key-file /private/path/key` for either a raw 32-byte key or its base64 text.
+It prints only the output basename, format, encrypted size, and ciphertext
+digest. `.gitignore` excludes every other file in `.course-directory`, so a
+plaintext index, private map, or key cannot be staged from that directory.
+
+`.github/workflows/course-directory-private-publish.yml` performs the release:
+
+1. decrypt the tracked ciphertext inside the ephemeral runner;
+2. cap decompression, validate identifiers and display fields, reject every
+   configured redaction marker and path separator, and rebuild every row from
+   the API allow-list;
+3. upload only the compact sanitized JSON to private R2 with `no-store`;
+4. verify the uploaded object's SHA-256 metadata before reporting success.
+
+The upload overwrites one R2 object atomically. A failed decrypt, validation,
+or verification leaves the previously published directory readable. The
+workflow never uploads its plaintext workspace as an Actions artifact.
+
 ## Analytics collection
 
 `assets/analytics.js` is the common client for application, legal, generated
@@ -110,4 +193,5 @@ Coverage is provided by:
 
 - `portal_suite/tests/engagement-rewards.test.mjs`
 - `portal_suite/tests/analytics-attribution.test.mjs`
+- `.github/workflows/course-directory-private-publish.yml`
 - the existing portal frontend, export-pagination, Blog build, and SEO suites.

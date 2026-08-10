@@ -31,7 +31,9 @@ jobs:
             portal_suite/site_src
             portal_suite/tests
             scripts/build_portal_suite_site.py
+            scripts/build_member_course_directory.py
             scripts/check_public_identity.py
+            scripts/encrypt_member_course_directory.mjs
             scripts/render_private_config.py
             scripts/portal_r2_prefix.py
             scripts/test_portal_catalog_object_keys.js
@@ -50,6 +52,8 @@ jobs:
             scripts/test_portal_source_lead_integration.js
             scripts/test_portal_chart_search_frontend.js
             scripts/test_portal_site_runtime.js
+            scripts/test_build_member_course_directory.py
+            scripts/test_encrypt_member_course_directory.mjs
             scripts/test_source_lead_adapter.js
             scripts/test_portal_r2_prefix.py
 
@@ -77,6 +81,8 @@ jobs:
           node scripts/test_portal_source_lead_integration.js
           node scripts/test_portal_chart_search_frontend.js
           node scripts/test_portal_site_runtime.js
+          python3 -B scripts/test_build_member_course_directory.py
+          node --test scripts/test_encrypt_member_course_directory.mjs
           python3 scripts/test_portal_r2_prefix.py
 
       - name: Materialize private deployment values
@@ -222,6 +228,7 @@ jobs:
           SUPPLEMENTAL_SEARCH_URL: ${{ secrets.SUPPLEMENTAL_SEARCH_URL || 'unconfigured' }}
           SUPPLEMENTAL_SEARCH_HMAC_SECRET: ${{ secrets.SUPPLEMENTAL_SEARCH_HMAC_SECRET || 'unconfigured' }}
           SUPPLEMENTAL_SEARCH_REDACT_TERMS: ${{ secrets.SUPPLEMENTAL_SEARCH_REDACT_TERMS || 'unconfigured' }}
+          COURSE_DIRECTORY_REDACT_TERMS: ${{ secrets.COURSE_DIRECTORY_REDACT_TERMS || 'unconfigured' }}
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
@@ -249,3 +256,4 @@ jobs:
             SUPPLEMENTAL_SEARCH_URL
             SUPPLEMENTAL_SEARCH_HMAC_SECRET
             SUPPLEMENTAL_SEARCH_REDACT_TERMS
+            COURSE_DIRECTORY_REDACT_TERMS

@@ -238,6 +238,33 @@ const REWARD_BASE_POINTS = 10;
 const REWARD_POINTS_REPORT_COST = 70;
 const REWARD_R2_WRITE_RETRIES = 8;
 const COURSE_MIN_REMAINING_DAYS = 30;
+const COURSE_DIRECTORY_R2_KEY = "_course-directory/v1/directory.json";
+const COURSE_DIRECTORY_CACHE_TTL_MS = 5 * 60 * 1000;
+const COURSE_DIRECTORY_MAX_BYTES = 16 * 1024 * 1024;
+const COURSE_DIRECTORY_MAX_ITEMS = 45000;
+const COURSE_DIRECTORY_MAX_PAGE_SIZE = 100;
+const COURSE_DIRECTORY_CACHE = new WeakMap();
+const COURSE_DIRECTORY_ITEM_KEYS = new Set([
+  "id",
+  "course_id",
+  "category",
+  "name",
+  "folders",
+  "extension",
+  "file_type",
+  "size_label",
+  "date",
+  "entities",
+]);
+const COURSE_DIRECTORY_CONTACT_PATTERNS = [
+  /(?<![A-Z0-9._%+-])[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}(?![A-Z0-9.-])/iu,
+  /(?:https?|ftp)\s*:\s*\/\s*\/\S*/iu,
+  /www\s*\.\s*\S*/iu,
+  /(?<![A-Z0-9-])(?:[A-Z0-9-]+\.)+(?:com|cn|net|org|io|co|edu|gov|info|biz|me)(?:\.[A-Z]{2,})?(?:\/\S*)?(?![A-Z0-9-])/iu,
+  /(?<!\d)(?:\+?86[-\s]?)?1[3-9]\d{9}(?!\d)/u,
+  /(?:we\s*chat|wechat|vx|qq|telegram)[\s:：_-]*[A-Z0-9_-]{3,}/iu,
+  /(?:微信|微\s*信|公众号|联系(?:方式)?|群号|群聊|加群|提取码|网盘密码|解压密码)[\s:：_-]*[A-Za-z0-9_-]{2,}/u,
+];
 const COURSE_CATALOG = Object.freeze([
   {
     id: "fin-01",
@@ -298,15 +325,15 @@ const COURSE_CATALOG = Object.freeze([
   {
     id: "cap-03",
     category: "资本市场",
-    title: "境内外 IPO 上市实务",
-    summary: "覆盖境内外上市流程、内部控制、审核规则、招股书和项目实务。",
+    title: "证监会、上交所与深交所 IPO 上市实务",
+    summary: "覆盖中国证监会、上交所、深交所审核规则，以及境内外上市流程、招股书和项目实务。",
     audience: "IPO 项目组、董秘与资本市场律师",
   },
   {
     id: "cap-04",
     category: "资本市场",
-    title: "资本市场法规与案例库",
-    summary: "面向资本市场项目的法规、案例、专题研究和底稿参考资料库。",
+    title: "证监会与交易所资本市场法规案例库",
+    summary: "汇集中国证监会、上交所和深交所规则、监管案例、专题研究及项目底稿参考资料。",
     audience: "资本市场项目团队与研究人员",
   },
   {
@@ -368,15 +395,15 @@ const COURSE_CATALOG = Object.freeze([
   {
     id: "res-02",
     category: "投资研究",
-    title: "全球固收、宏观与量化研究",
-    summary: "通过国际投行研究材料学习利率、外汇、信用、量化及跨资产框架。",
+    title: "摩根大通、高盛、美银与瑞银全球研究",
+    summary: "通过摩根大通、高盛、美银、瑞银等国际投行材料学习利率、外汇、信用、量化及跨资产框架。",
     audience: "固定收益、宏观与量化策略研究人员",
   },
   {
     id: "res-03",
     category: "投资研究",
-    title: "行业报告与数据检索库",
-    summary: "提供行业报告、统计年鉴、区域数据及专题资料，支持研究与项目尽调。",
+    title: "中金与中信证券行业报告检索库",
+    summary: "汇集中金公司、中信证券等机构研究，以及统计年鉴、区域数据和专题资料，支持项目尽调。",
     audience: "行业研究、项目尽调与商业分析人员",
   },
   {
@@ -389,15 +416,15 @@ const COURSE_CATALOG = Object.freeze([
   {
     id: "law-01",
     category: "资本市场法律",
-    title: "资本市场非诉项目技能",
-    summary: "围绕资本市场非诉项目，训练尽调、财务分析、交易文件和项目执行能力。",
+    title: "金杜、中伦、君合与国浩非诉项目实务",
+    summary: "参考金杜、中伦、君合、国浩等律所内容，训练尽调、财务分析、交易文件和项目执行能力。",
     audience: "非诉律师、投行律师与公司法务",
   },
   {
     id: "law-02",
     category: "资本市场法律",
-    title: "并购与重组法律实务",
-    summary: "覆盖并购重组操作、房地产并购、重大资产重组和交易文件设计。",
+    title: "头部律所并购与重组法律实务",
+    summary: "覆盖金杜、中伦、君合、国浩等律所的并购重组、房地产并购、重大资产重组和交易文件内容。",
     audience: "并购律师、交易律师与投行法务",
   },
   {
@@ -480,8 +507,8 @@ const COURSE_CATALOG = Object.freeze([
   {
     id: "lib-04",
     category: "专业资料库",
-    title: "咨询、内控与管理工具库",
-    summary: "汇集流程优化、战略分析、内部控制和交易整合常用工具。",
+    title: "德勤与普华永道咨询、内控工具库",
+    summary: "汇集德勤、普华永道等机构的流程优化、战略分析、内部控制和交易整合工具。",
     audience: "咨询、内部控制、交易整合与企业管理人员",
   },
   {
@@ -542,6 +569,7 @@ const COURSE_CATALOG = Object.freeze([
   },
 ].map((course) => Object.freeze(course)));
 const COURSE_TITLES = Object.freeze(COURSE_CATALOG.map((course) => course.title));
+const COURSE_DIRECTORY_COURSES = new Map(COURSE_CATALOG.map((course) => [course.id, course]));
 const ACCOUNT_ADMIN_EXPORT_PAGE_SIZE = 500;
 const ACCOUNT_ADMIN_EXPORT_MAX_USERS = 5000;
 const ACCOUNT_ADMIN_EXPORT_CONCURRENCY = 8;
@@ -3924,6 +3952,269 @@ async function handleCourseAccess(request, env) {
     });
   } catch (_error) {
     return jsonResponse(request, env, 503, { detail: "课程会员资格暂时无法核验。" });
+  }
+}
+
+function courseDirectoryRestrictedTerms(env) {
+  const configured = cleanEnv(env.COURSE_DIRECTORY_REDACT_TERMS);
+  if (!configured) throw new Error("Course directory redaction configuration is incomplete.");
+  const terms = [...new Set(configured
+    .split(/[\r\n,，;；|]+/u)
+    .map((value) => String(value || "").normalize("NFKC").trim().toLowerCase())
+    .filter((value) => value.length >= 2))];
+  if (!terms.length) throw new Error("Course directory redaction configuration is incomplete.");
+  return terms;
+}
+
+function cleanCourseDirectoryText(value, limit) {
+  return String(value || "")
+    .normalize("NFKC")
+    .replace(/[\u0000-\u001f\u007f]/gu, " ")
+    .replace(/\s+/gu, " ")
+    .trim()
+    .slice(0, limit);
+}
+
+function courseDirectoryTextIsSafe(value, restrictedTerms) {
+  const normalized = cleanCourseDirectoryText(value, 1000).toLowerCase();
+  return Boolean(normalized)
+    && !/[\\/]/u.test(normalized)
+    && !restrictedTerms.some((term) => normalized.includes(term))
+    && !COURSE_DIRECTORY_CONTACT_PATTERNS.some((pattern) => pattern.test(normalized));
+}
+
+function cleanCourseDirectoryList(value, restrictedTerms, options = {}) {
+  if (!Array.isArray(value)) return [];
+  const limit = Math.max(1, Number(options.limit || 8));
+  const textLimit = Math.max(1, Number(options.textLimit || 100));
+  let writeIndex = 0;
+  for (let readIndex = 0; readIndex < Math.min(value.length, limit); readIndex += 1) {
+    const raw = value[readIndex];
+    if (typeof raw !== "string") return null;
+    const text = cleanCourseDirectoryText(raw, textLimit);
+    if (!courseDirectoryTextIsSafe(text, restrictedTerms)) return null;
+    let duplicate = false;
+    for (let index = 0; index < writeIndex; index += 1) {
+      if (value[index] === text) {
+        duplicate = true;
+        break;
+      }
+    }
+    if (!duplicate) {
+      value[writeIndex] = text;
+      writeIndex += 1;
+    }
+  }
+  value.length = writeIndex;
+  return value;
+}
+
+function courseDirectoryFileType(extension) {
+  const ext = String(extension || "").toLowerCase();
+  if (ext === "pdf") return "pdf";
+  if (["mp4", "mov", "mkv", "avi", "webm", "m4v"].includes(ext)) return "video";
+  if (["mp3", "m4a", "wav", "flac", "aac", "ogg"].includes(ext)) return "audio";
+  if (["doc", "docx", "txt", "rtf", "md"].includes(ext)) return "document";
+  if (["ppt", "pptx", "key"].includes(ext)) return "presentation";
+  if (["xls", "xlsx", "csv", "tsv", "numbers"].includes(ext)) return "spreadsheet";
+  if (["zip", "rar", "7z", "tar", "gz"].includes(ext)) return "archive";
+  if (["jpg", "jpeg", "png", "gif", "webp", "svg"].includes(ext)) return "image";
+  return "other";
+}
+
+function cleanCourseDirectoryItem(raw, restrictedTerms) {
+  if (!raw || typeof raw !== "object" || Array.isArray(raw)) return null;
+  const id = String(raw.id || "").trim().toLowerCase();
+  const courseId = String(raw.course_id || "").trim().toLowerCase();
+  const course = COURSE_DIRECTORY_COURSES.get(courseId);
+  if (!/^[a-z0-9][a-z0-9_-]{7,79}$/u.test(id) || !course) return null;
+  const name = cleanCourseDirectoryText(raw.name, 240);
+  if (!courseDirectoryTextIsSafe(name, restrictedTerms)) return null;
+  const folders = cleanCourseDirectoryList(raw.folders, restrictedTerms, { limit: 8, textLimit: 100 });
+  const entities = cleanCourseDirectoryList(raw.entities, restrictedTerms, { limit: 8, textLimit: 80 });
+  if (folders === null || entities === null) return null;
+  const extension = String(raw.extension || "").trim().toLowerCase().replace(/^\.+/u, "");
+  if (extension && !/^[a-z0-9]{1,10}$/u.test(extension)) return null;
+  const sizeLabel = cleanCourseDirectoryText(raw.size_label, 32).toUpperCase();
+  const safeSizeLabel = /^\d+(?:\.\d+)?\s*(?:B|KB|MB|GB|TB)$/u.test(sizeLabel) ? sizeLabel : "";
+  const date = String(raw.date || "").trim();
+  const safeDate = /^\d{4}-\d{2}-\d{2}$/u.test(date) ? date : "";
+  for (const key of Object.keys(raw)) {
+    if (!COURSE_DIRECTORY_ITEM_KEYS.has(key)) delete raw[key];
+  }
+  raw.id = id;
+  raw.course_id = courseId;
+  raw.category = course.category;
+  raw.name = name;
+  raw.folders = Object.freeze(folders);
+  raw.extension = extension;
+  raw.file_type = courseDirectoryFileType(extension);
+  raw.size_label = safeSizeLabel;
+  raw.date = safeDate;
+  raw.entities = Object.freeze(entities);
+  return Object.freeze(raw);
+}
+
+function courseDirectoryFacets(items) {
+  const courseCounts = new Map();
+  const categoryCounts = new Map();
+  const fileTypeCounts = new Map();
+  const entityCounts = new Map();
+  for (const item of items) {
+    courseCounts.set(item.course_id, (courseCounts.get(item.course_id) || 0) + 1);
+    categoryCounts.set(item.category, (categoryCounts.get(item.category) || 0) + 1);
+    fileTypeCounts.set(item.file_type, (fileTypeCounts.get(item.file_type) || 0) + 1);
+    for (const entity of item.entities) entityCounts.set(entity, (entityCounts.get(entity) || 0) + 1);
+  }
+  const byCountThenName = (left, right) => right.count - left.count || left.name.localeCompare(right.name, "zh-CN");
+  return Object.freeze({
+    courses: Object.freeze([...courseCounts.entries()].map(([id, count]) => {
+      const course = COURSE_DIRECTORY_COURSES.get(id);
+      return Object.freeze({ id, title: course.title, category: course.category, count });
+    }).sort((left, right) => right.count - left.count || left.title.localeCompare(right.title, "zh-CN"))),
+    categories: Object.freeze([...categoryCounts.entries()].map(([name, count]) => Object.freeze({ name, count })).sort(byCountThenName)),
+    file_types: Object.freeze([...fileTypeCounts.entries()].map(([name, count]) => Object.freeze({ name, count })).sort(byCountThenName)),
+    top_entities: Object.freeze([...entityCounts.entries()].map(([name, count]) => Object.freeze({ name, count })).sort(byCountThenName).slice(0, 50)),
+  });
+}
+
+function validateCourseDirectoryPayload(payload, restrictedTerms) {
+  if (!payload || typeof payload !== "object" || Array.isArray(payload) || Number(payload.schema_version) !== 1) {
+    throw new Error("Course directory payload is invalid.");
+  }
+  const rawItems = Array.isArray(payload.items) ? payload.items : [];
+  if (!rawItems.length || rawItems.length > COURSE_DIRECTORY_MAX_ITEMS) {
+    throw new Error("Course directory payload size is invalid.");
+  }
+  const ids = new Set();
+  let writeIndex = 0;
+  for (let readIndex = 0; readIndex < rawItems.length; readIndex += 1) {
+    const raw = rawItems[readIndex];
+    const item = cleanCourseDirectoryItem(raw, restrictedTerms);
+    if (!item || ids.has(item.id)) continue;
+    ids.add(item.id);
+    rawItems[writeIndex] = item;
+    writeIndex += 1;
+  }
+  rawItems.length = writeIndex;
+  if (!rawItems.length) throw new Error("Course directory has no safe items.");
+  const generatedAt = cleanCourseDirectoryText(payload.generated_at, 40);
+  for (const key of Object.keys(payload)) {
+    if (!["schema_version", "generated_at", "items"].includes(key)) delete payload[key];
+  }
+  return Object.freeze({
+    generated_at: Number.isFinite(Date.parse(generatedAt)) ? new Date(generatedAt).toISOString() : "",
+    items: Object.freeze(rawItems),
+    facets: courseDirectoryFacets(rawItems),
+  });
+}
+
+async function loadCourseDirectory(env) {
+  const bucket = accountBucket(env);
+  const cached = COURSE_DIRECTORY_CACHE.get(bucket);
+  const now = Date.now();
+  if (cached && cached.value && now - cached.loaded_at < COURSE_DIRECTORY_CACHE_TTL_MS) return cached.value;
+  if (cached && cached.promise) return cached.promise;
+  const promise = (async () => {
+    const restrictedTerms = courseDirectoryRestrictedTerms(env);
+    const object = await bucket.get(COURSE_DIRECTORY_R2_KEY);
+    if (!object) throw new Error("Course directory is unavailable.");
+    if (Number(object.size || 0) > COURSE_DIRECTORY_MAX_BYTES) throw new Error("Course directory payload is too large.");
+    let payload;
+    if (typeof object.json === "function") {
+      payload = await object.json();
+    } else {
+      const text = await object.text();
+      if (text.length > COURSE_DIRECTORY_MAX_BYTES) throw new Error("Course directory payload is too large.");
+      payload = JSON.parse(text);
+    }
+    return validateCourseDirectoryPayload(payload, restrictedTerms);
+  })();
+  COURSE_DIRECTORY_CACHE.set(bucket, { loaded_at: cached && cached.loaded_at || 0, value: cached && cached.value || null, promise });
+  try {
+    const value = await promise;
+    COURSE_DIRECTORY_CACHE.set(bucket, { loaded_at: Date.now(), value, promise: null });
+    return value;
+  } catch (error) {
+    COURSE_DIRECTORY_CACHE.delete(bucket);
+    throw error;
+  }
+}
+
+function courseDirectoryQueryText(value, limit = 80) {
+  return cleanCourseDirectoryText(value, limit).toLowerCase();
+}
+
+function courseDirectoryItemMatches(item, filters) {
+  if (filters.courseId && item.course_id !== filters.courseId) return false;
+  if (filters.category && item.category.toLowerCase() !== filters.category) return false;
+  if (filters.fileType && item.file_type !== filters.fileType) return false;
+  if (!filters.terms.length) return true;
+  const searchable = [item.name, item.category, item.file_type, ...item.folders, ...item.entities]
+    .join(" ")
+    .normalize("NFKC")
+    .toLowerCase();
+  return filters.terms.every((term) => searchable.includes(term));
+}
+
+async function handleCourseDirectory(request, env) {
+  let user;
+  try {
+    user = await currentUserFromRequest(env, request);
+  } catch (error) {
+    return privateJsonResponse(request, env, 401, {
+      detail: error.message || "Please log in.",
+      can_access: false,
+      required_remaining_days: COURSE_MIN_REMAINING_DAYS,
+    });
+  }
+  try {
+    const access = await courseAccessForUser(env, user);
+    if (!access.can_access) {
+      return privateJsonResponse(request, env, 403, {
+        detail: "该目录仅对剩余有效期至少 30 天的会员开放。",
+        ...access,
+      });
+    }
+    const url = new URL(request.url);
+    const page = Math.max(1, Math.min(100000, Math.trunc(Number(url.searchParams.get("page") || 1)) || 1));
+    const pageSize = Math.max(1, Math.min(COURSE_DIRECTORY_MAX_PAGE_SIZE, Math.trunc(Number(url.searchParams.get("page_size") || 50)) || 50));
+    const query = courseDirectoryQueryText(url.searchParams.get("q"));
+    const courseId = String(url.searchParams.get("course_id") || "").trim().toLowerCase();
+    const category = courseDirectoryQueryText(url.searchParams.get("category"), 80);
+    const fileType = courseDirectoryQueryText(url.searchParams.get("file_type"), 24);
+    const terms = query.split(/\s+/u).filter(Boolean).slice(0, 12);
+    const directory = await loadCourseDirectory(env);
+    const matched = directory.items.filter((item) => courseDirectoryItemMatches(item, {
+      courseId,
+      category,
+      fileType,
+      terms,
+    }));
+    const start = (page - 1) * pageSize;
+    const items = matched.slice(start, start + pageSize).map((item) => ({
+      id: item.id,
+      course_id: item.course_id,
+      category: item.category,
+      name: item.name,
+      folders: item.folders,
+      extension: item.extension,
+      size_label: item.size_label,
+      date: item.date,
+      entities: item.entities,
+    }));
+    return privateJsonResponse(request, env, 200, {
+      items,
+      total: matched.length,
+      page,
+      page_size: pageSize,
+      pages: Math.max(1, Math.ceil(matched.length / pageSize)),
+      has_more: start + items.length < matched.length,
+      facets: directory.facets,
+      generated_at: directory.generated_at,
+    });
+  } catch (_error) {
+    return privateJsonResponse(request, env, 503, { detail: "课程文件目录暂时无法读取，请稍后重试。" });
   }
 }
 
@@ -15518,6 +15809,10 @@ export default {
 
     if (pathname === "/course/access" && request.method === "GET") {
       return handleCourseAccess(request, env);
+    }
+
+    if (pathname === "/course/directory" && request.method === "GET") {
+      return handleCourseDirectory(request, env);
     }
 
     if (pathname === "/report-text" && request.method === "GET") {
