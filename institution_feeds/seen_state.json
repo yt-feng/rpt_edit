@@ -2780,6 +2780,38 @@
     "imf:2356aeb40455940c1ee666aeff0f095eefedd0bc0aff2db3346f9a8c7206": {
       "first_seen": "2026-08-10",
       "status": "downloaded"
+    },
+    "imf:34239830cd77f1de1e6ff18749e33cd164e82cb0c22d3ad4b0e37ec4e22c": {
+      "first_seen": "2026-08-10",
+      "status": "downloaded"
+    },
+    "imf:56d9c17df96a54f3757bd264598ac115432ad2ebb7ad750c169ed9e725c3": {
+      "first_seen": "2026-08-10",
+      "status": "downloaded"
+    },
+    "imf:ff19440074500c689f6fb4f21daded1c39f52cbce8d777be54c17dbc3ee9": {
+      "first_seen": "2026-08-10",
+      "status": "downloaded"
+    },
+    "worldbank:099744208102618318": {
+      "first_seen": "2026-08-10",
+      "status": "downloaded"
+    },
+    "oecd:https://www.oecd.org/en/publications/oecd-series-on-testing-and-assessment_20777876.html": {
+      "first_seen": "2026-08-10",
+      "status": "no_pdf"
+    },
+    "adb:1166676": {
+      "first_seen": "2026-08-10",
+      "status": "downloaded"
+    },
+    "adb:1166906": {
+      "first_seen": "2026-08-10",
+      "status": "downloaded"
+    },
+    "unctad:https://unctad.org/publication/vulnerability-profile-senegal": {
+      "first_seen": "2026-08-10",
+      "status": "downloaded"
     }
   }
 }
