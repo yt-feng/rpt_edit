@@ -2147,10 +2147,17 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
     parsed_base = urlsplit(str(base_url or "").strip())
     if parsed_base.scheme != "https" or not parsed_base.hostname:
         raise ValueError("Blog base URL must be an HTTPS origin")
-    article_content = str(article.get("content") or "").replace(
-        PUBLIC_SITE_HOST_PLACEHOLDER,
+    article_content = re.sub(
+        r"portal\.example\.(?:invalid|com)",
         parsed_base.hostname,
+        str(article.get("content") or ""),
+        flags=re.I,
     )
+    # Legacy archives are immutable source records. Normalize their public
+    # presentation so old drafts follow the current editorial contract.
+    article_content = article_content.replace("编辑评论", "KC评论")
+    article_content = re.sub(r"。\s*[，,]", "。", article_content)
+    article_content = re.sub(r"[，,；;：:]\s*。", "。", article_content)
     image_match = re.search(r'<img\b[^>]*\bsrc="([^"]+)"', article_content, re.IGNORECASE)
     image_url = html_unescape(image_match.group(1)) if image_match else ""
     json_ld: dict[str, Any] = {

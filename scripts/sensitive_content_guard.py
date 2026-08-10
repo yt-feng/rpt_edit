@@ -230,54 +230,33 @@ WECHAT_BLOCKED_TITLE_RULES: list[tuple[str, re.Pattern[str]]] = [
         re.compile(
             r"(?:政治|政党|选举|议会|政变|地缘政治|制裁|主权争端|领土争端|台海|"
             r"台湾问题|台独|新疆|疆独|西藏|藏独|港独|人权指控|颜色革命|"
-            r"习近平|特朗普|拜登|普京|泽连斯基|政府|国务院|当局|政策|监管|改革|"
-            r"外管局|管制|暂停令|反恐|恐怖主义|关税|税收|税制|消费税|征税|征收|"
+            r"习近平|特朗普|拜登|普京|泽连斯基|国务院|当局|反恐|恐怖主义|"
+            r"关税|消费税|征税|税制|中国管制|美国管制|欧盟管制|"
             r"贸易战|出口管制|台湾)"
             r"|\b(?:geopolitic(?:s|al)?|political\s+part(?:y|ies)|elections?|parliament|"
             r"coup|sanctions?|sovereignty\s+disputes?|territorial\s+disputes?|"
             r"Taiwan\s+Strait|Xinjiang|Tibet|human\s+rights\s+allegations?|Xi\s+Jinping|"
-            r"Trump|Biden|Putin|Zelensky|government|polic(?:y|ies)|regulat(?:ion|ory)|"
-            r"reforms?|tariffs?|tax(?:es|ation)?|trade\s+war|export\s+controls?|"
+            r"Trump|Biden|Putin|Zelensky|tariffs?|taxation|trade\s+war|export\s+controls?|"
             r"counter[- ]terroris(?:m|t)|terroris(?:m|t)|Taiwan)\b",
             re.I,
         ),
     ),
 ]
 
-# Public-account titles should describe a topic, not judge whether it is good,
-# bad, right, wrong, safe, dangerous, winning, or losing.  This deliberately
-# includes positive framing too: replacing one strong opinion with its opposite
-# is not neutralization.
+# Public-account titles may use source-backed facts, numbers and directional
+# verbs.  The guard is intentionally limited to inflammatory, adversarial or
+# advice-like framing.  Treating ordinary research words such as "增长",
+# "盈利", "关键" or "如何" as violations erased the subject and produced many
+# indistinguishable fallback titles.
 WECHAT_TITLE_EVALUATIVE_RE = re.compile(
-    r"(?:不好|不行|负面|唱衰|风险|危机|警告|问题|挑战|困境|压力|冲击|拖累|"
-    r"疲弱|乏力|低迷|恶化|衰退|崩盘|崩溃|暴跌|下行|放缓|收缩|萎缩|通缩|"
-    r"失业|违约|债务|赤字|亏损|泡沫|过剩|瓶颈|缺口|短缺|限制|封锁|担忧|差异|分歧|"
-    r"不确定|不及预期|低于预期|未达|落后|弱于|受损|去杠杆|杠杆|失败|受挫|"
-    r"下滑|下降|下跌|减少|走弱|走低|回落|降温|缩水|挤出|吃掉|负增长|"
-    r"高估|低估|误判|悖论|分水岭|触底|反而|不是|而是|未兑现|痛点|暴露|"
-    r"考验|谨慎|质疑|侵蚀|紧张|警报|爆发|回调|退潮|折扣|更弱|偏弱|较弱|"
-    r"疑虑|脱节|疲软|受限|不足|差距|断崖|中断|损害|威胁|争议|争论|抛售|"
-    r"恐慌|波动|未获|未对齐|不改|不稳|不佳|趋弱|走软|动能减弱|按兵不动|"
-    r"管制|暂停|激进|收紧|转负|大降|大涨|加剧|"
-    r"真正|意外|赢家|输家|健康重置|利好|向好|改善|修复|回升|复苏|强劲|"
-    r"亮眼|超预期|高于预期|领先|胜出|红利|机遇|机会|突破|创新高|创纪录|"
-    r"稳健|韧性|乐观|积极|增长|上升|上涨|增加|走高|正增长|受益|支撑|"
-    r"驱动|催化|盈利|净利润|超配|领先|引领|成功|护城河|巩固|增值|潜力|"
-    r"最具|强于|优于|符合预期|达标|可控|可期|加速|扩张|扩大|上修|下修|上调|下调|"
-    r"恢复|提高|降低|有限|偏少|较少|高企|升至|降至|上涨空间|下行空间|上行空间|"
-    r"惊喜|吸睛|崛起|发力|跑赢|看好|看空|多头|空头|入场点|势在必行|"
-    r"赋能|完好|强化|重构|重塑|推动|关键|支持|底部|涨幅|英雄|自我造血|"
-    r"全球首发|新前沿|先求稳再求快|时机已到|冷静|沉着|从容|"
-    r"是否|为什么|为何|何时|何处|如何|怎么|怎样|能否|会否|谁将|"
-    r"需要关注|值得关注|实为|但|却|然而|vs\.?|VS\.?|"
-    r"(?:(?:同比|环比)?(?:增|降)(?=\d))|"
-    r"\b(?:risk|crisis|warning|problem|challenge|pressure|shock|drag|weak(?:ness)?|"
-    r"recession|collapse|crash|slowdown|contraction|deflation|default|debt|deficit|"
-    r"loss|bubble|overcapacity|bottleneck|shortage|restriction|concern|uncertain|"
-    r"underperform|overperform|deleverag(?:e|ing)|failure|winner|loser|mispricing|"
-    r"undervalued|overvalued|recovery|rebound|resilient|positive|negative|strong|"
-    r"beat|miss|upside|downside|benefit|surprise|opportunit(?:y|ies)|threat|"
-    r"improv(?:e|ement)|growth|decline|fall|rise|increase|decrease)\b)",
+    r"(?:不好|不行|唱衰|危机|警告|骗局|灾难|崩盘|崩溃|暴跌|断崖|恐慌|"
+    r"失败|受挫|威胁|损害|封锁|攻击|围剿|失控|末日|最差|血洗|"
+    r"高估|低估|误判|赢家|输家|健康重置|痛点|警报|入场点|抄底|"
+    r"稳赚|必涨|翻倍|看空|看多|多头|空头|跑赢|超配|"
+    r"震惊|爆了|一夜变天|彻底反转|必看|必读|唯一真相|"
+    r"不是[^，。；;]{0,28}而是|"
+    r"\b(?:crisis|warning|scam|disaster|collapse|crash|panic|failure|winner|loser|"
+    r"mispricing|undervalued|overvalued|threat|attack|must[- ]read)\b)",
     re.I,
 )
 WECHAT_TITLE_CHINA_TOPIC_RE = re.compile(
@@ -291,6 +270,14 @@ WECHAT_TITLE_SYSTEMIC_TOPIC_RE = re.compile(
     r"\bmacro\b|\bequit(?:y|ies)\b|\bcurrency\b|\bforex\b|\bFX\b|\bcredit\b|"
     r"\bdebt\b|\bbonds?\b|\bleverag(?:e|ing)\b|\bfiscal\b|\bregulat(?:ion|ory)\b|\bpolicy\b|"
     r"\bproperty\b|\breal estate\b|\bemployment\b|\bcapital flows?\b)",
+    re.I,
+)
+WECHAT_TITLE_CHINA_MACRO_CREDIT_RE = re.compile(
+    r"(?:中国宏观|国内宏观|\bChina\s+macro\b).{0,18}(?:信贷|债务|财政|监管|credit|debt|fiscal|regulat)",
+    re.I,
+)
+WECHAT_TITLE_CURRENCY_VALUATION_RE = re.compile(
+    r"(?:人民币|\bRMB\b|\bCNY\b).{0,18}(?:估值|高估|低估|valuation|mispricing)",
     re.I,
 )
 
@@ -339,7 +326,7 @@ def wechat_title_neutrality_issues(title: str) -> list[str]:
         issues.append("evaluative_or_adversarial_wording")
     if re.search(r"[?？]", normalized):
         issues.append("question_framing")
-    if WECHAT_TITLE_CHINA_TOPIC_RE.search(normalized) and WECHAT_TITLE_SYSTEMIC_TOPIC_RE.search(normalized):
+    if WECHAT_TITLE_CHINA_MACRO_CREDIT_RE.search(normalized) or WECHAT_TITLE_CURRENCY_VALUATION_RE.search(normalized):
         issues.append("china_systemic_topic")
     return list(dict.fromkeys(issues))
 
@@ -441,8 +428,12 @@ def _neutral_title_topic(body: str) -> str:
     if has(r"(?:反洗钱|反恐融资|anti.?money.?laundering|counter.?terrorist.?financ)"):
         return "合规治理与组织流程观察"
     if has(r"(?:关税|贸易战|出口管制|tariff|tradewar|exportcontrol)"):
+        if has(r"洛杉矶港"):
+            return "洛杉矶港进口未来两周变化" if has(r"未来两周") else "洛杉矶港进口节奏变化"
         return "跨境贸易与行业变化观察"
     if has(r"(?:消费税|征税|征收|税收|(?<![A-Za-z])tax(?:es|ation)?(?![A-Za-z]))"):
+        if has(r"锂电池"):
+            return "锂电池行业规则与成本变化"
         return "行业规则与相关数据观察"
     if has(r"(?:政策|监管|改革|polic(?:y|ies)|regulat(?:ion|ory)|reforms?)"):
         return "行业规则与主题变化观察"
@@ -506,6 +497,26 @@ def _neutral_title_topic(body: str) -> str:
     subject = _neutral_title_subject(compact)
     if subject:
         period = "季度" if has(r"(?:[1-4]Q\d{2}|季度|quarter)") else "近期"
+        metric_labels: list[str] = []
+        for pattern, label in (
+            (r"营收|收入|revenue|sales", "营收"),
+            (r"净利润|盈利|利润|earnings?|profit", "盈利"),
+            (r"毛利率|利润率|margin", "利润率"),
+            (r"订单|order", "订单"),
+            (r"出货|销量|shipment|volume", "出货"),
+            (r"资本开支|capex", "资本开支"),
+            (r"价格|定价|price|pricing", "价格"),
+            (r"需求|demand", "需求"),
+        ):
+            if has(pattern) and label not in metric_labels:
+                metric_labels.append(label)
+            if len(metric_labels) >= 2:
+                break
+        if has(r"护城河|竞争|侵蚀|moat|competition"):
+            return f"{subject}竞争格局变化"
+        if metric_labels:
+            period_prefix = "季度" if period == "季度" else ""
+            return f"{subject}{period_prefix}{'与'.join(metric_labels)}变化"
         if technical:
             return f"{subject}与{'、'.join(technical)}及{period}数据观察"
         return f"{subject}业务与{period}数据观察"

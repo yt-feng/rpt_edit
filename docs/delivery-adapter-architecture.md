@@ -1,6 +1,6 @@
 # Delivery Adapter Architecture
 
-Last updated: 2026-08-06
+Last updated: 2026-08-10
 
 This document describes the delivery-adapter side of the repository.
 
@@ -45,9 +45,25 @@ Controlled self-hosted runners handle adapters that require fixed network identi
 ## Content Controls
 
 - Titles should be factual, complete, and understandable without private context.
+- The source filename is the highest-weight title anchor. Preserve its company,
+  product, technical term, geography, and report subject before adding a
+  source-backed number, date, comparison, or factual hook.
+- Sensitivity controls should target inflammatory, adversarial,
+  political/military, and advice-like wording. They must not erase ordinary
+  research facts such as growth, profit, records, guidance, or concrete data.
+- Generic observation templates are failed by the deterministic quality gate;
+  the gate retries the source anchor and article evidence before using a safe
+  fallback.
 - Title rewrites must not drop an otherwise valid item.
 - Sensitive wording should trigger rewrite or cooling, not silent deletion.
 - Generated content should follow the adapter's formatting and review rules.
+- The public editorial label is exactly `KC评论`; upload and archive renderers
+  normalize the historical label.
+- WeChat body budgeting preserves complete source sentences and never invents
+  a period after a hard character cut.
+- The final public information line is `更新信息参见` plus the runtime
+  `PUBLIC_SITE_HOST`; private deployment URLs may only materialize in private
+  source-URL fields.
 
 ## Retry Semantics
 

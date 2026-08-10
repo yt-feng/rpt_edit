@@ -76,39 +76,38 @@ class SensitiveTitleGuardTests(unittest.TestCase):
         self.assertTrue(changes)
         self.assertEqual([], wechat_title_neutrality_issues(rewritten))
 
-    def test_company_title_keeps_subject_while_removing_negative_judgment(self) -> None:
-        rewritten, _changes = neutralize_wechat_title("瑞银：大族激光盈利下降，订单放缓")
-        self.assertEqual("瑞银：大族激光业务与近期数据观察", rewritten)
+    def test_company_title_keeps_source_backed_subject_and_direction(self) -> None:
+        original = "瑞银：大族激光盈利下降，订单放缓"
+        rewritten, changes = neutralize_wechat_title(original)
+        self.assertEqual(original, rewritten)
+        self.assertEqual([], changes)
         self.assertEqual([], wechat_title_neutrality_issues(rewritten))
 
-    def test_historical_opinionated_titles_are_neutralized_without_dropping_topics(self) -> None:
+    def test_specific_factual_titles_are_not_replaced_by_generic_observations(self) -> None:
+        titles = (
+            "摩根大通：中国基础材料，韧性需求支撑高金属价格与矿企盈利",
+            "摩根士丹利：海光信息二季度净利润11亿元超预期8%",
+            "德意志银行：达芬奇手术机器人三重护城河正被侵蚀",
+            "瑞银：韩国单股杠杆ETF新规-AUM已缩水29%",
+            "摩根士丹利：月度追踪，6月数据出现变化，三季度更弱",
+            "摩根士丹利：台积电激进资本支出应对更强AI需求",
+            "波士顿咨询：BCG，AI代理让CMO角色更关键",
+        )
+        for original in titles:
+            with self.subTest(original=original):
+                rewritten, changes = neutralize_wechat_title(original)
+                self.assertEqual(original, rewritten)
+                self.assertEqual([], changes)
+                self.assertEqual([], wechat_title_neutrality_issues(rewritten))
+
+    def test_sensitive_titles_are_reframed_without_erasing_the_specific_subject(self) -> None:
         cases = {
-            "摩根大通：中国基础材料，韧性需求支撑高金属价格与矿企盈利":
-                "摩根大通：基础材料行业与价格数据观察",
-            "摩根士丹利：海光信息二季度净利润11亿元超预期8%":
-                "摩根士丹利：海光信息业务与季度数据观察",
-            "德意志银行：达芬奇手术机器人三重护城河正被侵蚀":
-                "德意志银行：达芬奇手术机器人业务与近期数据观察",
             "高盛：美国关税影响追踪-洛杉矶港进口未来两周先升后降":
-                "高盛：跨境贸易与行业变化观察",
+                "高盛：洛杉矶港进口未来两周变化",
             "野村：中国拟对锂电池征收消费税":
-                "野村：行业规则与相关数据观察",
-            "瑞银：韩国单股杠杆ETF新规-AUM已缩水29%":
-                "瑞银：相关产品规则与数据观察",
-            "摩根士丹利：月度追踪，6月数据出现变化，三季度更弱":
-                "摩根士丹利：月度与季度数据变化观察",
+                "野村：锂电池行业规则与成本变化",
             "摩根士丹利：稀土，资金流向何处-中国管制推动90%涨幅":
                 "摩根士丹利：基础材料行业数据与主题变化观察",
-            "摩根士丹利：台积电激进资本支出应对更强AI需求":
-                "摩根士丹利：台积电与AI及近期数据观察",
-            "高盛：赋能欧洲，欧盟电气化计划支持我们的观点":
-                "高盛：能源行业数据与主题变化观察",
-            "摩根大通：中国债券分析-截至2026年6月30日":
-                "摩根大通：资金工具与相关数据观察",
-            "摩根士丹利：生物制药，一图胜千言-处方量同比转负":
-                "摩根士丹利：医疗行业数据与主题变化观察",
-            "波士顿咨询：BCG，AI代理让CMO角色更关键":
-                "波士顿咨询：AI技术与行业应用观察",
             "IMF：IMF反洗钱与反恐融资操作指引":
                 "IMF：合规治理与组织流程观察",
         }
@@ -135,11 +134,11 @@ class SensitiveTitleGuardTests(unittest.TestCase):
             "## AI应用范围与企业流程观察\n\n第二节。\n"
         )
         rewritten, changes = neutralize_markdown_headings(markdown, "花旗：近期数据观察")
-        self.assertIn("## 资金结构与相关数据观察", rewritten)
+        self.assertIn("## 信贷数据与市场预期存在差异", rewritten)
         self.assertIn("## AI应用范围与企业流程观察", rewritten)
         self.assertIn("第一节。", rewritten)
         self.assertIn("第二节。", rewritten)
-        self.assertEqual(1, len(changes))
+        self.assertEqual([], changes)
 
     def test_malformed_model_title_uses_upload_fallback_instead_of_dropping_article(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

@@ -53,7 +53,8 @@ class WeChatFilenameTitleTests(unittest.TestCase):
         self.assertIn("主题增强版", prompt)
         self.assertIn("通胀读数达到4%", prompt)
         self.assertIn("可用事实型钩子证据", prompt)
-        self.assertIn("不评价好坏", prompt)
+        self.assertIn("不使用煽动、攻击", prompt)
+        self.assertIn("禁止使用“研究主题与行业变化观察”", prompt)
 
     def test_off_topic_clickbait_cannot_replace_filename_topic(self) -> None:
         selected = choose_filename_anchored_title(
@@ -67,7 +68,7 @@ class WeChatFilenameTitleTests(unittest.TestCase):
         )
         self.assertEqual(EXPECTED_TITLE, selected)
 
-    def test_contrarian_hook_never_beats_the_faithful_anchor(self) -> None:
+    def test_source_backed_contrarian_hook_can_strengthen_the_anchor(self) -> None:
         sharpened = "巴克莱：日本市场策略-公司谨慎和通胀压力反而加大"
         selected = choose_filename_anchored_title(
             [EXPECTED_TITLE, sharpened, EXPECTED_TITLE],
@@ -75,16 +76,56 @@ class WeChatFilenameTitleTests(unittest.TestCase):
             "巴克莱",
             evidence_text="公司态度反而更加谨慎，通胀压力继续加大。",
         )
-        self.assertEqual(EXPECTED_TITLE, selected)
+        self.assertEqual(sharpened, selected)
 
-    def test_publishable_guard_neutralizes_the_filename_anchor(self) -> None:
+    def test_publishable_guard_keeps_a_specific_filename_anchor(self) -> None:
         selected, changes = ensure_publishable_neutral_title(
             EXPECTED_TITLE,
             "巴克莱",
             SOURCE_FILENAME,
         )
-        self.assertEqual("巴克莱：企业经营与价格数据观察", selected)
-        self.assertTrue(changes)
+        self.assertEqual(EXPECTED_TITLE, selected)
+        self.assertEqual([], changes)
+
+    def test_publishable_guard_keeps_source_backed_entities_and_data(self) -> None:
+        titles = (
+            "高盛：药明康德2Q26收入增47.7%，全年指引再上调",
+            "德意志银行：AI巨头占四成30年期新发行，指数集中度上升",
+            "摩根大通：南亚塑胶7月电子材料营收创49个月新高",
+        )
+        for title in titles:
+            with self.subTest(title=title):
+                selected, changes = ensure_publishable_neutral_title(title)
+                self.assertEqual(title, selected)
+                self.assertEqual([], changes)
+
+    def test_vague_observation_title_recovers_the_source_subject(self) -> None:
+        source = "高盛-药明康德2Q26收入增47.7%-全年指引再上调-260810.pdf"
+        selected, changes = ensure_publishable_neutral_title(
+            "高盛：研究主题与行业变化观察",
+            "高盛",
+            source,
+            evidence_text="# 高盛：药明康德2Q26收入增47.7%，全年指引再上调\n",
+        )
+        self.assertEqual("高盛：药明康德2Q26收入增47.7%-全年指引再上调", selected)
+        self.assertIn("quality_source_fallback", changes)
+        self.assertIn(
+            "vague_observation_template",
+            title_quality_issues("高盛：研究主题与行业变化观察", "高盛", source),
+        )
+
+    def test_sensitive_source_uses_safe_article_evidence_before_generic_fallback(self) -> None:
+        selected, changes = ensure_publishable_neutral_title(
+            "摩根士丹利：稀土，中国管制推动90%涨幅",
+            "摩根士丹利",
+            "MS-Rare earth-China controls drive 90 percent rise-260810.pdf",
+            evidence_text="稀土价格阶段涨幅达到90%，并同时跟踪资金流向和供给变化。",
+        )
+        self.assertIn("稀土", selected)
+        self.assertIn("90%", selected)
+        self.assertNotIn("管制", selected)
+        self.assertNotIn("研究主题与行业变化观察", selected)
+        self.assertIn("quality_evidence_fallback", changes)
 
     def test_publishable_guard_repairs_malformed_title_without_failure(self) -> None:
         selected, changes = ensure_publishable_neutral_title(

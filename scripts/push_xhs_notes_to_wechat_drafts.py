@@ -182,6 +182,7 @@ def xhs_article_title(markdown: str, fallback: str, institution_name: str) -> st
         institution_name,
         fallback,
         WECHAT_TITLE_MAX_CHARS,
+        evidence_text=markdown,
     )
     return neutralized
 
@@ -211,6 +212,7 @@ def xhs_article_title_metadata(report_dir: Path) -> dict[str, Any]:
         institution_name,
         source_report_name,
         WECHAT_TITLE_MAX_CHARS,
+        evidence_text=markdown,
     )
     raw_title_decision = status.get("wechat_title_decision", {})
     title_decision = dict(raw_title_decision) if isinstance(raw_title_decision, dict) else {}
@@ -366,6 +368,7 @@ def build_article(
         institution_name,
         source_report_name,
         WECHAT_TITLE_MAX_CHARS,
+        evidence_text=markdown,
     )
     wechat_title = title
     raw_title_decision = status.get("wechat_title_decision", {})

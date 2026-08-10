@@ -111,6 +111,23 @@ class BlogBuildTests(unittest.TestCase):
         self.assertNotIn("portal.example.invalid 查看全文", rendered)
         self.assertIn("portal.example.invalid", article["content"])
 
+    def test_blog_render_normalizes_legacy_comment_label_and_punctuation(self) -> None:
+        article = {
+            "slug": "20260810-legacy-editorial-label",
+            "title": "历史文章展示修复",
+            "digest": "检查历史文章的展示层兼容。",
+            "author": "Portal Suite",
+            "content": "<section><strong>编辑评论：</strong>第一句。，第二句，。</section>",
+            "date": "2026-08-10",
+            "last_date": "2026-08-10",
+            "origins": [],
+        }
+        public_origin = "https://" + "".join(("kc", "desk", ".com"))
+        rendered = builder.render_blog_article(article, public_origin)
+        self.assertIn("KC评论", rendered)
+        self.assertNotIn("编辑评论", rendered)
+        self.assertIn("第一句。第二句。", rendered)
+
     def test_blog_placeholder_survives_source_materialization_until_archive_render(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             materialized_path = Path(temporary) / "materialized_builder.py"

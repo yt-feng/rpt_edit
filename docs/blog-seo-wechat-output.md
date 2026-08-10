@@ -47,31 +47,57 @@ The Blog landing page uses `KC桌面` naturally in its visible introduction,
 description metadata, Open Graph metadata, and Blog JSON-LD. It must not repeat
 the term mechanically inside article bodies.
 
+For WeChat-facing titles, the original PDF filename is the highest-weight
+semantic anchor. A valid title preserves the report's company, product,
+technical acronym, geography, and topic, then may add only source-backed
+numbers, dates, changes, comparisons, or counter-intuitive facts. Ordinary
+research words such as growth, profit, record highs, guidance changes, and
+`why/how` are not sensitivity violations. The deterministic guard blocks
+inflammatory, adversarial, political/military, and advice-like framing, while
+generic fallbacks such as `研究主题与行业变化观察` or
+`某公司业务与近期数据观察` fail title quality checks.
+
 ## WeChat editorial label
 
 Generated prompts request `KC评论`. The upload-time sanitizer also converts
-the historical label to `KC评论`, and the HTML renderer owns the final label.
+the historical label to `KC评论`, including a standalone unquoted label, and
+the HTML renderer owns the final label.
 This makes old drafts and newly generated drafts produce the same visible
 heading without duplicated prefixes.
 
-## Private website value
+The Blog renderer performs the same label normalization for immutable legacy
+archive records. It also cleans common adjacent-punctuation artifacts at
+render time; source archive JSON remains unchanged.
 
-Public source and archived Blog payloads contain only the neutral site-host
-placeholder. The WeChat workflow reads the production site origin from the
-`PORTAL_SITE_URL` secret and validates that it is an origin-only HTTPS URL.
+## Public footer and private website value
+
+Every WeChat article ends with `更新信息参见` plus the runtime
+`PUBLIC_SITE_HOST`. The production value is assembled at runtime so the
+private deployment identity is not committed in plain text. It is a fixed
+editorial value and is never replaced from `PORTAL_SITE_URL`.
+
+The WeChat workflow still reads the production site origin from the
+`PORTAL_SITE_URL` secret and validates that it is an origin-only HTTPS URL for
+private `content_source_url` fields.
 
 For each draft, the uploader creates two payloads:
 
-1. a public template that retains the placeholder and can feed the Blog
-   archive;
-2. an in-memory submission clone in which only the placeholder is replaced by
-   the validated production hostname.
+1. a public template containing the fixed public-host footer;
+2. an in-memory submission clone in which only private source-URL placeholders
+   are replaced by the validated production hostname.
 
-Only the second payload is sent to the WeChat API. It is never written to the
-repository, logs, summaries, or public artifacts. Static-site deployment uses
-the validated build origin to resolve the same placeholder in the generated
-Blog body. The committed archive remains unchanged, while the deployed article
-shows the live hostname.
+Only the second payload is sent to the WeChat API. Private source URLs are
+never written to the repository, logs, summaries, or public artifacts.
+Static-site deployment resolves placeholders found in legacy Blog bodies and
+normalizes old labels without mutating the committed archive.
+
+## Complete-sentence budget
+
+The renderer never creates a sentence by cutting arbitrary characters and
+adding `。`. When the visible-text budget is reached, prose keeps only the last
+complete source sentence that fits. Headings and list items are atomic: they
+are included whole or omitted. This prevents fragments such as `关注管理。`
+from being manufactured at a body-length boundary.
 
 ## Cover handling
 

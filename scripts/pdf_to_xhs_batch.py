@@ -961,6 +961,7 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
         refined_wechat_title,
         institution_name,
         pdf_path.name,
+        evidence_text=wechat_article,
     )
     if title_neutralization_changes:
         status["wechat_title_neutralization_changes"] = title_neutralization_changes

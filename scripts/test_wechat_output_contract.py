@@ -10,12 +10,15 @@ from pathlib import Path
 from PIL import Image
 
 from push_portal_translated_to_wechat_drafts import (
+    FINAL_CTA_TEXT,
+    PUBLIC_SITE_HOST,
     PUBLIC_SITE_HOST_PLACEHOLDER,
     blockquote_html,
     is_explicit_portal_comment,
     materialize_private_article_payload,
     portal_comment_html,
     prepare_cover_upload_image,
+    truncate_complete_sentences,
 )
 from push_xhs_notes_to_wechat_drafts import choose_cover_image
 
@@ -37,19 +40,29 @@ class WeChatOutputContractTests(unittest.TestCase):
         self.assertIn("<blockquote", rendered)
         self.assertNotIn("KC评论", rendered)
 
-    def test_private_site_is_materialized_only_in_request_clone(self) -> None:
+    def test_private_site_never_rewrites_the_fixed_public_footer(self) -> None:
         public_articles = [{
             "title": "测试",
-            "content": f"<p>{PUBLIC_SITE_HOST_PLACEHOLDER}</p>",
+            "content": f"<p>{FINAL_CTA_TEXT}</p><p>legacy:{PUBLIC_SITE_HOST_PLACEHOLDER}</p>",
+            "content_source_url": f"https://{PUBLIC_SITE_HOST_PLACEHOLDER}/report/1",
         }]
         submitted = materialize_private_article_payload(
             public_articles,
             "https://private.example.invalid",
         )
 
+        self.assertEqual(f"更新信息参见{PUBLIC_SITE_HOST}", FINAL_CTA_TEXT)
         self.assertIn(PUBLIC_SITE_HOST_PLACEHOLDER, public_articles[0]["content"])
         self.assertNotIn(PUBLIC_SITE_HOST_PLACEHOLDER, submitted[0]["content"])
-        self.assertIn("private.example.invalid", submitted[0]["content"])
+        self.assertIn(PUBLIC_SITE_HOST, submitted[0]["content"])
+        self.assertNotIn("private.example.invalid", submitted[0]["content"])
+        self.assertIn(PUBLIC_SITE_HOST_PLACEHOLDER, public_articles[0]["content_source_url"])
+        self.assertIn("private.example.invalid", submitted[0]["content_source_url"])
+
+    def test_body_budget_keeps_only_complete_sentences(self) -> None:
+        source = "第一句完整。第二句会在预算边界之后继续展开。"
+        self.assertEqual("第一句完整。", truncate_complete_sentences(source, 8))
+        self.assertEqual("", truncate_complete_sentences("这个短语没有完整句号", 8))
 
     def test_private_site_rejects_non_origin_urls(self) -> None:
         for value in (

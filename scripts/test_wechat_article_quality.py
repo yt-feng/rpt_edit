@@ -157,6 +157,33 @@ class WeChatArticleQualityTests(unittest.TestCase):
         self.assertNotIn("编辑评论", first)
         self.assertEqual(first, second)
 
+    def test_standalone_legacy_comment_becomes_the_exact_kc_blockquote(self) -> None:
+        source = """# 研究机构：主判断
+
+## 数据支持判断
+
+编辑评论：47.7%的增速要结合低基数理解。
+"""
+        cleaned = self.sanitize(source)
+        self.assertIn("> **KC评论：** 47.7%的增速", cleaned)
+        self.assertNotIn("编辑评论", cleaned)
+        self.assertEqual([], audit_wechat_article_markdown(cleaned))
+
+    def test_removes_model_written_public_site_link_and_repairs_punctuation(self) -> None:
+        public_host = "".join(("kc", "desk", ".com"))
+        source = f"""# 研究机构：主判断
+
+## 数据支持判断
+
+第一句。，第二句，。
+
+更新信息参见{public_host}
+"""
+        cleaned = self.sanitize(source)
+        self.assertIn("第一句。第二句。", cleaned)
+        self.assertNotIn(public_host, cleaned)
+        self.assertEqual([], audit_wechat_article_markdown(cleaned))
+
 
 if __name__ == "__main__":
     unittest.main()

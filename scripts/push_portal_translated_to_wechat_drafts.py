@@ -51,8 +51,9 @@ BOTTOM_DISCLAIMER = (
     "AI assistance based on source materials and may contain omissions or errors. Please verify independently. "
     "This is not investment, legal, tax, accounting, or other professional advice."
 )
+PUBLIC_SITE_HOST = "".join(("kc", "desk", ".com"))
 PUBLIC_SITE_HOST_PLACEHOLDER = "portal.example.invalid"
-FINAL_CTA_TEXT = PUBLIC_SITE_HOST_PLACEHOLDER
+FINAL_CTA_TEXT = f"更新信息参见{PUBLIC_SITE_HOST}"
 DEFAULT_BODY_HOOK = ""
 DEFAULT_BODY_VISIBLE_CHARS = 1200
 DEFAULT_MIN_INLINE_IMAGES = 3
@@ -95,7 +96,7 @@ MID_ARTICLE_CTA_RE = re.compile(
     r"每天我会|国际信源汇编|完整报告与\s*(?:编辑|KC)评论|完整报告和\s*(?:编辑|KC)评论|更多国际信源|"
     r"喂给\s*AI|人工快速扫|市场\s*dynamics|图表合集|加入.*讨论|继续拆完整报告|"
     r"这篇可以沿着|几条线索看|重点不是复述报告|如果你是从|单篇文章只能解决|"
-    r"更新信息参见|portal)",
+    r"更新信息参见|portal|k[cC]d[eE]sk(?:\.com)?)",
     re.I,
 )
 MID_ARTICLE_CTA_CONTEXT_RE = re.compile(
@@ -670,6 +671,24 @@ def truncate_visible_text(text: str, max_chars: int, suffix: str = "…") -> str
     return candidate.strip("，,。；;：:") + ("。" if candidate else "")
 
 
+def truncate_complete_sentences(text: str, max_chars: int) -> str:
+    """Fit prose without manufacturing a sentence ending after a hard cut."""
+    normalized = normalize_space(strip_markdown_markup(text))
+    if max_chars <= 0:
+        return ""
+    if visible_char_count(normalized) <= max_chars:
+        return normalized
+
+    candidates: list[str] = []
+    for match in re.finditer(r"[。！？!?]", normalized):
+        candidate = normalized[: match.end()].strip()
+        if visible_char_count(candidate) <= max_chars:
+            candidates.append(candidate)
+        else:
+            break
+    return candidates[-1] if candidates else ""
+
+
 def latest_date_dir(root: Path) -> Path:
     if not root.exists():
         raise RuntimeError(f"Translated root not found: {root}")
@@ -1077,6 +1096,7 @@ HIGHLIGHT_RISK_RE = highlight_terms_pattern(
 )
 HIGHLIGHT_INSIGHT_RE = highlight_terms_pattern(
     [
+        "KC评论",
         "编辑评论",
         "换句话说",
         "这意味着",
@@ -1461,7 +1481,7 @@ def markdown_to_wechat_html(
     def remaining_chars() -> int:
         return max(0, body_budget - text_used)
 
-    def fit_text(text: str) -> str:
+    def fit_text(text: str, *, atomic: bool = False) -> str:
         nonlocal text_used
         if body_budget <= 0 or text_used >= body_budget:
             return ""
@@ -1469,10 +1489,10 @@ def markdown_to_wechat_html(
         if count <= remaining_chars():
             text_used += count
             return text
-        if remaining_chars() < 24:
+        if atomic or remaining_chars() < 24:
             text_used = body_budget
             return ""
-        fitted = truncate_visible_text(text, remaining_chars())
+        fitted = truncate_complete_sentences(text, remaining_chars())
         text_used = body_budget
         return fitted
 
@@ -1525,7 +1545,7 @@ def markdown_to_wechat_html(
                 item = strip_mid_article_cta_sentences(item)
                 if should_skip_body_text(item):
                     continue
-                fitted = fit_text(item)
+                fitted = fit_text(item, atomic=True)
                 if fitted:
                     rendered_items.append(fitted)
                 if text_used >= body_budget:
@@ -1587,7 +1607,7 @@ def markdown_to_wechat_html(
             flush_list()
             if should_skip_body_text(heading.group(2)):
                 continue
-            fitted = fit_text(heading.group(2))
+            fitted = fit_text(heading.group(2), atomic=True)
             if fitted:
                 parts.append(heading_html(len(heading.group(1)), fitted))
                 maybe_insert_floating_image()
@@ -1621,7 +1641,7 @@ def markdown_to_wechat_html(
         tail.append(image_html(trailing_image_url, alt="Portal Suite"))
     if source_report_name:
         tail.append(source_report_footer_html(source_report_name))
-    # Very end of the article: follow / add-WeChat / star reminder.
+    # Very end of the article: one fixed public information line.
     tail.append(after_image_note_html(DEFAULT_AFTER_IMAGE_NOTE))
     content = compose_limited_html(parts, tail, max_chars)
     total_visible = text_used
@@ -2314,6 +2334,7 @@ def translated_article_title_metadata(
             institution_name,
             source_report_name,
             WECHAT_TITLE_MAX_CHARS,
+            evidence_text=markdown,
         )
         title_before_neutralization = failed_title
         title_neutralization_changes = list(dict.fromkeys([
@@ -2338,6 +2359,7 @@ def translated_article_title_metadata(
         institution_name,
         source_report_name,
         WECHAT_TITLE_MAX_CHARS,
+        evidence_text=markdown,
     )
     header_title = strip_title_institution_prefix(
         fit_wechat_title(neutral_header_title, institution_name)
@@ -2655,16 +2677,18 @@ def materialize_private_article_payload(
     articles: list[dict[str, Any]],
     site_url: str,
 ) -> list[dict[str, Any]]:
-    """Replace the public site placeholder only in the in-memory WeChat request."""
+    """Materialize private source URLs without changing the fixed public footer."""
     host = private_site_host(site_url)
     rendered: list[dict[str, Any]] = []
     for raw_article in articles:
         article = dict(raw_article)
+        article["content"] = re.sub(
+            r"portal\.example\.(?:invalid|com)",
+            PUBLIC_SITE_HOST,
+            str(article.get("content") or ""),
+            flags=re.I,
+        )
         if host:
-            article["content"] = str(article.get("content") or "").replace(
-                PUBLIC_SITE_HOST_PLACEHOLDER,
-                host,
-            )
             source_url = str(article.get("content_source_url") or "")
             if source_url:
                 article["content_source_url"] = source_url.replace(PUBLIC_SITE_HOST_PLACEHOLDER, host)
