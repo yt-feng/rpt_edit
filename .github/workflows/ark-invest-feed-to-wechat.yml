@@ -74,6 +74,9 @@ jobs:
           python-version: "3.11"
           cache: "pip"
 
+      - name: Verify ARK workflow handoff contract
+        run: python scripts/test_ark_workflow_contract.py
+
       - name: Install Python dependencies
         run: |
           pip install -r requirements.txt
@@ -121,13 +124,6 @@ jobs:
         run: |
           bash scripts/commit_output_dir.sh "ark_invest_feed" "Update ARK Invest feed archive" 8
 
-      - name: Commit generated ARK outputs
-        if: ${{ steps.fetch.outputs.article_count != '0' }}
-        run: |
-          DATE="${{ steps.fetch.outputs.date_folder }}"
-          bash scripts/commit_output_dir.sh "xhs_notes/ark/$DATE" "Generate ARK Invest feed outputs $DATE" 8
-          bash scripts/commit_output_dir.sh "portal_translated_reports/ark/$DATE" "Generate ARK Invest Portal translated articles $DATE" 8
-
       - name: Upload run artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -169,12 +165,19 @@ jobs:
             .github \
             scripts \
             prompts \
+            portal_suite/data/blog_archive \
             requirements.txt \
             "portal_translated_reports/ark/${{ needs.fetch-and-build.outputs.date_folder }}" \
             "wechat_drafts/ark/${{ needs.fetch-and-build.outputs.date_folder }}"
           git fetch --filter=blob:none --no-tags --prune --depth=1 origin +refs/heads/main:refs/remotes/origin/main
           git reset --hard origin/main
           git clean -fdx
+
+      - name: Download generated ARK article artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ark-invest-feed-run-${{ needs.fetch-and-build.outputs.date_folder }}-${{ github.run_id }}
+          path: .
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -201,8 +204,8 @@ jobs:
           DATE="${{ needs.fetch-and-build.outputs.date_folder }}"
           TRANSLATED_DIR="portal_translated_reports/ark/$DATE"
           if [ ! -d "$TRANSLATED_DIR" ]; then
-            echo "::warning::No translated ARK articles at $TRANSLATED_DIR; nothing to upload."
-            exit 0
+            echo "::error::Generated ARK artifact is missing $TRANSLATED_DIR."
+            exit 1
           fi
 
           ARGS=()

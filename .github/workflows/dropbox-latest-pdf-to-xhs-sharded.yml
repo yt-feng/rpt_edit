@@ -213,6 +213,8 @@ jobs:
           cache: "pip"
       - name: Install Python dependencies
         run: pip install -r requirements.txt
+      - name: Test Dropbox download retries
+        run: python scripts/test_download_dropbox_latest_pdfs.py
       - name: Download PDFs from latest Dropbox date folder
         id: dropbox
         env:

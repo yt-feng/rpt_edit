@@ -19,6 +19,7 @@ import json
 import os
 import re
 import sys
+import time
 from pathlib import Path
 from typing import Any
 
@@ -27,6 +28,16 @@ import requests
 DROPBOX_API = "https://api.dropboxapi.com/2"
 DROPBOX_CONTENT = "https://content.dropboxapi.com/2"
 DATE_FOLDER_RE = re.compile(r"^\d{6,8}$")
+DOWNLOAD_MAX_ATTEMPTS = 3
+DOWNLOAD_RETRY_BASE_SECONDS = 2.0
+DOWNLOAD_RETRY_MAX_SECONDS = 15.0
+DOWNLOAD_RETRY_AFTER_MAX_SECONDS = 300.0
+RETRYABLE_DOWNLOAD_STATUSES = {408, 425, 429, 500, 502, 503, 504}
+TRANSIENT_DOWNLOAD_ERRORS = (
+    requests.exceptions.ConnectionError,
+    requests.exceptions.Timeout,
+    requests.exceptions.ChunkedEncodingError,
+)
 
 
 def log(message: str) -> None:
@@ -112,22 +123,80 @@ def safe_local_relpath(dropbox_path: str, latest_path: str, fallback_name: str) 
     return str(Path(*parts)) if parts else fallback_name
 
 
+def download_retry_delay(attempt: int, response: requests.Response | None = None) -> float:
+    """Return bounded backoff while honoring reasonable numeric Retry-After values."""
+    delay = min(
+        DOWNLOAD_RETRY_MAX_SECONDS,
+        DOWNLOAD_RETRY_BASE_SECONDS * (2 ** max(0, attempt - 1)),
+    )
+    if response is not None:
+        retry_after = response.headers.get("Retry-After", "").strip()
+        try:
+            retry_after_seconds = max(0.0, float(retry_after))
+            delay = max(
+                delay,
+                min(DOWNLOAD_RETRY_AFTER_MAX_SECONDS, retry_after_seconds),
+            )
+        except (TypeError, ValueError):
+            pass
+    return delay
+
+
 def download_file(token: str, dropbox_path: str, local_path: Path) -> None:
     local_path.parent.mkdir(parents=True, exist_ok=True)
     # HTTP headers must be latin-1 encodable. json.dumps default ensure_ascii=True
     # escapes non-ASCII characters such as Chinese punctuation in Dropbox paths.
     dropbox_api_arg = json.dumps({"path": dropbox_path})
-    response = requests.post(
-        f"{DROPBOX_CONTENT}/files/download",
-        headers={
-            "Authorization": f"Bearer {token}",
-            "Dropbox-API-Arg": dropbox_api_arg,
-        },
-        timeout=300,
-    )
-    if response.status_code >= 400:
-        raise RuntimeError(f"Dropbox download failed for {dropbox_path}: HTTP {response.status_code}, {response.text[:500]}")
-    local_path.write_bytes(response.content)
+    for attempt in range(1, DOWNLOAD_MAX_ATTEMPTS + 1):
+        try:
+            response = requests.post(
+                f"{DROPBOX_CONTENT}/files/download",
+                headers={
+                    "Authorization": f"Bearer {token}",
+                    "Dropbox-API-Arg": dropbox_api_arg,
+                },
+                timeout=300,
+            )
+        except TRANSIENT_DOWNLOAD_ERRORS as exc:
+            if attempt >= DOWNLOAD_MAX_ATTEMPTS:
+                raise RuntimeError(
+                    f"Dropbox download failed for {dropbox_path} after {attempt} attempts: "
+                    f"{type(exc).__name__}: {exc}"
+                ) from exc
+            delay = download_retry_delay(attempt)
+            log(
+                f"Dropbox download transient {type(exc).__name__} for {dropbox_path} "
+                f"on attempt {attempt}/{DOWNLOAD_MAX_ATTEMPTS}; retrying in {delay:g}s."
+            )
+            time.sleep(delay)
+            continue
+
+        if response.status_code < 400:
+            try:
+                local_path.write_bytes(response.content)
+            finally:
+                response.close()
+            return
+
+        error_text = response.text[:500]
+        retryable = response.status_code in RETRYABLE_DOWNLOAD_STATUSES
+        if not retryable or attempt >= DOWNLOAD_MAX_ATTEMPTS:
+            response.close()
+            raise RuntimeError(
+                f"Dropbox download failed for {dropbox_path}: "
+                f"HTTP {response.status_code}, {error_text}"
+            )
+
+        delay = download_retry_delay(attempt, response)
+        status_code = response.status_code
+        response.close()
+        log(
+            f"Dropbox download retryable HTTP {status_code} for {dropbox_path} "
+            f"on attempt {attempt}/{DOWNLOAD_MAX_ATTEMPTS}; retrying in {delay:g}s."
+        )
+        time.sleep(delay)
+
+    raise RuntimeError(f"Dropbox download retry loop ended unexpectedly for {dropbox_path}")
 
 
 def main() -> int:
