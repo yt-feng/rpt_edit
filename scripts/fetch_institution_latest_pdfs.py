@@ -1238,6 +1238,36 @@ def scrape_pdf_candidates(html_text: str, base_url: str) -> list[str]:
     return sorted(candidates, key=score, reverse=True)
 
 
+def scrape_imf_preview_candidates(html_text: str, base_url: str) -> list[str]:
+    """Extract IMF PDF links, including Country Report stock-number URLs."""
+
+    candidates = scrape_pdf_candidates(html_text, base_url)
+    if "/publications/cr/" not in urlsplit(base_url).path.lower():
+        return candidates
+
+    # Some freshly indexed Country Report previews contain metadata before their
+    # Download PDF button is rendered. The stock number is the exact media
+    # filename, so it remains a reliable resolver for these cached pages.
+    plain_text = html.unescape(re.sub(r"<[^>]+>", " ", html_text))
+    for match in re.finditer(
+        r"\bStock\s+No\.?\s*:?\s*([A-Z0-9][A-Z0-9._-]{5,31})\b",
+        plain_text,
+        re.I,
+    ):
+        stock_no = match.group(1).rstrip(".").lower()
+        year_match = re.search(r"20\d{2}", stock_no)
+        if not year_match:
+            continue
+        stem = (
+            "https://www.imf.org/-/media/files/publications/cr/"
+            f"{year_match.group(0)}/english/{stock_no}"
+        )
+        for candidate in (f"{stem}.pdf", f"{stem}-source-pdf.pdf"):
+            if candidate not in candidates:
+                candidates.append(candidate)
+    return candidates
+
+
 def collect_coveo_preview_candidates(
     cfg: dict[str, Any],
     session: requests.Session,
@@ -1269,7 +1299,7 @@ def collect_coveo_preview_candidates(
         },
     )
     response.raise_for_status()
-    return scrape_pdf_candidates(response.text, base_url)
+    return scrape_imf_preview_candidates(response.text, base_url)
 
 
 def download_pdf(session: requests.Session, urls: Iterable[str], dest: Path, timeout: int, max_bytes: int, impersonate: bool = False, profile: str | None = None, proxy: str | None = None) -> tuple[str | None, str]:
