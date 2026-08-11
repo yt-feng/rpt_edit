@@ -40,7 +40,7 @@ class WeChatOutputContractTests(unittest.TestCase):
         self.assertIn("<blockquote", rendered)
         self.assertNotIn("KC评论", rendered)
 
-    def test_private_site_never_rewrites_the_fixed_public_footer(self) -> None:
+    def test_private_values_are_materialized_only_in_request_clone(self) -> None:
         public_articles = [{
             "title": "测试",
             "content": f"<p>{FINAL_CTA_TEXT}</p><p>legacy:{PUBLIC_SITE_HOST_PLACEHOLDER}</p>",
@@ -51,8 +51,9 @@ class WeChatOutputContractTests(unittest.TestCase):
             "https://private.example.invalid",
         )
 
-        self.assertEqual(f"更新信息参见{PUBLIC_SITE_HOST}", FINAL_CTA_TEXT)
+        self.assertEqual(f"更新信息参见{PUBLIC_SITE_HOST_PLACEHOLDER}", FINAL_CTA_TEXT)
         self.assertIn(PUBLIC_SITE_HOST_PLACEHOLDER, public_articles[0]["content"])
+        self.assertNotIn(PUBLIC_SITE_HOST, public_articles[0]["content"])
         self.assertNotIn(PUBLIC_SITE_HOST_PLACEHOLDER, submitted[0]["content"])
         self.assertIn(PUBLIC_SITE_HOST, submitted[0]["content"])
         self.assertNotIn("private.example.invalid", submitted[0]["content"])

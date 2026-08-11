@@ -53,7 +53,7 @@ BOTTOM_DISCLAIMER = (
 )
 PUBLIC_SITE_HOST = "".join(("kc", "desk", ".com"))
 PUBLIC_SITE_HOST_PLACEHOLDER = "portal.example.invalid"
-FINAL_CTA_TEXT = f"更新信息参见{PUBLIC_SITE_HOST}"
+FINAL_CTA_TEXT = f"更新信息参见{PUBLIC_SITE_HOST_PLACEHOLDER}"
 DEFAULT_BODY_HOOK = ""
 DEFAULT_BODY_VISIBLE_CHARS = 1200
 DEFAULT_MIN_INLINE_IMAGES = 3
@@ -2677,7 +2677,7 @@ def materialize_private_article_payload(
     articles: list[dict[str, Any]],
     site_url: str,
 ) -> list[dict[str, Any]]:
-    """Materialize private source URLs without changing the fixed public footer."""
+    """Materialize deployment-only values in the in-memory WeChat request."""
     host = private_site_host(site_url)
     rendered: list[dict[str, Any]] = []
     for raw_article in articles:

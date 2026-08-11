@@ -1657,7 +1657,12 @@ def load_blog_draft_articles(drafts_root: Path, start_date: date) -> list[dict[s
             if not title and not raw_content.strip():
                 continue
             sanitized_content = sanitize_blog_html(raw_content)
-            fingerprint = blog_article_fingerprint(title, sanitized_content)
+            stored_content = sanitized_content or "<p>正文暂不可用。</p>"
+            digest = compact_space(str(raw_article.get("digest") or ""))[:300]
+            if not digest:
+                digest = blog_html_text(stored_content)[:220]
+            display_title = title or digest[:80] or "未命名文章"
+            fingerprint = blog_article_fingerprint(display_title, stored_content)
             origin = {
                 "source": source,
                 "source_label": BLOG_SOURCE_LABELS[source],
@@ -1676,14 +1681,10 @@ def load_blog_draft_articles(drafts_root: Path, start_date: date) -> list[dict[s
                 if origin_key not in known_origins:
                     existing["origins"].append(origin)
                     existing["last_date"] = max(existing["last_date"], date_value.isoformat())
-                if date_value.isoformat() >= previous_last_date and sanitized_content:
-                    existing["content"] = sanitized_content
+                if date_value.isoformat() >= previous_last_date and stored_content:
+                    existing["content"] = stored_content
                 continue
 
-            digest = compact_space(str(raw_article.get("digest") or ""))[:300]
-            if not digest:
-                digest = blog_html_text(sanitized_content)[:220]
-            display_title = title or digest[:80] or "未命名文章"
             slug = blog_public_slug(date_value, fingerprint)
             unique[fingerprint] = {
                 "fingerprint": fingerprint,
@@ -1692,7 +1693,7 @@ def load_blog_draft_articles(drafts_root: Path, start_date: date) -> list[dict[s
                 "title": display_title,
                 "author": compact_space(str(raw_article.get("author") or "Portal Suite"))[:100],
                 "digest": digest,
-                "content": sanitized_content or "<p>正文暂不可用。</p>",
+                "content": stored_content,
                 "date": date_value.isoformat(),
                 "last_date": date_value.isoformat(),
                 "source": source,
@@ -1864,6 +1865,8 @@ def validate_blog_archive_record(data: Any, path: Path, start_date: date) -> dic
     content = str(data.get("content") or "")
     if not content or len(content) > BLOG_MAX_ARTICLE_HTML_CHARS or sanitize_blog_html(content) != content:
         raise ValueError(f"Blog archive contains unsanitized or invalid HTML: {path}")
+    if blog_article_fingerprint(title, content) != fingerprint:
+        raise ValueError(f"Blog archive fingerprint does not match title/content: {path}")
     raw_origins = data.get("origins")
     if not isinstance(raw_origins, list):
         raise ValueError(f"Blog archive origins must be a list: {path}")

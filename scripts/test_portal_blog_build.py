@@ -449,6 +449,18 @@ class BlogBuildTests(unittest.TestCase):
             self.assertEqual(1, len(list((archive / "20260727").glob("*.json"))))
             self.assertEqual(1, len(list((archive / "20260728").glob("*.json"))))
 
+            record = json.loads(first_shards[0].read_text(encoding="utf-8"))
+            record["content"] = "<p>正文被修改但 fingerprint 未更新</p>"
+            first_shards[0].write_text(json.dumps(record, ensure_ascii=False), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "fingerprint does not match title/content"):
+                builder.build_blog(
+                    temp / "site-stale-fingerprint",
+                    drafts,
+                    "https://portal.example.invalid",
+                    date(2026, 7, 27),
+                    archive,
+                )
+
             first_shards[0].write_text("{broken", encoding="utf-8")
             with self.assertRaisesRegex(ValueError, "Invalid Blog archive shard"):
                 builder.build_blog(

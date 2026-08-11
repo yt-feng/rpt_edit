@@ -3,20 +3,41 @@
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from pathlib import Path
+from typing import Any
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPT_DIR))
 
 from build_portal_suite_site import (  # noqa: E402
     BLOG_START_DATE,
+    blog_archive_record,
     load_blog_archive,
     load_blog_draft_articles,
     merge_blog_articles,
     parse_blog_start_date,
     persist_blog_archive,
 )
+from check_public_identity import confusable_skeleton, private_markers  # noqa: E402
+
+
+def assert_public_archive_identity(articles: list[dict[str, Any]]) -> None:
+    """Reject private deployment markers before public archive records are written."""
+    markers = tuple(marker.casefold() for marker in private_markers())
+    failed: list[str] = []
+    for article in articles:
+        record = blog_archive_record(article)
+        serialized = json.dumps(record, ensure_ascii=False, sort_keys=True)
+        skeleton = confusable_skeleton(serialized)
+        if any(marker in skeleton for marker in markers):
+            failed.append(str(record.get("fingerprint") or "unknown"))
+    if failed:
+        raise ValueError(
+            "Private identity marker found in public Blog archive record(s): "
+            + ", ".join(sorted(failed))
+        )
 
 
 def main() -> int:
@@ -33,6 +54,7 @@ def main() -> int:
     draft_articles = load_blog_draft_articles(drafts_root, start_date)
     archived_articles = load_blog_archive(archive_root, start_date)
     merged_articles = merge_blog_articles(archived_articles, draft_articles)
+    assert_public_archive_identity(merged_articles)
     persist_blog_archive(archive_root, merged_articles, start_date)
 
     before = {str(article.get("fingerprint") or "") for article in archived_articles}

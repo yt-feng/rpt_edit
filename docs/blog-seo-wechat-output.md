@@ -88,10 +88,11 @@ sensitive source claims are not inherited.
 
 ## Public footer and private website value
 
-Every WeChat article ends with `更新信息参见` plus the runtime
-`PUBLIC_SITE_HOST`. The production value is assembled at runtime so the
-private deployment identity is not committed in plain text. It is a fixed
-editorial value and is never replaced from `PORTAL_SITE_URL`.
+Every persisted WeChat template ends with `更新信息参见` plus the neutral
+`PUBLIC_SITE_HOST_PLACEHOLDER`. The production value is assembled only in the
+in-memory submission clone, so the private deployment identity is not written
+to the repository or public Blog archive. It is a fixed editorial value and is
+never derived from `PORTAL_SITE_URL`.
 
 The WeChat workflow still reads the production site origin from the
 `PORTAL_SITE_URL` secret and validates that it is an origin-only HTTPS URL for
@@ -99,9 +100,11 @@ private `content_source_url` fields.
 
 For each draft, the uploader creates two payloads:
 
-1. a public template containing the fixed public-host footer;
-2. an in-memory submission clone in which only private source-URL placeholders
-   are replaced by the validated production hostname.
+1. a public template containing only the neutral footer and source-URL
+   placeholders;
+2. an in-memory submission clone in which the footer placeholder is replaced
+   by `PUBLIC_SITE_HOST`, while source-URL placeholders are replaced by the
+   validated `PORTAL_SITE_URL` hostname.
 
 Only the second payload is sent to the WeChat API. Private source URLs are
 never written to the repository, logs, summaries, or public artifacts.

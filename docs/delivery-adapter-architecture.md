@@ -68,9 +68,9 @@ Controlled self-hosted runners handle adapters that require fixed network identi
   normalize the historical label.
 - WeChat body budgeting preserves complete source sentences and never invents
   a period after a hard character cut.
-- The final public information line is `更新信息参见` plus the runtime
-  `PUBLIC_SITE_HOST`; private deployment URLs may only materialize in private
-  source-URL fields.
+- Repository-at-rest templates keep the final information line on the neutral
+  public placeholder. The fixed `PUBLIC_SITE_HOST` footer and validated private
+  source URL materialize only in the in-memory WeChat submission clone.
 
 ## Retry Semantics
 

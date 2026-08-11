@@ -44,6 +44,31 @@ class ArkWorkflowContractTests(unittest.TestCase):
         self.assertIn("Generated ARK artifact is missing $TRANSLATED_DIR", upload_job)
         self.assertNotIn("nothing to upload", upload_job)
 
+    def test_dispatch_can_replay_an_artifact_from_a_prior_run(self) -> None:
+        workflow = self.workflow_text()
+        fetch_job = workflow.split("  fetch-and-build:", 1)[1].split(
+            "  upload-wechat-drafts:", 1
+        )[0]
+
+        self.assertIn("replay_run_id:", workflow)
+        self.assertIn("replay_date_folder:", workflow)
+        self.assertRegex(workflow, r"(?m)^  actions: read$")
+        self.assertIn("- name: Download prior ARK run artifact", fetch_job)
+        self.assertIn("github-token: ${{ github.token }}", fetch_job)
+        self.assertIn("repository: ${{ github.repository }}", fetch_job)
+        self.assertIn("run-id: ${{ steps.replay.outputs.run_id }}", fetch_job)
+        self.assertIn("Replayed ARK artifact has no translated articles", fetch_job)
+        self.assertIn("SUMMARY_COUNT", fetch_job)
+        self.assertIn(
+            "article_count: ${{ steps.handoff.outputs.article_count }}",
+            fetch_job,
+        )
+        self.assertIn(
+            "name: ark-invest-feed-run-${{ steps.handoff.outputs.date_folder }}-${{ github.run_id }}",
+            fetch_job,
+        )
+        self.assertIn("overwrite: true", fetch_job)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

@@ -33,6 +33,14 @@ on:
         required: true
         type: boolean
         default: false
+      replay_run_id:
+        description: "Optional prior workflow run ID whose ARK artifact should be replayed"
+        required: false
+        default: ""
+      replay_date_folder:
+        description: "Date folder stored in the replay artifact, for example 260811"
+        required: false
+        default: ""
 
   schedule:
     # 06:45 Beijing time (UTC+8), before the market views PDF at 08:00.
@@ -40,6 +48,7 @@ on:
 
 permissions:
   contents: write
+  actions: read
 
 env:
   PYTHONUNBUFFERED: "1"
@@ -53,8 +62,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 90
     outputs:
-      date_folder: ${{ steps.fetch.outputs.date_folder }}
-      article_count: ${{ steps.fetch.outputs.article_count }}
+      date_folder: ${{ steps.handoff.outputs.date_folder }}
+      article_count: ${{ steps.handoff.outputs.article_count }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -68,21 +77,93 @@ jobs:
           git reset --hard origin/main
           git clean -fdx
 
+      - name: Resolve optional artifact replay
+        id: replay
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          REPLAY_RUN_ID: ${{ github.event.inputs.replay_run_id || '' }}
+          REPLAY_DATE_FOLDER: ${{ github.event.inputs.replay_date_folder || '' }}
+        run: |
+          if [ -z "$REPLAY_RUN_ID" ] && [ -z "$REPLAY_DATE_FOLDER" ]; then
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if [ "$EVENT_NAME" != "workflow_dispatch" ]; then
+            echo "Artifact replay is available only through workflow_dispatch" >&2
+            exit 2
+          fi
+          if ! [[ "$REPLAY_RUN_ID" =~ ^[0-9]+$ ]]; then
+            echo "replay_run_id must be a numeric workflow run ID" >&2
+            exit 2
+          fi
+          if ! [[ "$REPLAY_DATE_FOLDER" =~ ^[0-9]{6}$ ]]; then
+            echo "replay_date_folder must contain exactly 6 digits" >&2
+            exit 2
+          fi
+          echo "enabled=true" >> "$GITHUB_OUTPUT"
+          echo "run_id=$REPLAY_RUN_ID" >> "$GITHUB_OUTPUT"
+          echo "date_folder=$REPLAY_DATE_FOLDER" >> "$GITHUB_OUTPUT"
+
+      - name: Download prior ARK run artifact
+        if: ${{ steps.replay.outputs.enabled == 'true' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: ark-invest-feed-run-${{ steps.replay.outputs.date_folder }}-${{ steps.replay.outputs.run_id }}
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: ${{ steps.replay.outputs.run_id }}
+          path: .
+
+      - name: Validate replayed ARK articles
+        id: replay_artifact
+        if: ${{ steps.replay.outputs.enabled == 'true' }}
+        env:
+          DATE_FOLDER: ${{ steps.replay.outputs.date_folder }}
+        run: |
+          TRANSLATED_DIR="portal_translated_reports/ark/$DATE_FOLDER"
+          SUMMARY="$TRANSLATED_DIR/translation_summary.json"
+          if [ ! -d "$TRANSLATED_DIR" ]; then
+            echo "Replayed ARK artifact is missing $TRANSLATED_DIR" >&2
+            exit 1
+          fi
+          if [ ! -f "$SUMMARY" ]; then
+            echo "Replayed ARK artifact is missing $SUMMARY" >&2
+            exit 1
+          fi
+          ARTICLE_COUNT="$(find "$TRANSLATED_DIR" -type f -name translated.md -size +0c | wc -l | tr -d '[:space:]')"
+          if ! [[ "$ARTICLE_COUNT" =~ ^[1-9][0-9]*$ ]]; then
+            echo "Replayed ARK artifact has no translated articles in $TRANSLATED_DIR" >&2
+            exit 1
+          fi
+          SUMMARY_DATE="$(jq -r '.date_folder // empty' "$SUMMARY")"
+          SUMMARY_COUNT="$(jq -r '.successful_count // empty' "$SUMMARY")"
+          if [ "$SUMMARY_DATE" != "$DATE_FOLDER" ] || [ "$SUMMARY_COUNT" != "$ARTICLE_COUNT" ]; then
+            echo "Replayed ARK summary does not match date/count: date=$SUMMARY_DATE count=$SUMMARY_COUNT actual=$ARTICLE_COUNT" >&2
+            exit 1
+          fi
+          echo "date_folder=$DATE_FOLDER" >> "$GITHUB_OUTPUT"
+          echo "article_count=$ARTICLE_COUNT" >> "$GITHUB_OUTPUT"
+          echo "::notice::Replaying $ARTICLE_COUNT ARK article(s) from run ${{ steps.replay.outputs.run_id }}."
+
       - name: Set up Python
+        if: ${{ steps.replay.outputs.enabled != 'true' }}
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
           cache: "pip"
 
       - name: Verify ARK workflow handoff contract
+        if: ${{ steps.replay.outputs.enabled != 'true' }}
         run: python scripts/test_ark_workflow_contract.py
 
       - name: Install Python dependencies
+        if: ${{ steps.replay.outputs.enabled != 'true' }}
         run: |
           pip install -r requirements.txt
           pip install reportlab
 
       - name: Install Chinese fonts
+        if: ${{ steps.replay.outputs.enabled != 'true' }}
         timeout-minutes: 5
         continue-on-error: true
         run: |
@@ -91,6 +172,7 @@ jobs:
 
       - name: Fetch new ARK feed items
         id: fetch
+        if: ${{ steps.replay.outputs.enabled != 'true' }}
         run: |
           set -o pipefail
           DATE="$(TZ=Asia/Shanghai date +%y%m%d)"
@@ -103,7 +185,7 @@ jobs:
             2>&1 | tee ark_feed_progress.log
 
       - name: Build ARK Portal translated articles
-        if: ${{ steps.fetch.outputs.article_count != '0' }}
+        if: ${{ steps.replay.outputs.enabled != 'true' && steps.fetch.outputs.article_count != '0' }}
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DEEPSEEK_API_KEY_BACKUP: ${{ secrets.DEEPSEEK_API_KEY_BACKUP }}
@@ -120,21 +202,46 @@ jobs:
             2>&1 | tee ark_translated_progress.log
 
       - name: Commit ARK feed state
-        if: ${{ steps.fetch.outputs.article_count != '0' }}
+        if: ${{ steps.replay.outputs.enabled != 'true' && steps.fetch.outputs.article_count != '0' }}
         run: |
           bash scripts/commit_output_dir.sh "ark_invest_feed" "Update ARK Invest feed archive" 8
+
+      - name: Resolve artifact handoff metadata
+        id: handoff
+        env:
+          REPLAY_ENABLED: ${{ steps.replay.outputs.enabled }}
+          REPLAY_DATE_FOLDER: ${{ steps.replay_artifact.outputs.date_folder }}
+          REPLAY_ARTICLE_COUNT: ${{ steps.replay_artifact.outputs.article_count }}
+          FETCH_DATE_FOLDER: ${{ steps.fetch.outputs.date_folder }}
+          FETCH_ARTICLE_COUNT: ${{ steps.fetch.outputs.article_count }}
+        run: |
+          if [ "$REPLAY_ENABLED" = "true" ]; then
+            DATE_FOLDER="$REPLAY_DATE_FOLDER"
+            ARTICLE_COUNT="$REPLAY_ARTICLE_COUNT"
+          else
+            DATE_FOLDER="$FETCH_DATE_FOLDER"
+            ARTICLE_COUNT="$FETCH_ARTICLE_COUNT"
+          fi
+          if ! [[ "$DATE_FOLDER" =~ ^[0-9]{6}$ ]] || ! [[ "$ARTICLE_COUNT" =~ ^[0-9]+$ ]]; then
+            echo "Unable to resolve ARK artifact handoff metadata" >&2
+            exit 1
+          fi
+          echo "date_folder=$DATE_FOLDER" >> "$GITHUB_OUTPUT"
+          echo "article_count=$ARTICLE_COUNT" >> "$GITHUB_OUTPUT"
+          echo "::notice::ARK handoff date=$DATE_FOLDER article_count=$ARTICLE_COUNT replay=$REPLAY_ENABLED."
 
       - name: Upload run artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: ark-invest-feed-run-${{ steps.fetch.outputs.date_folder }}-${{ github.run_id }}
+          name: ark-invest-feed-run-${{ steps.handoff.outputs.date_folder }}-${{ github.run_id }}
           path: |
             ark_invest_feed/ark_feed_run_manifest.json
             ark_feed_progress.log
             ark_translated_progress.log
             xhs_notes/ark
             portal_translated_reports/ark
-          if-no-files-found: ignore
+          if-no-files-found: error
+          overwrite: true
 
   upload-wechat-drafts:
     needs: fetch-and-build
