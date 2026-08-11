@@ -2812,6 +2812,22 @@
     "unctad:https://unctad.org/publication/vulnerability-profile-senegal": {
       "first_seen": "2026-08-10",
       "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publ/bisbull132.htm": {
+      "first_seen": "2026-08-11",
+      "status": "downloaded"
+    },
+    "oecd:https://www.oecd.org/en/publications/strengthening-health-checks-for-the-prevention-and-management-of-cardiovascular-disease_95c9ccdb-en.html": {
+      "first_seen": "2026-08-11",
+      "status": "downloaded"
+    },
+    "oecd:https://www.oecd.org/en/publications/shedding-light-on-underexplored-ways-services-trade-impacts-workers_8bfc6734-en.html": {
+      "first_seen": "2026-08-11",
+      "status": "downloaded"
+    },
+    "adb:1166491": {
+      "first_seen": "2026-08-11",
+      "status": "downloaded"
     }
   }
 }
