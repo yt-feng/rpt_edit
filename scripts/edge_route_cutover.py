@@ -12,6 +12,7 @@ from typing import Any
 
 
 API_ROOT = "https://api.cloudflare.com/client/v4"
+LAST_VERIFY_FAILURE = "not_started"
 
 
 class CutoverError(Exception):
@@ -100,6 +101,7 @@ def request_status(url: str, *, method: str = "HEAD", headers: dict[str, str] | 
 
 
 def verify_edge(origin: str) -> bool:
+    global LAST_VERIFY_FAILURE
     checks = (
         ("/", "HEAD", 200, "text/html"),
         ("/assets/app.js", "HEAD", 200, "javascript"),
@@ -111,10 +113,13 @@ def verify_edge(origin: str) -> bool:
     for path, method, expected_status, expected_type in checks:
         status, headers, _body = request_status(origin + path, method=method)
         if status != expected_status:
+            LAST_VERIFY_FAILURE = f"{method} {path} status={status} expected={expected_status}"
             return False
         if path != "/api/health" and headers.get("x-origin-class", "").lower() != "edge-static":
+            LAST_VERIFY_FAILURE = f"{method} {path} missing_edge_origin"
             return False
         if expected_type and expected_type not in headers.get("content-type", "").lower():
+            LAST_VERIFY_FAILURE = f"{method} {path} unexpected_content_type"
             return False
 
     status, headers, body = request_status(
@@ -122,19 +127,28 @@ def verify_edge(origin: str) -> bool:
         method="GET",
         headers={"Range": "bytes=0-1023"},
     )
-    return (
+    valid = (
         status == 206
         and len(body) == 1024
         and headers.get("x-origin-class", "").lower() == "edge-static"
         and headers.get("content-range", "").lower().startswith("bytes 0-1023/")
     )
+    LAST_VERIFY_FAILURE = "" if valid else (
+        f"GET /data/search_index.json range_status={status} bytes={len(body)}"
+    )
+    return valid
 
 
-def wait_for_edge(origin: str, *, expected: bool, attempts: int = 36) -> bool:
-    for _attempt in range(attempts):
+def wait_for_edge(origin: str, *, expected: bool, attempts: int = 120) -> bool:
+    for attempt in range(attempts):
         active = verify_edge(origin)
         if active is expected:
             return True
+        if (attempt + 1) % 12 == 0:
+            print(
+                f"edge verification pending attempt={attempt + 1}: {LAST_VERIFY_FAILURE}",
+                file=sys.stderr,
+            )
         time.sleep(5)
     return False
 
