@@ -844,7 +844,12 @@ def build_index(
                 retryable_count += 1
         elif status == "quarantined":
             quarantined_count += 1
-        elif status != "ok":
+        # A bare ``status=ok`` is not a completed checkpoint.  In particular,
+        # checkpoints from an older analysis prompt/version must be sent back
+        # through the model before this workflow may publish the v2 index.  The
+        # old status-only check incorrectly reported those deferred hashes as
+        # complete when a checkpoint batch limit was reached.
+        elif not state_is_reusable(record):
             unprocessed_count += 1
     summary = {
         "schema_version": SCHEMA_VERSION,

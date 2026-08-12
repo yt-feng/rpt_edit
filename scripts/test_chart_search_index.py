@@ -151,6 +151,71 @@ class ChartSearchIndexTests(unittest.TestCase):
             self.assertEqual(summary["cache_hits"], 1)
             self.assertEqual(second["item_count"], 1)
 
+    def test_legacy_ok_checkpoints_remain_unprocessed_until_every_batch_is_reclassified(self) -> None:
+        """A version migration must not publish after only the first 20 calls."""
+        with tempfile.TemporaryDirectory() as temp:
+            workspace = Path(temp)
+            candidate_count = 358
+            candidates = [
+                chart.ChartCandidate(
+                    image_path=workspace / f"source_image_{ordinal:03d}.png",
+                    image_sha256=f"{ordinal:064x}",
+                    report_ref=f"report-{ordinal:03d}",
+                    report_id=f"report-{ordinal:03d}",
+                    report_title=f"Report {ordinal:03d}",
+                    date_folder="260811",
+                    ordinal=ordinal,
+                )
+                for ordinal in range(1, candidate_count + 1)
+            ]
+            legacy_analysis = sample_analysis(False)
+            state = {
+                "schema_version": 1,
+                "analysis_version": "chart-search-v1",
+                "items": {
+                    candidate.image_sha256: {
+                        "status": "ok",
+                        "analysis_version": "chart-search-v1",
+                        "attempts": 1,
+                        "last_attempt_run_id": "older-workflow",
+                        "analysis": legacy_analysis,
+                    }
+                    for candidate in candidates
+                },
+            }
+            previous = {"schema_version": 1, "reports": []}
+            calls = 0
+
+            def classify_as_non_chart(_path: Path) -> dict:
+                nonlocal calls
+                calls += 1
+                return sample_analysis(False)
+
+            summaries = []
+            for _batch in range(20):
+                previous, summary = chart.build_index(
+                    candidates,
+                    state=state,
+                    previous_index=previous,
+                    state_path=workspace / "state.json",
+                    asset_output_dir=workspace / "assets",
+                    analyze=classify_as_non_chart,
+                    max_model_calls=20,
+                    attempt_run_id="migration-workflow",
+                )
+                summaries.append(summary)
+                if summary["unprocessed_count"] == 0:
+                    break
+
+            self.assertEqual(summaries[0]["model_calls"], 20)
+            self.assertEqual(summaries[0]["deferred"], 338)
+            self.assertEqual(summaries[0]["unprocessed_count"], 338)
+            self.assertEqual(len(summaries), 18)
+            self.assertEqual(calls, candidate_count)
+            self.assertEqual(summaries[-1]["model_calls"], 18)
+            self.assertEqual(summaries[-1]["unprocessed_count"], 0)
+            self.assertTrue(all(chart.state_is_reusable(row) for row in state["items"].values()))
+
     def test_non_chart_is_checkpointed_but_not_indexed(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             workspace = Path(temp)
