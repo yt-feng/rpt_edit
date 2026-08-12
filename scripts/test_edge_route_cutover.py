@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import os
+import sys
 import unittest
 from unittest.mock import patch
 
@@ -8,6 +10,18 @@ import edge_route_cutover as cutover
 
 
 class MigrateRouteCleanupTests(unittest.TestCase):
+    def test_verify_mode_uses_live_checks_without_cloud_route_permissions(self) -> None:
+        with (
+            patch.object(sys, "argv", ["edge_route_cutover.py", "verify"]),
+            patch.dict(os.environ, {"SITE_HOST": "portal.example.invalid", "EDGE_SCRIPT_NAME": "svc-neutral"}, clear=False),
+            patch.object(cutover, "wait_for_edge", return_value=True) as wait_for_edge,
+            patch.object(cutover, "find_zone_id") as find_zone_id,
+        ):
+            self.assertEqual(cutover.run(), 0)
+
+        wait_for_edge.assert_called_once_with("https://portal.example.invalid", expected=True)
+        find_zone_id.assert_not_called()
+
     def test_existing_route_is_never_deleted_when_verification_fails(self) -> None:
         route = {"id": "route-id", "script": "svc-neutral"}
         with (

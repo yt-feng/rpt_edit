@@ -516,8 +516,10 @@ jobs:
           if curl --fail --silent --show-error --head --max-time 30 "https://$SITE_HOST/" | tr -d '\r' | grep -qi '^x-origin-class: edge-static$'
           then
             echo "Neutral edge route is already active; running the complete route verification."
+            python3 -B scripts/edge_route_cutover.py verify
+          else
+            python3 -B scripts/edge_route_cutover.py migrate
           fi
-          python3 -B scripts/edge_route_cutover.py migrate
 
       - name: Verify refreshed catalog is live
         if: github.event_name == 'schedule' || inputs.operation == 'migrate'

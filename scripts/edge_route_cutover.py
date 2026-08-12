@@ -173,7 +173,7 @@ def rollback(zone_id: str, pattern: str, origin: str, script_name: str) -> None:
 
 
 def run() -> int:
-    if len(sys.argv) != 2 or sys.argv[1] not in {"migrate", "rollback"}:
+    if len(sys.argv) != 2 or sys.argv[1] not in {"migrate", "rollback", "verify"}:
         return 2
     hostname = os.environ.get("SITE_HOST", "").strip().lower()
     script_name = os.environ.get("EDGE_SCRIPT_NAME", "").strip()
@@ -182,6 +182,11 @@ def run() -> int:
     origin = "https://" + hostname
     pattern = hostname + "/*"
     try:
+        if sys.argv[1] == "verify":
+            if not wait_for_edge(origin, expected=True):
+                raise CutoverError("edge_verify")
+            print("edge route verified")
+            return 0
         zone_id = find_zone_id(hostname)
         if sys.argv[1] == "migrate":
             migrate(zone_id, pattern, origin, script_name)
