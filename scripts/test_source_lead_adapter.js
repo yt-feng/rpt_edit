@@ -119,7 +119,7 @@ function jsonResponse(payload) {
     <article class="post excerpt">
       <header><h2><a href="/reports/2048.html">MLCC <em>pricing</em> tracker</a></h2></header>
       <time datetime="2026-08-07">August 7</time>
-      <div class="meta"><span class="cat">Example Securities</span><span class="cat">18 pages</span></div>
+      <div class="meta"><span class="cat">\ue123Example Securities</span><span class="cat">18 pages</span></div>
       <div class="article-tags"><a>MLCC</a><a>pricing</a></div>
     </article>`;
   const htmlResult = await adapter.searchSourceLeadMetadata({

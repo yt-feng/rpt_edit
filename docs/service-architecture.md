@@ -1,6 +1,6 @@
 # Protected Document Service Architecture
 
-Last updated: 2026-08-10
+Last updated: 2026-08-12
 
 This document describes the protected document service.
 
@@ -133,6 +133,8 @@ responses expose only neutral labels and contact-only detail pages.
   materialization are defined in [Blog SEO and WeChat Output Contract](blog-seo-wechat-output.md).
 - Chart descriptions and image-hash checkpoints are defined in
   [Chart Search Architecture](chart-search-architecture.md).
+- Registered-user report discovery and the 30-day member Course recommender are
+  defined in [Report Chat and Course Recommendation RAG](report-chat-rag-architecture.md).
 
 ## Hosting And Public-Identity Boundary
 

@@ -1,6 +1,6 @@
 # Chart Search Architecture
 
-Last updated: 2026-08-10
+Last updated: 2026-08-12
 
 ## Goal
 
@@ -24,6 +24,9 @@ flowchart LR
   A --> R
   R --> B["Static release build"]
   B --> Q["Normal search + lazy chart-search data"]
+  B --> G["Public Charts gallery"]
+  G --> P["Opaque image API"]
+  P --> A
 ```
 
 The daily PDF workflow dispatches `portal-chart-search-index.yml` before deleting
@@ -35,9 +38,39 @@ unknown content hashes, and publishes the new index. The regular edge refresh th
 2. merges report-level chart text into `data/search_index.json`;
 3. publishes `data/chart_search_index.json` for a chart-specific search view.
 
+The static release also publishes `charts.html`, `assets/charts.js`, and
+`assets/charts.css`. The page flattens only valid chart records, supports
+company/metric/period/geography/unit/trend search, filters by chart type and date,
+and links each result back to `report.html?id=<report_id>`. It never embeds the
+private R2 object key.
+
 If chart search is temporarily disabled, the document and publishing workflows keep
 working. Enable the daily dispatch with repository variable
 `CHART_SEARCH_ENABLED=true` after the private API configuration is present.
+
+## Valid-chart Gate
+
+`is_chart=true` by itself is not sufficient for publication. Analysis version
+`chart-search-v2` asks the vision model for:
+
+- `content_kind`: chart, data table, data map, flow diagram, other data visual,
+  or invalid;
+- `quality_score`: 0–100;
+- `has_data_evidence`: visible quantitative or structural evidence;
+- `invalid_reason`: a bounded reason code for rejected images.
+
+The deterministic publisher requires an allowed content kind, score of at least
+60, visible data/relationship evidence, a title and description, and at least one
+structured metric/entity/period/geography/unit field. It rejects cover/title
+pages, tables of contents, author or analyst biographies, contact pages,
+disclaimers and legal notices, references, pure-text blocks, end pages, decorative
+images, photos, and unreadable crops.
+
+The analysis-version change intentionally re-examines old hashes when they are
+encountered again. Before each candidate is reclassified, its deterministic chart
+record is removed from the previous report entry and is re-added only when the new
+gate succeeds. This prevents a prior false positive from surviving a later
+rejection.
 
 ## Model Configuration
 
@@ -84,6 +117,17 @@ only generic failure classes/statuses.
   historical backfill can revisit the retained source artifact if the quarantined
   image later needs another parser/model attempt.
 - Immutable images are uploaded by hash before the index that references them.
+- The entire private chart prefix has a hard default budget of 1 GiB
+  (`1,073,741,824` bytes), configurable only through
+  `CHART_STORAGE_BUDGET_BYTES`. The budget includes state, index, and images.
+- On every publish, objects not referenced by the live index are deleted first.
+  If referenced images still exceed the remaining budget, the publisher keeps
+  images with the most recent report-reference date; R2 `LastModified` is the
+  tie-breaker. This is the pipeline's logical LRU/oldest-first policy because the
+  static page does not write viewer identities or per-view access logs.
+- Any evicted image is removed from the index in the same operation before the
+  index is published. Report/chart counts and search text are recomputed, and a
+  final prefix-size check prevents publication above the configured ceiling.
 - A non-zero `max_images` is an explicit whole-run ceiling. If the ceiling leaves unknown
   hashes, the child run fails after uploading its private checkpoint; the parent therefore
   retains the private source handoff for a later continuation instead of deleting it.
@@ -115,7 +159,10 @@ only generic failure classes/statuses.
           "id": "opaque chart id",
           "image_id": "SHA-256 image id",
           "ordinal": 1,
+          "analysis_version": "chart-search-v2",
           "title": "visible chart title",
+          "content_kind": "chart",
+          "quality_score": 92,
           "chart_type": "line",
           "description": "visible facts",
           "trend_summary": "visible trend",
@@ -137,6 +184,24 @@ The frontend can return to the existing detail page with
 handoff path, provider URL, API credential, or original storage key. `image_id` is an
 opaque lookup id; the gateway should translate it to the private image object only
 when rendering a result thumbnail.
+
+The standalone Charts gallery admits only records whose
+`analysis_version` is exactly `chart-search-v2`. Historical v1 text can remain in
+the incremental private checkpoint for resume purposes, but it is not rendered in
+the visual gallery. Backfilling a date re-analyzes those hashes under v2 and
+publishes only records that pass the new gate.
+
+The gallery expects this neutral gateway contract:
+
+```text
+GET /api/charts/image?id=<64-lowercase-hex-image-id>
+```
+
+The gateway must validate the identifier before constructing the fixed
+`_chart-search/v1/images/<id>.jpg` key, return only `image/jpeg`, and may apply a
+long immutable browser cache because the identifier is a content hash. A missing
+object returns 404. The raw R2 key, bucket name, listing, and credentials never
+reach the browser.
 
 ## Manual Backfill
 
@@ -160,3 +225,5 @@ Each chart run uploads a small `summary.json` artifact with candidate, cache-hit
 model-call, failure, deferred, report, and chart counts. It intentionally excludes
 model responses, images, source paths, and credentials. A healthy incremental run
 normally shows mostly cache hits on a retry and only new hashes as model calls.
+The publish log additionally reports uploaded/reused/evicted image counts, removed
+index records, final stored bytes, and the configured byte ceiling.

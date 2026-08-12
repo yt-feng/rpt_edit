@@ -49,9 +49,13 @@ jobs:
           node --input-type=module --check < workers/edge-static-host/src/index.js
           node --input-type=module --check < workers/portal-suite-worker/src/index.js
           node --input-type=module --check < workers/portal-suite-worker/src/source-lead-adapter.js
+          node --check portal_suite/site_src/assets/report-chat.js
+          node --check portal_suite/site_src/assets/charts.js
+          node --check portal_suite/site_src/assets/site-runtime.js
           node scripts/test_source_lead_adapter.js
           node scripts/test_portal_source_lead_integration.js
           node scripts/test_portal_chart_search_frontend.js
+          node scripts/test_portal_site_runtime.js
           python3 -m py_compile scripts/edge_route_cutover.py
           python3 -m py_compile \
             scripts/build_chart_search_index.py \
@@ -255,7 +259,7 @@ jobs:
             --catalog-path "portal_suite/data/catalog.json" \
             --password-rules "portal_suite/password_rules.json" \
             --r2-prefix "$R2_OBJECT_PREFIX" \
-            --storage-limit-gb 8 \
+            --storage-limit-gb 7 \
             --sync-r2
 
       - name: Translate missing report titles

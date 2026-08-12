@@ -37,6 +37,23 @@
       </section>
 
       <section class="course-catalog" id="courseCatalog" hidden aria-label="可咨询课程"></section>
+
+      <section class="report-chat-panel course-chat-panel" id="courseReportChat" aria-labelledby="courseChatTitle">
+        <div class="report-chat-heading">
+          <div>
+            <p>AI MATERIAL GUIDE</p>
+            <h2 id="courseChatTitle">不知道从哪里开始？直接问资料助手</h2>
+            <span>告诉我目标岗位、行业或想练的能力；剩余有效期至少 30 天的会员可获得按匹配度、机构吸引力和时效排序的具体课程文件建议。</span>
+          </div>
+        </div>
+        <form class="report-chat-form" id="courseChatForm">
+          <textarea id="courseChatInput" rows="3" maxlength="600" placeholder="例如：我准备科技投行面试，推荐最值得看的高盛、摩根大通建模和行业研究资料"></textarea>
+          <button class="primary" type="submit">推荐资料</button>
+        </form>
+        <div id="courseChatStatus" class="status-line" aria-live="polite"></div>
+        <div id="courseChatMessages" class="report-chat-messages"></div>
+        <div id="courseChatRecommendations" class="report-chat-recommendations"></div>
+      </section>
     </main>
 
     <footer class="legal-footer">
@@ -50,5 +67,6 @@
     <script src="assets/contact.js"></script>
     <script src="assets/analytics.js"></script>
     <script src="assets/app.js"></script>
+    <script src="assets/report-chat.js"></script>
   </body>
 </html>

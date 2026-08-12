@@ -54,6 +54,11 @@ class MemoryR2 {
     this.rows.set(key, { value: typeof value === "string" ? value : JSON.stringify(value), etag: `v${this.version}` });
   }
 
+  seedBytes(key, value) {
+    this.version += 1;
+    this.rows.set(key, { value: new Uint8Array(value), etag: `v${this.version}`, binary: true });
+  }
+
   async get(key) {
     if (this.failNextGetExact && key === this.failNextGetExact) {
       this.failNextGetExact = "";
@@ -61,6 +66,14 @@ class MemoryR2 {
     }
     const row = this.rows.get(key);
     if (!row) return null;
+    if (row.binary) {
+      return {
+        etag: row.etag,
+        body: row.value,
+        size: row.value.byteLength,
+        async text() { return new TextDecoder().decode(row.value); },
+      };
+    }
     const bucket = this;
     const object = {
       etag: row.etag,
@@ -705,6 +718,189 @@ test("course directory falls back to text parsing when the R2 body has no json m
   assert.equal(bucket.jsonReadKeys.includes(directoryKey), false);
 });
 
+test("registered users can use grounded report chat and anonymous users cannot", async () => {
+  const bucket = new MemoryR2();
+  const reportId = "aaaaaaaaaaaaaaaaaaaaaaaa";
+  bucket.seed("edge-static/runtime-data/catalog.json", {
+    items: [{
+      id: reportId,
+      title: "JPM-AI data center power constraints-260811",
+      title_zh: "摩根大通：AI 数据中心电力瓶颈",
+      filename: "jpm-ai.pdf",
+      bank_code: "JPM",
+      bank_name: "摩根大通",
+      date_folder: "260811",
+      page_count: 28,
+      available: true,
+      r2_synced: true,
+    }],
+  });
+  bucket.seed("edge-static/runtime-data/search_index.json", {
+    items: [{ id: reportId, text: "AI 数据中心 电力 瓶颈 电网 资本开支" }],
+  });
+  const env = envFor(bucket);
+  const anonymous = await jsonRequest(env, "/report-chat", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ question: "AI 数据中心电力瓶颈" }),
+  });
+  assert.equal(anonymous.response.status, 401);
+  const token = await register(env);
+  const oversized = await jsonRequest(env, "/report-chat", {
+    method: "POST",
+    headers: { "content-type": "application/json", ...bearer(token) },
+    body: JSON.stringify({ question: "AI".repeat(9000) }),
+  });
+  assert.equal(oversized.response.status, 413);
+  const result = await jsonRequest(env, "/report-chat", {
+    method: "POST",
+    headers: { "content-type": "application/json", ...bearer(token) },
+    body: JSON.stringify({ question: "找最近半年AI数据中心电力瓶颈相关的顶级投行报告" }),
+  });
+  assert.equal(result.response.status, 200, JSON.stringify(result.data));
+  assert.equal(result.data.recommendations[0].id, reportId);
+  assert.equal(result.data.recommendations[0].attraction_score, 5);
+  assert.match(result.data.answer, /摩根大通/u);
+  assert.equal(bucket.jsonReadKeys.includes("edge-static/runtime-data/search_index.json"), false);
+  assert.equal(bucket.textReadKeys.includes("edge-static/runtime-data/search_index.json"), false);
+  assert.equal(Object.hasOwn(result.data.recommendations[0], "excerpt"), false);
+  assert.equal(result.response.headers.get("cache-control"), "private, no-store, max-age=0");
+});
+
+test("report chat enforces the per-account Beijing-day limit before retrieval", async () => {
+  const bucket = new MemoryR2();
+  bucket.seed("edge-static/runtime-data/catalog.json", { items: [{ id: "limit-test-report", title: "Limit Test" }] });
+  const env = envFor(bucket);
+  const token = await register(env);
+  const date = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Shanghai",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
+  bucket.seed(`_account/report-chat/${encodeURIComponent("reward-reader@example.com")}/${date}`, {
+    email: "reward-reader@example.com",
+    date,
+    count: 30,
+    updated_at: new Date().toISOString(),
+  });
+  bucket.textReadKeys.length = 0;
+  const limited = await jsonRequest(env, "/report-chat", {
+    method: "POST",
+    headers: { "content-type": "application/json", ...bearer(token) },
+    body: JSON.stringify({ question: "AI 数据中心" }),
+  });
+  assert.equal(limited.response.status, 429);
+  assert.equal(bucket.textReadKeys.includes("edge-static/runtime-data/catalog.json"), false);
+});
+
+test("course chat uses the private course directory, enforces membership, and returns no locators", async () => {
+  const bucket = new MemoryR2();
+  bucket.seed("edge-static/runtime-data/catalog.json", { items: [] });
+  bucket.seed("_course-directory/v1/directory.json", {
+    schema_version: 1,
+    generated_at: "2026-08-12T10:00:00+08:00",
+    items: [{
+      id: "file-course-chat-01",
+      course_id: "fin-01",
+      name: "摩根大通投行估值与建模案例",
+      folders: ["投行面试", "估值建模"],
+      extension: "xlsx",
+      size_label: "4.2 MB",
+      date: "2026-08-12",
+      entities: ["摩根大通", "高盛"],
+      source_path: "/private/course/source/file.xlsx",
+      object_key: "private-course-object",
+    }],
+  });
+  const env = envFor(bucket);
+  const token = await register(env);
+  const denied = await jsonRequest(env, "/report-chat", {
+    method: "POST",
+    headers: { "content-type": "application/json", ...bearer(token) },
+    body: JSON.stringify({ context: "course", question: "摩根大通 投行 建模" }),
+  });
+  assert.equal(denied.response.status, 403);
+  assert.equal(Object.hasOwn(denied.data, "recommendations"), false);
+
+  const email = "reward-reader@example.com";
+  bucket.seed(`_account/entitlements/${encodeURIComponent(email)}`, {
+    id: "entitlement-course-chat",
+    email,
+    plan: "annual",
+    status: "active",
+    lifetime: false,
+    current_period_end: new Date(Date.now() + 31 * 24 * 60 * 60 * 1000).toISOString(),
+    updated_at: new Date().toISOString(),
+  });
+  const allowed = await jsonRequest(env, "/report-chat", {
+    method: "POST",
+    headers: { "content-type": "application/json", ...bearer(token) },
+    body: JSON.stringify({ context: "course", question: "摩根大通 投行 建模" }),
+  });
+  assert.equal(allowed.response.status, 200, JSON.stringify(allowed.data));
+  assert.equal(allowed.data.recommendations[0].id, "file-course-chat-01");
+  assert.equal(allowed.data.recommendations[0].kind, "course");
+  assert.equal(allowed.data.recommendations[0].attraction_score, 5);
+  assert.equal(allowed.data.recommendations[0].title, "摩根大通投行估值与建模案例");
+  const serialized = JSON.stringify(allowed.data);
+  assert.equal(serialized.includes("/private/course"), false);
+  assert.equal(serialized.includes("private-course-object"), false);
+  assert.equal(allowed.response.headers.get("cache-control"), "private, no-store, max-age=0");
+});
+
+test("chart gallery exposes only opaque image ids and streams immutable images", async () => {
+  const bucket = new MemoryR2();
+  const imageId = "b".repeat(64);
+  bucket.seed("_chart-search/v1/index.json", {
+    schema_version: 1,
+    updated_at_bjt: "2026-08-12T10:00:00+08:00",
+    reports: [{
+      report_id: "aaaaaaaaaaaaaaaaaaaaaaaa",
+      title: "摩根大通 AI 数据中心报告",
+      date_folder: "260812",
+      charts: [{
+        id: "chart-1",
+        analysis_version: "chart-search-v2",
+        image_id: imageId,
+        title: "数据中心电力需求",
+        content_kind: "chart",
+        quality_score: 96,
+        chart_type: "line",
+        description: "2025-2030 年电力需求持续增长。",
+        trend_summary: "上升",
+        metrics: ["电力需求"],
+        entities: ["摩根大通"],
+        periods: ["2025-2030"],
+        geographies: ["美国"],
+        units: ["GW"],
+        keywords: ["AI"],
+        private_path: "/must/not/leak.jpg",
+      }, {
+        id: "legacy-chart",
+        image_id: "c".repeat(64),
+        title: "旧版未严格复核图片",
+        chart_type: "other",
+        description: "不应进入图表库。",
+        entities: ["AI"],
+      }],
+    }],
+  });
+  bucket.seedBytes(`_chart-search/v1/images/${imageId}.jpg`, [255, 216, 255, 217]);
+  const env = envFor(bucket);
+  const gallery = await jsonRequest(env, "/charts?q=AI");
+  assert.equal(gallery.response.status, 200);
+  assert.equal(gallery.data.total, 1);
+  assert.equal(gallery.data.items[0].image_id, imageId);
+  assert.equal(Object.hasOwn(gallery.data.items[0], "private_path"), false);
+  const image = await worker.fetch(new Request(`https://worker.test/charts/image?id=${imageId}`), env, { waitUntil() {} });
+  assert.equal(image.status, 200);
+  assert.equal(image.headers.get("content-type"), "image/jpeg");
+  assert.match(image.headers.get("cache-control"), /immutable/u);
+  const invalid = await jsonRequest(env, "/charts/image?id=../../private");
+  assert.equal(invalid.response.status, 400);
+});
+
 test("restricted course catalog and contact are absent from the unauthenticated static page", async () => {
   const { readFile } = await import("node:fs/promises");
   const html = await readFile(path.join(root, "portal_suite/site_src/courses.html"), "utf8");
@@ -719,6 +915,7 @@ test("restricted course catalog and contact are absent from the unauthenticated 
 test("course frontend renders the complete structured catalog with topic filters", async () => {
   const { readFile } = await import("node:fs/promises");
   const source = await readFile(path.join(root, "portal_suite/site_src/assets/app.js"), "utf8");
+  const chatSource = await readFile(path.join(root, "portal_suite/site_src/assets/report-chat.js"), "utf8");
   const styles = await readFile(path.join(root, "portal_suite/site_src/assets/styles.css"), "utf8");
   assert.match(source, /data\.course_catalog/u);
   assert.match(source, /courseSearchInput/u);
@@ -729,6 +926,9 @@ test("course frontend renders the complete structured catalog with topic filters
   assert.doesNotMatch(source, /filter\(Boolean\)\.slice\(0, 12\)/u);
   assert.match(styles, /\.course-grid\s*\{[\s\S]*?grid-template-columns:\s*repeat\(3,/u);
   assert.match(styles, /\.course-card\[hidden\]\s*\{[\s\S]*?display:\s*none/u);
+  assert.match(chatSource, /context:\s*"course"/u);
+  assert.match(chatSource, /data-course-query/u);
+  assert.match(chatSource, /courseDirectorySearch/u);
 });
 
 test("frontend distinguishes an already-used daily reward from a successful claim", async () => {

@@ -64,6 +64,9 @@ jobs:
           node --input-type=module --check < workers/portal-suite-worker/src/index.js
           node --input-type=module --check < workers/portal-suite-worker/src/source-lead-adapter.js
           node --check portal_suite/site_src/assets/app.js
+          node --check portal_suite/site_src/assets/report-chat.js
+          node --check portal_suite/site_src/assets/charts.js
+          node --check portal_suite/site_src/assets/site-runtime.js
           node --test portal_suite/tests/*.test.mjs
           node scripts/test_portal_entitlement_precedence.js
           node scripts/test_portal_legacy_access_compat.js

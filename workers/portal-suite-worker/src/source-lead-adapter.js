@@ -18,6 +18,7 @@ class SourceLeadAdapterError extends Error {
 function compactText(value, maxLength = SOURCE_LEAD_MAX_TEXT_LENGTH) {
   return String(value == null ? "" : value)
     .replace(/[\u0000-\u001f\u007f]+/g, " ")
+    .replace(/[\u200b-\u200d\u2060\ufeff\ue000-\uf8ff]+/gu, " ")
     .replace(/\s+/g, " ")
     .trim()
     .slice(0, maxLength);

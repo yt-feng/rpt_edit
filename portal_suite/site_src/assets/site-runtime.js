@@ -38,29 +38,40 @@
     return banner;
   }
 
-  function ensureCourseNavigation() {
+  function ensurePrimaryNavigation() {
     document.querySelectorAll(".topbar-actions").forEach((actions) => {
-      if (actions.querySelector('a[href$="courses.html"]')) return;
-      const link = document.createElement("a");
-      link.className = "topbar-link";
-      link.href = "/courses.html";
-      link.textContent = "Course";
-      if (/\/courses\.html$/i.test(window.location.pathname)) {
-        link.classList.add("is-active");
-        link.setAttribute("aria-current", "page");
-      }
+      const createLink = (href, label, matcher) => {
+        if (actions.querySelector(`a[href$="${href}"]`)) return null;
+        const link = document.createElement("a");
+        link.className = "topbar-link";
+        link.href = `/${href}`;
+        link.textContent = label;
+        if (matcher.test(window.location.pathname)) {
+          link.classList.add("is-active");
+          link.setAttribute("aria-current", "page");
+        }
+        return link;
+      };
       const newsfeed = actions.querySelector('a[href$="newsfeed.html"]');
-      if (newsfeed) actions.insertBefore(link, newsfeed);
-      else {
-        const account = actions.querySelector("#accountGate, .account-button");
-        if (account) actions.insertBefore(link, account);
-        else actions.append(link);
-      }
+      const course = createLink("courses.html", "Course", /\/courses\.html$/i);
+      const charts = createLink("charts", "Charts", /\/charts(?:\.html)?\/?$/i);
+      if (charts) charts.href = "/charts";
+      const insert = (link) => {
+        if (!link) return;
+        if (newsfeed) actions.insertBefore(link, newsfeed);
+        else {
+          const account = actions.querySelector("#accountGate, .account-button");
+          if (account) actions.insertBefore(link, account);
+          else actions.append(link);
+        }
+      };
+      insert(course);
+      insert(charts);
     });
   }
 
   function startCounter() {
-    ensureCourseNavigation();
+    ensurePrimaryNavigation();
     const banner = createRuntimeBanner() || document.querySelector("[data-site-runtime]");
     const value = banner && banner.querySelector("[data-site-runtime-value]");
     if (!value) return;

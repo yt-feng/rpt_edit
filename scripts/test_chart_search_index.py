@@ -6,6 +6,7 @@ import json
 import sys
 import tempfile
 import unittest
+from datetime import datetime, timezone
 from unittest.mock import Mock, patch
 from pathlib import Path
 from types import SimpleNamespace
@@ -54,6 +55,10 @@ def write_report(root: Path, name: str, title: str, color: str = "white") -> Pat
 def sample_analysis(is_chart: bool = True) -> dict:
     return {
         "is_chart": is_chart,
+        "content_kind": "chart" if is_chart else "invalid",
+        "quality_score": 92 if is_chart else 10,
+        "has_data_evidence": is_chart,
+        "invalid_reason": "none" if is_chart else "decorative",
         "title": "MLCC 出货量",
         "chart_type": "line",
         "description": "图中展示 2024 至 2026 年 MLCC 出货量上升。",
@@ -163,6 +168,86 @@ class ChartSearchIndexTests(unittest.TestCase):
             )
             self.assertEqual(summary["model_calls"], 1)
             self.assertEqual(index["item_count"], 0)
+
+    def test_author_disclaimer_toc_and_pure_text_are_never_publishable(self) -> None:
+        fixtures = (
+            ("author", "分析师简介", "作者介绍与联系方式"),
+            ("disclaimer", "Important Disclosures", "Legal notice and disclaimer"),
+            ("toc", "目录", "Table of contents"),
+            ("pure_text", "研究说明", "只有正文段落，没有数据关系"),
+        )
+        for reason, title, description in fixtures:
+            payload = sample_analysis()
+            payload.update({
+                "content_kind": "invalid",
+                "quality_score": 95,
+                "has_data_evidence": False,
+                "invalid_reason": reason,
+                "title": title,
+                "description": description,
+            })
+            with self.subTest(reason=reason):
+                self.assertFalse(chart.is_publishable_chart(chart.normalize_analysis(payload)))
+
+    def test_valid_table_and_flow_require_structured_evidence(self) -> None:
+        table = sample_analysis()
+        table.update({"content_kind": "table", "chart_type": "table", "metrics": ["Revenue"]})
+        self.assertTrue(chart.is_publishable_chart(chart.normalize_analysis(table)))
+        table["metrics"] = []
+        table["entities"] = []
+        table["periods"] = []
+        table["geographies"] = []
+        table["units"] = []
+        self.assertFalse(chart.is_publishable_chart(chart.normalize_analysis(table)))
+
+    def test_public_chart_record_is_explicitly_v2(self) -> None:
+        candidate = SimpleNamespace(
+            report_ref="report-ref",
+            image_sha256="d" * 64,
+            ordinal=7,
+        )
+        record = chart.chart_record(candidate, chart.normalize_analysis(sample_analysis()))
+        self.assertEqual(record["analysis_version"], "chart-search-v2")
+
+    def test_reclassification_removes_prior_false_positive_from_index(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            workspace = Path(temp)
+            reports = workspace / "260809"
+            write_report(reports, "report_a", "Important Disclosures")
+            candidate = chart.discover_candidates(reports, {}, date_folder="260809")[0]
+            chart_id = chart.chart_record(candidate, chart.normalize_analysis(sample_analysis()))["id"]
+            previous = {
+                "schema_version": 1,
+                "reports": [{
+                    "report_ref": candidate.report_ref,
+                    "report_id": "",
+                    "title": candidate.report_title,
+                    "date_folder": "260809",
+                    "charts": [{
+                        **chart.chart_record(candidate, chart.normalize_analysis(sample_analysis())),
+                        "id": chart_id,
+                    }],
+                }],
+            }
+            rejected = sample_analysis()
+            rejected.update({
+                "is_chart": False,
+                "content_kind": "invalid",
+                "quality_score": 0,
+                "has_data_evidence": False,
+                "invalid_reason": "disclaimer",
+            })
+            index, _summary = chart.build_index(
+                [candidate],
+                state={"schema_version": 1, "items": {}},
+                previous_index=previous,
+                state_path=workspace / "state.json",
+                asset_output_dir=workspace / "assets",
+                analyze=lambda _path: rejected,
+                max_model_calls=20,
+            )
+            self.assertEqual(index["item_count"], 0)
+            self.assertEqual(index["report_count"], 0)
 
     def test_repeatedly_bad_image_is_quarantined_without_blocking_the_index(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
@@ -373,6 +458,113 @@ class ChartSearchIndexTests(unittest.TestCase):
             self.assertEqual(len(client.calls), 1)
             self.assertEqual(client.calls[0]["Key"], "_chart-search/v1/state.json")
             self.assertEqual(client.calls[0]["CacheControl"], "private, no-store")
+
+    def test_chart_storage_budget_evicts_unreferenced_then_oldest(self) -> None:
+        old_id = "a" * 64
+        new_id = "b" * 64
+        orphan_id = "c" * 64
+        index = {
+            "schema_version": 1,
+            "reports": [
+                {
+                    "report_ref": "old",
+                    "report_id": "old-report",
+                    "title": "Old report",
+                    "date_folder": "260801",
+                    "chart_count": 1,
+                    "charts": [{**chart.chart_record(
+                        SimpleNamespace(
+                            report_ref="old", image_sha256=old_id, ordinal=1,
+                        ),
+                        chart.normalize_analysis(sample_analysis()),
+                    )}],
+                },
+                {
+                    "report_ref": "new",
+                    "report_id": "new-report",
+                    "title": "New report",
+                    "date_folder": "260803",
+                    "chart_count": 1,
+                    "charts": [{**chart.chart_record(
+                        SimpleNamespace(
+                            report_ref="new", image_sha256=new_id, ordinal=1,
+                        ),
+                        chart.normalize_analysis(sample_analysis()),
+                    )}],
+                },
+            ],
+        }
+        index["report_count"] = 2
+        index["item_count"] = 2
+
+        class FakeClient:
+            def __init__(self) -> None:
+                timestamp = datetime(2026, 8, 1, tzinfo=timezone.utc)
+                self.rows = [
+                    {"Key": "_chart-search/v1/state.json", "Size": 5, "LastModified": timestamp},
+                    {"Key": "_chart-search/v1/index.json", "Size": 999, "LastModified": timestamp},
+                    {"Key": f"_chart-search/v1/images/{old_id}.jpg", "Size": 10, "LastModified": timestamp},
+                    {"Key": f"_chart-search/v1/images/{new_id}.jpg", "Size": 10, "LastModified": timestamp},
+                    {"Key": f"_chart-search/v1/images/{orphan_id}.jpg", "Size": 4, "LastModified": timestamp},
+                ]
+                self.deleted: list[str] = []
+
+            def list_objects_v2(self, **_kwargs):
+                return {"Contents": list(self.rows), "IsTruncated": False}
+
+            def delete_objects(self, **kwargs):
+                keys = [row["Key"] for row in kwargs["Delete"]["Objects"]]
+                self.deleted.extend(keys)
+                self.rows = [row for row in self.rows if row["Key"] not in keys]
+
+        client = FakeClient()
+        r2.filter_index_images(index, {old_id, new_id})
+        budget = r2.pretty_json_size(index) + 5 + 10
+        result = r2.enforce_storage_budget(
+            client,
+            "private-bucket",
+            "_chart-search/v1",
+            index,
+            budget_bytes=budget,
+        )
+        self.assertEqual(result["images_retained"], 1)
+        self.assertEqual(result["images_evicted"], 2)
+        self.assertEqual(index["item_count"], 1)
+        self.assertEqual(index["reports"][0]["report_id"], "new-report")
+        self.assertIn(f"_chart-search/v1/images/{old_id}.jpg", client.deleted)
+        self.assertIn(f"_chart-search/v1/images/{orphan_id}.jpg", client.deleted)
+        self.assertNotIn(f"_chart-search/v1/images/{new_id}.jpg", client.deleted)
+
+    def test_publish_filter_drops_every_legacy_v1_chart(self) -> None:
+        v1_id = "e" * 64
+        v2_id = "f" * 64
+        index = {
+            "schema_version": 1,
+            "reports": [{
+                "report_ref": "mixed",
+                "report_id": "mixed-report",
+                "title": "Mixed report",
+                "date_folder": "260811",
+                "chart_count": 2,
+                "charts": [
+                    {
+                        **chart.chart_record(
+                            SimpleNamespace(report_ref="mixed", image_sha256=v1_id, ordinal=1),
+                            chart.normalize_analysis(sample_analysis()),
+                        ),
+                        "analysis_version": "chart-search-v1",
+                    },
+                    chart.chart_record(
+                        SimpleNamespace(report_ref="mixed", image_sha256=v2_id, ordinal=2),
+                        chart.normalize_analysis(sample_analysis()),
+                    ),
+                ],
+            }],
+        }
+        removed = r2.filter_index_images(index, {v1_id, v2_id})
+        self.assertEqual(removed, 1)
+        self.assertEqual(index["item_count"], 1)
+        self.assertEqual(index["reports"][0]["charts"][0]["analysis_version"], "chart-search-v2")
 
     def test_merge_adds_chart_terms_idempotently(self) -> None:
         search = {

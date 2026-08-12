@@ -284,11 +284,14 @@ jobs:
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+          CHART_STORAGE_BUDGET_BYTES: ${{ vars.CHART_STORAGE_BUDGET_BYTES || '1073741824' }}
         run: |
+          printf '%s' "$CHART_STORAGE_BUDGET_BYTES" | grep -Eq '^[1-9][0-9]*$'
           python scripts/chart_search_r2.py publish \
             --state _chart_work/state.json \
             --index _chart_work/index.json \
-            --asset-dir _chart_work/images
+            --asset-dir _chart_work/images \
+            --max-storage-bytes "$CHART_STORAGE_BUDGET_BYTES"
 
       - name: Upload non-sensitive run summary
         if: always()

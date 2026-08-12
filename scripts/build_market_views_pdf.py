@@ -11,6 +11,7 @@ install for the normal path.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -36,6 +37,8 @@ except Exception:
 EXHIBIT_RE = re.compile(r"\b(?:Exhibit|EXHIBIT|Exh\.?|Figure|FIGURE)\s*[-#:：]?\s*\d+\b|图表\s*[-#:：]?\s*\d+", re.I)
 EXHIBIT_TITLE_RE = re.compile(r"((?:Exhibit|EXHIBIT|Exh\.?|Figure|FIGURE)\s*[-#:：]?\s*\d+\s*[:：-]\s*[^\n。]{8,220}|图表\s*[-#:：]?\s*\d+\s*[:：-]\s*[^\n。]{8,220})", re.I)
 IMAGE_RE = re.compile(r"!\[[^\]]*\]\(([^\)]+)\)")
+HANDOFF_SOURCE_IMAGE_RE = re.compile(r"^source_image_(\d+)$", re.I)
+PDF_IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp", ".bmp", ".gif", ".tif", ".tiff"}
 DATE_DIR_RE = re.compile(r"^\d{6,8}$")
 REPORT_MARKER_FILES = ("source_mineru.md", "wechat_article.md", "note.md")
 EMAIL_RE = re.compile(r"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}", re.I)
@@ -306,7 +309,11 @@ def resolve_image_path(markdown_path: Path, image_ref: str) -> Path | None:
     if ref.startswith("http://") or ref.startswith("https://"):
         return None
     ref = ref.split("#", 1)[0].split("?", 1)[0]
-    for candidate in [markdown_path.parent / ref, markdown_path.parent.parent / ref]:
+    for candidate in [
+        markdown_path.parent / ref,
+        markdown_path.parent / "mineru_raw" / ref,
+        markdown_path.parent.parent / ref,
+    ]:
         if candidate.exists() and candidate.is_file():
             return candidate
     basename = Path(ref).name
@@ -314,6 +321,43 @@ def resolve_image_path(markdown_path: Path, image_ref: str) -> Path | None:
         if candidate.is_file():
             return candidate
     return None
+
+
+def file_sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def handoff_source_images(report_dir: Path) -> list[Path]:
+    """Return chart-like MinerU images retained by the private handoff.
+
+    ``mineru_raw`` is intentionally excluded from the short-lived handoff, while
+    ``pdf_to_xhs_batch.py`` copies its selected chart images to stable
+    ``assets/source_image_<n>`` files.  Market Views must consume those safe
+    copies when the original Markdown-relative image no longer exists.
+    """
+
+    assets_dir = report_dir / "assets"
+    if not assets_dir.is_dir():
+        return []
+
+    def sort_key(path: Path) -> tuple[int, str]:
+        match = HANDOFF_SOURCE_IMAGE_RE.match(path.stem)
+        return (int(match.group(1)) if match else 10**9, path.name.lower())
+
+    return sorted(
+        (
+            path
+            for path in assets_dir.glob("source_image_*")
+            if path.is_file()
+            and path.suffix.lower() in PDF_IMAGE_SUFFIXES
+            and HANDOFF_SOURCE_IMAGE_RE.match(path.stem)
+        ),
+        key=sort_key,
+    )
 
 
 def remove_noise(text: str) -> str:
@@ -369,11 +413,10 @@ def clean_exhibit_context(raw_context: str, fallback_label: str) -> str | None:
 
 def extract_exhibit_figures(report_dir: Path, report_id: str, title: str, max_per_report: int) -> list[dict[str, Any]]:
     md_path = report_dir / "source_mineru.md"
-    if not md_path.exists():
-        return []
-    lines = md_path.read_text(encoding="utf-8", errors="ignore").splitlines()
+    lines = md_path.read_text(encoding="utf-8", errors="ignore").splitlines() if md_path.exists() else []
     figures: list[dict[str, Any]] = []
     seen_paths: set[str] = set()
+    seen_digests: set[str] = set()
     for i, line in enumerate(lines):
         match = IMAGE_RE.search(line)
         if not match:
@@ -387,6 +430,13 @@ def extract_exhibit_figures(report_dir: Path, report_id: str, title: str, max_pe
         resolved = str(image_path.resolve())
         if resolved in seen_paths:
             continue
+        try:
+            digest = file_sha256(image_path)
+        except OSError as exc:
+            log(f"Skip unreadable exhibit candidate {image_path}: {exc}")
+            continue
+        if digest in seen_digests:
+            continue
         label_match = EXHIBIT_RE.search(context)
         label = sanitize_text(label_match.group(0) if label_match else "Exhibit")
         context_clean = clean_exhibit_context(context, label)
@@ -394,6 +444,7 @@ def extract_exhibit_figures(report_dir: Path, report_id: str, title: str, max_pe
             log(f"Skip noisy exhibit candidate in {report_dir.name}: {label}")
             continue
         seen_paths.add(resolved)
+        seen_digests.add(digest)
         figures.append({
             "report_id": report_id,
             "report_title": title,
@@ -404,6 +455,36 @@ def extract_exhibit_figures(report_dir: Path, report_id: str, title: str, max_pe
         })
         if max_per_report > 0 and len(figures) >= max_per_report:
             break
+
+    # The short-lived private handoff intentionally excludes ``mineru_raw``.
+    # Recover the selected MinerU charts from the stable copies created by the
+    # upstream parser.  These images have already passed the chart-image
+    # heuristic; use a neutral, report-scoped caption because their renamed
+    # handoff filenames cannot be mapped safely back to one Markdown caption.
+    for index, image_path in enumerate(handoff_source_images(report_dir), 1):
+        if max_per_report > 0 and len(figures) >= max_per_report:
+            break
+        resolved = str(image_path.resolve())
+        if resolved in seen_paths:
+            continue
+        try:
+            digest = file_sha256(image_path)
+        except OSError as exc:
+            log(f"Skip unreadable handoff chart candidate {image_path}: {exc}")
+            continue
+        if digest in seen_digests:
+            continue
+        seen_paths.add(resolved)
+        seen_digests.add(digest)
+        figures.append({
+            "report_id": report_id,
+            "report_title": title,
+            "source_path": str(image_path),
+            "label": f"MinerU 图表 {index}",
+            "context": sanitize_text(f"{title}｜原始报告图表")[:260],
+            "figure_type": "source_exhibit",
+            "selection_source": "private_handoff_source_image",
+        })
     return figures
 
 
@@ -457,18 +538,18 @@ def extract_external_visual_cards(
     return cards
 
 
-def convert_webp_if_needed(src: Path, target: Path) -> Path:
-    if src.suffix.lower() != ".webp":
+def convert_image_if_needed(src: Path, target: Path) -> Path:
+    if src.suffix.lower() in {".png", ".jpg", ".jpeg"}:
         shutil.copy2(src, target)
         return target
     try:
         from PIL import Image
         target_png = target.with_suffix(".png")
-        Image.open(src).convert("RGB").save(target_png)
+        with Image.open(src) as image:
+            image.convert("RGB").save(target_png)
         return target_png
-    except Exception:
-        shutil.copy2(src, target)
-        return target
+    except Exception as exc:
+        raise RuntimeError(f"Could not convert figure image {src}: {exc}") from exc
 
 
 def copy_figures(figures: list[dict[str, Any]], figures_dir: Path, max_figures: int) -> list[dict[str, Any]]:
@@ -481,11 +562,11 @@ def copy_figures(figures: list[dict[str, Any]], figures_dir: Path, max_figures: 
     for idx, fig in enumerate(selected, 1):
         src = Path(fig["source_path"])
         suffix = src.suffix.lower() or ".png"
-        if suffix not in {".png", ".jpg", ".jpeg", ".webp"}:
+        if suffix not in PDF_IMAGE_SUFFIXES:
             continue
         target = figures_dir / f"fig_{idx:03d}{suffix}"
         try:
-            actual = convert_webp_if_needed(src, target)
+            actual = convert_image_if_needed(src, target)
         except Exception as exc:
             log(f"Skip figure copy failed {src}: {exc}")
             continue
@@ -1784,6 +1865,7 @@ def main() -> int:
 
     reports: list[dict[str, Any]] = []
     raw_figures: list[dict[str, Any]] = []
+    handoff_source_image_count = 0
     for idx, report_dir in enumerate(report_dirs, 1):
         rid = f"R{idx:03d}"
         status = load_status(report_dir)
@@ -1801,15 +1883,26 @@ def main() -> int:
             "digest": digest["digest"],
             "extract": report_extract(report_dir, args.per_report_extract_chars),
         })
+        retained_handoff_images = handoff_source_images(report_dir)
+        handoff_source_image_count += len(retained_handoff_images)
         figs = extract_exhibit_figures(report_dir, rid, digest["title"], args.max_figures_per_report)
         for fig in figs:
             fig["source_group"] = source_group
             fig["source_label"] = source_group_label(source_group)
             fig["institution_name"] = institution_name
         raw_figures.extend(figs)
-        log(f"Collected {rid}: {digest['title']} | source={source_group_label(source_group)} {institution_name or ''} | figure_candidates={len(figs)}")
+        log(
+            f"Collected {rid}: {digest['title']} | source={source_group_label(source_group)} "
+            f"{institution_name or ''} | retained_mineru_images={len(retained_handoff_images)} "
+            f"| figure_candidates={len(figs)}"
+        )
 
     figures = copy_figures(raw_figures, figures_dir, args.max_figures)
+    if handoff_source_image_count > 0 and not figures:
+        raise RuntimeError(
+            "MinerU handoff contains selected source images but Market Views copied zero figures: "
+            f"retained_source_images={handoff_source_image_count}."
+        )
     log(f"Copied {len(figures)} clean exhibit-style figures to {figures_dir}")
     (out_dir / "report_inputs.json").write_text(json.dumps(reports, ensure_ascii=False, indent=2), encoding="utf-8")
     (out_dir / "figure_candidates.json").write_text(json.dumps(figures, ensure_ascii=False, indent=2), encoding="utf-8")

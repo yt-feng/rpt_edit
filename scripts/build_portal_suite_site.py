@@ -2325,6 +2325,7 @@ def build_seo_outputs(
             max((str(article.get("last_date") or article.get("date") or "") for article in blog_articles), default=generated_date),
             "0.8",
         ),
+        sitemap_url(url_join(base_url, "charts"), generated_date, "0.8"),
         sitemap_url(url_join(base_url, "terms.html"), generated_date, "0.2"),
         sitemap_url(url_join(base_url, "privacy.html"), generated_date, "0.2"),
     ]

@@ -195,10 +195,12 @@ jobs:
           CURRENT_INPUTS_FILE="$RUNNER_TEMP/market_views_current_inputs.txt"
           find "${SOURCE_DIRS[@]}" -type f \( -name source_mineru.md -o -name wechat_article.md -o -name note.md \) -printf '%h\n' | sort -u > "$CURRENT_INPUTS_FILE"
           CURRENT_INPUT_COUNT="$(wc -l < "$CURRENT_INPUTS_FILE" | tr -d ' ')"
-          echo "::notice::Primary bank date=$PRIMARY_DATE_FOLDER, expected issue date=$EXPECTED_DATE_FOLDER, parsed bank reports=$REPORT_COUNT, current inputs=$CURRENT_INPUT_COUNT."
+          MINERU_SOURCE_IMAGE_COUNT="$(find "${SOURCE_DIRS[@]}" -type f -path '*/assets/source_image_*' | wc -l | tr -d ' ')"
+          echo "::notice::Primary bank date=$PRIMARY_DATE_FOLDER, expected issue date=$EXPECTED_DATE_FOLDER, parsed bank reports=$REPORT_COUNT, current inputs=$CURRENT_INPUT_COUNT, retained MinerU source images=$MINERU_SOURCE_IMAGE_COUNT."
           echo "BUILD_DATE_FOLDER=$BUILD_DATE_FOLDER" >> "$GITHUB_ENV"
           echo "EXPECTED_DATE_FOLDER=$EXPECTED_DATE_FOLDER" >> "$GITHUB_ENV"
           echo "DATE_FOLDER=$EXPECTED_DATE_FOLDER" >> "$GITHUB_ENV"
+          echo "MINERU_SOURCE_IMAGE_COUNT=$MINERU_SOURCE_IMAGE_COUNT" >> "$GITHUB_ENV"
 
           EXISTING_PDF="market_view_summaries/$EXPECTED_DATE_FOLDER/market_views_$EXPECTED_DATE_FOLDER.pdf"
           if [ "$FORCE_REBUILD" != "true" ] && \
@@ -221,6 +223,8 @@ jobs:
         run: |
           pip install -r requirements.txt
           pip install reportlab pillow pypdf
+          python scripts/test_market_views_figures.py
+          python scripts/test_render_market_views_figures.py
 
       - name: Test public Market Views PDF exporter
         if: ${{ env.SHOULD_BUILD != 'false' }}
@@ -297,6 +301,29 @@ jobs:
           python scripts/render_market_views_reportlab_pdf.py \
             --summary-root "market_view_summaries" \
             --date-folder "$DATE_FOLDER" 2>&1 | tee market_views_pdf_render_progress.log
+          STATS_PATH="market_view_summaries/$DATE_FOLDER/market_views_render_stats.json"
+          test -s "$STATS_PATH"
+          python - "$STATS_PATH" "$MINERU_SOURCE_IMAGE_COUNT" <<'PY'
+          import json
+          import sys
+
+          stats = json.load(open(sys.argv[1], encoding="utf-8"))
+          retained = int(sys.argv[2])
+          candidates = int(stats.get("figure_candidate_count") or 0)
+          rendered = int(stats.get("rendered_figure_count") or 0)
+          if retained > 0 and candidates <= 0:
+              raise SystemExit(
+                  f"Retained MinerU images were present ({retained}) but no Market Views candidates were built."
+              )
+          if candidates > 0 and rendered <= 0:
+              raise SystemExit(
+                  f"Market Views built {candidates} MinerU candidates but rendered none into the PDF."
+              )
+          print(
+              f"Market Views MinerU chart contract: retained={retained}, "
+              f"candidates={candidates}, rendered={rendered}"
+          )
+          PY
           find market_view_summaries -name "*.pdf" -print
 
       - name: Verify PDF exists before upload and commit

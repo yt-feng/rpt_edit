@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Charts | KC桌面金融研报图表库</title>
+    <meta name="description" content="KC桌面 Charts 汇集金融研报中的有效图表、数据表、数据地图与流程图，支持按公司、指标、期间和关键词检索。">
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+    <link rel="canonical" href="https://portal.example.invalid/charts">
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/charts.css">
+  </head>
+  <body data-page="charts">
+    <header class="topbar">
+      <a class="brand compact" href="index.html" aria-label="Portal Suite home">
+        <img src="assets/app-mark.svg" alt="" width="30" height="30">
+        <span>Portal Suite</span>
+      </a>
+      <nav class="topbar-actions" aria-label="站点导航">
+        <a class="topbar-link" href="index.html">首页</a>
+        <a class="topbar-link" href="blog/">Blog</a>
+        <a class="topbar-link" href="courses.html">Course</a>
+        <a class="topbar-link is-active" href="/charts" aria-current="page">Charts</a>
+        <a id="newsfeedNav" class="topbar-link" href="newsfeed.html" hidden>Newsfeed</a>
+        <a class="account-button" href="index.html">账户</a>
+      </nav>
+    </header>
+
+    <main class="shell charts-shell">
+      <section class="charts-hero" aria-labelledby="chartsTitle">
+        <div>
+          <p class="charts-kicker">VISUAL RESEARCH LIBRARY</p>
+          <h1 id="chartsTitle">Charts</h1>
+          <p>从每日研报中提取并经视觉模型复核的有效图表。作者页、免责声明、封面、目录和纯文字误切块不会进入这里。</p>
+        </div>
+        <dl class="charts-stats" aria-label="图表库统计">
+          <div>
+            <dt>有效图表</dt>
+            <dd id="chartItemCount">—</dd>
+          </div>
+          <div>
+            <dt>来源报告</dt>
+            <dd id="chartReportCount">—</dd>
+          </div>
+          <div>
+            <dt>最近更新</dt>
+            <dd id="chartUpdatedAt">—</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="charts-toolbar" aria-label="图表检索">
+        <label class="charts-search">
+          <span>搜索图表</span>
+          <input id="chartQuery" type="search" autocomplete="off" placeholder="公司、指标、期间、地区、单位或趋势">
+        </label>
+        <label>
+          <span>类型</span>
+          <select id="chartTypeFilter">
+            <option value="">全部类型</option>
+          </select>
+        </label>
+        <label>
+          <span>日期</span>
+          <select id="chartDateFilter">
+            <option value="">全部日期</option>
+          </select>
+        </label>
+        <button id="chartClearFilters" type="button">清除</button>
+      </section>
+
+      <section class="charts-results" aria-live="polite" aria-busy="true">
+        <div class="charts-results-heading">
+          <div>
+            <h2>研报图表</h2>
+            <p id="chartResultStatus">正在读取图表索引…</p>
+          </div>
+          <span id="chartResultCount"></span>
+        </div>
+        <div id="chartGallery" class="charts-grid"></div>
+        <div id="chartEmpty" class="charts-empty" hidden>
+          <strong>没有匹配的有效图表</strong>
+          <span>试试公司名、指标、年份、地区或更短的关键词。</span>
+        </div>
+        <button id="chartLoadMore" class="charts-load-more" type="button" hidden>加载更多</button>
+      </section>
+    </main>
+
+    <footer class="legal-footer">
+      <a href="index.html">首页检索</a>
+      <a href="blog/">Blog</a>
+      <a href="courses.html">Course</a>
+      <a href="/charts">Charts</a>
+      <a href="terms.html">Terms of Service</a>
+    </footer>
+
+    <script src="assets/site-runtime.js"></script>
+    <script src="assets/analytics.js"></script>
+    <script src="assets/charts.js"></script>
+  </body>
+</html>

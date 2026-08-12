@@ -60,6 +60,24 @@ PDF sources
 
 The optional chart-search stage and its resumable object-storage checkpoint are
 documented in [Chart Search Architecture](chart-search-architecture.md).
+The registered-user metadata RAG and private Course-directory recommender are
+documented in [Report Chat and Course Recommendation RAG](report-chat-rag-architecture.md).
+
+## Market Views Figure Contract
+
+The private report handoff deliberately excludes each report's `mineru_raw/`
+directory. The batch parser therefore retains only its chart-like MinerU
+selections as `assets/source_image_<n>.*`. The Market Views builder consumes the
+original Markdown-relative image when it is available and falls back to these
+stable selected copies when running from the private handoff. Images are
+content-hash deduplicated and copied into the transient summary `figures/`
+directory; raw source paths never enter the PDF caption.
+
+The ReportLab renderer records count-only/opaque-ID render statistics and fails
+instead of silently publishing when a selected figure cannot be inserted. The
+workflow also fails if retained MinerU source images exist but zero figure
+candidates are produced. The public-copy step removes only the dedicated final
+private page and preserves figure image objects on all body pages.
 
 ## Explicitly Retained Public Outputs
 

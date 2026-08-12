@@ -220,6 +220,23 @@
         <div id="searchRecommendationsResults" class="related-list"></div>
       </section>
 
+      <section class="report-chat-panel" id="homeReportChat" aria-labelledby="homeReportChatTitle">
+        <div class="report-chat-heading">
+          <div>
+            <p>REPORT CHAT</p>
+            <h2 id="homeReportChatTitle">用自然语言找报告</h2>
+            <span>注册登录后，可通过检索增强生成从站内报告中找资料；回答只引用实际候选报告。</span>
+          </div>
+        </div>
+        <form class="report-chat-form" id="homeChatForm">
+          <textarea id="homeChatInput" rows="3" maxlength="600" placeholder="例如：找最近半年 AI 数据中心电力瓶颈相关的顶级投行报告"></textarea>
+          <button class="primary" type="submit">开始查找</button>
+        </form>
+        <div id="homeChatStatus" class="status-line" aria-live="polite"></div>
+        <div id="homeChatMessages" class="report-chat-messages"></div>
+        <div id="homeChatRecommendations" class="report-chat-recommendations"></div>
+      </section>
+
       <section class="about-section" aria-labelledby="aboutTitle">
         <div class="about-copy">
           <h2 id="aboutTitle">关于我们</h2>
@@ -246,5 +263,6 @@
     <script src="assets/contact.js"></script>
     <script src="assets/analytics.js"></script>
     <script src="assets/app.js?v=portal-suite-20260726b"></script>
+    <script src="assets/report-chat.js"></script>
   </body>
 </html>

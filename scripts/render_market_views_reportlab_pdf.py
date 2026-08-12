@@ -651,6 +651,7 @@ def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
     doc.addPageTemplates([PageTemplate(id="main", frames=[frame], onPage=draw_page)])
 
     story: list[Any] = []
+    rendered_figure_ids: list[str] = []
 
     def append_figures(figure_ids: list[Any], max_count: int) -> None:
         rendered = 0
@@ -668,6 +669,8 @@ def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
             story.append(image)
             caption = f"{figure.get('label', 'Figure')} - {str(figure.get('context', ''))}"
             story.append(Paragraph(clean_text(caption), styles["PortalCaption"]))
+            if str(raw_figure_id) not in rendered_figure_ids:
+                rendered_figure_ids.append(str(raw_figure_id))
             rendered += 1
 
     source_counts = {
@@ -677,14 +680,18 @@ def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
     selected_figure_ids = {
         str(figure_id)
         for section in bank_roundup.get("sections") or []
-        for figure_id in section.get("figure_ids") or []
+        for figure_id in (section.get("figure_ids") or [])[:4]
     }
     selected_figure_ids.update(
         str(figure_id)
         for roundup in supporting_roundups
         for theme in roundup.get("themes") or []
-        for figure_id in theme.get("figure_ids") or []
+        for figure_id in (theme.get("figure_ids") or [])[:2]
     )
+    if figures and not selected_figure_ids:
+        raise RuntimeError(
+            "Market Views has MinerU figure candidates, but no figure was selected for the PDF body."
+        )
     story.append(Paragraph(clean_text(summary.get("title") or "Market Views｜全球投行叙事汇编"), styles["PortalTitle"]))
     story.append(Paragraph(clean_text(summary.get("subtitle") or "Daily market views roundup"), styles["PortalSubtitle"]))
     story.append(Paragraph(
@@ -814,7 +821,25 @@ def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
     doc.multiBuild(story)
     if not output_pdf.exists() or output_pdf.stat().st_size < 1024:
         raise RuntimeError(f"PDF was not created or is too small: {output_pdf}")
-    log(f"Fast PDF generated: {output_pdf} ({output_pdf.stat().st_size} bytes)")
+    missing_figure_ids = sorted(selected_figure_ids.difference(rendered_figure_ids))
+    if missing_figure_ids:
+        raise RuntimeError(
+            "Selected MinerU figures were not rendered into the PDF body: "
+            + ", ".join(missing_figure_ids)
+        )
+    render_stats = {
+        "figure_candidate_count": len(figures),
+        "selected_figure_count": len(selected_figure_ids),
+        "rendered_figure_count": len(rendered_figure_ids),
+        "rendered_figure_ids": sorted(rendered_figure_ids),
+        "pdf_size_bytes": output_pdf.stat().st_size,
+    }
+    stats_path = summary_dir / "market_views_render_stats.json"
+    stats_path.write_text(json.dumps(render_stats, ensure_ascii=False, indent=2), encoding="utf-8")
+    log(
+        f"Fast PDF generated: {output_pdf} ({output_pdf.stat().st_size} bytes); "
+        f"MinerU figures rendered={len(rendered_figure_ids)}/{len(selected_figure_ids)}"
+    )
 
 
 def main() -> int:

@@ -30,7 +30,7 @@ from PIL import Image, UnidentifiedImageError
 
 
 SCHEMA_VERSION = 1
-ANALYSIS_VERSION = "chart-search-v1"
+ANALYSIS_VERSION = "chart-search-v2"
 IMAGE_NAME_RE = re.compile(r"^source_image_(\d+)\.(?:png|jpe?g|webp)$", re.IGNORECASE)
 DATE_FOLDER_RE = re.compile(r"^\d{6,8}$")
 JSON_FENCE_RE = re.compile(r"^```(?:json)?\s*|\s*```$", re.IGNORECASE)
@@ -44,13 +44,37 @@ BANK_ALIASES = (
     "ms", "db", "barc", "jef", "nom",
 )
 
+PUBLISHABLE_CONTENT_KINDS = frozenset({
+    "chart", "table", "data_map", "flow_diagram", "data_visual",
+})
+INVALID_REASON_CODES = frozenset({
+    "author", "cover", "decorative", "disclaimer", "end_page", "photo",
+    "pure_text", "references", "toc", "unreadable",
+})
+STRONG_INVALID_PAGE_RE = re.compile(
+    r"(?:"
+    r"\b(?:about\s+the\s+author|analyst\s+certification|biograph(?:y|ies)|"
+    r"contents|copyright|disclaimer|important\s+disclosures?|legal\s+notice|"
+    r"table\s+of\s+contents)\b|"
+    r"作者(?:介绍|简介)|分析师(?:介绍|简介|声明)|版权声明|免责声明|法律声明|"
+    r"目录页?|重要声明|风险提示"
+    r")",
+    re.IGNORECASE,
+)
+
 VISION_PROMPT = """你是金融研报图表索引器。只根据图片中可见的信息工作，不补写图片里没有的事实。
-判断图片是否是可检索的图表、表格、数据地图或流程图；装饰图、封面和纯照片必须标记为非图表。
+只有包含可核验数值、坐标、图例、表格数据，或明确节点关系的图表、数据表、数据地图、流程图，才是有效图表。
+以下内容必须标记为非图表：封面/标题页、目录/索引页、作者或分析师简介、头像与联系方式、免责声明/法律声明/
+风险提示/版权页、参考文献、纯文字段落或截图、章节分隔页、Logo/二维码/装饰图/照片、空白或严重裁切且无法理解的图片。
 若是图表，做中英双语关键词友好的结构化提取：准确识别标题、坐标、图例、单位、时间区间、地区、公司、指标、
 关键数字和走势。description 用简洁中文写 2 至 4 句，并保留图中重要英文专名。trend_summary 只陈述可见变化。
 严格返回一个 JSON 对象，不要 Markdown，不要解释，字段如下：
 {
   "is_chart": true,
+  "content_kind": "chart/table/data_map/flow_diagram/data_visual/invalid",
+  "quality_score": 0,
+  "has_data_evidence": true,
+  "invalid_reason": "none/cover/toc/author/disclaimer/pure_text/references/end_page/decorative/photo/unreadable",
   "title": "图表标题",
   "chart_type": "line/bar/table/map/flow/other",
   "description": "可搜索的事实描述",
@@ -62,7 +86,8 @@ VISION_PROMPT = """你是金融研报图表索引器。只根据图片中可见�
   "units": ["单位"],
   "keywords": ["中文关键词", "English keyword"]
 }
-无法辨认的字段用空字符串或空数组；is_chart=false 时仍返回全部字段。"""
+quality_score 用 0 到 100 表示该图片作为独立、可搜索图表的有效程度；低于 60 时 is_chart 必须为 false。
+无法辨认的字段用空字符串或空数组；is_chart=false 时仍返回全部字段，并准确填写 invalid_reason。"""
 
 
 class VisionConfigurationError(RuntimeError):
@@ -334,13 +359,46 @@ def parse_model_json(value: Any) -> dict[str, Any]:
     return payload
 
 
+def model_boolean(value: Any, *, default: bool = False) -> bool:
+    if isinstance(value, bool):
+        return value
+    text = clean_text(value, 20).casefold()
+    if text in {"true", "1", "yes", "y"}:
+        return True
+    if text in {"false", "0", "no", "n"}:
+        return False
+    return default
+
+
+def bounded_score(value: Any, *, default: int = 0) -> int:
+    try:
+        score = int(round(float(value)))
+    except (TypeError, ValueError):
+        score = default
+    return min(100, max(0, score))
+
+
 def normalize_analysis(payload: dict[str, Any]) -> dict[str, Any]:
-    raw_chart = payload.get("is_chart")
-    is_chart = raw_chart is True or str(raw_chart).strip().lower() in {"true", "1", "yes"}
-    return {
+    is_chart = model_boolean(payload.get("is_chart"))
+    chart_type = clean_text(payload.get("chart_type"), 60).casefold().replace("-", "_").replace(" ", "_")
+    content_kind = clean_text(payload.get("content_kind"), 60).casefold().replace("-", "_").replace(" ", "_")
+    if not content_kind and is_chart:
+        if chart_type == "table":
+            content_kind = "table"
+        elif chart_type == "map":
+            content_kind = "data_map"
+        elif chart_type in {"flow", "flowchart", "flow_diagram"}:
+            content_kind = "flow_diagram"
+        else:
+            content_kind = "chart"
+    normalized = {
         "is_chart": is_chart,
+        "content_kind": content_kind or "invalid",
+        "quality_score": bounded_score(payload.get("quality_score"), default=100 if is_chart else 0),
+        "has_data_evidence": model_boolean(payload.get("has_data_evidence"), default=is_chart),
+        "invalid_reason": clean_text(payload.get("invalid_reason"), 60).casefold().replace("-", "_").replace(" ", "_"),
         "title": clean_text(payload.get("title"), 300),
-        "chart_type": clean_text(payload.get("chart_type"), 60),
+        "chart_type": chart_type,
         "description": clean_text(payload.get("description")),
         "trend_summary": clean_text(payload.get("trend_summary"), 500),
         "metrics": clean_list(payload.get("metrics")),
@@ -350,6 +408,35 @@ def normalize_analysis(payload: dict[str, Any]) -> dict[str, Any]:
         "units": clean_list(payload.get("units")),
         "keywords": clean_list(payload.get("keywords")),
     }
+    return normalized
+
+
+def is_publishable_chart(analysis: dict[str, Any]) -> bool:
+    """Apply deterministic publication rules after the model classification."""
+    if not analysis.get("is_chart"):
+        return False
+    if clean_text(analysis.get("content_kind"), 60) not in PUBLISHABLE_CONTENT_KINDS:
+        return False
+    if clean_text(analysis.get("invalid_reason"), 60) in INVALID_REASON_CODES:
+        return False
+    if bounded_score(analysis.get("quality_score")) < 60:
+        return False
+    if not model_boolean(analysis.get("has_data_evidence")):
+        return False
+    title = clean_text(analysis.get("title"), 300)
+    description = clean_text(analysis.get("description"))
+    if not title or not description:
+        return False
+    structured = sum(
+        len(analysis.get(field) or [])
+        for field in ("metrics", "entities", "periods", "geographies", "units")
+        if isinstance(analysis.get(field), list)
+    )
+    if structured < 1:
+        return False
+    if STRONG_INVALID_PAGE_RE.search(f"{title} {description}"):
+        return False
+    return True
 
 
 def encode_image(path: Path, max_edge: int = 1600) -> tuple[str, bytes]:
@@ -532,9 +619,12 @@ def chart_record(candidate: ChartCandidate, analysis: dict[str, Any]) -> dict[st
     ).hexdigest()[:32]
     return {
         "id": chart_id,
+        "analysis_version": ANALYSIS_VERSION,
         "image_id": candidate.image_sha256,
         "ordinal": candidate.ordinal,
         "title": analysis["title"],
+        "content_kind": analysis["content_kind"],
+        "quality_score": analysis["quality_score"],
         "chart_type": analysis["chart_type"],
         "description": analysis["description"],
         "trend_summary": analysis["trend_summary"],
@@ -553,7 +643,7 @@ def chart_search_text(report: dict[str, Any]) -> str:
         if not isinstance(chart, dict):
             continue
         for key in (
-            "title", "chart_type", "description", "trend_summary", "metrics", "entities",
+            "analysis_version", "title", "content_kind", "chart_type", "description", "trend_summary", "metrics", "entities",
             "periods", "geographies", "units", "keywords",
         ):
             value = chart.get(key)
@@ -605,6 +695,16 @@ def build_index(
     state.pop("circuit_breaker", None)
 
     for candidate in candidates:
+        deterministic_chart_id = hashlib.sha256(
+            f"{candidate.report_ref}:{candidate.image_sha256}".encode("utf-8")
+        ).hexdigest()[:32]
+        previous_report = reports.get(candidate.report_ref)
+        if isinstance(previous_report, dict):
+            previous_report["charts"] = [
+                row
+                for row in previous_report.get("charts", [])
+                if isinstance(row, dict) and clean_text(row.get("id"), 64) != deterministic_chart_id
+            ]
         cached = state_items.get(candidate.image_sha256)
         analysis: dict[str, Any] | None = None
         if state_is_reusable(cached):
@@ -676,7 +776,7 @@ def build_index(
                 continue
             atomic_write_json(state_path, state)
 
-        if not analysis or not analysis.get("is_chart"):
+        if not analysis or not is_publishable_chart(analysis):
             continue
         save_search_asset(candidate.image_path, asset_output_dir, candidate.image_sha256)
         report = reports.setdefault(candidate.report_ref, {
