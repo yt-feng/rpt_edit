@@ -239,9 +239,12 @@ const REWARD_POINTS_REPORT_COST = 70;
 const REWARD_R2_WRITE_RETRIES = 8;
 const COURSE_MIN_REMAINING_DAYS = 30;
 const COURSE_DIRECTORY_R2_KEY = "_course-directory/v1/directory.json";
+const COURSE_CHAT_DIRECTORY_R2_KEY = "_course-directory/v1/chat-index.json";
 const COURSE_DIRECTORY_CACHE_TTL_MS = 5 * 60 * 1000;
 const COURSE_DIRECTORY_MAX_BYTES = 16 * 1024 * 1024;
 const COURSE_DIRECTORY_MAX_ITEMS = 45000;
+const COURSE_CHAT_DIRECTORY_MAX_BYTES = 2 * 1024 * 1024;
+const COURSE_CHAT_DIRECTORY_MAX_ITEMS = 5000;
 const COURSE_DIRECTORY_MAX_PAGE_SIZE = 100;
 const REPORT_CHAT_MAX_DAILY_TURNS = 30;
 const REPORT_CHAT_MAX_CANDIDATES = 12;
@@ -251,6 +254,7 @@ const CHART_SEARCH_INDEX_KEY = "_chart-search/v1/index.json";
 const CHART_SEARCH_IMAGE_PREFIX = "_chart-search/v1/images";
 const CHART_SEARCH_IMAGE_ID_PATTERN = /^[0-9a-f]{64}$/u;
 const COURSE_DIRECTORY_CACHE = new WeakMap();
+const COURSE_CHAT_DIRECTORY_CACHE = new WeakMap();
 let chartGalleryCache = null;
 let chartGalleryFetchedAt = 0;
 const COURSE_DIRECTORY_ITEM_KEYS = new Set([
@@ -4152,6 +4156,69 @@ async function loadCourseDirectory(env) {
     return value;
   } catch (error) {
     COURSE_DIRECTORY_CACHE.delete(bucket);
+    throw error;
+  }
+}
+
+function validateCourseChatDirectoryPayload(payload, restrictedTerms) {
+  if (!payload || typeof payload !== "object" || Array.isArray(payload) || Number(payload.schema_version) !== 1) {
+    throw new Error("Course chat directory payload is invalid.");
+  }
+  const rawItems = Array.isArray(payload.items) ? payload.items : [];
+  if (!rawItems.length || rawItems.length > COURSE_CHAT_DIRECTORY_MAX_ITEMS) {
+    throw new Error("Course chat directory payload size is invalid.");
+  }
+  const ids = new Set();
+  let writeIndex = 0;
+  for (let readIndex = 0; readIndex < rawItems.length; readIndex += 1) {
+    const item = cleanCourseDirectoryItem(rawItems[readIndex], restrictedTerms);
+    if (!item || ids.has(item.id)) continue;
+    ids.add(item.id);
+    rawItems[writeIndex] = item;
+    writeIndex += 1;
+  }
+  rawItems.length = writeIndex;
+  if (!rawItems.length) throw new Error("Course chat directory has no safe items.");
+  const generatedAt = cleanCourseDirectoryText(payload.generated_at, 40);
+  for (const key of Object.keys(payload)) {
+    if (!["schema_version", "generated_at", "items"].includes(key)) delete payload[key];
+  }
+  return Object.freeze({
+    generated_at: Number.isFinite(Date.parse(generatedAt)) ? new Date(generatedAt).toISOString() : "",
+    items: Object.freeze(rawItems),
+  });
+}
+
+async function loadCourseChatDirectory(env) {
+  const bucket = accountBucket(env);
+  const cached = COURSE_CHAT_DIRECTORY_CACHE.get(bucket);
+  const now = Date.now();
+  if (cached && cached.value && now - cached.loaded_at < COURSE_DIRECTORY_CACHE_TTL_MS) return cached.value;
+  if (cached && cached.promise) return cached.promise;
+  const promise = (async () => {
+    const restrictedTerms = courseDirectoryRestrictedTerms(env);
+    const object = await bucket.get(COURSE_CHAT_DIRECTORY_R2_KEY);
+    if (!object) throw new Error("Course chat directory is unavailable.");
+    if (Number(object.size || 0) > COURSE_CHAT_DIRECTORY_MAX_BYTES) throw new Error("Course chat directory payload is too large.");
+    let payload;
+    if (typeof object.json === "function") {
+      payload = await object.json();
+    } else {
+      const text = await object.text();
+      if (new TextEncoder().encode(text).byteLength > COURSE_CHAT_DIRECTORY_MAX_BYTES) {
+        throw new Error("Course chat directory payload is too large.");
+      }
+      payload = JSON.parse(text);
+    }
+    return validateCourseChatDirectoryPayload(payload, restrictedTerms);
+  })();
+  COURSE_CHAT_DIRECTORY_CACHE.set(bucket, { loaded_at: cached && cached.loaded_at || 0, value: cached && cached.value || null, promise });
+  try {
+    const value = await promise;
+    COURSE_CHAT_DIRECTORY_CACHE.set(bucket, { loaded_at: Date.now(), value, promise: null });
+    return value;
+  } catch (error) {
+    COURSE_CHAT_DIRECTORY_CACHE.delete(bucket);
     throw error;
   }
 }
@@ -11156,12 +11223,12 @@ function courseChatKeepTopCandidate(entries, entry) {
 }
 
 async function courseChatCandidates(env, question) {
-  const directory = await loadCourseDirectory(env);
+  const directory = await loadCourseChatDirectory(env);
   const tokens = reportChatQueryTokens(question);
   const patterns = tokens.map(courseDirectorySearchPattern).filter(Boolean);
-  // The private catalog currently contains tens of thousands of files. Keep a
-  // bounded ranking window instead of retaining and sorting one entry per file;
-  // the latter can push a Worker isolate over its memory ceiling.
+  // The private recommendation index contains every notable-entity file plus
+  // a representative floor per course. Keep a bounded ranking window instead
+  // of retaining and sorting one entry per candidate file.
   const matched = [];
   const fallback = [];
   for (const item of directory.items) {

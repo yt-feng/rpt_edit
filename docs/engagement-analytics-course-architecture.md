@@ -100,6 +100,15 @@ read and parsed for every keystroke. The object is capped at 16 MiB and 45,000
 rows. Directory responses use `private, no-store` and never put the index in
 static-site assets or browser storage.
 
+Course Chat does not load this full directory. The private publisher derives a
+second neutral object, `_course-directory/v1/chat-index.json`, strictly from the
+already sanitized rows. Every row with a non-empty allowed `entities` list is
+retained, followed by at most 30 entity-free representative rows per course in
+source order. The result must cover all 43 courses and is capped at 5,000 rows
+and 2 MiB. It cannot add fields or values that were absent from the sanitized
+directory. The Worker caches this smaller object independently for Chat
+retrieval, while `GET /course/directory` continues to use the complete object.
+
 ### Encrypted directory publishing
 
 The plaintext inventory and mapping inputs stay outside Git. The repository may
@@ -143,12 +152,17 @@ plaintext index, private map, or key cannot be staged from that directory.
 2. cap decompression, validate identifiers and display fields, reject every
    configured redaction marker and path separator, and rebuild every row from
    the API allow-list;
-3. upload only the compact sanitized JSON to private R2 with `no-store`;
-4. verify the uploaded object's SHA-256 metadata before reporting success.
+3. derive the bounded Course Chat subset from those rebuilt rows without
+   reading any separate private mapping;
+4. upload the Chat subset and full sanitized directory to separate private R2
+   objects with `no-store`;
+5. verify each uploaded object's own SHA-256 metadata before reporting success.
 
-The upload overwrites one R2 object atomically. A failed decrypt, validation,
-or verification leaves the previously published directory readable. The
-workflow never uploads its plaintext workspace as an Actions artifact.
+Each object replacement is atomic, and the workflow reports success only after
+both metadata checks pass. The Worker rollout follows this publisher, so it
+cannot depend on a Chat index that the release did not verify. The workflow
+never uploads either plaintext JSON object as an Actions artifact and never
+prints private item counts or digests.
 
 ## Analytics collection
 

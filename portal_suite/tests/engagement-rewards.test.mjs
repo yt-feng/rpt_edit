@@ -794,10 +794,10 @@ test("report chat enforces the per-account Beijing-day limit before retrieval", 
   assert.equal(bucket.textReadKeys.includes("edge-static/runtime-data/catalog.json"), false);
 });
 
-test("course chat uses the private course directory, enforces membership, and returns no locators", async () => {
+test("course chat uses the compact private recommendation index, enforces membership, and returns no locators", async () => {
   const bucket = new MemoryR2();
   bucket.seed("edge-static/runtime-data/catalog.json", { items: [] });
-  bucket.seed("_course-directory/v1/directory.json", {
+  bucket.seed("_course-directory/v1/chat-index.json", {
     schema_version: 1,
     generated_at: "2026-08-12T10:00:00+08:00",
     items: [{
@@ -822,6 +822,7 @@ test("course chat uses the private course directory, enforces membership, and re
   });
   assert.equal(denied.response.status, 403);
   assert.equal(Object.hasOwn(denied.data, "recommendations"), false);
+  assert.equal(bucket.jsonReadKeys.includes("_course-directory/v1/chat-index.json"), false);
 
   const email = "reward-reader@example.com";
   bucket.seed(`_account/entitlements/${encodeURIComponent(email)}`, {
@@ -833,6 +834,7 @@ test("course chat uses the private course directory, enforces membership, and re
     current_period_end: new Date(Date.now() + 31 * 24 * 60 * 60 * 1000).toISOString(),
     updated_at: new Date().toISOString(),
   });
+  bucket.jsonReadKeys.length = 0;
   const allowed = await jsonRequest(env, "/report-chat", {
     method: "POST",
     headers: { "content-type": "application/json", ...bearer(token) },
@@ -846,13 +848,15 @@ test("course chat uses the private course directory, enforces membership, and re
   const serialized = JSON.stringify(allowed.data);
   assert.equal(serialized.includes("/private/course"), false);
   assert.equal(serialized.includes("private-course-object"), false);
+  assert.equal(bucket.jsonReadKeys.includes("_course-directory/v1/chat-index.json"), true);
+  assert.equal(bucket.jsonReadKeys.includes("_course-directory/v1/directory.json"), false);
   assert.equal(allowed.response.headers.get("cache-control"), "private, no-store, max-age=0");
 });
 
 test("course chat falls back to grounded recommendations when DeepSeek is unavailable", async () => {
   const bucket = new MemoryR2();
   bucket.seed("edge-static/runtime-data/catalog.json", { items: [] });
-  bucket.seed("_course-directory/v1/directory.json", {
+  bucket.seed("_course-directory/v1/chat-index.json", {
     schema_version: 1,
     generated_at: "2026-08-12T10:00:00+08:00",
     items: [{
