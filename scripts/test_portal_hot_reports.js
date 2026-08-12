@@ -125,8 +125,8 @@ vm.runInNewContext(`
   };
 `, searchSandbox);
 
-assert.equal(searchSandbox.result.allFailed.hidden, true, "failed sources must not be treated as zero matches");
-assert.equal(searchSandbox.result.allFailed.html, "");
+assert.equal(searchSandbox.result.allFailed.hidden, false, "failed sources must settle so the page can show useful fallback recommendations");
+assert.match(searchSandbox.result.allFailed.html, /latest-report/);
 assert.equal(searchSandbox.result.pending.hidden, true, "recommendations must wait for every source to settle");
 assert.equal(searchSandbox.result.oneMatch.hidden, true, "recommendations must stay hidden when any source has a match");
 assert.equal(searchSandbox.result.allZero.hidden, false, "recommendations may render after every source successfully returns zero");
