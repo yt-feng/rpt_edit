@@ -11092,17 +11092,28 @@ async function reportChatCandidates(env, question) {
   return candidates;
 }
 
-function courseChatAttractionScore(item) {
-  const course = COURSE_DIRECTORY_COURSES.get(item.course_id);
-  const text = normalizeText([
-    item.name,
-    item.category,
-    course && course.title,
-    ...(Array.isArray(item.folders) ? item.folders : []),
-    ...(Array.isArray(item.entities) ? item.entities : []),
-  ].filter(Boolean).join(" "));
-  if (/\b(?:jpm|jpmorgan|goldman|morgan stanley|bofa|bank of america|ubs|citi|citigroup|hsbc)\b|摩根大通|高盛|摩根士丹利|美银|瑞银|花旗|汇丰|金杜|中伦|君合|国浩|证监会|上交所|深交所|最高人民法院/u.test(text)) return 5;
-  if (/\b(?:nomura|bernstein|deutsche bank|barclays|macquarie|mckinsey|bcg|bain)\b|野村|德银|巴克莱|麦肯锡|贝恩/u.test(text)) return 4;
+const COURSE_CHAT_TOP_TIER_PATTERN = /(?:^|[^a-z0-9])(?:jpm|jpmorgan|goldman|morgan stanley|bofa|bank of america|ubs|citi|citigroup|hsbc)(?=$|[^a-z0-9])|摩根大通|高盛|摩根士丹利|美银|瑞银|花旗|汇丰|金杜|中伦|君合|国浩|证监会|上交所|深交所|最高人民法院/iu;
+const COURSE_CHAT_SECOND_TIER_PATTERN = /(?:^|[^a-z0-9])(?:nomura|bernstein|deutsche bank|barclays|macquarie|mckinsey|bcg|bain)(?=$|[^a-z0-9])|野村|德银|巴克莱|麦肯锡|贝恩/iu;
+
+function courseChatItemMatchesPattern(item, course, pattern, includeCourseDetails = true) {
+  if (pattern.test(item.name)
+    || pattern.test(item.category)
+    || pattern.test(item.file_type)
+    || pattern.test(course && course.title || "")) return true;
+  if (includeCourseDetails && (pattern.test(course && course.summary || "")
+    || pattern.test(course && course.audience || ""))) return true;
+  for (const folder of item.folders) {
+    if (pattern.test(folder)) return true;
+  }
+  for (const entity of item.entities) {
+    if (pattern.test(entity)) return true;
+  }
+  return false;
+}
+
+function courseChatAttractionScore(item, course = COURSE_DIRECTORY_COURSES.get(item.course_id)) {
+  if (courseChatItemMatchesPattern(item, course, COURSE_CHAT_TOP_TIER_PATTERN, false)) return 5;
+  if (courseChatItemMatchesPattern(item, course, COURSE_CHAT_SECOND_TIER_PATTERN, false)) return 4;
   return 2;
 }
 
@@ -11147,6 +11158,7 @@ function courseChatKeepTopCandidate(entries, entry) {
 async function courseChatCandidates(env, question) {
   const directory = await loadCourseDirectory(env);
   const tokens = reportChatQueryTokens(question);
+  const patterns = tokens.map(courseDirectorySearchPattern).filter(Boolean);
   // The private catalog currently contains tens of thousands of files. Keep a
   // bounded ranking window instead of retaining and sorting one entry per file;
   // the latter can push a Worker isolate over its memory ceiling.
@@ -11154,28 +11166,20 @@ async function courseChatCandidates(env, question) {
   const fallback = [];
   for (const item of directory.items) {
     const course = COURSE_DIRECTORY_COURSES.get(item.course_id);
-    const text = normalizeText([
-      item.name,
-      item.category,
-      item.file_type,
-      course && course.title,
-      course && course.summary,
-      course && course.audience,
-      ...item.folders,
-      ...item.entities,
-    ].filter(Boolean).join(" "));
-    const attractionScore = courseChatAttractionScore(item);
-    let score = attractionScore * 2;
     let matches = 0;
-    for (const token of tokens) {
-      if (!text.includes(token)) continue;
-      score += 9;
-      matches += 1;
+    for (const pattern of patterns) {
+      if (courseChatItemMatchesPattern(item, course, pattern)) matches += 1;
     }
+    if (!matches && matched.length) continue;
+    const attractionScore = courseChatAttractionScore(item, course);
+    let score = attractionScore * 2 + matches * 9;
     if (matches) score += Math.min(8, matches * 2);
     if (item.file_type === "pdf" || item.file_type === "spreadsheet") score += 1;
     const entry = { item, score };
-    if (matches) courseChatKeepTopCandidate(matched, entry);
+    if (matches) {
+      if (!matched.length) fallback.length = 0;
+      courseChatKeepTopCandidate(matched, entry);
+    }
     else if (!matched.length) courseChatKeepTopCandidate(fallback, entry);
   }
   const selected = matched.length ? matched : fallback;
