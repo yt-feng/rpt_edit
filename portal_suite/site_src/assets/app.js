@@ -203,12 +203,42 @@
     return score;
   }
 
-  async function loadJson(path) {
-    const response = await fetch(path, { cache: "no-store" });
+  async function loadJson(path, options = {}) {
+    // Static JSON is revisioned at the edge and has validators. Let the browser
+    // reuse it across visits; API requests continue to opt into no-store at
+    // their individual call sites.
+    const response = await fetch(path, { cache: "default", ...options });
     if (!response.ok) {
       throw new Error(`Could not load ${path}: ${response.status}`);
     }
     return response.json();
+  }
+
+  async function fetchRewardRequest(input, init = {}, timeoutMessage = "请求超时，请重试。", timeoutMs = 18_000) {
+    const controller = new AbortController();
+    let timeoutId = 0;
+    const timeoutError = () => {
+      const error = new Error(timeoutMessage);
+      error.name = "RewardTimeoutError";
+      return error;
+    };
+    const timeoutPromise = new Promise((_, reject) => {
+      timeoutId = window.setTimeout(() => {
+        controller.abort();
+        reject(timeoutError());
+      }, timeoutMs);
+    });
+    try {
+      return await Promise.race([
+        fetch(input, { ...init, signal: controller.signal }),
+        timeoutPromise,
+      ]);
+    } catch (error) {
+      if (error && error.name === "AbortError") throw timeoutError();
+      throw error;
+    } finally {
+      window.clearTimeout(timeoutId);
+    }
   }
 
   async function loadOptionalJson(path, fallback) {
@@ -572,7 +602,7 @@
         <div class="account-reward-claim" id="accountRewardClaim">
           <span>领取当前报告</span>
           <div class="account-modal-actions">
-            <button class="secondary-button" id="accountRewardDailyClaim" type="button">使用今日免费领取</button>
+            <button class="secondary-button" id="accountRewardDailyClaim" type="button">使用报告券</button>
             <button class="secondary-button" id="accountRewardPointsClaim" type="button">使用 70 积分</button>
           </div>
         </div>
@@ -629,8 +659,12 @@
                   <span>可用积分</span>
                   <strong><b id="accountRewardPoints">0</b> 分</strong>
                 </div>
+                <div>
+                  <span>报告券</span>
+                  <strong><b id="accountRewardCredits">0</b> 张</strong>
+                </div>
               </div>
-              <p id="accountRewardHint">每日签到可领取一份报告；70 积分还可额外领取一份。</p>
+              <p id="accountRewardHint">首签立即得 1 张报告券，第 3 天再得 1 张；每日签到 +10 分，70 分可兑换 1 份报告。</p>
               <button class="primary" id="accountRewardCheckin" type="button">今日签到 +10</button>
               ${rewardReportActions}
               <div id="accountRewardStatus" class="status-line" aria-live="polite"></div>
@@ -701,6 +735,7 @@
     const rewards = document.getElementById("accountRewards");
     const rewardPoints = document.getElementById("accountRewardPoints");
     const rewardStreak = document.getElementById("accountRewardStreak");
+    const rewardCredits = document.getElementById("accountRewardCredits");
     const rewardHint = document.getElementById("accountRewardHint");
     const rewardCheckin = document.getElementById("accountRewardCheckin");
     const rewardDailyClaim = document.getElementById("accountRewardDailyClaim");
@@ -709,6 +744,12 @@
     let mode = "login";
     let captchaToken = "";
     let currentRewardState = null;
+    let rewardActionTimer = 0;
+    let rewardActionStartedAt = 0;
+    let rewardActionToken = 0;
+    let rewardActionActive = false;
+    let rewardActionRestore = [];
+    let rewardRefreshRequest = 0;
 
     function setStatus(text, kind) {
       status.className = kind ? `status-line ${kind}` : "status-line";
@@ -721,42 +762,127 @@
       rewardStatus.textContent = text || "";
     }
 
-    function renderRewards(data) {
+    function formatRewardExpiry(value) {
+      const timestamp = Date.parse(String(value || ""));
+      if (!Number.isFinite(timestamp)) return "";
+      const hours = Math.max(1, Math.ceil((timestamp - Date.now()) / 3_600_000));
+      return hours < 24 ? `${hours} 小时后到期` : `${Math.ceil(hours / 24)} 天后到期`;
+    }
+
+    function beginRewardAction(button, label) {
+      if (rewardActionActive) return 0;
+      rewardActionActive = true;
+      const token = ++rewardActionToken;
+      rewardRefreshRequest += 1;
+      window.clearInterval(rewardActionTimer);
+      rewardActionStartedAt = Date.now();
+      rewardActionRestore = [rewardCheckin, rewardDailyClaim, rewardPointsClaim]
+        .filter(Boolean)
+        .map((control) => ({
+          control,
+          disabled: control.disabled,
+          text: control.textContent,
+          loading: control.classList.contains("is-loading"),
+        }));
+      rewardActionRestore.forEach(({ control }) => {
+        if (control) control.disabled = true;
+      });
+      if (button) {
+        button.classList.add("is-loading");
+        button.textContent = label;
+      }
+      rewardStatus.className = "status-line";
+      rewardStatus.innerHTML = `<div class="async-action" role="status">
+        <div class="async-action-meta"><strong>${escapeHtml(label)}</strong><span data-reward-elapsed aria-hidden="true">已用时 0.0 秒</span></div>
+        <div class="async-action-track" aria-hidden="true"><span data-reward-progress style="width:16%"></span></div>
+        <span>账号状态正在安全更新，页面可以继续浏览。</span>
+      </div>`;
+      const elapsedNode = rewardStatus.querySelector("[data-reward-elapsed]");
+      const progressNode = rewardStatus.querySelector("[data-reward-progress]");
+      const update = () => {
+        if (!rewardActionActive || token !== rewardActionToken) return;
+        const seconds = Math.max(0, (Date.now() - rewardActionStartedAt) / 1000);
+        const width = Math.min(92, 16 + Math.floor((seconds / 18) * 76));
+        if (elapsedNode) elapsedNode.textContent = `已用时 ${seconds.toFixed(1)} 秒`;
+        if (progressNode) progressNode.style.width = `${width}%`;
+      };
+      update();
+      rewardActionTimer = window.setInterval(update, 1_000);
+      return token;
+    }
+
+    function restoreRewardControls() {
+      rewardActionRestore.forEach(({ control, disabled, text, loading }) => {
+        control.disabled = disabled;
+        control.textContent = text;
+        control.classList.toggle("is-loading", loading);
+      });
+    }
+
+    function finishRewardAction(token) {
+      if (!rewardActionActive || token !== rewardActionToken) return;
+      window.clearInterval(rewardActionTimer);
+      rewardActionTimer = 0;
+      rewardActionActive = false;
+      restoreRewardControls();
+      if (currentRewardState) renderRewards(currentRewardState, { forceControls: true });
+      rewardActionRestore = [];
+    }
+
+    function renderRewards(data, options = {}) {
       currentRewardState = data || {};
       if (rewardPoints) rewardPoints.textContent = String(Math.max(0, Number(data && data.points || 0)));
       if (rewardStreak) rewardStreak.textContent = String(Math.max(0, Number(data && data.current_streak || 0)));
-      if (rewardCheckin) {
-        rewardCheckin.disabled = Boolean(data && data.checked_in_today);
-        rewardCheckin.textContent = data && data.checked_in_today ? "今日已签到" : "今日签到 +10";
-      }
-      if (rewardDailyClaim) {
-        rewardDailyClaim.disabled = !data || !data.daily_available;
-        rewardDailyClaim.textContent = data && data.daily_claimed ? "今日免费报告已领取" : "使用今日免费领取";
-      }
-      if (rewardPointsClaim) {
-        const cost = Math.max(1, Number(data && data.points_report_cost || 70));
-        rewardPointsClaim.disabled = !data || data.points_claimed_today || Number(data.points || 0) < cost;
-        rewardPointsClaim.textContent = data && data.points_claimed_today ? "今日积分报告已领取" : `使用 ${cost} 积分`;
+      if (rewardCredits) rewardCredits.textContent = String(Math.max(0, Number(data && data.credits_available || 0)));
+      if (!rewardActionActive || options.forceControls) {
+        if (rewardCheckin) {
+          rewardCheckin.disabled = Boolean(data && data.checked_in_today);
+          rewardCheckin.textContent = data && data.checked_in_today ? "今日已签到" : "今日签到 +10";
+        }
+        if (rewardDailyClaim) {
+          rewardDailyClaim.disabled = !data || !data.daily_available;
+          rewardDailyClaim.textContent = data && data.daily_claimed ? "今日报告券已使用" : "使用报告券";
+        }
+        if (rewardPointsClaim) {
+          const cost = Math.max(1, Number(data && data.points_report_cost || 70));
+          rewardPointsClaim.disabled = !data || data.points_claimed_today || Number(data.points || 0) < cost;
+          rewardPointsClaim.textContent = data && data.points_claimed_today ? "今日积分报告已领取" : `使用 ${cost} 积分`;
+        }
       }
       if (rewardHint) {
-        const next = data && data.next_bonus || {};
-        rewardHint.textContent = data && data.checked_in_today
-          ? `今日签到完成；再连续 ${Number(next.days || 1)} 天可得额外 ${Number(next.points || 0)} 分。`
-          : "每日签到可领取一份报告；70 积分还可额外领取一份。";
+        const milestone = data && data.next_milestone || {};
+        const creditExpiry = formatRewardExpiry(data && data.next_credit_expiry);
+        const creditCopy = Number(data && data.credits_available || 0) > 0
+          ? `现有 ${Number(data.credits_available)} 张报告券${creditExpiry ? `，最近一张${creditExpiry}` : ""}。`
+          : "";
+        let milestoneCopy = "";
+        if (milestone.type === "welcome_credit") milestoneCopy = "首次签到立即得 1 张 72 小时报告券。";
+        else if (milestone.type === "d3_credit") milestoneCopy = `再连续 ${Number(milestone.days || 1)} 天，到第 3 天再得 1 张报告券。`;
+        else if (milestone.type === "d7_freeze") milestoneCopy = `再连续 ${Number(milestone.days || 1)} 天完成 7 日里程碑。`;
+        else if (milestone.type === "bonus_points") milestoneCopy = `再连续 ${Number(milestone.days || 1)} 天可得额外 ${Number(milestone.bonus_points || 0)} 分。`;
+        rewardHint.textContent = `${creditCopy}${milestoneCopy} 每日 +10 分；70 分可兑换 1 份报告。`.trim();
       }
     }
 
     async function refreshRewards() {
       if (!rewards || !loadAuthSession()) return null;
+      if (rewardActionActive) return currentRewardState;
+      const request = ++rewardRefreshRequest;
       setRewardStatus("正在读取签到状态…");
       try {
-        const response = await fetch(`${workerUrl}/rewards`, { cache: "no-store", headers: authHeaders() });
+        const response = await fetchRewardRequest(
+          `${workerUrl}/rewards`,
+          { cache: "no-store", headers: authHeaders() },
+          "签到状态读取超时，请重试。"
+        );
         const data = await response.json().catch(() => ({}));
         if (!response.ok) throw new Error(data.detail || "签到状态读取失败。");
+        if (request !== rewardRefreshRequest || rewardActionActive) return currentRewardState;
         renderRewards(data);
-        setRewardStatus(data.daily_available ? "今日可免费领取一份报告。" : "");
+        setRewardStatus(data.daily_available ? `有 ${Number(data.credits_available || 1)} 张报告券可用于当前目录报告。` : "");
         return data;
       } catch (error) {
+        if (request !== rewardRefreshRequest || rewardActionActive) return currentRewardState;
         setRewardStatus(error.message || "签到状态读取失败。", "error");
         return null;
       }
@@ -766,14 +892,18 @@
       const item = context && context.item;
       if (!item || !item.id) return;
       const button = kind === "daily" ? rewardDailyClaim : rewardPointsClaim;
-      if (button) button.disabled = true;
-      setRewardStatus("正在领取报告…");
+      const actionToken = beginRewardAction(button, kind === "daily" ? "正在使用报告券…" : "正在兑换报告…");
+      if (!actionToken) return;
       try {
-        const response = await fetch(`${workerUrl}/rewards/claim`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json", ...authHeaders() },
-          body: JSON.stringify({ reward_kind: kind, report_id: item.id }),
-        });
+        const response = await fetchRewardRequest(
+          `${workerUrl}/rewards/claim`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json", ...authHeaders() },
+            body: JSON.stringify({ reward_kind: kind, report_id: item.id }),
+          },
+          "报告领取请求超时，请重试。"
+        );
         const data = await response.json().catch(() => ({}));
         if (!response.ok) throw new Error(data.detail || "报告领取失败。");
         if (data.rewards) renderRewards(data.rewards);
@@ -806,6 +936,8 @@
       } catch (error) {
         setRewardStatus(error.message || "报告领取失败。", "error");
         if (currentRewardState) renderRewards(currentRewardState);
+      } finally {
+        finishRewardAction(actionToken);
       }
     }
 
@@ -883,22 +1015,33 @@
     }
     if (rewardCheckin) {
       rewardCheckin.addEventListener("click", async () => {
-        rewardCheckin.disabled = true;
-        setRewardStatus("正在签到…");
+        const creditsBefore = Number(currentRewardState && currentRewardState.credits_available || 0);
+        const actionToken = beginRewardAction(rewardCheckin, "正在签到…");
+        if (!actionToken) return;
         try {
-          const response = await fetch(`${workerUrl}/rewards`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json", ...authHeaders() },
-            body: "{}",
-          });
+          const response = await fetchRewardRequest(
+            `${workerUrl}/rewards`,
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json", ...authHeaders() },
+              body: "{}",
+            },
+            "签到请求超时，请重试。"
+          );
           const data = await response.json().catch(() => ({}));
           if (!response.ok) throw new Error(data.detail || "签到失败。");
           renderRewards(data);
           trackEvent(workerUrl, "reward_checkin", { action: "daily", status: "success", current_streak: data.current_streak });
-          setRewardStatus("签到成功，今日免费报告已解锁。", "ok");
+          const issuedCredit = Number(data.credits_available || 0) > creditsBefore;
+          setRewardStatus(issuedCredit ? "签到成功，已解锁一张 72 小时报告券。" : "签到成功，积分和连续天数已更新。", "ok");
+          rewards.classList.remove("reward-success-pop");
+          void rewards.offsetWidth;
+          rewards.classList.add("reward-success-pop");
         } catch (error) {
           setRewardStatus(error.message || "签到失败。", "error");
           if (currentRewardState) renderRewards(currentRewardState);
+        } finally {
+          finishRewardAction(actionToken);
         }
       });
     }
@@ -4471,11 +4614,13 @@
     ].join(" "));
   }
 
-  function selectedSearchText(item, queryScope, metadataById, searchTextById, chartTextById) {
-    const title = normalize([item.title, item.title_zh, item.filename].join(" "));
-    const catalog = metadataById.get(item.id) || "";
-    const fullText = searchTextById.get(item.id) || "";
-    const chartText = chartTextById && chartTextById.get(item.id) || "";
+  function selectedSearchText(item, queryScope, metadataById, searchTextById, chartTextById, titleSearchById) {
+    const id = String(item && item.id || "");
+    const title = titleSearchById && titleSearchById.get(id)
+      || normalize([item.title, item.title_zh, item.filename].join(" "));
+    const catalog = metadataById.get(id) || "";
+    const fullText = searchTextById.get(id) || "";
+    const chartText = chartTextById && chartTextById.get(id) || "";
     if (queryScope === "title") return { title, catalog: "", fullText: "", combined: title };
     if (queryScope === "catalog") return { title: "", catalog, fullText: "", combined: catalog };
     if (queryScope === "fulltext") return { title: "", catalog: "", fullText, combined: fullText };
@@ -4483,9 +4628,9 @@
     return { title, catalog, fullText, combined: `${title} ${catalog} ${fullText} ${chartText}` };
   }
 
-  function scoreItem(item, query, queryScope, metadataById, searchTextById, chartTextById) {
+  function scoreItem(item, query, queryScope, metadataById, searchTextById, chartTextById, titleSearchById) {
     if (!query) return 0;
-    const selected = selectedSearchText(item, queryScope, metadataById, searchTextById, chartTextById);
+    const selected = selectedSearchText(item, queryScope, metadataById, searchTextById, chartTextById, titleSearchById);
     if (!textMatches(selected.combined, query)) return -1;
     return (
       scoreText(selected.title, query, 12) +
@@ -4787,16 +4932,16 @@
   }
 
   async function initIndex() {
-    const [catalog, config] = await Promise.all([
-      loadJson("data/catalog.json"),
-      loadOptionalJson("data/config.json", {}),
-    ]);
-    const workerUrl = workerBaseUrl(config);
-    const catalogPdfOverrides = await loadCatalogPdfOverrides(workerUrl);
     const input = document.getElementById("searchInput");
     const results = document.getElementById("results");
     const count = document.getElementById("resultCount");
     const meta = document.getElementById("catalogMeta");
+    const searchReadiness = document.getElementById("searchReadiness");
+    const searchReadinessText = document.getElementById("searchReadinessText");
+    const searchSourceProgress = document.getElementById("searchSourceProgress");
+    const searchSourceProgressSummary = document.getElementById("searchSourceProgressSummary");
+    const searchSourceProgressBar = document.getElementById("searchSourceProgressBar");
+    const searchSourceProgressItems = document.getElementById("searchSourceProgressItems");
     const bankFilter = document.getElementById("bankFilter");
     const industryFilter = document.getElementById("industryFilter");
     const startDate = document.getElementById("startDate");
@@ -4810,9 +4955,38 @@
     const nextPage = document.getElementById("nextPage");
     const pageInfo = document.getElementById("pageInfo");
     const pageSize = document.getElementById("pageSize");
-    const items = mergeCatalogPdfOverrides(catalog.items, catalogPdfOverrides);
-    const catalogById = new Map(items.map((item) => [String(item.id || ""), item]));
-    const metadataById = new Map(items.map((item) => [item.id, metadataText(item)]));
+    let earlyInputTouched = false;
+    const captureEarlyInput = () => { earlyInputTouched = true; };
+    if (input) input.addEventListener("input", captureEarlyInput, { passive: true });
+
+    let fullCatalogError = null;
+    const [previewCatalog, config] = await Promise.all([
+      loadOptionalJson("data/catalog_preview.json", null),
+      loadOptionalJson("data/config.json", {}),
+    ]);
+    // Give the small preview network priority. Starting the multi-megabyte
+    // catalog first can delay the very response meant to fix first paint.
+    const fullCatalogPromise = loadJson("data/catalog.json").catch((error) => {
+      fullCatalogError = error;
+      return null;
+    });
+    let catalog = previewCatalog && Array.isArray(previewCatalog.items) && previewCatalog.items.length
+      ? previewCatalog
+      : await fullCatalogPromise;
+    if (!catalog || !Array.isArray(catalog.items)) {
+      throw fullCatalogError || new Error("Report catalog is unavailable.");
+    }
+    let fullCatalogReady = !(previewCatalog && Array.isArray(previewCatalog.items) && previewCatalog.items.length);
+    const workerUrl = workerBaseUrl(config);
+    let items = mergeCatalogPdfOverrides(catalog.items, []);
+    let catalogById = new Map(items.map((item) => [String(item.id || ""), item]));
+    let metadataById = new Map(items.map((item) => [String(item.id || ""), metadataText(item)]));
+    let titleSearchById = new Map(items.map((item) => [String(item.id || ""), normalize([item.title, item.title_zh, item.filename].join(" "))]));
+    let dateSortById = new Map(items.map((item) => [String(item.id || ""), dateSortValue(item)]));
+    let itemDateById = new Map(items.map((item) => [String(item.id || ""), itemDate(item)]));
+    let bankKeyById = new Map(items.map((item) => [String(item.id || ""), bankKey(item)]));
+    let pageCountById = new Map(items.map((item) => [String(item.id || ""), reportPageCountValue(item)]));
+    let industryById = new Map(items.map((item) => [String(item.id || ""), inferIndustry(item)]));
     const searchTextById = new Map();
     const chartTextById = new Map();
     const chartSearchSection = document.getElementById("chartSearchSection");
@@ -4821,7 +4995,7 @@
     const chartSearchStatus = document.getElementById("chartSearchStatus");
     let chartSearchReports = [];
     let chartSearchPromise = null;
-    let searchIndexLabel = "Text index loading";
+    let searchIndexLabel = "Title and catalog search ready";
     let currentPage = 1;
     let catalogAnalyticsTimer = 0;
     let lastCatalogAnalyticsKey = "";
@@ -4852,7 +5026,7 @@
     };
     let hotReportsLoaded = !workerUrl;
     let hotReportsFailed = false;
-    const fallbackRecommendations = items
+    let fallbackRecommendations = items
       .filter((item) => isPdfAvailable(item))
       .slice()
       .sort((left, right) => dateSortValue(right) - dateSortValue(left))
@@ -4868,8 +5042,9 @@
       if (!searchRecommendationsSection || !searchRecommendationsResults) return;
       const query = String(input.value || "").trim();
       const counts = Object.values(searchResultCounts);
-      const ready = counts.every((value) => Number.isFinite(value));
-      const noMatches = ready && counts.every((value) => value === 0);
+      const settled = (value) => Number.isFinite(value) || value === "error";
+      const ready = counts.every(settled);
+      const noMatches = ready && counts.every((value) => value === "error" || value === 0);
       if (!query || !noMatches || !fallbackRecommendations.length) {
         searchRecommendationsSection.hidden = true;
         searchRecommendationsResults.innerHTML = "";
@@ -4943,10 +5118,7 @@
       chartSearchPromise = loadOptionalJson("data/chart_search_index.json", { reports: [] })
         .then((payload) => {
           chartSearchReports = (Array.isArray(payload && payload.reports) ? payload.reports : [])
-            .filter((report) => {
-              const reportId = String(report && report.report_id || "");
-              return Boolean(reportId && catalogById.has(reportId));
-            });
+            .filter((report) => Boolean(String(report && report.report_id || "")));
           chartTextById.clear();
           chartSearchReports.forEach((report) => {
             const reportId = String(report && report.report_id || "");
@@ -5039,8 +5211,10 @@
       hotReportsFailed = false;
       renderHotReports(input.value.trim());
       setHotReportsStatus("");
+      const controller = new AbortController();
+      const timeoutId = window.setTimeout(() => controller.abort(), 12_000);
       try {
-        const response = await fetch(`${workerUrl}/hot-reports`, { cache: "no-store" });
+        const response = await fetch(`${workerUrl}/hot-reports`, { cache: "no-store", signal: controller.signal });
         const data = await response.json().catch(() => ({}));
         if (!response.ok) throw new Error(data.detail || "近期热门报告读取失败。");
         hotReportItems.clear();
@@ -5050,31 +5224,124 @@
       } catch (error) {
         hotReportItems.clear();
         hotReportsFailed = true;
-        setHotReportsStatus(error.message || "近期热门报告暂时无法读取。", "error");
+        setHotReportsStatus(
+          error && error.name === "AbortError" ? "近期热门报告读取超时，可稍后重试。" : (error.message || "近期热门报告暂时无法读取。"),
+          "error",
+        );
       } finally {
+        window.clearTimeout(timeoutId);
         hotReportsLoaded = true;
         renderHotReports(input.value.trim());
       }
     }
 
-    const bankOptions = new Map();
-    const industryOptions = new Map();
-    for (const item of items) {
-      const bKey = bankKey(item);
-      const b = bankOptions.get(bKey) || { label: bankLabel(item), count: 0 };
-      b.count += 1;
-      bankOptions.set(bKey, b);
+    let bankOptions = new Map();
+    let industryOptions = new Map();
 
-      const industry = inferIndustry(item);
-      const i = industryOptions.get(industry) || { label: industry, count: 0 };
-      i.count += 1;
-      industryOptions.set(industry, i);
+    function updateCatalogReadiness(text, state = "") {
+      if (!searchReadiness || !searchReadinessText) return;
+      searchReadiness.className = `search-readiness${state ? ` is-${state}` : ""}`;
+      searchReadinessText.textContent = text;
     }
-    setOptions(bankFilter, optionSummary(bankOptions), "All institutions");
-    setOptions(industryFilter, optionSummary(industryOptions), "All industries");
+
+    function createCatalogDerivedState(nextCatalog, overrides = []) {
+      return {
+        catalog: nextCatalog,
+        items: mergeCatalogPdfOverrides(nextCatalog.items, overrides),
+        catalogById: new Map(),
+        metadataById: new Map(),
+        titleSearchById: new Map(),
+        dateSortById: new Map(),
+        itemDateById: new Map(),
+        bankKeyById: new Map(),
+        pageCountById: new Map(),
+        industryById: new Map(),
+        bankOptions: new Map(),
+        industryOptions: new Map(),
+        fallbackRecommendations: [],
+      };
+    }
+
+    function addCatalogDerivedItem(state, item) {
+        const id = String(item.id || "");
+        state.catalogById.set(id, item);
+        state.metadataById.set(id, metadataText(item));
+        state.titleSearchById.set(id, normalize([item.title, item.title_zh, item.filename].join(" ")));
+        state.dateSortById.set(id, dateSortValue(item));
+        state.itemDateById.set(id, itemDate(item));
+        state.pageCountById.set(id, reportPageCountValue(item));
+        const bKey = bankKey(item);
+        state.bankKeyById.set(id, bKey);
+        const b = state.bankOptions.get(bKey) || { label: bankLabel(item), count: 0 };
+        b.count += 1;
+        state.bankOptions.set(bKey, b);
+        const industry = inferIndustry(item);
+        state.industryById.set(id, industry);
+        const industryRow = state.industryOptions.get(industry) || { label: industry, count: 0 };
+        industryRow.count += 1;
+        state.industryOptions.set(industry, industryRow);
+    }
+
+    function finishCatalogDerivedState(state) {
+      state.fallbackRecommendations = state.items
+        .filter((item) => isPdfAvailable(item))
+        .slice()
+        .sort((left, right) => (state.dateSortById.get(String(right.id || "")) || 0) - (state.dateSortById.get(String(left.id || "")) || 0))
+        .slice(0, 6);
+      return state;
+    }
+
+    function applyCatalogDerivedState(state) {
+      catalog = state.catalog;
+      items = state.items;
+      catalogById = state.catalogById;
+      metadataById = state.metadataById;
+      titleSearchById = state.titleSearchById;
+      dateSortById = state.dateSortById;
+      itemDateById = state.itemDateById;
+      bankKeyById = state.bankKeyById;
+      pageCountById = state.pageCountById;
+      industryById = state.industryById;
+      bankOptions = state.bankOptions;
+      industryOptions = state.industryOptions;
+      fallbackRecommendations = state.fallbackRecommendations;
+      setOptions(bankFilter, optionSummary(bankOptions), "All institutions");
+      setOptions(industryFilter, optionSummary(industryOptions), "All industries");
+    }
+
+    function rebuildCatalogDerived(nextCatalog, overrides = []) {
+      const state = createCatalogDerivedState(nextCatalog, overrides);
+      for (const item of state.items) addCatalogDerivedItem(state, item);
+      applyCatalogDerivedState(finishCatalogDerivedState(state));
+    }
+
+    async function rebuildCatalogDerivedInChunks(nextCatalog, overrides = [], overrideVersion = catalogOverrideVersion) {
+      const state = createCatalogDerivedState(nextCatalog, overrides);
+      for (let index = 0; index < state.items.length; index += 1) {
+        addCatalogDerivedItem(state, state.items[index]);
+        if (index > 0 && index % 350 === 0) {
+          // Yield between bounded chunks so the full catalog upgrade cannot
+          // create a long task while a user is typing in the preview catalog.
+          await new Promise((resolve) => window.setTimeout(resolve, 0));
+        }
+      }
+      if (overrideVersion !== catalogOverrideVersion) {
+        return rebuildCatalogDerivedInChunks(nextCatalog, catalogPdfOverrides, catalogOverrideVersion);
+      }
+      applyCatalogDerivedState(finishCatalogDerivedState(state));
+    }
+
+    rebuildCatalogDerived(catalog);
+    updateCatalogReadiness(
+      fullCatalogReady
+        ? `完整目录已就绪，共 ${items.length} 份报告。`
+        : `已先显示最新 ${items.length} 份报告，正在后台载入完整目录…`,
+      fullCatalogReady ? "ready" : "searching",
+    );
 
     function updateMeta() {
-      meta.textContent = `${items.length} reports`;
+      const visibleTotal = Math.max(items.length, Number(catalog.total_item_count || 0));
+      meta.textContent = `${visibleTotal} reports`;
       const totalSize = formatSize(internalStorageMetadata && internalStorageMetadata.total_size_bytes);
       const limitSize = formatSize(internalStorageMetadata && internalStorageMetadata.limit_bytes);
       const hotTotalSize = formatSize(internalStorageMetadata && internalStorageMetadata.hot_report_size_bytes);
@@ -5118,15 +5385,22 @@
     document.addEventListener("portal-auth-change", refreshInternalStorageMetadata);
     refreshInternalStorageMetadata();
 
-    function passesFilters(item) {
-      if (bankFilter.value && bankKey(item) !== bankFilter.value) return false;
-      if (industryFilter.value && inferIndustry(item) !== industryFilter.value) return false;
-      if (availabilityFilter.value === "available" && !isPdfAvailable(item)) return false;
-      if (availabilityFilter.value === "textOnly" && isPdfAvailable(item)) return false;
-      if (!itemMatchesPageRanges(item, selectedPageRangeValues())) return false;
-      const date = itemDate(item);
-      if (startDate.value && (!date || date < startDate.value)) return false;
-      if (endDate.value && (!date || date > endDate.value)) return false;
+    function passesFilters(item, filters) {
+      const id = String(item.id || "");
+      if (filters.bank && bankKeyById.get(id) !== filters.bank) return false;
+      if (filters.industry && industryById.get(id) !== filters.industry) return false;
+      if (filters.availability === "available" && !isPdfAvailable(item)) return false;
+      if (filters.availability === "textOnly" && isPdfAvailable(item)) return false;
+      if (filters.pageRanges.length) {
+        const pages = pageCountById.get(id) || 0;
+        if (!filters.pageRanges.some((value) => {
+          const range = pageRangeForValue(value);
+          return range && range.matches(pages);
+        })) return false;
+      }
+      const date = itemDateById.get(id) || "";
+      if (filters.start && (!date || date < filters.start)) return false;
+      if (filters.end && (!date || date > filters.end)) return false;
       return true;
     }
 
@@ -5159,17 +5433,34 @@
       if (options.resetPage) currentPage = 1;
       const query = normalize(input.value);
       const rawQuery = input.value.trim();
+      if (scopeFilter.value === "fulltext" && query && historyTextState === "loading" && searchTextById.size === 0) {
+        // Keep the previous catalog rows visible until the first bounded text
+        // shard is searchable. Replacing them with an empty result while the
+        // index is in flight makes a healthy load look like a failed search.
+        results.classList.add("is-updating");
+        results.setAttribute("aria-busy", "true");
+        updateActiveFilters();
+        return;
+      }
+      const filters = {
+        bank: bankFilter.value,
+        industry: industryFilter.value,
+        availability: availabilityFilter.value,
+        pageRanges: selectedPageRangeValues(),
+        start: startDate.value,
+        end: endDate.value,
+      };
       const scoped = items
-        .filter(passesFilters)
+        .filter((item) => passesFilters(item, filters))
         .map((item) => ({
           item,
-          score: scoreItem(item, query, scopeFilter.value, metadataById, searchTextById, chartTextById),
+          score: scoreItem(item, query, scopeFilter.value, metadataById, searchTextById, chartTextById, titleSearchById),
         }))
         .filter((entry) => !query || entry.score >= 0);
 
       scoped.sort((a, b) => {
         if (query && b.score !== a.score) return b.score - a.score;
-        return dateSortValue(b.item) - dateSortValue(a.item);
+        return (dateSortById.get(String(b.item.id || "")) || 0) - (dateSortById.get(String(a.item.id || "")) || 0);
       });
 
       count.textContent = `${scoped.length} of ${items.length} reports`;
@@ -5189,11 +5480,15 @@
       renderSearchRecommendations();
 
       if (!scoped.length) {
+        results.classList.remove("is-loading", "is-updating");
+        results.setAttribute("aria-busy", "false");
         results.innerHTML = '<div class="empty-state">No matching reports.</div>';
         scheduleCatalogSearchAnalytics(rawQuery, scoped.length);
         return;
       }
       results.innerHTML = visible.map((entry) => resultRow(entry.item)).join("");
+      results.classList.remove("is-loading", "is-updating");
+      results.setAttribute("aria-busy", "false");
       results.scrollTop = 0;
       scheduleCatalogSearchAnalytics(rawQuery, scoped.length);
     }
@@ -5249,22 +5544,52 @@
       render({ resetPage: true });
     }
 
-    input.addEventListener("input", () => {
-      if (scopeFilter.value !== "charts") prepareRemoteSearch(input.value.trim());
-      render({ resetPage: true });
-      renderHotReports(scopeFilter.value === "charts" ? "" : input.value.trim());
+    let localSearchTimer = 0;
+    let inputComposing = false;
+    const scheduleLocalRender = (delay = 240) => {
+      window.clearTimeout(localSearchTimer);
+      if (inputComposing) return;
+      results.classList.add("is-updating");
+      results.setAttribute("aria-busy", "true");
+      updateCatalogReadiness("正在更新结果；已保留当前列表供继续浏览…", "searching");
+      localSearchTimer = window.setTimeout(() => {
+        render({ resetPage: true });
+        renderHotReports(scopeFilter.value === "charts" ? "" : input.value.trim());
+        updateCatalogReadiness(
+          fullCatalogReady ? `搜索目录已就绪，共 ${items.length} 份报告。` : `正在后台补齐完整目录；当前先搜索最新 ${items.length} 份。`,
+          fullCatalogReady ? "ready" : "searching",
+        );
+      }, Math.max(0, delay));
       scheduleExternalSearch();
+    };
+    input.addEventListener("compositionstart", () => {
+      inputComposing = true;
+      window.clearTimeout(localSearchTimer);
     });
+    input.addEventListener("compositionend", () => {
+      inputComposing = false;
+      scheduleLocalRender(0);
+    });
+    input.addEventListener("input", () => {
+      if (inputComposing) return;
+      scheduleLocalRender();
+    });
+    input.removeEventListener("input", captureEarlyInput);
     [bankFilter, industryFilter, startDate, endDate, availabilityFilter, ...pageRangeInputs].forEach((control) => {
-      control.addEventListener("change", () => render({ resetPage: true }));
+      control.addEventListener("change", () => scheduleLocalRender(0));
     });
     scopeFilter.addEventListener("change", async () => {
       if (scopeFilter.value === "charts") {
         if (chartSearchSection) chartSearchSection.hidden = false;
         if (chartSearchStatus) chartSearchStatus.textContent = "正在读取图表索引…";
         await ensureChartSearchIndex();
+      } else if (scopeFilter.value === "fulltext") {
+        updateCatalogReadiness("正在按需载入报告正文索引；当前列表可继续浏览…", "searching");
+        startTextIndexLoad();
       }
-      render({ resetPage: true });
+      if (!(scopeFilter.value === "fulltext" && input.value.trim() && searchTextById.size === 0)) {
+        render({ resetPage: true });
+      }
       renderHotReports(scopeFilter.value === "charts" ? "" : input.value.trim());
       scheduleExternalSearch();
     });
@@ -5322,11 +5647,53 @@
     let externalToken = 0;
     let reportAToken = 0;
     let authorityToken = 0;
+    let remoteSearchGeneration = 0;
     let authorityQuery = "";
+    let remoteSearchController = null;
+    const remoteSourceStates = new Map();
+    const remoteSourceLabels = {
+      catalog: "站内目录",
+      thinktank: "国际智库",
+      external: "其他报告",
+      reportA: "报告线索",
+      authority: "高权报告",
+    };
     const thinkTankItems = new Map();
     const externalItems = new Map();
     const reportAItems = new Map();
     const authorityItems = new Map();
+
+    function renderRemoteSourceProgress(query = "") {
+      if (!searchSourceProgress || !searchSourceProgressItems) return;
+      const cleanQuery = String(query || "").trim();
+      if (!cleanQuery) {
+        searchSourceProgress.hidden = true;
+        searchSourceProgressItems.innerHTML = "";
+        return;
+      }
+      const rows = Object.keys(remoteSourceLabels).map((source) => ({
+        source,
+        label: remoteSourceLabels[source],
+        state: remoteSourceStates.get(source) || (source === "catalog" ? "done" : "waiting"),
+      }));
+      const settled = rows.filter((row) => ["done", "error"].includes(row.state)).length;
+      searchSourceProgress.hidden = false;
+      if (searchSourceProgressSummary) {
+        searchSourceProgressSummary.textContent = settled === rows.length
+          ? "全部来源已完成"
+          : `${settled}/${rows.length} 个来源完成，结果仍在补充`;
+      }
+      if (searchSourceProgressBar) searchSourceProgressBar.style.width = `${Math.round(settled / rows.length * 100)}%`;
+      searchSourceProgressItems.innerHTML = rows.map((row) => {
+        const suffix = row.state === "done" ? " ✓" : row.state === "error" ? " 暂不可用" : row.state === "searching" ? " 搜索中" : " 等待中";
+        return `<span class="search-source-chip is-${escapeHtml(row.state)}">${escapeHtml(row.label + suffix)}</span>`;
+      }).join("");
+    }
+
+    function setRemoteSourceState(source, state, query) {
+      remoteSourceStates.set(source, state);
+      renderRemoteSourceProgress(query);
+    }
 
     function setThinkTankStatus(text, kind) {
       if (!thinkTankStatus) return;
@@ -5393,13 +5760,17 @@
       renderSearchRecommendations();
     }
 
-    async function runThinkTankSearch(query) {
+    async function runThinkTankSearch(query, signal, generation = remoteSearchGeneration) {
       if (!thinkTankSection || !thinkTankResults) return;
       if (!externalUrl || !query) {
         hideThinkTankResults();
         return;
       }
       const token = ++thinkTankToken;
+      const isCurrent = () => generation === remoteSearchGeneration
+        && query === input.value.trim()
+        && token === thinkTankToken;
+      setRemoteSourceState("thinktank", "searching", query);
       thinkTankSection.hidden = false;
       if (thinkTankCount) thinkTankCount.textContent = "搜索中…";
       setThinkTankStatus("");
@@ -5412,11 +5783,11 @@
       try {
         const response = await fetch(
           `${externalUrl}/thinktank/search?q=${encodeURIComponent(query)}`,
-          { cache: "no-store" },
+          { cache: "no-store", signal },
         );
         if (!response.ok) throw new Error(`搜索失败 (${response.status})`);
         const data = await response.json();
-        if (token !== thinkTankToken) return;
+        if (!isCurrent()) return;
         const items = Array.isArray(data.items) ? data.items : [];
         searchResultCounts.thinktank = items.length;
         thinkTankItems.clear();
@@ -5433,17 +5804,20 @@
           cache_status: data.cache_status || "",
         });
         renderSearchRecommendations();
+        setRemoteSourceState("thinktank", "done", query);
       } catch (error) {
-        if (token !== thinkTankToken) return;
+        if (error && error.name === "AbortError") return;
+        if (!isCurrent()) return;
         if (thinkTankCount) thinkTankCount.textContent = "";
         thinkTankResults.innerHTML = "";
         setThinkTankStatus(error.message || "搜索暂不可用。", "error");
         searchResultCounts.thinktank = "error";
         renderSearchRecommendations();
+        setRemoteSourceState("thinktank", "error", query);
       }
     }
 
-    async function runExternalSearch(query) {
+    async function runExternalSearch(query, signal, generation = remoteSearchGeneration) {
       if (!externalSection || !externalResults) return;
       if (!externalUrl || !query) {
         externalSection.hidden = true;
@@ -5457,6 +5831,10 @@
         return;
       }
       const token = ++externalToken;
+      const isCurrent = () => generation === remoteSearchGeneration
+        && query === input.value.trim()
+        && token === externalToken;
+      setRemoteSourceState("external", "searching", query);
       externalSection.hidden = false;
       if (externalCount) externalCount.textContent = "搜索中…";
       setExternalStatus("");
@@ -5469,11 +5847,11 @@
       try {
         const response = await fetch(
           `${externalUrl}/external/search?q=${encodeURIComponent(query)}`,
-          { cache: "no-store" },
+          { cache: "no-store", signal },
         );
         if (!response.ok) throw new Error(`搜索失败 (${response.status})`);
         const data = await response.json();
-        if (token !== externalToken) return; // a newer query superseded this one
+        if (!isCurrent()) return; // a newer query superseded this one
         const items = Array.isArray(data.items) ? data.items : [];
         searchResultCounts.external = items.length;
         externalItems.clear();
@@ -5490,23 +5868,30 @@
           cache_status: data.cache_status || "",
         });
         renderSearchRecommendations();
+        setRemoteSourceState("external", "done", query);
       } catch (error) {
-        if (token !== externalToken) return;
+        if (error && error.name === "AbortError") return;
+        if (!isCurrent()) return;
         if (externalCount) externalCount.textContent = "";
         externalResults.innerHTML = "";
         setExternalStatus(error.message || "搜索暂不可用。", "error");
         searchResultCounts.external = "error";
         renderSearchRecommendations();
+        setRemoteSourceState("external", "error", query);
       }
     }
 
-    async function runReportASearch(query) {
+    async function runReportASearch(query, signal, generation = remoteSearchGeneration) {
       if (!reportASection || !reportAResults) return;
       if (!externalUrl || !query) {
         hideReportAResults();
         return;
       }
       const token = ++reportAToken;
+      const isCurrent = () => generation === remoteSearchGeneration
+        && query === input.value.trim()
+        && token === reportAToken;
+      setRemoteSourceState("reportA", "searching", query);
       reportASection.hidden = false;
       if (reportACount) reportACount.textContent = "搜索中…";
       setReportAStatus("");
@@ -5519,11 +5904,11 @@
       try {
         const response = await fetch(
           `${externalUrl}/report-a/search?q=${encodeURIComponent(query)}`,
-          { cache: "no-store" },
+          { cache: "no-store", signal },
         );
         if (!response.ok) throw new Error(`搜索失败 (${response.status})`);
         const data = await response.json();
-        if (token !== reportAToken) return;
+        if (!isCurrent()) return;
         const items = Array.isArray(data.items) ? data.items : [];
         searchResultCounts.reportA = items.length;
         reportAItems.clear();
@@ -5540,23 +5925,30 @@
           cache_status: data.cache_status || "",
         });
         renderSearchRecommendations();
+        setRemoteSourceState("reportA", "done", query);
       } catch (error) {
-        if (token !== reportAToken) return;
+        if (error && error.name === "AbortError") return;
+        if (!isCurrent()) return;
         if (reportACount) reportACount.textContent = "";
         reportAResults.innerHTML = "";
         setReportAStatus(error.message || "搜索暂不可用。", "error");
         searchResultCounts.reportA = "error";
         renderSearchRecommendations();
+        setRemoteSourceState("reportA", "error", query);
       }
     }
 
-    async function runAuthoritySearch(query) {
+    async function runAuthoritySearch(query, signal, generation = remoteSearchGeneration) {
       if (!authoritySection || !authorityResults) return;
       if (!externalUrl || !query) {
         hideAuthorityResults();
         return;
       }
       const token = ++authorityToken;
+      const isCurrent = () => generation === remoteSearchGeneration
+        && query === input.value.trim()
+        && token === authorityToken;
+      setRemoteSourceState("authority", "searching", query);
       authorityQuery = query;
       authoritySection.hidden = false;
       if (authorityCount) authorityCount.textContent = "搜索中…";
@@ -5570,11 +5962,11 @@
       try {
         const response = await fetch(
           `${externalUrl}/authority/search?q=${encodeURIComponent(query)}`,
-          { cache: "no-store" },
+          { cache: "no-store", signal },
         );
         if (!response.ok) throw new Error(`搜索失败 (${response.status})`);
         const data = await response.json();
-        if (token !== authorityToken) return;
+        if (!isCurrent()) return;
         const items = Array.isArray(data.items) ? data.items : [];
         searchResultCounts.authority = items.length;
         authorityItems.clear();
@@ -5591,34 +5983,80 @@
           cache_status: data.cache_status || "",
         });
         renderSearchRecommendations();
+        setRemoteSourceState("authority", "done", query);
       } catch (error) {
-        if (token !== authorityToken) return;
+        if (error && error.name === "AbortError") return;
+        if (!isCurrent()) return;
         if (authorityCount) authorityCount.textContent = "";
         authorityResults.innerHTML = "";
         setAuthorityStatus(error.message || "搜索暂不可用。", "error");
         searchResultCounts.authority = "error";
         renderSearchRecommendations();
+        setRemoteSourceState("authority", "error", query);
       }
     }
 
     function scheduleExternalSearch() {
       window.clearTimeout(externalTimer);
+      const generation = ++remoteSearchGeneration;
+      if (remoteSearchController) {
+        remoteSearchController.abort();
+        remoteSearchController = null;
+      }
       const query = input.value.trim();
-      if (scopeFilter.value === "charts") {
+      if (scopeFilter.value === "charts" || !query) {
         hideThinkTankResults();
         runExternalSearch("");
         hideReportAResults();
         hideAuthorityResults();
+        remoteSourceStates.clear();
+        renderRemoteSourceProgress("");
         return;
       }
+      remoteSourceStates.clear();
+      remoteSourceStates.set("catalog", fullCatalogReady ? "done" : "searching");
+      for (const source of ["thinktank", "external", "reportA", "authority"]) {
+        remoteSourceStates.set(source, "waiting");
+      }
+      prepareRemoteSearch(query);
+      renderRemoteSourceProgress(query);
       externalTimer = window.setTimeout(() => {
+        if (generation !== remoteSearchGeneration || query !== input.value.trim()) return;
+        remoteSearchController = new AbortController();
+        const controller = remoteSearchController;
+        const { signal } = controller;
+        const timeoutId = window.setTimeout(() => controller.abort(), 18_000);
         Promise.allSettled([
-          runThinkTankSearch(query),
-          runExternalSearch(query),
-          runReportASearch(query),
-          runAuthoritySearch(query),
-        ]).then(renderSearchRecommendations);
-      }, 400);
+          runThinkTankSearch(query, signal, generation),
+          runExternalSearch(query, signal, generation),
+          runReportASearch(query, signal, generation),
+          runAuthoritySearch(query, signal, generation),
+        ]).then(() => {
+          window.clearTimeout(timeoutId);
+          if (remoteSearchController !== controller
+            || generation !== remoteSearchGeneration
+            || query !== input.value.trim()) return;
+          for (const source of ["thinktank", "external", "reportA", "authority"]) {
+            if (["waiting", "searching"].includes(remoteSourceStates.get(source))) {
+              remoteSourceStates.set(source, "error");
+              searchResultCounts[source] = "error";
+              const bindings = {
+                thinktank: [thinkTankResults, thinkTankCount, setThinkTankStatus],
+                external: [externalResults, externalCount, setExternalStatus],
+                reportA: [reportAResults, reportACount, setReportAStatus],
+                authority: [authorityResults, authorityCount, setAuthorityStatus],
+              }[source];
+              if (bindings) {
+                if (bindings[0]) bindings[0].innerHTML = "";
+                if (bindings[1]) bindings[1].textContent = "";
+                bindings[2]("此来源在 18 秒内未完成，可稍后重试。", "error");
+              }
+            }
+          }
+          renderRemoteSourceProgress(query);
+          renderSearchRecommendations();
+        });
+      }, 480);
     }
 
     clearFilters.addEventListener("click", () => {
@@ -5716,6 +6154,7 @@
 
     let searchIndexPrunedText = false;
     let historyTextState = "idle";
+    let textIndexRenderTimer = 0;
     const searchIndexStatusLabel = () => {
       let label = `Text index ${searchTextById.size} reports`;
       if (historyTextState === "loading") label += " +";
@@ -5734,54 +6173,118 @@
       }
       searchIndexLabel = searchIndexStatusLabel();
       updateMeta();
-      // Re-rendering matters only when full text can change visible results.
-      if (input && input.value.trim()) render();
     };
-    // The whole text index is lazy: first paint only needs the catalog. The
-    // main index and the browser-only history shards start downloading once
-    // the page is idle or the visitor touches the search box. The Worker keeps
-    // loading the same small(er) search_index.json URL as before.
+    const scheduleTextIndexRender = (immediate = false) => {
+      if (scopeFilter.value !== "fulltext") return;
+      window.clearTimeout(textIndexRenderTimer);
+      textIndexRenderTimer = window.setTimeout(() => {
+        render({ resetPage: true });
+        updateCatalogReadiness(
+          historyTextState === "loading"
+            ? `已可搜索 ${searchTextById.size} 份报告正文，更多分片仍在后台载入…`
+            : `报告正文索引已就绪，共 ${searchTextById.size} 份。`,
+          historyTextState === "failed" ? "error" : (historyTextState === "loading" ? "searching" : "ready"),
+        );
+      }, immediate ? 0 : 100);
+    };
+    const loadSearchIndexShards = async (root) => {
+      const manifest = await loadJson(`${root}/manifest.json`);
+      if (manifest.text_pruned_dates && manifest.text_pruned_dates.length) {
+        searchIndexPrunedText = true;
+      }
+      const shards = Array.isArray(manifest.shards) ? manifest.shards : [];
+      for (const shard of shards) {
+        if (!shard || !/^[a-zA-Z0-9._-]+\.json$/.test(String(shard.file || ""))) continue;
+        mergeSearchIndex(await loadJson(`${root}/${shard.file}`));
+        scheduleTextIndexRender(searchTextById.size > 0 && searchTextById.size === Number(shard.item_count || 0));
+        // Parsing and indexing stay in bounded tasks even on lower-memory
+        // mobile browsers; the former 90 MB monolith is never downloaded.
+        await new Promise((resolve) => window.setTimeout(resolve, 30));
+      }
+      return manifest;
+    };
+    // The full text corpus is intentionally opt-in. It is much larger than the
+    // title/catalog index and must never compete with typing or first paint.
     const startTextIndexLoad = () => {
       if (historyTextState !== "idle") return;
       historyTextState = "loading";
       (async () => {
         try {
-          mergeSearchIndex(await loadJson("data/search_index.json"));
+          await loadSearchIndexShards("data/search_index_current");
         } catch (error) {
           console.warn(error);
         }
         try {
-          const manifest = await loadJson("data/search_index_history/manifest.json");
-          if (manifest.text_pruned_dates && manifest.text_pruned_dates.length) {
-            searchIndexPrunedText = true;
-          }
-          const shards = Array.isArray(manifest.shards) ? manifest.shards : [];
-          for (const shard of shards) {
-            if (!shard || !shard.file) continue;
-            mergeSearchIndex(await loadJson(`data/search_index_history/${shard.file}`));
-            // Yield between shards so parsing never blocks typing or scrolling.
-            await new Promise((resolve) => setTimeout(resolve, 30));
-          }
+          await loadSearchIndexShards("data/search_index_history");
           historyTextState = "done";
         } catch (error) {
           console.warn(error);
-          historyTextState = "failed";
+          historyTextState = searchTextById.size ? "done" : "failed";
         }
         searchIndexLabel = searchTextById.size ? searchIndexStatusLabel() : "Text index unavailable";
         updateMeta();
-        render();
+        scheduleTextIndexRender(true);
       })();
     };
-    if (input) {
-      input.addEventListener("focus", startTextIndexLoad);
-      input.addEventListener("input", startTextIndexLoad);
-    }
-    window.setTimeout(startTextIndexLoad, 3000);
-
     updateMeta();
     render();
     renderHotReports(input.value.trim());
     loadHotReports();
+
+    // The preview is useful immediately; the full catalog and the PDF override
+    // overlay arrive independently and replace the derived indexes atomically.
+    // No user input is lost while either request is in flight.
+    let catalogPdfOverrides = [];
+    let catalogOverrideVersion = 0;
+    if (!fullCatalogReady) {
+      fullCatalogPromise.then(async (fullCatalog) => {
+        if (!fullCatalog || !Array.isArray(fullCatalog.items)) {
+          updateCatalogReadiness("完整目录暂时未载入；当前可搜索最新报告和其他来源。", "error");
+          remoteSourceStates.set("catalog", "error");
+          renderRemoteSourceProgress(input.value.trim());
+          return;
+        }
+        const previewRevision = String(catalog.updated_at_bjt || "");
+        const fullRevision = String(fullCatalog.updated_at_bjt || "");
+        const expectedTotal = Number(catalog.total_item_count || 0);
+        if ((previewRevision && fullRevision && fullRevision < previewRevision)
+          || (expectedTotal > 0 && Number(fullCatalog.item_count || 0) < expectedTotal)) {
+          try {
+            fullCatalog = await loadJson(`data/catalog.json?revision=${encodeURIComponent(previewRevision)}`, { cache: "reload" });
+          } catch (error) {
+            console.warn(error);
+          }
+        }
+        if (!fullCatalog || !Array.isArray(fullCatalog.items)
+          || (previewRevision && String(fullCatalog.updated_at_bjt || "") < previewRevision)
+          || (expectedTotal > 0 && Number(fullCatalog.item_count || 0) < expectedTotal)) {
+          updateCatalogReadiness("完整目录版本仍在同步；当前继续使用最新报告和其他来源。", "error");
+          remoteSourceStates.set("catalog", "error");
+          renderRemoteSourceProgress(input.value.trim());
+          return;
+        }
+        updateCatalogReadiness("完整目录已下载，正在平滑建立本地检索索引…", "searching");
+        await rebuildCatalogDerivedInChunks(fullCatalog, catalogPdfOverrides);
+        fullCatalogReady = true;
+        remoteSourceStates.set("catalog", "done");
+        renderRemoteSourceProgress(input.value.trim());
+        updateMeta();
+        render({ resetPage: earlyInputTouched || Boolean(input.value.trim()) });
+        renderHotReports(scopeFilter.value === "charts" ? "" : input.value.trim());
+        updateCatalogReadiness(`完整目录已就绪，共 ${items.length} 份报告。`, "ready");
+      });
+    }
+    loadCatalogPdfOverrides(workerUrl).then((overrides) => {
+      catalogPdfOverrides = Array.isArray(overrides) ? overrides : [];
+      catalogOverrideVersion += 1;
+      if (!catalogPdfOverrides.length) return;
+      if (!fullCatalogReady) return;
+      rebuildCatalogDerivedInChunks(catalog, catalogPdfOverrides, catalogOverrideVersion).then(() => {
+        updateMeta();
+        render({ resetPage: false });
+      });
+    });
+    if (earlyInputTouched || input.value.trim()) scheduleLocalRender(0);
   }
 
   function filenameFromDisposition(disposition, fallback) {
@@ -7030,14 +7533,9 @@
     });
     // The text index only improves related-report ranking, so load it after
     // the detail renders instead of blocking the page on a large download.
-    loadOptionalJson("data/search_index.json", { items: [] }).then((searchIndex) => {
-      const entries = Array.isArray(searchIndex.items) ? searchIndex.items : [];
-      if (!entries.length) return;
-      for (const entry of entries) {
-        if (entry.id && entry.text) searchTextById.set(entry.id, String(entry.text));
-      }
-      refreshRelatedReports(item, items, searchTextById);
-    });
+    // Related reports intentionally use catalog metadata only. Downloading the
+    // complete text corpus here competed with the user's first download and
+    // could exhaust memory on mobile browsers.
   }
 
   function refreshRelatedReports(item, catalogItems, searchTextById) {
@@ -7284,13 +7782,7 @@
     const workerUrl = workerBaseUrl(config);
     const catalogItems = Array.isArray(catalog.items) ? catalog.items : [];
     const searchTextById = new Map();
-    // Fetch the large text index in the background; related rendering below
-    // waits on this promise without blocking the detail render.
-    const searchIndexPromise = loadOptionalJson("data/search_index.json", { items: [] }).then((searchIndex) => {
-      for (const entry of Array.isArray(searchIndex.items) ? searchIndex.items : []) {
-        if (entry.id && entry.text) searchTextById.set(entry.id, String(entry.text));
-      }
-    });
+    const searchIndexPromise = Promise.resolve();
     initAccountGate(workerUrl);
     initAdminGate(workerUrl);
     initNewsfeedNav();

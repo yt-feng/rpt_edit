@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+import re
+import shutil
 import sys
 import tempfile
 import unittest
@@ -31,6 +33,20 @@ def sample_item(report_id: str, title_zh: str, report_date: str, institution: st
         "pdf_archived": False,
         "server_modified": f"{report_date}T08:00:00Z",
     }
+
+
+def first_json_ld(page: str) -> dict:
+    match = re.search(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', page, flags=re.S)
+    if not match:
+        raise AssertionError("page does not contain JSON-LD")
+    return json.loads(match.group(1))
+
+
+def graph_node(schema: dict, schema_type: str) -> dict:
+    for node in schema.get("@graph", []):
+        if node.get("@type") == schema_type:
+            return node
+    raise AssertionError(f"JSON-LD graph does not contain {schema_type}")
 
 
 class SeoOutputTests(unittest.TestCase):
@@ -62,6 +78,8 @@ class SeoOutputTests(unittest.TestCase):
             robots = (output / "robots.txt").read_text(encoding="utf-8")
             self.assertIn("User-agent: OAI-SearchBot", robots)
             self.assertIn("User-agent: PerplexityBot", robots)
+            self.assertIn("User-agent: GPTBot\nDisallow: /", robots)
+            self.assertIn("User-agent: Google-Extended\nDisallow: /", robots)
             self.assertIn("Sitemap: https://portal.example.invalid/sitemap-baidu.xml", robots)
             self.assertIn("Sitemap: https://portal.example.invalid/sitemap-sogou.xml", robots)
             self.assertNotIn("newsfeed.html", baidu_text)
@@ -80,20 +98,201 @@ class SeoOutputTests(unittest.TestCase):
         self.assertIn('<meta property="og:site_name" content="KC桌面">', page)
         self.assertIn('"name": "KC桌面"', page)
 
+    def test_landing_pages_get_public_entity_and_language_signals(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory)
+            shutil.copytree(ROOT / "portal_suite" / "site_src", output, dirs_exist_ok=True)
+            builder.build_seo_outputs(output, self.catalog)
+
+            home = (output / "index.html").read_text(encoding="utf-8")
+            home_schema = first_json_ld(home)
+            website = graph_node(home_schema, "WebSite")
+            organization = graph_node(home_schema, "Organization")
+            self.assertEqual("zh-Hans", website["inLanguage"])
+            self.assertNotIn("alternateName", website)
+            self.assertEqual("KC桌面", organization["name"])
+            self.assertIn('<html lang="zh-Hans">', home)
+            self.assertIn('<span>KC桌面</span>', home)
+            self.assertNotIn('<span>Portal Suite</span>', home)
+            self.assertIn('href="about.html"', home)
+
+            charts = (output / "charts.html").read_text(encoding="utf-8")
+            self.assertIn('<html lang="zh-Hans">', charts)
+            self.assertIn('hreflang="zh-Hans"', charts)
+            self.assertIn('<meta property="og:site_name" content="KC桌面">', charts)
+            self.assertIn('<span>KC桌面</span>', charts)
+            self.assertNotIn('<span>Portal Suite</span>', charts)
+            self.assertEqual("CollectionPage", graph_node(first_json_ld(charts), "CollectionPage")["@type"])
+            graph_node(first_json_ld(charts), "BreadcrumbList")
+            self.assertIn('href="about.html"', charts)
+
+            builder.version_assets(output)
+            versioned_home = (output / "index.html").read_text(encoding="utf-8")
+            self.assertRegex(versioned_home, r'assets/app\.js\?v=[0-9a-f]{8}')
+            self.assertRegex(versioned_home, r'assets/report-chat\.js\?v=[0-9a-f]{8}')
+            self.assertRegex(versioned_home, r'assets/styles\.css\?v=[0-9a-f]{8}')
+
     def test_static_report_has_canonical_schema_and_related_links(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory)
             builder.build_seo_outputs(output, self.catalog)
             page = (output / "reports" / "report-a.html").read_text(encoding="utf-8")
-            self.assertIn('<html lang="zh-CN">', page)
+            self.assertIn('<html lang="zh-Hans">', page)
             self.assertIn('<link rel="canonical" href="https://portal.example.invalid/reports/report-a.html">', page)
-            self.assertIn('"@type":"Report"', page)
-            self.assertIn('"@type":"BreadcrumbList"', page)
-            self.assertIn("研究摘要", page)
+            schema = first_json_ld(page)
+            report = graph_node(schema, "Report")
+            webpage = graph_node(schema, "WebPage")
+            graph_node(schema, "BreadcrumbList")
+            self.assertEqual("高盛", report["publisher"]["name"])
+            self.assertEqual("GS", report["publisher"]["alternateName"])
+            self.assertEqual("KC桌面", report["sdPublisher"]["name"])
+            self.assertEqual("1-18", report["pagination"])
+            self.assertNotIn("author", report)
+            self.assertNotIn("copyrightHolder", report)
+            self.assertNotIn("datePublished", report)
+            self.assertEqual("2026-07-17", report["dateModified"])
+            self.assertTrue(webpage["isAccessibleForFree"])
+            self.assertFalse(report["isAccessibleForFree"])
+            self.assertIn(f">{report['abstract']}</p>", page)
+            self.assertIn("核心信息（可引用）", page)
             self.assertIn("相关报告", page)
+            self.assertIn("不是底层报告的作者或出版方", page)
+            self.assertIn("收录日期：2026-07-17", page)
+            self.assertNotIn("发布日期", page)
+            self.assertNotIn("发布了《", page)
             self.assertIn('../assets/contact.js', page)
             self.assertIn('data-portal-non-chinese-only', page)
             self.assertNotIn("password=", page)
+
+    def test_report_schema_only_uses_explicit_published_at(self) -> None:
+        item = sample_item("verified-date", "明确出版日期的报告", "2026-07-17")
+        item["published_at"] = "2026-07-12T16:30:00+08:00"
+        page = builder.render_report_seo_page(item, "https://portal.example.invalid", "2026-07-18")
+        report = graph_node(first_json_ld(page), "Report")
+        self.assertEqual("2026-07-12", report["datePublished"])
+        self.assertEqual("2026-07-17", report["dateModified"])
+        self.assertIn("收录日期：2026-07-17", page)
+
+        item["published_at"] = "2026-99-42"
+        invalid_report = graph_node(
+            first_json_ld(builder.render_report_seo_page(item, "https://portal.example.invalid", "2026-07-18")),
+            "Report",
+        )
+        self.assertNotIn("datePublished", invalid_report)
+
+    def test_infers_all_browser_industries_from_chinese_titles(self) -> None:
+        cases = [
+            ("Macro / FX / Rates", "全球宏观与汇率展望"),
+            ("Equity Strategy", "中国股票策略与估值展望"),
+            ("Tech / AI / Semis", "人工智能与半导体产业链"),
+            ("Internet / Media", "互联网媒体与电商趋势"),
+            ("Autos / EV / Batteries", "新能源汽车与锂电池"),
+            ("Energy / Utilities", "原油与公用事业展望"),
+            ("Metals / Mining", "铜与铁矿石供需"),
+            ("Healthcare / Biotech", "生物科技与医疗器械"),
+            ("Consumer / Retail", "奢侈品零售趋势"),
+            ("Banks / Financials", "银行与保险业观察"),
+            ("Real Estate", "房地产与住房市场"),
+            ("Industrials / Capex", "航空航天与资本开支"),
+            ("Policy / Geopolitics", "地缘政治与关税政策"),
+            ("ESG / Climate", "气候与碳中和路线图"),
+        ]
+        inferred_items = []
+        for index, (expected, title_zh) in enumerate(cases):
+            item = sample_item(f"inferred-{index:02d}", title_zh, "2026-07-17")
+            item.pop("industry")
+            self.assertEqual(expected, builder.item_industry(item))
+            inferred_items.append(item)
+
+        fallback = sample_item("inferred-other", "跨学科专题观察", "2026-07-17")
+        fallback.pop("industry")
+        self.assertEqual("Other", builder.item_industry(fallback))
+        inferred_items.append(fallback)
+
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory)
+            builder.build_seo_outputs(
+                output,
+                {"updated_at_bjt": "2026-07-17 09:30:00 +0800", "items": inferred_items},
+            )
+            topic_hub = (output / "reports" / "topics.html").read_text(encoding="utf-8")
+            for expected, _ in cases:
+                self.assertIn(builder.stable_section_anchor("topic", expected), topic_hub)
+            tech_page = (output / "reports" / "inferred-02.html").read_text(encoding="utf-8")
+            self.assertIn(">Tech / AI / Semis</a>", tech_page)
+
+    def test_report_collection_is_paginated_with_self_canonicals_and_sitemap_urls(self) -> None:
+        catalog = {
+            "updated_at_bjt": "2026-07-17 09:30:00 +0800",
+            "items": [
+                sample_item(f"report-{index:03d}", f"全球研究 {index:03d}", "2026-07-17")
+                for index in range(405)
+            ],
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory)
+            builder.build_seo_outputs(output, catalog)
+
+            pages = [
+                (output / "reports" / "index.html").read_text(encoding="utf-8"),
+                (output / "reports" / "page-2.html").read_text(encoding="utf-8"),
+                (output / "reports" / "page-3.html").read_text(encoding="utf-8"),
+            ]
+            expected_canonicals = [
+                "https://portal.example.invalid/reports/",
+                "https://portal.example.invalid/reports/page-2.html",
+                "https://portal.example.invalid/reports/page-3.html",
+            ]
+            expected_counts = [200, 200, 5]
+            for page, canonical, expected_count in zip(pages, expected_canonicals, expected_counts):
+                self.assertIn(f'<link rel="canonical" href="{canonical}">', page)
+                report_list = re.search(r'<ul class="seo-report-index">(.*?)</ul>', page, flags=re.S)
+                self.assertIsNotNone(report_list)
+                self.assertEqual(expected_count, report_list.group(1).count("<li>"))
+            self.assertIn('href="page-2.html" rel="next"', pages[0])
+            self.assertIn('href="./" rel="prev"', pages[1])
+            self.assertIn('href="page-3.html" rel="next"', pages[1])
+            self.assertIn('href="page-2.html" rel="prev"', pages[2])
+
+            sitemap_pages = (output / "sitemap-pages.xml").read_text(encoding="utf-8")
+            for canonical in expected_canonicals:
+                self.assertIn(canonical, sitemap_pages)
+            topic_hub = (output / "reports" / "topics.html").read_text(encoding="utf-8")
+            self.assertIn(builder.stable_section_anchor("institution", "GS · 高盛"), topic_hub)
+            self.assertTrue((output / "about.html").is_file())
+
+    def test_report_schema_does_not_invent_an_unknown_publisher(self) -> None:
+        item = sample_item("unknown-source", "来源待核验的报告", "2026-07-17")
+        item.pop("bank_code")
+        item.pop("bank_name")
+        page = builder.render_report_seo_page(item, "https://portal.example.invalid", "2026-07-17")
+        report = graph_node(first_json_ld(page), "Report")
+        self.assertNotIn("publisher", report)
+        self.assertEqual([{"@type": "Thing", "name": "Macro / FX / Rates"}], report["about"])
+
+    def test_catalog_preview_is_newest_40_and_uses_only_public_fields(self) -> None:
+        items = []
+        for index in range(45):
+            item = sample_item(f"report-{index:02d}", f"报告 {index:02d}", "2026-07-17")
+            item["server_modified"] = f"2026-07-17T08:{index:02d}:00Z"
+            item["archive_reason"] = "internal-only"
+            items.append(item)
+        preview = builder.public_catalog_preview({
+            "schema_version": 7,
+            "updated_at_bjt": "2026-07-17 09:30:00 +0800",
+            "items": items,
+            "storage": {"private": True},
+        })
+
+        self.assertEqual(1, preview["schema_version"])
+        self.assertEqual(40, preview["item_count"])
+        self.assertEqual(45, preview["total_item_count"])
+        self.assertEqual("report-44", preview["items"][0]["id"])
+        self.assertEqual("report-05", preview["items"][-1]["id"])
+        self.assertNotIn("storage", preview)
+        for item in preview["items"]:
+            self.assertLessEqual(set(item), set(builder.PUBLIC_ITEM_KEYS))
+            self.assertNotIn("archive_reason", item)
 
     def test_dynamic_private_pages_are_noindex(self) -> None:
         for name in ("report.html", "doc.html", "delivery.html", "newsfeed.html"):

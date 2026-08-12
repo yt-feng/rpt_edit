@@ -17,7 +17,7 @@ assert.match(html, /id="chartSearchSection"/);
 assert.match(html, /id="chartSearchResults"/);
 assert.match(app, /loadOptionalJson\("data\/chart_search_index\.json"/);
 assert.match(app, /queryScope === "charts"/);
-assert.match(app, /scoreItem\(item, query, scopeFilter\.value, metadataById, searchTextById, chartTextById\)/);
+assert.match(app, /scoreItem\(item, query, scopeFilter\.value, metadataById, searchTextById, chartTextById, titleSearchById\)/);
 assert.match(app, /reportPageUrl\(reportId\)/);
 assert.match(app, /scopeFilter\.value === "charts"/);
 

@@ -44,6 +44,7 @@ class MemoryR2 {
     this.jsonReadKeys = [];
     this.textReadKeys = [];
     this.rangeReadKeys = [];
+    this.getKeys = [];
     this.textOnlyKeys = new Set();
     this.failPutPrefixOnce = "";
     this.failGetAfterPutExact = "";
@@ -61,6 +62,7 @@ class MemoryR2 {
   }
 
   async get(key, options = {}) {
+    this.getKeys.push(key);
     if (this.failNextGetExact && key === this.failNextGetExact) {
       this.failNextGetExact = "";
       throw new Error("injected R2 read failure");
@@ -216,8 +218,8 @@ function envFor(bucket) {
   };
 }
 
-async function jsonRequest(env, pathName, options = {}) {
-  const response = await worker.fetch(new Request(`https://worker.test${pathName}`, options), env, { waitUntil() {} });
+async function jsonRequest(env, pathName, options = {}, context = { waitUntil() {} }) {
+  const response = await worker.fetch(new Request(`https://worker.test${pathName}`, options), env, context);
   const data = await response.json().catch(() => ({}));
   return { response, data };
 }
@@ -250,7 +252,46 @@ function bearer(token) {
   return { Authorization: `Bearer ${token}` };
 }
 
-test("daily check-in is idempotent and grants exactly one catalog report", async () => {
+function bjtDateOffset(days = 0) {
+  return new Date(Date.now() + 8 * 60 * 60 * 1000 + days * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
+}
+
+function rewardStateKey() {
+  return `_account/rewards/${encodeURIComponent("reward-reader@example.com")}`;
+}
+
+function rewriteRegisteredUser(bucket, fields) {
+  for (const [key, row] of [...bucket.rows.entries()]) {
+    if (!key.startsWith("_account/users/") || row.binary) continue;
+    const value = JSON.parse(row.value);
+    if (value.email === "reward-reader@example.com") bucket.seed(key, { ...value, ...fields });
+  }
+}
+
+function v2RewardState(overrides = {}) {
+  return {
+    schema_version: 2,
+    policy_version: 2,
+    email: "reward-reader@example.com",
+    points: 0,
+    current_streak: 0,
+    longest_streak: 0,
+    last_checkin_date: "",
+    checkins: {},
+    claims: {},
+    grants: {},
+    credits: [],
+    welcome_credit_issued: true,
+    first_d3_credit_issued: false,
+    first_d7_freeze_issued: false,
+    freeze_cards: 0,
+    policy_migrated_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+    ...overrides,
+  };
+}
+
+test("D1 check-in is idempotent, issues one 72-hour welcome credit, and grants exactly one catalog report", async () => {
   const bucket = new MemoryR2();
   const reportA = "aaaaaaaaaaaaaaaaaaaaaaaa";
   const reportB = "bbbbbbbbbbbbbbbbbbbbbbbb";
@@ -267,16 +308,36 @@ test("daily check-in is idempotent and grants exactly one catalog report", async
   assert.equal(initial.response.status, 200);
   assert.equal(initial.data.points, 0);
   assert.equal(initial.data.checked_in_today, false);
+  assert.equal(initial.data.credits_available, 0);
+  assert.equal(initial.data.next_milestone.type, "welcome_credit");
 
+  const checkinWaits = [];
+  const rewardReadsBefore = bucket.getKeys.filter((key) => key === rewardStateKey()).length;
   const checkedIn = await jsonRequest(env, "/rewards", {
     method: "POST",
     headers: { "content-type": "application/json", ...bearer(token) },
     body: "{}",
+  }, {
+    waitUntil(promise) { checkinWaits.push(promise); },
   });
   assert.equal(checkedIn.response.status, 200);
   assert.equal(checkedIn.data.points, 10);
   assert.equal(checkedIn.data.current_streak, 1);
   assert.equal(checkedIn.data.daily_available, true);
+  assert.equal(checkedIn.data.credits_available, 1);
+  assert.equal(checkedIn.data.credits[0].reason, "welcome_d1");
+  assert.ok(Date.parse(checkedIn.data.credits[0].expires_at) - Date.now() > 71 * 60 * 60 * 1000);
+  assert.ok(Date.parse(checkedIn.data.credits[0].expires_at) - Date.now() <= 72 * 60 * 60 * 1000);
+  assert.equal(checkedIn.data.next_credit_expiry, checkedIn.data.credits[0].expires_at);
+  assert.equal(checkedIn.data.next_milestone.type, "d3_credit");
+  assert.equal(checkedIn.data.next_milestone.days, 2);
+  assert.equal(checkinWaits.length, 1, "analytics must be deferred with waitUntil");
+  await Promise.all(checkinWaits);
+  assert.equal(
+    bucket.getKeys.filter((key) => key === rewardStateKey()).length - rewardReadsBefore,
+    1,
+    "a successful check-in must build its status without a second reward-state read",
+  );
 
   const duplicateCheckin = await jsonRequest(env, "/rewards", {
     method: "POST",
@@ -285,6 +346,7 @@ test("daily check-in is idempotent and grants exactly one catalog report", async
   });
   assert.equal(duplicateCheckin.response.status, 200);
   assert.equal(duplicateCheckin.data.points, 10, "duplicate check-ins must not add points");
+  assert.equal(duplicateCheckin.data.credits_available, 1, "duplicate check-ins must not issue another welcome credit");
 
   const claimed = await jsonRequest(env, "/rewards/claim", {
     method: "POST",
@@ -294,6 +356,8 @@ test("daily check-in is idempotent and grants exactly one catalog report", async
   assert.equal(claimed.response.status, 200, JSON.stringify(claimed.data));
   assert.equal(claimed.data.claimed, true);
   assert.equal(claimed.data.rewards.daily_claimed, true);
+  assert.equal(claimed.data.rewards.credits_available, 0);
+  assert.equal(claimed.data.rewards.next_credit_expiry, "");
 
   const accessA = await jsonRequest(env, `/entitlement?report_id=${reportA}&source=catalog`, { headers: bearer(token) });
   assert.equal(accessA.response.status, 200);
@@ -319,6 +383,236 @@ test("daily check-in is idempotent and grants exactly one catalog report", async
   });
   assert.equal(insufficient.response.status, 409);
   assert.match(insufficient.data.detail, /积分不足/u);
+});
+
+test("concurrent D1 check-ins issue one welcome credit and one points award", async () => {
+  const bucket = new MemoryR2();
+  bucket.seed("edge-static/runtime-data/catalog.json", { items: [] });
+  const env = envFor(bucket);
+  const token = await register(env);
+  const requests = [1, 2].map(() => jsonRequest(env, "/rewards", {
+    method: "POST",
+    headers: { "content-type": "application/json", ...bearer(token) },
+    body: "{}",
+  }));
+  const responses = await Promise.all(requests);
+  assert.ok(responses.every(({ response }) => response.status === 200));
+  assert.ok(responses.every(({ data }) => data.points === 10));
+  assert.ok(responses.every(({ data }) => data.current_streak === 1));
+  assert.ok(responses.every(({ data }) => data.credits_available === 1));
+  const stored = JSON.parse(bucket.rows.get(rewardStateKey()).value);
+  assert.equal(stored.points, 10);
+  assert.equal(Object.keys(stored.checkins).length, 1);
+  assert.deepEqual(stored.credits.map((credit) => credit.id), ["welcome-v2"]);
+});
+
+test("D3 issues one 72-hour credit, D7 records a freeze, and the existing D30 points bonus remains", async () => {
+  const bucket = new MemoryR2();
+  bucket.seed("edge-static/runtime-data/catalog.json", { items: [] });
+  const env = envFor(bucket);
+  const token = await register(env);
+  const dayBefore = bjtDateOffset(-2);
+  const yesterday = bjtDateOffset(-1);
+  bucket.seed(rewardStateKey(), v2RewardState({
+    points: 20,
+    current_streak: 2,
+    longest_streak: 2,
+    last_checkin_date: yesterday,
+    checkins: {
+      [dayBefore]: { base_points: 10, bonus_points: 0, streak_after: 1 },
+      [yesterday]: { base_points: 10, bonus_points: 0, streak_after: 2 },
+    },
+  }));
+
+  const d3 = await jsonRequest(env, "/rewards", {
+    method: "POST",
+    headers: { "content-type": "application/json", ...bearer(token) },
+    body: "{}",
+  });
+  assert.equal(d3.response.status, 200);
+  assert.equal(d3.data.current_streak, 3);
+  assert.equal(d3.data.points, 35, "D3 keeps the existing +5 milestone bonus");
+  assert.equal(d3.data.credits_available, 1);
+  assert.equal(d3.data.credits[0].reason, "streak_d3");
+  assert.ok(Date.parse(d3.data.credits[0].expires_at) - Date.now() > 71 * 60 * 60 * 1000);
+  assert.equal(d3.data.next_milestone.type, "d7_freeze");
+  assert.equal(d3.data.next_milestone.days, 4);
+
+  bucket.seed(rewardStateKey(), v2RewardState({
+    points: 70,
+    current_streak: 6,
+    longest_streak: 6,
+    last_checkin_date: yesterday,
+    checkins: {
+      [yesterday]: { base_points: 10, bonus_points: 5, streak_after: 6 },
+    },
+    first_d3_credit_issued: true,
+  }));
+  const d7 = await jsonRequest(env, "/rewards", {
+    method: "POST",
+    headers: { "content-type": "application/json", ...bearer(token) },
+    body: "{}",
+  });
+  assert.equal(d7.response.status, 200);
+  assert.equal(d7.data.current_streak, 7);
+  assert.equal(d7.data.points, 100, "D7 keeps the existing +20 milestone bonus");
+  assert.equal(d7.data.freeze_cards, 1);
+  assert.equal(d7.data.credits_available, 0, "ordinary post-onboarding check-ins do not issue a daily report");
+  assert.equal(d7.data.daily_available, false);
+  assert.equal(d7.data.next_milestone.type, "bonus_points");
+
+  bucket.seed(rewardStateKey(), v2RewardState({
+    points: 300,
+    current_streak: 29,
+    longest_streak: 29,
+    last_checkin_date: yesterday,
+    checkins: {
+      [yesterday]: { base_points: 10, bonus_points: 0, streak_after: 29 },
+    },
+    first_d3_credit_issued: true,
+    first_d7_freeze_issued: true,
+    freeze_cards: 1,
+  }));
+  const d30 = await jsonRequest(env, "/rewards", {
+    method: "POST",
+    headers: { "content-type": "application/json", ...bearer(token) },
+    body: "{}",
+  });
+  assert.equal(d30.response.status, 200);
+  assert.equal(d30.data.current_streak, 30);
+  assert.equal(d30.data.points, 410, "D30 keeps the existing +100 milestone bonus");
+  assert.equal(d30.data.credits_available, 0);
+});
+
+test("daily claims ignore expired credits and consume the earliest valid credit", async () => {
+  const bucket = new MemoryR2();
+  const reportId = "aaaaaaaaaaaaaaaaaaaaaaaa";
+  bucket.seed("edge-static/runtime-data/catalog.json", {
+    items: [{ id: reportId, title: "Credit order report", filename: "credit.pdf", available: true, r2_key: `reports/${reportId}.pdf` }],
+  });
+  const env = envFor(bucket);
+  const token = await register(env);
+  const now = Date.now();
+  bucket.seed(rewardStateKey(), v2RewardState({
+    first_d3_credit_issued: true,
+    credits: [
+      { id: "expired", reason: "test", issued_at: new Date(now - 3_600_000).toISOString(), expires_at: new Date(now - 1_000).toISOString() },
+      { id: "later", reason: "test", issued_at: new Date(now - 1_000).toISOString(), expires_at: new Date(now + 7_200_000).toISOString() },
+      { id: "earlier", reason: "test", issued_at: new Date(now - 2_000).toISOString(), expires_at: new Date(now + 3_600_000).toISOString() },
+    ],
+  }));
+
+  const before = await jsonRequest(env, "/rewards", { headers: bearer(token) });
+  assert.equal(before.data.credits_available, 2);
+  assert.equal(before.data.credits[0].id, "earlier");
+  assert.equal(before.data.next_credit_expiry, before.data.credits[0].expires_at);
+  const claimed = await jsonRequest(env, "/rewards/claim", {
+    method: "POST",
+    headers: { "content-type": "application/json", ...bearer(token) },
+    body: JSON.stringify({ reward_kind: "daily", report_id: reportId }),
+  });
+  assert.equal(claimed.response.status, 200, JSON.stringify(claimed.data));
+  assert.equal(claimed.data.claimed, true);
+  assert.equal(claimed.data.rewards.credits_available, 1);
+  assert.equal(claimed.data.rewards.credits[0].id, "later");
+  const stored = JSON.parse(bucket.rows.get(rewardStateKey()).value);
+  assert.equal(stored.credits.find((credit) => credit.id === "earlier").report_id, reportId);
+  assert.ok(stored.credits.find((credit) => credit.id === "earlier").claimed_at);
+  assert.equal(stored.credits.find((credit) => credit.id === "later").claimed_at, "");
+  assert.equal(stored.claims[bjtDateOffset(0)].daily.credit_id, "earlier");
+});
+
+test("an expired credit cannot authorize a daily claim", async () => {
+  const bucket = new MemoryR2();
+  const reportId = "aaaaaaaaaaaaaaaaaaaaaaaa";
+  bucket.seed("edge-static/runtime-data/catalog.json", {
+    items: [{ id: reportId, title: "Expired report", filename: "expired.pdf", available: true, r2_key: `reports/${reportId}.pdf` }],
+  });
+  const env = envFor(bucket);
+  const token = await register(env);
+  const now = Date.now();
+  bucket.seed(rewardStateKey(), v2RewardState({
+    credits: [{ id: "expired", reason: "test", issued_at: new Date(now - 7_200_000).toISOString(), expires_at: new Date(now - 1_000).toISOString() }],
+  }));
+  const claimed = await jsonRequest(env, "/rewards/claim", {
+    method: "POST",
+    headers: { "content-type": "application/json", ...bearer(token) },
+    body: JSON.stringify({ reward_kind: "daily", report_id: reportId }),
+  });
+  assert.equal(claimed.response.status, 409);
+  assert.match(claimed.data.detail, /没有可用报告券/u);
+  const access = await jsonRequest(env, `/entitlement?report_id=${reportId}&source=catalog`, { headers: bearer(token) });
+  assert.equal(access.data.can_download, false);
+});
+
+test("legacy reward state migrates lazily without changing balances, streaks, or grants and keeps cutover-day entitlement", async () => {
+  const bucket = new MemoryR2();
+  const oldGrant = "cccccccccccccccccccccccc";
+  bucket.seed("edge-static/runtime-data/catalog.json", { items: [] });
+  const env = envFor(bucket);
+  const token = await register(env);
+  const today = bjtDateOffset(0);
+  env.REWARD_POLICY_V2_CUTOVER_AT = `${today}T00:00:00+08:00`;
+  rewriteRegisteredUser(bucket, { created_at: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString() });
+  bucket.seed(rewardStateKey(), {
+    email: "reward-reader@example.com",
+    points: 55,
+    current_streak: 8,
+    longest_streak: 10,
+    last_checkin_date: today,
+    checkins: { [today]: { base_points: 10, bonus_points: 0, streak_after: 8 } },
+    claims: {},
+    grants: {
+      [oldGrant]: { report_id: oldGrant, report_title: "Previously granted", reward_kind: "daily", granted_at: new Date().toISOString() },
+    },
+    updated_at: new Date().toISOString(),
+  });
+
+  const [status, concurrentStatus] = await Promise.all([
+    jsonRequest(env, "/rewards", { headers: bearer(token) }),
+    jsonRequest(env, "/rewards", { headers: bearer(token) }),
+  ]);
+  assert.equal(status.response.status, 200);
+  assert.equal(concurrentStatus.response.status, 200);
+  assert.equal(status.data.policy_version, 2);
+  assert.equal(status.data.points, 55);
+  assert.equal(status.data.current_streak, 8);
+  assert.equal(status.data.longest_streak, 10);
+  assert.equal(status.data.freeze_cards, 1);
+  assert.equal(status.data.credits_available, 1);
+  assert.equal(status.data.credits[0].reason, "legacy_cutover");
+  assert.equal(status.data.credits[0].expires_at, new Date(Date.parse(`${today}T00:00:00+08:00`) + 24 * 60 * 60 * 1000).toISOString());
+  const stored = JSON.parse(bucket.rows.get(rewardStateKey()).value);
+  assert.equal(stored.policy_version, 2);
+  assert.equal(stored.welcome_credit_issued, true, "an old account must not receive a D1 welcome credit");
+  assert.equal(stored.first_d3_credit_issued, true);
+  assert.equal(stored.first_d7_freeze_issued, true);
+  assert.equal(stored.points, 55);
+  assert.equal(stored.current_streak, 8);
+  assert.deepEqual(stored.grants[oldGrant].report_id, oldGrant);
+  assert.equal(stored.credits.some((credit) => credit.reason === "welcome_d1"), false);
+  assert.equal(stored.credits.filter((credit) => credit.reason === "legacy_cutover").length, 1);
+});
+
+test("an old account without a legacy same-day slot does not receive a D1 welcome credit", async () => {
+  const bucket = new MemoryR2();
+  bucket.seed("edge-static/runtime-data/catalog.json", { items: [] });
+  const env = envFor(bucket);
+  const token = await register(env);
+  env.REWARD_POLICY_V2_CUTOVER_AT = `${bjtDateOffset(0)}T00:00:00+08:00`;
+  rewriteRegisteredUser(bucket, { created_at: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString() });
+  const checkedIn = await jsonRequest(env, "/rewards", {
+    method: "POST",
+    headers: { "content-type": "application/json", ...bearer(token) },
+    body: "{}",
+  });
+  assert.equal(checkedIn.response.status, 200);
+  assert.equal(checkedIn.data.points, 10);
+  assert.equal(checkedIn.data.credits_available, 0);
+  assert.equal(checkedIn.data.daily_available, false);
+  const stored = JSON.parse(bucket.rows.get(rewardStateKey()).value);
+  assert.equal(stored.welcome_credit_issued, true);
+  assert.deepEqual(stored.credits, []);
 });
 
 test("failed purchase mirroring still grants exactly one report from reward state", async () => {
@@ -380,6 +674,66 @@ test("concurrent daily claims grant at most one report", async () => {
     { headers: bearer(token) },
   )));
   assert.equal(access.filter(({ data }) => data.can_download).length, 1);
+});
+
+test("daily and points claims for the same report consume only one reward", async () => {
+  const bucket = new MemoryR2();
+  const reportId = "aaaaaaaaaaaaaaaaaaaaaaaa";
+  bucket.seed("edge-static/runtime-data/catalog.json", {
+    items: [{ id: reportId, title: "One report", filename: "one.pdf", available: true, r2_key: `reports/${reportId}.pdf` }],
+  });
+  const env = envFor(bucket);
+  const token = await register(env);
+  const now = Date.now();
+  bucket.seed(rewardStateKey(), v2RewardState({
+    points: 70,
+    first_d3_credit_issued: true,
+    credits: [{ id: "credit", reason: "test", issued_at: new Date(now - 1_000).toISOString(), expires_at: new Date(now + 3_600_000).toISOString() }],
+  }));
+  const contexts = [[], []];
+  const requests = ["daily", "points"].map((kind, index) => jsonRequest(env, "/rewards/claim", {
+    method: "POST",
+    headers: { "content-type": "application/json", ...bearer(token) },
+    body: JSON.stringify({ reward_kind: kind, report_id: reportId }),
+  }, { waitUntil(promise) { contexts[index].push(promise); } }));
+  const results = await Promise.all(requests);
+  assert.ok(results.every(({ response }) => response.status === 200));
+  assert.equal(results.filter(({ data }) => data.claimed).length, 1);
+  assert.equal(results.filter(({ data }) => data.already_owned).length, 1);
+  const state = JSON.parse(bucket.rows.get(rewardStateKey()).value);
+  const creditWasSpent = Boolean(state.credits.find((credit) => credit.id === "credit").claimed_at);
+  const pointsWereSpent = state.points === 0;
+  assert.notEqual(creditWasSpent, pointsWereSpent, "only the winning reward kind may be consumed");
+  assert.equal(Object.keys(state.grants).length, 1);
+  await Promise.all(contexts.flat());
+});
+
+test("reward status resets a stale streak before the next check-in", async () => {
+  const bucket = new MemoryR2();
+  bucket.seed("edge-static/runtime-data/catalog.json", { items: [] });
+  const env = envFor(bucket);
+  const token = await register(env);
+  const staleDate = bjtDateOffset(-2);
+  bucket.seed(rewardStateKey(), v2RewardState({
+    points: 50,
+    current_streak: 5,
+    longest_streak: 5,
+    last_checkin_date: staleDate,
+    checkins: { [staleDate]: { base_points: 10, bonus_points: 0, streak_after: 5 } },
+    first_d3_credit_issued: true,
+  }));
+  const status = await jsonRequest(env, "/rewards", { headers: bearer(token) });
+  assert.equal(status.response.status, 200);
+  assert.equal(status.data.current_streak, 0);
+  assert.equal(status.data.longest_streak, 5);
+  assert.equal(status.data.next_milestone.type, "d7_freeze");
+  assert.equal(status.data.next_milestone.days, 7);
+  const checkedIn = await jsonRequest(env, "/rewards", {
+    method: "POST",
+    headers: { "content-type": "application/json", ...bearer(token) },
+    body: "{}",
+  });
+  assert.equal(checkedIn.data.current_streak, 1);
 });
 
 test("a committed reward never depends on a purchase readback", async () => {

@@ -28,6 +28,7 @@ PUBLIC_ITEM_KEYS = [
     "filename",
     "date_folder",
     "date_folders",
+    "published_at",
     "bank_code",
     "bank_name",
     "password_group",
@@ -76,12 +77,136 @@ BANK_ALIASES = [
 
 SITE_BASE_URL = "https://portal.example.invalid"
 SITEMAP_REPORT_CHUNK_SIZE = 5000
+REPORT_INDEX_PAGE_SIZE = 200
+BLOG_INDEX_PAGE_SIZE = 30
 INDEXNOW_KEY = "portal-index-key"
 RSS_ITEM_LIMIT = 100
 LLMS_REPORT_LIMIT = 200
+LLMS_BLOG_LIMIT = 50
+CATALOG_PREVIEW_LIMIT = 40
+SEARCH_INDEX_SHARD_MAX_BYTES = 3 * 1024 * 1024
 BLOG_START_DATE = "2026-07-27"
 BLOG_PUBLIC_BRAND = "KC桌面"
 BLOG_TITLE_SUFFIX = f" | {BLOG_PUBLIC_BRAND}"
+
+# Mirrors every non-fallback category used by the browser. Together with the
+# ``Other`` fallback these are the same 15 possible classifications. Chinese
+# alternatives are deliberately outside the English word boundaries because
+# ``\b`` does not segment CJK text usefully.
+SEO_INDUSTRY_RULES = [
+    (
+        "Macro / FX / Rates",
+        re.compile(
+            r"(?:\b(macro|fx|foreign exchange|currency|cny|yuan|dollar|usd|rate|rates|yield|fed|ecb|boj|inflation|cpi|pmi|gdp|economy|economic|recession|treasury|bond|nominal|real rate)\b"
+            r"|宏观|外汇|汇率|人民币|美元|利率|收益率|美联储|欧洲央行|日本央行|通胀|国债|债券|经济周期)",
+            re.I,
+        ),
+    ),
+    (
+        "Equity Strategy",
+        re.compile(
+            r"(?:\b(strategy|equity strategy|market strategy|asset allocation|portfolio|index|earnings revision|valuation|eps|target price)\b"
+            r"|权益策略|股票策略|市场策略|资产配置|投资组合|指数策略|盈利预测|估值|目标价)",
+            re.I,
+        ),
+    ),
+    (
+        "Tech / AI / Semis",
+        re.compile(
+            r"(?:\b(ai|artificial intelligence|semiconductor|semis|chip|chips|memory|dram|nand|hbm|gpu|server|software|cloud|data center|datacenter|robot|robotics)\b"
+            r"|人工智能|半导体|芯片|存储|服务器|软件|云计算|数据中心|机器人|信息科技|科技行业|科技硬件|科技板块)",
+            re.I,
+        ),
+    ),
+    (
+        "Internet / Media",
+        re.compile(
+            r"(?:\b(internet|media|gaming|game|music|streaming|advertising|ecommerce|e-commerce|platform|social|takeaway|food delivery|new media)\b"
+            r"|互联网|媒体|游戏|音乐|流媒体|广告|电商|电子商务|平台经济|社交|外卖)",
+            re.I,
+        ),
+    ),
+    (
+        "Autos / EV / Batteries",
+        re.compile(
+            r"(?:\b(auto|autos|automotive|vehicle|ev|bev|battery|batteries|lithium|ess|adas|mobility|tesla|byd)\b"
+            r"|汽车|电动车|电动汽车|新能源汽车|电池|锂电|储能|自动驾驶|出行)",
+            re.I,
+        ),
+    ),
+    (
+        "Energy / Utilities",
+        re.compile(
+            r"(?:\b(energy|oil|gas|lng|solar|wind|power|utility|utilities|renewable|coal|electricity|grid)\b"
+            r"|能源|石油|原油|天然气|液化天然气|光伏|风电|电力|公用事业|可再生能源|煤炭|电网)",
+            re.I,
+        ),
+    ),
+    (
+        "Metals / Mining",
+        re.compile(
+            r"(?:\b(metal|metals|mining|copper|aluminum|aluminium|steel|iron ore|gold|silver|nickel|commodity|commodities)\b"
+            r"|金属|矿业|采矿|铜|铝|钢铁|铁矿石|黄金|白银|镍|大宗商品)",
+            re.I,
+        ),
+    ),
+    (
+        "Healthcare / Biotech",
+        re.compile(
+            r"(?:\b(healthcare|health care|biotech|pharma|pharmaceutical|drug|medical|hospital|medtech|vaccine|therapy)\b"
+            r"|医疗|医药|生物科技|生物技术|制药|药品|医院|医疗器械|疫苗|疗法)",
+            re.I,
+        ),
+    ),
+    (
+        "Consumer / Retail",
+        re.compile(
+            r"(?:\b(consumer|retail|apparel|luxury|brand|restaurant|food|beverage|travel retail|staples|discretionary)\b"
+            r"|消费|零售|服装|奢侈品|品牌|餐饮|食品|饮料|旅游零售|必选消费|可选消费)",
+            re.I,
+        ),
+    ),
+    (
+        "Banks / Financials",
+        re.compile(
+            r"(?:\b(bank|banks|banking|insurance|broker|brokerage|asset manager|fintech|exchange|financials|payment)\b"
+            r"|银行|保险|券商|经纪|资产管理|金融科技|交易所|支付)",
+            re.I,
+        ),
+    ),
+    (
+        "Real Estate",
+        re.compile(
+            r"(?:\b(real estate|property|housing|developer|reit|mortgage|homebuilder|construction)\b"
+            r"|房地产|物业|住房|住宅|地产开发|房企|房托|按揭|房贷|建筑)",
+            re.I,
+        ),
+    ),
+    (
+        "Industrials / Capex",
+        re.compile(
+            r"(?:\b(industrial|industrials|machinery|automation|capex|capital goods|aerospace|defense|rail|shipping|logistics|transport)\b"
+            r"|工业|机械|自动化|资本开支|资本品|航空航天|国防|铁路|航运|物流|运输)",
+            re.I,
+        ),
+    ),
+    (
+        "Policy / Geopolitics",
+        re.compile(
+            r"(?:\b(policy|politics|geopolitic|geopolitical|tariff|trade war|election|sanction|iran|russia|taiwan|strait|security)\b"
+            r"|政策|政治|地缘政治|关税|贸易战|选举|制裁|台海|国家安全)",
+            re.I,
+        ),
+    ),
+    (
+        "ESG / Climate",
+        re.compile(
+            r"(?:\b(esg|climate|carbon|decarbon|emission|sustainable|sustainability|green|transition)\b"
+            r"|环境社会治理|气候|碳中和|碳排放|脱碳|排放|可持续|绿色转型)",
+            re.I,
+        ),
+    ),
+]
 # Keep the archive placeholder independent from SITE_BASE_URL. The deployment
 # materializer replaces SITE_BASE_URL with the live origin before this module
 # runs, while committed Blog archive HTML intentionally retains the neutral
@@ -739,17 +864,39 @@ def write_search_index_shards(
     output_dir.mkdir(parents=True, exist_ok=True)
     shards: list[dict[str, Any]] = []
     for partition_key in sorted(groups, reverse=True):
-        filename = f"shard_{partition_key}.json"
-        payload = json.dumps({"items": groups[partition_key]}, ensure_ascii=False, separators=(",", ":"))
-        shard_path = output_dir / filename
-        shard_path.write_text(payload, encoding="utf-8")
-        shard_row = {
-            "file": filename,
-            "item_count": len(groups[partition_key]),
-            "bytes": len(payload.encode("utf-8")),
-        }
-        shard_row["date" if partition == "day" else "month"] = partition_key
-        shards.append(shard_row)
+        chunks: list[list[dict[str, str]]] = []
+        current: list[dict[str, str]] = []
+        current_bytes = len(b'{"items":[]}')
+        for entry in groups[partition_key]:
+            entry_bytes = len(json.dumps(entry, ensure_ascii=False, separators=(",", ":")).encode("utf-8"))
+            if current and current_bytes + entry_bytes + 1 > SEARCH_INDEX_SHARD_MAX_BYTES:
+                chunks.append(current)
+                current = []
+                current_bytes = len(b'{"items":[]}')
+            current.append(entry)
+            current_bytes += entry_bytes + (1 if len(current) > 1 else 0)
+        if current:
+            chunks.append(current)
+        multi_part = len(chunks) > 1
+        for part_index, chunk in enumerate(chunks, 1):
+            suffix = f"-{part_index:04d}" if multi_part else ""
+            filename = f"shard_{partition_key}{suffix}.json"
+            payload = json.dumps({"items": chunk}, ensure_ascii=False, separators=(",", ":"))
+            payload_bytes = len(payload.encode("utf-8"))
+            # A single extracted record can exceed the target. Keep it isolated
+            # so all ordinary shards remain bounded without truncating text.
+            if len(chunk) > 1 and payload_bytes > SEARCH_INDEX_SHARD_MAX_BYTES:
+                raise ValueError("Search-index shard exceeds its byte cap")
+            (output_dir / filename).write_text(payload, encoding="utf-8")
+            shard_row = {
+                "file": filename,
+                "item_count": len(chunk),
+                "bytes": payload_bytes,
+            }
+            shard_row["date" if partition == "day" else "month"] = partition_key
+            if multi_part:
+                shard_row["part"] = part_index
+            shards.append(shard_row)
 
     manifest = {
         "schema_version": 1,
@@ -795,6 +942,28 @@ def public_catalog(catalog: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def public_catalog_preview(catalog: dict[str, Any], limit: int = CATALOG_PREVIEW_LIMIT) -> dict[str, Any]:
+    """Small, public first-paint catalog; the browser replaces it with the complete catalog."""
+    complete = public_catalog(catalog)
+    sorted_items = sorted(
+        complete["items"],
+        key=lambda item: (
+            date_folder_to_iso(str(item.get("date_folder") or "")),
+            str(item.get("server_modified") or item.get("last_seen_at_bjt") or ""),
+            normalize_search_text(item_display_title(item)),
+        ),
+        reverse=True,
+    )
+    preview_items = sorted_items[:max(0, int(limit))]
+    return {
+        "schema_version": 1,
+        "updated_at_bjt": complete.get("updated_at_bjt", ""),
+        "item_count": len(preview_items),
+        "total_item_count": complete.get("item_count", 0),
+        "items": preview_items,
+    }
+
+
 def public_password_rules(rules: dict[str, Any]) -> dict[str, Any]:
     groups = []
     for group in rules.get("groups", []):
@@ -832,6 +1001,17 @@ def date_folder_to_iso(value: str) -> str:
 def bjt_timestamp_to_date(value: str) -> str:
     match = re.search(r"(20\d{2})-(\d{2})-(\d{2})", str(value or ""))
     return f"{match.group(1)}-{match.group(2)}-{match.group(3)}" if match else ""
+
+
+def item_published_date(item: dict[str, Any]) -> str:
+    """Return a source-supplied publication date, never an archive folder date."""
+    match = re.search(r"(20\d{2}-\d{2}-\d{2})", str(item.get("published_at") or ""))
+    if not match:
+        return ""
+    try:
+        return datetime.strptime(match.group(1), "%Y-%m-%d").date().isoformat()
+    except ValueError:
+        return ""
 
 
 def item_lastmod(item: dict[str, Any], fallback: str = "") -> str:
@@ -875,8 +1055,34 @@ def item_institution(item: dict[str, Any]) -> str:
     return bank_name or bank_code or "研究机构"
 
 
+def item_institution_schema(item: dict[str, Any]) -> dict[str, Any] | None:
+    bank_code = compact_space(str(item.get("bank_code") or ""))
+    bank_name = compact_space(str(item.get("bank_name") or ""))
+    if not bank_code and not bank_name:
+        return None
+    organization: dict[str, Any] = {
+        "@type": "Organization",
+        "name": bank_name or bank_code,
+    }
+    if bank_code and bank_name and normalize_search_text(bank_code) != normalize_search_text(bank_name):
+        organization["alternateName"] = bank_code
+    return organization
+
+
 def item_industry(item: dict[str, Any]) -> str:
-    return compact_space(str(item.get("industry") or item.get("sector") or item.get("category") or "综合研究"))
+    explicit = compact_space(str(item.get("industry") or item.get("sector") or item.get("category") or ""))
+    if explicit:
+        return explicit
+    searchable = compact_space(
+        " ".join(
+            str(item.get(key) or "")
+            for key in ("title", "title_zh", "filename")
+        )
+    )
+    for label, pattern in SEO_INDUSTRY_RULES:
+        if pattern.search(searchable):
+            return label
+    return "Other"
 
 
 def item_page_label(item: dict[str, Any]) -> str:
@@ -900,7 +1106,7 @@ def item_meta_description(item: dict[str, Any]) -> str:
     industry = item_industry(item)
     report_date = date_folder_to_iso(str(item.get("date_folder") or "")) or str(item.get("date_folder") or "")
     return compact_space(
-        f"{institution}报告《{title}》，研究主题为{industry}，发布日期为{report_date}，"
+        f"{institution}报告《{title}》，研究主题为{industry}，收录日期为{report_date}，"
         f"{item_page_label(item)}。{item_availability_label(item)}。"
         f"{BLOG_PUBLIC_BRAND}提供中文标题、英文标题、报告信息和相关研究索引。"
     )[:280]
@@ -909,10 +1115,79 @@ def item_meta_description(item: dict[str, Any]) -> str:
 def item_summary(item: dict[str, Any]) -> str:
     report_date = date_folder_to_iso(str(item.get("date_folder") or "")) or str(item.get("date_folder") or "")
     return compact_space(
-        f"本报告由{item_institution(item)}发布，聚焦{item_industry(item)}，"
-        f"发布日期为{report_date}，{item_page_label(item)}。"
+        f"本索引记录的来源机构为{item_institution(item)}，主题为{item_industry(item)}，"
+        f"收录日期为{report_date}，{item_page_label(item)}。"
         "本页整理中英文标题、研究机构、主题分类、页数和可用状态，便于中文检索及相关研究发现。"
     )
+
+
+def report_citable_summary(item: dict[str, Any]) -> str:
+    """Return a compact, source-bounded summary suitable for search snippets."""
+    report_date = date_folder_to_iso(str(item.get("date_folder") or "")) or "日期待核验"
+    return compact_space(
+        f"索引于{report_date}收录了{item_institution(item)}的《{item_display_title(item)}》，"
+        f"归入{item_industry(item)}主题，共{item_page_label(item)}。"
+        f"当前索引状态：{item_availability_label(item)}。"
+    )
+
+
+def page_count(total_items: int, page_size: int) -> int:
+    return max(1, (max(0, total_items) + page_size - 1) // page_size)
+
+
+def collection_page_path(root: str, page_number: int) -> str:
+    clean_root = str(root or "").strip("/")
+    return f"{clean_root}/" if page_number <= 1 else f"{clean_root}/page-{page_number}.html"
+
+
+def collection_page_href(page_number: int) -> str:
+    return "./" if page_number <= 1 else f"page-{page_number}.html"
+
+
+def pagination_numbers(current: int, total: int) -> list[int | None]:
+    if total <= 7:
+        return list(range(1, total + 1))
+    visible = {1, total, *range(max(1, current - 2), min(total, current + 2) + 1)}
+    values: list[int | None] = []
+    previous = 0
+    for number in sorted(visible):
+        if previous and number - previous > 1:
+            values.append(None)
+        values.append(number)
+        previous = number
+    return values
+
+
+def render_collection_pagination(current: int, total: int, label: str) -> str:
+    if total <= 1:
+        return ""
+    links: list[str] = []
+    if current > 1:
+        links.append(
+            f'<a class="secondary-button" href="{collection_page_href(current - 1)}" rel="prev">上一页</a>'
+        )
+    for number in pagination_numbers(current, total):
+        if number is None:
+            links.append('<span aria-hidden="true">…</span>')
+            continue
+        current_attr = ' aria-current="page"' if number == current else ""
+        links.append(
+            f'<a class="secondary-button" href="{collection_page_href(number)}"{current_attr}>{number}</a>'
+        )
+    if current < total:
+        links.append(
+            f'<a class="secondary-button" href="{collection_page_href(current + 1)}" rel="next">下一页</a>'
+        )
+    return (
+        f'<nav class="pagination-bar collection-pagination" aria-label="{html_escape(label, quote=True)}">'
+        + "".join(links)
+        + "</nav>"
+    )
+
+
+def stable_section_anchor(prefix: str, value: str) -> str:
+    digest = hashlib.sha1(normalize_search_text(value).encode("utf-8")).hexdigest()[:12]
+    return f"{prefix}-{digest}"
 
 
 def write_text(path: Path, text: str) -> None:
@@ -942,9 +1217,18 @@ def report_keywords(item: dict[str, Any]) -> str:
         str(item.get("title_zh") or ""),
         str(item.get("title") or ""),
         "金融研报",
+        "金融研報",
+        "投資銀行研報",
+        "股票研究",
+        "總體經濟研究",
         "宏观策略",
         "行业研究",
         "公司研究",
+        "Chinese financial research",
+        "investment bank research",
+        "equity research",
+        "macro research",
+        "industry research",
     ]
     seen: set[str] = set()
     keywords: list[str] = []
@@ -954,7 +1238,7 @@ def report_keywords(item: dict[str, Any]) -> str:
         if clean and key and key not in seen:
             keywords.append(clean)
             seen.add(key)
-    return ", ".join(keywords[:12])
+    return ", ".join(keywords[:18])
 
 
 def render_report_seo_page(
@@ -970,36 +1254,74 @@ def render_report_seo_page(
     detail_href = f"../report.html?id={quote(report_id, safe='')}"
     search_href = f"../?q={quote(title[:80])}"
     description = item_meta_description(item)
+    citable_summary = report_citable_summary(item)
     date_iso = date_folder_to_iso(str(item.get("date_folder") or ""))
+    published_date = item_published_date(item)
     lastmod = item_lastmod(item, generated_date)
     institution = item_institution(item)
     industry = item_industry(item)
+    institution_schema = item_institution_schema(item)
+    institution_href = f"topics.html#{stable_section_anchor('institution', institution)}"
+    topic_href = f"topics.html#{stable_section_anchor('topic', industry)}"
     report_json_ld = {
         "@type": "Report",
         "@id": f"{canonical}#report",
         "name": title,
         "headline": title,
-        "alternateName": source_title,
         "description": description,
+        "abstract": citable_summary,
         "url": canonical,
-        "mainEntityOfPage": canonical,
+        "mainEntityOfPage": {"@id": f"{canonical}#webpage"},
         "identifier": report_id,
-        "datePublished": date_iso or lastmod,
         "dateModified": lastmod,
-        "inLanguage": ["zh-CN", "en"],
+        "inLanguage": ["zh-Hans", "en"],
         "genre": "金融研究报告",
         "keywords": report_keywords(item),
-        "publisher": {
+        "about": [{"@type": "Thing", "name": industry}],
+        "creditText": institution,
+        "conditionsOfAccess": item_availability_label(item),
+        "sdPublisher": {
             "@type": "Organization",
+            "@id": f"{url_join(base_url, '/')}#organization",
             "name": BLOG_PUBLIC_BRAND,
             "url": url_join(base_url, "/"),
         },
-        "about": [industry, institution],
         "isAccessibleForFree": False,
     }
+    if institution_schema:
+        report_json_ld["publisher"] = institution_schema
+        report_json_ld["about"].append(institution_schema)
+    if source_title and source_title != title:
+        report_json_ld["alternateName"] = source_title
+    if published_date:
+        report_json_ld["datePublished"] = published_date
+    try:
+        report_pages = int(item.get("page_count"))
+    except (TypeError, ValueError):
+        report_pages = 0
+    if report_pages > 0:
+        report_json_ld["pagination"] = f"1-{report_pages}"
     json_ld = {
         "@context": "https://schema.org",
         "@graph": [
+            {
+                "@type": "WebPage",
+                "@id": f"{canonical}#webpage",
+                "name": title,
+                "description": description,
+                "url": canonical,
+                "dateModified": lastmod,
+                "inLanguage": "zh-Hans",
+                "isAccessibleForFree": True,
+                "mainEntity": {"@id": f"{canonical}#report"},
+                "isPartOf": {"@id": f"{url_join(base_url, '/')}#website"},
+                "publisher": {
+                    "@type": "Organization",
+                    "@id": f"{url_join(base_url, '/')}#organization",
+                    "name": BLOG_PUBLIC_BRAND,
+                    "url": url_join(base_url, "/"),
+                },
+            },
             report_json_ld,
             {
                 "@type": "BreadcrumbList",
@@ -1037,7 +1359,7 @@ def render_report_seo_page(
             + "</ul>"
         )
     return f"""<!doctype html>
-<html lang="zh-CN">
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -1046,7 +1368,7 @@ def render_report_seo_page(
     <meta name="keywords" content="{html_escape(report_keywords(item))}">
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
     <link rel="canonical" href="{html_escape(canonical)}">
-    <link rel="alternate" hreflang="zh-CN" href="{html_escape(canonical)}">
+    <link rel="alternate" hreflang="zh-Hans" href="{html_escape(canonical)}">
     <link rel="alternate" hreflang="x-default" href="{html_escape(canonical)}">
     <link rel="alternate" type="application/rss+xml" title="{BLOG_PUBLIC_BRAND} 最近报告" href="../feed.xml">
     <meta property="og:type" content="article">
@@ -1055,6 +1377,12 @@ def render_report_seo_page(
     <meta property="og:title" content="{html_escape(title)}">
     <meta property="og:description" content="{html_escape(description)}">
     <meta property="og:url" content="{html_escape(canonical)}">
+    <meta property="og:image" content="{html_escape(url_join(base_url, 'assets/social-card.jpg'))}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="{BLOG_PUBLIC_BRAND}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="{html_escape(url_join(base_url, 'assets/social-card.jpg'))}">
     <link rel="stylesheet" href="../assets/styles.css">
     <script defer src="../assets/site-runtime.js"></script>
     <script type="application/ld+json">{render_json_ld(json_ld)}</script>
@@ -1064,24 +1392,26 @@ def render_report_seo_page(
       <a class="back-link" href="../index.html">返回首页</a>
       <div class="topbar-actions">
         <a class="topbar-link" href="../blog/">Blog</a>
-        <a class="brand compact" href="../index.html" aria-label="Portal Suite home">
+        <a class="brand compact" href="../index.html" aria-label="{BLOG_PUBLIC_BRAND} home">
           <img src="../assets/app-mark.svg" alt="" width="30" height="30">
-          <span>Portal Suite</span>
+          <span>{BLOG_PUBLIC_BRAND}</span>
         </a>
       </div>
     </header>
     <main class="shell legal-shell">
       <article class="legal-panel">
+        <nav aria-label="面包屑"><a href="../index.html">首页</a> › <a href="index.html">报告索引</a> › <span aria-current="page">报告详情</span></nav>
         <h1>{html_escape(title)}</h1>
         <p class="subtle">{html_escape(description)}</p>
-        <h2>研究摘要</h2>
-        <p>{html_escape(item_summary(item))}</p>
+        <h2>核心信息（可引用）</h2>
+        <p>{html_escape(citable_summary)}</p>
         <h2>报告信息</h2>
-        <p>机构：{html_escape(institution)}</p>
-        <p>行业：{html_escape(industry)}</p>
-        <p>日期：{html_escape(date_iso or str(item.get("date_folder") or ""))}</p>
+        <p>机构：<a href="{html_escape(institution_href)}">{html_escape(institution)}</a></p>
+        <p>行业：<a href="{html_escape(topic_href)}">{html_escape(industry)}</a></p>
+        <p>收录日期：{html_escape(date_iso or str(item.get("date_folder") or ""))}</p>
         <p>页数：{html_escape(item_page_label(item))}</p>
         <p>状态：{html_escape(item_availability_label(item))}</p>{source_block}
+        <p class="subtle">{BLOG_PUBLIC_BRAND}提供免费的报告元数据与检索入口，不是底层报告的作者或出版方；具体作者、版权和使用条件以原始报告为准。</p>
         <p>
           <a class="primary-link" href="{html_escape(detail_href)}">打开报告详情</a>
           <a class="secondary-button" href="{html_escape(search_href)}">检索相关报告</a>
@@ -1091,6 +1421,7 @@ def render_report_seo_page(
     <footer class="legal-footer">
       <a href="../blog/">Blog</a>
       <a href="../reports/index.html">报告索引</a>
+      <a href="../about.html">关于{BLOG_PUBLIC_BRAND}</a>
       <a href="../terms.html">Terms of Service</a>
       <a href="../privacy.html">Privacy Policy</a>
       <span data-portal-chinese-only hidden>Contact WeChat: Support Contact</span>
@@ -1103,18 +1434,30 @@ def render_report_seo_page(
 """
 
 
-def render_reports_index(catalog: dict[str, Any], base_url: str, generated_date: str) -> str:
+def render_reports_index(
+    catalog: dict[str, Any],
+    base_url: str,
+    generated_date: str,
+    page_number: int = 1,
+    page_size: int = REPORT_INDEX_PAGE_SIZE,
+) -> str:
     items = [item for item in catalog.get("items", []) if item.get("id")]
     sorted_items = sorted(
         items,
         key=lambda row: (
-            sort_date_value(str(row.get("date_folder") or "")),
+            item_lastmod(row),
             normalize_search_text(item_display_title(row)),
         ),
         reverse=True,
     )
+    total_pages = page_count(len(sorted_items), page_size)
+    page_number = max(1, min(page_number, total_pages))
+    start = (page_number - 1) * page_size
+    page_items = sorted_items[start:start + page_size]
+    canonical = url_join(base_url, collection_page_path("reports", page_number))
+    page_suffix = "" if page_number == 1 else f" · 第 {page_number} 页"
     rows = []
-    for item in sorted_items:
+    for item in page_items:
         href = f"{quote(str(item.get('id')), safe='')}.html"
         date_iso = date_folder_to_iso(str(item.get("date_folder") or ""))
         rows.append(
@@ -1123,49 +1466,69 @@ def render_reports_index(catalog: dict[str, Any], base_url: str, generated_date:
             f"<span>{html_escape(item_institution(item))} · {html_escape(date_iso or str(item.get('date_folder') or ''))} · {html_escape(item_industry(item))}</span>"
             "</li>"
         )
-    description = f"{BLOG_PUBLIC_BRAND}中文金融研报索引，覆盖宏观策略、行业分析、公司研究、财报、招股书和国际智库报告线索。"
+    description = (
+        f"{BLOG_PUBLIC_BRAND}中文金融研报索引，覆盖投行研报、宏观策略、行业分析、"
+        "公司研究、财报、招股书和国际智库报告，支持中英文机构、公司、ticker 和主题发现。"
+    )
     collection_json_ld = {
         "@type": "CollectionPage",
-        "@id": f"{url_join(base_url, 'reports/')}#collection",
-        "name": f"{BLOG_PUBLIC_BRAND} 报告索引",
+        "@id": f"{canonical}#collection",
+        "name": f"{BLOG_PUBLIC_BRAND} 报告索引{page_suffix}",
         "description": description,
-        "url": url_join(base_url, "reports/"),
+        "url": canonical,
         "dateModified": generated_date,
-        "inLanguage": "zh-CN",
+        "inLanguage": "zh-Hans",
+        "isPartOf": {"@id": f"{url_join(base_url, '/')}#website"},
     }
     item_list = {
         "@type": "ItemList",
-        "name": "最新金融研报",
-        "numberOfItems": len(items),
+        "name": f"金融研报索引第 {page_number} 页",
+        "numberOfItems": len(page_items),
+        "itemListOrder": "https://schema.org/ItemListOrderDescending",
         "itemListElement": [
             {
                 "@type": "ListItem",
-                "position": index,
+                "position": start + index,
                 "name": item_display_title(item),
                 "url": url_join(base_url, report_seo_path(str(item.get("id")))),
             }
-            for index, item in enumerate(sorted_items[:50], start=1)
+            for index, item in enumerate(page_items, start=1)
         ],
     }
-    json_ld = {"@context": "https://schema.org", "@graph": [collection_json_ld, item_list]}
+    json_ld = {
+        "@context": "https://schema.org",
+        "@graph": [
+            collection_json_ld,
+            item_list,
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "首页", "item": url_join(base_url, "/")},
+                    {"@type": "ListItem", "position": 2, "name": "报告索引", "item": canonical},
+                ],
+            },
+        ],
+    }
+    pagination = render_collection_pagination(page_number, total_pages, "报告索引分页")
     return f"""<!doctype html>
-<html lang="zh-CN">
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>金融研报索引 | {BLOG_PUBLIC_BRAND}</title>
+    <title>金融研报索引{page_suffix} | {BLOG_PUBLIC_BRAND}</title>
     <meta name="description" content="{html_escape(description)}">
+    <meta name="keywords" content="金融研报,金融研報,投行研报,投資銀行研報,中文研报检索,股票研究,總體經濟研究,Chinese financial research,investment bank research,equity research,macro research">
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
-    <link rel="canonical" href="{html_escape(url_join(base_url, 'reports/'))}">
-    <link rel="alternate" hreflang="zh-CN" href="{html_escape(url_join(base_url, 'reports/'))}">
-    <link rel="alternate" hreflang="x-default" href="{html_escape(url_join(base_url, 'reports/'))}">
+    <link rel="canonical" href="{html_escape(canonical)}">
+    <link rel="alternate" hreflang="zh-Hans" href="{html_escape(canonical)}">
+    <link rel="alternate" hreflang="x-default" href="{html_escape(canonical)}">
     <link rel="alternate" type="application/rss+xml" title="{BLOG_PUBLIC_BRAND} 最近报告" href="../feed.xml">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="zh_CN">
     <meta property="og:site_name" content="{BLOG_PUBLIC_BRAND}">
-    <meta property="og:title" content="金融研报索引 | {BLOG_PUBLIC_BRAND}">
+    <meta property="og:title" content="金融研报索引{page_suffix} | {BLOG_PUBLIC_BRAND}">
     <meta property="og:description" content="{html_escape(description)}">
-    <meta property="og:url" content="{html_escape(url_join(base_url, 'reports/'))}">
+    <meta property="og:url" content="{html_escape(canonical)}">
     <link rel="stylesheet" href="../assets/styles.css">
     <script defer src="../assets/site-runtime.js"></script>
     <script type="application/ld+json">{render_json_ld(json_ld)}</script>
@@ -1175,26 +1538,32 @@ def render_reports_index(catalog: dict[str, Any], base_url: str, generated_date:
       <a class="back-link" href="../index.html">返回首页</a>
       <div class="topbar-actions">
         <a class="topbar-link" href="../blog/">Blog</a>
-        <a class="brand compact" href="../index.html" aria-label="Portal Suite home">
+        <a class="brand compact" href="../index.html" aria-label="{BLOG_PUBLIC_BRAND} home">
           <img src="../assets/app-mark.svg" alt="" width="30" height="30">
-          <span>Portal Suite</span>
+          <span>{BLOG_PUBLIC_BRAND}</span>
         </a>
       </div>
     </header>
     <main class="shell legal-shell">
       <section class="legal-panel">
-        <h1>金融研报索引</h1>
+        <nav aria-label="面包屑"><a href="../index.html">首页</a> › <span aria-current="page">报告索引</span></nav>
+        <h1>金融研报索引{page_suffix}</h1>
         <p class="subtle">{html_escape(description)}</p>
-        <p class="subtle">已更新：{html_escape(generated_date)} · 共 {len(items)} 篇</p>
+        <p><a href="topics.html">按机构与研究主题浏览</a> · <a href="../about.html">了解索引方法</a></p>
+        <p class="subtle">已更新：{html_escape(generated_date)} · 共 {len(items)} 篇 · 第 {page_number}/{total_pages} 页</p>
+        {pagination}
         <ul class="seo-report-index">
           {"".join(rows)}
         </ul>
+        {pagination}
       </section>
     </main>
     <footer class="legal-footer">
       <a href="../index.html">首页检索</a>
       <a href="../blog/">Blog</a>
+      <a href="topics.html">机构与主题</a>
       <a href="../feed.xml">最近报告 RSS</a>
+      <a href="../about.html">关于{BLOG_PUBLIC_BRAND}</a>
       <a href="../terms.html">Terms of Service</a>
       <a href="../privacy.html">Privacy Policy</a>
       <span data-portal-chinese-only hidden>Contact WeChat: Support Contact</span>
@@ -1202,6 +1571,222 @@ def render_reports_index(catalog: dict[str, Any], base_url: str, generated_date:
     </footer>
     <script src="../assets/contact.js"></script>
     <script src="../assets/analytics.js"></script>
+  </body>
+</html>
+"""
+
+
+def report_aggregation_groups(
+    items: list[dict[str, Any]],
+    value_getter: Any,
+    minimum_size: int = 3,
+    limit: int = 36,
+) -> list[tuple[str, list[dict[str, Any]]]]:
+    buckets: dict[str, tuple[str, list[dict[str, Any]]]] = {}
+    for item in items:
+        label = compact_space(str(value_getter(item) or ""))
+        key = normalize_search_text(label)
+        if not label or not key:
+            continue
+        if key not in buckets:
+            buckets[key] = (label, [])
+        buckets[key][1].append(item)
+    rows = [row for row in buckets.values() if len(row[1]) >= minimum_size]
+    rows.sort(key=lambda row: (-len(row[1]), normalize_search_text(row[0])))
+    return rows[:limit] if limit > 0 else rows
+
+
+def render_report_topic_hub(items: list[dict[str, Any]], base_url: str, generated_date: str) -> str:
+    canonical = url_join(base_url, "reports/topics.html")
+    # Every report detail links to one institution and one topic anchor. Keep
+    # even one-report groups so those crawlable internal links always land on
+    # a real section instead of a fragment that was filtered out.
+    institutions = report_aggregation_groups(items, item_institution, minimum_size=1, limit=0)
+    topics = report_aggregation_groups(items, item_industry, minimum_size=1, limit=0)
+
+    def render_groups(groups: list[tuple[str, list[dict[str, Any]]]], prefix: str) -> str:
+        blocks: list[str] = []
+        for label, group_items in groups:
+            anchor = stable_section_anchor(prefix, label)
+            links = []
+            for item in group_items[:6]:
+                links.append(
+                    "<li>"
+                    f'<a href="{html_escape(quote(str(item.get("id")), safe="") + ".html")}">{html_escape(item_display_title(item))}</a>'
+                    f'<span>{html_escape(item_lastmod(item, generated_date))}</span>'
+                    "</li>"
+                )
+            blocks.append(
+                f'<section id="{anchor}">'
+                f'<h2>{html_escape(label)}</h2>'
+                f'<p class="subtle">收录 {len(group_items)} 篇；以下为最近更新的公开元数据记录。</p>'
+                f'<ul class="seo-report-index">{"".join(links)}</ul>'
+                '</section>'
+            )
+        return "".join(blocks)
+
+    groups_for_schema = [
+        *({"@type": "Organization", "name": label} for label, _items in institutions),
+        *({"@type": "Thing", "name": label} for label, _items in topics),
+    ]
+    json_ld = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "CollectionPage",
+                "@id": f"{canonical}#collection",
+                "name": f"投行研报机构与主题导航 | {BLOG_PUBLIC_BRAND}",
+                "description": "按研究机构与金融主题浏览中英文投行研报元数据。",
+                "url": canonical,
+                "dateModified": generated_date,
+                "inLanguage": "zh-Hans",
+                "about": groups_for_schema,
+                "isPartOf": {"@id": f"{url_join(base_url, '/')}#website"},
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "首页", "item": url_join(base_url, "/")},
+                    {"@type": "ListItem", "position": 2, "name": "报告索引", "item": url_join(base_url, "reports/")},
+                    {"@type": "ListItem", "position": 3, "name": "机构与主题", "item": canonical},
+                ],
+            },
+        ],
+    }
+    return f"""<!doctype html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>投行研报机构与主题导航 | {BLOG_PUBLIC_BRAND}</title>
+    <meta name="description" content="按高盛、摩根大通、摩根士丹利等研究机构，以及宏观、行业、公司和财报主题浏览中英文金融研报元数据。">
+    <meta name="keywords" content="高盛研报,摩根大通研报,投行研报,投資銀行研報,金融研報,行业研究,股票研究,investment bank research,equity research,Chinese financial research">
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+    <link rel="canonical" href="{html_escape(canonical)}">
+    <link rel="alternate" hreflang="zh-Hans" href="{html_escape(canonical)}">
+    <link rel="alternate" hreflang="x-default" href="{html_escape(canonical)}">
+    <link rel="stylesheet" href="../assets/styles.css">
+    <script defer src="../assets/site-runtime.js"></script>
+    <script type="application/ld+json">{render_json_ld(json_ld)}</script>
+  </head>
+  <body data-page="report-topics">
+    <header class="topbar">
+      <a class="back-link" href="index.html">返回报告索引</a>
+      <a class="brand compact" href="../index.html" aria-label="{BLOG_PUBLIC_BRAND} home">
+        <img src="../assets/app-mark.svg" alt="" width="30" height="30"><span>{BLOG_PUBLIC_BRAND}</span>
+      </a>
+    </header>
+    <main class="shell legal-shell">
+      <article class="legal-panel">
+        <nav aria-label="面包屑"><a href="../index.html">首页</a> › <a href="index.html">报告索引</a> › <span aria-current="page">机构与主题</span></nav>
+        <h1>投行研报机构与主题导航</h1>
+        <p>{BLOG_PUBLIC_BRAND}按机构与主题汇总金融研报元数据，便于全球中文用户用简体中文、繁體中文、英文机构名、公司名或 ticker 发现相关研究。</p>
+        <p class="subtle">本页的篇数和最近记录源于当前公开报告索引，每次发布都会重新计算；它们不代表投资建议。</p>
+        <h2>研究机构 / Research institutions</h2>
+        {render_groups(institutions, "institution")}
+        <h2>研究主题 / Research topics</h2>
+        {render_groups(topics, "topic")}
+      </article>
+    </main>
+    <footer class="legal-footer">
+      <a href="index.html">报告索引</a><a href="../blog/">Blog</a><a href="../about.html">关于{BLOG_PUBLIC_BRAND}</a>
+    </footer>
+    <script src="../assets/contact.js"></script><script src="../assets/analytics.js"></script>
+  </body>
+</html>
+"""
+
+
+def render_about_page(base_url: str, generated_date: str) -> str:
+    canonical = url_join(base_url, "about.html")
+    home = url_join(base_url, "/")
+    description = (
+        f"{BLOG_PUBLIC_BRAND}是面向全球中文用户的金融研报检索与元数据索引，"
+        "提供中英文标题、研究机构、主题、收录日期、页数和可用状态。"
+    )
+    organization = {
+        "@type": "Organization",
+        "@id": f"{home}#organization",
+        "name": BLOG_PUBLIC_BRAND,
+        "url": home,
+        "logo": url_join(base_url, "assets/app-mark.svg"),
+        "description": description,
+        "email": "support@portal.example.invalid",
+    }
+    json_ld = {
+        "@context": "https://schema.org",
+        "@graph": [
+            organization,
+            {
+                "@type": "WebSite",
+                "@id": f"{home}#website",
+                "name": BLOG_PUBLIC_BRAND,
+                "url": home,
+                "inLanguage": "zh-Hans",
+                "publisher": {"@id": f"{home}#organization"},
+            },
+            {
+                "@type": "AboutPage",
+                "@id": f"{canonical}#webpage",
+                "name": f"关于{BLOG_PUBLIC_BRAND}",
+                "description": description,
+                "url": canonical,
+                "dateModified": generated_date,
+                "inLanguage": "zh-Hans",
+                "mainEntity": {"@id": f"{home}#organization"},
+                "isPartOf": {"@id": f"{home}#website"},
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "首页", "item": home},
+                    {"@type": "ListItem", "position": 2, "name": f"关于{BLOG_PUBLIC_BRAND}", "item": canonical},
+                ],
+            },
+        ],
+    }
+    return f"""<!doctype html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>关于{BLOG_PUBLIC_BRAND} | 中文金融研报检索</title>
+    <meta name="description" content="{html_escape(description)}">
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+    <link rel="canonical" href="{html_escape(canonical)}">
+    <link rel="alternate" hreflang="zh-Hans" href="{html_escape(canonical)}">
+    <link rel="alternate" hreflang="x-default" href="{html_escape(canonical)}">
+    <link rel="stylesheet" href="assets/styles.css">
+    <script defer src="assets/site-runtime.js"></script>
+    <script type="application/ld+json">{render_json_ld(json_ld)}</script>
+  </head>
+  <body data-page="about">
+    <header class="topbar">
+      <a class="back-link" href="index.html">返回首页</a>
+      <a class="brand compact" href="index.html" aria-label="{BLOG_PUBLIC_BRAND} home">
+        <img src="assets/app-mark.svg" alt="" width="30" height="30"><span>{BLOG_PUBLIC_BRAND}</span>
+      </a>
+    </header>
+    <main class="shell legal-shell">
+      <article class="legal-panel">
+        <nav aria-label="面包屑"><a href="index.html">首页</a> › <span aria-current="page">关于{BLOG_PUBLIC_BRAND}</span></nav>
+        <h1>关于{BLOG_PUBLIC_BRAND}</h1>
+        <p>{html_escape(description)}</p>
+        <p lang="en">KC桌面 is a Chinese-language discovery index for investment bank research, equity research, macro research, industry reports, company research, earnings, prospectuses and international think-tank publications.</p>
+        <h2>索引内容</h2>
+        <p>每条公开索引页展示报告中英文标题、机构、主题、收录日期、页数、可用状态和相关报告。索引根据最新目录重建，页面中的更新日期反映元数据最近变更时间。</p>
+        <h2>全球中文检索</h2>
+        <p>网站支持简体中文、繁體中文和英文机构名、公司名、ticker。常见检索意图包括金融研报、金融研報、投行研报、投資銀行研報、股票研究、總體經濟研究，以及 investment bank research、equity research 和 macro research。</p>
+        <h2>引用与来源边界</h2>
+        <p>引用索引信息时，请使用报告静态详情页的 canonical URL，并将底层报告归属于页面标明的原始研究机构。{BLOG_PUBLIC_BRAND}不冒充底层报告的作者或出版方，不编造作者、版权、目标价或投资建议。</p>
+        <h2>发现方式</h2>
+        <p><a href="reports/">浏览金融研报索引</a> · <a href="reports/topics.html">按机构与主题浏览</a> · <a href="blog/">阅读每日研究文章</a> · <a href="charts">检索研报图表</a></p>
+        <h2>联系</h2>
+        <p><a href="mailto:support@portal.example.invalid">support@portal.example.invalid</a></p>
+      </article>
+    </main>
+    <footer class="legal-footer"><a href="index.html">首页检索</a><a href="reports/">报告索引</a><a href="blog/">Blog</a><a href="privacy.html">Privacy Policy</a></footer>
+    <script src="assets/contact.js"></script><script src="assets/analytics.js"></script>
   </body>
 </html>
 """
@@ -1303,7 +1888,7 @@ def render_report_feed(catalog: dict[str, Any], base_url: str, generated_date: s
         f"    <title>{BLOG_PUBLIC_BRAND} 最近报告</title>\n"
         f"    <link>{xml_escape(url_join(base_url, '/'))}</link>\n"
         "    <description>中文金融研报、宏观策略、行业研究和国际智库报告的最近更新。</description>\n"
-        "    <language>zh-CN</language>\n"
+        "    <language>zh-Hans</language>\n"
         f"    <lastBuildDate>{xml_escape(rss_pub_date(generated_date))}</lastBuildDate>\n"
         f"    <atom:link href=\"{xml_escape(url_join(base_url, 'feed.xml'))}\" rel=\"self\" type=\"application/rss+xml\" />\n"
         + "\n".join(rows)
@@ -1311,7 +1896,11 @@ def render_report_feed(catalog: dict[str, Any], base_url: str, generated_date: s
     )
 
 
-def render_llms_full(catalog: dict[str, Any], base_url: str) -> str:
+def render_llms_full(
+    catalog: dict[str, Any],
+    base_url: str,
+    blog_articles: list[dict[str, Any]] | None = None,
+) -> str:
     items = sorted(
         [item for item in catalog.get("items", []) if item.get("id")],
         key=lambda item: (item_lastmod(item), sort_date_value(str(item.get("date_folder") or ""))),
@@ -1321,18 +1910,36 @@ def render_llms_full(catalog: dict[str, Any], base_url: str) -> str:
         f"# {BLOG_PUBLIC_BRAND} 公开报告索引",
         "",
         "以下是最近更新的中文金融研究报告元数据。报告下载权限与公开索引相互独立。",
+        f"{BLOG_PUBLIC_BRAND}仅整理元数据和检索入口；底层报告的作者、出版方和使用条件以原始报告为准。",
         "",
     ]
     for item in items:
+        source_title = item_source_title(item)
         lines.extend([
             f"## {item_display_title(item)}",
-            f"- URL: {url_join(base_url, report_seo_path(str(item.get('id'))))}",
+            f"- Canonical URL: {url_join(base_url, report_seo_path(str(item.get('id'))))}",
+            f"- 英文/原始标题: {source_title}" if source_title else "- 英文/原始标题: 未提供",
             f"- 机构: {item_institution(item)}",
             f"- 主题: {item_industry(item)}",
-            f"- 日期: {item_lastmod(item)}",
-            f"- 摘要: {item_summary(item)}",
+            f"- 索引收录日期: {date_folder_to_iso(str(item.get('date_folder') or '')) or '待核验'}",
+            f"- 索引更新: {item_lastmod(item)}",
+            f"- 页数: {item_page_label(item)}",
+            f"- 可用状态: {item_availability_label(item)}",
+            f"- 可引用摘要: {report_citable_summary(item)}",
             "",
         ])
+    recent_articles = list(blog_articles or [])[:LLMS_BLOG_LIMIT]
+    if recent_articles:
+        lines.extend(["# 最近研究文章", ""])
+        for article in recent_articles:
+            article_url = url_join(base_url, f"blog/{article['slug']}.html")
+            lines.extend([
+                f"## {blog_public_title(str(article.get('title') or ''))}",
+                f"- Canonical URL: {article_url}",
+                f"- 发布日期: {article.get('date') or ''}",
+                f"- 摘要: {blog_public_digest(str(article.get('digest') or ''))}",
+                "",
+            ])
     return "\n".join(lines)
 
 
@@ -1368,12 +1975,61 @@ def blog_title_core(value: str) -> str:
 
 def blog_public_title(value: str) -> str:
     """Apply the exact public Blog title suffix once."""
-    return f"{blog_title_core(value) or '未命名文章'}{BLOG_TITLE_SUFFIX}"
+    public_core = re.sub(
+        r"(?<![A-Za-z0-9])(?:Portal\s+Suite|KC\s+Desk\s+Notes)(?![A-Za-z0-9])",
+        BLOG_PUBLIC_BRAND,
+        blog_title_core(value),
+        flags=re.IGNORECASE,
+    )
+    return f"{public_core or '未命名文章'}{BLOG_TITLE_SUFFIX}"
+
+
+def blog_public_text(value: str) -> str:
+    """Normalize legacy neutral editorial labels at the public rendering edge."""
+    return re.sub(
+        r"(?<![A-Za-z0-9])(?:Portal\s+Suite|KC\s+Desk\s+Notes)(?![A-Za-z0-9])",
+        BLOG_PUBLIC_BRAND,
+        str(value or ""),
+        flags=re.IGNORECASE,
+    )
+
+
+def blog_public_author(value: str) -> str:
+    author = compact_space(blog_public_text(value))
+    return author or BLOG_PUBLIC_BRAND
+
+
+def blog_public_digest(value: str) -> str:
+    return compact_space(blog_public_text(value))[:300]
+
+
+def blog_public_keywords(article: dict[str, Any]) -> list[str]:
+    values = [
+        BLOG_PUBLIC_BRAND,
+        "金融研报",
+        "金融研報",
+        "中文金融研究",
+        "Chinese financial research",
+        blog_title_core(blog_public_text(str(article.get("title") or ""))),
+        *[
+            str(origin.get("source_label") or BLOG_SOURCE_LABELS.get(str(origin.get("source") or "")) or "")
+            for origin in article.get("origins", [])
+        ],
+    ]
+    seen: set[str] = set()
+    output: list[str] = []
+    for value in values:
+        clean = compact_space(value)
+        key = normalize_search_text(clean)
+        if clean and key and key not in seen:
+            seen.add(key)
+            output.append(clean)
+    return output[:10]
 
 
 def blog_seo_description(value: str) -> str:
     """Keep descriptions readable while establishing the exact public brand term."""
-    digest = compact_space(str(value or ""))
+    digest = blog_public_digest(value)
     brand_sentence = f"本文由{BLOG_PUBLIC_BRAND}整理发布。"
     if BLOG_PUBLIC_BRAND in digest:
         return digest[:300]
@@ -1976,7 +2632,7 @@ def blog_source_badges(article: dict[str, Any]) -> str:
     )
     for origin in origins:
         source = str(origin.get("source") or "")
-        label = str(origin.get("source_label") or BLOG_SOURCE_LABELS.get(source) or "其他来源")
+        label = blog_public_text(str(origin.get("source_label") or BLOG_SOURCE_LABELS.get(source) or "其他来源"))
         if not source or label in seen:
             continue
         seen.add(label)
@@ -2001,7 +2657,7 @@ def blog_origin_details(article: dict[str, Any]) -> str:
         if key in seen:
             continue
         seen.add(key)
-        label = str(origin.get("source_label") or BLOG_SOURCE_LABELS.get(source) or "其他来源")
+        label = blog_public_text(str(origin.get("source_label") or BLOG_SOURCE_LABELS.get(source) or "其他来源"))
         rows.append(f"{html_escape(date_value)} · {html_escape(label)}")
     return "；".join(rows)
 
@@ -2016,10 +2672,21 @@ def blog_csp_meta() -> str:
     )
 
 
-def render_blog_index(articles: list[dict[str, Any]], base_url: str, start_date: date) -> str:
-    canonical = url_join(base_url, "blog/")
+def render_blog_index(
+    articles: list[dict[str, Any]],
+    base_url: str,
+    start_date: date,
+    page_number: int = 1,
+    page_size: int = BLOG_INDEX_PAGE_SIZE,
+) -> str:
+    total_pages = page_count(len(articles), page_size)
+    page_number = max(1, min(page_number, total_pages))
+    start = (page_number - 1) * page_size
+    page_articles = articles[start:start + page_size]
+    canonical = url_join(base_url, collection_page_path("blog", page_number))
+    page_suffix = "" if page_number == 1 else f" · 第 {page_number} 页"
     grouped: dict[str, list[dict[str, Any]]] = {}
-    for article in articles:
+    for article in page_articles:
         grouped.setdefault(str(article.get("date") or ""), []).append(article)
     sections: list[str] = []
     for date_value, date_articles in grouped.items():
@@ -2033,7 +2700,7 @@ def render_blog_index(articles: list[dict[str, Any]], base_url: str, start_date:
                 f'{blog_source_badges(article)}'
                 '</div>'
                 f'<h2><a href="{html_escape(article["slug"], quote=True)}.html">{html_escape(public_title)}</a></h2>'
-                f'<p>{html_escape(article.get("digest") or "")}</p>'
+                f'<p>{html_escape(blog_public_digest(str(article.get("digest") or "")))}</p>'
                 f'<a class="blog-read-more" href="{html_escape(article["slug"], quote=True)}.html">阅读全文</a>'
                 '</article>'
             )
@@ -2053,10 +2720,16 @@ def render_blog_index(articles: list[dict[str, Any]], base_url: str, start_date:
     json_ld = {
         "@context": "https://schema.org",
         "@type": "Blog",
-        "name": f"{BLOG_PUBLIC_BRAND} Blog",
+        "name": f"{BLOG_PUBLIC_BRAND} Blog{page_suffix}",
         "description": f"{BLOG_PUBLIC_BRAND}每日研究文章与公众号正文存档。",
         "url": canonical,
-        "publisher": {"@type": "Organization", "name": BLOG_PUBLIC_BRAND},
+        "inLanguage": "zh-Hans",
+        "publisher": {
+            "@type": "Organization",
+            "@id": f"{url_join(base_url, '/')}#organization",
+            "name": BLOG_PUBLIC_BRAND,
+            "url": url_join(base_url, "/"),
+        },
         "blogPost": [
             {
                 "@type": "BlogPosting",
@@ -2064,57 +2737,13 @@ def render_blog_index(articles: list[dict[str, Any]], base_url: str, start_date:
                 "datePublished": article["date"],
                 "url": url_join(base_url, f'blog/{article["slug"]}.html'),
             }
-            for article in articles
+            for article in page_articles
         ],
     }
-    return f"""<!doctype html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{BLOG_PUBLIC_BRAND} Blog | 每日研报与研究文章</title>
-    <meta name="description" content="{BLOG_PUBLIC_BRAND}每日整理研报、研究机构与咨询公司文章，提供可持续访问的中文研究存档。">
-    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
-    <link rel="canonical" href="{html_escape(canonical, quote=True)}">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="zh_CN">
-    <meta property="og:site_name" content="{BLOG_PUBLIC_BRAND}">
-    <meta property="og:title" content="{BLOG_PUBLIC_BRAND} Blog | 每日研报与研究文章">
-    <meta property="og:description" content="{BLOG_PUBLIC_BRAND}每日研究文章与公众号正文存档。">
-    <meta property="og:url" content="{html_escape(canonical, quote=True)}">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="{BLOG_PUBLIC_BRAND} Blog | 每日研报与研究文章">
-    <meta name="twitter:description" content="{BLOG_PUBLIC_BRAND}每日研究文章与公众号正文存档。">
-    {blog_csp_meta()}
-    <link rel="stylesheet" href="../assets/styles.css">
-    <link rel="stylesheet" href="../assets/blog.css">
-    <script defer src="../assets/site-runtime.js"></script>
-    <script defer src="../assets/contact.js"></script>
-    <script defer src="../assets/analytics.js"></script>
-    <script defer src="../assets/app.js"></script>
-    <script type="application/ld+json">{render_json_ld(json_ld)}</script>
-  </head>
-  <body class="blog-page" data-page="blog">
-    <header class="topbar blog-topbar">
-      <a class="brand compact" href="../index.html" aria-label="Portal Suite home">
-        <img src="../assets/app-mark.svg" alt="" width="30" height="30">
-        <span>Portal Suite</span>
-      </a>
-      <nav class="topbar-actions" aria-label="站点导航">
-        <a class="topbar-link" href="../index.html">首页</a>
-        <a class="topbar-link is-active" href="index.html" aria-current="page">Blog</a>
-        <a class="topbar-link" href="../newsfeed.html">Newsfeed</a>
-        <a class="topbar-link" href="../reports/index.html">报告索引</a>
-        <button id="accountGate" class="account-button" type="button">登录</button>
-      </nav>
-    </header>
-    <main class="blog-shell">
-      <header class="blog-hero">
-        <p class="blog-kicker">{BLOG_PUBLIC_BRAND} · DAILY RESEARCH</p>
-        <h1>{BLOG_PUBLIC_BRAND} Blog</h1>
-        <p>{BLOG_PUBLIC_BRAND}从 {html_escape(start_date.isoformat())} 起完整保存每日公众号文章，按首次入库日期倒序展示。</p>
-        <div class="blog-summary"><strong>{len(articles)}</strong> 篇文章</div>
-      </header>
+    pagination = render_collection_pagination(page_number, total_pages, "Blog 文章分页")
+    market_views_block = ""
+    if page_number == 1:
+        market_views_block = f"""
       <section class="blog-market-views" id="blogMarketViews" aria-labelledby="blogMarketViewsTitle">
         <div class="blog-market-views-heading">
           <div>
@@ -2127,12 +2756,71 @@ def render_blog_index(articles: list[dict[str, Any]], base_url: str, start_date:
         <div id="blogMarketViewsList" class="blog-market-views-list">
           <div class="loading-state"><span class="loading-spinner" aria-hidden="true"></span><span>正在读取每日 PDF…</span></div>
         </div>
-      </section>
+      </section>"""
+    return f"""<!doctype html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{BLOG_PUBLIC_BRAND} Blog{page_suffix} | 每日研报与研究文章</title>
+    <meta name="description" content="{BLOG_PUBLIC_BRAND}每日整理研报、研究机构与咨询公司文章，提供可持续访问的中文研究存档。">
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+    <link rel="canonical" href="{html_escape(canonical, quote=True)}">
+    <link rel="alternate" hreflang="zh-Hans" href="{html_escape(canonical, quote=True)}">
+    <link rel="alternate" hreflang="x-default" href="{html_escape(canonical, quote=True)}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="{BLOG_PUBLIC_BRAND}">
+    <meta property="og:title" content="{BLOG_PUBLIC_BRAND} Blog{page_suffix} | 每日研报与研究文章">
+    <meta property="og:description" content="{BLOG_PUBLIC_BRAND}每日研究文章与公众号正文存档。">
+    <meta property="og:url" content="{html_escape(canonical, quote=True)}">
+    <meta property="og:image" content="{html_escape(url_join(base_url, 'assets/social-card.jpg'), quote=True)}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="{BLOG_PUBLIC_BRAND}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="{html_escape(url_join(base_url, 'assets/social-card.jpg'), quote=True)}">
+    <meta name="twitter:title" content="{BLOG_PUBLIC_BRAND} Blog{page_suffix} | 每日研报与研究文章">
+    <meta name="twitter:description" content="{BLOG_PUBLIC_BRAND}每日研究文章与公众号正文存档。">
+    {blog_csp_meta()}
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="../assets/blog.css">
+    <script defer src="../assets/site-runtime.js"></script>
+    <script defer src="../assets/contact.js"></script>
+    <script defer src="../assets/analytics.js"></script>
+    <script defer src="../assets/app.js"></script>
+    <script type="application/ld+json">{render_json_ld(json_ld)}</script>
+  </head>
+  <body class="blog-page" data-page="blog">
+    <header class="topbar blog-topbar">
+      <a class="brand compact" href="../index.html" aria-label="{BLOG_PUBLIC_BRAND} home">
+        <img src="../assets/app-mark.svg" alt="" width="30" height="30">
+        <span>{BLOG_PUBLIC_BRAND}</span>
+      </a>
+      <nav class="topbar-actions" aria-label="站点导航">
+        <a class="topbar-link" href="../index.html">首页</a>
+        <a class="topbar-link is-active" href="index.html" aria-current="page">Blog</a>
+        <a class="topbar-link" href="../newsfeed.html">Newsfeed</a>
+        <a class="topbar-link" href="../reports/index.html">报告索引</a>
+        <button id="accountGate" class="account-button" type="button">登录</button>
+      </nav>
+    </header>
+    <main class="blog-shell">
+      <header class="blog-hero">
+        <p class="blog-kicker">{BLOG_PUBLIC_BRAND} · DAILY RESEARCH</p>
+        <h1>{BLOG_PUBLIC_BRAND} Blog{page_suffix}</h1>
+        <p>{BLOG_PUBLIC_BRAND}从 {html_escape(start_date.isoformat())} 起完整保存每日公众号文章，按首次入库日期倒序展示。</p>
+        <div class="blog-summary"><strong>{len(articles)}</strong> 篇文章 · 第 {page_number}/{total_pages} 页</div>
+      </header>
+      {market_views_block}
+      {pagination}
       {"".join(sections)}
+      {pagination}
     </main>
     <footer class="legal-footer blog-footer">
       <a href="../index.html">首页检索</a>
       <a href="../reports/index.html">报告索引</a>
+      <a href="../about.html">关于{BLOG_PUBLIC_BRAND}</a>
       <a href="../terms.html">Terms of Service</a>
       <a href="mailto:support@portal.example.invalid">Email: support@portal.example.invalid</a>
     </footer>
@@ -2144,9 +2832,9 @@ def render_blog_index(articles: list[dict[str, Any]], base_url: str, start_date:
 def render_blog_article(article: dict[str, Any], base_url: str) -> str:
     canonical = url_join(base_url, f'blog/{article["slug"]}.html')
     title = blog_public_title(str(article.get("title") or ""))
-    digest = str(article.get("digest") or "")
+    digest = blog_public_digest(str(article.get("digest") or ""))
     seo_description = blog_seo_description(digest)
-    author = str(article.get("author") or "Portal Suite")
+    author = blog_public_author(str(article.get("author") or ""))
     parsed_base = urlsplit(str(base_url or "").strip())
     if parsed_base.scheme != "https" or not parsed_base.hostname:
         raise ValueError("Blog base URL must be an HTTPS origin")
@@ -2156,31 +2844,67 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
         str(article.get("content") or ""),
         flags=re.I,
     )
+    article_content = blog_public_text(article_content)
     # Legacy archives are immutable source records. Normalize their public
     # presentation so old drafts follow the current editorial contract.
     article_content = article_content.replace("编辑评论", "KC评论")
     article_content = re.sub(r"。\s*[，,]", "。", article_content)
     article_content = re.sub(r"[，,；;：:]\s*。", "。", article_content)
     image_match = re.search(r'<img\b[^>]*\bsrc="([^"]+)"', article_content, re.IGNORECASE)
-    image_url = html_unescape(image_match.group(1)) if image_match else ""
-    json_ld: dict[str, Any] = {
-        "@context": "https://schema.org",
+    image_url = html_unescape(image_match.group(1)) if image_match else url_join(base_url, "assets/social-card.jpg")
+    author_schema: dict[str, Any] = {"@type": "Organization", "name": author}
+    if author == BLOG_PUBLIC_BRAND:
+        author_schema["url"] = url_join(base_url, "about.html")
+    article_schema: dict[str, Any] = {
         "@type": "BlogPosting",
+        "@id": f"{canonical}#article",
         "headline": title,
-        "description": digest,
+        "description": seo_description,
         "datePublished": article["date"],
         "dateModified": article.get("last_date") or article["date"],
-        "mainEntityOfPage": canonical,
-        "author": {"@type": "Organization", "name": author},
-        "publisher": {"@type": "Organization", "name": BLOG_PUBLIC_BRAND, "url": url_join(base_url, "/")},
+        "url": canonical,
+        "mainEntityOfPage": {"@id": f"{canonical}#webpage"},
+        "inLanguage": "zh-Hans",
+        "author": author_schema,
+        "publisher": {
+            "@type": "Organization",
+            "@id": f"{url_join(base_url, '/')}#organization",
+            "name": BLOG_PUBLIC_BRAND,
+            "url": url_join(base_url, "/"),
+        },
         "isPartOf": {"@type": "Blog", "name": f"{BLOG_PUBLIC_BRAND} Blog", "url": url_join(base_url, "blog/")},
-        "keywords": [BLOG_PUBLIC_BRAND],
+        "keywords": blog_public_keywords(article),
     }
     if image_url:
-        json_ld["image"] = [image_url]
+        article_schema["image"] = [image_url]
+    json_ld = {
+        "@context": "https://schema.org",
+        "@graph": [
+            article_schema,
+            {
+                "@type": "WebPage",
+                "@id": f"{canonical}#webpage",
+                "name": title,
+                "description": seo_description,
+                "url": canonical,
+                "dateModified": article.get("last_date") or article["date"],
+                "inLanguage": "zh-Hans",
+                "mainEntity": {"@id": f"{canonical}#article"},
+                "isPartOf": {"@id": f"{url_join(base_url, '/')}#website"},
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "首页", "item": url_join(base_url, "/")},
+                    {"@type": "ListItem", "position": 2, "name": "Blog", "item": url_join(base_url, "blog/")},
+                    {"@type": "ListItem", "position": 3, "name": title, "item": canonical},
+                ],
+            },
+        ],
+    }
     og_image = f'<meta property="og:image" content="{html_escape(image_url, quote=True)}">' if image_url else ""
     return f"""<!doctype html>
-<html lang="zh-CN">
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -2188,6 +2912,8 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
     <meta name="description" content="{html_escape(seo_description, quote=True)}">
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
     <link rel="canonical" href="{html_escape(canonical, quote=True)}">
+    <link rel="alternate" hreflang="zh-Hans" href="{html_escape(canonical, quote=True)}">
+    <link rel="alternate" hreflang="x-default" href="{html_escape(canonical, quote=True)}">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="zh_CN">
     <meta property="og:site_name" content="{BLOG_PUBLIC_BRAND}">
@@ -2195,9 +2921,11 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
     <meta property="og:description" content="{html_escape(seo_description, quote=True)}">
     <meta property="og:url" content="{html_escape(canonical, quote=True)}">
     {og_image}
+    <meta property="og:image:alt" content="{html_escape(title, quote=True)}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{html_escape(title, quote=True)}">
     <meta name="twitter:description" content="{html_escape(seo_description, quote=True)}">
+    <meta name="twitter:image" content="{html_escape(image_url, quote=True)}">
     {blog_csp_meta()}
     <link rel="stylesheet" href="../assets/styles.css">
     <link rel="stylesheet" href="../assets/blog.css">
@@ -2208,9 +2936,9 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
   </head>
   <body class="blog-page blog-article-page" data-page="blog-article" data-report-title="{html_escape(title, quote=True)}" data-source="blog">
     <header class="topbar blog-topbar">
-      <a class="brand compact" href="../index.html" aria-label="Portal Suite home">
+      <a class="brand compact" href="../index.html" aria-label="{BLOG_PUBLIC_BRAND} home">
         <img src="../assets/app-mark.svg" alt="" width="30" height="30">
-        <span>Portal Suite</span>
+        <span>{BLOG_PUBLIC_BRAND}</span>
       </a>
       <nav class="topbar-actions" aria-label="站点导航">
         <a class="topbar-link" href="../index.html">首页</a>
@@ -2222,6 +2950,7 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
       <a class="blog-back" href="index.html">← 返回 Blog</a>
       <article class="blog-article">
         <header class="blog-article-header">
+          <nav aria-label="面包屑"><a href="../index.html">首页</a> › <a href="index.html">Blog</a> › <span aria-current="page">正文</span></nav>
           <div class="blog-card-meta">
             <time datetime="{html_escape(article["date"], quote=True)}">{html_escape(article["date"])}</time>
             {blog_source_badges(article)}
@@ -2239,6 +2968,7 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
       <a href="index.html">Blog</a>
       <a href="../index.html">首页检索</a>
       <a href="../reports/index.html">报告索引</a>
+      <a href="../about.html">关于{BLOG_PUBLIC_BRAND}</a>
       <a href="mailto:support@portal.example.invalid">Email: support@portal.example.invalid</a>
     </footer>
   </body>
@@ -2250,14 +2980,14 @@ def render_blog_legacy_redirect(article: dict[str, Any], base_url: str) -> str:
     target = f'{article["slug"]}.html'
     canonical = url_join(base_url, f"blog/{target}")
     return f"""<!doctype html>
-<html lang="zh-CN">
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,follow">
     <meta http-equiv="refresh" content="0; url={html_escape(target, quote=True)}">
     <link rel="canonical" href="{html_escape(canonical, quote=True)}">
-    <title>文章地址已更新 | Portal Suite Blog</title>
+    <title>文章地址已更新 | {BLOG_PUBLIC_BRAND} Blog</title>
   </head>
   <body>
     <p>文章地址已更新，<a href="{html_escape(target, quote=True)}">点击继续阅读</a>。</p>
@@ -2282,7 +3012,13 @@ def build_blog(
         persist_blog_archive(archive_root, articles, start_date)
     blog_dir = output / "blog"
     blog_dir.mkdir(parents=True, exist_ok=True)
-    write_text(blog_dir / "index.html", render_blog_index(articles, base_url, start_date))
+    total_pages = page_count(len(articles), BLOG_INDEX_PAGE_SIZE)
+    for page_number in range(1, total_pages + 1):
+        output_name = "index.html" if page_number == 1 else f"page-{page_number}.html"
+        write_text(
+            blog_dir / output_name,
+            render_blog_index(articles, base_url, start_date, page_number, BLOG_INDEX_PAGE_SIZE),
+        )
     for article in articles:
         write_text(blog_dir / f'{article["slug"]}.html', render_blog_article(article, base_url))
         for legacy_slug in article.get("legacy_slugs", []):
@@ -2315,17 +3051,42 @@ def build_seo_outputs(
             reports_dir / f"{quote(report_id, safe='')}.html",
             render_report_seo_page(item, base_url, generated_date, related_reports.get(report_id, [])),
         )
-    write_text(reports_dir / "index.html", render_reports_index(catalog, base_url, generated_date))
+    report_index_pages = page_count(len(report_items), REPORT_INDEX_PAGE_SIZE)
+    for page_number in range(1, report_index_pages + 1):
+        output_name = "index.html" if page_number == 1 else f"page-{page_number}.html"
+        write_text(
+            reports_dir / output_name,
+            render_reports_index(catalog, base_url, generated_date, page_number, REPORT_INDEX_PAGE_SIZE),
+        )
+    write_text(reports_dir / "topics.html", render_report_topic_hub(report_items, base_url, generated_date))
+    write_text(output / "about.html", render_about_page(base_url, generated_date))
 
+    blog_lastmod = max(
+        (str(article.get("last_date") or article.get("date") or "") for article in blog_articles),
+        default=generated_date,
+    )
+    blog_index_pages = page_count(len(blog_articles), BLOG_INDEX_PAGE_SIZE)
     page_rows = [
         sitemap_url(url_join(base_url, "/"), generated_date, "1.0"),
-        sitemap_url(url_join(base_url, "reports/"), generated_date, "0.9"),
-        sitemap_url(
-            url_join(base_url, "blog/"),
-            max((str(article.get("last_date") or article.get("date") or "") for article in blog_articles), default=generated_date),
-            "0.8",
-        ),
+        *[
+            sitemap_url(
+                url_join(base_url, collection_page_path("reports", page_number)),
+                generated_date,
+                "0.9" if page_number == 1 else "0.7",
+            )
+            for page_number in range(1, report_index_pages + 1)
+        ],
+        sitemap_url(url_join(base_url, "reports/topics.html"), generated_date, "0.8"),
+        *[
+            sitemap_url(
+                url_join(base_url, collection_page_path("blog", page_number)),
+                blog_lastmod,
+                "0.8" if page_number == 1 else "0.6",
+            )
+            for page_number in range(1, blog_index_pages + 1)
+        ],
         sitemap_url(url_join(base_url, "charts"), generated_date, "0.8"),
+        sitemap_url(url_join(base_url, "about.html"), generated_date, "0.5"),
         sitemap_url(url_join(base_url, "terms.html"), generated_date, "0.2"),
         sitemap_url(url_join(base_url, "privacy.html"), generated_date, "0.2"),
     ]
@@ -2414,6 +3175,10 @@ def build_seo_outputs(
     robots_lines: list[str] = []
     for agent in ("*", "OAI-SearchBot", "PerplexityBot"):
         robots_lines.extend([f"User-agent: {agent}", "Allow: /", *restricted_rules, ""])
+    # Search discovery and model training use separate crawler controls.
+    # Keep pages eligible for ChatGPT search while declining bulk training.
+    for agent in ("GPTBot", "Google-Extended"):
+        robots_lines.extend([f"User-agent: {agent}", "Disallow: /", ""])
     robots_lines.extend([
         f"Sitemap: {url_join(base_url, 'sitemap.xml')}",
         f"Sitemap: {url_join(base_url, 'sitemap-baidu.xml')}",
@@ -2435,20 +3200,159 @@ def build_seo_outputs(
             "## Primary URLs",
             f"- Home/Search: {url_join(base_url, '/')}",
             f"- Report index: {url_join(base_url, 'reports/')}",
+            f"- Institution and topic navigation: {url_join(base_url, 'reports/topics.html')}",
             f"- Blog: {url_join(base_url, 'blog/')}",
+            f"- Charts: {url_join(base_url, 'charts')}",
+            f"- About and methodology: {url_join(base_url, 'about.html')}",
             f"- Sitemap index: {url_join(base_url, 'sitemap.xml')}",
             f"- Recent reports RSS: {url_join(base_url, 'feed.xml')}",
             f"- Expanded public report metadata: {url_join(base_url, 'llms-full.txt')}",
             f"- Public catalog JSON: {url_join(base_url, 'data/catalog.json')}",
             "",
             "## Content Notes",
-            "- Preferred language for summaries: zh-CN.",
+            "- Preferred language for summaries: Simplified Chinese (zh-Hans); preserve English institution names, company names, tickers, and source titles when useful.",
             "- Report pages expose titles, translated titles, institution, industry, date, page count, and availability status.",
+            f"- {BLOG_PUBLIC_BRAND} is a metadata and discovery index, not the author or publisher of underlying reports. Attribute each report to the source institution shown on its canonical report page.",
+            "- Use each static report or Blog canonical URL when citing indexed facts. Availability is dynamic and should be described with the page's current status.",
             "- PDF download access may require an approved account. For source files or unavailable PDFs, email support@portal.example.invalid.",
             "",
         ]),
     )
-    write_text(output / "llms-full.txt", render_llms_full(catalog, base_url))
+    write_text(output / "llms-full.txt", render_llms_full(catalog, base_url, blog_articles))
+    enhance_public_landing_pages(output, base_url)
+
+
+def enhance_public_landing_pages(output: Path, base_url: str) -> None:
+    """Apply global-Chinese entity signals after private placeholders are materialized."""
+    home_path = output / "index.html"
+    if home_path.is_file():
+        home = home_path.read_text(encoding="utf-8")
+        home_url = url_join(base_url, "/")
+        match = re.search(
+            r'(<script\s+type="application/ld\+json">)\s*(\{.*?\})\s*(</script>)',
+            home,
+            flags=re.S,
+        )
+        if match:
+            try:
+                website = json.loads(match.group(2))
+            except json.JSONDecodeError:
+                website = None
+            if isinstance(website, dict) and website.get("@type") == "WebSite":
+                website["@id"] = f"{home_url}#website"
+                website.pop("alternateName", None)
+                website["inLanguage"] = "zh-Hans"
+                website["publisher"] = {"@id": f"{home_url}#organization"}
+                graph = {
+                    "@context": "https://schema.org",
+                    "@graph": [
+                        {key: value for key, value in website.items() if key != "@context"},
+                        {
+                            "@type": "Organization",
+                            "@id": f"{home_url}#organization",
+                            "name": BLOG_PUBLIC_BRAND,
+                            "url": home_url,
+                            "logo": url_join(base_url, "assets/app-mark.svg"),
+                        },
+                    ],
+                }
+                replacement = f"{match.group(1)}{render_json_ld(graph)}{match.group(3)}"
+                home = home[:match.start()] + replacement + home[match.end():]
+        home = home.replace('hreflang="zh-CN"', 'hreflang="zh-Hans"')
+        home = home.replace('<html lang="zh-CN">', '<html lang="zh-Hans">', 1)
+        home = re.sub(
+            r'aria-label="(?:Portal\s+Suite|KC\s+Desk\s+Notes) home"',
+            f'aria-label="{BLOG_PUBLIC_BRAND} home"',
+            home,
+        )
+        home = re.sub(
+            r'<span>(?:Portal\s+Suite|KC\s+Desk\s+Notes)</span>',
+            f'<span>{BLOG_PUBLIC_BRAND}</span>',
+            home,
+            count=1,
+        )
+        if 'href="about.html"' not in home:
+            home = home.replace(
+                '<a href="terms.html">Terms of Service</a>',
+                f'<a href="about.html">关于{BLOG_PUBLIC_BRAND}</a>\n      <a href="terms.html">Terms of Service</a>',
+                1,
+            )
+        home_path.write_text(home, encoding="utf-8")
+
+    charts_path = output / "charts.html"
+    if charts_path.is_file():
+        charts = charts_path.read_text(encoding="utf-8")
+        canonical = url_join(base_url, "charts")
+        description = (
+            f"{BLOG_PUBLIC_BRAND} Charts 汇集金融研报中的有效图表、数据表、数据地图与流程图，"
+            "支持按公司、指标、期间、地区和关键词检索。"
+        )
+        charts = charts.replace('<html lang="zh-CN">', '<html lang="zh-Hans">', 1)
+        charts = re.sub(
+            r'aria-label="(?:Portal\s+Suite|KC\s+Desk\s+Notes) home"',
+            f'aria-label="{BLOG_PUBLIC_BRAND} home"',
+            charts,
+        )
+        charts = re.sub(
+            r'<span>(?:Portal\s+Suite|KC\s+Desk\s+Notes)</span>',
+            f'<span>{BLOG_PUBLIC_BRAND}</span>',
+            charts,
+            count=1,
+        )
+        if '<meta name="keywords"' not in charts:
+            charts = charts.replace(
+                '<meta name="robots"',
+                '<meta name="keywords" content="研报图表,金融数据图表,投行研报图表,financial research charts,investment research data">\n'
+                '    <meta name="robots"',
+                1,
+            )
+        if 'hreflang="zh-Hans"' not in charts:
+            charts = charts.replace(
+                f'<link rel="canonical" href="{canonical}">',
+                f'<link rel="canonical" href="{canonical}">\n'
+                f'    <link rel="alternate" hreflang="zh-Hans" href="{canonical}">\n'
+                f'    <link rel="alternate" hreflang="x-default" href="{canonical}">\n'
+                '    <meta property="og:type" content="website">\n'
+                f'    <meta property="og:site_name" content="{BLOG_PUBLIC_BRAND}">\n'
+                f'    <meta property="og:title" content="Charts | {BLOG_PUBLIC_BRAND}金融研报图表库">\n'
+                f'    <meta property="og:url" content="{canonical}">',
+                1,
+            )
+        if '"@id":"' + canonical + '#webpage"' not in charts:
+            charts_schema = {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "CollectionPage",
+                        "@id": f"{canonical}#webpage",
+                        "name": f"Charts | {BLOG_PUBLIC_BRAND}金融研报图表库",
+                        "description": description,
+                        "url": canonical,
+                        "inLanguage": "zh-Hans",
+                        "isPartOf": {"@id": f"{url_join(base_url, '/')}#website"},
+                        "about": {"@type": "Thing", "name": "金融研报图表与数据可视化"},
+                    },
+                    {
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            {"@type": "ListItem", "position": 1, "name": "首页", "item": url_join(base_url, "/")},
+                            {"@type": "ListItem", "position": 2, "name": "Charts", "item": canonical},
+                        ],
+                    },
+                ],
+            }
+            charts = charts.replace(
+                "  </head>",
+                f'    <script type="application/ld+json">{render_json_ld(charts_schema)}</script>\n  </head>',
+                1,
+            )
+        if 'href="about.html"' not in charts:
+            charts = charts.replace(
+                '<a href="terms.html">Terms of Service</a>',
+                f'<a href="about.html">关于{BLOG_PUBLIC_BRAND}</a>\n      <a href="terms.html">Terms of Service</a>',
+                1,
+            )
+        charts_path.write_text(charts, encoding="utf-8")
 
 
 def copy_site(src: Path, output: Path) -> None:
@@ -2466,7 +3370,17 @@ def version_assets(output: Path) -> None:
     effect immediately. Only busts when the file content actually changes.
     """
     versions: dict[str, str] = {}
-    for rel in ("assets/app.js", "assets/contact.js", "assets/site-runtime.js", "assets/analytics.js", "assets/styles.css", "assets/blog.css"):
+    for rel in (
+        "assets/app.js",
+        "assets/report-chat.js",
+        "assets/charts.js",
+        "assets/contact.js",
+        "assets/site-runtime.js",
+        "assets/analytics.js",
+        "assets/styles.css",
+        "assets/blog.css",
+        "assets/charts.css",
+    ):
         path = output / rel
         if path.exists():
             versions[rel] = hashlib.sha1(path.read_bytes()).hexdigest()[:8]
@@ -2569,6 +3483,7 @@ def main() -> int:
     )
     rules = public_password_rules(load_json(Path(args.password_rules)))
     write_json(output_dir / "data" / "catalog.json", public_catalog(catalog))
+    write_json(output_dir / "data" / "catalog_preview.json", public_catalog_preview(catalog))
     write_json(output_dir / "data" / "search_index.json", search_index)
     write_json(output_dir / "data" / "password_rules.json", rules)
     write_json(output_dir / "data" / "config.json", {"worker_base_url": args.worker_base_url.rstrip("/")})

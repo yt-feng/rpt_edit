@@ -261,3 +261,46 @@ jobs:
             SUPPLEMENTAL_SEARCH_HMAC_SECRET
             SUPPLEMENTAL_SEARCH_REDACT_TERMS
             COURSE_DIRECTORY_REDACT_TERMS
+
+      - name: Smoke deployed API through the live edge
+        env:
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+        run: |
+          set -euo pipefail
+          echo "::add-mask::$PORTAL_SITE_URL"
+          origin="${PORTAL_SITE_URL%/}"
+          ready=0
+          for attempt in $(seq 1 12); do
+            if curl --fail --silent --show-error --max-time 20 \
+              "$origin/api/health" --output "$RUNNER_TEMP/api-health.json" \
+              && python3 - "$RUNNER_TEMP/api-health.json" <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          payload = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+          if payload.get("ok") is not True:
+              raise SystemExit(1)
+          PY
+            then
+              ready=1
+              break
+            fi
+            sleep 5
+          done
+          test "$ready" = 1
+
+          for endpoint in rewards course/access; do
+            code="$(curl --silent --show-error --max-time 20 \
+              --output "$RUNNER_TEMP/api-anonymous.json" \
+              --write-out '%{http_code}' "$origin/api/$endpoint")"
+            test "$code" = 401
+            python3 -m json.tool "$RUNNER_TEMP/api-anonymous.json" >/dev/null
+          done
+
+          code="$(curl --silent --show-error --max-time 20 \
+            --request POST --header 'Content-Type: application/json' --data '{}' \
+            --output "$RUNNER_TEMP/api-anonymous-chat.json" \
+            --write-out '%{http_code}' "$origin/api/report-chat")"
+          test "$code" = 401
+          python3 -m json.tool "$RUNNER_TEMP/api-anonymous-chat.json" >/dev/null

@@ -30,6 +30,20 @@ def write_payload(root: Path, source: str, date_folder: str, name: str, articles
     return path
 
 
+def first_json_ld(page: str) -> dict:
+    match = re.search(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', page, flags=re.S)
+    if not match:
+        raise AssertionError("page does not contain JSON-LD")
+    return json.loads(match.group(1))
+
+
+def graph_node(schema: dict, schema_type: str) -> dict:
+    for node in schema.get("@graph", []):
+        if node.get("@type") == schema_type:
+            return node
+    raise AssertionError(f"JSON-LD graph does not contain {schema_type}")
+
+
 class BlogSanitizerTests(unittest.TestCase):
     def test_sanitizer_preserves_wechat_layout_and_removes_active_content(self) -> None:
         raw = """
@@ -171,6 +185,9 @@ class BlogBuildTests(unittest.TestCase):
             builder.blog_article_fingerprint(raw, "<p>正文</p>"),
             builder.blog_article_fingerprint(expected, "<p>正文</p>"),
         )
+        self.assertEqual("KC桌面每日研究", builder.blog_public_text("Portal Suite每日研究"))
+        legacy_name = " ".join(("KC", "Desk", "Notes"))
+        self.assertEqual("KC桌面图表", builder.blog_public_text(f"{legacy_name}图表"))
 
     def test_public_catalog_omits_internal_storage_and_ingestion_metadata(self) -> None:
         catalog = {
@@ -238,6 +255,21 @@ class BlogBuildTests(unittest.TestCase):
             second = json.loads((output / "shard_260723.json").read_text(encoding="utf-8"))
             self.assertEqual(["current-six"], [row["id"] for row in first["items"]])
             self.assertEqual(["current-eight"], [row["id"] for row in second["items"]])
+
+    def test_search_index_shards_split_large_days_into_bounded_parts(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            output = Path(temporary) / "data" / "search_index_current"
+            text = "研究数据" * 180_000
+            catalog = {"items": [{"id": f"item-{index}", "date_folder": "260812"} for index in range(4)]}
+            index = {
+                "schema_version": 1,
+                "item_count": 4,
+                "items": [{"id": f"item-{index}", "text": text} for index in range(4)],
+            }
+            manifest = builder.write_search_index_shards(index, catalog, output, partition="day")
+            self.assertGreater(len(manifest["shards"]), 1)
+            self.assertTrue(all(row["file"].startswith("shard_260812-") for row in manifest["shards"]))
+            self.assertTrue(all(row["bytes"] <= builder.SEARCH_INDEX_SHARD_MAX_BYTES for row in manifest["shards"]))
 
     def test_wechat_image_reupload_urls_do_not_duplicate_an_article(self) -> None:
         first = builder.sanitize_blog_html(
@@ -343,6 +375,7 @@ class BlogBuildTests(unittest.TestCase):
             self.assertIn("<title>KC桌面 Blog | 每日研报与研究文章</title>", index_html)
             self.assertIn('<meta property="og:site_name" content="KC桌面">', index_html)
             self.assertIn("重复文章 | KC桌面", index_html)
+            self.assertNotIn("Portal Suite", index_html)
 
             pages = sorted((output / "blog").glob("*.html"))
             self.assertGreater(len(pages), len(articles), "legacy source-bearing URLs remain as redirects")
@@ -354,15 +387,15 @@ class BlogBuildTests(unittest.TestCase):
             self.assertIn(f"<h1>{public_title}</h1>", duplicate_page)
             self.assertIn('src="../assets/site-runtime.js"', duplicate_page)
             self.assertNotIn(f"{public_title} | KC桌面", duplicate_page)
-            json_ld_match = re.search(
-                r'<script type="application/ld\+json">(.*?)</script>',
-                duplicate_page,
-                flags=re.S,
-            )
-            self.assertIsNotNone(json_ld_match)
-            article_schema = json.loads(json_ld_match.group(1))
+            article_graph = first_json_ld(duplicate_page)
+            article_schema = graph_node(article_graph, "BlogPosting")
+            graph_node(article_graph, "WebPage")
+            graph_node(article_graph, "BreadcrumbList")
             self.assertEqual(public_title, article_schema["headline"])
-            self.assertEqual(["KC桌面"], article_schema["keywords"])
+            self.assertIn("KC桌面", article_schema["keywords"])
+            self.assertIn("Chinese financial research", article_schema["keywords"])
+            self.assertEqual("KC桌面", article_schema["author"]["name"])
+            self.assertEqual("KC桌面", article_schema["publisher"]["name"])
             self.assertIn("跨目录重复正文", duplicate_page)
             self.assertIn("2026-07-27 · 外资研报", duplicate_page)
             self.assertIn("2026-07-28 · 研究机构", duplicate_page)
@@ -374,6 +407,7 @@ class BlogBuildTests(unittest.TestCase):
                 self.assertNotIn(internal_name, duplicate_page)
                 self.assertNotIn(internal_name, index_html)
             self.assertNotIn("http://mmbiz.qpic.cn", duplicate_page)
+            self.assertNotIn("Portal Suite", duplicate_page)
 
             catalog = {"items": [], "item_count": 0, "updated_at_bjt": "2026-07-31 12:00:00"}
             builder.build_seo_outputs(output, catalog, "https://portal.example.invalid", articles)
@@ -383,6 +417,71 @@ class BlogBuildTests(unittest.TestCase):
             self.assertIn("sitemap-blog-1.xml", sitemap_index)
             self.assertIn(f'blog/{duplicate["slug"]}.html', sitemap_blog)
             self.assertIn("https://portal.example.invalid/blog/", sitemap_baidu)
+
+    def test_blog_collection_is_paginated_with_crawlable_links(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            temp = Path(temporary)
+            drafts = temp / "wechat_drafts"
+            output = temp / "site"
+            write_payload(
+                drafts,
+                "xhs_notes",
+                "260810",
+                "draft_payload_01.json",
+                [
+                    {
+                        "title": f"每日研究 {index:02d}",
+                        "author": "Portal Suite",
+                        "digest": "Portal Suite 每日研究摘要",
+                        "content": f"<p>正文 {index:02d}</p>",
+                    }
+                    for index in range(65)
+                ],
+            )
+            articles = builder.build_blog(
+                output,
+                drafts,
+                "https://portal.example.invalid",
+                date(2026, 7, 27),
+            )
+            self.assertEqual(65, len(articles))
+
+            first = (output / "blog" / "index.html").read_text(encoding="utf-8")
+            second = (output / "blog" / "page-2.html").read_text(encoding="utf-8")
+            third = (output / "blog" / "page-3.html").read_text(encoding="utf-8")
+            self.assertEqual(30, first.count('<article class="blog-card">'))
+            self.assertEqual(30, second.count('<article class="blog-card">'))
+            self.assertEqual(5, third.count('<article class="blog-card">'))
+            self.assertIn('<link rel="canonical" href="https://portal.example.invalid/blog/">', first)
+            self.assertIn(
+                '<link rel="canonical" href="https://portal.example.invalid/blog/page-2.html">',
+                second,
+            )
+            self.assertIn(
+                '<link rel="canonical" href="https://portal.example.invalid/blog/page-3.html">',
+                third,
+            )
+            self.assertIn('href="page-2.html" rel="next"', first)
+            self.assertIn('href="./" rel="prev"', second)
+            self.assertIn('href="page-3.html" rel="next"', second)
+            self.assertIn('href="page-2.html" rel="prev"', third)
+            self.assertIn('id="blogMarketViews"', first)
+            self.assertNotIn('id="blogMarketViews"', second)
+            self.assertNotIn("Portal Suite", first)
+
+            builder.build_seo_outputs(
+                output,
+                {"updated_at_bjt": "2026-08-11 12:00:00 +0800", "items": []},
+                "https://portal.example.invalid",
+                articles,
+            )
+            sitemap_pages = (output / "sitemap-pages.xml").read_text(encoding="utf-8")
+            for url in (
+                "https://portal.example.invalid/blog/",
+                "https://portal.example.invalid/blog/page-2.html",
+                "https://portal.example.invalid/blog/page-3.html",
+            ):
+                self.assertIn(url, sitemap_pages)
 
     def test_empty_source_still_builds_blog_landing_page(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:

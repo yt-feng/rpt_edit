@@ -27,6 +27,7 @@ podcast_video_tests/
 
 # Decrypted only inside the deployment runner.
 portal_suite/site_src/assets/contact-card.jpg
+portal_suite/site_src/assets/social-card.jpg
 
 # The member-course source index, mapping, keys, and plaintext catalog stay
 # local. Only the authenticated AES-256-GCM envelope may be tracked.

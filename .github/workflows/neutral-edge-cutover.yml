@@ -49,9 +49,12 @@ jobs:
           node --input-type=module --check < workers/edge-static-host/src/index.js
           node --input-type=module --check < workers/portal-suite-worker/src/index.js
           node --input-type=module --check < workers/portal-suite-worker/src/source-lead-adapter.js
+          node --check portal_suite/site_src/assets/app.js
           node --check portal_suite/site_src/assets/report-chat.js
           node --check portal_suite/site_src/assets/charts.js
           node --check portal_suite/site_src/assets/site-runtime.js
+          node --test workers/edge-static-host/test/index.test.mjs
+          node --test portal_suite/tests/*.test.mjs
           node scripts/test_source_lead_adapter.js
           node scripts/test_portal_source_lead_integration.js
           node scripts/test_portal_chart_search_frontend.js
@@ -63,6 +66,8 @@ jobs:
             scripts/chart_search_r2.py \
             scripts/merge_chart_search_index.py
           python3 scripts/test_build_report_chat_index.py
+          python3 scripts/test_portal_seo.py
+          python3 scripts/test_portal_blog_build.py
           python3 scripts/test_edge_route_cutover.py
 
       - name: Prepare masked runtime context
@@ -196,6 +201,7 @@ jobs:
           PORTAL_PRIVATE_CONFIG_B64: ${{ secrets.PORTAL_PRIVATE_CONFIG_B64 }}
           PORTAL_PRIVATE_ASSET_KEY: ${{ secrets.PORTAL_PRIVATE_ASSET_KEY }}
           PORTAL_PRIVATE_PUBLISH_ASSET_KEY: ${{ secrets.PORTAL_PRIVATE_PUBLISH_ASSET_KEY }}
+          PORTAL_SOCIAL_CARD_B64: ${{ secrets.PORTAL_SOCIAL_CARD_B64 }}
           PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
         run: |
           set -euo pipefail
@@ -207,6 +213,12 @@ jobs:
             --root workers/portal-suite-worker/src/index.js
           bash scripts/materialize_private_assets.sh portal_suite/site_src
           test -s portal_suite/site_src/assets/contact-card.jpg
+          test -n "$PORTAL_SOCIAL_CARD_B64"
+          social_card="$RUNNER_TEMP/portal-social-card.jpg"
+          printf '%s' "$PORTAL_SOCIAL_CARD_B64" | base64 --decode > "$social_card"
+          test "$(od -An -tx1 -N3 "$social_card" | tr -d ' \n')" = "ffd8ff"
+          test "$(wc -c < "$social_card")" -le 1048576
+          install -m 0600 "$social_card" portal_suite/site_src/assets/social-card.jpg
 
       - name: Refresh report catalog and private PDF mirror
         id: catalog
@@ -300,6 +312,7 @@ jobs:
           test -s _neutral_site/index.html
           test -s _neutral_site/assets/app.js
           test -s _neutral_site/data/catalog.json
+          test -s _neutral_site/data/catalog_preview.json
           test -s _neutral_site/data/search_index.json
           test -s _neutral_site/data/chart_search_index.json
           test -s _neutral_site/data/password_rules.json
@@ -445,7 +458,7 @@ jobs:
               raise SystemExit(1) from None
           PY
 
-      - name: Prepare inactive neutral edge runtime
+      - name: Prepare neutral edge runtime
         if: github.event_name == 'schedule' || inputs.operation == 'migrate'
         env:
           PORTAL_PRIVATE_CONFIG_B64: ${{ secrets.PORTAL_PRIVATE_CONFIG_B64 }}
@@ -457,9 +470,12 @@ jobs:
           cat > .neutral_edge_runtime/wrangler.toml <<EOF
           name = "svc-04df8d213b73"
           main = "index.js"
-          compatibility_date = "2026-08-01"
+          compatibility_date = "2026-08-12"
           workers_dev = false
           preview_urls = false
+
+          [cache]
+          enabled = true
 
           [vars]
           STATIC_PREFIX = "edge-static/releases/$STATIC_RELEASE/"
@@ -479,7 +495,7 @@ jobs:
             --skip-generated-files \
             --root .neutral_edge_runtime/wrangler.toml
 
-      - name: Deploy inactive neutral edge runtime
+      - name: Deploy neutral edge runtime
         id: edge_deploy
         if: github.event_name == 'schedule' || inputs.operation == 'migrate'
         uses: cloudflare/wrangler-action@v3
@@ -488,6 +504,7 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID }}
           workingDirectory: .neutral_edge_runtime
           command: deploy
+          wranglerVersion: "4.69.0"
 
       - name: Verify active edge route or switch
         if: github.event_name == 'schedule' || inputs.operation == 'migrate' || inputs.operation == 'switch'
@@ -498,8 +515,7 @@ jobs:
           set -euo pipefail
           if curl --fail --silent --show-error --head --max-time 30 "https://$SITE_HOST/" | tr -d '\r' | grep -qi '^x-origin-class: edge-static$'
           then
-            echo "Neutral edge route is already active."
-            exit 0
+            echo "Neutral edge route is already active; running the complete route verification."
           fi
           python3 -B scripts/edge_route_cutover.py migrate
 
@@ -513,7 +529,10 @@ jobs:
           for attempt in $(seq 1 18); do
             if curl --fail --silent --max-time 30 \
               "$PORTAL_SITE_URL/data/catalog.json?release=$STATIC_RELEASE" \
-              --output "$RUNNER_TEMP/live-catalog.json"
+              --output "$RUNNER_TEMP/live-catalog.json" \
+              && curl --fail --silent --max-time 30 \
+              "$PORTAL_SITE_URL/data/catalog_preview.json?release=$STATIC_RELEASE" \
+              --output "$RUNNER_TEMP/live-catalog-preview.json"
             then
               if python3 - <<'PY'
           import json
@@ -521,27 +540,64 @@ jobs:
           from pathlib import Path
 
           expected = json.loads(Path("_neutral_site/data/catalog.json").read_text(encoding="utf-8"))
+          expected_preview = json.loads(Path("_neutral_site/data/catalog_preview.json").read_text(encoding="utf-8"))
           actual = json.loads(Path(os.environ["RUNNER_TEMP"]).joinpath("live-catalog.json").read_text(encoding="utf-8"))
+          actual_preview = json.loads(
+              Path(os.environ["RUNNER_TEMP"]).joinpath("live-catalog-preview.json").read_text(encoding="utf-8")
+          )
 
           def latest_date(catalog):
               return max((str(item.get("date_folder") or "") for item in catalog.get("items", [])), default="")
 
-          expected_summary = (
-              expected.get("updated_at_bjt"),
-              int(expected.get("item_count") or 0),
-              latest_date(expected),
-          )
-          actual_summary = (
-              actual.get("updated_at_bjt"),
-              int(actual.get("item_count") or 0),
-              latest_date(actual),
-          )
-          if actual_summary != expected_summary:
+          def catalog_summary(catalog):
+              return (
+                  int(catalog.get("schema_version") or 0),
+                  str(catalog.get("updated_at_bjt") or ""),
+                  int(catalog.get("item_count") or 0),
+                  latest_date(catalog),
+              )
+
+          def preview_summary(catalog):
+              return (
+                  int(catalog.get("schema_version") or 0),
+                  str(catalog.get("updated_at_bjt") or ""),
+                  int(catalog.get("item_count") or 0),
+                  int(catalog.get("total_item_count") or 0),
+                  latest_date(catalog),
+              )
+
+          def assert_aligned(label, catalog, preview):
+              catalog_version = (
+                  int(catalog.get("schema_version") or 0),
+                  str(catalog.get("updated_at_bjt") or ""),
+              )
+              preview_version = (
+                  int(preview.get("schema_version") or 0),
+                  str(preview.get("updated_at_bjt") or ""),
+              )
+              if catalog_version != preview_version:
+                  raise SystemExit(f"{label} catalog version mismatch")
+              if int(preview.get("total_item_count") or 0) != int(catalog.get("item_count") or 0):
+                  raise SystemExit(f"{label} catalog total mismatch")
+              if latest_date(preview) != latest_date(catalog):
+                  raise SystemExit(f"{label} catalog latest-date mismatch")
+              if not 0 < int(preview.get("item_count") or 0) <= int(preview.get("total_item_count") or 0):
+                  raise SystemExit(f"{label} catalog preview is empty or oversized")
+
+          assert_aligned("local", expected, expected_preview)
+          assert_aligned("live", actual, actual_preview)
+
+          expected_summary = catalog_summary(expected)
+          actual_summary = catalog_summary(actual)
+          expected_preview_summary = preview_summary(expected_preview)
+          actual_preview_summary = preview_summary(actual_preview)
+          if actual_summary != expected_summary or actual_preview_summary != expected_preview_summary:
               raise SystemExit(1)
           print(
-              f"live_catalog_date={actual_summary[2]} "
-              f"live_catalog_items={actual_summary[1]} "
-              f"live_catalog_updated={actual_summary[0]}"
+              f"live_catalog_date={actual_summary[3]} "
+              f"live_catalog_items={actual_summary[2]} "
+              f"live_catalog_updated={actual_summary[1]} "
+              f"live_catalog_preview_items={actual_preview_summary[2]}"
           )
           PY
               then

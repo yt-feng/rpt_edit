@@ -129,6 +129,8 @@ responses expose only neutral labels and contact-only detail pages.
 
 - Daily rewards, the 30-day Course gate, and privacy-preserving attribution are
   defined in [Engagement, Analytics, and Course Access](engagement-analytics-course-architecture.md).
+- The active first-day/third-day credit state machine is defined in
+  [Reward Engagement v2](reward-engagement-v2-architecture.md).
 - Blog persistence, title SEO, cover handling, and private hostname
   materialization are defined in [Blog SEO and WeChat Output Contract](blog-seo-wechat-output.md).
 - Chart descriptions and image-hash checkpoints are defined in
@@ -146,8 +148,69 @@ encrypted deployment configuration in the short-lived Actions workspace.
 
 `check_public_identity.py` runs before public commits and again against the
 materialized release boundary. Workflow logs, artifacts, committed archives,
-and public API responses must not contain private deployment values. A release
-is switched only after the edge route and static identity checks succeed.
+and public API responses must not contain private deployment values. Static
+completeness and identity checks run before deployment; the active route and
+the exact catalog release are verified before refreshed public data is
+committed or older static releases are pruned.
+
+## Static Response Caching And Validators
+
+Each edge deployment binds one immutable object-storage prefix, while public
+URLs remain stable across releases. Workers Caching is enabled in the generated
+Wrangler configuration (pinned to a compatible Wrangler version) and remains
+version-isolated, so a new deployment does not inherit stale responses from the
+previous Worker version. The `/api` service-binding branch passes the gateway
+response through unchanged; its private and `no-store` policies remain under
+gateway control.
+
+The static host applies cache policy at response time instead of trusting
+upload-time object metadata. Browser and edge policy are deliberately
+separated: `Cache-Control` contains browser freshness only, while
+`Cloudflare-CDN-Cache-Control` contains the edge TTL, stale-while-revalidate,
+and stale-if-error windows and is consumed by Cloudflare before the response
+reaches the browser. The edge policy omits `s-maxage`, `must-revalidate`, and
+`proxy-revalidate`, because those directives disable stale serving in Workers
+Caching.
+
+- HTML has a one-minute browser freshness window. The edge also stays fresh for
+  one minute, followed by two minutes of stale-while-revalidate and one day of
+  stale-if-error. This keeps navigation fast without hiding a newly activated
+  release for long.
+- Catalog, configuration, manifest, and search JSON use five-minute browser and
+  edge freshness windows, followed by five minutes of stale-while-revalidate
+  and one day of stale-if-error.
+  A warm edge can serve these large files immediately while refreshing them in
+  the background, without hiding a scheduled catalog refresh for half an hour.
+- JavaScript, CSS, fonts, and images with a content hash in the path or a
+  `v=<content-hash>` query are cached for one year with `immutable`. Only real
+  hexadecimal content versions receive this policy.
+- Unversioned assets keep a short cache window because the public URL can point
+  to a different object after the next release switch. XML and text discovery
+  documents also use bounded caching so crawlers see fresh feeds and sitemaps.
+
+The host publishes storage ETags and `Last-Modified`, implements weak
+`If-None-Match` comparison for GET and HEAD, gives `If-None-Match` precedence
+over `If-Modified-Since`, and returns bodyless `304` responses. Byte ranges keep
+`206`, `Content-Range`, and full-object-length semantics; unsatisfiable ranges
+return `416` with `bytes */<size>`. `If-Range` uses strong ETag comparison or
+the advertised HTTP-date precision: a matching validator permits `206`, while
+a stale, weak, or invalid validator ignores the range and returns the complete
+`200` representation. Range syntax is validated against object metadata before
+the object read, so a storage read failure is never misreported as `416`. HEAD
+always describes the complete selected representation, and a missing URL never
+turns the range of `404.html` into a successful partial response.
+
+Every release build requires a non-empty `catalog_preview.json`. After route
+verification, the workflow downloads both the preview and complete catalog
+through the production origin using the new release identifier. Local and live
+pairs must agree on schema/update version, total item count, and latest report
+date, and both live payloads must exactly match their locally built summaries.
+
+The API Worker deploy is completed before any static client release that
+depends on a new API contract. Its deployment workflow polls the live
+`/api/health` route and verifies anonymous reward, Course, and Chat requests
+return structured authentication responses. Only after that smoke succeeds is
+the neutral static release migrated and its preview/full catalog parity checked.
 
 ## Admin And Operator Tools
 

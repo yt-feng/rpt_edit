@@ -237,6 +237,10 @@ const PUBLIC_ANALYTICS_EVENT_TYPES = new Set([
 const REWARD_BASE_POINTS = 10;
 const REWARD_POINTS_REPORT_COST = 70;
 const REWARD_R2_WRITE_RETRIES = 8;
+const REWARD_POLICY_VERSION = 2;
+const REWARD_POLICY_V2_CUTOVER_AT = "2026-08-12T00:00:00+08:00";
+const REWARD_CREDIT_TTL_MS = 72 * 60 * 60 * 1000;
+const REWARD_CREDIT_MAX_ROWS = 64;
 const COURSE_MIN_REMAINING_DAYS = 30;
 const COURSE_DIRECTORY_R2_KEY = "_course-directory/v1/directory.json";
 const REPORT_CHAT_LOOKUP_MANIFEST_R2_KEY = "_report-chat/v2/manifest.json";
@@ -2070,6 +2074,8 @@ async function saveReportPurchase(env, fields) {
 
 function emptyRewardState(email) {
   return {
+    schema_version: 2,
+    policy_version: 0,
     email: normalizeEmail(email),
     points: 0,
     current_streak: 0,
@@ -2078,8 +2084,44 @@ function emptyRewardState(email) {
     checkins: {},
     claims: {},
     grants: {},
+    credits: [],
+    welcome_credit_issued: false,
+    first_d3_credit_issued: false,
+    first_d7_freeze_issued: false,
+    freeze_cards: 0,
+    policy_migrated_at: "",
     updated_at: "",
   };
+}
+
+function normalizeRewardCredit(value) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return null;
+  const id = String(value.id || "").trim().slice(0, 120);
+  const reason = String(value.reason || "").trim().slice(0, 80);
+  const issuedAt = String(value.issued_at || "").trim();
+  const expiresAt = String(value.expires_at || "").trim();
+  const claimedAt = String(value.claimed_at || "").trim();
+  if (!id || !reason || !Number.isFinite(Date.parse(issuedAt)) || !Number.isFinite(Date.parse(expiresAt))) return null;
+  if (Date.parse(expiresAt) <= Date.parse(issuedAt)) return null;
+  return {
+    id,
+    reason,
+    issued_at: new Date(issuedAt).toISOString(),
+    expires_at: new Date(expiresAt).toISOString(),
+    claimed_at: claimedAt && Number.isFinite(Date.parse(claimedAt)) ? new Date(claimedAt).toISOString() : "",
+    report_id: cleanCatalogReportId(value.report_id),
+  };
+}
+
+function pruneRewardCredits(value, keep = REWARD_CREDIT_MAX_ROWS) {
+  const unique = new Map();
+  for (const row of Array.isArray(value) ? value : []) {
+    const credit = normalizeRewardCredit(row);
+    if (credit && !unique.has(credit.id)) unique.set(credit.id, credit);
+  }
+  return [...unique.values()]
+    .sort((left, right) => right.issued_at.localeCompare(left.issued_at) || left.id.localeCompare(right.id))
+    .slice(0, keep);
 }
 
 function validateRewardState(row, email) {
@@ -2089,6 +2131,8 @@ function validateRewardState(row, email) {
   const normalized = {
     ...emptyRewardState(expectedEmail),
     ...row,
+    schema_version: Math.max(1, Math.floor(Number(row.schema_version) || 1)),
+    policy_version: Math.max(0, Math.floor(Number(row.policy_version) || 0)),
     email: normalizeEmail(row.email),
     points: Math.max(0, Math.floor(Number(row.points) || 0)),
     current_streak: Math.max(0, Math.floor(Number(row.current_streak) || 0)),
@@ -2097,6 +2141,12 @@ function validateRewardState(row, email) {
     checkins: row.checkins && typeof row.checkins === "object" && !Array.isArray(row.checkins) ? row.checkins : {},
     claims: row.claims && typeof row.claims === "object" && !Array.isArray(row.claims) ? row.claims : {},
     grants: row.grants && typeof row.grants === "object" && !Array.isArray(row.grants) ? row.grants : {},
+    credits: pruneRewardCredits(row.credits),
+    welcome_credit_issued: Boolean(row.welcome_credit_issued),
+    first_d3_credit_issued: Boolean(row.first_d3_credit_issued),
+    first_d7_freeze_issued: Boolean(row.first_d7_freeze_issued),
+    freeze_cards: Math.min(1, Math.max(0, Math.floor(Number(row.freeze_cards) || 0))),
+    policy_migrated_at: String(row.policy_migrated_at || ""),
   };
   if (!expectedEmail || normalized.email !== expectedEmail) throw new Error("Reward state verification failed.");
   return normalized;
@@ -2148,13 +2198,15 @@ async function mutateRewardStateR2(env, email, mutate) {
       checkins: { ...snapshot.state.checkins },
       claims: { ...snapshot.state.claims },
       grants: { ...snapshot.state.grants },
-    });
+      credits: snapshot.state.credits.map((credit) => ({ ...credit })),
+    }, { exists: Boolean(snapshot.etag), etag: snapshot.etag });
     if (result && result.skip_write) return { state: snapshot.state, result };
     const next = validateRewardState({
       ...(result && result.state || snapshot.state),
       email: normalized,
       checkins: pruneRewardDateMap(result && result.state && result.state.checkins || snapshot.state.checkins),
       claims: pruneRewardDateMap(result && result.state && result.state.claims || snapshot.state.claims),
+      credits: pruneRewardCredits(result && result.state && result.state.credits || snapshot.state.credits),
       updated_at: new Date().toISOString(),
     }, normalized);
     const written = await accountBucket(env).put(rewardStateKey(normalized), JSON.stringify(next), {
@@ -2166,82 +2218,253 @@ async function mutateRewardStateR2(env, email, mutate) {
   throw new Error("Reward state changed concurrently. Please retry.");
 }
 
-function publicRewardStatus(state, date) {
+function rewardPolicyCutoverMs(env) {
+  const configured = String(env && env.REWARD_POLICY_V2_CUTOVER_AT || REWARD_POLICY_V2_CUTOVER_AT).trim();
+  const parsed = Date.parse(configured);
+  return Number.isFinite(parsed) ? parsed : Date.parse(REWARD_POLICY_V2_CUTOVER_AT);
+}
+
+function rewardAccountEligibleForWelcome(env, user) {
+  const createdAt = Date.parse(String(user && user.created_at || ""));
+  return Number.isFinite(createdAt) && createdAt >= rewardPolicyCutoverMs(env);
+}
+
+function rewardBjtDayEndIso(date) {
+  const start = Date.parse(`${date}T00:00:00+08:00`);
+  return new Date(start + 24 * 60 * 60 * 1000).toISOString();
+}
+
+function rewardAddCredit(state, credit) {
+  const normalized = normalizeRewardCredit(credit);
+  if (!normalized || state.credits.some((row) => row.id === normalized.id)) return false;
+  state.credits.push(normalized);
+  return true;
+}
+
+function rewardAvailableCredits(state, nowMs = Date.now()) {
+  return pruneRewardCredits(state.credits)
+    .filter((credit) => !credit.claimed_at && Date.parse(credit.expires_at) > nowMs)
+    .sort((left, right) => left.expires_at.localeCompare(right.expires_at)
+      || left.issued_at.localeCompare(right.issued_at)
+      || left.id.localeCompare(right.id));
+}
+
+function migrateRewardStateV2(state, env, user, options = {}) {
+  if (state.policy_version >= REWARD_POLICY_VERSION) return false;
+  const nowMs = Number.isFinite(options.nowMs) ? options.nowMs : Date.now();
+  const date = options.date || analyticsBjtDateKey(nowMs);
+  const nowIso = new Date(nowMs).toISOString();
+  const eligibleForWelcome = rewardAccountEligibleForWelcome(env, user);
+  const cutoverDate = analyticsBjtDateKey(rewardPolicyCutoverMs(env));
+  const todayClaims = state.claims[date] && typeof state.claims[date] === "object" ? state.claims[date] : {};
+
+  state.schema_version = 2;
+  state.policy_version = REWARD_POLICY_VERSION;
+  state.welcome_credit_issued = !eligibleForWelcome
+    || state.longest_streak > 0
+    || Object.keys(state.checkins).length > 0;
+  state.first_d3_credit_issued = state.longest_streak >= 3;
+  state.first_d7_freeze_issued = state.longest_streak >= 7;
+  if (state.current_streak >= 7) state.freeze_cards = Math.max(state.freeze_cards, 1);
+  state.policy_migrated_at = nowIso;
+
+  // The legacy policy promised one report for a check-in on the cutover day.
+  // Convert that unclaimed, same-day promise into an expiring credit exactly
+  // once; later lazy migrations must not revive an already expired benefit.
+  if (date === cutoverDate && state.checkins[date] && !todayClaims.daily) {
+    rewardAddCredit(state, {
+      id: `legacy-cutover-${date}`,
+      reason: "legacy_cutover",
+      issued_at: nowIso,
+      expires_at: rewardBjtDayEndIso(date),
+    });
+  }
+  return true;
+}
+
+function rewardNextMilestone(state) {
+  const streak = Math.max(0, Math.floor(Number(state.current_streak) || 0));
+  if (!state.welcome_credit_issued) {
+    return { type: "welcome_credit", streak: 1, days: 1, report_credits: 1, expires_hours: 72 };
+  }
+  if (!state.first_d3_credit_issued) {
+    return { type: "d3_credit", streak: 3, days: Math.max(1, 3 - streak), report_credits: 1, expires_hours: 72 };
+  }
+  if (!state.first_d7_freeze_issued) {
+    return { type: "d7_freeze", streak: 7, days: Math.max(1, 7 - streak), freeze_cards: 1 };
+  }
+  const bonus = rewardNextBonus(streak);
+  return { type: "bonus_points", streak: bonus.streak, days: bonus.days, bonus_points: bonus.points };
+}
+
+function publicRewardStatus(state, date, nowMs = Date.now()) {
   const nextBonus = rewardNextBonus(state.current_streak);
+  const credits = rewardAvailableCredits(state, nowMs);
   return {
+    policy_version: REWARD_POLICY_VERSION,
     server_date: date,
     points: Math.max(0, Math.floor(Number(state.points) || 0)),
     points_report_cost: REWARD_POINTS_REPORT_COST,
     current_streak: Math.max(0, Math.floor(Number(state.current_streak) || 0)),
     longest_streak: Math.max(0, Math.floor(Number(state.longest_streak) || 0)),
     checked_in_today: Boolean(state.checked_in_today),
-    daily_available: Boolean(state.checked_in_today && !state.daily_claim),
+    credits: credits.map((credit) => ({
+      id: credit.id,
+      reason: credit.reason,
+      issued_at: credit.issued_at,
+      expires_at: credit.expires_at,
+    })),
+    credits_available: credits.length,
+    next_credit_expiry: credits.length ? credits[0].expires_at : "",
+    daily_available: Boolean(credits.length && !state.daily_claim),
     daily_claimed: Boolean(state.daily_claim),
     daily_report_id: String(state.daily_claim && state.daily_claim.report_id || ""),
     points_claimed_today: Boolean(state.points_claim),
     points_report_id: String(state.points_claim && state.points_claim.report_id || ""),
+    freeze_cards: Math.min(1, Math.max(0, Math.floor(Number(state.freeze_cards) || 0))),
     next_bonus: nextBonus,
+    next_milestone: rewardNextMilestone(state),
   };
+}
+
+function rewardPublicStatusFromState(state, date, nowMs = Date.now()) {
+  const claims = state.claims[date] && typeof state.claims[date] === "object" ? state.claims[date] : {};
+  const previousDate = new Date(`${date}T00:00:00+08:00`);
+  previousDate.setUTCDate(previousDate.getUTCDate() - 1);
+  const previousKey = analyticsBjtDateKey(previousDate.getTime());
+  const lastCheckinDate = String(state.last_checkin_date || "");
+  const effectiveStreak = lastCheckinDate === date || lastCheckinDate === previousKey
+    ? Math.max(0, Math.floor(Number(state.current_streak) || 0))
+    : 0;
+  return publicRewardStatus({
+    ...state,
+    current_streak: effectiveStreak,
+    checked_in_today: Boolean(state.checkins[date]),
+    daily_claim: claims.daily || null,
+    points_claim: claims.points || null,
+  }, date, nowMs);
 }
 
 async function rewardStatusForUser(env, user) {
   const email = normalizeEmail(user && user.email);
-  const date = analyticsBjtDateKey();
-  const { state } = await rewardStateSnapshotR2(env, email);
-  const claims = state.claims[date] && typeof state.claims[date] === "object" ? state.claims[date] : {};
-  return publicRewardStatus({
-    ...state,
-    checked_in_today: Boolean(state.checkins[date]),
-    daily_claim: claims.daily || null,
-    points_claim: claims.points || null,
-  }, date);
+  const nowMs = Date.now();
+  const date = analyticsBjtDateKey(nowMs);
+  const mutation = await mutateRewardStateR2(env, email, (state) => {
+    const migrated = migrateRewardStateV2(state, env, user, { date, nowMs });
+    return migrated ? { state, migrated: true } : { skip_write: true, migrated: false };
+  });
+  return rewardPublicStatusFromState(mutation.state, date, nowMs);
 }
 
 async function rewardCheckinForUser(env, user) {
   const email = normalizeEmail(user && user.email);
-  const date = analyticsBjtDateKey();
-  await mutateRewardStateR2(env, email, (state) => {
-    if (state.checkins[date]) return { skip_write: true, duplicate: true };
+  const nowMs = Date.now();
+  const nowIso = new Date(nowMs).toISOString();
+  const date = analyticsBjtDateKey(nowMs);
+  const mutation = await mutateRewardStateR2(env, email, (state) => {
+    const migrated = migrateRewardStateV2(state, env, user, { date, nowMs });
+    if (state.checkins[date]) {
+      return migrated ? { state, duplicate: true, migrated: true } : { skip_write: true, duplicate: true };
+    }
     const previousDate = new Date(`${date}T00:00:00+08:00`);
     previousDate.setUTCDate(previousDate.getUTCDate() - 1);
     const previousKey = analyticsBjtDateKey(previousDate.getTime());
     const streak = state.last_checkin_date === previousKey ? state.current_streak + 1 : 1;
     const bonus = rewardBonusForStreak(streak);
+    const firstLifetimeCheckin = state.longest_streak === 0 && Object.keys(state.checkins).length === 0;
     state.points += REWARD_BASE_POINTS + bonus;
     state.current_streak = streak;
     state.longest_streak = Math.max(state.longest_streak, streak);
     state.last_checkin_date = date;
     state.checkins[date] = { base_points: REWARD_BASE_POINTS, bonus_points: bonus, streak_after: streak };
+
+    if (!state.welcome_credit_issued && firstLifetimeCheckin && rewardAccountEligibleForWelcome(env, user)) {
+      rewardAddCredit(state, {
+        id: "welcome-v2",
+        reason: "welcome_d1",
+        issued_at: nowIso,
+        expires_at: new Date(nowMs + REWARD_CREDIT_TTL_MS).toISOString(),
+      });
+      state.welcome_credit_issued = true;
+    }
+    if (streak === 3 && !state.first_d3_credit_issued) {
+      rewardAddCredit(state, {
+        id: "milestone-d3-v2",
+        reason: "streak_d3",
+        issued_at: nowIso,
+        expires_at: new Date(nowMs + REWARD_CREDIT_TTL_MS).toISOString(),
+      });
+      state.first_d3_credit_issued = true;
+    }
+    if (streak === 7 && !state.first_d7_freeze_issued) {
+      state.freeze_cards = Math.min(1, state.freeze_cards + 1);
+      state.first_d7_freeze_issued = true;
+    }
     return { state, duplicate: false };
   });
-  return rewardStatusForUser(env, user);
+  // Build the response from the state that won the conditional write. A
+  // successful check-in must not pay for a second R2 read before responding.
+  return rewardPublicStatusFromState(mutation.state, date, nowMs);
 }
 
-async function rewardClaimForUser(env, user, kind, report) {
+async function rewardClaimForUser(env, user, kind, report, ctx) {
   const email = normalizeEmail(user && user.email);
-  const date = analyticsBjtDateKey();
+  const nowMs = Date.now();
+  const nowIso = new Date(nowMs).toISOString();
+  const date = analyticsBjtDateKey(nowMs);
   const reportId = String(report && report.id || "");
   const title = reportDisplayTitle(report).slice(0, 320);
   const mutation = await mutateRewardStateR2(env, email, (state) => {
+    const migrated = migrateRewardStateV2(state, env, user, { date, nowMs });
     const todayClaims = state.claims[date] && typeof state.claims[date] === "object" ? state.claims[date] : {};
-    if (todayClaims[kind]) return { skip_write: true, duplicate: true, claim: todayClaims[kind] };
-    if (kind === "daily" && !state.checkins[date]) throw new Error("请先完成今日签到。");
+    if (todayClaims[kind]) {
+      return migrated
+        ? { state, duplicate: true, claim: todayClaims[kind] }
+        : { skip_write: true, duplicate: true, claim: todayClaims[kind] };
+    }
+    if (state.grants && state.grants[reportId]) {
+      return migrated
+        ? { state, already_owned: true }
+        : { skip_write: true, already_owned: true };
+    }
+    const credit = kind === "daily" ? rewardAvailableCredits(state, nowMs)[0] : null;
+    if (kind === "daily" && !credit) throw new Error("当前没有可用报告券。");
     if (kind === "points" && state.points < REWARD_POINTS_REPORT_COST) throw new Error("积分不足。");
     const pointsSpent = kind === "points" ? REWARD_POINTS_REPORT_COST : 0;
     state.points -= pointsSpent;
+    if (credit) {
+      state.credits = state.credits.map((row) => row.id === credit.id ? {
+        ...row,
+        claimed_at: nowIso,
+        report_id: reportId,
+      } : row);
+    }
     state.claims[date] = {
       ...todayClaims,
-      [kind]: { report_id: reportId, report_title: title, points_spent: pointsSpent, claimed_at: new Date().toISOString() },
+      [kind]: {
+        report_id: reportId,
+        report_title: title,
+        points_spent: pointsSpent,
+        credit_id: credit && credit.id || "",
+        claimed_at: nowIso,
+      },
     };
     state.grants[reportId] = {
       report_id: reportId,
       report_title: title,
       reward_kind: kind,
-      granted_at: new Date().toISOString(),
+      credit_id: credit && credit.id || "",
+      granted_at: nowIso,
     };
     return { state, duplicate: false, claim: state.claims[date][kind] };
   });
   const claim = mutation.result && mutation.result.claim;
+  if (mutation.result && mutation.result.already_owned) {
+    return {
+      result: { already_owned: true, claimed: false, report_id: reportId },
+      status: rewardPublicStatusFromState(mutation.state, date, nowMs),
+    };
+  }
   if (mutation.result && mutation.result.duplicate) {
     return {
       result: {
@@ -2250,22 +2473,22 @@ async function rewardClaimForUser(env, user, kind, report) {
         already_claimed_today: true,
         report_id: String(claim && claim.report_id || ""),
       },
-      status: await rewardStatusForUser(env, user),
+      status: rewardPublicStatusFromState(mutation.state, date, nowMs),
     };
   }
   // The atomically committed reward grant is the authorization source. The
   // existing purchase record remains a compatibility mirror and may repair on
   // a later request without changing the daily slot or points balance.
-  await saveReportPurchase(env, {
+  rewardWaitUntil(ctx, saveReportPurchase(env, {
       email,
       report_id: reportId,
       source: "catalog",
       title,
       status: "active",
-    }).catch(() => null);
+    }));
   return {
     result: { duplicate: Boolean(mutation.result && mutation.result.duplicate), claimed: true, report_id: reportId },
-    status: await rewardStatusForUser(env, user),
+    status: rewardPublicStatusFromState(mutation.state, date, nowMs),
   };
 }
 
@@ -2285,13 +2508,18 @@ async function rewardGrantForUser(env, email, reportId, source) {
 
 function rewardRequestErrorStatus(error) {
   const text = String(error && error.message || "");
-  if (/daily check-in required|先完成今日签到/i.test(text)) return 409;
+  if (/report credit unavailable|没有可用报告券/i.test(text)) return 409;
   if (/insufficient reward points|积分不足/i.test(text)) return 409;
   if (/concurrently|changed concurrently/i.test(text)) return 409;
   return 503;
 }
 
-async function handleRewards(request, env) {
+function rewardWaitUntil(ctx, promise) {
+  const guarded = Promise.resolve(promise).catch(() => null);
+  if (ctx && typeof ctx.waitUntil === "function") ctx.waitUntil(guarded);
+}
+
+async function handleRewards(request, env, ctx) {
   let user;
   try {
     user = await currentUserFromRequest(env, request);
@@ -2301,18 +2529,18 @@ async function handleRewards(request, env) {
   try {
     if (request.method === "GET") return jsonResponse(request, env, 200, await rewardStatusForUser(env, user));
     const status = await rewardCheckinForUser(env, user);
-    await insertUsageEvent(env, normalizeEmail(user.email), "reward_checkin", {
+    rewardWaitUntil(ctx, insertUsageEvent(env, normalizeEmail(user.email), "reward_checkin", {
       date: status.server_date,
       current_streak: status.current_streak,
       points: status.points,
-    }).catch(() => null);
+    }));
     return jsonResponse(request, env, 200, status);
   } catch (error) {
     return jsonResponse(request, env, rewardRequestErrorStatus(error), { detail: error.message || "签到暂时不可用。" });
   }
 }
 
-async function handleRewardClaim(request, env) {
+async function handleRewardClaim(request, env, ctx) {
   let user;
   try {
     user = await currentUserFromRequest(env, request);
@@ -2346,18 +2574,18 @@ async function handleRewardClaim(request, env) {
         rewards: await rewardStatusForUser(env, user),
       });
     }
-    const claimed = await rewardClaimForUser(env, user, kind, report);
-    await insertUsageEvent(env, normalizeEmail(user.email), "reward_claim", {
+    const claimed = await rewardClaimForUser(env, user, kind, report, ctx);
+    rewardWaitUntil(ctx, insertUsageEvent(env, normalizeEmail(user.email), "reward_claim", {
       date: claimed.status.server_date,
       reward_kind: kind,
       report_id: reportId,
-    }).catch(() => null);
+    }));
     return jsonResponse(request, env, 200, { ...claimed.result, rewards: claimed.status });
   } catch (error) {
     const status = rewardRequestErrorStatus(error);
     const message = String(error && error.message || "");
-    const detail = /daily check-in required/i.test(message)
-      ? "请先完成今日签到。"
+    const detail = /report credit unavailable|没有可用报告券/i.test(message)
+      ? "当前没有可用报告券。"
       : (/insufficient reward points/i.test(message) ? "积分不足。" : (message || "报告领取暂时不可用。"));
     return jsonResponse(request, env, status, { detail });
   }
@@ -11397,7 +11625,7 @@ function fallbackReportChatAnswer(question, candidates, context = "report") {
   return `我找到了以下优先资料：\n${top}\n\n推荐顺序综合考虑了问题匹配度、时效与机构吸引力。`;
 }
 
-async function handleReportChat(request, env) {
+async function handleReportChat(request, env, ctx) {
   const requestHint = crypto.randomUUID().replace(/-/gu, "").slice(0, 10).toUpperCase();
   let user;
   try {
@@ -11473,11 +11701,11 @@ async function handleReportChat(request, env) {
     // allowance. DeepSeek transport errors use the deterministic fallback and
     // still count, while any earlier lookup or processing failure does not.
     const usage = await reserveReportChatTurn(env, user);
-    await insertUsageEvent(env, normalizeEmail(user.email), "report_chat", {
+    rewardWaitUntil(ctx, insertUsageEvent(env, normalizeEmail(user.email), "report_chat", {
       candidate_count: candidates.length,
       context,
       question_hash: await sha256Hex(question),
-    }).catch(() => null);
+    }));
     return privateJsonResponse(request, env, 200, {
       answer,
       recommendations: ordered,
@@ -16483,11 +16711,11 @@ export default {
     }
 
     if (pathname === "/rewards" && (request.method === "GET" || request.method === "POST")) {
-      return handleRewards(request, env);
+      return handleRewards(request, env, ctx);
     }
 
     if (pathname === "/rewards/claim" && request.method === "POST") {
-      return handleRewardClaim(request, env);
+      return handleRewardClaim(request, env, ctx);
     }
 
     if (pathname === "/course/access" && request.method === "GET") {
@@ -16499,7 +16727,7 @@ export default {
     }
 
     if (pathname === "/report-chat" && request.method === "POST") {
-      return handleReportChat(request, env);
+      return handleReportChat(request, env, ctx);
     }
 
     if (pathname === "/charts" && request.method === "GET") {

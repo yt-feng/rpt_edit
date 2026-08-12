@@ -6,31 +6,17 @@ the neutral Portal Suite identity and the existing contact placeholders.
 
 ## Daily rewards
 
-The Worker is the only authority for reward dates, balances, streaks, and
-claims. Dates use UTC+8 server time. The browser never submits a date or a
+The active policy is defined in [Reward Engagement v2](reward-engagement-v2-architecture.md).
+The first check-in gives a 72-hour welcome report credit, the first three-day
+streak gives a second 72-hour credit, and ordinary later check-ins award points
+rather than a daily report. The Worker is the only authority for UTC+8 dates,
+balances, streaks, credits, and claims; the browser never submits a date or a
 points balance.
-
-- A successful daily check-in awards 10 points.
-- The 3rd consecutive day adds 5 points, the 7th adds 20, and the 30th adds
-  100. The highest applicable bonus is used.
-- A check-in unlocks one ordinary catalog PDF for that server date. It cannot
-  be banked.
-- 70 points unlock one additional ordinary catalog PDF. At most one points
-  claim is allowed per server date.
-- A reward can only target a current catalog item with a PDF descriptor.
-- Accounts that already have access do not consume a reward.
-
-Reward state is stored under the private R2 account namespace and updated with
-ETag compare-and-swap. This makes duplicate or concurrent check-ins and claims
-idempotent without requiring a same-release database migration. The same
-conditional write records a permanent report grant alongside the daily claim,
-so there is no cross-object rollback window. The existing `report_purchases`
-record is a compatibility mirror: its failure cannot consume a reward without
-granting access, and a later request can still use the atomic reward grant.
 
 API contract:
 
-- `GET /rewards`: current balance, streak, today's check-in and claim state.
+- `GET /rewards`: current balance, effective streak, credits, today's check-in
+  and claim state.
 - `POST /rewards`: idempotent daily check-in.
 - `POST /rewards/claim`: `{ "reward_kind": "daily|points", "report_id": "..." }`.
 

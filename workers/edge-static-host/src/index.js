@@ -1,5 +1,31 @@
 const ALLOWED_PREFIX = /^edge-static\/releases\/[0-9a-f]{32}\/$/;
 
+const CACHE_POLICY = Object.freeze({
+  html: Object.freeze({
+    browser: "public, max-age=60",
+    edge: "public, max-age=60, stale-while-revalidate=120, stale-if-error=86400",
+  }),
+  runtimeJson: Object.freeze({
+    browser: "public, max-age=300",
+    edge: "public, max-age=300, stale-while-revalidate=300, stale-if-error=86400",
+  }),
+  seo: Object.freeze({
+    browser: "public, max-age=300",
+    edge: "public, max-age=900, stale-while-revalidate=3600, stale-if-error=86400",
+  }),
+  immutable: Object.freeze({
+    browser: "public, max-age=31536000, immutable",
+    edge: "public, max-age=31536000, immutable",
+  }),
+  shortAsset: Object.freeze({
+    browser: "public, max-age=300",
+    edge: "public, max-age=900, stale-while-revalidate=3600, stale-if-error=86400",
+  }),
+});
+
+const VERSIONABLE_ASSET = /\.(?:avif|css|gif|ico|jpe?g|js|mjs|png|svg|ttf|wasm|webp|woff2?)$/i;
+const CONTENT_HASH = /^[0-9a-f]{8,64}$/i;
+
 function safeRelativePath(pathname) {
   let decoded;
   try {
@@ -48,18 +74,39 @@ function fallbackContentType(path) {
   return types[extension.toLowerCase()] || "application/octet-stream";
 }
 
-function cacheControlFor(path) {
-  if (/\.(html|json|xml|txt)$/i.test(path)) return "public, max-age=0, must-revalidate";
-  return "public, max-age=3600";
+function isVersionedAsset(path, url) {
+  if (!VERSIONABLE_ASSET.test(path)) return false;
+  const segments = path.split("/");
+  const filename = segments.pop() || "";
+  const stem = filename.replace(/\.[^.]+$/, "");
+  if (segments.some((segment) => CONTENT_HASH.test(segment))) return true;
+  if (stem.split(/[._-]/).some((part) => CONTENT_HASH.test(part))) return true;
+  const versions = url.searchParams.getAll("v");
+  return versions.length === 1 && CONTENT_HASH.test(versions[0]);
 }
 
-function responseHeaders(object, path) {
+function cachePolicyFor(path, url) {
+  const lower = path.toLowerCase();
+  if (lower.endsWith(".html")) return CACHE_POLICY.html;
+  if (lower.endsWith(".json")) return CACHE_POLICY.runtimeJson;
+  if (lower.endsWith(".xml") || lower.endsWith(".txt")) return CACHE_POLICY.seo;
+  if (isVersionedAsset(path, url)) return CACHE_POLICY.immutable;
+  return CACHE_POLICY.shortAsset;
+}
+
+function responseHeaders(object, path, url) {
   const headers = new Headers();
   object.writeHttpMetadata(headers);
   headers.set("content-type", headers.get("content-type") || fallbackContentType(path));
-  headers.set("cache-control", headers.get("cache-control") || cacheControlFor(path));
-  headers.set("etag", object.httpEtag);
-  headers.set("last-modified", object.uploaded.toUTCString());
+  // The active Worker binding changes between immutable releases, so edge policy
+  // is authoritative even when an older object carries legacy upload metadata.
+  const cachePolicy = cachePolicyFor(path, url);
+  headers.set("cache-control", cachePolicy.browser);
+  headers.set("cloudflare-cdn-cache-control", cachePolicy.edge);
+  if (object.httpEtag) headers.set("etag", object.httpEtag);
+  if (object.uploaded instanceof Date && Number.isFinite(object.uploaded.getTime())) {
+    headers.set("last-modified", object.uploaded.toUTCString());
+  }
   headers.set("accept-ranges", "bytes");
   headers.set("access-control-allow-origin", "*");
   headers.set("x-content-type-options", "nosniff");
@@ -69,21 +116,117 @@ function responseHeaders(object, path) {
   return headers;
 }
 
-async function resolveObject(env, prefix, relative, headOnly, request) {
+function splitEtags(value) {
+  const values = [];
+  let start = 0;
+  let quoted = false;
+  for (let index = 0; index < value.length; index += 1) {
+    const character = value[index];
+    if (character === '"') quoted = !quoted;
+    if (character === "," && !quoted) {
+      values.push(value.slice(start, index).trim());
+      start = index + 1;
+    }
+  }
+  values.push(value.slice(start).trim());
+  return values.filter(Boolean);
+}
+
+function weakEtag(value) {
+  const trimmed = String(value || "").trim();
+  return /^W\//i.test(trimmed) ? trimmed.slice(2).trim() : trimmed;
+}
+
+function isNotModified(request, object) {
+  const ifNoneMatch = request.headers.get("if-none-match");
+  if (ifNoneMatch !== null) {
+    const candidates = splitEtags(ifNoneMatch);
+    if (candidates.includes("*")) return true;
+    if (!object.httpEtag) return false;
+    const current = weakEtag(object.httpEtag);
+    return candidates.some((candidate) => weakEtag(candidate) === current);
+  }
+
+  const ifModifiedSince = request.headers.get("if-modified-since");
+  if (!ifModifiedSince || !(object.uploaded instanceof Date)) return false;
+  const requestedTime = Date.parse(ifModifiedSince);
+  const uploadedTime = object.uploaded.getTime();
+  if (!Number.isFinite(requestedTime) || !Number.isFinite(uploadedTime)) return false;
+  // HTTP dates have one-second precision. Compare the same value advertised in
+  // Last-Modified instead of treating sub-second storage metadata as newer.
+  return Math.floor(uploadedTime / 1000) <= Math.floor(requestedTime / 1000);
+}
+
+function isIfRangeMatch(request, object) {
+  const value = String(request.headers.get("if-range") || "").trim();
+  if (!value) return true;
+
+  // If-Range uses strong entity-tag comparison. A weak validator must fall
+  // back to the complete representation even if its opaque value matches.
+  if (value.startsWith('"') || /^W\//i.test(value)) {
+    const current = String(object.httpEtag || "").trim();
+    return Boolean(current) && !/^W\//i.test(value) && !/^W\//i.test(current) && value === current;
+  }
+
+  if (!(object.uploaded instanceof Date)) return false;
+  const requestedTime = Date.parse(value);
+  const uploadedTime = object.uploaded.getTime();
+  if (!Number.isFinite(requestedTime) || !Number.isFinite(uploadedTime)) return false;
+  return Math.floor(uploadedTime / 1000) <= Math.floor(requestedTime / 1000);
+}
+
+function parseByteRange(value, size) {
+  if (!Number.isSafeInteger(size) || size < 0) return null;
+  const match = /^bytes=(\d*)-(\d*)$/i.exec(String(value || "").trim());
+  if (!match || (!match[1] && !match[2]) || size === 0) return null;
+
+  let start;
+  let end;
+  if (!match[1]) {
+    const suffix = Number(match[2]);
+    if (!Number.isSafeInteger(suffix) || suffix <= 0) return null;
+    start = Math.max(0, size - suffix);
+    end = size - 1;
+  } else {
+    start = Number(match[1]);
+    end = match[2] ? Number(match[2]) : size - 1;
+    if (!Number.isSafeInteger(start) || !Number.isSafeInteger(end) || start < 0 || end < start || start >= size) {
+      return null;
+    }
+    end = Math.min(end, size - 1);
+  }
+  return { offset: start, length: end - start + 1 };
+}
+
+async function resolveObject(env, prefix, relative, headOnly, request, allowRange = true) {
   for (const candidate of candidatePaths(relative)) {
     const key = prefix + candidate;
-    try {
-      const object = headOnly
-        ? await env.STATIC_BUCKET.head(key)
-        : await env.STATIC_BUCKET.get(
-            key,
-            request.headers.has("Range") ? { range: request.headers } : undefined,
-          );
+    const rangeRequested = allowRange && !headOnly && request.headers.has("Range");
+    if (headOnly) {
+      const object = await env.STATIC_BUCKET.head(key);
       if (object) return { object, candidate };
-    } catch {
-      if (request.headers.has("Range")) return { rangeError: true };
-      throw new Error("object read failed");
+      continue;
     }
+    if (!rangeRequested) {
+      const object = await env.STATIC_BUCKET.get(key);
+      if (object) return { object, candidate };
+      continue;
+    }
+
+    // R2 does not evaluate If-Range. Read metadata first so a stale validator
+    // yields the complete 200 representation and only a genuinely invalid byte
+    // range becomes 416. Storage errors are deliberately not rewritten as 416.
+    const metadata = await env.STATIC_BUCKET.head(key);
+    if (!metadata) continue;
+    if (request.headers.has("If-Range") && !isIfRangeMatch(request, metadata)) {
+      const object = await env.STATIC_BUCKET.get(key);
+      if (object) return { object, candidate };
+      continue;
+    }
+    const range = parseByteRange(request.headers.get("Range"), metadata.size);
+    if (!range) return { rangeError: true, object: metadata, candidate };
+    const object = await env.STATIC_BUCKET.get(key, { range });
+    if (object) return { object, candidate };
   }
   return null;
 }
@@ -104,7 +247,7 @@ export default {
         headers: {
           "access-control-allow-origin": "*",
           "access-control-allow-methods": "GET, HEAD, OPTIONS",
-          "access-control-allow-headers": "Range, If-None-Match, If-Modified-Since",
+          "access-control-allow-headers": "Range, If-Range, If-None-Match, If-Modified-Since",
           "x-origin-class": "edge-static",
         },
       });
@@ -134,15 +277,22 @@ export default {
     const headOnly = request.method === "HEAD";
     let resolved = await resolveObject(env, prefix, relative, headOnly, request);
     if (resolved && resolved.rangeError) {
+      const headers = resolved.object
+        ? responseHeaders(resolved.object, resolved.candidate, url)
+        : new Headers({ "x-origin-class": "edge-static" });
+      headers.set("content-range", `bytes */${resolved.object ? resolved.object.size : "*"}`);
+      headers.delete("content-length");
       return new Response(null, {
         status: 416,
-        headers: { "content-range": "bytes */*", "x-origin-class": "edge-static" },
+        headers,
       });
     }
 
     let status = 200;
     if (!resolved) {
-      resolved = await resolveObject(env, prefix, "404.html", headOnly, request);
+      // A Range for a missing URL applies to the missing resource, not to the
+      // site's fallback page. Return the complete 404 representation.
+      resolved = await resolveObject(env, prefix, "404.html", headOnly, request, false);
       status = 404;
     }
     if (!resolved) {
@@ -156,8 +306,12 @@ export default {
     }
 
     const { object, candidate } = resolved;
-    const headers = responseHeaders(object, candidate);
-    if (!headOnly && request.headers.has("Range") && object.range && typeof object.range.offset === "number") {
+    const headers = responseHeaders(object, candidate, url);
+    if (status === 200 && isNotModified(request, object)) {
+      headers.delete("content-length");
+      return new Response(null, { status: 304, headers });
+    }
+    if (status === 200 && !headOnly && request.headers.has("Range") && object.range && typeof object.range.offset === "number") {
       const start = object.range.offset;
       const length = object.range.length;
       headers.set("content-range", "bytes " + start + "-" + (start + length - 1) + "/" + object.size);

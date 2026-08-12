@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>KC桌面 | 中文金融研报检索与报告索引</title>
-    <meta name="description" content="KC桌面提供中文金融研报检索与报告索引，覆盖宏观策略、行业分析、公司研究、财报、招股书、国际智库和市场观点。">
-    <meta name="keywords" content="KC桌面,金融研报,宏观策略,行业研究,公司研究,投行报告,国际智库,市场观点,中文研报检索">
+    <meta name="description" content="KC桌面面向全球中文用户提供金融研报检索与报告索引，覆盖投行研报、宏观策略、行业分析、公司研究、财报、招股书、国际智库和市场观点。">
+    <meta name="keywords" content="KC桌面,金融研报,金融研報,投行研报,投資銀行研報,宏观策略,總體經濟研究,行业研究,公司研究,股票研究,国际智库,中文研报检索,Chinese financial research,investment bank research">
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
     <meta name="msvalidate.01" content="__SEARCH_VERIFY_MS__">
     <meta name="sogou_site_verification" content="__SEARCH_VERIFY_SOGOU__">
@@ -19,6 +19,12 @@
     <meta property="og:title" content="KC桌面 | 中文金融研报检索与报告索引">
     <meta property="og:description" content="KC桌面中文金融研报检索与报告索引，覆盖宏观策略、行业分析、公司研究、财报、招股书、国际智库和市场观点。">
     <meta property="og:url" content="https://portal.example.invalid/">
+    <meta property="og:image" content="https://portal.example.invalid/assets/social-card.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="KC桌面">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://portal.example.invalid/assets/social-card.jpg">
     <link rel="stylesheet" href="assets/styles.css?v=portal-suite-20260726b">
     <script type="application/ld+json">
       {
@@ -49,6 +55,8 @@
       <div class="topbar-actions">
         <div class="catalog-meta" id="catalogMeta">Loading catalog...</div>
         <a class="topbar-link" href="blog/">Blog</a>
+        <a class="topbar-link" href="courses.html">Course</a>
+        <a class="topbar-link" href="charts">Charts</a>
         <a id="newsfeedNav" class="topbar-link" href="newsfeed.html" hidden>Newsfeed</a>
         <button id="accountGate" class="account-button" type="button">登录</button>
         <button id="adminGate" class="admin-gate" type="button" aria-label="Private tools"></button>
@@ -59,12 +67,16 @@
       <section class="search-panel" aria-labelledby="searchTitle">
         <div class="search-copy">
           <h1 id="searchTitle">KC桌面</h1>
-          <p class="subtle">KC桌面提供研究笔记与金融研报的快速检索和索引。</p>
+          <p class="subtle">KC桌面面向全球中文用户提供研究笔记与金融研报索引，支持简体中文、繁體中文、英文机构名、公司名与 ticker 检索。</p>
         </div>
         <label class="search-box search-main">
           <span>Search</span>
           <input id="searchInput" type="search" autocomplete="off" placeholder="Topic, company, ticker, title, or keyword">
         </label>
+        <div class="search-readiness" id="searchReadiness" role="status" aria-live="polite">
+          <span class="search-readiness-dot" aria-hidden="true"></span>
+          <span id="searchReadinessText">正在载入最新报告，完整目录会在后台继续补齐…</span>
+        </div>
         <div class="filter-grid" aria-label="Report filters">
           <label class="filter-control">
             <span>Institution</span>
@@ -85,10 +97,10 @@
           <label class="filter-control">
             <span>Search In</span>
             <select id="scopeFilter">
-              <option value="all">Everything</option>
+              <option value="all">Everything (fast)</option>
               <option value="title">Title only</option>
               <option value="catalog">Catalog fields</option>
-              <option value="fulltext">Document text</option>
+              <option value="fulltext">Document text (large index)</option>
               <option value="charts">图表文字</option>
             </select>
           </label>
@@ -128,10 +140,19 @@
         </div>
       </section>
 
-      <section class="results-section" aria-live="polite">
+      <section class="search-source-progress" id="searchSourceProgress" aria-live="polite" hidden>
+        <div class="search-source-progress-heading">
+          <strong>正在补充全部报告来源</strong>
+          <span id="searchSourceProgressSummary"></span>
+        </div>
+        <div class="search-source-progress-track" aria-hidden="true"><span id="searchSourceProgressBar"></span></div>
+        <div class="search-source-progress-items" id="searchSourceProgressItems"></div>
+      </section>
+
+      <section class="results-section">
         <div class="results-heading">
           <h2>Reports</h2>
-          <span id="resultCount">0 items</span>
+          <span id="resultCount" role="status" aria-live="polite" aria-atomic="true">正在载入…</span>
         </div>
         <div class="pagination-bar" aria-label="Report pages">
           <button id="prevPage" type="button">Previous</button>
@@ -146,7 +167,21 @@
           </label>
           <button id="nextPage" type="button">Next</button>
         </div>
-        <div id="results" class="results-list"></div>
+        <div id="results" class="results-list is-loading" aria-busy="true">
+          <div class="report-skeleton" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div class="report-skeleton" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div class="report-skeleton" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div class="report-skeleton" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <p class="sr-only">正在载入报告目录</p>
+        </div>
       </section>
 
       <section class="external-section chart-search-section" id="chartSearchSection" aria-labelledby="chartSearchTitle" hidden>
