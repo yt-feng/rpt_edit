@@ -11125,10 +11125,33 @@ function courseChatPublicCandidate(item, score) {
   };
 }
 
+function courseChatCandidateCompare(left, right) {
+  return right.score - left.score
+    || String(right.item.date || "").localeCompare(String(left.item.date || ""))
+    || left.item.name.localeCompare(right.item.name, "zh-CN");
+}
+
+function courseChatKeepTopCandidate(entries, entry) {
+  let low = 0;
+  let high = entries.length;
+  while (low < high) {
+    const middle = (low + high) >>> 1;
+    if (courseChatCandidateCompare(entry, entries[middle]) < 0) high = middle;
+    else low = middle + 1;
+  }
+  if (low >= REPORT_CHAT_MAX_CANDIDATES && entries.length >= REPORT_CHAT_MAX_CANDIDATES) return;
+  entries.splice(low, 0, entry);
+  if (entries.length > REPORT_CHAT_MAX_CANDIDATES) entries.pop();
+}
+
 async function courseChatCandidates(env, question) {
   const directory = await loadCourseDirectory(env);
   const tokens = reportChatQueryTokens(question);
-  const scored = [];
+  // The private catalog currently contains tens of thousands of files. Keep a
+  // bounded ranking window instead of retaining and sorting one entry per file;
+  // the latter can push a Worker isolate over its memory ceiling.
+  const matched = [];
+  const fallback = [];
   for (const item of directory.items) {
     const course = COURSE_DIRECTORY_COURSES.get(item.course_id);
     const text = normalizeText([
@@ -11141,7 +11164,8 @@ async function courseChatCandidates(env, question) {
       ...item.folders,
       ...item.entities,
     ].filter(Boolean).join(" "));
-    let score = courseChatAttractionScore(item) * 2;
+    const attractionScore = courseChatAttractionScore(item);
+    let score = attractionScore * 2;
     let matches = 0;
     for (const token of tokens) {
       if (!text.includes(token)) continue;
@@ -11150,13 +11174,12 @@ async function courseChatCandidates(env, question) {
     }
     if (matches) score += Math.min(8, matches * 2);
     if (item.file_type === "pdf" || item.file_type === "spreadsheet") score += 1;
-    scored.push({ item, score, matches });
+    const entry = { item, score };
+    if (matches) courseChatKeepTopCandidate(matched, entry);
+    else if (!matched.length) courseChatKeepTopCandidate(fallback, entry);
   }
-  const matched = scored.some((entry) => entry.matches) ? scored.filter((entry) => entry.matches) : scored;
-  matched.sort((left, right) => right.score - left.score
-    || String(right.item.date || "").localeCompare(String(left.item.date || ""))
-    || left.item.name.localeCompare(right.item.name, "zh-CN"));
-  return matched.slice(0, REPORT_CHAT_MAX_CANDIDATES).map(({ item, score }) => courseChatPublicCandidate(item, score));
+  const selected = matched.length ? matched : fallback;
+  return selected.map(({ item, score }) => courseChatPublicCandidate(item, score));
 }
 
 async function reportChatUsageKey(user, date) {
