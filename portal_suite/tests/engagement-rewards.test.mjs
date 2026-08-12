@@ -849,6 +849,56 @@ test("course chat uses the private course directory, enforces membership, and re
   assert.equal(allowed.response.headers.get("cache-control"), "private, no-store, max-age=0");
 });
 
+test("course chat falls back to grounded recommendations when DeepSeek is unavailable", async () => {
+  const bucket = new MemoryR2();
+  bucket.seed("edge-static/runtime-data/catalog.json", { items: [] });
+  bucket.seed("_course-directory/v1/directory.json", {
+    schema_version: 1,
+    generated_at: "2026-08-12T10:00:00+08:00",
+    items: [{
+      id: "file-course-chat-fallback-01",
+      course_id: "fin-01",
+      name: "高盛并购估值建模案例",
+      folders: ["并购", "估值建模"],
+      extension: "xlsx",
+      size_label: "3.8 MB",
+      date: "2026-08-12",
+      entities: ["高盛"],
+    }],
+  });
+  const env = { ...envFor(bucket), DEEPSEEK_API_KEY: "configured-test-key" };
+  const token = await register(env);
+  const email = "reward-reader@example.com";
+  bucket.seed(`_account/entitlements/${encodeURIComponent(email)}`, {
+    id: "entitlement-course-chat-fallback",
+    email,
+    plan: "annual",
+    status: "active",
+    lifetime: false,
+    current_period_end: new Date(Date.now() + 31 * 24 * 60 * 60 * 1000).toISOString(),
+    updated_at: new Date().toISOString(),
+  });
+
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async (input) => {
+    assert.match(String(input), /^https:\/\/api\.deepseek\.com\/chat\/completions$/u);
+    throw new Error("injected DeepSeek transport failure");
+  };
+  try {
+    const result = await jsonRequest(env, "/report-chat", {
+      method: "POST",
+      headers: { "content-type": "application/json", ...bearer(token) },
+      body: JSON.stringify({ context: "course", question: "高盛 并购 估值建模" }),
+    });
+    assert.equal(result.response.status, 200, JSON.stringify(result.data));
+    assert.match(result.data.answer, /高盛并购估值建模案例/u);
+    assert.equal(result.data.recommendations[0].id, "file-course-chat-fallback-01");
+    assert.equal(result.data.recommendations[0].attraction_score, 5);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
 test("chart gallery exposes only opaque image ids and streams immutable images", async () => {
   const bucket = new MemoryR2();
   const imageId = "b".repeat(64);

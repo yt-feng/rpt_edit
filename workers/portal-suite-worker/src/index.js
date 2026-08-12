@@ -10946,26 +10946,26 @@ async function deepseekJson(env, messages, options = {}) {
   if (!apiKey) return null;
   const baseUrl = cleanEnv(env.DEEPSEEK_BASE_URL) || "https://api.deepseek.com";
   const model = cleanEnv(env.DEEPSEEK_MODEL) || "deepseek-v4-flash";
-  const response = await fetchWithTimeout(`${baseUrl.replace(/\/+$/, "")}/chat/completions`, {
-    method: "POST",
-    headers: {
-      "Authorization": `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      model,
-      thinking: { type: "disabled" },
-      messages,
-      temperature: options.temperature ?? 0.2,
-      stream: false,
-      response_format: { type: "json_object" },
-    }),
-  }, options.timeout || 45000);
-  if (!response.ok) return null;
-  const payload = await response.json();
-  const content = payload && payload.choices && payload.choices[0] && payload.choices[0].message && payload.choices[0].message.content;
-  if (!content) return null;
   try {
+    const response = await fetchWithTimeout(`${baseUrl.replace(/\/+$/, "")}/chat/completions`, {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model,
+        thinking: { type: "disabled" },
+        messages,
+        temperature: options.temperature ?? 0.2,
+        stream: false,
+        response_format: { type: "json_object" },
+      }),
+    }, options.timeout || 45000);
+    if (!response.ok) return null;
+    const payload = await response.json();
+    const content = payload && payload.choices && payload.choices[0] && payload.choices[0].message && payload.choices[0].message.content;
+    if (!content) return null;
     return extractJsonObject(content);
   } catch (_error) {
     return null;
