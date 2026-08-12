@@ -131,7 +131,7 @@ test("private publish validator is syntactically valid and rejects contact-shape
   assert.equal(source.includes("com|cn|net|org|io|co|edu|gov|info|biz|me"), true);
 });
 
-test("private publisher derives and verifies a bounded Course Chat index", async () => {
+test("private publisher verifies direct Course Chat objects before atomically publishing its manifest", async () => {
   const workflow = await readFile(path.join(root, ".github", "workflows", "course-directory-private-publish.yml"), "utf8");
   const blocks = [...workflow.matchAll(/python - <<'PY'\n([\s\S]*?)\n {10}PY/gu)]
     .map((match) => match[1].split("\n").map((line) => line.startsWith("          ") ? line.slice(10) : line).join("\n"));
@@ -146,13 +146,21 @@ test("private publisher derives and verifies a bounded Course Chat index", async
   assert.match(workflow, /^ {12}scripts\/build_course_chat_index\.py$/mu);
   assert.match(publisher, /from scripts\.build_course_chat_index import \(/u);
   assert.match(publisher, /CHAT_OBJECT_KEY = "_course-directory\/v1\/chat-index\.json"/u);
+  assert.match(publisher, /CHAT_LOOKUP_MANIFEST_KEY = "_course-directory\/v2\/chat-lookup\/manifest\.json"/u);
   assert.match(publisher, /build_course_chat_index\(safe_payload\)/u);
-  assert.match(publisher, /\(CHAT_OBJECT_KEY, chat_output, "course-chat-retrieval"\)/u);
-  assert.match(publisher, /\(DIRECTORY_OBJECT_KEY, directory_output, "course-member-directory"\)/u);
+  assert.match(publisher, /build_course_chat_lookup\(safe_payload\)/u);
+  assert.match(publisher, /\(CHAT_OBJECT_KEY, chat_output, "application\/json; charset=utf-8", "course-chat-retrieval"\)/u);
+  assert.match(publisher, /\(DIRECTORY_OBJECT_KEY, directory_output, "application\/json; charset=utf-8", "course-member-directory"\)/u);
   assert.equal((publisher.match(/CacheControl="private, no-store, max-age=0"/gu) || []).length, 1);
-  assert.match(publisher, /for object_key, body, purpose in objects:/u);
+  assert.match(publisher, /for object_key, body, content_type, purpose in immutable_objects:/u);
+  assert.match(publisher, /upload_and_verify\(\s*CHAT_LOOKUP_MANIFEST_KEY,/u);
   assert.match(publisher, /head_object\(Bucket=bucket, Key=object_key\)/u);
-  assert.match(publisher, /Metadata=\{"sha256": digest, "schema": "1", "purpose": purpose\}/u);
+  assert.match(publisher, /Metadata=\{"sha256": digest, "schema": str\(schema\), "purpose": purpose\}/u);
+  assert.ok(
+    publisher.indexOf("for object_key, body, content_type, purpose in immutable_objects:") <
+      publisher.indexOf("CHAT_LOOKUP_MANIFEST_KEY,"),
+    "revisioned objects must be uploaded before the stable manifest",
+  );
   assert.equal(publisher.includes("print(digest"), false);
   assert.equal(publisher.includes("print(len(safe_items"), false);
 });

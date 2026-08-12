@@ -87,8 +87,13 @@ jobs:
           import boto3
           from cryptography.hazmat.primitives.ciphers.aead import AESGCM
           from scripts.build_course_chat_index import (
+              LOOKUP_FORMAT,
+              LOOKUP_SCHEMA_VERSION,
               build_course_chat_index,
+              build_course_chat_lookup,
+              iter_course_chat_lookup_objects,
               serialize_course_chat_index,
+              serialize_course_chat_lookup_manifest,
           )
 
           MAX_PLAINTEXT_BYTES = 16 * 1024 * 1024
@@ -97,6 +102,7 @@ jobs:
           FORMAT = "course-directory-aes-256-gcm-v1"
           DIRECTORY_OBJECT_KEY = "_course-directory/v1/directory.json"
           CHAT_OBJECT_KEY = "_course-directory/v1/chat-index.json"
+          CHAT_LOOKUP_MANIFEST_KEY = "_course-directory/v2/chat-lookup/manifest.json"
           CONTACT_PATTERNS = (
               re.compile(r"(?i)(?<![A-Z0-9._%+-])[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}(?![A-Z0-9.-])"),
               re.compile(r"(?i)(?:https?|ftp)\s*:\s*/\s*/\S*"),
@@ -246,6 +252,10 @@ jobs:
           if len(directory_output) > MAX_PLAINTEXT_BYTES:
               raise SystemExit("Validated directory payload is too large")
           chat_output = serialize_course_chat_index(build_course_chat_index(safe_payload))
+          chat_lookup = build_course_chat_lookup(safe_payload)
+          chat_lookup_manifest = serialize_course_chat_lookup_manifest(chat_lookup)
+          if chat_lookup.manifest.get("format") != LOOKUP_FORMAT:
+              raise SystemExit("Private Course Chat manifest format is invalid")
 
           client = boto3.client(
               "s3",
@@ -255,22 +265,41 @@ jobs:
               region_name="auto",
           )
           bucket = os.environ["R2_BUCKET"]
-          objects = (
-              (CHAT_OBJECT_KEY, chat_output, "course-chat-retrieval"),
-              (DIRECTORY_OBJECT_KEY, directory_output, "course-member-directory"),
+          immutable_objects = tuple(
+              (object_key, body, "application/octet-stream", "course-chat-direct-lookup")
+              for object_key, body in iter_course_chat_lookup_objects(chat_lookup)
           )
-          for object_key, body, purpose in objects:
+          compatibility_objects = (
+              (CHAT_OBJECT_KEY, chat_output, "application/json; charset=utf-8", "course-chat-retrieval"),
+              (DIRECTORY_OBJECT_KEY, directory_output, "application/json; charset=utf-8", "course-member-directory"),
+          )
+
+          def upload_and_verify(object_key, body, content_type, purpose, schema):
               digest = hashlib.sha256(body).hexdigest()
               client.put_object(
                   Bucket=bucket,
                   Key=object_key,
                   Body=body,
-                  ContentType="application/json; charset=utf-8",
+                  ContentType=content_type,
                   CacheControl="private, no-store, max-age=0",
-                  Metadata={"sha256": digest, "schema": "1", "purpose": purpose},
+                  Metadata={"sha256": digest, "schema": str(schema), "purpose": purpose},
               )
               head = client.head_object(Bucket=bucket, Key=object_key)
               if str(head.get("Metadata", {}).get("sha256") or "") != digest:
                   raise SystemExit("Private directory upload verification failed")
+
+          # Revisioned lookup objects are immutable.  Publish and verify all of
+          # them before replacing the stable manifest that makes a revision live.
+          for object_key, body, content_type, purpose in immutable_objects:
+              upload_and_verify(object_key, body, content_type, purpose, LOOKUP_SCHEMA_VERSION)
+          for object_key, body, content_type, purpose in compatibility_objects:
+              upload_and_verify(object_key, body, content_type, purpose, 1)
+          upload_and_verify(
+              CHAT_LOOKUP_MANIFEST_KEY,
+              chat_lookup_manifest,
+              "application/json; charset=utf-8",
+              "course-chat-direct-manifest",
+              LOOKUP_SCHEMA_VERSION,
+          )
           print("private course directory published")
           PY

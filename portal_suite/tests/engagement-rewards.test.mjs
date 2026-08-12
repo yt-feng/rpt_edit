@@ -43,6 +43,7 @@ class MemoryR2 {
     this.version = 0;
     this.jsonReadKeys = [];
     this.textReadKeys = [];
+    this.rangeReadKeys = [];
     this.textOnlyKeys = new Set();
     this.failPutPrefixOnce = "";
     this.failGetAfterPutExact = "";
@@ -59,19 +60,29 @@ class MemoryR2 {
     this.rows.set(key, { value: new Uint8Array(value), etag: `v${this.version}`, binary: true });
   }
 
-  async get(key) {
+  async get(key, options = {}) {
     if (this.failNextGetExact && key === this.failNextGetExact) {
       this.failNextGetExact = "";
       throw new Error("injected R2 read failure");
     }
     const row = this.rows.get(key);
     if (!row) return null;
+    const range = options && options.range;
+  const rangedValue = range && Number.isInteger(range.offset) && Number.isInteger(range.length)
+      ? (row.binary ? row.value : new TextEncoder().encode(row.value)).slice(range.offset, range.offset + range.length)
+      : null;
+    if (range) this.rangeReadKeys.push(key);
+    if (range && (!Number.isInteger(range.offset) || !Number.isInteger(range.length)
+      || range.offset < 0 || range.length < 0
+      || rangedValue.byteLength !== range.length)) return null;
     if (row.binary) {
+      const value = rangedValue || row.value;
       return {
         etag: row.etag,
-        body: row.value,
-        size: row.value.byteLength,
-        async text() { return new TextDecoder().decode(row.value); },
+        body: value,
+        size: value.byteLength,
+        async arrayBuffer() { return value.buffer.slice(value.byteOffset, value.byteOffset + value.byteLength); },
+        async text() { return new TextDecoder().decode(value); },
       };
     }
     const bucket = this;
@@ -112,6 +123,84 @@ class MemoryR2 {
     }
     return { etag: row.etag };
   }
+}
+
+async function directLookupFixture(items, tokenPostings, options = {}) {
+  const bucketCount = options.bucketCount || 64;
+  const prefix = options.prefix || "_report-chat/v2/releases/test";
+  const buildPart = async (entries, name) => {
+    const buckets = Array.from({ length: bucketCount }, () => []);
+    for (const [key, value] of entries) {
+      const digest = new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(key)));
+      const bucket = Number(new DataView(digest.buffer).getBigUint64(0, false) % BigInt(bucketCount));
+      buckets[bucket].push([key, value]);
+    }
+    const table = new Uint8Array(bucketCount * 12);
+    const chunks = [];
+    let offset = 0;
+    for (let bucket = 0; bucket < bucketCount; bucket += 1) {
+      const entriesInBucket = buckets[bucket].sort((left, right) => left[0].localeCompare(right[0]));
+      if (!entriesInBucket.length) continue;
+      const bytes = new TextEncoder().encode(JSON.stringify(entriesInBucket));
+      const view = new DataView(table.buffer, bucket * 12, 12);
+      view.setBigUint64(0, BigInt(offset), false);
+      view.setUint32(8, bytes.byteLength, false);
+      chunks.push(bytes);
+      offset += bytes.byteLength;
+    }
+    const data = new Uint8Array(offset);
+    let cursor = 0;
+    for (const chunk of chunks) {
+      data.set(chunk, cursor);
+      cursor += chunk.byteLength;
+    }
+    return {
+      table,
+      data,
+      manifest: {
+        table_key: `${prefix}/${name}.tbl`,
+        data_key: `${prefix}/${name}.dat`,
+        bucket_count: bucketCount,
+        slot_size: 12,
+        data_bytes: data.byteLength,
+      },
+    };
+  };
+  const tokenPart = await buildPart(Object.entries(tokenPostings), "tokens");
+  const itemPart = await buildPart(items.map((item) => [item.id, item]), "items");
+  return { tokenPart, itemPart };
+}
+
+async function seedReportChatLookup(bucket, items, tokenPostings, defaults = items.slice(0, 12)) {
+  const { tokenPart, itemPart } = await directLookupFixture(items, tokenPostings);
+  bucket.seedBytes(tokenPart.manifest.table_key, tokenPart.table);
+  bucket.seedBytes(tokenPart.manifest.data_key, tokenPart.data);
+  bucket.seedBytes(itemPart.manifest.table_key, itemPart.table);
+  bucket.seedBytes(itemPart.manifest.data_key, itemPart.data);
+  bucket.seed("_report-chat/v2/manifest.json", {
+    schema_version: 2,
+    index_kind: "report-chat-random-access",
+    hash: "sha256-first8-be",
+    token_table: tokenPart.manifest,
+    item_table: itemPart.manifest,
+    default_items: defaults,
+  });
+}
+
+async function seedCourseChatLookup(bucket, items, tokenPostings, defaults = items.slice(0, 12)) {
+  const prefix = "_course-directory/v2/chat-lookup/test";
+  const { tokenPart, itemPart } = await directLookupFixture(items, tokenPostings, { prefix });
+  bucket.seedBytes(tokenPart.manifest.table_key, tokenPart.table);
+  bucket.seedBytes(tokenPart.manifest.data_key, tokenPart.data);
+  bucket.seedBytes(itemPart.manifest.table_key, itemPart.table);
+  bucket.seedBytes(itemPart.manifest.data_key, itemPart.data);
+  bucket.seed("_course-directory/v2/chat-lookup/manifest.json", {
+    schema_version: 2,
+    format: "course-chat-direct-bucket-v2",
+    token_index: { ...tokenPart.manifest, hash: "sha256-first64-be-mod" },
+    item_index: { ...itemPart.manifest, hash: "sha256-first64-be-mod" },
+    default_items: defaults,
+  });
 }
 
 function envFor(bucket) {
@@ -721,23 +810,16 @@ test("course directory falls back to text parsing when the R2 body has no json m
 test("registered users can use grounded report chat and anonymous users cannot", async () => {
   const bucket = new MemoryR2();
   const reportId = "aaaaaaaaaaaaaaaaaaaaaaaa";
-  bucket.seed("edge-static/runtime-data/catalog.json", {
-    items: [{
+  await seedReportChatLookup(bucket, [{
       id: reportId,
       title: "JPM-AI data center power constraints-260811",
       title_zh: "摩根大通：AI 数据中心电力瓶颈",
-      filename: "jpm-ai.pdf",
-      bank_code: "JPM",
-      bank_name: "摩根大通",
+      institution: "摩根大通",
       date_folder: "260811",
       page_count: 28,
       available: true,
-      r2_synced: true,
-    }],
-  });
-  bucket.seed("edge-static/runtime-data/search_index.json", {
-    items: [{ id: reportId, text: "AI 数据中心 电力 瓶颈 电网 资本开支" }],
-  });
+      attraction_score: 5,
+    }], { ai: [reportId], 数据中心: [reportId], 电力: [reportId] });
   const env = envFor(bucket);
   const anonymous = await jsonRequest(env, "/report-chat", {
     method: "POST",
@@ -761,15 +843,19 @@ test("registered users can use grounded report chat and anonymous users cannot",
   assert.equal(result.data.recommendations[0].id, reportId);
   assert.equal(result.data.recommendations[0].attraction_score, 5);
   assert.match(result.data.answer, /摩根大通/u);
+  assert.ok(bucket.rangeReadKeys.some((key) => key.endsWith("tokens.tbl")));
+  assert.ok(bucket.rangeReadKeys.some((key) => key.endsWith("items.tbl")));
+  assert.equal(bucket.jsonReadKeys.includes("edge-static/runtime-data/catalog.json"), false);
+  assert.equal(bucket.textReadKeys.includes("edge-static/runtime-data/catalog.json"), false);
   assert.equal(bucket.jsonReadKeys.includes("edge-static/runtime-data/search_index.json"), false);
   assert.equal(bucket.textReadKeys.includes("edge-static/runtime-data/search_index.json"), false);
   assert.equal(Object.hasOwn(result.data.recommendations[0], "excerpt"), false);
   assert.equal(result.response.headers.get("cache-control"), "private, no-store, max-age=0");
 });
 
-test("report chat enforces the per-account Beijing-day limit before retrieval", async () => {
+test("report chat retrieves from random-access lookup before enforcing the Beijing-day limit", async () => {
   const bucket = new MemoryR2();
-  bucket.seed("edge-static/runtime-data/catalog.json", { items: [{ id: "limit-test-report", title: "Limit Test" }] });
+  await seedReportChatLookup(bucket, [{ id: "limit-test-report", title: "Limit Test", attraction_score: 2 }], { ai: ["limit-test-report"] });
   const env = envFor(bucket);
   const token = await register(env);
   const date = new Intl.DateTimeFormat("en-CA", {
@@ -778,7 +864,7 @@ test("report chat enforces the per-account Beijing-day limit before retrieval", 
     month: "2-digit",
     day: "2-digit",
   }).format(new Date());
-  bucket.seed(`_account/report-chat/${encodeURIComponent("reward-reader@example.com")}/${date}`, {
+  bucket.seed(`_account/report-chat-v2/${encodeURIComponent("reward-reader@example.com")}/${date}`, {
     email: "reward-reader@example.com",
     date,
     count: 30,
@@ -791,16 +877,70 @@ test("report chat enforces the per-account Beijing-day limit before retrieval", 
     body: JSON.stringify({ question: "AI 数据中心" }),
   });
   assert.equal(limited.response.status, 429);
+  assert.equal(limited.data.stage_code, "DAILY_LIMIT");
+  assert.match(limited.data.request_hint, /^[A-Z0-9]{10}$/u);
+  assert.ok(bucket.rangeReadKeys.some((key) => key.endsWith("tokens.tbl")));
   assert.equal(bucket.textReadKeys.includes("edge-static/runtime-data/catalog.json"), false);
+});
+
+test("report chat lookup failures return actionable private JSON and do not consume a turn", async () => {
+  const bucket = new MemoryR2();
+  const env = envFor(bucket);
+  const token = await register(env);
+  const date = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Shanghai",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
+  const usageKey = `_account/report-chat-v2/${encodeURIComponent("reward-reader@example.com")}/${date}`;
+  const failed = await jsonRequest(env, "/report-chat", {
+    method: "POST",
+    headers: { "content-type": "application/json", ...bearer(token) },
+    body: JSON.stringify({ question: "AI 数据中心" }),
+  });
+  assert.equal(failed.response.status, 503);
+  assert.equal(failed.data.stage_code, "LOOKUP_MANIFEST");
+  assert.match(failed.data.request_hint, /^[A-Z0-9]{10}$/u);
+  assert.equal(bucket.rows.has(usageKey), false);
+  assert.equal(failed.response.headers.get("cache-control"), "private, no-store, max-age=0");
+});
+
+test("report chat random-access retrieval stays within the Worker subrequest budget", async () => {
+  const bucket = new MemoryR2();
+  const items = Array.from({ length: 20 }, (_, index) => ({
+    id: `budget-report-${String(index).padStart(2, "0")}`,
+    title: `AI data center report ${index}`,
+    institution: index === 0 ? "摩根大通" : "Research",
+    attraction_score: index === 0 ? 5 : 2,
+  }));
+  const ids = items.map((item) => item.id);
+  await seedReportChatLookup(bucket, items, {
+    ai: ids,
+    数据中心: ids,
+    数据: ids,
+    中心: ids,
+    电力: ids,
+    瓶颈: ids,
+    资本: ids,
+    开支: ids,
+  });
+  const env = envFor(bucket);
+  const token = await register(env);
+  bucket.rangeReadKeys.length = 0;
+  const result = await jsonRequest(env, "/report-chat", {
+    method: "POST",
+    headers: { "content-type": "application/json", ...bearer(token) },
+    body: JSON.stringify({ question: "AI 数据中心 电力瓶颈 资本开支" }),
+  });
+  assert.equal(result.response.status, 200, JSON.stringify(result.data));
+  assert.ok(result.data.recommendations.length <= 8);
+  assert.ok(bucket.rangeReadKeys.length <= 32, `unexpected lookup range reads: ${bucket.rangeReadKeys.length}`);
 });
 
 test("course chat uses the compact private recommendation index, enforces membership, and returns no locators", async () => {
   const bucket = new MemoryR2();
-  bucket.seed("edge-static/runtime-data/catalog.json", { items: [] });
-  bucket.seed("_course-directory/v1/chat-index.json", {
-    schema_version: 1,
-    generated_at: "2026-08-12T10:00:00+08:00",
-    items: [{
+  await seedCourseChatLookup(bucket, [{
       id: "file-course-chat-01",
       course_id: "fin-01",
       name: "摩根大通投行估值与建模案例",
@@ -811,8 +951,7 @@ test("course chat uses the compact private recommendation index, enforces member
       entities: ["摩根大通", "高盛"],
       source_path: "/private/course/source/file.xlsx",
       object_key: "private-course-object",
-    }],
-  });
+    }], { 摩根大通: ["file-course-chat-01"], 投行: ["file-course-chat-01"], 建模: ["file-course-chat-01"] });
   const env = envFor(bucket);
   const token = await register(env);
   const denied = await jsonRequest(env, "/report-chat", {
@@ -822,7 +961,7 @@ test("course chat uses the compact private recommendation index, enforces member
   });
   assert.equal(denied.response.status, 403);
   assert.equal(Object.hasOwn(denied.data, "recommendations"), false);
-  assert.equal(bucket.jsonReadKeys.includes("_course-directory/v1/chat-index.json"), false);
+  assert.equal(bucket.textReadKeys.includes("_course-directory/v2/chat-lookup/manifest.json"), false);
 
   const email = "reward-reader@example.com";
   bucket.seed(`_account/entitlements/${encodeURIComponent(email)}`, {
@@ -845,21 +984,22 @@ test("course chat uses the compact private recommendation index, enforces member
   assert.equal(allowed.data.recommendations[0].kind, "course");
   assert.equal(allowed.data.recommendations[0].attraction_score, 5);
   assert.equal(allowed.data.recommendations[0].title, "摩根大通投行估值与建模案例");
+  assert.equal(allowed.data.recommendations[0].course_title, "财务建模与企业估值");
+  assert.equal(allowed.data.recommendations[0].category, "金融建模");
+  assert.equal(allowed.data.recommendations[0].file_type, "spreadsheet");
   const serialized = JSON.stringify(allowed.data);
   assert.equal(serialized.includes("/private/course"), false);
   assert.equal(serialized.includes("private-course-object"), false);
-  assert.equal(bucket.jsonReadKeys.includes("_course-directory/v1/chat-index.json"), true);
+  assert.equal(bucket.textReadKeys.includes("_course-directory/v2/chat-lookup/manifest.json"), true);
+  assert.equal(bucket.jsonReadKeys.includes("_course-directory/v1/chat-index.json"), false);
+  assert.equal(bucket.textReadKeys.includes("_course-directory/v1/chat-index.json"), false);
   assert.equal(bucket.jsonReadKeys.includes("_course-directory/v1/directory.json"), false);
   assert.equal(allowed.response.headers.get("cache-control"), "private, no-store, max-age=0");
 });
 
 test("course chat falls back to grounded recommendations when DeepSeek is unavailable", async () => {
   const bucket = new MemoryR2();
-  bucket.seed("edge-static/runtime-data/catalog.json", { items: [] });
-  bucket.seed("_course-directory/v1/chat-index.json", {
-    schema_version: 1,
-    generated_at: "2026-08-12T10:00:00+08:00",
-    items: [{
+  await seedCourseChatLookup(bucket, [{
       id: "file-course-chat-fallback-01",
       course_id: "fin-01",
       name: "高盛并购估值建模案例",
@@ -868,8 +1008,7 @@ test("course chat falls back to grounded recommendations when DeepSeek is unavai
       size_label: "3.8 MB",
       date: "2026-08-12",
       entities: ["高盛"],
-    }],
-  });
+    }], { 高盛: ["file-course-chat-fallback-01"], 并购: ["file-course-chat-fallback-01"], 估值: ["file-course-chat-fallback-01"] });
   const env = { ...envFor(bucket), DEEPSEEK_API_KEY: "configured-test-key" };
   const token = await register(env);
   const email = "reward-reader@example.com";
@@ -983,6 +1122,10 @@ test("course frontend renders the complete structured catalog with topic filters
   assert.match(chatSource, /context:\s*"course"/u);
   assert.match(chatSource, /data-course-query/u);
   assert.match(chatSource, /courseDirectorySearch/u);
+  assert.match(chatSource, /AbortController/u);
+  assert.match(chatSource, /HTTP \$\{response\.status\}/u);
+  assert.match(chatSource, /stage_code/u);
+  assert.match(chatSource, /请求超过 20 秒/u);
 });
 
 test("frontend distinguishes an already-used daily reward from a successful claim", async () => {

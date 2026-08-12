@@ -2,6 +2,7 @@
   "use strict";
 
   const AUTH_SESSION_KEY = "portal_auth_session";
+  const CHAT_REQUEST_TIMEOUT_MS = 20 * 1000;
   const surfaces = [
     { context: "report", form: "homeChatForm", input: "homeChatInput", status: "homeChatStatus", messages: "homeChatMessages", recommendations: "homeChatRecommendations" },
     { context: "course", form: "courseChatForm", input: "courseChatInput", status: "courseChatStatus", messages: "courseChatMessages", recommendations: "courseChatRecommendations" },
@@ -84,15 +85,26 @@
       button.disabled = true;
       status.textContent = surface.context === "course" ? "正在检索会员课程文件并生成推荐…" : "正在检索站内报告并生成推荐…";
       recommendations.innerHTML = "";
+      const controller = new AbortController();
+      const timeoutId = window.setTimeout(() => controller.abort(), CHAT_REQUEST_TIMEOUT_MS);
       try {
         const response = await fetch("/api/report-chat", {
           method: "POST",
           cache: "no-store",
+          signal: controller.signal,
           headers: { "Authorization": `Bearer ${auth.token}`, "Content-Type": "application/json" },
           body: JSON.stringify({ question, history, context: surface.context }),
         });
         const data = await response.json().catch(() => ({}));
-        if (!response.ok) throw new Error(data.detail || "报告 Chat 暂时不可用。");
+        if (!response.ok) {
+          const detail = String(data.detail || "资料 Chat 请求失败，请稍后点击重试。");
+          const stage = String(data.stage_code || "").replace(/[^A-Z0-9_-]/g, "").slice(0, 32);
+          const hint = String(data.request_hint || "").replace(/[^A-Z0-9-]/gi, "").slice(0, 16);
+          const diagnostics = [`HTTP ${response.status}`];
+          if (stage) diagnostics.push(stage);
+          if (hint) diagnostics.push(`请求 ${hint}`);
+          throw new Error(`${detail}（${diagnostics.join(" · ")}）`);
+        }
         history.push({ role: "user", content: question }, { role: "assistant", content: data.answer || "" });
         while (history.length > 6) history.shift();
         messages.innerHTML = `<article class="report-chat-answer"><span>AI 推荐</span><p>${escapeHtml(data.answer || "")}</p></article>`;
@@ -101,8 +113,11 @@
         const followUps = Array.isArray(data.follow_up_questions) ? data.follow_up_questions : [];
         status.textContent = followUps.length ? `还可以继续问：${followUps.join("；")}` : `今日还可使用 ${Number(data.usage && data.usage.remaining || 0)} 次。`;
       } catch (error) {
-        status.textContent = error.message || "报告 Chat 暂时不可用。";
+        status.textContent = error && error.name === "AbortError"
+          ? "资料 Chat 请求超过 20 秒，已停止等待。请点击重试。"
+          : error && error.message || "资料 Chat 暂时不可用，请点击重试。";
       } finally {
+        window.clearTimeout(timeoutId);
         button.disabled = false;
       }
     });

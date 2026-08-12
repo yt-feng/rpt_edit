@@ -100,14 +100,32 @@ read and parsed for every keystroke. The object is capped at 16 MiB and 45,000
 rows. Directory responses use `private, no-store` and never put the index in
 static-site assets or browser storage.
 
-Course Chat does not load this full directory. The private publisher derives a
-second neutral object, `_course-directory/v1/chat-index.json`, strictly from the
-already sanitized rows. Every row with a non-empty allowed `entities` list is
-retained, followed by at most 30 entity-free representative rows per course in
-source order. The result must cover all 43 courses and is capped at 5,000 rows
-and 2 MiB. It cannot add fields or values that were absent from the sanitized
-directory. The Worker caches this smaller object independently for Chat
-retrieval, while `GET /course/directory` continues to use the complete object.
+Course Chat does not load this full directory. The private publisher first
+derives a bounded candidate set strictly from the already sanitized rows.
+Every row with a non-empty allowed `entities` list is retained, followed by at
+most 30 entity-free representative rows per course in source order. The result
+must cover all 43 courses and is capped at 5,000 rows and 2 MiB. It cannot add
+fields or values that were absent from the sanitized directory.
+
+The live lookup is a private R2 v2 direct-bucket index rooted at
+`_course-directory/v2/chat-lookup/manifest.json`; the former
+`_course-directory/v1/chat-index.json` remains only as a rollback-compatible
+object. The stable manifest points at four revisioned immutable objects:
+token table/data and item table/data. A table slot is exactly 12 bytes
+(`uint64` big-endian offset plus `uint32` big-endian length). The slot is
+selected with the first 64 bits of SHA-256 over the exact UTF-8 key modulo the
+bucket count. Its compact JSON collision bucket must contain the exact key
+before the value can be used.
+
+Questions are normalized with NFKC and lowercase, then bounded to eight Latin
+tokens or Chinese 2/3/4-character grams. A token posting contains at most 48
+pre-ranked safe item IDs; at most 12 items are fetched. Institution
+attractiveness, useful file type, date, and stable title order are applied at
+publish time, preserving compelling institution, law-firm, exchange, and
+regulator materials without exposing a private source brand. Twelve sanitized
+defaults are embedded in the manifest for empty or missed queries. With the
+manifest cached, one request performs at most 40 small R2 range reads and never
+parses the complete candidate set on a cold isolate.
 
 ### Encrypted directory publishing
 
@@ -152,17 +170,19 @@ plaintext index, private map, or key cannot be staged from that directory.
 2. cap decompression, validate identifiers and display fields, reject every
    configured redaction marker and path separator, and rebuild every row from
    the API allow-list;
-3. derive the bounded Course Chat subset from those rebuilt rows without
-   reading any separate private mapping;
-4. upload the Chat subset and full sanitized directory to separate private R2
-   objects with `no-store`;
-5. verify each uploaded object's own SHA-256 metadata before reporting success.
+3. derive the bounded Course Chat subset and the v2 token/item direct indexes
+   from those rebuilt rows without reading any separate private mapping;
+4. upload the revisioned lookup objects, rollback-compatible Chat subset, and
+   full sanitized directory as private `no-store` objects;
+5. verify every uploaded object's own SHA-256 metadata, then atomically replace
+   the stable v2 manifest as the final write.
 
 Each object replacement is atomic, and the workflow reports success only after
-both metadata checks pass. The Worker rollout follows this publisher, so it
-cannot depend on a Chat index that the release did not verify. The workflow
-never uploads either plaintext JSON object as an Actions artifact and never
-prints private item counts or digests.
+all metadata checks pass. A failure before the final manifest write leaves the
+previous complete lookup revision live. The Worker rollout follows this
+publisher, so it cannot depend on a Chat index that the release did not verify.
+The workflow never uploads plaintext directory or lookup data as an Actions
+artifact and never prints private item counts or digests.
 
 ## Analytics collection
 

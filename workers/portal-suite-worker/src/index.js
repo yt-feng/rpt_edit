@@ -239,12 +239,17 @@ const REWARD_POINTS_REPORT_COST = 70;
 const REWARD_R2_WRITE_RETRIES = 8;
 const COURSE_MIN_REMAINING_DAYS = 30;
 const COURSE_DIRECTORY_R2_KEY = "_course-directory/v1/directory.json";
-const COURSE_CHAT_DIRECTORY_R2_KEY = "_course-directory/v1/chat-index.json";
+const REPORT_CHAT_LOOKUP_MANIFEST_R2_KEY = "_report-chat/v2/manifest.json";
+const COURSE_CHAT_LOOKUP_MANIFEST_R2_KEY = "_course-directory/v2/chat-lookup/manifest.json";
+const CHAT_LOOKUP_SCHEMA_VERSION = 2;
+const CHAT_LOOKUP_SLOT_BYTES = 12;
+const CHAT_LOOKUP_MAX_MANIFEST_BYTES = 32 * 1024;
+const CHAT_LOOKUP_MAX_BUCKET_BYTES = 128 * 1024;
+const CHAT_LOOKUP_MAX_QUERY_TOKENS = 8;
+const CHAT_LOOKUP_RESULT_LIMIT = 8;
 const COURSE_DIRECTORY_CACHE_TTL_MS = 5 * 60 * 1000;
 const COURSE_DIRECTORY_MAX_BYTES = 16 * 1024 * 1024;
 const COURSE_DIRECTORY_MAX_ITEMS = 45000;
-const COURSE_CHAT_DIRECTORY_MAX_BYTES = 2 * 1024 * 1024;
-const COURSE_CHAT_DIRECTORY_MAX_ITEMS = 5000;
 const COURSE_DIRECTORY_MAX_PAGE_SIZE = 100;
 const REPORT_CHAT_MAX_DAILY_TURNS = 30;
 const REPORT_CHAT_MAX_CANDIDATES = 12;
@@ -254,7 +259,7 @@ const CHART_SEARCH_INDEX_KEY = "_chart-search/v1/index.json";
 const CHART_SEARCH_IMAGE_PREFIX = "_chart-search/v1/images";
 const CHART_SEARCH_IMAGE_ID_PATTERN = /^[0-9a-f]{64}$/u;
 const COURSE_DIRECTORY_CACHE = new WeakMap();
-const COURSE_CHAT_DIRECTORY_CACHE = new WeakMap();
+const CHAT_LOOKUP_MANIFEST_CACHE = new WeakMap();
 let chartGalleryCache = null;
 let chartGalleryFetchedAt = 0;
 const COURSE_DIRECTORY_ITEM_KEYS = new Set([
@@ -4156,69 +4161,6 @@ async function loadCourseDirectory(env) {
     return value;
   } catch (error) {
     COURSE_DIRECTORY_CACHE.delete(bucket);
-    throw error;
-  }
-}
-
-function validateCourseChatDirectoryPayload(payload, restrictedTerms) {
-  if (!payload || typeof payload !== "object" || Array.isArray(payload) || Number(payload.schema_version) !== 1) {
-    throw new Error("Course chat directory payload is invalid.");
-  }
-  const rawItems = Array.isArray(payload.items) ? payload.items : [];
-  if (!rawItems.length || rawItems.length > COURSE_CHAT_DIRECTORY_MAX_ITEMS) {
-    throw new Error("Course chat directory payload size is invalid.");
-  }
-  const ids = new Set();
-  let writeIndex = 0;
-  for (let readIndex = 0; readIndex < rawItems.length; readIndex += 1) {
-    const item = cleanCourseDirectoryItem(rawItems[readIndex], restrictedTerms);
-    if (!item || ids.has(item.id)) continue;
-    ids.add(item.id);
-    rawItems[writeIndex] = item;
-    writeIndex += 1;
-  }
-  rawItems.length = writeIndex;
-  if (!rawItems.length) throw new Error("Course chat directory has no safe items.");
-  const generatedAt = cleanCourseDirectoryText(payload.generated_at, 40);
-  for (const key of Object.keys(payload)) {
-    if (!["schema_version", "generated_at", "items"].includes(key)) delete payload[key];
-  }
-  return Object.freeze({
-    generated_at: Number.isFinite(Date.parse(generatedAt)) ? new Date(generatedAt).toISOString() : "",
-    items: Object.freeze(rawItems),
-  });
-}
-
-async function loadCourseChatDirectory(env) {
-  const bucket = accountBucket(env);
-  const cached = COURSE_CHAT_DIRECTORY_CACHE.get(bucket);
-  const now = Date.now();
-  if (cached && cached.value && now - cached.loaded_at < COURSE_DIRECTORY_CACHE_TTL_MS) return cached.value;
-  if (cached && cached.promise) return cached.promise;
-  const promise = (async () => {
-    const restrictedTerms = courseDirectoryRestrictedTerms(env);
-    const object = await bucket.get(COURSE_CHAT_DIRECTORY_R2_KEY);
-    if (!object) throw new Error("Course chat directory is unavailable.");
-    if (Number(object.size || 0) > COURSE_CHAT_DIRECTORY_MAX_BYTES) throw new Error("Course chat directory payload is too large.");
-    let payload;
-    if (typeof object.json === "function") {
-      payload = await object.json();
-    } else {
-      const text = await object.text();
-      if (new TextEncoder().encode(text).byteLength > COURSE_CHAT_DIRECTORY_MAX_BYTES) {
-        throw new Error("Course chat directory payload is too large.");
-      }
-      payload = JSON.parse(text);
-    }
-    return validateCourseChatDirectoryPayload(payload, restrictedTerms);
-  })();
-  COURSE_CHAT_DIRECTORY_CACHE.set(bucket, { loaded_at: cached && cached.loaded_at || 0, value: cached && cached.value || null, promise });
-  try {
-    const value = await promise;
-    COURSE_CHAT_DIRECTORY_CACHE.set(bucket, { loaded_at: Date.now(), value, promise: null });
-    return value;
-  } catch (error) {
-    COURSE_CHAT_DIRECTORY_CACHE.delete(bucket);
     throw error;
   }
 }
@@ -11087,174 +11029,336 @@ function reportChatQueryTokens(value) {
   ])].slice(0, 32);
 }
 
-function reportChatCatalogText(report) {
-  return normalizeText([
-    reportDisplayTitle(report),
-    reportEnglishTitle(report),
-    report.bank_code,
-    report.bank_name,
-    report.institution,
-    inferReportIndustry(report),
-    report.date_folder,
-  ].filter(Boolean).join(" "));
+function reportChatLookupTokens(value) {
+  const raw = String(value || "").normalize("NFKC").toLowerCase();
+  const known = reportChatQueryTokens(raw);
+  const latinNumeric = (raw.match(/[a-z0-9][a-z0-9.+&-]*/gu) || []).filter((token) => token.length >= 2);
+  const cjk = [];
+  for (const run of raw.match(/[\p{Script=Han}]{2,}/gu) || []) {
+    if (run.length <= 8) cjk.push(run);
+    for (const width of [4, 3, 2]) {
+      if (run.length < width) continue;
+      for (let offset = 0; offset <= run.length - width; offset += 1) cjk.push(run.slice(offset, offset + width));
+    }
+  }
+  return [...new Set([...known, ...latinNumeric, ...cjk])].slice(0, CHAT_LOOKUP_MAX_QUERY_TOKENS);
 }
 
-function reportChatRecencyScore(report) {
-  const token = reportTextDateKey(report) || reportTextDateToken(report && report.date_folder);
-  return token ? Math.max(0, Number(token.slice(0, 8)) - 20250000) / 2000 : 0;
+class ChatLookupError extends Error {
+  constructor(stageCode) {
+    super("Chat lookup is unavailable.");
+    this.name = "ChatLookupError";
+    this.stageCode = stageCode;
+  }
 }
 
-function reportChatAttractionScore(report) {
-  const text = normalizeText([report.bank_code, report.bank_name, report.institution, report.title, report.title_zh].join(" "));
-  const topTier = [
-    /\b(?:jpm|jpmorgan|goldman|morgan stanley|bofa|bank of america|ubs|citi|citigroup|hsbc)\b/u,
-    /摩根大通|高盛|摩根士丹利|美银|瑞银|花旗|汇丰/u,
-    /金杜|中伦|君合|国浩|证监会|上交所|深交所|最高人民法院/u,
-  ];
-  if (topTier.some((pattern) => pattern.test(text)) || ["jpm", "gs", "ms", "bofa", "ubs", "citi", "hsbc"].includes(normalizeText(report && report.bank_code))) return 5;
-  if (/\b(?:nomura|bernstein|deutsche bank|barclays|macquarie|mckinsey|bcg|bain)\b|野村|德银|巴克莱|麦肯锡|贝恩/u.test(text)) return 4;
-  return 2;
+function chatLookupObjectKey(value) {
+  const key = String(value || "").trim();
+  if (!key || key.length > 320 || !/^[A-Za-z0-9_][A-Za-z0-9._/-]*$/u.test(key) || key.includes("..")) return "";
+  return key;
 }
 
-function reportChatPublicCandidate(report, score) {
-  return {
-    id: String(report.id || ""),
-    title: reportDisplayTitle(report),
-    title_en: reportEnglishTitle(report),
-    institution: reportBankLabel(report),
-    industry: inferReportIndustry(report),
-    date_folder: String(report.date_folder || ""),
-    page_count: reportPageCount(report),
-    available: Boolean(report.available || report.r2_synced),
-    attraction_score: reportChatAttractionScore(report),
-    match_score: Math.round(score * 100) / 100,
+function chatLookupManifestPart(manifest, name) {
+  const singular = name === "tokens" ? "token" : "item";
+  const nested = manifest[name] || manifest[singular] || manifest[`${singular}_index`] || manifest[`${singular}_table`] || {};
+  const tableKey = chatLookupObjectKey(nested.table_key || nested.table_object || manifest[`${singular}_table_key`]);
+  const dataKey = chatLookupObjectKey(nested.data_key || nested.data_object || manifest[`${singular}_data_key`]);
+  const bucketCount = Math.floor(Number(nested.bucket_count || manifest[`${singular}_bucket_count`]));
+  const slotBytes = Math.floor(Number(nested.slot_bytes || nested.slot_size || manifest.slot_bytes || manifest.slot_size));
+  const dataBytes = Math.floor(Number(nested.data_bytes ?? nested.data_size ?? manifest[`${singular}_data_bytes`]));
+  const maxBucketBytes = Math.floor(Number(nested.max_bucket_bytes || manifest.max_bucket_bytes || CHAT_LOOKUP_MAX_BUCKET_BYTES));
+  if (!tableKey || !dataKey
+    || !Number.isSafeInteger(bucketCount) || bucketCount < 1 || bucketCount > 10_000_000
+    || slotBytes !== CHAT_LOOKUP_SLOT_BYTES
+    || !Number.isSafeInteger(dataBytes) || dataBytes < 0 || dataBytes > 128 * 1024 * 1024
+    || !Number.isSafeInteger(maxBucketBytes) || maxBucketBytes < 16 || maxBucketBytes > CHAT_LOOKUP_MAX_BUCKET_BYTES) {
+    throw new ChatLookupError("LOOKUP_MANIFEST");
+  }
+  return Object.freeze({ tableKey, dataKey, bucketCount, slotBytes, dataBytes, maxBucketBytes });
+}
+
+function validateChatLookupManifest(payload) {
+  if (!payload || typeof payload !== "object" || Array.isArray(payload)
+    || Number(payload.schema_version) !== CHAT_LOOKUP_SCHEMA_VERSION) {
+    throw new ChatLookupError("LOOKUP_MANIFEST");
+  }
+  const tokenPart = payload.tokens || payload.token || payload.token_index || payload.token_table || {};
+  const itemPart = payload.items || payload.item || payload.item_index || payload.item_table || {};
+  const hashAlgorithms = [
+    payload.hash_algorithm || payload.hash,
+    tokenPart.hash,
+    itemPart.hash,
+  ].filter(Boolean).map((value) => String(value).trim().toLowerCase());
+  const supportedHashes = new Set([
+    "sha256-u64-be",
+    "sha-256-u64-be",
+    "sha256_u64_be",
+    "sha256-first8-be",
+    "sha256-first64-be-mod",
+  ]);
+  if (!hashAlgorithms.length || hashAlgorithms.some((value) => !supportedHashes.has(value))) {
+    throw new ChatLookupError("LOOKUP_MANIFEST");
+  }
+  const rawDefaults = Array.isArray(payload.default_items) ? payload.default_items.slice(0, REPORT_CHAT_MAX_CANDIDATES) : [];
+  const defaultItems = rawDefaults.filter((item) => item && typeof item === "object" && !Array.isArray(item));
+  return Object.freeze({
+    tokens: chatLookupManifestPart(payload, "tokens"),
+    items: chatLookupManifestPart(payload, "items"),
+    defaultItems: Object.freeze(defaultItems),
+  });
+}
+
+async function loadChatLookupManifest(env, manifestKey) {
+  const bucket = accountBucket(env);
+  let cache = CHAT_LOOKUP_MANIFEST_CACHE.get(bucket);
+  if (!cache) {
+    cache = new Map();
+    CHAT_LOOKUP_MANIFEST_CACHE.set(bucket, cache);
+  }
+  const now = Date.now();
+  const cached = cache.get(manifestKey);
+  if (cached && now - cached.loadedAt < COURSE_DIRECTORY_CACHE_TTL_MS) return cached.value;
+  let object;
+  try {
+    object = await bucket.get(manifestKey);
+  } catch (_error) {
+    throw new ChatLookupError("LOOKUP_MANIFEST");
+  }
+  if (!object || Number(object.size || 0) > CHAT_LOOKUP_MAX_MANIFEST_BYTES) {
+    throw new ChatLookupError("LOOKUP_MANIFEST");
+  }
+  let raw;
+  try {
+    const text = await object.text();
+    if (new TextEncoder().encode(text).byteLength > CHAT_LOOKUP_MAX_MANIFEST_BYTES) {
+      throw new ChatLookupError("LOOKUP_MANIFEST");
+    }
+    raw = JSON.parse(text);
+  } catch (error) {
+    if (error instanceof ChatLookupError) throw error;
+    throw new ChatLookupError("LOOKUP_MANIFEST");
+  }
+  const value = validateChatLookupManifest(raw);
+  cache.set(manifestKey, { loadedAt: now, value });
+  return value;
+}
+
+async function chatLookupRange(bucket, key, offset, length, stageCode) {
+  if (!Number.isSafeInteger(offset) || offset < 0 || !Number.isSafeInteger(length) || length < 1) {
+    throw new ChatLookupError(stageCode);
+  }
+  let object;
+  try {
+    object = await bucket.get(key, { range: { offset, length } });
+  } catch (_error) {
+    throw new ChatLookupError(stageCode);
+  }
+  if (!object) throw new ChatLookupError(stageCode);
+  try {
+    let bytes;
+    if (typeof object.arrayBuffer === "function") {
+      bytes = new Uint8Array(await object.arrayBuffer());
+    } else if (object.body !== undefined && object.body !== null) {
+      bytes = new Uint8Array(await new Response(object.body).arrayBuffer());
+    } else {
+      bytes = new TextEncoder().encode(await object.text());
+    }
+    if (bytes.byteLength !== length) throw new ChatLookupError(stageCode);
+    return bytes;
+  } catch (error) {
+    if (error instanceof ChatLookupError) throw error;
+    throw new ChatLookupError(stageCode);
+  }
+}
+
+async function chatLookupBucketNumber(key, bucketCount) {
+  const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(key));
+  const prefix = new DataView(digest).getBigUint64(0, false);
+  return Number(prefix % BigInt(bucketCount));
+}
+
+function chatLookupExactBucketValue(payload, exactKey) {
+  if (!payload || typeof payload !== "object") return undefined;
+  if (!Array.isArray(payload) && Object.prototype.hasOwnProperty.call(payload, exactKey)) return payload[exactKey];
+  const entries = Array.isArray(payload) ? payload : Array.isArray(payload.entries) ? payload.entries : [payload];
+  for (const entry of entries) {
+    if (Array.isArray(entry) && String(entry[0] || "") === exactKey) return entry[1];
+    if (!entry || typeof entry !== "object" || Array.isArray(entry)) continue;
+    if (String(entry.key || entry.k || "") !== exactKey) continue;
+    if (Object.prototype.hasOwnProperty.call(entry, "value")) return entry.value;
+    if (Object.prototype.hasOwnProperty.call(entry, "v")) return entry.v;
+    if (Object.prototype.hasOwnProperty.call(entry, "ids")) return entry.ids;
+    if (Object.prototype.hasOwnProperty.call(entry, "item")) return entry.item;
+  }
+  return undefined;
+}
+
+async function chatLookupExact(env, part, exactKey) {
+  const bucket = accountBucket(env);
+  let bucketNumber;
+  try {
+    bucketNumber = await chatLookupBucketNumber(exactKey, part.bucketCount);
+  } catch (_error) {
+    throw new ChatLookupError("LOOKUP_HASH");
+  }
+  const slot = await chatLookupRange(
+    bucket,
+    part.tableKey,
+    bucketNumber * part.slotBytes,
+    part.slotBytes,
+    "LOOKUP_TABLE",
+  );
+  const slotView = new DataView(slot.buffer, slot.byteOffset, slot.byteLength);
+  const offsetBig = slotView.getBigUint64(0, false);
+  const length = slotView.getUint32(8, false);
+  if (!length) return undefined;
+  if (offsetBig > BigInt(Number.MAX_SAFE_INTEGER)) throw new ChatLookupError("LOOKUP_TABLE");
+  const offset = Number(offsetBig);
+  if (length > part.maxBucketBytes || offset + length > part.dataBytes) {
+    throw new ChatLookupError("LOOKUP_TABLE");
+  }
+  const bucketBytes = await chatLookupRange(bucket, part.dataKey, offset, length, "LOOKUP_DATA");
+  let payload;
+  try {
+    payload = JSON.parse(new TextDecoder("utf-8", { fatal: true }).decode(bucketBytes));
+  } catch (_error) {
+    throw new ChatLookupError("LOOKUP_DATA");
+  }
+  return chatLookupExactBucketValue(payload, exactKey);
+}
+
+function chatLookupCandidateIds(value) {
+  const raw = Array.isArray(value) ? value : value && Array.isArray(value.ids) ? value.ids : [];
+  const seen = new Set();
+  const ids = [];
+  for (const item of raw) {
+    const id = String(item && typeof item === "object" ? item.id : item || "").trim();
+    if (!id || id.length > 160 || seen.has(id)) continue;
+    seen.add(id);
+    ids.push(id);
+    if (ids.length >= 48) break;
+  }
+  return ids;
+}
+
+function chatLookupSafeText(value, limit = 240) {
+  return String(value || "").normalize("NFKC").replace(/[\u0000-\u001f\u007f]+/gu, " ").replace(/\s+/gu, " ").trim().slice(0, limit);
+}
+
+function chatLookupSafeList(value, itemLimit = 8) {
+  if (!Array.isArray(value)) return [];
+  return value.map((item) => chatLookupSafeText(item, 120)).filter(Boolean).slice(0, itemLimit);
+}
+
+function cleanCourseChatLookupItem(raw, restrictedTerms) {
+  if (!raw || typeof raw !== "object" || Array.isArray(raw)) return null;
+  const copy = {
+    id: raw.id,
+    course_id: raw.course_id,
+    name: raw.name,
+    folders: Array.isArray(raw.folders) ? raw.folders.slice(0, 8) : [],
+    extension: raw.extension,
+    size_label: raw.size_label,
+    date: raw.date,
+    entities: Array.isArray(raw.entities) ? raw.entities.slice(0, 8) : [],
   };
+  return cleanCourseDirectoryItem(copy, restrictedTerms);
+}
+
+function chatLookupPublicCandidate(value, expectedId, score, context, restrictedTerms = []) {
+  const raw = value && typeof value === "object" && !Array.isArray(value) ? value : null;
+  if (!raw) return null;
+  const safeCourseItem = context === "course" ? cleanCourseChatLookupItem(raw, restrictedTerms) : null;
+  if (context === "course" && !safeCourseItem) return null;
+  const id = context === "course" ? safeCourseItem.id : chatLookupSafeText(raw.id || raw.i, 160);
+  if (!id || id !== expectedId) return null;
+  let attractionScore = Math.max(1, Math.min(5, Math.floor(Number(raw.attraction_score ?? raw.a) || 2)));
+  if (context === "course") {
+    const title = safeCourseItem.name;
+    if (!title) return null;
+    const courseId = safeCourseItem.course_id;
+    const course = COURSE_DIRECTORY_COURSES.get(courseId);
+    if (!course) return null;
+    const extension = safeCourseItem.extension;
+    const publicItem = {
+      kind: "course",
+      id,
+      title,
+      course_title: chatLookupSafeText(raw.course_title || raw.ct || course && course.title, 200) || "专业课程资料",
+      category: chatLookupSafeText(raw.category || raw.c || course && course.category, 120),
+      file_type: chatLookupSafeText(raw.file_type || raw.ft, 40) || courseDirectoryFileType(extension),
+      extension,
+      size_label: safeCourseItem.size_label,
+      date: safeCourseItem.date,
+      folders: Object.freeze(safeCourseItem.folders),
+      entities: Object.freeze(safeCourseItem.entities),
+      attraction_score: attractionScore,
+      match_score: Math.round(score * 100) / 100,
+    };
+    const attractionText = [publicItem.title, ...publicItem.folders, ...publicItem.entities].join(" ");
+    if (COURSE_CHAT_TOP_TIER_PATTERN.test(attractionText)) attractionScore = 5;
+    else if (COURSE_CHAT_SECOND_TIER_PATTERN.test(attractionText)) attractionScore = 4;
+    publicItem.attraction_score = attractionScore;
+    return Object.freeze(publicItem);
+  }
+  const title = chatLookupSafeText(raw.title || raw.t, 320);
+  if (!title) return null;
+  return Object.freeze({
+    id,
+    title,
+    title_en: chatLookupSafeText(raw.title_en || raw.te, 320),
+    institution: chatLookupSafeText(raw.institution || raw.ins, 160),
+    industry: chatLookupSafeText(raw.industry || raw.ind, 160),
+    date_folder: chatLookupSafeText(raw.date_folder || raw.d, 40),
+    page_count: Math.max(0, Math.min(100000, Math.floor(Number(raw.page_count ?? raw.p) || 0))),
+    available: Boolean(raw.available ?? raw.av),
+    attraction_score: attractionScore,
+    match_score: Math.round(score * 100) / 100,
+  });
+}
+
+async function chatLookupCandidates(env, question, context) {
+  const manifestKey = context === "course" ? COURSE_CHAT_LOOKUP_MANIFEST_R2_KEY : REPORT_CHAT_LOOKUP_MANIFEST_R2_KEY;
+  const manifest = await loadChatLookupManifest(env, manifestKey);
+  const restrictedTerms = context === "course" ? courseDirectoryRestrictedTerms(env) : [];
+  const tokens = reportChatLookupTokens(question);
+  const tokenValues = await Promise.all(tokens.map((token) => chatLookupExact(env, manifest.tokens, token)));
+  const scores = new Map();
+  tokenValues.forEach((value, tokenIndex) => {
+    const ids = chatLookupCandidateIds(value);
+    ids.forEach((id, rank) => {
+      const current = scores.get(id) || { score: 0, matches: 0, bestRank: 1000 };
+      current.score += Math.max(1, 24 - rank);
+      current.matches += 1;
+      current.bestRank = Math.min(current.bestRank, rank);
+      scores.set(id, current);
+    });
+  });
+  const ranked = [...scores.entries()]
+    .sort((left, right) => right[1].matches - left[1].matches || right[1].score - left[1].score || left[1].bestRank - right[1].bestRank || left[0].localeCompare(right[0]))
+    .slice(0, CHAT_LOOKUP_RESULT_LIMIT);
+  if (!ranked.length) {
+    return manifest.defaultItems.slice(0, CHAT_LOOKUP_RESULT_LIMIT)
+      .map((item, index) => chatLookupPublicCandidate(item, String(item && (item.id || item.i) || ""), 1 - index / 100, context, restrictedTerms))
+      .filter(Boolean);
+  }
+  const values = await Promise.all(ranked.map(([id]) => chatLookupExact(env, manifest.items, id)));
+  return ranked.map(([id, ranking], index) => chatLookupPublicCandidate(values[index], id, ranking.score, context, restrictedTerms)).filter(Boolean);
 }
 
 async function reportChatCandidates(env, question) {
-  // Report Chat is a discovery RAG path, not full-document Q&A. Loading the
-  // 90+ MB full-text index in a Worker request can exceed the runtime memory
-  // budget, so retrieval deliberately uses the compact catalog metadata only.
-  const catalog = await loadCatalog(env);
-  const reports = Array.isArray(catalog && catalog.items) ? catalog.items : [];
-  const tokens = reportChatQueryTokens(question);
-  const scored = [];
-  for (const report of reports) {
-    const metadata = reportChatCatalogText(report);
-    let score = reportChatAttractionScore(report) * 1.8 + reportChatRecencyScore(report);
-    let matches = 0;
-    for (const token of tokens) {
-      if (metadata.includes(token)) {
-        score += 9;
-        matches += 1;
-      }
-    }
-    if (tokens.length && !matches) continue;
-    if (matches === tokens.length && tokens.length) score += 8;
-    if (report.available || report.r2_synced) score += 2;
-    scored.push({ report, score });
-  }
-  scored.sort((left, right) => right.score - left.score || String(right.report.date_folder || "").localeCompare(String(left.report.date_folder || "")));
-  const candidates = scored.slice(0, REPORT_CHAT_MAX_CANDIDATES).map(({ report, score }) => reportChatPublicCandidate(report, score));
-  return candidates;
+  return chatLookupCandidates(env, question, "report");
 }
 
 const COURSE_CHAT_TOP_TIER_PATTERN = /(?:^|[^a-z0-9])(?:jpm|jpmorgan|goldman|morgan stanley|bofa|bank of america|ubs|citi|citigroup|hsbc)(?=$|[^a-z0-9])|摩根大通|高盛|摩根士丹利|美银|瑞银|花旗|汇丰|金杜|中伦|君合|国浩|证监会|上交所|深交所|最高人民法院/iu;
 const COURSE_CHAT_SECOND_TIER_PATTERN = /(?:^|[^a-z0-9])(?:nomura|bernstein|deutsche bank|barclays|macquarie|mckinsey|bcg|bain)(?=$|[^a-z0-9])|野村|德银|巴克莱|麦肯锡|贝恩/iu;
 
-function courseChatItemMatchesPattern(item, course, pattern, includeCourseDetails = true) {
-  if (pattern.test(item.name)
-    || pattern.test(item.category)
-    || pattern.test(item.file_type)
-    || pattern.test(course && course.title || "")) return true;
-  if (includeCourseDetails && (pattern.test(course && course.summary || "")
-    || pattern.test(course && course.audience || ""))) return true;
-  for (const folder of item.folders) {
-    if (pattern.test(folder)) return true;
-  }
-  for (const entity of item.entities) {
-    if (pattern.test(entity)) return true;
-  }
-  return false;
-}
-
-function courseChatAttractionScore(item, course = COURSE_DIRECTORY_COURSES.get(item.course_id)) {
-  if (courseChatItemMatchesPattern(item, course, COURSE_CHAT_TOP_TIER_PATTERN, false)) return 5;
-  if (courseChatItemMatchesPattern(item, course, COURSE_CHAT_SECOND_TIER_PATTERN, false)) return 4;
-  return 2;
-}
-
-function courseChatPublicCandidate(item, score) {
-  const course = COURSE_DIRECTORY_COURSES.get(item.course_id);
-  return {
-    kind: "course",
-    id: item.id,
-    title: item.name,
-    course_title: course && course.title || "专业课程资料",
-    category: item.category,
-    file_type: item.file_type,
-    extension: item.extension,
-    size_label: item.size_label,
-    date: item.date,
-    folders: item.folders,
-    entities: item.entities,
-    attraction_score: courseChatAttractionScore(item),
-    match_score: Math.round(score * 100) / 100,
-  };
-}
-
-function courseChatCandidateCompare(left, right) {
-  return right.score - left.score
-    || String(right.item.date || "").localeCompare(String(left.item.date || ""))
-    || left.item.name.localeCompare(right.item.name, "zh-CN");
-}
-
-function courseChatKeepTopCandidate(entries, entry) {
-  let low = 0;
-  let high = entries.length;
-  while (low < high) {
-    const middle = (low + high) >>> 1;
-    if (courseChatCandidateCompare(entry, entries[middle]) < 0) high = middle;
-    else low = middle + 1;
-  }
-  if (low >= REPORT_CHAT_MAX_CANDIDATES && entries.length >= REPORT_CHAT_MAX_CANDIDATES) return;
-  entries.splice(low, 0, entry);
-  if (entries.length > REPORT_CHAT_MAX_CANDIDATES) entries.pop();
-}
-
 async function courseChatCandidates(env, question) {
-  const directory = await loadCourseChatDirectory(env);
-  const tokens = reportChatQueryTokens(question);
-  const patterns = tokens.map(courseDirectorySearchPattern).filter(Boolean);
-  // The private recommendation index contains every notable-entity file plus
-  // a representative floor per course. Keep a bounded ranking window instead
-  // of retaining and sorting one entry per candidate file.
-  const matched = [];
-  const fallback = [];
-  for (const item of directory.items) {
-    const course = COURSE_DIRECTORY_COURSES.get(item.course_id);
-    let matches = 0;
-    for (const pattern of patterns) {
-      if (courseChatItemMatchesPattern(item, course, pattern)) matches += 1;
-    }
-    if (!matches && matched.length) continue;
-    const attractionScore = courseChatAttractionScore(item, course);
-    let score = attractionScore * 2 + matches * 9;
-    if (matches) score += Math.min(8, matches * 2);
-    if (item.file_type === "pdf" || item.file_type === "spreadsheet") score += 1;
-    const entry = { item, score };
-    if (matches) {
-      if (!matched.length) fallback.length = 0;
-      courseChatKeepTopCandidate(matched, entry);
-    }
-    else if (!matched.length) courseChatKeepTopCandidate(fallback, entry);
-  }
-  const selected = matched.length ? matched : fallback;
-  return selected.map(({ item, score }) => courseChatPublicCandidate(item, score));
+  return chatLookupCandidates(env, question, "course");
 }
 
 async function reportChatUsageKey(user, date) {
-  return accountKey("report-chat", normalizeEmail(user.email), date);
+  return accountKey("report-chat-v2", normalizeEmail(user.email), date);
 }
 
 async function reserveReportChatTurn(env, user) {
@@ -11294,6 +11398,7 @@ function fallbackReportChatAnswer(question, candidates, context = "report") {
 }
 
 async function handleReportChat(request, env) {
+  const requestHint = crypto.randomUUID().replace(/-/gu, "").slice(0, 10).toUpperCase();
   let user;
   try {
     user = await currentUserFromRequest(env, request);
@@ -11330,7 +11435,6 @@ async function handleReportChat(request, env) {
         });
       }
     }
-    const usage = await reserveReportChatTurn(env, user);
     const candidates = context === "course"
       ? await courseChatCandidates(env, question)
       : await reportChatCandidates(env, question);
@@ -11354,7 +11458,7 @@ async function handleReportChat(request, env) {
           },
         }),
       },
-    ], { temperature: 0.1, timeout: 45000 });
+    ], { temperature: 0.1, timeout: 12000 });
     const allowed = new Map(candidates.map((item) => [item.id, item]));
     const recommendedIds = Array.isArray(generated && generated.recommended_ids)
       ? generated.recommended_ids.map((value) => String(value || "")).filter((id) => allowed.has(id)).slice(0, 6)
@@ -11365,6 +11469,10 @@ async function handleReportChat(request, env) {
     const followUps = Array.isArray(generated && generated.follow_up_questions)
       ? generated.follow_up_questions.map(reportChatQuestion).filter(Boolean).slice(0, 3)
       : [];
+    // Only a request with a complete grounded response consumes the daily
+    // allowance. DeepSeek transport errors use the deterministic fallback and
+    // still count, while any earlier lookup or processing failure does not.
+    const usage = await reserveReportChatTurn(env, user);
     await insertUsageEvent(env, normalizeEmail(user.email), "report_chat", {
       candidate_count: candidates.length,
       context,
@@ -11379,8 +11487,17 @@ async function handleReportChat(request, env) {
   } catch (error) {
     const message = String(error && error.message || "");
     const status = /daily report chat limit/i.test(message) ? 429 : 503;
+    const stageCode = status === 429
+      ? "DAILY_LIMIT"
+      : error instanceof ChatLookupError
+        ? error.stageCode
+        : /changed concurrently/i.test(message)
+          ? "USAGE_BUSY"
+          : "CHAT_SERVICE";
     return privateJsonResponse(request, env, status, {
       detail: status === 429 ? "今天的报告 Chat 次数已用完，请明天继续。" : "报告 Chat 暂时不可用，请稍后重试。",
+      stage_code: stageCode,
+      request_hint: requestHint,
     });
   }
 }

@@ -59,8 +59,10 @@ jobs:
           python3 -m py_compile scripts/edge_route_cutover.py
           python3 -m py_compile \
             scripts/build_chart_search_index.py \
+            scripts/build_report_chat_index.py \
             scripts/chart_search_r2.py \
             scripts/merge_chart_search_index.py
+          python3 scripts/test_build_report_chat_index.py
           python3 scripts/test_edge_route_cutover.py
 
       - name: Prepare masked runtime context
@@ -86,39 +88,6 @@ jobs:
           echo "::add-mask::$release_id"
           printf 'SITE_HOST=%s\n' "$site_host" >> "$GITHUB_ENV"
           printf 'STATIC_RELEASE=%s\n' "$release_id" >> "$GITHUB_ENV"
-
-      - name: Sync private supplemental-search Worker secrets
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID }}
-          SUPPLEMENTAL_SEARCH_URL: ${{ secrets.SUPPLEMENTAL_SEARCH_URL }}
-          SUPPLEMENTAL_SEARCH_HMAC_SECRET: ${{ secrets.SUPPLEMENTAL_SEARCH_HMAC_SECRET }}
-          SUPPLEMENTAL_SEARCH_REDACT_TERMS: ${{ secrets.SUPPLEMENTAL_SEARCH_REDACT_TERMS }}
-        run: |
-          set -euo pipefail
-          if [ -z "$SUPPLEMENTAL_SEARCH_URL" ] || [ "${#SUPPLEMENTAL_SEARCH_HMAC_SECRET}" -lt 16 ]; then
-            echo "Supplemental search is not fully configured; existing Worker secrets were left unchanged."
-            exit 0
-          fi
-          secret_file="$RUNNER_TEMP/supplemental-worker-secrets.json"
-          export secret_file
-          trap 'rm -f "$secret_file"' EXIT
-          python3 - <<'PY'
-          import json
-          import os
-          from pathlib import Path
-
-          payload = {
-              "SUPPLEMENTAL_SEARCH_URL": os.environ["SUPPLEMENTAL_SEARCH_URL"],
-              "SUPPLEMENTAL_SEARCH_HMAC_SECRET": os.environ["SUPPLEMENTAL_SEARCH_HMAC_SECRET"],
-              "SUPPLEMENTAL_SEARCH_REDACT_TERMS": os.environ.get("SUPPLEMENTAL_SEARCH_REDACT_TERMS") or "not-configured",
-          }
-          output = Path(os.environ["secret_file"])
-          output.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
-          output.chmod(0o600)
-          PY
-          npx --yes wrangler@4 secret bulk "$secret_file" --name portal-suite-worker
 
       - name: Install refresh dependencies
         if: github.event_name == 'schedule' || inputs.operation == 'migrate' || inputs.operation == 'inspect-source'
@@ -275,6 +244,20 @@ jobs:
             --model "$DEEPSEEK_MODEL" \
             --deepseek-base-url "$DEEPSEEK_BASE_URL" \
             --workers 500
+
+      - name: Publish private Report Chat lookup index
+        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+        run: |
+          set -euo pipefail
+          python3 scripts/build_report_chat_index.py \
+            --catalog-path portal_suite/data/catalog.json \
+            --output-dir "$RUNNER_TEMP/report-chat-index" \
+            --upload-r2
 
       - name: Download private chart search index
         if: github.event_name == 'schedule' || inputs.operation == 'migrate'
