@@ -2832,6 +2832,18 @@
     "adb:1167446": {
       "first_seen": "2026-08-12",
       "status": "downloaded"
+    },
+    "imf:d3c0b785528db01a1f63d9281f5b8b07b17626d05c2349dc5dccd55c254b": {
+      "first_seen": "2026-08-13",
+      "status": "downloaded"
+    },
+    "imf:0c30f38dc3352e2067438ecd45f3e860b87613af032534e3fcea8cd25efb": {
+      "first_seen": "2026-08-13",
+      "status": "downloaded"
+    },
+    "bis:https://www.bis.org/fsi/publ/insights77.htm": {
+      "first_seen": "2026-08-13",
+      "status": "downloaded"
     }
   }
 }
