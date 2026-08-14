@@ -808,6 +808,18 @@
     "bcg:https://www.bcg.com/publications/2026/how-ai-lets-retailers-manage-store-portfolios": {
       "first_seen": "2026-08-13",
       "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/how-executives-fix-failing-tech-ai-partnerships": {
+      "first_seen": "2026-08-14",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/how-cios-govern-ai-agents-at-scale": {
+      "first_seen": "2026-08-14",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/how-ceos-manage-ai-cybersecurity-risks": {
+      "first_seen": "2026-08-14",
+      "status": "downloaded"
     }
   }
 }
