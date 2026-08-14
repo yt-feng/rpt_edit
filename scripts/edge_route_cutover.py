@@ -3,11 +3,14 @@ from __future__ import annotations
 
 import json
 import os
+import subprocess
 import sys
+import tempfile
 import time
 import urllib.error
 import urllib.parse
 import urllib.request
+from pathlib import Path
 from typing import Any
 
 
@@ -89,15 +92,76 @@ def delete_edge_route(zone_id: str, pattern: str, script_name: str) -> None:
     )
 
 
-def request_status(url: str, *, method: str = "HEAD", headers: dict[str, str] | None = None) -> tuple[int, dict[str, str], bytes]:
-    request = urllib.request.Request(url, method=method, headers=headers or {})
-    try:
-        with urllib.request.urlopen(request, timeout=30) as response:
-            return response.status, {key.lower(): value for key, value in response.headers.items()}, response.read(65536)
-    except urllib.error.HTTPError as error:
-        return error.code, {key.lower(): value for key, value in error.headers.items()}, error.read(65536)
-    except OSError:
+def request_status(
+    url: str,
+    *,
+    method: str = "HEAD",
+    headers: dict[str, str] | None = None,
+) -> tuple[int, dict[str, str], bytes]:
+    request_method = method.upper()
+    if request_method not in {"GET", "HEAD"}:
         return 0, {}, b""
+    try:
+        with tempfile.TemporaryDirectory(prefix="edge-route-verify-") as temporary_directory:
+            temporary_root = Path(temporary_directory)
+            header_path = temporary_root / "headers.txt"
+            body_path = temporary_root / "body.bin"
+            command = [
+                "curl",
+                "--silent",
+                "--show-error",
+                "--max-time",
+                "30",
+                "--dump-header",
+                str(header_path),
+                "--output",
+                str(body_path),
+                "--write-out",
+                "%{http_code}",
+            ]
+            if request_method == "HEAD":
+                command.append("--head")
+            else:
+                command.extend(("--max-filesize", "65536"))
+            for key, value in (headers or {}).items():
+                command.extend(("--header", f"{key}: {value}"))
+            command.extend(("--", url))
+            completed = subprocess.run(
+                command,
+                check=False,
+                capture_output=True,
+                text=True,
+                timeout=35,
+            )
+            if completed.returncode != 0:
+                return 0, {}, b""
+            status_text = completed.stdout.strip()
+            if len(status_text) != 3 or not status_text.isdigit():
+                return 0, {}, b""
+            response_headers = parse_curl_headers(header_path.read_bytes())
+            response_body = b""
+            if request_method == "GET":
+                with body_path.open("rb") as response_file:
+                    response_body = response_file.read(65536)
+            return int(status_text), response_headers, response_body
+    except (OSError, subprocess.SubprocessError):
+        return 0, {}, b""
+
+
+def parse_curl_headers(payload: bytes) -> dict[str, str]:
+    blocks = payload.replace(b"\r\n", b"\n").split(b"\n\n")
+    for block in reversed(blocks):
+        lines = block.splitlines()
+        if not lines or not lines[0].startswith(b"HTTP/"):
+            continue
+        response_headers: dict[str, str] = {}
+        for line in lines[1:]:
+            if b":" not in line:
+                continue
+            key, value = line.split(b":", 1)
+            response_headers[key.decode("latin-1").strip().lower()] = value.decode("latin-1").strip()
+        return response_headers
+    return {}
 
 
 def verify_edge(origin: str) -> bool:

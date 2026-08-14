@@ -2,14 +2,97 @@
 from __future__ import annotations
 
 import os
+import subprocess
 import sys
 import unittest
+from pathlib import Path
 from unittest.mock import patch
 
 import edge_route_cutover as cutover
 
 
-class MigrateRouteCleanupTests(unittest.TestCase):
+class EdgeRouteCutoverTests(unittest.TestCase):
+    def _curl_result(self, command: list[str], *, status: int, body: bytes) -> subprocess.CompletedProcess[str]:
+        header_path = Path(command[command.index("--dump-header") + 1])
+        body_path = Path(command[command.index("--output") + 1])
+        header_path.write_bytes(
+            f"HTTP/2 {status}\r\nContent-Type: application/json\r\nX-Origin-Class: edge-static\r\n\r\n".encode()
+        )
+        body_path.write_bytes(body)
+        return subprocess.CompletedProcess(command, 0, stdout=str(status), stderr="")
+
+    def test_live_head_check_uses_curl_without_custom_headers(self) -> None:
+        def run(command: list[str], **_kwargs: object) -> subprocess.CompletedProcess[str]:
+            return self._curl_result(command, status=200, body=b"curl may mirror HEAD headers here")
+
+        with patch.object(cutover.subprocess, "run", side_effect=run) as curl:
+            status, _headers, body = cutover.request_status("https://portal.example.invalid/")
+
+        self.assertEqual(status, 200)
+        self.assertEqual(body, b"")
+        command = curl.call_args.args[0]
+        self.assertEqual(command[0], "curl")
+        self.assertIn("--head", command)
+        self.assertNotIn("--header", command)
+        self.assertNotIn("--max-filesize", command)
+        self.assertEqual(command[-2:], ["--", "https://portal.example.invalid/"])
+        self.assertEqual(curl.call_args.kwargs["timeout"], 35)
+
+    def test_live_check_preserves_range_header(self) -> None:
+        def run(command: list[str], **_kwargs: object) -> subprocess.CompletedProcess[str]:
+            return self._curl_result(command, status=206, body=b"payload")
+
+        with patch.object(cutover.subprocess, "run", side_effect=run) as curl:
+            status, headers, body = cutover.request_status(
+                "https://portal.example.invalid/data/search_index.json",
+                method="GET",
+                headers={"Range": "bytes=0-1023"},
+            )
+
+        self.assertEqual(status, 206)
+        self.assertEqual(body, b"payload")
+        self.assertEqual(headers["content-type"], "application/json")
+        self.assertEqual(headers["x-origin-class"], "edge-static")
+        command = curl.call_args.args[0]
+        range_index = command.index("--header")
+        self.assertEqual(command[range_index + 1], "Range: bytes=0-1023")
+        self.assertNotIn("--head", command)
+        size_index = command.index("--max-filesize")
+        self.assertEqual(command[size_index + 1], "65536")
+
+    def test_curl_header_parser_uses_the_final_response_block(self) -> None:
+        headers = cutover.parse_curl_headers(
+            b"HTTP/1.1 200 Connection established\r\nProxy-Agent: test\r\n\r\n"
+            b"HTTP/2 404\r\nContent-Type: text/html\r\nX-Origin-Class: edge-static\r\n\r\n"
+        )
+
+        self.assertEqual(
+            headers,
+            {
+                "content-type": "text/html",
+                "x-origin-class": "edge-static",
+            },
+        )
+
+    def test_http_error_status_is_preserved_for_verification(self) -> None:
+        def run(command: list[str], **_kwargs: object) -> subprocess.CompletedProcess[str]:
+            return self._curl_result(command, status=403, body=b"Forbidden")
+
+        with patch.object(cutover.subprocess, "run", side_effect=run) as curl:
+            status, _headers, body = cutover.request_status("https://portal.example.invalid/")
+
+        self.assertEqual(status, 403)
+        self.assertEqual(body, b"")
+        self.assertNotIn("--fail", curl.call_args.args[0])
+
+    def test_curl_transport_failure_maps_to_unreachable_status(self) -> None:
+        completed = subprocess.CompletedProcess([], 28, stdout="000", stderr="timeout")
+        with patch.object(cutover.subprocess, "run", return_value=completed):
+            self.assertEqual(
+                cutover.request_status("https://portal.example.invalid/"),
+                (0, {}, b""),
+            )
+
     def test_verify_mode_uses_live_checks_without_cloud_route_permissions(self) -> None:
         with (
             patch.object(sys, "argv", ["edge_route_cutover.py", "verify"]),
