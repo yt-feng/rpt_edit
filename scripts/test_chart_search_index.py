@@ -447,7 +447,27 @@ class ChartSearchIndexTests(unittest.TestCase):
             record = next(iter(state["items"].values()))
             self.assertEqual(record["status"], "error")
             self.assertEqual(record["failure_class"], "transient")
+            self.assertEqual(record["failure_reason"], "other")
             self.assertEqual(summary["retryable_count"], 1)
+            self.assertEqual(summary["retryable_reasons"], {"other": 1})
+
+    def test_retryable_reason_codes_are_provider_neutral(self) -> None:
+        fixtures = {
+            "Vision request failed at the transport layer": "transport",
+            "Vision service is temporarily unavailable (status=503)": "http_transient",
+            "Vision service returned an unexpected status (302)": "http_unexpected",
+            "Vision service returned invalid JSON": "response_json",
+            "Vision response had no choices": "no_choices",
+            "Vision model content was not valid JSON": "model_json",
+            "fixture service outage": "other",
+        }
+        for message, expected in fixtures.items():
+            with self.subTest(message=message):
+                self.assertEqual(
+                    chart.retryable_reason_code(chart.RetryableVisionError(message)),
+                    expected,
+                )
+        self.assertEqual(chart.retryable_reason_code(ValueError("private detail")), "other")
 
     def test_authentication_error_fails_immediately_without_retry(self) -> None:
         with tempfile.TemporaryDirectory() as temp:

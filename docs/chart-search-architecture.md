@@ -89,8 +89,10 @@ The public repository contains no endpoint or credential. Actions reads:
 The client rejects non-HTTPS bases, embedded URL credentials, query strings, and
 fragments. Authentication/configuration failures such as HTTP 401/403 stop the run
 immediately. Throttling, server failures, network timeouts, and malformed server/model
-JSON remain retryable and can never quarantine an image. Logs and checkpoints store
-only generic failure classes/statuses.
+JSON remain retryable and can never quarantine an image. Logs and private checkpoints
+store only bounded, provider-neutral reason codes (for example `transport`,
+`http_transient`, or `model_json`), never response bodies, request endpoints, or model
+output.
 
 ## Incremental, Deduplication, and Resume Rules
 

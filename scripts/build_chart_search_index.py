@@ -113,6 +113,35 @@ IMAGE_ERROR_MARKERS = (
     "too large", "file size", "unsupported format", "input content",
 )
 DEFAULT_CIRCUIT_BREAKER_THRESHOLD = 3
+RETRYABLE_REASON_CODES = {
+    "transport",
+    "http_transient",
+    "http_unexpected",
+    "response_json",
+    "no_choices",
+    "model_json",
+    "other",
+}
+
+
+def retryable_reason_code(exc: BaseException) -> str:
+    """Return a bounded provider-neutral reason without response or request data."""
+    if not isinstance(exc, RetryableVisionError):
+        return "other"
+    message = str(exc)
+    if message == "Vision request failed at the transport layer":
+        return "transport"
+    if message.startswith("Vision service is temporarily unavailable"):
+        return "http_transient"
+    if message.startswith("Vision service returned an unexpected status"):
+        return "http_unexpected"
+    if message == "Vision service returned invalid JSON":
+        return "response_json"
+    if message == "Vision response had no choices":
+        return "no_choices"
+    if message == "Vision model content was not valid JSON":
+        return "model_json"
+    return "other"
 
 
 @dataclass(frozen=True)
@@ -754,6 +783,9 @@ def build_index(
                     "stable_attempt_runs": stable_attempt_runs,
                     "failure_class": "stable_image" if is_stable_image_error else "transient",
                     "error_type": type(exc).__name__,
+                    "failure_reason": (
+                        "stable_image" if is_stable_image_error else retryable_reason_code(exc)
+                    ),
                     "last_attempt_run_id": attempt_run_id,
                     "next_retry_at": (datetime.now(BEIJING) + timedelta(hours=delay_hours)).isoformat(timespec="seconds"),
                     "updated_at_bjt": now_iso(),
@@ -831,6 +863,7 @@ def build_index(
     state["updated_at_bjt"] = now_iso()
     candidate_hashes = {candidate.image_sha256 for candidate in candidates}
     retryable_count = 0
+    retryable_reasons: dict[str, int] = {}
     stable_error_count = 0
     quarantined_count = 0
     unprocessed_count = 0
@@ -842,6 +875,10 @@ def build_index(
                 stable_error_count += 1
             else:
                 retryable_count += 1
+                reason = str(record.get("failure_reason") or "unknown")
+                if reason not in RETRYABLE_REASON_CODES:
+                    reason = "unknown"
+                retryable_reasons[reason] = retryable_reasons.get(reason, 0) + 1
         elif status == "quarantined":
             quarantined_count += 1
         # A bare ``status=ok`` is not a completed checkpoint.  In particular,
@@ -859,6 +896,7 @@ def build_index(
         "failures": failures,
         "deferred": deferred,
         "retryable_count": retryable_count,
+        "retryable_reasons": retryable_reasons,
         "stable_error_count": stable_error_count,
         "quarantined_count": quarantined_count,
         "unprocessed_count": unprocessed_count,
@@ -988,6 +1026,7 @@ def main() -> int:
         f"candidates={summary['candidate_count']} model_calls={summary['model_calls']} "
         f"cache_hits={summary['cache_hits']} failures={summary['failures']} "
         f"deferred={summary['deferred']} retryable={summary['retryable_count']} "
+        f"retryable_reasons={json.dumps(summary['retryable_reasons'], sort_keys=True, separators=(',', ':'))} "
         f"stable_errors={summary['stable_error_count']} "
         f"quarantined={summary['quarantined_count']} unprocessed={summary['unprocessed_count']} "
         f"reports={summary['report_count']} "
