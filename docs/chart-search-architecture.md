@@ -103,6 +103,10 @@ output.
 - A successful description, including `is_chart=false`, is reused on later runs.
 - Duplicate images across reports cause one model call but can create multiple report
   associations.
+- A complete run treats its explicit `date_folder` candidate set as authoritative. Before
+  rebuilding that date, report refs from the same date that are no longer present are
+  removed; older dates are untouched. This keeps recovery runs idempotent when title
+  normalization or packaging metadata changes.
 - Each success or failure is atomically checkpointed locally. The workflow limits
   each model batch to 20 calls by default and uploads the private R2 state after
   every batch, so a runner timeout loses at most the active batch rather than the

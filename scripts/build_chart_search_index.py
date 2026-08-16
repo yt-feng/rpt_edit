@@ -713,6 +713,33 @@ def previous_reports(index: dict[str, Any]) -> dict[str, dict[str, Any]]:
     return result
 
 
+def replace_date_reports(
+    reports: dict[str, dict[str, Any]],
+    candidates: list[ChartCandidate],
+    date_folder: str,
+) -> int:
+    """Remove stale report refs when a complete date folder is being rebuilt."""
+    date_folder = clean_text(date_folder, 16)
+    if not date_folder:
+        return 0
+    candidate_refs = {
+        candidate.report_ref
+        for candidate in candidates
+        if candidate.date_folder == date_folder
+    }
+    if not candidate_refs:
+        raise RuntimeError(f"Replacement date {date_folder} has no chart candidates")
+    stale_refs = [
+        report_ref
+        for report_ref, report in reports.items()
+        if clean_text(report.get("date_folder"), 16) == date_folder
+        and report_ref not in candidate_refs
+    ]
+    for report_ref in stale_refs:
+        reports.pop(report_ref, None)
+    return len(stale_refs)
+
+
 def build_index(
     candidates: list[ChartCandidate],
     *,
@@ -723,6 +750,7 @@ def build_index(
     analyze: Callable[[Path], dict[str, Any]],
     max_model_calls: int,
     retry_errors_now: bool = False,
+    replace_date_folder: str = "",
     attempt_run_id: str = "",
     circuit_breaker_threshold: int = DEFAULT_CIRCUIT_BREAKER_THRESHOLD,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
@@ -731,6 +759,7 @@ def build_index(
         state_items = {}
         state["items"] = state_items
     reports = previous_reports(previous_index)
+    replaced_report_count = replace_date_reports(reports, candidates, replace_date_folder)
     model_calls = 0
     cache_hits = 0
     failures = 0
@@ -915,6 +944,7 @@ def build_index(
         "deferred": deferred,
         "retryable_count": retryable_count,
         "retryable_reasons": retryable_reasons,
+        "replaced_report_count": replaced_report_count,
         "stable_error_count": stable_error_count,
         "quarantined_count": quarantined_count,
         "unprocessed_count": unprocessed_count,
@@ -951,6 +981,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--asset-output-dir", required=True)
     parser.add_argument("--max-images", type=int, default=0, help="Maximum new model calls per pass; 0 is unlimited")
     parser.add_argument("--retry-errors-now", action="store_true", help="Retry prior error checkpoints without waiting for next_retry_at")
+    parser.add_argument("--replace-date-folder", default="", help="Replace prior report refs for this complete date folder")
     parser.add_argument("--max-per-report", type=int, default=0, help="Maximum images per report; 0 is unlimited")
     parser.add_argument("--timeout", type=float, default=90.0)
     parser.add_argument("--retries", type=int, default=4)
@@ -1025,6 +1056,7 @@ def main() -> int:
         analyze=client.analyze,
         max_model_calls=max(0, args.max_images),
         retry_errors_now=bool(args.retry_errors_now),
+        replace_date_folder=clean_text(args.replace_date_folder, 16),
         attempt_run_id=(
             clean_text(args.attempt_run_id, 160)
             or clean_text(
@@ -1045,6 +1077,7 @@ def main() -> int:
         f"cache_hits={summary['cache_hits']} failures={summary['failures']} "
         f"deferred={summary['deferred']} retryable={summary['retryable_count']} "
         f"retryable_reasons={json.dumps(summary['retryable_reasons'], sort_keys=True, separators=(',', ':'))} "
+        f"replaced_reports={summary['replaced_report_count']} "
         f"stable_errors={summary['stable_error_count']} "
         f"quarantined={summary['quarantined_count']} unprocessed={summary['unprocessed_count']} "
         f"reports={summary['report_count']} "

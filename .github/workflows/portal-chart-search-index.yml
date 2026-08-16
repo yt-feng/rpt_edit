@@ -215,6 +215,7 @@ jobs:
               --max-images "$CALL_LIMIT" \
               --max-per-report "${{ vars.VISION_INDEX_MAX_PER_REPORT || '0' }}" \
               --min-interval "${{ vars.VISION_INDEX_MIN_INTERVAL_SECONDS || '0.4' }}" \
+              --replace-date-folder "${{ inputs.date_folder }}" \
               --attempt-run-id "${GITHUB_RUN_ID}:${GITHUB_RUN_ATTEMPT}" \
               "${RETRY_ARGS[@]}"
             BUILD_STATUS=$?

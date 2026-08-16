@@ -478,6 +478,59 @@ class ChartSearchIndexTests(unittest.TestCase):
         self.assertEqual(chart.retryable_reason_code(invalid), "other")
         self.assertEqual(chart.retryable_reason_code(ValueError("private detail")), "other")
 
+    def test_replacement_date_removes_only_stale_same_date_reports(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            workspace = Path(temp)
+            reports = workspace / "260809"
+            write_report(reports, "report_a", "Replacement Report")
+            candidates = chart.discover_candidates(reports, {}, date_folder="260809")
+            canonical_ref = candidates[0].report_ref
+            previous = {
+                "schema_version": 1,
+                "reports": [
+                    {
+                        "report_ref": "stale-same-date",
+                        "title": "Stale",
+                        "date_folder": "260809",
+                        "charts": [],
+                    },
+                    {
+                        "report_ref": "older-date",
+                        "title": "Older",
+                        "date_folder": "260808",
+                        "charts": [{"id": "older-chart", "ordinal": 1, **sample_analysis()}],
+                    },
+                ],
+            }
+            index, summary = chart.build_index(
+                candidates,
+                state={"schema_version": 1, "items": {}},
+                previous_index=previous,
+                state_path=workspace / "state.json",
+                asset_output_dir=workspace / "assets",
+                analyze=lambda _path: sample_analysis(),
+                max_model_calls=20,
+                replace_date_folder="260809",
+            )
+            refs = {report["report_ref"] for report in index["reports"]}
+            self.assertEqual(refs, {"older-date", canonical_ref})
+            self.assertEqual(summary["replaced_report_count"], 1)
+
+    def test_replacement_date_requires_candidates(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            workspace = Path(temp)
+            with self.assertRaisesRegex(RuntimeError, "has no chart candidates"):
+                chart.build_index(
+                    [],
+                    state={"schema_version": 1, "items": {}},
+                    previous_index={"schema_version": 1, "reports": []},
+                    state_path=workspace / "state.json",
+                    asset_output_dir=workspace / "assets",
+                    analyze=lambda _path: sample_analysis(),
+                    max_model_calls=20,
+                    replace_date_folder="260809",
+                )
+
     def test_authentication_error_fails_immediately_without_retry(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             image_path = Path(temp) / "image.png"
