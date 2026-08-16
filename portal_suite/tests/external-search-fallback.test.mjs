@@ -61,7 +61,7 @@ test("external search uses its full-request 10 second budget without changing th
   });
 
   await functions.handleExternalSearch({
-    url: "https://kcdesk.com/external/search?q=US%20economic&page=1",
+    url: "https://portal.example.invalid/external/search?q=US%20economic&page=1",
   }, {});
   assert.equal(cachedSearchArgs[2], "external");
   assert.equal(cachedSearchArgs.length, 8, "external search must not pass skipFreshCache options");
