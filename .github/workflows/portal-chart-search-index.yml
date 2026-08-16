@@ -31,6 +31,11 @@ on:
         required: true
         default: "0"
         type: string
+      retry_errors_now:
+        description: "Manual recovery: retry error checkpoints now instead of waiting for their next-retry timestamp"
+        required: true
+        default: false
+        type: boolean
 
 permissions:
   actions: read
@@ -56,11 +61,13 @@ jobs:
           ARTIFACT_RUN_ID: ${{ inputs.source_artifact_run_id }}
           EXPECTED_SHARDS: ${{ inputs.expected_shards }}
           MAX_IMAGES: ${{ inputs.max_images }}
+          RETRY_ERRORS_NOW: ${{ inputs.retry_errors_now }}
         run: |
           set -euo pipefail
           printf '%s' "$DATE_FOLDER" | grep -Eq '^[0-9]{6,8}$'
           printf '%s' "$EXPECTED_SHARDS" | grep -Eq '^[0-9]+$'
           printf '%s' "$MAX_IMAGES" | grep -Eq '^[0-9]+$'
+          printf '%s' "$RETRY_ERRORS_NOW" | grep -Eq '^(true|false)$'
           if { [ -n "$HANDOFF_RUN_ID" ] && [ -n "$ARTIFACT_RUN_ID" ]; } || \
              { [ -z "$HANDOFF_RUN_ID" ] && [ -z "$ARTIFACT_RUN_ID" ]; }; then
             echo "::error::Choose exactly one source: private handoff or historical artifact run."
@@ -173,6 +180,7 @@ jobs:
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
           REQUEST_LIMIT: ${{ inputs.max_images }}
+          RETRY_ERRORS_NOW: ${{ inputs.retry_errors_now }}
           CHECKPOINT_BATCH_SIZE: ${{ vars.VISION_INDEX_CHECKPOINT_BATCH_SIZE || '20' }}
         run: |
           set -euo pipefail
@@ -186,6 +194,10 @@ jobs:
           QUARANTINED=0
           UNPROCESSED=1
           FAILURES=0
+          RETRY_ARGS=()
+          if [ "$RETRY_ERRORS_NOW" = "true" ]; then
+            RETRY_ARGS+=(--retry-errors-now)
+          fi
 
           run_checkpoint_batch() {
             local CALL_LIMIT="$1"
@@ -203,7 +215,8 @@ jobs:
               --max-images "$CALL_LIMIT" \
               --max-per-report "${{ vars.VISION_INDEX_MAX_PER_REPORT || '0' }}" \
               --min-interval "${{ vars.VISION_INDEX_MIN_INTERVAL_SECONDS || '0.4' }}" \
-              --attempt-run-id "${GITHUB_RUN_ID}:${GITHUB_RUN_ATTEMPT}"
+              --attempt-run-id "${GITHUB_RUN_ID}:${GITHUB_RUN_ATTEMPT}" \
+              "${RETRY_ARGS[@]}"
             BUILD_STATUS=$?
             set -e
             # Publish the private state even when authentication/configuration fails

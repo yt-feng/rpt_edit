@@ -1,6 +1,6 @@
 # Chart Search Architecture
 
-Last updated: 2026-08-12
+Last updated: 2026-08-16
 
 ## Goal
 
@@ -106,6 +106,9 @@ only generic failure classes/statuses.
   descriptions from the same run. Three consecutive transient failures across images
   open a circuit breaker. The workflow uploads the private state before exiting, so a
   service-wide outage does not spend calls across the full input set.
+- Manual recovery can set `retry_errors_now=true` to bypass only the checkpoint's
+  next-retry timestamp. It does not bypass per-request retries, the circuit breaker,
+  configuration validation, failure classification, or the complete-index publish gate.
 - `max_images` counts only new model calls. Cache hits are unlimited, so a backfill can
   relink already-described charts without consuming its call budget.
 - The daily job makes as many calls as needed by default. Only deterministic single-image
@@ -212,6 +215,8 @@ Run **Portal chart search index** manually with:
 - `source_artifact_pattern` when the historical run used a different artifact name;
 - `expected_shards`: expected count, or `0` to accept all found shards;
 - `max_images`: desired ceiling for new calls.
+- `retry_errors_now`: use only for an operator-triggered recovery when the retained
+  handoff should retry error checkpoints before their normal backoff expires.
 
 Repeat the same date/run with a higher ceiling if the summary reports deferred images.
 Already completed hashes are skipped. Historical backfill requires a still-available
