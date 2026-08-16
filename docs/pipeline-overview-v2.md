@@ -58,6 +58,22 @@ PDF sources
 | Portal data | Catalogs, search indexes, account rules, and static assets. |
 | Operational alerts | Signed, deduplicated notifications for workflow failures. |
 
+## Operational Alert Policy
+
+GitHub Actions keeps the original success or failure conclusion for observability and
+recovery logic. The separate operator email is quieter: before sending, the shared
+alert workflow reads the same workflow's recent run history. A successful run in the
+24 hours preceding the failed attempt suppresses the email. Reruns use the current
+attempt's actual start time instead of the original run creation time. An email is
+sent only when that health window contains no success. The server-side dedupe key is
+stable per workflow, so an ongoing outage produces at most one operations email in
+each rolling 24-hour period.
+
+If GitHub run history cannot be read, the email is suppressed instead of guessing.
+This policy changes notification volume only; failed runs remain visible in GitHub,
+private checkpoints and handoffs retain their existing recovery behavior, and no
+workflow output is marked successful merely to silence an alert.
+
 The optional chart-search stage and its resumable object-storage checkpoint are
 documented in [Chart Search Architecture](chart-search-architecture.md).
 The registered-user metadata RAG and private Course-directory recommender are

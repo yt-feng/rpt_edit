@@ -47,6 +47,7 @@ on:
     - cron: "30 22 * * *"
 
 permissions:
+  actions: read
   contents: write
 
 env:

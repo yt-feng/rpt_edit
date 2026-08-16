@@ -13,6 +13,7 @@ on:
         type: string
 
 permissions:
+  actions: read
   contents: read
 
 jobs:
@@ -29,13 +30,49 @@ jobs:
           sparse-checkout-cone-mode: false
           sparse-checkout: |
             scripts/render_private_config.py
+            scripts/check_portal_ops_alert_window.py
             scripts/send_portal_ops_alert.py
+            scripts/test_check_portal_ops_alert_window.py
             scripts/test_send_portal_ops_alert.py
 
       - name: Test public operations alert client
-        run: python -B scripts/test_send_portal_ops_alert.py
+        run: |
+          python -B scripts/test_check_portal_ops_alert_window.py
+          python -B scripts/test_send_portal_ops_alert.py
+
+      - name: Check 24-hour workflow health window
+        id: alert-window
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_WORKFLOW: ${{ inputs.source_workflow }}
+        run: |
+          set -euo pipefail
+          RUNS_FILE="$RUNNER_TEMP/portal-ops-recent-runs.json"
+          if CURRENT_STARTED_AT="$(gh run view "$GITHUB_RUN_ID" \
+               --repo "$GITHUB_REPOSITORY" \
+               --json startedAt \
+               --jq .startedAt)" && \
+             gh run list \
+               --repo "$GITHUB_REPOSITORY" \
+               --workflow "$SOURCE_WORKFLOW" \
+               --all \
+               --limit 1000 \
+               --json databaseId,status,conclusion,createdAt,startedAt \
+               > "$RUNS_FILE"; then
+            python -B scripts/check_portal_ops_alert_window.py \
+              --runs-json "$RUNS_FILE" \
+              --source-workflow "$SOURCE_WORKFLOW" \
+              --current-run-id "$GITHUB_RUN_ID" \
+              --current-started-at "$CURRENT_STARTED_AT" \
+              >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::Unable to read recent workflow history; suppressing the email alert."
+            echo "should_alert=false" >> "$GITHUB_OUTPUT"
+            echo "reason=history_query_failed" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Materialize private alert runtime values
+        if: steps.alert-window.outputs.should_alert == 'true'
         env:
           PORTAL_PRIVATE_CONFIG_B64: ${{ secrets.PORTAL_PRIVATE_CONFIG_B64 }}
         run: |
@@ -45,6 +82,7 @@ jobs:
             --skip-generated-files
 
       - name: Send deduplicated Portal Suite operations email
+        if: steps.alert-window.outputs.should_alert == 'true'
         env:
           OPS_ALERT_SIGNING_KEY: ${{ secrets.OPS_ALERT_SIGNING_KEY || secrets.PASSWORD_SECRET }}
           PORTAL_WORKER_URL: ${{ secrets.PORTAL_WORKER_URL }}
@@ -65,5 +103,5 @@ jobs:
           python scripts/send_portal_ops_alert.py \
             --subject "Portal workflow failed | $SOURCE_WORKFLOW" \
             --text-file "$RUNNER_TEMP/portal-ops-alert.txt" \
-            --dedupe-key "wechat-workflow:$GITHUB_RUN_ID" \
+            --dedupe-key "${{ steps.alert-window.outputs.dedupe_key }}" \
             --severity critical

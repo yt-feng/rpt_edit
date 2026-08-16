@@ -73,6 +73,7 @@ on:
         default: true
 
 permissions:
+  actions: read
   contents: write
 
 env:

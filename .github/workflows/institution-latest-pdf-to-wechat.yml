@@ -55,6 +55,7 @@ on:
     - cron: "0 22 * * *"
 
 permissions:
+  actions: read
   contents: write
 
 env:
