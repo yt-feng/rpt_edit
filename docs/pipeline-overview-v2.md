@@ -74,6 +74,13 @@ This policy changes notification volume only; failed runs remain visible in GitH
 private checkpoints and handoffs retain their existing recovery behavior, and no
 workflow output is marked successful merely to silence an alert.
 
+The search-mirror refresh has an additional last-known-good health rule. External and
+authority fetches have bounded stage budgets, and an incomplete attempt never replaces
+the corresponding R2 snapshot. The refresh remains healthy while that retained snapshot
+is less than 24 hours old; it fails only after a source has had no complete refresh for
+the full grace window. This treats the still-current snapshot as the served output while
+preventing a prolonged upstream outage from being hidden.
+
 The optional chart-search stage and its resumable object-storage checkpoint are
 documented in [Chart Search Architecture](chart-search-architecture.md).
 The registered-user metadata RAG and private Course-directory recommender are

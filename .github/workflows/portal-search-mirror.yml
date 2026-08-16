@@ -51,7 +51,9 @@ jobs:
 
       - name: Install dependencies
         timeout-minutes: 3
-        run: python -m pip install --retries 5 --timeout 30 requests boto3
+        run: |
+          python -m pip install --retries 5 --timeout 30 requests boto3
+          python -B scripts/test_portal_search_mirror.py
 
       - name: Refresh search mirror
         timeout-minutes: 15
@@ -78,4 +80,7 @@ jobs:
             --timeout 30 \
             --retries 4 \
             --retry-backoff 1.5 \
+            --external-budget-seconds 540 \
+            --authority-budget-seconds 240 \
+            --failure-grace-hours 24 \
             --upload-r2

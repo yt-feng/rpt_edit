@@ -57,18 +57,31 @@ EXTERNAL_MIRROR_SEED_QUERIES = [
 ]
 
 
+class TimeBudgetExceeded(RuntimeError):
+    """The current mirror stage exhausted its bounded wall-clock budget."""
+
+
 def request_json_with_retries(
     method: Any,
     description: str,
     *,
     retries: int,
     retry_backoff: float,
+    deadline: float | None = None,
     **kwargs: Any,
 ) -> Any:
     last_error: Exception | None = None
     for attempt in range(1, retries + 1):
+        call_kwargs = dict(kwargs)
+        if deadline is not None:
+            remaining = deadline - time.monotonic()
+            if remaining <= 0:
+                raise TimeBudgetExceeded(f"{description} exceeded its stage time budget")
+            request_timeout = call_kwargs.get("timeout")
+            if isinstance(request_timeout, (int, float)):
+                call_kwargs["timeout"] = max(0.1, min(float(request_timeout), remaining))
         try:
-            response = method(**kwargs)
+            response = method(**call_kwargs)
             response.raise_for_status()
             return response.json()
         except (requests.RequestException, ValueError) as error:
@@ -76,6 +89,11 @@ def request_json_with_retries(
             if attempt >= retries:
                 break
             sleep_seconds = min(retry_backoff * (2 ** (attempt - 1)), 8.0)
+            if deadline is not None:
+                remaining = deadline - time.monotonic()
+                if remaining <= 0:
+                    raise TimeBudgetExceeded(f"{description} exceeded its stage time budget")
+                sleep_seconds = min(sleep_seconds, remaining)
             print(
                 f"warning: {description} failed on attempt {attempt}/{retries}: {error}; "
                 f"retrying in {sleep_seconds:.1f}s",
@@ -159,6 +177,7 @@ def fetch_external_query_pages(
     retry_backoff: float,
     items: list[dict[str, Any]],
     seen: set[str],
+    deadline: float | None = None,
 ) -> bool:
     for page in range(1, pages + 1):
         description = f"external {query or 'latest'} page {page}"
@@ -168,10 +187,13 @@ def fetch_external_query_pages(
                 description,
                 retries=retries,
                 retry_backoff=retry_backoff,
+                deadline=deadline,
                 url=EXTERNAL_API,
                 params={"query": query, "page_num": page, "page_size": page_size},
                 timeout=timeout,
             )
+        except TimeBudgetExceeded:
+            raise
         except RuntimeError as error:
             print(f"warning: stop {description}: {error}", file=sys.stderr)
             return False
@@ -191,6 +213,7 @@ def fetch_external_pages(
     retry_backoff: float,
     seed_queries: list[str],
     seed_pages: int,
+    budget_seconds: float = 0,
 ) -> tuple[list[dict[str, Any]], bool]:
     session = requests.Session()
     session.headers.update({
@@ -200,17 +223,23 @@ def fetch_external_pages(
     })
     items: list[dict[str, Any]] = []
     seen: set[str] = set()
-    complete = fetch_external_query_pages(
-        session,
-        "",
-        pages,
-        page_size,
-        timeout,
-        retries,
-        retry_backoff,
-        items,
-        seen,
-    )
+    deadline = time.monotonic() + budget_seconds if budget_seconds > 0 else None
+    try:
+        complete = fetch_external_query_pages(
+            session,
+            "",
+            pages,
+            page_size,
+            timeout,
+            retries,
+            retry_backoff,
+            items,
+            seen,
+            deadline,
+        )
+    except TimeBudgetExceeded as error:
+        print(f"warning: stop external mirror: {error}", file=sys.stderr)
+        return items, False
     if not complete:
         return items, False
     if seed_pages > 0:
@@ -218,18 +247,24 @@ def fetch_external_pages(
             seed = clean_text(query, 120)
             if not seed:
                 continue
-            fetch_external_query_pages(
-                session,
-                seed,
-                seed_pages,
-                page_size,
-                timeout,
-                retries,
-                retry_backoff,
-                items,
-                seen,
-            )
-    return items, True
+            try:
+                seed_complete = fetch_external_query_pages(
+                    session,
+                    seed,
+                    seed_pages,
+                    page_size,
+                    timeout,
+                    retries,
+                    retry_backoff,
+                    items,
+                    seen,
+                    deadline,
+                )
+            except TimeBudgetExceeded as error:
+                print(f"warning: stop external seed mirror: {error}", file=sys.stderr)
+                return items, False
+            complete = seed_complete and complete
+    return items, complete
 
 
 def authority_payload(page: int, page_size: int) -> dict[str, Any]:
@@ -277,6 +312,7 @@ def fetch_authority_pages(
     timeout: float,
     retries: int,
     retry_backoff: float,
+    budget_seconds: float = 0,
 ) -> tuple[list[dict[str, Any]], bool]:
     session = requests.Session()
     session.headers.update({
@@ -288,6 +324,7 @@ def fetch_authority_pages(
     items: list[dict[str, Any]] = []
     seen: set[str] = set()
     complete = True
+    deadline = time.monotonic() + budget_seconds if budget_seconds > 0 else None
     for kind, endpoint in AUTHORITY_ENDPOINTS.items():
         referer = f"{AUTHORITY_ORIGIN}/foreign.html" if kind == "foreign" else f"{AUTHORITY_ORIGIN}/foreign-rt.html"
         for page in range(1, pages + 1):
@@ -297,11 +334,15 @@ def fetch_authority_pages(
                     f"authority {kind} page {page}",
                     retries=retries,
                     retry_backoff=retry_backoff,
+                    deadline=deadline,
                     url=f"{AUTHORITY_ORIGIN}{endpoint}",
                     headers={"Referer": referer},
                     json=authority_payload(page, page_size),
                     timeout=timeout,
                 )
+            except TimeBudgetExceeded as error:
+                print(f"warning: stop authority mirror: {error}", file=sys.stderr)
+                return items, False
             except RuntimeError as error:
                 print(f"warning: stop authority {kind} mirror at page {page}: {error}", file=sys.stderr)
                 complete = False
@@ -371,6 +412,43 @@ def upload_r2(source: str, payload: dict[str, Any]) -> None:
     )
 
 
+def previous_mirror_is_fresh(
+    source: str,
+    max_age_hours: float,
+    *,
+    now: datetime | None = None,
+    client: Any | None = None,
+) -> bool:
+    """Check the last successfully uploaded snapshot without exposing its contents."""
+    bucket = os.environ.get("R2_BUCKET", "").strip()
+    if not bucket or max_age_hours <= 0:
+        return False
+    try:
+        response = (client or r2_client()).get_object(
+            Bucket=bucket,
+            Key=f"{R2_PREFIX}/{source}/latest.json",
+        )
+        body = response.get("Body")
+        raw = body.read() if hasattr(body, "read") else body
+        if not isinstance(raw, (bytes, bytearray)):
+            return False
+        payload = json.loads(bytes(raw).decode("utf-8"))
+        generated_at = str(payload.get("generated_at") or "") if isinstance(payload, dict) else ""
+        timestamp = datetime.fromisoformat(generated_at.replace("Z", "+00:00"))
+        if timestamp.tzinfo is None:
+            timestamp = timestamp.replace(tzinfo=timezone.utc)
+        current = now or datetime.now(timezone.utc)
+        age_seconds = (current.astimezone(timezone.utc) - timestamp.astimezone(timezone.utc)).total_seconds()
+        return 0 <= age_seconds <= max_age_hours * 3600
+    except Exception as error:
+        print(
+            f"warning: unable to validate previous {source} mirror freshness "
+            f"({type(error).__name__})",
+            file=sys.stderr,
+        )
+        return False
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--external-pages", type=int, default=40)
@@ -379,6 +457,9 @@ def main() -> int:
     parser.add_argument("--timeout", type=float, default=30.0)
     parser.add_argument("--retries", type=int, default=3)
     parser.add_argument("--retry-backoff", type=float, default=1.5)
+    parser.add_argument("--external-budget-seconds", type=float, default=540.0)
+    parser.add_argument("--authority-budget-seconds", type=float, default=240.0)
+    parser.add_argument("--failure-grace-hours", type=float, default=24.0)
     parser.add_argument("--external-seed-pages", type=int, default=3)
     parser.add_argument("--external-seed-query", action="append", default=[])
     parser.add_argument("--output-dir", type=Path, default=Path("outputs/portal-search-mirror"))
@@ -394,6 +475,7 @@ def main() -> int:
         args.retry_backoff,
         seed_queries,
         args.external_seed_pages,
+        max(0.0, args.external_budget_seconds),
     )
     authority_items, authority_complete = fetch_authority_pages(
         args.authority_pages,
@@ -401,6 +483,7 @@ def main() -> int:
         args.timeout,
         args.retries,
         args.retry_backoff,
+        max(0.0, args.authority_budget_seconds),
     )
     external = mirror_payload("external", external_items, external_complete)
     authority = mirror_payload("authority", authority_items, authority_complete)
@@ -408,20 +491,32 @@ def main() -> int:
     write_json(args.output_dir / "external.json", external)
     write_json(args.output_dir / "authority.json", authority)
 
+    stale_sources: list[str] = []
     if args.upload_r2:
         if external_complete:
             upload_r2("external", external)
         else:
             print("warning: external mirror incomplete; keep previous R2 latest.json", file=sys.stderr)
+            if not previous_mirror_is_fresh("external", max(0.0, args.failure_grace_hours)):
+                stale_sources.append("external")
         if authority_complete:
             upload_r2("authority", authority)
         else:
             print("warning: authority mirror incomplete; keep previous R2 latest.json", file=sys.stderr)
+            if not previous_mirror_is_fresh("authority", max(0.0, args.failure_grace_hours)):
+                stale_sources.append("authority")
 
     print(
         f"external={external['count']} complete={external_complete} "
         f"authority={authority['count']} complete={authority_complete}"
     )
+    if stale_sources:
+        print(
+            "error: no complete mirror refresh within the grace window for "
+            + ", ".join(stale_sources),
+            file=sys.stderr,
+        )
+        return 1
     return 0
 
 
