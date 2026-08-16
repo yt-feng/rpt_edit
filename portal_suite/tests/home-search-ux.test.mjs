@@ -28,10 +28,34 @@ test("home search waits for stable input and cancels superseded remote searches"
   assert.match(source, /const scheduleLocalRender = \(delay = 240\)/);
   assert.match(source, /compositionstart/);
   assert.match(source, /compositionend/);
-  assert.match(source, /remoteSearchController\.abort\(\)/);
+  assert.match(source, /function abortRemoteSearches\(\)[\s\S]*remoteSearchControllers\.values\(\)[\s\S]*controller\.abort\(\)/);
+  assert.match(source, /abortRemoteSearches\(\)/);
   assert.match(source, /remoteSearchGeneration/);
   assert.match(source, /generation === remoteSearchGeneration/);
   assert.match(source, /\}, 480\);/);
+});
+
+test("remote sources use independent deadlines and Reportify surfaces fallback warnings", async () => {
+  const source = await readFile(appPath, "utf8");
+  const remoteSearchStart = source.indexOf("const remoteSearchControllers = new Map()");
+  const remoteSearch = source.slice(
+    remoteSearchStart,
+    source.indexOf("clearFilters.addEventListener", remoteSearchStart),
+  );
+  assert.ok(remoteSearchStart >= 0, "remote search controller map should exist");
+  assert.match(remoteSearch, /const remoteSearchControllers = new Map\(\)/);
+  assert.match(remoteSearch, /external:\s*16_000/);
+  assert.match(remoteSearch, /thinktank:\s*18_000/);
+  assert.match(remoteSearch, /reportA:\s*18_000/);
+  assert.match(remoteSearch, /authority:\s*18_000/);
+  assert.match(remoteSearch, /runRemoteSearchWithDeadline\("external", query, generation, runExternalSearch\)/);
+  assert.match(remoteSearch, /remoteSearchControllers\.set\(source, controller\)/);
+  assert.match(remoteSearch, /remoteSearchControllers\.get\(source\) === controller/);
+  assert.match(remoteSearch, /source === "external" \? "Reportify" : "此来源"/);
+  assert.match(remoteSearch, /warning \|\| data\.cache_status === "miss"/);
+  assert.match(remoteSearch, /sourceUnavailable \? "error" : "done"/);
+  assert.doesNotMatch(remoteSearch, /let remoteSearchController\s*=/);
+  assert.doesNotMatch(remoteSearch, /controller\.abort\(\), 18_000/);
 });
 
 test("the large full-text corpus is opt-in instead of loading on focus or idle", async () => {
