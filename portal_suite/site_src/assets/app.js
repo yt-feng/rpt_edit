@@ -5649,7 +5649,13 @@
     let authorityToken = 0;
     let remoteSearchGeneration = 0;
     let authorityQuery = "";
-    let remoteSearchController = null;
+    const remoteSearchControllers = new Map();
+    const remoteSourceDeadlineMs = {
+      thinktank: 18_000,
+      external: 16_000,
+      reportA: 18_000,
+      authority: 18_000,
+    };
     const remoteSourceStates = new Map();
     const remoteSourceLabels = {
       catalog: "站内目录",
@@ -5760,6 +5766,63 @@
       renderSearchRecommendations();
     }
 
+    function abortRemoteSearches() {
+      for (const controller of remoteSearchControllers.values()) controller.abort();
+      remoteSearchControllers.clear();
+    }
+
+    function remoteSourceBindings(source) {
+      return {
+        thinktank: [thinkTankResults, thinkTankCount, setThinkTankStatus],
+        external: [externalResults, externalCount, setExternalStatus],
+        reportA: [reportAResults, reportACount, setReportAStatus],
+        authority: [authorityResults, authorityCount, setAuthorityStatus],
+      }[source] || null;
+    }
+
+    function markRemoteSourceUnavailable(source, query, generation, message) {
+      if (generation !== remoteSearchGeneration || query !== input.value.trim()) return;
+      if (!["waiting", "searching"].includes(remoteSourceStates.get(source))) return;
+      remoteSourceStates.set(source, "error");
+      searchResultCounts[source] = "error";
+      const bindings = remoteSourceBindings(source);
+      if (bindings) {
+        if (bindings[0]) bindings[0].innerHTML = "";
+        if (bindings[1]) bindings[1].textContent = "";
+        bindings[2](message, "error");
+      }
+      renderRemoteSourceProgress(query);
+      renderSearchRecommendations();
+    }
+
+    async function runRemoteSearchWithDeadline(source, query, generation, search) {
+      const controller = new AbortController();
+      const deadlineMs = remoteSourceDeadlineMs[source] || 18_000;
+      let deadlineReached = false;
+      remoteSearchControllers.set(source, controller);
+      const timeoutId = window.setTimeout(() => {
+        deadlineReached = true;
+        controller.abort();
+      }, deadlineMs);
+      try {
+        await search(query, controller.signal, generation);
+      } finally {
+        window.clearTimeout(timeoutId);
+        if (remoteSearchControllers.get(source) === controller) {
+          remoteSearchControllers.delete(source);
+        }
+        if (deadlineReached) {
+          const label = source === "external" ? "Reportify" : "此来源";
+          markRemoteSourceUnavailable(
+            source,
+            query,
+            generation,
+            `${label} 在 ${Math.round(deadlineMs / 1000)} 秒内未完成，可稍后重试。`,
+          );
+        }
+      }
+    }
+
     async function runThinkTankSearch(query, signal, generation = remoteSearchGeneration) {
       if (!thinkTankSection || !thinkTankResults) return;
       if (!externalUrl || !query) {
@@ -5853,13 +5916,21 @@
         const data = await response.json();
         if (!isCurrent()) return; // a newer query superseded this one
         const items = Array.isArray(data.items) ? data.items : [];
-        searchResultCounts.external = items.length;
+        const sourceUnavailable = data.cache_status === "miss" && items.length === 0;
+        searchResultCounts.external = sourceUnavailable ? "error" : items.length;
         externalItems.clear();
         items.forEach((item) => externalItems.set(String(item.id), item));
         if (externalCount) externalCount.textContent = items.length ? `${items.length} 条` : "";
         externalResults.innerHTML = items.length
           ? items.map(externalRow).join("")
           : '<div class="empty-state">暂无匹配结果。</div>';
+        const warning = String(data.warning || "").trim();
+        if (warning || data.cache_status === "miss") {
+          setExternalStatus(
+            warning || "Reportify 暂时不可用，且没有可用的缓存结果。",
+            data.cache_status === "miss" ? "error" : "",
+          );
+        }
         trackEvent(workerUrl, "search", {
           source: EXTERNAL_SOURCE,
           query,
@@ -5868,7 +5939,7 @@
           cache_status: data.cache_status || "",
         });
         renderSearchRecommendations();
-        setRemoteSourceState("external", "done", query);
+        setRemoteSourceState("external", sourceUnavailable ? "error" : "done", query);
       } catch (error) {
         if (error && error.name === "AbortError") return;
         if (!isCurrent()) return;
@@ -5999,10 +6070,7 @@
     function scheduleExternalSearch() {
       window.clearTimeout(externalTimer);
       const generation = ++remoteSearchGeneration;
-      if (remoteSearchController) {
-        remoteSearchController.abort();
-        remoteSearchController = null;
-      }
+      abortRemoteSearches();
       const query = input.value.trim();
       if (scopeFilter.value === "charts" || !query) {
         hideThinkTankResults();
@@ -6022,39 +6090,16 @@
       renderRemoteSourceProgress(query);
       externalTimer = window.setTimeout(() => {
         if (generation !== remoteSearchGeneration || query !== input.value.trim()) return;
-        remoteSearchController = new AbortController();
-        const controller = remoteSearchController;
-        const { signal } = controller;
-        const timeoutId = window.setTimeout(() => controller.abort(), 18_000);
         Promise.allSettled([
-          runThinkTankSearch(query, signal, generation),
-          runExternalSearch(query, signal, generation),
-          runReportASearch(query, signal, generation),
-          runAuthoritySearch(query, signal, generation),
+          runRemoteSearchWithDeadline("thinktank", query, generation, runThinkTankSearch),
+          runRemoteSearchWithDeadline("external", query, generation, runExternalSearch),
+          runRemoteSearchWithDeadline("reportA", query, generation, runReportASearch),
+          runRemoteSearchWithDeadline("authority", query, generation, runAuthoritySearch),
         ]).then(() => {
-          window.clearTimeout(timeoutId);
-          if (remoteSearchController !== controller
-            || generation !== remoteSearchGeneration
-            || query !== input.value.trim()) return;
+          if (generation !== remoteSearchGeneration || query !== input.value.trim()) return;
           for (const source of ["thinktank", "external", "reportA", "authority"]) {
-            if (["waiting", "searching"].includes(remoteSourceStates.get(source))) {
-              remoteSourceStates.set(source, "error");
-              searchResultCounts[source] = "error";
-              const bindings = {
-                thinktank: [thinkTankResults, thinkTankCount, setThinkTankStatus],
-                external: [externalResults, externalCount, setExternalStatus],
-                reportA: [reportAResults, reportACount, setReportAStatus],
-                authority: [authorityResults, authorityCount, setAuthorityStatus],
-              }[source];
-              if (bindings) {
-                if (bindings[0]) bindings[0].innerHTML = "";
-                if (bindings[1]) bindings[1].textContent = "";
-                bindings[2]("此来源在 18 秒内未完成，可稍后重试。", "error");
-              }
-            }
+            markRemoteSourceUnavailable(source, query, generation, "此来源未完成，可稍后重试。");
           }
-          renderRemoteSourceProgress(query);
-          renderSearchRecommendations();
         });
       }, 480);
     }

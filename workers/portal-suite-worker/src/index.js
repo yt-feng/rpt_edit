@@ -190,6 +190,7 @@ const REPORT_TEXT_CURSOR_TTL_SECONDS = 15 * 60;
 const REPORT_TEXT_CURSOR_MAX_LENGTH = 2048;
 const REPORT_TEXT_SOURCE_LABEL = "提取文本节选";
 const UPSTREAM_SEARCH_TIMEOUT_MS = 28000;
+const EXTERNAL_SEARCH_TIMEOUT_MS = 10000;
 const UPSTREAM_PDF_TIMEOUT_MS = 15000;
 const SEARCH_CACHE_PREFIX = "_search-cache";
 const SEARCH_CACHE_FRESH_MS = 6 * 60 * 60 * 1000;
@@ -10394,6 +10395,34 @@ async function fetchWithTimeout(resource, init = {}, timeoutMs = UPSTREAM_SEARCH
   }
 }
 
+async function fetchExternalSearchJsonWithTimeout(resource, init = {}, timeoutMs = EXTERNAL_SEARCH_TIMEOUT_MS) {
+  const controller = new AbortController();
+  let timer;
+  const timeout = new Promise((_resolve, reject) => {
+    timer = setTimeout(() => {
+      const error = new Error("External search timed out.");
+      error.name = "TimeoutError";
+      reject(error);
+      controller.abort(error);
+    }, timeoutMs);
+  });
+  const request = (async () => {
+    const response = await fetch(resource, {
+      ...init,
+      signal: controller.signal,
+    });
+    if (!response.ok) {
+      throw new Error(`Search unavailable (${response.status}).`);
+    }
+    return await response.json();
+  })();
+  try {
+    return await Promise.race([request, timeout]);
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 function newsfeedUserKey(user) {
   return encodeURIComponent(normalizeEmail(user && user.email) || normalizeUsername(user && user.username) || String(user && user.id || "user"));
 }
@@ -12704,14 +12733,16 @@ async function handleCachedSearch(request, env, source, query, page, emptyPayloa
     });
   } catch (error) {
     if (cached && cached.payload) {
-      const fallback = fallbackFetcher ? await fallbackFetcher(error) : null;
-      if (!searchPayloadHasItems(cached.payload) && searchPayloadHasItems(fallback)) {
-        return jsonResponse(request, env, 200, {
-          ...fallback,
-          cached: true,
-          cache_status: "mirror",
-          warning: "已返回站内镜像结果。",
-        });
+      if (!searchPayloadHasItems(cached.payload) && fallbackFetcher) {
+        const fallback = await fallbackFetcher(error);
+        if (searchPayloadHasItems(fallback)) {
+          return jsonResponse(request, env, 200, {
+            ...fallback,
+            cached: true,
+            cache_status: "mirror",
+            warning: "已返回站内镜像结果。",
+          });
+        }
       }
       return jsonResponse(request, env, 200, {
         ...cached.payload,
@@ -12758,8 +12789,17 @@ async function getSearchMirror(env, source) {
   }
 }
 
+function normalizeSearchMirrorText(value) {
+  return String(value || "")
+    .normalize("NFKC")
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}]+/gu, " ")
+    .replace(/\s+/gu, " ")
+    .trim();
+}
+
 function searchMirrorText(item) {
-  return [
+  return normalizeSearchMirrorText([
     item && item.title,
     item && item.title_cn,
     item && item.institution,
@@ -12771,22 +12811,22 @@ function searchMirrorText(item) {
     item && item.author,
     item && item.stock_code,
     item && item.stock_name,
-  ].filter(Boolean).join(" ").normalize("NFKC").toLowerCase();
+  ].filter(Boolean).join(" "));
 }
 
 function searchMirrorTerms(query) {
-  const compact = compactSearchQuery(query).toLowerCase();
+  const compact = normalizeSearchMirrorText(compactSearchQuery(query));
   if (!compact) return [];
-  const tokens = compact.split(/[\s,，;；|/]+/).map((term) => term.trim()).filter((term) => term.length >= 2);
-  return tokens.length ? tokens : [compact];
+  const tokens = compact.split(/\s+/u).filter((term) => term.length >= 2);
+  return tokens;
 }
 
 function scoreSearchMirrorItem(item, query, terms) {
-  const title = String(item && (item.title || item.title_cn) || "").normalize("NFKC").toLowerCase();
-  const institution = String(item && item.institution || "").normalize("NFKC").toLowerCase();
-  const summary = String(item && item.summary || "").normalize("NFKC").toLowerCase();
+  const title = normalizeSearchMirrorText(item && (item.title || item.title_cn));
+  const institution = normalizeSearchMirrorText(item && item.institution);
+  const summary = normalizeSearchMirrorText(item && item.summary);
   const haystack = searchMirrorText(item);
-  const compact = compactSearchQuery(query).toLowerCase();
+  const compact = normalizeSearchMirrorText(compactSearchQuery(query));
   let score = 0;
   if (compact && title.includes(compact)) score += 80;
   if (compact && institution.includes(compact)) score += 60;
@@ -12803,6 +12843,9 @@ function scoreSearchMirrorItem(item, query, terms) {
 
 function searchMirrorPayloadFromItems(items, query, page, pageSize) {
   const terms = searchMirrorTerms(query);
+  if (compactSearchQuery(query) && !terms.length) {
+    return { items: [], total: 0 };
+  }
   const scored = (Array.isArray(items) ? items : [])
     .map((item) => ({ item, score: terms.length ? scoreSearchMirrorItem(item, query, terms) : 1 }))
     .filter((entry) => entry.score > 0)
@@ -15669,11 +15712,10 @@ async function handleExternalSearch(request, env) {
     target.searchParams.set("query", query);
     target.searchParams.set("page_num", String(page));
     target.searchParams.set("page_size", String(EXTERNAL_SEARCH_PAGE_SIZE));
-    const upstream = await fetchWithTimeout(target.toString(), { headers: externalHeaders() });
-    if (!upstream.ok) {
-      throw new Error(`Search unavailable (${upstream.status}).`);
-    }
-    const data = await upstream.json();
+    const data = await fetchExternalSearchJsonWithTimeout(
+      target.toString(),
+      { headers: externalHeaders() },
+    );
     const items = Array.isArray(data.items) ? data.items.map(slimExternalItem).filter((it) => it.id) : [];
     return {
       items,
@@ -15687,7 +15729,7 @@ async function handleExternalSearch(request, env) {
     total_count: result.total,
     mirror_generated_at: result.generated_at,
     mirror_stale: result.mirror_stale,
-  })), { skipFreshCache: true });
+  })));
 }
 
 // Fetch the upstream detail and, if the report is directly readable, return its
