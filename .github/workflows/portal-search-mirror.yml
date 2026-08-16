@@ -29,6 +29,7 @@ jobs:
         with:
           sparse-checkout: |
             /scripts/portal_search_mirror.py
+            /scripts/test_portal_search_mirror.py
           sparse-checkout-cone-mode: false
           fetch-depth: 1
           persist-credentials: false
@@ -42,6 +43,7 @@ jobs:
       - name: Verify runtime inputs
         run: |
           test -s scripts/portal_search_mirror.py
+          test -s scripts/test_portal_search_mirror.py
           checked_out_sha="$(git rev-parse HEAD)"
           if [ "${checked_out_sha}" != "${GITHUB_SHA}" ]; then
             echo "::error::Checkout SHA mismatch: expected ${GITHUB_SHA}, got ${checked_out_sha}"
