@@ -32,7 +32,10 @@ flowchart LR
 The daily PDF workflow dispatches `portal-chart-search-index.yml` before deleting
 its short-lived private shard handoff. The chart workflow downloads those shards,
 loads the previous checkpoint and index from private object storage, processes only
-unknown content hashes, and publishes the new index. The regular edge refresh then:
+unknown content hashes, and publishes the new index. The parent captures the exact run
+ID returned by `workflow dispatch` and waits for that ID before cleanup; display titles
+are not used for child correlation because repeated recovery runs intentionally share a
+title. The regular edge refresh then:
 
 1. downloads the latest chart index;
 2. merges report-level chart text into `data/search_index.json`;

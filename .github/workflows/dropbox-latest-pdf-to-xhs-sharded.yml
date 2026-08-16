@@ -908,30 +908,16 @@ jobs:
           set -euo pipefail
           printf '%s' "$DATE_FOLDER" | grep -Eq '^[0-9]{6,8}$'
           printf '%s' "$SOURCE_RUN_ID" | grep -Eq '^[0-9]+$'
-          EXPECTED_TITLE="Chart search $DATE_FOLDER $SOURCE_RUN_ID"
-          gh workflow run portal-chart-search-index.yml \
+          RUN_URL="$(gh workflow run portal-chart-search-index.yml \
             --repo "$GITHUB_REPOSITORY" \
             --ref main \
             -f date_folder="$DATE_FOLDER" \
             -f source_handoff_run_id="$SOURCE_RUN_ID" \
             -f expected_shards="$EXPECTED_SHARDS" \
-            -f max_images="$MAX_IMAGES"
-          CHART_RUN_ID=""
-          for ATTEMPT in $(seq 1 24); do
-            CHART_RUN_ID="$(gh run list \
-              --repo "$GITHUB_REPOSITORY" \
-              --workflow portal-chart-search-index.yml \
-              --event workflow_dispatch \
-              --branch main \
-              --limit 30 \
-              --json databaseId,displayTitle \
-              --jq ".[] | select(.displayTitle == \"$EXPECTED_TITLE\") | .databaseId" \
-              | head -n 1)"
-            if printf '%s\n' "$CHART_RUN_ID" | grep -Eq '^[0-9]+$'; then break; fi
-            sleep 5
-          done
+            -f max_images="$MAX_IMAGES")"
+          CHART_RUN_ID="${RUN_URL##*/}"
           if ! printf '%s\n' "$CHART_RUN_ID" | grep -Eq '^[0-9]+$'; then
-            echo "Unable to resolve dispatched chart-index run." >&2
+            echo "Unable to resolve dispatched chart-index run from: $RUN_URL" >&2
             exit 1
           fi
           echo "::notice::Waiting for chart-index run $CHART_RUN_ID."
