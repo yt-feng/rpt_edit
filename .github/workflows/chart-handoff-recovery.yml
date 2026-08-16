@@ -100,26 +100,42 @@ jobs:
         run: |
           set -euo pipefail
           PREFIX="$HANDOFF_ROOT/$SOURCE_RUN_ID/$DATE_FOLDER"
-          export PREFIX
-          python - <<'PY'
+          export PREFIX EXPECTED_SHARDS
+          RECOVERY_STATE="$(python - <<'PY'
           import os
           import sys
           sys.path.insert(0, "scripts")
           from private_workflow_handoff import list_keys
 
+          prefix = os.environ["PREFIX"].strip("/")
+          count = int(os.environ["EXPECTED_SHARDS"])
+          expected = {f"{prefix}/shard_{index}.tar.gz" for index in range(count)}
           keys = list_keys(os.environ["PREFIX"])
-          if keys:
-              raise SystemExit(f"Recovery prefix is not empty; refusing to overwrite {len(keys)} object(s)")
-          print("Recovery prefix is empty and ready for reconstruction")
+          if not keys:
+              print("empty")
+          elif set(keys) == expected:
+              print("complete")
+          else:
+              raise SystemExit(
+                  f"Recovery prefix contains an unexpected partial set: "
+                  f"expected={count}, actual={len(keys)}"
+              )
           PY
-          for INDEX in $(seq 0 $((EXPECTED_SHARDS - 1))); do
-            SOURCE="$RUNNER_TEMP/chart-handoff-recovered/shard_$INDEX"
-            test -d "$SOURCE"
-            python scripts/private_workflow_handoff.py upload-dir \
-              --source "$SOURCE" \
-              --key "$PREFIX/shard_$INDEX.tar.gz"
-          done
-          export EXPECTED_SHARDS
+          )"
+          if [ "$RECOVERY_STATE" = "empty" ]; then
+            for INDEX in $(seq 0 $((EXPECTED_SHARDS - 1))); do
+              SOURCE="$RUNNER_TEMP/chart-handoff-recovered/shard_$INDEX"
+              test -d "$SOURCE"
+              python scripts/private_workflow_handoff.py upload-dir \
+                --source "$SOURCE" \
+                --key "$PREFIX/shard_$INDEX.tar.gz"
+            done
+          elif [ "$RECOVERY_STATE" = "complete" ]; then
+            echo "Recovered handoff is already complete; reusing the verified object set."
+          else
+            echo "::error::Unexpected recovery state: $RECOVERY_STATE"
+            exit 1
+          fi
           python - <<'PY'
           import os
           import sys
@@ -128,9 +144,9 @@ jobs:
 
           prefix = os.environ["PREFIX"].strip("/")
           count = int(os.environ["EXPECTED_SHARDS"])
-          expected = [f"{prefix}/shard_{index}.tar.gz" for index in range(count)]
+          expected = {f"{prefix}/shard_{index}.tar.gz" for index in range(count)}
           actual = list_keys(prefix)
-          if actual != expected:
+          if set(actual) != expected:
               raise SystemExit(f"Recovered handoff validation failed: expected={count}, actual={len(actual)}")
           print(f"Recovered private handoff objects={len(actual)}")
           PY
