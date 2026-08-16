@@ -1,0 +1,175 @@
+name: One-time chart handoff recovery
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: "Parent run whose publish-ready artifact contains the chart inputs"
+        required: true
+        default: "31900339633"
+      target_chart_run_id:
+        description: "Failed chart run to rerun after restoring its handoff"
+        required: true
+        default: "31932971950"
+      date_folder:
+        description: "Date folder encoded in the recovered handoff"
+        required: true
+        default: "260815"
+      artifact_name:
+        description: "Exact publish-ready artifact name"
+        required: true
+        default: "publish-ready-260815-31900339633"
+      expected_shards:
+        description: "Exact shard count to materialize and restore"
+        required: true
+        default: "12"
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+      TARGET_CHART_RUN_ID: ${{ inputs.target_chart_run_id }}
+      DATE_FOLDER: ${{ inputs.date_folder }}
+      ARTIFACT_NAME: ${{ inputs.artifact_name }}
+      EXPECTED_SHARDS: ${{ inputs.expected_shards }}
+      HANDOFF_ROOT: _private-workflow-handoff/xhs
+      R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+    steps:
+      - name: Validate exact recovery target
+        run: |
+          set -euo pipefail
+          printf '%s' "$SOURCE_RUN_ID" | grep -Eq '^[0-9]+$'
+          printf '%s' "$TARGET_CHART_RUN_ID" | grep -Eq '^[0-9]+$'
+          printf '%s' "$DATE_FOLDER" | grep -Eq '^[0-9]{6,8}$'
+          printf '%s' "$ARTIFACT_NAME" | grep -Eq '^[A-Za-z0-9._-]+$'
+          printf '%s' "$EXPECTED_SHARDS" | grep -Eq '^[1-9][0-9]?$'
+          for name in R2_ACCOUNT_ID R2_ACCESS_KEY_ID R2_SECRET_ACCESS_KEY R2_BUCKET; do
+            value="$(printenv "$name")"
+            if [ -z "$value" ]; then
+              echo "::error::Missing required recovery configuration: $name"
+              exit 1
+            fi
+            echo "::add-mask::$value"
+          done
+
+      - name: Checkout recovery scripts
+        uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            /scripts/materialize_shard_artifacts.py
+            /scripts/private_workflow_handoff.py
+          sparse-checkout-cone-mode: false
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+
+      - name: Install private handoff dependency
+        run: python -m pip install --disable-pip-version-check boto3
+
+      - name: Download and materialize retained publish-ready artifact
+        run: |
+          set -euo pipefail
+          ARTIFACT_ROOT="$RUNNER_TEMP/chart-handoff-artifact"
+          RECOVERED_ROOT="$RUNNER_TEMP/chart-handoff-recovered"
+          gh run download "$SOURCE_RUN_ID" \
+            --repo "$GITHUB_REPOSITORY" \
+            --name "$ARTIFACT_NAME" \
+            --dir "$ARTIFACT_ROOT"
+          python scripts/materialize_shard_artifacts.py \
+            --artifact-root "$ARTIFACT_ROOT" \
+            --destination "$RECOVERED_ROOT" \
+            --expected-shards "$EXPECTED_SHARDS" \
+            --expected-date "$DATE_FOLDER" \
+            --require-images
+
+      - name: Restore exact private handoff
+        run: |
+          set -euo pipefail
+          PREFIX="$HANDOFF_ROOT/$SOURCE_RUN_ID/$DATE_FOLDER"
+          export PREFIX
+          python - <<'PY'
+          import os
+          import sys
+          sys.path.insert(0, "scripts")
+          from private_workflow_handoff import list_keys
+
+          keys = list_keys(os.environ["PREFIX"])
+          if keys:
+              raise SystemExit(f"Recovery prefix is not empty; refusing to overwrite {len(keys)} object(s)")
+          print("Recovery prefix is empty and ready for reconstruction")
+          PY
+          for INDEX in $(seq 0 $((EXPECTED_SHARDS - 1))); do
+            SOURCE="$RUNNER_TEMP/chart-handoff-recovered/shard_$INDEX"
+            test -d "$SOURCE"
+            python scripts/private_workflow_handoff.py upload-dir \
+              --source "$SOURCE" \
+              --key "$PREFIX/shard_$INDEX.tar.gz"
+          done
+          export EXPECTED_SHARDS
+          python - <<'PY'
+          import os
+          import sys
+          sys.path.insert(0, "scripts")
+          from private_workflow_handoff import list_keys
+
+          prefix = os.environ["PREFIX"].strip("/")
+          count = int(os.environ["EXPECTED_SHARDS"])
+          expected = [f"{prefix}/shard_{index}.tar.gz" for index in range(count)]
+          actual = list_keys(prefix)
+          if actual != expected:
+              raise SystemExit(f"Recovered handoff validation failed: expected={count}, actual={len(actual)}")
+          print(f"Recovered private handoff objects={len(actual)}")
+          PY
+
+      - name: Rerun and wait for the orphaned chart run
+        run: |
+          set -euo pipefail
+          BEFORE_ATTEMPT="$(gh run view "$TARGET_CHART_RUN_ID" \
+            --repo "$GITHUB_REPOSITORY" \
+            --json attempt \
+            --jq '.attempt')"
+          printf '%s' "$BEFORE_ATTEMPT" | grep -Eq '^[1-9][0-9]*$'
+          gh run rerun "$TARGET_CHART_RUN_ID" --repo "$GITHUB_REPOSITORY" --failed
+          CURRENT_ATTEMPT=""
+          for _POLL in $(seq 1 24); do
+            CURRENT_ATTEMPT="$(gh run view "$TARGET_CHART_RUN_ID" \
+              --repo "$GITHUB_REPOSITORY" \
+              --json attempt \
+              --jq '.attempt')"
+            if printf '%s' "$CURRENT_ATTEMPT" | grep -Eq '^[1-9][0-9]*$' \
+              && [ "$CURRENT_ATTEMPT" -gt "$BEFORE_ATTEMPT" ]; then
+              break
+            fi
+            sleep 5
+          done
+          if ! printf '%s' "$CURRENT_ATTEMPT" | grep -Eq '^[1-9][0-9]*$' \
+            || [ "$CURRENT_ATTEMPT" -le "$BEFORE_ATTEMPT" ]; then
+            echo "::error::The requested chart rerun did not start."
+            exit 1
+          fi
+          echo "::notice::Waiting for chart run $TARGET_CHART_RUN_ID attempt $CURRENT_ATTEMPT."
+          gh run watch "$TARGET_CHART_RUN_ID" \
+            --repo "$GITHUB_REPOSITORY" \
+            --compact \
+            --exit-status \
+            --interval 15
+
+      - name: Remove reconstructed private handoff after success
+        run: |
+          set -euo pipefail
+          PREFIX="$HANDOFF_ROOT/$SOURCE_RUN_ID/$DATE_FOLDER"
+          python scripts/private_workflow_handoff.py delete-prefix --prefix "$PREFIX"
