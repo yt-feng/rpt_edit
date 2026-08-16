@@ -97,6 +97,10 @@ class VisionConfigurationError(RuntimeError):
 class RetryableVisionError(RuntimeError):
     """A service-wide or transport failure that must never quarantine an image."""
 
+    def __init__(self, message: str, *, reason: str = "other") -> None:
+        super().__init__(message)
+        self.reason = reason if reason in RETRYABLE_REASON_CODES else "other"
+
 
 class StableImageError(RuntimeError):
     """A deterministic image/input failure that may be quarantined across runs."""
@@ -128,20 +132,8 @@ def retryable_reason_code(exc: BaseException) -> str:
     """Return a bounded provider-neutral reason without response or request data."""
     if not isinstance(exc, RetryableVisionError):
         return "other"
-    message = str(exc)
-    if message == "Vision request failed at the transport layer":
-        return "transport"
-    if message.startswith("Vision service is temporarily unavailable"):
-        return "http_transient"
-    if message.startswith("Vision service returned an unexpected status"):
-        return "http_unexpected"
-    if message == "Vision service returned invalid JSON":
-        return "response_json"
-    if message == "Vision response had no choices":
-        return "no_choices"
-    if message == "Vision model content was not valid JSON":
-        return "model_json"
-    return "other"
+    reason = str(getattr(exc, "reason", "other"))
+    return reason if reason in RETRYABLE_REASON_CODES else "other"
 
 
 @dataclass(frozen=True)
@@ -496,7 +488,10 @@ def response_error_text(response: requests.Response) -> str:
 def classify_http_error(response: requests.Response) -> RuntimeError:
     status = int(response.status_code or 0)
     if status in TRANSIENT_HTTP_STATUSES or status >= 500:
-        return RetryableVisionError(f"Vision service is temporarily unavailable (status={status})")
+        return RetryableVisionError(
+            f"Vision service is temporarily unavailable (status={status})",
+            reason="http_transient",
+        )
     if status in CONFIGURATION_HTTP_STATUSES:
         return VisionConfigurationError(f"Vision service configuration was rejected (status={status})")
     if 400 <= status < 500:
@@ -504,7 +499,10 @@ def classify_http_error(response: requests.Response) -> RuntimeError:
         if status in {413, 415} or any(marker in detail for marker in IMAGE_ERROR_MARKERS):
             return StableImageError(f"Vision service rejected this image (status={status})")
         return VisionConfigurationError(f"Vision request contract was rejected (status={status})")
-    return RetryableVisionError(f"Vision service returned an unexpected status ({status})")
+    return RetryableVisionError(
+        f"Vision service returned an unexpected status ({status})",
+        reason="http_unexpected",
+    )
 
 
 class VisionClient:
@@ -563,7 +561,10 @@ class VisionClient:
                 self.last_request_at = time.monotonic()
                 response = self.session.post(self.endpoint, json=payload, timeout=self.timeout)
             except (requests.Timeout, requests.ConnectionError, requests.RequestException) as exc:
-                last_error = RetryableVisionError("Vision request failed at the transport layer")
+                last_error = RetryableVisionError(
+                    "Vision request failed at the transport layer",
+                    reason="transport",
+                )
                 last_error.__cause__ = exc
             else:
                 if not 200 <= response.status_code < 300:
@@ -575,20 +576,37 @@ class VisionClient:
                     try:
                         body = response.json()
                     except (ValueError, json.JSONDecodeError) as exc:
-                        last_error = RetryableVisionError("Vision service returned invalid JSON")
+                        last_error = RetryableVisionError(
+                            "Vision service returned invalid JSON",
+                            reason="response_json",
+                        )
                         last_error.__cause__ = exc
                         body = None
                     if body is not None:
                         choices = body.get("choices") if isinstance(body, dict) else None
                         if not isinstance(choices, list) or not choices:
-                            last_error = RetryableVisionError("Vision response had no choices")
+                            last_error = RetryableVisionError(
+                                "Vision response had no choices",
+                                reason="no_choices",
+                            )
                         else:
-                            content = ((choices[0] or {}).get("message") or {}).get("content")
-                            try:
-                                return normalize_analysis(parse_model_json(content))
-                            except (ValueError, RuntimeError, json.JSONDecodeError) as exc:
-                                last_error = RetryableVisionError("Vision model content was not valid JSON")
-                                last_error.__cause__ = exc
+                            choice = choices[0]
+                            message = choice.get("message") if isinstance(choice, dict) else None
+                            if not isinstance(message, dict):
+                                last_error = RetryableVisionError(
+                                    "Vision model content was not valid JSON",
+                                    reason="model_json",
+                                )
+                            else:
+                                content = message.get("content")
+                                try:
+                                    return normalize_analysis(parse_model_json(content))
+                                except (ValueError, RuntimeError, json.JSONDecodeError) as exc:
+                                    last_error = RetryableVisionError(
+                                        "Vision model content was not valid JSON",
+                                        reason="model_json",
+                                    )
+                                    last_error.__cause__ = exc
 
             if attempt < self.retries:
                 retry_after = response.headers.get("Retry-After", "") if response is not None else ""

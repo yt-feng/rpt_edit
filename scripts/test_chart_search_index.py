@@ -427,9 +427,10 @@ class ChartSearchIndexTests(unittest.TestCase):
             write_report(reports, "report_a", "Retry Later")
             candidates = chart.discover_candidates(reports, {}, date_folder="260809")
             state = {"schema_version": 1, "items": {}}
+            private_sentinel = "https://private.invalid response-body fake-key"
 
             def unavailable(_path: Path) -> dict:
-                raise chart.RetryableVisionError("fixture service outage")
+                raise chart.RetryableVisionError(private_sentinel)
 
             for run_id in ("run-1", "run-2", "run-3", "run-4"):
                 _index, summary = chart.build_index(
@@ -450,23 +451,31 @@ class ChartSearchIndexTests(unittest.TestCase):
             self.assertEqual(record["failure_reason"], "other")
             self.assertEqual(summary["retryable_count"], 1)
             self.assertEqual(summary["retryable_reasons"], {"other": 1})
+            self.assertNotIn(
+                private_sentinel,
+                json.dumps({"state": state, "summary": summary}, ensure_ascii=False),
+            )
 
     def test_retryable_reason_codes_are_provider_neutral(self) -> None:
         fixtures = {
-            "Vision request failed at the transport layer": "transport",
-            "Vision service is temporarily unavailable (status=503)": "http_transient",
-            "Vision service returned an unexpected status (302)": "http_unexpected",
-            "Vision service returned invalid JSON": "response_json",
-            "Vision response had no choices": "no_choices",
-            "Vision model content was not valid JSON": "model_json",
-            "fixture service outage": "other",
+            "transport",
+            "http_transient",
+            "http_unexpected",
+            "response_json",
+            "no_choices",
+            "model_json",
+            "other",
         }
-        for message, expected in fixtures.items():
-            with self.subTest(message=message):
+        for reason in fixtures:
+            with self.subTest(reason=reason):
                 self.assertEqual(
-                    chart.retryable_reason_code(chart.RetryableVisionError(message)),
-                    expected,
+                    chart.retryable_reason_code(
+                        chart.RetryableVisionError("private detail", reason=reason)
+                    ),
+                    reason,
                 )
+        invalid = chart.RetryableVisionError("private detail", reason="https://private.invalid")
+        self.assertEqual(chart.retryable_reason_code(invalid), "other")
         self.assertEqual(chart.retryable_reason_code(ValueError("private detail")), "other")
 
     def test_authentication_error_fails_immediately_without_retry(self) -> None:
@@ -501,7 +510,9 @@ class ChartSearchIndexTests(unittest.TestCase):
         throttled.status_code = 429
         throttled.headers = {}
         throttled.json.return_value = {"error": {"message": "busy"}}
-        self.assertIsInstance(chart.classify_http_error(throttled), chart.RetryableVisionError)
+        throttled_error = chart.classify_http_error(throttled)
+        self.assertIsInstance(throttled_error, chart.RetryableVisionError)
+        self.assertEqual(chart.retryable_reason_code(throttled_error), "http_transient")
 
         with tempfile.TemporaryDirectory() as temp:
             image_path = Path(temp) / "image.png"
@@ -517,8 +528,35 @@ class ChartSearchIndexTests(unittest.TestCase):
             )
             client.session = Mock()
             client.session.post.return_value = invalid
-            with self.assertRaises(chart.RetryableVisionError):
+            with self.assertRaises(chart.RetryableVisionError) as caught:
                 client.analyze(image_path)
+            self.assertEqual(chart.retryable_reason_code(caught.exception), "response_json")
+
+    def test_malformed_choice_is_retried_as_model_json(self) -> None:
+        malformed = Mock()
+        malformed.status_code = 200
+        malformed.headers = {}
+        malformed.json.return_value = {"choices": ["private model output"]}
+        with tempfile.TemporaryDirectory() as temp:
+            image_path = Path(temp) / "image.png"
+            write_image(image_path)
+            client = chart.VisionClient(
+                api_base="https://vision.example.invalid/v1",
+                api_key="fixture",
+                model="fixture-model",
+                timeout=5,
+                retries=2,
+                retry_backoff=0.001,
+                min_interval=0,
+            )
+            client.session = Mock()
+            client.session.post.return_value = malformed
+            with patch.object(chart.time, "sleep") as sleep:
+                with self.assertRaises(chart.RetryableVisionError) as caught:
+                    client.analyze(image_path)
+            self.assertEqual(client.session.post.call_count, 2)
+            self.assertEqual(sleep.call_count, 1)
+            self.assertEqual(chart.retryable_reason_code(caught.exception), "model_json")
 
     def test_private_state_checkpoint_can_publish_without_public_index(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
