@@ -64,8 +64,8 @@ globalThis.fetch = async (input) => {
   if (url.pathname === "/rest/v1/user_entitlements") {
     assert.doesNotMatch(
       String(url.searchParams.get("select") || ""),
-      /(?:^|,)paddle_last_event_id(?:,|$)/u,
-      "the admin export must remain compatible with production schemas without paddle_last_event_id",
+      /(?:^|,)paddle_last_(?:event_id|occurred_at)(?:,|$)/u,
+      "the admin export must remain compatible with production schemas without Paddle event-version columns",
     );
     return jsonResponse([]);
   }
