@@ -552,9 +552,16 @@ test("live user export merges current disabled, entitlement, and access state", 
     async listAllSiteUsersForExport() {
       return [{ id: "u1", email: "one@example.com" }, { id: "u2", email: "two@example.com" }];
     },
+    async listAllEntitlementsForExport() {
+      return [
+        { email: "one@example.com", plan: "NOVA" },
+        { email: "two@example.com", plan: "free" },
+      ];
+    },
+    entitlementMap(rows) { return new Map(rows.map((row) => [row.email, row])); },
+    normalizeEmail(value) { return String(value || "").trim().toLowerCase(); },
     mapWithConcurrency: vm.runInNewContext(`(${extractFunction(worker, "mapWithConcurrency")})`),
     async mergeSiteUserAdminState(_env, user) { return { ...user, disabled: user.id === "u2" }; },
-    async findEntitlement(_env, email) { return { plan: email.startsWith("one") ? "NOVA" : "free" }; },
     async findAccessGrant(_env, email) { return { access_mode: email.startsWith("one") ? "all" : "none" }; },
     adminVisibleUser(user, entitlement, access) { return { user, entitlement, access }; },
   };

@@ -3648,8 +3648,17 @@
   }
 
   function renderAdminUsersVerificationState(targets, message, kind = "") {
-    if (targets.userCount) targets.userCount.textContent = kind === "error" ? "未核验" : "核验中…";
-    if (targets.users) {
+    const cachedCount = accountAdminUsersByEmail.size;
+    if (targets.userCount) {
+      targets.userCount.textContent = cachedCount
+        ? `${cachedCount} users · ${kind === "error" ? "最近同步" : "核验中…"}`
+        : (kind === "error" ? "未核验" : "核验中…");
+    }
+    // The summary already contains the latest verified snapshot. A transient
+    // live refresh must not erase that useful table and leave the administrator
+    // unable to inspect or select users. Only show the empty-state row when no
+    // verified snapshot exists at all.
+    if (targets.users && !cachedCount) {
       targets.users.innerHTML = `<tr><td colspan="11"><div class="empty-state">${escapeHtml(message)}</div></td></tr>`;
     }
     if (targets.usersNotice) {
@@ -3856,13 +3865,18 @@
           targets.status.className = "status-line ok";
           targets.status.textContent = `用户状态已同步：${fresh.users.length} 个用户。`;
         } catch (error) {
+          const hasCachedUsers = accountAdminUsersByEmail.size > 0;
           renderAdminUsersVerificationState(
             targets,
-            error.message || "最新用户状态读取失败；为避免误导，缓存权限列表已隐藏。",
+            hasCachedUsers
+              ? "现场核验暂时失败，当前继续显示最近一次成功数据；编辑单个用户时仍会重新读取最新权限。"
+              : (error.message || "最新用户状态读取失败，请稍后重试。"),
             "error",
           );
-          targets.status.className = "status-line error";
-          targets.status.textContent = error.message || "最新用户状态读取失败。";
+          targets.status.className = hasCachedUsers ? "status-line ok" : "status-line error";
+          targets.status.textContent = hasCachedUsers
+            ? "后台已打开；用户表暂时显示最近一次成功数据。"
+            : (error.message || "最新用户状态读取失败。");
         }
       }
     });
@@ -4267,13 +4281,18 @@
       if (canManageUsers && exportUsers && document.getElementById("accountAdminModal")) {
         renderAdminUsersVerificationState(targets, "正在现场核验全部用户的最新权限…");
         return loadFreshAdminUsers(workerUrl, targets).catch((error) => {
+          const hasCachedUsers = accountAdminUsersByEmail.size > 0;
           renderAdminUsersVerificationState(
             targets,
-            error.message || "最新用户状态读取失败；为避免误导，缓存权限列表已隐藏。",
+            hasCachedUsers
+              ? "现场核验暂时失败，当前继续显示最近一次成功数据；编辑单个用户时仍会重新读取最新权限。"
+              : (error.message || "最新用户状态读取失败，请点击刷新重试。"),
             "error",
           );
-          targets.status.className = "status-line error";
-          targets.status.textContent = error.message || "最新用户状态读取失败，请点击刷新重试。";
+          targets.status.className = hasCachedUsers ? "status-line ok" : "status-line error";
+          targets.status.textContent = hasCachedUsers
+            ? "后台已打开；用户表暂时显示最近一次成功数据。"
+            : (error.message || "最新用户状态读取失败，请点击刷新重试。");
           return null;
         });
       }

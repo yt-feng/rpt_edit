@@ -10199,6 +10199,25 @@ async function listAllSiteUsersForExport(env) {
   return rows.map((row) => validateSiteUserRow(row)).filter(Boolean);
 }
 
+async function listAllEntitlementsForExport(env) {
+  let rows;
+  if (hasSupabaseConfig(env)) {
+    rows = await listAllSupabaseAccountRows(env, "user_entitlements", {
+      select: "email,site_origin,source_site,grant_source,source_plan_code,source_reference,plan,status,lifetime,current_period_end,paddle_last_event_id,paddle_last_occurred_at,updated_at",
+      order: "email.asc",
+    }, {
+      keyFields: ["email"],
+      cursorField: "email",
+      maxRows: ACCOUNT_ADMIN_EXPORT_MAX_USERS,
+    });
+  } else {
+    rows = await listAllR2AccountRows(env, accountKey("entitlements", ""), {
+      maxRows: ACCOUNT_ADMIN_EXPORT_MAX_USERS,
+    });
+  }
+  return rows.map((row) => validateEntitlementRow(row, row && row.email)).filter(Boolean);
+}
+
 async function mapWithConcurrency(rows, concurrency, mapper) {
   const values = Array.isArray(rows) ? rows : [];
   if (!values.length) return [];
@@ -10217,14 +10236,24 @@ async function mapWithConcurrency(rows, concurrency, mapper) {
 }
 
 async function loadAllAdminUsersForExport(env) {
-  const users = await listAllSiteUsersForExport(env);
+  // Supabase is an external origin, so fetching one entitlement per user can
+  // exhaust the Workers Free 50-subrequest allowance as soon as the account
+  // list reaches roughly 50 rows. Read both tables with bounded keyset pages,
+  // then join in memory. Per-user reads below stay on canonical R2-backed
+  // administrator state/access records. Those use Cloudflare's separate
+  // internal-service allowance and keep this endpoint genuinely live.
+  const [users, entitlementRows] = await Promise.all([
+    listAllSiteUsersForExport(env),
+    listAllEntitlementsForExport(env),
+  ]);
+  const entitlementsByEmail = entitlementMap(entitlementRows);
   return mapWithConcurrency(users, ACCOUNT_ADMIN_EXPORT_CONCURRENCY, async (user) => {
-    const [mergedUser, entitlement, access] = await Promise.all([
+    const email = normalizeEmail(user.email);
+    const [mergedUser, access] = await Promise.all([
       mergeSiteUserAdminState(env, user),
-      findEntitlement(env, user.email),
-      findAccessGrant(env, user.email),
+      findAccessGrant(env, email),
     ]);
-    return adminVisibleUser(mergedUser, entitlement, access);
+    return adminVisibleUser(mergedUser, entitlementsByEmail.get(email), access);
   });
 }
 
@@ -14375,9 +14404,9 @@ async function refreshAdminUsersSnapshot(env) {
   const [userRows, entitlementRows] = await Promise.all([listSiteUsers(env), listEntitlementRows(env)]);
   if (!Array.isArray(userRows) || !userRows.length) throw new Error("User list is not ready.");
   const entitlementsByEmail = entitlementMap(entitlementRows);
-  // Do not turn an unreadable administrator grant into "none": doing so can
-  // make an older annual entitlement look like all-site access in the admin
-  // table. Keep the previous verified snapshot instead by failing this refresh.
+  // This periodic raw rebuild intentionally re-reads every R2-backed record so
+  // it can repair the dashboard snapshot if an earlier mutation-side patch
+  // failed. The live export follows the same canonical state/access policy.
   const accessRows = await Promise.all(userRows.map((user) => findAccessGrant(env, user.email)));
   const users = userRows.map((user, index) => adminVisibleUser(
     user,
