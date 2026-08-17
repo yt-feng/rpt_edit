@@ -10203,7 +10203,7 @@ async function listAllEntitlementsForExport(env) {
   let rows;
   if (hasSupabaseConfig(env)) {
     rows = await listAllSupabaseAccountRows(env, "user_entitlements", {
-      select: "email,site_origin,source_site,grant_source,source_plan_code,source_reference,plan,status,lifetime,current_period_end,paddle_last_occurred_at,updated_at",
+      select: "email,site_origin,source_site,grant_source,source_plan_code,source_reference,plan,status,lifetime,current_period_end,updated_at",
       order: "email.asc",
     }, {
       keyFields: ["email"],
