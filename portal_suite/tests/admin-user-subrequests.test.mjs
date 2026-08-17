@@ -61,7 +61,14 @@ globalThis.fetch = async (input) => {
     return jsonResponse(rows);
   }
 
-  if (url.pathname === "/rest/v1/user_entitlements") return jsonResponse([]);
+  if (url.pathname === "/rest/v1/user_entitlements") {
+    assert.doesNotMatch(
+      String(url.searchParams.get("select") || ""),
+      /(?:^|,)paddle_last_event_id(?:,|$)/u,
+      "the admin export must remain compatible with production schemas without paddle_last_event_id",
+    );
+    return jsonResponse([]);
+  }
   throw new Error(`unexpected Supabase path: ${url.pathname}`);
 };
 
