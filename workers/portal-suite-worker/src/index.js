@@ -10203,11 +10203,11 @@ async function listAllEntitlementsForExport(env) {
   let rows;
   if (hasSupabaseConfig(env)) {
     rows = await listAllSupabaseAccountRows(env, "user_entitlements", {
-      select: "email,site_origin,source_site,grant_source,source_plan_code,source_reference,plan,status,lifetime,current_period_end,updated_at",
-      order: "email.asc",
+      select: "id,email,site_origin,source_site,grant_source,source_plan_code,source_reference,plan,status,lifetime,current_period_end,updated_at",
+      order: "id.asc",
     }, {
-      keyFields: ["email"],
-      cursorField: "email",
+      keyFields: ["id"],
+      cursorField: "id",
       maxRows: ACCOUNT_ADMIN_EXPORT_MAX_USERS,
     });
   } else {
@@ -10292,7 +10292,13 @@ function entitlementMap(rows) {
   const mapped = new Map();
   for (const row of rows || []) {
     const email = normalizeEmail(row && row.email);
-    if (email && !mapped.has(email)) mapped.set(email, row);
+    const current = mapped.get(email);
+    if (
+      email
+      && (!current || String(row && row.updated_at || "") > String(current.updated_at || ""))
+    ) {
+      mapped.set(email, row);
+    }
   }
   return mapped;
 }

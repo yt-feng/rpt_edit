@@ -175,6 +175,18 @@ test("Supabase full-user pagination rejects a duplicate page with no progress", 
   );
 });
 
+test("admin entitlement join keeps the newest row for duplicate legacy emails", () => {
+  const entitlementMap = vm.runInNewContext(`(${extractFunction(worker, "entitlementMap")})`, {
+    normalizeEmail(value) { return String(value || "").trim().toLowerCase(); },
+  });
+  const mapped = entitlementMap([
+    { id: "newer-id", email: "USER@example.invalid", status: "active", updated_at: "2026-08-17T01:00:00.000Z" },
+    { id: "older-id", email: "user@example.invalid", status: "expired", updated_at: "2026-08-16T01:00:00.000Z" },
+  ]);
+  assert.equal(mapped.size, 1);
+  assert.equal(mapped.get("user@example.invalid").status, "active");
+});
+
 test("R2 full-user pagination deduplicates keys and rejects repeated cursors", async () => {
   const list = loadR2Paginator();
   const records = new Map([
