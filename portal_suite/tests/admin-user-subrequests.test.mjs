@@ -62,11 +62,14 @@ globalThis.fetch = async (input) => {
   }
 
   if (url.pathname === "/rest/v1/user_entitlements") {
+    const select = String(url.searchParams.get("select") || "");
     assert.doesNotMatch(
-      String(url.searchParams.get("select") || ""),
+      select,
       /(?:^|,)paddle_last_(?:event_id|occurred_at)(?:,|$)/u,
       "the admin export must remain compatible with production schemas without Paddle event-version columns",
     );
+    assert.match(select, /(?:^|,)id(?:,|$)/u, "the admin export must select a unique pagination key");
+    assert.equal(url.searchParams.get("order"), "id.asc");
     return jsonResponse([]);
   }
   throw new Error(`unexpected Supabase path: ${url.pathname}`);
