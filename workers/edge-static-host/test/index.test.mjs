@@ -66,6 +66,7 @@ function fixture() {
   bucket.seed("index.html", "home", { contentType: "text/html; charset=utf-8", etag: '"home-v1"' });
   bucket.seed("404.html", "missing", { contentType: "text/html; charset=utf-8", etag: '"missing-v1"' });
   bucket.seed("data/catalog.json", '{"items":[]}', { etag: '"catalog-v1"' });
+  bucket.seed("data/catalog_preview.json", '{"items":[]}', { etag: '"catalog-preview-v1"' });
   bucket.seed("assets/app.js", "0123456789", { etag: '"app-v1"' });
   bucket.seed("assets/report-chat.js", "chat", { etag: '"chat-v1"' });
   bucket.seed("assets/styles.abcdef12.css", "body{}", { etag: '"css-v1"' });
@@ -96,6 +97,23 @@ test("catalog and search-style JSON can be served stale while revalidating", asy
   assert.equal(response.headers.get("cloudflare-cdn-cache-control"),
     "public, max-age=300, stale-while-revalidate=300, stale-if-error=86400");
   assert.equal(response.headers.get("content-type"), "application/json; charset=utf-8");
+});
+
+test("release-specific checks bypass stale edge caches and only expose the active release", async () => {
+  const active = await request(
+    "/.well-known/edge-release/0123456789abcdef0123456789abcdef/data/catalog.json",
+  );
+  assert.equal(active.status, 200);
+  assert.equal(await active.text(), '{"items":[]}');
+  assert.equal(active.headers.get("cache-control"), "no-store");
+  assert.equal(active.headers.get("cloudflare-cdn-cache-control"), "no-store");
+
+  const stale = await request(
+    "/.well-known/edge-release/ffffffffffffffffffffffffffffffff/data/catalog.json",
+  );
+  assert.equal(stale.status, 404);
+  assert.equal(await stale.text(), "Not Found");
+  assert.equal(stale.headers.get("cache-control"), "no-store");
 });
 
 test("content-versioned assets are immutable while unversioned assets stay short-lived", async () => {
@@ -283,6 +301,13 @@ test("neutral deployment enables Workers caching and verifies preview/full catal
   assert.match(workflow, /compatibility_date = ["']2026-08-12["']/);
   assert.match(workflow, /test -s _neutral_site\/data\/catalog_preview\.json/);
   assert.match(workflow, /live-catalog-preview\.json/);
+  assert.match(workflow, /\.well-known\/edge-release\/\$STATIC_RELEASE/);
+  const refreshStep = workflow.match(
+    /- name: Verify refreshed catalog is live[\s\S]*?- name: Remove private values from persistent source/,
+  )?.[0] || "";
+  assert.match(refreshStep, /\$release_check\/data\/catalog\.json/);
+  assert.match(refreshStep, /\$release_check\/data\/catalog_preview\.json/);
+  assert.doesNotMatch(refreshStep, /\?release=/);
   assert.match(workflow, /assert_aligned\("local", expected, expected_preview\)/);
   assert.match(workflow, /assert_aligned\("live", actual, actual_preview\)/);
   const routeStep = workflow.match(/- name: Verify active edge route or switch[\s\S]*?- name: Verify refreshed catalog is live/)?.[0] || "";

@@ -501,6 +501,15 @@ def run(args: argparse.Namespace) -> int:
         args.remote_root,
     )
     target.ensure_collection()
+    # Reclaim expired mirror space before attempting any new uploads.  Doing
+    # this at the end can deadlock a full account: the upload fails before the
+    # cleanup step ever gets a chance to run.
+    removed = target.cleanup_old_dates(args.retention_days, today)
+    print(
+        f"CLEANUP_COMPLETE removed={len(removed)} "
+        f"removed_dates={','.join(removed) or '-'}",
+        flush=True,
+    )
     uploaded = 0
     skipped = 0
     with tempfile.TemporaryDirectory(prefix="portal-jianguoyun-") as temp_dir:
@@ -527,7 +536,6 @@ def run(args: argparse.Namespace) -> int:
             print(f"UPLOAD_DONE {index}/{len(videos)} {'/'.join(remote_parts)}", flush=True)
             local_path.unlink(missing_ok=True)
 
-    removed = target.cleanup_old_dates(args.retention_days, today)
     print(
         f"SYNC_COMPLETE uploaded={uploaded} skipped={skipped} removed={len(removed)} "
         f"removed_dates={','.join(removed) or '-'}",
@@ -539,8 +547,8 @@ def run(args: argparse.Namespace) -> int:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--target-date", default="", help="Last Beijing date to sync (YYYY-MM-DD).")
-    parser.add_argument("--days", type=int, default=3, help="Number of dates ending at target date.")
-    parser.add_argument("--retention-days", type=int, default=3)
+    parser.add_argument("--days", type=int, default=2, help="Number of dates ending at target date.")
+    parser.add_argument("--retention-days", type=int, default=2)
     parser.add_argument("--remote-root", default=DEFAULT_REMOTE_ROOT)
     parser.add_argument("--dry-run", action="store_true")
     return parser
