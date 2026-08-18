@@ -38,6 +38,7 @@ jobs:
         with:
           sparse-checkout-cone-mode: false
           sparse-checkout: |
+            .github/workflows/portal-ops-jianguoyun-sync.yml
             scripts/render_private_config.py
             scripts/sync_ops_videos_to_jianguoyun.py
             scripts/test_sync_ops_videos_to_jianguoyun.py
