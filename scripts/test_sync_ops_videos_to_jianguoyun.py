@@ -5,7 +5,9 @@ from __future__ import annotations
 
 import tempfile
 import unittest
+from datetime import date
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import Mock, patch
 
 import requests
@@ -166,6 +168,29 @@ class RemoteSizeTests(unittest.TestCase):
         self.assertIn("response=<error> temporarily denied </error>", message)
 
 
+class CleanupTests(unittest.TestCase):
+    def test_cleanup_only_deletes_date_folders_before_the_retention_window(self) -> None:
+        webdav = target()
+        body = """<?xml version="1.0" encoding="utf-8" ?>
+<d:multistatus xmlns:d="DAV:">
+  <d:response><d:href>/dav/Ops/</d:href></d:response>
+  <d:response><d:href>/dav/Ops/notes/</d:href></d:response>
+  <d:response><d:href>/dav/Ops/2026-08-16/</d:href></d:response>
+  <d:response><d:href>/dav/Ops/2026-08-17/</d:href></d:response>
+  <d:response><d:href>/dav/Ops/2026-08-18/</d:href></d:response>
+</d:multistatus>"""
+        webdav.session.request.return_value = response(207, body)
+        webdav.session.delete.return_value = response(204)
+
+        removed = webdav.cleanup_old_dates(2, date(2026, 8, 18))
+
+        self.assertEqual(removed, ["2026-08-16"])
+        webdav.session.delete.assert_called_once_with(
+            "https://dav.example.test/dav/Ops/2026-08-16",
+            timeout=(20, 180),
+        )
+
+
 class UploadTests(unittest.TestCase):
     def setUp(self) -> None:
         self.temp_dir = tempfile.TemporaryDirectory()
@@ -263,6 +288,65 @@ class UploadTests(unittest.TestCase):
         self.assertNotIn("\n", message)
         self.assertTrue(message.endswith("..."))
         self.assertLess(len(message), 450)
+
+
+class RunOrderingTests(unittest.TestCase):
+    def test_expired_dates_are_removed_before_the_first_upload(self) -> None:
+        events: list[str] = []
+        video = sync.VideoFile(
+            repo="example/source",
+            path="videos/2026-08-18/sample.mp4",
+            name="sample.mp4",
+            size=3,
+            sha="abc123",
+            generated_date="2026-08-18",
+            category="BBG Show",
+            download_url="https://example.invalid/sample.mp4",
+        )
+        github = Mock()
+        github.download.side_effect = lambda _video, path: path.write_bytes(b"abc")
+        target = Mock()
+        target.cleanup_old_dates.side_effect = (
+            lambda *_args, **_kwargs: events.append("cleanup") or ["2026-08-16"]
+        )
+        target.has_same_size.return_value = False
+        target.upload.side_effect = lambda *_args, **_kwargs: events.append("upload")
+        args = SimpleNamespace(
+            target_date="2026-08-18",
+            days=1,
+            retention_days=2,
+            remote_root="/Ops",
+            dry_run=False,
+        )
+
+        with (
+            patch.object(sync, "GithubSource", return_value=github),
+            patch.object(sync, "discover_videos", return_value=[video]),
+            patch.object(sync, "WebDavTarget", return_value=target),
+            patch.dict(
+                sync.os.environ,
+                {
+                    "JIANGUOYUN_WEBDAV_URL": "https://dav.example.invalid",
+                    "JIANGUOYUN_WEBDAV_USERNAME": "user",
+                    "JIANGUOYUN_WEBDAV_PASSWORD": "password",
+                },
+            ),
+        ):
+            self.assertEqual(sync.run(args), 0)
+
+        self.assertEqual(events, ["cleanup", "upload"])
+        target.cleanup_old_dates.assert_called_once()
+
+    def test_scheduled_workflow_uses_a_two_day_window(self) -> None:
+        workflow = (
+            Path(__file__).resolve().parents[1]
+            / ".github"
+            / "workflows"
+            / "portal-ops-jianguoyun-sync.yml"
+        ).read_text(encoding="utf-8")
+        self.assertIn("default: \"2\"", workflow)
+        self.assertIn("--days \"${{ github.event.inputs.sync_days || '2' }}\"", workflow)
+        self.assertIn("--retention-days 2", workflow)
 
 
 if __name__ == "__main__":

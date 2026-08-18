@@ -528,12 +528,13 @@ jobs:
         run: |
           set -euo pipefail
           echo "::add-mask::$PORTAL_SITE_URL"
+          release_check="$PORTAL_SITE_URL/.well-known/edge-release/$STATIC_RELEASE"
           for attempt in $(seq 1 18); do
             if curl --fail --silent --max-time 30 \
-              "$PORTAL_SITE_URL/data/catalog.json?release=$STATIC_RELEASE" \
+              "$release_check/data/catalog.json" \
               --output "$RUNNER_TEMP/live-catalog.json" \
               && curl --fail --silent --max-time 30 \
-              "$PORTAL_SITE_URL/data/catalog_preview.json?release=$STATIC_RELEASE" \
+              "$release_check/data/catalog_preview.json" \
               --output "$RUNNER_TEMP/live-catalog-preview.json"
             then
               if python3 - <<'PY'

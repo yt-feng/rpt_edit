@@ -1,4 +1,5 @@
-const ALLOWED_PREFIX = /^edge-static\/releases\/[0-9a-f]{32}\/$/;
+const ALLOWED_PREFIX = /^edge-static\/releases\/([0-9a-f]{32})\/$/;
+const RELEASE_CHECK_PATH = /^\/\.well-known\/edge-release\/([0-9a-f]{32})(?:\/(.*))?$/;
 
 const CACHE_POLICY = Object.freeze({
   html: Object.freeze({
@@ -94,15 +95,15 @@ function cachePolicyFor(path, url) {
   return CACHE_POLICY.shortAsset;
 }
 
-function responseHeaders(object, path, url) {
+function responseHeaders(object, path, url, releaseCheck = false) {
   const headers = new Headers();
   object.writeHttpMetadata(headers);
   headers.set("content-type", headers.get("content-type") || fallbackContentType(path));
   // The active Worker binding changes between immutable releases, so edge policy
   // is authoritative even when an older object carries legacy upload metadata.
   const cachePolicy = cachePolicyFor(path, url);
-  headers.set("cache-control", cachePolicy.browser);
-  headers.set("cloudflare-cdn-cache-control", cachePolicy.edge);
+  headers.set("cache-control", releaseCheck ? "no-store" : cachePolicy.browser);
+  headers.set("cloudflare-cdn-cache-control", releaseCheck ? "no-store" : cachePolicy.edge);
   if (object.httpEtag) headers.set("etag", object.httpEtag);
   if (object.uploaded instanceof Date && Number.isFinite(object.uploaded.getTime())) {
     headers.set("last-modified", object.uploaded.toUTCString());
@@ -260,13 +261,27 @@ export default {
     }
 
     const prefix = String(env.STATIC_PREFIX || "");
-    if (!ALLOWED_PREFIX.test(prefix)) {
+    const prefixMatch = ALLOWED_PREFIX.exec(prefix);
+    if (!prefixMatch) {
       return new Response("Service Unavailable", {
         status: 503,
         headers: { "x-origin-class": "edge-static" },
       });
     }
-    const relative = safeRelativePath(url.pathname);
+    const releaseCheckMatch = RELEASE_CHECK_PATH.exec(url.pathname);
+    const releaseCheck = Boolean(releaseCheckMatch);
+    if (releaseCheckMatch && releaseCheckMatch[1] !== prefixMatch[1]) {
+      return new Response("Not Found", {
+        status: 404,
+        headers: {
+          "cache-control": "no-store",
+          "cloudflare-cdn-cache-control": "no-store",
+          "x-origin-class": "edge-static",
+        },
+      });
+    }
+    const requestedPath = releaseCheckMatch ? `/${releaseCheckMatch[2] || ""}` : url.pathname;
+    const relative = safeRelativePath(requestedPath);
     if (relative === null) {
       return new Response("Bad Request", {
         status: 400,
@@ -306,7 +321,7 @@ export default {
     }
 
     const { object, candidate } = resolved;
-    const headers = responseHeaders(object, candidate, url);
+    const headers = responseHeaders(object, candidate, url, releaseCheck);
     if (status === 200 && isNotModified(request, object)) {
       headers.delete("content-length");
       return new Response(null, { status: 304, headers });

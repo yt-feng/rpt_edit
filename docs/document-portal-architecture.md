@@ -1,6 +1,6 @@
 # Document Portal Architecture
 
-Last updated: 2026-08-16
+Last updated: 2026-08-18
 
 This document describes the protected document portal.
 
@@ -60,6 +60,14 @@ The production hostname remains on the neutral edge route and is never bound
 to GitHub Pages. Repository workflows may create build artifacts, but the
 custom hostname and downloadable binaries are not served from repository
 Pages.
+
+Each immutable static deployment receives a random 32-character release ID.
+The post-deploy catalog check uses
+`/.well-known/edge-release/<release-id>/data/...`; the edge Worker serves that
+path only when the requested ID matches its active `STATIC_PREFIX`, and marks
+the response `no-store`. This verifies the newly active release without mixing
+the ordinary five-minute catalog cache from different deployments. Public site
+requests continue to use the normal unversioned paths and cache policy.
 
 ## Frontend Pages
 

@@ -10,7 +10,7 @@ on:
       sync_days:
         description: "Number of dates to sync, ending at target_date"
         required: true
-        default: "3"
+        default: "2"
   repository_dispatch:
     types:
       - portal-ops-files-changed
@@ -71,6 +71,6 @@ jobs:
         run: |
           python scripts/sync_ops_videos_to_jianguoyun.py \
             --target-date "${{ github.event.inputs.target_date || '' }}" \
-            --days "${{ github.event.inputs.sync_days || '3' }}" \
-            --retention-days 3 \
+            --days "${{ github.event.inputs.sync_days || '2' }}" \
+            --retention-days 2 \
             --remote-root "/我的坚果云/Portal Suite/Ops"
