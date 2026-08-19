@@ -1196,6 +1196,7 @@ test("registered users can use grounded report chat and anonymous users cannot",
   assert.equal(result.response.status, 200, JSON.stringify(result.data));
   assert.equal(result.data.recommendations[0].id, reportId);
   assert.equal(result.data.recommendations[0].attraction_score, 5);
+  assert.equal(result.data.recommendations[0].available, true);
   assert.match(result.data.answer, /摩根大通/u);
   assert.ok(bucket.rangeReadKeys.some((key) => key.endsWith("tokens.tbl")));
   assert.ok(bucket.rangeReadKeys.some((key) => key.endsWith("items.tbl")));
@@ -1289,6 +1290,10 @@ test("report chat random-access retrieval stays within the Worker subrequest bud
   });
   assert.equal(result.response.status, 200, JSON.stringify(result.data));
   assert.ok(result.data.recommendations.length <= 8);
+  assert.ok(
+    result.data.recommendations.every((item) => !Object.hasOwn(item, "available")),
+    "lookup records without a PDF state must remain unknown",
+  );
   assert.ok(bucket.rangeReadKeys.length <= 32, `unexpected lookup range reads: ${bucket.rangeReadKeys.length}`);
 });
 

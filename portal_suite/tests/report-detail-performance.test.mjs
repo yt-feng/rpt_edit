@@ -5,6 +5,8 @@ import vm from "node:vm";
 
 const appPath = new URL("../site_src/assets/app.js", import.meta.url);
 const appSource = await readFile(appPath, "utf8");
+const reportHtmlPath = new URL("../site_src/report.html", import.meta.url);
+const reportHtmlSource = await readFile(reportHtmlPath, "utf8");
 
 function extractFunction(source, name) {
   const marker = `function ${name}(`;
@@ -90,6 +92,57 @@ test("report preview query metadata can paint a directly opened detail page", ()
   assert.equal(preview.bank_name, "Bernstein Research");
   assert.equal(preview.available, true);
   assert.equal(preview.page_count, 42);
+});
+
+test("inline report preview paints before the application bundle and preserves unknown PDF state", () => {
+  const match = reportHtmlSource.match(/<script id="reportPreviewBootstrap">([\s\S]*?)<\/script>/u);
+  assert.ok(match, "report.html must include the inline preview bootstrap");
+  assert.ok(
+    reportHtmlSource.indexOf('id="reportPreviewBootstrap"') < reportHtmlSource.indexOf('assets/app.js'),
+    "the preview bootstrap must execute before the application bundle",
+  );
+  assert.doesNotMatch(reportHtmlSource, /Loading report/u);
+  assert.doesNotMatch(match[1], /innerHTML/u);
+
+  class Element {
+    constructor(tag = "") {
+      this.tag = tag;
+      this.className = "";
+      this.textContent = "";
+      this.children = [];
+    }
+
+    append(...children) {
+      this.children.push(...children);
+    }
+
+    replaceChildren(...children) {
+      this.children = children;
+    }
+  }
+
+  function paint(search) {
+    const detail = new Element("section");
+    const document = {
+      title: "报告详情 | KC桌面",
+      getElementById: (id) => (id === "detail" ? detail : null),
+      createElement: (tag) => new Element(tag),
+    };
+    vm.runInNewContext(match[1], {
+      URLSearchParams,
+      document,
+      window: { location: { search } },
+    });
+    return { detail, document };
+  }
+
+  const unknown = paint("?id=chart-report&title=Chart%20Report&bank_name=Bernstein");
+  assert.equal(unknown.detail.children[0].children[0].textContent, "Chart Report");
+  assert.equal(unknown.detail.children[1].children[3].children[1].textContent, "正在确认");
+  assert.equal(unknown.document.title, "Chart Report | Portal Suite");
+
+  const textOnly = paint("?id=chat-report&title=Chat%20Report&available=0");
+  assert.equal(textOnly.detail.children[1].children[3].children[1].textContent, "Text only");
 });
 
 test("a report detail shard hit renders before PDF overrides and skips the full catalog", async () => {
@@ -406,8 +459,105 @@ test("delivery and external links carry cross-browser first-paint metadata", () 
   assert.match(deliveryPageUrl, /preview/);
   assert.match(externalPageUrl, /"title"/);
   assert.match(externalPageUrl, /"institution"/);
+  assert.match(externalPageUrl, /"description"/);
+  assert.match(externalPageUrl, /"filename"/);
+  assert.match(extractFunction(appSource, "initDetailAdmin"), /deliveryPageUrl\(item\.id, data\.password, item\)/u);
+  assert.match(appSource, /externalPageUrl\(deliveryItem, data\.password\)/u);
   assert.match(appSource, /renderExternalDetailFirstPaint\(item, target\)/u);
   assert.match(extractFunction(appSource, "renderReportFirstPaint"), /availabilityKnown/u);
+});
+
+test("legacy delivery redirects retain complete report preview metadata", async () => {
+  const params = new URLSearchParams({
+    id: "delivery-report",
+    password: "delivery-secret",
+    title: "Bernstein delivery report",
+    title_zh: "伯恩斯坦交付报告",
+    filename: "bernstein-delivery.pdf",
+    date_folder: "260819",
+    bank_code: "BERN",
+    bank_name: "Bernstein",
+    industry: "Technology",
+    sector: "Semiconductors",
+    category: "Equity Research",
+    size_bytes: "456789",
+    page_count: "31",
+    available: "0",
+    pdf_archived: "1",
+  });
+  let redirected = "";
+  const target = { innerHTML: "" };
+  const context = vm.createContext({
+    URL,
+    URLSearchParams,
+    document: { getElementById: () => target },
+    window: {
+      location: {
+        href: `https://kcdesk.com/delivery.html?${params.toString()}`,
+        search: `?${params.toString()}`,
+        replace: (url) => { redirected = url; },
+      },
+    },
+    deliveryPasswordFromLocation: (values) => values.get("password") || "",
+    escapeHtml: (value) => String(value),
+  });
+  vm.runInContext(`
+    ${extractFunction(appSource, "reportPreviewItem")}
+    ${extractFunction(appSource, "reportPreviewFromParams")}
+    ${extractFunction(appSource, "reportPageUrl")}
+    ${extractFunction(appSource, "deliveryPageUrl")}
+    ${extractAsyncFunction(appSource, "initDelivery")}
+    globalThis.run = initDelivery;
+  `, context);
+  await context.run();
+  const forwarded = new URL(redirected);
+  for (const key of [
+    "title", "title_zh", "filename", "date_folder", "bank_code", "bank_name",
+    "industry", "sector", "category", "size_bytes", "page_count", "available",
+    "pdf_archived",
+  ]) {
+    assert.equal(forwarded.searchParams.get(key), params.get(key), `${key} must survive the redirect`);
+  }
+  assert.equal(forwarded.pathname, "/report.html");
+  assert.equal(forwarded.searchParams.get("password"), "delivery-secret");
+  assert.match(target.innerHTML, /Open report/u);
+});
+
+test("external delivery URLs retain every first-paint field", () => {
+  const context = vm.createContext({
+    URL,
+    window: { location: { href: "https://kcdesk.com/doc.html" } },
+  });
+  vm.runInContext(`
+    ${extractFunction(appSource, "externalPageUrl")}
+    globalThis.build = externalPageUrl;
+  `, context);
+  const preview = {
+    id: "external-123",
+    source: "external",
+    title: "External title",
+    title_cn: "外部报告",
+    institution: "Research House",
+    date: "2026-08-19",
+    file_type: "PDF",
+    kind: "research",
+    kind_label: "Research",
+    page_count: 42,
+    size_bytes: 987654,
+    report_type: "Equity",
+    language: "en",
+    category: "Technology",
+    author: "Analyst",
+    rating: "Outperform",
+    description: "Preview summary",
+    filename: "external-title.pdf",
+    required_plan: "annual",
+  };
+  const url = new URL(context.build(preview, "external-secret"));
+  for (const [key, value] of Object.entries(preview)) {
+    assert.equal(url.searchParams.get(key), String(value), `${key} must be present`);
+  }
+  assert.equal(url.searchParams.get("password"), "external-secret");
 });
 
 test("external detail first paint uses the preview catalog instead of the full catalog", () => {

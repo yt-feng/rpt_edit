@@ -20,6 +20,11 @@ BANK_ALIASES = (
     "jefferies", "nomura", "citi", "citigroup", "ubs", "hsbc", "gs", "jpm",
     "ms", "db", "barc", "jef", "nom",
 )
+REPORT_PREVIEW_FIELDS = (
+    "title_zh", "filename", "date_folder", "bank_code", "bank_name",
+    "size_bytes", "available", "industry", "sector", "category",
+    "pdf_archived", "page_count",
+)
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -87,25 +92,47 @@ def title_keys(value: Any) -> set[str]:
 
 def reconcile_report_ids(chart_index: dict[str, Any], catalog: dict[str, Any]) -> int:
     lookup: dict[str, set[str]] = {}
+    catalog_by_id: dict[str, dict[str, Any]] = {}
     for item in catalog.get("items", []):
         if not isinstance(item, dict) or not item.get("id"):
             continue
         report_id = clean_text(item.get("id"), 64)
+        catalog_by_id[report_id] = item
         for candidate in (item.get("title"), item.get("filename"), item.get("title_zh")):
             for normalized in title_keys(candidate):
                 lookup.setdefault(normalized, set()).add(report_id)
     reconciled = 0
     for report in chart_index.get("reports", []):
-        if not isinstance(report, dict) or report.get("report_id"):
+        if not isinstance(report, dict):
             continue
-        matches = {
-            report_id
-            for key in title_keys(report.get("title"))
-            for report_id in lookup.get(key, set())
-        }
-        if len(matches) == 1:
-            report["report_id"] = next(iter(matches))
-            reconciled += 1
+        report_id = clean_text(report.get("report_id"), 64)
+        if not report_id:
+            matches = {
+                candidate_id
+                for key in title_keys(report.get("title"))
+                for candidate_id in lookup.get(key, set())
+            }
+            if len(matches) == 1:
+                report_id = next(iter(matches))
+                report["report_id"] = report_id
+                reconciled += 1
+        catalog_item = catalog_by_id.get(report_id)
+        if not catalog_item:
+            # A chart record outside the current catalog has no trustworthy PDF state.
+            report.pop("available", None)
+            report.pop("pdf_archived", None)
+            continue
+        canonical_title = clean_text(catalog_item.get("title") or catalog_item.get("filename"), 300)
+        if canonical_title:
+            report["title"] = canonical_title
+        for key in REPORT_PREVIEW_FIELDS:
+            value = catalog_item.get(key)
+            if key in {"available", "pdf_archived"} and not isinstance(value, bool):
+                report.pop(key, None)
+                continue
+            if value is None or value == "":
+                continue
+            report[key] = value
     return reconciled
 
 

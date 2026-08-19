@@ -5174,7 +5174,7 @@
       const summary = String(chart.description || chart.trend_summary || "");
       const trend = String(chart.trend_summary || "");
       return `
-        <a class="chart-search-card" href="${escapeHtml(reportPageUrl(reportId, { preview: catalogItem || { id: reportId, title: reportTitle } }))}" target="_blank" rel="noopener noreferrer" data-id="${escapeHtml(reportId)}">
+        <a class="chart-search-card" href="${escapeHtml(reportPageUrl(reportId, { preview: catalogItem || { ...report, id: reportId, title: reportTitle } }))}" target="_blank" rel="noopener noreferrer" data-id="${escapeHtml(reportId)}">
           <span class="chart-search-kicker">${escapeHtml(chart.chart_type || "CHART")}</span>
           <strong>${escapeHtml(title)}</strong>
           ${summary ? `<p>${escapeHtml(summary)}</p>` : ""}
@@ -7525,7 +7525,7 @@
     const previewKeys = [
       "source", "title", "title_cn", "institution", "date", "file_type", "kind",
       "kind_label", "page_count", "size_bytes", "report_type", "language", "category",
-      "author", "rating", "required_plan",
+      "author", "rating", "description", "filename", "required_plan",
     ];
     for (const key of previewKeys) {
       const value = item && item[key];
