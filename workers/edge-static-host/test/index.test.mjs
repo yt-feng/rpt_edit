@@ -326,7 +326,21 @@ test("neutral deployment enables Workers caching and verifies preview/full catal
   assert.doesNotMatch(refreshStep, /\?release=/);
   assert.match(workflow, /assert_aligned\("local", expected, expected_preview\)/);
   assert.match(workflow, /assert_aligned\("live", actual, actual_preview\)/);
-  const routeStep = workflow.match(/- name: Verify active edge route or switch[\s\S]*?- name: Verify refreshed catalog is live/)?.[0] || "";
-  assert.match(routeStep, /scripts\/edge_route_cutover\.py migrate/);
-  assert.doesNotMatch(routeStep, /exit 0/);
+  const verifyRouteStep = workflow.match(
+    /- name: Verify active edge routes[\s\S]*?- name: Switch active edge routes/,
+  )?.[0] || "";
+  assert.match(verifyRouteStep, /scripts\/edge_route_cutover\.py verify/);
+  assert.doesNotMatch(verifyRouteStep, /CLOUDFLARE_API_TOKEN/);
+  assert.doesNotMatch(verifyRouteStep, /exit 0/);
+  const switchRouteStep = workflow.match(
+    /- name: Switch active edge routes[\s\S]*?- name: Purge previous public edge cache when permitted/,
+  )?.[0] || "";
+  assert.match(switchRouteStep, /if: inputs\.operation == 'switch'/);
+  assert.match(switchRouteStep, /scripts\/edge_route_cutover\.py migrate/);
+  assert.match(switchRouteStep, /CLOUDFLARE_API_TOKEN/);
+  const purgeStep = workflow.match(
+    /- name: Purge previous public edge cache when permitted[\s\S]*?- name: Verify refreshed catalog is live/,
+  )?.[0] || "";
+  assert.match(purgeStep, /continue-on-error: true/);
+  assert.match(purgeStep, /scripts\/edge_route_cutover\.py purge/);
 });
