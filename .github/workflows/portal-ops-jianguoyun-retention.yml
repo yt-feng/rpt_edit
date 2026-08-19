@@ -1,39 +1,25 @@
-name: Portal Suite Ops Jianguoyun Sync
+name: Portal Ops Jianguoyun Daily Retention
 
 on:
   workflow_dispatch:
-    inputs:
-      target_date:
-        description: "Last Beijing date to sync (YYYY-MM-DD; blank uses today)"
-        required: false
-        default: ""
-      sync_days:
-        description: "Number of dates to sync, ending at target_date"
-        required: true
-        default: "2"
-  repository_dispatch:
-    types:
-      - portal-ops-files-changed
   schedule:
-    # Hourly fallback from 08:15 through 00:15 Beijing time. File discovery in
-    # the Portal Suite Worker dispatches this workflow immediately when the admin
-    # snapshot gains a new operations video.
-    - cron: "15 0-16 * * *"
+    # 08:30 every day in Beijing and Hong Kong (GitHub cron uses UTC).
+    - cron: "30 0 * * *"
 
 permissions:
   contents: read
 
 concurrency:
-  group: portal-ops-jianguoyun-sync
+  group: portal-ops-jianguoyun-retention
   cancel-in-progress: false
 
 jobs:
-  sync:
+  cleanup:
     if: ${{ vars.PORTAL_AUTOMATION_ENABLED == 'true' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    timeout-minutes: 30
     steps:
-      - name: Checkout repository
+      - name: Checkout cleanup client
         uses: actions/checkout@v4
         with:
           sparse-checkout-cone-mode: false
@@ -73,14 +59,12 @@ jobs:
           print("Private operations root materialized")
           PY
 
-      - name: Sync operations videos to Jianguoyun
+      - name: Remove operations folders outside the three-day window
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_READ_TOKEN || secrets.GH_DISPATCH_TOKEN || github.token }}
           JIANGUOYUN_WEBDAV_URL: ${{ secrets.JIANGUOYUN_WEBDAV_URL }}
           JIANGUOYUN_WEBDAV_USERNAME: ${{ secrets.JIANGUOYUN_WEBDAV_USERNAME }}
           JIANGUOYUN_WEBDAV_PASSWORD: ${{ secrets.JIANGUOYUN_WEBDAV_PASSWORD }}
         run: |
           python scripts/sync_ops_videos_to_jianguoyun.py \
-            --target-date "${{ github.event.inputs.target_date || '' }}" \
-            --days "${{ github.event.inputs.sync_days || '2' }}" \
-            --skip-cleanup
+            --cleanup-only \
+            --retention-days 3
