@@ -217,6 +217,25 @@ def wait_for_edge(origin: str, *, expected: bool, attempts: int = 120) -> bool:
     return False
 
 
+def verify_alias(alias_origin: str, canonical_origin: str) -> bool:
+    status, headers, _body = request_status(alias_origin + "/", method="HEAD")
+    return (
+        status == 301
+        and headers.get("x-origin-class", "").lower() == "edge-static"
+        and headers.get("location", "") == canonical_origin.rstrip("/") + "/"
+    )
+
+
+def wait_for_alias(alias_origin: str, canonical_origin: str, attempts: int = 120) -> bool:
+    for attempt in range(attempts):
+        if verify_alias(alias_origin, canonical_origin):
+            return True
+        if (attempt + 1) % 12 == 0:
+            print(f"alias verification pending attempt={attempt + 1}", file=sys.stderr)
+        time.sleep(5)
+    return False
+
+
 def migrate(zone_id: str, pattern: str, origin: str, script_name: str) -> None:
     route = exact_route(zone_id, pattern)
     if route is not None and str(route.get("script") or "") != script_name:
@@ -250,8 +269,54 @@ def rollback(zone_id: str, pattern: str, origin: str, script_name: str) -> None:
         raise CutoverError
 
 
+def migrate_alias(zone_id: str, pattern: str, origin: str, canonical_origin: str, script_name: str) -> None:
+    route = exact_route(zone_id, pattern)
+    if route is not None and str(route.get("script") or "") != script_name:
+        raise CutoverError("route_conflict")
+    created = route is None
+    if created:
+        result = api_json(
+            f"/zones/{zone_id}/workers/routes",
+            method="POST",
+            body={"pattern": pattern, "script": script_name},
+            stage="route_create",
+        )
+        if not isinstance(result, dict) or not result.get("id"):
+            raise CutoverError("route_create")
+    try:
+        if not wait_for_alias(origin, canonical_origin):
+            raise CutoverError("edge_verify")
+    except Exception:
+        if created:
+            try:
+                delete_edge_route(zone_id, pattern, script_name)
+            except Exception:
+                pass
+        raise
+
+
+def configured_alias_hosts(hostname: str) -> list[str]:
+    values = []
+    for value in os.environ.get("EDGE_ALIAS_HOSTS", "").split(","):
+        alias = value.strip().lower()
+        if not alias or alias == hostname or "/" in alias or ":" in alias or "." not in alias:
+            continue
+        if alias not in values:
+            values.append(alias)
+    return values
+
+
+def purge_edge_cache(zone_id: str) -> None:
+    api_json(
+        f"/zones/{zone_id}/purge_cache",
+        method="POST",
+        body={"purge_everything": True},
+        stage="cache_purge",
+    )
+
+
 def run() -> int:
-    if len(sys.argv) != 2 or sys.argv[1] not in {"migrate", "rollback", "verify"}:
+    if len(sys.argv) != 2 or sys.argv[1] not in {"migrate", "rollback", "verify", "purge"}:
         return 2
     hostname = os.environ.get("SITE_HOST", "").strip().lower()
     script_name = os.environ.get("EDGE_SCRIPT_NAME", "").strip()
@@ -259,17 +324,28 @@ def run() -> int:
         return 2
     origin = "https://" + hostname
     pattern = hostname + "/*"
+    aliases = configured_alias_hosts(hostname)
     try:
         if sys.argv[1] == "verify":
             if not wait_for_edge(origin, expected=True):
                 raise CutoverError("edge_verify")
+            for alias in aliases:
+                if not wait_for_alias("https://" + alias, origin):
+                    raise CutoverError("edge_verify")
             print("edge route verified")
             return 0
         zone_id = find_zone_id(hostname)
-        if sys.argv[1] == "migrate":
+        if sys.argv[1] == "purge":
+            purge_edge_cache(zone_id)
+            print("edge cache purged")
+        elif sys.argv[1] == "migrate":
             migrate(zone_id, pattern, origin, script_name)
+            for alias in aliases:
+                migrate_alias(zone_id, alias + "/*", "https://" + alias, origin, script_name)
             print("edge route verified")
         else:
+            for alias in aliases:
+                delete_edge_route(zone_id, alias + "/*", script_name)
             rollback(zone_id, pattern, origin, script_name)
             print("edge route restored")
     except Exception:
@@ -284,6 +360,7 @@ def run() -> int:
             "route_create",
             "route_delete",
             "edge_verify",
+            "cache_purge",
             "cloud_api",
         }:
             stage = "unknown"

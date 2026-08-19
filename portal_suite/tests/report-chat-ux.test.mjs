@@ -175,13 +175,14 @@ test("report chat shows immediate staged feedback and atomically replaces old re
 
   harness.fetches[0].resolve({
     answer: "新答案",
-    recommendations: [{ id: "report-1", title: "新报告", attraction_score: 5 }],
+    recommendations: [{ id: "report-1", title: "新报告", attraction_score: 5, available: false }],
     usage: { remaining: 2 },
   });
   await submit;
 
   assert.match(harness.messages.innerHTML, /新答案/u);
   assert.match(harness.recommendations.innerHTML, /新报告/u);
+  assert.match(harness.recommendations.innerHTML, /available=false/u);
   assert.equal(harness.form.insertedElement.querySelector("[data-chat-progress-label]").textContent, "推荐已生成");
   assert.equal(harness.form.insertedElement.querySelector("[data-chat-progress-bar]").style.width, "100%");
   assert.equal(harness.button.textContent, "开始查找");

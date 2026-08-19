@@ -100,8 +100,11 @@
     return state.workerBase + "/charts/image?id=" + encodeURIComponent(imageId);
   }
 
-  function reportUrl(reportId) {
-    return "report.html?id=" + encodeURIComponent(reportId);
+  function reportUrl(reportId, preview = {}) {
+    const params = new URLSearchParams({ id: String(reportId || "") });
+    if (preview.title) params.set("title", String(preview.title));
+    if (preview.date_folder) params.set("date_folder", String(preview.date_folder));
+    return `report.html?${params.toString()}`;
   }
 
   function dateLabel(value) {
@@ -270,7 +273,10 @@
     if (row.reportId) {
       const link = document.createElement("a");
       link.className = "charts-report-link";
-      link.href = reportUrl(row.reportId);
+      link.href = reportUrl(row.reportId, {
+        title: row.reportTitle,
+        date_folder: row.dateFolder,
+      });
       link.setAttribute("aria-label", "打开来源报告：" + row.reportTitle);
       const label = document.createElement("span");
       label.textContent = sourceLabel;

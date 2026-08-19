@@ -83,11 +83,27 @@ test("HTML separates browser freshness from Cloudflare edge stale policy", async
   assert.equal(await response.text(), "home");
   assert.equal(response.headers.get("cache-control"), "public, max-age=60");
   assert.equal(response.headers.get("cloudflare-cdn-cache-control"),
-    "public, max-age=60, stale-while-revalidate=120, stale-if-error=86400");
+    "public, max-age=900, stale-while-revalidate=3600, stale-if-error=86400");
   assert.doesNotMatch(response.headers.get("cache-control"), /s-maxage|stale-/i);
   assert.doesNotMatch(response.headers.get("cloudflare-cdn-cache-control"), /s-maxage/i);
   assert.equal(response.headers.get("etag"), '"home-v1"');
   assert.equal(response.headers.get("last-modified"), "Wed, 12 Aug 2026 04:05:06 GMT");
+});
+
+test("legacy HTML paths and alias hosts redirect to one canonical URL", async () => {
+  const env = fixture();
+  env.CANONICAL_HOST = "static.example.invalid";
+  const legacy = await worker.fetch(new Request("https://static.example.invalid/reports/index.html?q=ai"), env);
+  assert.equal(legacy.status, 301);
+  assert.equal(legacy.headers.get("location"), "https://static.example.invalid/reports/?q=ai");
+
+  const alias = await worker.fetch(new Request("https://www.static.example.invalid/charts.html"), env);
+  assert.equal(alias.status, 301);
+  assert.equal(alias.headers.get("location"), "https://static.example.invalid/charts");
+
+  const slash = await worker.fetch(new Request("https://static.example.invalid/reports/institutions/bernstein"), env);
+  assert.equal(slash.status, 301);
+  assert.equal(slash.headers.get("location"), "https://static.example.invalid/reports/institutions/bernstein/");
 });
 
 test("catalog and search-style JSON can be served stale while revalidating", async () => {

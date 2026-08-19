@@ -78,6 +78,9 @@ class SeoOutputTests(unittest.TestCase):
             robots = (output / "robots.txt").read_text(encoding="utf-8")
             self.assertIn("User-agent: OAI-SearchBot", robots)
             self.assertIn("User-agent: PerplexityBot", robots)
+            self.assertIn("User-agent: ChatGPT-User", robots)
+            self.assertIn("User-agent: Claude-SearchBot", robots)
+            self.assertIn("User-agent: Claude-User", robots)
             self.assertIn("User-agent: GPTBot\nDisallow: /", robots)
             self.assertIn("User-agent: Google-Extended\nDisallow: /", robots)
             self.assertIn("Sitemap: https://portal.example.invalid/sitemap-baidu.xml", robots)
@@ -90,6 +93,47 @@ class SeoOutputTests(unittest.TestCase):
             feed = ET.parse(output / "feed.xml").getroot()
             self.assertEqual(len(feed.findall("./channel/item")), 3)
             self.assertTrue((output / "llms-full.txt").exists())
+
+    def test_builds_bernstein_entity_hub_and_lightweight_detail_shards(self) -> None:
+        bernstein = sample_item("be-report", "人工智能行业展望", "2026-07-18", "Bernstein")
+        bernstein["bank_name"] = "伯恩斯坦"
+        catalog = {
+            "updated_at_bjt": "2026-07-18 09:30:00 +0800",
+            "items": [bernstein, *self.catalog["items"]],
+        }
+        article = {
+            "slug": "bernstein-ai-view",
+            "title": "伯恩斯坦人工智能观点",
+            "digest": "研究观点摘要",
+            "content": "<p>Bernstein Research 行业观察。</p>",
+            "date": "2026-07-18",
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory)
+            builder.build_seo_outputs(output, catalog, blog_articles=[article])
+
+            hub = (output / "reports" / "institutions" / "bernstein" / "index.html").read_text(encoding="utf-8")
+            self.assertIn("伯恩斯坦研报（Bernstein Research）", hub)
+            self.assertIn('rel="canonical" href="https://portal.example.invalid/reports/institutions/bernstein/"', hub)
+            self.assertIn("Sanford C. Bernstein", hub)
+            self.assertIn("当前共 1 篇", hub)
+            self.assertIn("bernstein-ai-view.html", hub)
+            collection = graph_node(first_json_ld(hub), "CollectionPage")
+            self.assertEqual("Bernstein Research", collection["about"]["name"])
+
+            report = (output / "reports" / "be-report.html").read_text(encoding="utf-8")
+            self.assertIn('href="institutions/bernstein/"', report)
+            self.assertIn("<title>伯恩斯坦研报：人工智能行业展望 | KC桌面</title>", report)
+
+            shard = json.loads((output / "data" / "report_details" / "be.json").read_text(encoding="utf-8"))
+            self.assertEqual("be-report", shard["reports"]["be-report"]["item"]["id"])
+            self.assertTrue(shard["reports"]["be-report"]["related"])
+            self.assertLessEqual(set(shard["reports"]["be-report"]["item"]), set(builder.PUBLIC_ITEM_KEYS))
+
+            sitemap_pages = (output / "sitemap-pages.xml").read_text(encoding="utf-8")
+            self.assertIn("/reports/institutions/bernstein/", sitemap_pages)
+            self.assertIn("/reports/institutions/bernstein/", (output / "llms.txt").read_text(encoding="utf-8"))
+            self.assertIn("伯恩斯坦研报（Bernstein Research）", (output / "llms-full.txt").read_text(encoding="utf-8"))
 
     def test_homepage_establishes_the_public_editorial_keyword(self) -> None:
         page = (ROOT / "portal_suite" / "site_src" / "index.html").read_text(encoding="utf-8")
@@ -131,6 +175,11 @@ class SeoOutputTests(unittest.TestCase):
             self.assertRegex(versioned_home, r'assets/app\.js\?v=[0-9a-f]{8}')
             self.assertRegex(versioned_home, r'assets/report-chat\.js\?v=[0-9a-f]{8}')
             self.assertRegex(versioned_home, r'assets/styles\.css\?v=[0-9a-f]{8}')
+            versioned_bernstein = (
+                output / "reports" / "institutions" / "bernstein" / "index.html"
+            ).read_text(encoding="utf-8")
+            self.assertRegex(versioned_bernstein, r'\.\./\.\./\.\./assets/styles\.css\?v=[0-9a-f]{8}')
+            self.assertRegex(versioned_bernstein, r'\.\./\.\./\.\./assets/analytics\.js\?v=[0-9a-f]{8}')
 
     def test_static_report_has_canonical_schema_and_related_links(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -319,8 +368,38 @@ class IndexNowTests(unittest.TestCase):
         urls = indexnow.changed_urls(current, previous, "https://portal.example.invalid", 3)
         self.assertIn("https://portal.example.invalid/reports/report-b.html", urls)
         self.assertIn("https://portal.example.invalid/reports/report-c.html", urls)
+        self.assertIn("https://portal.example.invalid/reports/institutions/bernstein/", urls)
+        self.assertIn("https://portal.example.invalid/blog/", urls)
         self.assertNotIn("https://portal.example.invalid/reports/report-a.html", urls)
         self.assertTrue(all("password=" not in url and "source=" not in url for url in urls))
+
+    def test_public_site_urls_include_blog_articles_and_aggregates(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "blog").mkdir()
+            (root / "reports").mkdir()
+            (root / "blog" / "index.html").write_text("blog", encoding="utf-8")
+            (root / "blog" / "page-2.html").write_text("page", encoding="utf-8")
+            (root / "blog" / "伯恩斯坦观察.html").write_text("article", encoding="utf-8")
+            (root / "reports" / "topics.html").write_text("topics", encoding="utf-8")
+            urls = indexnow.discover_public_site_urls(root, "https://portal.example.invalid")
+        self.assertIn("https://portal.example.invalid/blog/", urls)
+        self.assertIn("https://portal.example.invalid/blog/page-2.html", urls)
+        self.assertIn(
+            "https://portal.example.invalid/blog/%E4%BC%AF%E6%81%A9%E6%96%AF%E5%9D%A6%E8%A7%82%E5%AF%9F.html",
+            urls,
+        )
+        self.assertIn("https://portal.example.invalid/reports/topics.html", urls)
+
+    def test_previous_catalogs_are_merged_before_diffing(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            first = root / "live.json"
+            second = root / "archive.json"
+            first.write_text(json.dumps({"items": [sample_item("live", "Live", "2026-07-17")]}), encoding="utf-8")
+            second.write_text(json.dumps({"items": [sample_item("archive", "Archive", "2026-07-16")]}), encoding="utf-8")
+            merged = indexnow.merge_catalogs([first, second])
+        self.assertEqual({"live", "archive"}, set(indexnow.item_map(merged)))
 
     def test_indexnow_dry_run(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

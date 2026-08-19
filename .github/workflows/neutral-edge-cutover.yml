@@ -91,7 +91,13 @@ jobs:
           release_id="$(openssl rand -hex 16)"
           echo "::add-mask::$site_host"
           echo "::add-mask::$release_id"
+          alias_hosts=""
+          if [ "$(printf '%s' "$site_host" | awk -F. '{print NF}')" -eq 2 ] && [ "${site_host#www.}" = "$site_host" ]; then
+            alias_hosts="www.$site_host"
+            echo "::add-mask::$alias_hosts"
+          fi
           printf 'SITE_HOST=%s\n' "$site_host" >> "$GITHUB_ENV"
+          printf 'EDGE_ALIAS_HOSTS=%s\n' "$alias_hosts" >> "$GITHUB_ENV"
           printf 'STATIC_RELEASE=%s\n' "$release_id" >> "$GITHUB_ENV"
 
       - name: Install refresh dependencies
@@ -234,6 +240,12 @@ jobs:
           R2_OBJECT_PREFIX: ${{ vars.R2_OBJECT_PREFIX || 'reports' }}
         run: |
           set -euo pipefail
+          test -s portal_suite/data/catalog.json
+          test -s portal_suite/data/archive_catalog.json
+          test -s portal_suite/data/history_catalog.json
+          cp portal_suite/data/catalog.json "$RUNNER_TEMP/previous-portal-catalog.json"
+          cp portal_suite/data/archive_catalog.json "$RUNNER_TEMP/previous-portal-archive-catalog.json"
+          cp portal_suite/data/history_catalog.json "$RUNNER_TEMP/previous-portal-history-catalog.json"
           python3 scripts/portal_suite_catalog.py \
             --dropbox-root "/zip_backup" \
             --days 0 \
@@ -313,9 +325,12 @@ jobs:
           test -s _neutral_site/assets/app.js
           test -s _neutral_site/data/catalog.json
           test -s _neutral_site/data/catalog_preview.json
+          test -s _neutral_site/data/catalog_recommendations.json
           test -s _neutral_site/data/search_index.json
           test -s _neutral_site/data/chart_search_index.json
           test -s _neutral_site/data/password_rules.json
+          test -s _neutral_site/reports/institutions/bernstein/index.html
+          test -n "$(find _neutral_site/data/report_details -type f -name '*.json' -print -quit)"
           python3 - <<'PY'
           from pathlib import Path
 
@@ -479,6 +494,7 @@ jobs:
 
           [vars]
           STATIC_PREFIX = "edge-static/releases/$STATIC_RELEASE/"
+          CANONICAL_HOST = "$SITE_HOST"
 
           [[r2_buckets]]
           binding = "STATIC_BUCKET"
@@ -513,13 +529,14 @@ jobs:
           EDGE_SCRIPT_NAME: svc-04df8d213b73
         run: |
           set -euo pipefail
-          if curl --fail --silent --show-error --head --max-time 30 "https://$SITE_HOST/" | tr -d '\r' | grep -qi '^x-origin-class: edge-static$'
-          then
-            echo "Neutral edge route is already active; running the complete route verification."
-            python3 -B scripts/edge_route_cutover.py verify
-          else
-            python3 -B scripts/edge_route_cutover.py migrate
-          fi
+          python3 -B scripts/edge_route_cutover.py migrate
+
+      - name: Purge previous public edge cache
+        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          EDGE_SCRIPT_NAME: svc-04df8d213b73
+        run: python3 -B scripts/edge_route_cutover.py purge
 
       - name: Verify refreshed catalog is live
         if: github.event_name == 'schedule' || inputs.operation == 'migrate'
@@ -612,6 +629,69 @@ jobs:
           done
           echo "Refreshed catalog did not become active in time." >&2
           exit 1
+
+      - name: Verify discovery and report-detail assets are live
+        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
+        env:
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+        run: |
+          set -euo pipefail
+          echo "::add-mask::$PORTAL_SITE_URL"
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          import re
+          from urllib.request import urlopen
+
+          catalog = json.loads(Path("_neutral_site/data/catalog.json").read_text(encoding="utf-8"))
+          report_id = next((str(item.get("id") or "") for item in catalog.get("items", []) if item.get("id")), "")
+          if not report_id:
+              raise SystemExit("Catalog has no report id for detail-shard verification")
+          prefix = re.sub(r"[^a-z0-9]", "_", report_id.lower())[:2].ljust(2, "_")
+          release = os.environ["STATIC_RELEASE"]
+          public_base = os.environ["PORTAL_SITE_URL"].rstrip("/") + "/"
+          base = public_base + f".well-known/edge-release/{release}/"
+          expected = {
+              "reports/institutions/bernstein/index.html": "伯恩斯坦研报",
+              "b7c3e9a41d8f52e604a71bc93f2d6e80.txt": "b7c3e9a41d8f52e604a71bc93f2d6e80",
+          }
+          for relative, marker in expected.items():
+              with urlopen(base + relative, timeout=30) as response:
+                  body = response.read().decode("utf-8")
+              if marker not in body:
+                  raise SystemExit(f"Live discovery asset failed verification: {relative}")
+          with urlopen(base + f"data/report_details/{prefix}.json", timeout=30) as response:
+              shard = json.loads(response.read().decode("utf-8"))
+          if report_id not in (shard.get("reports") or {}):
+              raise SystemExit("Live report-detail shard does not contain its catalog report")
+          with urlopen(base + "data/catalog_recommendations.json", timeout=30) as response:
+              recommendation_catalog = json.loads(response.read().decode("utf-8"))
+          if int(recommendation_catalog.get("item_count") or 0) != int(catalog.get("item_count") or 0):
+              raise SystemExit("Live recommendation catalog does not match the active catalog")
+          for relative, marker in expected.items():
+              with urlopen(public_base + relative, timeout=30) as response:
+                  body = response.read().decode("utf-8")
+              if marker not in body:
+                  raise SystemExit(f"Public discovery asset failed verification: {relative}")
+          print("live_discovery_assets=verified live_report_detail_shard=verified live_recommendation_catalog=verified")
+          PY
+
+      - name: Submit changed public URLs to IndexNow
+        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
+        continue-on-error: true
+        env:
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+        run: |
+          set -euo pipefail
+          echo "::add-mask::$PORTAL_SITE_URL"
+          python3 scripts/submit_portal_indexnow.py \
+            --catalog _neutral_site/data/catalog.json \
+            --previous-catalog "$RUNNER_TEMP/previous-portal-catalog.json" \
+            --previous-catalog "$RUNNER_TEMP/previous-portal-archive-catalog.json" \
+            --previous-catalog "$RUNNER_TEMP/previous-portal-history-catalog.json" \
+            --site-dir _neutral_site \
+            --base-url "$PORTAL_SITE_URL"
 
       - name: Remove private values from persistent source
         if: github.event_name == 'schedule' || inputs.operation == 'migrate'

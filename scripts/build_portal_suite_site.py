@@ -18,7 +18,7 @@ import tempfile
 import unicodedata
 from pathlib import Path
 from typing import Any
-from urllib.parse import quote, urlsplit, urlunsplit
+from urllib.parse import quote, urlencode, urlsplit, urlunsplit
 
 
 PUBLIC_ITEM_KEYS = [
@@ -47,6 +47,22 @@ PUBLIC_ITEM_KEYS = [
     "first_page_height",
     "first_page_orientation",
     "first_page_landscape",
+]
+
+RECOMMENDATION_ITEM_KEYS = [
+    "id",
+    "title",
+    "title_zh",
+    "date_folder",
+    "bank_code",
+    "bank_name",
+    "size_bytes",
+    "available",
+    "industry",
+    "sector",
+    "category",
+    "pdf_archived",
+    "page_count",
 ]
 
 BANK_ALIASES = [
@@ -79,11 +95,13 @@ SITE_BASE_URL = "https://portal.example.invalid"
 SITEMAP_REPORT_CHUNK_SIZE = 5000
 REPORT_INDEX_PAGE_SIZE = 200
 BLOG_INDEX_PAGE_SIZE = 30
-INDEXNOW_KEY = "portal-index-key"
+INDEXNOW_KEY = "b7c3e9a41d8f52e604a71bc93f2d6e80"
 RSS_ITEM_LIMIT = 100
 LLMS_REPORT_LIMIT = 200
 LLMS_BLOG_LIMIT = 50
 CATALOG_PREVIEW_LIMIT = 40
+REPORT_DETAIL_SHARD_PREFIX_LENGTH = 2
+BERNSTEIN_PAGE_PATH = "reports/institutions/bernstein/"
 SEARCH_INDEX_SHARD_MAX_BYTES = 3 * 1024 * 1024
 BLOG_START_DATE = "2026-07-27"
 BLOG_PUBLIC_BRAND = "KC桌面"
@@ -964,6 +982,58 @@ def public_catalog_preview(catalog: dict[str, Any], limit: int = CATALOG_PREVIEW
     }
 
 
+def public_recommendation_catalog(catalog: dict[str, Any]) -> dict[str, Any]:
+    """Return the compact, non-blocking candidate pool used by doc recommendations."""
+    items = [
+        {key: item.get(key) for key in RECOMMENDATION_ITEM_KEYS if key in item}
+        for item in catalog.get("items", [])
+        if isinstance(item, dict) and item.get("id")
+    ]
+    return {
+        "schema_version": 1,
+        "updated_at_bjt": catalog.get("updated_at_bjt", ""),
+        "item_count": len(items),
+        "items": items,
+    }
+
+
+def report_detail_shard_key(report_id: str) -> str:
+    """Return the browser-safe two-character shard used by report.html."""
+    normalized = re.sub(r"[^a-z0-9]", "_", str(report_id or "").lower())
+    return normalized[:REPORT_DETAIL_SHARD_PREFIX_LENGTH].ljust(REPORT_DETAIL_SHARD_PREFIX_LENGTH, "_")
+
+
+def write_report_detail_shards(
+    output: Path,
+    items: list[dict[str, Any]],
+    related_reports: dict[str, list[dict[str, Any]]],
+    updated_at_bjt: str,
+) -> None:
+    """Write small report-detail payloads so report.html never needs the full catalog."""
+    shards: dict[str, dict[str, Any]] = {}
+    for item in items:
+        report_id = str(item.get("id") or "")
+        if not report_id:
+            continue
+        public_item = {key: item.get(key) for key in PUBLIC_ITEM_KEYS if key in item}
+        public_related = [
+            {key: related.get(key) for key in PUBLIC_ITEM_KEYS if key in related}
+            for related in related_reports.get(report_id, [])
+        ]
+        shards.setdefault(report_detail_shard_key(report_id), {})[report_id] = {
+            "item": public_item,
+            "related": public_related,
+        }
+
+    shard_dir = output / "data" / "report_details"
+    for shard_key, reports in sorted(shards.items()):
+        write_json(shard_dir / f"{shard_key}.json", {
+            "schema_version": 1,
+            "updated_at_bjt": updated_at_bjt,
+            "reports": reports,
+        })
+
+
 def public_password_rules(rules: dict[str, Any]) -> dict[str, Any]:
     groups = []
     for group in rules.get("groups", []):
@@ -1048,6 +1118,8 @@ def item_source_title(item: dict[str, Any]) -> str:
 
 
 def item_institution(item: dict[str, Any]) -> str:
+    if is_bernstein_item(item):
+        return "Bernstein Research · 伯恩斯坦"
     bank_code = compact_space(str(item.get("bank_code") or ""))
     bank_name = compact_space(str(item.get("bank_name") or ""))
     if bank_code and bank_name and normalize_search_text(bank_code) != normalize_search_text(bank_name):
@@ -1055,7 +1127,36 @@ def item_institution(item: dict[str, Any]) -> str:
     return bank_name or bank_code or "研究机构"
 
 
-def item_institution_schema(item: dict[str, Any]) -> dict[str, Any] | None:
+def is_bernstein_item(item: dict[str, Any]) -> bool:
+    institution = normalize_search_text(
+        " ".join(str(item.get(key) or "") for key in ("bank_code", "bank_name"))
+    )
+    return "bernstein" in institution or "伯恩斯坦" in institution
+
+
+def is_bernstein_text(value: str) -> bool:
+    normalized = normalize_search_text(value)
+    return any(alias in normalized for alias in ("bernstein", "sanford c bernstein", "伯恩斯坦"))
+
+
+def report_browser_title(item: dict[str, Any]) -> str:
+    title = item_display_title(item)
+    if not is_bernstein_item(item):
+        return f"{title} | {BLOG_PUBLIC_BRAND}"
+    topic = re.sub(r"^(?:伯恩斯坦|bernstein)(?:研报|research)?[\s:：·|｜—_-]*", "", title, flags=re.I).strip()
+    if len(topic) > 34:
+        topic = topic[:33].rstrip("，,。；;：: -_") + "…"
+    return f"伯恩斯坦研报：{topic or '最新研究报告'} | {BLOG_PUBLIC_BRAND}"
+
+
+def item_institution_schema(item: dict[str, Any], base_url: str = SITE_BASE_URL) -> dict[str, Any] | None:
+    if is_bernstein_item(item):
+        return {
+            "@type": "Organization",
+            "@id": f"{url_join(base_url, BERNSTEIN_PAGE_PATH)}#organization",
+            "name": "Bernstein Research",
+            "alternateName": ["伯恩斯坦", "Sanford C. Bernstein"],
+        }
     bank_code = compact_space(str(item.get("bank_code") or ""))
     bank_name = compact_space(str(item.get("bank_name") or ""))
     if not bank_code and not bank_name:
@@ -1251,7 +1352,23 @@ def render_report_seo_page(
     title = item_display_title(item)
     source_title = item_source_title(item)
     canonical = url_join(base_url, report_seo_path(report_id))
-    detail_href = f"../report.html?id={quote(report_id, safe='')}"
+    detail_params: dict[str, str] = {"id": report_id}
+    preview_values = {
+        "title": str(item.get("title") or source_title or title)[:300],
+        "title_zh": str(item.get("title_zh") or "")[:300],
+        "filename": str(item.get("filename") or "")[:300],
+        "date_folder": str(item.get("date_folder") or "")[:32],
+        "bank_code": str(item.get("bank_code") or "")[:120],
+        "bank_name": str(item.get("bank_name") or "")[:120],
+        "industry": str(item.get("industry") or item.get("sector") or item.get("category") or "")[:120],
+        "page_count": str(item.get("page_count") or "")[:16],
+        "size_bytes": str(item.get("size_bytes") or "")[:24],
+    }
+    detail_params.update({key: value for key, value in preview_values.items() if value})
+    for key in ("available", "pdf_archived"):
+        if key in item and item.get(key) is not None:
+            detail_params[key] = "1" if bool(item.get(key)) else "0"
+    detail_href = f"../report.html?{urlencode(detail_params)}"
     search_href = f"../?q={quote(title[:80])}"
     description = item_meta_description(item)
     citable_summary = report_citable_summary(item)
@@ -1260,8 +1377,12 @@ def render_report_seo_page(
     lastmod = item_lastmod(item, generated_date)
     institution = item_institution(item)
     industry = item_industry(item)
-    institution_schema = item_institution_schema(item)
-    institution_href = f"topics.html#{stable_section_anchor('institution', institution)}"
+    institution_schema = item_institution_schema(item, base_url)
+    institution_href = (
+        "institutions/bernstein/"
+        if is_bernstein_item(item)
+        else f"topics.html#{stable_section_anchor('institution', institution)}"
+    )
     topic_href = f"topics.html#{stable_section_anchor('topic', industry)}"
     report_json_ld = {
         "@type": "Report",
@@ -1363,7 +1484,7 @@ def render_report_seo_page(
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{html_escape(title)} | {BLOG_PUBLIC_BRAND}</title>
+    <title>{html_escape(report_browser_title(item))}</title>
     <meta name="description" content="{html_escape(description)}">
     <meta name="keywords" content="{html_escape(report_keywords(item))}">
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
@@ -1389,10 +1510,10 @@ def render_report_seo_page(
   </head>
   <body data-page="seo-report" data-report-id="{html_escape(str(item.get('id') or ''), quote=True)}" data-report-title="{html_escape(title, quote=True)}" data-source="catalog">
     <header class="topbar">
-      <a class="back-link" href="../index.html">返回首页</a>
+      <a class="back-link" href="../">返回首页</a>
       <div class="topbar-actions">
         <a class="topbar-link" href="../blog/">Blog</a>
-        <a class="brand compact" href="../index.html" aria-label="{BLOG_PUBLIC_BRAND} home">
+        <a class="brand compact" href="../" aria-label="{BLOG_PUBLIC_BRAND} home">
           <img src="../assets/app-mark.svg" alt="" width="30" height="30">
           <span>{BLOG_PUBLIC_BRAND}</span>
         </a>
@@ -1400,7 +1521,7 @@ def render_report_seo_page(
     </header>
     <main class="shell legal-shell">
       <article class="legal-panel">
-        <nav aria-label="面包屑"><a href="../index.html">首页</a> › <a href="index.html">报告索引</a> › <span aria-current="page">报告详情</span></nav>
+        <nav aria-label="面包屑"><a href="../">首页</a> › <a href="./">报告索引</a> › <span aria-current="page">报告详情</span></nav>
         <h1>{html_escape(title)}</h1>
         <p class="subtle">{html_escape(description)}</p>
         <h2>核心信息（可引用）</h2>
@@ -1420,7 +1541,7 @@ def render_report_seo_page(
     </main>
     <footer class="legal-footer">
       <a href="../blog/">Blog</a>
-      <a href="../reports/index.html">报告索引</a>
+      <a href="./">报告索引</a>
       <a href="../about.html">关于{BLOG_PUBLIC_BRAND}</a>
       <a href="../terms.html">Terms of Service</a>
       <a href="../privacy.html">Privacy Policy</a>
@@ -1535,10 +1656,10 @@ def render_reports_index(
   </head>
   <body data-page="report-index">
     <header class="topbar">
-      <a class="back-link" href="../index.html">返回首页</a>
+      <a class="back-link" href="../">返回首页</a>
       <div class="topbar-actions">
         <a class="topbar-link" href="../blog/">Blog</a>
-        <a class="brand compact" href="../index.html" aria-label="{BLOG_PUBLIC_BRAND} home">
+        <a class="brand compact" href="../" aria-label="{BLOG_PUBLIC_BRAND} home">
           <img src="../assets/app-mark.svg" alt="" width="30" height="30">
           <span>{BLOG_PUBLIC_BRAND}</span>
         </a>
@@ -1546,10 +1667,10 @@ def render_reports_index(
     </header>
     <main class="shell legal-shell">
       <section class="legal-panel">
-        <nav aria-label="面包屑"><a href="../index.html">首页</a> › <span aria-current="page">报告索引</span></nav>
+        <nav aria-label="面包屑"><a href="../">首页</a> › <span aria-current="page">报告索引</span></nav>
         <h1>金融研报索引{page_suffix}</h1>
         <p class="subtle">{html_escape(description)}</p>
-        <p><a href="topics.html">按机构与研究主题浏览</a> · <a href="../about.html">了解索引方法</a></p>
+        <p><a href="institutions/bernstein/">伯恩斯坦研报</a> · <a href="topics.html">按机构与研究主题浏览</a> · <a href="../about.html">了解索引方法</a></p>
         <p class="subtle">已更新：{html_escape(generated_date)} · 共 {len(items)} 篇 · 第 {page_number}/{total_pages} 页</p>
         {pagination}
         <ul class="seo-report-index">
@@ -1559,7 +1680,7 @@ def render_reports_index(
       </section>
     </main>
     <footer class="legal-footer">
-      <a href="../index.html">首页检索</a>
+      <a href="../">首页检索</a>
       <a href="../blog/">Blog</a>
       <a href="topics.html">机构与主题</a>
       <a href="../feed.xml">最近报告 RSS</a>
@@ -1594,6 +1715,162 @@ def report_aggregation_groups(
     rows = [row for row in buckets.values() if len(row[1]) >= minimum_size]
     rows.sort(key=lambda row: (-len(row[1]), normalize_search_text(row[0])))
     return rows[:limit] if limit > 0 else rows
+
+
+def render_bernstein_hub(
+    items: list[dict[str, Any]],
+    blog_articles: list[dict[str, Any]],
+    base_url: str,
+    generated_date: str,
+) -> str:
+    canonical = url_join(base_url, BERNSTEIN_PAGE_PATH)
+    bernstein_items = sorted(
+        [item for item in items if is_bernstein_item(item)],
+        key=lambda item: (item_lastmod(item, generated_date), sort_date_value(str(item.get("date_folder") or ""))),
+        reverse=True,
+    )
+    latest_items = bernstein_items[:100]
+    topic_groups = report_aggregation_groups(bernstein_items, item_industry, minimum_size=1, limit=16)
+    related_articles = [
+        article
+        for article in blog_articles
+        if is_bernstein_text(" ".join([
+            str(article.get("title") or ""),
+            str(article.get("digest") or ""),
+            str(article.get("content") or ""),
+        ]))
+    ][:24]
+    report_rows = [
+        "<li>"
+        f'<a href="{html_escape(url_join(base_url, report_seo_path(str(item.get("id")))), quote=True)}">{html_escape(item_display_title(item))}</a>'
+        f'<span>{html_escape(item_lastmod(item, generated_date))} · {html_escape(item_industry(item))}</span>'
+        "</li>"
+        for item in latest_items
+    ]
+    topic_rows = []
+    for label, group_items in topic_groups:
+        query_url = url_join(base_url, "/?q=" + quote(f"伯恩斯坦 {label}"))
+        topic_rows.append(
+            "<li>"
+            f'<a href="{html_escape(query_url, quote=True)}">{html_escape(label)}</a>'
+            f'<span>{len(group_items)} 篇</span>'
+            "</li>"
+        )
+    article_rows = []
+    for article in related_articles:
+        article_url = url_join(base_url, "blog/" + str(article["slug"]) + ".html")
+        article_rows.append(
+            "<li>"
+            f'<a href="{html_escape(article_url, quote=True)}">{html_escape(blog_public_title(str(article.get("title") or "")))}</a>'
+            f'<span>{html_escape(str(article.get("date") or ""))}</span>'
+            "</li>"
+        )
+    article_block = (
+        '<h2>伯恩斯坦相关中文文章</h2>'
+        '<ul class="seo-report-index">' + "".join(article_rows) + "</ul>"
+        if article_rows else ""
+    )
+    description = (
+        f"{BLOG_PUBLIC_BRAND}伯恩斯坦研报（Bernstein Research）中文索引，"
+        f"汇总当前目录中的 {len(bernstein_items)} 篇公开报告元数据、研究主题、最新报告与相关中文文章。"
+    )
+    json_ld = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "CollectionPage",
+                "@id": f"{canonical}#collection",
+                "name": "伯恩斯坦研报（Bernstein Research）中文索引",
+                "description": description,
+                "url": canonical,
+                "dateModified": generated_date,
+                "inLanguage": "zh-Hans",
+                "about": {
+                    "@type": "Organization",
+                    "@id": f"{canonical}#organization",
+                    "name": "Bernstein Research",
+                    "alternateName": ["伯恩斯坦", "Sanford C. Bernstein"],
+                },
+                "isPartOf": {"@id": f"{url_join(base_url, '/')}#website"},
+                "mainEntity": {"@id": f"{canonical}#reports"},
+            },
+            {
+                "@type": "ItemList",
+                "@id": f"{canonical}#reports",
+                "name": "最新伯恩斯坦研报",
+                "numberOfItems": len(latest_items),
+                "itemListOrder": "https://schema.org/ItemListOrderDescending",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": index,
+                        "name": item_display_title(item),
+                        "url": url_join(base_url, report_seo_path(str(item.get("id")))),
+                    }
+                    for index, item in enumerate(latest_items, start=1)
+                ],
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "首页", "item": url_join(base_url, "/")},
+                    {"@type": "ListItem", "position": 2, "name": "报告索引", "item": url_join(base_url, "reports/")},
+                    {"@type": "ListItem", "position": 3, "name": "伯恩斯坦研报", "item": canonical},
+                ],
+            },
+        ],
+    }
+    return f"""<!doctype html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>伯恩斯坦研报（Bernstein Research）｜最新报告与中文索引 | {BLOG_PUBLIC_BRAND}</title>
+    <meta name="description" content="{html_escape(description, quote=True)}">
+    <meta name="keywords" content="伯恩斯坦研报,伯恩斯坦研究,Bernstein研报,Bernstein Research,Sanford C. Bernstein,投行研报,股票研究,行业研究,中文研报">
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+    <link rel="canonical" href="{html_escape(canonical, quote=True)}">
+    <link rel="alternate" hreflang="zh-Hans" href="{html_escape(canonical, quote=True)}">
+    <link rel="alternate" hreflang="x-default" href="{html_escape(canonical, quote=True)}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="{BLOG_PUBLIC_BRAND}">
+    <meta property="og:title" content="伯恩斯坦研报（Bernstein Research）中文索引">
+    <meta property="og:description" content="{html_escape(description, quote=True)}">
+    <meta property="og:url" content="{html_escape(canonical, quote=True)}">
+    <link rel="stylesheet" href="../../../assets/styles.css">
+    <script defer src="../../../assets/site-runtime.js"></script>
+    <script type="application/ld+json">{render_json_ld(json_ld)}</script>
+  </head>
+  <body data-page="bernstein-research">
+    <header class="topbar">
+      <a class="back-link" href="../../">返回报告索引</a>
+      <a class="brand compact" href="../../../" aria-label="{BLOG_PUBLIC_BRAND} home">
+        <img src="../../../assets/app-mark.svg" alt="" width="30" height="30"><span>{BLOG_PUBLIC_BRAND}</span>
+      </a>
+    </header>
+    <main class="shell legal-shell">
+      <article class="legal-panel">
+        <nav aria-label="面包屑"><a href="../../../">首页</a> › <a href="../../">报告索引</a> › <span aria-current="page">伯恩斯坦研报</span></nav>
+        <h1>伯恩斯坦研报（Bernstein Research）</h1>
+        <p>{html_escape(description)}</p>
+        <p class="subtle">别名：伯恩斯坦、Bernstein Research、Sanford C. Bernstein。篇数与更新时间来自当前公开目录，每次发布自动重算。</p>
+        <p><a class="primary-link" href="../../../?q={quote('伯恩斯坦')}">检索全部伯恩斯坦报告</a> <a class="secondary-button" href="../../topics.html">浏览全部机构与主题</a></p>
+        <h2>伯恩斯坦研报是什么？</h2>
+        <p>本页是研究发现与元数据索引：汇总机构字段标记为 Bernstein 或伯恩斯坦的报告标题、主题、收录日期和可用状态。{BLOG_PUBLIC_BRAND}不是底层报告的作者或出版方，引用时请以每篇报告页标明的原始机构与报告信息为准。</p>
+        <h2>常见研究主题</h2>
+        <ul class="seo-report-index">{"".join(topic_rows)}</ul>
+        <h2>最新伯恩斯坦研报</h2>
+        <p class="subtle">已更新：{html_escape(generated_date)} · 当前共 {len(bernstein_items)} 篇 · 以下展示最近 {len(latest_items)} 篇。</p>
+        <ul class="seo-report-index">{"".join(report_rows)}</ul>
+        {article_block}
+      </article>
+    </main>
+    <footer class="legal-footer"><a href="../../../">首页检索</a><a href="../../">报告索引</a><a href="../../../blog/">Blog</a><a href="../../../about.html">关于{BLOG_PUBLIC_BRAND}</a></footer>
+    <script src="../../../assets/contact.js"></script><script src="../../../assets/analytics.js"></script>
+  </body>
+</html>
+"""
 
 
 def render_report_topic_hub(items: list[dict[str, Any]], base_url: str, generated_date: str) -> str:
@@ -1671,16 +1948,17 @@ def render_report_topic_hub(items: list[dict[str, Any]], base_url: str, generate
   </head>
   <body data-page="report-topics">
     <header class="topbar">
-      <a class="back-link" href="index.html">返回报告索引</a>
-      <a class="brand compact" href="../index.html" aria-label="{BLOG_PUBLIC_BRAND} home">
+      <a class="back-link" href="./">返回报告索引</a>
+      <a class="brand compact" href="../" aria-label="{BLOG_PUBLIC_BRAND} home">
         <img src="../assets/app-mark.svg" alt="" width="30" height="30"><span>{BLOG_PUBLIC_BRAND}</span>
       </a>
     </header>
     <main class="shell legal-shell">
       <article class="legal-panel">
-        <nav aria-label="面包屑"><a href="../index.html">首页</a> › <a href="index.html">报告索引</a> › <span aria-current="page">机构与主题</span></nav>
+        <nav aria-label="面包屑"><a href="../">首页</a> › <a href="./">报告索引</a> › <span aria-current="page">机构与主题</span></nav>
         <h1>投行研报机构与主题导航</h1>
         <p>{BLOG_PUBLIC_BRAND}按机构与主题汇总金融研报元数据，便于全球中文用户用简体中文、繁體中文、英文机构名、公司名或 ticker 发现相关研究。</p>
+        <p><a class="primary-link" href="institutions/bernstein/">伯恩斯坦研报（Bernstein Research）中文索引</a></p>
         <p class="subtle">本页的篇数和最近记录源于当前公开报告索引，每次发布都会重新计算；它们不代表投资建议。</p>
         <h2>研究机构 / Research institutions</h2>
         {render_groups(institutions, "institution")}
@@ -1689,7 +1967,7 @@ def render_report_topic_hub(items: list[dict[str, Any]], base_url: str, generate
       </article>
     </main>
     <footer class="legal-footer">
-      <a href="index.html">报告索引</a><a href="../blog/">Blog</a><a href="../about.html">关于{BLOG_PUBLIC_BRAND}</a>
+      <a href="./">报告索引</a><a href="../blog/">Blog</a><a href="../about.html">关于{BLOG_PUBLIC_BRAND}</a>
     </footer>
     <script src="../assets/contact.js"></script><script src="../assets/analytics.js"></script>
   </body>
@@ -1762,14 +2040,14 @@ def render_about_page(base_url: str, generated_date: str) -> str:
   </head>
   <body data-page="about">
     <header class="topbar">
-      <a class="back-link" href="index.html">返回首页</a>
-      <a class="brand compact" href="index.html" aria-label="{BLOG_PUBLIC_BRAND} home">
+      <a class="back-link" href="./">返回首页</a>
+      <a class="brand compact" href="./" aria-label="{BLOG_PUBLIC_BRAND} home">
         <img src="assets/app-mark.svg" alt="" width="30" height="30"><span>{BLOG_PUBLIC_BRAND}</span>
       </a>
     </header>
     <main class="shell legal-shell">
       <article class="legal-panel">
-        <nav aria-label="面包屑"><a href="index.html">首页</a> › <span aria-current="page">关于{BLOG_PUBLIC_BRAND}</span></nav>
+        <nav aria-label="面包屑"><a href="./">首页</a> › <span aria-current="page">关于{BLOG_PUBLIC_BRAND}</span></nav>
         <h1>关于{BLOG_PUBLIC_BRAND}</h1>
         <p>{html_escape(description)}</p>
         <p lang="en">KC桌面 is a Chinese-language discovery index for investment bank research, equity research, macro research, industry reports, company research, earnings, prospectuses and international think-tank publications.</p>
@@ -1785,7 +2063,7 @@ def render_about_page(base_url: str, generated_date: str) -> str:
         <p><a href="mailto:support@portal.example.invalid">support@portal.example.invalid</a></p>
       </article>
     </main>
-    <footer class="legal-footer"><a href="index.html">首页检索</a><a href="reports/">报告索引</a><a href="blog/">Blog</a><a href="privacy.html">Privacy Policy</a></footer>
+    <footer class="legal-footer"><a href="./">首页检索</a><a href="reports/">报告索引</a><a href="blog/">Blog</a><a href="privacy.html">Privacy Policy</a></footer>
     <script src="assets/contact.js"></script><script src="assets/analytics.js"></script>
   </body>
 </html>
@@ -1901,16 +2179,24 @@ def render_llms_full(
     base_url: str,
     blog_articles: list[dict[str, Any]] | None = None,
 ) -> str:
-    items = sorted(
+    all_items = sorted(
         [item for item in catalog.get("items", []) if item.get("id")],
         key=lambda item: (item_lastmod(item), sort_date_value(str(item.get("date_folder") or ""))),
         reverse=True,
-    )[:LLMS_REPORT_LIMIT]
+    )
+    items = all_items[:LLMS_REPORT_LIMIT]
+    bernstein_items = [item for item in all_items if is_bernstein_item(item)]
     lines = [
         f"# {BLOG_PUBLIC_BRAND} 公开报告索引",
         "",
         "以下是最近更新的中文金融研究报告元数据。报告下载权限与公开索引相互独立。",
         f"{BLOG_PUBLIC_BRAND}仅整理元数据和检索入口；底层报告的作者、出版方和使用条件以原始报告为准。",
+        "",
+        "## 伯恩斯坦研报（Bernstein Research）",
+        f"- 专题 canonical URL: {url_join(base_url, BERNSTEIN_PAGE_PATH)}",
+        f"- 当前公开元数据记录: {len(bernstein_items)} 篇",
+        "- 别名: 伯恩斯坦, Bernstein Research, Sanford C. Bernstein",
+        "- 使用边界: 本站是元数据与发现索引，不是底层报告的作者或出版方。",
         "",
     ]
     for item in items:
@@ -2793,15 +3079,15 @@ def render_blog_index(
   </head>
   <body class="blog-page" data-page="blog">
     <header class="topbar blog-topbar">
-      <a class="brand compact" href="../index.html" aria-label="{BLOG_PUBLIC_BRAND} home">
+      <a class="brand compact" href="../" aria-label="{BLOG_PUBLIC_BRAND} home">
         <img src="../assets/app-mark.svg" alt="" width="30" height="30">
         <span>{BLOG_PUBLIC_BRAND}</span>
       </a>
       <nav class="topbar-actions" aria-label="站点导航">
-        <a class="topbar-link" href="../index.html">首页</a>
-        <a class="topbar-link is-active" href="index.html" aria-current="page">Blog</a>
+        <a class="topbar-link" href="../">首页</a>
+        <a class="topbar-link is-active" href="./" aria-current="page">Blog</a>
         <a class="topbar-link" href="../newsfeed.html">Newsfeed</a>
-        <a class="topbar-link" href="../reports/index.html">报告索引</a>
+        <a class="topbar-link" href="../reports/">报告索引</a>
         <button id="accountGate" class="account-button" type="button">登录</button>
       </nav>
     </header>
@@ -2818,8 +3104,8 @@ def render_blog_index(
       {pagination}
     </main>
     <footer class="legal-footer blog-footer">
-      <a href="../index.html">首页检索</a>
-      <a href="../reports/index.html">报告索引</a>
+      <a href="../">首页检索</a>
+      <a href="../reports/">报告索引</a>
       <a href="../about.html">关于{BLOG_PUBLIC_BRAND}</a>
       <a href="../terms.html">Terms of Service</a>
       <a href="mailto:support@portal.example.invalid">Email: support@portal.example.invalid</a>
@@ -2850,6 +3136,16 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
     article_content = article_content.replace("编辑评论", "KC评论")
     article_content = re.sub(r"。\s*[，,]", "。", article_content)
     article_content = re.sub(r"[，,；;：:]\s*。", "。", article_content)
+    bernstein_related = is_bernstein_text(" ".join([
+        str(article.get("title") or ""),
+        str(article.get("digest") or ""),
+        article_content,
+    ]))
+    bernstein_discovery = (
+        '<aside class="blog-related-discovery"><strong>相关机构索引：</strong>'
+        '<a href="../reports/institutions/bernstein/">伯恩斯坦研报（Bernstein Research）</a></aside>'
+        if bernstein_related else ""
+    )
     image_match = re.search(r'<img\b[^>]*\bsrc="([^"]+)"', article_content, re.IGNORECASE)
     image_url = html_unescape(image_match.group(1)) if image_match else url_join(base_url, "assets/social-card.jpg")
     author_schema: dict[str, Any] = {"@type": "Organization", "name": author}
@@ -2875,6 +3171,13 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
         "isPartOf": {"@type": "Blog", "name": f"{BLOG_PUBLIC_BRAND} Blog", "url": url_join(base_url, "blog/")},
         "keywords": blog_public_keywords(article),
     }
+    if bernstein_related:
+        article_schema["about"] = {
+            "@type": "Organization",
+            "@id": f"{url_join(base_url, BERNSTEIN_PAGE_PATH)}#organization",
+            "name": "Bernstein Research",
+            "alternateName": ["伯恩斯坦", "Sanford C. Bernstein"],
+        }
     if image_url:
         article_schema["image"] = [image_url]
     json_ld = {
@@ -2936,21 +3239,21 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
   </head>
   <body class="blog-page blog-article-page" data-page="blog-article" data-report-title="{html_escape(title, quote=True)}" data-source="blog">
     <header class="topbar blog-topbar">
-      <a class="brand compact" href="../index.html" aria-label="{BLOG_PUBLIC_BRAND} home">
+      <a class="brand compact" href="../" aria-label="{BLOG_PUBLIC_BRAND} home">
         <img src="../assets/app-mark.svg" alt="" width="30" height="30">
         <span>{BLOG_PUBLIC_BRAND}</span>
       </a>
       <nav class="topbar-actions" aria-label="站点导航">
-        <a class="topbar-link" href="../index.html">首页</a>
-        <a class="topbar-link is-active" href="index.html">Blog</a>
-        <a class="topbar-link" href="../reports/index.html">报告索引</a>
+        <a class="topbar-link" href="../">首页</a>
+        <a class="topbar-link is-active" href="./">Blog</a>
+        <a class="topbar-link" href="../reports/">报告索引</a>
       </nav>
     </header>
     <main class="blog-article-shell">
-      <a class="blog-back" href="index.html">← 返回 Blog</a>
+      <a class="blog-back" href="./">← 返回 Blog</a>
       <article class="blog-article">
         <header class="blog-article-header">
-          <nav aria-label="面包屑"><a href="../index.html">首页</a> › <a href="index.html">Blog</a> › <span aria-current="page">正文</span></nav>
+          <nav aria-label="面包屑"><a href="../">首页</a> › <a href="./">Blog</a> › <span aria-current="page">正文</span></nav>
           <div class="blog-card-meta">
             <time datetime="{html_escape(article["date"], quote=True)}">{html_escape(article["date"])}</time>
             {blog_source_badges(article)}
@@ -2959,15 +3262,16 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
           {f'<p class="blog-digest">{html_escape(digest)}</p>' if digest else ''}
           <p class="blog-byline">作者：{html_escape(author)} · 来源：{blog_origin_details(article)}</p>
         </header>
+        {bernstein_discovery}
         <div class="blog-article-content">
           {article_content}
         </div>
       </article>
     </main>
     <footer class="legal-footer blog-footer">
-      <a href="index.html">Blog</a>
-      <a href="../index.html">首页检索</a>
-      <a href="../reports/index.html">报告索引</a>
+      <a href="./">Blog</a>
+      <a href="../">首页检索</a>
+      <a href="../reports/">报告索引</a>
       <a href="../about.html">关于{BLOG_PUBLIC_BRAND}</a>
       <a href="mailto:support@portal.example.invalid">Email: support@portal.example.invalid</a>
     </footer>
@@ -3044,6 +3348,12 @@ def build_seo_outputs(
         reverse=True,
     )
     related_reports = build_related_reports(report_items)
+    write_report_detail_shards(
+        output,
+        report_items,
+        related_reports,
+        str(catalog.get("updated_at_bjt") or ""),
+    )
 
     for item in report_items:
         report_id = str(item.get("id") or "")
@@ -3059,6 +3369,10 @@ def build_seo_outputs(
             render_reports_index(catalog, base_url, generated_date, page_number, REPORT_INDEX_PAGE_SIZE),
         )
     write_text(reports_dir / "topics.html", render_report_topic_hub(report_items, base_url, generated_date))
+    write_text(
+        output / BERNSTEIN_PAGE_PATH / "index.html",
+        render_bernstein_hub(report_items, blog_articles, base_url, generated_date),
+    )
     write_text(output / "about.html", render_about_page(base_url, generated_date))
 
     blog_lastmod = max(
@@ -3077,6 +3391,7 @@ def build_seo_outputs(
             for page_number in range(1, report_index_pages + 1)
         ],
         sitemap_url(url_join(base_url, "reports/topics.html"), generated_date, "0.8"),
+        sitemap_url(url_join(base_url, BERNSTEIN_PAGE_PATH), generated_date, "0.9"),
         *[
             sitemap_url(
                 url_join(base_url, collection_page_path("blog", page_number)),
@@ -3173,7 +3488,15 @@ def build_seo_outputs(
         "Disallow: /newsfeed.html",
     ]
     robots_lines: list[str] = []
-    for agent in ("*", "OAI-SearchBot", "PerplexityBot"):
+    for agent in (
+        "*",
+        "OAI-SearchBot",
+        "ChatGPT-User",
+        "PerplexityBot",
+        "Perplexity-User",
+        "Claude-SearchBot",
+        "Claude-User",
+    ):
         robots_lines.extend([f"User-agent: {agent}", "Allow: /", *restricted_rules, ""])
     # Search discovery and model training use separate crawler controls.
     # Keep pages eligible for ChatGPT search while declining bulk training.
@@ -3201,6 +3524,7 @@ def build_seo_outputs(
             f"- Home/Search: {url_join(base_url, '/')}",
             f"- Report index: {url_join(base_url, 'reports/')}",
             f"- Institution and topic navigation: {url_join(base_url, 'reports/topics.html')}",
+            f"- Bernstein Research / 伯恩斯坦研报: {url_join(base_url, BERNSTEIN_PAGE_PATH)}",
             f"- Blog: {url_join(base_url, 'blog/')}",
             f"- Charts: {url_join(base_url, 'charts')}",
             f"- About and methodology: {url_join(base_url, 'about.html')}",
@@ -3389,7 +3713,7 @@ def version_assets(output: Path) -> None:
     for html_path in output.rglob("*.html"):
         text = html_path.read_text(encoding="utf-8")
         for rel, digest in versions.items():
-            for prefix in ("", "../"):
+            for prefix in ("", "../", "../../", "../../../", "../../../../"):
                 href = f"{prefix}{rel}"
                 pattern = re.compile(rf'(["\']){re.escape(href)}(?:\?v=[^"\']*)?\1')
                 text = pattern.sub(lambda match, href=href: f"{match.group(1)}{href}?v={digest}{match.group(1)}", text)
@@ -3484,6 +3808,7 @@ def main() -> int:
     rules = public_password_rules(load_json(Path(args.password_rules)))
     write_json(output_dir / "data" / "catalog.json", public_catalog(catalog))
     write_json(output_dir / "data" / "catalog_preview.json", public_catalog_preview(catalog))
+    write_json(output_dir / "data" / "catalog_recommendations.json", public_recommendation_catalog(catalog))
     write_json(output_dir / "data" / "search_index.json", search_index)
     write_json(output_dir / "data" / "password_rules.json", rules)
     write_json(output_dir / "data" / "config.json", {"worker_base_url": args.worker_base_url.rstrip("/")})

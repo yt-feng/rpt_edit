@@ -52,6 +52,7 @@
   }
 
   function cleanReferrer(value) {
+    if (!String(value || "").trim()) return "";
     try {
       const url = new URL(String(value || ""), root.location.origin);
       if (!/^https?:$/.test(url.protocol)) return "";
@@ -151,6 +152,7 @@
       page: root.document && root.document.body && root.document.body.dataset.page || "static",
       referrer: session.referrer || "",
       session_id: session.id,
+      session_started_at: session.started_at || "",
       first_seen_at: session.first_seen_at || seen.value,
       is_returning: Boolean(session.is_returning),
       landing_path: session.landing_path || "",
@@ -201,11 +203,13 @@
   }
 
   function autoPageView() {
+    const body = root.document && root.document.body;
+    if (body && body.dataset && body.dataset.analyticsAuto === "manual") return;
     track("page_view", {
-      page: root.document.body && root.document.body.dataset.page || "static",
-      report_id: root.document.body && root.document.body.dataset.reportId || "",
-      report_title: root.document.body && root.document.body.dataset.reportTitle || "",
-      source: root.document.body && root.document.body.dataset.source || "",
+      page: body && body.dataset.page || "static",
+      report_id: body && body.dataset.reportId || "",
+      report_title: body && body.dataset.reportTitle || "",
+      source: body && body.dataset.source || "",
     });
   }
 
