@@ -337,7 +337,7 @@ class RunOrderingTests(unittest.TestCase):
         self.assertEqual(events, ["cleanup", "upload"])
         target.cleanup_old_dates.assert_called_once()
 
-    def test_scheduled_workflow_uses_a_two_day_window(self) -> None:
+    def test_scheduled_workflow_uses_two_day_sync_and_three_day_retention(self) -> None:
         workflow = (
             Path(__file__).resolve().parents[1]
             / ".github"
@@ -346,7 +346,14 @@ class RunOrderingTests(unittest.TestCase):
         ).read_text(encoding="utf-8")
         self.assertIn("default: \"2\"", workflow)
         self.assertIn("--days \"${{ github.event.inputs.sync_days || '2' }}\"", workflow)
-        self.assertIn("--retention-days 2", workflow)
+        self.assertIn("--retention-days 3", workflow)
+        self.assertIn('--remote-root "/我的坚果云/KCdesk/Ops"', workflow)
+        self.assertNotIn("/我的坚果云/Portal Suite/Ops", workflow)
+
+    def test_defaults_use_kcdesk_and_three_day_retention(self) -> None:
+        args = sync.build_parser().parse_args([])
+        self.assertEqual(args.remote_root, "/我的坚果云/KCdesk/Ops")
+        self.assertEqual(args.retention_days, 3)
 
 
 if __name__ == "__main__":

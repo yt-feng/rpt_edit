@@ -24,7 +24,7 @@ from urllib3.util.retry import Retry
 
 GITHUB_API = "https://api.github.com"
 TIMEZONE = ZoneInfo("Asia/Shanghai")
-DEFAULT_REMOTE_ROOT = "/我的坚果云/Portal Suite/Ops"
+DEFAULT_REMOTE_ROOT = "/我的坚果云/KCdesk/Ops"
 DATE_RE = re.compile(r"^20\d{2}-\d{2}-\d{2}$")
 DAV = "{DAV:}"
 UPLOAD_MAX_ATTEMPTS = 3
@@ -548,7 +548,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--target-date", default="", help="Last Beijing date to sync (YYYY-MM-DD).")
     parser.add_argument("--days", type=int, default=2, help="Number of dates ending at target date.")
-    parser.add_argument("--retention-days", type=int, default=2)
+    parser.add_argument("--retention-days", type=int, default=3)
     parser.add_argument("--remote-root", default=DEFAULT_REMOTE_ROOT)
     parser.add_argument("--dry-run", action="store_true")
     return parser
