@@ -493,7 +493,7 @@ test("legacy delivery redirects retain complete report preview metadata", async 
     document: { getElementById: () => target },
     window: {
       location: {
-        href: `https://kcdesk.com/delivery.html?${params.toString()}`,
+        href: `https://portal.example.invalid/delivery.html?${params.toString()}`,
         search: `?${params.toString()}`,
         replace: (url) => { redirected = url; },
       },
@@ -526,7 +526,7 @@ test("legacy delivery redirects retain complete report preview metadata", async 
 test("external delivery URLs retain every first-paint field", () => {
   const context = vm.createContext({
     URL,
-    window: { location: { href: "https://kcdesk.com/doc.html" } },
+    window: { location: { href: "https://portal.example.invalid/doc.html" } },
   });
   vm.runInContext(`
     ${extractFunction(appSource, "externalPageUrl")}
