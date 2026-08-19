@@ -130,19 +130,29 @@ class EdgeRouteCutoverTests(unittest.TestCase):
         delete_route.assert_called_once_with("zone-id", "portal.example.invalid/*", "svc-neutral")
 
     def test_alias_route_is_verified_as_a_canonical_redirect(self) -> None:
-        with patch.object(
-            cutover,
-            "request_status",
-            return_value=(
-                301,
-                {"x-origin-class": "edge-static", "location": "https://portal.example.invalid/"},
-                b"",
-            ),
+        with (
+            patch.object(cutover.time, "time_ns", return_value=123456789),
+            patch.object(
+                cutover,
+                "request_status",
+                return_value=(
+                    301,
+                    {
+                        "x-origin-class": "edge-static",
+                        "location": "https://portal.example.invalid/?__edge_route_verify=123456789",
+                    },
+                    b"",
+                ),
+            ) as request_status,
         ):
             self.assertTrue(cutover.verify_alias(
                 "https://www.portal.example.invalid",
                 "https://portal.example.invalid",
             ))
+        request_status.assert_called_once_with(
+            "https://www.portal.example.invalid/?__edge_route_verify=123456789",
+            method="HEAD",
+        )
 
     def test_migrate_mode_manages_canonical_and_alias_routes(self) -> None:
         with (
