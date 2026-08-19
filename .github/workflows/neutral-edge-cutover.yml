@@ -642,43 +642,69 @@ jobs:
         run: |
           set -euo pipefail
           echo "::add-mask::$PORTAL_SITE_URL"
-          python3 - <<'PY'
+          release_check="$PORTAL_SITE_URL/.well-known/edge-release/$STATIC_RELEASE"
+          report_id="$(python3 - <<'PY'
           import json
-          import os
           from pathlib import Path
-          import re
-          from urllib.request import urlopen
 
           catalog = json.loads(Path("_neutral_site/data/catalog.json").read_text(encoding="utf-8"))
           report_id = next((str(item.get("id") or "") for item in catalog.get("items", []) if item.get("id")), "")
           if not report_id:
               raise SystemExit("Catalog has no report id for detail-shard verification")
-          prefix = re.sub(r"[^a-z0-9]", "_", report_id.lower())[:2].ljust(2, "_")
-          release = os.environ["STATIC_RELEASE"]
-          public_base = os.environ["PORTAL_SITE_URL"].rstrip("/") + "/"
-          base = public_base + f".well-known/edge-release/{release}/"
-          expected = {
-              "reports/institutions/bernstein/index.html": "伯恩斯坦研报",
-              "b7c3e9a41d8f52e604a71bc93f2d6e80.txt": "b7c3e9a41d8f52e604a71bc93f2d6e80",
-          }
-          for relative, marker in expected.items():
-              with urlopen(base + relative, timeout=30) as response:
-                  body = response.read().decode("utf-8")
+          print(report_id)
+          PY
+          )"
+          prefix="$(REPORT_ID="$report_id" python3 - <<'PY'
+          import os
+          import re
+
+          print(re.sub(r"[^a-z0-9]", "_", os.environ["REPORT_ID"].lower())[:2].ljust(2, "_"))
+          PY
+          )"
+          curl --fail --location --silent --show-error --max-time 30 \
+            "$release_check/reports/institutions/bernstein/index.html" \
+            --output "$RUNNER_TEMP/live-bernstein-release.html"
+          curl --fail --location --silent --show-error --max-time 30 \
+            "$release_check/b7c3e9a41d8f52e604a71bc93f2d6e80.txt" \
+            --output "$RUNNER_TEMP/live-indexnow-key-release.txt"
+          curl --fail --location --silent --show-error --max-time 30 \
+            "$release_check/data/report_details/$prefix.json" \
+            --output "$RUNNER_TEMP/live-report-detail-release.json"
+          curl --fail --location --silent --show-error --max-time 30 \
+            "$release_check/data/catalog_recommendations.json" \
+            --output "$RUNNER_TEMP/live-recommendations-release.json"
+          curl --fail --location --silent --show-error --max-time 30 \
+            "$PORTAL_SITE_URL/reports/institutions/bernstein/index.html" \
+            --output "$RUNNER_TEMP/live-bernstein-public.html"
+          curl --fail --location --silent --show-error --max-time 30 \
+            "$PORTAL_SITE_URL/b7c3e9a41d8f52e604a71bc93f2d6e80.txt" \
+            --output "$RUNNER_TEMP/live-indexnow-key-public.txt"
+          REPORT_ID="$report_id" python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          catalog = json.loads(Path("_neutral_site/data/catalog.json").read_text(encoding="utf-8"))
+          report_id = os.environ["REPORT_ID"]
+          runner_temp = Path(os.environ["RUNNER_TEMP"])
+          expected = (
+              ("live-bernstein-release.html", "伯恩斯坦研报"),
+              ("live-indexnow-key-release.txt", "b7c3e9a41d8f52e604a71bc93f2d6e80"),
+              ("live-bernstein-public.html", "伯恩斯坦研报"),
+              ("live-indexnow-key-public.txt", "b7c3e9a41d8f52e604a71bc93f2d6e80"),
+          )
+          for filename, marker in expected:
+              body = runner_temp.joinpath(filename).read_text(encoding="utf-8")
               if marker not in body:
-                  raise SystemExit(f"Live discovery asset failed verification: {relative}")
-          with urlopen(base + f"data/report_details/{prefix}.json", timeout=30) as response:
-              shard = json.loads(response.read().decode("utf-8"))
+                  raise SystemExit(f"Live discovery asset failed verification: {filename}")
+          shard = json.loads(runner_temp.joinpath("live-report-detail-release.json").read_text(encoding="utf-8"))
           if report_id not in (shard.get("reports") or {}):
               raise SystemExit("Live report-detail shard does not contain its catalog report")
-          with urlopen(base + "data/catalog_recommendations.json", timeout=30) as response:
-              recommendation_catalog = json.loads(response.read().decode("utf-8"))
+          recommendation_catalog = json.loads(
+              runner_temp.joinpath("live-recommendations-release.json").read_text(encoding="utf-8")
+          )
           if int(recommendation_catalog.get("item_count") or 0) != int(catalog.get("item_count") or 0):
               raise SystemExit("Live recommendation catalog does not match the active catalog")
-          for relative, marker in expected.items():
-              with urlopen(public_base + relative, timeout=30) as response:
-                  body = response.read().decode("utf-8")
-              if marker not in body:
-                  raise SystemExit(f"Public discovery asset failed verification: {relative}")
           print("live_discovery_assets=verified live_report_detail_shard=verified live_recommendation_catalog=verified")
           PY
 
