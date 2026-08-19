@@ -24,7 +24,7 @@ from urllib3.util.retry import Retry
 
 GITHUB_API = "https://api.github.com"
 TIMEZONE = ZoneInfo("Asia/Shanghai")
-DEFAULT_REMOTE_ROOT = "/我的坚果云/KCdesk/Ops"
+DEFAULT_REMOTE_ROOT = "/我的坚果云/Portal Suite/Ops"
 DATE_RE = re.compile(r"^20\d{2}-\d{2}-\d{2}$")
 DAV = "{DAV:}"
 UPLOAD_MAX_ATTEMPTS = 3
@@ -474,8 +474,40 @@ def require_env(name: str) -> str:
     return value
 
 
+def build_webdav_target(args: argparse.Namespace) -> WebDavTarget:
+    return WebDavTarget(
+        require_env("JIANGUOYUN_WEBDAV_URL"),
+        require_env("JIANGUOYUN_WEBDAV_USERNAME"),
+        require_env("JIANGUOYUN_WEBDAV_PASSWORD"),
+        args.remote_root,
+    )
+
+
+def cleanup_target(
+    target: WebDavTarget,
+    retention_days: int,
+    today: date,
+    *,
+    dry_run: bool = False,
+) -> list[str]:
+    removed = target.cleanup_old_dates(retention_days, today, dry_run=dry_run)
+    print(
+        f"CLEANUP_COMPLETE removed={len(removed)} "
+        f"removed_dates={','.join(removed) or '-'}"
+        f" dry_run={'yes' if dry_run else 'no'}",
+        flush=True,
+    )
+    return removed
+
+
 def run(args: argparse.Namespace) -> int:
     today = datetime.now(TIMEZONE).date()
+    if args.cleanup_only:
+        target = build_webdav_target(args)
+        target.ensure_collection()
+        cleanup_target(target, args.retention_days, today, dry_run=args.dry_run)
+        return 0
+
     end_date = parse_iso_date(args.target_date) if args.target_date else today
     dates = target_dates(end_date, args.days)
     github = GithubSource(os.environ.get("GITHUB_TOKEN", "").strip())
@@ -494,22 +526,13 @@ def run(args: argparse.Namespace) -> int:
         print("DRY_RUN_COMPLETE", flush=True)
         return 0
 
-    target = WebDavTarget(
-        require_env("JIANGUOYUN_WEBDAV_URL"),
-        require_env("JIANGUOYUN_WEBDAV_USERNAME"),
-        require_env("JIANGUOYUN_WEBDAV_PASSWORD"),
-        args.remote_root,
-    )
+    target = build_webdav_target(args)
     target.ensure_collection()
-    # Reclaim expired mirror space before attempting any new uploads.  Doing
-    # this at the end can deadlock a full account: the upload fails before the
-    # cleanup step ever gets a chance to run.
-    removed = target.cleanup_old_dates(args.retention_days, today)
-    print(
-        f"CLEANUP_COMPLETE removed={len(removed)} "
-        f"removed_dates={','.join(removed) or '-'}",
-        flush=True,
-    )
+    if args.skip_cleanup:
+        removed: list[str] = []
+        print("CLEANUP_SKIPPED scheduled_daily=yes", flush=True)
+    else:
+        removed = cleanup_target(target, args.retention_days, today)
     uploaded = 0
     skipped = 0
     with tempfile.TemporaryDirectory(prefix="portal-jianguoyun-") as temp_dir:
@@ -550,6 +573,17 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--days", type=int, default=2, help="Number of dates ending at target date.")
     parser.add_argument("--retention-days", type=int, default=3)
     parser.add_argument("--remote-root", default=DEFAULT_REMOTE_ROOT)
+    cleanup_mode = parser.add_mutually_exclusive_group()
+    cleanup_mode.add_argument(
+        "--cleanup-only",
+        action="store_true",
+        help="Apply retention and exit without discovering or syncing videos.",
+    )
+    cleanup_mode.add_argument(
+        "--skip-cleanup",
+        action="store_true",
+        help="Sync videos without applying retention; intended for the frequent sync workflow.",
+    )
     parser.add_argument("--dry-run", action="store_true")
     return parser
 

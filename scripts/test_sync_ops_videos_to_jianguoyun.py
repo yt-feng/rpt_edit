@@ -8,7 +8,7 @@ import unittest
 from datetime import date
 from pathlib import Path
 from types import SimpleNamespace
-from unittest.mock import Mock, patch
+from unittest.mock import ANY, Mock, patch
 
 import requests
 
@@ -316,6 +316,8 @@ class RunOrderingTests(unittest.TestCase):
             days=1,
             retention_days=2,
             remote_root="/Ops",
+            cleanup_only=False,
+            skip_cleanup=False,
             dry_run=False,
         )
 
@@ -337,23 +339,94 @@ class RunOrderingTests(unittest.TestCase):
         self.assertEqual(events, ["cleanup", "upload"])
         target.cleanup_old_dates.assert_called_once()
 
-    def test_scheduled_workflow_uses_two_day_sync_and_three_day_retention(self) -> None:
-        workflow = (
-            Path(__file__).resolve().parents[1]
-            / ".github"
-            / "workflows"
-            / "portal-ops-jianguoyun-sync.yml"
-        ).read_text(encoding="utf-8")
-        self.assertIn("default: \"2\"", workflow)
-        self.assertIn("--days \"${{ github.event.inputs.sync_days || '2' }}\"", workflow)
-        self.assertIn("--retention-days 3", workflow)
-        self.assertIn('--remote-root "/我的坚果云/KCdesk/Ops"', workflow)
-        self.assertNotIn("/我的坚果云/Portal Suite/Ops", workflow)
+    def test_cleanup_only_does_not_access_github(self) -> None:
+        target = Mock()
+        target.cleanup_old_dates.return_value = ["2026-08-16"]
+        args = SimpleNamespace(
+            target_date="",
+            days=2,
+            retention_days=3,
+            remote_root="/Ops",
+            cleanup_only=True,
+            skip_cleanup=False,
+            dry_run=False,
+        )
 
-    def test_defaults_use_kcdesk_and_three_day_retention(self) -> None:
+        with (
+            patch.object(sync, "GithubSource") as github_source,
+            patch.object(sync, "WebDavTarget", return_value=target),
+            patch.dict(
+                sync.os.environ,
+                {
+                    "JIANGUOYUN_WEBDAV_URL": "https://dav.example.invalid",
+                    "JIANGUOYUN_WEBDAV_USERNAME": "user",
+                    "JIANGUOYUN_WEBDAV_PASSWORD": "password",
+                },
+            ),
+        ):
+            self.assertEqual(sync.run(args), 0)
+
+        github_source.assert_not_called()
+        target.ensure_collection.assert_called_once_with()
+        target.cleanup_old_dates.assert_called_once_with(3, ANY, dry_run=False)
+
+    def test_frequent_sync_can_skip_retention_cleanup(self) -> None:
+        target = Mock()
+        args = SimpleNamespace(
+            target_date="2026-08-18",
+            days=1,
+            retention_days=3,
+            remote_root="/Ops",
+            cleanup_only=False,
+            skip_cleanup=True,
+            dry_run=False,
+        )
+
+        with (
+            patch.object(sync, "GithubSource"),
+            patch.object(sync, "discover_videos", return_value=[]),
+            patch.object(sync, "WebDavTarget", return_value=target),
+            patch.dict(
+                sync.os.environ,
+                {
+                    "JIANGUOYUN_WEBDAV_URL": "https://dav.example.invalid",
+                    "JIANGUOYUN_WEBDAV_USERNAME": "user",
+                    "JIANGUOYUN_WEBDAV_PASSWORD": "password",
+                },
+            ),
+        ):
+            self.assertEqual(sync.run(args), 0)
+
+        target.ensure_collection.assert_called_once_with()
+        target.cleanup_old_dates.assert_not_called()
+
+    def test_workflows_split_frequent_sync_from_daily_retention(self) -> None:
+        workflows = Path(__file__).resolve().parents[1] / ".github" / "workflows"
+        sync_workflow = (
+            workflows / "portal-ops-jianguoyun-sync.yml"
+        ).read_text(encoding="utf-8")
+        retention_workflow = (
+            workflows / "portal-ops-jianguoyun-retention.yml"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn("default: \"2\"", sync_workflow)
+        self.assertIn("--days \"${{ github.event.inputs.sync_days || '2' }}\"", sync_workflow)
+        self.assertIn("--skip-cleanup", sync_workflow)
+        self.assertNotIn("--remote-root", sync_workflow)
+        self.assertIn('cron: "30 0 * * *"', retention_workflow)
+        self.assertIn("--cleanup-only", retention_workflow)
+        self.assertIn("--retention-days 3", retention_workflow)
+
+    def test_defaults_keep_public_placeholder_and_three_day_retention(self) -> None:
         args = sync.build_parser().parse_args([])
-        self.assertEqual(args.remote_root, "/我的坚果云/KCdesk/Ops")
+        self.assertEqual(args.remote_root, "/我的坚果云/Portal Suite/Ops")
         self.assertEqual(args.retention_days, 3)
+        self.assertFalse(args.cleanup_only)
+        self.assertFalse(args.skip_cleanup)
+
+    def test_cleanup_modes_are_mutually_exclusive(self) -> None:
+        with self.assertRaises(SystemExit):
+            sync.build_parser().parse_args(["--cleanup-only", "--skip-cleanup"])
 
 
 if __name__ == "__main__":
