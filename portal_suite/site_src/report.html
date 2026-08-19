@@ -26,9 +26,72 @@
 
     <main class="shell detail-shell">
       <section id="detail" class="detail-panel">
-        <p class="subtle">Loading report...</p>
+        <p class="subtle" role="status">正在打开报告…</p>
       </section>
     </main>
+
+    <script id="reportPreviewBootstrap">
+      (() => {
+        "use strict";
+        const detail = document.getElementById("detail");
+        const params = new URLSearchParams(window.location.search);
+        const value = (key, limit = 320) => String(params.get(key) || "").trim().slice(0, limit);
+        const title = value("title");
+        if (!detail || !title) return;
+
+        const appendText = (parent, tag, className, text) => {
+          const element = document.createElement(tag);
+          if (className) element.className = className;
+          element.textContent = text;
+          parent.append(element);
+          return element;
+        };
+        const appendField = (parent, label, text) => {
+          const field = document.createElement("div");
+          field.className = "detail-field";
+          appendText(field, "span", "", label);
+          appendText(field, "strong", "", text || "正在确认");
+          parent.append(field);
+        };
+        const displayDate = (raw) => {
+          if (/^\d{6}$/.test(raw)) return `20${raw.slice(0, 2)}-${raw.slice(2, 4)}-${raw.slice(4, 6)}`;
+          if (/^\d{8}$/.test(raw)) return `${raw.slice(0, 4)}-${raw.slice(4, 6)}-${raw.slice(6, 8)}`;
+          return raw;
+        };
+        const displaySize = (raw) => {
+          const bytes = Number(raw);
+          if (!Number.isFinite(bytes) || bytes <= 0) return "Available";
+          if (bytes >= 1024 * 1024) return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+          if (bytes >= 1024) return `${Math.round(bytes / 1024)} KB`;
+          return `${Math.round(bytes)} B`;
+        };
+
+        const heading = document.createElement("div");
+        appendText(heading, "h1", "detail-title", title);
+        const titleZh = value("title_zh");
+        if (titleZh && titleZh !== title) appendText(heading, "p", "detail-title-zh", titleZh);
+        appendText(heading, "p", "subtle", "下载权限与相关报告将在后台补充。");
+
+        const bankCode = value("bank_code", 120);
+        const bankName = value("bank_name", 120);
+        const institution = bankCode && bankName && bankCode.toLocaleLowerCase() !== bankName.toLocaleLowerCase()
+          ? `${bankCode} · ${bankName}`
+          : (bankCode || bankName);
+        const grid = document.createElement("div");
+        grid.className = "detail-grid";
+        appendField(grid, "Institution", institution);
+        appendField(grid, "Industry", value("industry", 160) || value("sector", 160) || value("category", 160));
+        appendField(grid, "Date", displayDate(value("date_folder", 16)));
+        const rawAvailable = value("available", 8).toLocaleLowerCase();
+        const pdfStatus = rawAvailable === "1" || rawAvailable === "true"
+          ? displaySize(value("size_bytes", 24))
+          : (rawAvailable === "0" || rawAvailable === "false" ? "Text only" : "正在确认");
+        appendField(grid, "PDF", pdfStatus);
+
+        detail.replaceChildren(heading, grid);
+        document.title = `${title} | Portal Suite`;
+      })();
+    </script>
 
     <footer class="legal-footer">
       <a href="blog/">Blog</a>

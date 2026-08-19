@@ -767,9 +767,36 @@ class ChartSearchIndexTests(unittest.TestCase):
             "schema_version": 1,
             "reports": [{"report_id": "", "title": "Alpha MLCC Outlook", "charts": []}],
         }
-        catalog = {"items": [{"id": "report-alpha", "title": "Alpha-MLCC_Outlook.pdf"}]}
+        catalog = {"items": [{
+            "id": "report-alpha",
+            "title": "Alpha-MLCC_Outlook.pdf",
+            "bank_name": "Bernstein",
+            "available": False,
+            "pdf_archived": True,
+            "size_bytes": 1234,
+            "page_count": 27,
+        }]}
         self.assertEqual(merge.reconcile_report_ids(charts, catalog), 1)
         self.assertEqual(charts["reports"][0]["report_id"], "report-alpha")
+        self.assertEqual(charts["reports"][0]["bank_name"], "Bernstein")
+        self.assertIs(charts["reports"][0]["available"], False)
+        self.assertIs(charts["reports"][0]["pdf_archived"], True)
+        self.assertEqual(charts["reports"][0]["page_count"], 27)
+
+    def test_merge_only_publishes_pdf_state_grounded_in_the_current_catalog(self) -> None:
+        charts = {
+            "schema_version": 1,
+            "reports": [
+                {"report_id": "known", "title": "Known", "available": True, "charts": []},
+                {"report_id": "missing", "title": "Missing", "available": True, "pdf_archived": False, "charts": []},
+            ],
+        }
+        catalog = {"items": [{"id": "known", "title": "Known", "available": False}]}
+        self.assertEqual(merge.reconcile_report_ids(charts, catalog), 0)
+        self.assertIs(charts["reports"][0]["available"], False)
+        self.assertNotIn("pdf_archived", charts["reports"][0])
+        self.assertNotIn("available", charts["reports"][1])
+        self.assertNotIn("pdf_archived", charts["reports"][1])
 
     def test_merge_command_publishes_reconciled_chart_ids(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
@@ -790,7 +817,12 @@ class ChartSearchIndexTests(unittest.TestCase):
                 }],
             }), encoding="utf-8")
             catalog_path.write_text(json.dumps({
-                "items": [{"id": "report-alpha", "title": "Alpha-MLCC_Outlook.pdf"}],
+                "items": [{
+                    "id": "report-alpha",
+                    "title": "Alpha-MLCC_Outlook.pdf",
+                    "available": False,
+                    "page_count": 18,
+                }],
             }), encoding="utf-8")
             argv = [
                 "merge_chart_search_index.py",
@@ -803,6 +835,8 @@ class ChartSearchIndexTests(unittest.TestCase):
                 self.assertEqual(merge.main(), 0)
             published = json.loads(output_path.read_text(encoding="utf-8"))
             self.assertEqual(published["reports"][0]["report_id"], "report-alpha")
+            self.assertIs(published["reports"][0]["available"], False)
+            self.assertEqual(published["reports"][0]["page_count"], 18)
 
     def test_title_matching_tolerates_sequence_bank_alias_and_trailing_date(self) -> None:
         catalog = {"items": [{

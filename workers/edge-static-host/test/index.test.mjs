@@ -343,4 +343,10 @@ test("neutral deployment enables Workers caching and verifies preview/full catal
   )?.[0] || "";
   assert.match(purgeStep, /continue-on-error: true/);
   assert.match(purgeStep, /scripts\/edge_route_cutover\.py purge/);
+  const discoveryStep = workflow.match(
+    /- name: Verify discovery and report-detail assets are live[\s\S]*?- name: Submit changed public URLs to IndexNow/,
+  )?.[0] || "";
+  assert.match(discoveryStep, /curl --fail --location --silent --show-error --max-time 30/);
+  assert.match(discoveryStep, /live-report-detail-release\.json/);
+  assert.doesNotMatch(discoveryStep, /urlopen/);
 });

@@ -11706,6 +11706,13 @@ function chatLookupSafeList(value, itemLimit = 8) {
   return value.map((item) => chatLookupSafeText(item, 120)).filter(Boolean).slice(0, itemLimit);
 }
 
+function chatLookupOptionalBoolean(value) {
+  if (typeof value === "boolean") return value;
+  if (value === 1 || value === "1" || value === "true") return true;
+  if (value === 0 || value === "0" || value === "false") return false;
+  return undefined;
+}
+
 function cleanCourseChatLookupItem(raw, restrictedTerms) {
   if (!raw || typeof raw !== "object" || Array.isArray(raw)) return null;
   const copy = {
@@ -11759,6 +11766,7 @@ function chatLookupPublicCandidate(value, expectedId, score, context, restricted
   }
   const title = chatLookupSafeText(raw.title || raw.t, 320);
   if (!title) return null;
+  const available = chatLookupOptionalBoolean(raw.available ?? raw.av);
   return Object.freeze({
     id,
     title,
@@ -11767,7 +11775,7 @@ function chatLookupPublicCandidate(value, expectedId, score, context, restricted
     industry: chatLookupSafeText(raw.industry || raw.ind, 160),
     date_folder: chatLookupSafeText(raw.date_folder || raw.d, 40),
     page_count: Math.max(0, Math.min(100000, Math.floor(Number(raw.page_count ?? raw.p) || 0))),
-    available: Boolean(raw.available ?? raw.av),
+    ...(available === undefined ? {} : { available }),
     attraction_score: attractionScore,
     match_score: Math.round(score * 100) / 100,
   });

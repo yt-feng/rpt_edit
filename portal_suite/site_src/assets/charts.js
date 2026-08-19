@@ -102,8 +102,16 @@
 
   function reportUrl(reportId, preview = {}) {
     const params = new URLSearchParams({ id: String(reportId || "") });
-    if (preview.title) params.set("title", String(preview.title));
-    if (preview.date_folder) params.set("date_folder", String(preview.date_folder));
+    const previewKeys = [
+      "title", "title_zh", "filename", "date_folder", "bank_code", "bank_name",
+      "size_bytes", "available", "industry", "sector", "category", "pdf_archived",
+      "page_count",
+    ];
+    previewKeys.forEach((key) => {
+      const value = preview[key];
+      if (value === undefined || value === null || value === "") return;
+      params.set(key, typeof value === "boolean" ? (value ? "1" : "0") : String(value));
+    });
     return `report.html?${params.toString()}`;
   }
 
@@ -156,6 +164,27 @@
       const reportId = clean(report.report_id, 80);
       const reportTitle = clean(report.title, 300) || "来源报告";
       const dateFolder = clean(report.date_folder, 16);
+      const reportPreview = {
+        title: reportTitle,
+        title_zh: clean(report.title_zh, 300),
+        filename: clean(report.filename, 300),
+        date_folder: dateFolder,
+        bank_code: clean(report.bank_code, 120),
+        bank_name: clean(report.bank_name, 120),
+        industry: clean(report.industry, 160),
+        sector: clean(report.sector, 160),
+        category: clean(report.category, 160),
+        available: typeof report.available === "boolean" ? report.available : undefined,
+        pdf_archived: typeof report.pdf_archived === "boolean" ? report.pdf_archived : undefined,
+        size_bytes: report.size_bytes !== undefined && report.size_bytes !== null && report.size_bytes !== ""
+          && Number.isFinite(Number(report.size_bytes))
+          ? Math.max(0, Number(report.size_bytes))
+          : undefined,
+        page_count: report.page_count !== undefined && report.page_count !== null && report.page_count !== ""
+          && Number.isFinite(Number(report.page_count))
+          ? Math.max(0, Number(report.page_count))
+          : undefined,
+      };
       const charts = Array.isArray(report.charts) ? report.charts : [];
       charts.forEach((chart) => {
         if (!isValidChart(chart)) return;
@@ -178,6 +207,7 @@
           reportId,
           reportTitle,
           dateFolder,
+          reportPreview,
         };
         row.searchText = searchableText(row);
         rows.push(row);
@@ -273,10 +303,7 @@
     if (row.reportId) {
       const link = document.createElement("a");
       link.className = "charts-report-link";
-      link.href = reportUrl(row.reportId, {
-        title: row.reportTitle,
-        date_folder: row.dateFolder,
-      });
+      link.href = reportUrl(row.reportId, row.reportPreview);
       link.setAttribute("aria-label", "打开来源报告：" + row.reportTitle);
       const label = document.createElement("span");
       label.textContent = sourceLabel;
