@@ -218,11 +218,15 @@ def wait_for_edge(origin: str, *, expected: bool, attempts: int = 120) -> bool:
 
 
 def verify_alias(alias_origin: str, canonical_origin: str) -> bool:
-    status, headers, _body = request_status(alias_origin + "/", method="HEAD")
+    # A newly attached alias can still have an older response cached at its
+    # bare root. Probe a unique URL so route verification observes the active
+    # Worker instead of waiting for that response to age out.
+    probe = f"/?__edge_route_verify={time.time_ns()}"
+    status, headers, _body = request_status(alias_origin + probe, method="HEAD")
     return (
         status == 301
         and headers.get("x-origin-class", "").lower() == "edge-static"
-        and headers.get("location", "") == canonical_origin.rstrip("/") + "/"
+        and headers.get("location", "") == canonical_origin.rstrip("/") + probe
     )
 
 

@@ -522,17 +522,22 @@ jobs:
           command: deploy
           wranglerVersion: "4.69.0"
 
-      - name: Verify active edge route or switch
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate' || inputs.operation == 'switch'
+      - name: Verify active edge routes
+        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
+        env:
+          EDGE_SCRIPT_NAME: svc-04df8d213b73
+        run: python3 -B scripts/edge_route_cutover.py verify
+
+      - name: Switch active edge routes
+        if: inputs.operation == 'switch'
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           EDGE_SCRIPT_NAME: svc-04df8d213b73
-        run: |
-          set -euo pipefail
-          python3 -B scripts/edge_route_cutover.py migrate
+        run: python3 -B scripts/edge_route_cutover.py migrate
 
-      - name: Purge previous public edge cache
+      - name: Purge previous public edge cache when permitted
         if: github.event_name == 'schedule' || inputs.operation == 'migrate'
+        continue-on-error: true
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           EDGE_SCRIPT_NAME: svc-04df8d213b73
