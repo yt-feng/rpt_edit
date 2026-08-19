@@ -96,7 +96,7 @@ class EdgeRouteCutoverTests(unittest.TestCase):
     def test_verify_mode_uses_live_checks_without_cloud_route_permissions(self) -> None:
         with (
             patch.object(sys, "argv", ["edge_route_cutover.py", "verify"]),
-            patch.dict(os.environ, {"SITE_HOST": "portal.example.invalid", "EDGE_SCRIPT_NAME": "svc-neutral"}, clear=False),
+            patch.dict(os.environ, {"SITE_HOST": "portal.example.invalid", "EDGE_SCRIPT_NAME": "svc-neutral", "EDGE_ALIAS_HOSTS": ""}, clear=False),
             patch.object(cutover, "wait_for_edge", return_value=True) as wait_for_edge,
             patch.object(cutover, "find_zone_id") as find_zone_id,
         ):
@@ -128,6 +128,64 @@ class EdgeRouteCutoverTests(unittest.TestCase):
                 cutover.migrate("zone-id", "portal.example.invalid/*", "https://portal.example.invalid", "svc-neutral")
 
         delete_route.assert_called_once_with("zone-id", "portal.example.invalid/*", "svc-neutral")
+
+    def test_alias_route_is_verified_as_a_canonical_redirect(self) -> None:
+        with patch.object(
+            cutover,
+            "request_status",
+            return_value=(
+                301,
+                {"x-origin-class": "edge-static", "location": "https://portal.example.invalid/"},
+                b"",
+            ),
+        ):
+            self.assertTrue(cutover.verify_alias(
+                "https://www.portal.example.invalid",
+                "https://portal.example.invalid",
+            ))
+
+    def test_migrate_mode_manages_canonical_and_alias_routes(self) -> None:
+        with (
+            patch.object(sys, "argv", ["edge_route_cutover.py", "migrate"]),
+            patch.dict(os.environ, {
+                "SITE_HOST": "portal.example.invalid",
+                "EDGE_SCRIPT_NAME": "svc-neutral",
+                "EDGE_ALIAS_HOSTS": "www.portal.example.invalid",
+            }, clear=False),
+            patch.object(cutover, "find_zone_id", return_value="zone-id"),
+            patch.object(cutover, "migrate") as migrate,
+            patch.object(cutover, "migrate_alias") as migrate_alias,
+        ):
+            self.assertEqual(cutover.run(), 0)
+
+        migrate.assert_called_once_with(
+            "zone-id",
+            "portal.example.invalid/*",
+            "https://portal.example.invalid",
+            "svc-neutral",
+        )
+        migrate_alias.assert_called_once_with(
+            "zone-id",
+            "www.portal.example.invalid/*",
+            "https://www.portal.example.invalid",
+            "https://portal.example.invalid",
+            "svc-neutral",
+        )
+
+    def test_purge_mode_uses_the_zone_cache_api(self) -> None:
+        with (
+            patch.object(sys, "argv", ["edge_route_cutover.py", "purge"]),
+            patch.dict(os.environ, {
+                "SITE_HOST": "portal.example.invalid",
+                "EDGE_SCRIPT_NAME": "svc-neutral",
+                "EDGE_ALIAS_HOSTS": "",
+            }, clear=False),
+            patch.object(cutover, "find_zone_id", return_value="zone-id"),
+            patch.object(cutover, "purge_edge_cache") as purge,
+        ):
+            self.assertEqual(cutover.run(), 0)
+
+        purge.assert_called_once_with("zone-id")
 
 
 if __name__ == "__main__":

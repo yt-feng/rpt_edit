@@ -10,6 +10,9 @@
   const AUTH_SESSION_KEY = "portal_auth_session";
   const VISITOR_ID_KEY = "portal_visitor_id";
   const DOC_ITEM_CACHE_KEY = "portal_doc_item_cache";
+  const REPORT_PREVIEW_CACHE_KEY = "portal_report_preview_cache";
+  const REPORT_PREVIEW_CACHE_MAX_ITEMS = 20;
+  const REPORT_PREVIEW_CACHE_TTL_MS = 6 * 60 * 60 * 1000;
   const AUTHORITY_SOURCE = "authority";
   const REPORT_A_SOURCE = "report-a";
   const THINKTANK_SOURCE = "thinktank";
@@ -392,6 +395,7 @@
   }
 
   function currentAnalyticsReferrer() {
+    if (!String(document.referrer || "").trim()) return "";
     try {
       const url = new URL(String(document.referrer || ""), window.location.origin);
       if (!/^https?:$/.test(url.protocol)) return "";
@@ -402,11 +406,11 @@
   }
 
   function trackEvent(workerUrl, type, data = {}) {
-    if (!workerUrl) return;
     if (window.PortalSuiteAnalytics && typeof window.PortalSuiteAnalytics.track === "function") {
       window.PortalSuiteAnalytics.track(type, { page, ...data });
       return;
     }
+    if (!workerUrl) return;
     const payload = {
       type,
       visitor_id: visitorId(),
@@ -2144,9 +2148,10 @@
         ${analyticsMetric("下载", analytics.download_success_count)}
         ${analyticsMetric("发货链接", analytics.delivery_link_count)}
       </div>
+      <p class="subtle">本卡片从近 ${Number(analytics.range_days || 7)} 天窗口抽样 ${Number(analytics.sample_event_count || analytics.event_count || 0).toLocaleString("zh-CN")} 条事件；完整日统计与来源落地明细请进入 Activity。</p>
       <div class="account-admin-analytics-grid">
         <section>
-          <h4>热门搜索</h4>
+          <h4>站内热门搜索</h4>
           ${renderAnalyticsTopSearches(analytics.top_searches)}
         </section>
         <section>
@@ -2156,7 +2161,7 @@
       </div>
       <section>
         <div class="account-admin-analytics-heading">
-          <h4>最近事件</h4>
+          <h4>抽样事件</h4>
           <a class="secondary-button" href="activity.html" target="_blank" rel="noopener">查看全部已采集记录</a>
         </div>
         ${renderAnalyticsRecentEvents(analytics.recent_events)}
@@ -2188,7 +2193,7 @@
       event.country || "",
       event.colo ? `节点 ${event.colo}` : "",
       event.page ? `页面 ${event.page}` : "",
-      event.source ? `来源 ${event.source}` : "",
+      event.source ? `内容源 ${event.source}` : "",
     ].filter(Boolean).join(" · ");
   }
 
@@ -2200,6 +2205,8 @@
       event.institution ? `机构：${event.institution}` : "",
       event.target ? `对象：${event.target}` : "",
       event.report_id ? `报告 ID：${event.report_id}` : "",
+      event.parent_report_id ? `父报告 ID：${event.parent_report_id}` : "",
+      event.placement ? `推荐位置：${event.placement}` : "",
       event.visitor_id ? `访客 ID：${event.visitor_id}` : "",
       event.ip_hash ? `IP Hash：${event.ip_hash}` : "",
     ].filter(Boolean).join("\n");
@@ -2273,6 +2280,7 @@
     { header: "账号角色", key: "role", width: 14 },
     { header: "访客 ID", key: "visitor_id", width: 28 },
     { header: "会话 ID", key: "session_id", width: 28 },
+    { header: "会话开始时间", key: "session_started_at", width: 25 },
     { header: "首次访问", key: "first_seen_at", width: 25 },
     { header: "回访", key: "is_returning", width: 10 },
     { header: "会话落地页", key: "landing_path", width: 36 },
@@ -2281,7 +2289,7 @@
     { header: "节点", key: "colo", width: 10 },
     { header: "页面", key: "page", width: 18 },
     { header: "路径", key: "path", width: 36 },
-    { header: "来源", key: "source", width: 18 },
+    { header: "内容来源", key: "source", width: 18 },
     { header: "搜索词", key: "query", width: 36 },
     { header: "机构", key: "institution", width: 24 },
     { header: "行业", key: "industry", width: 24 },
@@ -2296,6 +2304,8 @@
     { header: "缓存状态", key: "cache_status", width: 16 },
     { header: "报告 ID", key: "report_id", width: 28 },
     { header: "报告标题", key: "report_title", width: 48 },
+    { header: "父报告 ID", key: "parent_report_id", width: 28 },
+    { header: "推荐位置", key: "placement", width: 22 },
     { header: "对象", key: "target", width: 32 },
     { header: "动作", key: "action", width: 18 },
     { header: "状态", key: "status", width: 18 },
@@ -2332,6 +2342,7 @@
       role: user.role || "",
       visitor_id: value.visitor_id || "",
       session_id: value.session_id || "",
+      session_started_at: value.session_started_at || "",
       first_seen_at: value.first_seen_at || "",
       is_returning: Boolean(value.is_returning),
       landing_path: value.landing_path || "",
@@ -2355,6 +2366,8 @@
       cache_status: value.cache_status || "",
       report_id: value.report_id || "",
       report_title: value.report_title || "",
+      parent_report_id: value.parent_report_id || "",
+      placement: value.placement || "",
       target: value.target || "",
       action: value.action || "",
       status: value.status || "",
@@ -2628,6 +2641,40 @@
     `;
   }
 
+  function renderAnalyticsAcquisitionLandings(rows) {
+    const items = Array.isArray(rows) ? rows : [];
+    if (!items.length) return '<p class="subtle">暂无可归因的首次落地会话。</p>';
+    return `
+      <div class="account-admin-table-wrap">
+        <table class="account-admin-table analytics-history-table">
+          <thead>
+            <tr>
+              <th>流量来源</th>
+              <th>具体落地内容</th>
+              <th>内容类型 / ID</th>
+              <th>UTM</th>
+              <th>会话</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${items.map((row) => {
+              const utm = [row.utm_medium, row.utm_campaign, row.utm_term, row.utm_content].filter(Boolean).join(" · ");
+              return `
+                <tr>
+                  <td><strong>${escapeHtml(row.source || "direct / unknown")}</strong></td>
+                  <td><strong>${escapeHtml(row.report_title || row.landing_path || "/")}</strong><small>${escapeHtml(row.landing_path || "/")}</small></td>
+                  <td>${escapeHtml([row.page, row.report_id].filter(Boolean).join(" · ") || "-")}</td>
+                  <td>${escapeHtml(utm || "-")}</td>
+                  <td><strong>${Number(row.sessions || 0).toLocaleString("zh-CN")}</strong></td>
+                </tr>
+              `;
+            }).join("")}
+          </tbody>
+        </table>
+      </div>
+    `;
+  }
+
   function renderAnalyticsDaySummary(target, data) {
     if (!target) return;
     const metrics = [
@@ -2640,13 +2687,19 @@
       <div class="analytics-day-summary-metrics">
         ${metrics.map(([label, value]) => `<div><span>${escapeHtml(label)}</span><strong>${Number(value || 0).toLocaleString("zh-CN")}</strong></div>`).join("")}
       </div>
+      <section>
+        <h3>来源 × 具体落地报告 / Blog</h3>
+        <p class="subtle">按会话首次页面访问去重，表内展示会话数最多的前 50 种来源 × 落地组合；完整长尾可导出事件明细。Google/Bing 的外部搜索词需结合各自站长平台，UTM Term 仅在来源主动传递时显示。</p>
+        ${data.acquisition_truncated ? '<p class="status-line">当日来源组合超过汇总上限；请导出完整事件明细查看其余记录。</p>' : ""}
+        ${renderAnalyticsAcquisitionLandings(data.acquisition_landings)}
+      </section>
       <div class="analytics-day-summary-lists">
         ${analyticsDaySummaryList("热门路径", data.top_paths)}
-        ${analyticsDaySummaryList("来源域名", data.top_referrer_hosts)}
+        ${analyticsDaySummaryList("来源域名（事件）", data.top_referrer_hosts)}
         ${analyticsDaySummaryList("国家/地区", data.countries)}
         ${analyticsDaySummaryList("设备", data.devices)}
         ${analyticsDaySummaryList("机器人提示", data.bot_hints)}
-        ${analyticsDaySummaryList("UTM 来源", data.utm_sources)}
+        ${analyticsDaySummaryList("UTM 来源（事件）", data.utm_sources)}
       </div>
     `;
   }
@@ -3463,7 +3516,7 @@
     }
     if (canViewAnalytics && targets.analytics && targets.analyticsCount) {
       targets.analyticsCount.textContent = analytics
-        ? `近 ${analytics.range_days || 7} 天 · ${analytics.event_count || 0} events`
+        ? `近 ${analytics.range_days || 7} 天窗口 · ${analytics.sample_event_count || analytics.event_count || 0} 条事件抽样`
         : "";
       targets.analytics.innerHTML = analytics
         ? renderAccountAdminAnalytics(analytics)
@@ -4694,7 +4747,7 @@
     ].filter(Boolean);
     const status = statusParts.join(" · ");
     const zh = titleZhText(item);
-    const url = reportPageUrl(item.id);
+    const url = reportPageUrl(item.id, { preview: item });
     return `
       <a class="report-row report-link${available ? "" : " is-archived"}" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" data-id="${escapeHtml(item.id)}">
         <span class="pill">${escapeHtml(bank)}</span>
@@ -4712,7 +4765,7 @@
   function relatedRow(item) {
     const available = isPdfAvailable(item);
     const zh = titleZhText(item);
-    const url = reportPageUrl(item.id);
+    const url = reportPageUrl(item.id, { preview: item });
     return `
       <a class="related-row report-link${available ? "" : " is-archived"}" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" data-id="${escapeHtml(item.id)}">
         <span class="related-title">
@@ -5121,7 +5174,7 @@
       const summary = String(chart.description || chart.trend_summary || "");
       const trend = String(chart.trend_summary || "");
       return `
-        <a class="chart-search-card" href="${escapeHtml(reportPageUrl(reportId))}" target="_blank" rel="noopener noreferrer" data-id="${escapeHtml(reportId)}">
+        <a class="chart-search-card" href="${escapeHtml(reportPageUrl(reportId, { preview: catalogItem || { id: reportId, title: reportTitle } }))}" target="_blank" rel="noopener noreferrer" data-id="${escapeHtml(reportId)}">
           <span class="chart-search-kicker">${escapeHtml(chart.chart_type || "CHART")}</span>
           <strong>${escapeHtml(title)}</strong>
           ${summary ? `<p>${escapeHtml(summary)}</p>` : ""}
@@ -5626,6 +5679,7 @@
       const row = event.target.closest(".report-link");
       if (!row) return;
       const item = catalogById.get(String(row.dataset.id || ""));
+      if (item) rememberReportPreview(item);
       trackEvent(workerUrl, "report_open", analyticsReportPayload(item || { id: row.dataset.id }, "catalog"));
       if (isNativeNewTabLink(row)) return;
       event.preventDefault();
@@ -5637,6 +5691,7 @@
         const row = event.target.closest(".chart-search-card");
         if (!row) return;
         const item = catalogById.get(String(row.dataset.id || ""));
+        if (item) rememberReportPreview(item);
         trackEvent(workerUrl, "report_open", analyticsReportPayload(item || { id: row.dataset.id }, "chart-search"));
       });
     }
@@ -6205,6 +6260,7 @@
         const row = event.target.closest(".report-link");
         if (!row) return;
         const item = catalogById.get(String(row.dataset.id || ""));
+        if (item) rememberReportPreview(item);
         trackEvent(workerUrl, "report_open", analyticsReportPayload(item || { id: row.dataset.id }, "recommendation"));
       });
     }
@@ -6490,16 +6546,25 @@
       .map((entry) => entry.item);
   }
 
-  async function fetchDocRelatedSource(workerUrl, endpoint, query, source, current, limit) {
+  async function fetchDocRelatedSource(workerUrl, endpoint, query, source, current, limit, timeoutMs = 2500) {
     if (!workerUrl || !query) return [];
-    const response = await fetch(`${workerUrl}/${endpoint}?q=${encodeURIComponent(query)}`, { cache: "no-store" });
-    if (!response.ok) return [];
-    const data = await response.json().catch(() => ({}));
-    const items = Array.isArray(data.items) ? data.items : [];
-    return items
-      .map((item) => ({ ...item, source: item.source || source }))
-      .filter((item) => !(item.source === current.source && String(item.id) === String(current.id)))
-      .slice(0, limit);
+    const controller = new AbortController();
+    const timeoutId = window.setTimeout(() => controller.abort(), timeoutMs);
+    try {
+      const response = await fetch(`${workerUrl}/${endpoint}?q=${encodeURIComponent(query)}`, {
+        cache: "no-store",
+        signal: controller.signal,
+      });
+      if (!response.ok) return [];
+      const data = await response.json().catch(() => ({}));
+      const items = Array.isArray(data.items) ? data.items : [];
+      return items
+        .map((item) => ({ ...item, source: item.source || source }))
+        .filter((item) => !(item.source === current.source && String(item.id) === String(current.id)))
+        .slice(0, limit);
+    } finally {
+      window.clearTimeout(timeoutId);
+    }
   }
 
   function hotReportCommentsMarkup() {
@@ -6708,63 +6773,150 @@
   }
 
   function docRelatedRow(item) {
-    if (item.source === HOT_REPORT_SOURCE) return hotReportRow(item);
-    if (item.source === EXTERNAL_SOURCE) return externalRow(item);
-    if (item.source === THINKTANK_SOURCE) return thinkTankRow(item);
-    if (item.source === REPORT_A_SOURCE) return reportARow(item);
-    if (item.source === AUTHORITY_SOURCE) return authorityRow(item);
-    return relatedRow(item);
+    let markup;
+    if (item.source === HOT_REPORT_SOURCE) markup = hotReportRow(item);
+    else if (item.source === EXTERNAL_SOURCE) markup = externalRow(item);
+    else if (item.source === THINKTANK_SOURCE) markup = thinkTankRow(item);
+    else if (item.source === REPORT_A_SOURCE) markup = reportARow(item);
+    else if (item.source === AUTHORITY_SOURCE) markup = authorityRow(item);
+    else markup = relatedRow(item);
+    return markup.replace(
+      "<a ",
+      `<a data-recommendation-source="${escapeHtml(item.source || "catalog")}" `,
+    );
   }
 
-  async function initExternalRelated(item, workerUrl, catalogItems, searchTextById) {
+  async function initExternalRelated(item, workerUrl, catalogItems, searchTextById, catalogItemsPromise = null) {
     const section = document.getElementById("externalRelatedSection");
     const list = document.getElementById("externalRelatedList");
     const status = document.getElementById("externalRelatedStatus");
     if (!section || !list || !status) return;
 
     const query = relatedQueryForDoc(item);
-    const rows = [];
+    const sourceOrder = ["catalog", THINKTANK_SOURCE, EXTERNAL_SOURCE, REPORT_A_SOURCE, AUTHORITY_SOURCE];
+    const rowsBySource = new Map(sourceOrder.map((source) => [source, []]));
     const seen = new Set();
     function append(sourceItems, source) {
+      const bucket = rowsBySource.get(source) || [];
+      if (!rowsBySource.has(source)) rowsBySource.set(source, bucket);
       for (const sourceItem of sourceItems) {
         const key = `${source}:${sourceItem.id}`;
         if (!sourceItem.id || seen.has(key)) continue;
         seen.add(key);
-        rows.push({ ...sourceItem, source });
+        bucket.push({ ...sourceItem, source });
       }
     }
 
-    section.hidden = false;
-    status.className = "status-line";
-    status.textContent = "正在推荐相关报告…";
-    list.innerHTML = `
-      <div class="loading-state">
-        <span class="loading-spinner" aria-hidden="true"></span>
-        <span>正在推荐相关报告…</span>
-      </div>
-    `;
-
-    append(catalogRelatedForDoc(item, catalogItems, searchTextById, 4), "catalog");
-
-    const [thinkTankResult, externalResult, reportAResult, authorityResult] = await Promise.allSettled([
-      fetchDocRelatedSource(workerUrl, "thinktank/search", query, THINKTANK_SOURCE, item, 4),
-      fetchDocRelatedSource(workerUrl, "external/search", query, EXTERNAL_SOURCE, item, 4),
-      fetchDocRelatedSource(workerUrl, "report-a/search", query, REPORT_A_SOURCE, item, 3),
-      fetchDocRelatedSource(workerUrl, "authority/search", query, AUTHORITY_SOURCE, item, 3),
-    ]);
-
-    if (thinkTankResult.status === "fulfilled") append(thinkTankResult.value, THINKTANK_SOURCE);
-    if (externalResult.status === "fulfilled") append(externalResult.value, EXTERNAL_SOURCE);
-    if (reportAResult.status === "fulfilled") append(reportAResult.value, REPORT_A_SOURCE);
-    if (authorityResult.status === "fulfilled") append(authorityResult.value, AUTHORITY_SOURCE);
-
-    const rendered = rows.slice(0, 14);
-    if (!rendered.length) {
-      section.hidden = true;
-      return;
+    function replace(sourceItems, source) {
+      for (const key of [...seen]) {
+        if (key.startsWith(`${source}:`)) seen.delete(key);
+      }
+      rowsBySource.set(source, []);
+      append(sourceItems, source);
     }
-    status.textContent = "";
-    list.innerHTML = rendered.map(docRelatedRow).join("");
+
+    function renderedRows() {
+      return sourceOrder.flatMap((source) => rowsBySource.get(source) || []).slice(0, 14);
+    }
+
+    let usingProvisionalCatalog = false;
+    let pendingSources = (workerUrl && query ? 4 : 0) + (catalogItemsPromise ? 1 : 0);
+    function render() {
+      const rendered = renderedRows();
+      if (rendered.length) {
+        section.hidden = false;
+        status.className = "status-line";
+        status.textContent = usingProvisionalCatalog
+          ? (pendingSources ? "先显示近期报告；更相关结果仍在补充…" : "暂未找到更相关结果，已显示近期报告。")
+          : (pendingSources ? "更多相关报告仍在补充…" : "");
+        list.innerHTML = rendered.map(docRelatedRow).join("");
+        return;
+      }
+      if (pendingSources) {
+        section.hidden = false;
+        status.className = "status-line";
+        status.textContent = "正在推荐相关报告…";
+        list.innerHTML = `
+          <div class="loading-state">
+            <span class="loading-spinner" aria-hidden="true"></span>
+            <span>正在推荐相关报告…</span>
+          </div>
+        `;
+        return;
+      }
+      section.hidden = true;
+      status.textContent = "";
+      list.innerHTML = "";
+    }
+
+    list.addEventListener("click", (event) => {
+      const row = event.target.closest(".related-row");
+      if (!row) return;
+      const source = String(row.dataset.recommendationSource || "catalog");
+      const relatedItem = (rowsBySource.get(source) || [])
+        .find((candidate) => String(candidate.id || "") === String(row.dataset.id || ""));
+      trackEvent(workerUrl, "report_open", {
+        ...analyticsReportPayload(relatedItem || { id: row.dataset.id }, source),
+        placement: "report_related",
+        parent_report_id: String(item.id || ""),
+      });
+    });
+
+    const previewRecommendations = catalogRelatedForDoc(item, catalogItems, searchTextById, 4);
+    if (previewRecommendations.length) {
+      append(previewRecommendations, "catalog");
+    } else {
+      const recentFallback = (Array.isArray(catalogItems) ? catalogItems : [])
+        .filter((candidate) => candidate && candidate.id && String(candidate.id) !== String(item.id || ""))
+        .slice(0, 4);
+      if (recentFallback.length) {
+        append(recentFallback, "catalog");
+        usingProvisionalCatalog = true;
+      }
+    }
+    render();
+
+    if (catalogItemsPromise) {
+      Promise.resolve(catalogItemsPromise).then((completeCatalogItems) => {
+        const completeRecommendations = catalogRelatedForDoc(
+          item,
+          Array.isArray(completeCatalogItems) ? completeCatalogItems : [],
+          searchTextById,
+          4,
+        );
+        if (completeRecommendations.length) {
+          replace(completeRecommendations, "catalog");
+          usingProvisionalCatalog = false;
+        }
+      }).catch(() => {
+        // Preview and remote recommendations remain available.
+      }).finally(() => {
+        pendingSources -= 1;
+        render();
+      });
+    }
+
+    const remoteSources = workerUrl && query ? [
+      ["thinktank/search", THINKTANK_SOURCE, 4],
+      ["external/search", EXTERNAL_SOURCE, 4],
+      ["report-a/search", REPORT_A_SOURCE, 3],
+      ["authority/search", AUTHORITY_SOURCE, 3],
+    ] : [];
+    await Promise.allSettled(remoteSources.map(async ([endpoint, source, limit]) => {
+      try {
+        const remoteItems = await fetchDocRelatedSource(workerUrl, endpoint, query, source, item, limit);
+        if (remoteItems.length && usingProvisionalCatalog) {
+          replace([], "catalog");
+          usingProvisionalCatalog = false;
+        }
+        append(remoteItems, source);
+      } catch (_error) {
+        // One unavailable source must not clear recommendations already shown.
+      } finally {
+        pendingSources -= 1;
+        render();
+      }
+    }));
   }
 
   function downloadErrorMessage(status, message, data) {
@@ -7207,6 +7359,7 @@
     }
 
     async function refresh() {
+      if (panel.isConnected === false) return;
       const session = loadAuthSession();
       panel.hidden = false;
       if (passwordForm) passwordForm.hidden = false;
@@ -7271,6 +7424,19 @@
     const url = new URL("report.html", window.location.href);
     url.searchParams.set("id", id);
     if (options.password) url.searchParams.set("password", options.password);
+    const preview = reportPreviewItem(options.preview);
+    if (preview) {
+      const previewKeys = [
+        "title", "title_zh", "filename", "date_folder", "bank_code", "bank_name",
+        "size_bytes", "available", "industry", "sector", "category", "pdf_archived",
+        "page_count",
+      ];
+      for (const key of previewKeys) {
+        if (preview[key] === undefined || preview[key] === null || preview[key] === "") continue;
+        const value = typeof preview[key] === "boolean" ? (preview[key] ? "1" : "0") : String(preview[key]);
+        url.searchParams.set(key, value);
+      }
+    }
     return url.toString();
   }
 
@@ -7285,14 +7451,87 @@
     openInNewTab(reportPageUrl(id));
   }
 
-  function deliveryPageUrl(id, password) {
-    return reportPageUrl(id, { password });
+  function reportPreviewItem(item) {
+    if (!item || !item.id) return null;
+    const keys = [
+      "id", "title", "title_zh", "filename", "date_folder", "bank_code", "bank_name",
+      "password_group", "size_bytes", "available", "industry", "sector", "category",
+      "pdf_archived", "page_count",
+    ];
+    return Object.fromEntries(keys.filter((key) => item[key] !== undefined).map((key) => [key, item[key]]));
+  }
+
+  function rememberReportPreview(item) {
+    const preview = reportPreviewItem(item);
+    if (!preview) return;
+    try {
+      const parsed = JSON.parse(localStorage.getItem(REPORT_PREVIEW_CACHE_KEY) || "{}");
+      const cache = parsed && typeof parsed === "object" && !Array.isArray(parsed) ? parsed : {};
+      cache[String(preview.id)] = { stored_at: Date.now(), item: preview };
+      const entries = Object.entries(cache)
+        .sort((left, right) => Number(right[1] && right[1].stored_at || 0) - Number(left[1] && left[1].stored_at || 0))
+        .slice(0, REPORT_PREVIEW_CACHE_MAX_ITEMS);
+      localStorage.setItem(REPORT_PREVIEW_CACHE_KEY, JSON.stringify(Object.fromEntries(entries)));
+    } catch (_error) {
+      // The detail shard remains the source of truth when storage is unavailable.
+    }
+  }
+
+  function cachedReportPreview(id) {
+    try {
+      const cache = JSON.parse(localStorage.getItem(REPORT_PREVIEW_CACHE_KEY) || "{}");
+      const row = cache && cache[String(id || "")];
+      if (!row || Date.now() - Number(row.stored_at || 0) > REPORT_PREVIEW_CACHE_TTL_MS) return null;
+      const item = reportPreviewItem(row.item);
+      return item && String(item.id) === String(id || "") ? item : null;
+    } catch (_error) {
+      return null;
+    }
+  }
+
+  function reportPreviewFromParams(params, id) {
+    const reportId = String(id || params.get("id") || "").trim();
+    const title = String(params.get("title") || "").trim();
+    if (!reportId || !title) return null;
+    const item = { id: reportId, title };
+    const stringKeys = [
+      "title_zh", "filename", "date_folder", "bank_code", "bank_name",
+      "industry", "sector", "category",
+    ];
+    for (const key of stringKeys) {
+      const value = String(params.get(key) || "").trim();
+      if (value) item[key] = value;
+    }
+    for (const key of ["size_bytes", "page_count"]) {
+      const value = Number(params.get(key));
+      if (Number.isFinite(value) && value >= 0) item[key] = value;
+    }
+    for (const key of ["available", "pdf_archived"]) {
+      const value = params.get(key);
+      if (value === "1" || value === "true") item[key] = true;
+      if (value === "0" || value === "false") item[key] = false;
+    }
+    return reportPreviewItem(item);
+  }
+
+  function deliveryPageUrl(id, password, preview = null) {
+    return reportPageUrl(id, { password, preview });
   }
 
   function externalPageUrl(item, password, options = {}) {
     const url = new URL("doc.html", window.location.href);
     url.searchParams.set("id", item.id);
     if (password) url.searchParams.set("password", password);
+    const previewKeys = [
+      "source", "title", "title_cn", "institution", "date", "file_type", "kind",
+      "kind_label", "page_count", "size_bytes", "report_type", "language", "category",
+      "author", "rating", "required_plan",
+    ];
+    for (const key of previewKeys) {
+      const value = item && item[key];
+      if (value === undefined || value === null || value === "") continue;
+      url.searchParams.set(key, String(value).slice(0, key.includes("title") ? 320 : 160));
+    }
     return url.toString();
   }
 
@@ -7366,7 +7605,7 @@
       generate.disabled = true;
       try {
         const data = await requestReportPassword(workerUrl, item.id);
-        linkInput.value = deliveryPageUrl(item.id, data.password);
+        linkInput.value = deliveryPageUrl(item.id, data.password, item);
         trackEvent(workerUrl, "delivery_link_generate", analyticsReportPayload(item, "catalog"));
         status.textContent = "Delivery link generated.";
         status.classList.add("ok");
@@ -7404,6 +7643,82 @@
     `;
   }
 
+  function reportDetailShardPrefix(id) {
+    return String(id || "")
+      .toLowerCase()
+      .replace(/[^a-z0-9]/g, "_")
+      .slice(0, 2)
+      .padEnd(2, "_");
+  }
+
+  async function loadReportDetailRecord(id) {
+    const reportId = String(id || "").trim();
+    if (!reportId) return null;
+    const prefix = reportDetailShardPrefix(reportId);
+    let payload;
+    try {
+      payload = await loadJson(`data/report_details/${prefix}.json`);
+    } catch (_error) {
+      return null;
+    }
+    const reports = payload && payload.reports && typeof payload.reports === "object"
+      ? payload.reports
+      : null;
+    const record = reports && Object.prototype.hasOwnProperty.call(reports, reportId)
+      ? reports[reportId]
+      : null;
+    if (!record || typeof record !== "object" || !record.item || typeof record.item !== "object") return null;
+    const itemId = String(record.item.id || reportId);
+    if (itemId !== reportId) return null;
+    const related = (Array.isArray(record.related) ? record.related : [])
+      .filter((candidate) => candidate && typeof candidate === "object" && candidate.id && String(candidate.id) !== reportId);
+    return {
+      item: { ...record.item, id: reportId },
+      related,
+    };
+  }
+
+  function renderReportFirstPaint(item, relatedItems = []) {
+    const detail = document.getElementById("detail");
+    if (!detail || !item) return;
+    const availabilityKnown = typeof item.available === "boolean";
+    const available = isPdfAvailable(item);
+    const related = Array.isArray(relatedItems) ? relatedItems : [];
+    const relatedById = new Map(related.map((entry) => [String(entry.id || ""), entry]));
+    const relatedMarkup = related.length
+      ? `
+        <section class="related-section" aria-labelledby="relatedTitle">
+          <div class="related-heading">
+            <h3 id="relatedTitle">Related Reports</h3>
+          </div>
+          <div class="related-list">${related.map(relatedRow).join("")}</div>
+        </section>
+      `
+      : "";
+    detail.innerHTML = `
+      ${detailTitleMarkup(item)}
+      <div class="detail-grid">
+        ${field("Institution", bankLabel(item))}
+        ${field("Industry", inferIndustry(item))}
+        ${field("Date", displayDate(item.date_folder))}
+        ${field("PDF", availabilityKnown ? (available ? formatSize(item.size_bytes) || "Available" : "Text only") : "正在确认")}
+      </div>
+      <p class="subtle" aria-live="polite">下载权限正在后台补充…</p>
+      ${relatedMarkup}
+    `;
+    detail.onclick = (event) => {
+      const row = event.target.closest(".report-link");
+      if (!row) return;
+      const relatedItem = relatedById.get(String(row.dataset.id || ""));
+      if (relatedItem) rememberReportPreview(relatedItem);
+      trackEvent("", "report_open", {
+        ...analyticsReportPayload(relatedItem || { id: row.dataset.id }, "catalog"),
+        placement: "report_related",
+        parent_report_id: String(item.id || ""),
+      });
+    };
+  }
+
   function renderDetail(item, config, catalogItems, searchTextById, options = {}) {
     const detail = document.getElementById("detail");
     const workerUrl = workerBaseUrl(config);
@@ -7415,7 +7730,9 @@
     const archiveNotice = available
       ? ""
       : '<div class="archive-notice">PDF 暂不可下载；符合条件的会员可在下方查看已保存的提取文本。</div>';
-    const related = relatedReports(item, catalogItems, searchTextById);
+    const related = Array.isArray(options.relatedItems)
+      ? options.relatedItems
+      : relatedReports(item, catalogItems, searchTextById);
     const relatedMarkup = related.length
       ? `
         <section class="related-section" aria-labelledby="relatedTitle">
@@ -7458,21 +7775,28 @@
       ${workerUrl ? adminPanelMarkup() : ""}
       ${relatedMarkup}
     `;
-    trackEvent(workerUrl, "page_view", {
-      page: "report",
-      ...analyticsReportPayload(item, "catalog"),
-    });
+    if (options.trackPageView !== false) {
+      trackEvent(workerUrl, "page_view", {
+        page: "report",
+        ...analyticsReportPayload(item, "catalog"),
+      });
+    }
 
-    detail.addEventListener("click", (event) => {
+    detail.onclick = (event) => {
       const row = event.target.closest(".report-link");
       if (!row) return;
       const relatedItem = catalogById.get(String(row.dataset.id || ""));
-      trackEvent(workerUrl, "report_open", analyticsReportPayload(relatedItem || { id: row.dataset.id }, "catalog"));
+      if (relatedItem) rememberReportPreview(relatedItem);
+      trackEvent(workerUrl, "report_open", {
+        ...analyticsReportPayload(relatedItem || { id: row.dataset.id }, "catalog"),
+        placement: "report_related",
+        parent_report_id: String(item.id || ""),
+      });
       if (isNativeNewTabLink(row)) return;
       event.preventDefault();
       event.stopPropagation();
       openReportPage(row.dataset.id);
-    });
+    };
 
     initDetailAdmin(item, workerUrl);
     initTextOnlyTextAccess(item, workerUrl);
@@ -7575,25 +7899,72 @@
   async function initReport() {
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
-    const [catalog, config] = await Promise.all([
-      loadJson("data/catalog.json"),
-      loadJson("data/config.json"),
-    ]);
-    const workerUrl = workerBaseUrl(config);
-    const catalogPdfOverrides = await loadCatalogPdfOverrides(workerUrl);
-    initAccountGate(workerUrl);
-    initAdminGate(workerUrl);
+    const configPromise = loadJson("data/config.json").catch(() => ({}));
     initNewsfeedNav();
-    const items = mergeCatalogPdfOverrides(catalog.items, catalogPdfOverrides);
-    const item = items.find((entry) => entry.id === id);
+    const previewItem = reportPreviewFromParams(params, id) || cachedReportPreview(id);
+    if (previewItem) {
+      document.title = `${titleText(previewItem)} | Portal Suite`;
+      renderReportFirstPaint(previewItem);
+    }
+    trackEvent("", "page_view", {
+      page: "report",
+      ...analyticsReportPayload(previewItem || { id }, "catalog"),
+    });
+    const detailRecord = await loadReportDetailRecord(id);
+    let items;
+    let item;
+    let relatedItems = null;
+    if (detailRecord) {
+      item = detailRecord.item;
+      relatedItems = detailRecord.related;
+      items = [item, ...relatedItems];
+    } else {
+      const catalog = await loadJson("data/catalog.json");
+      items = Array.isArray(catalog.items) ? catalog.items : [];
+      item = items.find((entry) => entry.id === id);
+    }
     if (!item) {
       document.getElementById("detail").innerHTML = '<div class="error-state">Report not found.</div>';
       return;
     }
     const searchTextById = new Map();
+    rememberReportPreview(item);
     document.title = `${titleText(item)} | Portal Suite`;
+    renderReportFirstPaint(item, relatedItems);
+    const config = await configPromise;
+    const workerUrl = workerBaseUrl(config);
+    initAccountGate(workerUrl);
+    initAdminGate(workerUrl);
     renderDetail(item, config, items, searchTextById, {
       password: deliveryPasswordFromLocation(params),
+      relatedItems,
+      trackPageView: false,
+    });
+    loadCatalogPdfOverrides(workerUrl).then((overrides) => {
+      if (!Array.isArray(overrides) || !overrides.length) return;
+      const mergedItems = mergeCatalogPdfOverrides(items, overrides);
+      const mergedById = new Map(mergedItems.map((entry) => [String(entry.id || ""), entry]));
+      const nextItem = mergedById.get(String(item.id || "")) || item;
+      const nextRelated = Array.isArray(relatedItems)
+        ? relatedItems.map((entry) => mergedById.get(String(entry.id || "")) || entry)
+        : null;
+      const itemChanged = isPdfAvailable(nextItem) !== isPdfAvailable(item)
+        || Number(nextItem.size_bytes || 0) !== Number(item.size_bytes || 0);
+      if (itemChanged) {
+        item = nextItem;
+        document.title = `${titleText(item)} | Portal Suite`;
+        renderDetail(item, config, mergedItems, searchTextById, {
+          password: deliveryPasswordFromLocation(params),
+          relatedItems: nextRelated,
+          trackPageView: false,
+        });
+        return;
+      }
+      if (Array.isArray(nextRelated)) {
+        refreshRelatedReports(item, mergedItems, searchTextById, nextRelated);
+      } else {
+        refreshRelatedReports(item, mergedItems, searchTextById);
+      }
     });
     // The text index only improves related-report ranking, so load it after
     // the detail renders instead of blocking the page on a large download.
@@ -7602,10 +7973,12 @@
     // could exhaust memory on mobile browsers.
   }
 
-  function refreshRelatedReports(item, catalogItems, searchTextById) {
+  function refreshRelatedReports(item, catalogItems, searchTextById, relatedItems = null) {
     const detail = document.getElementById("detail");
     if (!detail) return;
-    const related = relatedReports(item, catalogItems, searchTextById);
+    const related = Array.isArray(relatedItems)
+      ? relatedItems
+      : relatedReports(item, catalogItems, searchTextById);
     if (!related.length) return;
     let section = detail.querySelector(".related-section");
     if (!section) {
@@ -7660,6 +8033,27 @@
       filename: params.get("filename") || "",
       required_plan: params.get("required_plan") || "",
     };
+  }
+
+  function renderExternalDetailFirstPaint(item, target) {
+    if (!item || !target) return;
+    const hasTitle = item.title && item.title !== "Report";
+    const title = hasTitle ? item.title : "正在读取报告信息…";
+    const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
+    target.innerHTML = `
+      <div>
+        <h1 class="detail-title">${escapeHtml(title)}</h1>
+        ${zh ? `<p class="detail-title-zh">${escapeHtml(zh)}</p>` : ""}
+        <p class="subtle">下载权限与相关报告将在后台补充。</p>
+      </div>
+      <div class="detail-grid">
+        ${field("Institution", item.institution || "正在读取")}
+        ${field("Date", item.date || "正在读取")}
+        ${field("Pages", item.page_count ? `${item.page_count}页` : "正在读取")}
+        ${field("Source", docSourceLabel(item))}
+      </div>
+    `;
+    if (hasTitle) document.title = `${item.title} | Portal Suite`;
   }
 
   function isAuthorityItem(item) {
@@ -7838,10 +8232,33 @@
       target.innerHTML = '<div class="error-state">Report not found.</div>';
       return;
     }
+    renderExternalDetailFirstPaint(item, target);
+    trackEvent("", "page_view", {
+      page: "doc",
+      ...analyticsReportPayload(item, item.source || EXTERNAL_SOURCE),
+    });
 
+    let recommendationCatalogPromise = null;
+    function recommendationCatalogAfterPaint() {
+      if (recommendationCatalogPromise) return recommendationCatalogPromise;
+      recommendationCatalogPromise = new Promise((resolve) => {
+        const start = () => {
+          loadOptionalJson("data/catalog_recommendations.json", { items: [] })
+            .then((payload) => resolve(Array.isArray(payload.items) ? payload.items : []))
+            .catch(() => resolve([]));
+        };
+        const startAfterPaint = () => window.setTimeout(start, 0);
+        if (typeof window.requestAnimationFrame === "function") {
+          window.requestAnimationFrame(startAfterPaint);
+        } else {
+          startAfterPaint();
+        }
+      });
+      return recommendationCatalogPromise;
+    }
     const [config, catalog] = await Promise.all([
       loadOptionalJson("data/config.json", {}),
-      loadOptionalJson("data/catalog.json", { items: [] }),
+      loadOptionalJson("data/catalog_preview.json", { items: [] }),
     ]);
     const workerUrl = workerBaseUrl(config);
     const catalogItems = Array.isArray(catalog.items) ? catalog.items : [];
@@ -7856,10 +8273,6 @@
     if (shortUrl.length < window.location.href.length) {
       window.history.replaceState({}, "", shortUrl);
     }
-    trackEvent(workerUrl, "page_view", {
-      page: "doc",
-      ...analyticsReportPayload(item, item.source || EXTERNAL_SOURCE),
-    });
 
     const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
     document.title = `${item.title || "Report"} | Portal Suite`;
@@ -7929,7 +8342,13 @@
           action: "contact",
         }));
       }
-      searchIndexPromise.then(() => initExternalRelated(item, workerUrl, catalogItems, searchTextById));
+      searchIndexPromise.then(() => initExternalRelated(
+        item,
+        workerUrl,
+        catalogItems,
+        searchTextById,
+        recommendationCatalogAfterPaint(),
+      ));
       return;
     }
 
@@ -8039,7 +8458,13 @@
       });
       initResilientPasswordInput(input, item.id, passwordFromLink, setStatus);
       initHotReportComments(item, workerUrl);
-      searchIndexPromise.then(() => initExternalRelated(item, workerUrl, catalogItems, searchTextById));
+      searchIndexPromise.then(() => initExternalRelated(
+        item,
+        workerUrl,
+        catalogItems,
+        searchTextById,
+        recommendationCatalogAfterPaint(),
+      ));
       return;
     }
 
@@ -8072,7 +8497,13 @@
       </section>
       ${externalRelatedMarkup()}
     `;
-    searchIndexPromise.then(() => initExternalRelated(item, workerUrl, catalogItems, searchTextById));
+    searchIndexPromise.then(() => initExternalRelated(
+      item,
+      workerUrl,
+      catalogItems,
+      searchTextById,
+      recommendationCatalogAfterPaint(),
+    ));
 
     const form = document.getElementById("externalDetailForm");
     const input = document.getElementById("externalDetailPassword");
@@ -9524,7 +9955,7 @@
       target.innerHTML = '<div class="error-state">Delivery link is incomplete.</div>';
       return;
     }
-    const targetUrl = deliveryPageUrl(id, password);
+    const targetUrl = deliveryPageUrl(id, password, reportPreviewFromParams(params, id));
     target.innerHTML = `
       <div>
         <h1 class="detail-title">Opening report...</h1>

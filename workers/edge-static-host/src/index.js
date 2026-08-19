@@ -4,7 +4,7 @@ const RELEASE_CHECK_PATH = /^\/\.well-known\/edge-release\/([0-9a-f]{32})(?:\/(.
 const CACHE_POLICY = Object.freeze({
   html: Object.freeze({
     browser: "public, max-age=60",
-    edge: "public, max-age=60, stale-while-revalidate=120, stale-if-error=86400",
+    edge: "public, max-age=900, stale-while-revalidate=3600, stale-if-error=86400",
   }),
   runtimeJson: Object.freeze({
     browser: "public, max-age=300",
@@ -26,6 +26,36 @@ const CACHE_POLICY = Object.freeze({
 
 const VERSIONABLE_ASSET = /\.(?:avif|css|gif|ico|jpe?g|js|mjs|png|svg|ttf|wasm|webp|woff2?)$/i;
 const CONTENT_HASH = /^[0-9a-f]{8,64}$/i;
+const CANONICAL_PATHS = Object.freeze({
+  "/index": "/",
+  "/index.html": "/",
+  "/reports": "/reports/",
+  "/reports/index.html": "/reports/",
+  "/blog": "/blog/",
+  "/blog/index.html": "/blog/",
+  "/reports/institutions/bernstein": "/reports/institutions/bernstein/",
+  "/reports/institutions/bernstein/index.html": "/reports/institutions/bernstein/",
+  "/charts.html": "/charts",
+});
+
+function canonicalRedirect(url, canonicalHostValue = "") {
+  const canonicalHost = String(canonicalHostValue || "").trim().toLowerCase();
+  const targetPath = CANONICAL_PATHS[url.pathname] || "";
+  const hostNeedsRedirect = Boolean(canonicalHost && url.hostname.toLowerCase() !== canonicalHost);
+  if (!targetPath && !hostNeedsRedirect) return null;
+  const target = new URL(url);
+  if (canonicalHost) {
+    target.protocol = "https:";
+    target.host = canonicalHost;
+  }
+  if (targetPath) target.pathname = targetPath;
+  const headers = new Headers({
+    location: target.toString(),
+    "cache-control": "public, max-age=3600",
+    "x-origin-class": "edge-static",
+  });
+  return new Response(null, { status: 301, headers });
+}
 
 function safeRelativePath(pathname) {
   let decoded;
@@ -258,6 +288,11 @@ export default {
         status: 405,
         headers: { allow: "GET, HEAD, OPTIONS", "x-origin-class": "edge-static" },
       });
+    }
+
+    if (!RELEASE_CHECK_PATH.test(url.pathname)) {
+      const redirect = canonicalRedirect(url, env.CANONICAL_HOST);
+      if (redirect) return redirect;
     }
 
     const prefix = String(env.STATIC_PREFIX || "");

@@ -215,6 +215,9 @@ const ANALYTICS_EXPORT_MAX_PAGE_SIZE = 50;
 const ANALYTICS_EXPORT_READ_CONCURRENCY = 4;
 const ANALYTICS_DAY_SUMMARY_BATCH_SIZE = 200;
 const ANALYTICS_DAY_SUMMARY_TOP_LIMIT = 20;
+const ANALYTICS_ACQUISITION_SESSION_LIMIT = 50_000;
+const ANALYTICS_ACQUISITION_LANDING_LIMIT = 5_000;
+const ANALYTICS_ACQUISITION_SCHEMA_VERSION = 3;
 const ANALYTICS_DAY_SUMMARY_JOB_PREFIX = "_account/analytics-summary-jobs";
 const ANALYTICS_DAY_SUMMARY_PREFIX = "_account/analytics-day-summaries";
 const ANALYTICS_DAY_SUMMARY_JOB_TTL_MS = 2 * 60 * 60 * 1000;
@@ -6583,6 +6586,7 @@ function analyticsEventFromPayload(request, payload, user, ipHash) {
     type,
     visitor_id: cleanAnalyticsText(payload.visitor_id || data.visitor_id, 96),
     session_id: cleanAnalyticsText(payload.session_id || data.session_id, 96),
+    session_started_at: cleanAnalyticsText(data.session_started_at || payload.session_started_at, 40),
     client_ts: cleanAnalyticsText(payload.client_ts || data.client_ts, 40),
     first_seen_at: cleanAnalyticsText(data.first_seen_at || payload.first_seen_at, 40),
     is_returning: cleanAnalyticsBoolean(data.is_returning ?? payload.is_returning),
@@ -6604,6 +6608,8 @@ function analyticsEventFromPayload(request, payload, user, ipHash) {
     cache_status: cleanAnalyticsText(data.cache_status, 60),
     report_id: cleanAnalyticsText(data.report_id || data.id, 120),
     report_title: cleanAnalyticsText(data.report_title || data.title, 360),
+    parent_report_id: cleanAnalyticsText(data.parent_report_id, 120),
+    placement: cleanAnalyticsText(data.placement, 80),
     institution: cleanAnalyticsText(data.institution, 160),
     target: cleanAnalyticsText(data.target, 240),
     action: cleanAnalyticsText(data.action, 80),
@@ -7068,6 +7074,7 @@ function publicAnalyticsEvent(event) {
     type: event.type || "",
     visitor_id: event.visitor_id || "",
     session_id: event.session_id || "",
+    session_started_at: event.session_started_at || "",
     client_ts: event.client_ts || "",
     first_seen_at: event.first_seen_at || "",
     is_returning: Boolean(event.is_returning),
@@ -7097,6 +7104,8 @@ function publicAnalyticsEvent(event) {
     cache_status: event.cache_status || "",
     report_id: event.report_id || "",
     report_title: event.report_title || "",
+    parent_report_id: event.parent_report_id || "",
+    placement: event.placement || "",
     institution: event.institution || "",
     target: event.target || "",
     action: event.action || "",
@@ -7129,6 +7138,16 @@ function analyticsDaySummarySnapshotKey(date) {
   return `${ANALYTICS_DAY_SUMMARY_PREFIX}/${date}.json`;
 }
 
+async function cleanupAnalyticsDaySummaryJobs(env, owner, date) {
+  if (!env.REPORT_BUCKET || typeof env.REPORT_BUCKET.list !== "function" || typeof env.REPORT_BUCKET.delete !== "function") return;
+  const prefix = `${ANALYTICS_DAY_SUMMARY_JOB_PREFIX}/${encodeURIComponent(normalizeEmail(owner))}/${date}/`;
+  const listed = await env.REPORT_BUCKET.list({ prefix, limit: 1000 });
+  const keys = (Array.isArray(listed && listed.objects) ? listed.objects : [])
+    .map((object) => String(object && object.key || ""))
+    .filter(Boolean);
+  if (keys.length) await env.REPORT_BUCKET.delete(keys);
+}
+
 function analyticsSummaryPath(value) {
   const text = cleanAnalyticsText(value, 240);
   if (!text) return "/";
@@ -7148,14 +7167,94 @@ function analyticsSummaryIncrement(map, key, limit = 5000) {
   map[cleanKey] = Math.max(0, Number(map[cleanKey]) || 0) + 1;
 }
 
-function emptyAnalyticsDayAccumulator(date, owner, root, jobId) {
+function analyticsAcquisitionSessionKey(event) {
+  const session = cleanAnalyticsText(event && event.session_id, 96);
+  if (session) return `session:${session}`;
+  const visitor = analyticsEventVisitorKey(event || {});
+  const landing = analyticsSummaryPath(event && (event.landing_path || event.path));
+  return visitor ? `visitor:${visitor}:${landing}` : "";
+}
+
+function analyticsAcquisitionSource(event) {
+  return cleanAnalyticsText(
+    event && (event.utm_source || event.referrer_host || analyticsReferrerHost(event.referrer)),
+    120,
+  ) || "direct / unknown";
+}
+
+function addAnalyticsAcquisitionLanding(accumulator, event) {
+  if (String(event && event.type || "") !== "page_view") return;
+  if (event.verified_bot || /(?:^|_)bot$/i.test(String(event.bot_hint || ""))) return;
+  const landingPath = analyticsSummaryPath(event && (event.landing_path || event.path));
+  const eventPath = analyticsSummaryPath(event && event.path);
+  if (eventPath !== landingPath) return;
+  const sessionStartedAt = Date.parse(String(event && event.session_started_at || ""));
+  if (
+    Number.isFinite(sessionStartedAt)
+    && analyticsBjtDateKey(sessionStartedAt) !== accumulator.date
+  ) return;
+  const sessionKey = analyticsAcquisitionSessionKey(event);
+  if (!sessionKey || accumulator.acquisition_session_keys[sessionKey]) return;
+  if (accumulator.acquisition_session_count >= ANALYTICS_ACQUISITION_SESSION_LIMIT) {
+    accumulator.acquisition_truncated = true;
+    return;
+  }
+  accumulator.acquisition_session_keys[sessionKey] = true;
+  accumulator.acquisition_session_count += 1;
+  const row = {
+    source: analyticsAcquisitionSource(event),
+    landing_path: landingPath,
+    page: cleanAnalyticsText(event.page, 80),
+    report_id: cleanAnalyticsText(event.report_id, 120),
+    report_title: cleanAnalyticsText(event.report_title, 360),
+    utm_medium: cleanAnalyticsText(event.utm_medium, 120),
+    utm_campaign: cleanAnalyticsText(event.utm_campaign, 180),
+    utm_term: cleanAnalyticsText(event.utm_term, 180),
+    utm_content: cleanAnalyticsText(event.utm_content, 180),
+  };
+  const key = JSON.stringify(row);
+  if (!Object.prototype.hasOwnProperty.call(accumulator.acquisition_landings, key)
+      && accumulator.acquisition_landing_key_count >= ANALYTICS_ACQUISITION_LANDING_LIMIT) {
+    accumulator.acquisition_truncated = true;
+    return;
+  }
+  if (!Object.prototype.hasOwnProperty.call(accumulator.acquisition_landings, key)) {
+    accumulator.acquisition_landing_key_count += 1;
+  }
+  accumulator.acquisition_landings[key] = Math.max(
+    0,
+    Number(accumulator.acquisition_landings[key]) || 0,
+  ) + 1;
+}
+
+function analyticsAcquisitionTop(map, limit = 50) {
+  return Object.entries(map && typeof map === "object" ? map : {})
+    .map(([serialized, count]) => {
+      try {
+        return { ...JSON.parse(serialized), sessions: Math.max(0, Math.floor(Number(count) || 0)) };
+      } catch (_error) {
+        return null;
+      }
+    })
+    .filter(Boolean)
+    .sort((left, right) => (
+      right.sessions - left.sessions
+      || left.source.localeCompare(right.source)
+      || left.landing_path.localeCompare(right.landing_path)
+    ))
+    .slice(0, limit);
+}
+
+function emptyAnalyticsDayAccumulator(date, owner, root, jobId, roots = [root]) {
   const now = new Date().toISOString();
   return {
-    version: 1,
+    version: ANALYTICS_ACQUISITION_SCHEMA_VERSION,
     job_id: jobId,
     owner: normalizeEmail(owner),
     date,
     root,
+    roots,
+    root_index: 0,
     native_cursor: "",
     created_at: now,
     updated_at: now,
@@ -7174,13 +7273,20 @@ function emptyAnalyticsDayAccumulator(date, owner, root, jobId) {
     bot_hints: {},
     utm_sources: {},
     utm_campaigns: {},
+    acquisition_session_keys: {},
+    acquisition_landings: {},
+    acquisition_session_count: 0,
+    acquisition_landing_key_count: 0,
+    acquisition_truncated: false,
+    processed_event_keys: {},
+    processed_object_suffixes: {},
   };
 }
 
 function validateAnalyticsDayAccumulator(value, owner, date, jobId) {
   if (!value || typeof value !== "object" || Array.isArray(value)) throw new Error("Analytics summary job is invalid.");
   if (
-    value.version !== 1
+    value.version !== ANALYTICS_ACQUISITION_SCHEMA_VERSION
     || value.job_id !== jobId
     || normalizeEmail(value.owner) !== normalizeEmail(owner)
     || value.date !== date
@@ -7188,9 +7294,27 @@ function validateAnalyticsDayAccumulator(value, owner, date, jobId) {
     || !value.created_at
     || Date.now() - Date.parse(value.created_at) > ANALYTICS_DAY_SUMMARY_JOB_TTL_MS
   ) throw new Error("Analytics summary job has expired.");
-  for (const field of ["visitor_keys", "session_keys", "event_types", "paths", "referrers", "countries", "devices", "bot_hints", "utm_sources", "utm_campaigns"]) {
+  const roots = Array.isArray(value.roots)
+    ? value.roots.filter((root) => [ANALYTICS_PREFIX, ANALYTICS_BACKUP_PREFIX].includes(root))
+    : [];
+  if (!roots.length || new Set(roots).size !== roots.length) throw new Error("Analytics summary job is invalid.");
+  value.roots = roots;
+  value.root_index = Math.max(0, Math.floor(Number(value.root_index) || 0));
+  if (value.root_index >= roots.length || value.root !== roots[value.root_index]) {
+    throw new Error("Analytics summary job is invalid.");
+  }
+  for (const field of ["visitor_keys", "session_keys", "event_types", "paths", "referrers", "countries", "devices", "bot_hints", "utm_sources", "utm_campaigns", "acquisition_session_keys", "acquisition_landings", "processed_event_keys", "processed_object_suffixes"]) {
     if (!value[field] || typeof value[field] !== "object" || Array.isArray(value[field])) value[field] = {};
   }
+  value.acquisition_session_count = Math.max(
+    0,
+    Number(value.acquisition_session_count) || Object.keys(value.acquisition_session_keys).length,
+  );
+  value.acquisition_landing_key_count = Math.max(
+    0,
+    Number(value.acquisition_landing_key_count) || Object.keys(value.acquisition_landings).length,
+  );
+  value.acquisition_truncated = Boolean(value.acquisition_truncated);
   return value;
 }
 
@@ -7214,6 +7338,7 @@ function addAnalyticsDaySummaryEvent(accumulator, event) {
   analyticsSummaryIncrement(accumulator.bot_hints, botFields.bot_hint || "unknown", 20);
   if (event.utm_source) analyticsSummaryIncrement(accumulator.utm_sources, event.utm_source, 1000);
   if (event.utm_campaign) analyticsSummaryIncrement(accumulator.utm_campaigns, event.utm_campaign, 1000);
+  addAnalyticsAcquisitionLanding(accumulator, event);
 }
 
 function analyticsSummaryTop(map, limit = ANALYTICS_DAY_SUMMARY_TOP_LIMIT) {
@@ -7242,6 +7367,9 @@ function publicAnalyticsDaySummary(accumulator, complete = false) {
     event_types: analyticsSummaryTop(accumulator.event_types),
     utm_sources: analyticsSummaryTop(accumulator.utm_sources),
     utm_campaigns: analyticsSummaryTop(accumulator.utm_campaigns),
+    acquisition_landings: analyticsAcquisitionTop(accumulator.acquisition_landings),
+    acquisition_schema_version: ANALYTICS_ACQUISITION_SCHEMA_VERSION,
+    acquisition_truncated: Boolean(accumulator.acquisition_truncated),
     generated_at: new Date().toISOString(),
   };
 }
@@ -7254,13 +7382,35 @@ async function advanceAnalyticsDaySummary(env, accumulator) {
     cursor: accumulator.native_cursor || undefined,
   });
   if (!listed || !Array.isArray(listed.objects)) throw new Error("Analytics storage returned an invalid listing.");
-  const read = await readAnalyticsExportObjects(env, listed.objects, accumulator.root, accumulator.date);
-  for (const event of read.events) addAnalyticsDaySummaryEvent(accumulator, event);
+  const objectPrefix = `${accumulator.root}/${accumulator.date}/`;
+  const uniqueObjects = listed.objects.filter((object) => {
+    const key = String(object && object.key || "");
+    const suffix = key.startsWith(objectPrefix) ? key.slice(objectPrefix.length) : key;
+    if (!suffix || accumulator.processed_object_suffixes[suffix]) return false;
+    accumulator.processed_object_suffixes[suffix] = true;
+    return true;
+  });
+  const read = await readAnalyticsExportObjects(env, uniqueObjects, accumulator.root, accumulator.date);
+  for (const event of read.events) {
+    const eventKey = cleanAnalyticsText(
+      event && (event.id || `${event.ts || ""}:${event.type || ""}:${event.visitor_id || event.ip_hash || ""}`),
+      240,
+    );
+    if (eventKey && accumulator.processed_event_keys[eventKey]) continue;
+    if (eventKey) accumulator.processed_event_keys[eventKey] = true;
+    addAnalyticsDaySummaryEvent(accumulator, event);
+  }
   accumulator.processed_count += listed.objects.length;
   accumulator.skipped_count += read.skippedCount;
   accumulator.updated_at = new Date().toISOString();
   accumulator.native_cursor = listed.truncated ? String(listed.cursor || "") : "";
   if (listed.truncated && !accumulator.native_cursor) throw new Error("Analytics summary pagination did not return a cursor.");
+  if (!listed.truncated && accumulator.root_index + 1 < accumulator.roots.length) {
+    accumulator.root_index += 1;
+    accumulator.root = accumulator.roots[accumulator.root_index];
+    accumulator.native_cursor = "";
+    return { accumulator, complete: false };
+  }
   return { accumulator, complete: !listed.truncated };
 }
 
@@ -7285,7 +7435,13 @@ async function handleAccountAdminAnalyticsDaySummary(request, env) {
   try {
     if (!requestedJobId && !forceRefresh) {
       const cached = await safeR2GetJson(env, analyticsDaySummarySnapshotKey(date));
-      if (cached && cached.date === date && cached.complete === true) {
+      if (
+        cached
+        && cached.date === date
+        && cached.complete === true
+        && cached.acquisition_schema_version === ANALYTICS_ACQUISITION_SCHEMA_VERSION
+        && Array.isArray(cached.acquisition_landings)
+      ) {
         return jsonResponse(request, env, 200, { ...cached, cached: true, job_id: "", has_more: false });
       }
     }
@@ -7300,19 +7456,24 @@ async function handleAccountAdminAnalyticsDaySummary(request, env) {
         jobId,
       );
     } else {
+      await cleanupAnalyticsDaySummaryJobs(env, owner, date).catch(() => null);
       const dates = await listAnalyticsEventDateRows(env);
       const row = dates.find((entry) => entry.date === date);
       if (!row) return jsonResponse(request, env, 404, { detail: "该日期没有已归档的埋点事件。" });
-      const roots = new Set(row.prefix_roots || []);
-      const root = roots.has(ANALYTICS_PREFIX) ? ANALYTICS_PREFIX : ANALYTICS_BACKUP_PREFIX;
+      const availableRoots = new Set(row.prefix_roots || []);
+      const roots = [ANALYTICS_PREFIX, ANALYTICS_BACKUP_PREFIX].filter((root) => availableRoots.has(root));
+      const root = roots[0] || ANALYTICS_PREFIX;
       jobId = randomHex(12);
-      accumulator = emptyAnalyticsDayAccumulator(date, owner, root, jobId);
+      accumulator = emptyAnalyticsDayAccumulator(date, owner, root, jobId, roots);
     }
 
     const advanced = await advanceAnalyticsDaySummary(env, accumulator);
     const summary = publicAnalyticsDaySummary(advanced.accumulator, advanced.complete);
     if (advanced.complete) {
       await r2PutJson(env, analyticsDaySummarySnapshotKey(date), summary);
+      if (requestedJobId && typeof env.REPORT_BUCKET.delete === "function") {
+        await env.REPORT_BUCKET.delete(analyticsDaySummaryJobKey(owner, date, requestedJobId)).catch(() => null);
+      }
     } else {
       await r2PutJson(env, analyticsDaySummaryJobKey(owner, date, jobId), advanced.accumulator);
     }
@@ -9154,6 +9315,9 @@ async function buildAnalyticsDashboard(env) {
   }
   return {
     range_days: ANALYTICS_DASHBOARD_DAYS,
+    sample_event_limit: ANALYTICS_DASHBOARD_LIMIT,
+    sample_event_count: events.length,
+    sample_limited: events.length >= ANALYTICS_DASHBOARD_LIMIT,
     event_count: events.length,
     visitor_count: visitorSet.size,
     signed_in_user_count: userSet.size,
@@ -16103,7 +16267,7 @@ async function handleHiborSearch(request, env) {
       total: 0,
       source: HIBOR_SOURCE,
     };
-  }, null, { skipFreshCache: true });
+  });
 }
 
 // ---------------------------------------------------------------------------
@@ -16324,7 +16488,7 @@ async function handleThinkTankSearch(request, env, ctx = null) {
     page,
     total: 0,
     source: THINKTANK_SOURCE,
-  }, () => thinkTankSearchPayload(env, query, page, ctx), null, { skipFreshCache: true });
+  }, () => thinkTankSearchPayload(env, query, page, ctx));
 }
 
 async function findThinkTankRow(env, id) {
@@ -16716,6 +16880,11 @@ async function handleAuthorityPdf(request, env) {
 }
 
 export default {
+  __analyticsTest: Object.freeze({
+    addAnalyticsDaySummaryEvent,
+    emptyAnalyticsDayAccumulator,
+    publicAnalyticsDaySummary,
+  }),
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const pathname = url.pathname.startsWith("/api/")

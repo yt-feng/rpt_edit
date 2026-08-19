@@ -18,7 +18,7 @@ from urllib.request import Request, urlopen
 
 DEFAULT_BASE_URL = "https://portal.example.invalid"
 DEFAULT_ENDPOINT = "https://api.indexnow.org/indexnow"
-DEFAULT_KEY = "portal-index-key"
+DEFAULT_KEY = "b7c3e9a41d8f52e604a71bc93f2d6e80"
 MAX_URLS_PER_REQUEST = 10_000
 FINGERPRINT_KEYS = (
     "title",
@@ -44,6 +44,13 @@ def load_catalog(path: Path | None) -> dict[str, Any]:
         return json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
         return {"items": []}
+
+
+def merge_catalogs(paths: list[Path]) -> dict[str, Any]:
+    merged: dict[str, dict[str, Any]] = {}
+    for path in paths:
+        merged.update(item_map(load_catalog(path)))
+    return {"items": list(merged.values())}
 
 
 def item_map(catalog: dict[str, Any]) -> dict[str, dict[str, Any]]:
@@ -86,6 +93,30 @@ def report_url(base_url: str, report_id: str) -> str:
     return f"{base_url.rstrip('/')}/reports/{quote(report_id, safe='')}.html"
 
 
+def discover_public_site_urls(site_dir: Path | None, base_url: str) -> list[str]:
+    if not site_dir or not site_dir.is_dir():
+        return []
+    base = base_url.rstrip("/")
+    urls: list[str] = []
+    fixed = {
+        "blog/index.html": f"{base}/blog/",
+        "reports/topics.html": f"{base}/reports/topics.html",
+        "about.html": f"{base}/about.html",
+        "charts.html": f"{base}/charts",
+    }
+    for relative, url in fixed.items():
+        if site_dir.joinpath(*relative.split("/")).is_file():
+            urls.append(url)
+    blog_dir = site_dir / "blog"
+    if blog_dir.is_dir():
+        for path in sorted(blog_dir.glob("*.html")):
+            relative = path.relative_to(site_dir).as_posix()
+            if relative == "blog/index.html":
+                continue
+            urls.append(f"{base}/{quote(relative, safe='/.-_~')}")
+    return list(dict.fromkeys(urls))
+
+
 def changed_urls(
     catalog: dict[str, Any],
     previous_catalog: dict[str, Any],
@@ -112,7 +143,14 @@ def changed_urls(
         }
 
     base = base_url.rstrip("/")
-    urls = [f"{base}/", f"{base}/reports/", f"{base}/feed.xml"]
+    urls = [
+        f"{base}/",
+        f"{base}/reports/",
+        f"{base}/reports/topics.html",
+        f"{base}/reports/institutions/bernstein/",
+        f"{base}/blog/",
+        f"{base}/feed.xml",
+    ]
     urls.extend(report_url(base, report_id) for report_id in sorted(changed_ids))
     return list(dict.fromkeys(urls))
 
@@ -176,7 +214,8 @@ def submit_chunk(
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--catalog", default="portal_suite/data/catalog.json")
-    parser.add_argument("--previous-catalog", default="")
+    parser.add_argument("--previous-catalog", action="append", default=[])
+    parser.add_argument("--site-dir", default="")
     parser.add_argument("--base-url", default=DEFAULT_BASE_URL)
     parser.add_argument("--endpoint", default=DEFAULT_ENDPOINT)
     parser.add_argument("--key", default=os.environ.get("INDEXNOW_KEY") or DEFAULT_KEY)
@@ -185,12 +224,17 @@ def main() -> int:
     parser.add_argument("--skip-key-check", action="store_true")
     args = parser.parse_args()
 
-    if not re.fullmatch(r"[A-Za-z0-9-]{8,128}", args.key):
-        raise SystemExit("INDEXNOW_KEY must be 8-128 ASCII letters, digits, or hyphens")
+    if not re.fullmatch(r"[A-Fa-f0-9]{8,128}", args.key):
+        raise SystemExit("INDEXNOW_KEY must be 8-128 hexadecimal characters")
 
     catalog = load_catalog(Path(args.catalog))
-    previous = load_catalog(Path(args.previous_catalog)) if args.previous_catalog else {"items": []}
+    previous_paths = [Path(value) for value in args.previous_catalog if value]
+    previous = merge_catalogs(previous_paths) if previous_paths else {"items": []}
     urls = changed_urls(catalog, previous, args.base_url, args.lookback_days)
+    urls = list(dict.fromkeys([
+        *urls,
+        *discover_public_site_urls(Path(args.site_dir) if args.site_dir else None, args.base_url),
+    ]))
     key_location = f"{args.base_url.rstrip('/')}/{args.key}.txt"
     summary = {
         "url_count": len(urls),

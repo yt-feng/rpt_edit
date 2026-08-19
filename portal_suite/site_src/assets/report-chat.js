@@ -23,8 +23,24 @@
     }
   }
 
-  function reportUrl(id) {
-    return `/report.html?id=${encodeURIComponent(String(id || ""))}`;
+  function reportUrl(id, item = {}) {
+    const params = [["id", String(id || "")]];
+    const preview = {
+      title: item.title,
+      title_zh: item.title_zh,
+      bank_name: item.bank_name || item.institution,
+      industry: item.industry,
+      date_folder: item.date_folder || item.date,
+      page_count: item.page_count,
+      size_bytes: item.size_bytes,
+      available: item.available,
+    };
+    for (const [key, value] of Object.entries(preview)) {
+      if (value !== undefined && value !== null && value !== "") params.push([key, String(value)]);
+    }
+    return `/report.html?${params.map(([key, value]) => (
+      `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
+    )).join("&")}`;
   }
 
   function recommendationHtml(item) {
@@ -43,7 +59,7 @@
     }
     const meta = [item.institution, item.industry, item.date_folder, item.page_count ? `${item.page_count}页` : ""]
       .map((value) => String(value || "").trim()).filter(Boolean).join(" · ");
-    return `<a class="report-chat-card" href="${escapeHtml(reportUrl(item.id))}" target="_blank" rel="noopener noreferrer">
+    return `<a class="report-chat-card" href="${escapeHtml(reportUrl(item.id, item))}" target="_blank" rel="noopener noreferrer">
       <span class="report-chat-score" aria-label="资料吸引力 ${escapeHtml(item.attraction_score)} 星">${stars}</span>
       <strong>${escapeHtml(item.title || "报告资料")}</strong>
       <span>${escapeHtml(meta)}</span>
