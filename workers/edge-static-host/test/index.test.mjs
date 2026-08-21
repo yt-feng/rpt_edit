@@ -346,7 +346,29 @@ test("neutral deployment enables Workers caching and verifies preview/full catal
   const discoveryStep = workflow.match(
     /- name: Verify discovery and report-detail assets are live[\s\S]*?- name: Submit changed public URLs to IndexNow/,
   )?.[0] || "";
-  assert.match(discoveryStep, /curl --fail --location --silent --show-error --max-time 30/);
+  assert.match(discoveryStep, /curl --fail --location --silent --show-error[\s\\]+--connect-timeout 10 --max-time 30/);
+  assert.match(discoveryStep, /fetch_asset\(\)/);
+  assert.match(discoveryStep, /for attempt in \$\(seq 1 18\)/);
+  assert.match(discoveryStep, /asset_check=%s http_status=%s/);
+  assert.match(discoveryStep, /Waiting for discovery assets to become active/);
+  assert.match(discoveryStep, /Discovery assets did not become active in time/);
   assert.match(discoveryStep, /live-report-detail-release\.json/);
+  assert.doesNotMatch(discoveryStep, /continue-on-error/);
   assert.doesNotMatch(discoveryStep, /urlopen/);
+
+  const uploadStep = workflow.match(
+    /- name: Upload immutable release to private object storage[\s\S]*?- name: Prepare neutral edge runtime/,
+  )?.[0] || "";
+  assert.match(uploadStep, /id: static_upload/);
+  assert.match(uploadStep, /required_release_paths = \(/);
+  assert.match(uploadStep, /client\.head_object\(Bucket=bucket, Key=prefix \+ relative\)/);
+  assert.match(uploadStep, /verified_release_objects=/);
+
+  const pruneStep = workflow.match(
+    /- name: Prune obsolete static releases[\s\S]*?- name: Restore previous origin route/,
+  )?.[0] || "";
+  assert.match(pruneStep, /always\(\)/);
+  assert.match(pruneStep, /steps\.static_upload\.outcome == 'success'/);
+  assert.match(pruneStep, /steps\.edge_deploy\.outcome == 'success'/);
+  assert.match(pruneStep, /continue-on-error: true/);
 });
