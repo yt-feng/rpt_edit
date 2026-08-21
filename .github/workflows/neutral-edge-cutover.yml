@@ -362,6 +362,7 @@ jobs:
           PY
 
       - name: Upload immutable release to private object storage
+        id: static_upload
         if: github.event_name == 'schedule' || inputs.operation == 'migrate'
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
@@ -373,8 +374,10 @@ jobs:
           python3 - <<'PY'
           from __future__ import annotations
 
+          import json
           import mimetypes
           import os
+          import re
           import sys
           from concurrent.futures import ThreadPoolExecutor, as_completed
           from pathlib import Path
@@ -441,6 +444,28 @@ jobs:
               if len(uploaded) != len(files):
                   raise RuntimeError
 
+              catalog = json.loads((root / "data" / "catalog.json").read_text(encoding="utf-8"))
+              report_id = next(
+                  (str(item.get("id") or "") for item in catalog.get("items", []) if item.get("id")),
+                  "",
+              )
+              if not report_id:
+                  raise RuntimeError
+              detail_prefix = re.sub(r"[^a-z0-9]", "_", report_id.lower())[:2].ljust(2, "_")
+              required_release_paths = (
+                  "reports/institutions/bernstein/index.html",
+                  "b7c3e9a41d8f52e604a71bc93f2d6e80.txt",
+                  f"data/report_details/{detail_prefix}.json",
+                  "data/catalog_recommendations.json",
+              )
+              for relative in required_release_paths:
+                  path = root / relative
+                  if not path.is_file() or path.is_symlink() or path.stat().st_size <= 0:
+                      raise RuntimeError
+                  metadata = client.head_object(Bucket=bucket, Key=prefix + relative)
+                  if int(metadata.get("ContentLength", -1)) != path.stat().st_size:
+                      raise RuntimeError
+
               runtime_data = (
                   root / "data" / "catalog.json",
                   root / "data" / "search_index.json",
@@ -463,7 +488,8 @@ jobs:
                       raise RuntimeError
               print(
                   f"uploaded_files={len(uploaded)} uploaded_bytes={total_bytes} "
-                  f"runtime_data_files={len(runtime_data)}"
+                  f"runtime_data_files={len(runtime_data)} "
+                  f"verified_release_objects={len(required_release_paths)}"
               )
 
           try:
@@ -661,25 +687,59 @@ jobs:
           print(re.sub(r"[^a-z0-9]", "_", os.environ["REPORT_ID"].lower())[:2].ljust(2, "_"))
           PY
           )"
-          curl --fail --location --silent --show-error --max-time 30 \
-            "$release_check/reports/institutions/bernstein/index.html" \
-            --output "$RUNNER_TEMP/live-bernstein-release.html"
-          curl --fail --location --silent --show-error --max-time 30 \
-            "$release_check/b7c3e9a41d8f52e604a71bc93f2d6e80.txt" \
-            --output "$RUNNER_TEMP/live-indexnow-key-release.txt"
-          curl --fail --location --silent --show-error --max-time 30 \
-            "$release_check/data/report_details/$prefix.json" \
-            --output "$RUNNER_TEMP/live-report-detail-release.json"
-          curl --fail --location --silent --show-error --max-time 30 \
-            "$release_check/data/catalog_recommendations.json" \
-            --output "$RUNNER_TEMP/live-recommendations-release.json"
-          curl --fail --location --silent --show-error --max-time 30 \
-            "$PORTAL_SITE_URL/reports/institutions/bernstein/index.html" \
-            --output "$RUNNER_TEMP/live-bernstein-public.html"
-          curl --fail --location --silent --show-error --max-time 30 \
-            "$PORTAL_SITE_URL/b7c3e9a41d8f52e604a71bc93f2d6e80.txt" \
-            --output "$RUNNER_TEMP/live-indexnow-key-public.txt"
-          REPORT_ID="$report_id" python3 - <<'PY'
+          fetch_asset() {
+            local label="$1"
+            local url="$2"
+            local output="$3"
+            local http_status="000"
+            local curl_exit=0
+            http_status="$(curl --fail --location --silent --show-error \
+              --connect-timeout 10 --max-time 30 \
+              --write-out '%{http_code}' \
+              --output "$output" \
+              "$url")" || curl_exit=$?
+            if [ "$curl_exit" -ne 0 ] || ! [[ "$http_status" =~ ^2[0-9][0-9]$ ]]; then
+              rm -f "$output"
+              printf 'asset_check=%s http_status=%s curl_exit=%s\n' \
+                "$label" "${http_status:-000}" "$curl_exit" >&2
+              return 1
+            fi
+            printf 'asset_check=%s http_status=%s\n' "$label" "$http_status"
+          }
+
+          for attempt in $(seq 1 18); do
+            rm -f \
+              "$RUNNER_TEMP/live-bernstein-release.html" \
+              "$RUNNER_TEMP/live-indexnow-key-release.txt" \
+              "$RUNNER_TEMP/live-report-detail-release.json" \
+              "$RUNNER_TEMP/live-recommendations-release.json" \
+              "$RUNNER_TEMP/live-bernstein-public.html" \
+              "$RUNNER_TEMP/live-indexnow-key-public.txt"
+            if fetch_asset \
+              "bernstein-release" \
+              "$release_check/reports/institutions/bernstein/index.html" \
+              "$RUNNER_TEMP/live-bernstein-release.html" \
+              && fetch_asset \
+                "indexnow-key-release" \
+                "$release_check/b7c3e9a41d8f52e604a71bc93f2d6e80.txt" \
+                "$RUNNER_TEMP/live-indexnow-key-release.txt" \
+              && fetch_asset \
+                "report-detail-release" \
+                "$release_check/data/report_details/$prefix.json" \
+                "$RUNNER_TEMP/live-report-detail-release.json" \
+              && fetch_asset \
+                "recommendations-release" \
+                "$release_check/data/catalog_recommendations.json" \
+                "$RUNNER_TEMP/live-recommendations-release.json" \
+              && fetch_asset \
+                "bernstein-public" \
+                "$PORTAL_SITE_URL/reports/institutions/bernstein/index.html" \
+                "$RUNNER_TEMP/live-bernstein-public.html" \
+              && fetch_asset \
+                "indexnow-key-public" \
+                "$PORTAL_SITE_URL/b7c3e9a41d8f52e604a71bc93f2d6e80.txt" \
+                "$RUNNER_TEMP/live-indexnow-key-public.txt" \
+              && REPORT_ID="$report_id" python3 - <<'PY'
           import json
           import os
           from pathlib import Path
@@ -707,6 +767,16 @@ jobs:
               raise SystemExit("Live recommendation catalog does not match the active catalog")
           print("live_discovery_assets=verified live_report_detail_shard=verified live_recommendation_catalog=verified")
           PY
+            then
+              exit 0
+            fi
+            if [ "$attempt" -lt 18 ]; then
+              echo "Waiting for discovery assets to become active ($attempt/18)"
+              sleep 5
+            fi
+          done
+          echo "Discovery assets did not become active in time." >&2
+          exit 1
 
       - name: Submit changed public URLs to IndexNow
         if: github.event_name == 'schedule' || inputs.operation == 'migrate'
@@ -750,7 +820,11 @@ jobs:
             true
 
       - name: Prune obsolete static releases
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
+        if: >-
+          always() &&
+          (github.event_name == 'schedule' || inputs.operation == 'migrate') &&
+          steps.static_upload.outcome == 'success' &&
+          steps.edge_deploy.outcome == 'success'
         continue-on-error: true
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
