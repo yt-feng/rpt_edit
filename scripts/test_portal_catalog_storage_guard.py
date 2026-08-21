@@ -20,8 +20,12 @@ except ModuleNotFoundError:  # pragma: no cover - depends on local environment
 # heavy sibling modules so the regression test stays self-contained.
 build_catalog_stub = types.ModuleType("build_bank_report_catalog")
 build_catalog_stub.DATE_FOLDER_RE = re.compile(r"^\d{6,8}$")
+build_catalog_stub.DROPBOX_REQUEST_MAX_ATTEMPTS = 5
+build_catalog_stub.TRANSIENT_DROPBOX_ERRORS = (ConnectionError, TimeoutError)
 build_catalog_stub.detect_bank = lambda value: ("", "")
 build_catalog_stub.dropbox_access_token = lambda: ""
+build_catalog_stub.dropbox_post_with_retry = lambda *args, **kwargs: None
+build_catalog_stub.dropbox_retry_delay = lambda attempt: 0.0
 build_catalog_stub.latest_date_folders = lambda entries, days: []
 build_catalog_stub.list_folder = lambda token, path, recursive=False: []
 build_catalog_stub.sanitize_report_name = lambda value: value

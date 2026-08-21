@@ -106,6 +106,10 @@ jobs:
           python3 -m pip install --disable-pip-version-check
           "boto3>=1.34,<2" "pypdf>=4,<6" "requests>=2.31,<3" "Pillow>=10,<12"
 
+      - name: Test Dropbox API retry handling
+        if: github.event_name == 'schedule' || inputs.operation == 'migrate' || inputs.operation == 'inspect-source'
+        run: python3 scripts/test_build_bank_report_catalog.py
+
       - name: Test chart search indexing
         if: github.event_name == 'schedule' || inputs.operation == 'migrate'
         run: python3 scripts/test_chart_search_index.py

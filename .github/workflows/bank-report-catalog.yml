@@ -48,6 +48,9 @@ jobs:
       - name: Install Python dependencies
         run: pip install requests
 
+      - name: Test Dropbox API retry handling
+        run: python scripts/test_build_bank_report_catalog.py
+
       - name: Build per-bank report catalog TXT files
         id: build_catalog
         env:

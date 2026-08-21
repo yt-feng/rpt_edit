@@ -16,6 +16,7 @@ import os
 import re
 import sys
 import tempfile
+import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, NamedTuple
@@ -28,8 +29,12 @@ except Exception:  # pragma: no cover - optional dependency in local shells
 
 from build_bank_report_catalog import (
     DATE_FOLDER_RE,
+    DROPBOX_REQUEST_MAX_ATTEMPTS,
+    TRANSIENT_DROPBOX_ERRORS,
     detect_bank,
     dropbox_access_token,
+    dropbox_post_with_retry,
+    dropbox_retry_delay,
     latest_date_folders,
     list_folder,
     sanitize_report_name,
@@ -190,21 +195,46 @@ def catalog_r2_delete_key(item: dict[str, Any], prefix: str) -> str:
 
 def download_dropbox_file(token: str, dropbox_path: str, local_path: Path) -> None:
     local_path.parent.mkdir(parents=True, exist_ok=True)
-    response = requests.post(
-        f"{DROPBOX_CONTENT}/files/download",
-        headers={
-            "Authorization": f"Bearer {token}",
-            "Dropbox-API-Arg": json.dumps({"path": dropbox_path}),
-        },
-        timeout=300,
-        stream=True,
-    )
-    if response.status_code >= 400:
-        raise RuntimeError(f"Dropbox download failed for {dropbox_path}: HTTP {response.status_code}, {response.text[:500]}")
-    with local_path.open("wb") as f:
-        for chunk in response.iter_content(chunk_size=1024 * 1024):
-            if chunk:
-                f.write(chunk)
+    partial_path = local_path.with_name(f".{local_path.name}.part")
+    for attempt in range(1, DROPBOX_REQUEST_MAX_ATTEMPTS + 1):
+        response = dropbox_post_with_retry(
+            "Dropbox content download",
+            f"{DROPBOX_CONTENT}/files/download",
+            headers={
+                "Authorization": f"Bearer {token}",
+                "Dropbox-API-Arg": json.dumps({"path": dropbox_path}),
+            },
+            timeout=300,
+            stream=True,
+        )
+        try:
+            with partial_path.open("wb") as f:
+                for chunk in response.iter_content(chunk_size=1024 * 1024):
+                    if chunk:
+                        f.write(chunk)
+            partial_path.replace(local_path)
+            return
+        except TRANSIENT_DROPBOX_ERRORS as exc:
+            partial_path.unlink(missing_ok=True)
+            request_id = str(response.headers.get("X-Dropbox-Request-Id") or "missing")
+            if attempt >= DROPBOX_REQUEST_MAX_ATTEMPTS:
+                raise RuntimeError(
+                    "Dropbox content stream failed after "
+                    f"{attempt} attempts: request_id={request_id}, "
+                    f"{type(exc).__name__}: {exc}"
+                ) from exc
+            delay = dropbox_retry_delay(attempt)
+            log(
+                "Dropbox content stream transient "
+                f"{type(exc).__name__} request_id={request_id} on attempt "
+                f"{attempt}/{DROPBOX_REQUEST_MAX_ATTEMPTS}; retrying in {delay:g}s"
+            )
+            time.sleep(delay)
+        except Exception:
+            partial_path.unlink(missing_ok=True)
+            raise
+        finally:
+            response.close()
 
 
 def build_r2_client() -> Any:
