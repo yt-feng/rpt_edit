@@ -38,6 +38,7 @@ from wechat_title_optimizer import (
     title_quality_issues,
 )
 from sensitive_content_guard import (
+    hard_blocked_wechat_title_reason,
     neutralize_wechat_title,
     sanitize_wechat_stock_language,
 )
@@ -2286,6 +2287,13 @@ def translated_article_title_metadata(
         fallback_title = str(status.get("title") or fallback_title)
     institution_name = infer_institution_name(report_dir.name, status, markdown[:1200])
     source_report_name = source_report_name_from_translated_dir(report_dir, status)
+    original_title = source_report_name
+    if isinstance(status, dict):
+        for key in ("source_title", "source_report_original_name", "original_report_name", "source_pdf"):
+            candidate = clean_source_report_name(status.get(key))
+            if candidate:
+                original_title = candidate
+                break
     raw_title = title_from_markdown(markdown, fallback_title)
     title = sharpen_wechat_title(
         ensure_title_has_institution(raw_title, institution_name),
@@ -2375,8 +2383,37 @@ def translated_article_title_metadata(
         "header_title": header_title,
         "institution_name": institution_name,
         "source_report_name": source_report_name,
+        "original_title": original_title,
         "title_decision": title_decision,
     }
+
+
+def hard_blocked_portal_title_record(metadata: dict[str, Any]) -> dict[str, Any] | None:
+    """Return an auditable skip record for any original or final portal title."""
+    seen: set[str] = set()
+    for field in (
+        "raw_title",
+        "original_title",
+        "source_report_name",
+        "wechat_title",
+        "header_title",
+    ):
+        candidate = normalize_space(str(metadata.get(field) or ""))
+        if not candidate or candidate in seen:
+            continue
+        seen.add(candidate)
+        reason = hard_blocked_wechat_title_reason(candidate)
+        if not reason:
+            continue
+        record = dict(metadata)
+        record.update({
+            "skip_reason": reason,
+            "hard_block_reason": reason,
+            "matched_title": candidate,
+            "matched_title_field": field,
+        })
+        return record
+    return None
 
 
 def build_article(
@@ -2580,6 +2617,9 @@ def write_wechat_title_log(
             "final_wechat_title": item.get("wechat_title") or item.get("title", ""),
             "uploaded": uploaded,
             "skip_reason": item.get("skip_reason", ""),
+            "hard_block_reason": item.get("hard_block_reason", ""),
+            "matched_title": item.get("matched_title", ""),
+            "matched_title_field": item.get("matched_title_field", ""),
             "report_dir": item.get("report_dir", ""),
             "generation_decision": item.get("title_decision", {}),
         })
@@ -2595,6 +2635,7 @@ def write_wechat_title_log(
         "generated_at_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         "article_count": len(entries),
         "uploaded_count": sum(1 for entry in entries if entry["uploaded"]),
+        "skipped_count": sum(1 for entry in entries if not entry["uploaded"]),
         "articles": entries,
     }
     path = output_dir / "wechat_title_log.json"
@@ -2804,41 +2845,57 @@ def main() -> int:
         raise RuntimeError(f"No translated reports selected from {date_dir}")
 
     input_selected_count = len(selected)
+    skipped_title_policy: list[dict[str, Any]] = []
+    allowed_selected: list[Path] = []
     for report_dir in selected:
         metadata = translated_article_title_metadata(report_dir)
+        blocked_record = hard_blocked_portal_title_record(metadata)
+        if blocked_record:
+            skipped_title_policy.append(blocked_record)
+            log(
+                "Skipped WeChat article before image/draft upload: "
+                f"{blocked_record['matched_title']} "
+                f"({blocked_record['skip_reason']}, field={blocked_record['matched_title_field']})"
+            )
+            continue
+        allowed_selected.append(report_dir)
         neutralization_changes = (metadata.get("title_decision") or {}).get("neutralization_changes") or []
         if neutralization_changes:
             log(
                 "Kept WeChat article after deterministic title neutralization: "
                 f"{metadata['wechat_title']} ({', '.join(neutralization_changes)})"
             )
+    selected = allowed_selected
 
     log(
         f"Selected {len(selected)} translated reports from {date_dir} "
         f"(institution_filtered={institution_filtered_count}; "
-        "title issues are rewritten without reducing article count)"
+        f"hard_blocked={len(skipped_title_policy)}; "
+        "other title issues are rewritten without reducing article count)"
     )
 
     session: requests.Session | None = None
     access_token: str | None = None
-    if not args.dry_run:
+    if selected and not args.dry_run:
         session = requests.Session()
         access_token = get_stable_access_token(session, args.wechat_appid, args.wechat_secret, args.timeout)
         log("Fetched WeChat access token")
 
     trailing_image_url = ""
-    trailing_image_path = resolve_repo_asset_path(args.trailing_image)
-    if args.trailing_image and not trailing_image_path:
-        raise RuntimeError(f"Trailing image not found: {args.trailing_image}")
-    if trailing_image_path:
-        if args.dry_run:
-            trailing_image_url = fake_static_image_url(str(trailing_image_path))
-        else:
-            if session is None or access_token is None:
-                raise RuntimeError("session and access_token are required outside dry-run")
-            trailing_image_url = upload_article_image(session, access_token, trailing_image_path, args.timeout)
-            log(f"Uploaded trailing image: {trailing_image_path}")
-            pacing_sleep("After uploading trailing image", args.image_upload_delay_seconds, args.dry_run)
+    trailing_image_path: Path | None = None
+    if selected:
+        trailing_image_path = resolve_repo_asset_path(args.trailing_image)
+        if args.trailing_image and not trailing_image_path:
+            raise RuntimeError(f"Trailing image not found: {args.trailing_image}")
+        if trailing_image_path:
+            if args.dry_run:
+                trailing_image_url = fake_static_image_url(str(trailing_image_path))
+            else:
+                if session is None or access_token is None:
+                    raise RuntimeError("session and access_token are required outside dry-run")
+                trailing_image_url = upload_article_image(session, access_token, trailing_image_path, args.timeout)
+                log(f"Uploaded trailing image: {trailing_image_path}")
+                pacing_sleep("After uploading trailing image", args.image_upload_delay_seconds, args.dry_run)
 
     built_articles = []
     for idx, report_dir in enumerate(selected, 1):
@@ -2982,6 +3039,7 @@ def main() -> int:
         date_dir.name,
         str(root),
         built_articles,
+        skipped_title_policy,
     )
     summary = {
         "date_folder": date_dir.name,
@@ -2992,10 +3050,8 @@ def main() -> int:
         "selected_count": len(selected),
         "include_institutions": sorted(included_institutions),
         "institution_filtered_count": institution_filtered_count,
-        # Kept for consumers of older summaries. Title policy never skips a
-        # current article; every title is rewritten or given a safe fallback.
-        "skipped_title_policy_count": 0,
-        "skipped_title_policy": [],
+        "skipped_title_policy_count": len(skipped_title_policy),
+        "skipped_title_policy": skipped_title_policy,
         "articles_per_draft": args.articles_per_draft,
         "draft_count": len(drafts),
         "max_body_chars": args.max_body_chars,

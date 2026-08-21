@@ -198,6 +198,7 @@ class WeChatArticleQualityTests(unittest.TestCase):
         self.assertIn("我更关注的是", WECHAT_REFERENCE_TONE_ZH)
         self.assertIn("之前评论区有人问", WECHAT_REFERENCE_TONE_ZH)
         self.assertIn("白话因果", WECHAT_EDITORIAL_GUARD_ZH)
+        self.assertIn("“人民币定价”是微信公开标题硬禁词", WECHAT_EDITORIAL_GUARD_ZH)
         self.assertIn("解释事实之间的因果", WECHAT_EDITOR_SYSTEM_PROMPT)
 
     def test_prompt_composer_attaches_tone_before_hard_guard_once(self) -> None:
