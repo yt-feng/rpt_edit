@@ -12,6 +12,7 @@ import json
 import os
 import re
 import sys
+import time
 from collections import defaultdict
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
@@ -21,6 +22,16 @@ import requests
 
 DROPBOX_API = "https://api.dropboxapi.com/2"
 DATE_FOLDER_RE = re.compile(r"^\d{6,8}$")
+DROPBOX_REQUEST_MAX_ATTEMPTS = 5
+DROPBOX_RETRY_BASE_SECONDS = 5.0
+DROPBOX_RETRY_MAX_SECONDS = 40.0
+DROPBOX_RETRY_AFTER_MAX_SECONDS = 300.0
+DROPBOX_RETRYABLE_STATUSES = {408, 425, 429, 500, 502, 503, 504}
+TRANSIENT_DROPBOX_ERRORS = (
+    requests.exceptions.ConnectionError,
+    requests.exceptions.Timeout,
+    requests.exceptions.ChunkedEncodingError,
+)
 
 BANK_PATTERNS: list[tuple[str, str, str]] = [
     ("GS", "高盛", r"\b(?:goldman\s*sachs|gs)\b|高盛"),
@@ -83,31 +94,135 @@ def require_env(name: str) -> str:
     return value
 
 
+def dropbox_error_payload(response: requests.Response) -> dict[str, Any]:
+    try:
+        payload = response.json()
+    except (TypeError, ValueError):
+        return {}
+    if not isinstance(payload, dict):
+        return {}
+    return payload
+
+
+def dropbox_error_tag(response: requests.Response) -> str:
+    payload = dropbox_error_payload(response)
+    error = payload.get("error")
+    if not isinstance(error, dict):
+        return ""
+    return str(error.get(".tag") or "").strip().lower()
+
+
+def dropbox_retry_delay(attempt: int, response: requests.Response | None = None) -> float:
+    delay = min(
+        DROPBOX_RETRY_MAX_SECONDS,
+        DROPBOX_RETRY_BASE_SECONDS * (2 ** max(0, attempt - 1)),
+    )
+    if response is not None:
+        retry_after = str(response.headers.get("Retry-After") or "").strip()
+        try:
+            delay = max(
+                delay,
+                min(DROPBOX_RETRY_AFTER_MAX_SECONDS, max(0.0, float(retry_after))),
+            )
+        except ValueError:
+            pass
+    return delay
+
+
+def dropbox_response_is_retryable(response: requests.Response) -> bool:
+    status = int(response.status_code)
+    if status in DROPBOX_RETRYABLE_STATUSES:
+        return True
+    if status != 403 or dropbox_error_tag(response) != "other":
+        return False
+
+    # Dropbox can report an internal service-to-service Envoy denial as a
+    # typed 403 even though the caller token and path are unchanged. Keep this
+    # narrow so normal permission failures still stop immediately.
+    payload = dropbox_error_payload(response)
+    user_message = payload.get("user_message")
+    message = user_message.get("text") if isinstance(user_message, dict) else ""
+    diagnostic = f"{message}\n{response.text}".lower()
+    return "spiffe://" in diagnostic and "/service/envoy-edge" in diagnostic
+
+
+def dropbox_post_with_retry(label: str, url: str, **kwargs: Any) -> requests.Response:
+    for attempt in range(1, DROPBOX_REQUEST_MAX_ATTEMPTS + 1):
+        try:
+            response = requests.post(url, **kwargs)
+        except TRANSIENT_DROPBOX_ERRORS as exc:
+            if attempt >= DROPBOX_REQUEST_MAX_ATTEMPTS:
+                raise RuntimeError(
+                    f"{label} failed after {attempt} attempts: {type(exc).__name__}: {exc}"
+                ) from exc
+            delay = dropbox_retry_delay(attempt)
+            log(
+                f"{label} transient {type(exc).__name__} on attempt "
+                f"{attempt}/{DROPBOX_REQUEST_MAX_ATTEMPTS}; retrying in {delay:g}s"
+            )
+            time.sleep(delay)
+            continue
+
+        if response.status_code < 400:
+            return response
+
+        request_id = str(response.headers.get("X-Dropbox-Request-Id") or "missing")
+        error_tag = dropbox_error_tag(response) or "unknown"
+        if dropbox_response_is_retryable(response) and attempt < DROPBOX_REQUEST_MAX_ATTEMPTS:
+            delay = dropbox_retry_delay(attempt, response)
+            log(
+                f"{label} transient HTTP {response.status_code} tag={error_tag} "
+                f"request_id={request_id} on attempt {attempt}/{DROPBOX_REQUEST_MAX_ATTEMPTS}; "
+                f"retrying in {delay:g}s"
+            )
+            response.close()
+            time.sleep(delay)
+            continue
+
+        status = response.status_code
+        body = response.text[:800]
+        suffix = f" after {attempt} attempts" if attempt > 1 else ""
+        response.close()
+        raise RuntimeError(
+            f"{label} failed{suffix}: HTTP {status}, "
+            f"request_id={request_id}, {body}"
+        )
+
+    raise AssertionError("Dropbox retry loop exhausted without a result")
+
+
 def dropbox_access_token() -> str:
-    response = requests.post(
+    response = dropbox_post_with_retry(
+        "Dropbox token refresh",
         "https://api.dropboxapi.com/oauth2/token",
         data={"grant_type": "refresh_token", "refresh_token": require_env("DROPBOX_REFRESH_TOKEN")},
         auth=(require_env("DROPBOX_APP_KEY"), require_env("DROPBOX_APP_SECRET")),
         timeout=60,
     )
-    if response.status_code >= 400:
-        raise RuntimeError(f"Dropbox token refresh failed: HTTP {response.status_code}, {response.text[:500]}")
-    token = response.json().get("access_token")
+    try:
+        token = response.json().get("access_token")
+    finally:
+        response.close()
     if not token:
         raise RuntimeError("Dropbox token refresh response did not include access_token")
     return str(token)
 
 
 def api_post(token: str, endpoint: str, payload: dict[str, Any]) -> dict[str, Any]:
-    response = requests.post(
+    response = dropbox_post_with_retry(
+        f"Dropbox API {endpoint}",
         f"{DROPBOX_API}{endpoint}",
         headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
         json=payload,
         timeout=90,
     )
-    if response.status_code >= 400:
-        raise RuntimeError(f"Dropbox API {endpoint} failed: HTTP {response.status_code}, {response.text[:800]}")
-    return response.json()
+    try:
+        data = response.json()
+    finally:
+        response.close()
+    if not isinstance(data, dict):
+        raise RuntimeError(f"Dropbox API {endpoint} returned a non-object response")
+    return data
 
 
 def list_folder(token: str, path: str, recursive: bool = False) -> list[dict[str, Any]]:
