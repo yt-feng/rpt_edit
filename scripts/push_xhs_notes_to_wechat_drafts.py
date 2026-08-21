@@ -78,7 +78,10 @@ from push_portal_translated_to_wechat_drafts import (  # noqa: E402
 )
 
 from institution_names import ensure_title_has_institution, infer_institution_name  # noqa: E402
-from sensitive_content_guard import sanitize_wechat_stock_language  # noqa: E402
+from sensitive_content_guard import (  # noqa: E402
+    hard_blocked_wechat_title_reason,
+    sanitize_wechat_stock_language,
+)
 from wechat_article_quality import sanitize_wechat_article_markdown  # noqa: E402
 from wechat_title_optimizer import ensure_publishable_neutral_title  # noqa: E402
 
@@ -235,6 +238,29 @@ def xhs_article_title_metadata(report_dir: Path) -> dict[str, Any]:
         "title_decision": title_decision,
         "generation_failure_reason": generation_failure_skip_reason(markdown),
     }
+
+
+def hard_blocked_xhs_title_record(metadata: dict[str, Any]) -> dict[str, Any] | None:
+    """Return an auditable skip record for any original or final XHS title."""
+    seen: set[str] = set()
+    for field in ("raw_title", "source_report_name", "wechat_title"):
+        candidate = re.sub(r"\s+", " ", str(metadata.get(field) or "")).strip()
+        if not candidate or candidate in seen:
+            continue
+        seen.add(candidate)
+        reason = hard_blocked_wechat_title_reason(candidate)
+        if not reason:
+            continue
+        record = dict(metadata)
+        record.update({
+            "blocked_title": candidate,
+            "skip_reason": reason,
+            "hard_block_reason": reason,
+            "matched_title": candidate,
+            "matched_title_field": field,
+        })
+        return record
+    return None
 
 
 def markdown_local_image_refs(markdown: str) -> list[str]:
@@ -680,12 +706,23 @@ def main() -> int:
         return 0
 
     input_selected_count = len(selected)
-    skipped_generation_failures: list[dict[str, str]] = []
+    skipped_title_policy: list[dict[str, Any]] = []
+    skipped_generation_failures: list[dict[str, Any]] = []
     allowed_selected: list[Path] = []
     for report_dir in selected:
         metadata = xhs_article_title_metadata(report_dir)
-        # A contentious title is deterministically rewritten and the article is
-        # retained. Only an actually missing/failed article body is skipped.
+        blocked_record = hard_blocked_xhs_title_record(metadata)
+        if blocked_record:
+            skipped_title_policy.append(blocked_record)
+            log(
+                "Skipped WeChat draft article by hard title policy before upload: "
+                f"{blocked_record['matched_title']} "
+                f"({blocked_record['skip_reason']}, field={blocked_record['matched_title_field']})"
+            )
+            continue
+
+        # Other contentious titles are deterministically rewritten and retained.
+        # Only an explicit hard-block match or a missing/failed body is skipped.
         reason = metadata.get("generation_failure_reason")
         if reason:
             record = dict(metadata)
@@ -706,8 +743,17 @@ def main() -> int:
             date_dir.name,
             "xhs_notes/dropbox",
             [],
-            skipped_generation_failures,
+            [*skipped_title_policy, *skipped_generation_failures],
         )
+        if skipped_title_policy and skipped_generation_failures:
+            status = "skipped_title_policy_and_generation_failure"
+            message = f"All selected xhs articles were blocked by title policy or failed generation under {date_dir}"
+        elif skipped_title_policy:
+            status = "skipped_title_policy"
+            message = f"All selected xhs articles were blocked by title policy under {date_dir}"
+        else:
+            status = "skipped_generation_failure"
+            message = f"All selected xhs report article bodies were missing or failed generation under {date_dir}"
         summary = {
             "date_folder": date_dir.name,
             "source": "xhs_notes/dropbox",
@@ -716,25 +762,26 @@ def main() -> int:
             "max_articles": "all" if max_articles is None else max_articles,
             "input_selected_count": input_selected_count,
             "selected_count": 0,
-            "skipped_title_policy_count": 0,
-            "skipped_title_policy": [],
+            "skipped_title_policy_count": len(skipped_title_policy),
+            "skipped_title_policy": skipped_title_policy,
             "skipped_generation_failure_count": len(skipped_generation_failures),
             "skipped_generation_failures": skipped_generation_failures,
             "draft_count": 0,
-            "status": "skipped_generation_failure",
-            "message": f"All selected xhs report article bodies were missing or failed generation under {date_dir}",
+            "status": status,
+            "message": message,
             "title_log": str(title_log_path),
             "drafts": [],
             "articles": [],
         }
         write_json(summary_path, summary)
-        log(f"All selected xhs report article bodies failed generation; wrote skip summary: {summary_path}")
+        log(f"{message}; wrote skip summary: {summary_path}")
         return 0
 
     log(
         f"Selected {len(selected)} xhs WeChat articles from {date_dir} "
-        f"(skipped_generation_failures={len(skipped_generation_failures)}/{input_selected_count}; "
-        "title issues are rewritten without reducing article count)"
+        f"(skipped_title_policy={len(skipped_title_policy)}, "
+        f"skipped_generation_failures={len(skipped_generation_failures)}/{input_selected_count}; "
+        "non-hard-blocked title issues are rewritten without reducing article count)"
     )
 
     session: requests.Session | None = None
@@ -978,7 +1025,7 @@ def main() -> int:
         date_dir.name,
         "xhs_notes/dropbox",
         built_articles,
-        skipped_generation_failures,
+        [*skipped_title_policy, *skipped_generation_failures],
     )
     summary = {
         "date_folder": date_dir.name,
@@ -988,8 +1035,8 @@ def main() -> int:
         "max_articles": "all" if max_articles is None else max_articles,
         "input_selected_count": input_selected_count,
         "selected_count": len(selected),
-        "skipped_title_policy_count": 0,
-        "skipped_title_policy": [],
+        "skipped_title_policy_count": len(skipped_title_policy),
+        "skipped_title_policy": skipped_title_policy,
         "skipped_generation_failure_count": len(skipped_generation_failures),
         "skipped_generation_failures": skipped_generation_failures,
         "articles_per_draft": args.articles_per_draft,

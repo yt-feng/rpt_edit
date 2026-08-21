@@ -10,6 +10,7 @@ from pathlib import Path
 from build_portal_translated_reports import title_is_sensitive
 from sensitive_content_guard import (
     blocked_wechat_title_reason,
+    hard_blocked_wechat_title_reason,
     neutralize_wechat_title,
     wechat_title_neutrality_issues,
 )
@@ -37,6 +38,22 @@ class SensitiveTitleGuardTests(unittest.TestCase):
     def test_keeps_normal_consulting_title(self) -> None:
         title = "波士顿咨询：生成式AI信任缺口如何影响企业采用"
         self.assertIsNone(blocked_wechat_title_reason(title))
+
+    def test_hard_blocks_rmb_pricing_title_term(self) -> None:
+        for title in (
+            "德意志银行：人民币定价框架与相关指标观察",
+            "高盛：人民币 定价机制出现变化",
+        ):
+            with self.subTest(title=title):
+                self.assertEqual(
+                    "forbidden_title_term_rmb_pricing",
+                    hard_blocked_wechat_title_reason(title),
+                )
+
+    def test_hard_title_term_does_not_expand_to_adjacent_currency_topics(self) -> None:
+        self.assertIsNone(
+            hard_blocked_wechat_title_reason("德意志银行：人民币汇率估值的研究观察")
+        )
 
     def test_trade_conflict_title_is_reframed_and_article_is_kept(self) -> None:
         title = "高盛：贸易战与出口管制如何影响供应链"

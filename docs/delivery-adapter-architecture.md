@@ -54,8 +54,12 @@ Controlled self-hosted runners handle adapters that require fixed network identi
 - Generic observation templates are failed by the deterministic quality gate;
   the gate retries the source anchor and article evidence before using a safe
   fallback.
-- Title rewrites must not drop an otherwise valid item.
-- Sensitive wording should trigger rewrite or cooling, not silent deletion.
+- Title rewrites must not drop an otherwise valid item. Explicit hard-block
+  terms are the exception: a matching original title is excluded before any
+  image upload or draft payload is created, and the reason is recorded in the
+  delivery summary.
+- Other sensitive wording should trigger rewrite or cooling, not silent
+  deletion.
 - Generated content should follow the adapter's formatting and review rules.
 - All WeChat generation paths share one reference-tone contract: present a
   source fact, explain its causal mechanism in plain language, then identify

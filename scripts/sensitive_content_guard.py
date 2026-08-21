@@ -243,6 +243,17 @@ WECHAT_BLOCKED_TITLE_RULES: list[tuple[str, re.Pattern[str]]] = [
     ),
 ]
 
+# Unlike the rewrite-oriented rules above, these exact title policies reject
+# the article before any WeChat draft payload or image upload is created.
+# Keep them separate so a prohibited source title cannot be silently rewritten
+# and uploaded anyway.
+WECHAT_HARD_BLOCKED_TITLE_RULES: list[tuple[str, re.Pattern[str]]] = [
+    (
+        "forbidden_title_term_rmb_pricing",
+        re.compile(r"人民币\s*定价"),
+    ),
+]
+
 # Public-account titles may use source-backed facts, numbers and directional
 # verbs.  The guard is intentionally limited to inflammatory, adversarial or
 # advice-like framing.  Treating ordinary research words such as "增长",
@@ -610,6 +621,17 @@ def blocked_wechat_title_reason(title: str) -> str | None:
     if not normalized:
         return None
     for reason, pattern in WECHAT_BLOCKED_TITLE_RULES:
+        if pattern.search(normalized):
+            return reason
+    return None
+
+
+def hard_blocked_wechat_title_reason(title: str) -> str | None:
+    """Return the reason a title must be excluded from WeChat upload."""
+    normalized = re.sub(r"\s+", " ", title or "").strip()
+    if not normalized:
+        return None
+    for reason, pattern in WECHAT_HARD_BLOCKED_TITLE_RULES:
         if pattern.search(normalized):
             return reason
     return None
