@@ -8,10 +8,13 @@ from argparse import Namespace
 from pathlib import Path
 
 from build_portal_translated_reports import title_is_sensitive
+from institution_names import infer_institution_name
 from sensitive_content_guard import (
     blocked_wechat_title_reason,
     hard_blocked_wechat_title_reason,
     neutralize_wechat_title,
+    nomura_sensitive_wechat_report_reason,
+    nomura_sensitive_wechat_report_reasons,
     wechat_title_neutrality_issues,
 )
 from push_portal_translated_to_wechat_drafts import (
@@ -23,6 +26,15 @@ from push_portal_translated_to_wechat_drafts import (
 
 
 class SensitiveTitleGuardTests(unittest.TestCase):
+    def test_nomura_institution_aliases_are_normalized(self) -> None:
+        for value in (
+            "NOM-Strategy Trade-Short USD CNH.pdf",
+            "Nomura FX Insights.pdf",
+            "野村证券：亚洲汇率观察",
+        ):
+            with self.subTest(value=value):
+                self.assertEqual("野村", infer_institution_name(value))
+
     def test_blocks_reported_chinese_military_title(self) -> None:
         title = "波士顿咨询：军用飞机战备问题-AI可协助修复"
         self.assertEqual("military_or_defense", blocked_wechat_title_reason(title))
@@ -53,6 +65,132 @@ class SensitiveTitleGuardTests(unittest.TestCase):
     def test_hard_title_term_does_not_expand_to_adjacent_currency_topics(self) -> None:
         self.assertIsNone(
             hard_blocked_wechat_title_reason("德意志银行：人民币汇率估值的研究观察")
+        )
+
+    def test_nomura_sensitive_report_is_blocked_from_wechat(self) -> None:
+        metadata = {
+            "raw_title": "野村：行业技术与相关数据观察",
+            "wechat_title": "野村：行业技术与相关数据观察",
+            "source_report_name": (
+                "61-NOM-Strategy Trade-Short USD CNH-4 5 conviction remains intact-"
+                "but raising our guard-260817"
+            ),
+            "title_decision": {},
+        }
+        reasons = nomura_sensitive_wechat_report_reasons(
+            metadata,
+            "报告维持人民币相对美元中期看多观点，并认为人民币仍被低估8.5%。",
+        )
+
+        self.assertIn("raw_title:generic_sensitive_fallback", reasons)
+        self.assertIn("source_report_name:directional_currency_trade", reasons)
+        self.assertIn("article_content:china_systemic_topic", reasons)
+        metadata["sensitive_title_reasons"] = reasons
+        self.assertEqual(
+            "nomura_sensitive_report",
+            nomura_sensitive_wechat_report_reason(metadata),
+        )
+
+    def test_nomura_sensitive_title_decision_is_blocked(self) -> None:
+        metadata = {
+            "institution_name": "野村",
+            "raw_title": "野村：相关行业变化观察",
+            "wechat_title": "野村：相关行业变化观察",
+            "title_decision": {
+                "neutralization_changes": ["neutralized:politically_sensitive"],
+            },
+        }
+        reasons = nomura_sensitive_wechat_report_reasons(metadata)
+
+        self.assertEqual(["title_decision:politically_sensitive"], reasons)
+        self.assertEqual(
+            "nomura_sensitive_report",
+            nomura_sensitive_wechat_report_reason(
+                {**metadata, "sensitive_title_reasons": reasons}
+            ),
+        )
+
+    def test_nomura_quality_cleanup_without_sensitive_signal_is_kept(self) -> None:
+        metadata = {
+            "institution_name": "野村",
+            "raw_title": "野村：行业技术与相关数据观察",
+            "wechat_title": "野村：行业技术与相关数据观察",
+            "source_report_name": "Nomura-AI server supply-chain update",
+            "title_decision": {
+                "neutralization_changes": ["quality_fallback:long_untranslated_english"],
+            },
+        }
+        self.assertEqual(
+            [],
+            nomura_sensitive_wechat_report_reasons(
+                metadata,
+                "AI服务器供应链交付数据与产品迭代进展。",
+            ),
+        )
+        self.assertIsNone(nomura_sensitive_wechat_report_reason(metadata))
+
+    def test_nomura_generic_sensitive_fallback_is_institution_specific(self) -> None:
+        nomura = {
+            "institution_name": "野村",
+            "raw_title": "野村：行业技术与相关数据观察",
+            "wechat_title": "野村：行业技术与相关数据观察",
+        }
+        goldman = {
+            "institution_name": "高盛",
+            "raw_title": "高盛：行业技术与相关数据观察",
+            "wechat_title": "高盛：行业技术与相关数据观察",
+        }
+
+        self.assertEqual([], nomura_sensitive_wechat_report_reasons(nomura))
+        self.assertEqual([], nomura_sensitive_wechat_report_reasons(goldman))
+        self.assertIsNone(
+            nomura_sensitive_wechat_report_reason({
+                **goldman,
+                "sensitive_title_reasons": ["raw_title:generic_sensitive_fallback"],
+            })
+        )
+
+    def test_non_nomura_institution_is_not_inferred_from_display_title(self) -> None:
+        metadata = {
+            "institution_name": "高盛",
+            "raw_title": "高盛：野村季度业绩与人民币估值观察",
+            "wechat_title": "高盛：野村季度业绩与人民币估值观察",
+            "source_report_name": "Goldman-quarterly-broker-results",
+            "title_decision": {
+                "neutralization_changes": ["neutralized:china_systemic_topic"],
+            },
+        }
+        self.assertEqual([], nomura_sensitive_wechat_report_reasons(metadata))
+        self.assertIsNone(nomura_sensitive_wechat_report_reason(metadata))
+
+    def test_nomura_evaluative_wording_alone_is_not_a_sensitive_report(self) -> None:
+        metadata = {
+            "institution_name": "野村",
+            "raw_title": "野村：AI服务器估值低估",
+            "wechat_title": "野村：AI服务器估值观察",
+            "source_report_name": "Nomura-AI-server-valuation",
+            "title_decision": {
+                "neutralization_changes": [
+                    "neutralized:evaluative_or_adversarial_wording",
+                ],
+            },
+        }
+        self.assertEqual([], nomura_sensitive_wechat_report_reasons(metadata))
+        self.assertIsNone(nomura_sensitive_wechat_report_reason(metadata))
+
+    def test_concrete_nomura_report_is_not_blocked_by_incidental_body_term(self) -> None:
+        metadata = {
+            "institution_name": "野村",
+            "raw_title": "野村：半导体设备订单与交付数据更新",
+            "wechat_title": "野村：半导体设备订单与交付数据更新",
+            "source_report_name": "Nomura-semiconductor-equipment-orders",
+        }
+        self.assertEqual(
+            [],
+            nomura_sensitive_wechat_report_reasons(
+                metadata,
+                "正文比较了台湾半导体设备进口数据与季度交付节奏。",
+            ),
         )
 
     def test_trade_conflict_title_is_reframed_and_article_is_kept(self) -> None:

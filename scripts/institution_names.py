@@ -17,7 +17,10 @@ INSTITUTION_PATTERNS: tuple[tuple[re.Pattern[str], str], ...] = (
     (re.compile(r"\bBofA\b|Bank\s+of\s+America", re.I), "美银"),
     (re.compile(r"\bBarclays\b", re.I), "巴克莱"),
     (re.compile(r"\bDeutsche\s+Bank\b", re.I), "德意志银行"),
-    (re.compile(r"\bNomura\b", re.I), "野村"),
+    (
+        re.compile(r"(?i:\bNomura\b)|(?<![A-Za-z])NOM(?![A-Za-z])|野村(?:证券)?"),
+        "野村",
+    ),
     (re.compile(r"\bBernstein\b", re.I), "伯恩斯坦"),
     (re.compile(r"\bJefferies\b", re.I), "杰富瑞"),
     (re.compile(r"\bMacquarie\b", re.I), "麦格理"),

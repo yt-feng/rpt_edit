@@ -80,6 +80,8 @@ from push_portal_translated_to_wechat_drafts import (  # noqa: E402
 from institution_names import ensure_title_has_institution, infer_institution_name  # noqa: E402
 from sensitive_content_guard import (  # noqa: E402
     hard_blocked_wechat_title_reason,
+    nomura_sensitive_wechat_report_reason,
+    nomura_sensitive_wechat_report_reasons,
     sanitize_wechat_stock_language,
 )
 from wechat_article_quality import sanitize_wechat_article_markdown  # noqa: E402
@@ -227,7 +229,7 @@ def xhs_article_title_metadata(report_dir: Path) -> dict[str, Any]:
         ]))
         title_decision["selection_reason"] = "deterministic_neutralization"
         title_decision["selected_title"] = title
-    return {
+    metadata = {
         "report_dir": str(report_dir),
         "wechat_markdown": str(markdown_path),
         "title": title,
@@ -238,6 +240,11 @@ def xhs_article_title_metadata(report_dir: Path) -> dict[str, Any]:
         "title_decision": title_decision,
         "generation_failure_reason": generation_failure_skip_reason(markdown),
     }
+    metadata["sensitive_title_reasons"] = nomura_sensitive_wechat_report_reasons(
+        metadata,
+        markdown,
+    )
+    return metadata
 
 
 def hard_blocked_xhs_title_record(metadata: dict[str, Any]) -> dict[str, Any] | None:
@@ -258,6 +265,19 @@ def hard_blocked_xhs_title_record(metadata: dict[str, Any]) -> dict[str, Any] | 
             "hard_block_reason": reason,
             "matched_title": candidate,
             "matched_title_field": field,
+        })
+        return record
+
+    reason = nomura_sensitive_wechat_report_reason(metadata)
+    if reason:
+        record = dict(metadata)
+        matched_title = str(metadata.get("wechat_title") or metadata.get("raw_title") or "")
+        record.update({
+            "blocked_title": matched_title,
+            "skip_reason": reason,
+            "hard_block_reason": reason,
+            "matched_title": matched_title,
+            "matched_title_field": "nomura_sensitive_policy",
         })
         return record
     return None
@@ -722,7 +742,7 @@ def main() -> int:
             continue
 
         # Other contentious titles are deterministically rewritten and retained.
-        # Only an explicit hard-block match or a missing/failed body is skipped.
+        # Only an explicit upload-policy match or a missing/failed body is skipped.
         reason = metadata.get("generation_failure_reason")
         if reason:
             record = dict(metadata)

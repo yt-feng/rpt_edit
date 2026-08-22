@@ -42,19 +42,42 @@ class XhsDraftStreamingTests(unittest.TestCase):
                 "",
                 "--site-url",
                 "https://private.example.invalid",
-                "--dry-run",
+                "--wechat-appid",
+                "test-appid",
+                "--wechat-secret",
+                "test-secret",
+                "--publish",
             ]
             with mock.patch.object(sys, "argv", argv), mock.patch.object(
-                uploader,
-                "build_article",
+                uploader, "requests"
+            ) as requests_mock, mock.patch.object(
+                uploader, "get_stable_access_token"
+            ) as token_mock, mock.patch.object(
+                uploader, "build_article"
             ) as build_mock, mock.patch.object(
-                uploader,
-                "resolve_repo_asset_path",
-            ) as asset_mock:
+                uploader, "resolve_repo_asset_path"
+            ) as asset_mock, mock.patch.object(
+                uploader, "upload_article_image"
+            ) as article_image_mock, mock.patch.object(
+                uploader, "upload_cover_material"
+            ) as cover_image_mock, mock.patch.object(
+                uploader, "add_draft"
+            ) as add_mock, mock.patch.object(
+                uploader, "submit_publish"
+            ) as publish_mock:
                 self.assertEqual(0, uploader.main())
 
-            build_mock.assert_not_called()
-            asset_mock.assert_not_called()
+            for mocked_call in (
+                requests_mock.Session,
+                token_mock,
+                build_mock,
+                asset_mock,
+                article_image_mock,
+                cover_image_mock,
+                add_mock,
+                publish_mock,
+            ):
+                mocked_call.assert_not_called()
             output_dir = output_root / "260822"
             self.assertEqual([], list(output_dir.glob("draft_payload_*.json")))
             summary = json.loads((output_dir / "wechat_draft_summary.json").read_text(encoding="utf-8"))
@@ -63,6 +86,98 @@ class XhsDraftStreamingTests(unittest.TestCase):
             self.assertEqual(1, summary["skipped_title_policy_count"])
             self.assertEqual(0, summary["draft_count"])
             self.assertEqual("skipped_title_policy", summary["status"])
+
+    def test_sensitive_nomura_report_creates_no_article_or_draft_payload(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            report_dir = (
+                root
+                / "xhs_notes"
+                / "dropbox"
+                / "260822"
+                / "shard_0"
+                / "0061-NOM-strategy-trade"
+            )
+            report_dir.mkdir(parents=True)
+            (report_dir / "wechat_article.md").write_text(
+                "# 野村：行业技术与相关数据观察\n\n"
+                "报告维持人民币相对美元中期看多观点，并认为人民币仍被低估8.5%。",
+                encoding="utf-8",
+            )
+            (report_dir / "status.json").write_text(
+                json.dumps({
+                    "source_pdf": (
+                        "NOM-Strategy Trade-Short USD CNH-4 5 conviction remains intact-"
+                        "but raising our guard-260817.pdf"
+                    ),
+                    "wechat_title_decision": {},
+                }),
+                encoding="utf-8",
+            )
+
+            output_root = root / "wechat_drafts"
+            argv = [
+                "push_xhs_notes_to_wechat_drafts.py",
+                "--dropbox-output-root",
+                str(root / "xhs_notes" / "dropbox"),
+                "--date-folder",
+                "260822",
+                "--output-root",
+                str(output_root),
+                "--trailing-image",
+                "",
+                "--site-url",
+                "https://private.example.invalid",
+                "--wechat-appid",
+                "test-appid",
+                "--wechat-secret",
+                "test-secret",
+                "--publish",
+            ]
+            with mock.patch.object(sys, "argv", argv), mock.patch.object(
+                uploader, "requests"
+            ) as requests_mock, mock.patch.object(
+                uploader, "get_stable_access_token"
+            ) as token_mock, mock.patch.object(
+                uploader, "build_article"
+            ) as build_mock, mock.patch.object(
+                uploader, "resolve_repo_asset_path"
+            ) as asset_mock, mock.patch.object(
+                uploader, "upload_article_image"
+            ) as article_image_mock, mock.patch.object(
+                uploader, "upload_cover_material"
+            ) as cover_image_mock, mock.patch.object(
+                uploader, "add_draft"
+            ) as add_mock, mock.patch.object(
+                uploader, "submit_publish"
+            ) as publish_mock:
+                self.assertEqual(0, uploader.main())
+
+            for mocked_call in (
+                requests_mock.Session,
+                token_mock,
+                build_mock,
+                asset_mock,
+                article_image_mock,
+                cover_image_mock,
+                add_mock,
+                publish_mock,
+            ):
+                mocked_call.assert_not_called()
+            output_dir = output_root / "260822"
+            self.assertEqual([], list(output_dir.glob("draft_payload_*.json")))
+            summary = json.loads((output_dir / "wechat_draft_summary.json").read_text(encoding="utf-8"))
+            self.assertEqual(1, summary["input_selected_count"])
+            self.assertEqual(0, summary["selected_count"])
+            self.assertEqual(1, summary["skipped_title_policy_count"])
+            skipped = summary["skipped_title_policy"][0]
+            self.assertEqual("nomura_sensitive_report", skipped["skip_reason"])
+            self.assertEqual("野村", skipped["institution_name"])
+            self.assertIn(
+                "source_report_name:directional_currency_trade",
+                skipped["sensitive_title_reasons"],
+            )
+            self.assertEqual(0, summary["draft_count"])
 
     def test_hard_blocked_raw_title_is_skipped_before_article_build(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

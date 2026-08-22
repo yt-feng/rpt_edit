@@ -254,6 +254,43 @@ WECHAT_HARD_BLOCKED_TITLE_RULES: list[tuple[str, re.Pattern[str]]] = [
     ),
 ]
 
+# Nomura reports need an institution-specific publication gate.  Unlike the
+# exact title rules above, this policy is activated only when the report is
+# attributable to Nomura and there is evidence that the source contains a
+# sensitive subject.  A known generic fallback prompts a content review but is
+# not sufficient to block an article by itself.  Other institutions keep the
+# existing rewrite-and-publish flow.
+NOMURA_WECHAT_SKIP_REASON = "nomura_sensitive_report"
+NOMURA_REPORT_NAME_RE = re.compile(
+    r"(?:野村(?:证券)?|(?<![A-Za-z])Nomura(?![A-Za-z]))",
+    re.I,
+)
+NOMURA_REPORT_CODE_RE = re.compile(r"(?:^|[\s_\\/\-])NOM(?:$|[\s_\\/\-])")
+NOMURA_GENERIC_SENSITIVE_TITLE_BODIES = {
+    "行业技术与相关数据观察",
+    "研究主题与相关数据观察",
+    "研究主题与行业变化观察",
+}
+NOMURA_SENSITIVE_TITLE_REASON_CODES = {
+    "military_or_defense",
+    "politically_sensitive",
+    "china_systemic_topic",
+}
+NOMURA_SENSITIVE_CONTENT_REASON_CODES = {
+    "military_or_defense",
+    "politically_sensitive",
+    "china_systemic_topic",
+}
+NOMURA_CURRENCY_DIRECTION_RE = re.compile(
+    r"(?:"
+    r"\b(?:short|long|bullish|bearish)\b[^\n]{0,32}\b(?:USD|CNH|CNY|RMB|yuan|renminbi)\b"
+    r"|\b(?:USD|CNH|CNY|RMB|yuan|renminbi)\b[^\n]{0,32}\b(?:short|long|bullish|bearish)\b"
+    r"|(?:做空|做多|看空|看多)[^\n]{0,24}(?:美元|人民币|离岸人民币|CNH|CNY|RMB)"
+    r"|(?:美元|人民币|离岸人民币|CNH|CNY|RMB)[^\n]{0,24}(?:做空|做多|看空|看多)"
+    r")",
+    re.I,
+)
+
 # Public-account titles may use source-backed facts, numbers and directional
 # verbs.  The guard is intentionally limited to inflammatory, adversarial or
 # advice-like framing.  Treating ordinary research words such as "增长",
@@ -340,6 +377,120 @@ def wechat_title_neutrality_issues(title: str) -> list[str]:
     if WECHAT_TITLE_CHINA_MACRO_CREDIT_RE.search(normalized) or WECHAT_TITLE_CURRENCY_VALUATION_RE.search(normalized):
         issues.append("china_systemic_topic")
     return list(dict.fromkeys(issues))
+
+
+def _iter_guard_text(value: Any):
+    """Yield scalar strings from nested decision metadata for policy checks."""
+    if value is None:
+        return
+    if isinstance(value, dict):
+        for key, item in value.items():
+            yield str(key)
+            yield from _iter_guard_text(item)
+        return
+    if isinstance(value, (list, tuple, set)):
+        for item in value:
+            yield from _iter_guard_text(item)
+        return
+    yield str(value)
+
+
+def is_nomura_wechat_report(metadata: dict[str, Any]) -> bool:
+    """Return whether uploader metadata identifies a report as Nomura."""
+    institution_name = re.sub(
+        r"\s+",
+        " ",
+        str(metadata.get("institution_name") or ""),
+    ).strip()
+    if institution_name:
+        return bool(
+            NOMURA_REPORT_NAME_RE.search(institution_name)
+            or NOMURA_REPORT_CODE_RE.search(institution_name)
+        )
+
+    # When older artifacts have no normalized institution field, identify the
+    # owner from source provenance.  Do not infer ownership from a display
+    # title that may merely mention another broker.
+    fields = ("original_title", "source_report_name", "report_dir")
+    for field in fields:
+        for text in _iter_guard_text(metadata.get(field)):
+            if NOMURA_REPORT_NAME_RE.search(text) or NOMURA_REPORT_CODE_RE.search(text):
+                return True
+    return False
+
+
+def nomura_sensitive_wechat_report_reasons(
+    metadata: dict[str, Any],
+    article_text: str = "",
+) -> list[str]:
+    """Return auditable signals that require skipping a sensitive Nomura report."""
+    if not is_nomura_wechat_report(metadata):
+        return []
+
+    reasons: list[str] = []
+
+    def add(reason: str) -> None:
+        if reason and reason not in reasons:
+            reasons.append(reason)
+
+    title_decision = metadata.get("title_decision")
+    for text in _iter_guard_text(title_decision):
+        for match in re.finditer(r"neutralized:([a-z_]+)", text):
+            code = match.group(1)
+            if code in NOMURA_SENSITIVE_TITLE_REASON_CODES:
+                add(f"title_decision:{code}")
+
+    generic_signals: list[str] = []
+    title_fields = (
+        "raw_title",
+        "original_title",
+        "source_report_name",
+        "wechat_title",
+        "header_title",
+    )
+    for field in title_fields:
+        value = re.sub(r"\s+", " ", str(metadata.get(field) or "")).strip()
+        if not value:
+            continue
+        for code in wechat_title_neutrality_issues(value):
+            if code in NOMURA_SENSITIVE_TITLE_REASON_CODES:
+                add(f"{field}:{code}")
+        if field in {"raw_title", "original_title", "source_report_name"}:
+            if NOMURA_CURRENCY_DIRECTION_RE.search(value):
+                add(f"{field}:directional_currency_trade")
+        _prefix, body = _split_wechat_title(value)
+        if field in {"raw_title", "wechat_title", "header_title"}:
+            if body in NOMURA_GENERIC_SENSITIVE_TITLE_BODIES:
+                generic_signals.append(f"{field}:generic_sensitive_fallback")
+
+    # The generic fallback is evidence that warrants a closer content check,
+    # but it is not sufficient by itself: the same fallback can result from a
+    # malformed or untranslated title.  Limit full-body scanning to this case
+    # so an incidental political term in an otherwise concrete report does not
+    # become a new institution-wide content ban.
+    if article_text and generic_signals:
+        for code in wechat_title_neutrality_issues(article_text):
+            if code in NOMURA_SENSITIVE_CONTENT_REASON_CODES:
+                add(f"article_content:{code}")
+
+    if reasons:
+        for signal in generic_signals:
+            add(signal)
+
+    return reasons
+
+
+def nomura_sensitive_wechat_report_reason(
+    metadata: dict[str, Any],
+    article_text: str = "",
+) -> str | None:
+    """Return the hard skip code for a sensitive Nomura report, if any."""
+    if not is_nomura_wechat_report(metadata):
+        return None
+    reasons = metadata.get("sensitive_title_reasons")
+    if not isinstance(reasons, list) or not reasons:
+        reasons = nomura_sensitive_wechat_report_reasons(metadata, article_text)
+    return NOMURA_WECHAT_SKIP_REASON if reasons else None
 
 
 def _split_wechat_title(title: str, institution_name: str = "") -> tuple[str, str]:

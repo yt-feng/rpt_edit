@@ -326,6 +326,90 @@ class WeChatOutputContractTests(unittest.TestCase):
             self.assertEqual(1, summary["skipped_title_policy_count"])
             self.assertEqual(0, summary["draft_count"])
 
+    def test_portal_sensitive_nomura_report_creates_no_remote_work(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            translated_root = root / "translated"
+            report_dir = translated_root / "260822" / "61-NOM-strategy-trade"
+            report_dir.mkdir(parents=True)
+            (report_dir / "translated.md").write_text(
+                "# 野村：行业技术与相关数据观察\n\n"
+                "报告维持人民币相对美元中期看多观点，并认为人民币仍被低估8.5%。\n",
+                encoding="utf-8",
+            )
+            (report_dir / "translation_status.json").write_text(
+                json.dumps({
+                    "title": "野村：行业技术与相关数据观察",
+                    "source_report_original_name": (
+                        "NOM-Strategy Trade-Short USD CNH-4 5 conviction remains intact-"
+                        "but raising our guard-260817.pdf"
+                    ),
+                    "wechat_title_decision": {},
+                }, ensure_ascii=False),
+                encoding="utf-8",
+            )
+
+            output_root = root / "drafts"
+            argv = [
+                "push_portal_translated_to_wechat_drafts.py",
+                "--translated-root", str(translated_root),
+                "--date-folder", "260822",
+                "--output-root", str(output_root),
+                "--max-articles", "all",
+                "--trailing-image", "",
+                "--site-url", "https://private.example.invalid",
+                "--wechat-appid", "test-appid",
+                "--wechat-secret", "test-secret",
+                "--publish",
+            ]
+            with (
+                patch.object(sys, "argv", argv),
+                patch("push_portal_translated_to_wechat_drafts.requests.Session") as session_mock,
+                patch("push_portal_translated_to_wechat_drafts.get_stable_access_token") as token_mock,
+                patch("push_portal_translated_to_wechat_drafts.resolve_repo_asset_path") as asset_mock,
+                patch("push_portal_translated_to_wechat_drafts.build_article") as build_mock,
+                patch("push_portal_translated_to_wechat_drafts.upload_article_image") as article_image_mock,
+                patch("push_portal_translated_to_wechat_drafts.upload_cover_material") as cover_image_mock,
+                patch("push_portal_translated_to_wechat_drafts.add_draft") as add_mock,
+                patch("push_portal_translated_to_wechat_drafts.submit_publish") as publish_mock,
+            ):
+                self.assertEqual(0, portal_uploader_main())
+
+            for mocked_call in (
+                session_mock,
+                token_mock,
+                asset_mock,
+                build_mock,
+                article_image_mock,
+                cover_image_mock,
+                add_mock,
+                publish_mock,
+            ):
+                mocked_call.assert_not_called()
+
+            output_dir = output_root / "260822"
+            self.assertEqual([], list(output_dir.glob("draft_payload_*.json")))
+            summary = json.loads((output_dir / "wechat_draft_summary.json").read_text(encoding="utf-8"))
+            self.assertEqual(1, summary["input_selected_count"])
+            self.assertEqual(0, summary["selected_count"])
+            self.assertEqual(1, summary["skipped_title_policy_count"])
+            skipped = summary["skipped_title_policy"][0]
+            self.assertEqual("nomura_sensitive_report", skipped["skip_reason"])
+            self.assertEqual("野村", skipped["institution_name"])
+            self.assertIn(
+                "source_report_name:directional_currency_trade",
+                skipped["sensitive_title_reasons"],
+            )
+            self.assertEqual(0, summary["draft_count"])
+
+            title_log = json.loads((output_dir / "wechat_title_log.json").read_text(encoding="utf-8"))
+            self.assertEqual(0, title_log["uploaded_count"])
+            self.assertEqual(1, title_log["skipped_count"])
+            self.assertEqual(
+                skipped["sensitive_title_reasons"],
+                title_log["articles"][0]["sensitive_title_reasons"],
+            )
+
 
 if __name__ == "__main__":
     unittest.main()
