@@ -40,6 +40,8 @@ from wechat_title_optimizer import (
 from sensitive_content_guard import (
     hard_blocked_wechat_title_reason,
     neutralize_wechat_title,
+    nomura_sensitive_wechat_report_reason,
+    nomura_sensitive_wechat_report_reasons,
     sanitize_wechat_stock_language,
 )
 from wechat_article_quality import audit_wechat_article_markdown, sanitize_wechat_article_markdown
@@ -2375,7 +2377,7 @@ def translated_article_title_metadata(
     if header_neutralization_changes:
         title_decision["header_pre_neutralization_title"] = raw_header_title
         title_decision["header_neutralization_changes"] = header_neutralization_changes
-    return {
+    metadata = {
         "report_dir": str(report_dir),
         "raw_title": raw_title,
         "title": title,
@@ -2386,6 +2388,11 @@ def translated_article_title_metadata(
         "original_title": original_title,
         "title_decision": title_decision,
     }
+    metadata["sensitive_title_reasons"] = nomura_sensitive_wechat_report_reasons(
+        metadata,
+        markdown,
+    )
+    return metadata
 
 
 def hard_blocked_portal_title_record(metadata: dict[str, Any]) -> dict[str, Any] | None:
@@ -2411,6 +2418,18 @@ def hard_blocked_portal_title_record(metadata: dict[str, Any]) -> dict[str, Any]
             "hard_block_reason": reason,
             "matched_title": candidate,
             "matched_title_field": field,
+        })
+        return record
+
+    reason = nomura_sensitive_wechat_report_reason(metadata)
+    if reason:
+        record = dict(metadata)
+        matched_title = str(metadata.get("wechat_title") or metadata.get("raw_title") or "")
+        record.update({
+            "skip_reason": reason,
+            "hard_block_reason": reason,
+            "matched_title": matched_title,
+            "matched_title_field": "nomura_sensitive_policy",
         })
         return record
     return None
@@ -2618,6 +2637,7 @@ def write_wechat_title_log(
             "uploaded": uploaded,
             "skip_reason": item.get("skip_reason", ""),
             "hard_block_reason": item.get("hard_block_reason", ""),
+            "sensitive_title_reasons": item.get("sensitive_title_reasons", []),
             "matched_title": item.get("matched_title", ""),
             "matched_title_field": item.get("matched_title_field", ""),
             "report_dir": item.get("report_dir", ""),
@@ -2652,7 +2672,7 @@ def write_wechat_title_log(
             decision = entry.get("generation_decision") or {}
             report_name = str(entry["source_report_name"]).replace("|", "\\|")[:90]
             final_title = str(entry["final_wechat_title"]).replace("|", "\\|")
-            reason = str(decision.get("selection_reason") or entry.get("skip_reason") or "upload_cleanup")
+            reason = str(entry.get("skip_reason") or decision.get("selection_reason") or "upload_cleanup")
             lines.append(f"| {report_name} | {final_title} | {reason} |")
         with open(summary_path, "a", encoding="utf-8") as handle:
             handle.write("\n".join(lines) + "\n")
