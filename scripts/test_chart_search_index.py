@@ -674,7 +674,9 @@ class ChartSearchIndexTests(unittest.TestCase):
 
         request_payload = client.session.post.call_args.kwargs["json"]
         self.assertEqual(request_payload["response_format"], {"type": "json_object"})
-        self.assertNotIn("max_tokens", request_payload)
+        self.assertTrue(
+            {"max_tokens", "max_completion_tokens"}.isdisjoint(request_payload)
+        )
         self.assertTrue(analysis["is_chart"])
 
     def test_malformed_choice_is_retried_as_model_json(self) -> None:
