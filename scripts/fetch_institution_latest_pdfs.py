@@ -64,7 +64,7 @@ from email.utils import parsedate_to_datetime
 from html.entities import name2codepoint
 from pathlib import Path
 from typing import Any, Iterable
-from urllib.parse import quote, unquote, urljoin, urlsplit
+from urllib.parse import unquote, urljoin, urlsplit
 
 import requests
 
@@ -88,6 +88,10 @@ HTTP_RETRYABLE_STATUSES = {408, 425, 429, 500, 502, 503, 504}
 HTTP_MAX_ATTEMPTS = 3
 HTTP_RETRY_BASE_SECONDS = 2.0
 HTTP_RETRY_MAX_SECONDS = 15.0
+DDG_ROUTE_TIMEOUT_SECONDS = 25
+DDG_SEARCH_ENDPOINTS = (
+    ("html", "https://html.duckduckgo.com/html/"),
+)
 IMF_PROXY_TEST_URL = "https://www.imf.org/en/Publications"
 
 # Anchor hrefs that look like a downloadable document.
@@ -327,8 +331,16 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
         "kind": "ddg_search",
         "pdf": "direct",
         "impersonate": True,
-        "recency_filter": False,
+        # DDG results have no date and therefore bypass the normal cutoff; the
+        # official fallback does provide dates, so this prevents an outage from
+        # backfilling months-old store reports as today's discoveries.
+        "recency_filter": True,
         "query": "site:mckinsey.com filetype:pdf",
+        # Independent fallback when DuckDuckGo is unavailable or challenges the
+        # runner. This official page exposes direct report downloads and dates.
+        "fallback_pdf_listing_urls": [
+            "https://www.mckinsey.com/featured-insights/insights-store",
+        ],
         # DDG is relevance-ranked; keep only reports whose URL/title mentions the
         # current or previous year so old evergreen reports are excluded.
         "recent_years": 2,
@@ -948,33 +960,149 @@ def _parse_ddg_pdfs(text: str) -> list[dict[str, Any]]:
     return items
 
 
+def _parse_official_download_listing(text: str, base_url: str) -> list[dict[str, Any]]:
+    """Parse McKinsey's ``#/download/<encoded PDF>`` report cards."""
+    items: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    pattern = re.compile(
+        r'<a\b[^>]*\bhref=["\']([^"\']*#/download/[^"\']+)["\'][^>]*>',
+        re.I,
+    )
+    for match in pattern.finditer(text):
+        encoded_target = html.unescape(match.group(1)).split("#/download/", 1)[1]
+        target = unquote(encoded_target).strip()
+        if target.startswith("//"):
+            target = "https:" + target
+        else:
+            target = urljoin(base_url, target)
+        target = requests.utils.requote_uri(target)
+        if not re.search(r"\.pdf(?:\?|$)", target, re.I) or target in seen:
+            continue
+        seen.add(target)
+
+        # Title and publication time precede the download link in each report card.
+        card_prefix = text[max(0, match.start() - 5000):match.start()]
+        headings = re.findall(r"<h[1-6]\b[^>]*>(.*?)</h[1-6]>", card_prefix, re.I | re.S)
+        title = ""
+        if headings:
+            title = html.unescape(re.sub(r"<[^>]+>", " ", headings[-1]))
+            title = re.sub(r"\s+", " ", title).strip()
+        if not title:
+            title = unquote(Path(urlsplit(target).path).stem).replace("-", " ").strip()
+        dates = re.findall(r'<time\b[^>]*\bdatetime=["\']([^"\']+)', card_prefix, re.I)
+        published = dates[-1] if dates else ""
+        items.append({
+            "title": title,
+            "source_url": target,
+            "guid": target,
+            "date": published,
+            "pdf_candidates": [target],
+            "scrape_url": "",
+        })
+    return items
+
+
+def _is_ddg_challenge_response(response: Any) -> bool:
+    status_code = int(getattr(response, "status_code", 200))
+    body = str(getattr(response, "text", "")).lower()
+    return (
+        status_code == 202
+        or "challenge-form" in body
+        or "bots use duckduckgo too" in body
+    )
+
+
 def collect_ddg_items(cfg: dict[str, Any], session: requests.Session, timeout: int, df: str) -> list[dict[str, Any]]:
     """Discover PDFs via DuckDuckGo HTML search (site:<domain> filetype:pdf).
 
     Bypasses the consultancies' bot walls: we only hit DuckDuckGo and the PDF CDN
-    hosts. DDG can return an empty page when queried rapidly, so retry with backoff;
-    obvious non-reports (brochures, fact sheets, recruiting) are filtered out, and
-    seen-dedup keeps each report one-time.
+    hosts. DDG can time out or return a challenge page, so try independent browser
+    and plain transports, then the official report store, before declaring the source
+    degraded. Obvious non-reports are filtered out, and seen-dedup keeps each report
+    one-time.
     """
-    url = "https://html.duckduckgo.com/html/?q=" + quote(cfg["query"])
+    params = {"q": str(cfg["query"])}
     if df:
-        url += "&df=" + df
+        params["df"] = df
     headers = {"Referer": "https://duckduckgo.com/", "Accept-Language": "en-US,en;q=0.9"}
     items: list[dict[str, Any]] = []
-    for attempt in range(3):
-        time.sleep(2 + 2 * attempt)  # space queries so DDG doesn't return an empty page
+    route_timeout = max(1, min(int(timeout), DDG_ROUTE_TIMEOUT_SECONDS))
+    routes: list[tuple[str, str, bool]] = []
+    for endpoint_name, endpoint_url in DDG_SEARCH_ENDPOINTS:
+        if _HAS_CFFI:
+            routes.append((f"{endpoint_name}/browser", endpoint_url, True))
+        routes.append((f"{endpoint_name}/requests", endpoint_url, False))
+
+    def request_route(
+        endpoint_url: str,
+        use_cffi: bool,
+        request_params: dict[str, str] | None,
+        request_headers: dict[str, str],
+    ) -> Any:
+        if use_cffi:
+            return cffi_requests.get(
+                endpoint_url,
+                params=request_params,
+                impersonate=CFFI_IMPERSONATE,
+                timeout=route_timeout,
+                headers=request_headers,
+                allow_redirects=True,
+            )
+        return session.get(
+            endpoint_url,
+            params=request_params,
+            timeout=route_timeout,
+            headers=request_headers,
+            allow_redirects=True,
+        )
+
+    failed_routes: list[str] = []
+    empty_routes = 0
+    for route_name, endpoint_url, use_cffi in routes:
         try:
-            if _HAS_CFFI:
-                resp = cffi_requests.get(url, impersonate=CFFI_IMPERSONATE, timeout=timeout, headers=headers, allow_redirects=True)
-            else:
-                resp = session.get(url, timeout=timeout, headers=headers, allow_redirects=True)
+            resp = request_route(endpoint_url, use_cffi, params, headers)
             resp.raise_for_status()
+            if _is_ddg_challenge_response(resp):
+                raise RuntimeError("DuckDuckGo challenge response")
             items = _parse_ddg_pdfs(resp.text)
-        except Exception as exc:  # noqa: BLE001 - retry
-            warn(f"  ddg attempt {attempt + 1} failed: {exc}")
-            items = []
+        except Exception as exc:  # noqa: BLE001 - independent route fallback
+            failed_routes.append(f"{route_name}:{type(exc).__name__}")
+            warn(f"  ddg route {route_name} failed ({type(exc).__name__}); trying fallback")
+            continue
         if items:
+            log(f"  ddg discovery route: {route_name}")
             break
+        empty_routes += 1
+        warn(f"  ddg route {route_name} returned no PDF results; trying fallback")
+
+    if not items:
+        listing_headers = {"Accept-Language": "en-US,en;q=0.9"}
+        for listing_url in cfg.get("fallback_pdf_listing_urls", []):
+            listing_routes = [True, False] if _HAS_CFFI else [False]
+            for use_cffi in listing_routes:
+                route_name = f"official/{'browser' if use_cffi else 'requests'}"
+                try:
+                    resp = request_route(listing_url, use_cffi, None, listing_headers)
+                    resp.raise_for_status()
+                    items = _parse_official_download_listing(resp.text, listing_url)
+                except Exception as exc:  # noqa: BLE001 - independent source fallback
+                    failed_routes.append(f"{route_name}:{type(exc).__name__}")
+                    warn(
+                        f"  report discovery route {route_name} failed "
+                        f"({type(exc).__name__}); trying fallback"
+                    )
+                    continue
+                if items:
+                    log(f"  report discovery route: {route_name}")
+                    break
+                empty_routes += 1
+                warn(f"  report discovery route {route_name} returned no PDF results")
+            if items:
+                break
+
+    if not items and failed_routes:
+        failures = ", ".join(failed_routes)
+        raise RuntimeError(f"Report discovery unavailable across all routes ({failures})")
 
     kept = [it for it in items if not NON_REPORT_RE.search(it["source_url"]) and not NON_REPORT_RE.search(it["title"])]
     # DuckDuckGo ranks by relevance, not date, so without this it would surface old
@@ -983,9 +1111,17 @@ def collect_ddg_items(cfg: dict[str, Any], session: requests.Session, timeout: i
     if recent_years:
         years = {str(datetime.now(timezone.utc).year - offset) for offset in range(recent_years)}
         before = len(kept)
-        kept = [it for it in kept if any(y in it["source_url"] or y in it["title"] for y in years)]
+        kept = [
+            it for it in kept
+            if any(
+                y in it["source_url"]
+                or y in it["title"]
+                or str(it.get("date", "")).startswith(y)
+                for y in years
+            )
+        ]
         log(f"  recent-year filter ({'/'.join(sorted(years, reverse=True))}): {before} -> {len(kept)}")
-    log(f"  ddg '{cfg['query']}' -> {len(items)} pdf results, kept {len(kept)}")
+    log(f"  report discovery '{cfg['query']}' -> {len(items)} pdf results, kept {len(kept)}")
     return kept
 
 

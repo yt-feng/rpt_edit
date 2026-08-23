@@ -386,6 +386,69 @@ class ChartSearchIndexTests(unittest.TestCase):
             self.assertEqual(record["stable_attempt_runs"], 1)
             self.assertEqual(summary["model_calls"], 0)
 
+    def test_distinct_recovery_attempt_retries_transient_checkpoint(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            workspace = Path(temp)
+            reports = workspace / "260809"
+            write_report(reports, "report_a", "Recoverable Chart")
+            candidates = chart.discover_candidates(reports, {}, date_folder="260809")
+            state = {"schema_version": 1, "items": {}}
+            previous = {"schema_version": 1, "reports": []}
+            calls = 0
+
+            def transient_then_success(_path: Path) -> dict:
+                nonlocal calls
+                calls += 1
+                if calls == 1:
+                    raise chart.RetryableVisionError(
+                        "fixture malformed model output",
+                        reason="model_json",
+                    )
+                return sample_analysis()
+
+            previous, first = chart.build_index(
+                candidates,
+                state=state,
+                previous_index=previous,
+                state_path=workspace / "state.json",
+                asset_output_dir=workspace / "assets",
+                analyze=transient_then_success,
+                max_model_calls=1,
+                attempt_run_id="run:1",
+            )
+            self.assertEqual(first["retryable_count"], 1)
+            self.assertEqual(first["retryable_reasons"], {"model_json": 1})
+
+            previous, suppressed = chart.build_index(
+                candidates,
+                state=state,
+                previous_index=previous,
+                state_path=workspace / "state.json",
+                asset_output_dir=workspace / "assets",
+                analyze=transient_then_success,
+                max_model_calls=1,
+                retry_errors_now=True,
+                attempt_run_id="run:1",
+            )
+            self.assertEqual(suppressed["model_calls"], 0)
+            self.assertEqual(suppressed["retryable_count"], 1)
+
+            recovered_index, recovered = chart.build_index(
+                candidates,
+                state=state,
+                previous_index=previous,
+                state_path=workspace / "state.json",
+                asset_output_dir=workspace / "assets",
+                analyze=transient_then_success,
+                max_model_calls=1,
+                retry_errors_now=True,
+                attempt_run_id="run:1:recovery-1",
+            )
+            self.assertEqual(calls, 2)
+            self.assertEqual(recovered["model_calls"], 1)
+            self.assertEqual(recovered["retryable_count"], 0)
+            self.assertEqual(recovered_index["item_count"], 1)
+
     def test_global_transient_failures_open_circuit_without_quarantine(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             workspace = Path(temp)
@@ -865,6 +928,30 @@ class ChartSearchIndexTests(unittest.TestCase):
             chart.validate_api_base("https://user:secret@vision.example.invalid/v1")
         with self.assertRaises(RuntimeError):
             r2.validate_prefix("../chart")
+
+    def test_workflow_has_bounded_same_job_transient_recovery(self) -> None:
+        workflow = (ROOT / ".github/workflows/portal-chart-search-index.yml").read_text(
+            encoding="utf-8"
+        )
+        recovery = workflow.index("Retrying $CALL_LIMIT transient chart checkpoint(s)")
+        strict_gate = workflow.index('if [ "$RETRYABLE" != "0" ]')
+        public_publish = workflow.index("- name: Publish checkpoint and searchable index")
+
+        self.assertIn(
+            "VISION_INDEX_TRANSIENT_RECOVERY_ROUNDS || '1'",
+            workflow,
+        )
+        self.assertIn(
+            '"${GITHUB_RUN_ID}:${GITHUB_RUN_ATTEMPT}:recovery-${RECOVERY_ROUND}"',
+            workflow,
+        )
+        self.assertIn('[ "$STABLE_ERRORS" = "0" ]', workflow)
+        self.assertIn(
+            'if [ "$STABLE_ERRORS" != "0" ] || [ "$UNPROCESSED" != "0" ]; then break; fi',
+            workflow,
+        )
+        self.assertLess(recovery, strict_gate)
+        self.assertLess(strict_gate, public_publish)
 
 
 if __name__ == "__main__":

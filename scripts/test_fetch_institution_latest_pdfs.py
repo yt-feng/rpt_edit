@@ -4,7 +4,7 @@
 from __future__ import annotations
 
 import unittest
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 import fetch_institution_latest_pdfs as fetcher
 
@@ -20,9 +20,16 @@ MONGOLIA_COUNTRY_REPORT_URL = (
 
 
 class FakeResponse:
-    def __init__(self, *, text: str = "", json_data: dict | None = None) -> None:
+    def __init__(
+        self,
+        *,
+        text: str = "",
+        json_data: dict | None = None,
+        status_code: int = 200,
+    ) -> None:
         self.text = text
         self._json_data = json_data or {}
+        self.status_code = status_code
 
     def json(self) -> dict:
         return self._json_data
@@ -132,6 +139,105 @@ class CoveoPreviewTests(unittest.TestCase):
             },
         )
         self.assertTrue(captured["headers"]["Authorization"].startswith("Bearer "))
+
+
+class DuckDuckGoFallbackTests(unittest.TestCase):
+    RESULT_HTML = (
+        '<html><a href="https://www.mckinsey.com/~/media/mckinsey/'
+        'featured-insights/2026/example-report.pdf">Example report</a></html>'
+    )
+    STORE_HTML = (
+        '<article><h5><span>Independent official report</span></h5>'
+        '<time datetime="2026-08-22T12:00:00Z">August 22, 2026</time>'
+        '<a href="#/download/%2F~%2Fmedia%2Fmckinsey%2Fofficial-report.pdf">'
+        'Report (20 pages)</a></article>'
+    )
+
+    @staticmethod
+    def config() -> dict:
+        return {
+            "query": "site:mckinsey.com filetype:pdf",
+            "recent_years": 0,
+            "fallback_pdf_listing_urls": [
+                "https://www.mckinsey.com/featured-insights/insights-store",
+            ],
+        }
+
+    def test_browser_timeout_falls_back_to_plain_requests(self) -> None:
+        browser = Mock()
+        browser.get.side_effect = fetcher.requests.Timeout("fixture timeout")
+        session = Mock()
+        session.get.return_value = FakeResponse(text=self.RESULT_HTML)
+
+        with (
+            patch.object(fetcher, "_HAS_CFFI", True),
+            patch.object(fetcher, "cffi_requests", browser),
+        ):
+            items = fetcher.collect_ddg_items(self.config(), session, timeout=60, df="")
+
+        self.assertEqual(len(items), 1)
+        self.assertEqual(items[0]["title"], "Example report")
+        self.assertEqual(browser.get.call_count, 1)
+        self.assertEqual(session.get.call_count, 1)
+        self.assertEqual(session.get.call_args.kwargs["timeout"], 25)
+
+    def test_ddg_challenge_falls_back_to_official_listing(self) -> None:
+        session = Mock()
+        session.get.side_effect = [
+            FakeResponse(
+                text='<form class="challenge-form">bots use DuckDuckGo too.</form>',
+                status_code=202,
+            ),
+            FakeResponse(text=self.STORE_HTML),
+        ]
+
+        with patch.object(fetcher, "_HAS_CFFI", False):
+            items = fetcher.collect_ddg_items(self.config(), session, timeout=10, df="")
+
+        self.assertEqual(len(items), 1)
+        self.assertEqual(items[0]["title"], "Independent official report")
+        self.assertEqual(items[0]["date"], "2026-08-22T12:00:00Z")
+        self.assertEqual(
+            items[0]["source_url"],
+            "https://www.mckinsey.com/~/media/mckinsey/official-report.pdf",
+        )
+        called_urls = [call.args[0] for call in session.get.call_args_list]
+        self.assertEqual(
+            called_urls,
+            [
+                "https://html.duckduckgo.com/html/",
+                "https://www.mckinsey.com/featured-insights/insights-store",
+            ],
+        )
+
+    def test_official_listing_parser_uses_publication_date_for_recent_filter(self) -> None:
+        year = str(fetcher.datetime.now(fetcher.timezone.utc).year)
+        store_html = self.STORE_HTML.replace("2026", year)
+        session = Mock()
+        session.get.side_effect = [
+            fetcher.requests.Timeout("fixture timeout"),
+            FakeResponse(text=store_html),
+        ]
+        cfg = self.config()
+        cfg["recent_years"] = 1
+
+        with patch.object(fetcher, "_HAS_CFFI", False):
+            items = fetcher.collect_ddg_items(cfg, session, timeout=10, df="")
+
+        self.assertEqual(len(items), 1)
+        self.assertTrue(items[0]["date"].startswith(year))
+
+    def test_all_transport_failures_raise_source_health_error(self) -> None:
+        session = Mock()
+        session.get.side_effect = fetcher.requests.Timeout("fixture timeout")
+
+        with (
+            patch.object(fetcher, "_HAS_CFFI", False),
+            self.assertRaisesRegex(RuntimeError, "unavailable across all routes"),
+        ):
+            fetcher.collect_ddg_items(self.config(), session, timeout=10, df="")
+
+        self.assertEqual(session.get.call_count, 2)
 
 
 if __name__ == "__main__":
