@@ -90,6 +90,9 @@ jobs:
           pip install reportlab
           python -m pip install boto3
 
+      - name: Test consulting source fallbacks
+        run: python scripts/test_fetch_institution_latest_pdfs.py
+
       - name: Install Chinese fonts
         timeout-minutes: 5
         continue-on-error: true

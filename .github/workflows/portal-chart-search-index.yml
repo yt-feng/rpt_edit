@@ -97,6 +97,9 @@ jobs:
       - name: Install chart indexing dependencies
         run: python -m pip install --disable-pip-version-check "requests>=2.31,<3" "Pillow>=10,<12" "boto3>=1.34,<2"
 
+      - name: Test chart indexing recovery contract
+        run: python scripts/test_chart_search_index.py
+
       - name: Test historical artifact materialization
         run: python scripts/test_materialize_shard_artifacts.py
 
@@ -182,10 +185,12 @@ jobs:
           REQUEST_LIMIT: ${{ inputs.max_images }}
           RETRY_ERRORS_NOW: ${{ inputs.retry_errors_now }}
           CHECKPOINT_BATCH_SIZE: ${{ vars.VISION_INDEX_CHECKPOINT_BATCH_SIZE || '20' }}
+          TRANSIENT_RECOVERY_ROUNDS: ${{ vars.VISION_INDEX_TRANSIENT_RECOVERY_ROUNDS || '1' }}
         run: |
           set -euo pipefail
           printf '%s' "$REQUEST_LIMIT" | grep -Eq '^[0-9]+$'
           printf '%s' "$CHECKPOINT_BATCH_SIZE" | grep -Eq '^[1-9][0-9]*$'
+          printf '%s' "$TRANSIENT_RECOVERY_ROUNDS" | grep -Eq '^[1-9][0-9]*$'
           PREVIOUS_INDEX="_chart_work/previous-index.json"
           TOTAL_MODEL_CALLS=0
           MODEL_CALLS=0
@@ -194,14 +199,16 @@ jobs:
           QUARANTINED=0
           UNPROCESSED=1
           FAILURES=0
-          RETRY_ARGS=()
-          if [ "$RETRY_ERRORS_NOW" = "true" ]; then
-            RETRY_ARGS+=(--retry-errors-now)
-          fi
 
           run_checkpoint_batch() {
             local CALL_LIMIT="$1"
+            local ATTEMPT_RUN_ID="$2"
+            local RETRY_NOW="$3"
             local BUILD_STATUS=0
+            local BATCH_RETRY_ARGS=()
+            if [ "$RETRY_NOW" = "true" ]; then
+              BATCH_RETRY_ARGS+=(--retry-errors-now)
+            fi
             set +e
             python scripts/build_chart_search_index.py \
               --root "_chart_input/${{ inputs.date_folder }}" \
@@ -216,8 +223,8 @@ jobs:
               --max-per-report "${{ vars.VISION_INDEX_MAX_PER_REPORT || '0' }}" \
               --min-interval "${{ vars.VISION_INDEX_MIN_INTERVAL_SECONDS || '0.4' }}" \
               --replace-date-folder "${{ inputs.date_folder }}" \
-              --attempt-run-id "${GITHUB_RUN_ID}:${GITHUB_RUN_ATTEMPT}" \
-              "${RETRY_ARGS[@]}"
+              --attempt-run-id "$ATTEMPT_RUN_ID" \
+              "${BATCH_RETRY_ARGS[@]}"
             BUILD_STATUS=$?
             set -e
             # Publish the private state even when authentication/configuration fails
@@ -251,7 +258,10 @@ jobs:
               if [ "$REMAINING" -le 0 ]; then break; fi
               if [ "$REMAINING" -lt "$CALL_LIMIT" ]; then CALL_LIMIT="$REMAINING"; fi
             fi
-            run_checkpoint_batch "$CALL_LIMIT"
+            run_checkpoint_batch \
+              "$CALL_LIMIT" \
+              "${GITHUB_RUN_ID}:${GITHUB_RUN_ATTEMPT}" \
+              "$RETRY_ERRORS_NOW"
             if [ "$UNPROCESSED" = "0" ]; then break; fi
             if [ "$MODEL_CALLS" = "0" ]; then
               echo "::error::Chart indexing made no progress with $UNPROCESSED unprocessed hashes."
@@ -265,6 +275,38 @@ jobs:
             echo "::error::Chart indexing exceeded the checkpoint batch guard with $UNPROCESSED hashes remaining."
             exit 1
           fi
+
+          # A single image can exhaust the model client's internal retries near the
+          # end of a long run. Reuse the private checkpoint and give only transient
+          # residuals a bounded same-job recovery pass. A distinct attempt id is
+          # required because the state deliberately suppresses duplicate attempts.
+          if [ "$UNPROCESSED" = "0" ] && \
+             [ "$RETRYABLE" -gt 0 ] && \
+             [ "$STABLE_ERRORS" = "0" ] && \
+             [ "$LIMIT_REACHED" = "0" ]; then
+            for RECOVERY_ROUND in $(seq 1 "$TRANSIENT_RECOVERY_ROUNDS"); do
+              CALL_LIMIT="$RETRYABLE"
+              if [ "$CALL_LIMIT" -gt "$CHECKPOINT_BATCH_SIZE" ]; then
+                CALL_LIMIT="$CHECKPOINT_BATCH_SIZE"
+              fi
+              if [ "$REQUEST_LIMIT" -gt 0 ]; then
+                REMAINING=$((REQUEST_LIMIT - TOTAL_MODEL_CALLS))
+                if [ "$REMAINING" -le 0 ]; then break; fi
+                if [ "$REMAINING" -lt "$CALL_LIMIT" ]; then CALL_LIMIT="$REMAINING"; fi
+              fi
+              echo "::notice::Retrying $CALL_LIMIT transient chart checkpoint(s) in recovery round $RECOVERY_ROUND/$TRANSIENT_RECOVERY_ROUNDS."
+              run_checkpoint_batch \
+                "$CALL_LIMIT" \
+                "${GITHUB_RUN_ID}:${GITHUB_RUN_ATTEMPT}:recovery-${RECOVERY_ROUND}" \
+                "true"
+              if [ "$STABLE_ERRORS" != "0" ] || [ "$UNPROCESSED" != "0" ]; then break; fi
+              if [ "$RETRYABLE" = "0" ]; then break; fi
+              if [ "$MODEL_CALLS" = "0" ]; then break; fi
+            done
+          fi
+
+          LIMIT_REACHED=0
+          if [ "$REQUEST_LIMIT" -gt 0 ] && [ "$TOTAL_MODEL_CALLS" -ge "$REQUEST_LIMIT" ]; then LIMIT_REACHED=1; fi
 
           export TOTAL_MODEL_CALLS QUARANTINED RETRYABLE STABLE_ERRORS UNPROCESSED LIMIT_REACHED
           python - <<'PY'
