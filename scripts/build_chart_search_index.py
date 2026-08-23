@@ -548,7 +548,8 @@ class VisionClient:
                 ],
             }],
             "temperature": 0,
-            "max_tokens": 1200,
+            # JSON mode must be allowed to finish the object; an output-token cap
+            # can deterministically truncate complex chart descriptions mid-JSON.
             "response_format": {"type": "json_object"},
         }
         last_error: RetryableVisionError | None = None

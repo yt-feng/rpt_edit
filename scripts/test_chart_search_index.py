@@ -648,6 +648,37 @@ class ChartSearchIndexTests(unittest.TestCase):
                 client.analyze(image_path)
             self.assertEqual(chart.retryable_reason_code(caught.exception), "response_json")
 
+    def test_structured_output_request_has_no_truncating_token_cap(self) -> None:
+        response = Mock()
+        response.status_code = 200
+        response.headers = {}
+        response.json.return_value = {
+            "choices": [{"message": {"content": json.dumps(sample_analysis())}}]
+        }
+        with tempfile.TemporaryDirectory() as temp:
+            image_path = Path(temp) / "image.png"
+            write_image(image_path)
+            client = chart.VisionClient(
+                api_base="https://vision.example.invalid/v1",
+                api_key="fixture",
+                model="fixture-model",
+                timeout=5,
+                retries=1,
+                retry_backoff=0.1,
+                min_interval=0,
+            )
+            client.session = Mock()
+            client.session.post.return_value = response
+
+            analysis = client.analyze(image_path)
+
+        request_payload = client.session.post.call_args.kwargs["json"]
+        self.assertEqual(request_payload["response_format"], {"type": "json_object"})
+        self.assertTrue(
+            {"max_tokens", "max_completion_tokens"}.isdisjoint(request_payload)
+        )
+        self.assertTrue(analysis["is_chart"])
+
     def test_malformed_choice_is_retried_as_model_json(self) -> None:
         malformed = Mock()
         malformed.status_code = 200
