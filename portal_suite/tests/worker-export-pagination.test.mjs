@@ -572,15 +572,71 @@ test("live user export merges current disabled, entitlement, and access state", 
     },
     entitlementMap(rows) { return new Map(rows.map((row) => [row.email, row])); },
     normalizeEmail(value) { return String(value || "").trim().toLowerCase(); },
+    normalizeUsername(value) { return String(value || "").trim().toLowerCase(); },
+    accountDisabled(user) { return Boolean(user && user.disabled); },
     mapWithConcurrency: vm.runInNewContext(`(${extractFunction(worker, "mapWithConcurrency")})`),
     async mergeSiteUserAdminState(_env, user) { return { ...user, disabled: user.id === "u2" }; },
     async findAccessGrant(_env, email) { return { access_mode: email.startsWith("one") ? "all" : "none" }; },
-    adminVisibleUser(user, entitlement, access) { return { user, entitlement, access }; },
+    adminVisibleUser(user, entitlement, access) { return { ...user, entitlement, access }; },
   };
+  sandbox.sortAdminVisibleUsers = vm.runInNewContext(
+    `(${extractFunction(worker, "sortAdminVisibleUsers")})`,
+    sandbox,
+  );
   const load = vm.runInNewContext(`(${extractFunction(worker, "loadAllAdminUsersForExport")})`, sandbox);
   const rows = await load({});
   assert.equal(rows.length, 2);
-  assert.equal(rows[1].user.disabled, true);
+  assert.equal(rows[1].disabled, true);
   assert.equal(rows[0].entitlement.plan, "NOVA");
   assert.equal(rows[0].access.access_mode, "all");
+});
+
+test("admin users sort enabled accounts by latest login or registration and keep disabled accounts last", () => {
+  const sortUsers = vm.runInNewContext(
+    `(${extractFunction(worker, "sortAdminVisibleUsers")})`,
+    {
+      accountDisabled(user) { return Boolean(user && user.disabled); },
+      normalizeEmail(value) { return String(value || "").trim().toLowerCase(); },
+      normalizeUsername(value) { return String(value || "").trim().toLowerCase(); },
+    },
+  );
+  const rows = sortUsers([
+    {
+      id: "disabled-newest",
+      username: "disabled-newest",
+      email: "disabled-newest@example.com",
+      disabled: true,
+      created_at: "2026-08-24T12:00:00.000Z",
+      last_login_at: "2026-08-24T12:30:00.000Z",
+    },
+    {
+      id: "recent-login",
+      username: "recent-login",
+      email: "recent-login@example.com",
+      disabled: false,
+      created_at: "2026-07-01T00:00:00.000Z",
+      last_login_at: "2026-08-24T11:00:00.000Z",
+    },
+    {
+      id: "new-registration",
+      username: "new-registration",
+      email: "new-registration@example.com",
+      disabled: false,
+      created_at: "2026-08-24T11:30:00.000Z",
+      last_login_at: "",
+    },
+    {
+      id: "older-login",
+      username: "older-login",
+      email: "older-login@example.com",
+      disabled: false,
+      created_at: "2026-06-01T00:00:00.000Z",
+      last_login_at: "2026-08-23T00:00:00.000Z",
+    },
+  ]);
+
+  assert.deepEqual(
+    Array.from(rows, (user) => user.id),
+    ["new-registration", "recent-login", "older-login", "disabled-newest"],
+  );
 });

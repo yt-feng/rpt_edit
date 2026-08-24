@@ -406,3 +406,101 @@
     transition: none;
   }
 }
+
+/* Automatic device dark mode */
+@media (prefers-color-scheme: dark) {
+  .blog-page {
+    background:
+      radial-gradient(circle at top right, rgba(53, 198, 180, 0.09), transparent 34rem),
+      var(--bg);
+  }
+
+  .blog-topbar .topbar-link.is-active {
+    border-color: #3d706b;
+    background: #17332f;
+    color: var(--accent-strong);
+  }
+
+  .blog-hero {
+    border-color: #315d58;
+    background:
+      linear-gradient(135deg, rgba(19, 28, 37, 0.98), rgba(20, 49, 45, 0.92)),
+      var(--panel);
+  }
+
+  .blog-summary,
+  .blog-source-badge {
+    background: #17332f;
+    color: var(--accent-strong);
+  }
+
+  .blog-market-views,
+  .blog-card,
+  .blog-empty {
+    border-color: var(--line);
+    background: rgba(19, 28, 37, 0.96);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+  }
+
+  .blog-market-view-card {
+    border-color: var(--line);
+    background: var(--dark-control);
+  }
+
+  .blog-card:hover {
+    border-color: #3d706b;
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.36);
+  }
+
+  .blog-card :is(a, button):focus-visible,
+  :is(.blog-back, .blog-read-more, .blog-market-view-download):focus-visible,
+  .blog-article-content a:focus-visible {
+    border-radius: 4px;
+    outline: 3px solid rgba(88, 213, 198, 0.42);
+    outline-offset: 3px;
+  }
+
+  .blog-article-header {
+    border-bottom-color: var(--line);
+    background: linear-gradient(145deg, #142926, var(--panel));
+  }
+
+  .blog-digest,
+  .blog-article-content {
+    color: #c9d5df;
+  }
+
+  .blog-article-content :is(h1, h2, h3, h4, h5, h6, strong) {
+    color: var(--ink);
+  }
+
+  .blog-article-content :is(pre, blockquote) {
+    border-color: var(--line);
+    background: #111821;
+    color: var(--ink);
+  }
+
+  .blog-article-content :not(pre) > code {
+    border-radius: 5px;
+    padding: 0.12em 0.34em;
+    background: #202d39;
+    color: #d9f6f1;
+  }
+
+  .blog-article-content :is(th, td) {
+    border-color: var(--line);
+  }
+
+  .blog-article-content th {
+    background: var(--dark-control);
+    color: var(--ink);
+  }
+
+  .blog-article-content hr {
+    border-color: var(--line);
+  }
+
+  .blog-empty-content {
+    color: var(--muted);
+  }
+}

@@ -33,27 +33,26 @@ test("external search uses its full-request 10 second budget without changing th
     /async function fetchExternalSearchJsonWithTimeout\(resource, init = \{\}, timeoutMs = EXTERNAL_SEARCH_TIMEOUT_MS\)/,
   );
   assert.equal(
-    (workerSource.match(/EXTERNAL_SEARCH_TIMEOUT_MS/g) || []).length,
-    2,
-    "the shorter timeout must remain scoped to external search",
+    Number(workerSource.match(/const EXTERNAL_SEARCH_MAX_PAGES = (\d+);/)?.[1]),
+    3,
+    "Reportify pagination must stay bounded",
   );
 
   let cachedSearchArgs;
-  let externalJsonRequest;
+  let boundedSearchArgs;
   const handlerSource = sourceBetween(
     "async function handleExternalSearch",
     "// Fetch the upstream detail",
   );
   const { functions } = evaluateFunctions(handlerSource, ["handleExternalSearch"], {
     URL,
-    EXTERNAL_API: "https://reportify.example.test/api",
-    EXTERNAL_SEARCH_PAGE_SIZE: 20,
-    externalHeaders: () => ({ Accept: "application/json" }),
-    slimExternalItem: (item) => ({ id: String(item.report_id || "") }),
-    fetchExternalSearchJsonWithTimeout: async (url, init) => {
-      externalJsonRequest = { url, init };
-      return { items: [{ report_id: "report-1" }], page_num: 1, total_page: 1 };
+    embeddedSearchFilters: () => ({ includeHtml: false, startDate: "", endDate: "" }),
+    embeddedSearchCacheQuery: (query) => `filtered:${query}`,
+    boundedExternalSearch: async (...args) => {
+      boundedSearchArgs = args;
+      return { items: [{ id: "report-1" }], page: 1, total_page: 1 };
     },
+    externalSearchMirrorFallback: async () => null,
     handleCachedSearch: (...args) => {
       cachedSearchArgs = args;
       return { delegated: true };
@@ -65,10 +64,10 @@ test("external search uses its full-request 10 second budget without changing th
   }, {});
   assert.equal(cachedSearchArgs[2], "external");
   assert.equal(cachedSearchArgs.length, 8, "external search must not pass skipFreshCache options");
+  assert.equal(cachedSearchArgs[3], "filtered:US economic");
 
   const refreshed = await cachedSearchArgs[6]();
-  assert.match(externalJsonRequest.url, /^https:\/\/reportify\.example\.test\/api\/reports\?/);
-  assert.equal(externalJsonRequest.init.headers.Accept, "application/json");
+  assert.deepEqual(boundedSearchArgs.slice(0, 2), ["US economic", 1]);
   assert.equal(refreshed.items[0].id, "report-1");
 });
 

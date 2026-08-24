@@ -276,6 +276,7 @@ test("operator modal renders Daily Picks and Market Views while super-only secti
   });
   assert.match(markup, /<strong>每日精选<\/strong>/u);
   assert.match(markup, /id="accountAdminMarketViewsSection"/u);
+  assert.match(markup, /id="accountAdminMarketViewsMore"[^>]*aria-haspopup="dialog"[^>]*hidden/u);
   assert.doesNotMatch(markup, /id="accountAdminMarketViewsSection"[^>]*hidden/u);
   for (const section of ["accountAdminWechatSection", "accountAdminHotReportsSection", "accountAdminAnalyticsSection", "accountAdminUsersSection"]) {
     assert.match(markup, new RegExp(`id="${section}"[^>]*hidden`, "u"));
@@ -297,16 +298,24 @@ test("operator modal renders Daily Picks and Market Views while super-only secti
     escapeHtml(value) { return String(value || ""); },
     formatSize(value) { return `${value} bytes`; },
   };
-  vm.runInNewContext(`${extractFunction(app, "adminMarketViewRow")}\n${extractFunction(app, "loadAccountAdminMarketViews")}`, sandbox);
+  vm.runInNewContext(`
+    ${extractFunction(app, "adminItemDateTimestamp")}
+    ${extractFunction(app, "adminDatedItemsNewestFirst")}
+    ${extractFunction(app, "adminCollectionPreview")}
+    ${extractFunction(app, "adminMarketViewRow")}
+    ${extractFunction(app, "loadAccountAdminMarketViews")}
+  `, sandbox);
   const targets = {
     marketViewCount: { textContent: "" },
     marketViews: { innerHTML: "" },
+    marketViewsMore: { hidden: true },
     marketViewsNotice: { hidden: true, textContent: "", className: "" },
   };
   const rows = await sandbox.loadAccountAdminMarketViews("/api", targets);
   assert.equal(rows.length, 1);
   assert.deepEqual(requested, ["/api/market-views"]);
   assert.equal(targets.marketViewCount.textContent, "1 PDFs");
+  assert.equal(targets.marketViewsMore.hidden, true);
   assert.match(targets.marketViews.innerHTML, /Market Views · 2026-08-02/u);
   assert.match(targets.marketViews.innerHTML, /account-admin-market-view-download/u);
 });
