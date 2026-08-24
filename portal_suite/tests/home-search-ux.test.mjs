@@ -52,7 +52,9 @@ test("remote sources use independent deadlines and Reportify surfaces fallback w
   assert.match(remoteSearch, /remoteSearchControllers\.set\(source, controller\)/);
   assert.match(remoteSearch, /remoteSearchControllers\.get\(source\) === controller/);
   assert.match(remoteSearch, /source === "external" \? "Reportify" : "此来源"/);
-  assert.match(remoteSearch, /warning \|\| data\.cache_status === "miss"/);
+  assert.match(remoteSearch, /warning:\s*String\(data\.warning \|\| ""\)\.trim\(\)/);
+  assert.match(remoteSearch, /cacheStatus:\s*String\(data\.cache_status \|\| ""\)\.trim\(\)/);
+  assert.match(remoteSearch, /externalResponseMeta\.cacheStatus === "miss"/);
   assert.match(remoteSearch, /sourceUnavailable \? "error" : "done"/);
   assert.doesNotMatch(remoteSearch, /let remoteSearchController\s*=/);
   assert.doesNotMatch(remoteSearch, /controller\.abort\(\), 18_000/);

@@ -33,11 +33,13 @@
   })();
   let accountAdminDailyPicks = new Map();
   let accountAdminMarketViews = new Map();
+  let accountAdminHotReports = [];
   let accountAdminUsersByEmail = new Map();
   let accountAdminAccessOptions = {};
   let accountAdminLastSummary = null;
   let accountAdminLastSummaryOwner = "";
   let accountAdminRefreshTimer = null;
+  let accountAdminListModalCleanup = null;
   let pdfJsLoadPromise = null;
   const activeAdminButtonActions = new WeakMap();
 
@@ -78,6 +80,111 @@
     { value: "10_20", label: "10-20页", matches: (pages) => pages >= 10 && pages <= 20 },
     { value: "over20", label: "20页以上", matches: (pages) => pages >= 20 },
   ];
+
+  const AUTHORITY_PAGE_RANGE_FILTERS = [
+    { value: "under5", label: "≤5页", matches: (pages) => pages > 0 && pages <= 5 },
+    { value: "5_10", label: "6-10页", matches: (pages) => pages >= 6 && pages <= 10 },
+    { value: "10_20", label: "11-20页", matches: (pages) => pages >= 11 && pages <= 20 },
+    { value: "over20", label: ">20页", matches: (pages) => pages > 20 },
+  ];
+
+  function recentMonthCutoff(months, now = Date.now()) {
+    const count = Math.max(0, Number(months) || 0);
+    const current = new Date(now);
+    if (!count || !Number.isFinite(current.getTime())) return 0;
+    const targetMonth = current.getUTCMonth() - count;
+    const targetYear = current.getUTCFullYear() + Math.floor(targetMonth / 12);
+    const normalizedMonth = ((targetMonth % 12) + 12) % 12;
+    const lastDay = new Date(Date.UTC(targetYear, normalizedMonth + 1, 0)).getUTCDate();
+    return Date.UTC(
+      targetYear,
+      normalizedMonth,
+      Math.min(current.getUTCDate(), lastDay),
+      0,
+      0,
+      0,
+      0,
+    );
+  }
+
+  function itemMatchesRecentMonths(item, months, now = Date.now()) {
+    const count = Math.max(0, Number(months) || 0);
+    if (!count) return true;
+    const timestamp = Date.parse(String(item && item.date || "").trim());
+    if (!Number.isFinite(timestamp)) return false;
+    return timestamp >= recentMonthCutoff(count, now) && timestamp <= now + 24 * 60 * 60 * 1000;
+  }
+
+  function recentDateBounds(months, now = Date.now()) {
+    const count = Math.max(0, Number(months) || 0);
+    const cutoff = recentMonthCutoff(count, now);
+    const current = new Date(now);
+    if (!count || !cutoff || !Number.isFinite(current.getTime())) {
+      return { startDate: "", endDate: "" };
+    }
+    return {
+      startDate: new Date(cutoff).toISOString().slice(0, 10),
+      endDate: current.toISOString().slice(0, 10),
+    };
+  }
+
+  function embeddedSearchRequestUrl(baseUrl, path, query, filters = {}, now = Date.now(), documentUrl = "") {
+    const referenceUrl = documentUrl
+      || (typeof window !== "undefined" && window.location && window.location.href)
+      || "https://portal.example.invalid/";
+    const base = new URL(`${String(baseUrl || "/api").replace(/\/$/, "")}/`, referenceUrl);
+    const url = new URL(path, base);
+    url.searchParams.set("q", String(query || "").trim());
+    const bounds = recentDateBounds(filters.recentMonths, now);
+    if (bounds.startDate) url.searchParams.set("start_date", bounds.startDate);
+    if (bounds.endDate) url.searchParams.set("end_date", bounds.endDate);
+    if (path === "external/search") {
+      url.searchParams.set("include_html", filters.includeHtml ? "1" : "0");
+    }
+    if (path === "authority/search") {
+      const institution = String(filters.institution || "").trim();
+      const pageRange = String(filters.pageRange || "").trim();
+      if (institution) url.searchParams.set("institution", institution);
+      if (pageRange) url.searchParams.set("page_range", pageRange);
+    }
+    return url.toString();
+  }
+
+  function isExternalHtmlItem(item) {
+    const fileType = String(item && item.file_type || "").trim().toLowerCase();
+    return fileType === "html" || fileType === "htm" || /(?:^|[\s/.+-])html?(?:$|[\s/.+-])/.test(fileType);
+  }
+
+  function externalSearchView(items, filters = {}, now = Date.now()) {
+    const rows = Array.isArray(items) ? items : [];
+    const recentMonths = Math.max(0, Number(filters.recentMonths) || 0);
+    const dateMatched = rows.filter((item) => itemMatchesRecentMonths(item, recentMonths, now));
+    const nonHtml = dateMatched.filter((item) => !isExternalHtmlItem(item));
+    const includeHtml = Boolean(filters.includeHtml);
+    const htmlFallback = !includeHtml
+      && Boolean(filters.allowHtmlFallback)
+      && dateMatched.length > 0
+      && nonHtml.length === 0;
+    const visible = includeHtml || htmlFallback ? dateMatched : nonHtml;
+    return {
+      items: visible,
+      dateMatchedCount: dateMatched.length,
+      hiddenHtmlCount: Math.max(0, dateMatched.length - visible.length),
+      htmlFallback,
+    };
+  }
+
+  function authoritySearchView(items, filters = {}, now = Date.now()) {
+    const institution = String(filters.institution || "").trim();
+    const recentMonths = Math.max(0, Number(filters.recentMonths) || 0);
+    const pageRange = authorityPageRangeForValue(String(filters.pageRange || ""));
+    return (Array.isArray(items) ? items : []).filter((item) => {
+      if (institution && String(item && item.institution || "").trim() !== institution) return false;
+      if (!itemMatchesRecentMonths(item, recentMonths, now)) return false;
+      if (pageRange && !pageRange.matches(reportPageCountValue(item))) return false;
+      return true;
+    });
+  }
 
   function escapeHtml(value) {
     return String(value || "")
@@ -1183,6 +1290,7 @@
             <div class="account-admin-heading">
               <strong>Market Views</strong>
               <span id="accountAdminMarketViewCount"></span>
+              <button class="secondary-button account-admin-more-button" id="accountAdminMarketViewsMore" type="button" aria-haspopup="dialog" hidden>更多</button>
             </div>
             <div id="accountAdminMarketViewsNotice" class="account-admin-module-notice" hidden></div>
             <div id="accountAdminMarketViews" class="account-admin-files"></div>
@@ -1199,6 +1307,7 @@
             <div class="account-admin-heading">
               <strong>近期热门报告</strong>
               <span id="accountAdminHotReportCount"></span>
+              <button class="secondary-button account-admin-more-button" id="accountAdminHotReportsMore" type="button" aria-haspopup="dialog" hidden>更多</button>
             </div>
             <form id="accountAdminHotReportForm" class="account-admin-hot-form" enctype="multipart/form-data">
               <div class="account-admin-form-grid">
@@ -1259,6 +1368,16 @@
               <button class="secondary-button" id="accountAdminNewUser" type="button">新增用户</button>
             </div>
             <div id="accountAdminUsersNotice" class="account-admin-module-notice" hidden></div>
+            <form id="accountAdminPasswordReset" class="account-admin-password-reset">
+              <label>
+                <span>重置用户密码</span>
+                <select id="accountAdminPasswordResetEmail" required>
+                  <option value="">选择用户</option>
+                </select>
+              </label>
+              <button class="secondary-button" type="submit" disabled>重置为 123456</button>
+              <small>重置后请通知该用户登录并自行修改密码。</small>
+            </form>
             <form id="accountAdminUserCreator" class="account-admin-user-editor" hidden>
               <div class="account-admin-user-editor-head">
                 <strong>新增用户</strong>
@@ -1462,13 +1581,53 @@
     `;
   }
 
+  function adminUserSortTimestamp(value) {
+    const timestamp = Date.parse(String(value || ""));
+    return Number.isFinite(timestamp) ? timestamp : 0;
+  }
+
+  function compareAdminUsers(left, right) {
+    const disabledDifference = Number(Boolean(left && left.disabled)) - Number(Boolean(right && right.disabled));
+    if (disabledDifference) return disabledDifference;
+    const leftRecent = adminUserSortTimestamp(left && (left.last_login_at || left.created_at));
+    const rightRecent = adminUserSortTimestamp(right && (right.last_login_at || right.created_at));
+    if (rightRecent !== leftRecent) return rightRecent - leftRecent;
+    const leftLogin = adminUserSortTimestamp(left && left.last_login_at);
+    const rightLogin = adminUserSortTimestamp(right && right.last_login_at);
+    if (rightLogin !== leftLogin) return rightLogin - leftLogin;
+    const leftCreated = adminUserSortTimestamp(left && left.created_at);
+    const rightCreated = adminUserSortTimestamp(right && right.created_at);
+    if (rightCreated !== leftCreated) return rightCreated - leftCreated;
+    return String(left && left.email || "").localeCompare(String(right && right.email || ""));
+  }
+
+  function renderAdminPasswordResetOptions(rows) {
+    const select = document.getElementById("accountAdminPasswordResetEmail");
+    if (!select) return;
+    const current = select.value;
+    const resettable = (rows || []).filter((user) => String(user && user.role || "user") === "user");
+    select.innerHTML = [
+      '<option value="">选择用户</option>',
+      ...resettable.map((user) => {
+        const email = String(user && user.email || "");
+        const username = String(user && user.username || email);
+        const suffix = user && user.disabled ? " · 已禁用" : "";
+        return `<option value="${escapeHtml(email)}">${escapeHtml(`${username} · ${email}${suffix}`)}</option>`;
+      }),
+    ].join("");
+    if ([...select.options].some((option) => option.value === current)) select.value = current;
+    const submit = select.form && select.form.querySelector('button[type="submit"]');
+    if (submit) submit.disabled = !select.value;
+  }
+
   function renderAdminUserTable(targets) {
     if (!targets || !targets.users) return;
-    const rows = [...accountAdminUsersByEmail.values()];
+    const rows = [...accountAdminUsersByEmail.values()].sort(compareAdminUsers);
     if (targets.userCount) targets.userCount.textContent = `${rows.length} users`;
     targets.users.innerHTML = rows.length
       ? rows.map(adminUserRow).join("")
       : '<tr><td colspan="11">暂无用户。</td></tr>';
+    renderAdminPasswordResetOptions(rows);
   }
 
   function optionMarkup(options = [], selected = []) {
@@ -1782,6 +1941,21 @@
     return data;
   }
 
+  async function resetAdminUserPassword(workerUrl, email) {
+    const response = await fetch(`${workerUrl}/account-admin/user-password-reset`, {
+      method: "POST",
+      cache: "no-store",
+      headers: { "Content-Type": "application/json", ...authHeaders() },
+      body: JSON.stringify({ email, confirm_reset: true }),
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(data.detail || "密码重置失败。");
+    if (data.user && data.user.email) {
+      accountAdminUsersByEmail.set(String(data.user.email), data.user);
+    }
+    return data;
+  }
+
   function adminFileRow(file) {
     const key = file.type === "artifact" ? file.id : file.path;
     const endpointAttr = file.type === "artifact" ? "artifact" : "file";
@@ -1823,6 +1997,138 @@
     `;
   }
 
+  function adminItemDateTimestamp(item) {
+    const candidates = [
+      item && item.date,
+      item && item.report_date,
+      item && item.published_at,
+      item && item.created_at,
+      item && item.updated_at,
+    ];
+    for (const candidate of candidates) {
+      const value = String(candidate || "").trim();
+      if (!value) continue;
+      const timestamp = Date.parse(/^\d{4}-\d{2}-\d{2}$/.test(value) ? `${value}T00:00:00Z` : value);
+      if (Number.isFinite(timestamp)) return timestamp;
+    }
+    const compactDate = String(item && item.id || "").match(/(?:^|:)(\d{2})(\d{2})(\d{2})$/);
+    if (compactDate) {
+      return Date.UTC(2000 + Number(compactDate[1]), Number(compactDate[2]) - 1, Number(compactDate[3]));
+    }
+    return 0;
+  }
+
+  function adminDatedItemsNewestFirst(items) {
+    return (Array.isArray(items) ? items : [])
+      .map((item, index) => ({ item, index, timestamp: adminItemDateTimestamp(item) }))
+      .sort((left, right) => right.timestamp - left.timestamp || left.index - right.index)
+      .map((entry) => entry.item);
+  }
+
+  function adminCollectionPreview(items, limit = 3) {
+    const all = adminDatedItemsNewestFirst(items);
+    const visibleLimit = Math.max(0, Number(limit) || 0);
+    return {
+      all,
+      preview: all.slice(0, visibleLimit),
+      hasMore: all.length > visibleLimit,
+    };
+  }
+
+  function accountAdminListModalMarkup(options = {}) {
+    const title = String(options.title || "完整列表");
+    const count = Math.max(0, Number(options.count) || 0);
+    const listClass = options.listClass === "account-admin-hot-list"
+      ? "account-admin-hot-list"
+      : "account-admin-files";
+    return `
+      <div class="admin-modal account-admin-list-modal" id="accountAdminListModal" role="dialog" aria-modal="true" aria-labelledby="accountAdminListTitle">
+        <div class="admin-dialog account-admin-list-dialog">
+          <button class="admin-close" id="accountAdminListClose" type="button" aria-label="关闭">&times;</button>
+          <div class="account-admin-top account-admin-list-top">
+            <h3 id="accountAdminListTitle">${escapeHtml(title)}</h3>
+            <span>${count} 条</span>
+          </div>
+          <div class="status-line account-admin-list-status" id="accountAdminListStatus" aria-live="polite"></div>
+          <div class="account-admin-list-body ${listClass}" id="accountAdminListBody">${String(options.bodyHtml || "")}</div>
+        </div>
+      </div>
+    `;
+  }
+
+  function openAccountAdminListModal(options = {}) {
+    if (accountAdminListModalCleanup) accountAdminListModalCleanup();
+    const trigger = options.trigger || document.activeElement;
+    const parentModal = document.getElementById("accountAdminModal");
+    const parentAriaHidden = parentModal ? parentModal.getAttribute("aria-hidden") : null;
+    const parentWasInert = Boolean(parentModal && parentModal.inert);
+    document.body.insertAdjacentHTML("beforeend", accountAdminListModalMarkup(options));
+    const modal = document.getElementById("accountAdminListModal");
+    const close = document.getElementById("accountAdminListClose");
+    const body = document.getElementById("accountAdminListBody");
+    const status = document.getElementById("accountAdminListStatus");
+    if (!modal || !close || !body || !status) return null;
+
+    let finished = false;
+    function finish() {
+      if (finished) return;
+      finished = true;
+      modal.remove();
+      if (parentModal) {
+        if (parentAriaHidden === null) parentModal.removeAttribute("aria-hidden");
+        else parentModal.setAttribute("aria-hidden", parentAriaHidden);
+        if ("inert" in parentModal) parentModal.inert = parentWasInert;
+      }
+      if (accountAdminListModalCleanup === finish) accountAdminListModalCleanup = null;
+      if (trigger && trigger.isConnected !== false && typeof trigger.focus === "function") {
+        trigger.focus({ preventScroll: true });
+      }
+    }
+
+    function focusableElements() {
+      return Array.from(modal.querySelectorAll(
+        'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      )).filter((element) => !element.hidden);
+    }
+
+    close.addEventListener("click", finish);
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) finish();
+    });
+    modal.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        finish();
+        return;
+      }
+      if (event.key !== "Tab") return;
+      const focusable = focusableElements();
+      if (!focusable.length) {
+        event.preventDefault();
+        close.focus({ preventScroll: true });
+        return;
+      }
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus({ preventScroll: true });
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus({ preventScroll: true });
+      }
+    });
+    if (typeof options.onBodyClick === "function") body.addEventListener("click", options.onBodyClick);
+
+    close.focus({ preventScroll: true });
+    if (parentModal) {
+      parentModal.setAttribute("aria-hidden", "true");
+      if ("inert" in parentModal) parentModal.inert = true;
+    }
+    accountAdminListModalCleanup = finish;
+    return { modal, body, status, close: finish };
+  }
+
   function adminMarketViewRow(item) {
     const id = String(item && item.id || "");
     const name = String(item && item.filename || `${id || "market-views"}.pdf`);
@@ -1852,16 +2158,18 @@
       const data = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(data.detail || "Market Views 读取失败。");
       const items = Array.isArray(data.items) ? data.items : [];
-      accountAdminMarketViews = new Map(items.map((item) => [String(item.id || ""), item]));
-      if (targets.marketViewCount) targets.marketViewCount.textContent = items.length ? `${items.length} PDFs` : "";
-      targets.marketViews.innerHTML = items.length
-        ? items.map(adminMarketViewRow).join("")
+      const view = adminCollectionPreview(items);
+      accountAdminMarketViews = new Map(view.all.map((item) => [String(item.id || ""), item]));
+      if (targets.marketViewCount) targets.marketViewCount.textContent = view.all.length ? `${view.all.length} PDFs` : "";
+      if (targets.marketViewsMore) targets.marketViewsMore.hidden = !view.hasMore;
+      targets.marketViews.innerHTML = view.preview.length
+        ? view.preview.map(adminMarketViewRow).join("")
         : '<div class="empty-state">Market Views PDF 正在准备中。</div>';
       if (targets.marketViewsNotice) {
         targets.marketViewsNotice.hidden = true;
         targets.marketViewsNotice.textContent = "";
       }
-      return items;
+      return view.all;
     } catch (error) {
       if (targets.marketViewsNotice) {
         targets.marketViewsNotice.hidden = false;
@@ -1870,9 +2178,51 @@
       }
       if (!accountAdminMarketViews.size) {
         targets.marketViews.innerHTML = '<div class="empty-state">Market Views 暂时无法读取，请点击刷新重试。</div>';
+        if (targets.marketViewsMore) targets.marketViewsMore.hidden = true;
       }
       throw error;
     }
+  }
+
+  async function handleAccountAdminMarketViewDownload(event, workerUrl, status) {
+    const button = event.target.closest(".account-admin-market-view-download");
+    if (!button) return false;
+    const id = String(button.dataset.marketViewId || "");
+    const item = accountAdminMarketViews.get(id);
+    if (!id || !item) return false;
+    if (cancelActiveAdminButton(button)) {
+      status.className = "status-line";
+      status.textContent = "正在取消…";
+      return true;
+    }
+    const row = button.closest(".account-admin-file");
+    const progress = row && row.querySelector(".account-admin-progress");
+    const controller = new AbortController();
+    startAdminButtonAction(button, controller);
+    resetDownloadProgress(progress);
+    status.className = "status-line";
+    status.textContent = "正在下载 Market Views PDF…";
+    try {
+      const response = await fetch(`${workerUrl}/market-views/pdf?id=${encodeURIComponent(id)}`, {
+        cache: "no-store",
+        headers: authHeaders(),
+        signal: controller.signal,
+      });
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data.detail || `PDF 下载失败 (${response.status})。`);
+      }
+      const blob = await responseBlobWithProgress(response, progress);
+      triggerBlobDownload(blob, response.headers.get("Content-Disposition") || "", item.filename || button.dataset.name || "market-views.pdf");
+      status.className = "status-line ok";
+      status.textContent = "Market Views PDF 下载已开始。";
+    } catch (error) {
+      status.className = error && error.name === "AbortError" ? "status-line" : "status-line error";
+      status.textContent = error && error.name === "AbortError" ? "下载已取消。" : (error.message || "PDF 下载失败。");
+    } finally {
+      finishAdminButtonAction(button);
+    }
+    return true;
   }
 
   function adminPickMeta(pick) {
@@ -3641,15 +3991,20 @@
       const data = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(data.detail || "近期热门报告读取失败。");
       const items = Array.isArray(data.items) ? data.items : [];
-      targets.hotReportList.innerHTML = items.length
-        ? items.map(adminHotReportRow).join("")
+      const view = adminCollectionPreview(items);
+      accountAdminHotReports = view.all;
+      targets.hotReportList.innerHTML = view.preview.length
+        ? view.preview.map(adminHotReportRow).join("")
         : '<div class="empty-state">还没有上传近期热门报告。</div>';
-      targets.hotReportCount.textContent = `${items.length} 条`;
+      targets.hotReportCount.textContent = `${view.all.length} 条`;
+      if (targets.hotReportMore) targets.hotReportMore.hidden = !view.hasMore;
       targets.hotReportStatus.textContent = "";
-      return items;
+      return view.all;
     } catch (error) {
       targets.hotReportList.innerHTML = '<div class="empty-state">暂时无法读取已上传报告。</div>';
       targets.hotReportCount.textContent = "";
+      if (targets.hotReportMore) targets.hotReportMore.hidden = true;
+      accountAdminHotReports = [];
       targets.hotReportStatus.className = "status-line error";
       targets.hotReportStatus.textContent = error.message || "近期热门报告读取失败。";
       return [];
@@ -3791,6 +4146,7 @@
     const picksNotice = document.getElementById("accountAdminPicksNotice");
     const marketViewCount = document.getElementById("accountAdminMarketViewCount");
     const marketViews = document.getElementById("accountAdminMarketViews");
+    const marketViewsMore = document.getElementById("accountAdminMarketViewsMore");
     const marketViewsNotice = document.getElementById("accountAdminMarketViewsNotice");
     const wechatCount = document.getElementById("accountAdminWechatCount");
     const wechatSchedule = document.getElementById("accountAdminWechatSchedule");
@@ -3798,6 +4154,7 @@
     const wechatSection = document.getElementById("accountAdminWechatSection");
     const hotReportSection = document.getElementById("accountAdminHotReportsSection");
     const hotReportCount = document.getElementById("accountAdminHotReportCount");
+    const hotReportMore = document.getElementById("accountAdminHotReportsMore");
     const hotReportForm = document.getElementById("accountAdminHotReportForm");
     const hotReportTitle = document.getElementById("accountAdminHotReportTitle");
     const hotReportDate = document.getElementById("accountAdminHotReportDate");
@@ -3809,6 +4166,8 @@
     const usersSection = document.getElementById("accountAdminUsersSection");
     const exportUsers = document.getElementById("accountAdminExportUsers");
     const newUser = document.getElementById("accountAdminNewUser");
+    const passwordReset = document.getElementById("accountAdminPasswordReset");
+    const passwordResetEmail = document.getElementById("accountAdminPasswordResetEmail");
     const userCreator = document.getElementById("accountAdminUserCreator");
     const userCreatorClose = document.getElementById("accountAdminUserCreatorClose");
     const newUsername = document.getElementById("accountAdminNewUsername");
@@ -3844,6 +4203,7 @@
       picksNotice,
       marketViewCount,
       marketViews,
+      marketViewsMore,
       marketViewsNotice,
       wechatCount,
       wechatSchedule,
@@ -3851,6 +4211,7 @@
       wechatSection,
       hotReportSection,
       hotReportCount,
+      hotReportMore,
       hotReportForm,
       hotReportTitle,
       hotReportDate,
@@ -3866,6 +4227,8 @@
       usersSection,
       exportUsers,
       newUser,
+      passwordReset,
+      passwordResetEmail,
       userCreator,
       userCreatorClose,
       newUsername,
@@ -3896,6 +4259,7 @@
         clearTimeout(accountAdminRefreshTimer);
         accountAdminRefreshTimer = null;
       }
+      if (accountAdminListModalCleanup) accountAdminListModalCleanup();
       modal.remove();
     }
 
@@ -3903,6 +4267,34 @@
     modal.addEventListener("click", (event) => {
       if (event.target === modal) finish();
     });
+    if (marketViewsMore) {
+      marketViewsMore.addEventListener("click", () => {
+        const items = Array.from(accountAdminMarketViews.values());
+        const list = openAccountAdminListModal({
+          title: "全部 Market Views",
+          count: items.length,
+          listClass: "account-admin-files",
+          bodyHtml: items.map(adminMarketViewRow).join("") || '<div class="empty-state">Market Views PDF 正在准备中。</div>',
+          trigger: marketViewsMore,
+        });
+        if (list) {
+          list.body.addEventListener("click", (event) => {
+            handleAccountAdminMarketViewDownload(event, workerUrl, list.status);
+          });
+        }
+      });
+    }
+    if (hotReportMore) {
+      hotReportMore.addEventListener("click", () => {
+        openAccountAdminListModal({
+          title: "全部近期热门报告",
+          count: accountAdminHotReports.length,
+          listClass: "account-admin-hot-list",
+          bodyHtml: accountAdminHotReports.map(adminHotReportRow).join("") || '<div class="empty-state">还没有上传近期热门报告。</div>',
+          trigger: hotReportMore,
+        });
+      });
+    }
     refresh.addEventListener("click", async () => {
       await Promise.allSettled([
         loadAccountAdminSummary(workerUrl, targets, { forceRefresh: true }),
@@ -3996,6 +4388,34 @@
           status.textContent = "机构最多选择 60 项。";
         }
         updateAccessCheckboxCount(accessInstitutions, accessInstitutionCount);
+      });
+    }
+    if (passwordResetEmail && passwordReset) {
+      passwordResetEmail.addEventListener("change", () => {
+        const submit = passwordReset.querySelector('button[type="submit"]');
+        if (submit) submit.disabled = !passwordResetEmail.value;
+      });
+      passwordReset.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const email = String(passwordResetEmail.value || "");
+        if (!email) return;
+        if (!window.confirm(`确认把 ${email} 的密码重置为 123456？`)) return;
+        const submit = passwordReset.querySelector('button[type="submit"]');
+        if (submit) submit.disabled = true;
+        status.className = "status-line";
+        status.textContent = "正在重置用户密码…";
+        try {
+          await resetAdminUserPassword(workerUrl, email);
+          renderAdminUserTable(targets);
+          passwordResetEmail.value = "";
+          status.className = "status-line ok";
+          status.textContent = `已将 ${email} 的密码重置为 123456。`;
+        } catch (error) {
+          status.className = "status-line error";
+          status.textContent = error.message || "密码重置失败。";
+        } finally {
+          if (submit) submit.disabled = !passwordResetEmail.value;
+        }
       });
     }
     if (newUser && userCreator) {
@@ -4168,44 +4588,8 @@
       }
     });
     if (marketViews) {
-      marketViews.addEventListener("click", async (event) => {
-        const button = event.target.closest(".account-admin-market-view-download");
-        if (!button) return;
-        const id = String(button.dataset.marketViewId || "");
-        const item = accountAdminMarketViews.get(id);
-        if (!id || !item) return;
-        if (cancelActiveAdminButton(button)) {
-          status.className = "status-line";
-          status.textContent = "正在取消…";
-          return;
-        }
-        const row = button.closest(".account-admin-file");
-        const progress = row && row.querySelector(".account-admin-progress");
-        const controller = new AbortController();
-        startAdminButtonAction(button, controller);
-        resetDownloadProgress(progress);
-        status.className = "status-line";
-        status.textContent = "正在下载 Market Views PDF…";
-        try {
-          const response = await fetch(`${workerUrl}/market-views/pdf?id=${encodeURIComponent(id)}`, {
-            cache: "no-store",
-            headers: authHeaders(),
-            signal: controller.signal,
-          });
-          if (!response.ok) {
-            const data = await response.json().catch(() => ({}));
-            throw new Error(data.detail || `PDF 下载失败 (${response.status})。`);
-          }
-          const blob = await responseBlobWithProgress(response, progress);
-          triggerBlobDownload(blob, response.headers.get("Content-Disposition") || "", item.filename || button.dataset.name || "market-views.pdf");
-          status.className = "status-line ok";
-          status.textContent = "Market Views PDF 下载已开始。";
-        } catch (error) {
-          status.className = error && error.name === "AbortError" ? "status-line" : "status-line error";
-          status.textContent = error && error.name === "AbortError" ? "下载已取消。" : (error.message || "PDF 下载失败。");
-        } finally {
-          finishAdminButtonAction(button);
-        }
+      marketViews.addEventListener("click", (event) => {
+        handleAccountAdminMarketViewDownload(event, workerUrl, status);
       });
     }
     files.addEventListener("click", async (event) => {
@@ -4720,6 +5104,10 @@
     return PAGE_RANGE_FILTERS.find((range) => range.value === value) || null;
   }
 
+  function authorityPageRangeForValue(value) {
+    return AUTHORITY_PAGE_RANGE_FILTERS.find((range) => range.value === value) || null;
+  }
+
   function pageRangeLabel(value) {
     const range = pageRangeForValue(value);
     return range ? range.label : "";
@@ -5021,6 +5409,11 @@
     const scopeFilter = document.getElementById("scopeFilter");
     const availabilityFilter = document.getElementById("availabilityFilter");
     const pageRangeInputs = Array.from(document.querySelectorAll('input[name="pageRange"]'));
+    const externalDateFilter = document.getElementById("externalDateFilter");
+    const externalIncludeHtml = document.getElementById("externalIncludeHtml");
+    const authorityInstitutionFilter = document.getElementById("authorityInstitutionFilter");
+    const authorityDateFilter = document.getElementById("authorityDateFilter");
+    const authorityPageFilter = document.getElementById("authorityPageFilter");
     const clearFilters = document.getElementById("clearFilters");
     const activeFilters = document.getElementById("activeFilters");
     const prevPage = document.getElementById("prevPage");
@@ -5603,7 +5996,6 @@
     }
 
     function clearAllFilters() {
-      input.value = "";
       bankFilter.value = "";
       industryFilter.value = "";
       startDate.value = "";
@@ -5613,7 +6005,16 @@
       pageRangeInputs.forEach((control) => {
         control.checked = false;
       });
+      if (externalDateFilter) externalDateFilter.value = "";
+      if (externalIncludeHtml) externalIncludeHtml.checked = false;
+      if (authorityInstitutionFilter) authorityInstitutionFilter.value = "";
+      if (authorityDateFilter) authorityDateFilter.value = "";
+      if (authorityPageFilter) authorityPageFilter.value = "";
       render({ resetPage: true });
+      renderExternalSearchResults();
+      renderAuthoritySearchResults();
+      renderHotReports(scopeFilter.value === "charts" ? "" : input.value.trim());
+      scheduleExternalSearch();
     }
 
     let localSearchTimer = 0;
@@ -5742,6 +6143,16 @@
     const externalItems = new Map();
     const reportAItems = new Map();
     const authorityItems = new Map();
+    let externalResponseMeta = {
+      warning: "",
+      cacheStatus: "",
+      filterPartial: false,
+      htmlFallback: false,
+      htmlFallbackUnconfirmed: false,
+      hiddenHtmlCount: 0,
+      scannedPages: [],
+    };
+    let authorityResponseMeta = { filterPartial: false, scannedCount: 0 };
 
     function renderRemoteSourceProgress(query = "") {
       if (!searchSourceProgress || !searchSourceProgressItems) return;
@@ -5798,6 +6209,43 @@
       externalStatus.textContent = text || "";
     }
 
+    function renderExternalSearchResults() {
+      if (!externalResults) return;
+      const rows = [...externalItems.values()];
+      const view = externalSearchView(rows, {
+        recentMonths: externalDateFilter && externalDateFilter.value,
+        includeHtml: externalIncludeHtml && externalIncludeHtml.checked,
+        allowHtmlFallback: externalResponseMeta.htmlFallback,
+      });
+      const sourceUnavailable = externalResponseMeta.cacheStatus === "miss" && rows.length === 0;
+      searchResultCounts.external = sourceUnavailable ? "error" : view.items.length;
+      if (externalCount) {
+        externalCount.textContent = view.items.length
+          ? `${externalResponseMeta.filterPartial ? "已显示 " : ""}${view.items.length} 条`
+          : "";
+      }
+      externalResults.innerHTML = view.items.length
+        ? view.items.map(externalRow).join("")
+        : '<div class="empty-state">当前筛选条件下暂无匹配结果。</div>';
+      const notes = [];
+      if (externalResponseMeta.warning) notes.push(externalResponseMeta.warning);
+      else if (sourceUnavailable) notes.push("Reportify 暂时不可用，且没有可用的缓存结果。");
+      const hiddenHtmlCount = Math.max(view.hiddenHtmlCount, externalResponseMeta.hiddenHtmlCount);
+      if (hiddenHtmlCount) notes.push(`默认隐藏 ${hiddenHtmlCount} 条 HTML 结果。`);
+      if (externalResponseMeta.htmlFallback && view.htmlFallback) {
+        notes.push("已检查完整结果且未找到 PDF，现显示仅有的 HTML 结果。");
+      }
+      if (externalResponseMeta.htmlFallbackUnconfirmed) {
+        const pageCount = externalResponseMeta.scannedPages.length;
+        notes.push(`已检查前 ${pageCount || "若干"} 页，尚不能确认后续是否有 PDF；HTML 继续保持隐藏，可勾选“包含 HTML 结果”查看。`);
+      } else if (externalResponseMeta.filterPartial) {
+        const pageCount = externalResponseMeta.scannedPages.length;
+        notes.push(`已筛选前 ${pageCount || "若干"} 页，结果仍可能继续；可增加日期条件缩小范围。`);
+      }
+      setExternalStatus(notes.join(" "), sourceUnavailable ? "error" : "");
+      renderSearchRecommendations();
+    }
+
     function setReportAStatus(text, kind) {
       if (!reportAStatus) return;
       reportAStatus.className = kind ? `status-line ${kind}` : "status-line";
@@ -5821,12 +6269,52 @@
       authorityStatus.textContent = text || "";
     }
 
+    function authorityInstitutionOptions(itemsToRender) {
+      const options = new Map();
+      for (const item of itemsToRender || []) {
+        const institution = String(item && item.institution || "").trim();
+        if (!institution) continue;
+        const row = options.get(institution) || { label: institution, count: 0 };
+        row.count += 1;
+        options.set(institution, row);
+      }
+      return optionSummary(options);
+    }
+
+    function renderAuthoritySearchResults() {
+      if (!authorityResults) return;
+      const rows = [...authorityItems.values()];
+      const visible = authoritySearchView(rows, {
+        institution: authorityInstitutionFilter && authorityInstitutionFilter.value,
+        recentMonths: authorityDateFilter && authorityDateFilter.value,
+        pageRange: authorityPageFilter && authorityPageFilter.value,
+      });
+      searchResultCounts.authority = visible.length;
+      if (authorityCount) {
+        authorityCount.textContent = visible.length
+          ? `${authorityResponseMeta.filterPartial ? "已显示 " : ""}${visible.length} 条`
+          : "";
+      }
+      authorityResults.innerHTML = visible.length
+        ? visible.map(authorityRow).join("")
+        : '<div class="empty-state">当前筛选条件下暂无匹配结果。</div>';
+      const notes = [];
+      if (rows.length && !visible.length) notes.push("可调整机构、日期或页数筛选查看其他结果。");
+      if (authorityResponseMeta.filterPartial) {
+        notes.push(`已对有界结果集进行服务端筛选（扫描 ${authorityResponseMeta.scannedCount || "若干"} 条），不代表全部结果。`);
+      }
+      setAuthorityStatus(notes.join(" "));
+      renderSearchRecommendations();
+    }
+
     function hideAuthorityResults() {
       authorityQuery = "";
       authorityToken += 1;
       if (authoritySection) authoritySection.hidden = true;
       if (authorityResults) authorityResults.innerHTML = "";
       authorityItems.clear();
+      authorityResponseMeta = { filterPartial: false, scannedCount: 0 };
+      if (authorityInstitutionFilter) setOptions(authorityInstitutionFilter, [], "全部机构");
       if (authorityCount) authorityCount.textContent = "";
       setAuthorityStatus("");
       searchResultCounts.authority = 0;
@@ -5960,6 +6448,15 @@
         externalSection.hidden = true;
         externalResults.innerHTML = "";
         externalItems.clear();
+        externalResponseMeta = {
+          warning: "",
+          cacheStatus: "",
+          filterPartial: false,
+          htmlFallback: false,
+          htmlFallbackUnconfirmed: false,
+          hiddenHtmlCount: 0,
+          scannedPages: [],
+        };
         if (externalCount) externalCount.textContent = "";
         setExternalStatus("");
         searchResultCounts.external = 0;
@@ -5973,7 +6470,17 @@
         && token === externalToken;
       setRemoteSourceState("external", "searching", query);
       externalSection.hidden = false;
+      externalItems.clear();
       if (externalCount) externalCount.textContent = "搜索中…";
+      externalResponseMeta = {
+        warning: "",
+        cacheStatus: "",
+        filterPartial: false,
+        htmlFallback: false,
+        htmlFallbackUnconfirmed: false,
+        hiddenHtmlCount: 0,
+        scannedPages: [],
+      };
       setExternalStatus("");
       externalResults.innerHTML = `
         <div class="loading-state">
@@ -5983,7 +6490,10 @@
       `;
       try {
         const response = await fetch(
-          `${externalUrl}/external/search?q=${encodeURIComponent(query)}`,
+          embeddedSearchRequestUrl(externalUrl, "external/search", query, {
+            recentMonths: externalDateFilter && externalDateFilter.value,
+            includeHtml: externalIncludeHtml && externalIncludeHtml.checked,
+          }),
           { cache: "no-store", signal },
         );
         if (!response.ok) throw new Error(`搜索失败 (${response.status})`);
@@ -5991,34 +6501,41 @@
         if (!isCurrent()) return; // a newer query superseded this one
         const items = Array.isArray(data.items) ? data.items : [];
         const sourceUnavailable = data.cache_status === "miss" && items.length === 0;
-        searchResultCounts.external = sourceUnavailable ? "error" : items.length;
         externalItems.clear();
         items.forEach((item) => externalItems.set(String(item.id), item));
-        if (externalCount) externalCount.textContent = items.length ? `${items.length} 条` : "";
-        externalResults.innerHTML = items.length
-          ? items.map(externalRow).join("")
-          : '<div class="empty-state">暂无匹配结果。</div>';
-        const warning = String(data.warning || "").trim();
-        if (warning || data.cache_status === "miss") {
-          setExternalStatus(
-            warning || "Reportify 暂时不可用，且没有可用的缓存结果。",
-            data.cache_status === "miss" ? "error" : "",
-          );
-        }
+        externalResponseMeta = {
+          warning: String(data.warning || "").trim(),
+          cacheStatus: String(data.cache_status || "").trim(),
+          filterPartial: Boolean(data.filter_partial),
+          htmlFallback: Boolean(data.html_fallback),
+          htmlFallbackUnconfirmed: Boolean(data.html_fallback_unconfirmed),
+          hiddenHtmlCount: Math.max(0, Number(data.hidden_html_count || 0) || 0),
+          scannedPages: Array.isArray(data.scanned_pages) ? data.scanned_pages.slice(0, 3) : [],
+        };
+        renderExternalSearchResults();
         trackEvent(workerUrl, "search", {
           source: EXTERNAL_SOURCE,
           query,
-          result_count: items.length,
+          result_count: searchResultCounts.external === "error" ? 0 : searchResultCounts.external,
+          unfiltered_result_count: items.length,
           total_count: data.total_count || data.total_page || 0,
           cache_status: data.cache_status || "",
         });
-        renderSearchRecommendations();
         setRemoteSourceState("external", sourceUnavailable ? "error" : "done", query);
       } catch (error) {
         if (error && error.name === "AbortError") return;
         if (!isCurrent()) return;
         if (externalCount) externalCount.textContent = "";
         externalResults.innerHTML = "";
+        externalResponseMeta = {
+          warning: "",
+          cacheStatus: "",
+          filterPartial: false,
+          htmlFallback: false,
+          htmlFallbackUnconfirmed: false,
+          hiddenHtmlCount: 0,
+          scannedPages: [],
+        };
         setExternalStatus(error.message || "搜索暂不可用。", "error");
         searchResultCounts.external = "error";
         renderSearchRecommendations();
@@ -6096,6 +6613,7 @@
       setRemoteSourceState("authority", "searching", query);
       authorityQuery = query;
       authoritySection.hidden = false;
+      authorityItems.clear();
       if (authorityCount) authorityCount.textContent = "搜索中…";
       setAuthorityStatus("");
       authorityResults.innerHTML = `
@@ -6106,34 +6624,54 @@
       `;
       try {
         const response = await fetch(
-          `${externalUrl}/authority/search?q=${encodeURIComponent(query)}`,
+          embeddedSearchRequestUrl(externalUrl, "authority/search", query, {
+            institution: authorityInstitutionFilter && authorityInstitutionFilter.value,
+            recentMonths: authorityDateFilter && authorityDateFilter.value,
+            pageRange: authorityPageFilter && authorityPageFilter.value,
+          }),
           { cache: "no-store", signal },
         );
         if (!response.ok) throw new Error(`搜索失败 (${response.status})`);
         const data = await response.json();
         if (!isCurrent()) return;
         const items = Array.isArray(data.items) ? data.items : [];
-        searchResultCounts.authority = items.length;
         authorityItems.clear();
         items.forEach((item) => authorityItems.set(String(item.id), item));
-        if (authorityCount) authorityCount.textContent = items.length ? `${items.length} 条` : "";
-        authorityResults.innerHTML = items.length
-          ? items.map(authorityRow).join("")
-          : '<div class="empty-state">暂无匹配结果。</div>';
+        if (authorityInstitutionFilter) {
+          const currentInstitution = authorityInstitutionFilter.value;
+          const institutionOptions = Array.isArray(data.institutions)
+            ? data.institutions.map((option) => ({
+              value: String(option && option.value || option || "").trim(),
+              label: option && option.label
+                ? `${option.label}${option.count ? ` (${option.count})` : ""}`
+                : String(option || "").trim(),
+            })).filter((option) => option.value)
+            : authorityInstitutionOptions(items);
+          if (currentInstitution && !institutionOptions.some((option) => option.value === currentInstitution)) {
+            institutionOptions.push({ value: currentInstitution, label: currentInstitution });
+          }
+          setOptions(authorityInstitutionFilter, institutionOptions, "全部机构");
+        }
+        authorityResponseMeta = {
+          filterPartial: Boolean(data.filter_partial),
+          scannedCount: Math.max(0, Number(data.scanned_count || 0) || 0),
+        };
+        renderAuthoritySearchResults();
         trackEvent(workerUrl, "search", {
           source: AUTHORITY_SOURCE,
           query,
-          result_count: items.length,
+          result_count: searchResultCounts.authority,
+          unfiltered_result_count: items.length,
           total_count: data.total || 0,
           cache_status: data.cache_status || "",
         });
-        renderSearchRecommendations();
         setRemoteSourceState("authority", "done", query);
       } catch (error) {
         if (error && error.name === "AbortError") return;
         if (!isCurrent()) return;
         if (authorityCount) authorityCount.textContent = "";
         authorityResults.innerHTML = "";
+        authorityResponseMeta = { filterPartial: false, scannedCount: 0 };
         setAuthorityStatus(error.message || "搜索暂不可用。", "error");
         searchResultCounts.authority = "error";
         renderSearchRecommendations();
@@ -6178,13 +6716,29 @@
       }, 480);
     }
 
-    clearFilters.addEventListener("click", () => {
-      prepareRemoteSearch("");
-      hideThinkTankResults();
-      runExternalSearch("");
-      hideReportAResults();
-      hideAuthorityResults();
-      renderHotReports("");
+    [externalDateFilter, externalIncludeHtml].filter(Boolean).forEach((control) => {
+      control.addEventListener("change", () => {
+        const query = input.value.trim();
+        if (!query || scopeFilter.value === "charts") {
+          renderExternalSearchResults();
+          return;
+        }
+        const active = remoteSearchControllers.get("external");
+        if (active) active.abort();
+        runRemoteSearchWithDeadline("external", query, remoteSearchGeneration, runExternalSearch);
+      });
+    });
+    [authorityInstitutionFilter, authorityDateFilter, authorityPageFilter].filter(Boolean).forEach((control) => {
+      control.addEventListener("change", () => {
+        const query = input.value.trim();
+        if (!query || scopeFilter.value === "charts") {
+          renderAuthoritySearchResults();
+          return;
+        }
+        const active = remoteSearchControllers.get("authority");
+        if (active) active.abort();
+        runRemoteSearchWithDeadline("authority", query, remoteSearchGeneration, runAuthoritySearch);
+      });
     });
     if (thinkTankResults) {
       thinkTankResults.addEventListener("click", (event) => {
@@ -7424,7 +7978,7 @@
     const url = new URL("report.html", window.location.href);
     url.searchParams.set("id", id);
     if (options.password) url.searchParams.set("password", options.password);
-    const preview = reportPreviewItem(options.preview);
+    const preview = options.password ? null : reportPreviewItem(options.preview);
     if (preview) {
       const previewKeys = [
         "title", "title_zh", "filename", "date_folder", "bank_code", "bank_name",
@@ -7522,6 +8076,7 @@
     const url = new URL("doc.html", window.location.href);
     url.searchParams.set("id", item.id);
     if (password) url.searchParams.set("password", password);
+    if (password || options.compact) return url.toString();
     const previewKeys = [
       "source", "title", "title_cn", "institution", "date", "file_type", "kind",
       "kind_label", "page_count", "size_bytes", "report_type", "language", "category",

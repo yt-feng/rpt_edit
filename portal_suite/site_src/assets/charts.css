@@ -342,3 +342,123 @@
     flex-direction: column;
   }
 }
+
+/* Automatic device dark mode */
+@media (prefers-color-scheme: dark) {
+  .charts-hero {
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.38);
+  }
+
+  .charts-toolbar {
+    border-color: var(--line);
+    background: var(--panel);
+    box-shadow: 0 14px 38px rgba(0, 0, 0, 0.3);
+  }
+
+  .charts-toolbar label {
+    color: var(--muted);
+  }
+
+  .charts-toolbar :is(input, select, button) {
+    border-color: var(--line);
+    background: var(--dark-control);
+    color: var(--ink);
+  }
+
+  .charts-toolbar :is(input, select):focus {
+    border-color: var(--dark-focus);
+  }
+
+  .charts-toolbar :is(input, select, button):focus-visible,
+  .charts-report-link:focus-visible,
+  .charts-load-more:focus-visible {
+    outline: 3px solid rgba(88, 213, 198, 0.42);
+    outline-offset: 3px;
+  }
+
+  .charts-toolbar input::placeholder {
+    color: #8493a2;
+    opacity: 1;
+  }
+
+  .charts-toolbar button {
+    border-color: #3d706b;
+    background: #17332f;
+    color: var(--accent-strong);
+  }
+
+  .charts-toolbar button:hover {
+    border-color: var(--dark-focus);
+    background: #1c403a;
+  }
+
+  .charts-toolbar :is(input, select, button):disabled,
+  .charts-load-more:disabled {
+    border-color: #293541;
+    background: #111821;
+    color: #788795;
+    cursor: not-allowed;
+    opacity: 0.78;
+  }
+
+  .charts-results-heading h2,
+  .charts-card h3,
+  .charts-empty strong {
+    color: var(--ink);
+  }
+
+  .charts-results-heading :is(p, span),
+  .charts-card-summary,
+  .charts-card-media .charts-image-fallback,
+  .charts-empty {
+    color: var(--muted);
+  }
+
+  .charts-card {
+    border-color: var(--line);
+    background: var(--panel);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .charts-card:hover {
+    box-shadow: 0 20px 46px rgba(0, 0, 0, 0.4);
+  }
+
+  .charts-card-media {
+    background: linear-gradient(145deg, #17242d, #202f38);
+  }
+
+  .charts-card-media img {
+    /* Most report charts are authored for a white canvas. */
+    background: #ffffff;
+  }
+
+  .charts-card-trend {
+    border-left-color: var(--accent);
+    color: #9de3d9;
+  }
+
+  .charts-chips span {
+    background: #17332f;
+    color: var(--accent-strong);
+  }
+
+  .charts-report-link {
+    border-top-color: var(--line);
+    color: var(--accent-strong);
+  }
+
+  .charts-empty {
+    border-color: var(--line);
+    background: #111821;
+  }
+
+  .charts-load-more {
+    background: var(--dark-primary);
+    color: #ffffff;
+  }
+
+  .charts-load-more:hover {
+    background: var(--dark-primary-hover);
+  }
+}

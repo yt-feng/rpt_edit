@@ -453,10 +453,10 @@ test("catalog recommendation clicks include placement and parent report attribut
   assert.match(renderDetail, /parent_report_id: String\(item\.id \|\| ""\)/);
 });
 
-test("delivery and external links carry cross-browser first-paint metadata", () => {
-  const deliveryPageUrl = extractFunction(appSource, "deliveryPageUrl");
+test("ordinary detail links retain first-paint metadata while delivery generators use the shared URL helpers", () => {
+  const reportPageUrl = extractFunction(appSource, "reportPageUrl");
   const externalPageUrl = extractFunction(appSource, "externalPageUrl");
-  assert.match(deliveryPageUrl, /preview/);
+  assert.match(reportPageUrl, /preview/);
   assert.match(externalPageUrl, /"title"/);
   assert.match(externalPageUrl, /"institution"/);
   assert.match(externalPageUrl, /"description"/);
@@ -467,10 +467,11 @@ test("delivery and external links carry cross-browser first-paint metadata", () 
   assert.match(extractFunction(appSource, "renderReportFirstPaint"), /availabilityKnown/u);
 });
 
-test("legacy delivery redirects retain complete report preview metadata", async () => {
+test("legacy delivery redirects remain compatible and canonicalize to an id/password-only report URL", async () => {
   const params = new URLSearchParams({
     id: "delivery-report",
     password: "delivery-secret",
+    source: "catalog",
     title: "Bernstein delivery report",
     title_zh: "伯恩斯坦交付报告",
     filename: "bernstein-delivery.pdf",
@@ -511,19 +512,14 @@ test("legacy delivery redirects retain complete report preview metadata", async 
   `, context);
   await context.run();
   const forwarded = new URL(redirected);
-  for (const key of [
-    "title", "title_zh", "filename", "date_folder", "bank_code", "bank_name",
-    "industry", "sector", "category", "size_bytes", "page_count", "available",
-    "pdf_archived",
-  ]) {
-    assert.equal(forwarded.searchParams.get(key), params.get(key), `${key} must survive the redirect`);
-  }
   assert.equal(forwarded.pathname, "/report.html");
+  assert.equal(forwarded.searchParams.get("id"), "delivery-report");
   assert.equal(forwarded.searchParams.get("password"), "delivery-secret");
+  assert.deepEqual([...forwarded.searchParams.keys()].sort(), ["id", "password"]);
   assert.match(target.innerHTML, /Open report/u);
 });
 
-test("external delivery URLs retain every first-paint field", () => {
+test("external delivery URLs contain only id/password while ordinary links retain first-paint fields", () => {
   const context = vm.createContext({
     URL,
     window: { location: { href: "https://portal.example.invalid/doc.html" } },
@@ -553,11 +549,17 @@ test("external delivery URLs retain every first-paint field", () => {
     filename: "external-title.pdf",
     required_plan: "annual",
   };
-  const url = new URL(context.build(preview, "external-secret"));
+  const ordinaryUrl = new URL(context.build(preview, ""));
   for (const [key, value] of Object.entries(preview)) {
-    assert.equal(url.searchParams.get(key), String(value), `${key} must be present`);
+    assert.equal(ordinaryUrl.searchParams.get(key), String(value), `${key} must be present on ordinary detail links`);
   }
-  assert.equal(url.searchParams.get("password"), "external-secret");
+  assert.equal(ordinaryUrl.searchParams.has("password"), false);
+
+  const deliveryUrl = new URL(context.build(preview, "external-secret"));
+  assert.equal(deliveryUrl.pathname, "/doc.html");
+  assert.equal(deliveryUrl.searchParams.get("id"), "external-123");
+  assert.equal(deliveryUrl.searchParams.get("password"), "external-secret");
+  assert.deepEqual([...deliveryUrl.searchParams.keys()].sort(), ["id", "password"]);
 });
 
 test("external detail first paint uses the preview catalog instead of the full catalog", () => {

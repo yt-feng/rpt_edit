@@ -13,11 +13,13 @@ const ADMIN_TOKEN_TTL_SECONDS = 180 * 24 * 60 * 60;
 const USER_TOKEN_TTL_SECONDS = 30 * 24 * 60 * 60;
 const CAPTCHA_TTL_SECONDS = 10 * 60;
 const PASSWORD_ITERATIONS = 120000;
+const ADMIN_TEMPORARY_PASSWORD = "123456";
 const GENERATED_EMAIL_DOMAIN = "users.portal.example.invalid";
 const SITE_ORIGIN = "portal";
 const VID2PPT_SOURCE_SITE = "vid2ppt";
 const USERNAME_PATTERN = /^[a-z0-9][a-z0-9_.-]{2,31}$/;
 const EMAIL_PATTERN = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+const SESSION_EPOCH_PATTERN = /^[a-f0-9]{32}$/;
 const ACTIVE_STATUSES = new Set(["active", "trialing"]);
 const SUPER_ACCOUNT_USERNAMES = new Set(["admin-a"]);
 const SUPER_ACCOUNT_EMAILS = new Set(["admin-a@users.portal.example.invalid"]);
@@ -109,6 +111,7 @@ const EXTERNAL_SITE = `https://${EXTERNAL_HOST}`;
 const EXTERNAL_R2_PREFIX = "report" + "ify";
 const EXTERNAL_STATUS_PREFIX = "report" + "ify-status";
 const EXTERNAL_SEARCH_PAGE_SIZE = 20;
+const EXTERNAL_SEARCH_MAX_PAGES = 3;
 const EXTERNAL_UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 " +
   "(KHTML, like Gecko) Chrome/124.0 Safari/537.36";
@@ -119,6 +122,8 @@ const AUTHORITY_HOST = ["www", "na" + "sh-ai", "cn"].join(".");
 const AUTHORITY_ORIGIN = `https://${AUTHORITY_HOST}`;
 const AUTHORITY_SOURCE = "authority";
 const AUTHORITY_SEARCH_PAGE_SIZE = 20;
+const AUTHORITY_SEARCH_MAX_PAGES = 3;
+const AUTHORITY_SEARCH_TIMEOUT_MS = 15_000;
 const AUTHORITY_UA = "PortalSuiteAuthoritySearch/1.0";
 const AUTHORITY_DOMESTIC_LEAD_KIND = "domestic-lead";
 const AUTHORITY_DOMESTIC_LEAD_LABEL = "国内报告线索";
@@ -1428,6 +1433,7 @@ async function createUserToken(env, user) {
     sub: String(user.id || ""),
     username: String(user.username || ""),
     email: String(user.email || ""),
+    session_epoch: String(user.session_epoch || ""),
     iat: now,
     exp: now + USER_TOKEN_TTL_SECONDS,
   });
@@ -1754,6 +1760,9 @@ async function findUserAdminState(env, user = {}) {
     if (typeof row !== "object" || Array.isArray(row) || typeof row.disabled !== "boolean") {
       throw new Error("Account status verification failed.");
     }
+    if (row.session_epoch && !SESSION_EPOCH_PATTERN.test(String(row.session_epoch))) {
+      throw new Error("Account status verification failed.");
+    }
     if (key.includes("/email/") && normalizeEmail(row.email) !== expectedEmail) {
       throw new Error("Account status verification failed.");
     }
@@ -1789,13 +1798,22 @@ async function mergeSiteUserAdminState(env, user) {
     account_status: state.disabled ? "disabled" : "active",
     disabled_at: state.disabled_at || "",
     disabled_by: state.disabled_by || "",
+    session_epoch: String(state.session_epoch || ""),
   };
 }
 
 async function saveUserAdminState(env, user, fields, adminUser) {
   const now = new Date().toISOString();
   const existing = await findUserAdminState(env, user);
-  const disabled = Boolean(fields.disabled);
+  const hasDisabled = Object.prototype.hasOwnProperty.call(fields || {}, "disabled");
+  const disabled = hasDisabled ? Boolean(fields.disabled) : Boolean(existing.disabled);
+  const hasSessionEpoch = Object.prototype.hasOwnProperty.call(fields || {}, "session_epoch");
+  const sessionEpoch = hasSessionEpoch
+    ? String(fields.session_epoch || "")
+    : String(existing.session_epoch || "");
+  if (sessionEpoch && !SESSION_EPOCH_PATTERN.test(sessionEpoch)) {
+    throw new Error("Session epoch is invalid.");
+  }
   const payload = {
     ...existing,
     user_id: String(user.id || existing.user_id || ""),
@@ -1805,6 +1823,7 @@ async function saveUserAdminState(env, user, fields, adminUser) {
     account_status: disabled ? "disabled" : "active",
     disabled_at: disabled ? (existing.disabled_at || now) : "",
     disabled_by: disabled ? (normalizeEmail(adminUser && adminUser.email) || String(adminUser && adminUser.username || "")) : "",
+    session_epoch: sessionEpoch,
     updated_at: now,
     updated_by: normalizeEmail(adminUser && adminUser.email) || String(adminUser && adminUser.username || ""),
   };
@@ -1829,6 +1848,13 @@ async function currentUserFromRequest(env, request) {
     throw new Error("Session is invalid.");
   }
   const merged = await mergeSiteUserAdminState(env, user);
+  const tokenSessionEpoch = String(payload.session_epoch || "");
+  if (
+    (tokenSessionEpoch && !SESSION_EPOCH_PATTERN.test(tokenSessionEpoch))
+    || tokenSessionEpoch !== String(merged.session_epoch || "")
+  ) {
+    throw new Error("Session is invalid.");
+  }
   if (accountDisabled(merged)) throw new Error(disabledAccountMessage());
   return merged;
 }
@@ -6415,6 +6441,36 @@ function adminVisibleUser(user, entitlementRow, accessRow) {
   };
 }
 
+function sortAdminVisibleUsers(users) {
+  const timestamp = (value) => {
+    const parsed = Date.parse(String(value || ""));
+    return Number.isFinite(parsed) ? parsed : 0;
+  };
+  return [...(Array.isArray(users) ? users : [])].sort((left, right) => {
+    const disabledOrder = Number(accountDisabled(left)) - Number(accountDisabled(right));
+    if (disabledOrder) return disabledOrder;
+
+    // A newly registered account may not have logged in yet. Treat its
+    // registration time as its latest account activity so it is not buried
+    // below older accounts that happen to have a historical login timestamp.
+    const leftRecent = timestamp(left && (left.last_login_at || left.created_at));
+    const rightRecent = timestamp(right && (right.last_login_at || right.created_at));
+    if (rightRecent !== leftRecent) return rightRecent - leftRecent;
+
+    const leftLogin = timestamp(left && left.last_login_at);
+    const rightLogin = timestamp(right && right.last_login_at);
+    if (rightLogin !== leftLogin) return rightLogin - leftLogin;
+    const leftRegistration = timestamp(left && left.created_at);
+    const rightRegistration = timestamp(right && right.created_at);
+    if (rightRegistration !== leftRegistration) return rightRegistration - leftRegistration;
+    const emailOrder = normalizeEmail(left && left.email).localeCompare(normalizeEmail(right && right.email));
+    if (emailOrder) return emailOrder;
+    const usernameOrder = normalizeUsername(left && left.username).localeCompare(normalizeUsername(right && right.username));
+    if (usernameOrder) return usernameOrder;
+    return String(left && left.id || "").localeCompare(String(right && right.id || ""));
+  });
+}
+
 function cleanAnalyticsText(value, limit = 240) {
   return String(value || "")
     .normalize("NFKC")
@@ -10411,7 +10467,7 @@ async function loadAllAdminUsersForExport(env) {
     listAllEntitlementsForExport(env),
   ]);
   const entitlementsByEmail = entitlementMap(entitlementRows);
-  return mapWithConcurrency(users, ACCOUNT_ADMIN_EXPORT_CONCURRENCY, async (user) => {
+  const visibleUsers = await mapWithConcurrency(users, ACCOUNT_ADMIN_EXPORT_CONCURRENCY, async (user) => {
     const email = normalizeEmail(user.email);
     const [mergedUser, access] = await Promise.all([
       mergeSiteUserAdminState(env, user),
@@ -10419,6 +10475,7 @@ async function loadAllAdminUsersForExport(env) {
     ]);
     return adminVisibleUser(mergedUser, entitlementsByEmail.get(email), access);
   });
+  return sortAdminVisibleUsers(visibleUsers);
 }
 
 async function listSiteUsers(env) {
@@ -10613,6 +10670,32 @@ async function fetchExternalSearchJsonWithTimeout(resource, init = {}, timeoutMs
     if (!response.ok) {
       throw new Error(`Search unavailable (${response.status}).`);
     }
+    return await response.json();
+  })();
+  try {
+    return await Promise.race([request, timeout]);
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+async function fetchAuthoritySearchJsonWithTimeout(resource, init = {}, timeoutMs = AUTHORITY_SEARCH_TIMEOUT_MS) {
+  const controller = new AbortController();
+  let timer;
+  const timeout = new Promise((_resolve, reject) => {
+    timer = setTimeout(() => {
+      const error = new Error("Authority search timed out.");
+      error.name = "TimeoutError";
+      reject(error);
+      controller.abort(error);
+    }, timeoutMs);
+  });
+  const request = (async () => {
+    const response = await fetch(resource, {
+      ...init,
+      signal: controller.signal,
+    });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
     return await response.json();
   })();
   try {
@@ -12864,7 +12947,11 @@ function compactSearchQuery(value) {
 }
 
 async function searchCacheKey(source, query, page) {
-  const digest = await sha256Hex(`${source}:${page}:${compactSearchQuery(query).toLowerCase()}`);
+  const rawQuery = String(query || "");
+  const cacheIdentity = rawQuery.startsWith("embedded-v1:")
+    ? rawQuery.slice(0, 720)
+    : compactSearchQuery(rawQuery);
+  const digest = await sha256Hex(`${source}:${page}:${cacheIdentity.toLowerCase()}`);
   return `${SEARCH_CACHE_PREFIX}/${source}/${digest}.json`;
 }
 
@@ -14586,11 +14673,11 @@ async function refreshAdminUsersSnapshot(env) {
   // it can repair the dashboard snapshot if an earlier mutation-side patch
   // failed. The live export follows the same canonical state/access policy.
   const accessRows = await Promise.all(userRows.map((user) => findAccessGrant(env, user.email)));
-  const users = userRows.map((user, index) => adminVisibleUser(
+  const users = sortAdminVisibleUsers(userRows.map((user, index) => adminVisibleUser(
     user,
     entitlementsByEmail.get(normalizeEmail(user.email)),
     accessRows[index],
-  ));
+  )));
   return writeAdminSnapshot(env, ADMIN_USERS_SNAPSHOT_KEY, { users });
 }
 
@@ -14614,7 +14701,9 @@ async function patchAdminUsersSnapshotUser(env, user) {
   const index = users.findIndex((row) => normalizeEmail(row && row.email) === email);
   if (index >= 0) users[index] = user;
   else users.unshift(user);
-  await writeAdminSnapshot(env, ADMIN_USERS_SNAPSHOT_KEY, { users }, { partial: !hasPreviousUsers });
+  await writeAdminSnapshot(env, ADMIN_USERS_SNAPSHOT_KEY, {
+    users: sortAdminVisibleUsers(users),
+  }, { partial: !hasPreviousUsers });
   return true;
 }
 
@@ -15010,6 +15099,86 @@ async function handleAccountAdminUserStatus(request, env) {
     });
   } catch (error) {
     return jsonResponse(request, env, 503, { detail: "用户状态保存或核验失败，请稍后重试。" });
+  }
+}
+
+async function handleAccountAdminUserPasswordReset(request, env) {
+  let adminUser;
+  try {
+    adminUser = await requireSuperUser(request, env);
+  } catch (error) {
+    return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
+  }
+
+  let payload = {};
+  try {
+    payload = await request.json();
+  } catch (_error) {
+    return jsonResponse(request, env, 400, { detail: "Invalid JSON body." });
+  }
+
+  const email = normalizeEmail(payload.email);
+  if (!email) return jsonResponse(request, env, 400, { detail: "Email is required." });
+  if (payload.confirm_reset !== true) {
+    return jsonResponse(request, env, 400, { detail: "请确认重置该用户密码。" });
+  }
+
+  try {
+    const user = await findSiteUserByEmail(env, email);
+    if (!user) return jsonResponse(request, env, 404, { detail: "User not found." });
+    if (
+      isPrivilegedAccount(user)
+      || isReservedPrivilegedIdentity(user.username, user.email)
+    ) {
+      return jsonResponse(request, env, 400, { detail: "系统角色账号不能通过通用入口重置密码。" });
+    }
+    if (!user.id) {
+      return jsonResponse(request, env, 503, { detail: "Account service is temporarily unavailable." });
+    }
+
+    const previousLastLogin = String(user.last_login_at || "");
+    const passwordFields = await hashUserPassword(env, ADMIN_TEMPORARY_PASSWORD);
+    await updateSiteUser(env, user.id, passwordFields);
+    const updated = validateSiteUserRow(
+      await findSiteUserByEmail(env, email),
+      { id: user.id, email },
+    );
+    if (
+      !updated
+      || String(updated.last_login_at || "") !== previousLastLogin
+      || !await siteUserPasswordMatches(env, updated, ADMIN_TEMPORARY_PASSWORD)
+    ) {
+      throw new Error("Password reset verification failed.");
+    }
+
+    const nextSessionEpoch = randomHex(16);
+    await saveUserAdminState(env, updated, { session_epoch: nextSessionEpoch }, adminUser);
+    const merged = await mergeSiteUserAdminState(env, updated);
+    if (!constantTimeEqual(String(merged.session_epoch || ""), nextSessionEpoch)) {
+      throw new Error("Session reset verification failed.");
+    }
+    const [entitlement, access] = await Promise.all([
+      findEntitlement(env, email).catch(() => null),
+      findAccessGrant(env, email).catch(() => publicAccessGrant(null)),
+    ]);
+    const visibleUser = adminVisibleUser(merged, entitlement, access);
+    await patchAdminUsersSnapshotUser(env, visibleUser).catch(() => false);
+    await persistAnalyticsEvent(request, env, {
+      type: "admin_user_update",
+      path: "/account-admin/user-password-reset",
+      data: {
+        target: email,
+        action: "password_reset",
+        status: "success",
+      },
+    }, adminUser).catch(() => null);
+    return jsonResponse(request, env, 200, {
+      ok: true,
+      verified: true,
+      user: visibleUser,
+    });
+  } catch (_error) {
+    return jsonResponse(request, env, 503, { detail: "密码重置或核验失败，请稍后重试。" });
   }
 }
 
@@ -15902,41 +16071,215 @@ async function handleExternalItem(request, env) {
   return jsonResponse(request, env, 200, { item: detail.item });
 }
 
+function normalizeEmbeddedSearchDate(value) {
+  const text = String(value || "").trim();
+  if (!/^20\d{2}-\d{2}-\d{2}$/.test(text)) return "";
+  const timestamp = Date.parse(`${text}T00:00:00.000Z`);
+  if (!Number.isFinite(timestamp) || new Date(timestamp).toISOString().slice(0, 10) !== text) return "";
+  return text;
+}
+
+function normalizeEmbeddedSearchInstitution(value) {
+  return String(value || "").normalize("NFKC").replace(/\s+/g, " ").trim().slice(0, 120);
+}
+
+function normalizeEmbeddedPageRange(value) {
+  const range = String(value || "").trim();
+  return ["under5", "5_10", "10_20", "over20"].includes(range) ? range : "";
+}
+
+function embeddedPageRangeBounds(range) {
+  if (range === "under5") return { min: 0, max: 5 };
+  if (range === "5_10") return { min: 6, max: 10 };
+  if (range === "10_20") return { min: 11, max: 20 };
+  if (range === "over20") return { min: 21, max: 0 };
+  return { min: 0, max: 0 };
+}
+
+function embeddedSearchFilters(url, source) {
+  const startDate = normalizeEmbeddedSearchDate(url.searchParams.get("start_date"));
+  const endDate = normalizeEmbeddedSearchDate(url.searchParams.get("end_date"));
+  const pageRange = source === AUTHORITY_SOURCE
+    ? normalizeEmbeddedPageRange(url.searchParams.get("page_range"))
+    : "";
+  return {
+    startDate: startDate && endDate && startDate > endDate ? endDate : startDate,
+    endDate: startDate && endDate && startDate > endDate ? startDate : endDate,
+    includeHtml: source === "external" && url.searchParams.get("include_html") === "1",
+    institution: source === AUTHORITY_SOURCE
+      ? normalizeEmbeddedSearchInstitution(url.searchParams.get("institution"))
+      : "",
+    pageRange,
+    pageBounds: embeddedPageRangeBounds(pageRange),
+  };
+}
+
+function embeddedSearchCacheQuery(query, filters) {
+  return `embedded-v1:${JSON.stringify({
+    q: compactSearchQuery(query),
+    start_date: filters.startDate || "",
+    end_date: filters.endDate || "",
+    include_html: Boolean(filters.includeHtml),
+    institution: String(filters.institution || "").toLocaleLowerCase("en-US"),
+    page_range: filters.pageRange || "",
+  })}`;
+}
+
+function embeddedItemMatchesDate(item, filters) {
+  if (!filters.startDate && !filters.endDate) return true;
+  const date = normalizeEmbeddedSearchDate(item && item.date);
+  if (!date) return false;
+  if (filters.startDate && date < filters.startDate) return false;
+  if (filters.endDate && date > filters.endDate) return false;
+  return true;
+}
+
+function embeddedItemMatchesPageRange(item, filters) {
+  if (!filters.pageRange) return true;
+  const pages = Number(item && item.page_count || 0);
+  if (!Number.isFinite(pages) || pages <= 0) return false;
+  if (filters.pageBounds.min && pages < filters.pageBounds.min) return false;
+  if (filters.pageBounds.max && pages > filters.pageBounds.max) return false;
+  return true;
+}
+
+function externalItemIsHtml(item) {
+  const fileType = String(item && item.file_type || "").trim().toLowerCase();
+  return fileType === "html" || fileType === "htm" || /(?:^|[\s/.+-])html?(?:$|[\s/.+-])/.test(fileType);
+}
+
+function filterExternalSearchItems(items, filters, scanComplete) {
+  const dateMatched = (Array.isArray(items) ? items : []).filter((item) => embeddedItemMatchesDate(item, filters));
+  const pdfLike = dateMatched.filter((item) => !externalItemIsHtml(item));
+  const htmlItems = dateMatched.filter(externalItemIsHtml);
+  const htmlFallback = !filters.includeHtml && Boolean(scanComplete) && !pdfLike.length && htmlItems.length > 0;
+  const fallbackUnconfirmed = !filters.includeHtml && !scanComplete && !pdfLike.length && htmlItems.length > 0;
+  return {
+    items: filters.includeHtml ? dateMatched : htmlFallback ? htmlItems : pdfLike,
+    hidden_html_count: filters.includeHtml || htmlFallback ? 0 : htmlItems.length,
+    html_fallback: htmlFallback,
+    html_fallback_unconfirmed: fallbackUnconfirmed,
+  };
+}
+
+function dedupeEmbeddedSearchItems(items) {
+  const rows = new Map();
+  for (const item of Array.isArray(items) ? items : []) {
+    const id = String(item && item.id || "").trim();
+    if (id && !rows.has(id)) rows.set(id, item);
+  }
+  return [...rows.values()];
+}
+
+async function fetchExternalSearchPage(query, page, deadlineAt) {
+  const remaining = Math.floor(deadlineAt - Date.now());
+  if (remaining < 250) throw new Error("External search deadline reached.");
+  const target = new URL(`${EXTERNAL_API}/reports`);
+  target.searchParams.set("query", query);
+  target.searchParams.set("page_num", String(page));
+  target.searchParams.set("page_size", String(EXTERNAL_SEARCH_PAGE_SIZE));
+  const data = await fetchExternalSearchJsonWithTimeout(
+    target.toString(),
+    { headers: externalHeaders() },
+    Math.min(EXTERNAL_SEARCH_TIMEOUT_MS, remaining),
+  );
+  return {
+    items: Array.isArray(data.items) ? data.items.map(slimExternalItem).filter((item) => item.id) : [],
+    page: Math.max(1, Number(data.page_num || page) || page),
+    totalPage: Math.max(0, Number(data.total_page || 0) || 0),
+  };
+}
+
+async function boundedExternalSearch(query, page, filters) {
+  const deadlineAt = Date.now() + EXTERNAL_SEARCH_TIMEOUT_MS;
+  const first = await fetchExternalSearchPage(query, page, deadlineAt);
+  const declaredTotalPages = first.totalPage;
+  const lastPage = Math.min(
+    declaredTotalPages || page,
+    page + EXTERNAL_SEARCH_MAX_PAGES - 1,
+  );
+  const extraPages = [];
+  for (let nextPage = page + 1; nextPage <= lastPage; nextPage += 1) extraPages.push(nextPage);
+  const extraResults = await Promise.allSettled(
+    extraPages.map((nextPage) => fetchExternalSearchPage(query, nextPage, deadlineAt)),
+  );
+  const fulfilledExtras = extraResults
+    .filter((result) => result.status === "fulfilled")
+    .map((result) => result.value);
+  const scannedPages = [first.page, ...fulfilledExtras.map((result) => result.page)]
+    .filter((value, index, rows) => rows.indexOf(value) === index)
+    .sort((left, right) => left - right);
+  const scanComplete = page === 1 && (
+    (declaredTotalPages === 0 && first.items.length === 0)
+    || (declaredTotalPages > 0
+      && declaredTotalPages <= EXTERNAL_SEARCH_MAX_PAGES
+      && scannedPages.length === declaredTotalPages)
+  );
+  const scannedItems = dedupeEmbeddedSearchItems([
+    ...first.items,
+    ...fulfilledExtras.flatMap((result) => result.items),
+  ]);
+  const filtered = filterExternalSearchItems(scannedItems, filters, scanComplete);
+  return {
+    ...filtered,
+    page,
+    total_page: declaredTotalPages,
+    scanned_pages: scannedPages,
+    scanned_count: scannedItems.length,
+    filter_complete: scanComplete,
+    filter_partial: !scanComplete,
+  };
+}
+
+async function externalSearchMirrorFallback(env, query, page, filters) {
+  const mirror = await getSearchMirror(env, "external");
+  if (!mirror || !Array.isArray(mirror.items)) return null;
+  const matched = searchMirrorPayloadFromItems(
+    mirror.items,
+    query,
+    1,
+    Math.max(1, mirror.items.length),
+  );
+  // A mirror is a bounded snapshot, not proof that the upstream has no PDF.
+  // Keep HTML hidden by default unless the user explicitly includes it.
+  const filtered = filterExternalSearchItems(matched.items, filters, false);
+  const start = Math.max(0, (page - 1) * EXTERNAL_SEARCH_PAGE_SIZE);
+  const visible = filtered.items.slice(start, start + EXTERNAL_SEARCH_PAGE_SIZE);
+  const generatedAt = String(mirror.generated_at || "");
+  const generatedMs = Date.parse(generatedAt);
+  return {
+    ...filtered,
+    items: visible,
+    page,
+    total_page: Math.ceil(filtered.items.length / EXTERNAL_SEARCH_PAGE_SIZE),
+    total_count: filtered.items.length,
+    scanned_pages: [page],
+    scanned_count: matched.items.length,
+    filter_complete: false,
+    filter_partial: true,
+    mirror_generated_at: generatedAt,
+    mirror_stale: Number.isFinite(generatedMs) && Date.now() - generatedMs > SEARCH_MIRROR_STALE_MS,
+  };
+}
+
 async function handleExternalSearch(request, env) {
   const url = new URL(request.url);
   const query = String(url.searchParams.get("q") || "").trim();
   const page = Math.max(1, Number(url.searchParams.get("page") || "1") || 1);
+  const filters = embeddedSearchFilters(url, "external");
   if (!query) {
     return jsonResponse(request, env, 200, { items: [], page: 1, total_page: 0 });
   }
 
-  return handleCachedSearch(request, env, "external", query, page, {
+  return handleCachedSearch(request, env, "external", embeddedSearchCacheQuery(query, filters), page, {
     items: [],
     page,
     total_page: 0,
+    filter_complete: false,
+    filter_partial: true,
   }, async () => {
-    const target = new URL(`${EXTERNAL_API}/reports`);
-    target.searchParams.set("query", query);
-    target.searchParams.set("page_num", String(page));
-    target.searchParams.set("page_size", String(EXTERNAL_SEARCH_PAGE_SIZE));
-    const data = await fetchExternalSearchJsonWithTimeout(
-      target.toString(),
-      { headers: externalHeaders() },
-    );
-    const items = Array.isArray(data.items) ? data.items.map(slimExternalItem).filter((it) => it.id) : [];
-    return {
-      items,
-      page: Number(data.page_num || page),
-      total_page: Number(data.total_page || 0),
-    };
-  }, (_error) => searchMirrorFallback(env, "external", query, page, EXTERNAL_SEARCH_PAGE_SIZE, (result) => ({
-    items: result.items,
-    page,
-    total_page: Math.ceil(result.total / EXTERNAL_SEARCH_PAGE_SIZE),
-    total_count: result.total,
-    mirror_generated_at: result.generated_at,
-    mirror_stale: result.mirror_stale,
-  })));
+    return boundedExternalSearch(query, page, filters);
+  }, (_error) => externalSearchMirrorFallback(env, query, page, filters));
 }
 
 // Fetch the upstream detail and, if the report is directly readable, return its
@@ -16702,12 +17045,12 @@ function parseAuthorityId(value) {
   };
 }
 
-function authoritySearchPayload(query, page) {
+function authoritySearchPayload(query, page, filters = {}) {
   return {
     releaseDate: 0,
-    startDate: "",
-    endDate: "",
-    minPages: 0,
+    startDate: filters.startDate || "",
+    endDate: filters.endDate || "",
+    minPages: Number(filters.pageBounds && filters.pageBounds.min || 0),
     keyword: query,
     reportTypes: [],
     industries: [],
@@ -16750,15 +17093,15 @@ function slimAuthorityItem(kind, record) {
   };
 }
 
-async function authoritySearchOne(kind, query, page) {
+async function authoritySearchOne(kind, query, page, filters = {}, deadlineAt = Date.now() + AUTHORITY_SEARCH_TIMEOUT_MS) {
   const config = AUTHORITY_KINDS[kind];
-  const response = await fetchWithTimeout(`${AUTHORITY_ORIGIN}${config.endpoint}`, {
+  const remaining = Math.floor(deadlineAt - Date.now());
+  if (remaining < 250) throw new Error("Authority search deadline reached.");
+  const raw = await fetchAuthoritySearchJsonWithTimeout(`${AUTHORITY_ORIGIN}${config.endpoint}`, {
     method: "POST",
     headers: authoritySearchHeaders(config),
-    body: JSON.stringify(authoritySearchPayload(query, page)),
-  });
-  if (!response.ok) throw new Error(`HTTP ${response.status}`);
-  const raw = await response.json();
+    body: JSON.stringify(authoritySearchPayload(query, page, filters)),
+  }, Math.min(AUTHORITY_SEARCH_TIMEOUT_MS, remaining));
   const data = raw && raw.data && typeof raw.data === "object" ? raw.data : null;
   if (raw.code !== 200 || !data || !Array.isArray(data.records)) throw new Error("bad response");
   return {
@@ -16806,38 +17149,171 @@ async function authorityDomesticLeadSearch(env, query, page) {
   };
 }
 
+function authorityItemMatchesFilters(item, filters, includeInstitution = true) {
+  if (!embeddedItemMatchesDate(item, filters)) return false;
+  if (!embeddedItemMatchesPageRange(item, filters)) return false;
+  if (includeInstitution && filters.institution) {
+    const institution = normalizeEmbeddedSearchInstitution(item && item.institution).toLocaleLowerCase("en-US");
+    if (institution !== filters.institution.toLocaleLowerCase("en-US")) return false;
+  }
+  return true;
+}
+
+function authorityInstitutionFacets(items) {
+  const counts = new Map();
+  for (const item of Array.isArray(items) ? items : []) {
+    const institution = normalizeEmbeddedSearchInstitution(item && item.institution);
+    if (!institution) continue;
+    const key = institution.toLocaleLowerCase("en-US");
+    const current = counts.get(key) || { value: institution, label: institution, count: 0 };
+    current.count += 1;
+    counts.set(key, current);
+  }
+  return [...counts.values()].sort((left, right) => left.value.localeCompare(right.value));
+}
+
+function completedBoundedAuthorityResult(kind, page, pageResults, filters) {
+  const fulfilled = (Array.isArray(pageResults) ? pageResults : []).filter(Boolean);
+  const first = fulfilled[0] || { items: [], total: 0 };
+  const upstreamTotal = Math.max(0, Number(first.total || 0) || 0);
+  const totalPages = Math.ceil(upstreamTotal / AUTHORITY_SEARCH_PAGE_SIZE);
+  const scannedPages = fulfilled.map((result) => Math.max(1, Number(result.page || page) || page))
+    .filter((value, index, rows) => rows.indexOf(value) === index)
+    .sort((left, right) => left - right);
+  const filterComplete = page === 1 && (
+    (upstreamTotal === 0 && !first.items.length)
+    || (totalPages > 0
+      && totalPages <= AUTHORITY_SEARCH_MAX_PAGES
+      && scannedPages.length === totalPages)
+  );
+  const scannedItems = dedupeEmbeddedSearchItems(fulfilled.flatMap((result) => result.items));
+  const facetItems = scannedItems.filter((item) => authorityItemMatchesFilters(item, filters, false));
+  return {
+    kind,
+    page,
+    total: upstreamTotal,
+    items: facetItems.filter((item) => authorityItemMatchesFilters(item, filters, true)),
+    facetItems,
+    scanned_count: scannedItems.length,
+    scanned_pages: scannedPages,
+    filter_complete: filterComplete,
+  };
+}
+
+async function authoritySearchKindBounded(kind, query, page, filters, deadlineAt) {
+  const first = await authoritySearchOne(kind, query, page, filters, deadlineAt);
+  const totalPages = Math.ceil(Math.max(0, Number(first.total || 0) || 0) / AUTHORITY_SEARCH_PAGE_SIZE);
+  const lastPage = Math.min(totalPages || page, page + AUTHORITY_SEARCH_MAX_PAGES - 1);
+  const extraPages = [];
+  for (let nextPage = page + 1; nextPage <= lastPage; nextPage += 1) extraPages.push(nextPage);
+  const extraResults = await Promise.allSettled(
+    extraPages.map((nextPage) => authoritySearchOne(kind, query, nextPage, filters, deadlineAt)),
+  );
+  return completedBoundedAuthorityResult(
+    kind,
+    page,
+    [
+      first,
+      ...extraResults.filter((result) => result.status === "fulfilled").map((result) => result.value),
+    ],
+    filters,
+  );
+}
+
+async function authorityDomesticLeadSearchBounded(env, query, page, filters) {
+  const first = await authorityDomesticLeadSearch(env, query, page);
+  const totalPages = Math.ceil(Math.max(0, Number(first.total || 0) || 0) / AUTHORITY_SEARCH_PAGE_SIZE);
+  const lastPage = Math.min(totalPages || page, page + AUTHORITY_SEARCH_MAX_PAGES - 1);
+  const extraPages = [];
+  for (let nextPage = page + 1; nextPage <= lastPage; nextPage += 1) extraPages.push(nextPage);
+  const extraResults = await Promise.allSettled(
+    extraPages.map((nextPage) => authorityDomesticLeadSearch(env, query, nextPage)),
+  );
+  return completedBoundedAuthorityResult(
+    AUTHORITY_DOMESTIC_LEAD_KIND,
+    page,
+    [
+      first,
+      ...extraResults.filter((result) => result.status === "fulfilled").map((result) => result.value),
+    ],
+    filters,
+  );
+}
+
+async function authoritySearchMirrorFallback(env, query, page, requestedKind, filters) {
+  const mirror = await getSearchMirror(env, AUTHORITY_SOURCE);
+  if (!mirror || !Array.isArray(mirror.items)) return null;
+  const matched = searchMirrorPayloadFromItems(
+    mirror.items,
+    query,
+    1,
+    Math.max(1, mirror.items.length),
+  );
+  const kindMatched = matched.items.filter((item) => requestedKind === "both" || item.kind === requestedKind);
+  const facetItems = kindMatched.filter((item) => authorityItemMatchesFilters(item, filters, false));
+  const filteredItems = facetItems.filter((item) => authorityItemMatchesFilters(item, filters, true));
+  const pageSize = AUTHORITY_SEARCH_PAGE_SIZE * AUTHORITY_SEARCH_MAX_PAGES;
+  const start = Math.max(0, (page - 1) * pageSize);
+  const generatedAt = String(mirror.generated_at || "");
+  const generatedMs = Date.parse(generatedAt);
+  return {
+    items: filteredItems.slice(start, start + pageSize),
+    page,
+    total: filteredItems.length,
+    upstream_total: kindMatched.length,
+    scanned_count: kindMatched.length,
+    filter_complete: false,
+    filter_partial: true,
+    institutions: authorityInstitutionFacets(facetItems),
+    sources: [],
+    mirror_generated_at: generatedAt,
+    mirror_stale: Number.isFinite(generatedMs) && Date.now() - generatedMs > SEARCH_MIRROR_STALE_MS,
+  };
+}
+
 async function handleAuthoritySearch(request, env) {
   const url = new URL(request.url);
   const query = String(url.searchParams.get("q") || "").trim();
   const page = Math.max(1, Number(url.searchParams.get("page") || "1") || 1);
   const requestedKind = String(url.searchParams.get("kind") || "both").trim();
+  const filters = embeddedSearchFilters(url, AUTHORITY_SOURCE);
   if (!query) {
     return jsonResponse(request, env, 200, { items: [], page: 1, total: 0 });
   }
 
-  return handleCachedSearch(request, env, AUTHORITY_SOURCE, `${requestedKind}:${query}`, page, {
+  return handleCachedSearch(
+    request,
+    env,
+    AUTHORITY_SOURCE,
+    embeddedSearchCacheQuery(`${requestedKind}:${query}`, filters),
+    page,
+    {
     items: [],
     page,
     total: 0,
     sources: [],
+    institutions: [],
+    filter_complete: false,
+    filter_partial: true,
   }, async () => {
     const kinds = AUTHORITY_KINDS[requestedKind]
       ? [requestedKind]
       : requestedKind === AUTHORITY_DOMESTIC_LEAD_KIND
         ? []
         : Object.keys(AUTHORITY_KINDS);
-    const searches = kinds.map((kind) => authoritySearchOne(kind, query, page));
+    const deadlineAt = Date.now() + AUTHORITY_SEARCH_TIMEOUT_MS;
+    const searches = kinds.map((kind) => authoritySearchKindBounded(kind, query, page, filters, deadlineAt));
     if (
       (requestedKind === "both" || requestedKind === AUTHORITY_DOMESTIC_LEAD_KIND)
       && sourceLeadAdapterEnabled(env)
     ) {
-      searches.push(authorityDomesticLeadSearch(env, query, page));
+      searches.push(authorityDomesticLeadSearchBounded(env, query, page, filters));
     }
     const results = await Promise.allSettled(searches);
     const fulfilled = results
       .filter((result) => result.status === "fulfilled")
       .map((result) => result.value);
-    const items = fulfilled.flatMap((result) => result.items)
+    const items = dedupeEmbeddedSearchItems(fulfilled.flatMap((result) => result.items))
       .sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
     if (!fulfilled.length && results.length) {
       throw new Error("Authority search is unavailable.");
@@ -16845,23 +17321,21 @@ async function handleAuthoritySearch(request, env) {
     return {
       items,
       page,
-      total: fulfilled.reduce((sum, result) => sum + result.total, 0),
-      sources: fulfilled.map((result) => ({ kind: result.kind, total: result.total })),
-    };
-  }, (_error) => searchMirrorFallback(env, AUTHORITY_SOURCE, query, page, AUTHORITY_SEARCH_PAGE_SIZE, (result) => {
-    const items = result.items.filter((item) => requestedKind === "both" || item.kind === requestedKind);
-    return {
-      items,
-      page,
-      total: result.total,
-      sources: Object.keys(AUTHORITY_KINDS).map((kind) => ({
-        kind,
-        total: items.filter((item) => item.kind === kind).length,
+      total: items.length,
+      upstream_total: fulfilled.reduce((sum, result) => sum + result.total, 0),
+      scanned_count: fulfilled.reduce((sum, result) => sum + result.scanned_count, 0),
+      filter_complete: fulfilled.length === results.length && fulfilled.every((result) => result.filter_complete),
+      filter_partial: fulfilled.length !== results.length || fulfilled.some((result) => !result.filter_complete),
+      institutions: authorityInstitutionFacets(fulfilled.flatMap((result) => result.facetItems)),
+      sources: fulfilled.map((result) => ({
+        kind: result.kind,
+        total: result.total,
+        scanned_count: result.scanned_count,
+        scanned_pages: result.scanned_pages,
+        filter_complete: result.filter_complete,
       })),
-      mirror_generated_at: result.generated_at,
-      mirror_stale: result.mirror_stale,
     };
-  }));
+  }, (_error) => authoritySearchMirrorFallback(env, query, page, requestedKind, filters));
 }
 
 async function handleAuthorityItem(request, env) {
@@ -17112,6 +17586,10 @@ export default {
 
     if (pathname === "/account-admin/user-status" && request.method === "POST") {
       return handleAccountAdminUserStatus(request, env);
+    }
+
+    if (pathname === "/account-admin/user-password-reset" && request.method === "POST") {
+      return handleAccountAdminUserPasswordReset(request, env);
     }
 
     if (pathname === "/account-admin/github-file" && request.method === "GET") {
