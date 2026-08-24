@@ -208,8 +208,7 @@ jobs:
               raise SystemExit(1)
           PY
 
-      - name: Deploy Cloudflare Worker
-        uses: cloudflare/wrangler-action@v3
+      - name: Materialize Worker version secrets
         env:
           PASSWORD_SECRET: ${{ secrets.PASSWORD_SECRET }}
           CALC_KEY: ${{ secrets.CALC_KEY }}
@@ -233,34 +232,84 @@ jobs:
           SUPPLEMENTAL_SEARCH_HMAC_SECRET: ${{ secrets.SUPPLEMENTAL_SEARCH_HMAC_SECRET || 'unconfigured' }}
           SUPPLEMENTAL_SEARCH_REDACT_TERMS: ${{ secrets.SUPPLEMENTAL_SEARCH_REDACT_TERMS || 'unconfigured' }}
           COURSE_DIRECTORY_REDACT_TERMS: ${{ secrets.COURSE_DIRECTORY_REDACT_TERMS || 'unconfigured' }}
+        run: |
+          set -euo pipefail
+          python3 - "$RUNNER_TEMP/portal-worker-version-secrets.json" <<'PY'
+          import json
+          import os
+          import sys
+          from pathlib import Path
+
+          names = (
+              "PASSWORD_SECRET",
+              "CALC_KEY",
+              "MASTER_KEY",
+              "AUTH_SECRET",
+              "SUPABASE_URL",
+              "SUPABASE_SERVICE_ROLE_KEY",
+              "GH_READ_TOKEN",
+              "DEEPSEEK_API_KEY",
+              "DEEPSEEK_BASE_URL",
+              "DEEPSEEK_MODEL",
+              "NEWSFEED_EMAIL_FROM",
+              "BREVO_API_KEY",
+              "BREVO_SENDER_EMAIL",
+              "BREVO_SENDER_NAME",
+              "CLOUDFLARE_EMAIL_ROUTING_API_TOKEN",
+              "CLOUDFLARE_EMAIL_ROUTING_ACCOUNT_ID",
+              "GH_DISPATCH_TOKEN",
+              "OPS_ALERT_SIGNING_KEY",
+              "SUPPLEMENTAL_SEARCH_URL",
+              "SUPPLEMENTAL_SEARCH_HMAC_SECRET",
+              "SUPPLEMENTAL_SEARCH_REDACT_TERMS",
+              "COURSE_DIRECTORY_REDACT_TERMS",
+          )
+          values = {name: os.environ.get(name, "") for name in names}
+          missing = [name for name, value in values.items() if not value]
+          if missing:
+              raise SystemExit(f"Worker version secrets are missing: {', '.join(missing)}")
+          target = Path(sys.argv[1])
+          descriptor = os.open(target, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+          with os.fdopen(descriptor, "w", encoding="utf-8") as handle:
+              json.dump(values, handle, ensure_ascii=False)
+          PY
+
+      - name: Upload Cloudflare Worker version
+        id: upload-worker-version
+        uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
           workingDirectory: workers/portal-suite-worker
-          command: deploy
-          secrets: |
-            PASSWORD_SECRET
-            CALC_KEY
-            MASTER_KEY
-            AUTH_SECRET
-            SUPABASE_URL
-            SUPABASE_SERVICE_ROLE_KEY
-            GH_READ_TOKEN
-            DEEPSEEK_API_KEY
-            DEEPSEEK_BASE_URL
-            DEEPSEEK_MODEL
-            NEWSFEED_EMAIL_FROM
-            BREVO_API_KEY
-            BREVO_SENDER_EMAIL
-            BREVO_SENDER_NAME
-            CLOUDFLARE_EMAIL_ROUTING_API_TOKEN
-            CLOUDFLARE_EMAIL_ROUTING_ACCOUNT_ID
-            GH_DISPATCH_TOKEN
-            OPS_ALERT_SIGNING_KEY
-            SUPPLEMENTAL_SEARCH_URL
-            SUPPLEMENTAL_SEARCH_HMAC_SECRET
-            SUPPLEMENTAL_SEARCH_REDACT_TERMS
-            COURSE_DIRECTORY_REDACT_TERMS
+          wranglerVersion: "4.125.0"
+          command: >-
+            versions upload --keep-vars
+            --secrets-file "${{ runner.temp }}/portal-worker-version-secrets.json"
+            --tag "run-${{ github.run_id }}-${{ github.run_attempt }}"
+            --message "Portal Worker ${{ github.sha }}"
+
+      - name: Deploy Cloudflare Worker version at 100 percent
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          workingDirectory: workers/portal-suite-worker
+          wranglerVersion: "4.125.0"
+          command: >-
+            versions deploy
+            --version-tag "run-${{ github.run_id }}-${{ github.run_attempt }}"
+            --percentage 100
+            --yes
+            --message "Portal Worker ${{ github.sha }}"
+
+      - name: Remove temporary Worker version secrets
+        if: always()
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          Path("${{ runner.temp }}/portal-worker-version-secrets.json").unlink(missing_ok=True)
+          PY
 
       - name: Smoke deployed API through the live edge
         env:
