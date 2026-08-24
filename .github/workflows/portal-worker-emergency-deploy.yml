@@ -208,8 +208,9 @@ jobs:
               raise SystemExit(1)
           PY
 
-      - name: Deploy Cloudflare Worker
-        uses: cloudflare/wrangler-action@v3
+      - name: Upload Cloudflare Worker version
+        id: upload-worker-version
+        uses: cloudflare/wrangler-action@v4
         env:
           PASSWORD_SECRET: ${{ secrets.PASSWORD_SECRET }}
           CALC_KEY: ${{ secrets.CALC_KEY }}
@@ -237,7 +238,11 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
           workingDirectory: workers/portal-suite-worker
-          command: deploy
+          wranglerVersion: "4.125.0"
+          command: >-
+            versions upload --keep-vars
+            --tag "git-${{ github.sha }}"
+            --message "Portal Worker ${{ github.sha }}"
           secrets: |
             PASSWORD_SECRET
             CALC_KEY
@@ -261,6 +266,20 @@ jobs:
             SUPPLEMENTAL_SEARCH_HMAC_SECRET
             SUPPLEMENTAL_SEARCH_REDACT_TERMS
             COURSE_DIRECTORY_REDACT_TERMS
+
+      - name: Deploy Cloudflare Worker version at 100 percent
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          workingDirectory: workers/portal-suite-worker
+          wranglerVersion: "4.125.0"
+          command: >-
+            versions deploy
+            --version-tag "git-${{ github.sha }}"
+            --percentage 100
+            --yes
+            --message "Portal Worker ${{ github.sha }}"
 
       - name: Smoke deployed API through the live edge
         env:
