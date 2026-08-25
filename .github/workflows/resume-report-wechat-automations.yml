@@ -1,0 +1,116 @@
+name: Resume report and WeChat automations
+
+# One-time cloud-side recovery for the two-day Official Account pause requested
+# on 2026-08-25. The workflow disables itself after all target workflows are
+# confirmed active, so it does not leave a local heartbeat or recurring job.
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Resume immediately instead of waiting for the target time"
+        required: true
+        type: boolean
+        default: false
+  schedule:
+    # Start at 12:17 Asia/Shanghai on 2026-08-27. Later slots are cloud-side
+    # retries in case GitHub delays or drops an earlier scheduled event.
+    - cron: "17 4-16 27 8 *"
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: resume-report-wechat-automations
+  cancel-in-progress: false
+
+env:
+  RESUME_AT: "2026-08-27T04:00:00Z"
+  EXPIRES_AT: "2026-08-29T04:00:00Z"
+  TARGET_WORKFLOWS: |
+    dropbox-latest-pdf-to-xhs-sharded.yml
+    institution-latest-pdf-to-wechat.yml
+    consulting-latest-pdf-to-wechat.yml
+    ark-invest-feed-to-wechat.yml
+
+jobs:
+  resume:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check the recovery window
+        id: window
+        env:
+          FORCE_RESUME: ${{ github.event.inputs.force || 'false' }}
+        run: |
+          set -euo pipefail
+
+          if [ "$FORCE_RESUME" = "true" ]; then
+            echo "due=true" >> "$GITHUB_OUTPUT"
+            echo "::notice::Immediate recovery requested through workflow_dispatch."
+            exit 0
+          fi
+
+          now_epoch="$(date -u +%s)"
+          resume_epoch="$(date -u -d "$RESUME_AT" +%s)"
+          expires_epoch="$(date -u -d "$EXPIRES_AT" +%s)"
+
+          if [ "$now_epoch" -lt "$resume_epoch" ]; then
+            echo "due=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Recovery is not due until $RESUME_AT."
+            exit 0
+          fi
+
+          if [ "$now_epoch" -gt "$expires_epoch" ]; then
+            echo "due=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::The one-time recovery window expired at $EXPIRES_AT."
+            exit 0
+          fi
+
+          echo "due=true" >> "$GITHUB_OUTPUT"
+          echo "::notice::Recovery window is open."
+
+      - name: Re-enable report and WeChat workflows
+        if: ${{ steps.window.outputs.due == 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          while IFS= read -r workflow; do
+            [ -n "$workflow" ] || continue
+            gh api --method PUT \
+              "repos/$GITHUB_REPOSITORY/actions/workflows/$workflow/enable" \
+              --silent
+            echo "Enabled $workflow"
+          done <<< "$TARGET_WORKFLOWS"
+
+      - name: Verify all target workflows are active
+        if: ${{ steps.window.outputs.due == 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          while IFS= read -r workflow; do
+            [ -n "$workflow" ] || continue
+            state="$(gh api \
+              "repos/$GITHUB_REPOSITORY/actions/workflows/$workflow" \
+              --jq '.state')"
+            if [ "$state" != "active" ]; then
+              echo "$workflow is $state, expected active" >&2
+              exit 1
+            fi
+            echo "Verified $workflow: active"
+          done <<< "$TARGET_WORKFLOWS"
+
+      - name: Disable this one-time recovery workflow
+        if: ${{ steps.window.outputs.due == 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh api --method PUT \
+            "repos/$GITHUB_REPOSITORY/actions/workflows/resume-report-wechat-automations.yml/disable" \
+            --silent
+          echo "One-time recovery workflow disabled after successful verification."
