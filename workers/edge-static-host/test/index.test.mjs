@@ -7,7 +7,9 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
 const { default: worker } = await import(path.join(root, "workers/edge-static-host/src/index.js"));
 
-const PREFIX = "edge-static/releases/0123456789abcdef0123456789abcdef/";
+const PREFIX = "edge-static/slots/a/";
+const RELEASE = "0123456789abcdef0123456789abcdef";
+const TREE_SHA256 = "a".repeat(64);
 const UPLOADED = new Date("2026-08-12T04:05:06.789Z");
 
 class MemoryR2 {
@@ -70,7 +72,12 @@ function fixture() {
   bucket.seed("assets/app.js", "0123456789", { etag: '"app-v1"' });
   bucket.seed("assets/report-chat.js", "chat", { etag: '"chat-v1"' });
   bucket.seed("assets/styles.abcdef12.css", "body{}", { etag: '"css-v1"' });
-  return { STATIC_PREFIX: PREFIX, STATIC_BUCKET: bucket };
+  return {
+    STATIC_PREFIX: PREFIX,
+    STATIC_RELEASE: RELEASE,
+    STATIC_TREE_SHA256: TREE_SHA256,
+    STATIC_BUCKET: bucket,
+  };
 }
 
 async function request(pathname, init = {}) {
@@ -130,6 +137,19 @@ test("release-specific checks bypass stale edge caches and only expose the activ
   assert.equal(stale.status, 404);
   assert.equal(await stale.text(), "Not Found");
   assert.equal(stale.headers.get("cache-control"), "no-store");
+});
+
+test("edge state exposes the independently versioned active slot without caching", async () => {
+  const response = await request("/.well-known/edge-state");
+  assert.equal(response.status, 200);
+  assert.deepEqual(await response.json(), {
+    schema_version: 1,
+    slot: "a",
+    release_id: RELEASE,
+    tree_sha256: TREE_SHA256,
+  });
+  assert.equal(response.headers.get("cache-control"), "no-store");
+  assert.equal(response.headers.get("cloudflare-cdn-cache-control"), "no-store");
 });
 
 test("content-versioned assets are immutable while unversioned assets stay short-lived", async () => {
@@ -318,6 +338,9 @@ test("neutral deployment enables Workers caching and verifies preview/full catal
   assert.match(workflow, /test -s _neutral_site\/data\/catalog_preview\.json/);
   assert.match(workflow, /live-catalog-preview\.json/);
   assert.match(workflow, /\.well-known\/edge-release\/\$STATIC_RELEASE/);
+  assert.match(workflow, /STATIC_PREFIX = "\$STATIC_PREFIX"/);
+  assert.match(workflow, /STATIC_RELEASE = "\$STATIC_RELEASE"/);
+  assert.match(workflow, /STATIC_TREE_SHA256 = "\$STATIC_TREE_SHA256"/);
   const refreshStep = workflow.match(
     /- name: Verify refreshed catalog is live[\s\S]*?- name: Remove private values from persistent source/,
   )?.[0] || "";
@@ -356,19 +379,37 @@ test("neutral deployment enables Workers caching and verifies preview/full catal
   assert.doesNotMatch(discoveryStep, /continue-on-error/);
   assert.doesNotMatch(discoveryStep, /urlopen/);
 
+  const activeSlotStep = workflow.match(
+    /- name: Discover active static slot[\s\S]*?- name: Upload inactive static slot incrementally/,
+  )?.[0] || "";
+  assert.match(activeSlotStep, /\.well-known\/edge-state\?before=\$STATIC_RELEASE/);
+  assert.match(activeSlotStep, /ACTIVE_STATIC_SLOT/);
+  assert.match(activeSlotStep, /legacy-bootstrap/);
+
   const uploadStep = workflow.match(
-    /- name: Upload immutable release to private object storage[\s\S]*?- name: Prepare neutral edge runtime/,
+    /- name: Upload inactive static slot incrementally[\s\S]*?- name: Prepare neutral edge runtime/,
   )?.[0] || "";
   assert.match(uploadStep, /id: static_upload/);
-  assert.match(uploadStep, /required_release_paths = \(/);
-  assert.match(uploadStep, /client\.head_object\(Bucket=bucket, Key=prefix \+ relative\)/);
-  assert.match(uploadStep, /verified_release_objects=/);
+  assert.match(uploadStep, /scripts\/publish_static_slot\.py/);
+  assert.match(uploadStep, /--active-slot "\$\{ACTIVE_STATIC_SLOT:-\}"/);
+  assert.doesNotMatch(uploadStep, /client\.upload_file/);
+
+  const stateVerifyStep = workflow.match(
+    /- name: Verify active static slot switch[\s\S]*?- name: Verify active edge routes/,
+  )?.[0] || "";
+  assert.match(stateVerifyStep, /id: edge_state_verify/);
+  assert.match(stateVerifyStep, /\.well-known\/edge-state\?after=\$STATIC_RELEASE/);
+  assert.match(stateVerifyStep, /state != expected/);
 
   const pruneStep = workflow.match(
-    /- name: Prune obsolete static releases[\s\S]*?- name: Restore previous origin route/,
+    /- name: Prune obsolete legacy static releases[\s\S]*?- name: Restore previous origin route/,
   )?.[0] || "";
   assert.match(pruneStep, /always\(\)/);
   assert.match(pruneStep, /steps\.static_upload\.outcome == 'success'/);
   assert.match(pruneStep, /steps\.edge_deploy\.outcome == 'success'/);
+  assert.match(pruneStep, /steps\.edge_state_verify\.outcome == 'success'/);
+  assert.match(pruneStep, /steps\.live_catalog\.outcome == 'success'/);
+  assert.match(pruneStep, /steps\.live_discovery\.outcome == 'success'/);
+  assert.match(pruneStep, /complete_slots < 2/);
   assert.match(pruneStep, /continue-on-error: true/);
 });
