@@ -1,5 +1,8 @@
-const ALLOWED_PREFIX = /^edge-static\/releases\/([0-9a-f]{32})\/$/;
+const ALLOWED_PREFIX = /^(?:edge-static\/slots\/([ab])|edge-static\/releases\/([0-9a-f]{32}))\/$/;
+const RELEASE_ID = /^[0-9a-f]{32}$/;
+const TREE_SHA256 = /^[0-9a-f]{64}$/;
 const RELEASE_CHECK_PATH = /^\/\.well-known\/edge-release\/([0-9a-f]{32})(?:\/(.*))?$/;
+const EDGE_STATE_PATH = "/.well-known/edge-state";
 
 const CACHE_POLICY = Object.freeze({
   html: Object.freeze({
@@ -303,9 +306,36 @@ export default {
         headers: { "x-origin-class": "edge-static" },
       });
     }
+    const slot = prefixMatch[1] || "legacy";
+    const legacyRelease = prefixMatch[2] || "";
+    const configuredRelease = String(env.STATIC_RELEASE || "").trim().toLowerCase();
+    const activeRelease = RELEASE_ID.test(configuredRelease) ? configuredRelease : legacyRelease;
+    if (!activeRelease) {
+      return new Response("Service Unavailable", {
+        status: 503,
+        headers: { "x-origin-class": "edge-static" },
+      });
+    }
+    if (url.pathname === EDGE_STATE_PATH) {
+      const treeSha256 = String(env.STATIC_TREE_SHA256 || "").trim().toLowerCase();
+      return new Response(JSON.stringify({
+        schema_version: 1,
+        slot,
+        release_id: activeRelease,
+        ...(TREE_SHA256.test(treeSha256) ? { tree_sha256: treeSha256 } : {}),
+      }) + "\n", {
+        status: 200,
+        headers: {
+          "content-type": "application/json; charset=utf-8",
+          "cache-control": "no-store",
+          "cloudflare-cdn-cache-control": "no-store",
+          "x-origin-class": "edge-static",
+        },
+      });
+    }
     const releaseCheckMatch = RELEASE_CHECK_PATH.exec(url.pathname);
     const releaseCheck = Boolean(releaseCheckMatch);
-    if (releaseCheckMatch && releaseCheckMatch[1] !== prefixMatch[1]) {
+    if (releaseCheckMatch && releaseCheckMatch[1] !== activeRelease) {
       return new Response("Not Found", {
         status: 404,
         headers: {

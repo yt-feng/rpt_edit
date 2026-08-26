@@ -52,21 +52,28 @@ The main workflow should:
 
 Account and permission changes should deploy the gateway and frontend together when either side depends on the other.
 For such a release, deploy and verify the gateway first, then switch the static
-edge release. `neutral-edge-cutover.yml` publishes immutable static objects and
-does not deploy the API gateway; `portal-worker-emergency-deploy.yml` owns the
-gateway deployment and its pre-deploy contract tests.
+edge slot. `neutral-edge-cutover.yml` incrementally prepares a complete inactive
+static slot and does not deploy the API gateway; `portal-worker-emergency-deploy.yml`
+owns the gateway deployment and its pre-deploy contract tests.
 
 The production hostname remains on the neutral edge route and is never bound
 to GitHub Pages. Repository workflows may create build artifacts, but the
 custom hostname and downloadable binaries are not served from repository
 Pages.
 
-Each immutable static deployment receives a random 32-character release ID.
-The post-deploy catalog check uses
+Static storage uses two complete namespaces, `edge-static/slots/a/` and
+`edge-static/slots/b/`. A refresh hashes the generated tree, updates only new,
+changed, or removed paths in the inactive slot, verifies the complete namespace,
+and then deploys the edge Worker with that slot's `STATIC_PREFIX`. A manifest is
+committed only after the slot is complete; an interrupted upload never changes
+the active Worker.
+
+Each deployment still receives a random 32-character release ID, but the ID is
+independent from the storage prefix. The post-deploy catalog check uses
 `/.well-known/edge-release/<release-id>/data/...`; the edge Worker serves that
-path only when the requested ID matches its active `STATIC_PREFIX`, and marks
-the response `no-store`. This verifies the newly active release without mixing
-the ordinary five-minute catalog cache from different deployments. Public site
+path only when the requested ID matches its active `STATIC_RELEASE`, and marks
+the response `no-store`. `/.well-known/edge-state` exposes the active slot,
+release ID, and tree digest for uncached deployment verification. Public site
 requests continue to use the normal unversioned paths and cache policy.
 
 ## Frontend Pages

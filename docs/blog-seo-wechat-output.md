@@ -16,9 +16,10 @@ contains the editorial title, digest, sanitized HTML, normalized source label,
 publication dates, and stable slug. It never contains the temporary payload
 path, private object locator, API credential, or deployment hostname.
 
-`neutral-edge-cutover.yml` reads the archive into the static build, uploads an
-immutable release to private object storage, verifies the route, and switches
-the edge release. The routine schedule is 09:30, 13:30, 17:30, and 21:30
+`neutral-edge-cutover.yml` reads the archive into the static build, hashes the
+output, incrementally updates the inactive A/B storage slot, verifies the full
+slot, and atomically switches the edge Worker. Unchanged objects are not written
+again. The routine schedule is 09:30, 13:30, 17:30, and 21:30
 Asia/Shanghai. The source workflows normally run at 02:00 (primary report
 batch), 06:00 (institutions), 06:30 (consulting), and 06:45 (ARK), so later edge
 refreshes naturally pick up the committed articles.
