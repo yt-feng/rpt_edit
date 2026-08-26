@@ -7,6 +7,10 @@ on:
         description: "Dropbox root folder containing date-named backup folders"
         required: true
         default: "/zip_backup"
+      dropbox_date_folder:
+        description: "Optional exact 6-8 digit Dropbox child folder; empty uses the latest"
+        required: false
+        default: ""
       model:
         description: "DeepSeek model for report classification and content generation"
         required: true
@@ -125,6 +129,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       dropbox_root: ${{ steps.vars.outputs.dropbox_root }}
+      dropbox_date_folder: ${{ steps.vars.outputs.dropbox_date_folder }}
       model: ${{ steps.vars.outputs.model }}
       deepseek_base_url: ${{ steps.vars.outputs.deepseek_base_url }}
       mineru_model: ${{ steps.vars.outputs.mineru_model }}
@@ -153,6 +158,7 @@ jobs:
         id: vars
         run: |
           echo "dropbox_root=${{ github.event.inputs.dropbox_root || '/zip_backup' }}" >> "$GITHUB_OUTPUT"
+          echo "dropbox_date_folder=${{ github.event.inputs.dropbox_date_folder || '' }}" >> "$GITHUB_OUTPUT"
           echo "model=${{ github.event.inputs.model || 'deepseek-v4-flash' }}" >> "$GITHUB_OUTPUT"
           echo "deepseek_base_url=${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}" >> "$GITHUB_OUTPUT"
           echo "mineru_model=${{ github.event.inputs.mineru_model || 'vlm' }}" >> "$GITHUB_OUTPUT"
@@ -222,8 +228,16 @@ jobs:
           DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
           DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
         run: |
-          echo "::notice::Downloading latest Dropbox PDFs once for report selection."
-          python scripts/download_dropbox_latest_pdfs.py --dropbox-root "${{ needs.resolve-inputs.outputs.dropbox_root }}" --output-dir "_dropbox_latest_pdfs"
+          REQUESTED_DATE="${{ needs.resolve-inputs.outputs.dropbox_date_folder }}"
+          if [ -n "$REQUESTED_DATE" ]; then
+            echo "::notice::Downloading exact Dropbox date folder $REQUESTED_DATE once for report selection."
+          else
+            echo "::notice::Downloading latest Dropbox PDFs once for report selection."
+          fi
+          python scripts/download_dropbox_latest_pdfs.py \
+            --dropbox-root "${{ needs.resolve-inputs.outputs.dropbox_root }}" \
+            --date-folder "$REQUESTED_DATE" \
+            --output-dir "_dropbox_latest_pdfs"
       - name: Select reports with DeepSeek
         id: select_macro
         env:

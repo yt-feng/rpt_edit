@@ -33,6 +33,36 @@ class FakeResponse:
 
 
 class DropboxDownloadRetryTests(unittest.TestCase):
+    def test_selects_requested_date_folder_instead_of_latest(self) -> None:
+        entries = [
+            {".tag": "folder", "name": "20260825", "path_lower": "/zip_backup/20260825"},
+            {".tag": "folder", "name": "20260826", "path_lower": "/zip_backup/20260826"},
+        ]
+
+        selected = downloader.select_date_folder(entries, "20260825")
+
+        self.assertEqual(selected["name"], "20260825")
+
+    def test_empty_requested_date_folder_keeps_latest_behavior(self) -> None:
+        entries = [
+            {".tag": "folder", "name": "20260825"},
+            {".tag": "folder", "name": "20260826"},
+        ]
+
+        selected = downloader.select_date_folder(entries)
+
+        self.assertEqual(selected["name"], "20260826")
+
+    def test_missing_requested_date_folder_fails_closed(self) -> None:
+        entries = [{".tag": "folder", "name": "20260826"}]
+
+        with self.assertRaisesRegex(RuntimeError, "was not found: 20260825"):
+            downloader.select_date_folder(entries, "20260825")
+
+    def test_invalid_requested_date_folder_fails_closed(self) -> None:
+        with self.assertRaisesRegex(RuntimeError, "must contain 6 to 8 digits"):
+            downloader.select_date_folder([], "latest")
+
     @patch("download_dropbox_latest_pdfs.time.sleep")
     @patch("download_dropbox_latest_pdfs.requests.post")
     def test_retries_http_500_then_writes_pdf(self, post: Mock, sleep: Mock) -> None:

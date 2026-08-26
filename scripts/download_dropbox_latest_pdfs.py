@@ -111,6 +111,21 @@ def latest_date_folder(entries: list[dict[str, Any]]) -> dict[str, Any]:
     return max(folders, key=lambda e: int(e["name"]))
 
 
+def select_date_folder(entries: list[dict[str, Any]], requested: str = "") -> dict[str, Any]:
+    """Select an exact date folder when requested, otherwise retain latest behavior."""
+    requested = requested.strip()
+    if not requested:
+        return latest_date_folder(entries)
+    if not DATE_FOLDER_RE.fullmatch(requested):
+        raise RuntimeError(
+            f"Requested Dropbox date folder must contain 6 to 8 digits: {requested!r}"
+        )
+    for entry in entries:
+        if entry.get(".tag") == "folder" and str(entry.get("name", "")) == requested:
+            return entry
+    raise RuntimeError(f"Requested Dropbox date folder was not found: {requested}")
+
+
 def safe_local_relpath(dropbox_path: str, latest_path: str, fallback_name: str) -> str:
     """Create a safe local relative path while preserving readable filenames when possible."""
     rel = str(dropbox_path).replace(str(latest_path).rstrip("/") + "/", "", 1).lstrip("/")
@@ -202,6 +217,11 @@ def download_file(token: str, dropbox_path: str, local_path: Path) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--dropbox-root", default="/zip_backup")
+    parser.add_argument(
+        "--date-folder",
+        default="",
+        help="Exact 6-8 digit child folder to download; empty selects the latest folder",
+    )
     parser.add_argument("--output-dir", required=True)
     args = parser.parse_args()
 
@@ -213,10 +233,11 @@ def main() -> int:
 
         log(f"Listing Dropbox root: {root}")
         root_entries = list_folder(token, root, recursive=False)
-        latest = latest_date_folder(root_entries)
+        latest = select_date_folder(root_entries, args.date_folder)
         latest_name = latest["name"]
         latest_path = latest.get("path_lower") or latest.get("path_display") or f"{root}/{latest_name}"
-        log(f"Latest Dropbox date folder: {latest_path}")
+        selection_label = "Requested" if args.date_folder else "Latest"
+        log(f"{selection_label} Dropbox date folder: {latest_path}")
 
         entries = list_folder(token, latest_path, recursive=True)
         pdfs = [e for e in entries if e.get(".tag") == "file" and str(e.get("name", "")).lower().endswith(".pdf")]
