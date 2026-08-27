@@ -9688,7 +9688,68 @@ async function enforceHotReportStorageLimit(env) {
   };
 }
 
+function hotReportFirstPageCacheRequest(request, env) {
+  if (!request || request.method !== "GET") return null;
+  const url = new URL(request.url);
+  if (!["/hot-reports", "/api/hot-reports"].includes(url.pathname)) return null;
+  if (request.headers.has("origin") || request.headers.has("authorization")) return null;
+  const requestCacheControl = String(request.headers.get("cache-control") || "").toLowerCase();
+  const pragma = String(request.headers.get("pragma") || "").toLowerCase();
+  if (/(?:^|,)\s*(?:no-cache|no-store|max-age\s*=\s*0)(?:\s*(?:,|$))/.test(requestCacheControl)
+    || /(?:^|,)\s*no-cache(?:\s*(?:,|$))/.test(pragma)) return null;
+  if ([...url.searchParams.keys()].some((key) => key !== "limit")) return null;
+  if (url.searchParams.getAll("limit").length > 1) return null;
+  const limit = String(url.searchParams.get("limit") || HOT_REPORT_PUBLIC_DEFAULT_PAGE_SIZE).trim();
+  if (limit !== String(HOT_REPORT_PUBLIC_DEFAULT_PAGE_SIZE)) return null;
+  let cacheOrigin = url.origin;
+  try {
+    const configured = String(env && env.ALLOWED_ORIGIN || "").split(",")[0].trim();
+    if (configured) cacheOrigin = new URL(configured).origin;
+  } catch (_error) {
+    // Keep the request origin when the configured public origin is unavailable.
+  }
+  const key = new URL("/api/hot-reports", cacheOrigin);
+  key.searchParams.set("limit", String(HOT_REPORT_PUBLIC_DEFAULT_PAGE_SIZE));
+  key.searchParams.set("portal_cache", `public-v${HOT_REPORT_PUBLIC_INDEX_VERSION}-first-v1`);
+  return new Request(key.toString(), { method: "GET" });
+}
+
+function hotReportCacheStorage() {
+  const cacheStorage = globalThis.caches;
+  const cache = cacheStorage && cacheStorage.default;
+  return cache && typeof cache.match === "function" && typeof cache.put === "function" ? cache : null;
+}
+
+function hotReportCacheStatusResponse(response, status) {
+  const headers = new Headers(response.headers);
+  headers.set("X-Portal-Hot-Report-Cache", status);
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
+function hotReportResponseIsCacheable(response) {
+  if (!response || response.status !== 200 || response.headers.has("set-cookie")) return false;
+  const contentType = String(response.headers.get("content-type") || "").toLowerCase();
+  const cacheControl = String(response.headers.get("cache-control") || "").toLowerCase();
+  return contentType.includes("application/json")
+    && /(?:^|,)\s*public(?:\s*(?:,|$))/.test(cacheControl)
+    && /(?:^|,)\s*max-age\s*=\s*30(?:\s*(?:,|$))/.test(cacheControl);
+}
+
 async function handleHotReportsList(request, env, ctx = null) {
+  const cacheRequest = hotReportFirstPageCacheRequest(request, env);
+  const cache = cacheRequest ? hotReportCacheStorage() : null;
+  if (cacheRequest && cache) {
+    try {
+      const cached = await cache.match(cacheRequest);
+      if (cached) return hotReportCacheStatusResponse(cached, "HIT");
+    } catch (_error) {
+      // A regional Cache API failure falls through to the durable public index.
+    }
+  }
   try {
     const url = new URL(request.url);
     const bootstrap = url.searchParams.get("bootstrap") === "1";
@@ -9716,7 +9777,7 @@ async function handleHotReportsList(request, env, ctx = null) {
       cursor: url.searchParams.get("cursor"),
       query: url.searchParams.get("q"),
     });
-    return new Response(JSON.stringify({
+    const response = new Response(JSON.stringify({
       ...page,
       required_plan: HOT_REPORT_REQUIRED_PLAN,
       required_months: HOT_REPORT_MIN_MONTHS,
@@ -9732,6 +9793,14 @@ async function handleHotReportsList(request, env, ctx = null) {
           : "public, max-age=30, stale-while-revalidate=300",
       },
     });
+    if (!cacheRequest || !cache || !hotReportResponseIsCacheable(response)) return response;
+    const cacheCopy = response.clone();
+    const put = Promise.resolve()
+      .then(() => cache.put(cacheRequest, cacheCopy))
+      .catch(() => null);
+    if (ctx && typeof ctx.waitUntil === "function") ctx.waitUntil(put);
+    else await put;
+    return hotReportCacheStatusResponse(response, "MISS");
   } catch (error) {
     const status = error && error.code === "HOT_REPORT_CURSOR_STALE"
       ? 409
