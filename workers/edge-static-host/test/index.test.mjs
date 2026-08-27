@@ -63,6 +63,25 @@ class MemoryR2 {
   }
 }
 
+class MemoryCache {
+  constructor() {
+    this.rows = new Map();
+  }
+
+  key(request) {
+    return typeof request === "string" ? request : request.url;
+  }
+
+  async match(request) {
+    const response = this.rows.get(this.key(request));
+    return response ? response.clone() : undefined;
+  }
+
+  async put(request, response) {
+    this.rows.set(this.key(request), response.clone());
+  }
+}
+
 function fixture() {
   const bucket = new MemoryR2();
   bucket.seed("index.html", "home", { contentType: "text/html; charset=utf-8", etag: '"home-v1"' });
@@ -186,6 +205,94 @@ test("API service-binding responses pass through without static cache mutation",
   assert.equal(response.headers.get("cache-control"), "private, no-store");
   assert.equal(response.headers.get("cloudflare-cdn-cache-control"), null);
   assert.equal(response.headers.get("x-upstream"), "preserved");
+});
+
+test("the anonymous hot-report first page is edge-cached while searches and sessions pass through", async () => {
+  const previousCaches = Object.getOwnPropertyDescriptor(globalThis, "caches");
+  const cache = new MemoryCache();
+  Object.defineProperty(globalThis, "caches", {
+    configurable: true,
+    value: { default: cache },
+  });
+  try {
+    let upstreamCalls = 0;
+    const env = fixture();
+    env.API = {
+      fetch: async () => {
+        upstreamCalls += 1;
+        return new Response(JSON.stringify({ items: [], generated_at: `call-${upstreamCalls}` }), {
+          headers: { "content-type": "application/json", "cache-control": "public, max-age=5, stale-while-revalidate=300" },
+        });
+      },
+    };
+    const pending = [];
+    const ctx = { waitUntil: (promise) => pending.push(promise) };
+    const first = await worker.fetch(
+      new Request("https://static.example.invalid/api/hot-reports?limit=24"),
+      env,
+      ctx,
+    );
+    assert.equal(first.headers.get("x-portal-hot-report-cache"), "MISS");
+    assert.equal(first.headers.get("cache-control"), "public, max-age=5, stale-while-revalidate=300");
+    assert.equal((await first.json()).generated_at, "call-1");
+    await Promise.all(pending);
+
+    const second = await worker.fetch(
+      new Request("https://static.example.invalid/api/hot-reports"),
+      env,
+      ctx,
+    );
+    assert.equal(second.headers.get("x-portal-hot-report-cache"), "HIT");
+    assert.equal((await second.json()).generated_at, "call-1");
+    assert.equal(second.headers.get("cache-control"), "public, max-age=5, stale-while-revalidate=300");
+    assert.equal(upstreamCalls, 1);
+
+    const signedIn = await worker.fetch(
+      new Request("https://static.example.invalid/api/hot-reports?limit=24", { headers: { cookie: "portal_admin_token=1" } }),
+      env,
+      ctx,
+    );
+    assert.equal(signedIn.headers.get("x-portal-hot-report-cache"), "HIT");
+    assert.equal((await signedIn.json()).generated_at, "call-1");
+    assert.equal(upstreamCalls, 1, "the public list must be cacheable for the signed-in administrator too");
+
+    const searched = await worker.fetch(
+      new Request("https://static.example.invalid/api/hot-reports?limit=24&q=robotics"),
+      env,
+      ctx,
+    );
+    assert.equal(searched.headers.get("x-portal-hot-report-cache"), null);
+    assert.equal((await searched.json()).generated_at, "call-2");
+
+    const bootstrap = await worker.fetch(
+      new Request("https://static.example.invalid/api/hot-reports?limit=24&bootstrap=1"),
+      env,
+      ctx,
+    );
+    assert.equal(bootstrap.headers.get("x-portal-hot-report-cache"), null);
+    assert.equal((await bootstrap.json()).generated_at, "call-3");
+
+    const smoke = await worker.fetch(
+      new Request("https://static.example.invalid/api/hot-reports?limit=24&smoke=release-123"),
+      env,
+      ctx,
+    );
+    assert.equal(smoke.headers.get("x-portal-hot-report-cache"), null);
+    assert.equal((await smoke.json()).generated_at, "call-4");
+
+    const forced = await worker.fetch(
+      new Request("https://static.example.invalid/api/hot-reports?limit=24", {
+        headers: { "cache-control": "no-cache", pragma: "no-cache" },
+      }),
+      env,
+      ctx,
+    );
+    assert.equal(forced.headers.get("x-portal-hot-report-cache"), null);
+    assert.equal((await forced.json()).generated_at, "call-5");
+  } finally {
+    if (previousCaches) Object.defineProperty(globalThis, "caches", previousCaches);
+    else delete globalThis.caches;
+  }
 });
 
 test("If-None-Match supports wildcard, lists, and weak comparison", async () => {
