@@ -343,25 +343,16 @@ jobs:
             python3 -m json.tool "$RUNNER_TEMP/api-anonymous.json" >/dev/null
           done
 
-          for endpoint in \
-            'account-admin/report-requests' \
-            'account-admin/upload-status?upload_id=00000000-0000-4000-8000-000000000000'
-          do
-            code="$(curl --silent --show-error --max-time 20 \
-              --output "$RUNNER_TEMP/api-anonymous-admin.json" \
-              --write-out '%{http_code}' "$origin/api/$endpoint")"
-            test "$code" = 403
-            python3 -m json.tool "$RUNNER_TEMP/api-anonymous-admin.json" >/dev/null
-          done
-
           contact_smoke_id="report-a:smoke_${GITHUB_RUN_ID}_${GITHUB_RUN_ATTEMPT}"
-          curl --fail --silent --show-error --max-time 20 \
-            --get \
-            --data-urlencode 'source=report-a' \
-            --data-urlencode "id=$contact_smoke_id" \
-            --output "$RUNNER_TEMP/api-contact-report-item.json" \
-            "$origin/api/contact-report/item"
-          python3 - "$RUNNER_TEMP/api-contact-report-item.json" "$contact_smoke_id" <<'PY'
+          contact_ready=0
+          for attempt in $(seq 1 12); do
+            if curl --fail --silent --show-error --max-time 20 \
+              --get \
+              --data-urlencode 'source=report-a' \
+              --data-urlencode "id=$contact_smoke_id" \
+              --output "$RUNNER_TEMP/api-contact-report-item.json" \
+              "$origin/api/contact-report/item" \
+              && python3 - "$RUNNER_TEMP/api-contact-report-item.json" "$contact_smoke_id" <<'PY'
           import json
           import sys
           from pathlib import Path
@@ -373,6 +364,24 @@ jobs:
           if item.get("availability") not in {"contact_only", "available"}:
               raise SystemExit("Contact-report item route returned an invalid availability")
           PY
+            then
+              contact_ready=1
+              break
+            fi
+            sleep 5
+          done
+          test "$contact_ready" = 1
+
+          for endpoint in \
+            'account-admin/report-requests' \
+            'account-admin/upload-status?upload_id=00000000-0000-4000-8000-000000000000'
+          do
+            code="$(curl --silent --show-error --max-time 20 \
+              --output "$RUNNER_TEMP/api-anonymous-admin.json" \
+              --write-out '%{http_code}' "$origin/api/$endpoint")"
+            test "$code" = 403
+            python3 -m json.tool "$RUNNER_TEMP/api-anonymous-admin.json" >/dev/null
+          done
 
           code="$(curl --silent --show-error --max-time 20 \
             --request POST --header 'Content-Type: application/json' --data '{}' \
