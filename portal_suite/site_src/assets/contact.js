@@ -1,6 +1,6 @@
 (function (root) {
   const WECHAT = "Support Contact";
-  const EMAIL = "support@portal.example.invalid";
+  const EMAIL = ["info", "@", "kc", "desk", ".com"].join("");
 
   function firstLanguage(languages) {
     if (Array.isArray(languages)) {

@@ -882,7 +882,7 @@ def build_article_style_prompt(markdown: str, title: str, institution_name: str,
     token_text = ", ".join(image_tokens) if image_tokens else "无可用图表占位符"
     source = markdown[: min(len(markdown), 22_000)]
     prompt = f"""
-你是“Portal Suite”的微信公众号研究导读主笔。请把下面的公共机构/咨询公司英文报告，改写成和国际机构报告系列一致的中文微信文章。
+你是 KC桌面“外资精译”栏目的微信公众号研究导读主笔。请把下面的公共机构/咨询公司英文报告，改写成和国际机构报告系列一致的中文微信文章。
 
 写作目标：
 - 不是逐段翻译，而是基于原报告写一篇完整、顺滑、有主线的中文综述。

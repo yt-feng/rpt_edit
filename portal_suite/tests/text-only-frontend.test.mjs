@@ -297,3 +297,26 @@ test("Text only markup and mobile styles expose a clear, responsive entry", () =
   assert.match(styles, /\.text-only-text-content pre \{[\s\S]*min-width: 0;[\s\S]*max-width: 100%;/u);
   assert.match(styles, /@media \(max-width: 760px\)[\s\S]*\.text-only-text-actions \{[\s\S]*flex-direction: column;/u);
 });
+
+test("Text only guidance opens a prefilled homepage title search", () => {
+  const context = vm.createContext({ encodeURIComponent });
+  vm.runInContext(`
+    ${extractFunction(app, "escapeHtml")}
+    ${extractFunction(app, "titleText")}
+    ${extractFunction(app, "textOnlySearchHref")}
+    ${extractFunction(app, "textOnlySearchGuidanceMarkup")}
+    globalThis.guidanceHref = textOnlySearchHref;
+    globalThis.guidanceMarkup = textOnlySearchGuidanceMarkup;
+  `, context);
+
+  const item = { title: 'AI & "Chips"/2027' };
+  assert.equal(context.guidanceHref(item), "./?q=AI%20%26%20%22Chips%22%2F2027");
+  const markup = context.guidanceMarkup(item);
+  assert.match(markup, /约 90%/u);
+  assert.match(markup, /完整标题/u);
+  assert.match(markup, /“其他报告”等板块/u);
+  assert.match(markup, /在首页搜索同名报告/u);
+  assert.match(markup, /href="\.\/\?q=AI%20%26%20%22Chips%22%2F2027"/u);
+  assert.match(styles, /\.text-only-search-guidance \{[\s\S]*display: grid;[\s\S]*line-height: 1\.6;/u);
+  assert.match(styles, /@media \(max-width: 760px\)[\s\S]*\.text-only-search-guidance \.secondary-button \{[\s\S]*width: 100%;/u);
+});

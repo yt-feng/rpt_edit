@@ -129,6 +129,7 @@ test("inline report preview paints before the application bundle and preserves u
       createElement: (tag) => new Element(tag),
     };
     vm.runInNewContext(match[1], {
+      encodeURIComponent,
       URLSearchParams,
       document,
       window: { location: { search } },
@@ -143,6 +144,11 @@ test("inline report preview paints before the application bundle and preserves u
 
   const textOnly = paint("?id=chat-report&title=Chat%20Report&available=0");
   assert.equal(textOnly.detail.children[1].children[3].children[1].textContent, "Text only");
+  assert.equal(textOnly.detail.children[2].className, "text-only-search-guidance");
+  assert.match(textOnly.detail.children[2].children[1].textContent, /约 90%/u);
+  assert.match(textOnly.detail.children[2].children[1].textContent, /“其他报告”等板块/u);
+  assert.equal(textOnly.detail.children[2].children[2].textContent, "在首页搜索同名报告");
+  assert.equal(textOnly.detail.children[2].children[2].href, "./?q=Chat%20Report");
 });
 
 test("a report detail shard hit renders before PDF overrides and skips the full catalog", async () => {
@@ -465,6 +471,8 @@ test("ordinary detail links retain first-paint metadata while delivery generator
   assert.match(appSource, /externalPageUrl\(deliveryItem, data\.password\)/u);
   assert.match(appSource, /renderExternalDetailFirstPaint\(item, target\)/u);
   assert.match(extractFunction(appSource, "renderReportFirstPaint"), /availabilityKnown/u);
+  assert.match(extractFunction(appSource, "renderReportFirstPaint"), /textOnlySearchGuidanceMarkup\(item\)/u);
+  assert.match(extractFunction(appSource, "renderDetail"), /textOnlySearchGuidanceMarkup\(item\)/u);
 });
 
 test("legacy delivery redirects remain compatible and canonicalize to an id/password-only report URL", async () => {

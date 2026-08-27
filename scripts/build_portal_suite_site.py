@@ -92,6 +92,8 @@ BANK_ALIASES = [
 ]
 
 SITE_BASE_URL = "https://portal.example.invalid"
+PUBLIC_CONTACT_EMAIL_PLACEHOLDER = "info@public-contact.invalid"
+PUBLIC_CONTACT_EMAIL = "".join(("info", "@", "kc", "desk", ".com"))
 SITEMAP_REPORT_CHUNK_SIZE = 5000
 REPORT_INDEX_PAGE_SIZE = 200
 BLOG_INDEX_PAGE_SIZE = 30
@@ -1369,7 +1371,8 @@ def render_report_seo_page(
         if key in item and item.get(key) is not None:
             detail_params[key] = "1" if bool(item.get(key)) else "0"
     detail_href = f"../report.html?{urlencode(detail_params)}"
-    search_href = f"../?q={quote(title[:80])}"
+    search_href = f"../?{urlencode({'q': title[:200]})}"
+    text_only = not (bool(item.get("available")) and not bool(item.get("pdf_archived")))
     description = item_meta_description(item)
     citable_summary = report_citable_summary(item)
     date_iso = date_folder_to_iso(str(item.get("date_folder") or ""))
@@ -1479,6 +1482,19 @@ def render_report_seo_page(
             + "".join(related_rows)
             + "</ul>"
         )
+    text_only_search_guidance = ""
+    if text_only:
+        text_only_search_guidance = f"""
+        <aside class="text-only-search-guidance" aria-label="寻找可下载版本">
+          <strong>先搜索同名可下载版本</strong>
+          <p>约 90% 的 Text only 报告可在首页按完整标题找到可下载版本，建议继续查看“其他报告”等板块。</p>
+          <a class="secondary-button" href="{html_escape(search_href)}">在首页搜索同名报告</a>
+        </aside>"""
+    related_search_link = (
+        ""
+        if text_only
+        else f'<a class="secondary-button" href="{html_escape(search_href)}">检索相关报告</a>'
+    )
     return f"""<!doctype html>
 <html lang="zh-Hans">
   <head>
@@ -1532,10 +1548,11 @@ def render_report_seo_page(
         <p>收录日期：{html_escape(date_iso or str(item.get("date_folder") or ""))}</p>
         <p>页数：{html_escape(item_page_label(item))}</p>
         <p>状态：{html_escape(item_availability_label(item))}</p>{source_block}
+        {text_only_search_guidance}
         <p class="subtle">{BLOG_PUBLIC_BRAND}提供免费的报告元数据与检索入口，不是底层报告的作者或出版方；具体作者、版权和使用条件以原始报告为准。</p>
         <p>
           <a class="primary-link" href="{html_escape(detail_href)}">打开报告详情</a>
-          <a class="secondary-button" href="{html_escape(search_href)}">检索相关报告</a>
+          {related_search_link}
         </p>{related_block}
       </article>
     </main>
@@ -1546,7 +1563,7 @@ def render_report_seo_page(
       <a href="../terms.html">Terms of Service</a>
       <a href="../privacy.html">Privacy Policy</a>
       <span data-portal-chinese-only hidden>Contact WeChat: Support Contact</span>
-      <a href="mailto:support@portal.example.invalid" data-portal-non-chinese-only hidden>Email: support@portal.example.invalid</a>
+      <a href="mailto:info@public-contact.invalid" data-portal-non-chinese-only hidden>Email: info@public-contact.invalid</a>
     </footer>
     <script src="../assets/contact.js"></script>
     <script src="../assets/analytics.js"></script>
@@ -1688,7 +1705,7 @@ def render_reports_index(
       <a href="../terms.html">Terms of Service</a>
       <a href="../privacy.html">Privacy Policy</a>
       <span data-portal-chinese-only hidden>Contact WeChat: Support Contact</span>
-      <a href="mailto:support@portal.example.invalid" data-portal-non-chinese-only hidden>Email: support@portal.example.invalid</a>
+      <a href="mailto:info@public-contact.invalid" data-portal-non-chinese-only hidden>Email: info@public-contact.invalid</a>
     </footer>
     <script src="../assets/contact.js"></script>
     <script src="../assets/analytics.js"></script>
@@ -1989,7 +2006,7 @@ def render_about_page(base_url: str, generated_date: str) -> str:
         "url": home,
         "logo": url_join(base_url, "assets/app-mark.svg"),
         "description": description,
-        "email": "support@portal.example.invalid",
+        "email": "info@public-contact.invalid",
     }
     json_ld = {
         "@context": "https://schema.org",
@@ -2060,7 +2077,7 @@ def render_about_page(base_url: str, generated_date: str) -> str:
         <h2>发现方式</h2>
         <p><a href="reports/">浏览金融研报索引</a> · <a href="reports/topics.html">按机构与主题浏览</a> · <a href="blog/">阅读每日研究文章</a> · <a href="charts">检索研报图表</a></p>
         <h2>联系</h2>
-        <p><a href="mailto:support@portal.example.invalid">support@portal.example.invalid</a></p>
+        <p><a href="mailto:info@public-contact.invalid">info@public-contact.invalid</a></p>
       </article>
     </main>
     <footer class="legal-footer"><a href="./">首页检索</a><a href="reports/">报告索引</a><a href="blog/">Blog</a><a href="privacy.html">Privacy Policy</a></footer>
@@ -3108,7 +3125,7 @@ def render_blog_index(
       <a href="../reports/">报告索引</a>
       <a href="../about.html">关于{BLOG_PUBLIC_BRAND}</a>
       <a href="../terms.html">Terms of Service</a>
-      <a href="mailto:support@portal.example.invalid">Email: support@portal.example.invalid</a>
+      <a href="mailto:info@public-contact.invalid">Email: info@public-contact.invalid</a>
     </footer>
   </body>
 </html>
@@ -3273,7 +3290,7 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
       <a href="../">首页检索</a>
       <a href="../reports/">报告索引</a>
       <a href="../about.html">关于{BLOG_PUBLIC_BRAND}</a>
-      <a href="mailto:support@portal.example.invalid">Email: support@portal.example.invalid</a>
+      <a href="mailto:info@public-contact.invalid">Email: info@public-contact.invalid</a>
     </footer>
   </body>
 </html>
@@ -3538,7 +3555,7 @@ def build_seo_outputs(
             "- Report pages expose titles, translated titles, institution, industry, date, page count, and availability status.",
             f"- {BLOG_PUBLIC_BRAND} is a metadata and discovery index, not the author or publisher of underlying reports. Attribute each report to the source institution shown on its canonical report page.",
             "- Use each static report or Blog canonical URL when citing indexed facts. Availability is dynamic and should be described with the page's current status.",
-            "- PDF download access may require an approved account. For source files or unavailable PDFs, email support@portal.example.invalid.",
+            "- PDF download access may require an approved account. For source files or unavailable PDFs, email info@public-contact.invalid.",
             "",
         ]),
     )
@@ -3685,6 +3702,45 @@ def copy_site(src: Path, output: Path) -> None:
     shutil.copytree(src, output)
 
 
+def materialize_public_contact(output: Path) -> int:
+    """Render the public alias after deployment-only private substitutions.
+
+    The committed HTML uses a neutral placeholder so an older private profile
+    cannot substitute a personal mailbox into public pages. JavaScript builds
+    the same alias from fragments at runtime. This final build step makes every
+    crawlable/static contact entry use the public alias before asset hashing.
+    """
+    text_suffixes = {".css", ".html", ".js", ".json", ".txt", ".xml"}
+    changed = 0
+    for path in output.rglob("*"):
+        if not path.is_file() or path.suffix.lower() not in text_suffixes:
+            continue
+        try:
+            text = path.read_text(encoding="utf-8")
+        except UnicodeDecodeError:
+            continue
+        if PUBLIC_CONTACT_EMAIL_PLACEHOLDER not in text:
+            continue
+        path.write_text(
+            text.replace(PUBLIC_CONTACT_EMAIL_PLACEHOLDER, PUBLIC_CONTACT_EMAIL),
+            encoding="utf-8",
+        )
+        changed += 1
+
+    remaining = []
+    for path in output.rglob("*"):
+        if not path.is_file() or path.suffix.lower() not in text_suffixes:
+            continue
+        try:
+            if PUBLIC_CONTACT_EMAIL_PLACEHOLDER in path.read_text(encoding="utf-8"):
+                remaining.append(path.relative_to(output).as_posix())
+        except UnicodeDecodeError:
+            continue
+    if remaining:
+        raise RuntimeError(f"Public contact placeholder remains in: {', '.join(sorted(remaining))}")
+    return changed
+
+
 def version_assets(output: Path) -> None:
     """Append a content-hash query to JavaScript / stylesheet links in every HTML file.
 
@@ -3822,6 +3878,7 @@ def main() -> int:
         archive_root=Path(args.blog_archive_root),
     )
     build_seo_outputs(output_dir, catalog, SITE_BASE_URL, blog_articles)
+    materialize_public_contact(output_dir)
     version_assets(output_dir)
     print(
         f"Built {output_dir} with {catalog['item_count']} catalog items "

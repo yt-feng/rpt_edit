@@ -19,6 +19,7 @@ from push_portal_translated_to_wechat_drafts import (  # noqa: E402
     AUTHOR,
     BOTTOM_DISCLAIMER,
     BRAND,
+    TRANSLATION_VOLUNTEER_NAMES,
     DEFAULT_ARTICLES_PER_DRAFT,
     DEFAULT_BODY_HOOK,
     DEFAULT_BODY_VISIBLE_CHARS,
@@ -66,6 +67,8 @@ from push_portal_translated_to_wechat_drafts import (  # noqa: E402
     sharpen_wechat_title,
     source_report_name_from_xhs_dir,
     submit_publish,
+    summarize_draft_get_response,
+    translation_volunteer_for_article,
     truncate_chars,
     truncate_utf8_bytes,
     upload_article_image,
@@ -404,6 +407,7 @@ def build_article(
         markdown[:1200],
     )
     source_report_name = source_report_name_from_xhs_dir(report_dir)
+    translator_name = translation_volunteer_for_article(institution_name, source_report_name or report_dir.name)
     raw_title = xhs_raw_article_title(markdown, report_dir.name)
     title_before_neutralization = sharpen_wechat_title(
         ensure_title_has_institution(raw_title, institution_name),
@@ -558,6 +562,7 @@ def build_article(
         args.max_body_chars,
         args.max_content_chars,
         args.max_content_bytes,
+        translator_name=translator_name,
     )
     if not content_within_limits(content, args.max_content_chars, args.max_content_bytes):
         raise RuntimeError(
@@ -594,6 +599,7 @@ def build_article(
         "digest": digest_from_markdown(markdown),
         "institution_name": institution_name,
         "source_report_name": source_report_name,
+        "translator_name": translator_name,
         "title_decision": title_decision,
         "article": article,
         "cover_image": str(cover_image),
@@ -876,14 +882,12 @@ def main() -> int:
             media_id = f"DRY_RUN_DRAFT_{draft_index:02d}"
             publish_id = f"DRY_RUN_PUBLISH_{draft_index:02d}" if args.publish else ""
             reused_existing = False
-            draft_get = {
-                "ok": True,
-                "dry_run": True,
-                "article_count": len(articles),
-                "expected_article_count": len(articles),
-                "matches_expected_article_count": True,
-                "titles": [item.get("title", "") for item in articles],
-            }
+            draft_get = summarize_draft_get_response(
+                {"news_item": articles},
+                len(articles),
+                articles,
+            )
+            draft_get["dry_run"] = True
         else:
             if session is None or access_token is None:
                 raise RuntimeError("session and access_token are required outside dry-run")
@@ -893,6 +897,7 @@ def main() -> int:
                 access_token,
                 payload_article_titles(articles),
                 args.timeout,
+                expected_articles=articles,
             )
             if existing_media_id:
                 media_id = existing_media_id
@@ -995,7 +1000,14 @@ def main() -> int:
                 args.draft_verify_delay_seconds,
                 args.dry_run,
             )
-            draft_get = verify_draft_get(session, access_token, media_id, args.timeout, len(articles))
+            draft_get = verify_draft_get(
+                session,
+                access_token,
+                media_id,
+                args.timeout,
+                len(articles),
+                articles,
+            )
             publish_id = submit_publish(session, access_token, media_id, args.timeout) if args.publish else ""
 
         payload_path = output_dir / f"draft_payload_{draft_index:02d}.json"
@@ -1013,6 +1025,7 @@ def main() -> int:
                 "payload": str(payload_path),
                 "titles": [item["title"] for item in group],
                 "wechat_titles": [item["wechat_title"] for item in group],
+                "translator_names": [item.get("translator_name", "") for item in group],
                 "draft_get": draft_get,
             }
         )
@@ -1080,6 +1093,7 @@ def main() -> int:
                 "wechat_title": item["wechat_title"],
                 "institution_name": item["institution_name"],
                 "source_report_name": item["source_report_name"],
+                "translator_name": item.get("translator_name", ""),
                 "report_dir": item["report_dir"],
                 "content_chars": item["content_chars"],
                 "content_bytes": item["content_bytes"],

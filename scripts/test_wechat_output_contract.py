@@ -8,27 +8,222 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import patch
 
 from PIL import Image
 
 from push_portal_translated_to_wechat_drafts import (
+    AUTHOR,
+    BOTTOM_DISCLAIMER,
+    BRAND,
     FINAL_CTA_TEXT,
     PUBLIC_SITE_HOST,
     PUBLIC_SITE_HOST_PLACEHOLDER,
+    TRANSLATION_VOLUNTEER_NAMES,
     blockquote_html,
+    build_article as build_portal_article,
+    find_recent_draft_by_titles,
+    footer_html,
     hard_blocked_portal_title_record,
     is_explicit_portal_comment,
     materialize_private_article_payload,
     main as portal_uploader_main,
     portal_comment_html,
     prepare_cover_upload_image,
+    render_fitted_wechat_html,
+    summarize_draft_get_response,
+    translation_volunteer_for_article,
     truncate_complete_sentences,
 )
-from push_xhs_notes_to_wechat_drafts import choose_cover_image
+from push_xhs_notes_to_wechat_drafts import (
+    AUTHOR as XHS_AUTHOR,
+    BRAND as XHS_BRAND,
+    choose_cover_image,
+)
 
 
 class WeChatOutputContractTests(unittest.TestCase):
+    def test_real_portal_builder_uses_shared_identity_and_credits(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            report_dir = root / "01-worldbank-supply-chain"
+            report_dir.mkdir()
+            (report_dir / "translated.md").write_text(
+                "# 世界银行：供应链数据与交付周期更新\n\n"
+                "## 企业交付周期呈现新的变化\n\n"
+                "报告记录了一个可核验的数据变化。\n",
+                encoding="utf-8",
+            )
+            (report_dir / "translation_status.json").write_text(
+                json.dumps({
+                    "title": "世界银行：供应链数据与交付周期更新",
+                    "source_report_original_name": "World Bank supply chain report.pdf",
+                }),
+                encoding="utf-8",
+            )
+            args = SimpleNamespace(
+                author=AUTHOR,
+                body_hook="",
+                brand=BRAND,
+                content_source_url="",
+                disclaimer=BOTTOM_DISCLAIMER,
+                dry_run=True,
+                image_upload_delay_seconds=0,
+                max_body_chars=1200,
+                max_content_bytes=18000,
+                max_content_chars=19500,
+                max_inline_images=0,
+                min_inline_images=0,
+                timeout=30,
+            )
+
+            built = build_portal_article(
+                report_dir,
+                1,
+                args,
+                None,
+                None,
+                root / "output",
+                "",
+            )
+
+            article = built["article"]
+            volunteer = built["translator_name"]
+            self.assertEqual("KC桌面", article["author"])
+            self.assertIn(volunteer, TRANSLATION_VOLUNTEER_NAMES)
+            self.assertIn("外资精译", article["content"])
+            self.assertIn(BOTTOM_DISCLAIMER, article["content"])
+            self.assertIn(f"撰稿：{volunteer}", article["content"])
+            self.assertIn("责编：KC", article["content"])
+            self.assertIn("排版：胡桃", article["content"])
+
+    def test_shared_wechat_identity_and_editorial_footer_are_exact(self) -> None:
+        self.assertEqual("外资精译", BRAND)
+        self.assertEqual("KC桌面", AUTHOR)
+        self.assertEqual(BRAND, XHS_BRAND)
+        self.assertEqual(AUTHOR, XHS_AUTHOR)
+
+        volunteer = translation_volunteer_for_article("高盛", "AI基础设施报告")
+        self.assertIn(volunteer, TRANSLATION_VOLUNTEER_NAMES)
+        self.assertRegex(volunteer, r"^[A-Za-z][A-Za-z'-]*$")
+        self.assertEqual(
+            volunteer,
+            translation_volunteer_for_article("高盛", "AI基础设施报告"),
+        )
+        self.assertGreater(
+            len({translation_volunteer_for_article("机构", f"报告-{index}") for index in range(20)}),
+            1,
+        )
+
+        footer = footer_html(BOTTOM_DISCLAIMER, volunteer)
+        self.assertEqual(1, footer.count("——人工智能免责声明（部分内容由人工智能工具辅助生成）"))
+        self.assertEqual(1, footer.count(f"撰稿：{volunteer}"))
+        self.assertEqual(1, footer.count("责编：KC"))
+        self.assertEqual(1, footer.count("排版：胡桃"))
+
+    def test_shared_renderer_owns_opening_disclaimer_and_credits(self) -> None:
+        volunteer = translation_volunteer_for_article("世界银行", "供应链报告")
+        markdown = (
+            "# 世界银行：供应链数据更新\n\n"
+            "## 企业交付周期出现变化\n\n"
+            "报告记录了一个可核验的变化。\n\n"
+            "<p>For informational purposes only. This is an old generated footer.</p>\n"
+        )
+        content, *_ = render_fitted_wechat_html(
+            markdown,
+            "供应链数据更新",
+            BRAND,
+            {},
+            [],
+            "",
+            BOTTOM_DISCLAIMER,
+            "",
+            "世界银行-供应链报告",
+            1200,
+            19500,
+            18000,
+            translator_name=volunteer,
+        )
+
+        self.assertIn("外资精译", content)
+        self.assertLess(content.index("外资精译"), content.index("供应链数据更新"))
+        self.assertNotIn("Portal Suite", content)
+        self.assertNotIn("For informational purposes only", content)
+        self.assertEqual(1, content.count(BOTTOM_DISCLAIMER))
+        self.assertEqual(1, content.count(f"撰稿：{volunteer}"))
+        self.assertEqual(1, content.count("责编：KC"))
+        self.assertEqual(1, content.count("排版：胡桃"))
+
+    def test_recent_draft_reuse_requires_current_editorial_contract(self) -> None:
+        title = "世界银行：供应链数据更新"
+        volunteer = translation_volunteer_for_article("世界银行", "供应链报告")
+        content, *_ = render_fitted_wechat_html(
+            "# 世界银行：供应链数据更新\n\n## 数据发生变化\n\n正文事实。\n",
+            "供应链数据更新",
+            BRAND,
+            {},
+            [],
+            "",
+            BOTTOM_DISCLAIMER,
+            "",
+            "世界银行-供应链报告",
+            1200,
+            19500,
+            18000,
+            translator_name=volunteer,
+        )
+        expected = {"title": title, "author": AUTHOR, "content": content}
+        stale = {
+            "media_id": "STALE_MEDIA",
+            "content": {"news_item": [{"title": title, "author": "Portal Suite", "content": "<p>Portal Suite</p>"}]},
+        }
+        current = {"media_id": "CURRENT_MEDIA", "content": {"news_item": [dict(expected)]}}
+
+        with patch(
+            "push_portal_translated_to_wechat_drafts.batchget_recent_drafts",
+            return_value=[stale],
+        ):
+            self.assertEqual(
+                "",
+                find_recent_draft_by_titles(
+                    object(),
+                    "TOKEN",
+                    [title],
+                    30,
+                    expected_articles=[expected],
+                ),
+            )
+        with patch(
+            "push_portal_translated_to_wechat_drafts.batchget_recent_drafts",
+            return_value=[current],
+        ):
+            self.assertEqual(
+                "CURRENT_MEDIA",
+                find_recent_draft_by_titles(
+                    object(),
+                    "TOKEN",
+                    [title],
+                    30,
+                    expected_articles=[expected],
+                ),
+            )
+
+        current_summary = summarize_draft_get_response(
+            {"news_item": [dict(expected)]},
+            1,
+            [expected],
+        )
+        stale_summary = summarize_draft_get_response(
+            {"news_item": stale["content"]["news_item"]},
+            1,
+            [expected],
+        )
+        self.assertTrue(current_summary["ok"])
+        self.assertTrue(current_summary["matches_editorial_contract"])
+        self.assertFalse(stale_summary["ok"])
+        self.assertFalse(stale_summary["matches_editorial_contract"])
+
     def test_portal_hard_block_checks_raw_title_before_neutralized_title(self) -> None:
         record = hard_blocked_portal_title_record({
             "raw_title": "德意志银行：人民币定价框架与相关指标观察",
@@ -185,7 +380,7 @@ class WeChatOutputContractTests(unittest.TestCase):
                     "article": {
                         "article_type": "news",
                         "title": title,
-                        "author": "Portal Suite",
+                        "author": "KC桌面",
                         "digest": "供应链数据呈现新的运营变化。",
                         "content": "<p>正文。</p>",
                         "thumb_media_id": "THUMB_OK",
