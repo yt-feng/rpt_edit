@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
@@ -15,6 +16,7 @@ class MemoryR2 {
   constructor() {
     this.data = new Map();
     this.version = 0;
+    this.putKeys = [];
   }
 
   async get(key) {
@@ -27,6 +29,7 @@ class MemoryR2 {
   }
 
   async put(key, value, options = {}) {
+    this.putKeys.push(String(key));
     const current = this.data.get(key);
     const condition = options.onlyIf || {};
     if (condition.etagMatches && (!current || current.etag !== condition.etagMatches)) return null;
@@ -45,6 +48,13 @@ class MemoryR2 {
       .filter(([key]) => key.startsWith(prefix))
       .map(([key, row]) => ({ key, value: JSON.parse(row.value) }));
   }
+}
+
+function contactTargetKey(source, originId) {
+  const digest = createHash("sha256")
+    .update(`portal-contact-report:v1:${source}:${originId}`)
+    .digest("hex");
+  return `_contact-reports/v1/targets/${digest}.json`;
 }
 
 function envFor(bucket) {
@@ -204,6 +214,341 @@ test("report request persists before sending to the fixed contact and escapes HT
   const saved = bucket.jsonRows("_report-requests/v1/items/");
   assert.equal(saved[0].value.status, "sent");
   assert.ok(saved[0].value.sent_at);
+});
+
+test("an id-only Report A detail self-heals canonical metadata and sends exactly one real provider request", async () => {
+  const bucket = new MemoryR2();
+  const env = envFor(bucket);
+  const originId = "report-a:7272f7466fea33f5ca7e66afc23a0a90";
+  const canonicalTitle = "申港证券-电子行业研究周报：MLCC开启新一轮涨价，关注订单溢出和国产替代-260802";
+  let detailGets = 0;
+  let detailPosts = 0;
+  const deliveries = [];
+  await withMockFetch(async (resource, init = {}) => {
+    const url = String(resource);
+    if (url === "https://www.hibor.com.cn/data/7272f7466fea33f5ca7e66afc23a0a90.html") {
+      detailGets += 1;
+      return new Response("<script>var ncid = '5c9d501d-2526-4379-b3a5-b0f1ed20886f';</script>", {
+        status: 200,
+        headers: {
+          "Set-Cookie": "unrelated=ignore-me; Path=/, safedog-flow-item=flow_7272-A%2B; Path=/; HttpOnly, second=ignore-too; Path=/",
+        },
+      });
+    }
+    if (url === "https://www.hibor.com.cn/hiborweb/DocDetail/NewContent") {
+      detailPosts += 1;
+      assert.equal(init.method, "POST");
+      assert.match(String(init.body || ""), /ncid=5c9d501d-2526-4379-b3a5-b0f1ed20886f/u);
+      assert.equal(new Headers(init.headers).get("cookie"), "safedog-flow-item=flow_7272-A%2B");
+      return new Response(`
+        <h1>${canonicalTitle}</h1>
+        <div class="doc-info">
+          <span class="article-time">日期：2026-08-06 16:55:07</span>
+          <span>研报出处：<a>申港证券</a></span>
+        </div>
+        <div class="doc-info-list">
+          <span>研报栏目：<a>行业分析</a></span>
+          <span class="author"><b></b><a>王伟</a></span>
+          <span><img>&nbsp;<i>(PDF)</i></span>
+          <span><i>10 页</i></span>
+        </div>
+      `, { status: 200 });
+    }
+    if (url === "https://api.brevo.com/v3/smtp/email") {
+      deliveries.push(JSON.parse(init.body));
+      return brevoSuccess("report-a-provider-message");
+    }
+    throw new Error(`unexpected fetch: ${url}`);
+  }, async () => {
+    const detailRequest = new Request(
+      `https://worker.example.invalid/contact-report/item?source=report-a&id=${encodeURIComponent(originId)}`,
+    );
+    const detailResponse = await worker.fetch(detailRequest, env, { waitUntil() {} });
+    assert.equal(detailResponse.status, 200);
+    const detail = await detailResponse.json();
+    assert.equal(detail.item.title, canonicalTitle);
+    assert.equal(detail.item.institution, "申港证券");
+    assert.equal(detail.item.date, "2026-08-06");
+    assert.equal(detail.item.category, "行业分析");
+    assert.equal(detail.item.author, "王伟");
+    assert.equal(detail.item.page_count, 10);
+    assert.ok(detail.item.request_token);
+    assert.equal(bucket.jsonRows("_contact-reports/v1/targets/").length, 1);
+
+    const secondDetail = await worker.fetch(detailRequest, env, { waitUntil() {} });
+    assert.equal(secondDetail.status, 200);
+    assert.equal(detailGets, 1, "the healed target must be served from R2 after the first lookup");
+    assert.equal(detailPosts, 1);
+    assert.equal(bucket.jsonRows("_contact-reports/v1/targets/").length, 1);
+
+    const submitted = await postReportRequest(env, requestBody({
+      report_id: originId,
+      title: "FAKE CLIENT TITLE",
+      source: "report-a",
+      institution: "client supplied institution",
+      requester_email: "report-a-reader@example.net",
+      request_token: detail.item.request_token,
+    }));
+    assert.equal(submitted.response.status, 202);
+    assert.equal(submitted.data.ok, true);
+  });
+
+  assert.equal(deliveries.length, 1, "one click must make exactly one Brevo send call");
+  assert.deepEqual(deliveries[0].to, [{ email: EXPECTED_CONTACT }]);
+  assert.match(deliveries[0].subject, new RegExp(canonicalTitle, "u"));
+  assert.doesNotMatch(deliveries[0].subject, /FAKE CLIENT TITLE/u);
+  assert.match(deliveries[0].textContent, /机构：申港证券/u);
+  assert.doesNotMatch(deliveries[0].textContent, /client supplied institution/u);
+  const saved = bucket.jsonRows("_report-requests/v1/items/");
+  assert.equal(saved.length, 1);
+  assert.equal(saved[0].value.title, canonicalTitle);
+  assert.equal(saved[0].value.institution, "申港证券");
+  assert.equal(saved[0].value.status, "sent");
+  assert.equal(saved[0].value.message_id, "report-a-provider-message");
+});
+
+test("Report A self-healing uses one deadline across the detail and content bodies", async () => {
+  const originId = "report-a:7272f7466fea33f5ca7e66afc23a0a90";
+  const startedAt = Date.now();
+  await withMockFetch(async (resource) => {
+    const url = String(resource);
+    if (url.includes("/data/7272f7466fea33f5ca7e66afc23a0a90.html")) {
+      await new Promise((resolve) => setTimeout(resolve, 15));
+      return new Response("<script>var ncid='5c9d501d-2526-4379-b3a5-b0f1ed20886f';</script>");
+    }
+    if (url.includes("/hiborweb/DocDetail/NewContent")) return new Promise(() => {});
+    throw new Error(`unexpected fetch: ${url}`);
+  }, async () => {
+    await assert.rejects(
+      worker.__reportRequestTest.recoverHiborContactReportTarget(originId, 35),
+      (error) => error && error.name === "TimeoutError",
+    );
+  });
+  assert.ok(Date.now() - startedAt < 250, "the second body may only use the first stage's remaining deadline");
+});
+
+test("Report A recovery fails closed for empty or title-less detail content", async () => {
+  const originId = "report-a:7272f7466fea33f5ca7e66afc23a0a90";
+  let contentAttempt = 0;
+  await withMockFetch(async (resource, init = {}) => {
+    const url = String(resource);
+    if (url.includes("/data/7272f7466fea33f5ca7e66afc23a0a90.html")) {
+      return new Response("<script>var ncid='5c9d501d-2526-4379-b3a5-b0f1ed20886f';</script>", {
+        headers: { "Set-Cookie": "safedog-flow-item=strict-cookie-1; Path=/" },
+      });
+    }
+    if (url.includes("/hiborweb/DocDetail/NewContent")) {
+      assert.equal(new Headers(init.headers).get("cookie"), "safedog-flow-item=strict-cookie-1");
+      contentAttempt += 1;
+      return new Response(contentAttempt === 1 ? "" : "<div>metadata without an h1 title</div>");
+    }
+    throw new Error(`unexpected fetch: ${url}`);
+  }, async () => {
+    assert.equal(await worker.__reportRequestTest.recoverHiborContactReportTarget(originId), null);
+    assert.equal(await worker.__reportRequestTest.recoverHiborContactReportTarget(originId), null);
+  });
+});
+
+test("signed target metadata stays within the detail URL bound and survives URL roundtrip", async () => {
+  const bucket = new MemoryR2();
+  const env = envFor(bucket);
+  const originId = "foreign:33860973";
+  const metadata = {
+    id: originId,
+    source: "authority",
+    title: `${"题".repeat(318)}：终`,
+    institution: "机".repeat(160),
+    date: "2026-08-21",
+    kind: "类".repeat(40),
+    kind_label: "标".repeat(80),
+    report_type: "型".repeat(120),
+    language: "语".repeat(40),
+    category: "栏".repeat(120),
+    author: "作".repeat(250),
+    rating: "评".repeat(80),
+    page_count: 7,
+  };
+  const token = await worker.__reportRequestTest.createContactReportTargetToken(
+    env,
+    "authority",
+    originId,
+    metadata,
+  );
+  assert.ok(token);
+  assert.ok(token.length <= 4096, `proof is ${token.length} characters`);
+  const url = new URL("https://portal.example.invalid/doc.html");
+  url.searchParams.set("rt", token);
+  const roundTripped = new URL(url.href).searchParams.get("rt");
+  assert.equal(roundTripped, token);
+  const proof = await worker.__reportRequestTest.inspectContactReportTargetToken(
+    env,
+    roundTripped,
+    "authority",
+    originId,
+  );
+  assert.equal(proof.valid, true);
+  assert.equal(proof.target.title, metadata.title);
+  assert.equal(proof.target.institution, metadata.institution);
+  assert.equal(proof.target.page_count, 7);
+});
+
+test("NashAI search signs the live canonical sample, request ignores client tampering, and detail writes one target", async () => {
+  const bucket = new MemoryR2();
+  const env = envFor(bucket);
+  const originId = "foreign:33860973";
+  const canonicalTitle = "PACS Added: JEF H/C Svcs & Tech Conf (Nash 9/14-15) Featuring CMS COO & AI Head";
+  const deliveries = [];
+  await withMockFetch(async (resource, init = {}) => {
+    const url = String(resource);
+    if (url === "https://www.nash-ai.cn/reports/foreign/search") {
+      assert.equal(init.method, "POST");
+      return new Response(JSON.stringify({
+        code: 200,
+        data: {
+          pageNum: 1,
+          total: 1,
+          records: [{
+            id: 33860973,
+            title: canonicalTitle,
+            securities: "Jefferies",
+            reDate: "2026-08-21",
+            page: 7,
+          }],
+        },
+      }), { headers: { "Content-Type": "application/json" } });
+    }
+    if (url === "https://api.brevo.com/v3/smtp/email") {
+      deliveries.push(JSON.parse(init.body));
+      return brevoSuccess("nash-canonical-message");
+    }
+    throw new Error(`unexpected fetch: ${url}`);
+  }, async () => {
+    const searchResponse = await worker.fetch(new Request(
+      "https://worker.example.invalid/authority/search?q=PACS&page=1&kind=foreign",
+    ), env, { waitUntil() {} });
+    assert.equal(searchResponse.status, 200);
+    const search = await searchResponse.json();
+    assert.equal(search.items.length, 1);
+    assert.equal(search.items[0].id, originId);
+    assert.equal(search.items[0].title, canonicalTitle);
+    assert.equal(search.items[0].institution, "Jefferies");
+    assert.equal(search.items[0].date, "2026-08-21");
+    assert.equal(search.items[0].page_count, 7);
+    assert.ok(search.items[0].request_token);
+    assert.equal(bucket.jsonRows("_contact-reports/v1/targets/").length, 0);
+    assert.equal(bucket.putKeys.filter((key) => key.startsWith("_contact-reports/v1/targets/")).length, 0);
+
+    const submitted = await postReportRequest(env, requestBody({
+      report_id: originId,
+      title: "FAKE NASH TITLE",
+      source: "authority",
+      institution: "Fake Institution",
+      requester_email: "nash-reader@example.net",
+      request_token: search.items[0].request_token,
+    }));
+    assert.equal(submitted.response.status, 202);
+    assert.equal(bucket.jsonRows("_contact-reports/v1/targets/").length, 0, "request validation can use claims without a target write");
+
+    await bucket.put(contactTargetKey("authority", originId), JSON.stringify({
+      id: originId,
+      origin_id: originId,
+      source: "authority",
+      title: "Stale cached Nash title",
+      institution: "Stale Institution",
+      date: "2025-01-01",
+      page_count: 1,
+      file_type: "pdf",
+      verified_at: "2025-01-01T00:00:00.000Z",
+    }));
+    bucket.putKeys.length = 0;
+
+    const detailResponse = await worker.fetch(new Request(
+      `https://worker.example.invalid/contact-report/item?source=authority&id=${encodeURIComponent(originId)}&request_token=${encodeURIComponent(search.items[0].request_token)}`,
+    ), env, { waitUntil() {} });
+    assert.equal(detailResponse.status, 200);
+    const detail = await detailResponse.json();
+    assert.equal(detail.item.title, canonicalTitle);
+    assert.equal(detail.item.institution, "Jefferies");
+    assert.equal(detail.item.date, "2026-08-21");
+    assert.equal(detail.item.page_count, 7);
+    assert.equal(bucket.putKeys.filter((key) => key.startsWith("_contact-reports/v1/targets/")).length, 1);
+    assert.equal(bucket.jsonRows("_contact-reports/v1/targets/")[0].value.title, canonicalTitle);
+
+    const compactResponse = await worker.fetch(new Request(
+      `https://worker.example.invalid/contact-report/item?source=authority&id=${encodeURIComponent(originId)}`,
+    ), env, { waitUntil() {} });
+    assert.equal(compactResponse.status, 200);
+    assert.equal((await compactResponse.json()).item.title, canonicalTitle);
+    assert.equal(bucket.putKeys.filter((key) => key.startsWith("_contact-reports/v1/targets/")).length, 1);
+  });
+
+  assert.equal(deliveries.length, 1);
+  assert.match(deliveries[0].subject, new RegExp(canonicalTitle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "u"));
+  assert.match(deliveries[0].textContent, /机构：Jefferies/u);
+  assert.doesNotMatch(deliveries[0].textContent, /FAKE NASH TITLE|Fake Institution/u);
+  const saved = bucket.jsonRows("_report-requests/v1/items/");
+  assert.equal(saved.length, 1);
+  assert.equal(saved[0].value.title, canonicalTitle);
+  assert.equal(saved[0].value.institution, "Jefferies");
+  assert.equal(saved[0].value.message_id, "nash-canonical-message");
+});
+
+test("an old NashAI id-only link recovers exact metadata from the server mirror and mints valid proof", async () => {
+  const bucket = new MemoryR2();
+  const env = envFor(bucket);
+  const originId = "foreign:33860973";
+  const canonicalTitle = "PACS Added: JEF H/C Svcs & Tech Conf (Nash 9/14-15) Featuring CMS COO & AI Head";
+  await bucket.put("_search-mirror/authority/latest.json", JSON.stringify({
+    generated_at: "2026-08-27T00:00:00.000Z",
+    items: [{
+      id: originId,
+      source: "authority",
+      kind: "foreign",
+      kind_label: "普通外文",
+      title: canonicalTitle,
+      institution: "Jefferies",
+      date: "2026-08-21",
+      page_count: 7,
+      file_type: "pdf",
+    }],
+  }));
+  bucket.putKeys.length = 0;
+  const deliveries = [];
+  await withMockFetch(async (resource, init = {}) => {
+    if (String(resource) === "https://api.brevo.com/v3/smtp/email") {
+      deliveries.push(JSON.parse(init.body));
+      return brevoSuccess("nash-mirror-message");
+    }
+    throw new Error(`unexpected fetch: ${resource}`);
+  }, async () => {
+    const detailResponse = await worker.fetch(new Request(
+      `https://worker.example.invalid/contact-report/item?source=authority&id=${encodeURIComponent(originId)}`,
+    ), env, { waitUntil() {} });
+    assert.equal(detailResponse.status, 200);
+    const detail = await detailResponse.json();
+    assert.equal(detail.item.title, canonicalTitle);
+    assert.equal(detail.item.institution, "Jefferies");
+    assert.equal(detail.item.date, "2026-08-21");
+    assert.equal(detail.item.page_count, 7);
+    assert.ok(detail.item.request_token);
+    assert.equal(bucket.putKeys.filter((key) => key.startsWith("_contact-reports/v1/targets/")).length, 1);
+
+    const submitted = await postReportRequest(env, requestBody({
+      report_id: originId,
+      title: "CLIENT OVERRIDE",
+      source: "authority",
+      institution: "Client Override Institution",
+      requester_email: "old-nash-reader@example.net",
+      request_token: detail.item.request_token,
+    }));
+    assert.equal(submitted.response.status, 202);
+  });
+  assert.equal(deliveries.length, 1);
+  assert.match(deliveries[0].subject, /PACS Added/u);
+  assert.doesNotMatch(deliveries[0].textContent, /CLIENT OVERRIDE|Client Override Institution/u);
+  const saved = bucket.jsonRows("_report-requests/v1/items/");
+  assert.equal(saved[0].value.title, canonicalTitle);
+  assert.equal(saved[0].value.institution, "Jefferies");
 });
 
 test("an authenticated request uses the account email instead of a client override", async () => {

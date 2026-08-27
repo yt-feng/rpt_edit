@@ -64,7 +64,7 @@ assert.equal(appSandbox.__appResult.item.source, "authority");
 assert.equal(appSandbox.__appResult.valid, true);
 assert.equal(appSandbox.__appResult.explicitLabel, "国内报告线索");
 assert.equal(appSandbox.__appResult.fallbackLabel, "国内报告线索");
-assert.match(appSource, /kind_label:\s*item\.kind_label\s*\|\|\s*""/);
+assert.match(appSource, /kind_label:\s*(?:item|remembered)\.kind_label\s*\|\|\s*""/);
 assert.match(
   extractFunction(appSource, "fetchDocDetailItem"),
   /isContactOnlyItem\(merged\)[\s\S]*?endpoint = "contact-report\/item"/,
@@ -183,6 +183,11 @@ const ctx = { waitUntil() {} };
     payload.sources.map((source) => source.kind).sort(),
     ["domestic-lead", "foreign", "foreign-rt"],
   );
+  assert.equal(
+    [...bucket.rows.keys()].filter((key) => key.startsWith("_contact-reports/v1/targets/")).length,
+    0,
+    "authority search must not persist every signed target",
+  );
 
   const privateRows = [...bucket.rows.entries()]
     .filter(([key]) => key.startsWith("_source-leads/items/"));
@@ -215,10 +220,29 @@ const ctx = { waitUntil() {} };
   ), env, ctx);
   assert.equal(pdfResponse.status, 403, "authority PDF access must remain contact-only");
 
-  const invalidItem = await worker.fetch(new Request(
+  const foreignSearchItem = payload.items.find((item) => item.id === "foreign:1001");
+  assert.ok(foreignSearchItem && foreignSearchItem.request_token);
+  const targetRowsBeforeForeign = [...bucket.rows.keys()]
+    .filter((key) => key.startsWith("_contact-reports/v1/targets/")).length;
+  const foreignItem = await worker.fetch(new Request(
+    `https://portal.example.invalid/api/authority/item?id=foreign%3A1001&request_token=${encodeURIComponent(foreignSearchItem.request_token)}`,
+  ), env, ctx);
+  assert.equal(foreignItem.status, 200, "a NashAI search proof must hydrate its child page");
+  const foreignItemPayload = await foreignItem.json();
+  assert.equal(foreignItemPayload.item.title, "foreign MLCC outlook");
+  assert.equal(foreignItemPayload.item.institution, "Example Securities");
+  assert.match(String(foreignItemPayload.item.request_token || ""), /^[A-Za-z0-9_-]+\.[A-Za-z0-9_-]{43}$/);
+  assert.equal(
+    [...bucket.rows.keys()].filter((key) => key.startsWith("_contact-reports/v1/targets/")).length,
+    targetRowsBeforeForeign + 1,
+    "opening one NashAI result persists one target",
+  );
+
+  const compactForeignItem = await worker.fetch(new Request(
     "https://portal.example.invalid/api/authority/item?id=foreign%3A1001",
   ), env, ctx);
-  assert.equal(invalidItem.status, 400);
+  assert.equal(compactForeignItem.status, 200, "the compact id-only child URL works after the first hydrated fetch");
+  assert.equal((await compactForeignItem.json()).item.title, "foreign MLCC outlook");
 
   console.log("Portal Suite source-lead integration checks passed.");
 })().catch((error) => {
