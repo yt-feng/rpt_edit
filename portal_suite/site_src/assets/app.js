@@ -3979,16 +3979,75 @@
     targets.hotReportStatus.className = "status-line";
     targets.hotReportStatus.textContent = "正在读取已上传报告…";
     try {
-      const response = await fetch(`${workerUrl}/hot-reports`, { cache: "no-store" });
-      const data = await response.json().catch(() => ({}));
-      if (!response.ok) throw new Error(data.detail || "近期热门报告读取失败。");
-      const items = Array.isArray(data.items) ? data.items : [];
-      const view = adminCollectionPreview(items);
+      async function loadCompleteCollection() {
+        const itemsById = new Map();
+        const seenCursors = new Set();
+        const maxPages = Math.ceil(500 / 60);
+        let cursor = "";
+        let pagesRead = 0;
+        let reportedTotal = null;
+        while (itemsById.size < 500 && pagesRead < maxPages) {
+          const params = new URLSearchParams({ limit: "60" });
+          if (cursor) params.set("cursor", cursor);
+          const response = await fetch(`${workerUrl}/hot-reports?${params.toString()}`, { cache: "no-store" });
+          pagesRead += 1;
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok) {
+            const failure = new Error(data.detail || "近期热门报告读取失败。");
+            failure.status = response.status;
+            throw failure;
+          }
+          const hasReportedTotal = data.total !== null && data.total !== undefined && data.total !== "";
+          const rawTotal = hasReportedTotal ? Number(data.total) : Number.NaN;
+          if (hasReportedTotal && !Number.isSafeInteger(rawTotal)) {
+            throw new Error("近期热门报告总数异常，请稍后重试。");
+          }
+          if (hasReportedTotal) {
+            const pageTotal = rawTotal;
+            if (pageTotal < 0 || pageTotal > 500) throw new Error("近期热门报告总数异常，请稍后重试。");
+            if (reportedTotal !== null && reportedTotal !== pageTotal) {
+              throw new Error("近期热门报告分页总数不一致，请稍后重试。");
+            }
+            reportedTotal = pageTotal;
+          }
+          const pageItems = Array.isArray(data.items) ? data.items : [];
+          for (const item of pageItems) {
+            const id = String(item && item.id || "");
+            if (!id) throw new Error("近期热门报告分页数据不完整，请稍后重试。");
+            if (!itemsById.has(id) && itemsById.size < 500) itemsById.set(id, item);
+          }
+          if (data.has_more !== true || itemsById.size >= 500) break;
+          const nextCursor = String(data.next_cursor || "");
+          if (!nextCursor) throw new Error("近期热门报告分页数据不完整，请稍后重试。");
+          if (seenCursors.has(nextCursor)) throw new Error("近期热门报告分页状态异常，请稍后重试。");
+          if (pagesRead >= maxPages) throw new Error("近期热门报告分页数量异常，请稍后重试。");
+          seenCursors.add(nextCursor);
+          cursor = nextCursor;
+        }
+        const items = [...itemsById.values()];
+        if (reportedTotal !== null && items.length !== reportedTotal) {
+          throw new Error("近期热门报告数量校验失败，请稍后重试。");
+        }
+        return { items, total: reportedTotal === null ? items.length : reportedTotal };
+      }
+
+      let collection = null;
+      for (let attempt = 0; attempt < 2; attempt += 1) {
+        try {
+          collection = await loadCompleteCollection();
+          break;
+        } catch (error) {
+          if (!(error && error.status === 409 && attempt === 0)) throw error;
+          targets.hotReportStatus.textContent = "报告列表刚刚更新，正在从第一页重新读取…";
+        }
+      }
+      if (!collection) throw new Error("近期热门报告读取失败。");
+      const view = adminCollectionPreview(collection.items);
       accountAdminHotReports = view.all;
       targets.hotReportList.innerHTML = view.preview.length
         ? view.preview.map(adminHotReportRow).join("")
         : '<div class="empty-state">还没有上传近期热门报告。</div>';
-      targets.hotReportCount.textContent = `${view.all.length} 条`;
+      targets.hotReportCount.textContent = `${collection.total} 条`;
       if (targets.hotReportMore) targets.hotReportMore.hidden = !view.hasMore;
       targets.hotReportStatus.textContent = "";
       return view.all;
@@ -5469,6 +5528,11 @@
     const hotReportsResults = document.getElementById("hotReportsResults");
     const hotReportsCount = document.getElementById("hotReportsCount");
     const hotReportsStatus = document.getElementById("hotReportsStatus");
+    const hotReportsPagination = document.getElementById("hotReportsPagination");
+    const hotReportsPrev = document.getElementById("hotReportsPrev");
+    const hotReportsNext = document.getElementById("hotReportsNext");
+    const hotReportsPageInfo = document.getElementById("hotReportsPageInfo");
+    const hotReportsRetry = document.getElementById("hotReportsRetry");
     const searchRecommendationsSection = document.getElementById("searchRecommendationsSection");
     const searchRecommendationsResults = document.getElementById("searchRecommendationsResults");
     const searchRecommendationsCount = document.getElementById("searchRecommendationsCount");
@@ -5481,8 +5545,18 @@
       reportA: 0,
       authority: 0,
     };
+    const HOT_REPORT_PAGE_SIZE = 24;
     let hotReportsLoaded = !workerUrl;
+    let hotReportsLoading = false;
     let hotReportsFailed = false;
+    let hotReportActiveQuery = "";
+    let hotReportRequestedQuery = "";
+    let hotReportPageIndex = 0;
+    let hotReportPages = [];
+    let hotReportSearchTimer = 0;
+    let hotReportRequestVersion = 0;
+    let hotReportRequestController = null;
+    let hotReportRetryQuery = null;
     let fallbackRecommendations = items
       .filter((item) => isPdfAvailable(item))
       .slice()
@@ -5630,66 +5704,193 @@
       }
     }
 
-    function renderHotReports(query = "") {
+    function currentHotReportPage() {
+      return hotReportPages[hotReportPageIndex] || null;
+    }
+
+    function renderHotReportPagination(page) {
+      if (!hotReportsPagination || !hotReportsPrev || !hotReportsNext || !hotReportsPageInfo) return;
+      const hasPrevious = hotReportPageIndex > 0;
+      const hasCachedNext = Boolean(hotReportPages[hotReportPageIndex + 1]);
+      const hasNext = hasCachedNext || Boolean(page && !page.cursorInvalidated && page.hasMore && page.nextCursor);
+      hotReportsPagination.hidden = !page || (!hasPrevious && !hasNext);
+      hotReportsPrev.disabled = hotReportsLoading || !hasPrevious;
+      hotReportsNext.disabled = hotReportsLoading || !hasNext;
+      const pageCount = Number.isFinite(page && page.total)
+        ? Math.max(1, Math.ceil(page.total / HOT_REPORT_PAGE_SIZE))
+        : 0;
+      hotReportsPageInfo.textContent = pageCount
+        ? `第 ${hotReportPageIndex + 1} / ${pageCount} 页`
+        : `第 ${hotReportPageIndex + 1} 页`;
+    }
+
+    function renderHotReports() {
       if (!hotReportsSection || !hotReportsResults) return;
-      if (!hotReportsLoaded) {
-        hotReportsSection.hidden = false;
-        hotReportsResults.innerHTML = `
-          <div class="loading-state">
-            <span class="loading-spinner" aria-hidden="true"></span>
-            <span>正在读取近期热门报告…</span>
-          </div>
-        `;
-        searchResultCounts.hot = null;
+      if (!workerUrl) {
+        hotReportsSection.hidden = true;
+        searchResultCounts.hot = 0;
         renderSearchRecommendations();
         return;
       }
-      const normalizedQuery = normalize(query);
-      const tokens = queryTokens(normalizedQuery);
-      const allItems = [...hotReportItems.values()];
-      const matches = normalizedQuery
-        ? allItems.filter((item) => {
-          const text = normalize([item.title, item.title_cn, item.institution, item.description, item.date].filter(Boolean).join(" "));
-          return tokens.every((token) => text.includes(token));
-        })
-        : allItems;
-      searchResultCounts.hot = hotReportsFailed ? "error" : matches.length;
-      hotReportsSection.hidden = !allItems.length && !normalizedQuery;
-      if (hotReportsCount) hotReportsCount.textContent = matches.length ? `${matches.length} 条` : "";
-      hotReportsResults.innerHTML = matches.length
-        ? matches.map(hotReportRow).join("")
-        : '<div class="empty-state">暂无匹配结果。</div>';
+      const page = currentHotReportPage();
+      const pageItems = page && Array.isArray(page.items) ? page.items : [];
+      const queryChanging = hotReportsLoading && hotReportRequestedQuery !== hotReportActiveQuery;
+      hotReportsSection.hidden = false;
+      hotReportsResults.setAttribute("aria-busy", hotReportsLoading ? "true" : "false");
+      if (!page && !hotReportsLoaded) {
+        hotReportsResults.innerHTML = `
+          <div class="loading-state">
+            <span class="loading-spinner" aria-hidden="true"></span>
+            <span>正在读取首批近期热门报告…</span>
+          </div>
+        `;
+        if (hotReportsCount) hotReportsCount.textContent = "";
+        searchResultCounts.hot = null;
+        renderHotReportPagination(null);
+        renderSearchRecommendations();
+        return;
+      }
+      if (queryChanging) {
+        searchResultCounts.hot = null;
+      } else if (hotReportsFailed) {
+        searchResultCounts.hot = "error";
+      } else {
+        searchResultCounts.hot = Number.isFinite(page && page.total) ? page.total : pageItems.length;
+      }
+      if (hotReportsCount) {
+        if (Number.isFinite(page && page.total)) hotReportsCount.textContent = `${page.total} 条`;
+        else hotReportsCount.textContent = pageItems.length ? `本页 ${pageItems.length} 条` : "";
+      }
+      if (pageItems.length) {
+        hotReportsResults.innerHTML = pageItems.map(hotReportRow).join("");
+      } else if (hotReportsFailed) {
+        hotReportsResults.innerHTML = "";
+      } else {
+        hotReportsResults.innerHTML = `<div class="empty-state">${hotReportActiveQuery ? "近期热门报告中暂无匹配结果。" : "暂时没有近期热门报告。"}</div>`;
+      }
+      renderHotReportPagination(page);
       renderSearchRecommendations();
     }
 
-    async function loadHotReports() {
+    function hotReportRequestUrl(query, cursor = "") {
+      const params = new URLSearchParams({ limit: String(HOT_REPORT_PAGE_SIZE) });
+      if (query) params.set("q", query);
+      if (cursor) params.set("cursor", cursor);
+      return `${workerUrl}/hot-reports?${params.toString()}`;
+    }
+
+    async function requestHotReportPage({ query = "", cursor = "", pageIndex = 0, replace = false } = {}) {
       if (!workerUrl || !hotReportsSection || !hotReportsResults) return;
-      hotReportsLoaded = false;
-      hotReportsFailed = false;
-      renderHotReports(input.value.trim());
-      setHotReportsStatus("");
+      const cleanQuery = String(query || "").trim().slice(0, 200);
+      if (hotReportRequestController) hotReportRequestController.abort();
       const controller = new AbortController();
-      const timeoutId = window.setTimeout(() => controller.abort(), 12_000);
+      const requestVersion = ++hotReportRequestVersion;
+      hotReportRequestController = controller;
+      hotReportRequestedQuery = cleanQuery;
+      hotReportsLoading = true;
+      hotReportsFailed = false;
+      if (!currentHotReportPage()) hotReportsLoaded = false;
+      if (hotReportsRetry) hotReportsRetry.hidden = true;
+      setHotReportsStatus(
+        currentHotReportPage()
+          ? (replace ? "正在更新近期热门报告，当前结果可继续浏览…" : `正在读取第 ${pageIndex + 1} 页，当前页可继续浏览…`)
+          : "",
+      );
+      renderHotReports();
+      let deadlineReached = false;
+      const timeoutId = window.setTimeout(() => {
+        deadlineReached = true;
+        controller.abort();
+      }, 5_000);
       try {
-        const response = await fetch(`${workerUrl}/hot-reports`, { cache: "no-store", signal: controller.signal });
+        const response = await fetch(hotReportRequestUrl(cleanQuery, cursor), { signal: controller.signal });
         const data = await response.json().catch(() => ({}));
-        if (!response.ok) throw new Error(data.detail || "近期热门报告读取失败。");
-        hotReportItems.clear();
-        for (const item of Array.isArray(data.items) ? data.items : []) {
-          if (item && item.id) hotReportItems.set(String(item.id), { ...item, source: HOT_REPORT_SOURCE });
+        if (!response.ok) {
+          const failure = new Error(data.detail || "近期热门报告读取失败。");
+          failure.status = response.status;
+          throw failure;
+        }
+        if (requestVersion !== hotReportRequestVersion) return;
+        const responseItems = (Array.isArray(data.items) ? data.items : [])
+          .filter((item) => item && item.id)
+          .map((item) => ({ ...item, source: HOT_REPORT_SOURCE }));
+        const rawTotal = data.total === null || data.total === undefined || data.total === ""
+          ? Number.NaN
+          : Number(data.total);
+        const nextPage = {
+          items: responseItems,
+          nextCursor: String(data.next_cursor || ""),
+          hasMore: typeof data.has_more === "boolean" ? data.has_more : Boolean(data.next_cursor),
+          total: Number.isFinite(rawTotal) && rawTotal >= 0 ? rawTotal : null,
+        };
+        if (replace) {
+          hotReportPages = [nextPage];
+          hotReportPageIndex = 0;
+          hotReportActiveQuery = cleanQuery;
+          hotReportItems.clear();
+        } else {
+          hotReportPages = hotReportPages.slice(0, pageIndex);
+          hotReportPages[pageIndex] = nextPage;
+          hotReportPageIndex = pageIndex;
+        }
+        responseItems.forEach((item) => hotReportItems.set(String(item.id), item));
+        hotReportsLoaded = true;
+        hotReportsFailed = false;
+        hotReportRetryQuery = null;
+        setHotReportsStatus("");
+        if (cleanQuery) {
+          trackEvent(workerUrl, "search", {
+            source: HOT_REPORT_SOURCE,
+            query: cleanQuery,
+            result_count: Number.isFinite(nextPage.total) ? nextPage.total : responseItems.length,
+          });
         }
       } catch (error) {
-        hotReportItems.clear();
-        hotReportsFailed = true;
-        setHotReportsStatus(
-          error && error.name === "AbortError" ? "近期热门报告读取超时，可稍后重试。" : (error.message || "近期热门报告暂时无法读取。"),
-          "error",
-        );
+        if (requestVersion !== hotReportRequestVersion) return;
+        hotReportsLoaded = true;
+        hotReportsFailed = replace;
+        hotReportRetryQuery = cleanQuery;
+        const retained = Boolean(currentHotReportPage());
+        const indexChanged = error && error.status === 409;
+        if (indexChanged && !replace && currentHotReportPage()) currentHotReportPage().cursorInvalidated = true;
+        const message = indexChanged
+          ? "近期热门报告列表已更新，请从第一页重新加载。"
+          : (deadlineReached
+            ? "近期热门报告读取较慢，请重新加载。"
+            : (error.message || "近期热门报告暂时无法读取。"));
+        setHotReportsStatus(`${message}${retained ? " 已保留当前结果。" : ""}`, "error");
+        if (hotReportsRetry) hotReportsRetry.hidden = false;
       } finally {
         window.clearTimeout(timeoutId);
-        hotReportsLoaded = true;
-        renderHotReports(input.value.trim());
+        if (requestVersion === hotReportRequestVersion) {
+          hotReportRequestController = null;
+          hotReportsLoading = false;
+          renderHotReports();
+        }
       }
+    }
+
+    function loadHotReports(query = "") {
+      return requestHotReportPage({ query, pageIndex: 0, replace: true });
+    }
+
+    function scheduleHotReportSearch(query = "", delay = 300) {
+      window.clearTimeout(hotReportSearchTimer);
+      const cleanQuery = String(query || "").trim().slice(0, 200);
+      if (hotReportsLoading && hotReportRequestedQuery !== cleanQuery) {
+        hotReportRequestVersion += 1;
+        if (hotReportRequestController) hotReportRequestController.abort();
+        hotReportRequestController = null;
+        hotReportRequestedQuery = cleanQuery;
+        hotReportsLoading = false;
+        setHotReportsStatus("");
+        renderHotReports();
+      }
+      if (cleanQuery === hotReportActiveQuery && !hotReportsFailed) {
+        renderHotReports();
+        return;
+      }
+      hotReportSearchTimer = window.setTimeout(() => loadHotReports(cleanQuery), Math.max(0, delay));
     }
 
     let bankOptions = new Map();
@@ -6005,7 +6206,8 @@
       render({ resetPage: true });
       renderExternalSearchResults();
       renderAuthoritySearchResults();
-      renderHotReports(scopeFilter.value === "charts" ? "" : input.value.trim());
+      scheduleHotReportSearch(input.value.trim(), 0);
+      renderHotReports();
       scheduleExternalSearch();
     }
 
@@ -6019,7 +6221,7 @@
       updateCatalogReadiness("正在更新结果；已保留当前列表供继续浏览…", "searching");
       localSearchTimer = window.setTimeout(() => {
         render({ resetPage: true });
-        renderHotReports(scopeFilter.value === "charts" ? "" : input.value.trim());
+        renderHotReports();
         updateCatalogReadiness(
           fullCatalogReady ? `搜索目录已就绪，共 ${items.length} 份报告。` : `正在后台补齐完整目录；当前先搜索最新 ${items.length} 份。`,
           fullCatalogReady ? "ready" : "searching",
@@ -6030,14 +6232,17 @@
     input.addEventListener("compositionstart", () => {
       inputComposing = true;
       window.clearTimeout(localSearchTimer);
+      window.clearTimeout(hotReportSearchTimer);
     });
     input.addEventListener("compositionend", () => {
       inputComposing = false;
       scheduleLocalRender(0);
+      scheduleHotReportSearch(scopeFilter.value === "charts" ? "" : input.value.trim(), 0);
     });
     input.addEventListener("input", () => {
       if (inputComposing) return;
       scheduleLocalRender();
+      scheduleHotReportSearch(scopeFilter.value === "charts" ? "" : input.value.trim());
     });
     input.removeEventListener("input", captureEarlyInput);
     [bankFilter, industryFilter, startDate, endDate, availabilityFilter, ...pageRangeInputs].forEach((control) => {
@@ -6055,7 +6260,8 @@
       if (!(scopeFilter.value === "fulltext" && input.value.trim() && searchTextById.size === 0)) {
         render({ resetPage: true });
       }
-      renderHotReports(scopeFilter.value === "charts" ? "" : input.value.trim());
+      scheduleHotReportSearch(scopeFilter.value === "charts" ? "" : input.value.trim(), 0);
+      renderHotReports();
       scheduleExternalSearch();
     });
     pageSize.addEventListener("change", () => render({ resetPage: true }));
@@ -6801,6 +7007,45 @@
         }
       });
     }
+    if (hotReportsPrev) {
+      hotReportsPrev.addEventListener("click", () => {
+        if (hotReportsLoading || hotReportPageIndex <= 0) return;
+        hotReportPageIndex -= 1;
+        hotReportsFailed = false;
+        if (hotReportsRetry) hotReportsRetry.hidden = true;
+        setHotReportsStatus("");
+        renderHotReports();
+        hotReportsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+    if (hotReportsNext) {
+      hotReportsNext.addEventListener("click", () => {
+        if (hotReportsLoading) return;
+        const page = currentHotReportPage();
+        if (!page) return;
+        if (hotReportPages[hotReportPageIndex + 1]) {
+          hotReportPageIndex += 1;
+          hotReportsFailed = false;
+          if (hotReportsRetry) hotReportsRetry.hidden = true;
+          setHotReportsStatus("");
+          renderHotReports();
+        } else if (page.hasMore && page.nextCursor) {
+          requestHotReportPage({
+            query: hotReportActiveQuery,
+            cursor: page.nextCursor,
+            pageIndex: hotReportPageIndex + 1,
+          });
+        }
+        hotReportsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+    if (hotReportsRetry) {
+      hotReportsRetry.addEventListener("click", () => {
+        loadHotReports(hotReportRetryQuery !== null
+          ? hotReportRetryQuery
+          : (scopeFilter.value === "charts" ? "" : input.value.trim()));
+      });
+    }
     if (searchRecommendationsResults) {
       searchRecommendationsResults.addEventListener("click", (event) => {
         const row = event.target.closest(".report-link");
@@ -6894,8 +7139,8 @@
     };
     updateMeta();
     render();
-    renderHotReports(input.value.trim());
-    loadHotReports();
+    renderHotReports();
+    loadHotReports(scopeFilter.value === "charts" ? "" : input.value.trim());
 
     // The preview is useful immediately; the full catalog and the PDF override
     // overlay arrive independently and replace the derived indexes atomically.
@@ -6936,7 +7181,7 @@
         renderRemoteSourceProgress(input.value.trim());
         updateMeta();
         render({ resetPage: earlyInputTouched || Boolean(input.value.trim()) });
-        renderHotReports(scopeFilter.value === "charts" ? "" : input.value.trim());
+        renderHotReports();
         updateCatalogReadiness(`完整目录已就绪，共 ${items.length} 份报告。`, "ready");
       });
     }

@@ -35,6 +35,23 @@ test("home search waits for stable input and cancels superseded remote searches"
   assert.match(source, /\}, 480\);/);
 });
 
+test("hot-report next-page conflicts preserve the current page and restart the same query", async () => {
+  const source = await readFile(appPath, "utf8");
+  const requestStart = source.indexOf("async function requestHotReportPage(");
+  const requestSource = source.slice(requestStart, source.indexOf("function loadHotReports(", requestStart));
+  const retryStart = source.indexOf("if (hotReportsRetry) {", requestStart);
+  const retrySource = source.slice(retryStart, source.indexOf("if (searchRecommendationsResults)", retryStart));
+  assert.ok(requestStart >= 0, "the hot-report page request function must exist");
+  assert.match(requestSource, /failure\.status = response\.status/u);
+  assert.match(requestSource, /error && error\.status === 409/u);
+  assert.match(requestSource, /currentHotReportPage\(\)\.cursorInvalidated = true/u);
+  assert.match(requestSource, /近期热门报告列表已更新，请从第一页重新加载/u);
+  assert.match(requestSource, /hotReportRetryQuery = cleanQuery/u);
+  assert.doesNotMatch(requestSource, /hotReportPages\.clear|hotReportPages = \[\]/u);
+  assert.match(retrySource, /loadHotReports\(hotReportRetryQuery !== null/u);
+  assert.doesNotMatch(retrySource, /requestHotReportPage\(hotReportRetry/u);
+});
+
 test("remote sources use independent deadlines and Reportify surfaces fallback warnings", async () => {
   const source = await readFile(appPath, "utf8");
   const remoteSearchStart = source.indexOf("const remoteSearchControllers = new Map()");

@@ -1191,6 +1191,31 @@ a.secondary-button {
   margin-top: 10px;
 }
 
+.hot-reports-pagination {
+  margin: 12px 0 0;
+}
+
+.hot-reports-pagination[hidden],
+.hot-reports-retry[hidden] {
+  display: none;
+}
+
+.hot-reports-feedback {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.hot-reports-feedback .status-line {
+  flex: 1 1 auto;
+}
+
+.hot-reports-retry {
+  flex: 0 0 auto;
+  min-height: 34px;
+}
+
 .hot-report-description {
   margin: 0;
   padding: 14px 16px;

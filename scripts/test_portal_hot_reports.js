@@ -134,7 +134,18 @@ assert.match(searchSandbox.result.allZero.html, /latest-report/);
 
 assert.match(indexHtml, /id="hotReportsSection"[\s\S]*?id="hotReportsResults"/, "the home page must expose the hot-report section");
 assert.match(indexHtml, /3个月及以上会员可下载全文/);
-assert.match(app, /fetch\(`\$\{workerUrl\}\/hot-reports`, \{ cache: "no-store" \}\)/, "the home/admin UI must load hot reports");
+assert.match(indexHtml, /id="hotReportsPrev"[\s\S]*?id="hotReportsPageInfo"[\s\S]*?id="hotReportsNext"/, "hot reports must expose accessible page navigation");
+assert.match(indexHtml, /id="hotReportsRetry"[\s\S]*?重新加载/, "a failed page request must offer an explicit retry action");
+assert.match(app, /fetch\(hotReportRequestUrl\(cleanQuery, cursor\), \{ signal: controller\.signal \}\)/, "the home UI must load indexed hot-report pages");
+assert.match(extractFunction(app, "loadAdminHotReports"), /URLSearchParams\(\{ limit: "60" \}\)[\s\S]*?params\.set\("cursor", cursor\)/, "the admin UI must follow every indexed hot-report page");
+assert.match(app, /const HOT_REPORT_PAGE_SIZE = 24/, "the home page must request a small first page");
+assert.match(app, /controller\.abort\(\);[\s\S]*?5_000/, "the first-page deadline must fail fast instead of waiting twelve seconds");
+assert.match(app, /hotReportRetryQuery = cleanQuery[\s\S]*?loadHotReports\(hotReportRetryQuery !== null/, "retry must restart the failed query from page one without reusing a stale cursor");
+assert.match(app, /params\.set\("q", query\)/, "hot-report searches must be sent to the server instead of filtering one loaded page");
+assert.match(app, /params\.set\("cursor", cursor\)/, "later hot-report pages must use the server cursor");
+assert.match(app, /hotReportPages\[hotReportPageIndex \+ 1\][\s\S]*?requestHotReportPage/, "cached previous pages and on-demand next pages must coexist");
+assert.match(extractFunction(app, "scheduleHotReportSearch"), /hotReportRequestedQuery !== cleanQuery[\s\S]*?hotReportRequestController\.abort\(\)/, "a changed query must cancel an obsolete hot-report page immediately");
+assert.doesNotMatch(extractFunction(app, "requestHotReportPage"), /catch \(error\)[\s\S]*?hotReportItems\.clear\(\)/, "a page request failure must preserve already rendered hot reports");
 assert.match(app, /id="accountAdminHotReportForm"[\s\S]*?name="pdf"/, "the admin UI must expose PDF upload fields");
 assert.match(app, /fetch\(`\$\{workerUrl\}\/account-admin\/hot-report`, \{[\s\S]*?body: formData/, "the admin upload form must call the protected upload endpoint");
 assert.match(app, /hot-reports\/access\?report_id=/, "hot-report detail pages must query the dedicated access endpoint");
@@ -216,6 +227,8 @@ const uploadPromise = vm.runInNewContext(`(async () => {
   }
   async function persistAnalyticsEvent() {}
   async function enforceHotReportStorageLimit() { return { total_size_bytes: 42 }; }
+  async function upsertHotReportPublicIndexItem() { return null; }
+  async function markHotReportPublicIndexStale() { return null; }
   function publicHotReportItem(row) { return row; }
   ${extractFunction(worker, "safeFilename")}
   ${extractFunction(worker, "safePdfFilename")}
@@ -384,7 +397,8 @@ const commentOrderPromise = vm.runInNewContext(`(async () => {
 })()
 `, commentOrderSandbox);
 
-assert.match(app, /searchResultCounts\.hot = hotReportsFailed \? "error" : matches\.length/);
+assert.match(app, /searchResultCounts\.hot = "error"/);
+assert.match(app, /searchResultCounts\.hot = Number\.isFinite\(page && page\.total\) \? page\.total : pageItems\.length/);
 for (const source of ["thinktank", "external", "reportA", "authority"]) {
   assert.match(app, new RegExp(`searchResultCounts\\.${source} = "error"`), `${source} failures must remain distinguishable from zero results`);
 }
