@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
+import vm from "node:vm";
 
 const appPath = new URL("../site_src/assets/app.js", import.meta.url);
 const htmlPath = new URL("../site_src/index.html", import.meta.url);
@@ -12,15 +13,78 @@ test("home first paint uses a preview and atomically upgrades to the full catalo
   assert.match(source, /loadOptionalJson\("data\/catalog_preview\.json", null\)/);
   assert.ok(
     source.indexOf('loadOptionalJson("data/catalog_preview.json", null)')
-      < source.indexOf('const fullCatalogPromise = loadJson("data/catalog.json")'),
-    "the small preview must start before the full catalog",
+      < source.indexOf("const startFullCatalogLoad = () =>"),
+    "the small preview must be resolved before the full catalog loader is created",
   );
-  assert.match(source, /fullCatalogPromise\.then\(async \(fullCatalog\) =>/);
+  assert.match(source, /loadHotReports\(initialHotReportQuery\);\s*const backgroundFullCatalogPromise = startFullCatalogLoad\(\);/);
+  assert.match(source, /backgroundFullCatalogPromise\.then\(async \(fullCatalog\) =>/);
   assert.match(source, /await rebuildCatalogDerivedInChunks\(fullCatalog, catalogPdfOverrides\);\s*fullCatalogReady = true;/);
   assert.match(source, /overrideVersion !== catalogOverrideVersion/);
   assert.match(source, /cache: "reload"/);
   assert.match(source, /loadCatalogPdfOverrides\(workerUrl\)\.then\(\(overrides\) =>/);
   assert.doesNotMatch(initIndex, /const catalogPdfOverrides = await loadCatalogPdfOverrides/);
+});
+
+test("hot reports paint a validated last-good first page before refreshing in the background", async () => {
+  const source = await readFile(appPath, "utf8");
+  const helperStart = source.indexOf("function normalizeHotReportFirstPageCache(");
+  const helperEnd = source.indexOf("function recentDateBounds(", helperStart);
+  assert.ok(helperStart >= 0 && helperEnd > helperStart, "the first-page cache helpers must exist");
+  const sandbox = {};
+  vm.runInNewContext(`
+    const HOT_REPORT_FIRST_PAGE_CACHE_KEY = "portal_hot_report_first_page_v1";
+    const HOT_REPORT_FIRST_PAGE_CACHE_VERSION = 1;
+    const HOT_REPORT_FIRST_PAGE_CACHE_MAX_ITEMS = 24;
+    const HOT_REPORT_FIRST_PAGE_CACHE_TTL_MS = 24 * 60 * 60 * 1000;
+    const HOT_REPORT_SOURCE = "hot";
+    ${source.slice(helperStart, helperEnd)}
+    globalThis.cacheHelpers = {
+      normalizeHotReportFirstPageCache,
+      hotReportLocalStorage,
+      readHotReportFirstPageCache,
+      writeHotReportFirstPageCache,
+    };
+  `, sandbox);
+  const rows = new Map();
+  const storage = {
+    getItem: (key) => rows.get(key) || null,
+    setItem: (key, value) => rows.set(key, String(value)),
+    removeItem: (key) => rows.delete(key),
+  };
+  const now = Date.parse("2026-08-27T12:00:00Z");
+  const page = {
+    items: [
+      { id: "hot:0123456789abcdef", title: "Newest", institution: "KC", size_bytes: 42 },
+      { id: "hot:fedcba9876543210", title: "Second", institution: "KC", size_bytes: 21 },
+    ],
+    nextCursor: "cursor-2",
+    hasMore: true,
+    total: 500,
+  };
+  assert.equal(sandbox.cacheHelpers.writeHotReportFirstPageCache(page, storage, now), true);
+  const cached = sandbox.cacheHelpers.readHotReportFirstPageCache(storage, now + 1000);
+  assert.equal(cached.items.length, 2);
+  assert.equal(cached.items[0].source, "hot");
+  assert.equal(cached.total, 500);
+  assert.equal(cached.nextCursor, "cursor-2");
+
+  assert.equal(
+    sandbox.cacheHelpers.readHotReportFirstPageCache(storage, now + 24 * 60 * 60 * 1000 + 1),
+    null,
+    "expired content must not become a permanent stale home page",
+  );
+  rows.set("portal_hot_report_first_page_v1", "{broken");
+  assert.equal(sandbox.cacheHelpers.readHotReportFirstPageCache(storage, now), null);
+  assert.equal(rows.has("portal_hot_report_first_page_v1"), false);
+  sandbox.window = {};
+  Object.defineProperty(sandbox.window, "localStorage", { get: () => { throw new Error("disabled"); } });
+  assert.equal(sandbox.cacheHelpers.hotReportLocalStorage(), null, "disabled browser storage must not abort home initialization");
+
+  const initIndex = source.slice(source.indexOf("async function initIndex()"), source.indexOf("function filenameFromDisposition"));
+  assert.match(initIndex, /if \(!initialHotReportQuery\) \{[\s\S]*readHotReportFirstPageCache\(hotReportLocalStorage\(\)\)[\s\S]*hotReportPages = \[cachedFirstPage\]/);
+  assert.match(initIndex, /cachedFirstPage\.items\.forEach[\s\S]*renderHotReports\(\);\s*loadHotReports\(initialHotReportQuery\)/);
+  assert.match(initIndex, /replace && pageIndex === 0 && !cleanQuery[\s\S]*writeHotReportFirstPageCache\(nextPage, hotReportLocalStorage\(\)\)/);
+  assert.match(initIndex, /retainedForSameQuery[\s\S]*hotReportsFailed = replace && !retainedForSameQuery/);
 });
 
 test("home search waits for stable input and cancels superseded remote searches", async () => {

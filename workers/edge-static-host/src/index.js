@@ -3,6 +3,8 @@ const RELEASE_ID = /^[0-9a-f]{32}$/;
 const TREE_SHA256 = /^[0-9a-f]{64}$/;
 const RELEASE_CHECK_PATH = /^\/\.well-known\/edge-release\/([0-9a-f]{32})(?:\/(.*))?$/;
 const EDGE_STATE_PATH = "/.well-known/edge-state";
+const HOT_REPORT_API_PATH = "/api/hot-reports";
+const HOT_REPORT_EDGE_CACHE_VERSION = "first-page-v1";
 
 const CACHE_POLICY = Object.freeze({
   html: Object.freeze({
@@ -40,6 +42,71 @@ const CANONICAL_PATHS = Object.freeze({
   "/reports/institutions/bernstein/index.html": "/reports/institutions/bernstein/",
   "/charts.html": "/charts",
 });
+
+function hotReportEdgeCacheRequest(request) {
+  if (!request || request.method !== "GET") return null;
+  const url = new URL(request.url);
+  if (url.pathname !== HOT_REPORT_API_PATH) return null;
+  if (request.headers.has("authorization") || request.headers.has("origin")) return null;
+  const cacheControl = String(request.headers.get("cache-control") || "").toLowerCase();
+  const pragma = String(request.headers.get("pragma") || "").toLowerCase();
+  if (/(?:^|,)\s*(?:no-cache|no-store|max-age\s*=\s*0)(?:\s*(?:,|$))/.test(cacheControl) || /(?:^|,)\s*no-cache(?:\s*(?:,|$))/.test(pragma)) {
+    return null;
+  }
+  if ([...url.searchParams.keys()].some((key) => key !== "limit")) return null;
+  if (url.searchParams.getAll("limit").length > 1) return null;
+  const limit = String(url.searchParams.get("limit") || "24").trim();
+  if (limit !== "24") return null;
+  const key = new URL(url.origin + HOT_REPORT_API_PATH);
+  key.searchParams.set("limit", "24");
+  key.searchParams.set("edge_cache", HOT_REPORT_EDGE_CACHE_VERSION);
+  return new Request(key.toString(), { method: "GET" });
+}
+
+function hotReportEdgeCache() {
+  const cacheStorage = globalThis.caches;
+  const cache = cacheStorage && cacheStorage.default;
+  return cache && typeof cache.match === "function" && typeof cache.put === "function" ? cache : null;
+}
+
+function hotReportCachedResponse(response, status) {
+  const headers = new Headers(response.headers);
+  headers.set("x-portal-hot-report-cache", status);
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
+async function proxyApiRequest(request, env, ctx) {
+  if (!env.API || typeof env.API.fetch !== "function") {
+    return new Response("Service Unavailable", { status: 503 });
+  }
+  const cacheRequest = hotReportEdgeCacheRequest(request);
+  const cache = cacheRequest ? hotReportEdgeCache() : null;
+  if (!cacheRequest || !cache) return env.API.fetch(request);
+  try {
+    const cached = await cache.match(cacheRequest);
+    if (cached) return hotReportCachedResponse(cached, "HIT");
+  } catch (_error) {
+    // Cache failure must never block the live API.
+  }
+  const response = await env.API.fetch(request);
+  const contentType = String(response.headers.get("content-type") || "").toLowerCase();
+  const responseCacheControl = String(response.headers.get("cache-control") || "").toLowerCase();
+  if (
+    response.status !== 200
+    || !contentType.includes("application/json")
+    || !/(?:^|,)\s*public(?:\s*(?:,|$))/.test(responseCacheControl)
+    || response.headers.has("set-cookie")
+  ) return response;
+  const cacheCopy = hotReportCachedResponse(response.clone(), "STORED");
+  const put = cache.put(cacheRequest, cacheCopy).catch(() => null);
+  if (ctx && typeof ctx.waitUntil === "function") ctx.waitUntil(put);
+  else await put;
+  return hotReportCachedResponse(response, "MISS");
+}
 
 function canonicalRedirect(url, canonicalHostValue = "") {
   const canonicalHost = String(canonicalHostValue || "").trim().toLowerCase();
@@ -266,13 +333,10 @@ async function resolveObject(env, prefix, relative, headOnly, request, allowRang
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
     if (url.pathname === "/api" || url.pathname.startsWith("/api/")) {
-      if (!env.API || typeof env.API.fetch !== "function") {
-        return new Response("Service Unavailable", { status: 503 });
-      }
-      return env.API.fetch(request);
+      return proxyApiRequest(request, env, ctx);
     }
 
     if (request.method === "OPTIONS") {

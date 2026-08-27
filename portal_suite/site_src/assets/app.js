@@ -13,6 +13,10 @@
   const REPORT_PREVIEW_CACHE_KEY = "portal_report_preview_cache";
   const REPORT_PREVIEW_CACHE_MAX_ITEMS = 20;
   const REPORT_PREVIEW_CACHE_TTL_MS = 6 * 60 * 60 * 1000;
+  const HOT_REPORT_FIRST_PAGE_CACHE_KEY = "portal_hot_report_first_page_v1";
+  const HOT_REPORT_FIRST_PAGE_CACHE_VERSION = 1;
+  const HOT_REPORT_FIRST_PAGE_CACHE_MAX_ITEMS = 24;
+  const HOT_REPORT_FIRST_PAGE_CACHE_TTL_MS = 24 * 60 * 60 * 1000;
   const ADMIN_PDF_UPLOAD_SESSION_KEY = "portal_admin_pdf_upload_v1";
   const ADMIN_PDF_UPLOAD_SESSION_VERSION = 1;
   const ADMIN_PDF_UPLOAD_POLL_MS = 2500;
@@ -120,6 +124,110 @@
     const timestamp = Date.parse(String(item && item.date || "").trim());
     if (!Number.isFinite(timestamp)) return false;
     return timestamp >= recentMonthCutoff(count, now) && timestamp <= now + 24 * 60 * 60 * 1000;
+  }
+
+  function normalizeHotReportFirstPageCache(payload, now = Date.now()) {
+    if (!payload || typeof payload !== "object" || Array.isArray(payload)) return null;
+    if (Number(payload.version) !== HOT_REPORT_FIRST_PAGE_CACHE_VERSION) return null;
+    const savedAt = Number(payload.saved_at || 0);
+    const age = now - savedAt;
+    if (!Number.isFinite(savedAt) || savedAt <= 0 || age < -5 * 60 * 1000 || age > HOT_REPORT_FIRST_PAGE_CACHE_TTL_MS) {
+      return null;
+    }
+    const rawPage = payload.page;
+    if (!rawPage || typeof rawPage !== "object" || Array.isArray(rawPage) || !Array.isArray(rawPage.items)) return null;
+    if (rawPage.items.length > HOT_REPORT_FIRST_PAGE_CACHE_MAX_ITEMS) return null;
+    const seen = new Set();
+    const items = [];
+    for (const rawItem of rawPage.items) {
+      const id = String(rawItem && rawItem.id || "").trim().toLowerCase();
+      if (!/^hot:[a-f0-9]{16}$/.test(id) || seen.has(id)) return null;
+      seen.add(id);
+      const size = Number(rawItem.size_bytes || 0);
+      const sortOrder = Number(rawItem.sort_order || 0);
+      const requiredMonths = Number(rawItem.required_months || 0);
+      items.push({
+        id,
+        source: HOT_REPORT_SOURCE,
+        title: String(rawItem.title || "").trim().slice(0, 320) || "近期热门报告",
+        title_cn: String(rawItem.title_cn || "").trim().slice(0, 320),
+        institution: String(rawItem.institution || "").trim().slice(0, 160),
+        date: String(rawItem.date || "").trim().slice(0, 10),
+        description: String(rawItem.description || "").trim().slice(0, 1600),
+        filename: String(rawItem.filename || "").trim().slice(0, 320),
+        size_bytes: Number.isFinite(size) && size > 0 ? Math.floor(size) : 0,
+        sort_order: Number.isSafeInteger(sortOrder) ? sortOrder : 0,
+        created_at: String(rawItem.created_at || "").trim().slice(0, 64),
+        updated_at: String(rawItem.updated_at || "").trim().slice(0, 64),
+        required_plan: String(rawItem.required_plan || "").trim().slice(0, 64),
+        required_months: Number.isFinite(requiredMonths) && requiredMonths > 0 ? Math.floor(requiredMonths) : 0,
+      });
+    }
+    const rawTotal = rawPage.total;
+    const total = rawTotal === null || rawTotal === undefined
+      ? null
+      : Number(rawTotal);
+    if (total !== null && (!Number.isSafeInteger(total) || total < items.length)) return null;
+    const nextCursor = String(rawPage.nextCursor || "").trim();
+    const hasMore = rawPage.hasMore === true;
+    if (nextCursor.length > 2048 || hasMore !== Boolean(nextCursor)) return null;
+    return {
+      items,
+      nextCursor,
+      hasMore,
+      total,
+      cachedAt: savedAt,
+    };
+  }
+
+  function hotReportLocalStorage() {
+    try {
+      return window.localStorage;
+    } catch (_error) {
+      return null;
+    }
+  }
+
+  function readHotReportFirstPageCache(storage, now = Date.now()) {
+    if (!storage || typeof storage.getItem !== "function") return null;
+    try {
+      const parsed = JSON.parse(storage.getItem(HOT_REPORT_FIRST_PAGE_CACHE_KEY) || "null");
+      const normalized = normalizeHotReportFirstPageCache(parsed, now);
+      if (!normalized && typeof storage.removeItem === "function") storage.removeItem(HOT_REPORT_FIRST_PAGE_CACHE_KEY);
+      return normalized;
+    } catch (_error) {
+      try {
+        if (typeof storage.removeItem === "function") storage.removeItem(HOT_REPORT_FIRST_PAGE_CACHE_KEY);
+      } catch (_removeError) {
+        // Ignore unavailable browser storage.
+      }
+      return null;
+    }
+  }
+
+  function writeHotReportFirstPageCache(page, storage, now = Date.now()) {
+    if (!storage || typeof storage.setItem !== "function") return false;
+    const normalized = normalizeHotReportFirstPageCache({
+      version: HOT_REPORT_FIRST_PAGE_CACHE_VERSION,
+      saved_at: now,
+      page,
+    }, now);
+    if (!normalized) return false;
+    try {
+      storage.setItem(HOT_REPORT_FIRST_PAGE_CACHE_KEY, JSON.stringify({
+        version: HOT_REPORT_FIRST_PAGE_CACHE_VERSION,
+        saved_at: normalized.cachedAt,
+        page: {
+          items: normalized.items,
+          nextCursor: normalized.nextCursor,
+          hasMore: normalized.hasMore,
+          total: normalized.total,
+        },
+      }));
+      return true;
+    } catch (_error) {
+      return false;
+    }
   }
 
   function recentDateBounds(months, now = Date.now()) {
@@ -6767,15 +6875,21 @@
       loadOptionalJson("data/catalog_preview.json", null),
       loadOptionalJson("data/config.json", {}),
     ]);
-    // Give the small preview network priority. Starting the multi-megabyte
-    // catalog first can delay the very response meant to fix first paint.
-    const fullCatalogPromise = loadJson("data/catalog.json").catch((error) => {
-      fullCatalogError = error;
-      return null;
-    });
+    let fullCatalogPromise = null;
+    const startFullCatalogLoad = () => {
+      if (!fullCatalogPromise) {
+        fullCatalogPromise = loadJson("data/catalog.json").catch((error) => {
+          fullCatalogError = error;
+          return null;
+        });
+      }
+      return fullCatalogPromise;
+    };
+    // The small preview owns first paint. On a normal home load the large
+    // catalog starts only after the first hot-report request has been issued.
     let catalog = previewCatalog && Array.isArray(previewCatalog.items) && previewCatalog.items.length
       ? previewCatalog
-      : await fullCatalogPromise;
+      : await startFullCatalogLoad();
     if (!catalog || !Array.isArray(catalog.items)) {
       throw fullCatalogError || new Error("Report catalog is unavailable.");
     }
@@ -7121,6 +7235,9 @@
           hotReportPageIndex = pageIndex;
         }
         responseItems.forEach((item) => hotReportItems.set(String(item.id), item));
+        if (replace && pageIndex === 0 && !cleanQuery) {
+          writeHotReportFirstPageCache(nextPage, hotReportLocalStorage());
+        }
         hotReportsLoaded = true;
         hotReportsFailed = false;
         hotReportRetryQuery = null;
@@ -7135,17 +7252,22 @@
       } catch (error) {
         if (requestVersion !== hotReportRequestVersion) return;
         hotReportsLoaded = true;
-        hotReportsFailed = replace;
-        hotReportRetryQuery = cleanQuery;
         const retained = Boolean(currentHotReportPage());
+        const retainedForSameQuery = retained && cleanQuery === hotReportActiveQuery;
+        hotReportsFailed = replace && !retainedForSameQuery;
+        hotReportRetryQuery = cleanQuery;
         const indexChanged = error && error.status === 409;
         if (indexChanged && !replace && currentHotReportPage()) currentHotReportPage().cursorInvalidated = true;
-        const message = indexChanged
+        const message = retainedForSameQuery
+          ? (deadlineReached
+            ? "近期热门报告更新较慢，当前为最近一次成功结果。"
+            : "近期热门报告暂未完成更新，当前为最近一次成功结果。")
+          : indexChanged
           ? "近期热门报告列表已更新，请从第一页重新加载。"
           : (deadlineReached
             ? "近期热门报告读取较慢，请重新加载。"
             : (error.message || "近期热门报告暂时无法读取。"));
-        setHotReportsStatus(`${message}${retained ? " 已保留当前结果。" : ""}`, "error");
+        setHotReportsStatus(`${message}${retained && !retainedForSameQuery ? " 已保留当前结果。" : ""}`, "error");
         if (hotReportsRetry) hotReportsRetry.hidden = false;
       } finally {
         window.clearTimeout(timeoutId);
@@ -8430,8 +8552,22 @@
     };
     updateMeta();
     render();
+    const initialHotReportQuery = scopeFilter.value === "charts" ? "" : input.value.trim();
+    if (!initialHotReportQuery) {
+      const cachedFirstPage = readHotReportFirstPageCache(hotReportLocalStorage());
+      if (cachedFirstPage) {
+        hotReportPages = [cachedFirstPage];
+        hotReportPageIndex = 0;
+        hotReportActiveQuery = "";
+        hotReportRequestedQuery = "";
+        hotReportsLoaded = true;
+        hotReportsFailed = false;
+        cachedFirstPage.items.forEach((item) => hotReportItems.set(String(item.id), item));
+      }
+    }
     renderHotReports();
-    loadHotReports(scopeFilter.value === "charts" ? "" : input.value.trim());
+    loadHotReports(initialHotReportQuery);
+    const backgroundFullCatalogPromise = startFullCatalogLoad();
 
     // The preview is useful immediately; the full catalog and the PDF override
     // overlay arrive independently and replace the derived indexes atomically.
@@ -8439,7 +8575,7 @@
     let catalogPdfOverrides = [];
     let catalogOverrideVersion = 0;
     if (!fullCatalogReady) {
-      fullCatalogPromise.then(async (fullCatalog) => {
+      backgroundFullCatalogPromise.then(async (fullCatalog) => {
         if (!fullCatalog || !Array.isArray(fullCatalog.items)) {
           updateCatalogReadiness("完整目录暂时未载入；当前可搜索最新报告和其他来源。", "error");
           remoteSourceStates.set("catalog", "error");
