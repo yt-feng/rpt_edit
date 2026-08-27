@@ -1557,6 +1557,332 @@ a.secondary-button {
   background: #eef7f5;
 }
 
+.account-admin-intake-heading {
+  align-items: flex-start;
+}
+
+.account-admin-intake-heading strong {
+  font-size: 18px;
+}
+
+.account-admin-intake-heading span {
+  max-width: 560px;
+  text-align: right;
+  line-height: 1.5;
+}
+
+.account-admin-intake-scope {
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid #bad7e8;
+  border-radius: 8px;
+  background: #f4faff;
+  color: #365267;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.65;
+}
+
+.account-admin-intake-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  padding: 5px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #f1f5f9;
+}
+
+.account-admin-intake-tabs button {
+  min-height: 42px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 8px 12px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.account-admin-intake-tabs button:is(:hover, :focus-visible) {
+  color: var(--ink);
+  outline: none;
+}
+
+.account-admin-intake-tabs button.is-active {
+  border-color: #b7d8d3;
+  background: #ffffff;
+  color: var(--accent-strong);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+
+.account-admin-intake-panel {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}
+
+.account-admin-intake-panel[hidden] {
+  display: none;
+}
+
+.account-admin-intake-panel > .subtle,
+.account-admin-intake-request-top .subtle {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.account-admin-intake-search {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: end;
+}
+
+.account-admin-intake-search label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.account-admin-intake-search input {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 11px;
+  background: #ffffff;
+  color: var(--ink);
+  font: inherit;
+}
+
+.account-admin-intake-results {
+  display: grid;
+  gap: 8px;
+  max-height: 340px;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.account-admin-intake-more {
+  align-self: center;
+  min-height: 40px;
+  margin: 4px auto 0;
+}
+
+.account-admin-intake-result {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #ffffff;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+
+.account-admin-intake-result:is(:hover, :focus-visible, .is-selected) {
+  border-color: #6fb9ae;
+  background: #eef7f5;
+  outline: none;
+}
+
+.account-admin-intake-result > span:first-child,
+.account-admin-intake-selection > span:first-child {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.account-admin-intake-result strong,
+.account-admin-intake-selection strong,
+.account-admin-intake-result small,
+.account-admin-intake-selection small {
+  overflow-wrap: anywhere;
+}
+
+.account-admin-intake-result small,
+.account-admin-intake-selection small {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.account-admin-intake-state {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 26px;
+  border: 1px solid #b7d8d3;
+  border-radius: 999px;
+  padding: 3px 9px;
+  background: #eef7f5;
+  color: var(--accent-strong);
+  font-size: 11px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.account-admin-intake-state.is-blocked,
+.account-admin-intake-state.is-available {
+  border-color: #d9e0e7;
+  background: #f1f5f9;
+  color: var(--muted);
+}
+
+.account-admin-intake-upload {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #b7d8d3;
+  border-radius: 8px;
+  background: #f7fbfa;
+}
+
+.account-admin-intake-upload[hidden] {
+  display: none;
+}
+
+.account-admin-intake-selection {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  padding: 11px 12px;
+  border: 1px solid #b7d8d3;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.account-admin-intake-request-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.account-admin-upload-recovery {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 6px 12px;
+  align-items: center;
+  padding: 13px 14px;
+  border: 1px solid #e7c36b;
+  border-radius: 8px;
+  background: #fff8e5;
+  color: #75450c;
+}
+
+.account-admin-upload-recovery[hidden] {
+  display: none;
+}
+
+.account-admin-upload-recovery strong {
+  font-size: 13px;
+}
+
+.account-admin-upload-recovery p {
+  grid-column: 1;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.account-admin-upload-recovery button {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+.account-admin-upload-progress {
+  display: grid;
+  gap: 7px;
+  padding: 11px 12px;
+  border: 1px solid #b7d8d3;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.account-admin-upload-progress[hidden] {
+  display: none;
+}
+
+.account-admin-upload-progress[data-state="unknown"],
+.account-admin-upload-progress[data-state="failed"] {
+  border-color: #e9b5b5;
+  background: #fff7f7;
+}
+
+.account-admin-upload-progress-track {
+  width: 100%;
+  height: 9px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e2e8f0;
+}
+
+.account-admin-upload-progress-track span {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent);
+  transition: width 160ms ease;
+}
+
+.account-admin-upload-progress[data-state="processing"] .account-admin-upload-progress-track span {
+  background-image: linear-gradient(90deg, var(--accent) 0 45%, #8ed2c7 45% 60%, var(--accent) 60% 100%);
+  background-size: 220% 100%;
+  animation: account-admin-upload-processing 1.4s linear infinite;
+}
+
+@keyframes account-admin-upload-processing {
+  to { background-position: -220% 0; }
+}
+
+.account-admin-upload-progress-copy {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.account-admin-upload-progress-copy strong {
+  color: var(--ink);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.account-admin-upload-progress-copy span {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.account-admin-upload-recovery-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.account-admin-upload-recovery-actions button[hidden] {
+  display: none;
+}
+
+.account-admin-hot-list-heading {
+  margin-top: 8px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
 .account-admin-hot-description,
 .account-admin-hot-file {
   display: grid;
@@ -4174,6 +4500,58 @@ a.secondary-button {
     flex-direction: column;
   }
 
+  .account-admin-intake-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .account-admin-intake-heading span {
+    text-align: left;
+  }
+
+  .account-admin-intake-tabs,
+  .account-admin-intake-search {
+    grid-template-columns: 1fr;
+  }
+
+  .account-admin-intake-tabs button,
+  .account-admin-intake-search button,
+  .account-admin-intake-upload .primary {
+    width: 100%;
+  }
+
+  .account-admin-intake-result,
+  .account-admin-intake-selection {
+    grid-template-columns: 1fr;
+  }
+
+  .account-admin-intake-state {
+    justify-self: start;
+  }
+
+  .account-admin-intake-request-top,
+  .account-admin-upload-progress-copy,
+  .account-admin-upload-recovery-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .account-admin-upload-recovery {
+    grid-template-columns: 1fr;
+  }
+
+  .account-admin-upload-recovery p,
+  .account-admin-upload-recovery button {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .account-admin-upload-recovery button,
+  .account-admin-intake-request-top button,
+  .account-admin-upload-recovery-actions button {
+    width: 100%;
+  }
+
   .account-admin-hot-row > span:last-child {
     align-self: flex-start;
   }
@@ -6378,6 +6756,7 @@ a.secondary-button {
 
   .admin-dialog :is(
     .account-admin-hot-form,
+    .account-admin-intake-upload,
     .account-admin-user-editor,
     .account-summary
   ) {
@@ -6398,6 +6777,68 @@ a.secondary-button {
     border-color: var(--line);
     background: var(--dark-control);
     color: var(--ink);
+  }
+
+  .admin-dialog .account-admin-intake-scope {
+    border-color: #31536a;
+    background: #142430;
+    color: #b8cedc;
+  }
+
+  .admin-dialog .account-admin-intake-tabs {
+    border-color: var(--line);
+    background: #111c26;
+  }
+
+  .admin-dialog .account-admin-intake-tabs button.is-active {
+    border-color: #3d706b;
+    background: var(--dark-hover);
+    color: var(--accent-strong);
+    box-shadow: none;
+  }
+
+  .admin-dialog :is(
+    .account-admin-intake-search input,
+    .account-admin-intake-result,
+    .account-admin-intake-selection,
+    .account-admin-upload-progress
+  ) {
+    border-color: var(--line);
+    background: var(--dark-control);
+    color: var(--ink);
+  }
+
+  .admin-dialog .account-admin-intake-result:is(:hover, :focus-visible, .is-selected) {
+    border-color: #3d706b;
+    background: var(--dark-hover);
+  }
+
+  .admin-dialog .account-admin-intake-state {
+    border-color: #3d706b;
+    background: #17332f;
+    color: var(--accent-strong);
+  }
+
+  .admin-dialog :is(.account-admin-intake-state.is-blocked, .account-admin-intake-state.is-available) {
+    border-color: var(--line);
+    background: #1a2732;
+    color: var(--muted);
+  }
+
+  .admin-dialog .account-admin-upload-recovery {
+    border-color: #745c2c;
+    background: var(--dark-warning-bg);
+    color: var(--dark-warning-ink);
+  }
+
+  .admin-dialog .account-admin-upload-progress[data-state="unknown"],
+  .admin-dialog .account-admin-upload-progress[data-state="failed"] {
+    border-color: #71343c;
+    background: var(--dark-danger-bg);
+  }
+
+  .admin-dialog .account-admin-upload-progress-track {
+    background: #24333e;
   }
 
   .admin-dialog .account-admin-hot-row:is(:hover, :focus),
