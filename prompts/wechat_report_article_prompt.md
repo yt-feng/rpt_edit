@@ -61,8 +61,7 @@
 6. 禁止设置“该报告未解决的问题”“报告尚未回答”“研究留白”“开放问题”“报告局限”等独立小节；原报告明确写出的限制，只能在相关段落中用一句客观陈述带过。
 7. 至少一个小节给出可复用的观察框架，但不要命名为“对读者的启发”。
 8. 不要写任何 CTA、广告、扫码、社群、知识星球、网站、域名或关注引导；系统会在最结尾统一插入固定信息。
-9. 在免责声明前，单独插入这张图片链接：`![](https://github.com/source/example/blob/main/prompts/zsxq_img.jpg)`
-10. 结尾只输出英文灰色免责声明：`<p style="color:#999999;font-size:12px;">For informational purposes only. Portions may be generated, translated, summarized, or edited with AI assistance based on source materials and may contain omissions or errors. Please verify independently. This is not investment, legal, tax, accounting, or other professional advice.</p>`
+9. 不要自行输出文末图片、免责声明、撰稿、责编或排版信息；系统会统一插入，正文最后一段仍须是实质内容或 KC评论。
 
 【CTA 要求】
 - 不要输出任何 CTA。不要写“加入社群”“扫码”“星球”“完整报告领取”“网站”“域名”“关注”“星标”“更多查看”等表达。
@@ -88,7 +87,7 @@
 
 【图片要求】
 - 不要主动生成 MinerU 图片 markdown；系统会在文章生成后自动插入 MinerU 原始图片。
-- 但文末免责声明前必须保留知识星球图片：`![](https://github.com/source/example/blob/main/prompts/zsxq_img.jpg)`。
+- 不要输出文末固定图片链接；系统会在渲染阶段统一插入。
 
 【内容边界】
 - 只能基于研报原文和解析结果推导，不要编造数据、公司动作、引用。

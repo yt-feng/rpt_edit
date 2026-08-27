@@ -3,12 +3,64 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
 from unittest import mock
 
 import push_xhs_notes_to_wechat_drafts as uploader
 
 
 class XhsDraftStreamingTests(unittest.TestCase):
+    def test_real_xhs_builder_uses_shared_identity_and_credits(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            report_dir = root / "0001-GS-ai-infrastructure"
+            report_dir.mkdir()
+            (report_dir / "wechat_article.md").write_text(
+                "# 高盛：AI基础设施订单与交付周期更新\n\n"
+                "## 订单和交付周期呈现不同变化\n\n"
+                "报告记录了一个可核验的数据变化。\n",
+                encoding="utf-8",
+            )
+            (report_dir / "status.json").write_text(
+                json.dumps({"source_pdf": "GS-AI-infrastructure-report.pdf"}),
+                encoding="utf-8",
+            )
+            args = SimpleNamespace(
+                author=uploader.AUTHOR,
+                body_hook="",
+                brand=uploader.BRAND,
+                content_source_url="",
+                disclaimer=uploader.BOTTOM_DISCLAIMER,
+                dry_run=True,
+                image_upload_delay_seconds=0,
+                max_body_chars=1200,
+                max_content_bytes=18000,
+                max_content_chars=19500,
+                max_inline_images=0,
+                min_inline_images=0,
+                timeout=30,
+            )
+
+            built = uploader.build_article(
+                report_dir,
+                1,
+                args,
+                None,
+                None,
+                root / "output",
+                "",
+            )
+
+            article = built["article"]
+            volunteer = built["translator_name"]
+            self.assertEqual("KC桌面", article["author"])
+            self.assertIn(volunteer, uploader.TRANSLATION_VOLUNTEER_NAMES)
+            self.assertIn("外资精译", article["content"])
+            self.assertIn(uploader.BOTTOM_DISCLAIMER, article["content"])
+            self.assertIn(f"撰稿：{volunteer}", article["content"])
+            self.assertIn("责编：KC", article["content"])
+            self.assertIn("排版：胡桃", article["content"])
+
     def test_hard_block_checks_final_title_even_when_raw_title_is_safe(self) -> None:
         record = uploader.hard_blocked_xhs_title_record({
             "raw_title": "高盛：货币市场与相关指标观察",

@@ -1678,7 +1678,7 @@ def build_wechat_title_refinement_prompt(
 ) -> str:
     keywords = "、".join(source_keywords or [])
     return f"""
-你是 Portal Suite 的微信公众号标题编辑。请只基于给定报告和文章内容，生成 6 个更适合微信搜一搜和转发的中文标题候选。
+你是 KC桌面“外资精译”栏目的微信公众号标题编辑。请只基于给定报告和文章内容，生成 6 个更适合微信搜一搜和转发的中文标题候选。
 
 硬性规则：
 1. 只返回 JSON：{{"titles":["标题1","标题2"]}}，不要解释。

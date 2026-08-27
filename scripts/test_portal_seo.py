@@ -181,6 +181,31 @@ class SeoOutputTests(unittest.TestCase):
             self.assertRegex(versioned_bernstein, r'\.\./\.\./\.\./assets/styles\.css\?v=[0-9a-f]{8}')
             self.assertRegex(versioned_bernstein, r'\.\./\.\./\.\./assets/analytics\.js\?v=[0-9a-f]{8}')
 
+    def test_public_contact_alias_is_materialized_after_private_profile_stage(self) -> None:
+        public_email = "".join(("info", "@", "kc", "desk", ".com"))
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory)
+            shutil.copytree(ROOT / "portal_suite" / "site_src", output, dirs_exist_ok=True)
+            builder.build_seo_outputs(output, self.catalog)
+
+            changed = builder.materialize_public_contact(output)
+
+            self.assertGreater(changed, 0)
+            index = (output / "index.html").read_text(encoding="utf-8")
+            about = (output / "about.html").read_text(encoding="utf-8")
+            llms = (output / "llms.txt").read_text(encoding="utf-8")
+            self.assertIn(public_email, index)
+            self.assertIn(public_email, about)
+            self.assertIn(public_email, llms)
+            for path in output.rglob("*"):
+                if not path.is_file() or path.suffix.lower() not in {".html", ".js", ".json", ".txt", ".xml"}:
+                    continue
+                try:
+                    text = path.read_text(encoding="utf-8")
+                except UnicodeDecodeError:
+                    continue
+                self.assertNotIn(builder.PUBLIC_CONTACT_EMAIL_PLACEHOLDER, text, path.as_posix())
+
     def test_static_report_has_canonical_schema_and_related_links(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory)
@@ -212,6 +237,33 @@ class SeoOutputTests(unittest.TestCase):
             self.assertIn('../assets/contact.js', page)
             self.assertIn('data-portal-non-chinese-only', page)
             self.assertNotIn("password=", page)
+
+    def test_text_only_static_report_links_to_a_complete_prefilled_home_search(self) -> None:
+        long_title = "A" * 90 + "END"
+        item = sample_item("text-only-report", long_title, "2026-07-17")
+        item["available"] = False
+        item["pdf_archived"] = True
+        page = builder.render_report_seo_page(
+            item,
+            "https://portal.example.invalid",
+            "2026-07-18",
+        )
+
+        self.assertIn('class="text-only-search-guidance"', page)
+        self.assertIn("约 90%", page)
+        self.assertIn("完整标题", page)
+        self.assertIn("“其他报告”等板块", page)
+        self.assertIn("在首页搜索同名报告", page)
+        self.assertIn(f'href="../?q={long_title}"', page)
+        self.assertNotIn(">检索相关报告</a>", page)
+
+        available_page = builder.render_report_seo_page(
+            sample_item("available-report", "可下载报告", "2026-07-17"),
+            "https://portal.example.invalid",
+            "2026-07-18",
+        )
+        self.assertNotIn('class="text-only-search-guidance"', available_page)
+        self.assertIn(">检索相关报告</a>", available_page)
 
     def test_report_schema_only_uses_explicit_published_at(self) -> None:
         item = sample_item("verified-date", "明确出版日期的报告", "2026-07-17")

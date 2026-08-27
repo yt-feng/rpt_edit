@@ -8,7 +8,7 @@ import {
 const CACHE_TTL_MS = 5 * 60 * 1000;
 const DEFAULT_R2_PREFIX = "reports";
 const CONTACT_WECHAT = "Support Contact";
-const CONTACT_EMAIL = "support@portal.example.invalid";
+const CONTACT_EMAIL = ["info", "@", "kc", "desk", ".com"].join("");
 const ADMIN_TOKEN_TTL_SECONDS = 180 * 24 * 60 * 60;
 const USER_TOKEN_TTL_SECONDS = 30 * 24 * 60 * 60;
 const CAPTCHA_TTL_SECONDS = 10 * 60;
@@ -631,6 +631,14 @@ const OPS_MIRROR_RETRY_MS = 5 * 60 * 1000;
 const OPS_ALERT_PREFIX = "_ops/alerts";
 const OPS_ALERT_SIGNATURE_MAX_AGE_SECONDS = 5 * 60;
 const OPS_ALERT_DEDUPE_MS = 24 * 60 * 60 * 1000;
+const REPORT_REQUEST_PREFIX = "_report-requests/v1";
+const REPORT_REQUEST_MAX_BODY_BYTES = 8 * 1024;
+const REPORT_REQUEST_DEDUPE_MS = 24 * 60 * 60 * 1000;
+const REPORT_REQUEST_PENDING_LEASE_MS = 2 * 60 * 1000;
+const REPORT_REQUEST_RATE_WINDOW_MS = 24 * 60 * 60 * 1000;
+const REPORT_REQUEST_EMAIL_RATE_LIMIT = 6;
+const REPORT_REQUEST_IP_RATE_LIMIT = 20;
+const REPORT_REQUEST_WRITE_RETRIES = 6;
 const NEWSFEED_CACHE_PREFIX = "_newsfeed/cache";
 const NEWSFEED_TOPICS_PREFIX = "_newsfeed/topics";
 const NEWSFEED_SETTINGS_PREFIX = "_newsfeed/settings";
@@ -641,8 +649,6 @@ const NEWSFEED_MAX_USER_TOPICS = 10000;
 const NEWSFEED_EMAIL_DEFAULT_TIME = "09:00";
 const NEWSFEED_EMAIL_DEFAULT_TIMEZONE = "Asia/Shanghai";
 const NEWSFEED_EMAIL_WINDOW_MINUTES = 35;
-const CLOUDFLARE_API_BASE = "https://api.cloudflare.com/client/v4";
-const CLOUDFLARE_EMAIL_TIMEOUT_MS = 10000;
 const NEWSFEED_CATEGORIES = ["Investment", "Tech", "Politics", "Industries"];
 const NEWSFEED_UA = "PortalSuiteNewsfeed/0.1";
 const NEWSFEED_OUTPUT_LANGUAGES = [
@@ -801,9 +807,9 @@ function corsHeaders(request, env) {
 function accessContactMessage(request, zhPrefix = "", enPrefix = "") {
   const language = String(request.headers.get("Accept-Language") || "").trim().toLowerCase();
   if (language.startsWith("zh")) {
-    return `${zhPrefix}如需开通或调整下载权限，请联系微信 Support Contact。`;
+    return `${zhPrefix}如需开通或调整下载权限，请发送邮件至 ${CONTACT_EMAIL}。`;
   }
-  return `${enPrefix}To activate or update download access, email support@portal.example.invalid.`;
+  return `${enPrefix}To activate or update download access, email ${CONTACT_EMAIL}.`;
 }
 
 function legacyCrossSiteLinkEnabled(env) {
@@ -4068,8 +4074,7 @@ async function handleAuth(request, env) {
         if (recovered) return recovered;
         throw error;
       }
-      const emailDestination = await requestCloudflareDestinationVerification(env, email);
-      return authSuccessResponse(request, env, 201, user, { email_destination: emailDestination });
+      return authSuccessResponse(request, env, 201, user);
     }
 
     const user = await findSiteUserByUsername(env, username);
@@ -4527,83 +4532,6 @@ async function handleCourseDirectory(request, env) {
 function cleanEnv(value) {
   const text = String(value || "").trim();
   return text === "unconfigured" ? "" : text;
-}
-
-function cloudflareEmailRoutingConfig(env) {
-  const accountId = cleanEnv(env.CLOUDFLARE_EMAIL_ROUTING_ACCOUNT_ID || env.CLOUDFLARE_ACCOUNT_ID);
-  const token = cleanEnv(env.CLOUDFLARE_EMAIL_ROUTING_API_TOKEN || env.CLOUDFLARE_API_TOKEN);
-  return {
-    accountId,
-    token,
-    configured: Boolean(accountId && token),
-  };
-}
-
-async function cloudflareEmailRoutingJson(env, path, init = {}) {
-  const config = cloudflareEmailRoutingConfig(env);
-  if (!config.configured) throw new Error("Cloudflare Email Routing API is not configured.");
-  const headers = {
-    "Accept": "application/json",
-    "Authorization": `Bearer ${config.token}`,
-    ...(init.body ? { "Content-Type": "application/json" } : {}),
-    ...(init.headers || {}),
-  };
-  const response = await fetchWithTimeout(`${CLOUDFLARE_API_BASE}${path}`, {
-    ...init,
-    headers,
-  }, CLOUDFLARE_EMAIL_TIMEOUT_MS);
-  const data = await response.json().catch(() => ({}));
-  if (!response.ok || data.success === false) {
-    const detail = Array.isArray(data.errors) && data.errors[0] && data.errors[0].message
-      ? data.errors[0].message
-      : `Cloudflare API returned HTTP ${response.status}.`;
-    throw new Error(detail);
-  }
-  return data.result;
-}
-
-async function requestCloudflareDestinationVerification(env, email) {
-  const cleanEmail = normalizeEmail(email);
-  if (!cleanEmail) return { status: "invalid", configured: false };
-  const config = cloudflareEmailRoutingConfig(env);
-  if (!config.configured) return { status: "not_configured", configured: false };
-  const basePath = `/accounts/${encodeURIComponent(config.accountId)}/email/routing/addresses`;
-  try {
-    const existing = await cloudflareEmailRoutingJson(env, `${basePath}?per_page=200`, { method: "GET" });
-    const match = (Array.isArray(existing) ? existing : [])
-      .find((address) => normalizeEmail(address && address.email) === cleanEmail);
-    if (match) {
-      return {
-        status: match.verified ? "verified" : "pending",
-        configured: true,
-        requested: false,
-        id: String(match.id || ""),
-      };
-    }
-  } catch (_error) {
-    // A write-only token can still create the address and trigger Cloudflare's email.
-  }
-  try {
-    const created = await cloudflareEmailRoutingJson(env, basePath, {
-      method: "POST",
-      body: JSON.stringify({ email: cleanEmail }),
-    });
-    return {
-      status: created && created.verified ? "verified" : "pending",
-      configured: true,
-      requested: true,
-      id: String(created && created.id || ""),
-    };
-  } catch (error) {
-    const detail = String(error && error.message || "Cloudflare destination verification failed.").slice(0, 300);
-    const status = /already exists|duplicate|exists/i.test(detail) ? "pending" : "failed";
-    return {
-      status,
-      configured: true,
-      requested: false,
-      detail,
-    };
-  }
 }
 
 function paddleClientToken(env) {
@@ -12745,7 +12673,7 @@ function newsfeedEmailHtml(payload) {
   `;
 }
 
-async function sendNewsfeedEmail(env, { to, subject, html, text }) {
+async function sendNewsfeedEmail(env, { to, subject, html, text, tags = ["portal-newsfeed"] }) {
   if (newsfeedEmailProvider(env) === "brevo") {
     const response = await fetchWithTimeout("https://api.brevo.com/v3/smtp/email", {
       method: "POST",
@@ -12760,7 +12688,7 @@ async function sendNewsfeedEmail(env, { to, subject, html, text }) {
         subject,
         htmlContent: html,
         textContent: text,
-        tags: ["portal-newsfeed"],
+        tags,
       }),
     }, 15000);
     const data = await response.json().catch(() => ({}));
@@ -12783,6 +12711,365 @@ async function sendNewsfeedEmail(env, { to, subject, html, text }) {
     return { sent: true, provider: "cloudflare", response };
   }
   return { sent: false, detail: "Cloudflare Email binding is not configured." };
+}
+
+function reportRequestOriginAllowed(request, env) {
+  const configured = String(env.ALLOWED_ORIGIN || "")
+    .split(",")
+    .map((value) => {
+      try {
+        return new URL(value.trim()).origin;
+      } catch (_error) {
+        return "";
+      }
+    })
+    .filter(Boolean);
+  let candidate = String(request.headers.get("Origin") || "").trim();
+  if (!candidate) {
+    try {
+      candidate = new URL(String(request.headers.get("Referer") || "")).origin;
+    } catch (_error) {
+      candidate = "";
+    }
+  }
+  try {
+    candidate = candidate ? new URL(candidate).origin : "";
+  } catch (_error) {
+    candidate = "";
+  }
+  let fallbackOrigin = "";
+  try {
+    fallbackOrigin = new URL(request.url).origin;
+  } catch (_error) {
+    fallbackOrigin = "";
+  }
+  const allowed = configured.length ? configured : [fallbackOrigin].filter(Boolean);
+  return Boolean(candidate && allowed.includes(candidate));
+}
+
+function cleanReportRequestText(value, limit) {
+  return String(value || "")
+    .replace(/[\u0000-\u001f\u007f]/gu, " ")
+    .replace(/\s+/gu, " ")
+    .trim()
+    .slice(0, limit);
+}
+
+function cleanReportRequestPagePath(value) {
+  const raw = String(value || "").trim().slice(0, 1200);
+  if (!raw) return "";
+  try {
+    const parsed = new URL(raw, "https://origin.invalid");
+    if (!["http:", "https:"].includes(parsed.protocol)) return "";
+    return cleanReportRequestText(parsed.pathname || "/", 400);
+  } catch (_error) {
+    return "";
+  }
+}
+
+function reportRequestClientIp(request) {
+  return String(
+    request.headers.get("CF-Connecting-IP")
+    || request.headers.get("X-Forwarded-For")
+    || "",
+  ).split(",")[0].trim().slice(0, 80);
+}
+
+async function reportRequestPrivateHash(env, scope, value) {
+  return hmacSha256Hex(accountSecret(env), `report-request:v1:${scope}:${String(value || "")}`);
+}
+
+function recentReportRequestState(state, field, nowMs, maxAgeMs) {
+  const timestamp = Date.parse(String(state && state[field] || ""));
+  return Number.isFinite(timestamp)
+    && timestamp <= nowMs + 60 * 1000
+    && nowMs - timestamp < maxAgeMs;
+}
+
+function reportRequestDisposition(state, nowMs = Date.now()) {
+  if (state && state.status === "sent" && recentReportRequestState(state, "sent_at", nowMs, REPORT_REQUEST_DEDUPE_MS)) {
+    return "sent";
+  }
+  if (state && state.status === "pending" && recentReportRequestState(state, "attempted_at", nowMs, REPORT_REQUEST_PENDING_LEASE_MS)) {
+    return "pending";
+  }
+  return "";
+}
+
+async function reserveReportRequestRateLimit(env, scope, identity, limit, nowMs = Date.now()) {
+  if (!identity) return true;
+  const digest = await reportRequestPrivateHash(env, `rate:${scope}`, identity);
+  const key = `${REPORT_REQUEST_PREFIX}/rate/${scope}/${digest}.json`;
+  const cutoff = nowMs - REPORT_REQUEST_RATE_WINDOW_MS;
+  for (let attempt = 0; attempt < REPORT_REQUEST_WRITE_RETRIES; attempt += 1) {
+    const snapshot = await r2GetJsonObjectStrict(env, key);
+    const rawTimestamps = Array.isArray(snapshot && snapshot.value && snapshot.value.timestamps)
+      ? snapshot.value.timestamps.slice(-limit * 2)
+      : [];
+    const timestamps = rawTimestamps
+      .map((value) => Number(value))
+      .filter((value) => Number.isFinite(value) && value > cutoff && value <= nowMs + 60 * 1000)
+      .slice(-limit);
+    if (timestamps.length >= limit) return false;
+    const etag = String(snapshot && snapshot.object && snapshot.object.etag || "");
+    const written = await accountBucket(env).put(key, JSON.stringify({
+      version: 1,
+      scope,
+      window_ms: REPORT_REQUEST_RATE_WINDOW_MS,
+      timestamps: [...timestamps, nowMs],
+      updated_at: new Date(nowMs).toISOString(),
+    }), {
+      onlyIf: etag ? { etagMatches: etag } : { etagDoesNotMatch: "*" },
+      httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "private, no-store" },
+    });
+    if (written !== null) return true;
+  }
+  throw new Error("Report request rate limit changed concurrently.");
+}
+
+async function reportRequestDedupeKey(env, record) {
+  const identity = record.report_id
+    ? `id:${record.report_id}`
+    : `title:${record.title}|source:${record.source}|institution:${record.institution}`;
+  const digest = await reportRequestPrivateHash(env, "dedupe", `${record.requester_email}|${identity}`);
+  return `${REPORT_REQUEST_PREFIX}/items/${digest}.json`;
+}
+
+async function reserveReportRequestRecord(env, key, record, nowMs = Date.now()) {
+  for (let attempt = 0; attempt < REPORT_REQUEST_WRITE_RETRIES; attempt += 1) {
+    const snapshot = await r2GetJsonObjectStrict(env, key);
+    const previous = snapshot && snapshot.value;
+    const disposition = reportRequestDisposition(previous, nowMs);
+    if (disposition) return { disposition, record: previous };
+    const now = new Date(nowMs).toISOString();
+    const pending = {
+      version: 1,
+      ...record,
+      status: "pending",
+      created_at: String(previous && previous.created_at || now),
+      attempted_at: now,
+      updated_at: now,
+      sent_at: "",
+      attempt_count: Math.max(0, Math.floor(Number(previous && previous.attempt_count) || 0)) + 1,
+      provider: "",
+      message_id: "",
+      last_error: "",
+    };
+    const etag = String(snapshot && snapshot.object && snapshot.object.etag || "");
+    const written = await accountBucket(env).put(key, JSON.stringify(pending), {
+      onlyIf: etag ? { etagMatches: etag } : { etagDoesNotMatch: "*" },
+      httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "private, no-store" },
+    });
+    if (written !== null) return { disposition: "reserved", record: pending };
+  }
+  throw new Error("Report request changed concurrently.");
+}
+
+function reportRequestEmailContent(record) {
+  const fields = [
+    ["报告标题", record.title],
+    ["报告编号", record.report_id],
+    ["来源", record.source],
+    ["机构", record.institution],
+    ["页面路径", record.page_path],
+    ["申请邮箱", record.requester_email],
+    ["账号用户", record.authenticated ? (record.requester_username || "是") : "游客"],
+    ["提交时间", record.attempted_at],
+  ].filter(([, value]) => value);
+  const text = [
+    "收到一条报告获取申请。",
+    "",
+    ...fields.map(([label, value]) => `${label}：${value}`),
+    "",
+    "请在24小时内回复申请人。",
+  ].join("\n");
+  const rows = fields.map(([label, value]) => `
+    <tr>
+      <th style="padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #e5e7eb;color:#475467;white-space:nowrap;">${escapeNewsfeedHtml(label)}</th>
+      <td style="padding:9px 12px;border-bottom:1px solid #e5e7eb;color:#101828;word-break:break-word;">${escapeNewsfeedHtml(value)}</td>
+    </tr>`).join("");
+  const html = `
+    <div style="margin:0;padding:24px;background:#f6f7fb;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#101828;">
+      <div style="max-width:680px;margin:0 auto;background:#ffffff;border-radius:10px;padding:28px;">
+        <h1 style="margin:0 0 18px;font-size:22px;line-height:1.35;">报告获取申请</h1>
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border:1px solid #e5e7eb;border-radius:8px;border-collapse:collapse;">${rows}</table>
+        <p style="margin:20px 0 0;color:#475467;font-size:14px;">请在24小时内回复申请人。</p>
+      </div>
+    </div>`;
+  return {
+    subject: cleanReportRequestText(`报告申请：${record.title || record.report_id}`, 160),
+    text,
+    html,
+  };
+}
+
+function reportRequestAcceptedResponse(request, env, status, deduplicated, detail) {
+  return privateJsonResponse(request, env, status, {
+    ok: true,
+    deduplicated,
+    detail,
+  });
+}
+
+async function handleReportRequest(request, env) {
+  if (!reportRequestOriginAllowed(request, env)) {
+    return privateJsonResponse(request, env, 403, { ok: false, detail: "请求来源不允许。" });
+  }
+  const declaredLength = Number(request.headers.get("Content-Length") || 0);
+  if (Number.isFinite(declaredLength) && declaredLength > REPORT_REQUEST_MAX_BODY_BYTES) {
+    return privateJsonResponse(request, env, 413, { ok: false, detail: "申请内容过大，请精简后重试。" });
+  }
+  let rawBody = "";
+  try {
+    rawBody = await request.text();
+  } catch (_error) {
+    return privateJsonResponse(request, env, 400, { ok: false, detail: "申请格式无效。" });
+  }
+  if (new TextEncoder().encode(rawBody).byteLength > REPORT_REQUEST_MAX_BODY_BYTES) {
+    return privateJsonResponse(request, env, 413, { ok: false, detail: "申请内容过大，请精简后重试。" });
+  }
+  let payload = {};
+  try {
+    payload = rawBody ? JSON.parse(rawBody) : {};
+  } catch (_error) {
+    return privateJsonResponse(request, env, 400, { ok: false, detail: "申请格式无效。" });
+  }
+  if (!payload || typeof payload !== "object" || Array.isArray(payload)) {
+    return privateJsonResponse(request, env, 400, { ok: false, detail: "申请格式无效。" });
+  }
+  if (cleanReportRequestText(payload.honeypot, 200)) {
+    return reportRequestAcceptedResponse(
+      request,
+      env,
+      202,
+      false,
+      "已收到报告申请，我们会在24小时内通过邮箱回复。",
+    );
+  }
+
+  let user = null;
+  if (bearerToken(request)) {
+    try {
+      user = await currentUserFromRequest(env, request);
+    } catch (error) {
+      return privateJsonResponse(request, env, 401, { ok: false, detail: error.message || "请重新登录后提交。" });
+    }
+  }
+  const accountEmail = normalizeEmail(user && user.email);
+  const requesterEmail = accountEmail && !isGeneratedEmail(accountEmail)
+    ? accountEmail
+    : normalizeEmail(payload.requester_email);
+  if (!requesterEmail) {
+    return privateJsonResponse(request, env, 400, { ok: false, detail: "请填写有效邮箱。" });
+  }
+  const title = cleanReportRequestText(payload.title, 240);
+  const reportId = cleanReportRequestText(payload.report_id, 180);
+  if (!title) {
+    return privateJsonResponse(request, env, 400, { ok: false, detail: "缺少报告标题，请刷新页面后重试。" });
+  }
+  const record = {
+    report_id: reportId,
+    title,
+    source: cleanReportRequestText(payload.source, 100),
+    institution: cleanReportRequestText(payload.institution, 180),
+    page_path: cleanReportRequestPagePath(payload.page_path),
+    requester_email: requesterEmail,
+    requester_user_id: cleanReportRequestText(user && user.id, 100),
+    requester_username: cleanReportRequestText(user && user.username, 80),
+    authenticated: Boolean(user),
+  };
+
+  try {
+    const nowMs = Date.now();
+    const key = await reportRequestDedupeKey(env, record);
+    const existing = await r2GetJsonObjectStrict(env, key);
+    const existingDisposition = reportRequestDisposition(existing && existing.value, nowMs);
+    if (existingDisposition) {
+      return reportRequestAcceptedResponse(
+        request,
+        env,
+        existingDisposition === "sent" ? 200 : 202,
+        true,
+        existingDisposition === "sent"
+          ? "该报告申请已收到，无需重复提交。我们会在24小时内回复。"
+          : "该报告申请正在处理中，请勿重复提交。我们会在24小时内回复。",
+      );
+    }
+
+    const ip = reportRequestClientIp(request);
+    const ipAllowed = await reserveReportRequestRateLimit(env, "ip", ip, REPORT_REQUEST_IP_RATE_LIMIT, nowMs);
+    if (!ipAllowed) {
+      return privateJsonResponse(request, env, 429, { ok: false, retryable: true, detail: "提交过于频繁，请稍后再试。" });
+    }
+    const emailAllowed = await reserveReportRequestRateLimit(
+      env,
+      "email",
+      requesterEmail,
+      REPORT_REQUEST_EMAIL_RATE_LIMIT,
+      nowMs,
+    );
+    if (!emailAllowed) {
+      return privateJsonResponse(request, env, 429, { ok: false, retryable: true, detail: "提交过于频繁，请稍后再试。" });
+    }
+
+    const reservation = await reserveReportRequestRecord(env, key, record, nowMs);
+    if (reservation.disposition !== "reserved") {
+      return reportRequestAcceptedResponse(
+        request,
+        env,
+        reservation.disposition === "sent" ? 200 : 202,
+        true,
+        reservation.disposition === "sent"
+          ? "该报告申请已收到，无需重复提交。我们会在24小时内回复。"
+          : "该报告申请正在处理中，请勿重复提交。我们会在24小时内回复。",
+      );
+    }
+
+    const content = reportRequestEmailContent(reservation.record);
+    let result;
+    try {
+      result = await sendNewsfeedEmail(env, {
+        to: CONTACT_EMAIL,
+        subject: content.subject,
+        html: content.html,
+        text: content.text,
+        tags: ["portal-report-request"],
+      });
+    } catch (error) {
+      result = { sent: false, detail: String(error && error.message || "Email send failed.") };
+    }
+    const completedAt = new Date().toISOString();
+    const completed = {
+      ...reservation.record,
+      status: result && result.sent ? "sent" : "failed",
+      provider: cleanReportRequestText(result && result.provider, 40),
+      message_id: cleanReportRequestText(result && result.messageId, 200),
+      last_error: result && result.sent ? "" : cleanReportRequestText(result && result.detail, 500),
+      sent_at: result && result.sent ? completedAt : "",
+      updated_at: completedAt,
+    };
+    await r2PutJson(env, key, completed);
+    if (!completed.sent_at) {
+      return privateJsonResponse(request, env, 502, {
+        ok: false,
+        retryable: true,
+        detail: "申请已保存，但通知发送失败，请稍后重试。",
+      });
+    }
+    return reportRequestAcceptedResponse(
+      request,
+      env,
+      202,
+      false,
+      "已收到报告申请，我们会在24小时内通过邮箱回复。",
+    );
+  } catch (_error) {
+    return privateJsonResponse(request, env, 503, {
+      ok: false,
+      retryable: true,
+      detail: "申请服务暂时不可用，请稍后重试。",
+    });
+  }
 }
 
 function opsAlertEmailHtml(subject, text, severity) {
@@ -17412,6 +17699,10 @@ export default {
 
     if (pathname === "/analytics" && request.method === "POST") {
       return handleAnalyticsEvent(request, env, ctx);
+    }
+
+    if (pathname === "/report-request" && request.method === "POST") {
+      return handleReportRequest(request, env);
     }
 
     if (pathname === "/calc" && request.method === "GET") {

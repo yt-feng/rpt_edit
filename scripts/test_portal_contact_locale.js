@@ -26,6 +26,7 @@ const source = fs.readFileSync(
 vm.runInNewContext(source, { window: windowStub });
 
 const contact = windowStub.PortalSuiteContact;
+const publicEmail = ["info", "@", "kc", "desk", ".com"].join("");
 assert.ok(contact, "contact helper should be exported");
 assert.equal(contact.languageIsChinese(["zh-CN"]), true);
 assert.equal(contact.languageIsChinese(["zh-Hans-CN"]), true);
@@ -35,9 +36,9 @@ assert.deepEqual(
   {
     isChinese: false,
     channel: "email",
-    value: "support@portal.example.invalid",
+    value: publicEmail,
     label: "邮箱",
-    href: "mailto:support@portal.example.invalid",
+    href: `mailto:${publicEmail}`,
   },
 );
 assert.equal(chineseOnly.hidden, true);

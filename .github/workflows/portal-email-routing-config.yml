@@ -1,0 +1,68 @@
+name: Portal email routing configuration
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Audit configuration or reconcile it in Cloudflare
+        required: true
+        type: choice
+        options:
+          - audit
+          - apply
+        default: audit
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portal-email-routing-configuration
+  cancel-in-progress: false
+
+jobs:
+  email-routing:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout configurator
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .github/workflows/portal-email-routing-config.yml
+            scripts/configure_portal_email_routing.py
+            scripts/test_configure_portal_email_routing.py
+            scripts/test_portal_email_routing_workflow.py
+            scripts/check_public_identity.py
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Test email routing configurator
+        run: |
+          python3 -B scripts/test_configure_portal_email_routing.py
+          python3 -B scripts/test_portal_email_routing_workflow.py
+          python3 -B scripts/check_public_identity.py
+
+      - name: Audit or apply Cloudflare Email Routing
+        env:
+          PORTAL_EMAIL_ROUTING_MODE: ${{ inputs.mode }}
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+          PORTAL_FORWARD_DESTINATION_EMAIL: ${{ secrets.PORTAL_FORWARD_DESTINATION_EMAIL }}
+          CLOUDFLARE_EMAIL_ROUTING_API_TOKEN: ${{ secrets.CLOUDFLARE_EMAIL_ROUTING_API_TOKEN || secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_EMAIL_ROUTING_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_EMAIL_ROUTING_ACCOUNT_ID || secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+        run: |
+          set -euo pipefail
+          for required_name in PORTAL_EMAIL_ROUTING_MODE PORTAL_SITE_URL PORTAL_FORWARD_DESTINATION_EMAIL CLOUDFLARE_EMAIL_ROUTING_API_TOKEN; do
+            if [ -z "${!required_name}" ]; then
+              echo "Required email routing value is not configured: $required_name" >&2
+              exit 1
+            fi
+          done
+          python3 -B scripts/configure_portal_email_routing.py \
+            --mode "$PORTAL_EMAIL_ROUTING_MODE" \
+            --github-add-mask

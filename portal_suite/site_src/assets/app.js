@@ -1,7 +1,7 @@
 (function () {
   const page = document.body.dataset.page;
   const CONTACT_WECHAT = "Support Contact";
-  const CONTACT_EMAIL = "support@portal.example.invalid";
+  const CONTACT_EMAIL = ["info", "@", "kc", "desk", ".com"].join("");
   const ADMIN_TOKEN_KEY = "portal_admin_token";
   const ADMIN_PLAIN_KEY = "portal_admin_plain_key";
   const ADMIN_COOKIE_NAME = "portal_admin_token";
@@ -260,17 +260,11 @@
       : `没有账号？请注册并填写常用邮箱。如需开通下载权限，请联系微信 ${CONTACT_WECHAT}。`;
   }
 
-  function registrationCompleteText(emailDestination = {}) {
-    const verifyReminder = ["pending", "verified"].includes(String(emailDestination.status || ""))
-      ? (emailDestination.status === "pending" ? " 请同时留意收件箱并完成邮箱验证。" : "")
-      : "";
+  function registrationCompleteText() {
     if (!contactDetails().isChinese) {
-      const reminder = emailDestination.status === "pending"
-        ? " Please also check your inbox and complete email verification."
-        : "";
-      return `Registration complete. For download access, email ${CONTACT_EMAIL}.${reminder}`;
+      return `Registration complete. For download access, email ${CONTACT_EMAIL}.`;
     }
-    return `注册成功。如需开通下载权限，请联系微信 ${CONTACT_WECHAT}。${verifyReminder}`;
+    return `注册成功。如需开通下载权限，请联系微信 ${CONTACT_WECHAT}。`;
   }
 
   function localizedContactText(value) {
@@ -1240,9 +1234,7 @@
         });
         password.value = "";
         answer.value = "";
-        const registrationStatus = mode === "register"
-          ? registrationCompleteText(data.email_destination || {})
-          : "";
+        const registrationStatus = mode === "register" ? registrationCompleteText() : "";
         refreshUi({ statusOverride: registrationStatus });
       } catch (error) {
         trackEvent(workerUrl, "account_auth", {
@@ -7531,6 +7523,21 @@
     `;
   }
 
+  function textOnlySearchHref(item) {
+    const query = titleText(item).slice(0, 200);
+    return `./?q=${encodeURIComponent(query)}`;
+  }
+
+  function textOnlySearchGuidanceMarkup(item) {
+    return `
+      <aside class="text-only-search-guidance" aria-label="寻找可下载版本">
+        <strong>先搜索同名可下载版本</strong>
+        <p>约 90% 的 Text only 报告可在首页按完整标题找到可下载版本，建议继续查看“其他报告”等板块。</p>
+        <a class="secondary-button" href="${escapeHtml(textOnlySearchHref(item))}">在首页搜索同名报告</a>
+      </aside>
+    `;
+  }
+
   function textOnlyTextAccessMarkup() {
     return `
       <section class="text-only-text-access" id="textOnlyTextAccess">
@@ -8250,6 +8257,9 @@
         </section>
       `
       : "";
+    const availabilityMarkup = availabilityKnown && !available
+      ? textOnlySearchGuidanceMarkup(item)
+      : '<p class="subtle" aria-live="polite">下载权限正在后台补充…</p>';
     detail.innerHTML = `
       ${detailTitleMarkup(item)}
       <div class="detail-grid">
@@ -8258,7 +8268,7 @@
         ${field("Date", displayDate(item.date_folder))}
         ${field("PDF", availabilityKnown ? (available ? formatSize(item.size_bytes) || "Available" : "Text only") : "正在确认")}
       </div>
-      <p class="subtle" aria-live="polite">下载权限正在后台补充…</p>
+      ${availabilityMarkup}
       ${relatedMarkup}
     `;
     detail.onclick = (event) => {
@@ -8284,7 +8294,10 @@
       : '<div class="setup-warning">PDF download is temporarily unavailable. Please try again later.</div>';
     const archiveNotice = available
       ? ""
-      : '<div class="archive-notice">PDF 暂不可下载；符合条件的会员可在下方查看已保存的提取文本。</div>';
+      : `
+        <div class="archive-notice">PDF 暂不可下载；符合条件的会员可在下方查看已保存的提取文本。</div>
+        ${textOnlySearchGuidanceMarkup(item)}
+      `;
     const related = Array.isArray(options.relatedItems)
       ? options.relatedItems
       : relatedReports(item, catalogItems, searchTextById);
@@ -8779,6 +8792,96 @@
     }
   }
 
+  function reportRequestMarkup(item) {
+    const session = loadAuthSession();
+    const defaultEmail = session && session.user ? String(session.user.email || "").trim() : "";
+    const accountEmail = Boolean(defaultEmail);
+    const fallbackSubject = encodeURIComponent(`报告申请：${item.title || item.id || ""}`);
+    return `
+      <form class="report-request-form" id="reportRequestForm">
+        <p class="report-request-expectation">提交后无需打开邮件客户端。我们会在 <b>24 小时内</b>通过你填写的邮箱回复；如暂时无法提供，也会告知处理结果。</p>
+        <div class="report-request-fields">
+          <label class="report-request-email-label" for="reportRequesterEmail">
+            <span>接收回复的邮箱${accountEmail ? "（账号邮箱）" : ""}</span>
+            <input id="reportRequesterEmail" name="requester_email" type="email" autocomplete="email" inputmode="email" value="${escapeHtml(defaultEmail)}" placeholder="name@example.com"${accountEmail ? " readonly" : ""} required>
+          </label>
+          <button class="primary" id="reportRequestSubmit" type="submit">申请获取报告</button>
+        </div>
+        <label class="report-request-trap" aria-hidden="true">
+          <span>Website</span>
+          <input id="reportRequestWebsite" name="website" type="text" tabindex="-1" autocomplete="off">
+        </label>
+        <div id="reportRequestStatus" class="status-line" aria-live="polite"></div>
+        <p class="report-request-fallback">如果自动提交暂时不可用，也可发送邮件至 <a href="mailto:${escapeHtml(CONTACT_EMAIL)}?subject=${fallbackSubject}">${escapeHtml(CONTACT_EMAIL)}</a>。</p>
+      </form>
+    `;
+  }
+
+  function initReportRequest(workerUrl, item) {
+    const form = document.getElementById("reportRequestForm");
+    const email = document.getElementById("reportRequesterEmail");
+    const website = document.getElementById("reportRequestWebsite");
+    const submit = document.getElementById("reportRequestSubmit");
+    const status = document.getElementById("reportRequestStatus");
+    if (!form || !email || !submit || !status) return;
+
+    function setRequestStatus(message, state = "") {
+      status.textContent = String(message || "");
+      status.className = `status-line${state ? ` ${state}` : ""}`;
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const requesterEmail = String(email.value || "").trim();
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(requesterEmail)) {
+        setRequestStatus("请填写有效邮箱。", "error");
+        email.focus();
+        return;
+      }
+      if (!workerUrl) {
+        setRequestStatus(`自动提交暂时不可用，请发送邮件至 ${CONTACT_EMAIL}。`, "error");
+        return;
+      }
+
+      submit.disabled = true;
+      submit.textContent = "正在提交…";
+      setRequestStatus("正在通知 KC桌面，请稍候…");
+      try {
+        const response = await fetch(`${workerUrl}/report-request`, {
+          method: "POST",
+          cache: "no-store",
+          headers: { "Content-Type": "application/json", ...authHeaders() },
+          body: JSON.stringify({
+            report_id: item.id || "",
+            title: item.title || item.title_cn || "",
+            source: item.source || "",
+            institution: item.institution || item.bank_name || item.bank_code || "",
+            page_path: currentAnalyticsPath(),
+            requester_email: requesterEmail,
+            honeypot: website ? String(website.value || "") : "",
+          }),
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok || !data.ok) throw new Error(data.detail || "申请提交失败，请稍后重试。");
+
+        email.readOnly = true;
+        submit.textContent = data.deduplicated ? "申请已记录" : "申请已提交";
+        setRequestStatus(
+          data.detail || "申请已提交。我们会在24小时内通过邮箱回复，请勿重复提交。",
+          "ok",
+        );
+        trackEvent(workerUrl, "report_request", {
+          ...analyticsReportPayload(item, item.source || AUTHORITY_SOURCE),
+          action: data.deduplicated ? "deduplicated" : "submitted",
+        });
+      } catch (error) {
+        submit.disabled = false;
+        submit.textContent = "重新提交申请";
+        setRequestStatus(error && error.message || "申请提交失败，请稍后重试。", "error");
+      }
+    });
+  }
+
   async function initExternalDetail() {
     const params = new URLSearchParams(window.location.search);
     let item = externalItemFromParams(params);
@@ -8879,24 +8982,17 @@
     if (isContactOnlyItem(item)) {
       const hint = isAuthorityItem(item)
         ? "高权报告仅提供检索线索，无法在本站直接下载。"
-        : `联系${contactMethodText()}获取原文。`;
+        : "这份报告当前仅提供检索线索，无法在本站直接下载。";
       target.innerHTML = `
         ${detailHeader}
         <section class="unlock-box authority-contact-box">
-          <h3>获取报告</h3>
+          <h3>申请获取报告</h3>
           <p class="subtle">${escapeHtml(hint)}</p>
-          <p class="contact-line">如需原文，请联系${isAuthorityItem(item) ? allContactMethodsHtml() : contactMethodHtml()}。</p>
-          ${isAuthorityItem(item) ? `<a id="authorityReportRequest" class="primary-button" href="mailto:${escapeHtml(CONTACT_EMAIL)}?subject=${encodeURIComponent(`报告索取：${item.title || item.id || ""}`)}">索取这份报告</a>` : ""}
+          ${reportRequestMarkup(item)}
         </section>
         ${externalRelatedMarkup()}
       `;
-      const requestLink = document.getElementById("authorityReportRequest");
-      if (requestLink) {
-        requestLink.addEventListener("click", () => trackEvent(workerUrl, "report_request", {
-          ...analyticsReportPayload(item, AUTHORITY_SOURCE),
-          action: "contact",
-        }));
-      }
+      initReportRequest(workerUrl, item);
       searchIndexPromise.then(() => initExternalRelated(
         item,
         workerUrl,

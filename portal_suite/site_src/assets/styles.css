@@ -873,6 +873,31 @@ button.primary.is-loading {
   line-height: 1.5;
 }
 
+.text-only-search-guidance {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid #bad7e8;
+  border-radius: 8px;
+  background: #f4faff;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.text-only-search-guidance strong,
+.text-only-search-guidance p {
+  margin: 0;
+}
+
+.text-only-search-guidance p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.text-only-search-guidance .secondary-button {
+  justify-self: start;
+}
+
 .text-only-pdf-upload {
   display: grid;
   gap: 10px;
@@ -1317,6 +1342,79 @@ a.secondary-button {
   margin: 12px 0 0;
   color: var(--ink);
   font-size: 16px;
+}
+
+.authority-contact-box {
+  display: grid;
+  gap: 8px;
+}
+
+.report-request-form {
+  display: grid;
+  gap: 12px;
+  margin-top: 6px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
+}
+
+.report-request-expectation,
+.report-request-fallback {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.report-request-expectation b {
+  color: var(--ink);
+}
+
+.report-request-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 170px;
+  gap: 10px;
+  align-items: end;
+}
+
+.report-request-email-label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.report-request-email-label input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0 12px;
+  background: #ffffff;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 500;
+}
+
+.report-request-trap {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  white-space: nowrap !important;
+}
+
+.report-request-form .status-line {
+  margin: 0;
+}
+
+.report-request-fallback a {
+  color: var(--accent-strong);
+  overflow-wrap: anywhere;
 }
 
 .about-section {
@@ -3958,6 +4056,13 @@ a.secondary-button {
     text-align: center;
   }
 
+  .text-only-search-guidance .secondary-button {
+    box-sizing: border-box;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
   .text-only-text-content pre {
     max-height: 55vh;
     padding: 12px;
@@ -4004,6 +4109,7 @@ a.secondary-button {
 
   .detail-grid,
   .password-row,
+  .report-request-fields,
   .delivery-row,
   .auth-grid,
   .account-password-grid,
@@ -6199,7 +6305,7 @@ a.secondary-button {
     background: #142926;
   }
 
-  body:not(.newsfeed-page) .text-only-text-access {
+  body:not(.newsfeed-page) :is(.text-only-search-guidance, .text-only-text-access) {
     border-color: #31536a;
     background: #142430;
   }

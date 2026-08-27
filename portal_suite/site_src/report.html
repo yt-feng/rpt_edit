@@ -88,7 +88,23 @@
           : (rawAvailable === "0" || rawAvailable === "false" ? "Text only" : "正在确认");
         appendField(grid, "PDF", pdfStatus);
 
-        detail.replaceChildren(heading, grid);
+        const firstPaintChildren = [heading, grid];
+        if (pdfStatus === "Text only") {
+          const guidance = document.createElement("aside");
+          guidance.className = "text-only-search-guidance";
+          appendText(guidance, "strong", "", "先搜索同名可下载版本");
+          appendText(
+            guidance,
+            "p",
+            "",
+            "约 90% 的 Text only 报告可在首页按完整标题找到可下载版本，建议继续查看“其他报告”等板块。",
+          );
+          const searchLink = appendText(guidance, "a", "secondary-button", "在首页搜索同名报告");
+          searchLink.href = `./?q=${encodeURIComponent(title.slice(0, 200))}`;
+          firstPaintChildren.push(guidance);
+        }
+
+        detail.replaceChildren(...firstPaintChildren);
         document.title = `${title} | Portal Suite`;
       })();
     </script>
@@ -99,7 +115,7 @@
       <a href="terms.html">Terms of Service</a>
       <a href="privacy.html">Privacy Policy</a>
       <span data-portal-chinese-only hidden>Contact WeChat: Support Contact</span>
-      <a href="mailto:support@portal.example.invalid" data-portal-non-chinese-only hidden>Email: support@portal.example.invalid</a>
+      <a href="mailto:info@public-contact.invalid" data-portal-non-chinese-only hidden>Email: info@public-contact.invalid</a>
     </footer>
 
     <script src="assets/site-runtime.js"></script>
