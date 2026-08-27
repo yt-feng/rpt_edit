@@ -50,7 +50,7 @@ function element(overrides = {}) {
   };
 }
 
-function createHarness(responseFactory) {
+function createHarness(responseFactory, options = {}) {
   const elements = {
     reportRequestForm: element(),
     reportRequesterEmail: element({ value: "reader@example.com" }),
@@ -64,10 +64,11 @@ function createHarness(responseFactory) {
   const sandbox = {
     AUTHORITY_SOURCE: "authority",
     CONTACT_EMAIL: publicEmail,
+    URLSearchParams,
     document: { getElementById(id) { return elements[id] || null; } },
     async fetch(url, init) {
       calls.push({ url: String(url), init });
-      return responseFactory();
+      return responseFactory(String(url));
     },
     authHeaders() { return { Authorization: "Bearer member-token" }; },
     currentAnalyticsPath() { return "/doc.html"; },
@@ -80,6 +81,7 @@ function createHarness(responseFactory) {
     title: "Example report",
     source: "report-a",
     institution: "Example Bank",
+    request_token: options.requestToken === undefined ? "signed-public-target" : options.requestToken,
   });
   return { calls, elements, tracked };
 }
@@ -115,9 +117,10 @@ test("report request posts only report and requester fields, then confirms succe
   assert.equal(harness.calls[0].init.headers.Authorization, "Bearer member-token");
   const body = JSON.parse(harness.calls[0].init.body);
   assert.deepEqual(Object.keys(body).sort(), [
-    "honeypot", "institution", "page_path", "report_id", "requester_email", "source", "title",
+    "honeypot", "institution", "page_path", "report_id", "request_token", "requester_email", "source", "title",
   ]);
   assert.equal(body.requester_email, "reader@example.com");
+  assert.equal(body.request_token, "signed-public-target");
   assert.equal(body.page_path, "/doc.html");
   assert.equal(harness.elements.reportRequesterEmail.readOnly, true);
   assert.equal(harness.elements.reportRequestSubmit.disabled, true);
@@ -139,4 +142,26 @@ test("report request remains retryable when automatic delivery fails", async () 
   assert.match(harness.elements.reportRequestStatus.className, /\berror\b/u);
   assert.match(harness.elements.reportRequestStatus.textContent, /稍后再试/u);
   assert.equal(harness.tracked.length, 0);
+});
+
+test("a contact report refreshes a missing request token before sending the real application", async () => {
+  const harness = createHarness((url) => {
+    if (url.startsWith("/api/contact-report/item?")) {
+      return {
+        ok: true,
+        async json() { return { item: { request_token: "fresh-signed-target" } }; },
+      };
+    }
+    return {
+      ok: true,
+      async json() { return { ok: true, detail: "申请已提交。", deduplicated: false }; },
+    };
+  }, { requestToken: "" });
+
+  await harness.elements.reportRequestForm.submit();
+
+  assert.equal(harness.calls.length, 2);
+  assert.match(harness.calls[0].url, /^\/api\/contact-report\/item\?/u);
+  assert.equal(harness.calls[1].url, "/api/report-request");
+  assert.equal(JSON.parse(harness.calls[1].init.body).request_token, "fresh-signed-target");
 });

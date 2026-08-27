@@ -147,7 +147,7 @@ assert.match(app, /hotReportPages\[hotReportPageIndex \+ 1\][\s\S]*?requestHotRe
 assert.match(extractFunction(app, "scheduleHotReportSearch"), /hotReportRequestedQuery !== cleanQuery[\s\S]*?hotReportRequestController\.abort\(\)/, "a changed query must cancel an obsolete hot-report page immediately");
 assert.doesNotMatch(extractFunction(app, "requestHotReportPage"), /catch \(error\)[\s\S]*?hotReportItems\.clear\(\)/, "a page request failure must preserve already rendered hot reports");
 assert.match(app, /id="accountAdminHotReportForm"[\s\S]*?name="pdf"/, "the admin UI must expose PDF upload fields");
-assert.match(app, /fetch\(`\$\{workerUrl\}\/account-admin\/hot-report`, \{[\s\S]*?body: formData/, "the admin upload form must call the protected upload endpoint");
+assert.match(app, /url:\s*`\$\{workerUrl\}\/account-admin\/hot-report`/, "the admin upload form must call the protected upload endpoint");
 assert.match(app, /hot-reports\/access\?report_id=/, "hot-report detail pages must query the dedicated access endpoint");
 
 const pdfHandler = extractFunction(worker, "handleHotReportPdf");
@@ -218,6 +218,42 @@ const uploadPromise = vm.runInNewContext(`(async () => {
   function jsonResponse(_request, _env, status, payload) { return { status, payload }; }
   async function requireSuperUser() { return { email: "ADMIN@example.com" }; }
   function randomHex() { return "0123456789abcdef"; }
+  async function sha256Hex() { return "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"; }
+  function cleanAdminUploadId(value) {
+    const id = String(value || "").trim().toLowerCase();
+    return /^upload-[a-f0-9]{32,64}$/.test(id) ? id : "";
+  }
+  function requestedAdminUploadId(_request, _form, fallback = "") {
+    return fallback || "upload-00000000000000000000000000000001";
+  }
+  function requestedAdminUploadFingerprint() { return ""; }
+  async function reserveAdminUpload(_env, uploadId, kind) {
+    return {
+      action: "reserved",
+      uploadId,
+      owner: "owner",
+      startedAt: Date.now(),
+      record: { upload_id: uploadId, kind, status: "validating", stage: "validating" },
+    };
+  }
+  function adminUploadReplayResponse() { return null; }
+  async function updateAdminUploadRecord(_env, reservation, status, fields = {}) {
+    reservation.record = { ...reservation.record, ...fields, status, stage: fields.stage || status };
+    return reservation.record;
+  }
+  async function failAdminUploadRecord(_env, reservation, error, stage = "failed") {
+    if (!reservation) return null;
+    reservation.record = { ...reservation.record, status: "failed", stage, detail: String(error && error.message || error) };
+    return reservation.record;
+  }
+  async function completeAdminUploadRecord(_env, reservation, result) {
+    const record = await updateAdminUploadRecord(_env, reservation, "completed", { stage: "completed", result });
+    return { record, persisted: true };
+  }
+  function publicAdminUpload(value) { return value || null; }
+  function scheduleAdminUploadMaintenance() { return Promise.resolve([]); }
+  async function repairAdminUploadCompletion() { return null; }
+  async function repairHotReportPublicIndexIfNeeded() { return null; }
   function hotReportPdfKey(id) { return "pdf/" + id; }
   function hotReportItemKey(id) { return "item/" + id; }
   function contentDisposition(filename) { return "attachment; filename=" + filename; }
@@ -229,6 +265,11 @@ const uploadPromise = vm.runInNewContext(`(async () => {
   async function enforceHotReportStorageLimit() { return { total_size_bytes: 42 }; }
   async function upsertHotReportPublicIndexItem() { return null; }
   async function markHotReportPublicIndexStale() { return null; }
+  async function markHotReportPublicIndexStaleForError() { return null; }
+  async function r2GetJsonObjectStrict(env, key) {
+    const object = await env.REPORT_BUCKET.head(key);
+    return object ? { object, value: JSON.parse(String(object.body || "{}")) } : null;
+  }
   function publicHotReportItem(row) { return row; }
   ${extractFunction(worker, "safeFilename")}
   ${extractFunction(worker, "safePdfFilename")}
@@ -252,12 +293,26 @@ const uploadPromise = vm.runInNewContext(`(async () => {
   }
   function testEnv(options = {}) {
     const calls = { puts: [], deletes: [] };
+    const objects = new Map();
     const env = {
       failMetadata: Boolean(options.failMetadata),
       calls,
       REPORT_BUCKET: {
-        async put(...args) { calls.puts.push(args); },
-        async delete(...args) { calls.deletes.push(args); },
+        async head(key) { return objects.get(key) || null; },
+        async put(key, value, putOptions = {}) {
+          if (env.failMetadata && key.startsWith("item/")) throw new Error("metadata failed");
+          calls.puts.push([key, value, putOptions]);
+          const object = {
+            key,
+            body: value,
+            size: key.startsWith("pdf/") ? Number(value.size || 0) : String(value).length,
+            etag: "etag-" + calls.puts.length,
+            customMetadata: putOptions.customMetadata || {},
+          };
+          objects.set(key, object);
+          return object;
+        },
+        async delete(...args) { calls.deletes.push(args); objects.delete(args[0]); },
       },
     };
     return env;

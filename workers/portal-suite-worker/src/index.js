@@ -184,6 +184,36 @@ const HOT_REPORT_ORPHAN_GRACE_MS = 60 * 60 * 1000;
 const HOT_REPORT_DELETING_STALE_MS = 15 * 60 * 1000;
 const HOT_REPORT_MIN_MONTHS = 3;
 const HOT_REPORT_REQUIRED_PLAN = "3个月会员";
+const ADMIN_UPLOAD_PREFIX = "_admin-uploads/v1";
+const ADMIN_UPLOAD_ID_PATTERN = /^(?:[a-f0-9]{8}-[a-f0-9]{4}-[1-8][a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}|upload-[a-f0-9]{32,64})$/i;
+const ADMIN_UPLOAD_FINGERPRINT_PATTERN = /^[a-f0-9]{64}$/i;
+const ADMIN_UPLOAD_ACTIVE_STATUSES = new Set(["validating", "uploading", "stored", "indexing"]);
+const ADMIN_UPLOAD_STATUSES = new Set([...ADMIN_UPLOAD_ACTIVE_STATUSES, "completed", "failed"]);
+const ADMIN_UPLOAD_LEASE_MS = 30 * 60 * 1000;
+const ADMIN_UPLOAD_HISTORY_RETENTION_MS = 30 * 24 * 60 * 60 * 1000;
+const ADMIN_UPLOAD_MAINTENANCE_BATCH = 100;
+const ADMIN_UPLOAD_MAINTENANCE_STATE_KEY = `${ADMIN_UPLOAD_PREFIX}/maintenance-state.json`;
+const CONTACT_REPORT_PREFIX = "_contact-reports/v1";
+const CONTACT_REPORT_ITEM_PREFIX = `${CONTACT_REPORT_PREFIX}/items`;
+const CONTACT_REPORT_PDF_PREFIX = `${CONTACT_REPORT_PREFIX}/pdfs`;
+const CONTACT_REPORT_INDEX_KEY = `${CONTACT_REPORT_PREFIX}/index.json`;
+const CONTACT_REPORT_INDEX_VERSION = 1;
+const CONTACT_REPORT_INDEX_MAX_ITEMS = 2000;
+const CONTACT_REPORT_UPLOAD_MAX_BYTES = 95 * 1024 * 1024;
+const CONTACT_REPORT_STORAGE_LIMIT_BYTES = 2 * 1024 * 1024 * 1024;
+const CONTACT_REPORT_ORPHAN_GRACE_MS = 24 * 60 * 60 * 1000;
+const CONTACT_REPORT_ORPHAN_CLEANUP_MAX = 100;
+const CONTACT_REPORT_STORAGE_SCAN_MAX = 5000;
+const CONTACT_REPORT_ORPHAN_CLEANUP_STATE_KEY = `${CONTACT_REPORT_PREFIX}/orphan-cleanup-state.json`;
+const CONTACT_REPORT_INDEX_DIRTY_PREFIX = `${CONTACT_REPORT_PREFIX}/index-dirty`;
+const CONTACT_REPORT_TARGET_TOKEN_TTL_SECONDS = 24 * 60 * 60;
+const REPORT_REQUEST_ADMIN_SCAN_MAX = 5000;
+const REPORT_REQUEST_ADMIN_CURSOR_PATTERN = /^request:([A-Za-z0-9_-]{1,1024})$/;
+const REPORT_REQUEST_ADMIN_INDEX_KEY = "_report-requests/v1/admin-index.json";
+const REPORT_REQUEST_ADMIN_INDEX_VERSION = 1;
+const REPORT_REQUEST_ADMIN_DIRTY_PREFIX = "_report-requests/v1/index-dirty";
+const REPORT_REQUEST_ADMIN_MIGRATION_BATCH = 50;
+const CONTACT_REPORT_SOURCES = new Set([HIBOR_SOURCE, AUTHORITY_SOURCE]);
 const MARKET_VIEW_PREFIX = "_market-views";
 const MARKET_VIEW_ITEM_PREFIX = `${MARKET_VIEW_PREFIX}/items`;
 const MARKET_VIEW_PDF_PREFIX = `${MARKET_VIEW_PREFIX}/pdfs`;
@@ -194,6 +224,7 @@ const MARKET_VIEW_REQUIRED_PLAN = "至少1个月会员";
 const CATALOG_PDF_OVERRIDE_PREFIX = "_catalog-pdf-overrides";
 const CATALOG_PDF_OVERRIDE_ITEM_PREFIX = `${CATALOG_PDF_OVERRIDE_PREFIX}/items`;
 const CATALOG_PDF_OVERRIDE_PDF_PREFIX = `${CATALOG_PDF_OVERRIDE_PREFIX}/pdfs`;
+const CATALOG_PDF_OVERRIDE_LOCK_PREFIX = `${CATALOG_PDF_OVERRIDE_PREFIX}/locks`;
 const CATALOG_PDF_OVERRIDE_MAX_ITEMS = 5000;
 const CATALOG_PDF_OVERRIDE_MAX_BYTES = 95 * 1024 * 1024;
 const CATALOG_PDF_OVERRIDE_HEAD_CONCURRENCY = 20;
@@ -805,7 +836,7 @@ function corsHeaders(request, env) {
   return {
     "Access-Control-Allow-Origin": allowedOrigin(request, env),
     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type, Authorization, Range, X-Portal-Timestamp, X-Portal-Signature",
+    "Access-Control-Allow-Headers": "Content-Type, Authorization, Range, X-Portal-Timestamp, X-Portal-Signature, X-Upload-ID, X-Upload-Fingerprint",
     "Access-Control-Expose-Headers": "Content-Disposition, Content-Length, Content-Range, Accept-Ranges",
     "Vary": "Origin",
   };
@@ -1589,6 +1620,488 @@ async function r2PutJson(env, key, payload) {
     httpMetadata: { contentType: "application/json; charset=utf-8" },
   });
   return payload;
+}
+
+function cleanAdminUploadId(value) {
+  const id = String(value || "").trim();
+  return ADMIN_UPLOAD_ID_PATTERN.test(id) ? id : "";
+}
+
+function requestedAdminUploadId(request, form = null, fallbackValue = "") {
+  const headerValue = String(request && request.headers && request.headers.get("X-Upload-ID") || "").trim();
+  const formValue = String(form && typeof form.get === "function" && form.get("upload_id") || "").trim();
+  if (headerValue && formValue && headerValue !== formValue) {
+    throw new TypeError("上传编号不一致，请重新选择文件后重试。");
+  }
+  const raw = headerValue || formValue;
+  if (raw && !cleanAdminUploadId(raw)) throw new TypeError("上传编号无效，请重新选择文件后重试。");
+  return cleanAdminUploadId(raw) || cleanAdminUploadId(fallbackValue) || `upload-${randomHex(16)}`;
+}
+
+function cleanAdminUploadFingerprint(value) {
+  const fingerprint = String(value || "").trim().toLowerCase();
+  return ADMIN_UPLOAD_FINGERPRINT_PATTERN.test(fingerprint) ? fingerprint : "";
+}
+
+function requestedAdminUploadFingerprint(request, form = null, fallbackValue = "") {
+  const headerValue = String(request && request.headers && request.headers.get("X-Upload-Fingerprint") || "").trim();
+  const formValue = String(form && typeof form.get === "function" && form.get("upload_fingerprint") || "").trim();
+  if (headerValue && formValue && headerValue.toLowerCase() !== formValue.toLowerCase()) {
+    throw new TypeError("上传内容指纹不一致，请重新选择文件后重试。");
+  }
+  const raw = headerValue || formValue || fallbackValue;
+  if (raw && !cleanAdminUploadFingerprint(raw)) throw new TypeError("上传内容指纹无效。");
+  return cleanAdminUploadFingerprint(raw);
+}
+
+function adminUploadStatusKey(value) {
+  const id = cleanAdminUploadId(value);
+  return id ? `${ADMIN_UPLOAD_PREFIX}/items/${id}.json` : "";
+}
+
+function normalizeAdminUploadRecord(value, expectedId = "") {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return null;
+  const uploadId = cleanAdminUploadId(value.upload_id);
+  const status = String(value.status || "").trim().toLowerCase();
+  const kind = cleanHotReportText(value.kind, 48);
+  if (
+    !uploadId
+    || (expectedId && uploadId !== cleanAdminUploadId(expectedId))
+    || !ADMIN_UPLOAD_STATUSES.has(status)
+    || !kind
+  ) return null;
+  return {
+    ...value,
+    version: 1,
+    upload_id: uploadId,
+    kind,
+    status,
+    stage: cleanHotReportText(value.stage || status, 80) || status,
+    detail: cleanHotReportText(value.detail, 500),
+    created_at: String(value.created_at || ""),
+    updated_at: String(value.updated_at || ""),
+    completed_at: String(value.completed_at || ""),
+    failed_at: String(value.failed_at || ""),
+    result: value.result && typeof value.result === "object" && !Array.isArray(value.result)
+      ? value.result
+      : null,
+  };
+}
+
+function publicAdminUpload(value) {
+  const row = normalizeAdminUploadRecord(value, value && value.upload_id);
+  if (!row) return null;
+  return {
+    upload_id: row.upload_id,
+    kind: row.kind,
+    status: row.status,
+    stage: row.stage,
+    created_at: row.created_at,
+    updated_at: row.updated_at,
+    completed_at: row.completed_at,
+    failed_at: row.failed_at,
+    detail: row.detail,
+    result: row.result,
+  };
+}
+
+async function readAdminUploadRecord(env, value) {
+  const uploadId = cleanAdminUploadId(value);
+  const key = adminUploadStatusKey(uploadId);
+  if (!key) return null;
+  const current = await r2GetJsonObjectStrict(env, key);
+  if (!current) return null;
+  const row = normalizeAdminUploadRecord(current.value, uploadId);
+  return row ? { key, object: current.object, row } : null;
+}
+
+function adminUploadLeaseExpired(value, nowMs = Date.now()) {
+  const row = normalizeAdminUploadRecord(value, value && value.upload_id);
+  if (!row || !ADMIN_UPLOAD_ACTIVE_STATUSES.has(row.status)) return false;
+  const updatedAt = Date.parse(String(row.updated_at || row.created_at || ""));
+  return !Number.isFinite(updatedAt) || updatedAt <= nowMs - ADMIN_UPLOAD_LEASE_MS;
+}
+
+async function expireStaleAdminUpload(env, current, nowMs = Date.now()) {
+  if (!current || !adminUploadLeaseExpired(current.row, nowMs)) return current;
+  const now = new Date(nowMs).toISOString();
+  const next = normalizeAdminUploadRecord({
+    ...current.row,
+    status: "failed",
+    stage: "failed",
+    detail: "上传任务因长时间未更新而中断，请重新选择文件上传。",
+    updated_at: now,
+    failed_at: now,
+    completed_at: "",
+  }, current.row.upload_id);
+  const written = await accountBucket(env).put(current.key, JSON.stringify(next), {
+    onlyIf: { etagMatches: String(current.object && current.object.etag || "") },
+    httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "private, no-store" },
+  });
+  if (written === null) return readAdminUploadRecord(env, current.row.upload_id);
+  console.warn("Portal Suite PDF upload lease expired", {
+    upload_id: next.upload_id,
+    kind: next.kind,
+    previous_stage: current.row.stage,
+  });
+  return { key: current.key, object: written, row: next };
+}
+
+async function committedAdminUploadResult(env, value) {
+  const row = normalizeAdminUploadRecord(value, value && value.upload_id);
+  if (!row) return null;
+  if (row.kind === "hot-report") {
+    const digest = await sha256Hex(`portal-hot-report-manual:v1:${row.upload_id}`);
+    const targetId = cleanHotReportId(row.target_id) || `hot:${digest.slice(0, 16)}`;
+    const found = await findHotReportRow(env, targetId);
+    if (!found || cleanAdminUploadId(found.row && found.row.upload_id) !== row.upload_id) return null;
+    return {
+      item: found.item,
+      public_index_update_pending: Boolean(row.public_index_update_pending),
+      retention_cleanup_pending: true,
+    };
+  }
+  if (row.kind === "contact-report") {
+    const source = cleanContactReportSource(row.target_source);
+    const originId = cleanContactReportOriginId(source, row.target_id);
+    if (!source || !originId) return null;
+    const binding = await readContactReportBinding(env, source, originId, { verifyObject: true });
+    if (!binding || binding.row.upload_id !== row.upload_id) return null;
+    let indexUpdatePending = false;
+    try {
+      await upsertContactReportIndex(env, binding.row);
+    } catch (error) {
+      indexUpdatePending = true;
+      await markContactReportIndexDirty(env, binding.row, error && error.message).catch(() => null);
+    }
+    return { item: publicContactReportItem(binding.row), index_update_pending: indexUpdatePending };
+  }
+  if (row.kind === "catalog-report") {
+    const targetId = cleanCatalogReportId(row.target_id);
+    if (!targetId) return null;
+    const override = await readCatalogPdfOverride(env, targetId, { verifyObject: true });
+    if (!override || cleanAdminUploadId(override.row && override.row.upload_id) !== row.upload_id) return null;
+    const hot = override.row.hot_report_id ? await findHotReportRow(env, override.row.hot_report_id) : null;
+    return {
+      item: publicCatalogPdfOverride(override.row),
+      hot_report: hot && hot.item || null,
+      repair_kind: cleanHotReportText(row.repair_kind, 40) || "text_only",
+      retention_cleanup_pending: true,
+    };
+  }
+  return null;
+}
+
+async function reconcileAdminUploadCompletion(env, current) {
+  if (!current || current.row.status === "completed") return current;
+  const result = await committedAdminUploadResult(env, current.row);
+  if (!result) return current;
+  const now = new Date().toISOString();
+  const next = normalizeAdminUploadRecord({
+    ...current.row,
+    status: "completed",
+    stage: "completed",
+    detail: "",
+    result,
+    updated_at: now,
+    completed_at: now,
+    failed_at: "",
+    completion_persist_pending: false,
+  }, current.row.upload_id);
+  const written = await accountBucket(env).put(current.key, JSON.stringify(next), {
+    onlyIf: { etagMatches: String(current.object && current.object.etag || "") },
+    httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "private, no-store" },
+  });
+  if (written === null) return readAdminUploadRecord(env, current.row.upload_id);
+  console.log("Portal Suite PDF upload stage", {
+    upload_id: next.upload_id,
+    kind: next.kind,
+    stage: "completed",
+    status: "completed",
+    reconciled: true,
+  });
+  return { key: current.key, object: written, row: next };
+}
+
+async function completeAdminUploadRecord(env, reservation, result) {
+  try {
+    return {
+      record: await updateAdminUploadRecord(env, reservation, "completed", { stage: "completed", result }),
+      persisted: true,
+    };
+  } catch (error) {
+    const now = new Date().toISOString();
+    const record = normalizeAdminUploadRecord({
+      ...reservation.record,
+      status: "completed",
+      stage: "completed",
+      detail: "上传已完成，状态正在后台核验。",
+      result,
+      updated_at: now,
+      completed_at: now,
+      failed_at: "",
+      completion_persist_pending: true,
+    }, reservation.uploadId);
+    reservation.record = record;
+    console.error("Portal Suite PDF upload completion status write failed", {
+      upload_id: reservation.uploadId,
+      kind: record && record.kind,
+      message: String(error && error.message || error || "unknown error").slice(0, 240),
+    });
+    return { record, persisted: false };
+  }
+}
+
+async function repairAdminUploadCompletion(env, uploadId) {
+  const current = await readAdminUploadRecord(env, uploadId);
+  return current ? reconcileAdminUploadCompletion(env, current) : null;
+}
+
+async function reserveAdminUpload(env, value, kindValue, adminUser, fingerprintValue = "") {
+  const uploadId = cleanAdminUploadId(value);
+  const kind = cleanHotReportText(kindValue, 48);
+  const fingerprint = cleanAdminUploadFingerprint(fingerprintValue);
+  if (!uploadId || !kind) throw new TypeError("上传编号无效，请重新选择文件后重试。");
+  const key = adminUploadStatusKey(uploadId);
+  for (let attempt = 0; attempt < 4; attempt += 1) {
+    let current = await readAdminUploadRecord(env, uploadId);
+    if (current) {
+      if (current.row.status !== "completed") {
+        current = await reconcileAdminUploadCompletion(env, current) || current;
+      }
+      if (adminUploadLeaseExpired(current.row)) {
+        current = await expireStaleAdminUpload(env, current) || current;
+      }
+      if (current.row.kind !== kind) {
+        return { action: "conflict", uploadId, key, record: current.row };
+      }
+      if (
+        fingerprint
+        && cleanAdminUploadFingerprint(current.row.fingerprint)
+        && cleanAdminUploadFingerprint(current.row.fingerprint) !== fingerprint
+      ) {
+        return { action: "conflict", uploadId, key, record: current.row };
+      }
+      if (current.row.status === "completed") {
+        return { action: "completed", uploadId, key, record: current.row };
+      }
+      if (current.row.status === "failed") {
+        return { action: "failed", uploadId, key, record: current.row };
+      }
+      return { action: "pending", uploadId, key, record: current.row };
+    }
+    const now = new Date().toISOString();
+    const owner = randomHex(12);
+    const record = normalizeAdminUploadRecord({
+      version: 1,
+      upload_id: uploadId,
+      kind,
+      status: "validating",
+      stage: "validating",
+      detail: "",
+      result: null,
+      fingerprint,
+      owner,
+      uploaded_by: normalizeEmail(adminUser && adminUser.email),
+      created_at: now,
+      updated_at: now,
+      completed_at: "",
+      failed_at: "",
+    }, uploadId);
+    const written = await accountBucket(env).put(key, JSON.stringify(record), {
+      onlyIf: { etagDoesNotMatch: "*" },
+      httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "private, no-store" },
+    });
+    if (written !== null) {
+      console.log("Portal Suite PDF upload stage", {
+        upload_id: uploadId,
+        kind,
+        stage: "validating",
+        status: "validating",
+        duration_ms: 0,
+      });
+      return { action: "reserved", uploadId, key, owner, record, startedAt: Date.now() };
+    }
+  }
+  throw new Error("上传状态刚刚发生变化，请检查处理结果。");
+}
+
+async function updateAdminUploadRecord(env, reservation, statusValue, fields = {}) {
+  if (!reservation || reservation.action !== "reserved") throw new Error("上传状态所有权无效。");
+  const status = String(statusValue || "").trim().toLowerCase();
+  if (!ADMIN_UPLOAD_STATUSES.has(status)) throw new Error("上传状态无效。");
+  for (let attempt = 0; attempt < 4; attempt += 1) {
+    const current = await readAdminUploadRecord(env, reservation.uploadId);
+    if (
+      !current
+      || String(current.row.owner || "") !== String(reservation.owner || "")
+      || current.row.kind !== reservation.record.kind
+    ) throw new Error("上传状态所有权已变化，请检查处理结果。");
+    const now = new Date().toISOString();
+    const next = normalizeAdminUploadRecord({
+      ...current.row,
+      ...fields,
+      status,
+      stage: cleanHotReportText(fields.stage || status, 80) || status,
+      updated_at: now,
+      completed_at: status === "completed" ? now : String(current.row.completed_at || ""),
+      failed_at: status === "failed" ? now : String(current.row.failed_at || ""),
+      detail: status === "failed"
+        ? cleanHotReportText(fields.detail || "上传失败，请稍后重试。", 500)
+        : cleanHotReportText(fields.detail, 500),
+    }, reservation.uploadId);
+    const written = await accountBucket(env).put(current.key, JSON.stringify(next), {
+      onlyIf: { etagMatches: String(current.object && current.object.etag || "") },
+      httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "private, no-store" },
+    });
+    if (written !== null) {
+      reservation.record = next;
+      console.log("Portal Suite PDF upload stage", {
+        upload_id: reservation.uploadId,
+        kind: next.kind,
+        stage: next.stage,
+        status: next.status,
+        duration_ms: Math.max(0, Date.now() - Number(reservation.startedAt || Date.now())),
+      });
+      return next;
+    }
+  }
+  throw new Error("上传状态更新冲突，请检查处理结果。");
+}
+
+async function failAdminUploadRecord(env, reservation, error, stage = "failed") {
+  if (!reservation || reservation.action !== "reserved") return null;
+  try {
+    return await updateAdminUploadRecord(env, reservation, "failed", {
+      stage,
+      detail: String(error && error.message || error || "上传失败，请稍后重试。"),
+    });
+  } catch (statusError) {
+    console.error("Portal Suite PDF upload status failure", {
+      upload_id: reservation.uploadId,
+      kind: reservation.record && reservation.record.kind,
+      stage,
+      message: String(statusError && statusError.message || statusError || "unknown error").slice(0, 240),
+    });
+    return null;
+  }
+}
+
+function adminUploadReplayResponse(request, env, reservation) {
+  const upload = publicAdminUpload(reservation && reservation.record);
+  if (!reservation || reservation.action === "reserved") return null;
+  if (reservation.action === "completed") {
+    return jsonResponse(request, env, 200, {
+      ok: true,
+      deduplicated: true,
+      ...(reservation.record.result || {}),
+      upload,
+    });
+  }
+  if (reservation.action === "pending") {
+    return jsonResponse(request, env, 202, {
+      ok: true,
+      pending: true,
+      deduplicated: true,
+      upload,
+    });
+  }
+  const status = reservation.action === "conflict" ? 409 : 409;
+  return jsonResponse(request, env, status, {
+    ok: false,
+    deduplicated: true,
+    detail: reservation.action === "conflict"
+      ? "该上传编号已用于其他入库任务，请重新选择文件。"
+      : (reservation.record.detail || "上次上传失败，请确认后重新发起一个上传任务。"),
+    upload,
+  });
+}
+
+function scheduleAdminUploadMaintenance(ctx, details, taskFactories) {
+  const factories = Array.isArray(taskFactories) ? taskFactories.filter((factory) => typeof factory === "function") : [];
+  const task = Promise.allSettled(factories.map((factory) => Promise.resolve().then(factory)))
+    .then((results) => {
+      results.forEach((result, index) => {
+        if (result.status !== "rejected") return;
+        console.error("Portal Suite PDF upload background task failed", {
+          upload_id: cleanAdminUploadId(details && details.upload_id),
+          kind: cleanHotReportText(details && details.kind, 48),
+          task_index: index,
+          message: String(result.reason && result.reason.message || result.reason || "unknown error").slice(0, 240),
+        });
+      });
+      return results;
+    });
+  if (ctx && typeof ctx.waitUntil === "function") ctx.waitUntil(task);
+  return task;
+}
+
+async function handleAccountAdminUploadStatus(request, env) {
+  try {
+    await requireSuperUser(request, env);
+  } catch (error) {
+    return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
+  }
+  const uploadId = cleanAdminUploadId(new URL(request.url).searchParams.get("upload_id"));
+  if (!uploadId) return jsonResponse(request, env, 400, { detail: "上传编号无效。" });
+  try {
+    let current = await readAdminUploadRecord(env, uploadId);
+    if (!current) return jsonResponse(request, env, 404, { detail: "未找到这次上传任务。" });
+    if (current.row.status !== "completed") {
+      current = await reconcileAdminUploadCompletion(env, current) || current;
+    }
+    if (adminUploadLeaseExpired(current.row)) {
+      current = await expireStaleAdminUpload(env, current) || current;
+    }
+    return jsonResponse(request, env, 200, { ok: true, upload: publicAdminUpload(current.row) });
+  } catch (error) {
+    return jsonResponse(request, env, 503, { detail: error.message || "上传状态暂时无法读取。" });
+  }
+}
+
+async function maintainAdminUploadRecords(env) {
+  const state = await safeR2GetJson(env, ADMIN_UPLOAD_MAINTENANCE_STATE_KEY);
+  const cursor = String(state && state.cursor || "") || undefined;
+  const listed = await accountBucket(env).list({
+    prefix: `${ADMIN_UPLOAD_PREFIX}/items/`,
+    limit: ADMIN_UPLOAD_MAINTENANCE_BATCH,
+    cursor,
+  });
+  const nowMs = Date.now();
+  let expiredCount = 0;
+  let deletedCount = 0;
+  for (const object of Array.isArray(listed && listed.objects) ? listed.objects : []) {
+    let current = await readAdminUploadRecord(env, String(object && object.key || "").split("/").pop().replace(/\.json$/i, ""));
+    if (!current) continue;
+    if (ADMIN_UPLOAD_ACTIVE_STATUSES.has(current.row.status)) {
+      current = await reconcileAdminUploadCompletion(env, current) || current;
+      if (adminUploadLeaseExpired(current.row, nowMs)) {
+        const expired = await expireStaleAdminUpload(env, current, nowMs);
+        if (expired && expired.row.status === "failed") expiredCount += 1;
+        current = expired || current;
+      }
+    }
+    const finishedAt = Date.parse(String(current.row.completed_at || current.row.failed_at || current.row.updated_at || ""));
+    if (
+      !ADMIN_UPLOAD_ACTIVE_STATUSES.has(current.row.status)
+      && Number.isFinite(finishedAt)
+      && finishedAt <= nowMs - ADMIN_UPLOAD_HISTORY_RETENTION_MS
+    ) {
+      await accountBucket(env).delete(current.key);
+      deletedCount += 1;
+    }
+  }
+  const nextCursor = listed && listed.truncated && listed.cursor ? String(listed.cursor) : "";
+  await r2PutJson(env, ADMIN_UPLOAD_MAINTENANCE_STATE_KEY, {
+    cursor: nextCursor,
+    updated_at: new Date(nowMs).toISOString(),
+  });
+  return {
+    scanned_count: Array.isArray(listed && listed.objects) ? listed.objects.length : 0,
+    expired_count: expiredCount,
+    deleted_count: deletedCount,
+    has_more: Boolean(nextCursor),
+  };
 }
 
 async function safeR2PutJson(env, key, payload) {
@@ -4148,7 +4661,13 @@ async function handleEntitlement(request, env) {
     const user = await currentUserFromRequest(env, request);
     const reportId = String(url.searchParams.get("report_id") || "").trim();
     const source = String(url.searchParams.get("source") || "catalog").trim() || "catalog";
-    const access = await reportAccessForUser(env, user, reportId, source);
+    // Contact-only sources use the same three-month membership policy as the
+    // corresponding PDF endpoint.  Keeping this decision in the shared access
+    // response prevents the detail page from advertising a download that the
+    // Worker will reject one click later.
+    const access = cleanContactReportSource(source)
+      ? await hotReportAccessForUser(env, user)
+      : await reportAccessForUser(env, user, reportId, source);
     return jsonResponse(request, env, 200, {
       user: publicUser(user),
       ...access,
@@ -5398,6 +5917,57 @@ function catalogPdfOverrideItemKey(value) {
   return id ? `${CATALOG_PDF_OVERRIDE_ITEM_PREFIX}/${id}.json` : "";
 }
 
+function catalogPdfOverrideLockKey(value) {
+  const id = cleanCatalogReportId(value);
+  return id ? `${CATALOG_PDF_OVERRIDE_LOCK_PREFIX}/${id}.json` : "";
+}
+
+async function acquireCatalogPdfOverrideLock(env, idValue, uploadIdValue) {
+  const id = cleanCatalogReportId(idValue);
+  const uploadId = cleanAdminUploadId(uploadIdValue);
+  const key = catalogPdfOverrideLockKey(id);
+  if (!id || !uploadId || !key) throw new TypeError("补传任务编号无效。");
+  for (let attempt = 0; attempt < 6; attempt += 1) {
+    const current = await r2GetJsonObjectStrict(env, key);
+    const currentUploadId = cleanAdminUploadId(current && current.value && current.value.upload_id);
+    if (currentUploadId === uploadId) return { key, row: current.value, object: current.object };
+    if (currentUploadId) {
+      let currentUpload = await readAdminUploadRecord(env, currentUploadId);
+      if (currentUpload && currentUpload.row.status !== "completed") {
+        currentUpload = await reconcileAdminUploadCompletion(env, currentUpload) || currentUpload;
+      }
+      if (currentUpload && adminUploadLeaseExpired(currentUpload.row)) {
+        currentUpload = await expireStaleAdminUpload(env, currentUpload) || currentUpload;
+      }
+      if (currentUpload && ADMIN_UPLOAD_ACTIVE_STATUSES.has(currentUpload.row.status)) {
+        const conflict = new Error("这份报告正在由另一项补传任务处理，请稍后查询状态。");
+        conflict.httpStatus = 409;
+        throw conflict;
+      }
+      if (currentUpload && currentUpload.row.status === "completed") {
+        const committed = await inspectCatalogPdfOverride(env, id);
+        if (committed.valid) {
+          const conflict = new Error("这份报告已经有有效补传 PDF，不能覆盖。");
+          conflict.httpStatus = 409;
+          throw conflict;
+        }
+      }
+    }
+    const now = new Date().toISOString();
+    const row = { version: 1, id, upload_id: uploadId, acquired_at: now, updated_at: now };
+    const written = await accountBucket(env).put(key, JSON.stringify(row), {
+      onlyIf: current && current.object && current.object.etag
+        ? { etagMatches: String(current.object.etag) }
+        : { etagDoesNotMatch: "*" },
+      httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "private, no-store" },
+    });
+    if (written !== null) return { key, row, object: written };
+  }
+  const conflict = new Error("补传任务锁刚刚发生变化，请检查状态后重试。");
+  conflict.httpStatus = 409;
+  throw conflict;
+}
+
 function catalogPdfOverridePdfKey(value, uploadVersion) {
   const id = cleanCatalogReportId(value);
   const version = String(uploadVersion || "").trim().toLowerCase();
@@ -5430,6 +6000,7 @@ function validateCatalogPdfOverride(row, expectedId = "") {
   const uploadedAt = String(row.uploaded_at || "").trim();
   const etag = String(row.etag || "").trim();
   const uploadedBy = normalizeEmail(row.uploaded_by);
+  const uploadId = cleanAdminUploadId(row.upload_id);
   if (
     !id
     || (expectedId && id !== cleanCatalogReportId(expectedId))
@@ -5444,6 +6015,7 @@ function validateCatalogPdfOverride(row, expectedId = "") {
     || !Number.isFinite(Date.parse(uploadedAt))
     || !etag
     || !uploadedBy
+    || (row.upload_id && !uploadId)
     || String(row.source || "") !== "catalog-pdf-override"
     || Boolean(hotReportId) !== Boolean(hotReportGeneration)
   ) {
@@ -5460,6 +6032,7 @@ function validateCatalogPdfOverride(row, expectedId = "") {
     filename,
     uploaded_at: uploadedAt,
     uploaded_by: uploadedBy,
+    upload_id: uploadId,
     etag,
   };
 }
@@ -5539,7 +6112,11 @@ function catalogPdfOverrideObjectMatches(row, object) {
     && objectEtag === String(row.etag || "")
     && String(metadata.source || "") === "catalog-pdf-override"
     && cleanCatalogReportId(metadata.report_id) === row.id
-    && String(metadata.version || "").trim().toLowerCase() === row.version;
+    && String(metadata.version || "").trim().toLowerCase() === row.version
+    && (
+      !cleanAdminUploadId(row.upload_id)
+      || cleanAdminUploadId(metadata.upload_id) === cleanAdminUploadId(row.upload_id)
+    );
   if (!baseMatches) return false;
   if (!row.hot_report_id) return true;
   return cleanHotReportId(metadata.hot_report_id) === row.hot_report_id
@@ -5650,7 +6227,7 @@ async function catalogReportPdfDescriptor(env, report, options = {}) {
   const id = cleanCatalogReportId(report && report.id);
   if (!id || !report) return null;
   if (report.available !== false) {
-    return {
+    const native = {
       id,
       available: true,
       manual_pdf: false,
@@ -5661,6 +6238,12 @@ async function catalogReportPdfDescriptor(env, report, options = {}) {
       etag: "",
       version: "",
     };
+    if (options.verifyNativeObject !== true) return native;
+    if (!env.REPORT_BUCKET || typeof env.REPORT_BUCKET.head !== "function") {
+      throw new Error("Report storage is unavailable.");
+    }
+    const nativeObject = await env.REPORT_BUCKET.head(native.object_key);
+    if (nativeObject && Number(nativeObject.size || 0) > 0) return native;
   }
   const override = await readCatalogPdfOverride(env, id, {
     verifyObject: options.verifyObject !== false,
@@ -6000,7 +6583,7 @@ function publicCatalogPdfOverride(row) {
 
 function catalogReportPdfObjectMatches(descriptor, object) {
   if (!descriptor || !object) return false;
-  if (!descriptor.manual_pdf) return true;
+  if (!descriptor.manual_pdf) return Number(object.size || 0) > 0;
   const metadata = object.customMetadata || {};
   return Number(object.size || 0) === Number(descriptor.size_bytes || 0)
     && String(object.etag || "").trim() === String(descriptor.etag || "").trim()
@@ -6084,7 +6667,7 @@ async function handleDownload(request, env, ctx = null) {
   }
   let pdfDescriptor;
   try {
-    pdfDescriptor = await catalogReportPdfDescriptor(env, report, { verifyObject: true });
+    pdfDescriptor = await catalogReportPdfDescriptor(env, report, { verifyObject: true, verifyNativeObject: true });
   } catch (_error) {
     return jsonResponse(request, env, 503, { error: "Download service is temporarily unavailable." });
   }
@@ -7958,19 +8541,43 @@ function catalogOverridePdfInput(input) {
   const originId = cleanHotReportOriginId(input && input.origin_report_id);
   const reportId = cleanCatalogReportId(custom.report_id);
   const version = hotReportArchiveGeneration(custom.version);
-  if (originSource !== "catalog" || !originId || reportId !== cleanCatalogReportId(originId) || !version) {
+  const rawUploadId = String(custom.upload_id || "").trim();
+  const uploadId = cleanAdminUploadId(rawUploadId);
+  // Catalog overrides created before the idempotent admin uploader do not have
+  // an upload_id. Keep those archives readable/upgradable, while rejecting a
+  // malformed id whenever a caller does supply one. The current admin intake
+  // path always supplies an upload_id and verifies that exact value again
+  // before committing its override row.
+  if (
+    originSource !== "catalog"
+    || !originId
+    || reportId !== cleanCatalogReportId(originId)
+    || !version
+    || (rawUploadId && !uploadId)
+  ) {
     throw new Error("Catalog PDF override origin metadata is invalid.");
   }
-  return { report_id: reportId, version };
+  return {
+    report_id: reportId,
+    version,
+    upload_id: uploadId,
+    enforce_attempt_identity: Boolean(uploadId),
+  };
 }
 
-function catalogOverridePdfObjectMatches(object, id, originId) {
+function catalogOverridePdfObjectMatches(object, id, originId, expected = null) {
   if (!hotReportPdfObjectMatchesOrigin(object, id, "catalog", originId)) return false;
   const metadata = object.customMetadata || {};
+  const enforceAttemptIdentity = Boolean(
+    expected
+    && (expected.enforce_attempt_identity === true || cleanAdminUploadId(expected.upload_id)),
+  );
   return String(metadata.source || "") === "catalog-pdf-override"
     && cleanCatalogReportId(metadata.report_id) === cleanCatalogReportId(originId)
     && Boolean(hotReportArchiveGeneration(metadata.version))
-    && Boolean(hotReportArchiveGeneration(metadata.archive_generation));
+    && Boolean(hotReportArchiveGeneration(metadata.archive_generation))
+    && (!enforceAttemptIdentity || hotReportArchiveGeneration(metadata.version) === expected.version)
+    && (!enforceAttemptIdentity || cleanAdminUploadId(metadata.upload_id) === expected.upload_id);
 }
 
 function verifiedHotReportPdfSource(object, id, originSource, originId) {
@@ -7995,7 +8602,7 @@ async function ensureHotReportPdf(env, id, input, now) {
   const overrideInput = catalogOverridePdfInput(input);
   let object = await env.REPORT_BUCKET.head(key);
   if (object) verifiedHotReportPdfSource(object, id, originSource, originId);
-  if (object && (!overrideInput || catalogOverridePdfObjectMatches(object, id, originId))) {
+  if (object && (!overrideInput || catalogOverridePdfObjectMatches(object, id, originId, overrideInput))) {
     return { key, object, created: false, replaced: false };
   }
 
@@ -8033,7 +8640,7 @@ async function ensureHotReportPdf(env, id, input, now) {
     object = await env.REPORT_BUCKET.head(key);
     if (!object || Number(object.size || 0) <= 0) throw new Error("Hot report PDF verification failed.");
     verifiedHotReportPdfSource(object, id, originSource, originId);
-    if (!overrideInput || catalogOverridePdfObjectMatches(object, id, originId)) {
+    if (!overrideInput || catalogOverridePdfObjectMatches(object, id, originId, overrideInput)) {
       return {
         key,
         object,
@@ -9283,9 +9890,10 @@ async function handleInternalPdfStorage(request, env) {
     return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
   }
   try {
-    const [catalog, hotReports] = await Promise.all([
+    const [catalog, hotReports, contactReports] = await Promise.all([
       loadCatalog(env),
       hotReportStorageStats(env),
+      contactReportStorageStats(env),
     ]);
     return jsonResponse(request, env, 200, {
       total_size_bytes: availableCatalogPdfBytes(catalog),
@@ -9293,6 +9901,13 @@ async function handleInternalPdfStorage(request, env) {
       hot_report_size_bytes: hotReports.total_size_bytes,
       hot_report_limit_bytes: hotReports.limit_bytes,
       hot_report_count: hotReports.item_count,
+      contact_report_size_bytes: contactReports.total_size_bytes,
+      contact_report_limit_bytes: contactReports.limit_bytes,
+      contact_report_count: contactReports.item_count,
+      contact_report_scan_complete: contactReports.scan_complete,
+      total_managed_pdf_size_bytes: availableCatalogPdfBytes(catalog)
+        + hotReports.total_size_bytes
+        + contactReports.total_size_bytes,
       updated_at_bjt: String(catalog && catalog.updated_at_bjt || ""),
     });
   } catch (_error) {
@@ -9312,7 +9927,7 @@ async function handleHotReportItem(request, env) {
   }
 }
 
-async function handleAccountAdminHotReportUpload(request, env) {
+async function handleAccountAdminHotReportUpload(request, env, ctx = null) {
   let adminUser;
   try {
     adminUser = await requireSuperUser(request, env);
@@ -9323,35 +9938,49 @@ async function handleAccountAdminHotReportUpload(request, env) {
     return jsonResponse(request, env, 503, { detail: "Report storage is unavailable." });
   }
 
+  let uploadId = "";
+  let uploadFingerprint = "";
+  let reservation = null;
   let form;
+  let pdfCreated = false;
+  let metadataWritten = false;
+  let pdfKey = "";
   try {
+    uploadId = requestedAdminUploadId(request);
+    uploadFingerprint = requestedAdminUploadFingerprint(request);
+    reservation = await reserveAdminUpload(env, uploadId, "hot-report", adminUser, uploadFingerprint);
+    const replay = adminUploadReplayResponse(request, env, reservation);
+    if (replay) return replay;
     form = await request.formData();
-  } catch (_error) {
-    return jsonResponse(request, env, 400, { detail: "请使用表单上传 PDF。" });
-  }
-  const pdf = form.get("pdf");
-  const title = cleanHotReportText(form.get("title"), 320);
-  if (!title) return jsonResponse(request, env, 400, { detail: "报告标题不能为空。" });
-  if (!pdf || typeof pdf.arrayBuffer !== "function" || typeof pdf.slice !== "function") {
-    return jsonResponse(request, env, 400, { detail: "请选择 PDF 文件。" });
-  }
-  const contentType = String(pdf.type || "").trim().toLowerCase();
-  if (contentType && contentType !== "application/pdf") {
-    return jsonResponse(request, env, 400, { detail: "文件类型必须为 PDF。" });
-  }
-  if (!contentType && !/\.pdf$/i.test(String(pdf.name || "").trim())) {
-    return jsonResponse(request, env, 400, { detail: "无法识别文件类型时，文件名必须以 .pdf 结尾。" });
-  }
-  const size = Math.max(0, Number(pdf.size || 0) || 0);
-  if (!size || size > HOT_REPORT_MAX_PDF_BYTES) {
-    return jsonResponse(request, env, 413, { detail: "PDF 必须不超过 95 MB。" });
-  }
-  try {
+    const resolvedUploadId = requestedAdminUploadId(request, form, uploadId);
+    if (resolvedUploadId !== uploadId) throw new TypeError("上传编号不一致，请重新选择文件后重试。");
+    const resolvedFingerprint = requestedAdminUploadFingerprint(request, form, uploadFingerprint);
+    if (uploadFingerprint && resolvedFingerprint !== uploadFingerprint) {
+      throw new TypeError("上传内容指纹不一致，请重新选择文件后重试。");
+    }
+    const pdf = form.get("pdf");
+    const title = cleanHotReportText(form.get("title"), 320);
+    if (!title) throw new TypeError("报告标题不能为空。");
+    if (!pdf || typeof pdf.arrayBuffer !== "function" || typeof pdf.slice !== "function") {
+      throw new TypeError("请选择 PDF 文件。");
+    }
+    const contentType = String(pdf.type || "").trim().toLowerCase();
+    if (contentType && contentType !== "application/pdf") throw new TypeError("文件类型必须为 PDF。");
+    if (!contentType && !/\.pdf$/i.test(String(pdf.name || "").trim())) {
+      throw new TypeError("无法识别文件类型时，文件名必须以 .pdf 结尾。");
+    }
+    const size = Math.max(0, Number(pdf.size || 0) || 0);
+    if (!size || size > HOT_REPORT_MAX_PDF_BYTES) {
+      const sizeError = new Error("PDF 必须不超过 95 MB。");
+      sizeError.httpStatus = 413;
+      throw sizeError;
+    }
     const magicBytes = new Uint8Array(await pdf.slice(0, 5).arrayBuffer());
     const magic = String.fromCharCode(...magicBytes);
-    if (magic !== "%PDF-") return jsonResponse(request, env, 400, { detail: "文件内容不是有效 PDF。" });
+    if (magic !== "%PDF-") throw new TypeError("文件内容不是有效 PDF。");
 
-    const id = `hot:${randomHex(8)}`;
+    const idDigest = await sha256Hex(`portal-hot-report-manual:v1:${uploadId}`);
+    const id = `hot:${idDigest.slice(0, 16)}`;
     const now = new Date().toISOString();
     const date = cleanHotReportText(form.get("date"), 10);
     const row = {
@@ -9373,27 +10002,55 @@ async function handleAccountAdminHotReportUpload(request, env) {
       updated_at: now,
       retention_state: "active",
       uploaded_by: normalizeEmail(adminUser.email),
+      upload_id: uploadId,
     };
-    const pdfKey = hotReportPdfKey(id);
-    await env.REPORT_BUCKET.put(pdfKey, pdf, {
-      httpMetadata: {
-        contentType: "application/pdf",
-        cacheControl: "no-store, private",
-        contentDisposition: contentDisposition(row.filename),
-      },
-      customMetadata: { report_id: id, uploaded_at: now },
+    await updateAdminUploadRecord(env, reservation, "uploading", {
+      stage: "uploading",
+      target_source: HOT_REPORT_SOURCE,
+      target_id: id,
     });
-    try {
-      await r2PutJson(env, hotReportItemKey(id), row);
-    } catch (metadataError) {
-      try {
-        await env.REPORT_BUCKET.delete(pdfKey);
-      } catch (cleanupError) {
-        throw new Error(`热门报告元数据写入失败，且 PDF 清理失败：${cleanupError.message || cleanupError}`);
+    pdfKey = hotReportPdfKey(id);
+    const existingPdf = await env.REPORT_BUCKET.head(pdfKey);
+    if (existingPdf) {
+      const existingUploadId = cleanAdminUploadId(existingPdf.customMetadata && existingPdf.customMetadata.upload_id);
+      if (existingUploadId !== uploadId) {
+        const conflict = new Error("该上传目标已经存在，请检查处理结果。");
+        conflict.httpStatus = 409;
+        throw conflict;
       }
-      throw metadataError;
+    } else {
+      const writtenPdf = await env.REPORT_BUCKET.put(pdfKey, pdf, {
+        onlyIf: { etagDoesNotMatch: "*" },
+        httpMetadata: {
+          contentType: "application/pdf",
+          cacheControl: "no-store, private",
+          contentDisposition: contentDisposition(row.filename),
+        },
+        customMetadata: { report_id: id, uploaded_at: now, upload_id: uploadId },
+      });
+      pdfCreated = writtenPdf !== null;
     }
+    const verifiedPdf = await env.REPORT_BUCKET.head(pdfKey);
+    if (!verifiedPdf || Number(verifiedPdf.size || 0) <= 0) throw new Error("热门报告 PDF 写入核验失败。");
+    const itemKey = hotReportItemKey(id);
+    const existingMetadata = await r2GetJsonObjectStrict(env, itemKey);
+    if (existingMetadata) {
+      if (cleanAdminUploadId(existingMetadata.value && existingMetadata.value.upload_id) !== uploadId) {
+        const conflict = new Error("该上传目标已经存在，请检查处理结果。");
+        conflict.httpStatus = 409;
+        throw conflict;
+      }
+    } else {
+      const writtenMetadata = await env.REPORT_BUCKET.put(itemKey, JSON.stringify(row), {
+        onlyIf: { etagDoesNotMatch: "*" },
+        httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "no-store" },
+      });
+      if (writtenMetadata === null) throw new Error("热门报告元数据刚刚发生变化，请检查处理结果。");
+      metadataWritten = true;
+    }
+    await updateAdminUploadRecord(env, reservation, "stored", { stage: "stored" });
     let publicIndexUpdate = null;
+    await updateAdminUploadRecord(env, reservation, "indexing", { stage: "indexing" });
     try {
       publicIndexUpdate = await upsertHotReportPublicIndexItem(env, row);
     } catch (error) {
@@ -9403,26 +10060,44 @@ async function handleAccountAdminHotReportUpload(request, env) {
         message: String(error && error.message || error || "unknown error").slice(0, 240),
       });
     }
-    await persistAnalyticsEvent(request, env, {
-      type: "admin_hot_report_upload",
-      path: "/account-admin/hot-report",
-      data: { report_id: id, report_title: title, status: "success" },
-    }, adminUser).catch(() => null);
-    const retention = await enforceHotReportStorageLimit(env).catch((error) => {
-      console.error("Portal Suite hot report retention cleanup failed", {
-        report_id: id,
-        message: String(error && error.message || error || "unknown error").slice(0, 240),
-      });
-      return null;
-    });
+    const item = publicHotReportItem(row);
+    const result = {
+      item,
+      public_index_update_pending: !publicIndexUpdate,
+      retention_cleanup_pending: true,
+    };
+    reservation.record.public_index_update_pending = !publicIndexUpdate;
+    const completion = await completeAdminUploadRecord(env, reservation, result);
+    scheduleAdminUploadMaintenance(ctx, { upload_id: uploadId, kind: "hot-report" }, [
+      ...(!completion.persisted ? [() => repairAdminUploadCompletion(env, uploadId)] : []),
+      ...(!publicIndexUpdate ? [() => repairHotReportPublicIndexIfNeeded(env)] : []),
+      () => persistAnalyticsEvent(request, env, {
+        type: "admin_hot_report_upload",
+        path: "/account-admin/hot-report",
+        data: { report_id: id, report_title: title, status: "success" },
+      }, adminUser),
+      () => enforceHotReportStorageLimit(env),
+    ]);
     return jsonResponse(request, env, 201, {
       ok: true,
-      item: publicHotReportItem(row),
-      public_index_update_pending: !publicIndexUpdate,
-      retention_cleanup_pending: !retention,
+      deduplicated: false,
+      ...result,
+      upload: publicAdminUpload(completion.record),
     });
   } catch (error) {
-    return jsonResponse(request, env, 503, { detail: error.message || "热门报告上传失败，请稍后重试。" });
+    if (pdfCreated && !metadataWritten && pdfKey) await env.REPORT_BUCKET.delete(pdfKey).catch(() => null);
+    const failed = await failAdminUploadRecord(
+      env,
+      reservation,
+      error,
+      reservation && reservation.record && reservation.record.stage || "failed",
+    );
+    const status = Number(error && error.httpStatus) || (error instanceof TypeError ? 400 : 503);
+    return jsonResponse(request, env, status, {
+      ok: false,
+      detail: error.message || "热门报告上传失败，请稍后重试。",
+      upload: publicAdminUpload(failed),
+    });
   }
 }
 
@@ -13398,6 +14073,206 @@ function reportRequestAcceptedResponse(request, env, status, deduplicated, detai
   });
 }
 
+function reportRequestAdminIndexEntry(keyValue, value) {
+  const key = String(keyValue || "");
+  const requestId = key.split("/").pop().replace(/\.json$/i, "").toLowerCase();
+  const source = cleanContactReportSource(value && value.source);
+  const reportId = cleanContactReportOriginId(source, value && value.report_id);
+  if (!/^[a-f0-9]{64}$/.test(requestId) || !source || !reportId) return null;
+  return {
+    request_id: requestId,
+    report_id: reportId,
+    source,
+    title: cleanReportRequestText(value && value.title, 240),
+    institution: cleanReportRequestText(value && value.institution, 180),
+    requester_email: normalizeEmail(value && value.requester_email),
+    status: cleanReportRequestText(value && value.status, 40),
+    attempted_at: String(value && value.attempted_at || ""),
+    updated_at: String(value && value.updated_at || ""),
+    fulfillment_status: cleanReportRequestText(value && value.fulfillment_status, 40),
+    target_verified: value && value.target_verified === true,
+  };
+}
+
+function normalizeReportRequestAdminIndex(value) {
+  if (
+    !value
+    || typeof value !== "object"
+    || Array.isArray(value)
+    || Number(value.version) !== REPORT_REQUEST_ADMIN_INDEX_VERSION
+    || !Array.isArray(value.items)
+    || value.items.length > REPORT_REQUEST_ADMIN_SCAN_MAX
+  ) return null;
+  const seen = new Set();
+  const items = [];
+  for (const raw of value.items) {
+    const entry = reportRequestAdminIndexEntry(
+      `${REPORT_REQUEST_PREFIX}/items/${String(raw && raw.request_id || "")}.json`,
+      raw,
+    );
+    if (!entry || seen.has(entry.request_id)) return null;
+    seen.add(entry.request_id);
+    items.push(entry);
+  }
+  items.sort((left, right) => (
+    String(right.attempted_at || "").localeCompare(String(left.attempted_at || ""))
+    || right.request_id.localeCompare(left.request_id)
+  ));
+  return {
+    version: REPORT_REQUEST_ADMIN_INDEX_VERSION,
+    updated_at: String(value.updated_at || ""),
+    migration_complete: value.migration_complete === true,
+    migration_truncated: value.migration_truncated === true,
+    migration_cursor: cleanHotReportText(value.migration_cursor, 1024),
+    items,
+  };
+}
+
+async function readReportRequestAdminIndexObject(env) {
+  const object = await accountBucket(env).get(REPORT_REQUEST_ADMIN_INDEX_KEY);
+  if (!object) return {
+    object: null,
+    index: {
+      version: REPORT_REQUEST_ADMIN_INDEX_VERSION,
+      updated_at: "",
+      migration_complete: false,
+      migration_truncated: false,
+      migration_cursor: "",
+      items: [],
+    },
+  };
+  const index = normalizeReportRequestAdminIndex(JSON.parse(await object.text()));
+  if (!index) throw new Error("申请队列索引校验失败。");
+  return { object, index };
+}
+
+async function upsertReportRequestAdminIndex(env, key, row) {
+  const entry = reportRequestAdminIndexEntry(key, row);
+  if (!entry) return null;
+  for (let attempt = 0; attempt < 6; attempt += 1) {
+    const current = await readReportRequestAdminIndexObject(env);
+    const index = normalizeReportRequestAdminIndex({
+      version: REPORT_REQUEST_ADMIN_INDEX_VERSION,
+      updated_at: new Date().toISOString(),
+      migration_complete: current.index.migration_complete === true,
+      migration_truncated: current.index.migration_truncated === true,
+      migration_cursor: current.index.migration_cursor,
+      items: [entry, ...current.index.items.filter((item) => item.request_id !== entry.request_id)]
+        .slice(0, REPORT_REQUEST_ADMIN_SCAN_MAX),
+    });
+    const written = await accountBucket(env).put(REPORT_REQUEST_ADMIN_INDEX_KEY, JSON.stringify(index), {
+      onlyIf: current.object && current.object.etag
+        ? { etagMatches: String(current.object.etag) }
+        : { etagDoesNotMatch: "*" },
+      httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "private, no-store" },
+    });
+    if (written !== null) return index;
+  }
+  throw new Error("申请队列索引刚刚发生变化。");
+}
+
+function reportRequestAdminDirtyKey(requestIdValue) {
+  const requestId = String(requestIdValue || "").trim().toLowerCase();
+  return /^[a-f0-9]{64}$/.test(requestId)
+    ? `${REPORT_REQUEST_ADMIN_DIRTY_PREFIX}/${requestId}.json`
+    : "";
+}
+
+async function markReportRequestAdminIndexDirty(env, keyValue, reason = "") {
+  const requestId = String(keyValue || "").split("/").pop().replace(/\.json$/i, "").toLowerCase();
+  const key = reportRequestAdminDirtyKey(requestId);
+  if (!key) return false;
+  await r2PutJson(env, key, {
+    version: 1,
+    request_id: requestId,
+    reason: cleanReportRequestText(reason, 240),
+    dirty_at: new Date().toISOString(),
+  });
+  return true;
+}
+
+async function repairReportRequestAdminIndexDirty(env) {
+  const listed = await accountBucket(env).list({ prefix: `${REPORT_REQUEST_ADMIN_DIRTY_PREFIX}/`, limit: 50 });
+  let repairedCount = 0;
+  for (const object of Array.isArray(listed && listed.objects) ? listed.objects : []) {
+    const requestId = String(object && object.key || "").split("/").pop().replace(/\.json$/i, "").toLowerCase();
+    const dirtyKey = reportRequestAdminDirtyKey(requestId);
+    if (!dirtyKey) continue;
+    const recordKey = `${REPORT_REQUEST_PREFIX}/items/${requestId}.json`;
+    const row = await safeR2GetJson(env, recordKey);
+    if (!row) {
+      await accountBucket(env).delete(dirtyKey);
+      continue;
+    }
+    try {
+      await upsertReportRequestAdminIndex(env, recordKey, row);
+      await accountBucket(env).delete(dirtyKey);
+      repairedCount += 1;
+    } catch (_error) {
+      // Keep the marker for the next scheduled repair.
+    }
+  }
+  return {
+    scanned_count: Array.isArray(listed && listed.objects) ? listed.objects.length : 0,
+    repaired_count: repairedCount,
+    has_more: Boolean(listed && listed.truncated),
+  };
+}
+
+async function migrateReportRequestAdminIndexBatch(env) {
+  const base = await readReportRequestAdminIndexObject(env);
+  if (base.index.migration_complete) return base.index;
+  const cursor = base.index.migration_cursor || undefined;
+  const listed = await accountBucket(env).list({
+    prefix: `${REPORT_REQUEST_PREFIX}/items/`,
+    limit: REPORT_REQUEST_ADMIN_MIGRATION_BATCH,
+    cursor,
+  });
+  const entries = (await mapWithConcurrency(
+    Array.isArray(listed && listed.objects) ? listed.objects : [],
+    10,
+    async (object) => reportRequestAdminIndexEntry(object.key, await safeR2GetJson(env, object.key)),
+  )).filter(Boolean);
+  for (let attempt = 0; attempt < 6; attempt += 1) {
+    const current = await readReportRequestAdminIndexObject(env);
+    if (current.index.migration_complete) return current.index;
+    if (String(current.index.migration_cursor || "") !== String(base.index.migration_cursor || "")) {
+      return current.index;
+    }
+    const merged = new Map(current.index.items.map((item) => [item.request_id, item]));
+    entries.forEach((entry) => merged.set(entry.request_id, entry));
+    const allItems = [...merged.values()].sort((left, right) => (
+      String(right.attempted_at || "").localeCompare(String(left.attempted_at || ""))
+      || right.request_id.localeCompare(left.request_id)
+    ));
+    const atCapacity = allItems.length > REPORT_REQUEST_ADMIN_SCAN_MAX
+      || (allItems.length >= REPORT_REQUEST_ADMIN_SCAN_MAX && Boolean(listed && listed.truncated));
+    const migrationComplete = !listed || !listed.truncated || !listed.cursor || atCapacity;
+    const index = normalizeReportRequestAdminIndex({
+      version: REPORT_REQUEST_ADMIN_INDEX_VERSION,
+      updated_at: new Date().toISOString(),
+      migration_complete: migrationComplete,
+      migration_truncated: current.index.migration_truncated || atCapacity,
+      migration_cursor: migrationComplete ? "" : String(listed.cursor),
+      items: allItems.slice(0, REPORT_REQUEST_ADMIN_SCAN_MAX),
+    });
+    const written = await accountBucket(env).put(REPORT_REQUEST_ADMIN_INDEX_KEY, JSON.stringify(index), {
+      onlyIf: current.object && current.object.etag
+        ? { etagMatches: String(current.object.etag) }
+        : { etagDoesNotMatch: "*" },
+      httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "private, no-store" },
+    });
+    if (written !== null) return index;
+  }
+  throw new Error("申请队列迁移索引刚刚发生变化。");
+}
+
+async function repairReportRequestAdminIndexIfNeeded(env) {
+  await repairReportRequestAdminIndexDirty(env);
+  const current = await readReportRequestAdminIndexObject(env);
+  return current.index.migration_complete ? current.index : migrateReportRequestAdminIndexBatch(env);
+}
+
 async function handleReportRequest(request, env) {
   if (!reportRequestOriginAllowed(request, env)) {
     return privateJsonResponse(request, env, 403, { ok: false, detail: "请求来源不允许。" });
@@ -13450,20 +14325,31 @@ async function handleReportRequest(request, env) {
     return privateJsonResponse(request, env, 400, { ok: false, detail: "请填写有效邮箱。" });
   }
   const title = cleanReportRequestText(payload.title, 240);
-  const reportId = cleanReportRequestText(payload.report_id, 180);
+  const rawSource = cleanReportRequestText(payload.source, 100).toLowerCase();
+  const contactSource = cleanContactReportSource(rawSource);
+  const reportId = contactSource
+    ? cleanContactReportOriginId(contactSource, payload.report_id)
+    : cleanReportRequestText(payload.report_id, 180);
   if (!title) {
     return privateJsonResponse(request, env, 400, { ok: false, detail: "缺少报告标题，请刷新页面后重试。" });
+  }
+  if (contactSource) {
+    if (!reportId || !await verifyContactReportTargetToken(env, payload.request_token, contactSource, reportId)) {
+      return privateJsonResponse(request, env, 400, { ok: false, detail: "报告线索已失效，请返回搜索结果后重新申请。" });
+    }
   }
   const record = {
     report_id: reportId,
     title,
-    source: cleanReportRequestText(payload.source, 100),
+    source: contactSource || rawSource,
     institution: cleanReportRequestText(payload.institution, 180),
     page_path: cleanReportRequestPagePath(payload.page_path),
     requester_email: requesterEmail,
     requester_user_id: cleanReportRequestText(user && user.id, 100),
     requester_username: cleanReportRequestText(user && user.username, 80),
     authenticated: Boolean(user),
+    target_verified: Boolean(contactSource),
+    target_verified_at: contactSource ? new Date().toISOString() : "",
   };
 
   try {
@@ -13536,6 +14422,13 @@ async function handleReportRequest(request, env) {
       updated_at: completedAt,
     };
     await r2PutJson(env, key, completed);
+    await upsertReportRequestAdminIndex(env, key, completed).catch((indexError) => {
+      console.error("Portal Suite report request queue index update failed", {
+        request_id: key.split("/").pop().replace(/\.json$/i, ""),
+        message: String(indexError && indexError.message || indexError || "unknown error").slice(0, 240),
+      });
+      return markReportRequestAdminIndexDirty(env, key, indexError && indexError.message).catch(() => null);
+    });
     if (!completed.sent_at) {
       return privateJsonResponse(request, env, 502, {
         ok: false,
@@ -13556,6 +14449,1076 @@ async function handleReportRequest(request, env) {
       retryable: true,
       detail: "申请服务暂时不可用，请稍后重试。",
     });
+  }
+}
+
+function cleanContactReportSource(value) {
+  const source = String(value || "").trim().toLowerCase();
+  return CONTACT_REPORT_SOURCES.has(source) ? source : "";
+}
+
+function cleanContactReportOriginId(sourceValue, value) {
+  const source = cleanContactReportSource(sourceValue);
+  const id = String(value || "").normalize("NFKC").trim();
+  if (source === HIBOR_SOURCE) {
+    const match = id.match(/^report-a:([A-Za-z0-9_-]{1,180})$/);
+    return match ? `report-a:${match[1]}` : "";
+  }
+  if (source === AUTHORITY_SOURCE) {
+    if (/^supplemental:[a-f0-9]{32}$/.test(id)) return id;
+    const parsed = parseAuthorityId(id);
+    return parsed ? parsed.compoundId : "";
+  }
+  return "";
+}
+
+async function createContactReportTargetToken(env, sourceValue, originIdValue) {
+  const source = cleanContactReportSource(sourceValue);
+  const originId = cleanContactReportOriginId(source, originIdValue);
+  if (!source || !originId) return "";
+  const now = Math.floor(Date.now() / 1000);
+  return signAccountPayload(env, {
+    kind: "contact-report-target",
+    source,
+    origin_id: originId,
+    iat: now,
+    exp: now + CONTACT_REPORT_TARGET_TOKEN_TTL_SECONDS,
+  });
+}
+
+async function verifyContactReportTargetToken(env, value, sourceValue, originIdValue) {
+  const source = cleanContactReportSource(sourceValue);
+  const originId = cleanContactReportOriginId(source, originIdValue);
+  if (!source || !originId || !String(value || "").trim()) return false;
+  try {
+    const payload = await verifyAccountPayload(env, String(value || "").trim(), "contact-report-target");
+    return cleanContactReportSource(payload && payload.source) === source
+      && cleanContactReportOriginId(source, payload && payload.origin_id) === originId;
+  } catch (_error) {
+    return false;
+  }
+}
+
+async function contactSearchResponseWithTargetTokens(request, env, source, response) {
+  if (!response || !response.ok) return response;
+  const data = await response.json().catch(() => null);
+  if (!data || !Array.isArray(data.items)) return response;
+  const items = await Promise.all(data.items.map(async (item) => {
+    const targetToken = await createContactReportTargetToken(env, source, item && item.id);
+    return {
+      ...item,
+      target_token: targetToken,
+      request_token: targetToken,
+    };
+  }));
+  return jsonResponse(request, env, response.status, { ...data, items });
+}
+
+async function contactReportIdentityDigest(sourceValue, originIdValue) {
+  const source = cleanContactReportSource(sourceValue);
+  const originId = cleanContactReportOriginId(source, originIdValue);
+  if (!source || !originId) throw new TypeError("报告来源或编号无效。");
+  return sha256Hex(`portal-contact-report:v1:${source}:${originId}`);
+}
+
+async function contactReportItemKey(source, originId) {
+  return `${CONTACT_REPORT_ITEM_PREFIX}/${await contactReportIdentityDigest(source, originId)}.json`;
+}
+
+async function contactReportPdfKey(source, originId) {
+  return `${CONTACT_REPORT_PDF_PREFIX}/${await contactReportIdentityDigest(source, originId)}.pdf`;
+}
+
+function validateContactReportBinding(value, expectedSource = "", expectedOriginId = "") {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return null;
+  const source = cleanContactReportSource(value.source);
+  const originId = cleanContactReportOriginId(source, value.origin_id);
+  const objectKey = String(value.object_key || "").trim();
+  const filename = safePdfFilename(value.filename || "report.pdf");
+  const sizeBytes = Math.floor(Number(value.size_bytes || 0));
+  const uploadedAt = String(value.uploaded_at || "").trim();
+  const etag = String(value.etag || "").trim();
+  const uploadId = cleanAdminUploadId(value.upload_id);
+  if (
+    !source
+    || !originId
+    || (expectedSource && source !== cleanContactReportSource(expectedSource))
+    || (expectedOriginId && originId !== cleanContactReportOriginId(source, expectedOriginId))
+    || !new RegExp(`^${CONTACT_REPORT_PDF_PREFIX}/[a-f0-9]{64}\\.pdf$`).test(objectKey)
+    || filename !== String(value.filename || "")
+    || !Number.isInteger(sizeBytes)
+    || sizeBytes <= 0
+    || sizeBytes > CONTACT_REPORT_UPLOAD_MAX_BYTES
+    || !Number.isFinite(Date.parse(uploadedAt))
+    || !etag
+    || !uploadId
+  ) return null;
+  return {
+    ...value,
+    version: 1,
+    source,
+    origin_id: originId,
+    title: cleanHotReportText(value.title, 320) || originId,
+    institution: cleanHotReportText(value.institution, 160),
+    date: normalizeHotReportDate(value.date),
+    filename,
+    size_bytes: sizeBytes,
+    object_key: objectKey,
+    etag,
+    upload_id: uploadId,
+    uploaded_at: uploadedAt,
+    uploaded_by: normalizeEmail(value.uploaded_by),
+  };
+}
+
+function contactReportObjectMatches(row, object) {
+  if (!row || !object) return false;
+  const metadata = object.customMetadata || {};
+  return Number(object.size || 0) === Number(row.size_bytes || 0)
+    && String(object.etag || "") === String(row.etag || "")
+    && String(metadata.source || "") === "contact-report-upload"
+    && cleanContactReportSource(metadata.target_source) === row.source
+    && cleanContactReportOriginId(row.source, metadata.origin_id) === row.origin_id
+    && cleanAdminUploadId(metadata.upload_id) === row.upload_id;
+}
+
+function publicContactReportItem(value, fallback = {}) {
+  const row = validateContactReportBinding(value, value && value.source, value && value.origin_id);
+  const source = row ? row.source : cleanContactReportSource(fallback.source);
+  const originId = row
+    ? row.origin_id
+    : cleanContactReportOriginId(source, fallback.origin_id || fallback.id);
+  const available = Boolean(row);
+  return {
+    id: originId,
+    origin_id: originId,
+    source,
+    title: row ? row.title : cleanHotReportText(fallback.title, 320),
+    institution: row ? row.institution : cleanHotReportText(fallback.institution, 160),
+    date: row ? row.date : normalizeHotReportDate(fallback.date),
+    filename: row ? row.filename : "",
+    size_bytes: row ? row.size_bytes : 0,
+    uploaded_at: row ? row.uploaded_at : "",
+    available,
+    availability: available ? "available" : "contact_only",
+    download_url: available
+      ? `/api/contact-report/pdf?source=${encodeURIComponent(source)}&id=${encodeURIComponent(originId)}`
+      : "",
+  };
+}
+
+async function readContactReportBinding(env, sourceValue, originIdValue, options = {}) {
+  const source = cleanContactReportSource(sourceValue);
+  const originId = cleanContactReportOriginId(source, originIdValue);
+  if (!source || !originId) return null;
+  const key = await contactReportItemKey(source, originId);
+  const current = await r2GetJsonObjectStrict(env, key);
+  if (!current) return null;
+  const row = validateContactReportBinding(current.value, source, originId);
+  if (!row) return null;
+  if (options.verifyObject === false) return { key, row, object: null, metadata: current.object };
+  const object = await accountBucket(env).head(row.object_key);
+  return contactReportObjectMatches(row, object) ? { key, row, object, metadata: current.object } : null;
+}
+
+async function inspectContactReportBinding(env, sourceValue, originIdValue) {
+  const source = cleanContactReportSource(sourceValue);
+  const originId = cleanContactReportOriginId(source, originIdValue);
+  if (!source || !originId) return { key: "", current: null, row: null, object: null, valid: false };
+  const key = await contactReportItemKey(source, originId);
+  const current = await r2GetJsonObjectStrict(env, key);
+  if (!current) return { key, current: null, row: null, object: null, valid: false };
+  const row = validateContactReportBinding(current.value, source, originId);
+  const object = row ? await accountBucket(env).head(row.object_key) : null;
+  return {
+    key,
+    current,
+    row,
+    object,
+    valid: Boolean(row && contactReportObjectMatches(row, object)),
+  };
+}
+
+function normalizeContactReportIndex(value) {
+  if (
+    !value
+    || typeof value !== "object"
+    || Array.isArray(value)
+    || Number(value.version) !== CONTACT_REPORT_INDEX_VERSION
+    || !Array.isArray(value.items)
+    || value.items.length > CONTACT_REPORT_INDEX_MAX_ITEMS
+  ) return null;
+  const items = [];
+  const seen = new Set();
+  for (const raw of value.items) {
+    const source = cleanContactReportSource(raw && raw.source);
+    const originId = cleanContactReportOriginId(source, raw && (raw.origin_id || raw.id));
+    if (!source || !originId) return null;
+    const key = `${source}\u001f${originId}`;
+    if (seen.has(key)) return null;
+    seen.add(key);
+    items.push({
+      id: originId,
+      origin_id: originId,
+      source,
+      title: cleanHotReportText(raw.title, 320),
+      institution: cleanHotReportText(raw.institution, 160),
+      date: normalizeHotReportDate(raw.date),
+      filename: safePdfFilename(raw.filename || "report.pdf"),
+      size_bytes: Math.max(0, Math.floor(Number(raw.size_bytes || 0))),
+      uploaded_at: String(raw.uploaded_at || ""),
+      available: true,
+      availability: "available",
+      download_url: `/api/contact-report/pdf?source=${encodeURIComponent(source)}&id=${encodeURIComponent(originId)}`,
+    });
+  }
+  return {
+    version: CONTACT_REPORT_INDEX_VERSION,
+    generation: hotReportArchiveGeneration(value.generation),
+    updated_at: String(value.updated_at || ""),
+    items,
+  };
+}
+
+function contactReportIndexPayload(items) {
+  const normalized = normalizeContactReportIndex({
+    version: CONTACT_REPORT_INDEX_VERSION,
+    generation: randomHex(8),
+    updated_at: new Date().toISOString(),
+    items: (Array.isArray(items) ? items : []).slice(0, CONTACT_REPORT_INDEX_MAX_ITEMS),
+  });
+  if (!normalized) throw new Error("Contact report index verification failed.");
+  return normalized;
+}
+
+async function readContactReportIndexObject(env) {
+  const object = await accountBucket(env).get(CONTACT_REPORT_INDEX_KEY);
+  if (!object) return { object: null, index: contactReportIndexPayload([]) };
+  let raw = null;
+  try {
+    raw = JSON.parse(await object.text());
+  } catch (_error) {
+    raw = null;
+  }
+  const index = normalizeContactReportIndex(raw);
+  if (!index) throw new Error("Contact report index verification failed.");
+  return { object, index };
+}
+
+async function upsertContactReportIndex(env, row) {
+  const item = publicContactReportItem(row);
+  if (!item.available) throw new Error("Contact report binding is unavailable.");
+  for (let attempt = 0; attempt < 6; attempt += 1) {
+    const current = await readContactReportIndexObject(env);
+    const payload = contactReportIndexPayload([
+      item,
+      ...current.index.items.filter((candidate) => (
+        candidate.source !== item.source || candidate.origin_id !== item.origin_id
+      )),
+    ]);
+    const onlyIf = current.object && current.object.etag
+      ? { etagMatches: String(current.object.etag) }
+      : { etagDoesNotMatch: "*" };
+    const written = await accountBucket(env).put(CONTACT_REPORT_INDEX_KEY, JSON.stringify(payload), {
+      onlyIf,
+      httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "no-store" },
+    });
+    if (written !== null) return payload;
+  }
+  throw new Error("Contact report index changed concurrently; please retry.");
+}
+
+async function contactReportIndexDirtyKey(source, originId) {
+  return `${CONTACT_REPORT_INDEX_DIRTY_PREFIX}/${await contactReportIdentityDigest(source, originId)}.json`;
+}
+
+async function markContactReportIndexDirty(env, row, reason = "") {
+  const source = cleanContactReportSource(row && row.source);
+  const originId = cleanContactReportOriginId(source, row && row.origin_id);
+  if (!source || !originId) return false;
+  await r2PutJson(env, await contactReportIndexDirtyKey(source, originId), {
+    version: 1,
+    source,
+    origin_id: originId,
+    upload_id: cleanAdminUploadId(row && row.upload_id),
+    reason: cleanHotReportText(reason, 240),
+    dirty_at: new Date().toISOString(),
+  });
+  return true;
+}
+
+async function repairContactReportIndexDirty(env) {
+  const listed = await accountBucket(env).list({ prefix: `${CONTACT_REPORT_INDEX_DIRTY_PREFIX}/`, limit: 50 });
+  let repairedCount = 0;
+  for (const object of Array.isArray(listed && listed.objects) ? listed.objects : []) {
+    const marker = await safeR2GetJson(env, object.key);
+    const source = cleanContactReportSource(marker && marker.source);
+    const originId = cleanContactReportOriginId(source, marker && marker.origin_id);
+    if (!source || !originId) {
+      await accountBucket(env).delete(object.key);
+      continue;
+    }
+    const binding = await readContactReportBinding(env, source, originId, { verifyObject: true });
+    if (!binding) continue;
+    try {
+      await upsertContactReportIndex(env, binding.row);
+      await accountBucket(env).delete(object.key);
+      repairedCount += 1;
+    } catch (_error) {
+      // Keep the marker for the next scheduled repair.
+    }
+  }
+  return {
+    scanned_count: Array.isArray(listed && listed.objects) ? listed.objects.length : 0,
+    repaired_count: repairedCount,
+    has_more: Boolean(listed && listed.truncated),
+  };
+}
+
+function contactReportStorageLimitBytes(env) {
+  const configured = Number(env && env.CONTACT_REPORT_STORAGE_LIMIT_BYTES || 0);
+  return Number.isFinite(configured) && configured > 0
+    ? Math.floor(configured)
+    : CONTACT_REPORT_STORAGE_LIMIT_BYTES;
+}
+
+async function contactReportStorageStats(env) {
+  const objects = [];
+  let cursor = undefined;
+  let scanComplete = true;
+  const seenCursors = new Set();
+  while (objects.length < CONTACT_REPORT_STORAGE_SCAN_MAX) {
+    const listed = await accountBucket(env).list({
+      prefix: `${CONTACT_REPORT_PDF_PREFIX}/`,
+      limit: Math.min(1000, CONTACT_REPORT_STORAGE_SCAN_MAX - objects.length),
+      cursor,
+      include: ["customMetadata"],
+    });
+    objects.push(...(Array.isArray(listed && listed.objects) ? listed.objects : []));
+    if (!listed || !listed.truncated || !listed.cursor) break;
+    if (objects.length >= CONTACT_REPORT_STORAGE_SCAN_MAX) {
+      scanComplete = false;
+      break;
+    }
+    const nextCursor = String(listed.cursor);
+    if (seenCursors.has(nextCursor)) throw new Error("联系获取报告存储分页没有继续前进。");
+    seenCursors.add(nextCursor);
+    cursor = nextCursor;
+  }
+  const totalSizeBytes = objects.reduce((total, object) => {
+    const size = Number(object && object.size || 0);
+    return total + (Number.isFinite(size) && size > 0 ? Math.floor(size) : 0);
+  }, 0);
+  return {
+    total_size_bytes: totalSizeBytes,
+    limit_bytes: contactReportStorageLimitBytes(env),
+    item_count: objects.length,
+    scan_complete: scanComplete,
+    truncated: !scanComplete,
+  };
+}
+
+async function cleanupContactReportOrphans(env) {
+  const state = await safeR2GetJson(env, CONTACT_REPORT_ORPHAN_CLEANUP_STATE_KEY);
+  const cursor = String(state && state.cursor || "") || undefined;
+  const listed = await accountBucket(env).list({
+    prefix: `${CONTACT_REPORT_PDF_PREFIX}/`,
+    limit: CONTACT_REPORT_ORPHAN_CLEANUP_MAX,
+    cursor,
+    include: ["customMetadata"],
+  });
+  const objects = Array.isArray(listed && listed.objects) ? listed.objects : [];
+  const cutoff = Date.now() - CONTACT_REPORT_ORPHAN_GRACE_MS;
+  let deleted = 0;
+  for (const object of objects) {
+    if (deleted >= CONTACT_REPORT_ORPHAN_CLEANUP_MAX) break;
+    const uploaded = Date.parse(String(object && object.uploaded || ""));
+    if (!Number.isFinite(uploaded) || uploaded > cutoff) continue;
+    const metadata = object && object.customMetadata || {};
+    const source = cleanContactReportSource(metadata.target_source);
+    const originId = cleanContactReportOriginId(source, metadata.origin_id);
+    if (!source || !originId) continue;
+    const binding = await readContactReportBinding(env, source, originId, { verifyObject: true });
+    if (binding) continue;
+    const expectedKey = await contactReportPdfKey(source, originId);
+    if (String(object.key || "") !== expectedKey) continue;
+    await accountBucket(env).delete(expectedKey);
+    deleted += 1;
+  }
+  const nextCursor = listed && listed.truncated && listed.cursor ? String(listed.cursor) : "";
+  await r2PutJson(env, CONTACT_REPORT_ORPHAN_CLEANUP_STATE_KEY, {
+    cursor: nextCursor,
+    updated_at: new Date().toISOString(),
+  });
+  return {
+    scanned_count: objects.length,
+    deleted_count: deleted,
+    has_more: Boolean(nextCursor),
+  };
+}
+
+async function handleContactReportItem(request, env, forcedSource = "") {
+  const url = new URL(request.url);
+  const source = cleanContactReportSource(forcedSource || url.searchParams.get("source"));
+  const originId = cleanContactReportOriginId(source, url.searchParams.get("id"));
+  if (!source || !originId) return jsonResponse(request, env, 400, { error: "Invalid report id." });
+  try {
+    const binding = await readContactReportBinding(env, source, originId, { verifyObject: true });
+    const suppliedToken = String(url.searchParams.get("request_token") || url.searchParams.get("target_token") || "").trim();
+    const suppliedVerified = suppliedToken
+      ? await verifyContactReportTargetToken(env, suppliedToken, source, originId)
+      : false;
+    const targetToken = binding
+      ? await createContactReportTargetToken(env, source, originId)
+      : (suppliedVerified ? suppliedToken : "");
+    return jsonResponse(request, env, 200, {
+      item: {
+        ...publicContactReportItem(binding && binding.row, {
+        source,
+        origin_id: originId,
+        title: url.searchParams.get("title"),
+        institution: url.searchParams.get("institution"),
+        date: url.searchParams.get("date"),
+        }),
+        target_token: targetToken,
+        request_token: targetToken,
+      },
+    });
+  } catch (error) {
+    return jsonResponse(request, env, 503, { error: error.message || "Report availability is temporarily unavailable." });
+  }
+}
+
+async function handleContactReportPdf(request, env, forcedSource = "") {
+  let payload = {};
+  try {
+    if (request.method === "POST") payload = await request.json();
+    else {
+      const url = new URL(request.url);
+      payload = { source: url.searchParams.get("source"), id: url.searchParams.get("id") };
+    }
+  } catch (_error) {
+    return jsonResponse(request, env, 400, { error: "Invalid request body." });
+  }
+  const source = cleanContactReportSource(forcedSource || payload.source);
+  const originId = cleanContactReportOriginId(source, payload.id || payload.origin_id);
+  if (!source || !originId) return jsonResponse(request, env, 400, { error: "Invalid report id." });
+  let binding;
+  try {
+    binding = await readContactReportBinding(env, source, originId, { verifyObject: true });
+  } catch (_error) {
+    return jsonResponse(request, env, 503, { error: "Report availability is temporarily unavailable." });
+  }
+  if (!binding) {
+    return jsonResponse(request, env, 403, {
+      error: accessContactMessage(request, "该报告尚未入库。", "This report is not yet available. "),
+    });
+  }
+  let user;
+  let access;
+  try {
+    user = await currentUserFromRequest(env, request);
+    access = await hotReportAccessForUser(env, user);
+  } catch (error) {
+    const status = accessErrorStatus(error);
+    return jsonResponse(request, env, status, {
+      error: status === 503 ? "下载权限暂时无法核验，请稍后重试。" : (error.message || "请先登录。"),
+      required_plan: HOT_REPORT_REQUIRED_PLAN,
+      required_months: HOT_REPORT_MIN_MONTHS,
+    });
+  }
+  if (!access.can_download) {
+    return jsonResponse(request, env, 402, {
+      error: accessContactMessage(
+        request,
+        "该报告需至少 3 个月会员。",
+        "This report requires at least three months of membership. ",
+      ),
+      required_plan: HOT_REPORT_REQUIRED_PLAN,
+      required_months: HOT_REPORT_MIN_MONTHS,
+    });
+  }
+  const object = await accountBucket(env).get(binding.row.object_key);
+  if (!contactReportObjectMatches(binding.row, object)) {
+    return jsonResponse(request, env, 404, { error: "PDF is not currently available.", archived: true });
+  }
+  return new Response(object.body, {
+    headers: {
+      ...corsHeaders(request, env),
+      "Content-Type": "application/pdf",
+      "Content-Disposition": contentDisposition(binding.row.filename),
+      "Cache-Control": "no-store, private",
+      "X-Content-Type-Options": "nosniff",
+      ...(object.size ? { "Content-Length": String(object.size) } : {}),
+    },
+  });
+}
+
+async function markReportRequestFulfilled(env, requestIdValue, binding, uploadId) {
+  const requestId = String(requestIdValue || "").trim().toLowerCase();
+  if (!requestId) return null;
+  if (!/^[a-f0-9]{64}$/.test(requestId)) throw new TypeError("申请记录编号无效。");
+  const key = `${REPORT_REQUEST_PREFIX}/items/${requestId}.json`;
+  for (let attempt = 0; attempt < 4; attempt += 1) {
+    const current = await r2GetJsonObjectStrict(env, key);
+    if (!current) throw new Error("申请记录不存在。");
+    const row = current.value;
+    if (
+      cleanContactReportSource(row && row.source) !== binding.source
+      || cleanContactReportOriginId(binding.source, row && row.report_id) !== binding.origin_id
+    ) throw new Error("申请记录与上传报告不匹配。");
+    const now = new Date().toISOString();
+    const next = {
+      ...row,
+      fulfillment_status: "available",
+      fulfilled_at: now,
+      fulfilled_upload_id: cleanAdminUploadId(uploadId),
+      updated_at: now,
+    };
+    const written = await accountBucket(env).put(key, JSON.stringify(next), {
+      onlyIf: { etagMatches: String(current.object && current.object.etag || "") },
+      httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "private, no-store" },
+    });
+    if (written !== null) {
+      await upsertReportRequestAdminIndex(env, key, next).catch((error) => (
+        markReportRequestAdminIndexDirty(env, key, error && error.message).catch(() => null)
+      ));
+      return next;
+    }
+  }
+  throw new Error("申请记录刚刚发生变化，请稍后重试。");
+}
+
+async function verifyLegacyReportRequestForUpload(env, requestIdValue, source, originId, targetToken) {
+  const requestId = String(requestIdValue || "").trim().toLowerCase();
+  if (!/^[a-f0-9]{64}$/.test(requestId)) throw new TypeError("申请记录编号无效。");
+  const key = `${REPORT_REQUEST_PREFIX}/items/${requestId}.json`;
+  for (let attempt = 0; attempt < 4; attempt += 1) {
+    const current = await r2GetJsonObjectStrict(env, key);
+    const row = current && current.value;
+    if (
+      !row
+      || cleanContactReportSource(row.source) !== source
+      || cleanContactReportOriginId(source, row.report_id) !== originId
+    ) throw new TypeError("申请记录与上传报告不匹配。");
+    if (row.target_verified === true) return row;
+    if (!await verifyContactReportTargetToken(env, targetToken, source, originId)) {
+      throw new TypeError("旧申请需重新确认报告线索后才能上传。");
+    }
+    const now = new Date().toISOString();
+    const next = {
+      ...row,
+      target_verified: true,
+      target_verified_at: now,
+      target_verification_source: "admin-queue-token",
+      updated_at: now,
+    };
+    const written = await accountBucket(env).put(key, JSON.stringify(next), {
+      onlyIf: { etagMatches: String(current.object && current.object.etag || "") },
+      httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "private, no-store" },
+    });
+    if (written !== null) {
+      await upsertReportRequestAdminIndex(env, key, next).catch((error) => (
+        markReportRequestAdminIndexDirty(env, key, error && error.message).catch(() => null)
+      ));
+      return next;
+    }
+  }
+  throw new Error("申请记录刚刚发生变化，请稍后重试。");
+}
+
+async function handleAccountAdminContactReportUpload(request, env, ctx = null) {
+  let adminUser;
+  try {
+    adminUser = await requireSuperUser(request, env);
+  } catch (error) {
+    return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
+  }
+  let uploadId;
+  let uploadFingerprint = "";
+  let reservation = null;
+  let form;
+  let pdfCreated = false;
+  let pdfKey = "";
+  let bindingCommitted = false;
+  try {
+    uploadId = requestedAdminUploadId(request);
+    uploadFingerprint = requestedAdminUploadFingerprint(request);
+    reservation = await reserveAdminUpload(env, uploadId, "contact-report", adminUser, uploadFingerprint);
+    const replay = adminUploadReplayResponse(request, env, reservation);
+    if (replay) return replay;
+    form = await request.formData();
+    const resolvedUploadId = requestedAdminUploadId(request, form, uploadId);
+    if (resolvedUploadId !== uploadId) throw new TypeError("上传编号不一致，请重新选择文件后重试。");
+    const resolvedFingerprint = requestedAdminUploadFingerprint(request, form, uploadFingerprint);
+    if (uploadFingerprint && resolvedFingerprint !== uploadFingerprint) {
+      throw new TypeError("上传内容指纹不一致，请重新选择文件后重试。");
+    }
+    const source = cleanContactReportSource(form.get("source"));
+    const originId = cleanContactReportOriginId(source, form.get("origin_id"));
+    const title = cleanHotReportText(form.get("title"), 320);
+    const institution = cleanHotReportText(form.get("institution"), 160);
+    const date = normalizeHotReportDate(form.get("date"));
+    const requestId = String(form.get("request_id") || "").trim().toLowerCase();
+    const targetToken = String(form.get("target_token") || "").trim();
+    const pdf = form.get("pdf");
+    if (!source || !originId) throw new TypeError("报告来源或编号无效。");
+    if (!title) throw new TypeError("报告标题不能为空。");
+    if (requestId) {
+      if (!/^[a-f0-9]{64}$/.test(requestId)) throw new TypeError("申请记录编号无效。");
+      await verifyLegacyReportRequestForUpload(env, requestId, source, originId, targetToken);
+    } else if (!await verifyContactReportTargetToken(env, targetToken, source, originId)) {
+      throw new TypeError("报告线索已失效，请重新搜索后上传。");
+    }
+    if (!pdf || typeof pdf.arrayBuffer !== "function" || typeof pdf.slice !== "function") {
+      throw new TypeError("请选择 PDF 文件。");
+    }
+    const contentType = String(pdf.type || "").trim().toLowerCase();
+    if (contentType && contentType !== "application/pdf") throw new TypeError("文件类型必须为 PDF。");
+    if (!contentType && !/\.pdf$/i.test(String(pdf.name || "").trim())) {
+      throw new TypeError("无法识别文件类型时，文件名必须以 .pdf 结尾。");
+    }
+    const sizeBytes = Math.max(0, Number(pdf.size || 0) || 0);
+    if (!sizeBytes || sizeBytes > CONTACT_REPORT_UPLOAD_MAX_BYTES) {
+      const sizeError = new Error("PDF 必须不超过 95 MB。");
+      sizeError.httpStatus = 413;
+      throw sizeError;
+    }
+    const magicBytes = new Uint8Array(await pdf.slice(0, 5).arrayBuffer());
+    if (String.fromCharCode(...magicBytes) !== "%PDF-") throw new TypeError("文件内容不是有效 PDF。");
+    const existing = await inspectContactReportBinding(env, source, originId);
+    if (existing.valid) {
+      const conflict = new Error("这份报告已经有有效 PDF，不能覆盖。");
+      conflict.httpStatus = 409;
+      throw conflict;
+    }
+    pdfKey = await contactReportPdfKey(source, originId);
+    const previousPdf = await accountBucket(env).head(pdfKey);
+    const previousSizeBytes = Math.max(0, Number(previousPdf && previousPdf.size || 0) || 0);
+    if (previousPdf) {
+      const previousUploadId = cleanAdminUploadId(previousPdf.customMetadata && previousPdf.customMetadata.upload_id);
+      if (previousUploadId !== uploadId) {
+        const previousUpload = previousUploadId ? await readAdminUploadRecord(env, previousUploadId) : null;
+        if (previousUpload && ADMIN_UPLOAD_ACTIVE_STATUSES.has(previousUpload.row.status)) {
+          const conflict = new Error("这份报告正在由另一项上传处理，请稍后查询状态。");
+          conflict.httpStatus = 409;
+          throw conflict;
+        }
+      }
+    }
+    const storage = await contactReportStorageStats(env);
+    if (!storage.scan_complete) {
+      const capacity = new Error("联系获取报告存储对象过多，容量核验未完成，请先清理或扩容。");
+      capacity.httpStatus = 503;
+      capacity.storage = storage;
+      throw capacity;
+    }
+    const projectedSizeBytes = Math.max(0, storage.total_size_bytes - previousSizeBytes) + sizeBytes;
+    if (projectedSizeBytes > storage.limit_bytes) {
+      const capacity = new Error("联系获取报告存储空间已满，请先扩容后再上传。");
+      capacity.httpStatus = 507;
+      capacity.storage = { ...storage, projected_size_bytes: projectedSizeBytes };
+      throw capacity;
+    }
+    await updateAdminUploadRecord(env, reservation, "uploading", {
+      stage: "uploading",
+      target_source: source,
+      target_id: originId,
+    });
+    if (previousPdf) {
+      const previousUploadId = cleanAdminUploadId(previousPdf.customMetadata && previousPdf.customMetadata.upload_id);
+      if (previousUploadId !== uploadId) {
+        const replacedPdf = await accountBucket(env).put(pdfKey, pdf, {
+          onlyIf: { etagMatches: String(previousPdf.etag || "") },
+          httpMetadata: {
+            contentType: "application/pdf",
+            cacheControl: "no-store, private",
+            contentDisposition: contentDisposition(safePdfFilename(pdf.name || title)),
+          },
+          customMetadata: {
+            source: "contact-report-upload",
+            target_source: source,
+            origin_id: originId,
+            upload_id: uploadId,
+          },
+        });
+        if (replacedPdf === null) {
+          const conflict = new Error("这份报告的入库对象刚刚发生变化，请检查状态后重试。");
+          conflict.httpStatus = 409;
+          throw conflict;
+        }
+      }
+    } else {
+      const writtenPdf = await accountBucket(env).put(pdfKey, pdf, {
+        onlyIf: { etagDoesNotMatch: "*" },
+        httpMetadata: {
+          contentType: "application/pdf",
+          cacheControl: "no-store, private",
+          contentDisposition: contentDisposition(safePdfFilename(pdf.name || title)),
+        },
+        customMetadata: {
+          source: "contact-report-upload",
+          target_source: source,
+          origin_id: originId,
+          upload_id: uploadId,
+        },
+      });
+      if (writtenPdf === null) {
+        const conflict = new Error("这份报告的入库对象刚刚发生变化，请检查状态后重试。");
+        conflict.httpStatus = 409;
+        throw conflict;
+      }
+      pdfCreated = true;
+    }
+    const object = await accountBucket(env).head(pdfKey);
+    if (!object || Number(object.size || 0) <= 0) throw new Error("Uploaded PDF verification failed.");
+    const now = new Date().toISOString();
+    const row = validateContactReportBinding({
+      version: 1,
+      source,
+      origin_id: originId,
+      title,
+      institution,
+      date,
+      filename: safePdfFilename(pdf.name || title),
+      size_bytes: Number(object.size || sizeBytes),
+      object_key: pdfKey,
+      etag: String(object.etag || ""),
+      upload_id: uploadId,
+      uploaded_at: now,
+      uploaded_by: normalizeEmail(adminUser.email),
+    }, source, originId);
+    if (!row || !contactReportObjectMatches(row, object)) throw new Error("Uploaded PDF verification failed.");
+    await updateAdminUploadRecord(env, reservation, "stored", { stage: "stored" });
+    const itemKey = existing.key || await contactReportItemKey(source, originId);
+    const writtenBinding = await accountBucket(env).put(itemKey, JSON.stringify(row), {
+      onlyIf: existing.current && existing.current.object && existing.current.object.etag
+        ? { etagMatches: String(existing.current.object.etag) }
+        : { etagDoesNotMatch: "*" },
+      httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "no-store" },
+    });
+    if (writtenBinding === null) {
+      const concurrent = await readContactReportBinding(env, source, originId, { verifyObject: true });
+      if (!concurrent || concurrent.row.upload_id !== uploadId) {
+        const conflict = new Error("这份报告已经有有效 PDF，不能覆盖。");
+        conflict.httpStatus = 409;
+        throw conflict;
+      }
+    }
+    bindingCommitted = true;
+    await updateAdminUploadRecord(env, reservation, "indexing", { stage: "indexing" });
+    let contactIndexUpdatePending = false;
+    try {
+      await upsertContactReportIndex(env, row);
+    } catch (indexError) {
+      contactIndexUpdatePending = true;
+      await markContactReportIndexDirty(env, row, indexError && indexError.message).catch(() => null);
+      console.error("Portal Suite contact report index update failed", {
+        upload_id: uploadId,
+        source,
+        origin_id: originId,
+        message: String(indexError && indexError.message || indexError || "unknown error").slice(0, 240),
+      });
+    }
+    if (requestId) {
+      try {
+        await markReportRequestFulfilled(env, requestId, row, uploadId);
+      } catch (requestError) {
+        console.error("Portal Suite report request fulfillment update failed", {
+          upload_id: uploadId,
+          request_id: requestId,
+          message: String(requestError && requestError.message || requestError || "unknown error").slice(0, 240),
+        });
+      }
+    }
+    const item = publicContactReportItem(row);
+    const result = { item, index_update_pending: contactIndexUpdatePending };
+    const completion = await completeAdminUploadRecord(env, reservation, result);
+    scheduleAdminUploadMaintenance(ctx, { upload_id: uploadId, kind: "contact-report" }, [
+      ...(!completion.persisted ? [() => repairAdminUploadCompletion(env, uploadId)] : []),
+      ...(contactIndexUpdatePending ? [() => repairContactReportIndexDirty(env)] : []),
+      () => persistAnalyticsEvent(request, env, {
+        type: "admin_contact_report_upload",
+        path: "/account-admin/contact-report-pdf",
+        data: { report_id: originId, report_title: title, source, status: "success" },
+      }, adminUser),
+    ]);
+    return jsonResponse(request, env, 201, {
+      ok: true,
+      deduplicated: false,
+      item,
+      index_update_pending: contactIndexUpdatePending,
+      upload: publicAdminUpload(completion.record),
+    });
+  } catch (error) {
+    if (pdfCreated && pdfKey && !bindingCommitted) {
+      await accountBucket(env).delete(pdfKey).catch(() => null);
+    }
+    const failed = await failAdminUploadRecord(env, reservation, error, reservation && reservation.record && reservation.record.stage || "failed");
+    const status = Number(error && error.httpStatus) || (error instanceof TypeError ? 400 : 503);
+    return jsonResponse(request, env, status, {
+      ok: false,
+      detail: error.message || "报告 PDF 入库失败，请稍后重试。",
+      ...(error && error.storage ? { storage: error.storage } : {}),
+      upload: publicAdminUpload(failed),
+    });
+  }
+}
+
+function reportRequestAdminQueueCompare(left, right) {
+  return String(right && right.attempted_at || "").localeCompare(String(left && left.attempted_at || ""))
+    || String(right && right.request_id || "").localeCompare(String(left && left.request_id || ""));
+}
+
+function encodeReportRequestAdminCursor(row, source, query) {
+  if (!row || !/^[a-f0-9]{64}$/.test(String(row.request_id || ""))) return "";
+  return `request:${base64UrlEncodeText(JSON.stringify({
+    attempted_at: String(row.attempted_at || ""),
+    request_id: String(row.request_id || ""),
+    source: cleanContactReportSource(source),
+    query: normalizeText(query),
+  }))}`;
+}
+
+function decodeReportRequestAdminCursor(value, source, query) {
+  const raw = String(value || "").trim();
+  if (!raw) return null;
+  const match = raw.match(REPORT_REQUEST_ADMIN_CURSOR_PATTERN);
+  if (!match) throw new TypeError("申请队列游标无效。");
+  if (/^\d{1,7}$/.test(match[1])) return { offset: Math.max(0, Number(match[1]) || 0) };
+  let parsed = null;
+  try {
+    parsed = JSON.parse(base64UrlDecodeText(match[1]));
+  } catch (_error) {
+    parsed = null;
+  }
+  const requestId = String(parsed && parsed.request_id || "").toLowerCase();
+  const attemptedAt = String(parsed && parsed.attempted_at || "");
+  if (
+    !parsed
+    || !/^[a-f0-9]{64}$/.test(requestId)
+    || cleanContactReportSource(parsed.source) !== cleanContactReportSource(source)
+    || normalizeText(parsed.query) !== normalizeText(query)
+  ) throw new TypeError("申请队列游标无效或筛选条件已变化。");
+  return { attempted_at: attemptedAt, request_id: requestId };
+}
+
+async function listAdminReportRequestQueue(env, sourceValue, queryValue, limitValue, cursorValue = "", ctx = null) {
+  const source = cleanContactReportSource(sourceValue);
+  const query = normalizeText(cleanReportRequestText(queryValue, 160));
+  const limit = Math.max(1, Math.min(200, Math.floor(Number(limitValue) || 100)));
+  const cursor = decodeReportRequestAdminCursor(cursorValue, source, query);
+  const current = await readReportRequestAdminIndexObject(env);
+  if (!current.index.migration_complete) {
+    const repair = Promise.resolve().then(() => repairReportRequestAdminIndexIfNeeded(env));
+    if (ctx && typeof ctx.waitUntil === "function") ctx.waitUntil(repair);
+    else repair.catch(() => null);
+  }
+  const rows = current.index.items.filter((raw) => {
+    const rowSource = cleanContactReportSource(raw && raw.source);
+    const originId = cleanContactReportOriginId(rowSource, raw && raw.report_id);
+    if (!originId || (source && rowSource !== source)) return false;
+    const searchable = normalizeText([raw.title, raw.institution, raw.report_id, raw.requester_email].join(" "));
+    if (query && !query.split(" ").filter(Boolean).every((token) => searchable.includes(token))) return null;
+    return true;
+  });
+  const matched = rows;
+  let startIndex = Math.max(0, Number(cursor && cursor.offset || 0) || 0);
+  if (cursor && !Object.prototype.hasOwnProperty.call(cursor, "offset")) {
+    const exact = matched.findIndex((row) => (
+      row.request_id === cursor.request_id && String(row.attempted_at || "") === cursor.attempted_at
+    ));
+    startIndex = exact >= 0
+      ? exact + 1
+      : Math.max(0, matched.findIndex((row) => reportRequestAdminQueueCompare(row, cursor) > 0));
+    if (startIndex === 0 && matched.length && reportRequestAdminQueueCompare(matched[0], cursor) <= 0) {
+      startIndex = matched.length;
+    }
+  }
+  const pageRows = matched.slice(startIndex, startIndex + limit);
+  const items = await mapWithConcurrency(pageRows, 8, async (row) => {
+    const binding = await readContactReportBinding(env, row.source, row.report_id, { verifyObject: true });
+    const available = Boolean(binding);
+    const needsVerification = !available && row.target_verified !== true;
+    return {
+      ...row,
+      fulfillment_status: available ? "available" : row.fulfillment_status,
+      available,
+      availability: available ? "available" : "contact_only",
+      uploadable: !available,
+      needs_verification: needsVerification,
+      verification_required: needsVerification,
+      target_token: needsVerification
+        ? await createContactReportTargetToken(env, row.source, row.report_id)
+        : "",
+    };
+  });
+  const nextOffset = startIndex + items.length;
+  return {
+    items,
+    total: matched.length,
+    page_size: limit,
+    next_cursor: nextOffset < matched.length
+      ? encodeReportRequestAdminCursor(pageRows[pageRows.length - 1], source, query)
+      : "",
+    has_more: nextOffset < matched.length,
+    scanned_count: pageRows.length,
+    scan_limit: REPORT_REQUEST_ADMIN_SCAN_MAX,
+    index_total: current.index.items.length,
+    index_updated_at: current.index.updated_at,
+    migration_truncated: current.index.migration_truncated === true,
+    index_rebuilding: current.index.migration_complete !== true,
+  };
+}
+
+async function handleAccountAdminReportRequests(request, env, ctx = null) {
+  try {
+    await requireSuperUser(request, env);
+  } catch (error) {
+    return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
+  }
+  const url = new URL(request.url);
+  const rawSource = String(url.searchParams.get("source") || "").trim();
+  if (rawSource && !cleanContactReportSource(rawSource)) {
+    return jsonResponse(request, env, 400, { detail: "报告来源无效。" });
+  }
+  try {
+    const result = await listAdminReportRequestQueue(
+      env,
+      rawSource,
+      url.searchParams.get("q"),
+      url.searchParams.get("limit"),
+      url.searchParams.get("cursor"),
+      ctx,
+    );
+    return jsonResponse(request, env, 200, result);
+  } catch (error) {
+    return jsonResponse(request, env, error instanceof TypeError ? 400 : 503, {
+      detail: error.message || "申请队列暂时无法读取。",
+    });
+  }
+}
+
+function catalogIntakeSearchText(report) {
+  return normalizeText([
+    report && report.id,
+    report && report.title,
+    report && report.title_zh,
+    report && report.filename,
+    report && report.bank,
+    report && report.institution,
+    report && report.date_folder,
+  ].filter(Boolean).join(" "));
+}
+
+async function catalogPdfIntakeCandidates(env, queryValue, pageValue) {
+  const query = normalizeText(cleanHotReportText(queryValue, 160));
+  const tokens = query.split(" ").filter(Boolean);
+  if (!tokens.length) return { items: [], page: 1, total: 0, source: "catalog" };
+  const page = Math.max(1, Math.floor(Number(pageValue) || 1));
+  const catalog = await loadCatalog(env);
+  const matched = (Array.isArray(catalog && catalog.items) ? catalog.items : [])
+    .filter((report) => tokens.every((token) => catalogIntakeSearchText(report).includes(token)));
+  const pageSize = 30;
+  const pageRows = matched.slice((page - 1) * pageSize, page * pageSize);
+  const items = await mapWithConcurrency(pageRows, 8, async (report) => {
+    const id = cleanCatalogReportId(report && report.id);
+    if (!id) return null;
+    let nativeObject = null;
+    if (report.available !== false) {
+      try {
+        nativeObject = await accountBucket(env).head(objectKeyForReport(env, report));
+      } catch (_error) {
+        nativeObject = null;
+      }
+      if (nativeObject && Number(nativeObject.size || 0) > 0) {
+        return {
+          id,
+          source: "catalog",
+          title: reportEnglishTitle(report),
+          title_cn: String(report.title_zh || ""),
+          institution: reportBankLabel(report),
+          date: String(report.date_folder || ""),
+          availability: "available",
+          available: true,
+          uploadable: false,
+        };
+      }
+    }
+    const override = await inspectCatalogPdfOverride(env, id);
+    const repaired = Boolean(override.valid);
+    return {
+      id,
+      source: "catalog",
+      title: reportEnglishTitle(report),
+      title_cn: String(report.title_zh || ""),
+      institution: reportBankLabel(report),
+      date: String(report.date_folder || ""),
+      availability: repaired ? "repaired" : (report.available === false ? "text_only" : "missing"),
+      available: repaired,
+      uploadable: !repaired,
+    };
+  });
+  const visible = items.filter(Boolean);
+  return {
+    items: visible,
+    page,
+    page_size: pageSize,
+    total: matched.length,
+    pages: Math.max(1, Math.ceil(matched.length / pageSize)),
+    has_more: page * pageSize < matched.length,
+    source: "catalog",
+  };
+}
+
+async function contactReportSearchCandidates(request, env, source) {
+  const response = source === HIBOR_SOURCE
+    ? await handleHiborSearch(request, env)
+    : await handleAuthoritySearch(request, env);
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) return { status: response.status, data };
+  const index = (await readContactReportIndexObject(env)).index;
+  const indexed = new Map(index.items.map((item) => [`${item.source}\u001f${item.origin_id}`, item]));
+  const items = await Promise.all((Array.isArray(data.items) ? data.items : []).map(async (item) => {
+    const originId = cleanContactReportOriginId(source, item && item.id);
+    const indexedItem = indexed.get(`${source}\u001f${originId}`);
+    const bound = originId
+      ? await readContactReportBinding(env, source, originId, { verifyObject: true })
+      : null;
+    return {
+      ...item,
+      id: originId || String(item && item.id || ""),
+      source,
+      available: Boolean(bound),
+      availability: bound ? "available" : "contact_only",
+      uploadable: !bound,
+      availability_index_stale: Boolean(indexedItem && !bound),
+      target_token: await createContactReportTargetToken(env, source, originId),
+    };
+  }));
+  return { status: 200, data: { ...data, items } };
+}
+
+async function handleAccountAdminPdfIntakeSearch(request, env) {
+  try {
+    await requireSuperUser(request, env);
+  } catch (error) {
+    return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
+  }
+  const url = new URL(request.url);
+  const source = String(url.searchParams.get("source") || "").trim().toLowerCase();
+  if (!["catalog", HIBOR_SOURCE, AUTHORITY_SOURCE].includes(source)) {
+    return jsonResponse(request, env, 400, { detail: "报告来源无效。" });
+  }
+  try {
+    if (source === "catalog") {
+      const data = await catalogPdfIntakeCandidates(env, url.searchParams.get("q"), url.searchParams.get("page"));
+      return jsonResponse(request, env, 200, data);
+    }
+    const result = await contactReportSearchCandidates(request, env, source);
+    return jsonResponse(request, env, result.status, result.data);
+  } catch (error) {
+    return jsonResponse(request, env, 503, { detail: error.message || "报告入库搜索暂时不可用。" });
   }
 }
 
@@ -15956,7 +17919,7 @@ async function handleAccountAdminUserPasswordReset(request, env) {
   }
 }
 
-async function handleAccountAdminTextOnlyPdf(request, env) {
+async function handleAccountAdminTextOnlyPdf(request, env, ctx = null) {
   let adminUser;
   try {
     adminUser = await requireSuperUser(request, env);
@@ -15973,63 +17936,125 @@ async function handleAccountAdminTextOnlyPdf(request, env) {
     return jsonResponse(request, env, 503, { detail: "Report storage is unavailable." });
   }
 
+  let uploadId = "";
+  let uploadFingerprint = "";
+  let reservation = null;
+  try {
+    uploadId = requestedAdminUploadId(request);
+    uploadFingerprint = requestedAdminUploadFingerprint(request);
+    reservation = await reserveAdminUpload(env, uploadId, "catalog-report", adminUser, uploadFingerprint);
+    const replay = adminUploadReplayResponse(request, env, reservation);
+    if (replay) return replay;
+  } catch (error) {
+    const status = error instanceof TypeError ? 400 : 503;
+    return jsonResponse(request, env, status, { detail: error.message || "上传任务无法创建。" });
+  }
   let form;
   try {
     form = await request.formData();
-  } catch (_error) {
-    return jsonResponse(request, env, 400, { detail: "请使用表单上传 PDF。" });
+    const resolvedUploadId = requestedAdminUploadId(request, form, uploadId);
+    if (resolvedUploadId !== uploadId) throw new TypeError("上传编号不一致，请重新选择文件后重试。");
+    const resolvedFingerprint = requestedAdminUploadFingerprint(request, form, uploadFingerprint);
+    if (uploadFingerprint && resolvedFingerprint !== uploadFingerprint) {
+      throw new TypeError("上传内容指纹不一致，请重新选择文件后重试。");
+    }
+  } catch (error) {
+    const failed = await failAdminUploadRecord(env, reservation, error, "validating");
+    return jsonResponse(request, env, 400, { detail: error.message || "请使用表单上传 PDF。", upload: publicAdminUpload(failed) });
   }
   const id = cleanCatalogReportId(form.get("id"));
   const pdf = form.get("pdf");
-  if (!id) return jsonResponse(request, env, 400, { detail: "报告 id 无效。" });
+  if (!id) {
+    const failed = await failAdminUploadRecord(env, reservation, new TypeError("报告 id 无效。"), "validating");
+    return jsonResponse(request, env, 400, { detail: "报告 id 无效。", upload: publicAdminUpload(failed) });
+  }
   if (!pdf || typeof pdf.arrayBuffer !== "function" || typeof pdf.slice !== "function") {
-    return jsonResponse(request, env, 400, { detail: "请选择 PDF 文件。" });
+    const failed = await failAdminUploadRecord(env, reservation, new TypeError("请选择 PDF 文件。"), "validating");
+    return jsonResponse(request, env, 400, { detail: "请选择 PDF 文件。", upload: publicAdminUpload(failed) });
   }
 
   let catalog;
   try {
     catalog = await loadCatalog(env);
-  } catch (_error) {
-    return jsonResponse(request, env, 503, { detail: "Catalog is unavailable." });
+  } catch (error) {
+    const failed = await failAdminUploadRecord(env, reservation, error, "validating");
+    return jsonResponse(request, env, 503, { detail: "Catalog is unavailable.", upload: publicAdminUpload(failed) });
   }
   const report = findReport(catalog, id);
-  if (!report) return jsonResponse(request, env, 404, { detail: "Report not found." });
+  if (!report) {
+    const failed = await failAdminUploadRecord(env, reservation, new Error("Report not found."), "validating");
+    return jsonResponse(request, env, 404, { detail: "Report not found.", upload: publicAdminUpload(failed) });
+  }
+  let repairKind = "text_only";
   if (report.available !== false) {
-    return jsonResponse(request, env, 409, { detail: "这份报告已经有 PDF，不能通过 Text only 补传入口覆盖。" });
+    let nativeObject = null;
+    try {
+      nativeObject = await env.REPORT_BUCKET.head(objectKeyForReport(env, report));
+    } catch (error) {
+      const failed = await failAdminUploadRecord(env, reservation, error, "validating");
+      return jsonResponse(request, env, 503, { detail: "原始 PDF 状态暂时无法核验。", upload: publicAdminUpload(failed) });
+    }
+    if (nativeObject && Number(nativeObject.size || 0) > 0) {
+      const detail = "这份报告已经有有效 PDF，不能覆盖。";
+      const failed = await failAdminUploadRecord(env, reservation, new Error(detail), "validating");
+      return jsonResponse(request, env, 409, { detail, upload: publicAdminUpload(failed) });
+    }
+    repairKind = "missing_pdf";
   }
 
   const contentType = String(pdf.type || "").trim().toLowerCase();
   if (contentType && contentType !== "application/pdf") {
-    return jsonResponse(request, env, 400, { detail: "文件类型必须为 PDF。" });
+    const failed = await failAdminUploadRecord(env, reservation, new TypeError("文件类型必须为 PDF。"), "validating");
+    return jsonResponse(request, env, 400, { detail: "文件类型必须为 PDF。", upload: publicAdminUpload(failed) });
   }
   if (!contentType && !/\.pdf$/i.test(String(pdf.name || "").trim())) {
-    return jsonResponse(request, env, 400, { detail: "无法识别文件类型时，文件名必须以 .pdf 结尾。" });
+    const detail = "无法识别文件类型时，文件名必须以 .pdf 结尾。";
+    const failed = await failAdminUploadRecord(env, reservation, new TypeError(detail), "validating");
+    return jsonResponse(request, env, 400, { detail, upload: publicAdminUpload(failed) });
   }
   const sizeBytes = Math.max(0, Number(pdf.size || 0) || 0);
   if (!sizeBytes || sizeBytes > CATALOG_PDF_OVERRIDE_MAX_BYTES) {
-    return jsonResponse(request, env, 413, { detail: "PDF 必须不超过 95 MB。" });
+    const failed = await failAdminUploadRecord(env, reservation, new Error("PDF 必须不超过 95 MB。"), "validating");
+    return jsonResponse(request, env, 413, { detail: "PDF 必须不超过 95 MB。", upload: publicAdminUpload(failed) });
   }
   const itemKey = catalogPdfOverrideItemKey(id);
   let existingOverride;
   try {
     existingOverride = await inspectCatalogPdfOverride(env, id);
     if (existingOverride.valid) {
-      return jsonResponse(request, env, 409, { detail: "这份 Text only 报告已经补传过 PDF。" });
+      const detail = "这份报告已经有有效补传 PDF，不能覆盖。";
+      const failed = await failAdminUploadRecord(env, reservation, new Error(detail), "validating");
+      return jsonResponse(request, env, 409, { detail, upload: publicAdminUpload(failed) });
     }
-  } catch (_error) {
-    return jsonResponse(request, env, 503, { detail: "补传状态暂时无法核验，请稍后重试。" });
+  } catch (error) {
+    const failed = await failAdminUploadRecord(env, reservation, error, "validating");
+    return jsonResponse(request, env, 503, { detail: "补传状态暂时无法核验，请稍后重试。", upload: publicAdminUpload(failed) });
   }
 
   let archiveResult = null;
   let metadataWritten = false;
   let metadataEtag = "";
   let committedRow = null;
+  let coreCommitted = false;
   try {
     const magicBytes = new Uint8Array(await pdf.slice(0, 5).arrayBuffer());
     if (String.fromCharCode(...magicBytes) !== "%PDF-") {
-      return jsonResponse(request, env, 400, { detail: "文件内容不是有效 PDF。" });
+      throw new TypeError("文件内容不是有效 PDF。");
     }
 
+    await updateAdminUploadRecord(env, reservation, "uploading", {
+      stage: "uploading",
+      target_source: "catalog",
+      target_id: id,
+      repair_kind: repairKind,
+    });
+    await acquireCatalogPdfOverrideLock(env, id, uploadId);
+    existingOverride = await inspectCatalogPdfOverride(env, id);
+    if (existingOverride.valid) {
+      const conflict = new Error("这份报告已经有有效补传 PDF，不能覆盖。");
+      conflict.httpStatus = 409;
+      throw conflict;
+    }
     const requestedVersion = randomHex(8);
     const filename = safePdfFilename(pdf.name || report.filename || `${id}.pdf`);
     const uploadedAt = new Date().toISOString();
@@ -16048,17 +18073,23 @@ async function handleAccountAdminTextOnlyPdf(request, env) {
         version: requestedVersion,
         uploaded_at: uploadedAt,
         uploaded_by: uploadedBy,
+        upload_id: uploadId,
       },
     });
     const pdfKey = String(archiveResult && archiveResult.pdf_key || "");
     const hotReportId = cleanHotReportId(archiveResult && archiveResult.item && archiveResult.item.id);
     if (!pdfKey || !hotReportId) throw new Error("热门报告自动归档失败。");
     const verifiedPdf = await env.REPORT_BUCKET.head(pdfKey);
+    if (!catalogOverridePdfObjectMatches(verifiedPdf, hotReportId, id, {
+      version: requestedVersion,
+      upload_id: uploadId,
+    })) {
+      const concurrent = new Error("补传 PDF 已被另一项上传更新，请检查最新结果后重试。");
+      concurrent.httpStatus = 409;
+      throw concurrent;
+    }
     const etag = String(verifiedPdf && verifiedPdf.etag || "").trim();
-    const storedVersion = String(verifiedPdf && verifiedPdf.customMetadata && verifiedPdf.customMetadata.version || "")
-      .trim()
-      .toLowerCase();
-    const version = /^[a-f0-9]{16}$/.test(storedVersion) ? storedVersion : requestedVersion;
+    const version = requestedVersion;
     const hotReportGeneration = hotReportArchiveGeneration(
       verifiedPdf && verifiedPdf.customMetadata && verifiedPdf.customMetadata.archive_generation,
     );
@@ -16074,6 +18105,7 @@ async function handleAccountAdminTextOnlyPdf(request, env) {
       etag,
       uploaded_at: uploadedAt,
       uploaded_by: uploadedBy,
+      upload_id: uploadId,
       source: "catalog-pdf-override",
     }, id);
     if (!catalogPdfOverrideObjectMatches(row, verifiedPdf)) {
@@ -16083,6 +18115,8 @@ async function handleAccountAdminTextOnlyPdf(request, env) {
       throw new Error("热门报告归档状态已变化，请重试。");
     }
 
+    await updateAdminUploadRecord(env, reservation, "stored", { stage: "stored" });
+    await updateAdminUploadRecord(env, reservation, "indexing", { stage: "indexing" });
     const writtenMetadata = await env.REPORT_BUCKET.put(itemKey, JSON.stringify(row), {
       onlyIf: existingOverride.current && existingOverride.current.object && existingOverride.current.object.etag
         ? { etagMatches: String(existingOverride.current.object.etag) }
@@ -16091,58 +18125,63 @@ async function handleAccountAdminTextOnlyPdf(request, env) {
     });
     if (writtenMetadata === null) {
       const concurrent = await inspectCatalogPdfOverride(env, id);
-      return jsonResponse(request, env, 409, {
-        detail: concurrent.valid
-          ? "这份 Text only 报告已经补传过 PDF。"
-          : "补传状态刚刚发生变化，请重试。",
-      });
+      const conflict = new Error(concurrent.valid
+        ? "这份报告已经有有效补传 PDF，不能覆盖。"
+        : "补传状态刚刚发生变化，请重试。");
+      conflict.httpStatus = 409;
+      throw conflict;
     }
     metadataWritten = true;
     metadataEtag = String(writtenMetadata && writtenMetadata.etag || "");
     committedRow = row;
-    let committed = await verifyCatalogPdfOverrideCommit(env, row, metadataEtag);
+    const committed = await verifyCatalogPdfOverrideCommit(env, row, metadataEtag);
     if (!committed) {
       throw new Error("Uploaded PDF readback verification failed.");
     }
-
-    const retention = await enforceHotReportStorageLimit(env).catch((retentionError) => {
-      console.error("Portal Suite hot report retention cleanup failed", {
-        report_id: hotReportId,
-        message: String(retentionError && retentionError.message || retentionError || "unknown error").slice(0, 240),
-      });
-      return null;
-    });
-
-    // Retention can run concurrently with this request. The success response is
-    // emitted only while the exact archive generation, PDF object, and override
-    // metadata we committed are still active together.
-    committed = await verifyCatalogPdfOverrideCommit(env, row, metadataEtag);
-    if (!committed) throw new Error("热门报告归档状态已变化，请重试。");
-
-    await persistAnalyticsEvent(request, env, {
-      type: "admin_text_only_pdf_upload",
-      path: "/account-admin/text-only-pdf",
-      data: { report_id: id, report_title: report.title || "", status: "success" },
-    }, adminUser).catch(() => null);
-    return jsonResponse(request, env, 201, {
-      ok: true,
+    coreCommitted = true;
+    const result = {
       item: publicCatalogPdfOverride(committed.row),
       hot_report: archiveResult.item,
-      retention_cleanup_pending: !retention,
+      repair_kind: repairKind,
+      retention_cleanup_pending: true,
+    };
+    const completion = await completeAdminUploadRecord(env, reservation, result);
+    scheduleAdminUploadMaintenance(ctx, { upload_id: uploadId, kind: "catalog-report" }, [
+      ...(!completion.persisted ? [() => repairAdminUploadCompletion(env, uploadId)] : []),
+      () => persistAnalyticsEvent(request, env, {
+        type: "admin_text_only_pdf_upload",
+        path: "/account-admin/text-only-pdf",
+        data: { report_id: id, report_title: report.title || "", status: "success" },
+      }, adminUser),
+      () => enforceHotReportStorageLimit(env),
+    ]);
+    return jsonResponse(request, env, 201, {
+      ok: true,
+      deduplicated: false,
+      ...result,
+      upload: publicAdminUpload(completion.record),
     });
   } catch (error) {
     let cleanupFailed = false;
-    if (metadataWritten && committedRow) {
+    if (metadataWritten && committedRow && !coreCommitted) {
       try {
         cleanupFailed = !await cleanupCatalogPdfOverrideCommit(env, committedRow, metadataEtag);
       } catch (_cleanupError) {
         cleanupFailed = true;
       }
     }
-    return jsonResponse(request, env, 503, {
+    const failed = await failAdminUploadRecord(
+      env,
+      reservation,
+      error,
+      reservation && reservation.record && reservation.record.stage || "failed",
+    );
+    const status = Number(error && error.httpStatus) || (error instanceof TypeError ? 400 : 503);
+    return jsonResponse(request, env, status, {
       detail: cleanupFailed
         ? "补传失败且清理未完成，请联系管理员核验存储。"
         : (error.message || "Text only PDF 补传失败，请稍后重试。"),
+      upload: publicAdminUpload(failed),
     });
   }
 }
@@ -16173,7 +18212,7 @@ async function handleAccountAdminReportPdf(request, env) {
   if (!report) return jsonResponse(request, env, 404, { detail: "Report not found." });
   let pdfDescriptor;
   try {
-    pdfDescriptor = await catalogReportPdfDescriptor(env, report, { verifyObject: true });
+    pdfDescriptor = await catalogReportPdfDescriptor(env, report, { verifyObject: true, verifyNativeObject: true });
   } catch (_error) {
     return jsonResponse(request, env, 503, { detail: "Report PDF status is unavailable." });
   }
@@ -18125,14 +20164,35 @@ async function handleAuthorityItem(request, env) {
   if (!item.id) {
     return jsonResponse(request, env, 404, { error: "Report not found." });
   }
-  return jsonResponse(request, env, 200, { item });
+  try {
+    const binding = await readContactReportBinding(env, AUTHORITY_SOURCE, id, { verifyObject: true });
+    const targetToken = await createContactReportTargetToken(env, AUTHORITY_SOURCE, id);
+    return jsonResponse(request, env, 200, {
+      item: {
+        ...item,
+        ...publicContactReportItem(binding && binding.row, item),
+        kind: item.kind,
+        kind_label: item.kind_label,
+        contact_only: !binding,
+        target_token: targetToken,
+        request_token: targetToken,
+      },
+    });
+  } catch (error) {
+    return jsonResponse(request, env, 503, { error: error.message || "Report availability is temporarily unavailable." });
+  }
 }
 
 async function handleAuthorityPdf(request, env) {
-  return jsonResponse(request, env, 403, {
-    error: `高权报告仅提供检索线索，无法直接下载。请联系 WeChat: ${CONTACT_WECHAT}。`,
-    contact: CONTACT_WECHAT,
-  });
+  return handleContactReportPdf(request, env, AUTHORITY_SOURCE);
+}
+
+async function handleReportAItem(request, env) {
+  return handleContactReportItem(request, env, HIBOR_SOURCE);
+}
+
+async function handleReportAPdf(request, env) {
+  return handleContactReportPdf(request, env, HIBOR_SOURCE);
 }
 
 export default {
@@ -18140,6 +20200,12 @@ export default {
     addAnalyticsDaySummaryEvent,
     emptyAnalyticsDayAccumulator,
     publicAnalyticsDaySummary,
+  }),
+  __adminPdfIntakeTest: Object.freeze({
+    maintainAdminUploadRecords,
+    repairContactReportIndexDirty,
+    repairReportRequestAdminIndexIfNeeded,
+    contactReportStorageStats,
   }),
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
@@ -18386,12 +20452,28 @@ export default {
       return handleAccountAdminReportPdf(request, env);
     }
 
+    if (pathname === "/account-admin/upload-status" && request.method === "GET") {
+      return handleAccountAdminUploadStatus(request, env);
+    }
+
+    if (pathname === "/account-admin/pdf-intake-search" && request.method === "GET") {
+      return handleAccountAdminPdfIntakeSearch(request, env);
+    }
+
+    if (pathname === "/account-admin/report-requests" && request.method === "GET") {
+      return handleAccountAdminReportRequests(request, env, ctx);
+    }
+
+    if (pathname === "/account-admin/contact-report-pdf" && request.method === "POST") {
+      return handleAccountAdminContactReportUpload(request, env, ctx);
+    }
+
     if (pathname === "/account-admin/text-only-pdf" && request.method === "POST") {
-      return handleAccountAdminTextOnlyPdf(request, env);
+      return handleAccountAdminTextOnlyPdf(request, env, ctx);
     }
 
     if (pathname === "/account-admin/hot-report" && request.method === "POST") {
-      return handleAccountAdminHotReportUpload(request, env);
+      return handleAccountAdminHotReportUpload(request, env, ctx);
     }
 
     if (pathname === "/hot-reports" && request.method === "GET") {
@@ -18451,7 +20533,28 @@ export default {
     }
 
     if (pathname === "/report-a/search" && request.method === "GET") {
-      return handleHiborSearch(request, env);
+      return contactSearchResponseWithTargetTokens(
+        request,
+        env,
+        HIBOR_SOURCE,
+        await handleHiborSearch(request, env),
+      );
+    }
+
+    if (pathname === "/report-a/item" && request.method === "GET") {
+      return handleReportAItem(request, env);
+    }
+
+    if (pathname === "/report-a/pdf" && (request.method === "GET" || request.method === "POST")) {
+      return handleReportAPdf(request, env);
+    }
+
+    if (pathname === "/contact-report/item" && request.method === "GET") {
+      return handleContactReportItem(request, env);
+    }
+
+    if (pathname === "/contact-report/pdf" && (request.method === "GET" || request.method === "POST")) {
+      return handleContactReportPdf(request, env);
     }
 
     if (pathname === "/thinktank/search" && request.method === "GET") {
@@ -18467,7 +20570,12 @@ export default {
     }
 
     if (pathname === "/authority/search" && request.method === "GET") {
-      return handleAuthoritySearch(request, env);
+      return contactSearchResponseWithTargetTokens(
+        request,
+        env,
+        AUTHORITY_SOURCE,
+        await handleAuthoritySearch(request, env),
+      );
     }
 
     if (pathname === "/authority/item" && request.method === "GET") {
@@ -18489,6 +20597,10 @@ export default {
       tasks.push(warmThinkTankPdfCache(env));
       tasks.push(enforceHotReportStorageLimit(env));
       tasks.push(repairHotReportPublicIndexIfNeeded(env, { verifyStorage: true }));
+      tasks.push(maintainAdminUploadRecords(env));
+      tasks.push(cleanupContactReportOrphans(env));
+      tasks.push(repairContactReportIndexDirty(env));
+      tasks.push(repairReportRequestAdminIndexIfNeeded(env));
     }
     if (!cron || cron !== "*/30 * * * *") {
       tasks.push(warmNewsfeedCaches(env));

@@ -152,6 +152,53 @@ vm.runInNewContext(`
   function normalizeEmail(value) { return String(value || "").trim().toLowerCase(); }
   let randomHexCounter = 0;
   function randomHex() { randomHexCounter += 1; return randomHexCounter.toString(16).padStart(16, "0"); }
+  function objectKeyForReport(_env, report) { return "reports/" + report.id + ".pdf"; }
+  let uploadCounter = 0;
+  function cleanAdminUploadId(value) {
+    const id = String(value || "").trim().toLowerCase();
+    return /^upload-[a-f0-9]{32,64}$/.test(id) ? id : "";
+  }
+  function requestedAdminUploadId(_request, _form, fallback = "") {
+    if (fallback) return fallback;
+    uploadCounter += 1;
+    return "upload-" + uploadCounter.toString(16).padStart(32, "0");
+  }
+  function requestedAdminUploadFingerprint() { return ""; }
+  async function reserveAdminUpload(_env, uploadId, kind) {
+    return {
+      action: "reserved",
+      uploadId,
+      owner: "owner-" + uploadId,
+      record: { upload_id: uploadId, kind, status: "validating", stage: "validating" },
+      startedAt: Date.now(),
+    };
+  }
+  async function acquireCatalogPdfOverrideLock() { return null; }
+  function adminUploadReplayResponse() { return null; }
+  async function updateAdminUploadRecord(_env, reservation, status, fields = {}) {
+    reservation.record = { ...reservation.record, ...fields, status, stage: fields.stage || status };
+    return reservation.record;
+  }
+  async function failAdminUploadRecord(_env, reservation, error, stage = "failed") {
+    if (!reservation) return null;
+    reservation.record = {
+      ...reservation.record,
+      status: "failed",
+      stage,
+      detail: String(error && error.message || error || "failed"),
+    };
+    return reservation.record;
+  }
+  async function completeAdminUploadRecord(_env, reservation, result) {
+    const record = await updateAdminUploadRecord(_env, reservation, "completed", {
+      stage: "completed",
+      result,
+    });
+    return { record, persisted: true };
+  }
+  async function repairAdminUploadCompletion() { return null; }
+  function publicAdminUpload(value) { return value || null; }
+  function scheduleAdminUploadMaintenance() { return Promise.resolve([]); }
   function findReport(catalog, id) { return (catalog.items || []).find((item) => item.id === id); }
   function jsonResponse(_request, _env, status, body) { return { status, body }; }
   async function requireSuperUser(request) {
@@ -199,7 +246,12 @@ vm.runInNewContext(`
     const pdfKey = "_hot-reports/pdfs/0123456789abcdef.pdf";
     const now = "2026-08-02T00:00:00.000Z";
     let object = await env.REPORT_BUCKET.head(pdfKey);
-    if (!object || object.customMetadata.source !== "catalog-pdf-override") {
+    if (
+      !object
+      || object.customMetadata.source !== "catalog-pdf-override"
+      || object.customMetadata.upload_id !== input.pdf_custom_metadata.upload_id
+      || object.customMetadata.version !== input.pdf_custom_metadata.version
+    ) {
       const generation = randomHex();
       await env.REPORT_BUCKET.put(pdfKey, input.body, {
         onlyIf: object ? { etagMatches: object.etag } : { etagDoesNotMatch: "*" },
@@ -252,6 +304,7 @@ vm.runInNewContext(`
   ${extractFunction(worker, "hotReportSlug")}
   ${extractFunction(worker, "hotReportItemKey")}
   ${extractFunction(worker, "hotReportPdfKey")}
+  ${extractFunction(worker, "hotReportPdfObjectMatchesOrigin")}
   ${extractFunction(worker, "cleanHotReportText")}
   ${extractFunction(worker, "cleanHotReportOriginSource")}
   ${extractFunction(worker, "cleanHotReportOriginId")}
@@ -264,6 +317,7 @@ vm.runInNewContext(`
   ${extractFunction(worker, "catalogPdfOverrideDeletedRow")}
   ${extractFunction(worker, "catalogPdfOverrideTombstoneMatchesArchive")}
   ${extractFunction(worker, "catalogPdfOverrideObjectMatches")}
+  ${extractFunction(worker, "catalogOverridePdfObjectMatches")}
   ${extractFunction(worker, "catalogPdfOverrideArchiveMatches")}
   ${extractFunction(worker, "readCatalogPdfOverride")}
   ${extractFunction(worker, "inspectCatalogPdfOverride")}
@@ -307,7 +361,9 @@ async function upload(bucket, role = "super", fields = {}) {
 
   assert.equal((await upload(createBucket(), "super", { id: "bad" })).status, 400);
   assert.equal((await upload(createBucket(), "super", { id: "cccccccccccccccc" })).status, 404);
-  assert.equal((await upload(createBucket(), "super", { id: "bbbbbbbbbbbbbbbb" })).status, 409);
+  const liveBucket = createBucket();
+  await liveBucket.put("reports/bbbbbbbbbbbbbbbb.pdf", pdfFile());
+  assert.equal((await upload(liveBucket, "super", { id: "bbbbbbbbbbbbbbbb" })).status, 409);
   assert.equal((await upload(createBucket(), "super", {
     pdf: pdfFile({ name: "wrong.txt", type: "text/plain" }),
   })).status, 400);
@@ -471,8 +527,8 @@ async function upload(bucket, role = "super", fields = {}) {
 
   const retentionRaceBucket = createBucket({ invalidateDuringRetention: true });
   const retentionRace = await upload(retentionRaceBucket);
-  assert.equal(retentionRace.status, 503, "the handler must verify the same active generation again after retention");
-  assert.equal(JSON.parse(retentionRaceBucket.objects.get(danglingItemKey).body).state, "deleted");
+  assert.equal(retentionRace.status, 201, "retention is deferred and must not delay or invalidate the core response");
+  assert.notEqual(JSON.parse(retentionRaceBucket.objects.get(danglingItemKey).body).state, "deleted");
   assert.equal(retentionRaceBucket.deletes.filter((key) => key === danglingItemKey).length, 0);
 
   const conflictBucket = createBucket({ metadataConflict: true });
@@ -493,15 +549,20 @@ async function upload(bucket, role = "super", fields = {}) {
   const retainedVersion = failureBucket.objects.get(retainedPdfKey).customMetadata.version;
   failureOptions.metadataFailure = false;
   const retried = await upload(failureBucket);
-  assert.equal(retried.status, 201, "retrying after an override metadata failure must link the retained hot PDF");
+  assert.equal(retried.status, 201, "retrying after an override metadata failure must replace the orphan in place");
   assert.equal(
     [...failureBucket.objects.keys()].filter((key) => key.startsWith("_hot-reports/pdfs/")).length,
     1,
-    "a retry must reuse the durable hot PDF rather than duplicate it",
+    "a retry must keep one deterministic hot PDF key rather than duplicate it",
   );
   const retriedOverrideKey = [...failureBucket.objects.keys()].find((key) => key.startsWith("_catalog-pdf-overrides/items/"));
   const retriedOverride = JSON.parse(failureBucket.objects.get(retriedOverrideKey).body);
-  assert.equal(retriedOverride.version, retainedVersion, "override metadata must reuse the stored PDF version");
+  assert.notEqual(retriedOverride.version, retainedVersion, "a retry must bind the newly selected upload version");
+  assert.equal(
+    retriedOverride.version,
+    failureBucket.objects.get(retainedPdfKey).customMetadata.version,
+    "override metadata must match the final stored PDF version",
+  );
 
   const download = extractFunction(worker, "handleDownload");
   assert.ok(
@@ -532,7 +593,7 @@ async function upload(bucket, role = "super", fields = {}) {
   assert.equal(uiSandbox.result[0].size_bytes, 42);
   assert.equal(uiSandbox.result[1].size_bytes, 10, "an override must not replace a normal catalog PDF");
   assert.match(app, /function initTextOnlyPdfUpload\([\s\S]*?isSuperSession\(\)/);
-  assert.match(app, /fetch\(`\$\{workerUrl\}\/account-admin\/text-only-pdf`/);
+  assert.match(app, /url:\s*`\$\{workerUrl\}\/account-admin\/text-only-pdf`/);
   assert.match(app, /name="pdf"[\s\S]*?accept="application\/pdf,\.pdf"/);
   assert.match(app, /loadCatalogPdfOverrides\(workerUrl\)[\s\S]*?mergeCatalogPdfOverrides/);
 

@@ -863,6 +863,10 @@ jobs:
               "const HOT_REPORT_PAGE_SIZE = 24",
               'params.set("cursor", cursor)',
               "requestHotReportPage",
+              "PDF 入库中心",
+              "account-admin/upload-status",
+              "account-admin/contact-report-pdf",
+              "contact-report/item",
           )
           for filename in ("hot-reports-release-index.html", "hot-reports-public-index.html"):
               body = runner_temp.joinpath(filename).read_text(encoding="utf-8")

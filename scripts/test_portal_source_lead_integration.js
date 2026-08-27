@@ -67,7 +67,11 @@ assert.equal(appSandbox.__appResult.fallbackLabel, "国内报告线索");
 assert.match(appSource, /kind_label:\s*item\.kind_label\s*\|\|\s*""/);
 assert.match(
   extractFunction(appSource, "fetchDocDetailItem"),
-  /isAuthorityItem\(merged\)[\s\S]*?endpoint = "authority\/item"/,
+  /isContactOnlyItem\(merged\)[\s\S]*?endpoint = "contact-report\/item"/,
+);
+assert.match(
+  extractFunction(appSource, "fetchDocDetailItem"),
+  /isContactOnlyItem\(merged\)[\s\S]*?params\.set\("source", merged\.source\)/,
 );
 
 class MockBucket {
@@ -151,6 +155,7 @@ assert.ok(worker && typeof worker.fetch === "function");
 const bucket = new MockBucket();
 const env = {
   ALLOWED_ORIGIN: "https://portal.example.invalid",
+  AUTH_SECRET: "source-lead-integration-account-secret",
   REPORT_BUCKET: bucket,
   SUPPLEMENTAL_SEARCH_URL: "https://search.example.invalid/api/search",
   SUPPLEMENTAL_SEARCH_HMAC_SECRET: "integration-test-secret",
@@ -171,6 +176,7 @@ const ctx = { waitUntil() {} };
   assert.equal(lead.source, "authority");
   assert.equal(lead.kind_label, "国内报告线索");
   assert.equal(lead.contact_only, true);
+  assert.match(String(lead.request_token || ""), /^[A-Za-z0-9_-]+\.[A-Za-z0-9_-]{43}$/);
   assert.ok(!JSON.stringify(lead).includes("search.example.invalid"));
   assert.ok(!Object.prototype.hasOwnProperty.call(lead, "locator"));
   assert.deepEqual(

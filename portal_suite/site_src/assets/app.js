@@ -13,6 +13,12 @@
   const REPORT_PREVIEW_CACHE_KEY = "portal_report_preview_cache";
   const REPORT_PREVIEW_CACHE_MAX_ITEMS = 20;
   const REPORT_PREVIEW_CACHE_TTL_MS = 6 * 60 * 60 * 1000;
+  const ADMIN_PDF_UPLOAD_SESSION_KEY = "portal_admin_pdf_upload_v1";
+  const ADMIN_PDF_UPLOAD_SESSION_VERSION = 1;
+  const ADMIN_PDF_UPLOAD_POLL_MS = 2500;
+  const ADMIN_PDF_UPLOAD_POLL_LIMIT = 72;
+  const ADMIN_PDF_UPLOAD_XHR_TIMEOUT_MS = 5 * 60 * 1000;
+  const ADMIN_PDF_UPLOAD_STATUS_TIMEOUT_MS = 12000;
   const AUTHORITY_SOURCE = "authority";
   const REPORT_A_SOURCE = "report-a";
   const THINKTANK_SOURCE = "thinktank";
@@ -40,6 +46,7 @@
   let accountAdminLastSummaryOwner = "";
   let accountAdminRefreshTimer = null;
   let accountAdminListModalCleanup = null;
+  let activeAdminPdfUpload = null;
   let pdfJsLoadPromise = null;
   const activeAdminButtonActions = new WeakMap();
 
@@ -1255,12 +1262,580 @@
     if (!loadAuthSession() && username) username.focus();
   }
 
+  function newAdminPdfUploadId() {
+    if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
+      return crypto.randomUUID();
+    }
+    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (token) => {
+      const value = Math.floor(Math.random() * 16);
+      return (token === "x" ? value : (value & 0x3) | 0x8).toString(16);
+    });
+  }
+
+  function isAdminPdfUploadId(value) {
+    const uploadId = String(value || "").trim();
+    return /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(uploadId)
+      || /^upload-(?:[0-9a-f]{32}|[0-9a-f]{64})$/.test(uploadId);
+  }
+
+  function normalizeAdminPdfUploadSession(value) {
+    if (!value || typeof value !== "object" || Array.isArray(value)) return null;
+    if (Number(value.version) !== ADMIN_PDF_UPLOAD_SESSION_VERSION) return null;
+    const uploadId = String(value.upload_id || "").trim();
+    const mode = String(value.mode || "").trim();
+    const state = String(value.state || "").trim();
+    const startedAt = Number(value.started_at || 0);
+    const fileSize = Math.max(0, Math.floor(Number(value.file_size || 0) || 0));
+    const source = String(value.source || "").trim();
+    const targetId = String(value.target_id || "").trim();
+    if (!isAdminPdfUploadId(uploadId)) return null;
+    if (!["hot-report", "text-only", "request"].includes(mode)) return null;
+    if (!["uploading", "processing", "unknown"].includes(state)) return null;
+    if (!Number.isFinite(startedAt) || startedAt <= 0) return null;
+    if (source && !["catalog", "authority", "report-a"].includes(source)) return null;
+    if (targetId.length > 240) return null;
+    return {
+      version: ADMIN_PDF_UPLOAD_SESSION_VERSION,
+      upload_id: uploadId,
+      mode,
+      state,
+      started_at: startedAt,
+      file_size: fileSize,
+      source,
+      target_id: targetId,
+    };
+  }
+
+  function readAdminPdfUploadSession() {
+    try {
+      return normalizeAdminPdfUploadSession(JSON.parse(sessionStorage.getItem(ADMIN_PDF_UPLOAD_SESSION_KEY) || "null"));
+    } catch (_error) {
+      return null;
+    }
+  }
+
+  function writeAdminPdfUploadSession(value) {
+    const normalized = normalizeAdminPdfUploadSession({
+      version: ADMIN_PDF_UPLOAD_SESSION_VERSION,
+      ...(value || {}),
+    });
+    try {
+      if (normalized) sessionStorage.setItem(ADMIN_PDF_UPLOAD_SESSION_KEY, JSON.stringify(normalized));
+      else sessionStorage.removeItem(ADMIN_PDF_UPLOAD_SESSION_KEY);
+    } catch (_error) {
+      // Upload still works when session storage is unavailable.
+    }
+    return normalized;
+  }
+
+  function clearAdminPdfUploadSession(uploadId = "") {
+    const current = readAdminPdfUploadSession();
+    if (uploadId && current && current.upload_id !== uploadId) return false;
+    try {
+      sessionStorage.removeItem(ADMIN_PDF_UPLOAD_SESSION_KEY);
+    } catch (_error) {
+      // Nothing else to clear.
+    }
+    return true;
+  }
+
+  function adminPdfUploadElapsedText(startedAt, now = Date.now()) {
+    const elapsedSeconds = Math.max(0, Math.floor((Number(now) - Number(startedAt || now)) / 1000));
+    if (elapsedSeconds < 60) return `${elapsedSeconds} 秒`;
+    const minutes = Math.floor(elapsedSeconds / 60);
+    const seconds = elapsedSeconds % 60;
+    return `${minutes} 分 ${seconds} 秒`;
+  }
+
+  function adminPdfUploadProgressText(loaded, total, startedAt, now = Date.now()) {
+    const safeLoaded = Math.max(0, Number(loaded || 0) || 0);
+    const safeTotal = Math.max(0, Number(total || 0) || 0);
+    const percent = safeTotal > 0 ? Math.min(100, Math.round(safeLoaded / safeTotal * 100)) : 0;
+    const amount = safeTotal > 0
+      ? `${formatSize(safeLoaded)} / ${formatSize(safeTotal)}`
+      : `已上传 ${formatSize(safeLoaded)}`;
+    return {
+      percent,
+      text: `正在上传 ${percent}% · ${amount} · 已用 ${adminPdfUploadElapsedText(startedAt, now)}`,
+    };
+  }
+
+  function xhrAdminPdfUpload(url, formData, options = {}) {
+    let request = null;
+    const promise = new Promise((resolve, reject) => {
+      request = new XMLHttpRequest();
+      let uploadFinished = false;
+      const fail = (message, name = "AdminPdfUploadError", upload = null) => {
+        const error = new Error(message || "PDF 上传失败，请检查结果后重试。");
+        error.name = name;
+        error.status = Number(request && request.status || 0) || 0;
+        error.uploadFinished = uploadFinished;
+        if (upload && typeof upload === "object") error.upload = upload;
+        reject(error);
+      };
+      request.open("POST", url, true);
+      request.timeout = Math.max(1000, Number(options.timeoutMs || ADMIN_PDF_UPLOAD_XHR_TIMEOUT_MS) || ADMIN_PDF_UPLOAD_XHR_TIMEOUT_MS);
+      const headers = options.headers && typeof options.headers === "object" ? options.headers : {};
+      Object.entries(headers).forEach(([name, value]) => {
+        if (value !== undefined && value !== null && String(value)) request.setRequestHeader(name, String(value));
+      });
+      request.upload.addEventListener("progress", (event) => {
+        if (typeof options.onProgress === "function") {
+          options.onProgress(event.loaded || 0, event.lengthComputable ? event.total : 0);
+        }
+      });
+      request.upload.addEventListener("load", () => {
+        uploadFinished = true;
+        if (typeof options.onTransportComplete === "function") options.onTransportComplete();
+      });
+      request.addEventListener("load", () => {
+        let data = {};
+        try {
+          data = request.response && typeof request.response === "object"
+            ? request.response
+            : JSON.parse(request.responseText || "{}");
+        } catch (_error) {
+          data = {};
+        }
+        if (request.status >= 200 && request.status < 300 && data && data.ok !== false) {
+          resolve(data);
+          return;
+        }
+        const failedUpload = data && data.upload && data.upload.status === "failed" ? data.upload : null;
+        fail(
+          data.detail || failedUpload && failedUpload.detail || `PDF 上传失败 (${request.status || "网络异常"})。`,
+          failedUpload ? "AdminPdfUploadFailedError" : "AdminPdfUploadError",
+          failedUpload,
+        );
+      });
+      request.addEventListener("error", () => fail("连接中断，上传结果尚未确认。请先检查结果，不要重复上传。"));
+      request.addEventListener("timeout", () => fail("等待服务器确认超时。请先检查结果，不要重复上传。", "TimeoutError"));
+      request.addEventListener("abort", () => fail(
+        uploadFinished
+          ? "已停止等待，但服务器可能仍在处理。请检查结果，不要重复上传。"
+          : "上传已取消。服务器可能已收到部分数据，请先检查结果。",
+        "AbortError",
+      ));
+      request.responseType = "json";
+      if (typeof options.onRequest === "function") options.onRequest(request);
+      request.send(formData);
+    });
+    return { promise, get request() { return request; } };
+  }
+
+  function adminPdfUploadProgressMarkup(prefix) {
+    return `
+      <div class="account-admin-upload-progress" id="${escapeHtml(prefix)}Progress" hidden>
+        <div class="account-admin-upload-progress-track" aria-hidden="true"><span></span></div>
+        <div class="account-admin-upload-progress-copy">
+          <strong id="${escapeHtml(prefix)}ProgressText">等待上传…</strong>
+          <span id="${escapeHtml(prefix)}Elapsed"></span>
+        </div>
+      </div>
+      <div class="account-admin-upload-recovery-actions">
+        <button class="secondary-button account-admin-upload-cancel" id="${escapeHtml(prefix)}Cancel" type="button" hidden>取消传输</button>
+        <button class="secondary-button account-admin-upload-check" id="${escapeHtml(prefix)}Check" type="button" hidden>检查上传结果</button>
+      </div>
+    `;
+  }
+
+  function adminPdfUploadUi(prefix) {
+    const progress = document.getElementById(`${prefix}Progress`);
+    return {
+      progress,
+      bar: progress && progress.querySelector(".account-admin-upload-progress-track span"),
+      text: document.getElementById(`${prefix}ProgressText`),
+      elapsed: document.getElementById(`${prefix}Elapsed`),
+      cancel: document.getElementById(`${prefix}Cancel`),
+      check: document.getElementById(`${prefix}Check`),
+    };
+  }
+
+  function renderAdminPdfUploadUi(prefix, state = {}) {
+    const ui = adminPdfUploadUi(prefix);
+    if (!ui.progress) return;
+    const percent = Math.max(0, Math.min(100, Number(state.percent || 0) || 0));
+    ui.progress.hidden = state.hidden === true;
+    ui.progress.dataset.state = String(state.state || "uploading");
+    if (ui.bar) ui.bar.style.width = `${percent}%`;
+    if (ui.text) ui.text.textContent = String(state.text || "等待上传…");
+    if (ui.elapsed) ui.elapsed.textContent = state.startedAt
+      ? `已用 ${adminPdfUploadElapsedText(state.startedAt)}`
+      : "";
+    if (ui.cancel) ui.cancel.hidden = state.canCancel !== true;
+    if (ui.check) ui.check.hidden = state.canCheck !== true;
+  }
+
+  function restoredAdminPdfUploadMessage(session) {
+    const label = session.mode === "hot-report"
+      ? "新报告"
+      : session.mode === "text-only"
+        ? "Catalog 补齐"
+        : "申请报告补齐";
+    return `检测到一笔尚未确认的${label}上传（${formatSize(session.file_size)}，已用 ${adminPdfUploadElapsedText(session.started_at)}）。请先检查结果，不要重复上传。`;
+  }
+
+  function adminPdfUploadIdForFile(fileInput) {
+    if (!fileInput) return newAdminPdfUploadId();
+    const current = String(fileInput.dataset && fileInput.dataset.uploadId || "");
+    if (isAdminPdfUploadId(current)) return current;
+    const uploadId = newAdminPdfUploadId();
+    if (fileInput.dataset) fileInput.dataset.uploadId = uploadId;
+    return uploadId;
+  }
+
+  function resetAdminPdfUploadId(fileInput) {
+    if (fileInput && fileInput.dataset) fileInput.dataset.uploadId = newAdminPdfUploadId();
+  }
+
+  async function adminPdfUploadFingerprint(kind, source, targetId, file) {
+    const material = [
+      String(kind || ""),
+      String(source || ""),
+      String(targetId || ""),
+      String(file && file.name || ""),
+      String(file && file.size || 0),
+      String(file && file.lastModified || 0),
+    ].join("\n");
+    if (typeof crypto !== "undefined" && crypto.subtle && typeof crypto.subtle.digest === "function") {
+      const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(material));
+      return Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, "0")).join("");
+    }
+    // Format-preserving fallback for older browsers. The server uses this value
+    // only to prevent one upload_id from being reused for a different file.
+    let hash = 2166136261;
+    for (let index = 0; index < material.length; index += 1) {
+      hash ^= material.charCodeAt(index);
+      hash = Math.imul(hash, 16777619) >>> 0;
+    }
+    const block = hash.toString(16).padStart(8, "0");
+    return block.repeat(8);
+  }
+
+  async function fetchAdminPdfUploadStatus(workerUrl, uploadId) {
+    const controller = new AbortController();
+    const timer = window.setTimeout(() => controller.abort(), ADMIN_PDF_UPLOAD_STATUS_TIMEOUT_MS);
+    try {
+      const response = await fetch(
+        `${workerUrl}/account-admin/upload-status?upload_id=${encodeURIComponent(uploadId)}`,
+        { cache: "no-store", headers: authHeaders(), signal: controller.signal },
+      );
+      const data = await response.json().catch(() => ({}));
+      if (response.status === 404) return null;
+      if (!response.ok || !data.ok || !data.upload) {
+        const error = new Error(data.detail || "上传状态暂时无法读取，请稍后再检查。");
+        error.status = response.status;
+        throw error;
+      }
+      return data;
+    } catch (error) {
+      if (error && error.name === "AbortError") {
+        const timeout = new Error("上传状态检查超时，请稍后再次检查。当前不要重复上传。");
+        timeout.name = "TimeoutError";
+        throw timeout;
+      }
+      throw error;
+    } finally {
+      window.clearTimeout(timer);
+    }
+  }
+
+  function completedAdminPdfUploadPayload(data) {
+    const upload = data && data.upload && typeof data.upload === "object" ? data.upload : null;
+    if (!upload || upload.status !== "completed") return null;
+    const result = upload.result && typeof upload.result === "object" ? upload.result : {};
+    return { ok: true, ...result, upload };
+  }
+
+  async function pollAdminPdfUploadStatus(workerUrl, uploadId, options = {}) {
+    const limit = Math.max(1, Number(options.limit || ADMIN_PDF_UPLOAD_POLL_LIMIT) || 1);
+    for (let attempt = 0; attempt < limit; attempt += 1) {
+      if (typeof options.isCurrent === "function" && !options.isCurrent()) {
+        const cancelled = new Error("上传状态检查已停止。");
+        cancelled.name = "AbortError";
+        throw cancelled;
+      }
+      try {
+        const data = await fetchAdminPdfUploadStatus(workerUrl, uploadId);
+        const upload = data && data.upload;
+        if (upload && typeof options.onUpdate === "function") options.onUpdate(upload);
+        const completed = completedAdminPdfUploadPayload(data);
+        if (completed) return completed;
+        if (upload && upload.status === "failed") {
+          const error = new Error(upload.detail || "PDF 入库失败。请检查原因后再操作。");
+          error.name = "AdminPdfUploadFailedError";
+          error.upload = upload;
+          throw error;
+        }
+      } catch (error) {
+        if (error && error.name === "AdminPdfUploadFailedError") throw error;
+        if (error && (error.status === 401 || error.status === 403)) throw error;
+        if (attempt === limit - 1) throw error;
+      }
+      await new Promise((resolve) => window.setTimeout(resolve, ADMIN_PDF_UPLOAD_POLL_MS));
+    }
+    const pending = new Error("服务器仍在处理。请稍后点击“检查上传结果”，不要重复上传。");
+    pending.name = "AdminPdfUploadPendingError";
+    throw pending;
+  }
+
+  function adminPdfUploadStageText(upload) {
+    const stage = String(upload && (upload.stage || upload.status) || "processing");
+    const labels = {
+      validating: "服务器正在校验 PDF…",
+      uploading: "服务器正在接收 PDF…",
+      stored: "PDF 已保存，正在核验对象…",
+      indexing: "PDF 已保存，正在发布检索与下载入口…",
+      completed: "PDF 已入库并发布。",
+      failed: "PDF 入库失败。",
+    };
+    return labels[stage] || "文件已传完，服务器正在校验、保存和发布…";
+  }
+
+  async function runAdminPdfUpload(options = {}) {
+    const file = options.file;
+    const uploadId = String(options.uploadId || "").trim();
+    if (!file || !uploadId) throw new Error("请选择 PDF 文件。");
+    const unresolved = readAdminPdfUploadSession();
+    if (unresolved) {
+      throw new Error("上一笔 PDF 上传结果尚未确认。请先点击“检查上传结果”解决上一笔，再开始新上传。");
+    }
+    if (activeAdminPdfUpload && activeAdminPdfUpload.uploadId !== uploadId) {
+      throw new Error("已有 PDF 正在上传。请先等待或检查上一笔结果。");
+    }
+    const startedAt = Date.now();
+    const fingerprint = await adminPdfUploadFingerprint(
+      options.kind || options.mode,
+      options.source || "",
+      options.targetId || "",
+      file,
+    );
+    const sessionBase = {
+      version: ADMIN_PDF_UPLOAD_SESSION_VERSION,
+      upload_id: uploadId,
+      mode: options.mode,
+      started_at: startedAt,
+      file_size: file.size,
+      source: options.source || "",
+      target_id: options.targetId || "",
+    };
+    writeAdminPdfUploadSession({ ...sessionBase, state: "uploading" });
+    renderAdminPdfUploadUi(options.prefix, {
+      percent: 0,
+      text: `准备上传 ${formatSize(file.size)}…`,
+      startedAt,
+      canCancel: true,
+      canCheck: false,
+      state: "uploading",
+    });
+    if (typeof options.setStatus === "function") {
+      options.setStatus("正在上传 PDF；可查看实时进度。请勿刷新或重复提交。", "");
+    }
+
+    let current = true;
+    let transportComplete = false;
+    let resolveTransport = null;
+    const transportGate = new Promise((resolve) => { resolveTransport = resolve; });
+    const elapsedTimer = window.setInterval(() => {
+      const session = readAdminPdfUploadSession();
+      if (!current || !session || session.upload_id !== uploadId) return;
+      const ui = adminPdfUploadUi(options.prefix);
+      if (ui.elapsed) ui.elapsed.textContent = `已用 ${adminPdfUploadElapsedText(startedAt)}`;
+    }, 1000);
+
+    const formData = options.formData;
+    formData.set("upload_id", uploadId);
+    formData.set("upload_fingerprint", fingerprint);
+    const transfer = xhrAdminPdfUpload(options.url, formData, {
+      headers: {
+        ...authHeaders(),
+        "X-Upload-ID": uploadId,
+        "X-Upload-Fingerprint": fingerprint,
+      },
+      onRequest(request) {
+        activeAdminPdfUpload = {
+          uploadId,
+          mode: options.mode,
+          request,
+          cancel() { request.abort(); },
+        };
+      },
+      onProgress(loaded, total) {
+        const progress = adminPdfUploadProgressText(loaded, total || file.size, startedAt);
+        renderAdminPdfUploadUi(options.prefix, {
+          ...progress,
+          startedAt,
+          canCancel: true,
+          canCheck: false,
+          state: "uploading",
+        });
+      },
+      onTransportComplete() {
+        transportComplete = true;
+        writeAdminPdfUploadSession({ ...sessionBase, state: "processing" });
+        renderAdminPdfUploadUi(options.prefix, {
+          percent: 100,
+          text: "文件已传完，服务器正在校验、保存和发布…",
+          startedAt,
+          canCancel: false,
+          canCheck: true,
+          state: "processing",
+        });
+        if (typeof options.setStatus === "function") {
+          options.setStatus("文件已传到服务器，正在校验、保存并发布。此时无需重新上传。", "");
+        }
+        resolveTransport();
+      },
+    });
+
+    const statusPromise = transportGate.then(() => pollAdminPdfUploadStatus(workerUrlFromUploadUrl(options.url), uploadId, {
+      isCurrent: () => current,
+      onUpdate(upload) {
+        writeAdminPdfUploadSession({ ...sessionBase, state: "processing" });
+        renderAdminPdfUploadUi(options.prefix, {
+          percent: 100,
+          text: adminPdfUploadStageText(upload),
+          startedAt,
+          canCancel: false,
+          canCheck: true,
+          state: "processing",
+        });
+      },
+    }));
+    // Prevent a late losing branch in Promise.race from becoming an unhandled rejection.
+    statusPromise.catch(() => null);
+
+    try {
+      const transferOutcome = transfer.promise.then((data) => {
+        const completed = completedAdminPdfUploadPayload(data);
+        if (completed) return { ...data, ...completed };
+        if (data && data.pending) return statusPromise;
+        return data;
+      }, (error) => {
+        if (error && error.uploadFinished) return statusPromise;
+        throw error;
+      });
+      const result = await Promise.race([transferOutcome, statusPromise]);
+      clearAdminPdfUploadSession(uploadId);
+      renderAdminPdfUploadUi(options.prefix, {
+        percent: 100,
+        text: "PDF 已入库并发布。",
+        startedAt,
+        canCancel: false,
+        canCheck: false,
+        state: "completed",
+      });
+      return result;
+    } catch (error) {
+      const failed = error && error.name === "AdminPdfUploadFailedError";
+      if (failed) {
+        clearAdminPdfUploadSession(uploadId);
+        resetAdminPdfUploadId(options.fileInput);
+        error.message = `${error.message || "PDF 入库失败。"} 已生成新的上传编号，修正后可重试。`;
+      }
+      else writeAdminPdfUploadSession({ ...sessionBase, state: "unknown" });
+      renderAdminPdfUploadUi(options.prefix, {
+        percent: transportComplete ? 100 : 0,
+        text: failed
+          ? (error.message || "PDF 入库失败，已生成新的上传编号，修正后可重试。")
+          : "结果尚未确认。请先检查结果，不要重复上传。",
+        startedAt,
+        canCancel: false,
+        canCheck: !failed,
+        state: failed ? "failed" : "unknown",
+      });
+      throw error;
+    } finally {
+      current = false;
+      window.clearInterval(elapsedTimer);
+      if (activeAdminPdfUpload && activeAdminPdfUpload.uploadId === uploadId) activeAdminPdfUpload = null;
+    }
+  }
+
+  function workerUrlFromUploadUrl(value) {
+    return String(value || "").replace(/\/account-admin\/(?:hot-report|text-only-pdf|contact-report-pdf)(?:\?.*)?$/, "");
+  }
+
+  async function checkAdminPdfUploadResult(workerUrl, session, options = {}) {
+    const normalized = normalizeAdminPdfUploadSession(session);
+    if (!normalized) throw new Error("没有可检查的上传记录。");
+    if (typeof options.setStatus === "function") options.setStatus("正在检查服务器记录…", "");
+    renderAdminPdfUploadUi(options.prefix, {
+      percent: normalized.state === "uploading" ? 0 : 100,
+      text: "正在检查服务器记录…",
+      startedAt: normalized.started_at,
+      canCancel: false,
+      canCheck: false,
+      state: "processing",
+    });
+    const data = await fetchAdminPdfUploadStatus(workerUrl, normalized.upload_id);
+    if (!data || !data.upload) {
+      writeAdminPdfUploadSession({ ...normalized, state: "unknown" });
+      const message = "服务器暂未找到这笔上传。可能仍在接收，请稍后再次检查；现在不要重复上传。";
+      renderAdminPdfUploadUi(options.prefix, {
+        percent: 0,
+        text: message,
+        startedAt: normalized.started_at,
+        canCancel: false,
+        canCheck: true,
+        state: "unknown",
+      });
+      if (typeof options.setStatus === "function") options.setStatus(message, "error");
+      return null;
+    }
+    const completed = completedAdminPdfUploadPayload(data);
+    if (completed) {
+      clearAdminPdfUploadSession(normalized.upload_id);
+      renderAdminPdfUploadUi(options.prefix, {
+        percent: 100,
+        text: "PDF 已入库并发布。",
+        startedAt: normalized.started_at,
+        canCancel: false,
+        canCheck: false,
+        state: "completed",
+      });
+      if (typeof options.setStatus === "function") options.setStatus("PDF 已入库并发布。", "ok");
+      if (typeof options.onComplete === "function") await options.onComplete(completed);
+      return completed;
+    }
+    if (data.upload.status === "failed") {
+      clearAdminPdfUploadSession(normalized.upload_id);
+      resetAdminPdfUploadId(options.fileInput);
+      const message = `${data.upload.detail || "PDF 入库失败。请核对原因后再操作。"} 已生成新的上传编号，修正后可重试。`;
+      renderAdminPdfUploadUi(options.prefix, {
+        percent: 100,
+        text: message,
+        startedAt: normalized.started_at,
+        canCancel: false,
+        canCheck: false,
+        state: "failed",
+      });
+      if (typeof options.setStatus === "function") options.setStatus(message, "error");
+      return data;
+    }
+    writeAdminPdfUploadSession({ ...normalized, state: "processing" });
+    const message = `${adminPdfUploadStageText(data.upload)} 已用 ${adminPdfUploadElapsedText(normalized.started_at)}，请勿重复上传。`;
+    renderAdminPdfUploadUi(options.prefix, {
+      percent: 100,
+      text: message,
+      startedAt: normalized.started_at,
+      canCancel: false,
+      canCheck: true,
+      state: "processing",
+    });
+    if (typeof options.setStatus === "function") options.setStatus(message, "");
+    return data;
+  }
+
   function accountAdminModalMarkup(options = {}) {
     const title = options.title || "管理后台";
     const showWechat = options.showWechat !== false;
     const showUsers = options.showUsers !== false;
     const showAnalytics = options.showAnalytics !== false;
     const showHotReports = options.showHotReports !== false;
+    const uploadProgressMarkup = typeof adminPdfUploadProgressMarkup === "function"
+      ? adminPdfUploadProgressMarkup
+      : () => "";
     return `
       <div class="admin-modal account-admin-modal" id="accountAdminModal" role="dialog" aria-modal="true" aria-labelledby="accountAdminTitle">
         <div class="admin-dialog account-admin-dialog">
@@ -1296,44 +1871,113 @@
             <div id="accountAdminWechatSchedule" class="account-admin-wechat-schedule"></div>
           </section>
           <section class="account-admin-section account-admin-hot-section" id="accountAdminHotReportsSection" ${showHotReports ? "" : "hidden"}>
-            <div class="account-admin-heading">
+            <div class="account-admin-heading account-admin-intake-heading">
+              <strong>PDF 入库中心</strong>
+              <span>统一处理新报告、缺失 PDF 与报告申请</span>
+            </div>
+            <p class="account-admin-intake-scope">当前可补齐：Text only、已声明有 PDF 但对象缺失或归档失效的 Catalog 报告、报告A、高权报告。External 与国际智库的临时准备失败不会被当作永久缺失。</p>
+            <div class="account-admin-upload-recovery" id="accountAdminUploadRecovery" hidden>
+              <strong>发现尚未确认的上传</strong>
+              <p id="accountAdminUploadRecoveryText"></p>
+              <button class="secondary-button" id="accountAdminUploadRecoveryCheck" type="button">检查上传结果</button>
+            </div>
+            <div class="account-admin-intake-tabs" role="tablist" aria-label="PDF 入库类型">
+              <button class="is-active" id="accountAdminIntakeNewTab" type="button" role="tab" aria-selected="true" aria-controls="accountAdminIntakeNew" data-admin-intake-mode="new">新报告</button>
+              <button id="accountAdminIntakeCatalogTab" type="button" role="tab" aria-selected="false" aria-controls="accountAdminIntakeCatalog" data-admin-intake-mode="catalog">补齐 Text only / 缺失 PDF</button>
+              <button id="accountAdminIntakeRequestTab" type="button" role="tab" aria-selected="false" aria-controls="accountAdminIntakeRequest" data-admin-intake-mode="request">待满足申请</button>
+            </div>
+            <div class="account-admin-intake-panel" id="accountAdminIntakeNew" role="tabpanel" aria-labelledby="accountAdminIntakeNewTab">
+              <form id="accountAdminHotReportForm" class="account-admin-hot-form" enctype="multipart/form-data">
+                <div class="account-admin-form-grid">
+                  <label>
+                    <span>英文/主标题</span>
+                    <input id="accountAdminHotReportTitle" name="title" type="text" maxlength="320" autocomplete="off" required>
+                  </label>
+                  <label>
+                    <span>中文标题（可选）</span>
+                    <input name="title_cn" type="text" maxlength="320" autocomplete="off">
+                  </label>
+                  <label>
+                    <span>机构（可选）</span>
+                    <input name="institution" type="text" maxlength="160" autocomplete="off">
+                  </label>
+                  <label>
+                    <span>报告日期</span>
+                    <input id="accountAdminHotReportDate" name="date" type="date" required>
+                  </label>
+                </div>
+                <label class="account-admin-hot-description">
+                  <span>简介（可选）</span>
+                  <textarea name="description" rows="3" maxlength="1600" placeholder="显示在报告详情页"></textarea>
+                </label>
+                <label class="account-admin-hot-file">
+                  <span>PDF 文件（最大 95 MB）</span>
+                  <input id="accountAdminHotReportPdf" name="pdf" type="file" accept="application/pdf,.pdf" required>
+                </label>
+                ${uploadProgressMarkup("accountAdminHotReportUpload")}
+                <div class="account-admin-hot-actions">
+                  <span>3个月及以上会员可下载全文。</span>
+                  <button class="primary" type="submit">上传到近期热门报告</button>
+                </div>
+              </form>
+              <div id="accountAdminHotReportStatus" class="status-line" aria-live="polite"></div>
+            </div>
+            <div class="account-admin-intake-panel" id="accountAdminIntakeCatalog" role="tabpanel" aria-labelledby="accountAdminIntakeCatalogTab" hidden>
+              <p class="subtle">先检索并选择原记录。系统只允许补齐 Text only 或经现场核验确实缺失的 PDF；有效 PDF 不能被覆盖。</p>
+              <form id="accountAdminCatalogIntakeSearch" class="account-admin-intake-search" role="search">
+                <label>
+                  <span>报告标题或编号</span>
+                  <input id="accountAdminCatalogIntakeQuery" type="search" autocomplete="off" placeholder="输入完整标题或报告编号" required>
+                </label>
+                <button class="secondary-button" type="submit">检索可补齐记录</button>
+              </form>
+              <div id="accountAdminCatalogIntakeStatus" class="status-line" aria-live="polite"></div>
+              <div id="accountAdminCatalogIntakeResults" class="account-admin-intake-results"><div class="empty-state">输入标题后检索 Text only 或缺失 PDF 的 Catalog 记录。</div></div>
+              <form id="accountAdminCatalogIntakeUpload" class="account-admin-intake-upload" enctype="multipart/form-data" hidden>
+                <div class="account-admin-intake-selection" id="accountAdminCatalogIntakeSelection"></div>
+                <label class="account-admin-hot-file">
+                  <span>用于补齐的 PDF（最大 95 MB）</span>
+                  <input id="accountAdminCatalogIntakePdf" name="pdf" type="file" accept="application/pdf,.pdf" required>
+                </label>
+                ${uploadProgressMarkup("accountAdminCatalogUpload")}
+                <div class="account-admin-hot-actions">
+                  <span>上传后保留原报告 ID、标题、索引和权限规则。</span>
+                  <button class="primary" type="submit">补齐所选报告</button>
+                </div>
+              </form>
+            </div>
+            <div class="account-admin-intake-panel" id="accountAdminIntakeRequest" role="tabpanel" aria-labelledby="accountAdminIntakeRequestTab" hidden>
+              <div class="account-admin-intake-request-top">
+                <p class="subtle">选择高权报告或报告A申请记录，上传并绑定原报告；完成后原详情会切换为会员下载入口。</p>
+                <button class="secondary-button" id="accountAdminRequestQueueRefresh" type="button">刷新申请队列</button>
+              </div>
+              <form id="accountAdminRequestQueueSearch" class="account-admin-intake-search" role="search">
+                <label>
+                  <span>筛选申请 / 主动检索原报告</span>
+                  <input id="accountAdminRequestQueueQuery" type="search" autocomplete="off" placeholder="输入标题、机构或完整报告编号">
+                </label>
+                <button class="secondary-button" type="submit">搜索申请与原记录</button>
+              </form>
+              <div id="accountAdminRequestQueueStatus" class="status-line" aria-live="polite"></div>
+              <div id="accountAdminRequestQueueResults" class="account-admin-intake-results"><div class="empty-state">正在读取待满足申请…</div></div>
+              <form id="accountAdminRequestIntakeUpload" class="account-admin-intake-upload" enctype="multipart/form-data" hidden>
+                <div class="account-admin-intake-selection" id="accountAdminRequestIntakeSelection"></div>
+                <label class="account-admin-hot-file">
+                  <span>用于满足申请的 PDF（最大 95 MB）</span>
+                  <input id="accountAdminRequestIntakePdf" name="pdf" type="file" accept="application/pdf,.pdf" required>
+                </label>
+                ${uploadProgressMarkup("accountAdminRequestUpload")}
+                <div class="account-admin-hot-actions">
+                  <span>系统会绑定原报告来源和编号，不会创建无法追溯的重复线索。</span>
+                  <button class="primary" type="submit">上传并绑定原报告</button>
+                </div>
+              </form>
+            </div>
+            <div class="account-admin-heading account-admin-hot-list-heading">
               <strong>近期热门报告</strong>
               <span id="accountAdminHotReportCount"></span>
               <button class="secondary-button account-admin-more-button" id="accountAdminHotReportsMore" type="button" aria-haspopup="dialog" hidden>更多</button>
             </div>
-            <form id="accountAdminHotReportForm" class="account-admin-hot-form" enctype="multipart/form-data">
-              <div class="account-admin-form-grid">
-                <label>
-                  <span>英文/主标题</span>
-                  <input id="accountAdminHotReportTitle" name="title" type="text" maxlength="320" autocomplete="off" required>
-                </label>
-                <label>
-                  <span>中文标题（可选）</span>
-                  <input name="title_cn" type="text" maxlength="320" autocomplete="off">
-                </label>
-                <label>
-                  <span>机构（可选）</span>
-                  <input name="institution" type="text" maxlength="160" autocomplete="off">
-                </label>
-                <label>
-                  <span>报告日期</span>
-                  <input id="accountAdminHotReportDate" name="date" type="date" required>
-                </label>
-              </div>
-              <label class="account-admin-hot-description">
-                <span>简介（可选）</span>
-                <textarea name="description" rows="3" maxlength="1600" placeholder="显示在报告详情页"></textarea>
-              </label>
-              <label class="account-admin-hot-file">
-                <span>PDF 文件（最大 95 MB）</span>
-                <input id="accountAdminHotReportPdf" name="pdf" type="file" accept="application/pdf,.pdf" required>
-              </label>
-              <div class="account-admin-hot-actions">
-                <span>3个月及以上会员可下载全文。</span>
-                <button class="primary" type="submit">上传到近期热门报告</button>
-              </div>
-            </form>
-            <div id="accountAdminHotReportStatus" class="status-line" aria-live="polite"></div>
             <div id="accountAdminHotReportList" class="account-admin-hot-list"></div>
           </section>
           <section class="account-admin-section">
@@ -3974,6 +4618,137 @@
     `;
   }
 
+  function adminIntakeSourceLabel(source) {
+    if (source === "authority") return "高权报告";
+    if (source === "report-a") return "报告A";
+    return "Catalog";
+  }
+
+  function adminIntakeAvailabilityLabel(item) {
+    const availability = String(item && item.availability || "");
+    if (availability === "text_only") return "Text only · 可补齐";
+    if (availability === "missing") return "PDF 缺失 · 可修复";
+    if (availability === "repaired") return "已补齐";
+    if (availability === "available" || item && item.available === true) return "已有有效 PDF";
+    return "待满足申请";
+  }
+
+  function adminIntakeResultMarkup(item, options = {}) {
+    const uploadable = item && item.uploadable !== false && item.available !== true;
+    const source = String(item && item.source || options.source || "catalog");
+    const id = String(item && (item.report_id || item.origin_id || item.id) || "");
+    const requestId = String(item && item.request_id || "");
+    const meta = [
+      adminIntakeSourceLabel(source),
+      item && item.institution,
+      item && (item.date || item.attempted_at && String(item.attempted_at).slice(0, 10)),
+      id,
+    ].filter(Boolean).join(" · ");
+    const stateClass = uploadable ? "" : " is-blocked";
+    return `
+      <button class="account-admin-intake-result" type="button"
+        data-source="${escapeHtml(source)}"
+        data-id="${escapeHtml(id)}"
+        data-request-id="${escapeHtml(requestId)}"${uploadable ? "" : " disabled"}>
+        <span>
+          <strong>${escapeHtml(item && (item.title || item.title_cn) || "未命名报告")}</strong>
+          <small>${escapeHtml(meta)}</small>
+        </span>
+        <span class="account-admin-intake-state${stateClass}">${escapeHtml(adminIntakeAvailabilityLabel(item))}</span>
+      </button>
+    `;
+  }
+
+  function adminIntakeSelectionMarkup(item) {
+    const source = String(item && item.source || "catalog");
+    const id = String(item && (item.report_id || item.origin_id || item.id) || "");
+    const meta = [adminIntakeSourceLabel(source), item && item.institution, item && item.date, id]
+      .filter(Boolean)
+      .join(" · ");
+    return `
+      <span>
+        <strong>${escapeHtml(item && (item.title || item.title_cn) || "未命名报告")}</strong>
+        <small>${escapeHtml(meta)}</small>
+      </span>
+      <span class="account-admin-intake-state">${escapeHtml(adminIntakeAvailabilityLabel(item))}</span>
+    `;
+  }
+
+  async function fetchAdminPdfIntakeCandidates(workerUrl, source, query, options = {}) {
+    const params = new URLSearchParams({
+      source,
+      q: String(query || "").trim(),
+      page: String(Math.max(1, Number(options.page || 1) || 1)),
+    });
+    if (options.cursor) params.set("cursor", String(options.cursor));
+    const response = await fetch(`${workerUrl}/account-admin/pdf-intake-search?${params.toString()}`, {
+      cache: "no-store",
+      headers: authHeaders(),
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok || !Array.isArray(data.items)) {
+      throw new Error(data.detail || "可补齐报告检索失败，请稍后重试。");
+    }
+    return data;
+  }
+
+  async function fetchAdminReportRequestQueue(workerUrl, query = "", options = {}) {
+    const params = new URLSearchParams({ q: String(query || "").trim(), limit: "40" });
+    if (options.cursor) params.set("cursor", String(options.cursor));
+    const response = await fetch(`${workerUrl}/account-admin/report-requests?${params.toString()}`, {
+      cache: "no-store",
+      headers: authHeaders(),
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok || !Array.isArray(data.items)) {
+      throw new Error(data.detail || "申请队列读取失败。");
+    }
+    return {
+      items: data.items,
+      total: Number(data.total || data.items.length) || data.items.length,
+      has_more: data.has_more === true,
+      next_cursor: String(data.next_cursor || ""),
+      index_rebuilding: data.index_rebuilding === true,
+      migration_complete: data.migration_complete,
+      repair_pending: data.repair_pending === true || data.index_repair_pending === true,
+      partial_index: data.index_rebuilding === true
+        || data.migration_complete === false
+        || data.repair_pending === true
+        || data.index_repair_pending === true,
+    };
+  }
+
+  function contactReportDetailUrl(item) {
+    const id = String(item && (item.origin_id || item.report_id || item.id) || "");
+    const source = String(item && item.source || "");
+    if (!id || !["authority", "report-a"].includes(source)) return "";
+    return externalPageUrl({ ...item, id, source }, "");
+  }
+
+  function buildContactReportUploadFormData(item, pdf) {
+    const source = String(item && item.source || "");
+    const originId = String(item && (item.report_id || item.origin_id || item.id) || "");
+    const requestId = String(item && item.request_id || "");
+    const targetToken = String(item && item.target_token || "");
+    if (!originId || !["authority", "report-a"].includes(source)) {
+      throw new Error("原报告来源或编号无效，请重新搜索并选择。");
+    }
+    if (!requestId && !targetToken) {
+      throw new Error("原报告验证信息已过期，请重新搜索并选择后再上传。");
+    }
+    if (!pdf) throw new Error("请选择 PDF 文件。");
+    const formData = new FormData();
+    formData.set("source", source);
+    formData.set("origin_id", originId);
+    formData.set("title", item && item.title || "");
+    formData.set("institution", item && item.institution || "");
+    formData.set("date", item && item.date || "");
+    if (requestId) formData.set("request_id", requestId);
+    if (targetToken) formData.set("target_token", targetToken);
+    formData.set("pdf", pdf, pdf.name);
+    return { formData, originId };
+  }
+
   async function loadAdminHotReports(workerUrl, targets) {
     if (!targets.hotReportSection || targets.hotReportSection.hidden || !targets.hotReportList) return [];
     targets.hotReportStatus.className = "status-line";
@@ -4065,16 +4840,27 @@
   async function uploadAdminHotReport(workerUrl, targets) {
     const file = targets.hotReportPdf && targets.hotReportPdf.files && targets.hotReportPdf.files[0];
     if (!file) throw new Error("请选择 PDF 文件。");
-    if (file.size > 95 * 1024 * 1024) throw new Error("PDF 必须小于 95 MB。");
+    if (file.size <= 0 || file.size > 95 * 1024 * 1024) throw new Error("PDF 必须不超过 95 MB。");
     const formData = new FormData(targets.hotReportForm);
-    const response = await fetch(`${workerUrl}/account-admin/hot-report`, {
-      method: "POST",
-      headers: authHeaders(),
-      body: formData,
+    const uploadId = adminPdfUploadIdForFile(targets.hotReportPdf);
+    const data = await runAdminPdfUpload({
+      workerUrl,
+      url: `${workerUrl}/account-admin/hot-report`,
+      formData,
+      file,
+      fileInput: targets.hotReportPdf,
+      uploadId,
+      kind: "hot-report",
+      mode: "hot-report",
+      prefix: "accountAdminHotReportUpload",
+      setStatus(message, state) {
+        targets.hotReportStatus.className = state ? `status-line ${state}` : "status-line";
+        targets.hotReportStatus.textContent = message;
+      },
     });
-    const data = await response.json().catch(() => ({}));
-    if (!response.ok || !data.item) throw new Error(data.detail || "热门报告上传失败。");
-    return data.item;
+    const item = data && (data.item || data.hot_report || data.upload && data.upload.result && data.upload.result.item);
+    if (!item) throw new Error("PDF 已处理，但报告结果读取不完整。请检查上传结果。");
+    return { ...data, item };
   }
 
   function adminExportFilename() {
@@ -4212,6 +4998,30 @@
     const hotReportPdf = document.getElementById("accountAdminHotReportPdf");
     const hotReportStatus = document.getElementById("accountAdminHotReportStatus");
     const hotReportList = document.getElementById("accountAdminHotReportList");
+    const intakeTabs = Array.from(modal.querySelectorAll("[data-admin-intake-mode]"));
+    const intakePanels = {
+      new: document.getElementById("accountAdminIntakeNew"),
+      catalog: document.getElementById("accountAdminIntakeCatalog"),
+      request: document.getElementById("accountAdminIntakeRequest"),
+    };
+    const uploadRecovery = document.getElementById("accountAdminUploadRecovery");
+    const uploadRecoveryText = document.getElementById("accountAdminUploadRecoveryText");
+    const uploadRecoveryCheck = document.getElementById("accountAdminUploadRecoveryCheck");
+    const catalogIntakeSearch = document.getElementById("accountAdminCatalogIntakeSearch");
+    const catalogIntakeQuery = document.getElementById("accountAdminCatalogIntakeQuery");
+    const catalogIntakeStatus = document.getElementById("accountAdminCatalogIntakeStatus");
+    const catalogIntakeResults = document.getElementById("accountAdminCatalogIntakeResults");
+    const catalogIntakeUpload = document.getElementById("accountAdminCatalogIntakeUpload");
+    const catalogIntakeSelection = document.getElementById("accountAdminCatalogIntakeSelection");
+    const catalogIntakePdf = document.getElementById("accountAdminCatalogIntakePdf");
+    const requestQueueRefresh = document.getElementById("accountAdminRequestQueueRefresh");
+    const requestQueueSearch = document.getElementById("accountAdminRequestQueueSearch");
+    const requestQueueQuery = document.getElementById("accountAdminRequestQueueQuery");
+    const requestQueueStatus = document.getElementById("accountAdminRequestQueueStatus");
+    const requestQueueResults = document.getElementById("accountAdminRequestQueueResults");
+    const requestIntakeUpload = document.getElementById("accountAdminRequestIntakeUpload");
+    const requestIntakeSelection = document.getElementById("accountAdminRequestIntakeSelection");
+    const requestIntakePdf = document.getElementById("accountAdminRequestIntakePdf");
     const userCount = document.getElementById("accountAdminUserCount");
     const users = document.getElementById("accountAdminUsers");
     const usersSection = document.getElementById("accountAdminUsersSection");
@@ -4305,6 +5115,462 @@
       canManageUsers,
     };
 
+    const catalogIntakeItems = new Map();
+    const requestIntakeItems = new Map();
+    const requestIntakeByIdentity = new Map();
+    let selectedCatalogIntake = null;
+    let selectedRequestIntake = null;
+    let requestQueueLoaded = false;
+    let requestQueueCursor = "";
+    let requestQueueHasMore = false;
+    let requestQueueIndexBuilding = false;
+    let requestSearchQuery = "";
+    const requestSearchPage = { "report-a": 1, authority: 1 };
+    const requestSearchHasMore = { "report-a": false, authority: false };
+    let catalogIntakePage = 1;
+    let catalogIntakeCursor = "";
+
+    function intakeItemKey(item) {
+      return [
+        String(item && item.source || "catalog"),
+        String(item && (item.report_id || item.origin_id || item.id) || ""),
+        String(item && item.request_id || ""),
+      ].join("\u001f");
+    }
+
+    function requestIntakeIdentity(item) {
+      return [
+        String(item && item.source || ""),
+        String(item && (item.report_id || item.origin_id || item.id) || ""),
+      ].join("\u001f");
+    }
+
+    function setIntakeStatus(target, message, state = "") {
+      if (!target) return;
+      target.className = state ? `status-line ${state}` : "status-line";
+      target.textContent = String(message || "");
+    }
+
+    function setIntakeHtmlStatus(target, html, state = "") {
+      if (!target) return;
+      target.className = state ? `status-line ${state}` : "status-line";
+      target.innerHTML = html || "";
+    }
+
+    function renderRequestIntakeResults() {
+      requestIntakeItems.clear();
+      Array.from(requestIntakeByIdentity.values()).forEach((item) => requestIntakeItems.set(intakeItemKey(item), item));
+      const items = Array.from(requestIntakeByIdentity.values());
+      const moreButtons = ["report-a", "authority"]
+        .filter((source) => requestSearchHasMore[source])
+        .map((source) => `<button class="secondary-button account-admin-intake-more" type="button" data-admin-intake-search-more="${source}">加载更多${adminIntakeSourceLabel(source)}原记录</button>`)
+        .join("");
+      const requestQueueMoreButton = requestQueueHasMore
+        ? '<button class="secondary-button account-admin-intake-more" type="button" data-admin-intake-more="request">加载更多申请</button>'
+        : "";
+      requestQueueResults.innerHTML = items.length
+        ? `${items.map((item) => adminIntakeResultMarkup(item)).join("")}${requestQueueMoreButton}${moreButtons}`
+        : requestQueueIndexBuilding
+          ? `<div class="empty-state">申请队列正在后台建立索引，已展示部分结果，请稍后刷新/加载。</div>${requestQueueMoreButton}`
+          : '<div class="empty-state">当前没有匹配的待满足申请。</div>';
+      return items;
+    }
+
+    function setIntakeMode(mode) {
+      const next = ["new", "catalog", "request"].includes(mode) ? mode : "new";
+      intakeTabs.forEach((tab) => {
+        const active = tab.dataset.adminIntakeMode === next;
+        tab.classList.toggle("is-active", active);
+        tab.setAttribute("aria-selected", active ? "true" : "false");
+        tab.tabIndex = active ? 0 : -1;
+      });
+      Object.entries(intakePanels).forEach(([name, panel]) => {
+        if (panel) panel.hidden = name !== next;
+      });
+      if (next === "request" && !requestQueueLoaded) loadRequestQueue();
+    }
+
+    function renderCompletedIntake(mode, data) {
+      const item = data && (data.item || data.hot_report || data.contact_report
+        || data.upload && data.upload.result && (
+          data.upload.result.item || data.upload.result.hot_report || data.upload.result.contact_report
+        ));
+      if (mode === "hot-report") {
+        const titleText = String(item && item.title || "报告");
+        setIntakeStatus(hotReportStatus, `已上传并发布：${titleText}`, "ok");
+        loadAdminHotReports(workerUrl, targets).catch(() => null);
+        return;
+      }
+      if (mode === "text-only") {
+        const id = String(item && item.id || selectedCatalogIntake && selectedCatalogIntake.id || "");
+        const href = id ? reportPageUrl(id, { preview: item || selectedCatalogIntake || { id } }) : "";
+        setIntakeHtmlStatus(catalogIntakeStatus, href
+          ? `PDF 已补齐并发布。<a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">打开原报告详情</a>`
+          : "PDF 已补齐并发布。", "ok");
+        return;
+      }
+      const reportItem = item || selectedRequestIntake;
+      const href = contactReportDetailUrl(reportItem);
+      setIntakeHtmlStatus(requestQueueStatus, href
+        ? `PDF 已绑定原报告并发布。<a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">打开原详情验证</a>`
+        : "PDF 已绑定原报告并发布。", "ok");
+      requestQueueLoaded = false;
+    }
+
+    function uploadUiPrefix(mode) {
+      if (mode === "text-only") return "accountAdminCatalogUpload";
+      if (mode === "request") return "accountAdminRequestUpload";
+      return "accountAdminHotReportUpload";
+    }
+
+    function uploadStatusTarget(mode) {
+      if (mode === "text-only") return catalogIntakeStatus;
+      if (mode === "request") return requestQueueStatus;
+      return hotReportStatus;
+    }
+
+    function guardUnresolvedIntakeUpload(statusTarget) {
+      const saved = readAdminPdfUploadSession();
+      if (!saved) return false;
+      if (uploadRecovery) uploadRecovery.hidden = false;
+      if (uploadRecoveryText) uploadRecoveryText.textContent = restoredAdminPdfUploadMessage(saved);
+      setIntakeStatus(statusTarget, "上一笔 PDF 上传结果尚未确认。请先点击“检查上传结果”，不要重复上传。", "error");
+      return true;
+    }
+
+    async function checkSavedUpload(session = readAdminPdfUploadSession()) {
+      if (!session) {
+        if (uploadRecovery) uploadRecovery.hidden = true;
+        return null;
+      }
+      setIntakeMode(session.mode === "text-only" ? "catalog" : session.mode === "request" ? "request" : "new");
+      if (uploadRecovery) uploadRecovery.hidden = false;
+      if (uploadRecoveryText) uploadRecoveryText.textContent = restoredAdminPdfUploadMessage(session);
+      if (uploadRecoveryCheck) uploadRecoveryCheck.disabled = true;
+      try {
+        const result = await checkAdminPdfUploadResult(workerUrl, session, {
+          prefix: uploadUiPrefix(session.mode),
+          fileInput: session.mode === "text-only" ? catalogIntakePdf : session.mode === "request" ? requestIntakePdf : hotReportPdf,
+          setStatus(message, state) {
+            setIntakeStatus(uploadStatusTarget(session.mode), message, state);
+          },
+          onComplete(data) {
+            renderCompletedIntake(session.mode, data);
+          },
+        });
+        if (!readAdminPdfUploadSession() && uploadRecovery) uploadRecovery.hidden = true;
+        return result;
+      } catch (error) {
+        setIntakeStatus(uploadStatusTarget(session.mode), error.message || "上传状态读取失败，请稍后再检查。", "error");
+        throw error;
+      } finally {
+        if (uploadRecoveryCheck) uploadRecoveryCheck.disabled = false;
+      }
+    }
+
+    async function loadCatalogCandidates(options = {}) {
+      const append = options.append === true;
+      const query = String(catalogIntakeQuery && catalogIntakeQuery.value || "").trim();
+      if (!query) {
+        setIntakeStatus(catalogIntakeStatus, "请输入报告标题或编号。", "error");
+        if (catalogIntakeQuery) catalogIntakeQuery.focus();
+        return;
+      }
+      const page = append ? catalogIntakePage + 1 : 1;
+      setIntakeStatus(catalogIntakeStatus, append ? "正在加载更多可补齐记录…" : "正在核验 Text only 与 PDF 对象状态…");
+      if (catalogIntakeResults && !append) catalogIntakeResults.innerHTML = '<div class="empty-state">正在检索并核验对象…</div>';
+      try {
+        const data = await fetchAdminPdfIntakeCandidates(workerUrl, "catalog", query, {
+          page,
+          cursor: append ? catalogIntakeCursor : "",
+        });
+        if (!append) catalogIntakeItems.clear();
+        data.items.forEach((item) => catalogIntakeItems.set(intakeItemKey(item), { ...item, source: "catalog" }));
+        catalogIntakePage = page;
+        catalogIntakeCursor = String(data.next_cursor || "");
+        const hasMore = data.has_more === true || Boolean(data.next_page) || Boolean(catalogIntakeCursor);
+        const allItems = Array.from(catalogIntakeItems.values());
+        catalogIntakeResults.innerHTML = allItems.length
+          ? `${allItems.map((item) => adminIntakeResultMarkup(item)).join("")}${hasMore ? '<button class="secondary-button account-admin-intake-more" type="button" data-admin-intake-more="catalog">加载更多</button>' : ""}`
+          : '<div class="empty-state">没有找到可补齐记录。有效 PDF 不允许覆盖；可尝试更完整的标题或编号。</div>';
+        setIntakeStatus(catalogIntakeStatus, allItems.length
+          ? `已加载 ${allItems.length} 条记录${hasMore ? "，可继续加载更多" : ""}；请选择可补齐项。`
+          : "未找到可补齐记录。", allItems.length ? "ok" : "");
+      } catch (error) {
+        catalogIntakeResults.innerHTML = '<div class="error-state">可补齐记录暂时无法读取，请稍后重试。</div>';
+        setIntakeStatus(catalogIntakeStatus, error.message || "可补齐记录检索失败。", "error");
+      }
+    }
+
+    async function loadRequestQueue(options = {}) {
+      const append = options.append === true;
+      requestQueueLoaded = true;
+      if (!append) requestQueueIndexBuilding = false;
+      const query = String(requestQueueQuery && requestQueueQuery.value || "").trim();
+      setIntakeStatus(requestQueueStatus, append ? "正在加载下一页申请…" : "正在读取报告A与高权报告申请队列…");
+      if (requestQueueResults && !append) requestQueueResults.innerHTML = '<div class="empty-state">正在读取申请队列…</div>';
+      try {
+        const tasks = [fetchAdminReportRequestQueue(workerUrl, query, { cursor: append ? requestQueueCursor : "" })];
+        if (!append && query) {
+          tasks.push(fetchAdminPdfIntakeCandidates(workerUrl, "report-a", query));
+          tasks.push(fetchAdminPdfIntakeCandidates(workerUrl, "authority", query));
+        }
+        const results = await Promise.allSettled(tasks);
+        const queueResult = results[0];
+        if (queueResult.status === "rejected" && results.every((result) => result.status === "rejected")) {
+          throw queueResult.reason || new Error("申请队列读取失败。");
+        }
+        if (!append) {
+          requestIntakeItems.clear();
+          requestIntakeByIdentity.clear();
+          requestQueueCursor = "";
+          requestQueueHasMore = false;
+          requestSearchQuery = query;
+          requestSearchPage["report-a"] = 1;
+          requestSearchPage.authority = 1;
+          requestSearchHasMore["report-a"] = false;
+          requestSearchHasMore.authority = false;
+        }
+        if (queueResult.status === "fulfilled") {
+          queueResult.value.items.forEach((item) => requestIntakeByIdentity.set(requestIntakeIdentity(item), item));
+          requestQueueCursor = queueResult.value.next_cursor;
+          requestQueueHasMore = queueResult.value.has_more && Boolean(requestQueueCursor);
+          requestQueueIndexBuilding = queueResult.value.partial_index === true;
+        }
+        if (!append) {
+          results.slice(1).forEach((result, index) => {
+            if (result.status !== "fulfilled") return;
+            const source = index === 0 ? "report-a" : "authority";
+            requestSearchHasMore[source] = result.value.has_more === true;
+            result.value.items.forEach((item) => {
+              const normalized = { ...item, source: item.source || source };
+              const identity = requestIntakeIdentity(normalized);
+              if (!requestIntakeByIdentity.has(identity)) requestIntakeByIdentity.set(identity, normalized);
+            });
+          });
+        }
+        const items = renderRequestIntakeResults();
+        const partial = results.some((result) => result.status === "rejected");
+        if (requestQueueIndexBuilding) {
+          setIntakeStatus(requestQueueStatus, "申请队列正在后台建立索引，已展示部分结果，请稍后刷新/加载。");
+        } else {
+          setIntakeStatus(requestQueueStatus, items.length
+            ? `已加载 ${items.length} 条申请或原记录${requestQueueHasMore ? "，可按需加载下一页" : ""}${partial ? "；部分主动搜索暂未返回" : ""}。`
+            : "当前没有匹配的待满足申请。", partial ? "" : "ok");
+        }
+      } catch (error) {
+        requestQueueLoaded = false;
+        requestQueueResults.innerHTML = '<div class="error-state">申请队列暂时无法读取，请稍后重试。</div>';
+        setIntakeStatus(requestQueueStatus, error.message || "申请队列读取失败。", "error");
+      }
+    }
+
+    async function loadMoreRequestSearch(source) {
+      if (!["report-a", "authority"].includes(source) || !requestSearchHasMore[source] || !requestSearchQuery) return;
+      const page = requestSearchPage[source] + 1;
+      setIntakeStatus(requestQueueStatus, `正在加载更多${adminIntakeSourceLabel(source)}原记录…`);
+      try {
+        const data = await fetchAdminPdfIntakeCandidates(workerUrl, source, requestSearchQuery, { page });
+        data.items.forEach((item) => {
+          const normalized = { ...item, source: item.source || source };
+          const identity = requestIntakeIdentity(normalized);
+          if (!requestIntakeByIdentity.has(identity)) requestIntakeByIdentity.set(identity, normalized);
+        });
+        requestSearchPage[source] = page;
+        requestSearchHasMore[source] = data.has_more === true;
+        const items = renderRequestIntakeResults();
+        setIntakeStatus(requestQueueStatus, `已加载 ${items.length} 条申请或原记录。`, "ok");
+      } catch (error) {
+        setIntakeStatus(requestQueueStatus, error.message || `${adminIntakeSourceLabel(source)}原记录加载失败。`, "error");
+      }
+    }
+
+    intakeTabs.forEach((tab) => {
+      tab.addEventListener("click", () => setIntakeMode(tab.dataset.adminIntakeMode));
+    });
+    if (catalogIntakeSearch) catalogIntakeSearch.addEventListener("submit", (event) => {
+      event.preventDefault();
+      loadCatalogCandidates();
+    });
+    if (catalogIntakeResults) catalogIntakeResults.addEventListener("click", (event) => {
+      if (event.target.closest("[data-admin-intake-more='catalog']")) {
+        loadCatalogCandidates({ append: true });
+        return;
+      }
+      const button = event.target.closest("[data-source][data-id]");
+      if (!button || button.disabled) return;
+      const key = [button.dataset.source, button.dataset.id, button.dataset.requestId || ""].join("\u001f");
+      selectedCatalogIntake = catalogIntakeItems.get(key) || null;
+      if (!selectedCatalogIntake) return;
+      catalogIntakeSelection.innerHTML = adminIntakeSelectionMarkup(selectedCatalogIntake);
+      catalogIntakeUpload.hidden = false;
+      resetAdminPdfUploadId(catalogIntakePdf);
+      catalogIntakePdf.focus();
+      setIntakeStatus(catalogIntakeStatus, "已选择记录。请选择对应 PDF；系统会再次检查，已有有效对象不会被覆盖。", "ok");
+    });
+    if (requestQueueRefresh) requestQueueRefresh.addEventListener("click", () => {
+      requestQueueLoaded = false;
+      loadRequestQueue();
+    });
+    if (requestQueueSearch) requestQueueSearch.addEventListener("submit", (event) => {
+      event.preventDefault();
+      requestQueueLoaded = false;
+      loadRequestQueue();
+    });
+    if (requestQueueResults) requestQueueResults.addEventListener("click", (event) => {
+      const searchMore = event.target.closest("[data-admin-intake-search-more]");
+      if (searchMore) {
+        loadMoreRequestSearch(String(searchMore.dataset.adminIntakeSearchMore || ""));
+        return;
+      }
+      if (event.target.closest("[data-admin-intake-more='request']")) {
+        loadRequestQueue({ append: true });
+        return;
+      }
+      const button = event.target.closest("[data-source][data-id]");
+      if (!button || button.disabled) return;
+      const key = [button.dataset.source, button.dataset.id, button.dataset.requestId || ""].join("\u001f");
+      selectedRequestIntake = requestIntakeItems.get(key) || null;
+      if (!selectedRequestIntake) return;
+      requestIntakeSelection.innerHTML = adminIntakeSelectionMarkup(selectedRequestIntake);
+      requestIntakeUpload.hidden = false;
+      resetAdminPdfUploadId(requestIntakePdf);
+      requestIntakePdf.focus();
+      setIntakeStatus(requestQueueStatus, "已选择申请记录。上传后会绑定原报告详情，不另建重复线索。", "ok");
+    });
+    [hotReportPdf, catalogIntakePdf, requestIntakePdf].filter(Boolean).forEach((input) => {
+      input.addEventListener("change", () => resetAdminPdfUploadId(input));
+    });
+    ["accountAdminHotReportUpload", "accountAdminCatalogUpload", "accountAdminRequestUpload"].forEach((prefix) => {
+      const cancel = document.getElementById(`${prefix}Cancel`);
+      const check = document.getElementById(`${prefix}Check`);
+      if (cancel) cancel.addEventListener("click", () => {
+        if (activeAdminPdfUpload && typeof activeAdminPdfUpload.cancel === "function") activeAdminPdfUpload.cancel();
+      });
+      if (check) check.addEventListener("click", () => {
+        checkSavedUpload().catch(() => null);
+      });
+    });
+    if (uploadRecoveryCheck) uploadRecoveryCheck.addEventListener("click", () => {
+      checkSavedUpload().catch(() => null);
+    });
+
+    if (catalogIntakeUpload) catalogIntakeUpload.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (guardUnresolvedIntakeUpload(catalogIntakeStatus)) return;
+      const pdf = catalogIntakePdf && catalogIntakePdf.files && catalogIntakePdf.files[0];
+      const submit = catalogIntakeUpload.querySelector("button[type='submit']");
+      if (!selectedCatalogIntake) {
+        setIntakeStatus(catalogIntakeStatus, "请先检索并选择原记录。", "error");
+        return;
+      }
+      if (!pdf) {
+        setIntakeStatus(catalogIntakeStatus, "请选择 PDF 文件。", "error");
+        return;
+      }
+      if (pdf.size <= 0 || pdf.size > 95 * 1024 * 1024) {
+        setIntakeStatus(catalogIntakeStatus, "PDF 必须不超过 95 MB。", "error");
+        return;
+      }
+      const formData = new FormData();
+      formData.set("id", selectedCatalogIntake.id);
+      formData.set("pdf", pdf, pdf.name);
+      if (submit) submit.disabled = true;
+      catalogIntakePdf.disabled = true;
+      try {
+        const data = await runAdminPdfUpload({
+          url: `${workerUrl}/account-admin/text-only-pdf`,
+          formData,
+          file: pdf,
+          fileInput: catalogIntakePdf,
+          uploadId: adminPdfUploadIdForFile(catalogIntakePdf),
+          kind: "text-only-pdf",
+          mode: "text-only",
+          source: "catalog",
+          targetId: selectedCatalogIntake.id,
+          prefix: "accountAdminCatalogUpload",
+          setStatus(message, state) { setIntakeStatus(catalogIntakeStatus, message, state); },
+        });
+        renderCompletedIntake("text-only", data);
+        catalogIntakeUpload.reset();
+        resetAdminPdfUploadId(catalogIntakePdf);
+      } catch (error) {
+        setIntakeStatus(catalogIntakeStatus, error.message || "PDF 补齐失败，请先检查结果。", "error");
+      } finally {
+        if (submit) submit.disabled = false;
+        catalogIntakePdf.disabled = false;
+      }
+    });
+
+    if (requestIntakeUpload) requestIntakeUpload.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (guardUnresolvedIntakeUpload(requestQueueStatus)) return;
+      const pdf = requestIntakePdf && requestIntakePdf.files && requestIntakePdf.files[0];
+      const submit = requestIntakeUpload.querySelector("button[type='submit']");
+      if (!selectedRequestIntake) {
+        setIntakeStatus(requestQueueStatus, "请先选择一条报告申请。", "error");
+        return;
+      }
+      if (!pdf) {
+        setIntakeStatus(requestQueueStatus, "请选择 PDF 文件。", "error");
+        return;
+      }
+      if (pdf.size <= 0 || pdf.size > 95 * 1024 * 1024) {
+        setIntakeStatus(requestQueueStatus, "PDF 必须不超过 95 MB。", "error");
+        return;
+      }
+      let uploadPayload;
+      try {
+        uploadPayload = buildContactReportUploadFormData(selectedRequestIntake, pdf);
+      } catch (error) {
+        setIntakeStatus(requestQueueStatus, error.message || "原报告验证信息无效，请重新选择。", "error");
+        return;
+      }
+      const { formData, originId } = uploadPayload;
+      if (submit) submit.disabled = true;
+      requestIntakePdf.disabled = true;
+      try {
+        const data = await runAdminPdfUpload({
+          url: `${workerUrl}/account-admin/contact-report-pdf`,
+          formData,
+          file: pdf,
+          fileInput: requestIntakePdf,
+          uploadId: adminPdfUploadIdForFile(requestIntakePdf),
+          kind: "contact-report-pdf",
+          mode: "request",
+          source: selectedRequestIntake.source,
+          targetId: originId,
+          prefix: "accountAdminRequestUpload",
+          setStatus(message, state) { setIntakeStatus(requestQueueStatus, message, state); },
+        });
+        renderCompletedIntake("request", data);
+        requestIntakeUpload.reset();
+        resetAdminPdfUploadId(requestIntakePdf);
+      } catch (error) {
+        setIntakeStatus(requestQueueStatus, error.message || "报告绑定失败，请先检查结果。", "error");
+      } finally {
+        if (submit) submit.disabled = false;
+        requestIntakePdf.disabled = false;
+      }
+    });
+
+    const restoredUpload = readAdminPdfUploadSession();
+    if (restoredUpload) {
+      if (uploadRecovery) uploadRecovery.hidden = false;
+      if (uploadRecoveryText) uploadRecoveryText.textContent = restoredAdminPdfUploadMessage(restoredUpload);
+      setIntakeMode(restoredUpload.mode === "text-only" ? "catalog" : restoredUpload.mode === "request" ? "request" : "new");
+      renderAdminPdfUploadUi(uploadUiPrefix(restoredUpload.mode), {
+        percent: restoredUpload.state === "uploading" ? 0 : 100,
+        text: "检测到未确认结果，请先检查，不要重复上传。",
+        startedAt: restoredUpload.started_at,
+        canCancel: false,
+        canCheck: true,
+        state: restoredUpload.state,
+      });
+    } else {
+      setIntakeMode("new");
+    }
+
     function finish() {
       if (accountAdminRefreshTimer) {
         clearTimeout(accountAdminRefreshTimer);
@@ -4393,15 +5659,17 @@
     if (hotReportForm) {
       hotReportForm.addEventListener("submit", async (event) => {
         event.preventDefault();
+        if (guardUnresolvedIntakeUpload(hotReportStatus)) return;
         const submit = hotReportForm.querySelector("button[type='submit']");
         if (submit) submit.disabled = true;
         hotReportStatus.className = "status-line";
         hotReportStatus.textContent = "正在上传 PDF，请保持页面开启…";
         try {
-          const item = await uploadAdminHotReport(workerUrl, targets);
+          const { item } = await uploadAdminHotReport(workerUrl, targets);
           hotReportStatus.className = "status-line ok";
           hotReportStatus.textContent = `已上传：${item.title}`;
           hotReportForm.reset();
+          resetAdminPdfUploadId(hotReportPdf);
           if (hotReportDate) hotReportDate.value = String(item.date || "");
           await loadAdminHotReports(workerUrl, targets);
           hotReportStatus.className = "status-line ok";
@@ -5007,6 +6275,25 @@
     if (size >= 1024 * 1024) return `${(size / 1024 / 1024).toFixed(1)} MB`;
     if (size >= 1024) return `${Math.round(size / 1024)} KB`;
     return `${size} B`;
+  }
+
+  function contactReportStorageMetaText(metadata) {
+    if (!metadata || typeof metadata !== "object" || Array.isArray(metadata)) return "";
+    const hasNumber = (key) => Object.prototype.hasOwnProperty.call(metadata, key)
+      && Number.isFinite(Number(metadata[key]))
+      && Number(metadata[key]) >= 0;
+    const hasSize = hasNumber("contact_report_size_bytes");
+    const hasLimit = hasNumber("contact_report_limit_bytes");
+    const hasCount = hasNumber("contact_report_count");
+    if (!hasSize && !hasLimit && !hasCount) return "";
+    const sizeText = hasSize ? formatSize(metadata.contact_report_size_bytes) || "0 B" : "";
+    const limitText = hasLimit ? formatSize(metadata.contact_report_limit_bytes) || "0 B" : "";
+    const countText = hasCount ? `${Math.floor(Number(metadata.contact_report_count))} contact reports` : "";
+    let archiveText = "";
+    if (sizeText && limitText) archiveText = `${sizeText} / ${limitText} contact archive`;
+    else if (sizeText) archiveText = `${sizeText} contact archive`;
+    else if (limitText) archiveText = `${limitText} contact archive limit`;
+    return [countText, archiveText].filter(Boolean).join(" · ");
   }
 
   function isoDateFromValue(value) {
@@ -6004,6 +7291,7 @@
       const limitSize = formatSize(internalStorageMetadata && internalStorageMetadata.limit_bytes);
       const hotTotalSize = formatSize(internalStorageMetadata && internalStorageMetadata.hot_report_size_bytes);
       const hotLimitSize = formatSize(internalStorageMetadata && internalStorageMetadata.hot_report_limit_bytes);
+      const contactStorageMeta = contactReportStorageMetaText(internalStorageMetadata);
       if (showInternalStorageMetadata && totalSize && limitSize) {
         meta.textContent += ` | ${totalSize} / ${limitSize} PDF storage`;
       } else if (showInternalStorageMetadata && totalSize) {
@@ -6011,6 +7299,9 @@
       }
       if (showInternalStorageMetadata && hotTotalSize && hotLimitSize) {
         meta.textContent += ` | ${hotTotalSize} / ${hotLimitSize} hot archive`;
+      }
+      if (showInternalStorageMetadata && contactStorageMeta) {
+        meta.textContent += ` | ${contactStorageMeta}`;
       }
       if (catalog.updated_at_bjt) {
         meta.textContent += ` | Updated ${catalog.updated_at_bjt}`;
@@ -7763,6 +9054,7 @@
           <input id="textOnlyPdfFile" name="pdf" type="file" accept="application/pdf,.pdf" required>
           <button class="primary" id="textOnlyPdfUploadButton" type="submit">上传 PDF</button>
         </form>
+        ${adminPdfUploadProgressMarkup("textOnlyPdfUpload")}
         <div id="textOnlyPdfUploadStatus" class="status-line" aria-live="polite"></div>
       </section>
     `;
@@ -7994,30 +9286,80 @@
     const status = document.getElementById("textOnlyPdfUploadStatus");
     if (!panel || !form || !fileInput || !button || !status || !workerUrl) return;
 
+    function setStatus(message, state = "") {
+      status.className = state ? `status-line ${state}` : "status-line";
+      status.textContent = localizedContactText(message || "");
+    }
+
+    function completeUpload() {
+      setStatus("PDF 已补齐并发布，正在刷新原报告状态…", "ok");
+      window.setTimeout(() => window.location.reload(), 350);
+    }
+
     function refreshVisibility() {
       panel.hidden = isPdfAvailable(item) || !isSuperSession();
     }
 
     refreshVisibility();
     document.addEventListener("portal-auth-change", refreshVisibility);
+    fileInput.addEventListener("change", () => resetAdminPdfUploadId(fileInput));
+    const cancel = document.getElementById("textOnlyPdfUploadCancel");
+    const check = document.getElementById("textOnlyPdfUploadCheck");
+    if (cancel) cancel.addEventListener("click", () => {
+      if (activeAdminPdfUpload && typeof activeAdminPdfUpload.cancel === "function") activeAdminPdfUpload.cancel();
+    });
+    if (check) check.addEventListener("click", async () => {
+      const saved = readAdminPdfUploadSession();
+      if (!saved || saved.mode !== "text-only" || saved.target_id !== String(item.id || "")) {
+        setStatus("没有这份报告可检查的上传记录。", "error");
+        return;
+      }
+      check.disabled = true;
+      try {
+        await checkAdminPdfUploadResult(workerUrl, saved, {
+          prefix: "textOnlyPdfUpload",
+          fileInput,
+          setStatus,
+          onComplete: completeUpload,
+        });
+      } catch (error) {
+        setStatus(error.message || "上传状态读取失败，请稍后再检查。", "error");
+      } finally {
+        check.disabled = false;
+      }
+    });
+
+    const restored = readAdminPdfUploadSession();
+    if (restored && restored.mode === "text-only" && restored.target_id === String(item.id || "")) {
+      renderAdminPdfUploadUi("textOnlyPdfUpload", {
+        percent: restored.state === "uploading" ? 0 : 100,
+        text: "检测到未确认结果，请先检查，不要重复上传。",
+        startedAt: restored.started_at,
+        canCancel: false,
+        canCheck: true,
+        state: restored.state,
+      });
+      setStatus(restoredAdminPdfUploadMessage(restored));
+    }
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
+      const unresolved = readAdminPdfUploadSession();
+      if (unresolved) {
+        setStatus("上一笔 PDF 上传结果尚未确认。请先点击“检查上传结果”，不要重复上传。", "error");
+        return;
+      }
       const pdf = fileInput.files && fileInput.files[0];
-      status.className = "status-line";
       if (!isSuperSession()) {
-        status.textContent = "请先登录 admin-a 管理员账号。";
-        status.classList.add("error");
+        setStatus("请先登录 admin-a 管理员账号。", "error");
         refreshVisibility();
         return;
       }
       if (!pdf) {
-        status.textContent = "请选择 PDF 文件。";
-        status.classList.add("error");
+        setStatus("请选择 PDF 文件。", "error");
         return;
       }
       if (pdf.size <= 0 || pdf.size > 95 * 1024 * 1024) {
-        status.textContent = "PDF 必须不超过 95 MB。";
-        status.classList.add("error");
+        setStatus("PDF 必须不超过 95 MB。", "error");
         return;
       }
       const formData = new FormData();
@@ -8025,21 +9367,23 @@
       formData.set("pdf", pdf, pdf.name);
       button.disabled = true;
       fileInput.disabled = true;
-      status.textContent = "正在上传并核验 PDF…";
       try {
-        const response = await fetch(`${workerUrl}/account-admin/text-only-pdf`, {
-          method: "POST",
-          headers: authHeaders(),
-          body: formData,
+        await runAdminPdfUpload({
+          url: `${workerUrl}/account-admin/text-only-pdf`,
+          formData,
+          file: pdf,
+          fileInput,
+          uploadId: adminPdfUploadIdForFile(fileInput),
+          kind: "text-only-pdf",
+          mode: "text-only",
+          source: "catalog",
+          targetId: item.id,
+          prefix: "textOnlyPdfUpload",
+          setStatus,
         });
-        const data = await response.json().catch(() => ({}));
-        if (!response.ok || !data.ok) throw new Error(data.detail || "PDF 上传失败。");
-        status.textContent = "PDF 已上传并核验，正在刷新报告状态…";
-        status.classList.add("ok");
-        window.setTimeout(() => window.location.reload(), 350);
+        completeUpload();
       } catch (error) {
-        status.textContent = localizedContactText(error.message || "PDF 上传失败，请稍后重试。");
-        status.classList.add("error");
+        setStatus(error.message || "PDF 上传失败，请先检查结果。", "error");
         button.disabled = false;
         fileInput.disabled = false;
       }
@@ -8047,10 +9391,11 @@
   }
 
   function accountAccessMarkup(item = {}) {
+    const contactReport = isContactOnlyItem(item);
     return `
       <section class="account-access" id="accountAccess" hidden>
-        <h3>Account access</h3>
-        <p class="subtle" id="accountAccessHint">登录后可查看账号下载权限。</p>
+        <h3>${contactReport ? "会员下载" : "Account access"}</h3>
+        <p class="subtle" id="accountAccessHint">${contactReport ? "3个月及以上会员可下载全文。" : "登录后可查看账号下载权限。"}</p>
         <div class="account-access-actions">
           <button class="secondary-button" id="openAccountPanel" type="button">注册 / 登录</button>
           <button class="primary" id="accountDownloadReport" type="button" hidden>账号下载</button>
@@ -8154,6 +9499,7 @@
     const status = document.getElementById("accountAccessStatus");
     const passwordForm = document.getElementById("unlockForm") || document.getElementById("externalDetailForm");
     const isHotReport = source === HOT_REPORT_SOURCE;
+    const isThreeMonthReport = isHotReport || isContactOnlyItem(item);
     const context = { item, source };
 
     function statusTarget(text, kind) {
@@ -8173,8 +9519,8 @@
       openAccount.hidden = false;
       openAccount.textContent = session ? "签到 / 领取" : "注册 / 登录";
       if (!session) {
-        hint.innerHTML = isHotReport
-          ? "登录后可查看热门报告下载权限；需至少 3 个月会员。"
+        hint.innerHTML = isThreeMonthReport
+          ? "登录后可查看下载权限；需至少 3 个月会员。"
           : "登录后可查看账号下载权限。";
         statusTargetHtml(`请先注册或登录。${accessContactGuidanceHtml()}`);
         return;
@@ -8191,7 +9537,7 @@
           statusTarget(summary ? `可直接使用账号下载；${summary}。` : "可直接使用账号下载。", "ok");
         } else {
           if (passwordForm) passwordForm.hidden = false;
-          if (isHotReport) {
+          if (isThreeMonthReport) {
             statusTargetHtml(`当前权益未达到 3 个月。${accessContactGuidanceHtml()}`);
           } else {
             statusTarget(summary
@@ -8329,6 +9675,10 @@
     url.searchParams.set("id", item.id);
     if (password) url.searchParams.set("password", password);
     if (password || options.compact) return url.toString();
+    const requestToken = String(item && item.request_token || "").trim();
+    if (["authority", "report-a"].includes(String(item && item.source || "")) && requestToken) {
+      url.searchParams.set("rt", requestToken.slice(0, 4096));
+    }
     const previewKeys = [
       "source", "title", "title_cn", "institution", "date", "file_type", "kind",
       "kind_label", "page_count", "size_bytes", "report_type", "language", "category",
@@ -8833,6 +10183,7 @@
       institution: params.get("institution") || "",
       date: params.get("date") || "",
       file_type: params.get("file_type") || "",
+      request_token: params.get("rt") || "",
       kind: params.get("kind") || "",
       kind_label: params.get("kind_label") || "",
       page_count: params.get("page_count") || "",
@@ -8900,12 +10251,13 @@
   function docEndpoint(item) {
     if (isHotReportItem(item)) return "hot-reports";
     if (isThinkTankItem(item)) return "thinktank";
-    return isAuthorityItem(item) ? "authority" : "external";
+    if (isContactOnlyItem(item)) return "contact-report";
+    return "external";
   }
 
   function validDocId(item) {
     if (isAuthorityItem(item)) return /^(?:(?:foreign|foreign-rt):[0-9]{1,25}|supplemental:[a-f0-9]{32})$/.test(item.id);
-    if (isReportAItem(item)) return /^report-a:[a-f0-9]{16,64}$/i.test(item.id);
+    if (isReportAItem(item)) return /^report-a:[A-Za-z0-9_-]{1,180}$/.test(item.id);
     if (isThinkTankItem(item)) return /^thinktank:[A-Za-z0-9._-]{3,220}$/.test(item.id);
     if (isHotReportItem(item)) return /^hot:[a-f0-9]{16}$/i.test(item.id);
     return /^[0-9]{6,25}$/.test(item.id);
@@ -8917,12 +10269,20 @@
       ...analyticsReportPayload(item, item.source || EXTERNAL_SOURCE),
       action: options.auth ? "account_download" : "password_download",
     });
-    const response = await fetch(`${workerUrl}/${docEndpoint(item)}/pdf`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", ...(options.auth ? authHeaders() : {}) },
-      cache: "no-store",
-      body: JSON.stringify({ id: item.id, password: password || "" }),
-    });
+    const contactDownload = isContactOnlyItem(item);
+    const contactParams = new URLSearchParams({ source: item.source, id: item.id });
+    const response = await fetch(contactDownload
+      ? `${workerUrl}/contact-report/pdf?${contactParams.toString()}`
+      : `${workerUrl}/${docEndpoint(item)}/pdf`, contactDownload ? {
+        method: "GET",
+        headers: options.auth ? authHeaders() : {},
+        cache: "no-store",
+      } : {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...(options.auth ? authHeaders() : {}) },
+        cache: "no-store",
+        body: JSON.stringify({ id: item.id, password: password || "" }),
+      });
     if (response.status === 202) {
       let data = {};
       try {
@@ -9020,16 +10380,21 @@
     let endpoint = "";
     if (isHotReportItem(merged)) endpoint = "hot-reports/item";
     else if (isThinkTankItem(merged)) endpoint = "thinktank/item";
-    else if (isAuthorityItem(merged) && /^supplemental:/.test(merged.id)) endpoint = "authority/item";
+    else if (isContactOnlyItem(merged)) endpoint = "contact-report/item";
     else if (merged.source === EXTERNAL_SOURCE) endpoint = "external/item";
     if (!endpoint) return merged;
     try {
-      const response = await fetch(`${workerUrl}/${endpoint}?id=${encodeURIComponent(merged.id)}`, {
+      const params = new URLSearchParams({ id: merged.id });
+      if (isContactOnlyItem(merged)) {
+        params.set("source", merged.source);
+        if (merged.request_token) params.set("request_token", merged.request_token);
+      }
+      const response = await fetch(`${workerUrl}/${endpoint}?${params.toString()}`, {
         cache: "no-store",
       });
       const data = await response.json().catch(() => ({}));
       if (!response.ok || !data.item || !data.item.id) return merged;
-      merged = { ...merged, ...data.item, source: merged.source };
+      merged = { ...merged, ...data.item, source: merged.source, __detail_fetched: true };
       rememberDocItem(merged);
       return merged;
     } catch (_error) {
@@ -9069,6 +10434,7 @@
     const submit = document.getElementById("reportRequestSubmit");
     const status = document.getElementById("reportRequestStatus");
     if (!form || !email || !submit || !status) return;
+    let requestToken = String(item && item.request_token || "");
 
     function setRequestStatus(message, state = "") {
       status.textContent = String(message || "");
@@ -9092,6 +10458,16 @@
       submit.textContent = "正在提交…";
       setRequestStatus("正在通知 KC桌面，请稍候…");
       try {
+        if (["authority", "report-a"].includes(String(item && item.source || "")) && !requestToken) {
+          setRequestStatus("正在刷新报告验证信息…");
+          const params = new URLSearchParams({ source: item.source, id: item.id });
+          const tokenResponse = await fetch(`${workerUrl}/contact-report/item?${params.toString()}`, { cache: "no-store" });
+          const tokenData = await tokenResponse.json().catch(() => ({}));
+          requestToken = String(tokenData && tokenData.item && tokenData.item.request_token || "");
+          if (!tokenResponse.ok || !requestToken) {
+            throw new Error("报告验证信息暂时未就绪，请刷新页面后再提交；本次申请尚未发送。");
+          }
+        }
         const response = await fetch(`${workerUrl}/report-request`, {
           method: "POST",
           cache: "no-store",
@@ -9103,6 +10479,7 @@
             institution: item.institution || item.bank_name || item.bank_code || "",
             page_path: currentAnalyticsPath(),
             requester_email: requesterEmail,
+            request_token: requestToken,
             honeypot: website ? String(website.value || "") : "",
           }),
         });
@@ -9172,13 +10549,16 @@
     initNewsfeedNav();
     item = await fetchDocDetailItem(workerUrl, item);
     const passwordFromLink = deliveryPasswordFromLocation(params);
-    const shortUrl = externalPageUrl(item, passwordFromLink);
+    const shortUrl = externalPageUrl(item, passwordFromLink, {
+      compact: isContactOnlyItem(item) && item.__detail_fetched === true,
+    });
     if (shortUrl.length < window.location.href.length) {
       window.history.replaceState({}, "", shortUrl);
     }
 
     const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
     document.title = `${item.title || "Report"} | Portal Suite`;
+    const contactAvailable = isContactOnlyItem(item) && item.available === true;
     const detailFields = isAuthorityItem(item)
       ? `
         ${field("板块", docSourceLabel(item))}
@@ -9186,6 +10566,8 @@
         ${field("Institution", item.institution || "-")}
         ${field("Date", item.date || "-")}
         ${field("Pages", item.page_count ? `${item.page_count}页` : "-")}
+        ${contactAvailable ? field("PDF", formatSize(item.size_bytes) || "Available") : ""}
+        ${contactAvailable ? field("全文权限", "3个月及以上会员") : ""}
       `
       : (isReportAItem(item) ? `
         ${field("板块", docSourceLabel(item))}
@@ -9194,6 +10576,8 @@
         ${field("Category", item.category || "-")}
         ${field("Author", item.author || "-")}
         ${field("Pages", item.page_count ? `${item.page_count}页` : "-")}
+        ${contactAvailable ? field("PDF", formatSize(item.size_bytes) || "Available") : ""}
+        ${contactAvailable ? field("全文权限", "3个月及以上会员") : ""}
       ` : (isHotReportItem(item) ? `
         ${field("板块", docSourceLabel(item))}
         ${field("Institution", item.institution || "-")}
@@ -9217,7 +10601,7 @@
         <h1 class="detail-title">${escapeHtml(item.title || "Report")}</h1>
         ${zh ? `<p class="detail-title-zh">${escapeHtml(zh)}</p>` : ""}
         <p class="subtle">${isContactOnlyItem(item)
-          ? `${docSourceLabel(item)}检索线索。`
+          ? (contactAvailable ? "3个月及以上会员可下载全文。" : `${docSourceLabel(item)}检索线索。`)
           : (isHotReportItem(item) ? "3个月及以上会员可下载全文。" : "Password-protected report delivery.")}</p>
       </div>
       <div class="detail-grid">
@@ -9225,6 +10609,28 @@
       </div>
     `;
     if (isContactOnlyItem(item)) {
+      if (contactAvailable) {
+        target.innerHTML = `
+          ${detailHeader}
+          <section class="unlock-box authority-contact-box contact-report-available-box">
+            <h3>PDF 已补齐</h3>
+            <p class="subtle">这份报告已绑定原检索记录。3个月及以上会员登录后可直接下载全文。</p>
+          </section>
+          ${workerUrl ? accountAccessMarkup(item) : ""}
+          ${externalRelatedMarkup()}
+        `;
+        initReportAccessControls(item, workerUrl, item.source, (statusTarget) => (
+          downloadExternalWithAccount(workerUrl, item, statusTarget)
+        ));
+        searchIndexPromise.then(() => initExternalRelated(
+          item,
+          workerUrl,
+          catalogItems,
+          searchTextById,
+          recommendationCatalogAfterPaint(),
+        ));
+        return;
+      }
       const hint = isAuthorityItem(item)
         ? "高权报告仅提供检索线索，无法在本站直接下载。"
         : "这份报告当前仅提供检索线索，无法在本站直接下载。";
