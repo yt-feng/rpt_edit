@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { createHmac } from "node:crypto";
+import { createHash, createHmac } from "node:crypto";
 import path from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
@@ -149,6 +149,13 @@ class MemoryR2 {
 
 function accountKey(...parts) {
   return ["_account", ...parts.map((part) => encodeURIComponent(String(part || "")))].join("/");
+}
+
+function contactTargetKey(source, originId) {
+  const digest = createHash("sha256")
+    .update(`portal-contact-report:v1:${source}:${originId}`)
+    .digest("hex");
+  return `_contact-reports/v1/targets/${digest}.json`;
 }
 
 async function seedUser(bucket, identity) {
@@ -448,6 +455,28 @@ test("contact-only upload binds a request, exposes availability, enforces three-
   assert.equal(publicItem.data.item.available, true);
   assert.equal(Object.hasOwn(publicItem.data.item, "object_key"), false);
 
+  const conflictingProof = await worker.__reportRequestTest.createContactReportTargetToken(
+    env,
+    "report-a",
+    originId,
+    {
+      id: originId,
+      source: "report-a",
+      title: "New signed but conflicting search title",
+      institution: "Conflicting Search Institution",
+      date: "2026-08-28",
+      page_count: 99,
+    },
+  );
+  const bindingWins = await request(
+    env,
+    `/contact-report/item?source=report-a&id=${encodeURIComponent(originId)}&request_token=${encodeURIComponent(conflictingProof)}`,
+  );
+  assert.equal(bindingWins.response.status, 200);
+  assert.equal(bindingWins.data.item.title, "Market Outlook 2026", "an uploaded binding remains canonical over token claims");
+  assert.equal(bindingWins.data.item.institution, "Example Research");
+  assert.equal(bucket.keys("_contact-reports/v1/targets/").length, 0);
+
   const anonymous = await request(env, `/contact-report/pdf?source=report-a&id=${encodeURIComponent(originId)}`);
   assert.equal(anonymous.response.status, 401);
 
@@ -557,15 +586,23 @@ test("Report A short upstream ids receive signed tokens and pass the request con
     assert.equal(item.id, "report-a:Ab_7");
     assert.ok(item.request_token);
     assert.equal(item.target_token, item.request_token);
+    assert.equal(bucket.keys("_contact-reports/v1/targets/").length, 0, "search must only sign metadata claims");
 
     const arbitraryItem = await request(env, `/contact-report/item?source=report-a&id=${encodeURIComponent(item.id)}`);
-    assert.equal(arbitraryItem.response.status, 200);
-    assert.equal(arbitraryItem.data.item.request_token, "", "an arbitrary unbound item endpoint must not mint proof");
+    assert.equal(arbitraryItem.response.status, 404, "an unproven search row must not have been persisted");
     const provenItem = await request(
       env,
       `/contact-report/item?source=report-a&id=${encodeURIComponent(item.id)}&request_token=${encodeURIComponent(item.request_token)}`,
     );
-    assert.equal(provenItem.data.item.request_token, item.request_token);
+    assert.equal(provenItem.response.status, 200);
+    assert.equal(provenItem.data.item.title, item.title);
+    assert.ok(provenItem.data.item.request_token);
+    assert.equal(bucket.keys("_contact-reports/v1/targets/").length, 1, "opening one proven row persists exactly one target");
+
+    const compactItem = await request(env, `/contact-report/item?source=report-a&id=${encodeURIComponent(item.id)}`);
+    assert.equal(compactItem.response.status, 200, "the compact id-only URL works after the first detail preheats R2");
+    assert.equal(compactItem.data.item.title, item.title);
+    assert.equal(bucket.keys("_contact-reports/v1/targets/").length, 1);
 
     const missingProof = await request(env, "/report-request", {
       method: "POST",
@@ -595,6 +632,30 @@ test("Report A short upstream ids receive signed tokens and pass the request con
     assert.ok(savedKey);
     assert.equal(bucket.json(savedKey).report_id, item.id);
     assert.equal(bucket.json(savedKey).target_verified, true);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("search signs canonical metadata without any synchronous target R2 writes", async () => {
+  const bucket = new MemoryR2();
+  const env = envFor(bucket);
+  bucket.failPutPrefixOnce = "_contact-reports/v1/targets/";
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => new Response(`
+    <table><tr><td>
+      <div class="tab_divttl"><a href="/data/fail_soft_7.html" title="Fail-soft metadata fixture">Fail-soft metadata fixture</a></div>
+      <span>分享时间：2026-08-27</span><span>页数：12</span>
+    </td></tr></table>
+  `, { status: 200 });
+  try {
+    const search = await request(env, "/report-a/search?q=fail-soft&page=1");
+    assert.equal(search.response.status, 200);
+    assert.equal(search.data.items.length, 1);
+    assert.equal(search.data.items[0].title, "Fail-soft metadata fixture");
+    assert.ok(search.data.items[0].request_token);
+    assert.equal(bucket.keys("_contact-reports/v1/targets/").length, 0);
+    assert.equal(bucket.failPutPrefixOnce, "_contact-reports/v1/targets/", "search must not even attempt a target put");
   } finally {
     globalThis.fetch = originalFetch;
   }
@@ -731,6 +792,18 @@ test("report request index failures leave a repair marker and recover incrementa
   const bucket = new MemoryR2();
   const env = envFor(bucket);
   const originId = "report-a:r7";
+  await bucket.seed(contactTargetKey("report-a", originId), {
+    version: 1,
+    id: originId,
+    origin_id: originId,
+    source: "report-a",
+    title: "Dirty queue fixture",
+    institution: "Fixture Research",
+    date: "2026-08-27",
+    page_count: 7,
+    file_type: "pdf",
+    verified_at: "2026-08-27T00:00:00.000Z",
+  });
   bucket.failPutPrefixOnce = "_report-requests/v1/admin-index.json";
   const submitted = await request(env, "/report-request", {
     method: "POST",

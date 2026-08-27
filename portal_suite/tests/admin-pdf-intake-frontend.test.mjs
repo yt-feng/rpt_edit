@@ -362,6 +362,8 @@ test("contact request token survives search link, new page parsing, detail fetch
     validDocId() { return true; },
     isHotReportItem() { return false; },
     isThinkTankItem() { return false; },
+    isAuthorityItem(item) { return item && item.source === "authority"; },
+    isReportAItem(item) { return item && item.source === "report-a"; },
     isContactOnlyItem(item) { return ["authority", "report-a"].includes(item && item.source); },
     rememberDocItem() {},
     loadAuthSession() { return null; },
@@ -388,6 +390,9 @@ test("contact request token survives search link, new page parsing, detail fetch
     },
   });
   vm.runInContext(`
+    ${extractFunction(app, "hasMeaningfulDocTitle")}
+    ${extractFunction(app, "mergeDocItemMetadata")}
+    ${extractFunction(app, "reportRequestTitle")}
     ${extractFunction(app, "externalPageUrl")}
     ${extractFunction(app, "externalItemFromParams")}
     ${extractFunction(app, "fetchDocDetailItem")}

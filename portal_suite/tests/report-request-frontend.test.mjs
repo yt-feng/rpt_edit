@@ -63,6 +63,7 @@ function createHarness(responseFactory, options = {}) {
   const publicEmail = ["info", "@", "kc", "desk", ".com"].join("");
   const sandbox = {
     AUTHORITY_SOURCE: "authority",
+    REPORT_A_SOURCE: "report-a",
     CONTACT_EMAIL: publicEmail,
     URLSearchParams,
     document: { getElementById(id) { return elements[id] || null; } },
@@ -74,8 +75,15 @@ function createHarness(responseFactory, options = {}) {
     currentAnalyticsPath() { return "/doc.html"; },
     analyticsReportPayload(item, source) { return { report_id: item.id, source }; },
     trackEvent(workerUrl, type, data) { tracked.push({ workerUrl, type, data }); },
+    isAuthorityItem(item) { return item && item.source === "authority"; },
+    isReportAItem(item) { return item && item.source === "report-a"; },
   };
-  const initialize = vm.runInNewContext(`(${extractFunction(appSource, "initReportRequest")})`, sandbox);
+  const initialize = vm.runInNewContext(`
+    ${extractFunction(appSource, "hasMeaningfulDocTitle")}
+    ${extractFunction(appSource, "mergeDocItemMetadata")}
+    ${extractFunction(appSource, "reportRequestTitle")}
+    (${extractFunction(appSource, "initReportRequest")})
+  `, sandbox);
   initialize("/api", {
     id: "report-a:0123456789abcdef",
     title: "Example report",

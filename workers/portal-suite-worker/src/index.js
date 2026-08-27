@@ -196,6 +196,7 @@ const ADMIN_UPLOAD_MAINTENANCE_STATE_KEY = `${ADMIN_UPLOAD_PREFIX}/maintenance-s
 const CONTACT_REPORT_PREFIX = "_contact-reports/v1";
 const CONTACT_REPORT_ITEM_PREFIX = `${CONTACT_REPORT_PREFIX}/items`;
 const CONTACT_REPORT_PDF_PREFIX = `${CONTACT_REPORT_PREFIX}/pdfs`;
+const CONTACT_REPORT_TARGET_PREFIX = `${CONTACT_REPORT_PREFIX}/targets`;
 const CONTACT_REPORT_INDEX_KEY = `${CONTACT_REPORT_PREFIX}/index.json`;
 const CONTACT_REPORT_INDEX_VERSION = 1;
 const CONTACT_REPORT_INDEX_MAX_ITEMS = 2000;
@@ -207,6 +208,8 @@ const CONTACT_REPORT_STORAGE_SCAN_MAX = 5000;
 const CONTACT_REPORT_ORPHAN_CLEANUP_STATE_KEY = `${CONTACT_REPORT_PREFIX}/orphan-cleanup-state.json`;
 const CONTACT_REPORT_INDEX_DIRTY_PREFIX = `${CONTACT_REPORT_PREFIX}/index-dirty`;
 const CONTACT_REPORT_TARGET_TOKEN_TTL_SECONDS = 24 * 60 * 60;
+const CONTACT_REPORT_TARGET_TOKEN_MAX_LENGTH = 4096;
+const CONTACT_REPORT_DETAIL_TIMEOUT_MS = 10_000;
 const REPORT_REQUEST_ADMIN_SCAN_MAX = 5000;
 const REPORT_REQUEST_ADMIN_CURSOR_PATTERN = /^request:([A-Za-z0-9_-]{1,1024})$/;
 const REPORT_REQUEST_ADMIN_INDEX_KEY = "_report-requests/v1/admin-index.json";
@@ -11741,6 +11744,36 @@ async function fetchWithTimeout(resource, init = {}, timeoutMs = UPSTREAM_SEARCH
   }
 }
 
+async function fetchTextWithTimeout(resource, init = {}, timeoutMs = UPSTREAM_SEARCH_TIMEOUT_MS) {
+  const controller = new AbortController();
+  let timer;
+  const timeout = new Promise((_resolve, reject) => {
+    timer = setTimeout(() => {
+      const error = new Error("Upstream text response timed out.");
+      error.name = "TimeoutError";
+      reject(error);
+      controller.abort(error);
+    }, Math.max(1, Math.floor(Number(timeoutMs) || 1)));
+  });
+  const request = (async () => {
+    const response = await fetch(resource, {
+      ...init,
+      signal: controller.signal,
+    });
+    return {
+      ok: response.ok,
+      status: response.status,
+      headers: response.headers,
+      text: await response.text(),
+    };
+  })();
+  try {
+    return await Promise.race([request, timeout]);
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 async function fetchExternalSearchJsonWithTimeout(resource, init = {}, timeoutMs = EXTERNAL_SEARCH_TIMEOUT_MS) {
   const controller = new AbortController();
   let timer;
@@ -14324,25 +14357,45 @@ async function handleReportRequest(request, env) {
   if (!requesterEmail) {
     return privateJsonResponse(request, env, 400, { ok: false, detail: "请填写有效邮箱。" });
   }
-  const title = cleanReportRequestText(payload.title, 240);
+  const submittedTitle = cleanReportRequestText(payload.title, 240);
   const rawSource = cleanReportRequestText(payload.source, 100).toLowerCase();
   const contactSource = cleanContactReportSource(rawSource);
   const reportId = contactSource
     ? cleanContactReportOriginId(contactSource, payload.report_id)
     : cleanReportRequestText(payload.report_id, 180);
-  if (!title) {
-    return privateJsonResponse(request, env, 400, { ok: false, detail: "缺少报告标题，请刷新页面后重试。" });
-  }
+  let canonicalTarget = null;
   if (contactSource) {
-    if (!reportId || !await verifyContactReportTargetToken(env, payload.request_token, contactSource, reportId)) {
+    const targetToken = payload.request_token || payload.target_token;
+    const tokenProof = reportId
+      ? await inspectContactReportTargetToken(env, targetToken, contactSource, reportId)
+      : { valid: false, target: null };
+    if (!reportId || !tokenProof.valid) {
       return privateJsonResponse(request, env, 400, { ok: false, detail: "报告线索已失效，请返回搜索结果后重新申请。" });
     }
+    try {
+      canonicalTarget = await resolveContactReportTarget(env, contactSource, reportId, {
+        tokenTarget: tokenProof.target,
+      });
+    } catch (_error) {
+      return privateJsonResponse(request, env, 503, { ok: false, retryable: true, detail: "报告信息暂时无法核验，请稍后重试。" });
+    }
+    if (!canonicalTarget) {
+      return privateJsonResponse(request, env, 400, { ok: false, detail: "报告信息未找到，请返回搜索结果后重新申请。" });
+    }
+  }
+  const title = contactSource
+    ? cleanReportRequestText(canonicalTarget && canonicalTarget.title, 240)
+    : submittedTitle;
+  if (!title) {
+    return privateJsonResponse(request, env, 400, { ok: false, detail: "缺少报告标题，请刷新页面后重试。" });
   }
   const record = {
     report_id: reportId,
     title,
     source: contactSource || rawSource,
-    institution: cleanReportRequestText(payload.institution, 180),
+    institution: contactSource
+      ? cleanReportRequestText(canonicalTarget && canonicalTarget.institution, 180)
+      : cleanReportRequestText(payload.institution, 180),
     page_path: cleanReportRequestPagePath(payload.page_path),
     requester_email: requesterEmail,
     requester_user_id: cleanReportRequestText(user && user.id, 100),
@@ -14472,45 +14525,100 @@ function cleanContactReportOriginId(sourceValue, value) {
   return "";
 }
 
-async function createContactReportTargetToken(env, sourceValue, originIdValue) {
+function contactReportTargetTokenClaims(value, source, originId) {
+  const target = normalizeContactReportTarget(value, source, originId);
+  if (!target) return null;
+  return {
+    title: target.title,
+    institution: target.institution,
+    date: target.date,
+    kind: target.kind,
+    kind_label: target.kind_label,
+    report_type: target.report_type,
+    language: target.language,
+    category: target.category,
+    author: target.author,
+    rating: target.rating,
+    page_count: target.page_count,
+    file_type: target.file_type,
+  };
+}
+
+async function createContactReportTargetToken(env, sourceValue, originIdValue, targetValue = null) {
   const source = cleanContactReportSource(sourceValue);
   const originId = cleanContactReportOriginId(source, originIdValue);
   if (!source || !originId) return "";
   const now = Math.floor(Date.now() / 1000);
-  return signAccountPayload(env, {
+  const target = contactReportTargetTokenClaims(targetValue, source, originId);
+  const payload = {
     kind: "contact-report-target",
     source,
     origin_id: originId,
+    ...(target ? { metadata_version: 1, target } : {}),
     iat: now,
     exp: now + CONTACT_REPORT_TARGET_TOKEN_TTL_SECONDS,
-  });
+  };
+  let token = await signAccountPayload(env, payload);
+  // Detail URLs intentionally bound proof length. Canonical identity, title,
+  // institution, date and page count always survive; only unusually long
+  // display-only claims are shed when needed.
+  for (const field of [
+    "rating",
+    "author",
+    "category",
+    "report_type",
+    "kind_label",
+    "language",
+    "file_type",
+    "kind",
+  ]) {
+    if (token.length <= CONTACT_REPORT_TARGET_TOKEN_MAX_LENGTH || !payload.target) break;
+    delete payload.target[field];
+    token = await signAccountPayload(env, payload);
+  }
+  return token.length <= CONTACT_REPORT_TARGET_TOKEN_MAX_LENGTH ? token : "";
+}
+
+async function inspectContactReportTargetToken(env, value, sourceValue, originIdValue) {
+  const source = cleanContactReportSource(sourceValue);
+  const originId = cleanContactReportOriginId(source, originIdValue);
+  if (!source || !originId || !String(value || "").trim()) {
+    return { valid: false, target: null, payload: null };
+  }
+  try {
+    const payload = await verifyAccountPayload(env, String(value || "").trim(), "contact-report-target");
+    if (
+      cleanContactReportSource(payload && payload.source) !== source
+      || cleanContactReportOriginId(source, payload && payload.origin_id) !== originId
+    ) return { valid: false, target: null, payload: null };
+    const target = Number(payload && payload.metadata_version) === 1
+      ? normalizeContactReportTarget(payload && payload.target, source, originId)
+      : null;
+    return { valid: true, target, payload };
+  } catch (_error) {
+    return { valid: false, target: null, payload: null };
+  }
 }
 
 async function verifyContactReportTargetToken(env, value, sourceValue, originIdValue) {
-  const source = cleanContactReportSource(sourceValue);
-  const originId = cleanContactReportOriginId(source, originIdValue);
-  if (!source || !originId || !String(value || "").trim()) return false;
-  try {
-    const payload = await verifyAccountPayload(env, String(value || "").trim(), "contact-report-target");
-    return cleanContactReportSource(payload && payload.source) === source
-      && cleanContactReportOriginId(source, payload && payload.origin_id) === originId;
-  } catch (_error) {
-    return false;
-  }
+  return (await inspectContactReportTargetToken(env, value, sourceValue, originIdValue)).valid;
 }
 
 async function contactSearchResponseWithTargetTokens(request, env, source, response) {
   if (!response || !response.ok) return response;
   const data = await response.json().catch(() => null);
   if (!data || !Array.isArray(data.items)) return response;
-  const items = await Promise.all(data.items.map(async (item) => {
-    const targetToken = await createContactReportTargetToken(env, source, item && item.id);
+  const items = await mapWithConcurrency(data.items, 10, async (item) => {
+    const target = normalizeContactReportTarget({ ...item, source }, source, item && item.id);
+    const targetToken = target
+      ? await createContactReportTargetToken(env, source, target.origin_id, target)
+      : "";
     return {
       ...item,
       target_token: targetToken,
       request_token: targetToken,
     };
-  }));
+  });
   return jsonResponse(request, env, response.status, { ...data, items });
 }
 
@@ -14527,6 +14635,68 @@ async function contactReportItemKey(source, originId) {
 
 async function contactReportPdfKey(source, originId) {
   return `${CONTACT_REPORT_PDF_PREFIX}/${await contactReportIdentityDigest(source, originId)}.pdf`;
+}
+
+async function contactReportTargetKey(source, originId) {
+  return `${CONTACT_REPORT_TARGET_PREFIX}/${await contactReportIdentityDigest(source, originId)}.json`;
+}
+
+function normalizeContactReportTarget(value, expectedSource = "", expectedOriginId = "") {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return null;
+  const source = cleanContactReportSource(value.source || expectedSource);
+  const originId = cleanContactReportOriginId(source, value.origin_id || value.id || expectedOriginId);
+  const title = cleanReportRequestText(value.title, 320);
+  if (
+    !source
+    || !originId
+    || (expectedSource && source !== cleanContactReportSource(expectedSource))
+    || (expectedOriginId && originId !== cleanContactReportOriginId(source, expectedOriginId))
+    || !title
+    || /^(?:report|untitled report)$/i.test(title)
+  ) return null;
+  return {
+    version: 1,
+    id: originId,
+    origin_id: originId,
+    source,
+    title,
+    institution: cleanReportRequestText(value.institution, 160),
+    date: normalizeHotReportDate(value.date),
+    kind: cleanReportRequestText(value.kind, 40),
+    kind_label: cleanReportRequestText(value.kind_label, 80),
+    report_type: cleanReportRequestText(value.report_type, 120),
+    language: cleanReportRequestText(value.language, 40),
+    category: cleanReportRequestText(value.category, 120),
+    author: cleanReportRequestText(value.author, 250),
+    rating: cleanReportRequestText(value.rating, 80),
+    page_count: Math.max(0, Math.floor(Number(value.page_count || value.pages || 0) || 0)),
+    file_type: cleanReportRequestText(value.file_type, 40) || "pdf",
+    verified_at: String(value.verified_at || value.updated_at || new Date().toISOString()),
+  };
+}
+
+async function putContactReportTarget(env, value) {
+  const target = normalizeContactReportTarget(value, value && value.source, value && (value.origin_id || value.id));
+  if (!target) throw new TypeError("报告元数据无效。");
+  await accountBucket(env).put(
+    await contactReportTargetKey(target.source, target.origin_id),
+    JSON.stringify(target),
+    {
+      httpMetadata: {
+        contentType: "application/json; charset=utf-8",
+        cacheControl: "private, no-store",
+      },
+    },
+  );
+  return target;
+}
+
+async function readContactReportTarget(env, sourceValue, originIdValue) {
+  const source = cleanContactReportSource(sourceValue);
+  const originId = cleanContactReportOriginId(source, originIdValue);
+  if (!source || !originId) return null;
+  const value = await safeR2GetJson(env, await contactReportTargetKey(source, originId));
+  return normalizeContactReportTarget(value, source, originId);
 }
 
 function validateContactReportBinding(value, expectedSource = "", expectedOriginId = "") {
@@ -14558,8 +14728,8 @@ function validateContactReportBinding(value, expectedSource = "", expectedOrigin
     version: 1,
     source,
     origin_id: originId,
-    title: cleanHotReportText(value.title, 320) || originId,
-    institution: cleanHotReportText(value.institution, 160),
+    title: cleanReportRequestText(value.title, 320) || originId,
+    institution: cleanReportRequestText(value.institution, 160),
     date: normalizeHotReportDate(value.date),
     filename,
     size_bytes: sizeBytes,
@@ -14588,19 +14758,30 @@ function publicContactReportItem(value, fallback = {}) {
   const originId = row
     ? row.origin_id
     : cleanContactReportOriginId(source, fallback.origin_id || fallback.id);
+  const target = normalizeContactReportTarget(fallback, source, originId) || {};
   const available = Boolean(row);
   return {
     id: originId,
     origin_id: originId,
     source,
-    title: row ? row.title : cleanHotReportText(fallback.title, 320),
-    institution: row ? row.institution : cleanHotReportText(fallback.institution, 160),
-    date: row ? row.date : normalizeHotReportDate(fallback.date),
+    title: row ? row.title : cleanReportRequestText(target.title, 320),
+    institution: row ? row.institution : cleanReportRequestText(target.institution, 160),
+    date: row ? row.date : normalizeHotReportDate(target.date),
+    kind: cleanReportRequestText(target.kind, 40),
+    kind_label: cleanReportRequestText(target.kind_label, 80),
+    report_type: cleanReportRequestText(target.report_type, 120),
+    language: cleanReportRequestText(target.language, 40),
+    category: cleanReportRequestText(target.category, 120),
+    author: cleanReportRequestText(target.author, 250),
+    rating: cleanReportRequestText(target.rating, 80),
+    page_count: Math.max(0, Math.floor(Number(target.page_count || 0) || 0)),
+    file_type: cleanReportRequestText(target.file_type, 40) || "pdf",
     filename: row ? row.filename : "",
     size_bytes: row ? row.size_bytes : 0,
     uploaded_at: row ? row.uploaded_at : "",
     available,
     availability: available ? "available" : "contact_only",
+    contact_only: !available,
     download_url: available
       ? `/api/contact-report/pdf?source=${encodeURIComponent(source)}&id=${encodeURIComponent(originId)}`
       : "",
@@ -14619,6 +14800,57 @@ async function readContactReportBinding(env, sourceValue, originIdValue, options
   if (options.verifyObject === false) return { key, row, object: null, metadata: current.object };
   const object = await accountBucket(env).head(row.object_key);
   return contactReportObjectMatches(row, object) ? { key, row, object, metadata: current.object } : null;
+}
+
+async function recoverAuthorityContactReportTarget(env, originId) {
+  if (/^supplemental:[a-f0-9]{32}$/.test(originId)) {
+    const stored = await readStoredSourceLead(env, originId);
+    const item = stored ? slimAuthorityDomesticLead(publicSourceLeadItem(stored)) : null;
+    return normalizeContactReportTarget(item, AUTHORITY_SOURCE, originId);
+  }
+  const mirror = await getSearchMirror(env, AUTHORITY_SOURCE);
+  const item = mirror && Array.isArray(mirror.items)
+    ? mirror.items.find((candidate) => (
+      cleanContactReportOriginId(AUTHORITY_SOURCE, candidate && candidate.id) === originId
+    ))
+    : null;
+  return normalizeContactReportTarget(item, AUTHORITY_SOURCE, originId);
+}
+
+function contactReportTargetsEqual(left, right, source, originId) {
+  const leftClaims = contactReportTargetTokenClaims(left, source, originId);
+  const rightClaims = contactReportTargetTokenClaims(right, source, originId);
+  return Boolean(leftClaims && rightClaims && JSON.stringify(leftClaims) === JSON.stringify(rightClaims));
+}
+
+async function resolveContactReportTarget(env, sourceValue, originIdValue, options = {}) {
+  const source = cleanContactReportSource(sourceValue);
+  const originId = cleanContactReportOriginId(source, originIdValue);
+  if (!source || !originId) return null;
+  const binding = Object.prototype.hasOwnProperty.call(options, "binding")
+    ? options.binding
+    : await readContactReportBinding(env, source, originId, { verifyObject: true });
+  const boundTarget = normalizeContactReportTarget(binding && binding.row, source, originId);
+  if (boundTarget) return boundTarget;
+  const signedTarget = normalizeContactReportTarget(options.tokenTarget, source, originId);
+  const storedTarget = await readContactReportTarget(env, source, originId);
+  if (signedTarget) {
+    if (options.persist === true && !contactReportTargetsEqual(storedTarget, signedTarget, source, originId)) {
+      await putContactReportTarget(env, signedTarget);
+    }
+    return signedTarget;
+  }
+  if (storedTarget) return storedTarget;
+  let recovered = null;
+  if (source === HIBOR_SOURCE) {
+    recovered = await recoverHiborContactReportTarget(originId);
+  } else if (source === AUTHORITY_SOURCE) {
+    recovered = await recoverAuthorityContactReportTarget(env, originId);
+  }
+  const target = normalizeContactReportTarget(recovered, source, originId);
+  if (!target) return null;
+  if (options.persist === true) await putContactReportTarget(env, target);
+  return target;
 }
 
 async function inspectContactReportBinding(env, sourceValue, originIdValue) {
@@ -14863,23 +15095,21 @@ async function handleContactReportItem(request, env, forcedSource = "") {
   const originId = cleanContactReportOriginId(source, url.searchParams.get("id"));
   if (!source || !originId) return jsonResponse(request, env, 400, { error: "Invalid report id." });
   try {
+    const carriedToken = url.searchParams.get("request_token") || url.searchParams.get("target_token") || "";
+    const tokenProof = await inspectContactReportTargetToken(env, carriedToken, source, originId);
     const binding = await readContactReportBinding(env, source, originId, { verifyObject: true });
-    const suppliedToken = String(url.searchParams.get("request_token") || url.searchParams.get("target_token") || "").trim();
-    const suppliedVerified = suppliedToken
-      ? await verifyContactReportTargetToken(env, suppliedToken, source, originId)
-      : false;
-    const targetToken = binding
-      ? await createContactReportTargetToken(env, source, originId)
-      : (suppliedVerified ? suppliedToken : "");
+    const target = await resolveContactReportTarget(env, source, originId, {
+      binding,
+      tokenTarget: tokenProof.valid ? tokenProof.target : null,
+      persist: true,
+    });
+    if (!binding && !target) {
+      return jsonResponse(request, env, 404, { error: "Report metadata was not found." });
+    }
+    const targetToken = await createContactReportTargetToken(env, source, originId, target || (binding && binding.row));
     return jsonResponse(request, env, 200, {
       item: {
-        ...publicContactReportItem(binding && binding.row, {
-        source,
-        origin_id: originId,
-        title: url.searchParams.get("title"),
-        institution: url.searchParams.get("institution"),
-        date: url.searchParams.get("date"),
-        }),
+        ...publicContactReportItem(binding && binding.row, target || {}),
         target_token: targetToken,
         request_token: targetToken,
       },
@@ -15349,7 +15579,7 @@ async function listAdminReportRequestQueue(env, sourceValue, queryValue, limitVa
       needs_verification: needsVerification,
       verification_required: needsVerification,
       target_token: needsVerification
-        ? await createContactReportTargetToken(env, row.source, row.report_id)
+        ? await createContactReportTargetToken(env, row.source, row.report_id, row)
         : "",
     };
   });
@@ -15493,7 +15723,7 @@ async function contactReportSearchCandidates(request, env, source) {
       availability: bound ? "available" : "contact_only",
       uploadable: !bound,
       availability_index_stale: Boolean(indexedItem && !bound),
-      target_token: await createContactReportTargetToken(env, source, originId),
+      target_token: await createContactReportTargetToken(env, source, originId, item),
     };
   }));
   return { status: 200, data: { ...data, items } };
@@ -19391,6 +19621,77 @@ function parseHiborItems(html) {
   return items;
 }
 
+function hiborDetailNcid(html) {
+  const match = String(html || "").match(/\bvar\s+ncid\s*=\s*['"]([a-f0-9-]{36})['"]/i);
+  return match ? match[1].toLowerCase() : "";
+}
+
+function hiborSafeDogCookie(headers) {
+  const value = String(headers && typeof headers.get === "function" && headers.get("set-cookie") || "");
+  const match = value.match(/(?:^|,\s*)safedog-flow-item=([A-Za-z0-9._~%+\-]{1,256})(?=;|,|$)/i);
+  return match ? `safedog-flow-item=${match[1]}` : "";
+}
+
+function parseHiborDetailTarget(html, originId) {
+  const text = String(html || "");
+  const titleMatch = text.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+  const institutionMatch = text.match(/研报出处：\s*<a[^>]*>([\s\S]*?)<\/a>/i);
+  const dateMatch = text.match(/class=["']article-time["'][^>]*>\s*日期：\s*([^<]+)/i);
+  const categoryMatch = text.match(/研报栏目：\s*<a[^>]*>([\s\S]*?)<\/a>/i);
+  const authorBlock = text.match(/class=["']author["'][^>]*>([\s\S]*?)<\/span>/i);
+  const pageMatch = text.match(/<div\s+class=["']doc-info-list["'][^>]*>[\s\S]*?<i>\s*(\d{1,5})\s*页\s*<\/i>/i);
+  const title = reportAPublicText(cleanHtmlText(titleMatch && titleMatch[1]));
+  const institution = reportAPublicText(cleanHtmlText(institutionMatch && institutionMatch[1]))
+    || hiborInstitutionFromTitle(title);
+  return normalizeContactReportTarget({
+    id: originId,
+    source: HIBOR_SOURCE,
+    title,
+    institution,
+    date: cleanHtmlText(dateMatch && dateMatch[1]).slice(0, 10) || hiborDateFromTitle(title),
+    category: reportAPublicText(cleanHtmlText(categoryMatch && categoryMatch[1])),
+    author: reportAPublicText(cleanHtmlText(authorBlock && authorBlock[1])),
+    page_count: pageMatch ? Number(pageMatch[1]) : 0,
+    file_type: "pdf",
+  }, HIBOR_SOURCE, originId);
+}
+
+async function recoverHiborContactReportTarget(originIdValue, timeoutMs = CONTACT_REPORT_DETAIL_TIMEOUT_MS) {
+  const originId = cleanContactReportOriginId(HIBOR_SOURCE, originIdValue);
+  const match = originId.match(/^report-a:([A-Za-z0-9_-]{1,180})$/);
+  if (!match) return null;
+  const deadlineAt = Date.now() + Math.max(1, Math.floor(Number(timeoutMs) || CONTACT_REPORT_DETAIL_TIMEOUT_MS));
+  const detailUrl = `${HIBOR_ORIGIN}/data/${encodeURIComponent(match[1])}.html`;
+  const initialRemainingMs = Math.floor(deadlineAt - Date.now());
+  if (initialRemainingMs < 1) return null;
+  const detail = await fetchTextWithTimeout(detailUrl, {
+    headers: {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Referer": `${HIBOR_ORIGIN}/`,
+      "User-Agent": HIBOR_UA,
+    },
+  }, initialRemainingMs);
+  if (!detail.ok) return null;
+  const ncid = hiborDetailNcid(detail.text);
+  const safeDogCookie = hiborSafeDogCookie(detail.headers);
+  const remainingMs = Math.floor(deadlineAt - Date.now());
+  if (!ncid || remainingMs < 1) return null;
+  const content = await fetchTextWithTimeout(`${HIBOR_ORIGIN}/hiborweb/DocDetail/NewContent`, {
+    method: "POST",
+    headers: {
+      "Accept": "text/html,*/*;q=0.8",
+      "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+      "Origin": HIBOR_ORIGIN,
+      "Referer": detailUrl,
+      "User-Agent": HIBOR_UA,
+      ...(safeDogCookie ? { "Cookie": safeDogCookie } : {}),
+    },
+    body: new URLSearchParams({ ncid }).toString(),
+  }, remainingMs);
+  if (!content.ok || !String(content.text || "").trim()) return null;
+  return parseHiborDetailTarget(content.text, originId);
+}
+
 async function handleHiborSearch(request, env) {
   const url = new URL(request.url);
   const query = String(url.searchParams.get("q") || "").trim();
@@ -20152,35 +20453,7 @@ async function handleAuthoritySearch(request, env) {
 }
 
 async function handleAuthorityItem(request, env) {
-  const id = String(new URL(request.url).searchParams.get("id") || "").trim();
-  if (!/^supplemental:[a-f0-9]{32}$/.test(id)) {
-    return jsonResponse(request, env, 400, { error: "Invalid report id." });
-  }
-  const stored = await readStoredSourceLead(env, id);
-  if (!stored) {
-    return jsonResponse(request, env, 404, { error: "Report not found." });
-  }
-  const item = slimAuthorityDomesticLead(publicSourceLeadItem(stored));
-  if (!item.id) {
-    return jsonResponse(request, env, 404, { error: "Report not found." });
-  }
-  try {
-    const binding = await readContactReportBinding(env, AUTHORITY_SOURCE, id, { verifyObject: true });
-    const targetToken = await createContactReportTargetToken(env, AUTHORITY_SOURCE, id);
-    return jsonResponse(request, env, 200, {
-      item: {
-        ...item,
-        ...publicContactReportItem(binding && binding.row, item),
-        kind: item.kind,
-        kind_label: item.kind_label,
-        contact_only: !binding,
-        target_token: targetToken,
-        request_token: targetToken,
-      },
-    });
-  } catch (error) {
-    return jsonResponse(request, env, 503, { error: error.message || "Report availability is temporarily unavailable." });
-  }
+  return handleContactReportItem(request, env, AUTHORITY_SOURCE);
 }
 
 async function handleAuthorityPdf(request, env) {
@@ -20206,6 +20479,11 @@ export default {
     repairContactReportIndexDirty,
     repairReportRequestAdminIndexIfNeeded,
     contactReportStorageStats,
+  }),
+  __reportRequestTest: Object.freeze({
+    createContactReportTargetToken,
+    inspectContactReportTargetToken,
+    recoverHiborContactReportTarget,
   }),
   async fetch(request, env, ctx) {
     const url = new URL(request.url);

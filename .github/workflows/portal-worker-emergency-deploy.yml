@@ -343,26 +343,25 @@ jobs:
             python3 -m json.tool "$RUNNER_TEMP/api-anonymous.json" >/dev/null
           done
 
-          contact_smoke_id="report-a:smoke_${GITHUB_RUN_ID}_${GITHUB_RUN_ATTEMPT}"
+          contact_smoke_id="foreign:9999999999999999999999999"
           contact_ready=0
           for attempt in $(seq 1 12); do
-            if curl --fail --silent --show-error --max-time 20 \
+            contact_code="$(curl --silent --show-error --max-time 20 \
               --get \
-              --data-urlencode 'source=report-a' \
+              --data-urlencode 'source=authority' \
               --data-urlencode "id=$contact_smoke_id" \
               --output "$RUNNER_TEMP/api-contact-report-item.json" \
-              "$origin/api/contact-report/item" \
-              && python3 - "$RUNNER_TEMP/api-contact-report-item.json" "$contact_smoke_id" <<'PY'
+              --write-out '%{http_code}' \
+              "$origin/api/contact-report/item")"
+            if test "$contact_code" = 404 \
+              && python3 - "$RUNNER_TEMP/api-contact-report-item.json" <<'PY'
           import json
           import sys
           from pathlib import Path
 
           payload = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
-          item = payload.get("item") or {}
-          if item.get("id") != sys.argv[2] or item.get("source") != "report-a":
-              raise SystemExit("Contact-report item route did not preserve its validated target")
-          if item.get("availability") not in {"contact_only", "available"}:
-              raise SystemExit("Contact-report item route returned an invalid availability")
+          if not isinstance(payload.get("error"), str) or not payload["error"].strip():
+              raise SystemExit("Contact-report item route did not reject an unknown target")
           PY
             then
               contact_ready=1

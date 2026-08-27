@@ -6619,6 +6619,37 @@
     return meta;
   }
 
+  function hasMeaningfulDocTitle(item) {
+    return [item && item.title, item && item.title_cn]
+      .map((value) => String(value || "").trim())
+      .some((value) => Boolean(value && !/^(?:report|报告)$/i.test(value)));
+  }
+
+  function mergeDocItemMetadata(...records) {
+    const merged = {};
+    for (const record of records) {
+      if (!record || typeof record !== "object") continue;
+      for (const [key, value] of Object.entries(record)) {
+        if (value === undefined || value === null) continue;
+        if (typeof value === "string" && !value.trim()) continue;
+        if ((key === "title" || key === "title_cn") && !hasMeaningfulDocTitle({ [key]: value })) continue;
+        if (typeof value === "number" && !Number.isFinite(value)) continue;
+        merged[key] = value;
+      }
+    }
+    return merged;
+  }
+
+  function reportRequestTitle(item) {
+    const title = [item && item.title, item && item.title_cn]
+      .map((value) => String(value || "").trim())
+      .find((value) => value && !/^(?:report|报告)$/i.test(value));
+    if (title) return title;
+    const source = isAuthorityItem(item) ? "高权报告" : (isReportAItem(item) ? "报告A" : "报告");
+    const id = String(item && item.id || "").trim();
+    return id ? `${source}（编号：${id}）` : source;
+  }
+
   function docItemCacheKey(item) {
     return `${String(item && item.source || EXTERNAL_SOURCE)}:${String(item && item.id || "")}`;
   }
@@ -6643,28 +6674,33 @@
   function rememberDocItem(item) {
     if (!item || !item.id) return;
     const cache = readDocItemCache();
+    const cacheKey = docItemCacheKey(item);
+    const previous = cache[cacheKey] && cache[cacheKey].item && typeof cache[cacheKey].item === "object"
+      ? cache[cacheKey].item
+      : null;
+    const remembered = mergeDocItemMetadata(previous, item);
     cache[docItemCacheKey(item)] = {
       saved_at: Date.now(),
       item: {
         id: item.id,
         source: item.source || EXTERNAL_SOURCE,
-        title: item.title || "",
-        title_cn: item.title_cn || "",
-        institution: item.institution || "",
-        date: item.date || "",
-        file_type: item.file_type || "",
-        kind: item.kind || "",
-        kind_label: item.kind_label || "",
-        page_count: item.page_count || "",
-        size_bytes: item.size_bytes || 0,
-        report_type: item.report_type || "",
-        language: item.language || "",
-        category: item.category || "",
-        author: item.author || "",
-        rating: item.rating || "",
-        description: item.description || "",
-        filename: item.filename || "",
-        required_plan: item.required_plan || "",
+        title: remembered.title || "",
+        title_cn: remembered.title_cn || "",
+        institution: remembered.institution || "",
+        date: remembered.date || "",
+        file_type: remembered.file_type || "",
+        kind: remembered.kind || "",
+        kind_label: remembered.kind_label || "",
+        page_count: remembered.page_count || "",
+        size_bytes: remembered.size_bytes || 0,
+        report_type: remembered.report_type || "",
+        language: remembered.language || "",
+        category: remembered.category || "",
+        author: remembered.author || "",
+        rating: remembered.rating || "",
+        description: remembered.description || "",
+        filename: remembered.filename || "",
+        required_plan: remembered.required_plan || "",
       },
     };
     const entries = Object.entries(cache)
@@ -9810,16 +9846,19 @@
     const url = new URL("doc.html", window.location.href);
     url.searchParams.set("id", item.id);
     if (password) url.searchParams.set("password", password);
-    if (password || options.compact) return url.toString();
+    if (password) return url.toString();
+    const compact = options.compact === true;
     const requestToken = String(item && item.request_token || "").trim();
-    if (["authority", "report-a"].includes(String(item && item.source || "")) && requestToken) {
+    if (!compact && ["authority", "report-a"].includes(String(item && item.source || "")) && requestToken) {
       url.searchParams.set("rt", requestToken.slice(0, 4096));
     }
-    const previewKeys = [
-      "source", "title", "title_cn", "institution", "date", "file_type", "kind",
-      "kind_label", "page_count", "size_bytes", "report_type", "language", "category",
-      "author", "rating", "description", "filename", "required_plan",
-    ];
+    const previewKeys = compact
+      ? ["source", "title", "title_cn", "institution", "date", "kind", "kind_label", "page_count", "category", "author"]
+      : [
+        "source", "title", "title_cn", "institution", "date", "file_type", "kind",
+        "kind_label", "page_count", "size_bytes", "report_type", "language", "category",
+        "author", "rating", "description", "filename", "required_plan",
+      ];
     for (const key of previewKeys) {
       const value = item && item[key];
       if (value === undefined || value === null || value === "") continue;
@@ -10314,7 +10353,7 @@
     return {
       id,
       source,
-      title: params.get("title") || "Report",
+      title: params.get("title") || "",
       title_cn: params.get("title_cn") || "",
       institution: params.get("institution") || "",
       date: params.get("date") || "",
@@ -10337,8 +10376,8 @@
 
   function renderExternalDetailFirstPaint(item, target) {
     if (!item || !target) return;
-    const hasTitle = item.title && item.title !== "Report";
-    const title = hasTitle ? item.title : "正在读取报告信息…";
+    const hasTitle = hasMeaningfulDocTitle(item);
+    const title = hasTitle ? reportRequestTitle(item) : "正在读取报告信息…";
     const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
     target.innerHTML = `
       <div>
@@ -10511,7 +10550,9 @@
 
   async function fetchDocDetailItem(workerUrl, item) {
     const cached = cachedDocItem(item);
-    let merged = cached ? { ...item, ...cached, source: item.source } : item;
+    let merged = mergeDocItemMetadata(cached, item);
+    merged.id = item.id;
+    merged.source = item.source;
     if (!workerUrl || !validDocId(merged)) return merged;
     let endpoint = "";
     if (isHotReportItem(merged)) endpoint = "hot-reports/item";
@@ -10530,7 +10571,10 @@
       });
       const data = await response.json().catch(() => ({}));
       if (!response.ok || !data.item || !data.item.id) return merged;
-      merged = { ...merged, ...data.item, source: merged.source, __detail_fetched: true };
+      if (String(data.item.id) !== String(merged.id)) return merged;
+      merged = mergeDocItemMetadata(merged, data.item, { __detail_fetched: true });
+      merged.id = item.id;
+      merged.source = item.source;
       rememberDocItem(merged);
       return merged;
     } catch (_error) {
@@ -10542,7 +10586,7 @@
     const session = loadAuthSession();
     const defaultEmail = session && session.user ? String(session.user.email || "").trim() : "";
     const accountEmail = Boolean(defaultEmail);
-    const fallbackSubject = encodeURIComponent(`报告申请：${item.title || item.id || ""}`);
+    const fallbackSubject = encodeURIComponent(`报告申请：${reportRequestTitle(item)}`);
     return `
       <form class="report-request-form" id="reportRequestForm">
         <p class="report-request-expectation">提交后无需打开邮件客户端。我们会在 <b>24 小时内</b>通过你填写的邮箱回复；如暂时无法提供，也会告知处理结果。</p>
@@ -10570,7 +10614,8 @@
     const submit = document.getElementById("reportRequestSubmit");
     const status = document.getElementById("reportRequestStatus");
     if (!form || !email || !submit || !status) return;
-    let requestToken = String(item && item.request_token || "");
+    let requestItem = mergeDocItemMetadata(item);
+    let requestToken = String(requestItem.request_token || "");
 
     function setRequestStatus(message, state = "") {
       status.textContent = String(message || "");
@@ -10594,14 +10639,20 @@
       submit.textContent = "正在提交…";
       setRequestStatus("正在通知 KC桌面，请稍候…");
       try {
-        if (["authority", "report-a"].includes(String(item && item.source || "")) && !requestToken) {
+        if (["authority", "report-a"].includes(String(requestItem.source || ""))
+          && (!requestToken || !hasMeaningfulDocTitle(requestItem))) {
           setRequestStatus("正在刷新报告验证信息…");
-          const params = new URLSearchParams({ source: item.source, id: item.id });
+          const params = new URLSearchParams({ source: requestItem.source, id: requestItem.id });
           const tokenResponse = await fetch(`${workerUrl}/contact-report/item?${params.toString()}`, { cache: "no-store" });
           const tokenData = await tokenResponse.json().catch(() => ({}));
-          requestToken = String(tokenData && tokenData.item && tokenData.item.request_token || "");
-          if (!tokenResponse.ok || !requestToken) {
-            throw new Error("报告验证信息暂时未就绪，请刷新页面后再提交；本次申请尚未发送。");
+          if (tokenResponse.ok && tokenData.item && typeof tokenData.item === "object") {
+            requestItem = mergeDocItemMetadata(requestItem, tokenData.item);
+            requestItem.id = item.id;
+            requestItem.source = item.source;
+            requestToken = String(requestItem.request_token || requestToken);
+          }
+          if (!tokenResponse.ok || !requestToken || !hasMeaningfulDocTitle(requestItem)) {
+            throw new Error("报告信息暂时未就绪，本次申请尚未发送，请稍后重试。");
           }
         }
         const response = await fetch(`${workerUrl}/report-request`, {
@@ -10609,10 +10660,10 @@
           cache: "no-store",
           headers: { "Content-Type": "application/json", ...authHeaders() },
           body: JSON.stringify({
-            report_id: item.id || "",
-            title: item.title || item.title_cn || "",
-            source: item.source || "",
-            institution: item.institution || item.bank_name || item.bank_code || "",
+            report_id: requestItem.id || "",
+            title: reportRequestTitle(requestItem),
+            source: requestItem.source || "",
+            institution: requestItem.institution || requestItem.bank_name || requestItem.bank_code || "",
             page_path: currentAnalyticsPath(),
             requester_email: requesterEmail,
             request_token: requestToken,
@@ -10629,7 +10680,7 @@
           "ok",
         );
         trackEvent(workerUrl, "report_request", {
-          ...analyticsReportPayload(item, item.source || AUTHORITY_SOURCE),
+          ...analyticsReportPayload(requestItem, requestItem.source || AUTHORITY_SOURCE),
           action: data.deduplicated ? "deduplicated" : "submitted",
         });
       } catch (error) {
@@ -10688,12 +10739,15 @@
     const shortUrl = externalPageUrl(item, passwordFromLink, {
       compact: isContactOnlyItem(item) && item.__detail_fetched === true,
     });
-    if (shortUrl.length < window.location.href.length) {
+    const currentHasTitle = hasMeaningfulDocTitle({ title: params.get("title") || "" });
+    const shortHasTitle = hasMeaningfulDocTitle(item);
+    if (shortUrl.length < window.location.href.length || (!currentHasTitle && shortHasTitle)) {
       window.history.replaceState({}, "", shortUrl);
     }
 
     const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
-    document.title = `${item.title || "Report"} | Portal Suite`;
+    const displayTitle = hasMeaningfulDocTitle(item) ? reportRequestTitle(item) : "报告详情";
+    document.title = `${displayTitle} | Portal Suite`;
     const contactAvailable = isContactOnlyItem(item) && item.available === true;
     const detailFields = isAuthorityItem(item)
       ? `
@@ -10734,7 +10788,7 @@
       `)));
     const detailHeader = `
       <div>
-        <h1 class="detail-title">${escapeHtml(item.title || "Report")}</h1>
+        <h1 class="detail-title">${escapeHtml(displayTitle)}</h1>
         ${zh ? `<p class="detail-title-zh">${escapeHtml(zh)}</p>` : ""}
         <p class="subtle">${isContactOnlyItem(item)
           ? (contactAvailable ? "3个月及以上会员可下载全文。" : `${docSourceLabel(item)}检索线索。`)
