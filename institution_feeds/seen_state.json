@@ -3000,6 +3000,62 @@
     "unctad:https://unctad.org/publication/debt-management-and-financial-analysis-system-programme-annual-report-2025": {
       "first_seen": "2026-08-24",
       "status": "downloaded"
+    },
+    "imf:97a4c01bec7bb8743d39ed164f1da6ddcc80acedb5efe37e7c822528d084": {
+      "first_seen": "2026-08-27",
+      "status": "downloaded"
+    },
+    "imf:1775d876a86c4f075e93fbc35d2ae2ef3d46326a77bc5d73859f474fd5c6": {
+      "first_seen": "2026-08-27",
+      "status": "downloaded"
+    },
+    "imf:4835f3ca8a0925cf2a6b6bed68e140b74780bedbc6cdb70c11e59d31d50a": {
+      "first_seen": "2026-08-27",
+      "status": "downloaded"
+    },
+    "imf:6dc56394e4f328beb73656c575951551fa8971e7a28095148757005cfa6d": {
+      "first_seen": "2026-08-27",
+      "status": "downloaded"
+    },
+    "imf:7c1fc753b39adf5ae1415c83b1aae94358747d2abda5d5e351981471b106": {
+      "first_seen": "2026-08-27",
+      "status": "downloaded"
+    },
+    "imf:6ea22a931e921f725ba5cf250541154b85a28ecd79a50af9834c72817af6": {
+      "first_seen": "2026-08-27",
+      "status": "downloaded"
+    },
+    "imf:9fb15de79c2ba9dc8175f0f6a6caf7bfe95eccaaaa05c24ad13f17095941": {
+      "first_seen": "2026-08-27",
+      "status": "duplicate_pdf"
+    },
+    "bis:https://www.bis.org/publ/bisbull134.htm": {
+      "first_seen": "2026-08-27",
+      "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publ/work1373.htm": {
+      "first_seen": "2026-08-27",
+      "status": "downloaded"
+    },
+    "oecd:https://www.oecd.org/en/publications/mobilising-public-and-private-finance-for-biodiversity_e2b996a1-en.html": {
+      "first_seen": "2026-08-27",
+      "status": "downloaded"
+    },
+    "oecd:https://www.oecd.org/en/publications/oecd-tax-policy-reviews-peru-2026_47e6c63e-en.html": {
+      "first_seen": "2026-08-27",
+      "status": "downloaded"
+    },
+    "adb:1172961": {
+      "first_seen": "2026-08-27",
+      "status": "downloaded"
+    },
+    "adb:1172611": {
+      "first_seen": "2026-08-27",
+      "status": "downloaded"
+    },
+    "adb:1171566": {
+      "first_seen": "2026-08-27",
+      "status": "too_old"
     }
   }
 }
