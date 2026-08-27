@@ -66,6 +66,11 @@ assert.match(thinkTankDownload, /function handleThinkTankPdf\(request, env, ctx 
 assert.match(worker, /pathname === "\/download"[\s\S]*?handleDownload\(request, env, ctx\)/);
 assert.match(worker, /pathname === "\/external\/pdf"[\s\S]*?handleExternalPdf\(request, env, ctx\)/);
 assert.match(worker, /pathname === "\/thinktank\/pdf"[\s\S]*?handleThinkTankPdf\(request, env, ctx\)/);
+assert.match(
+  worker,
+  /cron === "\*\/30 \* \* \* \*"[\s\S]*?tasks\.push\(repairHotReportPublicIndexIfNeeded\(env, \{ verifyStorage: true \}\)\)/,
+  "the 30-minute Worker maintenance must repair a missing or stale public index",
+);
 
 const externalPendingBranch = externalDownload.slice(externalDownload.indexOf("// 3) Gated and not yet mirrored"));
 assert.ok(externalPendingBranch.length > 0, "external 202 branch must remain identifiable");
@@ -91,7 +96,10 @@ const exposedNames = [
   "catalogPdfOverrideItemKey",
   "deleteLinkedCatalogPdfOverride",
   "deleteHotReportArchive",
+  "handleHotReportsList",
   "listHotReportRows",
+  "listHotReportPage",
+  "repairHotReportPublicIndexIfNeeded",
   "hotReportStorageStats",
 ];
 const runnableWorker = workerWithoutImports.replace(/\bexport default\s*\{/, "globalThis.__workerExport = {")
@@ -143,6 +151,7 @@ class MockR2Bucket {
     this.getCalls = [];
     this.listCalls = [];
     this.failGetKeys = new Set();
+    this.failPutKeys = new Set();
     this.conditionalPutConflicts = new Set();
     this.afterDelete = null;
     this.beforeGet = null;
@@ -151,6 +160,7 @@ class MockR2Bucket {
 
   async put(keyValue, body, options = {}) {
     const key = String(keyValue);
+    if (this.failPutKeys.has(key)) throw new Error(`mock R2 PUT failed for ${key}`);
     const existing = this.objects.get(key);
     const onlyIf = options.onlyIf || {};
     if (onlyIf.etagMatches && this.conditionalPutConflicts.delete(key)) return null;
@@ -271,6 +281,7 @@ async function readJson(bucket, key) {
   const secondRow = await readJson(archiveBucket, api.hotReportItemKey(second.item.id));
 
   assert.equal(first.created, true);
+  assert.equal(first.public_index_update_pending, true, "legacy archives must expose deferred index backfill");
   assert.equal(second.created, false, "a second archive of the same source report must update rather than duplicate");
   assert.equal(second.item.id, first.item.id);
   assert.equal(secondRow.created_at, firstRow.created_at, "created_at must preserve first archival time");
@@ -922,6 +933,259 @@ async function readJson(bucket, key) {
   );
   assert.ok(await reactivationBucket.head(api.hotReportPdfKey(afterPrune.item.id)));
 
+  const repairBucket = new MockR2Bucket();
+  for (let index = 0; index < 3; index += 1) {
+    const slug = `f${index.toString(16).padStart(15, "0")}`;
+    const id = `hot:${slug}`;
+    await repairBucket.put(api.hotReportPdfKey(id), new Uint8Array([37]));
+    await putJson(repairBucket, api.hotReportItemKey(id), {
+      id,
+      source: "hot",
+      title: `Repair ${index}`,
+      filename: `repair-${index}.pdf`,
+      sort_order: index,
+      hot_added_at: "2026-01-01T00:00:00.000Z",
+      created_at: "2026-01-01T00:00:00.000Z",
+      retention_state: "active",
+    });
+  }
+  const missingRepair = await api.repairHotReportPublicIndexIfNeeded({ REPORT_BUCKET: repairBucket });
+  assert.equal(missingRepair.rebuilt, true, "a missing legacy index must self-heal once");
+  repairBucket.getCalls.length = 0;
+  repairBucket.listCalls.length = 0;
+  const healthyRepair = await api.repairHotReportPublicIndexIfNeeded({ REPORT_BUCKET: repairBucket });
+  assert.equal(healthyRepair.rebuilt, false);
+  assert.equal(repairBucket.listCalls.length, 0, "healthy 30-minute checks must not scan legacy metadata");
+  assert.equal(
+    repairBucket.getCalls.filter((key) => key.startsWith("_hot-reports/items/")).length,
+    0,
+  );
+  repairBucket.getCalls.length = 0;
+  repairBucket.listCalls.length = 0;
+  const verifiedRepair = await api.repairHotReportPublicIndexIfNeeded(
+    { REPORT_BUCKET: repairBucket },
+    { verifyStorage: true },
+  );
+  assert.equal(verifiedRepair.rebuilt, false);
+  assert.equal(verifiedRepair.storage_verified, true);
+  assert.equal(repairBucket.listCalls.length, 1, "the 30-minute consistency check must LIST PDF ids once");
+  assert.equal(
+    repairBucket.getCalls.filter((key) => key.startsWith("_hot-reports/items/")).length,
+    0,
+    "a healthy consistency check must not GET report metadata",
+  );
+
+  const racedId = "hot:fffffffffffffffe";
+  await repairBucket.put(api.hotReportPdfKey(racedId), new Uint8Array([37]));
+  await putJson(repairBucket, api.hotReportItemKey(racedId), {
+    id: racedId,
+    source: "hot",
+    title: "Repair CAS sentinel",
+    filename: "repair-cas.pdf",
+    sort_order: 99,
+    hot_added_at: "2026-01-02T00:00:00.000Z",
+    created_at: "2026-01-02T00:00:00.000Z",
+    retention_state: "active",
+  });
+  const staleGeneration = "abcdefabcdefabcd";
+  await repairBucket.put("_hot-reports/indexes/public-v2-stale.json", JSON.stringify({
+    version: 2,
+    generation: staleGeneration,
+  }), { customMetadata: { generation: staleGeneration } });
+  repairBucket.conditionalPutConflicts.add("_hot-reports/indexes/public-v2.json");
+  const racedRepair = await api.repairHotReportPublicIndexIfNeeded({ REPORT_BUCKET: repairBucket });
+  assert.equal(racedRepair.rebuilt, true);
+  assert.equal(
+    racedRepair.index.items.some((item) => item.id === racedId),
+    true,
+    "a CAS-conflicted rebuild must retry and retain the stale-triggering archive",
+  );
+  repairBucket.getCalls.length = 0;
+  repairBucket.listCalls.length = 0;
+  const settledRepair = await api.repairHotReportPublicIndexIfNeeded({ REPORT_BUCKET: repairBucket });
+  assert.equal(settledRepair.rebuilt, false, "a successful rebuild must acknowledge the exact stale marker");
+  assert.equal(repairBucket.listCalls.length, 0, "an acknowledged stale marker must not cause repeated rebuilds");
+  assert.equal(
+    repairBucket.getCalls.filter((key) => key.startsWith("_hot-reports/items/")).length,
+    0,
+  );
+
+  const fastBucket = new MockR2Bucket();
+  const fastId = "hot:1010101010101010";
+  const fastRow = {
+    id: fastId,
+    source: "hot",
+    title: "Fast background bootstrap",
+    filename: "fast.pdf",
+    sort_order: 10,
+    hot_added_at: "2026-01-01T00:00:00.000Z",
+    created_at: "2026-01-01T00:00:00.000Z",
+    retention_state: "active",
+  };
+  await fastBucket.put(api.hotReportPdfKey(fastId), new Uint8Array([37]));
+  await putJson(fastBucket, api.hotReportItemKey(fastId), fastRow);
+  const fastContext = {
+    tasks: [],
+    waitUntil(task) { this.tasks.push(task); },
+  };
+  const coldResponse = await api.handleHotReportsList(
+    new Request("https://portal.example/hot-reports?limit=24"),
+    { REPORT_BUCKET: fastBucket },
+    fastContext,
+  );
+  assert.equal(coldResponse.status, 503, "a normal cold GET must not synchronously scan legacy metadata");
+  assert.equal((await coldResponse.json()).index_repair_pending, true);
+  assert.equal(fastContext.tasks.length, 1);
+  await Promise.all(fastContext.tasks);
+  const warmedResponse = await api.handleHotReportsList(
+    new Request("https://portal.example/hot-reports?limit=24"),
+    { REPORT_BUCKET: fastBucket },
+  );
+  assert.equal(warmedResponse.status, 200);
+  assert.equal((await warmedResponse.json()).items[0].id, fastId);
+
+  const fastNewId = "hot:2020202020202020";
+  await fastBucket.put(api.hotReportPdfKey(fastNewId), new Uint8Array([37]));
+  await putJson(fastBucket, api.hotReportItemKey(fastNewId), {
+    ...fastRow,
+    id: fastNewId,
+    title: "Stale background sentinel",
+    filename: "stale.pdf",
+    sort_order: 20,
+  });
+  const fastStaleGeneration = "2020202020202020";
+  await fastBucket.put("_hot-reports/indexes/public-v2-stale.json", JSON.stringify({
+    version: 2,
+    generation: fastStaleGeneration,
+  }), { customMetadata: { generation: fastStaleGeneration } });
+  const staleContext = {
+    tasks: [],
+    waitUntil(task) { this.tasks.push(task); },
+  };
+  const staleResponse = await api.handleHotReportsList(
+    new Request("https://portal.example/hot-reports?limit=24&q=Stale%20background%20sentinel"),
+    { REPORT_BUCKET: fastBucket },
+    staleContext,
+  );
+  const stalePayload = await staleResponse.json();
+  assert.equal(staleResponse.status, 200, "a stale but valid index must return last-good data immediately");
+  assert.equal(stalePayload.index_stale, true);
+  assert.equal(stalePayload.total, 0, "the foreground response must use the captured last-good generation");
+  await Promise.all(staleContext.tasks);
+  const repairedFastPage = await api.listHotReportPage({ REPORT_BUCKET: fastBucket }, {
+    query: "Stale background sentinel",
+  });
+  assert.equal(repairedFastPage.total, 1);
+
+  const bootstrapBucket = new MockR2Bucket();
+  const bootstrapId = "hot:3030303030303030";
+  await bootstrapBucket.put(api.hotReportPdfKey(bootstrapId), new Uint8Array([37]));
+  await putJson(bootstrapBucket, api.hotReportItemKey(bootstrapId), {
+    ...fastRow,
+    id: bootstrapId,
+    title: "Workflow bootstrap",
+  });
+  const bootstrapResponse = await api.handleHotReportsList(
+    new Request("https://portal.example/hot-reports?limit=24&bootstrap=1"),
+    { REPORT_BUCKET: bootstrapBucket },
+  );
+  assert.equal(bootstrapResponse.status, 200, "the explicit workflow bootstrap may synchronously backfill v2");
+  assert.equal((await bootstrapResponse.json()).items[0].id, bootstrapId);
+
+  const exceptionBucket = new MockR2Bucket();
+  const exceptionIds = [
+    "hot:4100000000000000",
+    "hot:4200000000000000",
+    "hot:4300000000000000",
+  ];
+  for (let index = 0; index < exceptionIds.length; index += 1) {
+    const id = exceptionIds[index];
+    await exceptionBucket.put(api.hotReportPdfKey(id), new Uint8Array(100), {
+      customMetadata: { hot_added_at: `2026-01-0${index + 1}T00:00:00.000Z` },
+    });
+    await putJson(exceptionBucket, api.hotReportItemKey(id), {
+      id,
+      source: "hot",
+      title: `Retention exception ${index}`,
+      filename: `retention-${index}.pdf`,
+      size_bytes: 100,
+      sort_order: index,
+      hot_added_at: `2026-01-0${index + 1}T00:00:00.000Z`,
+      created_at: `2026-01-0${index + 1}T00:00:00.000Z`,
+      retention_state: "active",
+    });
+  }
+  await api.repairHotReportPublicIndexIfNeeded({ REPORT_BUCKET: exceptionBucket });
+  exceptionBucket.failGetKeys.add(api.hotReportItemKey(exceptionIds[1]));
+  await assert.rejects(
+    api.enforceHotReportStorageLimit({
+      REPORT_BUCKET: exceptionBucket,
+      HOT_REPORT_STORAGE_LIMIT_BYTES: 50,
+    }),
+    /mock R2 GET failed/,
+  );
+  assert.equal(await exceptionBucket.head(api.hotReportPdfKey(exceptionIds[0])), null);
+  const exceptionIndexPage = await api.listHotReportPage({ REPORT_BUCKET: exceptionBucket }, {
+    query: "Retention exception 0",
+  });
+  assert.equal(
+    exceptionIndexPage.total,
+    0,
+    "retention must finalize already-deleted index ids even when a later candidate throws",
+  );
+
+  const markerFailureBucket = new MockR2Bucket();
+  const markerBaseId = "hot:5151515151515151";
+  await markerFailureBucket.put(api.hotReportPdfKey(markerBaseId), new Uint8Array([37]));
+  await putJson(markerFailureBucket, api.hotReportItemKey(markerBaseId), {
+    ...fastRow,
+    id: markerBaseId,
+    title: "Marker base",
+  });
+  await api.repairHotReportPublicIndexIfNeeded({ REPORT_BUCKET: markerFailureBucket });
+  const markerSource = "reports/marker-failure.pdf";
+  await markerFailureBucket.put(markerSource, new Uint8Array([37, 80, 68, 70, 45]));
+  markerFailureBucket.failPutKeys.add("_hot-reports/indexes/public-v2.json");
+  markerFailureBucket.failPutKeys.add("_hot-reports/indexes/public-v2-stale.json");
+  const markerFailureLogs = [];
+  const originalConsoleError = console.error;
+  console.error = (...values) => markerFailureLogs.push(values);
+  try {
+    await assert.rejects(
+      api.archiveReportAsHot({ REPORT_BUCKET: markerFailureBucket }, {
+        origin_source: "catalog",
+        origin_report_id: "5252525252525252",
+        title: "Marker failure sentinel",
+        filename: "marker-failure.pdf",
+        source_object_key: markerSource,
+        reason: "successful_download",
+      }),
+      (error) => {
+        assert.match(error.message, /mock R2 PUT failed.*public-v2\.json/);
+        assert.match(error.message, /stale marker write failed.*public-v2-stale\.json/);
+        assert.equal(error.code, "HOT_REPORT_INDEX_MARKER_FAILED");
+        return true;
+      },
+    );
+  } finally {
+    console.error = originalConsoleError;
+  }
+  assert.equal(
+    markerFailureLogs.some((values) => String(values[0] || "").includes("stale marker write failed")),
+    true,
+    "marker write failure must be independently observable in Worker logs",
+  );
+  markerFailureBucket.failPutKeys.clear();
+  const consistencyRepair = await api.repairHotReportPublicIndexIfNeeded(
+    { REPORT_BUCKET: markerFailureBucket },
+    { verifyStorage: true },
+  );
+  assert.equal(consistencyRepair.rebuilt, true, "scheduled ID consistency must recover an unmarked mutation failure");
+  const recoveredMarkerPage = await api.listHotReportPage({ REPORT_BUCKET: markerFailureBucket }, {
+    query: "Marker failure sentinel",
+  });
+  assert.equal(recoveredMarkerPage.total, 1);
+
   const listingBucket = new MockR2Bucket();
   for (let index = 0; index < 520; index += 1) {
     const slug = index.toString(16).padStart(16, "0");
@@ -943,12 +1207,140 @@ async function readJson(bucket, key) {
   assert.equal(publicRows.length, 500);
   assert.equal(
     listingBucket.getCalls.filter((key) => key.startsWith("_hot-reports/items/")).length,
-    500,
-    "public listing must fetch metadata only for its bounded PDF candidates",
+    520,
+    "the one-time legacy self-heal must read the bounded public set plus replenishment candidates",
   );
   listingBucket.getCalls.length = 0;
+  const indexedRows = await api.listHotReportRows({ REPORT_BUCKET: listingBucket });
+  assert.equal(indexedRows.length, 500);
+  assert.equal(
+    listingBucket.getCalls.filter((key) => key.startsWith("_hot-reports/items/")).length,
+    0,
+    "a healthy public index must eliminate per-report metadata reads",
+  );
+  assert.equal(
+    listingBucket.getCalls.filter((key) => key === "_hot-reports/indexes/public-v2.json").length,
+    1,
+    "a healthy public listing must read one lightweight index object",
+  );
+
+  listingBucket.getCalls.length = 0;
+  const firstPage = await api.listHotReportPage({ REPORT_BUCKET: listingBucket }, {
+    limit: 17,
+    query: "Report",
+  });
+  assert.equal(firstPage.items.length, 17);
+  assert.equal(firstPage.total, 500, "search must filter the complete index before pagination");
+  assert.equal(firstPage.page_size, 17);
+  assert.equal(firstPage.has_more, true);
+  assert.match(firstPage.generation, /^[a-f0-9]{16}$/);
+  assert.ok(firstPage.next_cursor);
+  const secondPage = await api.listHotReportPage({ REPORT_BUCKET: listingBucket }, {
+    limit: 17,
+    query: "Report",
+    cursor: firstPage.next_cursor,
+  });
+  assert.equal(secondPage.items.length, 17);
+  assert.equal(secondPage.generation, firstPage.generation);
+  assert.equal(
+    secondPage.items.some((item) => firstPage.items.some((candidate) => candidate.id === item.id)),
+    false,
+    "cursor pages must not duplicate the preceding page",
+  );
+  const exactSearch = await api.listHotReportPage({ REPORT_BUCKET: listingBucket }, {
+    limit: 5,
+    query: "Report 519",
+  });
+  assert.equal(exactSearch.total, 1, "a later-page title must remain discoverable through global index search");
+  assert.equal(exactSearch.items[0].title, "Report 519");
+  const cappedPage = await api.listHotReportPage({ REPORT_BUCKET: listingBucket }, { limit: 999 });
+  assert.equal(cappedPage.page_size, 60, "the API must enforce its page-size ceiling");
+  assert.equal(cappedPage.items.length, 60);
+  await assert.rejects(
+    api.listHotReportPage({ REPORT_BUCKET: listingBucket }, {
+      limit: 17,
+      query: "different query",
+      cursor: firstPage.next_cursor,
+    }),
+    /Invalid hot report cursor/,
+    "a cursor must be bound to the full-index search query",
+  );
+  const endpointResponse = await api.handleHotReportsList(
+    new Request("https://portal.example/hot-reports?limit=7&q=Report%20519"),
+    { REPORT_BUCKET: listingBucket },
+  );
+  const endpointPayload = await endpointResponse.json();
+  assert.equal(endpointResponse.status, 200);
+  assert.equal(endpointPayload.items.length, 1);
+  assert.equal(endpointPayload.total, 1);
+  assert.equal(endpointPayload.page_size, 7);
+  assert.equal(endpointPayload.has_more, false);
+  assert.equal(endpointPayload.next_cursor, "");
+  assert.match(endpointPayload.generation, /^[a-f0-9]{16}$/);
+  assert.match(endpointResponse.headers.get("Cache-Control"), /stale-while-revalidate/);
+  const invalidCursorResponse = await api.handleHotReportsList(
+    new Request("https://portal.example/hot-reports?cursor=not-a-cursor"),
+    { REPORT_BUCKET: listingBucket },
+  );
+  assert.equal(invalidCursorResponse.status, 400, "malformed public cursors must not become a 503");
+  assert.equal(
+    listingBucket.getCalls.filter((key) => key.startsWith("_hot-reports/items/")).length,
+    0,
+    "pagination and global search must keep using the lightweight index",
+  );
+
+  const indexedSourceKey = "reports/indexed-sentinel.pdf";
+  await listingBucket.put(indexedSourceKey, new Uint8Array([37, 80, 68, 70, 45, 73, 78, 68, 69, 88]));
+  listingBucket.listCalls.length = 0;
+  const indexedArchive = await api.archiveReportAsHot({ REPORT_BUCKET: listingBucket }, {
+    origin_source: "catalog",
+    origin_report_id: "feedfeedfeedfeed",
+    title: "Incremental index sentinel",
+    filename: "indexed-sentinel.pdf",
+    source_object_key: indexedSourceKey,
+    reason: "successful_download",
+  });
+  assert.equal(indexedArchive.public_index_update_pending, false);
+  assert.equal(listingBucket.listCalls.length, 0, "incremental index writes must not rescan the archive");
+  const indexedSearch = await api.listHotReportPage({ REPORT_BUCKET: listingBucket }, {
+    query: "Incremental index sentinel",
+  });
+  assert.equal(indexedSearch.total, 1, "new archives must be searchable immediately through the index");
+  assert.equal(indexedSearch.items[0].id, indexedArchive.item.id);
+  await assert.rejects(
+    api.listHotReportPage({ REPORT_BUCKET: listingBucket }, {
+      limit: 17,
+      query: "Report",
+      cursor: firstPage.next_cursor,
+    }),
+    (error) => error && error.code === "HOT_REPORT_CURSOR_STALE",
+    "a cursor must not cross an index generation change",
+  );
+  const staleCursorResponse = await api.handleHotReportsList(
+    new Request(`https://portal.example/hot-reports?limit=17&q=Report&cursor=${encodeURIComponent(firstPage.next_cursor)}`),
+    { REPORT_BUCKET: listingBucket },
+  );
+  assert.equal(staleCursorResponse.status, 409, "generation drift must be an explicit conflict response");
+  assert.equal(await api.deleteHotReportArchive({ REPORT_BUCKET: listingBucket }, indexedArchive.row), true);
+  const deletedSearch = await api.listHotReportPage({ REPORT_BUCKET: listingBucket }, {
+    query: "Incremental index sentinel",
+  });
+  assert.equal(deletedSearch.total, 0, "retention deletion must remove the report from the public index");
+
+  const topReportId = exactSearch.items[0].id;
+  const topReportRow = await readJson(listingBucket, api.hotReportItemKey(topReportId));
+  assert.equal(await api.deleteHotReportArchive({ REPORT_BUCKET: listingBucket }, topReportRow), true);
+  const replenishedRows = await api.listHotReportRows({ REPORT_BUCKET: listingBucket });
+  assert.equal(replenishedRows.length, 500, "deleting a top-500 item must promote the first reserve candidate");
+  assert.equal(
+    replenishedRows.some((entry) => entry.item.title === "Report 19"),
+    true,
+    "the former 501st report must become public without a metadata rescan",
+  );
+
+  listingBucket.getCalls.length = 0;
   const storageStats = await api.hotReportStorageStats({ REPORT_BUCKET: listingBucket });
-  assert.equal(storageStats.pdf_count, 520);
+  assert.equal(storageStats.pdf_count, 519);
   assert.equal(listingBucket.getCalls.length, 0, "storage stats must not scan item JSON objects");
 
   const boundedCleanup = await api.enforceHotReportStorageLimit({

@@ -57,6 +57,8 @@ jobs:
           node --test portal_suite/tests/*.test.mjs
           node scripts/test_source_lead_adapter.js
           node scripts/test_portal_source_lead_integration.js
+          node scripts/test_portal_hot_report_auto_archive.js
+          node scripts/test_portal_hot_reports.js
           node scripts/test_portal_chart_search_frontend.js
           node scripts/test_portal_site_runtime.js
           python3 -m py_compile scripts/edge_route_cutover.py
@@ -421,6 +423,49 @@ jobs:
           echo "Active static slot could not be determined." >&2
           exit 1
 
+      - name: Verify hot-report API contract before static switch
+        id: hot_report_api_gate
+        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
+        env:
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+        run: |
+          set -euo pipefail
+          echo "::add-mask::$PORTAL_SITE_URL"
+          origin="${PORTAL_SITE_URL%/}"
+          curl --fail --location --silent --show-error \
+            --connect-timeout 10 --max-time 10 \
+            --header 'Cache-Control: no-cache' \
+            --get \
+            --data-urlencode 'limit=24' \
+            --data-urlencode "smoke=pre-static-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" \
+            --output "$RUNNER_TEMP/hot-reports-pre-static-api.json" \
+            "$origin/api/hot-reports"
+          python3 - "$RUNNER_TEMP/hot-reports-pre-static-api.json" <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          payload = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+          items = payload.get("items")
+          if not isinstance(items, list) or len(items) > 24:
+              raise SystemExit("Pre-static hot-report API did not return at most 24 items")
+          if payload.get("page_size") != 24:
+              raise SystemExit("Pre-static hot-report API page size is not 24")
+          total = payload.get("total")
+          if not isinstance(total, int) or isinstance(total, bool) or total < len(items):
+              raise SystemExit("Pre-static hot-report API total is invalid")
+          if not isinstance(payload.get("has_more"), bool):
+              raise SystemExit("Pre-static hot-report API has_more is not boolean")
+          if payload["has_more"] != bool(payload.get("next_cursor")):
+              raise SystemExit("Pre-static hot-report API cursor contract is inconsistent")
+          if not payload.get("index_updated_at"):
+              raise SystemExit("Pre-static hot-report API did not expose the index timestamp")
+          print(
+              f"pre_static_hot_reports=verified items={len(items)} "
+              f"total={total} has_more={payload['has_more']}"
+          )
+          PY
+
       - name: Upload inactive static slot incrementally
         id: static_upload
         if: github.event_name == 'schedule' || inputs.operation == 'migrate'
@@ -763,6 +808,92 @@ jobs:
           echo "Discovery assets did not become active in time." >&2
           exit 1
 
+      - name: Verify hot-report pagination UI and API are live
+        id: live_hot_reports
+        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
+        env:
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+        run: |
+          set -euo pipefail
+          echo "::add-mask::$PORTAL_SITE_URL"
+          origin="${PORTAL_SITE_URL%/}"
+          release_check="$origin/.well-known/edge-release/$STATIC_RELEASE"
+
+          curl --fail --location --silent --show-error \
+            --connect-timeout 10 --max-time 30 \
+            --output "$RUNNER_TEMP/hot-reports-release-index.html" \
+            "$release_check/index.html"
+          curl --fail --location --silent --show-error \
+            --connect-timeout 10 --max-time 30 \
+            --output "$RUNNER_TEMP/hot-reports-release-app.js" \
+            "$release_check/assets/app.js"
+          curl --fail --location --silent --show-error \
+            --connect-timeout 10 --max-time 30 \
+            --header 'Cache-Control: no-cache' \
+            --output "$RUNNER_TEMP/hot-reports-public-index.html" \
+            "$origin/?hot-pagination-smoke=${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          curl --fail --location --silent --show-error \
+            --connect-timeout 10 --max-time 30 \
+            --header 'Cache-Control: no-cache' \
+            --output "$RUNNER_TEMP/hot-reports-public-app.js" \
+            "$origin/assets/app.js?hot-pagination-smoke=${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          curl --fail --silent --show-error \
+            --connect-timeout 10 --max-time 10 \
+            --header 'Cache-Control: no-cache' \
+            --get \
+            --data-urlencode 'limit=24' \
+            --data-urlencode "smoke=static-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" \
+            --output "$RUNNER_TEMP/hot-reports-live-api.json" \
+            "$origin/api/hot-reports"
+
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          runner_temp = Path(os.environ["RUNNER_TEMP"])
+          html_markers = (
+              'id="hotReportsSection"',
+              'id="hotReportsPrev"',
+              'id="hotReportsPageInfo"',
+              'id="hotReportsNext"',
+              'id="hotReportsRetry"',
+          )
+          app_markers = (
+              "const HOT_REPORT_PAGE_SIZE = 24",
+              'params.set("cursor", cursor)',
+              "requestHotReportPage",
+          )
+          for filename in ("hot-reports-release-index.html", "hot-reports-public-index.html"):
+              body = runner_temp.joinpath(filename).read_text(encoding="utf-8")
+              missing = [marker for marker in html_markers if marker not in body]
+              if missing:
+                  raise SystemExit(f"Live hot-report HTML markers missing from {filename}: {missing}")
+          for filename in ("hot-reports-release-app.js", "hot-reports-public-app.js"):
+              body = runner_temp.joinpath(filename).read_text(encoding="utf-8")
+              missing = [marker for marker in app_markers if marker not in body]
+              if missing:
+                  raise SystemExit(f"Live hot-report JS markers missing from {filename}: {missing}")
+
+          payload = json.loads(runner_temp.joinpath("hot-reports-live-api.json").read_text(encoding="utf-8"))
+          items = payload.get("items")
+          if not isinstance(items, list) or not 1 <= len(items) <= 24:
+              raise SystemExit("Live hot-report API did not return 1-24 items")
+          if payload.get("page_size") != 24:
+              raise SystemExit("Live hot-report API page size is not 24")
+          if int(payload.get("total") or 0) < len(items):
+              raise SystemExit("Live hot-report API total is smaller than the page")
+          if bool(payload.get("has_more")) != bool(payload.get("next_cursor")):
+              raise SystemExit("Live hot-report API cursor contract is inconsistent")
+          ids = [str(item.get("id") or "") for item in items]
+          if any(not item_id for item_id in ids) or len(ids) != len(set(ids)):
+              raise SystemExit("Live hot-report API page contains missing or duplicate ids")
+          print(
+              f"live_hot_reports=verified items={len(items)} "
+              f"total={int(payload.get('total') or 0)} has_more={bool(payload.get('has_more'))}"
+          )
+          PY
+
       - name: Submit changed public URLs to IndexNow
         if: github.event_name == 'schedule' || inputs.operation == 'migrate'
         continue-on-error: true
@@ -812,7 +943,8 @@ jobs:
           steps.edge_deploy.outcome == 'success' &&
           steps.edge_state_verify.outcome == 'success' &&
           steps.live_catalog.outcome == 'success' &&
-          steps.live_discovery.outcome == 'success'
+          steps.live_discovery.outcome == 'success' &&
+          steps.live_hot_reports.outcome == 'success'
         continue-on-error: true
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}

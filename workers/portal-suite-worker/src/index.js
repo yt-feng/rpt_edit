@@ -166,8 +166,15 @@ const HOT_REPORT_ITEM_PREFIX = `${HOT_REPORT_PREFIX}/items`;
 const HOT_REPORT_PDF_PREFIX = `${HOT_REPORT_PREFIX}/pdfs`;
 const HOT_REPORT_COMMENT_PREFIX = `${HOT_REPORT_PREFIX}/comments`;
 const HOT_REPORT_COMMENT_ORDER_PREFIX = `${HOT_REPORT_PREFIX}/comment-orders`;
+const HOT_REPORT_PUBLIC_INDEX_KEY = `${HOT_REPORT_PREFIX}/indexes/public-v2.json`;
+const HOT_REPORT_PUBLIC_INDEX_STALE_KEY = `${HOT_REPORT_PREFIX}/indexes/public-v2-stale.json`;
 const HOT_REPORT_ID_PATTERN = /^hot:[a-f0-9]{16}$/;
 const HOT_REPORT_PUBLIC_MAX_ITEMS = 500;
+const HOT_REPORT_PUBLIC_INDEX_MAX_CANDIDATES = 750;
+const HOT_REPORT_PUBLIC_INDEX_VERSION = 2;
+const HOT_REPORT_PUBLIC_DEFAULT_PAGE_SIZE = 24;
+const HOT_REPORT_PUBLIC_MAX_PAGE_SIZE = 60;
+const HOT_REPORT_PUBLIC_CURSOR_MAX_LENGTH = 1024;
 const HOT_REPORT_LIST_CONCURRENCY = 20;
 const HOT_REPORT_RETENTION_MAX_CANDIDATES_PER_RUN = 250;
 const HOT_REPORT_MAX_COMMENTS = 500;
@@ -8203,12 +8210,24 @@ async function archiveReportAsHot(env, input = {}) {
     }
     throw error;
   }
+  let publicIndexUpdate = null;
+  try {
+    publicIndexUpdate = await upsertHotReportPublicIndexItem(env, saved.row);
+  } catch (error) {
+    await markHotReportPublicIndexStaleForError(env, error);
+    console.error("Portal Suite hot report public index update failed", {
+      report_id: id,
+      message: String(error && error.message || error || "unknown error").slice(0, 240),
+    });
+    throw error;
+  }
   return {
     created: saved.created,
     item: publicHotReportItem(saved.row),
     row: saved.row,
     pdf_key: pdfState.key,
     pdf_object: pdfState.object,
+    public_index_update_pending: !publicIndexUpdate,
   };
 }
 
@@ -8301,17 +8320,404 @@ function publicHotReportItem(row) {
   };
 }
 
-async function listHotReportRows(env) {
-  const pdfObjects = await listR2ObjectsByPrefix(env, `${HOT_REPORT_PDF_PREFIX}/`);
-  const candidates = pdfObjects
+function compareHotReportPublicItems(left, right) {
+  const leftOrder = Number(left && left.sort_order || 0) || 0;
+  const rightOrder = Number(right && right.sort_order || 0) || 0;
+  if (rightOrder !== leftOrder) return rightOrder - leftOrder;
+  const leftDate = String(left && left.date || "");
+  const rightDate = String(right && right.date || "");
+  if (rightDate !== leftDate) return rightDate.localeCompare(leftDate);
+  const leftCreated = String(left && left.created_at || "");
+  const rightCreated = String(right && right.created_at || "");
+  if (rightCreated !== leftCreated) return rightCreated.localeCompare(leftCreated);
+  return String(left && left.id || "").localeCompare(String(right && right.id || ""));
+}
+
+function normalizeHotReportPublicIndex(payload) {
+  if (
+    !payload
+    || typeof payload !== "object"
+    || Array.isArray(payload)
+    || Number(payload.version) !== HOT_REPORT_PUBLIC_INDEX_VERSION
+    || !Array.isArray(payload.items)
+    || payload.items.length > HOT_REPORT_PUBLIC_INDEX_MAX_CANDIDATES
+  ) return null;
+  const seen = new Set();
+  const items = [];
+  for (const rawItem of payload.items) {
+    const item = publicHotReportItem({ ...(rawItem || {}), retention_state: "active" });
+    if (!item || seen.has(item.id)) return null;
+    seen.add(item.id);
+    items.push(item);
+  }
+  items.sort(compareHotReportPublicItems);
+  return {
+    version: HOT_REPORT_PUBLIC_INDEX_VERSION,
+    generation: hotReportArchiveGeneration(payload.generation) || "",
+    stale_marker: cleanHotReportText(payload.stale_marker, 240),
+    updated_at: String(payload.updated_at || ""),
+    items,
+  };
+}
+
+function hotReportPublicIndexPayload(items, staleMarker = "") {
+  const normalized = [];
+  const seen = new Set();
+  for (const rawItem of Array.isArray(items) ? items : []) {
+    const item = publicHotReportItem({ ...(rawItem || {}), retention_state: "active" });
+    if (!item || seen.has(item.id)) continue;
+    seen.add(item.id);
+    normalized.push(item);
+  }
+  normalized.sort(compareHotReportPublicItems);
+  return {
+    version: HOT_REPORT_PUBLIC_INDEX_VERSION,
+    generation: randomHex(8),
+    stale_marker: cleanHotReportText(staleMarker, 240),
+    updated_at: new Date().toISOString(),
+    items: normalized.slice(0, HOT_REPORT_PUBLIC_INDEX_MAX_CANDIDATES),
+  };
+}
+
+async function readHotReportPublicIndexObject(env) {
+  const object = await accountBucket(env).get(HOT_REPORT_PUBLIC_INDEX_KEY);
+  if (!object) return { object: null, index: null };
+  let payload = null;
+  try {
+    payload = JSON.parse(await object.text());
+  } catch (_error) {
+    payload = null;
+  }
+  return { object, index: normalizeHotReportPublicIndex(payload) };
+}
+
+async function markHotReportPublicIndexStale(env, error = null) {
+  const generation = randomHex(8);
+  await accountBucket(env).put(HOT_REPORT_PUBLIC_INDEX_STALE_KEY, JSON.stringify({
+    version: HOT_REPORT_PUBLIC_INDEX_VERSION,
+    generation,
+    marked_at: new Date().toISOString(),
+    detail: String(error && error.message || error || "index mutation incomplete").slice(0, 240),
+  }), {
+    httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "no-store" },
+    customMetadata: { generation },
+  });
+}
+
+async function markHotReportPublicIndexStaleForError(env, mutationError) {
+  try {
+    await markHotReportPublicIndexStale(env, mutationError);
+  } catch (markerError) {
+    const mutationMessage = String(
+      mutationError && mutationError.message || mutationError || "unknown index mutation error",
+    ).slice(0, 240);
+    const markerMessage = String(
+      markerError && markerError.message || markerError || "unknown marker error",
+    ).slice(0, 240);
+    console.error("Portal Suite hot report stale marker write failed", {
+      mutation_error: mutationMessage,
+      marker_error: markerMessage,
+    });
+    if (mutationError && typeof mutationError === "object") {
+      mutationError.public_index_marker_error = markerMessage;
+      mutationError.message = `${mutationMessage}; stale marker write failed: ${markerMessage}`;
+      if (!mutationError.code) mutationError.code = "HOT_REPORT_INDEX_MARKER_FAILED";
+      throw mutationError;
+    }
+    const combined = new Error(`${mutationMessage}; stale marker write failed: ${markerMessage}`);
+    combined.code = "HOT_REPORT_INDEX_MARKER_FAILED";
+    throw combined;
+  }
+}
+
+function hotReportPublicStaleMarker(object) {
+  if (!object) return "";
+  const generation = hotReportArchiveGeneration(object.customMetadata && object.customMetadata.generation);
+  if (generation) return `generation:${generation}`;
+  const etag = cleanHotReportText(object.etag, 200);
+  return etag ? `etag:${etag}` : "present";
+}
+
+async function rebuildHotReportPublicIndex(env, initial = null, retry = 0, pdfObjects = null) {
+  const staleMarker = await accountBucket(env).head(HOT_REPORT_PUBLIC_INDEX_STALE_KEY);
+  const entries = await scanLegacyHotReportRows(env, pdfObjects);
+  const payload = hotReportPublicIndexPayload(
+    entries.map((entry) => entry.item),
+    hotReportPublicStaleMarker(staleMarker),
+  );
+  const current = initial || await readHotReportPublicIndexObject(env);
+  const onlyIf = current && current.object && current.object.etag
+    ? { etagMatches: String(current.object.etag) }
+    : { etagDoesNotMatch: "*" };
+  const written = await accountBucket(env).put(HOT_REPORT_PUBLIC_INDEX_KEY, JSON.stringify(payload), {
+    onlyIf,
+    httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "no-store" },
+  });
+  if (written !== null) return { object: written, index: payload };
+  const [resolved, latestStaleMarker] = await Promise.all([
+    readHotReportPublicIndexObject(env),
+    accountBucket(env).head(HOT_REPORT_PUBLIC_INDEX_STALE_KEY),
+  ]);
+  if (
+    resolved.index
+    && resolved.index.stale_marker === hotReportPublicStaleMarker(latestStaleMarker)
+  ) return resolved;
+  if (retry < 2) return rebuildHotReportPublicIndex(env, resolved, retry + 1);
+  throw new Error("Hot report public index was rebuilt concurrently; please retry.");
+}
+
+function hotReportPublicPdfCandidates(pdfObjects) {
+  return (Array.isArray(pdfObjects) ? pdfObjects : [])
     .filter((object) => hotReportIdFromPdfKey(object && object.key))
     .sort((left, right) => {
       const rightTime = hotReportObjectUploadedAt(right);
       const leftTime = hotReportObjectUploadedAt(left);
-      if (rightTime !== leftTime) return (Number.isFinite(rightTime) ? rightTime : 0) - (Number.isFinite(leftTime) ? leftTime : 0);
+      if (rightTime !== leftTime) {
+        return (Number.isFinite(rightTime) ? rightTime : 0) - (Number.isFinite(leftTime) ? leftTime : 0);
+      }
       return String(right && right.key || "").localeCompare(String(left && left.key || ""));
     })
-    .slice(0, HOT_REPORT_PUBLIC_MAX_ITEMS);
+    .slice(0, HOT_REPORT_PUBLIC_INDEX_MAX_CANDIDATES);
+}
+
+function hotReportPublicIndexMatchesPdfs(index, pdfObjects) {
+  if (!index) return false;
+  const expectedIds = hotReportPublicPdfCandidates(pdfObjects)
+    .map((object) => hotReportIdFromPdfKey(object && object.key));
+  const indexedIds = index.items.map((item) => cleanHotReportId(item && item.id)).filter(Boolean);
+  if (expectedIds.length !== indexedIds.length) return false;
+  const indexedSet = new Set(indexedIds);
+  return indexedSet.size === indexedIds.length && expectedIds.every((id) => indexedSet.has(id));
+}
+
+async function repairHotReportPublicIndexIfNeeded(env, options = {}) {
+  const [current, staleMarker] = await Promise.all([
+    readHotReportPublicIndexObject(env),
+    accountBucket(env).head(HOT_REPORT_PUBLIC_INDEX_STALE_KEY),
+  ]);
+  const markerMatches = current.index
+    && current.index.stale_marker === hotReportPublicStaleMarker(staleMarker);
+  let pdfObjects = null;
+  if (markerMatches && options.verifyStorage === true) {
+    pdfObjects = await listR2ObjectsByPrefix(env, `${HOT_REPORT_PDF_PREFIX}/`);
+    if (hotReportPublicIndexMatchesPdfs(current.index, pdfObjects)) {
+      return { ...current, rebuilt: false, storage_verified: true };
+    }
+  } else if (markerMatches) {
+    return { ...current, rebuilt: false, storage_verified: false };
+  }
+  const rebuilt = await rebuildHotReportPublicIndex(env, current, 0, pdfObjects);
+  return { ...rebuilt, rebuilt: true, storage_verified: options.verifyStorage === true };
+}
+
+function hotReportPublicIndexIsCurrent(current, staleMarker) {
+  return Boolean(
+    current
+    && current.index
+    && current.index.stale_marker === hotReportPublicStaleMarker(staleMarker)
+  );
+}
+
+function scheduleHotReportPublicIndexRepair(ctx, env) {
+  if (!ctx || typeof ctx.waitUntil !== "function") return false;
+  ctx.waitUntil(Promise.resolve()
+    .then(() => repairHotReportPublicIndexIfNeeded(env))
+    .catch((error) => {
+      console.error("Portal Suite hot report public index repair failed", {
+        message: String(error && error.message || error || "unknown error").slice(0, 240),
+      });
+    }));
+  return true;
+}
+
+async function loadHotReportPublicIndexObject(env) {
+  const repaired = await repairHotReportPublicIndexIfNeeded(env);
+  return { object: repaired.object, index: repaired.index };
+}
+
+async function loadHotReportPublicIndex(env) {
+  return (await loadHotReportPublicIndexObject(env)).index;
+}
+
+async function mutateHotReportPublicIndex(env, mutation, options = {}) {
+  let current;
+  if (options.rebuildIfNeeded === true) {
+    current = await loadHotReportPublicIndexObject(env);
+  } else {
+    const [stored, staleMarker] = await Promise.all([
+      readHotReportPublicIndexObject(env),
+      accountBucket(env).head(HOT_REPORT_PUBLIC_INDEX_STALE_KEY),
+    ]);
+    if (!stored.index || stored.index.stale_marker !== hotReportPublicStaleMarker(staleMarker)) {
+      await markHotReportPublicIndexStale(env);
+      return null;
+    }
+    current = stored;
+  }
+  for (let attempt = 0; attempt < 10; attempt += 1) {
+    const nextItems = mutation(current.index.items.slice());
+    const payload = hotReportPublicIndexPayload(nextItems, current.index.stale_marker);
+    const written = await accountBucket(env).put(HOT_REPORT_PUBLIC_INDEX_KEY, JSON.stringify(payload), {
+      onlyIf: { etagMatches: String(current.object && current.object.etag || "") },
+      httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "no-store" },
+    });
+    if (written !== null) return payload;
+    if (options.rebuildIfNeeded === true) {
+      current = await loadHotReportPublicIndexObject(env);
+    } else {
+      const [stored, staleMarker] = await Promise.all([
+        readHotReportPublicIndexObject(env),
+        accountBucket(env).head(HOT_REPORT_PUBLIC_INDEX_STALE_KEY),
+      ]);
+      if (!stored.index || stored.index.stale_marker !== hotReportPublicStaleMarker(staleMarker)) {
+        await markHotReportPublicIndexStale(env);
+        return null;
+      }
+      current = stored;
+    }
+  }
+  throw new Error("Hot report public index was updated concurrently; please retry.");
+}
+
+async function upsertHotReportPublicIndexItem(env, row) {
+  const item = publicHotReportItem(row);
+  if (!item) return null;
+  return mutateHotReportPublicIndex(env, (items) => [
+    item,
+    ...items.filter((candidate) => candidate.id !== item.id),
+  ]);
+}
+
+async function removeHotReportPublicIndexItems(env, values) {
+  const ids = new Set((Array.isArray(values) ? values : [values]).map(cleanHotReportId).filter(Boolean));
+  if (!ids.size) return null;
+  try {
+    return await mutateHotReportPublicIndex(env, (items) => items.filter((item) => !ids.has(item.id)));
+  } catch (error) {
+    await markHotReportPublicIndexStaleForError(env, error);
+    console.error("Portal Suite hot report public index removal failed", {
+      report_ids: [...ids].slice(0, 12),
+      message: String(error && error.message || error || "unknown error").slice(0, 240),
+    });
+    throw error;
+  }
+}
+
+function cleanHotReportPublicQuery(value) {
+  return normalizeText(cleanHotReportText(value, 160));
+}
+
+function hotReportPublicItemMatches(item, normalizedQuery) {
+  const tokens = String(normalizedQuery || "").split(" ").filter(Boolean);
+  if (!tokens.length) return true;
+  const searchable = normalizeText([
+    item && item.title,
+    item && item.title_cn,
+    item && item.institution,
+    item && item.date,
+    item && item.description,
+    item && item.filename,
+  ].join(" "));
+  return tokens.every((token) => searchable.includes(token));
+}
+
+function hotReportPublicCursor(item, normalizedQuery, generation) {
+  return base64UrlEncodeText(JSON.stringify({
+    version: HOT_REPORT_PUBLIC_INDEX_VERSION,
+    generation: hotReportArchiveGeneration(generation),
+    query: normalizedQuery,
+    sort_order: Number(item && item.sort_order || 0) || 0,
+    date: String(item && item.date || ""),
+    created_at: String(item && item.created_at || ""),
+    id: String(item && item.id || ""),
+  }));
+}
+
+function decodeHotReportPublicCursor(value, normalizedQuery) {
+  const encoded = String(value || "");
+  if (!encoded) return null;
+  if (encoded.length > HOT_REPORT_PUBLIC_CURSOR_MAX_LENGTH) throw new TypeError("Invalid hot report cursor.");
+  let parsed = null;
+  try {
+    parsed = JSON.parse(base64UrlDecodeText(encoded));
+  } catch (_error) {
+    parsed = null;
+  }
+  const item = parsed && {
+    id: cleanHotReportId(parsed.id),
+    generation: hotReportArchiveGeneration(parsed.generation),
+    sort_order: Number(parsed.sort_order || 0) || 0,
+    date: cleanHotReportText(parsed.date, 10),
+    created_at: cleanHotReportText(parsed.created_at, 64),
+  };
+  if (
+    !parsed
+    || Number(parsed.version) !== HOT_REPORT_PUBLIC_INDEX_VERSION
+    || String(parsed.query || "") !== normalizedQuery
+    || !item.id
+    || !item.generation
+    || !Number.isSafeInteger(item.sort_order)
+  ) throw new TypeError("Invalid hot report cursor.");
+  return item;
+}
+
+function hotReportPublicPageSize(value) {
+  const raw = String(value == null ? "" : value).trim();
+  if (!raw) return HOT_REPORT_PUBLIC_DEFAULT_PAGE_SIZE;
+  const parsed = Number(raw);
+  if (!Number.isFinite(parsed)) throw new TypeError("Invalid hot report page size.");
+  return Math.max(1, Math.min(HOT_REPORT_PUBLIC_MAX_PAGE_SIZE, Math.floor(parsed)));
+}
+
+function listHotReportPageFromIndex(index, options = {}) {
+  const limit = hotReportPublicPageSize(options.limit);
+  const normalizedQuery = cleanHotReportPublicQuery(options.query);
+  const after = decodeHotReportPublicCursor(options.cursor, normalizedQuery);
+  if (after && after.generation !== index.generation) {
+    const error = new Error("Hot report index changed; restart pagination from the first page.");
+    error.code = "HOT_REPORT_CURSOR_STALE";
+    throw error;
+  }
+  const publicItems = index.items.slice(0, HOT_REPORT_PUBLIC_MAX_ITEMS);
+  const matched = publicItems.filter((item) => hotReportPublicItemMatches(item, normalizedQuery));
+  let start = 0;
+  if (after) {
+    const nextIndex = matched.findIndex((item) => compareHotReportPublicItems(item, after) > 0);
+    start = nextIndex < 0 ? matched.length : nextIndex;
+  }
+  const items = matched.slice(start, start + limit);
+  const hasMore = start + items.length < matched.length;
+  return {
+    items,
+    total: matched.length,
+    page_size: limit,
+    has_more: hasMore,
+    next_cursor: hasMore && items.length
+      ? hotReportPublicCursor(items[items.length - 1], normalizedQuery, index.generation)
+      : "",
+    query: normalizedQuery,
+    generation: index.generation,
+    index_updated_at: index.updated_at,
+  };
+}
+
+async function listHotReportPage(env, options = {}) {
+  const index = await loadHotReportPublicIndex(env);
+  return listHotReportPageFromIndex(index, options);
+}
+
+async function listHotReportRows(env) {
+  const index = await loadHotReportPublicIndex(env);
+  return index.items
+    .slice(0, HOT_REPORT_PUBLIC_MAX_ITEMS)
+    .map((item) => ({ row: item, item }));
+}
+
+async function scanLegacyHotReportRows(env, listedPdfObjects = null) {
+  const pdfObjects = Array.isArray(listedPdfObjects)
+    ? listedPdfObjects
+    : await listR2ObjectsByPrefix(env, `${HOT_REPORT_PDF_PREFIX}/`);
+  const candidates = hotReportPublicPdfCandidates(pdfObjects);
   const rows = await mapWithConcurrency(candidates, HOT_REPORT_LIST_CONCURRENCY, async (object) => {
     const id = hotReportIdFromPdfKey(object && object.key);
     const current = await r2GetJsonObjectStrict(env, hotReportItemKey(id));
@@ -8488,7 +8894,10 @@ async function deleteHotReportArchive(env, row, options = {}) {
   if (!id) return false;
   let owner = await claimHotReportDeletionOwner(env, id, options);
   if (!owner) return false;
-  if (owner.completed) return true;
+  if (owner.completed) {
+    if (options.deferPublicIndexUpdate !== true) await removeHotReportPublicIndexItems(env, id);
+    return true;
+  }
 
   owner = await renewHotReportDeletionOwner(env, owner);
   if (!owner) return false;
@@ -8527,13 +8936,18 @@ async function deleteHotReportArchive(env, row, options = {}) {
     onlyIf: { etagMatches: String(owner.object && owner.object.etag || "") },
     httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "no-store" },
   });
-  if (finalized !== null) return true;
+  if (finalized !== null) {
+    if (options.deferPublicIndexUpdate !== true) await removeHotReportPublicIndexItems(env, id);
+    return true;
+  }
   const resolved = await r2GetJsonStrict(env, owner.itemKey);
-  return Boolean(
+  const completed = Boolean(
     resolved
     && String(resolved.retention_state || "") === "deleted"
     && hotReportArchiveGeneration(resolved.retention_generation) === owner.generation
   );
+  if (completed && options.deferPublicIndexUpdate !== true) await removeHotReportPublicIndexItems(env, id);
+  return completed;
 }
 
 function hotReportObjectUploadedAt(object) {
@@ -8596,40 +9010,65 @@ async function enforceHotReportStorageLimit(env) {
   let pruned = 0;
   let evaluated = 0;
   let remainingPdfs = listedPdfs.length;
-  for (const object of candidates) {
-    if (total <= limit) break;
-    if (evaluated >= HOT_REPORT_RETENTION_MAX_CANDIDATES_PER_RUN) break;
-    evaluated += 1;
-    const key = String(object && object.key || "");
-    const id = hotReportIdFromPdfKey(key);
-    const uploadedAt = hotReportObjectUploadedAt(object);
-    let deleted = false;
-    if (!id) {
-      if (Number.isFinite(uploadedAt) && uploadedAt <= orphanCutoff) {
-        await env.REPORT_BUCKET.delete(key);
-        deleted = true;
-      }
-    } else {
-      const current = await r2GetJsonObjectStrict(env, hotReportItemKey(id));
-      if (!current) {
+  const removedPublicIds = [];
+  let retentionError = null;
+  try {
+    for (const object of candidates) {
+      if (total <= limit) break;
+      if (evaluated >= HOT_REPORT_RETENTION_MAX_CANDIDATES_PER_RUN) break;
+      evaluated += 1;
+      const key = String(object && object.key || "");
+      const id = hotReportIdFromPdfKey(key);
+      const uploadedAt = hotReportObjectUploadedAt(object);
+      let deleted = false;
+      if (!id) {
         if (Number.isFinite(uploadedAt) && uploadedAt <= orphanCutoff) {
-          deleted = await deleteHotReportArchive(env, { id }, { allowMissing: true });
+          await env.REPORT_BUCKET.delete(key);
+          deleted = true;
         }
       } else {
-        const row = current.value;
-        if (!row || typeof row !== "object" || Array.isArray(row) || cleanHotReportId(row.id) !== id) {
-          throw new Error("Hot report metadata verification failed.");
+        const current = await r2GetJsonObjectStrict(env, hotReportItemKey(id));
+        if (!current) {
+          if (Number.isFinite(uploadedAt) && uploadedAt <= orphanCutoff) {
+            deleted = await deleteHotReportArchive(env, { id }, {
+              allowMissing: true,
+              deferPublicIndexUpdate: true,
+            });
+          }
+        } else {
+          const row = current.value;
+          if (!row || typeof row !== "object" || Array.isArray(row) || cleanHotReportId(row.id) !== id) {
+            throw new Error("Hot report metadata verification failed.");
+          }
+          deleted = await deleteHotReportArchive(env, row, {
+            expectedItemEtag: String(current.object && current.object.etag || ""),
+            deferPublicIndexUpdate: true,
+          });
         }
-        deleted = await deleteHotReportArchive(env, row, {
-          expectedItemEtag: String(current.object && current.object.etag || ""),
-        });
+      }
+      if (deleted) {
+        const size = Number(object && object.size || 0);
+        total -= Number.isFinite(size) && size > 0 ? Math.floor(size) : 0;
+        pruned += 1;
+        remainingPdfs -= 1;
+        if (id) removedPublicIds.push(id);
       }
     }
-    if (deleted) {
-      const size = Number(object && object.size || 0);
-      total -= Number.isFinite(size) && size > 0 ? Math.floor(size) : 0;
-      pruned += 1;
-      remainingPdfs -= 1;
+  } catch (error) {
+    retentionError = error;
+    throw error;
+  } finally {
+    if (removedPublicIds.length) {
+      try {
+        await removeHotReportPublicIndexItems(env, removedPublicIds);
+      } catch (indexError) {
+        if (!retentionError) throw indexError;
+        console.error("Portal Suite hot report retention index finalization failed", {
+          removed_report_ids: removedPublicIds.slice(0, 12),
+          retention_error: String(retentionError && retentionError.message || retentionError).slice(0, 240),
+          index_error: String(indexError && indexError.message || indexError).slice(0, 240),
+        });
+      }
     }
   }
   return {
@@ -8642,18 +9081,55 @@ async function enforceHotReportStorageLimit(env) {
   };
 }
 
-async function handleHotReportsList(request, env) {
+async function handleHotReportsList(request, env, ctx = null) {
   try {
-    const rows = await listHotReportRows(env);
-    return jsonResponse(request, env, 200, {
-      items: rows.map((entry) => entry.item),
-      total: rows.length,
+    const url = new URL(request.url);
+    const bootstrap = url.searchParams.get("bootstrap") === "1";
+    const [current, staleMarker] = await Promise.all([
+      readHotReportPublicIndexObject(env),
+      accountBucket(env).head(HOT_REPORT_PUBLIC_INDEX_STALE_KEY),
+    ]);
+    const currentIsHealthy = hotReportPublicIndexIsCurrent(current, staleMarker);
+    let selected = current;
+    let indexStale = false;
+    if (!currentIsHealthy && bootstrap) {
+      selected = await rebuildHotReportPublicIndex(env, current);
+    } else if (!currentIsHealthy && current.index) {
+      indexStale = true;
+      scheduleHotReportPublicIndexRepair(ctx, env);
+    } else if (!currentIsHealthy) {
+      scheduleHotReportPublicIndexRepair(ctx, env);
+      return jsonResponse(request, env, 503, {
+        detail: "近期热门报告索引正在后台准备，请稍后重试。",
+        index_repair_pending: true,
+      });
+    }
+    const page = listHotReportPageFromIndex(selected.index, {
+      limit: url.searchParams.get("limit"),
+      cursor: url.searchParams.get("cursor"),
+      query: url.searchParams.get("q"),
+    });
+    return new Response(JSON.stringify({
+      ...page,
       required_plan: HOT_REPORT_REQUIRED_PLAN,
       required_months: HOT_REPORT_MIN_MONTHS,
+      index_stale: indexStale,
       generated_at: new Date().toISOString(),
+    }), {
+      status: 200,
+      headers: {
+        ...corsHeaders(request, env),
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": indexStale
+          ? "public, max-age=5, stale-while-revalidate=300"
+          : "public, max-age=30, stale-while-revalidate=300",
+      },
     });
   } catch (error) {
-    return jsonResponse(request, env, 503, { detail: error.message || "近期热门报告暂时无法读取。" });
+    const status = error && error.code === "HOT_REPORT_CURSOR_STALE"
+      ? 409
+      : error instanceof TypeError ? 400 : 503;
+    return jsonResponse(request, env, status, { detail: error.message || "近期热门报告暂时无法读取。" });
   }
 }
 
@@ -8917,6 +9393,16 @@ async function handleAccountAdminHotReportUpload(request, env) {
       }
       throw metadataError;
     }
+    let publicIndexUpdate = null;
+    try {
+      publicIndexUpdate = await upsertHotReportPublicIndexItem(env, row);
+    } catch (error) {
+      await markHotReportPublicIndexStaleForError(env, error);
+      console.error("Portal Suite hot report public index update failed", {
+        report_id: id,
+        message: String(error && error.message || error || "unknown error").slice(0, 240),
+      });
+    }
     await persistAnalyticsEvent(request, env, {
       type: "admin_hot_report_upload",
       path: "/account-admin/hot-report",
@@ -8932,6 +9418,7 @@ async function handleAccountAdminHotReportUpload(request, env) {
     return jsonResponse(request, env, 201, {
       ok: true,
       item: publicHotReportItem(row),
+      public_index_update_pending: !publicIndexUpdate,
       retention_cleanup_pending: !retention,
     });
   } catch (error) {
@@ -17908,7 +18395,7 @@ export default {
     }
 
     if (pathname === "/hot-reports" && request.method === "GET") {
-      return handleHotReportsList(request, env);
+      return handleHotReportsList(request, env, ctx);
     }
 
     if (pathname === "/hot-reports/item" && request.method === "GET") {
@@ -18001,6 +18488,7 @@ export default {
       tasks.push(refreshAdminDashboardSnapshots(env));
       tasks.push(warmThinkTankPdfCache(env));
       tasks.push(enforceHotReportStorageLimit(env));
+      tasks.push(repairHotReportPublicIndexIfNeeded(env, { verifyStorage: true }));
     }
     if (!cron || cron !== "*/30 * * * *") {
       tasks.push(warmNewsfeedCaches(env));

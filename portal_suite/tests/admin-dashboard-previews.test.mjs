@@ -130,16 +130,21 @@ test("hot-report loader sorts all items and renders only the latest three", asyn
     { id: "hot-4", title: "Hot second", date: "2026-07-01" },
     { id: "hot-2", title: "Hot older", date: "2026-02-01" },
   ];
+  const requests = [];
   const sandbox = installPreviewHelpers({
     accountAdminHotReports: [],
     HOT_REPORT_SOURCE: "hot",
+    URLSearchParams,
     escapeHtml(value) { return String(value || ""); },
     externalPageUrl(item) { return `/external.html?id=${item.id}`; },
     formatSize() { return ""; },
-    fetch: async () => new Response(JSON.stringify({ items }), {
-      status: 200,
-      headers: { "content-type": "application/json" },
-    }),
+    fetch: async (url) => {
+      requests.push(String(url));
+      return new Response(JSON.stringify({ items, total: 5, has_more: false, next_cursor: "" }), {
+        status: 200,
+        headers: { "content-type": "application/json" },
+      });
+    },
   });
   vm.runInContext(`
     ${extractFunction(app, "adminHotReportRow")}
@@ -161,4 +166,204 @@ test("hot-report loader sorts all items and renders only the latest three", asyn
   assert.match(targets.hotReportList.innerHTML, /Hot third/u);
   assert.doesNotMatch(targets.hotReportList.innerHTML, /Hot older|Hot old/u);
   assert.deepEqual(Array.from(sandbox.accountAdminHotReports, (item) => item.id), ["hot-5", "hot-4", "hot-3", "hot-2", "hot-1"]);
+  assert.deepEqual(requests, ["/api/hot-reports?limit=60"]);
+});
+
+test("hot-report admin loader follows cursors until all indexed reports are available", async () => {
+  const items = Array.from({ length: 125 }, (_, index) => ({
+    id: `hot-${String(index).padStart(3, "0")}`,
+    title: `Hot ${index}`,
+    date: new Date(Date.UTC(2026, 7, 27 - index)).toISOString().slice(0, 10),
+  }));
+  const requests = [];
+  const sandbox = installPreviewHelpers({
+    accountAdminHotReports: [],
+    HOT_REPORT_SOURCE: "hot",
+    URLSearchParams,
+    escapeHtml(value) { return String(value || ""); },
+    externalPageUrl(item) { return `/external.html?id=${item.id}`; },
+    formatSize() { return ""; },
+    fetch: async (url) => {
+      requests.push(String(url));
+      const cursor = new URL(String(url), "https://portal.invalid").searchParams.get("cursor") || "";
+      const start = cursor === "page-2" ? 60 : (cursor === "page-3" ? 120 : 0);
+      const pageItems = items.slice(start, start + 60);
+      const hasMore = start + pageItems.length < items.length;
+      const nextCursor = start === 0 ? "page-2" : (start === 60 ? "page-3" : "");
+      return new Response(JSON.stringify({
+        items: pageItems,
+        total: items.length,
+        has_more: hasMore,
+        next_cursor: nextCursor,
+      }), {
+        status: 200,
+        headers: { "content-type": "application/json" },
+      });
+    },
+  });
+  vm.runInContext(`
+    ${extractFunction(app, "adminHotReportRow")}
+    ${extractFunction(app, "loadAdminHotReports")}
+  `, sandbox);
+  const targets = {
+    hotReportSection: { hidden: false },
+    hotReportList: { innerHTML: "" },
+    hotReportMore: { hidden: true },
+    hotReportCount: { textContent: "" },
+    hotReportStatus: { textContent: "", className: "" },
+  };
+  const sorted = await sandbox.loadAdminHotReports("/api", targets);
+  assert.equal(sorted.length, 125);
+  assert.equal(sandbox.accountAdminHotReports.length, 125);
+  assert.equal(targets.hotReportCount.textContent, "125 条");
+  assert.equal(targets.hotReportMore.hidden, false);
+  assert.deepEqual(requests, [
+    "/api/hot-reports?limit=60",
+    "/api/hot-reports?limit=60&cursor=page-2",
+    "/api/hot-reports?limit=60&cursor=page-3",
+  ]);
+});
+
+test("hot-report admin pagination rejects missing or repeated cursors without showing a partial collection", async () => {
+  async function runWithPages(pages) {
+    let call = 0;
+    const sandbox = installPreviewHelpers({
+      accountAdminHotReports: [{ id: "stale" }],
+      HOT_REPORT_SOURCE: "hot",
+      URLSearchParams,
+      escapeHtml(value) { return String(value || ""); },
+      externalPageUrl(item) { return `/external.html?id=${item.id}`; },
+      formatSize() { return ""; },
+      fetch: async () => {
+        const page = pages[Math.min(call++, pages.length - 1)];
+        return new Response(JSON.stringify(page), {
+          status: Number(page.status || 200),
+          headers: { "content-type": "application/json" },
+        });
+      },
+    });
+    vm.runInContext(`
+      ${extractFunction(app, "adminHotReportRow")}
+      ${extractFunction(app, "loadAdminHotReports")}
+    `, sandbox);
+    const targets = {
+      hotReportSection: { hidden: false },
+      hotReportList: { innerHTML: "" },
+      hotReportMore: { hidden: true },
+      hotReportCount: { textContent: "" },
+      hotReportStatus: { textContent: "", className: "" },
+    };
+    const result = await sandbox.loadAdminHotReports("/api", targets);
+    return { result, sandbox, targets, calls: call };
+  }
+
+  const missing = await runWithPages([{ items: [{ id: "one" }], total: 2, has_more: true, next_cursor: "" }]);
+  assert.equal(missing.result.length, 0);
+  assert.equal(missing.sandbox.accountAdminHotReports.length, 0);
+  assert.match(missing.targets.hotReportStatus.textContent, /分页数据不完整/u);
+
+  const repeated = await runWithPages([
+    { items: [{ id: "one" }], total: 3, has_more: true, next_cursor: "repeat" },
+    { items: [{ id: "two" }], total: 3, has_more: true, next_cursor: "repeat" },
+  ]);
+  assert.equal(repeated.result.length, 0);
+  assert.equal(repeated.sandbox.accountAdminHotReports.length, 0);
+  assert.match(repeated.targets.hotReportStatus.textContent, /分页状态异常/u);
+});
+
+test("hot-report admin loading restarts once after an index-generation conflict", async () => {
+  const responses = [
+    { items: [{ id: "old-one", date: "2026-08-26" }], total: 2, has_more: true, next_cursor: "old-cursor" },
+    { status: 409, detail: "Hot report index changed." },
+    { items: [{ id: "new-one", date: "2026-08-27" }], total: 2, has_more: true, next_cursor: "new-cursor" },
+    { items: [{ id: "new-two", date: "2026-08-26" }], total: 2, has_more: false, next_cursor: "" },
+  ];
+  let call = 0;
+  const sandbox = installPreviewHelpers({
+    accountAdminHotReports: [{ id: "stale" }],
+    HOT_REPORT_SOURCE: "hot",
+    URLSearchParams,
+    escapeHtml(value) { return String(value || ""); },
+    externalPageUrl(item) { return `/external.html?id=${item.id}`; },
+    formatSize() { return ""; },
+    fetch: async () => {
+      const response = responses[call++];
+      return new Response(JSON.stringify(response), {
+        status: Number(response.status || 200),
+        headers: { "content-type": "application/json" },
+      });
+    },
+  });
+  vm.runInContext(`
+    ${extractFunction(app, "adminHotReportRow")}
+    ${extractFunction(app, "loadAdminHotReports")}
+  `, sandbox);
+  const targets = {
+    hotReportSection: { hidden: false },
+    hotReportList: { innerHTML: "" },
+    hotReportMore: { hidden: true },
+    hotReportCount: { textContent: "" },
+    hotReportStatus: { textContent: "", className: "" },
+  };
+  const result = await sandbox.loadAdminHotReports("/api", targets);
+  assert.equal(call, 4, "one 409 must restart the collection from page one exactly once");
+  assert.deepEqual(Array.from(result, (item) => item.id), ["new-one", "new-two"]);
+  assert.deepEqual(Array.from(sandbox.accountAdminHotReports, (item) => item.id), ["new-one", "new-two"]);
+  assert.equal(targets.hotReportCount.textContent, "2 条");
+  assert.doesNotMatch(targets.hotReportList.innerHTML, /old-one|stale/u);
+});
+
+test("hot-report admin loading rejects a second conflict or a deduplicated count mismatch", async () => {
+  async function run(responses) {
+    let call = 0;
+    const sandbox = installPreviewHelpers({
+      accountAdminHotReports: [{ id: "stale" }],
+      HOT_REPORT_SOURCE: "hot",
+      URLSearchParams,
+      escapeHtml(value) { return String(value || ""); },
+      externalPageUrl(item) { return `/external.html?id=${item.id}`; },
+      formatSize() { return ""; },
+      fetch: async () => {
+        const response = responses[Math.min(call++, responses.length - 1)];
+        return new Response(JSON.stringify(response), {
+          status: Number(response.status || 200),
+          headers: { "content-type": "application/json" },
+        });
+      },
+    });
+    vm.runInContext(`
+      ${extractFunction(app, "adminHotReportRow")}
+      ${extractFunction(app, "loadAdminHotReports")}
+    `, sandbox);
+    const targets = {
+      hotReportSection: { hidden: false },
+      hotReportList: { innerHTML: "" },
+      hotReportMore: { hidden: true },
+      hotReportCount: { textContent: "" },
+      hotReportStatus: { textContent: "", className: "" },
+    };
+    const result = await sandbox.loadAdminHotReports("/api", targets);
+    return { result, sandbox, targets, calls: call };
+  }
+
+  const persistentConflict = await run([
+    { items: [{ id: "first" }], total: 2, has_more: true, next_cursor: "old" },
+    { status: 409, detail: "changed" },
+    { items: [{ id: "second" }], total: 2, has_more: true, next_cursor: "new" },
+    { status: 409, detail: "changed again" },
+  ]);
+  assert.equal(persistentConflict.calls, 4);
+  assert.equal(persistentConflict.result.length, 0);
+  assert.equal(persistentConflict.sandbox.accountAdminHotReports.length, 0);
+  assert.equal(persistentConflict.targets.hotReportCount.textContent, "");
+
+  const duplicateMismatch = await run([{
+    items: [{ id: "duplicate" }, { id: "duplicate" }],
+    total: 2,
+    has_more: false,
+    next_cursor: "",
+  }]);
+  assert.equal(duplicateMismatch.result.length, 0);
+  assert.equal(duplicateMismatch.sandbox.accountAdminHotReports.length, 0);
+  assert.match(duplicateMismatch.targets.hotReportStatus.textContent, /数量校验失败/u);
 });

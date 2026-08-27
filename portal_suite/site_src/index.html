@@ -201,7 +201,15 @@
         </div>
         <p class="subtle external-hint">精选近期热门 PDF；3个月及以上会员可下载全文。</p>
         <div id="hotReportsResults" class="related-list"></div>
-        <div id="hotReportsStatus" class="status-line" aria-live="polite"></div>
+        <nav id="hotReportsPagination" class="pagination-bar hot-reports-pagination" aria-label="近期热门报告翻页" hidden>
+          <button id="hotReportsPrev" type="button">上一页</button>
+          <span id="hotReportsPageInfo">第 1 页</span>
+          <button id="hotReportsNext" type="button">下一页</button>
+        </nav>
+        <div class="hot-reports-feedback">
+          <div id="hotReportsStatus" class="status-line" role="status" aria-live="polite"></div>
+          <button id="hotReportsRetry" class="secondary-button hot-reports-retry" type="button" hidden>重新加载</button>
+        </div>
       </section>
 
       <section class="external-section" id="thinkTankSection" aria-labelledby="thinkTankTitle" hidden>
