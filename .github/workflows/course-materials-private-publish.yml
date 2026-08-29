@@ -37,7 +37,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install publisher dependencies
-        run: python3 -m pip install --disable-pip-version-check "boto3>=1.34,<2" "pypdf>=4,<6" "requests>=2.31,<3"
+        run: python3 -m pip install --disable-pip-version-check "boto3>=1.34,<2" "cryptography>=42,<47" "pypdf>=4,<6" "requests>=2.31,<3"
 
       - name: Validate publisher contracts
         run: |

@@ -234,6 +234,7 @@ class CourseMaterialPublisherTests(unittest.TestCase):
         self.assertIn("scripts/test_publish_course_materials.py", workflow)
         self.assertIn("scripts/publish_course_materials.py", workflow)
         self.assertIn("portal_suite/site_src/data/course-materials.json", workflow)
+        self.assertIn('"cryptography>=42,<47"', workflow)
         self.assertNotIn("Jade Ocean", workflow)
         self.assertNotIn("delete_object", workflow)
 
