@@ -256,8 +256,6 @@ def download_and_unzip(url: str, result_dir: Path) -> None:
     result_dir.mkdir(parents=True, exist_ok=True)
     response = requests.get(url, timeout=300)
     response.raise_for_status()
-    zip_path = result_dir.parent / "mineru_result.zip"
-    zip_path.write_bytes(response.content)
     with zipfile.ZipFile(BytesIO(response.content)) as zf:
         zf.extractall(result_dir)
 

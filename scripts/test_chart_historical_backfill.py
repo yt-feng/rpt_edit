@@ -4,9 +4,11 @@
 from __future__ import annotations
 
 import argparse
+import io
 import json
 import tempfile
 import unittest
+import zipfile
 from pathlib import Path
 from unittest.mock import patch
 
@@ -96,6 +98,27 @@ class SourceValidationTests(unittest.TestCase):
 
 
 class ChartOnlyParserTests(unittest.TestCase):
+    def test_mineru_download_extracts_without_persisting_archive(self) -> None:
+        payload = io.BytesIO()
+        with zipfile.ZipFile(payload, "w") as archive:
+            archive.writestr("nested/full.md", "# Historical report")
+
+        class Response:
+            content = payload.getvalue()
+
+            @staticmethod
+            def raise_for_status() -> None:
+                return None
+
+        with tempfile.TemporaryDirectory() as temp:
+            item_dir = Path(temp) / "report"
+            raw_dir = item_dir / "mineru_raw"
+            with patch.object(pdf_batch.requests, "get", return_value=Response()):
+                pdf_batch.download_and_unzip("https://example.invalid/result.zip", raw_dir)
+
+            self.assertTrue((raw_dir / "nested/full.md").is_file())
+            self.assertFalse((item_dir / "mineru_result.zip").exists())
+
     def test_chart_source_only_skips_generated_articles_and_removes_raw(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
