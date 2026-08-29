@@ -13190,6 +13190,22 @@ function reportResearchLookupTokens(question) {
   return [...new Set([...latin, ...aliases, ...reportChatLookupTokens(raw)])].slice(0, REPORT_RESEARCH_MAX_QUERY_TOKENS);
 }
 
+function reportResearchChartTokens(question) {
+  const raw = String(question || "").normalize("NFKC").toLowerCase();
+  const aliases = REPORT_RESEARCH_QUERY_ALIASES.flatMap(([pattern, tokens]) => pattern.test(raw) ? tokens : []);
+  return [...new Set([...aliases, ...reportChatQueryTokens(raw)])]
+    .map((token) => normalizeText(token))
+    .filter((token) => token.length >= 2)
+    .slice(0, REPORT_RESEARCH_MAX_QUERY_TOKENS);
+}
+
+function reportResearchChartTokenMatches(text, token) {
+  if (/^[a-z0-9]+(?: [a-z0-9]+)*$/u.test(token)) {
+    return ` ${text} `.includes(` ${token} `);
+  }
+  return text.includes(token);
+}
+
 function reportResearchPostingRows(value) {
   if (!Array.isArray(value)) return [];
   const rows = [];
@@ -13296,25 +13312,52 @@ async function reportResearchBundle(env, question) {
 }
 
 async function reportResearchCharts(env, question, sourceIds) {
-  const allowed = new Map(sourceIds.map((id, index) => [id, index]));
-  if (!allowed.size) return [];
+  const sourcePriority = new Map((Array.isArray(sourceIds) ? sourceIds : []).map((value, index) => ({
+    id: cleanCatalogReportId(value),
+    index,
+  })).filter((row) => row.id).map((row) => [row.id, row.index]));
   let gallery;
   try {
     gallery = await loadChartGallery(env);
   } catch (_error) {
     return [];
   }
-  const tokens = reportResearchLookupTokens(question);
-  return gallery.items.filter((item) => allowed.has(item.report_id)).map((item) => {
+  const tokens = reportResearchChartTokens(question);
+  const ranked = gallery.items.map((item) => {
+    const reportId = cleanCatalogReportId(item.report_id);
+    const sameSource = sourcePriority.has(reportId);
     const text = normalizeText([
-      item.title, item.description, item.trend_summary, item.report_title,
-      ...item.metrics, ...item.entities, ...item.keywords,
+      item.title, item.description, item.trend_summary,
+      ...item.metrics, ...item.entities, ...item.periods, ...item.geographies,
+      ...item.units, ...item.keywords,
     ].join(" "));
-    const matches = tokens.reduce((count, token) => count + (text.includes(normalizeText(token)) ? 1 : 0), 0);
-    return { item, score: matches * 20 + item.quality_score / 10 - allowed.get(item.report_id) };
-  }).sort((left, right) => right.score - left.score || right.item.date_folder.localeCompare(left.item.date_folder))
-    .slice(0, 6)
-    .map((row) => row.item);
+    const matches = tokens.reduce((count, token) => (
+      count + (reportResearchChartTokenMatches(text, token) ? 1 : 0)
+    ), 0);
+    if (!sameSource && (!reportId || matches < 1)) return null;
+    return {
+      item,
+      sameSource,
+      matches,
+      sourceRank: sameSource ? sourcePriority.get(reportId) : Number.MAX_SAFE_INTEGER,
+    };
+  }).filter(Boolean).sort((left, right) => (
+    right.matches - left.matches
+    || Number(right.sameSource) - Number(left.sameSource)
+    || left.sourceRank - right.sourceRank
+    || right.item.quality_score - left.item.quality_score
+    || right.item.date_folder.localeCompare(left.item.date_folder)
+    || left.item.image_id.localeCompare(right.item.image_id)
+  ));
+  const seen = new Set();
+  const selected = [];
+  for (const row of ranked) {
+    if (seen.has(row.item.image_id)) continue;
+    seen.add(row.item.image_id);
+    selected.push(row.item);
+    if (selected.length >= 6) break;
+  }
+  return selected;
 }
 
 const COURSE_CHAT_TOP_TIER_PATTERN = /(?:^|[^a-z0-9])(?:jpm|jpmorgan|goldman|morgan stanley|bofa|bank of america|ubs|citi|citigroup|hsbc)(?=$|[^a-z0-9])|摩根大通|高盛|摩根士丹利|美银|瑞银|花旗|汇丰|金杜|中伦|君合|国浩|证监会|上交所|深交所|最高人民法院/iu;

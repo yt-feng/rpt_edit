@@ -93,7 +93,7 @@
     const dataPoints = (Array.isArray(data.data_points) ? data.data_points : []).filter((item) => item && typeof item === "object").slice(0, 12);
     const charts = (Array.isArray(data.charts) ? data.charts : []).filter((item) => {
       if (!item || typeof item !== "object" || !/^[0-9a-f]{64}$/u.test(String(item.image_id || ""))) return false;
-      return sources.has(String(item.report_id || "").trim());
+      return Boolean(String(item.report_id || "").trim());
     }).slice(0, 6);
     const sections = [];
     if (executiveSummary) {
@@ -118,10 +118,15 @@
       sections.push(`<section class="report-research-section"><h3>相关 Charts</h3><div class="report-research-chart-grid">${charts.map((item) => {
         const imageId = String(item.image_id);
         const reportId = String(item.report_id || "").trim();
-        const report = sources.get(reportId);
+        const chartReportTitle = String(item.report_title || "").trim();
+        const report = sources.get(reportId) || {
+          id: reportId,
+          title: chartReportTitle || "图表所在报告",
+          date_folder: String(item.date_folder || "").trim(),
+        };
         const description = String(item.description || item.trend_summary || "").trim();
         const metrics = (Array.isArray(item.metrics) ? item.metrics : []).map((value) => String(value || "").trim()).filter(Boolean).slice(0, 5).join(" · ");
-        return `<figure class="report-research-chart"><img src="/api/charts/image?id=${imageId}" alt="${escapeHtml(item.title || "研究图表")}" loading="lazy" decoding="async"><figcaption><strong>${escapeHtml(item.title || "研究图表")}</strong>${description ? `<p>${escapeHtml(description)}</p>` : ""}${metrics ? `<span>${escapeHtml(metrics)}</span>` : ""}<a href="${escapeHtml(reportUrl(reportId, report))}" target="_blank" rel="noopener noreferrer">来源报告 · ${escapeHtml(report.report_title || report.title || reportId)}</a></figcaption></figure>`;
+        return `<figure class="report-research-chart"><img src="/api/charts/image?id=${imageId}" alt="${escapeHtml(item.title || "研究图表")}" loading="lazy" decoding="async"><figcaption><strong>${escapeHtml(item.title || "研究图表")}</strong>${description ? `<p>${escapeHtml(description)}</p>` : ""}${metrics ? `<span>${escapeHtml(metrics)}</span>` : ""}<a href="${escapeHtml(reportUrl(reportId, report))}" target="_blank" rel="noopener noreferrer">来源报告 · ${escapeHtml(report.report_title || report.title || chartReportTitle || reportId)}</a></figcaption></figure>`;
       }).join("")}</div></section>`);
     }
     return sections.join("");

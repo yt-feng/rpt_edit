@@ -229,6 +229,7 @@ test("report research renders grounded findings, data, charts, and escaped sourc
   const harness = createHarness();
   const submit = harness.form.dispatch("submit");
   const validImageId = "a".repeat(64);
+  const crossReportImageId = "b".repeat(64);
 
   harness.fetches[0].resolve({
     mode: "research",
@@ -239,8 +240,9 @@ test("report research renders grounded findings, data, charts, and escaped sourc
     sources: [{ id: "report-1", title: "摩根大通 AI 电力报告", institution: "摩根大通", attraction_score: 5 }],
     charts: [
       { image_id: validImageId, report_id: "report-1", title: "数据中心用电", description: "需求上升", metrics: ["TWh"] },
+      { image_id: crossReportImageId, report_id: "report-2", report_title: "高盛 AI 电网图表报告", date_folder: "260828", title: "电网容量", description: "并网瓶颈", metrics: ["GW"] },
       { image_id: "not-an-image", report_id: "report-1", title: "无效图" },
-      { image_id: "b".repeat(64), report_id: "unknown", title: "无来源图" },
+      { image_id: "c".repeat(64), report_id: "", title: "无来源图" },
     ],
     usage: { remaining: 2 },
   });
@@ -251,11 +253,15 @@ test("report research renders grounded findings, data, charts, and escaped sourc
   assert.match(harness.messages.innerHTML, /关键数据/u);
   assert.match(harness.messages.innerHTML, /相关 Charts/u);
   assert.match(harness.messages.innerHTML, new RegExp(`/api/charts/image\\?id=${validImageId}`, "u"));
+  assert.match(harness.messages.innerHTML, new RegExp(`/api/charts/image\\?id=${crossReportImageId}`, "u"));
+  assert.match(harness.messages.innerHTML, /高盛 AI 电网图表报告/u);
+  assert.match(harness.messages.innerHTML, /\/report\.html\?id=report-2/u);
   assert.doesNotMatch(harness.messages.innerHTML, /\/api\/chart-image\?/u);
   assert.match(harness.messages.innerHTML, /来源 · 摩根大通/u);
   assert.doesNotMatch(harness.messages.innerHTML, /<script>/u);
   assert.doesNotMatch(harness.messages.innerHTML, /not-an-image/u);
   assert.doesNotMatch(harness.messages.innerHTML, /无来源图/u);
+  assert.doesNotMatch(harness.messages.innerHTML, /undefined/u);
   assert.match(harness.recommendations.innerHTML, /摩根大通 AI 电力报告/u);
   assert.equal(harness.form.insertedElement.querySelector("[data-chat-progress-label]").textContent, "研究已生成");
 });

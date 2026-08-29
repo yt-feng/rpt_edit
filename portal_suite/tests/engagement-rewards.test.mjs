@@ -1237,10 +1237,15 @@ test("registered users can use grounded report chat and anonymous users cannot",
   assert.equal(result.response.headers.get("cache-control"), "private, no-store, max-age=0");
 });
 
-test("report chat synthesizes full-text evidence and returns source-bound Charts", async () => {
+test("report chat mixes same-source and topic-matched Charts without unrelated cross-report results", async () => {
   const bucket = new MemoryR2();
   const reportId = "1234567890abcdef12345678";
   const imageId = "c".repeat(64);
+  const topicReportId = "fedcba9876543210fedcba98";
+  const topicImageId = "d".repeat(64);
+  const unrelatedReportId = "aaaaaaaaaaaaaaaaaaaaaaaa";
+  const unrelatedImageId = "e".repeat(64);
+  const unresolvedImageId = "f".repeat(64);
   await seedReportResearchLookup(bucket, [{
     id: reportId,
     title: "AI data center power constraints",
@@ -1262,25 +1267,90 @@ test("report chat synthesizes full-text evidence and returns source-bound Charts
   }]]);
   bucket.seed("_chart-search/v1/index.json", {
     schema_version: 1,
-    reports: [{
-      report_id: reportId,
-      title: "AI data center power constraints",
-      date_folder: "260829",
-      charts: [{
-        id: "power-demand-chart",
-        image_id: imageId,
-        analysis_version: "chart-search-v2",
-        title: "AI data-center electricity demand",
-        content_kind: "chart",
-        quality_score: 95,
-        chart_type: "line",
-        description: "Electricity demand rises through 2030.",
-        trend_summary: "Upward",
-        metrics: ["Electricity demand"],
-        entities: ["JPMorgan"],
-        keywords: ["AI", "data center", "power"],
-      }],
-    }],
+    reports: [
+      {
+        report_id: reportId,
+        title: "AI data center power constraints",
+        date_folder: "260829",
+        charts: [{
+          id: "power-demand-chart",
+          image_id: imageId,
+          analysis_version: "chart-search-v2",
+          title: "AI data-center electricity demand",
+          content_kind: "chart",
+          quality_score: 95,
+          chart_type: "line",
+          description: "Electricity demand rises through 2030.",
+          trend_summary: "Upward",
+          metrics: ["Electricity demand"],
+          entities: ["JPMorgan"],
+          keywords: ["AI", "data center", "power"],
+        }, ...Array.from({ length: 6 }, (_value, index) => ({
+          id: `same-source-fallback-${index}`,
+          image_id: String(index).repeat(64),
+          analysis_version: "chart-search-v2",
+          title: `Legacy commodity inventory ${index}`,
+          content_kind: "chart",
+          quality_score: 90 - index,
+          chart_type: "bar",
+          description: "Historical commodity inventory levels.",
+          trend_summary: "Mixed",
+          keywords: ["commodities", "inventory"],
+        }))],
+      },
+      {
+        report_id: topicReportId,
+        title: "Goldman AI data-center power outlook",
+        date_folder: "260828",
+        charts: [{
+          id: "cross-report-topic-chart",
+          image_id: topicImageId,
+          analysis_version: "chart-search-v2",
+          title: "AI data-center grid capacity",
+          content_kind: "chart",
+          quality_score: 91,
+          chart_type: "line",
+          description: "Power bottlenecks constrain new data-center connections.",
+          trend_summary: "Grid capacity remains tight.",
+          entities: ["Goldman Sachs"],
+          keywords: ["AI", "power"],
+        }],
+      },
+      {
+        report_id: unrelatedReportId,
+        title: "Luxury retail report",
+        date_folder: "260829",
+        charts: [{
+          id: "unrelated-retail-chart",
+          image_id: unrelatedImageId,
+          analysis_version: "chart-search-v2",
+          title: "Luxury retail foot traffic",
+          content_kind: "chart",
+          quality_score: 100,
+          chart_type: "bar",
+          description: "Store visits increased during the holiday period.",
+          trend_summary: "Seasonal increase.",
+          keywords: ["luxury", "retail"],
+        }],
+      },
+      {
+        report_id: "unresolved-report",
+        title: "Unresolved AI data center report",
+        date_folder: "260829",
+        charts: [{
+          id: "unresolved-topic-chart",
+          image_id: unresolvedImageId,
+          analysis_version: "chart-search-v2",
+          title: "AI data-center capacity",
+          content_kind: "chart",
+          quality_score: 99,
+          chart_type: "line",
+          description: "AI data-center power capacity.",
+          trend_summary: "Increasing.",
+          keywords: ["AI", "data center"],
+        }],
+      },
+    ],
   });
   const env = envFor(bucket);
   const token = await register(env);
@@ -1296,6 +1366,13 @@ test("report chat synthesizes full-text evidence and returns source-bound Charts
   assert.deepEqual(result.data.findings[0].source_ids, [reportId]);
   assert.equal(result.data.charts[0].image_id, imageId);
   assert.equal(result.data.charts[0].report_id, reportId);
+  assert.equal(result.data.charts[1].image_id, topicImageId);
+  assert.equal(result.data.charts[1].report_id, topicReportId);
+  assert.equal(result.data.charts[1].report_title, "Goldman AI data-center power outlook");
+  assert.equal(result.data.charts[1].date_folder, "260828");
+  assert.equal(result.data.charts.some((chart) => chart.image_id === unrelatedImageId), false);
+  assert.equal(result.data.charts.some((chart) => chart.image_id === unresolvedImageId), false);
+  assert.ok(result.data.charts.length <= 6);
   assert.match(result.data.findings[0].summary, /grid connection delays/u);
   assert.ok(bucket.rangeReadKeys.some((key) => key.endsWith("evidence.tbl")));
   assert.ok(bucket.rangeReadKeys.some((key) => key.endsWith("evidence.dat")));
