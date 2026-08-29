@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Publish the curated KCDesk course PDF set from private storage to R2.
+"""Publish the curated member-course PDF set from private storage to R2.
 
 The public manifest owns display metadata and exact content digests. Source
 paths and WebDAV credentials remain deployment secrets. Every PDF is verified
@@ -337,7 +337,7 @@ def run(args: argparse.Namespace) -> int:
         raise PublishError("R2 bucket is unavailable")
     uploaded = 0
     reused = 0
-    with tempfile.TemporaryDirectory(prefix="kcdesk-course-materials-") as temp:
+    with tempfile.TemporaryDirectory(prefix="member-course-materials-") as temp:
         temp_root = Path(temp)
         verified_paths: dict[str, Path] = {}
         for material in materials:
