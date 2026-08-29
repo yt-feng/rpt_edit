@@ -13192,9 +13192,16 @@ function reportResearchLookupTokens(question) {
   return [...new Set([...latin, ...aliases, ...reportChatLookupTokens(raw)])].slice(0, REPORT_RESEARCH_MAX_QUERY_TOKENS);
 }
 
+function reportResearchRawAsciiTokens(question) {
+  const raw = String(question || "").normalize("NFKC").toLowerCase();
+  return [...new Set((raw.match(/[a-z0-9][a-z0-9.+&-]*/gu) || [])
+    .map((token) => normalizeText(token))
+    .filter((token) => token.length >= 2))].slice(0, REPORT_RESEARCH_MAX_QUERY_TOKENS);
+}
+
 function reportResearchChartTokens(question) {
   const raw = String(question || "").normalize("NFKC").toLowerCase();
-  const rawAscii = (raw.match(/[a-z0-9][a-z0-9.+&-]*/gu) || []).filter((token) => token.length >= 2);
+  const rawAscii = reportResearchRawAsciiTokens(raw);
   const domainTokens = REPORT_CHAT_DOMAIN_HINTS.filter((token) => raw.includes(token));
   const aliases = REPORT_RESEARCH_QUERY_ALIASES.flatMap(([pattern, tokens]) => pattern.test(raw) ? tokens : []);
   const cjkTokens = reportChatQueryTokens(raw).filter((token) => /\p{Script=Han}/u.test(token));
@@ -13327,6 +13334,7 @@ async function reportResearchCharts(env, question, sourceIds) {
     return [];
   }
   const tokens = reportResearchChartTokens(question);
+  const rawAsciiTokens = reportResearchRawAsciiTokens(question);
   const ranked = gallery.items.map((item) => {
     const reportId = cleanCatalogReportId(item.report_id);
     const sameSource = sourcePriority.has(reportId);
@@ -13338,15 +13346,20 @@ async function reportResearchCharts(env, question, sourceIds) {
     const matches = tokens.reduce((count, token) => (
       count + (reportResearchChartTokenMatches(text, token) ? 1 : 0)
     ), 0);
+    const rawAsciiMatches = rawAsciiTokens.reduce((count, token) => (
+      count + (reportResearchChartTokenMatches(text, token) ? 1 : 0)
+    ), 0);
     if (!sameSource && (!reportId || matches < 1)) return null;
     return {
       item,
       sameSource,
       matches,
+      rawAsciiMatches,
       sourceRank: sameSource ? sourcePriority.get(reportId) : Number.MAX_SAFE_INTEGER,
     };
   }).filter(Boolean).sort((left, right) => (
-    right.matches - left.matches
+    right.rawAsciiMatches - left.rawAsciiMatches
+    || right.matches - left.matches
     || Number(right.sameSource) - Number(left.sameSource)
     || left.sourceRank - right.sourceRank
     || right.item.quality_score - left.item.quality_score

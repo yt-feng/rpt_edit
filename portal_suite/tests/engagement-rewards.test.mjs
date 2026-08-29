@@ -1415,11 +1415,11 @@ test("report research preserves exact ASCII chart terms ahead of generic aliases
           id: "generic-capex-chart",
           image_id: genericImageId,
           analysis_version: "chart-search-v2",
-          title: "Semiconductor capex allocation",
+          title: "Semiconductor capex and capital expenditure",
           content_kind: "chart",
           quality_score: 99,
           chart_type: "bar",
-          description: "Spending by industry category.",
+          description: "Capital expenditure by semiconductor category.",
           trend_summary: "Investment remains elevated.",
           keywords: ["capex", "semiconductors"],
         }],
@@ -1465,7 +1465,7 @@ test("report research preserves exact ASCII chart terms ahead of generic aliases
     const result = await jsonRequest(env, "/report-chat", {
       method: "POST",
       headers: { "content-type": "application/json", ...bearer(token) },
-      body: JSON.stringify({ question: "台积电、英特尔、三星、SK海力士 Capex Forecasts" }),
+      body: JSON.stringify({ question: "半导体：台积电、英特尔、三星、SK海力士 Capex Forecasts" }),
     });
 
     assert.equal(result.response.status, 200, JSON.stringify(result.data));
