@@ -49,6 +49,7 @@ jobs:
           persist-credentials: false
           sparse-checkout-cone-mode: false
           sparse-checkout: |
+            .github/workflows/restore-deleted-catalog-pdfs.yml
             scripts
             portal_suite/data/catalog.json
 
