@@ -199,7 +199,7 @@ def validate_restore_scope(scopes: frozenset[str], apply_restore: bool) -> None:
     if scope_claim_present and not has_read_scope:
         print(f"missing_scope={REQUIRED_READ_SCOPE}")
         raise RestoreContractError(f"missing_scope={REQUIRED_READ_SCOPE}")
-    if apply_restore and not has_scope:
+    if apply_restore and scope_claim_present and not has_scope:
         print(f"missing_scope={REQUIRED_RESTORE_SCOPE}")
         raise RestoreContractError(f"missing_scope={REQUIRED_RESTORE_SCOPE}")
 

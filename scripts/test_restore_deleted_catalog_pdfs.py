@@ -130,6 +130,17 @@ class RestoreDeletedCatalogPdfsTests(unittest.TestCase):
             "scope_files_content_write=false\n",
         )
 
+    def test_omitted_scope_claim_defers_apply_authority_to_restore_endpoint(self) -> None:
+        output = io.StringIO()
+        with redirect_stdout(output):
+            restore.validate_restore_scope(frozenset(), True)
+        self.assertEqual(
+            output.getvalue(),
+            "scope_claim_present=false\n"
+            "scope_files_metadata_read=false\n"
+            "scope_files_content_write=false\n",
+        )
+
     def test_list_folder_is_recursive_and_requests_deleted_restorable_metadata(self) -> None:
         api = FakeDropboxApi({
             "/files/list_folder": [{
