@@ -38,6 +38,7 @@ REPORT_ID_RE = re.compile(r"^[0-9a-f]{24}$")
 REVISION_PAGE_SIZE = 100
 MAX_REVISION_PAGES = 100
 REQUIRED_RESTORE_SCOPE = "files.content.write"
+REQUIRED_READ_SCOPE = "files.metadata.read"
 
 
 class RestoreContractError(RuntimeError):
@@ -184,10 +185,15 @@ def dropbox_access_token_with_scopes() -> tuple[str, frozenset[str]]:
     return parse_token_response(data)
 
 
-def validate_restore_scope(scopes: frozenset[str]) -> None:
+def validate_restore_scope(scopes: frozenset[str], apply_restore: bool) -> None:
+    has_read_scope = REQUIRED_READ_SCOPE in scopes
     has_scope = REQUIRED_RESTORE_SCOPE in scopes
+    print(f"scope_files_metadata_read={str(has_read_scope).lower()}")
     print(f"scope_files_content_write={str(has_scope).lower()}")
-    if not has_scope:
+    if not has_read_scope:
+        print(f"missing_scope={REQUIRED_READ_SCOPE}")
+        raise RestoreContractError(f"missing_scope={REQUIRED_READ_SCOPE}")
+    if apply_restore and not has_scope:
         print(f"missing_scope={REQUIRED_RESTORE_SCOPE}")
         raise RestoreContractError(f"missing_scope={REQUIRED_RESTORE_SCOPE}")
 
@@ -540,7 +546,7 @@ def main(argv: list[str] | None = None) -> int:
         target_ids = deleted_catalog_ids(catalog, args.date_folder)
         validate_expected_count(args.expected_count, len(target_ids), "catalog_count")
         token, scopes = dropbox_access_token_with_scopes()
-        validate_restore_scope(scopes)
+        validate_restore_scope(scopes, args.apply_restore)
         result = run_restore(
             catalog=catalog,
             token=token,

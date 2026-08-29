@@ -82,8 +82,11 @@ class RestoreDeletedCatalogPdfsTests(unittest.TestCase):
 
         output = io.StringIO()
         with redirect_stdout(output):
-            restore.validate_restore_scope(scopes)
-        self.assertEqual(output.getvalue(), "scope_files_content_write=true\n")
+            restore.validate_restore_scope(scopes, True)
+        self.assertEqual(
+            output.getvalue(),
+            "scope_files_metadata_read=true\nscope_files_content_write=true\n",
+        )
         self.assertNotIn(self.TOKEN, output.getvalue())
 
     def test_missing_write_scope_fails_closed_with_scope_name_only(self) -> None:
@@ -92,13 +95,24 @@ class RestoreDeletedCatalogPdfsTests(unittest.TestCase):
             restore.RestoreContractError,
             "missing_scope=files.content.write",
         ):
-            restore.validate_restore_scope(frozenset({"files.metadata.read"}))
+            restore.validate_restore_scope(frozenset({"files.metadata.read"}), True)
 
         self.assertEqual(
             output.getvalue(),
-            "scope_files_content_write=false\nmissing_scope=files.content.write\n",
+            "scope_files_metadata_read=true\n"
+            "scope_files_content_write=false\n"
+            "missing_scope=files.content.write\n",
         )
         self.assertNotIn(self.TOKEN, output.getvalue())
+
+    def test_read_only_scope_allows_dry_run(self) -> None:
+        output = io.StringIO()
+        with redirect_stdout(output):
+            restore.validate_restore_scope(frozenset({"files.metadata.read"}), False)
+        self.assertEqual(
+            output.getvalue(),
+            "scope_files_metadata_read=true\nscope_files_content_write=false\n",
+        )
 
     def test_list_folder_is_recursive_and_requests_deleted_restorable_metadata(self) -> None:
         api = FakeDropboxApi({
