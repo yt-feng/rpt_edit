@@ -1,0 +1,89 @@
+name: Restore deleted catalog PDFs
+run-name: Restore deleted catalog PDFs ${{ inputs.date_folder }} (${{ inputs.apply_restore && 'apply' || 'dry-run' }})
+
+on:
+  workflow_dispatch:
+    inputs:
+      date_folder:
+        description: "Exact catalog date_folder to recover, for example 260724"
+        required: true
+        type: string
+      expected_count:
+        description: "Exact number of pdf_object_deleted catalog rows and restorable Dropbox matches"
+        required: true
+        type: string
+      apply_restore:
+        description: "Restore matched Dropbox revisions; false performs a read-only dry run"
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: restore-deleted-catalog-pdfs
+  cancel-in-progress: false
+
+jobs:
+  restore:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
+    steps:
+      - name: Validate manual inputs
+        env:
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_COUNT: ${{ inputs.expected_count }}
+          APPLY_RESTORE: ${{ inputs.apply_restore }}
+        run: |
+          set -euo pipefail
+          printf '%s' "$DATE_FOLDER" | grep -Eq '^[0-9]{6,8}$'
+          printf '%s' "$EXPECTED_COUNT" | grep -Eq '^[1-9][0-9]*$'
+          printf '%s' "$APPLY_RESTORE" | grep -Eq '^(true|false)$'
+
+      - name: Checkout recovery source
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            scripts
+            portal_suite/data/catalog.json
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Dropbox dependency
+        run: python -m pip install --disable-pip-version-check "requests>=2.31,<3"
+
+      - name: Test restore contract
+        run: python3 scripts/test_restore_deleted_catalog_pdfs.py
+
+      - name: Plan or apply Dropbox restore
+        id: restore
+        env:
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_COUNT: ${{ inputs.expected_count }}
+          APPLY_RESTORE: ${{ inputs.apply_restore }}
+          DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
+          DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
+          DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
+        run: |
+          set -euo pipefail
+          case "$APPLY_RESTORE" in
+            true) restore_args=(--apply-restore) ;;
+            false) restore_args=() ;;
+            *)
+              echo "apply_restore must be true or false" >&2
+              exit 1
+              ;;
+          esac
+          python3 scripts/restore_deleted_catalog_pdfs.py \
+            --catalog-path "portal_suite/data/catalog.json" \
+            --dropbox-root "/zip_backup" \
+            --date-folder "$DATE_FOLDER" \
+            --expected-count "$EXPECTED_COUNT" \
+            "${restore_args[@]}"
