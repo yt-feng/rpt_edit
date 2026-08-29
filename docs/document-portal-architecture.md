@@ -179,6 +179,11 @@ in the scheduled workflow and can still be set to `false` as an emergency
 pause. A report is not changed to text-only for quota reasons until the stored
 catalog PDFs exceed 100 GiB.
 
+The deferred physical-delete set is intersected with the reports selected by
+the current run's 100 GiB calculation. Raising the threshold therefore cancels
+an older pending decision and reactivates its still-present R2 object; a
+decision created under the former threshold cannot leak into a later run.
+
 The homepage requests only the first 24 items. It keeps already rendered pages
 in memory, fetches the next page only after the visitor asks for it, and uses a
 cached prior page for “上一页” navigation. A failed later-page request preserves the

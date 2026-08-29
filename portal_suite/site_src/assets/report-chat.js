@@ -121,7 +121,7 @@
         const report = sources.get(reportId);
         const description = String(item.description || item.trend_summary || "").trim();
         const metrics = (Array.isArray(item.metrics) ? item.metrics : []).map((value) => String(value || "").trim()).filter(Boolean).slice(0, 5).join(" · ");
-        return `<figure class="report-research-chart"><img src="/api/chart-image?id=${imageId}" alt="${escapeHtml(item.title || "研究图表")}" loading="lazy" decoding="async"><figcaption><strong>${escapeHtml(item.title || "研究图表")}</strong>${description ? `<p>${escapeHtml(description)}</p>` : ""}${metrics ? `<span>${escapeHtml(metrics)}</span>` : ""}<a href="${escapeHtml(reportUrl(reportId, report))}" target="_blank" rel="noopener noreferrer">来源报告 · ${escapeHtml(report.report_title || report.title || reportId)}</a></figcaption></figure>`;
+        return `<figure class="report-research-chart"><img src="/api/charts/image?id=${imageId}" alt="${escapeHtml(item.title || "研究图表")}" loading="lazy" decoding="async"><figcaption><strong>${escapeHtml(item.title || "研究图表")}</strong>${description ? `<p>${escapeHtml(description)}</p>` : ""}${metrics ? `<span>${escapeHtml(metrics)}</span>` : ""}<a href="${escapeHtml(reportUrl(reportId, report))}" target="_blank" rel="noopener noreferrer">来源报告 · ${escapeHtml(report.report_title || report.title || reportId)}</a></figcaption></figure>`;
       }).join("")}</div></section>`);
     }
     return sections.join("");

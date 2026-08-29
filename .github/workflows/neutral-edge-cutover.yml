@@ -68,9 +68,11 @@ jobs:
             scripts/build_report_research_index.py \
             scripts/chart_search_r2.py \
             scripts/merge_chart_search_index.py \
+            scripts/portal_suite_catalog.py \
             scripts/publish_static_slot.py
           python3 scripts/test_build_report_chat_index.py
           python3 scripts/test_report_research_index.py
+          python3 scripts/test_portal_catalog_storage_guard.py
           python3 -B scripts/test_publish_static_slot.py
           python3 scripts/test_portal_seo.py
           python3 scripts/test_portal_blog_build.py

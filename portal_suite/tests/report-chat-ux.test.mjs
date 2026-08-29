@@ -250,7 +250,8 @@ test("report research renders grounded findings, data, charts, and escaped sourc
   assert.match(harness.messages.innerHTML, /主要发现/u);
   assert.match(harness.messages.innerHTML, /关键数据/u);
   assert.match(harness.messages.innerHTML, /相关 Charts/u);
-  assert.match(harness.messages.innerHTML, new RegExp(`/api/chart-image\\?id=${validImageId}`, "u"));
+  assert.match(harness.messages.innerHTML, new RegExp(`/api/charts/image\\?id=${validImageId}`, "u"));
+  assert.doesNotMatch(harness.messages.innerHTML, /\/api\/chart-image\?/u);
   assert.match(harness.messages.innerHTML, /来源 · 摩根大通/u);
   assert.doesNotMatch(harness.messages.innerHTML, /<script>/u);
   assert.doesNotMatch(harness.messages.innerHTML, /not-an-image/u);

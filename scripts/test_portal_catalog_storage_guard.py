@@ -238,7 +238,7 @@ class CatalogStorageGuardTests(unittest.TestCase):
         self.assertEqual(size_before, 100)
         self.assertEqual(size_after, 0)
         self.assertFalse(next_catalog["items"][0]["available"])
-        self.assertEqual(catalog.previously_archived_prune_candidates(old_catalog, next_catalog), [])
+        self.assertEqual(catalog.previously_archived_prune_candidates(old_catalog, next_catalog, {self.REPORT_A}), [])
 
     def test_inconsistent_old_archive_waits_for_unavailable_catalog_to_persist(self) -> None:
         old_item = {
@@ -258,6 +258,7 @@ class CatalogStorageGuardTests(unittest.TestCase):
             catalog.previously_archived_prune_candidates(
                 {"items": [old_item]},
                 {"items": [normalized_item]},
+                {self.REPORT_A},
             ),
             [],
         )
@@ -271,6 +272,7 @@ class CatalogStorageGuardTests(unittest.TestCase):
                     "available": False,
                     "r2_synced": False,
                     "pdf_archived": True,
+                    "pdf_delete_pending": True,
                 },
                 {
                     "id": self.REPORT_B,
@@ -278,11 +280,16 @@ class CatalogStorageGuardTests(unittest.TestCase):
                     "available": False,
                     "r2_synced": False,
                     "pdf_archived": True,
+                    "pdf_delete_pending": True,
                 },
             ],
         }
         next_catalog = {"items": [dict(item) for item in old_catalog["items"]]}
-        candidates = catalog.previously_archived_prune_candidates(old_catalog, next_catalog)
+        candidates = catalog.previously_archived_prune_candidates(
+            old_catalog,
+            next_catalog,
+            {self.REPORT_A, self.REPORT_B},
+        )
         client = FakeR2Client([{
             "Errors": [{"Key": f"reports-old/{self.REPORT_B}.pdf", "Code": "InternalError"}],
         }])
@@ -302,9 +309,87 @@ class CatalogStorageGuardTests(unittest.TestCase):
         self.assertEqual(
             {
                 item["id"]
-                for item in catalog.previously_archived_prune_candidates(next_catalog, next_catalog)
+                for item in catalog.previously_archived_prune_candidates(
+                    next_catalog,
+                    next_catalog,
+                    {self.REPORT_A, self.REPORT_B},
+                )
             },
             {self.REPORT_B},
+        )
+
+    def test_raised_limit_reactivates_legacy_deferred_object(self) -> None:
+        old_item = {
+            "id": self.REPORT_A,
+            "r2_key": f"reports/{self.REPORT_A}.pdf",
+            "available": False,
+            "r2_synced": False,
+            "pdf_archived": True,
+            "page_count": 12,
+            "size_bytes": 100,
+            "date_folder": "260101",
+            "present_in_latest_scan": False,
+        }
+        next_catalog = {"items": [dict(old_item)]}
+
+        archived, size_before, size_after = catalog.apply_storage_limit(
+            next_catalog,
+            1_000,
+            "2026-08-29 00:00:00 +0800",
+        )
+
+        restored = next_catalog["items"][0]
+        self.assertEqual(archived, [])
+        self.assertEqual((size_before, size_after), (100, 100))
+        self.assertTrue(restored["available"])
+        self.assertTrue(restored["r2_synced"])
+        self.assertNotIn("pdf_archived", restored)
+        self.assertEqual(
+            catalog.previously_archived_prune_candidates(
+                {"items": [old_item]},
+                next_catalog,
+                set(),
+            ),
+            [],
+        )
+
+    def test_deferred_object_is_deleted_only_when_current_limit_reselects_it(self) -> None:
+        old_item = {
+            "id": self.REPORT_A,
+            "r2_key": f"reports/{self.REPORT_A}.pdf",
+            "available": False,
+            "r2_synced": False,
+            "pdf_archived": True,
+            "page_count": 12,
+            "size_bytes": 100,
+            "date_folder": "260101",
+            "present_in_latest_scan": False,
+        }
+        next_catalog = {"items": [dict(old_item)]}
+
+        archived, _size_before, _size_after = catalog.apply_storage_limit(
+            next_catalog,
+            1,
+            "2026-08-29 00:00:00 +0800",
+        )
+        active_ids = {str(item["id"]) for item in archived}
+
+        self.assertEqual(active_ids, {self.REPORT_A})
+        self.assertEqual(
+            [item["id"] for item in catalog.previously_archived_prune_candidates(
+                {"items": [old_item]},
+                next_catalog,
+                active_ids,
+            )],
+            [self.REPORT_A],
+        )
+        self.assertEqual(
+            catalog.previously_archived_prune_candidates(
+                {"items": [old_item]},
+                next_catalog,
+                set(),
+            ),
+            [],
         )
 
     def test_merge_preserves_existing_object_key_during_prefix_migration(self) -> None:

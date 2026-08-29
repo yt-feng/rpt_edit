@@ -304,6 +304,22 @@ def item_has_pdf_metadata(item: dict[str, Any]) -> bool:
         return False
 
 
+def item_has_deferred_r2_object(item: dict[str, Any]) -> bool:
+    """Return whether an archived catalog row still represents a stored PDF.
+
+    New rows persist ``pdf_delete_pending`` before their availability flags are
+    cleared. Older rows predate that marker, so complete PDF metadata plus the
+    persisted R2 key is the conservative migration signal that the deferred
+    object still exists. A confirmed deletion always wins.
+    """
+    if item.get("pdf_object_deleted") or not item.get("pdf_archived"):
+        return False
+    pending = item.get("pdf_delete_pending")
+    if pending is not None:
+        return pending is True
+    return bool(item.get("r2_key")) and item_has_pdf_metadata(item)
+
+
 def delete_r2_objects(client: Any, bucket: str, keys: list[str]) -> R2DeleteResult:
     deleted_keys: set[str] = set()
     failed_keys: dict[str, str] = {}
@@ -384,14 +400,16 @@ def apply_storage_limit(
     now_bjt: str,
 ) -> tuple[list[dict[str, Any]], int, int]:
     items = list(catalog.get("items", []))
-    # Re-evaluate every currently present Dropbox report, including reports
-    # archived by an earlier run, so the chosen oldest-date cutoff stays
-    # deterministic if source files or the configured limit change.
+    # Re-evaluate every current report plus any archived object whose physical
+    # deletion is still pending. This is important when the configured limit is
+    # raised: a deferred decision made under the old limit must not survive and
+    # delete an object that the new limit can retain.
     storage_candidates = [
         item
         for item in items
         if item.get("present_in_latest_scan")
         or (not item.get("pdf_archived") and (item.get("available") or item.get("r2_synced")))
+        or item_has_deferred_r2_object(item)
     ]
     total_before = sum(item_size_bytes(item) for item in storage_candidates)
     archived: list[dict[str, Any]] = []
@@ -414,13 +432,23 @@ def apply_storage_limit(
     for item in items:
         report_id = str(item.get("id") or "")
         if report_id in archive_ids:
+            had_stored_object = bool(
+                item.get("available")
+                or item.get("r2_synced")
+                or item_has_deferred_r2_object(item)
+            )
             item["available"] = False
             item["r2_synced"] = False
             item["pdf_archived"] = True
+            item["pdf_delete_pending"] = had_stored_object
             item["pdf_archived_at_bjt"] = now_bjt
             item["archive_reason"] = "pdf_storage_limit"
-        elif item.get("present_in_latest_scan"):
+        elif item.get("present_in_latest_scan") or item_has_deferred_r2_object(item):
+            if item_has_deferred_r2_object(item):
+                item["available"] = True
+                item["r2_synced"] = True
             item.pop("pdf_archived", None)
+            item.pop("pdf_delete_pending", None)
             item.pop("pdf_archived_at_bjt", None)
             item.pop("archive_reason", None)
 
@@ -479,6 +507,7 @@ def prune_r2_objects_for_items(
 def previously_archived_prune_candidates(
     old_catalog: dict[str, Any],
     catalog: dict[str, Any],
+    active_prune_ids: set[str],
 ) -> list[dict[str, Any]]:
     """Return only PDFs already unavailable in the previously saved catalog.
 
@@ -498,10 +527,12 @@ def previously_archived_prune_candidates(
     }
     candidates: list[dict[str, Any]] = []
     for report_id, old_item in old_by_id.items():
+        if report_id not in active_prune_ids:
+            continue
         current_item = current_by_id.get(report_id)
         if not current_item:
             continue
-        if not old_item.get("pdf_archived") or old_item.get("pdf_object_deleted"):
+        if not item_has_deferred_r2_object(old_item):
             continue
         if old_item.get("available") or old_item.get("r2_synced"):
             continue
@@ -664,6 +695,7 @@ def sync_current_reports_to_r2(
             item["r2_synced"] = True
             item["available"] = True
             item.pop("pdf_object_deleted", None)
+            item.pop("pdf_delete_pending", None)
             uploaded += 1
             if item_has_pdf_metadata(item):
                 inspected += 1
@@ -750,8 +782,13 @@ def main() -> int:
             )
 
         delete_result = R2DeleteResult(frozenset(), {})
+        active_prune_ids = {
+            str(item.get("id") or "")
+            for item in pruned_items
+            if item.get("id")
+        }
         delete_candidates = (
-            previously_archived_prune_candidates(old_catalog, catalog)
+            previously_archived_prune_candidates(old_catalog, catalog, active_prune_ids)
             if args.enable_pdf_cleanup
             else []
         )
@@ -766,6 +803,7 @@ def main() -> int:
                 for item in catalog.get("items", []):
                     if isinstance(item, dict) and str(item.get("id") or "") in deleted_ids:
                         item["pdf_object_deleted"] = True
+                        item.pop("pdf_delete_pending", None)
             else:
                 log("Skipping deferred R2 deletion because --sync-r2 is not enabled")
 
