@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build and atomically publish KCDesk's private research-evidence index.
+"""Build and atomically publish the portal's private research-evidence index.
 
 The index is deliberately random-access. Query tokens resolve to bounded report
 postings and relevant chunk ids; report metadata and evidence chunks are then
