@@ -1,0 +1,65 @@
+{
+  "generated_at_bjt": "2026-08-29 11:28:03 +0800",
+  "dropbox_root": "/zip_backup",
+  "days": 5,
+  "date_order": [
+    "260828",
+    "260827",
+    "260826",
+    "260825",
+    "260824"
+  ],
+  "output_dir": "bank_report_catalogs/260828",
+  "banks": {
+    "Bernstein": {
+      "cn_name": "伯恩斯坦",
+      "report_count": 28,
+      "file": "bank_report_catalogs/260828/Bernstein.txt"
+    },
+    "BofA": {
+      "cn_name": "美银",
+      "report_count": 11,
+      "file": "bank_report_catalogs/260828/BofA.txt"
+    },
+    "Citi": {
+      "cn_name": "花旗",
+      "report_count": 6,
+      "file": "bank_report_catalogs/260828/Citi.txt"
+    },
+    "DB": {
+      "cn_name": "德银",
+      "report_count": 18,
+      "file": "bank_report_catalogs/260828/DB.txt"
+    },
+    "GS": {
+      "cn_name": "高盛",
+      "report_count": 177,
+      "file": "bank_report_catalogs/260828/GS.txt"
+    },
+    "HSBC": {
+      "cn_name": "汇丰",
+      "report_count": 6,
+      "file": "bank_report_catalogs/260828/HSBC.txt"
+    },
+    "JPM": {
+      "cn_name": "摩根大通",
+      "report_count": 47,
+      "file": "bank_report_catalogs/260828/JPM.txt"
+    },
+    "MS": {
+      "cn_name": "摩根士丹利",
+      "report_count": 77,
+      "file": "bank_report_catalogs/260828/MS.txt"
+    },
+    "NOM": {
+      "cn_name": "野村",
+      "report_count": 33,
+      "file": "bank_report_catalogs/260828/NOM.txt"
+    },
+    "UBS": {
+      "cn_name": "瑞银",
+      "report_count": 1,
+      "file": "bank_report_catalogs/260828/UBS.txt"
+    }
+  }
+}
