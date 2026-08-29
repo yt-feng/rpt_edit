@@ -220,6 +220,7 @@ vm.runInNewContext(`
     return object ? { object, value: JSON.parse(await object.text()) } : null;
   }
   async function persistAnalyticsEvent() { return null; }
+  function hotReportCleanupEnabled() { return false; }
   async function enforceHotReportStorageLimit(env) {
     if (env.REPORT_BUCKET.options.invalidateDuringRetention) {
       const hotKey = [...env.REPORT_BUCKET.objects.keys()].find((key) => key.startsWith("_hot-reports/items/"));
