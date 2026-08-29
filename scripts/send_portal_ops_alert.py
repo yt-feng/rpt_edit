@@ -19,6 +19,9 @@ from typing import Any
 
 DEFAULT_WORKER_BASE_URL = "https://portal.example.invalid/api"
 ALERT_PATH = "/ops/alerts/email"
+DEFAULT_DEDUPE_HOURS = 24
+MIN_DEDUPE_HOURS = 1
+MAX_DEDUPE_HOURS = 720
 
 
 def normalize_worker_url(value: str) -> str:
@@ -31,11 +34,27 @@ def normalize_worker_url(value: str) -> str:
     return f"{base.rstrip('/')}{ALERT_PATH}"
 
 
-def payload_bytes(subject: str, text: str, dedupe_key: str, severity: str) -> bytes:
+def dedupe_hours_value(value: int | str) -> int:
+    hours = int(value)
+    if not MIN_DEDUPE_HOURS <= hours <= MAX_DEDUPE_HOURS:
+        raise ValueError(
+            f"dedupe hours must be between {MIN_DEDUPE_HOURS} and {MAX_DEDUPE_HOURS}"
+        )
+    return hours
+
+
+def payload_bytes(
+    subject: str,
+    text: str,
+    dedupe_key: str,
+    severity: str,
+    dedupe_hours: int = DEFAULT_DEDUPE_HOURS,
+) -> bytes:
     payload = {
         "subject": subject.strip(),
         "text": text.strip(),
         "dedupe_key": dedupe_key.strip(),
+        "dedupe_window_hours": dedupe_hours_value(dedupe_hours),
         "severity": severity.strip().lower(),
     }
     if not payload["subject"] or not payload["text"] or not payload["dedupe_key"]:
@@ -71,11 +90,12 @@ def send_alert(
     text: str,
     dedupe_key: str,
     severity: str = "warning",
+    dedupe_hours: int = DEFAULT_DEDUPE_HOURS,
     attempts: int = 3,
     timeout: float = 20,
 ) -> dict[str, Any]:
     url = normalize_worker_url(worker_base_url)
-    body = payload_bytes(subject, text, dedupe_key, severity)
+    body = payload_bytes(subject, text, dedupe_key, severity, dedupe_hours)
     last_error: Exception | None = None
     for attempt in range(1, max(1, attempts) + 1):
         request = urllib.request.Request(
@@ -113,6 +133,16 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--text")
     parser.add_argument("--text-file", type=Path)
     parser.add_argument("--dedupe-key", required=True)
+    parser.add_argument(
+        "--dedupe-hours",
+        type=dedupe_hours_value,
+        default=DEFAULT_DEDUPE_HOURS,
+        metavar="HOURS",
+        help=(
+            f"Suppress repeats for {MIN_DEDUPE_HOURS}-{MAX_DEDUPE_HOURS} hours "
+            "(default: %(default)s)."
+        ),
+    )
     parser.add_argument("--severity", choices=("info", "warning", "critical"), default="warning")
     parser.add_argument("--attempts", type=int, default=3)
     parser.add_argument("--timeout", type=float, default=20)
@@ -132,6 +162,7 @@ def main() -> int:
         text=text,
         dedupe_key=args.dedupe_key,
         severity=args.severity,
+        dedupe_hours=args.dedupe_hours,
         attempts=args.attempts,
         timeout=args.timeout,
     )

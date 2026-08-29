@@ -39,6 +39,24 @@ class PortalOpsAlertTests(unittest.TestCase):
         self.assertEqual(headers["X-Portal-Timestamp"], "1234567890")
         self.assertEqual(headers["X-Portal-Signature"], f"sha256={expected}")
 
+    def test_payload_uses_default_and_custom_dedupe_windows(self):
+        default_payload = json.loads(
+            alerts.payload_bytes("Subject", "Body", "key", "warning")
+        )
+        custom_payload = json.loads(
+            alerts.payload_bytes("Subject", "Body", "key", "warning", 168)
+        )
+        self.assertEqual(default_payload["dedupe_window_hours"], 24)
+        self.assertEqual(custom_payload["dedupe_window_hours"], 168)
+
+    def test_payload_rejects_out_of_range_dedupe_windows(self):
+        for value in (0, 721):
+            with self.subTest(value=value), self.assertRaisesRegex(
+                ValueError,
+                "dedupe hours must be between 1 and 720",
+            ):
+                alerts.payload_bytes("Subject", "Body", "key", "warning", value)
+
     @mock.patch("send_portal_ops_alert.urllib.request.urlopen")
     def test_send_alert_accepts_confirmed_deduplicated_response(self, urlopen):
         urlopen.return_value = FakeResponse(
@@ -59,6 +77,7 @@ class PortalOpsAlertTests(unittest.TestCase):
             "https://worker.example/api/ops/alerts/email",
         )
         self.assertNotIn("secret", request.data.decode("utf-8"))
+        self.assertEqual(json.loads(request.data)["dedupe_window_hours"], 24)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,114 @@
+name: MinerU API key expiry monitor
+
+on:
+  schedule:
+    # 09:17 Asia/Shanghai (GitHub cron uses UTC).
+    - cron: "17 1 * * *"
+  workflow_dispatch:
+    inputs:
+      force_email:
+        description: Send a test email even when every configured key is healthy
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mineru-key-expiry-monitor
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    if: vars.PORTAL_AUTOMATION_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout monitor and alert client
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Test public monitor contract
+        run: |
+          python3 -B scripts/test_check_mineru_key_expiry.py
+          python3 -B scripts/test_send_portal_ops_alert.py
+
+      - name: Probe MinerU key pool
+        id: monitor
+        env:
+          MINER_U: ${{ secrets.MINER_U }}
+          MINER_U_2: ${{ secrets.MINER_U_2 }}
+          MINER_U_3: ${{ secrets.MINER_U_3 }}
+          MINER_U_4: ${{ secrets.MINER_U_4 }}
+          MINER_U_EXPIRES_AT: ${{ vars.MINER_U_EXPIRES_AT }}
+          MINER_U_2_EXPIRES_AT: ${{ vars.MINER_U_2_EXPIRES_AT }}
+          MINER_U_3_EXPIRES_AT: ${{ vars.MINER_U_3_EXPIRES_AT }}
+          MINER_U_4_EXPIRES_AT: ${{ vars.MINER_U_4_EXPIRES_AT }}
+          FORCE_EMAIL: ${{ inputs.force_email || false }}
+        run: |
+          set -euo pipefail
+          MONITOR_JSON="$RUNNER_TEMP/mineru-key-monitor.json"
+          MONITOR_EMAIL="$RUNNER_TEMP/mineru-key-monitor-email.txt"
+          MONITOR_ARGS=(
+            --json-output "$MONITOR_JSON"
+            --email-output "$MONITOR_EMAIL"
+            --github-output "$GITHUB_OUTPUT"
+          )
+          if [[ "$FORCE_EMAIL" == "true" ]]; then
+            MONITOR_ARGS+=(--force-email)
+          fi
+          python3 -B scripts/check_mineru_key_expiry.py "${MONITOR_ARGS[@]}"
+
+      - name: Write sanitized monitor summary
+        env:
+          CONFIGURED_COUNT: ${{ steps.monitor.outputs.configured_count }}
+          ISSUE_COUNT: ${{ steps.monitor.outputs.issue_count }}
+          ALERT_STAGE: ${{ steps.monitor.outputs.alert_stage }}
+          SHOULD_ALERT: ${{ steps.monitor.outputs.should_alert }}
+        run: |
+          {
+            echo "### MinerU API Key 定期检查"
+            echo ""
+            echo "- 已配置 Key：$CONFIGURED_COUNT"
+            echo "- 需要处理：$ISSUE_COUNT"
+            echo "- 当前阶段：$ALERT_STAGE"
+            echo "- 本次发邮件：$SHOULD_ALERT"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload sanitized monitor report
+        uses: actions/upload-artifact@v4
+        with:
+          name: mineru-key-monitor-${{ github.run_id }}
+          path: ${{ steps.monitor.outputs.json_file }}
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Materialize private email runtime values
+        if: steps.monitor.outputs.should_alert == 'true'
+        env:
+          PORTAL_PRIVATE_CONFIG_B64: ${{ secrets.PORTAL_PRIVATE_CONFIG_B64 }}
+        run: |
+          python3 -B scripts/render_private_config.py \
+            --root scripts/send_portal_ops_alert.py \
+            --github-add-mask \
+            --skip-generated-files
+
+      - name: Send deduplicated expiry email
+        if: steps.monitor.outputs.should_alert == 'true'
+        env:
+          OPS_ALERT_SIGNING_KEY: ${{ secrets.OPS_ALERT_SIGNING_KEY || secrets.PASSWORD_SECRET }}
+          PORTAL_WORKER_URL: ${{ secrets.PORTAL_WORKER_URL }}
+          ALERT_SUBJECT: ${{ steps.monitor.outputs.subject }}
+          ALERT_TEXT_FILE: ${{ steps.monitor.outputs.email_file }}
+          ALERT_DEDUPE_KEY: ${{ steps.monitor.outputs.dedupe_key }}
+          ALERT_SEVERITY: ${{ steps.monitor.outputs.severity }}
+          DEDUPE_HOURS: ${{ inputs.force_email && '1' || '168' }}
+        run: |
+          python3 -B scripts/send_portal_ops_alert.py \
+            --subject "$ALERT_SUBJECT" \
+            --text-file "$ALERT_TEXT_FILE" \
+            --dedupe-key "$ALERT_DEDUPE_KEY" \
+            --dedupe-hours "$DEDUPE_HOURS" \
+            --severity "$ALERT_SEVERITY"

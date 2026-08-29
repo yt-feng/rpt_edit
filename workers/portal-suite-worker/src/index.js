@@ -686,6 +686,8 @@ const OPS_MIRROR_RETRY_MS = 5 * 60 * 1000;
 const OPS_ALERT_PREFIX = "_ops/alerts";
 const OPS_ALERT_SIGNATURE_MAX_AGE_SECONDS = 5 * 60;
 const OPS_ALERT_DEDUPE_MS = 24 * 60 * 60 * 1000;
+const OPS_ALERT_MIN_DEDUPE_HOURS = 1;
+const OPS_ALERT_MAX_DEDUPE_HOURS = 720;
 const REPORT_REQUEST_PREFIX = "_report-requests/v1";
 const REPORT_REQUEST_MAX_BODY_BYTES = 8 * 1024;
 const REPORT_REQUEST_DEDUPE_MS = 24 * 60 * 60 * 1000;
@@ -16395,6 +16397,14 @@ async function handleOpsAlertEmail(request, env) {
   const subject = String(payload && payload.subject || "").replace(/\s+/g, " ").trim().slice(0, 160);
   const text = String(payload && payload.text || "").trim().slice(0, 6000);
   const dedupeKey = String(payload && payload.dedupe_key || "").trim().slice(0, 240);
+  const requestedDedupeHours = Number(payload && payload.dedupe_window_hours);
+  const dedupeWindowHours = Number.isFinite(requestedDedupeHours)
+    ? Math.min(
+      OPS_ALERT_MAX_DEDUPE_HOURS,
+      Math.max(OPS_ALERT_MIN_DEDUPE_HOURS, Math.trunc(requestedDedupeHours)),
+    )
+    : OPS_ALERT_DEDUPE_MS / (60 * 60 * 1000);
+  const dedupeWindowMs = dedupeWindowHours * 60 * 60 * 1000;
   const severityValue = String(payload && payload.severity || "warning").trim().toLowerCase();
   const severity = ["info", "warning", "critical"].includes(severityValue) ? severityValue : "warning";
   if (!recipient) return jsonResponse(request, env, 503, { detail: "Operations alert recipient is not configured." });
@@ -16405,10 +16415,11 @@ async function handleOpsAlertEmail(request, env) {
   const stateKey = `${OPS_ALERT_PREFIX}/${await sha256Hex(dedupeKey)}.json`;
   const previous = await safeR2GetJson(env, stateKey);
   const previousSentAt = Date.parse(String(previous && previous.sent_at || ""));
-  if (previous && previous.sent && Number.isFinite(previousSentAt) && Date.now() - previousSentAt < OPS_ALERT_DEDUPE_MS) {
+  if (previous && previous.sent && Number.isFinite(previousSentAt) && Date.now() - previousSentAt < dedupeWindowMs) {
     return jsonResponse(request, env, 200, {
       sent: true,
       deduplicated: true,
+      dedupe_window_hours: dedupeWindowHours,
       provider: String(previous.provider || ""),
       sent_at: String(previous.sent_at || ""),
     });
@@ -16423,6 +16434,7 @@ async function handleOpsAlertEmail(request, env) {
   const state = {
     sent: Boolean(result && result.sent),
     dedupe_key: dedupeKey,
+    dedupe_window_hours: dedupeWindowHours,
     severity,
     subject,
     provider: String(result && result.provider || newsfeedEmailProvider(env)),
