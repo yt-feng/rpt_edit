@@ -110,7 +110,7 @@ class CourseChatIndexTests(unittest.TestCase):
         worker = (ROOT / "workers" / "portal-suite-worker" / "src" / "index.js").read_text(
             encoding="utf-8"
         )
-        self.assertEqual(len(builder.ALLOWED_COURSE_IDS), 43)
+        self.assertEqual(len(builder.ALLOWED_COURSE_IDS), 44)
         self.assertIn(
             'const COURSE_CHAT_LOOKUP_MANIFEST_R2_KEY = "_course-directory/v2/chat-lookup/manifest.json";',
             worker,
@@ -159,7 +159,7 @@ class CourseChatIndexTests(unittest.TestCase):
 
         self.assertEqual(manifest["schema_version"], 2)
         self.assertEqual(manifest["format"], "course-chat-direct-bucket-v2")
-        self.assertEqual(manifest["course_count"], 43)
+        self.assertEqual(manifest["course_count"], 44)
         self.assertEqual(manifest["max_query_tokens"], 8)
         self.assertEqual(manifest["max_candidates"], 12)
         self.assertLessEqual(len(manifest["default_items"]), 12)

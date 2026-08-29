@@ -65,6 +65,29 @@ def index_line(path: str, size: str = "13.5MB", date: str = "2026-08-10") -> str
     return f"- `{path}` — {size} — {date}\n"
 
 
+def course_material_manifest() -> dict:
+    return {
+        "schema_version": 1,
+        "course": dict(builder_module.COURSE_MATERIAL_COURSE),
+        "items": [
+            {
+                "id": f"maifu-{number:02d}",
+                "source_filename": f"Private source {number:02d}.pdf",
+                "title": f"战略分析资料 {number:02d}",
+                "topic": "问题解决",
+                "summary": "只作为发布数据验证，不进入私有目录。",
+                "pages": 20 + number,
+                "bytes": 1024 * number,
+                "sha256": f"{number:064x}",
+                "cover": f"assets/course-covers/maifu-{number:02d}.webp",
+                "featured": number <= 3,
+                "entities": ["MECE", "ROS/RMS"] if number == 1 else [],
+            }
+            for number in range(1, 21)
+        ],
+    }
+
+
 class CourseDirectoryBuilderTests(unittest.TestCase):
     def build_fixture(self) -> dict:
         with tempfile.TemporaryDirectory() as temp:
@@ -192,9 +215,88 @@ class CourseDirectoryBuilderTests(unittest.TestCase):
         )[0]
         worker_ids = set(re.findall(r'id:\s*"([a-z]+-\d{2})"', catalog_block))
 
-        self.assertEqual(len(builder_module.ALLOWED_COURSE_IDS), 43)
+        self.assertEqual(len(builder_module.ALLOWED_COURSE_IDS), 44)
         self.assertEqual(builder_module.ALLOWED_COURSE_IDS, workflow_ids)
         self.assertEqual(builder_module.ALLOWED_COURSE_IDS, worker_ids)
+
+    def test_static_course_materials_merge_as_twenty_safe_idempotent_directory_rows(self) -> None:
+        established = {
+            "schema_version": 1,
+            "generated_at": "2026-08-29T00:00:00+00:00",
+            "items": [
+                {
+                    "id": "file-existing-01",
+                    "course_id": "fin-01",
+                    "name": "Existing material",
+                    "folders": [],
+                    "extension": "pdf",
+                    "size_label": "1 MB",
+                    "date": "2026-08-10",
+                    "entities": [],
+                },
+                {
+                    "id": "maifu-01",
+                    "course_id": "str-01",
+                    "name": "Stale material",
+                    "folders": [],
+                    "extension": "pdf",
+                    "size_label": "1 B",
+                    "date": "2026-08-10",
+                    "entities": [],
+                },
+            ],
+        }
+        manifest = course_material_manifest()
+        merged = builder_module.merge_course_material_manifest(established, manifest)
+        material_rows = [row for row in merged["items"] if row["course_id"] == "str-01"]
+
+        self.assertEqual(len(merged["items"]), 21)
+        self.assertEqual(len(material_rows), 20)
+        self.assertEqual([row["id"] for row in material_rows], [f"maifu-{number:02d}" for number in range(1, 21)])
+        self.assertEqual(material_rows[0], {
+            "id": "maifu-01",
+            "course_id": "str-01",
+            "name": "战略分析资料 01",
+            "folders": ["战略咨询方法论"],
+            "extension": "pdf",
+            "size_label": "1.0 KB",
+            "date": "2026-08-29",
+            "entities": ["MECE", "ROS · RMS"],
+        })
+        serialized = json.dumps(material_rows, ensure_ascii=False)
+        for private_field in ("source_filename", "sha256", "cover", "summary", "object_key"):
+            self.assertNotIn(private_field, serialized)
+        self.assertEqual(builder_module.merge_course_material_manifest(merged, manifest), merged)
+
+    def test_static_course_material_manifest_rejects_missing_extra_and_reordered_items(self) -> None:
+        payload = {
+            "schema_version": 1,
+            "generated_at": "2026-08-29T00:00:00+00:00",
+            "items": [{
+                "id": "file-existing-01",
+                "course_id": "fin-01",
+                "name": "Existing material",
+                "folders": [],
+                "extension": "pdf",
+                "size_label": "1 MB",
+                "date": "2026-08-10",
+                "entities": [],
+            }],
+        }
+        missing = course_material_manifest()
+        missing["items"].pop()
+        with self.assertRaisesRegex(builder_module.BuildError, "exactly 20"):
+            builder_module.merge_course_material_manifest(payload, missing)
+
+        extra = course_material_manifest()
+        extra["items"][0]["object_key"] = "private/object.pdf"
+        with self.assertRaisesRegex(builder_module.BuildError, "invalid schema"):
+            builder_module.merge_course_material_manifest(payload, extra)
+
+        reordered = course_material_manifest()
+        reordered["items"][0], reordered["items"][1] = reordered["items"][1], reordered["items"][0]
+        with self.assertRaisesRegex(builder_module.BuildError, "order is invalid"):
+            builder_module.merge_course_material_manifest(payload, reordered)
 
     def test_capacity_contract_matches_encryptor_publisher_and_worker(self) -> None:
         def constant_value(path: Path, name: str) -> int:

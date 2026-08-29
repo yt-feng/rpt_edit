@@ -31,7 +31,9 @@ jobs:
           sparse-checkout: |
             .course-directory
             .github/workflows/course-directory-private-publish.yml
+            portal_suite/site_src/data/course-materials.json
             scripts/build_course_chat_index.py
+            scripts/build_member_course_directory.py
 
       - name: Install private publishing dependencies
         run: python -m pip install --disable-pip-version-check --quiet "boto3>=1.34,<2" "cryptography>=42,<47"
@@ -95,6 +97,7 @@ jobs:
               serialize_course_chat_index,
               serialize_course_chat_lookup_manifest,
           )
+          from scripts.build_member_course_directory import BuildError, merge_course_material_manifest
 
           MAX_PLAINTEXT_BYTES = 16 * 1024 * 1024
           MAX_ITEMS = 45_000
@@ -103,6 +106,7 @@ jobs:
           DIRECTORY_OBJECT_KEY = "_course-directory/v1/directory.json"
           CHAT_OBJECT_KEY = "_course-directory/v1/chat-index.json"
           CHAT_LOOKUP_MANIFEST_KEY = "_course-directory/v2/chat-lookup/manifest.json"
+          COURSE_MATERIAL_MANIFEST = Path("portal_suite/site_src/data/course-materials.json")
           CONTACT_PATTERNS = (
               re.compile(r"(?i)(?<![A-Z0-9._%+-])[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}(?![A-Z0-9.-])"),
               re.compile(r"(?i)(?:https?|ftp)\s*:\s*/\s*/\S*"),
@@ -122,7 +126,7 @@ jobs:
               "lit-01", "lit-02", "lit-03", "lit-04",
               "lib-01", "lib-02", "lib-03", "lib-04", "lib-05",
               "career-01", "career-02", "career-03",
-              "alt-01", "alt-02", "alt-03",
+              "alt-01", "alt-02", "alt-03", "str-01",
           }
 
           def clean(value, limit):
@@ -202,6 +206,16 @@ jobs:
                       result.append(text)
               return result
 
+          if not COURSE_MATERIAL_MANIFEST.is_file() or COURSE_MATERIAL_MANIFEST.is_symlink():
+              raise SystemExit("Course material manifest is missing")
+          material_payload = json.loads(COURSE_MATERIAL_MANIFEST.read_text(encoding="utf-8"))
+          try:
+              payload = merge_course_material_manifest(payload, material_payload)
+          except BuildError:
+              raise SystemExit("Course material manifest validation failed") from None
+          material_items = material_payload["items"]
+          rows = payload["items"]
+
           safe_items = []
           seen = set()
           for index, row in enumerate(rows):
@@ -265,6 +279,26 @@ jobs:
               region_name="auto",
           )
           bucket = os.environ["R2_BUCKET"]
+          for item in material_items:
+              try:
+                  head = client.head_object(
+                      Bucket=bucket,
+                      Key=f"_course-materials/v1/{str(item['id']).strip().lower()}.pdf",
+                  )
+              except Exception:
+                  raise SystemExit("Course material object verification failed") from None
+              metadata = {
+                  str(key).lower(): str(value)
+                  for key, value in (head.get("Metadata") or {}).items()
+              }
+              if (
+                  int(head.get("ContentLength") or 0) != int(item["bytes"])
+                  or str(head.get("ContentType") or "").split(";", 1)[0].lower() != "application/pdf"
+                  or metadata.get("sha256") != str(item["sha256"]).strip().lower()
+                  or metadata.get("material-id") != str(item["id"]).strip().lower()
+                  or metadata.get("pages") != str(item["pages"])
+              ):
+                  raise SystemExit("Course material object verification failed")
           immutable_objects = tuple(
               (object_key, body, "application/octet-stream", "course-chat-direct-lookup")
               for object_key, body in iter_course_chat_lookup_objects(chat_lookup)

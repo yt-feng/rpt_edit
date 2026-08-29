@@ -293,6 +293,7 @@ const REWARD_CREDIT_TTL_MS = 72 * 60 * 60 * 1000;
 const REWARD_CREDIT_MAX_ROWS = 64;
 const COURSE_MIN_REMAINING_DAYS = 30;
 const COURSE_DIRECTORY_R2_KEY = "_course-directory/v1/directory.json";
+const COURSE_MATERIAL_R2_PREFIX = "_course-materials/v1";
 const REPORT_CHAT_LOOKUP_MANIFEST_R2_KEY = "_report-chat/v2/manifest.json";
 const REPORT_RESEARCH_LOOKUP_MANIFEST_R2_KEY = "_report-research/v1/manifest.json";
 const COURSE_CHAT_LOOKUP_MANIFEST_R2_KEY = "_course-directory/v2/chat-lookup/manifest.json";
@@ -644,6 +645,13 @@ const COURSE_CATALOG = Object.freeze([
     title: "基本面研究与公司分析",
     summary: "从商业模式、竞争优势、关键经营指标到估值与投资论点，建立公司研究框架。",
     audience: "买方研究、行业研究与基本面投资学习者",
+  },
+  {
+    id: "str-01",
+    category: "战略咨询",
+    title: "麦府学堂｜战略与商业分析方法论",
+    summary: "覆盖问题拆解、行业与竞争分析、市场研究、增长战略、创新、组织设计与项目表达。",
+    audience: "战略、投资、咨询、企业发展与经营分析人员",
   },
 ].map((course) => Object.freeze(course)));
 const COURSE_TITLES = Object.freeze(COURSE_CATALOG.map((course) => course.title));
@@ -5061,6 +5069,82 @@ async function handleCourseDirectory(request, env) {
     });
   } catch (_error) {
     return privateJsonResponse(request, env, 503, { detail: "课程文件目录暂时无法读取，请稍后重试。" });
+  }
+}
+
+function cleanCourseMaterialId(value) {
+  const id = String(value || "").trim().toLowerCase();
+  return /^maifu-(?:0[1-9]|1[0-9]|20)$/u.test(id) ? id : "";
+}
+
+function courseMaterialObjectKey(id) {
+  return `${COURSE_MATERIAL_R2_PREFIX}/${id}.pdf`;
+}
+
+function courseMaterialPdfResponse(request, env, object, id, options = {}) {
+  const range = options.range || null;
+  const size = range ? range.length : Number(object && object.size || 0);
+  const headers = {
+    ...corsHeaders(request, env),
+    "Content-Type": "application/pdf",
+    "Content-Disposition": contentDisposition(`${id}.pdf`),
+    "Accept-Ranges": "bytes",
+    "Cache-Control": "private, no-store, max-age=0",
+    "X-Content-Type-Options": "nosniff",
+  };
+  if (Number.isSafeInteger(size) && size >= 0) headers["Content-Length"] = String(size);
+  if (range) headers["Content-Range"] = `bytes ${range.start}-${range.end}/${range.size}`;
+  return new Response(object.body, { status: range ? 206 : 200, headers });
+}
+
+async function handleCourseMaterial(request, env) {
+  let user;
+  try {
+    user = await currentUserFromRequest(env, request);
+  } catch (error) {
+    return privateJsonResponse(request, env, 401, { detail: error.message || "请先登录。" });
+  }
+  let access;
+  try {
+    access = await courseAccessForUser(env, user);
+  } catch (_error) {
+    return privateJsonResponse(request, env, 503, { detail: "课程会员资格暂时无法核验。" });
+  }
+  if (!access.can_access) {
+    return privateJsonResponse(request, env, 403, {
+      detail: "该材料仅对剩余有效期至少 30 天的会员开放。",
+      required_remaining_days: COURSE_MIN_REMAINING_DAYS,
+    });
+  }
+
+  const id = cleanCourseMaterialId(new URL(request.url).searchParams.get("id"));
+  if (!id) return privateJsonResponse(request, env, 404, { detail: "课程材料不存在。" });
+  if (!env.REPORT_BUCKET || typeof env.REPORT_BUCKET.get !== "function") {
+    return privateJsonResponse(request, env, 503, { detail: "课程材料存储暂时不可用。" });
+  }
+
+  const key = courseMaterialObjectKey(id);
+  const rangeHeader = request.headers.get("Range") || request.headers.get("range") || "";
+  try {
+    if (rangeHeader) {
+      if (typeof env.REPORT_BUCKET.head !== "function") {
+        return privateJsonResponse(request, env, 503, { detail: "课程材料暂时无法分段读取。" });
+      }
+      const head = await env.REPORT_BUCKET.head(key);
+      if (!head) return privateJsonResponse(request, env, 404, { detail: "课程材料不存在。" });
+      const range = parseRangeHeader(rangeHeader, Number(head.size || 0));
+      if (!range) return rangeNotSatisfiableResponse(request, env, Number(head.size || 0));
+      const object = await env.REPORT_BUCKET.get(key, {
+        range: { offset: range.offset, length: range.length },
+      });
+      if (!object) return privateJsonResponse(request, env, 404, { detail: "课程材料不存在。" });
+      return courseMaterialPdfResponse(request, env, object, id, { range });
+    }
+    const object = await env.REPORT_BUCKET.get(key);
+    if (!object) return privateJsonResponse(request, env, 404, { detail: "课程材料不存在。" });
+    return courseMaterialPdfResponse(request, env, object, id);
+  } catch (_error) {
+    return privateJsonResponse(request, env, 503, { detail: "课程材料存储暂时不可用。" });
   }
 }
 
@@ -21097,6 +21181,10 @@ export default {
 
     if (pathname === "/course/directory" && request.method === "GET") {
       return handleCourseDirectory(request, env);
+    }
+
+    if (pathname === "/course/material" && request.method === "GET") {
+      return handleCourseMaterial(request, env);
     }
 
     if (pathname === "/report-chat" && request.method === "POST") {

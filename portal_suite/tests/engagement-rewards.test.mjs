@@ -107,6 +107,17 @@ class MemoryR2 {
     return object;
   }
 
+  async head(key) {
+    const row = this.rows.get(key);
+    if (!row) return null;
+    const value = row.binary ? row.value : new TextEncoder().encode(row.value);
+    return {
+      etag: row.etag,
+      size: value.byteLength,
+      httpMetadata: row.httpMetadata || {},
+    };
+  }
+
   async put(key, value, options = {}) {
     this.putKeys.push(key);
     if (this.failPutPrefixOnce && key.startsWith(this.failPutPrefixOnce)) {
@@ -865,14 +876,24 @@ test("course API enforces at least 30 remaining days on the server", async () =>
   const allowed = await jsonRequest(env, "/course/access", { headers: bearer(token) });
   assert.equal(allowed.response.status, 200);
   assert.equal(allowed.data.can_access, true);
-  assert.equal(allowed.data.courses.length, 43);
-  assert.equal(allowed.data.course_catalog.length, 43);
+  assert.equal(allowed.data.courses.length, 44);
+  assert.equal(allowed.data.course_catalog.length, 44);
   assert.deepEqual(
     allowed.data.courses,
     allowed.data.course_catalog.map((course) => course.title),
     "the legacy title array must stay compatible with the structured catalog",
   );
-  assert.equal(new Set(allowed.data.course_catalog.map((course) => course.id)).size, 43);
+  assert.equal(new Set(allowed.data.course_catalog.map((course) => course.id)).size, 44);
+  assert.deepEqual(
+    allowed.data.course_catalog.find((course) => course.id === "str-01"),
+    {
+      id: "str-01",
+      category: "战略咨询",
+      title: "麦府学堂｜战略与商业分析方法论",
+      summary: "覆盖问题拆解、行业与竞争分析、市场研究、增长战略、创新、组织设计与项目表达。",
+      audience: "战略、投资、咨询、企业发展与经营分析人员",
+    },
+  );
   for (const course of allowed.data.course_catalog) {
     assert.deepEqual(Object.keys(course).sort(), ["audience", "category", "id", "summary", "title"]);
     for (const field of ["id", "category", "title", "summary", "audience"]) {
@@ -1188,6 +1209,69 @@ test("course directory falls back to text parsing when the R2 body has no json m
   assert.equal(response.data.total, 1);
   assert.ok(bucket.textReadKeys.includes(directoryKey));
   assert.equal(bucket.jsonReadKeys.includes(directoryKey), false);
+});
+
+test("course materials enforce the Course gate and serve complete or ranged private PDFs", async () => {
+  const bucket = new MemoryR2();
+  bucket.seed("edge-static/runtime-data/catalog.json", { items: [] });
+  const env = envFor(bucket);
+  const materialPath = "/course/material?id=maifu-01";
+  const materialKey = "_course-materials/v1/maifu-01.pdf";
+  const pdf = new TextEncoder().encode("%PDF-1.7\ncourse-material-body\n%%EOF");
+  bucket.seedBytes(materialKey, pdf);
+
+  const anonymous = await jsonRequest(env, materialPath);
+  assert.equal(anonymous.response.status, 401);
+  assert.equal(anonymous.response.headers.get("cache-control"), "private, no-store, max-age=0");
+  assert.equal(JSON.stringify(anonymous.data).includes("_course-materials"), false);
+
+  const token = await register(env);
+  const auth = { headers: bearer(token) };
+  const denied = await jsonRequest(env, materialPath, auth);
+  assert.equal(denied.response.status, 403);
+  assert.equal(denied.response.headers.get("cache-control"), "private, no-store, max-age=0");
+  assert.equal(Object.hasOwn(denied.data, "object_key"), false);
+
+  const email = "reward-reader@example.com";
+  bucket.seed(`_account/entitlements/${encodeURIComponent(email)}`, {
+    id: "entitlement-course-material",
+    email,
+    plan: "annual",
+    status: "active",
+    lifetime: false,
+    current_period_end: new Date(Date.now() + 31 * 24 * 60 * 60 * 1000).toISOString(),
+    updated_at: new Date().toISOString(),
+  });
+
+  const invalid = await jsonRequest(env, "/course/material?id=../../private", auth);
+  assert.equal(invalid.response.status, 404);
+  assert.equal(invalid.response.headers.get("cache-control"), "private, no-store, max-age=0");
+  const missing = await jsonRequest(env, "/course/material?id=maifu-20", auth);
+  assert.equal(missing.response.status, 404);
+  assert.equal(JSON.stringify(missing.data).includes("_course-materials"), false);
+
+  const complete = await worker.fetch(new Request(`https://worker.test${materialPath}`, auth), env, { waitUntil() {} });
+  assert.equal(complete.status, 200);
+  assert.equal(complete.headers.get("content-type"), "application/pdf");
+  assert.equal(complete.headers.get("content-length"), String(pdf.byteLength));
+  assert.equal(complete.headers.get("accept-ranges"), "bytes");
+  assert.equal(complete.headers.get("cache-control"), "private, no-store, max-age=0");
+  assert.match(complete.headers.get("content-disposition"), /maifu-01\.pdf/u);
+  assert.deepEqual(new Uint8Array(await complete.arrayBuffer()), pdf);
+
+  const range = { headers: { ...bearer(token), Range: "bytes=5-12" } };
+  const partial = await worker.fetch(new Request(`https://worker.test${materialPath}`, range), env, { waitUntil() {} });
+  assert.equal(partial.status, 206);
+  assert.equal(partial.headers.get("content-length"), "8");
+  assert.equal(partial.headers.get("content-range"), `bytes 5-12/${pdf.byteLength}`);
+  assert.deepEqual(new Uint8Array(await partial.arrayBuffer()), pdf.slice(5, 13));
+  assert.ok(bucket.rangeReadKeys.includes(materialKey));
+
+  const unsatisfiable = await worker.fetch(new Request(`https://worker.test${materialPath}`, {
+    headers: { ...bearer(token), Range: `bytes=${pdf.byteLength}-` },
+  }), env, { waitUntil() {} });
+  assert.equal(unsatisfiable.status, 416);
+  assert.equal(unsatisfiable.headers.get("content-range"), `bytes */${pdf.byteLength}`);
 });
 
 test("registered users can use grounded report chat and anonymous users cannot", async () => {

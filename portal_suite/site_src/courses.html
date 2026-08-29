@@ -30,6 +30,47 @@
         <p>面向仍有至少 30 天有效期的会员，提供主题课程、具体文件目录以及机构与法规关键词检索。</p>
       </section>
 
+      <section
+        class="course-materials"
+        id="courseMaterials"
+        aria-labelledby="courseMaterialsTitle"
+        aria-roledescription="轮播"
+        hidden
+      >
+        <header class="course-materials-heading">
+          <div>
+            <p>FEATURED COLLECTION</p>
+            <h2 id="courseMaterialsTitle">麦府学堂</h2>
+            <span id="courseMaterialsDescription">战略与商业分析方法论 · 会员专享材料</span>
+          </div>
+          <div class="course-materials-controls" aria-label="轮播控制">
+            <button
+              class="course-materials-arrow"
+              id="courseMaterialsPrevious"
+              type="button"
+              aria-controls="courseMaterialsTrack"
+              aria-label="上一份材料"
+            >←</button>
+            <span id="courseMaterialsPosition" aria-label="当前材料">1 / 1</span>
+            <button
+              class="course-materials-arrow"
+              id="courseMaterialsNext"
+              type="button"
+              aria-controls="courseMaterialsTrack"
+              aria-label="下一份材料"
+            >→</button>
+          </div>
+        </header>
+        <div
+          class="course-materials-track"
+          id="courseMaterialsTrack"
+          role="region"
+          aria-label="麦府学堂精选材料"
+          tabindex="0"
+        ></div>
+        <p class="course-materials-status" id="courseMaterialsStatus" aria-live="polite"></p>
+      </section>
+
       <section class="course-gate" id="courseGate" aria-live="polite">
         <h2 id="courseGateTitle">正在核验会员资格…</h2>
         <p id="courseGateMessage">请稍候。</p>

@@ -47,7 +47,7 @@ ALLOWED_COURSE_IDS = frozenset({
     "lit-01", "lit-02", "lit-03", "lit-04",
     "lib-01", "lib-02", "lib-03", "lib-04", "lib-05",
     "career-01", "career-02", "career-03",
-    "alt-01", "alt-02", "alt-03",
+    "alt-01", "alt-02", "alt-03", "str-01",
 })
 
 ROW_FIELDS = frozenset({

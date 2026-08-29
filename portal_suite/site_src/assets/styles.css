@@ -4906,6 +4906,256 @@ a.secondary-button {
   line-height: 1.7;
 }
 
+.course-materials {
+  display: grid;
+  gap: 18px;
+  min-width: 0;
+  padding: clamp(20px, 3vw, 28px);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 92% 0%, rgba(20, 184, 166, 0.12), transparent 34%),
+    var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.course-materials-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.course-materials-heading > div:first-child {
+  display: grid;
+  gap: 6px;
+}
+
+.course-materials-heading p,
+.course-materials-heading h2,
+.course-materials-heading span,
+.course-materials-status,
+.course-material-copy p,
+.course-material-copy h3,
+.course-material-copy > span {
+  margin: 0;
+}
+
+.course-materials-heading p {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.course-materials-heading h2 {
+  font-size: clamp(25px, 3vw, 36px);
+  letter-spacing: -0.035em;
+}
+
+.course-materials-heading > div:first-child > span {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.course-materials-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+
+.course-materials-controls > span {
+  min-width: 62px;
+  color: var(--muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+  text-align: center;
+}
+
+.course-materials-arrow {
+  display: inline-grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  color: var(--accent-strong);
+  cursor: pointer;
+  font: inherit;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.course-materials-arrow:hover,
+.course-materials-arrow:focus-visible {
+  border-color: var(--accent);
+  background: rgba(20, 184, 166, 0.1);
+  outline: none;
+}
+
+.course-materials-arrow:disabled {
+  cursor: default;
+  opacity: 0.45;
+}
+
+.course-materials-track {
+  display: grid;
+  grid-auto-columns: calc((100% - 32px) / 3);
+  grid-auto-flow: column;
+  gap: 16px;
+  min-width: 0;
+  padding: 2px 2px 10px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-behavior: smooth;
+  scroll-padding-inline: 2px;
+  scroll-snap-type: inline mandatory;
+  scrollbar-color: rgba(100, 116, 139, 0.42) transparent;
+  scrollbar-width: thin;
+  touch-action: pan-x pan-y;
+}
+
+.course-materials-track:focus-visible {
+  border-radius: 16px;
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.course-material-card {
+  display: grid;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--panel);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.course-material-card.is-featured {
+  border-color: rgba(20, 184, 166, 0.46);
+}
+
+.course-material-cover {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(20, 184, 166, 0.18), rgba(15, 47, 53, 0.16));
+}
+
+.course-material-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.course-material-cover > span {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 6px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 999px;
+  background: rgba(7, 22, 27, 0.78);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  backdrop-filter: blur(8px);
+}
+
+.course-material-card.is-cover-missing .course-material-cover::after {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  content: "封面暂不可用";
+  font-size: 12px;
+}
+
+.course-material-card.is-cover-missing .course-material-cover img {
+  display: none;
+}
+
+.course-material-copy {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 9px;
+  padding: 17px;
+}
+
+.course-material-copy p {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.course-material-copy h3 {
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+}
+
+.course-material-copy > span {
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.65;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.course-material-open {
+  width: 100%;
+  min-height: 44px;
+  margin-top: 5px;
+  border: 1px solid rgba(15, 118, 110, 0.3);
+  border-radius: 11px;
+  background: rgba(20, 184, 166, 0.1);
+  color: var(--accent-strong);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.course-material-open:hover,
+.course-material-open:focus-visible {
+  border-color: var(--accent);
+  background: rgba(20, 184, 166, 0.18);
+  outline: none;
+}
+
+.course-material-open:disabled {
+  cursor: progress;
+  opacity: 0.68;
+}
+
+.course-materials-status {
+  min-height: 20px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.course-materials-status[data-state="ok"] {
+  color: var(--accent-strong);
+}
+
+.course-materials-status[data-state="error"] {
+  color: var(--warn);
+}
+
 .course-gate {
   display: grid;
   justify-items: start;
@@ -5618,6 +5868,10 @@ a.secondary-button {
     grid-template-columns: 1fr;
   }
 
+  .course-materials-track {
+    grid-auto-columns: calc((100% - 16px) / 2);
+  }
+
   .course-browser-fields {
     grid-template-columns: 1fr;
   }
@@ -5647,6 +5901,25 @@ a.secondary-button {
 }
 
 @media (max-width: 520px) {
+  .course-materials {
+    padding: 17px;
+  }
+
+  .course-materials-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .course-materials-controls {
+    align-self: stretch;
+    justify-content: space-between;
+  }
+
+  .course-materials-track {
+    grid-auto-columns: 90%;
+    gap: 12px;
+  }
+
   .course-group-heading {
     align-items: flex-start;
     flex-direction: column;
@@ -5689,6 +5962,12 @@ a.secondary-button {
   .course-directory-error {
     align-items: stretch;
     flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .course-materials-track {
+    scroll-behavior: auto;
   }
 }
 

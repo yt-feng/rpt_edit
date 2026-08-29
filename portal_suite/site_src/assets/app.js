@@ -12572,13 +12572,320 @@
     const message = document.getElementById("courseGateMessage");
     const login = document.getElementById("courseLoginButton");
     const catalog = document.getElementById("courseCatalog");
+    const materials = document.getElementById("courseMaterials");
+    const materialsTitle = document.getElementById("courseMaterialsTitle");
+    const materialsDescription = document.getElementById("courseMaterialsDescription");
+    const materialsTrack = document.getElementById("courseMaterialsTrack");
+    const materialsPrevious = document.getElementById("courseMaterialsPrevious");
+    const materialsNext = document.getElementById("courseMaterialsNext");
+    const materialsPosition = document.getElementById("courseMaterialsPosition");
+    const materialsStatus = document.getElementById("courseMaterialsStatus");
     let directoryEpoch = 0;
+    let courseMaterialAccess = false;
+    let courseMaterialCount = 0;
+    const courseMaterialById = new Map();
     initAccountGate(workerUrl);
     initNewsfeedNav();
     if (!gate || !title || !message || !login || !catalog) return;
 
+    function courseMaterialText(value, limit) {
+      return String(value || "").replace(/\s+/gu, " ").trim().slice(0, limit);
+    }
+
+    function normalizeCourseMaterials(payload) {
+      if (!payload || typeof payload !== "object" || Number(payload.schema_version) !== 1) return null;
+      const rawCourse = payload.course && typeof payload.course === "object" ? payload.course : {};
+      const course = {
+        id: courseMaterialText(rawCourse.id, 80),
+        category: courseMaterialText(rawCourse.category, 80),
+        title: courseMaterialText(rawCourse.title, 120),
+      };
+      if (!course.id || !course.title) return null;
+      const ids = new Set();
+      const items = (Array.isArray(payload.items) ? payload.items : []).map((raw) => {
+        if (!raw || typeof raw !== "object" || Array.isArray(raw)) return null;
+        const id = courseMaterialText(raw.id, 80).toLowerCase();
+        const cover = courseMaterialText(raw.cover, 180);
+        const itemTitle = courseMaterialText(raw.title, 160);
+        const pages = Math.trunc(Number(raw.pages || 0));
+        if (!/^[a-z0-9][a-z0-9-]{2,79}$/u.test(id) || ids.has(id) || !itemTitle) return null;
+        if (!/^assets\/course-covers\/[a-z0-9][a-z0-9._-]*\.(?:avif|jpe?g|png|webp)$/iu.test(cover)) return null;
+        if (!Number.isFinite(pages) || pages < 1 || pages > 2000) return null;
+        ids.add(id);
+        return {
+          id,
+          title: itemTitle,
+          topic: courseMaterialText(raw.topic, 80) || "战略咨询",
+          summary: courseMaterialText(raw.summary, 260),
+          pages,
+          cover,
+          featured: raw.featured === true,
+        };
+      }).filter(Boolean).slice(0, 60);
+      if (!items.length) return null;
+      const featuredIndex = items.findIndex((item) => item.featured);
+      if (featuredIndex > 0) items.unshift(...items.splice(featuredIndex, 1));
+      return { course, items };
+    }
+
+    function setCourseMaterialStatus(text, state = "") {
+      if (!materialsStatus) return;
+      materialsStatus.textContent = text;
+      materialsStatus.dataset.state = state;
+    }
+
+    function setCourseMaterialAccess(canAccess) {
+      courseMaterialAccess = Boolean(canAccess);
+      if (!materialsTrack) return;
+      const hasSession = Boolean(loadAuthSession());
+      materialsTrack.querySelectorAll("[data-course-material-open]").forEach((button) => {
+        const label = courseMaterialAccess ? "在线阅读" : (hasSession ? "会员验证后阅读" : "登录后阅读");
+        button.textContent = label;
+        button.setAttribute("aria-label", `${button.dataset.materialTitle || "材料"} · ${label}`);
+      });
+      if (materialsStatus && materialsStatus.dataset.state !== "busy") {
+        setCourseMaterialStatus(courseMaterialAccess
+          ? `${courseMaterialCount} 份精选材料 · 点击封面下方按钮在线阅读`
+          : (hasSession
+            ? "有效期不少于 30 天的会员可在线阅读"
+            : "封面公开预览 · 登录后在线阅读"));
+      }
+    }
+
+    async function openCourseMaterial(item, button) {
+      if (!loadAuthSession()) {
+        await showAccountModal(workerUrl);
+        return;
+      }
+      if (!courseMaterialAccess) {
+        setCourseMaterialStatus("当前账号需通过会员资格核验后才能阅读。", "error");
+        gate.scrollIntoView({ behavior: "smooth", block: "center" });
+        return;
+      }
+
+      const readerWindow = window.open("about:blank", "_blank");
+      if (readerWindow) {
+        try {
+          readerWindow.opener = null;
+          readerWindow.document.title = "正在准备课程材料…";
+          readerWindow.document.body.textContent = "正在准备课程材料，请稍候…";
+        } catch (_error) {
+          // The authenticated fetch below can still fall back to this tab.
+        }
+      }
+      button.disabled = true;
+      button.textContent = "正在准备…";
+      setCourseMaterialStatus(`正在准备《${item.title}》…`, "busy");
+      try {
+        const response = await fetch(`${workerUrl}/course/material?id=${encodeURIComponent(item.id)}`, {
+          method: "GET",
+          cache: "no-store",
+          headers: authHeaders(),
+        });
+        if (!response.ok) {
+          const data = await response.json().catch(() => ({}));
+          if (response.status === 401) clearAuthSession();
+          throw new Error(data.detail || "材料暂时无法打开。");
+        }
+        const blob = await response.blob();
+        if (!blob.size) throw new Error("材料内容为空，请稍后重试。");
+        const objectUrl = URL.createObjectURL(blob);
+        let openedInReader = false;
+        if (readerWindow && !readerWindow.closed) {
+          try {
+            readerWindow.location.replace(objectUrl);
+            openedInReader = true;
+          } catch (_error) {
+            readerWindow.close();
+          }
+        }
+        if (!openedInReader) window.location.assign(objectUrl);
+        window.setTimeout(() => URL.revokeObjectURL(objectUrl), 10 * 60 * 1000);
+        setCourseMaterialStatus(`《${item.title}》已打开。`, "ok");
+      } catch (error) {
+        if (readerWindow && !readerWindow.closed) readerWindow.close();
+        setCourseMaterialStatus(error.message || "材料暂时无法打开。", "error");
+      } finally {
+        button.disabled = false;
+        const hasSession = Boolean(loadAuthSession());
+        const label = courseMaterialAccess ? "在线阅读" : (hasSession ? "会员验证后阅读" : "登录后阅读");
+        button.textContent = label;
+        button.setAttribute("aria-label", `${button.dataset.materialTitle || "材料"} · ${label}`);
+      }
+    }
+
+    async function setupCourseMaterials() {
+      if (!materials || !materialsTitle || !materialsDescription || !materialsTrack
+        || !materialsPrevious || !materialsNext || !materialsPosition || !materialsStatus) return;
+      const payload = await loadOptionalJson("data/course-materials.json", null);
+      const manifest = normalizeCourseMaterials(payload);
+      if (!manifest) {
+        materials.hidden = true;
+        return;
+      }
+      const { course, items } = manifest;
+      courseMaterialCount = items.length;
+      courseMaterialById.clear();
+      items.forEach((item) => courseMaterialById.set(item.id, item));
+      materialsTitle.textContent = course.title;
+      materialsDescription.textContent = `${course.category || "战略咨询"} · ${items.length} 份精选材料 · 会员专享`;
+      materialsTrack.innerHTML = items.map((item, index) => {
+        const priority = index === 0 && item.featured;
+        return `
+          <article
+            class="course-material-card${item.featured ? " is-featured" : ""}"
+            data-course-material-card="${escapeHtml(item.id)}"
+            role="group"
+            aria-roledescription="幻灯片"
+            aria-label="${index + 1} / ${items.length} · ${escapeHtml(item.title)}"
+          >
+            <div class="course-material-cover">
+              <img
+                src="${escapeHtml(item.cover)}"
+                alt="${escapeHtml(item.title)}封面"
+                width="720"
+                height="405"
+                loading="${priority ? "eager" : "lazy"}"
+                decoding="async"
+                ${priority ? 'fetchpriority="high"' : ""}
+              >
+              <span>${item.featured ? "精选" : "麦府学堂"}</span>
+            </div>
+            <div class="course-material-copy">
+              <p>${escapeHtml(item.topic)} · ${item.pages} 页</p>
+              <h3>${escapeHtml(item.title)}</h3>
+              ${item.summary ? `<span>${escapeHtml(item.summary)}</span>` : ""}
+              <button
+                class="course-material-open"
+                type="button"
+                data-course-material-open="${escapeHtml(item.id)}"
+                data-material-title="${escapeHtml(item.title)}"
+              >登录后阅读</button>
+            </div>
+          </article>`;
+      }).join("");
+      materials.hidden = false;
+      setCourseMaterialAccess(courseMaterialAccess);
+
+      const cards = Array.from(materialsTrack.querySelectorAll("[data-course-material-card]"));
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const COURSE_MATERIAL_AUTOPLAY_MS = 6000;
+      let activeIndex = 0;
+      let autoplayTimer = 0;
+      let scrollTimer = 0;
+      let ignoreScrollUntil = 0;
+      let pointerPaused = false;
+      let focusPaused = false;
+      let isVisible = true;
+
+      const updatePosition = () => {
+        materialsPosition.textContent = `${activeIndex + 1} / ${cards.length}`;
+        materialsPosition.setAttribute("aria-label", `当前第 ${activeIndex + 1} 份，共 ${cards.length} 份`);
+      };
+      const autoplayAllowed = () => cards.length > 1 && !reducedMotion.matches
+        && !pointerPaused && !focusPaused && isVisible && !document.hidden;
+      const scheduleAutoplay = () => {
+        window.clearTimeout(autoplayTimer);
+        autoplayTimer = 0;
+        if (!autoplayAllowed()) return;
+        autoplayTimer = window.setTimeout(() => {
+          moveTo(activeIndex + 1, true);
+        }, COURSE_MATERIAL_AUTOPLAY_MS);
+      };
+      const moveTo = (nextIndex, automatic = false) => {
+        if (!cards.length) return;
+        activeIndex = (nextIndex + cards.length) % cards.length;
+        const firstOffset = cards[0].offsetLeft;
+        ignoreScrollUntil = Date.now() + 800;
+        materialsTrack.scrollTo({
+          left: Math.max(0, cards[activeIndex].offsetLeft - firstOffset),
+          behavior: reducedMotion.matches ? "auto" : "smooth",
+        });
+        updatePosition();
+        if (!automatic) setCourseMaterialStatus(courseMaterialAccess
+          ? `${courseMaterialCount} 份精选材料 · 点击封面下方按钮在线阅读`
+          : (loadAuthSession() ? "有效期不少于 30 天的会员可在线阅读" : "封面公开预览 · 登录后在线阅读"));
+        scheduleAutoplay();
+      };
+      const syncFromScroll = () => {
+        if (Date.now() < ignoreScrollUntil || !cards.length) return;
+        const firstOffset = cards[0].offsetLeft;
+        const current = materialsTrack.scrollLeft;
+        const maxScroll = Math.max(0, materialsTrack.scrollWidth - materialsTrack.clientWidth);
+        if (maxScroll - current <= 3) {
+          activeIndex = cards.length - 1;
+        } else {
+          activeIndex = cards.reduce((best, card, index) => (
+            Math.abs(card.offsetLeft - firstOffset - current)
+              < Math.abs(cards[best].offsetLeft - firstOffset - current) ? index : best
+          ), 0);
+        }
+        updatePosition();
+        scheduleAutoplay();
+      };
+
+      materialsPrevious.disabled = cards.length < 2;
+      materialsNext.disabled = cards.length < 2;
+      materialsPrevious.addEventListener("click", () => moveTo(activeIndex - 1));
+      materialsNext.addEventListener("click", () => moveTo(activeIndex + 1));
+      materialsTrack.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+          event.preventDefault();
+          moveTo(activeIndex + (event.key === "ArrowRight" ? 1 : -1));
+        } else if (event.key === "Home" || event.key === "End") {
+          event.preventDefault();
+          moveTo(event.key === "Home" ? 0 : cards.length - 1);
+        }
+      });
+      materialsTrack.addEventListener("scroll", () => {
+        window.clearTimeout(scrollTimer);
+        scrollTimer = window.setTimeout(syncFromScroll, 120);
+      }, { passive: true });
+      materialsTrack.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-course-material-open]");
+        if (!button) return;
+        const item = courseMaterialById.get(String(button.dataset.courseMaterialOpen || ""));
+        if (item) openCourseMaterial(item, button);
+      });
+      materialsTrack.querySelectorAll("img").forEach((image) => {
+        image.addEventListener("error", () => image.closest(".course-material-card")?.classList.add("is-cover-missing"));
+      });
+      materials.addEventListener("pointerenter", () => {
+        pointerPaused = true;
+        scheduleAutoplay();
+      });
+      materials.addEventListener("pointerleave", () => {
+        pointerPaused = false;
+        scheduleAutoplay();
+      });
+      materials.addEventListener("focusin", () => {
+        focusPaused = true;
+        scheduleAutoplay();
+      });
+      materials.addEventListener("focusout", () => {
+        window.setTimeout(() => {
+          focusPaused = materials.contains(document.activeElement);
+          scheduleAutoplay();
+        }, 0);
+      });
+      const handleMotionChange = () => scheduleAutoplay();
+      if (typeof reducedMotion.addEventListener === "function") reducedMotion.addEventListener("change", handleMotionChange);
+      else if (typeof reducedMotion.addListener === "function") reducedMotion.addListener(handleMotionChange);
+      document.addEventListener("visibilitychange", scheduleAutoplay);
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+          isVisible = entries.some((entry) => entry.isIntersecting);
+          scheduleAutoplay();
+        }, { threshold: 0.2 });
+        observer.observe(materials);
+      }
+      updatePosition();
+      scheduleAutoplay();
+    }
+
     function locked(titleText, messageText, showLogin = false) {
       directoryEpoch += 1;
+      setCourseMaterialAccess(false);
       gate.hidden = false;
       gate.classList.remove("is-unlocked");
       title.textContent = titleText;
@@ -13138,6 +13445,7 @@
         title.textContent = "Course 已解锁";
         message.textContent = data.lifetime ? "长期会员资格已通过核验。" : `会员资格已通过核验，当前约剩余 ${Number(data.remaining_days || 0)} 天。`;
         login.hidden = true;
+        setCourseMaterialAccess(true);
         renderCourseCatalog(data);
         catalog.hidden = false;
       } catch (error) {
@@ -13147,7 +13455,7 @@
 
     login.addEventListener("click", () => showAccountModal(workerUrl));
     document.addEventListener("portal-auth-change", refresh);
-    await refresh();
+    await Promise.all([setupCourseMaterials(), refresh()]);
   }
 
   const boot = page === "report"

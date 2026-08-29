@@ -144,7 +144,10 @@ test("private publisher verifies direct Course Chat objects before atomically pu
   });
   assert.equal(syntax.status, 0, syntax.stderr);
   assert.match(workflow, /^ {12}scripts\/build_course_chat_index\.py$/mu);
+  assert.match(workflow, /^ {12}scripts\/build_member_course_directory\.py$/mu);
+  assert.match(workflow, /^ {12}portal_suite\/site_src\/data\/course-materials\.json$/mu);
   assert.match(publisher, /from scripts\.build_course_chat_index import \(/u);
+  assert.match(publisher, /from scripts\.build_member_course_directory import BuildError, merge_course_material_manifest/u);
   assert.match(publisher, /CHAT_OBJECT_KEY = "_course-directory\/v1\/chat-index\.json"/u);
   assert.match(publisher, /CHAT_LOOKUP_MANIFEST_KEY = "_course-directory\/v2\/chat-lookup\/manifest\.json"/u);
   assert.match(publisher, /build_course_chat_index\(safe_payload\)/u);
@@ -156,6 +159,18 @@ test("private publisher verifies direct Course Chat objects before atomically pu
   assert.match(publisher, /upload_and_verify\(\s*CHAT_LOOKUP_MANIFEST_KEY,/u);
   assert.match(publisher, /head_object\(Bucket=bucket, Key=object_key\)/u);
   assert.match(publisher, /Metadata=\{"sha256": digest, "schema": str\(schema\), "purpose": purpose\}/u);
+  assert.match(publisher, /COURSE_MATERIAL_MANIFEST = Path\("portal_suite\/site_src\/data\/course-materials\.json"\)/u);
+  assert.match(publisher, /payload = merge_course_material_manifest\(payload, material_payload\)/u);
+  assert.match(publisher, /Key=f"_course-materials\/v1\/\{str\(item\['id'\]\)\.strip\(\)\.lower\(\)\}\.pdf"/u);
+  assert.match(publisher, /metadata\.get\("material-id"\)/u);
+  assert.ok(
+    publisher.indexOf("payload = merge_course_material_manifest(payload, material_payload)") < publisher.indexOf("safe_items = []"),
+    "static course materials must be merged before the ordinary directory validation pass",
+  );
+  assert.ok(
+    publisher.indexOf("for item in material_items:") < publisher.indexOf("for object_key, body, content_type, purpose in immutable_objects:"),
+    "all material PDFs must be verified before publishing the revised directory and chat objects",
+  );
   assert.ok(
     publisher.indexOf("for object_key, body, content_type, purpose in immutable_objects:") <
       publisher.indexOf("CHAT_LOOKUP_MANIFEST_KEY,"),

@@ -45,7 +45,7 @@ ALLOWED_COURSE_IDS = frozenset({
     "lit-01", "lit-02", "lit-03", "lit-04",
     "lib-01", "lib-02", "lib-03", "lib-04", "lib-05",
     "career-01", "career-02", "career-03",
-    "alt-01", "alt-02", "alt-03",
+    "alt-01", "alt-02", "alt-03", "str-01",
 })
 INDEX_LINE_RE = re.compile(
     r"^- `(?P<path>.+)` — (?P<size>[0-9]+(?:\.[0-9]+)?(?:B|KB|MB|GB|TB)) — "
@@ -78,6 +78,134 @@ REPEATED_SEPARATOR_RE = re.compile(r"(?:\s*[|丨·]\s*){2,}")
 
 class BuildError(RuntimeError):
     """The private input cannot be converted without exposing source data."""
+
+
+COURSE_MATERIAL_COURSE = {
+    "id": "str-01",
+    "category": "战略咨询",
+    "title": "麦府学堂｜战略与商业分析方法论",
+}
+COURSE_MATERIAL_DATE = "2026-08-29"
+COURSE_MATERIAL_FOLDER = "战略咨询方法论"
+COURSE_MATERIAL_FIELDS = frozenset({
+    "id", "source_filename", "title", "topic", "summary", "pages", "bytes",
+    "sha256", "cover", "featured", "entities",
+})
+COURSE_MATERIAL_ID_RE = re.compile(r"maifu-(?:0[1-9]|1[0-9]|20)\Z")
+
+
+def _course_material_text(value: Any, field: str, limit: int) -> str:
+    if not isinstance(value, str):
+        raise BuildError(f"Course material {field} must be text.")
+    text = unicodedata.normalize("NFKC", value)
+    if any(ord(character) < 32 or ord(character) == 127 for character in text):
+        raise BuildError(f"Course material {field} contains a control character.")
+    text = SPACE_RE.sub(" ", text).strip()
+    if not text or len(text) > limit:
+        raise BuildError(f"Course material {field} has an invalid length.")
+    return text
+
+
+def _course_material_size_label(byte_count: int) -> str:
+    value = float(byte_count)
+    unit = "B"
+    for candidate in ("KB", "MB", "GB", "TB"):
+        if value < 1024:
+            break
+        value /= 1024
+        unit = candidate
+    precision = 0 if unit == "B" else 1
+    return f"{value:.{precision}f} {unit}"
+
+
+def merge_course_material_manifest(payload: Mapping[str, Any], manifest: Mapping[str, Any]) -> dict[str, Any]:
+    """Append the fixed public material manifest to an established private directory.
+
+    The static manifest is treated only as untrusted release data. Source names,
+    digests, cover paths, and other publishing fields are validated but never
+    copied into the member directory. The private publisher performs its usual
+    redaction/contact pass over the returned rows before any R2 mutation.
+    """
+
+    if not isinstance(payload, Mapping) or int(payload.get("schema_version") or 0) != SCHEMA_VERSION:
+        raise BuildError("Directory payload schema is invalid.")
+    existing = payload.get("items")
+    if not isinstance(existing, list) or not existing:
+        raise BuildError("Directory payload item count is invalid.")
+    if not isinstance(manifest, Mapping) or int(manifest.get("schema_version") or 0) != 1:
+        raise BuildError("Course material manifest schema is invalid.")
+    if manifest.get("course") != COURSE_MATERIAL_COURSE:
+        raise BuildError("Course material manifest course metadata is invalid.")
+    items = manifest.get("items")
+    if not isinstance(items, list) or len(items) != 20:
+        raise BuildError("Course material manifest must contain exactly 20 items.")
+
+    expected_ids = {f"maifu-{number:02d}" for number in range(1, 21)}
+    material_ids: set[str] = set()
+    material_rows: list[dict[str, Any]] = []
+    for position, item in enumerate(items, 1):
+        if not isinstance(item, Mapping) or set(item) != COURSE_MATERIAL_FIELDS:
+            raise BuildError(f"Course material item {position} has an invalid schema.")
+        material_id = str(item.get("id") or "").strip().lower()
+        if not COURSE_MATERIAL_ID_RE.fullmatch(material_id) or material_id in material_ids:
+            raise BuildError(f"Course material item {position} has an invalid identifier.")
+        if material_id != f"maifu-{position:02d}":
+            raise BuildError("Course material manifest order is invalid.")
+        source_filename = _course_material_text(item.get("source_filename"), "source filename", 240)
+        if "/" in source_filename or "\\" in source_filename or not source_filename.lower().endswith(".pdf"):
+            raise BuildError(f"Course material item {position} has an invalid source filename.")
+        title = _course_material_text(item.get("title"), "title", 240)
+        _course_material_text(item.get("topic"), "topic", 100)
+        _course_material_text(item.get("summary"), "summary", 500)
+        page_count = item.get("pages")
+        byte_count = item.get("bytes")
+        if isinstance(page_count, bool) or not isinstance(page_count, int) or not 1 <= page_count <= 5000:
+            raise BuildError(f"Course material item {position} has an invalid page count.")
+        if isinstance(byte_count, bool) or not isinstance(byte_count, int) or not 1 <= byte_count <= 128 * 1024 * 1024:
+            raise BuildError(f"Course material item {position} has an invalid byte count.")
+        digest = str(item.get("sha256") or "").strip().lower()
+        if not re.fullmatch(r"[0-9a-f]{64}", digest):
+            raise BuildError(f"Course material item {position} has an invalid digest.")
+        cover = _course_material_text(item.get("cover"), "cover", 160)
+        if cover != f"assets/course-covers/{material_id}.webp":
+            raise BuildError(f"Course material item {position} has an invalid cover path.")
+        if not isinstance(item.get("featured"), bool):
+            raise BuildError(f"Course material item {position} has an invalid featured flag.")
+        raw_entities = item.get("entities")
+        if not isinstance(raw_entities, list):
+            raise BuildError(f"Course material item {position} has invalid entities.")
+        entities: list[str] = []
+        for raw_entity in raw_entities[:8]:
+            entity = _course_material_text(raw_entity, "entity", 80)
+            entity = SPACE_RE.sub(" ", entity.replace("/", " · ").replace("\\", " · ")).strip()
+            if entity not in entities:
+                entities.append(entity)
+        material_rows.append({
+            "id": material_id,
+            "course_id": COURSE_MATERIAL_COURSE["id"],
+            "name": title,
+            "folders": [COURSE_MATERIAL_FOLDER],
+            "extension": "pdf",
+            "size_label": _course_material_size_label(byte_count),
+            "date": COURSE_MATERIAL_DATE,
+            "entities": entities,
+        })
+        material_ids.add(material_id)
+
+    if material_ids != expected_ids:
+        raise BuildError("Course material manifest identifiers are incomplete.")
+    merged = [
+        row for row in existing
+        if not isinstance(row, Mapping) or str(row.get("id") or "").strip().lower() not in material_ids
+    ]
+    merged.extend(material_rows)
+    if len(merged) > MAX_DIRECTORY_ITEMS:
+        raise BuildError("Merged directory payload item count is invalid.")
+    return {
+        "schema_version": SCHEMA_VERSION,
+        "generated_at": payload.get("generated_at", ""),
+        "items": merged,
+    }
 
 
 @dataclass(frozen=True)

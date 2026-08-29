@@ -22,15 +22,17 @@ API contract:
 
 ## Course gate
 
-`courses.html` is visible in the top navigation, but its static HTML contains no
-course names or course contact details. After `GET /course/access` succeeds, the
+`courses.html` is visible in the top navigation. Its static HTML contains only
+the sanitized promotional heading for the featured course-material carousel;
+the established catalog names and all course contact details remain gated.
+After `GET /course/access` succeeds, the
 browser materializes the catalog from the authenticated response. The Worker
 accepts a full membership entitlement or an unlimited full-site administrator
 grant, and requires it to be lifetime or to expire at least 30 * 24 hours after
 the server check. Filtered grants, finite-download grants, and trials do not
 unlock Course. Privileged operational accounts remain eligible.
 
-The gated API catalog contains 43 hand-authored, topic-based entries spanning
+The gated API catalog contains 44 hand-authored, topic-based entries spanning
 financial modeling, capital markets, private investing, investment research,
 capital-markets law, legal professional skills, reference libraries, career
 development, and general professional education. Every entry has a neutral
@@ -41,7 +43,7 @@ private storage locator. Investment-bank names may be retained when they are
 material to the subject matter.
 
 During the frontend rollout, an eligible response includes both `courses`, a
-title-only string array for the previous client, and `course_catalog`, the 43
+title-only string array for the previous client, and `course_catalog`, the 44
 structured entries used by the current client. An anonymous response contains
 neither field, while an authenticated but ineligible response contains empty
 arrays. This keeps catalog details behind the same server-side membership gate
@@ -52,6 +54,34 @@ come from the private release injection process; do not place a real personal
 address in public source. Raw inventory documents, exact resource counts,
 storage paths, and source file names remain outside the repository and are
 never serialized by this API.
+
+### Featured course materials
+
+The Course page includes a public, sanitized cover carousel for the 20-item
+`str-01` strategic-analysis collection. Display metadata lives in
+`portal_suite/site_src/data/course-materials.json`; it contains no R2 locator or
+private WebDAV root. The 720 by 405 WebP covers are ordinary static teaser
+assets. The carousel uses native CSS scroll snap, keyboard and button controls,
+mobile touch scrolling, a six-second cycle, and disables automatic motion when
+the visitor requests reduced motion.
+
+Opening a PDF remains server-gated. `GET /course/material?id=maifu-NN` first
+authenticates the user and applies the same 30-day Course entitlement check.
+Only then may it read `_course-materials/v1/<id>.pdf` from the private report
+bucket. Complete and byte-range responses are `private, no-store`; anonymous,
+ineligible, invalid-ID, and missing-object responses never disclose the object
+key. The client fetches the PDF with its authorization header and opens a local
+Blob URL, so no bearer credential or storage locator enters a link.
+
+`.github/workflows/course-materials-private-publish.yml` fetches the exact 20
+source PDFs from the configured private Jianguoyun WebDAV directory, verifies
+each byte count, SHA-256 digest and page count, and uploads only content-matched
+objects. It never lists or deletes course objects and writes the private stable
+manifest only after every PDF has passed read-after-write verification. The
+private directory publisher independently HEAD-verifies all 20 objects before
+merging the sanitized rows into the member directory and Course Chat indexes;
+therefore a missing or mismatched PDF cannot produce a visible-but-broken
+course release.
 
 ### Private file directory
 
@@ -90,7 +120,7 @@ Course Chat does not load this full directory. The private publisher first
 derives a bounded candidate set strictly from the already sanitized rows.
 Every row with a non-empty allowed `entities` list is retained, followed by at
 most 30 entity-free representative rows per course in source order. The result
-must cover all 43 courses and is capped at 5,000 rows and 2 MiB. It cannot add
+must cover all 44 courses and is capped at 5,000 rows and 2 MiB. It cannot add
 fields or values that were absent from the sanitized directory.
 
 The live lookup is a private R2 v2 direct-bucket index rooted at
