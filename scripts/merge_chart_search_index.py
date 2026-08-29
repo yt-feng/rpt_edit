@@ -21,10 +21,11 @@ BANK_ALIASES = (
     "ms", "db", "barc", "jef", "nom",
 )
 REPORT_PREVIEW_FIELDS = (
-    "title_zh", "filename", "date_folder", "bank_code", "bank_name",
+    "title_zh", "filename", "bank_code", "bank_name",
     "size_bytes", "available", "industry", "sector", "category",
     "pdf_archived", "page_count",
 )
+CATALOG_DATE_FOLDER_FIELD = "catalog_date_folder"
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -119,12 +120,21 @@ def reconcile_report_ids(chart_index: dict[str, Any], catalog: dict[str, Any]) -
         catalog_item = catalog_by_id.get(report_id)
         if not catalog_item:
             # A chart record outside the current catalog has no trustworthy PDF state.
+            report.pop(CATALOG_DATE_FOLDER_FIELD, None)
             report.pop("available", None)
             report.pop("pdf_archived", None)
             continue
         canonical_title = clean_text(catalog_item.get("title") or catalog_item.get("filename"), 300)
         if canonical_title:
             report["title"] = canonical_title
+        # date_folder is the immutable chart acquisition/source date.  Catalog
+        # metadata can point at an older canonical report date, so publish it
+        # separately instead of rewriting the chart timeline.
+        catalog_date_folder = clean_text(catalog_item.get("date_folder"), 16)
+        if catalog_date_folder:
+            report[CATALOG_DATE_FOLDER_FIELD] = catalog_date_folder
+        else:
+            report.pop(CATALOG_DATE_FOLDER_FIELD, None)
         for key in REPORT_PREVIEW_FIELDS:
             value = catalog_item.get(key)
             if key in {"available", "pdf_archived"} and not isinstance(value, bool):

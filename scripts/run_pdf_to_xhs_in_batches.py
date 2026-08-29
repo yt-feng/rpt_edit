@@ -25,6 +25,7 @@ from typing import Any
 
 PDFRecord = tuple[int, Path]
 REPORT_MARKERS = {"note.md", "wechat_article.md"}
+CHART_SOURCE_MARKERS = {"source_mineru.md", "status.json"}
 
 
 def log(message: str) -> None:
@@ -82,28 +83,35 @@ def expected_item_dir(output_dir: Path, pdf: Path, index: int) -> Path:
     return output_dir / slug(unique_batch_name(pdf, index))
 
 
-def is_already_converted(item_dir: Path) -> bool:
-    required = ["source_mineru.md", "note.md", "wechat_article.md"]
+def is_already_converted(item_dir: Path, *, chart_source_only: bool = False) -> bool:
+    required = CHART_SOURCE_MARKERS if chart_source_only else {"source_mineru.md", *REPORT_MARKERS}
     return item_dir.is_dir() and all((item_dir / name).exists() for name in required)
 
 
-def count_generated_report_dirs(output_dir: Path) -> int:
+def count_generated_report_dirs(output_dir: Path, *, chart_source_only: bool = False) -> int:
     if not output_dir.exists():
         return 0
+    markers = CHART_SOURCE_MARKERS if chart_source_only else REPORT_MARKERS
     return sum(
         1 for path in output_dir.iterdir()
-        if path.is_dir() and all((path / marker).exists() for marker in REPORT_MARKERS)
+        if path.is_dir() and all((path / marker).exists() for marker in markers)
     )
 
 
-def split_existing(records: list[PDFRecord], output_dir: Path, skip_existing: bool) -> tuple[list[PDFRecord], list[dict[str, str]]]:
+def split_existing(
+    records: list[PDFRecord],
+    output_dir: Path,
+    skip_existing: bool,
+    *,
+    chart_source_only: bool = False,
+) -> tuple[list[PDFRecord], list[dict[str, str]]]:
     if not skip_existing:
         return records, []
     todo: list[PDFRecord] = []
     skipped: list[dict[str, str]] = []
     for index, pdf in records:
         item_dir = expected_item_dir(output_dir, pdf, index)
-        if is_already_converted(item_dir):
+        if is_already_converted(item_dir, chart_source_only=chart_source_only):
             log(f"Skipping already converted PDF: {pdf.name} -> {item_dir}")
             skipped.append({"source": str(pdf), "expected_item_dir": str(item_dir), "reason": "already_converted"})
         else:
@@ -149,6 +157,8 @@ def build_child_command(args: argparse.Namespace, tmp_input: Path) -> list[str]:
     ]
     if not args.wechat_title_refine:
         cmd.append("--no-wechat-title-refine")
+    if args.chart_source_only:
+        cmd.append("--chart-source-only")
     return cmd
 
 
@@ -185,6 +195,7 @@ def write_empty_summary(output_dir: Path, input_dir: Path, args: argparse.Namesp
         "max_reports_per_shard": int(args.max_reports_per_shard),
         "max_total_reports": int(args.max_total_reports),
         "skip_existing": as_bool(args.skip_existing),
+        "chart_source_only": bool(args.chart_source_only),
         "skipped_existing_count": len(skipped or []),
         "skipped_existing": skipped or [],
         "failures": 0,
@@ -204,6 +215,11 @@ def main() -> int:
     parser.add_argument("--max-reports-per-shard", type=int, default=0)
     parser.add_argument("--max-total-reports", type=int, default=0)
     parser.add_argument("--skip-existing", default="true")
+    parser.add_argument(
+        "--chart-source-only",
+        action="store_true",
+        help="Retain only MinerU source markdown and source chart images.",
+    )
 
     parser.add_argument("--prompt-template", default="prompts/xhs_report_note_prompt.md")
     parser.add_argument("--wechat-prompt-template", default="prompts/wechat_report_article_prompt.md")
@@ -249,7 +265,12 @@ def main() -> int:
         return 0
 
     records: list[PDFRecord] = [(idx + 1, pdf) for idx, pdf in enumerate(sharded_pdfs)]
-    records, skipped_existing = split_existing(records, output_dir, skip_existing=as_bool(args.skip_existing))
+    records, skipped_existing = split_existing(
+        records,
+        output_dir,
+        skip_existing=as_bool(args.skip_existing),
+        chart_source_only=args.chart_source_only,
+    )
     if not records:
         log(f"Shard {args.shard_index}/{args.shard_count}: all {len(sharded_pdfs)} PDFs are already converted. Skipping MinerU.")
         write_empty_summary(output_dir, input_dir, args, total_pdf_count=len(all_pdfs), skipped=skipped_existing)
@@ -286,7 +307,10 @@ def main() -> int:
             if not continue_on_error:
                 break
 
-    generated_report_count = count_generated_report_dirs(output_dir)
+    generated_report_count = count_generated_report_dirs(
+        output_dir,
+        chart_source_only=args.chart_source_only,
+    )
 
     write_summary(output_dir, {
         "input_dir": str(input_dir),
@@ -300,6 +324,7 @@ def main() -> int:
         "max_reports_per_shard": int(args.max_reports_per_shard),
         "max_total_reports": int(args.max_total_reports),
         "skip_existing": as_bool(args.skip_existing),
+        "chart_source_only": bool(args.chart_source_only),
         "skipped_existing_count": len(skipped_existing),
         "skipped_existing": skipped_existing,
         "failures": failures,

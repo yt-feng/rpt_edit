@@ -1,0 +1,337 @@
+name: Portal chart historical backfill
+run-name: Chart-only backfill ${{ inputs.date_folder }} from run ${{ inputs.source_artifact_run_id }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_artifact_run_id:
+        description: "Actions run id containing selected-macro-pdfs-RUN_ID"
+        required: true
+        default: "31454655825"
+        type: string
+      date_folder:
+        description: "Exact 6-8 digit source date folder"
+        required: true
+        default: "260810"
+        type: string
+      expected_pdf_count:
+        description: "Exact PDF count; the run stops if the artifact or manifest differs"
+        required: true
+        default: "36"
+        type: string
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: portal-chart-historical-backfill-${{ inputs.date_folder }}
+  cancel-in-progress: false
+
+env:
+  PYTHONUNBUFFERED: "1"
+  PRIVATE_HANDOFF_ROOT: "_private-workflow-handoff/xhs"
+  BACKFILL_REPORTS_PER_SHARD: "5"
+  BACKFILL_BATCH_SIZE: "5"
+
+jobs:
+  validate-source:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    outputs:
+      pdf_count: ${{ steps.validate.outputs.pdf_count }}
+      effective_shard_count: ${{ steps.validate.outputs.effective_shard_count }}
+      shard_indices: ${{ steps.validate.outputs.shard_indices }}
+    steps:
+      - name: Validate immutable source selection
+        env:
+          SOURCE_RUN_ID: ${{ inputs.source_artifact_run_id }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_PDF_COUNT: ${{ inputs.expected_pdf_count }}
+        run: |
+          set -euo pipefail
+          printf '%s' "$SOURCE_RUN_ID" | grep -Eq '^[1-9][0-9]*$'
+          printf '%s' "$DATE_FOLDER" | grep -Eq '^[0-9]{6,8}$'
+          printf '%s' "$EXPECTED_PDF_COUNT" | grep -Eq '^[1-9][0-9]{0,2}$'
+          if [ "$EXPECTED_PDF_COUNT" -gt 200 ]; then
+            echo "::error::expected_pdf_count must not exceed 200."
+            exit 1
+          fi
+
+      - name: Checkout chart backfill source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .github
+            scripts
+            requirements.txt
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install source validation dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements.txt
+
+      - name: Test chart-only backfill contract
+        run: python scripts/test_chart_historical_backfill.py
+
+      - name: Download historical selected PDFs
+        uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.source_artifact_run_id }}
+          name: selected-macro-pdfs-${{ inputs.source_artifact_run_id }}
+          path: _selected_macro_pdfs
+
+      - name: Validate PDF bytes, manifest, date, and exact count
+        id: validate
+        run: |
+          set -euo pipefail
+          python scripts/validate_chart_historical_backfill.py source \
+            --artifact-root _selected_macro_pdfs \
+            --date-folder "${{ inputs.date_folder }}" \
+            --expected-pdf-count "${{ inputs.expected_pdf_count }}" \
+            --reports-per-shard "$BACKFILL_REPORTS_PER_SHARD" \
+            --inventory _selected_macro_pdfs/chart_backfill_source_inventory.json \
+            --github-output "$GITHUB_OUTPUT"
+
+      - name: Re-seal validated source PDFs for future retries
+        uses: actions/upload-artifact@v4
+        with:
+          name: selected-macro-pdfs-${{ github.run_id }}
+          path: _selected_macro_pdfs
+          if-no-files-found: error
+          retention-days: 90
+          overwrite: true
+
+  process-shard:
+    needs: validate-source
+    runs-on: ubuntu-22.04
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        shard_index: ${{ fromJSON(needs.validate-source.outputs.shard_indices) }}
+    steps:
+      - name: Checkout chart-only parser
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .github
+            scripts
+            prompts
+            requirements.txt
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install MinerU and private handoff dependencies
+        run: |
+          python -m pip install --disable-pip-version-check -r requirements.txt
+          python -m pip install --disable-pip-version-check "boto3>=1.34,<2"
+
+      - name: Download re-sealed source PDFs
+        uses: actions/download-artifact@v4
+        with:
+          name: selected-macro-pdfs-${{ github.run_id }}
+          path: _selected_macro_pdfs
+
+      - name: Validate and mask private runtime configuration
+        env:
+          MINER_U: ${{ secrets.MINER_U }}
+          MINER_U_2: ${{ secrets.MINER_U_2 }}
+          MINER_U_3: ${{ secrets.MINER_U_3 }}
+          MINER_U_4: ${{ secrets.MINER_U_4 }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          set -euo pipefail
+          MINERU_FOUND=0
+          for name in MINER_U MINER_U_2 MINER_U_3 MINER_U_4; do
+            value="${!name:-}"
+            if [ -n "$value" ]; then
+              echo "::add-mask::$value"
+              MINERU_FOUND=1
+            fi
+          done
+          if [ "$MINERU_FOUND" != "1" ]; then
+            echo "::error::At least one MinerU credential is required."
+            exit 1
+          fi
+          for name in R2_ACCOUNT_ID R2_ACCESS_KEY_ID R2_SECRET_ACCESS_KEY R2_BUCKET; do
+            value="${!name:-}"
+            if [ -z "$value" ]; then
+              echo "::error::Missing required private handoff configuration: $name"
+              exit 1
+            fi
+            echo "::add-mask::$value"
+          done
+
+      - name: Extract MinerU chart sources only
+        id: extract
+        env:
+          MINER_U: ${{ secrets.MINER_U }}
+          MINER_U_2: ${{ secrets.MINER_U_2 }}
+          MINER_U_3: ${{ secrets.MINER_U_3 }}
+          MINER_U_4: ${{ secrets.MINER_U_4 }}
+          MINER_U_TOKEN_OFFSET: ${{ matrix.shard_index }}
+        run: |
+          set -euo pipefail
+          OUTPUT_ROOT="_chart_publish_ready/${{ inputs.date_folder }}/shard_${{ matrix.shard_index }}"
+          echo "output_root=$OUTPUT_ROOT" >> "$GITHUB_OUTPUT"
+          python scripts/run_pdf_to_xhs_in_batches.py \
+            --input-dir _selected_macro_pdfs \
+            --output-dir "$OUTPUT_ROOT" \
+            --batch-size "$BACKFILL_BATCH_SIZE" \
+            --continue-on-batch-error false \
+            --shard-index "${{ matrix.shard_index }}" \
+            --shard-count "${{ needs.validate-source.outputs.effective_shard_count }}" \
+            --max-reports-per-shard "$BACKFILL_REPORTS_PER_SHARD" \
+            --max-total-reports "${{ inputs.expected_pdf_count }}" \
+            --skip-existing false \
+            --chart-source-only \
+            --mineru-model vlm \
+            --language en \
+            --ocr true \
+            --max-images 8 \
+            --poll-timeout 3600 \
+            --mineru-retries 1 \
+            --mineru-no-progress-timeout 600
+
+      - name: Validate complete private shard output
+        run: |
+          set -euo pipefail
+          python scripts/validate_chart_historical_backfill.py shard \
+            --output-root "${{ steps.extract.outputs.output_root }}" \
+            --date-folder "${{ inputs.date_folder }}" \
+            --expected-pdf-count "${{ inputs.expected_pdf_count }}" \
+            --reports-per-shard "$BACKFILL_REPORTS_PER_SHARD" \
+            --shard-index "${{ matrix.shard_index }}" \
+            --inventory "${{ steps.extract.outputs.output_root }}/validated_chart_shard_inventory.json"
+
+      - name: Upload validated shard to private R2 handoff
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          set -euo pipefail
+          python scripts/private_workflow_handoff.py upload-dir \
+            --source "${{ steps.extract.outputs.output_root }}" \
+            --key "$PRIVATE_HANDOFF_ROOT/${{ github.run_id }}/${{ inputs.date_folder }}/shard_${{ matrix.shard_index }}.tar.gz"
+
+      - name: Upload non-sensitive shard diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: chart-backfill-diagnostics-${{ inputs.date_folder }}-${{ matrix.shard_index }}-${{ github.run_id }}
+          path: |
+            _chart_publish_ready/${{ inputs.date_folder }}/shard_${{ matrix.shard_index }}/batch_run_summary.json
+            _chart_publish_ready/${{ inputs.date_folder }}/shard_${{ matrix.shard_index }}/summary.json
+            _chart_publish_ready/${{ inputs.date_folder }}/shard_${{ matrix.shard_index }}/mineru_attempts_summary.json
+            _chart_publish_ready/${{ inputs.date_folder }}/shard_${{ matrix.shard_index }}/validated_chart_shard_inventory.json
+            _chart_publish_ready/${{ inputs.date_folder }}/shard_${{ matrix.shard_index }}/*/status.json
+          if-no-files-found: warn
+          retention-days: 30
+          overwrite: true
+
+  dispatch-chart-index:
+    needs: [validate-source, process-shard]
+    runs-on: ubuntu-22.04
+    timeout-minutes: 330
+    steps:
+      - name: Checkout backfill verification and cleanup helpers
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            scripts/private_workflow_handoff.py
+            scripts/validate_chart_historical_backfill.py
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Download every validated shard inventory
+        uses: actions/download-artifact@v4
+        with:
+          pattern: chart-backfill-diagnostics-${{ inputs.date_folder }}-*-${{ github.run_id }}
+          path: _chart_backfill_inventories
+          merge-multiple: false
+
+      - name: Require complete aggregate chart-source coverage
+        run: |
+          set -euo pipefail
+          python scripts/validate_chart_historical_backfill.py aggregate \
+            --inventory-root _chart_backfill_inventories \
+            --date-folder "${{ inputs.date_folder }}" \
+            --expected-pdf-count "${{ inputs.expected_pdf_count }}" \
+            --expected-shards "${{ needs.validate-source.outputs.effective_shard_count }}" \
+            --inventory _chart_backfill_aggregate/validated_chart_backfill_aggregate.json
+
+      - name: Upload aggregate validation summary
+        uses: actions/upload-artifact@v4
+        with:
+          name: chart-backfill-aggregate-${{ inputs.date_folder }}-${{ github.run_id }}
+          path: _chart_backfill_aggregate/validated_chart_backfill_aggregate.json
+          if-no-files-found: error
+          retention-days: 30
+          overwrite: true
+
+      - name: Dispatch existing append-only chart indexer
+        id: dispatch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          RUN_URL="$(gh workflow run portal-chart-search-index.yml \
+            --repo "$GITHUB_REPOSITORY" \
+            --ref main \
+            -f date_folder="${{ inputs.date_folder }}" \
+            -f source_handoff_run_id="${{ github.run_id }}" \
+            -f expected_shards="${{ needs.validate-source.outputs.effective_shard_count }}" \
+            -f max_images=0 \
+            -f retry_errors_now=true)"
+          CHART_RUN_ID="${RUN_URL##*/}"
+          if ! printf '%s' "$CHART_RUN_ID" | grep -Eq '^[1-9][0-9]*$'; then
+            echo "::error::Unable to resolve the dispatched chart index run."
+            exit 1
+          fi
+          echo "chart_run_id=$CHART_RUN_ID" >> "$GITHUB_OUTPUT"
+          echo "::notice::Waiting for chart index run $CHART_RUN_ID."
+          gh run watch "$CHART_RUN_ID" \
+            --repo "$GITHUB_REPOSITORY" \
+            --compact \
+            --exit-status \
+            --interval 15
+
+      - name: Install private handoff dependency
+        run: python -m pip install --disable-pip-version-check "boto3>=1.34,<2"
+
+      - name: Delete only the consumed temporary handoff
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          set -euo pipefail
+          python scripts/private_workflow_handoff.py delete-prefix \
+            --prefix "$PRIVATE_HANDOFF_ROOT/${{ github.run_id }}/${{ inputs.date_folder }}"

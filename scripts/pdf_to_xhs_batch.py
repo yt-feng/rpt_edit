@@ -547,6 +547,18 @@ def create_visual_assets(result_dir: Path, pdf_path: Path, assets_dir: Path, max
     return cards
 
 
+def create_chart_source_assets(result_dir: Path, assets_dir: Path, max_images: int) -> list[str]:
+    """Keep only the original chart candidates needed by the chart indexer."""
+    assets_dir.mkdir(parents=True, exist_ok=True)
+    images = [p for p in result_dir.rglob("*") if p.is_file() and p.suffix.lower() in IMAGE_SUFFIXES]
+    copied: list[str] = []
+    for index, image in enumerate(select_chart_images(images, max_images), 1):
+        target = assets_dir / f"source_image_{index:02d}{image.suffix.lower()}"
+        shutil.copy2(image, target)
+        copied.append(str(target.relative_to(assets_dir.parent)))
+    return copied
+
+
 def trim_source_text(source_text: str, prompt_chars: int) -> str:
     source_text = re.sub(r"\n{3,}", "\n\n", source_text).strip()
     if len(source_text) > prompt_chars:
@@ -892,8 +904,9 @@ def make_cover(pdf_path: Path, cover_path: Path, title: str, subtitle: str, wate
 def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, args: argparse.Namespace) -> dict[str, Any]:
     state = str(result_row.get("state", "")).lower()
     fallback_title = slug(pdf_path.name)[:18]
+    chart_source_only = bool(getattr(args, "chart_source_only", False))
     status: dict[str, Any] = {
-        "source_pdf": str(pdf_path),
+        "source_pdf": pdf_path.name if chart_source_only else str(pdf_path),
         "mineru_state": result_row.get("state"),
         "mineru_error": result_row.get("err_msg") or result_row.get("error") or "",
     }
@@ -909,12 +922,35 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
     download_and_unzip(result_row["full_zip_url"], raw_dir)
     markdown_path = find_markdown(raw_dir)
     if not markdown_path:
-        status["images"] = create_visual_assets(raw_dir, pdf_path, assets_dir, args.max_images, title=fallback_title)
-        status["error"] = "MinerU result zip did not contain markdown. Visual cards may still have been generated."
+        if chart_source_only:
+            status["chart_source_only"] = True
+            status["images"] = create_chart_source_assets(raw_dir, assets_dir, args.max_images)
+            status["chart_source_image_count"] = len(status["images"])
+            shutil.rmtree(raw_dir)
+        else:
+            status["images"] = create_visual_assets(
+                raw_dir,
+                pdf_path,
+                assets_dir,
+                args.max_images,
+                title=fallback_title,
+            )
+        status["error"] = "MinerU result zip did not contain markdown."
         (item_dir / "status.json").write_text(json.dumps(status, ensure_ascii=False, indent=2), encoding="utf-8")
         return status
     source_text = markdown_path.read_text(encoding="utf-8", errors="ignore")
     (item_dir / "source_mineru.md").write_text(source_text, encoding="utf-8")
+    if chart_source_only:
+        status["chart_source_only"] = True
+        status["source_markdown"] = "source_mineru.md"
+        status["images"] = create_chart_source_assets(raw_dir, assets_dir, args.max_images)
+        status["chart_source_image_count"] = len(status["images"])
+        shutil.rmtree(raw_dir)
+        (item_dir / "status.json").write_text(
+            json.dumps(status, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+        return status
     institution_name = infer_institution_name(pdf_path.name, status.get("source_pdf"), source_text[:2000])
     if institution_name:
         status["institution_name"] = institution_name
@@ -1030,6 +1066,11 @@ def build_arg_parser() -> argparse.ArgumentParser:
                         help="Skip filename-anchored DeepSeek fine-tuning and use the deterministic filename fallback.")
     parser.set_defaults(wechat_title_refine=True)
     parser.add_argument(
+        "--chart-source-only",
+        action="store_true",
+        help="Run MinerU and retain source markdown/chart images without generating XHS or WeChat content.",
+    )
+    parser.add_argument(
         "--community-cta",
         default=(
             "更新信息参见portal.example.invalid"
@@ -1115,7 +1156,7 @@ def main() -> int:
             if not row:
                 last_row = latest_rows.get(pdf_path, {})
                 status = {
-                    "source_pdf": str(pdf_path),
+                    "source_pdf": pdf_path.name if args.chart_source_only else str(pdf_path),
                     "mineru_state": last_row.get("state") or "not_returned",
                     "mineru_error": last_row.get("err_msg") or last_row.get("error") or "",
                     "error": f"MinerU did not finish successfully after {attempt} attempt(s).",
@@ -1127,7 +1168,7 @@ def main() -> int:
                 status = process_pdf(pdf_path, row, output_dir, args)
             except Exception as exc:
                 status = {
-                    "source_pdf": str(pdf_path),
+                    "source_pdf": pdf_path.name if args.chart_source_only else str(pdf_path),
                     "mineru_state": row.get("state"),
                     "mineru_error": row.get("err_msg") or row.get("error") or "",
                     "error": f"Report generation failed: {exc}",
@@ -1140,8 +1181,11 @@ def main() -> int:
                 )
                 log(f"Report generation failed for {pdf_path.name}; continuing with the next PDF: {exc}")
             summary.append(status)
-            if not status.get("error") and status.get("wechat_article") == "wechat_article.md":
-                successful_reports += 1
+            if not status.get("error"):
+                if args.chart_source_only and status.get("chart_source_only") is True:
+                    successful_reports += 1
+                elif status.get("wechat_article") == "wechat_article.md":
+                    successful_reports += 1
         (output_dir / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
         (output_dir / "mineru_attempts_summary.json").write_text(
             json.dumps(attempt_summaries, ensure_ascii=False, indent=2),
@@ -1152,6 +1196,8 @@ def main() -> int:
             f"successful_reports={successful_reports}; mineru_timed_out={mineru_timed_out}; "
             f"mineru_attempts={len(attempt_summaries)}"
         )
+        if args.chart_source_only:
+            return 0 if successful_reports == len(pdfs) else 2
         return 0 if successful_reports else 2
     except Exception as exc:
         print(f"ERROR: {exc}", file=sys.stderr)

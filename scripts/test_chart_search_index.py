@@ -826,7 +826,52 @@ class ChartSearchIndexTests(unittest.TestCase):
             self.assertEqual(client.calls[0]["Key"], "_chart-search/v1/state.json")
             self.assertEqual(client.calls[0]["CacheControl"], "private, no-store")
 
-    def test_publish_defaults_to_schema_hygiene_without_cleanup(self) -> None:
+    def test_schema_hygiene_removal_fails_before_r2_client(self) -> None:
+        legacy_id = "d" * 64
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            state_path = root / "state.json"
+            index_path = root / "index.json"
+            asset_dir = root / "images"
+            asset_dir.mkdir()
+            state_path.write_text(json.dumps({
+                "schema_version": 1,
+                "analysis_version": "chart-search-v2",
+                "items": {},
+            }), encoding="utf-8")
+            original = {
+                "schema_version": 1,
+                "report_count": 1,
+                "item_count": 1,
+                "reports": [{
+                    "report_ref": "legacy",
+                    "date_folder": "260811",
+                    "chart_count": 1,
+                    "charts": [{
+                        "analysis_version": "chart-search-v1",
+                        "image_id": legacy_id,
+                    }],
+                }],
+            }
+            index_path.write_text(json.dumps(original), encoding="utf-8")
+            args = SimpleNamespace(
+                prefix="_chart-search/v1",
+                state=str(state_path),
+                index=str(index_path),
+                previous_index="",
+                asset_dir=str(asset_dir),
+                cleanup=False,
+                allow_index_removal_migration=False,
+            )
+
+            with patch.object(r2, "client_and_bucket") as client_and_bucket:
+                with self.assertRaisesRegex(RuntimeError, "schema hygiene would remove 1"):
+                    r2.command_publish(args)
+
+            client_and_bucket.assert_not_called()
+            self.assertEqual(json.loads(index_path.read_text(encoding="utf-8")), original)
+
+    def test_explicit_schema_migration_filters_without_cleanup_or_delete(self) -> None:
         v1_id = "d" * 64
         v2_id = "e" * 64
         unreferenced_id = "f" * 64
@@ -858,6 +903,7 @@ class ChartSearchIndexTests(unittest.TestCase):
             root = Path(temp)
             state_path = root / "state.json"
             index_path = root / "index.json"
+            previous_path = root / "previous-index.json"
             asset_dir = root / "images"
             asset_dir.mkdir()
             state_path.write_text(json.dumps({
@@ -881,6 +927,7 @@ class ChartSearchIndexTests(unittest.TestCase):
                     ],
                 }],
             }), encoding="utf-8")
+            previous_path.write_text(json.dumps(r2.default_document("index")), encoding="utf-8")
             for image_id in (v1_id, v2_id, unreferenced_id):
                 (asset_dir / f"{image_id}.jpg").write_bytes(b"jpeg")
 
@@ -889,7 +936,10 @@ class ChartSearchIndexTests(unittest.TestCase):
                 prefix="_chart-search/v1",
                 state=str(state_path),
                 index=str(index_path),
+                previous_index=str(previous_path),
                 asset_dir=str(asset_dir),
+                cleanup=False,
+                allow_index_removal_migration=True,
                 max_storage_bytes=1,
             )
             with patch.object(r2, "client_and_bucket", return_value=(client, "private-bucket")):
@@ -899,10 +949,15 @@ class ChartSearchIndexTests(unittest.TestCase):
             self.assertEqual(published["item_count"], 1)
             self.assertEqual(published["reports"][0]["charts"][0]["image_id"], v2_id)
             self.assertEqual(client.uploaded, [f"_chart-search/v1/images/{v2_id}.jpg"])
-            self.assertEqual([row["Key"] for row in client.puts], [
-                "_chart-search/v1/state.json",
-                "_chart-search/v1/index.json",
-            ])
+            put_keys = [row["Key"] for row in client.puts]
+            self.assertEqual(put_keys[0], "_chart-search/v1/state.json")
+            self.assertRegex(
+                put_keys[1],
+                r"^_chart-search/v1/index-snapshots/sha256-[0-9a-f]{64}\.json$",
+            )
+            self.assertEqual(put_keys[2], "_chart-search/v1/index.json")
+            self.assertEqual(client.puts[1]["Body"], index_path.read_bytes())
+            self.assertEqual(client.puts[1]["CacheControl"], "private, max-age=31536000, immutable")
 
     def test_two_default_publishes_keep_old_index_record_and_old_r2_image(self) -> None:
         old_id = "1" * 64
@@ -952,6 +1007,7 @@ class ChartSearchIndexTests(unittest.TestCase):
             root = Path(temp)
             state_path = root / "state.json"
             index_path = root / "index.json"
+            previous_path = root / "previous-index.json"
             first_assets = root / "first-images"
             second_assets = root / "second-images"
             first_assets.mkdir()
@@ -964,6 +1020,7 @@ class ChartSearchIndexTests(unittest.TestCase):
             (first_assets / f"{old_id}.jpg").write_bytes(b"old jpeg")
             (second_assets / f"{new_id}.jpg").write_bytes(b"new jpeg")
             client = FakeClient()
+            previous_path.write_text(json.dumps(r2.default_document("index")), encoding="utf-8")
 
             first_index = {
                 "schema_version": 1,
@@ -977,9 +1034,13 @@ class ChartSearchIndexTests(unittest.TestCase):
                     prefix="_chart-search/v1",
                     state=str(state_path),
                     index=str(index_path),
+                    previous_index=str(previous_path),
                     asset_dir=str(first_assets),
+                    cleanup=False,
+                    allow_index_removal_migration=False,
                 )), 0)
 
+            previous_path.write_text(json.dumps(first_index), encoding="utf-8")
             second_index = {
                 "schema_version": 1,
                 "report_count": 2,
@@ -995,7 +1056,10 @@ class ChartSearchIndexTests(unittest.TestCase):
                     prefix="_chart-search/v1",
                     state=str(state_path),
                     index=str(index_path),
+                    previous_index=str(previous_path),
                     asset_dir=str(second_assets),
+                    cleanup=False,
+                    allow_index_removal_migration=False,
                 )), 0)
 
             published = json.loads(index_path.read_text(encoding="utf-8"))
@@ -1015,18 +1079,389 @@ class ChartSearchIndexTests(unittest.TestCase):
         ]
         with patch.object(sys, "argv", required):
             self.assertFalse(r2.parse_args().cleanup)
+            self.assertFalse(r2.parse_args().allow_index_removal_migration)
         with patch.object(sys, "argv", [*required, "--cleanup"]):
             self.assertTrue(r2.parse_args().cleanup)
+        with patch.object(sys, "argv", [*required, "--allow-index-removal-migration"]):
+            self.assertTrue(r2.parse_args().allow_index_removal_migration)
 
-    def test_publish_cleanup_flag_opts_into_budget_enforcement(self) -> None:
-        class FakeClient:
-            def put_object(self, **_kwargs) -> None:
-                pass
+    def test_publish_coverage_rejects_count_and_oldest_date_regressions(self) -> None:
+        image_id = "9" * 64
+
+        def index(dates: list[str]) -> dict:
+            reports = [
+                {
+                    "report_ref": f"report-{offset}",
+                    "date_folder": date_folder,
+                    "chart_count": 1,
+                    "charts": [{
+                        "analysis_version": "chart-search-v2",
+                        "image_id": image_id,
+                    }],
+                }
+                for offset, date_folder in enumerate(dates)
+            ]
+            return {
+                "schema_version": 1,
+                "report_count": len(reports),
+                "item_count": len(reports),
+                "reports": reports,
+            }
+
+        with self.assertRaisesRegex(RuntimeError, "item_count 2->1"):
+            r2.validate_publish_coverage(
+                index(["260801", "260802"]),
+                index(["260801"]),
+                allow_index_removal_migration=False,
+            )
+        with self.assertRaisesRegex(RuntimeError, "oldest_source_date 260801->260802"):
+            r2.validate_publish_coverage(
+                index(["260801"]),
+                index(["260802"]),
+                allow_index_removal_migration=False,
+            )
+
+    def test_previous_live_schema_removal_requires_explicit_migration(self) -> None:
+        legacy_id = "6" * 64
+        current_id = "7" * 64
+        previous = {
+            "schema_version": 1,
+            "report_count": 1,
+            "item_count": 1,
+            "reports": [{
+                "report_ref": "legacy",
+                "date_folder": "",
+                "chart_count": 1,
+                "charts": [{
+                    "analysis_version": "chart-search-v1",
+                    "image_id": legacy_id,
+                }],
+            }],
+        }
+        candidate = {
+            "schema_version": 1,
+            "report_count": 1,
+            "item_count": 1,
+            "reports": [{
+                "report_ref": "current",
+                "date_folder": "260801",
+                "chart_count": 1,
+                "charts": [{
+                    "analysis_version": "chart-search-v2",
+                    "image_id": current_id,
+                }],
+            }],
+        }
+        with self.assertRaisesRegex(RuntimeError, "previous_live_schema_records=1"):
+            r2.validate_publish_coverage(
+                previous,
+                candidate,
+                allow_index_removal_migration=False,
+            )
+        summary = r2.validate_publish_coverage(
+            previous,
+            candidate,
+            allow_index_removal_migration=True,
+        )
+        self.assertEqual(summary["previous_live_schema_records"], 1)
+        self.assertTrue(summary["coverage_regression_allowed"])
+
+    def test_report_image_association_date_floor_and_duplicates_are_preserved(self) -> None:
+        image_a = "4" * 64
+        image_b = "5" * 64
+
+        def report(report_id: str, date_folder: str, image_ids: list[str]) -> dict:
+            return {
+                "report_id": report_id,
+                "report_ref": f"ref-{report_id}",
+                "date_folder": date_folder,
+                "chart_count": len(image_ids),
+                "charts": [
+                    {
+                        "analysis_version": "chart-search-v2",
+                        "image_id": image_id,
+                    }
+                    for image_id in image_ids
+                ],
+            }
+
+        def index(reports: list[dict]) -> dict:
+            return {
+                "schema_version": 1,
+                "report_count": len(reports),
+                "item_count": sum(len(row["charts"]) for row in reports),
+                "reports": reports,
+            }
+
+        previous = index([
+            report("dated-report", "260811", [image_a]),
+            report("global-oldest", "260801", [image_b]),
+        ])
+        moved_later = index([
+            report("dated-report", "260828", [image_a]),
+            report("global-oldest", "260801", [image_b]),
+        ])
+        self.assertEqual(previous["item_count"], moved_later["item_count"])
+        self.assertEqual(
+            r2.referenced_v2_image_counts(previous),
+            r2.referenced_v2_image_counts(moved_later),
+        )
+        self.assertEqual(
+            r2.oldest_index_source_date(previous),
+            r2.oldest_index_source_date(moved_later),
+        )
+        with self.assertRaisesRegex(
+            RuntimeError,
+            "report_image_association_dates_moved_later=1",
+        ):
+            r2.validate_publish_coverage(
+                previous,
+                moved_later,
+                allow_index_removal_migration=False,
+            )
+
+        repeated_previous = index([
+            report("repeated-report", "260811", [image_a, image_a]),
+            report("global-oldest", "260801", [image_b]),
+        ])
+        moved_occurrence = index([
+            report("repeated-report", "260811", [image_a]),
+            report("different-report", "260811", [image_a]),
+            report("global-oldest", "260801", [image_b]),
+        ])
+        self.assertEqual(
+            r2.referenced_v2_image_counts(repeated_previous),
+            r2.referenced_v2_image_counts(moved_occurrence),
+        )
+        with self.assertRaisesRegex(
+            RuntimeError,
+            "previous_report_image_associations_missing=1",
+        ):
+            r2.validate_publish_coverage(
+                repeated_previous,
+                moved_occurrence,
+                allow_index_removal_migration=False,
+            )
+
+    def test_unresolved_report_ref_requires_bounded_explicit_candidate_alias(self) -> None:
+        legacy_ref = "a" * 24
+        canonical_ref = "b" * 24
+        image_id = "c" * 64
+
+        def index(*, report_id: str, report_ref: str, aliases=None) -> dict:
+            report = {
+                "report_id": report_id,
+                "report_ref": report_ref,
+                "date_folder": "260811",
+                "chart_count": 1,
+                "charts": [{
+                    "analysis_version": "chart-search-v2",
+                    "image_id": image_id,
+                }],
+            }
+            if aliases is not None:
+                report["report_ref_aliases"] = aliases
+            return {
+                "schema_version": 1,
+                "report_count": 1,
+                "item_count": 1,
+                "reports": [report],
+            }
+
+        previous = index(report_id="", report_ref=legacy_ref)
+        resolved_with_alias = index(
+            report_id="resolved-report",
+            report_ref=canonical_ref,
+            aliases=[legacy_ref, legacy_ref],
+        )
+        summary = r2.validate_publish_coverage(
+            previous,
+            resolved_with_alias,
+            allow_index_removal_migration=False,
+        )
+        self.assertFalse(summary["coverage_regression_allowed"])
+
+        with self.assertRaisesRegex(
+            RuntimeError,
+            "previous_report_image_associations_missing=1",
+        ):
+            r2.validate_publish_coverage(
+                previous,
+                index(report_id="resolved-report", report_ref=canonical_ref),
+                allow_index_removal_migration=False,
+            )
+
+        previous_with_id = index(report_id="old-report-id", report_ref=legacy_ref)
+        with self.assertRaisesRegex(
+            RuntimeError,
+            "previous_report_image_associations_missing=1",
+        ):
+            r2.validate_publish_coverage(
+                previous_with_id,
+                index(
+                    report_id="different-report-id",
+                    report_ref=canonical_ref,
+                    aliases=[legacy_ref],
+                ),
+                allow_index_removal_migration=False,
+            )
+
+        second_legacy_ref = "d" * 24
+
+        def combined(*documents: dict) -> dict:
+            reports = [document["reports"][0] for document in documents]
+            return {
+                "schema_version": 1,
+                "report_count": len(reports),
+                "item_count": len(reports),
+                "reports": reports,
+            }
+
+        two_unresolved = combined(
+            previous,
+            index(report_id="", report_ref=second_legacy_ref),
+        )
+        one_aliased_plus_unrelated = combined(
+            index(
+                report_id="resolved-report",
+                report_ref=canonical_ref,
+                aliases=[legacy_ref, second_legacy_ref],
+            ),
+            index(report_id="unrelated-report", report_ref="e" * 24),
+        )
+        self.assertEqual(
+            r2.referenced_v2_image_counts(two_unresolved),
+            r2.referenced_v2_image_counts(one_aliased_plus_unrelated),
+        )
+        with self.assertRaisesRegex(
+            RuntimeError,
+            "previous_report_image_associations_missing=1",
+        ):
+            r2.validate_publish_coverage(
+                two_unresolved,
+                one_aliased_plus_unrelated,
+                allow_index_removal_migration=False,
+            )
+
+        historical_nonhex = index(report_id="", report_ref="legacy-human-ref")
+        r2.validate_publish_coverage(
+            historical_nonhex,
+            index(report_id="", report_ref="legacy-human-ref"),
+            allow_index_removal_migration=False,
+        )
+        for allow_migration in (False, True):
+            with self.assertRaisesRegex(RuntimeError, "candidate_report_ref_aliases_invalid=1"):
+                r2.validate_publish_coverage(
+                    historical_nonhex,
+                    index(
+                        report_id="resolved-report",
+                        report_ref=canonical_ref,
+                        aliases=["legacy-human-ref"],
+                    ),
+                    allow_index_removal_migration=allow_migration,
+                )
+        with self.assertRaisesRegex(RuntimeError, "candidate_report_ref_aliases_invalid=1"):
+            r2.validate_publish_coverage(
+                previous,
+                index(
+                    report_id="resolved-report",
+                    report_ref=canonical_ref,
+                    aliases=[f"{offset:024x}" for offset in range(33)],
+                ),
+                allow_index_removal_migration=False,
+            )
+
+    def test_same_count_replacement_cannot_hide_previous_v2_image_loss(self) -> None:
+        def index(image_id: str) -> dict:
+            return {
+                "schema_version": 1,
+                "report_count": 1,
+                "item_count": 1,
+                "reports": [{
+                    "report_ref": "report",
+                    "date_folder": "260801",
+                    "chart_count": 1,
+                    "charts": [{
+                        "analysis_version": "chart-search-v2",
+                        "image_id": image_id,
+                    }],
+                }],
+            }
+
+        with self.assertRaisesRegex(RuntimeError, "previous_v2_image_ids_missing=1"):
+            r2.validate_publish_coverage(
+                index("a" * 64),
+                index("b" * 64),
+                allow_index_removal_migration=False,
+            )
+        summary = r2.validate_publish_coverage(
+            index("a" * 64),
+            index("b" * 64),
+            allow_index_removal_migration=True,
+        )
+        self.assertTrue(summary["coverage_regression_allowed"])
 
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
             state_path = root / "state.json"
             index_path = root / "index.json"
+            previous_path = root / "previous-index.json"
+            asset_dir = root / "images"
+            asset_dir.mkdir()
+            state_path.write_text(json.dumps({
+                "schema_version": 1,
+                "analysis_version": "chart-search-v2",
+                "items": {},
+            }), encoding="utf-8")
+            previous_path.write_text(json.dumps(index("a" * 64)), encoding="utf-8")
+            index_path.write_text(json.dumps(index("b" * 64)), encoding="utf-8")
+            args = SimpleNamespace(
+                prefix="_chart-search/v1",
+                state=str(state_path),
+                index=str(index_path),
+                previous_index=str(previous_path),
+                asset_dir=str(asset_dir),
+                cleanup=False,
+                allow_index_removal_migration=False,
+            )
+            with patch.object(r2, "client_and_bucket") as client_and_bucket:
+                with self.assertRaisesRegex(RuntimeError, "previous_v2_image_ids_missing=1"):
+                    r2.command_publish(args)
+            client_and_bucket.assert_not_called()
+
+        repeated_previous = index("c" * 64)
+        repeated_previous["reports"].append({
+            **repeated_previous["reports"][0],
+            "report_ref": "report-duplicate",
+        })
+        repeated_previous["report_count"] = 2
+        repeated_previous["item_count"] = 2
+        repeated_candidate = json.loads(json.dumps(repeated_previous))
+        repeated_candidate["reports"][1]["charts"][0]["image_id"] = "d" * 64
+        with self.assertRaisesRegex(RuntimeError, "occurrences_missing=1"):
+            r2.validate_publish_coverage(
+                repeated_previous,
+                repeated_candidate,
+                allow_index_removal_migration=False,
+            )
+
+    def test_publish_cleanup_flag_opts_into_budget_enforcement(self) -> None:
+        class FakeClient:
+            def __init__(self) -> None:
+                self.events: list[str] = []
+
+            def put_object(self, **_kwargs) -> None:
+                self.events.append(f"put:{_kwargs['Key']}")
+
+            def delete_objects(self, **_kwargs) -> None:
+                keys = [row["Key"] for row in _kwargs["Delete"]["Objects"]]
+                self.events.extend(f"delete:{key}" for key in keys)
+
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            state_path = root / "state.json"
+            index_path = root / "index.json"
+            previous_path = root / "previous-index.json"
             asset_dir = root / "images"
             asset_dir.mkdir()
             state_path.write_text(json.dumps({
@@ -1040,28 +1475,125 @@ class ChartSearchIndexTests(unittest.TestCase):
                 "item_count": 0,
                 "reports": [],
             }), encoding="utf-8")
+            previous_path.write_text(json.dumps(r2.default_document("index")), encoding="utf-8")
             args = SimpleNamespace(
                 prefix="_chart-search/v1",
                 state=str(state_path),
                 index=str(index_path),
+                previous_index=str(previous_path),
                 asset_dir=str(asset_dir),
                 cleanup=True,
+                allow_index_removal_migration=False,
                 max_storage_bytes=1234,
             )
             client = FakeClient()
             with (
                 patch.object(r2, "client_and_bucket", return_value=(client, "private-bucket")),
-                patch.object(r2, "enforce_storage_budget", return_value={
+                patch.object(r2, "plan_storage_budget", return_value={
                     "images_evicted": 0,
                     "records_removed": 0,
-                }) as enforce,
+                    "evicted_keys": ["_chart-search/v1/images/orphan.jpg"],
+                }) as plan,
                 patch.object(r2, "prefix_size_bytes", return_value=100) as prefix_size,
             ):
                 self.assertEqual(r2.command_publish(args), 0)
 
-            enforce.assert_called_once()
-            self.assertEqual(enforce.call_args.kwargs["budget_bytes"], 1234)
+            plan.assert_called_once()
+            self.assertEqual(plan.call_args.kwargs["budget_bytes"], 1234)
+            self.assertEqual(plan.call_args.kwargs["asset_dir"], asset_dir)
+            self.assertEqual(plan.call_args.kwargs["state_path"], state_path)
             prefix_size.assert_called_once_with(client, "private-bucket", "_chart-search/v1")
+            snapshot_event = next(
+                event for event in client.events if "/index-snapshots/sha256-" in event
+            )
+            self.assertLess(client.events.index(snapshot_event), client.events.index(
+                "put:_chart-search/v1/index.json"
+            ))
+            self.assertLess(client.events.index(
+                "put:_chart-search/v1/index.json"
+            ), client.events.index("delete:_chart-search/v1/images/orphan.jpg"))
+
+    def test_cleanup_coverage_regression_fails_before_any_remote_mutation(self) -> None:
+        old_id = "7" * 64
+        new_id = "8" * 64
+
+        def report(report_ref: str, image_id: str, date_folder: str) -> dict:
+            return {
+                "report_ref": report_ref,
+                "date_folder": date_folder,
+                "chart_count": 1,
+                "charts": [{
+                    "analysis_version": "chart-search-v2",
+                    "image_id": image_id,
+                }],
+            }
+
+        class FakeClient:
+            def upload_file(self, *_args, **_kwargs) -> None:
+                raise AssertionError("coverage failure must happen before upload")
+
+            def put_object(self, **_kwargs) -> None:
+                raise AssertionError("coverage failure must happen before put")
+
+            def delete_objects(self, **_kwargs) -> None:
+                raise AssertionError("coverage failure must happen before delete")
+
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            state_path = root / "state.json"
+            index_path = root / "index.json"
+            previous_path = root / "previous-index.json"
+            asset_dir = root / "images"
+            asset_dir.mkdir()
+            state_path.write_text(json.dumps({
+                "schema_version": 1,
+                "analysis_version": "chart-search-v2",
+                "items": {},
+            }), encoding="utf-8")
+            previous = {
+                "schema_version": 1,
+                "report_count": 1,
+                "item_count": 1,
+                "reports": [report("old", old_id, "260801")],
+            }
+            candidate = {
+                "schema_version": 1,
+                "report_count": 2,
+                "item_count": 2,
+                "reports": [
+                    report("old", old_id, "260801"),
+                    report("new", new_id, "260802"),
+                ],
+            }
+            previous_path.write_text(json.dumps(previous), encoding="utf-8")
+            index_path.write_text(json.dumps(candidate), encoding="utf-8")
+
+            def plan(_client, _bucket, _prefix, planned_index, **_kwargs):
+                removed = r2.filter_index_images(planned_index, {new_id})
+                return {
+                    "images_evicted": 1,
+                    "records_removed": removed,
+                    "evicted_keys": [f"_chart-search/v1/images/{old_id}.jpg"],
+                }
+
+            args = SimpleNamespace(
+                prefix="_chart-search/v1",
+                state=str(state_path),
+                index=str(index_path),
+                previous_index=str(previous_path),
+                asset_dir=str(asset_dir),
+                cleanup=True,
+                allow_index_removal_migration=False,
+                max_storage_bytes=1234,
+            )
+            with (
+                patch.object(r2, "client_and_bucket", return_value=(FakeClient(), "private-bucket")),
+                patch.object(r2, "plan_storage_budget", side_effect=plan),
+            ):
+                with self.assertRaisesRegex(RuntimeError, "previous_v2_image_ids_missing=1"):
+                    r2.command_publish(args)
+
+            self.assertEqual(json.loads(index_path.read_text(encoding="utf-8")), candidate)
 
     def test_chart_storage_budget_evicts_unreferenced_then_oldest(self) -> None:
         old_id = "a" * 64
@@ -1107,6 +1639,11 @@ class ChartSearchIndexTests(unittest.TestCase):
                 self.rows = [
                     {"Key": "_chart-search/v1/state.json", "Size": 5, "LastModified": timestamp},
                     {"Key": "_chart-search/v1/index.json", "Size": 999, "LastModified": timestamp},
+                    {
+                        "Key": f"_chart-search/v1/index-snapshots/sha256-{'d' * 64}.json",
+                        "Size": 7,
+                        "LastModified": timestamp,
+                    },
                     {"Key": f"_chart-search/v1/images/{old_id}.jpg", "Size": 10, "LastModified": timestamp},
                     {"Key": f"_chart-search/v1/images/{new_id}.jpg", "Size": 10, "LastModified": timestamp},
                     {"Key": f"_chart-search/v1/images/{orphan_id}.jpg", "Size": 4, "LastModified": timestamp},
@@ -1123,7 +1660,9 @@ class ChartSearchIndexTests(unittest.TestCase):
 
         client = FakeClient()
         r2.filter_index_images(index, {old_id, new_id})
-        budget = r2.pretty_json_size(index) + 5 + 10
+        retained_index = json.loads(json.dumps(index))
+        r2.filter_index_images(retained_index, {new_id})
+        budget = (2 * r2.pretty_json_size(retained_index)) + 5 + 7 + 10
         result = r2.enforce_storage_budget(
             client,
             "private-bucket",
@@ -1138,6 +1677,10 @@ class ChartSearchIndexTests(unittest.TestCase):
         self.assertIn(f"_chart-search/v1/images/{old_id}.jpg", client.deleted)
         self.assertIn(f"_chart-search/v1/images/{orphan_id}.jpg", client.deleted)
         self.assertNotIn(f"_chart-search/v1/images/{new_id}.jpg", client.deleted)
+        self.assertNotIn(
+            f"_chart-search/v1/index-snapshots/sha256-{'d' * 64}.json",
+            client.deleted,
+        )
 
     def test_publish_filter_drops_every_legacy_v1_chart(self) -> None:
         v1_id = "e" * 64
@@ -1317,6 +1860,11 @@ class ChartSearchIndexTests(unittest.TestCase):
         )
         self.assertLess(recovery, strict_gate)
         self.assertLess(strict_gate, public_publish)
+        checkout = workflow[workflow.index("uses: actions/checkout@v4"):]
+        checkout = checkout.split("\n      - name:", 1)[0]
+        self.assertNotIn("ref: main", checkout)
+        self.assertIn("python scripts/test_chart_builder_source_dates.py", workflow)
+        self.assertIn("python scripts/test_merge_chart_date_folder.py", workflow)
 
     def test_workflow_opts_into_chart_cleanup_only_when_repo_variable_is_true(self) -> None:
         workflow = (ROOT / ".github/workflows/portal-chart-search-index.yml").read_text(
@@ -1336,6 +1884,18 @@ class ChartSearchIndexTests(unittest.TestCase):
             publish_step,
         )
         self.assertIn('"${PUBLISH_ARGS[@]}"', publish_step)
+        self.assertIn("--previous-index _chart_work/previous-index.json", publish_step)
+        self.assertIn(
+            "ALLOW_INDEX_REMOVAL_MIGRATION: ${{ inputs.allow_index_removal_migration }}",
+            publish_step,
+        )
+        self.assertIn(
+            'PUBLISH_ARGS+=(--allow-index-removal-migration)',
+            publish_step,
+        )
+        self.assertIn("allow_index_removal_migration:", workflow)
+        migration_input = workflow[workflow.index("allow_index_removal_migration:"):]
+        self.assertIn("default: false", migration_input[:300])
         self.assertEqual(publish_step.count("--cleanup"), 1)
         self.assertNotIn("--replace-date-folder", workflow)
         self.assertLess(conditional, cleanup_flag)

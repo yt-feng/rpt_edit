@@ -33,9 +33,11 @@ SCHEMA_VERSION = 1
 ANALYSIS_VERSION = "chart-search-v2"
 IMAGE_NAME_RE = re.compile(r"^source_image_(\d+)\.(?:png|jpe?g|webp)$", re.IGNORECASE)
 DATE_FOLDER_RE = re.compile(r"^\d{6,8}$")
+REPORT_REF_RE = re.compile(r"^[0-9a-f]{24}$")
 JSON_FENCE_RE = re.compile(r"^```(?:json)?\s*|\s*```$", re.IGNORECASE)
 MAX_LIST_ITEMS = 20
 MAX_FIELD_CHARS = 900
+MAX_REPORT_REF_ALIASES = 32
 BEIJING = timezone(timedelta(hours=8))
 BANK_ALIASES = (
     "goldman sachs", "j p morgan", "jp morgan", "jpmorgan", "morgan stanley",
@@ -297,6 +299,28 @@ def report_date_folder(report_dir: Path, root: Path, explicit: str) -> str:
         if DATE_FOLDER_RE.fullmatch(part):
             return part
     return root.name if DATE_FOLDER_RE.fullmatch(root.name) else ""
+
+
+def valid_source_date(value: Any) -> tuple[int, str] | None:
+    """Return a comparable calendar date while preserving the source representation."""
+    text = clean_text(value, 16)
+    if not DATE_FOLDER_RE.fullmatch(text) or len(text) not in (6, 8):
+        return None
+    try:
+        if len(text) == 6:
+            year, month, day = 2000 + int(text[:2]), int(text[2:4]), int(text[4:6])
+        else:
+            year, month, day = int(text[:4]), int(text[4:6]), int(text[6:8])
+        parsed = datetime(year, month, day)
+    except ValueError:
+        return None
+    return parsed.year * 10_000 + parsed.month * 100 + parsed.day, text
+
+
+def earliest_source_date(*values: Any) -> str:
+    """Keep the earliest valid acquisition date across historical and new records."""
+    candidates = [candidate for value in values if (candidate := valid_source_date(value))]
+    return min(candidates, key=lambda candidate: candidate[0])[1] if candidates else ""
 
 
 def iter_report_dirs(root: Path) -> Iterable[Path]:
@@ -719,6 +743,32 @@ def canonical_report_ref(report_id: str) -> str:
     return hashlib.sha256(report_id.encode("utf-8")).hexdigest()[:24] if report_id else ""
 
 
+def report_ref_aliases(
+    reports: Iterable[dict[str, Any]],
+    *,
+    canonical_ref: str,
+) -> list[str]:
+    """Collect bounded historical opaque refs without echoing the canonical ref."""
+    aliases: list[str] = []
+    seen: set[str] = {canonical_ref}
+    for report in reports:
+        candidates = (
+            list(report.get("report_ref_aliases", []))
+            if isinstance(report.get("report_ref_aliases"), list)
+            else []
+        )
+        candidates.append(report.get("report_ref"))
+        for candidate in candidates:
+            value = clean_text(candidate, 64).casefold()
+            if not REPORT_REF_RE.fullmatch(value) or value in seen:
+                continue
+            seen.add(value)
+            aliases.append(value)
+            if len(aliases) >= MAX_REPORT_REF_ALIASES:
+                return aliases
+    return aliases
+
+
 def merge_reports_by_report_id(reports: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
     """Collapse identity-migrated report refs without losing unique historical charts."""
     groups: dict[tuple[str, str], list[dict[str, Any]]] = {}
@@ -748,18 +798,27 @@ def merge_reports_by_report_id(reports: Iterable[dict[str, Any]]) -> list[dict[s
         merged["report_ref"] = canonical_ref
         if identity_kind == "report_id":
             merged["report_id"] = identity
-        for field, limit in (("title", 300), ("date_folder", 16)):
-            value = clean_text(merged.get(field), limit)
-            if not value:
-                value = next(
-                    (
-                        clean_text(report.get(field), limit)
-                        for report in reversed(ordered)
-                        if clean_text(report.get(field), limit)
-                    ),
-                    "",
-                )
-            merged[field] = value
+            aliases = report_ref_aliases(ordered, canonical_ref=canonical_ref)
+            if aliases:
+                merged["report_ref_aliases"] = aliases
+            else:
+                merged.pop("report_ref_aliases", None)
+        else:
+            merged.pop("report_ref_aliases", None)
+        title = clean_text(merged.get("title"), 300)
+        if not title:
+            title = next(
+                (
+                    clean_text(report.get("title"), 300)
+                    for report in reversed(ordered)
+                    if clean_text(report.get("title"), 300)
+                ),
+                "",
+            )
+        merged["title"] = title
+        merged["date_folder"] = earliest_source_date(
+            *(report.get("date_folder") for report in ordered)
+        )
 
         preferred_charts = [
             chart
@@ -902,15 +961,17 @@ def build_index(
             "report_ref": candidate.report_ref,
             "report_id": candidate.report_id,
             "title": candidate.report_title,
-            "date_folder": candidate.date_folder,
+            "date_folder": earliest_source_date(candidate.date_folder),
             "charts": [],
         })
         if candidate.report_id:
             report["report_id"] = candidate.report_id
         if candidate.report_title:
             report["title"] = candidate.report_title
-        if candidate.date_folder:
-            report["date_folder"] = candidate.date_folder
+        report["date_folder"] = earliest_source_date(
+            report.get("date_folder"),
+            candidate.date_folder,
+        )
         charts = [chart for chart in report.get("charts", []) if isinstance(chart, dict)]
         record = chart_record(candidate, analysis)
         charts_by_id = {clean_text(chart.get("id"), 64): chart for chart in charts if chart.get("id")}
@@ -938,6 +999,12 @@ def build_index(
             "chart_count": len(charts),
             "charts": charts,
         }
+        aliases = report_ref_aliases(
+            [report],
+            canonical_ref=normalized["report_ref"],
+        )
+        if aliases:
+            normalized["report_ref_aliases"] = aliases
         normalized["search_text"] = chart_search_text(normalized)
         normalized_reports.append(normalized)
     normalized_reports.sort(key=lambda item: (str(item.get("date_folder") or ""), str(item.get("title") or "")), reverse=True)

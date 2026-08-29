@@ -137,21 +137,51 @@ output.
   historical backfill can revisit the retained source artifact if the quarantined
   image later needs another parser/model attempt.
 - Immutable images are uploaded by hash before the index that references them.
+- Before the mutable live `index.json` is committed, the publisher writes the exact
+  candidate bytes to a content-addressed
+  `index-snapshots/sha256-<content-hash>.json` object. Snapshot objects are immutable
+  rollback evidence and are never cleanup targets.
+- Publish compares the candidate against the downloaded live-index baseline. By
+  default, `item_count` cannot decrease and the oldest retained `date_folder` cannot
+  move forward. Every valid v2 `image_id` occurrence in the baseline must also remain
+  in the candidate, including repeated cross-report references, so replacing one old
+  chart with one new chart cannot hide a same-count history loss. Each occurrence is
+  also bound to its stable report identity (`report_id`, falling back to `report_ref`):
+  the same report/image association must remain, and its source date cannot move later,
+  even when the global oldest date is unchanged. Duplicate associations are compared as
+  a multiset. A resolved candidate may bridge an older unresolved `report_ref` only by
+  carrying it in `report_ref_aliases`. Aliases are opaque lowercase 24-character SHA-256
+  prefixes, deduplicated during matching, and limited to 32 entries per report; malformed
+  or oversized alias lists fail closed even during an intentional migration. Aliases
+  never substitute for a baseline `report_id`, and each candidate chart occurrence can
+  satisfy only one baseline association. A historical non-hex ref remains valid when the
+  exact primary ref is retained, but cannot be used as a migration alias. The baseline is
+  also audited with the same schema hygiene: a builder cannot hide a removed live v1 or
+  malformed record by adding an equal number of new v2 records. Any such removal fails before an image,
+  state, snapshot, or live index is written.
+- An intentional one-time schema migration must set the manual
+  `allow_index_removal_migration=true` workflow input, which passes the corresponding
+  CLI flag for that run only. There is no persistent repository-variable bypass.
 - Cleanup is off by default. Every publish still applies schema hygiene to the public
-  index: only `chart-search-v2` records with valid image IDs remain, and every matching
-  immutable image present in the current asset handoff is uploaded. With cleanup off,
+  index: only `chart-search-v2` records with valid image IDs may remain, but a publish
+  that would remove anything requires the explicit one-time migration input. Every
+  matching immutable image present in the current asset handoff is uploaded. With cleanup off,
   the publisher does not evict images, delete objects, list the prefix for a budget
   check, or remove otherwise-valid v2 records to meet a storage ceiling.
 - Repository variable `CHART_CLEANUP_ENABLED=true` explicitly opts a workflow run into
   cleanup. Only in that mode does `CHART_STORAGE_BUDGET_BYTES` apply; it defaults to
-  100 GiB (`107,374,182,400` bytes) and includes state, index, and images. Production
-  keeps cleanup disabled; 100 GiB is the future capacity-review threshold, not an active
-  retention window.
+  100 GiB (`107,374,182,400` bytes) and includes state, live index, immutable snapshots,
+  and images. Production keeps cleanup disabled; 100 GiB is the future capacity-review
+  threshold, not an active retention window.
 - Cleanup mode deletes objects not referenced by the live index first. If referenced
   images still exceed the remaining budget, the publisher keeps images with the most
   recent report-reference date; R2 `LastModified` is the tie-breaker. Any evicted image
   is removed from the index in the same operation, report/chart counts and search text
-  are recomputed, and a final prefix-size check enforces the configured ceiling.
+  are recomputed, and a final prefix-size check enforces the configured ceiling. The
+  budget inventory first creates a read-only eviction plan; the post-retention candidate
+  must pass the same live-baseline guard before any remote mutation. Its immutable
+  snapshot and live index are committed before image-only deletion runs, and snapshot
+  keys are never placed in the deletion plan.
 - A non-zero `max_images` is an explicit whole-run ceiling. If the ceiling leaves unknown
   hashes, the child run fails after uploading its private checkpoint; the parent therefore
   retains the private source handoff for a later continuation instead of deleting it.
@@ -176,6 +206,7 @@ output.
       "report_id": "catalog report id",
       "title": "report title",
       "date_folder": "YYMMDD",
+      "catalog_date_folder": "optional canonical report date",
       "chart_count": 2,
       "search_text": "bounded combined chart terms",
       "charts": [
@@ -209,6 +240,11 @@ handoff path, provider URL, API credential, or original storage key. `image_id` 
 opaque lookup id; the gateway should translate it to the private image object only
 when rendering a result thumbnail.
 
+`date_folder` is the immutable Chart acquisition/source date used by gallery sorting
+and retention checks. Static catalog reconciliation must not overwrite it. When the
+matched catalog report has a different canonical date, the merge publishes that value
+separately as optional `catalog_date_folder`; older clients can safely ignore it.
+
 The standalone Charts gallery admits only records whose
 `analysis_version` is exactly `chart-search-v2`. Historical v1 text can remain in
 the incremental private checkpoint for resume purposes, but it is not rendered in
@@ -229,7 +265,17 @@ reach the browser.
 
 ## Manual Backfill
 
-Run **Portal chart search index** manually with:
+When the retained source is a historical `selected-macro-pdfs-<run-id>` artifact
+rather than ready-made `source_image_*` files, run **Portal chart historical
+backfill**. Its three fail-closed inputs are the exact source run ID, source date, and
+PDF count. The workflow verifies the manifest and PDF bytes, runs MinerU in
+`--chart-source-only` mode, writes only source markdown/images to a private handoff,
+and waits for the existing append-only chart indexer. It does not invoke WeChat,
+translation, Market Views, or public static publishing. The validated PDF input is
+re-sealed for 90 days so the operation remains retryable.
+
+When a private handoff or unexpired publish-ready artifact already contains Chart
+source images, run **Portal chart search index** directly with:
 
 - `date_folder`: historical `YYMMDD` folder;
 - exactly one of `source_handoff_run_id` or `source_artifact_run_id`;
