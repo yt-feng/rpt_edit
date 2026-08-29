@@ -85,7 +85,9 @@ class RestoreDeletedCatalogPdfsTests(unittest.TestCase):
             restore.validate_restore_scope(scopes, True)
         self.assertEqual(
             output.getvalue(),
-            "scope_files_metadata_read=true\nscope_files_content_write=true\n",
+            "scope_claim_present=true\n"
+            "scope_files_metadata_read=true\n"
+            "scope_files_content_write=true\n",
         )
         self.assertNotIn(self.TOKEN, output.getvalue())
 
@@ -99,6 +101,7 @@ class RestoreDeletedCatalogPdfsTests(unittest.TestCase):
 
         self.assertEqual(
             output.getvalue(),
+            "scope_claim_present=true\n"
             "scope_files_metadata_read=true\n"
             "scope_files_content_write=false\n"
             "missing_scope=files.content.write\n",
@@ -111,7 +114,20 @@ class RestoreDeletedCatalogPdfsTests(unittest.TestCase):
             restore.validate_restore_scope(frozenset({"files.metadata.read"}), False)
         self.assertEqual(
             output.getvalue(),
-            "scope_files_metadata_read=true\nscope_files_content_write=false\n",
+            "scope_claim_present=true\n"
+            "scope_files_metadata_read=true\n"
+            "scope_files_content_write=false\n",
+        )
+
+    def test_omitted_scope_claim_allows_read_only_preflight(self) -> None:
+        output = io.StringIO()
+        with redirect_stdout(output):
+            restore.validate_restore_scope(frozenset(), False)
+        self.assertEqual(
+            output.getvalue(),
+            "scope_claim_present=false\n"
+            "scope_files_metadata_read=false\n"
+            "scope_files_content_write=false\n",
         )
 
     def test_list_folder_is_recursive_and_requests_deleted_restorable_metadata(self) -> None:
@@ -161,6 +177,41 @@ class RestoreDeletedCatalogPdfsTests(unittest.TestCase):
 
         self.assertEqual(api.calls, [])
 
+    def test_revision_pagination_follows_has_more_even_for_a_short_page(self) -> None:
+        api = FakeDropboxApi({
+            "/files/list_revisions": [
+                {
+                    "entries": [{"rev": "rev-new"}],
+                    "has_more": True,
+                },
+                {
+                    "entries": [{"rev": "rev-old"}],
+                    "has_more": False,
+                },
+            ],
+        })
+
+        entries = restore.list_revisions(self.TOKEN, self.PATH_A, api)
+
+        self.assertEqual([entry["rev"] for entry in entries], ["rev-new", "rev-old"])
+        revision_calls = [call for call in api.calls if call[1] == "/files/list_revisions"]
+        self.assertEqual(len(revision_calls), 2)
+        self.assertEqual(revision_calls[1][2]["before_rev"], "rev-new")
+
+    def test_revision_page_with_exact_limit_and_no_more_stops(self) -> None:
+        page = [{"rev": f"rev-{index:03d}"} for index in range(restore.REVISION_PAGE_SIZE)]
+        api = FakeDropboxApi({
+            "/files/list_revisions": [{"entries": page, "has_more": False}],
+        })
+
+        entries = restore.list_revisions(self.TOKEN, self.PATH_A, api)
+
+        self.assertEqual(len(entries), restore.REVISION_PAGE_SIZE)
+        self.assertEqual(
+            len([call for call in api.calls if call[1] == "/files/list_revisions"]),
+            1,
+        )
+
     def test_dry_run_resolves_exact_ids_without_restore_calls(self) -> None:
         report_a = self.report_id(self.CONTENT_A)
         report_b = self.report_id(self.CONTENT_B)
@@ -187,6 +238,7 @@ class RestoreDeletedCatalogPdfsTests(unittest.TestCase):
             }],
             "/files/list_revisions": [
                 {
+                    "has_more": False,
                     "entries": [{
                         ".tag": "file",
                         "rev": "rev-a",
@@ -195,6 +247,7 @@ class RestoreDeletedCatalogPdfsTests(unittest.TestCase):
                     }],
                 },
                 {
+                    "has_more": False,
                     "entries": [{
                         ".tag": "file",
                         "rev": "rev-b",
@@ -236,6 +289,7 @@ class RestoreDeletedCatalogPdfsTests(unittest.TestCase):
                 "has_more": False,
             }],
             "/files/list_revisions": [{
+                "has_more": False,
                 "entries": [{
                     "rev": "rev-a",
                     "content_hash": self.CONTENT_A,
@@ -309,6 +363,7 @@ class RestoreDeletedCatalogPdfsTests(unittest.TestCase):
                 "has_more": False,
             }],
             "/files/list_revisions": [{
+                "has_more": False,
                 "entries": [{
                     "rev": "rev-b",
                     "content_hash": self.CONTENT_B,
@@ -376,6 +431,7 @@ class RestoreDeletedCatalogPdfsTests(unittest.TestCase):
                 "has_more": False,
             }],
             "/files/list_revisions": [{
+                "has_more": False,
                 "entries": [
                     {
                         "rev": "private-revision",
@@ -422,6 +478,7 @@ class RestoreDeletedCatalogPdfsTests(unittest.TestCase):
     def test_one_deleted_path_cannot_restore_two_catalog_ids(self) -> None:
         api = FakeDropboxApi({
             "/files/list_revisions": [{
+                "has_more": False,
                 "entries": [
                     {
                         "rev": "rev-a",
@@ -453,6 +510,7 @@ class RestoreDeletedCatalogPdfsTests(unittest.TestCase):
         report_id = source_hash[:24]
         api = FakeDropboxApi({
             "/files/list_revisions": [{
+                "has_more": False,
                 "entries": [{
                     "rev": "rev-a",
                     "content_hash": self.CONTENT_A,

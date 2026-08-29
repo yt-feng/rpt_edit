@@ -186,11 +186,17 @@ def dropbox_access_token_with_scopes() -> tuple[str, frozenset[str]]:
 
 
 def validate_restore_scope(scopes: frozenset[str], apply_restore: bool) -> None:
+    scope_claim_present = bool(scopes)
     has_read_scope = REQUIRED_READ_SCOPE in scopes
     has_scope = REQUIRED_RESTORE_SCOPE in scopes
+    print(f"scope_claim_present={str(scope_claim_present).lower()}")
     print(f"scope_files_metadata_read={str(has_read_scope).lower()}")
     print(f"scope_files_content_write={str(has_scope).lower()}")
-    if not has_read_scope:
+    # OAuth permits the refresh response to omit `scope` when it is unchanged.
+    # An absent claim can still perform the read-only preflight; the first
+    # metadata call is the authoritative permission check. Apply mode remains
+    # stricter and requires an explicit write scope claim.
+    if scope_claim_present and not has_read_scope:
         print(f"missing_scope={REQUIRED_READ_SCOPE}")
         raise RestoreContractError(f"missing_scope={REQUIRED_READ_SCOPE}")
     if apply_restore and not has_scope:
@@ -359,9 +365,14 @@ def list_revisions(
             raise RestoreContractError("Dropbox list_revisions response is missing entries")
         page = [entry for entry in entries if isinstance(entry, dict)]
         result.extend(page)
-        if len(page) < REVISION_PAGE_SIZE:
+        has_more = data.get("has_more")
+        if not isinstance(has_more, bool):
+            raise RestoreContractError("Dropbox list_revisions response is missing has_more")
+        if not has_more:
             return result
 
+        if not page:
+            raise RestoreContractError("Dropbox list_revisions returned an empty continuation page")
         next_boundary = str(page[-1].get("rev") or "")
         if not next_boundary or next_boundary in seen_boundaries:
             raise RestoreContractError("Dropbox list_revisions pagination did not advance")
