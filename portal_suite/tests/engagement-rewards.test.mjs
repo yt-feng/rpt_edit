@@ -1357,7 +1357,7 @@ test("report chat mixes same-source and topic-matched Charts without unrelated c
   const result = await jsonRequest(env, "/report-chat", {
     method: "POST",
     headers: { "content-type": "application/json", ...bearer(token) },
-    body: JSON.stringify({ question: "研究 AI 数据中心的电力瓶颈" }),
+    body: JSON.stringify({ question: "研究人工智能数据中心的电力瓶颈" }),
   });
 
   assert.equal(result.response.status, 200, JSON.stringify(result.data));
@@ -1380,6 +1380,84 @@ test("report chat mixes same-source and topic-matched Charts without unrelated c
   assert.equal(serialized.includes("_report-research"), false);
   assert.equal(serialized.includes("object_key"), false);
   assert.equal(result.response.headers.get("cache-control"), "private, no-store, max-age=0");
+});
+
+test("report research preserves exact ASCII chart terms ahead of generic aliases", async () => {
+  const bucket = new MemoryR2();
+  const sourceReportId = "cccccccccccccccccccccccc";
+  const exactReportId = "bbbbbbbbbbbbbbbbbbbbbbbb";
+  const genericImageId = "7".repeat(64);
+  const exactImageId = "8".repeat(64);
+  await seedReportResearchLookup(bucket, [{
+    id: sourceReportId,
+    title: "Semiconductor capital spending outlook",
+    institution: "Research Bank",
+    industry: "Semiconductors",
+    date_folder: "260829",
+    page_count: 36,
+    available: true,
+  }], {
+    capex: [{ id: sourceReportId, tf: 9, chunks: ["c0001"] }],
+    forecasts: [{ id: sourceReportId, tf: 8, chunks: ["c0001"] }],
+  }, [[`${sourceReportId}:c0001`, {
+    id: "c0001",
+    report_id: sourceReportId,
+    text: "The report compares planned semiconductor investment across leading foundry and memory manufacturers over the forecast period.",
+  }]]);
+  bucket.seed("_chart-search/v1/index.json", {
+    schema_version: 1,
+    reports: [
+      {
+        report_id: sourceReportId,
+        title: "Semiconductor capital spending outlook",
+        date_folder: "260829",
+        charts: [{
+          id: "generic-capex-chart",
+          image_id: genericImageId,
+          analysis_version: "chart-search-v2",
+          title: "Semiconductor capex allocation",
+          content_kind: "chart",
+          quality_score: 99,
+          chart_type: "bar",
+          description: "Spending by industry category.",
+          trend_summary: "Investment remains elevated.",
+          keywords: ["capex", "semiconductors"],
+        }],
+      },
+      {
+        report_id: exactReportId,
+        title: "Asian semiconductor investment",
+        date_folder: "260828",
+        charts: [{
+          id: "exact-capex-forecasts-chart",
+          image_id: exactImageId,
+          analysis_version: "chart-search-v2",
+          title: "Capex Forecasts",
+          content_kind: "chart",
+          quality_score: 90,
+          chart_type: "bar",
+          description: "Forecasts for TSMC, Intel, Samsung and SK Hynix.",
+          trend_summary: "Manufacturer investment plans diverge.",
+          entities: ["TSMC", "Intel", "Samsung", "SK Hynix"],
+          keywords: ["capex", "forecasts"],
+        }],
+      },
+    ],
+  });
+  const env = envFor(bucket);
+  const token = await register(env);
+  const result = await jsonRequest(env, "/report-chat", {
+    method: "POST",
+    headers: { "content-type": "application/json", ...bearer(token) },
+    body: JSON.stringify({ question: "台积电、英特尔、三星、SK海力士 Capex Forecasts" }),
+  });
+
+  assert.equal(result.response.status, 200, JSON.stringify(result.data));
+  assert.equal(result.data.mode, "research");
+  assert.equal(result.data.charts[0].image_id, exactImageId);
+  assert.equal(result.data.charts[0].report_id, exactReportId);
+  assert.equal(result.data.charts[0].title, "Capex Forecasts");
+  assert.equal(result.data.charts[1].image_id, genericImageId);
 });
 
 test("report research rejects invented source ids and numeric claims absent from evidence", async () => {

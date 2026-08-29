@@ -12755,14 +12755,16 @@ function reportChatHistory(value) {
   }).filter(Boolean);
 }
 
+const REPORT_CHAT_DOMAIN_HINTS = Object.freeze([
+  "摩根大通", "高盛", "摩根士丹利", "美银", "瑞银", "花旗", "汇丰", "野村", "德银", "巴克莱",
+  "金杜", "中伦", "君合", "国浩", "证监会", "上交所", "深交所", "最高人民法院",
+  "投行", "并购", "估值", "建模", "面试", "行业研究", "科技", "医药", "消费", "宏观", "利率", "外汇",
+  "ipo", "dcf", "lbo", "m&a", "financial modeling", "interview",
+]);
+
 function reportChatQueryTokens(value) {
   const raw = String(value || "").normalize("NFKC").toLowerCase();
-  const domainHints = [
-    "摩根大通", "高盛", "摩根士丹利", "美银", "瑞银", "花旗", "汇丰", "野村", "德银", "巴克莱",
-    "金杜", "中伦", "君合", "国浩", "证监会", "上交所", "深交所", "最高人民法院",
-    "投行", "并购", "估值", "建模", "面试", "行业研究", "科技", "医药", "消费", "宏观", "利率", "外汇",
-    "ipo", "dcf", "lbo", "m&a", "financial modeling", "interview",
-  ].filter((token) => raw.includes(token));
+  const domainHints = REPORT_CHAT_DOMAIN_HINTS.filter((token) => raw.includes(token));
   const latinNumeric = (raw.match(/[a-z0-9][a-z0-9.+&-]*/gu) || []).filter((token) => token.length >= 2);
   const cjkStopPhrases = /(?:帮我|请问|希望|我想|我要|我准备|给我|推荐|值得看|最值得|最近|半年|相关|顶级|一些|一个|一下|哪些|什么|怎么|寻找|查找|报告|研报|资料|课程|文件|方面|可以|需要|关于|的|和|与|或|是|了)/gu;
   const cjkTerms = [];
@@ -13192,11 +13194,13 @@ function reportResearchLookupTokens(question) {
 
 function reportResearchChartTokens(question) {
   const raw = String(question || "").normalize("NFKC").toLowerCase();
+  const rawAscii = (raw.match(/[a-z0-9][a-z0-9.+&-]*/gu) || []).filter((token) => token.length >= 2);
+  const domainTokens = REPORT_CHAT_DOMAIN_HINTS.filter((token) => raw.includes(token));
   const aliases = REPORT_RESEARCH_QUERY_ALIASES.flatMap(([pattern, tokens]) => pattern.test(raw) ? tokens : []);
-  return [...new Set([...aliases, ...reportChatQueryTokens(raw)])]
+  const cjkTokens = reportChatQueryTokens(raw).filter((token) => /\p{Script=Han}/u.test(token));
+  return [...new Set([...rawAscii, ...domainTokens, ...aliases, ...cjkTokens]
     .map((token) => normalizeText(token))
-    .filter((token) => token.length >= 2)
-    .slice(0, REPORT_RESEARCH_MAX_QUERY_TOKENS);
+    .filter((token) => token.length >= 2))].slice(0, REPORT_RESEARCH_MAX_QUERY_TOKENS);
 }
 
 function reportResearchChartTokenMatches(text, token) {
