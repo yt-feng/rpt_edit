@@ -179,6 +179,9 @@ in the scheduled workflow and can still be set to `false` as an emergency
 pause. A report is not changed to text-only for quota reasons until the stored
 catalog PDFs exceed 100 GiB.
 
+The authenticated operator storage indicator uses the same 100 GiB default, so
+the UI and the catalog cleanup workflow report one consistent capacity threshold.
+
 The deferred physical-delete set is intersected with the reports selected by
 the current run's 100 GiB calculation. Raising the threshold therefore cancels
 an older pending decision and reactivates its still-present R2 object; a

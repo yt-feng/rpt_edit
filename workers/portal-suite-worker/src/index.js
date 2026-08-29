@@ -9968,7 +9968,7 @@ function internalPdfStorageLimitBytes(env) {
   if (Number.isFinite(explicitBytes) && explicitBytes > 0) return Math.floor(explicitBytes);
   const explicitGiB = Number(env.PDF_STORAGE_LIMIT_GB || 0);
   if (Number.isFinite(explicitGiB) && explicitGiB > 0) return Math.floor(explicitGiB * 1024 * 1024 * 1024);
-  return 7 * 1024 * 1024 * 1024;
+  return 100 * 1024 * 1024 * 1024;
 }
 
 function availableCatalogPdfBytes(catalog) {
