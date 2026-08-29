@@ -13453,7 +13453,7 @@ function fallbackReportResearch(question, bundle, charts) {
       source_ids: [source.id],
     })),
     data_points: [],
-    charts: charts.slice(0, 4),
+    charts: charts.slice(0, 6),
     follow_up_questions: [],
   };
 }
@@ -13464,7 +13464,6 @@ function sanitizeReportResearch(generated, question, bundle, chartCandidates) {
     source.id,
     source.evidence.map((row) => row.text).join(" "),
   ]));
-  const allowedCharts = new Map(chartCandidates.map((chart) => [chart.image_id, chart]));
   const fallback = fallbackReportResearch(question, bundle, chartCandidates);
   if (!generated || typeof generated !== "object" || Array.isArray(generated)) return fallback;
 
@@ -13496,12 +13495,6 @@ function sanitizeReportResearch(generated, question, bundle, chartCandidates) {
     ) return null;
     return { label, value, context, source_ids: sourceIds };
   }).filter(Boolean).slice(0, 12);
-  const rawChartIds = Array.isArray(generated.chart_image_ids)
-    ? generated.chart_image_ids
-    : Array.isArray(generated.chart_ids) ? generated.chart_ids : [];
-  const chartIds = [...new Set(rawChartIds.map((id) => String(id || "").trim().toLowerCase()))]
-    .filter((id) => allowedCharts.has(id)).slice(0, 6);
-  const charts = (chartIds.length ? chartIds.map((id) => allowedCharts.get(id)) : fallback.charts);
   const followUpQuestions = (Array.isArray(generated.follow_up_questions) ? generated.follow_up_questions : [])
     .map(reportChatQuestion).filter(Boolean).slice(0, 3);
   return {
@@ -13509,7 +13502,7 @@ function sanitizeReportResearch(generated, question, bundle, chartCandidates) {
     summary_source_ids: summarySourceIds.length ? summarySourceIds : fallback.summary_source_ids,
     findings: findings.length ? findings : fallback.findings,
     data_points: dataPoints,
-    charts,
+    charts: fallback.charts,
     follow_up_questions: followUpQuestions,
   };
 }

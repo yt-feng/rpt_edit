@@ -1372,7 +1372,7 @@ test("report chat mixes same-source and topic-matched Charts without unrelated c
   assert.equal(result.data.charts[1].date_folder, "260828");
   assert.equal(result.data.charts.some((chart) => chart.image_id === unrelatedImageId), false);
   assert.equal(result.data.charts.some((chart) => chart.image_id === unresolvedImageId), false);
-  assert.ok(result.data.charts.length <= 6);
+  assert.equal(result.data.charts.length, 6);
   assert.match(result.data.findings[0].summary, /grid connection delays/u);
   assert.ok(bucket.rangeReadKeys.some((key) => key.endsWith("evidence.tbl")));
   assert.ok(bucket.rangeReadKeys.some((key) => key.endsWith("evidence.dat")));
@@ -1444,20 +1444,39 @@ test("report research preserves exact ASCII chart terms ahead of generic aliases
       },
     ],
   });
-  const env = envFor(bucket);
+  const env = { ...envFor(bucket), DEEPSEEK_API_KEY: "configured-test-key" };
   const token = await register(env);
-  const result = await jsonRequest(env, "/report-chat", {
-    method: "POST",
-    headers: { "content-type": "application/json", ...bearer(token) },
-    body: JSON.stringify({ question: "台积电、英特尔、三星、SK海力士 Capex Forecasts" }),
-  });
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async (input, init) => {
+    assert.match(String(input), /^https:\/\/api\.deepseek\.com\/chat\/completions$/u);
+    const requestPayload = JSON.parse(String(init && init.body || "{}"));
+    const modelInput = JSON.parse(requestPayload.messages[1].content);
+    assert.equal(modelInput.chart_candidates[0].image_id, exactImageId);
+    assert.equal(modelInput.chart_candidates[1].image_id, genericImageId);
+    return new Response(JSON.stringify({
+      choices: [{ message: { content: JSON.stringify({
+        executive_summary: "半导体厂商资本开支计划存在分化。",
+        summary_source_ids: [sourceReportId],
+        chart_image_ids: [genericImageId],
+      }) } }],
+    }), { status: 200, headers: { "content-type": "application/json" } });
+  };
+  try {
+    const result = await jsonRequest(env, "/report-chat", {
+      method: "POST",
+      headers: { "content-type": "application/json", ...bearer(token) },
+      body: JSON.stringify({ question: "台积电、英特尔、三星、SK海力士 Capex Forecasts" }),
+    });
 
-  assert.equal(result.response.status, 200, JSON.stringify(result.data));
-  assert.equal(result.data.mode, "research");
-  assert.equal(result.data.charts[0].image_id, exactImageId);
-  assert.equal(result.data.charts[0].report_id, exactReportId);
-  assert.equal(result.data.charts[0].title, "Capex Forecasts");
-  assert.equal(result.data.charts[1].image_id, genericImageId);
+    assert.equal(result.response.status, 200, JSON.stringify(result.data));
+    assert.equal(result.data.mode, "research");
+    assert.equal(result.data.charts[0].image_id, exactImageId);
+    assert.equal(result.data.charts[0].report_id, exactReportId);
+    assert.equal(result.data.charts[0].title, "Capex Forecasts");
+    assert.equal(result.data.charts[1].image_id, genericImageId);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
 });
 
 test("report research rejects invented source ids and numeric claims absent from evidence", async () => {
