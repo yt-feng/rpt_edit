@@ -18,4 +18,6 @@ test("Worker emergency release preserves Cron triggers through versioned deploym
   assert.match(workflow, /portal-worker-version-secrets\.json[\s\S]*?os\.O_EXCL, 0o600/gu);
   assert.match(workflow, /Remove temporary Worker version secrets[\s\S]*?unlink\(missing_ok=True\)/gu);
   assert.doesNotMatch(workflow, /wrangler triggers deploy/gu);
+  assert.match(workflow, /HOT_REPORT_CLEANUP_ENABLED:\s*\$\{\{ vars\.HOT_REPORT_CLEANUP_ENABLED \|\| 'false' \}\}/gu);
+  assert.match(workflow, /HOT_REPORT_CLEANUP_ENABLED = "\$HOT_REPORT_CLEANUP_ENABLED"/gu);
 });

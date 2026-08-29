@@ -275,7 +275,10 @@ test("hot upload returns before slow retention, records status, and deduplicates
   const bucket = new MemoryR2();
   const admin = await seedUser(bucket, ADMIN);
   const token = userToken(admin);
-  const env = envFor(bucket, { HOT_REPORT_STORAGE_LIMIT_BYTES: 1 });
+  const env = envFor(bucket, {
+    HOT_REPORT_CLEANUP_ENABLED: "true",
+    HOT_REPORT_STORAGE_LIMIT_BYTES: 1,
+  });
   const waits = [];
   bucket.holdList("_hot-reports/pdfs/");
 

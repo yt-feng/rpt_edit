@@ -251,6 +251,7 @@ const uploadPromise = vm.runInNewContext(`(async () => {
     return { record, persisted: true };
   }
   function publicAdminUpload(value) { return value || null; }
+  function hotReportCleanupEnabled() { return false; }
   function scheduleAdminUploadMaintenance() { return Promise.resolve([]); }
   async function repairAdminUploadCompletion() { return null; }
   async function repairHotReportPublicIndexIfNeeded() { return null; }

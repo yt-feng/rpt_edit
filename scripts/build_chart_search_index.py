@@ -714,31 +714,78 @@ def previous_reports(index: dict[str, Any]) -> dict[str, dict[str, Any]]:
     return result
 
 
-def replace_date_reports(
-    reports: dict[str, dict[str, Any]],
-    candidates: list[ChartCandidate],
-    date_folder: str,
-) -> int:
-    """Remove stale report refs when a complete date folder is being rebuilt."""
-    date_folder = clean_text(date_folder, 16)
-    if not date_folder:
-        return 0
-    candidate_refs = {
-        candidate.report_ref
-        for candidate in candidates
-        if candidate.date_folder == date_folder
-    }
-    if not candidate_refs:
-        raise RuntimeError(f"Replacement date {date_folder} has no chart candidates")
-    stale_refs = [
-        report_ref
-        for report_ref, report in reports.items()
-        if clean_text(report.get("date_folder"), 16) == date_folder
-        and report_ref not in candidate_refs
-    ]
-    for report_ref in stale_refs:
-        reports.pop(report_ref, None)
-    return len(stale_refs)
+def canonical_report_ref(report_id: str) -> str:
+    report_id = clean_text(report_id, 64)
+    return hashlib.sha256(report_id.encode("utf-8")).hexdigest()[:24] if report_id else ""
+
+
+def merge_reports_by_report_id(reports: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Collapse identity-migrated report refs without losing unique historical charts."""
+    groups: dict[tuple[str, str], list[dict[str, Any]]] = {}
+    for report in reports:
+        if not isinstance(report, dict):
+            continue
+        report_id = clean_text(report.get("report_id"), 64)
+        report_ref = clean_text(report.get("report_ref"), 64)
+        if not report_id and not report_ref:
+            continue
+        key = ("report_id", report_id) if report_id else ("report_ref", report_ref)
+        groups.setdefault(key, []).append(report)
+
+    merged_reports: list[dict[str, Any]] = []
+    for (identity_kind, identity), group in groups.items():
+        canonical_ref = canonical_report_ref(identity) if identity_kind == "report_id" else identity
+        canonical = next(
+            (
+                report
+                for report in reversed(group)
+                if clean_text(report.get("report_ref"), 64) == canonical_ref
+            ),
+            group[-1],
+        )
+        ordered = [report for report in group if report is not canonical] + [canonical]
+        merged = dict(canonical)
+        merged["report_ref"] = canonical_ref
+        if identity_kind == "report_id":
+            merged["report_id"] = identity
+        for field, limit in (("title", 300), ("date_folder", 16)):
+            value = clean_text(merged.get(field), limit)
+            if not value:
+                value = next(
+                    (
+                        clean_text(report.get(field), limit)
+                        for report in reversed(ordered)
+                        if clean_text(report.get(field), limit)
+                    ),
+                    "",
+                )
+            merged[field] = value
+
+        preferred_charts = [
+            chart
+            for report in ordered
+            for chart in report.get("charts", [])
+            if isinstance(chart, dict)
+        ]
+        seen_image_ids: set[str] = set()
+        seen_chart_ids: set[str] = set()
+        unique_reversed: list[dict[str, Any]] = []
+        for chart in reversed(preferred_charts):
+            image_id = clean_text(chart.get("image_id"), 80)
+            chart_id = clean_text(chart.get("id"), 64)
+            if (image_id and image_id in seen_image_ids) or (chart_id and chart_id in seen_chart_ids):
+                continue
+            if image_id:
+                seen_image_ids.add(image_id)
+            if chart_id:
+                seen_chart_ids.add(chart_id)
+            unique_reversed.append(chart)
+        merged["charts"] = sorted(
+            reversed(unique_reversed),
+            key=lambda item: (int(item.get("ordinal") or 0), str(item.get("id") or "")),
+        )
+        merged_reports.append(merged)
+    return merged_reports
 
 
 def build_index(
@@ -752,15 +799,17 @@ def build_index(
     max_model_calls: int,
     retry_errors_now: bool = False,
     replace_date_folder: str = "",
+    catalog_lookup: dict[str, list[tuple[str, str]]] | None = None,
     attempt_run_id: str = "",
     circuit_breaker_threshold: int = DEFAULT_CIRCUIT_BREAKER_THRESHOLD,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
+    # Accepted for callers from the former replacement workflow; intentionally a no-op.
+    _ = replace_date_folder
     state_items = state.setdefault("items", {})
     if not isinstance(state_items, dict):
         state_items = {}
         state["items"] = state_items
     reports = previous_reports(previous_index)
-    replaced_report_count = replace_date_reports(reports, candidates, replace_date_folder)
     model_calls = 0
     cache_hits = 0
     failures = 0
@@ -772,16 +821,6 @@ def build_index(
     state.pop("circuit_breaker", None)
 
     for candidate in candidates:
-        deterministic_chart_id = hashlib.sha256(
-            f"{candidate.report_ref}:{candidate.image_sha256}".encode("utf-8")
-        ).hexdigest()[:32]
-        previous_report = reports.get(candidate.report_ref)
-        if isinstance(previous_report, dict):
-            previous_report["charts"] = [
-                row
-                for row in previous_report.get("charts", [])
-                if isinstance(row, dict) and clean_text(row.get("id"), 64) != deterministic_chart_id
-            ]
         cached = state_items.get(candidate.image_sha256)
         analysis: dict[str, Any] | None = None
         if state_is_reusable(cached):
@@ -883,8 +922,11 @@ def build_index(
             key=lambda item: (int(item.get("ordinal") or 0), str(item.get("id") or "")),
         )
 
+    raw_reports = list(reports.values())
+    if catalog_lookup:
+        reconcile_report_ids({"reports": raw_reports}, catalog_lookup)
     normalized_reports: list[dict[str, Any]] = []
-    for report in reports.values():
+    for report in merge_reports_by_report_id(raw_reports):
         charts = [chart for chart in report.get("charts", []) if isinstance(chart, dict)]
         if not charts:
             continue
@@ -945,7 +987,7 @@ def build_index(
         "deferred": deferred,
         "retryable_count": retryable_count,
         "retryable_reasons": retryable_reasons,
-        "replaced_report_count": replaced_report_count,
+        "replaced_report_count": 0,
         "stable_error_count": stable_error_count,
         "quarantined_count": quarantined_count,
         "unprocessed_count": unprocessed_count,
@@ -982,7 +1024,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--asset-output-dir", required=True)
     parser.add_argument("--max-images", type=int, default=0, help="Maximum new model calls per pass; 0 is unlimited")
     parser.add_argument("--retry-errors-now", action="store_true", help="Retry prior error checkpoints without waiting for next_retry_at")
-    parser.add_argument("--replace-date-folder", default="", help="Replace prior report refs for this complete date folder")
+    parser.add_argument(
+        "--replace-date-folder",
+        default="",
+        help="Deprecated compatibility option; Chart indexes are append-only and this never removes reports.",
+    )
     parser.add_argument("--max-per-report", type=int, default=0, help="Maximum images per report; 0 is unlimited")
     parser.add_argument("--timeout", type=float, default=90.0)
     parser.add_argument("--retries", type=int, default=4)
@@ -1030,6 +1076,7 @@ def main() -> int:
             "failures": 0,
             "deferred": 0,
             "retryable_count": 0,
+            "replaced_report_count": 0,
             "stable_error_count": 0,
             "quarantined_count": 0,
             "unprocessed_count": 0,
@@ -1058,6 +1105,7 @@ def main() -> int:
         max_model_calls=max(0, args.max_images),
         retry_errors_now=bool(args.retry_errors_now),
         replace_date_folder=clean_text(args.replace_date_folder, 16),
+        catalog_lookup=catalog_lookup,
         attempt_run_id=(
             clean_text(args.attempt_run_id, 160)
             or clean_text(

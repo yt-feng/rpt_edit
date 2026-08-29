@@ -7,6 +7,8 @@ compatibility_date = "2026-05-01"
 # SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY as secrets.
 ACCOUNT_STORE_MODE = "r2"
 R2_OBJECT_PREFIX = "reports"
+# Quota-based deletion is opt-in. Leave false to retain saved Hot Report PDFs.
+HOT_REPORT_CLEANUP_ENABLED = "false"
 # Set these to the GitHub Pages URLs after deployment.
 CATALOG_URL = "https://YOUR_GITHUB_PAGES_HOST/rpt_edit/data/catalog.json"
 PASSWORD_RULES_URL = "https://YOUR_GITHUB_PAGES_HOST/rpt_edit/data/password_rules.json"

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import importlib.util
+import hashlib
 import json
 import sys
 import tempfile
@@ -274,7 +275,7 @@ class ChartSearchIndexTests(unittest.TestCase):
         record = chart.chart_record(candidate, chart.normalize_analysis(sample_analysis()))
         self.assertEqual(record["analysis_version"], "chart-search-v2")
 
-    def test_reclassification_removes_prior_false_positive_from_index(self) -> None:
+    def test_reclassification_rejection_keeps_last_published_chart(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             workspace = Path(temp)
             reports = workspace / "260809"
@@ -302,7 +303,7 @@ class ChartSearchIndexTests(unittest.TestCase):
                 "has_data_evidence": False,
                 "invalid_reason": "disclaimer",
             })
-            index, _summary = chart.build_index(
+            index, summary = chart.build_index(
                 [candidate],
                 state={"schema_version": 1, "items": {}},
                 previous_index=previous,
@@ -311,8 +312,9 @@ class ChartSearchIndexTests(unittest.TestCase):
                 analyze=lambda _path: rejected,
                 max_model_calls=20,
             )
-            self.assertEqual(index["item_count"], 0)
-            self.assertEqual(index["report_count"], 0)
+            self.assertEqual(index["item_count"], 1)
+            self.assertEqual(index["report_count"], 1)
+            self.assertEqual(index["reports"][0]["charts"][0]["id"], chart_id)
 
     def test_repeatedly_bad_image_is_quarantined_without_blocking_the_index(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
@@ -541,27 +543,39 @@ class ChartSearchIndexTests(unittest.TestCase):
         self.assertEqual(chart.retryable_reason_code(invalid), "other")
         self.assertEqual(chart.retryable_reason_code(ValueError("private detail")), "other")
 
-    def test_replacement_date_removes_only_stale_same_date_reports(self) -> None:
+    def test_incremental_same_date_handoff_keeps_previously_published_reports(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             workspace = Path(temp)
             reports = workspace / "260809"
-            write_report(reports, "report_a", "Replacement Report")
+            write_report(reports, "report_a", "Incremental Report")
             candidates = chart.discover_candidates(reports, {}, date_folder="260809")
             canonical_ref = candidates[0].report_ref
             previous = {
                 "schema_version": 1,
                 "reports": [
                     {
-                        "report_ref": "stale-same-date",
-                        "title": "Stale",
+                        "report_ref": "previous-same-date",
+                        "title": "Previously Published",
                         "date_folder": "260809",
-                        "charts": [],
+                        "charts": [{
+                            "id": "previous-chart",
+                            "image_id": "a" * 64,
+                            "ordinal": 1,
+                            "analysis_version": chart.ANALYSIS_VERSION,
+                            **sample_analysis(),
+                        }],
                     },
                     {
                         "report_ref": "older-date",
                         "title": "Older",
                         "date_folder": "260808",
-                        "charts": [{"id": "older-chart", "ordinal": 1, **sample_analysis()}],
+                        "charts": [{
+                            "id": "older-chart",
+                            "image_id": "b" * 64,
+                            "ordinal": 1,
+                            "analysis_version": chart.ANALYSIS_VERSION,
+                            **sample_analysis(),
+                        }],
                     },
                 ],
             }
@@ -576,23 +590,106 @@ class ChartSearchIndexTests(unittest.TestCase):
                 replace_date_folder="260809",
             )
             refs = {report["report_ref"] for report in index["reports"]}
-            self.assertEqual(refs, {"older-date", canonical_ref})
-            self.assertEqual(summary["replaced_report_count"], 1)
+            self.assertEqual(
+                refs,
+                {"previous-same-date", "older-date", canonical_ref},
+            )
+            self.assertEqual(summary["replaced_report_count"], 0)
 
-    def test_replacement_date_requires_candidates(self) -> None:
+    def test_unresolved_report_ref_merges_into_resolved_report_id_without_chart_loss(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             workspace = Path(temp)
-            with self.assertRaisesRegex(RuntimeError, "has no chart candidates"):
-                chart.build_index(
-                    [],
-                    state={"schema_version": 1, "items": {}},
-                    previous_index={"schema_version": 1, "reports": []},
-                    state_path=workspace / "state.json",
-                    asset_output_dir=workspace / "assets",
-                    analyze=lambda _path: sample_analysis(),
-                    max_model_calls=20,
-                    replace_date_folder="260809",
-                )
+            title = "Identity Migration Report"
+            first_root = workspace / "first" / "260809"
+            first_report = write_report(first_root, "report_a", title)
+            write_image(first_report / "assets" / "source_image_02.png", "gray")
+            first_candidates = chart.discover_candidates(first_root, {}, date_folder="260809")
+            unresolved_ref = first_candidates[0].report_ref
+            state = {"schema_version": 1, "items": {}}
+            first_index, first_summary = chart.build_index(
+                first_candidates,
+                state=state,
+                previous_index={"schema_version": 1, "reports": []},
+                state_path=workspace / "state.json",
+                asset_output_dir=workspace / "first-assets",
+                analyze=lambda _path: sample_analysis(),
+                max_model_calls=20,
+            )
+            self.assertEqual(first_summary["item_count"], 2)
+            self.assertEqual(first_index["reports"][0]["report_id"], "")
+
+            catalog_path = workspace / "catalog.json"
+            catalog_path.write_text(json.dumps({
+                "items": [{"id": "resolved-report", "title": title}],
+            }), encoding="utf-8")
+            catalog_lookup = chart.load_catalog_lookup(catalog_path)
+            second_root = workspace / "second" / "260809"
+            write_report(second_root, "report_a", title)
+            second_candidates = chart.discover_candidates(
+                second_root,
+                catalog_lookup,
+                date_folder="260809",
+            )
+            resolved_ref = second_candidates[0].report_ref
+            self.assertNotEqual(unresolved_ref, resolved_ref)
+
+            second_index, second_summary = chart.build_index(
+                second_candidates,
+                state=state,
+                previous_index=first_index,
+                state_path=workspace / "state.json",
+                asset_output_dir=workspace / "second-assets",
+                analyze=lambda _path: sample_analysis(),
+                max_model_calls=20,
+                catalog_lookup=catalog_lookup,
+            )
+            self.assertEqual(second_summary["cache_hits"], 1)
+            self.assertEqual(second_index["report_count"], 1)
+            self.assertEqual(second_index["item_count"], 2)
+            resolved = second_index["reports"][0]
+            self.assertEqual(resolved["report_id"], "resolved-report")
+            self.assertEqual(resolved["report_ref"], resolved_ref)
+            image_ids = [row["image_id"] for row in resolved["charts"]]
+            self.assertEqual(len(image_ids), len(set(image_ids)))
+            self.assertEqual(set(image_ids), {row.image_sha256 for row in first_candidates})
+
+    def test_failed_reanalysis_keeps_previously_published_chart(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            workspace = Path(temp)
+            reports = workspace / "260809"
+            write_report(reports, "report_a", "Previously Parsed")
+            candidate = chart.discover_candidates(reports, {}, date_folder="260809")[0]
+            deterministic_id = hashlib.sha256(
+                f"{candidate.report_ref}:{candidate.image_sha256}".encode("utf-8")
+            ).hexdigest()[:32]
+            old_chart = {
+                "id": deterministic_id,
+                "image_id": candidate.image_sha256,
+                "ordinal": 1,
+                "analysis_version": chart.ANALYSIS_VERSION,
+                **sample_analysis(),
+            }
+            previous = {
+                "schema_version": 1,
+                "reports": [{
+                    "report_ref": candidate.report_ref,
+                    "title": candidate.report_title,
+                    "date_folder": candidate.date_folder,
+                    "charts": [old_chart],
+                }],
+            }
+            index, summary = chart.build_index(
+                [candidate],
+                state={"schema_version": 1, "items": {}},
+                previous_index=previous,
+                state_path=workspace / "state.json",
+                asset_output_dir=workspace / "assets",
+                analyze=lambda _path: sample_analysis(False),
+                max_model_calls=20,
+            )
+            self.assertEqual(summary["model_calls"], 1)
+            self.assertEqual(index["item_count"], 1)
+            self.assertEqual(index["reports"][0]["charts"][0]["id"], deterministic_id)
 
     def test_authentication_error_fails_immediately_without_retry(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
@@ -728,6 +825,243 @@ class ChartSearchIndexTests(unittest.TestCase):
             self.assertEqual(len(client.calls), 1)
             self.assertEqual(client.calls[0]["Key"], "_chart-search/v1/state.json")
             self.assertEqual(client.calls[0]["CacheControl"], "private, no-store")
+
+    def test_publish_defaults_to_schema_hygiene_without_cleanup(self) -> None:
+        v1_id = "d" * 64
+        v2_id = "e" * 64
+        unreferenced_id = "f" * 64
+
+        class MissingObject(Exception):
+            response = {"Error": {"Code": "NoSuchKey"}}
+
+        class FakeClient:
+            def __init__(self) -> None:
+                self.uploaded: list[str] = []
+                self.puts: list[dict] = []
+
+            def head_object(self, **_kwargs):
+                raise MissingObject()
+
+            def upload_file(self, _path, _bucket, key, **_kwargs) -> None:
+                self.uploaded.append(key)
+
+            def put_object(self, **kwargs) -> None:
+                self.puts.append(kwargs)
+
+            def list_objects_v2(self, **_kwargs):
+                raise AssertionError("default publish must not list objects for cleanup")
+
+            def delete_objects(self, **_kwargs) -> None:
+                raise AssertionError("default publish must not delete objects")
+
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            state_path = root / "state.json"
+            index_path = root / "index.json"
+            asset_dir = root / "images"
+            asset_dir.mkdir()
+            state_path.write_text(json.dumps({
+                "schema_version": 1,
+                "analysis_version": "chart-search-v2",
+                "items": {},
+            }), encoding="utf-8")
+            index_path.write_text(json.dumps({
+                "schema_version": 1,
+                "report_count": 1,
+                "item_count": 2,
+                "reports": [{
+                    "report_ref": "mixed",
+                    "report_id": "mixed-report",
+                    "title": "Mixed report",
+                    "date_folder": "260811",
+                    "chart_count": 2,
+                    "charts": [
+                        {"analysis_version": "chart-search-v1", "image_id": v1_id, "title": "Legacy"},
+                        {"analysis_version": "chart-search-v2", "image_id": v2_id, "title": "Current"},
+                    ],
+                }],
+            }), encoding="utf-8")
+            for image_id in (v1_id, v2_id, unreferenced_id):
+                (asset_dir / f"{image_id}.jpg").write_bytes(b"jpeg")
+
+            client = FakeClient()
+            args = SimpleNamespace(
+                prefix="_chart-search/v1",
+                state=str(state_path),
+                index=str(index_path),
+                asset_dir=str(asset_dir),
+                max_storage_bytes=1,
+            )
+            with patch.object(r2, "client_and_bucket", return_value=(client, "private-bucket")):
+                self.assertEqual(r2.command_publish(args), 0)
+
+            published = json.loads(index_path.read_text(encoding="utf-8"))
+            self.assertEqual(published["item_count"], 1)
+            self.assertEqual(published["reports"][0]["charts"][0]["image_id"], v2_id)
+            self.assertEqual(client.uploaded, [f"_chart-search/v1/images/{v2_id}.jpg"])
+            self.assertEqual([row["Key"] for row in client.puts], [
+                "_chart-search/v1/state.json",
+                "_chart-search/v1/index.json",
+            ])
+
+    def test_two_default_publishes_keep_old_index_record_and_old_r2_image(self) -> None:
+        old_id = "1" * 64
+        new_id = "2" * 64
+
+        class MissingObject(Exception):
+            response = {"Error": {"Code": "NoSuchKey"}}
+
+        class FakeClient:
+            def __init__(self) -> None:
+                self.objects: set[str] = set()
+                self.deleted: list[str] = []
+
+            def head_object(self, **kwargs):
+                if kwargs["Key"] not in self.objects:
+                    raise MissingObject()
+                return {}
+
+            def upload_file(self, _path, _bucket, key, **_kwargs) -> None:
+                self.objects.add(key)
+
+            def put_object(self, **kwargs) -> None:
+                self.objects.add(kwargs["Key"])
+
+            def list_objects_v2(self, **_kwargs):
+                raise AssertionError("default publish must not list old images for cleanup")
+
+            def delete_objects(self, **kwargs) -> None:
+                self.deleted.extend(row["Key"] for row in kwargs["Delete"]["Objects"])
+
+        def report(report_ref: str, image_id: str, date_folder: str) -> dict:
+            return {
+                "report_ref": report_ref,
+                "report_id": f"{report_ref}-id",
+                "title": report_ref,
+                "date_folder": date_folder,
+                "chart_count": 1,
+                "charts": [{
+                    "id": f"{report_ref}-chart",
+                    "analysis_version": chart.ANALYSIS_VERSION,
+                    "image_id": image_id,
+                    "title": report_ref,
+                }],
+            }
+
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            state_path = root / "state.json"
+            index_path = root / "index.json"
+            first_assets = root / "first-images"
+            second_assets = root / "second-images"
+            first_assets.mkdir()
+            second_assets.mkdir()
+            state_path.write_text(json.dumps({
+                "schema_version": 1,
+                "analysis_version": chart.ANALYSIS_VERSION,
+                "items": {},
+            }), encoding="utf-8")
+            (first_assets / f"{old_id}.jpg").write_bytes(b"old jpeg")
+            (second_assets / f"{new_id}.jpg").write_bytes(b"new jpeg")
+            client = FakeClient()
+
+            first_index = {
+                "schema_version": 1,
+                "report_count": 1,
+                "item_count": 1,
+                "reports": [report("old-report", old_id, "260801")],
+            }
+            index_path.write_text(json.dumps(first_index), encoding="utf-8")
+            with patch.object(r2, "client_and_bucket", return_value=(client, "private-bucket")):
+                self.assertEqual(r2.command_publish(SimpleNamespace(
+                    prefix="_chart-search/v1",
+                    state=str(state_path),
+                    index=str(index_path),
+                    asset_dir=str(first_assets),
+                )), 0)
+
+            second_index = {
+                "schema_version": 1,
+                "report_count": 2,
+                "item_count": 2,
+                "reports": [
+                    report("new-report", new_id, "260802"),
+                    report("old-report", old_id, "260801"),
+                ],
+            }
+            index_path.write_text(json.dumps(second_index), encoding="utf-8")
+            with patch.object(r2, "client_and_bucket", return_value=(client, "private-bucket")):
+                self.assertEqual(r2.command_publish(SimpleNamespace(
+                    prefix="_chart-search/v1",
+                    state=str(state_path),
+                    index=str(index_path),
+                    asset_dir=str(second_assets),
+                )), 0)
+
+            published = json.loads(index_path.read_text(encoding="utf-8"))
+            self.assertEqual({row["report_ref"] for row in published["reports"]}, {
+                "old-report", "new-report",
+            })
+            self.assertIn(f"_chart-search/v1/images/{old_id}.jpg", client.objects)
+            self.assertIn(f"_chart-search/v1/images/{new_id}.jpg", client.objects)
+            self.assertEqual(client.deleted, [])
+
+    def test_publish_cleanup_flag_is_explicit_and_defaults_off(self) -> None:
+        required = [
+            "chart_search_r2.py", "publish",
+            "--state", "state.json",
+            "--index", "index.json",
+            "--asset-dir", "images",
+        ]
+        with patch.object(sys, "argv", required):
+            self.assertFalse(r2.parse_args().cleanup)
+        with patch.object(sys, "argv", [*required, "--cleanup"]):
+            self.assertTrue(r2.parse_args().cleanup)
+
+    def test_publish_cleanup_flag_opts_into_budget_enforcement(self) -> None:
+        class FakeClient:
+            def put_object(self, **_kwargs) -> None:
+                pass
+
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            state_path = root / "state.json"
+            index_path = root / "index.json"
+            asset_dir = root / "images"
+            asset_dir.mkdir()
+            state_path.write_text(json.dumps({
+                "schema_version": 1,
+                "analysis_version": "chart-search-v2",
+                "items": {},
+            }), encoding="utf-8")
+            index_path.write_text(json.dumps({
+                "schema_version": 1,
+                "report_count": 0,
+                "item_count": 0,
+                "reports": [],
+            }), encoding="utf-8")
+            args = SimpleNamespace(
+                prefix="_chart-search/v1",
+                state=str(state_path),
+                index=str(index_path),
+                asset_dir=str(asset_dir),
+                cleanup=True,
+                max_storage_bytes=1234,
+            )
+            client = FakeClient()
+            with (
+                patch.object(r2, "client_and_bucket", return_value=(client, "private-bucket")),
+                patch.object(r2, "enforce_storage_budget", return_value={
+                    "images_evicted": 0,
+                    "records_removed": 0,
+                }) as enforce,
+                patch.object(r2, "prefix_size_bytes", return_value=100) as prefix_size,
+            ):
+                self.assertEqual(r2.command_publish(args), 0)
+
+            enforce.assert_called_once()
+            self.assertEqual(enforce.call_args.kwargs["budget_bytes"], 1234)
+            prefix_size.assert_called_once_with(client, "private-bucket", "_chart-search/v1")
 
     def test_chart_storage_budget_evicts_unreferenced_then_oldest(self) -> None:
         old_id = "a" * 64
@@ -983,6 +1317,29 @@ class ChartSearchIndexTests(unittest.TestCase):
         )
         self.assertLess(recovery, strict_gate)
         self.assertLess(strict_gate, public_publish)
+
+    def test_workflow_opts_into_chart_cleanup_only_when_repo_variable_is_true(self) -> None:
+        workflow = (ROOT / ".github/workflows/portal-chart-search-index.yml").read_text(
+            encoding="utf-8"
+        )
+        publish_step = workflow[workflow.index("- name: Publish checkpoint and searchable index"):]
+        conditional = publish_step.index('if [ "$CHART_CLEANUP_ENABLED" = "true" ]; then')
+        cleanup_flag = publish_step.index("PUBLISH_ARGS+=(--cleanup --max-storage-bytes")
+        publish_command = publish_step.index("python scripts/chart_search_r2.py publish")
+
+        self.assertIn(
+            "CHART_CLEANUP_ENABLED: ${{ vars.CHART_CLEANUP_ENABLED || 'false' }}",
+            publish_step,
+        )
+        self.assertIn(
+            "CHART_STORAGE_BUDGET_BYTES: ${{ vars.CHART_STORAGE_BUDGET_BYTES || '107374182400' }}",
+            publish_step,
+        )
+        self.assertIn('"${PUBLISH_ARGS[@]}"', publish_step)
+        self.assertEqual(publish_step.count("--cleanup"), 1)
+        self.assertNotIn("--replace-date-folder", workflow)
+        self.assertLess(conditional, cleanup_flag)
+        self.assertLess(cleanup_flag, publish_command)
 
 
 if __name__ == "__main__":

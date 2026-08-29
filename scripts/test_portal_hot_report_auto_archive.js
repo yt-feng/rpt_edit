@@ -71,6 +71,11 @@ assert.match(
   /cron === "\*\/30 \* \* \* \*"[\s\S]*?tasks\.push\(repairHotReportPublicIndexIfNeeded\(env, \{ verifyStorage: true \}\)\)/,
   "the 30-minute Worker maintenance must repair a missing or stale public index",
 );
+assert.match(
+  worker,
+  /if \(hotReportCleanupEnabled\(env\)\) tasks\.push\(enforceHotReportStorageLimit\(env\)\)/,
+  "the 30-minute quota cleanup must remain dormant unless explicitly enabled",
+);
 
 const externalPendingBranch = externalDownload.slice(externalDownload.indexOf("// 3) Gated and not yet mirrored"));
 assert.ok(externalPendingBranch.length > 0, "external 202 branch must remain identifiable");
@@ -261,8 +266,29 @@ async function readJson(bucket, key) {
   assert.notEqual(stableId, await api.automaticHotReportId("external", originId));
   assert.notEqual(stableId, await api.automaticHotReportId("catalog", "bbbbbbbbbbbbbbbb"));
 
+  const disabledCleanupBucket = new MockR2Bucket();
+  const disabledCleanupId = "hot:0101010101010101";
+  await disabledCleanupBucket.put(
+    api.hotReportPdfKey(disabledCleanupId),
+    new Uint8Array(100),
+  );
+  const disabledCleanup = await api.enforceHotReportStorageLimit({
+    REPORT_BUCKET: disabledCleanupBucket,
+    HOT_REPORT_STORAGE_LIMIT_BYTES: 1,
+  });
+  assert.equal(disabledCleanup.cleanup_enabled, false);
+  assert.equal(disabledCleanup.cleanup_skipped, true);
+  assert.equal(disabledCleanup.pruned_count, 0);
+  assert.equal(disabledCleanupBucket.listCalls.length, 0, "disabled cleanup must not scan storage");
+  assert.equal(disabledCleanupBucket.deleteCalls.length, 0, "disabled cleanup must not delete PDFs");
+  assert.ok(await disabledCleanupBucket.head(api.hotReportPdfKey(disabledCleanupId)));
+
   const archiveBucket = new MockR2Bucket();
-  const archiveEnv = { REPORT_BUCKET: archiveBucket, HOT_REPORT_STORAGE_LIMIT_BYTES: 10_000 };
+  const archiveEnv = {
+    REPORT_BUCKET: archiveBucket,
+    HOT_REPORT_CLEANUP_ENABLED: "true",
+    HOT_REPORT_STORAGE_LIMIT_BYTES: 10_000,
+  };
   const sourceKey = "reports/aaaaaaaaaaaaaaaa.pdf";
   await archiveBucket.put(sourceKey, new Uint8Array([37, 80, 68, 70, 45, 49, 50, 51]));
   const baseInput = {
@@ -417,7 +443,11 @@ async function readJson(bucket, key) {
   }
 
   const retentionBucket = new MockR2Bucket();
-  const retentionEnv = { REPORT_BUCKET: retentionBucket, HOT_REPORT_STORAGE_LIMIT_BYTES: 200 };
+  const retentionEnv = {
+    REPORT_BUCKET: retentionBucket,
+    HOT_REPORT_CLEANUP_ENABLED: "true",
+    HOT_REPORT_STORAGE_LIMIT_BYTES: 200,
+  };
   const oldestId = "hot:1111111111111111";
   const newerId = "hot:2222222222222222";
   const newestId = "hot:3333333333333333";
@@ -609,7 +639,11 @@ async function readJson(bucket, key) {
   assert.equal(overrideRaceBucket.deleteCalls.filter((key) => key === overrideRaceKey).length, 0);
 
   const readFailureBucket = new MockR2Bucket();
-  const readFailureEnv = { REPORT_BUCKET: readFailureBucket, HOT_REPORT_STORAGE_LIMIT_BYTES: 50 };
+  const readFailureEnv = {
+    REPORT_BUCKET: readFailureBucket,
+    HOT_REPORT_CLEANUP_ENABLED: "true",
+    HOT_REPORT_STORAGE_LIMIT_BYTES: 50,
+  };
   const readFailureId = "hot:4444444444444444";
   const readFailurePdf = api.hotReportPdfKey(readFailureId);
   const readFailureItem = api.hotReportItemKey(readFailureId);
@@ -661,6 +695,7 @@ async function readJson(bucket, key) {
   });
   const crashedWriterCleanup = await api.enforceHotReportStorageLimit({
     REPORT_BUCKET: crashedWriterBucket,
+    HOT_REPORT_CLEANUP_ENABLED: "true",
     HOT_REPORT_STORAGE_LIMIT_BYTES: 50,
   });
   assert.equal(crashedWriterCleanup.pruned_count, 1);
@@ -1120,6 +1155,7 @@ async function readJson(bucket, key) {
   await assert.rejects(
     api.enforceHotReportStorageLimit({
       REPORT_BUCKET: exceptionBucket,
+      HOT_REPORT_CLEANUP_ENABLED: "true",
       HOT_REPORT_STORAGE_LIMIT_BYTES: 50,
     }),
     /mock R2 GET failed/,
@@ -1345,6 +1381,7 @@ async function readJson(bucket, key) {
 
   const boundedCleanup = await api.enforceHotReportStorageLimit({
     REPORT_BUCKET: listingBucket,
+    HOT_REPORT_CLEANUP_ENABLED: "true",
     HOT_REPORT_STORAGE_LIMIT_BYTES: 1,
   });
   assert.equal(

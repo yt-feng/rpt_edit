@@ -43,7 +43,7 @@ from finalize_outputs import sanitize_text
 from portal_r2_prefix import DEFAULT_R2_PREFIX, validated_catalog_r2_prefix
 
 DROPBOX_CONTENT = "https://content.dropboxapi.com/2"
-DEFAULT_STORAGE_LIMIT_GIB = 8.0
+DEFAULT_STORAGE_LIMIT_GIB = 100.0
 BYTES_PER_GIB = 1024 ** 3
 REPORT_ID_RE = re.compile(r"^[0-9a-f]{24}$")
 
@@ -448,6 +448,13 @@ def apply_storage_limit(
     return archived, total_before, total_after
 
 
+def storage_cleanup_limit_bytes(storage_limit_gib: float, cleanup_enabled: bool) -> int:
+    """Return the active quota only when destructive cleanup is explicitly enabled."""
+    if storage_limit_gib < 0:
+        raise ValueError("--storage-limit-gb must be 0 or greater")
+    return int(storage_limit_gib * BYTES_PER_GIB) if cleanup_enabled else 0
+
+
 def prune_r2_objects_for_items(
     items: list[dict[str, Any]],
     r2_prefix: str = DEFAULT_R2_PREFIX,
@@ -687,15 +694,22 @@ def main() -> int:
         "--storage-limit-gb",
         type=float,
         default=DEFAULT_STORAGE_LIMIT_GIB,
-        help="Prune oldest date folders from the catalog/R2 when total PDF size exceeds this many GiB. 0 disables.",
+        help="Dormant quota used only with --enable-pdf-cleanup. 0 disables even when cleanup is enabled.",
+    )
+    parser.add_argument(
+        "--enable-pdf-cleanup",
+        action="store_true",
+        help="Opt in to quota-based catalog archiving and deferred R2 PDF deletion. Default: disabled.",
     )
     args = parser.parse_args()
 
     try:
         if args.days < 0:
             raise ValueError("--days must be 0 or greater")
-        if args.storage_limit_gb < 0:
-            raise ValueError("--storage-limit-gb must be 0 or greater")
+        storage_limit_bytes = storage_cleanup_limit_bytes(
+            args.storage_limit_gb,
+            args.enable_pdf_cleanup,
+        )
         # Validate once before Dropbox discovery or any possible R2 upload,
         # then pass only the normalized prefix through the rest of the run.
         args.r2_prefix = validated_catalog_r2_prefix(args.r2_prefix)
@@ -713,7 +727,6 @@ def main() -> int:
 
         current, download_paths = collect_current_reports(token, root, folders, password_rules, args.r2_prefix)
         catalog = merge_catalog(old_catalog, current, root, now)
-        storage_limit_bytes = int(args.storage_limit_gb * BYTES_PER_GIB)
         pruned_items, size_before, size_after = apply_storage_limit(catalog, storage_limit_bytes, now)
         log(
             f"Catalog PDF size: {size_after} bytes after storage check "
@@ -737,7 +750,11 @@ def main() -> int:
             )
 
         delete_result = R2DeleteResult(frozenset(), {})
-        delete_candidates = previously_archived_prune_candidates(old_catalog, catalog)
+        delete_candidates = (
+            previously_archived_prune_candidates(old_catalog, catalog)
+            if args.enable_pdf_cleanup
+            else []
+        )
         if delete_candidates:
             if args.sync_r2:
                 delete_result = prune_r2_objects_for_items(delete_candidates, args.r2_prefix)

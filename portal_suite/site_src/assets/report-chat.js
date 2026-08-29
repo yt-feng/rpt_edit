@@ -3,6 +3,7 @@
 
   const AUTH_SESSION_KEY = "portal_auth_session";
   const CHAT_REQUEST_TIMEOUT_MS = 20 * 1000;
+  const RESEARCH_REQUEST_TIMEOUT_MS = 60 * 1000;
   const surfaces = [
     { context: "report", form: "homeChatForm", input: "homeChatInput", status: "homeChatStatus", messages: "homeChatMessages", recommendations: "homeChatRecommendations" },
     { context: "course", form: "courseChatForm", input: "courseChatInput", status: "courseChatStatus", messages: "courseChatMessages", recommendations: "courseChatRecommendations" },
@@ -66,6 +67,66 @@
     </a>`;
   }
 
+  function sourceIds(value, sources) {
+    if (!Array.isArray(value)) return [];
+    const seen = new Set();
+    return value.map((id) => String(id || "").trim()).filter((id) => {
+      if (!id || seen.has(id) || !sources.has(id)) return false;
+      seen.add(id);
+      return true;
+    }).slice(0, 8);
+  }
+
+  function sourceChipsHtml(value, sources) {
+    return sourceIds(value, sources).map((id) => {
+      const item = sources.get(id);
+      return `<a class="report-research-source-chip" href="${escapeHtml(reportUrl(id, item))}" target="_blank" rel="noopener noreferrer">来源 · ${escapeHtml(item.institution || item.title || id)}</a>`;
+    }).join("");
+  }
+
+  function researchResultHtml(data) {
+    const sourceRows = (Array.isArray(data.sources) ? data.sources : Array.isArray(data.recommendations) ? data.recommendations : [])
+      .filter((item) => item && typeof item === "object" && String(item.id || "").trim());
+    const sources = new Map(sourceRows.map((item) => [String(item.id).trim(), item]));
+    const executiveSummary = String(data.executive_summary || data.answer || "").trim();
+    const findings = (Array.isArray(data.findings) ? data.findings : []).filter((item) => item && typeof item === "object").slice(0, 8);
+    const dataPoints = (Array.isArray(data.data_points) ? data.data_points : []).filter((item) => item && typeof item === "object").slice(0, 12);
+    const charts = (Array.isArray(data.charts) ? data.charts : []).filter((item) => {
+      if (!item || typeof item !== "object" || !/^[0-9a-f]{64}$/u.test(String(item.image_id || ""))) return false;
+      return sources.has(String(item.report_id || "").trim());
+    }).slice(0, 6);
+    const sections = [];
+    if (executiveSummary) {
+      sections.push(`<section class="report-research-summary"><span>研究摘要</span><p>${escapeHtml(executiveSummary)}</p><div class="report-research-source-row">${sourceChipsHtml(data.summary_source_ids, sources)}</div></section>`);
+    }
+    if (findings.length) {
+      sections.push(`<section class="report-research-section"><h3>主要发现</h3><div class="report-research-findings">${findings.map((item) => {
+        const title = String(item.title || "核心发现").trim();
+        const summary = String(item.summary || item.analysis || "").trim();
+        return `<article><strong>${escapeHtml(title)}</strong><p>${escapeHtml(summary)}</p><div class="report-research-source-row">${sourceChipsHtml(item.source_ids, sources)}</div></article>`;
+      }).join("")}</div></section>`);
+    }
+    if (dataPoints.length) {
+      sections.push(`<section class="report-research-section"><h3>关键数据</h3><div class="report-research-data-grid">${dataPoints.map((item) => {
+        const label = String(item.label || item.metric || "数据").trim();
+        const value = String(item.value || "").trim();
+        const context = String(item.context || item.period || "").trim();
+        return `<article><span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong>${context ? `<p>${escapeHtml(context)}</p>` : ""}<div class="report-research-source-row">${sourceChipsHtml(item.source_ids, sources)}</div></article>`;
+      }).join("")}</div></section>`);
+    }
+    if (charts.length) {
+      sections.push(`<section class="report-research-section"><h3>相关 Charts</h3><div class="report-research-chart-grid">${charts.map((item) => {
+        const imageId = String(item.image_id);
+        const reportId = String(item.report_id || "").trim();
+        const report = sources.get(reportId);
+        const description = String(item.description || item.trend_summary || "").trim();
+        const metrics = (Array.isArray(item.metrics) ? item.metrics : []).map((value) => String(value || "").trim()).filter(Boolean).slice(0, 5).join(" · ");
+        return `<figure class="report-research-chart"><img src="/api/chart-image?id=${imageId}" alt="${escapeHtml(item.title || "研究图表")}" loading="lazy" decoding="async"><figcaption><strong>${escapeHtml(item.title || "研究图表")}</strong>${description ? `<p>${escapeHtml(description)}</p>` : ""}${metrics ? `<span>${escapeHtml(metrics)}</span>` : ""}<a href="${escapeHtml(reportUrl(reportId, report))}" target="_blank" rel="noopener noreferrer">来源报告 · ${escapeHtml(report.report_title || report.title || reportId)}</a></figcaption></figure>`;
+      }).join("")}</div></section>`);
+    }
+    return sections.join("");
+  }
+
   function createProgressCard(form, context) {
     const card = document.createElement("div");
     card.className = "async-action report-chat-async-action";
@@ -91,21 +152,21 @@
     };
   }
 
-  function updateProgress(progress, startedAt) {
+  function updateProgress(progress, startedAt, context) {
     const elapsedMs = Math.max(0, Date.now() - startedAt);
     const elapsedSeconds = (elapsedMs / 1000).toFixed(1);
     progress.elapsed.textContent = `已用时 ${elapsedSeconds} 秒`;
     if (elapsedMs < 1800) {
-      progress.label.textContent = "检索目录";
-      progress.hint.textContent = "正在查找最匹配的资料";
+      progress.label.textContent = context === "report" ? "检索证据" : "检索目录";
+      progress.hint.textContent = context === "report" ? "正在跨报告查找正文、数据与 Charts" : "正在查找最匹配的资料";
       progress.bar.style.width = "24%";
     } else if (elapsedMs < 5500) {
-      progress.label.textContent = "整理候选";
-      progress.hint.textContent = "正在排序并校验实际候选";
+      progress.label.textContent = context === "report" ? "交叉验证" : "整理候选";
+      progress.hint.textContent = context === "report" ? "正在对照多份报告并绑定来源" : "正在排序并校验实际候选";
       progress.bar.style.width = "58%";
     } else {
-      progress.label.textContent = "生成推荐";
-      progress.hint.textContent = "候选已就绪，正在组织答案";
+      progress.label.textContent = context === "report" ? "生成研究" : "生成推荐";
+      progress.hint.textContent = context === "report" ? "证据已就绪，正在形成综合结论" : "候选已就绪，正在组织答案";
       progress.bar.style.width = "84%";
     }
   }
@@ -171,8 +232,8 @@
       button.classList.add("is-loading");
       form.setAttribute("aria-busy", "true");
       status.textContent = "已提交，下方会实时显示查找进度。";
-      updateProgress(progressCard, startedAt);
-      const progressId = window.setInterval(() => updateProgress(progressCard, startedAt), 1000);
+      updateProgress(progressCard, startedAt, surface.context);
+      const progressId = window.setInterval(() => updateProgress(progressCard, startedAt, surface.context), 1000);
       progressCard.cancel.addEventListener("click", () => {
         if (activeRequest !== request || request.abortReason) return;
         request.abortReason = "cancelled";
@@ -185,7 +246,7 @@
         if (activeRequest !== request || request.abortReason) return;
         request.abortReason = "timeout";
         controller.abort();
-      }, CHAT_REQUEST_TIMEOUT_MS);
+      }, surface.context === "report" ? RESEARCH_REQUEST_TIMEOUT_MS : CHAT_REQUEST_TIMEOUT_MS);
       try {
         const response = await fetch("/api/report-chat", {
           method: "POST",
@@ -208,12 +269,16 @@
         history.push({ role: "user", content: question }, { role: "assistant", content: data.answer || "" });
         while (history.length > 6) history.shift();
         // Keep the previous answer visible until every part of the new response is ready.
-        messages.innerHTML = `<article class="report-chat-answer"><span>AI 推荐</span><p>${escapeHtml(data.answer || "")}</p></article>`;
-        recommendations.innerHTML = (Array.isArray(data.recommendations) ? data.recommendations : [])
+        const researchHtml = surface.context === "report" && (data.mode === "research" || Array.isArray(data.findings) || Array.isArray(data.charts))
+          ? researchResultHtml(data)
+          : "";
+        messages.innerHTML = researchHtml || `<article class="report-chat-answer"><span>AI 推荐</span><p>${escapeHtml(data.answer || "")}</p></article>`;
+        const recommendationRows = surface.context === "report" && Array.isArray(data.sources) ? data.sources : data.recommendations;
+        recommendations.innerHTML = (Array.isArray(recommendationRows) ? recommendationRows : [])
           .map(recommendationHtml).join("");
         const followUps = Array.isArray(data.follow_up_questions) ? data.follow_up_questions : [];
         status.textContent = followUps.length ? `还可以继续问：${followUps.join("；")}` : `今日还可使用 ${Number(data.usage && data.usage.remaining || 0)} 次。`;
-        finishProgress(progressCard, "success", "推荐已生成");
+        finishProgress(progressCard, "success", surface.context === "report" && researchHtml ? "研究已生成" : "推荐已生成");
         progressRemovalId = window.setTimeout(() => {
           if (progressCard === request.progress) {
             progressCard.card.remove();
@@ -225,7 +290,9 @@
           status.textContent = "已取消本次查找，上一次结果仍保留。";
           finishProgress(progressCard, "cancelled", "已取消");
         } else if (request.abortReason === "timeout" || error && error.name === "AbortError") {
-          status.textContent = "资料 Chat 请求超过 20 秒，已停止等待。上一次结果已保留，可点击重试。";
+          status.textContent = surface.context === "report"
+            ? "研究请求超过 60 秒，已停止等待。上一次结果已保留，可点击重试。"
+            : "资料 Chat 请求超过 20 秒，已停止等待。上一次结果已保留，可点击重试。";
           finishProgress(progressCard, "timeout", "请求超时");
         } else {
           status.textContent = `${error && error.message || "资料 Chat 暂时不可用。"}；上一次结果已保留，请点击重试。`;

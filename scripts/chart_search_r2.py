@@ -13,7 +13,7 @@ from typing import Any
 
 
 DEFAULT_PREFIX = "_chart-search/v1"
-DEFAULT_STORAGE_BUDGET_BYTES = 1024 * 1024 * 1024
+DEFAULT_STORAGE_BUDGET_BYTES = 100 * 1024 * 1024 * 1024
 PUBLIC_ANALYSIS_VERSION = "chart-search-v2"
 ASSET_RE = re.compile(r"^[0-9a-f]{64}\.jpg$")
 IMAGE_ID_RE = re.compile(r"^[0-9a-f]{64}$")
@@ -119,13 +119,21 @@ def asset_exists(client: Any, bucket: str, key: str) -> bool:
         raise RuntimeError("Unable to inspect chart-search image") from exc
 
 
-def publish_assets(client: Any, bucket: str, prefix: str, asset_dir: Path) -> tuple[int, int]:
+def publish_assets(
+    client: Any,
+    bucket: str,
+    prefix: str,
+    asset_dir: Path,
+    referenced_image_ids: set[str] | None = None,
+) -> tuple[int, int]:
     if not asset_dir.exists():
         return 0, 0
     uploaded = 0
     reused = 0
     for asset in sorted(asset_dir.iterdir()):
         if not asset.is_file() or not ASSET_RE.fullmatch(asset.name):
+            continue
+        if referenced_image_ids is not None and asset.stem not in referenced_image_ids:
             continue
         key = f"{prefix}/images/{asset.name}"
         if asset_exists(client, bucket, key):
@@ -344,28 +352,49 @@ def command_publish(args: argparse.Namespace) -> int:
     index = load_publish_document(index_path, "index")
     client, bucket = client_and_bucket()
     prefix = validate_prefix(args.prefix)
-    storage_budget_bytes = int(getattr(args, "max_storage_bytes", DEFAULT_STORAGE_BUDGET_BYTES))
-    uploaded, reused = publish_assets(client, bucket, prefix, Path(args.asset_dir))
-    put_json(client, bucket, f"{prefix}/state.json", state_path, private=True)
-    retention = enforce_storage_budget(
+    cleanup_enabled = bool(getattr(args, "cleanup", False))
+    referenced_image_ids = set(referenced_image_recency(index))
+    schema_records_removed = filter_index_images(index, referenced_image_ids)
+    uploaded, reused = publish_assets(
         client,
         bucket,
         prefix,
-        index,
-        budget_bytes=storage_budget_bytes,
+        Path(args.asset_dir),
+        referenced_image_ids,
     )
+    put_json(client, bucket, f"{prefix}/state.json", state_path, private=True)
+    retention = {
+        "images_evicted": 0,
+        "records_removed": schema_records_removed,
+    }
+    storage_summary = "stored_bytes=not_checked budget_bytes=not_enforced"
+    if cleanup_enabled:
+        storage_budget_bytes = int(getattr(args, "max_storage_bytes", DEFAULT_STORAGE_BUDGET_BYTES))
+        cleanup_retention = enforce_storage_budget(
+            client,
+            bucket,
+            prefix,
+            index,
+            budget_bytes=storage_budget_bytes,
+        )
+        retention = {
+            **cleanup_retention,
+            "records_removed": schema_records_removed + cleanup_retention["records_removed"],
+        }
     atomic_write(index_path, index)
     # Publish the index last, after all referenced immutable images are available.
     put_json(client, bucket, f"{prefix}/index.json", index_path, private=False)
-    total_bytes = prefix_size_bytes(client, bucket, prefix)
-    if total_bytes > storage_budget_bytes:
-        raise RuntimeError("Chart storage budget verification failed")
+    if cleanup_enabled:
+        total_bytes = prefix_size_bytes(client, bucket, prefix)
+        if total_bytes > storage_budget_bytes:
+            raise RuntimeError("Chart storage budget verification failed")
+        storage_summary = f"stored_bytes={total_bytes} budget_bytes={storage_budget_bytes}"
     print(
         "chart_search_publish "
         f"reports={int(index.get('report_count') or 0)} charts={int(index.get('item_count') or 0)} "
         f"images_uploaded={uploaded} images_reused={reused} "
         f"images_evicted={retention['images_evicted']} records_removed={retention['records_removed']} "
-        f"stored_bytes={total_bytes} budget_bytes={storage_budget_bytes}"
+        f"cleanup_enabled={str(cleanup_enabled).lower()} {storage_summary}"
     )
     return 0
 
@@ -395,6 +424,11 @@ def parse_args() -> argparse.Namespace:
     publish.add_argument("--state", required=True)
     publish.add_argument("--index", required=True)
     publish.add_argument("--asset-dir", required=True)
+    publish.add_argument(
+        "--cleanup",
+        action="store_true",
+        help="Opt in to deleting unreferenced images and enforcing the storage budget.",
+    )
     publish.add_argument("--max-storage-bytes", type=int, default=DEFAULT_STORAGE_BUDGET_BYTES)
     publish.set_defaults(handler=command_publish)
 

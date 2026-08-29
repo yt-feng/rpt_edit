@@ -7,6 +7,7 @@ import re
 import sys
 import types
 import unittest
+from pathlib import Path
 from unittest import mock
 
 # Keep this focused unit test runnable in the lightweight local Python used by
@@ -51,6 +52,49 @@ class FakeR2Client:
 class CatalogStorageGuardTests(unittest.TestCase):
     REPORT_A = "0123456789abcdef01234567"
     REPORT_B = "abcdef0123456789abcdef01"
+
+    def test_storage_cleanup_is_disabled_without_explicit_opt_in(self) -> None:
+        cleanup_limit = catalog.storage_cleanup_limit_bytes(7, False)
+        self.assertEqual(cleanup_limit, 0)
+        self.assertEqual(
+            catalog.storage_cleanup_limit_bytes(7, True),
+            7 * catalog.BYTES_PER_GIB,
+        )
+        active_catalog = {
+            "items": [{
+                "id": self.REPORT_A,
+                "available": True,
+                "r2_synced": True,
+                "present_in_latest_scan": True,
+                "date_folder": "260101",
+                "size_bytes": 100,
+            }],
+        }
+        archived, _before, after = catalog.apply_storage_limit(
+            active_catalog,
+            cleanup_limit,
+            "2026-08-29 00:00:00 +0800",
+        )
+        self.assertEqual(archived, [])
+        self.assertEqual(after, 100)
+        self.assertTrue(active_catalog["items"][0]["available"])
+
+    def test_negative_storage_limit_is_rejected_even_when_cleanup_is_disabled(self) -> None:
+        with self.assertRaisesRegex(ValueError, "0 or greater"):
+            catalog.storage_cleanup_limit_bytes(-1, False)
+
+    def test_catalog_workflow_enables_cleanup_only_at_one_hundred_gib(self) -> None:
+        workflow = (
+            Path(__file__).resolve().parents[1]
+            / ".github"
+            / "workflows"
+            / "neutral-edge-cutover.yml"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn("CATALOG_PDF_CLEANUP_ENABLED: ${{ vars.CATALOG_PDF_CLEANUP_ENABLED || 'true' }}", workflow)
+        self.assertIn('true) cleanup_args=(--enable-pdf-cleanup) ;;', workflow)
+        self.assertIn("--storage-limit-gb 100", workflow)
+        self.assertIn('"${cleanup_args[@]}"', workflow)
 
     def test_prune_uses_safe_persisted_key_across_prefix_migration(self) -> None:
         client = FakeR2Client()

@@ -65,10 +65,12 @@ jobs:
           python3 -m py_compile \
             scripts/build_chart_search_index.py \
             scripts/build_report_chat_index.py \
+            scripts/build_report_research_index.py \
             scripts/chart_search_r2.py \
             scripts/merge_chart_search_index.py \
             scripts/publish_static_slot.py
           python3 scripts/test_build_report_chat_index.py
+          python3 scripts/test_report_research_index.py
           python3 -B scripts/test_publish_static_slot.py
           python3 scripts/test_portal_seo.py
           python3 scripts/test_portal_blog_build.py
@@ -246,8 +248,17 @@ jobs:
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET: ${{ secrets.R2_BUCKET }}
           R2_OBJECT_PREFIX: ${{ vars.R2_OBJECT_PREFIX || 'reports' }}
+          CATALOG_PDF_CLEANUP_ENABLED: ${{ vars.CATALOG_PDF_CLEANUP_ENABLED || 'true' }}
         run: |
           set -euo pipefail
+          case "$CATALOG_PDF_CLEANUP_ENABLED" in
+            true) cleanup_args=(--enable-pdf-cleanup) ;;
+            false) cleanup_args=() ;;
+            *)
+              echo "CATALOG_PDF_CLEANUP_ENABLED must be true or false" >&2
+              exit 1
+              ;;
+          esac
           test -s portal_suite/data/catalog.json
           test -s portal_suite/data/archive_catalog.json
           test -s portal_suite/data/history_catalog.json
@@ -260,8 +271,9 @@ jobs:
             --catalog-path "portal_suite/data/catalog.json" \
             --password-rules "portal_suite/password_rules.json" \
             --r2-prefix "$R2_OBJECT_PREFIX" \
-            --storage-limit-gb 7 \
-            --sync-r2
+            --storage-limit-gb 100 \
+            --sync-r2 \
+            "${cleanup_args[@]}"
 
       - name: Translate missing report titles
         if: github.event_name == 'schedule' || inputs.operation == 'migrate'
@@ -368,6 +380,22 @@ jobs:
               )
           print(f"static_files={len(files)} static_bytes={total}")
           PY
+
+      - name: Publish private report research evidence index
+        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+        run: |
+          set -euo pipefail
+          python3 scripts/build_report_research_index.py \
+            --catalog-path _neutral_site/data/catalog.json \
+            --search-index-path _neutral_site/data/search_index.json \
+            --output-dir "$RUNNER_TEMP/report-research-index" \
+            --merge-r2-corpus \
+            --upload-r2
 
       - name: Discover active static slot
         id: active_static_slot

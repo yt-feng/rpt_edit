@@ -108,6 +108,7 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
           NEWSFEED_EMAIL_PROVIDER: ${{ vars.NEWSFEED_EMAIL_PROVIDER || 'cloudflare' }}
           OPS_ALERT_EMAIL: ${{ secrets.OPS_ALERT_EMAIL || vars.OPS_ALERT_EMAIL || '' }}
+          HOT_REPORT_CLEANUP_ENABLED: ${{ vars.HOT_REPORT_CLEANUP_ENABLED || 'false' }}
         run: |
           for name in PORTAL_SITE_URL R2_BUCKET_NAME R2_OBJECT_PREFIX CLOUDFLARE_ACCOUNT_ID; do
             if [ -z "${!name}" ]; then
@@ -119,6 +120,13 @@ jobs:
             https://*) ;;
             *)
               echo "PORTAL_SITE_URL must use https" >&2
+              exit 1
+              ;;
+          esac
+          case "$HOT_REPORT_CLEANUP_ENABLED" in
+            true|false) ;;
+            *)
+              echo "HOT_REPORT_CLEANUP_ENABLED must be true or false" >&2
               exit 1
               ;;
           esac
@@ -141,6 +149,7 @@ jobs:
           GH_REPO = "$GITHUB_REPOSITORY"
           NEWSFEED_EMAIL_PROVIDER = "$NEWSFEED_EMAIL_PROVIDER"
           OPS_ALERT_EMAIL = "$OPS_ALERT_EMAIL"
+          HOT_REPORT_CLEANUP_ENABLED = "$HOT_REPORT_CLEANUP_ENABLED"
 
           [triggers]
           crons = [

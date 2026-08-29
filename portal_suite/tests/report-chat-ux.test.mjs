@@ -164,7 +164,7 @@ test("report chat shows immediate staged feedback and atomically replaces old re
   assert.equal(harness.form.insertedElement.getAttribute("aria-live"), null);
   assert.match(source, /data-chat-progress-label role="status" aria-live="polite"/u);
   assert.match(source, /data-chat-progress-time aria-hidden="true"/u);
-  assert.equal(harness.form.insertedElement.querySelector("[data-chat-progress-label]").textContent, "检索目录");
+  assert.equal(harness.form.insertedElement.querySelector("[data-chat-progress-label]").textContent, "检索证据");
   assert.equal(harness.form.insertedElement.querySelector("[data-chat-progress-bar]").style.width, "24%");
   assert.equal(harness.messages.innerHTML, "旧答案");
   assert.equal(harness.recommendations.innerHTML, "旧推荐");
@@ -211,18 +211,52 @@ test("report chat cancellation aborts the request and preserves old results", as
   assert.equal(harness.button.textContent, "开始查找");
 });
 
-test("report chat distinguishes a 20 second timeout and allows retry", async () => {
+test("report research allows a 60 second synthesis window and then allows retry", async () => {
   const harness = createHarness();
   const submit = harness.form.dispatch("submit");
 
-  harness.scheduler.runTimeout(20_000);
+  harness.scheduler.runTimeout(60_000);
   await submit;
 
-  assert.match(harness.status.textContent, /超过 20 秒/u);
+  assert.match(harness.status.textContent, /研究请求超过 60 秒/u);
   assert.match(harness.status.textContent, /点击重试/u);
   assert.equal(harness.messages.innerHTML, "旧答案");
   assert.equal(harness.recommendations.innerHTML, "旧推荐");
   assert.equal(harness.button.disabled, false);
+});
+
+test("report research renders grounded findings, data, charts, and escaped source content", async () => {
+  const harness = createHarness();
+  const submit = harness.form.dispatch("submit");
+  const validImageId = "a".repeat(64);
+
+  harness.fetches[0].resolve({
+    mode: "research",
+    executive_summary: "跨报告结论 <script>alert(1)</script>",
+    summary_source_ids: ["report-1"],
+    findings: [{ title: "需求上升", summary: "多家机构判断电力需求增加", source_ids: ["report-1", "unknown"] }],
+    data_points: [{ label: "资本开支", value: "+25%", context: "2026E", source_ids: ["report-1"] }],
+    sources: [{ id: "report-1", title: "摩根大通 AI 电力报告", institution: "摩根大通", attraction_score: 5 }],
+    charts: [
+      { image_id: validImageId, report_id: "report-1", title: "数据中心用电", description: "需求上升", metrics: ["TWh"] },
+      { image_id: "not-an-image", report_id: "report-1", title: "无效图" },
+      { image_id: "b".repeat(64), report_id: "unknown", title: "无来源图" },
+    ],
+    usage: { remaining: 2 },
+  });
+  await submit;
+
+  assert.match(harness.messages.innerHTML, /研究摘要/u);
+  assert.match(harness.messages.innerHTML, /主要发现/u);
+  assert.match(harness.messages.innerHTML, /关键数据/u);
+  assert.match(harness.messages.innerHTML, /相关 Charts/u);
+  assert.match(harness.messages.innerHTML, new RegExp(`/api/chart-image\\?id=${validImageId}`, "u"));
+  assert.match(harness.messages.innerHTML, /来源 · 摩根大通/u);
+  assert.doesNotMatch(harness.messages.innerHTML, /<script>/u);
+  assert.doesNotMatch(harness.messages.innerHTML, /not-an-image/u);
+  assert.doesNotMatch(harness.messages.innerHTML, /无来源图/u);
+  assert.match(harness.recommendations.innerHTML, /摩根大通 AI 电力报告/u);
+  assert.equal(harness.form.insertedElement.querySelector("[data-chat-progress-label]").textContent, "研究已生成");
 });
 
 test("report chat shows server diagnostics without discarding the previous result", async () => {

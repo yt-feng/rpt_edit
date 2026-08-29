@@ -221,6 +221,7 @@ async function putJson(bucket, key, value) {
 
   const result = await api.enforceHotReportStorageLimit({
     REPORT_BUCKET: retentionBucket,
+    HOT_REPORT_CLEANUP_ENABLED: "true",
     HOT_REPORT_STORAGE_LIMIT_BYTES: 200,
   });
   assert.equal(result.pruned_count, 1);

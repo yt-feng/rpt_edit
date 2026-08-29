@@ -1,6 +1,6 @@
 # Chart Search Architecture
 
-Last updated: 2026-08-16
+Last updated: 2026-08-29
 
 ## Goal
 
@@ -35,7 +35,9 @@ loads the previous checkpoint and index from private object storage, processes o
 unknown content hashes, and publishes the new index. The parent captures the exact run
 ID returned by `workflow dispatch` and waits for that ID before cleanup; display titles
 are not used for child correlation because repeated recovery runs intentionally share a
-title. The regular edge refresh then:
+title. The R2 index and immutable images are the durable derived assets; the short-lived
+handoff and GitHub summary artifacts are only transport and diagnostics. The regular edge
+refresh then:
 
 1. downloads the latest chart index;
 2. merges report-level chart text into `data/search_index.json`;
@@ -70,10 +72,10 @@ disclaimers and legal notices, references, pure-text blocks, end pages, decorati
 images, photos, and unreadable crops.
 
 The analysis-version change intentionally re-examines old hashes when they are
-encountered again. Before each candidate is reclassified, its deterministic chart
-record is removed from the previous report entry and is re-added only when the new
-gate succeeds. This prevents a prior false positive from surviving a later
-rejection.
+encountered again. A successful reanalysis replaces the same deterministic chart ID.
+If reanalysis fails, is deferred, or no longer passes the publication gate, the last
+successfully published record remains available; an incomplete retry cannot erase a
+durable Chart asset.
 
 ## Model Configuration
 
@@ -103,10 +105,16 @@ output.
 - A successful description, including `is_chart=false`, is reused on later runs.
 - Duplicate images across reports cause one model call but can create multiple report
   associations.
-- A complete run treats its explicit `date_folder` candidate set as authoritative. Before
-  rebuilding that date, report refs from the same date that are no longer present are
-  removed; older dates are untouched. This keeps recovery runs idempotent when title
-  normalization or packaging metadata changes.
+- Every run is append-only across dates and within the same date. Its candidate set may
+  be a partial handoff: reports and charts absent from the new input remain in the
+  previously published index. A successful description overwrites only its own stable
+  report/chart ID, so repeated runs remain idempotent without treating a recent input as
+  a complete historical inventory.
+- A report first seen before catalog matching uses a date/title-derived temporary
+  `report_ref`. Once a non-empty catalog `report_id` becomes available, final
+  normalization collapses the temporary and canonical refs into one report. Charts are
+  deduplicated by immutable `image_id` and chart ID while every other unique historical
+  image remains attached to the canonical report.
 - Each success or failure is atomically checkpointed locally. The workflow limits
   each model batch to 20 calls by default and uploads the private R2 state after
   every batch, so a runner timeout loses at most the active batch rather than the
@@ -129,17 +137,21 @@ output.
   historical backfill can revisit the retained source artifact if the quarantined
   image later needs another parser/model attempt.
 - Immutable images are uploaded by hash before the index that references them.
-- The entire private chart prefix has a hard default budget of 1 GiB
-  (`1,073,741,824` bytes), configurable only through
-  `CHART_STORAGE_BUDGET_BYTES`. The budget includes state, index, and images.
-- On every publish, objects not referenced by the live index are deleted first.
-  If referenced images still exceed the remaining budget, the publisher keeps
-  images with the most recent report-reference date; R2 `LastModified` is the
-  tie-breaker. This is the pipeline's logical LRU/oldest-first policy because the
-  static page does not write viewer identities or per-view access logs.
-- Any evicted image is removed from the index in the same operation before the
-  index is published. Report/chart counts and search text are recomputed, and a
-  final prefix-size check prevents publication above the configured ceiling.
+- Cleanup is off by default. Every publish still applies schema hygiene to the public
+  index: only `chart-search-v2` records with valid image IDs remain, and every matching
+  immutable image present in the current asset handoff is uploaded. With cleanup off,
+  the publisher does not evict images, delete objects, list the prefix for a budget
+  check, or remove otherwise-valid v2 records to meet a storage ceiling.
+- Repository variable `CHART_CLEANUP_ENABLED=true` explicitly opts a workflow run into
+  cleanup. Only in that mode does `CHART_STORAGE_BUDGET_BYTES` apply; it defaults to
+  100 GiB (`107,374,182,400` bytes) and includes state, index, and images. Production
+  keeps cleanup disabled; 100 GiB is the future capacity-review threshold, not an active
+  retention window.
+- Cleanup mode deletes objects not referenced by the live index first. If referenced
+  images still exceed the remaining budget, the publisher keeps images with the most
+  recent report-reference date; R2 `LastModified` is the tie-breaker. Any evicted image
+  is removed from the index in the same operation, report/chart counts and search text
+  are recomputed, and a final prefix-size check enforces the configured ceiling.
 - A non-zero `max_images` is an explicit whole-run ceiling. If the ceiling leaves unknown
   hashes, the child run fails after uploading its private checkpoint; the parent therefore
   retains the private source handoff for a later continuation instead of deleting it.
@@ -240,4 +252,5 @@ model-call, failure, deferred, report, and chart counts. It intentionally exclud
 model responses, images, source paths, and credentials. A healthy incremental run
 normally shows mostly cache hits on a retry and only new hashes as model calls.
 The publish log additionally reports uploaded/reused/evicted image counts, removed
-index records, final stored bytes, and the configured byte ceiling.
+index records, and whether cleanup was enabled. Stored bytes and the configured ceiling
+are reported only in cleanup mode; the default non-cleanup mode marks both as unenforced.

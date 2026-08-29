@@ -164,6 +164,21 @@ path, not the normal reader path.
 - `items`, `total`, `page_size`, `has_more`, and `next_cursor` form the public
   pagination contract.
 
+Quota-based Hot Report PDF deletion is retained as dormant code and is opt-in
+through `HOT_REPORT_CLEANUP_ENABLED=true`. The production default is `false`:
+scheduled maintenance and successful uploads do not enqueue storage-limit
+cleanup, and saved PDFs remain in R2. Upload rollback, stale upload recovery,
+and recovery of interrupted deleting-state writes remain active. The orphan
+scan inside the disabled quota function is dormant with it; the separate
+Contact PDF integrity repair remains active.
+
+The primary report catalog keeps its existing two-successful-run
+archive-and-delete flow, but the Cloudflare R2 threshold is 100 GiB instead of
+the former 7/8 GiB threshold. `CATALOG_PDF_CLEANUP_ENABLED` defaults to `true`
+in the scheduled workflow and can still be set to `false` as an emergency
+pause. A report is not changed to text-only for quota reasons until the stored
+catalog PDFs exceed 100 GiB.
+
 The homepage requests only the first 24 items. It keeps already rendered pages
 in memory, fetches the next page only after the visitor asks for it, and uses a
 cached prior page for “上一页” navigation. A failed later-page request preserves the

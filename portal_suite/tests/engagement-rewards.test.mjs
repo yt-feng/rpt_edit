@@ -45,6 +45,7 @@ class MemoryR2 {
     this.textReadKeys = [];
     this.rangeReadKeys = [];
     this.getKeys = [];
+    this.putKeys = [];
     this.textOnlyKeys = new Set();
     this.failPutPrefixOnce = "";
     this.failGetAfterPutExact = "";
@@ -107,6 +108,7 @@ class MemoryR2 {
   }
 
   async put(key, value, options = {}) {
+    this.putKeys.push(key);
     if (this.failPutPrefixOnce && key.startsWith(this.failPutPrefixOnce)) {
       this.failPutPrefixOnce = "";
       throw new Error("injected R2 write failure");
@@ -170,7 +172,10 @@ async function directLookupFixture(items, tokenPostings, options = {}) {
   };
   const tokenPart = await buildPart(Object.entries(tokenPostings), "tokens");
   const itemPart = await buildPart(items.map((item) => [item.id, item]), "items");
-  return { tokenPart, itemPart };
+  const evidencePart = Array.isArray(options.evidenceEntries)
+    ? await buildPart(options.evidenceEntries, "evidence")
+    : null;
+  return { tokenPart, itemPart, evidencePart };
 }
 
 async function seedReportChatLookup(bucket, items, tokenPostings, defaults = items.slice(0, 12)) {
@@ -202,6 +207,30 @@ async function seedCourseChatLookup(bucket, items, tokenPostings, defaults = ite
     token_index: { ...tokenPart.manifest, hash: "sha256-first64-be-mod" },
     item_index: { ...itemPart.manifest, hash: "sha256-first64-be-mod" },
     default_items: defaults,
+  });
+}
+
+async function seedReportResearchLookup(bucket, items, tokenPostings, evidenceEntries) {
+  const prefix = "_report-research/v1/releases/test";
+  const { tokenPart, itemPart, evidencePart } = await directLookupFixture(items, tokenPostings, {
+    prefix,
+    evidenceEntries,
+  });
+  bucket.seedBytes(tokenPart.manifest.table_key, tokenPart.table);
+  bucket.seedBytes(tokenPart.manifest.data_key, tokenPart.data);
+  bucket.seedBytes(itemPart.manifest.table_key, itemPart.table);
+  bucket.seedBytes(itemPart.manifest.data_key, itemPart.data);
+  bucket.seedBytes(evidencePart.manifest.table_key, evidencePart.table);
+  bucket.seedBytes(evidencePart.manifest.data_key, evidencePart.data);
+  bucket.seed("_report-research/v1/manifest.json", {
+    schema_version: 1,
+    index_kind: "report-research-random-access",
+    hash: "sha256-first8-be",
+    token_table: tokenPart.manifest,
+    item_table: itemPart.manifest,
+    // The Worker must bound each range bucket, not reject a growing aggregate
+    // evidence object once it crosses the legacy 128 MiB chat-index limit.
+    evidence_table: { ...evidencePart.manifest, data_bytes: 256 * 1024 * 1024 },
   });
 }
 
@@ -1208,7 +1237,181 @@ test("registered users can use grounded report chat and anonymous users cannot",
   assert.equal(result.response.headers.get("cache-control"), "private, no-store, max-age=0");
 });
 
-test("report chat retrieves from random-access lookup before enforcing the Beijing-day limit", async () => {
+test("report chat synthesizes full-text evidence and returns source-bound Charts", async () => {
+  const bucket = new MemoryR2();
+  const reportId = "1234567890abcdef12345678";
+  const imageId = "c".repeat(64);
+  await seedReportResearchLookup(bucket, [{
+    id: reportId,
+    title: "AI data center power constraints",
+    title_en: "AI data center power constraints",
+    institution: "JPMorgan",
+    industry: "Tech / AI / Semis",
+    date_folder: "260829",
+    page_count: 42,
+    available: true,
+  }], {
+    ai: [{ id: reportId, tf: 12, chunks: ["c0001"] }],
+    data: [{ id: reportId, tf: 8, chunks: ["c0001"] }],
+    center: [{ id: reportId, tf: 8, chunks: ["c0001"] }],
+    power: [{ id: reportId, tf: 7, chunks: ["c0001"] }],
+  }, [[`${reportId}:c0001`, {
+    id: "c0001",
+    report_id: reportId,
+    text: "JPMorgan expects AI data-center electricity demand to rise through 2030, while grid connection delays remain the principal deployment bottleneck.",
+  }]]);
+  bucket.seed("_chart-search/v1/index.json", {
+    schema_version: 1,
+    reports: [{
+      report_id: reportId,
+      title: "AI data center power constraints",
+      date_folder: "260829",
+      charts: [{
+        id: "power-demand-chart",
+        image_id: imageId,
+        analysis_version: "chart-search-v2",
+        title: "AI data-center electricity demand",
+        content_kind: "chart",
+        quality_score: 95,
+        chart_type: "line",
+        description: "Electricity demand rises through 2030.",
+        trend_summary: "Upward",
+        metrics: ["Electricity demand"],
+        entities: ["JPMorgan"],
+        keywords: ["AI", "data center", "power"],
+      }],
+    }],
+  });
+  const env = envFor(bucket);
+  const token = await register(env);
+  const result = await jsonRequest(env, "/report-chat", {
+    method: "POST",
+    headers: { "content-type": "application/json", ...bearer(token) },
+    body: JSON.stringify({ question: "研究 AI 数据中心的电力瓶颈" }),
+  });
+
+  assert.equal(result.response.status, 200, JSON.stringify(result.data));
+  assert.equal(result.data.mode, "research");
+  assert.equal(result.data.sources[0].id, reportId);
+  assert.deepEqual(result.data.findings[0].source_ids, [reportId]);
+  assert.equal(result.data.charts[0].image_id, imageId);
+  assert.equal(result.data.charts[0].report_id, reportId);
+  assert.match(result.data.findings[0].summary, /grid connection delays/u);
+  assert.ok(bucket.rangeReadKeys.some((key) => key.endsWith("evidence.tbl")));
+  assert.ok(bucket.rangeReadKeys.some((key) => key.endsWith("evidence.dat")));
+  const serialized = JSON.stringify(result.data);
+  assert.equal(serialized.includes("_report-research"), false);
+  assert.equal(serialized.includes("object_key"), false);
+  assert.equal(result.response.headers.get("cache-control"), "private, no-store, max-age=0");
+});
+
+test("report research rejects invented source ids and numeric claims absent from evidence", async () => {
+  const bucket = new MemoryR2();
+  const reportId = "abcdefabcdefabcdefabcdef";
+  await seedReportResearchLookup(bucket, [{
+    id: reportId,
+    title: "AI infrastructure spending",
+    institution: "Research Bank",
+    date_folder: "260829",
+    available: true,
+  }], {
+    ai: [{ id: reportId, tf: 5, chunks: ["c000001"] }],
+  }, [[`${reportId}:c000001`, {
+    id: "c000001",
+    report_id: reportId,
+    text: "AI infrastructure capital expenditure increased 25% in 2026 according to the report evidence.",
+  }]]);
+  const env = { ...envFor(bucket), DEEPSEEK_API_KEY: "configured-test-key" };
+  const token = await register(env);
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async (input) => {
+    assert.match(String(input), /^https:\/\/api\.deepseek\.com\/chat\/completions$/u);
+    return new Response(JSON.stringify({
+      choices: [{ message: { content: JSON.stringify({
+        executive_summary: "证据显示资本开支增长 25%。",
+        summary_source_ids: [reportId, "ffffffffffffffffffffffff"],
+        findings: [
+          { title: "有证据结论", summary: "资本开支增长 25%。", source_ids: [reportId] },
+          { title: "伪来源结论", summary: "不存在的结论。", source_ids: ["ffffffffffffffffffffffff"] },
+        ],
+        data_points: [
+          { label: "资本开支增长", value: "25%", context: "2026", source_ids: [reportId] },
+          { label: "虚构增长", value: "99%", context: "2026", source_ids: [reportId] },
+          { label: "资本开支增长", value: "25%", context: "虚构的 2035 情景", source_ids: [reportId] },
+        ],
+        chart_image_ids: ["d".repeat(64)],
+      }) } }],
+    }), { status: 200, headers: { "content-type": "application/json" } });
+  };
+  try {
+    const result = await jsonRequest(env, "/report-chat", {
+      method: "POST",
+      headers: { "content-type": "application/json", ...bearer(token) },
+      body: JSON.stringify({ question: "AI 资本开支研究" }),
+    });
+    assert.equal(result.response.status, 200, JSON.stringify(result.data));
+    assert.deepEqual(result.data.summary_source_ids, [reportId]);
+    assert.equal(result.data.findings.length, 1);
+    assert.deepEqual(result.data.findings[0].source_ids, [reportId]);
+    assert.equal(result.data.data_points.length, 1);
+    assert.equal(result.data.data_points[0].value, "25%");
+    assert.equal(JSON.stringify(result.data).includes("99%"), false);
+    assert.equal(JSON.stringify(result.data).includes("2035"), false);
+    assert.equal(JSON.stringify(result.data).includes("ffffffffffffffffffffffff"), false);
+    assert.equal(result.data.charts.length, 0);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("report research cold-cache worst case stays below the 50-subrequest boundary", async () => {
+  const bucket = new MemoryR2();
+  const reportIds = ["1", "2", "3", "4"].map((digit) => digit.repeat(24));
+  const items = reportIds.map((id, index) => ({
+    id,
+    title: `AI infrastructure research ${index + 1}`,
+    institution: `Research Bank ${index + 1}`,
+    date_folder: "260829",
+    available: true,
+  }));
+  const postings = Object.fromEntries(
+    ["ai", "data", "center", "power", "capital", "expenditure"].map((term) => [
+      term,
+      reportIds.map((id) => ({ id, tf: 12, chunks: ["c000001", "c000002"] })),
+    ]),
+  );
+  const evidence = reportIds.flatMap((id, index) => [
+    [`${id}:c000001`, {
+      id: "c000001",
+      report_id: id,
+      text: `Report ${index + 1} discusses AI data-center power demand and grid connection constraints in detailed evidence.`,
+    }],
+    [`${id}:c000002`, {
+      id: "c000002",
+      report_id: id,
+      text: `Report ${index + 1} compares capital expenditure, deployment timing, and supplier capacity using sourced evidence.`,
+    }],
+  ]);
+  await seedReportResearchLookup(bucket, items, postings, evidence);
+  const env = envFor(bucket);
+  const token = await register(env);
+  bucket.getKeys.length = 0;
+  bucket.putKeys.length = 0;
+  bucket.rangeReadKeys.length = 0;
+  const result = await jsonRequest(env, "/report-chat", {
+    method: "POST",
+    headers: { "content-type": "application/json", ...bearer(token) },
+    body: JSON.stringify({ question: "ai data center power capital expenditure" }),
+  });
+  assert.equal(result.response.status, 200, JSON.stringify(result.data));
+  assert.equal(result.data.mode, "research");
+  assert.equal(result.data.sources.length, 4);
+  assert.ok(bucket.rangeReadKeys.length <= 28, `unexpected research range reads: ${bucket.rangeReadKeys.length}`);
+  const worstCaseSubrequests = bucket.getKeys.length + bucket.putKeys.length + 1; // one DeepSeek fetch
+  assert.ok(worstCaseSubrequests <= 44, `unexpected research subrequests: ${worstCaseSubrequests}`);
+});
+
+test("report chat rejects an exhausted Beijing-day limit before lookup or model work", async () => {
   const bucket = new MemoryR2();
   await seedReportChatLookup(bucket, [{ id: "limit-test-report", title: "Limit Test", attraction_score: 2 }], { ai: ["limit-test-report"] });
   const env = envFor(bucket);
@@ -1234,7 +1437,8 @@ test("report chat retrieves from random-access lookup before enforcing the Beiji
   assert.equal(limited.response.status, 429);
   assert.equal(limited.data.stage_code, "DAILY_LIMIT");
   assert.match(limited.data.request_hint, /^[A-Z0-9]{10}$/u);
-  assert.ok(bucket.rangeReadKeys.some((key) => key.endsWith("tokens.tbl")));
+  assert.equal(bucket.rangeReadKeys.some((key) => key.endsWith("tokens.tbl")), false);
+  assert.equal(bucket.rangeReadKeys.some((key) => key.endsWith("tokens.dat")), false);
   assert.equal(bucket.textReadKeys.includes("edge-static/runtime-data/catalog.json"), false);
 });
 
