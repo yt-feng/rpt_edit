@@ -1,0 +1,26 @@
+{
+  "schema": "portal-growth-actions-v1",
+  "actions": [
+    {
+      "id": "bernstein-public-discovery-2026-08-19",
+      "name": "伯恩斯坦专题与公开研报索引",
+      "effective_at": "2026-08-19T10:48:21+08:00",
+      "hypothesis": "机构专题页、可索引研报详情、结构化元数据与主动发现通知会提高伯恩斯坦相关的外部搜索落地，并带来后续报告打开与下载。",
+      "pre_days": 7,
+      "washout_days": 2,
+      "post_days": 7,
+      "landing_path_prefixes": [
+        "/reports/institutions/bernstein/"
+      ],
+      "institutions": [
+        "Bernstein Research",
+        "Bernstein",
+        "伯恩斯坦"
+      ],
+      "control_page_families": [
+        "public_report"
+      ],
+      "minimum_target_sessions": 5
+    }
+  ]
+}

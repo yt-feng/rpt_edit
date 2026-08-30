@@ -1,0 +1,131 @@
+name: Portal weekly growth review
+
+on:
+  schedule:
+    - cron: "20 17 * * 0"
+  workflow_dispatch:
+    inputs:
+      start_date:
+        description: Optional Beijing start date (YYYY-MM-DD); provide with end_date
+        required: false
+        type: string
+      end_date:
+        description: Optional Beijing end date (YYYY-MM-DD); provide with start_date
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portal-weekly-growth-review
+  cancel-in-progress: false
+
+jobs:
+  review:
+    if: github.event_name == 'schedule' || github.actor == github.repository_owner
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            scripts/summarize_portal_growth_range.py
+            portal_suite/growth_actions.json
+          sparse-checkout-cone-mode: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install private archive client
+        run: python -m pip install --disable-pip-version-check --quiet boto3==1.40.1
+
+      - name: Build aggregate growth review
+        env:
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+          START_DATE: ${{ inputs.start_date }}
+          END_DATE: ${{ inputs.end_date }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p private-input private-summary
+          python - <<'PY'
+          import os
+          import pathlib
+          import urllib.request
+          from urllib.parse import urlsplit
+
+          configured = os.environ.get("PORTAL_SITE_URL", "").strip().rstrip("/")
+          parsed = urlsplit(configured)
+          if parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password:
+              raise SystemExit("PORTAL_SITE_URL must be a clean HTTPS origin")
+          if parsed.path not in {"", "/"} or parsed.query or parsed.fragment:
+              raise SystemExit("PORTAL_SITE_URL must not contain a path, query, or fragment")
+          origin = f"{parsed.scheme}://{parsed.netloc}"
+          print(f"::add-mask::{origin}")
+          print(f"::add-mask::{parsed.hostname}")
+          pathlib.Path("private-input/site-host.txt").write_text(parsed.hostname, encoding="utf-8")
+          request = urllib.request.Request(
+              f"{origin}/data/catalog.json",
+              headers={"User-Agent": "portal-growth-review/1.0", "Accept": "application/json"},
+          )
+          with urllib.request.urlopen(request, timeout=60) as response:
+              payload = response.read()
+          pathlib.Path("private-input/catalog.json").write_bytes(payload)
+          PY
+
+          site_host="$(<private-input/site-host.txt)"
+          date_args=(--auto-days 14)
+          if [[ -n "${START_DATE}" || -n "${END_DATE}" ]]; then
+            date_args=(--start-date "${START_DATE}" --end-date "${END_DATE}")
+          fi
+          python scripts/summarize_portal_growth_range.py \
+            "${date_args[@]}" \
+            --actions portal_suite/growth_actions.json \
+            --catalog private-input/catalog.json \
+            --site-host "${site_host}" \
+            --min-count 2 \
+            --output private-summary/growth-review.json \
+            --markdown-output private-summary/growth-review.md
+
+      - name: Verify aggregate-only output
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          report = json.loads(Path("private-summary/growth-review.json").read_text(encoding="utf-8"))
+          forbidden_keys = {
+              "visitor_id", "session_id", "ip_hash", "email", "query", "referrer", "user_agent"
+          }
+          def check(value):
+              if isinstance(value, dict):
+                  assert not forbidden_keys.intersection(value), "identifier field leaked into aggregate output"
+                  for child in value.values():
+                      check(child)
+              elif isinstance(value, list):
+                  for child in value:
+                      check(child)
+          check(report)
+          assert report.get("privacy") and not any(report["privacy"].values())
+          PY
+
+      - name: Publish authenticated run summary
+        shell: bash
+        run: |
+          cat private-summary/growth-review.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload short-lived aggregate review
+        uses: actions/upload-artifact@v4
+        with:
+          name: portal-growth-review-${{ github.run_id }}
+          path: |
+            private-summary/growth-review.json
+            private-summary/growth-review.md
+          if-no-files-found: error
+          retention-days: 1
