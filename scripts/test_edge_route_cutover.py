@@ -58,8 +58,7 @@ class EdgeRouteCutoverTests(unittest.TestCase):
         range_index = command.index("--header")
         self.assertEqual(command[range_index + 1], "Range: bytes=0-1023")
         self.assertNotIn("--head", command)
-        size_index = command.index("--max-filesize")
-        self.assertEqual(command[size_index + 1], "65536")
+        self.assertNotIn("--max-filesize", command)
 
     def test_curl_header_parser_uses_the_final_response_block(self) -> None:
         headers = cutover.parse_curl_headers(
@@ -97,13 +96,24 @@ class EdgeRouteCutoverTests(unittest.TestCase):
     def test_verify_mode_uses_live_checks_without_cloud_route_permissions(self) -> None:
         with (
             patch.object(sys, "argv", ["edge_route_cutover.py", "verify"]),
-            patch.dict(os.environ, {"SITE_HOST": "portal.example.invalid", "EDGE_SCRIPT_NAME": "svc-neutral", "EDGE_ALIAS_HOSTS": ""}, clear=False),
-            patch.object(cutover, "wait_for_edge", return_value=True) as wait_for_edge,
+            patch.dict(os.environ, {
+                "SITE_HOST": "portal.example.invalid",
+                "EDGE_SCRIPT_NAME": "svc-neutral",
+                "EDGE_ALIAS_HOSTS": "www.portal.example.invalid",
+                "EDGE_VERIFY_ATTEMPTS": "4",
+                "EDGE_VERIFY_CONSECUTIVE": "2",
+            }, clear=False),
+            patch.object(cutover, "wait_for_public_routes", return_value=True) as wait_for_routes,
             patch.object(cutover, "find_zone_id") as find_zone_id,
         ):
             self.assertEqual(cutover.run(), 0)
 
-        wait_for_edge.assert_called_once_with("https://portal.example.invalid", expected=True)
+        wait_for_routes.assert_called_once_with(
+            "https://portal.example.invalid",
+            ["www.portal.example.invalid"],
+            attempts=4,
+            consecutive=2,
+        )
         find_zone_id.assert_not_called()
 
     def test_existing_route_is_never_deleted_when_verification_fails(self) -> None:
@@ -132,13 +142,16 @@ class EdgeRouteCutoverTests(unittest.TestCase):
 
     def test_alias_route_verifies_all_bare_public_paths(self) -> None:
         def response(url: str, *, method: str) -> tuple[int, dict[str, str], bytes]:
-            self.assertEqual(method, "HEAD")
+            self.assertIn(method, {"GET", "HEAD"})
             path = url.removeprefix("https://www.portal.example.invalid")
             return (
                 301,
                 {
                     "x-origin-class": "edge-static",
                     "location": "https://portal.example.invalid" + path,
+                    "cache-control": "no-store",
+                    "cloudflare-cdn-cache-control": "no-store",
+                    "cf-cache-status": "BYPASS",
                 },
                 b"",
             )
@@ -151,14 +164,9 @@ class EdgeRouteCutoverTests(unittest.TestCase):
         self.assertEqual(
             request_status.call_args_list,
             [
-                unittest.mock.call("https://www.portal.example.invalid/", method="HEAD"),
-                unittest.mock.call("https://www.portal.example.invalid/reports/", method="HEAD"),
-                unittest.mock.call(
-                    "https://www.portal.example.invalid/reports/institutions/bernstein/",
-                    method="HEAD",
-                ),
-                unittest.mock.call("https://www.portal.example.invalid/blog/", method="HEAD"),
-                unittest.mock.call("https://www.portal.example.invalid/sitemap.xml", method="HEAD"),
+                unittest.mock.call("https://www.portal.example.invalid" + path, method=method)
+                for path in cutover.ALIAS_REDIRECT_PATHS
+                for method in ("GET", "HEAD")
             ],
         )
 
@@ -175,7 +183,7 @@ class EdgeRouteCutoverTests(unittest.TestCase):
 
         request_status.assert_called_once_with(
             "https://www.portal.example.invalid/",
-            method="HEAD",
+            method="GET",
         )
         self.assertIn("status=200 expected=301", cutover.LAST_VERIFY_FAILURE)
 
@@ -188,6 +196,8 @@ class EdgeRouteCutoverTests(unittest.TestCase):
                 {
                     "x-origin-class": "edge-static",
                     "location": "https://portal.example.invalid/wrong",
+                    "cache-control": "no-store",
+                    "cloudflare-cdn-cache-control": "no-store",
                 },
                 b"",
             ),
@@ -199,6 +209,84 @@ class EdgeRouteCutoverTests(unittest.TestCase):
 
         self.assertIn("location=", cutover.LAST_VERIFY_FAILURE)
         self.assertIn("expected='https://portal.example.invalid/'", cutover.LAST_VERIFY_FAILURE)
+
+    def test_alias_route_rejects_cacheable_or_cached_redirects(self) -> None:
+        base_headers = {
+            "x-origin-class": "edge-static",
+            "location": "https://portal.example.invalid/",
+            "cloudflare-cdn-cache-control": "no-store",
+        }
+        with patch.object(
+            cutover,
+            "request_status",
+            return_value=(301, {**base_headers, "cache-control": "public, max-age=60"}, b""),
+        ):
+            self.assertFalse(cutover.verify_alias(
+                "https://www.portal.example.invalid",
+                "https://portal.example.invalid",
+            ))
+        self.assertIn("redirect_not_no_store", cutover.LAST_VERIFY_FAILURE)
+
+        with patch.object(
+            cutover,
+            "request_status",
+            return_value=(301, {
+                **base_headers,
+                "cache-control": "no-store",
+                "cf-cache-status": "HIT",
+            }, b""),
+        ):
+            self.assertFalse(cutover.verify_alias(
+                "https://www.portal.example.invalid",
+                "https://portal.example.invalid",
+            ))
+        self.assertIn("unexpected_cache_status=hit", cutover.LAST_VERIFY_FAILURE)
+
+    def test_canonical_route_rejects_shared_cache_hit_before_other_checks(self) -> None:
+        with patch.object(
+            cutover,
+            "request_status",
+            return_value=(200, {
+                "content-type": "text/html",
+                "x-origin-class": "edge-static",
+                "cloudflare-cdn-cache-control": "no-store",
+                "cf-cache-status": "HIT",
+            }, b"home"),
+        ) as request_status:
+            self.assertFalse(cutover.verify_edge("https://portal.example.invalid"))
+        request_status.assert_called_once_with("https://portal.example.invalid/", method="GET")
+        self.assertIn("unexpected_cache_status=hit", cutover.LAST_VERIFY_FAILURE)
+
+    def test_public_route_gate_requires_consecutive_cross_host_successes(self) -> None:
+        request_order: list[str] = []
+
+        def verify_edge(_origin: str) -> bool:
+            request_order.append("apex")
+            return True
+
+        alias_results = iter((True, False, True, True))
+
+        def verify_alias(_alias_origin: str, _canonical_origin: str) -> bool:
+            request_order.append("alias")
+            return next(alias_results)
+
+        with (
+            patch.object(cutover, "verify_edge", side_effect=verify_edge) as verify_edge_mock,
+            patch.object(cutover, "verify_alias", side_effect=verify_alias) as verify_alias_mock,
+            patch.object(cutover.time, "sleep"),
+        ):
+            self.assertTrue(cutover.wait_for_public_routes(
+                "https://portal.example.invalid",
+                ["www.portal.example.invalid"],
+                attempts=4,
+                consecutive=2,
+            ))
+        self.assertEqual(verify_edge_mock.call_count, 4)
+        self.assertEqual(verify_alias_mock.call_count, 4)
+        self.assertEqual(
+            request_order,
+            ["alias", "apex", "apex", "alias", "alias", "apex", "apex", "alias"],
+        )
 
     def test_migrate_mode_manages_canonical_and_alias_routes(self) -> None:
         with (
@@ -237,14 +325,44 @@ class EdgeRouteCutoverTests(unittest.TestCase):
         ).read_text(encoding="utf-8")
         deploy_name = "      - name: Deploy neutral edge runtime\n"
         verify_name = "      - name: Verify active edge routes\n"
+        preflight_name = "      - name: Gate refresh on stable live routes\n"
+        upload_name = "      - name: Upload inactive static slot incrementally\n"
         deploy_start = workflow.index(deploy_name)
         verify_start = workflow.index(verify_name)
+        preflight_start = workflow.index(preflight_name)
+        upload_start = workflow.index(upload_name)
+        self.assertLess(preflight_start, upload_start)
         self.assertLess(deploy_start, verify_start)
         verify_step = workflow[verify_start:]
         self.assertIn("github.event_name == 'schedule' || inputs.operation == 'migrate'", verify_step)
         self.assertIn("python3 -B scripts/edge_route_cutover.py verify", verify_step)
+        self.assertIn("EDGE_VERIFY_CONSECUTIVE: \"3\"", workflow[preflight_start:upload_start])
+        self.assertIn("enabled = false", workflow)
+        self.assertIn("Roll back failed edge release", workflow)
+        self.assertIn("Verify automated edge rollback", workflow)
         self.assertNotIn("Purge previous public edge cache", workflow)
         self.assertNotIn("edge_route_cutover.py purge", workflow)
+        self.assertNotIn("inputs.operation == 'switch'", workflow)
+        self.assertNotIn("edge_route_cutover.py migrate", workflow)
+        self.assertNotIn("edge_route_cutover.py rollback", workflow)
+
+    def test_static_refresh_trigger_stays_hard_paused(self) -> None:
+        workflow = (
+            Path(__file__).resolve().parent.parent
+            / ".github"
+            / "workflows"
+            / "neutral-edge-cutover.yml"
+        ).read_text(encoding="utf-8")
+        trigger = workflow[: workflow.index("\npermissions:\n")]
+        self.assertNotIn("schedule:", trigger)
+        self.assertNotRegex(trigger, r"(?m)^\s+- migrate\s*$")
+        self.assertNotRegex(trigger, r"(?m)^\s+- switch\s*$")
+        self.assertNotRegex(trigger, r"(?m)^\s+- rollback\s*$")
+        self.assertRegex(trigger, r"(?m)^\s+- inspect-source\s*$")
+        self.assertIn("Enforce neutral deployment pause", workflow)
+        self.assertIn('if [ "$REQUESTED_OPERATION" != "inspect-source" ]', workflow)
+        self.assertIn("permissions:\n  contents: read", workflow)
+        self.assertIn("persist-credentials: false", workflow)
 
 
 if __name__ == "__main__":

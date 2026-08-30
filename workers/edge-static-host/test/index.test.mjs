@@ -84,13 +84,12 @@ async function request(pathname, init = {}) {
   return worker.fetch(new Request(`https://static.example.invalid${pathname}`, init), fixture());
 }
 
-test("HTML separates browser freshness from Cloudflare edge stale policy", async () => {
+test("HTML keeps browser freshness while the canonical gateway bypasses CDN storage", async () => {
   const response = await request("/");
   assert.equal(response.status, 200);
   assert.equal(await response.text(), "home");
   assert.equal(response.headers.get("cache-control"), "public, max-age=60");
-  assert.equal(response.headers.get("cloudflare-cdn-cache-control"),
-    "public, max-age=900, stale-while-revalidate=3600, stale-if-error=86400");
+  assert.equal(response.headers.get("cloudflare-cdn-cache-control"), "no-store");
   assert.doesNotMatch(response.headers.get("cache-control"), /s-maxage|stale-/i);
   assert.doesNotMatch(response.headers.get("cloudflare-cdn-cache-control"), /s-maxage/i);
   assert.equal(response.headers.get("etag"), '"home-v1"');
@@ -124,12 +123,11 @@ test("canonical host root path is served without redirect", async () => {
   assert.equal(await response.text(), "home");
 });
 
-test("catalog and search-style JSON can be served stale while revalidating", async () => {
+test("catalog JSON keeps browser freshness without gateway CDN storage", async () => {
   const response = await request("/data/catalog.json");
   assert.equal(response.status, 200);
   assert.equal(response.headers.get("cache-control"), "public, max-age=300");
-  assert.equal(response.headers.get("cloudflare-cdn-cache-control"),
-    "public, max-age=300, stale-while-revalidate=300, stale-if-error=86400");
+  assert.equal(response.headers.get("cloudflare-cdn-cache-control"), "no-store");
   assert.equal(response.headers.get("content-type"), "application/json; charset=utf-8");
 });
 
@@ -166,20 +164,18 @@ test("edge state exposes the independently versioned active slot without caching
 test("content-versioned assets are immutable while unversioned assets stay short-lived", async () => {
   const queryVersioned = await request("/assets/app.js?v=deadbeef");
   assert.equal(queryVersioned.headers.get("cache-control"), "public, max-age=31536000, immutable");
-  assert.equal(queryVersioned.headers.get("cloudflare-cdn-cache-control"), "public, max-age=31536000, immutable");
+  assert.equal(queryVersioned.headers.get("cloudflare-cdn-cache-control"), "no-store");
 
   const filenameVersioned = await request("/assets/styles.abcdef12.css");
   assert.equal(filenameVersioned.headers.get("cache-control"), "public, max-age=31536000, immutable");
 
   const unversioned = await request("/assets/report-chat.js");
   assert.equal(unversioned.headers.get("cache-control"), "public, max-age=300");
-  assert.equal(unversioned.headers.get("cloudflare-cdn-cache-control"),
-    "public, max-age=900, stale-while-revalidate=3600, stale-if-error=86400");
+  assert.equal(unversioned.headers.get("cloudflare-cdn-cache-control"), "no-store");
 
   const fakeVersion = await request("/assets/app.js?v=latest");
   assert.equal(fakeVersion.headers.get("cache-control"), "public, max-age=300");
-  assert.equal(fakeVersion.headers.get("cloudflare-cdn-cache-control"),
-    "public, max-age=900, stale-while-revalidate=3600, stale-if-error=86400");
+  assert.equal(fakeVersion.headers.get("cloudflare-cdn-cache-control"), "no-store");
 });
 
 test("API service-binding responses pass through without static cache mutation", async () => {
@@ -341,11 +337,12 @@ test("the fallback representation never answers 304 for a missing URL", async ()
   assert.equal(await response.text(), "missing");
 });
 
-test("neutral deployment enables Workers caching and verifies preview/full catalog parity", () => {
+test("neutral deployment keeps the canonical gateway cache disabled and verifies catalog parity", () => {
   const workflow = readFileSync(path.join(root, ".github/workflows/neutral-edge-cutover.yml"), "utf8");
-  assert.match(workflow, /\[cache\]\s+enabled = true/);
+  assert.match(workflow, /\[cache\]\s+enabled = false/);
   assert.match(workflow, /wranglerVersion: ["']4\.69\.0["']/);
   assert.match(workflow, /compatibility_date = ["']2026-08-12["']/);
+  assert.match(workflow, /group: edge-static-hosting-production/);
   assert.match(workflow, /test -s _neutral_site\/data\/catalog_preview\.json/);
   assert.match(workflow, /live-catalog-preview\.json/);
   assert.match(workflow, /\.well-known\/edge-release\/\$STATIC_RELEASE/);
@@ -361,17 +358,39 @@ test("neutral deployment enables Workers caching and verifies preview/full catal
   assert.match(workflow, /assert_aligned\("local", expected, expected_preview\)/);
   assert.match(workflow, /assert_aligned\("live", actual, actual_preview\)/);
   const verifyRouteStep = workflow.match(
-    /- name: Verify active edge routes[\s\S]*?- name: Switch active edge routes/,
+    /- name: Verify active edge routes[\s\S]*?- name: Verify refreshed catalog is live/,
   )?.[0] || "";
   assert.match(verifyRouteStep, /scripts\/edge_route_cutover\.py verify/);
   assert.doesNotMatch(verifyRouteStep, /CLOUDFLARE_API_TOKEN/);
   assert.doesNotMatch(verifyRouteStep, /exit 0/);
-  const switchRouteStep = workflow.match(
-    /- name: Switch active edge routes[\s\S]*?- name: Verify refreshed catalog is live/,
+  assert.ok(
+    workflow.indexOf("- name: Roll back failed edge release")
+      > workflow.indexOf("- name: Verify hot-report pagination UI and API are live"),
+  );
+  const preflightStep = workflow.match(
+    /- name: Gate refresh on stable live routes[\s\S]*?- name: Capture previous public discovery state/,
   )?.[0] || "";
-  assert.match(switchRouteStep, /if: inputs\.operation == 'switch'/);
-  assert.match(switchRouteStep, /scripts\/edge_route_cutover\.py migrate/);
-  assert.match(switchRouteStep, /CLOUDFLARE_API_TOKEN/);
+  assert.match(preflightStep, /scripts\/edge_route_cutover\.py verify/);
+  assert.match(preflightStep, /EDGE_VERIFY_ATTEMPTS: ["']3["']/);
+  assert.match(preflightStep, /EDGE_VERIFY_CONSECUTIVE: ["']3["']/);
+  assert.ok(
+    workflow.indexOf("- name: Gate refresh on stable live routes")
+      < workflow.indexOf("- name: Upload inactive static slot incrementally"),
+    "live cache isolation must pass before an inactive slot is uploaded",
+  );
+  const rollbackStep = workflow.match(
+    /- name: Roll back failed edge release[\s\S]*?- name: Verify automated edge rollback/,
+  )?.[0] || "";
+  assert.match(rollbackStep, /steps\.edge_deploy\.outcome != 'skipped'/);
+  assert.match(rollbackStep, /steps\.edge_state_verify\.outcome != 'success'/);
+  assert.match(rollbackStep, /steps\.edge_routes_verify\.outcome != 'success'/);
+  assert.match(rollbackStep, /steps\.live_catalog\.outcome != 'success'/);
+  assert.match(rollbackStep, /steps\.live_discovery\.outcome != 'success'/);
+  assert.match(rollbackStep, /steps\.live_hot_reports\.outcome != 'success'/);
+  assert.match(rollbackStep, /command: rollback \$\{\{ env\.EDGE_PREVIOUS_VERSION_ID \}\} --message/);
+  assert.doesNotMatch(workflow, /- name: Switch active edge routes/);
+  assert.doesNotMatch(workflow, /scripts\/edge_route_cutover\.py migrate/);
+  assert.doesNotMatch(workflow, /scripts\/edge_route_cutover\.py rollback/);
   assert.doesNotMatch(workflow, /Purge previous public edge cache/);
   assert.doesNotMatch(workflow, /edge_route_cutover\.py purge/);
   assert.ok(
@@ -415,7 +434,7 @@ test("neutral deployment enables Workers caching and verifies preview/full catal
   assert.match(stateVerifyStep, /state != expected/);
 
   const pruneStep = workflow.match(
-    /- name: Prune obsolete legacy static releases[\s\S]*?- name: Restore previous origin route/,
+    /- name: Prune obsolete legacy static releases[\s\S]*$/,
   )?.[0] || "";
   assert.match(pruneStep, /always\(\)/);
   assert.match(pruneStep, /steps\.static_upload\.outcome == 'success'/);

@@ -7,14 +7,22 @@ permissions:
   contents: read
 
 concurrency:
-  group: manual-edge-canonical-redirect-hotfix
+  group: edge-static-hosting-production
   cancel-in-progress: false
 
 jobs:
   hotfix:
     runs-on: ubuntu-22.04
-    timeout-minutes: 15
+    timeout-minutes: 35
     steps:
+      - name: Require audited main branch
+        run: |
+          set -euo pipefail
+          if [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "The edge safety baseline can only run from main." >&2
+            exit 1
+          fi
+
       - name: Checkout audited edge hotfix sources
         uses: actions/checkout@v4
         with:
@@ -26,6 +34,10 @@ jobs:
             .github/workflows/neutral-edge-cutover.yml
             workers/edge-static-host/src/index.js
             workers/edge-static-host/test/index.test.mjs
+            scripts/capture_edge_worker_deployment.py
+            scripts/test_capture_edge_worker_deployment.py
+            scripts/edge_route_cutover.py
+            scripts/test_edge_route_cutover.py
             scripts/test_manual_edge_canonical_redirect_hotfix_workflow.py
 
       - name: Test edge runtime and hotfix workflow contract
@@ -33,6 +45,8 @@ jobs:
           set -euo pipefail
           node --input-type=module --check < workers/edge-static-host/src/index.js
           node --test workers/edge-static-host/test/index.test.mjs
+          python3 -B scripts/test_capture_edge_worker_deployment.py
+          python3 -B scripts/test_edge_route_cutover.py
           python3 -B scripts/test_manual_edge_canonical_redirect_hotfix_workflow.py
 
       - name: Read and validate current live edge state
@@ -63,8 +77,16 @@ jobs:
           origin="https://$site_host"
           echo "::add-mask::$origin"
           echo "::add-mask::$site_host"
+          alias_hosts=""
+          if [ "$(printf '%s' "$site_host" | awk -F. '{print NF}')" -eq 2 ] \
+            && [ "${site_host#www.}" = "$site_host" ]
+          then
+            alias_hosts="www.$site_host"
+            echo "::add-mask::$alias_hosts"
+          fi
           printf 'LIVE_ORIGIN=%s\n' "$origin" >> "$GITHUB_ENV"
           printf 'SITE_HOST=%s\n' "$site_host" >> "$GITHUB_ENV"
+          printf 'EDGE_ALIAS_HOSTS=%s\n' "$alias_hosts" >> "$GITHUB_ENV"
           nonce="${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-${RANDOM}"
           state_url="${origin}/.well-known/edge-state?hotfix=${nonce}"
           curl --fail --silent --show-error \
@@ -120,7 +142,7 @@ jobs:
           preview_urls = false
 
           [cache]
-          enabled = true
+          enabled = false
 
           [vars]
           STATIC_PREFIX = "$STATIC_PREFIX"
@@ -140,7 +162,19 @@ jobs:
           enabled = false
           EOF
 
+      - name: Capture exact edge rollback target
+        timeout-minutes: 2
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID }}
+        run: >-
+          python3 -B scripts/capture_edge_worker_deployment.py
+          --script-name svc-04df8d213b73
+          --output-env "$GITHUB_ENV"
+
       - name: Deploy current edge Worker code only
+        id: edge_deploy
+        timeout-minutes: 5
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -150,46 +184,79 @@ jobs:
           wranglerVersion: "4.69.0"
 
       - name: Verify fixed no-query canonical URLs and API
+        id: edge_routes_verify
+        timeout-minutes: 8
+        env:
+          EDGE_SCRIPT_NAME: svc-04df8d213b73
+          EDGE_VERIFY_ATTEMPTS: "18"
+          EDGE_VERIFY_CONSECUTIVE: "3"
+        run: python3 -B scripts/edge_route_cutover.py verify
+
+      - name: Roll back failed edge hotfix
+        id: edge_rollback
+        if: >-
+          ${{ failure() &&
+              steps.edge_deploy.outcome != 'skipped' &&
+              steps.edge_routes_verify.outcome != 'success' }}
+        timeout-minutes: 5
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID }}
+          workingDirectory: .edge_canonical_hotfix
+          command: rollback ${{ env.EDGE_PREVIOUS_VERSION_ID }} --message "Automated rollback after edge hotfix verification failure"
+          wranglerVersion: "4.69.0"
+
+      - name: Verify rollback restored service availability
+        if: ${{ failure() && steps.edge_rollback.outcome == 'success' }}
+        timeout-minutes: 5
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID }}
         run: |
           set -euo pipefail
           origin="${LIVE_ORIGIN%/}"
           echo "::add-mask::$origin"
-          canonical_paths=(
-            "/"
-            "/reports/"
-            "/blog/"
-            "/reports/institutions/bernstein/"
-          )
           for attempt in $(seq 1 18); do
-            healthy=true
-            for path in "${canonical_paths[@]}"; do
-              url="$origin$path"
-              headers="$RUNNER_TEMP/hotfix-$attempt-$(printf '%s' "$url" | shasum -a 256 | cut -d' ' -f1).headers"
-              status="$(curl --silent --show-error \
-                --connect-timeout 10 --max-time 30 \
-                --dump-header "$headers" --output /dev/null \
-                --write-out '%{http_code}' -- "$url" || true)"
-              location="$(awk 'BEGIN { IGNORECASE=1 } /^location:/ { sub(/^[^:]*:[[:space:]]*/, ""); sub(/\r$/, ""); print; exit }' "$headers" 2>/dev/null || true)"
-              if [ "$status" != "200" ] || [ -n "$location" ]; then
-                echo "canonical_check attempt=$attempt status=${status:-transport_error} url=$url location=${location:-none}"
-                healthy=false
-              fi
-            done
-            api_status="$(curl --silent --show-error \
+            root_headers="$RUNNER_TEMP/rollback-root-$attempt.headers"
+            root_status="$(curl --silent --show-error --max-redirs 0 \
               --connect-timeout 10 --max-time 30 \
-              --output /dev/null --write-out '%{http_code}' \
-              -- "$origin/api/health" || true)"
-            if [ "$api_status" != "200" ]; then
-              echo "api_check attempt=$attempt status=${api_status:-transport_error}"
-              healthy=false
-            fi
-            if [ "$healthy" = true ]; then
-              echo "edge_canonical_hotfix=verified api_status=200"
+              --dump-header "$root_headers" --output /dev/null \
+              --write-out '%{http_code}' -- "$origin/" || true)"
+            root_location="$(awk 'BEGIN { IGNORECASE=1 } /^location:/ { sub(/^[^:]*:[[:space:]]*/, ""); sub(/\r$/, ""); print; exit }' "$root_headers" 2>/dev/null || true)"
+            api_status="$(curl --silent --show-error --max-redirs 0 \
+              --connect-timeout 10 --max-time 30 \
+              --output /dev/null --write-out '%{http_code}' -- "$origin/api/health" || true)"
+            state_path="$RUNNER_TEMP/rollback-state-$attempt.json"
+            state_status="$(curl --silent --show-error --max-redirs 0 \
+              --connect-timeout 10 --max-time 30 \
+              --output "$state_path" --write-out '%{http_code}' \
+              -- "$origin/.well-known/edge-state?rollback=${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-$attempt" || true)"
+            if python3 -B scripts/capture_edge_worker_deployment.py \
+              --script-name svc-04df8d213b73 \
+              --expect-version "$EDGE_PREVIOUS_VERSION_ID" \
+              && [ "$root_status" = "200" ] && [ -z "$root_location" ] \
+              && [ "$api_status" = "200" ] && [ "$state_status" = "200" ] \
+              && STATE_PATH="$state_path" python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          state = json.loads(Path(os.environ["STATE_PATH"]).read_text(encoding="utf-8"))
+          expected = {
+              "schema_version": 1,
+              "slot": os.environ["STATIC_SLOT"],
+              "release_id": os.environ["STATIC_RELEASE"],
+              "tree_sha256": os.environ["STATIC_TREE_SHA256"],
+          }
+          if state != expected:
+              raise SystemExit("Rollback state does not match the captured deployment state")
+          PY
+            then
+              echo "edge_hotfix_rollback=exact_version_and_state_restored"
               exit 0
             fi
-            if [ "$attempt" -lt 18 ]; then
-              sleep 5
-            fi
+            sleep 5
           done
-          echo "The live edge did not pass canonical URL and API verification." >&2
+          echo "Rollback did not restore canonical service availability." >&2
           exit 1

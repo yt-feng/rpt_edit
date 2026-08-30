@@ -1,41 +1,45 @@
 name: Neutral edge catalog refresh
-run-name: Neutral edge catalog ${{ inputs.operation || 'scheduled refresh' }}
+run-name: Neutral edge catalog ${{ inputs.operation || 'source inspection' }}
 
 on:
-  schedule:
-    # UTC 01:30/05:30/09:30/13:30 = Asia/Shanghai 09:30/13:30/17:30/21:30.
-    - cron: "30 1,5,9,13 * * *"
   workflow_dispatch:
     inputs:
       operation:
-        description: "Choose migrate or rollback"
+        description: "Static refresh is paused; source inspection is read-only"
         required: true
         type: choice
         options:
-          - migrate
-          - switch
-          - rollback
           - inspect-source
-        default: migrate
+        default: inspect-source
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
-  group: neutral-edge-hosting-cutover
+  group: edge-static-hosting-production
   cancel-in-progress: false
 
 jobs:
   edge:
     runs-on: ubuntu-22.04
-    timeout-minutes: 90
+    timeout-minutes: 120
     steps:
+      - name: Enforce neutral deployment pause
+        env:
+          REQUESTED_OPERATION: ${{ inputs.operation }}
+        run: |
+          set -euo pipefail
+          if [ "$REQUESTED_OPERATION" != "inspect-source" ]; then
+            echo "Neutral static deployment remains paused pending versioned runtime-data rollback." >&2
+            exit 1
+          fi
+
       - name: Checkout public source
         uses: actions/checkout@v4
         with:
           ref: main
           fetch-depth: 1
-          persist-credentials: true
+          persist-credentials: false
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -61,7 +65,9 @@ jobs:
           node scripts/test_portal_hot_reports.js
           node scripts/test_portal_chart_search_frontend.js
           node scripts/test_portal_site_runtime.js
-          python3 -m py_compile scripts/edge_route_cutover.py
+          python3 -m py_compile \
+            scripts/edge_route_cutover.py \
+            scripts/capture_edge_worker_deployment.py
           python3 -m py_compile \
             scripts/build_chart_search_index.py \
             scripts/build_report_chat_index.py \
@@ -78,6 +84,7 @@ jobs:
           python3 scripts/test_submit_portal_indexnow.py
           python3 scripts/test_portal_blog_build.py
           python3 scripts/test_edge_route_cutover.py
+          python3 -B scripts/test_capture_edge_worker_deployment.py
 
       - name: Prepare masked runtime context
         env:
@@ -108,6 +115,14 @@ jobs:
           printf 'SITE_HOST=%s\n' "$site_host" >> "$GITHUB_ENV"
           printf 'EDGE_ALIAS_HOSTS=%s\n' "$alias_hosts" >> "$GITHUB_ENV"
           printf 'STATIC_RELEASE=%s\n' "$release_id" >> "$GITHUB_ENV"
+
+      - name: Gate refresh on stable live routes
+        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
+        env:
+          EDGE_SCRIPT_NAME: svc-04df8d213b73
+          EDGE_VERIFY_ATTEMPTS: "3"
+          EDGE_VERIFY_CONSECUTIVE: "3"
+        run: python3 -B scripts/edge_route_cutover.py verify
 
       - name: Capture previous public discovery state
         if: github.event_name == 'schedule' || inputs.operation == 'migrate'
@@ -571,7 +586,7 @@ jobs:
           preview_urls = false
 
           [cache]
-          enabled = true
+          enabled = false
 
           [vars]
           STATIC_PREFIX = "$STATIC_PREFIX"
@@ -593,6 +608,16 @@ jobs:
           python3 scripts/render_private_config.py \
             --skip-generated-files \
             --root .neutral_edge_runtime/wrangler.toml
+
+      - name: Capture exact edge rollback target
+        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID }}
+        run: >-
+          python3 -B scripts/capture_edge_worker_deployment.py
+          --script-name svc-04df8d213b73
+          --output-env "$GITHUB_ENV"
 
       - name: Deploy neutral edge runtime
         id: edge_deploy
@@ -649,17 +674,14 @@ jobs:
           exit 1
 
       - name: Verify active edge routes
+        id: edge_routes_verify
         if: github.event_name == 'schedule' || inputs.operation == 'migrate'
+        timeout-minutes: 10
         env:
           EDGE_SCRIPT_NAME: svc-04df8d213b73
+          EDGE_VERIFY_ATTEMPTS: "18"
+          EDGE_VERIFY_CONSECUTIVE: "3"
         run: python3 -B scripts/edge_route_cutover.py verify
-
-      - name: Switch active edge routes
-        if: inputs.operation == 'switch'
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          EDGE_SCRIPT_NAME: svc-04df8d213b73
-        run: python3 -B scripts/edge_route_cutover.py migrate
 
       - name: Verify refreshed catalog is live
         id: live_catalog
@@ -962,6 +984,41 @@ jobs:
           )
           PY
 
+      - name: Roll back failed edge release
+        id: edge_rollback
+        if: >-
+          ${{ failure() &&
+              steps.edge_deploy.outcome != 'skipped' &&
+              (steps.edge_state_verify.outcome != 'success' ||
+               steps.edge_routes_verify.outcome != 'success' ||
+               steps.live_catalog.outcome != 'success' ||
+               steps.live_discovery.outcome != 'success' ||
+               steps.live_hot_reports.outcome != 'success') }}
+        timeout-minutes: 5
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID }}
+          workingDirectory: .neutral_edge_runtime
+          command: rollback ${{ env.EDGE_PREVIOUS_VERSION_ID }} --message "Automated rollback after edge release verification failure"
+          wranglerVersion: "4.69.0"
+
+      - name: Verify automated edge rollback
+        if: ${{ failure() && steps.edge_rollback.outcome == 'success' }}
+        timeout-minutes: 10
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID }}
+          EDGE_SCRIPT_NAME: svc-04df8d213b73
+          EDGE_VERIFY_ATTEMPTS: "18"
+          EDGE_VERIFY_CONSECUTIVE: "3"
+        run: |
+          set -euo pipefail
+          python3 -B scripts/capture_edge_worker_deployment.py \
+            --script-name svc-04df8d213b73 \
+            --expect-version "$EDGE_PREVIOUS_VERSION_ID"
+          python3 -B scripts/edge_route_cutover.py verify
+
       - name: Submit changed public URLs to IndexNow
         if: github.event_name == 'schedule' || inputs.operation == 'migrate'
         env:
@@ -1091,10 +1148,3 @@ jobs:
               f"deleted_legacy_static_objects={deleted}"
           )
           PY
-
-      - name: Restore previous origin route
-        if: inputs.operation == 'rollback'
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          EDGE_SCRIPT_NAME: svc-04df8d213b73
-        run: python3 -B scripts/edge_route_cutover.py rollback

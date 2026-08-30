@@ -25,8 +25,22 @@ ALIAS_REDIRECT_PATHS = (
     "/reports/",
     "/reports/institutions/bernstein/",
     "/blog/",
+    "/charts",
+    "/courses.html",
+    "/newsfeed.html",
     "/sitemap.xml",
 )
+CANONICAL_ROUTE_CHECKS = (
+    ("/", "text/html", ("GET", "HEAD")),
+    ("/reports/", "text/html", ("GET", "HEAD")),
+    ("/reports/institutions/bernstein/", "text/html", ("GET", "HEAD")),
+    ("/blog/", "text/html", ("GET", "HEAD")),
+    ("/charts", "text/html", ("GET", "HEAD")),
+    ("/courses.html", "text/html", ("GET", "HEAD")),
+    ("/newsfeed.html", "text/html", ("GET", "HEAD")),
+    ("/sitemap.xml", "xml", ("HEAD",)),
+)
+SAFE_GATEWAY_CACHE_STATUSES = frozenset({"", "bypass", "dynamic"})
 
 
 class CutoverError(Exception):
@@ -132,8 +146,6 @@ def request_status(
             ]
             if request_method == "HEAD":
                 command.append("--head")
-            else:
-                command.extend(("--max-filesize", "65536"))
             for key, value in (headers or {}).items():
                 command.extend(("--header", f"{key}: {value}"))
             command.extend(("--", url))
@@ -177,8 +189,27 @@ def parse_curl_headers(payload: bytes) -> dict[str, str]:
 
 def verify_edge(origin: str) -> bool:
     global LAST_VERIFY_FAILURE
+    for path, expected_type, methods in CANONICAL_ROUTE_CHECKS:
+        for method in methods:
+            status, headers, _body = request_status(origin + path, method=method)
+            if status != 200:
+                LAST_VERIFY_FAILURE = f"{method} {path} status={status} expected=200"
+                return False
+            if headers.get("location"):
+                LAST_VERIFY_FAILURE = f"{method} {path} unexpected_location"
+                return False
+            if headers.get("x-origin-class", "").lower() != "edge-static":
+                LAST_VERIFY_FAILURE = f"{method} {path} missing_edge_origin"
+                return False
+            if expected_type not in headers.get("content-type", "").lower():
+                LAST_VERIFY_FAILURE = f"{method} {path} unexpected_content_type"
+                return False
+            cache_status = headers.get("cf-cache-status", "").strip().lower()
+            if cache_status not in SAFE_GATEWAY_CACHE_STATUSES:
+                LAST_VERIFY_FAILURE = f"{method} {path} unexpected_cache_status={cache_status}"
+                return False
+
     checks = (
-        ("/", "HEAD", 200, "text/html"),
         ("/assets/app.js", "HEAD", 200, "javascript"),
         ("/data/catalog.json", "HEAD", 200, "application/json"),
         ("/data/search_index.json", "HEAD", 200, "application/json"),
@@ -233,20 +264,29 @@ def verify_alias(alias_origin: str, canonical_origin: str) -> bool:
     alias_base = alias_origin.rstrip("/")
     canonical_base = canonical_origin.rstrip("/")
     for path in ALIAS_REDIRECT_PATHS:
-        status, headers, _body = request_status(alias_base + path, method="HEAD")
-        expected_location = canonical_base + path
-        if status != 301:
-            LAST_VERIFY_FAILURE = f"HEAD alias {path} status={status} expected=301"
-            return False
-        if headers.get("x-origin-class", "").lower() != "edge-static":
-            LAST_VERIFY_FAILURE = f"HEAD alias {path} missing_edge_origin"
-            return False
-        location = headers.get("location", "")
-        if location != expected_location:
-            LAST_VERIFY_FAILURE = (
-                f"HEAD alias {path} location={location!r} expected={expected_location!r}"
-            )
-            return False
+        for method in ("GET", "HEAD"):
+            status, headers, _body = request_status(alias_base + path, method=method)
+            expected_location = canonical_base + path
+            if status != 301:
+                LAST_VERIFY_FAILURE = f"{method} alias {path} status={status} expected=301"
+                return False
+            if headers.get("x-origin-class", "").lower() != "edge-static":
+                LAST_VERIFY_FAILURE = f"{method} alias {path} missing_edge_origin"
+                return False
+            location = headers.get("location", "")
+            if location != expected_location:
+                LAST_VERIFY_FAILURE = (
+                    f"{method} alias {path} location={location!r} expected={expected_location!r}"
+                )
+                return False
+            cache_control = headers.get("cache-control", "").lower()
+            if "no-store" not in {value.strip() for value in cache_control.split(",")}:
+                LAST_VERIFY_FAILURE = f"{method} alias {path} redirect_not_no_store"
+                return False
+            cache_status = headers.get("cf-cache-status", "").strip().lower()
+            if cache_status not in SAFE_GATEWAY_CACHE_STATUSES:
+                LAST_VERIFY_FAILURE = f"{method} alias {path} unexpected_cache_status={cache_status}"
+                return False
     LAST_VERIFY_FAILURE = ""
     return True
 
@@ -262,6 +302,59 @@ def wait_for_alias(alias_origin: str, canonical_origin: str, attempts: int = 120
             )
         time.sleep(5)
     return False
+
+
+def wait_for_public_routes(
+    origin: str,
+    aliases: list[str],
+    *,
+    attempts: int = 120,
+    consecutive: int = 3,
+) -> bool:
+    global LAST_VERIFY_FAILURE
+    successes = 0
+
+    def verify_aliases() -> tuple[bool, str]:
+        for alias in aliases:
+            if not verify_alias("https://" + alias, origin):
+                return False, LAST_VERIFY_FAILURE
+        return True, ""
+
+    for attempt in range(attempts):
+        # Alternate the cross-host request order.  This catches a cache key that
+        # replays an alias redirect to the apex, or an apex object to the alias.
+        if attempt % 2 == 0:
+            aliases_healthy, alias_failure = verify_aliases()
+            edge_healthy = verify_edge(origin)
+            edge_failure = "" if edge_healthy else LAST_VERIFY_FAILURE
+        else:
+            edge_healthy = verify_edge(origin)
+            edge_failure = "" if edge_healthy else LAST_VERIFY_FAILURE
+            aliases_healthy, alias_failure = verify_aliases()
+        healthy = edge_healthy and aliases_healthy
+        if not healthy:
+            LAST_VERIFY_FAILURE = edge_failure or alias_failure
+        successes = successes + 1 if healthy else 0
+        if successes >= consecutive:
+            LAST_VERIFY_FAILURE = ""
+            return True
+        if not healthy or (attempt + 1) % 12 == 0:
+            print(
+                f"public route verification pending attempt={attempt + 1} "
+                f"consecutive={successes}/{consecutive}: {LAST_VERIFY_FAILURE}",
+                file=sys.stderr,
+            )
+        if attempt + 1 < attempts:
+            time.sleep(5)
+    return False
+
+
+def configured_verify_count(name: str, default: int) -> int:
+    try:
+        value = int(os.environ.get(name, str(default)))
+    except ValueError:
+        return default
+    return value if 1 <= value <= 120 else default
 
 
 def migrate(zone_id: str, pattern: str, origin: str, script_name: str) -> None:
@@ -346,11 +439,17 @@ def run() -> int:
     aliases = configured_alias_hosts(hostname)
     try:
         if sys.argv[1] == "verify":
-            if not wait_for_edge(origin, expected=True):
+            attempts = configured_verify_count("EDGE_VERIFY_ATTEMPTS", 120)
+            consecutive = configured_verify_count("EDGE_VERIFY_CONSECUTIVE", 3)
+            if consecutive > attempts:
+                consecutive = attempts
+            if not wait_for_public_routes(
+                origin,
+                aliases,
+                attempts=attempts,
+                consecutive=consecutive,
+            ):
                 raise CutoverError("edge_verify")
-            for alias in aliases:
-                if not wait_for_alias("https://" + alias, origin):
-                    raise CutoverError("edge_verify")
             print("edge route verified")
             return 0
         zone_id = find_zone_id(hostname)

@@ -7,6 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 WORKFLOW = ROOT / ".github/workflows/manual-edge-canonical-redirect-hotfix.yml"
+ROUTE_AUDITOR = ROOT / "scripts/edge_route_cutover.py"
 
 
 class ManualEdgeCanonicalRedirectHotfixWorkflowContractTests(unittest.TestCase):
@@ -21,6 +22,10 @@ class ManualEdgeCanonicalRedirectHotfixWorkflowContractTests(unittest.TestCase):
         self.assertIn("contents: read", workflow)
         self.assertIn("persist-credentials: false", workflow)
         self.assertIn(".github/workflows/neutral-edge-cutover.yml", workflow)
+        self.assertIn("scripts/capture_edge_worker_deployment.py", workflow)
+        self.assertIn("group: edge-static-hosting-production", workflow)
+        self.assertIn("Require audited main branch", workflow)
+        self.assertIn('if [ "$GITHUB_REF" != "refs/heads/main" ]', workflow)
 
     def test_live_state_is_cache_busted_strictly_validated_and_reused(self) -> None:
         workflow = self.workflow()
@@ -39,7 +44,7 @@ class ManualEdgeCanonicalRedirectHotfixWorkflowContractTests(unittest.TestCase):
     def test_runtime_matches_neutral_edge_bindings_without_route_or_static_mutation(self) -> None:
         workflow = self.workflow()
         self.assertIn('name = "svc-04df8d213b73"', workflow)
-        self.assertIn("[cache]\n          enabled = true", workflow)
+        self.assertIn("[cache]\n          enabled = false", workflow)
         self.assertIn('CANONICAL_HOST = "$SITE_HOST"', workflow)
         self.assertIn('binding = "STATIC_BUCKET"', workflow)
         self.assertIn('bucket_name = "$R2_BUCKET"', workflow)
@@ -50,7 +55,6 @@ class ManualEdgeCanonicalRedirectHotfixWorkflowContractTests(unittest.TestCase):
         self.assertIn('wranglerVersion: "4.69.0"', workflow)
         blocked = (
             "publish_static_slot",
-            "edge_route_cutover",
             "purge_cache",
             "purge_everything",
             "r2 object put",
@@ -62,10 +66,15 @@ class ManualEdgeCanonicalRedirectHotfixWorkflowContractTests(unittest.TestCase):
 
     def test_edge_tests_precede_deploy_and_live_checks_use_fixed_no_query_urls(self) -> None:
         workflow = self.workflow()
+        auditor = ROUTE_AUDITOR.read_text(encoding="utf-8")
         edge_test = workflow.index("node --test workers/edge-static-host/test/index.test.mjs")
+        route_test = workflow.index("python3 -B scripts/test_edge_route_cutover.py")
+        capture = workflow.index("Capture exact edge rollback target")
         deploy = workflow.index("cloudflare/wrangler-action@v3")
         verify = workflow.index("Verify fixed no-query canonical URLs and API")
         self.assertLess(edge_test, deploy)
+        self.assertLess(route_test, deploy)
+        self.assertLess(capture, deploy)
         self.assertLess(deploy, verify)
         for path in (
             "/",
@@ -73,11 +82,21 @@ class ManualEdgeCanonicalRedirectHotfixWorkflowContractTests(unittest.TestCase):
             "/blog/",
             "/reports/institutions/bernstein/",
         ):
-            self.assertIn(f'"{path}"', workflow)
-        self.assertIn('url="$origin$path"', workflow)
-        self.assertIn('"$origin/api/health"', workflow)
-        self.assertIn('[ "$status" != "200" ] || [ -n "$location" ]', workflow)
-        self.assertIn('[ "$api_status" != "200" ]', workflow)
+            self.assertIn(f'"{path}"', auditor)
+        self.assertIn("python3 -B scripts/edge_route_cutover.py verify", workflow)
+        self.assertIn('EDGE_VERIFY_CONSECUTIVE: "3"', workflow)
+        self.assertIn("Roll back failed edge hotfix", workflow)
+        self.assertIn("EDGE_PREVIOUS_VERSION_ID", workflow)
+        self.assertIn('command: rollback ${{ env.EDGE_PREVIOUS_VERSION_ID }} --message "Automated rollback', workflow)
+        self.assertIn("Verify rollback restored service availability", workflow)
+        self.assertIn("timeout-minutes: 35", workflow)
+        self.assertIn("timeout-minutes: 8", workflow)
+        self.assertIn("/.well-known/edge-state?rollback=", workflow)
+        self.assertIn('"slot": os.environ["STATIC_SLOT"]', workflow)
+        self.assertIn('"release_id": os.environ["STATIC_RELEASE"]', workflow)
+        self.assertIn('"tree_sha256": os.environ["STATIC_TREE_SHA256"]', workflow)
+        self.assertIn('--expect-version "$EDGE_PREVIOUS_VERSION_ID"', workflow)
+        self.assertIn("edge_hotfix_rollback=exact_version_and_state_restored", workflow)
 
 
 if __name__ == "__main__":

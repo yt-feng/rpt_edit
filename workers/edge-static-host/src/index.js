@@ -137,7 +137,10 @@ function responseHeaders(object, path, url, releaseCheck = false) {
   // is authoritative even when an older object carries legacy upload metadata.
   const cachePolicy = cachePolicyFor(path, url);
   headers.set("cache-control", releaseCheck ? "no-store" : cachePolicy.browser);
-  headers.set("cloudflare-cdn-cache-control", releaseCheck ? "no-store" : cachePolicy.edge);
+  // This Worker is the canonical-host gateway.  Its entrypoint must run before
+  // any reusable representation is selected, otherwise an alias response can
+  // be replayed to the canonical host by a shared Workers Cache key.
+  headers.set("cloudflare-cdn-cache-control", "no-store");
   if (object.httpEtag) headers.set("etag", object.httpEtag);
   if (object.uploaded instanceof Date && Number.isFinite(object.uploaded.getTime())) {
     headers.set("last-modified", object.uploaded.toUTCString());
