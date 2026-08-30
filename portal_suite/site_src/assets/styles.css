@@ -4822,8 +4822,14 @@ a.secondary-button {
   }
 
   .news-email-form {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     width: 100%;
+  }
+
+  .news-email-settings,
+  .news-email-copy,
+  .news-email-form {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .news-email-settings,

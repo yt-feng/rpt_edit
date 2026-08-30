@@ -217,7 +217,8 @@ test("Newsfeed interaction analytics includes tier usage but never raw custom co
 
 test("email controls remain inside a 390px viewport", () => {
   assert.match(stylesSource, /\.news-email-settings\s*\{[\s\S]*?min-width:\s*0;[\s\S]*?max-width:\s*100%;/u);
-  assert.match(stylesSource, /@media \(max-width: 760px\)[\s\S]*?\.news-email-form\s*\{[\s\S]*?grid-template-columns:\s*1fr;[\s\S]*?width:\s*100%;/u);
+  assert.match(stylesSource, /@media \(max-width: 760px\)[\s\S]*?\.news-email-form\s*\{[\s\S]*?grid-template-columns:\s*minmax\(0, 1fr\);[\s\S]*?width:\s*100%;/u);
+  assert.match(stylesSource, /@media \(max-width: 760px\)[\s\S]*?\.news-email-settings,[\s\S]*?\.news-email-copy,[\s\S]*?\.news-email-form\s*\{\s*grid-template-columns:\s*minmax\(0, 1fr\);/u);
   assert.match(stylesSource, /\.news-email-form input,[\s\S]*?\.news-email-form select\s*\{[\s\S]*?width:\s*100%;[\s\S]*?min-width:\s*0;/u);
   assert.match(stylesSource, /\.newsfeed-bottom-tabs\.is-public\s*\{\s*grid-template-columns:\s*repeat\(2, minmax\(0, 1fr\)\);/u);
 });
