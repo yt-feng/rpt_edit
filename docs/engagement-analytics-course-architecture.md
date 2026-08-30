@@ -71,7 +71,7 @@ not read the private PDF object, including for eligible members. Each carousel
 item instead submits `POST /course/material-request` with only the material ID.
 The Worker authenticates the user, applies the same 30-day Course entitlement
 check, resolves the canonical title/topic/page count from the private stable
-manifest, and sends a request to the fixed `info@kcdesk.com` recipient. Browser
+manifest, and sends a request to the server-fixed `CONTACT_EMAIL` recipient. Browser
 supplied titles, storage locators, and recipients are ignored. Requests are
 persisted privately and deduplicated per account and material for 24 hours;
 different decks remain independently requestable.

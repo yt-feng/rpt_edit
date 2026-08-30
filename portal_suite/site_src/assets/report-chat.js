@@ -563,7 +563,7 @@
       requestButton.disabled = true;
       requestButton.textContent = "正在提交…";
       requestForm.setAttribute("aria-busy", "true");
-      requestStatus.textContent = "正在把研究申请发送给 KCDesk。";
+      requestStatus.textContent = "正在把研究申请发送给资料团队。";
       trackInteraction("limit_request_submit", { context: surface.context, question_hash: limitedQuestionHash });
       const timeoutId = window.setTimeout(() => {
         if (activeLimitRequest !== request || request.abortReason) return;
@@ -591,7 +591,7 @@
         const duplicate = String(data.status || "").toLowerCase() === "duplicate";
         requestStatus.textContent = duplicate
           ? "这条申请已经收到，无需重复提交。"
-          : "申请已发送。KCDesk 会通过邮件继续处理。";
+          : "申请已发送。资料团队会通过邮件继续处理。";
         requestButton.textContent = duplicate ? "已收到" : "已发送";
         trackInteraction("limit_request_success", {
           context: surface.context,

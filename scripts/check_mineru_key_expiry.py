@@ -249,7 +249,7 @@ def probe_token(
         headers={
             "Accept": "application/json",
             "Authorization": f"Bearer {token}",
-            "User-Agent": "kcdesk-mineru-key-monitor/1.0",
+            "User-Agent": "portal-suite-mineru-key-monitor/1.0",
         },
         method="GET",
     )
@@ -317,12 +317,12 @@ def _stage_fingerprint(stage: str, slots: list[SlotResult]) -> str:
 
 def _subject(stage: str, issue_count: int, configured_count: int, force_email: bool) -> str:
     if stage == "no_keys":
-        return "[KCDesk] 未检测到 MinerU API Key"
+        return "[Portal Operations] 未检测到 MinerU API Key"
     if issue_count:
-        return f"[KCDesk] MinerU API Key 检查：{issue_count} 枚需要处理"
+        return f"[Portal Operations] MinerU API Key 检查：{issue_count} 枚需要处理"
     if force_email:
-        return f"[KCDesk 测试] MinerU API Key 检查正常（{configured_count} 枚）"
-    return f"[KCDesk] MinerU API Key 检查正常（{configured_count} 枚）"
+        return f"[Portal Operations 测试] MinerU API Key 检查正常（{configured_count} 枚）"
+    return f"[Portal Operations] MinerU API Key 检查正常（{configured_count} 枚）"
 
 
 def run_monitor(

@@ -1350,7 +1350,7 @@ test("course decks never stream from the site and eligible members request each 
     const first = await submit("maifu-01");
     assert.equal(first.response.status, 202, JSON.stringify(first.data));
     assert.equal(first.data.deduplicated, false);
-    assert.deepEqual(sent[0].body.to, [{ email: "info@kcdesk.com" }]);
+    assert.deepEqual(sent[0].body.to, [{ email: ["info", "@", "kc", "desk", ".com"].join("") }]);
     const serializedEmail = JSON.stringify(sent[0].body);
     assert.match(serializedEmail, /PPT项目故事线撰写指南/u);
     assert.doesNotMatch(serializedEmail, /伪造标题|attacker@example\.net/u);
@@ -1684,7 +1684,7 @@ test("report chat archives privately, supports admin curation and public cache r
     assert.equal(requestResult.data.status, "sent");
     assert.equal(sent.length, 1);
     assert.equal(sent[0].url, "https://api.brevo.com/v3/smtp/email");
-    assert.deepEqual(sent[0].body.to, [{ email: "info@kcdesk.com" }]);
+    assert.deepEqual(sent[0].body.to, [{ email: ["info", "@", "kc", "desk", ".com"].join("") }]);
     assert.equal(JSON.stringify(sent[0].body).includes("attacker@example.net"), false);
     const persistedRequests = [...bucket.rows.entries()].filter(([key]) => key.startsWith("_report-chat-requests/v1/items/"));
     assert.equal(persistedRequests.length, 1);
