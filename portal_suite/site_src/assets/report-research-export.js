@@ -62,11 +62,20 @@
     return `${date.getFullYear()}${String(date.getMonth() + 1).padStart(2, "0")}${String(date.getDate()).padStart(2, "0")}`;
   }
 
-  function canonicalSourceUrl(id, source = {}) {
+  function publicOrigin(runtime = {}) {
+    const candidate = text(runtime.origin || (window.location && window.location.origin), 512);
+    try {
+      const parsed = new URL(candidate);
+      if (parsed.protocol === "https:" || parsed.protocol === "http:") return parsed.origin;
+    } catch (_error) { /* Use a non-routable test origin outside the browser. */ }
+    return "https://example.invalid";
+  }
+
+  function canonicalSourceUrl(id, source = {}, origin = "https://example.invalid") {
     const reportId = text(id || source.id, 180);
-    if (reportId) return `https://kcdesk.com/report.html?id=${encodeURIComponent(reportId)}`;
+    if (reportId) return `${origin}/report.html?id=${encodeURIComponent(reportId)}`;
     const title = text(source.report_title || source.title, 300);
-    return title ? `https://kcdesk.com/?q=${encodeURIComponent(title)}` : "https://kcdesk.com/";
+    return title ? `${origin}/?q=${encodeURIComponent(title)}` : `${origin}/`;
   }
 
   function validSourceIds(value, sourceMap) {
@@ -79,7 +88,7 @@
     }).slice(0, 8);
   }
 
-  function normalizePayload(payload = {}) {
+  function normalizePayload(payload = {}, runtime = {}) {
     const response = payload.response && typeof payload.response === "object" ? payload.response : payload;
     const sourceRows = (Array.isArray(response.sources) ? response.sources : Array.isArray(response.recommendations) ? response.recommendations : [])
       .filter((item) => item && typeof item === "object" && text(item.id, 180))
@@ -133,6 +142,7 @@
         .map((item) => text(item, 240)).filter(Boolean).slice(0, 8),
       generated_at: text(response.generated_at || payload.generated_at, 80),
       question_hash: questionHash,
+      source_origin: publicOrigin(runtime),
       executive_summary: text(response.executive_summary || response.answer, 8000),
       summary_source_ids: validSourceIds(response.summary_source_ids, sourceMap),
       findings: findings.filter((item) => item.title || item.summary),
@@ -320,7 +330,7 @@
   }
 
   function footerXml() {
-    return `${XML_DECLARATION}<w:ftr xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:p><w:pPr><w:jc w:val="right"/></w:pPr>${runXml("KCDesk Research  ·  ", { color: "7A838C", size: 18 })}<w:fldSimple w:instr="PAGE"><w:r><w:rPr><w:color w:val="7A838C"/><w:sz w:val="18"/></w:rPr><w:t>1</w:t></w:r></w:fldSimple></w:p></w:ftr>`;
+    return `${XML_DECLARATION}<w:ftr xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:p><w:pPr><w:jc w:val="right"/></w:pPr>${runXml("KC桌面 Research  ·  ", { color: "7A838C", size: 18 })}<w:fldSimple w:instr="PAGE"><w:r><w:rPr><w:color w:val="7A838C"/><w:sz w:val="18"/></w:rPr><w:t>1</w:t></w:r></w:fldSimple></w:p></w:ftr>`;
   }
 
   async function createDocx(model, assets, createdAt) {
@@ -345,7 +355,7 @@
       const runs = [runXml("来源：", { color: "59636E", size: 18 })];
       valid.forEach((id, index) => {
         if (index) runs.push(runXml("  ", { size: 18 }));
-        runs.push(hyperlink(`[S${sourceIndex.get(id)}]`, canonicalSourceUrl(id, model.sources[sourceIndex.get(id) - 1])));
+        runs.push(hyperlink(`[S${sourceIndex.get(id)}]`, canonicalSourceUrl(id, model.sources[sourceIndex.get(id) - 1], model.source_origin)));
       });
       return paragraphXml(runs.join(""), { style: "Caption" });
     };
@@ -356,7 +366,7 @@
       relationships.push({ id: relationId, type: "image", target: `media/${filename}` });
       media.push({ name: `word/media/${filename}`, data: asset.bytes });
       const source = model.sources.find((item) => item.id === chart.report_id) || { id: chart.report_id, title: chart.report_title };
-      const url = canonicalSourceUrl(chart.report_id, source);
+      const url = canonicalSourceUrl(chart.report_id, source, model.source_origin);
       const caption = [chart.description, chart.metrics.join(" · ")].filter(Boolean).join("  ");
       return [
         paragraphXml(runXml(chart.title, { bold: true, color: "1F4D78", size: 22 }), { keepNext: true }),
@@ -403,7 +413,7 @@
       body.push(paragraphXml(runXml("来源报告"), { style: "Heading1" }));
       model.sources.forEach((source) => {
         const meta = [source.institution, source.industry, source.date].filter(Boolean).join(" · ");
-        body.push(paragraphXml(`${hyperlink(source.title || source.id, canonicalSourceUrl(source.id, source))}${meta ? runXml(`\n${meta}`, { color: "59636E", size: 18 }) : ""}`, { numbered: true }));
+        body.push(paragraphXml(`${hyperlink(source.title || source.id, canonicalSourceUrl(source.id, source, model.source_origin))}${meta ? runXml(`\n${meta}`, { color: "59636E", size: 18 }) : ""}`, { numbered: true }));
       });
     }
     if (model.follow_up_questions.length) {
@@ -425,7 +435,7 @@
     const rootRelationships = `${XML_DECLARATION}<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="docProps/core.xml"/><Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/extended-properties" Target="docProps/app.xml"/></Relationships>`;
     const timestamp = createdAt.toISOString();
     const core = `${XML_DECLARATION}<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><dc:title>KC桌面研究报告</dc:title><dc:creator>KC桌面</dc:creator><cp:lastModifiedBy>KC桌面</cp:lastModifiedBy><dcterms:created xsi:type="dcterms:W3CDTF">${timestamp}</dcterms:created><dcterms:modified xsi:type="dcterms:W3CDTF">${timestamp}</dcterms:modified></cp:coreProperties>`;
-    const app = `${XML_DECLARATION}<Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties"><Application>KCDesk Research Export</Application><DocSecurity>0</DocSecurity><ScaleCrop>false</ScaleCrop><Company>KC桌面</Company><LinksUpToDate>false</LinksUpToDate></Properties>`;
+    const app = `${XML_DECLARATION}<Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties"><Application>KC桌面 Research Export</Application><DocSecurity>0</DocSecurity><ScaleCrop>false</ScaleCrop><Company>KC桌面</Company><LinksUpToDate>false</LinksUpToDate></Properties>`;
     return storedZip([
       { name: "[Content_Types].xml", data: contentTypes }, { name: "_rels/.rels", data: rootRelationships },
       { name: "docProps/core.xml", data: core }, { name: "docProps/app.xml", data: app },
@@ -437,12 +447,12 @@
 
   function safeFilename(extension, model, createdAt) {
     const hash = (model.question_hash || "research").slice(0, 12);
-    return `KCDesk研究结果_${dateStamp(createdAt)}_${hash}.${extension}`;
+    return `KC桌面研究结果_${dateStamp(createdAt)}_${hash}.${extension}`;
   }
 
   async function buildDocx(payload, runtime = {}) {
     if (typeof Blob !== "function") throw new Error("当前浏览器不支持 Word 导出。");
-    const model = normalizePayload(payload);
+    const model = normalizePayload(payload, runtime);
     const createdAt = normalizeDate(runtime.createdAt || model.generated_at);
     const assets = await chartAssets(model, runtime);
     const bytes = await createDocx(model, assets, createdAt);
@@ -457,13 +467,13 @@
     return `data:image/jpeg;base64,${encode(binary)}`;
   }
 
-  function printSourceRefs(ids, sourceIndex, sourceMap) {
-    const links = ids.filter((id) => sourceIndex.has(id)).map((id) => `<a href="${escapeHtml(canonicalSourceUrl(id, sourceMap.get(id)))}">[S${sourceIndex.get(id)}]</a>`);
+  function printSourceRefs(ids, sourceIndex, sourceMap, sourceOrigin) {
+    const links = ids.filter((id) => sourceIndex.has(id)).map((id) => `<a href="${escapeHtml(canonicalSourceUrl(id, sourceMap.get(id), sourceOrigin))}">[S${sourceIndex.get(id)}]</a>`);
     return links.length ? `<p class="source-refs"><span>来源</span>${links.join("")}</p>` : "";
   }
 
   async function buildPrintHtml(payload, runtime = {}) {
-    const model = normalizePayload(payload);
+    const model = normalizePayload(payload, runtime);
     const assets = await chartAssets(model, runtime);
     const sourceIndex = new Map(model.sources.map((source, index) => [source.id, index + 1]));
     const sourceMap = new Map(model.sources.map((source) => [source.id, source]));
@@ -472,22 +482,22 @@
       const asset = assets.get(chart.image_id);
       const source = sourceMap.get(chart.report_id) || { id: chart.report_id, title: chart.report_title };
       const caption = [chart.description, chart.metrics.join(" · ")].filter(Boolean).join(" · ");
-      return `<figure><h3>${escapeHtml(chart.title)}</h3><img src="${bytesToDataUrl(asset.bytes)}" width="${asset.width}" height="${asset.height}" alt="${escapeHtml(chart.title)}"><figcaption>${caption ? `<span>${escapeHtml(caption)}</span>` : ""}<a href="${escapeHtml(canonicalSourceUrl(chart.report_id, source))}">查看来源报告</a></figcaption></figure>`;
+      return `<figure><h3>${escapeHtml(chart.title)}</h3><img src="${bytesToDataUrl(asset.bytes)}" width="${asset.width}" height="${asset.height}" alt="${escapeHtml(chart.title)}"><figcaption>${caption ? `<span>${escapeHtml(caption)}</span>` : ""}<a href="${escapeHtml(canonicalSourceUrl(chart.report_id, source, model.source_origin))}">查看来源报告</a></figcaption></figure>`;
     };
     const body = [];
     body.push(`<section class="cover"><p class="kicker">KC桌面研究报告</p><h1>${escapeHtml(model.research_title || model.question)}</h1>${model.question && model.question !== model.research_title ? `<p class="subtitle">${escapeHtml(model.question)}</p>` : ""}${model.research_scope.length ? `<p class="scope">研究范围：${escapeHtml(model.research_scope.join(" · "))}</p>` : ""}<p class="date">生成时间：${escapeHtml(dateLabel(model.generated_at))}</p><p class="notice">基于 KC桌面跨报告 RAG 的来源化研究摘要。请结合来源报告核验后使用。</p></section>`);
     body.push('<main class="report">');
-    if (model.executive_summary) body.push(`<section><h2>研究摘要</h2><p>${escapeHtml(model.executive_summary)}</p>${printSourceRefs(model.summary_source_ids, sourceIndex, sourceMap)}</section>`);
+    if (model.executive_summary) body.push(`<section><h2>研究摘要</h2><p>${escapeHtml(model.executive_summary)}</p>${printSourceRefs(model.summary_source_ids, sourceIndex, sourceMap, model.source_origin)}</section>`);
     if (model.findings.length) {
       body.push("<section><h2>主要发现</h2>");
       model.findings.forEach((finding, index) => {
-        body.push(`<article class="finding"><h3>${index + 1}. ${escapeHtml(finding.title)}</h3>${finding.summary ? `<p>${escapeHtml(finding.summary)}</p>` : ""}${printSourceRefs(finding.source_ids, sourceIndex, sourceMap)}${assignment.groups[index].map(chartHtml).join("")}</article>`);
+        body.push(`<article class="finding"><h3>${index + 1}. ${escapeHtml(finding.title)}</h3>${finding.summary ? `<p>${escapeHtml(finding.summary)}</p>` : ""}${printSourceRefs(finding.source_ids, sourceIndex, sourceMap, model.source_origin)}${assignment.groups[index].map(chartHtml).join("")}</article>`);
       });
       body.push("</section>");
     }
     if (assignment.unmatched.length) body.push(`<section><h2>补充图表证据</h2>${assignment.unmatched.map(chartHtml).join("")}</section>`);
-    if (model.data_points.length) body.push(`<section><h2>关键数据</h2><div class="data-grid">${model.data_points.map((item) => `<article><h3>${escapeHtml(item.label)}</h3><strong>${escapeHtml(item.value)}</strong>${item.context ? `<p>${escapeHtml(item.context)}</p>` : ""}${printSourceRefs(item.source_ids, sourceIndex, sourceMap)}</article>`).join("")}</div></section>`);
-    if (model.sources.length) body.push(`<section><h2>来源报告</h2><ol class="sources">${model.sources.map((source) => `<li><a href="${escapeHtml(canonicalSourceUrl(source.id, source))}">${escapeHtml(source.title || source.id)}</a>${[source.institution, source.industry, source.date].filter(Boolean).length ? `<span>${escapeHtml([source.institution, source.industry, source.date].filter(Boolean).join(" · "))}</span>` : ""}</li>`).join("")}</ol></section>`);
+    if (model.data_points.length) body.push(`<section><h2>关键数据</h2><div class="data-grid">${model.data_points.map((item) => `<article><h3>${escapeHtml(item.label)}</h3><strong>${escapeHtml(item.value)}</strong>${item.context ? `<p>${escapeHtml(item.context)}</p>` : ""}${printSourceRefs(item.source_ids, sourceIndex, sourceMap, model.source_origin)}</article>`).join("")}</div></section>`);
+    if (model.sources.length) body.push(`<section><h2>来源报告</h2><ol class="sources">${model.sources.map((source) => `<li><a href="${escapeHtml(canonicalSourceUrl(source.id, source, model.source_origin))}">${escapeHtml(source.title || source.id)}</a>${[source.institution, source.industry, source.date].filter(Boolean).length ? `<span>${escapeHtml([source.institution, source.industry, source.date].filter(Boolean).join(" · "))}</span>` : ""}</li>`).join("")}</ol></section>`);
     if (model.follow_up_questions.length) body.push(`<section><h2>可继续研究</h2><ol>${model.follow_up_questions.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ol></section>`);
     body.push('<p class="disclaimer">说明：本材料由 AI 根据已索引研究资料生成，不构成投资建议；重要结论请以来源报告为准。</p></main>');
     return `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KC桌面研究报告</title><style>@page{size:A4;margin:16mm 18mm 18mm}*{box-sizing:border-box}html{color:#17212b;background:#fff;font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;font-size:10.5pt;line-height:1.65}body{margin:0}.cover{display:flex;min-height:250mm;flex-direction:column;align-items:center;justify-content:center;text-align:center;break-after:page}.kicker{margin:0 0 18pt;color:#a06a12;font-size:10pt;font-weight:800;letter-spacing:.16em}.cover h1{max-width:150mm;margin:0;color:#203748;font-size:27pt;line-height:1.28}.subtitle{max-width:148mm;margin:10pt 0 0;color:#2b5163;font-size:14pt}.scope,.date,.notice{max-width:145mm;color:#59636e}.scope{margin:24pt 0 0}.date{margin:7pt 0 0}.notice{margin:56pt 0 0;font-size:9pt;font-style:italic}.report>section{margin:0 0 18pt}.report h2{margin:15pt 0 7pt;color:#2e74b5;font-size:16pt;line-height:1.3;break-after:avoid}.report h3{margin:10pt 0 4pt;color:#1f4d78;font-size:12pt;line-height:1.35;break-after:avoid}.report p{margin:0 0 7pt;white-space:pre-line}.finding{margin-bottom:14pt}.source-refs{display:flex;gap:6pt;align-items:center;color:#59636e;font-size:9pt}.source-refs a,.sources a,figcaption a{color:#0f766e;text-decoration:underline}.data-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8pt}.data-grid article{padding:10pt;border:1px solid #dfe5e8;border-radius:6pt;break-inside:avoid}.data-grid strong{display:block;margin:3pt 0;font-size:15pt}figure{margin:12pt 0 16pt;break-inside:avoid}figure h3{margin-bottom:6pt}figure img{display:block;width:100%;height:auto;max-height:150mm;object-fit:contain;border:1px solid #e2e8eb}figcaption{display:flex;justify-content:space-between;gap:10pt;margin-top:5pt;color:#59636e;font-size:9pt}.sources li{margin:0 0 7pt}.sources span{display:block;color:#59636e;font-size:9pt}.disclaimer{margin-top:24pt;padding-top:8pt;border-top:1px solid #d7dbe2;color:#59636e;font-size:8.5pt;font-style:italic}@media screen{body{max-width:210mm;margin:20px auto;padding:16mm 18mm;box-shadow:0 8px 36px rgba(15,23,42,.12)}.cover{min-height:255mm}}@media print{a{color:#0f766e!important}.data-grid article{border-color:#dfe5e8}}</style></head><body>${body.join("")}</body></html>`;
@@ -528,7 +538,7 @@
         ? (typeof image.decode === "function" ? image.decode().catch(() => {}) : Promise.resolve())
         : new Promise((resolve, reject) => { image.addEventListener("load", resolve, { once: true }); image.addEventListener("error", reject, { once: true }); })));
       printWindow.focus(); printWindow.print();
-      return { filename: "", model: normalizePayload(payload), status: "print_dialog_opened" };
+      return { filename: "", model: normalizePayload(payload, runtime), status: "print_dialog_opened" };
     } catch (error) {
       try { printWindow.close(); } catch (_closeError) { /* Best effort. */ }
       throw error;

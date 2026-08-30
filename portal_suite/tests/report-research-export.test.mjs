@@ -90,9 +90,10 @@ test("DOCX export is a real OOXML package with inline charts and canonical sourc
   const result = await exporter.buildDocx(fixture(), {
     createdAt: new Date("2026-08-30T12:00:00Z"),
     fetch: imageFetch(fetches),
+    origin: "https://portal.example",
   });
   assert.equal(result.blob.type, exporter.DOCX_MIME_TYPE);
-  assert.equal(result.filename, "KCDesk研究结果_20260830_fixture-hash.docx");
+  assert.equal(result.filename, "KC桌面研究结果_20260830_fixture-hash.docx");
   assert.doesNotMatch(result.filename, /电力|资本/u);
   assert.deepEqual(fetches, [
     `/api/charts/image?id=${"a".repeat(64)}`,
@@ -121,14 +122,14 @@ test("DOCX export is a real OOXML package with inline charts and canonical sourc
   assert.match(documentXml, /可继续研究[\s\S]*w:numId w:val="2"/u);
   assert.equal((relationships.match(/relationships\/image/gu) || []).length, 2);
   assert.ok((relationships.match(/TargetMode="External"/gu) || []).length >= 4);
-  assert.match(relationships, /https:\/\/kcdesk\.com\/report\.html\?id=report-1/u);
+  assert.match(relationships, /https:\/\/portal\.example\/report\.html\?id=report-1/u);
   assert.doesNotMatch(relationships, /api\/charts|_report-research|archive_id|visitor_id/u);
 });
 
 test("A4 print export embeds charts, preserves links, and reuses chart bytes without another request", async () => {
   const exporter = loadExporter();
   const fetches = [];
-  const runtime = { fetch: imageFetch(fetches), createdAt: new Date("2026-08-30T12:00:00Z") };
+  const runtime = { fetch: imageFetch(fetches), createdAt: new Date("2026-08-30T12:00:00Z"), origin: "https://portal.example" };
   await exporter.buildDocx(fixture(), runtime);
   const html = await exporter.buildPrintHtml(fixture(), runtime);
   assert.equal(fetches.length, 2, "print output should reuse the chart cache after DOCX export");
@@ -137,7 +138,7 @@ test("A4 print export embeds charts, preserves links, and reuses chart bytes wit
   assert.equal((html.match(/data:image\/jpeg;base64,/gu) || []).length, 2);
   assert.match(html, /研究范围：最近半年 · 投行报告 &amp; Charts/u);
   assert.match(html, /<h2>补充图表证据<\/h2>[\s\S]*补充图表/u);
-  assert.match(html, /href="https:\/\/kcdesk\.com\/report\.html\?id=report-1"/u);
+  assert.match(html, /href="https:\/\/portal\.example\/report\.html\?id=report-1"/u);
   assert.doesNotMatch(html, /<script>alert|_report-research|archive_id|visitor_id/u);
 });
 
