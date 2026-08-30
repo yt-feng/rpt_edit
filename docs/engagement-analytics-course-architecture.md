@@ -23,10 +23,10 @@ API contract:
 ## Course gate
 
 `courses.html` is visible in the top navigation. Its static HTML contains only
-the sanitized promotional heading for the featured course-material carousel;
-the established catalog names and all course contact details remain gated.
-After `GET /course/access` succeeds, the
-browser materializes the catalog from the authenticated response. The Worker
+the sanitized promotional heading and an empty mount point; anonymous and
+ineligible visitors do not load or render the featured course-material carousel.
+After `GET /course/access` succeeds, the browser materializes the catalog and
+the cover-only carousel. The Worker
 accepts a full membership entitlement or an unlimited full-site administrator
 grant, and requires it to be lifetime or to expire at least 30 * 24 hours after
 the server check. Filtered grants, finite-download grants, and trials do not
@@ -57,21 +57,24 @@ never serialized by this API.
 
 ### Featured course materials
 
-The Course page includes a public, sanitized cover carousel for the 20-item
-`str-01` strategic-analysis collection. Display metadata lives in
+The Course page includes a member-gated, cover-only carousel for the 20-item
+`str-01` strategic-analysis collection. Sanitized display metadata lives in
 `portal_suite/site_src/data/course-materials.json`; it contains no R2 locator or
 private WebDAV root. The 720 by 405 WebP covers are ordinary static teaser
 assets. The carousel uses native CSS scroll snap, keyboard and button controls,
 mobile touch scrolling, a six-second cycle, and disables automatic motion when
 the visitor requests reduced motion.
 
-Opening a PDF remains server-gated. `GET /course/material?id=maifu-NN` first
-authenticates the user and applies the same 30-day Course entitlement check.
-Only then may it read `_course-materials/v1/<id>.pdf` from the private report
-bucket. Complete and byte-range responses are `private, no-store`; anonymous,
-ineligible, invalid-ID, and missing-object responses never disclose the object
-key. The client fetches the PDF with its authorization header and opens a local
-Blob URL, so no bearer credential or storage locator enters a link.
+Membership unlocks only the cover preview, never the PDF. The legacy
+`GET /course/material?id=maifu-NN` route always returns a private 404 and does
+not read the private PDF object, including for eligible members. Each carousel
+item instead submits `POST /course/material-request` with only the material ID.
+The Worker authenticates the user, applies the same 30-day Course entitlement
+check, resolves the canonical title/topic/page count from the private stable
+manifest, and sends a request to the fixed `info@kcdesk.com` recipient. Browser
+supplied titles, storage locators, and recipients are ignored. Requests are
+persisted privately and deduplicated per account and material for 24 hours;
+different decks remain independently requestable.
 
 `.github/workflows/course-materials-private-publish.yml` fetches the exact 20
 source PDFs from the configured private Jianguoyun WebDAV directory, verifies
@@ -81,7 +84,8 @@ manifest only after every PDF has passed read-after-write verification. The
 private directory publisher independently HEAD-verifies all 20 objects before
 merging the sanitized rows into the member directory and Course Chat indexes;
 therefore a missing or mismatched PDF cannot produce a visible-but-broken
-course release.
+course release. These private PDF objects are retained only for manual request
+fulfilment; publishing them does not create a browser-readable route.
 
 ### Private file directory
 

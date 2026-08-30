@@ -504,6 +504,7 @@ test("account popup and Twotigers admin initialize in their own runtime scopes",
     loadAccountAdminSummary() { return Promise.resolve({}); },
     loadAccountAdminMarketViews() { return Promise.resolve([]); },
     loadAdminHotReports() { return Promise.resolve([]); },
+    loadAdminReportChatHistory() { return Promise.resolve([]); },
     renderAdminUsersVerificationState() {},
     loadFreshAdminUsers() { return Promise.resolve({ users: [] }); },
   };

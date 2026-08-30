@@ -1935,12 +1935,188 @@
     return data;
   }
 
+  function adminReportChatCollectionCount(value) {
+    if (Array.isArray(value)) return value.length;
+    if (value && typeof value === "object") return Object.keys(value).length;
+    const count = Math.trunc(Number(value || 0));
+    return Number.isFinite(count) && count > 0 ? Math.min(count, 100000) : 0;
+  }
+
+  function adminReportChatPreviewText(value, maxLength = 1600) {
+    const limit = Math.max(1, Math.min(4000, Math.trunc(Number(maxLength) || 1600)));
+    return String(value || "").replace(/\s+/gu, " ").trim().slice(0, limit);
+  }
+
+  function normalizeAdminReportChatArchive(raw) {
+    if (!raw || typeof raw !== "object" || Array.isArray(raw)) return null;
+    const archiveId = String(raw.archive_id || raw.id || "").trim().slice(0, 240);
+    const question = String(raw.question || raw.query || raw.prompt || "").replace(/\s+/gu, " ").trim().slice(0, 600);
+    if (!archiveId || !question) return null;
+    const identity = raw.identity && typeof raw.identity === "object" ? raw.identity : {};
+    const user = raw.user && typeof raw.user === "object" ? raw.user : {};
+    const actor = raw.actor && typeof raw.actor === "object" ? raw.actor : {};
+    const policy = raw.policy && typeof raw.policy === "object" ? raw.policy : {};
+    const answer = raw.response && typeof raw.response === "object" ? raw.response : {};
+    const findings = (Array.isArray(answer.findings) ? answer.findings : []).map((item) => {
+      if (!item || typeof item !== "object" || Array.isArray(item)) return null;
+      const title = adminReportChatPreviewText(item.title, 180);
+      const summary = adminReportChatPreviewText(item.summary || item.analysis, 1600);
+      return title || summary ? { title, summary } : null;
+    }).filter(Boolean).slice(0, 8);
+    const dataPoints = (Array.isArray(answer.data_points) ? answer.data_points : []).map((item) => {
+      if (!item || typeof item !== "object" || Array.isArray(item)) return null;
+      const label = adminReportChatPreviewText(item.label || item.metric, 180);
+      const value = adminReportChatPreviewText(item.value, 240);
+      const context = adminReportChatPreviewText(item.context || item.period, 500);
+      return label || value ? { label, value, context } : null;
+    }).filter(Boolean).slice(0, 12);
+    const publicId = String(raw.public_id || "").trim().slice(0, 240);
+    const explicitPublished = raw.published;
+    return {
+      archiveId,
+      question,
+      createdAt: String(raw.created_at || raw.ts || raw.updated_at || "").trim().slice(0, 60),
+      identityTier: String(
+        raw.identity_tier || raw.tier || raw.member_tier || raw.user_tier
+        || identity.tier || identity.level || policy.tier || user.tier || user.role || actor.role
+        || (actor.kind === "device" || raw.authenticated === false ? "访客" : "已登录"),
+      ).replace(/\s+/gu, " ").trim().slice(0, 80),
+      status: String(raw.status || raw.answer_status || (raw.error ? "failed" : "completed"))
+        .replace(/\s+/gu, " ").trim().slice(0, 80),
+      sourceCount: adminReportChatCollectionCount(
+        raw.source_count ?? raw.sources_count ?? raw.sources ?? answer.source_count ?? answer.sources,
+      ),
+      chartCount: adminReportChatCollectionCount(
+        raw.chart_count ?? raw.charts_count ?? raw.charts ?? answer.chart_count ?? answer.charts,
+      ),
+      answerSummary: adminReportChatPreviewText(answer.executive_summary || answer.answer, 2400),
+      findings,
+      dataPoints,
+      published: explicitPublished === true || explicitPublished === "true" || Boolean(publicId),
+      publicId,
+    };
+  }
+
+  function adminReportChatAnswerDetails(item) {
+    const summary = item.answerSummary
+      ? `<div><strong>回答摘要</strong><p>${escapeHtml(item.answerSummary)}</p></div>`
+      : "";
+    const findings = Array.isArray(item.findings) && item.findings.length
+      ? `<div><strong>核心发现</strong><ul>${item.findings.map((finding) => `
+          <li>
+            ${finding.title ? `<strong>${escapeHtml(finding.title)}</strong>` : ""}
+            ${finding.summary ? `<span>${escapeHtml(finding.summary)}</span>` : ""}
+          </li>`).join("")}</ul></div>`
+      : "";
+    const dataPoints = Array.isArray(item.dataPoints) && item.dataPoints.length
+      ? `<div><strong>数据点</strong><ul>${item.dataPoints.map((dataPoint) => `
+          <li>
+            ${dataPoint.label ? `<strong>${escapeHtml(dataPoint.label)}</strong>` : ""}
+            ${dataPoint.value ? `<span>${escapeHtml(dataPoint.value)}</span>` : ""}
+            ${dataPoint.context ? `<span>${escapeHtml(dataPoint.context)}</span>` : ""}
+          </li>`).join("")}</ul></div>`
+      : "";
+    const content = summary || findings || dataPoints
+      ? `${summary}${findings}${dataPoints}`
+      : '<div class="empty-state">这条记录没有可展示的回答内容。</div>';
+    return `<details class="account-admin-report-chat-details"><summary>查看回答内容</summary>${content}</details>`;
+  }
+
+  function adminReportChatArchiveRow(item) {
+    const state = item.published ? "已公开" : "未公开";
+    const action = item.published ? "unpublish" : "publish";
+    const actionLabel = item.published ? "撤下公开展示" : "公开展示";
+    const meta = [
+      formatAdminDateTime(item.createdAt) || item.createdAt,
+      item.identityTier,
+      item.status,
+      `来源 ${item.sourceCount}`,
+      `图表 ${item.chartCount}`,
+      state,
+    ].filter(Boolean).join(" · ");
+    return `
+      <article class="account-admin-file" data-report-chat-archive="${escapeHtml(item.archiveId)}">
+        <div>
+          <strong>${escapeHtml(item.question)}</strong>
+          <span>${escapeHtml(meta)}</span>
+          ${adminReportChatAnswerDetails(item)}
+        </div>
+        <div class="account-admin-file-actions">
+          <button class="secondary-button" type="button"
+            data-report-chat-curation="${escapeHtml(action)}"
+            data-archive-id="${escapeHtml(item.archiveId)}">${escapeHtml(actionLabel)}</button>
+        </div>
+      </article>`;
+  }
+
+  function renderAdminReportChatArchives(items) {
+    return items.length
+      ? items.map(adminReportChatArchiveRow).join("")
+      : '<div class="empty-state">还没有 RAG 问答存档。</div>';
+  }
+
+  async function fetchAdminReportChatHistory(workerUrl) {
+    const response = await fetch(`${workerUrl}/account-admin/report-chat-history?limit=50`, {
+      cache: "no-store",
+      headers: authHeaders(),
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(data.detail || "RAG 问答档案读取失败。");
+    const rows = Array.isArray(data.items)
+      ? data.items
+      : (Array.isArray(data.archives) ? data.archives : (Array.isArray(data.history) ? data.history : []));
+    return {
+      items: rows.map(normalizeAdminReportChatArchive).filter(Boolean).slice(0, 50),
+      total: Math.max(0, Number(data.total || rows.length) || rows.length),
+    };
+  }
+
+  async function loadAdminReportChatHistory(workerUrl, targets) {
+    if (!targets || !targets.canManageUsers || !targets.reportChatArchiveSection
+      || !targets.reportChatArchiveList || !targets.reportChatArchiveStatus) return [];
+    targets.reportChatArchiveStatus.className = "status-line";
+    targets.reportChatArchiveStatus.textContent = "正在读取 RAG 问答档案…";
+    targets.reportChatArchiveList.innerHTML = '<div class="empty-state">正在读取问答存档…</div>';
+    if (targets.reportChatArchiveRefresh) targets.reportChatArchiveRefresh.disabled = true;
+    try {
+      const data = await fetchAdminReportChatHistory(workerUrl);
+      targets.reportChatArchiveList.innerHTML = renderAdminReportChatArchives(data.items);
+      targets.reportChatArchiveStatus.className = "status-line ok";
+      targets.reportChatArchiveStatus.textContent = data.items.length
+        ? `已加载 ${data.items.length} 条问答存档${data.total > data.items.length ? `，共 ${data.total} 条` : ""}。`
+        : "还没有 RAG 问答存档。";
+      return data.items;
+    } catch (error) {
+      targets.reportChatArchiveList.innerHTML = '<div class="error-state">RAG 问答档案暂时无法读取，请稍后重试。</div>';
+      targets.reportChatArchiveStatus.className = "status-line error";
+      targets.reportChatArchiveStatus.textContent = error.message || "RAG 问答档案读取失败。";
+      return [];
+    } finally {
+      if (targets.reportChatArchiveRefresh) targets.reportChatArchiveRefresh.disabled = false;
+    }
+  }
+
+  async function curateAdminReportChatArchive(workerUrl, archiveId, action) {
+    const normalizedAction = action === "unpublish" ? "unpublish" : (action === "publish" ? "publish" : "");
+    if (!archiveId || !normalizedAction) throw new Error("问答存档操作无效。");
+    const response = await fetch(`${workerUrl}/account-admin/report-chat-curation`, {
+      method: "POST",
+      cache: "no-store",
+      headers: { "Content-Type": "application/json", ...authHeaders() },
+      body: JSON.stringify({ archive_id: archiveId, published: normalizedAction === "publish" }),
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok || data.ok === false) throw new Error(data.detail || "问答精选状态更新失败。");
+    return data;
+  }
+
   function accountAdminModalMarkup(options = {}) {
     const title = options.title || "管理后台";
     const showWechat = options.showWechat !== false;
     const showUsers = options.showUsers !== false;
     const showAnalytics = options.showAnalytics !== false;
     const showHotReports = options.showHotReports !== false;
+    const showReportChatArchives = options.showReportChatArchives === true;
     const uploadProgressMarkup = typeof adminPdfUploadProgressMarkup === "function"
       ? adminPdfUploadProgressMarkup
       : () => "";
@@ -2103,6 +2279,15 @@
             </div>
             <div id="accountAdminAnalyticsNotice" class="account-admin-module-notice" hidden></div>
             <div id="accountAdminAnalytics" class="account-admin-analytics"></div>
+          </section>
+          <section class="account-admin-section" id="accountAdminReportChatArchiveSection" ${showReportChatArchives ? "" : "hidden"}>
+            <div class="account-admin-heading">
+              <strong>RAG 问答档案</strong>
+              <span>查看历史问答并选择首页公开内容</span>
+              <button class="secondary-button" id="accountAdminReportChatArchiveRefresh" type="button">刷新问答档案</button>
+            </div>
+            <div id="accountAdminReportChatArchiveStatus" class="status-line" aria-live="polite"></div>
+            <div id="accountAdminReportChatArchiveList" class="account-admin-files"><div class="empty-state">正在读取问答存档…</div></div>
           </section>
           <section class="account-admin-section" id="accountAdminUsersSection" ${showUsers ? "" : "hidden"}>
             <div class="account-admin-heading">
@@ -3275,6 +3460,9 @@
     account_auth: "账号操作",
     admin_user_update: "用户权限操作",
     daily_file_download: "每日文件下载",
+    report_chat: "RAG 研究问答",
+    report_chat_interaction: "RAG 问答交互",
+    course_material_request: "课程材料索取",
   };
 
   function analyticsEventLabel(type) {
@@ -5079,6 +5267,7 @@
       showUsers: canManageUsers,
       showAnalytics: !isOperatorOnly,
       showHotReports: !isOperatorOnly,
+      showReportChatArchives: canManageUsers,
     }));
 
     const modal = document.getElementById("accountAdminModal");
@@ -5162,6 +5351,10 @@
     const analytics = document.getElementById("accountAdminAnalytics");
     const analyticsNotice = document.getElementById("accountAdminAnalyticsNotice");
     const analyticsSection = document.getElementById("accountAdminAnalyticsSection");
+    const reportChatArchiveSection = document.getElementById("accountAdminReportChatArchiveSection");
+    const reportChatArchiveRefresh = document.getElementById("accountAdminReportChatArchiveRefresh");
+    const reportChatArchiveStatus = document.getElementById("accountAdminReportChatArchiveStatus");
+    const reportChatArchiveList = document.getElementById("accountAdminReportChatArchiveList");
     const usersNotice = document.getElementById("accountAdminUsersNotice");
     const targets = {
       title,
@@ -5191,6 +5384,10 @@
       analytics,
       analyticsNotice,
       analyticsSection,
+      reportChatArchiveSection,
+      reportChatArchiveRefresh,
+      reportChatArchiveStatus,
+      reportChatArchiveList,
       userCount,
       users,
       usersSection,
@@ -5725,6 +5922,7 @@
         loadAccountAdminSummary(workerUrl, targets, { forceRefresh: true }),
         loadAccountAdminMarketViews(workerUrl, targets),
         canManageUsers ? loadAdminHotReports(workerUrl, targets) : Promise.resolve([]),
+        canManageUsers ? loadAdminReportChatHistory(workerUrl, targets) : Promise.resolve([]),
       ]);
       if (canManageUsers && exportUsers) {
         renderAdminUsersVerificationState(targets, "正在现场核验全部用户的最新权限…");
@@ -5750,6 +5948,30 @@
         }
       }
     });
+    if (canManageUsers && reportChatArchiveRefresh) {
+      reportChatArchiveRefresh.addEventListener("click", () => loadAdminReportChatHistory(workerUrl, targets));
+    }
+    if (canManageUsers && reportChatArchiveList) {
+      reportChatArchiveList.addEventListener("click", async (event) => {
+        const button = event.target.closest("[data-report-chat-curation]");
+        if (!button) return;
+        const archiveId = String(button.dataset.archiveId || "").trim();
+        const action = String(button.dataset.reportChatCuration || "").trim();
+        button.disabled = true;
+        reportChatArchiveStatus.className = "status-line";
+        reportChatArchiveStatus.textContent = action === "unpublish" ? "正在撤下公开问答…" : "正在公开精选问答…";
+        try {
+          await curateAdminReportChatArchive(workerUrl, archiveId, action);
+          reportChatArchiveStatus.className = "status-line ok";
+          reportChatArchiveStatus.textContent = action === "unpublish" ? "问答已撤下，正在刷新…" : "问答已公开，正在刷新…";
+          await loadAdminReportChatHistory(workerUrl, targets);
+        } catch (error) {
+          button.disabled = false;
+          reportChatArchiveStatus.className = "status-line error";
+          reportChatArchiveStatus.textContent = error.message || "问答精选状态更新失败。";
+        }
+      });
+    }
     if (canManageUsers && exportUsers) {
       exportUsers.addEventListener("click", () => exportAdminUsersToExcel(workerUrl, targets));
     }
@@ -6163,7 +6385,10 @@
       return null;
     }).catch(() => null);
     loadAccountAdminMarketViews(workerUrl, targets).catch(() => null);
-    if (canManageUsers) loadAdminHotReports(workerUrl, targets);
+    if (canManageUsers) {
+      loadAdminHotReports(workerUrl, targets);
+      loadAdminReportChatHistory(workerUrl, targets);
+    }
   }
 
   function adminModalMarkup() {
@@ -12581,7 +12806,9 @@
     const materialsPosition = document.getElementById("courseMaterialsPosition");
     const materialsStatus = document.getElementById("courseMaterialsStatus");
     let directoryEpoch = 0;
+    let courseMaterialEpoch = 0;
     let courseMaterialAccess = false;
+    let courseMaterialsInitialized = false;
     let courseMaterialCount = 0;
     const courseMaterialById = new Map();
     initAccountGate(workerUrl);
@@ -12636,88 +12863,88 @@
 
     function setCourseMaterialAccess(canAccess) {
       courseMaterialAccess = Boolean(canAccess);
-      if (!materialsTrack) return;
-      const hasSession = Boolean(loadAuthSession());
-      materialsTrack.querySelectorAll("[data-course-material-open]").forEach((button) => {
-        const label = courseMaterialAccess ? "在线阅读" : (hasSession ? "会员验证后阅读" : "登录后阅读");
-        button.textContent = label;
-        button.setAttribute("aria-label", `${button.dataset.materialTitle || "材料"} · ${label}`);
-      });
-      if (materialsStatus && materialsStatus.dataset.state !== "busy") {
-        setCourseMaterialStatus(courseMaterialAccess
-          ? `${courseMaterialCount} 份精选材料 · 点击封面下方按钮在线阅读`
-          : (hasSession
-            ? "有效期不少于 30 天的会员可在线阅读"
-            : "封面公开预览 · 登录后在线阅读"));
-      }
+      if (!materials) return;
+      materials.hidden = !(courseMaterialAccess && courseMaterialsInitialized);
+      if (!courseMaterialAccess) setCourseMaterialStatus("");
     }
 
-    async function openCourseMaterial(item, button) {
+    async function requestCourseMaterial(item, button) {
       if (!loadAuthSession()) {
         await showAccountModal(workerUrl);
         return;
       }
       if (!courseMaterialAccess) {
-        setCourseMaterialStatus("当前账号需通过会员资格核验后才能阅读。", "error");
+        setCourseMaterialStatus("当前账号需通过会员资格核验后才能索取。", "error");
         gate.scrollIntoView({ behavior: "smooth", block: "center" });
         return;
       }
 
-      const readerWindow = window.open("about:blank", "_blank");
-      if (readerWindow) {
-        try {
-          readerWindow.opener = null;
-          readerWindow.document.title = "正在准备课程材料…";
-          readerWindow.document.body.textContent = "正在准备课程材料，请稍候…";
-        } catch (_error) {
-          // The authenticated fetch below can still fall back to this tab.
-        }
-      }
       button.disabled = true;
-      button.textContent = "正在准备…";
-      setCourseMaterialStatus(`正在准备《${item.title}》…`, "busy");
+      button.textContent = "正在提交…";
+      setCourseMaterialStatus(`正在提交《${item.title}》的索取申请…`, "busy");
+      let completed = false;
+      let responseStatus = 0;
       try {
-        const response = await fetch(`${workerUrl}/course/material?id=${encodeURIComponent(item.id)}`, {
-          method: "GET",
+        const response = await fetch(`${workerUrl}/course/material-request`, {
+          method: "POST",
           cache: "no-store",
-          headers: authHeaders(),
+          headers: { "Content-Type": "application/json", ...authHeaders() },
+          body: JSON.stringify({
+            material_id: item.id,
+            page_path: currentAnalyticsPath(),
+            honeypot: "",
+          }),
         });
-        if (!response.ok) {
-          const data = await response.json().catch(() => ({}));
+        responseStatus = Number(response.status || 0);
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok || !data.ok) {
           if (response.status === 401) clearAuthSession();
-          throw new Error(data.detail || "材料暂时无法打开。");
+          throw new Error(data.detail || "材料索取申请提交失败，请稍后重试。");
         }
-        const blob = await response.blob();
-        if (!blob.size) throw new Error("材料内容为空，请稍后重试。");
-        const objectUrl = URL.createObjectURL(blob);
-        let openedInReader = false;
-        if (readerWindow && !readerWindow.closed) {
-          try {
-            readerWindow.location.replace(objectUrl);
-            openedInReader = true;
-          } catch (_error) {
-            readerWindow.close();
-          }
-        }
-        if (!openedInReader) window.location.assign(objectUrl);
-        window.setTimeout(() => URL.revokeObjectURL(objectUrl), 10 * 60 * 1000);
-        setCourseMaterialStatus(`《${item.title}》已打开。`, "ok");
+        completed = true;
+        button.dataset.requested = "true";
+        button.textContent = data.deduplicated ? "申请已记录" : "申请已提交";
+        setCourseMaterialStatus(
+          data.detail || (data.deduplicated
+            ? `《${item.title}》的申请已经记录，无需重复提交。`
+            : `《${item.title}》的索取申请已提交，我们会通过账号邮箱回复。`),
+          "ok",
+        );
+        trackEvent(workerUrl, "course_material_request", {
+          action: data.deduplicated ? "deduplicated" : "submitted",
+          material_id: item.id,
+          material_title: item.title,
+          page: currentAnalyticsPath(),
+        });
       } catch (error) {
-        if (readerWindow && !readerWindow.closed) readerWindow.close();
-        setCourseMaterialStatus(error.message || "材料暂时无法打开。", "error");
+        setCourseMaterialStatus(error.message || "材料索取申请提交失败，请稍后重试。", "error");
+        trackEvent(workerUrl, "course_material_request", {
+          action: "failed",
+          material_id: item.id,
+          material_title: item.title,
+          page: currentAnalyticsPath(),
+          response_status: responseStatus,
+        });
       } finally {
-        button.disabled = false;
-        const hasSession = Boolean(loadAuthSession());
-        const label = courseMaterialAccess ? "在线阅读" : (hasSession ? "会员验证后阅读" : "登录后阅读");
-        button.textContent = label;
-        button.setAttribute("aria-label", `${button.dataset.materialTitle || "材料"} · ${label}`);
+        if (!completed) {
+          button.disabled = false;
+          button.textContent = "重新索取";
+          button.setAttribute("aria-label", `${button.dataset.materialTitle || "材料"} · 重新索取`);
+        }
       }
     }
 
-    async function setupCourseMaterials() {
+    async function setupCourseMaterials(expectedEpoch) {
       if (!materials || !materialsTitle || !materialsDescription || !materialsTrack
         || !materialsPrevious || !materialsNext || !materialsPosition || !materialsStatus) return;
+      if (!courseMaterialAccess || expectedEpoch !== courseMaterialEpoch) return;
+      if (courseMaterialsInitialized) {
+        materials.hidden = false;
+        setCourseMaterialStatus(`${courseMaterialCount} 份会员封面预览 · 每份材料需单独索取`);
+        return;
+      }
       const payload = await loadOptionalJson("data/course-materials.json", null);
+      if (!courseMaterialAccess || expectedEpoch !== courseMaterialEpoch) return;
       const manifest = normalizeCourseMaterials(payload);
       if (!manifest) {
         materials.hidden = true;
@@ -12728,7 +12955,7 @@
       courseMaterialById.clear();
       items.forEach((item) => courseMaterialById.set(item.id, item));
       materialsTitle.textContent = course.title;
-      materialsDescription.textContent = `${course.category || "战略咨询"} · ${items.length} 份精选材料 · 会员专享`;
+      materialsDescription.textContent = `${course.category || "战略咨询"} · ${items.length} 份会员封面预览 · 每份单独索取`;
       materialsTrack.innerHTML = items.map((item, index) => {
         const priority = index === 0 && item.featured;
         return `
@@ -12758,14 +12985,15 @@
               <button
                 class="course-material-open"
                 type="button"
-                data-course-material-open="${escapeHtml(item.id)}"
+                data-course-material-request="${escapeHtml(item.id)}"
                 data-material-title="${escapeHtml(item.title)}"
-              >登录后阅读</button>
+              >单独索取</button>
             </div>
           </article>`;
       }).join("");
+      courseMaterialsInitialized = true;
       materials.hidden = false;
-      setCourseMaterialAccess(courseMaterialAccess);
+      setCourseMaterialStatus(`${courseMaterialCount} 份会员封面预览 · 每份材料需单独索取`);
 
       const cards = Array.from(materialsTrack.querySelectorAll("[data-course-material-card]"));
       const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -12802,9 +13030,7 @@
           behavior: reducedMotion.matches ? "auto" : "smooth",
         });
         updatePosition();
-        if (!automatic) setCourseMaterialStatus(courseMaterialAccess
-          ? `${courseMaterialCount} 份精选材料 · 点击封面下方按钮在线阅读`
-          : (loadAuthSession() ? "有效期不少于 30 天的会员可在线阅读" : "封面公开预览 · 登录后在线阅读"));
+        if (!automatic) setCourseMaterialStatus(`${courseMaterialCount} 份会员封面预览 · 每份材料需单独索取`);
         scheduleAutoplay();
       };
       const syncFromScroll = () => {
@@ -12842,10 +13068,10 @@
         scrollTimer = window.setTimeout(syncFromScroll, 120);
       }, { passive: true });
       materialsTrack.addEventListener("click", (event) => {
-        const button = event.target.closest("[data-course-material-open]");
+        const button = event.target.closest("[data-course-material-request]");
         if (!button) return;
-        const item = courseMaterialById.get(String(button.dataset.courseMaterialOpen || ""));
-        if (item) openCourseMaterial(item, button);
+        const item = courseMaterialById.get(String(button.dataset.courseMaterialRequest || ""));
+        if (item) requestCourseMaterial(item, button);
       });
       materialsTrack.querySelectorAll("img").forEach((image) => {
         image.addEventListener("error", () => image.closest(".course-material-card")?.classList.add("is-cover-missing"));
@@ -12885,6 +13111,7 @@
 
     function locked(titleText, messageText, showLogin = false) {
       directoryEpoch += 1;
+      courseMaterialEpoch += 1;
       setCourseMaterialAccess(false);
       gate.hidden = false;
       gate.classList.remove("is-unlocked");
@@ -13424,9 +13651,11 @@
         return;
       }
       locked("正在核验会员资格…", "请稍候。", false);
+      const expectedCourseMaterialEpoch = courseMaterialEpoch;
       try {
         const response = await fetch(`${workerUrl}/course/access`, { cache: "no-store", headers: authHeaders() });
         const data = await response.json().catch(() => ({}));
+        if (expectedCourseMaterialEpoch !== courseMaterialEpoch) return;
         if (!response.ok) {
           if (response.status === 401) clearAuthSession();
           throw new Error(data.detail || "课程会员资格核验失败。");
@@ -13448,14 +13677,16 @@
         setCourseMaterialAccess(true);
         renderCourseCatalog(data);
         catalog.hidden = false;
+        await setupCourseMaterials(expectedCourseMaterialEpoch);
       } catch (error) {
+        if (expectedCourseMaterialEpoch !== courseMaterialEpoch) return;
         locked("暂时无法核验会员资格", error.message || "请稍后刷新重试。", false);
       }
     }
 
     login.addEventListener("click", () => showAccountModal(workerUrl));
     document.addEventListener("portal-auth-change", refresh);
-    await Promise.all([setupCourseMaterials(), refresh()]);
+    await refresh();
   }
 
   const boot = page === "report"

@@ -24,7 +24,7 @@
       <div class="analytics-history-title">
         <div>
           <h1>用户行为历史（已采集）</h1>
-          <p>查看埋点启用后已存档的访问、搜索、报告、账号与后台操作。</p>
+          <p>查看埋点启用后已存档的访问、搜索、RAG 对话、报告、账号与后台操作。</p>
         </div>
         <div class="analytics-history-title-actions">
           <button id="analyticsHistoryExportAll" class="secondary-button" type="button">导出全部历史</button>
@@ -55,6 +55,9 @@
             <option value="">全部事件</option>
             <option value="page_view">页面访问</option>
             <option value="search">搜索</option>
+            <option value="report_chat">RAG 对话（服务端）</option>
+            <option value="report_chat_interaction">RAG 对话（交互）</option>
+            <option value="course_material_request">麦府学堂索取</option>
             <option value="report_open">打开报告</option>
             <option value="download_attempt">尝试下载</option>
             <option value="download_success">下载成功</option>

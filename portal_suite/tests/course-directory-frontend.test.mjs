@@ -3,12 +3,68 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
+import vm from "node:vm";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const appPath = path.join(root, "portal_suite/site_src/assets/app.js");
 const stylesPath = path.join(root, "portal_suite/site_src/assets/styles.css");
 const pagePath = path.join(root, "portal_suite/site_src/courses.html");
 const materialsPath = path.join(root, "portal_suite/site_src/data/course-materials.json");
+
+function extractFunction(source, name) {
+  const marker = `async function ${name}(`;
+  const start = source.indexOf(marker);
+  assert.notEqual(start, -1, `${name} must exist`);
+  const bodyStart = source.indexOf("{", source.indexOf(")", start));
+  let depth = 0;
+  for (let index = bodyStart; index < source.length; index += 1) {
+    if (source[index] === "{") depth += 1;
+    else if (source[index] === "}") {
+      depth -= 1;
+      if (depth === 0) return source.slice(start, index + 1);
+    }
+  }
+  throw new Error(`${name} body is incomplete`);
+}
+
+function courseMaterialRequestHarness(response) {
+  const calls = [];
+  const statuses = [];
+  const tracked = [];
+  const sandbox = {
+    courseMaterialAccess: true,
+    workerUrl: "/api",
+    gate: { scrollIntoView() {} },
+    loadAuthSession() { return { user: { email: "member@example.com" } }; },
+    async showAccountModal() {},
+    authHeaders() { return { Authorization: "Bearer member-token" }; },
+    currentAnalyticsPath() { return "/courses.html"; },
+    clearAuthSession() {},
+    setCourseMaterialStatus(message, state = "") { statuses.push({ message, state }); },
+    trackEvent(workerUrl, type, data) { tracked.push({ workerUrl, type, data }); },
+    async fetch(url, init) {
+      calls.push({ url: String(url), init });
+      return response;
+    },
+  };
+  const request = vm.runInNewContext(`(${extractFunction(appSource, "requestCourseMaterial")})`, sandbox);
+  const button = {
+    disabled: false,
+    textContent: "单独索取",
+    dataset: { materialTitle: "示例材料" },
+    ariaLabel: "",
+    setAttribute(name, value) { if (name === "aria-label") this.ariaLabel = value; },
+  };
+  return {
+    calls,
+    statuses,
+    tracked,
+    button,
+    request: () => request({ id: "maifu-01", title: "示例材料" }, button),
+  };
+}
+
+const appSource = await readFile(appPath, "utf8");
 
 test("course page keeps all member directory records out of static HTML", async () => {
   const html = await readFile(pagePath, "utf8");
@@ -63,7 +119,7 @@ test("course directory styles retain the portal layout on desktop and mobile", a
   assert.match(styles, /@media \(max-width: 520px\)[\s\S]*?\.course-directory-controls\s*\{[\s\S]*?grid-template-columns:\s*1fr/u);
 });
 
-test("public Maifu teaser sits between the hero and the protected member catalog", async () => {
+test("member-only Maifu carousel shell stays hidden before the Course gate succeeds", async () => {
   const html = await readFile(pagePath, "utf8");
   const heroAt = html.indexOf('class="course-hero"');
   const materialsAt = html.indexOf('id="courseMaterials"');
@@ -77,10 +133,12 @@ test("public Maifu teaser sits between the hero and the protected member catalog
     'id="courseMaterialsTrack"',
     'aria-roledescription="轮播"',
   ]) assert.ok(html.includes(marker), marker);
+  assert.match(html, /id="courseMaterials"[\s\S]*?hidden/u);
+  assert.match(html, /会员封面预览，每份材料均需单独索取/u);
   assert.doesNotMatch(html, /\.pdf|source_filename|sha256|_course-directory|R2/u);
 });
 
-test("Maifu manifest exposes twenty safe teaser records without storage locations", async () => {
+test("Maifu publisher manifest keeps twenty canonical records without storage locations", async () => {
   const manifest = JSON.parse(await readFile(materialsPath, "utf8"));
   assert.equal(manifest.schema_version, 1);
   assert.equal(manifest.course.id, "str-01");
@@ -98,10 +156,8 @@ test("Maifu manifest exposes twenty safe teaser records without storage location
 });
 
 test("Maifu carousel is native, responsive, motion-aware, and keyboard operable", async () => {
-  const [source, styles] = await Promise.all([
-    readFile(appPath, "utf8"),
-    readFile(stylesPath, "utf8"),
-  ]);
+  const source = appSource;
+  const styles = await readFile(stylesPath, "utf8");
   assert.match(source, /loadOptionalJson\("data\/course-materials\.json", null\)/u);
   assert.match(source, /loading="\$\{priority \? "eager" : "lazy"\}"/u);
   assert.match(source, /fetchpriority="high"/u);
@@ -119,21 +175,80 @@ test("Maifu carousel is native, responsive, motion-aware, and keyboard operable"
   assert.match(styles, /@media \(prefers-reduced-motion: reduce\)[\s\S]*?scroll-behavior:\s*auto/u);
 });
 
-test("member material reader opens synchronously and fetches only by public material id", async () => {
-  const source = await readFile(appPath, "utf8");
-  const start = source.indexOf("async function openCourseMaterial");
+test("anonymous and ineligible accounts never load or reveal Maifu covers", () => {
+  const source = appSource;
+  const courseStart = source.indexOf("async function initCourse");
+  const refreshStart = source.indexOf("async function refresh()", courseStart);
+  const refreshEnd = source.indexOf('login.addEventListener("click"', refreshStart);
+  assert.ok(courseStart >= 0 && refreshStart > courseStart && refreshEnd > refreshStart);
+  const refresh = source.slice(refreshStart, refreshEnd);
+  const deniedAt = refresh.indexOf("if (!data.can_access)");
+  const loadAt = refresh.indexOf("await setupCourseMaterials(expectedCourseMaterialEpoch)");
+  assert.ok(deniedAt >= 0 && loadAt > deniedAt, "the cover manifest load must follow the access denial branch");
+  assert.match(refresh, /if \(!loadAuthSession\(\)\) \{[\s\S]*?locked\([\s\S]*?return;/u);
+  assert.match(refresh, /if \(!data\.can_access\) \{[\s\S]*?locked\([\s\S]*?return;/u);
+  assert.equal((source.match(/setupCourseMaterials\(/gu) || []).length, 2);
+  assert.match(source, /if \(!courseMaterialAccess \|\| expectedEpoch !== courseMaterialEpoch\) return;/u);
+  assert.match(refresh, /const data = await response\.json\([\s\S]*?if \(expectedCourseMaterialEpoch !== courseMaterialEpoch\) return;/u);
+  assert.match(source, /materials\.hidden = !\(courseMaterialAccess && courseMaterialsInitialized\)/u);
+  assert.doesNotMatch(source.slice(refreshEnd, source.indexOf("const boot =", refreshEnd)), /Promise\.all\(\[setupCourseMaterials/u);
+});
+
+test("eligible members request one Maifu item without fetching or opening its PDF", async () => {
+  const source = appSource;
+  const start = source.indexOf("async function requestCourseMaterial");
   const end = source.indexOf("async function setupCourseMaterials", start);
   assert.ok(start >= 0 && end > start);
-  const reader = source.slice(start, end);
-  assert.ok(reader.indexOf('window.open("about:blank", "_blank")') < reader.indexOf("await fetch("));
-  assert.match(reader, /fetch\(`\$\{workerUrl\}\/course\/material\?id=\$\{encodeURIComponent\(item\.id\)\}`/u);
-  assert.match(reader, /method: "GET",[\s\S]*?cache: "no-store",[\s\S]*?headers: authHeaders\(\)/u);
-  assert.match(reader, /await response\.blob\(\)/u);
-  assert.match(reader, /URL\.createObjectURL\(blob\)/u);
-  assert.match(reader, /readerWindow\.location\.replace\(objectUrl\)/u);
-  assert.match(reader, /window\.location\.assign\(objectUrl\)/u);
-  assert.match(reader, /readerWindow\.close\(\)/u);
-  assert.match(reader, /URL\.revokeObjectURL\(objectUrl\)/u);
-  assert.match(reader, /showAccountModal\(workerUrl\)/u);
-  assert.doesNotMatch(reader, /source_filename|source_path|r2_key|sha256/iu);
+  const requester = source.slice(start, end);
+  assert.match(requester, /fetch\(`\$\{workerUrl\}\/course\/material-request`/u);
+  assert.match(requester, /method: "POST",[\s\S]*?"Content-Type": "application\/json"[\s\S]*?authHeaders\(\)/u);
+  assert.doesNotMatch(requester, /\/course\/material\?id=|response\.blob|createObjectURL|window\.open|location\.assign/iu);
+
+  const harness = courseMaterialRequestHarness({
+    ok: true,
+    status: 202,
+    async json() { return { ok: true, deduplicated: false, detail: "申请已提交。" }; },
+  });
+  await harness.request();
+  assert.equal(harness.calls.length, 1);
+  assert.equal(harness.calls[0].url, "/api/course/material-request");
+  assert.equal(harness.calls[0].init.method, "POST");
+  assert.equal(harness.calls[0].init.headers.Authorization, "Bearer member-token");
+  assert.deepEqual(JSON.parse(harness.calls[0].init.body), {
+    material_id: "maifu-01",
+    page_path: "/courses.html",
+    honeypot: "",
+  });
+  assert.equal(harness.button.disabled, true);
+  assert.equal(harness.button.textContent, "申请已提交");
+  assert.match(harness.statuses.at(-1).state, /ok/u);
+  assert.deepEqual(harness.tracked.map((entry) => [entry.type, entry.data.action]), [
+    ["course_material_request", "submitted"],
+  ]);
+});
+
+test("Maifu request exposes deduplicated success and retryable failure states with analytics", async () => {
+  const duplicate = courseMaterialRequestHarness({
+    ok: true,
+    status: 200,
+    async json() { return { ok: true, deduplicated: true, detail: "该材料申请已收到。" }; },
+  });
+  await duplicate.request();
+  assert.equal(duplicate.button.disabled, true);
+  assert.equal(duplicate.button.textContent, "申请已记录");
+  assert.equal(duplicate.tracked.at(-1).data.action, "deduplicated");
+
+  const failed = courseMaterialRequestHarness({
+    ok: false,
+    status: 502,
+    async json() { return { ok: false, detail: "申请已保存，但通知发送失败。" }; },
+  });
+  await failed.request();
+  assert.equal(failed.button.disabled, false);
+  assert.equal(failed.button.textContent, "重新索取");
+  assert.match(failed.button.ariaLabel, /重新索取/u);
+  assert.match(failed.statuses.at(-1).state, /error/u);
+  assert.match(failed.statuses.at(-1).message, /通知发送失败/u);
+  assert.equal(failed.tracked.at(-1).data.action, "failed");
+  assert.equal(failed.tracked.at(-1).data.response_status, 502);
 });

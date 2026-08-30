@@ -45,7 +45,12 @@ assert.match(chartsApp, /data\/chart_search_index\.json/);
 assert.match(chartsApp, /\/charts\/image\?id=/);
 assert.match(chartsApp, /new URLSearchParams\(\{ id:/);
 assert.match(chartsApp, /available: typeof report\.available === "boolean"/);
-assert.match(chartsApp, /reportUrl\(row\.reportId, row\.reportPreview\)/);
+assert.match(chartsApp, /sourceReportUrl\(row\)/);
+assert.match(chartsApp, /document\.createElement\("button"\)/);
+assert.match(chartsApp, /aria-haspopup/);
+assert.match(chartsApp, /openChartLightbox\(row, media\)/);
+assert.match(chartsApp, /event\.key === "Escape"/);
+assert.match(chartsApp, /在首页搜索来源报告/);
 assert.match(chartsApp, /VALID_KINDS/);
 assert.match(chartsApp, /INVALID_RE/);
 assert.match(chartsApp, /quality_score/);
@@ -73,5 +78,25 @@ assert.match(archivedUrl, /pdf_archived=1/);
 assert.match(archivedUrl, /page_count=22/);
 const unknownUrl = reportUrl("report-2", { title: "Unknown report" });
 assert.doesNotMatch(unknownUrl, /available=/);
+
+const reportSearchUrl = Function(
+  "clean",
+  `"use strict"; ${extractFunction(chartsApp, "reportSearchUrl")}; return reportSearchUrl;`,
+)((value, limit) => String(value || "").trim().slice(0, limit));
+assert.equal(
+  reportSearchUrl("Bernstein HPQ source report"),
+  "/?q=Bernstein%20HPQ%20source%20report",
+);
+
+const sourceReportUrl = Function(
+  "reportUrl",
+  "reportSearchUrl",
+  `"use strict"; ${extractFunction(chartsApp, "sourceReportUrl")}; return sourceReportUrl;`,
+)(reportUrl, reportSearchUrl);
+assert.match(sourceReportUrl({ reportId: "report-1", reportPreview: {} }), /report\.html\?id=report-1/u);
+assert.equal(
+  sourceReportUrl({ reportId: "", reportTitle: "Unlinked source title", reportPreview: {} }),
+  "/?q=Unlinked%20source%20title",
+);
 
 console.log("portal chart-search frontend contract: ok");

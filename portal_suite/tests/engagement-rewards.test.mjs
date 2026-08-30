@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { createHmac } from "node:crypto";
 import path from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
@@ -46,6 +47,7 @@ class MemoryR2 {
     this.rangeReadKeys = [];
     this.getKeys = [];
     this.putKeys = [];
+    this.deleteKeys = [];
     this.textOnlyKeys = new Set();
     this.failPutPrefixOnce = "";
     this.failGetAfterPutExact = "";
@@ -137,6 +139,32 @@ class MemoryR2 {
       this.failGetAfterPutExact = "";
     }
     return { etag: row.etag };
+  }
+
+  async delete(keyOrKeys) {
+    const keys = Array.isArray(keyOrKeys) ? keyOrKeys : [keyOrKeys];
+    for (const key of keys) {
+      this.deleteKeys.push(String(key));
+      this.rows.delete(String(key));
+    }
+  }
+
+  async list(options = {}) {
+    const prefix = String(options.prefix || "");
+    const limit = Math.max(1, Math.min(1000, Math.floor(Number(options.limit) || 1000)));
+    const offset = Math.max(0, Math.floor(Number(options.cursor) || 0));
+    const keys = [...this.rows.keys()].filter((key) => key.startsWith(prefix)).sort();
+    const selected = keys.slice(offset, offset + limit);
+    const nextOffset = offset + selected.length;
+    return {
+      objects: selected.map((key) => {
+        const row = this.rows.get(key);
+        const size = row.binary ? row.value.byteLength : new TextEncoder().encode(row.value).byteLength;
+        return { key, size, etag: row.etag };
+      }),
+      truncated: nextOffset < keys.length,
+      cursor: nextOffset < keys.length ? String(nextOffset) : undefined,
+    };
   }
 }
 
@@ -286,6 +314,46 @@ async function register(env) {
   assert.equal(auth.response.status, 201);
   assert.ok(auth.data.token);
   return auth.data.token;
+}
+
+function signedUserToken(user, secret = "test-password-secret") {
+  const now = Math.floor(Date.now() / 1000);
+  const body = Buffer.from(JSON.stringify({
+    kind: "user",
+    sub: user.id,
+    username: user.username,
+    email: user.email,
+    session_epoch: String(user.session_epoch || ""),
+    iat: now,
+    exp: now + 3600,
+  })).toString("base64url");
+  const signature = createHmac("sha256", secret)
+    .update(`portal:account-token:v1:${body}`)
+    .digest("base64url");
+  return `${body}.${signature}`;
+}
+
+function seedSuperAccount(bucket) {
+  const now = new Date().toISOString();
+  const user = {
+    id: "admin-a-test-id",
+    username: "admin-a",
+    email: "admin-a@users.portal.example.invalid",
+    password_salt: "admin-a-test-salt",
+    password_hash: `hmac_sha256$${"a".repeat(64)}`,
+    email_is_generated: true,
+    site_origin: "portal",
+    registered_site: "portal",
+    source_site: "portal",
+    session_epoch: "",
+    created_at: now,
+    updated_at: now,
+    last_login_at: "",
+  };
+  for (const [field, value] of [["id", user.id], ["username", user.username], ["email", user.email]]) {
+    bucket.seed(`_account/users/${field}/${encodeURIComponent(value)}`, user);
+  }
+  return { user, token: signedUserToken(user) };
 }
 
 function bearer(token) {
@@ -1211,26 +1279,41 @@ test("course directory falls back to text parsing when the R2 body has no json m
   assert.equal(bucket.jsonReadKeys.includes(directoryKey), false);
 });
 
-test("course materials enforce the Course gate and serve complete or ranged private PDFs", async () => {
+test("course decks never stream from the site and eligible members request each material separately", async () => {
   const bucket = new MemoryR2();
   bucket.seed("edge-static/runtime-data/catalog.json", { items: [] });
-  const env = envFor(bucket);
+  bucket.seed("_course-materials/v1/manifest.json", {
+    schema_version: 1,
+    course: { id: "str-01", title: "麦府学堂｜战略与商业分析方法论" },
+    item_count: 2,
+    items: [
+      { id: "maifu-01", title: "PPT项目故事线撰写指南", topic: "咨询交付", pages: 24 },
+      { id: "maifu-02", title: "从数据到深刻洞察", topic: "数据洞察", pages: 32 },
+    ],
+  });
+  const env = { ...envFor(bucket), BREVO_API_KEY: "brevo-test-key" };
   const materialPath = "/course/material?id=maifu-01";
   const materialKey = "_course-materials/v1/maifu-01.pdf";
   const pdf = new TextEncoder().encode("%PDF-1.7\ncourse-material-body\n%%EOF");
   bucket.seedBytes(materialKey, pdf);
 
   const anonymous = await jsonRequest(env, materialPath);
-  assert.equal(anonymous.response.status, 401);
+  assert.equal(anonymous.response.status, 404);
   assert.equal(anonymous.response.headers.get("cache-control"), "private, no-store, max-age=0");
   assert.equal(JSON.stringify(anonymous.data).includes("_course-materials"), false);
 
   const token = await register(env);
   const auth = { headers: bearer(token) };
-  const denied = await jsonRequest(env, materialPath, auth);
-  assert.equal(denied.response.status, 403);
-  assert.equal(denied.response.headers.get("cache-control"), "private, no-store, max-age=0");
-  assert.equal(Object.hasOwn(denied.data, "object_key"), false);
+  const stillUnavailable = await jsonRequest(env, materialPath, auth);
+  assert.equal(stillUnavailable.response.status, 404);
+  assert.equal(bucket.getKeys.includes(materialKey), false, "the revoked route must not touch the private PDF");
+
+  const deniedRequest = await jsonRequest(env, "/course/material-request", {
+    method: "POST",
+    headers: { "content-type": "application/json", Origin: "https://portal.example.invalid", ...bearer(token) },
+    body: JSON.stringify({ material_id: "maifu-01", page_path: "/courses.html", honeypot: "" }),
+  });
+  assert.equal(deniedRequest.response.status, 403);
 
   const email = "reward-reader@example.com";
   bucket.seed(`_account/entitlements/${encodeURIComponent(email)}`, {
@@ -1243,38 +1326,53 @@ test("course materials enforce the Course gate and serve complete or ranged priv
     updated_at: new Date().toISOString(),
   });
 
-  const invalid = await jsonRequest(env, "/course/material?id=../../private", auth);
-  assert.equal(invalid.response.status, 404);
-  assert.equal(invalid.response.headers.get("cache-control"), "private, no-store, max-age=0");
-  const missing = await jsonRequest(env, "/course/material?id=maifu-20", auth);
-  assert.equal(missing.response.status, 404);
-  assert.equal(JSON.stringify(missing.data).includes("_course-materials"), false);
+  const originalFetch = globalThis.fetch;
+  const sent = [];
+  globalThis.fetch = async (url, options = {}) => {
+    sent.push({ url: String(url), body: JSON.parse(String(options.body || "{}")) });
+    return new Response(JSON.stringify({ messageId: `course-message-${sent.length}` }), {
+      status: 201,
+      headers: { "content-type": "application/json" },
+    });
+  };
+  try {
+    const submit = async (materialId) => jsonRequest(env, "/course/material-request", {
+      method: "POST",
+      headers: { "content-type": "application/json", Origin: "https://portal.example.invalid", ...bearer(token) },
+      body: JSON.stringify({
+        material_id: materialId,
+        material_title: "伪造标题",
+        recipient: "attacker@example.net",
+        page_path: "/courses.html",
+        honeypot: "",
+      }),
+    });
+    const first = await submit("maifu-01");
+    assert.equal(first.response.status, 202, JSON.stringify(first.data));
+    assert.equal(first.data.deduplicated, false);
+    assert.deepEqual(sent[0].body.to, [{ email: "info@kcdesk.com" }]);
+    const serializedEmail = JSON.stringify(sent[0].body);
+    assert.match(serializedEmail, /PPT项目故事线撰写指南/u);
+    assert.doesNotMatch(serializedEmail, /伪造标题|attacker@example\.net/u);
 
-  const complete = await worker.fetch(new Request(`https://worker.test${materialPath}`, auth), env, { waitUntil() {} });
-  assert.equal(complete.status, 200);
-  assert.equal(complete.headers.get("content-type"), "application/pdf");
-  assert.equal(complete.headers.get("content-length"), String(pdf.byteLength));
-  assert.equal(complete.headers.get("accept-ranges"), "bytes");
-  assert.equal(complete.headers.get("cache-control"), "private, no-store, max-age=0");
-  assert.match(complete.headers.get("content-disposition"), /maifu-01\.pdf/u);
-  assert.deepEqual(new Uint8Array(await complete.arrayBuffer()), pdf);
+    const duplicate = await submit("maifu-01");
+    assert.equal(duplicate.response.status, 202);
+    assert.equal(duplicate.data.deduplicated, true);
+    assert.equal(sent.length, 1);
 
-  const range = { headers: { ...bearer(token), Range: "bytes=5-12" } };
-  const partial = await worker.fetch(new Request(`https://worker.test${materialPath}`, range), env, { waitUntil() {} });
-  assert.equal(partial.status, 206);
-  assert.equal(partial.headers.get("content-length"), "8");
-  assert.equal(partial.headers.get("content-range"), `bytes 5-12/${pdf.byteLength}`);
-  assert.deepEqual(new Uint8Array(await partial.arrayBuffer()), pdf.slice(5, 13));
-  assert.ok(bucket.rangeReadKeys.includes(materialKey));
-
-  const unsatisfiable = await worker.fetch(new Request(`https://worker.test${materialPath}`, {
-    headers: { ...bearer(token), Range: `bytes=${pdf.byteLength}-` },
-  }), env, { waitUntil() {} });
-  assert.equal(unsatisfiable.status, 416);
-  assert.equal(unsatisfiable.headers.get("content-range"), `bytes */${pdf.byteLength}`);
+    const second = await submit("maifu-02");
+    assert.equal(second.response.status, 202);
+    assert.equal(second.data.deduplicated, false);
+    assert.equal(sent.length, 2, "each deck must create its own request");
+    const requestRows = [...bucket.rows.entries()].filter(([key]) => key.startsWith("_course-material-requests/v1/items/"));
+    assert.equal(requestRows.length, 2);
+    assert.ok(requestRows.every(([, row]) => JSON.parse(row.value).status === "sent"));
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
 });
 
-test("registered users can use grounded report chat and anonymous users cannot", async () => {
+test("report chat gives anonymous devices and registered free accounts one lifetime answer each", async () => {
   const bucket = new MemoryR2();
   const reportId = "aaaaaaaaaaaaaaaaaaaaaaaa";
   await seedReportChatLookup(bucket, [{
@@ -1288,12 +1386,43 @@ test("registered users can use grounded report chat and anonymous users cannot",
       attraction_score: 5,
     }], { ai: [reportId], 数据中心: [reportId], 电力: [reportId] });
   const env = envFor(bucket);
-  const anonymous = await jsonRequest(env, "/report-chat", {
+  const missingDevice = await jsonRequest(env, "/report-chat", {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify({ question: "AI 数据中心电力瓶颈" }),
   });
-  assert.equal(anonymous.response.status, 401);
+  assert.equal(missingDevice.response.status, 400);
+  assert.equal(missingDevice.data.stage_code, "DEVICE_ID_REQUIRED");
+  const visitorId = "visitor-anon-0001";
+  const anonymous = await jsonRequest(env, "/report-chat", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ question: "AI 数据中心电力瓶颈", visitor_id: visitorId }),
+  });
+  assert.equal(anonymous.response.status, 200, JSON.stringify(anonymous.data));
+  assert.deepEqual(anonymous.data.usage, {
+    tier: "guest",
+    limit: 1,
+    count: 1,
+    remaining: 0,
+    period: "lifetime",
+  });
+  assert.match(anonymous.data.archive_id, /^[a-f0-9]{32}$/u);
+  assert.match(anonymous.data.question_hash, /^[a-f0-9]{64}$/u);
+  const anonymousLimited = await jsonRequest(env, "/report-chat", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ question: "AI 数据中心电力瓶颈", visitor_id: visitorId }),
+  });
+  assert.equal(anonymousLimited.response.status, 429);
+  assert.equal(anonymousLimited.data.stage_code, "USAGE_LIMIT");
+  assert.equal(anonymousLimited.data.request_available, true);
+  assert.match(anonymousLimited.data.question_hash, /^[a-f0-9]{64}$/u);
+  assert.equal(
+    [...bucket.rows.values()].some((row) => !row.binary && String(row.value).includes(visitorId)),
+    false,
+    "raw visitor ids must never be persisted",
+  );
   const token = await register(env);
   const oversized = await jsonRequest(env, "/report-chat", {
     method: "POST",
@@ -1307,6 +1436,13 @@ test("registered users can use grounded report chat and anonymous users cannot",
     body: JSON.stringify({ question: "找最近半年AI数据中心电力瓶颈相关的顶级投行报告" }),
   });
   assert.equal(result.response.status, 200, JSON.stringify(result.data));
+  assert.deepEqual(result.data.usage, {
+    tier: "registered",
+    limit: 1,
+    count: 1,
+    remaining: 0,
+    period: "lifetime",
+  });
   assert.equal(result.data.recommendations[0].id, reportId);
   assert.equal(result.data.recommendations[0].attraction_score, 5);
   assert.equal(result.data.recommendations[0].available, true);
@@ -1319,6 +1455,325 @@ test("registered users can use grounded report chat and anonymous users cannot",
   assert.equal(bucket.textReadKeys.includes("edge-static/runtime-data/search_index.json"), false);
   assert.equal(Object.hasOwn(result.data.recommendations[0], "excerpt"), false);
   assert.equal(result.response.headers.get("cache-control"), "private, no-store, max-age=0");
+  const registeredLimited = await jsonRequest(env, "/report-chat", {
+    method: "POST",
+    headers: { "content-type": "application/json", ...bearer(token) },
+    body: JSON.stringify({ question: "再问一次 AI 数据中心" }),
+  });
+  assert.equal(registeredLimited.response.status, 429);
+  assert.equal(registeredLimited.data.usage.tier, "registered");
+  assert.equal(registeredLimited.data.usage.period, "lifetime");
+});
+
+test("report chat enforces 2 daily turns for short members and 5 for advanced members", async () => {
+  const report = { id: "quota-member-report", title: "AI infrastructure member research", attraction_score: 4 };
+
+  const shortBucket = new MemoryR2();
+  await seedReportChatLookup(shortBucket, [report], { ai: [report.id] });
+  const shortEnv = envFor(shortBucket);
+  const shortToken = await register(shortEnv);
+  const now = new Date().toISOString();
+  shortBucket.seed(`_account/access/${encodeURIComponent("reward-reader@example.com")}`, {
+    id: "short-member-access",
+    email: "reward-reader@example.com",
+    access_mode: "all",
+    status: "active",
+    lifetime: false,
+    current_period_end: new Date(Date.now() + 31 * 24 * 60 * 60 * 1000).toISOString(),
+    duration_value: "1",
+    download_limit: 0,
+    download_count: 0,
+    download_items: [],
+    institutions: [],
+    industries: [],
+    page_ranges: [],
+    note: "",
+    change_id: "short-member-change",
+    created_at: now,
+    updated_at: now,
+  });
+  for (let turn = 1; turn <= 2; turn += 1) {
+    const result = await jsonRequest(shortEnv, "/report-chat", {
+      method: "POST",
+      headers: { "content-type": "application/json", ...bearer(shortToken) },
+      body: JSON.stringify({ question: `AI 基础设施会员研究 ${turn}` }),
+    });
+    assert.equal(result.response.status, 200, JSON.stringify(result.data));
+    assert.equal(result.data.usage.tier, "member");
+    assert.equal(result.data.usage.limit, 2);
+    assert.equal(result.data.usage.count, turn);
+    assert.equal(result.data.usage.remaining, 2 - turn);
+    assert.equal(result.data.usage.period, "day");
+  }
+  const shortLimited = await jsonRequest(shortEnv, "/report-chat", {
+    method: "POST",
+    headers: { "content-type": "application/json", ...bearer(shortToken) },
+    body: JSON.stringify({ question: "AI 基础设施第三次研究" }),
+  });
+  assert.equal(shortLimited.response.status, 429);
+  assert.equal(shortLimited.data.usage.tier, "member");
+  assert.equal(shortLimited.data.usage.remaining, 0);
+
+  const advancedBucket = new MemoryR2();
+  await seedReportChatLookup(advancedBucket, [report], { ai: [report.id] });
+  const advancedEnv = envFor(advancedBucket);
+  const advancedToken = await register(advancedEnv);
+  advancedBucket.seed(`_account/entitlements/${encodeURIComponent("reward-reader@example.com")}`, {
+    id: "advanced-member-entitlement",
+    email: "reward-reader@example.com",
+    plan: "annual",
+    status: "active",
+    lifetime: false,
+    current_period_end: new Date(Date.now() + 31 * 24 * 60 * 60 * 1000).toISOString(),
+    updated_at: now,
+  });
+  for (let turn = 1; turn <= 5; turn += 1) {
+    const result = await jsonRequest(advancedEnv, "/report-chat", {
+      method: "POST",
+      headers: { "content-type": "application/json", ...bearer(advancedToken) },
+      body: JSON.stringify({ question: `AI 高阶会员研究 ${turn}` }),
+    });
+    assert.equal(result.response.status, 200, JSON.stringify(result.data));
+    assert.equal(result.data.usage.tier, "advanced");
+    assert.equal(result.data.usage.limit, 5);
+    assert.equal(result.data.usage.count, turn);
+    assert.equal(result.data.usage.remaining, 5 - turn);
+    assert.equal(result.data.usage.period, "day");
+  }
+  const advancedLimited = await jsonRequest(advancedEnv, "/report-chat", {
+    method: "POST",
+    headers: { "content-type": "application/json", ...bearer(advancedToken) },
+    body: JSON.stringify({ question: "AI 高阶会员第六次研究" }),
+  });
+  assert.equal(advancedLimited.response.status, 429);
+  assert.equal(advancedLimited.data.usage.tier, "advanced");
+  assert.equal(advancedLimited.data.usage.remaining, 0);
+});
+
+test("the super account has unlimited report chat", async () => {
+  const bucket = new MemoryR2();
+  const report = { id: "quota-admin-report", title: "AI infrastructure admin research", attraction_score: 4 };
+  await seedReportChatLookup(bucket, [report], { ai: [report.id] });
+  const env = envFor(bucket);
+  const { token } = seedSuperAccount(bucket);
+  for (let turn = 1; turn <= 6; turn += 1) {
+    const result = await jsonRequest(env, "/report-chat", {
+      method: "POST",
+      headers: { "content-type": "application/json", ...bearer(token) },
+      body: JSON.stringify({ question: `AI 管理员研究 ${turn}` }),
+    });
+    assert.equal(result.response.status, 200, JSON.stringify(result.data));
+    assert.deepEqual(result.data.usage, {
+      tier: "admin",
+      limit: null,
+      count: 0,
+      remaining: null,
+      period: "unlimited",
+    });
+  }
+  assert.equal([...bucket.rows.keys()].some((key) => key.startsWith("_account/report-chat-v3/") && key.includes("admin-a")), false);
+});
+
+test("report chat archives privately, supports admin curation and public cache reads, and emails only the fixed contact", async () => {
+  const bucket = new MemoryR2();
+  const report = { id: "archive-public-report", title: "AI infrastructure archive research", attraction_score: 5 };
+  await seedReportChatLookup(bucket, [report], { ai: [report.id], 基础设施: [report.id] });
+  const env = { ...envFor(bucket), BREVO_API_KEY: "brevo-test-key" };
+  const visitorId = "visitor-archive-0001";
+  const success = await jsonRequest(env, "/report-chat", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ question: "AI 基础设施归档研究", visitor_id: visitorId }),
+  });
+  assert.equal(success.response.status, 200, JSON.stringify(success.data));
+  const limited = await jsonRequest(env, "/report-chat", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ question: "AI 基础设施继续研究", visitor_id: visitorId }),
+  });
+  assert.equal(limited.response.status, 429, JSON.stringify(limited.data));
+  const archiveRows = [...bucket.rows.entries()].filter(([key]) => key.startsWith("_report-chat-archive/v1/items/"));
+  assert.equal(archiveRows.length, 2);
+  assert.deepEqual(new Set(archiveRows.map(([, row]) => JSON.parse(row.value).status)), new Set(["success", "limit"]));
+  assert.equal(archiveRows.some(([, row]) => String(row.value).includes(visitorId)), false);
+
+  const deniedHistory = await jsonRequest(env, "/account-admin/report-chat-history");
+  assert.equal(deniedHistory.response.status, 403);
+  const { token: adminToken } = seedSuperAccount(bucket);
+  const history = await jsonRequest(env, "/account-admin/report-chat-history?limit=20", {
+    headers: bearer(adminToken),
+  });
+  assert.equal(history.response.status, 200, JSON.stringify(history.data));
+  assert.equal(history.data.items.length, 2);
+  assert.ok(history.data.items.every((item) => item.published === false && item.public_id === ""));
+
+  const curated = await jsonRequest(env, "/account-admin/report-chat-curation", {
+    method: "POST",
+    headers: { "content-type": "application/json", ...bearer(adminToken) },
+    body: JSON.stringify({ archive_id: success.data.archive_id, published: true, rank: 99 }),
+  });
+  assert.equal(curated.response.status, 200, JSON.stringify(curated.data));
+  assert.equal(curated.data.item.id, success.data.archive_id);
+  const publishedHistory = await jsonRequest(env, "/account-admin/report-chat-history?limit=20", {
+    headers: bearer(adminToken),
+  });
+  const publishedArchive = publishedHistory.data.items.find((item) => item.id === success.data.archive_id);
+  assert.equal(publishedArchive.published, true);
+  assert.equal(publishedArchive.public_id, success.data.archive_id);
+
+  const quotaKeysBeforePopular = [...bucket.rows.keys()].filter((key) => key.startsWith("_account/report-chat-v3/")).sort();
+  const rangeReadsBeforePopular = bucket.rangeReadKeys.length;
+  const popular = await jsonRequest(env, "/report-chat/popular");
+  assert.equal(popular.response.status, 200);
+  assert.equal(popular.data.total, 1);
+  assert.equal(popular.data.items[0].id, success.data.archive_id);
+  const detail = await jsonRequest(env, `/report-chat/popular?id=${success.data.archive_id}`);
+  assert.equal(detail.response.status, 200, JSON.stringify(detail.data));
+  assert.equal(detail.data.cached, true);
+  assert.equal(detail.data.usage.tier, "public_cache");
+  assert.match(detail.data.answer, /AI infrastructure archive research/u);
+  const exact = await jsonRequest(env, `/report-chat/popular?q=${encodeURIComponent("AI 基础设施归档研究")}`);
+  assert.equal(exact.response.status, 200);
+  assert.equal(exact.data.id, success.data.archive_id);
+  assert.deepEqual(
+    [...bucket.rows.keys()].filter((key) => key.startsWith("_account/report-chat-v3/")).sort(),
+    quotaKeysBeforePopular,
+    "public cache reads must not consume quota",
+  );
+  assert.equal(bucket.rangeReadKeys.length, rangeReadsBeforePopular, "public cache reads must not perform model lookup reads");
+  const publicPayload = JSON.stringify({ list: popular.data, detail: detail.data, exact: exact.data });
+  assert.doesNotMatch(publicPayload, /actor|device_hash|curated_by|item_key|requester_email|@users\.portal/iu);
+
+  const originalFetch = globalThis.fetch;
+  const sent = [];
+  globalThis.fetch = async (url, options = {}) => {
+    sent.push({ url: String(url), body: JSON.parse(String(options.body || "{}")) });
+    return new Response(JSON.stringify({ messageId: "brevo-message-1" }), {
+      status: 201,
+      headers: { "content-type": "application/json" },
+    });
+  };
+  try {
+    const invalidRequest = await jsonRequest(env, "/report-chat/request", {
+      method: "POST",
+      headers: { "content-type": "application/json", Origin: "https://portal.example.invalid" },
+      body: JSON.stringify({
+        archive_id: success.data.archive_id,
+        visitor_id: visitorId,
+        requester_email: "guest@example.com",
+      }),
+    });
+    assert.equal(invalidRequest.response.status, 409);
+
+    const requestResult = await jsonRequest(env, "/report-chat/request", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        Origin: "https://portal.example.invalid",
+        "CF-Connecting-IP": "203.0.113.8",
+      },
+      body: JSON.stringify({
+        archive_id: limited.data.archive_id,
+        visitor_id: visitorId,
+        requester_email: "guest@example.com",
+        recipient: "attacker@example.net",
+        page_path: "/",
+      }),
+    });
+    assert.equal(requestResult.response.status, 202, JSON.stringify(requestResult.data));
+    assert.equal(requestResult.data.status, "sent");
+    assert.equal(sent.length, 1);
+    assert.equal(sent[0].url, "https://api.brevo.com/v3/smtp/email");
+    assert.deepEqual(sent[0].body.to, [{ email: "info@kcdesk.com" }]);
+    assert.equal(JSON.stringify(sent[0].body).includes("attacker@example.net"), false);
+    const persistedRequests = [...bucket.rows.entries()].filter(([key]) => key.startsWith("_report-chat-requests/v1/items/"));
+    assert.equal(persistedRequests.length, 1);
+    assert.equal(JSON.parse(persistedRequests[0][1].value).status, "sent");
+
+    const duplicate = await jsonRequest(env, "/report-chat/request", {
+      method: "POST",
+      headers: { "content-type": "application/json", Origin: "https://portal.example.invalid" },
+      body: JSON.stringify({
+        archive_id: limited.data.archive_id,
+        visitor_id: visitorId,
+        requester_email: "guest@example.com",
+      }),
+    });
+    assert.equal(duplicate.response.status, 202);
+    assert.equal(duplicate.data.status, "duplicate");
+    assert.equal(sent.length, 1);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+
+  const unpublished = await jsonRequest(env, "/account-admin/report-chat-curation", {
+    method: "POST",
+    headers: { "content-type": "application/json", ...bearer(adminToken) },
+    body: JSON.stringify({ archive_id: success.data.archive_id, published: false }),
+  });
+  assert.equal(unpublished.response.status, 200);
+  const removed = await jsonRequest(env, `/report-chat/popular?id=${success.data.archive_id}`);
+  assert.equal(removed.response.status, 404);
+});
+
+test("public analytics accepts report chat and course material events without storing the raw RAG question", async () => {
+  const bucket = new MemoryR2();
+  const env = envFor(bucket);
+  const waits = [];
+  const context = { waitUntil(promise) { waits.push(promise); } };
+  const questionHash = "a".repeat(64);
+  const rawVisitorId = "visitor-analytics-raw-0001";
+  const chat = await jsonRequest(env, "/analytics", {
+    method: "POST",
+    headers: { "content-type": "application/json", Origin: "https://portal.example.invalid" },
+    body: JSON.stringify({
+      type: "report_chat_interaction",
+      visitor_id: rawVisitorId,
+      path: "/",
+      data: {
+        action: "submit",
+        query: "这条原始问题不能进入 analytics",
+        question_hash: questionHash,
+      },
+    }),
+  }, context);
+  assert.equal(chat.response.status, 204);
+  const course = await jsonRequest(env, "/analytics", {
+    method: "POST",
+    headers: { "content-type": "application/json", Origin: "https://portal.example.invalid" },
+    body: JSON.stringify({
+      type: "course_material_request",
+      path: "/courses.html",
+      data: {
+        material_id: "maifu-01",
+        material_title: "麦府学堂材料一",
+        response_status: "requested",
+      },
+    }),
+  }, context);
+  assert.equal(course.response.status, 204);
+  await Promise.all(waits);
+  const events = [...bucket.rows.entries()]
+    .filter(([key]) => key.startsWith("_analytics/events/"))
+    .map(([, row]) => JSON.parse(row.value));
+  const chatEvent = events.find((event) => event.type === "report_chat_interaction");
+  assert.equal(chatEvent.question_hash, questionHash);
+  assert.equal(chatEvent.query, "");
+  assert.match(chatEvent.visitor_id, /^[a-f0-9]{64}$/u);
+  assert.notEqual(chatEvent.visitor_id, rawVisitorId);
+  assert.equal(JSON.stringify(chatEvent).includes("这条原始问题不能进入 analytics"), false);
+  assert.equal(
+    [...bucket.rows.entries()]
+      .filter(([key]) => key.startsWith("_analytics/"))
+      .some(([, row]) => String(row.value).includes(rawVisitorId)),
+    false,
+    "analytics primary and backup copies must not persist the raw RAG visitor id",
+  );
+  const courseEvent = events.find((event) => event.type === "course_material_request");
+  assert.equal(courseEvent.target, "maifu-01");
+  assert.equal(courseEvent.report_title, "麦府学堂材料一");
+  assert.equal(courseEvent.status, "requested");
+  assert.equal(courseEvent.availability, "requested");
 });
 
 test("report chat mixes same-source and topic-matched Charts without unrelated cross-report results", async () => {
@@ -1666,24 +2121,21 @@ test("report research cold-cache worst case stays below the 50-subrequest bounda
   assert.equal(result.data.sources.length, 4);
   assert.ok(bucket.rangeReadKeys.length <= 28, `unexpected research range reads: ${bucket.rangeReadKeys.length}`);
   const worstCaseSubrequests = bucket.getKeys.length + bucket.putKeys.length + 1; // one DeepSeek fetch
-  assert.ok(worstCaseSubrequests <= 44, `unexpected research subrequests: ${worstCaseSubrequests}`);
+  assert.ok(worstCaseSubrequests <= 50, `unexpected research subrequests: ${worstCaseSubrequests}`);
 });
 
-test("report chat rejects an exhausted Beijing-day limit before lookup or model work", async () => {
+test("report chat rejects an exhausted registered lifetime limit before lookup or model work", async () => {
   const bucket = new MemoryR2();
   await seedReportChatLookup(bucket, [{ id: "limit-test-report", title: "Limit Test", attraction_score: 2 }], { ai: ["limit-test-report"] });
   const env = envFor(bucket);
   const token = await register(env);
-  const date = new Intl.DateTimeFormat("en-CA", {
-    timeZone: "Asia/Shanghai",
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  }).format(new Date());
-  bucket.seed(`_account/report-chat-v2/${encodeURIComponent("reward-reader@example.com")}/${date}`, {
-    email: "reward-reader@example.com",
-    date,
-    count: 30,
+  bucket.seed(`_account/report-chat-v3/lifetime/account/${encodeURIComponent("reward-reader@example.com")}`, {
+    version: 3,
+    identity_kind: "account",
+    identity: "reward-reader@example.com",
+    tier: "registered",
+    period: "lifetime",
+    count: 1,
     updated_at: new Date().toISOString(),
   });
   bucket.textReadKeys.length = 0;
@@ -1693,7 +2145,9 @@ test("report chat rejects an exhausted Beijing-day limit before lookup or model 
     body: JSON.stringify({ question: "AI 数据中心" }),
   });
   assert.equal(limited.response.status, 429);
-  assert.equal(limited.data.stage_code, "DAILY_LIMIT");
+  assert.equal(limited.data.stage_code, "USAGE_LIMIT");
+  assert.equal(limited.data.usage.tier, "registered");
+  assert.equal(limited.data.usage.period, "lifetime");
   assert.match(limited.data.request_hint, /^[A-Z0-9]{10}$/u);
   assert.equal(bucket.rangeReadKeys.some((key) => key.endsWith("tokens.tbl")), false);
   assert.equal(bucket.rangeReadKeys.some((key) => key.endsWith("tokens.dat")), false);
@@ -1704,13 +2158,7 @@ test("report chat lookup failures return actionable private JSON and do not cons
   const bucket = new MemoryR2();
   const env = envFor(bucket);
   const token = await register(env);
-  const date = new Intl.DateTimeFormat("en-CA", {
-    timeZone: "Asia/Shanghai",
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  }).format(new Date());
-  const usageKey = `_account/report-chat-v2/${encodeURIComponent("reward-reader@example.com")}/${date}`;
+  const usageKey = `_account/report-chat-v3/lifetime/account/${encodeURIComponent("reward-reader@example.com")}`;
   const failed = await jsonRequest(env, "/report-chat", {
     method: "POST",
     headers: { "content-type": "application/json", ...bearer(token) },
@@ -1719,8 +2167,54 @@ test("report chat lookup failures return actionable private JSON and do not cons
   assert.equal(failed.response.status, 503);
   assert.equal(failed.data.stage_code, "LOOKUP_MANIFEST");
   assert.match(failed.data.request_hint, /^[A-Z0-9]{10}$/u);
-  assert.equal(bucket.rows.has(usageKey), false);
+  assert.equal(JSON.parse(bucket.rows.get(usageKey).value).count, 0);
   assert.equal(failed.response.headers.get("cache-control"), "private, no-store, max-age=0");
+});
+
+test("report chat reserves before model work so concurrent free requests call the model once", async () => {
+  const bucket = new MemoryR2();
+  const reportId = "concurrent-model-report";
+  await seedReportChatLookup(bucket, [{ id: reportId, title: "AI concurrent model report", attraction_score: 4 }], {
+    ai: [reportId],
+  });
+  const env = { ...envFor(bucket), DEEPSEEK_API_KEY: "configured-test-key" };
+  const token = await register(env);
+  let modelCalls = 0;
+  let markModelStarted;
+  let finishModel;
+  const modelStarted = new Promise((resolve) => { markModelStarted = resolve; });
+  const modelGate = new Promise((resolve) => { finishModel = resolve; });
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => {
+    modelCalls += 1;
+    markModelStarted();
+    await modelGate;
+    return new Response(JSON.stringify({
+      choices: [{ message: { content: JSON.stringify({
+        answer: "并发请求只允许一次模型调用。",
+        recommended_ids: [reportId],
+      }) } }],
+    }), { status: 200, headers: { "content-type": "application/json" } });
+  };
+  try {
+    const makeRequest = () => jsonRequest(env, "/report-chat", {
+      method: "POST",
+      headers: { "content-type": "application/json", ...bearer(token) },
+      body: JSON.stringify({ question: "AI 并发额度研究" }),
+    });
+    const firstPromise = makeRequest();
+    await modelStarted;
+    const second = await makeRequest();
+    assert.equal(second.response.status, 429, JSON.stringify(second.data));
+    assert.equal(modelCalls, 1);
+    finishModel();
+    const first = await firstPromise;
+    assert.equal(first.response.status, 200, JSON.stringify(first.data));
+    assert.equal(first.data.usage.count, 1);
+  } finally {
+    finishModel();
+    globalThis.fetch = originalFetch;
+  }
 });
 
 test("report chat random-access retrieval stays within the Worker subrequest budget", async () => {
@@ -1937,7 +2431,12 @@ test("course frontend renders the complete structured catalog with topic filters
   assert.match(source, /escapeHtml\(product\.title\)/u);
   assert.match(source, /escapeHtml\(product\.summary\)/u);
   assert.match(source, /escapeHtml\(product\.audience\)/u);
-  assert.doesNotMatch(source, /filter\(Boolean\)\.slice\(0, 12\)/u);
+  const courseCatalogSource = source.slice(
+    source.indexOf("function renderCourseCatalog"),
+    source.indexOf("async function refresh()", source.indexOf("function renderCourseCatalog")),
+  );
+  assert.match(courseCatalogSource, /filter\(Boolean\)\.slice\(0, 120\)/u);
+  assert.doesNotMatch(courseCatalogSource, /filter\(Boolean\)\.slice\(0, 12\)/u);
   assert.match(styles, /\.course-grid\s*\{[\s\S]*?grid-template-columns:\s*repeat\(3,/u);
   assert.match(styles, /\.course-card\[hidden\]\s*\{[\s\S]*?display:\s*none/u);
   assert.match(chatSource, /context:\s*"course"/u);

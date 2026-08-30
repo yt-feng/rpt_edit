@@ -100,6 +100,11 @@
     return state.workerBase + "/charts/image?id=" + encodeURIComponent(imageId);
   }
 
+  function reportSearchUrl(title) {
+    const query = clean(title, 300);
+    return "/?q=" + encodeURIComponent(query);
+  }
+
   function reportUrl(reportId, preview = {}) {
     const params = new URLSearchParams({ id: String(reportId || "") });
     const previewKeys = [
@@ -113,6 +118,99 @@
       params.set(key, typeof value === "boolean" ? (value ? "1" : "0") : String(value));
     });
     return `report.html?${params.toString()}`;
+  }
+
+  function sourceReportUrl(row) {
+    return row.reportId
+      ? reportUrl(row.reportId, row.reportPreview)
+      : reportSearchUrl(row.reportTitle);
+  }
+
+  let lightbox = null;
+  let lightboxOpener = null;
+
+  function closeChartLightbox() {
+    if (!lightbox || lightbox.hidden) return;
+    lightbox.hidden = true;
+    document.body.classList.remove("chart-lightbox-open");
+    const opener = lightboxOpener;
+    lightboxOpener = null;
+    if (opener && typeof opener.focus === "function") opener.focus();
+  }
+
+  function ensureChartLightbox() {
+    if (lightbox) return lightbox;
+    lightbox = document.createElement("div");
+    lightbox.id = "chartLightbox";
+    lightbox.className = "chart-lightbox";
+    lightbox.hidden = true;
+    lightbox.setAttribute("role", "dialog");
+    lightbox.setAttribute("aria-modal", "true");
+    lightbox.setAttribute("aria-labelledby", "chartLightboxTitle");
+    lightbox.setAttribute("aria-describedby", "chartLightboxDescription");
+
+    const panel = document.createElement("section");
+    panel.className = "chart-lightbox-panel";
+    const header = document.createElement("header");
+    header.className = "chart-lightbox-header";
+    const heading = document.createElement("div");
+    const kicker = document.createElement("span");
+    kicker.textContent = "CHART PREVIEW";
+    const title = document.createElement("h2");
+    title.id = "chartLightboxTitle";
+    heading.append(kicker, title);
+    const close = document.createElement("button");
+    close.type = "button";
+    close.className = "chart-lightbox-close";
+    close.setAttribute("aria-label", "关闭图表大图");
+    close.textContent = "×";
+    header.append(heading, close);
+
+    const canvas = document.createElement("div");
+    canvas.className = "chart-lightbox-canvas";
+    const image = document.createElement("img");
+    image.alt = "";
+    image.decoding = "async";
+    image.referrerPolicy = "no-referrer";
+    canvas.append(image);
+    const description = document.createElement("p");
+    description.id = "chartLightboxDescription";
+    description.className = "chart-lightbox-description";
+    const source = document.createElement("a");
+    source.className = "chart-lightbox-source";
+    source.textContent = "查看来源报告 ↗";
+    panel.append(header, canvas, description, source);
+    lightbox.append(panel);
+    document.body.append(lightbox);
+
+    close.addEventListener("click", closeChartLightbox);
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) closeChartLightbox();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !lightbox.hidden) closeChartLightbox();
+    });
+    return lightbox;
+  }
+
+  function openChartLightbox(row, opener) {
+    const overlay = ensureChartLightbox();
+    const image = overlay.querySelector(".chart-lightbox-canvas img");
+    const title = overlay.querySelector("#chartLightboxTitle");
+    const description = overlay.querySelector("#chartLightboxDescription");
+    const source = overlay.querySelector(".chart-lightbox-source");
+    image.src = imageUrl(row.imageId);
+    image.alt = row.title;
+    title.textContent = row.title;
+    description.textContent = row.description || row.trend || "";
+    description.hidden = !description.textContent;
+    source.href = sourceReportUrl(row);
+    source.setAttribute("aria-label", "打开来源报告：" + row.reportTitle);
+    source.textContent = row.reportId ? "查看来源报告 ↗" : "在首页搜索来源报告 ↗";
+    lightboxOpener = opener || null;
+    overlay.hidden = false;
+    document.body.classList.add("chart-lightbox-open");
+    overlay.querySelector(".chart-lightbox-close").focus();
   }
 
   function dateLabel(value) {
@@ -271,8 +369,11 @@
   function createCard(row) {
     const article = document.createElement("article");
     article.className = "charts-card";
-    const media = document.createElement("div");
+    const media = document.createElement("button");
+    media.type = "button";
     media.className = "charts-card-media";
+    media.setAttribute("aria-label", "放大图表：" + row.title);
+    media.setAttribute("aria-haspopup", "dialog");
     const image = document.createElement("img");
     image.src = imageUrl(row.imageId);
     image.alt = row.title;
@@ -283,6 +384,8 @@
     media.append(image);
     appendTextElement(media, "span", "charts-image-fallback", "图表预览暂不可用，识别结果仍可检索。");
     appendTextElement(media, "span", "charts-type", displayType(row));
+    appendTextElement(media, "span", "chart-zoom-hint", "放大");
+    media.addEventListener("click", () => openChartLightbox(row, media));
     article.append(media);
 
     const body = document.createElement("div");
@@ -300,18 +403,17 @@
       body.append(chips);
     }
     const sourceLabel = (dateLabel(row.dateFolder) || "研报") + " · " + row.reportTitle;
-    if (row.reportId) {
-      const link = document.createElement("a");
-      link.className = "charts-report-link";
-      link.href = reportUrl(row.reportId, row.reportPreview);
-      link.setAttribute("aria-label", "打开来源报告：" + row.reportTitle);
-      const label = document.createElement("span");
-      label.textContent = sourceLabel;
-      link.append(label, document.createTextNode("↗"));
-      body.append(link);
-    } else {
-      appendTextElement(body, "span", "charts-report-link", sourceLabel);
-    }
+    const link = document.createElement("a");
+    link.className = "charts-report-link";
+    link.href = sourceReportUrl(row);
+    link.setAttribute(
+      "aria-label",
+      (row.reportId ? "打开来源报告：" : "在首页搜索来源报告：") + row.reportTitle,
+    );
+    const label = document.createElement("span");
+    label.textContent = sourceLabel;
+    link.append(label, document.createTextNode("↗"));
+    body.append(link);
     article.append(body);
     return article;
   }
