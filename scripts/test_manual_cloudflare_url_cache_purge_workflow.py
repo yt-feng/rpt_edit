@@ -23,6 +23,8 @@ class ManualCloudflareUrlCachePurgeWorkflowContractTests(unittest.TestCase):
     def test_apply_is_the_only_step_that_receives_token_and_posts(self) -> None:
         workflow = self.workflow()
         self.assertEqual(workflow.count("secrets.CLOUDFLARE_API_TOKEN"), 1)
+        self.assertEqual(workflow.count("secrets.PORTAL_SITE_URL"), 1)
+        self.assertIn('echo "::add-mask::$PORTAL_SITE_URL"', workflow)
         self.assertIn("if: ${{ inputs.mode == 'apply' }}", workflow)
         self.assertEqual(workflow.count("--mode apply"), 1)
         self.assertNotIn("wrangler", workflow.casefold())

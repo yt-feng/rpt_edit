@@ -24,6 +24,9 @@ class ManualEdgeCanonicalRedirectHotfixWorkflowContractTests(unittest.TestCase):
 
     def test_live_state_is_cache_busted_strictly_validated_and_reused(self) -> None:
         workflow = self.workflow()
+        self.assertIn("LIVE_ORIGIN: ${{ secrets.PORTAL_SITE_URL }}", workflow)
+        self.assertIn("Configured site URL is not a bare HTTPS origin", workflow)
+        self.assertIn("printf 'SITE_HOST=%s\\n'", workflow)
         self.assertIn("/.well-known/edge-state?hotfix=${nonce}", workflow)
         self.assertIn('slot not in {"a", "b"}', workflow)
         self.assertIn('re.fullmatch(r"[0-9a-f]{32}", release)', workflow)
@@ -37,7 +40,7 @@ class ManualEdgeCanonicalRedirectHotfixWorkflowContractTests(unittest.TestCase):
         workflow = self.workflow()
         self.assertIn('name = "svc-04df8d213b73"', workflow)
         self.assertIn("[cache]\n          enabled = true", workflow)
-        self.assertIn('CANONICAL_HOST = "kcdesk.com"', workflow)
+        self.assertIn('CANONICAL_HOST = "$SITE_HOST"', workflow)
         self.assertIn('binding = "STATIC_BUCKET"', workflow)
         self.assertIn('bucket_name = "$R2_BUCKET"', workflow)
         self.assertIn('binding = "API"', workflow)
@@ -64,15 +67,15 @@ class ManualEdgeCanonicalRedirectHotfixWorkflowContractTests(unittest.TestCase):
         verify = workflow.index("Verify fixed no-query canonical URLs and API")
         self.assertLess(edge_test, deploy)
         self.assertLess(deploy, verify)
-        for url in (
-            "https://kcdesk.com/",
-            "https://kcdesk.com/reports/",
-            "https://kcdesk.com/blog/",
-            "https://kcdesk.com/reports/institutions/bernstein/",
+        for path in (
+            "/",
+            "/reports/",
+            "/blog/",
+            "/reports/institutions/bernstein/",
         ):
-            self.assertIn(f'"{url}"', workflow)
-            self.assertNotIn(f'"{url}?', workflow)
-        self.assertIn('"https://kcdesk.com/api/health"', workflow)
+            self.assertIn(f'"{path}"', workflow)
+        self.assertIn('url="$origin$path"', workflow)
+        self.assertIn('"$origin/api/health"', workflow)
         self.assertIn('[ "$status" != "200" ] || [ -n "$location" ]', workflow)
         self.assertIn('[ "$api_status" != "200" ]', workflow)
 

@@ -37,11 +37,36 @@ jobs:
 
       - name: Read and validate current live edge state
         env:
-          LIVE_ORIGIN: https://kcdesk.com
+          LIVE_ORIGIN: ${{ secrets.PORTAL_SITE_URL }}
         run: |
           set -euo pipefail
+          echo "::add-mask::$LIVE_ORIGIN"
+          site_host="$(python3 - <<'PY'
+          import os
+          from urllib.parse import urlsplit
+
+          parsed = urlsplit(os.environ["LIVE_ORIGIN"])
+          if (
+              parsed.scheme != "https"
+              or not parsed.hostname
+              or parsed.username is not None
+              or parsed.password is not None
+              or parsed.port is not None
+              or parsed.path not in {"", "/"}
+              or parsed.query
+              or parsed.fragment
+          ):
+              raise SystemExit("Configured site URL is not a bare HTTPS origin")
+          print(parsed.hostname.lower())
+          PY
+          )"
+          origin="https://$site_host"
+          echo "::add-mask::$origin"
+          echo "::add-mask::$site_host"
+          printf 'LIVE_ORIGIN=%s\n' "$origin" >> "$GITHUB_ENV"
+          printf 'SITE_HOST=%s\n' "$site_host" >> "$GITHUB_ENV"
           nonce="${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-${RANDOM}"
-          state_url="${LIVE_ORIGIN}/.well-known/edge-state?hotfix=${nonce}"
+          state_url="${origin}/.well-known/edge-state?hotfix=${nonce}"
           curl --fail --silent --show-error \
             --connect-timeout 10 --max-time 30 \
             --output "$RUNNER_TEMP/live-edge-state.json" \
@@ -101,7 +126,7 @@ jobs:
           STATIC_PREFIX = "$STATIC_PREFIX"
           STATIC_RELEASE = "$STATIC_RELEASE"
           STATIC_TREE_SHA256 = "$STATIC_TREE_SHA256"
-          CANONICAL_HOST = "kcdesk.com"
+          CANONICAL_HOST = "$SITE_HOST"
 
           [[r2_buckets]]
           binding = "STATIC_BUCKET"
@@ -127,15 +152,18 @@ jobs:
       - name: Verify fixed no-query canonical URLs and API
         run: |
           set -euo pipefail
-          canonical_urls=(
-            "https://kcdesk.com/"
-            "https://kcdesk.com/reports/"
-            "https://kcdesk.com/blog/"
-            "https://kcdesk.com/reports/institutions/bernstein/"
+          origin="${LIVE_ORIGIN%/}"
+          echo "::add-mask::$origin"
+          canonical_paths=(
+            "/"
+            "/reports/"
+            "/blog/"
+            "/reports/institutions/bernstein/"
           )
           for attempt in $(seq 1 18); do
             healthy=true
-            for url in "${canonical_urls[@]}"; do
+            for path in "${canonical_paths[@]}"; do
+              url="$origin$path"
               headers="$RUNNER_TEMP/hotfix-$attempt-$(printf '%s' "$url" | shasum -a 256 | cut -d' ' -f1).headers"
               status="$(curl --silent --show-error \
                 --connect-timeout 10 --max-time 30 \
@@ -150,7 +178,7 @@ jobs:
             api_status="$(curl --silent --show-error \
               --connect-timeout 10 --max-time 30 \
               --output /dev/null --write-out '%{http_code}' \
-              -- "https://kcdesk.com/api/health" || true)"
+              -- "$origin/api/health" || true)"
             if [ "$api_status" != "200" ]; then
               echo "api_check attempt=$attempt status=${api_status:-transport_error}"
               healthy=false

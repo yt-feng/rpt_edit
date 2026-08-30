@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Manually purge a fixed allowlist of KCDesk canonical URLs from Cloudflare."""
+"""Manually purge a fixed allowlist of canonical URLs from Cloudflare."""
 
 from __future__ import annotations
 
@@ -16,15 +16,14 @@ from typing import Any, Iterable
 
 
 API_ROOT = "https://api.cloudflare.com/client/v4"
-ZONE_NAME = "kcdesk.com"
-CANONICAL_URLS = (
-    "https://kcdesk.com/",
-    "https://kcdesk.com/reports/",
-    "https://kcdesk.com/blog/",
-    "https://kcdesk.com/reports/institutions/bernstein/",
-    "https://kcdesk.com/sitemap.xml",
-    "https://kcdesk.com/robots.txt",
-    "https://kcdesk.com/llms.txt",
+CANONICAL_PATHS = (
+    "/",
+    "/reports/",
+    "/blog/",
+    "/reports/institutions/bernstein/",
+    "/sitemap.xml",
+    "/robots.txt",
+    "/llms.txt",
 )
 
 
@@ -100,23 +99,44 @@ def api_request(
     return payload.get("result")
 
 
-def find_zone_id(token: str) -> str:
-    query = urllib.parse.urlencode({"name": ZONE_NAME, "status": "active", "per_page": 2})
+def deployment_origin(value: str) -> tuple[str, str]:
+    parsed = urllib.parse.urlsplit(value.strip())
+    if (
+        parsed.scheme != "https"
+        or not parsed.hostname
+        or parsed.username is not None
+        or parsed.password is not None
+        or parsed.port is not None
+        or parsed.path not in {"", "/"}
+        or parsed.query
+        or parsed.fragment
+    ):
+        raise ValueError("PORTAL_SITE_URL must be a bare HTTPS origin")
+    hostname = parsed.hostname.lower()
+    return f"https://{hostname}", hostname
+
+
+def canonical_urls(origin: str) -> tuple[str, ...]:
+    return tuple(origin.rstrip("/") + path for path in CANONICAL_PATHS)
+
+
+def find_zone_id(token: str, zone_name: str) -> str:
+    query = urllib.parse.urlencode({"name": zone_name, "status": "active", "per_page": 2})
     result = api_request(f"/zones?{query}", token=token, stage="zone_lookup")
     matches = [
         row
-        for row in result if isinstance(row, dict) and str(row.get("name") or "").lower() == ZONE_NAME
+        for row in result if isinstance(row, dict) and str(row.get("name") or "").lower() == zone_name
     ] if isinstance(result, list) else []
     if len(matches) != 1 or not str(matches[0].get("id") or ""):
         raise CloudflareFailure("zone_lookup", 200, ((None, "expected one active zone"),))
     return str(matches[0]["id"])
 
 
-def purge_urls(token: str, urls: Iterable[str] = CANONICAL_URLS) -> int:
+def purge_urls(token: str, zone_name: str, urls: Iterable[str]) -> int:
     files = list(urls)
-    if not files or any(not url.startswith(f"https://{ZONE_NAME}/") for url in files):
+    if not files or any(not url.startswith(f"https://{zone_name}/") for url in files):
         raise ValueError("purge URL allowlist invariant failed")
-    zone_id = find_zone_id(token)
+    zone_id = find_zone_id(token, zone_name)
     api_request(
         f"/zones/{zone_id}/purge_cache",
         token=token,
@@ -146,9 +166,15 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
-    print(f"mode={args.mode} url_count={len(CANONICAL_URLS)}")
-    for index, url in enumerate(CANONICAL_URLS, start=1):
-        print(f"url[{index}]={url}")
+    try:
+        origin, zone_name = deployment_origin(os.environ.get("PORTAL_SITE_URL", ""))
+    except ValueError:
+        print("configuration_error invalid=PORTAL_SITE_URL", file=sys.stderr)
+        return 2
+    urls = canonical_urls(origin)
+    print(f"mode={args.mode} url_count={len(urls)}")
+    for index, path in enumerate(CANONICAL_PATHS, start=1):
+        print(f"path[{index}]={path}")
     if args.mode == "dry-run":
         print("No Cloudflare API request was sent.")
         return 0
@@ -158,7 +184,7 @@ def main(argv: list[str] | None = None) -> int:
         print("configuration_error missing=CLOUDFLARE_API_TOKEN", file=sys.stderr)
         return 2
     try:
-        count = purge_urls(token)
+        count = purge_urls(token, zone_name, urls)
     except CloudflareFailure as failure:
         print(format_failure(failure), file=sys.stderr)
         return 1
