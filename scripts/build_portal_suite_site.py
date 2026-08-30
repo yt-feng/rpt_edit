@@ -1289,6 +1289,68 @@ def is_bernstein_text(value: str) -> bool:
     return any(normalized_alias_matches(value, str(alias)) for alias in definition["aliases"])
 
 
+def blog_institution_alias_matches(value: str, alias: str) -> bool:
+    """Match editorial text without treating short bank codes as entities."""
+    normalized_value = normalize_search_text(value)
+    normalized_alias = normalize_search_text(alias)
+    if not normalized_value or not normalized_alias:
+        return False
+    if normalized_alias.isascii():
+        # GS / MS / DB and similar codes are useful in structured catalog
+        # fields, but are too ambiguous in long-form editorial text. Full
+        # Latin names must still occupy complete normalized word boundaries.
+        if len(normalized_alias.replace(" ", "")) <= 4:
+            return False
+        return f" {normalized_alias} " in f" {normalized_value} "
+    return normalized_alias in normalized_value
+
+
+def blog_related_institution_hubs(
+    title: str,
+    digest: str,
+    content_text: str,
+) -> list[dict[str, Any]]:
+    """Return up to four controlled institution hubs ranked by field prominence."""
+    fields = (title, digest, content_text)
+    matches: list[tuple[int, int, dict[str, Any]]] = []
+    for definition_index, definition in enumerate(INSTITUTION_HUBS):
+        field_index = next(
+            (
+                index
+                for index, value in enumerate(fields)
+                if any(
+                    blog_institution_alias_matches(value, str(alias))
+                    for alias in definition["aliases"]
+                )
+            ),
+            None,
+        )
+        if field_index is not None:
+            matches.append((field_index, definition_index, definition))
+    matches.sort(key=lambda row: (row[0], row[1]))
+    return [definition for _, _, definition in matches[:4]]
+
+
+def blog_related_topic_hubs(
+    title: str,
+    digest: str,
+    content_text: str,
+) -> list[dict[str, str]]:
+    """Return up to four controlled topic hubs ranked by field prominence."""
+    fields = (title, digest, content_text)
+    matches: list[tuple[int, int, dict[str, str]]] = []
+    for rule_index, (label, pattern) in enumerate(SEO_INDUSTRY_RULES):
+        field_index = next(
+            (index for index, value in enumerate(fields) if pattern.search(str(value or ""))),
+            None,
+        )
+        definition = topic_hub_for_label(label)
+        if field_index is not None and definition:
+            matches.append((field_index, rule_index, definition))
+    matches.sort(key=lambda row: (row[0], row[1]))
+    return [definition for _, _, definition in matches[:4]]
+
+
 def report_browser_title(item: dict[str, Any]) -> str:
     title = item_display_title(item)
     if not is_bernstein_item(item):
@@ -2193,7 +2255,13 @@ def render_topic_hub(
                 "url": canonical,
                 "dateModified": lastmod,
                 "inLanguage": "zh-Hans",
-                "about": {"@type": "Thing", "name": name, "alternateName": name_zh},
+                "about": {
+                    "@type": "Thing",
+                    "@id": f"{canonical}#topic",
+                    "name": name,
+                    "alternateName": name_zh,
+                    "url": canonical,
+                },
                 "isPartOf": {"@id": f"{url_join(base_url, '/')}#website"},
                 "mainEntity": {"@id": f"{canonical}#reports"},
             },
@@ -3597,15 +3665,37 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
     article_content = article_content.replace("编辑评论", "KC评论")
     article_content = re.sub(r"。\s*[，,]", "。", article_content)
     article_content = re.sub(r"[，,；;：:]\s*。", "。", article_content)
-    bernstein_related = is_bernstein_text(" ".join([
-        str(article.get("title") or ""),
-        str(article.get("digest") or ""),
-        article_content,
-    ]))
-    bernstein_discovery = (
-        '<aside class="blog-related-discovery"><strong>相关机构索引：</strong>'
-        '<a href="../reports/institutions/bernstein/">伯恩斯坦研报（Bernstein Research）</a></aside>'
-        if bernstein_related else ""
+    discovery_fields = (blog_title_core(title), digest, blog_html_text(article_content))
+    related_institutions = blog_related_institution_hubs(*discovery_fields)
+    related_topics = blog_related_topic_hubs(*discovery_fields)
+    discovery_sections: list[str] = []
+    if related_institutions:
+        institution_links = []
+        for definition in related_institutions:
+            label = (
+                "伯恩斯坦研报（Bernstein Research）"
+                if definition["slug"] == "bernstein"
+                else f"{definition['name_zh']}研报（{definition['name']}）"
+            )
+            institution_links.append(
+                f'<a href="../{html_escape(institution_hub_path(definition), quote=True)}">'
+                f"{html_escape(label)}</a>"
+            )
+        discovery_sections.append(
+            "<div><strong>相关机构索引：</strong>" + " · ".join(institution_links) + "</div>"
+        )
+    if related_topics:
+        topic_links = [
+            f'<a href="../{html_escape(topic_hub_path(definition), quote=True)}">'
+            f"{html_escape(definition['name_zh'])}研报（{html_escape(definition['label'])}）</a>"
+            for definition in related_topics
+        ]
+        discovery_sections.append(
+            "<div><strong>相关主题索引：</strong>" + " · ".join(topic_links) + "</div>"
+        )
+    related_discovery = (
+        '<aside class="blog-related-discovery">' + "".join(discovery_sections) + "</aside>"
+        if discovery_sections else ""
     )
     image_match = re.search(r'<img\b[^>]*\bsrc="([^"]+)"', article_content, re.IGNORECASE)
     image_url = html_unescape(image_match.group(1)) if image_match else url_join(base_url, "assets/social-card.jpg")
@@ -3632,13 +3722,36 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
         "isPartOf": {"@type": "Blog", "name": f"{BLOG_PUBLIC_BRAND} Blog", "url": url_join(base_url, "blog/")},
         "keywords": blog_public_keywords(article),
     }
-    if bernstein_related:
-        article_schema["about"] = {
+    about_entities: list[dict[str, Any]] = []
+    for definition in related_institutions:
+        if definition["slug"] == "bernstein":
+            # Retain the previously published Bernstein entity shape so
+            # existing structured-data consumers see a compatible object.
+            about_entities.append({
+                "@type": "Organization",
+                "@id": f"{url_join(base_url, BERNSTEIN_PAGE_PATH)}#organization",
+                "name": "Bernstein Research",
+                "alternateName": ["伯恩斯坦", "Sanford C. Bernstein"],
+            })
+            continue
+        alternate_names = list(dict.fromkeys((definition["name_zh"], *definition["aliases"])))
+        about_entities.append({
             "@type": "Organization",
-            "@id": f"{url_join(base_url, BERNSTEIN_PAGE_PATH)}#organization",
-            "name": "Bernstein Research",
-            "alternateName": ["伯恩斯坦", "Sanford C. Bernstein"],
-        }
+            "@id": f"{url_join(base_url, institution_hub_path(definition))}#organization",
+            "name": definition["name"],
+            "alternateName": alternate_names,
+        })
+    for definition in related_topics:
+        topic_url = url_join(base_url, topic_hub_path(definition))
+        about_entities.append({
+            "@type": "Thing",
+            "@id": f"{topic_url}#topic",
+            "name": definition["label"],
+            "alternateName": definition["name_zh"],
+            "url": topic_url,
+        })
+    if about_entities:
+        article_schema["about"] = about_entities[0] if len(about_entities) == 1 else about_entities
     if image_url:
         article_schema["image"] = [image_url]
     json_ld = {
@@ -3724,7 +3837,7 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
           {f'<p class="blog-digest">{html_escape(digest)}</p>' if digest else ''}
           <p class="blog-byline">作者：{html_escape(author)} · 来源：{blog_origin_details(article)}</p>
         </header>
-        {bernstein_discovery}
+        {related_discovery}
         <div class="blog-article-content">
           {article_content}
         </div>

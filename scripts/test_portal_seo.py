@@ -305,6 +305,74 @@ class SeoOutputTests(unittest.TestCase):
         for page in (blog_index, blog_article):
             self.assertIn('<link rel="icon" href="/favicon.svg" type="image/svg+xml">', page)
 
+    def test_blog_articles_link_only_to_controlled_related_hubs(self) -> None:
+        goldman_article = {
+            "slug": "goldman-ai-view",
+            "title": "高盛解读新一轮产业投资",
+            "digest": "Goldman Sachs 对资本开支的最新判断。",
+            "content": "<p>人工智能、半导体与数据中心仍是重要线索。</p>",
+            "date": "2026-07-30",
+            "last_date": "2026-07-30",
+            "keywords": [],
+        }
+        goldman_page = builder.render_blog_article(goldman_article, "https://portal.example.invalid")
+        self.assertIn(
+            '<a href="../reports/institutions/goldman-sachs/">高盛研报（Goldman Sachs）</a>',
+            goldman_page,
+        )
+        self.assertIn(
+            '<a href="../reports/topics/tech-ai-semis/">科技、人工智能与半导体研报（Tech / AI / Semis）</a>',
+            goldman_page,
+        )
+        goldman_about = graph_node(first_json_ld(goldman_page), "BlogPosting")["about"]
+        self.assertIsInstance(goldman_about, list)
+        self.assertEqual(
+            {
+                "https://portal.example.invalid/reports/institutions/goldman-sachs/#organization",
+                "https://portal.example.invalid/reports/topics/tech-ai-semis/#topic",
+                "https://portal.example.invalid/reports/topics/industrials-capex/#topic",
+            },
+            {entity["@id"] for entity in goldman_about},
+        )
+
+        short_code_article = {
+            "slug": "short-codes-are-not-entities",
+            "title": "MS 与 DB 字段迁移记录",
+            "digest": "GS 只是样例缩写，不代表机构来源。",
+            "content": "<p>排查 MS、DB、GS、JPM 和 UBS 的字段兼容。</p>",
+            "date": "2026-07-30",
+            "last_date": "2026-07-30",
+            "keywords": [],
+        }
+        short_code_page = builder.render_blog_article(short_code_article, "https://portal.example.invalid")
+        self.assertNotIn("../reports/institutions/", short_code_page)
+        short_code_schema = graph_node(first_json_ld(short_code_page), "BlogPosting")
+        self.assertNotIn("about", short_code_schema)
+
+        bernstein_article = {
+            "slug": "bernstein-view",
+            "title": "伯恩斯坦专题观察",
+            "digest": "研究观点摘要。",
+            "content": "<p>Bernstein Research 行业观察。</p>",
+            "date": "2026-07-30",
+            "last_date": "2026-07-30",
+            "keywords": [],
+        }
+        bernstein_page = builder.render_blog_article(bernstein_article, "https://portal.example.invalid")
+        self.assertIn(
+            '<a href="../reports/institutions/bernstein/">伯恩斯坦研报（Bernstein Research）</a>',
+            bernstein_page,
+        )
+        self.assertEqual(
+            {
+                "@type": "Organization",
+                "@id": "https://portal.example.invalid/reports/institutions/bernstein/#organization",
+                "name": "Bernstein Research",
+                "alternateName": ["伯恩斯坦", "Sanford C. Bernstein"],
+            },
+            graph_node(first_json_ld(bernstein_page), "BlogPosting")["about"],
+        )
+
     def test_homepage_establishes_the_public_editorial_keyword(self) -> None:
         page = (ROOT / "portal_suite" / "site_src" / "index.html").read_text(encoding="utf-8")
         self.assertIn("<title>KC桌面 | 中文金融研报检索与报告索引</title>", page)
