@@ -1,0 +1,58 @@
+name: Manual Cloudflare canonical URL cache purge
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Preview the fixed URL allowlist or apply its purge
+        required: true
+        type: choice
+        options:
+          - dry-run
+          - apply
+        default: dry-run
+
+permissions:
+  contents: read
+
+concurrency:
+  group: manual-cloudflare-canonical-url-cache-purge
+  cancel-in-progress: false
+
+jobs:
+  purge:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+    steps:
+      - name: Checkout audited purge utility
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .github/workflows/manual-cloudflare-url-cache-purge.yml
+            scripts/manual_cloudflare_url_cache_purge.py
+            scripts/test_manual_cloudflare_url_cache_purge.py
+            scripts/test_manual_cloudflare_url_cache_purge_workflow.py
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Test purge utility and workflow contract
+        run: |
+          python3 -B scripts/test_manual_cloudflare_url_cache_purge.py
+          python3 -B scripts/test_manual_cloudflare_url_cache_purge_workflow.py
+
+      - name: Preview fixed canonical URL allowlist
+        run: python3 -B scripts/manual_cloudflare_url_cache_purge.py
+
+      - name: Apply URL-specific cache purge
+        if: ${{ inputs.mode == 'apply' }}
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          python3 -B scripts/manual_cloudflare_url_cache_purge.py --mode apply
