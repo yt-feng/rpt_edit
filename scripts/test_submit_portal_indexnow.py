@@ -215,10 +215,10 @@ class SubmissionPlanTests(unittest.TestCase):
                 3,
             )
 
-            self.assertEqual({hub_added, hub_updated, hub_retired, pagination_updated}, set(plan.urls))
+            self.assertEqual({hub_added, hub_updated, hub_retired, pagination_updated, report}, set(plan.urls))
             self.assertNotIn(pagination_stable, plan.urls)
-            self.assertNotIn(report, plan.urls)
             self.assertNotIn(legacy_soft_redirect, plan.urls)
+            self.assertEqual(1, plan.reason_counts["report_page_updated"])
             self.assertEqual(1, plan.reason_counts["page_added"])
             self.assertEqual(2, plan.reason_counts["page_updated"])
             self.assertEqual(1, plan.reason_counts["page_retired"])

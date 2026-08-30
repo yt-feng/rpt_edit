@@ -275,7 +275,7 @@ def build_submission_plan(
 
     if previous:
         added_reports = set(current) - set(previous)
-        updated_reports = {
+        catalog_updated_reports = {
             report_id
             for report_id in set(current) & set(previous)
             if item_fingerprint(current[report_id]) != item_fingerprint(previous[report_id])
@@ -289,8 +289,24 @@ def build_submission_plan(
             for report_id, item in current.items()
             if (item_effective_date(item) or datetime.min.replace(tzinfo=timezone.utc)) >= cutoff
         }
-        updated_reports = set()
+        catalog_updated_reports = set()
         retired_reports = set()
+
+    # A material report-page template release can change canonical HTML while
+    # leaving the public catalog item untouched.  The sitemap lastmod is the
+    # stable page-level revision signal for that case; it must not be discarded
+    # merely because report URLs have their own catalog-delta path.
+    sitemap_updated_reports = {
+        report_id
+        for report_id in set(current) & set(previous)
+        if (
+            (url := report_url(base, report_id)) in current_sitemap
+            and url in previous_sitemap
+            and current_sitemap[url]
+            and current_sitemap[url] != previous_sitemap[url]
+        )
+    }
+    updated_reports = catalog_updated_reports | sitemap_updated_reports
 
     def add_current(url: str, reason: str) -> None:
         if url not in current_sitemap:
@@ -315,8 +331,10 @@ def build_submission_plan(
 
     for report_id in sorted(added_reports):
         add_current(report_url(base, report_id), "report_added")
-    for report_id in sorted(updated_reports):
+    for report_id in sorted(catalog_updated_reports):
         add_current(report_url(base, report_id), "report_updated")
+    for report_id in sorted(sitemap_updated_reports - catalog_updated_reports):
+        add_current(report_url(base, report_id), "report_page_updated")
     for report_id in sorted(retired_reports):
         add_retired(report_url(base, report_id), "report_retired")
 
