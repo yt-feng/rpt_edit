@@ -158,11 +158,22 @@ function createHarness({ authenticated = true, includePopular = false } = {}) {
     location: { pathname: "/" },
   };
   const analyticsEvents = [];
+  const exportCalls = [];
   window.PortalSuiteAnalytics = {
     visitorId: () => "visitor-test-123",
     track(type, data) {
       analyticsEvents.push({ type, data });
       return Promise.resolve(true);
+    },
+  };
+  window.PortalReportResearchExport = {
+    async downloadDocx(payload) {
+      exportCalls.push({ kind: "docx", payload });
+      return { status: "downloaded" };
+    },
+    async openPdfPrint(payload) {
+      exportCalls.push({ kind: "pdf", payload });
+      return { status: "print_dialog_opened" };
     },
   };
   const localStorage = {
@@ -184,7 +195,7 @@ function createHarness({ authenticated = true, includePopular = false } = {}) {
     localStorage,
     window,
   }, { filename: "report-chat.js" });
-  return { analyticsEvents, button, fetches, form, input, messages, popular, popularList, recommendations, scheduler, status };
+  return { analyticsEvents, button, exportCalls, fetches, form, input, messages, popular, popularList, recommendations, scheduler, status, window };
 }
 
 function analyticsActions(harness) {
@@ -310,6 +321,11 @@ test("report research renders grounded findings, data, charts, and escaped sourc
   assert.match(harness.messages.innerHTML, /关键数据/u);
   assert.match(harness.messages.innerHTML, /图表证据/u);
   assert.match(harness.messages.innerHTML, /report-research-finding[\s\S]*report-research-chart/u);
+  const supplementalIndex = harness.messages.innerHTML.indexOf("补充图表证据");
+  assert.ok(supplementalIndex > 0);
+  assert.ok(harness.messages.innerHTML.indexOf(validImageId) < supplementalIndex, "same-source chart belongs inside the finding");
+  assert.ok(harness.messages.innerHTML.indexOf(crossReportImageId) > supplementalIndex, "unrelated chart belongs in supplemental evidence");
+  assert.ok(harness.messages.innerHTML.indexOf(titleFallbackImageId) > supplementalIndex, "title-only chart belongs in supplemental evidence");
   assert.match(harness.messages.innerHTML, /data-chart-lightbox/u);
   assert.match(harness.messages.innerHTML, /aria-haspopup="dialog"/u);
   assert.match(harness.messages.innerHTML, new RegExp(`/api/charts/image\\?id=${validImageId}`, "u"));
@@ -325,7 +341,62 @@ test("report research renders grounded findings, data, charts, and escaped sourc
   assert.doesNotMatch(harness.messages.innerHTML, /无来源图/u);
   assert.doesNotMatch(harness.messages.innerHTML, /undefined/u);
   assert.match(harness.recommendations.innerHTML, /摩根大通 AI 电力报告/u);
+  assert.match(harness.messages.innerHTML, /下载 Word \(\.docx\)/u);
+  assert.match(harness.messages.innerHTML, /导出 PDF（打开保存界面）/u);
   assert.equal(harness.form.insertedElement.querySelector("[data-chat-progress-label]").textContent, "研究已生成");
+});
+
+test("successful research exports Word and print-PDF from the same response without another RAG request", async () => {
+  const harness = createHarness();
+  const question = harness.input.value;
+  const submit = harness.form.dispatch("submit");
+  const response = {
+    mode: "research",
+    question_hash: "export-hash-01",
+    executive_summary: "可导出的来源化研究",
+    sources: [{ id: "report-1", title: "来源报告" }],
+  };
+  harness.fetches[0].resolve(response);
+  await submit;
+  const fetchCount = harness.fetches.length;
+
+  const docxButton = new FakeElement("docxExport");
+  docxButton.textContent = "下载 Word (.docx)";
+  docxButton.setAttribute("data-report-research-export", "docx");
+  await harness.messages.dispatch("click", { target: docxButton });
+  const pdfButton = new FakeElement("pdfExport");
+  pdfButton.textContent = "导出 PDF（打开保存界面）";
+  pdfButton.setAttribute("data-report-research-export", "pdf");
+  await harness.messages.dispatch("click", { target: pdfButton });
+
+  assert.equal(harness.fetches.length, fetchCount, "export must not issue another report-chat request");
+  assert.deepEqual(harness.exportCalls.map((item) => item.kind), ["docx", "pdf"]);
+  assert.equal(harness.exportCalls[0].payload.response, response);
+  assert.equal(harness.exportCalls[0].payload.question, question);
+  assert.equal(harness.exportCalls[0].payload.question_hash, "export-hash-01");
+  assert.ok(analyticsActions(harness).includes("export_docx_started"));
+  assert.ok(analyticsActions(harness).includes("export_docx_ready"));
+  assert.ok(analyticsActions(harness).includes("export_pdf_started"));
+  assert.ok(analyticsActions(harness).includes("export_pdf_print_opened"));
+  assertAnalyticsHasNoQuestionText(harness, question);
+});
+
+test("export failure restores the button and emits only privacy-safe error analytics", async () => {
+  const harness = createHarness();
+  const submit = harness.form.dispatch("submit");
+  harness.fetches[0].resolve({ mode: "research", question_hash: "export-error-hash", executive_summary: "研究结果" });
+  await submit;
+  harness.window.PortalReportResearchExport.downloadDocx = async () => { throw new Error("chart failed"); };
+  const exportButton = new FakeElement("failedExport");
+  exportButton.textContent = "下载 Word (.docx)";
+  exportButton.setAttribute("data-report-research-export", "docx");
+  await harness.messages.dispatch("click", { target: exportButton });
+
+  assert.equal(exportButton.disabled, false);
+  assert.equal(exportButton.textContent, "下载 Word (.docx)");
+  assert.match(harness.messages.querySelector("[data-report-research-export-status]").textContent, /生成失败/u);
+  assert.ok(analyticsActions(harness).includes("export_docx_error"));
+  assertAnalyticsHasNoQuestionText(harness, harness.input.value);
 });
 
 test("report chat shows server diagnostics without discarding the previous result", async () => {
@@ -438,6 +509,14 @@ test("popular questions load on startup and render cached research through GET o
   assert.match(harness.status.textContent, /不消耗本次生成额度/u);
   assert.ok(analyticsActions(harness).includes("popular_click"));
   assert.ok(analyticsActions(harness).includes("popular_success"));
+  const exportButton = new FakeElement("popularExport");
+  exportButton.textContent = "下载 Word (.docx)";
+  exportButton.setAttribute("data-report-research-export", "docx");
+  const fetchCount = harness.fetches.length;
+  await harness.messages.dispatch("click", { target: exportButton });
+  assert.equal(harness.fetches.length, fetchCount, "cached popular export must not call the model");
+  assert.equal(harness.exportCalls.at(-1).payload.question, question);
+  assert.equal(harness.exportCalls.at(-1).payload.question_hash, "popular-hash-1");
   assertAnalyticsHasNoQuestionText(harness, question);
 });
 
@@ -515,9 +594,11 @@ test("429 gives visitors an editable email field", async () => {
 test("home markup and CSS expose the popular and over-limit UX", () => {
   assert.match(homeSource, /id="homeChatPopular"[\s\S]*热门研究问题/u);
   assert.match(homeSource, /id="homeChatPopularList"/u);
+  assert.match(homeSource, /assets\/report-research-export\.js/u);
   assert.match(stylesSource, /\.report-chat-popular-question/u);
   assert.match(stylesSource, /\.report-chat-limit-card/u);
   assert.match(stylesSource, /\.report-chat-honeypot/u);
+  assert.match(stylesSource, /\.report-research-export-actions/u);
 });
 
 test("report chat source contains all three visible progress stages and no wait cursor", () => {

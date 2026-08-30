@@ -1916,7 +1916,7 @@ test("report chat mixes same-source and topic-matched Charts without unrelated c
   assert.equal(result.data.charts[1].date_folder, "260828");
   assert.equal(result.data.charts.some((chart) => chart.image_id === unrelatedImageId), false);
   assert.equal(result.data.charts.some((chart) => chart.image_id === unresolvedImageId), false);
-  assert.equal(result.data.charts.length, 6);
+  assert.equal(result.data.charts.length, 2, "irrelevant same-source charts must not be used as filler");
   assert.match(result.data.findings[0].summary, /grid connection delays/u);
   assert.ok(bucket.rangeReadKeys.some((key) => key.endsWith("evidence.tbl")));
   assert.ok(bucket.rangeReadKeys.some((key) => key.endsWith("evidence.dat")));
@@ -1926,7 +1926,238 @@ test("report chat mixes same-source and topic-matched Charts without unrelated c
   assert.equal(result.response.headers.get("cache-control"), "private, no-store, max-age=0");
 });
 
-test("report research preserves exact ASCII chart terms ahead of generic aliases", async () => {
+test("report research real multi-facet question rejects generic AI, year, import, and SpaceX charts", async () => {
+  const bucket = new MemoryR2();
+  const sourceReportId = "101010101010101010101010";
+  const crossReportId = "202020202020202020202020";
+  const irrelevantSourceId = "303030303030303030303030";
+  const powerOne = "1".repeat(64);
+  const powerTwo = "2".repeat(64);
+  const powerThree = "3".repeat(64);
+  const capexCross = "4".repeat(64);
+  const aiRevenue = "5".repeat(64);
+  const yearRevenue = "6".repeat(64);
+  const aiImport = "7".repeat(64);
+  const spacex = "8".repeat(64);
+  const aiCapexOnly = "9".repeat(64);
+  const terms = ["ai", "data", "power", "capex", "supply", "center", "electricity"];
+  const postings = Object.fromEntries(terms.map((term) => [term, [{
+    id: sourceReportId,
+    tf: 10,
+    chunks: ["c000001"],
+  }]]));
+  postings.ai.push({ id: irrelevantSourceId, tf: 100, chunks: ["c000002"] });
+  postings.capex.push({ id: irrelevantSourceId, tf: 100, chunks: ["c000002"] });
+  await seedReportResearchLookup(bucket, [
+    {
+      id: sourceReportId,
+      title: "Global AI data-center power and capex",
+      institution: "JPMorgan",
+      date_folder: "260830",
+      available: true,
+    },
+    {
+      id: irrelevantSourceId,
+      title: "AI software capital expenditure",
+      institution: "Unrelated Research",
+      date_folder: "260830",
+      available: true,
+    },
+  ], postings, [[`${sourceReportId}:c000001`, {
+    id: "c000001",
+    report_id: sourceReportId,
+    text: "The report compares AI data-center power constraints, electricity supply structure, grid access and capital expenditure across the United States and China.",
+  }], [`${irrelevantSourceId}:c000002`, {
+    id: "c000002",
+    report_id: irrelevantSourceId,
+    text: "The report discusses AI software capital expenditure without data-center infrastructure.",
+  }]]);
+  const chart = (id, imageId, title, description, keywords, quality = 90) => ({
+    id,
+    image_id: imageId,
+    analysis_version: "chart-search-v2",
+    title,
+    content_kind: "chart",
+    quality_score: quality,
+    chart_type: "bar",
+    description,
+    trend_summary: description,
+    keywords,
+  });
+  bucket.seed("_chart-search/v1/index.json", {
+    schema_version: 1,
+    reports: [
+      {
+        report_id: sourceReportId,
+        title: "Global AI data-center power and capex",
+        date_folder: "260830",
+        charts: [
+          chart("power-one", powerOne, "AI data-center power grid", "Electricity bottlenecks constrain data-center deployment.", ["AI", "data", "center", "power"], 98),
+          chart("power-two", powerTwo, "AI data-center electricity supply", "Power supply structures differ across markets.", ["AI", "data", "center", "electricity", "supply"], 97),
+          chart("power-three", powerThree, "AI data-center grid queue", "Power grid queues remain a deployment constraint.", ["AI", "data", "center", "power"], 96),
+          chart("same-source-ai-revenue", aiRevenue, "AI revenue 2027", "Revenue forecasts for software vendors.", ["AI", "revenue", "2027"], 100),
+          chart("same-source-ai-capex-only", aiCapexOnly, "AI capex", "Capital expenditure for AI software vendors.", ["AI", "capex"], 100),
+        ],
+      },
+      {
+        report_id: crossReportId,
+        title: "Asian technology investment",
+        date_folder: "260829",
+        charts: [
+          chart("capex-cross", capexCross, "AI data-center capex", "Capital expenditure for AI data-center capacity.", ["AI", "data", "center", "capex"], 95),
+          chart("year-revenue", yearRevenue, "2027 revenue", "Revenue projections by vendor.", ["2027", "revenue"], 100),
+          chart("ai-import", aiImport, "AI imports", "Import volumes for AI devices.", ["AI", "import"], 100),
+          chart("spacex", spacex, "SpaceX launches", "Launch cadence by mission.", ["SpaceX", "launch"], 100),
+        ],
+      },
+    ],
+  });
+  const env = { ...envFor(bucket), DEEPSEEK_API_KEY: "configured-test-key" };
+  const token = await register(env);
+  const originalFetch = globalThis.fetch;
+  let modelCalls = 0;
+  globalThis.fetch = async (_input, init) => {
+    modelCalls += 1;
+    const requestPayload = JSON.parse(String(init && init.body || "{}"));
+    if (requestPayload.max_tokens === 400) {
+      return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify({
+        core: [
+          { name: "AI", required: true, terms: ["ai", "artificial", "intelligence"] },
+          { name: "data center", required: true, terms: ["data", "center", "datacenter"] },
+        ],
+        facets: [
+          { name: "power", terms: ["power", "electricity", "grid"] },
+          { name: "capital expenditure", terms: ["capex", "capital", "expenditure"] },
+          { name: "supply structure", terms: ["supply", "generation"] },
+        ],
+        terms,
+      }) } }] }), { status: 200, headers: { "content-type": "application/json" } });
+    }
+    const input = JSON.parse(requestPayload.messages[1].content);
+    assert.equal(input.query_plan.terms.includes("2027"), false);
+    assert.equal(input.query_plan.terms.filter((term) => ["ai", "artificial", "intelligence"].includes(term)).length, 1);
+    const candidateIds = input.chart_candidates.map((row) => row.image_id);
+    assert.equal(candidateIds.includes(aiRevenue), false);
+    assert.equal(candidateIds.includes(yearRevenue), false);
+    assert.equal(candidateIds.includes(aiImport), false);
+    assert.equal(candidateIds.includes(spacex), false);
+    assert.equal(candidateIds.includes(aiCapexOnly), false, "a Chart missing the required data-center core must be rejected");
+    assert.equal(candidateIds.filter((id) => [powerOne, powerTwo, powerThree].includes(id)).length, 2);
+    assert.equal(candidateIds.includes(capexCross), true);
+    return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify({
+      research_title: "AI 数据中心电力与资本开支研究",
+      research_scope: "比较中美电力瓶颈、资本开支与供电结构。",
+      executive_summary: "证据显示电力接入、供给结构与资本投入需要联合分析。",
+      summary_source_ids: [sourceReportId],
+      findings: [{ title: "联合约束", summary: "报告把电力接入、供给结构和资本投入视为相互关联的部署约束。", source_ids: [sourceReportId] }],
+      data_points: [],
+      chart_image_ids: [capexCross, powerTwo, powerOne],
+    }) } }] }), { status: 200, headers: { "content-type": "application/json" } });
+  };
+  try {
+    const result = await jsonRequest(env, "/report-chat", {
+      method: "POST",
+      headers: { "content-type": "application/json", ...bearer(token) },
+      body: JSON.stringify({ question: "比较全球主流机构对AI数据中心的判断，重点分析中美电力瓶颈、资本开支、供电结构，以及2027年前后的分歧" }),
+    });
+    assert.equal(result.response.status, 200, JSON.stringify(result.data));
+    assert.equal(modelCalls, 2);
+    assert.deepEqual(result.data.sources.map((row) => row.id), [sourceReportId], "a source missing one required core must be rejected");
+    assert.deepEqual(result.data.charts.map((row) => row.image_id), [capexCross, powerTwo, powerOne]);
+    assert.equal(JSON.stringify(result.data).includes(aiRevenue), false);
+    assert.equal(JSON.stringify(result.data).includes(yearRevenue), false);
+    assert.equal(JSON.stringify(result.data).includes(aiImport), false);
+    assert.equal(JSON.stringify(result.data).includes(spacex), false);
+    assert.equal(JSON.stringify(result.data).includes(aiCapexOnly), false);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("report research deterministic fallback preserves real concepts and requires an explicit chart allowlist", async () => {
+  const bucket = new MemoryR2();
+  const reportId = "404040404040404040404040";
+  const chartImageId = "a".repeat(64);
+  const lookupTerms = ["ai", "data", "power", "capex", "supply", "china", "center"];
+  await seedReportResearchLookup(bucket, [{
+    id: reportId,
+    title: "AI data-center power, supply and capital expenditure",
+    institution: "Research Bank",
+    date_folder: "260830",
+    available: true,
+  }], Object.fromEntries(lookupTerms.map((term) => [term, [{
+    id: reportId,
+    tf: 10,
+    chunks: ["c000001"],
+  }]])), [[`${reportId}:c000001`, {
+    id: "c000001",
+    report_id: reportId,
+    text: "The report compares AI data-center power bottlenecks, electricity supply structure and capital expenditure in China and the United States.",
+  }]]);
+  bucket.seed("_chart-search/v1/index.json", {
+    schema_version: 1,
+    reports: [{
+      report_id: reportId,
+      title: "AI data-center power, supply and capital expenditure",
+      date_folder: "260830",
+      charts: [{
+        id: "relevant-power-chart",
+        image_id: chartImageId,
+        analysis_version: "chart-search-v2",
+        title: "AI data-center power supply",
+        content_kind: "chart",
+        quality_score: 95,
+        chart_type: "bar",
+        description: "Power supply for AI data-center capacity.",
+        trend_summary: "Electricity remains constrained.",
+        keywords: ["AI", "data", "center", "power", "supply"],
+      }],
+    }],
+  });
+  const env = { ...envFor(bucket), DEEPSEEK_API_KEY: "configured-test-key" };
+  const token = await register(env);
+  const originalFetch = globalThis.fetch;
+  let modelCalls = 0;
+  globalThis.fetch = async (_input, init) => {
+    modelCalls += 1;
+    const requestPayload = JSON.parse(String(init && init.body || "{}"));
+    if (modelCalls === 1) {
+      assert.equal(requestPayload.max_tokens, 400);
+      return new Response("planner unavailable", { status: 503 });
+    }
+    assert.equal(requestPayload.max_tokens, 7000);
+    const input = JSON.parse(requestPayload.messages[1].content);
+    assert.deepEqual(input.query_plan.terms, lookupTerms);
+    assert.equal(input.query_plan.terms.some((term) => ["比较全球", "较全球主", "全球主流", "2027"].includes(term)), false);
+    assert.equal(input.query_plan.core.filter((group) => group.required).length, 2);
+    assert.deepEqual(input.query_plan.core.filter((group) => group.required).map((group) => group.name), ["人工智能", "数据中心"]);
+    assert.deepEqual(input.chart_candidates.map((row) => row.image_id), [chartImageId]);
+    return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify({
+      research_title: "AI 数据中心跨报告研究",
+      research_scope: "比较电力、供电结构和资本开支。",
+      executive_summary: "报告同时讨论电力接入、供电结构和资本开支。",
+      summary_source_ids: [reportId],
+      findings: [{ title: "联合约束", summary: "电力、供电结构和资本开支共同影响部署。", source_ids: [reportId] }],
+      data_points: [],
+      chart_image_ids: chartImageId,
+    }) } }] }), { status: 200, headers: { "content-type": "application/json" } });
+  };
+  try {
+    const result = await jsonRequest(env, "/report-chat", {
+      method: "POST",
+      headers: { "content-type": "application/json", ...bearer(token) },
+      body: JSON.stringify({ question: "比较全球主流机构对AI数据中心的判断，重点分析中美电力瓶颈、资本开支、供电结构，以及2027年前后的分歧" }),
+    });
+    assert.equal(result.response.status, 200, JSON.stringify(result.data));
+    assert.equal(modelCalls, 2);
+    assert.equal(result.data.mode, "research");
+    assert.equal(result.data.charts.length, 0, "a missing or wrong-type model allowlist must not attach every candidate");
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("report research ranks exact ASCII chart terms and honors the model chart whitelist", async () => {
   const bucket = new MemoryR2();
   const sourceReportId = "cccccccccccccccccccccccc";
   const exactReportId = "bbbbbbbbbbbbbbbbbbbbbbbb";
@@ -1941,6 +2172,7 @@ test("report research preserves exact ASCII chart terms ahead of generic aliases
     page_count: 36,
     available: true,
   }], {
+    semiconductor: [{ id: sourceReportId, tf: 10, chunks: ["c0001"] }],
     capex: [{ id: sourceReportId, tf: 9, chunks: ["c0001"] }],
     forecasts: [{ id: sourceReportId, tf: 8, chunks: ["c0001"] }],
   }, [[`${sourceReportId}:c0001`, {
@@ -1983,7 +2215,7 @@ test("report research preserves exact ASCII chart terms ahead of generic aliases
           description: "Forecasts for TSMC, Intel, Samsung and SK Hynix.",
           trend_summary: "Manufacturer investment plans diverge.",
           entities: ["TSMC", "Intel", "Samsung", "SK Hynix"],
-          keywords: ["capex", "forecasts"],
+          keywords: ["semiconductor", "capex", "forecasts"],
         }],
       },
     ],
@@ -1994,6 +2226,16 @@ test("report research preserves exact ASCII chart terms ahead of generic aliases
   globalThis.fetch = async (input, init) => {
     assert.match(String(input), /^https:\/\/api\.deepseek\.com\/chat\/completions$/u);
     const requestPayload = JSON.parse(String(init && init.body || "{}"));
+    if (requestPayload.max_tokens === 400) {
+      return new Response(JSON.stringify({
+        choices: [{ message: { content: JSON.stringify({
+          core: [{ name: "semiconductor", terms: ["semiconductor"] }],
+          facets: [{ name: "capital spending", terms: ["capex", "capital"] }],
+          terms: ["semiconductor", "capex", "forecasts"],
+        }) } }],
+      }), { status: 200, headers: { "content-type": "application/json" } });
+    }
+    assert.equal(requestPayload.max_tokens, 7000);
     const modelInput = JSON.parse(requestPayload.messages[1].content);
     assert.equal(modelInput.chart_candidates[0].image_id, exactImageId);
     assert.equal(modelInput.chart_candidates[1].image_id, genericImageId);
@@ -2014,10 +2256,9 @@ test("report research preserves exact ASCII chart terms ahead of generic aliases
 
     assert.equal(result.response.status, 200, JSON.stringify(result.data));
     assert.equal(result.data.mode, "research");
-    assert.equal(result.data.charts[0].image_id, exactImageId);
-    assert.equal(result.data.charts[0].report_id, exactReportId);
-    assert.equal(result.data.charts[0].title, "Capex Forecasts");
-    assert.equal(result.data.charts[1].image_id, genericImageId);
+    assert.equal(result.data.charts.length, 1);
+    assert.equal(result.data.charts[0].image_id, genericImageId);
+    assert.equal(result.data.charts[0].report_id, sourceReportId);
   } finally {
     globalThis.fetch = originalFetch;
   }
@@ -2034,6 +2275,7 @@ test("report research rejects invented source ids and numeric claims absent from
     available: true,
   }], {
     ai: [{ id: reportId, tf: 5, chunks: ["c000001"] }],
+    capex: [{ id: reportId, tf: 4, chunks: ["c000001"] }],
   }, [[`${reportId}:c000001`, {
     id: "c000001",
     report_id: reportId,
@@ -2042,14 +2284,30 @@ test("report research rejects invented source ids and numeric claims absent from
   const env = { ...envFor(bucket), DEEPSEEK_API_KEY: "configured-test-key" };
   const token = await register(env);
   const originalFetch = globalThis.fetch;
-  globalThis.fetch = async (input) => {
+  let modelCalls = 0;
+  globalThis.fetch = async (input, init) => {
     assert.match(String(input), /^https:\/\/api\.deepseek\.com\/chat\/completions$/u);
+    modelCalls += 1;
+    const requestPayload = JSON.parse(String(init && init.body || "{}"));
+    if (requestPayload.max_tokens === 400) {
+      return new Response(JSON.stringify({
+        choices: [{ message: { content: JSON.stringify({
+          core: [{ name: "AI", terms: ["ai", "artificial", "intelligence"] }],
+          facets: [{ name: "capital expenditure", terms: ["capex", "capital", "expenditure"] }],
+          terms: ["ai", "capex", "capital", "expenditure", "2027"],
+        }) } }],
+      }), { status: 200, headers: { "content-type": "application/json" } });
+    }
+    assert.equal(requestPayload.max_tokens, 7000);
+    assert.match(requestPayload.messages[0].content, /5-8 substantive findings/u);
     return new Response(JSON.stringify({
       choices: [{ message: { content: JSON.stringify({
-        executive_summary: "证据显示资本开支增长 25%。",
+        research_title: "AI 资本开支证据研究",
+        research_scope: "比较 AI 资本开支的证据、分歧与边界。",
+        executive_summary: "证据显示资本开支增长 25%。虚构增长 99%。定性判断仍需结合报告边界。",
         summary_source_ids: [reportId, "ffffffffffffffffffffffff"],
         findings: [
-          { title: "有证据结论", summary: "资本开支增长 25%。", source_ids: [reportId] },
+          { title: "有证据结论", summary: "资本开支增长 25%。虚构情景达到 99%。定性结论仍然成立。", source_ids: [reportId] },
           { title: "伪来源结论", summary: "不存在的结论。", source_ids: ["ffffffffffffffffffffffff"] },
         ],
         data_points: [
@@ -2068,9 +2326,14 @@ test("report research rejects invented source ids and numeric claims absent from
       body: JSON.stringify({ question: "AI 资本开支研究" }),
     });
     assert.equal(result.response.status, 200, JSON.stringify(result.data));
+    assert.equal(modelCalls, 2);
+    assert.equal(result.data.research_title, "AI 资本开支证据研究");
+    assert.match(result.data.research_scope, /资本开支/u);
+    assert.match(result.data.generated_at, /^\d{4}-\d{2}-\d{2}T/u);
     assert.deepEqual(result.data.summary_source_ids, [reportId]);
     assert.equal(result.data.findings.length, 1);
     assert.deepEqual(result.data.findings[0].source_ids, [reportId]);
+    assert.match(result.data.findings[0].summary, /定性结论仍然成立/u);
     assert.equal(result.data.data_points.length, 1);
     assert.equal(result.data.data_points[0].value, "25%");
     assert.equal(JSON.stringify(result.data).includes("99%"), false);
@@ -2093,7 +2356,7 @@ test("report research cold-cache worst case stays below the 50-subrequest bounda
     available: true,
   }));
   const postings = Object.fromEntries(
-    ["ai", "data", "center", "power", "capital", "expenditure"].map((term) => [
+    ["ai", "data", "center", "power", "electricity", "capital", "expenditure"].map((term) => [
       term,
       reportIds.map((id) => ({ id, tf: 12, chunks: ["c000001", "c000002"] })),
     ]),
@@ -2111,22 +2374,235 @@ test("report research cold-cache worst case stays below the 50-subrequest bounda
     }],
   ]);
   await seedReportResearchLookup(bucket, items, postings, evidence);
-  const env = envFor(bucket);
+  const env = { ...envFor(bucket), DEEPSEEK_API_KEY: "configured-test-key" };
   const token = await register(env);
   bucket.getKeys.length = 0;
   bucket.putKeys.length = 0;
   bucket.rangeReadKeys.length = 0;
-  const result = await jsonRequest(env, "/report-chat", {
-    method: "POST",
-    headers: { "content-type": "application/json", ...bearer(token) },
-    body: JSON.stringify({ question: "ai data center power capital expenditure" }),
+  const originalFetch = globalThis.fetch;
+  let modelCalls = 0;
+  globalThis.fetch = async (_input, init) => {
+    modelCalls += 1;
+    const requestPayload = JSON.parse(String(init && init.body || "{}"));
+    if (requestPayload.max_tokens === 400) {
+      return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify({
+        core: [
+          { name: "AI", terms: ["ai", "artificial", "intelligence"] },
+          { name: "data center", terms: ["data", "center", "datacenter"] },
+        ],
+        facets: [
+          { name: "power", terms: ["power", "electricity", "grid"] },
+          { name: "capital expenditure", terms: ["capital", "expenditure", "capex"] },
+        ],
+        terms: ["ai", "data", "power", "capital", "center", "electricity", "expenditure"],
+      }) } }] }), { status: 200, headers: { "content-type": "application/json" } });
+    }
+    assert.equal(requestPayload.max_tokens, 7000);
+    const modelInput = JSON.parse(requestPayload.messages[1].content);
+    assert.deepEqual(modelInput.query_plan.terms, ["ai", "data", "power", "capital", "center", "electricity", "expenditure"]);
+    assert.equal(new Set(modelInput.query_plan.terms).size, 7);
+    assert.deepEqual(modelInput.sources.map((source) => source.evidence.length), [2, 2, 1, 1]);
+    return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify({
+      research_title: "AI infrastructure research",
+      research_scope: "AI data-center power and capital expenditure",
+      executive_summary: "多份报告共同讨论电力约束与资本开支。",
+      summary_source_ids: reportIds,
+      findings: [{ title: "跨报告结论", summary: "报告共同指出电力接入约束，并比较资本开支与部署节奏。", source_ids: reportIds }],
+      data_points: [],
+      chart_image_ids: [],
+    }) } }] }), { status: 200, headers: { "content-type": "application/json" } });
+  };
+  try {
+    const result = await jsonRequest(env, "/report-chat", {
+      method: "POST",
+      headers: { "content-type": "application/json", ...bearer(token) },
+      body: JSON.stringify({ question: "ai data center power capital expenditure" }),
+    });
+    assert.equal(result.response.status, 200, JSON.stringify(result.data));
+    assert.equal(result.data.mode, "research");
+    assert.equal(result.data.sources.length, 4);
+    assert.equal(modelCalls, 2);
+    assert.ok(bucket.rangeReadKeys.length <= 34, `unexpected research range reads: ${bucket.rangeReadKeys.length}`);
+    const worstCaseSubrequests = bucket.getKeys.length + bucket.putKeys.length + modelCalls;
+    assert.ok(
+      worstCaseSubrequests <= 50,
+      `unexpected research subrequests: ${worstCaseSubrequests} (get=${bucket.getKeys.length}, put=${bucket.putKeys.length}, model=${modelCalls})`,
+    );
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("report research early miss uses only three discovery terms and four items within budget", async () => {
+  const bucket = new MemoryR2();
+  const researchTerms = ["ai", "data", "power", "capital", "center", "electricity", "expenditure"];
+  await seedReportResearchLookup(
+    bucket,
+    [],
+    Object.fromEntries(researchTerms.map((term) => [term, []])),
+    [],
+  );
+  const discoveryItems = Array.from({ length: 6 }, (_value, index) => ({
+    id: `discovery-${index}`,
+    title: `AI data-center power report ${index}`,
+    institution: `Bank ${index}`,
+    attraction_score: 4,
+  }));
+  await seedReportChatLookup(bucket, discoveryItems, {
+    ai: discoveryItems.map((item) => item.id),
+    data: discoveryItems.map((item) => item.id),
+    power: discoveryItems.map((item) => item.id),
   });
-  assert.equal(result.response.status, 200, JSON.stringify(result.data));
-  assert.equal(result.data.mode, "research");
-  assert.equal(result.data.sources.length, 4);
-  assert.ok(bucket.rangeReadKeys.length <= 28, `unexpected research range reads: ${bucket.rangeReadKeys.length}`);
-  const worstCaseSubrequests = bucket.getKeys.length + bucket.putKeys.length + 1; // one DeepSeek fetch
-  assert.ok(worstCaseSubrequests <= 50, `unexpected research subrequests: ${worstCaseSubrequests}`);
+  const env = { ...envFor(bucket), DEEPSEEK_API_KEY: "configured-test-key" };
+  const token = await register(env);
+  bucket.getKeys.length = 0;
+  bucket.putKeys.length = 0;
+  bucket.rangeReadKeys.length = 0;
+  const originalFetch = globalThis.fetch;
+  let modelCalls = 0;
+  globalThis.fetch = async (_input, init) => {
+    modelCalls += 1;
+    const requestPayload = JSON.parse(String(init && init.body || "{}"));
+    if (requestPayload.max_tokens === 400) {
+      return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify({
+        core: [{ name: "AI data center", terms: ["ai", "data", "center"] }],
+        facets: [
+          { name: "power", terms: ["power", "electricity"] },
+          { name: "capital", terms: ["capital", "expenditure"] },
+        ],
+        terms: researchTerms,
+      }) } }] }), { status: 200, headers: { "content-type": "application/json" } });
+    }
+    assert.equal(requestPayload.max_tokens, 1200);
+    const input = JSON.parse(requestPayload.messages[1].content);
+    assert.equal(input.candidates.length, 4);
+    return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify({
+      answer: "找到 4 份相关报告，可进一步指定机构或指标。",
+      recommended_ids: input.candidates.map((item) => item.id),
+      follow_up_questions: [],
+    }) } }] }), { status: 200, headers: { "content-type": "application/json" } });
+  };
+  try {
+    const result = await jsonRequest(env, "/report-chat", {
+      method: "POST",
+      headers: { "content-type": "application/json", ...bearer(token) },
+      body: JSON.stringify({ question: "AI data center power capital expenditure 2027" }),
+    });
+    assert.equal(result.response.status, 200, JSON.stringify(result.data));
+    assert.equal(result.data.mode, "discovery");
+    assert.equal(result.data.sources.length, 4);
+    assert.equal(modelCalls, 2);
+    assert.ok(bucket.rangeReadKeys.length <= 28, `unexpected miss range reads: ${bucket.rangeReadKeys.length}`);
+    const totalSubrequests = bucket.getKeys.length + bucket.putKeys.length + modelCalls;
+    assert.ok(totalSubrequests <= 50, `unexpected miss subrequests: ${totalSubrequests}`);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("report research partial evidence miss does not cascade into discovery", async () => {
+  const bucket = new MemoryR2();
+  const reportId = "abababababababababababab";
+  await seedReportResearchLookup(bucket, [{
+    id: reportId,
+    title: "AI capital expenditure outlook",
+    institution: "Research Bank",
+    available: true,
+  }], {
+    ai: [{ id: reportId, tf: 8, chunks: ["c000001", "c000002"] }],
+    capex: [{ id: reportId, tf: 7, chunks: ["c000001", "c000002"] }],
+  }, []);
+  const env = { ...envFor(bucket), DEEPSEEK_API_KEY: "configured-test-key" };
+  const token = await register(env);
+  bucket.getKeys.length = 0;
+  bucket.putKeys.length = 0;
+  const originalFetch = globalThis.fetch;
+  let modelCalls = 0;
+  globalThis.fetch = async (_input, init) => {
+    modelCalls += 1;
+    const requestPayload = JSON.parse(String(init && init.body || "{}"));
+    assert.equal(requestPayload.max_tokens, 400);
+    return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify({
+      core: [{ name: "AI", terms: ["ai"] }],
+      facets: [{ name: "capital expenditure", terms: ["capex"] }],
+      terms: ["ai", "capex"],
+    }) } }] }), { status: 200, headers: { "content-type": "application/json" } });
+  };
+  try {
+    const result = await jsonRequest(env, "/report-chat", {
+      method: "POST",
+      headers: { "content-type": "application/json", ...bearer(token) },
+      body: JSON.stringify({ question: "AI capital expenditure" }),
+    });
+    assert.equal(result.response.status, 200, JSON.stringify(result.data));
+    assert.equal(result.data.mode, "research");
+    assert.equal(result.data.sources.length, 1);
+    assert.equal(result.data.findings.length, 0);
+    assert.match(result.data.executive_summary, /未读取到可用的正文证据块/u);
+    assert.equal(modelCalls, 1, "partial evidence must not call synthesis or discovery models");
+    assert.equal(bucket.getKeys.includes("_report-chat/v2/manifest.json"), false);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("report research item and evidence read failures stay partial instead of cascading to discovery", async (t) => {
+  for (const stage of ["items", "evidence"]) {
+    await t.test(stage, async () => {
+      const bucket = new MemoryR2();
+      const reportId = stage === "items" ? "cd".repeat(12) : "ef".repeat(12);
+      await seedReportResearchLookup(bucket, [{
+        id: reportId,
+        title: "AI data-center capital expenditure",
+        institution: "Research Bank",
+        available: true,
+      }], {
+        ai: [{ id: reportId, tf: 8, chunks: ["c000001"] }],
+        data: [{ id: reportId, tf: 8, chunks: ["c000001"] }],
+        capex: [{ id: reportId, tf: 7, chunks: ["c000001"] }],
+      }, [[`${reportId}:c000001`, {
+        id: "c000001",
+        report_id: reportId,
+        text: "AI data-center capital expenditure is discussed in the report evidence.",
+      }]]);
+      const env = { ...envFor(bucket), DEEPSEEK_API_KEY: "configured-test-key" };
+      const token = await register(env);
+      bucket.getKeys.length = 0;
+      bucket.putKeys.length = 0;
+      const originalFetch = globalThis.fetch;
+      let modelCalls = 0;
+      globalThis.fetch = async (_input, init) => {
+        modelCalls += 1;
+        const requestPayload = JSON.parse(String(init && init.body || "{}"));
+        assert.equal(requestPayload.max_tokens, 400, "partial lookup must never reach synthesis or discovery");
+        bucket.failNextGetExact = `_report-research/v1/releases/test/${stage}.tbl`;
+        return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify({
+          core: [
+            { name: "AI", required: true, terms: ["ai"] },
+            { name: "data center", required: true, terms: ["data"] },
+          ],
+          facets: [{ name: "capital expenditure", terms: ["capex"] }],
+          terms: ["ai", "data", "capex"],
+        }) } }] }), { status: 200, headers: { "content-type": "application/json" } });
+      };
+      try {
+        const result = await jsonRequest(env, "/report-chat", {
+          method: "POST",
+          headers: { "content-type": "application/json", ...bearer(token) },
+          body: JSON.stringify({ question: "AI data center capital expenditure" }),
+        });
+        assert.equal(result.response.status, 200, JSON.stringify(result.data));
+        assert.equal(result.data.mode, "research");
+        assert.equal(modelCalls, 1);
+        assert.equal(result.data.findings.length, 0);
+        assert.match(result.data.executive_summary, /未读取到可用的正文证据块/u);
+        assert.equal(bucket.getKeys.includes("_report-chat/v2/manifest.json"), false);
+        assert.equal(result.data.sources.length, stage === "items" ? 0 : 1);
+      } finally {
+        globalThis.fetch = originalFetch;
+      }
+    });
+  }
 });
 
 test("report chat rejects an exhausted registered lifetime limit before lookup or model work", async () => {

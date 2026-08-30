@@ -6590,6 +6590,52 @@ a.secondary-button {
   text-decoration: none;
 }
 
+.report-research-export {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px 18px;
+  align-items: center;
+  padding: clamp(15px, 3vw, 20px);
+  border: 1px solid rgba(15, 118, 110, 0.26);
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(240, 253, 250, 0.96), rgba(255, 255, 255, 0.96));
+}
+
+.report-research-export > div:first-child {
+  display: grid;
+  gap: 4px;
+}
+
+.report-research-export > div:first-child strong {
+  color: var(--ink);
+  font-size: 0.92rem;
+}
+
+.report-research-export > div:first-child span {
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.55;
+}
+
+.report-research-export-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.report-research-export-actions button {
+  min-height: 42px;
+  white-space: nowrap;
+}
+
+.report-research-export > .status-line {
+  grid-column: 1 / -1;
+  min-height: 0;
+  margin: 0;
+  font-size: 0.76rem;
+}
+
 .report-research-chart-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -6823,6 +6869,20 @@ body.chart-lightbox-open {
   .report-research-chart-grid,
   .report-research-inline-charts {
     grid-template-columns: 1fr;
+  }
+
+  .report-research-export {
+    grid-template-columns: 1fr;
+  }
+
+  .report-research-export-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .report-research-export-actions button {
+    width: 100%;
+    white-space: normal;
   }
 
   .report-chat-popular-heading {

@@ -16,18 +16,56 @@
 
 1. 静态发布生成全文搜索数据后，`build_report_research_index.py` 把有正文的报告切成约
    1,800 字、带 180 字重叠的证据块，并构建私有 token、报告与 evidence 三张随机访问表。
-2. 查询先做 NFKC 规范化、中英文领域词扩展与全文 token 检索。每个 token 最多返回 48 个
-   posting，Worker 交叉排序后读取最多 4 份报告、每份 1 个最相关证据块；请求路径不会
-   下载或解析整份全文索引。
-3. Worker 只把白名单报告元数据、证据块和这些报告名下的历史 Charts 交给 DeepSeek，要求
-   返回结构化研究摘要、主要发现、关键数据、来源 ID、Chart image ID 与后续研究问题。
-4. 服务端再次校验所有来源 ID 和 Chart ID；带数字的摘要、发现或数据点还必须能在对应
-   正文证据中找到同一数值，否则丢弃。模型不能增加未检索到的报告、图表或数字。
-5. 前端把摘要、发现、数据、Charts 和来源报告链接组合成一份研究材料。若研究索引尚未
-   发布或查询没有全文命中，则回退到原有 Report Chat v2 的“找报告”结果，不伪装成全文研究。
+2. 额度占位成功后，Worker 先用一次小型 DeepSeek query planner 把当前问题拆成 `core`
+   concept groups、research `facets` 与最多 7 个原子检索词；planner 失败时使用相同结构的
+   deterministic fallback。检索词按 concept group round-robin 分配，先覆盖不同概念再取
+   同义词；AI / artificial / intelligence 属于同组，只贡献 1 票，裸年份、日期和纯数字不
+   能成为主题准入词。deterministic fallback 只保留问题中的完整残余实体，不把中文 2–4 字
+   滑窗碎片提升为 core，因此“比较全球”等句式片段不会挤占 7 个检索槽。
+3. 每个 token 最多返回 48 个 posting。报告排序先比较 core/facet group coverage，再比较
+   组内最优 posting 分数；候选必须命中全部 `required core`（例如 AI + data center），并在
+   存在 facet 时至少命中一个 facet，不能用“AI + capex”替代缺失的 data center。Worker 最多
+   读取 4 份报告、总计 6 个证据块：先按排名给每份报告 1 块，再
+   给前两名（或下一份仍有第 2 块的报告）补第 2 块。请求路径不会下载或解析整份全文索引。
+4. planner、研究随机读取、Chart index 和生成模型共用单请求 38 次子请求账本。完整冷路径为
+   7 token、4 item、6 evidence、1 Chart index、1 planner、1 synthesis；登录 token 校验只读
+   已有用户索引，不再在每个 API 请求里重写三份身份索引。研究在 posting 阶段早 miss 时，
+   discovery fallback 最多只查 3 个词、返回 4 个 item；已经读取 item/evidence 后的 partial
+   miss（包括 item/evidence 的单次读取异常）不再级联第二套索引，而是保留可验证部分并明确
+   返回“证据不足”的研究结果。
+5. Worker 只把白名单报告元数据、证据块和严格相关的 Charts 交给 DeepSeek。synthesis 的
+   `max_tokens` 上限为 7,000、服务端窗口 52 秒；提示要求研究标题、研究范围、结构化长摘要、
+   有证据时 5–8 条长 findings、6–12 个 data points、来源 ID、Chart image ID 与后续问题，
+   证据不足时必须少写，不能填充。
+6. 服务端再次校验所有来源 ID 和 Chart ID。数字校验按句/分句执行：一句里只要有不能在所引
+   evidence 中逐字找到的数字，就删除整句而不是删除整条 finding；同一 finding 中其他有根据
+   的句子继续保留。data point 仍按整项校验。模型不能增加未检索到的报告、图表或数字。
+7. Chart 候选使用 planner 的完整 concept terms。无论是否来自已选报告，Chart 自身都必须命中
+   全部 required core，并在问题存在 facet 时至少命中一个 facet；报告标题只用于无 required core
+   的旧数据辅助判断，不能替一张仅含“AI + capex”的图补齐 data center。只命中泛化 AI、
+   年份或无关实体的图不会入选；每份报告最多 2 张、总计最多 6 张。最终响应严格采用模型返回
+   的数组型 `chart_image_ids` 白名单顺序；字段缺失、类型错误或 ID 不在候选白名单时返回空图表，
+   不再把全部候选无条件塞入结果。
+8. 前端把摘要、发现、数据、Charts 和来源报告链接组合成一份研究材料。研究响应同时带安全的
+   `research_title`、`research_scope` 与服务端 `generated_at`。若研究索引尚未发布或 posting
+   阶段没有全文命中，才回退到 Report Chat v2 的“找报告”结果，不伪装成全文研究。
 
 当前 provenance 精度是“报告 + evidence chunk”。现有搜索正文已被扁平化，没有可靠页码，
 因此界面不生成虚假页码；未来只有在解析层保存 page/figure 坐标后才增加页级引用。
+
+### 研究结果导出
+
+- Word 下载直接复用已经返回并通过服务端白名单校验的研究 JSON，不再次请求模型，也不消耗
+  研究额度。前端生成真实 OOXML `.docx`，把相关 Chart 作为 JPEG 嵌入文档，并把来源写成
+  可点击的 `kcdesk.com/report.html?id=...` 外部链接；导出包不包含原始问题、账号、归档 ID、
+  R2 对象键或报告原 PDF。
+- PDF 使用同一份规范化研究数据生成 A4 打印版，保留可搜索、可复制的中文正文、图表和可点击
+  来源；按钮会打开系统打印保存界面，由用户选择“另存为 PDF”。当前不把正文栅格化为图片，
+  也不依赖 Worker 运行时、Python 或第三方浏览器导出服务。
+- Chart 只有在 `report_id` 与 finding 的 `source_ids` 精确一致时才嵌入该结论；未匹配 Chart
+  统一放入“补充图表证据”，不能通过数组顺序或泛化关键词伪装成某条结论的直接证据。
+- 热门问题的公开缓存使用相同导出器，因此点击历史快照后同样可以导出，且不会重新触发
+  R2 evidence 检索、DeepSeek 或额度占用。
 
 ### Report Research v1 随机访问对象
 
@@ -90,7 +128,8 @@ Course Chat 仅返回具体资料标题、主题、文件类型、公开机构�
 - 服务端使用事件记录额度层级、结果模式、候选/来源/Chart 数量、缓存状态、耗时和问题哈希；
   前端另记录热门曝光/点击、提交、失败、限额申请等交互。分析事件不记录问题明文，RAG
   交互中的匿名设备 ID 也会在服务端 HMAC 后才写入主、副分析存档。
-- 报告研究输出的来源与 Chart ID 必须通过服务端白名单；数字还需通过对应 evidence 文本校验。
+- 报告研究输出的来源与 Chart ID 必须通过服务端白名单；数字还需通过对应 evidence 文本逐句
+  校验，不能通过简单删掉数字而保留原句语义。
 - 课程候选先经过服务端会员门禁和脱敏，再进入模型；模型输出不能增加候选之外的资料 ID。
 
 ## 部署顺序

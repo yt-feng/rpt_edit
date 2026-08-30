@@ -67,7 +67,7 @@
       const value = String(data[key] || "").trim().slice(0, 120);
       if (value) payload[key] = value;
     }
-    for (const key of ["limit", "remaining", "question_length", "item_count"]) {
+    for (const key of ["limit", "remaining", "question_length", "item_count", "source_count", "chart_count"]) {
       if (data[key] === null || data[key] === undefined || data[key] === "") continue;
       const value = Number(data[key]);
       if (Number.isFinite(value)) payload[key] = value;
@@ -304,21 +304,28 @@
 
   function chartsByFinding(findings, charts, sources) {
     const grouped = findings.map(() => []);
-    if (!grouped.length) return grouped;
+    const unmatched = [];
     const findingSources = findings.map((item) => new Set(sourceIds(item.source_ids, sources)));
-    charts.forEach((chart, chartIndex) => {
+    charts.forEach((chart) => {
       const reportId = String(chart.report_id || "").trim();
-      let findingIndex = reportId
+      const findingIndex = reportId
         ? findingSources.findIndex((ids) => ids.has(reportId))
         : -1;
-      if (findingIndex < 0) {
-        findingIndex = grouped.reduce((best, rows, index) => (
-          rows.length < grouped[best].length ? index : best
-        ), chartIndex % grouped.length);
-      }
-      grouped[findingIndex].push(chart);
+      if (findingIndex >= 0) grouped[findingIndex].push(chart);
+      else unmatched.push(chart);
     });
-    return grouped;
+    return { grouped, unmatched };
+  }
+
+  function researchExportHtml() {
+    return `<section class="report-research-export" aria-label="导出当前研究结果">
+      <div><strong>保存当前研究结果</strong><span>直接使用上方已生成内容，不会再次调用模型或消耗额度。</span></div>
+      <div class="report-research-export-actions">
+        <button type="button" class="secondary-button" data-report-research-export="docx">下载 Word (.docx)</button>
+        <button type="button" class="secondary-button" data-report-research-export="pdf">导出 PDF（打开保存界面）</button>
+      </div>
+      <p class="status-line" data-report-research-export-status role="status" aria-live="polite"></p>
+    </section>`;
   }
 
   function researchResultHtml(data) {
@@ -332,7 +339,7 @@
       if (!item || typeof item !== "object" || !/^[0-9a-f]{64}$/u.test(String(item.image_id || ""))) return false;
       return Boolean(String(item.report_id || item.report_title || "").trim());
     }).slice(0, 6);
-    const findingCharts = chartsByFinding(findings, charts, sources);
+    const chartPlacement = chartsByFinding(findings, charts, sources);
     const sections = [];
     if (executiveSummary) {
       sections.push(`<section class="report-research-summary"><span>研究摘要</span><p>${escapeHtml(executiveSummary)}</p><div class="report-research-source-row">${sourceChipsHtml(data.summary_source_ids, sources)}</div></section>`);
@@ -341,9 +348,12 @@
       sections.push(`<section class="report-research-section"><h3>主要发现</h3><div class="report-research-findings">${findings.map((item, index) => {
         const title = String(item.title || "核心发现").trim();
         const summary = String(item.summary || item.analysis || "").trim();
-        const inlineCharts = findingCharts[index] || [];
+        const inlineCharts = chartPlacement.grouped[index] || [];
         return `<article class="report-research-finding"><div class="report-research-finding-copy"><strong>${escapeHtml(title)}</strong><p>${escapeHtml(summary)}</p><div class="report-research-source-row">${sourceChipsHtml(item.source_ids, sources)}</div></div>${inlineCharts.length ? `<div class="report-research-inline-charts" aria-label="图表证据"><h4>图表证据</h4>${inlineCharts.map((chart) => chartFigureHtml(chart, sources)).join("")}</div>` : ""}</article>`;
       }).join("")}</div></section>`);
+    }
+    if (chartPlacement.unmatched.length) {
+      sections.push(`<section class="report-research-section"><h3>补充图表证据</h3><div class="report-research-chart-grid">${chartPlacement.unmatched.map((item) => chartFigureHtml(item, sources)).join("")}</div></section>`);
     }
     if (dataPoints.length) {
       sections.push(`<section class="report-research-section"><h3>关键数据</h3><div class="report-research-data-grid">${dataPoints.map((item) => {
@@ -353,10 +363,7 @@
         return `<article><span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong>${context ? `<p>${escapeHtml(context)}</p>` : ""}<div class="report-research-source-row">${sourceChipsHtml(item.source_ids, sources)}</div></article>`;
       }).join("")}</div></section>`);
     }
-    if (charts.length && !findings.length) {
-      sections.push(`<section class="report-research-section"><h3>图表证据</h3><div class="report-research-chart-grid">${charts.map((item) => chartFigureHtml(item, sources)).join("")}</div></section>`);
-    }
-    return sections.join("");
+    return sections.length ? `${sections.join("")}${researchExportHtml()}` : "";
   }
 
   function usageAnalyticsData(usage) {
@@ -507,6 +514,8 @@
     let activeRequest = null;
     let activePopularRequest = null;
     let activeLimitRequest = null;
+    let activeExport = null;
+    let exportPayload = null;
     let limitedQuestion = "";
     let limitedQuestionHash = "";
     let limitedArchiveId = "";
@@ -523,7 +532,47 @@
       directorySearch.dispatchEvent(new Event("input", { bubbles: true }));
       document.getElementById("courseResourceDirectory")?.scrollIntoView({ behavior: "smooth", block: "start" });
     });
-    messages.addEventListener("click", (event) => {
+    messages.addEventListener("click", async (event) => {
+      const exportButton = event.target.closest("[data-report-research-export]");
+      if (exportButton) {
+        event.preventDefault();
+        if (activeExport || !exportPayload) return;
+        const kind = String(exportButton.getAttribute("data-report-research-export") || "");
+        const exportApi = window.PortalReportResearchExport;
+        if (!exportApi || !["docx", "pdf"].includes(kind)) return;
+        const exportStatus = messages.querySelector("[data-report-research-export-status]");
+        const originalText = String(exportButton.textContent || "");
+        const meta = {
+          context: surface.context,
+          question_hash: exportPayload.question_hash,
+          source_count: Array.isArray(exportPayload.response.sources) ? exportPayload.response.sources.length : 0,
+          chart_count: Array.isArray(exportPayload.response.charts) ? exportPayload.response.charts.length : 0,
+          status: kind,
+        };
+        activeExport = kind;
+        exportButton.disabled = true;
+        exportButton.textContent = kind === "docx" ? "正在生成 Word…" : "正在准备 PDF…";
+        messages.setAttribute("aria-busy", "true");
+        if (exportStatus) exportStatus.textContent = kind === "docx" ? "正在嵌入图表并生成 Word 文件…" : "正在准备 A4 打印版，随后请在系统界面选择“另存为 PDF”。";
+        trackInteraction(`export_${kind}_started`, meta);
+        try {
+          if (kind === "docx") await exportApi.downloadDocx(exportPayload);
+          else await exportApi.openPdfPrint(exportPayload);
+          if (exportStatus) exportStatus.textContent = kind === "docx" ? "Word 文件已开始下载。" : "打印保存界面已打开，请选择“另存为 PDF”。";
+          trackInteraction(kind === "docx" ? "export_docx_ready" : "export_pdf_print_opened", meta);
+        } catch (_error) {
+          if (exportStatus) exportStatus.textContent = kind === "docx"
+            ? "Word 文件生成失败，请检查图表后重试。"
+            : "PDF 打印版准备失败，请允许弹出窗口后重试。";
+          trackInteraction(`export_${kind}_error`, { ...meta, status: "failed" });
+        } finally {
+          activeExport = null;
+          exportButton.disabled = false;
+          exportButton.textContent = originalText;
+          messages.setAttribute("aria-busy", "false");
+        }
+        return;
+      }
       const trigger = event.target.closest("[data-chart-lightbox]");
       if (trigger) {
         openChartLightbox(trigger);
@@ -647,7 +696,12 @@
           const data = await response.json().catch(() => ({}));
           if (!response.ok) throw new Error(String(data.detail || "热门研究暂时无法载入。"));
           const cachedResearch = popularResponse(data);
-          paintResponse(cachedResearch, surface, messages, recommendations);
+          const researchHtml = paintResponse(cachedResearch, surface, messages, recommendations);
+          exportPayload = researchHtml ? {
+            question,
+            question_hash: responseQuestionHash(data) || knownQuestionHash,
+            response: cachedResearch,
+          } : null;
           history.push(
             { role: "user", content: question },
             { role: "assistant", content: String(cachedResearch.answer || cachedResearch.executive_summary || "") },
@@ -772,6 +826,11 @@
         while (history.length > 6) history.shift();
         // Keep the previous answer visible until every part of the new response is ready.
         const researchHtml = paintResponse(data, surface, messages, recommendations);
+        exportPayload = researchHtml ? {
+          question,
+          question_hash: responseQuestionHash(data),
+          response: data,
+        } : null;
         const followUps = Array.isArray(data.follow_up_questions) ? data.follow_up_questions : [];
         const statusParts = [usageStatusText(data.usage)];
         if (followUps.length) statusParts.push(`还可以继续问：${followUps.join("；")}`);

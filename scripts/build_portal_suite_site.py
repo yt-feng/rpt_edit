@@ -3752,6 +3752,7 @@ def version_assets(output: Path) -> None:
     versions: dict[str, str] = {}
     for rel in (
         "assets/app.js",
+        "assets/report-research-export.js",
         "assets/report-chat.js",
         "assets/charts.js",
         "assets/contact.js",
