@@ -16,7 +16,17 @@ from typing import Any
 
 API_ROOT = "https://api.cloudflare.com/client/v4"
 LAST_VERIFY_FAILURE = "not_started"
-ALIAS_REDIRECT_PATHS = ("/", "/reports/", "/robots.txt", "/sitemap.xml")
+# Cloudflare Managed robots.txt is served at the platform layer and may return
+# its own HTTP 200 response on an alias host.  Verify canonical HTML and the
+# sitemap itself here; robots policy is audited separately on the canonical
+# host by portal-seo-health.
+ALIAS_REDIRECT_PATHS = (
+    "/",
+    "/reports/",
+    "/reports/institutions/bernstein/",
+    "/blog/",
+    "/sitemap.xml",
+)
 
 
 class CutoverError(Exception):
@@ -324,17 +334,8 @@ def configured_alias_hosts(hostname: str) -> list[str]:
     return values
 
 
-def purge_edge_cache(zone_id: str) -> None:
-    api_json(
-        f"/zones/{zone_id}/purge_cache",
-        method="POST",
-        body={"purge_everything": True},
-        stage="cache_purge",
-    )
-
-
 def run() -> int:
-    if len(sys.argv) != 2 or sys.argv[1] not in {"migrate", "rollback", "verify", "purge"}:
+    if len(sys.argv) != 2 or sys.argv[1] not in {"migrate", "rollback", "verify"}:
         return 2
     hostname = os.environ.get("SITE_HOST", "").strip().lower()
     script_name = os.environ.get("EDGE_SCRIPT_NAME", "").strip()
@@ -353,10 +354,7 @@ def run() -> int:
             print("edge route verified")
             return 0
         zone_id = find_zone_id(hostname)
-        if sys.argv[1] == "purge":
-            purge_edge_cache(zone_id)
-            print("edge cache purged")
-        elif sys.argv[1] == "migrate":
+        if sys.argv[1] == "migrate":
             migrate(zone_id, pattern, origin, script_name)
             for alias in aliases:
                 migrate_alias(zone_id, alias + "/*", "https://" + alias, origin, script_name)
@@ -378,7 +376,6 @@ def run() -> int:
             "route_create",
             "route_delete",
             "edge_verify",
-            "cache_purge",
             "cloud_api",
         }:
             stage = "unknown"

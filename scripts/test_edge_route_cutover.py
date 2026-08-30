@@ -153,7 +153,11 @@ class EdgeRouteCutoverTests(unittest.TestCase):
             [
                 unittest.mock.call("https://www.portal.example.invalid/", method="HEAD"),
                 unittest.mock.call("https://www.portal.example.invalid/reports/", method="HEAD"),
-                unittest.mock.call("https://www.portal.example.invalid/robots.txt", method="HEAD"),
+                unittest.mock.call(
+                    "https://www.portal.example.invalid/reports/institutions/bernstein/",
+                    method="HEAD",
+                ),
+                unittest.mock.call("https://www.portal.example.invalid/blog/", method="HEAD"),
                 unittest.mock.call("https://www.portal.example.invalid/sitemap.xml", method="HEAD"),
             ],
         )
@@ -224,37 +228,23 @@ class EdgeRouteCutoverTests(unittest.TestCase):
             "svc-neutral",
         )
 
-    def test_purge_mode_uses_the_zone_cache_api(self) -> None:
-        with (
-            patch.object(sys, "argv", ["edge_route_cutover.py", "purge"]),
-            patch.dict(os.environ, {
-                "SITE_HOST": "portal.example.invalid",
-                "EDGE_SCRIPT_NAME": "svc-neutral",
-                "EDGE_ALIAS_HOSTS": "",
-            }, clear=False),
-            patch.object(cutover, "find_zone_id", return_value="zone-id"),
-            patch.object(cutover, "purge_edge_cache") as purge,
-        ):
-            self.assertEqual(cutover.run(), 0)
-
-        purge.assert_called_once_with("zone-id")
-
-    def test_refresh_workflow_purges_before_alias_verification_without_continue(self) -> None:
+    def test_refresh_workflow_gates_on_bare_alias_verification_after_deploy(self) -> None:
         workflow = (
             Path(__file__).resolve().parent.parent
             / ".github"
             / "workflows"
             / "neutral-edge-cutover.yml"
         ).read_text(encoding="utf-8")
-        purge_name = "      - name: Purge previous public edge cache\n"
+        deploy_name = "      - name: Deploy neutral edge runtime\n"
         verify_name = "      - name: Verify active edge routes\n"
-        purge_start = workflow.index(purge_name)
+        deploy_start = workflow.index(deploy_name)
         verify_start = workflow.index(verify_name)
-        self.assertLess(purge_start, verify_start)
-        purge_step = workflow[purge_start:verify_start]
-        self.assertIn("github.event_name == 'schedule' || inputs.operation == 'migrate'", purge_step)
-        self.assertIn("python3 -B scripts/edge_route_cutover.py purge", purge_step)
-        self.assertNotIn("continue-on-error", purge_step)
+        self.assertLess(deploy_start, verify_start)
+        verify_step = workflow[verify_start:]
+        self.assertIn("github.event_name == 'schedule' || inputs.operation == 'migrate'", verify_step)
+        self.assertIn("python3 -B scripts/edge_route_cutover.py verify", verify_step)
+        self.assertNotIn("Purge previous public edge cache", workflow)
+        self.assertNotIn("edge_route_cutover.py purge", workflow)
 
 
 if __name__ == "__main__":
