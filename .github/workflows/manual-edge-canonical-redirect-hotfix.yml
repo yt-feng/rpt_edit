@@ -1,0 +1,166 @@
+name: Manual edge canonical redirect hotfix
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: manual-edge-canonical-redirect-hotfix
+  cancel-in-progress: false
+
+jobs:
+  hotfix:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout audited edge hotfix sources
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .github/workflows/manual-edge-canonical-redirect-hotfix.yml
+            workers/edge-static-host/src/index.js
+            workers/edge-static-host/test/index.test.mjs
+            scripts/test_manual_edge_canonical_redirect_hotfix_workflow.py
+
+      - name: Test edge runtime and hotfix workflow contract
+        run: |
+          set -euo pipefail
+          node --input-type=module --check < workers/edge-static-host/src/index.js
+          node --test workers/edge-static-host/test/index.test.mjs
+          python3 -B scripts/test_manual_edge_canonical_redirect_hotfix_workflow.py
+
+      - name: Read and validate current live edge state
+        env:
+          LIVE_ORIGIN: https://kcdesk.com
+        run: |
+          set -euo pipefail
+          nonce="${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-${RANDOM}"
+          state_url="${LIVE_ORIGIN}/.well-known/edge-state?hotfix=${nonce}"
+          curl --fail --silent --show-error \
+            --connect-timeout 10 --max-time 30 \
+            --output "$RUNNER_TEMP/live-edge-state.json" \
+            -- "$state_url"
+          STATE_PATH="$RUNNER_TEMP/live-edge-state.json" python3 - <<'PY'
+          import json
+          import os
+          import re
+          from pathlib import Path
+
+          state = json.loads(Path(os.environ["STATE_PATH"]).read_text(encoding="utf-8"))
+          if not isinstance(state, dict) or set(state) != {
+              "schema_version", "slot", "release_id", "tree_sha256"
+          }:
+              raise SystemExit("Live edge state has an unsupported shape")
+          if state["schema_version"] != 1:
+              raise SystemExit("Live edge state schema is unsupported")
+          slot = state["slot"]
+          release = state["release_id"]
+          tree = state["tree_sha256"]
+          if slot not in {"a", "b"}:
+              raise SystemExit("Live edge state slot is invalid")
+          if not isinstance(release, str) or re.fullmatch(r"[0-9a-f]{32}", release) is None:
+              raise SystemExit("Live edge state release is invalid")
+          if not isinstance(tree, str) or re.fullmatch(r"[0-9a-f]{64}", tree) is None:
+              raise SystemExit("Live edge state tree is invalid")
+          with Path(os.environ["GITHUB_ENV"]).open("a", encoding="utf-8") as handle:
+              handle.write(f"STATIC_SLOT={slot}\n")
+              handle.write(f"STATIC_PREFIX=edge-static/slots/{slot}/\n")
+              handle.write(f"STATIC_RELEASE={release}\n")
+              handle.write(f"STATIC_TREE_SHA256={tree}\n")
+          print(f"validated_live_edge_state slot={slot} release={release} tree={tree}")
+          PY
+
+      - name: Prepare current edge runtime without rebuilding static content
+        env:
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+        run: |
+          set -euo pipefail
+          if [ -z "$R2_BUCKET" ]; then
+            echo "Required deployment value is not configured: R2_BUCKET" >&2
+            exit 1
+          fi
+          mkdir -p .edge_canonical_hotfix
+          cp workers/edge-static-host/src/index.js .edge_canonical_hotfix/index.js
+          cat > .edge_canonical_hotfix/wrangler.toml <<EOF
+          name = "svc-04df8d213b73"
+          main = "index.js"
+          compatibility_date = "2026-08-12"
+          workers_dev = false
+          preview_urls = false
+
+          [cache]
+          enabled = true
+
+          [vars]
+          STATIC_PREFIX = "$STATIC_PREFIX"
+          STATIC_RELEASE = "$STATIC_RELEASE"
+          STATIC_TREE_SHA256 = "$STATIC_TREE_SHA256"
+          CANONICAL_HOST = "kcdesk.com"
+
+          [[r2_buckets]]
+          binding = "STATIC_BUCKET"
+          bucket_name = "$R2_BUCKET"
+
+          [[services]]
+          binding = "API"
+          service = "portal-suite-worker"
+
+          [observability]
+          enabled = false
+          EOF
+
+      - name: Deploy current edge Worker code only
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID }}
+          workingDirectory: .edge_canonical_hotfix
+          command: deploy
+          wranglerVersion: "4.69.0"
+
+      - name: Verify fixed no-query canonical URLs and API
+        run: |
+          set -euo pipefail
+          canonical_urls=(
+            "https://kcdesk.com/"
+            "https://kcdesk.com/reports/"
+            "https://kcdesk.com/blog/"
+            "https://kcdesk.com/reports/institutions/bernstein/"
+          )
+          for attempt in $(seq 1 18); do
+            healthy=true
+            for url in "${canonical_urls[@]}"; do
+              headers="$RUNNER_TEMP/hotfix-$attempt-$(printf '%s' "$url" | shasum -a 256 | cut -d' ' -f1).headers"
+              status="$(curl --silent --show-error \
+                --connect-timeout 10 --max-time 30 \
+                --dump-header "$headers" --output /dev/null \
+                --write-out '%{http_code}' -- "$url" || true)"
+              location="$(awk 'BEGIN { IGNORECASE=1 } /^location:/ { sub(/^[^:]*:[[:space:]]*/, ""); sub(/\r$/, ""); print; exit }' "$headers" 2>/dev/null || true)"
+              if [ "$status" != "200" ] || [ -n "$location" ]; then
+                echo "canonical_check attempt=$attempt status=${status:-transport_error} url=$url location=${location:-none}"
+                healthy=false
+              fi
+            done
+            api_status="$(curl --silent --show-error \
+              --connect-timeout 10 --max-time 30 \
+              --output /dev/null --write-out '%{http_code}' \
+              -- "https://kcdesk.com/api/health" || true)"
+            if [ "$api_status" != "200" ]; then
+              echo "api_check attempt=$attempt status=${api_status:-transport_error}"
+              healthy=false
+            fi
+            if [ "$healthy" = true ]; then
+              echo "edge_canonical_hotfix=verified api_status=200"
+              exit 0
+            fi
+            if [ "$attempt" -lt 18 ]; then
+              sleep 5
+            fi
+          done
+          echo "The live edge did not pass canonical URL and API verification." >&2
+          exit 1

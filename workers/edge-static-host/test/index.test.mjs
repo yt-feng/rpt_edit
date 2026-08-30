@@ -107,10 +107,21 @@ test("legacy HTML paths and alias hosts redirect to one canonical URL", async ()
   const alias = await worker.fetch(new Request("https://www.static.example.invalid/charts.html"), env);
   assert.equal(alias.status, 301);
   assert.equal(alias.headers.get("location"), "https://static.example.invalid/charts");
+  assert.equal(alias.headers.get("cache-control"), "no-store");
+  assert.equal(alias.headers.get("cloudflare-cdn-cache-control"), "no-store");
 
   const slash = await worker.fetch(new Request("https://static.example.invalid/reports/institutions/bernstein"), env);
   assert.equal(slash.status, 301);
   assert.equal(slash.headers.get("location"), "https://static.example.invalid/reports/institutions/bernstein/");
+});
+
+test("canonical host root path is served without redirect", async () => {
+  const env = fixture();
+  env.CANONICAL_HOST = "static.example.invalid";
+  const response = await worker.fetch(new Request("https://static.example.invalid/"), env);
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("location"), null);
+  assert.equal(await response.text(), "home");
 });
 
 test("catalog and search-style JSON can be served stale while revalidating", async () => {

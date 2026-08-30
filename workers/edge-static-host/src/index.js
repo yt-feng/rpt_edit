@@ -54,7 +54,8 @@ function canonicalRedirect(url, canonicalHostValue = "") {
   if (targetPath) target.pathname = targetPath;
   const headers = new Headers({
     location: target.toString(),
-    "cache-control": "public, max-age=3600",
+    "cache-control": "no-store",
+    "cloudflare-cdn-cache-control": "no-store",
     "x-origin-class": "edge-static",
   });
   return new Response(null, { status: 301, headers });
