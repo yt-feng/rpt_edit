@@ -114,6 +114,18 @@ def healthy_routes() -> dict[str, seo_health.FetchResult]:
     }
 
 
+def cloudflare_managed_robots(*, search: str = "yes", wildcard_rule: str = "Allow: /") -> str:
+    return (
+        "# BEGIN Cloudflare Managed content\n\n"
+        "User-agent: *\n"
+        f"Content-Signal: search={search},ai-train=no,use=reference\n"
+        f"{wildcard_rule}\n\n"
+        "User-agent: GPTBot\n"
+        "Disallow: /\n\n"
+        "# END Cloudflare Managed Content\n"
+    )
+
+
 class LiveSeoAuditTests(unittest.TestCase):
     def test_healthy_site_passes_with_aggregate_metrics(self) -> None:
         fetcher = FakeFetcher(healthy_routes())
@@ -131,6 +143,69 @@ class LiveSeoAuditTests(unittest.TestCase):
         self.assertNotIn("portal.example.invalid", json.dumps(report))
         self.assertIn(("https://www.portal.example.invalid/", False), fetcher.calls)
         self.assertNotIn((SITE + "/favicon.ico", True), fetcher.calls)
+
+    def test_cloudflare_managed_search_yes_without_sitemap_is_warning_only(self) -> None:
+        routes = healthy_routes()
+        routes[SITE + "/robots.txt"] = result(200, SITE + "/robots.txt", cloudflare_managed_robots())
+
+        report = seo_health.audit_site(SITE, indexnow_key=KEY, sample_size=10, fetcher=FakeFetcher(routes))
+
+        self.assertTrue(report["ok"])
+        self.assertTrue(report["checks"]["robots"]["ok"])
+        self.assertEqual(2, report["metrics"]["sitemap"]["validated_shards"])
+        self.assertEqual(
+            {
+                "http_ok": True,
+                "advertised_discovery_files": 0,
+                "managed_by_cloudflare": True,
+                "search_content_signal": "yes",
+                "canonical_sitemap_advertised": False,
+                "managed_sitemap_warning": True,
+            },
+            report["metrics"]["robots"],
+        )
+        self.assertEqual(["managed_sitemap_not_advertised"], [item["code"] for item in report["warnings"]])
+        self.assertNotIn("sitemap_missing", {item["code"] for item in report["failures"]})
+
+    def test_cloudflare_managed_search_no_fails_even_when_sitemap_is_healthy(self) -> None:
+        routes = healthy_routes()
+        routes[SITE + "/robots.txt"] = result(
+            200,
+            SITE + "/robots.txt",
+            cloudflare_managed_robots(search="no") + f"Sitemap: {SITE}/sitemap.xml\n",
+        )
+
+        report = seo_health.audit_site(SITE, indexnow_key=KEY, sample_size=10, fetcher=FakeFetcher(routes))
+
+        self.assertFalse(report["ok"])
+        self.assertIn("managed_search_disabled", {item["code"] for item in report["failures"]})
+        self.assertEqual(2, report["metrics"]["sitemap"]["validated_shards"])
+
+    def test_cloudflare_managed_wildcard_root_block_still_fails(self) -> None:
+        routes = healthy_routes()
+        routes[SITE + "/robots.txt"] = result(
+            200,
+            SITE + "/robots.txt",
+            cloudflare_managed_robots(wildcard_rule="Disallow: /") + f"Sitemap: {SITE}/sitemap.xml\n",
+        )
+
+        report = seo_health.audit_site(SITE, indexnow_key=KEY, sample_size=10, fetcher=FakeFetcher(routes))
+
+        self.assertFalse(report["ok"])
+        self.assertIn("wildcard_root_blocked", {item["code"] for item in report["failures"]})
+
+    def test_self_managed_robots_without_sitemap_still_fails(self) -> None:
+        routes = healthy_routes()
+        routes[SITE + "/robots.txt"] = result(200, SITE + "/robots.txt", "User-agent: *\nAllow: /\n")
+
+        report = seo_health.audit_site(SITE, indexnow_key=KEY, sample_size=10, fetcher=FakeFetcher(routes))
+
+        self.assertFalse(report["ok"])
+        self.assertFalse(report["metrics"]["robots"]["managed_by_cloudflare"])
+        self.assertTrue(
+            {"sitemap_missing", "canonical_sitemap_missing"}
+            <= {item["code"] for item in report["failures"]}
+        )
 
     def test_failures_are_classified_without_following_alias(self) -> None:
         routes = healthy_routes()

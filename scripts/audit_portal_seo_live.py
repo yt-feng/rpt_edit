@@ -220,6 +220,33 @@ def robots_directives(text: str) -> tuple[list[str], bool]:
     return sitemap_urls, wildcard_disallows_root
 
 
+def cloudflare_managed_robots_search_signal(text: str) -> tuple[bool, str]:
+    """Return whether Cloudflare owns the robots block and its wildcard search signal."""
+    managed = bool(
+        re.search(r"(?im)^\s*#\s*BEGIN\s+Cloudflare\s+Managed\s+content\s*$", text)
+        and re.search(r"(?im)^\s*#\s*END\s+Cloudflare\s+Managed\s+Content\s*$", text)
+    )
+    if not managed:
+        return False, ""
+
+    active_agents: set[str] = set()
+    search_signal = ""
+    for raw_line in text.splitlines():
+        line = raw_line.split("#", 1)[0].strip()
+        if not line or ":" not in line:
+            continue
+        name, value = (part.strip() for part in line.split(":", 1))
+        lowered = name.lower()
+        if lowered == "user-agent":
+            active_agents = {value.lower()}
+        elif lowered == "content-signal" and "*" in active_agents:
+            for token in value.split(","):
+                key, separator, signal_value = token.partition("=")
+                if separator and key.strip().lower() == "search":
+                    search_signal = signal_value.strip().lower()
+    return True, search_signal
+
+
 def robots_has_noindex(values: list[str], header_value: str = "") -> bool:
     tokens: set[str] = set()
     for value in [*values, header_value]:
@@ -250,10 +277,21 @@ class AuditState:
         self.site_url = site_url
         self.fetcher = fetcher
         self.failures: list[dict[str, str]] = []
+        self.warnings: list[dict[str, str]] = []
         self.request_count = 0
 
     def fail(self, category: str, code: str, message: str, target: str) -> None:
         self.failures.append(
+            {
+                "category": category,
+                "code": code,
+                "message": message,
+                "target": target,
+            }
+        )
+
+    def warn(self, category: str, code: str, message: str, target: str) -> None:
+        self.warnings.append(
             {
                 "category": category,
                 "code": code,
@@ -311,6 +349,9 @@ def audit_site(
     robots_response = state.fetch(robots_url)
     advertised_sitemaps: list[str] = []
     robots_ok = False
+    robots_managed_by_cloudflare = False
+    robots_search_signal = ""
+    robots_sitemap_warning = False
     if robots_response is None:
         pass
     elif robots_response.status != 200:
@@ -320,13 +361,31 @@ def audit_site(
     else:
         robots_text = robots_response.body.decode("utf-8", errors="replace")
         advertised_sitemaps, wildcard_block = robots_directives(robots_text)
+        robots_managed_by_cloudflare, robots_search_signal = cloudflare_managed_robots_search_signal(robots_text)
         robots_ok = True
         if wildcard_block:
             state.fail("robots", "wildcard_root_blocked", "The wildcard crawler group disallows the site root", "/robots.txt")
-        if not advertised_sitemaps:
-            state.fail("robots", "sitemap_missing", "robots.txt does not advertise a discovery file", "/robots.txt")
-        if not any(canonical_identity(url) == canonical_identity(urljoin(canonical_root, "sitemap.xml")) for url in advertised_sitemaps):
-            state.fail("robots", "canonical_sitemap_missing", "robots.txt does not advertise /sitemap.xml", "/robots.txt")
+        if robots_managed_by_cloudflare and robots_search_signal == "no":
+            state.fail(
+                "robots",
+                "managed_search_disabled",
+                "Cloudflare Managed robots explicitly disables search indexing",
+                "/robots.txt",
+            )
+        managed_search_enabled = robots_managed_by_cloudflare and robots_search_signal == "yes"
+        if not advertised_sitemaps and managed_search_enabled:
+            robots_sitemap_warning = True
+            state.warn(
+                "robots",
+                "managed_sitemap_not_advertised",
+                "Cloudflare Managed robots permits search but does not advertise /sitemap.xml; the discovery file is audited independently",
+                "/robots.txt",
+            )
+        else:
+            if not advertised_sitemaps:
+                state.fail("robots", "sitemap_missing", "robots.txt does not advertise a discovery file", "/robots.txt")
+            if not any(canonical_identity(url) == canonical_identity(urljoin(canonical_root, "sitemap.xml")) for url in advertised_sitemaps):
+                state.fail("robots", "canonical_sitemap_missing", "robots.txt does not advertise /sitemap.xml", "/robots.txt")
         for advertised in advertised_sitemaps:
             if not is_same_origin(advertised, canonical_site):
                 state.fail("robots", "off_origin_sitemap", "robots.txt advertises an off-origin discovery file", "/robots.txt")
@@ -511,6 +570,7 @@ def audit_site(
             state.fail("alias", "location_mismatch", "The www alias Location does not equal the canonical root", "www_alias_root")
 
     category_counts = Counter(item["category"] for item in state.failures)
+    warning_counts = Counter(item["category"] for item in state.warnings)
     category_groups = {
         "robots": {"robots", "transport"},
         "sitemap": {"sitemap", "transport"},
@@ -537,6 +597,13 @@ def audit_site(
             "robots": {
                 "http_ok": robots_ok,
                 "advertised_discovery_files": len(advertised_sitemaps),
+                "managed_by_cloudflare": robots_managed_by_cloudflare,
+                "search_content_signal": robots_search_signal or "unspecified",
+                "canonical_sitemap_advertised": any(
+                    canonical_identity(url) == canonical_identity(urljoin(canonical_root, "sitemap.xml"))
+                    for url in advertised_sitemaps
+                ),
+                "managed_sitemap_warning": robots_sitemap_warning,
             },
             "sitemap": {
                 "root_type": root_sitemap_kind,
@@ -557,6 +624,8 @@ def audit_site(
         },
         "failure_counts": dict(sorted(category_counts.items())),
         "failures": state.failures[:100],
+        "warning_counts": dict(sorted(warning_counts.items())),
+        "warnings": state.warnings[:100],
     }
     return report
 
@@ -576,10 +645,21 @@ def render_markdown(report: dict[str, Any]) -> str:
         f"- Favicon/品牌图标：{'通过' if metrics.get('favicon', {}).get('verified') else '未通过'}",
         f"- www 裸域 301：{'通过' if metrics.get('www_alias', {}).get('status') == 301 and metrics.get('www_alias', {}).get('location_matches_canonical') else '未通过'}",
     ]
+    robots = metrics.get("robots", {})
+    if robots.get("managed_by_cloudflare"):
+        lines.append(
+            f"- Robots 管理层：Cloudflare Managed（search={robots.get('search_content_signal', 'unspecified')}；"
+            f"Sitemap 声明：{'有' if robots.get('canonical_sitemap_advertised') else '无，已独立校验 /sitemap.xml'}）"
+        )
     failures = report.get("failures", [])
     if failures:
         lines.extend(["", "## 故障分类", "", "| 分类 | 代码 | 目标 |", "|---|---|---|"])
         for item in failures:
+            lines.append(f"| {item.get('category', '')} | {item.get('code', '')} | {item.get('target', '')} |")
+    warnings = report.get("warnings", [])
+    if warnings:
+        lines.extend(["", "## 警告", "", "| 分类 | 代码 | 目标 |", "|---|---|---|"])
+        for item in warnings:
             lines.append(f"| {item.get('category', '')} | {item.get('code', '')} | {item.get('target', '')} |")
     return "\n".join(lines) + "\n"
 
