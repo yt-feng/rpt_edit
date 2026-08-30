@@ -20,6 +20,12 @@ from pathlib import Path
 from typing import Any, Iterable
 from urllib.parse import urlsplit
 
+from build_portal_suite_site import (
+    INSTITUTION_HUBS,
+    TOPIC_HUBS,
+    normalized_alias_matches,
+)
+
 
 PRIMARY_PREFIX = "_analytics/events"
 BACKUP_PREFIX = "_analytics_backup/events"
@@ -57,6 +63,67 @@ SOCIAL_HOST_RE = re.compile(
     re.IGNORECASE,
 )
 EXTERNAL_CHANNELS = {"organic_search", "ai_referral", "referral", "social", "email", "campaign"}
+
+# These aliases only classify aggregate on-site search demand.  The output uses
+# the canonical TOPIC_HUBS labels and never carries the matched search text into
+# the generated review.  Latin abbreviations are matched through
+# normalized_alias_matches(), which requires short codes such as AI / EV / ESG
+# to be complete tokens.
+TOPIC_DEMAND_ALIASES: dict[str, tuple[str, ...]] = {
+    "macro-fx-rates": (
+        "macro", "macroeconomics", "fx", "forex", "foreign exchange", "rates",
+        "fixed income", "bond", "bonds", "宏观", "外汇", "汇率", "利率", "债券", "固收",
+    ),
+    "equity-strategy": (
+        "equity strategy", "equities", "equity", "stock strategy", "asset allocation",
+        "valuation", "股票策略", "权益策略", "股票", "权益", "资产配置", "估值",
+    ),
+    "tech-ai-semis": (
+        "technology", "tech", "ai", "artificial intelligence", "semis", "semiconductor",
+        "semiconductors", "chip", "chips", "科技", "人工智能", "半导体", "芯片",
+    ),
+    "internet-media": (
+        "internet", "media", "ecommerce", "e commerce", "gaming", "games",
+        "互联网", "媒体", "电商", "游戏",
+    ),
+    "autos-ev-batteries": (
+        "autos", "auto", "automotive", "automobile", "ev", "electric vehicle",
+        "electric vehicles", "battery", "batteries", "汽车", "电动车", "新能源汽车", "电池",
+    ),
+    "energy-utilities": (
+        "energy", "utilities", "utility", "oil", "crude", "natural gas", "power",
+        "能源", "公用事业", "原油", "石油", "天然气", "电力",
+    ),
+    "metals-mining": (
+        "metals", "metal", "mining", "copper", "gold", "金属", "矿业", "铜", "黄金",
+    ),
+    "healthcare-biotech": (
+        "healthcare", "health care", "biotech", "biotechnology", "pharma",
+        "pharmaceutical", "医疗", "医药", "生物科技", "制药",
+    ),
+    "consumer-retail": (
+        "consumer", "retail", "brand", "brands", "消费", "零售", "品牌",
+    ),
+    "banks-financials": (
+        "banks", "bank", "banking", "financials", "insurance", "broker", "brokers",
+        "银行", "金融", "保险", "券商",
+    ),
+    "real-estate": (
+        "real estate", "property", "housing", "房地产", "房产", "住房", "物业",
+    ),
+    "industrials-capex": (
+        "industrials", "industrial", "manufacturing", "capex", "capital expenditure",
+        "工业", "制造业", "资本开支",
+    ),
+    "policy-geopolitics": (
+        "policy", "geopolitics", "geopolitical", "tariff", "tariffs",
+        "政策", "地缘政治", "关税",
+    ),
+    "esg-climate": (
+        "esg", "climate", "carbon", "sustainability", "sustainable", "decarbonization",
+        "环境社会治理", "气候", "碳中和", "可持续",
+    ),
+}
 
 
 def clean_text(value: Any, limit: int = 240) -> str:
@@ -428,19 +495,104 @@ def public_landing_rows(
     return rows[:limit]
 
 
+def normalized_search_intent_query(event: dict[str, Any]) -> str:
+    return re.sub(r"\s+", " ", clean_text(event.get("query"), 240).lower())
+
+
+def search_intent_time_bucket(event: dict[str, Any]) -> str:
+    instant = parse_instant(event.get("ts"))
+    return str(int(instant.timestamp() // 60)) if instant else clean_text(event.get("ts"), 16)
+
+
 def search_intent_count(events: Iterable[dict[str, Any]]) -> int:
-    intents: set[str] = set()
+    intents: set[tuple[str, str, str]] = set()
     for event in events:
         if clean_text(event.get("type"), 80).lower() != "search":
             continue
         if is_bot_event(event):
             continue
         session = clean_text(event.get("session_id"), 160) or visitor_key(event)
-        query = re.sub(r"\s+", " ", clean_text(event.get("query"), 240).lower())
-        instant = parse_instant(event.get("ts"))
-        bucket = int(instant.timestamp() // 60) if instant else clean_text(event.get("ts"), 16)
-        intents.add(f"{session}\u001f{query}\u001f{bucket}")
+        query = normalized_search_intent_query(event)
+        bucket = search_intent_time_bucket(event)
+        intents.add((session, query, bucket))
     return len(intents)
+
+
+def institution_demand_labels(query: str) -> tuple[str, ...]:
+    labels = []
+    for definition in INSTITUTION_HUBS:
+        if any(normalized_alias_matches(query, str(alias)) for alias in definition["aliases"]):
+            labels.append(f"{definition['name']} · {definition['name_zh']}")
+    return tuple(labels)
+
+
+def topic_demand_labels(query: str) -> tuple[str, ...]:
+    labels = []
+    for definition in TOPIC_HUBS:
+        aliases = (
+            str(definition["label"]),
+            str(definition["name_zh"]),
+            *(part.strip() for part in str(definition["keywords"]).split(",") if part.strip()),
+            *TOPIC_DEMAND_ALIASES.get(str(definition["slug"]), ()),
+        )
+        if any(normalized_alias_matches(query, alias) for alias in aliases):
+            labels.append(str(definition["label"]))
+    return tuple(labels)
+
+
+def public_search_demand(
+    sessions: Iterable[Session],
+    min_count: int = 2,
+) -> dict[str, Any]:
+    """Aggregate on-site searches without returning search or identity text."""
+    session_rows = {session.key: session for session in sessions}
+    unique_intents: dict[tuple[str, str, str], tuple[str, str]] = {}
+    for session in session_rows.values():
+        for event in session.events:
+            if clean_text(event.get("type"), 80).lower() != "search":
+                continue
+            query = normalized_search_intent_query(event)
+            bucket = search_intent_time_bucket(event)
+            unique_intents[(session.key, query, bucket)] = (session.key, query)
+
+    institutions: dict[str, set[tuple[str, str, str]]] = defaultdict(set)
+    topics: dict[str, set[tuple[str, str, str]]] = defaultdict(set)
+    uncategorized = 0
+    for intent_key, (_, query) in unique_intents.items():
+        institution_labels = institution_demand_labels(query)
+        topic_labels = topic_demand_labels(query)
+        if not institution_labels and not topic_labels:
+            uncategorized += 1
+        for label in institution_labels:
+            institutions[label].add(intent_key)
+        for label in topic_labels:
+            topics[label].add(intent_key)
+
+    def rows_for(grouped: dict[str, set[tuple[str, str, str]]]) -> list[dict[str, Any]]:
+        rows = []
+        for label, intent_keys in grouped.items():
+            if len(intent_keys) < min_count:
+                continue
+            searching_session_keys = {intent_key[0] for intent_key in intent_keys}
+            searching_sessions = [session_rows[key] for key in searching_session_keys if key in session_rows]
+            rows.append({
+                "label": label,
+                "intent_count": len(intent_keys),
+                "searching_sessions": len(searching_sessions),
+                "report_open_sessions": sum(session.has("report_open") for session in searching_sessions),
+                "download_success_sessions": sum(session.has("download_success") for session in searching_sessions),
+                "registration_sessions": sum(session.successful_registration() for session in searching_sessions),
+            })
+        rows.sort(key=lambda row: (-row["intent_count"], row["label"]))
+        return rows
+
+    return {
+        "minimum_intent_count": min_count,
+        "total_deduplicated_intents": len(unique_intents),
+        "uncategorized_intents": uncategorized,
+        "institutions": rows_for(institutions),
+        "topics": rows_for(topics),
+    }
 
 
 def daily_rows(
@@ -767,6 +919,7 @@ def build_growth_review(
             {"step": "registration_sessions", "sessions": totals["registration_sessions"], "rate_from_landing": safe_rate(totals["registration_sessions"], totals["sessions"])},
         ],
         "acquisition_channels": channels,
+        "onsite_search_demand": public_search_demand(session_rows, min_count),
         "top_landing_pages": public_landing_rows(session_rows, site_hosts, min_count),
         "daily": daily_rows(session_rows, rows, start, end, site_hosts),
         "retention": retention_rows(session_rows, start, end),
@@ -793,6 +946,7 @@ def build_growth_review(
             "notes": [
                 "Known bots and administrative events are excluded from product growth metrics.",
                 "Search intents are deduplicated by session, normalized query, and one-minute time bucket.",
+                "On-site search demand uses overlapping controlled institution and topic labels; raw queries are discarded from output.",
                 "External search keywords and AI prompts are not available in site analytics.",
                 "No purchase or revenue event exists, so this report cannot attribute revenue.",
             ],
@@ -830,6 +984,31 @@ def markdown_summary(review: dict[str, Any]) -> str:
             f"| {row['channel']} | {row['sessions']} | {row['engaged_sessions']} | "
             f"{row['report_open_sessions']} | {row['download_success_sessions']} |"
         )
+    demand = review.get("onsite_search_demand", {})
+    lines.extend([
+        "",
+        "## 站内搜索需求",
+        "",
+        f"共 {demand.get('total_deduplicated_intents', 0)} 个去重意图；"
+        f"未归入受控机构或主题词表的意图 {demand.get('uncategorized_intents', 0)} 个。",
+    ])
+    for title, key in (("机构", "institutions"), ("主题", "topics")):
+        lines.extend([
+            "",
+            f"### {title}",
+            "",
+            f"| {title} | 意图 | 搜索会话 | 报告打开会话 | 下载成功会话 | 注册会话 |",
+            "|---|---:|---:|---:|---:|---:|",
+        ])
+        dimension_rows = demand.get(key, [])
+        if not dimension_rows:
+            lines.append("| 未达到展示阈值 | 0 | 0 | 0 | 0 | 0 |")
+        for row in dimension_rows:
+            lines.append(
+                f"| {row['label']} | {row['intent_count']} | {row['searching_sessions']} | "
+                f"{row['report_open_sessions']} | {row['download_success_sessions']} | "
+                f"{row['registration_sessions']} |"
+            )
     lines.extend(["", "## 发布动作复盘", ""])
     impacts = review.get("action_impacts", [])
     if not impacts:

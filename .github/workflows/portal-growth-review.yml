@@ -31,6 +31,7 @@ jobs:
         with:
           sparse-checkout: |
             scripts/summarize_portal_growth_range.py
+            scripts/build_portal_suite_site.py
             portal_suite/growth_actions.json
           sparse-checkout-cone-mode: false
 

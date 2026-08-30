@@ -125,6 +125,108 @@ class GrowthReviewTest(unittest.TestCase):
         third["ts"] = "2026-08-12T09:02:00+08:00"
         self.assertEqual(growth.search_intent_count([first, second, third]), 2)
 
+    def test_controlled_search_dimensions_use_builder_aliases_and_word_boundaries(self) -> None:
+        self.assertEqual(len(growth.INSTITUTION_HUBS), 12)
+        self.assertEqual(len(growth.TOPIC_HUBS), 14)
+        self.assertIn("Morgan Stanley · 摩根士丹利", growth.institution_demand_labels("MS AI outlook"))
+        self.assertIn("Bernstein Research · 伯恩斯坦", growth.institution_demand_labels("伯恩斯坦 半导体"))
+        self.assertNotIn(
+            "Morgan Stanley · 摩根士丹利",
+            growth.institution_demand_labels("semis outlook"),
+            "the short MS code must not match inside semis",
+        )
+        topic_labels = growth.topic_demand_labels("Goldman Sachs real estate policy and AI")
+        self.assertIn("Real Estate", topic_labels)
+        self.assertIn("Policy / Geopolitics", topic_labels)
+        self.assertIn("Tech / AI / Semis", topic_labels)
+
+    def test_search_demand_is_overlapping_funnel_aggregate_without_private_text(self) -> None:
+        private_query = "Goldman Sachs AI private-demand-needle"
+        first = event(
+            "search-source-a",
+            "2026-08-12",
+            "private-search-session-a",
+            "private-search-visitor-a",
+            event_type="search",
+            query=private_query,
+            source="current_catalog",
+            referrer="https://search.example/private-referrer-path",
+            user_agent="private-demand-user-agent",
+        )
+        fanout = dict(first, id="search-source-b", source="archive_catalog")
+        fanout["ts"] = "2026-08-12T09:00:37+08:00"
+        rows = [
+            first,
+            fanout,
+            event("open-a", "2026-08-12", "private-search-session-a", "private-search-visitor-a", event_type="report_open"),
+            event("download-a", "2026-08-12", "private-search-session-a", "private-search-visitor-a", event_type="download_success"),
+            event(
+                "register-a",
+                "2026-08-12",
+                "private-search-session-a",
+                "private-search-visitor-a",
+                event_type="account_auth",
+                action="register",
+                status="success",
+            ),
+            event(
+                "search-second-session",
+                "2026-08-12",
+                "private-search-session-b",
+                "private-search-visitor-b",
+                event_type="search",
+                query=private_query,
+            ),
+            event(
+                "search-uncategorized",
+                "2026-08-12",
+                "private-search-session-c",
+                "private-search-visitor-c",
+                event_type="search",
+                query="private-uncategorized-needle",
+            ),
+        ]
+        review = growth.build_growth_review(rows, "2026-08-12", "2026-08-12")
+        demand = review["onsite_search_demand"]
+        self.assertEqual(demand["minimum_intent_count"], 2)
+        self.assertEqual(demand["total_deduplicated_intents"], 3)
+        self.assertEqual(demand["uncategorized_intents"], 1)
+        institution = demand["institutions"][0]
+        topic = demand["topics"][0]
+        expected_keys = {
+            "label",
+            "intent_count",
+            "searching_sessions",
+            "report_open_sessions",
+            "download_success_sessions",
+            "registration_sessions",
+        }
+        self.assertEqual(set(institution), expected_keys)
+        self.assertEqual(set(topic), expected_keys)
+        self.assertEqual(institution["label"], "Goldman Sachs · 高盛")
+        self.assertEqual(topic["label"], "Tech / AI / Semis")
+        for row in (institution, topic):
+            self.assertEqual(row["intent_count"], 2, "two fanout events in one minute are one intent")
+            self.assertEqual(row["searching_sessions"], 2)
+            self.assertEqual(row["report_open_sessions"], 1)
+            self.assertEqual(row["download_success_sessions"], 1)
+            self.assertEqual(row["registration_sessions"], 1)
+
+        serialized = json.dumps(review, ensure_ascii=False)
+        markdown = growth.markdown_summary(review)
+        for private_value in (
+            private_query,
+            "private-uncategorized-needle",
+            "private-search-session-a",
+            "private-search-visitor-a",
+            "private-referrer-path",
+            "private-demand-user-agent",
+            "current_catalog",
+            "archive_catalog",
+        ):
+            self.assertNotIn(private_value, serialized)
+            self.assertNotIn(private_value, markdown)
+
     def test_d1_and_d7_only_use_eligible_new_visitor_cohorts(self) -> None:
         rows = [
             event("d0", "2026-08-01", "new-d0", "new-visitor", returning=False),
