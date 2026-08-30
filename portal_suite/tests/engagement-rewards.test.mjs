@@ -1393,6 +1393,11 @@ test("report chat gives anonymous devices and registered free accounts one lifet
   });
   assert.equal(missingDevice.response.status, 400);
   assert.equal(missingDevice.data.stage_code, "DEVICE_ID_REQUIRED");
+  assert.equal(
+    [...bucket.rows.keys()].some((key) => key.startsWith("_report-chat-archive/v1/items/")),
+    false,
+    "an invalid request without a device id is not a usage record",
+  );
   const visitorId = "visitor-anon-0001";
   const anonymous = await jsonRequest(env, "/report-chat", {
     method: "POST",

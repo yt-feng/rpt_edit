@@ -21,3 +21,10 @@ test("Worker emergency release preserves Cron triggers through versioned deploym
   assert.match(workflow, /HOT_REPORT_CLEANUP_ENABLED:\s*\$\{\{ vars\.HOT_REPORT_CLEANUP_ENABLED \|\| 'false' \}\}/gu);
   assert.match(workflow, /HOT_REPORT_CLEANUP_ENABLED = "\$HOT_REPORT_CLEANUP_ENABLED"/gu);
 });
+
+test("Worker smoke accepts anonymous Report Chat and fails before model work without a device id", () => {
+  assert.match(workflow, /--data '\{"question":"AI research"\}'/gu);
+  assert.match(workflow, /test "\$code" = 400/gu);
+  assert.match(workflow, /payload\.get\("stage_code"\) != "DEVICE_ID_REQUIRED"/gu);
+  assert.doesNotMatch(workflow, /api-anonymous-chat\.json[\s\S]{0,180}test "\$code" = 401/gu);
+});

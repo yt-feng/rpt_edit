@@ -14902,6 +14902,13 @@ async function handleReportChat(request, env, ctx) {
           : /changed concurrently/i.test(message)
             ? "USAGE_BUSY"
             : "CHAT_SERVICE";
+    if (stageCode === "DEVICE_ID_REQUIRED") {
+      return privateJsonResponse(request, env, 400, {
+        detail: "请刷新页面后重试。",
+        stage_code: stageCode,
+        request_hint: requestHint,
+      });
+    }
     if (turnReserved && !turnCommitted && policy) {
       try {
         usage = await releaseReportChatPolicyTurn(env, policy);
