@@ -104,6 +104,9 @@ LLMS_BLOG_LIMIT = 50
 CATALOG_PREVIEW_LIMIT = 40
 REPORT_DETAIL_SHARD_PREFIX_LENGTH = 2
 BERNSTEIN_PAGE_PATH = "reports/institutions/bernstein/"
+# Bump only when canonical SEO page templates materially change. This is a
+# stable release revision, not the date on which a build happens to run.
+SEO_PAGE_TEMPLATE_REVISION_DATE = "2026-08-30"
 SEARCH_INDEX_SHARD_MAX_BYTES = 3 * 1024 * 1024
 BLOG_START_DATE = "2026-07-27"
 BLOG_PUBLIC_BRAND = "KC桌面"
@@ -1192,6 +1195,54 @@ def item_lastmod(item: dict[str, Any], fallback: str = "") -> str:
     )
 
 
+def valid_page_date(value: str) -> str:
+    candidate = bjt_timestamp_to_date(value)
+    if not candidate:
+        return ""
+    try:
+        return date.fromisoformat(candidate).isoformat()
+    except ValueError:
+        return ""
+
+
+def page_template_lastmod(*source_dates: str) -> str:
+    candidates = [SEO_PAGE_TEMPLATE_REVISION_DATE]
+    candidates.extend(
+        valid
+        for value in source_dates
+        if (valid := valid_page_date(str(value or "")))
+    )
+    return max(candidates)
+
+
+def report_page_lastmod(item: dict[str, Any]) -> str:
+    """Return report source freshness with the stable template revision floor."""
+    return page_template_lastmod(item_lastmod(item))
+
+
+def blog_source_lastmod(article: dict[str, Any]) -> str:
+    return (
+        valid_page_date(str(article.get("last_date") or ""))
+        or valid_page_date(str(article.get("date") or ""))
+    )
+
+
+def blog_page_lastmod(article: dict[str, Any]) -> str:
+    """Return canonical Blog source freshness with the template revision floor."""
+    return page_template_lastmod(blog_source_lastmod(article))
+
+
+def hub_page_lastmod(
+    items: list[dict[str, Any]],
+    blog_articles: list[dict[str, Any]] | None = None,
+) -> str:
+    """Return freshness for a canonical collection page and all its sources."""
+    return page_template_lastmod(
+        *(item_lastmod(item) for item in items),
+        *(blog_source_lastmod(article) for article in (blog_articles or [])),
+    )
+
+
 def xml_escape(value: str) -> str:
     return html_escape(str(value or ""), quote=True)
 
@@ -1588,7 +1639,7 @@ def render_report_seo_page(
     citable_summary = report_citable_summary(item)
     date_iso = date_folder_to_iso(str(item.get("date_folder") or ""))
     published_date = item_published_date(item)
-    lastmod = item_lastmod(item, generated_date)
+    lastmod = report_page_lastmod(item)
     institution = item_institution(item)
     industry = item_industry(item)
     institution_schema = item_institution_schema(item, base_url)
@@ -1812,6 +1863,7 @@ def render_reports_index(
     start = (page_number - 1) * page_size
     page_items = sorted_items[start:start + page_size]
     canonical = url_join(base_url, collection_page_path("reports", page_number))
+    lastmod = hub_page_lastmod(items)
     page_suffix = "" if page_number == 1 else f" · 第 {page_number} 页"
     rows = []
     for item in page_items:
@@ -1843,7 +1895,7 @@ def render_reports_index(
         "name": f"{BLOG_PUBLIC_BRAND} 报告索引{page_suffix}",
         "description": description,
         "url": canonical,
-        "dateModified": generated_date,
+        "dateModified": lastmod,
         "inLanguage": "zh-Hans",
         "isPartOf": {"@id": f"{url_join(base_url, '/')}#website"},
     }
@@ -2040,6 +2092,36 @@ def render_related_article_block(
     )
 
 
+def institution_hub_related_articles(
+    definition: dict[str, Any],
+    blog_articles: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    return [
+        article
+        for article in blog_articles
+        if any(normalized_alias_matches(blog_article_text(article), str(alias)) for alias in definition["aliases"])
+    ]
+
+
+def topic_hub_related_articles(
+    definition: dict[str, str],
+    blog_articles: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    topic_pattern = next(
+        (
+            pattern
+            for label, pattern in SEO_INDUSTRY_RULES
+            if normalize_search_text(label) == normalize_search_text(definition["label"])
+        ),
+        None,
+    )
+    return [
+        article
+        for article in blog_articles
+        if topic_pattern and topic_pattern.search(blog_article_text(article))
+    ]
+
+
 def render_institution_hub(
     definition: dict[str, Any],
     institution_items: list[dict[str, Any]],
@@ -2050,13 +2132,9 @@ def render_institution_hub(
     canonical = url_join(base_url, institution_hub_path(definition))
     institution_items = sorted_hub_items(institution_items, generated_date)
     latest_items = institution_items[:100]
-    lastmod = max((item_lastmod(item, generated_date) for item in institution_items), default=generated_date)
     topic_groups = report_aggregation_groups(institution_items, item_industry, minimum_size=1, limit=16)
-    related_articles = [
-        article
-        for article in blog_articles
-        if any(normalized_alias_matches(blog_article_text(article), str(alias)) for alias in definition["aliases"])
-    ]
+    related_articles = institution_hub_related_articles(definition, blog_articles)
+    lastmod = hub_page_lastmod(institution_items, related_articles)
     is_bernstein = definition["slug"] == "bernstein"
     name = str(definition["name"])
     name_zh = str(definition["name_zh"])
@@ -2220,7 +2298,6 @@ def render_topic_hub(
     canonical = url_join(base_url, topic_hub_path(definition))
     topic_items = sorted_hub_items(topic_items, generated_date)
     latest_items = topic_items[:100]
-    lastmod = max((item_lastmod(item, generated_date) for item in topic_items), default=generated_date)
     name = definition["label"]
     name_zh = definition["name_zh"]
     heading = f"{name_zh}研报（{name}）"
@@ -2235,14 +2312,8 @@ def render_topic_hub(
         "</li>"
         for item in latest_items
     ]
-    topic_pattern = next(
-        (pattern for label, pattern in SEO_INDUSTRY_RULES if normalize_search_text(label) == normalize_search_text(name)),
-        None,
-    )
-    related_articles = [
-        article for article in blog_articles
-        if topic_pattern and topic_pattern.search(blog_article_text(article))
-    ]
+    related_articles = topic_hub_related_articles(definition, blog_articles)
+    lastmod = hub_page_lastmod(topic_items, related_articles)
     article_block = render_related_article_block(related_articles, base_url, f"{name_zh}相关中文文章")
     json_ld = {
         "@context": "https://schema.org",
@@ -2344,6 +2415,7 @@ def render_topic_hub(
 
 def render_report_topic_hub(items: list[dict[str, Any]], base_url: str, generated_date: str) -> str:
     canonical = url_join(base_url, "reports/topics.html")
+    lastmod = hub_page_lastmod(items)
     # Every report detail links to one institution and one topic anchor. Keep
     # even one-report groups so those crawlable internal links always land on
     # a real section instead of a fragment that was filtered out.
@@ -2403,7 +2475,7 @@ def render_report_topic_hub(items: list[dict[str, Any]], base_url: str, generate
                 "name": f"投行研报机构与主题导航 | {BLOG_PUBLIC_BRAND}",
                 "description": "按研究机构与金融主题浏览中英文投行研报元数据。",
                 "url": canonical,
-                "dateModified": generated_date,
+                "dateModified": lastmod,
                 "inLanguage": "zh-Hans",
                 "about": groups_for_schema,
                 "isPartOf": {"@id": f"{url_join(base_url, '/')}#website"},
@@ -3646,6 +3718,7 @@ def render_blog_index(
 
 def render_blog_article(article: dict[str, Any], base_url: str) -> str:
     canonical = url_join(base_url, f'blog/{article["slug"]}.html')
+    lastmod = blog_page_lastmod(article)
     title = blog_public_title(str(article.get("title") or ""))
     digest = blog_public_digest(str(article.get("digest") or ""))
     seo_description = blog_seo_description(digest)
@@ -3708,7 +3781,7 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
         "headline": title,
         "description": seo_description,
         "datePublished": article["date"],
-        "dateModified": article.get("last_date") or article["date"],
+        "dateModified": lastmod,
         "url": canonical,
         "mainEntityOfPage": {"@id": f"{canonical}#webpage"},
         "inLanguage": "zh-Hans",
@@ -3764,7 +3837,7 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
                 "name": title,
                 "description": seo_description,
                 "url": canonical,
-                "dateModified": article.get("last_date") or article["date"],
+                "dateModified": lastmod,
                 "inLanguage": "zh-Hans",
                 "mainEntity": {"@id": f"{canonical}#article"},
                 "isPartOf": {"@id": f"{url_join(base_url, '/')}#website"},
@@ -3965,9 +4038,10 @@ def build_seo_outputs(
         )
     write_text(output / "about.html", render_about_page(base_url, generated_date))
 
+    report_collection_lastmod = hub_page_lastmod(report_items)
     blog_lastmod = max(
-        (str(article.get("last_date") or article.get("date") or "") for article in blog_articles),
-        default=generated_date,
+        (blog_page_lastmod(article) for article in blog_articles),
+        default=SEO_PAGE_TEMPLATE_REVISION_DATE,
     )
     blog_index_pages = page_count(len(blog_articles), BLOG_INDEX_PAGE_SIZE)
     terms_lastmod = policy_page_lastmod(output, "terms.html")
@@ -3977,16 +4051,19 @@ def build_seo_outputs(
         *[
             sitemap_url(
                 url_join(base_url, collection_page_path("reports", page_number)),
-                generated_date,
+                report_collection_lastmod,
                 "0.9" if page_number == 1 else "0.7",
             )
             for page_number in range(1, report_index_pages + 1)
         ],
-        sitemap_url(url_join(base_url, "reports/topics.html"), generated_date, "0.8"),
+        sitemap_url(url_join(base_url, "reports/topics.html"), report_collection_lastmod, "0.8"),
         *[
             sitemap_url(
                 url_join(base_url, institution_hub_path(definition)),
-                max(item_lastmod(item, generated_date) for item in group_items),
+                hub_page_lastmod(
+                    group_items,
+                    institution_hub_related_articles(definition, blog_articles),
+                ),
                 "0.9",
             )
             for definition, group_items in institution_groups
@@ -3994,7 +4071,10 @@ def build_seo_outputs(
         *[
             sitemap_url(
                 url_join(base_url, topic_hub_path(definition)),
-                max(item_lastmod(item, generated_date) for item in group_items),
+                hub_page_lastmod(
+                    group_items,
+                    topic_hub_related_articles(definition, blog_articles),
+                ),
                 "0.8",
             )
             for definition, group_items in topic_groups
@@ -4022,7 +4102,7 @@ def build_seo_outputs(
         rows = [
             sitemap_url(
                 url_join(base_url, report_seo_path(str(item.get("id")))),
-                item_lastmod(item, generated_date),
+                report_page_lastmod(item),
                 "0.8" if item.get("available") else "0.6",
             )
             for item in chunk
@@ -4036,7 +4116,7 @@ def build_seo_outputs(
         rows = [
             sitemap_url(
                 url_join(base_url, f'blog/{article["slug"]}.html'),
-                str(article.get("last_date") or article.get("date") or generated_date),
+                blog_page_lastmod(article),
                 "0.7",
             )
             for article in chunk
@@ -4065,7 +4145,7 @@ def build_seo_outputs(
     cn_rows.extend(
         sitemap_url(
             url_join(base_url, report_seo_path(str(item.get("id")))),
-            item_lastmod(item, generated_date),
+            report_page_lastmod(item),
             "0.8" if item.get("available") else "0.6",
         )
         for item in report_items
@@ -4073,7 +4153,7 @@ def build_seo_outputs(
     cn_rows.extend(
         sitemap_url(
             url_join(base_url, f'blog/{article["slug"]}.html'),
-            str(article.get("last_date") or article.get("date") or generated_date),
+            blog_page_lastmod(article),
             "0.7",
         )
         for article in blog_articles

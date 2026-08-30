@@ -50,6 +50,14 @@ def graph_node(schema: dict, schema_type: str) -> dict:
     raise AssertionError(f"JSON-LD graph does not contain {schema_type}")
 
 
+def sitemap_lastmods(path: Path) -> dict[str, str]:
+    root = ET.parse(path).getroot()
+    return {
+        str(row.findtext("./{*}loc") or ""): str(row.findtext("./{*}lastmod") or "")
+        for row in root.findall("./{*}url")
+    }
+
+
 class SeoOutputTests(unittest.TestCase):
     def setUp(self) -> None:
         self.catalog = {
@@ -205,7 +213,7 @@ class SeoOutputTests(unittest.TestCase):
             self.assertIn("仅汇总机构字段命中Goldman Sachs及其别名的公开报告", goldman_hub)
             self.assertIn('<link rel="icon" href="/favicon.svg" type="image/svg+xml">', goldman_hub)
             goldman_schema = first_json_ld(goldman_hub)
-            self.assertEqual("2026-07-29", graph_node(goldman_schema, "CollectionPage")["dateModified"])
+            self.assertEqual("2026-08-30", graph_node(goldman_schema, "CollectionPage")["dateModified"])
             self.assertEqual(100, graph_node(goldman_schema, "ItemList")["numberOfItems"])
             graph_node(goldman_schema, "BreadcrumbList")
 
@@ -249,7 +257,7 @@ class SeoOutputTests(unittest.TestCase):
             sitemap_pages = (output / "sitemap-pages.xml").read_text(encoding="utf-8")
             self.assertIn(
                 "<loc>https://portal.example.invalid/reports/institutions/goldman-sachs/</loc>\n"
-                "    <lastmod>2026-07-29</lastmod>",
+                "    <lastmod>2026-08-30</lastmod>",
                 sitemap_pages,
             )
             self.assertIn("/reports/topics/tech-ai-semis/", sitemap_pages)
@@ -304,6 +312,73 @@ class SeoOutputTests(unittest.TestCase):
         blog_article = builder.render_blog_article(article, "https://portal.example.invalid")
         for page in (blog_index, blog_article):
             self.assertIn('<link rel="icon" href="/favicon.svg" type="image/svg+xml">', page)
+
+    def test_canonical_page_lastmods_share_a_stable_template_floor(self) -> None:
+        old_report = sample_item("old-report", "高盛全球利率展望", "2026-07-17")
+        old_article = {
+            "slug": "goldman-ai-old",
+            "legacy_slugs": ["goldman-ai-old-legacy"],
+            "title": "高盛人工智能行业观察",
+            "digest": "研究观点摘要。",
+            "content": "<p>Goldman Sachs AI research.</p>",
+            "date": "2026-07-30",
+            "last_date": "2026-07-30",
+            "keywords": [],
+        }
+        self.assertEqual("2026-07-17", builder.item_lastmod(old_report))
+        self.assertEqual("2026-08-30", builder.report_page_lastmod(old_report))
+        self.assertEqual("2026-08-30", builder.blog_page_lastmod(old_article))
+        self.assertEqual("2026-08-30", builder.hub_page_lastmod([old_report], [old_article]))
+
+        future_report = dict(old_report, server_modified="2026-09-02T08:00:00Z")
+        future_article = dict(old_article, last_date="2026-09-03")
+        self.assertEqual("2026-09-02", builder.report_page_lastmod(future_report))
+        self.assertEqual("2026-09-03", builder.blog_page_lastmod(future_article))
+        self.assertEqual("2026-09-03", builder.hub_page_lastmod([future_report], [future_article]))
+
+        report_page = builder.render_report_seo_page(
+            old_report,
+            "https://portal.example.invalid",
+            "2027-01-15",
+        )
+        report_schema = first_json_ld(report_page)
+        self.assertEqual("2026-08-30", graph_node(report_schema, "Report")["dateModified"])
+        self.assertEqual("2026-08-30", graph_node(report_schema, "WebPage")["dateModified"])
+
+        blog_page = builder.render_blog_article(old_article, "https://portal.example.invalid")
+        blog_schema = first_json_ld(blog_page)
+        self.assertEqual("2026-08-30", graph_node(blog_schema, "BlogPosting")["dateModified"])
+        self.assertEqual("2026-08-30", graph_node(blog_schema, "WebPage")["dateModified"])
+
+        catalog = {
+            "updated_at_bjt": "2027-01-15 09:30:00 +0800",
+            "items": [old_report],
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory)
+            builder.build_seo_outputs(output, catalog, blog_articles=[old_article])
+            report_url = "https://portal.example.invalid/reports/old-report.html"
+            blog_url = "https://portal.example.invalid/blog/goldman-ai-old.html"
+            institution_url = "https://portal.example.invalid/reports/institutions/goldman-sachs/"
+
+            report_sitemap = sitemap_lastmods(output / "sitemap-reports-1.xml")
+            blog_sitemap = sitemap_lastmods(output / "sitemap-blog-1.xml")
+            page_sitemap = sitemap_lastmods(output / "sitemap-pages.xml")
+            baidu_sitemap = sitemap_lastmods(output / "sitemap-baidu.xml")
+            self.assertEqual("2026-08-30", report_sitemap[report_url])
+            self.assertEqual("2026-08-30", blog_sitemap[blog_url])
+            self.assertEqual("2026-08-30", page_sitemap[institution_url])
+            self.assertEqual("2026-08-30", baidu_sitemap[report_url])
+            self.assertEqual("2026-08-30", baidu_sitemap[blog_url])
+
+            hub_schema = first_json_ld(
+                (output / "reports" / "institutions" / "goldman-sachs" / "index.html").read_text(
+                    encoding="utf-8"
+                )
+            )
+            self.assertEqual("2026-08-30", graph_node(hub_schema, "CollectionPage")["dateModified"])
+            for sitemap in (report_sitemap, blog_sitemap, baidu_sitemap):
+                self.assertFalse(any("goldman-ai-old-legacy" in url for url in sitemap))
 
     def test_blog_articles_link_only_to_controlled_related_hubs(self) -> None:
         goldman_article = {
@@ -463,7 +538,7 @@ class SeoOutputTests(unittest.TestCase):
             self.assertNotIn("author", report)
             self.assertNotIn("copyrightHolder", report)
             self.assertNotIn("datePublished", report)
-            self.assertEqual("2026-07-17", report["dateModified"])
+            self.assertEqual("2026-08-30", report["dateModified"])
             self.assertTrue(webpage["isAccessibleForFree"])
             self.assertFalse(report["isAccessibleForFree"])
             self.assertIn(f">{report['abstract']}</p>", page)
@@ -510,7 +585,7 @@ class SeoOutputTests(unittest.TestCase):
         page = builder.render_report_seo_page(item, "https://portal.example.invalid", "2026-07-18")
         report = graph_node(first_json_ld(page), "Report")
         self.assertEqual("2026-07-12", report["datePublished"])
-        self.assertEqual("2026-07-17", report["dateModified"])
+        self.assertEqual("2026-08-30", report["dateModified"])
         self.assertIn("收录日期：2026-07-17", page)
 
         item["published_at"] = "2026-99-42"
