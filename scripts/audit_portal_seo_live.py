@@ -21,6 +21,7 @@ import xml.etree.ElementTree as ET
 
 
 DEFAULT_SITE_URL = "https://portal.example.invalid"
+DEFAULT_INDEXNOW_KEY = "b7c3e9a41d8f52e604a71bc93f2d6e80"
 DEFAULT_SAMPLE_SIZE = 18
 DEFAULT_TIMEOUT_SECONDS = 20.0
 MAX_DOCUMENT_BYTES = 12 * 1024 * 1024
@@ -698,7 +699,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--site-url", default=DEFAULT_SITE_URL, help="Canonical HTTPS site origin")
     parser.add_argument(
         "--indexnow-key",
-        default=os.environ.get("PORTAL_INDEXNOW_KEY", ""),
+        default=os.environ.get("PORTAL_INDEXNOW_KEY", "") or DEFAULT_INDEXNOW_KEY,
         help="Public IndexNow key deployed at the site root",
     )
     parser.add_argument("--sample-size", type=int, default=DEFAULT_SAMPLE_SIZE)

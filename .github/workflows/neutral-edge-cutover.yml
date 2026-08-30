@@ -964,7 +964,6 @@ jobs:
 
       - name: Submit changed public URLs to IndexNow
         if: github.event_name == 'schedule' || inputs.operation == 'migrate'
-        continue-on-error: true
         env:
           PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
         run: |

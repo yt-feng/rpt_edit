@@ -64,7 +64,7 @@ AI discovery is a crawler-access and source-quality problem, not a separate mass
 
 ## Daily health and account handoff
 
-`.github/workflows/portal-seo-health.yml` runs a read-only check every day and on manual dispatch. It receives the production origin and public IndexNow key at runtime, then checks:
+`.github/workflows/portal-seo-health.yml` runs a read-only check every day and on manual dispatch. It receives the production origin at runtime and verifies the public deployment-proof IndexNow key declared in source, then checks:
 
 1. `robots.txt` HTTP 200 and wildcard crawlability; Cloudflare Managed `search=yes` is recorded, while a missing robots Sitemap directive becomes an explicit warning only for that managed response. The canonical `/sitemap.xml`, every declared shard, URL counts, duplicate and off-origin entries are always validated independently.
 2. A deterministic cross-shard HTML sample for HTTP 200, indexability, one self-canonical, and basic JSON-LD.

@@ -36,13 +36,11 @@ jobs:
       - name: Audit public SEO health
         env:
           PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
-          PORTAL_INDEXNOW_KEY: ${{ secrets.PORTAL_INDEXNOW_KEY }}
         run: |
           set -euo pipefail
           mkdir -p private-summary
           python -B scripts/audit_portal_seo_live.py \
             --site-url "$PORTAL_SITE_URL" \
-            --indexnow-key "$PORTAL_INDEXNOW_KEY" \
             --sample-size 18 \
             --output private-summary/seo-health.json \
             --markdown-output private-summary/seo-health.md

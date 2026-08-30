@@ -56,6 +56,16 @@ def write_sitemap(path: Path, rows: dict[str, str]) -> None:
 
 
 class SubmissionPlanTests(unittest.TestCase):
+    def test_release_workflow_fails_closed_when_indexnow_submission_fails(self) -> None:
+        workflow = (
+            Path(__file__).resolve().parents[1] / ".github/workflows/neutral-edge-cutover.yml"
+        ).read_text(encoding="utf-8")
+        start = workflow.index("      - name: Submit changed public URLs to IndexNow\n")
+        end = workflow.index("      - name: Remove private values from persistent source\n", start)
+        step = workflow[start:end]
+        self.assertNotIn("continue-on-error", step)
+        self.assertIn("scripts/submit_portal_indexnow.py", step)
+
     def test_plan_is_a_canonical_delta_and_excludes_legacy_redirects(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             site = Path(directory)

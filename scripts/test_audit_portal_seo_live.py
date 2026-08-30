@@ -127,6 +127,14 @@ def cloudflare_managed_robots(*, search: str = "yes", wildcard_rule: str = "Allo
 
 
 class LiveSeoAuditTests(unittest.TestCase):
+    def test_default_indexnow_key_is_the_public_deployment_proof(self) -> None:
+        self.assertEqual("b7c3e9a41d8f52e604a71bc93f2d6e80", seo_health.DEFAULT_INDEXNOW_KEY)
+        workflow = (
+            Path(__file__).resolve().parents[1] / ".github/workflows/portal-seo-health.yml"
+        ).read_text(encoding="utf-8")
+        self.assertNotIn("secrets.PORTAL_INDEXNOW_KEY", workflow)
+        self.assertNotIn('--indexnow-key "$PORTAL_INDEXNOW_KEY"', workflow)
+
     def test_healthy_site_passes_with_aggregate_metrics(self) -> None:
         fetcher = FakeFetcher(healthy_routes())
 
