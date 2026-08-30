@@ -16,6 +16,7 @@ from typing import Any
 
 API_ROOT = "https://api.cloudflare.com/client/v4"
 LAST_VERIFY_FAILURE = "not_started"
+ALIAS_REDIRECT_PATHS = ("/", "/reports/", "/robots.txt", "/sitemap.xml")
 
 
 class CutoverError(Exception):
@@ -218,16 +219,26 @@ def wait_for_edge(origin: str, *, expected: bool, attempts: int = 120) -> bool:
 
 
 def verify_alias(alias_origin: str, canonical_origin: str) -> bool:
-    # A newly attached alias can still have an older response cached at its
-    # bare root. Probe a unique URL so route verification observes the active
-    # Worker instead of waiting for that response to age out.
-    probe = f"/?__edge_route_verify={time.time_ns()}"
-    status, headers, _body = request_status(alias_origin + probe, method="HEAD")
-    return (
-        status == 301
-        and headers.get("x-origin-class", "").lower() == "edge-static"
-        and headers.get("location", "") == canonical_origin.rstrip("/") + probe
-    )
+    global LAST_VERIFY_FAILURE
+    alias_base = alias_origin.rstrip("/")
+    canonical_base = canonical_origin.rstrip("/")
+    for path in ALIAS_REDIRECT_PATHS:
+        status, headers, _body = request_status(alias_base + path, method="HEAD")
+        expected_location = canonical_base + path
+        if status != 301:
+            LAST_VERIFY_FAILURE = f"HEAD alias {path} status={status} expected=301"
+            return False
+        if headers.get("x-origin-class", "").lower() != "edge-static":
+            LAST_VERIFY_FAILURE = f"HEAD alias {path} missing_edge_origin"
+            return False
+        location = headers.get("location", "")
+        if location != expected_location:
+            LAST_VERIFY_FAILURE = (
+                f"HEAD alias {path} location={location!r} expected={expected_location!r}"
+            )
+            return False
+    LAST_VERIFY_FAILURE = ""
+    return True
 
 
 def wait_for_alias(alias_origin: str, canonical_origin: str, attempts: int = 120) -> bool:
@@ -235,7 +246,10 @@ def wait_for_alias(alias_origin: str, canonical_origin: str, attempts: int = 120
         if verify_alias(alias_origin, canonical_origin):
             return True
         if (attempt + 1) % 12 == 0:
-            print(f"alias verification pending attempt={attempt + 1}", file=sys.stderr)
+            print(
+                f"alias verification pending attempt={attempt + 1}: {LAST_VERIFY_FAILURE}",
+                file=sys.stderr,
+            )
         time.sleep(5)
     return False
 

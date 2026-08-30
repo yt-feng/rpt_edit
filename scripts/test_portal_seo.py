@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from datetime import date
 import json
 from pathlib import Path
 import re
@@ -135,6 +136,175 @@ class SeoOutputTests(unittest.TestCase):
             self.assertIn("/reports/institutions/bernstein/", (output / "llms.txt").read_text(encoding="utf-8"))
             self.assertIn("伯恩斯坦研报（Bernstein Research）", (output / "llms-full.txt").read_text(encoding="utf-8"))
 
+    def test_builds_normalized_institution_and_topic_hubs_without_empty_pages(self) -> None:
+        for definition in builder.INSTITUTION_HUBS:
+            for alias in definition["aliases"]:
+                matched = builder.institution_hub_for_values(str(alias))
+                self.assertIsNotNone(matched, alias)
+                self.assertEqual(definition["slug"], matched["slug"], alias)
+
+        goldman_items = []
+        for index in range(105):
+            item = sample_item(f"gs-{index:03d}", f"人工智能与半导体 {index:03d}", "2026-07-20", "GS")
+            item["bank_name"] = "高盛"
+            item["industry"] = "Tech / AI / Semis"
+            item["server_modified"] = "2026-07-29T08:00:00Z" if index == 104 else "2026-07-20T08:00:00Z"
+            goldman_items.append(item)
+
+        institution_items = []
+        for index, definition in enumerate(
+            item for item in builder.INSTITUTION_HUBS
+            if item["slug"] not in {"goldman-sachs", "hsbc"}
+        ):
+            item = sample_item(
+                f"institution-{index:02d}",
+                f"{definition['name_zh']}宏观研究",
+                "2026-07-21",
+                str(definition["aliases"][-1]),
+            )
+            item["bank_name"] = definition["name_zh"]
+            institution_items.append(item)
+
+        topic_items = []
+        for index, definition in enumerate(
+            item for item in builder.TOPIC_HUBS
+            if item["label"] not in {"Macro / FX / Rates", "Tech / AI / Semis"}
+        ):
+            item = sample_item(f"topic-{index:02d}", f"{definition['name_zh']}行业展望", "2026-07-22", "MS")
+            item["bank_name"] = "摩根士丹利"
+            item["industry"] = definition["label"]
+            topic_items.append(item)
+
+        unknown = sample_item("unknown-other", "跨学科专题观察", "2026-07-23", "XYZ")
+        unknown["bank_name"] = "Arc Research"
+        unknown["industry"] = "Other"
+        catalog = {
+            "updated_at_bjt": "2026-07-30 09:30:00 +0800",
+            "items": [*goldman_items, *institution_items, *topic_items, unknown],
+        }
+        article = {
+            "slug": "goldman-ai-view",
+            "title": "高盛人工智能行业观察",
+            "digest": "Goldman Sachs 对半导体产业链的研究摘要。",
+            "content": "<p>AI and semiconductor research.</p>",
+            "date": "2026-07-30",
+        }
+
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory)
+            builder.build_seo_outputs(output, catalog, blog_articles=[article])
+
+            goldman_hub = (
+                output / "reports" / "institutions" / "goldman-sachs" / "index.html"
+            ).read_text(encoding="utf-8")
+            self.assertIn("高盛研报（Goldman Sachs）", goldman_hub)
+            self.assertIn("当前共 105 篇", goldman_hub)
+            self.assertIn("goldman-ai-view.html", goldman_hub)
+            self.assertIn('<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">', goldman_hub)
+            self.assertIn('<link rel="alternate" hreflang="zh-Hans"', goldman_hub)
+            self.assertIn("仅汇总机构字段命中Goldman Sachs及其别名的公开报告", goldman_hub)
+            self.assertIn('<link rel="icon" href="/favicon.svg" type="image/svg+xml">', goldman_hub)
+            goldman_schema = first_json_ld(goldman_hub)
+            self.assertEqual("2026-07-29", graph_node(goldman_schema, "CollectionPage")["dateModified"])
+            self.assertEqual(100, graph_node(goldman_schema, "ItemList")["numberOfItems"])
+            graph_node(goldman_schema, "BreadcrumbList")
+
+            tech_hub = (
+                output / "reports" / "topics" / "tech-ai-semis" / "index.html"
+            ).read_text(encoding="utf-8")
+            self.assertIn("科技、人工智能与半导体研报（Tech / AI / Semis）", tech_hub)
+            self.assertIn("goldman-ai-view.html", tech_hub)
+            self.assertIn('<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">', tech_hub)
+            self.assertIn('<link rel="alternate" hreflang="x-default"', tech_hub)
+            self.assertIn("本页仅索引被归类为 Tech / AI / Semis 的公开报告", tech_hub)
+            tech_schema = first_json_ld(tech_hub)
+            self.assertEqual(100, graph_node(tech_schema, "ItemList")["numberOfItems"])
+            graph_node(tech_schema, "BreadcrumbList")
+
+            known_report = (output / "reports" / "gs-104.html").read_text(encoding="utf-8")
+            self.assertIn('href="institutions/goldman-sachs/"', known_report)
+            self.assertIn('href="topics/tech-ai-semis/"', known_report)
+            unknown_report = (output / "reports" / "unknown-other.html").read_text(encoding="utf-8")
+            self.assertIn('href="topics.html#institution-', unknown_report)
+            self.assertIn('href="topics.html#topic-', unknown_report)
+
+            navigation = (output / "reports" / "topics.html").read_text(encoding="utf-8")
+            self.assertIn('href="institutions/goldman-sachs/"', navigation)
+            self.assertIn('href="topics/tech-ai-semis/"', navigation)
+            for item in institution_items:
+                definition = builder.institution_hub_for_item(item)
+                self.assertTrue(
+                    (output / "reports" / "institutions" / definition["slug"] / "index.html").is_file(),
+                    definition["slug"],
+                )
+            for item in topic_items:
+                definition = builder.topic_hub_for_label(item["industry"])
+                self.assertTrue(
+                    (output / "reports" / "topics" / definition["slug"] / "index.html").is_file(),
+                    definition["slug"],
+                )
+            self.assertFalse((output / "reports" / "institutions" / "hsbc").exists())
+            self.assertFalse((output / "reports" / "topics" / "other").exists())
+
+            sitemap_pages = (output / "sitemap-pages.xml").read_text(encoding="utf-8")
+            self.assertIn(
+                "<loc>https://portal.example.invalid/reports/institutions/goldman-sachs/</loc>\n"
+                "    <lastmod>2026-07-29</lastmod>",
+                sitemap_pages,
+            )
+            self.assertIn("/reports/topics/tech-ai-semis/", sitemap_pages)
+            llms = (output / "llms.txt").read_text(encoding="utf-8")
+            llms_full = (output / "llms-full.txt").read_text(encoding="utf-8")
+            self.assertIn("/reports/institutions/goldman-sachs/", llms)
+            self.assertIn("/reports/topics/tech-ai-semis/", llms)
+            self.assertIn("高盛研报（Goldman Sachs）", llms_full)
+            self.assertIn("科技、人工智能与半导体研报（Tech / AI / Semis）", llms_full)
+
+    def test_indexable_templates_use_favicon_and_policy_sitemap_dates_are_truthful(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory)
+            builder.build_seo_outputs(output, self.catalog)
+            generated_pages = [
+                output / "reports" / "report-a.html",
+                output / "reports" / "index.html",
+                output / "reports" / "institutions" / "goldman-sachs" / "index.html",
+                output / "reports" / "topics" / "macro-fx-rates" / "index.html",
+                output / "reports" / "topics.html",
+                output / "about.html",
+            ]
+            for path in generated_pages:
+                self.assertIn(
+                    '<link rel="icon" href="/favicon.svg" type="image/svg+xml">',
+                    path.read_text(encoding="utf-8"),
+                    path.as_posix(),
+                )
+
+            sitemap_pages = (output / "sitemap-pages.xml").read_text(encoding="utf-8")
+            self.assertIn(
+                "<loc>https://portal.example.invalid/terms.html</loc>\n"
+                "    <lastmod>2026-08-27</lastmod>",
+                sitemap_pages,
+            )
+            self.assertIn(
+                "<loc>https://portal.example.invalid/privacy.html</loc>\n"
+                "    <lastmod>2026-08-30</lastmod>",
+                sitemap_pages,
+            )
+
+        article = {
+            "slug": "sample-article",
+            "title": "中文研究文章",
+            "digest": "摘要",
+            "content": "<p>正文</p>",
+            "date": "2026-07-30",
+            "last_date": "2026-07-30",
+            "keywords": [],
+        }
+        blog_index = builder.render_blog_index([article], "https://portal.example.invalid", date(2026, 7, 27))
+        blog_article = builder.render_blog_article(article, "https://portal.example.invalid")
+        for page in (blog_index, blog_article):
+            self.assertIn('<link rel="icon" href="/favicon.svg" type="image/svg+xml">', page)
+
     def test_homepage_establishes_the_public_editorial_keyword(self) -> None:
         page = (ROOT / "portal_suite" / "site_src" / "index.html").read_text(encoding="utf-8")
         self.assertIn("<title>KC桌面 | 中文金融研报检索与报告索引</title>", page)
@@ -175,11 +345,11 @@ class SeoOutputTests(unittest.TestCase):
             self.assertRegex(versioned_home, r'assets/app\.js\?v=[0-9a-f]{8}')
             self.assertRegex(versioned_home, r'assets/report-chat\.js\?v=[0-9a-f]{8}')
             self.assertRegex(versioned_home, r'assets/styles\.css\?v=[0-9a-f]{8}')
-            versioned_bernstein = (
-                output / "reports" / "institutions" / "bernstein" / "index.html"
+            versioned_institution = (
+                output / "reports" / "institutions" / "goldman-sachs" / "index.html"
             ).read_text(encoding="utf-8")
-            self.assertRegex(versioned_bernstein, r'\.\./\.\./\.\./assets/styles\.css\?v=[0-9a-f]{8}')
-            self.assertRegex(versioned_bernstein, r'\.\./\.\./\.\./assets/analytics\.js\?v=[0-9a-f]{8}')
+            self.assertRegex(versioned_institution, r'\.\./\.\./\.\./assets/styles\.css\?v=[0-9a-f]{8}')
+            self.assertRegex(versioned_institution, r'\.\./\.\./\.\./assets/analytics\.js\?v=[0-9a-f]{8}')
 
     def test_public_contact_alias_is_materialized_after_private_profile_stage(self) -> None:
         public_email = "".join(("info", "@", "kc", "desk", ".com"))
@@ -217,8 +387,9 @@ class SeoOutputTests(unittest.TestCase):
             report = graph_node(schema, "Report")
             webpage = graph_node(schema, "WebPage")
             graph_node(schema, "BreadcrumbList")
-            self.assertEqual("高盛", report["publisher"]["name"])
-            self.assertEqual("GS", report["publisher"]["alternateName"])
+            self.assertEqual("Goldman Sachs", report["publisher"]["name"])
+            self.assertIn("高盛", report["publisher"]["alternateName"])
+            self.assertIn("GS", report["publisher"]["alternateName"])
             self.assertEqual("KC桌面", report["sdPublisher"]["name"])
             self.assertEqual("1-18", report["pagination"])
             self.assertNotIn("author", report)
@@ -347,6 +518,7 @@ class SeoOutputTests(unittest.TestCase):
             expected_counts = [200, 200, 5]
             for page, canonical, expected_count in zip(pages, expected_canonicals, expected_counts):
                 self.assertIn(f'<link rel="canonical" href="{canonical}">', page)
+                self.assertIn('<link rel="icon" href="/favicon.svg" type="image/svg+xml">', page)
                 report_list = re.search(r'<ul class="seo-report-index">(.*?)</ul>', page, flags=re.S)
                 self.assertIsNotNone(report_list)
                 self.assertEqual(expected_count, report_list.group(1).count("<li>"))
@@ -359,7 +531,7 @@ class SeoOutputTests(unittest.TestCase):
             for canonical in expected_canonicals:
                 self.assertIn(canonical, sitemap_pages)
             topic_hub = (output / "reports" / "topics.html").read_text(encoding="utf-8")
-            self.assertIn(builder.stable_section_anchor("institution", "GS · 高盛"), topic_hub)
+            self.assertIn(builder.stable_section_anchor("institution", "Goldman Sachs · 高盛"), topic_hub)
             self.assertTrue((output / "about.html").is_file())
 
     def test_report_schema_does_not_invent_an_unknown_publisher(self) -> None:

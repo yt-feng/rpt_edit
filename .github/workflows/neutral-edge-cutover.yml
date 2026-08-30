@@ -75,6 +75,7 @@ jobs:
           python3 scripts/test_portal_catalog_storage_guard.py
           python3 -B scripts/test_publish_static_slot.py
           python3 scripts/test_portal_seo.py
+          python3 scripts/test_submit_portal_indexnow.py
           python3 scripts/test_portal_blog_build.py
           python3 scripts/test_edge_route_cutover.py
 
@@ -107,6 +108,50 @@ jobs:
           printf 'SITE_HOST=%s\n' "$site_host" >> "$GITHUB_ENV"
           printf 'EDGE_ALIAS_HOSTS=%s\n' "$alias_hosts" >> "$GITHUB_ENV"
           printf 'STATIC_RELEASE=%s\n' "$release_id" >> "$GITHUB_ENV"
+
+      - name: Capture previous public discovery state
+        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
+        env:
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+        run: |
+          set -euo pipefail
+          echo "::add-mask::$PORTAL_SITE_URL"
+          origin="${PORTAL_SITE_URL%/}"
+          curl --fail --location --silent --show-error \
+            --connect-timeout 10 --max-time 60 \
+            --header 'Cache-Control: no-cache' \
+            --output "$RUNNER_TEMP/previous-public-catalog.json" \
+            "$origin/data/catalog.json?indexnow-before=$STATIC_RELEASE"
+          curl --fail --location --silent --show-error \
+            --connect-timeout 10 --max-time 60 \
+            --header 'Cache-Control: no-cache' \
+            --output "$RUNNER_TEMP/previous-public-sitemap.xml" \
+            "$origin/sitemap-baidu.xml?indexnow-before=$STATIC_RELEASE"
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          from urllib.parse import urlsplit
+          import xml.etree.ElementTree as ET
+
+          runner_temp = Path(os.environ["RUNNER_TEMP"])
+          catalog = json.loads(runner_temp.joinpath("previous-public-catalog.json").read_text(encoding="utf-8"))
+          items = catalog.get("items")
+          if not isinstance(items, list) or not items:
+              raise SystemExit("Previous public catalog is empty or invalid")
+          ids = [str(item.get("id") or "") for item in items if isinstance(item, dict)]
+          if len(ids) != len(items) or any(not value for value in ids) or len(ids) != len(set(ids)):
+              raise SystemExit("Previous public catalog contains missing or duplicate report ids")
+
+          sitemap = ET.parse(runner_temp / "previous-public-sitemap.xml").getroot()
+          if sitemap.tag.rsplit("}", 1)[-1] != "urlset":
+              raise SystemExit("Previous public sitemap is not a flat canonical urlset")
+          locs = [str(node.text or "").strip() for node in sitemap.findall("./{*}url/{*}loc")]
+          expected_host = urlsplit(os.environ["PORTAL_SITE_URL"]).hostname
+          if not locs or any(urlsplit(value).hostname != expected_host for value in locs):
+              raise SystemExit("Previous public sitemap is empty or contains a foreign host")
+          print(f"previous_public_reports={len(items)} previous_canonical_urls={len(locs)}")
+          PY
 
       - name: Install refresh dependencies
         if: github.event_name == 'schedule' || inputs.operation == 'migrate' || inputs.operation == 'inspect-source'
@@ -264,9 +309,6 @@ jobs:
           test -s portal_suite/data/catalog.json
           test -s portal_suite/data/archive_catalog.json
           test -s portal_suite/data/history_catalog.json
-          cp portal_suite/data/catalog.json "$RUNNER_TEMP/previous-portal-catalog.json"
-          cp portal_suite/data/archive_catalog.json "$RUNNER_TEMP/previous-portal-archive-catalog.json"
-          cp portal_suite/data/history_catalog.json "$RUNNER_TEMP/previous-portal-history-catalog.json"
           python3 scripts/portal_suite_catalog.py \
             --dropbox-root "/zip_backup" \
             --days 0 \
@@ -606,6 +648,13 @@ jobs:
           echo "Prepared static slot did not become active in time." >&2
           exit 1
 
+      - name: Purge previous public edge cache
+        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          EDGE_SCRIPT_NAME: svc-04df8d213b73
+        run: python3 -B scripts/edge_route_cutover.py purge
+
       - name: Verify active edge routes
         if: github.event_name == 'schedule' || inputs.operation == 'migrate'
         env:
@@ -618,14 +667,6 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           EDGE_SCRIPT_NAME: svc-04df8d213b73
         run: python3 -B scripts/edge_route_cutover.py migrate
-
-      - name: Purge previous public edge cache when permitted
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
-        continue-on-error: true
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          EDGE_SCRIPT_NAME: svc-04df8d213b73
-        run: python3 -B scripts/edge_route_cutover.py purge
 
       - name: Verify refreshed catalog is live
         id: live_catalog
@@ -938,10 +979,10 @@ jobs:
           echo "::add-mask::$PORTAL_SITE_URL"
           python3 scripts/submit_portal_indexnow.py \
             --catalog _neutral_site/data/catalog.json \
-            --previous-catalog "$RUNNER_TEMP/previous-portal-catalog.json" \
-            --previous-catalog "$RUNNER_TEMP/previous-portal-archive-catalog.json" \
-            --previous-catalog "$RUNNER_TEMP/previous-portal-history-catalog.json" \
+            --previous-catalog "$RUNNER_TEMP/previous-public-catalog.json" \
             --site-dir _neutral_site \
+            --sitemap _neutral_site/sitemap-baidu.xml \
+            --previous-sitemap "$RUNNER_TEMP/previous-public-sitemap.xml" \
             --base-url "$PORTAL_SITE_URL"
 
       - name: Remove private values from persistent source

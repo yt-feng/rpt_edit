@@ -33,6 +33,7 @@ class EdgeRouteCutoverTests(unittest.TestCase):
         command = curl.call_args.args[0]
         self.assertEqual(command[0], "curl")
         self.assertIn("--head", command)
+        self.assertNotIn("--location", command)
         self.assertNotIn("--header", command)
         self.assertNotIn("--max-filesize", command)
         self.assertEqual(command[-2:], ["--", "https://portal.example.invalid/"])
@@ -129,30 +130,71 @@ class EdgeRouteCutoverTests(unittest.TestCase):
 
         delete_route.assert_called_once_with("zone-id", "portal.example.invalid/*", "svc-neutral")
 
-    def test_alias_route_is_verified_as_a_canonical_redirect(self) -> None:
-        with (
-            patch.object(cutover.time, "time_ns", return_value=123456789),
-            patch.object(
-                cutover,
-                "request_status",
-                return_value=(
-                    301,
-                    {
-                        "x-origin-class": "edge-static",
-                        "location": "https://portal.example.invalid/?__edge_route_verify=123456789",
-                    },
-                    b"",
-                ),
-            ) as request_status,
-        ):
+    def test_alias_route_verifies_all_bare_public_paths(self) -> None:
+        def response(url: str, *, method: str) -> tuple[int, dict[str, str], bytes]:
+            self.assertEqual(method, "HEAD")
+            path = url.removeprefix("https://www.portal.example.invalid")
+            return (
+                301,
+                {
+                    "x-origin-class": "edge-static",
+                    "location": "https://portal.example.invalid" + path,
+                },
+                b"",
+            )
+
+        with patch.object(cutover, "request_status", side_effect=response) as request_status:
             self.assertTrue(cutover.verify_alias(
                 "https://www.portal.example.invalid",
                 "https://portal.example.invalid",
             ))
+        self.assertEqual(
+            request_status.call_args_list,
+            [
+                unittest.mock.call("https://www.portal.example.invalid/", method="HEAD"),
+                unittest.mock.call("https://www.portal.example.invalid/reports/", method="HEAD"),
+                unittest.mock.call("https://www.portal.example.invalid/robots.txt", method="HEAD"),
+                unittest.mock.call("https://www.portal.example.invalid/sitemap.xml", method="HEAD"),
+            ],
+        )
+
+    def test_alias_route_rejects_cached_bare_200(self) -> None:
+        with patch.object(
+            cutover,
+            "request_status",
+            return_value=(200, {"x-origin-class": "edge-static"}, b""),
+        ) as request_status:
+            self.assertFalse(cutover.verify_alias(
+                "https://www.portal.example.invalid",
+                "https://portal.example.invalid",
+            ))
+
         request_status.assert_called_once_with(
-            "https://www.portal.example.invalid/?__edge_route_verify=123456789",
+            "https://www.portal.example.invalid/",
             method="HEAD",
         )
+        self.assertIn("status=200 expected=301", cutover.LAST_VERIFY_FAILURE)
+
+    def test_alias_route_rejects_wrong_location(self) -> None:
+        with patch.object(
+            cutover,
+            "request_status",
+            return_value=(
+                301,
+                {
+                    "x-origin-class": "edge-static",
+                    "location": "https://portal.example.invalid/wrong",
+                },
+                b"",
+            ),
+        ):
+            self.assertFalse(cutover.verify_alias(
+                "https://www.portal.example.invalid",
+                "https://portal.example.invalid",
+            ))
+
+        self.assertIn("location=", cutover.LAST_VERIFY_FAILURE)
+        self.assertIn("expected='https://portal.example.invalid/'", cutover.LAST_VERIFY_FAILURE)
 
     def test_migrate_mode_manages_canonical_and_alias_routes(self) -> None:
         with (
@@ -196,6 +238,23 @@ class EdgeRouteCutoverTests(unittest.TestCase):
             self.assertEqual(cutover.run(), 0)
 
         purge.assert_called_once_with("zone-id")
+
+    def test_refresh_workflow_purges_before_alias_verification_without_continue(self) -> None:
+        workflow = (
+            Path(__file__).resolve().parent.parent
+            / ".github"
+            / "workflows"
+            / "neutral-edge-cutover.yml"
+        ).read_text(encoding="utf-8")
+        purge_name = "      - name: Purge previous public edge cache\n"
+        verify_name = "      - name: Verify active edge routes\n"
+        purge_start = workflow.index(purge_name)
+        verify_start = workflow.index(verify_name)
+        self.assertLess(purge_start, verify_start)
+        purge_step = workflow[purge_start:verify_start]
+        self.assertIn("github.event_name == 'schedule' || inputs.operation == 'migrate'", purge_step)
+        self.assertIn("python3 -B scripts/edge_route_cutover.py purge", purge_step)
+        self.assertNotIn("continue-on-error", purge_step)
 
 
 if __name__ == "__main__":

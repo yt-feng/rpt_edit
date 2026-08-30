@@ -227,6 +227,102 @@ SEO_INDUSTRY_RULES = [
         ),
     ),
 ]
+
+# Stable public entities used by report detail pages, crawlable collection
+# pages, sitemaps and machine-readable discovery files.  Alias matching is
+# deliberately centralized so variants such as GS / Goldman Sachs / 高盛 never
+# split into competing index pages.
+INSTITUTION_HUBS: tuple[dict[str, Any], ...] = (
+    {
+        "slug": "goldman-sachs",
+        "name": "Goldman Sachs",
+        "name_zh": "高盛",
+        "aliases": ("Goldman Sachs", "Goldman", "高盛", "GS"),
+    },
+    {
+        "slug": "morgan-stanley",
+        "name": "Morgan Stanley",
+        "name_zh": "摩根士丹利",
+        "aliases": ("Morgan Stanley", "摩根士丹利", "MS"),
+    },
+    {
+        "slug": "ubs",
+        "name": "UBS",
+        "name_zh": "瑞银",
+        "aliases": ("UBS", "瑞银", "Union Bank of Switzerland"),
+    },
+    {
+        "slug": "jpmorgan",
+        "name": "JPMorgan",
+        "name_zh": "摩根大通",
+        "aliases": ("JPMorgan", "JP Morgan", "J P Morgan", "摩根大通", "JPM"),
+    },
+    {
+        "slug": "bernstein",
+        "name": "Bernstein Research",
+        "name_zh": "伯恩斯坦",
+        "aliases": ("Bernstein Research", "Bernstein", "Sanford C. Bernstein", "伯恩斯坦"),
+    },
+    {
+        "slug": "nomura",
+        "name": "Nomura",
+        "name_zh": "野村",
+        "aliases": ("Nomura", "Nomura Securities", "野村", "野村证券", "NOM"),
+    },
+    {
+        "slug": "citi",
+        "name": "Citi",
+        "name_zh": "花旗",
+        "aliases": ("Citi", "Citigroup", "Citi Research", "花旗", "花旗银行"),
+    },
+    {
+        "slug": "bank-of-america",
+        "name": "Bank of America",
+        "name_zh": "美银",
+        "aliases": ("Bank of America", "Bank of America Merrill Lynch", "BofA", "BAML", "美银", "美银美林"),
+    },
+    {
+        "slug": "deutsche-bank",
+        "name": "Deutsche Bank",
+        "name_zh": "德意志银行",
+        "aliases": ("Deutsche Bank", "Deutsche", "德意志银行", "德银", "DB"),
+    },
+    {
+        "slug": "barclays",
+        "name": "Barclays",
+        "name_zh": "巴克莱",
+        "aliases": ("Barclays", "Barclays Research", "巴克莱", "巴克莱银行", "BARC"),
+    },
+    {
+        "slug": "jefferies",
+        "name": "Jefferies",
+        "name_zh": "杰富瑞",
+        "aliases": ("Jefferies", "Jefferies Research", "杰富瑞", "JEF"),
+    },
+    {
+        "slug": "hsbc",
+        "name": "HSBC",
+        "name_zh": "汇丰",
+        "aliases": ("HSBC", "HSBC Global Research", "汇丰", "汇丰银行"),
+    },
+)
+
+TOPIC_HUBS: tuple[dict[str, str], ...] = (
+    {"label": "Macro / FX / Rates", "slug": "macro-fx-rates", "name_zh": "宏观、外汇与利率", "keywords": "宏观研报,外汇研报,利率研报,债券研究,macro research,FX research,rates research"},
+    {"label": "Equity Strategy", "slug": "equity-strategy", "name_zh": "股票与权益策略", "keywords": "股票策略研报,权益策略,资产配置,估值研究,equity strategy"},
+    {"label": "Tech / AI / Semis", "slug": "tech-ai-semis", "name_zh": "科技、人工智能与半导体", "keywords": "AI研报,人工智能研报,半导体研报,科技研报,semiconductor research"},
+    {"label": "Internet / Media", "slug": "internet-media", "name_zh": "互联网与媒体", "keywords": "互联网研报,媒体研报,电商研究,游戏研究,internet research"},
+    {"label": "Autos / EV / Batteries", "slug": "autos-ev-batteries", "name_zh": "汽车、电动车与电池", "keywords": "汽车研报,电动车研报,新能源汽车,电池研究,EV research"},
+    {"label": "Energy / Utilities", "slug": "energy-utilities", "name_zh": "能源与公用事业", "keywords": "能源研报,原油研究,天然气研究,公用事业,energy research"},
+    {"label": "Metals / Mining", "slug": "metals-mining", "name_zh": "金属与矿业", "keywords": "金属研报,矿业研报,铜研究,黄金研究,mining research"},
+    {"label": "Healthcare / Biotech", "slug": "healthcare-biotech", "name_zh": "医疗健康与生物科技", "keywords": "医疗研报,医药研报,生物科技研报,healthcare research,biotech research"},
+    {"label": "Consumer / Retail", "slug": "consumer-retail", "name_zh": "消费与零售", "keywords": "消费研报,零售研报,品牌研究,consumer research,retail research"},
+    {"label": "Banks / Financials", "slug": "banks-financials", "name_zh": "银行与金融", "keywords": "银行研报,金融研报,保险研究,券商研究,financials research"},
+    {"label": "Real Estate", "slug": "real-estate", "name_zh": "房地产", "keywords": "房地产研报,住房研究,物业研究,real estate research"},
+    {"label": "Industrials / Capex", "slug": "industrials-capex", "name_zh": "工业与资本开支", "keywords": "工业研报,制造业研究,资本开支,industrials research,capex research"},
+    {"label": "Policy / Geopolitics", "slug": "policy-geopolitics", "name_zh": "政策与地缘政治", "keywords": "政策研报,地缘政治,关税研究,geopolitics research,policy research"},
+    {"label": "ESG / Climate", "slug": "esg-climate", "name_zh": "ESG与气候", "keywords": "ESG研报,气候研究,碳中和,可持续发展,climate research"},
+)
 # Keep the archive placeholder independent from SITE_BASE_URL. The deployment
 # materializer replaces SITE_BASE_URL with the live origin before this module
 # runs, while committed Blog archive HTML intentionally retains the neutral
@@ -1119,9 +1215,63 @@ def item_source_title(item: dict[str, Any]) -> str:
     return strip_extension(title)
 
 
+def normalized_alias_matches(value: str, alias: str) -> bool:
+    normalized_value = normalize_search_text(value)
+    normalized_alias = normalize_search_text(alias)
+    if not normalized_value or not normalized_alias:
+        return False
+    alias_tokens = normalized_alias.split()
+    # Short Latin bank codes must match a complete token so MS does not match
+    # an unrelated word.  Chinese aliases and full names remain useful inside
+    # longer labels such as "高盛集团" or "Citi Research".
+    if normalized_alias.isascii() and len(alias_tokens) == 1 and len(normalized_alias) <= 4:
+        return normalized_alias in normalized_value.split()
+    return normalized_alias in normalized_value
+
+
+def institution_hub_for_values(*values: str) -> dict[str, Any] | None:
+    candidates = [compact_space(str(value or "")) for value in values if compact_space(str(value or ""))]
+    for definition in INSTITUTION_HUBS:
+        if any(
+            normalized_alias_matches(value, str(alias))
+            for value in candidates
+            for alias in definition["aliases"]
+        ):
+            return definition
+    return None
+
+
+def institution_hub_for_item(item: dict[str, Any]) -> dict[str, Any] | None:
+    return institution_hub_for_values(
+        str(item.get("bank_code") or ""),
+        str(item.get("bank_name") or ""),
+    )
+
+
+def institution_hub_path(definition: dict[str, Any]) -> str:
+    return f"reports/institutions/{definition['slug']}/"
+
+
+def institution_display_name(definition: dict[str, Any]) -> str:
+    return f"{definition['name']} · {definition['name_zh']}"
+
+
+def topic_hub_for_label(value: str) -> dict[str, str] | None:
+    key = normalize_search_text(value)
+    return next(
+        (definition for definition in TOPIC_HUBS if normalize_search_text(definition["label"]) == key),
+        None,
+    )
+
+
+def topic_hub_path(definition: dict[str, str]) -> str:
+    return f"reports/topics/{definition['slug']}/"
+
+
 def item_institution(item: dict[str, Any]) -> str:
-    if is_bernstein_item(item):
-        return "Bernstein Research · 伯恩斯坦"
+    definition = institution_hub_for_item(item)
+    if definition:
+        return institution_display_name(definition)
     bank_code = compact_space(str(item.get("bank_code") or ""))
     bank_name = compact_space(str(item.get("bank_name") or ""))
     if bank_code and bank_name and normalize_search_text(bank_code) != normalize_search_text(bank_name):
@@ -1130,15 +1280,13 @@ def item_institution(item: dict[str, Any]) -> str:
 
 
 def is_bernstein_item(item: dict[str, Any]) -> bool:
-    institution = normalize_search_text(
-        " ".join(str(item.get(key) or "") for key in ("bank_code", "bank_name"))
-    )
-    return "bernstein" in institution or "伯恩斯坦" in institution
+    definition = institution_hub_for_item(item)
+    return bool(definition and definition["slug"] == "bernstein")
 
 
 def is_bernstein_text(value: str) -> bool:
-    normalized = normalize_search_text(value)
-    return any(alias in normalized for alias in ("bernstein", "sanford c bernstein", "伯恩斯坦"))
+    definition = next(item for item in INSTITUTION_HUBS if item["slug"] == "bernstein")
+    return any(normalized_alias_matches(value, str(alias)) for alias in definition["aliases"])
 
 
 def report_browser_title(item: dict[str, Any]) -> str:
@@ -1152,12 +1300,13 @@ def report_browser_title(item: dict[str, Any]) -> str:
 
 
 def item_institution_schema(item: dict[str, Any], base_url: str = SITE_BASE_URL) -> dict[str, Any] | None:
-    if is_bernstein_item(item):
+    definition = institution_hub_for_item(item)
+    if definition:
         return {
             "@type": "Organization",
-            "@id": f"{url_join(base_url, BERNSTEIN_PAGE_PATH)}#organization",
-            "name": "Bernstein Research",
-            "alternateName": ["伯恩斯坦", "Sanford C. Bernstein"],
+            "@id": f"{url_join(base_url, institution_hub_path(definition))}#organization",
+            "name": definition["name"],
+            "alternateName": list(dict.fromkeys((definition["name_zh"], *definition["aliases"]))),
         }
     bank_code = compact_space(str(item.get("bank_code") or ""))
     bank_name = compact_space(str(item.get("bank_name") or ""))
@@ -1381,12 +1530,18 @@ def render_report_seo_page(
     institution = item_institution(item)
     industry = item_industry(item)
     institution_schema = item_institution_schema(item, base_url)
+    institution_definition = institution_hub_for_item(item)
+    topic_definition = topic_hub_for_label(industry)
     institution_href = (
-        "institutions/bernstein/"
-        if is_bernstein_item(item)
+        f"institutions/{institution_definition['slug']}/"
+        if institution_definition
         else f"topics.html#{stable_section_anchor('institution', institution)}"
     )
-    topic_href = f"topics.html#{stable_section_anchor('topic', industry)}"
+    topic_href = (
+        f"topics/{topic_definition['slug']}/"
+        if topic_definition
+        else f"topics.html#{stable_section_anchor('topic', industry)}"
+    )
     report_json_ld = {
         "@type": "Report",
         "@id": f"{canonical}#report",
@@ -1500,6 +1655,7 @@ def render_report_seo_page(
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <title>{html_escape(report_browser_title(item))}</title>
     <meta name="description" content="{html_escape(description)}">
     <meta name="keywords" content="{html_escape(report_keywords(item))}">
@@ -1578,6 +1734,7 @@ def render_reports_index(
     generated_date: str,
     page_number: int = 1,
     page_size: int = REPORT_INDEX_PAGE_SIZE,
+    known_institution_groups: list[tuple[dict[str, Any], list[dict[str, Any]]]] | None = None,
 ) -> str:
     items = [item for item in catalog.get("items", []) if item.get("id")]
     sorted_items = sorted(
@@ -1608,6 +1765,16 @@ def render_reports_index(
         f"{BLOG_PUBLIC_BRAND}中文金融研报索引，覆盖投行研报、宏观策略、行业分析、"
         "公司研究、财报、招股书和国际智库报告，支持中英文机构、公司、ticker 和主题发现。"
     )
+    discovery_groups = list(known_institution_groups or institution_hub_groups(items, generated_date))
+    discovery_groups.sort(
+        key=lambda group: (group[0]["slug"] != "bernstein", -len(group[1]), str(group[0]["slug"]))
+    )
+    discovery_links = [
+        f'<a href="institutions/{definition["slug"]}/">{html_escape(str(definition["name_zh"]))}研报</a>'
+        for definition, _group_items in discovery_groups[:6]
+    ]
+    discovery_links.append('<a href="topics.html">按机构与研究主题浏览</a>')
+    discovery_nav = " · ".join(discovery_links)
     collection_json_ld = {
         "@type": "CollectionPage",
         "@id": f"{canonical}#collection",
@@ -1653,6 +1820,7 @@ def render_reports_index(
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <title>金融研报索引{page_suffix} | {BLOG_PUBLIC_BRAND}</title>
     <meta name="description" content="{html_escape(description)}">
     <meta name="keywords" content="金融研报,金融研報,投行研报,投資銀行研報,中文研报检索,股票研究,總體經濟研究,Chinese financial research,investment bank research,equity research,macro research">
@@ -1687,7 +1855,7 @@ def render_reports_index(
         <nav aria-label="面包屑"><a href="../">首页</a> › <span aria-current="page">报告索引</span></nav>
         <h1>金融研报索引{page_suffix}</h1>
         <p class="subtle">{html_escape(description)}</p>
-        <p><a href="institutions/bernstein/">伯恩斯坦研报</a> · <a href="topics.html">按机构与研究主题浏览</a> · <a href="../about.html">了解索引方法</a></p>
+        <p>{discovery_nav} · <a href="../about.html">了解索引方法</a></p>
         <p class="subtle">已更新：{html_escape(generated_date)} · 共 {len(items)} 篇 · 第 {page_number}/{total_pages} 页</p>
         {pagination}
         <ul class="seo-report-index">
@@ -1734,29 +1902,110 @@ def report_aggregation_groups(
     return rows[:limit] if limit > 0 else rows
 
 
-def render_bernstein_hub(
+def sorted_hub_items(items: list[dict[str, Any]], generated_date: str) -> list[dict[str, Any]]:
+    return sorted(
+        items,
+        key=lambda item: (item_lastmod(item, generated_date), sort_date_value(str(item.get("date_folder") or ""))),
+        reverse=True,
+    )
+
+
+def institution_hub_groups(
     items: list[dict[str, Any]],
+    generated_date: str,
+) -> list[tuple[dict[str, Any], list[dict[str, Any]]]]:
+    definitions = {str(definition["slug"]): definition for definition in INSTITUTION_HUBS}
+    buckets: dict[str, list[dict[str, Any]]] = {slug: [] for slug in definitions}
+    for item in items:
+        definition = institution_hub_for_item(item)
+        if definition:
+            buckets[str(definition["slug"])].append(item)
+    populated = [
+        (definitions[slug], sorted_hub_items(group_items, generated_date))
+        for slug, group_items in buckets.items()
+        if group_items
+    ]
+    populated.sort(key=lambda group: (-len(group[1]), str(group[0]["slug"])))
+    return populated
+
+
+def topic_hub_groups(
+    items: list[dict[str, Any]],
+    generated_date: str,
+) -> list[tuple[dict[str, str], list[dict[str, Any]]]]:
+    definitions = {definition["slug"]: definition for definition in TOPIC_HUBS}
+    buckets: dict[str, list[dict[str, Any]]] = {slug: [] for slug in definitions}
+    for item in items:
+        definition = topic_hub_for_label(item_industry(item))
+        if definition:
+            buckets[definition["slug"]].append(item)
+    populated = [
+        (definitions[slug], sorted_hub_items(group_items, generated_date))
+        for slug, group_items in buckets.items()
+        if group_items
+    ]
+    populated.sort(key=lambda group: (-len(group[1]), group[0]["slug"]))
+    return populated
+
+
+def blog_article_text(article: dict[str, Any]) -> str:
+    return " ".join([
+        str(article.get("title") or ""),
+        str(article.get("digest") or ""),
+        str(article.get("content") or ""),
+    ])
+
+
+def render_related_article_block(
+    articles: list[dict[str, Any]],
+    base_url: str,
+    heading: str,
+) -> str:
+    article_rows = []
+    for article in articles[:24]:
+        article_url = url_join(base_url, "blog/" + str(article["slug"]) + ".html")
+        article_rows.append(
+            "<li>"
+            f'<a href="{html_escape(article_url, quote=True)}">{html_escape(blog_public_title(str(article.get("title") or "")))}</a>'
+            f'<span>{html_escape(str(article.get("date") or ""))}</span>'
+            "</li>"
+        )
+    if not article_rows:
+        return ""
+    return (
+        f"<h2>{html_escape(heading)}</h2>"
+        '<ul class="seo-report-index">' + "".join(article_rows) + "</ul>"
+    )
+
+
+def render_institution_hub(
+    definition: dict[str, Any],
+    institution_items: list[dict[str, Any]],
     blog_articles: list[dict[str, Any]],
     base_url: str,
     generated_date: str,
 ) -> str:
-    canonical = url_join(base_url, BERNSTEIN_PAGE_PATH)
-    bernstein_items = sorted(
-        [item for item in items if is_bernstein_item(item)],
-        key=lambda item: (item_lastmod(item, generated_date), sort_date_value(str(item.get("date_folder") or ""))),
-        reverse=True,
-    )
-    latest_items = bernstein_items[:100]
-    topic_groups = report_aggregation_groups(bernstein_items, item_industry, minimum_size=1, limit=16)
+    canonical = url_join(base_url, institution_hub_path(definition))
+    institution_items = sorted_hub_items(institution_items, generated_date)
+    latest_items = institution_items[:100]
+    lastmod = max((item_lastmod(item, generated_date) for item in institution_items), default=generated_date)
+    topic_groups = report_aggregation_groups(institution_items, item_industry, minimum_size=1, limit=16)
     related_articles = [
         article
         for article in blog_articles
-        if is_bernstein_text(" ".join([
-            str(article.get("title") or ""),
-            str(article.get("digest") or ""),
-            str(article.get("content") or ""),
-        ]))
-    ][:24]
+        if any(normalized_alias_matches(blog_article_text(article), str(alias)) for alias in definition["aliases"])
+    ]
+    is_bernstein = definition["slug"] == "bernstein"
+    name = str(definition["name"])
+    name_zh = str(definition["name_zh"])
+    heading = f"{name_zh}研报（{name}）"
+    collection_name = f"{heading}中文索引"
+    page_title = f"{heading}｜最新报告与中文索引 | {BLOG_PUBLIC_BRAND}"
+    if is_bernstein:
+        # Preserve the successful Bernstein search-intent treatment verbatim.
+        heading = "伯恩斯坦研报（Bernstein Research）"
+        collection_name = "伯恩斯坦研报（Bernstein Research）中文索引"
+        page_title = f"伯恩斯坦研报（Bernstein Research）｜最新报告与中文索引 | {BLOG_PUBLIC_BRAND}"
     report_rows = [
         "<li>"
         f'<a href="{html_escape(url_join(base_url, report_seo_path(str(item.get("id")))), quote=True)}">{html_escape(item_display_title(item))}</a>'
@@ -1766,47 +2015,44 @@ def render_bernstein_hub(
     ]
     topic_rows = []
     for label, group_items in topic_groups:
-        query_url = url_join(base_url, "/?q=" + quote(f"伯恩斯坦 {label}"))
+        topic_definition = topic_hub_for_label(label)
+        query_url = (
+            url_join(base_url, topic_hub_path(topic_definition))
+            if topic_definition
+            else url_join(base_url, "/?q=" + quote(f"{name_zh} {label}"))
+        )
         topic_rows.append(
             "<li>"
             f'<a href="{html_escape(query_url, quote=True)}">{html_escape(label)}</a>'
             f'<span>{len(group_items)} 篇</span>'
             "</li>"
         )
-    article_rows = []
-    for article in related_articles:
-        article_url = url_join(base_url, "blog/" + str(article["slug"]) + ".html")
-        article_rows.append(
-            "<li>"
-            f'<a href="{html_escape(article_url, quote=True)}">{html_escape(blog_public_title(str(article.get("title") or "")))}</a>'
-            f'<span>{html_escape(str(article.get("date") or ""))}</span>'
-            "</li>"
-        )
-    article_block = (
-        '<h2>伯恩斯坦相关中文文章</h2>'
-        '<ul class="seo-report-index">' + "".join(article_rows) + "</ul>"
-        if article_rows else ""
+    article_block = render_related_article_block(
+        related_articles,
+        base_url,
+        f"{name_zh}相关中文文章",
     )
     description = (
-        f"{BLOG_PUBLIC_BRAND}伯恩斯坦研报（Bernstein Research）中文索引，"
-        f"汇总当前目录中的 {len(bernstein_items)} 篇公开报告元数据、研究主题、最新报告与相关中文文章。"
+        f"{BLOG_PUBLIC_BRAND}{heading}中文索引，"
+        f"汇总当前目录中的 {len(institution_items)} 篇公开报告元数据、研究主题、最新报告与相关中文文章。"
     )
+    alternate_names = list(dict.fromkeys((name_zh, *definition["aliases"])))
     json_ld = {
         "@context": "https://schema.org",
         "@graph": [
             {
                 "@type": "CollectionPage",
                 "@id": f"{canonical}#collection",
-                "name": "伯恩斯坦研报（Bernstein Research）中文索引",
+                "name": collection_name,
                 "description": description,
                 "url": canonical,
-                "dateModified": generated_date,
+                "dateModified": lastmod,
                 "inLanguage": "zh-Hans",
                 "about": {
                     "@type": "Organization",
                     "@id": f"{canonical}#organization",
-                    "name": "Bernstein Research",
-                    "alternateName": ["伯恩斯坦", "Sanford C. Bernstein"],
+                    "name": name,
+                    "alternateName": alternate_names,
                 },
                 "isPartOf": {"@id": f"{url_join(base_url, '/')}#website"},
                 "mainEntity": {"@id": f"{canonical}#reports"},
@@ -1814,7 +2060,7 @@ def render_bernstein_hub(
             {
                 "@type": "ItemList",
                 "@id": f"{canonical}#reports",
-                "name": "最新伯恩斯坦研报",
+                "name": f"最新{name_zh}研报",
                 "numberOfItems": len(latest_items),
                 "itemListOrder": "https://schema.org/ItemListOrderDescending",
                 "itemListElement": [
@@ -1832,7 +2078,7 @@ def render_bernstein_hub(
                 "itemListElement": [
                     {"@type": "ListItem", "position": 1, "name": "首页", "item": url_join(base_url, "/")},
                     {"@type": "ListItem", "position": 2, "name": "报告索引", "item": url_join(base_url, "reports/")},
-                    {"@type": "ListItem", "position": 3, "name": "伯恩斯坦研报", "item": canonical},
+                    {"@type": "ListItem", "position": 3, "name": f"{name_zh}研报", "item": canonical},
                 ],
             },
         ],
@@ -1842,9 +2088,10 @@ def render_bernstein_hub(
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>伯恩斯坦研报（Bernstein Research）｜最新报告与中文索引 | {BLOG_PUBLIC_BRAND}</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <title>{html_escape(page_title)}</title>
     <meta name="description" content="{html_escape(description, quote=True)}">
-    <meta name="keywords" content="伯恩斯坦研报,伯恩斯坦研究,Bernstein研报,Bernstein Research,Sanford C. Bernstein,投行研报,股票研究,行业研究,中文研报">
+    <meta name="keywords" content="{html_escape(','.join([f'{name_zh}研报', f'{name}研报', name, name_zh, *definition['aliases'], '投行研报', '股票研究', '行业研究', '中文研报']), quote=True)}">
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
     <link rel="canonical" href="{html_escape(canonical, quote=True)}">
     <link rel="alternate" hreflang="zh-Hans" href="{html_escape(canonical, quote=True)}">
@@ -1852,14 +2099,14 @@ def render_bernstein_hub(
     <meta property="og:type" content="website">
     <meta property="og:locale" content="zh_CN">
     <meta property="og:site_name" content="{BLOG_PUBLIC_BRAND}">
-    <meta property="og:title" content="伯恩斯坦研报（Bernstein Research）中文索引">
+    <meta property="og:title" content="{html_escape(collection_name, quote=True)}">
     <meta property="og:description" content="{html_escape(description, quote=True)}">
     <meta property="og:url" content="{html_escape(canonical, quote=True)}">
     <link rel="stylesheet" href="../../../assets/styles.css">
     <script defer src="../../../assets/site-runtime.js"></script>
     <script type="application/ld+json">{render_json_ld(json_ld)}</script>
   </head>
-  <body data-page="bernstein-research">
+  <body data-page="{'bernstein-research' if is_bernstein else 'institution-research'}">
     <header class="topbar">
       <a class="back-link" href="../../">返回报告索引</a>
       <a class="brand compact" href="../../../" aria-label="{BLOG_PUBLIC_BRAND} home">
@@ -1868,17 +2115,154 @@ def render_bernstein_hub(
     </header>
     <main class="shell legal-shell">
       <article class="legal-panel">
-        <nav aria-label="面包屑"><a href="../../../">首页</a> › <a href="../../">报告索引</a> › <span aria-current="page">伯恩斯坦研报</span></nav>
-        <h1>伯恩斯坦研报（Bernstein Research）</h1>
+        <nav aria-label="面包屑"><a href="../../../">首页</a> › <a href="../../">报告索引</a> › <span aria-current="page">{html_escape(name_zh)}研报</span></nav>
+        <h1>{html_escape(heading)}</h1>
         <p>{html_escape(description)}</p>
-        <p class="subtle">别名：伯恩斯坦、Bernstein Research、Sanford C. Bernstein。篇数与更新时间来自当前公开目录，每次发布自动重算。</p>
-        <p><a class="primary-link" href="../../../?q={quote('伯恩斯坦')}">检索全部伯恩斯坦报告</a> <a class="secondary-button" href="../../topics.html">浏览全部机构与主题</a></p>
-        <h2>伯恩斯坦研报是什么？</h2>
-        <p>本页是研究发现与元数据索引：汇总机构字段标记为 Bernstein 或伯恩斯坦的报告标题、主题、收录日期和可用状态。{BLOG_PUBLIC_BRAND}不是底层报告的作者或出版方，引用时请以每篇报告页标明的原始机构与报告信息为准。</p>
+        <p class="subtle">别名：{html_escape('、'.join(str(alias) for alias in alternate_names))}。篇数与更新时间来自当前公开目录，每次发布自动重算。</p>
+        <p><a class="primary-link" href="../../../?q={quote(name_zh)}">检索全部{html_escape(name_zh)}报告</a> <a class="secondary-button" href="../../topics.html">浏览全部机构与主题</a></p>
+        <h2>{html_escape(name_zh)}研报是什么？</h2>
+        <p>本页是研究发现与元数据索引：仅汇总机构字段命中{html_escape(name)}及其别名的公开报告标题、主题、收录日期和可用状态。{BLOG_PUBLIC_BRAND}不是底层报告的作者或出版方，引用时请以每篇报告页标明的原始机构与报告信息为准。</p>
         <h2>常见研究主题</h2>
         <ul class="seo-report-index">{"".join(topic_rows)}</ul>
-        <h2>最新伯恩斯坦研报</h2>
-        <p class="subtle">已更新：{html_escape(generated_date)} · 当前共 {len(bernstein_items)} 篇 · 以下展示最近 {len(latest_items)} 篇。</p>
+        <h2>最新{html_escape(name_zh)}研报</h2>
+        <p class="subtle">已更新：{html_escape(lastmod)} · 当前共 {len(institution_items)} 篇 · 以下展示最近 {len(latest_items)} 篇。</p>
+        <ul class="seo-report-index">{"".join(report_rows)}</ul>
+        {article_block}
+      </article>
+    </main>
+    <footer class="legal-footer"><a href="../../../">首页检索</a><a href="../../">报告索引</a><a href="../../../blog/">Blog</a><a href="../../../about.html">关于{BLOG_PUBLIC_BRAND}</a></footer>
+    <script src="../../../assets/contact.js"></script><script src="../../../assets/analytics.js"></script>
+  </body>
+</html>
+"""
+
+
+def render_bernstein_hub(
+    items: list[dict[str, Any]],
+    blog_articles: list[dict[str, Any]],
+    base_url: str,
+    generated_date: str,
+) -> str:
+    definition = next(item for item in INSTITUTION_HUBS if item["slug"] == "bernstein")
+    bernstein_items = [item for item in items if institution_hub_for_item(item) == definition]
+    return render_institution_hub(definition, bernstein_items, blog_articles, base_url, generated_date)
+
+
+def render_topic_hub(
+    definition: dict[str, str],
+    topic_items: list[dict[str, Any]],
+    blog_articles: list[dict[str, Any]],
+    base_url: str,
+    generated_date: str,
+) -> str:
+    canonical = url_join(base_url, topic_hub_path(definition))
+    topic_items = sorted_hub_items(topic_items, generated_date)
+    latest_items = topic_items[:100]
+    lastmod = max((item_lastmod(item, generated_date) for item in topic_items), default=generated_date)
+    name = definition["label"]
+    name_zh = definition["name_zh"]
+    heading = f"{name_zh}研报（{name}）"
+    description = (
+        f"{BLOG_PUBLIC_BRAND}{heading}中文索引，汇总当前目录中的 {len(topic_items)} 篇"
+        "公开报告元数据、研究机构、收录日期、可用状态与相关中文文章。"
+    )
+    report_rows = [
+        "<li>"
+        f'<a href="{html_escape(url_join(base_url, report_seo_path(str(item.get("id")))), quote=True)}">{html_escape(item_display_title(item))}</a>'
+        f'<span>{html_escape(item_lastmod(item, generated_date))} · {html_escape(item_institution(item))}</span>'
+        "</li>"
+        for item in latest_items
+    ]
+    topic_pattern = next(
+        (pattern for label, pattern in SEO_INDUSTRY_RULES if normalize_search_text(label) == normalize_search_text(name)),
+        None,
+    )
+    related_articles = [
+        article for article in blog_articles
+        if topic_pattern and topic_pattern.search(blog_article_text(article))
+    ]
+    article_block = render_related_article_block(related_articles, base_url, f"{name_zh}相关中文文章")
+    json_ld = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "CollectionPage",
+                "@id": f"{canonical}#collection",
+                "name": f"{heading}中文索引",
+                "description": description,
+                "url": canonical,
+                "dateModified": lastmod,
+                "inLanguage": "zh-Hans",
+                "about": {"@type": "Thing", "name": name, "alternateName": name_zh},
+                "isPartOf": {"@id": f"{url_join(base_url, '/')}#website"},
+                "mainEntity": {"@id": f"{canonical}#reports"},
+            },
+            {
+                "@type": "ItemList",
+                "@id": f"{canonical}#reports",
+                "name": f"最新{name_zh}研报",
+                "numberOfItems": len(latest_items),
+                "itemListOrder": "https://schema.org/ItemListOrderDescending",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": index,
+                        "name": item_display_title(item),
+                        "url": url_join(base_url, report_seo_path(str(item.get("id")))),
+                    }
+                    for index, item in enumerate(latest_items, start=1)
+                ],
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "首页", "item": url_join(base_url, "/")},
+                    {"@type": "ListItem", "position": 2, "name": "报告索引", "item": url_join(base_url, "reports/")},
+                    {"@type": "ListItem", "position": 3, "name": name_zh, "item": canonical},
+                ],
+            },
+        ],
+    }
+    return f"""<!doctype html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <title>{html_escape(heading)}｜最新研究索引 | {BLOG_PUBLIC_BRAND}</title>
+    <meta name="description" content="{html_escape(description, quote=True)}">
+    <meta name="keywords" content="{html_escape(definition['keywords'], quote=True)}">
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+    <link rel="canonical" href="{html_escape(canonical, quote=True)}">
+    <link rel="alternate" hreflang="zh-Hans" href="{html_escape(canonical, quote=True)}">
+    <link rel="alternate" hreflang="x-default" href="{html_escape(canonical, quote=True)}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="{BLOG_PUBLIC_BRAND}">
+    <meta property="og:title" content="{html_escape(heading, quote=True)}中文索引">
+    <meta property="og:description" content="{html_escape(description, quote=True)}">
+    <meta property="og:url" content="{html_escape(canonical, quote=True)}">
+    <link rel="stylesheet" href="../../../assets/styles.css">
+    <script defer src="../../../assets/site-runtime.js"></script>
+    <script type="application/ld+json">{render_json_ld(json_ld)}</script>
+  </head>
+  <body data-page="topic-research">
+    <header class="topbar">
+      <a class="back-link" href="../../topics.html">返回机构与主题</a>
+      <a class="brand compact" href="../../../" aria-label="{BLOG_PUBLIC_BRAND} home">
+        <img src="../../../assets/app-mark.svg" alt="" width="30" height="30"><span>{BLOG_PUBLIC_BRAND}</span>
+      </a>
+    </header>
+    <main class="shell legal-shell">
+      <article class="legal-panel">
+        <nav aria-label="面包屑"><a href="../../../">首页</a> › <a href="../../">报告索引</a> › <span aria-current="page">{html_escape(name_zh)}</span></nav>
+        <h1>{html_escape(heading)}</h1>
+        <p>{html_escape(description)}</p>
+        <p><a class="primary-link" href="../../../?q={quote(name_zh)}">检索全部{html_escape(name_zh)}报告</a> <a class="secondary-button" href="../../topics.html">浏览全部机构与主题</a></p>
+        <h2>元数据索引说明</h2>
+        <p>本页仅索引被归类为 {html_escape(name)} 的公开报告标题、机构、收录日期和可用状态。{BLOG_PUBLIC_BRAND}不是底层报告的作者或出版方，引用时请以每篇报告页标明的原始机构与报告信息为准。</p>
+        <h2>最新{html_escape(name_zh)}研报</h2>
+        <p class="subtle">已更新：{html_escape(lastmod)} · 当前共 {len(topic_items)} 篇 · 以下展示最近 {len(latest_items)} 篇。</p>
         <ul class="seo-report-index">{"".join(report_rows)}</ul>
         {article_block}
       </article>
@@ -1902,6 +2286,16 @@ def render_report_topic_hub(items: list[dict[str, Any]], base_url: str, generate
         blocks: list[str] = []
         for label, group_items in groups:
             anchor = stable_section_anchor(prefix, label)
+            if prefix == "institution":
+                definition = institution_hub_for_values(label)
+                hub_href = f"institutions/{definition['slug']}/" if definition else ""
+            else:
+                definition = topic_hub_for_label(label)
+                hub_href = f"topics/{definition['slug']}/" if definition else ""
+            heading = (
+                f'<a href="{html_escape(hub_href, quote=True)}">{html_escape(label)}</a>'
+                if hub_href else html_escape(label)
+            )
             links = []
             for item in group_items[:6]:
                 links.append(
@@ -1912,12 +2306,21 @@ def render_report_topic_hub(items: list[dict[str, Any]], base_url: str, generate
                 )
             blocks.append(
                 f'<section id="{anchor}">'
-                f'<h2>{html_escape(label)}</h2>'
+                f'<h2>{heading}</h2>'
                 f'<p class="subtle">收录 {len(group_items)} 篇；以下为最近更新的公开元数据记录。</p>'
                 f'<ul class="seo-report-index">{"".join(links)}</ul>'
                 '</section>'
             )
         return "".join(blocks)
+
+    deep_links = [
+        f'<li><a href="institutions/{definition["slug"]}/">{html_escape(institution_display_name(definition))}研报</a><span>{len(group_items)} 篇</span></li>'
+        for definition, group_items in institution_hub_groups(items, generated_date)
+    ]
+    deep_links.extend(
+        f'<li><a href="topics/{definition["slug"]}/">{html_escape(definition["name_zh"])}研报</a><span>{len(group_items)} 篇</span></li>'
+        for definition, group_items in topic_hub_groups(items, generated_date)
+    )
 
     groups_for_schema = [
         *({"@type": "Organization", "name": label} for label, _items in institutions),
@@ -1952,6 +2355,7 @@ def render_report_topic_hub(items: list[dict[str, Any]], base_url: str, generate
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <title>投行研报机构与主题导航 | {BLOG_PUBLIC_BRAND}</title>
     <meta name="description" content="按高盛、摩根大通、摩根士丹利等研究机构，以及宏观、行业、公司和财报主题浏览中英文金融研报元数据。">
     <meta name="keywords" content="高盛研报,摩根大通研报,投行研报,投資銀行研報,金融研報,行业研究,股票研究,investment bank research,equity research,Chinese financial research">
@@ -1975,7 +2379,8 @@ def render_report_topic_hub(items: list[dict[str, Any]], base_url: str, generate
         <nav aria-label="面包屑"><a href="../">首页</a> › <a href="./">报告索引</a> › <span aria-current="page">机构与主题</span></nav>
         <h1>投行研报机构与主题导航</h1>
         <p>{BLOG_PUBLIC_BRAND}按机构与主题汇总金融研报元数据，便于全球中文用户用简体中文、繁體中文、英文机构名、公司名或 ticker 发现相关研究。</p>
-        <p><a class="primary-link" href="institutions/bernstein/">伯恩斯坦研报（Bernstein Research）中文索引</a></p>
+        <h2>可索引专题页</h2>
+        <ul class="seo-report-index">{"".join(deep_links)}</ul>
         <p class="subtle">本页的篇数和最近记录源于当前公开报告索引，每次发布都会重新计算；它们不代表投资建议。</p>
         <h2>研究机构 / Research institutions</h2>
         {render_groups(institutions, "institution")}
@@ -2045,6 +2450,7 @@ def render_about_page(base_url: str, generated_date: str) -> str:
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <title>关于{BLOG_PUBLIC_BRAND} | 中文金融研报检索</title>
     <meta name="description" content="{html_escape(description)}">
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
@@ -2095,6 +2501,32 @@ def sitemap_url(loc: str, lastmod: str = "", priority: str = "") -> str:
         pieces.append(f"    <priority>{xml_escape(priority)}</priority>")
     pieces.append("  </url>")
     return "\n".join(pieces)
+
+
+def public_page_last_updated(path: Path) -> str:
+    """Parse a human-maintained Last updated date for truthful sitemap metadata."""
+    try:
+        page = path.read_text(encoding="utf-8")
+    except OSError:
+        return ""
+    match = re.search(r"Last updated:\s*([^<\r\n]+)", page, flags=re.I)
+    if not match:
+        return ""
+    value = compact_space(html_unescape(match.group(1)))
+    for pattern in ("%B %d, %Y", "%b %d, %Y", "%Y-%m-%d"):
+        try:
+            return datetime.strptime(value, pattern).date().isoformat()
+        except ValueError:
+            continue
+    return ""
+
+
+def policy_page_lastmod(output: Path, filename: str) -> str:
+    candidates = [
+        output / filename,
+        Path(__file__).resolve().parents[1] / "portal_suite" / "site_src" / filename,
+    ]
+    return next((value for path in candidates if (value := public_page_last_updated(path))), "")
 
 
 def write_urlset(path: Path, rows: list[str]) -> None:
@@ -2202,20 +2634,31 @@ def render_llms_full(
         reverse=True,
     )
     items = all_items[:LLMS_REPORT_LIMIT]
-    bernstein_items = [item for item in all_items if is_bernstein_item(item)]
     lines = [
         f"# {BLOG_PUBLIC_BRAND} 公开报告索引",
         "",
         "以下是最近更新的中文金融研究报告元数据。报告下载权限与公开索引相互独立。",
         f"{BLOG_PUBLIC_BRAND}仅整理元数据和检索入口；底层报告的作者、出版方和使用条件以原始报告为准。",
         "",
-        "## 伯恩斯坦研报（Bernstein Research）",
-        f"- 专题 canonical URL: {url_join(base_url, BERNSTEIN_PAGE_PATH)}",
-        f"- 当前公开元数据记录: {len(bernstein_items)} 篇",
-        "- 别名: 伯恩斯坦, Bernstein Research, Sanford C. Bernstein",
-        "- 使用边界: 本站是元数据与发现索引，不是底层报告的作者或出版方。",
-        "",
     ]
+    for definition, group_items in institution_hub_groups(all_items, ""):
+        heading = f"{definition['name_zh']}研报（{definition['name']}）"
+        lines.extend([
+            f"## {heading}",
+            f"- 专题 canonical URL: {url_join(base_url, institution_hub_path(definition))}",
+            f"- 当前公开元数据记录: {len(group_items)} 篇",
+            f"- 别名: {', '.join(str(alias) for alias in definition['aliases'])}",
+            "- 使用边界: 本站是元数据与发现索引，不是底层报告的作者或出版方。",
+            "",
+        ])
+    for definition, group_items in topic_hub_groups(all_items, ""):
+        lines.extend([
+            f"## {definition['name_zh']}研报（{definition['label']}）",
+            f"- 专题 canonical URL: {url_join(base_url, topic_hub_path(definition))}",
+            f"- 当前公开元数据记录: {len(group_items)} 篇",
+            "- 索引范围: 报告标题、机构、收录日期、可用状态与相关公开文章。",
+            "",
+        ])
     for item in items:
         source_title = item_source_title(item)
         lines.extend([
@@ -3065,6 +3508,7 @@ def render_blog_index(
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <title>{BLOG_PUBLIC_BRAND} Blog{page_suffix} | 每日研报与研究文章</title>
     <meta name="description" content="{BLOG_PUBLIC_BRAND}每日整理研报、研究机构与咨询公司文章，提供可持续访问的中文研究存档。">
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
@@ -3228,6 +3672,7 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <title>{html_escape(title)}</title>
     <meta name="description" content="{html_escape(seo_description, quote=True)}">
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
@@ -3365,6 +3810,8 @@ def build_seo_outputs(
         reverse=True,
     )
     related_reports = build_related_reports(report_items)
+    institution_groups = institution_hub_groups(report_items, generated_date)
+    topic_groups = topic_hub_groups(report_items, generated_date)
     write_report_detail_shards(
         output,
         report_items,
@@ -3383,13 +3830,26 @@ def build_seo_outputs(
         output_name = "index.html" if page_number == 1 else f"page-{page_number}.html"
         write_text(
             reports_dir / output_name,
-            render_reports_index(catalog, base_url, generated_date, page_number, REPORT_INDEX_PAGE_SIZE),
+            render_reports_index(
+                catalog,
+                base_url,
+                generated_date,
+                page_number,
+                REPORT_INDEX_PAGE_SIZE,
+                institution_groups,
+            ),
         )
     write_text(reports_dir / "topics.html", render_report_topic_hub(report_items, base_url, generated_date))
-    write_text(
-        output / BERNSTEIN_PAGE_PATH / "index.html",
-        render_bernstein_hub(report_items, blog_articles, base_url, generated_date),
-    )
+    for definition, group_items in institution_groups:
+        write_text(
+            output / institution_hub_path(definition) / "index.html",
+            render_institution_hub(definition, group_items, blog_articles, base_url, generated_date),
+        )
+    for definition, group_items in topic_groups:
+        write_text(
+            output / topic_hub_path(definition) / "index.html",
+            render_topic_hub(definition, group_items, blog_articles, base_url, generated_date),
+        )
     write_text(output / "about.html", render_about_page(base_url, generated_date))
 
     blog_lastmod = max(
@@ -3397,6 +3857,8 @@ def build_seo_outputs(
         default=generated_date,
     )
     blog_index_pages = page_count(len(blog_articles), BLOG_INDEX_PAGE_SIZE)
+    terms_lastmod = policy_page_lastmod(output, "terms.html")
+    privacy_lastmod = policy_page_lastmod(output, "privacy.html")
     page_rows = [
         sitemap_url(url_join(base_url, "/"), generated_date, "1.0"),
         *[
@@ -3408,7 +3870,22 @@ def build_seo_outputs(
             for page_number in range(1, report_index_pages + 1)
         ],
         sitemap_url(url_join(base_url, "reports/topics.html"), generated_date, "0.8"),
-        sitemap_url(url_join(base_url, BERNSTEIN_PAGE_PATH), generated_date, "0.9"),
+        *[
+            sitemap_url(
+                url_join(base_url, institution_hub_path(definition)),
+                max(item_lastmod(item, generated_date) for item in group_items),
+                "0.9",
+            )
+            for definition, group_items in institution_groups
+        ],
+        *[
+            sitemap_url(
+                url_join(base_url, topic_hub_path(definition)),
+                max(item_lastmod(item, generated_date) for item in group_items),
+                "0.8",
+            )
+            for definition, group_items in topic_groups
+        ],
         *[
             sitemap_url(
                 url_join(base_url, collection_page_path("blog", page_number)),
@@ -3419,8 +3896,8 @@ def build_seo_outputs(
         ],
         sitemap_url(url_join(base_url, "charts"), generated_date, "0.8"),
         sitemap_url(url_join(base_url, "about.html"), generated_date, "0.5"),
-        sitemap_url(url_join(base_url, "terms.html"), generated_date, "0.2"),
-        sitemap_url(url_join(base_url, "privacy.html"), generated_date, "0.2"),
+        sitemap_url(url_join(base_url, "terms.html"), terms_lastmod, "0.2"),
+        sitemap_url(url_join(base_url, "privacy.html"), privacy_lastmod, "0.2"),
     ]
     write_urlset(output / "sitemap-pages.xml", page_rows)
 
@@ -3541,7 +4018,14 @@ def build_seo_outputs(
             f"- Home/Search: {url_join(base_url, '/')}",
             f"- Report index: {url_join(base_url, 'reports/')}",
             f"- Institution and topic navigation: {url_join(base_url, 'reports/topics.html')}",
-            f"- Bernstein Research / 伯恩斯坦研报: {url_join(base_url, BERNSTEIN_PAGE_PATH)}",
+            *[
+                f"- {definition['name']} / {definition['name_zh']}研报: {url_join(base_url, institution_hub_path(definition))}"
+                for definition, _group_items in institution_groups
+            ],
+            *[
+                f"- {definition['label']} / {definition['name_zh']}研报: {url_join(base_url, topic_hub_path(definition))}"
+                for definition, _group_items in topic_groups
+            ],
             f"- Blog: {url_join(base_url, 'blog/')}",
             f"- Charts: {url_join(base_url, 'charts')}",
             f"- About and methodology: {url_join(base_url, 'about.html')}",
