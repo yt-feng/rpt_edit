@@ -4018,6 +4018,12 @@ a.secondary-button {
   color: #aeb4c0;
 }
 
+.news-email-settings .status-line {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
 .news-email-form {
   display: grid;
   min-width: 0;
