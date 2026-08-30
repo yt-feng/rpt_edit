@@ -356,15 +356,16 @@ test("neutral deployment enables Workers caching and verifies preview/full catal
   assert.doesNotMatch(verifyRouteStep, /CLOUDFLARE_API_TOKEN/);
   assert.doesNotMatch(verifyRouteStep, /exit 0/);
   const switchRouteStep = workflow.match(
-    /- name: Switch active edge routes[\s\S]*?- name: Purge previous public edge cache when permitted/,
+    /- name: Switch active edge routes[\s\S]*?- name: Verify refreshed catalog is live/,
   )?.[0] || "";
   assert.match(switchRouteStep, /if: inputs\.operation == 'switch'/);
   assert.match(switchRouteStep, /scripts\/edge_route_cutover\.py migrate/);
   assert.match(switchRouteStep, /CLOUDFLARE_API_TOKEN/);
   const purgeStep = workflow.match(
-    /- name: Purge previous public edge cache when permitted[\s\S]*?- name: Verify refreshed catalog is live/,
+    /- name: Purge previous public edge cache[\s\S]*?- name: Verify active edge routes/,
   )?.[0] || "";
-  assert.match(purgeStep, /continue-on-error: true/);
+  assert.doesNotMatch(purgeStep, /continue-on-error/);
+  assert.match(purgeStep, /if: github\.event_name == 'schedule' \|\| inputs\.operation == 'migrate'/);
   assert.match(purgeStep, /scripts\/edge_route_cutover\.py purge/);
   const discoveryStep = workflow.match(
     /- name: Verify discovery and report-detail assets are live[\s\S]*?- name: Submit changed public URLs to IndexNow/,
