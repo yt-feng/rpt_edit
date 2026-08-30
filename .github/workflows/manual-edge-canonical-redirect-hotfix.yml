@@ -23,6 +23,7 @@ jobs:
           sparse-checkout-cone-mode: false
           sparse-checkout: |
             .github/workflows/manual-edge-canonical-redirect-hotfix.yml
+            .github/workflows/neutral-edge-cutover.yml
             workers/edge-static-host/src/index.js
             workers/edge-static-host/test/index.test.mjs
             scripts/test_manual_edge_canonical_redirect_hotfix_workflow.py

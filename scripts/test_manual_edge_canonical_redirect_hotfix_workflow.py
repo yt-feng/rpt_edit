@@ -20,6 +20,7 @@ class ManualEdgeCanonicalRedirectHotfixWorkflowContractTests(unittest.TestCase):
         self.assertEqual(workflow.count("\npermissions:\n"), 1)
         self.assertIn("contents: read", workflow)
         self.assertIn("persist-credentials: false", workflow)
+        self.assertIn(".github/workflows/neutral-edge-cutover.yml", workflow)
 
     def test_live_state_is_cache_busted_strictly_validated_and_reused(self) -> None:
         workflow = self.workflow()
