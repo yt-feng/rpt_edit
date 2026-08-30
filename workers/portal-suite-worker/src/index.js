@@ -277,6 +277,8 @@ const PUBLIC_ANALYTICS_EVENT_TYPES = new Set([
   "download_error",
   "download_pending",
   "download_success",
+  "newsfeed_interaction",
+  "newsfeed_topic_request",
   "page_view",
   "report_open",
   "report_request",
@@ -721,6 +723,14 @@ const NEWSFEED_CACHE_FRESH_MS = 30 * 60 * 1000;
 const NEWSFEED_CACHE_STALE_MS = 6 * 60 * 60 * 1000;
 const NEWSFEED_CACHE_VERSION = 3;
 const NEWSFEED_MAX_USER_TOPICS = 10000;
+const NEWSFEED_POLICY_VERSION = 1;
+const NEWSFEED_MEMBER_CUSTOM_TOPIC_LIMIT = 3;
+const NEWSFEED_ADVANCED_CUSTOM_TOPIC_LIMIT = 5;
+const NEWSFEED_ADVANCED_MIN_MONTHS = 2;
+const NEWSFEED_TOPIC_LEDGER_PREFIX = "_newsfeed/topic-ledger/v1";
+const NEWSFEED_TOPIC_RESERVATION_LEASE_MS = 2 * 60 * 1000;
+const NEWSFEED_TOPIC_REQUEST_PREFIX = "_newsfeed/topic-requests/v1";
+const NEWSFEED_TOPIC_REQUEST_MAX_BODY_BYTES = 8 * 1024;
 const NEWSFEED_EMAIL_DEFAULT_TIME = "09:00";
 const NEWSFEED_EMAIL_DEFAULT_TIMEZONE = "Asia/Shanghai";
 const NEWSFEED_EMAIL_WINDOW_MINUTES = 35;
@@ -7405,6 +7415,7 @@ function analyticsEventFromPayload(request, payload, user, ipHash) {
   const path = pathFromPayload || sanitizeAnalyticsPath(new URL(request.url).pathname);
   const type = cleanAnalyticsText(payload.type || data.type || "event", 60).toLowerCase() || "event";
   const isReportChatEvent = type === "report_chat" || type === "report_chat_interaction";
+  const isNewsfeedEvent = type === "newsfeed_interaction" || type === "newsfeed_topic_request";
   const referrer = sanitizeAnalyticsReferrer(data.referrer || request.headers.get("Referer"));
   const userAgent = cleanAnalyticsText(request.headers.get("User-Agent"), 240);
   const botFields = analyticsBotFields(request, data);
@@ -7423,7 +7434,7 @@ function analyticsEventFromPayload(request, payload, user, ipHash) {
     path,
     page: cleanAnalyticsText(data.page || payload.page, 80),
     source: cleanAnalyticsText(data.source || payload.source, 80),
-    query: isReportChatEvent ? "" : cleanAnalyticsText(data.query || payload.query, 240),
+    query: isReportChatEvent || isNewsfeedEvent ? "" : cleanAnalyticsText(data.query || payload.query, 240),
     question_hash: cleanAnalyticsText(data.question_hash || payload.question_hash, 128),
     bank: cleanAnalyticsText(data.bank || payload.bank, 160),
     industry: cleanAnalyticsText(data.industry || payload.industry, 160),
@@ -7444,6 +7455,16 @@ function analyticsEventFromPayload(request, payload, user, ipHash) {
     target: cleanAnalyticsText(data.target || data.material_id, 240),
     action: cleanAnalyticsText(data.action, 80),
     status: cleanAnalyticsText(data.status || data.response_status, 80),
+    access_state: cleanAnalyticsText(data.access_state, 80),
+    view: cleanAnalyticsText(data.view, 80),
+    outcome: cleanAnalyticsText(data.outcome, 80),
+    topic_kind: cleanAnalyticsText(data.topic_kind, 80),
+    topic_hash: cleanAnalyticsText(data.topic_hash, 128),
+    item_count: cleanAnalyticsNumber(data.item_count),
+    region_count: cleanAnalyticsNumber(data.region_count),
+    tier: cleanAnalyticsText(data.tier, 40),
+    count: cleanAnalyticsNumber(data.count),
+    limit: data.limit === null ? null : cleanAnalyticsNumber(data.limit),
     duration_ms: cleanAnalyticsNumber(data.duration_ms),
     error: cleanAnalyticsText(data.error, 180),
     referrer,
@@ -7485,8 +7506,13 @@ async function persistAnalyticsEvent(request, env, payload, userOverride = undef
     analyticsIpHash(request, env),
   ]);
   const event = analyticsEventFromPayload(request, payload, user, ipHash);
-  if ((event.type === "report_chat" || event.type === "report_chat_interaction") && event.visitor_id) {
-    event.visitor_id = await reportChatDeviceHash(env, event.visitor_id);
+  if (event.visitor_id) {
+    const isReportChatVisitor = event.type === "report_chat" || event.type === "report_chat_interaction";
+    const isNewsfeedVisitor = event.type === "newsfeed_interaction"
+      || event.type === "newsfeed_topic_request"
+      || (event.type === "page_view" && (event.page === "newsfeed" || event.path === "/newsfeed.html"));
+    if (isReportChatVisitor) event.visitor_id = await reportChatDeviceHash(env, event.visitor_id);
+    else if (isNewsfeedVisitor) event.visitor_id = await newsfeedDeviceHash(env, event.visitor_id);
   }
   const suffix = `${event.date}/${event.ts.replace(/[:.]/g, "-")}-${event.id}.json`;
   const body = JSON.stringify(event);
@@ -7944,6 +7970,16 @@ function publicAnalyticsEvent(event) {
     target: event.target || "",
     action: event.action || "",
     status: event.status || "",
+    access_state: event.access_state || "",
+    view: event.view || "",
+    outcome: event.outcome || "",
+    topic_kind: event.topic_kind || "",
+    topic_hash: event.topic_hash || "",
+    item_count: event.item_count || 0,
+    region_count: event.region_count || 0,
+    tier: event.tier || "",
+    count: event.count || 0,
+    limit: event.limit === null ? null : (event.limit || 0),
     duration_ms: event.duration_ms || 0,
     error: event.error || "",
     referrer: event.referrer || "",
@@ -12811,6 +12847,276 @@ async function requireNewsfeedUser(request, env) {
   return user;
 }
 
+class NewsfeedAccessError extends Error {
+  constructor(message, status = 403, code = "NEWSFEED_ACCESS") {
+    super(message);
+    this.name = "NewsfeedAccessError";
+    this.status = status;
+    this.code = code;
+  }
+}
+
+class NewsfeedTopicLimitError extends NewsfeedAccessError {
+  constructor(policy, usage) {
+    super("Custom topic limit reached.", 409, "NEWSFEED_TOPIC_LIMIT");
+    this.policy = policy;
+    this.usage = usage;
+  }
+}
+
+function newsfeedRequestHasAuthorization(request) {
+  return Boolean(String(request && request.headers && request.headers.get("Authorization") || "").trim());
+}
+
+async function optionalNewsfeedUser(request, env) {
+  if (!newsfeedRequestHasAuthorization(request)) return null;
+  return requireNewsfeedUser(request, env);
+}
+
+function generalNewsfeedPolicy(authenticated = false) {
+  return {
+    version: NEWSFEED_POLICY_VERSION,
+    tier: "general",
+    authenticated: Boolean(authenticated),
+    active_member: false,
+    qualifying_months: 0,
+    custom_topic_limit: 0,
+    can_create_custom: false,
+    can_pin: false,
+    can_subscribe: false,
+    can_generate_narrative: false,
+  };
+}
+
+async function newsfeedPolicyForUser(env, user) {
+  if (!user) return generalNewsfeedPolicy(false);
+  if (isSuperAccount(user)) {
+    return {
+      version: NEWSFEED_POLICY_VERSION,
+      tier: "admin",
+      authenticated: true,
+      active_member: true,
+      qualifying_months: null,
+      custom_topic_limit: null,
+      can_create_custom: true,
+      can_pin: true,
+      can_subscribe: true,
+      can_generate_narrative: true,
+    };
+  }
+  const access = await reportAccessForUser(env, user, "", "catalog");
+  if (!access.can_download) return generalNewsfeedPolicy(true);
+  const rawMonths = hotReportAccessMonths(access);
+  const advanced = rawMonths >= NEWSFEED_ADVANCED_MIN_MONTHS;
+  return {
+    version: NEWSFEED_POLICY_VERSION,
+    tier: advanced ? "advanced" : "member",
+    authenticated: true,
+    active_member: true,
+    qualifying_months: Number.isFinite(rawMonths) ? rawMonths : null,
+    custom_topic_limit: advanced ? NEWSFEED_ADVANCED_CUSTOM_TOPIC_LIMIT : NEWSFEED_MEMBER_CUSTOM_TOPIC_LIMIT,
+    can_create_custom: true,
+    can_pin: true,
+    can_subscribe: true,
+    can_generate_narrative: true,
+  };
+}
+
+function publicNewsfeedPolicy(policy) {
+  const value = policy || generalNewsfeedPolicy(false);
+  return {
+    version: NEWSFEED_POLICY_VERSION,
+    tier: value.tier || "general",
+    authenticated: Boolean(value.authenticated),
+    active_member: Boolean(value.active_member),
+    qualifying_months: Number.isFinite(value.qualifying_months) ? value.qualifying_months : null,
+    custom_topic_limit: value.custom_topic_limit === null ? null : Math.max(0, Math.floor(Number(value.custom_topic_limit) || 0)),
+    can_create_custom: Boolean(value.can_create_custom),
+    can_customize: Boolean(value.can_create_custom),
+    can_pin: Boolean(value.can_pin),
+    can_subscribe: Boolean(value.can_subscribe),
+    can_generate_narrative: Boolean(value.can_generate_narrative),
+  };
+}
+
+function newsfeedCustomTopicLedgerKey(user) {
+  return `${NEWSFEED_TOPIC_LEDGER_PREFIX}/${newsfeedUserKey(user)}.json`;
+}
+
+function publicNewsfeedCustomTopicUsage(policy, count = 0) {
+  const used = Math.max(0, Math.floor(Number(count) || 0));
+  const limit = policy && policy.custom_topic_limit;
+  return {
+    count: used,
+    limit: limit === null ? null : Math.max(0, Math.floor(Number(limit) || 0)),
+    remaining: limit === null ? null : Math.max(0, Math.floor(Number(limit) || 0) - used),
+  };
+}
+
+async function newsfeedCustomTopicUsage(env, user, policy, materializedCount = null) {
+  if (!user || !policy || policy.custom_topic_limit === 0) return publicNewsfeedCustomTopicUsage(policy, 0);
+  const actualCount = Number.isFinite(materializedCount)
+    ? Math.max(0, Math.floor(materializedCount))
+    : (await loadNewsfeedCustomTopics(env, user)).length;
+  if (policy.custom_topic_limit === null) return publicNewsfeedCustomTopicUsage(policy, actualCount);
+  const snapshot = await r2GetJsonObjectStrict(env, newsfeedCustomTopicLedgerKey(user));
+  const nowMs = Date.now();
+  const pending = Array.isArray(snapshot && snapshot.value && snapshot.value.pending)
+    ? snapshot.value.pending.filter((item) => (
+      item && /^[a-f0-9]{16,64}$/u.test(String(item.id || ""))
+      && Number(item.expires_at_ms) > nowMs
+      && Number(item.expires_at_ms) <= nowMs + NEWSFEED_TOPIC_RESERVATION_LEASE_MS + 60 * 1000
+    ))
+    : [];
+  return publicNewsfeedCustomTopicUsage(policy, actualCount + pending.length);
+}
+
+async function reserveNewsfeedCustomTopic(env, user, policy) {
+  if (!policy || policy.custom_topic_limit === 0) {
+    const usage = publicNewsfeedCustomTopicUsage(policy, 0);
+    throw new NewsfeedTopicLimitError(policy, usage);
+  }
+  if (policy.custom_topic_limit === null) {
+    return { reserved: false, usage: await newsfeedCustomTopicUsage(env, user, policy) };
+  }
+  const key = newsfeedCustomTopicLedgerKey(user);
+  const reservationId = randomHex(16);
+  for (let attempt = 0; attempt < REPORT_REQUEST_WRITE_RETRIES; attempt += 1) {
+    const materializedCount = (await loadNewsfeedCustomTopics(env, user)).length;
+    const snapshot = await r2GetJsonObjectStrict(env, key);
+    const nowMs = Date.now();
+    const pending = Array.isArray(snapshot && snapshot.value && snapshot.value.pending)
+      ? snapshot.value.pending.filter((item) => (
+        item && /^[a-f0-9]{16,64}$/u.test(String(item.id || ""))
+        && Number(item.expires_at_ms) > nowMs
+        && Number(item.expires_at_ms) <= nowMs + NEWSFEED_TOPIC_RESERVATION_LEASE_MS + 60 * 1000
+      ))
+      : [];
+    const count = materializedCount + pending.length;
+    const usage = publicNewsfeedCustomTopicUsage(policy, count);
+    if (usage.remaining <= 0) throw new NewsfeedTopicLimitError(policy, usage);
+    const nextPending = [...pending, {
+      id: reservationId,
+      created_at: new Date(nowMs).toISOString(),
+      expires_at_ms: nowMs + NEWSFEED_TOPIC_RESERVATION_LEASE_MS,
+    }];
+    const etag = String(snapshot && snapshot.object && snapshot.object.etag || "");
+    const written = await accountBucket(env).put(key, JSON.stringify({
+      version: NEWSFEED_POLICY_VERSION,
+      user_key: newsfeedUserKey(user),
+      pending: nextPending,
+      updated_at: new Date(nowMs).toISOString(),
+    }), {
+      onlyIf: etag ? { etagMatches: etag } : { etagDoesNotMatch: "*" },
+      httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "private, no-store" },
+    });
+    if (written !== null) {
+      return {
+        reserved: true,
+        reservation_id: reservationId,
+        usage: publicNewsfeedCustomTopicUsage(policy, count + 1),
+      };
+    }
+  }
+  throw new NewsfeedAccessError("Custom topic limit changed concurrently.", 409, "NEWSFEED_TOPIC_BUSY");
+}
+
+async function finishNewsfeedCustomTopicReservation(env, user, policy, reservationId) {
+  if (!user || !policy || policy.custom_topic_limit === null || policy.custom_topic_limit === 0 || !reservationId) {
+    return newsfeedCustomTopicUsage(env, user, policy);
+  }
+  const key = newsfeedCustomTopicLedgerKey(user);
+  for (let attempt = 0; attempt < REPORT_REQUEST_WRITE_RETRIES; attempt += 1) {
+    const materializedCount = (await loadNewsfeedCustomTopics(env, user)).length;
+    const snapshot = await r2GetJsonObjectStrict(env, key);
+    if (!snapshot) return publicNewsfeedCustomTopicUsage(policy, materializedCount);
+    const nowMs = Date.now();
+    const pending = Array.isArray(snapshot.value && snapshot.value.pending)
+      ? snapshot.value.pending.filter((item) => (
+        item && /^[a-f0-9]{16,64}$/u.test(String(item.id || ""))
+        && String(item.id) !== String(reservationId)
+        && Number(item.expires_at_ms) > nowMs
+        && Number(item.expires_at_ms) <= nowMs + NEWSFEED_TOPIC_RESERVATION_LEASE_MS + 60 * 1000
+      ))
+      : [];
+    const etag = String(snapshot.object && snapshot.object.etag || "");
+    const written = await accountBucket(env).put(key, JSON.stringify({
+      version: NEWSFEED_POLICY_VERSION,
+      user_key: newsfeedUserKey(user),
+      pending,
+      updated_at: new Date(nowMs).toISOString(),
+    }), {
+      onlyIf: etag ? { etagMatches: etag } : { etagDoesNotMatch: "*" },
+      httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "private, no-store" },
+    });
+    if (written !== null) return publicNewsfeedCustomTopicUsage(policy, materializedCount + pending.length);
+  }
+  throw new NewsfeedAccessError("Custom topic release changed concurrently.", 409, "NEWSFEED_TOPIC_BUSY");
+}
+
+function newsfeedPolicyEnvelope(policy, customTopics) {
+  const usage = customTopics || publicNewsfeedCustomTopicUsage(policy, 0);
+  const publicPolicy = {
+    ...publicNewsfeedPolicy(policy),
+    custom_topic_count: usage.count,
+    custom_topic_remaining: usage.remaining,
+    request_allowed: Boolean(policy && policy.active_member && usage.limit !== null && usage.remaining === 0),
+  };
+  return {
+    policy: publicPolicy,
+    custom_topics: usage,
+    custom_topic_count: usage.count,
+    custom_topic_remaining: usage.remaining,
+  };
+}
+
+async function requireNewsfeedCapability(request, env, capability) {
+  const user = await optionalNewsfeedUser(request, env);
+  if (!user) throw new NewsfeedAccessError("Please log in.", 401, "NEWSFEED_LOGIN_REQUIRED");
+  const policy = await newsfeedPolicyForUser(env, user);
+  const allowed = capability === "email"
+    ? policy.can_subscribe
+    : capability === "pin"
+      ? policy.can_pin
+      : policy.can_create_custom;
+  if (!allowed) {
+    throw new NewsfeedAccessError("An active membership is required for this Newsfeed feature.", 403, "NEWSFEED_MEMBERSHIP_REQUIRED");
+  }
+  return { user, policy };
+}
+
+function newsfeedErrorStatus(error) {
+  return Number.isInteger(error && error.status) ? error.status : accessErrorStatus(error);
+}
+
+async function newsfeedViewState(env, user, policy) {
+  if (!user || !policy || !policy.active_member) {
+    const settings = defaultNewsfeedSettings(user);
+    const pinned = new Set(settings.pinned || []);
+    return {
+      settings,
+      topics: NEWSFEED_DEFAULT_TOPICS.map((topic) => ({ ...topic, pinned: pinned.has(topic.id) })),
+      customTopics: [],
+      customUsage: publicNewsfeedCustomTopicUsage(policy, 0),
+    };
+  }
+  const [settings, customTopics] = await Promise.all([
+    loadNewsfeedSettings(env, user),
+    loadNewsfeedCustomTopics(env, user),
+  ]);
+  const pinned = new Set(settings.pinned || []);
+  const topics = [
+    ...NEWSFEED_DEFAULT_TOPICS.map((topic) => ({ ...topic, pinned: pinned.has(topic.id) })),
+    ...customTopics.map((topic) => ({ ...topic, kind: "custom", pinned: pinned.has(topic.id) })),
+  ];
+  return {
+    settings,
+    topics,
+    customTopics,
+    customUsage: await newsfeedCustomTopicUsage(env, user, policy, customTopics.length),
+  };
+}
+
 async function loadNewsfeedSettings(env, user) {
   return {
     ...defaultNewsfeedSettings(user),
@@ -13696,6 +14002,10 @@ function cleanReportChatVisitorId(value) {
 
 async function reportChatDeviceHash(env, visitorId) {
   return hmacSha256Hex(accountSecret(env), `report-chat-device:v1:${visitorId}`);
+}
+
+async function newsfeedDeviceHash(env, visitorId) {
+  return hmacSha256Hex(accountSecret(env), `newsfeed-device:v1:${visitorId}`);
 }
 
 class ReportChatLimitError extends Error {
@@ -15139,7 +15449,8 @@ async function generateNewsfeedTopicPackage(env, input, outputLanguage = "en") {
   };
 }
 
-function newsfeedPreferencesFromRequest(request, settings = {}) {
+function newsfeedPreferencesFromRequest(request, settings = {}, policy = null) {
+  if (!policy || !policy.active_member) return { regions: ["global"], language: "en" };
   const url = new URL(request.url);
   const regionsParam = url.searchParams.get("regions");
   const languageParam = url.searchParams.get("language");
@@ -15157,12 +15468,11 @@ function newsfeedRegionOptionsPayload() {
 
 async function handleNewsfeedHome(request, env) {
   try {
-    const user = await requireNewsfeedUser(request, env);
-    const [topics, settings] = await Promise.all([
-      loadNewsfeedTopics(env, user),
-      loadNewsfeedSettings(env, user),
-    ]);
-    const preferences = newsfeedPreferencesFromRequest(request, settings);
+    const user = await optionalNewsfeedUser(request, env);
+    const policy = await newsfeedPolicyForUser(env, user);
+    const view = await newsfeedViewState(env, user, policy);
+    const { topics, settings } = view;
+    const preferences = newsfeedPreferencesFromRequest(request, settings, policy);
     const globalSpec = NEWSFEED_DEFAULT_TOPICS.find((topic) => topic.id === "global-daily") || NEWSFEED_DEFAULT_TOPICS[0];
     const defaultSpecs = NEWSFEED_DEFAULT_TOPICS.filter((topic) => topic.id !== "global-daily");
     const url = new URL(request.url);
@@ -15195,6 +15505,7 @@ async function handleNewsfeedHome(request, env) {
         topics: topics.map(publicNewsfeedTopic),
         suggested_topics: NEWSFEED_SUGGESTED_TOPICS,
         settings: publicNewsfeedSettings({ ...settings, preferred_regions: preferences.regions, interface_language: preferences.language }, user, env),
+        ...newsfeedPolicyEnvelope(policy, view.customUsage),
       });
     }
     const fetched = await Promise.all([
@@ -15218,24 +15529,24 @@ async function handleNewsfeedHome(request, env) {
       topics: topics.map(publicNewsfeedTopic),
       suggested_topics: NEWSFEED_SUGGESTED_TOPICS,
       settings: publicNewsfeedSettings({ ...settings, preferred_regions: preferences.regions, interface_language: preferences.language }, user, env),
+      ...newsfeedPolicyEnvelope(policy, view.customUsage),
     });
   } catch (error) {
-    return jsonResponse(request, env, accessErrorStatus(error), { detail: error.message || "Newsfeed unavailable." });
+    return jsonResponse(request, env, newsfeedErrorStatus(error), { detail: error.message || "Newsfeed unavailable.", code: error.code || "NEWSFEED_SERVICE" });
   }
 }
 
 async function handleNewsfeedExplore(request, env) {
   try {
-    const user = await requireNewsfeedUser(request, env);
+    const user = await optionalNewsfeedUser(request, env);
+    const policy = await newsfeedPolicyForUser(env, user);
     const url = new URL(request.url);
-    const settings = await loadNewsfeedSettings(env, user);
-    const preferences = newsfeedPreferencesFromRequest(request, settings);
+    const view = await newsfeedViewState(env, user, policy);
+    const { topics, settings } = view;
+    const preferences = newsfeedPreferencesFromRequest(request, settings, policy);
     const requested = url.searchParams.get("category") || "Tech";
     const spec = NEWSFEED_DEFAULT_TOPICS.find((topic) => topic.category === requested) || NEWSFEED_DEFAULT_TOPICS[1];
-    const [topics, payload] = await Promise.all([
-      loadNewsfeedTopics(env, user),
-      fetchNewsfeedItems(env, spec, { limit: 34, includeGdelt: true, regions: preferences.regions, language: preferences.language }),
-    ]);
+    const payload = await fetchNewsfeedItems(env, spec, { limit: 34, includeGdelt: true, regions: preferences.regions, language: preferences.language });
     return jsonResponse(request, env, 200, {
       categories: NEWSFEED_CATEGORIES,
       regions: newsfeedRegionOptionsPayload(),
@@ -15246,22 +15557,22 @@ async function handleNewsfeedExplore(request, env) {
       updated_label: payload.updated_label,
       cache_status: payload.cache_status,
       topics: topics.map(publicNewsfeedTopic),
+      ...newsfeedPolicyEnvelope(policy, view.customUsage),
     });
   } catch (error) {
-    return jsonResponse(request, env, accessErrorStatus(error), { detail: error.message || "Newsfeed unavailable." });
+    return jsonResponse(request, env, newsfeedErrorStatus(error), { detail: error.message || "Newsfeed unavailable.", code: error.code || "NEWSFEED_SERVICE" });
   }
 }
 
 async function handleNewsfeedTopic(request, env) {
   try {
-    const user = await requireNewsfeedUser(request, env);
+    const user = await optionalNewsfeedUser(request, env);
+    const policy = await newsfeedPolicyForUser(env, user);
     const url = new URL(request.url);
     const id = url.searchParams.get("id") || "global-daily";
-    const [topics, settings] = await Promise.all([
-      loadNewsfeedTopics(env, user),
-      loadNewsfeedSettings(env, user),
-    ]);
-    const preferences = newsfeedPreferencesFromRequest(request, settings);
+    const view = await newsfeedViewState(env, user, policy);
+    const { topics, settings } = view;
+    const preferences = newsfeedPreferencesFromRequest(request, settings, policy);
     const topic = findNewsfeedTopic(topics, id);
     if (!topic) return jsonResponse(request, env, 404, { detail: "Topic not found." });
     const payload = await fetchNewsfeedItems(env, topic, { limit: 34, includeGdelt: true, regions: preferences.regions, language: preferences.language });
@@ -15270,24 +15581,44 @@ async function handleNewsfeedTopic(request, env) {
       items: payload.items || [],
       topics: topics.map(publicNewsfeedTopic),
       cache_status: payload.cache_status,
+      ...newsfeedPolicyEnvelope(policy, view.customUsage),
     });
   } catch (error) {
-    return jsonResponse(request, env, accessErrorStatus(error), { detail: error.message || "Newsfeed unavailable." });
+    return jsonResponse(request, env, newsfeedErrorStatus(error), { detail: error.message || "Newsfeed unavailable.", code: error.code || "NEWSFEED_SERVICE" });
   }
 }
 
 async function handleNewsfeedCreateTopic(request, env, ctx) {
+  let user = null;
+  let policy = null;
+  let reservation = null;
+  let topicStored = false;
+  let requestedTopic = "";
   try {
-    const user = await requireNewsfeedUser(request, env);
-    const existing = await loadNewsfeedCustomTopics(env, user);
-    if (existing.length >= NEWSFEED_MAX_USER_TOPICS) {
-      return jsonResponse(request, env, 400, { detail: "Topic limit reached." });
+    ({ user, policy } = await requireNewsfeedCapability(request, env, "custom"));
+    const declaredLength = Number(request.headers.get("Content-Length") || 0);
+    if (Number.isFinite(declaredLength) && declaredLength > NEWSFEED_TOPIC_REQUEST_MAX_BODY_BYTES) {
+      return jsonResponse(request, env, 413, { detail: "Topic request is too large.", code: "NEWSFEED_TOPIC_BODY" });
     }
-    const payload = await request.json().catch(() => ({}));
+    const rawBody = await request.text();
+    if (new TextEncoder().encode(rawBody).byteLength > NEWSFEED_TOPIC_REQUEST_MAX_BODY_BYTES) {
+      return jsonResponse(request, env, 413, { detail: "Topic request is too large.", code: "NEWSFEED_TOPIC_BODY" });
+    }
+    let payload;
+    try {
+      payload = rawBody ? JSON.parse(rawBody) : {};
+    } catch (_error) {
+      return jsonResponse(request, env, 400, { detail: "Topic request is invalid.", code: "NEWSFEED_TOPIC_BODY" });
+    }
+    if (!payload || typeof payload !== "object" || Array.isArray(payload)) {
+      return jsonResponse(request, env, 400, { detail: "Topic request is invalid.", code: "NEWSFEED_TOPIC_BODY" });
+    }
     const input = compactNewsfeedQuery(payload.topic || payload.query || "");
-    if (input.length < 2) return jsonResponse(request, env, 400, { detail: "Topic is required." });
+    requestedTopic = input;
+    if (input.length < 2) return jsonResponse(request, env, 400, { detail: "Topic is required.", code: "NEWSFEED_TOPIC_REQUIRED" });
     const outputLanguage = normalizeNewsfeedLanguage(payload.output_language || payload.language || "en");
     const regions = normalizeNewsfeedRegions(payload.preferred_regions || payload.regions || ["global"]);
+    reservation = await reserveNewsfeedCustomTopic(env, user, policy);
     const plan = await generateNewsfeedTopicPackage(env, input, outputLanguage);
     const id = `${slugifyNewsfeed(plan.title)}-${randomHex(3)}`;
     const topic = {
@@ -15305,6 +15636,11 @@ async function handleNewsfeedCreateTopic(request, env, ctx) {
       updated_at: new Date().toISOString(),
     };
     await r2PutJson(env, newsfeedTopicKey(user, id), topic);
+    topicStored = true;
+    if (reservation.reserved) {
+      await finishNewsfeedCustomTopicReservation(env, user, policy, reservation.reservation_id);
+      reservation = null;
+    }
     const itemsPromise = fetchNewsfeedItems(env, topic, { limit: 34, skipCache: true, includeGdelt: true, regions, language: outputLanguage }).catch(() => null);
     const [topics, fastItems] = await Promise.all([
       loadNewsfeedTopics(env, user),
@@ -15312,42 +15648,80 @@ async function handleNewsfeedCreateTopic(request, env, ctx) {
     ]);
     if (!fastItems && ctx && typeof ctx.waitUntil === "function") ctx.waitUntil(itemsPromise);
     const items = fastItems || { items: [], updated_label: "Preparing stories" };
+    const customUsage = await newsfeedCustomTopicUsage(env, user, policy, topics.filter((item) => item.kind === "custom").length);
     return jsonResponse(request, env, 201, {
       topic: { ...publicNewsfeedTopic(topic), updated_label: items.updated_label },
       items: items.items || [],
       topics: topics.map(publicNewsfeedTopic),
       pending: !fastItems,
+      ...newsfeedPolicyEnvelope(policy, customUsage),
     });
   } catch (error) {
-    return jsonResponse(request, env, accessErrorStatus(error), { detail: error.message || "Could not create topic." });
+    if (reservation && reservation.reserved && !topicStored) {
+      try {
+        await finishNewsfeedCustomTopicReservation(env, user, policy, reservation.reservation_id);
+      } catch (_releaseError) {
+        // The short reservation lease makes an interrupted release self-healing.
+      }
+    }
+    if (error instanceof NewsfeedTopicLimitError) {
+      return jsonResponse(request, env, 409, {
+        detail: "Custom topic limit reached. You can request an additional topic.",
+        code: "NEWSFEED_TOPIC_LIMIT",
+        request_available: true,
+        requested_topic: requestedTopic,
+        ...newsfeedPolicyEnvelope(error.policy, error.usage),
+      });
+    }
+    return jsonResponse(request, env, newsfeedErrorStatus(error), {
+      detail: error.message || "Could not create topic.",
+      code: error.code || "NEWSFEED_TOPIC_SERVICE",
+      ...(policy ? newsfeedPolicyEnvelope(policy, await newsfeedCustomTopicUsage(env, user, policy).catch(() => null)) : {}),
+    });
   }
 }
 
 async function handleNewsfeedPinTopic(request, env) {
   try {
-    const user = await requireNewsfeedUser(request, env);
+    const { user, policy } = await requireNewsfeedCapability(request, env, "pin");
     const payload = await request.json().catch(() => ({}));
     const id = String(payload.id || "").trim();
     const pinned = Boolean(payload.pinned);
     if (!id) return jsonResponse(request, env, 400, { detail: "Topic id is required." });
+    const availableTopics = await loadNewsfeedTopics(env, user);
+    if (!findNewsfeedTopic(availableTopics, id)) {
+      return jsonResponse(request, env, 404, { detail: "Topic not found.", code: "NEWSFEED_TOPIC_NOT_FOUND" });
+    }
     const settings = await loadNewsfeedSettings(env, user);
     const next = new Set(settings.pinned || []);
     if (pinned) next.add(id);
     else next.delete(id);
     await saveNewsfeedSettings(env, user, { ...settings, pinned: [...next] });
     const topics = await loadNewsfeedTopics(env, user);
-    return jsonResponse(request, env, 200, { topics: topics.map(publicNewsfeedTopic) });
+    const customUsage = await newsfeedCustomTopicUsage(env, user, policy, topics.filter((item) => item.kind === "custom").length);
+    return jsonResponse(request, env, 200, {
+      topics: topics.map(publicNewsfeedTopic),
+      ...newsfeedPolicyEnvelope(policy, customUsage),
+    });
   } catch (error) {
-    return jsonResponse(request, env, accessErrorStatus(error), { detail: error.message || "Could not update topic." });
+    return jsonResponse(request, env, newsfeedErrorStatus(error), { detail: error.message || "Could not update topic.", code: error.code || "NEWSFEED_TOPIC_SERVICE" });
   }
 }
 
 async function handleNewsfeedSettings(request, env) {
   try {
     const user = await requireNewsfeedUser(request, env);
+    const policy = await newsfeedPolicyForUser(env, user);
+    if (!policy.can_subscribe) {
+      throw new NewsfeedAccessError("An active membership is required for this Newsfeed feature.", 403, "NEWSFEED_MEMBERSHIP_REQUIRED");
+    }
     const settings = await loadNewsfeedSettings(env, user);
+    const customUsage = await newsfeedCustomTopicUsage(env, user, policy);
     if (request.method === "GET") {
-      return jsonResponse(request, env, 200, { settings: publicNewsfeedSettings(settings, user, env) });
+      return jsonResponse(request, env, 200, {
+        settings: publicNewsfeedSettings(settings, user, env),
+        ...newsfeedPolicyEnvelope(policy, customUsage),
+      });
     }
     const payload = await request.json().catch(() => ({}));
     let next = nextNewsfeedSettingsFromPayload(settings, user, payload);
@@ -15358,9 +15732,12 @@ async function handleNewsfeedSettings(request, env) {
       return jsonResponse(request, env, 400, { detail: error.message || "Choose one newsletter." });
     }
     await saveNewsfeedSettings(env, user, next);
-    return jsonResponse(request, env, 200, { settings: publicNewsfeedSettings(next, user, env) });
+    return jsonResponse(request, env, 200, {
+      settings: publicNewsfeedSettings(next, user, env),
+      ...newsfeedPolicyEnvelope(policy, customUsage),
+    });
   } catch (error) {
-    return jsonResponse(request, env, accessErrorStatus(error), { detail: error.message || "Could not save settings." });
+    return jsonResponse(request, env, newsfeedErrorStatus(error), { detail: error.message || "Could not save settings.", code: error.code || "NEWSFEED_SETTINGS_SERVICE" });
   }
 }
 
@@ -15368,6 +15745,10 @@ async function handleNewsfeedEmailSend(request, env, options = {}) {
   const isTest = Boolean(options.test);
   try {
     const user = await requireNewsfeedUser(request, env);
+    const policy = await newsfeedPolicyForUser(env, user);
+    if (!policy.can_subscribe) {
+      throw new NewsfeedAccessError("An active membership is required for this Newsfeed feature.", 403, "NEWSFEED_MEMBERSHIP_REQUIRED");
+    }
     const settings = await loadNewsfeedSettings(env, user);
     const payload = await request.json().catch(() => ({}));
     let next = nextNewsfeedSettingsFromPayload(settings, user, payload);
@@ -15402,10 +15783,239 @@ async function handleNewsfeedEmailSend(request, env, options = {}) {
       message_id: result && result.messageId || "",
       test: isTest,
       settings: publicNewsfeedSettings(recorded || next, user, env),
+      ...newsfeedPolicyEnvelope(policy, await newsfeedCustomTopicUsage(env, user, policy)),
     });
   } catch (error) {
     const fallback = isTest ? "Could not send test email." : "Could not send newsletter email.";
-    return jsonResponse(request, env, accessErrorStatus(error), { detail: error.message || fallback });
+    return jsonResponse(request, env, newsfeedErrorStatus(error), { detail: error.message || fallback, code: error.code || "NEWSFEED_EMAIL_SERVICE" });
+  }
+}
+
+function newsfeedTopicRequestEmailContent(record) {
+  const fields = [
+    ["申请主题", record.topic],
+    ["会员账号", record.requester_email],
+    ["用户名", record.requester_username],
+    ["会员层级", record.tier],
+    ["权益月数", record.qualifying_months],
+    ["自定义主题额度", String(record.custom_topic_limit)],
+    ["已创建/占用", String(record.custom_topic_count)],
+    ["输出语言", record.output_language],
+    ["偏好地区", Array.isArray(record.preferred_regions) ? record.preferred_regions.join(", ") : ""],
+    ["页面路径", record.page_path],
+  ].filter(([, value]) => value !== "" && value !== null && value !== undefined);
+  const text = [
+    "收到一条 Newsfeed 自定义主题扩展申请。",
+    "",
+    ...fields.map(([label, value]) => `${label}：${value}`),
+    "",
+    "请直接联系申请人处理。",
+  ].join("\n");
+  const rows = fields.map(([label, value]) => `
+    <tr>
+      <th style="padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #e5e7eb;color:#475467;white-space:nowrap;">${escapeNewsfeedHtml(label)}</th>
+      <td style="padding:9px 12px;border-bottom:1px solid #e5e7eb;color:#101828;word-break:break-word;">${escapeNewsfeedHtml(value)}</td>
+    </tr>`).join("");
+  return {
+    subject: cleanReportRequestText(`Newsfeed 自定义主题申请：${record.topic}`, 160),
+    text,
+    html: `
+      <div style="margin:0;padding:24px;background:#f6f7fb;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#101828;">
+        <div style="max-width:680px;margin:0 auto;background:#ffffff;border-radius:10px;padding:28px;">
+          <h1 style="margin:0 0 18px;font-size:22px;line-height:1.35;">Newsfeed 自定义主题扩展申请</h1>
+          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border:1px solid #e5e7eb;border-radius:8px;border-collapse:collapse;">${rows}</table>
+        </div>
+      </div>`,
+  };
+}
+
+async function handleNewsfeedTopicRequest(request, env, ctx) {
+  if (!reportRequestOriginAllowed(request, env)) {
+    return privateJsonResponse(request, env, 403, { ok: false, detail: "申请来源无效。", code: "NEWSFEED_REQUEST_ORIGIN" });
+  }
+  const declaredLength = Number(request.headers.get("Content-Length") || 0);
+  if (Number.isFinite(declaredLength) && declaredLength > NEWSFEED_TOPIC_REQUEST_MAX_BODY_BYTES) {
+    return privateJsonResponse(request, env, 413, { ok: false, detail: "申请内容过大。", code: "NEWSFEED_REQUEST_BODY" });
+  }
+  let payload;
+  try {
+    const rawBody = await request.text();
+    if (new TextEncoder().encode(rawBody).byteLength > NEWSFEED_TOPIC_REQUEST_MAX_BODY_BYTES) {
+      return privateJsonResponse(request, env, 413, { ok: false, detail: "申请内容过大。", code: "NEWSFEED_REQUEST_BODY" });
+    }
+    payload = rawBody ? JSON.parse(rawBody) : {};
+  } catch (_error) {
+    return privateJsonResponse(request, env, 400, { ok: false, detail: "申请格式无效。", code: "NEWSFEED_REQUEST_BODY" });
+  }
+  if (!payload || typeof payload !== "object" || Array.isArray(payload)) {
+    return privateJsonResponse(request, env, 400, { ok: false, detail: "申请格式无效。", code: "NEWSFEED_REQUEST_BODY" });
+  }
+  if (String(payload.honeypot || payload.website || "").trim()) {
+    return privateJsonResponse(request, env, 202, { ok: true, deduplicated: true, detail: "申请已记录。" });
+  }
+
+  let user;
+  let policy;
+  try {
+    ({ user, policy } = await requireNewsfeedCapability(request, env, "custom"));
+  } catch (error) {
+    return privateJsonResponse(request, env, newsfeedErrorStatus(error), {
+      ok: false,
+      detail: error.message || "请先登录有效会员账号。",
+      code: error.code || "NEWSFEED_REQUEST_ACCESS",
+    });
+  }
+  if (policy.custom_topic_limit === null) {
+    return privateJsonResponse(request, env, 409, {
+      ok: false,
+      detail: "当前账号没有自定义主题数量限制。",
+      code: "NEWSFEED_REQUEST_NOT_ELIGIBLE",
+      ...newsfeedPolicyEnvelope(policy, await newsfeedCustomTopicUsage(env, user, policy)),
+    });
+  }
+  const customUsage = await newsfeedCustomTopicUsage(env, user, policy);
+  if (customUsage.remaining > 0) {
+    return privateJsonResponse(request, env, 409, {
+      ok: false,
+      detail: "仅达到自定义主题上限后可以提交申请。",
+      code: "NEWSFEED_REQUEST_NOT_AT_LIMIT",
+      ...newsfeedPolicyEnvelope(policy, customUsage),
+    });
+  }
+  const topic = compactNewsfeedQuery(payload.topic || "");
+  if (topic.length < 2) {
+    return privateJsonResponse(request, env, 400, { ok: false, detail: "请填写希望增加的主题。", code: "NEWSFEED_TOPIC_REQUIRED" });
+  }
+  const outputLanguage = normalizeNewsfeedLanguage(payload.output_language || payload.language || "en");
+  const preferredRegions = normalizeNewsfeedRegions(payload.preferred_regions || payload.regions || ["global"]);
+  const requesterEmail = normalizeEmail(user.email);
+  if (!requesterEmail) {
+    return privateJsonResponse(request, env, 400, { ok: false, detail: "会员账号邮箱无效。", code: "NEWSFEED_REQUEST_EMAIL" });
+  }
+
+  try {
+    const nowMs = Date.now();
+    const digest = await reportRequestPrivateHash(env, "newsfeed-topic-dedupe", `${requesterEmail}|${topic.toLocaleLowerCase("zh-CN")}`);
+    const key = `${NEWSFEED_TOPIC_REQUEST_PREFIX}/items/${digest}.json`;
+    const existing = await r2GetJsonObjectStrict(env, key);
+    if (reportRequestDisposition(existing && existing.value, nowMs)) {
+      return privateJsonResponse(request, env, 202, {
+        ok: true,
+        status: "duplicate",
+        deduplicated: true,
+        request_id: digest,
+        detail: "该主题申请已经收到，无需重复提交。",
+        ...newsfeedPolicyEnvelope(policy, customUsage),
+      });
+    }
+    const ipAllowed = await reserveReportRequestRateLimit(
+      env,
+      "newsfeed-topic-ip",
+      reportRequestClientIp(request),
+      REPORT_REQUEST_IP_RATE_LIMIT,
+      nowMs,
+    );
+    const emailAllowed = await reserveReportRequestRateLimit(
+      env,
+      "newsfeed-topic-email",
+      requesterEmail,
+      REPORT_REQUEST_EMAIL_RATE_LIMIT,
+      nowMs,
+    );
+    if (!ipAllowed || !emailAllowed) {
+      return privateJsonResponse(request, env, 429, { ok: false, retryable: true, detail: "提交过于频繁，请稍后再试。", code: "NEWSFEED_REQUEST_RATE" });
+    }
+    const record = {
+      request_id: digest,
+      topic,
+      topic_hash: await sha256Hex(topic.toLocaleLowerCase("zh-CN")),
+      tier: policy.tier,
+      qualifying_months: Number.isFinite(policy.qualifying_months) ? policy.qualifying_months : null,
+      custom_topic_limit: customUsage.limit,
+      custom_topic_count: customUsage.count,
+      output_language: outputLanguage,
+      preferred_regions: preferredRegions,
+      requester_email: requesterEmail,
+      requester_user_id: cleanReportRequestText(user.id, 100),
+      requester_username: cleanReportRequestText(user.username, 80),
+      page_path: cleanReportRequestPagePath(payload.page_path),
+    };
+    const reservation = await reserveReportRequestRecord(env, key, record, nowMs);
+    if (reservation.disposition !== "reserved") {
+      return privateJsonResponse(request, env, 202, {
+        ok: true,
+        status: "duplicate",
+        deduplicated: true,
+        request_id: digest,
+        detail: "该主题申请已经收到，无需重复提交。",
+        ...newsfeedPolicyEnvelope(policy, customUsage),
+      });
+    }
+    const content = newsfeedTopicRequestEmailContent(reservation.record);
+    let result;
+    try {
+      result = await sendNewsfeedEmail(env, {
+        to: CONTACT_EMAIL,
+        subject: content.subject,
+        html: content.html,
+        text: content.text,
+        tags: ["portal-newsfeed-topic-request"],
+      });
+    } catch (error) {
+      result = { sent: false, detail: String(error && error.message || "Email send failed.") };
+    }
+    const completedAt = new Date().toISOString();
+    const completed = {
+      ...reservation.record,
+      status: result && result.sent ? "sent" : "failed",
+      provider: cleanReportRequestText(result && result.provider, 40),
+      message_id: cleanReportRequestText(result && result.messageId, 200),
+      last_error: result && result.sent ? "" : cleanReportRequestText(result && result.detail, 500),
+      sent_at: result && result.sent ? completedAt : "",
+      updated_at: completedAt,
+    };
+    await r2PutJson(env, key, completed);
+    rewardWaitUntil(ctx, persistAnalyticsEvent(request, env, {
+      type: "newsfeed_topic_request",
+      path: "/newsfeed/topics/request",
+      data: {
+        page: "newsfeed",
+        action: "request_custom_topic",
+        status: completed.status,
+        tier: policy.tier,
+        question_hash: completed.topic_hash,
+        topic_hash: completed.topic_hash,
+        topic_kind: "custom",
+        count: customUsage.count,
+        limit: customUsage.limit,
+        result_count: completed.status === "sent" ? 1 : 0,
+        error: completed.last_error,
+      },
+    }, user));
+    if (completed.status !== "sent") {
+      return privateJsonResponse(request, env, 502, {
+        ok: false,
+        retryable: true,
+        request_id: digest,
+        detail: "申请已保存，但通知发送失败，请稍后重试。",
+        ...newsfeedPolicyEnvelope(policy, customUsage),
+      });
+    }
+    return privateJsonResponse(request, env, 202, {
+      ok: true,
+      status: "sent",
+      deduplicated: false,
+      request_id: digest,
+      detail: "申请已发送，我们会通过会员账号邮箱继续处理。",
+      ...newsfeedPolicyEnvelope(policy, customUsage),
+    });
+  } catch (_error) {
+    return privateJsonResponse(request, env, 503, {
+      ok: false,
+      retryable: true,
+      detail: "主题申请服务暂时不可用，请稍后重试。",
+      code: "NEWSFEED_REQUEST_SERVICE",
+    });
   }
 }
 
@@ -15476,10 +16086,13 @@ async function streamNewsfeedText(controller, encoder, type, text) {
 
 async function handleNewsfeedArticle(request, env) {
   try {
-    await requireNewsfeedUser(request, env);
+    const user = await optionalNewsfeedUser(request, env);
+    const policy = await newsfeedPolicyForUser(env, user);
     const payload = await request.json().catch(() => ({}));
     const article = payload.article || {};
-    const result = await generateArticleNarrative(env, article);
+    const result = policy.can_generate_narrative
+      ? await generateArticleNarrative(env, article)
+      : fallbackArticleNarrative(article);
     const encoder = new TextEncoder();
     const stream = new ReadableStream({
       async start(controller) {
@@ -15501,7 +16114,7 @@ async function handleNewsfeedArticle(request, env) {
       },
     });
   } catch (error) {
-    return jsonResponse(request, env, accessErrorStatus(error), { detail: error.message || "Could not load story." });
+    return jsonResponse(request, env, newsfeedErrorStatus(error), { detail: error.message || "Could not load story.", code: error.code || "NEWSFEED_ARTICLE_SERVICE" });
   }
 }
 
@@ -15549,16 +16162,18 @@ function buildNewsfeedBriefingScript(input = {}) {
 
 async function handleNewsfeedBriefing(request, env) {
   try {
-    await requireNewsfeedUser(request, env);
+    const user = await optionalNewsfeedUser(request, env);
+    const policy = await newsfeedPolicyForUser(env, user);
     const payload = await request.json().catch(() => ({}));
     const script = buildNewsfeedBriefingScript(payload);
     return jsonResponse(request, env, 200, {
       script,
       provider: "browser-speech",
       audio_seconds_target: 30,
+      policy: publicNewsfeedPolicy(policy),
     });
   } catch (error) {
-    return jsonResponse(request, env, accessErrorStatus(error), { detail: error.message || "Could not prepare briefing." });
+    return jsonResponse(request, env, newsfeedErrorStatus(error), { detail: error.message || "Could not prepare briefing.", code: error.code || "NEWSFEED_BRIEFING_SERVICE" });
   }
 }
 
@@ -17674,6 +18289,12 @@ async function newsfeedUserForStoredSettings(env, settings = {}) {
   if (settings.user_key && String(settings.user_key) !== newsfeedUserKey(user)) return null;
   if (userEmail && userEmail !== normalizeEmail(user.email)) return null;
   if (normalizeEmail(settings.digest_email) !== normalizeEmail(user.email)) return null;
+  try {
+    const policy = await newsfeedPolicyForUser(env, user);
+    if (!policy.can_subscribe) return null;
+  } catch (_error) {
+    return null;
+  }
   return user;
 }
 
@@ -22459,6 +23080,10 @@ export default {
 
     if (pathname === "/newsfeed/topics" && request.method === "POST") {
       return handleNewsfeedCreateTopic(request, env, ctx);
+    }
+
+    if (pathname === "/newsfeed/topics/request" && request.method === "POST") {
+      return handleNewsfeedTopicRequest(request, env, ctx);
     }
 
     if (pathname === "/newsfeed/topics/pin" && request.method === "POST") {
