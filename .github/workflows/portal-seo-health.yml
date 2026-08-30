@@ -1,0 +1,78 @@
+name: Portal SEO health
+
+on:
+  schedule:
+    - cron: "40 18 * * *"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+
+concurrency:
+  group: portal-seo-health
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    if: github.event_name == 'schedule' || github.actor == github.repository_owner
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            scripts/audit_portal_seo_live.py
+            scripts/test_audit_portal_seo_live.py
+          sparse-checkout-cone-mode: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Test the read-only audit client
+        run: python -B scripts/test_audit_portal_seo_live.py
+
+      - name: Audit public SEO health
+        env:
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+          PORTAL_INDEXNOW_KEY: ${{ secrets.PORTAL_INDEXNOW_KEY }}
+        run: |
+          set -euo pipefail
+          mkdir -p private-summary
+          python -B scripts/audit_portal_seo_live.py \
+            --site-url "$PORTAL_SITE_URL" \
+            --indexnow-key "$PORTAL_INDEXNOW_KEY" \
+            --sample-size 18 \
+            --output private-summary/seo-health.json \
+            --markdown-output private-summary/seo-health.md
+
+      - name: Publish aggregate run summary
+        if: always()
+        shell: bash
+        run: |
+          if [[ -f private-summary/seo-health.md ]]; then
+            cat private-summary/seo-health.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            printf '%s\n' '# Portal SEO 健康检查' '' '- 检查程序未生成汇总文件。' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload short-lived private audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: private-portal-seo-health-${{ github.run_id }}
+          path: |
+            private-summary/seo-health.json
+            private-summary/seo-health.md
+          if-no-files-found: error
+          retention-days: 1
+
+  notify-failure:
+    needs: audit
+    if: ${{ always() && !cancelled() && needs.audit.result == 'failure' }}
+    uses: ./.github/workflows/portal-ops-alert.yml
+    with:
+      source_workflow: Portal SEO health
+      source_results: seo_health=${{ needs.audit.result }}
+    secrets: inherit
