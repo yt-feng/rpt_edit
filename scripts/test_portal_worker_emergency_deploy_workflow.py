@@ -71,6 +71,8 @@ class PortalWorkerEmergencyDeployWorkflowTests(unittest.TestCase):
     def test_materialized_public_site_is_brand_checked_before_worker_upload(self) -> None:
         self.assertIn("scripts/check_public_brand.py", self.workflow)
         self.assertIn("scripts/test_check_public_brand.py", self.workflow)
+        self.assertIn("scripts/test_render_private_config.py", self.workflow)
+        self.assertIn("python3 -B scripts/test_render_private_config.py", self.workflow)
         self.assertIn("python3 -B scripts/test_check_public_brand.py", self.workflow)
         materialize = self.workflow.index("Materialize private deployment values")
         brand_check = self.workflow.index("Validate materialized public brand")
@@ -80,6 +82,12 @@ class PortalWorkerEmergencyDeployWorkflowTests(unittest.TestCase):
         self.assertIn(
             "python3 -B scripts/check_public_brand.py portal_suite/site_src",
             self.workflow,
+        )
+        materialized_section = self.workflow[materialize:brand_check]
+        self.assertIn("--forbid-profile-private-for admin-a", materialized_section)
+        self.assertIn(
+            "--forbid-profile-private-for admin-a@users.portal.example.invalid",
+            materialized_section,
         )
         self.assertNotIn(
             "check_public_brand.py workers/portal-suite-worker/src",

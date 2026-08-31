@@ -2,8 +2,12 @@
 
 from __future__ import annotations
 
+import base64
+import json
+import os
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 from check_public_brand import PublicBrandError, check_public_brand, main
@@ -85,6 +89,7 @@ class PublicBrandCheckTests(unittest.TestCase):
             '<script>document.body.textContent = "Report" + "ify";</script>',
             '<script>document.body.textContent = "Report" /* source */ + "ify";</script>',
             '<script>document.body.textContent = "Report" // source\n + "ify";</script>',
+            '<div class="account-twotigersnalytics"></div>',
         )
         for sample in samples:
             with self.subTest(sample=sample), tempfile.TemporaryDirectory() as temporary:
@@ -120,6 +125,32 @@ class PublicBrandCheckTests(unittest.TestCase):
             write_brand_mark(root)
             write(root / "assets/app.js", "root.PortalSuiteContact = root.PortalSuiteAnalytics;")
             check_public_brand(root)
+
+    def test_selected_private_profile_values_are_forbidden_even_inside_identifiers(self) -> None:
+        profile = base64.b64encode(json.dumps({
+            "version": 1,
+            "replacements": [
+                {"public": "admin-a", "private": "owner-handle"},
+            ],
+            "files": [],
+        }).encode("utf-8")).decode("ascii")
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            write(root / "index.html", "KC桌面")
+            write_brand_mark(root)
+            write(root / "assets/app.js", 'const name = "account-owner-handlenalytics";')
+            with patch.dict(os.environ, {"PORTAL_PRIVATE_CONFIG_B64": profile}):
+                self.assertEqual(
+                    main([str(root), "--forbid-profile-private-for", "admin-a"]),
+                    1,
+                )
+
+            write(root / "assets/app.js", 'const name = "account-ops-analytics";')
+            with patch.dict(os.environ, {"PORTAL_PRIVATE_CONFIG_B64": profile}):
+                self.assertEqual(
+                    main([str(root), "--forbid-profile-private-for", "admin-a"]),
+                    0,
+                )
 
     def test_required_public_brand_must_be_present(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:

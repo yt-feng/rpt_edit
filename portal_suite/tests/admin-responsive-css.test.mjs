@@ -42,7 +42,7 @@ test("desktop admin workspace is wide enough for the user table and editor", () 
 
   const wide = mediaSection(responsive, "@media (min-width: 1180px)");
   assert.match(wide, /#accountAdminUserEditor \.account-admin-form-grid\s*\{[\s\S]*?grid-template-columns:\s*repeat\(3,/u);
-  assert.match(wide, /#accountAdminUserEditor \.account-admin-access-field\s*\{[\s\S]*?grid-column:\s*span 2/u);
+  assert.match(wide, /#accountAdminUserEditor \.account-operator-access-field\s*\{[\s\S]*?grid-column:\s*span 2/u);
 
   const desktop = mediaSection(responsive, "@media (min-width: 821px)");
   assert.match(desktop, /\.account-admin-row-actions\s*\{[\s\S]*?flex-wrap:\s*nowrap/u);

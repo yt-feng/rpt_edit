@@ -114,6 +114,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertLess(brand_check, compare)
         self.assertLess(compare, upload)
         self.assertIn("python3 -B scripts/test_check_public_brand.py", self.workflow)
+        self.assertIn("python3 -B scripts/test_render_private_config.py", self.workflow)
         self.assertIn("python3 -B scripts/check_public_brand.py _neutral_site", self.workflow)
 
         acceptance = self.workflow[
@@ -166,6 +167,11 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn('member_contact_card="$RUNNER_TEMP/member-contact-card.jpg"', materialize)
         self.assertIn('--source "$legacy_contact_card"', materialize)
         self.assertIn('--output "$member_contact_card"', materialize)
+        self.assertIn("--forbid-profile-private-for admin-a", materialize)
+        self.assertIn(
+            "--forbid-profile-private-for admin-a@users.portal.example.invalid",
+            materialize,
+        )
         self.assertIn('rm -f "$legacy_contact_card"', materialize)
         self.assertIn('test ! -e "$legacy_contact_card"', materialize)
         self.assertIn("test ! -e _neutral_site/assets/contact-card.jpg", build)

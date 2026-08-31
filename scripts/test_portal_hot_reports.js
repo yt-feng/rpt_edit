@@ -190,7 +190,7 @@ assert.match(
 );
 assert.match(
   styles,
-  /\.hot-comment-admin-alias\[hidden\][\s\S]*?display:\s*none\s*!important/,
+  /\.hot-comment-owner-alias\[hidden\][\s\S]*?display:\s*none\s*!important/,
   "author CSS must not override the hidden state of administrator-only comment controls",
 );
 assert.match(

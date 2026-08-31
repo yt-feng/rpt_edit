@@ -2666,7 +2666,7 @@
               <span id="accountAdminAnalyticsCount"></span>
             </div>
             <div id="accountAdminAnalyticsNotice" class="account-admin-module-notice" hidden></div>
-            <div id="accountAdminAnalytics" class="account-admin-analytics"></div>
+            <div id="accountAdminAnalytics" class="account-ops-analytics"></div>
           </section>
           <section class="account-admin-section" id="accountAdminReportChatArchiveSection" ${showReportChatArchives ? "" : "hidden"}>
             <div class="account-admin-heading">
@@ -2737,13 +2737,13 @@
                   <span>到期日期（可精确指定）</span>
                   <input id="accountAdminAccessExpiry" type="date">
                 </label>
-                <div class="account-admin-access-field">
-                  <div class="account-admin-access-field-head">
+                <div class="account-operator-access-field">
+                  <div class="account-operator-access-field-head">
                     <span>机构（可多选）</span>
                     <span id="accountAdminAccessInstitutionCount">已选 0</span>
                   </div>
                   <input id="accountAdminAccessInstitutionSearch" type="search" autocomplete="off" placeholder="搜索机构">
-                  <div class="account-admin-access-checkboxes" id="accountAdminAccessInstitutions" role="group" aria-label="机构下载权限"></div>
+                  <div class="account-operator-access-checkboxes" id="accountAdminAccessInstitutions" role="group" aria-label="机构下载权限"></div>
                   <small>直接勾选多个机构（最多 60 项）；已有但不在当前目录中的授权会标为“历史授权”并继续保留。</small>
                 </div>
                 <label>
@@ -3016,7 +3016,7 @@
       const checked = selectedKeys.has(accessOptionKey(value));
       const searchText = `${value} ${label}`.normalize("NFKC").toLowerCase();
       return `
-        <label class="account-admin-access-checkbox${option && option.legacy ? " is-legacy" : ""}" data-access-search="${escapeHtml(searchText)}">
+        <label class="account-operator-access-checkbox${option && option.legacy ? " is-legacy" : ""}" data-access-search="${escapeHtml(searchText)}">
           <input id="${inputId}" type="checkbox" value="${escapeHtml(value)}"${checked ? " checked" : ""}>
           <span>${escapeHtml(label)}</span>
         </label>
@@ -3037,7 +3037,7 @@
 
   function filterAccessCheckboxOptions(target, query) {
     const normalized = String(query || "").normalize("NFKC").trim().toLowerCase();
-    Array.from(target && target.querySelectorAll(".account-admin-access-checkbox") || []).forEach((row) => {
+    Array.from(target && target.querySelectorAll(".account-operator-access-checkbox") || []).forEach((row) => {
       row.hidden = Boolean(normalized) && !String(row.dataset.accessSearch || "").includes(normalized);
     });
   }
@@ -3711,7 +3711,7 @@
     if (!rows.length) return '<div class="empty-state">还没有搜索记录。</div>';
     return `
       <div class="account-admin-table-wrap">
-        <table class="account-admin-table account-admin-analytics-table">
+        <table class="account-admin-table account-ops-analytics-table">
           <thead>
             <tr>
               <th>搜索词</th>
@@ -3741,7 +3741,7 @@
     const rows = Array.isArray(reports) ? reports.slice(0, 10) : [];
     if (!rows.length) return '<div class="empty-state">还没有报告点击记录。</div>';
     return `
-      <div class="account-admin-files account-admin-analytics-list">
+      <div class="account-admin-files account-ops-analytics-list">
         ${rows.map((row) => `
           <div class="account-admin-file">
             <div>
@@ -3785,7 +3785,7 @@
     if (!rows.length) return '<div class="empty-state">还没有最近事件。</div>';
     return `
       <div class="account-admin-table-wrap">
-        <table class="account-admin-table account-admin-analytics-table">
+        <table class="account-admin-table account-ops-analytics-table">
           <thead>
             <tr>
               <th>时间</th>
@@ -3826,7 +3826,7 @@
         ${analyticsMetric("发货链接", analytics.delivery_link_count)}
       </div>
       <p class="subtle">本卡片从近 ${Number(analytics.range_days || 7)} 天窗口抽样 ${Number(analytics.sample_event_count || analytics.event_count || 0).toLocaleString("zh-CN")} 条事件；完整日统计与来源落地明细请进入 Activity。</p>
-      <div class="account-admin-analytics-grid">
+      <div class="account-ops-analytics-grid">
         <section>
           <h4>站内热门搜索</h4>
           ${renderAnalyticsTopSearches(analytics.top_searches)}
@@ -3837,7 +3837,7 @@
         </section>
       </div>
       <section>
-        <div class="account-admin-analytics-heading">
+        <div class="account-ops-analytics-heading">
           <h4>抽样事件</h4>
           <a class="secondary-button" href="activity.html" target="_blank" rel="noopener">查看全部已采集记录</a>
         </div>
@@ -9472,7 +9472,7 @@
           <button class="secondary-button" id="hotReportCommentLoginButton" type="button">注册 / 登录</button>
         </div>
         <form id="hotReportCommentForm" class="hot-comment-form" hidden>
-          <div id="hotReportCommentAdminAlias" class="hot-comment-admin-alias" hidden>
+          <div id="hotReportCommentAdminAlias" class="hot-comment-owner-alias" hidden>
             <label>
               <span>管理员评论昵称</span>
               <input id="hotReportCommentAlias" type="text" maxlength="48" autocomplete="off" placeholder="随机用户名或自定义昵称">

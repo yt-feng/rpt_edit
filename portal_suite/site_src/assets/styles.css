@@ -1281,7 +1281,7 @@ a.secondary-button {
 .hot-comment-order-actions,
 .hot-comment-form-actions,
 .hot-comment-login,
-.hot-comment-admin-alias {
+.hot-comment-owner-alias {
   display: flex;
   align-items: center;
   gap: 9px;
@@ -1325,12 +1325,12 @@ a.secondary-button {
 
 .hot-comment-login[hidden],
 .hot-comment-form[hidden],
-.hot-comment-admin-alias[hidden] {
+.hot-comment-owner-alias[hidden] {
   display: none !important;
 }
 
 .hot-comment-form textarea,
-.hot-comment-admin-alias input {
+.hot-comment-owner-alias input {
   width: 100%;
   min-width: 0;
   border: 1px solid var(--line);
@@ -1342,11 +1342,11 @@ a.secondary-button {
   resize: vertical;
 }
 
-.hot-comment-admin-alias {
+.hot-comment-owner-alias {
   align-items: end;
 }
 
-.hot-comment-admin-alias label {
+.hot-comment-owner-alias label {
   display: grid;
   flex: 1 1 260px;
   gap: 6px;
@@ -2060,7 +2060,7 @@ a.secondary-button {
 }
 
 .account-admin-form-grid label,
-.account-admin-access-field,
+.account-operator-access-field,
 .account-admin-note-field {
   display: grid;
   gap: 6px;
@@ -2107,19 +2107,19 @@ a.secondary-button {
   min-height: 122px;
 }
 
-.account-admin-access-field-head {
+.account-operator-access-field-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 8px;
 }
 
-.account-admin-access-field-head span:last-child {
+.account-operator-access-field-head span:last-child {
   color: var(--accent-strong);
   font-weight: 900;
 }
 
-.account-admin-access-checkboxes {
+.account-operator-access-checkboxes {
   display: grid;
   gap: 6px;
   max-height: 220px;
@@ -2130,14 +2130,14 @@ a.secondary-button {
   background: #ffffff;
 }
 
-.account-admin-access-checkboxes:empty::before {
+.account-operator-access-checkboxes:empty::before {
   content: "暂无可选机构";
   padding: 8px;
   color: var(--muted);
   font-weight: 700;
 }
 
-.account-admin-access-checkbox {
+.account-operator-access-checkbox {
   display: flex !important;
   grid-template-columns: none;
   align-items: flex-start;
@@ -2152,18 +2152,18 @@ a.secondary-button {
   font-weight: 700 !important;
 }
 
-.account-admin-access-checkbox:hover,
-.account-admin-access-checkbox:has(input:checked) {
+.account-operator-access-checkbox:hover,
+.account-operator-access-checkbox:has(input:checked) {
   border-color: #b7d8d3;
   background: #eef7f5;
 }
 
-.account-admin-access-checkbox.is-legacy {
+.account-operator-access-checkbox.is-legacy {
   border-color: #f0c36a;
   background: #fff8e8;
 }
 
-.account-admin-access-checkbox input {
+.account-operator-access-checkbox input {
   flex: 0 0 auto;
   width: 16px;
   min-height: 16px;
@@ -2172,16 +2172,16 @@ a.secondary-button {
   padding: 0;
 }
 
-.account-admin-access-checkbox span {
+.account-operator-access-checkbox span {
   min-width: 0;
   overflow-wrap: anywhere;
 }
 
-.account-admin-access-checkbox[hidden] {
+.account-operator-access-checkbox[hidden] {
   display: none !important;
 }
 
-.account-admin-access-field small {
+.account-operator-access-field small {
   color: var(--muted);
   font-weight: 700;
   line-height: 1.5;
@@ -2242,7 +2242,7 @@ a.secondary-button {
   gap: 10px;
 }
 
-.account-admin-analytics {
+.account-ops-analytics {
   display: grid;
   gap: 14px;
 }
@@ -2274,26 +2274,26 @@ a.secondary-button {
   line-height: 1.1;
 }
 
-.account-admin-analytics-grid {
+.account-ops-analytics-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
   gap: 14px;
 }
 
-.account-admin-analytics h4 {
+.account-ops-analytics h4 {
   margin: 4px 0 8px;
   font-size: 14px;
 }
 
-.account-admin-analytics-table {
+.account-ops-analytics-table {
   min-width: 680px;
 }
 
-.account-admin-analytics-list {
+.account-ops-analytics-list {
   gap: 8px;
 }
 
-.account-admin-analytics-heading {
+.account-ops-analytics-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -2301,7 +2301,7 @@ a.secondary-button {
   margin: 4px 0 8px;
 }
 
-.account-admin-analytics-heading h4 {
+.account-ops-analytics-heading h4 {
   margin: 0;
 }
 
@@ -4736,7 +4736,7 @@ a.secondary-button {
   .membership-request-grid,
   .account-password-grid,
   .account-admin-metrics,
-  .account-admin-analytics-grid,
+  .account-ops-analytics-grid,
   .plan-grid,
   .account-admin-pick,
   .account-admin-wechat-batch,
@@ -4771,7 +4771,7 @@ a.secondary-button {
   .account-admin-hot-actions,
   .account-admin-hot-row,
   .hot-comment-login,
-  .hot-comment-admin-alias {
+  .hot-comment-owner-alias {
     align-items: stretch;
     flex-direction: column;
   }
@@ -5097,7 +5097,7 @@ a.secondary-button {
     grid-template-columns: 1fr 1fr;
   }
 
-  .account-admin-analytics-heading {
+  .account-ops-analytics-heading {
     align-items: flex-start;
     flex-direction: column;
   }
@@ -7272,11 +7272,11 @@ body.chart-lightbox-open {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  #accountAdminUserEditor .account-admin-access-field {
+  #accountAdminUserEditor .account-operator-access-field {
     grid-column: span 2;
   }
 
-  #accountAdminUserEditor .account-admin-access-checkboxes {
+  #accountAdminUserEditor .account-operator-access-checkboxes {
     max-height: 280px;
   }
 }
@@ -7387,7 +7387,7 @@ body.chart-lightbox-open {
   .account-admin-password-reset,
   .account-admin-form-grid,
   .account-admin-metrics,
-  .account-admin-analytics-grid,
+  .account-ops-analytics-grid,
   .account-admin-pick,
   .account-admin-wechat-batch,
   .account-admin-file {
@@ -7423,7 +7423,7 @@ body.chart-lightbox-open {
     width: 100%;
   }
 
-  .account-admin-access-checkboxes {
+  .account-operator-access-checkboxes {
     max-height: min(42vh, 320px);
   }
 
@@ -7877,7 +7877,7 @@ body.chart-lightbox-open {
     background: #142430;
   }
 
-  body:not(.newsfeed-page) :is(.text-only-text-content pre, .hot-comment-form textarea, .hot-comment-admin-alias input) {
+  body:not(.newsfeed-page) :is(.text-only-text-content pre, .hot-comment-form textarea, .hot-comment-owner-alias input) {
     border-color: var(--line);
     background: var(--dark-control);
     color: var(--ink);
@@ -7930,8 +7930,8 @@ body.chart-lightbox-open {
 
   .admin-dialog :is(
     .account-admin-hot-list,
-    .account-admin-access-checkboxes,
-    .account-admin-access-checkbox,
+    .account-operator-access-checkboxes,
+    .account-operator-access-checkbox,
     .account-admin-metric,
     .account-admin-pick,
     .account-admin-wechat-batch,
@@ -8006,12 +8006,12 @@ body.chart-lightbox-open {
   }
 
   .admin-dialog .account-admin-hot-row:is(:hover, :focus),
-  .admin-dialog .account-admin-access-checkbox:is(:hover, :has(input:checked)) {
+  .admin-dialog .account-operator-access-checkbox:is(:hover, :has(input:checked)) {
     border-color: #3d706b;
     background: var(--dark-hover);
   }
 
-  .admin-dialog .account-admin-access-checkbox.is-legacy {
+  .admin-dialog .account-operator-access-checkbox.is-legacy {
     border-color: #745c2c;
     background: var(--dark-warning-bg);
   }
