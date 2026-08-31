@@ -225,18 +225,10 @@ class ReportChatIndexTests(unittest.TestCase):
                 indexer.publish_index(client, "private-bucket", output)
             self.assertNotIn("_report-chat/v2/manifest.json", client.objects)
 
-    def test_neutral_edge_workflow_publishes_after_title_translation(self) -> None:
+    def test_neutral_edge_transaction_does_not_publish_the_shared_manifest(self) -> None:
         workflow = SCRIPT.parent.parent.joinpath(".github/workflows/neutral-edge-cutover.yml").read_text(encoding="utf-8")
-        translate = workflow.index("- name: Translate missing report titles")
-        publish = workflow.index("- name: Publish private Report Chat lookup index")
-        next_step = workflow.index("- name: Download private chart search index")
-        self.assertLess(translate, publish)
-        self.assertLess(publish, next_step)
-        publish_step = workflow[publish:next_step]
-        for secret in ("R2_ACCOUNT_ID", "R2_ACCESS_KEY_ID", "R2_SECRET_ACCESS_KEY", "R2_BUCKET"):
-            self.assertIn(f"{secret}:", publish_step)
-        self.assertIn("scripts/build_report_chat_index.py", publish_step)
-        self.assertIn("--upload-r2", publish_step)
+        self.assertNotIn("scripts/build_report_chat_index.py", workflow)
+        self.assertNotIn("_report-chat/v2/manifest.json", workflow)
 
 
 if __name__ == "__main__":

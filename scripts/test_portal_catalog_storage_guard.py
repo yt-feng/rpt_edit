@@ -83,7 +83,7 @@ class CatalogStorageGuardTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "0 or greater"):
             catalog.storage_cleanup_limit_bytes(-1, False)
 
-    def test_catalog_workflow_enables_cleanup_only_at_one_hundred_gib(self) -> None:
+    def test_catalog_release_workflow_is_additive_and_never_deletes_pdfs(self) -> None:
         workflow = (
             Path(__file__).resolve().parents[1]
             / ".github"
@@ -91,10 +91,10 @@ class CatalogStorageGuardTests(unittest.TestCase):
             / "neutral-edge-cutover.yml"
         ).read_text(encoding="utf-8")
 
-        self.assertIn("CATALOG_PDF_CLEANUP_ENABLED: ${{ vars.CATALOG_PDF_CLEANUP_ENABLED || 'true' }}", workflow)
-        self.assertIn('true) cleanup_args=(--enable-pdf-cleanup) ;;', workflow)
+        self.assertIn('CATALOG_PDF_CLEANUP_ENABLED: "false"', workflow)
+        self.assertNotIn("--enable-pdf-cleanup", workflow)
         self.assertIn("--storage-limit-gb 100", workflow)
-        self.assertIn('"${cleanup_args[@]}"', workflow)
+        self.assertIn("--sync-r2", workflow)
 
     def test_prune_uses_safe_persisted_key_across_prefix_migration(self) -> None:
         client = FakeR2Client()

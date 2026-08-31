@@ -316,17 +316,17 @@ class EdgeRouteCutoverTests(unittest.TestCase):
             "svc-neutral",
         )
 
-    def test_refresh_workflow_gates_on_bare_alias_verification_after_deploy(self) -> None:
+    def test_refresh_workflow_gates_on_bare_alias_verification_before_and_after_deploy(self) -> None:
         workflow = (
             Path(__file__).resolve().parent.parent
             / ".github"
             / "workflows"
             / "neutral-edge-cutover.yml"
         ).read_text(encoding="utf-8")
-        deploy_name = "      - name: Deploy neutral edge runtime\n"
-        verify_name = "      - name: Verify active edge routes\n"
-        preflight_name = "      - name: Gate refresh on stable live routes\n"
-        upload_name = "      - name: Upload inactive static slot incrementally\n"
+        deploy_name = "      - name: Deploy prepared neutral edge release\n"
+        verify_name = "      - name: Accept prepared release through the live edge\n"
+        preflight_name = "      - name: Gate preparation on stable live routes\n"
+        upload_name = "      - name: Upload inactive static slot and immutable runtime\n"
         deploy_start = workflow.index(deploy_name)
         verify_start = workflow.index(verify_name)
         preflight_start = workflow.index(preflight_name)
@@ -334,19 +334,18 @@ class EdgeRouteCutoverTests(unittest.TestCase):
         self.assertLess(preflight_start, upload_start)
         self.assertLess(deploy_start, verify_start)
         verify_step = workflow[verify_start:]
-        self.assertIn("github.event_name == 'schedule' || inputs.operation == 'migrate'", verify_step)
         self.assertIn("python3 -B scripts/edge_route_cutover.py verify", verify_step)
         self.assertIn("EDGE_VERIFY_CONSECUTIVE: \"3\"", workflow[preflight_start:upload_start])
         self.assertIn("enabled = false", workflow)
-        self.assertIn("Roll back failed edge release", workflow)
-        self.assertIn("Verify automated edge rollback", workflow)
+        self.assertIn("Roll back failed release or completed rehearsal", workflow)
+        self.assertIn("Verify exact previous release after rollback", workflow)
         self.assertNotIn("Purge previous public edge cache", workflow)
         self.assertNotIn("edge_route_cutover.py purge", workflow)
         self.assertNotIn("inputs.operation == 'switch'", workflow)
         self.assertNotIn("edge_route_cutover.py migrate", workflow)
         self.assertNotIn("edge_route_cutover.py rollback", workflow)
 
-    def test_static_refresh_trigger_stays_hard_paused(self) -> None:
+    def test_static_refresh_trigger_opens_only_manual_rehearsal(self) -> None:
         workflow = (
             Path(__file__).resolve().parent.parent
             / ".github"
@@ -356,11 +355,12 @@ class EdgeRouteCutoverTests(unittest.TestCase):
         trigger = workflow[: workflow.index("\npermissions:\n")]
         self.assertNotIn("schedule:", trigger)
         self.assertNotRegex(trigger, r"(?m)^\s+- migrate\s*$")
+        self.assertRegex(trigger, r"(?m)^\s+- rehearse\s*$")
         self.assertNotRegex(trigger, r"(?m)^\s+- switch\s*$")
         self.assertNotRegex(trigger, r"(?m)^\s+- rollback\s*$")
-        self.assertRegex(trigger, r"(?m)^\s+- inspect-source\s*$")
-        self.assertIn("Enforce neutral deployment pause", workflow)
-        self.assertIn('if [ "$REQUESTED_OPERATION" != "inspect-source" ]', workflow)
+        self.assertNotRegex(trigger, r"(?m)^\s+- inspect-source\s*$")
+        self.assertIn("Require reviewed main operation", workflow)
+        self.assertIn('test "${{ inputs.operation }}" = "rehearse"', workflow)
         self.assertIn("permissions:\n  contents: read", workflow)
         self.assertIn("persist-credentials: false", workflow)
 

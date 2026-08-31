@@ -373,21 +373,10 @@ class ReportResearchIndexTests(unittest.TestCase):
             self.assertEqual(client.objects[manifest_key], committed_manifest)
             self.assertFalse(any(operation == "put" for operation, _key in client.operations))
 
-    def test_workflow_builds_after_static_text_and_publishes_privately(self) -> None:
+    def test_neutral_edge_transaction_does_not_publish_the_shared_manifest(self) -> None:
         workflow = SCRIPT.parent.parent.joinpath(".github/workflows/neutral-edge-cutover.yml").read_text(encoding="utf-8")
-        build_static = workflow.index("- name: Build private static release")
-        publish_research = workflow.index("- name: Publish private report research evidence index")
-        discover_slot = workflow.index("- name: Discover active static slot")
-        self.assertLess(build_static, publish_research)
-        self.assertLess(publish_research, discover_slot)
-        step = workflow[publish_research:discover_slot]
-        self.assertIn("scripts/build_report_research_index.py", step)
-        self.assertIn("--search-index-path _neutral_site/data/search_index.json", step)
-        self.assertIn("--catalog-path _neutral_site/data/catalog.json", step)
-        self.assertIn("--merge-r2-corpus", step)
-        self.assertIn("--upload-r2", step)
-        for secret in ("R2_ACCOUNT_ID", "R2_ACCESS_KEY_ID", "R2_SECRET_ACCESS_KEY", "R2_BUCKET"):
-            self.assertIn(f"{secret}:", step)
+        self.assertNotIn("scripts/build_report_research_index.py", workflow)
+        self.assertNotIn("_report-research/v1/manifest.json", workflow)
 
 
 if __name__ == "__main__":

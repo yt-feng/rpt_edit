@@ -340,108 +340,33 @@ test("the fallback representation never answers 304 for a missing URL", async ()
 test("neutral deployment keeps the canonical gateway cache disabled and verifies catalog parity", () => {
   const workflow = readFileSync(path.join(root, ".github/workflows/neutral-edge-cutover.yml"), "utf8");
   assert.match(workflow, /\[cache\]\s+enabled = false/);
-  assert.match(workflow, /wranglerVersion: ["']4\.69\.0["']/);
+  assert.match(workflow, /wranglerVersion: ["']4\.125\.0["']/);
   assert.match(workflow, /compatibility_date = ["']2026-08-12["']/);
-  assert.match(workflow, /group: edge-static-hosting-production/);
-  assert.match(workflow, /test -s _neutral_site\/data\/catalog_preview\.json/);
-  assert.match(workflow, /live-catalog-preview\.json/);
-  assert.match(workflow, /\.well-known\/edge-release\/\$STATIC_RELEASE/);
+  assert.match(workflow, /group: portal-production-release/);
+  assert.match(workflow, /cancel-in-progress: false/);
+  assert.match(workflow, /test -s "_neutral_site\/\$required"/);
+  assert.match(workflow, /\.well-known\/edge-release\/\$STATIC_RELEASE\/data\/catalog\.json/);
   assert.match(workflow, /STATIC_PREFIX = "\$STATIC_PREFIX"/);
   assert.match(workflow, /STATIC_RELEASE = "\$STATIC_RELEASE"/);
   assert.match(workflow, /STATIC_TREE_SHA256 = "\$STATIC_TREE_SHA256"/);
-  const refreshStep = workflow.match(
-    /- name: Verify refreshed catalog is live[\s\S]*?- name: Remove private values from persistent source/,
+  const acceptance = workflow.match(
+    /- name: Accept prepared release through the live edge[\s\S]*?- name: Roll back failed release or completed rehearsal/,
   )?.[0] || "";
-  assert.match(refreshStep, /\$release_check\/data\/catalog\.json/);
-  assert.match(refreshStep, /\$release_check\/data\/catalog_preview\.json/);
-  assert.doesNotMatch(refreshStep, /\?release=/);
-  assert.match(workflow, /assert_aligned\("local", expected, expected_preview\)/);
-  assert.match(workflow, /assert_aligned\("live", actual, actual_preview\)/);
-  const verifyRouteStep = workflow.match(
-    /- name: Verify active edge routes[\s\S]*?- name: Verify refreshed catalog is live/,
+  assert.match(acceptance, /scripts\/edge_route_cutover\.py verify/);
+  assert.match(acceptance, /api\/health\?runtime-data=1/);
+  assert.match(acceptance, /catalog_versioned/);
+  assert.match(acceptance, /rules_versioned/);
+  const rollback = workflow.match(
+    /- name: Roll back failed release or completed rehearsal[\s\S]*?- name: Verify exact previous release after rollback/,
   )?.[0] || "";
-  assert.match(verifyRouteStep, /scripts\/edge_route_cutover\.py verify/);
-  assert.doesNotMatch(verifyRouteStep, /CLOUDFLARE_API_TOKEN/);
-  assert.doesNotMatch(verifyRouteStep, /exit 0/);
-  assert.ok(
-    workflow.indexOf("- name: Roll back failed edge release")
-      > workflow.indexOf("- name: Verify hot-report pagination UI and API are live"),
-  );
-  const preflightStep = workflow.match(
-    /- name: Gate refresh on stable live routes[\s\S]*?- name: Capture previous public discovery state/,
-  )?.[0] || "";
-  assert.match(preflightStep, /scripts\/edge_route_cutover\.py verify/);
-  assert.match(preflightStep, /EDGE_VERIFY_ATTEMPTS: ["']3["']/);
-  assert.match(preflightStep, /EDGE_VERIFY_CONSECUTIVE: ["']3["']/);
-  assert.ok(
-    workflow.indexOf("- name: Gate refresh on stable live routes")
-      < workflow.indexOf("- name: Upload inactive static slot incrementally"),
-    "live cache isolation must pass before an inactive slot is uploaded",
-  );
-  const rollbackStep = workflow.match(
-    /- name: Roll back failed edge release[\s\S]*?- name: Verify automated edge rollback/,
-  )?.[0] || "";
-  assert.match(rollbackStep, /steps\.edge_deploy\.outcome != 'skipped'/);
-  assert.match(rollbackStep, /steps\.edge_state_verify\.outcome != 'success'/);
-  assert.match(rollbackStep, /steps\.edge_routes_verify\.outcome != 'success'/);
-  assert.match(rollbackStep, /steps\.live_catalog\.outcome != 'success'/);
-  assert.match(rollbackStep, /steps\.live_discovery\.outcome != 'success'/);
-  assert.match(rollbackStep, /steps\.live_hot_reports\.outcome != 'success'/);
-  assert.match(rollbackStep, /command: rollback \$\{\{ env\.EDGE_PREVIOUS_VERSION_ID \}\} --message/);
-  assert.doesNotMatch(workflow, /- name: Switch active edge routes/);
-  assert.doesNotMatch(workflow, /scripts\/edge_route_cutover\.py migrate/);
-  assert.doesNotMatch(workflow, /scripts\/edge_route_cutover\.py rollback/);
-  assert.doesNotMatch(workflow, /Purge previous public edge cache/);
+  assert.match(rollback, /steps\.edge_deploy\.outcome != 'skipped'/);
+  assert.match(rollback, /steps\.release_acceptance\.outcome != 'success'/);
+  assert.match(rollback, /inputs\.operation == 'rehearse'/);
+  assert.match(rollback, /command: rollback \$\{\{ env\.EDGE_PREVIOUS_VERSION_ID \}\} --message/);
+  assert.match(workflow, /cmp _release_validation\/previous\/edge-state\.json/);
+  assert.match(workflow, /--expect-version "\$EDGE_PREVIOUS_VERSION_ID"/);
+  assert.doesNotMatch(workflow, /api\/hot-reports/);
+  assert.doesNotMatch(workflow, /edge_route_cutover\.py migrate/);
+  assert.doesNotMatch(workflow, /edge_route_cutover\.py rollback/);
   assert.doesNotMatch(workflow, /edge_route_cutover\.py purge/);
-  assert.ok(
-    workflow.indexOf("- name: Deploy neutral edge runtime")
-      < workflow.indexOf("- name: Verify active edge routes"),
-    "bare alias verification must gate the release after the edge runtime deploys",
-  );
-  const discoveryStep = workflow.match(
-    /- name: Verify discovery and report-detail assets are live[\s\S]*?- name: Submit changed public URLs to IndexNow/,
-  )?.[0] || "";
-  assert.match(discoveryStep, /curl --fail --location --silent --show-error[\s\\]+--connect-timeout 10 --max-time 30/);
-  assert.match(discoveryStep, /fetch_asset\(\)/);
-  assert.match(discoveryStep, /for attempt in \$\(seq 1 18\)/);
-  assert.match(discoveryStep, /asset_check=%s http_status=%s/);
-  assert.match(discoveryStep, /Waiting for discovery assets to become active/);
-  assert.match(discoveryStep, /Discovery assets did not become active in time/);
-  assert.match(discoveryStep, /live-report-detail-release\.json/);
-  assert.doesNotMatch(discoveryStep, /continue-on-error/);
-  assert.doesNotMatch(discoveryStep, /urlopen/);
-
-  const activeSlotStep = workflow.match(
-    /- name: Discover active static slot[\s\S]*?- name: Upload inactive static slot incrementally/,
-  )?.[0] || "";
-  assert.match(activeSlotStep, /\.well-known\/edge-state\?before=\$STATIC_RELEASE/);
-  assert.match(activeSlotStep, /ACTIVE_STATIC_SLOT/);
-  assert.match(activeSlotStep, /legacy-bootstrap/);
-
-  const uploadStep = workflow.match(
-    /- name: Upload inactive static slot incrementally[\s\S]*?- name: Prepare neutral edge runtime/,
-  )?.[0] || "";
-  assert.match(uploadStep, /id: static_upload/);
-  assert.match(uploadStep, /scripts\/publish_static_slot\.py/);
-  assert.match(uploadStep, /--active-slot "\$\{ACTIVE_STATIC_SLOT:-\}"/);
-  assert.doesNotMatch(uploadStep, /client\.upload_file/);
-
-  const stateVerifyStep = workflow.match(
-    /- name: Verify active static slot switch[\s\S]*?- name: Verify active edge routes/,
-  )?.[0] || "";
-  assert.match(stateVerifyStep, /id: edge_state_verify/);
-  assert.match(stateVerifyStep, /\.well-known\/edge-state\?after=\$STATIC_RELEASE/);
-  assert.match(stateVerifyStep, /state != expected/);
-
-  const pruneStep = workflow.match(
-    /- name: Prune obsolete legacy static releases[\s\S]*$/,
-  )?.[0] || "";
-  assert.match(pruneStep, /always\(\)/);
-  assert.match(pruneStep, /steps\.static_upload\.outcome == 'success'/);
-  assert.match(pruneStep, /steps\.edge_deploy\.outcome == 'success'/);
-  assert.match(pruneStep, /steps\.edge_state_verify\.outcome == 'success'/);
-  assert.match(pruneStep, /steps\.live_catalog\.outcome == 'success'/);
-  assert.match(pruneStep, /steps\.live_discovery\.outcome == 'success'/);
-  assert.match(pruneStep, /complete_slots < 2/);
-  assert.match(pruneStep, /continue-on-error: true/);
 });

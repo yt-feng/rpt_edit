@@ -1,43 +1,48 @@
 name: Neutral edge catalog refresh
-run-name: Neutral edge catalog ${{ inputs.operation || 'source inspection' }}
+run-name: Neutral edge catalog rollback rehearsal
 
 on:
   workflow_dispatch:
     inputs:
       operation:
-        description: "Static refresh is paused; source inspection is read-only"
+        description: "Build B, verify it live, then restore the exact A release"
         required: true
         type: choice
         options:
-          - inspect-source
-        default: inspect-source
+          - rehearse
+        default: rehearse
 
 permissions:
   contents: read
 
 concurrency:
-  group: edge-static-hosting-production
+  group: portal-production-release
   cancel-in-progress: false
 
 jobs:
-  edge:
+  prepare_release:
     runs-on: ubuntu-22.04
-    timeout-minutes: 120
+    timeout-minutes: 150
+    outputs:
+      changed: ${{ steps.release_delta.outputs.changed }}
+      static_release: ${{ steps.runtime_context.outputs.static_release }}
+      static_slot: ${{ steps.static_upload.outputs.static_slot }}
+      static_prefix: ${{ steps.static_upload.outputs.static_prefix }}
+      static_tree: ${{ steps.static_upload.outputs.tree_sha256 }}
+      previous_slot: ${{ steps.previous_state.outputs.previous_slot }}
+      previous_release: ${{ steps.previous_state.outputs.previous_release }}
+      previous_tree: ${{ steps.previous_state.outputs.previous_tree }}
     steps:
-      - name: Enforce neutral deployment pause
-        env:
-          REQUESTED_OPERATION: ${{ inputs.operation }}
+      - name: Require reviewed main operation
         run: |
           set -euo pipefail
-          if [ "$REQUESTED_OPERATION" != "inspect-source" ]; then
-            echo "Neutral static deployment remains paused pending versioned runtime-data rollback." >&2
-            exit 1
-          fi
+          test "$GITHUB_REF" = "refs/heads/main"
+          test "${{ inputs.operation }}" = "rehearse"
 
       - name: Checkout public source
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ github.sha }}
           fetch-depth: 1
           persist-credentials: false
 
@@ -61,32 +66,23 @@ jobs:
           node --test portal_suite/tests/*.test.mjs
           node scripts/test_source_lead_adapter.js
           node scripts/test_portal_source_lead_integration.js
-          node scripts/test_portal_hot_report_auto_archive.js
-          node scripts/test_portal_hot_reports.js
           node scripts/test_portal_chart_search_frontend.js
           node scripts/test_portal_site_runtime.js
           python3 -m py_compile \
+            scripts/compare_portal_release_semantics.py \
             scripts/edge_route_cutover.py \
-            scripts/capture_edge_worker_deployment.py
-          python3 -m py_compile \
-            scripts/build_chart_search_index.py \
-            scripts/build_report_chat_index.py \
-            scripts/build_report_research_index.py \
-            scripts/chart_search_r2.py \
-            scripts/merge_chart_search_index.py \
-            scripts/portal_suite_catalog.py \
+            scripts/capture_edge_worker_deployment.py \
             scripts/publish_static_slot.py
-          python3 scripts/test_build_report_chat_index.py
-          python3 scripts/test_report_research_index.py
-          python3 scripts/test_portal_catalog_storage_guard.py
+          python3 -B scripts/test_compare_portal_release_semantics.py
           python3 -B scripts/test_publish_static_slot.py
+          python3 -B scripts/test_capture_edge_worker_deployment.py
           python3 scripts/test_portal_seo.py
-          python3 scripts/test_submit_portal_indexnow.py
           python3 scripts/test_portal_blog_build.py
           python3 scripts/test_edge_route_cutover.py
-          python3 -B scripts/test_capture_edge_worker_deployment.py
+          python3 scripts/test_neutral_edge_cutover_workflow.py
 
-      - name: Prepare masked runtime context
+      - name: Prepare masked release context
+        id: runtime_context
         env:
           PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
           R2_BUCKET: ${{ secrets.R2_BUCKET }}
@@ -99,182 +95,100 @@ jobs:
           from urllib.parse import urlsplit
 
           parsed = urlsplit(os.environ["PORTAL_SITE_URL"])
-          if parsed.scheme != "https" or not parsed.hostname or parsed.path not in {"", "/"}:
+          if (
+              parsed.scheme != "https"
+              or not parsed.hostname
+              or parsed.username is not None
+              or parsed.password is not None
+              or parsed.port is not None
+              or parsed.path not in {"", "/"}
+              or parsed.query
+              or parsed.fragment
+          ):
               raise SystemExit("Configured site URL is not a bare HTTPS origin")
-          print(parsed.hostname)
+          print(parsed.hostname.lower())
           PY
           )"
+          alias_hosts=""
+          if [ "$(printf '%s' "$site_host" | awk -F. '{print NF}')" -eq 2 ] \
+            && [ "${site_host#www.}" = "$site_host" ]
+          then
+            alias_hosts="www.$site_host"
+          fi
+          live_origin="https://$site_host"
           release_id="$(openssl rand -hex 16)"
           echo "::add-mask::$site_host"
-          echo "::add-mask::$release_id"
-          alias_hosts=""
-          if [ "$(printf '%s' "$site_host" | awk -F. '{print NF}')" -eq 2 ] && [ "${site_host#www.}" = "$site_host" ]; then
-            alias_hosts="www.$site_host"
-            echo "::add-mask::$alias_hosts"
-          fi
+          echo "::add-mask::$alias_hosts"
+          echo "::add-mask::$live_origin"
           printf 'SITE_HOST=%s\n' "$site_host" >> "$GITHUB_ENV"
           printf 'EDGE_ALIAS_HOSTS=%s\n' "$alias_hosts" >> "$GITHUB_ENV"
+          printf 'LIVE_ORIGIN=%s\n' "$live_origin" >> "$GITHUB_ENV"
           printf 'STATIC_RELEASE=%s\n' "$release_id" >> "$GITHUB_ENV"
+          printf 'static_release=%s\n' "$release_id" >> "$GITHUB_OUTPUT"
 
-      - name: Gate refresh on stable live routes
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
+      - name: Gate preparation on stable live routes
+        timeout-minutes: 5
         env:
           EDGE_SCRIPT_NAME: svc-04df8d213b73
           EDGE_VERIFY_ATTEMPTS: "3"
           EDGE_VERIFY_CONSECUTIVE: "3"
         run: python3 -B scripts/edge_route_cutover.py verify
 
-      - name: Capture previous public discovery state
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
-        env:
-          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+      - name: Capture exact previous state and public discovery
+        id: previous_state
         run: |
           set -euo pipefail
-          echo "::add-mask::$PORTAL_SITE_URL"
-          origin="${PORTAL_SITE_URL%/}"
-          curl --fail --location --silent --show-error \
-            --connect-timeout 10 --max-time 60 \
-            --header 'Cache-Control: no-cache' \
+          origin="$LIVE_ORIGIN"
+          curl --fail --silent --show-error --max-redirs 0 \
+            --connect-timeout 5 --max-time 20 --header 'Cache-Control: no-cache' \
+            --output "$RUNNER_TEMP/previous-edge-state.json" \
+            "$origin/.well-known/edge-state"
+          curl --fail --silent --show-error --max-redirs 0 \
+            --connect-timeout 5 --max-time 60 --header 'Cache-Control: no-cache' \
             --output "$RUNNER_TEMP/previous-public-catalog.json" \
-            "$origin/data/catalog.json?indexnow-before=$STATIC_RELEASE"
-          curl --fail --location --silent --show-error \
-            --connect-timeout 10 --max-time 60 \
-            --header 'Cache-Control: no-cache' \
+            "$origin/data/catalog.json"
+          curl --fail --silent --show-error --max-redirs 0 \
+            --connect-timeout 5 --max-time 60 --header 'Cache-Control: no-cache' \
             --output "$RUNNER_TEMP/previous-public-sitemap.xml" \
-            "$origin/sitemap-baidu.xml?indexnow-before=$STATIC_RELEASE"
-          python3 - <<'PY'
-          import json
-          import os
-          from pathlib import Path
-          from urllib.parse import urlsplit
-          import xml.etree.ElementTree as ET
-
-          runner_temp = Path(os.environ["RUNNER_TEMP"])
-          catalog = json.loads(runner_temp.joinpath("previous-public-catalog.json").read_text(encoding="utf-8"))
-          items = catalog.get("items")
-          if not isinstance(items, list) or not items:
-              raise SystemExit("Previous public catalog is empty or invalid")
-          ids = [str(item.get("id") or "") for item in items if isinstance(item, dict)]
-          if len(ids) != len(items) or any(not value for value in ids) or len(ids) != len(set(ids)):
-              raise SystemExit("Previous public catalog contains missing or duplicate report ids")
-
-          sitemap = ET.parse(runner_temp / "previous-public-sitemap.xml").getroot()
-          if sitemap.tag.rsplit("}", 1)[-1] != "urlset":
-              raise SystemExit("Previous public sitemap is not a flat canonical urlset")
-          locs = [str(node.text or "").strip() for node in sitemap.findall("./{*}url/{*}loc")]
-          expected_host = urlsplit(os.environ["PORTAL_SITE_URL"]).hostname
-          if not locs or any(urlsplit(value).hostname != expected_host for value in locs):
-              raise SystemExit("Previous public sitemap is empty or contains a foreign host")
-          print(f"previous_public_reports={len(items)} previous_canonical_urls={len(locs)}")
-          PY
-
-      - name: Install refresh dependencies
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate' || inputs.operation == 'inspect-source'
-        run: >-
-          python3 -m pip install --disable-pip-version-check
-          "boto3>=1.34,<2" "pypdf>=4,<6" "requests>=2.31,<3" "Pillow>=10,<12"
-
-      - name: Test Dropbox API retry handling
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate' || inputs.operation == 'inspect-source'
-        run: python3 scripts/test_build_bank_report_catalog.py
-
-      - name: Test chart search indexing
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
-        run: python3 scripts/test_chart_search_index.py
-
-      - name: Inspect source namespace visibility
-        if: inputs.operation == 'inspect-source'
-        env:
-          DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
-          DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
-          DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
-        run: |
-          set -euo pipefail
+            "$origin/sitemap-baidu.xml"
           python3 - <<'PY'
           import json
           import os
           import re
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
 
-          import requests
-
-          token_response = requests.post(
-              "https://api.dropboxapi.com/oauth2/token",
-              data={"grant_type": "refresh_token", "refresh_token": os.environ["DROPBOX_REFRESH_TOKEN"]},
-              auth=(os.environ["DROPBOX_APP_KEY"], os.environ["DROPBOX_APP_SECRET"]),
-              timeout=60,
-          )
-          token_response.raise_for_status()
-          token = token_response.json()["access_token"]
-          auth_headers = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
-
-          account_response = requests.post(
-              "https://api.dropboxapi.com/2/users/get_current_account",
-              headers=auth_headers,
-              data="null",
-              timeout=60,
-          )
-          account_response.raise_for_status()
-          root_info = account_response.json().get("root_info") or {}
-          root_namespace = str(root_info.get("root_namespace_id") or "")
-          home_namespace = str(root_info.get("home_namespace_id") or "")
-
-          def list_dates(path_root):
-              headers = dict(auth_headers)
-              if path_root:
-                  headers["Dropbox-API-Path-Root"] = json.dumps(
-                      {".tag": "root", "root": path_root}, separators=(",", ":")
-                  )
-              response = requests.post(
-                  "https://api.dropboxapi.com/2/files/list_folder",
-                  headers=headers,
-                  json={"path": "/zip_backup", "recursive": False, "include_deleted": False},
-                  timeout=90,
-              )
-              if response.status_code == 409:
-                  return False, []
-              response.raise_for_status()
-              payload = response.json()
-              entries = list(payload.get("entries") or [])
-              while payload.get("has_more"):
-                  response = requests.post(
-                      "https://api.dropboxapi.com/2/files/list_folder/continue",
-                      headers=headers,
-                      json={"cursor": payload["cursor"]},
-                      timeout=90,
-                  )
-                  response.raise_for_status()
-                  payload = response.json()
-                  entries.extend(payload.get("entries") or [])
-              dates = sorted(
-                  (
-                      str(entry.get("name") or "")
-                      for entry in entries
-                      if entry.get(".tag") == "folder" and re.fullmatch(r"\d{6,8}", str(entry.get("name") or ""))
-                  ),
-                  key=int,
-                  reverse=True,
-              )
-              return True, dates
-
-          default_found, default_dates = list_dates("")
-          print(
-              f"account_root_kind={root_info.get('.tag') or 'unknown'} "
-              f"root_differs_from_home={root_namespace != home_namespace}"
-          )
-          print(
-              f"default_path_found={default_found} default_date_count={len(default_dates)} "
-              f"default_latest={','.join(default_dates[:10]) or 'none'}"
-          )
-          if root_namespace and root_namespace != home_namespace:
-              root_found, root_dates = list_dates(root_namespace)
-              print(
-                  f"account_root_path_found={root_found} account_root_date_count={len(root_dates)} "
-                  f"account_root_latest={','.join(root_dates[:10]) or 'none'}"
-              )
+          root = Path(os.environ["RUNNER_TEMP"])
+          state = json.loads(root.joinpath("previous-edge-state.json").read_text(encoding="utf-8"))
+          if (
+              state.get("schema_version") != 1
+              or state.get("slot") not in {"a", "b"}
+              or not re.fullmatch(r"[0-9a-f]{32}", str(state.get("release_id") or ""))
+              or not re.fullmatch(r"[0-9a-f]{64}", str(state.get("tree_sha256") or ""))
+          ):
+              raise SystemExit("Previous Edge state is invalid")
+          catalog = json.loads(root.joinpath("previous-public-catalog.json").read_text(encoding="utf-8"))
+          items = catalog.get("items")
+          if not isinstance(items, list) or not items:
+              raise SystemExit("Previous public catalog is empty or invalid")
+          sitemap = ET.parse(root / "previous-public-sitemap.xml").getroot()
+          if sitemap.tag.rsplit("}", 1)[-1] != "urlset" or not sitemap.findall("./{*}url"):
+              raise SystemExit("Previous public sitemap is empty or invalid")
+          with Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8") as handle:
+              handle.write(f"previous_slot={state['slot']}\n")
+              handle.write(f"previous_release={state['release_id']}\n")
+              handle.write(f"previous_tree={state['tree_sha256']}\n")
+          with Path(os.environ["GITHUB_ENV"]).open("a", encoding="utf-8") as handle:
+              handle.write(f"ACTIVE_STATIC_SLOT={state['slot']}\n")
+          print(f"previous_slot={state['slot']} previous_catalog_items={len(items)}")
           PY
 
+      - name: Install refresh dependencies
+        run: >-
+          python3 -m pip install --disable-pip-version-check
+          "boto3>=1.34,<2" "pypdf>=4,<6" "requests>=2.31,<3" "Pillow>=10,<12"
+
       - name: Materialize private deployment profile
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
         env:
           PORTAL_PRIVATE_CONFIG_B64: ${{ secrets.PORTAL_PRIVATE_CONFIG_B64 }}
           PORTAL_PRIVATE_ASSET_KEY: ${{ secrets.PORTAL_PRIVATE_ASSET_KEY }}
@@ -298,9 +212,7 @@ jobs:
           test "$(wc -c < "$social_card")" -le 1048576
           install -m 0600 "$social_card" portal_suite/site_src/assets/social-card.jpg
 
-      - name: Refresh report catalog and private PDF mirror
-        id: catalog
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
+      - name: Refresh report catalog with additive PDF sync
         env:
           DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
           DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
@@ -310,32 +222,20 @@ jobs:
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET: ${{ secrets.R2_BUCKET }}
           R2_OBJECT_PREFIX: ${{ vars.R2_OBJECT_PREFIX || 'reports' }}
-          CATALOG_PDF_CLEANUP_ENABLED: ${{ vars.CATALOG_PDF_CLEANUP_ENABLED || 'true' }}
+          CATALOG_PDF_CLEANUP_ENABLED: "false"
         run: |
           set -euo pipefail
-          case "$CATALOG_PDF_CLEANUP_ENABLED" in
-            true) cleanup_args=(--enable-pdf-cleanup) ;;
-            false) cleanup_args=() ;;
-            *)
-              echo "CATALOG_PDF_CLEANUP_ENABLED must be true or false" >&2
-              exit 1
-              ;;
-          esac
+          test "$CATALOG_PDF_CLEANUP_ENABLED" = "false"
           test -s portal_suite/data/catalog.json
           test -s portal_suite/data/archive_catalog.json
           test -s portal_suite/data/history_catalog.json
           python3 scripts/portal_suite_catalog.py \
-            --dropbox-root "/zip_backup" \
-            --days 0 \
-            --catalog-path "portal_suite/data/catalog.json" \
-            --password-rules "portal_suite/password_rules.json" \
-            --r2-prefix "$R2_OBJECT_PREFIX" \
-            --storage-limit-gb 100 \
-            --sync-r2 \
-            "${cleanup_args[@]}"
+            --dropbox-root "/zip_backup" --days 0 \
+            --catalog-path portal_suite/data/catalog.json \
+            --password-rules portal_suite/password_rules.json \
+            --r2-prefix "$R2_OBJECT_PREFIX" --storage-limit-gb 100 --sync-r2
 
       - name: Translate missing report titles
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DEEPSEEK_BASE_URL: ${{ vars.DEEPSEEK_BASE_URL || 'https://api.deepseek.com' }}
@@ -343,38 +243,18 @@ jobs:
         run: |
           set -euo pipefail
           python3 scripts/translate_portal_titles.py \
-            --catalog-path "portal_suite/data/catalog.json" \
-            --model "$DEEPSEEK_MODEL" \
-            --deepseek-base-url "$DEEPSEEK_BASE_URL" \
-            --workers 500
-
-      - name: Publish private Report Chat lookup index
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
-        env:
-          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
-          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
-          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-          R2_BUCKET: ${{ secrets.R2_BUCKET }}
-        run: |
-          set -euo pipefail
-          python3 scripts/build_report_chat_index.py \
             --catalog-path portal_suite/data/catalog.json \
-            --output-dir "$RUNNER_TEMP/report-chat-index" \
-            --upload-r2
+            --model "$DEEPSEEK_MODEL" --deepseek-base-url "$DEEPSEEK_BASE_URL" --workers 500
 
       - name: Download private chart search index
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET: ${{ secrets.R2_BUCKET }}
-        run: |
-          python3 scripts/chart_search_r2.py download \
-            --index _chart_search/index.json
+        run: python3 scripts/chart_search_r2.py download --index _chart_search/index.json
 
       - name: Build private static release
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
         env:
           PORTAL_WORKER_URL: ${{ secrets.PORTAL_WORKER_URL }}
           PORTAL_DOWNLOAD_PASSWORD: ${{ secrets[vars.PORTAL_DOWNLOAD_SECRET_REF] }}
@@ -382,33 +262,26 @@ jobs:
         run: |
           set -euo pipefail
           echo "::add-mask::$PORTAL_WORKER_URL"
-          if ! python3 scripts/build_portal_suite_site.py \
+          python3 scripts/build_portal_suite_site.py \
             --catalog-path portal_suite/data/catalog.json \
             --password-rules portal_suite/password_rules.json \
             --site-src portal_suite/site_src \
             --wechat-drafts-root wechat_drafts \
             --blog-archive-root portal_suite/data/blog_archive \
-            --output-dir _neutral_site \
-            --worker-base-url "$PORTAL_WORKER_URL" \
-            >"$RUNNER_TEMP/static-build.log" 2>&1
-          then
-            echo "Static build failed" >&2
-            exit 1
-          fi
+            --output-dir _neutral_site --worker-base-url "$PORTAL_WORKER_URL"
           python3 scripts/merge_chart_search_index.py \
             --search-index _neutral_site/data/search_index.json \
             --chart-index _chart_search/index.json \
             --catalog portal_suite/data/catalog.json \
             --chart-output _neutral_site/data/chart_search_index.json
-          test -s _neutral_site/index.html
-          test -s _neutral_site/assets/app.js
-          test -s _neutral_site/data/catalog.json
-          test -s _neutral_site/data/catalog_preview.json
-          test -s _neutral_site/data/catalog_recommendations.json
-          test -s _neutral_site/data/search_index.json
-          test -s _neutral_site/data/chart_search_index.json
-          test -s _neutral_site/data/password_rules.json
-          test -s _neutral_site/reports/institutions/bernstein/index.html
+          for required in \
+            index.html assets/app.js data/catalog.json data/catalog_preview.json \
+            data/catalog_recommendations.json data/search_index.json \
+            data/chart_search_index.json data/password_rules.json \
+            reports/institutions/bernstein/index.html sitemap-baidu.xml
+          do
+            test -s "_neutral_site/$required"
+          done
           test -n "$(find _neutral_site/data/report_details -type f -name '*.json' -print -quit)"
           python3 - <<'PY'
           from pathlib import Path
@@ -420,142 +293,23 @@ jobs:
               raise SystemExit("Static file count is outside the expected range")
           if not 100_000_000 <= total <= 1_000_000_000:
               raise SystemExit("Static release size is outside the expected range")
-          if any(path.is_symlink() for path in root.rglob("*")):
-              raise SystemExit("Static release contains a symbolic link")
-          placeholder = bytes(
-              (112, 111, 114, 116, 97, 108, 46, 101, 120, 97, 109, 112, 108, 101, 46, 105, 110, 118, 97, 108, 105, 100)
-          ).decode("ascii")
-          blog_files = tuple((root / "blog").glob("*.html"))
-          if not blog_files:
-              raise SystemExit("Static release contains no Blog pages")
-          leaked_blog_pages = [
-              path.name
-              for path in blog_files
-              if placeholder in path.read_text(encoding="utf-8")
-          ]
-          if leaked_blog_pages:
-              raise SystemExit(
-                  f"Static Blog release retained the public host placeholder in {len(leaked_blog_pages)} page(s)"
-              )
           print(f"static_files={len(files)} static_bytes={total}")
           PY
 
-      - name: Publish private report research evidence index
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
-        env:
-          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
-          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
-          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+      - name: Detect meaningful public release changes
+        id: release_delta
         run: |
           set -euo pipefail
-          python3 scripts/build_report_research_index.py \
-            --catalog-path _neutral_site/data/catalog.json \
-            --search-index-path _neutral_site/data/search_index.json \
-            --output-dir "$RUNNER_TEMP/report-research-index" \
-            --merge-r2-corpus \
-            --upload-r2
+          python3 -B scripts/compare_portal_release_semantics.py \
+            --previous-catalog "$RUNNER_TEMP/previous-public-catalog.json" \
+            --current-catalog _neutral_site/data/catalog.json \
+            --previous-sitemap "$RUNNER_TEMP/previous-public-sitemap.xml" \
+            --current-sitemap _neutral_site/sitemap-baidu.xml \
+            --github-output "$GITHUB_OUTPUT" --force
 
-      - name: Discover active static slot
-        id: active_static_slot
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
-        env:
-          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
-        run: |
-          set -euo pipefail
-          echo "::add-mask::$PORTAL_SITE_URL"
-          state_url="$PORTAL_SITE_URL/.well-known/edge-state?before=$STATIC_RELEASE"
-          for attempt in $(seq 1 6); do
-            headers="$RUNNER_TEMP/edge-state-before.headers"
-            body="$RUNNER_TEMP/edge-state-before.json"
-            rm -f "$headers" "$body"
-            curl_exit=0
-            status="$(curl --location --silent --show-error \
-              --connect-timeout 10 --max-time 30 \
-              --dump-header "$headers" \
-              --output "$body" \
-              --write-out '%{http_code}' \
-              "$state_url")" || curl_exit=$?
-            if [ "$curl_exit" -eq 0 ] && [ "$status" = "200" ]; then
-              slot="$(STATE_PATH="$body" python3 - <<'PY'
-          import json
-          import os
-          import re
-          from pathlib import Path
-
-          state = json.loads(Path(os.environ["STATE_PATH"]).read_text(encoding="utf-8"))
-          if state.get("schema_version") != 1 or state.get("slot") not in {"a", "b"}:
-              raise SystemExit("Active static slot state is invalid")
-          if not re.fullmatch(r"[0-9a-f]{32}", str(state.get("release_id") or "")):
-              raise SystemExit("Active static release state is invalid")
-          print(state["slot"])
-          PY
-              )"
-              printf 'ACTIVE_STATIC_SLOT=%s\n' "$slot" >> "$GITHUB_ENV"
-              printf 'active_slot=%s\n' "$slot" >> "$GITHUB_OUTPUT"
-              printf 'active_static_slot=%s\n' "$slot"
-              exit 0
-            fi
-            if [ "$curl_exit" -eq 0 ] && [ "$status" = "404" ] \
-              && grep -Eiq '^x-origin-class:[[:space:]]*edge-static[[:space:]]*$' "$headers"
-            then
-              printf 'ACTIVE_STATIC_SLOT=\n' >> "$GITHUB_ENV"
-              printf 'active_slot=\n' >> "$GITHUB_OUTPUT"
-              echo "active_static_slot=legacy-bootstrap"
-              exit 0
-            fi
-            echo "Waiting for active static slot state ($attempt/6; status=${status:-000}; curl_exit=$curl_exit)"
-            sleep 5
-          done
-          echo "Active static slot could not be determined." >&2
-          exit 1
-
-      - name: Verify hot-report API contract before static switch
-        id: hot_report_api_gate
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
-        env:
-          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
-        run: |
-          set -euo pipefail
-          echo "::add-mask::$PORTAL_SITE_URL"
-          origin="${PORTAL_SITE_URL%/}"
-          curl --fail --location --silent --show-error \
-            --connect-timeout 10 --max-time 10 \
-            --header 'Cache-Control: no-cache' \
-            --get \
-            --data-urlencode 'limit=24' \
-            --data-urlencode "smoke=pre-static-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" \
-            --output "$RUNNER_TEMP/hot-reports-pre-static-api.json" \
-            "$origin/api/hot-reports"
-          python3 - "$RUNNER_TEMP/hot-reports-pre-static-api.json" <<'PY'
-          import json
-          import sys
-          from pathlib import Path
-
-          payload = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
-          items = payload.get("items")
-          if not isinstance(items, list) or len(items) > 24:
-              raise SystemExit("Pre-static hot-report API did not return at most 24 items")
-          if payload.get("page_size") != 24:
-              raise SystemExit("Pre-static hot-report API page size is not 24")
-          total = payload.get("total")
-          if not isinstance(total, int) or isinstance(total, bool) or total < len(items):
-              raise SystemExit("Pre-static hot-report API total is invalid")
-          if not isinstance(payload.get("has_more"), bool):
-              raise SystemExit("Pre-static hot-report API has_more is not boolean")
-          if payload["has_more"] != bool(payload.get("next_cursor")):
-              raise SystemExit("Pre-static hot-report API cursor contract is inconsistent")
-          if not payload.get("index_updated_at"):
-              raise SystemExit("Pre-static hot-report API did not expose the index timestamp")
-          print(
-              f"pre_static_hot_reports=verified items={len(items)} "
-              f"total={total} has_more={payload['has_more']}"
-          )
-          PY
-
-      - name: Upload inactive static slot incrementally
+      - name: Upload inactive static slot and immutable runtime
         id: static_upload
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
+        if: steps.release_delta.outputs.changed == 'true'
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -564,13 +318,123 @@ jobs:
         run: |
           set -euo pipefail
           python3 -B scripts/publish_static_slot.py \
-            --root _neutral_site \
-            --release "$STATIC_RELEASE" \
-            --active-slot "${ACTIVE_STATIC_SLOT:-}" \
-            --max-workers 10
+            --root _neutral_site --release "$STATIC_RELEASE" \
+            --active-slot "$ACTIVE_STATIC_SLOT" --max-workers 10
+
+      - name: Build public validation artifact
+        if: steps.release_delta.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+          mkdir -p _release_validation/previous _release_validation/candidate
+          install -m 0600 "$RUNNER_TEMP/previous-edge-state.json" _release_validation/previous/edge-state.json
+          install -m 0600 "$RUNNER_TEMP/previous-public-catalog.json" _release_validation/previous/catalog.json
+          install -m 0600 "$RUNNER_TEMP/previous-public-sitemap.xml" _release_validation/previous/sitemap.xml
+          install -m 0600 _neutral_site/data/catalog.json _release_validation/candidate/catalog.json
+          install -m 0600 _neutral_site/data/catalog_preview.json _release_validation/candidate/catalog_preview.json
+          install -m 0600 _neutral_site/sitemap-baidu.xml _release_validation/candidate/sitemap.xml
+
+      - name: Upload release validation artifact
+        if: steps.release_delta.outputs.changed == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: neutral-release-validation-${{ github.run_id }}-${{ github.run_attempt }}
+          path: _release_validation
+          if-no-files-found: error
+          retention-days: 1
+
+  cutover:
+    needs: prepare_release
+    if: needs.prepare_release.outputs.changed == 'true'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 65
+    env:
+      STATIC_RELEASE: ${{ needs.prepare_release.outputs.static_release }}
+      STATIC_SLOT: ${{ needs.prepare_release.outputs.static_slot }}
+      STATIC_PREFIX: ${{ needs.prepare_release.outputs.static_prefix }}
+      STATIC_TREE_SHA256: ${{ needs.prepare_release.outputs.static_tree }}
+      PREVIOUS_STATIC_SLOT: ${{ needs.prepare_release.outputs.previous_slot }}
+      PREVIOUS_STATIC_RELEASE: ${{ needs.prepare_release.outputs.previous_release }}
+      PREVIOUS_STATIC_TREE: ${{ needs.prepare_release.outputs.previous_tree }}
+    steps:
+      - name: Checkout audited cutover source
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Prepare masked live route context
+        env:
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+        run: |
+          set -euo pipefail
+          echo "::add-mask::$PORTAL_SITE_URL"
+          site_host="$(python3 - <<'PY'
+          import os
+          from urllib.parse import urlsplit
+
+          parsed = urlsplit(os.environ["PORTAL_SITE_URL"])
+          if (
+              parsed.scheme != "https"
+              or not parsed.hostname
+              or parsed.username is not None
+              or parsed.password is not None
+              or parsed.port is not None
+              or parsed.path not in {"", "/"}
+              or parsed.query
+              or parsed.fragment
+          ):
+              raise SystemExit("Configured site URL is not a bare HTTPS origin")
+          print(parsed.hostname.lower())
+          PY
+          )"
+          alias_hosts=""
+          if [ "$(printf '%s' "$site_host" | awk -F. '{print NF}')" -eq 2 ] \
+            && [ "${site_host#www.}" = "$site_host" ]
+          then
+            alias_hosts="www.$site_host"
+          fi
+          live_origin="https://$site_host"
+          echo "::add-mask::$site_host"
+          echo "::add-mask::$alias_hosts"
+          echo "::add-mask::$live_origin"
+          printf 'SITE_HOST=%s\n' "$site_host" >> "$GITHUB_ENV"
+          printf 'EDGE_ALIAS_HOSTS=%s\n' "$alias_hosts" >> "$GITHUB_ENV"
+          printf 'LIVE_ORIGIN=%s\n' "$live_origin" >> "$GITHUB_ENV"
+
+      - name: Download release validation artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: neutral-release-validation-${{ github.run_id }}-${{ github.run_attempt }}
+          path: _release_validation
+
+      - name: Prove live release is unchanged before cutover
+        timeout-minutes: 5
+        env:
+          EDGE_SCRIPT_NAME: svc-04df8d213b73
+          EDGE_VERIFY_ATTEMPTS: "3"
+          EDGE_VERIFY_CONSECUTIVE: "3"
+        run: |
+          set -euo pipefail
+          origin="$LIVE_ORIGIN"
+          curl --fail --silent --show-error --max-redirs 0 \
+            --connect-timeout 5 --max-time 20 --header 'Cache-Control: no-cache' \
+            --output "$RUNNER_TEMP/live-state-before.json" \
+            "$origin/.well-known/edge-state"
+          curl --fail --silent --show-error --max-redirs 0 \
+            --connect-timeout 5 --max-time 60 --header 'Cache-Control: no-cache' \
+            --output "$RUNNER_TEMP/live-catalog-before.json" \
+            "$origin/data/catalog.json"
+          cmp _release_validation/previous/edge-state.json "$RUNNER_TEMP/live-state-before.json"
+          cmp _release_validation/previous/catalog.json "$RUNNER_TEMP/live-catalog-before.json"
+          python3 -B scripts/edge_route_cutover.py verify
 
       - name: Prepare neutral edge runtime
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
         env:
           PORTAL_PRIVATE_CONFIG_B64: ${{ secrets.PORTAL_PRIVATE_CONFIG_B64 }}
           R2_BUCKET: ${{ secrets.R2_BUCKET }}
@@ -606,45 +470,66 @@ jobs:
           enabled = false
           EOF
           python3 scripts/render_private_config.py \
-            --skip-generated-files \
-            --root .neutral_edge_runtime/wrangler.toml
+            --skip-generated-files --root .neutral_edge_runtime/wrangler.toml
+          python3 - <<'PY'
+          import os
+          import re
+          from pathlib import Path
+
+          lines = Path(".neutral_edge_runtime/wrangler.toml").read_text(encoding="utf-8").splitlines()
+          matches = []
+          for line in lines:
+              if line.lstrip().startswith("["):
+                  break
+              match = re.fullmatch(r'\s*name\s*=\s*"([A-Za-z0-9][A-Za-z0-9._-]{0,127})"\s*', line)
+              if match:
+                  matches.append(match.group(1))
+          if len(matches) != 1:
+              raise SystemExit("Rendered Edge config must have one safe top-level name")
+          name = matches[0]
+          print(f"::add-mask::{name}")
+          with Path(os.environ["GITHUB_ENV"]).open("a", encoding="utf-8") as handle:
+              handle.write(f"EDGE_PRIVATE_SCRIPT_NAME={name}\n")
+          PY
 
       - name: Capture exact edge rollback target
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
+        timeout-minutes: 2
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID }}
         run: >-
           python3 -B scripts/capture_edge_worker_deployment.py
-          --script-name svc-04df8d213b73
+          --script-name "$EDGE_PRIVATE_SCRIPT_NAME"
           --output-env "$GITHUB_ENV"
 
-      - name: Deploy neutral edge runtime
+      - name: Deploy prepared neutral edge release
         id: edge_deploy
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
-        uses: cloudflare/wrangler-action@v3
+        timeout-minutes: 5
+        uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID }}
           workingDirectory: .neutral_edge_runtime
           command: deploy
-          wranglerVersion: "4.69.0"
+          wranglerVersion: "4.125.0"
 
-      - name: Verify active static slot switch
-        id: edge_state_verify
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
+      - name: Accept prepared release through the live edge
+        id: release_acceptance
+        timeout-minutes: 18
         env:
-          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+          EDGE_SCRIPT_NAME: svc-04df8d213b73
+          EDGE_VERIFY_ATTEMPTS: "6"
+          EDGE_VERIFY_CONSECUTIVE: "3"
         run: |
           set -euo pipefail
-          echo "::add-mask::$PORTAL_SITE_URL"
-          state_url="$PORTAL_SITE_URL/.well-known/edge-state?after=$STATIC_RELEASE"
-          for attempt in $(seq 1 18); do
-            if curl --fail --location --silent --show-error \
-              --connect-timeout 10 --max-time 30 \
-              "$state_url" \
-              --output "$RUNNER_TEMP/edge-state-after.json" \
-              && STATE_PATH="$RUNNER_TEMP/edge-state-after.json" python3 - <<'PY'
+          origin="$LIVE_ORIGIN"
+          accepted=0
+          for attempt in $(seq 1 8); do
+            curl --fail --silent --show-error --max-redirs 0 \
+              --connect-timeout 5 --max-time 15 --header 'Cache-Control: no-cache' \
+              --output "$RUNNER_TEMP/live-state-after.json" \
+              "$origin/.well-known/edge-state" || true
+            if STATE_PATH="$RUNNER_TEMP/live-state-after.json" python3 - <<'PY'
           import json
           import os
           from pathlib import Path
@@ -657,494 +542,142 @@ jobs:
               "tree_sha256": os.environ["STATIC_TREE_SHA256"],
           }
           if state != expected:
-              raise SystemExit("Active static slot state does not match the prepared release")
-          print(
-              f"active_static_slot={state['slot']} "
-              f"active_static_release={state['release_id']} "
-              f"active_static_tree={state['tree_sha256']}"
-          )
+              raise SystemExit("Prepared Edge state is not active")
           PY
             then
-              exit 0
+              accepted=1
+              break
             fi
-            echo "Waiting for active static slot switch ($attempt/18)"
-            sleep 5
+            sleep 3
           done
-          echo "Prepared static slot did not become active in time." >&2
-          exit 1
-
-      - name: Verify active edge routes
-        id: edge_routes_verify
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
-        timeout-minutes: 10
-        env:
-          EDGE_SCRIPT_NAME: svc-04df8d213b73
-          EDGE_VERIFY_ATTEMPTS: "18"
-          EDGE_VERIFY_CONSECUTIVE: "3"
-        run: python3 -B scripts/edge_route_cutover.py verify
-
-      - name: Verify refreshed catalog is live
-        id: live_catalog
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
-        env:
-          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
-        run: |
-          set -euo pipefail
-          echo "::add-mask::$PORTAL_SITE_URL"
-          release_check="$PORTAL_SITE_URL/.well-known/edge-release/$STATIC_RELEASE"
-          for attempt in $(seq 1 18); do
-            if curl --fail --silent --max-time 30 \
-              "$release_check/data/catalog.json" \
-              --output "$RUNNER_TEMP/live-catalog.json" \
-              && curl --fail --silent --max-time 30 \
-              "$release_check/data/catalog_preview.json" \
-              --output "$RUNNER_TEMP/live-catalog-preview.json"
-            then
-              if python3 - <<'PY'
-          import json
-          import os
-          from pathlib import Path
-
-          expected = json.loads(Path("_neutral_site/data/catalog.json").read_text(encoding="utf-8"))
-          expected_preview = json.loads(Path("_neutral_site/data/catalog_preview.json").read_text(encoding="utf-8"))
-          actual = json.loads(Path(os.environ["RUNNER_TEMP"]).joinpath("live-catalog.json").read_text(encoding="utf-8"))
-          actual_preview = json.loads(
-              Path(os.environ["RUNNER_TEMP"]).joinpath("live-catalog-preview.json").read_text(encoding="utf-8")
-          )
-
-          def latest_date(catalog):
-              return max((str(item.get("date_folder") or "") for item in catalog.get("items", [])), default="")
-
-          def catalog_summary(catalog):
-              return (
-                  int(catalog.get("schema_version") or 0),
-                  str(catalog.get("updated_at_bjt") or ""),
-                  int(catalog.get("item_count") or 0),
-                  latest_date(catalog),
-              )
-
-          def preview_summary(catalog):
-              return (
-                  int(catalog.get("schema_version") or 0),
-                  str(catalog.get("updated_at_bjt") or ""),
-                  int(catalog.get("item_count") or 0),
-                  int(catalog.get("total_item_count") or 0),
-                  latest_date(catalog),
-              )
-
-          def assert_aligned(label, catalog, preview):
-              catalog_version = (
-                  int(catalog.get("schema_version") or 0),
-                  str(catalog.get("updated_at_bjt") or ""),
-              )
-              preview_version = (
-                  int(preview.get("schema_version") or 0),
-                  str(preview.get("updated_at_bjt") or ""),
-              )
-              if catalog_version != preview_version:
-                  raise SystemExit(f"{label} catalog version mismatch")
-              if int(preview.get("total_item_count") or 0) != int(catalog.get("item_count") or 0):
-                  raise SystemExit(f"{label} catalog total mismatch")
-              if latest_date(preview) != latest_date(catalog):
-                  raise SystemExit(f"{label} catalog latest-date mismatch")
-              if not 0 < int(preview.get("item_count") or 0) <= int(preview.get("total_item_count") or 0):
-                  raise SystemExit(f"{label} catalog preview is empty or oversized")
-
-          assert_aligned("local", expected, expected_preview)
-          assert_aligned("live", actual, actual_preview)
-
-          expected_summary = catalog_summary(expected)
-          actual_summary = catalog_summary(actual)
-          expected_preview_summary = preview_summary(expected_preview)
-          actual_preview_summary = preview_summary(actual_preview)
-          if actual_summary != expected_summary or actual_preview_summary != expected_preview_summary:
-              raise SystemExit(1)
-          print(
-              f"live_catalog_date={actual_summary[3]} "
-              f"live_catalog_items={actual_summary[2]} "
-              f"live_catalog_updated={actual_summary[1]} "
-              f"live_catalog_preview_items={actual_preview_summary[2]}"
-          )
-          PY
-              then
-                exit 0
-              fi
-            fi
-            echo "Waiting for refreshed catalog ($attempt/18)"
-            sleep 5
-          done
-          echo "Refreshed catalog did not become active in time." >&2
-          exit 1
-
-      - name: Verify discovery and report-detail assets are live
-        id: live_discovery
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
-        env:
-          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
-        run: |
-          set -euo pipefail
-          echo "::add-mask::$PORTAL_SITE_URL"
-          release_check="$PORTAL_SITE_URL/.well-known/edge-release/$STATIC_RELEASE"
-          report_id="$(python3 - <<'PY'
-          import json
-          from pathlib import Path
-
-          catalog = json.loads(Path("_neutral_site/data/catalog.json").read_text(encoding="utf-8"))
-          report_id = next((str(item.get("id") or "") for item in catalog.get("items", []) if item.get("id")), "")
-          if not report_id:
-              raise SystemExit("Catalog has no report id for detail-shard verification")
-          print(report_id)
-          PY
-          )"
-          prefix="$(REPORT_ID="$report_id" python3 - <<'PY'
-          import os
-          import re
-
-          print(re.sub(r"[^a-z0-9]", "_", os.environ["REPORT_ID"].lower())[:2].ljust(2, "_"))
-          PY
-          )"
-          fetch_asset() {
-            local label="$1"
-            local url="$2"
-            local output="$3"
-            local http_status="000"
-            local curl_exit=0
-            http_status="$(curl --fail --location --silent --show-error \
-              --connect-timeout 10 --max-time 30 \
-              --write-out '%{http_code}' \
-              --output "$output" \
-              "$url")" || curl_exit=$?
-            if [ "$curl_exit" -ne 0 ] || ! [[ "$http_status" =~ ^2[0-9][0-9]$ ]]; then
-              rm -f "$output"
-              printf 'asset_check=%s http_status=%s curl_exit=%s\n' \
-                "$label" "${http_status:-000}" "$curl_exit" >&2
-              return 1
-            fi
-            printf 'asset_check=%s http_status=%s\n' "$label" "$http_status"
-          }
-
-          for attempt in $(seq 1 18); do
-            rm -f \
-              "$RUNNER_TEMP/live-bernstein-release.html" \
-              "$RUNNER_TEMP/live-indexnow-key-release.txt" \
-              "$RUNNER_TEMP/live-report-detail-release.json" \
-              "$RUNNER_TEMP/live-recommendations-release.json" \
-              "$RUNNER_TEMP/live-bernstein-public.html" \
-              "$RUNNER_TEMP/live-indexnow-key-public.txt"
-            if fetch_asset \
-              "bernstein-release" \
-              "$release_check/reports/institutions/bernstein/index.html" \
-              "$RUNNER_TEMP/live-bernstein-release.html" \
-              && fetch_asset \
-                "indexnow-key-release" \
-                "$release_check/b7c3e9a41d8f52e604a71bc93f2d6e80.txt" \
-                "$RUNNER_TEMP/live-indexnow-key-release.txt" \
-              && fetch_asset \
-                "report-detail-release" \
-                "$release_check/data/report_details/$prefix.json" \
-                "$RUNNER_TEMP/live-report-detail-release.json" \
-              && fetch_asset \
-                "recommendations-release" \
-                "$release_check/data/catalog_recommendations.json" \
-                "$RUNNER_TEMP/live-recommendations-release.json" \
-              && fetch_asset \
-                "bernstein-public" \
-                "$PORTAL_SITE_URL/reports/institutions/bernstein/index.html" \
-                "$RUNNER_TEMP/live-bernstein-public.html" \
-              && fetch_asset \
-                "indexnow-key-public" \
-                "$PORTAL_SITE_URL/b7c3e9a41d8f52e604a71bc93f2d6e80.txt" \
-                "$RUNNER_TEMP/live-indexnow-key-public.txt" \
-              && REPORT_ID="$report_id" python3 - <<'PY'
-          import json
-          import os
-          from pathlib import Path
-
-          catalog = json.loads(Path("_neutral_site/data/catalog.json").read_text(encoding="utf-8"))
-          report_id = os.environ["REPORT_ID"]
-          runner_temp = Path(os.environ["RUNNER_TEMP"])
-          expected = (
-              ("live-bernstein-release.html", "伯恩斯坦研报"),
-              ("live-indexnow-key-release.txt", "b7c3e9a41d8f52e604a71bc93f2d6e80"),
-              ("live-bernstein-public.html", "伯恩斯坦研报"),
-              ("live-indexnow-key-public.txt", "b7c3e9a41d8f52e604a71bc93f2d6e80"),
-          )
-          for filename, marker in expected:
-              body = runner_temp.joinpath(filename).read_text(encoding="utf-8")
-              if marker not in body:
-                  raise SystemExit(f"Live discovery asset failed verification: {filename}")
-          shard = json.loads(runner_temp.joinpath("live-report-detail-release.json").read_text(encoding="utf-8"))
-          if report_id not in (shard.get("reports") or {}):
-              raise SystemExit("Live report-detail shard does not contain its catalog report")
-          recommendation_catalog = json.loads(
-              runner_temp.joinpath("live-recommendations-release.json").read_text(encoding="utf-8")
-          )
-          if int(recommendation_catalog.get("item_count") or 0) != int(catalog.get("item_count") or 0):
-              raise SystemExit("Live recommendation catalog does not match the active catalog")
-          print("live_discovery_assets=verified live_report_detail_shard=verified live_recommendation_catalog=verified")
-          PY
-            then
-              exit 0
-            fi
-            if [ "$attempt" -lt 18 ]; then
-              echo "Waiting for discovery assets to become active ($attempt/18)"
-              sleep 5
-            fi
-          done
-          echo "Discovery assets did not become active in time." >&2
-          exit 1
-
-      - name: Verify hot-report pagination UI and API are live
-        id: live_hot_reports
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
-        env:
-          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
-        run: |
-          set -euo pipefail
-          echo "::add-mask::$PORTAL_SITE_URL"
-          origin="${PORTAL_SITE_URL%/}"
-          release_check="$origin/.well-known/edge-release/$STATIC_RELEASE"
-
-          curl --fail --location --silent --show-error \
-            --connect-timeout 10 --max-time 30 \
-            --output "$RUNNER_TEMP/hot-reports-release-index.html" \
-            "$release_check/index.html"
-          curl --fail --location --silent --show-error \
-            --connect-timeout 10 --max-time 30 \
-            --output "$RUNNER_TEMP/hot-reports-release-app.js" \
-            "$release_check/assets/app.js"
-          curl --fail --location --silent --show-error \
-            --connect-timeout 10 --max-time 30 \
-            --header 'Cache-Control: no-cache' \
-            --output "$RUNNER_TEMP/hot-reports-public-index.html" \
-            "$origin/?hot-pagination-smoke=${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
-          curl --fail --location --silent --show-error \
-            --connect-timeout 10 --max-time 30 \
-            --header 'Cache-Control: no-cache' \
-            --output "$RUNNER_TEMP/hot-reports-public-app.js" \
-            "$origin/assets/app.js?hot-pagination-smoke=${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
-          curl --fail --silent --show-error \
-            --connect-timeout 10 --max-time 10 \
-            --header 'Cache-Control: no-cache' \
-            --get \
-            --data-urlencode 'limit=24' \
-            --data-urlencode "smoke=static-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" \
-            --output "$RUNNER_TEMP/hot-reports-live-api.json" \
-            "$origin/api/hot-reports"
-
+          test "$accepted" = 1
+          python3 -B scripts/edge_route_cutover.py verify
+          curl --fail --silent --show-error --max-redirs 0 \
+            --connect-timeout 5 --max-time 60 \
+            --output "$RUNNER_TEMP/release-catalog.json" \
+            "$origin/.well-known/edge-release/$STATIC_RELEASE/data/catalog.json"
+          curl --fail --silent --show-error --max-redirs 0 \
+            --connect-timeout 5 --max-time 60 \
+            --output "$RUNNER_TEMP/public-catalog-after.json" \
+            "$origin/data/catalog.json"
+          curl --fail --silent --show-error --max-redirs 0 \
+            --connect-timeout 5 --max-time 60 \
+            --output "$RUNNER_TEMP/public-sitemap-after.xml" \
+            "$origin/sitemap-baidu.xml"
+          cmp _release_validation/candidate/catalog.json "$RUNNER_TEMP/release-catalog.json"
+          cmp _release_validation/candidate/catalog.json "$RUNNER_TEMP/public-catalog-after.json"
+          cmp _release_validation/candidate/sitemap.xml "$RUNNER_TEMP/public-sitemap-after.xml"
+          curl --fail --silent --show-error --max-redirs 0 \
+            --connect-timeout 5 --max-time 30 \
+            --output "$RUNNER_TEMP/runtime-health-after.json" \
+            "$origin/api/health?runtime-data=1"
           python3 - <<'PY'
           import json
           import os
           from pathlib import Path
 
-          runner_temp = Path(os.environ["RUNNER_TEMP"])
-          html_markers = (
-              'id="hotReportsSection"',
-              'id="hotReportsPrev"',
-              'id="hotReportsPageInfo"',
-              'id="hotReportsNext"',
-              'id="hotReportsRetry"',
-          )
-          app_markers = (
-              "const HOT_REPORT_PAGE_SIZE = 24",
-              'params.set("cursor", cursor)',
-              "requestHotReportPage",
-              "PDF 入库中心",
-              "account-admin/upload-status",
-              "account-admin/contact-report-pdf",
-              "contact-report/item",
-          )
-          for filename in ("hot-reports-release-index.html", "hot-reports-public-index.html"):
-              body = runner_temp.joinpath(filename).read_text(encoding="utf-8")
-              missing = [marker for marker in html_markers if marker not in body]
-              if missing:
-                  raise SystemExit(f"Live hot-report HTML markers missing from {filename}: {missing}")
-          for filename in ("hot-reports-release-app.js", "hot-reports-public-app.js"):
-              body = runner_temp.joinpath(filename).read_text(encoding="utf-8")
-              missing = [marker for marker in app_markers if marker not in body]
-              if missing:
-                  raise SystemExit(f"Live hot-report JS markers missing from {filename}: {missing}")
-
-          payload = json.loads(runner_temp.joinpath("hot-reports-live-api.json").read_text(encoding="utf-8"))
-          items = payload.get("items")
-          if not isinstance(items, list) or not 1 <= len(items) <= 24:
-              raise SystemExit("Live hot-report API did not return 1-24 items")
-          if payload.get("page_size") != 24:
-              raise SystemExit("Live hot-report API page size is not 24")
-          if int(payload.get("total") or 0) < len(items):
-              raise SystemExit("Live hot-report API total is smaller than the page")
-          if bool(payload.get("has_more")) != bool(payload.get("next_cursor")):
-              raise SystemExit("Live hot-report API cursor contract is inconsistent")
-          ids = [str(item.get("id") or "") for item in items]
-          if any(not item_id for item_id in ids) or len(ids) != len(set(ids)):
-              raise SystemExit("Live hot-report API page contains missing or duplicate ids")
-          print(
-              f"live_hot_reports=verified items={len(items)} "
-              f"total={int(payload.get('total') or 0)} has_more={bool(payload.get('has_more'))}"
-          )
+          expected = json.loads(Path("_release_validation/candidate/catalog.json").read_text(encoding="utf-8"))
+          health = json.loads(Path(os.environ["RUNNER_TEMP"]).joinpath("runtime-health-after.json").read_text(encoding="utf-8"))
+          runtime = health.get("runtime_data") or {}
+          if health.get("ok") is not True:
+              raise SystemExit("Portal health is not ok")
+          if runtime.get("release_id") != os.environ["STATIC_RELEASE"]:
+              raise SystemExit("Portal did not select the prepared runtime release")
+          if runtime.get("catalog_versioned") is not True or runtime.get("rules_versioned") is not True:
+              raise SystemExit("Portal did not verify the immutable runtime objects")
+          if int(runtime.get("catalog_item_count") or 0) != len(expected.get("items") or []):
+              raise SystemExit("Portal runtime catalog count does not match the prepared catalog")
+          if str(runtime.get("catalog_updated_at_bjt") or "") != str(expected.get("updated_at_bjt") or ""):
+              raise SystemExit("Portal runtime catalog version does not match the prepared catalog")
+          if runtime.get("rules_loaded") is not True:
+              raise SystemExit("Portal runtime rules did not load")
+          print(f"portal_runtime_release={runtime['release_id']} catalog_items={runtime['catalog_item_count']}")
           PY
 
-      - name: Roll back failed edge release
+      - name: Roll back failed release or completed rehearsal
         id: edge_rollback
         if: >-
-          ${{ failure() &&
+          ${{ always() &&
               steps.edge_deploy.outcome != 'skipped' &&
-              (steps.edge_state_verify.outcome != 'success' ||
-               steps.edge_routes_verify.outcome != 'success' ||
-               steps.live_catalog.outcome != 'success' ||
-               steps.live_discovery.outcome != 'success' ||
-               steps.live_hot_reports.outcome != 'success') }}
+              (steps.release_acceptance.outcome != 'success' || inputs.operation == 'rehearse') }}
         timeout-minutes: 5
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID }}
           workingDirectory: .neutral_edge_runtime
-          command: rollback ${{ env.EDGE_PREVIOUS_VERSION_ID }} --message "Automated rollback after edge release verification failure"
-          wranglerVersion: "4.69.0"
+          command: rollback ${{ env.EDGE_PREVIOUS_VERSION_ID }} --message "Restore exact pre-release Edge version"
+          wranglerVersion: "4.125.0"
 
-      - name: Verify automated edge rollback
-        if: ${{ failure() && steps.edge_rollback.outcome == 'success' }}
+      - name: Verify exact previous release after rollback
+        id: rollback_acceptance
+        if: ${{ always() && steps.edge_rollback.outcome == 'success' }}
         timeout-minutes: 10
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID }}
-          EDGE_SCRIPT_NAME: svc-04df8d213b73
-          EDGE_VERIFY_ATTEMPTS: "18"
+          EDGE_VERIFY_ATTEMPTS: "6"
           EDGE_VERIFY_CONSECUTIVE: "3"
         run: |
           set -euo pipefail
           python3 -B scripts/capture_edge_worker_deployment.py \
-            --script-name svc-04df8d213b73 \
+            --script-name "$EDGE_PRIVATE_SCRIPT_NAME" \
             --expect-version "$EDGE_PREVIOUS_VERSION_ID"
-          python3 -B scripts/edge_route_cutover.py verify
-
-      - name: Submit changed public URLs to IndexNow
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
-        env:
-          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
-        run: |
-          set -euo pipefail
-          echo "::add-mask::$PORTAL_SITE_URL"
-          python3 scripts/submit_portal_indexnow.py \
-            --catalog _neutral_site/data/catalog.json \
-            --previous-catalog "$RUNNER_TEMP/previous-public-catalog.json" \
-            --site-dir _neutral_site \
-            --sitemap _neutral_site/sitemap-baidu.xml \
-            --previous-sitemap "$RUNNER_TEMP/previous-public-sitemap.xml" \
-            --base-url "$PORTAL_SITE_URL"
-
-      - name: Remove private values from persistent source
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
-        env:
-          PORTAL_PRIVATE_CONFIG_B64: ${{ secrets.PORTAL_PRIVATE_CONFIG_B64 }}
-        run: |
-          set -euo pipefail
-          python3 scripts/render_private_config.py \
-            --reverse \
-            --skip-generated-files \
-            --root portal_suite/site_src \
-            --root portal_suite/data \
-            --root scripts/build_portal_suite_site.py \
-            --root workers/portal-suite-worker/src/index.js
-          python3 -B scripts/check_public_identity.py
-
-      - name: Commit refreshed catalog and search data
-        if: github.event_name == 'schedule' || inputs.operation == 'migrate'
-        run: |
-          set -euo pipefail
-          bash scripts/commit_output_dir.sh \
-            "portal_suite/data" \
-            "Refresh portal catalog and search data" \
-            8 \
-            true
-
-      - name: Prune obsolete legacy static releases
-        if: >-
-          always() &&
-          (github.event_name == 'schedule' || inputs.operation == 'migrate') &&
-          steps.static_upload.outcome == 'success' &&
-          steps.edge_deploy.outcome == 'success' &&
-          steps.edge_state_verify.outcome == 'success' &&
-          steps.live_catalog.outcome == 'success' &&
-          steps.live_discovery.outcome == 'success' &&
-          steps.live_hot_reports.outcome == 'success'
-        continue-on-error: true
-        env:
-          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
-          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
-          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-          R2_BUCKET: ${{ secrets.R2_BUCKET }}
-        run: |
-          set -euo pipefail
+          origin="$LIVE_ORIGIN"
+          restored=0
+          for attempt in $(seq 1 8); do
+            curl --fail --silent --show-error --max-redirs 0 \
+              --connect-timeout 5 --max-time 15 --header 'Cache-Control: no-cache' \
+              --output "$RUNNER_TEMP/rollback-edge-state.json" \
+              "$origin/.well-known/edge-state" || true
+            curl --fail --silent --show-error --max-redirs 0 \
+              --connect-timeout 5 --max-time 60 --header 'Cache-Control: no-cache' \
+              --output "$RUNNER_TEMP/rollback-public-catalog.json" \
+              "$origin/data/catalog.json" || true
+            if cmp _release_validation/previous/edge-state.json "$RUNNER_TEMP/rollback-edge-state.json" \
+              && cmp _release_validation/previous/catalog.json "$RUNNER_TEMP/rollback-public-catalog.json"
+            then
+              restored=1
+              break
+            fi
+            sleep 3
+          done
+          test "$restored" = 1
+          EDGE_SCRIPT_NAME="$EDGE_PRIVATE_SCRIPT_NAME" python3 -B scripts/edge_route_cutover.py verify
+          curl --fail --silent --show-error --max-redirs 0 \
+            --connect-timeout 5 --max-time 30 \
+            --output "$RUNNER_TEMP/runtime-health-rollback.json" \
+            "$origin/api/health?runtime-data=1"
           python3 - <<'PY'
-          from __future__ import annotations
-
+          import json
           import os
-          import re
+          from pathlib import Path
 
-          import boto3
-          from botocore.config import Config
-
-          prefix = "edge-static/releases/"
-          release_pattern = re.compile(r"^[0-9a-f]{32}$")
-
-          client = boto3.client(
-              "s3",
-              endpoint_url=f"https://{os.environ['R2_ACCOUNT_ID']}.r2.cloudflarestorage.com",
-              aws_access_key_id=os.environ["R2_ACCESS_KEY_ID"],
-              aws_secret_access_key=os.environ["R2_SECRET_ACCESS_KEY"],
-              region_name="auto",
-              config=Config(signature_version="s3v4", retries={"max_attempts": 8, "mode": "adaptive"}),
-          )
-          bucket = os.environ["R2_BUCKET"]
-          objects = []
-          paginator = client.get_paginator("list_objects_v2")
-          for page in paginator.paginate(Bucket=bucket, Prefix=prefix):
-              objects.extend(page.get("Contents", []))
-
-          modified = {}
-          by_release = {}
-          for item in objects:
-              key = str(item.get("Key") or "")
-              relative = key[len(prefix):]
-              release = relative.split("/", 1)[0]
-              if not release_pattern.fullmatch(release):
-                  continue
-              by_release.setdefault(release, []).append(key)
-              timestamp = item.get("LastModified")
-              if timestamp is not None and (release not in modified or timestamp > modified[release]):
-                  modified[release] = timestamp
-
-          newest = sorted(modified, key=lambda release: modified[release], reverse=True)
-          complete_slots = 0
-          for slot in ("a", "b"):
-              try:
-                  client.head_object(Bucket=bucket, Key=f"edge-static/slot-manifests/{slot}.json")
-              except Exception as error:
-                  code = str(getattr(error, "response", {}).get("Error", {}).get("Code", "")).lower()
-                  if code not in {"404", "nosuchkey", "notfound"}:
-                      raise
-              else:
-                  complete_slots += 1
-          # Keep one legacy snapshot until both incremental slots have been
-          # prepared successfully.  After that, A/B are the current/rollback
-          # complete snapshots and old random-prefix copies are redundant.
-          keep = set(newest[:1] if complete_slots < 2 else [])
-          stale_keys = [key for release, keys in by_release.items() if release not in keep for key in keys]
-          deleted = 0
-          for offset in range(0, len(stale_keys), 1000):
-              chunk = stale_keys[offset:offset + 1000]
-              response = client.delete_objects(
-                  Bucket=bucket,
-                  Delete={"Objects": [{"Key": key} for key in chunk], "Quiet": True},
-              )
-              if response.get("Errors"):
-                  raise RuntimeError("Static release cleanup was incomplete")
-              deleted += len(chunk)
-          print(
-              f"complete_static_slots={complete_slots} "
-              f"retained_legacy_releases={len(keep & set(by_release))} "
-              f"deleted_legacy_static_objects={deleted}"
-          )
+          expected = json.loads(Path("_release_validation/previous/catalog.json").read_text(encoding="utf-8"))
+          health = json.loads(Path(os.environ["RUNNER_TEMP"]).joinpath("runtime-health-rollback.json").read_text(encoding="utf-8"))
+          runtime = health.get("runtime_data") or {}
+          if health.get("ok") is not True:
+              raise SystemExit("Portal health is not ok after rollback")
+          if runtime.get("release_id") != os.environ["PREVIOUS_STATIC_RELEASE"]:
+              raise SystemExit("Portal did not return to the previous runtime release")
+          if int(runtime.get("catalog_item_count") or 0) != len(expected.get("items") or []):
+              raise SystemExit("Portal rollback catalog count does not match the previous catalog")
+          if str(runtime.get("catalog_updated_at_bjt") or "") != str(expected.get("updated_at_bjt") or ""):
+              raise SystemExit("Portal rollback catalog version does not match the previous catalog")
+          if runtime.get("rules_loaded") is not True:
+              raise SystemExit("Portal rollback rules did not load")
+          print(f"portal_runtime_restored={runtime['release_id']} catalog_items={runtime['catalog_item_count']}")
           PY
+
+      - name: Enforce transactional outcome
+        if: always()
+        run: |
+          set -euo pipefail
+          test "${{ steps.edge_deploy.outcome }}" = "success"
+          test "${{ steps.release_acceptance.outcome }}" = "success"
+          if [ "${{ inputs.operation }}" = "rehearse" ]; then
+            test "${{ steps.edge_rollback.outcome }}" = "success"
+            test "${{ steps.rollback_acceptance.outcome }}" = "success"
+          else
+            test "${{ steps.edge_rollback.outcome }}" = "skipped"
+          fi

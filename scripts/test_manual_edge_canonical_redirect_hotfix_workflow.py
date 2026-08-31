@@ -23,7 +23,7 @@ class ManualEdgeCanonicalRedirectHotfixWorkflowContractTests(unittest.TestCase):
         self.assertIn("persist-credentials: false", workflow)
         self.assertIn(".github/workflows/neutral-edge-cutover.yml", workflow)
         self.assertIn("scripts/capture_edge_worker_deployment.py", workflow)
-        self.assertIn("group: edge-static-hosting-production", workflow)
+        self.assertIn("group: portal-production-release", workflow)
         self.assertIn("Require audited main branch", workflow)
         self.assertIn('if [ "$GITHUB_REF" != "refs/heads/main" ]', workflow)
 

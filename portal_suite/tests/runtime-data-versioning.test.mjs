@@ -320,6 +320,42 @@ test("state-aware unresolved and versioned failures use same-origin HTTPS and ne
   assert.deepEqual(reads, ["edge-static/runtime-data/catalog.json"]);
 });
 
+test("runtime health probe proves the selected release and active catalog without exposing data", async () => {
+  const release = "e".repeat(32);
+  const context = runtimeContext();
+  context.runtimeDataStateUrl = () => "https://portal.example.com/.well-known/edge-state?runtime-data=1";
+  context.activeRuntimeDataRelease = async () => release;
+  context.readRuntimeDataReleaseObject = async (_env, filename) => ({
+    found: filename === "catalog.json" || filename === "password_rules.json",
+    value: { filename },
+  });
+  context.loadCatalog = async () => ({
+    updated_at_bjt: "2026-08-31 09:30:00 +0800",
+    items: [{ id: "a" }, { id: "b" }],
+  });
+  context.loadRules = async () => ({ rules: [{ id: "one" }] });
+  vm.runInContext(`
+    ${extractFunction(workerSource, "runtimeDataHealthProbe")}
+    globalThis.runtimeProbe = runtimeDataHealthProbe;
+  `, context);
+
+  assert.deepEqual(
+    JSON.parse(JSON.stringify(await context.runtimeProbe({}))),
+    {
+      state_url_configured: true,
+      release_id: release,
+      catalog_versioned: true,
+      rules_versioned: true,
+      catalog_item_count: 2,
+      catalog_updated_at_bjt: "2026-08-31 09:30:00 +0800",
+      rules_loaded: true,
+      rule_count: 1,
+    },
+  );
+  assert.match(workerSource, /url\.searchParams\.get\("runtime-data"\) === "1"/u);
+  assert.match(workerSource, /runtime_data: runtimeData/u);
+});
+
 test("catalog, search, and rules cache identities follow A to B, rollback, and unresolved state", async () => {
   let activeRelease = "a".repeat(32);
   const loads = [];

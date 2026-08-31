@@ -1165,6 +1165,33 @@ async function fetchStaticDataJson(env, filename, fallbackUrl, releaseId = "", s
   return fetchJson(fallbackUrl);
 }
 
+async function runtimeDataHealthProbe(env) {
+  const stateUrl = runtimeDataStateUrl(env);
+  const releaseId = await activeRuntimeDataRelease(env);
+  const [versionedCatalog, versionedRules, catalog, rules] = await Promise.all([
+    releaseId
+      ? readRuntimeDataReleaseObject(env, "catalog.json", releaseId)
+      : Promise.resolve({ found: false, value: null }),
+    releaseId
+      ? readRuntimeDataReleaseObject(env, "password_rules.json", releaseId)
+      : Promise.resolve({ found: false, value: null }),
+    loadCatalog(env),
+    loadRules(env),
+  ]);
+  const items = Array.isArray(catalog && catalog.items) ? catalog.items : [];
+  const ruleRows = Array.isArray(rules) ? rules : (Array.isArray(rules && rules.rules) ? rules.rules : []);
+  return {
+    state_url_configured: Boolean(stateUrl),
+    release_id: releaseId,
+    catalog_versioned: Boolean(versionedCatalog.found),
+    rules_versioned: Boolean(versionedRules.found),
+    catalog_item_count: items.length,
+    catalog_updated_at_bjt: String(catalog && catalog.updated_at_bjt || ""),
+    rules_loaded: Boolean(rules && typeof rules === "object"),
+    rule_count: ruleRows.length,
+  };
+}
+
 async function loadCatalog(env) {
   const now = Date.now();
   const release = await activeRuntimeDataRelease(env);
@@ -23725,12 +23752,14 @@ export default {
     }
 
     if (pathname === "/health") {
-      const [filesSnapshot, picksSnapshot, legacyPicksSnapshot, analyticsSnapshot, opsMirrorState] = await Promise.all([
+      const runtimeProbeRequested = url.searchParams.get("runtime-data") === "1";
+      const [filesSnapshot, picksSnapshot, legacyPicksSnapshot, analyticsSnapshot, opsMirrorState, runtimeData] = await Promise.all([
         safeR2GetJson(env, ADMIN_FILES_SNAPSHOT_KEY),
         safeR2GetJson(env, ADMIN_PICKS_SNAPSHOT_KEY),
         safeR2GetJson(env, ADMIN_PICKS_LEGACY_SNAPSHOT_KEY),
         safeR2GetJson(env, ADMIN_ANALYTICS_SNAPSHOT_KEY),
         safeR2GetJson(env, ADMIN_OPS_MIRROR_STATE_KEY),
+        runtimeProbeRequested ? runtimeDataHealthProbe(env) : Promise.resolve(null),
       ]);
       const effectivePicksSnapshot = hasAdminSnapshot(picksSnapshot) ? picksSnapshot : legacyPicksSnapshot;
       return jsonResponse(request, env, 200, {
@@ -23754,6 +23783,7 @@ export default {
           attempted_at: "",
           dispatched_at: "",
         },
+        ...(runtimeData ? { runtime_data: runtimeData } : {}),
       });
     }
 

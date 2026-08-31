@@ -7,7 +7,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: edge-static-hosting-production
+  group: portal-production-release
   cancel-in-progress: false
 
 jobs:
