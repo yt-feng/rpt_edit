@@ -31,6 +31,10 @@ function extractAsyncFunction(source, name) {
 
 const planDefinitions = worker.match(/const VID2PPT_PORTAL_GIFT_PLANS = \{[\s\S]*?\n\};/);
 assert.ok(planDefinitions, "Vid2PPT plan definitions must exist");
+const publicBrandDefinition = worker.match(/^const PUBLIC_BRAND = .*;$/m);
+const publicSourceBrandDetectorDefinition = worker.match(/^const PUBLIC_SOURCE_BRAND_DETECTOR = .*;$/m);
+assert.ok(publicBrandDefinition, "public brand definition must exist");
+assert.ok(publicSourceBrandDetectorDefinition, "public source-brand detector must exist");
 
 const accessSandbox = {};
 vm.runInNewContext(`
@@ -351,6 +355,8 @@ const uploadPromise = vm.runInNewContext(`(async () => {
 
 const commentOrderSandbox = { URL };
 const commentOrderPromise = vm.runInNewContext(`(async () => {
+  ${publicBrandDefinition[0]}
+  ${publicSourceBrandDetectorDefinition[0]}
   const HOT_REPORT_ID_PATTERN = /^hot:[a-f0-9]{16}$/;
   const HOT_REPORT_COMMENT_PREFIX = "_hot-reports/comments";
   const HOT_REPORT_COMMENT_ORDER_PREFIX = "_hot-reports/comment-orders";
@@ -373,6 +379,7 @@ const commentOrderPromise = vm.runInNewContext(`(async () => {
   ${extractFunction(worker, "hotReportCommentPrefix")}
   ${extractFunction(worker, "hotReportCommentOrderKey")}
   ${extractFunction(worker, "cleanHotReportText")}
+  ${extractFunction(worker, "publicHotReportDisplayName")}
   ${extractFunction(worker, "publicHotReportComment")}
   ${extractAsyncFunction(worker, "listHotReportCommentRows")}
   ${extractAsyncFunction(worker, "handleHotReportComments")}
