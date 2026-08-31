@@ -92,8 +92,6 @@ BANK_ALIASES = [
 ]
 
 SITE_BASE_URL = "https://portal.example.invalid"
-PUBLIC_CONTACT_EMAIL_PLACEHOLDER = "info@public-contact.invalid"
-PUBLIC_CONTACT_EMAIL = "".join(("info", "@", "kc", "desk", ".com"))
 SITEMAP_REPORT_CHUNK_SIZE = 5000
 REPORT_INDEX_PAGE_SIZE = 200
 BLOG_INDEX_PAGE_SIZE = 30
@@ -1874,8 +1872,7 @@ def render_report_seo_page(
       <a href="../about.html">关于{BLOG_PUBLIC_BRAND}</a>
       <a href="../terms.html">Terms of Service</a>
       <a href="../privacy.html">Privacy Policy</a>
-      <span>联系邮箱：info@public-contact.invalid</span>
-      <a href="mailto:info@public-contact.invalid" data-portal-non-chinese-only hidden>Email: info@public-contact.invalid</a>
+      <a href="../?request=access">申请报告访问</a>
     </footer>
     <script src="../assets/contact.js"></script>
     <script src="../assets/analytics.js"></script>
@@ -2029,8 +2026,7 @@ def render_reports_index(
       <a href="../about.html">关于{BLOG_PUBLIC_BRAND}</a>
       <a href="../terms.html">Terms of Service</a>
       <a href="../privacy.html">Privacy Policy</a>
-      <span>联系邮箱：info@public-contact.invalid</span>
-      <a href="mailto:info@public-contact.invalid" data-portal-non-chinese-only hidden>Email: info@public-contact.invalid</a>
+      <a href="../?request=membership">申请加入会员</a>
     </footer>
     <script src="../assets/contact.js"></script>
     <script src="../assets/analytics.js"></script>
@@ -2594,7 +2590,6 @@ def render_about_page(base_url: str, generated_date: str) -> str:
         "url": home,
         "logo": url_join(base_url, "assets/app-mark.svg"),
         "description": description,
-        "email": "info@public-contact.invalid",
     }
     json_ld = {
         "@context": "https://schema.org",
@@ -2666,7 +2661,7 @@ def render_about_page(base_url: str, generated_date: str) -> str:
         <h2>发现方式</h2>
         <p><a href="reports/">浏览金融研报索引</a> · <a href="reports/topics.html">按机构与主题浏览</a> · <a href="blog/">阅读每日研究文章</a> · <a href="charts">检索研报图表</a></p>
         <h2>联系</h2>
-        <p><a href="mailto:info@public-contact.invalid">info@public-contact.invalid</a></p>
+        <p><a class="primary-link" href="./?request=membership">申请加入会员或联系KC桌面</a></p>
       </article>
     </main>
     <footer class="legal-footer"><a href="./">首页检索</a><a href="reports/">报告索引</a><a href="blog/">Blog</a><a href="privacy.html">Privacy Policy</a></footer>
@@ -3752,7 +3747,7 @@ def render_blog_index(
       <a href="../reports/">报告索引</a>
       <a href="../about.html">关于{BLOG_PUBLIC_BRAND}</a>
       <a href="../terms.html">Terms of Service</a>
-      <a href="mailto:info@public-contact.invalid">Email: info@public-contact.invalid</a>
+      <a href="../?request=membership">申请加入会员</a>
     </footer>
   </body>
 </html>
@@ -3964,7 +3959,7 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
       <a href="../">首页检索</a>
       <a href="../reports/">报告索引</a>
       <a href="../about.html">关于{BLOG_PUBLIC_BRAND}</a>
-      <a href="mailto:info@public-contact.invalid">Email: info@public-contact.invalid</a>
+      <a href="../?request=support">联系KC桌面</a>
     </footer>
   </body>
 </html>
@@ -4275,7 +4270,7 @@ def build_seo_outputs(
             "- Report pages expose titles, translated titles, institution, industry, date, page count, and availability status.",
             f"- {BLOG_PUBLIC_BRAND} is a metadata and discovery index, not the author or publisher of underlying reports. Attribute each report to the source institution shown on its canonical report page.",
             "- Use each static report or Blog canonical URL when citing indexed facts. Availability is dynamic and should be described with the page's current status.",
-            "- PDF download access may require an approved account. For source files or unavailable PDFs, email info@public-contact.invalid.",
+            f"- PDF download access may require an approved account. For source files or unavailable PDFs, use the request button at {url_join(base_url, '/?request=access')}.",
             "",
         ]),
     )
@@ -4422,43 +4417,33 @@ def copy_site(src: Path, output: Path) -> None:
     shutil.copytree(src, output)
 
 
-def materialize_public_contact(output: Path) -> int:
-    """Render the public alias after deployment-only private substitutions.
-
-    The committed HTML uses a neutral placeholder so an older private profile
-    cannot substitute a personal mailbox into public pages. JavaScript builds
-    the same alias from fragments at runtime. This final build step makes every
-    crawlable/static contact entry use the public alias before asset hashing.
-    """
-    text_suffixes = {".css", ".html", ".js", ".json", ".txt", ".xml"}
-    changed = 0
-    for path in output.rglob("*"):
-        if not path.is_file() or path.suffix.lower() not in text_suffixes:
+def assert_no_public_mail_client_actions(output: Path) -> None:
+    """Fail the build when first-party pages can still open a mail client."""
+    candidates = list(output.rglob("*.html"))
+    candidates.extend(
+        output / relative
+        for relative in (
+            "assets/app.js",
+            "assets/contact.js",
+            "assets/report-chat.js",
+            "assets/report-research-export.js",
+            "assets/charts.js",
+        )
+    )
+    offenders: list[str] = []
+    for path in candidates:
+        if not path.is_file():
             continue
         try:
             text = path.read_text(encoding="utf-8")
         except UnicodeDecodeError:
             continue
-        if PUBLIC_CONTACT_EMAIL_PLACEHOLDER not in text:
-            continue
-        path.write_text(
-            text.replace(PUBLIC_CONTACT_EMAIL_PLACEHOLDER, PUBLIC_CONTACT_EMAIL),
-            encoding="utf-8",
+        if re.search(r"mailto\s*:", text, flags=re.I):
+            offenders.append(path.relative_to(output).as_posix())
+    if offenders:
+        raise RuntimeError(
+            "Public mail-client actions remain in: " + ", ".join(sorted(set(offenders)))
         )
-        changed += 1
-
-    remaining = []
-    for path in output.rglob("*"):
-        if not path.is_file() or path.suffix.lower() not in text_suffixes:
-            continue
-        try:
-            if PUBLIC_CONTACT_EMAIL_PLACEHOLDER in path.read_text(encoding="utf-8"):
-                remaining.append(path.relative_to(output).as_posix())
-        except UnicodeDecodeError:
-            continue
-    if remaining:
-        raise RuntimeError(f"Public contact placeholder remains in: {', '.join(sorted(remaining))}")
-    return changed
 
 
 def version_assets(output: Path) -> None:
@@ -4606,7 +4591,7 @@ def main() -> int:
         archive_root=Path(args.blog_archive_root),
     )
     build_seo_outputs(output_dir, catalog, SITE_BASE_URL, blog_articles)
-    materialize_public_contact(output_dir)
+    assert_no_public_mail_client_actions(output_dir)
     version_assets(output_dir)
     print(
         f"Built {output_dir} with {catalog['item_count']} catalog items "

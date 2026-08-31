@@ -1484,6 +1484,13 @@ a.secondary-button {
   overflow-wrap: anywhere;
 }
 
+.about-contact-email:hover,
+.about-contact-email:focus {
+  border-color: #8fc7bf;
+  background: #f0fdfa;
+  outline: none;
+}
+
 .about-contact-email span {
   color: var(--muted);
   font-size: 13px;
@@ -1519,7 +1526,9 @@ a.secondary-button {
 }
 
 .account-dialog {
-  width: min(620px, calc(100vw - 32px));
+  width: min(720px, calc(100vw - 32px));
+  max-height: min(90vh, 920px);
+  overflow: auto;
 }
 
 .account-admin-dialog {
@@ -2945,10 +2954,136 @@ a.secondary-button {
 
 .contact-card a,
 .contact-line a,
-.external-hint a,
-.legal-panel a[href^="mailto:"] {
+.external-hint a {
   color: var(--accent-strong);
   overflow-wrap: anywhere;
+}
+
+.inline-request-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  margin-inline: 3px;
+  border: 1px solid #b7d8d3;
+  border-radius: 999px;
+  padding: 3px 11px;
+  background: #eef7f5;
+  color: var(--accent-strong);
+  font: inherit;
+  font-weight: 800;
+  line-height: 1.35;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.inline-request-button:hover,
+.inline-request-button:focus {
+  border-color: var(--accent);
+  background: #e0f2ef;
+  outline: none;
+}
+
+.account-member-contact,
+.membership-request-card {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 16px;
+  border: 1px solid #b7ded8;
+  border-radius: 14px;
+  background: #f4fbfa;
+}
+
+.account-member-contact > div:first-child,
+.membership-request-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.account-member-contact > div:first-child,
+.membership-request-heading > div {
+  display: grid;
+  gap: 5px;
+}
+
+.account-member-contact span,
+.membership-request-heading span {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.account-contact-qr {
+  display: grid;
+  place-items: center;
+  padding: 12px;
+  border: 1px solid #d8e8e5;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.account-contact-qr img {
+  display: block;
+  width: min(260px, 100%);
+  height: auto;
+  border-radius: 8px;
+}
+
+.membership-request-card form {
+  display: grid;
+  gap: 12px;
+}
+
+.membership-request-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.membership-request-grid label,
+.membership-request-card form > label {
+  display: grid;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.membership-contact-value {
+  grid-column: 1 / -1;
+}
+
+.membership-request-card :is(input, select, textarea) {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 9px 12px;
+  background: #ffffff;
+  color: var(--ink);
+  font: inherit;
+}
+
+.membership-request-card textarea {
+  min-height: 84px;
+  resize: vertical;
+}
+
+.membership-request-card input[readonly] {
+  background: #edf3f2;
+  color: var(--muted);
+}
+
+.membership-request-trap {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .admin-close {
@@ -4598,6 +4733,7 @@ a.secondary-button {
   .report-request-fields,
   .delivery-row,
   .auth-grid,
+  .membership-request-grid,
   .account-password-grid,
   .account-admin-metrics,
   .account-admin-analytics-grid,
@@ -4607,6 +4743,11 @@ a.secondary-button {
   .account-admin-file,
   .about-section {
     grid-template-columns: 1fr;
+  }
+
+  .membership-request-heading {
+    align-items: stretch;
+    flex-direction: column;
   }
 
   .account-admin-wechat-summary {
@@ -7950,6 +8091,21 @@ body.chart-lightbox-open {
   .admin-dialog .account-rewards-heading > div {
     border-color: #315d58;
     background: rgba(24, 35, 46, 0.86);
+  }
+
+  .admin-dialog :is(.account-member-contact, .membership-request-card) {
+    border-color: #315d58;
+    background: #142926;
+  }
+
+  .admin-dialog .account-contact-qr {
+    border-color: var(--line);
+    background: #ffffff;
+  }
+
+  .admin-dialog .membership-request-card input[readonly] {
+    background: #111821;
+    color: var(--muted);
   }
 
   .admin-dialog :is(.error-state, .status-line.error) {

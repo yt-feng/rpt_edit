@@ -60,11 +60,9 @@ function createHarness(responseFactory, options = {}) {
   };
   const calls = [];
   const tracked = [];
-  const publicEmail = ["info", "@", "kc", "desk", ".com"].join("");
   const sandbox = {
     AUTHORITY_SOURCE: "authority",
     REPORT_A_SOURCE: "report-a",
-    CONTACT_EMAIL: publicEmail,
     publicBrandText(value) { return String(value || ""); },
     publicDocItem(item) { return item; },
     URLSearchParams,
@@ -96,7 +94,7 @@ function createHarness(responseFactory, options = {}) {
   return { calls, elements, tracked };
 }
 
-test("report request form promises a 24-hour response and keeps email as fallback", () => {
+test("report request uses the server-side button flow and never opens a mail client", () => {
   assert.match(appSource, /提交后无需打开邮件客户端/u);
   assert.match(appSource, /24 小时内/u);
   assert.match(appSource, /id="reportRequestForm"/u);
@@ -105,6 +103,7 @@ test("report request form promises a 24-hour response and keeps email as fallbac
   assert.match(appSource, /honeypot: website/u);
   assert.match(appSource, /initReportRequest\(workerUrl, item\)/u);
   assert.doesNotMatch(appSource, /id="authorityReportRequest"/u);
+  assert.doesNotMatch(appSource, /mailto:/iu);
   assert.match(stylesSource, /\.report-request-fields\s*\{/u);
   assert.match(stylesSource, /\.report-request-trap\s*\{/u);
   assert.match(termsSource, /normally reviewed within 24 hours/u);

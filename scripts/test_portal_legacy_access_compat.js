@@ -8,8 +8,9 @@ const worker = fs.readFileSync(path.join(root, "workers/portal-suite-worker/src/
 
 assert.doesNotMatch(app, /Vid2PPT|NOVA|ATLAS|vid2ppt\.com/);
 assert.doesNotMatch(app, /openVid2pptSponsor|vid2pptRedeemRow|accountVid2pptRedeemCode/);
-assert.match(app, /如需开通或调整下载权限，请联系邮箱/);
-assert.match(app, /To activate or update download access, email/);
+assert.match(app, /function accessContactGuidanceHtml\(\)/);
+assert.match(app, /data-membership-request-open="access"/);
+assert.doesNotMatch(app, /mailto:/i);
 assert.match(
   worker,
   /pathname === "\/vid2ppt\/redeem-code"[\s\S]*?jsonResponse\(request, env, 410/,

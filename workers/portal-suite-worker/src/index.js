@@ -51,7 +51,7 @@ function publicBrandValue(value, depth = 0) {
 
 function publicAccountEmail(value) {
   const email = String(value || "");
-  return PUBLIC_SOURCE_BRAND_DETECTOR.test(publicBrandInput(email)) ? CONTACT_EMAIL : email;
+  return PUBLIC_SOURCE_BRAND_DETECTOR.test(publicBrandInput(email)) ? "" : email;
 }
 
 function publicSourceText(value, fallback = "") {
@@ -91,7 +91,7 @@ const OPERATOR_ACCOUNT_EMAILS = new Set(["operator-a@users.portal.example.invali
 const ACCESS_MODES = new Set(["none", "all", "filters"]);
 const TRIAL_3D_DURATION_VALUE = "trial_3d";
 const TRIAL_3D_DOWNLOAD_LIMIT = 10;
-const TRIAL_LIMIT_MESSAGE = `3天体验下载已满 ${TRIAL_3D_DOWNLOAD_LIMIT} 篇，请联系邮箱 ${CONTACT_EMAIL}。`;
+const TRIAL_LIMIT_MESSAGE = `3天体验下载已满 ${TRIAL_3D_DOWNLOAD_LIMIT} 篇，请通过站内申请入口提交权限申请。`;
 const ACCESS_PAGE_RANGE_OPTIONS = [
   { value: "under5", label: "5页以下" },
   { value: "5_10", label: "5-10页" },
@@ -787,6 +787,14 @@ const REPORT_REQUEST_RATE_WINDOW_MS = 24 * 60 * 60 * 1000;
 const REPORT_REQUEST_EMAIL_RATE_LIMIT = 6;
 const REPORT_REQUEST_IP_RATE_LIMIT = 20;
 const REPORT_REQUEST_WRITE_RETRIES = 6;
+const MEMBERSHIP_REQUEST_PREFIX = "_membership-requests/v1";
+const MEMBERSHIP_REQUEST_MAX_BODY_BYTES = 8 * 1024;
+const MEMBERSHIP_REQUEST_IDENTITY_RATE_LIMIT = 6;
+const MEMBERSHIP_REQUEST_CONTACT_RATE_LIMIT = 6;
+const MEMBERSHIP_CONTACT_CARD_KEY = "_private-assets/v1/member-contact-card.jpg";
+const MEMBERSHIP_CONTACT_CARD_MAX_BYTES = 1024 * 1024;
+const MEMBERSHIP_REQUEST_KINDS = new Set(["membership", "support", "privacy", "refund", "access"]);
+const MEMBERSHIP_CONTACT_CHANNELS = new Set(["wechat", "whatsapp", "telegram"]);
 const NEWSFEED_CACHE_PREFIX = "_newsfeed/cache";
 const NEWSFEED_TOPICS_PREFIX = "_newsfeed/topics";
 const NEWSFEED_SETTINGS_PREFIX = "_newsfeed/settings";
@@ -968,9 +976,17 @@ function corsHeaders(request, env) {
 function accessContactMessage(request, zhPrefix = "", enPrefix = "") {
   const language = String(request.headers.get("Accept-Language") || "").trim().toLowerCase();
   if (language.startsWith("zh")) {
-    return `${zhPrefix}如需开通或调整下载权限，请发送邮件至 ${CONTACT_EMAIL}。`;
+    return `${zhPrefix}如需开通或调整下载权限，请通过站内申请入口提交。`;
   }
-  return `${enPrefix}To activate or update download access, email ${CONTACT_EMAIL}.`;
+  return `${enPrefix}To activate or update download access, use the in-site request form.`;
+}
+
+function membershipRequestAction(requestKind = "support") {
+  const normalized = String(requestKind || "").trim().toLowerCase();
+  return {
+    type: "membership_request",
+    request_kind: MEMBERSHIP_REQUEST_KINDS.has(normalized) ? normalized : "support",
+  };
 }
 
 function legacyCrossSiteLinkEnabled(env) {
@@ -2641,7 +2657,7 @@ function accountDisabled(user) {
 }
 
 function disabledAccountMessage() {
-  return `账号已禁用，请联系邮箱 ${CONTACT_EMAIL}。`;
+  return "账号已禁用，请通过站内申请入口联系KC桌面。";
 }
 
 function userAdminStateKeys(user = {}) {
@@ -4240,7 +4256,7 @@ async function consumeLimitedAccessDownload(env, email, reportId, source, expect
         limit_exceeded: false,
         access,
         error: "Download access could not be verified. Please retry.",
-        contact: CONTACT_EMAIL,
+        request_action: membershipRequestAction("access"),
       };
     }
     if (String(stored.change_id || "") !== String(expectedChangeId || "")) {
@@ -4250,7 +4266,7 @@ async function consumeLimitedAccessDownload(env, email, reportId, source, expect
         limit_exceeded: false,
         access,
         error: "下载权限刚刚发生变化，请刷新后重试。",
-        contact: CONTACT_EMAIL,
+        request_action: membershipRequestAction("access"),
       };
     }
     const etag = String(snapshot.object && snapshot.object.etag || "");
@@ -4261,7 +4277,7 @@ async function consumeLimitedAccessDownload(env, email, reportId, source, expect
         limit_exceeded: false,
         access,
         error: "Download quota could not be verified. Please retry.",
-        contact: CONTACT_EMAIL,
+        request_action: membershipRequestAction("access"),
       };
     }
     const existingItems = Array.isArray(stored.download_items) ? stored.download_items.map(String) : [];
@@ -4274,7 +4290,7 @@ async function consumeLimitedAccessDownload(env, email, reportId, source, expect
         limit_exceeded: true,
         access,
         error: TRIAL_LIMIT_MESSAGE,
-        contact: CONTACT_EMAIL,
+        request_action: membershipRequestAction("access"),
       };
     }
     const updatedItems = [...uniqueItems, itemKey];
@@ -4314,7 +4330,7 @@ async function consumeLimitedAccessDownload(env, email, reportId, source, expect
     limit_exceeded: false,
     access: publicAccessGrant({ email: normalized, source: "error" }),
     error: "Download quota changed concurrently. Please retry.",
-    contact: CONTACT_EMAIL,
+    request_action: membershipRequestAction("access"),
   };
 }
 
@@ -4737,6 +4753,7 @@ async function accountDownloadDecision(env, request, reportId, source) {
         access,
         status: 402,
         error: "Please log in, purchase this report, or enter the report password.",
+        request_action: membershipRequestAction("access"),
       };
     }
     const limitedAccess = shouldConsumeAccessGrantDownload(access);
@@ -4755,6 +4772,7 @@ async function accountDownloadDecision(env, request, reportId, source) {
       error: status === 503
         ? "下载权限暂时无法核验，请稍后重试。"
         : error && error.message || "Please log in.",
+      request_action: status === 401 ? undefined : membershipRequestAction("access"),
     };
   }
 }
@@ -4764,18 +4782,18 @@ async function finalizeAccountDownloadDecision(env, request, decision, reportId,
   try {
     const user = await currentUserFromRequest(env, request);
     if (String(user.id || "") !== String(decision.user && decision.user.id || "")) {
-      return { ok: false, status: 409, limit_exceeded: false, error: "下载权限已发生变化，请重试。", contact: CONTACT_EMAIL };
+      return { ok: false, status: 409, limit_exceeded: false, error: "下载权限已发生变化，请重试。", request_action: membershipRequestAction("access") };
     }
     const refreshedAccess = await reportAccessForUser(env, user, reportId, source);
     if (!refreshedAccess.can_download) {
-      return { ok: false, status: 403, limit_exceeded: false, error: "下载权限已失效，请刷新后重试。", contact: CONTACT_EMAIL };
+      return { ok: false, status: 403, limit_exceeded: false, error: "下载权限已失效，请刷新后重试。", request_action: membershipRequestAction("access") };
     }
     decision.user = user;
     decision.access = refreshedAccess;
     decision.limited_access = shouldConsumeAccessGrantDownload(refreshedAccess);
     decision.consume_limited_access = Boolean(decision.limited_access);
   } catch (_error) {
-    return { ok: false, status: 503, limit_exceeded: false, error: "下载权限暂时无法核验，请稍后重试。", contact: CONTACT_EMAIL };
+    return { ok: false, status: 503, limit_exceeded: false, error: "下载权限暂时无法核验，请稍后重试。", request_action: membershipRequestAction("access") };
   }
   if (!decision.consume_limited_access) return { ok: true };
   const email = normalizeEmail(decision.user && decision.user.email);
@@ -4790,7 +4808,7 @@ async function finalizeAccountDownloadDecision(env, request, decision, reportId,
       decision.limited_access && decision.limited_access.storage_kind || "access",
     );
   } catch (_error) {
-    return { ok: false, status: 503, limit_exceeded: false, error: "下载权限暂时无法核验，请稍后重试。", contact: CONTACT_EMAIL };
+    return { ok: false, status: 503, limit_exceeded: false, error: "下载权限暂时无法核验，请稍后重试。", request_action: membershipRequestAction("access") };
   }
   if (!consumed.ok) return consumed;
   decision.access = {
@@ -5143,7 +5161,7 @@ async function handleCourseAccess(request, env) {
       ...access,
       courses: access.can_access ? COURSE_TITLES : [],
       course_catalog: access.can_access ? COURSE_CATALOG : [],
-      contact: access.can_access ? { email: CONTACT_EMAIL } : undefined,
+      request_action: access.can_access ? membershipRequestAction("support") : undefined,
     });
   } catch (_error) {
     return jsonResponse(request, env, 503, { detail: "课程会员资格暂时无法核验。" });
@@ -5689,7 +5707,8 @@ function handlePaddleConfig(request, env) {
     config: {},
     missing: ["ACCESS_CHANNEL_DISABLED"],
     disabled: true,
-    message: `Self-serve access is paused. Contact: ${CONTACT_EMAIL}.`,
+    message: "Self-serve access is paused. Use the in-site request form.",
+    request_action: membershipRequestAction("access"),
   });
 }
 
@@ -7254,7 +7273,7 @@ async function handleDownload(request, env, ctx = null) {
   if (!password && !accountAllowed) {
     return jsonResponse(request, env, accountDecision.status || 402, {
       error: accountDecision.error || "Please log in, purchase this report, or enter the report password.",
-      contact: accountDecision.contact || undefined,
+      request_action: accountDecision.request_action || undefined,
       limit_exceeded: Boolean(accountDecision.limit_exceeded),
     });
   }
@@ -7282,9 +7301,9 @@ async function handleDownload(request, env, ctx = null) {
   }
   if (!pdfDescriptor) {
     return jsonResponse(request, env, 404, {
-      error: `PDF is not currently available. Contact: ${CONTACT_EMAIL}.`,
+      error: "PDF is not currently available. Submit an in-site support request if you need help.",
       archived: true,
-      contact: CONTACT_EMAIL,
+      request_action: membershipRequestAction("support"),
     });
   }
 
@@ -7314,9 +7333,9 @@ async function handleDownload(request, env, ctx = null) {
   const object = await env.REPORT_BUCKET.get(pdfDescriptor.object_key);
   if (!catalogReportPdfObjectMatches(pdfDescriptor, object)) {
     return jsonResponse(request, env, 404, {
-      error: `PDF is not currently available. Contact: ${CONTACT_EMAIL}.`,
+      error: "PDF is not currently available. Submit an in-site support request if you need help.",
       archived: true,
-      contact: CONTACT_EMAIL,
+      request_action: membershipRequestAction("support"),
     });
   }
 
@@ -7324,7 +7343,7 @@ async function handleDownload(request, env, ctx = null) {
   if (!consumed.ok) {
     return jsonResponse(request, env, consumed.status || 403, {
       error: consumed.error || TRIAL_LIMIT_MESSAGE,
-      contact: consumed.contact || CONTACT_EMAIL,
+      request_action: consumed.request_action || membershipRequestAction("access"),
       limit_exceeded: Boolean(consumed.limit_exceeded),
     });
   }
@@ -7461,8 +7480,8 @@ async function handleAdminReportPassword(request, env) {
 
   if (source === AUTHORITY_SOURCE) {
     return jsonResponse(request, env, 403, {
-      error: `高权报告仅提供检索线索，无法生成下载发货链接。请联系邮箱 ${CONTACT_EMAIL}。`,
-      contact: CONTACT_EMAIL,
+      error: "高权报告仅提供检索线索，无法生成下载发货链接。请通过站内入口提交支持请求。",
+      request_action: membershipRequestAction("support"),
     });
   }
 
@@ -17596,6 +17615,371 @@ async function reserveReportRequestRecord(env, key, record, nowMs = Date.now()) 
   throw new Error("Report request changed concurrently.");
 }
 
+function normalizeMembershipRequestText(value) {
+  return String(value || "")
+    .normalize("NFKC")
+    .replace(/[\u0000-\u001f\u007f]/gu, " ")
+    .replace(/\s+/gu, " ")
+    .trim();
+}
+
+function membershipRequestKind(value) {
+  const kind = String(value || "").trim().toLowerCase();
+  return MEMBERSHIP_REQUEST_KINDS.has(kind) ? kind : "";
+}
+
+function membershipContactChannel(value) {
+  const channel = String(value || "").trim().toLowerCase();
+  return MEMBERSHIP_CONTACT_CHANNELS.has(channel) ? channel : "";
+}
+
+function membershipRequestKindLabel(kind) {
+  return ({
+    membership: "加入会员",
+    support: "服务支持",
+    privacy: "隐私请求",
+    refund: "退款支持",
+    access: "权限申请",
+  })[kind] || "站内申请";
+}
+
+function membershipContactChannelLabel(channel) {
+  return ({
+    wechat: "微信",
+    whatsapp: "WhatsApp",
+    telegram: "Telegram",
+  })[channel] || channel;
+}
+
+function membershipRequestEmailContent(record) {
+  const fields = [
+    ["申请类型", membershipRequestKindLabel(record.request_kind)],
+    ["回复邮箱", record.requester_email],
+    ["联系方式", `${membershipContactChannelLabel(record.contact_channel)}: ${record.contact_value}`],
+    ["备注", record.note || "—"],
+    ["账号", record.authenticated ? (record.requester_username || record.requester_user_id || "已登录用户") : "游客"],
+    ["页面路径", record.page_path || "—"],
+    ["申请编号", record.request_id],
+  ];
+  const text = [
+    "收到一条 KC桌面站内申请。",
+    "",
+    ...fields.map(([label, value]) => `${label}：${value}`),
+  ].join("\n");
+  const rows = fields.map(([label, value]) => `
+    <tr>
+      <th align="left" style="padding:10px 12px;border-bottom:1px solid #e5e7eb;color:#475467;vertical-align:top;">${escapeNewsfeedHtml(label)}</th>
+      <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;color:#101828;white-space:pre-wrap;">${escapeNewsfeedHtml(value)}</td>
+    </tr>`).join("");
+  return {
+    subject: cleanReportRequestText(`KC桌面站内申请：${membershipRequestKindLabel(record.request_kind)}`, 160),
+    text,
+    html: `
+      <div style="margin:0;padding:24px;background:#f6f7fb;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#101828;">
+        <div style="max-width:680px;margin:0 auto;background:#ffffff;border-radius:10px;padding:28px;">
+          <h1 style="margin:0 0 18px;font-size:22px;line-height:1.35;">KC桌面站内申请</h1>
+          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border:1px solid #e5e7eb;border-radius:8px;border-collapse:collapse;">${rows}</table>
+        </div>
+      </div>`,
+  };
+}
+
+async function membershipRequestDedupeKey(env, record) {
+  const actor = record.authenticated
+    ? `account:${record.requester_user_id}`
+    : `email:${record.requester_email}`;
+  const contact = `${record.contact_channel}:${String(record.contact_value || "").toLocaleLowerCase("en-US")}`;
+  const digest = await reportRequestPrivateHash(
+    env,
+    "membership-dedupe",
+    `${record.request_kind}|${actor}|${contact}`,
+  );
+  return { digest, key: `${MEMBERSHIP_REQUEST_PREFIX}/items/${digest}.json` };
+}
+
+async function reserveMembershipRequestRateLimit(env, scope, identity, limit, nowMs = Date.now()) {
+  if (!identity) return true;
+  const digest = await reportRequestPrivateHash(env, `membership-rate:${scope}`, identity);
+  const key = `${MEMBERSHIP_REQUEST_PREFIX}/rate/${scope}/${digest}.json`;
+  const cutoff = nowMs - REPORT_REQUEST_RATE_WINDOW_MS;
+  for (let attempt = 0; attempt < REPORT_REQUEST_WRITE_RETRIES; attempt += 1) {
+    const snapshot = await r2GetJsonObjectStrict(env, key);
+    const rawTimestamps = Array.isArray(snapshot && snapshot.value && snapshot.value.timestamps)
+      ? snapshot.value.timestamps.slice(-limit * 2)
+      : [];
+    const timestamps = rawTimestamps
+      .map((value) => Number(value))
+      .filter((value) => Number.isFinite(value) && value > cutoff && value <= nowMs + 60 * 1000)
+      .slice(-limit);
+    if (timestamps.length >= limit) return false;
+    const etag = String(snapshot && snapshot.object && snapshot.object.etag || "");
+    const written = await accountBucket(env).put(key, JSON.stringify({
+      version: 1,
+      scope,
+      window_ms: REPORT_REQUEST_RATE_WINDOW_MS,
+      timestamps: [...timestamps, nowMs],
+      updated_at: new Date(nowMs).toISOString(),
+    }), {
+      onlyIf: etag ? { etagMatches: etag } : { etagDoesNotMatch: "*" },
+      httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "private, no-store" },
+    });
+    if (written !== null) return true;
+  }
+  throw new Error("Membership request rate limit changed concurrently.");
+}
+
+async function putMembershipRequestRecord(env, key, record) {
+  await accountBucket(env).put(key, JSON.stringify(record), {
+    httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "private, no-store" },
+  });
+  return record;
+}
+
+async function handleMembershipContactCard(request, env) {
+  try {
+    await currentUserFromRequest(env, request);
+  } catch (error) {
+    const status = accessErrorStatus(error);
+    return privateJsonResponse(request, env, status === 403 ? 403 : 401, {
+      ok: false,
+      detail: status === 403
+        ? "当前账号无法查看会员联系二维码。"
+        : "请先登录有效注册账号。",
+    });
+  }
+
+  let object;
+  try {
+    object = await accountBucket(env).get(MEMBERSHIP_CONTACT_CARD_KEY);
+  } catch (_error) {
+    return privateJsonResponse(request, env, 503, { ok: false, detail: "会员联系二维码暂时无法读取。" });
+  }
+  if (!object) {
+    return privateJsonResponse(request, env, 404, { ok: false, detail: "会员联系二维码暂时不可用。" });
+  }
+  const size = Number(object.size || 0);
+  if ((Number.isFinite(size) && size > MEMBERSHIP_CONTACT_CARD_MAX_BYTES) || !object.body) {
+    return privateJsonResponse(request, env, 503, { ok: false, detail: "会员联系二维码格式无效。" });
+  }
+  let bytes;
+  try {
+    const buffer = typeof object.arrayBuffer === "function"
+      ? await object.arrayBuffer()
+      : await new Response(object.body).arrayBuffer();
+    bytes = new Uint8Array(buffer);
+  } catch (_error) {
+    return privateJsonResponse(request, env, 503, { ok: false, detail: "会员联系二维码格式无效。" });
+  }
+  if (
+    bytes.byteLength < 3
+    || bytes.byteLength > MEMBERSHIP_CONTACT_CARD_MAX_BYTES
+    || bytes[0] !== 0xff
+    || bytes[1] !== 0xd8
+    || bytes[2] !== 0xff
+  ) {
+    return privateJsonResponse(request, env, 503, { ok: false, detail: "会员联系二维码格式无效。" });
+  }
+  const headers = new Headers(corsHeaders(request, env));
+  headers.set("Content-Type", "image/jpeg");
+  headers.set("Cache-Control", "private, no-store, max-age=0");
+  headers.set("Pragma", "no-cache");
+  headers.set("X-Content-Type-Options", "nosniff");
+  headers.set("Content-Length", String(bytes.byteLength));
+  return new Response(bytes, { status: 200, headers });
+}
+
+async function handleMembershipRequest(request, env) {
+  if (!reportRequestOriginAllowed(request, env)) {
+    return privateJsonResponse(request, env, 403, { ok: false, detail: "申请来源无效。" });
+  }
+  const contentType = String(request.headers.get("Content-Type") || "").split(";", 1)[0].trim().toLowerCase();
+  if (contentType !== "application/json") {
+    return privateJsonResponse(request, env, 415, { ok: false, detail: "申请必须使用 JSON 格式提交。" });
+  }
+  const declaredLength = Number(request.headers.get("Content-Length") || 0);
+  if (Number.isFinite(declaredLength) && declaredLength > MEMBERSHIP_REQUEST_MAX_BODY_BYTES) {
+    return privateJsonResponse(request, env, 413, { ok: false, detail: "申请内容过大，请精简后重试。" });
+  }
+  let rawBody = "";
+  try {
+    rawBody = await request.text();
+  } catch (_error) {
+    return privateJsonResponse(request, env, 400, { ok: false, detail: "申请格式无效。" });
+  }
+  if (new TextEncoder().encode(rawBody).byteLength > MEMBERSHIP_REQUEST_MAX_BODY_BYTES) {
+    return privateJsonResponse(request, env, 413, { ok: false, detail: "申请内容过大，请精简后重试。" });
+  }
+  let payload;
+  try {
+    payload = rawBody ? JSON.parse(rawBody) : {};
+  } catch (_error) {
+    return privateJsonResponse(request, env, 400, { ok: false, detail: "申请格式无效。" });
+  }
+  if (!payload || typeof payload !== "object" || Array.isArray(payload)) {
+    return privateJsonResponse(request, env, 400, { ok: false, detail: "申请格式无效。" });
+  }
+  if (normalizeMembershipRequestText(payload.honeypot || payload.website)) {
+    return privateJsonResponse(request, env, 202, {
+      ok: true,
+      deduplicated: true,
+      detail: "申请已收到。",
+    });
+  }
+
+  let user = null;
+  if (bearerToken(request)) {
+    try {
+      user = await currentUserFromRequest(env, request);
+    } catch (error) {
+      const status = accessErrorStatus(error);
+      return privateJsonResponse(request, env, status === 403 ? 403 : 401, {
+        ok: false,
+        detail: status === 403 ? "当前账号无法提交申请。" : "请重新登录后提交申请。",
+      });
+    }
+  }
+
+  const requestKind = membershipRequestKind(payload.request_kind);
+  if (!requestKind) {
+    return privateJsonResponse(request, env, 400, { ok: false, detail: "申请类型无效。" });
+  }
+  const contactChannel = membershipContactChannel(payload.contact_channel);
+  if (!contactChannel) {
+    return privateJsonResponse(request, env, 400, { ok: false, detail: "请选择微信、WhatsApp 或 Telegram。" });
+  }
+  const rawContactValue = normalizeMembershipRequestText(payload.contact_value);
+  if (!rawContactValue || rawContactValue.length > 160) {
+    return privateJsonResponse(request, env, 400, { ok: false, detail: "请填写有效且不超过 160 个字符的联系方式。" });
+  }
+  const rawNote = normalizeMembershipRequestText(payload.note);
+  if (rawNote.length > 600) {
+    return privateJsonResponse(request, env, 400, { ok: false, detail: "备注不能超过 600 个字符。" });
+  }
+  const submittedEmail = String(payload.requester_email || "").trim();
+  const requesterEmail = user ? normalizeEmail(user.email) : normalizeEmail(submittedEmail);
+  if (!requesterEmail || (!user && submittedEmail.length > 254)) {
+    return privateJsonResponse(request, env, 400, { ok: false, detail: "请填写有效邮箱。" });
+  }
+
+  const record = {
+    request_id: "",
+    request_kind: requestKind,
+    requester_email: requesterEmail,
+    requester_user_id: cleanReportRequestText(user && user.id, 100),
+    requester_username: cleanReportRequestText(user && user.username, 80),
+    authenticated: Boolean(user),
+    contact_channel: contactChannel,
+    contact_value: rawContactValue,
+    note: rawNote,
+    page_path: cleanReportRequestPagePath(payload.page_path),
+  };
+
+  try {
+    const nowMs = Date.now();
+    const dedupe = await membershipRequestDedupeKey(env, record);
+    record.request_id = dedupe.digest;
+    const existing = await r2GetJsonObjectStrict(env, dedupe.key);
+    if (reportRequestDisposition(existing && existing.value, nowMs)) {
+      return privateJsonResponse(request, env, 202, {
+        ok: true,
+        deduplicated: true,
+        request_id: dedupe.digest,
+        detail: "这条申请已经收到，无需重复提交。",
+      });
+    }
+
+    const actorIdentity = user
+      ? `account:${String(user.id || "")}`
+      : `email:${requesterEmail}`;
+    const contactIdentity = `${contactChannel}:${rawContactValue.toLocaleLowerCase("en-US")}`;
+    const [ipAllowed, identityAllowed, contactAllowed] = await Promise.all([
+      reserveMembershipRequestRateLimit(
+        env,
+        "ip",
+        reportRequestClientIp(request),
+        REPORT_REQUEST_IP_RATE_LIMIT,
+        nowMs,
+      ),
+      reserveMembershipRequestRateLimit(
+        env,
+        "identity",
+        actorIdentity,
+        MEMBERSHIP_REQUEST_IDENTITY_RATE_LIMIT,
+        nowMs,
+      ),
+      reserveMembershipRequestRateLimit(
+        env,
+        "contact",
+        contactIdentity,
+        MEMBERSHIP_REQUEST_CONTACT_RATE_LIMIT,
+        nowMs,
+      ),
+    ]);
+    if (!ipAllowed || !identityAllowed || !contactAllowed) {
+      return privateJsonResponse(request, env, 429, {
+        ok: false,
+        retryable: true,
+        detail: "提交过于频繁，请稍后再试。",
+      });
+    }
+
+    const reservation = await reserveReportRequestRecord(env, dedupe.key, record, nowMs);
+    if (reservation.disposition !== "reserved") {
+      return privateJsonResponse(request, env, 202, {
+        ok: true,
+        deduplicated: true,
+        request_id: dedupe.digest,
+        detail: "这条申请已经收到，无需重复提交。",
+      });
+    }
+
+    const content = membershipRequestEmailContent(reservation.record);
+    let result;
+    try {
+      result = await sendNewsfeedEmail(env, {
+        to: CONTACT_EMAIL,
+        subject: content.subject,
+        html: content.html,
+        text: content.text,
+        tags: ["membership-request"],
+      });
+    } catch (error) {
+      result = { sent: false, detail: String(error && error.message || "Email send failed.") };
+    }
+    const completedAt = new Date().toISOString();
+    const completed = {
+      ...reservation.record,
+      status: result && result.sent ? "sent" : "failed",
+      provider: cleanReportRequestText(result && result.provider, 40),
+      message_id: cleanReportRequestText(result && result.messageId, 200),
+      last_error: result && result.sent ? "" : cleanReportRequestText(result && result.detail, 500),
+      sent_at: result && result.sent ? completedAt : "",
+      updated_at: completedAt,
+    };
+    await putMembershipRequestRecord(env, dedupe.key, completed);
+    if (completed.status !== "sent") {
+      return privateJsonResponse(request, env, 502, {
+        ok: false,
+        retryable: true,
+        request_id: dedupe.digest,
+        detail: "申请已保存，但通知暂时未发送，请稍后重试。",
+      });
+    }
+    return privateJsonResponse(request, env, 202, {
+      ok: true,
+      deduplicated: false,
+      request_id: dedupe.digest,
+      detail: "申请已提交，KC桌面会通过你留下的联系方式回复。",
+    });
+  } catch (_error) {
+    return privateJsonResponse(request, env, 503, {
+      ok: false,
+      retryable: true,
+      detail: "申请服务暂时不可用，请稍后重试。",
+    });
+  }
+}
+
 function reportRequestEmailContent(record) {
   const fields = [
     ["报告标题", record.title],
@@ -22130,7 +22514,10 @@ async function handleAccountAdminReportPdf(request, env) {
     return jsonResponse(request, env, 503, { detail: "Report PDF status is unavailable." });
   }
   if (!pdfDescriptor) {
-    return jsonResponse(request, env, 404, { detail: `PDF is not currently available. Contact: ${CONTACT_EMAIL}.` });
+    return jsonResponse(request, env, 404, {
+      detail: "PDF is not currently available. Submit an in-site support request if you need help.",
+      request_action: membershipRequestAction("support"),
+    });
   }
 
   const object = await env.REPORT_BUCKET.get(pdfDescriptor.object_key);
@@ -23107,7 +23494,7 @@ async function handleExternalPdf(request, env, ctx = null) {
   if (!password && !accountAllowed) {
     return jsonResponse(request, env, accountDecision.status || 402, {
       error: accountDecision.error || "Please log in, purchase this report, or enter the report password.",
-      contact: accountDecision.contact || undefined,
+      request_action: accountDecision.request_action || undefined,
       limit_exceeded: Boolean(accountDecision.limit_exceeded),
     });
   }
@@ -23126,7 +23513,7 @@ async function handleExternalPdf(request, env, ctx = null) {
         if (!consumed.ok) {
           return jsonResponse(request, env, consumed.status || 403, {
             error: consumed.error || TRIAL_LIMIT_MESSAGE,
-            contact: consumed.contact || CONTACT_EMAIL,
+            request_action: consumed.request_action || membershipRequestAction("access"),
             limit_exceeded: Boolean(consumed.limit_exceeded),
           });
         }
@@ -23151,7 +23538,7 @@ async function handleExternalPdf(request, env, ctx = null) {
       if (!consumed.ok) {
         return jsonResponse(request, env, consumed.status || 403, {
           error: consumed.error || TRIAL_LIMIT_MESSAGE,
-          contact: consumed.contact || CONTACT_EMAIL,
+          request_action: consumed.request_action || membershipRequestAction("access"),
           limit_exceeded: Boolean(consumed.limit_exceeded),
         });
       }
@@ -23171,7 +23558,8 @@ async function handleExternalPdf(request, env, ctx = null) {
   }
   if (externalStatusIsRecentFailure(stored)) {
     return jsonResponse(request, env, 503, {
-      error: `报告刚刚准备失败，请稍后重试或联系邮箱 ${CONTACT_EMAIL}。`,
+      error: "报告刚刚准备失败，请稍后重试或通过站内入口提交支持请求。",
+      request_action: membershipRequestAction("support"),
       updated_at: String(stored.updated_at || ""),
     });
   }
@@ -23181,7 +23569,8 @@ async function handleExternalPdf(request, env, ctx = null) {
   if (!dispatched) {
     await externalPutStatus(env, id, "failed", "dispatch failed");
     return jsonResponse(request, env, 503, {
-      error: `文件准备服务暂时不可用，请联系邮箱 ${CONTACT_EMAIL}。`,
+      error: "文件准备服务暂时不可用，请通过站内入口提交支持请求。",
+      request_action: membershipRequestAction("support"),
     });
   }
   return externalPendingResponse(request, env, { status: "queued", updated_at: new Date().toISOString() });
@@ -23205,7 +23594,8 @@ async function handleExternalStatus(request, env) {
     return jsonResponse(request, env, 200, {
       ready: false,
       status: "failed",
-      message: `报告准备失败，请联系邮箱 ${CONTACT_EMAIL}。`,
+      message: "报告准备失败，请通过站内入口提交支持请求。",
+      request_action: membershipRequestAction("support"),
       updated_at: String(stored.updated_at || ""),
     });
   }
@@ -23769,7 +24159,7 @@ async function handleThinkTankPdf(request, env, ctx = null) {
   if (!password && !accountAllowed) {
     return jsonResponse(request, env, accountDecision.status || 402, {
       error: accountDecision.error || "Please log in, purchase this report, or enter the report password.",
-      contact: accountDecision.contact || undefined,
+      request_action: accountDecision.request_action || undefined,
       limit_exceeded: Boolean(accountDecision.limit_exceeded),
     });
   }
@@ -23785,7 +24175,7 @@ async function handleThinkTankPdf(request, env, ctx = null) {
       if (!consumed.ok) {
         return jsonResponse(request, env, consumed.status || 403, {
           error: consumed.error || TRIAL_LIMIT_MESSAGE,
-          contact: consumed.contact || CONTACT_EMAIL,
+          request_action: consumed.request_action || membershipRequestAction("access"),
           limit_exceeded: Boolean(consumed.limit_exceeded),
         });
       }
@@ -23807,8 +24197,8 @@ async function handleThinkTankPdf(request, env, ctx = null) {
   }
   if (!cached) {
     return jsonResponse(request, env, 502, {
-      error: `PDF is not currently available. Contact: ${CONTACT_EMAIL}.`,
-      contact: CONTACT_EMAIL,
+      error: "PDF is not currently available. Submit an in-site support request if you need help.",
+      request_action: membershipRequestAction("support"),
     });
   }
   const sanitized = await sanitizePdfExternalLinksBody(cached.body);
@@ -23816,7 +24206,7 @@ async function handleThinkTankPdf(request, env, ctx = null) {
   if (!consumed.ok) {
     return jsonResponse(request, env, consumed.status || 403, {
       error: consumed.error || TRIAL_LIMIT_MESSAGE,
-      contact: consumed.contact || CONTACT_EMAIL,
+      request_action: consumed.request_action || membershipRequestAction("access"),
       limit_exceeded: Boolean(consumed.limit_exceeded),
     });
   }
@@ -24251,6 +24641,14 @@ export default {
 
     if (pathname === "/report-request" && request.method === "POST") {
       return handleReportRequest(request, env);
+    }
+
+    if (pathname === "/membership/request" && request.method === "POST") {
+      return handleMembershipRequest(request, env);
+    }
+
+    if (pathname === "/membership/contact-card" && request.method === "GET") {
+      return handleMembershipContactCard(request, env);
     }
 
     if (pathname === "/calc" && request.method === "GET") {

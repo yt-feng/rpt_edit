@@ -431,7 +431,7 @@
     return `<article class="report-chat-limit-card">
       <div class="report-chat-limit-copy"><span>本次额度已用完</span><h3>申请继续研究</h3><p>${escapeHtml(usageStatusText(usage) || "提交后，研究问题会通过邮件转交人工继续处理。")}</p></div>
       <form class="report-chat-limit-form" data-report-chat-request>
-        <label><span>联系邮箱</span><input type="email" name="requester_email" value="${escapeHtml(accountEmail)}" placeholder="name@example.com" autocomplete="email" required${accountEmail ? " readonly" : ""}></label>
+        <label><span>接收回复的邮箱</span><input type="email" name="requester_email" value="${escapeHtml(accountEmail)}" placeholder="name@example.com" autocomplete="email" required${accountEmail ? " readonly" : ""}></label>
         <label class="report-chat-honeypot" aria-hidden="true">请勿填写<input type="text" name="honeypot" tabindex="-1" autocomplete="off"></label>
         <div class="report-chat-limit-actions"><button class="primary" type="submit">申请继续研究</button><button class="secondary-button" type="button" data-report-chat-request-dismiss>取消</button></div>
         <p class="report-chat-limit-help">${escapeHtml(emailHelp)}</p>
@@ -601,7 +601,7 @@
       const requestButton = requestForm.querySelector("button[type=submit]");
       const requesterEmail = String(emailInput && emailInput.value || "").trim().slice(0, 254);
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/u.test(requesterEmail)) {
-        requestStatus.textContent = "请填写有效的联系邮箱。";
+        requestStatus.textContent = "请填写有效的回复邮箱。";
         trackInteraction("limit_request_error", { context: surface.context, question_hash: limitedQuestionHash, status: "validation" });
         return;
       }

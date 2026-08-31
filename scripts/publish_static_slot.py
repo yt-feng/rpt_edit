@@ -32,6 +32,13 @@ MANIFEST_ROOT = "edge-static/slot-manifests"
 INCOMPLETE_ROOT = "edge-static/slot-incomplete"
 RUNTIME_ROOT = "edge-static/runtime-data"
 RUNTIME_RELEASE_ROOT = f"{RUNTIME_ROOT}/releases"
+MEMBER_CONTACT_CARD_KEY = "_private-assets/v1/member-contact-card.jpg"
+MEMBER_CONTACT_CARD_CACHE_CONTROL = "private, no-store"
+MEMBER_CONTACT_CARD_MIN_BYTES = 4096
+MEMBER_CONTACT_CARD_MAX_BYTES = 1024 * 1024
+LEGACY_PUBLIC_CONTACT_CARD_KEYS = tuple(
+    f"{SLOT_ROOT}/{slot}/assets/contact-card.jpg" for slot in SLOTS
+)
 
 DEFAULT_RUNTIME_PATHS = (
     "data/catalog.json",
@@ -112,6 +119,93 @@ def describe_file(path: Path) -> dict[str, Any]:
     if content_encoding:
         descriptor["content_encoding"] = content_encoding
     return descriptor
+
+
+def describe_member_contact_card(path: Path) -> dict[str, Any]:
+    from PIL import Image
+
+    card = Path(path)
+    if card.is_symlink() or not card.is_file():
+        raise ValueError("Member contact card must be a real JPEG file")
+    size = card.stat().st_size
+    if not MEMBER_CONTACT_CARD_MIN_BYTES <= size <= MEMBER_CONTACT_CARD_MAX_BYTES:
+        raise ValueError("Member contact card size is outside the allowed range")
+    with card.open("rb") as handle:
+        if handle.read(3) != b"\xff\xd8\xff":
+            raise ValueError("Member contact card is not a JPEG")
+        handle.seek(-2, os.SEEK_END)
+        if handle.read(2) != b"\xff\xd9":
+            raise ValueError("Member contact card is not a complete JPEG")
+    try:
+        with Image.open(card) as image:
+            if image.format != "JPEG":
+                raise ValueError("Member contact card is not a JPEG")
+            dimensions = image.size
+            image.verify()
+    except (OSError, SyntaxError) as error:
+        raise ValueError("Member contact card is not a valid JPEG") from error
+    if not all(256 <= int(value) <= 2048 for value in dimensions):
+        raise ValueError("Member contact card dimensions are outside the allowed range")
+    return {
+        "sha256": sha256_file(card),
+        "size": size,
+        "content_type": "image/jpeg",
+        "cache_control": MEMBER_CONTACT_CARD_CACHE_CONTROL,
+    }
+
+
+def member_contact_card_matches(metadata: dict[str, Any], descriptor: dict[str, Any]) -> bool:
+    custom = metadata.get("Metadata") or {}
+    return (
+        int(metadata.get("ContentLength", -1)) == int(descriptor["size"])
+        and str(custom.get("sha256") or "") == descriptor["sha256"]
+        and str(metadata.get("ContentType") or "").lower() == descriptor["content_type"]
+        and str(metadata.get("CacheControl") or "").lower() == descriptor["cache_control"]
+    )
+
+
+def upload_member_contact_card(
+    client: Any,
+    bucket: str,
+    path: Path,
+    expected: dict[str, Any],
+    *,
+    transfer_config: Any = None,
+) -> dict[str, Any]:
+    descriptor = describe_member_contact_card(path)
+    if descriptor != expected:
+        raise RuntimeError("Member contact card changed during static publication")
+    kwargs: dict[str, Any] = {
+        "ExtraArgs": {
+            "ContentType": descriptor["content_type"],
+            "CacheControl": descriptor["cache_control"],
+            "Metadata": {"sha256": descriptor["sha256"]},
+        }
+    }
+    if transfer_config is not None:
+        kwargs["Config"] = transfer_config
+    client.upload_file(str(path), bucket, MEMBER_CONTACT_CARD_KEY, **kwargs)
+    verified = client.head_object(Bucket=bucket, Key=MEMBER_CONTACT_CARD_KEY)
+    if not member_contact_card_matches(verified, descriptor):
+        raise RuntimeError("Member contact card verification failed")
+    return descriptor
+
+
+def delete_legacy_public_contact_cards(client: Any, bucket: str) -> int:
+    """Remove the exact legacy public QR object from both static slots."""
+    delete_keys(client, bucket, LEGACY_PUBLIC_CONTACT_CARD_KEYS)
+    for key in LEGACY_PUBLIC_CONTACT_CARD_KEYS:
+        try:
+            client.head_object(Bucket=bucket, Key=key)
+        except Exception as error:  # botocore is optional during local unit tests.
+            response_code = str(
+                getattr(error, "response", {}).get("Error", {}).get("Code", "")
+            ).lower()
+            if response_code in {"404", "nosuchkey", "notfound"} or isinstance(error, KeyError):
+                continue
+            raise
+        raise RuntimeError("Legacy public contact card cleanup was incomplete")
+    return len(LEGACY_PUBLIC_CONTACT_CARD_KEYS)
 
 
 def build_inventory(root: Path) -> tuple[dict[str, Path], dict[str, dict[str, Any]], str, int]:
@@ -481,6 +575,7 @@ def publish_static_slot(
     release_id: str,
     active_slot: str = "",
     *,
+    member_contact_card: Path,
     max_workers: int = 10,
     transfer_config: Any = None,
     required: Iterable[str] | None = None,
@@ -488,6 +583,13 @@ def publish_static_slot(
 ) -> dict[str, Any]:
     release = validate_release(release_id)
     active = validate_slot(active_slot, allow_empty=True)
+    root = Path(root)
+    member_card = Path(member_contact_card)
+    member_descriptor = describe_member_contact_card(member_card)
+    root_resolved = root.resolve(strict=False)
+    member_resolved = member_card.resolve(strict=True)
+    if member_resolved == root_resolved or root_resolved in member_resolved.parents:
+        raise ValueError("Member contact card must remain outside the public static root")
     slot = target_slot(active)
     prefix = slot_prefix(slot)
     check_public_brand(root)
@@ -559,6 +661,14 @@ def publish_static_slot(
         entries,
         required if required is not None else required_release_paths(root),
     )
+    removed_legacy_contact_cards = delete_legacy_public_contact_cards(client, bucket)
+    published_member_descriptor = upload_member_contact_card(
+        client,
+        bucket,
+        member_card,
+        member_descriptor,
+        transfer_config=transfer_config,
+    )
     runtime_uploaded, runtime_skipped, runtime_manifest = sync_runtime_data(
         client,
         bucket,
@@ -606,6 +716,9 @@ def publish_static_slot(
         "runtime_skipped_files": runtime_skipped,
         "runtime_prefix": runtime_manifest["prefix"],
         "runtime_tree_sha256": runtime_manifest["tree_sha256"],
+        "legacy_public_contact_cards_removed": removed_legacy_contact_cards,
+        "member_contact_card_sha256": published_member_descriptor["sha256"],
+        "member_contact_card_bytes": published_member_descriptor["size"],
         "verified_release_objects": verified_required,
         "recovered_incomplete_slot": force_reupload,
     }
@@ -654,6 +767,7 @@ def main() -> int:
     parser.add_argument("--root", default="_neutral_site")
     parser.add_argument("--release", default=os.environ.get("STATIC_RELEASE", ""))
     parser.add_argument("--active-slot", default=os.environ.get("ACTIVE_STATIC_SLOT", ""))
+    parser.add_argument("--member-contact-card", required=True)
     parser.add_argument("--max-workers", type=int, default=10)
     args = parser.parse_args()
 
@@ -665,6 +779,7 @@ def main() -> int:
             Path(args.root),
             args.release,
             args.active_slot,
+            member_contact_card=Path(args.member_contact_card),
             max_workers=args.max_workers,
             transfer_config=transfer,
         )
@@ -694,6 +809,8 @@ def main() -> int:
                     "deleted_files",
                     "runtime_uploaded_files",
                     "runtime_skipped_files",
+                    "legacy_public_contact_cards_removed",
+                    "member_contact_card_bytes",
                     "verified_release_objects",
                     "recovered_incomplete_slot",
                 )

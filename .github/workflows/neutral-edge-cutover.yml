@@ -101,6 +101,12 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install refresh dependencies
+        run: >-
+          python3 -m pip install --disable-pip-version-check
+          "boto3>=1.34,<2" "pypdf>=4,<6" "requests>=2.31,<3"
+          "Pillow>=10.1,<12" "qrcode>=8,<9" "zxing-cpp>=2.3,<4"
+
       - name: Validate public source
         run: |
           set -euo pipefail
@@ -121,12 +127,14 @@ jobs:
           node scripts/test_portal_chart_search_frontend.js
           node scripts/test_portal_site_runtime.js
           python3 -m py_compile \
+            scripts/build_member_contact_card.py \
             scripts/check_public_brand.py \
             scripts/compare_portal_release_semantics.py \
             scripts/edge_route_cutover.py \
             scripts/capture_edge_worker_deployment.py \
             scripts/publish_static_slot.py
           python3 -B scripts/test_compare_portal_release_semantics.py
+          python3 -B scripts/test_build_member_contact_card.py
           python3 -B scripts/test_check_public_brand.py
           python3 -B scripts/test_publish_static_slot.py
           python3 -B scripts/test_capture_edge_worker_deployment.py
@@ -267,11 +275,6 @@ jobs:
               ;;
           esac
 
-      - name: Install refresh dependencies
-        run: >-
-          python3 -m pip install --disable-pip-version-check
-          "boto3>=1.34,<2" "pypdf>=4,<6" "requests>=2.31,<3" "Pillow>=10,<12"
-
       - name: Materialize private deployment profile
         env:
           PORTAL_PRIVATE_CONFIG_B64: ${{ secrets.PORTAL_PRIVATE_CONFIG_B64 }}
@@ -288,7 +291,17 @@ jobs:
             --root scripts/build_portal_suite_site.py \
             --root workers/portal-suite-worker/src/index.js
           bash scripts/materialize_private_assets.sh portal_suite/site_src
-          test -s portal_suite/site_src/assets/contact-card.jpg
+          legacy_contact_card="portal_suite/site_src/assets/contact-card.jpg"
+          member_contact_card="$RUNNER_TEMP/member-contact-card.jpg"
+          trap 'rm -f "$legacy_contact_card"' EXIT
+          test -s "$legacy_contact_card"
+          python3 -B scripts/build_member_contact_card.py \
+            --source "$legacy_contact_card" \
+            --output "$member_contact_card"
+          rm -f "$legacy_contact_card"
+          trap - EXIT
+          test ! -e "$legacy_contact_card"
+          test -s "$member_contact_card"
           test -n "$PORTAL_SOCIAL_CARD_B64"
           social_card="$RUNNER_TEMP/portal-social-card.jpg"
           printf '%s' "$PORTAL_SOCIAL_CARD_B64" | base64 --decode > "$social_card"
@@ -367,6 +380,7 @@ jobs:
             test -s "_neutral_site/$required"
           done
           test -n "$(find _neutral_site/data/report_details -type f -name '*.json' -print -quit)"
+          test ! -e _neutral_site/assets/contact-card.jpg
           python3 - <<'PY'
           from pathlib import Path
 
@@ -407,6 +421,8 @@ jobs:
             --current-runtime-config _neutral_site/data/config.json \
             --blog-archive-root portal_suite/data/blog_archive \
             --site-source-root portal_suite/site_src \
+            --build-contract scripts/build_member_contact_card.py \
+            --build-contract "$RUNNER_TEMP/member-contact-card.jpg" \
             --build-contract scripts/compare_portal_release_semantics.py \
             --build-contract scripts/build_portal_suite_site.py \
             --build-contract scripts/merge_chart_search_index.py \
@@ -429,7 +445,9 @@ jobs:
           set -euo pipefail
           python3 -B scripts/publish_static_slot.py \
             --root _neutral_site --release "$STATIC_RELEASE" \
-            --active-slot "$ACTIVE_STATIC_SLOT" --max-workers 10
+            --active-slot "$ACTIVE_STATIC_SLOT" \
+            --member-contact-card "$RUNNER_TEMP/member-contact-card.jpg" \
+            --max-workers 10
 
       - name: Build public validation artifact
         if: steps.release_delta.outputs.changed == 'true'

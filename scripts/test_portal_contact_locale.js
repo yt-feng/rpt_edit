@@ -26,7 +26,6 @@ const source = fs.readFileSync(
 vm.runInNewContext(source, { window: windowStub });
 
 const contact = windowStub.PortalSuiteContact;
-const publicEmail = ["info", "@", "kc", "desk", ".com"].join("");
 assert.ok(contact, "contact helper should be exported");
 assert.equal(contact.languageIsChinese(["zh-CN"]), true);
 assert.equal(contact.languageIsChinese(["zh-Hans-CN"]), true);
@@ -35,20 +34,22 @@ assert.deepEqual(
   JSON.parse(JSON.stringify(contact.detailsForLanguages(["en-US", "zh-CN"]))),
   {
     isChinese: false,
-    channel: "email",
-    value: publicEmail,
-    label: "邮箱",
-    href: `mailto:${publicEmail}`,
+    channel: "request",
+    value: "申请加入会员",
+    label: "站内申请",
+    href: "/?request=membership",
   },
 );
 assert.equal(chineseOnly.hidden, true);
 assert.equal(nonChineseOnly.hidden, false);
-assert.equal(documentStub.documentElement.dataset.contactChannel, "email");
+assert.equal(documentStub.documentElement.dataset.contactChannel, "request");
 
 windowStub.navigator.languages = ["zh-CN", "en-US"];
 contact.hydrate(documentStub);
 assert.equal(chineseOnly.hidden, false);
 assert.equal(nonChineseOnly.hidden, true);
-assert.equal(documentStub.documentElement.dataset.contactChannel, "wechat");
+assert.equal(documentStub.documentElement.dataset.contactChannel, "request");
+assert.equal(contact.requestHref("support"), "/?request=support");
+assert.equal(contact.requestHref("unexpected"), "/?request=membership");
 
 console.log("Portal Suite contact locale tests passed.");
