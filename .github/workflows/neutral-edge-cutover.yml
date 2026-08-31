@@ -113,7 +113,9 @@ jobs:
           node --check portal_suite/site_src/assets/charts.js
           node --check portal_suite/site_src/assets/site-runtime.js
           node --test workers/edge-static-host/test/index.test.mjs
-          node --test portal_suite/tests/*.test.mjs
+          for test_file in portal_suite/tests/*.test.mjs; do
+            node --test "$test_file"
+          done
           node scripts/test_source_lead_adapter.js
           node scripts/test_portal_source_lead_integration.js
           node scripts/test_portal_chart_search_frontend.js
