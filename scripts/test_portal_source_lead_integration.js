@@ -45,6 +45,10 @@ vm.runInContext(`
   const THINKTANK_SOURCE = "thinktank";
   const HOT_REPORT_SOURCE = "hot";
   const EXTERNAL_SOURCE = "external";
+  function publicBrandText(value, fallback = "") {
+    return String(value || "").trim() || fallback;
+  }
+  ${extractFunction(appSource, "publicDocItem")}
   ${extractFunction(appSource, "externalItemFromParams")}
   ${extractFunction(appSource, "isAuthorityItem")}
   ${extractFunction(appSource, "isReportAItem")}

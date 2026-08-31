@@ -8,7 +8,7 @@ const worker = fs.readFileSync(path.join(root, "workers/portal-suite-worker/src/
 
 assert.doesNotMatch(app, /Vid2PPT|NOVA|ATLAS|vid2ppt\.com/);
 assert.doesNotMatch(app, /openVid2pptSponsor|vid2pptRedeemRow|accountVid2pptRedeemCode/);
-assert.match(app, /如需开通或调整下载权限，请联系微信/);
+assert.match(app, /如需开通或调整下载权限，请联系邮箱/);
 assert.match(app, /To activate or update download access, email/);
 assert.match(
   worker,
