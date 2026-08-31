@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import os
 import html
 import re
 import sys
@@ -14,6 +15,8 @@ from html.parser import HTMLParser
 from pathlib import Path
 from typing import Sequence
 from urllib.parse import unquote
+
+from render_private_config import CONFIG_ENV, RenderError, load_profile
 
 
 REQUIRED_PUBLIC_BRAND = "KC桌面"
@@ -91,7 +94,9 @@ FORBIDDEN_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
         _compile(r"(?<![a-z0-9])kc[\s._-]+desk[\s._-]+notes(?![a-z0-9])"),
     ),
     ("Support Contact", _compile(r"(?<![a-z0-9])support[\s._-]+contact(?![a-z0-9])")),
-    ("Twotigers", _compile(r"(?<![a-z0-9])two[\s._-]*tigers(?![a-z0-9])")),
+    # The old administrator alias previously leaked inside materialized CSS
+    # identifiers, so this marker is forbidden even when embedded in a token.
+    ("Twotigers", _compile(r"two[\s._-]*tigers")),
     ("麦府课堂 / 麦府学堂", re.compile(r"麦府(?:课堂|学堂)")),
     ("慧博", re.compile("慧博")),
     (
@@ -296,11 +301,76 @@ def check_public_brand(root: Path | str) -> dict[str, int]:
     return {"files": file_count, "bytes": byte_count}
 
 
+def check_profile_private_boundaries(
+    root: Path | str,
+    public_markers: Sequence[str],
+    *,
+    encoded_profile: str | None = None,
+) -> None:
+    """Reject selected deployment-only values anywhere in a public source tree."""
+    markers = tuple(dict.fromkeys(str(value or "").strip() for value in public_markers if str(value or "").strip()))
+    if not markers:
+        return
+    try:
+        profile = load_profile(encoded_profile if encoded_profile is not None else os.environ.get(CONFIG_ENV))
+    except RenderError as error:
+        raise PublicBrandError(f"Private profile boundary check failed: {error}") from None
+    mapping = {item.public: item.private for item in profile.replacements}
+    missing = [marker for marker in markers if marker not in mapping]
+    if missing:
+        raise PublicBrandError(
+            "Private profile boundary check is missing required public placeholder(s): "
+            + ", ".join(missing)
+        )
+
+    literals = tuple(
+        (marker, normalize_public_text(mapping[marker]).casefold())
+        for marker in markers
+    )
+    public_root = Path(root)
+    if not public_root.is_dir() or public_root.is_symlink():
+        raise PublicBrandError("Public artifact root must be a real directory")
+    overlap_size = max(len(value) for _marker, value in literals)
+    violations: set[BrandViolation] = set()
+    for path in sorted(public_root.rglob("*")):
+        relative = path.relative_to(public_root).as_posix()
+        normalized_relative = normalize_public_text(relative).casefold()
+        for marker, literal in literals:
+            if literal in normalized_relative:
+                violations.add(BrandViolation(relative, f"private profile value for {marker}"))
+        if not path.is_file() or path.is_symlink():
+            continue
+        overlap = ""
+        with path.open("r", encoding="utf-8", errors="ignore") as handle:
+            while True:
+                chunk = handle.read(READ_CHUNK_SIZE)
+                if not chunk:
+                    break
+                combined = normalize_public_text(overlap + chunk).casefold()
+                for marker, literal in literals:
+                    if literal in combined:
+                        violations.add(BrandViolation(relative, f"private profile value for {marker}"))
+                overlap = (overlap + chunk)[-overlap_size:]
+    if violations:
+        details = "\n".join(
+            f"- {violation.path}: {violation.marker}"
+            for violation in sorted(violations)[:50]
+        )
+        raise PublicBrandError(f"Private profile boundary check failed:\n{details}")
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Validate a materialized public website against the public brand contract."
     )
     parser.add_argument("root", type=Path, help="Materialized public website root")
+    parser.add_argument(
+        "--forbid-profile-private-for",
+        action="append",
+        default=[],
+        metavar="PUBLIC_PLACEHOLDER",
+        help="Reject the private replacement for this public placeholder anywhere under root",
+    )
     return parser
 
 
@@ -308,6 +378,10 @@ def main(argv: Sequence[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
         stats = check_public_brand(args.root)
+        check_profile_private_boundaries(
+            args.root,
+            args.forbid_profile_private_for,
+        )
     except PublicBrandError as error:
         print(error, file=sys.stderr)
         return 1

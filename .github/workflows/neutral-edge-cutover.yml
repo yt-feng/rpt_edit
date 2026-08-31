@@ -135,6 +135,7 @@ jobs:
             scripts/publish_static_slot.py
           python3 -B scripts/test_compare_portal_release_semantics.py
           python3 -B scripts/test_build_member_contact_card.py
+          python3 -B scripts/test_render_private_config.py
           python3 -B scripts/test_check_public_brand.py
           python3 -B scripts/test_publish_static_slot.py
           python3 -B scripts/test_capture_edge_worker_deployment.py
@@ -290,6 +291,9 @@ jobs:
             --root portal_suite/site_src \
             --root scripts/build_portal_suite_site.py \
             --root workers/portal-suite-worker/src/index.js
+          python3 -B scripts/check_public_brand.py portal_suite/site_src \
+            --forbid-profile-private-for admin-a \
+            --forbid-profile-private-for admin-a@users.portal.example.invalid
           bash scripts/materialize_private_assets.sh portal_suite/site_src
           legacy_contact_card="portal_suite/site_src/assets/contact-card.jpg"
           member_contact_card="$RUNNER_TEMP/member-contact-card.jpg"

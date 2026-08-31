@@ -60,6 +60,7 @@ jobs:
             scripts/test_check_public_brand.py
             scripts/test_encrypt_member_course_directory.mjs
             scripts/test_portal_worker_emergency_deploy_workflow.py
+            scripts/test_render_private_config.py
             scripts/test_source_lead_adapter.js
             scripts/test_portal_r2_prefix.py
 
@@ -94,6 +95,7 @@ jobs:
           node scripts/test_portal_site_runtime.js
           python3 -B scripts/test_build_member_course_directory.py
           python3 -B scripts/test_capture_edge_worker_deployment.py
+          python3 -B scripts/test_render_private_config.py
           python3 -B scripts/test_check_public_brand.py
           python3 -B scripts/test_portal_worker_emergency_deploy_workflow.py
           node --test scripts/test_encrypt_member_course_directory.mjs
@@ -109,6 +111,9 @@ jobs:
             --root workers/portal-suite-worker/src \
             --root portal_suite/site_src \
             --root scripts/build_portal_suite_site.py
+          python3 -B scripts/check_public_brand.py portal_suite/site_src \
+            --forbid-profile-private-for admin-a \
+            --forbid-profile-private-for admin-a@users.portal.example.invalid
 
       - name: Validate materialized public brand
         run: python3 -B scripts/check_public_brand.py portal_suite/site_src
