@@ -121,7 +121,7 @@ test("registration has no Email Routing side effect and deployment runs the repo
   assert.doesNotMatch(source, /requestCloudflareDestinationVerification|email_destination|CLOUDFLARE_EMAIL_ROUTING/u);
   assert.doesNotMatch(workflow, /CLOUDFLARE_EMAIL_ROUTING/u);
   assert.match(workflow, /for test_file in portal_suite\/tests\/\*\.test\.mjs; do/u);
-  assert.match(workflow, /node --test --test-isolation=none "\$test_file"/u);
+  assert.match(workflow, /node "\$test_file"/u);
 });
 
 async function accountToken(secret, user) {

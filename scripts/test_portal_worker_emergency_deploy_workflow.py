@@ -64,9 +64,9 @@ class PortalWorkerEmergencyDeployWorkflowTests(unittest.TestCase):
 
     def test_portal_suite_uses_stable_isolated_node_runner(self) -> None:
         self.assertIn("for test_file in portal_suite/tests/*.test.mjs; do", self.workflow)
-        self.assertIn('node --test --test-isolation=none "$test_file"', self.workflow)
+        self.assertIn('node "$test_file"', self.workflow)
         self.assertNotIn("node --test portal_suite/tests/*.test.mjs", self.workflow)
-        self.assertNotIn("--test-concurrency", self.workflow)
+        self.assertNotIn("--test-isolation", self.workflow)
 
     def test_materialized_public_site_is_brand_checked_before_worker_upload(self) -> None:
         self.assertIn("scripts/check_public_brand.py", self.workflow)
