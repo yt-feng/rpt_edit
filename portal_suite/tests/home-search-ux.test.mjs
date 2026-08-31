@@ -29,9 +29,14 @@ test("hot reports paint a validated last-good first page before refreshing in th
   const source = await readFile(appPath, "utf8");
   const helperStart = source.indexOf("function normalizeHotReportFirstPageCache(");
   const helperEnd = source.indexOf("function recentDateBounds(", helperStart);
+  const brandStart = source.indexOf("const LEGACY_SOURCE_WORDS");
+  const brandEnd = source.indexOf("function publicMessageText(", brandStart);
   assert.ok(helperStart >= 0 && helperEnd > helperStart, "the first-page cache helpers must exist");
+  assert.ok(brandStart >= 0 && brandEnd > brandStart, "the public brand helper must exist");
   const sandbox = {};
   vm.runInNewContext(`
+    const PUBLIC_BRAND = "KC桌面";
+    ${source.slice(brandStart, brandEnd)}
     const HOT_REPORT_FIRST_PAGE_CACHE_KEY = "portal_hot_report_first_page_v1";
     const HOT_REPORT_FIRST_PAGE_CACHE_VERSION = 1;
     const HOT_REPORT_FIRST_PAGE_CACHE_MAX_ITEMS = 24;
@@ -54,7 +59,14 @@ test("hot reports paint a validated last-good first page before refreshing in th
   const now = Date.parse("2026-08-27T12:00:00Z");
   const page = {
     items: [
-      { id: "hot:0123456789abcdef", title: "Newest", institution: "KC", size_bytes: 42 },
+      {
+        id: "hot:0123456789abcdef",
+        title: "Reportify: Newest",
+        institution: "Nash AI",
+        description: "MacroGate cached summary",
+        filename: "Portal Suite report.pdf",
+        size_bytes: 42,
+      },
       { id: "hot:fedcba9876543210", title: "Second", institution: "KC", size_bytes: 21 },
     ],
     nextCursor: "cursor-2",
@@ -65,6 +77,10 @@ test("hot reports paint a validated last-good first page before refreshing in th
   const cached = sandbox.cacheHelpers.readHotReportFirstPageCache(storage, now + 1000);
   assert.equal(cached.items.length, 2);
   assert.equal(cached.items[0].source, "hot");
+  assert.equal(cached.items[0].title, "Newest");
+  assert.equal(cached.items[0].institution, "");
+  assert.equal(cached.items[0].filename, "KC桌面 report.pdf");
+  assert.doesNotMatch(JSON.stringify(cached), /Reportify|Nash[\s._-]*AI|Macro[\s._-]*Gate|Portal[\s._-]*Suite/iu);
   assert.equal(cached.total, 500);
   assert.equal(cached.nextCursor, "cursor-2");
 

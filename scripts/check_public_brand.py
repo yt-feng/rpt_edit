@@ -8,6 +8,7 @@ import html
 import re
 import sys
 import unicodedata
+import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from html.parser import HTMLParser
 from pathlib import Path
@@ -19,6 +20,8 @@ REQUIRED_PUBLIC_BRAND = "KC桌面"
 READ_CHUNK_SIZE = 1024 * 1024
 CHUNK_OVERLAP = 256
 FORBIDDEN_PUBLIC_PATHS = {"assets/contact-card.jpg"}
+REQUIRED_APP_MARK_PATH = "assets/app-mark.svg"
+REQUIRED_APP_MARK_LABELS = frozenset({"KC", "KC桌面"})
 HTML_TAG_PATTERN = re.compile(r'''<(?:(?:"[^"]*"|'[^']*'|[^'">]))*>''')
 JS_CODE_POINT_ESCAPE_PATTERN = re.compile(r"\\u\{([0-9a-fA-F]{1,6})\}")
 JS_UNICODE_ESCAPE_PATTERN = re.compile(r"\\u([0-9a-fA-F]{4})")
@@ -32,6 +35,7 @@ JS_STRING_CONCAT_PATTERN = re.compile(
     + JS_CONCAT_GAP
     + r'''(?P<q2>["'])(?P<right>[^"'\\\r\n]{0,256})(?P=q2)'''
 )
+HTML_NON_RENDERED_TAGS = frozenset({"script", "style", "template"})
 
 
 @dataclass(frozen=True, order=True)
@@ -54,19 +58,19 @@ class _VisibleHTMLParser(HTMLParser):
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         del attrs
-        if tag.casefold() in {"script", "style"}:
+        if tag.casefold() in HTML_NON_RENDERED_TAGS:
             self.hidden_depth += 1
 
     def handle_endtag(self, tag: str) -> None:
-        if tag.casefold() in {"script", "style"} and self.hidden_depth:
+        if tag.casefold() in HTML_NON_RENDERED_TAGS and self.hidden_depth:
             self.hidden_depth -= 1
 
     def handle_data(self, data: str) -> None:
         if not self.hidden_depth:
             self.parts.append(data)
 
-    def visible_text(self) -> str:
-        return "".join(self.parts)
+    def visible_text_views(self) -> tuple[str, ...]:
+        return tuple(dict.fromkeys(("".join(self.parts), " ".join(self.parts))))
 
 
 def _compile(pattern: str) -> re.Pattern[str]:
@@ -88,6 +92,7 @@ FORBIDDEN_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
     ),
     ("Support Contact", _compile(r"(?<![a-z0-9])support[\s._-]+contact(?![a-z0-9])")),
     ("Twotigers", _compile(r"(?<![a-z0-9])two[\s._-]*tigers(?![a-z0-9])")),
+    ("麦府课堂 / 麦府学堂", re.compile(r"麦府(?:课堂|学堂)")),
     ("慧博", re.compile("慧博")),
     (
         "reportify.cn",
@@ -109,37 +114,85 @@ def normalize_public_text(value: str) -> str:
     return "".join(character for character in normalized if unicodedata.category(character) != "Cf")
 
 
+def _valid_app_mark(source: str) -> bool:
+    try:
+        root = ET.fromstring(source)
+    except ET.ParseError:
+        return False
+    root_name = str(root.tag or "").rsplit("}", 1)[-1].casefold()
+    label = normalize_public_text(str(root.attrib.get("aria-label") or "")).strip()
+    return root_name == "svg" and label in REQUIRED_APP_MARK_LABELS
+
+
 def _code_point(match: re.Match[str]) -> str:
     value = int(match.group(1), 16)
     return chr(value) if value <= 0x10FFFF and not 0xD800 <= value <= 0xDFFF else match.group(0)
+
+
+def _runtime_decode_once(value: str) -> str:
+    decoded = value
+    if "&" in decoded:
+        decoded = html.unescape(decoded)
+    if "\\" in decoded:
+        decoded = JS_CODE_POINT_ESCAPE_PATTERN.sub(_code_point, decoded)
+        decoded = JS_UNICODE_ESCAPE_PATTERN.sub(_code_point, decoded)
+        decoded = JS_HEX_ESCAPE_PATTERN.sub(_code_point, decoded)
+        decoded = CSS_HEX_ESCAPE_PATTERN.sub(_code_point, decoded)
+    if "%" in decoded:
+        decoded = unquote(decoded)
+    if "+" in decoded:
+        for _ in range(8):
+            joined = JS_STRING_CONCAT_PATTERN.sub(
+                lambda match: f'"{match.group("left")}{match.group("right")}"',
+                decoded,
+            )
+            if joined == decoded:
+                break
+            decoded = joined
+    return decoded
 
 
 def _runtime_decoded_text(value: str) -> str:
     """Decode common browser-visible encodings before applying the brand rules."""
     decoded = value
     for _ in range(3):
-        previous = decoded
-        if "&" in decoded:
-            decoded = html.unescape(decoded)
-        if "\\" in decoded:
-            decoded = JS_CODE_POINT_ESCAPE_PATTERN.sub(_code_point, decoded)
-            decoded = JS_UNICODE_ESCAPE_PATTERN.sub(_code_point, decoded)
-            decoded = JS_HEX_ESCAPE_PATTERN.sub(_code_point, decoded)
-            decoded = CSS_HEX_ESCAPE_PATTERN.sub(_code_point, decoded)
-        if "%" in decoded:
-            decoded = unquote(decoded)
-        if "+" in decoded:
-            for _ in range(8):
-                joined = JS_STRING_CONCAT_PATTERN.sub(
-                    lambda match: f'"{match.group("left")}{match.group("right")}"',
-                    decoded,
-                )
-                if joined == decoded:
-                    break
-                decoded = joined
-        if decoded == previous:
+        next_value = _runtime_decode_once(decoded)
+        if next_value == decoded:
             break
+        decoded = next_value
     return decoded
+
+
+def _decoded_html_text_views(value: str) -> tuple[str, ...]:
+    """Interleave markup parsing and decoding so encoded tags retain HTML semantics."""
+    pending = [value]
+    seen: set[str] = set()
+    views: list[str] = []
+    for _ in range(4):
+        next_pending: list[str] = []
+        for source in pending:
+            normalized_source = normalize_public_text(source)
+            if normalized_source not in seen:
+                seen.add(normalized_source)
+                views.append(normalized_source)
+            visible_inputs = (source,)
+            if "<" in source and ">" in source:
+                parser = _VisibleHTMLParser()
+                parser.feed(source)
+                parser.close()
+                visible_inputs = parser.visible_text_views()
+            for visible in visible_inputs:
+                normalized_visible = normalize_public_text(visible)
+                if normalized_visible not in seen:
+                    seen.add(normalized_visible)
+                    views.append(normalized_visible)
+                decoded = _runtime_decode_once(visible)
+                if decoded != visible:
+                    next_pending.append(decoded)
+        if not next_pending:
+            break
+        pending = list(dict.fromkeys(next_pending))
+    return tuple(views)
 
 
 def _public_text_views(value: str, *, strip_markup: bool = False) -> tuple[str, ...]:
@@ -183,11 +236,12 @@ def _scan_file(path: Path) -> tuple[set[str], bool, int]:
             overlap = combined[-CHUNK_OVERLAP:]
     if html_parser is not None:
         html_parser.close()
-        for normalized in _public_text_views(html_parser.visible_text()):
-            required_brand_found = required_brand_found or REQUIRED_PUBLIC_BRAND in normalized
-            for label, pattern in FORBIDDEN_PATTERNS:
-                if label not in markers and pattern.search(normalized):
-                    markers.add(label)
+        for visible_text in html_parser.visible_text_views():
+            for normalized in _decoded_html_text_views(visible_text):
+                required_brand_found = required_brand_found or REQUIRED_PUBLIC_BRAND in normalized
+                for label, pattern in FORBIDDEN_PATTERNS:
+                    if label not in markers and pattern.search(normalized):
+                        markers.add(label)
     return markers, required_brand_found, byte_count
 
 
@@ -222,6 +276,13 @@ def check_public_brand(root: Path | str) -> dict[str, int]:
         raise PublicBrandError("Public artifact contains no files")
     if not homepage_brand_found:
         violations.add(BrandViolation("index.html", f"missing required brand: {REQUIRED_PUBLIC_BRAND}"))
+    app_mark = public_root / REQUIRED_APP_MARK_PATH
+    if not app_mark.is_file() or app_mark.is_symlink():
+        violations.add(BrandViolation(REQUIRED_APP_MARK_PATH, "missing required KC brand mark"))
+    else:
+        app_mark_source = app_mark.read_text(encoding="utf-8", errors="ignore")
+        if not _valid_app_mark(app_mark_source):
+            violations.add(BrandViolation(REQUIRED_APP_MARK_PATH, "brand mark aria-label must be KC or KC桌面"))
     if violations:
         details = "\n".join(
             f"- {violation.path}: {violation.marker}"

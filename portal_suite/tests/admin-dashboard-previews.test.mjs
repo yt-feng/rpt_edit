@@ -95,6 +95,7 @@ test("Market Views loader keeps every item available but renders only the latest
   const sandbox = installPreviewHelpers({
     accountAdminMarketViews: new Map(),
     escapeHtml(value) { return String(value || ""); },
+    publicBrandText(value, fallback = "") { return String(value || fallback || ""); },
     formatSize() { return ""; },
     fetch: async () => new Response(JSON.stringify({ items }), {
       status: 200,

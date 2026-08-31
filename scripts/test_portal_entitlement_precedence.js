@@ -33,8 +33,10 @@ vm.runInNewContext(`
   const VID2PPT_GIFT_SOURCES = new Set(["vid2ppt_nova", "vid2ppt_atlas"]);
   const ACTIVE_STATUSES = new Set(["active", "trialing"]);
   const SITE_ORIGIN = "portal";
+  const PUBLIC_BRAND = "KC桌面";
   const GIFT_SOURCE_TIME_MARKER = "::grant_at=";
   function normalizeEmail(value) { return String(value || "").trim().toLowerCase(); }
+  function publicBrandText(value, fallback = "") { return String(value || fallback || ""); }
   ${extractFunction(worker, "normalizeGrantOccurredAt")}
   ${extractFunction(worker, "giftSourceReferenceParts")}
   ${extractFunction(worker, "giftSourceReferenceId")}
@@ -303,7 +305,9 @@ assert.match(app, /function accountRightDurationText\(/);
 assert.match(app, /return `\$\{institutions\[0\]\}报告下载权限`/);
 assert.match(app, /accountRightDurationText\(effective\)/);
 
-const uiSandbox = {};
+const uiSandbox = {
+  publicBrandText(value, fallback = "") { return String(value || fallback || ""); },
+};
 vm.runInNewContext(`
   ${extractFunction(app, "accountRightLabel")}
   ${extractFunction(app, "accountRightDurationText")}
@@ -333,8 +337,10 @@ assert.equal(
       const VID2PPT_GIFT_SOURCES = new Set(["vid2ppt_nova", "vid2ppt_atlas"]);
       const ACTIVE_STATUSES = new Set(["active", "trialing"]);
       const SITE_ORIGIN = "portal";
+      const PUBLIC_BRAND = "KC桌面";
       const GIFT_SOURCE_TIME_MARKER = "::grant_at=";
       function normalizeEmail(value) { return String(value || "").trim().toLowerCase(); }
+      function publicBrandText(value, fallback = "") { return String(value || fallback || ""); }
       ${extractFunction(worker, "normalizeGrantOccurredAt")}
       ${extractFunction(worker, "giftSourceReferenceParts")}
       ${extractFunction(worker, "giftSourceReferenceId")}
@@ -491,9 +497,11 @@ assert.equal(
     const VID2PPT_CODE_PATTERN = /^[A-Z0-9][A-Z0-9-]{7,39}$/;
     const GIFT_SOURCE_TIME_MARKER = "::grant_at=";
     const SITE_ORIGIN = "portal";
+    const PUBLIC_BRAND = "KC桌面";
     const VID2PPT_SOURCE_SITE = "vid2ppt";
     const TRIAL_3D_DOWNLOAD_LIMIT = 10;
     function normalizeEmail(value) { return String(value || "").trim().toLowerCase(); }
+    function publicBrandText(value, fallback = "") { return String(value || fallback || ""); }
     function cleanAccessCount(value) { return Math.max(0, Number(value || 0)); }
     ${extractFunction(worker, "cleanGrantText")}
     ${extractFunction(worker, "cleanGiftPlanCode")}

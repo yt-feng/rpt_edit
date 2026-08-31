@@ -163,6 +163,48 @@ test("research_scope accepts the Worker string contract as well as arrays", asyn
   assert.match(html, /研究范围：最近半年投行报告与历史 Charts/u);
 });
 
+test("DOCX and printable PDF exports re-sanitize every user-visible research field", async () => {
+  const exporter = loadExporter();
+  const payload = fixture();
+  payload.question = "Reportify 与 NashAI 怎么看 maifu / 麦府课堂？";
+  payload.response.research_title = "MacroGate / Portal Suite 研究";
+  payload.response.research_scope = ["Twotigers 范围", "麦府学堂资料"];
+  payload.response.executive_summary = "Reportify 汇总 Nash AI 内容";
+  payload.response.findings = [{
+    title: "MacroGate 结论",
+    summary: "Portal Suite 与麦府课堂的旧内容",
+    source_ids: ["report-1"],
+  }];
+  payload.response.data_points = [{
+    label: "Twotigers 指标",
+    value: "NashAI 42",
+    context: "Reportify 2026E",
+    source_ids: ["report-1"],
+  }];
+  payload.response.sources = [{
+    id: "report-1",
+    title: "Reportify 来源报告",
+    institution: "Nash AI",
+    industry: "MacroGate",
+  }];
+  payload.response.charts = [];
+  payload.response.follow_up_questions = ["Portal Suite 的下一步是什么？"];
+
+  const forbidden = /Reportify|Nash[\s._-]*AI|Macro[\s._-]*Gate|Portal[\s._-]+Suite|Two[\s._-]*tigers|\bmaifu\b|麦府(?:课堂|学堂)/iu;
+  const model = exporter.normalizePayload(payload);
+  assert.doesNotMatch(JSON.stringify(model), forbidden);
+  assert.match(JSON.stringify(model), /KC桌面/u);
+
+  const result = await exporter.buildDocx(payload, { createdAt: new Date("2026-08-31T12:00:00Z") });
+  const entries = zipEntries(result.bytes);
+  const documentXml = new TextDecoder().decode(entries.get("word/document.xml"));
+  const html = await exporter.buildPrintHtml(payload, { createdAt: new Date("2026-08-31T12:00:00Z") });
+  assert.doesNotMatch(documentXml, forbidden);
+  assert.doesNotMatch(html, forbidden);
+  assert.match(documentXml, /KC桌面/u);
+  assert.match(html, /KC桌面/u);
+});
+
 test("export stops visibly when a chart response is not JPEG", async () => {
   const exporter = loadExporter();
   await assert.rejects(

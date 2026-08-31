@@ -957,7 +957,7 @@ test("course API enforces at least 30 remaining days on the server", async () =>
     {
       id: "str-01",
       category: "战略咨询",
-      title: "麦府学堂｜战略与商业分析方法论",
+      title: "KC桌面学堂｜战略与商业分析方法论",
       summary: "覆盖问题拆解、行业与竞争分析、市场研究、增长战略、创新、组织设计与项目表达。",
       audience: "战略、投资、咨询、企业发展与经营分析人员",
     },

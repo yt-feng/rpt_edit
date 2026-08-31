@@ -64,6 +64,11 @@ function loadAnalyticsExportHandler(options = {}) {
     ANALYTICS_EXPORT_NATIVE_CURSOR_MAX_LENGTH: 2048,
     ANALYTICS_EXPORT_MAX_PAGE_SIZE: 50,
     ANALYTICS_EXPORT_READ_CONCURRENCY: 4,
+    PUBLIC_BRAND: "KC桌面",
+    publicBrandText(value) { return String(value || ""); },
+    publicSourceText(value) { return String(value || ""); },
+    publicAccountDisplayName(value) { return String(value || ""); },
+    publicBrandValue(value) { return value; },
     encodeAnalyticsHistoryCursor(value) {
       return Buffer.from(JSON.stringify(value), "utf8").toString("base64url");
     },

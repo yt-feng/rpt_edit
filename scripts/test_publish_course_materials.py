@@ -45,7 +45,7 @@ def fixture_manifest() -> dict:
         "course": {
             "id": "str-01",
             "category": "战略咨询",
-            "title": "麦府学堂｜战略与商业分析方法论",
+            "title": "KC桌面学堂｜战略与商业分析方法论",
         },
         "items": rows,
     }
@@ -111,6 +111,9 @@ class CourseMaterialPublisherTests(unittest.TestCase):
         wrong_order = fixture_manifest()
         wrong_order["items"][0]["id"] = "maifu-20"
         cases.append(wrong_order)
+        old_public_title = fixture_manifest()
+        old_public_title["course"]["title"] = "麦府学堂｜战略与商业分析方法论"
+        cases.append(old_public_title)
         for value in cases:
             with self.subTest(value=value["items"][0]):
                 with self.assertRaises(publisher.PublishError):

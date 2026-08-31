@@ -115,6 +115,7 @@ def write(path: Path, value: str) -> None:
 def build_site(root: Path) -> None:
     write(root / "index.html", "KC桌面 home")
     write(root / "404.html", "missing")
+    write(root / "assets/app-mark.svg", '<svg role="img" aria-label="KC桌面"></svg>')
     write(root / "assets/app.js", "console.log('v1')")
     write(root / "reports/institutions/bernstein/index.html", "bernstein")
     write(root / "b7c3e9a41d8f52e604a71bc93f2d6e80.txt", "key")
