@@ -175,6 +175,18 @@ test("Maifu carousel is native, responsive, motion-aware, and keyboard operable"
   assert.match(styles, /@media \(prefers-reduced-motion: reduce\)[\s\S]*?scroll-behavior:\s*auto/u);
 });
 
+test("every member cover has an opaque KC桌面 corner label over legacy cover artwork", async () => {
+  const styles = await readFile(stylesPath, "utf8");
+  assert.match(appSource, /category:\s*publicBrandText\(courseMaterialText\(rawCourse\.category/u);
+  assert.match(appSource, /const itemTitle = publicBrandText\(courseMaterialText\(raw\.title/u);
+  assert.match(appSource, /summary:\s*publicBrandText\(courseMaterialText\(raw\.summary/u);
+  assert.match(appSource, /<span>KC桌面\$\{item\.featured \? " · 精选" : "学堂"\}<\/span>/u);
+  assert.match(
+    styles,
+    /\.course-material-cover > span\s*\{[\s\S]*?top:\s*0;[\s\S]*?left:\s*0;[\s\S]*?min-width:\s*112px;[\s\S]*?padding:\s*8px 12px;[\s\S]*?background:\s*#07161b;/u,
+  );
+});
+
 test("anonymous and ineligible accounts never load or reveal Maifu covers", () => {
   const source = appSource;
   const courseStart = source.indexOf("async function initCourse");

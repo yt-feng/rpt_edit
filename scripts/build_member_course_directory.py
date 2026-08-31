@@ -83,7 +83,7 @@ class BuildError(RuntimeError):
 COURSE_MATERIAL_COURSE = {
     "id": "str-01",
     "category": "战略咨询",
-    "title": "麦府学堂｜战略与商业分析方法论",
+    "title": "KC桌面学堂｜战略与商业分析方法论",
 }
 COURSE_MATERIAL_DATE = "2026-08-29"
 COURSE_MATERIAL_FOLDER = "战略咨询方法论"

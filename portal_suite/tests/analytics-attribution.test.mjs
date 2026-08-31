@@ -285,3 +285,54 @@ test("daily acquisition groups the true landing session with source priority and
   );
   assert.equal(summary.acquisition_landings.some((row) => row.report_id === "report-b"), false);
 });
+
+test("stored analytics labels are sanitized at every admin response boundary", () => {
+  const legacySourcePattern = new RegExp([
+    "reportify",
+    "nash[\\s._-]*ai",
+    "macro[\\s._-]*gate",
+    "portal[\\s._-]+suite",
+    "two[\\s._-]*tigers",
+  ].join("|"), "iu");
+  const accumulator = __analyticsTest.emptyAnalyticsDayAccumulator(
+    "2026-08-31",
+    "admin@example.invalid",
+    "_analytics/events",
+    "0123456789abcdef01234567",
+  );
+  accumulator.referrers = { "reportify.cn": 2 };
+  accumulator.utm_sources = { NashAI: 3, MacroGate: 4 };
+  accumulator.acquisition_landings = {
+    [JSON.stringify({
+      source: "Portal Suite",
+      landing_path: "/Reportify/research",
+      page: "NashAI",
+      report_id: "report-a",
+      report_title: "MacroGate: Market outlook",
+      utm_medium: "email",
+      utm_campaign: "Twotigers",
+      utm_term: "",
+      utm_content: "",
+    })]: 1,
+  };
+
+  const event = {
+    type: "search",
+    query: "Reportify market",
+    source: "NashAI",
+    report_id: "report-a",
+    report_title: "MacroGate: Market outlook",
+    visitor_id: "visitor-a",
+    result_count: 2,
+    ts: "2026-08-31T01:00:00.000Z",
+  };
+  const payload = {
+    summary: __analyticsTest.publicAnalyticsDaySummary(accumulator, true),
+    top_searches: __analyticsTest.analyticsTopSearches([event]),
+    top_reports: __analyticsTest.analyticsTopReports([{ ...event, type: "report_open" }]),
+    recent_event: __analyticsTest.publicAnalyticsEvent(event),
+  };
+  assert.doesNotMatch(JSON.stringify(payload), legacySourcePattern);
+  assert.equal(payload.top_searches[0].query, "KC桌面 market");
+  assert.equal(payload.top_reports[0].title, "Market outlook");
+});

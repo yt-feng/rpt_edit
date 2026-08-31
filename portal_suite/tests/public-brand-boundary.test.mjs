@@ -61,6 +61,17 @@ test("frontend sanitizes old metadata before caching, rendering, and sharing", a
   assert.match(app, /return publicDocItem\(\{/u);
   assert.match(app, /const label = remoteSourceLabels\[source\] \|\| "此来源"/u);
   assert.match(app, /return "账户";/u);
+  assert.match(app, /function isAdminASession\(session = loadAuthSession\(\)\) \{\s*return isSuperSession\(session\);\s*\}/u);
+  assert.doesNotMatch(app, /["']admin-a["']/iu);
+  assert.doesNotMatch(app, /admin-a@users\.portal\.example\.invalid/iu);
+  assert.doesNotMatch(app, /two[\s._-]*tigers/iu);
+  assert.match(app, /仅 KC桌面管理员/u);
+  assert.match(app, /请先登录 KC桌面管理员账号/u);
+  assert.match(app, /newsfeed-avatar">KC</u);
+  assert.doesNotMatch(app, /newsfeed-avatar">PS</u);
+  assert.match(app, /`\$\{PUBLIC_BRAND\}-activity-history-/u);
+  assert.match(app, /`\$\{PUBLIC_BRAND\}-users-/u);
+  assert.doesNotMatch(app, /portal-(?:activity-history|users)-/u);
   const contactStart = app.indexOf("function contactDetails(");
   const contactEnd = app.indexOf("function contactMethodText(", contactStart);
   const contactDetails = app.slice(contactStart, contactEnd);

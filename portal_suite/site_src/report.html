@@ -37,7 +37,7 @@
         const detail = document.getElementById("detail");
         const params = new URLSearchParams(window.location.search);
         const legacyWords = [
-          ["report", "ify"], ["nash", "ai"], ["macro", "gate"], ["support", "contact"],
+          ["report", "ify"], ["nash", "ai"], ["mai", "fu"], ["macro", "gate"], ["support", "contact"],
           ["portal", "suite"], ["portal", "alternate"], ["portal", "娱乐"], ["kc", "desk", "notes"], ["two", "tigers"],
         ];
         const legacyDomains = [
@@ -52,6 +52,8 @@
           for (const parts of legacyDomains) text = text.replace(legacyPattern(parts), "");
           for (const parts of legacyWords) text = text.replace(legacyPattern(parts), "");
           text = text.replace(new RegExp(String.fromCharCode(0x6167, 0x535a), "g"), "");
+          text = text.replace(new RegExp(String.fromCharCode(0x9ea6, 0x5e9c, 0x5b66, 0x5802), "g"), "");
+          text = text.replace(new RegExp(String.fromCharCode(0x9ea6, 0x5e9c, 0x8bfe, 0x5802), "g"), "");
           const changed = text !== original;
           if (changed) {
             text = text

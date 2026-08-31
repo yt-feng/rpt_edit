@@ -58,6 +58,8 @@ assert.match(chartsApp, /analysis_version/);
 assert.match(chartsApp, /chart-search-v2/);
 assert.match(chartsApp, /replaceChildren/);
 assert.doesNotMatch(chartsApp, /innerHTML\s*=/);
+assert.match(app, /function chartReportText\([\s\S]*?publicBrandText\(row\.title\)[\s\S]*?publicBrandText\(row\.search_text\)/u);
+assert.match(app, /function chartSearchRow\([\s\S]*?publicBrandText\(report\.title[\s\S]*?publicBrandText\(chart\.title[\s\S]*?chartDetailChips\(chart\)/u);
 assert.match(chartsCss, /\.charts-grid/);
 assert.match(runtime, /createLink\("charts", "Charts"/);
 assert.match(runtime, /Charts/);
@@ -79,10 +81,19 @@ assert.match(archivedUrl, /page_count=22/);
 const unknownUrl = reportUrl("report-2", { title: "Unknown report" });
 assert.doesNotMatch(unknownUrl, /available=/);
 
+const publicBoundaryStart = chartsApp.indexOf("const LEGACY_SOURCE_WORDS");
+const publicBoundaryEnd = chartsApp.indexOf("function folded", publicBoundaryStart);
+assert.ok(publicBoundaryStart >= 0 && publicBoundaryEnd > publicBoundaryStart);
+const publicText = Function(
+  "PUBLIC_BRAND",
+  `"use strict"; ${chartsApp.slice(publicBoundaryStart, publicBoundaryEnd)}; return publicText;`,
+)("KC桌面");
+
 const reportSearchUrl = Function(
   "clean",
+  "publicText",
   `"use strict"; ${extractFunction(chartsApp, "reportSearchUrl")}; return reportSearchUrl;`,
-)((value, limit) => String(value || "").trim().slice(0, limit));
+)((value, limit) => String(value || "").trim().slice(0, limit), publicText);
 assert.equal(
   reportSearchUrl("Bernstein HPQ source report"),
   "/?q=Bernstein%20HPQ%20source%20report",
@@ -98,5 +109,51 @@ assert.equal(
   sourceReportUrl({ reportId: "", reportTitle: "Unlinked source title", reportPreview: {} }),
   "/?q=Unlinked%20source%20title",
 );
+
+const publicList = (value) => (Array.isArray(value) ? value.map((item) => publicText(item)).filter(Boolean) : []);
+const flattenIndex = Function(
+  "clean",
+  "publicText",
+  "publicList",
+  "isValidChart",
+  "normalizedKind",
+  "searchableText",
+  "PUBLIC_BRAND",
+  `"use strict"; ${extractFunction(chartsApp, "flattenIndex")}; return flattenIndex;`,
+)(
+  (value, limit = 1200) => String(value || "").replace(/\s+/gu, " ").trim().slice(0, limit),
+  publicText,
+  publicList,
+  () => true,
+  () => "chart",
+  (row) => JSON.stringify(row),
+  "KC桌面",
+);
+const legacyRows = flattenIndex({
+  reports: [{
+    report_id: "report-legacy",
+    title: "Reportify: AI source report",
+    title_zh: "NashAI 中文标题",
+    filename: "MacroGate-report.pdf",
+    bank_name: "Portal Suite",
+    charts: [{
+      id: "chart-legacy",
+      analysis_version: "chart-search-v2",
+      image_id: "a".repeat(64),
+      chart_type: "Reportify chart",
+      title: "Nash AI capacity",
+      description: "MacroGate supplied this chart",
+      trend_summary: "Portal Suite trend",
+      metrics: ["Twotigers metric"],
+      entities: ["麦府课堂"],
+      keywords: ["maifu source"],
+    }],
+  }],
+});
+const forbidden = /Reportify|Nash[\s._-]*AI|Macro[\s._-]*Gate|Portal[\s._-]+Suite|Two[\s._-]*tigers|\bmaifu\b|麦府(?:课堂|学堂)/iu;
+assert.equal(legacyRows.length, 1);
+assert.doesNotMatch(JSON.stringify(legacyRows), forbidden);
+assert.equal(legacyRows[0].title, "capacity");
+assert.equal(legacyRows[0].reportTitle, "AI source report");
 
 console.log("portal chart-search frontend contract: ok");

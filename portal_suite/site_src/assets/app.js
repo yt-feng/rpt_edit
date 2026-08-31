@@ -155,17 +155,17 @@
       items.push({
         id,
         source: HOT_REPORT_SOURCE,
-        title: String(rawItem.title || "").trim().slice(0, 320) || "近期热门报告",
-        title_cn: String(rawItem.title_cn || "").trim().slice(0, 320),
-        institution: String(rawItem.institution || "").trim().slice(0, 160),
+        title: publicBrandText(String(rawItem.title || "").trim().slice(0, 320), "近期热门报告"),
+        title_cn: publicBrandText(String(rawItem.title_cn || "").trim().slice(0, 320)),
+        institution: publicBrandText(String(rawItem.institution || "").trim().slice(0, 160)),
         date: String(rawItem.date || "").trim().slice(0, 10),
-        description: String(rawItem.description || "").trim().slice(0, 1600),
-        filename: String(rawItem.filename || "").trim().slice(0, 320),
+        description: publicBrandText(String(rawItem.description || "").trim().slice(0, 1600)),
+        filename: publicBrandText(String(rawItem.filename || "").trim().slice(0, 320), "report.pdf", PUBLIC_BRAND),
         size_bytes: Number.isFinite(size) && size > 0 ? Math.floor(size) : 0,
         sort_order: Number.isSafeInteger(sortOrder) ? sortOrder : 0,
         created_at: String(rawItem.created_at || "").trim().slice(0, 64),
         updated_at: String(rawItem.updated_at || "").trim().slice(0, 64),
-        required_plan: String(rawItem.required_plan || "").trim().slice(0, 64),
+        required_plan: publicBrandText(String(rawItem.required_plan || "").trim().slice(0, 64)),
         required_months: Number.isFinite(requiredMonths) && requiredMonths > 0 ? Math.floor(requiredMonths) : 0,
       });
     }
@@ -318,6 +318,7 @@
   const LEGACY_SOURCE_WORDS = [
     ["report", "ify"],
     ["nash", "ai"],
+    ["mai", "fu"],
   ];
   const LEGACY_SOURCE_DOMAIN_WORDS = [
     ["report", "ify", "cn"],
@@ -356,6 +357,10 @@
     }
     const legacyChineseSource = String.fromCharCode(0x6167, 0x535a);
     text = text.replace(new RegExp(legacyChineseSource, "g"), replacement);
+    const legacyCourseBrand = String.fromCharCode(0x9ea6, 0x5e9c, 0x5b66, 0x5802);
+    text = text.replace(new RegExp(legacyCourseBrand, "g"), replacement);
+    const legacyCourseClassroom = String.fromCharCode(0x9ea6, 0x5e9c, 0x8bfe, 0x5802);
+    text = text.replace(new RegExp(legacyCourseClassroom, "g"), replacement);
     const changed = text !== original;
     if (changed) {
       text = text
@@ -777,8 +782,8 @@
     if (!row || !row.active) return "";
     if (row.access_mode === "all") return "全站报告下载权限";
     if (row.access_mode === "filters") {
-      const institutions = Array.isArray(row.institutions) ? row.institutions.filter(Boolean) : [];
-      const industries = Array.isArray(row.industries) ? row.industries.filter(Boolean) : [];
+      const institutions = Array.isArray(row.institutions) ? row.institutions.map((value) => publicBrandText(value)).filter(Boolean) : [];
+      const industries = Array.isArray(row.industries) ? row.industries.map((value) => publicBrandText(value)).filter(Boolean) : [];
       if (institutions.length === 1 && !industries.length && !(row.page_ranges || []).length) {
         return `${institutions[0]}报告下载权限`;
       }
@@ -843,12 +848,7 @@
   }
 
   function isAdminASession(session = loadAuthSession()) {
-    const user = session && session.user;
-    return Boolean(
-      isSuperSession(session)
-      && String(user.username || "").trim().toLowerCase().replace(/^@+/, "") === "admin-a"
-      && String(user.email || "").trim().toLowerCase() === "admin-a@users.portal.example.invalid"
-    );
+    return isSuperSession(session);
   }
 
   function isOperatorSession(session = loadAuthSession()) {
@@ -2565,14 +2565,20 @@
     const rawSourceSite = String(user && user.entitlement && user.entitlement.source_site || "");
     const rawGrantSource = String(user && user.entitlement && user.entitlement.grant_source || "");
     const historicalLinkedEntitlement = rawSourceSite === "vid2ppt" || ["vid2ppt_nova", "vid2ppt_atlas"].includes(rawGrantSource);
+    const publicOriginLabel = (value) => {
+      const text = String(value || "").trim();
+      if (!text || text === "portal") return PUBLIC_BRAND;
+      if (text === "vid2ppt") return "历史会员";
+      return publicBrandText(text, PUBLIC_BRAND);
+    };
     return {
       username: String(user && user.username || ""),
       email: String(user && user.email || ""),
-      site_origin: rawSiteOrigin === "vid2ppt" ? "historical" : rawSiteOrigin,
-      registered_site: rawRegisteredSite === "vid2ppt" ? "historical" : rawRegisteredSite,
-      entitlement_source_site: historicalLinkedEntitlement ? "historical" : rawSourceSite,
-      entitlement_grant_source: historicalLinkedEntitlement ? "historical_member" : rawGrantSource,
-      entitlement_plan_code: historicalLinkedEntitlement ? "" : String(user && user.entitlement && user.entitlement.source_plan_code || ""),
+      site_origin: publicOriginLabel(rawSiteOrigin),
+      registered_site: publicOriginLabel(rawRegisteredSite),
+      entitlement_source_site: historicalLinkedEntitlement ? "历史会员" : publicOriginLabel(rawSourceSite),
+      entitlement_grant_source: historicalLinkedEntitlement ? "历史会员" : publicBrandText(rawGrantSource),
+      entitlement_plan_code: historicalLinkedEntitlement ? "" : publicBrandText(user && user.entitlement && user.entitlement.source_plan_code),
       status: disabled ? "已禁用" : "正常",
       account: adminUserEntitlementLabel(user),
       access: adminUserAccessLabel(user),
@@ -3165,11 +3171,12 @@
 
   function adminMarketViewRow(item) {
     const id = String(item && item.id || "");
-    const name = String(item && item.filename || `${id || "market-views"}.pdf`);
+    const name = publicBrandText(item && item.filename, `${id || "market-views"}.pdf`);
+    const title = publicBrandText(item && item.title, "Market Views");
     return `
       <div class="account-admin-file" data-market-view-id="${escapeHtml(id)}">
         <div>
-          <strong>${escapeHtml(item && item.title || "Market Views")}</strong>
+          <strong>${escapeHtml(title)}</strong>
           <span>${escapeHtml(item && item.date || "")}${item && item.size_bytes ? ` · ${escapeHtml(formatSize(item.size_bytes))}` : ""}</span>
           <div class="account-admin-progress" hidden>
             <div class="account-admin-progress-track"><span></span></div>
@@ -3261,7 +3268,7 @@
 
   function adminPickMeta(pick) {
     const parts = [
-      pick.bank,
+      publicBrandText(pick.bank),
       pick.date_folder,
       pick.page_count ? `${pick.page_count}页` : "页数待识别",
       pick.first_page_landscape ? "横屏PDF" : "",
@@ -3271,17 +3278,18 @@
   }
 
   function adminDailyPickRow(pick) {
-    const intro = String(pick.intro || "").trim();
-    const title = pick.display_title || pick.title_zh || pick.title || "Untitled report";
+    const intro = publicBrandText(pick.intro);
+    const publicTitle = publicBrandText(pick.title);
+    const title = publicBrandText(pick.display_title || pick.title_zh || publicTitle, "Untitled report");
     const tags = Array.isArray(pick.tags) && pick.tags.length
-      ? `<div class="account-admin-pick-tags">${pick.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>`
+      ? `<div class="account-admin-pick-tags">${pick.tags.map((tag) => publicBrandText(tag)).filter(Boolean).map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>`
       : "";
     return `
       <article class="account-admin-pick" data-id="${escapeHtml(pick.id || "")}">
         <div class="account-admin-pick-main">
           <div class="account-admin-pick-title">
             <strong>${escapeHtml(title)}</strong>
-            ${pick.title && pick.title !== title ? `<span>${escapeHtml(pick.title)}</span>` : ""}
+            ${publicTitle && publicTitle !== title ? `<span>${escapeHtml(publicTitle)}</span>` : ""}
           </div>
           <span class="account-admin-pick-meta">${escapeHtml(adminPickMeta(pick))}</span>
           ${tags}
@@ -3307,8 +3315,8 @@
       <ol class="account-admin-wechat-articles">
         ${articles.map((article, index) => `
           <li>
-            <span>${escapeHtml(article.label || `${index + 1}条`)}</span>
-            <strong>${escapeHtml(article.title || "")}</strong>
+            <span>${escapeHtml(publicBrandText(article.label, `${index + 1}条`))}</span>
+            <strong>${escapeHtml(publicBrandText(article.title))}</strong>
           </li>
         `).join("")}
       </ol>
@@ -3326,7 +3334,7 @@
     if (!sourceDates.length) return "";
     const text = sourceDates
       .map((entry) => {
-        const label = entry.source_label || "来源";
+        const label = publicBrandText(entry.source_label, "来源");
         const date = entry.date_iso || entry.date_folder || "";
         return `${label}: ${date}${entry.is_today ? "" : "（最近可用）"}`;
       })
@@ -3339,7 +3347,7 @@
 
   function adminWechatBatchRow(batch) {
     const meta = [
-      batch.source_label,
+      publicBrandText(batch.source_label),
       batch.source_date_iso ? `素材 ${batch.source_date_iso}${batch.source_is_today ? "" : "（最近可用）"}` : "",
       batch.article_count ? `${batch.article_count}篇` : "",
       batch.total_batches ? `第 ${batch.schedule_index}/${batch.total_batches} 个 batch` : "",
@@ -3352,7 +3360,7 @@
         </div>
         <div class="account-admin-wechat-main">
           <div class="account-admin-wechat-title">
-            <strong>${escapeHtml(batch.batch_label || `Batch ${batch.batch_no || ""}`)}</strong>
+            <strong>${escapeHtml(publicBrandText(batch.batch_label, `Batch ${batch.batch_no || ""}`))}</strong>
             <span>${escapeHtml(meta)}</span>
           </div>
           ${adminWechatArticleList(batch)}
@@ -3782,7 +3790,7 @@
   function analyticsHistoryExportFilename() {
     const now = new Date();
     const pad = (value) => String(value).padStart(2, "0");
-    return `portal-activity-history-${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}-${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}.xlsx`;
+    return `${PUBLIC_BRAND}-activity-history-${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}-${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}.xlsx`;
   }
 
   async function collectAnalyticsHistoryPages(fetchPage, options = {}) {
@@ -5267,7 +5275,7 @@
   function adminExportFilename() {
     const now = new Date();
     const pad = (value) => String(value).padStart(2, "0");
-    return `portal-users-${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}-${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}.xlsx`;
+    return `${PUBLIC_BRAND}-users-${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}-${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}.xlsx`;
   }
 
   async function fetchFreshAdminUsers(workerUrl) {
@@ -7363,24 +7371,24 @@
     function chartRecordText(chart) {
       const row = chart && typeof chart === "object" ? chart : {};
       return normalize([
-        row.title,
-        row.chart_type,
-        row.description,
-        row.trend_summary,
-        ...(Array.isArray(row.metrics) ? row.metrics : []),
-        ...(Array.isArray(row.entities) ? row.entities : []),
-        ...(Array.isArray(row.periods) ? row.periods : []),
-        ...(Array.isArray(row.geographies) ? row.geographies : []),
-        ...(Array.isArray(row.units) ? row.units : []),
-        ...(Array.isArray(row.keywords) ? row.keywords : []),
+        publicBrandText(row.title),
+        publicBrandText(row.chart_type),
+        publicBrandText(row.description),
+        publicBrandText(row.trend_summary),
+        ...(Array.isArray(row.metrics) ? row.metrics.map((value) => publicBrandText(value)) : []),
+        ...(Array.isArray(row.entities) ? row.entities.map((value) => publicBrandText(value)) : []),
+        ...(Array.isArray(row.periods) ? row.periods.map((value) => publicBrandText(value)) : []),
+        ...(Array.isArray(row.geographies) ? row.geographies.map((value) => publicBrandText(value)) : []),
+        ...(Array.isArray(row.units) ? row.units.map((value) => publicBrandText(value)) : []),
+        ...(Array.isArray(row.keywords) ? row.keywords.map((value) => publicBrandText(value)) : []),
       ].filter(Boolean).join(" "));
     }
 
     function chartReportText(report) {
       const row = report && typeof report === "object" ? report : {};
       return normalize([
-        row.title,
-        row.search_text,
+        publicBrandText(row.title),
+        publicBrandText(row.search_text),
         ...(Array.isArray(row.charts) ? row.charts.map(chartRecordText) : []),
       ].filter(Boolean).join(" "));
     }
@@ -7392,7 +7400,7 @@
         ...(Array.isArray(chart.periods) ? chart.periods : []),
         ...(Array.isArray(chart.geographies) ? chart.geographies : []),
         ...(Array.isArray(chart.units) ? chart.units : []),
-      ].map((value) => String(value || "").trim()).filter(Boolean);
+      ].map((value) => publicBrandText(value)).filter(Boolean);
       return [...new Set(values)].slice(0, 8)
         .map((value) => `<span>${escapeHtml(value)}</span>`)
         .join("");
@@ -7401,13 +7409,14 @@
     function chartSearchRow(report, chart) {
       const reportId = String(report.report_id || "");
       const catalogItem = catalogById.get(reportId);
-      const reportTitle = String(report.title || catalogItem && titleText(catalogItem) || "图表所在报告");
-      const title = String(chart.title || chart.description || "报告图表");
-      const summary = String(chart.description || chart.trend_summary || "");
-      const trend = String(chart.trend_summary || "");
+      const reportTitle = publicBrandText(report.title || catalogItem && titleText(catalogItem), "图表所在报告");
+      const title = publicBrandText(chart.title || chart.description, "报告图表");
+      const summary = publicBrandText(chart.description || chart.trend_summary);
+      const trend = publicBrandText(chart.trend_summary);
+      const reportPreview = publicDocItem(catalogItem || { ...report, id: reportId, title: reportTitle });
       return `
-        <a class="chart-search-card" href="${escapeHtml(reportPageUrl(reportId, { preview: catalogItem || { ...report, id: reportId, title: reportTitle } }))}" target="_blank" rel="noopener noreferrer" data-id="${escapeHtml(reportId)}">
-          <span class="chart-search-kicker">${escapeHtml(chart.chart_type || "CHART")}</span>
+        <a class="chart-search-card" href="${escapeHtml(reportPageUrl(reportId, { preview: reportPreview }))}" target="_blank" rel="noopener noreferrer" data-id="${escapeHtml(reportId)}">
+          <span class="chart-search-kicker">${escapeHtml(publicBrandText(chart.chart_type, "CHART"))}</span>
           <strong>${escapeHtml(title)}</strong>
           ${summary ? `<p>${escapeHtml(summary)}</p>` : ""}
           ${trend && trend !== summary ? `<p class="chart-search-trend">趋势：${escapeHtml(trend)}</p>` : ""}
@@ -9563,7 +9572,7 @@
       <section class="text-only-pdf-upload" id="textOnlyPdfUpload" hidden>
         <div class="admin-panel-heading">
           <h3>补传 PDF</h3>
-          <span>仅 admin-a</span>
+          <span>仅 KC桌面管理员</span>
         </div>
         <p class="subtle">为当前 Text only 报告补充原始 PDF。上传成功后，原报告 id、标题、全文索引和权限规则保持不变。</p>
         <form id="textOnlyPdfUploadForm" class="text-only-pdf-upload-form">
@@ -9866,7 +9875,7 @@
       }
       const pdf = fileInput.files && fileInput.files[0];
       if (!isSuperSession()) {
-        setStatus("请先登录 admin-a 管理员账号。", "error");
+        setStatus("请先登录 KC桌面管理员账号。", "error");
         refreshVisibility();
         return;
       }
@@ -11704,7 +11713,7 @@
       <section class="newsfeed-layout">
         <aside class="newsfeed-sidebar" id="newsfeedSidebar">
           <div class="newsfeed-profile">
-            <span class="newsfeed-avatar">PS</span>
+            <span class="newsfeed-avatar">KC</span>
             <strong>${escapeHtml(authUserLabel(loadAuthSession()))}</strong>
           </div>
           <div class="newsfeed-side-actions">
@@ -13268,10 +13277,11 @@
   function blogMarketViewCard(item) {
     const date = blogMarketViewDateLabel(item && item.date);
     const size = formatSize(item && item.size_bytes);
+    const title = publicBrandText(item && item.title, "Market Views");
     return `
       <article class="blog-market-view-card">
         <time datetime="${escapeHtml(date)}">${escapeHtml(date || "每日更新")}</time>
-        <strong>${escapeHtml(item && item.title || "Market Views")}</strong>
+        <strong>${escapeHtml(title)}</strong>
         ${size ? `<span class="subtle">PDF · ${escapeHtml(size)}</span>` : '<span class="subtle">PDF</span>'}
         <button class="secondary-button blog-market-view-download" type="button" data-market-view-id="${escapeHtml(item && item.id || "")}">下载 PDF</button>
       </article>
@@ -13398,8 +13408,8 @@
       const rawCourse = payload.course && typeof payload.course === "object" ? payload.course : {};
       const course = {
         id: courseMaterialText(rawCourse.id, 80),
-        category: courseMaterialText(rawCourse.category, 80),
-        title: courseMaterialText(rawCourse.title, 120),
+        category: publicBrandText(courseMaterialText(rawCourse.category, 80)),
+        title: publicBrandText(courseMaterialText(rawCourse.title, 120)),
       };
       if (!course.id || !course.title) return null;
       const ids = new Set();
@@ -13407,7 +13417,7 @@
         if (!raw || typeof raw !== "object" || Array.isArray(raw)) return null;
         const id = courseMaterialText(raw.id, 80).toLowerCase();
         const cover = courseMaterialText(raw.cover, 180);
-        const itemTitle = courseMaterialText(raw.title, 160);
+        const itemTitle = publicBrandText(courseMaterialText(raw.title, 160));
         const pages = Math.trunc(Number(raw.pages || 0));
         if (!/^[a-z0-9][a-z0-9-]{2,79}$/u.test(id) || ids.has(id) || !itemTitle) return null;
         if (!/^assets\/course-covers\/[a-z0-9][a-z0-9._-]*\.(?:avif|jpe?g|png|webp)$/iu.test(cover)) return null;
@@ -13416,8 +13426,8 @@
         return {
           id,
           title: itemTitle,
-          topic: courseMaterialText(raw.topic, 80) || "战略咨询",
-          summary: courseMaterialText(raw.summary, 260),
+          topic: publicBrandText(courseMaterialText(raw.topic, 80)) || "战略咨询",
+          summary: publicBrandText(courseMaterialText(raw.summary, 260)),
           pages,
           cover,
           featured: raw.featured === true,
@@ -13550,7 +13560,7 @@
                 decoding="async"
                 ${priority ? 'fetchpriority="high"' : ""}
               >
-              <span>${item.featured ? "精选" : "麦府学堂"}</span>
+              <span>KC桌面${item.featured ? " · 精选" : "学堂"}</span>
             </div>
             <div class="course-material-copy">
               <p>${escapeHtml(item.topic)} · ${item.pages} 页</p>

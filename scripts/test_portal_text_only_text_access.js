@@ -8,6 +8,10 @@ const root = path.resolve(__dirname, "..");
 const worker = fs.readFileSync(path.join(root, "workers/portal-suite-worker/src/index.js"), "utf8");
 const app = fs.readFileSync(path.join(root, "portal_suite/site_src/assets/app.js"), "utf8");
 const builder = fs.readFileSync(path.join(root, "scripts/build_portal_suite_site.py"), "utf8");
+const brandStart = worker.indexOf("const PUBLIC_BRAND");
+const brandEnd = worker.indexOf("const ADMIN_TOKEN_TTL_SECONDS", brandStart);
+assert.ok(brandStart >= 0 && brandEnd > brandStart, "public brand definitions must exist");
+const brandDefinitions = worker.slice(brandStart, brandEnd);
 
 function extractFunction(source, name) {
   const starts = [`async function ${name}(`, `function ${name}(`]
@@ -45,6 +49,7 @@ const sandbox = {
 };
 
 vm.runInNewContext(`
+  ${brandDefinitions}
   const CACHE_TTL_MS = 5 * 60 * 1000;
   const TRIAL_3D_DURATION_VALUE = "trial_3d";
   const TRIAL_3D_DOWNLOAD_LIMIT = 10;
@@ -149,6 +154,7 @@ vm.runInNewContext(`
     reportTextCanonicalTitle,
     resolveReportTextEntry,
     reportTextIndexVersion,
+    publicBrandDocumentText,
     handleReportText,
   };
 `, sandbox);
@@ -423,6 +429,23 @@ async function responseJson(response) {
   assert.equal(aliasEnv.calls.currentIndex, 2, "title-only history data must scan only the ordered daily current shards needed for an exact alias");
   assert.deepEqual(Array.from(aliasEnv.calls.currentDates), ["260722", "260723"]);
   assert.equal(aliasEnv.calls.accessArgs[0].reportId, REPORT_A, "alias fallback must never change the authorized report id");
+
+  const boundaryText = `${"x".repeat(12 * 1024 - 4)}Reportify NashAI MacroGate Portal Suite extracted body`;
+  const legacyBrandEnv = makeEnv({
+    historyIndex: { updated_at_bjt: "2026-08-31", items: [{ id: REPORT_A, text: boundaryText }] },
+    currentIndex: { updated_at_bjt: "2026-08-31", items: [{ id: REPORT_A, text: boundaryText }] },
+  });
+  let brandCursor = "";
+  let publicText = "";
+  do {
+    const response = await api.handleReportText(textRequest(REPORT_A, brandCursor), legacyBrandEnv);
+    assert.equal(response.status, 200);
+    const page = await responseJson(response);
+    publicText += page.text;
+    brandCursor = page.next_cursor;
+  } while (brandCursor);
+  assert.match(publicText, /KC桌面/u);
+  assert.doesNotMatch(publicText, /Reportify|Nash[\s._-]*AI|Macro[\s._-]*Gate|Portal[\s._-]*Suite/iu);
 
   const availableEnv = makeEnv({ catalog: { items: [{ ...archiveReport, available: true }] } });
   assert.equal((await api.handleReportText(textRequest(), availableEnv)).status, 409, "available reports are not Text only");

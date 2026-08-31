@@ -297,6 +297,7 @@ test("operator modal renders Daily Picks and Market Views while super-only secti
     },
     escapeHtml(value) { return String(value || ""); },
     formatSize(value) { return `${value} bytes`; },
+    publicBrandText(value, fallback = "") { return String(value || fallback || ""); },
   };
   vm.runInNewContext(`
     ${extractFunction(app, "adminItemDateTimestamp")}

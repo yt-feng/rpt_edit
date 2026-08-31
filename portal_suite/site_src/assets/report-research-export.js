@@ -2,11 +2,38 @@
   "use strict";
 
   const DOCX_MIME_TYPE = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+  const PUBLIC_BRAND = "KC桌面";
   const MAX_CHART_BYTES = 3 * 1024 * 1024;
   const MAX_TOTAL_CHART_BYTES = 18 * 1024 * 1024;
   const XML_DECLARATION = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>';
   const chartCache = new Map();
   const CRC32_TABLE = buildCrc32Table();
+
+  const LEGACY_SOURCE_WORDS = [["report", "ify"], ["nash", "ai"], ["mai", "fu"]];
+  const LEGACY_SOURCE_DOMAINS = [["report", "ify", "cn"], ["nash", "ai", "cn"], ["hi", "bor", "com", "cn"]];
+  const LEGACY_CONTACT_WORDS = [
+    ["macro", "gate"], ["support", "contact"], ["portal", "suite"], ["portal", "alternate"],
+    ["portal", "娱乐"], ["kc", "desk", "notes"], ["two", "tigers"],
+  ];
+
+  function legacyBrandPattern(parts) {
+    const escaped = parts.map((part) => String(part).replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+    return new RegExp(escaped.join("[\\s._-]*"), "gi");
+  }
+
+  function publicDocumentText(value) {
+    let result = String(value || "")
+      .replace(/[\u200b-\u200d\u2060\ufeff]/g, "")
+      .replace(/[Ａ-Ｚａ-ｚ０-９]/g, (character) => String.fromCharCode(character.charCodeAt(0) - 0xfee0));
+    for (const parts of LEGACY_SOURCE_DOMAINS) result = result.replace(legacyBrandPattern(parts), PUBLIC_BRAND);
+    for (const parts of [...LEGACY_SOURCE_WORDS, ...LEGACY_CONTACT_WORDS]) result = result.replace(legacyBrandPattern(parts), PUBLIC_BRAND);
+    for (const legacy of [
+      String.fromCharCode(0x6167, 0x535a),
+      String.fromCharCode(0x9ea6, 0x5e9c, 0x5b66, 0x5802),
+      String.fromCharCode(0x9ea6, 0x5e9c, 0x8bfe, 0x5802),
+    ]) result = result.replace(new RegExp(legacy, "g"), PUBLIC_BRAND);
+    return result;
+  }
 
   function text(value, limit = 12000) {
     const source = value === null || value === undefined ? "" : String(value);
@@ -23,7 +50,7 @@
       ) result += character;
       if (result.length >= limit) break;
     }
-    return result.trim();
+    return publicDocumentText(result).trim();
   }
 
   function escapeXml(value) {

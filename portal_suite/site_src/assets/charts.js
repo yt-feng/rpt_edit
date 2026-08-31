@@ -2,6 +2,7 @@
   "use strict";
 
   const PAGE_SIZE = 24;
+  const PUBLIC_BRAND = "KC桌面";
   const IMAGE_ID_RE = /^[0-9a-f]{64}$/;
   const VALID_KINDS = new Set(["chart", "table", "data_map", "flow_diagram", "data_visual"]);
   const INVALID_RE = /(?:\b(?:about\s+the\s+author|analyst\s+certification|biograph(?:y|ies)|contents|copyright|disclaimer|important\s+disclosures?|legal\s+notice|table\s+of\s+contents)\b|作者(?:介绍|简介)|分析师(?:介绍|简介|声明)|版权声明|免责声明|法律声明|目录页?|重要声明|风险提示)/i;
@@ -49,6 +50,42 @@
     return String(value || "").replace(/\0/g, " ").replace(/\s+/g, " ").trim().slice(0, limit);
   }
 
+  const LEGACY_SOURCE_WORDS = [["report", "ify"], ["nash", "ai"], ["mai", "fu"]];
+  const LEGACY_SOURCE_DOMAINS = [["report", "ify", "cn"], ["nash", "ai", "cn"], ["hi", "bor", "com", "cn"]];
+  const LEGACY_CONTACT_WORDS = [
+    ["macro", "gate"], ["support", "contact"], ["portal", "suite"], ["portal", "alternate"],
+    ["portal", "娱乐"], ["kc", "desk", "notes"], ["two", "tigers"],
+  ];
+
+  function legacyBrandPattern(parts) {
+    const escaped = parts.map((part) => String(part).replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+    return new RegExp(escaped.join("[\\s._-]*"), "gi");
+  }
+
+  function publicText(value, fallback = "", replacement = "") {
+    const original = String(value || "");
+    let text = original
+      .replace(/[\u200b-\u200d\u2060\ufeff]/g, "")
+      .replace(/[Ａ-Ｚａ-ｚ０-９]/g, (character) => String.fromCharCode(character.charCodeAt(0) - 0xfee0));
+    for (const parts of LEGACY_SOURCE_DOMAINS) text = text.replace(legacyBrandPattern(parts), replacement);
+    for (const parts of [...LEGACY_SOURCE_WORDS, ...LEGACY_CONTACT_WORDS]) text = text.replace(legacyBrandPattern(parts), replacement);
+    for (const legacy of [
+      String.fromCharCode(0x6167, 0x535a),
+      String.fromCharCode(0x9ea6, 0x5e9c, 0x5b66, 0x5802),
+      String.fromCharCode(0x9ea6, 0x5e9c, 0x8bfe, 0x5802),
+    ]) text = text.replace(new RegExp(legacy, "g"), replacement);
+    if (text !== original) {
+      text = text
+        .replace(/\(\s*\)|（\s*）|\[\s*\]|【\s*】/g, " ")
+        .replace(/\s{2,}/g, " ")
+        .replace(/^[\s:：|·/\\,，;；\-–—_]+|[\s:：|·/\\,，;；\-–—_]+$/g, "")
+        .trim();
+    } else {
+      text = text.trim();
+    }
+    return text || String(fallback || "");
+  }
+
   function folded(value) {
     return clean(value, 10_000).normalize("NFKC").toLocaleLowerCase("zh-CN");
   }
@@ -57,6 +94,10 @@
     return Array.isArray(value)
       ? value.map((item) => clean(item, 160)).filter(Boolean).slice(0, 20)
       : [];
+  }
+
+  function publicList(value) {
+    return list(value).map((item) => publicText(item)).filter(Boolean);
   }
 
   function normalizedKind(chart) {
@@ -101,7 +142,7 @@
   }
 
   function reportSearchUrl(title) {
-    const query = clean(title, 300);
+    const query = publicText(clean(title, 300));
     return "/?q=" + encodeURIComponent(query);
   }
 
@@ -260,18 +301,18 @@
     reports.forEach((report) => {
       if (!report || typeof report !== "object") return;
       const reportId = clean(report.report_id, 80);
-      const reportTitle = clean(report.title, 300) || "来源报告";
+      const reportTitle = publicText(clean(report.title, 300), "来源报告");
       const dateFolder = clean(report.date_folder, 16);
       const reportPreview = {
         title: reportTitle,
-        title_zh: clean(report.title_zh, 300),
-        filename: clean(report.filename, 300),
+        title_zh: publicText(clean(report.title_zh, 300)),
+        filename: publicText(clean(report.filename, 300), "report.pdf", PUBLIC_BRAND),
         date_folder: dateFolder,
-        bank_code: clean(report.bank_code, 120),
-        bank_name: clean(report.bank_name, 120),
-        industry: clean(report.industry, 160),
-        sector: clean(report.sector, 160),
-        category: clean(report.category, 160),
+        bank_code: publicText(clean(report.bank_code, 120)),
+        bank_name: publicText(clean(report.bank_name, 120)),
+        industry: publicText(clean(report.industry, 160)),
+        sector: publicText(clean(report.sector, 160)),
+        category: publicText(clean(report.category, 160)),
         available: typeof report.available === "boolean" ? report.available : undefined,
         pdf_archived: typeof report.pdf_archived === "boolean" ? report.pdf_archived : undefined,
         size_bytes: report.size_bytes !== undefined && report.size_bytes !== null && report.size_bytes !== ""
@@ -291,17 +332,17 @@
           analysisVersion: clean(chart.analysis_version, 60),
           imageId: clean(chart.image_id, 80),
           ordinal: Math.max(0, Number(chart.ordinal) || 0),
-          title: clean(chart.title, 300),
+          title: publicText(clean(chart.title, 300), "报告图表"),
           contentKind: normalizedKind(chart),
-          chartType: clean(chart.chart_type, 60).toLowerCase(),
-          description: clean(chart.description),
-          trend: clean(chart.trend_summary, 500),
-          metrics: list(chart.metrics),
-          entities: list(chart.entities),
-          periods: list(chart.periods),
-          geographies: list(chart.geographies),
-          units: list(chart.units),
-          keywords: list(chart.keywords),
+          chartType: publicText(clean(chart.chart_type, 60)).toLowerCase(),
+          description: publicText(clean(chart.description)),
+          trend: publicText(clean(chart.trend_summary, 500)),
+          metrics: publicList(chart.metrics),
+          entities: publicList(chart.entities),
+          periods: publicList(chart.periods),
+          geographies: publicList(chart.geographies),
+          units: publicList(chart.units),
+          keywords: publicList(chart.keywords),
           reportId,
           reportTitle,
           dateFolder,

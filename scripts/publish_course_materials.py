@@ -22,6 +22,7 @@ from urllib.parse import quote, urlsplit
 
 
 COURSE_ID = "str-01"
+PUBLIC_COURSE_TITLE = "KC桌面学堂｜战略与商业分析方法论"
 OBJECT_PREFIX = "_course-materials/v1"
 MANIFEST_OBJECT_KEY = f"{OBJECT_PREFIX}/manifest.json"
 EXPECTED_ITEM_COUNT = 20
@@ -89,6 +90,8 @@ def load_manifest(path: Path) -> tuple[dict[str, str], tuple[Material, ...]]:
     }
     if clean_course["id"] != COURSE_ID:
         raise PublishError("course id is invalid")
+    if clean_course["title"] != PUBLIC_COURSE_TITLE:
+        raise PublishError("course public title is invalid")
     rows = raw.get("items")
     if not isinstance(rows, list) or len(rows) != EXPECTED_ITEM_COUNT:
         raise PublishError("course material item count is invalid")

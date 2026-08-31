@@ -272,7 +272,11 @@ assert.ok(
   loadAdminPicksSource.indexOf("if (hasAdminSnapshot(legacy))") < loadAdminPicksSource.indexOf("const refreshPromise = refresh()"),
   "a verified legacy snapshot must be returned before waiting for a rebuild",
 );
-assert.match(worker, /const dailyPicks = Array\.isArray\(picksData\.daily_picks\)/, "management and operations dashboards must read the same pick snapshot");
+assert.match(
+  worker,
+  /const dailyPicks = \(Array\.isArray\(picksData\.daily_picks\) \? picksData\.daily_picks : \[\]\)\s*\.map\(publicDailyPick\)/,
+  "management and operations dashboards must re-sanitize the shared pick snapshot on every read",
+);
 assert.match(worker, /ADMIN_PICKS_SNAPSHOT_KEY\s*=\s*`\$\{ADMIN_SNAPSHOT_PREFIX\}\/picks-v3\.json`/, "copy-generator upgrades must use a fresh versioned snapshot key");
 assert.match(worker, /ADMIN_PICKS_LEGACY_SNAPSHOT_KEY\s*=\s*`\$\{ADMIN_SNAPSHOT_PREFIX\}\/picks-v2\.json`/, "the v2 snapshot must remain available during migration");
 assert.match(

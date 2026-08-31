@@ -14,8 +14,8 @@ const RUNTIME_TREE_PATTERN = /^[0-9a-f]{64}$/;
 const DEFAULT_R2_PREFIX = "reports";
 const PUBLIC_BRAND = "KC桌面";
 const CONTACT_EMAIL = ["info", "@", "kc", "desk", ".com"].join("");
-const PUBLIC_SOURCE_BRAND_PATTERN = /(?:https?:\/\/)?(?:[a-z0-9-]+\.)*reportify\.cn|reportify|(?:https?:\/\/)?(?:[a-z0-9-]+\.)*nash[\s._-]*ai\.cn|nash[\s._-]*ai|macro[\s._-]*gate|support[\s._-]*contact|portal[\s._-]*(?:suite|alternate|娱乐)|kc[\s._-]*desk[\s._-]*notes|two[\s._-]*tigers|慧博|(?:https?:\/\/)?(?:[a-z0-9-]+\.)*hibor\.com\.cn/giu;
-const PUBLIC_SOURCE_BRAND_DETECTOR = /reportify|nash[\s._-]*ai|macro[\s._-]*gate|support[\s._-]*contact|portal[\s._-]*(?:suite|alternate|娱乐)|kc[\s._-]*desk[\s._-]*notes|two[\s._-]*tigers|慧博|hibor\.com\.cn/iu;
+const PUBLIC_SOURCE_BRAND_PATTERN = /(?:https?:\/\/)?(?:[a-z0-9-]+\.)*reportify\.cn|reportify|(?:https?:\/\/)?(?:[a-z0-9-]+\.)*nash[\s._-]*ai\.cn|nash[\s._-]*ai|macro[\s._-]*gate|support[\s._-]*contact|portal[\s._-]*(?:suite|alternate|娱乐)|kc[\s._-]*desk[\s._-]*notes|two[\s._-]*tigers|\bmaifu\b|麦府(?:学堂|课堂)|慧博|(?:https?:\/\/)?(?:[a-z0-9-]+\.)*hibor\.com\.cn/giu;
+const PUBLIC_SOURCE_BRAND_DETECTOR = /reportify|nash[\s._-]*ai|macro[\s._-]*gate|support[\s._-]*contact|portal[\s._-]*(?:suite|alternate|娱乐)|kc[\s._-]*desk[\s._-]*notes|two[\s._-]*tigers|\bmaifu\b|麦府(?:学堂|课堂)|慧博|hibor\.com\.cn/iu;
 
 function publicBrandInput(value) {
   return String(value || "")
@@ -32,6 +32,28 @@ function publicBrandText(value, fallback = "") {
   return text || String(fallback || "").trim();
 }
 
+function publicBrandDocumentText(value) {
+  return publicBrandInput(value)
+    .replace(PUBLIC_SOURCE_BRAND_PATTERN, PUBLIC_BRAND)
+    .replace(new RegExp(`(?:${PUBLIC_BRAND})(?:[ \t]*[|·:：/\\-][ \t]*${PUBLIC_BRAND})+`, "gu"), PUBLIC_BRAND);
+}
+
+function publicBrandValue(value, depth = 0) {
+  if (depth > 8 || value === null || value === undefined) return value;
+  if (typeof value === "string") return publicBrandText(value);
+  if (typeof value === "number" || typeof value === "boolean") return value;
+  if (Array.isArray(value)) return value.map((item) => publicBrandValue(item, depth + 1));
+  if (typeof value !== "object") return null;
+  return Object.fromEntries(Object.entries(value).map(
+    ([key, item]) => [key, publicBrandValue(item, depth + 1)],
+  ));
+}
+
+function publicAccountEmail(value) {
+  const email = String(value || "");
+  return PUBLIC_SOURCE_BRAND_DETECTOR.test(publicBrandInput(email)) ? CONTACT_EMAIL : email;
+}
+
 function publicSourceText(value, fallback = "") {
   const text = publicBrandInput(value)
     .replace(PUBLIC_SOURCE_BRAND_PATTERN, "")
@@ -42,6 +64,13 @@ function publicSourceText(value, fallback = "") {
     .replace(/\s+/gu, " ")
     .trim();
   return text || String(fallback || "").trim();
+}
+
+function publicAccountDisplayName(value, role = "") {
+  const normalizedRole = String(role || "").trim().toLowerCase();
+  if (normalizedRole === "super") return `${PUBLIC_BRAND}管理员`;
+  if (normalizedRole === "operator") return `${PUBLIC_BRAND}运营`;
+  return publicBrandText(value, `${PUBLIC_BRAND}用户`);
 }
 const ADMIN_TOKEN_TTL_SECONDS = 180 * 24 * 60 * 60;
 const USER_TOKEN_TTL_SECONDS = 30 * 24 * 60 * 60;
@@ -711,7 +740,7 @@ const COURSE_CATALOG = Object.freeze([
   {
     id: "str-01",
     category: "战略咨询",
-    title: "麦府学堂｜战略与商业分析方法论",
+    title: "KC桌面学堂｜战略与商业分析方法论",
     summary: "覆盖问题拆解、行业与竞争分析、市场研究、增长战略、创新、组织设计与项目表达。",
     audience: "战略、投资、咨询、企业发展与经营分析人员",
   },
@@ -1827,14 +1856,18 @@ async function createUserToken(env, user) {
 function publicUser(user) {
   const email = String(user.email || "");
   const role = accountRole(user);
+  const siteOrigin = String(user.site_origin || SITE_ORIGIN);
+  const registeredSite = String(user.registered_site || user.site_origin || SITE_ORIGIN);
+  const sourceSite = String(user.source_site || user.site_origin || SITE_ORIGIN);
+  const publicSiteLabel = (value) => value === "vid2ppt" ? "历史会员" : publicBrandText(value, PUBLIC_BRAND);
   return {
     id: user.id || "",
-    username: user.username || "",
-    email,
+    username: publicAccountDisplayName(user.username, role),
+    email: publicAccountEmail(email),
     email_is_generated: Boolean(user.email_is_generated) || isGeneratedEmail(email),
-    site_origin: user.site_origin || SITE_ORIGIN,
-    registered_site: user.registered_site || user.site_origin || SITE_ORIGIN,
-    source_site: user.source_site || user.site_origin || SITE_ORIGIN,
+    site_origin: publicSiteLabel(siteOrigin),
+    registered_site: publicSiteLabel(registeredSite),
+    source_site: publicSiteLabel(sourceSite),
     created_at: user.created_at || "",
     updated_at: user.updated_at || "",
     disabled: accountDisabled(user),
@@ -2041,8 +2074,8 @@ function publicAdminUpload(value) {
     updated_at: row.updated_at,
     completed_at: row.completed_at,
     failed_at: row.failed_at,
-    detail: row.detail,
-    result: row.result,
+    detail: publicBrandText(row.detail),
+    result: publicBrandValue(row.result),
   };
 }
 
@@ -3558,10 +3591,10 @@ function publicEntitlement(row) {
     lifetime,
     current_period_end: currentPeriodEnd,
     active,
-    site_origin: row.site_origin || SITE_ORIGIN,
-    source_site: row.source_site || "",
-    grant_source: grantSource,
-    source_plan_code: row.source_plan_code || "",
+    site_origin: publicBrandText(row.site_origin || SITE_ORIGIN, PUBLIC_BRAND),
+    source_site: publicBrandText(row.source_site),
+    grant_source: publicBrandText(grantSource),
+    source_plan_code: publicBrandText(row.source_plan_code),
     source_reference: giftSourceReferenceId(row.source_reference),
     authority_occurred_at: authorityOccurredAt,
     paddle_last_occurred_at: paddleOccurredAt,
@@ -3714,22 +3747,26 @@ function publicAccessGrant(row) {
     download_limit: downloadLimit,
     download_count: downloadCount,
     downloads_remaining: downloadLimit ? Math.max(0, downloadLimit - downloadCount) : null,
-    institutions: normalizeAccessList(row && row.institutions),
-    industries: normalizeAccessList(row && row.industries),
+    institutions: normalizeAccessList(row && row.institutions)
+      .map((value) => publicSourceText(value))
+      .filter(Boolean),
+    industries: normalizeAccessList(row && row.industries)
+      .map((value) => publicBrandText(value))
+      .filter(Boolean),
     page_ranges: normalizeAccessList(row && row.page_ranges, ACCESS_PAGE_RANGE_OPTIONS.length)
       .filter((value) => ACCESS_PAGE_RANGE_OPTIONS.some((option) => option.value === value)),
-    note: String(row && row.note || "").slice(0, 240),
-    source,
-    source_site: String(row && row.source_site || ""),
-    grant_source: String(row && row.grant_source || ""),
-    source_plan_code: String(row && row.source_plan_code || ""),
+    note: publicBrandText(String(row && row.note || "").slice(0, 240)),
+    source: publicBrandText(source),
+    source_site: publicBrandText(row && row.source_site),
+    grant_source: publicBrandText(row && row.grant_source),
+    source_plan_code: publicBrandText(row && row.source_plan_code),
     source_reference: giftSourceReferenceId(row && row.source_reference),
     authority_occurred_at: String(
       row && row.authority_occurred_at || giftSourceReferenceOccurredAt(row && row.source_reference) || "",
     ),
     change_id: String(row && row.change_id || ""),
     updated_at: row && row.updated_at || "",
-    updated_by: row && row.updated_by || "",
+    updated_by: row && row.updated_by ? PUBLIC_BRAND : "",
   };
 }
 
@@ -4283,7 +4320,7 @@ async function consumeLimitedAccessDownload(env, email, reportId, source, expect
 
 function superEntitlement(user) {
   return {
-    email: normalizeEmail(user && user.email) || "",
+    email: publicAccountEmail(normalizeEmail(user && user.email)),
     plan: accountRole(user),
     status: "active",
     lifetime: true,
@@ -4295,7 +4332,7 @@ function superEntitlement(user) {
 
 function roleAccessForUser(user) {
   return publicAccessGrant({
-    email: normalizeEmail(user && user.email),
+    email: publicAccountEmail(normalizeEmail(user && user.email)),
     access_mode: "all",
     status: "active",
     lifetime: true,
@@ -5186,8 +5223,9 @@ function cleanCourseDirectoryItem(raw, restrictedTerms) {
   const courseId = String(raw.course_id || "").trim().toLowerCase();
   const course = COURSE_DIRECTORY_COURSES.get(courseId);
   if (!/^[a-z0-9][a-z0-9_-]{7,79}$/u.test(id) || !course) return null;
-  const name = cleanCourseDirectoryText(raw.name, 240);
-  if (!courseDirectoryTextIsSafe(name, restrictedTerms)) return null;
+  const rawName = cleanCourseDirectoryText(raw.name, 240);
+  if (!courseDirectoryTextIsSafe(rawName, restrictedTerms)) return null;
+  const name = publicBrandText(rawName, "课程资料");
   const folders = cleanCourseDirectoryList(raw.folders, restrictedTerms, { limit: 8, textLimit: 100 });
   const entities = cleanCourseDirectoryList(raw.entities, restrictedTerms, { limit: 8, textLimit: 80 });
   if (folders === null || entities === null) return null;
@@ -5204,12 +5242,12 @@ function cleanCourseDirectoryItem(raw, restrictedTerms) {
   raw.course_id = courseId;
   raw.category = course.category;
   raw.name = name;
-  raw.folders = Object.freeze(folders);
+  raw.folders = Object.freeze(folders.map((value) => publicBrandText(value)).filter(Boolean));
   raw.extension = extension;
   raw.file_type = courseDirectoryFileType(extension);
   raw.size_label = safeSizeLabel;
   raw.date = safeDate;
-  raw.entities = Object.freeze(entities);
+  raw.entities = Object.freeze(entities.map((value) => publicSourceText(value)).filter(Boolean));
   return Object.freeze(raw);
 }
 
@@ -5453,7 +5491,7 @@ function courseMaterialRequestEmailContent(record) {
     ["提交时间", record.attempted_at],
   ].filter(([, value]) => value);
   const text = [
-    "收到一条麦府学堂材料索取申请。",
+    "收到一条 KC桌面学堂材料索取申请。",
     "",
     ...fields.map(([label, value]) => `${label}：${value}`),
     "",
@@ -5465,12 +5503,12 @@ function courseMaterialRequestEmailContent(record) {
       <td style="padding:9px 12px;border-bottom:1px solid #e5e7eb;color:#101828;word-break:break-word;">${escapeNewsfeedHtml(value)}</td>
     </tr>`).join("");
   return {
-    subject: cleanReportRequestText(`麦府学堂材料索取：${record.material_title}`, 160),
+    subject: cleanReportRequestText(`KC桌面学堂材料索取：${record.material_title}`, 160),
     text,
     html: `
       <div style="margin:0;padding:24px;background:#f6f7fb;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#101828;">
         <div style="max-width:680px;margin:0 auto;background:#ffffff;border-radius:10px;padding:28px;">
-          <h1 style="margin:0 0 18px;font-size:22px;line-height:1.35;">麦府学堂材料索取</h1>
+          <h1 style="margin:0 0 18px;font-size:22px;line-height:1.35;">KC桌面学堂材料索取</h1>
           <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border:1px solid #e5e7eb;border-radius:8px;border-collapse:collapse;">${rows}</table>
           <p style="margin:20px 0 0;color:#475467;font-size:14px;">每份 Deck 独立处理；站点不会直接解锁 PDF。</p>
         </div>
@@ -5517,7 +5555,7 @@ async function handleCourseMaterialRequest(request, env, ctx) {
   if (!access.can_access) {
     return privateJsonResponse(request, env, 403, {
       ok: false,
-      detail: "仅剩余有效期至少 30 天的会员可以索取麦府学堂材料。",
+      detail: "仅剩余有效期至少 30 天的会员可以索取 KC桌面学堂材料。",
       required_remaining_days: COURSE_MIN_REMAINING_DAYS,
     });
   }
@@ -6420,12 +6458,20 @@ function safePdfFilename(value) {
   return `${stem || "report"}.pdf`;
 }
 
+function publicDownloadFilename(value, fallback = "download") {
+  return safeFilename(publicBrandText(value, fallback));
+}
+
+function publicPdfFilename(value, fallback = "report.pdf") {
+  return safePdfFilename(publicBrandText(value, fallback));
+}
+
 function asciiFilename(value) {
   return safeFilename(value).replace(/[^\x20-\x7e]+/g, "_");
 }
 
 function contentDisposition(filename) {
-  const safe = safeFilename(filename);
+  const safe = publicDownloadFilename(filename);
   return `attachment; filename="${asciiFilename(safe)}"; filename*=UTF-8''${encodeURIComponent(safe)}`;
 }
 
@@ -6794,7 +6840,7 @@ async function catalogReportPdfDescriptor(env, report, options = {}) {
       available: true,
       manual_pdf: false,
       object_key: objectKeyForReport(env, report),
-      filename: safePdfFilename(report.filename || `${id}.pdf`),
+      filename: publicPdfFilename(report.filename || `${id}.pdf`),
       size_bytes: Math.max(0, Number(report.size_bytes || 0) || 0),
       uploaded_at: "",
       etag: "",
@@ -6816,7 +6862,7 @@ async function catalogReportPdfDescriptor(env, report, options = {}) {
     available: true,
     manual_pdf: true,
     object_key: override.row.object_key,
-    filename: override.row.filename,
+    filename: publicPdfFilename(override.row.filename || `${id}.pdf`),
     size_bytes: override.row.size_bytes,
     uploaded_at: override.row.uploaded_at,
     etag: override.row.etag,
@@ -7098,10 +7144,11 @@ async function handleReportText(request, env) {
   } catch (_error) {
     return privateJsonResponse(request, env, 503, { detail: "提取文本暂时无法读取，请稍后重试。" });
   }
-  const fullText = String(resolved && resolved.entry && resolved.entry.text || "");
-  if (!selectedIndex || !resolved || !resolved.has_body || !fullText.trim()) {
+  const rawFullText = String(resolved && resolved.entry && resolved.entry.text || "");
+  if (!selectedIndex || !resolved || !resolved.has_body || !rawFullText.trim()) {
     return privateJsonResponse(request, env, 404, { detail: "Extracted text is not available for this report." });
   }
+  const fullText = publicBrandDocumentText(rawFullText);
 
   const indexVersion = reportTextIndexVersion(selectedIndex, resolved.entry);
   let offset = 0;
@@ -7317,7 +7364,6 @@ async function handleCalculator(request, env) {
     return jsonResponse(request, env, 200, {
       id,
       password: await derivedReportPassword(env, id),
-      rule: "PORTAL-" + "base32(hmac_sha256(PASSWORD_SECRET, 'portal-suite:' + report_id))[0:12] grouped 4-4-4",
     });
   } catch (error) {
     return jsonResponse(request, env, 503, { error: error.message || "Could not calculate password." });
@@ -8224,78 +8270,88 @@ async function listAnalyticsExportPage(env, position, pageSize) {
 }
 
 function publicAnalyticsEvent(event) {
-  return {
+  const eventType = String(event.type || "");
+  const rawSource = String(event.source || "");
+  const rawTarget = String(event.target || "");
+  const courseMaterialMatch = eventType === "course_material_request"
+    ? rawTarget.match(/^maifu-(\d+)$/i)
+    : null;
+  return publicBrandValue({
     id: event.id || "",
     ts: event.ts || "",
     date: event.date || "",
-    type: event.type || "",
+    type: eventType,
     visitor_id: event.visitor_id || "",
     session_id: event.session_id || "",
     session_started_at: event.session_started_at || "",
     client_ts: event.client_ts || "",
     first_seen_at: event.first_seen_at || "",
     is_returning: Boolean(event.is_returning),
-    landing_path: event.landing_path || "",
+    landing_path: publicBrandText(event.landing_path),
     ip_hash: event.ip_hash || "",
     user: event.user ? {
-      username: event.user.username || "",
-      email: event.user.email || "",
+      username: publicAccountDisplayName(event.user.username, event.user.role),
+      email: publicBrandText(event.user.email),
       role: event.user.role || "",
     } : null,
     country: event.country || "",
     colo: event.colo || "",
-    page: event.page || "",
-    path: event.path || "",
-    source: event.source || "",
-    query: event.query || "",
+    page: publicBrandText(event.page),
+    path: publicBrandText(event.path),
+    source: eventType === "course_material_request" && /^maifu$/i.test(rawSource)
+      ? `${PUBLIC_BRAND}学堂`
+      : publicBrandText(rawSource),
+    query: publicBrandText(event.query),
     question_hash: event.question_hash || "",
-    bank: event.bank || "",
-    industry: event.industry || "",
+    bank: publicSourceText(event.bank),
+    industry: publicBrandText(event.industry),
     start_date: event.start_date || "",
     end_date: event.end_date || "",
-    scope: event.scope || "",
-    availability: event.availability || "",
-    page_ranges: event.page_ranges || "",
-    page_range_labels: event.page_range_labels || "",
+    scope: publicBrandText(event.scope),
+    availability: publicBrandText(event.availability),
+    page_ranges: publicBrandText(event.page_ranges),
+    page_range_labels: publicBrandText(event.page_range_labels),
     result_count: event.result_count || 0,
     total_count: event.total_count || 0,
     cache_status: event.cache_status || "",
     report_id: event.report_id || "",
-    report_title: event.report_title || "",
+    report_title: publicSourceText(event.report_title),
     parent_report_id: event.parent_report_id || "",
-    placement: event.placement || "",
-    institution: event.institution || "",
-    target: event.target || "",
-    action: event.action || "",
-    status: event.status || "",
-    access_state: event.access_state || "",
-    view: event.view || "",
-    outcome: event.outcome || "",
-    topic_kind: event.topic_kind || "",
+    placement: publicBrandText(event.placement),
+    institution: publicSourceText(event.institution),
+    target: courseMaterialMatch
+      ? `课程材料 ${String(courseMaterialMatch[1]).padStart(2, "0")}`
+      : publicBrandText(rawTarget),
+    action: publicBrandText(event.action),
+    status: publicBrandText(event.status),
+    access_state: publicBrandText(event.access_state),
+    view: publicBrandText(event.view),
+    outcome: publicBrandText(event.outcome),
+    topic_kind: publicBrandText(event.topic_kind),
     topic_hash: event.topic_hash || "",
     item_count: event.item_count || 0,
     region_count: event.region_count || 0,
-    tier: event.tier || "",
+    tier: publicBrandText(event.tier),
     count: event.count || 0,
     limit: event.limit === null ? null : (event.limit || 0),
     duration_ms: event.duration_ms || 0,
-    error: event.error || "",
-    referrer: event.referrer || "",
-    referrer_host: event.referrer_host || "",
-    utm_source: event.utm_source || "",
-    utm_medium: event.utm_medium || "",
-    utm_campaign: event.utm_campaign || "",
-    utm_term: event.utm_term || "",
-    utm_content: event.utm_content || "",
+    error: publicBrandText(event.error),
+    referrer: publicBrandText(event.referrer),
+    referrer_host: publicBrandText(event.referrer_host),
+    utm_source: publicBrandText(event.utm_source),
+    utm_medium: publicBrandText(event.utm_medium),
+    utm_campaign: publicBrandText(event.utm_campaign),
+    utm_term: publicBrandText(event.utm_term),
+    utm_content: publicBrandText(event.utm_content),
     language: event.language || "",
     screen: event.screen || "",
-    navigation_type: event.navigation_type || "",
-    device_type: event.device_type || "",
-    bot_hint: event.bot_hint || "unknown",
+    navigation_type: publicBrandText(event.navigation_type),
+    device_type: publicBrandText(event.device_type),
+    bot_hint: publicBrandText(event.bot_hint, "unknown"),
     bot_score: Number.isFinite(Number(event.bot_score)) ? Number(event.bot_score) : 0,
     verified_bot: Boolean(event.verified_bot),
-    user_agent: event.user_agent || "",
-  };
+    user_agent: publicBrandText(event.user_agent),
+  });
 }
 
 function analyticsDaySummaryJobKey(owner, date, jobId) {
@@ -8399,7 +8455,19 @@ function analyticsAcquisitionTop(map, limit = 50) {
   return Object.entries(map && typeof map === "object" ? map : {})
     .map(([serialized, count]) => {
       try {
-        return { ...JSON.parse(serialized), sessions: Math.max(0, Math.floor(Number(count) || 0)) };
+        const row = JSON.parse(serialized);
+        return {
+          ...row,
+          source: publicBrandText(row.source),
+          landing_path: publicBrandText(row.landing_path),
+          page: publicBrandText(row.page),
+          report_title: publicSourceText(row.report_title),
+          utm_medium: publicBrandText(row.utm_medium),
+          utm_campaign: publicBrandText(row.utm_campaign),
+          utm_term: publicBrandText(row.utm_term),
+          utm_content: publicBrandText(row.utm_content),
+          sessions: Math.max(0, Math.floor(Number(count) || 0)),
+        };
       } catch (_error) {
         return null;
       }
@@ -8516,6 +8584,19 @@ function analyticsSummaryTop(map, limit = ANALYTICS_DAY_SUMMARY_TOP_LIMIT) {
     .slice(0, limit);
 }
 
+function publicAnalyticsCountMap(map, fallback = PUBLIC_BRAND) {
+  const publicCounts = {};
+  for (const [rawLabel, rawCount] of Object.entries(map && typeof map === "object" ? map : {})) {
+    const label = publicBrandText(rawLabel, fallback);
+    publicCounts[label] = Math.max(0, Number(publicCounts[label]) || 0) + Math.max(0, Number(rawCount) || 0);
+  }
+  return publicCounts;
+}
+
+function publicAnalyticsSummaryTop(map, limit = ANALYTICS_DAY_SUMMARY_TOP_LIMIT) {
+  return analyticsSummaryTop(publicAnalyticsCountMap(map, "unknown"), limit);
+}
+
 function publicAnalyticsDaySummary(accumulator, complete = false) {
   return {
     date: accumulator.date,
@@ -8527,14 +8608,14 @@ function publicAnalyticsDaySummary(accumulator, complete = false) {
     returning_event_count: Math.max(0, Number(accumulator.returning_event_count) || 0),
     processed_count: Math.max(0, Number(accumulator.processed_count) || 0),
     skipped_count: Math.max(0, Number(accumulator.skipped_count) || 0),
-    top_paths: analyticsSummaryTop(accumulator.paths),
-    top_referrer_hosts: analyticsSummaryTop(accumulator.referrers),
-    countries: analyticsSummaryTop(accumulator.countries),
-    devices: analyticsSummaryTop(accumulator.devices),
-    bot_hints: analyticsSummaryTop(accumulator.bot_hints),
-    event_types: analyticsSummaryTop(accumulator.event_types),
-    utm_sources: analyticsSummaryTop(accumulator.utm_sources),
-    utm_campaigns: analyticsSummaryTop(accumulator.utm_campaigns),
+    top_paths: publicAnalyticsSummaryTop(accumulator.paths),
+    top_referrer_hosts: publicAnalyticsSummaryTop(accumulator.referrers),
+    countries: publicAnalyticsSummaryTop(accumulator.countries),
+    devices: publicAnalyticsSummaryTop(accumulator.devices),
+    bot_hints: publicAnalyticsSummaryTop(accumulator.bot_hints),
+    event_types: publicAnalyticsSummaryTop(accumulator.event_types),
+    utm_sources: publicAnalyticsSummaryTop(accumulator.utm_sources),
+    utm_campaigns: publicAnalyticsSummaryTop(accumulator.utm_campaigns),
     acquisition_landings: analyticsAcquisitionTop(accumulator.acquisition_landings),
     acquisition_schema_version: ANALYTICS_ACQUISITION_SCHEMA_VERSION,
     acquisition_truncated: Boolean(accumulator.acquisition_truncated),
@@ -8610,7 +8691,7 @@ async function handleAccountAdminAnalyticsDaySummary(request, env) {
         && cached.acquisition_schema_version === ANALYTICS_ACQUISITION_SCHEMA_VERSION
         && Array.isArray(cached.acquisition_landings)
       ) {
-        return jsonResponse(request, env, 200, { ...cached, cached: true, job_id: "", has_more: false });
+        return jsonResponse(request, env, 200, { ...publicBrandValue(cached), cached: true, job_id: "", has_more: false });
       }
     }
 
@@ -9512,12 +9593,12 @@ function publicHotReportItem(row) {
   return {
     id,
     source: HOT_REPORT_SOURCE,
-    title: cleanHotReportText(row.title, 320) || "近期热门报告",
-    title_cn: cleanHotReportText(row.title_cn, 320),
-    institution: cleanHotReportText(row.institution, 160),
+    title: publicSourceText(cleanHotReportText(row.title, 320)) || "近期热门报告",
+    title_cn: publicSourceText(cleanHotReportText(row.title_cn, 320)),
+    institution: publicSourceText(cleanHotReportText(row.institution, 160)),
     date: cleanHotReportText(row.date, 10),
-    description: cleanHotReportText(row.description, 1600),
-    filename: safeFilename(row.filename || `${id}.pdf`),
+    description: publicBrandText(cleanHotReportText(row.description, 1600)),
+    filename: safeFilename(publicBrandText(row.filename || `${id}.pdf`)),
     size_bytes: Math.max(0, Number(row.size_bytes || 0) || 0),
     sort_order: Number(row.sort_order || 0) || 0,
     created_at: String(row.created_at || ""),
@@ -10454,8 +10535,8 @@ function publicMarketViewItem(row) {
   return {
     id,
     date,
-    title: cleanHotReportText(row.title, 160) || `Market Views · ${date}`,
-    filename: safePdfFilename(row.filename || `market_views_${dateKey}.pdf`),
+    title: publicSourceText(cleanHotReportText(row.title, 160)) || `Market Views · ${date}`,
+    filename: safePdfFilename(publicBrandText(row.filename || `market_views_${dateKey}.pdf`)),
     size_bytes: Math.max(0, Number(row.size_bytes || 0) || 0),
     updated_at: String(row.updated_at || row.uploaded_at || ""),
   };
@@ -10893,6 +10974,18 @@ function publicHotReportDisplayName(value) {
     : `${PUBLIC_BRAND}用户`;
 }
 
+function hotReportCommentDisplayName(row) {
+  if (row && row.admin_alias) return publicHotReportDisplayName(row.display_name);
+  const email = String(row && row.author_email || "").trim().toLowerCase();
+  const storedRole = String(row && row.author_role || "").trim().toLowerCase();
+  const role = storedRole === "super" || SUPER_ACCOUNT_EMAILS.has(email)
+    ? "super"
+    : storedRole === "operator" || OPERATOR_ACCOUNT_EMAILS.has(email)
+      ? "operator"
+      : "user";
+  return publicAccountDisplayName(row && row.display_name, role);
+}
+
 function publicHotReportComment(row) {
   const id = cleanHotCommentId(row && row.id);
   const reportId = cleanHotReportId(row && row.report_id);
@@ -10900,8 +10993,8 @@ function publicHotReportComment(row) {
   return {
     id,
     report_id: reportId,
-    display_name: publicHotReportDisplayName(row.display_name),
-    body: cleanHotReportText(row.body, 1200),
+    display_name: hotReportCommentDisplayName(row),
+    body: publicBrandText(cleanHotReportText(row.body, 1200)),
     sort_order: Number(row.sort_order || 0) || 0,
     created_at: String(row.created_at || ""),
     updated_at: String(row.updated_at || ""),
@@ -10982,17 +11075,21 @@ async function handleHotReportComments(request, env) {
     const now = new Date().toISOString();
     const isSuper = isSuperAccount(user);
     const alias = isSuper ? cleanHotReportText(payload.author_alias, 48) : "";
+    const authorRole = accountRole(user);
     const id = `comment:${randomHex(8)}`;
     const row = {
       id,
       report_id: reportId,
-      display_name: publicHotReportDisplayName(alias || user.username),
+      display_name: alias
+        ? publicHotReportDisplayName(alias)
+        : publicAccountDisplayName(user.username, authorRole),
       body,
       sort_order: existing.reduce((max, entry) => Math.max(max, entry.item.sort_order), 0) + 100,
       created_at: now,
       updated_at: now,
       author_user_id: String(user.id || ""),
       author_email: normalizeEmail(user.email),
+      author_role: authorRole,
       admin_alias: Boolean(alias),
     };
     await r2PutJson(env, hotReportCommentKey(reportId, id), row);
@@ -11076,10 +11173,10 @@ function analyticsTopSearches(events, limit = 20) {
     .sort((a, b) => b.count - a.count || String(b.last_at).localeCompare(String(a.last_at)))
     .slice(0, limit)
     .map((row) => ({
-      query: row.query,
+      query: publicBrandText(row.query),
       count: row.count,
       visitor_count: row.visitors.size,
-      sources: row.sources,
+      sources: publicAnalyticsCountMap(row.sources),
       avg_result_count: row.count ? Math.round(row.total_result_count / row.count) : 0,
       last_at: row.last_at,
     }));
@@ -11108,7 +11205,12 @@ function analyticsTopReports(events, limit = 16) {
   }
   return [...grouped.values()]
     .sort((a, b) => (b.opens + b.downloads * 2) - (a.opens + a.downloads * 2) || String(b.last_at).localeCompare(String(a.last_at)))
-    .slice(0, limit);
+    .slice(0, limit)
+    .map((row) => ({
+      ...row,
+      title: publicSourceText(row.title),
+      source: publicBrandText(row.source),
+    }));
 }
 
 function analyticsDailySeries(events) {
@@ -11968,6 +12070,30 @@ function dailyPickIntro(item, tags, bodyText = "") {
   return `${sentences.slice(0, 4).join("")}\n${tagText}`.trim();
 }
 
+function publicDailyPick(value) {
+  const row = value && typeof value === "object" ? value : {};
+  const title = publicSourceText(row.title);
+  const titleZh = publicSourceText(row.title_zh);
+  return {
+    id: String(row.id || ""),
+    title,
+    title_zh: titleZh,
+    display_title: publicSourceText(row.display_title, titleZh || title),
+    filename: publicPdfFilename(row.filename || `${row.id || "report"}.pdf`),
+    bank: publicSourceText(row.bank),
+    date_folder: String(row.date_folder || ""),
+    page_count: Math.max(0, Number(row.page_count || 0) || 0),
+    first_page_orientation: String(row.first_page_orientation || ""),
+    first_page_landscape: Boolean(row.first_page_landscape),
+    size_bytes: Math.max(0, Number(row.size_bytes || 0) || 0),
+    score: Number(row.score || 0) || 0,
+    tags: (Array.isArray(row.tags) ? row.tags : [])
+      .map((tag) => publicBrandText(tag))
+      .filter(Boolean),
+    intro: publicBrandText(row.intro),
+  };
+}
+
 function searchTextMapFromIndex(searchIndex) {
   const map = new Map();
   const entries = Array.isArray(searchIndex && searchIndex.items) ? searchIndex.items : [];
@@ -12026,7 +12152,7 @@ function selectDailyPicks(catalog, maxItems = 5, searchIndex = null) {
   return selected.slice(0, maxItems).map(({ item, score, pages, landscape, date }) => {
     const bodyText = searchTextById.get(String(item.id || "")) || "";
     const tags = dailyPickTopicTags(item, bodyText);
-    return {
+    return publicDailyPick({
       id: String(item.id || ""),
       title: reportEnglishTitle(item),
       title_zh: String(item.title_zh || ""),
@@ -12041,7 +12167,7 @@ function selectDailyPicks(catalog, maxItems = 5, searchIndex = null) {
       score,
       tags,
       intro: dailyPickIntro(item, tags, bodyText),
-    };
+    });
   });
 }
 
@@ -12307,9 +12433,9 @@ function accessOptionRowsFromCatalog(catalog) {
   const institutions = new Map();
   const industries = new Map();
   for (const item of items) {
-    const bank = reportBankLabel(item);
+    const bank = publicSourceText(reportBankLabel(item));
     if (bank) institutions.set(bank, (institutions.get(bank) || 0) + 1);
-    const industry = inferReportIndustry(item);
+    const industry = publicBrandText(inferReportIndustry(item));
     if (industry) industries.set(industry, (industries.get(industry) || 0) + 1);
   }
   const optionRows = (map) => [...map.entries()]
@@ -12326,6 +12452,30 @@ function accessOptionRowsFromCatalog(catalog) {
     industries: optionRows(industries),
     page_ranges: ACCESS_PAGE_RANGE_OPTIONS,
     durations: ACCESS_DURATION_OPTIONS,
+  };
+}
+
+function publicAccessOptions(value) {
+  if (!value || typeof value !== "object") return null;
+  const rows = (items, sanitizer) => (Array.isArray(items) ? items : [])
+    .map((option) => {
+      const row = option && typeof option === "object" ? option : { value: option, label: option };
+      const publicValue = sanitizer(row.value);
+      if (!publicValue) return null;
+      return {
+        ...row,
+        value: publicValue,
+        label: publicBrandText(row.label, publicValue),
+      };
+    })
+    .filter(Boolean);
+  return {
+    ...value,
+    modes: rows(value.modes, publicBrandText),
+    institutions: rows(value.institutions, publicSourceText),
+    industries: rows(value.industries, publicBrandText),
+    page_ranges: rows(value.page_ranges, publicBrandText),
+    durations: rows(value.durations, publicBrandText),
   };
 }
 
@@ -12700,8 +12850,8 @@ function publicNewsfeedSettings(settings, user, env) {
     digest_last_sent_date: String(merged.digest_last_sent_date || ""),
     digest_last_sent_at: String(merged.digest_last_sent_at || ""),
     digest_last_attempt_at: String(merged.digest_last_attempt_at || ""),
-    digest_last_send_result: String(merged.digest_last_send_result || ""),
-    digest_last_send_detail: String(merged.digest_last_send_detail || ""),
+    digest_last_send_result: publicBrandText(merged.digest_last_send_result),
+    digest_last_send_detail: publicBrandText(merged.digest_last_send_detail),
     interface_language: interfaceLanguage,
     interface_language_label: newsfeedLanguageLabel(interfaceLanguage),
     preferred_regions: preferredRegions,
@@ -12828,7 +12978,7 @@ function newsfeedItem(input, defaults = {}) {
   const summary = stripNewsfeedHtml(input.summary || input.description || "");
   const category = input.category || inferNewsfeedCategory(`${title} ${summary} ${source}`, defaults.category);
   const id = simpleNewsfeedId(`${title}|${url}|${source}`);
-  return {
+  return publicNewsfeedItem({
     id,
     title,
     url,
@@ -12842,6 +12992,48 @@ function newsfeedItem(input, defaults = {}) {
     category,
     query: input.query || defaults.query || "",
     provider: input.provider || defaults.provider || "",
+  });
+}
+
+function publicNewsfeedUrl(value) {
+  const url = cleanNewsfeedUrl(value);
+  return url && !PUBLIC_SOURCE_BRAND_DETECTOR.test(publicBrandInput(url)) ? url : "";
+}
+
+function publicNewsfeedItem(value) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return null;
+  const url = publicNewsfeedUrl(value.url);
+  if (value.url && !url) return null;
+  const domain = publicSourceText(value.domain || domainFromUrl(url));
+  const source = publicSourceText(value.source || value.source_name || domain, PUBLIC_BRAND);
+  const title = publicBrandText(stripNewsfeedHtml(value.title), PUBLIC_BRAND);
+  if (!title) return null;
+  return {
+    id: String(value.id || simpleNewsfeedId(`${title}|${url}|${source}`)),
+    title,
+    url,
+    source,
+    domain,
+    source_url: publicNewsfeedUrl(value.source_url),
+    logo_url: publicNewsfeedUrl(value.logo_url),
+    image_url: publicNewsfeedUrl(value.image_url),
+    published_at: String(value.published_at || ""),
+    summary: publicBrandText(stripNewsfeedHtml(value.summary || value.description)),
+    category: publicBrandText(value.category || "Investment", "Investment"),
+    query: publicBrandText(value.query),
+    provider: publicBrandText(value.provider),
+  };
+}
+
+function publicNewsfeedItemsPayload(value) {
+  const payload = value && typeof value === "object" && !Array.isArray(value) ? value : {};
+  return {
+    topic_id: publicBrandText(payload.topic_id),
+    items: (Array.isArray(payload.items) ? payload.items : []).map(publicNewsfeedItem).filter(Boolean),
+    updated_at: String(payload.updated_at || ""),
+    updated_label: publicBrandText(payload.updated_label),
+    regions: normalizeNewsfeedRegions(payload.regions),
+    language: normalizeNewsfeedLanguage(payload.language),
   };
 }
 
@@ -12923,7 +13115,7 @@ function parseGoogleNewsRss(xml, query, defaults = {}) {
       query,
       provider: "google-news-rss",
     }, defaults);
-    if (item.title) out.push(item);
+    if (item && item.title) out.push(item);
   }
   return out;
 }
@@ -12948,7 +13140,7 @@ function parseGenericNewsRss(xml, defaults = {}) {
       query: defaults.query || "",
       provider: "public-rss",
     }, defaults);
-    if (item.title) out.push(item);
+    if (item && item.title) out.push(item);
   }
   return out;
 }
@@ -12991,7 +13183,7 @@ async function fetchGdeltNews(query, options = {}) {
     image_url: article.socialimage || "",
     query: cleanQuery,
     provider: "gdelt",
-  }, options)).filter((item) => item.title && item.url);
+  }, options)).filter((item) => item && item.title && item.url);
 }
 
 async function fetchGoogleNews(query, options = {}) {
@@ -13086,15 +13278,15 @@ async function fetchNewsfeedItems(env, spec, options = {}) {
   });
   const fullCached = options.skipCache ? null : await getNewsfeedCache(env, "items", cacheKey);
   if (fullCached && fullCached.payload && newsfeedCacheIsFresh(fullCached)) {
-    return { ...fullCached.payload, cached: true, cache_status: "fresh", cached_at: fullCached.cached_at };
+    return { ...publicNewsfeedItemsPayload(fullCached.payload), cached: true, cache_status: "fresh", cached_at: fullCached.cached_at };
   }
   if (options.allowStale && fullCached && fullCached.payload && newsfeedCacheIsUsable(fullCached, NEWSFEED_CACHE_STALE_MS)) {
-    return { ...fullCached.payload, cached: true, cache_status: "stale", cached_at: fullCached.cached_at };
+    return { ...publicNewsfeedItemsPayload(fullCached.payload), cached: true, cache_status: "stale", cached_at: fullCached.cached_at };
   }
   const cacheScope = options.fast ? "items-fast" : "items";
   const fastCached = options.fast || options.allowStale ? await getNewsfeedCache(env, cacheScope, cacheKey) : null;
   if (fastCached && fastCached.payload && newsfeedCacheIsUsable(fastCached, options.allowStale ? NEWSFEED_CACHE_STALE_MS : NEWSFEED_CACHE_FRESH_MS)) {
-    return { ...fastCached.payload, cached: true, cache_status: options.allowStale && !newsfeedCacheIsFresh(fastCached) ? "stale" : "fresh", cached_at: fastCached.cached_at };
+    return { ...publicNewsfeedItemsPayload(fastCached.payload), cached: true, cache_status: options.allowStale && !newsfeedCacheIsFresh(fastCached) ? "stale" : "fresh", cached_at: fastCached.cached_at };
   }
 
   const tasks = [];
@@ -13143,7 +13335,7 @@ async function fetchNewsfeedItems(env, spec, options = {}) {
   };
   await putNewsfeedCache(env, cacheScope, cacheKey, payload);
   if (!options.fast) await putNewsfeedCache(env, "items", cacheKey, payload);
-  return { ...payload, cached: false, cache_status: "refreshed" };
+  return { ...publicNewsfeedItemsPayload(payload), cached: false, cache_status: "refreshed" };
 }
 
 async function requireNewsfeedUser(request, env) {
@@ -13520,19 +13712,33 @@ function topicCountLabel(topic) {
 }
 
 function publicNewsfeedTopic(topic) {
+  const id = String(topic && topic.id || "").trim();
+  if (!id) return null;
   return {
-    id: topic.id,
-    title: topic.title,
-    description: topic.description || "",
-    kind: topic.kind || "custom",
-    category: topic.category || "Investment",
+    id,
+    title: publicBrandText(topic.title, PUBLIC_BRAND),
+    description: publicBrandText(topic.description),
+    kind: topic.kind === "system" ? "system" : "custom",
+    category: publicBrandText(topic.category, "Investment"),
     pinned: Boolean(topic.pinned),
     output_language: normalizeNewsfeedLanguage(topic.output_language),
     output_language_label: newsfeedLanguageLabel(topic.output_language),
     regions: publicNewsfeedRegions(topic.regions || ["global"]),
-    last_updated_label: topicCountLabel(topic),
-    query_plan: topic.query_plan || null,
+    last_updated_label: publicBrandText(topicCountLabel(topic)),
+    query_plan: publicNewsfeedMetadata(topic.query_plan),
   };
+}
+
+function publicNewsfeedMetadata(value, depth = 0) {
+  if (depth > 5 || value === null || value === undefined) return null;
+  if (typeof value === "string") return publicBrandText(value);
+  if (typeof value === "number" || typeof value === "boolean") return value;
+  if (Array.isArray(value)) return value.slice(0, 32).map((item) => publicNewsfeedMetadata(item, depth + 1));
+  if (typeof value !== "object") return null;
+  return Object.fromEntries(Object.entries(value).slice(0, 48).map(([key, item], index) => [
+    publicBrandText(key, `field_${index + 1}`),
+    publicNewsfeedMetadata(item, depth + 1),
+  ]));
 }
 
 function fallbackNewsfeedTopicPackage(input, outputLanguage = "en") {
@@ -13993,7 +14199,7 @@ function chatLookupPublicCandidate(value, expectedId, score, context, restricted
   if (!id || id !== expectedId) return null;
   let attractionScore = Math.max(1, Math.min(5, Math.floor(Number(raw.attraction_score ?? raw.a) || 2)));
   if (context === "course") {
-    const title = safeCourseItem.name;
+    const title = publicBrandText(safeCourseItem.name);
     if (!title) return null;
     const courseId = safeCourseItem.course_id;
     const course = COURSE_DIRECTORY_COURSES.get(courseId);
@@ -14003,14 +14209,14 @@ function chatLookupPublicCandidate(value, expectedId, score, context, restricted
       kind: "course",
       id,
       title,
-      course_title: chatLookupSafeText(raw.course_title || raw.ct || course && course.title, 200) || "专业课程资料",
-      category: chatLookupSafeText(raw.category || raw.c || course && course.category, 120),
-      file_type: chatLookupSafeText(raw.file_type || raw.ft, 40) || courseDirectoryFileType(extension),
+      course_title: publicBrandText(chatLookupSafeText(raw.course_title || raw.ct || course && course.title, 200), "专业课程资料"),
+      category: publicBrandText(chatLookupSafeText(raw.category || raw.c || course && course.category, 120)),
+      file_type: publicBrandText(chatLookupSafeText(raw.file_type || raw.ft, 40), courseDirectoryFileType(extension)),
       extension,
-      size_label: safeCourseItem.size_label,
+      size_label: publicBrandText(safeCourseItem.size_label),
       date: safeCourseItem.date,
-      folders: Object.freeze(safeCourseItem.folders),
-      entities: Object.freeze(safeCourseItem.entities),
+      folders: Object.freeze(safeCourseItem.folders.map((item) => publicBrandText(item)).filter(Boolean)),
+      entities: Object.freeze(safeCourseItem.entities.map((item) => publicBrandText(item)).filter(Boolean)),
       attraction_score: attractionScore,
       match_score: Math.round(score * 100) / 100,
     };
@@ -14020,15 +14226,15 @@ function chatLookupPublicCandidate(value, expectedId, score, context, restricted
     publicItem.attraction_score = attractionScore;
     return Object.freeze(publicItem);
   }
-  const title = chatLookupSafeText(raw.title || raw.t, 320);
+  const title = publicSourceText(chatLookupSafeText(raw.title || raw.t, 320));
   if (!title) return null;
   const available = chatLookupOptionalBoolean(raw.available ?? raw.av);
   return Object.freeze({
     id,
     title,
-    title_en: chatLookupSafeText(raw.title_en || raw.te, 320),
-    institution: chatLookupSafeText(raw.institution || raw.ins, 160),
-    industry: chatLookupSafeText(raw.industry || raw.ind, 160),
+    title_en: publicSourceText(chatLookupSafeText(raw.title_en || raw.te, 320)),
+    institution: publicSourceText(chatLookupSafeText(raw.institution || raw.ins, 160)),
+    industry: publicBrandText(chatLookupSafeText(raw.industry || raw.ind, 160)),
     date_folder: chatLookupSafeText(raw.date_folder || raw.d, 40),
     page_count: Math.max(0, Math.min(100000, Math.floor(Number(raw.page_count ?? raw.p) || 0))),
     ...(available === undefined ? {} : { available }),
@@ -14887,18 +15093,24 @@ function reportChatSafeStringList(value, limit = 8, itemLimit = 180) {
     .slice(0, limit);
 }
 
+function reportChatPublicStringList(value, limit = 8, itemLimit = 180) {
+  return reportChatSafeStringList(value, limit, itemLimit)
+    .map((item) => publicBrandText(item))
+    .filter(Boolean);
+}
+
 function reportChatSafeSource(value) {
   if (!value || typeof value !== "object" || Array.isArray(value)) return null;
   const id = chatLookupSafeText(value.id, 160);
-  const title = chatLookupSafeText(value.title || value.title_zh || value.title_en, 420);
+  const title = publicSourceText(chatLookupSafeText(value.title || value.title_zh || value.title_en, 420));
   if (!id || !title) return null;
   const source = {
     id,
     title,
-    title_zh: chatLookupSafeText(value.title_zh, 420),
-    title_en: chatLookupSafeText(value.title_en, 420),
-    institution: chatLookupSafeText(value.institution || value.bank_name, 160),
-    industry: chatLookupSafeText(value.industry, 160),
+    title_zh: publicSourceText(chatLookupSafeText(value.title_zh, 420)),
+    title_en: publicSourceText(chatLookupSafeText(value.title_en, 420)),
+    institution: publicSourceText(chatLookupSafeText(value.institution || value.bank_name, 160)),
+    industry: publicBrandText(chatLookupSafeText(value.industry, 160)),
     date_folder: chatLookupSafeText(value.date_folder || value.date, 40),
     attraction_score: Math.max(0, Math.min(5, Math.floor(Number(value.attraction_score) || 0))),
   };
@@ -14920,20 +15132,20 @@ function reportChatSafeChart(value) {
   return {
     image_id: imageId,
     report_id: reportId,
-    report_title: chatLookupSafeText(value.report_title, 420),
+    report_title: publicSourceText(chatLookupSafeText(value.report_title, 420)),
     date_folder: chatLookupSafeText(value.date_folder, 40),
-    title: chatLookupSafeText(value.title || "研究图表", 220),
-    content_kind: chatLookupSafeText(value.content_kind, 40),
+    title: publicBrandText(chatLookupSafeText(value.title || "研究图表", 220), "研究图表"),
+    content_kind: publicBrandText(chatLookupSafeText(value.content_kind, 40)),
     quality_score: Math.max(0, Math.min(100, Math.floor(Number(value.quality_score) || 0))),
-    chart_type: chatLookupSafeText(value.chart_type, 40),
-    description: chatLookupSafeText(value.description, 800),
-    trend_summary: chatLookupSafeText(value.trend_summary, 600),
-    metrics: reportChatSafeStringList(value.metrics, 12, 120),
-    entities: reportChatSafeStringList(value.entities, 12, 120),
-    periods: reportChatSafeStringList(value.periods, 12, 120),
-    geographies: reportChatSafeStringList(value.geographies, 12, 120),
-    units: reportChatSafeStringList(value.units, 12, 80),
-    keywords: reportChatSafeStringList(value.keywords, 12, 120),
+    chart_type: publicBrandText(chatLookupSafeText(value.chart_type, 40)),
+    description: publicBrandText(chatLookupSafeText(value.description, 800)),
+    trend_summary: publicBrandText(chatLookupSafeText(value.trend_summary, 600)),
+    metrics: reportChatPublicStringList(value.metrics, 12, 120),
+    entities: reportChatPublicStringList(value.entities, 12, 120),
+    periods: reportChatPublicStringList(value.periods, 12, 120),
+    geographies: reportChatPublicStringList(value.geographies, 12, 120),
+    units: reportChatPublicStringList(value.units, 12, 80),
+    keywords: reportChatPublicStringList(value.keywords, 12, 120),
   };
 }
 
@@ -14946,37 +15158,69 @@ function reportChatSafePublicResponse(value) {
     .map(reportChatSafeSource).filter(Boolean).slice(0, 8);
   const findings = (Array.isArray(raw.findings) ? raw.findings : []).map((item) => {
     if (!item || typeof item !== "object" || Array.isArray(item)) return null;
-    const title = chatLookupSafeText(item.title, 180);
-    const summary = chatLookupSafeText(item.summary || item.analysis, 3000);
+    const title = publicBrandText(chatLookupSafeText(item.title, 180));
+    const summary = publicBrandText(chatLookupSafeText(item.summary || item.analysis, 3000));
     const sourceIds = reportChatSafeStringList(item.source_ids, 8, 160);
     return title && summary && sourceIds.length ? { title, summary, source_ids: sourceIds } : null;
   }).filter(Boolean).slice(0, 8);
   const dataPoints = (Array.isArray(raw.data_points) ? raw.data_points : []).map((item) => {
     if (!item || typeof item !== "object" || Array.isArray(item)) return null;
-    const label = chatLookupSafeText(item.label || item.metric, 140);
-    const dataValue = chatLookupSafeText(item.value, 140);
+    const label = publicBrandText(chatLookupSafeText(item.label || item.metric, 140));
+    const dataValue = publicBrandText(chatLookupSafeText(item.value, 140));
     const sourceIds = reportChatSafeStringList(item.source_ids, 8, 160);
     return label && dataValue && sourceIds.length ? {
       label,
       value: dataValue,
-      context: chatLookupSafeText(item.context || item.period, 300),
+      context: publicBrandText(chatLookupSafeText(item.context || item.period, 300)),
       source_ids: sourceIds,
     } : null;
   }).filter(Boolean).slice(0, 12);
   return {
     mode: raw.mode === "research" ? "research" : "discovery",
-    research_title: chatLookupSafeText(raw.research_title, 220),
-    research_scope: chatLookupSafeText(raw.research_scope, 1000),
+    research_title: publicBrandText(chatLookupSafeText(raw.research_title, 220)),
+    research_scope: publicBrandText(chatLookupSafeText(raw.research_scope, 1000)),
     generated_at: Number.isFinite(generatedAtMs) ? new Date(generatedAtMs).toISOString() : "",
-    answer: chatLookupSafeText(raw.answer || raw.executive_summary, 3200),
-    executive_summary: chatLookupSafeText(raw.executive_summary, 3200),
+    answer: publicBrandText(chatLookupSafeText(raw.answer || raw.executive_summary, 3200)),
+    executive_summary: publicBrandText(chatLookupSafeText(raw.executive_summary, 3200)),
     summary_source_ids: reportChatSafeStringList(raw.summary_source_ids, 8, 160),
     findings,
     data_points: dataPoints,
     charts: (Array.isArray(raw.charts) ? raw.charts : []).map(reportChatSafeChart).filter(Boolean).slice(0, 6),
     sources,
     recommendations: recommendations.length ? recommendations : sources,
-    follow_up_questions: reportChatSafeStringList(raw.follow_up_questions, 3, 600),
+    follow_up_questions: reportChatPublicStringList(raw.follow_up_questions, 3, 600),
+  };
+}
+
+function reportChatSafeArchiveItem(value) {
+  const raw = value && typeof value === "object" && !Array.isArray(value) ? value : {};
+  const actor = raw.actor && typeof raw.actor === "object" && !Array.isArray(raw.actor) ? raw.actor : null;
+  return {
+    version: Math.max(0, Math.floor(Number(raw.version) || 0)),
+    id: String(raw.id || ""),
+    context: String(raw.context || ""),
+    question: publicBrandText(reportChatQuestion(raw.question)),
+    question_hash: String(raw.question_hash || ""),
+    status: String(raw.status || ""),
+    mode: publicBrandText(chatLookupSafeText(raw.mode, 40)),
+    cache_status: publicBrandText(chatLookupSafeText(raw.cache_status, 40)),
+    actor: actor ? {
+      kind: String(actor.kind || ""),
+      user_id: String(actor.user_id || ""),
+      username: publicAccountDisplayName(actor.username, actor.role),
+      email: publicBrandText(actor.email),
+      role: String(actor.role || ""),
+      device_hash: String(actor.device_hash || ""),
+    } : null,
+    policy: raw.policy || null,
+    usage: raw.usage || null,
+    response: raw.response ? reportChatSafePublicResponse(raw.response) : null,
+    error_code: publicBrandText(chatLookupSafeText(raw.error_code, 80)),
+    error_detail: publicBrandText(chatLookupSafeText(raw.error_detail, 500)),
+    request_hint: publicBrandText(chatLookupSafeText(raw.request_hint, 24)),
+    duration_ms: Math.max(0, Math.floor(Number(raw.duration_ms) || 0)),
+    created_at: String(raw.created_at || ""),
+    updated_at: String(raw.updated_at || ""),
   };
 }
 
@@ -15121,7 +15365,7 @@ function normalizeReportChatPublicIndex(value) {
   const items = (Array.isArray(raw.items) ? raw.items : []).map((item) => {
     if (!item || typeof item !== "object" || Array.isArray(item)) return null;
     const id = String(item.id || "").trim().toLowerCase();
-    const question = reportChatQuestion(item.question);
+    const question = publicBrandText(reportChatQuestion(item.question));
     const questionHash = String(item.question_hash || "").trim().toLowerCase();
     if (!/^[a-f0-9]{32}$/u.test(id) || !question || !/^[a-f0-9]{64}$/u.test(questionHash) || seen.has(id)) return null;
     seen.add(id);
@@ -15168,7 +15412,7 @@ async function updateReportChatPublicIndex(env, mutate) {
 function reportChatPublicIndexEntry(snapshot) {
   return {
     id: String(snapshot && snapshot.id || ""),
-    question: reportChatQuestion(snapshot && snapshot.question),
+    question: publicBrandText(reportChatQuestion(snapshot && snapshot.question)),
     question_hash: String(snapshot && snapshot.question_hash || ""),
     rank: Math.max(0, Math.min(10000, Math.floor(Number(snapshot && snapshot.rank) || 0))),
     published_at: String(snapshot && snapshot.published_at || ""),
@@ -15197,7 +15441,7 @@ async function handleReportChatPopular(request, env, ctx) {
     });
     return privateJsonResponse(request, env, 200, {
       id: snapshot.id,
-      question: reportChatQuestion(snapshot.question),
+      question: publicBrandText(reportChatQuestion(snapshot.question)),
       question_hash: String(snapshot.question_hash || ""),
       ...reportChatPublicSnapshotResponse(snapshot),
       updated_at: String(snapshot.updated_at || ""),
@@ -15250,7 +15494,7 @@ async function handleAccountAdminReportChatHistory(request, env) {
     const items = historyRows
       .filter((item) => item && typeof item === "object" && item.context === "report")
       .map((item) => ({
-        ...item,
+        ...reportChatSafeArchiveItem(item),
         published: publishedIds.has(String(item.id || "")),
         public_id: publishedIds.has(String(item.id || "")) ? String(item.id || "") : "",
       }));
@@ -15321,7 +15565,7 @@ async function handleAccountAdminReportChatCuration(request, env) {
   const snapshot = {
     version: 1,
     id: archiveId,
-    question,
+    question: publicBrandText(question),
     question_hash: questionHash,
     response: reportChatSafePublicResponse(archive.response),
     published: true,
@@ -15899,10 +16143,12 @@ async function handleReportChat(request, env, ctx) {
         ? generated.recommended_ids.map((value) => String(value || "")).filter((id) => allowed.has(id)).slice(0, 6)
         : [];
       const ordered = [...recommendedIds.map((id) => allowed.get(id)), ...candidates.filter((item) => !recommendedIds.includes(item.id))].slice(0, 8);
-      const answer = reportChatQuestion(generated && generated.answer).slice(0, 1800)
-        || fallbackReportChatAnswer(question, ordered, context);
+      const answer = publicBrandText(
+        reportChatQuestion(generated && generated.answer).slice(0, 1800)
+          || fallbackReportChatAnswer(question, ordered, context),
+      );
       const followUps = Array.isArray(generated && generated.follow_up_questions)
-        ? generated.follow_up_questions.map(reportChatQuestion).filter(Boolean).slice(0, 3)
+        ? generated.follow_up_questions.map(reportChatQuestion).map((item) => publicBrandText(item)).filter(Boolean).slice(0, 3)
         : [];
       const usage = await reserveReportChatTurn(env, user);
       rewardWaitUntil(ctx, insertUsageEvent(env, normalizeEmail(user.email), "report_chat", {
@@ -16008,26 +16254,27 @@ async function handleReportChat(request, env, ctx) {
         follow_up_questions: followUps,
       };
     }
+    const publicResponse = reportChatSafePublicResponse(response);
     const archive = await writeReportChatArchive(env, {
       question,
       question_hash: questionHash,
       status: "success",
-      mode: response.mode,
+      mode: publicResponse.mode,
       cache_status: "generated",
       user,
       policy,
       usage,
-      response,
+      response: publicResponse,
       request_hint: requestHint,
       duration_ms: Date.now() - startedAt,
     });
     turnCommitted = true;
     if (user) {
       rewardWaitUntil(ctx, insertUsageEvent(env, normalizeEmail(user.email), "report_chat", {
-        candidate_count: Array.isArray(response.sources) ? response.sources.length : 0,
-        chart_count: Array.isArray(response.charts) ? response.charts.length : 0,
+        candidate_count: Array.isArray(publicResponse.sources) ? publicResponse.sources.length : 0,
+        chart_count: Array.isArray(publicResponse.charts) ? publicResponse.charts.length : 0,
         context,
-        mode: response.mode,
+        mode: publicResponse.mode,
         question_hash: questionHash,
       }));
     }
@@ -16039,10 +16286,10 @@ async function handleReportChat(request, env, ctx) {
       archive_id: archive.id,
       question_hash: questionHash,
       duration_ms: Date.now() - startedAt,
-      result_count: Array.isArray(response.sources) ? response.sources.length : 0,
+      result_count: Array.isArray(publicResponse.sources) ? publicResponse.sources.length : 0,
     });
     return privateJsonResponse(request, env, 200, {
-      ...response,
+      ...publicResponse,
       archive_id: archive.id,
       question_hash: questionHash || String(archive.question_hash || ""),
       usage,
@@ -16149,12 +16396,12 @@ function publicChartGalleryRecord(report, chart) {
   if (!["chart", "table", "data_map", "flow_diagram", "data_visual"].includes(contentKind)) return null;
   if (qualityScore < 60 || qualityScore > 100) return null;
   const reportId = cleanCatalogReportId(report && report.report_id);
-  const title = cleanCourseDirectoryText(chart && chart.title || chart && chart.description || "报告图表", 180);
-  const description = cleanCourseDirectoryText(chart && chart.description, 600);
-  const trend = cleanCourseDirectoryText(chart && chart.trend_summary, 500);
+  const title = publicBrandText(cleanCourseDirectoryText(chart && chart.title || chart && chart.description || "报告图表", 180), "报告图表");
+  const description = publicBrandText(cleanCourseDirectoryText(chart && chart.description, 600));
+  const trend = publicBrandText(cleanCourseDirectoryText(chart && chart.trend_summary, 500));
   if (!title || !(description || trend)) return null;
   const safeList = (value, limit = 12) => (Array.isArray(value) ? value : [])
-    .map((item) => cleanCourseDirectoryText(item, 90))
+    .map((item) => publicBrandText(cleanCourseDirectoryText(item, 90)))
     .filter(Boolean)
     .slice(0, limit);
   return {
@@ -16164,7 +16411,7 @@ function publicChartGalleryRecord(report, chart) {
     title,
     content_kind: contentKind,
     quality_score: qualityScore,
-    chart_type: cleanCourseDirectoryText(chart && chart.chart_type || "chart", 40),
+    chart_type: publicBrandText(cleanCourseDirectoryText(chart && chart.chart_type || "chart", 40), "chart"),
     description,
     trend_summary: trend,
     metrics: safeList(chart && chart.metrics),
@@ -16174,7 +16421,7 @@ function publicChartGalleryRecord(report, chart) {
     units: safeList(chart && chart.units),
     keywords: safeList(chart && chart.keywords),
     report_id: reportId,
-    report_title: cleanCourseDirectoryText(report && report.title || "图表所在报告", 220),
+    report_title: publicSourceText(cleanCourseDirectoryText(report && report.title || "图表所在报告", 220), "图表所在报告"),
     date_folder: String(report && report.date_folder || "").replace(/[^0-9]/gu, "").slice(0, 8),
   };
 }
@@ -16351,7 +16598,7 @@ async function handleNewsfeedHome(request, env) {
         categories: NEWSFEED_CATEGORIES,
         regions: newsfeedRegionOptionsPayload(),
         languages: NEWSFEED_OUTPUT_LANGUAGES.map(({ code, label }) => ({ code, label })),
-        topics: topics.map(publicNewsfeedTopic),
+        topics: topics.map(publicNewsfeedTopic).filter(Boolean),
         suggested_topics: NEWSFEED_SUGGESTED_TOPICS,
         settings: publicNewsfeedSettings({ ...settings, preferred_regions: preferences.regions, interface_language: preferences.language }, user, env),
         ...newsfeedPolicyEnvelope(policy, view.customUsage),
@@ -16375,7 +16622,7 @@ async function handleNewsfeedHome(request, env) {
       categories: NEWSFEED_CATEGORIES,
       regions: newsfeedRegionOptionsPayload(),
       languages: NEWSFEED_OUTPUT_LANGUAGES.map(({ code, label }) => ({ code, label })),
-      topics: topics.map(publicNewsfeedTopic),
+      topics: topics.map(publicNewsfeedTopic).filter(Boolean),
       suggested_topics: NEWSFEED_SUGGESTED_TOPICS,
       settings: publicNewsfeedSettings({ ...settings, preferred_regions: preferences.regions, interface_language: preferences.language }, user, env),
       ...newsfeedPolicyEnvelope(policy, view.customUsage),
@@ -16405,7 +16652,7 @@ async function handleNewsfeedExplore(request, env) {
       updated_at: payload.updated_at,
       updated_label: payload.updated_label,
       cache_status: payload.cache_status,
-      topics: topics.map(publicNewsfeedTopic),
+      topics: topics.map(publicNewsfeedTopic).filter(Boolean),
       ...newsfeedPolicyEnvelope(policy, view.customUsage),
     });
   } catch (error) {
@@ -16428,7 +16675,7 @@ async function handleNewsfeedTopic(request, env) {
     return jsonResponse(request, env, 200, {
       topic: { ...publicNewsfeedTopic(topic), updated_label: payload.updated_label },
       items: payload.items || [],
-      topics: topics.map(publicNewsfeedTopic),
+      topics: topics.map(publicNewsfeedTopic).filter(Boolean),
       cache_status: payload.cache_status,
       ...newsfeedPolicyEnvelope(policy, view.customUsage),
     });
@@ -16501,7 +16748,7 @@ async function handleNewsfeedCreateTopic(request, env, ctx) {
     return jsonResponse(request, env, 201, {
       topic: { ...publicNewsfeedTopic(topic), updated_label: items.updated_label },
       items: items.items || [],
-      topics: topics.map(publicNewsfeedTopic),
+      topics: topics.map(publicNewsfeedTopic).filter(Boolean),
       pending: !fastItems,
       ...newsfeedPolicyEnvelope(policy, customUsage),
     });
@@ -16549,7 +16796,7 @@ async function handleNewsfeedPinTopic(request, env) {
     const topics = await loadNewsfeedTopics(env, user);
     const customUsage = await newsfeedCustomTopicUsage(env, user, policy, topics.filter((item) => item.kind === "custom").length);
     return jsonResponse(request, env, 200, {
-      topics: topics.map(publicNewsfeedTopic),
+      topics: topics.map(publicNewsfeedTopic).filter(Boolean),
       ...newsfeedPolicyEnvelope(policy, customUsage),
     });
   } catch (error) {
@@ -16869,9 +17116,10 @@ async function handleNewsfeedTopicRequest(request, env, ctx) {
 }
 
 function fallbackArticleNarrative(article) {
-  const title = stripNewsfeedHtml(article && article.title || "This story");
-  const source = stripNewsfeedHtml(article && (article.source || article.domain) || "the source");
-  const summary = stripNewsfeedHtml(article && article.summary || "");
+  const publicArticle = publicNewsfeedItem(article) || {};
+  const title = publicArticle.title || PUBLIC_BRAND;
+  const source = publicArticle.source || PUBLIC_BRAND;
+  const summary = publicArticle.summary || "";
   const language = normalizeNewsfeedLanguage(article && article.output_language);
   if (language === "zh-CN") {
     return {
@@ -16916,8 +17164,8 @@ async function generateArticleNarrative(env, article) {
   const fallback = fallbackArticleNarrative(article);
   if (!generated) return fallback;
   return {
-    summary: stripNewsfeedHtml(generated.summary || fallback.summary),
-    narrative: stripNewsfeedHtml(generated.narrative || fallback.narrative),
+    summary: publicBrandText(stripNewsfeedHtml(generated.summary || fallback.summary)),
+    narrative: publicBrandText(stripNewsfeedHtml(generated.narrative || fallback.narrative)),
   };
 }
 
@@ -16942,12 +17190,16 @@ async function handleNewsfeedArticle(request, env) {
     const result = policy.can_generate_narrative
       ? await generateArticleNarrative(env, article)
       : fallbackArticleNarrative(article);
+    const publicResult = {
+      summary: publicBrandText(result.summary),
+      narrative: publicBrandText(result.narrative),
+    };
     const encoder = new TextEncoder();
     const stream = new ReadableStream({
       async start(controller) {
         try {
-          await streamNewsfeedText(controller, encoder, "summary", result.summary);
-          await streamNewsfeedText(controller, encoder, "narrative", result.narrative);
+          await streamNewsfeedText(controller, encoder, "summary", publicResult.summary);
+          await streamNewsfeedText(controller, encoder, "narrative", publicResult.narrative);
           controller.enqueue(encoder.encode(`${JSON.stringify({ type: "done" })}\n`));
         } finally {
           controller.close();
@@ -16979,7 +17231,7 @@ function buildNewsfeedBriefingScript(input = {}) {
   const lines = digest.length
     ? digest
     : items.slice(0, 5).map((item) => `${item.source ? `${item.source}: ` : ""}${item.title || ""}`);
-  const cleaned = lines.map(stripNewsfeedHtml).filter(Boolean).slice(0, 5);
+  const cleaned = lines.map(stripNewsfeedHtml).map((line) => publicBrandText(line)).filter(Boolean).slice(0, 5);
   let text = "";
   if (language === "zh-CN") {
     text = [
@@ -17099,7 +17351,7 @@ async function fetchNewsfeedDigestPayload(env, settings = {}, user = null) {
     regions,
     language,
     newsletter_topic_id: String(settings.newsletter_topic_id || "global-daily"),
-    newsletter_title: specs.length === 1 ? String(specs[0].title || "Daily Digest") : "Global Daily",
+    newsletter_title: publicBrandText(specs.length === 1 ? String(specs[0].title || "Daily Digest") : "Global Daily", "Daily Digest"),
   };
 }
 
@@ -17110,20 +17362,24 @@ function newsfeedEmailSubject(settings, due) {
 }
 
 function newsfeedEmailText(payload) {
+  const newsletterTitle = publicBrandText(payload.newsletter_title, "Daily Digest");
+  const digest = (payload.daily_digest || []).map((line) => publicBrandText(line)).filter(Boolean);
+  const headlines = (payload.headlines || []).map(publicNewsfeedItem).filter(Boolean);
   const lines = [
-    `${PUBLIC_BRAND} · ${String(payload.newsletter_title || "Daily Digest")}`,
+    `${PUBLIC_BRAND} · ${newsletterTitle}`,
     "",
-    ...((payload.daily_digest || []).map((line) => `- ${line}`)),
+    ...(digest.map((line) => `- ${line}`)),
     "",
     "Top headlines:",
-    ...((payload.headlines || []).slice(0, 10).map((item, index) => `${index + 1}. ${item.title} (${item.source || item.domain || "News"})${item.url ? `\n   ${item.url}` : ""}`)),
+    ...(headlines.slice(0, 10).map((item, index) => `${index + 1}. ${item.title} (${item.source || item.domain || "News"})${item.url ? `\n   ${item.url}` : ""}`)),
   ];
   return lines.join("\n");
 }
 
 function newsfeedEmailHtml(payload) {
-  const digest = (payload.daily_digest || []).map((line) => `<li>${escapeNewsfeedHtml(line)}</li>`).join("");
-  const rows = (payload.headlines || []).slice(0, 12).map((item) => `
+  const newsletterTitle = publicBrandText(payload.newsletter_title, "Daily Digest");
+  const digest = (payload.daily_digest || []).map((line) => publicBrandText(line)).filter(Boolean).map((line) => `<li>${escapeNewsfeedHtml(line)}</li>`).join("");
+  const rows = (payload.headlines || []).map(publicNewsfeedItem).filter(Boolean).slice(0, 12).map((item) => `
     <tr>
       <td style="padding:14px 0;border-top:1px solid #e5e7eb;">
         <a href="${escapeNewsfeedHtml(item.url || "https://portal.example.invalid/newsfeed.html")}" style="color:#111827;font-size:17px;font-weight:700;text-decoration:none;">${escapeNewsfeedHtml(item.title)}</a>
@@ -17134,7 +17390,7 @@ function newsfeedEmailHtml(payload) {
   return `
     <div style="margin:0;padding:24px;background:#f6f7fb;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#111827;">
       <div style="max-width:680px;margin:0 auto;background:#ffffff;border-radius:12px;padding:28px;">
-        <h1 style="margin:0 0 18px;font-size:24px;">${PUBLIC_BRAND} · ${escapeNewsfeedHtml(payload.newsletter_title || "Daily Digest")}</h1>
+        <h1 style="margin:0 0 18px;font-size:24px;">${PUBLIC_BRAND} · ${escapeNewsfeedHtml(newsletterTitle)}</h1>
         <ul style="margin:0 0 24px;padding-left:20px;color:#374151;line-height:1.6;">${digest}</ul>
         <h2 style="margin:0 0 10px;font-size:18px;">Top headlines</h2>
         <table role="presentation" width="100%" cellspacing="0" cellpadding="0">${rows}</table>
@@ -19572,7 +19828,46 @@ function wechatArticleLabel(index) {
 }
 
 function cleanWechatTitle(value) {
-  return String(value || "").replace(/\s+/g, " ").trim();
+  return publicBrandText(String(value || "").replace(/\s+/g, " ").trim());
+}
+
+function publicWechatSchedule(value) {
+  const schedule = value && typeof value === "object" ? value : {};
+  return {
+    today_folder: String(schedule.today_folder || ""),
+    date_folder: String(schedule.date_folder || ""),
+    date_iso: String(schedule.date_iso || ""),
+    date_label: publicBrandText(schedule.date_label),
+    is_today: Boolean(schedule.is_today),
+    window: publicBrandText(schedule.window),
+    source_dates: (Array.isArray(schedule.source_dates) ? schedule.source_dates : []).map((entry) => ({
+      source_label: publicBrandText(entry && entry.source_label, PUBLIC_BRAND),
+      date_folder: String(entry && entry.date_folder || ""),
+      date_iso: String(entry && entry.date_iso || ""),
+      is_today: Boolean(entry && entry.is_today),
+    })),
+    total_batches: Math.max(0, Number(schedule.total_batches || 0) || 0),
+    total_articles: Math.max(0, Number(schedule.total_articles || 0) || 0),
+    batches: (Array.isArray(schedule.batches) ? schedule.batches : []).map((batch) => ({
+      source_date_folder: String(batch && batch.source_date_folder || ""),
+      source_date_iso: String(batch && batch.source_date_iso || ""),
+      source_is_today: Boolean(batch && batch.source_is_today),
+      batch_no: Math.max(0, Number(batch && batch.batch_no || 0) || 0),
+      source_label: publicBrandText(batch && batch.source_label),
+      batch_label: publicBrandText(batch && batch.batch_label),
+      article_count: Math.max(0, Number(batch && batch.article_count || 0) || 0),
+      schedule_index: Math.max(0, Number(batch && batch.schedule_index || 0) || 0),
+      total_batches: Math.max(0, Number(batch && batch.total_batches || 0) || 0),
+      scheduled_at_bjt: String(batch && batch.scheduled_at_bjt || ""),
+      scheduled_time: String(batch && batch.scheduled_time || ""),
+      day_label: publicBrandText(batch && batch.day_label),
+      articles: (Array.isArray(batch && batch.articles) ? batch.articles : []).map((article) => ({
+        position: Math.max(0, Number(article && article.position || 0) || 0),
+        label: publicBrandText(article && article.label),
+        title: cleanWechatTitle(article && article.title),
+      })),
+    })),
+  };
 }
 
 function wechatArticlesFromTitles(titles) {
@@ -20922,11 +21217,11 @@ function upgradedLegacyAdminPicksData(data) {
         bank_name: pick && (pick.bank_name || pick.bank) || "",
       };
       const tags = dailyPickTopicTags(item, "");
-      return {
+      return publicDailyPick({
         ...pick,
         tags,
         intro: dailyPickIntro(item, tags, ""),
-      };
+      });
     }),
   };
 }
@@ -21173,8 +21468,13 @@ async function handleAccountAdminSummary(request, env, ctx = null) {
     const usersData = usersModule.data && typeof usersModule.data === "object" ? usersModule.data : { users: [] };
     const allFiles = Array.isArray(filesData.files) ? filesData.files : [];
     const files = adminFilesForUser(allFiles, adminUser);
-    const dailyPicks = Array.isArray(picksData.daily_picks) ? picksData.daily_picks : [];
-    const userRows = Array.isArray(usersData.users) ? usersData.users : [];
+    const dailyPicks = (Array.isArray(picksData.daily_picks) ? picksData.daily_picks : [])
+      .map(publicDailyPick);
+    const userRows = (Array.isArray(usersData.users) ? usersData.users : []).map((row) => ({
+      ...publicBrandValue(row),
+      username: publicAccountDisplayName(row && row.username, row && row.role),
+      email: publicAccountEmail(row && row.email),
+    }));
     return jsonResponse(request, env, 200, {
       user: publicUser(adminUser),
       dashboard_title: isSuper ? "管理后台" : "运营后台",
@@ -21182,11 +21482,11 @@ async function handleAccountAdminSummary(request, env, ctx = null) {
       can_view_wechat: isSuper,
       can_view_analytics: isSuper,
       users: isSuper ? userRows : [],
-      access_options: isSuper ? picksData.access_options || null : null,
+      access_options: isSuper ? publicAccessOptions(picksData.access_options) : null,
       files,
       daily_picks: dailyPicks,
-      wechat_schedule: isSuper ? wechatModule.data || emptyWechatSchedule : null,
-      analytics: isSuper ? analyticsModule.data || null : null,
+      wechat_schedule: isSuper ? publicWechatSchedule(wechatModule.data || emptyWechatSchedule) : null,
+      analytics: isSuper ? publicBrandValue(analyticsModule.data || null) : null,
       analytics_error: "",
       module_status: {
         files: forceRefresh ? { ...filesModule.status, state: "updating" } : filesModule.status,
@@ -21249,7 +21549,7 @@ async function handleAccountAdminUserAccessRead(request, env) {
       ok: true,
       verified: true,
       user: adminVisibleUser(user, entitlement, access),
-      access,
+      access: publicAccessGrant(access),
       access_options: accessOptionRowsFromCatalog(catalog),
     });
   } catch (error) {
@@ -22158,7 +22458,7 @@ function cachedGithubResponse(request, env, object, path, options = {}) {
   const headers = {
     ...corsHeaders(request, env),
     "Content-Type": object.httpMetadata && object.httpMetadata.contentType || contentTypeForGithubPath(path),
-    "Content-Disposition": contentDisposition(path.split("/").pop() || "download"),
+    "Content-Disposition": contentDisposition(publicDownloadFilename(path.split("/").pop() || "download")),
     "Content-Length": String(range ? range.length : (object.size || "")),
     "Accept-Ranges": "bytes",
     "Cache-Control": "no-store, private",
@@ -22214,7 +22514,7 @@ async function fetchGithubRawFile(env, path, request, repo = githubRepo(env), ct
     ctx.waitUntil(env.REPORT_BUCKET.put(cacheKey, cacheBody, {
       httpMetadata: {
         contentType,
-        contentDisposition: contentDisposition(path.split("/").pop() || "download"),
+        contentDisposition: contentDisposition(publicDownloadFilename(path.split("/").pop() || "download")),
       },
       customMetadata: {
         repo,
@@ -22262,7 +22562,7 @@ async function handleAccountAdminGithubFile(request, env, ctx = null) {
   const headers = {
     ...corsHeaders(request, env),
     "Content-Type": upstream.headers.get("Content-Type") || contentTypeForGithubPath(path),
-    "Content-Disposition": contentDisposition(path.split("/").pop() || "download"),
+    "Content-Disposition": contentDisposition(publicDownloadFilename(path.split("/").pop() || "download")),
     "Cache-Control": "no-store, private",
     "X-Content-Type-Options": "nosniff",
   };
@@ -22329,7 +22629,7 @@ async function handleAccountAdminGithubArtifact(request, env, ctx = null) {
     const cachePromise = env.REPORT_BUCKET.put(cacheKey, cacheBody, {
       httpMetadata: {
         contentType: "application/zip",
-        contentDisposition: contentDisposition(artifactName),
+        contentDisposition: contentDisposition(publicDownloadFilename(artifactName)),
       },
       customMetadata: {
         artifact_id: id,
@@ -22343,7 +22643,7 @@ async function handleAccountAdminGithubArtifact(request, env, ctx = null) {
   const headers = {
     ...corsHeaders(request, env),
     "Content-Type": "application/zip",
-    "Content-Disposition": contentDisposition(artifactName),
+    "Content-Disposition": contentDisposition(publicDownloadFilename(artifactName)),
     "Cache-Control": "no-store, private",
     "X-Content-Type-Options": "nosniff",
     "Accept-Ranges": "bytes",
@@ -23855,7 +24155,10 @@ async function handleReportAPdf(request, env) {
 export default {
   __analyticsTest: Object.freeze({
     addAnalyticsDaySummaryEvent,
+    analyticsTopReports,
+    analyticsTopSearches,
     emptyAnalyticsDayAccumulator,
+    publicAnalyticsEvent,
     publicAnalyticsDaySummary,
   }),
   __adminPdfIntakeTest: Object.freeze({
@@ -23868,6 +24171,33 @@ export default {
     createContactReportTargetToken,
     inspectContactReportTargetToken,
     recoverHiborContactReportTarget,
+  }),
+  __publicBrandTest: Object.freeze({
+    buildNewsfeedBriefingScript,
+    chatLookupPublicCandidate,
+    cleanCourseDirectoryItem,
+    fallbackArticleNarrative,
+    hotReportCommentDisplayName,
+    normalizeReportChatPublicIndex,
+    publicAccessGrant,
+    publicAccessOptions,
+    publicBrandDocumentText,
+    publicBrandValue,
+    publicChartGalleryRecord,
+    publicDailyPick,
+    publicDownloadFilename,
+    publicHotReportComment,
+    publicHotReportItem,
+    publicMarketViewItem,
+    publicNewsfeedItem,
+    publicNewsfeedItemsPayload,
+    publicNewsfeedSettings,
+    publicNewsfeedTopic,
+    publicWechatSchedule,
+    newsfeedEmailHtml,
+    newsfeedEmailText,
+    reportChatSafeArchiveItem,
+    reportChatSafePublicResponse,
   }),
   async fetch(request, env, ctx) {
     const url = new URL(request.url);

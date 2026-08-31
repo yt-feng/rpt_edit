@@ -155,6 +155,11 @@ test("inline report preview paints before the application bundle and preserves u
   assert.equal(sanitized.detail.children[0].children[0].textContent, "Clean Report");
   assert.equal(sanitized.detail.children[1].children[0].children[1].textContent, "正在确认");
   assert.equal(sanitized.document.title, "Clean Report | KC桌面");
+
+  const legacyCourse = String.fromCharCode(0x9ea6, 0x5e9c, 0x8bfe, 0x5802);
+  const oldCourseLink = paint(`?id=old-course&title=${encodeURIComponent(`${legacyCourse} / maifu：Clean Course Report`)}`);
+  assert.equal(oldCourseLink.detail.children[0].children[0].textContent, "Clean Course Report");
+  assert.equal(oldCourseLink.document.title, "Clean Course Report | KC桌面");
 });
 
 test("a report detail shard hit renders before PDF overrides and skips the full catalog", async () => {
