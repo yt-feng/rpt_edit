@@ -699,6 +699,9 @@ jobs:
             --output "$public_brand_root/assets/app.js" "$origin/assets/app.js"
           curl --fail --silent --show-error --max-redirs 0 \
             --connect-timeout 5 --max-time 30 --header 'Cache-Control: no-cache' \
+            --output "$public_brand_root/assets/app-mark.svg" "$origin/assets/app-mark.svg"
+          curl --fail --silent --show-error --max-redirs 0 \
+            --connect-timeout 5 --max-time 30 --header 'Cache-Control: no-cache' \
             --output "$public_brand_root/doc.html" "$origin/doc.html"
           curl --fail --silent --show-error --max-redirs 0 \
             --connect-timeout 5 --max-time 30 --header 'Cache-Control: no-cache' \
@@ -789,6 +792,9 @@ jobs:
           curl --fail --silent --show-error --max-redirs 0 \
             --connect-timeout 5 --max-time 30 --header 'Cache-Control: no-cache' \
             --output "$rollback_brand_root/assets/app.js" "$origin/assets/app.js"
+          curl --fail --silent --show-error --max-redirs 0 \
+            --connect-timeout 5 --max-time 30 --header 'Cache-Control: no-cache' \
+            --output "$rollback_brand_root/assets/app-mark.svg" "$origin/assets/app-mark.svg"
           curl --fail --silent --show-error --max-redirs 0 \
             --connect-timeout 5 --max-time 30 --header 'Cache-Control: no-cache' \
             --output "$rollback_brand_root/doc.html" "$origin/doc.html"
