@@ -2,7 +2,7 @@
 
 Last updated: 2026-08-31
 
-## Why Neutral remains paused
+## Why Neutral uses a staged enablement gate
 
 Neutral is the release path that prepares a complete inactive static slot and
 then changes the Edge Worker to serve that slot. It is useful because catalog,
@@ -17,8 +17,12 @@ failed verification and the Edge Worker rolled back, the shared runtime
 objects did not roll back with it. The result could be an old page tree paired
 with a new API catalog, search index, or password-rule set.
 
-This incomplete rollback boundary is why Neutral is deliberately hard-paused.
-It must not be re-enabled merely because one source-inspection run is green.
+That incomplete rollback boundary was why Neutral was hard-paused. The release
+path now separates preparation from cutover, validates the candidate through
+the live Edge and Portal runtime, and restores the exact prior Worker version
+and release state after a failed acceptance or a rehearsal. Automatic events
+remain behind the repository variable `NEUTRAL_SCHEDULE_ENABLED`; a workflow
+change alone cannot start a scheduled production cutover.
 
 ## Versioned storage contract
 
@@ -88,29 +92,40 @@ legacy data can masquerade as a previously cached release. If the Edge Worker
 rolls back, `/.well-known/edge-state` returns the previous release and all three
 caches select the previous immutable snapshot.
 
-## Migration sequence before Neutral can be enabled
+## Scheduled publication contract
 
-1. Keep `neutral-edge-cutover.yml` limited to `inspect-source`.
-2. Deploy and verify the Portal Worker runtime-selection code independently.
-   With an older active release that has no versioned snapshot, it reads the
-   active HTTPS static JSON and does not modify the shared namespace. The
-   manual Portal Worker workflow captures the exact currently active Worker
-   version before deployment, verifies the live API afterward, and restores
-   and re-verifies that exact version if deployment or smoke verification
-   fails.
-3. Run local and source-inspection tests, including the runtime versioning,
-   publisher interruption, legacy fallback, release switch, and rollback cases.
-4. In a controlled future release, let the publisher prepare the inactive
-   static slot and its matching immutable runtime snapshot.
-5. Verify both manifests and their matching release ID before any Edge deploy.
-6. Switch the Edge Worker, then verify state, fixed no-query routes, API health,
-   catalog/search behavior, and release-specific assets.
-7. Exercise an automated rollback rehearsal: restore the previous Edge Worker
-   version and verify that the Portal Worker resolves the previous runtime
-   release as well.
-8. Only after the rehearsal is green may a separate change restore Neutral
-   deployment operations. Scheduled publication must remain absent until that
-   change is reviewed and accepted.
+The original cron is `30 1,5,9,13 * * *`, which is 09:30, 13:30, 17:30,
+and 21:30 in Beijing. Successful default-branch completions from the approved
+report, Blog, WeChat-source, and chart-index producers can also request a
+refresh. Both event classes require `NEUTRAL_SCHEDULE_ENABLED=true`. Manual
+`rehearse` and `migrate` remain available while the automatic gate is closed.
+
+Every automatic request builds a candidate but does not automatically imply a
+cutover. The candidate publishes `data/release-semantics.json`, a deterministic
+manifest covering the stable catalog, full-text search, chart search, password
+rules, runtime config, Blog archive, materialized site source, build/Edge
+contract, public file paths, and canonical URL set. Volatile scan timestamps and
+sitemap `lastmod` alone do not change the semantic digest. An unchanged digest
+ends successfully before inactive-slot upload or Edge deployment.
+
+The first reviewed manual `migrate` seeds this manifest on an older active
+release that does not have one. After that seed, a missing or invalid active
+manifest stops automatic publication. A manual rehearsal always prepares a
+candidate and restores the exact prior release; an existing-manifest manual
+migrate uses the same no-op comparison as automation.
+
+Before setting the automatic gate to true:
+
+1. deploy and verify the version-aware Portal Worker independently;
+2. run the Neutral B-to-A rollback rehearsal and verify exact Worker version,
+   Edge state, catalog, canonical route matrix, and Portal runtime release;
+3. merge the scheduled/no-op contract while the repository variable is still
+   absent or false;
+4. run one manual `migrate`, verify the accepted release and immutable runtime
+   through CLI HTTP checks, then set `NEUTRAL_SCHEDULE_ENABLED=true`;
+5. keep route mutation, cache purge, IndexNow submission, source commits,
+   PDF cleanup, shared Report Chat/Research manifests, and legacy pruning out
+   of the Neutral transaction.
 
 ## Acceptance checks
 
@@ -126,9 +141,14 @@ caches select the previous immutable snapshot.
   reading the partial target.
 - Switching A to B changes catalog/search/password cache identity to B.
 - Rolling B back to A restores A without copying or overwriting runtime JSON.
+- An unchanged release semantic digest performs no inactive-slot upload and no
+  Edge deployment; search, chart, Blog, template, asset, canonical-path, or Edge
+  contract changes each produce a changed component digest.
+- Existing content-addressed report PDFs with the expected size are reused by
+  HEAD verification, so a no-op refresh does not repeat their R2 upload.
 - State failure never returns last-known A or B. It uses same-origin HTTPS;
   HTTPS failure does not fall through to shared data.
 - A true old deployment with no state URL can still read the shared prefix, but
   no publisher writes that prefix.
-- Neutral remains hard-paused while these contracts are only local/source-level
-  evidence; no code change in this document authorizes a production release.
+- Scheduled events remain inert unless the reviewed repository variable is
+  explicitly enabled after the manual migration and live acceptance sequence.

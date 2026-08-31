@@ -345,7 +345,7 @@ class EdgeRouteCutoverTests(unittest.TestCase):
         self.assertNotIn("edge_route_cutover.py migrate", workflow)
         self.assertNotIn("edge_route_cutover.py rollback", workflow)
 
-    def test_static_refresh_trigger_opens_only_manual_rehearsal(self) -> None:
+    def test_static_refresh_trigger_restores_gated_schedule_and_manual_migrate(self) -> None:
         workflow = (
             Path(__file__).resolve().parent.parent
             / ".github"
@@ -353,14 +353,18 @@ class EdgeRouteCutoverTests(unittest.TestCase):
             / "neutral-edge-cutover.yml"
         ).read_text(encoding="utf-8")
         trigger = workflow[: workflow.index("\npermissions:\n")]
-        self.assertNotIn("schedule:", trigger)
-        self.assertNotRegex(trigger, r"(?m)^\s+- migrate\s*$")
+        self.assertIn("schedule:", trigger)
+        self.assertIn('cron: "30 1,5,9,13 * * *"', trigger)
+        self.assertIn("workflow_run:", trigger)
+        self.assertRegex(trigger, r"(?m)^\s+- migrate\s*$")
         self.assertRegex(trigger, r"(?m)^\s+- rehearse\s*$")
         self.assertNotRegex(trigger, r"(?m)^\s+- switch\s*$")
         self.assertNotRegex(trigger, r"(?m)^\s+- rollback\s*$")
         self.assertNotRegex(trigger, r"(?m)^\s+- inspect-source\s*$")
         self.assertIn("Require reviewed main operation", workflow)
-        self.assertIn('test "${{ inputs.operation }}" = "rehearse"', workflow)
+        self.assertIn("vars.NEUTRAL_SCHEDULE_ENABLED == 'true'", workflow)
+        self.assertIn('rehearse|migrate) operation="$REQUESTED_OPERATION"', workflow)
+        self.assertIn("--write-current-manifest _neutral_site/data/release-semantics.json", workflow)
         self.assertIn("permissions:\n  contents: read", workflow)
         self.assertIn("persist-credentials: false", workflow)
 

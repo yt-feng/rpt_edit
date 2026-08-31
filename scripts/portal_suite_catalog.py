@@ -268,6 +268,30 @@ def upload_pdf_to_r2(client: Any, bucket: str, key: str, local_path: Path) -> No
         )
 
 
+def existing_r2_object_size(client: Any, bucket: str, key: str) -> int | None:
+    """Return an existing object's size, or None only for a confirmed miss."""
+    try:
+        response = client.head_object(Bucket=bucket, Key=key)
+    except Exception as exc:
+        details = getattr(exc, "response", {})
+        error = details.get("Error", {}) if isinstance(details, dict) else {}
+        metadata = details.get("ResponseMetadata", {}) if isinstance(details, dict) else {}
+        code = str(error.get("Code") or "") if isinstance(error, dict) else ""
+        status = metadata.get("HTTPStatusCode") if isinstance(metadata, dict) else None
+        if code in {"404", "NoSuchKey", "NotFound"} or status == 404:
+            return None
+        raise
+    if not isinstance(response, dict):
+        raise RuntimeError(f"Invalid R2 HEAD response for {key}")
+    try:
+        size = int(response["ContentLength"])
+    except (KeyError, TypeError, ValueError) as exc:
+        raise RuntimeError(f"R2 HEAD response has no valid ContentLength for {key}") from exc
+    if size < 0:
+        raise RuntimeError(f"R2 HEAD response has a negative ContentLength for {key}")
+    return size
+
+
 def inspect_pdf_metadata(local_path: Path) -> dict[str, Any]:
     if PdfReader is None:
         return {}
@@ -687,11 +711,30 @@ def sync_current_reports_to_r2(
                 continue
 
             key = catalog_r2_delete_key(item, r2_prefix)
+            if not force_upload:
+                remote_size = existing_r2_object_size(client, bucket, key)
+                expected_size = item_size_bytes(item)
+                if remote_size is not None and expected_size > 0 and remote_size == expected_size:
+                    log(f"Reusing content-addressed R2 PDF: {report_id} -> {key}")
+                    item["r2_key"] = key
+                    item["r2_synced"] = True
+                    item["available"] = True
+                    item.pop("pdf_object_deleted", None)
+                    item.pop("pdf_delete_pending", None)
+                    if not item_has_pdf_metadata(item):
+                        local_path = tmp_root / f"{report_id}.pdf"
+                        download_dropbox_file(token, dropbox_path, local_path)
+                        metadata = inspect_pdf_metadata(local_path)
+                        if metadata:
+                            item.update(metadata)
+                            inspected += 1
+                    continue
             local_path = tmp_root / f"{report_id}.pdf"
             log(f"Mirroring to R2: {report_id} -> {key}")
             download_dropbox_file(token, dropbox_path, local_path)
             item.update(inspect_pdf_metadata(local_path))
             upload_pdf_to_r2(client, bucket, key, local_path)
+            item["r2_key"] = key
             item["r2_synced"] = True
             item["available"] = True
             item.pop("pdf_object_deleted", None)

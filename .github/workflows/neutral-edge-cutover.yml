@@ -1,15 +1,29 @@
 name: Neutral edge catalog refresh
-run-name: Neutral edge catalog rollback rehearsal
+run-name: Neutral edge catalog ${{ github.event_name == 'workflow_dispatch' && inputs.operation || 'migrate' }}
 
 on:
+  schedule:
+    - cron: "30 1,5,9,13 * * *"
+  workflow_run:
+    workflows:
+      - Bank report catalog
+      - Final PDF to XHS notes
+      - Institution latest PDF to WeChat
+      - Consulting latest PDF to WeChat
+      - ARK Invest feed to WeChat
+      - Upload XHS notes to WeChat drafts
+      - Portal chart search index
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
     inputs:
       operation:
-        description: "Build B, verify it live, then restore the exact A release"
+        description: "Rehearse restores A; migrate keeps the accepted B release"
         required: true
         type: choice
         options:
           - rehearse
+          - migrate
         default: rehearse
 
 permissions:
@@ -21,6 +35,22 @@ concurrency:
 
 jobs:
   prepare_release:
+    if: >-
+      ${{
+        github.event_name == 'workflow_dispatch' ||
+        (
+          vars.NEUTRAL_SCHEDULE_ENABLED == 'true' &&
+          (
+            github.event_name == 'schedule' ||
+            (
+              github.event_name == 'workflow_run' &&
+              github.event.workflow_run.conclusion == 'success' &&
+              github.event.workflow_run.head_branch == github.event.repository.default_branch &&
+              github.event.workflow_run.head_repository.full_name == github.repository
+            )
+          )
+        )
+      }}
     runs-on: ubuntu-22.04
     timeout-minutes: 150
     outputs:
@@ -32,12 +62,32 @@ jobs:
       previous_slot: ${{ steps.previous_state.outputs.previous_slot }}
       previous_release: ${{ steps.previous_state.outputs.previous_release }}
       previous_tree: ${{ steps.previous_state.outputs.previous_tree }}
+      operation: ${{ steps.operation.outputs.operation }}
     steps:
       - name: Require reviewed main operation
+        id: operation
+        env:
+          REQUESTED_OPERATION: ${{ inputs.operation }}
         run: |
           set -euo pipefail
           test "$GITHUB_REF" = "refs/heads/main"
-          test "${{ inputs.operation }}" = "rehearse"
+          case "$GITHUB_EVENT_NAME" in
+            workflow_dispatch)
+              case "$REQUESTED_OPERATION" in
+                rehearse|migrate) operation="$REQUESTED_OPERATION" ;;
+                *) echo "::error::Unsupported manual Neutral operation"; exit 2 ;;
+              esac
+              ;;
+            schedule|workflow_run)
+              operation="migrate"
+              ;;
+            *)
+              echo "::error::Unsupported Neutral trigger: $GITHUB_EVENT_NAME"
+              exit 2
+              ;;
+          esac
+          printf 'NEUTRAL_OPERATION=%s\n' "$operation" >> "$GITHUB_ENV"
+          printf 'operation=%s\n' "$operation" >> "$GITHUB_OUTPUT"
 
       - name: Checkout public source
         uses: actions/checkout@v4
@@ -180,8 +230,38 @@ jobs:
               handle.write(f"previous_tree={state['tree_sha256']}\n")
           with Path(os.environ["GITHUB_ENV"]).open("a", encoding="utf-8") as handle:
               handle.write(f"ACTIVE_STATIC_SLOT={state['slot']}\n")
+              handle.write(f"PREVIOUS_STATIC_RELEASE={state['release_id']}\n")
           print(f"previous_slot={state['slot']} previous_catalog_items={len(items)}")
           PY
+
+      - name: Capture active release semantics
+        run: |
+          set -euo pipefail
+          output="$RUNNER_TEMP/previous-release-semantics.json"
+          status="$(curl --silent --show-error --max-redirs 0 \
+            --connect-timeout 5 --max-time 30 --header 'Cache-Control: no-cache' \
+            --output "$output" --write-out '%{http_code}' \
+            "$LIVE_ORIGIN/.well-known/edge-release/$PREVIOUS_STATIC_RELEASE/data/release-semantics.json")"
+          case "$status" in
+            200)
+              PYTHONPATH=scripts PREVIOUS_MANIFEST="$output" python3 - <<'PY'
+          import os
+          from pathlib import Path
+          from compare_portal_release_semantics import load_manifest
+
+          manifest = load_manifest(Path(os.environ["PREVIOUS_MANIFEST"]))
+          print(f"previous_semantic_sha256={manifest['semantic_sha256']}")
+          PY
+              ;;
+            404)
+              rm -f "$output"
+              echo "Active release has no semantic manifest; a reviewed manual seed is required"
+              ;;
+            *)
+              echo "::error::Could not read active release semantics: HTTP $status"
+              exit 1
+              ;;
+          esac
 
       - name: Install refresh dependencies
         run: >-
@@ -300,12 +380,35 @@ jobs:
         id: release_delta
         run: |
           set -euo pipefail
+          previous_args=()
+          force_args=()
+          if [ -s "$RUNNER_TEMP/previous-release-semantics.json" ]; then
+            previous_args+=(--previous-manifest "$RUNNER_TEMP/previous-release-semantics.json")
+          fi
+          if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ] \
+            && { [ "$NEUTRAL_OPERATION" = "rehearse" ] \
+              || [ ! -s "$RUNNER_TEMP/previous-release-semantics.json" ]; }
+          then
+            force_args+=(--force)
+          fi
           python3 -B scripts/compare_portal_release_semantics.py \
-            --previous-catalog "$RUNNER_TEMP/previous-public-catalog.json" \
             --current-catalog _neutral_site/data/catalog.json \
-            --previous-sitemap "$RUNNER_TEMP/previous-public-sitemap.xml" \
             --current-sitemap _neutral_site/sitemap-baidu.xml \
-            --github-output "$GITHUB_OUTPUT" --force
+            --current-search-index _neutral_site/data/search_index.json \
+            --current-chart-search-index _neutral_site/data/chart_search_index.json \
+            --current-password-rules _neutral_site/data/password_rules.json \
+            --current-runtime-config _neutral_site/data/config.json \
+            --blog-archive-root portal_suite/data/blog_archive \
+            --site-source-root portal_suite/site_src \
+            --build-contract scripts/compare_portal_release_semantics.py \
+            --build-contract scripts/build_portal_suite_site.py \
+            --build-contract scripts/merge_chart_search_index.py \
+            --build-contract workers/edge-static-host/src/index.js \
+            --public-root _neutral_site \
+            --write-current-manifest _neutral_site/data/release-semantics.json \
+            --github-output "$GITHUB_OUTPUT" \
+            "${previous_args[@]}" "${force_args[@]}"
+          test -s _neutral_site/data/release-semantics.json
 
       - name: Upload inactive static slot and immutable runtime
         id: static_upload
@@ -332,6 +435,7 @@ jobs:
           install -m 0600 _neutral_site/data/catalog.json _release_validation/candidate/catalog.json
           install -m 0600 _neutral_site/data/catalog_preview.json _release_validation/candidate/catalog_preview.json
           install -m 0600 _neutral_site/sitemap-baidu.xml _release_validation/candidate/sitemap.xml
+          install -m 0600 _neutral_site/data/release-semantics.json _release_validation/candidate/release-semantics.json
 
       - name: Upload release validation artifact
         if: steps.release_delta.outputs.changed == 'true'
@@ -355,6 +459,7 @@ jobs:
       PREVIOUS_STATIC_SLOT: ${{ needs.prepare_release.outputs.previous_slot }}
       PREVIOUS_STATIC_RELEASE: ${{ needs.prepare_release.outputs.previous_release }}
       PREVIOUS_STATIC_TREE: ${{ needs.prepare_release.outputs.previous_tree }}
+      NEUTRAL_OPERATION: ${{ needs.prepare_release.outputs.operation }}
     steps:
       - name: Checkout audited cutover source
         uses: actions/checkout@v4
@@ -564,9 +669,19 @@ jobs:
             --connect-timeout 5 --max-time 60 \
             --output "$RUNNER_TEMP/public-sitemap-after.xml" \
             "$origin/sitemap-baidu.xml"
+          curl --fail --silent --show-error --max-redirs 0 \
+            --connect-timeout 5 --max-time 30 \
+            --output "$RUNNER_TEMP/release-semantics-after.json" \
+            "$origin/.well-known/edge-release/$STATIC_RELEASE/data/release-semantics.json"
+          curl --fail --silent --show-error --max-redirs 0 \
+            --connect-timeout 5 --max-time 30 \
+            --output "$RUNNER_TEMP/public-semantics-after.json" \
+            "$origin/data/release-semantics.json"
           cmp _release_validation/candidate/catalog.json "$RUNNER_TEMP/release-catalog.json"
           cmp _release_validation/candidate/catalog.json "$RUNNER_TEMP/public-catalog-after.json"
           cmp _release_validation/candidate/sitemap.xml "$RUNNER_TEMP/public-sitemap-after.xml"
+          cmp _release_validation/candidate/release-semantics.json "$RUNNER_TEMP/release-semantics-after.json"
+          cmp _release_validation/candidate/release-semantics.json "$RUNNER_TEMP/public-semantics-after.json"
           curl --fail --silent --show-error --max-redirs 0 \
             --connect-timeout 5 --max-time 30 \
             --output "$RUNNER_TEMP/runtime-health-after.json" \
@@ -599,7 +714,7 @@ jobs:
         if: >-
           ${{ always() &&
               steps.edge_deploy.outcome != 'skipped' &&
-              (steps.release_acceptance.outcome != 'success' || inputs.operation == 'rehearse') }}
+              (steps.release_acceptance.outcome != 'success' || needs.prepare_release.outputs.operation == 'rehearse') }}
         timeout-minutes: 5
         uses: cloudflare/wrangler-action@v4
         with:
@@ -675,7 +790,7 @@ jobs:
           set -euo pipefail
           test "${{ steps.edge_deploy.outcome }}" = "success"
           test "${{ steps.release_acceptance.outcome }}" = "success"
-          if [ "${{ inputs.operation }}" = "rehearse" ]; then
+          if [ "$NEUTRAL_OPERATION" = "rehearse" ]; then
             test "${{ steps.edge_rollback.outcome }}" = "success"
             test "${{ steps.rollback_acceptance.outcome }}" = "success"
           else

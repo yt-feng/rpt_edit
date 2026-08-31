@@ -14,15 +14,34 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.workflow = WORKFLOW.read_text(encoding="utf-8")
 
-    def test_first_phase_is_manual_rehearsal_without_cron(self) -> None:
+    def test_schedule_and_content_triggers_are_gated_and_reviewed(self) -> None:
         trigger = self.workflow[: self.workflow.index("\npermissions:\n")]
-        self.assertNotIn("schedule:", trigger)
-        self.assertNotIn("workflow_run:", trigger)
+        self.assertIn('cron: "30 1,5,9,13 * * *"', trigger)
+        self.assertIn("workflow_run:", trigger)
+        for producer in (
+            "Bank report catalog",
+            "Final PDF to XHS notes",
+            "Institution latest PDF to WeChat",
+            "Consulting latest PDF to WeChat",
+            "ARK Invest feed to WeChat",
+            "Upload XHS notes to WeChat drafts",
+            "Portal chart search index",
+        ):
+            self.assertIn(f"- {producer}", trigger)
+        self.assertNotIn("Portal Search Mirror", trigger)
+        self.assertIn("types: [completed]", trigger)
+        self.assertIn("branches: [main]", trigger)
         self.assertRegex(trigger, r"(?m)^\s+- rehearse\s*$")
-        self.assertNotIn("migrate", trigger)
+        self.assertRegex(trigger, r"(?m)^\s+- migrate\s*$")
         self.assertNotIn("switch", trigger)
         self.assertIn("default: rehearse", trigger)
-        self.assertIn('test "${{ inputs.operation }}" = "rehearse"', self.workflow)
+        self.assertIn("vars.NEUTRAL_SCHEDULE_ENABLED == 'true'", self.workflow)
+        self.assertIn("github.event.workflow_run.conclusion == 'success'", self.workflow)
+        self.assertIn("github.event.workflow_run.head_branch == github.event.repository.default_branch", self.workflow)
+        self.assertIn("github.event.workflow_run.head_repository.full_name == github.repository", self.workflow)
+        self.assertIn('case "$GITHUB_EVENT_NAME" in', self.workflow)
+        self.assertIn('rehearse|migrate) operation="$REQUESTED_OPERATION"', self.workflow)
+        self.assertIn('schedule|workflow_run)', self.workflow)
 
     def test_prepare_and_cutover_are_separate_bounded_jobs(self) -> None:
         self.assertIn("  prepare_release:\n", self.workflow)
@@ -41,18 +60,44 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertNotIn("ref: main", self.workflow)
         self.assertNotIn('echo "::add-mask::$release_id"', self.workflow)
 
-    def test_transaction_has_exact_state_and_forced_rehearsal_rollback(self) -> None:
+    def test_transaction_has_exact_state_and_operation_aware_rollback(self) -> None:
         self.assertIn("previous-edge-state.json", self.workflow)
         self.assertIn("previous_release", self.workflow)
         self.assertIn("previous_tree", self.workflow)
         self.assertIn("Prove live release is unchanged before cutover", self.workflow)
         self.assertIn("cmp _release_validation/previous/edge-state.json", self.workflow)
         self.assertIn("Capture exact edge rollback target", self.workflow)
-        self.assertIn("steps.release_acceptance.outcome != 'success' || inputs.operation == 'rehearse'", self.workflow)
+        self.assertIn("steps.release_acceptance.outcome != 'success' || needs.prepare_release.outputs.operation == 'rehearse'", self.workflow)
         self.assertIn("rollback ${{ env.EDGE_PREVIOUS_VERSION_ID }}", self.workflow)
         self.assertIn("--expect-version \"$EDGE_PREVIOUS_VERSION_ID\"", self.workflow)
         self.assertIn("Verify exact previous release after rollback", self.workflow)
         self.assertIn("Enforce transactional outcome", self.workflow)
+
+    def test_semantic_manifest_prevents_unchanged_automatic_cutovers(self) -> None:
+        compare = self.workflow.index("Detect meaningful public release changes")
+        upload = self.workflow.index("Upload inactive static slot and immutable runtime")
+        deploy = self.workflow.index("Deploy prepared neutral edge release")
+        self.assertLess(compare, upload)
+        self.assertLess(upload, deploy)
+        self.assertIn("previous-release-semantics.json", self.workflow)
+        self.assertIn('PYTHONPATH=scripts PREVIOUS_MANIFEST="$output" python3', self.workflow)
+        self.assertIn("--write-current-manifest _neutral_site/data/release-semantics.json", self.workflow)
+        for component in (
+            "--current-catalog",
+            "--current-search-index",
+            "--current-chart-search-index",
+            "--current-password-rules",
+            "--current-runtime-config",
+            "--blog-archive-root",
+            "--site-source-root",
+            "--public-root",
+        ):
+            self.assertIn(component, self.workflow)
+        self.assertIn('if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ]', self.workflow)
+        self.assertEqual(self.workflow.count("--force"), 1)
+        self.assertIn("if: steps.release_delta.outputs.changed == 'true'", self.workflow)
+        self.assertIn("if: needs.prepare_release.outputs.changed == 'true'", self.workflow)
+        self.assertIn("release-semantics-after.json", self.workflow)
 
     def test_cutover_proves_portal_runtime_and_canonical_routes(self) -> None:
         cutover = self.workflow[self.workflow.index("  cutover:\n"):]

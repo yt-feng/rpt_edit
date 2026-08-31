@@ -361,7 +361,7 @@ test("neutral deployment keeps the canonical gateway cache disabled and verifies
   )?.[0] || "";
   assert.match(rollback, /steps\.edge_deploy\.outcome != 'skipped'/);
   assert.match(rollback, /steps\.release_acceptance\.outcome != 'success'/);
-  assert.match(rollback, /inputs\.operation == 'rehearse'/);
+  assert.match(rollback, /needs\.prepare_release\.outputs\.operation == 'rehearse'/);
   assert.match(rollback, /command: rollback \$\{\{ env\.EDGE_PREVIOUS_VERSION_ID \}\} --message/);
   assert.match(workflow, /cmp _release_validation\/previous\/edge-state\.json/);
   assert.match(workflow, /--expect-version "\$EDGE_PREVIOUS_VERSION_ID"/);
@@ -369,4 +369,7 @@ test("neutral deployment keeps the canonical gateway cache disabled and verifies
   assert.doesNotMatch(workflow, /edge_route_cutover\.py migrate/);
   assert.doesNotMatch(workflow, /edge_route_cutover\.py rollback/);
   assert.doesNotMatch(workflow, /edge_route_cutover\.py purge/);
+  assert.match(workflow, /cron: "30 1,5,9,13 \* \* \*"/);
+  assert.match(workflow, /vars\.NEUTRAL_SCHEDULE_ENABLED == 'true'/);
+  assert.match(workflow, /release-semantics\.json/);
 });

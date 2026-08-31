@@ -49,6 +49,29 @@ class FakeR2Client:
         return self.responses.pop(0) if self.responses else {}
 
 
+class FakeR2NotFound(Exception):
+    response = {
+        "Error": {"Code": "NoSuchKey"},
+        "ResponseMetadata": {"HTTPStatusCode": 404},
+    }
+
+
+class FakeR2SyncClient:
+    def __init__(self, *, size: int | None) -> None:
+        self.size = size
+        self.head_calls: list[dict[str, object]] = []
+        self.upload_calls: list[tuple[str, str, dict[str, object]]] = []
+
+    def head_object(self, **kwargs: object) -> dict[str, int]:
+        self.head_calls.append(kwargs)
+        if self.size is None:
+            raise FakeR2NotFound()
+        return {"ContentLength": self.size}
+
+    def upload_fileobj(self, _file: object, bucket: str, key: str, ExtraArgs: dict[str, object]) -> None:
+        self.upload_calls.append((bucket, key, ExtraArgs))
+
+
 class CatalogStorageGuardTests(unittest.TestCase):
     REPORT_A = "0123456789abcdef01234567"
     REPORT_B = "abcdef0123456789abcdef01"
@@ -95,6 +118,71 @@ class CatalogStorageGuardTests(unittest.TestCase):
         self.assertNotIn("--enable-pdf-cleanup", workflow)
         self.assertIn("--storage-limit-gb 100", workflow)
         self.assertIn("--sync-r2", workflow)
+
+    def test_sync_reuses_existing_content_addressed_pdf_without_put(self) -> None:
+        client = FakeR2SyncClient(size=123)
+        item = {
+            "id": self.REPORT_A,
+            "title": "Report",
+            "date_folder": "260830",
+            "size_bytes": 123,
+            "page_count": 1,
+            "r2_synced": False,
+            "available": False,
+        }
+        payload = {"items": [item]}
+        with mock.patch.dict(os.environ, {"R2_BUCKET": "test-bucket"}, clear=False), mock.patch.object(
+            catalog, "build_r2_client", return_value=client
+        ), mock.patch.object(catalog, "download_dropbox_file") as download:
+            uploaded, inspected = catalog.sync_current_reports_to_r2(
+                payload,
+                {self.REPORT_A},
+                {self.REPORT_A: "/zip_backup/report.pdf"},
+                "token",
+                False,
+            )
+
+        self.assertEqual((uploaded, inspected), (0, 0))
+        self.assertEqual(len(client.head_calls), 1)
+        self.assertEqual(client.upload_calls, [])
+        download.assert_not_called()
+        self.assertTrue(item["r2_synced"])
+        self.assertTrue(item["available"])
+        self.assertEqual(item["r2_key"], f"reports/{self.REPORT_A}.pdf")
+
+    def test_sync_uploads_when_content_addressed_pdf_is_missing(self) -> None:
+        client = FakeR2SyncClient(size=None)
+        item = {
+            "id": self.REPORT_A,
+            "title": "Report",
+            "date_folder": "260830",
+            "size_bytes": 3,
+            "r2_synced": False,
+            "available": False,
+        }
+        payload = {"items": [item]}
+
+        def materialize(_token: str, _dropbox_path: str, local_path: Path) -> None:
+            local_path.write_bytes(b"pdf")
+
+        with mock.patch.dict(os.environ, {"R2_BUCKET": "test-bucket"}, clear=False), mock.patch.object(
+            catalog, "build_r2_client", return_value=client
+        ), mock.patch.object(catalog, "download_dropbox_file", side_effect=materialize), mock.patch.object(
+            catalog, "inspect_pdf_metadata", return_value={"page_count": 1}
+        ):
+            uploaded, inspected = catalog.sync_current_reports_to_r2(
+                payload,
+                {self.REPORT_A},
+                {self.REPORT_A: "/zip_backup/report.pdf"},
+                "token",
+                False,
+            )
+
+        self.assertEqual((uploaded, inspected), (1, 1))
+        self.assertEqual(len(client.head_calls), 1)
+        self.assertEqual(len(client.upload_calls), 1)
+        self.assertTrue(item["r2_synced"])
+        self.assertEqual(item["r2_key"], f"reports/{self.REPORT_A}.pdf")
 
     def test_prune_uses_safe_persisted_key_across_prefix_migration(self) -> None:
         client = FakeR2Client()
