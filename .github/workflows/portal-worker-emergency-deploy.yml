@@ -73,7 +73,7 @@ jobs:
           node --check portal_suite/site_src/assets/charts.js
           node --check portal_suite/site_src/assets/site-runtime.js
           for test_file in portal_suite/tests/*.test.mjs; do
-            node --test --test-isolation=none "$test_file"
+            node "$test_file"
           done
           node scripts/test_portal_entitlement_precedence.js
           node scripts/test_portal_legacy_access_compat.js
