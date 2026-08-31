@@ -1,6 +1,7 @@
 name = "portal-suite-worker"
 main = "src/index.js"
 compatibility_date = "2026-05-01"
+compatibility_flags = ["global_fetch_strictly_public"]
 
 [vars]
 # Explicit local/test mode. Production must use "supabase" and configure both

@@ -64,16 +64,23 @@ class FakeR2:
             return {
                 "ContentLength": len(row["body"]),
                 "Metadata": dict(row.get("metadata") or {}),
+                "ContentType": row.get("content_type") or "",
+                "CacheControl": row.get("cache_control") or "",
             }
 
     def put_object(self, *, Bucket: str, Key: str, Body, Metadata=None, **kwargs):
-        del Bucket, kwargs
+        del Bucket
         body = Body.read() if hasattr(Body, "read") else Body
         if isinstance(body, str):
             body = body.encode("utf-8")
         with self.lock:
             self.operations.append(("put", Key))
-            self.objects[Key] = {"body": bytes(body), "metadata": dict(Metadata or {})}
+            self.objects[Key] = {
+                "body": bytes(body),
+                "metadata": dict(Metadata or {}),
+                "content_type": kwargs.get("ContentType") or "",
+                "cache_control": kwargs.get("CacheControl") or "",
+            }
         return {}
 
     def upload_file(self, filename: str, bucket: str, key: str, **kwargs):
@@ -86,6 +93,8 @@ class FakeR2:
             self.objects[key] = {
                 "body": Path(filename).read_bytes(),
                 "metadata": dict(extra.get("Metadata") or {}),
+                "content_type": extra.get("ContentType") or "",
+                "cache_control": extra.get("CacheControl") or "",
             }
 
     def delete_objects(self, *, Bucket: str, Delete: dict):
@@ -150,14 +159,106 @@ class StaticSlotPublisherTests(unittest.TestCase):
             self.assertEqual(third["static_slot"], "a")
             self.assertEqual(third["uploaded_files"], 0)
             self.assertEqual(third["skipped_files"], third["file_count"])
-            self.assertEqual(third["runtime_uploaded_files"], 0)
-            self.assertEqual(third["runtime_skipped_files"], 3)
+            self.assertEqual(third["runtime_uploaded_files"], 3)
+            self.assertEqual(third["runtime_skipped_files"], 0)
 
             write(root / "assets/app.js", "console.log('v2')")
             fourth = self.publish(client, root, 4, "a")
             self.assertEqual(fourth["static_slot"], "b")
             self.assertEqual(fourth["uploaded_files"], 1)
             self.assertEqual(fourth["skipped_files"], fourth["file_count"] - 1)
+
+    def test_runtime_data_is_immutable_per_release_and_never_overwrites_legacy_shared_data(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            build_site(root)
+            client = FakeR2()
+            client.objects[f"{publisher.RUNTIME_ROOT}/catalog.json"] = {
+                "body": b'{"legacy":true}',
+                "metadata": {"sha256": "legacy"},
+            }
+
+            first = self.publish(client, root, 1)
+            first_prefix = publisher.runtime_release_prefix(release(1))
+            self.assertEqual(first["runtime_prefix"], first_prefix)
+            self.assertEqual(first["runtime_uploaded_files"], 3)
+            self.assertIn(first_prefix + "catalog.json", client.objects)
+            self.assertIn(publisher.runtime_manifest_key(release(1)), client.objects)
+            self.assertEqual(
+                client.objects[f"{publisher.RUNTIME_ROOT}/catalog.json"]["body"],
+                b'{"legacy":true}',
+            )
+
+            write(root / "data/catalog.json", json.dumps({"items": [{"id": "ab-report"}], "revision": 2}))
+            second = self.publish(client, root, 2, "a")
+            second_prefix = publisher.runtime_release_prefix(release(2))
+            self.assertEqual(second["runtime_prefix"], second_prefix)
+            self.assertNotEqual(
+                client.objects[first_prefix + "catalog.json"]["body"],
+                client.objects[second_prefix + "catalog.json"]["body"],
+            )
+            self.assertIn(first_prefix + "catalog.json", client.objects)
+            self.assertIn(second_prefix + "catalog.json", client.objects)
+
+            first_manifest = json.loads(
+                client.objects[publisher.runtime_manifest_key(release(1))]["body"]
+            )
+            second_manifest = json.loads(
+                client.objects[publisher.runtime_manifest_key(release(2))]["body"]
+            )
+            self.assertEqual(first_manifest["release_id"], release(1))
+            self.assertEqual(second_manifest["release_id"], release(2))
+            self.assertEqual(
+                json.loads(client.objects[publisher.manifest_key("b")]["body"])["runtime_data"],
+                {
+                    "schema_version": publisher.RUNTIME_SCHEMA_VERSION,
+                    "release_id": release(2),
+                    "prefix": second_prefix,
+                    "tree_sha256": second["runtime_tree_sha256"],
+                },
+            )
+
+    def test_retry_of_same_runtime_release_skips_verified_objects_and_rejects_content_collision(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            build_site(root)
+            client = FakeR2()
+            first = publisher.sync_runtime_data(client, "bucket", root, release(7))
+            second = publisher.sync_runtime_data(client, "bucket", root, release(7))
+            self.assertEqual(first[:2], (3, 0))
+            self.assertEqual(second[:2], (0, 3))
+            prefix = publisher.runtime_release_prefix(release(7))
+            manifest = first[2]
+            for filename, descriptor in manifest["files"].items():
+                self.assertEqual(descriptor["content_type"], "application/json")
+                self.assertEqual(descriptor["cache_control"], "no-store")
+                head = client.head_object(Bucket="bucket", Key=prefix + filename)
+                self.assertEqual(head["ContentType"], descriptor["content_type"])
+                self.assertEqual(head["CacheControl"], descriptor["cache_control"])
+
+            client.objects[prefix + "catalog.json"]["metadata"]["release-id"] = release(8)
+            repaired = publisher.sync_runtime_data(client, "bucket", root, release(7))
+            self.assertEqual(repaired[:2], (1, 2), "wrong release metadata must force re-upload")
+            self.assertEqual(
+                client.objects[prefix + "catalog.json"]["metadata"]["release-id"],
+                release(7),
+            )
+
+            write(root / "data/search_index.json", '{"changed":true}')
+            with self.assertRaisesRegex(RuntimeError, "already committed with different content"):
+                publisher.sync_runtime_data(client, "bucket", root, release(7))
+
+    def test_failed_runtime_upload_does_not_commit_static_or_runtime_manifest(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            build_site(root)
+            client = FakeR2()
+            client.fail_upload_suffix = "search_index.json"
+            with self.assertRaisesRegex(RuntimeError, "injected upload failure"):
+                self.publish(client, root, 9)
+            self.assertNotIn(publisher.runtime_manifest_key(release(9)), client.objects)
+            self.assertNotIn(publisher.manifest_key("a"), client.objects)
+            self.assertIn(publisher.incomplete_key("a"), client.objects)
 
     def test_removed_object_is_deleted_from_inactive_slot(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:

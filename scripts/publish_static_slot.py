@@ -21,6 +21,7 @@ from typing import Any, Iterable
 
 
 SCHEMA_VERSION = 1
+RUNTIME_SCHEMA_VERSION = 1
 RELEASE_PATTERN = re.compile(r"^[0-9a-f]{32}$")
 SHA256_PATTERN = re.compile(r"^[0-9a-f]{64}$")
 SLOTS = ("a", "b")
@@ -28,6 +29,7 @@ SLOT_ROOT = "edge-static/slots"
 MANIFEST_ROOT = "edge-static/slot-manifests"
 INCOMPLETE_ROOT = "edge-static/slot-incomplete"
 RUNTIME_ROOT = "edge-static/runtime-data"
+RUNTIME_RELEASE_ROOT = f"{RUNTIME_ROOT}/releases"
 
 DEFAULT_RUNTIME_PATHS = (
     "data/catalog.json",
@@ -174,6 +176,14 @@ def slot_prefix(slot: str) -> str:
     return f"{SLOT_ROOT}/{validate_slot(slot)}/"
 
 
+def runtime_release_prefix(release_id: str) -> str:
+    return f"{RUNTIME_RELEASE_ROOT}/{validate_release(release_id)}/"
+
+
+def runtime_manifest_key(release_id: str) -> str:
+    return f"{runtime_release_prefix(release_id)}manifest.json"
+
+
 def valid_manifest(payload: dict[str, Any] | None, slot: str) -> dict[str, Any] | None:
     if not isinstance(payload, dict):
         return None
@@ -289,22 +299,125 @@ def verify_required_objects(
     return verified
 
 
-def sync_runtime_data(
-    client: Any,
-    bucket: str,
+def runtime_tree_sha256(entries: dict[str, dict[str, Any]]) -> str:
+    tree_digest = hashlib.sha256()
+    for filename, descriptor in sorted(entries.items()):
+        tree_digest.update(filename.encode("utf-8"))
+        tree_digest.update(b"\0")
+        tree_digest.update(
+            json.dumps(descriptor, sort_keys=True, separators=(",", ":")).encode("utf-8")
+        )
+        tree_digest.update(b"\n")
+    return tree_digest.hexdigest()
+
+
+def runtime_inventory(
     root: Path,
     paths: Iterable[str] = DEFAULT_RUNTIME_PATHS,
-    transfer_config: Any = None,
-) -> tuple[int, int]:
-    uploaded = 0
-    skipped = 0
+) -> tuple[dict[str, Path], dict[str, dict[str, Any]], str]:
+    runtime_paths: dict[str, Path] = {}
+    entries: dict[str, dict[str, Any]] = {}
     for relative_value in paths:
         relative = safe_relative_path(relative_value)
         path = root / relative
         if not path.is_file() or path.is_symlink():
             raise RuntimeError(f"Runtime data path is missing: {relative}")
+        filename = path.name
+        if filename in runtime_paths:
+            raise RuntimeError(f"Runtime data filenames must be unique: {filename}")
         descriptor = describe_file(path)
-        key = f"{RUNTIME_ROOT}/{path.name}"
+        descriptor["content_type"] = "application/json"
+        descriptor["cache_control"] = "no-store"
+        runtime_paths[filename] = path
+        entries[filename] = descriptor
+    if not runtime_paths:
+        raise RuntimeError("Runtime data inventory is empty")
+    return runtime_paths, entries, runtime_tree_sha256(entries)
+
+
+def valid_runtime_manifest(
+    payload: dict[str, Any] | None,
+    release_id: str,
+) -> dict[str, Any] | None:
+    release = validate_release(release_id)
+    if not isinstance(payload, dict):
+        return None
+    if (
+        payload.get("schema_version") != RUNTIME_SCHEMA_VERSION
+        or payload.get("release_id") != release
+        or payload.get("prefix") != runtime_release_prefix(release)
+        or not SHA256_PATTERN.fullmatch(str(payload.get("tree_sha256") or ""))
+    ):
+        return None
+    files = payload.get("files")
+    if not isinstance(files, dict) or int(payload.get("file_count", -1)) != len(files):
+        return None
+    normalized: dict[str, dict[str, Any]] = {}
+    try:
+        for filename, descriptor in files.items():
+            if safe_relative_path(filename) != Path(filename).name:
+                return None
+            if not isinstance(descriptor, dict):
+                return None
+            if not SHA256_PATTERN.fullmatch(str(descriptor.get("sha256") or "")):
+                return None
+            if int(descriptor.get("size", -1)) < 0:
+                return None
+            if descriptor.get("content_type") != "application/json":
+                return None
+            if descriptor.get("cache_control") != "no-store":
+                return None
+            normalized[filename] = descriptor
+    except (TypeError, ValueError):
+        return None
+    if runtime_tree_sha256(normalized) != payload["tree_sha256"]:
+        return None
+    return {**payload, "files": normalized}
+
+
+def runtime_object_matches(
+    metadata: dict[str, Any] | None,
+    descriptor: dict[str, Any],
+    release_id: str,
+) -> bool:
+    if not metadata:
+        return False
+    custom = metadata.get("Metadata") or {}
+    return (
+        int(metadata.get("ContentLength", -1)) == int(descriptor["size"])
+        and str(custom.get("sha256") or "") == descriptor["sha256"]
+        and str(custom.get("release-id") or "") == release_id
+        and str(metadata.get("ContentType") or "").lower() == descriptor["content_type"]
+        and str(metadata.get("CacheControl") or "").lower() == descriptor["cache_control"]
+    )
+
+
+def sync_runtime_data(
+    client: Any,
+    bucket: str,
+    root: Path,
+    release_id: str,
+    paths: Iterable[str] = DEFAULT_RUNTIME_PATHS,
+    transfer_config: Any = None,
+) -> tuple[int, int, dict[str, Any]]:
+    release = validate_release(release_id)
+    prefix = runtime_release_prefix(release)
+    runtime_paths, entries, tree_sha256 = runtime_inventory(root, paths)
+    committed = valid_runtime_manifest(
+        read_json_object(client, bucket, runtime_manifest_key(release)),
+        release,
+    )
+    if committed and (
+        committed["files"] != entries
+        or committed["tree_sha256"] != tree_sha256
+    ):
+        raise RuntimeError("Runtime data release id is already committed with different content")
+
+    uploaded = 0
+    skipped = 0
+    for filename, path in runtime_paths.items():
+        descriptor = entries[filename]
+        key = f"{prefix}{filename}"
         current = None
         try:
             current = client.head_object(Bucket=bucket, Key=key)
@@ -314,32 +427,49 @@ def sync_runtime_data(
             ).lower()
             if response_code not in {"404", "nosuchkey", "notfound"} and not isinstance(error, KeyError):
                 raise
-        current_sha = str(((current or {}).get("Metadata") or {}).get("sha256") or "")
-        if (
-            current is not None
-            and int(current.get("ContentLength", -1)) == int(descriptor["size"])
-            and current_sha == descriptor["sha256"]
-        ):
+        if runtime_object_matches(current, descriptor, release):
             skipped += 1
             continue
         kwargs = {
             "ExtraArgs": {
-                "ContentType": "application/json",
-                "CacheControl": "no-store",
-                "Metadata": {"sha256": descriptor["sha256"]},
+                "ContentType": descriptor["content_type"],
+                "CacheControl": descriptor["cache_control"],
+                "Metadata": {
+                    "sha256": descriptor["sha256"],
+                    "release-id": release,
+                },
             }
         }
         if transfer_config is not None:
             kwargs["Config"] = transfer_config
         client.upload_file(str(path), bucket, key, **kwargs)
         verified = client.head_object(Bucket=bucket, Key=key)
-        if (
-            int(verified.get("ContentLength", -1)) != int(descriptor["size"])
-            or str((verified.get("Metadata") or {}).get("sha256") or "") != descriptor["sha256"]
-        ):
-            raise RuntimeError(f"Runtime data verification failed: {relative}")
+        if not runtime_object_matches(verified, descriptor, release):
+            raise RuntimeError(f"Runtime data verification failed: {filename}")
         uploaded += 1
-    return uploaded, skipped
+
+    manifest = {
+        "schema_version": RUNTIME_SCHEMA_VERSION,
+        "release_id": release,
+        "prefix": prefix,
+        "tree_sha256": tree_sha256,
+        "file_count": len(entries),
+        "files": entries,
+    }
+    put_json(
+        client,
+        bucket,
+        runtime_manifest_key(release),
+        manifest,
+        Metadata={"tree-sha256": tree_sha256, "release-id": release},
+    )
+    verified_manifest = valid_runtime_manifest(
+        read_json_object(client, bucket, runtime_manifest_key(release)),
+        release,
+    )
+    if not verified_manifest or verified_manifest != manifest:
+        raise RuntimeError("Runtime data manifest verification failed")
+    return uploaded, skipped, manifest
 
 
 def publish_static_slot(
@@ -426,10 +556,11 @@ def publish_static_slot(
         entries,
         required if required is not None else required_release_paths(root),
     )
-    runtime_uploaded, runtime_skipped = sync_runtime_data(
+    runtime_uploaded, runtime_skipped, runtime_manifest = sync_runtime_data(
         client,
         bucket,
         root,
+        release,
         paths=runtime_paths,
         transfer_config=transfer_config,
     )
@@ -441,6 +572,12 @@ def publish_static_slot(
         "file_count": len(entries),
         "total_bytes": total_bytes,
         "files": entries,
+        "runtime_data": {
+            "schema_version": runtime_manifest["schema_version"],
+            "release_id": runtime_manifest["release_id"],
+            "prefix": runtime_manifest["prefix"],
+            "tree_sha256": runtime_manifest["tree_sha256"],
+        },
     }
     put_json(
         client,
@@ -464,6 +601,8 @@ def publish_static_slot(
         "deleted_files": deleted,
         "runtime_uploaded_files": runtime_uploaded,
         "runtime_skipped_files": runtime_skipped,
+        "runtime_prefix": runtime_manifest["prefix"],
+        "runtime_tree_sha256": runtime_manifest["tree_sha256"],
         "verified_release_objects": verified_required,
         "recovered_incomplete_slot": force_reupload,
     }

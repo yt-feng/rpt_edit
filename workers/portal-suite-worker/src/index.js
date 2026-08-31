@@ -6,6 +6,11 @@ import {
 } from "./source-lead-adapter.js";
 
 const CACHE_TTL_MS = 5 * 60 * 1000;
+const RUNTIME_RELEASE_REFRESH_MS = 1000;
+const RUNTIME_RELEASE_STATE_TIMEOUT_MS = 1500;
+const RUNTIME_RELEASE_BACKOFF_MS = 4000;
+const RUNTIME_RELEASE_PATTERN = /^[0-9a-f]{32}$/;
+const RUNTIME_TREE_PATTERN = /^[0-9a-f]{64}$/;
 const DEFAULT_R2_PREFIX = "reports";
 const CONTACT_WECHAT = "Support Contact";
 const CONTACT_EMAIL = ["info", "@", "kc", "desk", ".com"].join("");
@@ -856,11 +861,16 @@ const NEWSFEED_SUGGESTED_TOPICS = [
 let catalogCache = null;
 let catalogFetchedAt = 0;
 let catalogCacheBinding = null;
+let catalogCacheRelease = "";
 let rulesCache = null;
 let rulesFetchedAt = 0;
+let rulesCacheBinding = null;
+let rulesCacheRelease = "";
 let searchIndexCache = null;
 let searchIndexFetchedAt = 0;
 let searchIndexCacheBinding = null;
+let searchIndexCacheRelease = "";
+const runtimeReleaseStateCache = new Map();
 const reportTextShardCache = new Map();
 let adminFilesRefreshPromise = null;
 let adminPicksRefreshPromise = null;
@@ -946,25 +956,210 @@ async function fetchJson(url) {
   return response.json();
 }
 
-function staticDataObjectKey(env, filename) {
+function staticDataObjectKey(env, filename, releaseId = "") {
   const allowed = new Set(["catalog.json", "search_index.json", "password_rules.json"]);
   if (!allowed.has(filename)) return "";
   const prefix = String(env.STATIC_DATA_PREFIX || "edge-static/runtime-data")
     .trim()
     .replace(/^\/+|\/+$/g, "");
   if (!prefix || !/^[A-Za-z0-9/_-]+$/.test(prefix)) return "";
+  const release = String(releaseId || "").trim().toLowerCase();
+  if (release && !RUNTIME_RELEASE_PATTERN.test(release)) return "";
+  if (release) return `${prefix}/releases/${release}/${filename}`;
   return `${prefix}/${filename}`;
 }
 
-async function fetchStaticDataJson(env, filename, fallbackUrl) {
-  const objectKey = staticDataObjectKey(env, filename);
-  if (objectKey && env.REPORT_BUCKET) {
-    try {
-      const object = await env.REPORT_BUCKET.get(objectKey);
-      if (object) return JSON.parse(await object.text());
-    } catch (_error) {
-      // Fall back to the configured HTTPS endpoint during a data refresh.
+function runtimeDataStateUrl(env) {
+  const explicitlyConfigured = String(env.STATIC_DATA_STATE_URL || "").trim();
+  const source = explicitlyConfigured || String(env.CATALOG_URL || "").trim();
+  if (!source) return "";
+  try {
+    const url = new URL(source);
+    if (url.protocol !== "https:") return "";
+    if (!explicitlyConfigured && url.hostname.toLowerCase().endsWith(".invalid")) return "";
+    url.pathname = "/.well-known/edge-state";
+    url.search = "?runtime-data=1";
+    url.hash = "";
+    return url.toString();
+  } catch (_error) {
+    return "";
+  }
+}
+
+async function activeRuntimeDataRelease(env) {
+  const stateUrl = runtimeDataStateUrl(env);
+  if (!stateUrl) return "";
+  const now = Date.now();
+  let cached = runtimeReleaseStateCache.get(stateUrl);
+  if (!cached) {
+    if (runtimeReleaseStateCache.size >= 4) {
+      runtimeReleaseStateCache.delete(runtimeReleaseStateCache.keys().next().value);
     }
+    cached = { release: "", fetchedAt: 0, backoffUntil: 0, inFlight: null };
+    runtimeReleaseStateCache.set(stateUrl, cached);
+  }
+  if (cached.release && now - cached.fetchedAt < RUNTIME_RELEASE_REFRESH_MS) {
+    return cached.release;
+  }
+  if (now < cached.backoffUntil) return "";
+  if (cached.inFlight) return cached.inFlight;
+
+  const refresh = async () => {
+    try {
+      const response = await fetchTextWithTimeout(
+        stateUrl,
+        { headers: { "Accept": "application/json", "Cache-Control": "no-cache" } },
+        RUNTIME_RELEASE_STATE_TIMEOUT_MS,
+      );
+      if (!response.ok) throw new Error(`Could not fetch active static release: ${response.status}`);
+      const state = JSON.parse(response.text);
+      const release = String(state && state.release_id || "").trim().toLowerCase();
+      if (
+        !state
+        || state.schema_version !== 1
+        || !["a", "b"].includes(String(state.slot || ""))
+        || !RUNTIME_RELEASE_PATTERN.test(release)
+      ) {
+        throw new Error("Active static release state is invalid");
+      }
+      cached.release = release;
+      cached.fetchedAt = Date.now();
+      cached.backoffUntil = 0;
+      return release;
+    } catch (_error) {
+      cached.release = "";
+      cached.fetchedAt = 0;
+      cached.backoffUntil = Date.now() + RUNTIME_RELEASE_BACKOFF_MS;
+      return "";
+    }
+  };
+  const inFlight = refresh();
+  cached.inFlight = inFlight;
+  try {
+    return await inFlight;
+  } finally {
+    if (cached.inFlight === inFlight) cached.inFlight = null;
+  }
+}
+
+async function readStaticDataObject(env, objectKey, descriptor = null, releaseId = "") {
+  if (!objectKey || !env.REPORT_BUCKET) return { found: false, value: null };
+  try {
+    const object = await env.REPORT_BUCKET.get(objectKey);
+    if (!object) return { found: false, value: null };
+    if (descriptor) {
+      const custom = object.customMetadata || {};
+      const http = object.httpMetadata || {};
+      if (
+        Number(object.size) !== Number(descriptor.size)
+        || String(custom.sha256 || "") !== descriptor.sha256
+        || String(custom["release-id"] || "") !== releaseId
+        || String(http.contentType || "").toLowerCase() !== descriptor.content_type
+        || String(http.cacheControl || "").toLowerCase() !== descriptor.cache_control
+      ) return { found: false, value: null };
+    }
+    return { found: true, value: JSON.parse(await object.text()) };
+  } catch (_error) {
+    // Try the next source. Runtime release objects are immutable once committed.
+  }
+  return { found: false, value: null };
+}
+
+function runtimeCanonicalJson(value) {
+  if (Array.isArray(value)) return `[${value.map((item) => runtimeCanonicalJson(item)).join(",")}]`;
+  if (value && typeof value === "object") {
+    return `{${Object.keys(value).sort().map((key) => (
+      `${JSON.stringify(key)}:${runtimeCanonicalJson(value[key])}`
+    )).join(",")}}`;
+  }
+  return JSON.stringify(value);
+}
+
+async function runtimeManifestTreeSha256(files) {
+  const serialized = Object.keys(files).sort().map((filename) => (
+    `${filename}\0${runtimeCanonicalJson(files[filename])}\n`
+  )).join("");
+  const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(serialized));
+  return [...new Uint8Array(digest)].map((value) => value.toString(16).padStart(2, "0")).join("");
+}
+
+async function runtimeDataManifestDescriptor(env, releaseId, filename, manifest) {
+  const release = String(releaseId || "").trim().toLowerCase();
+  const objectKey = staticDataObjectKey(env, filename, release);
+  if (!objectKey || !manifest || typeof manifest !== "object") return null;
+  const prefix = objectKey.slice(0, -filename.length);
+  const files = manifest.files;
+  if (
+    manifest.schema_version !== 1
+    || manifest.release_id !== release
+    || manifest.prefix !== prefix
+    || !RUNTIME_TREE_PATTERN.test(String(manifest.tree_sha256 || ""))
+    || !files
+    || typeof files !== "object"
+    || Array.isArray(files)
+    || !Number.isSafeInteger(manifest.file_count)
+    || manifest.file_count !== Object.keys(files).length
+  ) return null;
+  for (const [entryFilename, descriptor] of Object.entries(files)) {
+    if (
+      !staticDataObjectKey(env, entryFilename, release)
+      || !descriptor
+      || typeof descriptor !== "object"
+      || Array.isArray(descriptor)
+      || !RUNTIME_TREE_PATTERN.test(String(descriptor.sha256 || ""))
+      || !Number.isSafeInteger(descriptor.size)
+      || descriptor.size < 0
+      || descriptor.content_type !== "application/json"
+      || descriptor.cache_control !== "no-store"
+    ) return null;
+  }
+  if (await runtimeManifestTreeSha256(files) !== manifest.tree_sha256) return null;
+  return files[filename] || null;
+}
+
+async function readRuntimeDataReleaseObject(env, filename, releaseId) {
+  const release = String(releaseId || "").trim().toLowerCase();
+  const objectKey = staticDataObjectKey(env, filename, release);
+  if (!objectKey) return { found: false, value: null };
+  const prefix = objectKey.slice(0, -filename.length);
+  const manifest = await readStaticDataObject(env, `${prefix}manifest.json`);
+  if (!manifest.found) return { found: false, value: null };
+  const descriptor = await runtimeDataManifestDescriptor(env, release, filename, manifest.value);
+  if (!descriptor) return { found: false, value: null };
+  return readStaticDataObject(env, objectKey, descriptor, release);
+}
+
+function activeRuntimeDataHttpsUrl(stateUrl, fallbackUrl) {
+  try {
+    const state = new URL(stateUrl);
+    const fallback = new URL(fallbackUrl);
+    if (state.protocol !== "https:" || fallback.protocol !== "https:" || state.origin !== fallback.origin) return "";
+    return fallback.toString();
+  } catch (_error) {
+    return "";
+  }
+}
+
+async function fetchStaticDataJson(env, filename, fallbackUrl, releaseId = "", stateUrl = "") {
+  const release = String(releaseId || "").trim().toLowerCase();
+  const activeStateUrl = String(stateUrl || "").trim();
+  if (activeStateUrl) {
+    if (release) {
+      if (!RUNTIME_RELEASE_PATTERN.test(release)) throw new Error("Runtime data release is invalid");
+      const versioned = await readRuntimeDataReleaseObject(env, filename, release);
+      if (versioned.found) return versioned.value;
+    }
+    const activeHttpsUrl = activeRuntimeDataHttpsUrl(activeStateUrl, fallbackUrl);
+    if (!activeHttpsUrl) throw new Error(`${filename} active HTTPS fallback is not same-origin`);
+    return fetchJson(activeHttpsUrl);
+  }
+
+  // Read-only compatibility for true legacy deployments that do not expose an
+  // Edge state URL. Version-aware deployments never read this shared location.
+  const legacyObjectKey = staticDataObjectKey(env, filename);
+  if (legacyObjectKey) {
+    const legacy = await readStaticDataObject(env, legacyObjectKey);
+    if (legacy.found) return legacy.value;
   }
   if (!fallbackUrl) throw new Error(`${filename} is not configured`);
   return fetchJson(fallbackUrl);
@@ -972,12 +1167,21 @@ async function fetchStaticDataJson(env, filename, fallbackUrl) {
 
 async function loadCatalog(env) {
   const now = Date.now();
+  const release = await activeRuntimeDataRelease(env);
+  const stateUrl = runtimeDataStateUrl(env);
+  const releaseBinding = stateUrl ? `${stateUrl}#${release || "unresolved"}` : "legacy";
   const binding = env.REPORT_BUCKET || String(env.CATALOG_URL || "");
-  if (catalogCacheBinding === binding && catalogCache && now - catalogFetchedAt < CACHE_TTL_MS) return catalogCache;
+  if (
+    catalogCacheBinding === binding
+    && catalogCacheRelease === releaseBinding
+    && catalogCache
+    && now - catalogFetchedAt < CACHE_TTL_MS
+  ) return catalogCache;
   if (!env.CATALOG_URL) throw new Error("CATALOG_URL is not configured");
-  catalogCache = await fetchStaticDataJson(env, "catalog.json", env.CATALOG_URL);
+  catalogCache = await fetchStaticDataJson(env, "catalog.json", env.CATALOG_URL, release, stateUrl);
   catalogFetchedAt = now;
   catalogCacheBinding = binding;
+  catalogCacheRelease = releaseBinding;
   return catalogCache;
 }
 
@@ -997,13 +1201,22 @@ function searchIndexUrl(env) {
 
 async function loadSearchIndex(env) {
   const now = Date.now();
+  const release = await activeRuntimeDataRelease(env);
+  const stateUrl = runtimeDataStateUrl(env);
+  const releaseBinding = stateUrl ? `${stateUrl}#${release || "unresolved"}` : "legacy";
   const binding = env.REPORT_BUCKET || String(env.SEARCH_INDEX_URL || env.CATALOG_URL || "");
-  if (searchIndexCacheBinding === binding && searchIndexCache && now - searchIndexFetchedAt < CACHE_TTL_MS) return searchIndexCache;
+  if (
+    searchIndexCacheBinding === binding
+    && searchIndexCacheRelease === releaseBinding
+    && searchIndexCache
+    && now - searchIndexFetchedAt < CACHE_TTL_MS
+  ) return searchIndexCache;
   const url = searchIndexUrl(env);
   if (!url) throw new Error("SEARCH_INDEX_URL is not configured");
-  searchIndexCache = await fetchStaticDataJson(env, "search_index.json", url);
+  searchIndexCache = await fetchStaticDataJson(env, "search_index.json", url, release, stateUrl);
   searchIndexFetchedAt = now;
   searchIndexCacheBinding = binding;
+  searchIndexCacheRelease = releaseBinding;
   return searchIndexCache;
 }
 
@@ -1098,10 +1311,27 @@ async function loadReportTextCurrentIndex(env, report, date) {
 
 async function loadRules(env) {
   const now = Date.now();
-  if (rulesCache && now - rulesFetchedAt < CACHE_TTL_MS) return rulesCache;
+  const release = await activeRuntimeDataRelease(env);
+  const stateUrl = runtimeDataStateUrl(env);
+  const releaseBinding = stateUrl ? `${stateUrl}#${release || "unresolved"}` : "legacy";
+  const binding = env.REPORT_BUCKET || String(env.PASSWORD_RULES_URL || "");
+  if (
+    rulesCacheBinding === binding
+    && rulesCacheRelease === releaseBinding
+    && rulesCache
+    && now - rulesFetchedAt < CACHE_TTL_MS
+  ) return rulesCache;
   if (!env.PASSWORD_RULES_URL) throw new Error("PASSWORD_RULES_URL is not configured");
-  rulesCache = await fetchStaticDataJson(env, "password_rules.json", env.PASSWORD_RULES_URL);
+  rulesCache = await fetchStaticDataJson(
+    env,
+    "password_rules.json",
+    env.PASSWORD_RULES_URL,
+    release,
+    stateUrl,
+  );
   rulesFetchedAt = now;
+  rulesCacheBinding = binding;
+  rulesCacheRelease = releaseBinding;
   return rulesCache;
 }
 

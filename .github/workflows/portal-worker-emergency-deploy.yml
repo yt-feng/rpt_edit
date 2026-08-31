@@ -8,13 +8,13 @@ permissions:
 
 concurrency:
   group: portal-worker-emergency-deploy
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   deploy:
     if: ${{ vars.PORTAL_AUTOMATION_ENABLED == 'true' }}
     runs-on: ubuntu-22.04
-    timeout-minutes: 15
+    timeout-minutes: 35
     steps:
       - name: Checkout Worker source
         uses: actions/checkout@v4
@@ -33,6 +33,7 @@ jobs:
             portal_suite/tests
             scripts/build_portal_suite_site.py
             scripts/build_member_course_directory.py
+            scripts/capture_edge_worker_deployment.py
             scripts/check_public_identity.py
             scripts/encrypt_member_course_directory.mjs
             scripts/render_private_config.py
@@ -54,7 +55,9 @@ jobs:
             scripts/test_portal_chart_search_frontend.js
             scripts/test_portal_site_runtime.js
             scripts/test_build_member_course_directory.py
+            scripts/test_capture_edge_worker_deployment.py
             scripts/test_encrypt_member_course_directory.mjs
+            scripts/test_portal_worker_emergency_deploy_workflow.py
             scripts/test_source_lead_adapter.js
             scripts/test_portal_r2_prefix.py
 
@@ -86,6 +89,8 @@ jobs:
           node scripts/test_portal_chart_search_frontend.js
           node scripts/test_portal_site_runtime.js
           python3 -B scripts/test_build_member_course_directory.py
+          python3 -B scripts/test_capture_edge_worker_deployment.py
+          python3 -B scripts/test_portal_worker_emergency_deploy_workflow.py
           node --test scripts/test_encrypt_member_course_directory.mjs
           python3 scripts/test_portal_r2_prefix.py
 
@@ -137,6 +142,7 @@ jobs:
           name = "portal-suite-worker"
           main = "src/index.js"
           compatibility_date = "2026-05-01"
+          compatibility_flags = ["global_fetch_strictly_public"]
 
           [vars]
           ACCOUNT_STORE_MODE = "supabase"
@@ -217,6 +223,34 @@ jobs:
               raise SystemExit(1)
           PY
 
+      - name: Resolve private Portal Worker name
+        run: |
+          python3 - <<'PY'
+          import os
+          import re
+          from pathlib import Path
+
+          config_path = Path("workers/portal-suite-worker/wrangler.toml")
+          config_lines = config_path.read_text(encoding="utf-8").splitlines()
+          name_matches = []
+          for line in config_lines:
+              if line.lstrip().startswith("["):
+                  break
+              match = re.fullmatch(r'\s*name\s*=\s*"([A-Za-z0-9][A-Za-z0-9._-]{0,127})"\s*', line)
+              if match:
+                  name_matches.append(match.group(1))
+          if len(name_matches) != 1:
+              raise SystemExit("Rendered Portal Worker config must have one safe top-level name")
+          worker_name = name_matches[0]
+          if (
+              worker_name == "portal-suite-worker"
+          ):
+              raise SystemExit("Rendered Portal Worker name is invalid or still public")
+          print(f"::add-mask::{worker_name}")
+          with Path(os.environ["GITHUB_ENV"]).open("a", encoding="utf-8") as handle:
+              handle.write(f"PORTAL_WORKER_SCRIPT_NAME={worker_name}\n")
+          PY
+
       - name: Materialize Worker version secrets
         env:
           PASSWORD_SECRET: ${{ secrets.PASSWORD_SECRET }}
@@ -279,8 +313,19 @@ jobs:
               json.dump(values, handle, ensure_ascii=False)
           PY
 
+      - name: Capture exact Portal Worker rollback target
+        timeout-minutes: 2
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+        run: >-
+          python3 -B scripts/capture_edge_worker_deployment.py
+          --script-name "$PORTAL_WORKER_SCRIPT_NAME"
+          --output-env "$GITHUB_ENV"
+
       - name: Upload Cloudflare Worker version
         id: upload-worker-version
+        timeout-minutes: 5
         uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -294,6 +339,8 @@ jobs:
             --message "Portal Worker ${{ github.sha }}"
 
       - name: Deploy Cloudflare Worker version at 100 percent
+        id: deploy-worker-version
+        timeout-minutes: 5
         uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -317,6 +364,8 @@ jobs:
           PY
 
       - name: Smoke deployed API through the live edge
+        id: portal_smoke
+        timeout-minutes: 8
         env:
           PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
         run: |
@@ -407,109 +456,52 @@ jobs:
               raise SystemExit("Anonymous report chat did not require a stable device id")
           PY
 
-          # The first request after introducing the materialized index performs
-          # the one-time legacy scan here, never in a visitor's browser.
-          curl --fail --silent --show-error \
-            --connect-timeout 10 --max-time 60 \
-            --header 'Cache-Control: no-cache' \
-            --get \
-            --data-urlencode 'limit=24' \
-            --data-urlencode 'bootstrap=1' \
-            --data-urlencode "smoke=${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-bootstrap" \
-            --output "$RUNNER_TEMP/hot-reports-bootstrap.json" \
-            "$origin/api/hot-reports"
-          python3 - "$RUNNER_TEMP/hot-reports-bootstrap.json" <<'PY'
-          import json
-          import sys
-          from pathlib import Path
+          # Deployment smoke is intentionally read-only. Durable Hot Reports
+          # index bootstrap and repair belong to their dedicated maintenance
+          # path, not to a Worker version rollout.
 
-          payload = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
-          items = payload.get("items")
-          if not isinstance(items, list) or not 1 <= len(items) <= 24:
-              raise SystemExit("Hot-report bootstrap did not return 1-24 items")
-          if payload.get("page_size") != 24:
-              raise SystemExit("Hot-report bootstrap page size is not 24")
-          if int(payload.get("total") or 0) < len(items):
-              raise SystemExit("Hot-report bootstrap total is smaller than the page")
-          if bool(payload.get("has_more")) != bool(payload.get("next_cursor")):
-              raise SystemExit("Hot-report bootstrap cursor contract is inconsistent")
-          if not payload.get("index_updated_at"):
-              raise SystemExit("Hot-report bootstrap did not expose the index timestamp")
-          PY
+      - name: Roll back failed Portal Worker deployment
+        id: portal_rollback
+        if: >-
+          ${{ failure() &&
+              steps.deploy-worker-version.outcome != 'skipped' &&
+              steps.portal_smoke.outcome != 'success' }}
+        timeout-minutes: 5
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          workingDirectory: workers/portal-suite-worker
+          wranglerVersion: "4.125.0"
+          command: >-
+            rollback ${{ env.EDGE_PREVIOUS_VERSION_ID }}
+            --message "Automated rollback after Portal Worker verification failure"
 
-          warm_first_seconds="$(curl --fail --silent --show-error \
-            --connect-timeout 10 --max-time 5 \
-            --header 'Cache-Control: no-cache' \
-            --get \
-            --data-urlencode 'limit=24' \
-            --data-urlencode "smoke=${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-warm-first" \
-            --output "$RUNNER_TEMP/hot-reports-warm-first.json" \
-            --write-out '%{time_total}' \
-            "$origin/api/hot-reports")"
-          cursor="$(python3 - "$RUNNER_TEMP/hot-reports-warm-first.json" "$warm_first_seconds" <<'PY'
-          import json
-          import sys
-          from pathlib import Path
-
-          payload = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
-          elapsed = float(sys.argv[2])
-          items = payload.get("items")
-          if elapsed >= 3.0:
-              raise SystemExit(f"Warm first hot-report page took {elapsed:.3f}s; expected <3s")
-          if not isinstance(items, list) or not 1 <= len(items) <= 24:
-              raise SystemExit("Warm first hot-report page did not return 1-24 items")
-          if payload.get("page_size") != 24:
-              raise SystemExit("Warm first hot-report page size is not 24")
-          cursor = str(payload.get("next_cursor") or "")
-          if payload.get("has_more") is not True or not cursor:
-              raise SystemExit("Warm first hot-report page did not expose a next cursor")
-          print(cursor)
-          PY
-          )"
-
-          warm_second_seconds="$(curl --fail --silent --show-error \
-            --connect-timeout 10 --max-time 5 \
-            --header 'Cache-Control: no-cache' \
-            --get \
-            --data-urlencode 'limit=24' \
-            --data-urlencode "cursor=$cursor" \
-            --data-urlencode "smoke=${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-warm-second" \
-            --output "$RUNNER_TEMP/hot-reports-warm-second.json" \
-            --write-out '%{time_total}' \
-            "$origin/api/hot-reports")"
-          python3 - \
-            "$RUNNER_TEMP/hot-reports-warm-first.json" \
-            "$RUNNER_TEMP/hot-reports-warm-second.json" \
-            "$warm_first_seconds" \
-            "$warm_second_seconds" <<'PY'
-          import json
-          import sys
-          from pathlib import Path
-
-          first = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
-          second = json.loads(Path(sys.argv[2]).read_text(encoding="utf-8"))
-          first_elapsed = float(sys.argv[3])
-          second_elapsed = float(sys.argv[4])
-          second_items = second.get("items")
-          if second_elapsed >= 3.0:
-              raise SystemExit(f"Warm second hot-report page took {second_elapsed:.3f}s; expected <3s")
-          if not isinstance(second_items, list) or not 1 <= len(second_items) <= 24:
-              raise SystemExit("Warm second hot-report page did not return 1-24 items")
-          if second.get("page_size") != 24:
-              raise SystemExit("Warm second hot-report page size is not 24")
-          if bool(second.get("has_more")) != bool(second.get("next_cursor")):
-              raise SystemExit("Warm second hot-report cursor contract is inconsistent")
-          first_ids = {str(item.get("id") or "") for item in first.get("items", [])}
-          second_ids = {str(item.get("id") or "") for item in second_items}
-          if "" in first_ids or "" in second_ids:
-              raise SystemExit("Hot-report pages contain an item without an id")
-          duplicates = sorted(first_ids & second_ids)
-          if duplicates:
-              raise SystemExit(f"Hot-report cursor repeated ids across pages: {duplicates[:3]}")
-          print(
-              f"hot_reports_warm_first_seconds={first_elapsed:.3f} "
-              f"hot_reports_warm_second_seconds={second_elapsed:.3f} "
-              f"hot_reports_first_items={len(first_ids)} "
-              f"hot_reports_second_items={len(second_ids)}"
-          )
-          PY
+      - name: Verify Portal Worker rollback
+        if: ${{ failure() && steps.portal_rollback.outcome == 'success' }}
+        timeout-minutes: 5
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+        run: |
+          set -euo pipefail
+          origin="${PORTAL_SITE_URL%/}"
+          echo "::add-mask::$origin"
+          restored=0
+          for attempt in $(seq 1 5); do
+            health_code="$(curl --silent --show-error --max-redirs 0 \
+              --connect-timeout 5 --max-time 10 \
+              --output "$RUNNER_TEMP/rollback-api-health.json" \
+              --write-out '%{http_code}' -- "$origin/api/health" || true)"
+            if python3 -B scripts/capture_edge_worker_deployment.py \
+              --script-name "$PORTAL_WORKER_SCRIPT_NAME" \
+              --expect-version "$EDGE_PREVIOUS_VERSION_ID" \
+              && [ "$health_code" = "200" ] \
+              && python3 -m json.tool "$RUNNER_TEMP/rollback-api-health.json" >/dev/null; then
+              restored=1
+              break
+            fi
+            sleep 5
+          done
+          test "$restored" = 1
