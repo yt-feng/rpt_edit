@@ -1,5 +1,5 @@
 (function (root) {
-  const EMAIL = ["info", "@", "kc", "desk", ".com"].join("");
+  const REQUEST_KINDS = new Set(["membership", "support", "privacy", "refund", "access"]);
 
   function firstLanguage(languages) {
     if (Array.isArray(languages)) {
@@ -23,14 +23,23 @@
     return languageIsChinese(browserLanguages());
   }
 
+  function requestKind(value) {
+    const kind = String(value || "").trim().toLowerCase();
+    return REQUEST_KINDS.has(kind) ? kind : "membership";
+  }
+
+  function requestHref(value) {
+    return `/?request=${encodeURIComponent(requestKind(value))}`;
+  }
+
   function detailsForLanguages(languages) {
     const isChinese = languageIsChinese(languages);
     return {
       isChinese,
-      channel: "email",
-      value: EMAIL,
-      label: "邮箱",
-      href: `mailto:${EMAIL}`,
+      channel: "request",
+      value: "申请加入会员",
+      label: "站内申请",
+      href: requestHref("membership"),
     };
   }
 
@@ -49,15 +58,16 @@
       element.hidden = isChinese;
     });
     if (target.documentElement) {
-      target.documentElement.dataset.contactChannel = "email";
+      target.documentElement.dataset.contactChannel = "request";
     }
   }
 
   root.PortalSuiteContact = {
-    EMAIL,
     firstLanguage,
     languageIsChinese,
     isChineseBrowser,
+    requestKind,
+    requestHref,
     detailsForLanguages,
     details,
     hydrate,

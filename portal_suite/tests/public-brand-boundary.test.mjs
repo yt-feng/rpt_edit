@@ -34,7 +34,7 @@ async function publicTextFiles(directory) {
   return files;
 }
 
-test("public site templates contain only the KC桌面 identity and email contact", async () => {
+test("public site templates contain only the KC桌面 identity and in-site request actions", async () => {
   const files = await publicTextFiles(siteRoot);
   const htmlFiles = files.filter((file) => path.extname(file) === ".html");
   assert.ok(htmlFiles.length > 0);
@@ -47,7 +47,8 @@ test("public site templates contain only the KC桌面 identity and email contact
   }
   const html = (await Promise.all(htmlFiles.map((file) => readFile(file, "utf8")))).join("\n");
   assert.match(html, /KC桌面/u);
-  assert.match(html, /mailto:info@public-contact\.invalid/u);
+  assert.doesNotMatch(html, /mailto:/iu);
+  assert.match(html, /\?request=(?:membership|support|privacy|refund|access)/u);
   assert.doesNotMatch(html, /(?:微信二维码|Contact\s+WeChat)/iu);
 });
 
@@ -72,24 +73,22 @@ test("frontend sanitizes old metadata before caching, rendering, and sharing", a
   assert.match(app, /`\$\{PUBLIC_BRAND\}-activity-history-/u);
   assert.match(app, /`\$\{PUBLIC_BRAND\}-users-/u);
   assert.doesNotMatch(app, /portal-(?:activity-history|users)-/u);
-  const contactStart = app.indexOf("function contactDetails(");
-  const contactEnd = app.indexOf("function contactMethodText(", contactStart);
-  const contactDetails = app.slice(contactStart, contactEnd);
-  assert.match(contactDetails, /channel: "email"/u);
-  assert.doesNotMatch(contactDetails, /return window\.PortalSuiteContact\.details\(\)/u);
+  assert.match(app, /function membershipRequestKind\(/u);
+  assert.match(app, /data-membership-request-open="access"/u);
+  assert.match(app, /\/membership\/request/u);
   assert.doesNotMatch(app, /contact\.wechat/u);
-  assert.match(app, /const email = CONTACT_EMAIL;/u);
+  assert.doesNotMatch(app, /CONTACT_EMAIL/u);
+  assert.doesNotMatch(app, /mailto:/iu);
 });
 
-test("both Chinese and non-Chinese browsers receive the same email contact", async () => {
+test("both Chinese and non-Chinese browsers receive the same in-site membership entry", async () => {
   const source = await readFile(path.join(siteRoot, "assets", "contact.js"), "utf8");
   const window = { navigator: { languages: ["zh-CN"], language: "zh-CN" } };
   vm.runInNewContext(source, { window });
-  const email = ["info", "@", "kc", "desk", ".com"].join("");
   for (const languages of [["zh-CN"], ["en-US"]]) {
     const details = window.PortalSuiteContact.detailsForLanguages(languages);
-    assert.equal(details.channel, "email");
-    assert.equal(details.value, email);
-    assert.equal(details.href, `mailto:${email}`);
+    assert.equal(details.channel, "request");
+    assert.equal(details.value, "申请加入会员");
+    assert.equal(details.href, "/?request=membership");
   }
 });

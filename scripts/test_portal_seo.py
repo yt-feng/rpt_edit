@@ -526,30 +526,24 @@ class SeoOutputTests(unittest.TestCase):
             self.assertRegex(versioned_institution, r'\.\./\.\./\.\./assets/styles\.css\?v=[0-9a-f]{8}')
             self.assertRegex(versioned_institution, r'\.\./\.\./\.\./assets/analytics\.js\?v=[0-9a-f]{8}')
 
-    def test_public_contact_alias_is_materialized_after_private_profile_stage(self) -> None:
-        public_email = "".join(("info", "@", "kc", "desk", ".com"))
+    def test_public_pages_use_in_site_request_buttons_instead_of_mail_clients(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory)
             shutil.copytree(ROOT / "portal_suite" / "site_src", output, dirs_exist_ok=True)
             builder.build_seo_outputs(output, self.catalog)
 
-            changed = builder.materialize_public_contact(output)
-
-            self.assertGreater(changed, 0)
             index = (output / "index.html").read_text(encoding="utf-8")
             about = (output / "about.html").read_text(encoding="utf-8")
             llms = (output / "llms.txt").read_text(encoding="utf-8")
-            self.assertIn(public_email, index)
-            self.assertIn(public_email, about)
-            self.assertIn(public_email, llms)
-            for path in output.rglob("*"):
-                if not path.is_file() or path.suffix.lower() not in {".html", ".js", ".json", ".txt", ".xml"}:
-                    continue
-                try:
-                    text = path.read_text(encoding="utf-8")
-                except UnicodeDecodeError:
-                    continue
-                self.assertNotIn(builder.PUBLIC_CONTACT_EMAIL_PLACEHOLDER, text, path.as_posix())
+            self.assertIn("?request=membership", index)
+            self.assertIn("?request=membership", about)
+            self.assertIn("?request=access", llms)
+            builder.assert_no_public_mail_client_actions(output)
+
+            bad_page = output / "legacy-mail-action.html"
+            bad_page.write_text('<a href="mailto:owner@example.invalid">Email</a>', encoding="utf-8")
+            with self.assertRaisesRegex(RuntimeError, "legacy-mail-action.html"):
+                builder.assert_no_public_mail_client_actions(output)
 
     def test_static_report_has_canonical_schema_and_related_links(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -581,7 +575,8 @@ class SeoOutputTests(unittest.TestCase):
             self.assertNotIn("发布日期", page)
             self.assertNotIn("发布了《", page)
             self.assertIn('../assets/contact.js', page)
-            self.assertIn('data-portal-non-chinese-only', page)
+            self.assertIn('href="../?request=access"', page)
+            self.assertNotIn("mailto:", page.lower())
             self.assertNotIn("password=", page)
 
     def test_text_only_static_report_links_to_a_complete_prefilled_home_search(self) -> None:

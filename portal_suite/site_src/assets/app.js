@@ -1,7 +1,6 @@
 (function () {
   const page = document.body.dataset.page;
   const PUBLIC_BRAND = "KC桌面";
-  const CONTACT_EMAIL = ["info", "@", "kc", "desk", ".com"].join("");
   const ADMIN_TOKEN_KEY = "portal_admin_token";
   const ADMIN_PLAIN_KEY = "portal_admin_plain_key";
   const ADMIN_COOKIE_NAME = "portal_admin_token";
@@ -387,7 +386,7 @@
   function publicMessageText(value, fallback = "") {
     let text = publicBrandInput(value);
     for (const parts of LEGACY_CONTACT_WORDS) {
-      text = text.replace(legacyBrandPattern(parts), CONTACT_EMAIL);
+      text = text.replace(legacyBrandPattern(parts), PUBLIC_BRAND);
     }
     for (const parts of LEGACY_SOURCE_DOMAIN_WORDS) {
       text = text.replace(legacyBrandPattern(parts), PUBLIC_BRAND);
@@ -397,10 +396,12 @@
     }
     text = text.replace(new RegExp(String.fromCharCode(0x6167, 0x535a), "g"), PUBLIC_BRAND);
     text = text
-      .replace(/Contact\s+WeChat\s*:\s*[^\s，。；;]+/gi, `Email: ${CONTACT_EMAIL}`)
-      .replace(/WeChat\s*:\s*[^\s，。；;]+/gi, `email ${CONTACT_EMAIL}`)
-      .replace(/联系微信号?\s*[:：]?\s*[^\s，。；;]+/gi, `联系邮箱 ${CONTACT_EMAIL}`)
-      .replace(/联系微信\s+[^\s，。；;]+/gi, `联系邮箱 ${CONTACT_EMAIL}`);
+      .replace(/Contact\s+WeChat\s*:\s*[^\s，。；;]+/gi, `Use the in-site request button to contact ${PUBLIC_BRAND}`)
+      .replace(/WeChat\s*:\s*[^\s，。；;]+/gi, `contact ${PUBLIC_BRAND} through the in-site request button`)
+      .replace(/(?:send\s+)?email(?:\s+to)?\s*[:：]?\s*[^\s，。；;]+/gi, `use the in-site request button`)
+      .replace(/联系微信号?\s*[:：]?\s*[^\s，。；;]+/gi, `请通过站内申请入口联系${PUBLIC_BRAND}`)
+      .replace(/联系微信\s+[^\s，。；;]+/gi, `请通过站内申请入口联系${PUBLIC_BRAND}`)
+      .replace(/(?:请)?联系邮箱\s*[:：]?\s*[^\s，。；;]+/gi, `请通过站内申请入口联系${PUBLIC_BRAND}`);
     return publicBrandText(text, fallback, PUBLIC_BRAND);
   }
 
@@ -433,72 +434,32 @@
     return clean || `${PUBLIC_BRAND}用户`;
   }
 
-  function contactDetails() {
-    let isChinese = /^zh(?:[-_]|$)/i.test(String(navigator.language || ""));
-    if (window.PortalSuiteContact && typeof window.PortalSuiteContact.details === "function") {
-      try {
-        isChinese = Boolean(window.PortalSuiteContact.details().isChinese);
-      } catch (_error) {
-        // Keep the browser-language fallback while the shared helper refreshes.
-      }
-    }
-    return {
-      isChinese,
-      channel: "email",
-      value: CONTACT_EMAIL,
-      label: "邮箱",
-      href: `mailto:${CONTACT_EMAIL}`,
-    };
-  }
-
-  function contactMethodText(uiLanguage = "zh") {
-    const contact = contactDetails();
-    const label = uiLanguage === "en" ? "email" : "邮箱";
-    return `${label} ${contact.value}`;
-  }
-
-  function contactMethodHtml(uiLanguage = "zh") {
-    const contact = contactDetails();
-    const value = escapeHtml(contact.value);
-    const label = uiLanguage === "en" ? "email" : "邮箱";
-    return `${escapeHtml(label)} <a href="${escapeHtml(contact.href)}"><b>${value}</b></a>`;
-  }
-
-  function allContactMethodsHtml() {
-    return `邮箱 <a href="mailto:${escapeHtml(CONTACT_EMAIL)}"><b>${escapeHtml(CONTACT_EMAIL)}</b></a>`;
-  }
-
-  function accessContactGuidanceText() {
-    const contact = contactDetails();
-    return contact.isChinese
-      ? `如需开通或调整下载权限，请联系邮箱 ${contact.value}。`
-      : `To activate or update download access, email ${contact.value}.`;
-  }
-
   function accessContactGuidanceHtml() {
-    const contact = contactDetails();
-    if (contact.isChinese) {
-      return `如需开通或调整下载权限，请联系邮箱 <a href="${escapeHtml(contact.href)}"><b>${escapeHtml(contact.value)}</b></a>。`;
-    }
-    return `To activate or update download access, email <a href="${escapeHtml(contact.href)}"><b>${escapeHtml(contact.value)}</b></a>.`;
+    return `如需开通或调整下载权限，<button class="inline-request-button" type="button" data-membership-request-open="access">提交站内申请</button>。`;
+  }
+
+  function requestKindForVisibleMessage(value) {
+    const text = String(value || "");
+    if (/权限|无权|解锁|体验下载已满|limit_exceeded|3\s*个月/iu.test(text)) return "access";
+    if (/失败|未完成|异常|超时|不可用|超过预期|support|failed|failure|error|timed?\s*out|temporarily unavailable|could not|cannot|can't|稍后重试/iu.test(text)) return "support";
+    return "";
+  }
+
+  function requestActionStatusHtml(value, requestedKind = "") {
+    const text = publicMessageText(value);
+    const kind = membershipRequestKind(requestedKind || requestKindForVisibleMessage(text));
+    const label = kind === "access" ? "提交权限申请" : "提交支持请求";
+    return `${escapeHtml(text)} <button class="inline-request-button" type="button" data-membership-request-open="${kind}">${label}</button>`;
   }
 
   function registrationNoticeText(mode = "login") {
-    if (!contactDetails().isChinese) {
-      return mode === "register"
-        ? `Use an email address you check regularly. Registration creates a login only. For download access, email ${CONTACT_EMAIL}.`
-        : `New here? Register with an email address you check regularly. For download access, email ${CONTACT_EMAIL}.`;
-    }
     return mode === "register"
-      ? `请填写常用邮箱。注册仅创建登录账号；如需开通下载权限，请联系邮箱 ${CONTACT_EMAIL}。`
-      : `没有账号？请注册并填写常用邮箱。如需开通下载权限，请联系邮箱 ${CONTACT_EMAIL}。`;
+      ? "请填写常用邮箱。注册仅创建登录账号；注册后可在账户中心申请加入会员。"
+      : "没有账号？请注册并填写常用邮箱，也可以直接提交会员申请。";
   }
 
   function registrationCompleteText() {
-    if (!contactDetails().isChinese) {
-      return `Registration complete. For download access, email ${CONTACT_EMAIL}.`;
-    }
-    return `注册成功。如需开通下载权限，请联系邮箱 ${CONTACT_EMAIL}。`;
+    return "注册成功。可在下方提交会员申请或查看会员联系方式。";
   }
 
   function localizedContactText(value) {
@@ -865,6 +826,25 @@
     return Boolean(user) && !user.disabled && user.account_status !== "disabled" && user.status !== "disabled";
   }
 
+  const MEMBERSHIP_REQUEST_KINDS = new Set(["membership", "support", "privacy", "refund", "access"]);
+
+  function membershipRequestKind(value) {
+    const kind = String(value || "").trim().toLowerCase();
+    return MEMBERSHIP_REQUEST_KINDS.has(kind) ? kind : "membership";
+  }
+
+  function membershipRequestCopy(value) {
+    const kind = membershipRequestKind(value);
+    const copy = {
+      membership: { title: "申请加入会员", button: "提交会员申请", note: "留下常用联系方式，KC桌面收到后会与你联系。" },
+      support: { title: "联系 KC桌面", button: "提交联系请求", note: "请留下常用联系方式和需要协助的事项。" },
+      privacy: { title: "提交隐私请求", button: "提交隐私请求", note: "请在备注中说明查询、更正或删除需求。" },
+      refund: { title: "提交支持请求", button: "提交支持请求", note: "请在备注中说明账号、开通时间和需要协助的事项。" },
+      access: { title: "申请开通或调整权限", button: "提交权限申请", note: "请留下常用联系方式，并在备注中说明需要的报告范围。" },
+    };
+    return { kind, ...copy[kind] };
+  }
+
   function privateToolsUnlocked() {
     return Boolean(getAdminToken() || isSuperSession());
   }
@@ -894,16 +874,33 @@
 
   function initAccountGate(workerUrl) {
     const gate = document.getElementById("accountGate");
-    if (!gate) return;
-    function update() {
-      const session = loadAuthSession();
-      gate.textContent = authUserLabel(session);
-      gate.classList.toggle("is-unlocked", Boolean(session));
+    if (gate) {
+      function update() {
+        const session = loadAuthSession();
+        gate.textContent = authUserLabel(session);
+        gate.classList.toggle("is-unlocked", Boolean(session));
+      }
+      update();
+      document.addEventListener("portal-auth-change", update);
+      gate.addEventListener("click", () => showAccountModal(workerUrl));
+      refreshAuthSession(workerUrl).then(update);
     }
-    update();
-    document.addEventListener("portal-auth-change", update);
-    gate.addEventListener("click", () => showAccountModal(workerUrl));
-    refreshAuthSession(workerUrl).then(update);
+
+    document.addEventListener("click", (event) => {
+      const trigger = event.target && event.target.closest
+        ? event.target.closest("[data-membership-request-open]")
+        : null;
+      if (!trigger) return;
+      event.preventDefault();
+      showAccountModal(workerUrl, {
+        requestKind: membershipRequestKind(trigger.getAttribute("data-membership-request-open")),
+      });
+    });
+
+    const deepLinkKind = new URLSearchParams(window.location.search).get("request");
+    if (deepLinkKind && MEMBERSHIP_REQUEST_KINDS.has(String(deepLinkKind).trim().toLowerCase())) {
+      window.setTimeout(() => showAccountModal(workerUrl, { requestKind: membershipRequestKind(deepLinkKind) }), 0);
+    }
   }
 
   function initNewsfeedNav() {
@@ -917,9 +914,19 @@
   function accountModalMarkup(context = {}) {
     const session = loadAuthSession();
     const signedIn = Boolean(session);
+    const requestCopy = membershipRequestCopy(context.requestKind);
+    const requestExpanded = Boolean(context.requestKind);
+    const requesterEmail = signedIn && session.user ? String(session.user.email || "").trim() : "";
     const reportTitle = context.item ? titleText(context.item) : "";
     const reportLine = reportTitle ? `<span>当前报告：${escapeHtml(reportTitle)}</span>` : "";
     const reportHelp = `<span>${accessContactGuidanceHtml()}</span>`;
+    const reportContactCard = context.item ? `
+      <div class="contact-card" id="accountContactCard">
+        <strong>报告获取</strong>
+        ${reportLine}
+        ${reportHelp}
+      </div>
+    ` : "";
     const rewardReportActions = context.item && String(context.source || "catalog") === "catalog"
       ? `
         <div class="account-reward-claim" id="accountRewardClaim">
@@ -993,11 +1000,54 @@
               <div id="accountRewardStatus" class="status-line" aria-live="polite"></div>
             </section>
           </div>
-          <div class="contact-card" id="accountContactCard">
-            <strong>报告获取</strong>
-            ${reportLine}
-            ${reportHelp}
-          </div>
+          <section class="account-member-contact" id="accountMemberContact" hidden>
+            <div>
+              <strong>KC桌面会员联系</strong>
+              <span>仅当前已登录的注册用户可查看联系二维码。</span>
+            </div>
+            <button class="secondary-button" id="accountContactQrToggle" type="button" hidden>重新加载二维码</button>
+            <div class="account-contact-qr" id="accountContactQrPanel" hidden>
+              <img id="accountContactQrImage" alt="KC桌面会员联系二维码">
+            </div>
+            <div id="accountContactQrStatus" class="status-line" aria-live="polite"></div>
+          </section>
+          <section class="membership-request-card" id="membershipRequestCard">
+            <div class="membership-request-heading">
+              <div>
+                <strong id="membershipRequestTitle">${escapeHtml(requestCopy.title)}</strong>
+                <span id="membershipRequestNote">${escapeHtml(requestCopy.note)}</span>
+              </div>
+              <button class="secondary-button" id="membershipRequestToggle" type="button">${requestExpanded ? "收起申请表" : requestCopy.title}</button>
+            </div>
+            <form id="membershipRequestForm" ${requestExpanded ? "" : "hidden"}>
+              <input id="membershipRequestKind" type="hidden" value="${escapeHtml(requestCopy.kind)}">
+              <div class="membership-request-grid">
+                <label>常用邮箱
+                  <input id="membershipRequesterEmail" name="requester_email" type="email" autocomplete="email" inputmode="email" value="${escapeHtml(requesterEmail)}" placeholder="name@example.com"${signedIn ? " readonly" : ""} required>
+                </label>
+                <label>首选即时联系方式
+                  <select id="membershipContactChannel" name="contact_channel" required>
+                    <option value="">请选择</option>
+                    <option value="wechat">微信</option>
+                    <option value="whatsapp">WhatsApp</option>
+                    <option value="telegram">Telegram</option>
+                  </select>
+                </label>
+                <label class="membership-contact-value">账号或手机号
+                  <input id="membershipContactValue" name="contact_value" type="text" autocomplete="off" maxlength="160" placeholder="请填写对应账号或手机号" required>
+                </label>
+              </div>
+              <label>备注（可选）
+                <textarea id="membershipRequestMessage" name="note" rows="3" maxlength="600" placeholder="例如：希望开通的报告范围或需要协助的事项"></textarea>
+              </label>
+              <label class="membership-request-trap" aria-hidden="true">请勿填写
+                <input id="membershipRequestWebsite" name="website" type="text" tabindex="-1" autocomplete="off">
+              </label>
+              <button class="primary" id="membershipRequestSubmit" type="submit">${escapeHtml(requestCopy.button)}</button>
+              <div id="membershipRequestStatus" class="status-line" aria-live="polite"></div>
+            </form>
+          </section>
+          ${reportContactCard}
           <div id="accountModalStatus" class="status-line" aria-live="polite"></div>
         </div>
       </div>
@@ -1030,6 +1080,7 @@
       return "";
     }
     const existing = document.getElementById("accountModal");
+    if (existing && typeof existing.__portalCleanup === "function") existing.__portalCleanup();
     if (existing) existing.remove();
     document.body.insertAdjacentHTML("beforeend", accountModalMarkup(context));
 
@@ -1054,6 +1105,21 @@
     const newPasswordConfirm = document.getElementById("accountNewPasswordConfirm");
     const passwordSubmit = document.getElementById("accountPasswordSubmit");
     const contactCard = document.getElementById("accountContactCard");
+    const memberContact = document.getElementById("accountMemberContact");
+    const contactQrToggle = document.getElementById("accountContactQrToggle");
+    const contactQrPanel = document.getElementById("accountContactQrPanel");
+    const contactQrImage = document.getElementById("accountContactQrImage");
+    const contactQrStatus = document.getElementById("accountContactQrStatus");
+    const membershipRequestToggle = document.getElementById("membershipRequestToggle");
+    const membershipRequestForm = document.getElementById("membershipRequestForm");
+    const membershipRequestKindInput = document.getElementById("membershipRequestKind");
+    const membershipRequesterEmail = document.getElementById("membershipRequesterEmail");
+    const membershipContactChannel = document.getElementById("membershipContactChannel");
+    const membershipContactValue = document.getElementById("membershipContactValue");
+    const membershipRequestMessage = document.getElementById("membershipRequestMessage");
+    const membershipRequestWebsite = document.getElementById("membershipRequestWebsite");
+    const membershipRequestSubmit = document.getElementById("membershipRequestSubmit");
+    const membershipRequestStatus = document.getElementById("membershipRequestStatus");
     const status = document.getElementById("accountModalStatus");
     const rewards = document.getElementById("accountRewards");
     const rewardPoints = document.getElementById("accountRewardPoints");
@@ -1073,6 +1139,10 @@
     let rewardActionActive = false;
     let rewardActionRestore = [];
     let rewardRefreshRequest = 0;
+    let contactQrObjectUrl = "";
+    let contactQrLoading = false;
+    let contactQrRequest = 0;
+    let membershipRequestActive = false;
 
     function setStatus(text, kind) {
       status.className = kind ? `status-line ${kind}` : "status-line";
@@ -1084,6 +1154,125 @@
       rewardStatus.className = kind ? `status-line ${kind}` : "status-line";
       rewardStatus.textContent = text || "";
     }
+
+    function setMembershipRequestStatus(text, kind) {
+      if (!membershipRequestStatus) return;
+      membershipRequestStatus.className = kind ? `status-line ${kind}` : "status-line";
+      membershipRequestStatus.textContent = localizedContactText(text);
+    }
+
+    function setContactQrStatus(text, kind) {
+      if (!contactQrStatus) return;
+      contactQrStatus.className = kind ? `status-line ${kind}` : "status-line";
+      contactQrStatus.textContent = localizedContactText(text);
+    }
+
+    function clearContactQrImage() {
+      if (contactQrObjectUrl) URL.revokeObjectURL(contactQrObjectUrl);
+      contactQrObjectUrl = "";
+      if (contactQrImage && typeof contactQrImage.removeAttribute === "function") contactQrImage.removeAttribute("src");
+      else if (contactQrImage) contactQrImage.src = "";
+      if (contactQrPanel) contactQrPanel.hidden = true;
+    }
+
+    function revokeContactQr() {
+      contactQrRequest += 1;
+      contactQrLoading = false;
+      clearContactQrImage();
+      if (contactQrToggle) {
+        contactQrToggle.disabled = false;
+        contactQrToggle.hidden = true;
+        contactQrToggle.textContent = "重新加载二维码";
+        contactQrToggle.setAttribute("aria-expanded", "false");
+      }
+      setContactQrStatus("");
+    }
+
+    async function loadVerifiedContactQr() {
+      if (!memberContact || !contactQrToggle || !contactQrPanel || !contactQrImage || contactQrLoading) return;
+      const session = loadAuthSession();
+      if (!session || !isNewsfeedSession(session)) return;
+      const request = ++contactQrRequest;
+      contactQrLoading = true;
+      clearContactQrImage();
+      memberContact.hidden = false;
+      contactQrToggle.hidden = true;
+      contactQrToggle.disabled = true;
+      contactQrToggle.textContent = "重新加载二维码";
+      setContactQrStatus("正在加载 KC桌面会员联系二维码…");
+      try {
+        const response = await fetch(`${workerUrl}/membership/contact-card`, {
+          cache: "no-store",
+          headers: authHeaders(),
+        });
+        if (request !== contactQrRequest || !modal.isConnected) return;
+        if (!response.ok) {
+          if (response.status === 401 || response.status === 403) {
+            clearAuthSession();
+            refreshUi({ statusOverride: "登录状态已失效，请重新登录。", skipContactVerification: true });
+            return;
+          }
+          const data = await response.json().catch(() => ({}));
+          throw new Error(data.detail || "当前登录状态无法查看联系二维码。");
+        }
+        const contentType = String(response.headers.get("Content-Type") || "").toLowerCase();
+        if (!contentType.startsWith("image/")) throw new Error("联系二维码返回格式无效。");
+        const blob = await response.blob();
+        if (!blob || !blob.size) throw new Error("联系二维码暂时不可用。");
+        const objectUrl = URL.createObjectURL(blob);
+        if (request !== contactQrRequest || !modal.isConnected || !loadAuthSession()) {
+          URL.revokeObjectURL(objectUrl);
+          return;
+        }
+        contactQrObjectUrl = objectUrl;
+        contactQrImage.src = objectUrl;
+        contactQrPanel.hidden = false;
+        contactQrToggle.setAttribute("aria-expanded", "true");
+        setContactQrStatus("二维码仅在当前登录会话中显示。", "ok");
+      } catch (error) {
+        if (request !== contactQrRequest || !modal.isConnected) return;
+        clearContactQrImage();
+        contactQrToggle.hidden = false;
+        setContactQrStatus(error.message || "联系二维码暂时不可用，请稍后重试。", "error");
+      } finally {
+        if (request === contactQrRequest) {
+          contactQrLoading = false;
+          contactQrToggle.disabled = false;
+        }
+      }
+    }
+
+    async function refreshVerifiedContactQr() {
+      const localSession = loadAuthSession();
+      if (!localSession) {
+        if (memberContact) memberContact.hidden = true;
+        revokeContactQr();
+        return;
+      }
+      const request = ++contactQrRequest;
+      contactQrLoading = false;
+      clearContactQrImage();
+      if (memberContact) memberContact.hidden = true;
+      if (contactQrToggle) contactQrToggle.hidden = true;
+      setContactQrStatus("");
+      const verifiedSession = await refreshAuthSession(workerUrl);
+      if (request !== contactQrRequest || !modal.isConnected) return;
+      if (!verifiedSession || !isNewsfeedSession(verifiedSession)) {
+        clearAuthSession();
+        refreshUi({ statusOverride: "登录状态已失效，请重新登录。", skipContactVerification: true });
+        return;
+      }
+      if (memberContact) memberContact.hidden = false;
+      loadVerifiedContactQr();
+    }
+
+    function disposeAccountModal() {
+      window.clearInterval(rewardActionTimer);
+      rewardActionTimer = 0;
+      revokeContactQr();
+    }
+
+    modal.__portalCleanup = disposeAccountModal;
 
     function formatRewardExpiry(value) {
       const timestamp = Date.parse(String(value || ""));
@@ -1272,6 +1461,16 @@
       summary.hidden = !signedIn;
       if (rewards) rewards.hidden = !signedIn;
       if (contactCard) contactCard.hidden = false;
+      if (memberContact) memberContact.hidden = true;
+      if (membershipRequesterEmail) {
+        if (signedIn) {
+          membershipRequesterEmail.value = String(session.user.email || "").trim();
+          membershipRequesterEmail.readOnly = true;
+        } else {
+          if (membershipRequesterEmail.readOnly) membershipRequesterEmail.value = "";
+          membershipRequesterEmail.readOnly = false;
+        }
+      }
       if (signedIn) {
         document.getElementById("accountName").textContent = authUserLabel(session);
         document.getElementById("accountEmailText").textContent = session.user.email || "";
@@ -1284,7 +1483,7 @@
         setStatus(statusOverride || (
           isSuperSession(session)
             ? "已登录，当前账号拥有管理员权限。"
-            : (isOperatorSession(session) ? "已登录，当前账号拥有运营权限。" : `已登录。如需开通下载权限，请联系${contactMethodText()}。`)
+            : (isOperatorSession(session) ? "已登录，当前账号拥有运营权限。" : "已登录。可在下方提交会员申请或查看会员联系方式。")
         ), "ok");
         fetch(`${workerUrl}/entitlement`, { cache: "no-store", headers: authHeaders() })
           .then((response) => response.json())
@@ -1294,8 +1493,11 @@
           })
           .catch(() => {});
         refreshRewards();
+        if (!options.skipContactVerification) refreshVerifiedContactQr();
       } else {
+        revokeContactQr();
         if (adminOpen) adminOpen.hidden = true;
+        if (statusOverride) setStatus(statusOverride, "error");
         captchaToken = "";
         loadAccountCaptcha(workerUrl, status).then((token) => { captchaToken = token; });
       }
@@ -1314,6 +1516,8 @@
     }
 
     function finish() {
+      disposeAccountModal();
+      modal.__portalCleanup = null;
       modal.remove();
     }
 
@@ -1323,6 +1527,87 @@
     });
     toggle.addEventListener("click", () => setMode(mode === "login" ? "register" : "login"));
     refresh.addEventListener("click", () => loadAccountCaptcha(workerUrl, status).then((token) => { captchaToken = token; }));
+    if (contactQrToggle) contactQrToggle.addEventListener("click", refreshVerifiedContactQr);
+    if (membershipRequestToggle && membershipRequestForm) {
+      membershipRequestToggle.setAttribute("aria-expanded", String(!membershipRequestForm.hidden));
+      membershipRequestToggle.addEventListener("click", () => {
+        membershipRequestForm.hidden = !membershipRequestForm.hidden;
+        membershipRequestToggle.setAttribute("aria-expanded", String(!membershipRequestForm.hidden));
+        membershipRequestToggle.textContent = membershipRequestForm.hidden
+          ? membershipRequestCopy(membershipRequestKindInput && membershipRequestKindInput.value).title
+          : "收起申请表";
+        if (!membershipRequestForm.hidden) {
+          const target = membershipRequesterEmail && !membershipRequesterEmail.value
+            ? membershipRequesterEmail
+            : membershipContactChannel;
+          if (target && typeof target.focus === "function") target.focus();
+        }
+      });
+    }
+    if (membershipRequestForm) {
+      membershipRequestForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        if (membershipRequestActive) return;
+        const requesterEmail = String(membershipRequesterEmail && membershipRequesterEmail.value || "").trim().slice(0, 254);
+        const contactChannel = String(membershipContactChannel && membershipContactChannel.value || "").trim().toLowerCase();
+        const contactValue = String(membershipContactValue && membershipContactValue.value || "").trim().slice(0, 160);
+        const note = String(membershipRequestMessage && membershipRequestMessage.value || "").trim().slice(0, 600);
+        const requestKind = membershipRequestKind(membershipRequestKindInput && membershipRequestKindInput.value);
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/u.test(requesterEmail)) {
+          setMembershipRequestStatus("请填写有效的常用邮箱。", "error");
+          membershipRequesterEmail?.focus();
+          return;
+        }
+        if (!["wechat", "whatsapp", "telegram"].includes(contactChannel) || !contactValue) {
+          setMembershipRequestStatus("请选择微信、WhatsApp 或 Telegram，并填写对应账号或手机号。", "error");
+          (contactChannel ? membershipContactValue : membershipContactChannel)?.focus();
+          return;
+        }
+
+        membershipRequestActive = true;
+        membershipRequestSubmit.disabled = true;
+        membershipRequestSubmit.textContent = "正在提交…";
+        setMembershipRequestStatus("正在通知 KC桌面，请稍候…");
+        try {
+          const response = await fetch(`${workerUrl}/membership/request`, {
+            method: "POST",
+            cache: "no-store",
+            headers: { "Content-Type": "application/json", ...authHeaders() },
+            body: JSON.stringify({
+              requester_email: requesterEmail,
+              contact_channel: contactChannel,
+              contact_value: contactValue,
+              note,
+              request_kind: requestKind,
+              page_path: currentAnalyticsPath(),
+              honeypot: String(membershipRequestWebsite && membershipRequestWebsite.value || "").slice(0, 160),
+            }),
+          });
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok || !data.ok) throw new Error(data.detail || "申请提交失败，请稍后重试。");
+          membershipRequesterEmail.readOnly = true;
+          membershipContactChannel.disabled = true;
+          membershipContactValue.readOnly = true;
+          membershipRequestMessage.readOnly = true;
+          membershipRequestSubmit.textContent = data.deduplicated ? "申请已记录" : "申请已提交";
+          setMembershipRequestStatus(
+            data.detail || (data.deduplicated ? "这条申请已经收到，无需重复提交。" : "申请已提交，KC桌面会通过你留下的联系方式回复。"),
+            "ok",
+          );
+          trackEvent(workerUrl, "membership_request", {
+            action: data.deduplicated ? "deduplicated" : "submitted",
+            request_kind: requestKind,
+            contact_channel: contactChannel,
+          });
+        } catch (error) {
+          membershipRequestSubmit.disabled = false;
+          membershipRequestSubmit.textContent = membershipRequestCopy(requestKind).button;
+          setMembershipRequestStatus(error.message || "申请提交失败，请稍后重试。", "error");
+        } finally {
+          membershipRequestActive = false;
+        }
+      });
+    }
     if (logout) {
       logout.addEventListener("click", () => {
         const session = loadAuthSession();
@@ -9528,26 +9813,25 @@
 
   function downloadErrorMessage(status, message, data) {
     const text = String(message || "");
-    if (data && data.limit_exceeded) return localizedContactText(text || `3天体验下载已满 10 篇，请联系${contactMethodText()}。`);
+    if (data && data.limit_exceeded) return localizedContactText(text || "3天体验下载已满 10 篇。");
     if (
       data && data.archived ||
       status === 404 && /pdf|object|mirrored|archived|not found/i.test(text)
     ) {
-      const contact = contactDetails();
-      return contact.isChinese
-        ? `PDF 暂不可用，请联系${contactMethodText()}。`
-        : `PDF is not currently available. Email: ${CONTACT_EMAIL}.`;
+      return "PDF 暂不可用。";
     }
     if (/password/i.test(text)) return localizedContactText(text);
     if (/configured/i.test(text)) return "PDF download is temporarily unavailable. Please try again later.";
     return localizedContactText(text) || "Download failed.";
   }
 
-  function maybeAlertDownloadLimit(message) {
+  function maybeAlertDownloadLimit(message, workerUrl, context = {}) {
     const text = String(message || "");
     if (/体验下载已满|limit_exceeded/i.test(text) && /体验|limit_exceeded/i.test(text)) {
-      window.alert(localizedContactText(text || `3天体验下载已满 10 篇，请联系${contactMethodText()}。`));
+      showAccountModal(workerUrl, { ...context, requestKind: "access" });
+      return true;
     }
+    return false;
   }
 
   function adminPanelMarkup() {
@@ -9725,7 +10009,7 @@
           const fallback = response.status === 401
             ? "登录状态已更新，请重新点击查看。"
             : response.status === 403
-              ? `当前账号无权查看这份原始文本；可能是会员时长不足，或报告 / 机构不在授权范围内。如需开通或调整权限，请联系邮箱 ${CONTACT_EMAIL}。`
+              ? "当前账号无权查看这份原始文本；可能是会员时长不足，或报告 / 机构不在授权范围内。"
               : response.status === 404
                 ? "这份报告暂时没有可读取的原始文本。"
                 : response.status === 400
@@ -10028,7 +10312,9 @@
     const context = { item, source };
 
     function statusTarget(text, kind) {
-      setLineStatus(status, text, kind);
+      const requestKind = kind === "error" ? requestKindForVisibleMessage(text) : "";
+      if (requestKind) setLineHtmlStatus(status, requestActionStatusHtml(text, requestKind), kind);
+      else setLineStatus(status, text, kind);
     }
 
     function statusTargetHtml(html, kind) {
@@ -10065,9 +10351,9 @@
           if (isThreeMonthReport) {
             statusTargetHtml(`当前权益未达到 3 个月。${accessContactGuidanceHtml()}`);
           } else {
-            statusTarget(summary
-              ? `当前账号有${summary}，但不包含此报告。${accessContactGuidanceText()}`
-              : `当前账号尚未解锁此报告。${accessContactGuidanceText()}`);
+            statusTargetHtml(summary
+              ? `当前账号有${summary}，但不包含此报告。${accessContactGuidanceHtml()}`
+              : `当前账号尚未解锁此报告。${accessContactGuidanceHtml()}`);
           }
         }
       } catch (error) {
@@ -10085,8 +10371,12 @@
         await downloadHandler(statusTarget);
       } catch (error) {
         const message = error.message || "下载失败。";
-        maybeAlertDownloadLimit(message);
-        statusTarget(message, "error");
+        const openedRequest = maybeAlertDownloadLimit(message, workerUrl, context);
+        if (!openedRequest) {
+          const requestKind = requestKindForVisibleMessage(message);
+          if (requestKind) statusTargetHtml(requestActionStatusHtml(message, requestKind), "error");
+          else statusTarget(message, "error");
+        }
       } finally {
         accountDownload.disabled = false;
         accountDownload.textContent = idleLabel;
@@ -10578,8 +10868,8 @@
           });
         }
         const message = error.message || "Download failed.";
-        maybeAlertDownloadLimit(message);
-        status.textContent = message;
+        maybeAlertDownloadLimit(message, workerUrl, { item, source: "catalog" });
+        status.innerHTML = requestActionStatusHtml(message, requestKindForVisibleMessage(message) || "support");
         status.classList.add("error");
       } finally {
         button.disabled = false;
@@ -10871,7 +11161,7 @@
         : `${elapsedSeconds} 秒`;
       if (attempts > maxAttempts) {
         window.clearInterval(timer);
-        statusTarget(`报告准备时间超过预期。请保留这个页面，稍后再次点击下载；如果多次失败请联系${contactMethodText()}。`, "error");
+        statusTarget("报告准备时间超过预期。请保留这个页面，稍后再次点击下载；如果多次失败可提交支持请求。", "error");
         return;
       }
       try {
@@ -10886,7 +11176,7 @@
           onReady();
         } else if (data.status === "failed") {
           window.clearInterval(timer);
-          statusTarget(data.message || `报告准备失败，请联系${contactMethodText()}。`, "error");
+          statusTarget(data.message || "报告准备失败，可提交支持请求。", "error");
         }
       } catch (_error) {
         // Keep polling while the background grab runs.
@@ -10942,7 +11232,6 @@
     const session = loadAuthSession();
     const defaultEmail = session && session.user ? String(session.user.email || "").trim() : "";
     const accountEmail = Boolean(defaultEmail);
-    const fallbackSubject = encodeURIComponent(`报告申请：${reportRequestTitle(item)}`);
     return `
       <form class="report-request-form" id="reportRequestForm">
         <p class="report-request-expectation">提交后无需打开邮件客户端。我们会在 <b>24 小时内</b>通过你填写的邮箱回复；如暂时无法提供，也会告知处理结果。</p>
@@ -10958,7 +11247,6 @@
           <input id="reportRequestWebsite" name="website" type="text" tabindex="-1" autocomplete="off">
         </label>
         <div id="reportRequestStatus" class="status-line" aria-live="polite"></div>
-        <p class="report-request-fallback">如果自动提交暂时不可用，也可发送邮件至 <a href="mailto:${escapeHtml(CONTACT_EMAIL)}?subject=${fallbackSubject}">${escapeHtml(CONTACT_EMAIL)}</a>。</p>
       </form>
     `;
   }
@@ -10987,7 +11275,7 @@
         return;
       }
       if (!workerUrl) {
-        setRequestStatus(`自动提交暂时不可用，请发送邮件至 ${CONTACT_EMAIL}。`, "error");
+        setRequestStatus("站内申请暂时不可用，请稍后重试。", "error");
         return;
       }
 
@@ -11241,7 +11529,10 @@
 
       function setStatus(text, kind) {
         status.className = kind ? `status-line ${kind}` : "status-line";
-        status.textContent = localizedContactText(text);
+        const message = localizedContactText(text);
+        const requestKind = kind === "error" ? requestKindForVisibleMessage(message) : "";
+        if (requestKind) status.innerHTML = requestActionStatusHtml(message, requestKind);
+        else status.textContent = message;
       }
 
       async function submitDownload(event) {
@@ -11255,7 +11546,7 @@
           await fetchExternalPdf(workerUrl, item, input.value, setStatus);
         } catch (error) {
           const message = error.message || "下载失败。";
-          maybeAlertDownloadLimit(message);
+          maybeAlertDownloadLimit(message, workerUrl, { item, source: HOT_REPORT_SOURCE });
           setStatus(message, "error");
         } finally {
           button.disabled = false;
@@ -11366,7 +11657,10 @@
 
     function setStatus(text, kind) {
       status.className = kind ? `status-line ${kind}` : "status-line";
-      status.textContent = localizedContactText(text);
+      const message = localizedContactText(text);
+      const requestKind = kind === "error" ? requestKindForVisibleMessage(message) : "";
+      if (requestKind) status.innerHTML = requestActionStatusHtml(message, requestKind);
+      else status.textContent = message;
       wait.hidden = !/准备|等待|自动检测/.test(String(text || ""));
     }
 
@@ -11390,7 +11684,7 @@
         }
       } catch (error) {
         const message = error.message || "下载失败。";
-        maybeAlertDownloadLimit(message);
+        maybeAlertDownloadLimit(message, workerUrl, { item, source: item.source });
         setStatus(message, "error");
       } finally {
         button.disabled = false;
@@ -14108,8 +14402,7 @@
           </section>
         `;
       }).join("");
-      const email = CONTACT_EMAIL;
-      const contactRows = `<p>邮箱：<a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>`;
+      const contactRows = `<button class="secondary-button" type="button" data-membership-request-open="support">咨询课程详情</button>`;
       catalog.innerHTML = `
         <section class="course-browser" aria-label="课程目录筛选">
           <div class="course-browser-copy">

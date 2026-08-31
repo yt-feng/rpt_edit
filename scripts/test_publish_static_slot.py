@@ -10,6 +10,8 @@ import threading
 import unittest
 from pathlib import Path
 
+from PIL import Image
+
 import publish_static_slot as publisher
 
 
@@ -131,13 +133,35 @@ def release(number: int) -> str:
 
 
 class StaticSlotPublisherTests(unittest.TestCase):
-    def publish(self, client: FakeR2, root: Path, number: int, active: str = ""):
+    def member_contact_card(self) -> Path:
+        handle = tempfile.NamedTemporaryFile(suffix="-member-contact-card.jpg", delete=False)
+        handle.close()
+        path = Path(handle.name)
+        Image.effect_noise((640, 800), 32).convert("RGB").save(
+            path,
+            format="JPEG",
+            quality=92,
+            subsampling=0,
+        )
+        self.addCleanup(path.unlink, missing_ok=True)
+        return path
+
+    def publish(
+        self,
+        client: FakeR2,
+        root: Path,
+        number: int,
+        active: str = "",
+        *,
+        member_contact_card: Path | None = None,
+    ):
         return publisher.publish_static_slot(
             client,
             "bucket",
             root,
             release(number),
             active,
+            member_contact_card=member_contact_card or self.member_contact_card(),
             max_workers=4,
         )
 
@@ -314,6 +338,124 @@ class StaticSlotPublisherTests(unittest.TestCase):
             self.assertTrue(content_operations)
             self.assertGreater(manifest_operation, max(content_operations))
 
+    def test_private_member_card_is_verified_outside_public_inventory_before_commit(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            build_site(root)
+            client = FakeR2()
+            for key in publisher.LEGACY_PUBLIC_CONTACT_CARD_KEYS:
+                client.objects[key] = {
+                    "body": b"legacy-public-contact-card",
+                    "metadata": {},
+                }
+            member_card = self.member_contact_card()
+            result = self.publish(client, root, 1, member_contact_card=member_card)
+
+            self.assertEqual(
+                result["legacy_public_contact_cards_removed"],
+                len(publisher.LEGACY_PUBLIC_CONTACT_CARD_KEYS),
+            )
+            for key in publisher.LEGACY_PUBLIC_CONTACT_CARD_KEYS:
+                self.assertNotIn(key, client.objects)
+
+            private_row = client.objects[publisher.MEMBER_CONTACT_CARD_KEY]
+            self.assertEqual(private_row["content_type"], "image/jpeg")
+            self.assertEqual(
+                private_row["cache_control"],
+                publisher.MEMBER_CONTACT_CARD_CACHE_CONTROL,
+            )
+            self.assertEqual(
+                private_row["metadata"],
+                {"sha256": result["member_contact_card_sha256"]},
+            )
+            self.assertEqual(len(private_row["body"]), result["member_contact_card_bytes"])
+
+            slot_prefix = publisher.slot_prefix("a")
+            manifest = json.loads(client.objects[publisher.manifest_key("a")]["body"])
+            self.assertNotIn(publisher.MEMBER_CONTACT_CARD_KEY, manifest["files"])
+            self.assertFalse(
+                any(
+                    key.startswith(slot_prefix) and "member-contact-card" in key
+                    for key in client.objects
+                )
+            )
+
+            private_upload = client.operations.index(("upload", publisher.MEMBER_CONTACT_CARD_KEY))
+            private_head = client.operations.index(("head", publisher.MEMBER_CONTACT_CARD_KEY))
+            legacy_deletes = [
+                client.operations.index(("delete", key))
+                for key in publisher.LEGACY_PUBLIC_CONTACT_CARD_KEYS
+            ]
+            legacy_absence_checks = [
+                max(
+                    index
+                    for index, operation in enumerate(client.operations)
+                    if operation == ("head", key)
+                )
+                for key in publisher.LEGACY_PUBLIC_CONTACT_CARD_KEYS
+            ]
+            static_uploads = [
+                index
+                for index, operation in enumerate(client.operations)
+                if operation[0] == "upload" and operation[1].startswith(slot_prefix)
+            ]
+            required_heads = [
+                index
+                for index, operation in enumerate(client.operations)
+                if operation[0] == "head" and operation[1].startswith(slot_prefix)
+            ]
+            manifest_commit = client.operations.index(("put", publisher.manifest_key("a")))
+            self.assertGreater(private_upload, max(static_uploads))
+            self.assertGreater(private_upload, max(required_heads))
+            self.assertGreater(private_upload, max(legacy_deletes))
+            self.assertGreater(private_upload, max(legacy_absence_checks))
+            self.assertGreater(private_head, private_upload)
+            self.assertGreater(manifest_commit, private_head)
+
+    def test_missing_or_bad_private_member_card_fails_before_remote_calls(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            build_site(root)
+            client = FakeR2()
+            missing = root.parent / f"{root.name}-missing-member-contact.jpg"
+            with self.assertRaisesRegex(ValueError, "real JPEG"):
+                self.publish(client, root, 1, member_contact_card=missing)
+            self.assertEqual(client.operations, [])
+
+            handle = tempfile.NamedTemporaryFile(suffix="-bad-member-contact.jpg", delete=False)
+            handle.write(b"\xff\xd8\xff" + b"not-a-real-jpeg" * 400 + b"\xff\xd9")
+            handle.close()
+            bad = Path(handle.name)
+            self.addCleanup(bad.unlink, missing_ok=True)
+            with self.assertRaisesRegex(ValueError, "valid JPEG"):
+                self.publish(client, root, 2, member_contact_card=bad)
+            self.assertEqual(client.operations, [])
+
+            inside_public_root = root / "member-contact-card.jpg"
+            inside_public_root.write_bytes(self.member_contact_card().read_bytes())
+            with self.assertRaisesRegex(ValueError, "outside the public static root"):
+                self.publish(client, root, 3, member_contact_card=inside_public_root)
+            self.assertEqual(client.operations, [])
+
+    def test_private_member_card_upload_failure_leaves_slot_uncommitted(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            build_site(root)
+            client = FakeR2()
+            client.fail_upload_suffix = publisher.MEMBER_CONTACT_CARD_KEY
+            with self.assertRaisesRegex(RuntimeError, "injected upload failure"):
+                self.publish(client, root, 1)
+            self.assertTrue(
+                any(
+                    operation[0] == "upload"
+                    and operation[1].startswith(publisher.slot_prefix("a"))
+                    for operation in client.operations
+                )
+            )
+            self.assertNotIn(publisher.MEMBER_CONTACT_CARD_KEY, client.objects)
+            self.assertNotIn(publisher.manifest_key("a"), client.objects)
+            self.assertIn(publisher.incomplete_key("a"), client.objects)
+
     def test_tree_verification_uses_every_paginated_object(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
@@ -344,7 +486,13 @@ class StaticSlotPublisherTests(unittest.TestCase):
             build_site(root)
             client = FakeR2()
             with self.assertRaisesRegex(ValueError, "Release id"):
-                publisher.publish_static_slot(client, "bucket", root, "latest")
+                publisher.publish_static_slot(
+                    client,
+                    "bucket",
+                    root,
+                    "latest",
+                    member_contact_card=self.member_contact_card(),
+                )
             (root / "linked.html").symlink_to(root / "index.html")
             with self.assertRaisesRegex(ValueError, "symbolic links"):
                 self.publish(client, root, 1)

@@ -134,6 +134,51 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
                 self.assertIn(f'"$origin/{path}"', section)
             self.assertIn("python3 -B scripts/check_public_brand.py", section)
 
+    def test_member_contact_card_is_rebuilt_privately_and_changes_release_semantics(self) -> None:
+        install = self.workflow.index("Install refresh dependencies")
+        validate = self.workflow.index("Validate public source")
+        materialize = self.workflow[
+            self.workflow.index("Materialize private deployment profile"):
+            self.workflow.index("Refresh report catalog with additive PDF sync")
+        ]
+        build = self.workflow[
+            self.workflow.index("Build private static release"):
+            self.workflow.index("Validate built public brand")
+        ]
+        delta = self.workflow[
+            self.workflow.index("Detect meaningful public release changes"):
+            self.workflow.index("Upload inactive static slot and immutable runtime")
+        ]
+        upload = self.workflow[
+            self.workflow.index("Upload inactive static slot and immutable runtime"):
+            self.workflow.index("Build public validation artifact")
+        ]
+
+        self.assertLess(install, validate)
+        for dependency in (
+            '"Pillow>=10.1,<12"',
+            '"qrcode>=8,<9"',
+            '"zxing-cpp>=2.3,<4"',
+        ):
+            self.assertIn(dependency, self.workflow)
+        self.assertIn("scripts/build_member_contact_card.py", self.workflow)
+        self.assertIn("scripts/test_build_member_contact_card.py", self.workflow)
+        self.assertIn('member_contact_card="$RUNNER_TEMP/member-contact-card.jpg"', materialize)
+        self.assertIn('--source "$legacy_contact_card"', materialize)
+        self.assertIn('--output "$member_contact_card"', materialize)
+        self.assertIn('rm -f "$legacy_contact_card"', materialize)
+        self.assertIn('test ! -e "$legacy_contact_card"', materialize)
+        self.assertIn("test ! -e _neutral_site/assets/contact-card.jpg", build)
+        self.assertIn("--build-contract scripts/build_member_contact_card.py", delta)
+        self.assertIn('--build-contract "$RUNNER_TEMP/member-contact-card.jpg"', delta)
+        self.assertIn('--member-contact-card "$RUNNER_TEMP/member-contact-card.jpg"', upload)
+
+        artifact = self.workflow[
+            self.workflow.index("Build public validation artifact"):
+            self.workflow.index("Upload release validation artifact")
+        ]
+        self.assertNotIn("member-contact-card.jpg", artifact)
+
     def test_cutover_proves_portal_runtime_and_canonical_routes(self) -> None:
         cutover = self.workflow[self.workflow.index("  cutover:\n"):]
         route_context = cutover.index("Prepare masked live route context")
