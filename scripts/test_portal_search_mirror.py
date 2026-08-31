@@ -16,6 +16,48 @@ import portal_search_mirror as mirror
 
 
 class PortalSearchMirrorTests(unittest.TestCase):
+    def test_external_public_metadata_removes_aggregator_brand_and_channel_fallback(self) -> None:
+        item = mirror.slim_external({
+            "report_id": "external-1",
+            "title": "Reportify | AI Infrastructure",
+            "title_cn": "NashAI：人工智能基础设施",
+            "institution_name": "Nash AI",
+            "channel_name": "Reportify",
+            "summary": "From reportify.cn · independent research summary",
+        })
+        self.assertIsNotNone(item)
+        assert item is not None
+        self.assertEqual(item["title"], "AI Infrastructure")
+        self.assertEqual(item["title_cn"], "人工智能基础设施")
+        self.assertEqual(item["institution"], "")
+        self.assertEqual(item["summary"], "independent research summary")
+
+        channel_only = mirror.slim_external({
+            "report_id": "external-2",
+            "title": "Valid title",
+            "channel_name": "Legacy aggregator",
+        })
+        self.assertIsNotNone(channel_only)
+        assert channel_only is not None
+        self.assertEqual(channel_only["institution"], "")
+
+    def test_authority_public_metadata_removes_aggregator_brand(self) -> None:
+        item = mirror.slim_authority("foreign", {
+            "id": "authority-1",
+            "title": "NashAI - Global AI Outlook",
+            "securities": "Nash AI",
+            "companyName": "NashAI",
+            "author": "MacroGate",
+        })
+        self.assertIsNotNone(item)
+        assert item is not None
+        self.assertEqual(item["title"], "Global AI Outlook")
+        self.assertEqual(item["institution"], "")
+        self.assertEqual(item["author"], "")
+
+    def test_public_metadata_normalizes_confusable_and_zero_width_brand(self) -> None:
+        self.assertEqual(mirror.public_brand_text("Ｎａｓｈ\u200bＡＩ：Outlook"), "Outlook")
+
     def test_expired_budget_avoids_request(self) -> None:
         method = Mock()
         with patch.object(mirror.time, "monotonic", return_value=10.0):

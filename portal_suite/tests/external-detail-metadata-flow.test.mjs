@@ -58,7 +58,21 @@ function createRuntime(apiItem, options = {}) {
   const context = vm.createContext({
     URL,
     URLSearchParams,
-    DOC_ITEM_CACHE_KEY: "portal_doc_item_cache",
+    DOC_ITEM_CACHE_KEY: "portal_doc_item_cache_v2",
+    LEGACY_SOURCE_WORDS: [["report", "ify"], ["nash", "ai"]],
+    LEGACY_SOURCE_DOMAIN_WORDS: [
+      ["report", "ify", "cn"],
+      ["nash", "ai", "cn"],
+      ["hi", "bor", "com", "cn"],
+    ],
+    LEGACY_CONTACT_WORDS: [
+      ["macro", "gate"],
+      ["support", "contact"],
+      ["portal", "suite"],
+      ["portal", "娱乐"],
+      ["kc", "desk", "notes"],
+      ["two", "tigers"],
+    ],
     EXTERNAL_SOURCE: "external",
     AUTHORITY_SOURCE: "authority",
     REPORT_A_SOURCE: "report-a",
@@ -102,6 +116,11 @@ function createRuntime(apiItem, options = {}) {
     },
   });
   vm.runInContext(`
+    ${extractFunction(appSource, "legacyBrandPattern")}
+    ${extractFunction(appSource, "publicBrandInput")}
+    ${extractFunction(appSource, "publicBrandText")}
+    ${extractFunction(appSource, "publicDocItem")}
+    ${extractFunction(appSource, "publicSearchItem")}
     ${extractFunction(appSource, "hasMeaningfulDocTitle")}
     ${extractFunction(appSource, "mergeDocItemMetadata")}
     ${extractFunction(appSource, "reportRequestTitle")}
@@ -122,10 +141,35 @@ function createRuntime(apiItem, options = {}) {
       fetchDetail: fetchDocDetailItem,
       initRequest: initReportRequest,
       requestTitle: reportRequestTitle,
+      sanitizeText: publicBrandText,
+      sanitizeSearchItem: publicSearchItem,
     };
   `, context);
   return { calls, context, elements, runtime: context.runtime };
 }
+
+test("public metadata sanitizer removes legacy platform labels without altering the HIBOR rate name", () => {
+  const { runtime } = createRuntime({});
+  const legacyReportSource = ["report", "ify"].join("");
+  const legacyContact = ["macro", "gate"].join("");
+  const legacyDomain = [["hi", "bor"].join(""), "com", "cn"].join(".");
+  assert.equal(runtime.sanitizeText(`${legacyReportSource}: Global Markets`), "Global Markets");
+  assert.equal(runtime.sanitizeText(`${legacyContact} / Research Desk`), "Research Desk");
+  assert.equal(runtime.sanitizeText(`mirror ${legacyDomain}`), "mirror");
+  assert.equal(runtime.sanitizeText(`From ${legacyDomain} · Rates Outlook`), "Rates Outlook");
+  assert.equal(runtime.sanitizeText("HIBOR rates outlook"), "HIBOR rates outlook");
+  assert.equal(runtime.sanitizeText(["nash", "\u200b", "ai", ": Cloud Outlook"].join("")), "Cloud Outlook");
+  assert.equal(runtime.sanitizeText("Ｎａｓｈ ＡＩ：Cloud Outlook"), "Cloud Outlook");
+
+  const sanitized = runtime.sanitizeSearchItem({
+    title: `${legacyReportSource} Technology Outlook`,
+    institution: "",
+    channel_name: legacyReportSource,
+  }, "external");
+  assert.equal(sanitized.title, "Technology Outlook");
+  assert.equal(sanitized.institution, "");
+  assert.equal(Object.hasOwn(sanitized, "channel_name"), false);
+});
 
 test("exact Report A result keeps its real title across params, stale cache, blank detail data, compact URL, and request POST", async () => {
   const id = "report-a:7272f7466fea33f5ca7e66afc23a0a90";
@@ -189,17 +233,19 @@ test("exact Report A result keeps its real title across params, stale cache, bla
   assert.match(elements.get("reportRequestStatus").className, /\bok\b/u);
 });
 
-test("NashAI authority metadata survives empty cache/API fields and remains in the shareable detail URL", async () => {
+test("legacy source branding is removed from API, cache, and shareable detail URLs", async () => {
+  const legacySource = ["nash", "ai"].join("");
+  const cleanTitle = "AI Infrastructure and Enterprise Adoption Outlook";
   const item = {
     id: "foreign:260827001",
     source: "authority",
-    title: "NashAI: AI Infrastructure and Enterprise Adoption Outlook",
-    institution: "NashAI",
+    title: `${legacySource}: ${cleanTitle}`,
+    institution: legacySource,
     date: "2026-08-27",
     kind: "foreign",
     kind_label: "普通外文",
     page_count: 18,
-    request_token: "signed-nashai-target",
+    request_token: "signed-legacy-source-target",
   };
   const { runtime } = createRuntime({
     id: item.id,
@@ -215,14 +261,14 @@ test("NashAI authority metadata survives empty cache/API fields and remains in t
   runtime.remember({ ...item, title: "", institution: "", date: "", page_count: "" });
   const pageItem = runtime.fromParams(new URL(runtime.buildUrl(item, "")).searchParams);
   const detailItem = await runtime.fetchDetail("/api", pageItem);
-  assert.equal(detailItem.title, item.title);
-  assert.equal(detailItem.institution, "NashAI");
+  assert.equal(detailItem.title, cleanTitle);
+  assert.equal(detailItem.institution || "", "");
   assert.equal(detailItem.date, "2026-08-27");
   assert.equal(detailItem.page_count, "18");
 
   const canonical = new URL(runtime.buildUrl(detailItem, "", { compact: true }));
-  assert.equal(canonical.searchParams.get("title"), item.title);
-  assert.equal(canonical.searchParams.get("institution"), "NashAI");
+  assert.equal(canonical.searchParams.get("title"), cleanTitle);
+  assert.equal(canonical.searchParams.has("institution"), false);
   assert.equal(canonical.searchParams.get("date"), "2026-08-27");
   assert.equal(canonical.searchParams.get("page_count"), "18");
 });

@@ -1,6 +1,6 @@
 (function () {
   const page = document.body.dataset.page;
-  const CONTACT_WECHAT = "Support Contact";
+  const PUBLIC_BRAND = "KC桌面";
   const CONTACT_EMAIL = ["info", "@", "kc", "desk", ".com"].join("");
   const ADMIN_TOKEN_KEY = "portal_admin_token";
   const ADMIN_PLAIN_KEY = "portal_admin_plain_key";
@@ -9,7 +9,7 @@
   const DOWNLOAD_PASSWORD_KEY = "portal_download_password";
   const AUTH_SESSION_KEY = "portal_auth_session";
   const VISITOR_ID_KEY = "portal_visitor_id";
-  const DOC_ITEM_CACHE_KEY = "portal_doc_item_cache";
+  const DOC_ITEM_CACHE_KEY = "portal_doc_item_cache_v2";
   const REPORT_PREVIEW_CACHE_KEY = "portal_report_preview_cache";
   const REPORT_PREVIEW_CACHE_MAX_ITEMS = 20;
   const REPORT_PREVIEW_CACHE_TTL_MS = 6 * 60 * 60 * 1000;
@@ -315,57 +315,165 @@
       .replace(/"/g, "&quot;");
   }
 
-  function contactDetails() {
-    if (window.PortalSuiteContact && typeof window.PortalSuiteContact.details === "function") {
-      return window.PortalSuiteContact.details();
+  const LEGACY_SOURCE_WORDS = [
+    ["report", "ify"],
+    ["nash", "ai"],
+  ];
+  const LEGACY_SOURCE_DOMAIN_WORDS = [
+    ["report", "ify", "cn"],
+    ["nash", "ai", "cn"],
+    ["hi", "bor", "com", "cn"],
+  ];
+  const LEGACY_CONTACT_WORDS = [
+    ["macro", "gate"],
+    ["support", "contact"],
+    ["portal", "suite"],
+    ["portal", "alternate"],
+    ["portal", "娱乐"],
+    ["kc", "desk", "notes"],
+    ["two", "tigers"],
+  ];
+
+  function legacyBrandPattern(parts) {
+    const escaped = parts.map((part) => String(part).replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+    return new RegExp(escaped.join("[\\s._-]*"), "gi");
+  }
+
+  function publicBrandInput(value) {
+    return String(value || "")
+      .replace(/[\u200b-\u200d\u2060\ufeff]/g, "")
+      .replace(/[Ａ-Ｚａ-ｚ０-９]/g, (character) => String.fromCharCode(character.charCodeAt(0) - 0xfee0));
+  }
+
+  function publicBrandText(value, fallback = "", replacement = "") {
+    const original = String(value || "");
+    let text = publicBrandInput(original);
+    for (const parts of LEGACY_SOURCE_DOMAIN_WORDS) {
+      text = text.replace(legacyBrandPattern(parts), replacement);
     }
-    const languages = Array.isArray(navigator.languages) && navigator.languages.length
-      ? navigator.languages
-      : [navigator.language || ""];
-    const isChinese = /^zh(?:[-_]|$)/i.test(String(languages[0] || ""));
+    for (const parts of [...LEGACY_SOURCE_WORDS, ...LEGACY_CONTACT_WORDS]) {
+      text = text.replace(legacyBrandPattern(parts), replacement);
+    }
+    const legacyChineseSource = String.fromCharCode(0x6167, 0x535a);
+    text = text.replace(new RegExp(legacyChineseSource, "g"), replacement);
+    const changed = text !== original;
+    if (changed) {
+      text = text
+        .replace(/\(\s*\)|（\s*）|\[\s*\]|【\s*】/g, " ")
+        .replace(/\s+([,.;:!?，。；：！？])/g, "$1")
+        .replace(/([\[(（【])\s+/g, "$1")
+        .replace(/\s{2,}/g, " ")
+        .replace(/^[\s:：|·/\\,，;；\-–—_]+|[\s:：|·/\\,，;；\-–—_]+$/g, "")
+        .trim();
+    } else {
+      text = text.trim();
+    }
+    if (changed && !replacement) {
+      text = text
+        .replace(/^(?:from|by|via|sourced?\s+from|source)\s*[:：|·/\\,，;；\-–—_]*\s*/i, "")
+        .replace(/^(?:来源于?|来自)\s*[:：|·/\\,，;；\-–—_]*\s*/u, "")
+        .replace(/\s+(?:from|by|via)\s*$/i, "")
+        .replace(/^[\s:：|·/\\,，;；\-–—_]+|[\s:：|·/\\,，;；\-–—_]+$/g, "")
+        .trim();
+    }
+    return text || String(fallback || "");
+  }
+
+  function publicMessageText(value, fallback = "") {
+    let text = publicBrandInput(value);
+    for (const parts of LEGACY_CONTACT_WORDS) {
+      text = text.replace(legacyBrandPattern(parts), CONTACT_EMAIL);
+    }
+    for (const parts of LEGACY_SOURCE_DOMAIN_WORDS) {
+      text = text.replace(legacyBrandPattern(parts), PUBLIC_BRAND);
+    }
+    for (const parts of LEGACY_SOURCE_WORDS) {
+      text = text.replace(legacyBrandPattern(parts), PUBLIC_BRAND);
+    }
+    text = text.replace(new RegExp(String.fromCharCode(0x6167, 0x535a), "g"), PUBLIC_BRAND);
+    text = text
+      .replace(/Contact\s+WeChat\s*:\s*[^\s，。；;]+/gi, `Email: ${CONTACT_EMAIL}`)
+      .replace(/WeChat\s*:\s*[^\s，。；;]+/gi, `email ${CONTACT_EMAIL}`)
+      .replace(/联系微信号?\s*[:：]?\s*[^\s，。；;]+/gi, `联系邮箱 ${CONTACT_EMAIL}`)
+      .replace(/联系微信\s+[^\s，。；;]+/gi, `联系邮箱 ${CONTACT_EMAIL}`);
+    return publicBrandText(text, fallback, PUBLIC_BRAND);
+  }
+
+  function publicDocItem(value) {
+    if (!value || typeof value !== "object") return value;
+    const item = { ...value };
+    for (const key of [
+      "title", "title_cn", "title_zh", "institution", "institution_name", "bank_name",
+      "bank_code", "description", "summary", "author", "category", "kind_label", "language",
+      "filename", "report_type", "rating", "file_type",
+    ]) {
+      if (Object.prototype.hasOwnProperty.call(item, key)) item[key] = publicBrandText(item[key]);
+    }
+    if (Object.prototype.hasOwnProperty.call(item, "channel_name")) delete item.channel_name;
+    return item;
+  }
+
+  function publicSearchItem(value, source = "") {
+    const item = publicDocItem(value) || {};
+    if (source === EXTERNAL_SOURCE) {
+      item.institution = publicBrandText(item.institution || item.institution_name || "");
+      delete item.institution_name;
+      delete item.channel_name;
+    }
+    return item;
+  }
+
+  function publicDisplayName(value) {
+    const clean = publicBrandText(value);
+    return clean || `${PUBLIC_BRAND}用户`;
+  }
+
+  function contactDetails() {
+    let isChinese = /^zh(?:[-_]|$)/i.test(String(navigator.language || ""));
+    if (window.PortalSuiteContact && typeof window.PortalSuiteContact.details === "function") {
+      try {
+        isChinese = Boolean(window.PortalSuiteContact.details().isChinese);
+      } catch (_error) {
+        // Keep the browser-language fallback while the shared helper refreshes.
+      }
+    }
     return {
       isChinese,
-      channel: isChinese ? "wechat" : "email",
-      value: isChinese ? CONTACT_WECHAT : CONTACT_EMAIL,
-      label: isChinese ? "微信" : "邮箱",
-      href: isChinese ? "" : `mailto:${CONTACT_EMAIL}`,
+      channel: "email",
+      value: CONTACT_EMAIL,
+      label: "邮箱",
+      href: `mailto:${CONTACT_EMAIL}`,
     };
   }
 
   function contactMethodText(uiLanguage = "zh") {
     const contact = contactDetails();
-    const label = contact.channel === "wechat"
-      ? (uiLanguage === "en" ? "WeChat" : "微信")
-      : (uiLanguage === "en" ? "email" : "邮箱");
+    const label = uiLanguage === "en" ? "email" : "邮箱";
     return `${label} ${contact.value}`;
   }
 
   function contactMethodHtml(uiLanguage = "zh") {
     const contact = contactDetails();
     const value = escapeHtml(contact.value);
-    const label = contact.channel === "wechat"
-      ? (uiLanguage === "en" ? "WeChat" : "微信")
-      : (uiLanguage === "en" ? "email" : "邮箱");
-    return contact.href
-      ? `${escapeHtml(label)} <a href="${escapeHtml(contact.href)}"><b>${value}</b></a>`
-      : `${escapeHtml(label)} <b>${value}</b>`;
+    const label = uiLanguage === "en" ? "email" : "邮箱";
+    return `${escapeHtml(label)} <a href="${escapeHtml(contact.href)}"><b>${value}</b></a>`;
   }
 
   function allContactMethodsHtml() {
-    return `微信 <b>${escapeHtml(CONTACT_WECHAT)}</b> · 邮箱 <a href="mailto:${escapeHtml(CONTACT_EMAIL)}"><b>${escapeHtml(CONTACT_EMAIL)}</b></a>`;
+    return `邮箱 <a href="mailto:${escapeHtml(CONTACT_EMAIL)}"><b>${escapeHtml(CONTACT_EMAIL)}</b></a>`;
   }
 
   function accessContactGuidanceText() {
     const contact = contactDetails();
     return contact.isChinese
-      ? `如需开通或调整下载权限，请联系微信 ${contact.value}。`
+      ? `如需开通或调整下载权限，请联系邮箱 ${contact.value}。`
       : `To activate or update download access, email ${contact.value}.`;
   }
 
   function accessContactGuidanceHtml() {
     const contact = contactDetails();
     if (contact.isChinese) {
-      return `如需开通或调整下载权限，请联系微信 <b>${escapeHtml(contact.value)}</b>。`;
+      return `如需开通或调整下载权限，请联系邮箱 <a href="${escapeHtml(contact.href)}"><b>${escapeHtml(contact.value)}</b></a>。`;
     }
     return `To activate or update download access, email <a href="${escapeHtml(contact.href)}"><b>${escapeHtml(contact.value)}</b></a>.`;
   }
@@ -377,25 +485,19 @@
         : `New here? Register with an email address you check regularly. For download access, email ${CONTACT_EMAIL}.`;
     }
     return mode === "register"
-      ? `请填写常用邮箱。注册仅创建登录账号；如需开通下载权限，请联系微信 ${CONTACT_WECHAT}。`
-      : `没有账号？请注册并填写常用邮箱。如需开通下载权限，请联系微信 ${CONTACT_WECHAT}。`;
+      ? `请填写常用邮箱。注册仅创建登录账号；如需开通下载权限，请联系邮箱 ${CONTACT_EMAIL}。`
+      : `没有账号？请注册并填写常用邮箱。如需开通下载权限，请联系邮箱 ${CONTACT_EMAIL}。`;
   }
 
   function registrationCompleteText() {
     if (!contactDetails().isChinese) {
       return `Registration complete. For download access, email ${CONTACT_EMAIL}.`;
     }
-    return `注册成功。如需开通下载权限，请联系微信 ${CONTACT_WECHAT}。`;
+    return `注册成功。如需开通下载权限，请联系邮箱 ${CONTACT_EMAIL}。`;
   }
 
   function localizedContactText(value) {
-    const text = String(value || "");
-    if (!text || contactDetails().isChinese) return text;
-    return text
-      .replace(/Contact\s+WeChat\s*:\s*Support Contact/gi, `Email: ${CONTACT_EMAIL}`)
-      .replace(/WeChat\s*:\s*Support Contact/gi, `email ${CONTACT_EMAIL}`)
-      .replace(/联系微信号?\s*[:：]?\s*Support Contact/gi, `联系邮箱 ${CONTACT_EMAIL}`)
-      .replace(/联系\s+Support Contact/gi, `联系邮箱 ${CONTACT_EMAIL}`);
+    return publicMessageText(value);
   }
 
   function normalize(value) {
@@ -660,15 +762,15 @@
     return {
       source,
       report_id: item && item.id || "",
-      report_title: item ? (item.title || item.title_zh || item.filename || "") : "",
-      institution: item ? (item.institution || item.bank_code || item.bank_name || "") : "",
+      report_title: item ? publicBrandText(item.title || item.title_zh || item.filename || "") : "",
+      institution: item ? publicBrandText(item.institution || item.bank_code || item.bank_name || "") : "",
     };
   }
 
   function authUserLabel(session) {
     const user = session && session.user;
     if (!user) return "登录";
-    return user.username || user.email || "账号";
+    return "账户";
   }
 
   function accountRightLabel(row = {}) {
@@ -2889,15 +2991,17 @@
   function adminFileRow(file) {
     const key = file.type === "artifact" ? file.id : file.path;
     const endpointAttr = file.type === "artifact" ? "artifact" : "file";
-    const note = file.note ? `<span>${escapeHtml(file.note)}</span>` : "";
-    const accountClass = file.recommended_account === "Portal Suite"
-      ? "is-desktop"
-      : (file.recommended_account === "Portal 娱乐" ? "is-entertain" : "is-bias");
-    const accountLabel = file.recommended_account
+    const note = file.note ? `<span>${escapeHtml(publicMessageText(file.note))}</span>` : "";
+    const rawRecommendedAccount = String(file.recommended_account || "");
+    const recommendedAccount = publicBrandText(rawRecommendedAccount, "", PUBLIC_BRAND);
+    const accountClass = /娱乐/u.test(rawRecommendedAccount) || file.kind === "portal-entertain"
+      ? "is-entertain"
+      : (recommendedAccount === PUBLIC_BRAND ? "is-desktop" : "is-bias");
+    const accountLabel = recommendedAccount
       ? `
         <div class="account-admin-file-label">
-          <span class="${accountClass}">适合：${escapeHtml(file.recommended_account)}</span>
-          <small>${escapeHtml(file.account_label_confidence || "低")}信心 · ${escapeHtml(file.account_label_reason || "")}</small>
+          <span class="${accountClass}">适合：${escapeHtml(recommendedAccount)}</span>
+          <small>${escapeHtml(file.account_label_confidence || "低")}信心 · ${escapeHtml(publicMessageText(file.account_label_reason))}</small>
         </div>
       `
       : "";
@@ -2905,8 +3009,8 @@
     return `
       <div class="account-admin-file">
         <div>
-          <strong>${escapeHtml(file.label || file.kind || "File")}</strong>
-          <span>${escapeHtml(file.date || "")} · ${escapeHtml(file.name || "")}${file.size_bytes ? ` · ${escapeHtml(formatSize(file.size_bytes))}` : ""}</span>
+          <strong>${escapeHtml(publicMessageText(file.label || file.kind || "File"))}</strong>
+          <span>${escapeHtml(file.date || "")} · ${escapeHtml(publicMessageText(file.name))}${file.size_bytes ? ` · ${escapeHtml(formatSize(file.size_bytes))}` : ""}</span>
           ${note}
           ${accountLabel}
           <div class="account-admin-progress" hidden>
@@ -2921,7 +3025,7 @@
             data-key="${escapeHtml(key || "")}"
             data-repo="${escapeHtml(repo)}"
             data-size-bytes="${escapeHtml(String(file.size_bytes || 0))}"
-            data-name="${escapeHtml(file.name || "download")}">下载</button>
+            data-name="${escapeHtml(publicBrandText(file.name, "download"))}">下载</button>
         </div>
       </div>
     `;
@@ -6661,21 +6765,21 @@
   function bankLabel(item) {
     const code = String(item.bank_code || "").trim();
     const name = String(item.bank_name || "").trim();
-    if (code && name && normalize(code) !== normalize(name)) return `${code} · ${name}`;
-    return code || name || "Other";
+    if (code && name && normalize(code) !== normalize(name)) return publicBrandText(`${code} · ${name}`, "Other");
+    return publicBrandText(code || name, "Other");
   }
 
   function titleText(item) {
-    return String(item.title || item.filename || "Untitled report").trim() || "Untitled report";
+    return publicBrandText(item.title || item.filename, "Untitled report");
   }
 
   function titleZhText(item) {
-    return String(item.title_zh || "").trim();
+    return publicBrandText(item.title_zh);
   }
 
   function inferIndustry(item) {
     const explicit = item.industry || item.sector || item.category;
-    if (explicit) return String(explicit);
+    if (explicit) return publicBrandText(explicit, "Other");
     const text = normalize([item.title, item.title_zh, item.filename].join(" "));
     for (const [label, pattern] of INDUSTRY_RULES) {
       if (pattern.test(text)) return label;
@@ -6796,7 +6900,7 @@
   }
 
   function resultRow(item) {
-    const bank = item.bank_code || item.bank_name || "Other";
+    const bank = publicBrandText(item.bank_code || item.bank_name, "Other");
     const size = formatSize(item.size_bytes);
     const industry = inferIndustry(item);
     const available = isPdfAvailable(item);
@@ -6855,7 +6959,7 @@
     const merged = {};
     for (const record of records) {
       if (!record || typeof record !== "object") continue;
-      for (const [key, value] of Object.entries(record)) {
+      for (const [key, value] of Object.entries(publicDocItem(record))) {
         if (value === undefined || value === null) continue;
         if (typeof value === "string" && !value.trim()) continue;
         if ((key === "title" || key === "title_cn") && !hasMeaningfulDocTitle({ [key]: value })) continue;
@@ -6868,7 +6972,7 @@
 
   function reportRequestTitle(item) {
     const title = [item && item.title, item && item.title_cn]
-      .map((value) => String(value || "").trim())
+      .map((value) => publicBrandText(value))
       .find((value) => value && !/^(?:report|报告)$/i.test(value));
     if (title) return title;
     const source = isAuthorityItem(item) ? "高权报告" : (isReportAItem(item) ? "报告A" : "报告");
@@ -6899,6 +7003,7 @@
 
   function rememberDocItem(item) {
     if (!item || !item.id) return;
+    item = publicDocItem(item);
     const cache = readDocItemCache();
     const cacheKey = docItemCacheKey(item);
     const previous = cache[cacheKey] && cache[cacheKey].item && typeof cache[cacheKey].item === "object"
@@ -6940,11 +7045,11 @@
     if (!item || !item.id) return null;
     const cached = readDocItemCache()[docItemCacheKey(item)];
     if (!cached || Date.now() - Number(cached.saved_at || 0) > 7 * 24 * 60 * 60 * 1000) return null;
-    return cached.item && typeof cached.item === "object" ? cached.item : null;
+    return cached.item && typeof cached.item === "object" ? publicDocItem(cached.item) : null;
   }
 
   function authorityKindLabel(kind, kindLabel = "") {
-    if (String(kindLabel || "").trim()) return String(kindLabel).trim();
+    if (String(kindLabel || "").trim()) return publicBrandText(kindLabel);
     if (kind === "domestic-lead") return "国内报告线索";
     return kind === "foreign-rt" ? "实时外文" : "普通外文";
   }
@@ -6964,6 +7069,7 @@
   }
 
   function externalRow(item) {
+    item = publicSearchItem(item, EXTERNAL_SOURCE);
     const meta = externalMeta(item);
     const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
     rememberDocItem({ ...item, source: EXTERNAL_SOURCE });
@@ -6993,6 +7099,7 @@
   }
 
   function thinkTankRow(item) {
+    item = publicSearchItem(item, THINKTANK_SOURCE);
     const meta = thinkTankMeta(item);
     const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
     const docItem = { ...item, source: THINKTANK_SOURCE };
@@ -7010,6 +7117,7 @@
   }
 
   function hotReportRow(item) {
+    item = publicSearchItem(item, HOT_REPORT_SOURCE);
     const docItem = { ...item, source: HOT_REPORT_SOURCE };
     rememberDocItem(docItem);
     const url = externalPageUrl(docItem, "");
@@ -7045,6 +7153,7 @@
   }
 
   function reportARow(item) {
+    item = publicSearchItem(item, REPORT_A_SOURCE);
     const meta = reportAMeta(item);
     const docItem = { ...item, source: REPORT_A_SOURCE };
     rememberDocItem(docItem);
@@ -7060,6 +7169,7 @@
   }
 
   function authorityRow(item) {
+    item = publicSearchItem(item, AUTHORITY_SOURCE);
     const meta = authorityMeta(item);
     const docItem = { ...item, source: AUTHORITY_SOURCE };
     rememberDocItem(docItem);
@@ -7476,7 +7586,7 @@
         if (requestVersion !== hotReportRequestVersion) return;
         const responseItems = (Array.isArray(data.items) ? data.items : [])
           .filter((item) => item && item.id)
-          .map((item) => ({ ...item, source: HOT_REPORT_SOURCE }));
+          .map((item) => publicSearchItem({ ...item, source: HOT_REPORT_SOURCE }, HOT_REPORT_SOURCE));
         const rawTotal = data.total === null || data.total === undefined || data.total === ""
           ? Number.NaN
           : Number(data.total);
@@ -8062,7 +8172,7 @@
     function setThinkTankStatus(text, kind) {
       if (!thinkTankStatus) return;
       thinkTankStatus.className = kind ? `status-line ${kind}` : "status-line";
-      thinkTankStatus.textContent = text || "";
+      thinkTankStatus.textContent = publicMessageText(text);
     }
 
     function hideThinkTankResults() {
@@ -8079,7 +8189,7 @@
     function setExternalStatus(text, kind) {
       if (!externalStatus) return;
       externalStatus.className = kind ? `status-line ${kind}` : "status-line";
-      externalStatus.textContent = text || "";
+      externalStatus.textContent = publicMessageText(text);
     }
 
     function renderExternalSearchResults() {
@@ -8102,7 +8212,7 @@
         : '<div class="empty-state">当前筛选条件下暂无匹配结果。</div>';
       const notes = [];
       if (externalResponseMeta.warning) notes.push(externalResponseMeta.warning);
-      else if (sourceUnavailable) notes.push("Reportify 暂时不可用，且没有可用的缓存结果。");
+      else if (sourceUnavailable) notes.push("其他报告来源暂时不可用，且没有可用的缓存结果。");
       const hiddenHtmlCount = Math.max(view.hiddenHtmlCount, externalResponseMeta.hiddenHtmlCount);
       if (hiddenHtmlCount) notes.push(`默认隐藏 ${hiddenHtmlCount} 条 HTML 结果。`);
       if (externalResponseMeta.htmlFallback && view.htmlFallback) {
@@ -8122,7 +8232,7 @@
     function setReportAStatus(text, kind) {
       if (!reportAStatus) return;
       reportAStatus.className = kind ? `status-line ${kind}` : "status-line";
-      reportAStatus.textContent = text || "";
+      reportAStatus.textContent = publicMessageText(text);
     }
 
     function hideReportAResults() {
@@ -8139,7 +8249,7 @@
     function setAuthorityStatus(text, kind) {
       if (!authorityStatus) return;
       authorityStatus.className = kind ? `status-line ${kind}` : "status-line";
-      authorityStatus.textContent = text || "";
+      authorityStatus.textContent = publicMessageText(text);
     }
 
     function authorityInstitutionOptions(itemsToRender) {
@@ -8247,7 +8357,7 @@
           remoteSearchControllers.delete(source);
         }
         if (deadlineReached) {
-          const label = source === "external" ? "Reportify" : "此来源";
+          const label = remoteSourceLabels[source] || "此来源";
           markRemoteSourceUnavailable(
             source,
             query,
@@ -8286,7 +8396,9 @@
         if (!response.ok) throw new Error(`搜索失败 (${response.status})`);
         const data = await response.json();
         if (!isCurrent()) return;
-        const items = Array.isArray(data.items) ? data.items : [];
+        const items = Array.isArray(data.items)
+          ? data.items.map((item) => publicSearchItem(item, THINKTANK_SOURCE))
+          : [];
         searchResultCounts.thinktank = items.length;
         thinkTankItems.clear();
         items.forEach((item) => thinkTankItems.set(String(item.id), item));
@@ -8372,12 +8484,14 @@
         if (!response.ok) throw new Error(`搜索失败 (${response.status})`);
         const data = await response.json();
         if (!isCurrent()) return; // a newer query superseded this one
-        const items = Array.isArray(data.items) ? data.items : [];
+        const items = Array.isArray(data.items)
+          ? data.items.map((item) => publicSearchItem(item, EXTERNAL_SOURCE))
+          : [];
         const sourceUnavailable = data.cache_status === "miss" && items.length === 0;
         externalItems.clear();
         items.forEach((item) => externalItems.set(String(item.id), item));
         externalResponseMeta = {
-          warning: String(data.warning || "").trim(),
+          warning: publicMessageText(data.warning),
           cacheStatus: String(data.cache_status || "").trim(),
           filterPartial: Boolean(data.filter_partial),
           htmlFallback: Boolean(data.html_fallback),
@@ -8444,7 +8558,9 @@
         if (!response.ok) throw new Error(`搜索失败 (${response.status})`);
         const data = await response.json();
         if (!isCurrent()) return;
-        const items = Array.isArray(data.items) ? data.items : [];
+        const items = Array.isArray(data.items)
+          ? data.items.map((item) => publicSearchItem(item, REPORT_A_SOURCE))
+          : [];
         searchResultCounts.reportA = items.length;
         reportAItems.clear();
         items.forEach((item) => reportAItems.set(String(item.id), item));
@@ -8507,17 +8623,19 @@
         if (!response.ok) throw new Error(`搜索失败 (${response.status})`);
         const data = await response.json();
         if (!isCurrent()) return;
-        const items = Array.isArray(data.items) ? data.items : [];
+        const items = Array.isArray(data.items)
+          ? data.items.map((item) => publicSearchItem(item, AUTHORITY_SOURCE))
+          : [];
         authorityItems.clear();
         items.forEach((item) => authorityItems.set(String(item.id), item));
         if (authorityInstitutionFilter) {
           const currentInstitution = authorityInstitutionFilter.value;
           const institutionOptions = Array.isArray(data.institutions)
             ? data.institutions.map((option) => ({
-              value: String(option && option.value || option || "").trim(),
+              value: publicBrandText(option && option.value || option || ""),
               label: option && option.label
-                ? `${option.label}${option.count ? ` (${option.count})` : ""}`
-                : String(option || "").trim(),
+                ? `${publicBrandText(option.label)}${option.count ? ` (${option.count})` : ""}`
+                : publicBrandText(option),
             })).filter((option) => option.value)
             : authorityInstitutionOptions(items);
           if (currentInstitution && !institutionOptions.some((option) => option.value === currentInstitution)) {
@@ -9039,7 +9157,7 @@
       const data = await response.json().catch(() => ({}));
       const items = Array.isArray(data.items) ? data.items : [];
       return items
-        .map((item) => ({ ...item, source: item.source || source }))
+        .map((item) => publicSearchItem({ ...item, source: item.source || source }, item.source || source))
         .filter((item) => !(item.source === current.source && String(item.id) === String(current.id)))
         .slice(0, limit);
     } finally {
@@ -9102,7 +9220,7 @@
     return `
       <article class="hot-comment" data-comment-id="${escapeHtml(comment.id)}">
         <div class="hot-comment-meta">
-          <strong>${escapeHtml(comment.display_name || "Portal Suite 用户")}</strong>
+          <strong>${escapeHtml(publicDisplayName(comment.display_name))}</strong>
           <time>${escapeHtml(hotCommentTime(comment.created_at))}</time>
           ${canOrder ? `
             <span class="hot-comment-order-actions">
@@ -9111,7 +9229,7 @@
             </span>
           ` : ""}
         </div>
-        <p>${escapeHtml(comment.body || "")}</p>
+        <p>${escapeHtml(publicBrandText(comment.body))}</p>
       </article>
     `;
   }
@@ -9418,7 +9536,7 @@
 
   function maybeAlertDownloadLimit(message) {
     const text = String(message || "");
-    if (/体验下载已满|limit_exceeded|Support Contact/i.test(text) && /体验|limit_exceeded/i.test(text)) {
+    if (/体验下载已满|limit_exceeded/i.test(text) && /体验|limit_exceeded/i.test(text)) {
       window.alert(localizedContactText(text || `3天体验下载已满 10 篇，请联系${contactMethodText()}。`));
     }
   }
@@ -9598,7 +9716,7 @@
           const fallback = response.status === 401
             ? "登录状态已更新，请重新点击查看。"
             : response.status === 403
-              ? "当前账号无权查看这份原始文本；可能是会员时长不足，或报告 / 机构不在授权范围内。如需开通或调整权限，请联系微信 Support Contact。"
+              ? `当前账号无权查看这份原始文本；可能是会员时长不足，或报告 / 机构不在授权范围内。如需开通或调整权限，请联系邮箱 ${CONTACT_EMAIL}。`
               : response.status === 404
                 ? "这份报告暂时没有可读取的原始文本。"
                 : response.status === 400
@@ -10003,12 +10121,13 @@
 
   function reportPreviewItem(item) {
     if (!item || !item.id) return null;
+    const safeItem = publicDocItem(item);
     const keys = [
       "id", "title", "title_zh", "filename", "date_folder", "bank_code", "bank_name",
       "password_group", "size_bytes", "available", "industry", "sector", "category",
       "pdf_archived", "page_count",
     ];
-    return Object.fromEntries(keys.filter((key) => item[key] !== undefined).map((key) => [key, item[key]]));
+    return Object.fromEntries(keys.filter((key) => safeItem[key] !== undefined).map((key) => [key, safeItem[key]]));
   }
 
   function rememberReportPreview(item) {
@@ -10069,6 +10188,7 @@
   }
 
   function externalPageUrl(item, password, options = {}) {
+    item = publicDocItem(item) || {};
     const url = new URL("doc.html", window.location.href);
     url.searchParams.set("id", item.id);
     if (password) url.searchParams.set("password", password);
@@ -10467,7 +10587,7 @@
     initNewsfeedNav();
     const previewItem = reportPreviewFromParams(params, id) || cachedReportPreview(id);
     if (previewItem) {
-      document.title = `${titleText(previewItem)} | Portal Suite`;
+      document.title = `${titleText(previewItem)} | ${PUBLIC_BRAND}`;
       renderReportFirstPaint(previewItem);
     }
     trackEvent("", "page_view", {
@@ -10493,7 +10613,7 @@
     }
     const searchTextById = new Map();
     rememberReportPreview(item);
-    document.title = `${titleText(item)} | Portal Suite`;
+    document.title = `${titleText(item)} | ${PUBLIC_BRAND}`;
     renderReportFirstPaint(item, relatedItems);
     const config = await configPromise;
     const workerUrl = workerBaseUrl(config);
@@ -10516,7 +10636,7 @@
         || Number(nextItem.size_bytes || 0) !== Number(item.size_bytes || 0);
       if (itemChanged) {
         item = nextItem;
-        document.title = `${titleText(item)} | Portal Suite`;
+        document.title = `${titleText(item)} | ${PUBLIC_BRAND}`;
         renderDetail(item, config, mergedItems, searchTextById, {
           password: deliveryPasswordFromLocation(params),
           relatedItems: nextRelated,
@@ -10576,7 +10696,7 @@
         : (rawSource === THINKTANK_SOURCE
           ? THINKTANK_SOURCE
           : (rawSource === HOT_REPORT_SOURCE ? HOT_REPORT_SOURCE : inferredSource)));
-    return {
+    return publicDocItem({
       id,
       source,
       title: params.get("title") || "",
@@ -10597,11 +10717,12 @@
       description: params.get("description") || "",
       filename: params.get("filename") || "",
       required_plan: params.get("required_plan") || "",
-    };
+    });
   }
 
   function renderExternalDetailFirstPaint(item, target) {
     if (!item || !target) return;
+    item = publicDocItem(item);
     const hasTitle = hasMeaningfulDocTitle(item);
     const title = hasTitle ? reportRequestTitle(item) : "正在读取报告信息…";
     const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
@@ -10618,7 +10739,7 @@
         ${field("Source", docSourceLabel(item))}
       </div>
     `;
-    if (hasTitle) document.title = `${item.title} | Portal Suite`;
+    if (hasTitle) document.title = `${item.title} | ${PUBLIC_BRAND}`;
   }
 
   function isAuthorityItem(item) {
@@ -10973,7 +11094,7 @@
 
     const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
     const displayTitle = hasMeaningfulDocTitle(item) ? reportRequestTitle(item) : "报告详情";
-    document.title = `${displayTitle} | Portal Suite`;
+    document.title = `${displayTitle} | ${PUBLIC_BRAND}`;
     const contactAvailable = isContactOnlyItem(item) && item.available === true;
     const detailFields = isAuthorityItem(item)
       ? `
@@ -13947,7 +14068,6 @@
           audience: "相关岗位学习者",
         } : null;
       }).filter(Boolean).slice(0, 120);
-      const contact = data && data.contact && typeof data.contact === "object" ? data.contact : {};
       if (!products.length) throw new Error("课程目录暂时不可用。");
       const categories = Array.from(new Set(products.map((product) => product.category)));
       const groups = categories.map((category) => {
@@ -13978,12 +14098,8 @@
           </section>
         `;
       }).join("");
-      const wechat = String(contact.wechat || "").trim();
-      const email = String(contact.email || "").trim();
-      const contactRows = [
-        wechat ? `<p>微信：${escapeHtml(wechat)}</p>` : "",
-        email ? `<p>邮箱：<a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>` : "",
-      ].filter(Boolean).join("");
+      const email = CONTACT_EMAIL;
+      const contactRows = `<p>邮箱：<a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>`;
       catalog.innerHTML = `
         <section class="course-browser" aria-label="课程目录筛选">
           <div class="course-browser-copy">

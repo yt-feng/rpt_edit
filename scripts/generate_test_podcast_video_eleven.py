@@ -26,7 +26,7 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 SIZE = (1080, 1920)
 BG = (9, 31, 64)
 ACCENT = (255, 214, 102)
-WATERMARK = "Portal Suite"
+WATERMARK = "KC桌面"
 
 LANGS: dict[str, dict[str, Any]] = {
     "zh": {
@@ -49,8 +49,8 @@ LANGS: dict[str, dict[str, Any]] = {
         "title_width": 15,
         "max_tts_chars": 52,
         "max_subtitle_lines": 4,
-        "show_name": "Portal Suite",
-        "branded_opening": "欢迎来到Portal Suite。今天我们用一份最新研报，拆一个值得继续跟踪的问题。",
+        "show_name": "KC桌面",
+        "branded_opening": "欢迎来到KC桌面。今天我们用一份最新研报，拆一个值得继续跟踪的问题。",
     },
     "en": {
         "prompt": "prompts/podcast_en_only_prompt.md",
@@ -72,8 +72,8 @@ LANGS: dict[str, dict[str, Any]] = {
         "title_width": 26,
         "max_tts_chars": 160,
         "max_subtitle_lines": 4,
-        "show_name": "Portal Suite note",
-        "branded_opening": "Welcome to Portal Suite note. Today we are unpacking one fresh research report and the question it raises.",
+        "show_name": "KC桌面",
+        "branded_opening": "Welcome to KC桌面. Today we are unpacking one fresh research report and the question it raises.",
     },
 }
 

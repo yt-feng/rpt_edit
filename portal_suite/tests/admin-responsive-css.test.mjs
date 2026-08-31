@@ -4,7 +4,7 @@ import test from "node:test";
 
 const stylesPath = new URL("../site_src/assets/styles.css", import.meta.url);
 const appPath = new URL("../site_src/assets/app.js", import.meta.url);
-const responsiveMarker = "/* Twotigers admin responsive workspace */";
+const responsiveMarker = "/* Account admin responsive workspace */";
 const darkMarker = "/* Automatic device dark mode */";
 
 const [styles, app] = await Promise.all([

@@ -1,5 +1,4 @@
 (function (root) {
-  const WECHAT = "Support Contact";
   const EMAIL = ["info", "@", "kc", "desk", ".com"].join("");
 
   function firstLanguage(languages) {
@@ -28,10 +27,10 @@
     const isChinese = languageIsChinese(languages);
     return {
       isChinese,
-      channel: isChinese ? "wechat" : "email",
-      value: isChinese ? WECHAT : EMAIL,
-      label: isChinese ? "微信" : "邮箱",
-      href: isChinese ? "" : `mailto:${EMAIL}`,
+      channel: "email",
+      value: EMAIL,
+      label: "邮箱",
+      href: `mailto:${EMAIL}`,
     };
   }
 
@@ -50,12 +49,11 @@
       element.hidden = isChinese;
     });
     if (target.documentElement) {
-      target.documentElement.dataset.contactChannel = isChinese ? "wechat" : "email";
+      target.documentElement.dataset.contactChannel = "email";
     }
   }
 
   root.PortalSuiteContact = {
-    WECHAT,
     EMAIL,
     firstLanguage,
     languageIsChinese,

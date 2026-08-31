@@ -19,6 +19,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any, Iterable
 
+from check_public_brand import check_public_brand
+
 
 SCHEMA_VERSION = 1
 RUNTIME_SCHEMA_VERSION = 1
@@ -488,6 +490,7 @@ def publish_static_slot(
     active = validate_slot(active_slot, allow_empty=True)
     slot = target_slot(active)
     prefix = slot_prefix(slot)
+    check_public_brand(root)
     paths, entries, tree_sha256, total_bytes = build_inventory(root)
     previous = valid_manifest(read_json_object(client, bucket, manifest_key(slot)), slot)
     incomplete = read_json_object(client, bucket, incomplete_key(slot))

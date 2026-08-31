@@ -113,7 +113,7 @@ def write(path: Path, value: str) -> None:
 
 
 def build_site(root: Path) -> None:
-    write(root / "index.html", "home")
+    write(root / "index.html", "KC桌面 home")
     write(root / "404.html", "missing")
     write(root / "assets/app.js", "console.log('v1')")
     write(root / "reports/institutions/bernstein/index.html", "bernstein")
@@ -348,6 +348,16 @@ class StaticSlotPublisherTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "symbolic links"):
                 self.publish(client, root, 1)
             self.assertFalse(any(operation[0] in {"put", "upload"} for operation in client.operations))
+
+    def test_public_brand_violation_is_rejected_before_any_remote_call(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            build_site(root)
+            write(root / "assets/app.js", "showError('Reportify is unavailable')")
+            client = FakeR2()
+            with self.assertRaisesRegex(ValueError, "Public brand check failed"):
+                self.publish(client, root, 1)
+            self.assertEqual(client.operations, [])
 
 
 if __name__ == "__main__":

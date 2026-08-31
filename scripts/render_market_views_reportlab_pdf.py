@@ -634,7 +634,7 @@ def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
         canvas.saveState()
         canvas.setFont(font, 7.5)
         canvas.setFillColor(colors.HexColor("#888888"))
-        canvas.drawString(doc.leftMargin, 0.75 * cm, "Portal Suite - Market Views")
+        canvas.drawString(doc.leftMargin, 0.75 * cm, "KC桌面 - Market Views")
         canvas.drawRightString(A4[0] - doc.rightMargin, 0.75 * cm, str(doc.page))
         canvas.restoreState()
 

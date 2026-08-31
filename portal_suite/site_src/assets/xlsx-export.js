@@ -197,7 +197,7 @@ function stylesXml() {
 }
 
 function corePropertiesXml(creator, createdAt) {
-  const escapedCreator = escapeXml(creator || "Portal Suite");
+  const escapedCreator = escapeXml(creator || "KC桌面");
   const timestamp = createdAt.toISOString();
   return `${XML_DECLARATION}
 <cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -211,7 +211,7 @@ function corePropertiesXml(creator, createdAt) {
 function appPropertiesXml(sheetName) {
   return `${XML_DECLARATION}
 <Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties" xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes">
-  <Application>Portal Suite XLSX Export</Application>
+  <Application>KC桌面 XLSX Export</Application>
   <DocSecurity>0</DocSecurity>
   <ScaleCrop>false</ScaleCrop>
   <HeadingPairs><vt:vector size="2" baseType="variant"><vt:variant><vt:lpstr>Worksheets</vt:lpstr></vt:variant><vt:variant><vt:i4>1</vt:i4></vt:variant></vt:vector></HeadingPairs>

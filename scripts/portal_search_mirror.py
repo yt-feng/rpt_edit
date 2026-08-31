@@ -6,8 +6,10 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 import time
+import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -33,6 +35,12 @@ AUTHORITY_LABELS = {
 }
 
 R2_PREFIX = "_search-mirror"
+PUBLIC_SOURCE_MARKERS = re.compile(
+    r"(?:report[\s._-]*ify(?:\.cn)?|nash[\s._-]*ai(?:\.cn)?|nash-ai\.cn|"
+    r"macro[\s._-]*gate|support[\s._-]+contact|portal[\s._-]*(?:suite|alternate|娱乐)|kc[\s._-]+desk[\s._-]+notes|"
+    r"two[\s._-]*tigers|hibor\.com\.cn|慧博)",
+    re.IGNORECASE,
+)
 EXTERNAL_MIRROR_SEED_QUERIES = [
     "Nomura",
     "Goldman Sachs",
@@ -121,6 +129,17 @@ def clean_text(value: Any, limit: int = 500) -> str:
     return text[:limit]
 
 
+def public_brand_text(value: Any, limit: int = 500) -> str:
+    """Remove aggregator and retired deployment brands from public metadata."""
+    text = unicodedata.normalize("NFKC", clean_text(value, max(limit * 2, limit)))
+    text = "".join(character for character in text if unicodedata.category(character) != "Cf")
+    text = PUBLIC_SOURCE_MARKERS.sub("", text)
+    text = re.sub(r"\b(?:by|from)\b(?=\s*(?:$|[|·:/,_-]))", "", text, flags=re.IGNORECASE)
+    text = re.sub(r"^[\s|·:：/,_-]+|[\s|·:：/,_-]+$", "", text)
+    text = re.sub(r"\s{2,}", " ", text)
+    return text[:limit]
+
+
 def safe_int(value: Any) -> int:
     try:
         return int(value or 0)
@@ -132,18 +151,18 @@ def slim_external(item: dict[str, Any]) -> dict[str, Any] | None:
     report_id = str(item.get("report_id") or "").strip()
     if not report_id:
         return None
-    title = clean_text(item.get("title") or item.get("title_cn") or item.get("report_title"), 300)
+    title = public_brand_text(item.get("title") or item.get("title_cn") or item.get("report_title"), 300)
     if not title:
         return None
     return {
         "id": report_id,
         "source": "external",
         "title": title,
-        "title_cn": clean_text(item.get("title_cn"), 300),
-        "institution": clean_text(item.get("institution_name") or item.get("channel_name"), 120),
+        "title_cn": public_brand_text(item.get("title_cn"), 300),
+        "institution": public_brand_text(item.get("institution_name"), 120),
         "date": iso_date_from_ms(item.get("publish_at") or item.get("created_at")),
-        "file_type": clean_text(item.get("file_type"), 40),
-        "summary": clean_text(item.get("summary"), 700),
+        "file_type": public_brand_text(item.get("file_type"), 40),
+        "summary": public_brand_text(item.get("summary"), 700),
     }
 
 
@@ -285,7 +304,7 @@ def slim_authority(kind: str, record: dict[str, Any]) -> dict[str, Any] | None:
     report_id = str(record.get("id") or "").strip()
     if not report_id:
         return None
-    title = clean_text(record.get("title"), 300)
+    title = public_brand_text(record.get("title"), 300)
     if not title:
         return None
     return {
@@ -294,14 +313,14 @@ def slim_authority(kind: str, record: dict[str, Any]) -> dict[str, Any] | None:
         "kind": kind,
         "kind_label": AUTHORITY_LABELS.get(kind, ""),
         "title": title,
-        "institution": clean_text(record.get("securities") or record.get("companyName"), 120),
+        "institution": public_brand_text(record.get("securities") or record.get("companyName"), 120),
         "date": clean_text(record.get("reDate"), 40),
-        "report_type": clean_text(record.get("reportType"), 80),
+        "report_type": public_brand_text(record.get("reportType"), 80),
         "page_count": safe_int(record.get("page") or record.get("pages")),
         "language": clean_text(record.get("lang"), 40),
         "stock_code": clean_text(record.get("stockCode") or record.get("companycode"), 60),
-        "stock_name": clean_text(record.get("stockName") or record.get("companyName"), 120),
-        "author": clean_text(record.get("author") or record.get("authors"), 250),
+        "stock_name": public_brand_text(record.get("stockName") or record.get("companyName"), 120),
+        "author": public_brand_text(record.get("author") or record.get("authors"), 250),
         "file_type": "pdf",
     }
 

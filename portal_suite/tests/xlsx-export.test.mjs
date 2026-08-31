@@ -45,7 +45,7 @@ const OPTIONS = {
     },
   ],
   sheetName: "用户状态",
-  creator: "Portal Suite",
+  creator: "KC桌面",
   createdAt: "2026-07-22T07:30:00.000Z",
 };
 
@@ -152,6 +152,8 @@ test("buildXlsxWorkbook emits a complete OOXML ZIP with text-only safe cells", a
   const workbook = decoder.decode(files.get("xl/workbook.xml"));
   const worksheet = decoder.decode(files.get("xl/worksheets/sheet1.xml"));
   const styles = decoder.decode(files.get("xl/styles.xml"));
+  const core = decoder.decode(files.get("docProps/core.xml"));
+  const application = decoder.decode(files.get("docProps/app.xml"));
 
   assert.match(workbook, /<sheet name="用户状态" sheetId="1" r:id="rId1"\/>/u);
   assert.match(worksheet, /<dimension ref="A1:I3"\/>/u);
@@ -160,6 +162,8 @@ test("buildXlsxWorkbook emits a complete OOXML ZIP with text-only safe cells", a
   assert.match(worksheet, /<col min="1" max="1" width="16" customWidth="1"\/>/u);
   assert.match(worksheet, /<col min="2" max="2" width="28" customWidth="1"\/>/u);
   assert.match(styles, /<xf numFmtId="49"/u, "cell style uses Excel's text number format");
+  assert.match(core, /<dc:creator>KC桌面<\/dc:creator>/u);
+  assert.match(application, /<Application>KC桌面 XLSX Export<\/Application>/u);
 
   const cells = worksheet.match(/<c\b[^>]*>/gu) || [];
   assert.equal(cells.length, 27, "nine headers and eighteen data cells are present");

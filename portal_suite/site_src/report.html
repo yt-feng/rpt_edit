@@ -8,7 +8,7 @@
     <meta name="description" content="KC桌面报告详情页，展示金融研报标题、中文标题、机构、行业、日期、页数和相关报告推荐。">
     <meta name="robots" content="noindex,follow,noarchive,max-image-preview:none">
     <meta name="referrer" content="same-origin">
-    <link rel="stylesheet" href="assets/styles.css?v=portal-suite-20260726b">
+    <link rel="stylesheet" href="assets/styles.css?v=site-20260831a">
   </head>
   <body data-page="report" data-analytics-auto="manual">
     <header class="topbar">
@@ -18,9 +18,9 @@
         <a id="newsfeedNav" class="topbar-link" href="newsfeed.html">Newsfeed</a>
         <button id="accountGate" class="account-button" type="button">登录</button>
         <button id="adminGate" class="admin-gate" type="button" aria-label="Private tools"></button>
-        <a class="brand compact" href="/" aria-label="Portal Suite home">
+        <a class="brand compact" href="/" aria-label="KC桌面 home">
           <img src="assets/app-mark.svg" alt="" width="30" height="30">
-          <span>Portal Suite</span>
+          <span>KC桌面</span>
         </a>
       </div>
     </header>
@@ -36,7 +36,37 @@
         "use strict";
         const detail = document.getElementById("detail");
         const params = new URLSearchParams(window.location.search);
-        const value = (key, limit = 320) => String(params.get(key) || "").trim().slice(0, limit);
+        const legacyWords = [
+          ["report", "ify"], ["nash", "ai"], ["macro", "gate"], ["support", "contact"],
+          ["portal", "suite"], ["portal", "alternate"], ["portal", "娱乐"], ["kc", "desk", "notes"], ["two", "tigers"],
+        ];
+        const legacyDomains = [
+          ["report", "ify", "cn"], ["nash", "ai", "cn"], ["hi", "bor", "com", "cn"],
+        ];
+        const legacyPattern = (parts) => new RegExp(parts.join("[\\s._-]*"), "gi");
+        const publicText = (raw) => {
+          const original = String(raw || "");
+          let text = original
+            .replace(/[\u200b-\u200d\u2060\ufeff]/g, "")
+            .replace(/[Ａ-Ｚａ-ｚ０-９]/g, (character) => String.fromCharCode(character.charCodeAt(0) - 0xfee0));
+          for (const parts of legacyDomains) text = text.replace(legacyPattern(parts), "");
+          for (const parts of legacyWords) text = text.replace(legacyPattern(parts), "");
+          text = text.replace(new RegExp(String.fromCharCode(0x6167, 0x535a), "g"), "");
+          const changed = text !== original;
+          if (changed) {
+            text = text
+              .replace(/^(?:from|by|via|sourced?\s+from|source)\s*[:：|·/\\,，;；\-–—_]*\s*/i, "")
+              .replace(/^(?:来源于?|来自)\s*[:：|·/\\,，;；\-–—_]*\s*/u, "")
+              .replace(/\s+(?:from|by|via)\s*$/i, "");
+            return text
+              .replace(/\(\s*\)|（\s*）|\[\s*\]|【\s*】/g, " ")
+              .replace(/\s{2,}/g, " ")
+              .replace(/^[\s:：|·/\\,，;；\-–—_]+|[\s:：|·/\\,，;；\-–—_]+$/g, "")
+              .trim();
+          }
+          return text.trim();
+        };
+        const value = (key, limit = 320) => publicText(params.get(key)).slice(0, limit);
         const title = value("title");
         if (!detail || !title) return;
 
@@ -106,7 +136,7 @@
         }
 
         detail.replaceChildren(...firstPaintChildren);
-        document.title = `${title} | Portal Suite`;
+        document.title = `${title} | KC桌面`;
       })();
     </script>
 
@@ -115,13 +145,12 @@
       <a href="/reports/">报告索引</a>
       <a href="terms.html">Terms of Service</a>
       <a href="privacy.html">Privacy Policy</a>
-      <span data-portal-chinese-only hidden>Contact WeChat: Support Contact</span>
-      <a href="mailto:info@public-contact.invalid" data-portal-non-chinese-only hidden>Email: info@public-contact.invalid</a>
+      <a href="mailto:info@public-contact.invalid">Email: info@public-contact.invalid</a>
     </footer>
 
     <script src="assets/site-runtime.js"></script>
     <script src="assets/contact.js"></script>
     <script src="assets/analytics.js"></script>
-    <script src="assets/app.js?v=portal-suite-20260726b"></script>
+    <script src="assets/app.js?v=site-20260831a"></script>
   </body>
 </html>

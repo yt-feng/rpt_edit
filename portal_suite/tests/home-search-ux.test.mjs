@@ -116,7 +116,7 @@ test("hot-report next-page conflicts preserve the current page and restart the s
   assert.doesNotMatch(retrySource, /requestHotReportPage\(hotReportRetry/u);
 });
 
-test("remote sources use independent deadlines and Reportify surfaces fallback warnings", async () => {
+test("remote sources use independent deadlines and generic source fallback warnings", async () => {
   const source = await readFile(appPath, "utf8");
   const remoteSearchStart = source.indexOf("const remoteSearchControllers = new Map()");
   const remoteSearch = source.slice(
@@ -132,8 +132,8 @@ test("remote sources use independent deadlines and Reportify surfaces fallback w
   assert.match(remoteSearch, /runRemoteSearchWithDeadline\("external", query, generation, runExternalSearch\)/);
   assert.match(remoteSearch, /remoteSearchControllers\.set\(source, controller\)/);
   assert.match(remoteSearch, /remoteSearchControllers\.get\(source\) === controller/);
-  assert.match(remoteSearch, /source === "external" \? "Reportify" : "此来源"/);
-  assert.match(remoteSearch, /warning:\s*String\(data\.warning \|\| ""\)\.trim\(\)/);
+  assert.match(remoteSearch, /const label = remoteSourceLabels\[source\] \|\| "此来源"/);
+  assert.match(remoteSearch, /warning:\s*publicMessageText\(data\.warning\)/);
   assert.match(remoteSearch, /cacheStatus:\s*String\(data\.cache_status \|\| ""\)\.trim\(\)/);
   assert.match(remoteSearch, /externalResponseMeta\.cacheStatus === "miss"/);
   assert.match(remoteSearch, /sourceUnavailable \? "error" : "done"/);

@@ -28,7 +28,7 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 VIDEO_SIZE = (1080, 1920)
 VIDEO_BG = (9, 31, 64)
 VIDEO_ACCENT = (255, 214, 102)
-WATERMARK = "Portal Suite"
+WATERMARK = "KC桌面"
 FPS = 30
 
 
