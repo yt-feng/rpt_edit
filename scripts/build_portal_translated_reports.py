@@ -125,8 +125,8 @@ except Exception:  # pragma: no cover
     Spacer = None
 
 
-BRAND = "Portal Suite"
-PDF_WATERMARK = "Portal Suite"
+BRAND = "KC桌面"
+PDF_WATERMARK = "KC桌面"
 PDF_WATERMARK_COLOR = "#0B3B75"
 PDF_FOOTER_DISCLAIMER = (
     "For informational purposes only. Portions may be generated, translated, summarized, or edited with "

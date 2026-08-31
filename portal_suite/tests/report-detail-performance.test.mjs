@@ -73,7 +73,7 @@ test("report detail shards use the shared prefix algorithm and validate records"
 });
 
 test("report preview query metadata can paint a directly opened detail page", () => {
-  const context = vm.createContext({ URLSearchParams });
+  const context = vm.createContext({ URLSearchParams, publicDocItem: (item) => item });
   vm.runInContext(`
     ${extractFunction(appSource, "reportPreviewItem")}
     ${extractFunction(appSource, "reportPreviewFromParams")}
@@ -140,7 +140,7 @@ test("inline report preview paints before the application bundle and preserves u
   const unknown = paint("?id=chart-report&title=Chart%20Report&bank_name=Bernstein");
   assert.equal(unknown.detail.children[0].children[0].textContent, "Chart Report");
   assert.equal(unknown.detail.children[1].children[3].children[1].textContent, "正在确认");
-  assert.equal(unknown.document.title, "Chart Report | Portal Suite");
+  assert.equal(unknown.document.title, "Chart Report | KC桌面");
 
   const textOnly = paint("?id=chat-report&title=Chat%20Report&available=0");
   assert.equal(textOnly.detail.children[1].children[3].children[1].textContent, "Text only");
@@ -149,6 +149,12 @@ test("inline report preview paints before the application bundle and preserves u
   assert.match(textOnly.detail.children[2].children[1].textContent, /“其他报告”等板块/u);
   assert.equal(textOnly.detail.children[2].children[2].textContent, "在首页搜索同名报告");
   assert.equal(textOnly.detail.children[2].children[2].href, "./?q=Chat%20Report");
+
+  const oldSourceDomain = [["report", "ify"].join(""), "cn"].join(".");
+  const sanitized = paint(`?id=old-link&title=${encodeURIComponent(`From ${oldSourceDomain} · Clean Report`)}&bank_name=${encodeURIComponent(oldSourceDomain)}`);
+  assert.equal(sanitized.detail.children[0].children[0].textContent, "Clean Report");
+  assert.equal(sanitized.detail.children[1].children[0].children[1].textContent, "正在确认");
+  assert.equal(sanitized.document.title, "Clean Report | KC桌面");
 });
 
 test("a report detail shard hit renders before PDF overrides and skips the full catalog", async () => {
@@ -163,6 +169,7 @@ test("a report detail shard hit renders before PDF overrides and skips the full 
   const context = vm.createContext({
     URLSearchParams,
     Map,
+    PUBLIC_BRAND: "KC桌面",
     window: { location: { search: "?id=ab-report" } },
     document: {
       title: "",
@@ -227,6 +234,7 @@ test("a missing report detail shard falls back to the legacy full catalog", asyn
   const context = vm.createContext({
     URLSearchParams,
     Map,
+    PUBLIC_BRAND: "KC桌面",
     window: { location: { search: "?id=legacy-report" } },
     document: {
       title: "",
@@ -509,6 +517,7 @@ test("legacy delivery redirects remain compatible and canonicalize to an id/pass
     },
     deliveryPasswordFromLocation: (values) => values.get("password") || "",
     escapeHtml: (value) => String(value),
+    publicDocItem: (item) => item,
   });
   vm.runInContext(`
     ${extractFunction(appSource, "reportPreviewItem")}
@@ -531,6 +540,7 @@ test("external delivery URLs contain only id/password while ordinary links retai
   const context = vm.createContext({
     URL,
     window: { location: { href: "https://portal.example.invalid/doc.html" } },
+    publicDocItem: (item) => item,
   });
   vm.runInContext(`
     ${extractFunction(appSource, "externalPageUrl")}

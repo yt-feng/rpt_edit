@@ -162,7 +162,7 @@ jobs:
             --wechat-length 1800 \
             --community-cta "欢迎来社群继续拆完整报告" \
             --max-images 8 \
-            --watermark "Portal Suite" 2>&1 | tee "$OUTPUT_DIR/pdf_to_notes_progress.log"
+            --watermark "KC桌面" 2>&1 | tee "$OUTPUT_DIR/pdf_to_notes_progress.log"
 
       - name: Generate ElevenLabs bilingual podcast and explainer videos
         env:

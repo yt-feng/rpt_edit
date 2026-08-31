@@ -8,7 +8,7 @@ visual requirements:
 - output mode can produce all variants or only the mixed bilingual video/audio;
 - speaker avatars are drawn above the subtitle panel;
 - English/Chinese title wrapping avoids overlap and awkward one-character lines;
-- English and mixed watermarks use "Portal Suite".
+- All language variants use the KC桌面 watermark.
 """
 from __future__ import annotations
 
@@ -25,8 +25,8 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 import generate_test_podcast_video_eleven as gen
 
 SECOND_MALE_VOICE_ID = "bdt3B5N3GXM2nOc0SUW7"
-EN_BRAND = "Portal Suite"
-ZH_BRAND = "Portal Suite"
+EN_BRAND = "KC桌面"
+ZH_BRAND = "KC桌面"
 SIZE = (1080, 1920)
 ACCENT = (255, 214, 102)
 
@@ -396,7 +396,7 @@ def apply_runtime_patches() -> None:
     gen.LANGS["zh"]["analyst_label"] = "嘉宾"
     gen.LANGS["en"]["analyst_label"] = "Guest"
     gen.LANGS["en"]["show_name"] = EN_BRAND
-    gen.LANGS["en"]["branded_opening"] = "Welcome to Portal Suite. Today we are unpacking one fresh research report and the question it raises."
+    gen.LANGS["en"]["branded_opening"] = "Welcome to KC桌面. Today we are unpacking one fresh research report and the question it raises."
     gen.draw_frame = draw_frame_v2
 
 

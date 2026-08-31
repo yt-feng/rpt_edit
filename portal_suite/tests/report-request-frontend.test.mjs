@@ -65,6 +65,8 @@ function createHarness(responseFactory, options = {}) {
     AUTHORITY_SOURCE: "authority",
     REPORT_A_SOURCE: "report-a",
     CONTACT_EMAIL: publicEmail,
+    publicBrandText(value) { return String(value || ""); },
+    publicDocItem(item) { return item; },
     URLSearchParams,
     document: { getElementById(id) { return elements[id] || null; } },
     async fetch(url, init) {

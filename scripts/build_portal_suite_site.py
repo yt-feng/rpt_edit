@@ -111,6 +111,48 @@ SEARCH_INDEX_SHARD_MAX_BYTES = 3 * 1024 * 1024
 BLOG_START_DATE = "2026-07-27"
 BLOG_PUBLIC_BRAND = "KC桌面"
 BLOG_TITLE_SUFFIX = f" | {BLOG_PUBLIC_BRAND}"
+PUBLIC_AGGREGATOR_PATTERN = re.compile(
+    r"(?:report[\s._-]*ify(?:\.cn)?|nash[\s._-]*ai(?:\.cn)?|macro[\s._-]*gate|"
+    r"support[\s._-]+contact|portal[\s._-]*(?:suite|alternate|娱乐)|kc[\s._-]+desk[\s._-]+notes|two[\s._-]*tigers|"
+    r"hibor\.com\.cn|慧博)",
+    re.IGNORECASE,
+)
+PUBLIC_CATALOG_TEXT_KEYS = {
+    "title", "title_zh", "filename", "bank_code", "bank_name", "industry", "sector", "category",
+}
+
+
+def public_source_text(value: Any, fallback: str = "") -> str:
+    """Remove aggregator and retired deployment names from public text."""
+    text = unicodedata.normalize("NFKC", str(value or ""))
+    text = "".join(character for character in text if unicodedata.category(character) != "Cf")
+    text = PUBLIC_AGGREGATOR_PATTERN.sub("", text)
+    text = re.sub(r"\b(?:by|from)\b(?=\s*(?:$|[|·:/,_-]))", "", text, flags=re.IGNORECASE)
+    text = re.sub(r"^[\s|·:：/,_-]+|[\s|·:：/,_-]+$", "", text)
+    text = re.sub(r"\s{2,}", " ", text).strip()
+    return text or fallback
+
+
+def public_brand_text(value: Any, fallback: str = "") -> str:
+    """Canonicalize retired brand-position text to the public brand."""
+    text = unicodedata.normalize("NFKC", str(value or ""))
+    text = "".join(character for character in text if unicodedata.category(character) != "Cf")
+    text = PUBLIC_AGGREGATOR_PATTERN.sub(BLOG_PUBLIC_BRAND, text)
+    text = re.sub(rf"(?:{re.escape(BLOG_PUBLIC_BRAND)})(?:\s*[|·:：/\\-]\s*{re.escape(BLOG_PUBLIC_BRAND)})+", BLOG_PUBLIC_BRAND, text)
+    text = re.sub(r"\s{2,}", " ", text).strip()
+    return text or fallback
+
+
+def public_catalog_item(item: dict[str, Any]) -> dict[str, Any]:
+    result = {key: item.get(key) for key in PUBLIC_ITEM_KEYS if key in item}
+    for key in PUBLIC_CATALOG_TEXT_KEYS:
+        if key in result:
+            result[key] = public_source_text(result[key])
+    if "title" in result:
+        result["title"] = public_source_text(result["title"], "Untitled report")
+    if "filename" in result:
+        result["filename"] = public_source_text(result["filename"], "report.pdf")
+    return result
 
 # Mirrors every non-fallback category used by the browser. Together with the
 # ``Other`` fallback these are the same 15 possible classifications. Chinese
@@ -455,7 +497,7 @@ def title_keys(value: str) -> set[str]:
 
 
 def append_unique_text(target: list[str], value: str) -> None:
-    text = normalize_search_text(value)
+    text = normalize_search_text(public_source_text(value))
     if text and text not in target:
         target.append(text)
 
@@ -662,7 +704,7 @@ def catalog_with_archive_items(catalog: dict[str, Any], archive_catalog: dict[st
             continue
         if match_report_id(str(item.get("title") or item.get("filename") or ""), live_lookup):
             continue
-        archive_items.append({key: item.get(key) for key in PUBLIC_ITEM_KEYS if key in item})
+        archive_items.append(public_catalog_item(item))
     merged = dict(catalog)
     merged["items"] = live_items + archive_items
     merged["item_count"] = len(merged["items"])
@@ -750,7 +792,7 @@ def build_search_index(
             continue
         if text_limit > 0 and len(text) > text_limit:
             text = text[:text_limit]
-        public_items.append({"id": report_id, "text": text})
+        public_items.append({"id": report_id, "text": public_source_text(text)})
 
     return {
         "schema_version": 1,
@@ -893,7 +935,7 @@ def merge_history_catalog(
         if live_id:
             id_remap[str(item["id"])] = live_id
         else:
-            added_items.append({key: item.get(key) for key in PUBLIC_ITEM_KEYS if key in item})
+            added_items.append(public_catalog_item(item))
     stats["history_deduped"] = len(id_remap)
     stats["history_added"] = len(added_items)
 
@@ -933,7 +975,7 @@ def build_history_search_index(
         "schema_version": 1,
         "updated_at_bjt": catalog.get("updated_at_bjt", ""),
         "item_count": len(texts),
-        "items": [{"id": report_id, "text": text} for report_id, text in sorted(texts.items())],
+        "items": [{"id": report_id, "text": public_source_text(text)} for report_id, text in sorted(texts.items())],
     }
     return limit_search_index_by_size(index=index, catalog=catalog, limit_bytes=limit_bytes)
 
@@ -1048,7 +1090,7 @@ def write_history_search_shards(
 def public_catalog(catalog: dict[str, Any]) -> dict[str, Any]:
     items: list[dict[str, Any]] = []
     for item in catalog.get("items", []):
-        public_item = {key: item.get(key) for key in PUBLIC_ITEM_KEYS if key in item}
+        public_item = public_catalog_item(item)
         items.append(public_item)
     # Storage quotas, aggregate usage and pruning details are operational
     # metadata.  They are served to the exact admin-a account by the Worker
@@ -1086,7 +1128,8 @@ def public_catalog_preview(catalog: dict[str, Any], limit: int = CATALOG_PREVIEW
 def public_recommendation_catalog(catalog: dict[str, Any]) -> dict[str, Any]:
     """Return the compact, non-blocking candidate pool used by doc recommendations."""
     items = [
-        {key: item.get(key) for key in RECOMMENDATION_ITEM_KEYS if key in item}
+        {key: public_source_text(item.get(key)) if key in PUBLIC_CATALOG_TEXT_KEYS else item.get(key)
+         for key in RECOMMENDATION_ITEM_KEYS if key in item}
         for item in catalog.get("items", [])
         if isinstance(item, dict) and item.get("id")
     ]
@@ -1116,9 +1159,9 @@ def write_report_detail_shards(
         report_id = str(item.get("id") or "")
         if not report_id:
             continue
-        public_item = {key: item.get(key) for key in PUBLIC_ITEM_KEYS if key in item}
+        public_item = public_catalog_item(item)
         public_related = [
-            {key: related.get(key) for key in PUBLIC_ITEM_KEYS if key in related}
+            public_catalog_item(related)
             for related in related_reports.get(report_id, [])
         ]
         shards.setdefault(report_detail_shard_key(report_id), {})[report_id] = {
@@ -1146,7 +1189,7 @@ def public_password_rules(rules: dict[str, Any]) -> dict[str, Any]:
                 password_hash = hashlib.sha256(f"{password_secret}:{download_password}".encode("utf-8")).hexdigest()
         groups.append({
             "id": group.get("id"),
-            "label": group.get("label"),
+            "label": public_brand_text(group.get("label"), f"{BLOG_PUBLIC_BRAND} 默认"),
             "password_sha256": password_hash,
             "active": bool(group.get("active", True)),
         })
@@ -1831,7 +1874,7 @@ def render_report_seo_page(
       <a href="../about.html">关于{BLOG_PUBLIC_BRAND}</a>
       <a href="../terms.html">Terms of Service</a>
       <a href="../privacy.html">Privacy Policy</a>
-      <span data-portal-chinese-only hidden>Contact WeChat: Support Contact</span>
+      <span>联系邮箱：info@public-contact.invalid</span>
       <a href="mailto:info@public-contact.invalid" data-portal-non-chinese-only hidden>Email: info@public-contact.invalid</a>
     </footer>
     <script src="../assets/contact.js"></script>
@@ -1986,7 +2029,7 @@ def render_reports_index(
       <a href="../about.html">关于{BLOG_PUBLIC_BRAND}</a>
       <a href="../terms.html">Terms of Service</a>
       <a href="../privacy.html">Privacy Policy</a>
-      <span data-portal-chinese-only hidden>Contact WeChat: Support Contact</span>
+      <span>联系邮箱：info@public-contact.invalid</span>
       <a href="mailto:info@public-contact.invalid" data-portal-non-chinese-only hidden>Email: info@public-contact.invalid</a>
     </footer>
     <script src="../assets/contact.js"></script>
@@ -3233,7 +3276,7 @@ def load_blog_draft_articles(drafts_root: Path, start_date: date) -> list[dict[s
                 "slug": slug,
                 "legacy_slugs": [blog_legacy_slug(date_value, source, fingerprint)],
                 "title": display_title,
-                "author": compact_space(str(raw_article.get("author") or "Portal Suite"))[:100],
+                "author": compact_space(str(raw_article.get("author") or BLOG_PUBLIC_BRAND))[:100],
                 "digest": digest,
                 "content": stored_content,
                 "date": date_value.isoformat(),
@@ -3357,7 +3400,7 @@ def blog_archive_record(article: dict[str, Any]) -> dict[str, Any]:
             and str(value) != str(article.get("slug") or "")
         }),
         "title": str(article.get("title") or ""),
-        "author": str(article.get("author") or "Portal Suite"),
+        "author": str(article.get("author") or BLOG_PUBLIC_BRAND),
         "digest": str(article.get("digest") or ""),
         "content": str(article.get("content") or "<p>正文暂不可用。</p>"),
         "date": str(article.get("date") or ""),
@@ -3426,7 +3469,7 @@ def validate_blog_archive_record(data: Any, path: Path, start_date: date) -> dic
         "slug": expected_slug,
         "legacy_slugs": sorted(legacy_slugs),
         "title": title,
-        "author": compact_space(str(data.get("author") or "Portal Suite"))[:100],
+        "author": compact_space(str(data.get("author") or BLOG_PUBLIC_BRAND))[:100],
         "digest": compact_space(str(data.get("digest") or ""))[:300],
         "content": content,
         "date": date_value,
@@ -4492,6 +4535,13 @@ def main() -> int:
     site_src = Path(args.site_src)
     output_dir = Path(args.output_dir)
     copy_site(site_src, output_dir)
+    contact_card = output_dir / "assets" / "contact-card.jpg"
+    if contact_card.is_symlink():
+        raise RuntimeError("Copied public contact card must not be a symbolic link")
+    if contact_card.exists():
+        if not contact_card.is_file():
+            raise RuntimeError("Copied public contact card must be a regular file")
+        contact_card.unlink()
 
     catalog = public_catalog(load_json(Path(args.catalog_path)))
     catalog, history_texts, history_stats = merge_history_catalog(

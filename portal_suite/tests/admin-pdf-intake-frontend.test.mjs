@@ -358,6 +358,8 @@ test("contact request token survives search link, new page parsing, detail fetch
     HOT_REPORT_SOURCE: "hot",
     EXTERNAL_SOURCE: "external",
     CONTACT_EMAIL: "support@portal.example.invalid",
+    publicBrandText(value) { return String(value || ""); },
+    publicDocItem(item) { return item; },
     cachedDocItem() { return null; },
     validDocId() { return true; },
     isHotReportItem() { return false; },

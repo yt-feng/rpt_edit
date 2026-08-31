@@ -1687,7 +1687,7 @@ def render_latex(summary: dict[str, Any], reports_by_id: dict[str, dict[str, Any
     title = summary.get("title") or "市场最新观点汇总"
     subtitle = summary.get("subtitle") or "Daily market views roundup"
     lines: list[str] = []
-    lines += [r"\documentclass[11pt]{ctexart}", r"\usepackage[a4paper,margin=1in]{geometry}", r"\usepackage{graphicx}", r"\usepackage{xcolor}", r"\usepackage{hyperref}", r"\definecolor{refgray}{gray}{0.45}", r"\title{\textbf{" + latex_escape(title) + r"}\\[0.4em]{\large " + latex_escape(subtitle) + r"}}", r"\author{Portal Suite 自动生成}", r"\date{" + latex_escape(report_date) + r"}", r"\begin{document}", r"\maketitle", r"\tableofcontents", r"\newpage", r"\section{一页摘要}", r"\begin{itemize}"]
+    lines += [r"\documentclass[11pt]{ctexart}", r"\usepackage[a4paper,margin=1in]{geometry}", r"\usepackage{graphicx}", r"\usepackage{xcolor}", r"\usepackage{hyperref}", r"\definecolor{refgray}{gray}{0.45}", r"\title{\textbf{" + latex_escape(title) + r"}\\[0.4em]{\large " + latex_escape(subtitle) + r"}}", r"\author{KC桌面 自动生成}", r"\date{" + latex_escape(report_date) + r"}", r"\begin{document}", r"\maketitle", r"\tableofcontents", r"\newpage", r"\section{一页摘要}", r"\begin{itemize}"]
     for item in summary.get("executive_summary", []):
         lines.append(r"  \item " + latex_escape(item))
     lines.append(r"\end{itemize}")

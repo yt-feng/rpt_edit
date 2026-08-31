@@ -99,6 +99,35 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn("if: needs.prepare_release.outputs.changed == 'true'", self.workflow)
         self.assertIn("release-semantics-after.json", self.workflow)
 
+    def test_public_brand_gate_covers_build_publish_and_live_acceptance(self) -> None:
+        build = self.workflow.index("Build private static release")
+        brand_check = self.workflow.index("Validate built public brand")
+        compare = self.workflow.index("Detect meaningful public release changes")
+        upload = self.workflow.index("Upload inactive static slot and immutable runtime")
+        self.assertLess(build, brand_check)
+        self.assertLess(brand_check, compare)
+        self.assertLess(compare, upload)
+        self.assertIn("python3 -B scripts/test_check_public_brand.py", self.workflow)
+        self.assertIn("python3 -B scripts/check_public_brand.py _neutral_site", self.workflow)
+
+        acceptance = self.workflow[
+            self.workflow.index("Accept prepared release through the live edge"):
+            self.workflow.index("Roll back failed release or completed rehearsal")
+        ]
+        rollback = self.workflow[
+            self.workflow.index("Verify exact previous release after rollback"):
+            self.workflow.index("Enforce transactional outcome")
+        ]
+        for section, directory in (
+            (acceptance, "public-brand-after"),
+            (rollback, "public-brand-rollback"),
+        ):
+            self.assertIn(directory, section)
+            self.assertIn('"$origin/"', section)
+            for path in ("assets/app.js", "doc.html", "report.html"):
+                self.assertIn(f'"$origin/{path}"', section)
+            self.assertIn("python3 -B scripts/check_public_brand.py", section)
+
     def test_cutover_proves_portal_runtime_and_canonical_routes(self) -> None:
         cutover = self.workflow[self.workflow.index("  cutover:\n"):]
         route_context = cutover.index("Prepare masked live route context")

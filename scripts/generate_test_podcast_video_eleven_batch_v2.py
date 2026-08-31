@@ -20,8 +20,8 @@ import generate_test_podcast_video_eleven_batch as batch
 
 SIZE = (1080, 1920)
 ACCENT = (255, 214, 102)
-EN_BRAND = "Portal Suite"
-ZH_BRAND = "Portal Suite"
+EN_BRAND = "KC桌面"
+ZH_BRAND = "KC桌面"
 WHITE = (255, 255, 255)
 SOFT_WHITE = (220, 232, 248)
 

@@ -69,6 +69,38 @@ class SeoOutputTests(unittest.TestCase):
             ],
         }
 
+    def test_public_catalog_and_search_text_remove_aggregator_brand_only(self) -> None:
+        item = sample_item("source-branded", "NashAI：人工智能展望", "2026-07-17")
+        item.update({
+            "title": "Reportify | Global AI Outlook",
+            "filename": "Reportify_Global_AI_Outlook.pdf",
+            "bank_code": "Nash AI",
+            "bank_name": "NashAI",
+        })
+        public = builder.public_catalog({"items": [item]})["items"][0]
+        self.assertEqual(public["title"], "Global AI Outlook")
+        self.assertEqual(public["title_zh"], "人工智能展望")
+        self.assertEqual(public["filename"], "Global_AI_Outlook.pdf")
+        self.assertEqual(public["bank_name"], "")
+
+        chunks: list[str] = []
+        builder.append_unique_text(chunks, "From reportify.cn · HIBOR outlook")
+        self.assertEqual(chunks, ["hibor outlook"])
+        self.assertEqual(builder.public_source_text("Ｎａｓｈ\u200bＡＩ：Outlook"), "Outlook")
+
+    def test_public_password_rule_label_uses_canonical_brand(self) -> None:
+        rules = builder.public_password_rules({
+            "schema_version": 1,
+            "default_group": "default",
+            "groups": [{
+                "id": "default",
+                "label": "Portal Suite default",
+                "password_sha256": "digest",
+                "active": True,
+            }],
+        })
+        self.assertEqual(rules["groups"][0]["label"], "KC桌面 default")
+
     def test_generates_engine_specific_discovery_files(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory)

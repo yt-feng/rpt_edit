@@ -105,6 +105,7 @@ function createHarness(initialSession = null) {
 
   const sandbox = {
     URLSearchParams,
+    CONTACT_EMAIL: ["info", "@", "kc", "desk", ".com"].join(""),
     document,
     fetch,
     loadAuthSession() { return session; },
@@ -299,7 +300,10 @@ test("Text only markup and mobile styles expose a clear, responsive entry", () =
 });
 
 test("Text only guidance opens a prefilled homepage title search", () => {
-  const context = vm.createContext({ encodeURIComponent });
+  const context = vm.createContext({
+    encodeURIComponent,
+    publicBrandText(value, fallback = "") { return String(value || fallback || ""); },
+  });
   vm.runInContext(`
     ${extractFunction(app, "escapeHtml")}
     ${extractFunction(app, "titleText")}

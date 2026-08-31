@@ -12,8 +12,37 @@ const RUNTIME_RELEASE_BACKOFF_MS = 4000;
 const RUNTIME_RELEASE_PATTERN = /^[0-9a-f]{32}$/;
 const RUNTIME_TREE_PATTERN = /^[0-9a-f]{64}$/;
 const DEFAULT_R2_PREFIX = "reports";
-const CONTACT_WECHAT = "Support Contact";
+const PUBLIC_BRAND = "KC桌面";
 const CONTACT_EMAIL = ["info", "@", "kc", "desk", ".com"].join("");
+const PUBLIC_SOURCE_BRAND_PATTERN = /(?:https?:\/\/)?(?:[a-z0-9-]+\.)*reportify\.cn|reportify|(?:https?:\/\/)?(?:[a-z0-9-]+\.)*nash[\s._-]*ai\.cn|nash[\s._-]*ai|macro[\s._-]*gate|support[\s._-]*contact|portal[\s._-]*(?:suite|alternate|娱乐)|kc[\s._-]*desk[\s._-]*notes|two[\s._-]*tigers|慧博|(?:https?:\/\/)?(?:[a-z0-9-]+\.)*hibor\.com\.cn/giu;
+const PUBLIC_SOURCE_BRAND_DETECTOR = /reportify|nash[\s._-]*ai|macro[\s._-]*gate|support[\s._-]*contact|portal[\s._-]*(?:suite|alternate|娱乐)|kc[\s._-]*desk[\s._-]*notes|two[\s._-]*tigers|慧博|hibor\.com\.cn/iu;
+
+function publicBrandInput(value) {
+  return String(value || "")
+    .replace(/[\u200b-\u200d\u2060\ufeff]/gu, "")
+    .replace(/[Ａ-Ｚａ-ｚ０-９]/gu, (character) => String.fromCharCode(character.charCodeAt(0) - 0xfee0));
+}
+
+function publicBrandText(value, fallback = "") {
+  const text = publicBrandInput(value)
+    .replace(PUBLIC_SOURCE_BRAND_PATTERN, PUBLIC_BRAND)
+    .replace(new RegExp(`(?:${PUBLIC_BRAND})(?:\\s*[|\u00b7:：/\\\\-]\\s*${PUBLIC_BRAND})+`, "gu"), PUBLIC_BRAND)
+    .replace(/\s+/gu, " ")
+    .trim();
+  return text || String(fallback || "").trim();
+}
+
+function publicSourceText(value, fallback = "") {
+  const text = publicBrandInput(value)
+    .replace(PUBLIC_SOURCE_BRAND_PATTERN, "")
+    .replace(/^\s*(?:from|by|via|source|来源|来自)\s*[|·:：/\\–—-]*\s*/iu, "")
+    .replace(/\s*[|·:：/\\–—-]*\s*(?:from|by|via)\s*$/iu, "")
+    .replace(/^\s*[|·:：/\\–—-]+\s*/gu, "")
+    .replace(/\s*[|·:：/\\–—-]+\s*$/gu, "")
+    .replace(/\s+/gu, " ")
+    .trim();
+  return text || String(fallback || "").trim();
+}
 const ADMIN_TOKEN_TTL_SECONDS = 180 * 24 * 60 * 60;
 const USER_TOKEN_TTL_SECONDS = 30 * 24 * 60 * 60;
 const CAPTCHA_TTL_SECONDS = 10 * 60;
@@ -33,7 +62,7 @@ const OPERATOR_ACCOUNT_EMAILS = new Set(["operator-a@users.portal.example.invali
 const ACCESS_MODES = new Set(["none", "all", "filters"]);
 const TRIAL_3D_DURATION_VALUE = "trial_3d";
 const TRIAL_3D_DOWNLOAD_LIMIT = 10;
-const TRIAL_LIMIT_MESSAGE = `3天体验下载已满 ${TRIAL_3D_DOWNLOAD_LIMIT} 篇，请联系微信 ${CONTACT_WECHAT}。`;
+const TRIAL_LIMIT_MESSAGE = `3天体验下载已满 ${TRIAL_3D_DOWNLOAD_LIMIT} 篇，请联系邮箱 ${CONTACT_EMAIL}。`;
 const ACCESS_PAGE_RANGE_OPTIONS = [
   { value: "under5", label: "5页以下" },
   { value: "5_10", label: "5-10页" },
@@ -2051,7 +2080,7 @@ async function expireStaleAdminUpload(env, current, nowMs = Date.now()) {
     httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "private, no-store" },
   });
   if (written === null) return readAdminUploadRecord(env, current.row.upload_id);
-  console.warn("Portal Suite PDF upload lease expired", {
+  console.warn(`${PUBLIC_BRAND} PDF upload lease expired`, {
     upload_id: next.upload_id,
     kind: next.kind,
     previous_stage: current.row.stage,
@@ -2125,7 +2154,7 @@ async function reconcileAdminUploadCompletion(env, current) {
     httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "private, no-store" },
   });
   if (written === null) return readAdminUploadRecord(env, current.row.upload_id);
-  console.log("Portal Suite PDF upload stage", {
+  console.log(`${PUBLIC_BRAND} PDF upload stage`, {
     upload_id: next.upload_id,
     kind: next.kind,
     stage: "completed",
@@ -2155,7 +2184,7 @@ async function completeAdminUploadRecord(env, reservation, result) {
       completion_persist_pending: true,
     }, reservation.uploadId);
     reservation.record = record;
-    console.error("Portal Suite PDF upload completion status write failed", {
+    console.error(`${PUBLIC_BRAND} PDF upload completion status write failed`, {
       upload_id: reservation.uploadId,
       kind: record && record.kind,
       message: String(error && error.message || error || "unknown error").slice(0, 240),
@@ -2225,7 +2254,7 @@ async function reserveAdminUpload(env, value, kindValue, adminUser, fingerprintV
       httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "private, no-store" },
     });
     if (written !== null) {
-      console.log("Portal Suite PDF upload stage", {
+      console.log(`${PUBLIC_BRAND} PDF upload stage`, {
         upload_id: uploadId,
         kind,
         stage: "validating",
@@ -2268,7 +2297,7 @@ async function updateAdminUploadRecord(env, reservation, statusValue, fields = {
     });
     if (written !== null) {
       reservation.record = next;
-      console.log("Portal Suite PDF upload stage", {
+      console.log(`${PUBLIC_BRAND} PDF upload stage`, {
         upload_id: reservation.uploadId,
         kind: next.kind,
         stage: next.stage,
@@ -2289,7 +2318,7 @@ async function failAdminUploadRecord(env, reservation, error, stage = "failed") 
       detail: String(error && error.message || error || "上传失败，请稍后重试。"),
     });
   } catch (statusError) {
-    console.error("Portal Suite PDF upload status failure", {
+    console.error(`${PUBLIC_BRAND} PDF upload status failure`, {
       upload_id: reservation.uploadId,
       kind: reservation.record && reservation.record.kind,
       stage,
@@ -2335,7 +2364,7 @@ function scheduleAdminUploadMaintenance(ctx, details, taskFactories) {
     .then((results) => {
       results.forEach((result, index) => {
         if (result.status !== "rejected") return;
-        console.error("Portal Suite PDF upload background task failed", {
+        console.error(`${PUBLIC_BRAND} PDF upload background task failed`, {
           upload_id: cleanAdminUploadId(details && details.upload_id),
           kind: cleanHotReportText(details && details.kind, 48),
           task_index: index,
@@ -2579,7 +2608,7 @@ function accountDisabled(user) {
 }
 
 function disabledAccountMessage() {
-  return `账号已禁用，请联系微信 ${CONTACT_WECHAT}。`;
+  return `账号已禁用，请联系邮箱 ${CONTACT_EMAIL}。`;
 }
 
 function userAdminStateKeys(user = {}) {
@@ -4174,7 +4203,7 @@ async function consumeLimitedAccessDownload(env, email, reportId, source, expect
         limit_exceeded: false,
         access,
         error: "Download access could not be verified. Please retry.",
-        contact: CONTACT_WECHAT,
+        contact: CONTACT_EMAIL,
       };
     }
     if (String(stored.change_id || "") !== String(expectedChangeId || "")) {
@@ -4184,7 +4213,7 @@ async function consumeLimitedAccessDownload(env, email, reportId, source, expect
         limit_exceeded: false,
         access,
         error: "下载权限刚刚发生变化，请刷新后重试。",
-        contact: CONTACT_WECHAT,
+        contact: CONTACT_EMAIL,
       };
     }
     const etag = String(snapshot.object && snapshot.object.etag || "");
@@ -4195,7 +4224,7 @@ async function consumeLimitedAccessDownload(env, email, reportId, source, expect
         limit_exceeded: false,
         access,
         error: "Download quota could not be verified. Please retry.",
-        contact: CONTACT_WECHAT,
+        contact: CONTACT_EMAIL,
       };
     }
     const existingItems = Array.isArray(stored.download_items) ? stored.download_items.map(String) : [];
@@ -4208,7 +4237,7 @@ async function consumeLimitedAccessDownload(env, email, reportId, source, expect
         limit_exceeded: true,
         access,
         error: TRIAL_LIMIT_MESSAGE,
-        contact: CONTACT_WECHAT,
+        contact: CONTACT_EMAIL,
       };
     }
     const updatedItems = [...uniqueItems, itemKey];
@@ -4248,7 +4277,7 @@ async function consumeLimitedAccessDownload(env, email, reportId, source, expect
     limit_exceeded: false,
     access: publicAccessGrant({ email: normalized, source: "error" }),
     error: "Download quota changed concurrently. Please retry.",
-    contact: CONTACT_WECHAT,
+    contact: CONTACT_EMAIL,
   };
 }
 
@@ -4698,18 +4727,18 @@ async function finalizeAccountDownloadDecision(env, request, decision, reportId,
   try {
     const user = await currentUserFromRequest(env, request);
     if (String(user.id || "") !== String(decision.user && decision.user.id || "")) {
-      return { ok: false, status: 409, limit_exceeded: false, error: "下载权限已发生变化，请重试。", contact: CONTACT_WECHAT };
+      return { ok: false, status: 409, limit_exceeded: false, error: "下载权限已发生变化，请重试。", contact: CONTACT_EMAIL };
     }
     const refreshedAccess = await reportAccessForUser(env, user, reportId, source);
     if (!refreshedAccess.can_download) {
-      return { ok: false, status: 403, limit_exceeded: false, error: "下载权限已失效，请刷新后重试。", contact: CONTACT_WECHAT };
+      return { ok: false, status: 403, limit_exceeded: false, error: "下载权限已失效，请刷新后重试。", contact: CONTACT_EMAIL };
     }
     decision.user = user;
     decision.access = refreshedAccess;
     decision.limited_access = shouldConsumeAccessGrantDownload(refreshedAccess);
     decision.consume_limited_access = Boolean(decision.limited_access);
   } catch (_error) {
-    return { ok: false, status: 503, limit_exceeded: false, error: "下载权限暂时无法核验，请稍后重试。", contact: CONTACT_WECHAT };
+    return { ok: false, status: 503, limit_exceeded: false, error: "下载权限暂时无法核验，请稍后重试。", contact: CONTACT_EMAIL };
   }
   if (!decision.consume_limited_access) return { ok: true };
   const email = normalizeEmail(decision.user && decision.user.email);
@@ -4724,7 +4753,7 @@ async function finalizeAccountDownloadDecision(env, request, decision, reportId,
       decision.limited_access && decision.limited_access.storage_kind || "access",
     );
   } catch (_error) {
-    return { ok: false, status: 503, limit_exceeded: false, error: "下载权限暂时无法核验，请稍后重试。", contact: CONTACT_WECHAT };
+    return { ok: false, status: 503, limit_exceeded: false, error: "下载权限暂时无法核验，请稍后重试。", contact: CONTACT_EMAIL };
   }
   if (!consumed.ok) return consumed;
   decision.access = {
@@ -5077,7 +5106,7 @@ async function handleCourseAccess(request, env) {
       ...access,
       courses: access.can_access ? COURSE_TITLES : [],
       course_catalog: access.can_access ? COURSE_CATALOG : [],
-      contact: access.can_access ? { wechat: CONTACT_WECHAT, email: CONTACT_EMAIL } : undefined,
+      contact: access.can_access ? { email: CONTACT_EMAIL } : undefined,
     });
   } catch (_error) {
     return jsonResponse(request, env, 503, { detail: "课程会员资格暂时无法核验。" });
@@ -5622,7 +5651,7 @@ function handlePaddleConfig(request, env) {
     config: {},
     missing: ["ACCESS_CHANNEL_DISABLED"],
     disabled: true,
-    message: `Self-serve access is paused. Contact WeChat: ${CONTACT_WECHAT}.`,
+    message: `Self-serve access is paused. Contact: ${CONTACT_EMAIL}.`,
   });
 }
 
@@ -6350,7 +6379,7 @@ async function handleVid2PptRedeemCode(request, env) {
       return jsonResponse(request, env, 400, { detail: "这串代码不是 NOVA 赠送权益代码。", order });
     }
     if (orderEmail && orderEmail !== email) {
-      return jsonResponse(request, env, 403, { detail: "这串代码对应的支付邮箱与当前 Portal Suite 账号邮箱不一致。", order });
+      return jsonResponse(request, env, 403, { detail: `这串代码对应的支付邮箱与当前 ${PUBLIC_BRAND} 账号邮箱不一致。`, order });
     }
 
     const { saved, duplicate, accessKind } = await applyVid2PptGift(env, {
@@ -7206,9 +7235,9 @@ async function handleDownload(request, env, ctx = null) {
   }
   if (!pdfDescriptor) {
     return jsonResponse(request, env, 404, {
-      error: `PDF is not currently available. Contact WeChat: ${CONTACT_WECHAT}.`,
+      error: `PDF is not currently available. Contact: ${CONTACT_EMAIL}.`,
       archived: true,
-      contact: CONTACT_WECHAT,
+      contact: CONTACT_EMAIL,
     });
   }
 
@@ -7238,9 +7267,9 @@ async function handleDownload(request, env, ctx = null) {
   const object = await env.REPORT_BUCKET.get(pdfDescriptor.object_key);
   if (!catalogReportPdfObjectMatches(pdfDescriptor, object)) {
     return jsonResponse(request, env, 404, {
-      error: `PDF is not currently available. Contact WeChat: ${CONTACT_WECHAT}.`,
+      error: `PDF is not currently available. Contact: ${CONTACT_EMAIL}.`,
       archived: true,
-      contact: CONTACT_WECHAT,
+      contact: CONTACT_EMAIL,
     });
   }
 
@@ -7248,7 +7277,7 @@ async function handleDownload(request, env, ctx = null) {
   if (!consumed.ok) {
     return jsonResponse(request, env, consumed.status || 403, {
       error: consumed.error || TRIAL_LIMIT_MESSAGE,
-      contact: consumed.contact || CONTACT_WECHAT,
+      contact: consumed.contact || CONTACT_EMAIL,
       limit_exceeded: Boolean(consumed.limit_exceeded),
     });
   }
@@ -7386,8 +7415,8 @@ async function handleAdminReportPassword(request, env) {
 
   if (source === AUTHORITY_SOURCE) {
     return jsonResponse(request, env, 403, {
-      error: `高权报告仅提供检索线索，无法生成下载发货链接。请联系 WeChat: ${CONTACT_WECHAT}。`,
-      contact: CONTACT_WECHAT,
+      error: `高权报告仅提供检索线索，无法生成下载发货链接。请联系邮箱 ${CONTACT_EMAIL}。`,
+      contact: CONTACT_EMAIL,
     });
   }
 
@@ -9393,7 +9422,7 @@ async function archiveReportAsHot(env, input = {}) {
     publicIndexUpdate = await upsertHotReportPublicIndexItem(env, saved.row);
   } catch (error) {
     await markHotReportPublicIndexStaleForError(env, error);
-    console.error("Portal Suite hot report public index update failed", {
+    console.error(`${PUBLIC_BRAND} hot report public index update failed`, {
       report_id: id,
       message: String(error && error.message || error || "unknown error").slice(0, 240),
     });
@@ -9413,7 +9442,7 @@ function scheduleHotReportArchive(ctx, taskFactory, details = {}) {
   const task = Promise.resolve()
     .then(taskFactory)
     .catch((error) => {
-      console.error("Portal Suite hot report auto-archive failed", {
+      console.error(`${PUBLIC_BRAND} hot report auto-archive failed`, {
         source: cleanHotReportOriginSource(details.source),
         report_id: cleanHotReportOriginId(details.report_id),
         message: String(error && error.message || error || "unknown error").slice(0, 240),
@@ -9592,7 +9621,7 @@ async function markHotReportPublicIndexStaleForError(env, mutationError) {
     const markerMessage = String(
       markerError && markerError.message || markerError || "unknown marker error",
     ).slice(0, 240);
-    console.error("Portal Suite hot report stale marker write failed", {
+    console.error(`${PUBLIC_BRAND} hot report stale marker write failed`, {
       mutation_error: mutationMessage,
       marker_error: markerMessage,
     });
@@ -9701,7 +9730,7 @@ function scheduleHotReportPublicIndexRepair(ctx, env) {
   ctx.waitUntil(Promise.resolve()
     .then(() => repairHotReportPublicIndexIfNeeded(env))
     .catch((error) => {
-      console.error("Portal Suite hot report public index repair failed", {
+      console.error(`${PUBLIC_BRAND} hot report public index repair failed`, {
         message: String(error && error.message || error || "unknown error").slice(0, 240),
       });
     }));
@@ -9773,7 +9802,7 @@ async function removeHotReportPublicIndexItems(env, values) {
     return await mutateHotReportPublicIndex(env, (items) => items.filter((item) => !ids.has(item.id)));
   } catch (error) {
     await markHotReportPublicIndexStaleForError(env, error);
-    console.error("Portal Suite hot report public index removal failed", {
+    console.error(`${PUBLIC_BRAND} hot report public index removal failed`, {
       report_ids: [...ids].slice(0, 12),
       message: String(error && error.message || error || "unknown error").slice(0, 240),
     });
@@ -10251,7 +10280,7 @@ async function enforceHotReportStorageLimit(env) {
         await removeHotReportPublicIndexItems(env, removedPublicIds);
       } catch (indexError) {
         if (!retentionError) throw indexError;
-        console.error("Portal Suite hot report retention index finalization failed", {
+        console.error(`${PUBLIC_BRAND} hot report retention index finalization failed`, {
           removed_report_ids: removedPublicIds.slice(0, 12),
           retention_error: String(retentionError && retentionError.message || retentionError).slice(0, 240),
           index_error: String(indexError && indexError.message || indexError).slice(0, 240),
@@ -10707,7 +10736,7 @@ async function handleAccountAdminHotReportUpload(request, env, ctx = null) {
       publicIndexUpdate = await upsertHotReportPublicIndexItem(env, row);
     } catch (error) {
       await markHotReportPublicIndexStaleForError(env, error);
-      console.error("Portal Suite hot report public index update failed", {
+      console.error(`${PUBLIC_BRAND} hot report public index update failed`, {
         report_id: id,
         message: String(error && error.message || error || "unknown error").slice(0, 240),
       });
@@ -10857,6 +10886,13 @@ function hotReportCommentOrderKey(reportId) {
   return slug ? `${HOT_REPORT_COMMENT_ORDER_PREFIX}/${slug}.json` : "";
 }
 
+function publicHotReportDisplayName(value) {
+  const displayName = cleanHotReportText(value, 48);
+  return displayName && !PUBLIC_SOURCE_BRAND_DETECTOR.test(displayName)
+    ? displayName
+    : `${PUBLIC_BRAND}用户`;
+}
+
 function publicHotReportComment(row) {
   const id = cleanHotCommentId(row && row.id);
   const reportId = cleanHotReportId(row && row.report_id);
@@ -10864,7 +10900,7 @@ function publicHotReportComment(row) {
   return {
     id,
     report_id: reportId,
-    display_name: cleanHotReportText(row.display_name, 48) || "Portal Suite 用户",
+    display_name: publicHotReportDisplayName(row.display_name),
     body: cleanHotReportText(row.body, 1200),
     sort_order: Number(row.sort_order || 0) || 0,
     created_at: String(row.created_at || ""),
@@ -10950,7 +10986,7 @@ async function handleHotReportComments(request, env) {
     const row = {
       id,
       report_id: reportId,
-      display_name: alias || cleanHotReportText(user.username, 48) || "Portal Suite 用户",
+      display_name: publicHotReportDisplayName(alias || user.username),
       body,
       sort_order: existing.reduce((max, entry) => Math.max(max, entry.item.sort_order), 0) + 100,
       created_at: now,
@@ -12630,22 +12666,22 @@ function newsfeedEmailProvider(env) {
 }
 
 function newsfeedEmailFrom(env) {
-  return cleanEnv(env.NEWSFEED_EMAIL_FROM) || "Portal Suite Newsfeed <updates@portal.example.invalid>";
+  return publicBrandText(cleanEnv(env.NEWSFEED_EMAIL_FROM)) || `${PUBLIC_BRAND} Newsfeed <updates@portal.example.invalid>`;
 }
 
 function newsfeedSender(env) {
   const fallback = newsfeedEmailFrom(env);
   const configuredEmail = normalizeEmail(env.BREVO_SENDER_EMAIL);
-  const configuredName = cleanEnv(env.BREVO_SENDER_NAME);
-  if (configuredEmail) return { email: configuredEmail, name: configuredName || "Portal Suite Newsfeed" };
+  const configuredName = publicBrandText(cleanEnv(env.BREVO_SENDER_NAME));
+  if (configuredEmail) return { email: configuredEmail, name: configuredName || `${PUBLIC_BRAND} Newsfeed` };
   const match = fallback.match(/^(.*?)<([^>]+)>$/);
   if (match) {
     return {
-      name: match[1].trim().replace(/^"|"$/g, "") || "Portal Suite Newsfeed",
+      name: match[1].trim().replace(/^"|"$/g, "") || `${PUBLIC_BRAND} Newsfeed`,
       email: normalizeEmail(match[2]) || "updates@portal.example.invalid",
     };
   }
-  return { name: "Portal Suite Newsfeed", email: normalizeEmail(fallback) || "updates@portal.example.invalid" };
+  return { name: `${PUBLIC_BRAND} Newsfeed`, email: normalizeEmail(fallback) || "updates@portal.example.invalid" };
 }
 
 function publicNewsfeedSettings(settings, user, env) {
@@ -16947,25 +16983,25 @@ function buildNewsfeedBriefingScript(input = {}) {
   let text = "";
   if (language === "zh-CN") {
     text = [
-      "这里是 Portal Suite 三十秒新闻简报。",
+      `这里是 ${PUBLIC_BRAND} 三十秒新闻简报。`,
       ...cleaned.map((line, index) => `第 ${index + 1} 条，${line}。`),
       "以上是当前新闻流重点。",
     ].join("");
   } else if (language === "ja") {
     text = [
-      "Portal Suiteの30秒ニュースブリーフです。",
+      `${PUBLIC_BRAND}の30秒ニュースブリーフです。`,
       ...cleaned.map((line, index) => `${index + 1}本目、${line}。`),
       "以上が現在のニュースフィードの要点です。",
     ].join("");
   } else if (language === "ko") {
     text = [
-      "Portal Suite 30초 뉴스 브리핑입니다.",
+      `${PUBLIC_BRAND} 30초 뉴스 브리핑입니다.`,
       ...cleaned.map((line, index) => `${index + 1}번째, ${line}.`),
       "이상 현재 뉴스피드 핵심입니다.",
     ].join(" ");
   } else {
     text = [
-      "This is your Portal Suite thirty second news briefing.",
+      `This is your ${PUBLIC_BRAND} thirty second news briefing.`,
       ...cleaned.map((line, index) => `Story ${index + 1}: ${line}.`),
       "That is the current read from your Newsfeed.",
     ].join(" ");
@@ -17069,13 +17105,13 @@ async function fetchNewsfeedDigestPayload(env, settings = {}, user = null) {
 
 function newsfeedEmailSubject(settings, due) {
   const dateText = due && due.dateKey || new Date().toISOString().slice(0, 10);
-  if (normalizeNewsfeedLanguage(settings.digest_language) === "zh-CN") return `Portal Suite Daily Digest · ${dateText}`;
-  return `Portal Suite Daily Digest · ${dateText}`;
+  if (normalizeNewsfeedLanguage(settings.digest_language) === "zh-CN") return `${PUBLIC_BRAND} Daily Digest · ${dateText}`;
+  return `${PUBLIC_BRAND} Daily Digest · ${dateText}`;
 }
 
 function newsfeedEmailText(payload) {
   const lines = [
-    `Portal Suite · ${String(payload.newsletter_title || "Daily Digest")}`,
+    `${PUBLIC_BRAND} · ${String(payload.newsletter_title || "Daily Digest")}`,
     "",
     ...((payload.daily_digest || []).map((line) => `- ${line}`)),
     "",
@@ -17098,7 +17134,7 @@ function newsfeedEmailHtml(payload) {
   return `
     <div style="margin:0;padding:24px;background:#f6f7fb;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#111827;">
       <div style="max-width:680px;margin:0 auto;background:#ffffff;border-radius:12px;padding:28px;">
-        <h1 style="margin:0 0 18px;font-size:24px;">Portal Suite · ${escapeNewsfeedHtml(payload.newsletter_title || "Daily Digest")}</h1>
+        <h1 style="margin:0 0 18px;font-size:24px;">${PUBLIC_BRAND} · ${escapeNewsfeedHtml(payload.newsletter_title || "Daily Digest")}</h1>
         <ul style="margin:0 0 24px;padding-left:20px;color:#374151;line-height:1.6;">${digest}</ul>
         <h2 style="margin:0 0 10px;font-size:18px;">Top headlines</h2>
         <table role="presentation" width="100%" cellspacing="0" cellpadding="0">${rows}</table>
@@ -17188,6 +17224,10 @@ function cleanReportRequestText(value, limit) {
     .replace(/\s+/gu, " ")
     .trim()
     .slice(0, limit);
+}
+
+function cleanPublicReportText(value, limit) {
+  return cleanReportRequestText(publicSourceText(value), limit);
 }
 
 function cleanReportRequestPagePath(value) {
@@ -17356,8 +17396,8 @@ function reportRequestAdminIndexEntry(keyValue, value) {
     request_id: requestId,
     report_id: reportId,
     source,
-    title: cleanReportRequestText(value && value.title, 240),
-    institution: cleanReportRequestText(value && value.institution, 180),
+    title: cleanPublicReportText(value && value.title, 240),
+    institution: cleanPublicReportText(value && value.institution, 180),
     requester_email: normalizeEmail(value && value.requester_email),
     status: cleanReportRequestText(value && value.status, 40),
     attempted_at: String(value && value.attempted_at || ""),
@@ -17597,7 +17637,7 @@ async function handleReportRequest(request, env) {
   if (!requesterEmail) {
     return privateJsonResponse(request, env, 400, { ok: false, detail: "请填写有效邮箱。" });
   }
-  const submittedTitle = cleanReportRequestText(payload.title, 240);
+  const submittedTitle = cleanPublicReportText(payload.title, 240);
   const rawSource = cleanReportRequestText(payload.source, 100).toLowerCase();
   const contactSource = cleanContactReportSource(rawSource);
   const reportId = contactSource
@@ -17624,7 +17664,7 @@ async function handleReportRequest(request, env) {
     }
   }
   const title = contactSource
-    ? cleanReportRequestText(canonicalTarget && canonicalTarget.title, 240)
+    ? cleanPublicReportText(canonicalTarget && canonicalTarget.title, 240)
     : submittedTitle;
   if (!title) {
     return privateJsonResponse(request, env, 400, { ok: false, detail: "缺少报告标题，请刷新页面后重试。" });
@@ -17634,8 +17674,8 @@ async function handleReportRequest(request, env) {
     title,
     source: contactSource || rawSource,
     institution: contactSource
-      ? cleanReportRequestText(canonicalTarget && canonicalTarget.institution, 180)
-      : cleanReportRequestText(payload.institution, 180),
+      ? cleanPublicReportText(canonicalTarget && canonicalTarget.institution, 180)
+      : cleanPublicReportText(payload.institution, 180),
     page_path: cleanReportRequestPagePath(payload.page_path),
     requester_email: requesterEmail,
     requester_user_id: cleanReportRequestText(user && user.id, 100),
@@ -17716,7 +17756,7 @@ async function handleReportRequest(request, env) {
     };
     await r2PutJson(env, key, completed);
     await upsertReportRequestAdminIndex(env, key, completed).catch((indexError) => {
-      console.error("Portal Suite report request queue index update failed", {
+      console.error(`${PUBLIC_BRAND} report request queue index update failed`, {
         request_id: key.split("/").pop().replace(/\.json$/i, ""),
         message: String(indexError && indexError.message || indexError || "unknown error").slice(0, 240),
       });
@@ -17885,7 +17925,7 @@ function normalizeContactReportTarget(value, expectedSource = "", expectedOrigin
   if (!value || typeof value !== "object" || Array.isArray(value)) return null;
   const source = cleanContactReportSource(value.source || expectedSource);
   const originId = cleanContactReportOriginId(source, value.origin_id || value.id || expectedOriginId);
-  const title = cleanReportRequestText(value.title, 320);
+  const title = cleanPublicReportText(value.title, 320);
   if (
     !source
     || !originId
@@ -17900,17 +17940,17 @@ function normalizeContactReportTarget(value, expectedSource = "", expectedOrigin
     origin_id: originId,
     source,
     title,
-    institution: cleanReportRequestText(value.institution, 160),
+    institution: cleanPublicReportText(value.institution, 160),
     date: normalizeHotReportDate(value.date),
-    kind: cleanReportRequestText(value.kind, 40),
-    kind_label: cleanReportRequestText(value.kind_label, 80),
-    report_type: cleanReportRequestText(value.report_type, 120),
-    language: cleanReportRequestText(value.language, 40),
-    category: cleanReportRequestText(value.category, 120),
-    author: cleanReportRequestText(value.author, 250),
-    rating: cleanReportRequestText(value.rating, 80),
+    kind: cleanPublicReportText(value.kind, 40),
+    kind_label: cleanPublicReportText(value.kind_label, 80),
+    report_type: cleanPublicReportText(value.report_type, 120),
+    language: cleanPublicReportText(value.language, 40),
+    category: cleanPublicReportText(value.category, 120),
+    author: cleanPublicReportText(value.author, 250),
+    rating: cleanPublicReportText(value.rating, 80),
     page_count: Math.max(0, Math.floor(Number(value.page_count || value.pages || 0) || 0)),
-    file_type: cleanReportRequestText(value.file_type, 40) || "pdf",
+    file_type: cleanPublicReportText(value.file_type, 40) || "pdf",
     verified_at: String(value.verified_at || value.updated_at || new Date().toISOString()),
   };
 }
@@ -17944,7 +17984,8 @@ function validateContactReportBinding(value, expectedSource = "", expectedOrigin
   const source = cleanContactReportSource(value.source);
   const originId = cleanContactReportOriginId(source, value.origin_id);
   const objectKey = String(value.object_key || "").trim();
-  const filename = safePdfFilename(value.filename || "report.pdf");
+  const storedFilename = safePdfFilename(value.filename || "report.pdf");
+  const filename = safePdfFilename(publicSourceText(storedFilename) || "report.pdf");
   const sizeBytes = Math.floor(Number(value.size_bytes || 0));
   const uploadedAt = String(value.uploaded_at || "").trim();
   const etag = String(value.etag || "").trim();
@@ -17955,7 +17996,7 @@ function validateContactReportBinding(value, expectedSource = "", expectedOrigin
     || (expectedSource && source !== cleanContactReportSource(expectedSource))
     || (expectedOriginId && originId !== cleanContactReportOriginId(source, expectedOriginId))
     || !new RegExp(`^${CONTACT_REPORT_PDF_PREFIX}/[a-f0-9]{64}\\.pdf$`).test(objectKey)
-    || filename !== String(value.filename || "")
+    || storedFilename !== String(value.filename || "")
     || !Number.isInteger(sizeBytes)
     || sizeBytes <= 0
     || sizeBytes > CONTACT_REPORT_UPLOAD_MAX_BYTES
@@ -17968,8 +18009,8 @@ function validateContactReportBinding(value, expectedSource = "", expectedOrigin
     version: 1,
     source,
     origin_id: originId,
-    title: cleanReportRequestText(value.title, 320) || originId,
-    institution: cleanReportRequestText(value.institution, 160),
+    title: cleanPublicReportText(value.title, 320) || originId,
+    institution: cleanPublicReportText(value.institution, 160),
     date: normalizeHotReportDate(value.date),
     filename,
     size_bytes: sizeBytes,
@@ -18004,19 +18045,19 @@ function publicContactReportItem(value, fallback = {}) {
     id: originId,
     origin_id: originId,
     source,
-    title: row ? row.title : cleanReportRequestText(target.title, 320),
-    institution: row ? row.institution : cleanReportRequestText(target.institution, 160),
+    title: row ? cleanPublicReportText(row.title, 320) : cleanPublicReportText(target.title, 320),
+    institution: row ? cleanPublicReportText(row.institution, 160) : cleanPublicReportText(target.institution, 160),
     date: row ? row.date : normalizeHotReportDate(target.date),
-    kind: cleanReportRequestText(target.kind, 40),
-    kind_label: cleanReportRequestText(target.kind_label, 80),
-    report_type: cleanReportRequestText(target.report_type, 120),
-    language: cleanReportRequestText(target.language, 40),
-    category: cleanReportRequestText(target.category, 120),
-    author: cleanReportRequestText(target.author, 250),
-    rating: cleanReportRequestText(target.rating, 80),
+    kind: cleanPublicReportText(target.kind, 40),
+    kind_label: cleanPublicReportText(target.kind_label, 80),
+    report_type: cleanPublicReportText(target.report_type, 120),
+    language: cleanPublicReportText(target.language, 40),
+    category: cleanPublicReportText(target.category, 120),
+    author: cleanPublicReportText(target.author, 250),
+    rating: cleanPublicReportText(target.rating, 80),
     page_count: Math.max(0, Math.floor(Number(target.page_count || 0) || 0)),
-    file_type: cleanReportRequestText(target.file_type, 40) || "pdf",
-    filename: row ? row.filename : "",
+    file_type: cleanPublicReportText(target.file_type, 40) || "pdf",
+    filename: row ? safePdfFilename(publicSourceText(row.filename) || "report.pdf") : "",
     size_bytes: row ? row.size_bytes : 0,
     uploaded_at: row ? row.uploaded_at : "",
     available,
@@ -18416,7 +18457,7 @@ async function handleContactReportPdf(request, env, forcedSource = "") {
     headers: {
       ...corsHeaders(request, env),
       "Content-Type": "application/pdf",
-      "Content-Disposition": contentDisposition(binding.row.filename),
+      "Content-Disposition": contentDisposition(safePdfFilename(publicSourceText(binding.row.filename) || "report.pdf")),
       "Cache-Control": "no-store, private",
       "X-Content-Type-Options": "nosniff",
       ...(object.size ? { "Content-Length": String(object.size) } : {}),
@@ -18683,7 +18724,7 @@ async function handleAccountAdminContactReportUpload(request, env, ctx = null) {
     } catch (indexError) {
       contactIndexUpdatePending = true;
       await markContactReportIndexDirty(env, row, indexError && indexError.message).catch(() => null);
-      console.error("Portal Suite contact report index update failed", {
+      console.error(`${PUBLIC_BRAND} contact report index update failed`, {
         upload_id: uploadId,
         source,
         origin_id: originId,
@@ -18694,7 +18735,7 @@ async function handleAccountAdminContactReportUpload(request, env, ctx = null) {
       try {
         await markReportRequestFulfilled(env, requestId, row, uploadId);
       } catch (requestError) {
-        console.error("Portal Suite report request fulfillment update failed", {
+        console.error(`${PUBLIC_BRAND} report request fulfillment update failed`, {
           upload_id: uploadId,
           request_id: requestId,
           message: String(requestError && requestError.message || requestError || "unknown error").slice(0, 240),
@@ -19001,7 +19042,7 @@ function opsAlertEmailHtml(subject, text, severity) {
   return `
     <div style="margin:0;padding:24px;background:#f6f7fb;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#111827;">
       <div style="max-width:680px;margin:0 auto;background:#ffffff;border-radius:8px;padding:28px;border-top:4px solid ${color};">
-        <div style="margin:0 0 10px;color:${color};font-size:13px;font-weight:700;text-transform:uppercase;">Portal Suite Operations</div>
+        <div style="margin:0 0 10px;color:${color};font-size:13px;font-weight:700;text-transform:uppercase;">${PUBLIC_BRAND} Operations</div>
         <h1 style="margin:0 0 20px;font-size:22px;line-height:1.35;">${escapeNewsfeedHtml(subject)}</h1>
         <div style="font-size:15px;color:#344054;">${paragraphs}</div>
       </div>
@@ -19171,7 +19212,7 @@ function compactSearchQuery(value) {
 
 async function searchCacheKey(source, query, page) {
   const rawQuery = String(query || "");
-  const cacheIdentity = rawQuery.startsWith("embedded-v1:")
+  const cacheIdentity = rawQuery.startsWith("embedded-v2:")
     ? rawQuery.slice(0, 720)
     : compactSearchQuery(rawQuery);
   const digest = await sha256Hex(`${source}:${page}:${cacheIdentity.toLowerCase()}`);
@@ -19219,11 +19260,85 @@ function searchPayloadHasItems(payload) {
   return Boolean(payload && Array.isArray(payload.items) && payload.items.length > 0);
 }
 
+function publicSearchItem(item) {
+  if (!item || typeof item !== "object" || Array.isArray(item)) return item;
+  const row = { ...item };
+  delete row.channel_name;
+  delete row.institution_name;
+  delete row.securities;
+  delete row.companyName;
+  for (const field of [
+    "title",
+    "title_cn",
+    "institution",
+    "summary",
+    "kind_label",
+    "report_type",
+    "category",
+    "author",
+    "rating",
+    "language",
+    "stock_name",
+    "filename",
+    "file_type",
+    "institution_en",
+    "institution_cn",
+    "publisher",
+    "provider_name",
+    "source_name",
+    "description",
+    "digest",
+    "excerpt",
+    "subtitle",
+  ]) {
+    if (Object.prototype.hasOwnProperty.call(row, field)) row[field] = publicSourceText(row[field]);
+  }
+  for (const field of ["tags", "authors"]) {
+    if (Array.isArray(row[field])) row[field] = row[field].map((value) => publicSourceText(value)).filter(Boolean);
+  }
+  return row;
+}
+
+function publicSearchPayload(_source, payload) {
+  if (!payload || typeof payload !== "object" || Array.isArray(payload)) return payload;
+  const output = { ...payload };
+  if (Array.isArray(output.items)) output.items = output.items.map(publicSearchItem);
+  if (Array.isArray(output.facetItems)) output.facetItems = output.facetItems.map(publicSearchItem);
+  if (Array.isArray(output.institutions)) {
+    output.institutions = output.institutions
+      .map((facet) => {
+        if (!facet || typeof facet !== "object" || Array.isArray(facet)) return facet;
+        return {
+          ...facet,
+          value: publicSourceText(facet.value),
+          label: publicSourceText(facet.label),
+        };
+      })
+      .filter((facet) => (
+        !facet
+        || typeof facet !== "object"
+        || Array.isArray(facet)
+        || Boolean(facet.value || facet.label)
+      ));
+  }
+  if (Array.isArray(output.sources)) {
+    output.sources = output.sources.map((entry) => (
+      entry && typeof entry === "object" && !Array.isArray(entry)
+        ? { ...entry, label: publicSourceText(entry.label) }
+        : entry
+    ));
+  }
+  for (const field of ["warning", "upstream_error"]) {
+    if (Object.prototype.hasOwnProperty.call(output, field)) output[field] = publicBrandText(output[field]);
+  }
+  return output;
+}
+
 async function handleCachedSearch(request, env, source, query, page, emptyPayload, fetcher, fallbackFetcher = null, options = {}) {
   const cached = await getSearchCache(env, source, query, page);
   if (!options.skipFreshCache && cached && cached.payload && cachedPayloadIsFresh(cached)) {
     return jsonResponse(request, env, 200, {
-      ...cached.payload,
+      ...publicSearchPayload(source, cached.payload),
       cached: true,
       cache_status: "fresh",
       cached_at: cached.cached_at || "",
@@ -19233,7 +19348,7 @@ async function handleCachedSearch(request, env, source, query, page, emptyPayloa
     const fallback = await fallbackFetcher(null);
     if (searchPayloadHasItems(fallback)) {
       return jsonResponse(request, env, 200, {
-        ...fallback,
+        ...publicSearchPayload(source, fallback),
         cached: true,
         cache_status: "mirror",
         warning: "已返回站内镜像结果。",
@@ -19241,7 +19356,7 @@ async function handleCachedSearch(request, env, source, query, page, emptyPayloa
     }
   }
   try {
-    const payload = await fetcher();
+    const payload = publicSearchPayload(source, await fetcher());
     await putSearchCache(env, source, query, page, payload);
     return jsonResponse(request, env, 200, {
       ...payload,
@@ -19254,7 +19369,7 @@ async function handleCachedSearch(request, env, source, query, page, emptyPayloa
         const fallback = await fallbackFetcher(error);
         if (searchPayloadHasItems(fallback)) {
           return jsonResponse(request, env, 200, {
-            ...fallback,
+            ...publicSearchPayload(source, fallback),
             cached: true,
             cache_status: "mirror",
             warning: "已返回站内镜像结果。",
@@ -19262,7 +19377,7 @@ async function handleCachedSearch(request, env, source, query, page, emptyPayloa
         }
       }
       return jsonResponse(request, env, 200, {
-        ...cached.payload,
+        ...publicSearchPayload(source, cached.payload),
         cached: true,
         cache_status: "stale",
         cached_at: cached.cached_at || "",
@@ -19273,7 +19388,7 @@ async function handleCachedSearch(request, env, source, query, page, emptyPayloa
       const fallback = await fallbackFetcher(error);
       if (fallback) {
         return jsonResponse(request, env, 200, {
-          ...fallback,
+          ...publicSearchPayload(source, fallback),
           cached: true,
           cache_status: "mirror",
           warning: "已返回站内镜像结果。",
@@ -19281,11 +19396,11 @@ async function handleCachedSearch(request, env, source, query, page, emptyPayloa
       }
     }
     return jsonResponse(request, env, 200, {
-      ...emptyPayload,
+      ...publicSearchPayload(source, emptyPayload),
       cached: false,
       cache_status: "miss",
       warning: "上游暂时不可用，暂无缓存结果。",
-      upstream_error: String(error && error.message || error || "unavailable").slice(0, 160),
+      upstream_error: publicBrandText(String(error && error.message || error || "unavailable").slice(0, 160)),
     });
   }
 }
@@ -19861,6 +19976,8 @@ const BIAS_VIDEO_RULES = [
   ["泛商业/生活化新闻", 1.4, /汽水|票房|温网|球迷|索尼|康卡斯特|创始人|收购|comcast|sony|tennis|wimbledon|soda|box office|nbcuniversal/i],
 ];
 
+const DESKTOP_ACCOUNT_LABEL = PUBLIC_BRAND;
+
 function bbgVideoAccountRecommendation(path, info) {
   const text = `${bbgVideoTitleText(path)} ${info && info.source || ""}`.toLowerCase();
   const desktop = accountLabelMatch(text, DESKTOP_VIDEO_RULES);
@@ -19877,10 +19994,10 @@ function bbgVideoAccountRecommendation(path, info) {
     bias.score += 0.5;
     bias.reasons.push("普通 clips 默认偏观点短评");
   }
-  const account = desktop.score > bias.score ? "Portal Suite" : "Portal Alternate";
+  const account = desktop.score > bias.score ? DESKTOP_ACCOUNT_LABEL : "Portal Alternate";
   const diff = Math.abs(desktop.score - bias.score);
   const confidence = diff >= 3.5 ? "高" : (diff >= 1.5 ? "中" : "低");
-  const reasons = account === "Portal Suite" ? desktop.reasons : bias.reasons;
+  const reasons = account === DESKTOP_ACCOUNT_LABEL ? desktop.reasons : bias.reasons;
   return {
     recommended_account: account,
     account_label_confidence: confidence,
@@ -19892,7 +20009,7 @@ function bbgVideoAccountRecommendation(path, info) {
 
 function explicitPortalVideoAccountLabel(value) {
   const text = String(value || "");
-  if (/Portal Suite/i.test(text)) return "Portal Suite";
+  if (/Portal Suite/i.test(text) || text.includes(DESKTOP_ACCOUNT_LABEL)) return DESKTOP_ACCOUNT_LABEL;
   if (/Portal Alternate/i.test(text)) return "Portal Alternate";
   return "";
 }
@@ -19904,7 +20021,7 @@ function rpt2vidAccountRecommendation(path) {
   const desktop = accountLabelMatch(text, DESKTOP_VIDEO_RULES);
   const bias = accountLabelMatch(text, BIAS_VIDEO_RULES);
   if (explicit) {
-    if (explicit === "Portal Suite") desktop.score += 6;
+    if (explicit === DESKTOP_ACCOUNT_LABEL) desktop.score += 6;
     if (explicit === "Portal Alternate") bias.score += 6;
     return {
       recommended_account: explicit,
@@ -19918,10 +20035,10 @@ function rpt2vidAccountRecommendation(path) {
     desktop.score += 0.8;
     desktop.reasons.push("报告视频默认偏投研/报告解读");
   }
-  const account = desktop.score > bias.score ? "Portal Suite" : "Portal Alternate";
+  const account = desktop.score > bias.score ? DESKTOP_ACCOUNT_LABEL : "Portal Alternate";
   const diff = Math.abs(desktop.score - bias.score);
   const confidence = diff >= 3.5 ? "高" : (diff >= 1.5 ? "中" : "低");
-  const reasons = account === "Portal Suite" ? desktop.reasons : bias.reasons;
+  const reasons = account === DESKTOP_ACCOUNT_LABEL ? desktop.reasons : bias.reasons;
   return {
     recommended_account: account,
     account_label_confidence: confidence,
@@ -19942,14 +20059,14 @@ function applyBbgVideoGroupMajority(files) {
   }
   for (const rows of groups.values()) {
     if (rows.length < 2) continue;
-    const desktopCount = rows.filter((row) => row.recommended_account === "Portal Suite").length;
+    const desktopCount = rows.filter((row) => row.recommended_account === DESKTOP_ACCOUNT_LABEL).length;
     const biasCount = rows.filter((row) => row.recommended_account === "Portal Alternate").length;
     const desktopScore = rows.reduce((sum, row) => sum + Number(row.portaltop_score || 0), 0);
     const biasScore = rows.reduce((sum, row) => sum + Number(row.portal_bias_score || 0), 0);
     const chosen = desktopCount > biasCount
-      ? "Portal Suite"
-      : (biasCount > desktopCount ? "Portal Alternate" : (desktopScore >= biasScore ? "Portal Suite" : "Portal Alternate"));
-    const chosenCount = chosen === "Portal Suite" ? desktopCount : biasCount;
+      ? DESKTOP_ACCOUNT_LABEL
+      : (biasCount > desktopCount ? "Portal Alternate" : (desktopScore >= biasScore ? DESKTOP_ACCOUNT_LABEL : "Portal Alternate"));
+    const chosenCount = chosen === DESKTOP_ACCOUNT_LABEL ? desktopCount : biasCount;
     const confidence = chosenCount === rows.length ? "高" : "中";
     for (const row of rows) {
       const previousReason = String(row.account_label_reason || "");
@@ -19969,7 +20086,7 @@ function applyBbgVideoAccountBalance(files) {
   const groups = new Map();
   (files || []).forEach((file, index) => {
     const account = String(file && file.recommended_account || "");
-    if (account !== "Portal Suite" && account !== "Portal Alternate") return;
+    if (account !== DESKTOP_ACCOUNT_LABEL && account !== "Portal Alternate") return;
     const key = String(file && file._bbg_group_key || `single:${index}`);
     const rows = groups.get(key) || [];
     rows.push(file);
@@ -19978,9 +20095,9 @@ function applyBbgVideoAccountBalance(files) {
   const blocks = [...groups.values()].map((rows) => {
     const desktopScore = rows.reduce((sum, row) => sum + Number(row.portaltop_score || 0), 0);
     const biasScore = rows.reduce((sum, row) => sum + Number(row.portal_bias_score || 0), 0);
-    const desktopRows = rows.filter((row) => row.recommended_account === "Portal Suite").length;
+    const desktopRows = rows.filter((row) => row.recommended_account === DESKTOP_ACCOUNT_LABEL).length;
     const biasRows = rows.filter((row) => row.recommended_account === "Portal Alternate").length;
-    const account = desktopRows >= biasRows ? "Portal Suite" : "Portal Alternate";
+    const account = desktopRows >= biasRows ? DESKTOP_ACCOUNT_LABEL : "Portal Alternate";
     return {
       rows,
       account,
@@ -19988,16 +20105,16 @@ function applyBbgVideoAccountBalance(files) {
       margin: Math.abs(desktopScore - biasScore) / Math.max(1, rows.length),
     };
   });
-  let desktopTotal = blocks.reduce((sum, block) => sum + (block.account === "Portal Suite" ? block.size : 0), 0);
+  let desktopTotal = blocks.reduce((sum, block) => sum + (block.account === DESKTOP_ACCOUNT_LABEL ? block.size : 0), 0);
   let biasTotal = blocks.reduce((sum, block) => sum + (block.account === "Portal Alternate" ? block.size : 0), 0);
   for (let guard = 0; guard < blocks.length && Math.abs(desktopTotal - biasTotal) > 1; guard += 1) {
-    const majority = desktopTotal > biasTotal ? "Portal Suite" : "Portal Alternate";
-    const minority = majority === "Portal Suite" ? "Portal Alternate" : "Portal Suite";
+    const majority = desktopTotal > biasTotal ? DESKTOP_ACCOUNT_LABEL : "Portal Alternate";
+    const minority = majority === DESKTOP_ACCOUNT_LABEL ? "Portal Alternate" : DESKTOP_ACCOUNT_LABEL;
     const currentDiff = Math.abs(desktopTotal - biasTotal);
     const candidate = blocks
       .filter((block) => block.account === majority)
       .map((block) => {
-        const nextDesktop = majority === "Portal Suite" ? desktopTotal - block.size : desktopTotal + block.size;
+        const nextDesktop = majority === DESKTOP_ACCOUNT_LABEL ? desktopTotal - block.size : desktopTotal + block.size;
         const nextBias = majority === "Portal Alternate" ? biasTotal - block.size : biasTotal + block.size;
         return { block, nextDiff: Math.abs(nextDesktop - nextBias) };
       })
@@ -20005,7 +20122,7 @@ function applyBbgVideoAccountBalance(files) {
       .sort((a, b) => a.nextDiff - b.nextDiff || a.block.margin - b.block.margin || a.block.size - b.block.size)[0];
     if (!candidate) break;
     candidate.block.account = minority;
-    if (majority === "Portal Suite") {
+    if (majority === DESKTOP_ACCOUNT_LABEL) {
       desktopTotal -= candidate.block.size;
       biasTotal += candidate.block.size;
     } else {
@@ -20016,7 +20133,7 @@ function applyBbgVideoAccountBalance(files) {
       const previousReason = String(row.account_label_reason || "");
       row.recommended_account = minority;
       row.account_label_confidence = row.account_label_confidence === "低" ? "低" : "中";
-      row.account_label_reason = `数量均衡：后台列表 Portal Suite/Portal Alternate 数量偏差，整组调整为${minority}；${previousReason}`;
+      row.account_label_reason = `数量均衡：后台列表 ${DESKTOP_ACCOUNT_LABEL}/Portal Alternate 数量偏差，整组调整为${minority}；${previousReason}`;
     }
   }
 }
@@ -20080,7 +20197,7 @@ function adminVideoContinuitySegment(file) {
 
 function adminVideoContinuityKey(file) {
   const account = String(file && file.recommended_account || "");
-  if (account !== "Portal Suite" && account !== "Portal Alternate") return "";
+  if (account !== DESKTOP_ACCOUNT_LABEL && account !== "Portal Alternate") return "";
   const name = String(file && (file.name || file.path || "") || "");
   const kind = String(file && file.kind || "");
   const label = String(file && file.label || "");
@@ -20110,15 +20227,15 @@ function applyAdminVideoContinuityMajority(files) {
   }
   for (const rows of groups.values()) {
     if (rows.length < 2) continue;
-    const desktopCount = rows.filter((row) => row.recommended_account === "Portal Suite").length;
+    const desktopCount = rows.filter((row) => row.recommended_account === DESKTOP_ACCOUNT_LABEL).length;
     const biasCount = rows.filter((row) => row.recommended_account === "Portal Alternate").length;
     if (!desktopCount || !biasCount) continue;
     const desktopScore = rows.reduce((sum, row) => sum + Number(row.portaltop_score || 0), 0);
     const biasScore = rows.reduce((sum, row) => sum + Number(row.portal_bias_score || 0), 0);
     const chosen = desktopCount > biasCount
-      ? "Portal Suite"
-      : (biasCount > desktopCount ? "Portal Alternate" : (desktopScore >= biasScore ? "Portal Suite" : "Portal Alternate"));
-    const chosenCount = chosen === "Portal Suite" ? desktopCount : biasCount;
+      ? DESKTOP_ACCOUNT_LABEL
+      : (biasCount > desktopCount ? "Portal Alternate" : (desktopScore >= biasScore ? DESKTOP_ACCOUNT_LABEL : "Portal Alternate"));
+    const chosenCount = chosen === DESKTOP_ACCOUNT_LABEL ? desktopCount : biasCount;
     for (const row of rows) {
       const previousReason = String(row.account_label_reason || "");
       row.recommended_account = chosen;
@@ -20956,9 +21073,19 @@ function operatorVisibleAdminFiles(files) {
   });
 }
 
+function publicAdminFile(file) {
+  if (!file || typeof file !== "object" || Array.isArray(file)) return file;
+  const row = { ...file };
+  for (const field of ["label", "name", "note", "recommended_account", "account_label_reason"]) {
+    if (Object.prototype.hasOwnProperty.call(row, field)) row[field] = publicBrandText(row[field]);
+  }
+  return row;
+}
+
 function adminFilesForUser(files, user) {
   const currentFiles = (Array.isArray(files) ? files : []).filter((file) => !isLegacyMarketViewAdminFile(file));
-  return isSuperAccount(user) ? currentFiles : operatorVisibleAdminFiles(currentFiles);
+  const visible = isSuperAccount(user) ? currentFiles : operatorVisibleAdminFiles(currentFiles);
+  return visible.map(publicAdminFile);
 }
 
 async function settleAdminSnapshotModule(promise, fallback) {
@@ -21703,7 +21830,7 @@ async function handleAccountAdminReportPdf(request, env) {
     return jsonResponse(request, env, 503, { detail: "Report PDF status is unavailable." });
   }
   if (!pdfDescriptor) {
-    return jsonResponse(request, env, 404, { detail: `PDF is not currently available. Contact WeChat: ${CONTACT_WECHAT}.` });
+    return jsonResponse(request, env, 404, { detail: `PDF is not currently available. Contact: ${CONTACT_EMAIL}.` });
   }
 
   const object = await env.REPORT_BUCKET.get(pdfDescriptor.object_key);
@@ -22318,13 +22445,13 @@ function externalIsoDate(publishAt) {
 
 // Map a raw upstream report record to the slim shape the frontend renders.
 function slimExternalItem(item) {
-  const title = String(item.title || item.title_cn || "").trim();
-  const summary = String(item.summary || "").replace(/\s+/g, " ").trim();
+  const title = publicSourceText(item.title || item.title_cn);
+  const summary = publicSourceText(item.summary);
   return {
     id: String(item.report_id || ""),
     title: title || "Untitled report",
-    title_cn: String(item.title_cn || "").trim(),
-    institution: String(item.institution_name || item.channel_name || "").trim(),
+    title_cn: publicSourceText(item.title_cn),
+    institution: publicSourceText(item.institution_name),
     date: externalIsoDate(item.publish_at),
     file_type: String(item.file_type || "").trim(),
     summary: summary.length > 220 ? `${summary.slice(0, 220)}…` : summary,
@@ -22414,7 +22541,7 @@ function embeddedSearchFilters(url, source) {
 }
 
 function embeddedSearchCacheQuery(query, filters) {
-  return `embedded-v1:${JSON.stringify({
+  return `embedded-v2:${JSON.stringify({
     q: compactSearchQuery(query),
     start_date: filters.startDate || "",
     end_date: filters.endDate || "",
@@ -22623,11 +22750,12 @@ async function sanitizePdfExternalLinksBody(body) {
 }
 
 function externalPdfResponse(request, env, sanitized, title, id) {
+  const filename = safePdfFilename(`${publicSourceText(title) || id}.pdf`);
   return new Response(sanitized, {
     headers: {
       ...corsHeaders(request, env),
       "Content-Type": "application/pdf",
-      "Content-Disposition": contentDisposition(`${title || id}.pdf`),
+      "Content-Disposition": contentDisposition(filename),
       "Cache-Control": "no-store, private",
       "X-Content-Type-Options": "nosniff",
       "X-PortalSuite-PDF-Sanitized": "links",
@@ -22698,7 +22826,7 @@ async function handleExternalPdf(request, env, ctx = null) {
         if (!consumed.ok) {
           return jsonResponse(request, env, consumed.status || 403, {
             error: consumed.error || TRIAL_LIMIT_MESSAGE,
-            contact: consumed.contact || CONTACT_WECHAT,
+            contact: consumed.contact || CONTACT_EMAIL,
             limit_exceeded: Boolean(consumed.limit_exceeded),
           });
         }
@@ -22723,7 +22851,7 @@ async function handleExternalPdf(request, env, ctx = null) {
       if (!consumed.ok) {
         return jsonResponse(request, env, consumed.status || 403, {
           error: consumed.error || TRIAL_LIMIT_MESSAGE,
-          contact: consumed.contact || CONTACT_WECHAT,
+          contact: consumed.contact || CONTACT_EMAIL,
           limit_exceeded: Boolean(consumed.limit_exceeded),
         });
       }
@@ -22743,7 +22871,7 @@ async function handleExternalPdf(request, env, ctx = null) {
   }
   if (externalStatusIsRecentFailure(stored)) {
     return jsonResponse(request, env, 503, {
-      error: `报告刚刚准备失败，请稍后重试或联系 WeChat: ${CONTACT_WECHAT}。`,
+      error: `报告刚刚准备失败，请稍后重试或联系邮箱 ${CONTACT_EMAIL}。`,
       updated_at: String(stored.updated_at || ""),
     });
   }
@@ -22753,7 +22881,7 @@ async function handleExternalPdf(request, env, ctx = null) {
   if (!dispatched) {
     await externalPutStatus(env, id, "failed", "dispatch failed");
     return jsonResponse(request, env, 503, {
-      error: `文件准备服务暂时不可用，请联系 WeChat: ${CONTACT_WECHAT}。`,
+      error: `文件准备服务暂时不可用，请联系邮箱 ${CONTACT_EMAIL}。`,
     });
   }
   return externalPendingResponse(request, env, { status: "queued", updated_at: new Date().toISOString() });
@@ -22777,7 +22905,7 @@ async function handleExternalStatus(request, env) {
     return jsonResponse(request, env, 200, {
       ready: false,
       status: "failed",
-      message: `报告准备失败，请联系 ${CONTACT_WECHAT}。`,
+      message: `报告准备失败，请联系邮箱 ${CONTACT_EMAIL}。`,
       updated_at: String(stored.updated_at || ""),
     });
   }
@@ -22823,7 +22951,7 @@ function cleanHtmlText(value) {
 }
 
 function reportAPublicText(value) {
-  return String(value || "").replace(/慧博/g, "报告A").replace(/Hibor/gi, "报告A");
+  return publicSourceText(value);
 }
 
 function hiborMetaField(block, label) {
@@ -23056,16 +23184,16 @@ function thinkTankInstitution(row) {
 function slimThinkTankItem(row, wechatTitleMap = new Map()) {
   const id = thinkTankId(row);
   const hash = thinkTankHashFromFilename(row && row.local_filename);
-  const wechatTitle = hash ? String(wechatTitleMap.get(hash) || "").trim() : "";
-  const title = String(row && row.title || "").replace(/\s+/g, " ").trim();
+  const wechatTitle = hash ? publicSourceText(wechatTitleMap.get(hash)) : "";
+  const title = publicSourceText(row && row.title);
   return {
     id,
     source: THINKTANK_SOURCE,
     title: title || "Untitled report",
     title_cn: wechatTitle,
-    institution: thinkTankInstitution(row),
-    institution_en: String(row && row.institution_en || row && row.institution || "").trim(),
-    institution_cn: String(row && row.institution_cn || "").trim(),
+    institution: publicSourceText(thinkTankInstitution(row)),
+    institution_en: publicSourceText(row && (row.institution_en || row.institution)),
+    institution_cn: publicSourceText(row && row.institution_cn),
     date: thinkTankDate(row),
     page_count: Number(row && row.page_count || 0) || 0,
     size_bytes: Number(row && row.bytes || 0) || 0,
@@ -23267,7 +23395,7 @@ async function cacheThinkTankPdf(env, row) {
   await env.REPORT_BUCKET.put(key, bytes, {
     httpMetadata: {
       contentType: "application/pdf",
-      contentDisposition: contentDisposition(`${row.title || id}.pdf`),
+      contentDisposition: contentDisposition(safePdfFilename(`${publicSourceText(row.title) || id}.pdf`)),
       cacheControl: "public, max-age=2592000, immutable",
     },
     customMetadata: {
@@ -23357,7 +23485,7 @@ async function handleThinkTankPdf(request, env, ctx = null) {
       if (!consumed.ok) {
         return jsonResponse(request, env, consumed.status || 403, {
           error: consumed.error || TRIAL_LIMIT_MESSAGE,
-          contact: consumed.contact || CONTACT_WECHAT,
+          contact: consumed.contact || CONTACT_EMAIL,
           limit_exceeded: Boolean(consumed.limit_exceeded),
         });
       }
@@ -23379,8 +23507,8 @@ async function handleThinkTankPdf(request, env, ctx = null) {
   }
   if (!cached) {
     return jsonResponse(request, env, 502, {
-      error: `PDF is not currently available. Contact WeChat: ${CONTACT_WECHAT}.`,
-      contact: CONTACT_WECHAT,
+      error: `PDF is not currently available. Contact: ${CONTACT_EMAIL}.`,
+      contact: CONTACT_EMAIL,
     });
   }
   const sanitized = await sanitizePdfExternalLinksBody(cached.body);
@@ -23388,7 +23516,7 @@ async function handleThinkTankPdf(request, env, ctx = null) {
   if (!consumed.ok) {
     return jsonResponse(request, env, consumed.status || 403, {
       error: consumed.error || TRIAL_LIMIT_MESSAGE,
-      contact: consumed.contact || CONTACT_WECHAT,
+      contact: consumed.contact || CONTACT_EMAIL,
       limit_exceeded: Boolean(consumed.limit_exceeded),
     });
   }
@@ -23442,23 +23570,23 @@ function authoritySearchHeaders(kindConfig) {
 function slimAuthorityItem(kind, record) {
   const config = AUTHORITY_KINDS[kind];
   const id = String(record.id || "").trim();
-  const title = String(record.title || "").replace(/\s+/g, " ").trim();
-  const institution = String(record.securities || record.companyName || "").trim();
+  const title = publicSourceText(record.title);
+  const institution = publicSourceText(record.securities || record.companyName);
   if (!id) return { id: "" };
   return {
     id: `${kind}:${id}`,
     source: AUTHORITY_SOURCE,
     kind,
-    kind_label: config.label,
+    kind_label: publicSourceText(config.label),
     title: title || "Untitled report",
     institution,
     date: String(record.reDate || "").trim(),
-    report_type: String(record.reportType || "").trim(),
+    report_type: publicSourceText(record.reportType),
     page_count: Number(record.page || record.pages || 0) || 0,
-    language: String(record.lang || "").trim(),
+    language: publicSourceText(record.lang),
     stock_code: String(record.stockCode || record.companycode || "").trim(),
-    stock_name: String(record.stockName || record.companyName || "").trim(),
-    author: String(record.author || record.authors || "").trim(),
+    stock_name: publicSourceText(record.stockName || record.companyName),
+    author: publicSourceText(record.author || record.authors),
     file_type: "pdf",
   };
 }
@@ -23484,7 +23612,7 @@ async function authoritySearchOne(kind, query, page, filters = {}, deadlineAt = 
 
 function slimAuthorityDomesticLead(item) {
   const id = String(item && item.id || "").trim();
-  const title = String(item && item.title || "").replace(/\s+/g, " ").trim();
+  const title = publicSourceText(item && item.title);
   if (!/^supplemental:[a-f0-9]{32}$/.test(id) || !title) return { id: "" };
   return {
     id,
@@ -23492,7 +23620,7 @@ function slimAuthorityDomesticLead(item) {
     kind: AUTHORITY_DOMESTIC_LEAD_KIND,
     kind_label: AUTHORITY_DOMESTIC_LEAD_LABEL,
     title,
-    institution: String(item && item.institution || "").trim(),
+    institution: publicSourceText(item && item.institution),
     date: String(item && item.date || "").trim(),
     report_type: AUTHORITY_DOMESTIC_LEAD_LABEL,
     page_count: Number(item && item.page_count || 0) || 0,
@@ -23501,7 +23629,7 @@ function slimAuthorityDomesticLead(item) {
     stock_name: "",
     author: "",
     tags: Array.isArray(item && item.tags) ? item.tags.slice(0, 12) : [],
-    summary: String(item && item.summary || "").trim(),
+    summary: publicSourceText(item && item.summary),
     file_type: "lead",
     contact_only: true,
   };
@@ -23928,13 +24056,13 @@ export default {
 
     if (pathname === "/paddle-config" && request.method === "GET") {
       return jsonResponse(request, env, 410, {
-        detail: accessContactMessage(request, "Portal Suite 不提供在线支付。", "Portal Suite does not provide online checkout. "),
+        detail: accessContactMessage(request, `${PUBLIC_BRAND} 不提供在线支付。`, `${PUBLIC_BRAND} does not provide online checkout. `),
       });
     }
 
     if (pathname === "/paddle-webhook" && request.method === "POST") {
       return jsonResponse(request, env, 410, {
-        detail: "Portal Suite does not accept payment webhooks.",
+        detail: `${PUBLIC_BRAND} does not accept payment webhooks.`,
       });
     }
 

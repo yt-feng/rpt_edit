@@ -247,7 +247,7 @@ def main() -> int:
     parser.add_argument("--poll-interval", type=int, default=15)
     parser.add_argument("--mineru-retries", type=int, default=1)
     parser.add_argument("--mineru-no-progress-timeout", type=int, default=600)
-    parser.add_argument("--watermark", default="Portal Suite")
+    parser.add_argument("--watermark", default="KC桌面")
     args = parser.parse_args()
 
     input_dir = Path(args.input_dir).resolve()

@@ -133,6 +133,7 @@ test("external search can return a fresh six-hour query cache without calling Re
     jsonResponse: (_request, _env, status, payload) => ({ status, payload }),
     putSearchCache: async () => {},
     searchPayloadHasItems: (payload) => Boolean(payload && payload.items && payload.items.length),
+    publicSearchPayload: (_source, payload) => payload,
   });
 
   const response = await functions.handleCachedSearch(
@@ -170,6 +171,7 @@ test("a non-empty stale cache wins before mirror lookup, while an empty cache ca
     jsonResponse: (_request, _env, status, payload) => ({ status, payload }),
     putSearchCache: async () => {},
     searchPayloadHasItems: (payload) => Boolean(payload && payload.items && payload.items.length),
+    publicSearchPayload: (_source, payload) => payload,
   });
   const fetcher = async () => {
     throw new Error("upstream unavailable");

@@ -54,7 +54,7 @@ FAILED_STATES = {"failed", "fail", "error"}
 XHS_CANVAS_SIZE = (1080, 1440)
 XHS_BG_COLOR = (9, 31, 64)
 XHS_CARD_COLOR = (255, 255, 255)
-XHS_WATERMARK = "Portal Suite"
+XHS_WATERMARK = "KC桌面"
 CHART_FILENAME_RE = re.compile(r"(?:chart|figure|fig|exhibit|table|graph|plot|source_image)", re.I)
 NON_CHART_FILENAME_RE = re.compile(r"(?:avatar|author|headshot|portrait|profile|logo|cover|hero|banner|photo)", re.I)
 
