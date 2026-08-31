@@ -130,7 +130,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         ):
             self.assertIn(directory, section)
             self.assertIn('"$origin/"', section)
-            for path in ("assets/app.js", "doc.html", "report.html"):
+            for path in ("assets/app.js", "assets/app-mark.svg", "doc.html", "report.html"):
                 self.assertIn(f'"$origin/{path}"', section)
             self.assertIn("python3 -B scripts/check_public_brand.py", section)
 
