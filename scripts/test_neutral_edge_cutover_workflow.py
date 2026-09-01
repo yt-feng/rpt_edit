@@ -54,6 +54,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertLess(prepare, upload)
         self.assertLess(upload, cutover)
         self.assertLess(cutover, deploy)
+        self.assertIn("--max-workers 4", self.workflow[upload:cutover])
         self.assertIn("timeout-minutes: 150", self.workflow[prepare:cutover])
         self.assertIn("timeout-minutes: 65", self.workflow[cutover:])
         self.assertEqual(self.workflow.count("ref: ${{ github.sha }}"), 2)

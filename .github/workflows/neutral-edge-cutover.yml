@@ -451,7 +451,7 @@ jobs:
             --root _neutral_site --release "$STATIC_RELEASE" \
             --active-slot "$ACTIVE_STATIC_SLOT" \
             --member-contact-card "$RUNNER_TEMP/member-contact-card.jpg" \
-            --max-workers 10
+            --max-workers 4
 
       - name: Build public validation artifact
         if: steps.release_delta.outputs.changed == 'true'
