@@ -14,6 +14,7 @@ const RUNTIME_TREE_PATTERN = /^[0-9a-f]{64}$/;
 const DEFAULT_R2_PREFIX = "reports";
 const PUBLIC_BRAND = "KC桌面";
 const CONTACT_EMAIL = ["info", "@", "kc", "desk", ".com"].join("");
+const PUBLIC_REDACTED_ACCOUNT_EMAIL = "redacted@users.example.invalid";
 const PUBLIC_SOURCE_BRAND_PATTERN = /(?:https?:\/\/)?(?:[a-z0-9-]+\.)*reportify\.cn|reportify|(?:https?:\/\/)?(?:[a-z0-9-]+\.)*nash[\s._-]*ai\.cn|nash[\s._-]*ai|macro[\s._-]*gate|support[\s._-]*contact|portal[\s._-]*(?:suite|alternate|娱乐)|kc[\s._-]*desk[\s._-]*notes|two[\s._-]*tigers|\bmaifu\b|麦府(?:学堂|课堂)|慧博|(?:https?:\/\/)?(?:[a-z0-9-]+\.)*hibor\.com\.cn/giu;
 const PUBLIC_SOURCE_BRAND_DETECTOR = /reportify|nash[\s._-]*ai|macro[\s._-]*gate|support[\s._-]*contact|portal[\s._-]*(?:suite|alternate|娱乐)|kc[\s._-]*desk[\s._-]*notes|two[\s._-]*tigers|\bmaifu\b|麦府(?:学堂|课堂)|慧博|hibor\.com\.cn/iu;
 
@@ -1871,6 +1872,7 @@ async function createUserToken(env, user) {
 
 function publicUser(user) {
   const email = String(user.email || "");
+  const visibleEmail = publicAccountEmail(email);
   const role = accountRole(user);
   const siteOrigin = String(user.site_origin || SITE_ORIGIN);
   const registeredSite = String(user.registered_site || user.site_origin || SITE_ORIGIN);
@@ -1879,8 +1881,8 @@ function publicUser(user) {
   return {
     id: user.id || "",
     username: publicAccountDisplayName(user.username, role),
-    email: publicAccountEmail(email),
-    email_is_generated: Boolean(user.email_is_generated) || isGeneratedEmail(email),
+    email: visibleEmail || PUBLIC_REDACTED_ACCOUNT_EMAIL,
+    email_is_generated: Boolean(user.email_is_generated) || isGeneratedEmail(email) || !visibleEmail,
     site_origin: publicSiteLabel(siteOrigin),
     registered_site: publicSiteLabel(registeredSite),
     source_site: publicSiteLabel(sourceSite),

@@ -195,7 +195,9 @@ test("public account and analytics payloads never expose private account aliases
     role: "user",
   });
   assert.equal(redactedAccount.id, "private-1");
-  assert.equal(redactedAccount.email, "");
+  assert.equal(redactedAccount.email, "redacted@users.example.invalid");
+  assert.equal(redactedAccount.email_is_generated, true);
+  assert.notEqual(redactedAccount.email, ["two", "tigers", "@example.com"].join(""));
 
   const analytics = context.publicAnalyticsEvent({
     id: "event-1",
