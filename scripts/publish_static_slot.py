@@ -15,9 +15,10 @@ import mimetypes
 import os
 import re
 import sys
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any, Callable, Iterable
 
 from check_public_brand import check_public_brand
 
@@ -36,6 +37,16 @@ MEMBER_CONTACT_CARD_KEY = "_private-assets/v1/member-contact-card.jpg"
 MEMBER_CONTACT_CARD_CACHE_CONTROL = "private, no-store"
 MEMBER_CONTACT_CARD_MIN_BYTES = 4096
 MEMBER_CONTACT_CARD_MAX_BYTES = 1024 * 1024
+UPLOAD_RETRY_DELAYS_SECONDS = (5.0, 10.0, 20.0)
+RETRYABLE_UPLOAD_ERROR_CODES = frozenset(
+    {
+        "internalerror",
+        "requesttimeout",
+        "requesttimeoutexception",
+        "serviceunavailable",
+        "slowdown",
+    }
+)
 LEGACY_PUBLIC_CONTACT_CARD_KEYS = tuple(
     f"{SLOT_ROOT}/{slot}/assets/contact-card.jpg" for slot in SLOTS
 )
@@ -164,6 +175,58 @@ def member_contact_card_matches(metadata: dict[str, Any], descriptor: dict[str, 
     )
 
 
+def upload_error_code(error: BaseException) -> str:
+    """Return a structured S3 error code, including through boto3 wrappers."""
+    pending: list[BaseException] = [error]
+    seen: set[int] = set()
+    while pending:
+        current = pending.pop()
+        if id(current) in seen:
+            continue
+        seen.add(id(current))
+        response = getattr(current, "response", None)
+        if isinstance(response, dict):
+            details = response.get("Error") or {}
+            if isinstance(details, dict):
+                code = str(details.get("Code") or "").strip().lower()
+                if code:
+                    return code
+        for nested in (current.__cause__, current.__context__):
+            if isinstance(nested, BaseException):
+                pending.append(nested)
+    return ""
+
+
+def upload_file_with_retry(
+    client: Any,
+    filename: str,
+    bucket: str,
+    key: str,
+    *,
+    retry_sleep: Callable[[float], None] | None = None,
+    **kwargs: Any,
+) -> None:
+    """Retry only bounded, explicitly transient R2/S3 upload failures."""
+    sleeper = retry_sleep or time.sleep
+    total_attempts = len(UPLOAD_RETRY_DELAYS_SECONDS) + 1
+    for attempt in range(1, total_attempts + 1):
+        try:
+            client.upload_file(filename, bucket, key, **kwargs)
+            return
+        except Exception as error:
+            code = upload_error_code(error)
+            if code not in RETRYABLE_UPLOAD_ERROR_CODES or attempt >= total_attempts:
+                raise
+            delay = UPLOAD_RETRY_DELAYS_SECONDS[attempt - 1]
+            print(
+                f"Retryable R2 upload error {code} for {key} on attempt "
+                f"{attempt}/{total_attempts}; retrying in {delay:g}s.",
+                file=sys.stderr,
+            )
+            sleeper(delay)
+    raise RuntimeError("R2 upload retry loop ended unexpectedly")
+
+
 def upload_member_contact_card(
     client: Any,
     bucket: str,
@@ -184,7 +247,7 @@ def upload_member_contact_card(
     }
     if transfer_config is not None:
         kwargs["Config"] = transfer_config
-    client.upload_file(str(path), bucket, MEMBER_CONTACT_CARD_KEY, **kwargs)
+    upload_file_with_retry(client, str(path), bucket, MEMBER_CONTACT_CARD_KEY, **kwargs)
     verified = client.head_object(Bucket=bucket, Key=MEMBER_CONTACT_CARD_KEY)
     if not member_contact_card_matches(verified, descriptor):
         raise RuntimeError("Member contact card verification failed")
@@ -538,7 +601,7 @@ def sync_runtime_data(
         }
         if transfer_config is not None:
             kwargs["Config"] = transfer_config
-        client.upload_file(str(path), bucket, key, **kwargs)
+        upload_file_with_retry(client, str(path), bucket, key, **kwargs)
         verified = client.head_object(Bucket=bucket, Key=key)
         if not runtime_object_matches(verified, descriptor, release):
             raise RuntimeError(f"Runtime data verification failed: {filename}")
@@ -576,7 +639,7 @@ def publish_static_slot(
     active_slot: str = "",
     *,
     member_contact_card: Path,
-    max_workers: int = 10,
+    max_workers: int = 4,
     transfer_config: Any = None,
     required: Iterable[str] | None = None,
     runtime_paths: Iterable[str] = DEFAULT_RUNTIME_PATHS,
@@ -627,7 +690,13 @@ def publish_static_slot(
         kwargs: dict[str, Any] = {"ExtraArgs": upload_extra_args(descriptor)}
         if transfer_config is not None:
             kwargs["Config"] = transfer_config
-        client.upload_file(str(paths[relative]), bucket, prefix + relative, **kwargs)
+        upload_file_with_retry(
+            client,
+            str(paths[relative]),
+            bucket,
+            prefix + relative,
+            **kwargs,
+        )
         return relative, int(descriptor["size"])
 
     uploaded_bytes = 0
@@ -744,7 +813,7 @@ def build_r2_client() -> tuple[Any, Any]:
     transfer = TransferConfig(
         multipart_threshold=16 * 1024 * 1024,
         multipart_chunksize=16 * 1024 * 1024,
-        max_concurrency=10,
+        max_concurrency=2,
         use_threads=True,
     )
     return client, transfer
@@ -768,7 +837,7 @@ def main() -> int:
     parser.add_argument("--release", default=os.environ.get("STATIC_RELEASE", ""))
     parser.add_argument("--active-slot", default=os.environ.get("ACTIVE_STATIC_SLOT", ""))
     parser.add_argument("--member-contact-card", required=True)
-    parser.add_argument("--max-workers", type=int, default=10)
+    parser.add_argument("--max-workers", type=int, default=4)
     args = parser.parse_args()
 
     try:

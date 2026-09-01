@@ -19,6 +19,12 @@ class MissingObject(KeyError):
     response = {"Error": {"Code": "NoSuchKey"}}
 
 
+class R2UploadError(RuntimeError):
+    def __init__(self, code: str):
+        super().__init__(f"injected R2 upload error: {code}")
+        self.response = {"Error": {"Code": code}}
+
+
 class FakePaginator:
     def __init__(self, client: "FakeR2", page_size: int = 3):
         self.client = client
@@ -41,6 +47,8 @@ class FakeR2:
         self.objects: dict[str, dict] = {}
         self.operations: list[tuple[str, str]] = []
         self.fail_upload_suffix = ""
+        self.upload_attempts: dict[str, int] = {}
+        self.upload_failures: dict[str, list[BaseException]] = {}
         self.lock = threading.Lock()
 
     def get_paginator(self, name: str):
@@ -87,6 +95,12 @@ class FakeR2:
 
     def upload_file(self, filename: str, bucket: str, key: str, **kwargs):
         del bucket
+        with self.lock:
+            self.upload_attempts[key] = self.upload_attempts.get(key, 0) + 1
+            failures = self.upload_failures.get(key) or []
+            if failures:
+                error = failures.pop(0)
+                raise error
         if self.fail_upload_suffix and key.endswith(self.fail_upload_suffix):
             raise RuntimeError("injected upload failure")
         extra = kwargs.get("ExtraArgs") or {}
@@ -130,6 +144,16 @@ def build_site(root: Path) -> None:
 
 def release(number: int) -> str:
     return f"{number:032x}"
+
+
+def wrapped_upload_error(code: str) -> BaseException:
+    try:
+        try:
+            raise R2UploadError(code)
+        except R2UploadError:
+            raise RuntimeError("boto3 upload wrapper")
+    except RuntimeError as error:
+        return error
 
 
 class StaticSlotPublisherTests(unittest.TestCase):
@@ -192,6 +216,70 @@ class StaticSlotPublisherTests(unittest.TestCase):
             self.assertEqual(fourth["static_slot"], "b")
             self.assertEqual(fourth["uploaded_files"], 1)
             self.assertEqual(fourth["skipped_files"], fourth["file_count"] - 1)
+
+    def test_transient_upload_errors_retry_then_succeed_with_bounded_backoff(self) -> None:
+        with tempfile.NamedTemporaryFile() as handle:
+            client = FakeR2()
+            key = "edge-static/slots/a/retry.txt"
+            client.upload_failures[key] = [
+                wrapped_upload_error("ServiceUnavailable"),
+                R2UploadError("SlowDown"),
+            ]
+            delays: list[float] = []
+
+            publisher.upload_file_with_retry(
+                client,
+                handle.name,
+                "bucket",
+                key,
+                retry_sleep=delays.append,
+            )
+
+            self.assertEqual(client.upload_attempts[key], 3)
+            self.assertEqual(delays, [5.0, 10.0])
+            self.assertIn(key, client.objects)
+
+    def test_transient_upload_error_stops_after_four_total_attempts(self) -> None:
+        with tempfile.NamedTemporaryFile() as handle:
+            client = FakeR2()
+            key = "edge-static/slots/a/exhausted.txt"
+            client.upload_failures[key] = [
+                R2UploadError("ServiceUnavailable") for _ in range(4)
+            ]
+            delays: list[float] = []
+
+            with self.assertRaisesRegex(R2UploadError, "ServiceUnavailable"):
+                publisher.upload_file_with_retry(
+                    client,
+                    handle.name,
+                    "bucket",
+                    key,
+                    retry_sleep=delays.append,
+                )
+
+            self.assertEqual(client.upload_attempts[key], 4)
+            self.assertEqual(delays, [5.0, 10.0, 20.0])
+            self.assertNotIn(key, client.objects)
+
+    def test_permanent_upload_error_is_not_retried(self) -> None:
+        with tempfile.NamedTemporaryFile() as handle:
+            client = FakeR2()
+            key = "edge-static/slots/a/denied.txt"
+            client.upload_failures[key] = [R2UploadError("AccessDenied")]
+            delays: list[float] = []
+
+            with self.assertRaisesRegex(R2UploadError, "AccessDenied"):
+                publisher.upload_file_with_retry(
+                    client,
+                    handle.name,
+                    "bucket",
+                    key,
+                    retry_sleep=delays.append,
+                )
+
+            self.assertEqual(client.upload_attempts[key], 1)
+            self.assertEqual(delays, [])
+            self.assertNotIn(key, client.objects)
 
     def test_runtime_data_is_immutable_per_release_and_never_overwrites_legacy_shared_data(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
