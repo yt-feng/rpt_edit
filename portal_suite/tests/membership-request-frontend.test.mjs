@@ -21,6 +21,28 @@ function extractFunction(source, name) {
   throw new Error(`${name} body is incomplete`);
 }
 
+test("redacted account email does not invalidate an authenticated session", () => {
+  const values = new Map();
+  const loadAuthSession = vm.runInNewContext(`(${extractFunction(appSource, "loadAuthSession")})`, {
+    AUTH_SESSION_KEY: "test-auth-session",
+    localStorage: {
+      getItem(key) { return values.get(key) || null; },
+    },
+  });
+  const store = (value) => values.set("test-auth-session", JSON.stringify(value));
+
+  store({ token: "signed-user-token", user: { id: "user-1", username: "KC桌面用户", email: "" } });
+  const redacted = loadAuthSession();
+  assert.equal(redacted.token, "signed-user-token");
+  assert.equal(redacted.user.id, "user-1");
+  assert.equal(redacted.user.email, "");
+
+  store({ token: "signed-user-token", user: { id: "", username: "KC桌面用户", email: "" } });
+  assert.equal(loadAuthSession(), null);
+  store({ token: "", user: { id: "user-1", username: "KC桌面用户", email: "" } });
+  assert.equal(loadAuthSession(), null);
+});
+
 test("account modal exposes a public in-site membership request form", () => {
   let session = null;
   const render = vm.runInNewContext(`(${extractFunction(appSource, "accountModalMarkup")})`, {
