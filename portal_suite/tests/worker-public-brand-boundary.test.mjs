@@ -188,6 +188,15 @@ test("public account and analytics payloads never expose private account aliases
   assert.equal(account.username, "KC桌面管理员");
   assert.equal(account.email, "admin@example.com");
 
+  const redactedAccount = context.publicUser({
+    id: "private-1",
+    username: ["two", "tigers"].join(""),
+    email: ["two", "tigers", "@example.com"].join(""),
+    role: "user",
+  });
+  assert.equal(redactedAccount.id, "private-1");
+  assert.equal(redactedAccount.email, "");
+
   const analytics = context.publicAnalyticsEvent({
     id: "event-1",
     user: { username: "Portal Alternate", email: "operator@example.com", role: "operator" },
@@ -209,7 +218,7 @@ test("public account and analytics payloads never expose private account aliases
   });
   assert.equal(courseAnalytics.source, "KC桌面学堂");
   assert.equal(courseAnalytics.target, "课程材料 01");
-  assert.doesNotMatch(JSON.stringify({ account, analytics, courseAnalytics }), legacySourcePattern);
+  assert.doesNotMatch(JSON.stringify({ account, redactedAccount, analytics, courseAnalytics }), legacySourcePattern);
 });
 
 test("old dashboard, schedule, settings, and filename records are sanitized again on read", () => {

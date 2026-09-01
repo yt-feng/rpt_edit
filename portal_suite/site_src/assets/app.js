@@ -630,7 +630,15 @@
       const raw = localStorage.getItem(AUTH_SESSION_KEY);
       if (!raw) return null;
       const session = JSON.parse(raw);
-      if (!session || !session.token || !session.user || !session.user.email) return null;
+      const user = session && session.user;
+      if (
+        !session
+        || !String(session.token || "").trim()
+        || !user
+        || typeof user !== "object"
+        || Array.isArray(user)
+        || !String(user.id || "").trim()
+      ) return null;
       return session;
     } catch (_error) {
       return null;
