@@ -1,6 +1,6 @@
 {
   "feed_url": "https://www.ark-invest.com/feed",
-  "date_folder": "260825",
+  "date_folder": "260901",
   "since_days": 1,
   "max_pub_age_days": 120,
   "include_types": [
@@ -9,24 +9,24 @@
     "newsletters",
     "white papers"
   ],
-  "feed_item_count": 1384,
+  "feed_item_count": 1387,
   "selected_count": 1,
   "written": [
     {
       "source": "ark_invest_feed",
       "institution_name": "木头姐ARK",
-      "title": "#522: OpenAI’s Growth Could Be Inflecting Ahead Of Its IPO, & More",
+      "title": "#523: SpaceX Highlights Starbase Ambitions, & More",
       "type": "Newsletters",
       "category": "Newsletters",
-      "source_url": "https://www.ark-invest.com/newsletters/issue-522",
-      "guid": "https://www.ark-invest.com/newsletters/issue-522",
-      "pub_date": "Mon, 24 Aug 2026 19:52:00 GMT",
-      "updated": "2026-08-24T23:57:50.271+00:00",
-      "event_datetime": "2026-08-24T23:57:50.271000+00:00",
-      "feed_key": "f09509050be34fb1",
+      "source_url": "https://www.ark-invest.com/newsletters/issue-523",
+      "guid": "https://www.ark-invest.com/newsletters/issue-523",
+      "pub_date": "Mon, 31 Aug 2026 20:30:00 GMT",
+      "updated": "2026-09-01T00:34:45.892+00:00",
+      "event_datetime": "2026-09-01T00:34:45.892000+00:00",
+      "feed_key": "30eea1e154a4efaa",
       "source_mineru": "source_mineru.md",
       "note": "note.md",
-      "output_dir": "xhs_notes/ark/260825/0001-ARK_522-OpenAI-s-Growth-Could-Be-Inflecting-Ahead-Of-Its-IPO-More_f09509050be34fb1"
+      "output_dir": "xhs_notes/ark/260901/0001-ARK_523-SpaceX-Highlights-Starbase-Ambitions-More_30eea1e154a4efaa"
     }
   ],
   "status": "ok"
