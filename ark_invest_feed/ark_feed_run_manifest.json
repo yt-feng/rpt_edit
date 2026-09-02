@@ -1,6 +1,6 @@
 {
   "feed_url": "https://www.ark-invest.com/feed",
-  "date_folder": "260901",
+  "date_folder": "260902",
   "since_days": 1,
   "max_pub_age_days": 120,
   "include_types": [
@@ -9,24 +9,24 @@
     "newsletters",
     "white papers"
   ],
-  "feed_item_count": 1387,
+  "feed_item_count": 1388,
   "selected_count": 1,
   "written": [
     {
       "source": "ark_invest_feed",
       "institution_name": "木头姐ARK",
-      "title": "#523: SpaceX Highlights Starbase Ambitions, & More",
-      "type": "Newsletters",
-      "category": "Newsletters",
-      "source_url": "https://www.ark-invest.com/newsletters/issue-523",
-      "guid": "https://www.ark-invest.com/newsletters/issue-523",
-      "pub_date": "Mon, 31 Aug 2026 20:30:00 GMT",
-      "updated": "2026-09-01T00:34:45.892+00:00",
-      "event_datetime": "2026-09-01T00:34:45.892000+00:00",
-      "feed_key": "30eea1e154a4efaa",
+      "title": "The Decentralization Spectrum: Design Tradeoffs In Digital Assets",
+      "type": "White Papers",
+      "category": "White Papers",
+      "source_url": "https://www.ark-invest.com/white-papers/the-decentralized-spectrum-design-tradeoffs-in-digital-assets",
+      "guid": "https://www.ark-invest.com/white-papers/the-decentralized-spectrum-design-tradeoffs-in-digital-assets",
+      "pub_date": "Tue, 01 Sep 2026 12:00:00 GMT",
+      "updated": "2026-09-01T16:41:07.823+00:00",
+      "event_datetime": "2026-09-01T16:41:07.823000+00:00",
+      "feed_key": "fddb777b1bc030af",
       "source_mineru": "source_mineru.md",
       "note": "note.md",
-      "output_dir": "xhs_notes/ark/260901/0001-ARK_523-SpaceX-Highlights-Starbase-Ambitions-More_30eea1e154a4efaa"
+      "output_dir": "xhs_notes/ark/260902/0001-ARK_The-Decentralization-Spectrum-Design-Tradeoffs-In-Digital-Assets_fddb777b1bc030af"
     }
   ],
   "status": "ok"
