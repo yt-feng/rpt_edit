@@ -64,6 +64,7 @@ jobs:
           JIANGUOYUN_WEBDAV_URL: ${{ secrets.JIANGUOYUN_WEBDAV_URL }}
           JIANGUOYUN_WEBDAV_USERNAME: ${{ secrets.JIANGUOYUN_WEBDAV_USERNAME }}
           JIANGUOYUN_WEBDAV_PASSWORD: ${{ secrets.JIANGUOYUN_WEBDAV_PASSWORD }}
+          JIANGUOYUN_REMOTE_ROOT: ${{ vars.JIANGUOYUN_REMOTE_ROOT }}
         run: |
           python scripts/sync_ops_videos_to_jianguoyun.py \
             --cleanup-only \

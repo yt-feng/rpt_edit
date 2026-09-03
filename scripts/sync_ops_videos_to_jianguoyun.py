@@ -572,7 +572,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--target-date", default="", help="Last Beijing date to sync (YYYY-MM-DD).")
     parser.add_argument("--days", type=int, default=2, help="Number of dates ending at target date.")
     parser.add_argument("--retention-days", type=int, default=3)
-    parser.add_argument("--remote-root", default=DEFAULT_REMOTE_ROOT)
+    parser.add_argument(
+        "--remote-root",
+        default=os.environ.get("JIANGUOYUN_REMOTE_ROOT", "").strip() or DEFAULT_REMOTE_ROOT,
+        help="Operations folder; defaults to JIANGUOYUN_REMOTE_ROOT or the rendered deployment root.",
+    )
     cleanup_mode = parser.add_mutually_exclusive_group()
     cleanup_mode.add_argument(
         "--cleanup-only",

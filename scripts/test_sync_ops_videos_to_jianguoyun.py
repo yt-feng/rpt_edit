@@ -416,13 +416,42 @@ class RunOrderingTests(unittest.TestCase):
         self.assertIn('cron: "30 0 * * *"', retention_workflow)
         self.assertIn("--cleanup-only", retention_workflow)
         self.assertIn("--retention-days 3", retention_workflow)
+        for workflow in (sync_workflow, retention_workflow):
+            self.assertIn(
+                "JIANGUOYUN_REMOTE_ROOT: ${{ vars.JIANGUOYUN_REMOTE_ROOT }}",
+                workflow,
+            )
 
     def test_defaults_keep_public_placeholder_and_three_day_retention(self) -> None:
-        args = sync.build_parser().parse_args([])
+        with patch.dict(sync.os.environ, {"JIANGUOYUN_REMOTE_ROOT": ""}):
+            args = sync.build_parser().parse_args([])
         self.assertEqual(args.remote_root, "/我的坚果云/Portal Suite/Ops")
         self.assertEqual(args.retention_days, 3)
         self.assertFalse(args.cleanup_only)
         self.assertFalse(args.skip_cleanup)
+
+    def test_environment_root_overrides_rendered_legacy_root(self) -> None:
+        with (
+            patch.object(sync, "DEFAULT_REMOTE_ROOT", "/legacy/Ops"),
+            patch.dict(sync.os.environ, {"JIANGUOYUN_REMOTE_ROOT": " /preferred/Ops "}),
+        ):
+            args = sync.build_parser().parse_args([])
+        self.assertEqual(args.remote_root, "/preferred/Ops")
+
+    def test_empty_environment_root_keeps_rendered_deployment_root(self) -> None:
+        with (
+            patch.object(sync, "DEFAULT_REMOTE_ROOT", "/deployed/Ops"),
+            patch.dict(sync.os.environ, {"JIANGUOYUN_REMOTE_ROOT": "   "}),
+        ):
+            args = sync.build_parser().parse_args([])
+        self.assertEqual(args.remote_root, "/deployed/Ops")
+
+    def test_explicit_root_overrides_environment_for_both_modes(self) -> None:
+        with patch.dict(sync.os.environ, {"JIANGUOYUN_REMOTE_ROOT": "/preferred/Ops"}):
+            for mode in ("--skip-cleanup", "--cleanup-only"):
+                with self.subTest(mode=mode):
+                    args = sync.build_parser().parse_args([mode, "--remote-root", "/explicit/Ops"])
+                    self.assertEqual(args.remote_root, "/explicit/Ops")
 
     def test_cleanup_modes_are_mutually_exclusive(self) -> None:
         with self.assertRaises(SystemExit):
