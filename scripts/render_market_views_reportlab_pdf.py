@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Fast PDF renderer for market view summaries.
 
-This renderer guarantees a PDF without installing TeX Live. It uses ReportLab's
-built-in CJK CID font first, so Chinese text works even when Noto TTC font files
-cannot be registered as TrueType fonts.
+This renderer guarantees a PDF without installing TeX Live. It prefers embedded
+CJK TrueType/OpenType fonts so the PDF renders consistently in browsers and
+Poppler. Built-in CID fonts remain a last-resort fallback.
 """
 from __future__ import annotations
 
@@ -87,12 +87,15 @@ def latest_date_dir(root: Path) -> Path:
 
 
 def register_cjk_font() -> str:
-    try:
-        pdfmetrics.registerFont(UnicodeCIDFont("STSong-Light"))
-        return "STSong-Light"
-    except Exception as exc:
-        log(f"Could not register STSong-Light CID font: {exc}")
     candidates = [
+        "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+        "/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc",
+        "/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc",
+        "/System/Library/Fonts/STHeiti Medium.ttc",
+        "/System/Library/Fonts/STHeiti Light.ttc",
+        "/System/Library/Fonts/Supplemental/Songti.ttc",
+        "/System/Library/Fonts/PingFang.ttc",
+        "/Library/Fonts/Arial Unicode.ttf",
         "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
         "/usr/share/fonts/truetype/liberation2/LiberationSans-Regular.ttf",
     ]
@@ -103,6 +106,11 @@ def register_cjk_font() -> str:
                 return "PORTAL_CJK"
             except Exception as exc:
                 log(f"Skip font {path}: {exc}")
+    try:
+        pdfmetrics.registerFont(UnicodeCIDFont("STSong-Light"))
+        return "STSong-Light"
+    except Exception as exc:
+        log(f"Could not register STSong-Light CID font: {exc}")
     return "Helvetica"
 
 
