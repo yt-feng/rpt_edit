@@ -29,6 +29,7 @@ jobs:
             .github/workflows/market-views-latex-pdf.yml
             workers/portal-suite-worker/src/index.js
             workers/portal-suite-worker/src/source-lead-adapter.js
+            portal_suite/locale_assets
             portal_suite/site_src
             portal_suite/tests
             scripts/build_portal_suite_site.py

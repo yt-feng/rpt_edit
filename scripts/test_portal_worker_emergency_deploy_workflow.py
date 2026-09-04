@@ -63,6 +63,7 @@ class PortalWorkerEmergencyDeployWorkflowTests(unittest.TestCase):
         self.assertIn("timeout-minutes: 8", self.workflow)
 
     def test_portal_suite_uses_stable_isolated_node_runner(self) -> None:
+        self.assertIn("portal_suite/locale_assets", self.workflow)
         self.assertIn("for test_file in portal_suite/tests/*.test.mjs; do", self.workflow)
         self.assertIn('node "$test_file"', self.workflow)
         self.assertNotIn("node --test portal_suite/tests/*.test.mjs", self.workflow)
