@@ -1,6 +1,6 @@
 {
   "feed_url": "https://www.ark-invest.com/feed",
-  "date_folder": "260902",
+  "date_folder": "260904",
   "since_days": 1,
   "max_pub_age_days": 120,
   "include_types": [
@@ -9,24 +9,24 @@
     "newsletters",
     "white papers"
   ],
-  "feed_item_count": 1388,
+  "feed_item_count": 1391,
   "selected_count": 1,
   "written": [
     {
       "source": "ark_invest_feed",
       "institution_name": "木头姐ARK",
-      "title": "The Decentralization Spectrum: Design Tradeoffs In Digital Assets",
-      "type": "White Papers",
-      "category": "White Papers",
-      "source_url": "https://www.ark-invest.com/white-papers/the-decentralized-spectrum-design-tradeoffs-in-digital-assets",
-      "guid": "https://www.ark-invest.com/white-papers/the-decentralized-spectrum-design-tradeoffs-in-digital-assets",
-      "pub_date": "Tue, 01 Sep 2026 12:00:00 GMT",
-      "updated": "2026-09-01T16:41:07.823+00:00",
-      "event_datetime": "2026-09-01T16:41:07.823000+00:00",
-      "feed_key": "fddb777b1bc030af",
+      "title": "How Did LayerZero Build The Connective Tissue Of The Multi-Chain World?",
+      "type": "Articles",
+      "category": "Analyst Research",
+      "source_url": "https://www.ark-invest.com/articles/analyst-research/how-did-layerzero-build-the-connective-tissue-of-the-multi-chain-world",
+      "guid": "https://www.ark-invest.com/articles/analyst-research/how-did-layerzero-build-the-connective-tissue-of-the-multi-chain-world",
+      "pub_date": "Thu, 03 Sep 2026 12:00:00 GMT",
+      "updated": "0001-01-01T05:00:00.000+00:00",
+      "event_datetime": "2026-09-03T12:00:00+00:00",
+      "feed_key": "abf85c58b2a3aaa0",
       "source_mineru": "source_mineru.md",
       "note": "note.md",
-      "output_dir": "xhs_notes/ark/260902/0001-ARK_The-Decentralization-Spectrum-Design-Tradeoffs-In-Digital-Assets_fddb777b1bc030af"
+      "output_dir": "xhs_notes/ark/260904/0001-ARK_How-Did-LayerZero-Build-The-Connective-Tissue-Of-The-Multi-Chain-World_abf85c58b2a3aaa0"
     }
   ],
   "status": "ok"
