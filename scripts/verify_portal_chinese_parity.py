@@ -66,6 +66,10 @@ SITEMAP_LOC_RE = re.compile(
     flags=re.I | re.S,
 )
 SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
+SITE_VERIFICATION_HTML_RE = re.compile(
+    r"baidu_verify_codeva-[A-Za-z0-9]{10}\.html"
+)
+SITE_VERIFICATION_BODY_RE = re.compile(rb"[0-9a-f]{32}(?:\r?\n)?\Z")
 
 # This is deliberately the exact build contract, apart from the shared asset
 # version. A looser substring check could accidentally move asset creation
@@ -125,6 +129,20 @@ class _HeadLinks(HTMLParser):
     def handle_data(self, data: str) -> None:
         if self._bootstrap_depth:
             self._bootstrap_parts.append(data)
+
+
+def is_site_verification_html(relative: str) -> bool:
+    """Return true only for a supported root-level ownership token file."""
+    path = PurePosixPath(relative)
+    return (
+        path.parent == PurePosixPath(".")
+        and SITE_VERIFICATION_HTML_RE.fullmatch(path.name) is not None
+    )
+
+
+def validate_site_verification_html(relative: str, data: bytes) -> None:
+    if not SITE_VERIFICATION_BODY_RE.fullmatch(data):
+        raise ParityError(f"site verification token is invalid: {relative}")
 
 
 def _sha256(data: bytes) -> str:
@@ -398,6 +416,8 @@ def _protected_paths(paths: Iterable[str]) -> list[str]:
         name = PurePosixPath(relative).name
         if relative in REQUIRED_PROTECTED_PATHS:
             result.append(relative)
+        elif is_site_verification_html(relative):
+            result.append(relative)
         elif PurePosixPath(relative).parent == PurePosixPath(".") and (
             (name.startswith("llms") and name.endswith(".txt"))
             or (name.startswith("sitemap-reports-") and name.endswith(".xml"))
@@ -600,7 +620,9 @@ def create_snapshot(
     for relative, path in inventory.items():
         data = _read(path)
         row = _descriptor(data)
-        if relative.endswith(".html"):
+        if is_site_verification_html(relative):
+            validate_site_verification_html(relative, data)
+        elif relative.endswith(".html"):
             html_count += 1
             metadata = _validate_snapshot_head(data, relative=relative)
             row.update(
@@ -720,7 +742,11 @@ def verify_snapshot(
             raise ParityError(f"snapshot descriptor is invalid: {relative}")
         data = _read(inventory[relative])
         actual = _descriptor(data)
-        if relative.endswith(".html"):
+        if is_site_verification_html(relative):
+            validate_site_verification_html(relative, data)
+            if actual != {"size": baseline.get("size"), "sha256": baseline.get("sha256")}:
+                raise ParityError(f"site verification token changed: {relative}")
+        elif relative.endswith(".html"):
             body_sha = _sha256(_body(data, relative=relative))
             head_sha = _sha256(_neutral_head(data, relative=relative))
             if body_sha != baseline.get("body_sha256"):
@@ -769,7 +795,11 @@ def verify_snapshot(
         "snapshot_digest": snapshot["digest"],
         "counts": {
             "files": len(expected_paths),
-            "html": sum(1 for path in expected_paths if path.endswith(".html")),
+            "html": sum(
+                1
+                for path in expected_paths
+                if path.endswith(".html") and not is_site_verification_html(path)
+            ),
             "protected": len(expected_protected),
             "hreflang_clusters": cluster_pages,
         },
