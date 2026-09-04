@@ -594,6 +594,11 @@ test("external detail first paint uses the preview catalog instead of the full c
   assert.doesNotMatch(source, /data\/catalog\.json/u);
   assert.match(source, /requestAnimationFrame/u);
   assert.ok(
+    source.indexOf("shouldDeferLocalizedHomeCatalog(CONTENT_LOCALE)")
+      < source.indexOf('loadOptionalJson("data/catalog_recommendations.json"'),
+    "localized external detail must stop before fetching the 14k-item recommendation catalog",
+  );
+  assert.ok(
     source.indexOf('trackEvent("", "page_view"') < source.indexOf("await Promise.all"),
     "doc attribution must not wait for config or preview catalog",
   );

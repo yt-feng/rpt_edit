@@ -27,6 +27,8 @@ DEFAULT_TIMEOUT_SECONDS = 20.0
 MAX_DOCUMENT_BYTES = 12 * 1024 * 1024
 MAX_SITEMAP_SHARDS = 1_000
 MAX_URLS_PER_SITEMAP = 50_000
+PORTAL_LOCALES = ("ko", "ja", "ar")
+REQUIRED_HREFLANGS = ("zh-Hans", "ko", "ja", "ar", "x-default")
 
 
 @dataclass(frozen=True)
@@ -95,17 +97,25 @@ class SeoHtmlParser(HTMLParser):
         self.canonicals: list[str] = []
         self.robots: list[str] = []
         self.icons: list[str] = []
+        self.hreflangs: list[tuple[str, str]] = []
+        self.html_lang = ""
+        self.html_dir = ""
         self.json_ld_blocks: list[str] = []
         self._json_ld_buffer: list[str] | None = None
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         values = {str(key).lower(): str(value or "").strip() for key, value in attrs}
         lowered_tag = tag.lower()
-        if lowered_tag == "link":
+        if lowered_tag == "html":
+            self.html_lang = values.get("lang", "")
+            self.html_dir = values.get("dir", "")
+        elif lowered_tag == "link":
             rel_tokens = {token.lower() for token in re.split(r"\s+", values.get("rel", "")) if token}
             href = values.get("href", "")
             if "canonical" in rel_tokens and href:
                 self.canonicals.append(href)
+            if "alternate" in rel_tokens and href and values.get("hreflang"):
+                self.hreflangs.append((values["hreflang"], href))
             if "icon" in rel_tokens and href:
                 self.icons.append(href)
         elif lowered_tag == "meta" and values.get("name", "").lower() in {
@@ -273,6 +283,29 @@ def valid_json_ld(block: str) -> bool:
     return has_schema_node(payload)
 
 
+def json_ld_has_in_language(block: str, language: str) -> bool:
+    try:
+        payload = json.loads(block)
+    except (TypeError, json.JSONDecodeError):
+        return False
+    expected = str(language or "").strip().lower()
+
+    def contains(value: Any) -> bool:
+        if isinstance(value, dict):
+            for key, child in value.items():
+                if key == "inLanguage":
+                    candidates = child if isinstance(child, list) else [child]
+                    if any(str(candidate or "").strip().lower() == expected for candidate in candidates):
+                        return True
+                if contains(child):
+                    return True
+        elif isinstance(value, list):
+            return any(contains(child) for child in value)
+        return False
+
+    return contains(payload)
+
+
 class AuditState:
     def __init__(self, site_url: str, fetcher: Callable[..., FetchResult]) -> None:
         self.site_url = site_url
@@ -394,6 +427,7 @@ def audit_site(
     sitemap_url = urljoin(canonical_root, "sitemap.xml")
     sitemap_response = state.fetch(sitemap_url)
     root_sitemap_kind = "unavailable"
+    root_values: list[str] = []
     shards: list[tuple[str, list[str]]] = []
     declared_shard_count = 0
     if sitemap_response is None:
@@ -443,6 +477,14 @@ def audit_site(
                 shards.append((shard_target, shard_values))
         elif root_sitemap_kind != "unavailable":
             state.fail("sitemap", "root_wrong_type", "/sitemap.xml is neither a sitemap index nor a urlset", "/sitemap.xml")
+
+    locale_sitemaps: dict[str, str] = {}
+    if root_sitemap_kind == "sitemapindex":
+        for locale in PORTAL_LOCALES:
+            expected = canonical_identity(urljoin(canonical_root, f"sitemap-{locale}.xml"))
+            matches = [value for value in root_values if canonical_identity(value) == expected]
+            if matches:
+                locale_sitemaps[locale] = matches[0]
 
     all_urls = [url for _path, urls in shards for url in urls]
     same_origin_urls: list[str] = []
@@ -535,6 +577,123 @@ def audit_site(
         if homepage_response is not None and homepage_response.status == 200:
             homepage_parser = SeoHtmlParser()
             homepage_parser.feed(homepage_response.body.decode("utf-8", errors="replace"))
+
+    declared_locales = [locale for locale in PORTAL_LOCALES if locale in locale_sitemaps]
+    locale_bundle_enabled = len(declared_locales) == len(PORTAL_LOCALES)
+    if declared_locales and not locale_bundle_enabled:
+        missing_locales = [locale for locale in PORTAL_LOCALES if locale not in locale_sitemaps]
+        state.fail(
+            "locale",
+            "sitemap_set_incomplete",
+            "Localized sitemaps must be declared as one ko/ja/ar set; missing " + ", ".join(missing_locales),
+            "/sitemap.xml",
+        )
+    enabled_locales = list(PORTAL_LOCALES) if locale_bundle_enabled else []
+    locale_metrics: dict[str, Any] = {
+        "enabled": locale_bundle_enabled,
+        "declared_sitemaps": declared_locales,
+        "requested": 0,
+        "http_200": 0,
+        "html_lang": 0,
+        "arabic_rtl": 0,
+        "self_canonical": 0,
+        "reciprocal_hreflang": 0,
+        "json_ld_in_language": 0,
+    }
+    if enabled_locales:
+        locale_pages: dict[str, tuple[str, SeoHtmlParser]] = {}
+        for locale in enabled_locales:
+            page_url = urljoin(canonical_root, f"{locale}/")
+            page_target = f"/{locale}/"
+            locale_metrics["requested"] += 1
+            page_response = state.fetch(page_url, target=page_target)
+            if page_response is None:
+                state.fail("locale", "request_failed", "A localized homepage request failed", page_target)
+                continue
+            if page_response.status != 200:
+                state.fail("locale", "http_status", "A localized homepage did not return HTTP 200", page_target)
+                continue
+            if page_response.truncated:
+                state.fail("locale", "document_too_large", "A localized homepage exceeded the audit size limit", page_target)
+                continue
+            locale_metrics["http_200"] += 1
+            parser = SeoHtmlParser()
+            parser.feed(page_response.body.decode("utf-8", errors="replace"))
+            locale_pages[locale] = (page_url, parser)
+
+            if parser.html_lang.strip().lower() != locale:
+                state.fail("locale", "html_lang_mismatch", "A localized homepage has the wrong html lang", page_target)
+            else:
+                locale_metrics["html_lang"] += 1
+            if locale == "ar":
+                if parser.html_dir.strip().lower() != "rtl":
+                    state.fail("locale", "arabic_not_rtl", "The Arabic homepage is not marked dir=rtl", page_target)
+                else:
+                    locale_metrics["arabic_rtl"] += 1
+
+            resolved_canonicals = [urljoin(page_url, value) for value in parser.canonicals]
+            if len(resolved_canonicals) != 1:
+                state.fail("locale", "canonical_count", "A localized homepage must have one canonical", page_target)
+            elif canonical_identity(resolved_canonicals[0]) != canonical_identity(page_url):
+                state.fail("locale", "canonical_not_self", "A localized homepage canonical is not self-referential", page_target)
+            else:
+                locale_metrics["self_canonical"] += 1
+
+            if not any(json_ld_has_in_language(block, locale) for block in parser.json_ld_blocks):
+                state.fail(
+                    "locale",
+                    "json_ld_in_language_missing",
+                    "A localized homepage JSON-LD does not declare its inLanguage",
+                    page_target,
+                )
+            else:
+                locale_metrics["json_ld_in_language"] += 1
+
+        expected_hreflangs = {
+            "zh-hans": canonical_root,
+            "ko": urljoin(canonical_root, "ko/"),
+            "ja": urljoin(canonical_root, "ja/"),
+            "ar": urljoin(canonical_root, "ar/"),
+            "x-default": canonical_root,
+        }
+        cluster_pages: list[tuple[str, str, SeoHtmlParser | None]] = [
+            ("zh-Hans", canonical_root, homepage_parser)
+        ]
+        cluster_pages.extend(
+            (locale, page_url, parser)
+            for locale, (page_url, parser) in locale_pages.items()
+        )
+        for page_language, page_url, parser in cluster_pages:
+            page_target = "/" if page_language == "zh-Hans" else f"/{page_language}/"
+            if parser is None:
+                state.fail("locale", "hreflang_page_unavailable", "A hreflang cluster page is unavailable", page_target)
+                continue
+            grouped: dict[str, list[str]] = {}
+            for language, href in parser.hreflangs:
+                grouped.setdefault(language.strip().lower(), []).append(urljoin(page_url, href))
+            page_ok = True
+            for language in REQUIRED_HREFLANGS:
+                key = language.lower()
+                values = grouped.get(key, [])
+                if len(values) != 1:
+                    state.fail(
+                        "locale",
+                        "hreflang_count",
+                        f"A locale cluster page must have one {language} hreflang",
+                        page_target,
+                    )
+                    page_ok = False
+                elif canonical_identity(values[0]) != canonical_identity(expected_hreflangs[key]):
+                    state.fail(
+                        "locale",
+                        "hreflang_target_mismatch",
+                        f"A locale cluster page has the wrong {language} hreflang target",
+                        page_target,
+                    )
+                    page_ok = False
+            if page_ok:
+                locale_metrics["reciprocal_hreflang"] += 1
+
     icon_candidates = [] if homepage_parser is None else [urljoin(canonical_root, value) for value in homepage_parser.icons]
     unique_icon_candidates = list(dict.fromkeys(icon_candidates))
     favicon_verified = False
@@ -579,6 +738,7 @@ def audit_site(
         "indexnow": {"indexnow", "transport"},
         "favicon": {"favicon", "transport"},
         "www_alias": {"alias", "transport"},
+        "locales": {"locale"},
     }
     report: dict[str, Any] = {
         "schema_version": 1,
@@ -616,6 +776,7 @@ def audit_site(
                 "shards": [{"path": path, "url_count": len(urls)} for path, urls in shards],
             },
             "samples": sample_metrics,
+            "locales": locale_metrics,
             "indexnow": {"configured": indexnow_configured, "key_file_verified": indexnow_verified},
             "favicon": {"verified": favicon_verified},
             "www_alias": {
@@ -646,6 +807,14 @@ def render_markdown(report: dict[str, Any]) -> str:
         f"- Favicon/品牌图标：{'通过' if metrics.get('favicon', {}).get('verified') else '未通过'}",
         f"- www 裸域 301：{'通过' if metrics.get('www_alias', {}).get('status') == 301 and metrics.get('www_alias', {}).get('location_matches_canonical') else '未通过'}",
     ]
+    locales = metrics.get("locales", {})
+    if locales.get("enabled"):
+        requested = int(locales.get("requested", 0))
+        cluster_pages = requested + 1
+        lines.append(
+            f"- 多语言 SEO：{locales.get('http_200', 0)}/{requested} 个 locale 首页返回 200，"
+            f"{locales.get('reciprocal_hreflang', 0)}/{cluster_pages} 个页面 hreflang 互惠通过"
+        )
     robots = metrics.get("robots", {})
     if robots.get("managed_by_cloudflare"):
         lines.append(

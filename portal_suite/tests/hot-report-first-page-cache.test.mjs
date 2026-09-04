@@ -17,27 +17,33 @@ class MemoryR2 {
   }
 
   seedIndex(title) {
+    this.seedIndexItems([{
+      id: "hot:0123456789abcdef",
+      title,
+    }]);
+  }
+
+  seedIndexItems(items, generation = "0123456789abcdef") {
     this.rows.set(INDEX_KEY, JSON.stringify({
       version: 2,
-      generation: "0123456789abcdef",
+      generation,
       stale_marker: "",
       updated_at: "2026-08-27T12:00:00.000Z",
-      items: [{
-        id: "hot:0123456789abcdef",
+      items: items.map((item, index) => ({
         source: "hot",
-        title,
         title_cn: "",
         institution: "KC",
         date: "2026-08-27",
         description: "",
         filename: "report.pdf",
         size_bytes: 42,
-        sort_order: 1,
+        sort_order: items.length - index,
         created_at: "2026-08-27T12:00:00.000Z",
         updated_at: "2026-08-27T12:00:00.000Z",
         required_plan: "member",
         required_months: 3,
-      }],
+        ...item,
+      })),
     }));
   }
 
@@ -96,6 +102,21 @@ function executionContext() {
     waitUntil(promise) { pending.push(promise); },
   };
 }
+
+test("health advertises locale-ID Hot Reports filtering before multilingual cutover", async () => {
+  const response = await worker.fetch(
+    new Request("https://portal.example.invalid/api/health"),
+    {
+      REPORT_BUCKET: new MemoryR2(),
+      ALLOWED_ORIGIN: "https://portal.example.invalid",
+    },
+    executionContext(),
+  );
+  assert.equal(response.status, 200);
+  const payload = await response.json();
+  assert.equal(payload.ok, true);
+  assert.deepEqual(payload.capabilities, { hot_report_locale_ids_v1: true });
+});
 
 test("the public hot-report first page caches once while forced and filtered requests stay live", async () => {
   const previousCaches = Object.getOwnPropertyDescriptor(globalThis, "caches");
@@ -227,6 +248,78 @@ test("stale or unavailable public indexes are never stored in the first-page cac
     if (previousCaches) Object.defineProperty(globalThis, "caches", previousCaches);
     else delete globalThis.caches;
   }
+});
+
+test("localized ID matches extend source queries with strict bounded cursor semantics", async () => {
+  const bucket = new MemoryR2();
+  const rows = [
+    { id: "hot:1111111111111111", title: "Source alpha" },
+    { id: "hot:2222222222222222", title: "Energy outlook" },
+    { id: "hot:3333333333333333", title: "Source gamma" },
+  ];
+  bucket.seedIndexItems(rows);
+  const env = { REPORT_BUCKET: bucket, ALLOWED_ORIGIN: "https://portal.example.invalid" };
+  const requestPage = async ({ query, localeIds, cursor = "", limit = 24 }) => {
+    const url = new URL("https://portal.example.invalid/api/hot-reports");
+    url.searchParams.set("limit", String(limit));
+    if (query) url.searchParams.set("q", query);
+    if (localeIds !== null) url.searchParams.set("locale_ids", localeIds);
+    if (cursor) url.searchParams.set("cursor", cursor);
+    const response = await worker.fetch(new Request(url), env, executionContext());
+    return { response, payload: await response.json() };
+  };
+
+  const localizedOnly = await requestPage({ query: "한국어", localeIds: "1111111111111111" });
+  assert.equal(localizedOnly.response.status, 200);
+  assert.deepEqual(localizedOnly.payload.items.map((item) => item.id), ["hot:1111111111111111"]);
+
+  const union = await requestPage({ query: "energy", localeIds: "1111111111111111" });
+  assert.deepEqual(
+    new Set(union.payload.items.map((item) => item.id)),
+    new Set(["hot:1111111111111111", "hot:2222222222222222"]),
+    "localized ID hits and source-field hits must be combined with OR semantics",
+  );
+
+  const explicitEmpty = await requestPage({ query: "한국어", localeIds: "" });
+  assert.equal(explicitEmpty.response.status, 200);
+  assert.equal(explicitEmpty.payload.total, 0, "an explicit empty localized set must not become an absent filter");
+  const sourceWithEmpty = await requestPage({ query: "energy", localeIds: "" });
+  assert.deepEqual(sourceWithEmpty.payload.items.map((item) => item.id), ["hot:2222222222222222"]);
+
+  for (const localeIds of [
+    "hot:1111111111111111",
+    "1111111111111111,1111111111111111",
+    "111111111111111G",
+    Array.from({ length: 751 }, (_, index) => index.toString(16).padStart(16, "0")).join(","),
+  ]) {
+    const invalid = await requestPage({ query: "한국어", localeIds });
+    assert.equal(invalid.response.status, 400, `invalid locale IDs must be rejected: ${localeIds.slice(0, 48)}`);
+  }
+
+  const localeIds = "1111111111111111,2222222222222222";
+  const first = await requestPage({ query: "한국어", localeIds, limit: 1 });
+  assert.equal(first.response.status, 200);
+  assert.equal(first.payload.items.length, 1);
+  assert.equal(first.payload.has_more, true);
+  assert.ok(first.payload.next_cursor);
+  const second = await requestPage({ query: "한국어", localeIds, cursor: first.payload.next_cursor, limit: 1 });
+  assert.equal(second.response.status, 200);
+  assert.equal(second.payload.items.length, 1);
+  assert.notEqual(second.payload.items[0].id, first.payload.items[0].id);
+
+  for (const changedLocaleIds of [null, "1111111111111111,3333333333333333"]) {
+    const changed = await requestPage({
+      query: "한국어",
+      localeIds: changedLocaleIds,
+      cursor: first.payload.next_cursor,
+      limit: 1,
+    });
+    assert.equal(changed.response.status, 400, "a cursor must be bound to the exact localized ID set");
+  }
+
+  bucket.seedIndexItems(rows, "fedcba9876543210");
+  const stale = await requestPage({ query: "한국어", localeIds, cursor: first.payload.next_cursor, limit: 1 });
+  assert.equal(stale.response.status, 409, "generation changes must retain the existing stale-cursor response");
 });
 
 test("Cache API failures fall back to a live successful first page", async () => {

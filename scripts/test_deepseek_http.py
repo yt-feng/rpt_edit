@@ -25,6 +25,7 @@ class DeepSeekHttpTests(unittest.TestCase):
             "max_attempts": 4,
             "retry_base_seconds": 2,
             "retry_max_seconds": 20,
+            "retry_jitter_ratio": 0,
             "logger": Mock(),
         }
         options.update(overrides)
@@ -66,6 +67,44 @@ class DeepSeekHttpTests(unittest.TestCase):
         self.assertIs(response, success)
         self.assertEqual(post.call_count, 2)
         sleep.assert_called_once_with(7)
+
+    @patch("deepseek_http.random.uniform", return_value=1.25)
+    @patch("deepseek_http.time.sleep")
+    @patch("deepseek_http.requests.post")
+    def test_retry_after_adds_bounded_jitter(
+        self,
+        post: Mock,
+        sleep: Mock,
+        uniform: Mock,
+    ) -> None:
+        busy = Mock(status_code=429, headers={"Retry-After": "7"})
+        success = Mock(status_code=200, headers={})
+        post.side_effect = [busy, success]
+
+        response = self.request(retry_jitter_ratio=0.25)
+
+        self.assertIs(response, success)
+        uniform.assert_called_once_with(0.0, 1.75)
+        sleep.assert_called_once_with(8.25)
+
+    @patch("deepseek_http.random.uniform")
+    @patch("deepseek_http.time.sleep")
+    @patch("deepseek_http.requests.post")
+    def test_retry_after_remains_bounded_by_maximum_delay(
+        self,
+        post: Mock,
+        sleep: Mock,
+        uniform: Mock,
+    ) -> None:
+        busy = Mock(status_code=503, headers={"Retry-After": "120"})
+        success = Mock(status_code=200, headers={})
+        post.side_effect = [busy, success]
+
+        response = self.request(retry_jitter_ratio=0.25)
+
+        self.assertIs(response, success)
+        uniform.assert_not_called()
+        sleep.assert_called_once_with(20)
 
     @patch("deepseek_http.time.sleep")
     @patch("deepseek_http.requests.post")
@@ -183,6 +222,27 @@ class DeepSeekHttpTests(unittest.TestCase):
             [call.kwargs["json"]["model"] for call in post.call_args_list],
             ["retired-model", DEFAULT_DEEPSEEK_MODEL],
         )
+
+    @patch("deepseek_http.requests.post")
+    def test_can_disable_model_fallback_for_model_scoped_translation_caches(self, post: Mock) -> None:
+        rejected = Mock(
+            status_code=400,
+            headers={},
+            text=(
+                '{"error":{"message":"The supported API model is '
+                'deepseek-v4-flash, but you passed retired-model."}}'
+            ),
+        )
+        post.return_value = rejected
+
+        response = self.request(
+            payload={"model": "retired-model"},
+            allow_model_fallback=False,
+        )
+
+        self.assertIs(response, rejected)
+        post.assert_called_once()
+        self.assertEqual(post.call_args.kwargs["json"]["model"], "retired-model")
 
 
 if __name__ == "__main__":

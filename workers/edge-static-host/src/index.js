@@ -3,6 +3,8 @@ const RELEASE_ID = /^[0-9a-f]{32}$/;
 const TREE_SHA256 = /^[0-9a-f]{64}$/;
 const RELEASE_CHECK_PATH = /^\/\.well-known\/edge-release\/([0-9a-f]{32})(?:\/(.*))?$/;
 const EDGE_STATE_PATH = "/.well-known/edge-state";
+const SHADOW_ROBOTS_POLICY = "noindex, nofollow, noarchive";
+const SHADOW_ROBOTS_BODY = "User-agent: *\nDisallow: /\n";
 
 const CACHE_POLICY = Object.freeze({
   html: Object.freeze({
@@ -29,6 +31,11 @@ const CACHE_POLICY = Object.freeze({
 
 const VERSIONABLE_ASSET = /\.(?:avif|css|gif|ico|jpe?g|js|mjs|png|svg|ttf|wasm|webp|woff2?)$/i;
 const CONTENT_HASH = /^[0-9a-f]{8,64}$/i;
+const LOCALE_CONTENT_LANGUAGES = Object.freeze({
+  ko: "ko",
+  ja: "ja",
+  ar: "ar",
+});
 const CANONICAL_PATHS = Object.freeze({
   "/index": "/",
   "/index.html": "/",
@@ -41,9 +48,68 @@ const CANONICAL_PATHS = Object.freeze({
   "/charts.html": "/charts",
 });
 
-function canonicalRedirect(url, canonicalHostValue = "") {
+function localePath(pathname) {
+  const match = /^\/(ko|ja|ar)(?=\/|$)/.exec(String(pathname || ""));
+  if (!match) return { prefix: "", pathname: String(pathname || "") };
+  const prefix = `/${match[1]}`;
+  return {
+    prefix,
+    pathname: String(pathname || "").slice(prefix.length) || "/",
+  };
+}
+
+function canonicalPath(pathname) {
+  const localized = localePath(pathname);
+  if (localized.prefix && pathname === localized.prefix) return `${localized.prefix}/`;
+  const target = CANONICAL_PATHS[localized.pathname] || "";
+  return target && localized.prefix ? `${localized.prefix}${target}` : target;
+}
+
+function contentLanguage(pathname) {
+  const releaseCheck = RELEASE_CHECK_PATH.exec(String(pathname || ""));
+  const contentPath = releaseCheck ? `/${releaseCheck[2] || ""}` : pathname;
+  const localizedData = /^\/data\/i18n\/(ko|ja|ar)(?=\/|$)/.exec(contentPath);
+  if (localizedData) return LOCALE_CONTENT_LANGUAGES[localizedData[1]];
+  const localizedSitemap = /^\/sitemap-(ko|ja|ar)\.xml$/.exec(contentPath);
+  if (localizedSitemap) return LOCALE_CONTENT_LANGUAGES[localizedSitemap[1]];
+  const localized = localePath(contentPath);
+  return localized.prefix
+    ? LOCALE_CONTENT_LANGUAGES[localized.prefix.slice(1)]
+    : "zh-Hans";
+}
+
+function canonicalPathForResolved(pathname, relative, candidate) {
+  const sourcePath = String(pathname || "");
+  if (!sourcePath || sourcePath.endsWith("/")) return "";
+  const localized = localePath(sourcePath);
+  // Dynamic canonicalization belongs to the new locale namespaces only.  The
+  // established Chinese routes keep their existing behavior until they are
+  // reviewed as a separate release.
+  if (!localized.prefix) return "";
+  const contentPath = localized.pathname;
+  if (/^\/(?:api|assets|data|\.well-known)(?:\/|$)/i.test(contentPath)
+    || /^\/favicon(?:\.|$)/i.test(contentPath)) {
+    return "";
+  }
+
+  const lowerRelative = String(relative || "").toLowerCase();
+  const lowerCandidate = String(candidate || "").toLowerCase();
+  if (/\/index\.html$/i.test(contentPath)
+    && lowerCandidate === lowerRelative
+    && lowerCandidate.endsWith("/index.html")) {
+    return sourcePath.replace(/index\.html$/i, "");
+  }
+  const lastSegment = lowerRelative.split("/").pop() || "";
+  if (!lowerCandidate || !lastSegment || lastSegment.includes(".")) return "";
+  if (lowerCandidate === `${lowerRelative}/index.html`) return `${sourcePath}/`;
+  if (lowerCandidate !== `${lowerRelative}.html`) return "";
+  // /charts is already the explicit pretty canonical for charts.html.
+  if (Object.values(CANONICAL_PATHS).includes(contentPath)) return "";
+  return `${sourcePath}.html`;
+}
+
+function canonicalRedirect(url, canonicalHostValue = "", targetPath = canonicalPath(url.pathname)) {
   const canonicalHost = String(canonicalHostValue || "").trim().toLowerCase();
-  const targetPath = CANONICAL_PATHS[url.pathname] || "";
   const hostNeedsRedirect = Boolean(canonicalHost && url.hostname.toLowerCase() !== canonicalHost);
   if (!targetPath && !hostNeedsRedirect) return null;
   const target = new URL(url);
@@ -56,6 +122,7 @@ function canonicalRedirect(url, canonicalHostValue = "") {
     location: target.toString(),
     "cache-control": "no-store",
     "cloudflare-cdn-cache-control": "no-store",
+    "content-language": contentLanguage(target.pathname),
     "x-origin-class": "edge-static",
   });
   return new Response(null, { status: 301, headers });
@@ -133,6 +200,7 @@ function responseHeaders(object, path, url, releaseCheck = false) {
   const headers = new Headers();
   object.writeHttpMetadata(headers);
   headers.set("content-type", headers.get("content-type") || fallbackContentType(path));
+  headers.set("content-language", contentLanguage(url.pathname));
   // The active Worker binding changes between immutable releases, so edge policy
   // is authoritative even when an older object carries legacy upload metadata.
   const cachePolicy = cachePolicyFor(path, url);
@@ -269,7 +337,38 @@ async function resolveObject(env, prefix, relative, headOnly, request, allowRang
   return null;
 }
 
-export default {
+function isShadowMode(env) {
+  return env.SHADOW_MODE === "true";
+}
+
+function protectShadowResponse(response, shadowMode) {
+  if (!shadowMode) return response;
+  const headers = new Headers(response.headers);
+  headers.set("x-robots-tag", SHADOW_ROBOTS_POLICY);
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
+function shadowRobotsResponse(request) {
+  const headers = new Headers({
+    "content-type": "text/plain; charset=utf-8",
+    "content-language": "zh-Hans",
+    "content-length": String(new TextEncoder().encode(SHADOW_ROBOTS_BODY).byteLength),
+    "cache-control": "no-store",
+    "cloudflare-cdn-cache-control": "no-store",
+    "x-origin-class": "edge-static",
+    "x-robots-tag": SHADOW_ROBOTS_POLICY,
+  });
+  return new Response(request.method === "HEAD" ? null : SHADOW_ROBOTS_BODY, {
+    status: 200,
+    headers,
+  });
+}
+
+const productionWorker = {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.pathname === "/api" || url.pathname.startsWith("/api/")) {
@@ -298,7 +397,7 @@ export default {
     }
 
     if (!RELEASE_CHECK_PATH.test(url.pathname)) {
-      const redirect = canonicalRedirect(url, env.CANONICAL_HOST);
+      const redirect = canonicalRedirect(url, env.CANONICAL_HOST, canonicalPath(url.pathname));
       if (redirect) return redirect;
     }
 
@@ -360,6 +459,13 @@ export default {
 
     const headOnly = request.method === "HEAD";
     let resolved = await resolveObject(env, prefix, relative, headOnly, request);
+    if (!releaseCheck) {
+      const resolvedTargetPath = resolved
+        ? canonicalPathForResolved(requestedPath, relative, resolved.candidate)
+        : "";
+      const redirect = canonicalRedirect(url, env.CANONICAL_HOST, resolvedTargetPath);
+      if (redirect) return redirect;
+    }
     if (resolved && resolved.rangeError) {
       const headers = resolved.object
         ? responseHeaders(resolved.object, resolved.candidate, url)
@@ -405,5 +511,18 @@ export default {
       headers.set("content-length", String(object.size));
     }
     return new Response(headOnly ? null : object.body, { status, headers });
+  },
+};
+
+export default {
+  async fetch(request, env) {
+    const shadowMode = isShadowMode(env);
+    const url = new URL(request.url);
+    if (shadowMode
+      && url.pathname === "/robots.txt"
+      && (request.method === "GET" || request.method === "HEAD")) {
+      return shadowRobotsResponse(request);
+    }
+    return protectShadowResponse(await productionWorker.fetch(request, env), shadowMode);
   },
 };

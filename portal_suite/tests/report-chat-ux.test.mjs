@@ -108,7 +108,7 @@ function createScheduler() {
   };
 }
 
-function createHarness({ authenticated = true, includePopular = false } = {}) {
+function createHarness({ authenticated = true, includePopular = false, contentLocale = "" } = {}) {
   const form = new FakeElement("homeChatForm");
   const button = new FakeElement("homeChatSubmit");
   button.textContent = "开始查找";
@@ -157,6 +157,7 @@ function createHarness({ authenticated = true, includePopular = false } = {}) {
     clearInterval: scheduler.clearInterval,
     location: { pathname: "/" },
   };
+  if (contentLocale) window.PortalLocale = { contentLocale };
   const analyticsEvents = [];
   const exportCalls = [];
   window.PortalSuiteAnalytics = {
@@ -518,6 +519,18 @@ test("popular questions load on startup and render cached research through GET o
   assert.equal(harness.exportCalls.at(-1).payload.question, question);
   assert.equal(harness.exportCalls.at(-1).payload.question_hash, "popular-hash-1");
   assertAnalyticsHasNoQuestionText(harness, question);
+});
+
+test("localized popular questions wait for an idle fallback while zh-Hans startup stays immediate", () => {
+  const localized = createHarness({ authenticated: false, includePopular: true, contentLocale: "ar" });
+  assert.equal(localized.fetches.length, 0, "localized first paint must not request popular research immediately");
+  localized.scheduler.runTimeout(3_000);
+  assert.equal(localized.fetches.length, 1);
+  assert.equal(localized.fetches[0].url, "/api/report-chat/popular");
+
+  const chinese = createHarness({ authenticated: false, includePopular: true });
+  assert.equal(chinese.fetches.length, 1, "the Chinese root keeps its established immediate popular request");
+  assert.equal(chinese.fetches[0].url, "/api/report-chat/popular");
 });
 
 test("429 renders a readonly member request form and submits archive-bound email request", async () => {

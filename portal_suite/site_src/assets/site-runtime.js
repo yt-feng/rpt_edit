@@ -4,6 +4,7 @@
   const STARTED_AT = Date.parse("2019-10-03T00:00:00+08:00");
   const SECOND = 1000;
   const DAY = 24 * 60 * 60 * SECOND;
+  const CONTENT_INTL_LOCALE = window.PortalLocale && window.PortalLocale.intlLocale || "zh-CN";
 
   function runtimeParts(now) {
     const elapsed = Math.max(0, now - STARTED_AT);
@@ -77,7 +78,7 @@
     if (!value) return;
     const update = () => {
       const parts = runtimeParts(Date.now());
-      value.textContent = `${parts.days.toLocaleString("zh-CN")} 天 ${twoDigits(parts.hours)}:${twoDigits(parts.minutes)}:${twoDigits(parts.seconds)}`;
+      value.textContent = `${parts.days.toLocaleString(CONTENT_INTL_LOCALE)} 天 ${twoDigits(parts.hours)}:${twoDigits(parts.minutes)}:${twoDigits(parts.seconds)}`;
     };
     update();
     window.setInterval(update, SECOND);

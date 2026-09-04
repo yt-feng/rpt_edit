@@ -178,6 +178,7 @@ class StaticSlotPublisherTests(unittest.TestCase):
         active: str = "",
         *,
         member_contact_card: Path | None = None,
+        skip_shared_private_assets: bool = False,
     ):
         return publisher.publish_static_slot(
             client,
@@ -186,6 +187,7 @@ class StaticSlotPublisherTests(unittest.TestCase):
             release(number),
             active,
             member_contact_card=member_contact_card or self.member_contact_card(),
+            skip_shared_private_assets=skip_shared_private_assets,
             max_workers=4,
         )
 
@@ -216,6 +218,54 @@ class StaticSlotPublisherTests(unittest.TestCase):
             self.assertEqual(fourth["static_slot"], "b")
             self.assertEqual(fourth["uploaded_files"], 1)
             self.assertEqual(fourth["skipped_files"], fourth["file_count"] - 1)
+
+    def test_same_length_overwrite_without_digest_metadata_is_reuploaded(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            build_site(root)
+            client = FakeR2()
+            self.publish(client, root, 1)
+            self.publish(client, root, 2, "a")
+
+            app_key = publisher.slot_prefix("a") + "assets/app.js"
+            expected = (root / "assets/app.js").read_bytes()
+            corrupted = b"x" * len(expected)
+            self.assertNotEqual(corrupted, expected)
+            client.put_object(Bucket="bucket", Key=app_key, Body=corrupted)
+
+            result = self.publish(client, root, 3, "b")
+
+            self.assertEqual(result["uploaded_files"], 1)
+            self.assertEqual(result["skipped_files"], result["file_count"] - 1)
+            self.assertEqual(client.objects[app_key]["body"], expected)
+            self.assertEqual(
+                client.objects[app_key]["metadata"].get("sha256"),
+                publisher.sha256_file(root / "assets/app.js"),
+            )
+
+    def test_required_object_without_digest_metadata_is_rejected(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            build_site(root)
+            client = FakeR2()
+            paths, entries, _tree_sha256, _total_bytes = publisher.build_inventory(root)
+            relative = publisher.DEFAULT_REQUIRED_PATHS[0]
+            key = publisher.slot_prefix("a") + relative
+            client.put_object(
+                Bucket="bucket",
+                Key=key,
+                Body=paths[relative].read_bytes(),
+            )
+
+            with self.assertRaisesRegex(RuntimeError, "wrong digest"):
+                publisher.verify_required_objects(
+                    client,
+                    "bucket",
+                    publisher.slot_prefix("a"),
+                    paths,
+                    entries,
+                    (relative,),
+                )
 
     def test_transient_upload_errors_retry_then_succeed_with_bounded_backoff(self) -> None:
         with tempfile.NamedTemporaryFile() as handle:
@@ -499,6 +549,39 @@ class StaticSlotPublisherTests(unittest.TestCase):
             self.assertGreater(private_upload, max(legacy_absence_checks))
             self.assertGreater(private_head, private_upload)
             self.assertGreater(manifest_commit, private_head)
+
+    def test_skip_shared_private_assets_preserves_every_qr_object_without_accessing_local_card(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            build_site(root)
+            client = FakeR2()
+            original_qr_objects = {
+                publisher.MEMBER_CONTACT_CARD_KEY: b"existing-private-contact-card",
+                **{
+                    key: f"existing-{key}".encode("utf-8")
+                    for key in publisher.LEGACY_PUBLIC_CONTACT_CARD_KEYS
+                },
+            }
+            for key, body in original_qr_objects.items():
+                client.objects[key] = {"body": body, "metadata": {}}
+
+            missing_card = root.parent / f"{root.name}-missing-member-contact.jpg"
+            result = self.publish(
+                client,
+                root,
+                1,
+                member_contact_card=missing_card,
+                skip_shared_private_assets=True,
+            )
+
+            self.assertFalse(result["shared_private_assets_published"])
+            self.assertEqual(result["legacy_public_contact_cards_removed"], 0)
+            self.assertEqual(result["member_contact_card_sha256"], "")
+            self.assertEqual(result["member_contact_card_bytes"], 0)
+            for key, body in original_qr_objects.items():
+                self.assertEqual(client.objects[key]["body"], body)
+                self.assertFalse(any(operation[1] == key for operation in client.operations))
+            self.assertIn(publisher.manifest_key("a"), client.objects)
 
     def test_missing_or_bad_private_member_card_fails_before_remote_calls(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:

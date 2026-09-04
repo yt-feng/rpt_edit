@@ -1,6 +1,8 @@
 (function () {
   const page = document.body.dataset.page;
   const PUBLIC_BRAND = "KC桌面";
+  const CONTENT_LOCALE = window.PortalLocale && window.PortalLocale.contentLocale || "zh-Hans";
+  const CONTENT_INTL_LOCALE = window.PortalLocale && window.PortalLocale.intlLocale || "zh-CN";
   const ADMIN_TOKEN_KEY = "portal_admin_token";
   const ADMIN_PLAIN_KEY = "portal_admin_plain_key";
   const ADMIN_COOKIE_NAME = "portal_admin_token";
@@ -12,7 +14,9 @@
   const REPORT_PREVIEW_CACHE_KEY = "portal_report_preview_cache";
   const REPORT_PREVIEW_CACHE_MAX_ITEMS = 20;
   const REPORT_PREVIEW_CACHE_TTL_MS = 6 * 60 * 60 * 1000;
-  const HOT_REPORT_FIRST_PAGE_CACHE_KEY = "portal_hot_report_first_page_v1";
+  const HOT_REPORT_FIRST_PAGE_CACHE_KEY = CONTENT_LOCALE === "zh-Hans"
+    ? "portal_hot_report_first_page_v1"
+    : `portal_hot_report_first_page_v1:${CONTENT_LOCALE}`;
   const HOT_REPORT_FIRST_PAGE_CACHE_VERSION = 1;
   const HOT_REPORT_FIRST_PAGE_CACHE_MAX_ITEMS = 24;
   const HOT_REPORT_FIRST_PAGE_CACHE_TTL_MS = 24 * 60 * 60 * 1000;
@@ -63,6 +67,80 @@
     const url = new URL(String(path || ""), document.baseURI);
     if (APP_ASSET_VERSION) url.searchParams.set("v", APP_ASSET_VERSION);
     return url.href;
+  }
+
+  const LOCALIZED_HOME_CATALOG_LOCALES = new Set(["ko", "ja", "ar"]);
+  const LOCALIZED_FULL_CATALOG_IDLE_TIMEOUT_MS = 6_000;
+  const LOCALIZED_FULL_CATALOG_FALLBACK_DELAY_MS = 3_000;
+  const LOCALIZED_FULL_CATALOG_RETRY_COOLDOWN_MS = 2_000;
+
+  function shouldDeferLocalizedHomeCatalog(locale) {
+    return LOCALIZED_HOME_CATALOG_LOCALES.has(String(locale || "").toLowerCase());
+  }
+
+  function usableReportCatalog(value) {
+    return Boolean(value && Array.isArray(value.items) && value.items.length);
+  }
+
+  function initialHomeCatalog(previewCatalog, deferLocalizedHomeCatalog) {
+    if (usableReportCatalog(previewCatalog)) {
+      return { catalog: previewCatalog, needsSynchronousFullCatalog: false };
+    }
+    if (deferLocalizedHomeCatalog) {
+      // A missing/invalid locale overlay makes the preview request fail closed.
+      // Keep first paint small and empty instead of immediately downloading the
+      // multi-megabyte source catalog (which would also expose Chinese titles).
+      return {
+        catalog: { items: [], item_count: 0, total_item_count: 0, updated_at_bjt: "" },
+        needsSynchronousFullCatalog: false,
+      };
+    }
+    return { catalog: null, needsSynchronousFullCatalog: true };
+  }
+
+  function shouldDeferInitialHotOverlay(locale, backgroundStarted, query, pageIndex, replace) {
+    return (
+      shouldDeferLocalizedHomeCatalog(locale)
+      && !backgroundStarted
+      && Boolean(replace)
+      && Number(pageIndex) === 0
+      && !String(query || "").trim()
+    );
+  }
+
+  function createIdleOrIntentStarter(start, scheduler = window) {
+    let started = false;
+    let scheduled = false;
+    let idleHandle = null;
+    let timeoutHandle = null;
+    const startNow = () => {
+      if (started) return false;
+      started = true;
+      if (idleHandle !== null && typeof scheduler.cancelIdleCallback === "function") {
+        scheduler.cancelIdleCallback(idleHandle);
+      }
+      if (timeoutHandle !== null && typeof scheduler.clearTimeout === "function") {
+        scheduler.clearTimeout(timeoutHandle);
+      }
+      start();
+      return true;
+    };
+    const schedule = () => {
+      if (started || scheduled) return;
+      scheduled = true;
+      if (typeof scheduler.requestIdleCallback === "function") {
+        idleHandle = scheduler.requestIdleCallback(startNow, {
+          timeout: LOCALIZED_FULL_CATALOG_IDLE_TIMEOUT_MS,
+        });
+      } else {
+        timeoutHandle = scheduler.setTimeout(startNow, LOCALIZED_FULL_CATALOG_FALLBACK_DELAY_MS);
+      }
+    };
+    return {
+      schedule,
+      startNow,
+      get started() { return started; },
+    };
   }
 
   const INDUSTRY_RULES = [
@@ -164,6 +242,7 @@
         sort_order: Number.isSafeInteger(sortOrder) ? sortOrder : 0,
         created_at: String(rawItem.created_at || "").trim().slice(0, 64),
         updated_at: String(rawItem.updated_at || "").trim().slice(0, 64),
+        hot_report_generation: String(rawItem.hot_report_generation || "").trim().slice(0, 32),
         required_plan: publicBrandText(String(rawItem.required_plan || "").trim().slice(0, 64)),
         required_months: Number.isFinite(requiredMonths) && requiredMonths > 0 ? Math.floor(requiredMonths) : 0,
       });
@@ -405,6 +484,16 @@
     return publicBrandText(text, fallback, PUBLIC_BRAND);
   }
 
+  function isLocalizedContentPage(locale = CONTENT_LOCALE) {
+    return ["ko", "ja", "ar"].includes(String(locale || "").toLowerCase());
+  }
+
+  function localizedServiceMessage(value, fallback = "") {
+    return isLocalizedContentPage()
+      ? publicMessageText(fallback)
+      : publicMessageText(value, fallback);
+  }
+
   function publicDocItem(value) {
     if (!value || typeof value !== "object") return value;
     const item = { ...value };
@@ -466,10 +555,18 @@
     return publicMessageText(value);
   }
 
+  function localeSearchText(value) {
+    const normalized = String(value || "").normalize("NFKC").toLocaleLowerCase(CONTENT_INTL_LOCALE);
+    if (!/^ar(?:-|$)/i.test(CONTENT_INTL_LOCALE)) return normalized;
+    return normalized
+      .replace(/\u0640/g, "")
+      .replace(/[\u0610-\u061a\u064b-\u065f\u0670\u06d6-\u06ed]/g, "")
+      .replace(/[إأآٱ]/g, "ا")
+      .replace(/ى/g, "ي");
+  }
+
   function normalize(value) {
-    return String(value || "")
-      .normalize("NFKC")
-      .toLowerCase()
+    return localeSearchText(value)
       .replace(/[^\p{L}\p{N}]+/gu, " ")
       .replace(/\s+/g, " ")
       .trim();
@@ -3833,7 +3930,7 @@
         ${analyticsMetric("下载", analytics.download_success_count)}
         ${analyticsMetric("发货链接", analytics.delivery_link_count)}
       </div>
-      <p class="subtle">本卡片从近 ${Number(analytics.range_days || 7)} 天窗口抽样 ${Number(analytics.sample_event_count || analytics.event_count || 0).toLocaleString("zh-CN")} 条事件；完整日统计与来源落地明细请进入 Activity。</p>
+      <p class="subtle">本卡片从近 ${Number(analytics.range_days || 7)} 天窗口抽样 ${Number(analytics.sample_event_count || analytics.event_count || 0).toLocaleString(CONTENT_INTL_LOCALE)} 条事件；完整日统计与来源落地明细请进入 Activity。</p>
       <div class="account-ops-analytics-grid">
         <section>
           <h4>站内热门搜索</h4>
@@ -4305,7 +4402,7 @@
     }
     const fragment = document.createDocumentFragment();
     [...values.values()]
-      .sort((a, b) => a.value.localeCompare(b.value, "zh-CN", { sensitivity: "base" }))
+      .sort((a, b) => a.value.localeCompare(b.value, CONTENT_INTL_LOCALE, { sensitivity: "base" }))
       .forEach((entry) => {
         const option = document.createElement("option");
         option.value = entry.value;
@@ -4323,7 +4420,7 @@
       <section class="analytics-day-summary-list">
         <h3>${escapeHtml(title)}</h3>
         ${items.length
-          ? `<ol>${items.map((row) => `<li><span>${escapeHtml(row.label || "unknown")}</span><strong>${Number(row.count || 0).toLocaleString("zh-CN")}</strong></li>`).join("")}</ol>`
+          ? `<ol>${items.map((row) => `<li><span>${escapeHtml(row.label || "unknown")}</span><strong>${Number(row.count || 0).toLocaleString(CONTENT_INTL_LOCALE)}</strong></li>`).join("")}</ol>`
           : '<p class="subtle">暂无数据</p>'}
       </section>
     `;
@@ -4353,7 +4450,7 @@
                   <td><strong>${escapeHtml(row.report_title || row.landing_path || "/")}</strong><small>${escapeHtml(row.landing_path || "/")}</small></td>
                   <td>${escapeHtml([row.page, row.report_id].filter(Boolean).join(" · ") || "-")}</td>
                   <td>${escapeHtml(utm || "-")}</td>
-                  <td><strong>${Number(row.sessions || 0).toLocaleString("zh-CN")}</strong></td>
+                  <td><strong>${Number(row.sessions || 0).toLocaleString(CONTENT_INTL_LOCALE)}</strong></td>
                 </tr>
               `;
             }).join("")}
@@ -4373,7 +4470,7 @@
     ];
     target.innerHTML = `
       <div class="analytics-day-summary-metrics">
-        ${metrics.map(([label, value]) => `<div><span>${escapeHtml(label)}</span><strong>${Number(value || 0).toLocaleString("zh-CN")}</strong></div>`).join("")}
+        ${metrics.map(([label, value]) => `<div><span>${escapeHtml(label)}</span><strong>${Number(value || 0).toLocaleString(CONTENT_INTL_LOCALE)}</strong></div>`).join("")}
       </div>
       <section>
         <h3>来源 × 具体落地报告 / Blog</h3>
@@ -4462,8 +4559,8 @@
           if (sequence !== daySummarySequence) return;
           renderAnalyticsDaySummary(daySummaryResults, data);
           setDaySummaryStatus(data.complete
-            ? `${date} 汇总完成，共扫描 ${Number(data.processed_count || 0).toLocaleString("zh-CN")} 条对象。`
-            : `正在扫描 ${date}：已处理 ${Number(data.processed_count || 0).toLocaleString("zh-CN")} 条…`, data.complete ? "ok" : "");
+            ? `${date} 汇总完成，共扫描 ${Number(data.processed_count || 0).toLocaleString(CONTENT_INTL_LOCALE)} 条对象。`
+            : `正在扫描 ${date}：已处理 ${Number(data.processed_count || 0).toLocaleString(CONTENT_INTL_LOCALE)} 条…`, data.complete ? "ok" : "");
           jobId = String(data.job_id || "");
           pageCount += 1;
           if (!data.has_more) break;
@@ -5094,7 +5191,7 @@
     const date = new Date(String(value || ""));
     if (!Number.isFinite(date.getTime())) return "";
     try {
-      return new Intl.DateTimeFormat("zh-CN", {
+      return new Intl.DateTimeFormat(CONTENT_INTL_LOCALE, {
         timeZone: "Asia/Shanghai",
         year: "numeric",
         month: "2-digit",
@@ -7539,6 +7636,7 @@
     const nextPage = document.getElementById("nextPage");
     const pageInfo = document.getElementById("pageInfo");
     const pageSize = document.getElementById("pageSize");
+    const deferLocalizedHomeCatalog = shouldDeferLocalizedHomeCatalog(CONTENT_LOCALE);
     let earlyInputTouched = false;
     const captureEarlyInput = () => { earlyInputTouched = true; };
     if (input) input.addEventListener("input", captureEarlyInput, { passive: true });
@@ -7549,24 +7647,35 @@
       loadOptionalJson("data/config.json", {}),
     ]);
     let fullCatalogPromise = null;
+    let fullCatalogRetryAfter = 0;
     const startFullCatalogLoad = () => {
+      if (Date.now() < fullCatalogRetryAfter) return Promise.resolve(null);
       if (!fullCatalogPromise) {
-        fullCatalogPromise = loadJson("data/catalog.json").catch((error) => {
-          fullCatalogError = error;
-          return null;
-        });
+        fullCatalogPromise = loadJson("data/catalog.json")
+          .then((payload) => {
+            fullCatalogPromise = null;
+            return payload;
+          })
+          .catch((error) => {
+            fullCatalogError = error;
+            fullCatalogRetryAfter = Date.now() + LOCALIZED_FULL_CATALOG_RETRY_COOLDOWN_MS;
+            fullCatalogPromise = null;
+            return null;
+          });
       }
       return fullCatalogPromise;
     };
     // The small preview owns first paint. On a normal home load the large
     // catalog starts only after the first hot-report request has been issued.
-    let catalog = previewCatalog && Array.isArray(previewCatalog.items) && previewCatalog.items.length
-      ? previewCatalog
-      : await startFullCatalogLoad();
+    const initialCatalog = initialHomeCatalog(previewCatalog, deferLocalizedHomeCatalog);
+    let catalog = initialCatalog.catalog;
+    if (initialCatalog.needsSynchronousFullCatalog) catalog = await startFullCatalogLoad();
     if (!catalog || !Array.isArray(catalog.items)) {
       throw fullCatalogError || new Error("Report catalog is unavailable.");
     }
-    let fullCatalogReady = !(previewCatalog && Array.isArray(previewCatalog.items) && previewCatalog.items.length);
+    let fullCatalogReady = initialCatalog.needsSynchronousFullCatalog;
+    let localizedBackgroundStarted = !deferLocalizedHomeCatalog;
+    let deferredHotReportLocalization = null;
     const workerUrl = workerBaseUrl(config);
     let items = mergeCatalogPdfOverrides(catalog.items, []);
     let catalogById = new Map(items.map((item) => [String(item.id || ""), item]));
@@ -7620,6 +7729,9 @@
       authority: 0,
     };
     const HOT_REPORT_PAGE_SIZE = 24;
+    const HOT_REPORT_LOCALE_ID_LIMIT = 750;
+    const HOT_REPORT_REQUEST_URL_MAX_LENGTH = 16 * 1024;
+    const HOT_REPORT_PUBLIC_CURSOR_MAX_LENGTH = 1024;
     let hotReportsLoaded = !workerUrl;
     let hotReportsLoading = false;
     let hotReportsFailed = false;
@@ -7847,16 +7959,101 @@
       renderSearchRecommendations();
     }
 
-    function hotReportRequestUrl(query, cursor = "") {
-      const params = new URLSearchParams({ limit: String(HOT_REPORT_PAGE_SIZE) });
-      if (query) params.set("q", query);
-      if (cursor) params.set("cursor", cursor);
-      return `${workerUrl}/hot-reports?${params.toString()}`;
+    function normalizeHotReportLocaleIds(value) {
+      if (!Array.isArray(value)) return null;
+      const ids = [];
+      const seen = new Set();
+      for (const candidate of value) {
+        const id = String(candidate || "").trim().toLowerCase();
+        if (!/^[a-f0-9]{16}$/.test(id) || seen.has(id)) continue;
+        seen.add(id);
+        ids.push(id);
+        if (ids.length >= HOT_REPORT_LOCALE_ID_LIMIT) break;
+      }
+      return ids;
+    }
+
+    function hotReportRequestUrl(query, cursor = "", localeIds = null) {
+      const ids = normalizeHotReportLocaleIds(localeIds);
+      const buildUrl = (idCount, reserveCursor = false) => {
+        const params = new URLSearchParams({ limit: String(HOT_REPORT_PAGE_SIZE) });
+        if (query) params.set("q", query);
+        if (reserveCursor) params.set("cursor", "c".repeat(HOT_REPORT_PUBLIC_CURSOR_MAX_LENGTH));
+        else if (cursor) params.set("cursor", cursor);
+        if (ids !== null) params.set("locale_ids", ids.slice(0, idCount).join(","));
+        return `${workerUrl}/hot-reports?${params.toString()}`;
+      };
+      if (ids === null) return buildUrl(0);
+      const fitsPaginationBudget = (idCount) => (
+        buildUrl(idCount, true).length <= HOT_REPORT_REQUEST_URL_MAX_LENGTH
+      );
+      if (fitsPaginationBudget(ids.length)) return buildUrl(ids.length);
+      let lower = 0;
+      let upper = ids.length;
+      while (lower < upper) {
+        const middle = Math.ceil((lower + upper) / 2);
+        if (fitsPaginationBudget(middle)) lower = middle;
+        else upper = middle - 1;
+      }
+      return buildUrl(lower);
+    }
+
+    function applyHotReportPayload(data, {
+      cleanQuery,
+      pageIndex,
+      replace,
+      cacheFirstPage = true,
+    }) {
+      const translationPending = Boolean(data && data.locale_translation_pending === true);
+      const hotReportGeneration = String(data.generation || "").trim().slice(0, 32);
+      const responseItems = (Array.isArray(data.items) ? data.items : [])
+        .filter((item) => item && item.id)
+        .map((item) => publicSearchItem({
+          ...item,
+          source: HOT_REPORT_SOURCE,
+          hot_report_generation: hotReportGeneration,
+        }, HOT_REPORT_SOURCE));
+      const rawTotal = data.total === null || data.total === undefined || data.total === ""
+        ? Number.NaN
+        : Number(data.total);
+      const nextPage = {
+        items: responseItems,
+        nextCursor: String(data.next_cursor || ""),
+        hasMore: typeof data.has_more === "boolean" ? data.has_more : Boolean(data.next_cursor),
+        total: Number.isFinite(rawTotal) && rawTotal >= 0 ? rawTotal : null,
+      };
+      if (replace) {
+        hotReportPages = [nextPage];
+        hotReportPageIndex = 0;
+        hotReportActiveQuery = cleanQuery;
+        hotReportItems.clear();
+      } else {
+        hotReportPages = hotReportPages.slice(0, pageIndex);
+        hotReportPages[pageIndex] = nextPage;
+        hotReportPageIndex = pageIndex;
+      }
+      responseItems.forEach((item) => hotReportItems.set(String(item.id), item));
+      if (!translationPending && cacheFirstPage && replace && pageIndex === 0 && !cleanQuery) {
+        writeHotReportFirstPageCache(nextPage, hotReportLocalStorage());
+      }
+      hotReportsLoaded = true;
+      hotReportsFailed = false;
+      hotReportRetryQuery = translationPending ? cleanQuery : null;
+      setHotReportsStatus(translationPending ? "翻译正在更新，请稍后再试。" : "");
+      if (hotReportsRetry) hotReportsRetry.hidden = !translationPending;
+      if (cleanQuery) {
+        trackEvent(workerUrl, "search", {
+          source: HOT_REPORT_SOURCE,
+          query: cleanQuery,
+          result_count: Number.isFinite(nextPage.total) ? nextPage.total : responseItems.length,
+        });
+      }
     }
 
     async function requestHotReportPage({ query = "", cursor = "", pageIndex = 0, replace = false } = {}) {
       if (!workerUrl || !hotReportsSection || !hotReportsResults) return;
       const cleanQuery = String(query || "").trim().slice(0, 200);
+      deferredHotReportLocalization = null;
       if (hotReportRequestController) hotReportRequestController.abort();
       const controller = new AbortController();
       const requestVersion = ++hotReportRequestVersion;
@@ -7878,49 +8075,80 @@
         controller.abort();
       }, 5_000);
       try {
-        const response = await fetch(hotReportRequestUrl(cleanQuery, cursor), { signal: controller.signal });
-        const data = await response.json().catch(() => ({}));
+        let localeIds = null;
+        const localeMatcher = window.PortalLocale && window.PortalLocale.matchHotReportLocaleIds;
+        if (cleanQuery && typeof localeMatcher === "function") {
+          localeIds = await localeMatcher(cleanQuery);
+        }
+        if (requestVersion !== hotReportRequestVersion) return;
+        const response = await fetch(hotReportRequestUrl(cleanQuery, cursor, localeIds), { signal: controller.signal });
+        let data = await response.json().catch(() => ({}));
         if (!response.ok) {
-          const failure = new Error(data.detail || "近期热门报告读取失败。");
+          const failure = new Error(localizedServiceMessage(data.detail, "近期热门报告读取失败。"));
           failure.status = response.status;
           throw failure;
         }
+        const hotReportLocalizer = window.PortalLocale && window.PortalLocale.localizeHotReports;
+        const deferHotOverlay = shouldDeferInitialHotOverlay(
+          CONTENT_LOCALE,
+          localizedBackgroundStarted,
+          cleanQuery,
+          pageIndex,
+          replace,
+        ) && typeof hotReportLocalizer === "function";
+        let retainLocalizedPageDuringDeferredOverlay = false;
+        if (deferHotOverlay) {
+          const sourceData = data;
+          retainLocalizedPageDuringDeferredOverlay = Boolean(currentHotReportPage())
+            && cleanQuery === hotReportActiveQuery;
+          deferredHotReportLocalization = () => {
+            deferredHotReportLocalization = null;
+            Promise.resolve(hotReportLocalizer(sourceData)).then((localizedData) => {
+              if (requestVersion !== hotReportRequestVersion || cleanQuery !== hotReportActiveQuery) return;
+              if (localizedData && localizedData.locale_translation_pending === true
+                && retainLocalizedPageDuringDeferredOverlay) {
+                hotReportsLoaded = true;
+                hotReportsFailed = false;
+                hotReportRetryQuery = cleanQuery;
+                setHotReportsStatus("翻译正在更新，请稍后再试。");
+                if (hotReportsRetry) hotReportsRetry.hidden = false;
+              } else {
+                applyHotReportPayload(localizedData, {
+                  cleanQuery,
+                  pageIndex,
+                  replace,
+                  cacheFirstPage: true,
+                });
+              }
+              renderHotReports();
+            }).catch((error) => console.warn(error));
+          };
+          if (retainLocalizedPageDuringDeferredOverlay) {
+            hotReportsLoaded = true;
+            hotReportsFailed = false;
+            hotReportRetryQuery = cleanQuery;
+            setHotReportsStatus("翻译正在更新，请稍后再试。");
+            if (hotReportsRetry) hotReportsRetry.hidden = false;
+          } else {
+            data = {
+              generation: String(sourceData && sourceData.generation || "").trim().slice(0, 32),
+              items: [],
+              total: 0,
+              next_cursor: "",
+              has_more: false,
+              locale_translation_pending: true,
+            };
+          }
+        } else if (typeof hotReportLocalizer === "function") {
+          data = await hotReportLocalizer(data);
+        }
         if (requestVersion !== hotReportRequestVersion) return;
-        const responseItems = (Array.isArray(data.items) ? data.items : [])
-          .filter((item) => item && item.id)
-          .map((item) => publicSearchItem({ ...item, source: HOT_REPORT_SOURCE }, HOT_REPORT_SOURCE));
-        const rawTotal = data.total === null || data.total === undefined || data.total === ""
-          ? Number.NaN
-          : Number(data.total);
-        const nextPage = {
-          items: responseItems,
-          nextCursor: String(data.next_cursor || ""),
-          hasMore: typeof data.has_more === "boolean" ? data.has_more : Boolean(data.next_cursor),
-          total: Number.isFinite(rawTotal) && rawTotal >= 0 ? rawTotal : null,
-        };
-        if (replace) {
-          hotReportPages = [nextPage];
-          hotReportPageIndex = 0;
-          hotReportActiveQuery = cleanQuery;
-          hotReportItems.clear();
-        } else {
-          hotReportPages = hotReportPages.slice(0, pageIndex);
-          hotReportPages[pageIndex] = nextPage;
-          hotReportPageIndex = pageIndex;
-        }
-        responseItems.forEach((item) => hotReportItems.set(String(item.id), item));
-        if (replace && pageIndex === 0 && !cleanQuery) {
-          writeHotReportFirstPageCache(nextPage, hotReportLocalStorage());
-        }
-        hotReportsLoaded = true;
-        hotReportsFailed = false;
-        hotReportRetryQuery = null;
-        setHotReportsStatus("");
-        if (cleanQuery) {
-          trackEvent(workerUrl, "search", {
-            source: HOT_REPORT_SOURCE,
-            query: cleanQuery,
-            result_count: Number.isFinite(nextPage.total) ? nextPage.total : responseItems.length,
+        if (!retainLocalizedPageDuringDeferredOverlay) {
+          applyHotReportPayload(data, {
+            cleanQuery,
+            pageIndex,
+            replace,
+            cacheFirstPage: !deferHotOverlay,
           });
         }
       } catch (error) {
@@ -7978,6 +8206,9 @@
 
     let bankOptions = new Map();
     let industryOptions = new Map();
+    let catalogPdfOverrides = [];
+    let catalogOverrideVersion = 0;
+    let catalogPdfOverridesPromise = null;
 
     function updateCatalogReadiness(text, state = "") {
       if (!searchReadiness || !searchReadinessText) return;
@@ -8072,11 +8303,116 @@
       applyCatalogDerivedState(finishCatalogDerivedState(state));
     }
 
+    const startCatalogPdfOverridesLoad = () => {
+      if (catalogPdfOverridesPromise) return catalogPdfOverridesPromise;
+      catalogPdfOverridesPromise = loadCatalogPdfOverrides(workerUrl).then((overrides) => {
+        catalogPdfOverrides = Array.isArray(overrides) ? overrides : [];
+        catalogOverrideVersion += 1;
+        if (!catalogPdfOverrides.length || !fullCatalogReady) return catalogPdfOverrides;
+        return rebuildCatalogDerivedInChunks(catalog, catalogPdfOverrides, catalogOverrideVersion).then(() => {
+          updateMeta();
+          render({ resetPage: false });
+          return catalogPdfOverrides;
+        });
+      });
+      return catalogPdfOverridesPromise;
+    };
+
+    let fullCatalogUpgradePromise = null;
+    let fullCatalogIntentRetryTimer = 0;
+    function startFullCatalogUpgrade() {
+      if (fullCatalogReady) return Promise.resolve(catalog);
+      if (fullCatalogUpgradePromise) return fullCatalogUpgradePromise;
+      const upgrade = startFullCatalogLoad().then(async (fullCatalog) => {
+        if (!fullCatalog || !Array.isArray(fullCatalog.items)) {
+          updateCatalogReadiness("完整目录暂时未载入；当前可搜索最新报告和其他来源。", "error");
+          remoteSourceStates.set("catalog", "error");
+          renderRemoteSourceProgress(input.value.trim());
+          return null;
+        }
+        const previewRevision = String(catalog.updated_at_bjt || "");
+        const fullRevision = String(fullCatalog.updated_at_bjt || "");
+        const expectedTotal = Number(catalog.total_item_count || 0);
+        if ((previewRevision && fullRevision && fullRevision < previewRevision)
+          || (expectedTotal > 0 && Number(fullCatalog.item_count || 0) < expectedTotal)) {
+          try {
+            fullCatalog = await loadJson(`data/catalog.json?revision=${encodeURIComponent(previewRevision)}`, { cache: "reload" });
+          } catch (error) {
+            console.warn(error);
+            fullCatalogError = error;
+            fullCatalogRetryAfter = Date.now() + LOCALIZED_FULL_CATALOG_RETRY_COOLDOWN_MS;
+          }
+        }
+        if (!fullCatalog || !Array.isArray(fullCatalog.items)
+          || (previewRevision && String(fullCatalog.updated_at_bjt || "") < previewRevision)
+          || (expectedTotal > 0 && Number(fullCatalog.item_count || 0) < expectedTotal)) {
+          updateCatalogReadiness("完整目录版本仍在同步；当前继续使用最新报告和其他来源。", "error");
+          remoteSourceStates.set("catalog", "error");
+          renderRemoteSourceProgress(input.value.trim());
+          return null;
+        }
+        updateCatalogReadiness("完整目录已下载，正在平滑建立本地检索索引…", "searching");
+        await rebuildCatalogDerivedInChunks(fullCatalog, catalogPdfOverrides);
+        fullCatalogReady = true;
+        if (fullCatalogIntentRetryTimer) {
+          window.clearTimeout(fullCatalogIntentRetryTimer);
+          fullCatalogIntentRetryTimer = 0;
+        }
+        remoteSourceStates.set("catalog", "done");
+        renderRemoteSourceProgress(input.value.trim());
+        updateMeta();
+        render({ resetPage: earlyInputTouched || Boolean(input.value.trim()) });
+        renderHotReports();
+        updateCatalogReadiness(`完整目录已就绪，共 ${items.length} 份报告。`, "ready");
+        return fullCatalog;
+      }).catch((error) => {
+        fullCatalogError = error;
+        fullCatalogRetryAfter = Date.now() + LOCALIZED_FULL_CATALOG_RETRY_COOLDOWN_MS;
+        updateCatalogReadiness("完整目录暂时未载入；当前可搜索最新报告和其他来源。", "error");
+        return null;
+      });
+      fullCatalogUpgradePromise = upgrade;
+      void upgrade.then(() => {
+        if (!fullCatalogReady && fullCatalogUpgradePromise === upgrade) {
+          fullCatalogUpgradePromise = null;
+        }
+      });
+      return upgrade;
+    }
+
+    const localizedHotOverlayStarter = createIdleOrIntentStarter(() => {
+      localizedBackgroundStarted = true;
+      const localizeDeferredHotReports = deferredHotReportLocalization;
+      if (localizeDeferredHotReports) localizeDeferredHotReports();
+    });
+    const localizedCatalogStarter = createIdleOrIntentStarter(() => {
+      void startFullCatalogUpgrade();
+      void startCatalogPdfOverridesLoad();
+    });
+    const startCatalogForUserIntent = () => {
+      if (!deferLocalizedHomeCatalog || fullCatalogReady) return;
+      localizedHotOverlayStarter.startNow();
+      const startedNow = localizedCatalogStarter.startNow();
+      if (!startedNow && localizedBackgroundStarted) {
+        const retryDelay = Math.max(0, fullCatalogRetryAfter - Date.now());
+        if (retryDelay > 0) {
+          if (!fullCatalogIntentRetryTimer) {
+            fullCatalogIntentRetryTimer = window.setTimeout(() => {
+              fullCatalogIntentRetryTimer = 0;
+              if (!fullCatalogReady) void startFullCatalogUpgrade();
+            }, retryDelay);
+          }
+        } else {
+          void startFullCatalogUpgrade();
+        }
+      }
+    };
+
     rebuildCatalogDerived(catalog);
     updateCatalogReadiness(
       fullCatalogReady
         ? `完整目录已就绪，共 ${items.length} 份报告。`
-        : `已先显示最新 ${items.length} 份报告，正在后台载入完整目录…`,
+        : `已先显示最新 ${items.length} 份报告；搜索或筛选时载入完整历史目录。`,
       fullCatalogReady ? "ready" : "searching",
     );
 
@@ -8276,6 +8612,7 @@
     }
 
     function clearAllFilters() {
+      startCatalogForUserIntent();
       bankFilter.value = "";
       industryFilter.value = "";
       startDate.value = "";
@@ -8317,25 +8654,32 @@
       scheduleExternalSearch();
     };
     input.addEventListener("compositionstart", () => {
+      startCatalogForUserIntent();
       inputComposing = true;
       window.clearTimeout(localSearchTimer);
       window.clearTimeout(hotReportSearchTimer);
     });
     input.addEventListener("compositionend", () => {
+      startCatalogForUserIntent();
       inputComposing = false;
       scheduleLocalRender(0);
       scheduleHotReportSearch(scopeFilter.value === "charts" ? "" : input.value.trim(), 0);
     });
     input.addEventListener("input", () => {
+      startCatalogForUserIntent();
       if (inputComposing) return;
       scheduleLocalRender();
       scheduleHotReportSearch(scopeFilter.value === "charts" ? "" : input.value.trim());
     });
     input.removeEventListener("input", captureEarlyInput);
     [bankFilter, industryFilter, startDate, endDate, availabilityFilter, ...pageRangeInputs].forEach((control) => {
-      control.addEventListener("change", () => scheduleLocalRender(0));
+      control.addEventListener("change", () => {
+        startCatalogForUserIntent();
+        scheduleLocalRender(0);
+      });
     });
     scopeFilter.addEventListener("change", async () => {
+      startCatalogForUserIntent();
       if (scopeFilter.value === "charts") {
         if (chartSearchSection) chartSearchSection.hidden = false;
         if (chartSearchStatus) chartSearchStatus.textContent = "正在读取图表索引…";
@@ -8793,7 +9137,9 @@
         externalItems.clear();
         items.forEach((item) => externalItems.set(String(item.id), item));
         externalResponseMeta = {
-          warning: publicMessageText(data.warning),
+          warning: data.warning
+            ? localizedServiceMessage(data.warning, "The upstream source is temporarily unavailable; cached results may be shown.")
+            : "",
           cacheStatus: String(data.cache_status || "").trim(),
           filterPartial: Boolean(data.filter_partial),
           htmlFallback: Boolean(data.html_fallback),
@@ -9011,6 +9357,7 @@
 
     [externalDateFilter, externalIncludeHtml].filter(Boolean).forEach((control) => {
       control.addEventListener("change", () => {
+        startCatalogForUserIntent();
         const query = input.value.trim();
         if (!query || scopeFilter.value === "charts") {
           renderExternalSearchResults();
@@ -9023,6 +9370,7 @@
     });
     [authorityInstitutionFilter, authorityDateFilter, authorityPageFilter].filter(Boolean).forEach((control) => {
       control.addEventListener("change", () => {
+        startCatalogForUserIntent();
         const query = input.value.trim();
         if (!query || scopeFilter.value === "charts") {
           renderAuthoritySearchResults();
@@ -9249,62 +9597,18 @@
     }
     renderHotReports();
     loadHotReports(initialHotReportQuery);
-    const backgroundFullCatalogPromise = startFullCatalogLoad();
-
-    // The preview is useful immediately; the full catalog and the PDF override
-    // overlay arrive independently and replace the derived indexes atomically.
-    // No user input is lost while either request is in flight.
-    let catalogPdfOverrides = [];
-    let catalogOverrideVersion = 0;
-    if (!fullCatalogReady) {
-      backgroundFullCatalogPromise.then(async (fullCatalog) => {
-        if (!fullCatalog || !Array.isArray(fullCatalog.items)) {
-          updateCatalogReadiness("完整目录暂时未载入；当前可搜索最新报告和其他来源。", "error");
-          remoteSourceStates.set("catalog", "error");
-          renderRemoteSourceProgress(input.value.trim());
-          return;
-        }
-        const previewRevision = String(catalog.updated_at_bjt || "");
-        const fullRevision = String(fullCatalog.updated_at_bjt || "");
-        const expectedTotal = Number(catalog.total_item_count || 0);
-        if ((previewRevision && fullRevision && fullRevision < previewRevision)
-          || (expectedTotal > 0 && Number(fullCatalog.item_count || 0) < expectedTotal)) {
-          try {
-            fullCatalog = await loadJson(`data/catalog.json?revision=${encodeURIComponent(previewRevision)}`, { cache: "reload" });
-          } catch (error) {
-            console.warn(error);
-          }
-        }
-        if (!fullCatalog || !Array.isArray(fullCatalog.items)
-          || (previewRevision && String(fullCatalog.updated_at_bjt || "") < previewRevision)
-          || (expectedTotal > 0 && Number(fullCatalog.item_count || 0) < expectedTotal)) {
-          updateCatalogReadiness("完整目录版本仍在同步；当前继续使用最新报告和其他来源。", "error");
-          remoteSourceStates.set("catalog", "error");
-          renderRemoteSourceProgress(input.value.trim());
-          return;
-        }
-        updateCatalogReadiness("完整目录已下载，正在平滑建立本地检索索引…", "searching");
-        await rebuildCatalogDerivedInChunks(fullCatalog, catalogPdfOverrides);
-        fullCatalogReady = true;
-        remoteSourceStates.set("catalog", "done");
-        renderRemoteSourceProgress(input.value.trim());
-        updateMeta();
-        render({ resetPage: earlyInputTouched || Boolean(input.value.trim()) });
-        renderHotReports();
-        updateCatalogReadiness(`完整目录已就绪，共 ${items.length} 份报告。`, "ready");
-      });
+    // zh-Hans keeps its established post-Hot-Reports catalog start. Localized
+    // homes may localize the bounded Hot Reports overlay after first paint, but
+    // the full historical catalog and its overlay require explicit user intent.
+    if (deferLocalizedHomeCatalog) {
+      localizedHotOverlayStarter.schedule();
+    } else {
+      localizedCatalogStarter.startNow();
     }
-    loadCatalogPdfOverrides(workerUrl).then((overrides) => {
-      catalogPdfOverrides = Array.isArray(overrides) ? overrides : [];
-      catalogOverrideVersion += 1;
-      if (!catalogPdfOverrides.length) return;
-      if (!fullCatalogReady) return;
-      rebuildCatalogDerivedInChunks(catalog, catalogPdfOverrides, catalogOverrideVersion).then(() => {
-        updateMeta();
-        render({ resetPage: false });
-      });
-    });
-    if (earlyInputTouched || input.value.trim()) scheduleLocalRender(0);
+    if (earlyInputTouched || input.value.trim()) {
+      startCatalogForUserIntent();
+      scheduleLocalRender(0);
+    }
   }
 
   function filenameFromDisposition(disposition, fallback) {
@@ -9507,7 +9811,7 @@
   function hotCommentTime(value) {
     const timestamp = Date.parse(value || "");
     if (!Number.isFinite(timestamp)) return "";
-    return new Intl.DateTimeFormat("zh-CN", {
+    return new Intl.DateTimeFormat(CONTENT_INTL_LOCALE, {
       year: "numeric",
       month: "2-digit",
       day: "2-digit",
@@ -10511,6 +10815,7 @@
         "source", "title", "title_cn", "institution", "date", "file_type", "kind",
         "kind_label", "page_count", "size_bytes", "report_type", "language", "category",
         "author", "rating", "description", "filename", "required_plan",
+        "hot_report_generation",
       ];
     for (const key of previewKeys) {
       const value = item && item[key];
@@ -11024,6 +11329,7 @@
       description: params.get("description") || "",
       filename: params.get("filename") || "",
       required_plan: params.get("required_plan") || "",
+      hot_report_generation: params.get("hot_report_generation") || "",
     });
   }
 
@@ -11223,8 +11529,18 @@
       const response = await fetch(`${workerUrl}/${endpoint}?${params.toString()}`, {
         cache: "no-store",
       });
-      const data = await response.json().catch(() => ({}));
+      let data = await response.json().catch(() => ({}));
       if (!response.ok || !data.item || !data.item.id) return merged;
+      if (isHotReportItem(merged)) {
+        const hotReportLocalizer = window.PortalLocale && window.PortalLocale.localizeHotReports;
+        if (typeof hotReportLocalizer === "function") {
+          data = await hotReportLocalizer({
+            ...data,
+            generation: String(merged.hot_report_generation || ""),
+          });
+        }
+      }
+      if (data.locale_translation_pending === true) return merged;
       if (String(data.item.id) !== String(merged.id)) return merged;
       merged = mergeDocItemMetadata(merged, data.item, { __detail_fetched: true });
       merged.id = item.id;
@@ -11360,6 +11676,10 @@
     let recommendationCatalogPromise = null;
     function recommendationCatalogAfterPaint() {
       if (recommendationCatalogPromise) return recommendationCatalogPromise;
+      // Locale detail pages already have translated recent recommendations and
+      // four bounded Worker sources. Do not download the 14k-item historical
+      // recommendation catalog merely to add another background candidate set.
+      if (shouldDeferLocalizedHomeCatalog(CONTENT_LOCALE)) return Promise.resolve([]);
       recommendationCatalogPromise = new Promise((resolve) => {
         const start = () => {
           loadOptionalJson("data/catalog_recommendations.json", { items: [] })
@@ -11756,10 +12076,17 @@
     const minute = 60 * 1000;
     const hour = 60 * minute;
     const day = 24 * hour;
-    if (diff >= 0 && diff < hour) return `${Math.max(1, Math.round(diff / minute))}m ago`;
-    if (diff >= 0 && diff < day) return `${Math.max(1, Math.round(diff / hour))}h ago`;
-    if (diff >= 0 && diff < 3 * day) return `${Math.max(1, Math.round(diff / day))}d ago`;
-    return new Intl.DateTimeFormat("en", { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" }).format(new Date(timestamp));
+    if (!isLocalizedContentPage()) {
+      if (diff >= 0 && diff < hour) return `${Math.max(1, Math.round(diff / minute))}m ago`;
+      if (diff >= 0 && diff < day) return `${Math.max(1, Math.round(diff / hour))}h ago`;
+      if (diff >= 0 && diff < 3 * day) return `${Math.max(1, Math.round(diff / day))}d ago`;
+      return new Intl.DateTimeFormat("en", { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" }).format(new Date(timestamp));
+    }
+    const relative = new Intl.RelativeTimeFormat(CONTENT_INTL_LOCALE, { numeric: "always" });
+    if (diff >= 0 && diff < hour) return relative.format(-Math.max(1, Math.round(diff / minute)), "minute");
+    if (diff >= 0 && diff < day) return relative.format(-Math.max(1, Math.round(diff / hour)), "hour");
+    if (diff >= 0 && diff < 3 * day) return relative.format(-Math.max(1, Math.round(diff / day)), "day");
+    return new Intl.DateTimeFormat(CONTENT_INTL_LOCALE, { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" }).format(new Date(timestamp));
   }
 
   function newsfeedSourceName(item) {
@@ -11887,15 +12214,137 @@
       addRegion: "Add region",
       customRegion: "Other region",
     },
+    ar: {
+      myFeed: "موجزك",
+      explore: "استكشاف",
+      addTopics: "إضافة مواضيع",
+      digestEmail: "ملخص البريد",
+      dailyDigest: "الملخص اليومي",
+      topHeadlines: "أبرز الأخبار",
+      regions: "المناطق",
+      language: "اللغة",
+      outputLanguage: "لغة المخرجات",
+      suggestedTopics: "مواضيع مقترحة",
+      sendDailyDigest: "إرسال الملخص اليومي",
+      saveEmail: "حفظ البريد",
+      sendTestNow: "إرسال اختبار الآن",
+      sendNewsletterNow: "إرسال النشرة الآن",
+      newsletterTopic: "النشرة",
+      noNewsletter: "غير مشترك",
+      email: "البريد الإلكتروني",
+      sendTime: "وقت الإرسال",
+      timezone: "المنطقة الزمنية",
+      noHeadlines: "لا توجد أخبار بعد.",
+      loadingLatest: "جارٍ تحميل أحدث الأخبار...",
+      updating: "جارٍ تحديث الموجز الكامل...",
+      playBriefing: "تشغيل الموجز الصوتي",
+      nowPlaying: "يُشغّل الآن",
+      playlist: "قائمة التشغيل",
+      readStory: "قراءة الخبر",
+      addRegion: "إضافة منطقة",
+      customRegion: "منطقة أخرى",
+    },
   };
 
   function newsfeedLanguageCode(value) {
-    return ["en", "zh-CN", "ja", "ko"].includes(value) ? value : "en";
+    return ["en", "zh-CN", "ja", "ko", "ar"].includes(value) ? value : "en";
+  }
+
+  function newsfeedDefaultLanguage() {
+    const contentLocale = window.PortalLocale && window.PortalLocale.contentLocale;
+    return newsfeedLanguageCode(contentLocale);
+  }
+
+  function newsfeedFixedInterfaceLanguage() {
+    return isLocalizedContentPage() ? newsfeedLanguageCode(CONTENT_LOCALE) : "";
+  }
+
+  function newsfeedInterfaceLocaleCode(value) {
+    const language = newsfeedLanguageCode(value);
+    return language === "zh-CN" || language === "en" ? "zh-Hans" : language;
+  }
+
+  function newsfeedInterfaceNavigationUrl(value) {
+    const localeUrl = window.PortalLocale && window.PortalLocale.localeUrl;
+    return typeof localeUrl === "function" ? localeUrl(newsfeedInterfaceLocaleCode(value)) : "";
   }
 
   function newsfeedText(state, key) {
     const language = newsfeedLanguageCode(state && state.interfaceLanguage || "en");
     return (NEWSFEED_UI_COPY[language] && NEWSFEED_UI_COPY[language][key]) || NEWSFEED_UI_COPY.en[key] || key;
+  }
+
+  // Built-in topic/region/category values are stable API identifiers and stay
+  // in English on the wire. Keep presentation labels separate so locale builds
+  // can translate visible copy without changing request/filter semantics.
+  const NEWSFEED_SYSTEM_TOPIC_COPY = {
+    "global-daily": {
+      title: "Global Daily",
+      description: "A broad feed across markets, policy, technology, and global affairs.",
+    },
+    "tech-ai": {
+      title: "Technology news",
+      description: "AI, robotics, semiconductors, software, and platform shifts.",
+    },
+    "global-politics": {
+      title: "Politics news",
+      description: "Elections, policy, geopolitics, defense, sanctions, and trade.",
+    },
+    industries: {
+      title: "Industry news",
+      description: "Energy, manufacturing, transport, healthcare, and industrial supply chains.",
+    },
+    investment: {
+      title: "Investment news",
+      description: "Capital markets, IPOs, private equity, M&A, funding, and asset flows.",
+    },
+  };
+
+  const NEWSFEED_CATEGORY_COPY = {
+    Investment: "Investment news",
+    Tech: "Technology news",
+    Politics: "Politics news",
+    Industries: "Industry news",
+  };
+
+  const NEWSFEED_REGION_COPY = {
+    global: "Global coverage",
+    mena: "MENA",
+    china: "China coverage",
+    usa: "United States",
+  };
+
+  const NEWSFEED_SUGGESTED_TOPIC_COPY = {
+    "Self-driving snow groomers for ski resorts": "Self-driving snow groomers for ski resorts",
+    "Satellite-based wildfire early-warning apps": "Satellite-based wildfire early-warning apps",
+    "Robotic kitchen systems for home chefs": "Robotic kitchen systems for home chefs",
+    "Zero-gravity manufacturing on the ISS": "Zero-gravity manufacturing on the ISS",
+    "Middle East capital investing in China": "Middle East capital investing in China",
+    "Humanoid robot supply chains": "Humanoid robot supply chains",
+  };
+
+  function newsfeedTopicText(topic, field = "title") {
+    if (!isLocalizedContentPage()) return String(topic && topic[field] || "");
+    const id = String(topic && topic.id || "");
+    const builtIn = NEWSFEED_SYSTEM_TOPIC_COPY[id];
+    return String(builtIn && builtIn[field] || topic && topic[field] || "");
+  }
+
+  function newsfeedCategoryText(value) {
+    const clean = String(value || "");
+    return isLocalizedContentPage() ? NEWSFEED_CATEGORY_COPY[clean] || clean : clean;
+  }
+
+  function newsfeedSuggestedTopicText(value) {
+    const clean = String(value || "");
+    return isLocalizedContentPage() ? NEWSFEED_SUGGESTED_TOPIC_COPY[clean] || clean : clean;
+  }
+
+  function newsfeedTopicUpdatedText(topic) {
+    const label = String(topic && (topic.last_updated_label || topic.updated_label) || "");
+    if (!isLocalizedContentPage()) return label || String(topic && topic.description || "");
+    if (newsfeedSystemTopic(topic) || label === "Latest") return "Latest updates";
+    return label ? "Recently updated" : newsfeedTopicText(topic, "description");
   }
 
   function newsfeedImageMarkup(item) {
@@ -11931,7 +12380,7 @@
   }
 
   function newsfeedStoryMeta(item) {
-    return [newsfeedTimeLabel(item && item.published_at), newsfeedSourceName(item), item && item.category]
+    return [newsfeedTimeLabel(item && item.published_at), newsfeedSourceName(item), newsfeedCategoryText(item && item.category)]
       .filter(Boolean)
       .join(" · ");
   }
@@ -12002,8 +12451,8 @@
       <div class="news-topic-row${pin ? "" : " is-readonly"}" data-topic-id="${escapeHtml(id)}">
         <button class="news-topic-open" type="button" data-action="open-topic" data-id="${escapeHtml(id)}">
           <span>${escapeHtml(newsfeedTopicIcon(topic))}</span>
-          <strong>${escapeHtml(topic.title || "Topic")}</strong>
-          <small>${escapeHtml(topic.last_updated_label || topic.description || "")}</small>
+          <strong>${escapeHtml(newsfeedTopicText(topic) || "Topic")}</strong>
+          <small>${escapeHtml(newsfeedTopicUpdatedText(topic))}</small>
         </button>
         ${pin}
       </div>
@@ -12076,7 +12525,7 @@
     });
     const data = await response.json().catch(() => ({}));
     if (!response.ok) {
-      const error = new Error(data.detail || data.error || "Newsfeed request failed.");
+      const error = new Error(localizedServiceMessage(data.detail || data.error, "Newsfeed request failed."));
       error.status = response.status;
       error.code = String(data.code || data.stage_code || "");
       error.data = data;
@@ -12366,7 +12815,13 @@
       { value: "china", label: "China" },
       { value: "usa", label: "USA" },
     ];
-    const options = Array.isArray(state.regionOptions) && state.regionOptions.length ? state.regionOptions : defaults;
+    const options = (Array.isArray(state.regionOptions) && state.regionOptions.length ? state.regionOptions : defaults)
+      .map((item) => ({
+        ...item,
+        label: isLocalizedContentPage()
+          ? NEWSFEED_REGION_COPY[String(item && item.value || "")] || item.label
+          : item.label,
+      }));
     const selected = normalizeNewsfeedRegionsClient(state.preferredRegions);
     const custom = selected
       .filter((value) => !options.some((item) => item.value === value))
@@ -12383,7 +12838,8 @@
     const params = new URLSearchParams();
     if (options.force || state.preferencesReady) {
       normalizeNewsfeedRegionsClient(state.preferredRegions).forEach((region) => params.append("regions", region));
-      params.set("language", newsfeedLanguageCode(state.interfaceLanguage || state.outputLanguage || "en"));
+      params.set("language", newsfeedFixedInterfaceLanguage()
+        || newsfeedLanguageCode(state.interfaceLanguage || state.outputLanguage || "en"));
       const regions = params.getAll("regions");
       params.delete("regions");
       params.set("regions", regions.join(","));
@@ -12393,8 +12849,14 @@
 
   function applyNewsfeedSettings(state, settings = {}) {
     state.settings = settings || state.settings || {};
-    state.interfaceLanguage = newsfeedLanguageCode(settings.interface_language || state.interfaceLanguage || "en");
-    state.outputLanguage = newsfeedLanguageCode(settings.interface_language || state.outputLanguage || settings.digest_language || "en");
+    const fixedInterfaceLanguage = newsfeedFixedInterfaceLanguage();
+    if (fixedInterfaceLanguage) {
+      state.interfaceLanguage = fixedInterfaceLanguage;
+      state.outputLanguage = newsfeedLanguageCode(settings.digest_language || state.outputLanguage || fixedInterfaceLanguage);
+    } else {
+      state.interfaceLanguage = newsfeedLanguageCode(settings.interface_language || state.interfaceLanguage || "en");
+      state.outputLanguage = newsfeedLanguageCode(settings.interface_language || state.outputLanguage || settings.digest_language || "en");
+    }
     state.preferredRegions = normalizeNewsfeedRegionsClient(settings.preferred_regions || state.preferredRegions || ["global"]);
     state.preferencesReady = true;
   }
@@ -12405,6 +12867,20 @@
       ["zh-CN", "中文"],
       ["ja", "日本語"],
       ["ko", "한국어"],
+    ];
+    if (isLocalizedContentPage()) languages.push(["ar", "العربية"]);
+    return languages.map(([value, label]) => `
+      <option value="${escapeHtml(value)}" ${value === selected ? "selected" : ""}>${escapeHtml(label)}</option>
+    `).join("");
+  }
+
+  function newsfeedInterfaceLanguageOptions(selected = "en") {
+    if (!newsfeedFixedInterfaceLanguage()) return newsfeedLanguageOptions(selected);
+    const languages = [
+      ["zh-CN", "中文"],
+      ["ja", "日本語"],
+      ["ko", "한국어"],
+      ["ar", "العربية"],
     ];
     return languages.map(([value, label]) => `
       <option value="${escapeHtml(value)}" ${value === selected ? "selected" : ""}>${escapeHtml(label)}</option>
@@ -12431,7 +12907,7 @@
       const id = String(topic && topic.id || "").trim();
       if (!id || seen.has(id)) continue;
       seen.add(id);
-      options.push(`<option value="${escapeHtml(id)}" ${id === selected ? "selected" : ""}>${escapeHtml(topic.title || id)}</option>`);
+      options.push(`<option value="${escapeHtml(id)}" ${id === selected ? "selected" : ""}>${escapeHtml(newsfeedTopicText(topic) || id)}</option>`);
     }
     return options.join("");
   }
@@ -12444,7 +12920,7 @@
       digest_send_time: document.getElementById("newsEmailTime")?.value || "09:00",
       digest_timezone: document.getElementById("newsEmailTimezone")?.value || "Asia/Shanghai",
       digest_language: document.getElementById("newsEmailLanguage")?.value || state.outputLanguage || "en",
-      interface_language: state.interfaceLanguage || "en",
+      interface_language: newsfeedFixedInterfaceLanguage() || state.interfaceLanguage || "en",
       preferred_regions: state.preferredRegions || ["global"],
     };
   }
@@ -12454,8 +12930,11 @@
     if (!result) return "";
     const at = settings.digest_last_attempt_at || settings.digest_last_sent_at || "";
     const when = at ? newsfeedTimeLabel(at) : "";
-    const detail = settings.digest_last_send_detail ? ` · ${settings.digest_last_send_detail}` : "";
-    return `Last email attempt: ${result}${when ? ` · ${when}` : ""}${detail}`;
+    const visibleResult = localizedServiceMessage(result, "Email delivery status updated.");
+    const detail = settings.digest_last_send_detail
+      ? ` · ${localizedServiceMessage(settings.digest_last_send_detail, "Email delivery details are unavailable.")}`
+      : "";
+    return `Last email attempt: ${visibleResult}${when ? ` · ${when}` : ""}${detail}`;
   }
 
   function renderNewsfeedPreferences(state) {
@@ -12492,7 +12971,7 @@
       </div>
       <label class="news-inline-select">
         <span>${escapeHtml(newsfeedText(state, "language"))}</span>
-        <select id="newsInterfaceLanguage">${newsfeedLanguageOptions(state.interfaceLanguage || "en")}</select>
+        <select id="newsInterfaceLanguage">${newsfeedInterfaceLanguageOptions(state.interfaceLanguage || "en")}</select>
       </label>
     `;
   }
@@ -12604,11 +13083,11 @@
       <section class="newsfeed-section">
         <div class="newsfeed-section-heading">
           <h2>${escapeHtml(newsfeedText(state, "topHeadlines"))}</h2>
-          <span>${escapeHtml(home.updated_label || "")}</span>
+          <span>${escapeHtml(isLocalizedContentPage() ? newsfeedTimeLabel(home.updated_at) : home.updated_label || "")}</span>
         </div>
         <div class="news-category-tabs">
           ${categories.map((item) => `
-            <button type="button" data-action="home-category" data-category="${escapeHtml(item)}" class="${item === category ? "is-active" : ""}">${escapeHtml(item)}</button>
+            <button type="button" data-action="home-category" data-category="${escapeHtml(item)}" class="${item === category ? "is-active" : ""}">${escapeHtml(newsfeedCategoryText(item))}</button>
           `).join("")}
         </div>
         <div class="news-story-list">
@@ -12660,7 +13139,7 @@
           <span>${policy.unlimited ? escapeHtml(newsfeedText(state, "suggestedTopics")) : `还可创建 ${escapeHtml(policy.custom_topic_remaining || 0)} 个`}</span>
         </div>
         <div class="news-suggested-list">
-          ${suggestions.map((topic) => `<button type="button" data-action="suggest-topic" data-topic="${escapeHtml(topic)}">${escapeHtml(topic)}</button>`).join("")}
+          ${suggestions.map((topic) => `<button type="button" data-action="suggest-topic" data-topic="${escapeHtml(topic)}">${escapeHtml(newsfeedSuggestedTopicText(topic))}</button>`).join("")}
         </div>
         <div class="news-language-row">
           <label for="newsTopicLanguage">${escapeHtml(newsfeedText(state, "outputLanguage"))}</label>
@@ -12693,7 +13172,7 @@
       <section class="newsfeed-section">
         <div class="news-category-tabs news-category-tabs-large">
           ${categories.map((item) => `
-            <button type="button" data-action="explore-category" data-category="${escapeHtml(item)}" class="${item === category ? "is-active" : ""}">${escapeHtml(item)}</button>
+            <button type="button" data-action="explore-category" data-category="${escapeHtml(item)}" class="${item === category ? "is-active" : ""}">${escapeHtml(newsfeedCategoryText(item))}</button>
           `).join("")}
         </div>
         <div class="news-story-list news-story-list-cards">
@@ -12716,7 +13195,9 @@
     const content = document.getElementById("newsfeedContent");
     if (!content) return;
     rememberNewsfeedArticles(state, items || [], topic);
-    setNewsfeedTitle(topic && topic.title || "Topic");
+    const topicTitle = newsfeedTopicText(topic) || "Topic";
+    const topicDescription = newsfeedTopicText(topic, "description");
+    setNewsfeedTitle(topicTitle);
     updateNewsfeedTabs("topic");
     state.currentView = "topic";
     state.currentTopic = topic;
@@ -12725,8 +13206,8 @@
       <section class="news-topic-hero">
         <div>
           <span class="news-topic-mark">“</span>
-          <h2>${escapeHtml(topic && topic.title || "Topic")}</h2>
-          <p>${escapeHtml(topic && topic.description || "")}</p>
+          <h2>${escapeHtml(topicTitle)}</h2>
+          <p>${escapeHtml(topicDescription)}</p>
         </div>
         <div class="news-topic-source-line">
           <span>Sources</span>
@@ -12736,7 +13217,7 @@
       <section class="newsfeed-section">
         <div class="newsfeed-section-heading">
           <h2>Top Stories</h2>
-          <span>${escapeHtml(topic && topic.updated_label || "")}</span>
+          <span>${escapeHtml(newsfeedTopicUpdatedText(topic))}</span>
         </div>
         <div class="news-story-list news-story-list-cards">
           ${(items || []).slice(0, 24).map((item, index) => newsfeedStoryCard(item, index + 1, { featured: index === 0 })).join("") || '<div class="newsfeed-empty">No stories yet.</div>'}
@@ -12801,7 +13282,7 @@
       });
       if (!response.ok) {
         const data = await response.json().catch(() => ({}));
-        throw new Error(data.detail || "Could not load story.");
+        throw new Error(localizedServiceMessage(data.detail, "Could not load story."));
       }
       if (!response.body) {
         const data = await response.json();
@@ -12828,7 +13309,7 @@
         }
       }
     } catch (error) {
-      narrative.textContent = error.message || "Could not load story.";
+      narrative.textContent = localizedServiceMessage(error.message, "Could not load story.");
     }
   }
 
@@ -12959,7 +13440,7 @@
       window.speechSynthesis.speak(utterance);
     } catch (error) {
       stopNewsfeedBriefing(state);
-      renderNewsfeedBriefingPanel(state, { status: error.message || "Could not prepare briefing." });
+      renderNewsfeedBriefingPanel(state, { status: localizedServiceMessage(error.message, "Could not prepare briefing.") });
     }
   }
 
@@ -12976,6 +13457,7 @@
     let session = loadAuthSession();
     renderNewsfeedBoot(app, "Preparing General Newsfeed...");
     session = await refreshAuthSession(workerUrl);
+    const defaultLanguage = newsfeedDefaultLanguage();
 
     const state = {
       workerUrl,
@@ -12991,10 +13473,10 @@
       lastListView: "feed",
       homeCategory: "Investment",
       exploreCategory: "Tech",
-      outputLanguage: "en",
-      interfaceLanguage: "en",
+      outputLanguage: defaultLanguage,
+      interfaceLanguage: defaultLanguage,
       preferredRegions: ["global"],
-      preferencesReady: false,
+      preferencesReady: defaultLanguage !== "en",
       regionOptions: [],
       briefingPlaying: false,
       briefingProgress: 0,
@@ -13077,7 +13559,9 @@
           }
         })
         .catch((error) => {
-          if (epoch === state.requestEpoch) setNewsfeedStatus(error.message || "Newsfeed request failed.", "error");
+          if (epoch === state.requestEpoch) {
+            setNewsfeedStatus(localizedServiceMessage(error.message, "Newsfeed request failed."), "error");
+          }
         });
       return fast;
     }
@@ -13239,7 +13723,10 @@
               ? (isTest
                 ? `Test digest accepted by ${data.provider || "email provider"}.${idSuffix}`
                 : `Newsletter accepted by ${data.provider || "email provider"}.${idSuffix}`)
-              : (data.detail || state.settings.digest_last_send_detail || (isTest ? "Test email was not sent." : "Newsletter email was not sent."));
+              : localizedServiceMessage(
+                data.detail || state.settings.digest_last_send_detail,
+                isTest ? "Test email was not sent." : "Newsletter email was not sent.",
+              );
           }
           trackNewsfeedInteraction(state, isTest ? "email_test" : "email_send", {
             outcome: data.sent ? "success" : "error",
@@ -13334,7 +13821,7 @@
         }
       } catch (error) {
         trackNewsfeedInteraction(state, "ui_error", { outcome: "error", reason: error.code || "request_failed" });
-        setNewsfeedStatus(error.message || "Newsfeed request failed.", "error");
+        setNewsfeedStatus(localizedServiceMessage(error.message, "Newsfeed request failed."), "error");
       }
     });
 
@@ -13385,7 +13872,7 @@
             trackNewsfeedInteraction(state, "topic_create", { outcome: "limit", requested_topic: topic });
           } else if (status) {
             status.className = "status-line error";
-            status.textContent = error.message || "Could not create topic.";
+            status.textContent = localizedServiceMessage(error.message, "Could not create topic.");
             trackNewsfeedInteraction(state, "topic_create", { outcome: "error", requested_topic: topic, reason: error.code || "request_failed" });
           }
         } finally {
@@ -13438,14 +13925,14 @@
           applyNewsfeedPolicy(state, data);
           if (status) {
             status.className = "status-line ok";
-            status.textContent = data.detail || "申请已提交，我们会后续处理。";
+            status.textContent = localizedServiceMessage(data.detail, "申请已提交，我们会后续处理。");
           }
           if (submit) submit.textContent = "已提交";
           trackNewsfeedInteraction(state, "topic_request", { outcome: "success", requested_topic: topic });
         } catch (error) {
           if (status) {
             status.className = "status-line error";
-            status.textContent = error.message || "申请提交失败，请稍后重试。";
+            status.textContent = localizedServiceMessage(error.message, "申请提交失败，请稍后重试。");
           }
           if (submit) {
             submit.disabled = false;
@@ -13499,7 +13986,7 @@
         } catch (error) {
           if (status) {
             status.className = "status-line error";
-            status.textContent = error.message || "Could not save email settings.";
+            status.textContent = localizedServiceMessage(error.message, "Could not save email settings.");
           }
           trackNewsfeedInteraction(state, "email_subscription", { outcome: "error", reason: error.code || "request_failed" });
         } finally {
@@ -13524,6 +14011,12 @@
         }
         if (target && target.id === "newsInterfaceLanguage") {
           if (!(newsfeedCanCustomize(state) || newsfeedCanSubscribe(state))) return;
+          const fixedInterfaceLanguage = newsfeedFixedInterfaceLanguage();
+          if (fixedInterfaceLanguage) {
+            const nextUrl = newsfeedInterfaceNavigationUrl(target.value || fixedInterfaceLanguage);
+            if (nextUrl) window.location.href = nextUrl;
+            return;
+          }
           state.interfaceLanguage = newsfeedLanguageCode(target.value || "en");
           state.outputLanguage = state.interfaceLanguage;
           await saveNewsfeedPreferences(true);
@@ -13541,7 +14034,7 @@
         }
       } catch (error) {
         trackNewsfeedInteraction(state, "preferences_save", { outcome: "error", reason: error.code || "request_failed" });
-        setNewsfeedStatus(error.message || "Could not save preferences.", "error");
+        setNewsfeedStatus(localizedServiceMessage(error.message, "Could not save preferences."), "error");
       }
     });
 
@@ -14492,14 +14985,14 @@
       const cards = Array.from(catalog.querySelectorAll("[data-course-index]"));
       const courseGroups = Array.from(catalog.querySelectorAll("[data-course-group]"));
       const applyFilters = () => {
-        const query = String(searchInput && searchInput.value || "").trim().toLocaleLowerCase("zh-CN");
+        const query = localeSearchText(searchInput && searchInput.value).trim();
         const selectedCategory = String(categoryFilter && categoryFilter.value || "");
         let visibleCount = 0;
         cards.forEach((card) => {
           const index = Number(card.dataset.courseIndex);
           const product = Number.isInteger(index) ? products[index] : null;
           const searchable = product
-            ? [product.id, product.category, product.title, product.summary, product.audience].join(" ").toLocaleLowerCase("zh-CN")
+            ? localeSearchText([product.id, product.category, product.title, product.summary, product.audience].join(" "))
             : "";
           const visible = Boolean(
             product

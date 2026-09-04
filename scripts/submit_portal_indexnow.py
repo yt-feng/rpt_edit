@@ -15,7 +15,7 @@ import re
 import time
 from typing import Any
 from urllib.error import HTTPError, URLError
-from urllib.parse import quote, unquote, urlsplit
+from urllib.parse import quote, unquote, urlsplit, urlunsplit
 from urllib.request import Request, urlopen
 import xml.etree.ElementTree as ET
 
@@ -24,6 +24,7 @@ DEFAULT_BASE_URL = "https://portal.example.invalid"
 DEFAULT_ENDPOINT = "https://api.indexnow.org/indexnow"
 DEFAULT_KEY = "b7c3e9a41d8f52e604a71bc93f2d6e80"
 MAX_URLS_PER_REQUEST = 10_000
+LOCALIZED_LOCALES = ("ko", "ja", "ar")
 FINGERPRINT_KEYS = (
     "title",
     "title_zh",
@@ -110,6 +111,42 @@ def url_identity(value: str) -> tuple[str, str, str] | None:
     return parsed.scheme.lower(), f"{parsed.hostname.lower()}{port}", path
 
 
+def url_locale(value: str, base_url: str) -> str | None:
+    identity = url_identity(value)
+    base_identity = url_identity(base_url.rstrip("/") + "/")
+    if not identity or not base_identity or identity[:2] != base_identity[:2]:
+        return None
+    match = re.match(r"^/(ko|ja|ar)(?=/|$)", identity[2], flags=re.I)
+    return match.group(1).lower() if match else None
+
+
+def localized_variant_url(value: str, base_url: str, locale: str) -> str | None:
+    """Map a same-origin canonical URL to one stable locale-prefixed URL."""
+    if locale not in LOCALIZED_LOCALES:
+        return None
+    identity = url_identity(value)
+    base_identity = url_identity(base_url.rstrip("/") + "/")
+    if not identity or not base_identity or identity[:2] != base_identity[:2]:
+        return None
+    parsed = urlsplit(value)
+    root_path = re.sub(r"^/(?:ko|ja|ar)(?=/|$)", "", parsed.path, count=1, flags=re.I)
+    if not root_path.startswith("/"):
+        root_path = "/" + root_path
+    localized_path = f"/{locale}{root_path}"
+    return urlunsplit((parsed.scheme, parsed.netloc, localized_path, parsed.query, parsed.fragment))
+
+
+def source_variant_url(value: str, base_url: str) -> str | None:
+    """Map a same-origin locale URL back to its unprefixed canonical URL."""
+    identity = url_identity(value)
+    base_identity = url_identity(base_url.rstrip("/") + "/")
+    if not identity or not base_identity or identity[:2] != base_identity[:2]:
+        return None
+    parsed = urlsplit(value)
+    root_path = re.sub(r"^/(?:ko|ja|ar)(?=/|$)", "", parsed.path, count=1, flags=re.I) or "/"
+    return urlunsplit((parsed.scheme, parsed.netloc, root_path, parsed.query, parsed.fragment))
+
+
 def load_sitemap(path: Path | None) -> dict[str, str]:
     """Load canonical URL/lastmod pairs from a local urlset or sitemap index.
 
@@ -155,6 +192,23 @@ def load_sitemap(path: Path | None) -> dict[str, str]:
 
 def compact_xml_text(node: ET.Element | None) -> str:
     return " ".join(str(node.text or "").split()) if node is not None else ""
+
+
+def load_localized_sitemaps(site_dir: Path | None, base_url: str) -> dict[str, dict[str, str]]:
+    """Load same-origin URLs from locale sitemap files in the current release."""
+    if not site_dir or not site_dir.is_dir():
+        return {}
+    localized: dict[str, dict[str, str]] = {}
+    for locale in LOCALIZED_LOCALES:
+        path = site_dir / f"sitemap-{locale}.xml"
+        if not path.is_file():
+            continue
+        localized[locale] = {
+            url: lastmod
+            for url, lastmod in load_sitemap(path).items()
+            if url_locale(url, base_url) == locale
+        }
+    return localized
 
 
 class _DiscoveryHtmlParser(HTMLParser):
@@ -208,6 +262,25 @@ def is_indexable_self_canonical(site_dir: Path, url: str, base_url: str) -> bool
     return bool(expected and any(url_identity(value) == expected for value in parser.canonicals))
 
 
+def localized_page_bytes_changed(
+    site_dir: Path,
+    previous_site_dir: Path | None,
+    url: str,
+    base_url: str,
+) -> bool:
+    """Return whether one locale page changed between complete static releases."""
+    if previous_site_dir is None:
+        return False
+    current_path = site_path_for_url(site_dir, url, base_url)
+    previous_path = site_path_for_url(previous_site_dir, url, base_url)
+    if not current_path or not previous_path or not current_path.is_file() or not previous_path.is_file():
+        return False
+    try:
+        return current_path.read_bytes() != previous_path.read_bytes()
+    except OSError:
+        return False
+
+
 def is_planned_retirement(site_dir: Path, url: str, base_url: str) -> bool:
     """A missing release file will resolve as 404 after the static slot switch.
 
@@ -245,7 +318,8 @@ def is_blog_article_url(url: str, base_url: str) -> bool:
     base_identity = url_identity(base_url.rstrip("/") + "/")
     if not identity or not base_identity or identity[:2] != base_identity[:2]:
         return False
-    return bool(re.fullmatch(r"/blog/(?!page-\d+\.html$)[^/]+\.html", identity[2]))
+    path = re.sub(r"^/(?:ko|ja|ar)(?=/|$)", "", identity[2], count=1, flags=re.I)
+    return bool(re.fullmatch(r"/blog/(?!page-\d+\.html$)[^/]+\.html", path))
 
 
 def is_bernstein_item(item: dict[str, Any] | None) -> bool:
@@ -266,12 +340,50 @@ def build_submission_plan(
     site_dir: Path,
     base_url: str,
     lookback_days: int,
+    previous_site_dir: Path | None = None,
 ) -> SubmissionPlan:
     """Build a deployment delta containing only canonical, indexable URLs."""
     plan = SubmissionPlan()
     base = base_url.rstrip("/")
     current = item_map(catalog)
     previous = item_map(previous_catalog)
+    localized_sitemaps = load_localized_sitemaps(site_dir, base_url)
+    previous_localized_sitemaps = load_localized_sitemaps(previous_site_dir, base_url)
+    # A caller may explicitly supply a root sitemap index which already
+    # contains locale URLs. Keep those entries eligible even when the locale
+    # sitemap files are not separately available beside the static release.
+    for locale in LOCALIZED_LOCALES:
+        supplied_current = {
+            url: lastmod
+            for url, lastmod in current_sitemap.items()
+            if url_locale(url, base_url) == locale
+        }
+        if supplied_current:
+            localized_sitemaps.setdefault(locale, {}).update(supplied_current)
+        supplied_previous = {
+            url: lastmod
+            for url, lastmod in previous_sitemap.items()
+            if url_locale(url, base_url) == locale
+        }
+        if supplied_previous:
+            previous_localized_sitemaps.setdefault(locale, {}).update(supplied_previous)
+
+    # Main-site deltas stay independent from locale sitemap deltas. This keeps
+    # the established Chinese URL behavior unchanged even when callers pass a
+    # root sitemap index that expands to both source and locale URLs.
+    current_sitemap = {
+        url: lastmod
+        for url, lastmod in current_sitemap.items()
+        if url_locale(url, base_url) is None
+    }
+    previous_sitemap = {
+        url: lastmod
+        for url, lastmod in previous_sitemap.items()
+        if url_locale(url, base_url) is None
+    }
+    all_current_sitemap = dict(current_sitemap)
+    for entries in localized_sitemaps.values():
+        all_current_sitemap.update(entries)
 
     if previous:
         added_reports = set(current) - set(previous)
@@ -309,19 +421,35 @@ def build_submission_plan(
     updated_reports = catalog_updated_reports | sitemap_updated_reports
 
     def add_current(url: str, reason: str) -> None:
-        if url not in current_sitemap:
+        if url not in all_current_sitemap:
             plan.skipped_reason_counts["current_not_in_canonical_sitemap"] += 1
             return
         if not is_indexable_self_canonical(site_dir, url, base_url):
             plan.skipped_reason_counts["current_not_indexable_self_canonical"] += 1
             return
         plan.add(url, reason)
+        if url_locale(url, base_url) is not None:
+            return
+        for locale, entries in localized_sitemaps.items():
+            localized_url = localized_variant_url(url, base_url, locale)
+            if not localized_url or localized_url not in entries:
+                plan.skipped_reason_counts["locale_not_in_canonical_sitemap"] += 1
+                continue
+            if not is_indexable_self_canonical(site_dir, localized_url, base_url):
+                plan.skipped_reason_counts["locale_not_indexable_self_canonical"] += 1
+                continue
+            plan.add(localized_url, reason)
 
-    def add_retired(url: str, reason: str) -> None:
-        if url not in previous_sitemap:
+    def add_retired(
+        url: str,
+        reason: str,
+        previous_inventory: dict[str, str] = previous_sitemap,
+        current_inventory: dict[str, str] = current_sitemap,
+    ) -> None:
+        if url not in previous_inventory:
             plan.skipped_reason_counts["retired_not_in_previous_sitemap"] += 1
             return
-        if url in current_sitemap:
+        if url in current_inventory:
             plan.skipped_reason_counts["retired_still_in_current_sitemap"] += 1
             return
         if not is_planned_retirement(site_dir, url, base_url):
@@ -404,6 +532,33 @@ def build_submission_plan(
     for url in sorted(retired_pages):
         add_retired(url, "page_retired")
 
+    # Locale URLs have their own canonical sitemap lifecycle. Compare the
+    # previous and current locale inventories directly so locale-only additions,
+    # translated HTML changes, and removals are submitted even when the
+    # source-language page and its inherited sitemap lastmod did not change.
+    for locale in LOCALIZED_LOCALES:
+        previous_entries = previous_localized_sitemaps.get(locale, {})
+        current_entries = localized_sitemaps.get(locale, {})
+        for localized_url in sorted(set(current_entries) - set(previous_entries)):
+            add_current(localized_url, "locale_added")
+        for localized_url in sorted(set(current_entries) & set(previous_entries)):
+            if localized_page_bytes_changed(site_dir, previous_site_dir, localized_url, base_url):
+                add_current(localized_url, "locale_updated")
+        for localized_url in sorted(set(previous_entries) - set(current_entries)):
+            source_url = source_variant_url(localized_url, base_url)
+            if source_url in report_detail_urls:
+                reason = "report_retired"
+            elif source_url and is_blog_article_url(source_url, base_url):
+                reason = "blog_retired"
+            else:
+                reason = "page_retired"
+            add_retired(
+                localized_url,
+                reason,
+                previous_inventory=previous_entries,
+                current_inventory=current_entries,
+            )
+
     report_delta = bool(added_reports or updated_reports or retired_reports)
     blog_delta = bool(added_blog or updated_blog or retired_blog)
     if report_delta or blog_delta:
@@ -444,6 +599,10 @@ def discover_public_site_urls(site_dir: Path | None, base_url: str) -> list[str]
             if relative == "blog/index.html":
                 continue
             urls.append(f"{base}/{quote(relative, safe='/.-_~')}")
+    for entries in load_localized_sitemaps(site_dir, base_url).values():
+        for url in sorted(entries):
+            if is_indexable_self_canonical(site_dir, url, base_url):
+                urls.append(url)
     return list(dict.fromkeys(urls))
 
 
@@ -549,6 +708,7 @@ def main() -> int:
     parser.add_argument("--site-dir", default="")
     parser.add_argument("--sitemap", default="")
     parser.add_argument("--previous-sitemap", default="")
+    parser.add_argument("--previous-site-dir", default="")
     parser.add_argument("--base-url", default=DEFAULT_BASE_URL)
     parser.add_argument("--endpoint", default=DEFAULT_ENDPOINT)
     parser.add_argument("--key", default=os.environ.get("INDEXNOW_KEY") or DEFAULT_KEY)
@@ -569,6 +729,9 @@ def main() -> int:
     site_dir = Path(args.site_dir) if args.site_dir else Path("__missing_static_release__")
     sitemap_path = Path(args.sitemap) if args.sitemap else site_dir / "sitemap-baidu.xml"
     previous_sitemap_path = Path(args.previous_sitemap) if args.previous_sitemap else None
+    previous_site_dir = Path(args.previous_site_dir) if args.previous_site_dir else None
+    if previous_site_dir is not None and not previous_site_dir.is_dir():
+        raise SystemExit(f"Previous static release directory is missing: {previous_site_dir}")
     current_sitemap = load_sitemap(sitemap_path)
     previous_sitemap = load_sitemap(previous_sitemap_path)
     if args.sitemap and not current_sitemap:
@@ -583,6 +746,7 @@ def main() -> int:
         site_dir,
         args.base_url,
         args.lookback_days,
+        previous_site_dir,
     )
     urls = plan.urls
     key_location = f"{args.base_url.rstrip('/')}/{args.key}.txt"

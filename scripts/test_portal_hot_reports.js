@@ -138,13 +138,83 @@ assert.equal(searchSandbox.result.oneMatch.hidden, true, "recommendations must s
 assert.equal(searchSandbox.result.allZero.hidden, false, "recommendations may render after every source successfully returns zero");
 assert.match(searchSandbox.result.allZero.html, /latest-report/);
 
+function serviceMessageFor(locale, value, fallback) {
+  const messageSandbox = {};
+  vm.runInNewContext(`
+    const CONTENT_LOCALE = ${JSON.stringify(locale)};
+    function publicMessageText(value, fallback = "") { return String(value || fallback || ""); }
+    ${extractFunction(app, "isLocalizedContentPage")}
+    ${extractFunction(app, "localizedServiceMessage")}
+    result = localizedServiceMessage(${JSON.stringify(value)}, ${JSON.stringify(fallback)});
+  `, messageSandbox);
+  return messageSandbox.result;
+}
+
+for (const locale of ["ko", "ja", "ar"]) {
+  assert.equal(
+    serviceMessageFor(locale, "上游暂时不可用 / upstream unavailable", "Localized fallback"),
+    "Localized fallback",
+    `${locale} pages must not expose a mixed-language server detail`,
+  );
+}
+assert.equal(
+  serviceMessageFor("zh-Hans", "保留现有服务端详情", "通用提示"),
+  "保留现有服务端详情",
+  "the Chinese root keeps its established server-detail behavior",
+);
+assert.match(
+  extractAsyncFunction(app, "requestHotReportPage"),
+  /localizedServiceMessage\(data\.detail, "近期热门报告读取失败。"\)/,
+  "localized Hot Report failures must use translated generic copy",
+);
+assert.match(
+  app,
+  /warning: data\.warning[\s\S]{0,240}localizedServiceMessage\(data\.warning, "The upstream source is temporarily unavailable; cached results may be shown\."\)/,
+  "localized external-search warnings must not display the source-language Worker warning",
+);
+
 assert.match(indexHtml, /id="hotReportsSection"[\s\S]*?id="hotReportsResults"/, "the home page must expose the hot-report section");
 assert.match(indexHtml, /3个月及以上会员可下载全文/);
 assert.match(indexHtml, /id="hotReportsPrev"[\s\S]*?id="hotReportsPageInfo"[\s\S]*?id="hotReportsNext"/, "hot reports must expose accessible page navigation");
 assert.match(indexHtml, /id="hotReportsRetry"[\s\S]*?重新加载/, "a failed page request must offer an explicit retry action");
-assert.match(app, /fetch\(hotReportRequestUrl\(cleanQuery, cursor\), \{ signal: controller\.signal \}\)/, "the home UI must load indexed hot-report pages");
+assert.match(app, /fetch\(hotReportRequestUrl\(cleanQuery, cursor, localeIds\), \{ signal: controller\.signal \}\)/, "the home UI must load indexed hot-report pages");
 assert.match(extractFunction(app, "loadAdminHotReports"), /URLSearchParams\(\{ limit: "60" \}\)[\s\S]*?params\.set\("cursor", cursor\)/, "the admin UI must follow every indexed hot-report page");
 assert.match(app, /const HOT_REPORT_PAGE_SIZE = 24/, "the home page must request a small first page");
+assert.match(
+  app,
+  /HOT_REPORT_FIRST_PAGE_CACHE_KEY = CONTENT_LOCALE === "zh-Hans"[\s\S]*?"portal_hot_report_first_page_v1"[\s\S]*?`portal_hot_report_first_page_v1:\$\{CONTENT_LOCALE\}`/,
+  "the browser first-page cache must be isolated by content locale",
+);
+assert.match(
+  extractAsyncFunction(app, "requestHotReportPage"),
+  /PortalLocale\.localizeHotReports[\s\S]*?await hotReportLocalizer\(data\)[\s\S]*?applyHotReportPayload\(data/,
+  "dynamic Hot Reports must localize the public API response before applying it",
+);
+assert.match(
+  extractFunction(app, "applyHotReportPayload"),
+  /cacheFirstPage[\s\S]*?writeHotReportFirstPageCache/,
+  "only an explicitly cacheable applied payload may write the locale-specific first-page cache",
+);
+assert.match(
+  extractFunction(app, "applyHotReportPayload"),
+  /locale_translation_pending === true[\s\S]*?!translationPending && cacheFirstPage/,
+  "translation-pending Hot Report responses must never enter the localized first-page cache",
+);
+assert.match(
+  extractFunction(app, "applyHotReportPayload"),
+  /translationPending \? "翻译正在更新，请稍后再试。"/,
+  "localized pages must visibly explain that Hot Report translations are being refreshed",
+);
+assert.match(
+  extractAsyncFunction(app, "requestHotReportPage"),
+  /PortalLocale\.matchHotReportLocaleIds[\s\S]*?await localeMatcher\(cleanQuery\)[\s\S]*?hotReportRequestUrl\(cleanQuery, cursor, localeIds\)/,
+  "localized Hot Report searches must resolve compact-overlay IDs before calling the source-language API",
+);
+assert.match(
+  extractAsyncFunction(app, "fetchDocDetailItem"),
+  /PortalLocale\.localizeHotReports[\s\S]*?generation: String\(merged\.hot_report_generation \|\| ""\)[\s\S]*?locale_translation_pending === true\) return merged;[\s\S]*?rememberDocItem\(merged\)/,
+  "Hot Report item responses must preserve localized merged data when translation is pending and only cache translated detail",
+);
 assert.match(app, /controller\.abort\(\);[\s\S]*?5_000/, "the first-page deadline must fail fast instead of waiting twelve seconds");
 assert.match(app, /hotReportRetryQuery = cleanQuery[\s\S]*?loadHotReports\(hotReportRetryQuery !== null/, "retry must restart the failed query from page one without reusing a stale cursor");
 assert.match(app, /params\.set\("q", query\)/, "hot-report searches must be sent to the server instead of filtering one loaded page");
@@ -155,6 +225,41 @@ assert.doesNotMatch(extractFunction(app, "requestHotReportPage"), /catch \(error
 assert.match(app, /id="accountAdminHotReportForm"[\s\S]*?name="pdf"/, "the admin UI must expose PDF upload fields");
 assert.match(app, /url:\s*`\$\{workerUrl\}\/account-admin\/hot-report`/, "the admin upload form must call the protected upload endpoint");
 assert.match(app, /hot-reports\/access\?report_id=/, "hot-report detail pages must query the dedicated access endpoint");
+
+const localeUrlSandbox = { URLSearchParams };
+vm.runInNewContext(`
+  const HOT_REPORT_PAGE_SIZE = 24;
+  const HOT_REPORT_LOCALE_ID_LIMIT = 750;
+  const HOT_REPORT_REQUEST_URL_MAX_LENGTH = 16 * 1024;
+  const HOT_REPORT_PUBLIC_CURSOR_MAX_LENGTH = 1024;
+  const workerUrl = "https://worker.example.invalid";
+  ${extractFunction(app, "normalizeHotReportLocaleIds")}
+  ${extractFunction(app, "hotReportRequestUrl")}
+  const allIds = Array.from({ length: 750 }, (_, index) => index.toString(16).padStart(16, "0"));
+  result = {
+    absent: hotReportRequestUrl("日本語", "", null),
+    empty: hotReportRequestUrl("日本語", "", []),
+    firstPage: hotReportRequestUrl("界".repeat(200), "", allIds),
+    bounded: hotReportRequestUrl("界".repeat(200), "c".repeat(1024), allIds),
+    sanitized: hotReportRequestUrl("한국어", "", ["0123456789ABCDEF", "bad", "0123456789abcdef"]),
+  };
+`, localeUrlSandbox);
+const absentLocaleUrl = new URL(localeUrlSandbox.result.absent);
+const emptyLocaleUrl = new URL(localeUrlSandbox.result.empty);
+const boundedLocaleUrl = new URL(localeUrlSandbox.result.bounded);
+const firstPageLocaleUrl = new URL(localeUrlSandbox.result.firstPage);
+const sanitizedLocaleUrl = new URL(localeUrlSandbox.result.sanitized);
+assert.equal(absentLocaleUrl.searchParams.has("locale_ids"), false, "overlay failure must omit locale_ids");
+assert.equal(emptyLocaleUrl.searchParams.has("locale_ids"), true, "an available overlay with zero matches must remain explicit");
+assert.equal(emptyLocaleUrl.searchParams.get("locale_ids"), "");
+assert.ok(localeUrlSandbox.result.bounded.length <= 16 * 1024, "localized Hot Report URLs must stay within 16 KiB");
+assert.ok(boundedLocaleUrl.searchParams.get("locale_ids").split(",").length < 750, "the app must trim only the ID tail when the URL budget is exceeded");
+assert.equal(
+  firstPageLocaleUrl.searchParams.get("locale_ids"),
+  boundedLocaleUrl.searchParams.get("locale_ids"),
+  "the first page must reserve the maximum cursor budget so pagination keeps one locale ID signature",
+);
+assert.equal(sanitizedLocaleUrl.searchParams.get("locale_ids"), "0123456789abcdef", "the app must normalize, validate, and deduplicate locale ID suffixes");
 
 const pdfHandler = extractFunction(worker, "handleHotReportPdf");
 assert.match(pdfHandler, /const password = String\(payload\.password \|\| ""\)/);

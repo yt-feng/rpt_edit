@@ -61,6 +61,50 @@ def page(url: str, *, robots: str = "index,follow", canonical: str | None = None
     )
 
 
+def locale_page(
+    url: str,
+    *,
+    language: str,
+    direction: str | None = None,
+    canonical: str | None = None,
+    in_language: str | None = None,
+    omitted_hreflangs: set[str] | None = None,
+    hreflang_overrides: dict[str, str] | None = None,
+) -> str:
+    canonical_url = url if canonical is None else canonical
+    omitted = {value.lower() for value in (omitted_hreflangs or set())}
+    targets = {
+        "zh-Hans": SITE + "/",
+        "ko": SITE + "/ko/",
+        "ja": SITE + "/ja/",
+        "ar": SITE + "/ar/",
+        "x-default": SITE + "/",
+    }
+    targets.update(hreflang_overrides or {})
+    alternates = "".join(
+        f'<link rel="alternate" hreflang="{code}" href="{target}">'
+        for code, target in targets.items()
+        if code.lower() not in omitted
+    )
+    schema_markup = json.dumps(
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "url": url,
+            "inLanguage": language if in_language is None else in_language,
+        }
+    )
+    icon = '<link rel="icon" href="/favicon.svg">' if url == SITE + "/" else ""
+    direction_attr = f' dir="{direction}"' if direction else ""
+    return (
+        f'<!doctype html><html lang="{language}"{direction_attr}><head>'
+        '<meta name="robots" content="index,follow">'
+        f'<link rel="canonical" href="{canonical_url}">'
+        f'{alternates}{icon}<script type="application/ld+json">{schema_markup}</script>'
+        "</head><body>ok</body></html>"
+    )
+
+
 class FakeFetcher:
     def __init__(self, routes: dict[str, seo_health.FetchResult | Exception]) -> None:
         self.routes = routes
@@ -114,6 +158,45 @@ def healthy_routes() -> dict[str, seo_health.FetchResult]:
     }
 
 
+def healthy_locale_routes() -> dict[str, seo_health.FetchResult]:
+    routes = healthy_routes()
+    pages_sitemap = SITE + "/sitemap-pages.xml"
+    reports_sitemap = SITE + "/sitemap-reports-1.xml"
+    locale_sitemaps = [SITE + f"/sitemap-{locale}.xml" for locale in ("ko", "ja", "ar")]
+    routes[SITE + "/sitemap.xml"] = result(
+        200,
+        SITE + "/sitemap.xml",
+        sitemap_index(pages_sitemap, reports_sitemap, *locale_sitemaps),
+        content_type="application/xml",
+    )
+    routes[SITE + "/"] = result(
+        200,
+        SITE + "/",
+        locale_page(SITE + "/", language="zh-Hans"),
+        content_type="text/html",
+    )
+    for locale in ("ko", "ja", "ar"):
+        locale_home = SITE + f"/{locale}/"
+        locale_sitemap = SITE + f"/sitemap-{locale}.xml"
+        routes[locale_sitemap] = result(
+            200,
+            locale_sitemap,
+            urlset(locale_home),
+            content_type="application/xml",
+        )
+        routes[locale_home] = result(
+            200,
+            locale_home,
+            locale_page(
+                locale_home,
+                language=locale,
+                direction="rtl" if locale == "ar" else "ltr",
+            ),
+            content_type="text/html",
+        )
+    return routes
+
+
 def cloudflare_managed_robots(*, search: str = "yes", wildcard_rule: str = "Allow: /") -> str:
     return (
         "# BEGIN Cloudflare Managed content\n\n"
@@ -144,6 +227,20 @@ class LiveSeoAuditTests(unittest.TestCase):
         self.assertEqual(2, report["metrics"]["sitemap"]["declared_shards"])
         self.assertEqual(3, report["metrics"]["sitemap"]["total_urls"])
         self.assertEqual(3, report["metrics"]["samples"]["self_canonical"])
+        self.assertEqual(
+            {
+                "enabled": False,
+                "declared_sitemaps": [],
+                "requested": 0,
+                "http_200": 0,
+                "html_lang": 0,
+                "arabic_rtl": 0,
+                "self_canonical": 0,
+                "reciprocal_hreflang": 0,
+                "json_ld_in_language": 0,
+            },
+            report["metrics"]["locales"],
+        )
         self.assertTrue(report["metrics"]["indexnow"]["key_file_verified"])
         self.assertTrue(report["metrics"]["favicon"]["verified"])
         self.assertEqual(301, report["metrics"]["www_alias"]["status"])
@@ -151,6 +248,101 @@ class LiveSeoAuditTests(unittest.TestCase):
         self.assertNotIn("portal.example.invalid", json.dumps(report))
         self.assertIn(("https://www.portal.example.invalid/", False), fetcher.calls)
         self.assertNotIn((SITE + "/favicon.ico", True), fetcher.calls)
+        for locale in ("ko", "ja", "ar"):
+            self.assertNotIn((SITE + f"/{locale}/", True), fetcher.calls)
+        self.assertNotIn("多语言 SEO", seo_health.render_markdown(report))
+
+    def test_declared_locale_sitemaps_enable_reciprocal_locale_audit(self) -> None:
+        fetcher = FakeFetcher(healthy_locale_routes())
+
+        report = seo_health.audit_site(SITE, indexnow_key=KEY, sample_size=10, fetcher=fetcher)
+
+        self.assertTrue(report["ok"])
+        self.assertTrue(report["checks"]["locales"]["ok"])
+        self.assertEqual(5, report["metrics"]["sitemap"]["declared_shards"])
+        self.assertEqual(
+            {
+                "enabled": True,
+                "declared_sitemaps": ["ko", "ja", "ar"],
+                "requested": 3,
+                "http_200": 3,
+                "html_lang": 3,
+                "arabic_rtl": 1,
+                "self_canonical": 3,
+                "reciprocal_hreflang": 4,
+                "json_ld_in_language": 3,
+            },
+            report["metrics"]["locales"],
+        )
+        for locale in ("ko", "ja", "ar"):
+            self.assertIn((SITE + f"/{locale}/", True), fetcher.calls)
+        self.assertIn("多语言 SEO", seo_health.render_markdown(report))
+
+    def test_locale_sitemaps_must_be_declared_all_or_none(self) -> None:
+        routes = healthy_locale_routes()
+        pages_sitemap = SITE + "/sitemap-pages.xml"
+        reports_sitemap = SITE + "/sitemap-reports-1.xml"
+        routes[SITE + "/sitemap.xml"] = result(
+            200,
+            SITE + "/sitemap.xml",
+            sitemap_index(pages_sitemap, reports_sitemap, SITE + "/sitemap-ko.xml"),
+            content_type="application/xml",
+        )
+        fetcher = FakeFetcher(routes)
+
+        report = seo_health.audit_site(SITE, indexnow_key=KEY, sample_size=10, fetcher=fetcher)
+
+        self.assertFalse(report["ok"])
+        self.assertFalse(report["checks"]["locales"]["ok"])
+        self.assertFalse(report["metrics"]["locales"]["enabled"])
+        self.assertEqual(["ko"], report["metrics"]["locales"]["declared_sitemaps"])
+        self.assertEqual(0, report["metrics"]["locales"]["requested"])
+        failures = [item for item in report["failures"] if item["category"] == "locale"]
+        self.assertEqual(["sitemap_set_incomplete"], [item["code"] for item in failures])
+        self.assertIn("missing ja, ar", failures[0]["message"])
+
+    def test_enabled_locale_contract_failures_are_classified(self) -> None:
+        routes = healthy_locale_routes()
+        ko_url = SITE + "/ko/"
+        ja_url = SITE + "/ja/"
+        ar_url = SITE + "/ar/"
+        routes[ko_url] = result(503, ko_url, "unavailable", content_type="text/html")
+        routes[ja_url] = result(
+            200,
+            ja_url,
+            locale_page(
+                ja_url,
+                language="ko",
+                direction="ltr",
+                canonical=SITE + "/wrong.html",
+                in_language="ko",
+                omitted_hreflangs={"x-default"},
+            ),
+            content_type="text/html",
+        )
+        routes[ar_url] = result(
+            200,
+            ar_url,
+            locale_page(ar_url, language="ar", direction="ltr"),
+            content_type="text/html",
+        )
+
+        report = seo_health.audit_site(SITE, indexnow_key=KEY, sample_size=10, fetcher=FakeFetcher(routes))
+
+        self.assertFalse(report["ok"])
+        self.assertFalse(report["checks"]["locales"]["ok"])
+        codes = {item["code"] for item in report["failures"] if item["category"] == "locale"}
+        self.assertTrue(
+            {
+                "http_status",
+                "html_lang_mismatch",
+                "arabic_not_rtl",
+                "canonical_not_self",
+                "json_ld_in_language_missing",
+                "hreflang_count",
+            }
+            <= codes
+        )
 
     def test_cloudflare_managed_search_yes_without_sitemap_is_warning_only(self) -> None:
         routes = healthy_routes()

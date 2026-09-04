@@ -178,10 +178,12 @@ function installFetchMock(t, controls = {}) {
   const state = {
     modelCalls: 0,
     emails: [],
+    urls: [],
     ...controls,
   };
   globalThis.fetch = async (input, init = {}) => {
     const url = String(input && input.url || input);
+    state.urls.push(url);
     if (url.includes("/chat/completions")) {
       state.modelCalls += 1;
       if (typeof state.onModelCall === "function") await state.onModelCall(state.modelCalls);
@@ -229,6 +231,10 @@ test("anonymous and free users receive fixed general Newsfeed access without pai
   const bucket = new MemoryR2();
   const env = envFor(bucket, { DEEPSEEK_API_KEY: "deepseek-test" });
 
+  const rootDefault = await jsonRequest(env, "/newsfeed/home?fast=1");
+  assert.equal(rootDefault.response.status, 200, JSON.stringify(rootDefault.data));
+  assert.equal(rootDefault.data.settings.interface_language, "en");
+
   const anonymous = await jsonRequest(env, "/newsfeed/home?fast=1&regions=china&language=zh-CN");
   assert.equal(anonymous.response.status, 200, JSON.stringify(anonymous.data));
   assert.equal(anonymous.data.policy.tier, "general");
@@ -237,8 +243,12 @@ test("anonymous and free users receive fixed general Newsfeed access without pai
   assert.equal(anonymous.data.policy.can_subscribe, false);
   assert.equal(anonymous.data.custom_topic_count, 0);
   assert.equal(anonymous.data.custom_topic_remaining, 0);
-  assert.equal(anonymous.data.settings.interface_language, "en");
+  assert.equal(anonymous.data.settings.interface_language, "zh-CN");
   assert.deepEqual(anonymous.data.settings.preferred_regions, ["global"]);
+  assert.deepEqual(anonymous.data.languages.find((item) => item.code === "ar"), {
+    code: "ar",
+    label: "العربية",
+  });
   assert.equal(anonymous.data.topics.length, 5);
   assert.ok(anonymous.data.topics.every((topic) => topic.kind === "system"));
 
@@ -263,7 +273,7 @@ test("anonymous and free users receive fixed general Newsfeed access without pai
   assert.equal(freeHome.data.policy.tier, "general");
   assert.equal(freeHome.data.policy.authenticated, true);
   assert.deepEqual(freeHome.data.settings.preferred_regions, ["global"]);
-  assert.equal(freeHome.data.settings.interface_language, "en");
+  assert.equal(freeHome.data.settings.interface_language, "zh-CN");
 
   const deniedCreate = await createTopic(env, token, "Free account topic");
   assert.equal(deniedCreate.response.status, 403);
@@ -279,6 +289,96 @@ test("anonymous and free users receive fixed general Newsfeed access without pai
   assert.equal(article.status, 200);
   assert.match(await article.text(), /"type":"done"/u);
   assert.equal(fetchState.modelCalls, 0, "general article fallback and denied custom topics must not call DeepSeek");
+});
+
+test("Arabic Newsfeed uses an Arabic Google edition and never falls back to English narration", async (t) => {
+  const fetchState = installFetchMock(t);
+  const bucket = new MemoryR2();
+  const env = envFor(bucket);
+
+  const home = await jsonRequest(env, "/newsfeed/home?fast=1&regions=global&language=ar");
+  assert.equal(home.response.status, 200, JSON.stringify(home.data));
+  assert.equal(home.data.settings.interface_language, "ar");
+  assert.equal(home.data.settings.interface_language_label, "العربية");
+  assert.deepEqual(home.data.settings.preferred_regions, ["global"]);
+
+  const googleUrls = fetchState.urls
+    .filter((value) => value.startsWith("https://news.google.com/rss/search?"))
+    .map((value) => new URL(value));
+  assert.ok(googleUrls.length > 0, "Arabic global Newsfeed must query Google News RSS");
+  assert.ok(googleUrls.every((url) => (
+    url.searchParams.get("hl") === "ar"
+    && url.searchParams.get("gl") === "AE"
+    && url.searchParams.get("ceid") === "AE:ar"
+  )), "Arabic global Newsfeed must use the Arabic UAE Google News edition");
+
+  const briefing = await jsonRequest(env, "/newsfeed/briefing", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ digest: ["Markets moved after the policy update"], language: "ar" }),
+  });
+  assert.equal(briefing.response.status, 200, JSON.stringify(briefing.data));
+  assert.match(briefing.data.script, /[\u0600-\u06ff]/u);
+  assert.doesNotMatch(briefing.data.script, /This is your|Story \d|That is the current read/u);
+
+  const articleResponse = await worker.fetch(new Request("https://worker.test/newsfeed/article", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({
+      article: {
+        title: "Regional markets update",
+        source: "Reuters",
+        summary: "Investors reviewed the latest policy decision.",
+        output_language: "ar",
+      },
+    }),
+  }), env, { waitUntil() {} });
+  assert.equal(articleResponse.status, 200);
+  const events = (await articleResponse.text()).trim().split("\n").map((line) => JSON.parse(line));
+  const articleText = events.map((event) => event.text || "").join("");
+  assert.match(articleText, /[\u0600-\u06ff]/u);
+  assert.doesNotMatch(articleText, /is carrying a new story|The core read-through|For now, the feed/u);
+  assert.equal(fetchState.modelCalls, 0);
+});
+
+test("Japanese and Korean Newsfeed fallbacks keep local narration and briefing copy", () => {
+  const cases = [
+    {
+      language: "ja",
+      nativeText: /[\u3040-\u30ff]/u,
+      summaryLead: /によると/u,
+      briefingLead: /30秒ニュースブリーフ/u,
+    },
+    {
+      language: "ko",
+      nativeText: /[\uac00-\ud7af]/u,
+      summaryLead: /보도에 따르면/u,
+      briefingLead: /30초 뉴스 브리핑/u,
+    },
+  ];
+
+  for (const item of cases) {
+    const fallback = worker.__publicBrandTest.fallbackArticleNarrative({
+      title: "Regional markets update",
+      source: "Reuters",
+      summary: "Investors reviewed the latest policy decision.",
+      output_language: item.language,
+    });
+    const briefing = worker.__publicBrandTest.buildNewsfeedBriefingScript({
+      digest: ["Regional markets update"],
+      language: item.language,
+    });
+
+    assert.match(fallback.summary, item.summaryLead);
+    assert.match(fallback.narrative, item.nativeText);
+    assert.doesNotMatch(
+      `${fallback.summary}\n${fallback.narrative}`,
+      /is reporting|is carrying a new story|The core read-through|For now, the feed/u,
+    );
+    assert.match(briefing, item.briefingLead);
+    assert.match(briefing, item.nativeText);
+    assert.doesNotMatch(briefing, /This is your|Story \d|That is the current read/u);
+  }
 });
 
 test("member topic limits are atomic, tiered, unlimited for super, and recover expired reservations", async (t) => {

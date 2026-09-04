@@ -3,6 +3,7 @@
 
   const PAGE_SIZE = 24;
   const PUBLIC_BRAND = "KC桌面";
+  const CONTENT_INTL_LOCALE = window.PortalLocale && window.PortalLocale.intlLocale || "zh-CN";
   const IMAGE_ID_RE = /^[0-9a-f]{64}$/;
   const VALID_KINDS = new Set(["chart", "table", "data_map", "flow_diagram", "data_visual"]);
   const INVALID_RE = /(?:\b(?:about\s+the\s+author|analyst\s+certification|biograph(?:y|ies)|contents|copyright|disclaimer|important\s+disclosures?|legal\s+notice|table\s+of\s+contents)\b|作者(?:介绍|简介)|分析师(?:介绍|简介|声明)|版权声明|免责声明|法律声明|目录页?|重要声明|风险提示)/i;
@@ -86,8 +87,18 @@
     return text || String(fallback || "");
   }
 
+  function localeSearchText(value) {
+    const normalized = String(value || "").normalize("NFKC").toLocaleLowerCase(CONTENT_INTL_LOCALE);
+    if (!/^ar(?:-|$)/i.test(CONTENT_INTL_LOCALE)) return normalized;
+    return normalized
+      .replace(/\u0640/g, "")
+      .replace(/[\u0610-\u061a\u064b-\u065f\u0670\u06d6-\u06ed]/g, "")
+      .replace(/[إأآٱ]/g, "ا")
+      .replace(/ى/g, "ي");
+  }
+
   function folded(value) {
-    return clean(value, 10_000).normalize("NFKC").toLocaleLowerCase("zh-CN");
+    return localeSearchText(clean(value, 10_000));
   }
 
   function list(value) {
@@ -264,7 +275,7 @@
   function updatedLabel(value) {
     const timestamp = Date.parse(value);
     if (!Number.isFinite(timestamp)) return "—";
-    return new Intl.DateTimeFormat("zh-CN", {
+    return new Intl.DateTimeFormat(CONTENT_INTL_LOCALE, {
       month: "2-digit",
       day: "2-digit",
       hour: "2-digit",
@@ -354,7 +365,7 @@
     });
     rows.sort((left, right) => (
       right.dateFolder.localeCompare(left.dateFolder)
-      || left.reportTitle.localeCompare(right.reportTitle, "zh-CN")
+      || left.reportTitle.localeCompare(right.reportTitle, CONTENT_INTL_LOCALE)
       || left.ordinal - right.ordinal
       || left.imageId.localeCompare(right.imageId)
     ));
@@ -377,7 +388,7 @@
       if (row.dateFolder) dates.add(row.dateFolder);
     });
     Array.from(types.entries())
-      .sort((left, right) => left[1].localeCompare(right[1], "zh-CN"))
+      .sort((left, right) => left[1].localeCompare(right[1], CONTENT_INTL_LOCALE))
       .forEach(([value, label]) => addOption(elements.type, value, label));
     Array.from(dates)
       .sort()
@@ -466,9 +477,9 @@
     elements.gallery.replaceChildren(fragment);
     elements.empty.hidden = state.filtered.length > 0;
     elements.more.hidden = state.visible >= state.filtered.length;
-    elements.resultCount.textContent = state.filtered.length ? state.filtered.length.toLocaleString("zh-CN") + " 条" : "";
+    elements.resultCount.textContent = state.filtered.length ? state.filtered.length.toLocaleString(CONTENT_INTL_LOCALE) + " 条" : "";
     elements.resultStatus.textContent = state.filtered.length
-      ? "当前显示 " + visibleRows.length.toLocaleString("zh-CN") + " 条经视觉模型复核的有效图表。"
+      ? "当前显示 " + visibleRows.length.toLocaleString(CONTENT_INTL_LOCALE) + " 条经视觉模型复核的有效图表。"
       : "未找到匹配结果。";
     elements.results.setAttribute("aria-busy", "false");
   }
@@ -511,8 +522,8 @@
     }
     state.rows = flattenIndex(payload);
     state.filtered = state.rows.slice();
-    elements.itemCount.textContent = state.rows.length.toLocaleString("zh-CN");
-    elements.reportCount.textContent = new Set(state.rows.map((row) => row.reportId || row.reportTitle)).size.toLocaleString("zh-CN");
+    elements.itemCount.textContent = state.rows.length.toLocaleString(CONTENT_INTL_LOCALE);
+    elements.reportCount.textContent = new Set(state.rows.map((row) => row.reportId || row.reportTitle)).size.toLocaleString(CONTENT_INTL_LOCALE);
     elements.updatedAt.textContent = updatedLabel(payload.updated_at_bjt);
     populateFilters();
     render();

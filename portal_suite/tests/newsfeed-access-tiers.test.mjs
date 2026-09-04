@@ -164,6 +164,56 @@ test("public initialization has optional auth, epoch protection and auth-change 
   assert.doesNotMatch(appSource, /const\s+NEWSFEED_TOPIC_LIMIT|10,?000\s+custom|10000\s*个/u, "the retired 10,000-topic frontend quota must not return");
 });
 
+test("localized Newsfeed defaults and controls include Arabic without changing the root default", () => {
+  const languageCode = extractFunction(appSource, "newsfeedLanguageCode");
+  const defaultLanguage = extractFunction(appSource, "newsfeedDefaultLanguage");
+  const defaultFor = (contentLocale) => {
+    const context = {
+      window: contentLocale ? { PortalLocale: { contentLocale } } : {},
+    };
+    vm.runInNewContext(`
+      ${languageCode}
+      ${defaultLanguage}
+      this.value = newsfeedDefaultLanguage();
+    `, context, { filename: "newsfeed-default-language.js" });
+    return context.value;
+  };
+
+  assert.equal(defaultFor(undefined), "en");
+  assert.equal(defaultFor("zh-Hans"), "en");
+  assert.equal(defaultFor("ko"), "ko");
+  assert.equal(defaultFor("ja"), "ja");
+  assert.equal(defaultFor("ar"), "ar");
+
+  const copyBlock = appSource.match(/const NEWSFEED_UI_COPY = (\{[\s\S]*?\n  \});/u);
+  assert.ok(copyBlock, "missing Newsfeed UI copy table");
+  const copyContext = {};
+  vm.runInNewContext(`${copyBlock[0]}\nthis.copy = NEWSFEED_UI_COPY;`, copyContext, {
+    filename: "newsfeed-ui-copy.js",
+  });
+  assert.equal(copyContext.copy.ar.language, "اللغة");
+  assert.equal(copyContext.copy.ar.playBriefing, "تشغيل الموجز الصوتي");
+
+  const optionsFor = (contentLocale, selected) => {
+    const optionsContext = {};
+    vm.runInNewContext(`
+      const CONTENT_LOCALE = ${JSON.stringify(contentLocale)};
+      function escapeHtml(value) { return String(value); }
+      ${extractFunction(appSource, "isLocalizedContentPage")}
+      ${extractFunction(appSource, "newsfeedLanguageOptions")}
+      this.options = newsfeedLanguageOptions(${JSON.stringify(selected)});
+    `, optionsContext, { filename: "newsfeed-language-options.js" });
+    return optionsContext.options;
+  };
+  assert.match(optionsFor("ar", "ar"), /value="ar" selected>العربية<\/option>/u);
+  assert.doesNotMatch(optionsFor("zh-Hans", "en"), /value="ar"/u, "the Chinese root keeps its existing output-language choices");
+
+  const init = extractFunction(appSource, "initNewsfeed");
+  assert.match(init, /const defaultLanguage = newsfeedDefaultLanguage\(\)/u);
+  assert.match(init, /outputLanguage:\s*defaultLanguage/u);
+  assert.match(init, /interfaceLanguage:\s*defaultLanguage/u);
+});
+
 test("topic-limit request is confirmation-only and sends the server-owned contract", () => {
   const init = extractFunction(appSource, "initNewsfeed");
   const requestStart = init.indexOf('if (event.target && event.target.id === "newsTopicRequestForm")');

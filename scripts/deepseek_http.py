@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import os
+import random
 import re
 import time
 from collections.abc import Callable
@@ -100,6 +101,7 @@ def _retry_delay(
     base_seconds: float,
     max_seconds: float,
     response: requests.Response | None = None,
+    jitter_ratio: float = 0.25,
 ) -> float:
     delay = max(0.0, base_seconds) * (2 ** max(0, attempt - 1))
     if response is not None:
@@ -108,7 +110,13 @@ def _retry_delay(
             delay = max(delay, float(retry_after))
         except (TypeError, ValueError):
             pass
-    return min(max(0.0, max_seconds), delay)
+    maximum = max(0.0, max_seconds)
+    bounded = min(maximum, delay)
+    jitter_room = min(
+        max(0.0, maximum - bounded),
+        bounded * min(1.0, max(0.0, jitter_ratio)),
+    )
+    return bounded + (random.uniform(0.0, jitter_room) if jitter_room else 0.0)
 
 
 def request_with_retry(
@@ -121,6 +129,8 @@ def request_with_retry(
     max_attempts: int = 4,
     retry_base_seconds: float = 4,
     retry_max_seconds: float = 45,
+    retry_jitter_ratio: float = 0.25,
+    allow_model_fallback: bool = True,
     logger: Callable[[str], None] = print,
 ) -> requests.Response:
     """POST once for permanent failures and retry bounded transient failures."""
@@ -139,7 +149,12 @@ def request_with_retry(
         except TRANSIENT_REQUEST_ERRORS as exc:
             if attempt >= attempts:
                 raise
-            delay = _retry_delay(attempt, retry_base_seconds, retry_max_seconds)
+            delay = _retry_delay(
+                attempt,
+                retry_base_seconds,
+                retry_max_seconds,
+                jitter_ratio=retry_jitter_ratio,
+            )
             logger(
                 f"DeepSeek {label}: transient {type(exc).__name__} on attempt "
                 f"{attempt}/{attempts}; retrying in {delay:g}s."
@@ -148,9 +163,13 @@ def request_with_retry(
             attempt += 1
             continue
 
-        replacement = _model_replacement_from_response(
-            response,
-            str(request_payload.get("model") or ""),
+        replacement = (
+            _model_replacement_from_response(
+                response,
+                str(request_payload.get("model") or ""),
+            )
+            if allow_model_fallback
+            else None
         )
         if replacement and model_switches < 2:
             previous = str(request_payload.get("model") or "")
@@ -172,6 +191,7 @@ def request_with_retry(
             retry_base_seconds,
             retry_max_seconds,
             response=response,
+            jitter_ratio=retry_jitter_ratio,
         )
         logger(
             f"DeepSeek {label}: retryable HTTP {response.status_code} on attempt "
@@ -194,6 +214,8 @@ def request_with_key_fallback(
     max_attempts: int = 4,
     retry_base_seconds: float = 4,
     retry_max_seconds: float = 45,
+    retry_jitter_ratio: float = 0.25,
+    allow_model_fallback: bool = True,
     logger: Callable[[str], None] = print,
 ) -> requests.Response:
     """Retry each key and switch only after a key-specific failure is exhausted."""
@@ -217,6 +239,8 @@ def request_with_key_fallback(
                 max_attempts=max_attempts,
                 retry_base_seconds=retry_base_seconds,
                 retry_max_seconds=retry_max_seconds,
+                retry_jitter_ratio=retry_jitter_ratio,
+                allow_model_fallback=allow_model_fallback,
                 logger=logger,
             )
         except TRANSIENT_REQUEST_ERRORS as exc:
