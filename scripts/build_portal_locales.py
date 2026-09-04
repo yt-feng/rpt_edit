@@ -51,6 +51,10 @@ DEFAULT_BATCH_CHARS = 12_000
 DEFAULT_BATCH_ITEMS = 32
 MAX_UNIT_CHARS = 3_500
 LOCALE_DIRS = frozenset({"ko", "ja", "ar"})
+SITE_VERIFICATION_HTML_RE = re.compile(
+    r"baidu_verify_codeva-[A-Za-z0-9]{10}\.html"
+)
+SITE_VERIFICATION_BODY_RE = re.compile(rb"[0-9a-f]{32}(?:\r?\n)?\Z")
 SHARED_ROOT_PREFIXES = ("/api/", "/assets/", "/data/", "/.well-known/")
 SITE_PLACEHOLDER_HOSTS = frozenset({"portal.example.invalid"})
 TRANSLATABLE_HTML_ATTRIBUTES = frozenset({
@@ -3314,6 +3318,19 @@ def extract_canonical(source: str) -> str:
     return html_unescape(match.group(1).strip()) if match else ""
 
 
+def is_site_verification_html(relative: Path) -> bool:
+    """Return true only for a supported root-level ownership token file."""
+    return (
+        len(relative.parts) == 1
+        and SITE_VERIFICATION_HTML_RE.fullmatch(relative.name) is not None
+    )
+
+
+def validate_site_verification_html(relative: Path, data: bytes) -> None:
+    if not SITE_VERIFICATION_BODY_RE.fullmatch(data):
+        raise TranslationError(f"site verification token is invalid: {relative.as_posix()}")
+
+
 def is_indexable_html(source: str) -> bool:
     match = re.search(
         r'<meta\b(?=[^>]*\bname=["\']robots["\'])(?=[^>]*\bcontent=["\']([^"\']*)["\'])[^>]*>',
@@ -3848,10 +3865,15 @@ def build_localized_release(
 
     hot_report_index = load_hot_report_public_index(hot_report_index_path)
 
-    html_paths = [
-        path for path in sorted(root.rglob("*.html"))
-        if path.relative_to(root).parts and path.relative_to(root).parts[0] not in LOCALE_DIRS
-    ]
+    html_paths: list[Path] = []
+    for path in sorted(root.rglob("*.html")):
+        relative = path.relative_to(root)
+        if not relative.parts or relative.parts[0] in LOCALE_DIRS:
+            continue
+        if is_site_verification_html(relative):
+            validate_site_verification_html(relative, path.read_bytes())
+            continue
+        html_paths.append(path)
     original_html = {path: path.read_text(encoding="utf-8") for path in html_paths}
     canonical_by_path = {path: extract_canonical(source) for path, source in original_html.items()}
     configured_start_date = parse_index_start_date(index_start_date)

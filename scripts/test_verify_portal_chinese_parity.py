@@ -76,6 +76,7 @@ class ChineseParityTests(unittest.TestCase):
         self.site.mkdir()
         self._write("index.html", self._html())
         self._write("reports/market/index.html", self._html(path="/reports/market/", title="市场报告"))
+        self._write("baidu_verify_codeva-FzG1Vh5prB.html", "0123456789abcdef0123456789abcdef\n")
         self._write("assets/app.js", "console.log('zh root');\n")
         self._write("assets/styles.css", "body { color: #111; }\n")
         self._write("data/catalog.json", '{"items":[]}\n')
@@ -111,7 +112,11 @@ class ChineseParityTests(unittest.TestCase):
 
     def _apply_locale_discovery(self) -> None:
         for path in sorted(self.site.rglob("*.html")):
-            if path.relative_to(self.site).parts[0] in parity.LOCALE_DIRS:
+            relative = path.relative_to(self.site).as_posix()
+            if (
+                path.relative_to(self.site).parts[0] in parity.LOCALE_DIRS
+                or parity.is_site_verification_html(relative)
+            ):
                 continue
             source = path.read_text(encoding="utf-8")
             canonical = parity._head_links(source.encode(), relative=str(path)).canonicals[0]
@@ -160,6 +165,8 @@ class ChineseParityTests(unittest.TestCase):
         self.assertRegex(snapshot["digest"], r"^[0-9a-f]{64}$")
         self.assertIn("body_sha256", snapshot["files"]["index.html"])
         self.assertIn("head_neutralized_sha256", snapshot["files"]["index.html"])
+        self.assertNotIn("body_sha256", snapshot["files"]["baidu_verify_codeva-FzG1Vh5prB.html"])
+        self.assertIn("baidu_verify_codeva-FzG1Vh5prB.html", snapshot["protected_files"])
         self._apply_locale_discovery()
         result = self._verify()
         self.assertEqual(result["counts"]["hreflang_clusters"], 2)
@@ -251,6 +258,29 @@ class ChineseParityTests(unittest.TestCase):
                             self._verify()
                     finally:
                         self.site, self.snapshot_path = old_site, old_snapshot
+
+    def test_site_verification_html_is_byte_protected_not_treated_as_a_page(self) -> None:
+        self._verified_site()
+        path = self.site / "baidu_verify_codeva-FzG1Vh5prB.html"
+        path.write_text("f" * 32 + "\n", encoding="utf-8")
+        with self.assertRaisesRegex(parity.ParityError, "token changed"):
+            self._verify()
+
+    def test_site_verification_filename_cannot_exempt_arbitrary_html(self) -> None:
+        path = self.site / "baidu_verify_codeva-FzG1Vh5prB.html"
+        path.write_text("<html><head></head><body>fake</body></html>", encoding="utf-8")
+        with self.assertRaisesRegex(parity.ParityError, "token is invalid"):
+            self._snapshot()
+
+    def test_unrecognized_headless_html_still_fails_closed(self) -> None:
+        self._write("unexpected-token.html", "not a supported verification file")
+        with self.assertRaisesRegex(parity.ParityError, "head element"):
+            self._snapshot()
+
+    def test_nested_verification_filename_is_not_exempt(self) -> None:
+        self._write("nested/baidu_verify_codeva-FzG1Vh5prB.html", "0" * 32 + "\n")
+        with self.assertRaisesRegex(parity.ParityError, "head element"):
+            self._snapshot()
 
     def test_root_path_set_change_fails(self) -> None:
         self._verified_site()

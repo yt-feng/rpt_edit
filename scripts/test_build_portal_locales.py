@@ -150,6 +150,10 @@ class PortalLocaleBuildTests(unittest.TestCase):
 """,
             encoding="utf-8",
         )
+        (self.site / "baidu_verify_codeva-FzG1Vh5prB.html").write_text(
+            "0123456789abcdef0123456789abcdef\n",
+            encoding="utf-8",
+        )
         (self.site / "assets" / "app.js").write_text(
             """(() => {
   "use strict";
@@ -423,6 +427,12 @@ class PortalLocaleBuildTests(unittest.TestCase):
         with self.assertRaisesRegex(builder.TranslationError, "unsupported schema"):
             self._build(RecordingTranslator())
 
+    def test_site_verification_filename_cannot_exempt_arbitrary_html(self) -> None:
+        path = self.site / "baidu_verify_codeva-FzG1Vh5prB.html"
+        path.write_text("<html><head></head><body>fake</body></html>", encoding="utf-8")
+        with self.assertRaisesRegex(builder.TranslationError, "token is invalid"):
+            self._build(RecordingTranslator())
+
     def test_builds_complete_locale_routes_and_preserves_chinese_bodies(self) -> None:
         chinese_pages = [
             self.site / "index.html",
@@ -437,6 +447,7 @@ class PortalLocaleBuildTests(unittest.TestCase):
             )
         }
         chinese_css_before = (self.site / "assets" / "styles.css").read_bytes()
+        verification_before = (self.site / "baidu_verify_codeva-FzG1Vh5prB.html").read_bytes()
         translator = RecordingTranslator()
 
         manifest = self._build(translator)
@@ -446,6 +457,7 @@ class PortalLocaleBuildTests(unittest.TestCase):
         self.assertNotIn("PRIVATE-FILENAME-MUST-NOT-LEAVE.pdf", translator.sources)
         self.assertNotIn("PRIVATE-OBJECT-KEY-MUST-NOT-LEAVE", translator.sources)
         self.assertNotIn("PRIVATE-HOT-REPORT-TEXT-MUST-NOT-LEAVE", translator.sources)
+        self.assertNotIn("0123456789abcdef0123456789abcdef", translator.sources)
         self.assertGreater(manifest["source_unit_count"], 0)
         self.assertEqual(manifest["quality_gate_version"], builder.QUALITY_GATE_VERSION)
         cache_text = gzip.decompress(self.cache.read_bytes()).decode("utf-8")
@@ -467,6 +479,10 @@ class PortalLocaleBuildTests(unittest.TestCase):
         for name, expected in catalog_snapshots.items():
             self.assertEqual((self.site / "data" / name).read_bytes(), expected)
         self.assertEqual((self.site / "assets" / "styles.css").read_bytes(), chinese_css_before)
+        self.assertEqual(
+            (self.site / "baidu_verify_codeva-FzG1Vh5prB.html").read_bytes(),
+            verification_before,
+        )
         self.assertEqual(set(alternate_links((self.site / "index.html").read_text(encoding="utf-8"))), {
             "zh-Hans", "ko", "ja", "ar", "x-default",
         })
@@ -481,6 +497,7 @@ class PortalLocaleBuildTests(unittest.TestCase):
         directions = {"ko": "ltr", "ja": "ltr", "ar": "rtl"}
         og_locales = {"ko": "ko_KR", "ja": "ja_JP", "ar": "ar_AE"}
         for locale, direction in directions.items():
+            self.assertFalse((self.site / locale / "baidu_verify_codeva-FzG1Vh5prB.html").exists())
             home = (self.site / locale / "index.html").read_text(encoding="utf-8")
             deep = (self.site / locale / "reports" / "topics" / "ai" / "index.html").read_text(encoding="utf-8")
             self.assertRegex(home, rf'<html\b[^>]*\blang="{locale}"[^>]*\bdir="{direction}"')
