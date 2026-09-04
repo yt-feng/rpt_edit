@@ -1,8 +1,8 @@
 (function () {
   const page = document.body.dataset.page;
   const PUBLIC_BRAND = "KC桌面";
-  const CONTENT_LOCALE = window.KCDeskLocale && window.KCDeskLocale.contentLocale || "zh-Hans";
-  const CONTENT_INTL_LOCALE = window.KCDeskLocale && window.KCDeskLocale.intlLocale || "zh-CN";
+  const CONTENT_LOCALE = window.PortalLocale && window.PortalLocale.contentLocale || "zh-Hans";
+  const CONTENT_INTL_LOCALE = window.PortalLocale && window.PortalLocale.intlLocale || "zh-CN";
   const ADMIN_TOKEN_KEY = "portal_admin_token";
   const ADMIN_PLAIN_KEY = "portal_admin_plain_key";
   const ADMIN_COOKIE_NAME = "portal_admin_token";
@@ -8076,7 +8076,7 @@
       }, 5_000);
       try {
         let localeIds = null;
-        const localeMatcher = window.KCDeskLocale && window.KCDeskLocale.matchHotReportLocaleIds;
+        const localeMatcher = window.PortalLocale && window.PortalLocale.matchHotReportLocaleIds;
         if (cleanQuery && typeof localeMatcher === "function") {
           localeIds = await localeMatcher(cleanQuery);
         }
@@ -8088,7 +8088,7 @@
           failure.status = response.status;
           throw failure;
         }
-        const hotReportLocalizer = window.KCDeskLocale && window.KCDeskLocale.localizeHotReports;
+        const hotReportLocalizer = window.PortalLocale && window.PortalLocale.localizeHotReports;
         const deferHotOverlay = shouldDeferInitialHotOverlay(
           CONTENT_LOCALE,
           localizedBackgroundStarted,
@@ -11532,7 +11532,7 @@
       let data = await response.json().catch(() => ({}));
       if (!response.ok || !data.item || !data.item.id) return merged;
       if (isHotReportItem(merged)) {
-        const hotReportLocalizer = window.KCDeskLocale && window.KCDeskLocale.localizeHotReports;
+        const hotReportLocalizer = window.PortalLocale && window.PortalLocale.localizeHotReports;
         if (typeof hotReportLocalizer === "function") {
           data = await hotReportLocalizer({
             ...data,
@@ -12251,7 +12251,7 @@
   }
 
   function newsfeedDefaultLanguage() {
-    const contentLocale = window.KCDeskLocale && window.KCDeskLocale.contentLocale;
+    const contentLocale = window.PortalLocale && window.PortalLocale.contentLocale;
     return newsfeedLanguageCode(contentLocale);
   }
 
@@ -12265,7 +12265,7 @@
   }
 
   function newsfeedInterfaceNavigationUrl(value) {
-    const localeUrl = window.KCDeskLocale && window.KCDeskLocale.localeUrl;
+    const localeUrl = window.PortalLocale && window.PortalLocale.localeUrl;
     return typeof localeUrl === "function" ? localeUrl(newsfeedInterfaceLocaleCode(value)) : "";
   }
 

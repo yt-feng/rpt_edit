@@ -187,7 +187,7 @@ assert.match(
 );
 assert.match(
   extractAsyncFunction(app, "requestHotReportPage"),
-  /KCDeskLocale\.localizeHotReports[\s\S]*?await hotReportLocalizer\(data\)[\s\S]*?applyHotReportPayload\(data/,
+  /PortalLocale\.localizeHotReports[\s\S]*?await hotReportLocalizer\(data\)[\s\S]*?applyHotReportPayload\(data/,
   "dynamic Hot Reports must localize the public API response before applying it",
 );
 assert.match(
@@ -207,12 +207,12 @@ assert.match(
 );
 assert.match(
   extractAsyncFunction(app, "requestHotReportPage"),
-  /KCDeskLocale\.matchHotReportLocaleIds[\s\S]*?await localeMatcher\(cleanQuery\)[\s\S]*?hotReportRequestUrl\(cleanQuery, cursor, localeIds\)/,
+  /PortalLocale\.matchHotReportLocaleIds[\s\S]*?await localeMatcher\(cleanQuery\)[\s\S]*?hotReportRequestUrl\(cleanQuery, cursor, localeIds\)/,
   "localized Hot Report searches must resolve compact-overlay IDs before calling the source-language API",
 );
 assert.match(
   extractAsyncFunction(app, "fetchDocDetailItem"),
-  /KCDeskLocale\.localizeHotReports[\s\S]*?generation: String\(merged\.hot_report_generation \|\| ""\)[\s\S]*?locale_translation_pending === true\) return merged;[\s\S]*?rememberDocItem\(merged\)/,
+  /PortalLocale\.localizeHotReports[\s\S]*?generation: String\(merged\.hot_report_generation \|\| ""\)[\s\S]*?locale_translation_pending === true\) return merged;[\s\S]*?rememberDocItem\(merged\)/,
   "Hot Report item responses must preserve localized merged data when translation is pending and only cache translated detail",
 );
 assert.match(app, /controller\.abort\(\);[\s\S]*?5_000/, "the first-page deadline must fail fast instead of waiting twelve seconds");

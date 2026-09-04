@@ -157,7 +157,7 @@ function createHarness({ authenticated = true, includePopular = false, contentLo
     clearInterval: scheduler.clearInterval,
     location: { pathname: "/" },
   };
-  if (contentLocale) window.KCDeskLocale = { contentLocale };
+  if (contentLocale) window.PortalLocale = { contentLocale };
   const analyticsEvents = [];
   const exportCalls = [];
   window.PortalSuiteAnalytics = {

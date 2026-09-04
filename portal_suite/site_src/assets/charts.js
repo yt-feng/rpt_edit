@@ -3,7 +3,7 @@
 
   const PAGE_SIZE = 24;
   const PUBLIC_BRAND = "KC桌面";
-  const CONTENT_INTL_LOCALE = window.KCDeskLocale && window.KCDeskLocale.intlLocale || "zh-CN";
+  const CONTENT_INTL_LOCALE = window.PortalLocale && window.PortalLocale.intlLocale || "zh-CN";
   const IMAGE_ID_RE = /^[0-9a-f]{64}$/;
   const VALID_KINDS = new Set(["chart", "table", "data_map", "flow_diagram", "data_visual"]);
   const INVALID_RE = /(?:\b(?:about\s+the\s+author|analyst\s+certification|biograph(?:y|ies)|contents|copyright|disclaimer|important\s+disclosures?|legal\s+notice|table\s+of\s+contents)\b|作者(?:介绍|简介)|分析师(?:介绍|简介|声明)|版权声明|免责声明|法律声明|目录页?|重要声明|风险提示)/i;

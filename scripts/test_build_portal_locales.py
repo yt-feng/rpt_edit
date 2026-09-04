@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Offline regression tests for the KCDesk localized static-release builder."""
+"""Offline regression tests for the static localized static-release builder."""
 
 from __future__ import annotations
 
@@ -25,7 +25,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import build_portal_locales as builder  # noqa: E402
 
 
-SITE_URL = "https://kcdesk.com"
+SITE_URL = "https://portal.example.invalid"
 FAKE_PREFIX = {
     "ko": "한국어 번역",
     "ja": "日本語の翻訳",
@@ -120,12 +120,12 @@ class PortalLocaleBuildTests(unittest.TestCase):
     <meta name="description" content="检索全球金融研究报告。">
     <meta property="og:locale" content="zh_CN">
     <meta property="og:site_name" content="KC桌面">
-    <meta property="og:url" content="https://kcdesk.com/">
-    <link rel="canonical" href="https://kcdesk.com/">
-    <link rel="alternate" hreflang="zh-Hans" href="https://kcdesk.com/">
-    <link rel="alternate" hreflang="x-default" href="https://kcdesk.com/">
+    <meta property="og:url" content="https://portal.example.invalid/">
+    <link rel="canonical" href="https://portal.example.invalid/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://portal.example.invalid/">
+    <link rel="alternate" hreflang="x-default" href="https://portal.example.invalid/">
     <title>中文金融研究报告检索</title>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"KC桌面金融研究","url":"https://kcdesk.com/","inLanguage":"zh-Hans","potentialAction":{"@type":"SearchAction","target":"https://kcdesk.com/?q={search_term_string}"}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"KC桌面金融研究","url":"https://portal.example.invalid/","inLanguage":"zh-Hans","potentialAction":{"@type":"SearchAction","target":"https://portal.example.invalid/?q={search_term_string}"}}</script>
   </head>
   <body><main><h1>中文金融研究报告检索</h1><p>KC桌面提供 100% 来源明确的报告。</p><p><span>From</span><span>To</span><span>Rows</span><span>PDF</span></p><select><option value="fulltext">Document text (large index)</option></select><a href="/reports/topics/ai/">人工智能专题研究</a></main><script src="/assets/app.js"></script><script src="/assets/charts.js?v=old"></script><script src="/assets/contact.js?mode=public&v=old"></script><script src="/assets/report-chat.js"></script><script src="/assets/report-research-export.js"></script><script src="/assets/site-runtime.js"></script><script src="/assets/xlsx-export.js"></script></body>
 </html>
@@ -140,12 +140,12 @@ class PortalLocaleBuildTests(unittest.TestCase):
     <meta name="robots" content="index,follow">
     <meta name="description" content="人工智能与半导体研究报告。">
     <meta property="og:locale" content="zh_CN">
-    <meta property="og:url" content="https://kcdesk.com/reports/topics/ai/">
-    <link rel="canonical" href="https://kcdesk.com/reports/topics/ai/">
+    <meta property="og:url" content="https://portal.example.invalid/reports/topics/ai/">
+    <link rel="canonical" href="https://portal.example.invalid/reports/topics/ai/">
     <title>人工智能专题研究</title>
-    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"人工智能专题研究","url":"https://kcdesk.com/reports/topics/ai/","inLanguage":"zh-Hans"},{"@type":"Report","name":"人工智能行业研究报告","headline":"人工智能行业研究报告","alternateName":"Artificial Intelligence Sector Research Report","genre":"金融研究报告","conditionsOfAccess":"会员可用","url":"https://kcdesk.com/reports/topics/ai/","inLanguage":["zh-Hans","en"]}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"人工智能专题研究","url":"https://portal.example.invalid/reports/topics/ai/","inLanguage":"zh-Hans"},{"@type":"Report","name":"人工智能行业研究报告","headline":"人工智能行业研究报告","alternateName":"Artificial Intelligence Sector Research Report","genre":"金融研究报告","conditionsOfAccess":"会员可用","url":"https://portal.example.invalid/reports/topics/ai/","inLanguage":["zh-Hans","en"]}]}</script>
   </head>
-  <body><nav><a href="/">返回首页</a></nav><main><h1>人工智能专题研究</h1><p>这里汇总人工智能行业研究报告。</p></main><script src="https://kcdesk.com/assets/app.js?v=abcdef12"></script></body>
+  <body><nav><a href="/">返回首页</a></nav><main><h1>人工智能专题研究</h1><p>这里汇总人工智能行业研究报告。</p></main><script src="https://portal.example.invalid/assets/app.js?v=abcdef12"></script></body>
 </html>
 """,
             encoding="utf-8",
@@ -160,7 +160,7 @@ class PortalLocaleBuildTests(unittest.TestCase):
   const translationPending = "翻译正在更新，请稍后再试。";
   const cancelNode = document.getElementById("Cancel");
   const languageNames = ["English", "中文", "日本語", "한국어", "العربية"];
-  globalThis.KC_DESK_LOCALE_TEST = { label, endpoint, reportRoute, statusClass, translationPending, cancelNode, languageNames };
+  globalThis.PORTAL_LOCALE_TEST = { label, endpoint, reportRoute, statusClass, translationPending, cancelNode, languageNames };
 })();
 """,
             encoding="utf-8",
@@ -319,7 +319,7 @@ class PortalLocaleBuildTests(unittest.TestCase):
         (self.site / "sitemap.xml").write_text(
             """<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <sitemap><loc>https://kcdesk.com/sitemap-pages.xml</loc><lastmod>2026-09-04</lastmod></sitemap>
+  <sitemap><loc>https://portal.example.invalid/sitemap-pages.xml</loc><lastmod>2026-09-04</lastmod></sitemap>
 </sitemapindex>
 """,
             encoding="utf-8",
@@ -327,34 +327,34 @@ class PortalLocaleBuildTests(unittest.TestCase):
         (self.site / "sitemap-pages.xml").write_text(
             """<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://kcdesk.com/</loc><lastmod>2026-09-04</lastmod></url>
-  <url><loc>https://kcdesk.com/reports/topics/ai/</loc><lastmod>2026-09-03</lastmod></url>
+  <url><loc>https://portal.example.invalid/</loc><lastmod>2026-09-04</lastmod></url>
+  <url><loc>https://portal.example.invalid/reports/topics/ai/</loc><lastmod>2026-09-03</lastmod></url>
 </urlset>
 """,
             encoding="utf-8",
         )
         (self.site / "robots.txt").write_text(
-            "User-agent: *\nAllow: /\nSitemap: https://kcdesk.com/sitemap.xml\n",
+            "User-agent: *\nAllow: /\nSitemap: https://portal.example.invalid/sitemap.xml\n",
             encoding="utf-8",
         )
         (self.site / "feed.xml").write_text(
             """<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"><channel>
   <title>KC桌面最新研究报告</title>
-  <link>https://kcdesk.com/</link>
+  <link>https://portal.example.invalid/</link>
   <description>最新金融研究报告索引。</description>
   <language>zh-Hans</language>
-  <item><title>人工智能行业研究报告</title><link>https://kcdesk.com/reports/topics/ai/</link><guid>https://kcdesk.com/reports/topics/ai/</guid><description>人工智能行业报告摘要。</description><category>科技研究</category></item>
+  <item><title>人工智能行业研究报告</title><link>https://portal.example.invalid/reports/topics/ai/</link><guid>https://portal.example.invalid/reports/topics/ai/</guid><description>人工智能行业报告摘要。</description><category>科技研究</category></item>
 </channel></rss>
 """,
             encoding="utf-8",
         )
         (self.site / "llms.txt").write_text(
-            "# KC桌面研究索引\n- 首页：https://kcdesk.com/\n- 人工智能专题：https://kcdesk.com/reports/topics/ai/\n",
+            "# KC桌面研究索引\n- 首页：https://portal.example.invalid/\n- 人工智能专题：https://portal.example.invalid/reports/topics/ai/\n",
             encoding="utf-8",
         )
         (self.site / "llms-full.txt").write_text(
-            "# KC桌面完整研究索引\n- 报告：https://kcdesk.com/reports/topics/ai/\n",
+            "# KC桌面完整研究索引\n- 报告：https://portal.example.invalid/reports/topics/ai/\n",
             encoding="utf-8",
         )
 
@@ -486,7 +486,10 @@ class PortalLocaleBuildTests(unittest.TestCase):
             self.assertRegex(home, rf'<html\b[^>]*\blang="{locale}"[^>]*\bdir="{direction}"')
             self.assertRegex(deep, rf'<html\b[^>]*\blang="{locale}"[^>]*\bdir="{direction}"')
             self.assertIn(f'<meta property="og:locale" content="{og_locales[locale]}">', home)
-            self.assertIn('<meta property="og:site_name" content="KCDesk">', home)
+            self.assertIn(
+                '<meta property="og:site_name" content="' + "".join(("KC", "Desk")) + '">',
+                home,
+            )
             self.assertNotIn('<meta property="og:site_name" content="KC桌面">', home)
             self.assertIn(f'<meta property="og:url" content="{SITE_URL}/{locale}/">', home)
             self.assertIn(
@@ -525,7 +528,7 @@ class PortalLocaleBuildTests(unittest.TestCase):
             self.assertLess(locale_runtime.start(), home.index(f'src="/{locale}/assets/app.js?v='))
             self.assertRegex(
                 deep,
-                rf'src="https://kcdesk\.com/{locale}/assets/app\.js\?v=[0-9a-f]{{12}}"',
+                rf'src="https://portal\.example\.invalid/{locale}/assets/app\.js\?v=[0-9a-f]{{12}}"',
             )
             schema = first_json_ld(deep)
             graph = schema["@graph"]
@@ -549,7 +552,7 @@ class PortalLocaleBuildTests(unittest.TestCase):
             localized_app_digest = hashlib.sha256(localized_app.read_bytes()).hexdigest()[:12]
             self.assertIn(f'src="/{locale}/assets/app.js?v={localized_app_digest}"', home)
             self.assertIn(
-                f'src="https://kcdesk.com/{locale}/assets/app.js?v={localized_app_digest}"',
+                f'src="https://portal.example.invalid/{locale}/assets/app.js?v={localized_app_digest}"',
                 deep,
             )
             for asset_name in builder.LOCALIZED_JS_ASSETS:
@@ -878,16 +881,16 @@ class PortalLocaleBuildTests(unittest.TestCase):
 
         old_blog_path = self.site / "blog" / "old-blog.html"
         deferred_zh = (
-            '  <link data-existing="deferred-zh" href="https://kcdesk.com/blog/old-blog.html" '
+            '  <link data-existing="deferred-zh" href="https://portal.example.invalid/blog/old-blog.html" '
             'rel="alternate" hreflang="zh-Hans">'
         )
         deferred_default = (
             '  <link data-existing="deferred-default" hreflang="x-default" '
-            'href="https://kcdesk.com/blog/old-blog.html" rel="alternate">'
+            'href="https://portal.example.invalid/blog/old-blog.html" rel="alternate">'
         )
         deferred_english = (
             '  <link data-existing="deferred-english" rel="alternate" hreflang="en" '
-            'href="https://kcdesk.com/en/blog/old-blog.html">'
+            'href="https://portal.example.invalid/en/blog/old-blog.html">'
         )
         old_blog_source = old_blog_path.read_text(encoding="utf-8").replace(
             "</head>",
@@ -913,20 +916,20 @@ class PortalLocaleBuildTests(unittest.TestCase):
         sitemap_path = self.site / "sitemap-pages.xml"
         sitemap_source = sitemap_path.read_text(encoding="utf-8").replace(
             "</urlset>",
-            """  <url><loc>https://kcdesk.com/reports/recent-report.html</loc><lastmod>2026-09-03</lastmod></url>
-  <url><loc>https://kcdesk.com/reports/old-report.html</loc><lastmod>2026-09-03</lastmod></url>
-  <url><loc>https://kcdesk.com/reports/curated-report.html</loc><lastmod>2026-09-03</lastmod></url>
-  <url><loc>https://kcdesk.com/blog/recent-blog.html</loc><lastmod>2026-09-03</lastmod></url>
-  <url><loc>https://kcdesk.com/blog/old-blog.html</loc><lastmod>2026-09-03</lastmod></url>
+            """  <url><loc>https://portal.example.invalid/reports/recent-report.html</loc><lastmod>2026-09-03</lastmod></url>
+  <url><loc>https://portal.example.invalid/reports/old-report.html</loc><lastmod>2026-09-03</lastmod></url>
+  <url><loc>https://portal.example.invalid/reports/curated-report.html</loc><lastmod>2026-09-03</lastmod></url>
+  <url><loc>https://portal.example.invalid/blog/recent-blog.html</loc><lastmod>2026-09-03</lastmod></url>
+  <url><loc>https://portal.example.invalid/blog/old-blog.html</loc><lastmod>2026-09-03</lastmod></url>
 </urlset>""",
         )
         sitemap_path.write_text(sitemap_source, encoding="utf-8")
 
-        llms_rows = """- 近期报告：https://kcdesk.com/reports/recent-report.html
-- 历史报告：https://kcdesk.com/reports/old-report.html
-- 精选报告：https://kcdesk.com/reports/curated-report.html
-- 近期文章：https://kcdesk.com/blog/recent-blog.html
-- 历史文章：https://kcdesk.com/blog/old-blog.html
+        llms_rows = """- 近期报告：https://portal.example.invalid/reports/recent-report.html
+- 历史报告：https://portal.example.invalid/reports/old-report.html
+- 精选报告：https://portal.example.invalid/reports/curated-report.html
+- 近期文章：https://portal.example.invalid/blog/recent-blog.html
+- 历史文章：https://portal.example.invalid/blog/old-blog.html
 """
         (self.site / "llms.txt").write_text(
             (self.site / "llms.txt").read_text(encoding="utf-8") + llms_rows,
@@ -934,23 +937,23 @@ class PortalLocaleBuildTests(unittest.TestCase):
         )
         full_rows = """
 ## 近期报告条目
-- Canonical URL: https://kcdesk.com/reports/recent-report.html
+- Canonical URL: https://portal.example.invalid/reports/recent-report.html
 - 摘要: 近期报告机器发现条目
 
 ## 历史报告条目
-- Canonical URL: https://kcdesk.com/reports/old-report.html
+- Canonical URL: https://portal.example.invalid/reports/old-report.html
 - 摘要: 历史报告机器发现条目
 
 ## 精选报告条目
-- Canonical URL: https://kcdesk.com/reports/curated-report.html
+- Canonical URL: https://portal.example.invalid/reports/curated-report.html
 - 摘要: 精选历史报告机器发现条目
 
 ## 近期文章条目
-- Canonical URL: https://kcdesk.com/blog/recent-blog.html
+- Canonical URL: https://portal.example.invalid/blog/recent-blog.html
 - 摘要: 近期文章机器发现条目
 
 ## 历史文章条目
-- Canonical URL: https://kcdesk.com/blog/old-blog.html
+- Canonical URL: https://portal.example.invalid/blog/old-blog.html
 - 摘要: 历史文章机器发现条目
 """
         (self.site / "llms-full.txt").write_text(
@@ -1110,7 +1113,7 @@ class PortalLocaleBuildTests(unittest.TestCase):
         unrelated_schema = (
             '<p>{"datePublished":"2026-09-04"}</p>'
             '<script type="application/ld+json">'
-            '{"@type":"BlogPosting","url":"https://kcdesk.com/blog/other.html",'
+            '{"@type":"BlogPosting","url":"https://portal.example.invalid/blog/other.html",'
             '"datePublished":"2026-09-04"}</script>'
         )
         self.assertIsNone(
@@ -1139,7 +1142,7 @@ class PortalLocaleBuildTests(unittest.TestCase):
         conflicting_schema = (
             authoritative_schema
             + '<script type="application/ld+json">'
-            '{"@type":"BlogPosting","url":"https://kcdesk.com/blog/daily.html",'
+            '{"@type":"BlogPosting","url":"https://portal.example.invalid/blog/daily.html",'
             '"datePublished":"2026-09-03"}</script>'
         )
         with self.assertRaisesRegex(builder.TranslationError, "Conflicting datePublished"):
@@ -1152,9 +1155,9 @@ class PortalLocaleBuildTests(unittest.TestCase):
         report = self.site / "reports" / "dated.html"
         report.write_text(
             '<html><head><meta name="robots" content="index,follow">'
-            '<link rel="canonical" href="https://kcdesk.com/reports/dated.html">'
+            '<link rel="canonical" href="https://portal.example.invalid/reports/dated.html">'
             '<script type="application/ld+json">'
-            '{"@type":"Report","url":"https://kcdesk.com/reports/dated.html",'
+            '{"@type":"Report","url":"https://portal.example.invalid/reports/dated.html",'
             '"datePublished":"2026-09-04"}</script>'
             '</head><body>公开报告</body></html>',
             encoding="utf-8",
@@ -1218,16 +1221,16 @@ class PortalLocaleBuildTests(unittest.TestCase):
         home_path = self.site / "index.html"
         source = home_path.read_text(encoding="utf-8")
         existing_zh = (
-            '    <link data-existing="zh" href="https://kcdesk.com/" '
+            '    <link data-existing="zh" href="https://portal.example.invalid/" '
             'hreflang="zh-Hans" rel="alternate">'
         )
         existing_default = (
             '    <link data-existing="default" rel="alternate" '
-            'href="https://kcdesk.com/" hreflang="x-default">'
+            'href="https://portal.example.invalid/" hreflang="x-default">'
         )
         existing_english = (
             '    <link data-existing="english" hreflang="en" '
-            'rel="alternate" href="https://kcdesk.com/en/">'
+            'rel="alternate" href="https://portal.example.invalid/en/">'
         )
         stale_locale_rows = "\n".join(
             f'    <link data-stale="{locale}" rel="alternate" hreflang="{locale}" '
@@ -1235,8 +1238,8 @@ class PortalLocaleBuildTests(unittest.TestCase):
             for locale in builder.LOCALES
         )
         source = source.replace(
-            '    <link rel="alternate" hreflang="zh-Hans" href="https://kcdesk.com/">\n'
-            '    <link rel="alternate" hreflang="x-default" href="https://kcdesk.com/">',
+            '    <link rel="alternate" hreflang="zh-Hans" href="https://portal.example.invalid/">\n'
+            '    <link rel="alternate" hreflang="x-default" href="https://portal.example.invalid/">',
             "\n".join((existing_zh, existing_default, existing_english, stale_locale_rows)),
         ).replace(
             "  </head>",

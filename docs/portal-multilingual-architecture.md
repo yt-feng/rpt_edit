@@ -1,8 +1,8 @@
-# KCDesk 韩文、日文与阿拉伯文站点架构
+# KC 桌面韩文、日文与阿拉伯文站点架构
 
 ## 文档状态与发布边界
 
-本文定义 KCDesk 多语言站点的实现架构、内容边界、生成门禁和上线顺序。代码和离线构建可以完成，但在远端同步、正式翻译、视觉验收和线上验证完成前仍不可发布。
+本文定义 KC 桌面多语言站点的实现架构、内容边界、生成门禁和上线顺序。代码和离线构建可以完成，但在远端同步、正式翻译、视觉验收和线上验证完成前仍不可发布。
 
 - 远端 `main` 是唯一正式基线。开始实现、合并或发布前，必须重新确认远端 `main`，并从该基线重放多语言改动。
 - 当前分支、隔离工作树、未提交文件、测试产物和影子构建都不是正式基线，也不是发布证据。
@@ -48,7 +48,7 @@
 
 ## “全量翻译”的范围
 
-全量是“全部公开网站展示内容”的 100% 覆盖，而不是对所有被 KCDesk 索引、存储或有权访问的材料做全文翻译。
+全量是“全部公开网站展示内容”的 100% 覆盖，而不是对所有被站点索引、存储或有权访问的材料做全文翻译。
 
 必须翻译：
 
@@ -92,7 +92,7 @@
 4. 没有空字符串、中文 fallback、截断响应、未保护模板或无效 HTML；韩文正文必须含 Hangul，阿拉伯文必须含 Arabic script，日文必须含 kana 或发生合理变化的汉字表达；
 5. 页面级必需字段全部存在。
 
-覆盖率必须是 100%。99.9% 也不得激活新快照。`coverage=1` 只统计通过占位符、目标语脚本、目标语占比及源文残留检查的当前 inventory 条目；在原文前添加“韩文/日文/阿拉伯文翻译”等短前缀、随后保留整段英文或中文的结果必须拒绝。机构法定名称字段可以原样保留，URL、数字、ticker 和 KCDesk 等已保护 token 不参与语言占比计算。当前发布链使用一个不可变候选包承载中文和三种 locale；任何翻译失败都会终止该次候选发布，线上继续服务上一份完整发布，中文站不会被半成品覆盖。相应地，该次中文内容更新也会推迟到三种语言全部完成后的下一次成功切换。
+覆盖率必须是 100%。99.9% 也不得激活新快照。`coverage=1` 只统计通过占位符、目标语脚本、目标语占比及源文残留检查的当前 inventory 条目；在原文前添加“韩文/日文/阿拉伯文翻译”等短前缀、随后保留整段英文或中文的结果必须拒绝。机构法定名称字段可以原样保留，URL、数字、ticker 和受保护的英文品牌 token 不参与语言占比计算。当前发布链使用一个不可变候选包承载中文和三种 locale；任何翻译失败都会终止该次候选发布，线上继续服务上一份完整发布，中文站不会被半成品覆盖。相应地，该次中文内容更新也会推迟到三种语言全部完成后的下一次成功切换。
 
 ### 缓存与增量
 
@@ -191,7 +191,7 @@ Blog 的历史正文可能含不可供国际站使用的知识星球图片地址
 只有已经完整生成、可访问且已进入索引 cohort 的版本才能出现在集群中。任意两个 eligible locale 页面之间必须互相声明；暂缓索引、退役或不完整版本必须从整个集群删除。`<html lang>` 与当前页面一致，阿拉伯文还必须带 `dir="rtl"`。
 
 Open Graph 使用 `ko_KR`、`ja_JP` 和当前面向 MENA 的 `ar_AE`；阿拉伯文路由与 hreflang 仍保持通用 `ar`，不把 URL 锁定到单一国家。若未来确认新的阿语目标市场，只调整 Open Graph 区域配置，不改既有 `/ar/` URL。
-`og:site_name` 也必须走 locale 渲染；源站若使用“KC桌面”，三个国际站统一输出受保护品牌 `KCDesk`，不得把中文品牌字样残留在本地化元数据中。
+`og:site_name` 也必须走 locale 渲染；源站若使用“KC桌面”，三个国际站统一输出受保护的英文品牌，不得把中文品牌字样残留在本地化元数据中。
 
 ### Sitemap、robots、RSS 和 IndexNow
 
@@ -293,7 +293,7 @@ URL 节点使用 XHTML alternate 标注全部已完成的 hreflang 对应页。`
 - 只有明确开启 `PORTAL_MULTILINGUAL_ENABLED` 后，日常发布才构建三种 locale；默认关闭，不会意外激活；
 - 仓库级变量 `PORTAL_MULTILINGUAL_LIVE` 是“多语言已通过首次线上验收”的人工状态，默认必须为 `false`。prepare 只读取并传递该状态，workflow 不得创建、修改或自动推断它；
 - 自动 schedule/workflow_run 只有在多语言未启用，或 `PORTAL_MULTILINGUAL_LIVE=true` 时才允许进入 prepare；因此 `ENABLED=true`、`LIVE=false` 的首次激活只能由人工 dispatch 发起，不会由定时任务反复构建并堆积待审批作业；
-- 当 `PORTAL_MULTILINGUAL_ENABLED=true` 且 `PORTAL_MULTILINGUAL_LIVE!=true` 时，首次真实多语言切换必须在构建候选的同一次 workflow 中等待 `kcdesk-multilingual-production` GitHub Environment 审批。审核人先查看 prepare Job Summary/artifact 中的三项 identity，再把同一组值写入该 Environment 的 `PORTAL_MULTILINGUAL_APPROVED_COMMIT_SHA`、`PORTAL_MULTILINGUAL_APPROVED_STATIC_TREE`、`PORTAL_MULTILINGUAL_APPROVED_INDEX_POLICY_SHA256`，并明确设定 `PORTAL_MULTILINGUAL_ACTIVATION_APPROVED=true` 后批准；审批后不重新构建候选；
+- 当 `PORTAL_MULTILINGUAL_ENABLED=true` 且 `PORTAL_MULTILINGUAL_LIVE!=true` 时，首次真实多语言切换必须在构建候选的同一次 workflow 中等待 `portal-multilingual-production` GitHub Environment 审批。审核人先查看 prepare Job Summary/artifact 中的三项 identity，再把同一组值写入该 Environment 的 `PORTAL_MULTILINGUAL_APPROVED_COMMIT_SHA`、`PORTAL_MULTILINGUAL_APPROVED_STATIC_TREE`、`PORTAL_MULTILINGUAL_APPROVED_INDEX_POLICY_SHA256`，并明确设定 `PORTAL_MULTILINGUAL_ACTIVATION_APPROVED=true` 后批准；审批后不重新构建候选；
 - 审批作业从同一次 artifact 和 `prepare_release` outputs 分别读取 identity 并互相校验，然后再与 Environment vars 比较。Environment 未配置 required reviewers 时也不能直接放行：审批 flag 缺失或任一 identity 为空、过期或不一致都会终止，Edge 不切换；
 - 整个 workflow 在等待 Environment 审批期间继续占用既有的 `portal-production-release` 非取消 concurrency 锁，避免后续发布覆盖当前非活动 slot；identity artifact 保留 7 天，超过审核窗口应重新生成候选；
 - 不得拿较早 `locale-shadow` 或另一 workflow 的 raw static tree 给新候选放行。catalog 的 `last_seen` / `updated_at` 会让另一次构建的树发生变化；同一次候选审批正是为了消除“审核旧树、重建新树”的循环；

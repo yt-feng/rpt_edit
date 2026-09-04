@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fail-closed parity gate for the KCDesk Simplified-Chinese static release.
+"""Fail-closed parity gate for the Simplified-Chinese static release.
 
 ``snapshot`` records the Chinese candidate before locale generation. ``verify``
 then proves that locale generation changed only the explicitly controlled
@@ -23,8 +23,9 @@ import xml.etree.ElementTree as ET
 
 
 SCHEMA_VERSION = 1
-SNAPSHOT_KIND = "kcdesk-chinese-parity-snapshot"
-VERIFY_KIND = "kcdesk-chinese-parity-verification"
+SNAPSHOT_KIND = "portal-chinese-parity-snapshot"
+VERIFY_KIND = "portal-chinese-parity-verification"
+DEFAULT_SITE_ORIGIN = "https://portal.example.invalid"
 LOCALES = ("ko", "ja", "ar")
 LOCALE_DIRS = frozenset(LOCALES)
 LOCALE_ASSET_PATHS = frozenset(("assets/locale.css", "assets/locale-runtime.js"))
@@ -582,7 +583,7 @@ def _validate_active_manifest(
 def create_snapshot(
     *,
     root: str | Path,
-    site_origin: str = "https://kcdesk.com",
+    site_origin: str = DEFAULT_SITE_ORIGIN,
     active_manifest: str | Path | None = None,
 ) -> dict[str, Any]:
     site = _normalize_origin(site_origin)
@@ -809,7 +810,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     snapshot = subparsers.add_parser("snapshot", help="record the pre-locale Chinese static tree")
     snapshot.add_argument("--root", required=True)
     snapshot.add_argument("--output", required=True)
-    snapshot.add_argument("--site-url", default="https://kcdesk.com")
+    snapshot.add_argument("--site-url", default=DEFAULT_SITE_ORIGIN)
     snapshot.add_argument("--active-manifest")
 
     verify = subparsers.add_parser("verify", help="verify Chinese parity after locale generation")

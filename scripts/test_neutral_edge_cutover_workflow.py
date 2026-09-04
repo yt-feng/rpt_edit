@@ -477,10 +477,11 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertGreater(cleanup, self.workflow.index("  cutover:\n"))
 
         shadow = self.workflow[prepare:artifact]
-        self.assertIn("kcdesk-locale-shadow-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}", shadow)
+        self.assertIn("portal-locale-shadow-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}", shadow)
         self.assertIn("workers_dev = true", shadow)
         self.assertIn("preview_urls = false", shadow)
         self.assertIn('CANONICAL_HOST = ""', shadow)
+        self.assertIn('--public-origin "$LIVE_ORIGIN"', shadow)
         self.assertIn('SHADOW_MODE = "true"', shadow)
         self.assertIn('service = "portal-suite-worker"', shadow)
         self.assertIn("steps.operation.outputs.operation == 'locale-shadow'", shadow)
@@ -504,7 +505,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
             self.assertIn(name, artifact_section)
 
         hold_section = self.workflow[hold:approval]
-        self.assertIn("name: kcdesk-multilingual-shadow-review", hold_section)
+        self.assertIn("name: portal-multilingual-shadow-review", hold_section)
         self.assertIn("needs.prepare_release.outputs.operation == 'locale-shadow'", hold_section)
         self.assertIn("Download exact shadow review artifact", hold_section)
         self.assertIn("Confirm reviewed shadow identity", hold_section)
@@ -575,7 +576,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn("needs.prepare_release.outputs.operation != 'locale-shadow'", approval)
         self.assertIn("needs.prepare_release.outputs.multilingual_enabled == 'true'", approval)
         self.assertIn("needs.prepare_release.outputs.multilingual_live != 'true'", approval)
-        self.assertIn("name: kcdesk-multilingual-production", approval)
+        self.assertIn("name: portal-multilingual-production", approval)
         self.assertIn("Download exact multilingual candidate identity", approval)
         self.assertIn("Approve exact same-run multilingual candidate", approval)
         self.assertNotIn("actions/checkout", approval)

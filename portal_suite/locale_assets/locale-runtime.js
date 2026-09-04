@@ -171,30 +171,30 @@
 
   function normalizedOverlayPayload(payload, locale, kind) {
     if (!payload || payload.locale !== locale || (payload.kind && payload.kind !== kind)) {
-      throw new Error(`KCDesk ${locale} ${kind} translations are invalid.`);
+      throw new Error(`Portal ${locale} ${kind} translations are invalid.`);
     }
     if (Array.isArray(payload.fields) && Array.isArray(payload.rows)) {
       const allowedFields = kind === "charts"
         ? CHART_OVERLAY_FIELDS
         : kind === "hot-reports" ? HOT_REPORT_OVERLAY_FIELDS : CATALOG_OVERLAY_FIELDS;
       if (!payload.fields.length || payload.fields.some((field) => !allowedFields.has(String(field)))) {
-        throw new Error(`KCDesk ${locale} ${kind} translations are invalid.`);
+        throw new Error(`Portal ${locale} ${kind} translations are invalid.`);
       }
       const titles = Object.create(null);
       const items = Object.create(null);
       for (const row of payload.rows) {
         if (!Array.isArray(row) || row.length !== payload.fields.length + 1) {
-          throw new Error(`KCDesk ${locale} ${kind} translations are invalid.`);
+          throw new Error(`Portal ${locale} ${kind} translations are invalid.`);
         }
         const itemId = String(row[0] || "").trim();
         if (!itemId || Object.prototype.hasOwnProperty.call(items, itemId)) {
-          throw new Error(`KCDesk ${locale} ${kind} translations are invalid.`);
+          throw new Error(`Portal ${locale} ${kind} translations are invalid.`);
         }
         const translatedFields = Object.create(null);
         payload.fields.forEach((field, index) => {
           const raw = row[index + 1];
           if (kind === "charts" && CHART_LIST_FIELDS.has(field)) {
-            if (!Array.isArray(raw)) throw new Error(`KCDesk ${locale} ${kind} translations are invalid.`);
+            if (!Array.isArray(raw)) throw new Error(`Portal ${locale} ${kind} translations are invalid.`);
             translatedFields[field] = raw.map((value) => String(value || "").trim()).filter(Boolean);
             return;
           }
@@ -205,7 +205,7 @@
         if (translatedFields.title) titles[itemId] = translatedFields.title;
       }
       if (Number(payload.item_count) !== payload.rows.length) {
-        throw new Error(`KCDesk ${locale} ${kind} translations are invalid.`);
+        throw new Error(`Portal ${locale} ${kind} translations are invalid.`);
       }
       return {
         titles,
@@ -214,7 +214,7 @@
       };
     }
     if (!payload.titles || typeof payload.titles !== "object") {
-      throw new Error(`KCDesk ${locale} ${kind} translations are invalid.`);
+      throw new Error(`Portal ${locale} ${kind} translations are invalid.`);
     }
     return {
       titles: payload.titles,
@@ -286,13 +286,13 @@
     const loadOverlay = (kind) => {
       const filename = catalogOverlayFilename(kind);
       if (!filename) {
-        return Promise.reject(new Error(`KCDesk ${locale} catalog overlay kind is invalid.`));
+        return Promise.reject(new Error(`Portal ${locale} catalog overlay kind is invalid.`));
       }
       if (!overlayPromises.has(kind)) {
         const request = originalFetch(`/data/i18n/${locale}/${filename}`, {
           cache: "default",
         }).then(async (response) => {
-          if (!response || !response.ok) throw new Error(`KCDesk ${locale} ${kind} translations are unavailable.`);
+          if (!response || !response.ok) throw new Error(`Portal ${locale} ${kind} translations are unavailable.`);
           const payload = await response.json();
           return normalizedOverlayPayload(payload, locale, kind);
         }).catch((error) => {
@@ -451,7 +451,7 @@
     watchLocalizedLinks(contentLocale);
   }
 
-  window.KCDeskLocale = Object.freeze({
+  window.PortalLocale = Object.freeze({
     contentLocale,
     direction: localeConfig.direction,
     intlLocale: localeConfig.intlLocale,

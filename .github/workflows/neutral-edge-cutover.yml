@@ -1213,7 +1213,7 @@ jobs:
           SHADOW_STATIC_TREE: ${{ steps.static_upload.outputs.tree_sha256 }}
         run: |
           set -euo pipefail
-          worker_name="kcdesk-locale-shadow-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          worker_name="portal-locale-shadow-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
           test "${#worker_name}" -le 63
           R2_BUCKET_VALUE="$R2_BUCKET" WORKER_NAME="$worker_name" python3 - <<'PY'
           import os
@@ -1284,6 +1284,7 @@ jobs:
           test -n "$preview_url"
           python3 -B scripts/audit_portal_shadow_preview.py audit \
             --base-url "$preview_url" \
+            --public-origin "$LIVE_ORIGIN" \
             --samples "$RUNNER_TEMP/shadow-samples.json" \
             --expected-release "$STATIC_RELEASE" \
             --expected-tree "$SHADOW_STATIC_TREE" \
@@ -1446,7 +1447,7 @@ jobs:
     runs-on: ubuntu-22.04
     timeout-minutes: 10
     environment:
-      name: kcdesk-multilingual-shadow-review
+      name: portal-multilingual-shadow-review
     steps:
       - name: Download exact shadow review artifact
         uses: actions/download-artifact@v4
@@ -1507,7 +1508,7 @@ jobs:
     runs-on: ubuntu-22.04
     timeout-minutes: 10
     environment:
-      name: kcdesk-multilingual-production
+      name: portal-multilingual-production
     steps:
       - name: Download exact multilingual candidate identity
         uses: actions/download-artifact@v4
@@ -2229,7 +2230,7 @@ jobs:
           SHADOW_WORKER_NAME: ${{ needs.prepare_release.outputs.shadow_worker_name }}
         run: |
           set -euo pipefail
-          expected="kcdesk-locale-shadow-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          expected="portal-locale-shadow-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
           test "$SHADOW_WORKER_NAME" = "$expected"
           response="$RUNNER_TEMP/shadow-delete.json"
           status="$(curl --silent --show-error --request DELETE \

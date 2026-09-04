@@ -22,7 +22,8 @@ sys.modules[SPEC.name] = audit
 SPEC.loader.exec_module(audit)
 
 
-BASE_URL = "https://kcdesk-locale-shadow.example.workers.dev"
+BASE_URL = "https://portal-locale-shadow.example.workers.dev"
+PUBLIC_ORIGIN = "https://portal.example.invalid"
 RELEASE = "a" * 32
 TREE = "b" * 64
 
@@ -190,8 +191,8 @@ def response_fixture() -> tuple[dict, dict[str, FakeResponse | BaseException]]:
         responses[f"/sitemap-{locale}.xml"] = FakeResponse(
             (
                 '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
-                f"<url><loc>https://kcdesk.com/{locale}/</loc></url>"
-                f"<url><loc>https://kcdesk.com/{locale}/blog/</loc></url>"
+                f"<url><loc>https://portal.example.invalid/{locale}/</loc></url>"
+                f"<url><loc>https://portal.example.invalid/{locale}/blog/</loc></url>"
                 "</urlset>"
             ).encode("utf-8"),
             headers=protected_headers(locale),
@@ -200,9 +201,9 @@ def response_fixture() -> tuple[dict, dict[str, FakeResponse | BaseException]]:
             (
                 "<rss version='2.0'><channel>"
                 f"<language>{locale}</language>"
-                f"<link>https://kcdesk.com/{locale}/</link>"
-                f"<item><link>https://kcdesk.com/{locale}/blog/market-outlook.html</link>"
-                f"<guid>https://kcdesk.com/{locale}/blog/market-outlook.html</guid></item>"
+                f"<link>https://portal.example.invalid/{locale}/</link>"
+                f"<item><link>https://portal.example.invalid/{locale}/blog/market-outlook.html</link>"
+                f"<guid>https://portal.example.invalid/{locale}/blog/market-outlook.html</guid></item>"
                 "</channel></rss>"
             ).encode("utf-8"),
             headers=protected_headers(locale),
@@ -246,6 +247,7 @@ class ShadowPreviewAuditTests(unittest.TestCase):
             ):
                 result = audit.audit_preview(
                     base_url,
+                    PUBLIC_ORIGIN,
                     samples,
                     expected_release,
                     expected_tree,
@@ -310,7 +312,7 @@ class ShadowPreviewAuditTests(unittest.TestCase):
         self.assertEqual(len(opener.requests), len(responses))
         for request in opener.requests:
             self.assertEqual(request.get_header("Cache-control"), "no-cache")
-            self.assertEqual(request.get_header("User-agent"), "KCDesk-Shadow-Audit/1.0")
+            self.assertEqual(request.get_header("User-agent"), "Portal-Shadow-Audit/1.0")
 
     def test_rejects_non_bare_or_malformed_shadow_origins_before_network(self) -> None:
         plan, responses = response_fixture()
@@ -437,7 +439,7 @@ class ShadowPreviewAuditTests(unittest.TestCase):
     def test_validates_locale_sitemap_and_feed(self) -> None:
         plan, responses = response_fixture()
         responses["/sitemap-ar.xml"] = FakeResponse(
-            b"<urlset><url><loc>https://kcdesk.com/ja/</loc></url></urlset>",
+            b"<urlset><url><loc>https://portal.example.invalid/ja/</loc></url></urlset>",
             headers=protected_headers("ar"),
         )
         with self.assertRaisesRegex(audit.AuditError, "sitemap has an invalid locale URL"):

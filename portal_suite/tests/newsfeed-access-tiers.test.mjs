@@ -169,7 +169,7 @@ test("localized Newsfeed defaults and controls include Arabic without changing t
   const defaultLanguage = extractFunction(appSource, "newsfeedDefaultLanguage");
   const defaultFor = (contentLocale) => {
     const context = {
-      window: contentLocale ? { KCDeskLocale: { contentLocale } } : {},
+      window: contentLocale ? { PortalLocale: { contentLocale } } : {},
     };
     vm.runInNewContext(`
       ${languageCode}

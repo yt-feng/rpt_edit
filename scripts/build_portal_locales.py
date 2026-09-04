@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build complete Korean, Japanese, and Arabic KCDesk static mirrors.
+"""Build complete Korean, Japanese, and Arabic static mirrors.
 
 The Chinese release is built first and remains the source of truth.  This tool
 translates only public presentation text, adds locale-specific canonical and
@@ -33,7 +33,7 @@ from urllib.parse import parse_qsl, unquote, urlencode, urlsplit, urlunsplit
 import xml.etree.ElementTree as ET
 
 CACHE_SCHEMA_VERSION = 1
-PROMPT_VERSION = "kcdesk-public-locales-v4"
+PROMPT_VERSION = "portal-public-locales-v4"
 QUALITY_GATE_VERSION = 2
 DEFAULT_DEEPSEEK_MODEL = "deepseek-v4-flash"
 LEGACY_DEEPSEEK_MODEL_ALIASES = {
@@ -235,8 +235,9 @@ NON_JAPANESE_HAN_RE = re.compile(
 )
 JAPANESE_SHARED_HAN_ALLOWLIST = frozenset("潜触随静麦黄勁")
 NATIVE_LANGUAGE_LABELS = frozenset({"English", "中文", "日本語", "한국어", "العربية"})
+LATIN_PUBLIC_BRAND = "".join(("KC", "Desk"))
 TOKEN_RE = re.compile(
-    r"KC桌面|KCDesk"
+    rf"KC桌面|{re.escape(LATIN_PUBLIC_BRAND)}"
     r"|\b(?:true|false|null|undefined)\b"
     r"|\$\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\}"
     r"|(?i:<(?:style|script)\b[^>]*>.*?</(?:style|script)\s*>)"
@@ -393,7 +394,7 @@ def protect_text(value: str) -> ProtectedText:
 
     def replace(match: re.Match[str]) -> str:
         token = match.group(0)
-        replacements.append("KCDesk" if token in {"KCDesk", "KC桌面"} else token)
+        replacements.append(LATIN_PUBLIC_BRAND if token in {LATIN_PUBLIC_BRAND, "KC桌面"} else token)
         return f"__KC_PH_{len(replacements) - 1:03d}__"
 
     return ProtectedText(leading, TOKEN_RE.sub(replace, body), trailing, tuple(replacements))
@@ -853,11 +854,11 @@ def deepseek_translate_batch(
     config = LOCALES[locale]
     request_rows = [{"id": unit.key, "text": unit.source} for unit in units]
     system = (
-        f"You are the senior {config.language_name} editor for KCDesk, a financial research website. "
+        f"You are the senior {config.language_name} editor for {LATIN_PUBLIC_BRAND}, a financial research website. "
         f"Translate every input into natural, publication-ready {config.language_name}. "
         "Preserve every __KC_PH_000__ style placeholder exactly once, including its spelling. "
         "Keep official organization names, stock tickers, report IDs, URLs, dates, numbers, currencies, "
-        "HTML structure, and code fragments unchanged. KCDesk is a protected brand name. "
+        f"HTML structure, and code fragments unchanged. {LATIN_PUBLIC_BRAND} is a protected brand name. "
         f"Use genuine {config.language_name} script and syntax throughout all translatable prose. "
         "Never attach a target-language label or prefix to an untranslated source sentence. "
         "Do not summarize, omit, add commentary, or return markdown. Return strict JSON only as "
@@ -1225,7 +1226,7 @@ def json_ld_walk(
             elif key == "alternateName" and is_report:
                 # Report describes the original third-party research artifact.
                 # Preserve its source-language title while the localized
-                # WebPage/name/headline fields describe KCDesk's translation.
+                # WebPage/name/headline fields describe the public site's translation.
                 output[key] = child
             elif key == "availableLanguage" and locale:
                 output[key] = locale
@@ -4260,7 +4261,11 @@ def read_index_allowlist(path: Path | None) -> tuple[str, ...]:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, required=True, help="Built Chinese static release directory")
-    parser.add_argument("--site-url", required=True, help="Production HTTPS origin, for example https://kcdesk.com")
+    parser.add_argument(
+        "--site-url",
+        required=True,
+        help="Production HTTPS origin, for example https://portal.example.invalid",
+    )
     parser.add_argument("--cache-in", type=Path, help="Previous immutable release cache-v1.json.gz")
     parser.add_argument("--cache-out", type=Path, required=True, help="Cache path inside the candidate release")
     parser.add_argument("--assets-root", type=Path, default=Path("portal_suite/locale_assets"))

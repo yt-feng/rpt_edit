@@ -83,8 +83,8 @@ function newsfeedLocaleUi(locale, targetLanguage = "ar") {
   vm.runInNewContext(`
     const CONTENT_LOCALE = ${JSON.stringify(locale)};
     const window = {
-      KCDeskLocale: {
-        localeUrl(locale) { return "https://kcdesk.com/" + locale + "/newsfeed.html?q=markets#top"; },
+      PortalLocale: {
+        localeUrl(locale) { return "https://portal.example.invalid/" + locale + "/newsfeed.html?q=markets#top"; },
       },
     };
     ${extractFunction(app, "isLocalizedContentPage")}
@@ -108,7 +108,7 @@ assert.equal(newsfeedLocaleUi("zh-Hans").fixed, "", "the Chinese root keeps its 
 assert.equal(newsfeedLocaleUi("ja", "zh-CN").targetLocale, "zh-Hans");
 assert.equal(
   newsfeedLocaleUi("ja", "ko").targetUrl,
-  "https://kcdesk.com/ko/newsfeed.html?q=markets#top",
+  "https://portal.example.invalid/ko/newsfeed.html?q=markets#top",
   "interface switching must reuse localeUrl and preserve the current URL state",
 );
 

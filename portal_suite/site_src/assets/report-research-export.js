@@ -6,9 +6,9 @@
   const MAX_CHART_BYTES = 3 * 1024 * 1024;
   const MAX_TOTAL_CHART_BYTES = 18 * 1024 * 1024;
   const XML_DECLARATION = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>';
-  const CONTENT_DOCUMENT_LANG = window.KCDeskLocale && window.KCDeskLocale.contentLocale || "zh-CN";
-  const CONTENT_DOCUMENT_DIR = window.KCDeskLocale && window.KCDeskLocale.direction || "ltr";
-  const CONTENT_INTL_LOCALE = window.KCDeskLocale && window.KCDeskLocale.intlLocale || "zh-CN";
+  const CONTENT_DOCUMENT_LANG = window.PortalLocale && window.PortalLocale.contentLocale || "zh-CN";
+  const CONTENT_DOCUMENT_DIR = window.PortalLocale && window.PortalLocale.direction || "ltr";
+  const CONTENT_INTL_LOCALE = window.PortalLocale && window.PortalLocale.intlLocale || "zh-CN";
   const chartCache = new Map();
   const CRC32_TABLE = buildCrc32Table();
 

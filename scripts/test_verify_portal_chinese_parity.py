@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regression tests for the KCDesk Simplified-Chinese parity gate."""
+"""Regression tests for the Simplified-Chinese parity gate."""
 
 from __future__ import annotations
 
@@ -18,7 +18,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import verify_portal_chinese_parity as parity  # noqa: E402
 
 
-ORIGIN = "https://kcdesk.com"
+ORIGIN = "https://portal.example.invalid"
 ASSET_VERSION = "0123456789ab"
 BOOTSTRAP = (
     '<script data-kc-locale-bootstrap>(function(){'
@@ -91,11 +91,11 @@ class ChineseParityTests(unittest.TestCase):
             "feed.xml": "<rss><channel><title>中文报告</title></channel></rss>\n",
             "llms.txt": "# 中文报告\n",
             "llms-full.txt": "# 中文完整报告\n",
-            "sitemap-baidu.xml": "<urlset><url><loc>https://kcdesk.com/</loc></url></urlset>\n",
-            "sitemap-sogou.xml": "<urlset><url><loc>https://kcdesk.com/</loc></url></urlset>\n",
-            "sitemap-pages.xml": "<urlset><url><loc>https://kcdesk.com/</loc></url></urlset>\n",
-            "sitemap-reports-01.xml": "<urlset><url><loc>https://kcdesk.com/reports/market/</loc></url></urlset>\n",
-            "sitemap-blog-01.xml": "<urlset><url><loc>https://kcdesk.com/blog/example/</loc></url></urlset>\n",
+            "sitemap-baidu.xml": "<urlset><url><loc>https://portal.example.invalid/</loc></url></urlset>\n",
+            "sitemap-sogou.xml": "<urlset><url><loc>https://portal.example.invalid/</loc></url></urlset>\n",
+            "sitemap-pages.xml": "<urlset><url><loc>https://portal.example.invalid/</loc></url></urlset>\n",
+            "sitemap-reports-01.xml": "<urlset><url><loc>https://portal.example.invalid/reports/market/</loc></url></urlset>\n",
+            "sitemap-blog-01.xml": "<urlset><url><loc>https://portal.example.invalid/blog/example/</loc></url></urlset>\n",
         }
         for relative, value in protected.items():
             self._write(relative, value)

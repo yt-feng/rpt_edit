@@ -22,7 +22,7 @@
   ];
 
   function startNoncriticalRequest(callback) {
-    const locale = String(window.KCDeskLocale && window.KCDeskLocale.contentLocale || "").toLowerCase();
+    const locale = String(window.PortalLocale && window.PortalLocale.contentLocale || "").toLowerCase();
     if (!["ko", "ja", "ar"].includes(locale)) {
       callback();
       return;

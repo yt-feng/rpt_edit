@@ -19,7 +19,7 @@ function createHarness({
   htmlLang = "zh-Hans",
   browserLanguages = ["en-US"],
   browserLanguage = null,
-  href = "https://kcdesk.com/reports/example.html?from=test#summary",
+  href = "https://portal.example.invalid/reports/example.html?from=test#summary",
   responsePayload = { items: [] },
   responsePayloads = {},
   titleTranslations = {},
@@ -316,7 +316,7 @@ function createHarness({
 
 function assertNoSwitcherForSimplifiedChinese() {
   for (const browserLocale of ["zh-CN", "zh-Hans"]) {
-    const originalHref = "https://kcdesk.com/reports/?q=semiconductor#latest";
+    const originalHref = "https://portal.example.invalid/reports/?q=semiconductor#latest";
     const harness = createHarness({
       htmlLang: "zh-Hans",
       browserLanguages: [browserLocale, "en-US"],
@@ -348,9 +348,9 @@ function assertLocalePathMapping() {
     htmlLang: "zh-Hans",
     browserLanguages: ["zh-CN"],
   });
-  const source = "https://kcdesk.com/ko/reports/alpha.html?q=bank%20risk#source";
+  const source = "https://portal.example.invalid/ko/reports/alpha.html?q=bank%20risk#source";
   for (const locale of ["ko", "ja", "ar"]) {
-    const mapped = new URL(harness.window.KCDeskLocale.localeUrl(locale, source));
+    const mapped = new URL(harness.window.PortalLocale.localeUrl(locale, source));
     assert.equal(mapped.pathname, `/${locale}/reports/alpha.html`);
     assert.equal(mapped.search, "?q=bank%20risk");
     assert.equal(mapped.hash, "#source");
@@ -367,9 +367,9 @@ function assertLocaleFormattingConfiguration() {
   };
   for (const [htmlLang, [intlLocale, direction]] of Object.entries(expected)) {
     const harness = createHarness({ htmlLang, browserLanguages: ["zh-CN"] });
-    assert.equal(harness.window.KCDeskLocale.contentLocale, htmlLang);
-    assert.equal(harness.window.KCDeskLocale.intlLocale, intlLocale);
-    assert.equal(harness.window.KCDeskLocale.direction, direction);
+    assert.equal(harness.window.PortalLocale.contentLocale, htmlLang);
+    assert.equal(harness.window.PortalLocale.intlLocale, intlLocale);
+    assert.equal(harness.window.PortalLocale.direction, direction);
   }
 }
 
@@ -378,7 +378,7 @@ function assertSwitcherForNonSimplifiedBrowser() {
     htmlLang: "ja",
     browserLanguage: "en-US",
     browserLanguages: ["zh-CN", "en-US"],
-    href: "https://kcdesk.com/ja/reports/example.html?ref=nav#top",
+    href: "https://portal.example.invalid/ja/reports/example.html?ref=nav#top",
   });
   const switcher = harness.document.querySelector("[data-kc-locale-switcher]");
   assert.ok(switcher, "a non-Simplified-Chinese browser must create the locale switcher");
@@ -388,7 +388,7 @@ function assertSwitcherForNonSimplifiedBrowser() {
   assert.ok(chineseLink, "switcher must include the Chinese root-site link");
   assert.equal(
     chineseLink.href,
-    "https://kcdesk.com/reports/example.html?ref=nav#top",
+    "https://portal.example.invalid/reports/example.html?ref=nav#top",
     "the link observer must not rewrite the switcher's Chinese root-site link back into the current locale",
   );
   assert.equal(harness.redirects.length, 0, "creating the switcher must not navigate");
@@ -623,7 +623,7 @@ async function assertHotReportOverlayIsLazyAndGenerationBound() {
     },
   });
   assert.deepEqual(harness.fetchCalls, [], "Hot Report overlay must not load during locale startup");
-  const localized = await harness.window.KCDeskLocale.localizeHotReports({
+  const localized = await harness.window.PortalLocale.localizeHotReports({
     generation: "0123456789abcdef",
     items: [cloneJson(original)],
   });
@@ -635,7 +635,7 @@ async function assertHotReportOverlayIsLazyAndGenerationBound() {
   assert.equal(localized.items[0].description, "번역된 설명");
   assert.equal(localized.items[0].filename, original.filename);
 
-  const newerGeneration = await harness.window.KCDeskLocale.localizeHotReports({
+  const newerGeneration = await harness.window.PortalLocale.localizeHotReports({
     generation: "fedcba9876543210",
     items: [
       cloneJson(original),
@@ -648,7 +648,7 @@ async function assertHotReportOverlayIsLazyAndGenerationBound() {
   assert.equal(newerGeneration.next_cursor, "");
   assert.equal(newerGeneration.has_more, false);
 
-  const missingGeneration = await harness.window.KCDeskLocale.localizeHotReports({
+  const missingGeneration = await harness.window.PortalLocale.localizeHotReports({
     items: [cloneJson(original)],
   });
   assert.equal(missingGeneration.locale_translation_pending, true);
@@ -664,7 +664,7 @@ async function assertHotReportOverlayIsLazyAndGenerationBound() {
     browserLanguages: ["zh-CN"],
     overlayFailures: ["hot-reports"],
   });
-  const unavailable = await unavailableHarness.window.KCDeskLocale.localizeHotReports({
+  const unavailable = await unavailableHarness.window.PortalLocale.localizeHotReports({
     generation: "0123456789abcdef",
     items: [cloneJson(original)],
   });
@@ -672,7 +672,7 @@ async function assertHotReportOverlayIsLazyAndGenerationBound() {
   assert.deepEqual(Array.from(unavailable.items), [], "an unavailable overlay must not expose source-language list items");
 
   const chineseHarness = createHarness({ htmlLang: "zh-Hans", browserLanguages: ["zh-CN"] });
-  const chinese = await chineseHarness.window.KCDeskLocale.localizeHotReports({
+  const chinese = await chineseHarness.window.PortalLocale.localizeHotReports({
     generation: "fedcba9876543210",
     items: [cloneJson(original)],
   });
@@ -716,12 +716,12 @@ async function assertHotReportLocaleQueryFoldingAndFallback() {
     });
     assert.deepEqual(harness.fetchCalls, [], "locale query matching must remain lazy at startup");
     assert.deepEqual(
-      Array.from(await harness.window.KCDeskLocale.matchHotReportLocaleIds(query)),
+      Array.from(await harness.window.PortalLocale.matchHotReportLocaleIds(query)),
       [matchingId.slice("hot:".length)],
       `${locale} query folding must match localized public fields`,
     );
     assert.deepEqual(
-      Array.from(await harness.window.KCDeskLocale.matchHotReportLocaleIds("definitely absent")),
+      Array.from(await harness.window.PortalLocale.matchHotReportLocaleIds("definitely absent")),
       [],
       "an available overlay with no localized match must return an explicit empty ID set",
     );
@@ -738,7 +738,7 @@ async function assertHotReportLocaleQueryFoldingAndFallback() {
     overlayFailures: ["hot-reports"],
   });
   assert.equal(
-    await unavailable.window.KCDeskLocale.matchHotReportLocaleIds("半導体"),
+    await unavailable.window.PortalLocale.matchHotReportLocaleIds("半導体"),
     null,
     "an unavailable overlay must signal the app to keep the source-only query",
   );
@@ -775,13 +775,13 @@ function assertDynamicLinkLocalization() {
   const harness = createHarness({
     htmlLang: "ar",
     browserLanguages: ["zh-CN"],
-    href: "https://kcdesk.com/ar/?campaign=one#home",
+    href: "https://portal.example.invalid/ar/?campaign=one#home",
   });
 
   const internal = harness.appendAnchor("/reports/report-1.html?q=energy#summary");
   assert.equal(
     internal.getAttribute("href"),
-    "https://kcdesk.com/ar/reports/report-1.html?q=energy#summary",
+    "https://portal.example.invalid/ar/reports/report-1.html?q=energy#summary",
     "a dynamically inserted internal link must inherit the content locale",
   );
 

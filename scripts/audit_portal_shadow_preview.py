@@ -26,7 +26,6 @@ SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
 WORKERS_DEV_LABEL_RE = re.compile(r"^[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$")
 INVALID_PERCENT_RE = re.compile(r"%(?![0-9a-fA-F]{2})")
 DOUBLE_ENCODED_RE = re.compile(r"%[0-9a-fA-F]{2}")
-PUBLIC_HOST = "kcdesk.com"
 MAX_PLAN_BYTES = 1024 * 1024
 MAX_MANIFEST_PATHS = 8192
 MAX_RESPONSE_BYTES = 16 * 1024 * 1024
@@ -103,6 +102,26 @@ def validate_workers_dev_origin(base_url: str) -> str:
     ):
         raise AuditError("Shadow preview URL must be a bare workers.dev HTTPS origin")
     return base_url.rstrip("/")
+
+
+def validate_public_origin(value: str) -> str:
+    try:
+        parsed = urlsplit(value)
+        port = parsed.port
+    except ValueError as error:
+        raise AuditError("Public site URL must be a bare HTTPS origin") from error
+    if (
+        parsed.scheme != "https"
+        or not parsed.hostname
+        or parsed.username is not None
+        or parsed.password is not None
+        or port is not None
+        or parsed.path not in {"", "/"}
+        or parsed.query
+        or parsed.fragment
+    ):
+        raise AuditError("Public site URL must be a bare HTTPS origin")
+    return f"https://{parsed.hostname.lower()}"
 
 
 def validate_preview_path(relative: str, *, allow_query: bool) -> None:
@@ -343,7 +362,7 @@ def fetch(opener: Any, base_url: str, relative: str, *, attempts: int = 6) -> tu
         started = time.monotonic()
         try:
             response = opener.open(
-                Request(target, headers={"Cache-Control": "no-cache", "User-Agent": "KCDesk-Shadow-Audit/1.0"}),
+                Request(target, headers={"Cache-Control": "no-cache", "User-Agent": "Portal-Shadow-Audit/1.0"}),
                 timeout=30,
             )
             body = response.read(MAX_RESPONSE_BYTES + 1)
@@ -387,7 +406,7 @@ def xml_local_name(tag: Any) -> str:
     return str(tag).rsplit("}", 1)[-1].lower()
 
 
-def require_public_locale_url(value: str, locale: str, label: str) -> None:
+def require_public_locale_url(value: str, locale: str, label: str, public_origin: str) -> None:
     try:
         parsed = urlsplit(value.strip())
         port = parsed.port
@@ -395,7 +414,7 @@ def require_public_locale_url(value: str, locale: str, label: str) -> None:
         raise AuditError(f"{label} has an invalid locale URL") from error
     if (
         parsed.scheme != "https"
-        or parsed.hostname != PUBLIC_HOST
+        or parsed.hostname != urlsplit(public_origin).hostname
         or parsed.username is not None
         or parsed.password is not None
         or port is not None
@@ -406,7 +425,7 @@ def require_public_locale_url(value: str, locale: str, label: str) -> None:
         raise AuditError(f"{label} has an invalid locale URL")
 
 
-def validate_locale_sitemap(body: bytes, locale: str) -> None:
+def validate_locale_sitemap(body: bytes, locale: str, public_origin: str) -> None:
     root = xml_document(body, f"Shadow {locale} sitemap")
     if xml_local_name(root.tag) != "urlset":
         raise AuditError(f"Shadow {locale} sitemap has the wrong document type")
@@ -418,10 +437,10 @@ def validate_locale_sitemap(body: bytes, locale: str) -> None:
     if not locations:
         raise AuditError(f"Shadow {locale} sitemap is empty")
     for value in locations:
-        require_public_locale_url(value, locale, f"Shadow {locale} sitemap")
+        require_public_locale_url(value, locale, f"Shadow {locale} sitemap", public_origin)
 
 
-def validate_locale_feed(body: bytes, locale: str) -> None:
+def validate_locale_feed(body: bytes, locale: str, public_origin: str) -> None:
     root = xml_document(body, f"Shadow {locale} feed")
     if xml_local_name(root.tag) != "rss":
         raise AuditError(f"Shadow {locale} feed has the wrong document type")
@@ -440,7 +459,7 @@ def validate_locale_feed(body: bytes, locale: str) -> None:
     if not links:
         raise AuditError(f"Shadow {locale} feed has no links")
     for value in links:
-        require_public_locale_url(value, locale, f"Shadow {locale} feed")
+        require_public_locale_url(value, locale, f"Shadow {locale} feed", public_origin)
 
 
 def validate_manifest_row(row: Any, locale: str, label: str) -> tuple[str, int, str]:
@@ -532,11 +551,13 @@ def manifest_files(manifest: dict[str, Any]) -> dict[str, tuple[str, int, str]]:
 
 def audit_preview(
     base_url: str,
+    public_origin: str,
     samples_path: Path,
     expected_release: str,
     expected_tree: str,
 ) -> dict[str, Any]:
     base_url = validate_workers_dev_origin(base_url)
+    public_origin = validate_public_origin(public_origin)
     if not RELEASE_RE.fullmatch(expected_release) or not TREE_RE.fullmatch(expected_tree):
         raise AuditError("Expected shadow release identity is invalid")
     plan = read_json_object(samples_path, "Shadow review plan")
@@ -616,7 +637,7 @@ def audit_preview(
         require_shadow_header(headers, sitemap_path)
         if str(headers.get("Content-Language") or "").strip().lower() != locale:
             raise AuditError(f"Shadow sitemap has the wrong Content-Language: {sitemap_path}")
-        validate_locale_sitemap(body, locale)
+        validate_locale_sitemap(body, locale, public_origin)
         rows.append({
             "path": sitemap_path,
             "locale": locale,
@@ -629,7 +650,7 @@ def audit_preview(
         require_shadow_header(headers, feed_path)
         if str(headers.get("Content-Language") or "").strip().lower() != locale:
             raise AuditError(f"Shadow feed has the wrong Content-Language: {feed_path}")
-        validate_locale_feed(body, locale)
+        validate_locale_feed(body, locale, public_origin)
         rows.append({"path": feed_path, "locale": locale, "bytes": len(body), "milliseconds": round(elapsed * 1000)})
 
     for asset in sorted(assets):
@@ -667,6 +688,7 @@ def parse_args() -> argparse.Namespace:
     plan.add_argument("--output", type=Path, required=True)
     audit = subparsers.add_parser("audit")
     audit.add_argument("--base-url", required=True)
+    audit.add_argument("--public-origin", required=True)
     audit.add_argument("--samples", type=Path, required=True)
     audit.add_argument("--expected-release", required=True)
     audit.add_argument("--expected-tree", required=True)
@@ -681,6 +703,7 @@ def main() -> int:
     else:
         payload = audit_preview(
             args.base_url,
+            args.public_origin,
             args.samples,
             args.expected_release,
             args.expected_tree,
