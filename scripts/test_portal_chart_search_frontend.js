@@ -89,6 +89,23 @@ const publicText = Function(
   `"use strict"; ${chartsApp.slice(publicBoundaryStart, publicBoundaryEnd)}; return publicText;`,
 )("KC桌面");
 
+for (const source of [app, chartsApp]) {
+  const arabicFold = Function(
+    "CONTENT_INTL_LOCALE",
+    `"use strict"; ${extractFunction(source, "localeSearchText")}; return localeSearchText;`,
+  )("ar");
+  assert.equal(
+    arabicFold("إِمـارات أَسْهُم آفاق ٱستثمار ى"),
+    "امارات اسهم افاق استثمار ي",
+    "Arabic search must ignore harakat/tatweel and normalize common alef/ya variants",
+  );
+  const chineseFold = Function(
+    "CONTENT_INTL_LOCALE",
+    `"use strict"; ${extractFunction(source, "localeSearchText")}; return localeSearchText;`,
+  )("zh-CN");
+  assert.equal(chineseFold("Ａ股 AI"), "a股 ai", "Chinese-root folding must retain its existing NFKC behavior");
+}
+
 const reportSearchUrl = Function(
   "clean",
   "publicText",

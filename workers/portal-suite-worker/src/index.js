@@ -239,6 +239,12 @@ const HOT_REPORT_PUBLIC_INDEX_VERSION = 2;
 const HOT_REPORT_PUBLIC_DEFAULT_PAGE_SIZE = 24;
 const HOT_REPORT_PUBLIC_MAX_PAGE_SIZE = 60;
 const HOT_REPORT_PUBLIC_CURSOR_MAX_LENGTH = 1024;
+const HOT_REPORT_LOCALE_IDS_MAX_ITEMS = 750;
+const HOT_REPORT_LOCALE_IDS_MAX_LENGTH = HOT_REPORT_LOCALE_IDS_MAX_ITEMS * 16
+  + HOT_REPORT_LOCALE_IDS_MAX_ITEMS - 1;
+const PORTAL_PUBLIC_CAPABILITIES = Object.freeze({
+  hot_report_locale_ids_v1: true,
+});
 const HOT_REPORT_LIST_CONCURRENCY = 20;
 const HOT_REPORT_RETENTION_MAX_CANDIDATES_PER_RUN = 250;
 const HOT_REPORT_MAX_COMMENTS = 500;
@@ -821,6 +827,7 @@ const NEWSFEED_OUTPUT_LANGUAGES = [
   { code: "zh-CN", label: "中文", instruction: "Simplified Chinese" },
   { code: "ja", label: "日本語", instruction: "Japanese" },
   { code: "ko", label: "한국어", instruction: "Korean" },
+  { code: "ar", label: "العربية", instruction: "Arabic" },
 ];
 const NEWSFEED_REGIONS = [
   {
@@ -9916,9 +9923,45 @@ function cleanHotReportPublicQuery(value) {
   return normalizeText(cleanHotReportText(value, 160));
 }
 
-function hotReportPublicItemMatches(item, normalizedQuery) {
+function parseHotReportLocaleIds(searchParams) {
+  const values = searchParams.getAll("locale_ids");
+  if (!values.length) return null;
+  if (values.length !== 1) throw new TypeError("Invalid Hot Report locale IDs.");
+  const raw = String(values[0] || "");
+  if (raw.length > HOT_REPORT_LOCALE_IDS_MAX_LENGTH) {
+    throw new TypeError("Invalid Hot Report locale IDs.");
+  }
+  if (!raw) return new Set();
+  const ids = raw.split(",");
+  if (ids.length > HOT_REPORT_LOCALE_IDS_MAX_ITEMS) {
+    throw new TypeError("Invalid Hot Report locale IDs.");
+  }
+  const unique = new Set();
+  for (const id of ids) {
+    if (!/^[a-f0-9]{16}$/.test(id) || unique.has(id)) {
+      throw new TypeError("Invalid Hot Report locale IDs.");
+    }
+    unique.add(id);
+  }
+  return unique;
+}
+
+function hotReportLocaleIdsSignature(localeIds) {
+  if (localeIds === null) return "";
+  const ids = [...localeIds].sort();
+  let hash = 0x811c9dc5;
+  for (const character of ids.join(",")) {
+    hash ^= character.charCodeAt(0);
+    hash = Math.imul(hash, 0x01000193) >>> 0;
+  }
+  return `${ids.length}:${hash.toString(16).padStart(8, "0")}`;
+}
+
+function hotReportPublicItemMatches(item, normalizedQuery, localeIds = null) {
   const tokens = String(normalizedQuery || "").split(" ").filter(Boolean);
   if (!tokens.length) return true;
+  const id = cleanHotReportId(item && item.id);
+  const localizedMatch = localeIds instanceof Set && id && localeIds.has(id.slice("hot:".length));
   const searchable = normalizeText([
     item && item.title,
     item && item.title_cn,
@@ -9927,14 +9970,15 @@ function hotReportPublicItemMatches(item, normalizedQuery) {
     item && item.description,
     item && item.filename,
   ].join(" "));
-  return tokens.every((token) => searchable.includes(token));
+  return localizedMatch || tokens.every((token) => searchable.includes(token));
 }
 
-function hotReportPublicCursor(item, normalizedQuery, generation) {
+function hotReportPublicCursor(item, normalizedQuery, generation, localeIds = null) {
   return base64UrlEncodeText(JSON.stringify({
     version: HOT_REPORT_PUBLIC_INDEX_VERSION,
     generation: hotReportArchiveGeneration(generation),
     query: normalizedQuery,
+    locale_ids_signature: hotReportLocaleIdsSignature(localeIds),
     sort_order: Number(item && item.sort_order || 0) || 0,
     date: String(item && item.date || ""),
     created_at: String(item && item.created_at || ""),
@@ -9942,7 +9986,7 @@ function hotReportPublicCursor(item, normalizedQuery, generation) {
   }));
 }
 
-function decodeHotReportPublicCursor(value, normalizedQuery) {
+function decodeHotReportPublicCursor(value, normalizedQuery, localeIds = null) {
   const encoded = String(value || "");
   if (!encoded) return null;
   if (encoded.length > HOT_REPORT_PUBLIC_CURSOR_MAX_LENGTH) throw new TypeError("Invalid hot report cursor.");
@@ -9963,6 +10007,7 @@ function decodeHotReportPublicCursor(value, normalizedQuery) {
     !parsed
     || Number(parsed.version) !== HOT_REPORT_PUBLIC_INDEX_VERSION
     || String(parsed.query || "") !== normalizedQuery
+    || String(parsed.locale_ids_signature || "") !== hotReportLocaleIdsSignature(localeIds)
     || !item.id
     || !item.generation
     || !Number.isSafeInteger(item.sort_order)
@@ -9981,14 +10026,15 @@ function hotReportPublicPageSize(value) {
 function listHotReportPageFromIndex(index, options = {}) {
   const limit = hotReportPublicPageSize(options.limit);
   const normalizedQuery = cleanHotReportPublicQuery(options.query);
-  const after = decodeHotReportPublicCursor(options.cursor, normalizedQuery);
+  const localeIds = options.localeIds instanceof Set ? options.localeIds : null;
+  const after = decodeHotReportPublicCursor(options.cursor, normalizedQuery, localeIds);
   if (after && after.generation !== index.generation) {
     const error = new Error("Hot report index changed; restart pagination from the first page.");
     error.code = "HOT_REPORT_CURSOR_STALE";
     throw error;
   }
   const publicItems = index.items.slice(0, HOT_REPORT_PUBLIC_MAX_ITEMS);
-  const matched = publicItems.filter((item) => hotReportPublicItemMatches(item, normalizedQuery));
+  const matched = publicItems.filter((item) => hotReportPublicItemMatches(item, normalizedQuery, localeIds));
   let start = 0;
   if (after) {
     const nextIndex = matched.findIndex((item) => compareHotReportPublicItems(item, after) > 0);
@@ -10002,7 +10048,7 @@ function listHotReportPageFromIndex(index, options = {}) {
     page_size: limit,
     has_more: hasMore,
     next_cursor: hasMore && items.length
-      ? hotReportPublicCursor(items[items.length - 1], normalizedQuery, index.generation)
+      ? hotReportPublicCursor(items[items.length - 1], normalizedQuery, index.generation, localeIds)
       : "",
     query: normalizedQuery,
     generation: index.generation,
@@ -10490,6 +10536,7 @@ async function handleHotReportsList(request, env, ctx = null) {
       limit: url.searchParams.get("limit"),
       cursor: url.searchParams.get("cursor"),
       query: url.searchParams.get("q"),
+      localeIds: parseHotReportLocaleIds(url.searchParams),
     });
     const response = new Response(JSON.stringify({
       ...page,
@@ -12811,8 +12858,11 @@ function newsfeedGoogleLocale(regions, language) {
   const region = values
     .map((value) => NEWSFEED_REGIONS.find((item) => item.code === value))
     .find((item) => item && item.code !== "global");
-  if (region && region.google) return region.google;
   const code = normalizeNewsfeedLanguage(language);
+  if (code === "ar" && (!region || region.code === "mena")) {
+    return { hl: "ar", gl: "AE", ceid: "AE:ar" };
+  }
+  if (region && region.google) return region.google;
   if (code === "zh-CN") return { hl: "zh-CN", gl: "CN", ceid: "CN:zh-Hans" };
   if (code === "ja") return { hl: "ja", gl: "JP", ceid: "JP:ja" };
   if (code === "ko") return { hl: "ko", gl: "KR", ceid: "KR:ko" };
@@ -16567,10 +16617,15 @@ async function generateNewsfeedTopicPackage(env, input, outputLanguage = "en") {
 }
 
 function newsfeedPreferencesFromRequest(request, settings = {}, policy = null) {
-  if (!policy || !policy.active_member) return { regions: ["global"], language: "en" };
   const url = new URL(request.url);
-  const regionsParam = url.searchParams.get("regions");
   const languageParam = url.searchParams.get("language");
+  if (!policy || !policy.active_member) {
+    return {
+      regions: ["global"],
+      language: normalizeNewsfeedLanguage(languageParam || "en"),
+    };
+  }
+  const regionsParam = url.searchParams.get("regions");
   const regions = normalizeNewsfeedRegions(regionsParam ? regionsParam.split(",") : settings.preferred_regions);
   const language = normalizeNewsfeedLanguage(languageParam || settings.interface_language || settings.digest_language || "en");
   return { regions, language };
@@ -17152,6 +17207,36 @@ function fallbackArticleNarrative(article) {
       ].join("\n\n"),
     };
   }
+  if (language === "ja") {
+    return {
+      summary: summary ? `${source}によると、${summary}` : `${source}が「${title}」について報じています。`,
+      narrative: [
+        `${source}が「${title}」について報じています。`,
+        summary ? `主なポイントは次のとおりです。${summary}` : "見出しからは、引き続き動向を追う必要があるニュースであることが分かります。",
+        "ニュースフィードには元記事へのリンクを残しているため、詳細や文脈を原文で確認できます。",
+      ].join("\n\n"),
+    };
+  }
+  if (language === "ko") {
+    return {
+      summary: summary ? `${source} 보도에 따르면, ${summary}` : `${source}가 ‘${title}’ 소식을 전했습니다.`,
+      narrative: [
+        `${source}가 ‘${title}’ 관련 소식을 전하고 있습니다.`,
+        summary ? `핵심 내용은 다음과 같습니다. ${summary}` : "제목을 보면 아직 전개 중인 사안으로, 후속 보도와 원문을 함께 확인할 필요가 있습니다.",
+        "뉴스피드에는 원문 링크가 유지되므로 세부 내용과 맥락을 직접 확인할 수 있습니다.",
+      ].join("\n\n"),
+    };
+  }
+  if (language === "ar") {
+    return {
+      summary: summary ? `بحسب ${source}: ${summary}` : `أورد ${source} هذا الخبر: ${title}.`,
+      narrative: [
+        `${source} يتابع خبراً جديداً بعنوان «${title}».`,
+        summary ? `تتمثل الخلاصة الرئيسية في: ${summary}` : "يشير العنوان إلى خبر لا يزال قيد التطور ويستحق المتابعة عبر المصادر الأصلية.",
+        "يحتفظ موجز الأخبار برابط المصدر الأصلي لتتمكن من مراجعة التفاصيل والسياق ومقارنتها بالوقائع المنشورة.",
+      ].join("\n\n"),
+    };
+  }
   return {
     summary: summary || `${source} is reporting: ${title}.`,
     narrative: [
@@ -17242,6 +17327,7 @@ async function handleNewsfeedArticle(request, env) {
 
 function newsfeedBriefingLimit(language) {
   const code = normalizeNewsfeedLanguage(language);
+  if (code === "ar") return 480;
   return code === "zh-CN" || code === "ja" || code === "ko" ? 260 : 680;
 }
 
@@ -17271,6 +17357,12 @@ function buildNewsfeedBriefingScript(input = {}) {
       `${PUBLIC_BRAND} 30초 뉴스 브리핑입니다.`,
       ...cleaned.map((line, index) => `${index + 1}번째, ${line}.`),
       "이상 현재 뉴스피드 핵심입니다.",
+    ].join(" ");
+  } else if (language === "ar") {
+    text = [
+      `إليك موجز ${PUBLIC_BRAND} الإخباري في ثلاثين ثانية.`,
+      ...cleaned.map((line, index) => `الخبر ${index + 1}: ${line}.`),
+      "كانت هذه أبرز أخبار موجزك الحالي.",
     ].join(" ");
   } else {
     text = [
@@ -24614,6 +24706,7 @@ export default {
       const effectivePicksSnapshot = hasAdminSnapshot(picksSnapshot) ? picksSnapshot : legacyPicksSnapshot;
       return jsonResponse(request, env, 200, {
         ok: true,
+        capabilities: PORTAL_PUBLIC_CAPABILITIES,
         dashboard_cache: {
           files: adminSnapshotStatus(filesSnapshot, ADMIN_FILES_SNAPSHOT_FRESH_MS),
           picks: {

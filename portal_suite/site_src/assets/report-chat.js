@@ -5,6 +5,8 @@
   const CHAT_REQUEST_TIMEOUT_MS = 20 * 1000;
   const RESEARCH_REQUEST_TIMEOUT_MS = 60 * 1000;
   const REQUEST_RESEARCH_TIMEOUT_MS = 20 * 1000;
+  const LOCALE_NONCRITICAL_IDLE_TIMEOUT_MS = 6 * 1000;
+  const LOCALE_NONCRITICAL_FALLBACK_DELAY_MS = 3 * 1000;
   const surfaces = [
     {
       context: "report",
@@ -18,6 +20,19 @@
     },
     { context: "course", form: "courseChatForm", input: "courseChatInput", status: "courseChatStatus", messages: "courseChatMessages", recommendations: "courseChatRecommendations" },
   ];
+
+  function startNoncriticalRequest(callback) {
+    const locale = String(window.KCDeskLocale && window.KCDeskLocale.contentLocale || "").toLowerCase();
+    if (!["ko", "ja", "ar"].includes(locale)) {
+      callback();
+      return;
+    }
+    if (typeof window.requestIdleCallback === "function") {
+      window.requestIdleCallback(callback, { timeout: LOCALE_NONCRITICAL_IDLE_TIMEOUT_MS });
+      return;
+    }
+    window.setTimeout(callback, LOCALE_NONCRITICAL_FALLBACK_DELAY_MS);
+  }
 
   function escapeHtml(value) {
     return String(value || "").replace(/[&<>"']/g, (character) => ({
@@ -871,27 +886,29 @@
     });
 
     if (popular && popularList) {
-      fetch("/api/report-chat/popular", {
-        method: "GET",
-        cache: "no-store",
-        headers: optionalAuthHeaders(session()),
-      }).then(async (response) => {
-        const data = await response.json().catch(() => ({}));
-        if (!response.ok) throw new Error("popular_unavailable");
-        const rows = popularRows(data);
-        if (!rows.length) return;
-        popularItems = new Map(rows.map((item) => [String(item.id).trim(), item]));
-        popularList.innerHTML = popularListHtml(rows);
-        popular.hidden = false;
-        rows.forEach((item) => trackInteraction("popular_impression", {
-          context: surface.context,
-          popular_id: item.id,
-          question_hash: responseQuestionHash(item),
-          item_count: rows.length,
-        }));
-      }).catch(() => {
-        popular.hidden = true;
-        trackInteraction("popular_error", { context: surface.context, status: "list_unavailable" });
+      startNoncriticalRequest(() => {
+        fetch("/api/report-chat/popular", {
+          method: "GET",
+          cache: "no-store",
+          headers: optionalAuthHeaders(session()),
+        }).then(async (response) => {
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok) throw new Error("popular_unavailable");
+          const rows = popularRows(data);
+          if (!rows.length) return;
+          popularItems = new Map(rows.map((item) => [String(item.id).trim(), item]));
+          popularList.innerHTML = popularListHtml(rows);
+          popular.hidden = false;
+          rows.forEach((item) => trackInteraction("popular_impression", {
+            context: surface.context,
+            popular_id: item.id,
+            question_hash: responseQuestionHash(item),
+            item_count: rows.length,
+          }));
+        }).catch(() => {
+          popular.hidden = true;
+          trackInteraction("popular_error", { context: surface.context, status: "list_unavailable" });
+        });
       });
     }
   }

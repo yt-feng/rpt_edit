@@ -6,6 +6,7 @@ const vm = require("node:vm");
 const root = path.resolve(__dirname, "..");
 const worker = fs.readFileSync(path.join(root, "workers/portal-suite-worker/src/index.js"), "utf8");
 const app = fs.readFileSync(path.join(root, "portal_suite/site_src/assets/app.js"), "utf8");
+const localeCss = fs.readFileSync(path.join(root, "portal_suite/locale_assets/locale.css"), "utf8");
 
 function extractFunction(source, name) {
   const starts = [`async function ${name}(`, `function ${name}(`]
@@ -76,6 +77,115 @@ const other = { id: "user-b", username: "other", email: "other@example.com" };
 
 assert.equal(api.isNewsfeedAccount(reader), true, "every active registered user gets Newsfeed access");
 assert.equal(api.isNewsfeedAccount({ ...reader, disabled: true }), false, "disabled users stay blocked");
+
+function newsfeedLocaleUi(locale, targetLanguage = "ar") {
+  const localeSandbox = { result: null };
+  vm.runInNewContext(`
+    const CONTENT_LOCALE = ${JSON.stringify(locale)};
+    const window = {
+      KCDeskLocale: {
+        localeUrl(locale) { return "https://kcdesk.com/" + locale + "/newsfeed.html?q=markets#top"; },
+      },
+    };
+    ${extractFunction(app, "isLocalizedContentPage")}
+    ${extractFunction(app, "newsfeedLanguageCode")}
+    ${extractFunction(app, "newsfeedFixedInterfaceLanguage")}
+    ${extractFunction(app, "newsfeedInterfaceLocaleCode")}
+    ${extractFunction(app, "newsfeedInterfaceNavigationUrl")}
+    result = {
+      fixed: newsfeedFixedInterfaceLanguage(),
+      targetLocale: newsfeedInterfaceLocaleCode(${JSON.stringify(targetLanguage)}),
+      targetUrl: newsfeedInterfaceNavigationUrl(${JSON.stringify(targetLanguage)}),
+    };
+  `, localeSandbox);
+  return localeSandbox.result;
+}
+
+for (const locale of ["ko", "ja", "ar"]) {
+  assert.equal(newsfeedLocaleUi(locale).fixed, locale, `${locale} Newsfeed UI must follow the URL locale`);
+}
+assert.equal(newsfeedLocaleUi("zh-Hans").fixed, "", "the Chinese root keeps its existing Newsfeed preference behavior");
+assert.equal(newsfeedLocaleUi("ja", "zh-CN").targetLocale, "zh-Hans");
+assert.equal(
+  newsfeedLocaleUi("ja", "ko").targetUrl,
+  "https://kcdesk.com/ko/newsfeed.html?q=markets#top",
+  "interface switching must reuse localeUrl and preserve the current URL state",
+);
+
+const settingsSandbox = { state: null };
+vm.runInNewContext(`
+  const CONTENT_LOCALE = "ja";
+  function normalizeNewsfeedRegionsClient(value) { return value || ["global"]; }
+  ${extractFunction(app, "isLocalizedContentPage")}
+  ${extractFunction(app, "newsfeedLanguageCode")}
+  ${extractFunction(app, "newsfeedFixedInterfaceLanguage")}
+  ${extractFunction(app, "applyNewsfeedSettings")}
+  state = { interfaceLanguage: "ja", outputLanguage: "en", preferredRegions: ["global"] };
+  applyNewsfeedSettings(state, { interface_language: "ar", digest_language: "ko", preferred_regions: ["mena"] });
+`, settingsSandbox);
+assert.equal(settingsSandbox.state.interfaceLanguage, "ja", "saved settings cannot override a localized URL's interface language");
+assert.equal(settingsSandbox.state.outputLanguage, "ko", "content output language remains independent of the interface locale");
+
+const timeSandbox = { calls: [], result: "" };
+vm.runInNewContext(`
+  const CONTENT_LOCALE = "ja";
+  const CONTENT_INTL_LOCALE = "ja-JP";
+  const Intl = {
+    RelativeTimeFormat: class {
+      constructor(locale) { calls.push(["relative", locale]); this.locale = locale; }
+      format(value, unit) { return this.locale + ":" + value + ":" + unit; }
+    },
+    DateTimeFormat: class {
+      constructor(locale) { calls.push(["absolute", locale]); this.locale = locale; }
+      format() { return this.locale + ":absolute"; }
+    },
+  };
+  ${extractFunction(app, "isLocalizedContentPage")}
+  ${extractFunction(app, "newsfeedTimeLabel")}
+  result = newsfeedTimeLabel(${JSON.stringify(new Date(Date.now() - 5 * 60 * 1000).toISOString())});
+`, timeSandbox);
+assert.match(timeSandbox.result, /^ja-JP:-\d+:minute$/, "relative Newsfeed time must be formatted through the page locale");
+assert.deepEqual(Array.from(timeSandbox.calls[0]), ["relative", "ja-JP"]);
+
+const rootPresentationSandbox = { result: null };
+vm.runInNewContext(`
+  const CONTENT_LOCALE = "zh-Hans";
+  ${extractFunction(app, "isLocalizedContentPage")}
+  const NEWSFEED_SYSTEM_TOPIC_COPY = { "tech-ai": { title: "Technology news" } };
+  const NEWSFEED_CATEGORY_COPY = { Tech: "Technology news" };
+  const NEWSFEED_SUGGESTED_TOPIC_COPY = { "Original suggestion": "Localized suggestion" };
+  ${extractFunction(app, "newsfeedTopicText")}
+  ${extractFunction(app, "newsfeedCategoryText")}
+  ${extractFunction(app, "newsfeedSuggestedTopicText")}
+  result = {
+    topic: newsfeedTopicText({ id: "tech-ai", title: "Tech" }),
+    category: newsfeedCategoryText("Tech"),
+    suggestion: newsfeedSuggestedTopicText("Original suggestion"),
+  };
+`, rootPresentationSandbox);
+assert.deepEqual(
+  JSON.parse(JSON.stringify(rootPresentationSandbox.result)),
+  { topic: "Tech", category: "Tech", suggestion: "Original suggestion" },
+  "localized presentation mappings must not change the Chinese root",
+);
+
+const rootTimeSandbox = { result: "" };
+vm.runInNewContext(`
+  const CONTENT_LOCALE = "zh-Hans";
+  const CONTENT_INTL_LOCALE = "zh-CN";
+  ${extractFunction(app, "isLocalizedContentPage")}
+  ${extractFunction(app, "newsfeedTimeLabel")}
+  result = newsfeedTimeLabel(${JSON.stringify(new Date(Date.now() - 5 * 60 * 1000).toISOString())});
+`, rootTimeSandbox);
+assert.match(rootTimeSandbox.result, /^\d+m ago$/, "the Chinese root keeps its established Newsfeed relative-time format");
+
+assert.match(app, /if \(fixedInterfaceLanguage\) \{[\s\S]{0,260}newsfeedInterfaceNavigationUrl[\s\S]{0,160}window\.location\.href = nextUrl[\s\S]{0,80}return;/, "localized interface selection must navigate instead of mutating lang state");
+assert.match(app, /data-action="home-category"[\s\S]{0,220}newsfeedCategoryText\(item\)/, "home category labels must be localized without changing category values");
+assert.match(app, /data-action="explore-category"[\s\S]{0,220}newsfeedCategoryText\(item\)/, "explore category labels must be localized without changing category values");
+assert.match(app, /newsfeedSuggestedTopicText\(topic\)/, "built-in suggested-topic labels must be localized");
+assert.match(app, /const topicTitle = newsfeedTopicText\(topic\)[\s\S]{0,400}<h2>\$\{escapeHtml\(topicTitle\)\}/, "built-in topic pages must use localized title copy");
+assert.match(app, /localizedServiceMessage\(data\.detail \|\| data\.error, "Newsfeed request failed\."\)/, "localized Newsfeed API errors must use generic translated copy");
+assert.match(localeCss, /html\[dir="rtl"\] \.course-material-cover > span \{[\s\S]*?border-radius: 0 0 0 12px;/, "the Arabic course-cover badge must mirror its corner radius");
 
 (async () => {
   await assert.rejects(

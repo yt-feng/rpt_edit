@@ -66,6 +66,20 @@ class MemoryR2 {
 function fixture() {
   const bucket = new MemoryR2();
   bucket.seed("index.html", "home", { contentType: "text/html; charset=utf-8", etag: '"home-v1"' });
+  bucket.seed("ko/index.html", "ko-home", { contentType: "text/html; charset=utf-8", etag: '"ko-home-v1"' });
+  bucket.seed("ja/index.html", "ja-home", { contentType: "text/html; charset=utf-8", etag: '"ja-home-v1"' });
+  bucket.seed("ar/index.html", "ar-home", { contentType: "text/html; charset=utf-8", etag: '"ar-home-v1"' });
+  bucket.seed("reports/topics/artificial-intelligence/index.html", "root-ai-hub", { contentType: "text/html; charset=utf-8" });
+  bucket.seed("ko/reports/topics/artificial-intelligence/index.html", "ko-ai-hub", { contentType: "text/html; charset=utf-8" });
+  bucket.seed("ja/reports/institutions/nomura/index.html", "ja-nomura-hub", { contentType: "text/html; charset=utf-8" });
+  bucket.seed("ar/reports/topics/markets/index.html", "ar-markets-hub", { contentType: "text/html; charset=utf-8" });
+  bucket.seed("report.html", '<link rel="canonical" href="https://static.example.invalid/report.html">report-page', { contentType: "text/html; charset=utf-8" });
+  bucket.seed("blog/page-2.html", '<link rel="canonical" href="https://static.example.invalid/blog/page-2.html">blog-page-2', { contentType: "text/html; charset=utf-8" });
+  bucket.seed("ja/blog/page-2.html", '<link rel="canonical" href="https://static.example.invalid/ja/blog/page-2.html">ja-blog-page-2', { contentType: "text/html; charset=utf-8" });
+  bucket.seed("download", "extensionless-file", { contentType: "application/octet-stream" });
+  bucket.seed("assets/guide/index.html", "asset-guide", { contentType: "text/html; charset=utf-8" });
+  bucket.seed("data/i18n/ar/catalog-titles.json", '{"locale":"ar","titles":{}}', { etag: '"ar-titles-v1"' });
+  bucket.seed("sitemap-ja.xml", "<urlset></urlset>", { contentType: "application/xml", etag: '"ja-map-v1"' });
   bucket.seed("404.html", "missing", { contentType: "text/html; charset=utf-8", etag: '"missing-v1"' });
   bucket.seed("data/catalog.json", '{"items":[]}', { etag: '"catalog-v1"' });
   bucket.seed("data/catalog_preview.json", '{"items":[]}', { etag: '"catalog-preview-v1"' });
@@ -94,6 +108,7 @@ test("HTML keeps browser freshness while the canonical gateway bypasses CDN stor
   assert.doesNotMatch(response.headers.get("cloudflare-cdn-cache-control"), /s-maxage/i);
   assert.equal(response.headers.get("etag"), '"home-v1"');
   assert.equal(response.headers.get("last-modified"), "Wed, 12 Aug 2026 04:05:06 GMT");
+  assert.equal(response.headers.get("content-language"), "zh-Hans");
 });
 
 test("legacy HTML paths and alias hosts redirect to one canonical URL", async () => {
@@ -112,6 +127,145 @@ test("legacy HTML paths and alias hosts redirect to one canonical URL", async ()
   const slash = await worker.fetch(new Request("https://static.example.invalid/reports/institutions/bernstein"), env);
   assert.equal(slash.status, 301);
   assert.equal(slash.headers.get("location"), "https://static.example.invalid/reports/institutions/bernstein/");
+});
+
+test("localized legacy paths use the root canonical rules and preserve queries", async () => {
+  const env = fixture();
+  env.CANONICAL_HOST = "static.example.invalid";
+  const cases = [
+    ["/ja?from=nav", "/ja/?from=nav", "ja"],
+    ["/ar/index.html?from=nav", "/ar/?from=nav", "ar"],
+    ["/ko/reports?q=ai", "/ko/reports/?q=ai", "ko"],
+    ["/ja/blog/index.html?page=2", "/ja/blog/?page=2", "ja"],
+    ["/ar/reports/institutions/bernstein?view=latest", "/ar/reports/institutions/bernstein/?view=latest", "ar"],
+    ["/ko/charts.html?topic=macro", "/ko/charts?topic=macro", "ko"],
+  ];
+
+  for (const [source, target, language] of cases) {
+    const response = await worker.fetch(new Request(`https://static.example.invalid${source}`), env);
+    assert.equal(response.status, 301, source);
+    assert.equal(response.headers.get("location"), `https://static.example.invalid${target}`, source);
+    assert.equal(response.headers.get("content-language"), language, source);
+  }
+
+  for (const locale of ["ko", "ja", "ar"]) {
+    const response = await worker.fetch(new Request(`https://static.example.invalid/${locale}/`), env);
+    assert.equal(response.status, 200, locale);
+    assert.equal(response.headers.get("location"), null, locale);
+  }
+});
+
+test("localized deep hubs redirect to trailing-slash canonicals without changing Chinese routing", async () => {
+  const env = fixture();
+  env.CANONICAL_HOST = "static.example.invalid";
+  const cases = [
+    ["/ko/reports/topics/artificial-intelligence?source=ko", "/ko/reports/topics/artificial-intelligence/?source=ko", "ko", "ko-ai-hub"],
+    ["/ja/reports/institutions/nomura?source=ja", "/ja/reports/institutions/nomura/?source=ja", "ja", "ja-nomura-hub"],
+    ["/ar/reports/topics/markets?source=ar", "/ar/reports/topics/markets/?source=ar", "ar", "ar-markets-hub"],
+  ];
+
+  for (const [source, target, language, body] of cases) {
+    const response = await worker.fetch(new Request(`https://static.example.invalid${source}`), env);
+    assert.equal(response.status, 301, source);
+    assert.equal(response.headers.get("location"), `https://static.example.invalid${target}`, source);
+    assert.equal(response.headers.get("content-language"), language, source);
+
+    const canonical = await worker.fetch(new Request(`https://static.example.invalid${target}`), env);
+    assert.equal(canonical.status, 200, target);
+    assert.equal(canonical.headers.get("location"), null, target);
+    assert.equal(await canonical.text(), body, target);
+  }
+
+  const chineseExistingRoute = await worker.fetch(
+    new Request("https://static.example.invalid/reports/topics/artificial-intelligence?source=root"),
+    env,
+  );
+  assert.equal(chineseExistingRoute.status, 200);
+  assert.equal(chineseExistingRoute.headers.get("location"), null);
+  assert.equal(await chineseExistingRoute.text(), "root-ai-hub");
+});
+
+test("report and blog HTML canonicals remain extensionful without redirecting assets or files", async () => {
+  const env = fixture();
+  env.CANONICAL_HOST = "static.example.invalid";
+
+  for (const [path, canonical, marker] of [
+    ["/report.html?view=full", "https://static.example.invalid/report.html", "report-page"],
+    ["/blog/page-2.html?source=archive", "https://static.example.invalid/blog/page-2.html", "blog-page-2"],
+  ]) {
+    const html = await worker.fetch(new Request(`https://static.example.invalid${path}`), env);
+    assert.equal(html.status, 200, path);
+    assert.equal(html.headers.get("location"), null, path);
+    const body = await html.text();
+    assert.match(body, new RegExp(`rel="canonical" href="${canonical}"`), path);
+    assert.match(body, new RegExp(marker), path);
+  }
+
+  const explicitPrettyPath = await worker.fetch(new Request("https://static.example.invalid/charts.html?topic=macro"), env);
+  assert.equal(explicitPrettyPath.status, 301);
+  assert.equal(explicitPrettyPath.headers.get("location"), "https://static.example.invalid/charts?topic=macro");
+
+  const deepIndexHtml = await worker.fetch(new Request("https://static.example.invalid/ja/reports/institutions/nomura/index.html?keep=1"), env);
+  assert.equal(deepIndexHtml.status, 301);
+  assert.equal(
+    deepIndexHtml.headers.get("location"),
+    "https://static.example.invalid/ja/reports/institutions/nomura/?keep=1",
+  );
+
+  const localizedExtensionlessBlog = await worker.fetch(
+    new Request("https://static.example.invalid/ja/blog/page-2?keep=1"),
+    env,
+  );
+  assert.equal(localizedExtensionlessBlog.status, 301);
+  assert.equal(
+    localizedExtensionlessBlog.headers.get("location"),
+    "https://static.example.invalid/ja/blog/page-2.html?keep=1",
+  );
+
+  const chineseExtensionlessBlog = await worker.fetch(
+    new Request("https://static.example.invalid/blog/page-2?keep=1"),
+    env,
+  );
+  assert.equal(chineseExtensionlessBlog.status, 200);
+  assert.equal(chineseExtensionlessBlog.headers.get("location"), null);
+  assert.match(await chineseExtensionlessBlog.text(), /blog-page-2/);
+
+  const file = await worker.fetch(new Request("https://static.example.invalid/download?keep=1"), env);
+  assert.equal(file.status, 200);
+  assert.equal(file.headers.get("location"), null);
+  assert.equal(await file.text(), "extensionless-file");
+
+  const asset = await worker.fetch(new Request("https://static.example.invalid/assets/guide?keep=1"), env);
+  assert.equal(asset.status, 200);
+  assert.equal(asset.headers.get("location"), null);
+  assert.equal(await asset.text(), "asset-guide");
+});
+
+test("static responses advertise the language selected by their locale path", async () => {
+  for (const [locale, body] of [["ko", "ko-home"], ["ja", "ja-home"], ["ar", "ar-home"]]) {
+    const response = await request(`/${locale}/`);
+    assert.equal(response.status, 200, locale);
+    assert.equal(await response.text(), body, locale);
+    assert.equal(response.headers.get("content-language"), locale, locale);
+  }
+
+  const localizedRelease = await request(
+    "/.well-known/edge-release/0123456789abcdef0123456789abcdef/ja/index.html",
+  );
+  assert.equal(localizedRelease.status, 200);
+  assert.equal(localizedRelease.headers.get("content-language"), "ja");
+
+  const localizedMissing = await request("/ar/does-not-exist");
+  assert.equal(localizedMissing.status, 404);
+  assert.equal(localizedMissing.headers.get("content-language"), "ar");
+
+  const arabicTitles = await request("/data/i18n/ar/catalog-titles.json");
+  assert.equal(arabicTitles.status, 200);
+  assert.equal(arabicTitles.headers.get("content-language"), "ar");
+
+  const japaneseSitemap = await request("/sitemap-ja.xml");
+  assert.equal(japaneseSitemap.status, 200);
+  assert.equal(japaneseSitemap.headers.get("content-language"), "ja");
 });
 
 test("canonical host root path is served without redirect", async () => {

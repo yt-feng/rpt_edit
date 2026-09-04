@@ -112,9 +112,13 @@ class SeoOutputTests(unittest.TestCase):
             baidu = ET.parse(output / "sitemap-baidu.xml").getroot()
             self.assertTrue(baidu.tag.endswith("urlset"))
             baidu_text = (output / "sitemap-baidu.xml").read_text(encoding="utf-8")
+            sogou_text = (output / "sitemap-sogou.xml").read_text(encoding="utf-8")
             self.assertIn("https://portal.example.invalid/reports/report-a.html", baidu_text)
             self.assertNotIn("report.html?", baidu_text)
             self.assertNotIn("password=", baidu_text)
+            for locale in indexnow.LOCALIZED_LOCALES:
+                self.assertNotIn(f"/{locale}/", baidu_text)
+                self.assertNotIn(f"/{locale}/", sogou_text)
 
             robots = (output / "robots.txt").read_text(encoding="utf-8")
             self.assertIn("User-agent: OAI-SearchBot", robots)

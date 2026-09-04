@@ -18,11 +18,12 @@ on:
   workflow_dispatch:
     inputs:
       operation:
-        description: "Rehearse restores A; migrate keeps the accepted B release"
+        description: "Rehearse restores A; locale-shadow prepares multilingual B without cutover; migrate keeps accepted B"
         required: true
         type: choice
         options:
           - rehearse
+          - locale-shadow
           - migrate
         default: rehearse
 
@@ -40,6 +41,10 @@ jobs:
         github.event_name == 'workflow_dispatch' ||
         (
           vars.NEUTRAL_SCHEDULE_ENABLED == 'true' &&
+          (
+            vars.PORTAL_MULTILINGUAL_ENABLED != 'true' ||
+            vars.PORTAL_MULTILINGUAL_LIVE == 'true'
+          ) &&
           (
             github.event_name == 'schedule' ||
             (
@@ -63,18 +68,25 @@ jobs:
       previous_release: ${{ steps.previous_state.outputs.previous_release }}
       previous_tree: ${{ steps.previous_state.outputs.previous_tree }}
       operation: ${{ steps.operation.outputs.operation }}
+      candidate_commit: ${{ steps.operation.outputs.commit_sha }}
+      multilingual_enabled: ${{ steps.operation.outputs.multilingual_enabled }}
+      multilingual_live: ${{ steps.operation.outputs.multilingual_live }}
+      multilingual_index_policy_sha256: ${{ steps.locale_policy.outputs.index_policy_sha256 }}
     steps:
       - name: Require reviewed main operation
         id: operation
         env:
           REQUESTED_OPERATION: ${{ inputs.operation }}
+          PORTAL_MULTILINGUAL_CONFIGURED: ${{ vars.PORTAL_MULTILINGUAL_ENABLED || 'false' }}
+          PORTAL_MULTILINGUAL_LIVE_CONFIGURED: ${{ vars.PORTAL_MULTILINGUAL_LIVE || 'false' }}
+          PORTAL_MULTILINGUAL_INDEX_START_DATE: ${{ vars.PORTAL_MULTILINGUAL_INDEX_START_DATE || '' }}
         run: |
           set -euo pipefail
           test "$GITHUB_REF" = "refs/heads/main"
           case "$GITHUB_EVENT_NAME" in
             workflow_dispatch)
               case "$REQUESTED_OPERATION" in
-                rehearse|migrate) operation="$REQUESTED_OPERATION" ;;
+                rehearse|locale-shadow|migrate) operation="$REQUESTED_OPERATION" ;;
                 *) echo "::error::Unsupported manual Neutral operation"; exit 2 ;;
               esac
               ;;
@@ -86,8 +98,40 @@ jobs:
               exit 2
               ;;
           esac
+          multilingual_enabled="$PORTAL_MULTILINGUAL_CONFIGURED"
+          if [ "$operation" = "locale-shadow" ]; then
+            multilingual_enabled="true"
+          fi
+          case "$PORTAL_MULTILINGUAL_LIVE_CONFIGURED" in
+            true|false) multilingual_live="$PORTAL_MULTILINGUAL_LIVE_CONFIGURED" ;;
+            *) echo "::error::PORTAL_MULTILINGUAL_LIVE must be true or false"; exit 2 ;;
+          esac
+          if [ "$multilingual_enabled" = "true" ]; then
+            if [ -n "$PORTAL_MULTILINGUAL_INDEX_START_DATE" ]; then
+              INDEX_START_DATE="$PORTAL_MULTILINGUAL_INDEX_START_DATE" python3 - <<'PY'
+          import os
+          from datetime import date
+
+          value = os.environ["INDEX_START_DATE"]
+          try:
+              parsed = date.fromisoformat(value)
+          except ValueError as error:
+              raise SystemExit("PORTAL_MULTILINGUAL_INDEX_START_DATE must use a real YYYY-MM-DD date") from error
+          if parsed.isoformat() != value:
+              raise SystemExit("PORTAL_MULTILINGUAL_INDEX_START_DATE must use canonical YYYY-MM-DD form")
+          PY
+            elif [ "$operation" != "locale-shadow" ]; then
+              echo "::error::Multilingual cutover requires a fixed PORTAL_MULTILINGUAL_INDEX_START_DATE"
+              exit 2
+            fi
+          fi
           printf 'NEUTRAL_OPERATION=%s\n' "$operation" >> "$GITHUB_ENV"
+          printf 'PORTAL_MULTILINGUAL_ENABLED=%s\n' "$multilingual_enabled" >> "$GITHUB_ENV"
+          printf 'PORTAL_MULTILINGUAL_LIVE=%s\n' "$multilingual_live" >> "$GITHUB_ENV"
           printf 'operation=%s\n' "$operation" >> "$GITHUB_OUTPUT"
+          printf 'commit_sha=%s\n' "$GITHUB_SHA" >> "$GITHUB_OUTPUT"
+          printf 'multilingual_enabled=%s\n' "$multilingual_enabled" >> "$GITHUB_OUTPUT"
+          printf 'multilingual_live=%s\n' "$multilingual_live" >> "$GITHUB_OUTPUT"
 
       - name: Checkout public source
         uses: actions/checkout@v4
@@ -118,6 +162,7 @@ jobs:
           node --check portal_suite/site_src/assets/report-chat.js
           node --check portal_suite/site_src/assets/charts.js
           node --check portal_suite/site_src/assets/site-runtime.js
+          node --check portal_suite/locale_assets/locale-runtime.js
           node --test workers/edge-static-host/test/index.test.mjs
           for test_file in portal_suite/tests/*.test.mjs; do
             node "$test_file"
@@ -130,6 +175,7 @@ jobs:
             scripts/build_member_contact_card.py \
             scripts/check_public_brand.py \
             scripts/compare_portal_release_semantics.py \
+            scripts/build_portal_locales.py \
             scripts/edge_route_cutover.py \
             scripts/capture_edge_worker_deployment.py \
             scripts/publish_static_slot.py
@@ -139,10 +185,12 @@ jobs:
           python3 -B scripts/test_check_public_brand.py
           python3 -B scripts/test_publish_static_slot.py
           python3 -B scripts/test_capture_edge_worker_deployment.py
+          python3 -B scripts/test_build_portal_locales.py
           python3 scripts/test_portal_seo.py
           python3 scripts/test_portal_blog_build.py
           python3 scripts/test_edge_route_cutover.py
           python3 scripts/test_neutral_edge_cutover_workflow.py
+          node scripts/test_portal_locale_runtime.js
 
       - name: Prepare masked release context
         id: runtime_context
@@ -355,6 +403,86 @@ jobs:
           R2_BUCKET: ${{ secrets.R2_BUCKET }}
         run: python3 scripts/chart_search_r2.py download --index _chart_search/index.json
 
+      - name: Download public Hot Reports translation source
+        if: steps.operation.outputs.multilingual_enabled == 'true'
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          import sys
+
+          sys.path.insert(0, "scripts")
+          from chart_search_r2 import client_and_bucket
+
+          client, bucket = client_and_bucket()
+          key = "_hot-reports/indexes/public-v2.json"
+          try:
+              response = client.get_object(Bucket=bucket, Key=key)
+              body = response["Body"].read(4 * 1024 * 1024 + 1)
+          except Exception as error:
+              raise SystemExit("Hot Reports public translation source is unavailable") from error
+          if not body or len(body) > 4 * 1024 * 1024:
+              raise SystemExit("Hot Reports public translation source is empty or oversized")
+          try:
+              payload = json.loads(body)
+          except (UnicodeDecodeError, json.JSONDecodeError) as error:
+              raise SystemExit("Hot Reports public translation source is invalid JSON") from error
+          if not isinstance(payload, dict) or payload.get("version") != 2 or not isinstance(payload.get("items"), list):
+              raise SystemExit("Hot Reports public translation source has an unsupported schema")
+          target = Path(os.environ["RUNNER_TEMP"]) / "hot-reports-public-v2.json"
+          target.write_bytes(body)
+          target.chmod(0o600)
+          PY
+
+      - name: Restore resumable multilingual translation checkpoint
+        if: steps.operation.outputs.multilingual_enabled == 'true'
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ runner.temp }}/portal-locale-cache/cache-v1.json.gz
+          key: portal-locale-cache-${{ hashFiles('scripts/build_portal_locales.py') }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            portal-locale-cache-${{ hashFiles('scripts/build_portal_locales.py') }}-
+
+      - name: Use active multilingual cache only without a CI checkpoint
+        if: steps.operation.outputs.multilingual_enabled == 'true'
+        run: |
+          set -euo pipefail
+          cache_dir="$RUNNER_TEMP/portal-locale-cache"
+          cache_path="$cache_dir/cache-v1.json.gz"
+          active_cache="$cache_dir/active-cache-v1.json.gz"
+          mkdir -p "$cache_dir"
+          if [ -s "$cache_path" ]; then
+            echo "Using the latest resumable CI translation checkpoint"
+            exit 0
+          fi
+          status="$(curl --silent --show-error --max-redirs 0 \
+            --connect-timeout 5 --max-time 120 --header 'Cache-Control: no-cache' \
+            --output "$active_cache" --write-out '%{http_code}' \
+            "$LIVE_ORIGIN/.well-known/edge-release/$PREVIOUS_STATIC_RELEASE/data/i18n/cache-v1.json.gz")"
+          case "$status" in
+            200)
+              test -s "$active_cache"
+              mv "$active_cache" "$cache_path"
+              echo "Restored multilingual cache from the active immutable release"
+              ;;
+            404)
+              rm -f "$active_cache"
+              echo "Active release has no multilingual cache; starting with an empty cache"
+              ;;
+            *)
+              rm -f "$active_cache"
+              echo "::error::Could not read active multilingual cache: HTTP $status"
+              exit 1
+              ;;
+          esac
+
       - name: Build private static release
         env:
           PORTAL_WORKER_URL: ${{ secrets.PORTAL_WORKER_URL }}
@@ -375,25 +503,414 @@ jobs:
             --chart-index _chart_search/index.json \
             --catalog portal_suite/data/catalog.json \
             --chart-output _neutral_site/data/chart_search_index.json
-          for required in \
-            index.html assets/app.js data/catalog.json data/catalog_preview.json \
-            data/catalog_recommendations.json data/search_index.json \
-            data/chart_search_index.json data/password_rules.json \
+
+      - name: Build Korean Japanese and Arabic static locales
+        if: steps.operation.outputs.multilingual_enabled == 'true'
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_API_KEY_BACKUP: ${{ secrets.DEEPSEEK_API_KEY_BACKUP }}
+          DEEPSEEK_API_KEY_2: ${{ secrets.DEEPSEEK_API_KEY_2 }}
+          DEEPSEEK_API_KEYS: ${{ secrets.DEEPSEEK_API_KEYS }}
+          DEEPSEEK_BASE_URL: ${{ vars.DEEPSEEK_BASE_URL || 'https://api.deepseek.com' }}
+          DEEPSEEK_MODEL: ${{ vars.DEEPSEEK_MODEL || 'deepseek-v4-flash' }}
+          PORTAL_MULTILINGUAL_WORKERS: ${{ vars.PORTAL_MULTILINGUAL_WORKERS || '32' }}
+          PORTAL_MULTILINGUAL_INDEX_START_DATE: ${{ vars.PORTAL_MULTILINGUAL_INDEX_START_DATE || '' }}
+          PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH: ${{ vars.PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH || '' }}
+        run: |
+          set -euo pipefail
+          case "$PORTAL_MULTILINGUAL_WORKERS" in
+            ''|*[!0-9]*)
+              echo "::error::PORTAL_MULTILINGUAL_WORKERS must be an integer from 1 to 500"
+              exit 2
+              ;;
+          esac
+          if [ "$PORTAL_MULTILINGUAL_WORKERS" -lt 1 ] \
+            || [ "$PORTAL_MULTILINGUAL_WORKERS" -gt 500 ]
+          then
+            echo "::error::PORTAL_MULTILINGUAL_WORKERS must be an integer from 1 to 500"
+            exit 2
+          fi
+          cache_args=()
+          if [ -s "$RUNNER_TEMP/portal-locale-cache/cache-v1.json.gz" ]; then
+            cache_args+=(--cache-in "$RUNNER_TEMP/portal-locale-cache/cache-v1.json.gz")
+          fi
+          index_args=(--index-start-date "$PORTAL_MULTILINGUAL_INDEX_START_DATE")
+          if [ -n "$PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH" ]; then
+            INDEX_ALLOWLIST_PATH="$PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH" python3 - <<'PY'
+          import os
+          from pathlib import Path, PurePosixPath
+
+          value = os.environ["INDEX_ALLOWLIST_PATH"]
+          relative = PurePosixPath(value)
+          if (
+              relative.is_absolute()
+              or relative.as_posix() != value
+              or any(part in {"", ".", ".."} for part in relative.parts)
+              or "\\" in value
+          ):
+              raise SystemExit("PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH must be a safe repository-relative path")
+          candidate = Path(*relative.parts)
+          try:
+              candidate.resolve().relative_to(Path.cwd().resolve())
+          except ValueError as error:
+              raise SystemExit("PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH escapes the repository") from error
+          if not candidate.is_file() or candidate.is_symlink():
+              raise SystemExit("PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH must name a regular non-symlink file")
+          PY
+            git ls-files --error-unmatch -- "$PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH" >/dev/null
+            index_args+=(--index-allowlist "$PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH")
+          fi
+          python3 -B scripts/build_portal_locales.py \
+            --root _neutral_site \
+            --site-url "$LIVE_ORIGIN" \
+            --hot-report-index "$RUNNER_TEMP/hot-reports-public-v2.json" \
+            --cache-out _neutral_site/data/i18n/cache-v1.json.gz \
+            --assets-root portal_suite/locale_assets \
+            --workers "$PORTAL_MULTILINGUAL_WORKERS" \
+            --model "$DEEPSEEK_MODEL" \
+            --deepseek-base-url "$DEEPSEEK_BASE_URL" \
+            --timeout 120 \
+            --attempts 2 \
+            "${index_args[@]}" \
+            "${cache_args[@]}"
+
+      - name: Detect multilingual translation checkpoint
+        id: locale_checkpoint
+        if: always() && steps.operation.outputs.multilingual_enabled == 'true'
+        run: |
+          if [ -s "_neutral_site/data/i18n/cache-v1.json.gz" ]; then
+            mkdir -p "$RUNNER_TEMP/portal-locale-cache"
+            cp "_neutral_site/data/i18n/cache-v1.json.gz" \
+              "$RUNNER_TEMP/portal-locale-cache/cache-v1.json.gz"
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          elif [ -s "$RUNNER_TEMP/portal-locale-cache/cache-v1.json.gz" ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Save multilingual translation checkpoint
+        if: always() && steps.locale_checkpoint.outputs.present == 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ runner.temp }}/portal-locale-cache/cache-v1.json.gz
+          key: portal-locale-cache-${{ hashFiles('scripts/build_portal_locales.py') }}-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Validate complete static release
+        env:
+          PORTAL_MULTILINGUAL_ENABLED: ${{ steps.operation.outputs.multilingual_enabled }}
+          PORTAL_MULTILINGUAL_INDEX_START_DATE: ${{ vars.PORTAL_MULTILINGUAL_INDEX_START_DATE || '' }}
+        run: |
+          set -euo pipefail
+          required_paths=(
+            index.html assets/app.js data/catalog.json data/catalog_preview.json
+            data/catalog_recommendations.json data/search_index.json
+            data/chart_search_index.json data/password_rules.json
             reports/institutions/bernstein/index.html sitemap-baidu.xml
-          do
+          )
+          if [ "$PORTAL_MULTILINGUAL_ENABLED" = "true" ]; then
+            required_paths+=(assets/locale.css assets/locale-runtime.js)
+            for locale in ko ja ar; do
+              required_paths+=(
+                "$locale/index.html"
+                "$locale/feed.xml"
+                "$locale/llms.txt"
+                "$locale/llms-full.txt"
+                "$locale/data/course-materials.json"
+                "sitemap-$locale.xml"
+              )
+              for locale_asset in \
+                app.js charts.js contact.js locale-runtime.js report-chat.js \
+                report-research-export.js site-runtime.js xlsx-export.js locale.css
+              do
+                required_paths+=("$locale/assets/$locale_asset")
+              done
+            done
+            required_paths+=(data/i18n/cache-v1.json.gz data/i18n/manifest.json)
+          fi
+          for required in "${required_paths[@]}"; do
             test -s "_neutral_site/$required"
           done
           test -n "$(find _neutral_site/data/report_details -type f -name '*.json' -print -quit)"
           test ! -e _neutral_site/assets/contact-card.jpg
+          if [ "$PORTAL_MULTILINGUAL_ENABLED" = "true" ]; then
+            for locale in ko ja ar; do
+              js_count=0
+              while IFS= read -r -d '' script; do
+                node --check "$script"
+                js_count=$((js_count + 1))
+              done < <(find "_neutral_site/$locale" -type f -name '*.js' -print0)
+              test "$js_count" -gt 0
+            done
+            python3 - <<'PY'
+          import gzip
+          import hashlib
+          import json
+          import os
+          from pathlib import Path, PurePosixPath
+          import re
+          import xml.etree.ElementTree as ET
+
+          root = Path("_neutral_site")
+          site_origin = os.environ["LIVE_ORIGIN"].rstrip("/")
+          locale_directions = {"ko": "ltr", "ja": "ltr", "ar": "rtl"}
+          html_tag = re.compile(r"<html\b([^>]*)>", flags=re.I)
+          html_attr = re.compile(r"\b(lang|dir)\s*=\s*(['\"])(.*?)\2", flags=re.I)
+          locale_asset_limits = {
+              "assets/locale-runtime.js": 32_768,
+              "assets/locale.css": 24_576,
+          }
+          for relative, maximum_asset_bytes in locale_asset_limits.items():
+              asset = root / relative
+              size = asset.stat().st_size
+              if not 1 <= size <= maximum_asset_bytes:
+                  raise SystemExit(
+                      f"Locale static asset exceeds its byte budget: {relative}={size}>{maximum_asset_bytes}"
+                  )
+              expected = asset.read_bytes()
+              for locale in locale_directions:
+                  localized_asset = root / locale / relative
+                  if localized_asset.read_bytes() != expected:
+                      raise SystemExit(f"Localized static asset differs from the shared asset: {localized_asset}")
+
+          for locale, direction in locale_directions.items():
+              pages = sorted(root.joinpath(locale).rglob("*.html"))
+              if not pages:
+                  raise SystemExit(f"No localized HTML pages found for {locale}")
+              for page in pages:
+                  with page.open("r", encoding="utf-8") as handle:
+                      prefix = handle.read(16_384)
+                  match = html_tag.search(prefix)
+                  if match is None:
+                      raise SystemExit(f"Localized page has no html element: {page}")
+                  attrs = {
+                      key.lower(): value.strip().lower()
+                      for key, _quote, value in html_attr.findall(match.group(1))
+                  }
+                  if attrs.get("lang") != locale or attrs.get("dir") != direction:
+                      raise SystemExit(f"Localized page language or direction is invalid: {page}")
+
+              sitemap_path = root / f"sitemap-{locale}.xml"
+              sitemap = ET.parse(sitemap_path).getroot()
+              locations = [
+                  str(node.text or "").strip()
+                  for node in sitemap.findall(".//{*}loc")
+                  if str(node.text or "").strip()
+              ]
+              expected_prefix = f"{site_origin}/{locale}/"
+              if not locations or any(not value.startswith(expected_prefix) for value in locations):
+                  raise SystemExit(f"Localized sitemap URLs are invalid: {sitemap_path}")
+
+          cache_path = root / "data/i18n/cache-v1.json.gz"
+          with gzip.open(cache_path, "rt", encoding="utf-8") as handle:
+              cache = json.load(handle)
+          if cache.get("schema_version") != 1 or set(cache.get("locales", {})) != set(locale_directions):
+              raise SystemExit("Multilingual cache is invalid or incomplete")
+          manifest = json.loads(root.joinpath("data/i18n/manifest.json").read_text(encoding="utf-8"))
+          if manifest.get("quality_gate_version") != 2:
+              raise SystemExit("Multilingual manifest quality gate version is invalid")
+          if set(manifest.get("locales", [])) != set(locale_directions):
+              raise SystemExit("Multilingual manifest locale set is invalid")
+          expected_html_page_count = manifest.get("html_page_count")
+          if not isinstance(expected_html_page_count, int) or expected_html_page_count <= 0:
+              raise SystemExit("Multilingual manifest HTML page count is invalid")
+          for locale in locale_directions:
+              actual_html_page_count = sum(1 for _ in root.joinpath(locale).rglob("*.html"))
+              if actual_html_page_count != expected_html_page_count:
+                  raise SystemExit(
+                      f"Localized HTML page count does not match manifest: "
+                      f"{locale}={actual_html_page_count}!={expected_html_page_count}"
+                  )
+          coverage = manifest.get("coverage") or {}
+          if any(coverage.get(locale) != 1.0 for locale in locale_directions):
+              raise SystemExit("Multilingual manifest coverage is incomplete")
+
+          index_policy = manifest.get("index_policy") or {}
+          configured_start_date = os.environ.get("PORTAL_MULTILINGUAL_INDEX_START_DATE", "") or None
+          if (
+              index_policy.get("mode") != "fixed-publication-cutoff"
+              or index_policy.get("default") != "hubs-only"
+              or index_policy.get("index_start_date") != configured_start_date
+          ):
+              raise SystemExit("Multilingual manifest index policy does not match the staged release")
+
+          def safe_required_path(value: object) -> PurePosixPath:
+              if not isinstance(value, str) or not value or "\\" in value:
+                  raise SystemExit("Multilingual manifest required_paths contains an invalid path")
+              relative = PurePosixPath(value)
+              if (
+                  relative.is_absolute()
+                  or relative.as_posix() != value
+                  or any(part in {"", ".", ".."} for part in relative.parts)
+              ):
+                  raise SystemExit(f"Multilingual manifest path is not a safe relative path: {value!r}")
+              return relative
+
+          required_values = manifest.get("required_paths")
+          if not isinstance(required_values, list) or not required_values:
+              raise SystemExit("Multilingual manifest required_paths must be a non-empty list")
+          required_paths = [safe_required_path(value) for value in required_values]
+          if len(required_paths) != len(set(required_paths)):
+              raise SystemExit("Multilingual manifest required_paths contains duplicates")
+
+          catalog_overlays = manifest.get("catalog_overlays")
+          if not isinstance(catalog_overlays, dict) or set(catalog_overlays) != set(locale_directions):
+              raise SystemExit("Multilingual catalog overlay locale set is invalid")
+          manifest_metadata = {}
+
+          def register_metadata(locale: str, kind: str, metadata: object) -> None:
+              if not isinstance(kind, str) or not kind or not isinstance(metadata, dict):
+                  raise SystemExit(f"Multilingual overlay metadata is invalid: {locale}/{kind}")
+              relative = safe_required_path(metadata.get("path"))
+              if relative.parts[:3] != ("data", "i18n", locale):
+                  raise SystemExit(f"Multilingual overlay path has the wrong locale: {relative}")
+              if relative in manifest_metadata:
+                  raise SystemExit(f"Multilingual overlay path is duplicated: {relative}")
+              manifest_metadata[relative] = (locale, kind, metadata, True)
+
+          def register_locale_data(locale: str, kind: str, metadata: object) -> None:
+              if not isinstance(kind, str) or not kind or not isinstance(metadata, dict):
+                  raise SystemExit(f"Multilingual locale data metadata is invalid: {locale}/{kind}")
+              relative = safe_required_path(metadata.get("path"))
+              if relative.parts[:2] != (locale, "data"):
+                  raise SystemExit(f"Multilingual locale data path has the wrong locale: {relative}")
+              if relative in manifest_metadata:
+                  raise SystemExit(f"Multilingual locale data path is duplicated: {relative}")
+              manifest_metadata[relative] = (locale, kind, metadata, False)
+
+          expected_kinds = None
+          for locale in locale_directions:
+              locale_overlays = catalog_overlays.get(locale)
+              if not isinstance(locale_overlays, dict) or not locale_overlays:
+                  raise SystemExit(f"Multilingual catalog overlays are missing for {locale}")
+              locale_kinds = frozenset(locale_overlays)
+              if expected_kinds is None:
+                  expected_kinds = locale_kinds
+              elif locale_kinds != expected_kinds:
+                  raise SystemExit("Multilingual catalog overlay kinds differ by locale")
+              for kind, metadata in locale_overlays.items():
+                  register_metadata(locale, kind, metadata)
+
+          detail_overlays = manifest.get("catalog_detail_overlays")
+          if not isinstance(detail_overlays, dict) or set(detail_overlays) != set(locale_directions):
+              raise SystemExit("Multilingual detail overlay locale set is invalid")
+          source_detail_dir = root / "data" / "report_details"
+          source_detail_prefixes = {
+              path.stem
+              for path in source_detail_dir.glob("*.json")
+              if path.is_file() and not path.is_symlink()
+          }
+          if (
+              not source_detail_prefixes
+              or any(re.fullmatch(r"[a-z0-9_]{2}", prefix) is None for prefix in source_detail_prefixes)
+          ):
+              raise SystemExit("Multilingual source detail shard set is invalid")
+          for locale, locale_overlays in detail_overlays.items():
+              if not isinstance(locale_overlays, dict) or set(locale_overlays) != source_detail_prefixes:
+                  raise SystemExit(f"Multilingual detail overlays are incomplete for {locale}")
+              for prefix, metadata in locale_overlays.items():
+                  register_metadata(locale, f"detail:{prefix}", metadata)
+
+          chart_overlays = manifest.get("chart_overlays")
+          if not isinstance(chart_overlays, dict) or set(chart_overlays) != set(locale_directions):
+              raise SystemExit("Multilingual chart overlay locale set is invalid")
+          for locale, metadata in chart_overlays.items():
+              register_metadata(locale, "charts", metadata)
+
+          hot_report_overlays = manifest.get("hot_report_overlays")
+          if not isinstance(hot_report_overlays, dict) or set(hot_report_overlays) != set(locale_directions):
+              raise SystemExit("Multilingual Hot Reports overlay locale set is invalid")
+          source_generations = set()
+          for locale, metadata in hot_report_overlays.items():
+              register_metadata(locale, "hot-reports", metadata)
+              source_generation = metadata.get("source_generation") if isinstance(metadata, dict) else None
+              if not isinstance(source_generation, str) or re.fullmatch(r"[0-9a-f]{16}", source_generation) is None:
+                  raise SystemExit(f"Multilingual Hot Reports source generation is invalid: {locale}")
+              source_generations.add(source_generation)
+          if len(source_generations) != 1:
+              raise SystemExit("Multilingual Hot Reports overlays do not share one source generation")
+
+          locale_data_files = manifest.get("locale_data_files")
+          if not isinstance(locale_data_files, dict) or set(locale_data_files) != set(locale_directions):
+              raise SystemExit("Multilingual locale data file locale set is invalid")
+          expected_locale_data_kinds = {"course-materials"}
+          for locale, data_files in locale_data_files.items():
+              if not isinstance(data_files, dict) or set(data_files) != expected_locale_data_kinds:
+                  raise SystemExit(f"Multilingual locale data files are incomplete for {locale}")
+              for kind, metadata in data_files.items():
+                  register_locale_data(locale, kind, metadata)
+
+          if set(required_paths) != set(manifest_metadata):
+              raise SystemExit("Multilingual manifest required_paths does not match runtime data metadata")
+          runtime_data_byte_limits = {
+              "preview": 512_000,
+              "detail": 512_000,
+              "full": 8_000_000,
+              "charts": 32_000_000,
+              "hot-reports": 6_000_000,
+              "course-materials": 2_000_000,
+          }
+          for relative in required_paths:
+              locale, kind, metadata, require_payload_identity = manifest_metadata[relative]
+              target = root.joinpath(*relative.parts)
+              try:
+                  target.resolve().relative_to(root.resolve())
+              except ValueError as error:
+                  raise SystemExit(f"Multilingual required file escapes the release root: {relative}") from error
+              if not target.is_file() or target.is_symlink():
+                  raise SystemExit(f"Multilingual required file is missing or not regular: {relative}")
+              payload_bytes = target.read_bytes()
+              expected_size = metadata.get("byte_size")
+              expected_digest = metadata.get("sha256")
+              if not isinstance(expected_size, int) or expected_size <= 0 or len(payload_bytes) != expected_size:
+                  raise SystemExit(f"Multilingual required file size does not match manifest: {relative}")
+              budget_kind = "detail" if kind.startswith("detail:") else kind
+              maximum_size = runtime_data_byte_limits.get(budget_kind)
+              if maximum_size is None or expected_size > maximum_size:
+                  raise SystemExit(
+                      f"Multilingual runtime data exceeds its byte budget: "
+                      f"{relative}={expected_size}>{maximum_size}"
+                  )
+              if (
+                  not isinstance(expected_digest, str)
+                  or re.fullmatch(r"[0-9a-f]{64}", expected_digest) is None
+                  or hashlib.sha256(payload_bytes).hexdigest() != expected_digest
+              ):
+                  raise SystemExit(f"Multilingual required file digest does not match manifest: {relative}")
+              payload = json.loads(payload_bytes)
+              if require_payload_identity and (payload.get("locale") != locale or payload.get("kind") != kind):
+                  raise SystemExit(f"Multilingual required file locale/kind does not match manifest: {relative}")
+              item_count = metadata.get("item_count")
+              if require_payload_identity and (
+                  not isinstance(item_count, int)
+                  or item_count < 0
+                  or payload.get("item_count") != item_count
+              ):
+                  raise SystemExit(f"Multilingual required file item count does not match manifest: {relative}")
+              if kind == "hot-reports" and payload.get("source_generation") != metadata.get("source_generation"):
+                  raise SystemExit(f"Multilingual Hot Reports source generation does not match manifest: {relative}")
+          print(
+              "localized_pages="
+              + ",".join(
+                  f"{locale}:{sum(1 for _ in root.joinpath(locale).rglob('*.html'))}"
+                  for locale in locale_directions
+              )
+          )
+          PY
+          fi
           python3 - <<'PY'
+          import os
           from pathlib import Path
 
           root = Path("_neutral_site")
           files = [path for path in root.rglob("*") if path.is_file() and not path.is_symlink()]
           total = sum(path.stat().st_size for path in files)
-          if not 1000 <= len(files) <= 20000:
+          multilingual = os.environ["PORTAL_MULTILINGUAL_ENABLED"] == "true"
+          maximum_files = 100_000 if multilingual else 20_000
+          maximum_bytes = 2_500_000_000 if multilingual else 1_000_000_000
+          if not 1000 <= len(files) <= maximum_files:
               raise SystemExit("Static file count is outside the expected range")
-          if not 100_000_000 <= total <= 1_000_000_000:
+          if not 100_000_000 <= total <= maximum_bytes:
               raise SystemExit("Static release size is outside the expected range")
           print(f"static_files={len(files)} static_bytes={total}")
           PY
@@ -401,12 +918,63 @@ jobs:
       - name: Validate built public brand
         run: python3 -B scripts/check_public_brand.py _neutral_site
 
+      - name: Compute multilingual index policy identity
+        id: locale_policy
+        if: steps.operation.outputs.multilingual_enabled == 'true'
+        env:
+          PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH: ${{ vars.PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH || '' }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+
+          manifest_path = Path("_neutral_site/data/i18n/manifest.json")
+          manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+          index_policy = manifest.get("index_policy")
+          if not isinstance(index_policy, dict):
+              raise SystemExit("Multilingual manifest has no index policy")
+          allowlist_path = os.environ.get("PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH", "")
+          allowlist_bytes = Path(allowlist_path).read_bytes() if allowlist_path else b""
+          review_policy = {
+              "schema_version": 1,
+              "manifest_index_policy": index_policy,
+              "allowlist_path": allowlist_path,
+              "allowlist_sha256": hashlib.sha256(allowlist_bytes).hexdigest(),
+          }
+          encoded = json.dumps(
+              review_policy,
+              ensure_ascii=True,
+              sort_keys=True,
+              separators=(",", ":"),
+          ).encode("utf-8")
+          digest = hashlib.sha256(encoded).hexdigest()
+          output = {
+              "schema_version": 1,
+              "index_policy_sha256": digest,
+              "policy": review_policy,
+          }
+          target = Path(os.environ["RUNNER_TEMP"]) / "multilingual-index-policy.json"
+          target.write_text(
+              json.dumps(output, ensure_ascii=True, sort_keys=True, separators=(",", ":")) + "\n",
+              encoding="utf-8",
+          )
+          with Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8") as handle:
+              handle.write(f"index_policy_sha256={digest}\n")
+          print(f"multilingual_index_policy_sha256={digest}")
+          PY
+
       - name: Detect meaningful public release changes
         id: release_delta
+        env:
+          PORTAL_MULTILINGUAL_ENABLED: ${{ steps.operation.outputs.multilingual_enabled }}
         run: |
           set -euo pipefail
           previous_args=()
           force_args=()
+          locale_contract_args=()
           if [ -s "$RUNNER_TEMP/previous-release-semantics.json" ]; then
             previous_args+=(--previous-manifest "$RUNNER_TEMP/previous-release-semantics.json")
           fi
@@ -415,6 +983,18 @@ jobs:
               || [ ! -s "$RUNNER_TEMP/previous-release-semantics.json" ]; }
           then
             force_args+=(--force)
+          fi
+          if [ "$PORTAL_MULTILINGUAL_ENABLED" = "true" ]; then
+            locale_contract_args+=(
+              --build-contract scripts/build_portal_locales.py
+              --build-contract portal_suite/locale_assets/locale.css
+              --build-contract portal_suite/locale_assets/locale-runtime.js
+              --build-contract _neutral_site/data/i18n/cache-v1.json.gz
+              --build-contract _neutral_site/data/i18n/manifest.json
+              --build-contract _neutral_site/sitemap-ko.xml
+              --build-contract _neutral_site/sitemap-ja.xml
+              --build-contract _neutral_site/sitemap-ar.xml
+            )
           fi
           python3 -B scripts/compare_portal_release_semantics.py \
             --current-catalog _neutral_site/data/catalog.json \
@@ -434,7 +1014,7 @@ jobs:
             --public-root _neutral_site \
             --write-current-manifest _neutral_site/data/release-semantics.json \
             --github-output "$GITHUB_OUTPUT" \
-            "${previous_args[@]}" "${force_args[@]}"
+            "${locale_contract_args[@]}" "${previous_args[@]}" "${force_args[@]}"
           test -s _neutral_site/data/release-semantics.json
 
       - name: Upload inactive static slot and immutable runtime
@@ -445,16 +1025,74 @@ jobs:
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          NEUTRAL_OPERATION: ${{ steps.operation.outputs.operation }}
         run: |
           set -euo pipefail
+          private_asset_args=()
+          if [ "$NEUTRAL_OPERATION" = "locale-shadow" ]; then
+            private_asset_args+=(--skip-shared-private-assets)
+          fi
           python3 -B scripts/publish_static_slot.py \
             --root _neutral_site --release "$STATIC_RELEASE" \
             --active-slot "$ACTIVE_STATIC_SLOT" \
             --member-contact-card "$RUNNER_TEMP/member-contact-card.jpg" \
-            --max-workers 4
+            --max-workers 4 "${private_asset_args[@]}"
+
+      - name: Publish multilingual review identity
+        if: steps.release_delta.outputs.changed == 'true' && steps.operation.outputs.multilingual_enabled == 'true'
+        env:
+          REVIEW_OPERATION: ${{ steps.operation.outputs.operation }}
+          CANDIDATE_COMMIT_SHA: ${{ steps.operation.outputs.commit_sha }}
+          CANDIDATE_STATIC_TREE: ${{ steps.static_upload.outputs.tree_sha256 }}
+          CANDIDATE_INDEX_POLICY_SHA256: ${{ steps.locale_policy.outputs.index_policy_sha256 }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          import re
+
+          operation = os.environ["REVIEW_OPERATION"]
+          actual = {
+              "commit_sha": os.environ["CANDIDATE_COMMIT_SHA"],
+              "static_tree_sha256": os.environ["CANDIDATE_STATIC_TREE"],
+              "index_policy_sha256": os.environ["CANDIDATE_INDEX_POLICY_SHA256"],
+          }
+          if re.fullmatch(r"[0-9a-f]{40}", actual["commit_sha"]) is None:
+              raise SystemExit("Candidate multilingual commit SHA is invalid")
+          for field in ("static_tree_sha256", "index_policy_sha256"):
+              if re.fullmatch(r"[0-9a-f]{64}", actual[field]) is None:
+                  raise SystemExit(f"Candidate multilingual {field} is invalid")
+
+          policy_path = Path(os.environ["RUNNER_TEMP"]) / "multilingual-index-policy.json"
+          policy = json.loads(policy_path.read_text(encoding="utf-8"))
+          if policy.get("index_policy_sha256") != actual["index_policy_sha256"]:
+              raise SystemExit("Candidate multilingual index policy identity changed after validation")
+          identity = {
+              "schema_version": 1,
+              "operation": operation,
+              **actual,
+              "index_policy": policy.get("policy"),
+          }
+          identity_path = Path(os.environ["RUNNER_TEMP"]) / "multilingual-review-identity.json"
+          identity_path.write_text(
+              json.dumps(identity, ensure_ascii=True, sort_keys=True, separators=(",", ":")) + "\n",
+              encoding="utf-8",
+          )
+          with Path(os.environ["GITHUB_STEP_SUMMARY"]).open("a", encoding="utf-8") as summary:
+              summary.write("## Multilingual candidate review identity\n\n")
+              summary.write(f"- Commit SHA: `{actual['commit_sha']}`\n")
+              summary.write(f"- Static tree SHA-256: `{actual['static_tree_sha256']}`\n")
+              summary.write(f"- Index policy SHA-256: `{actual['index_policy_sha256']}`\n")
+              summary.write(f"- Operation: `{operation}`\n")
+          print("Multilingual candidate identity is ready for same-run approval")
+          PY
 
       - name: Build public validation artifact
         if: steps.release_delta.outputs.changed == 'true'
+        env:
+          PORTAL_MULTILINGUAL_ENABLED: ${{ steps.operation.outputs.multilingual_enabled }}
         run: |
           set -euo pipefail
           mkdir -p _release_validation/previous _release_validation/candidate
@@ -465,6 +1103,19 @@ jobs:
           install -m 0600 _neutral_site/data/catalog_preview.json _release_validation/candidate/catalog_preview.json
           install -m 0600 _neutral_site/sitemap-baidu.xml _release_validation/candidate/sitemap.xml
           install -m 0600 _neutral_site/data/release-semantics.json _release_validation/candidate/release-semantics.json
+          if [ "$PORTAL_MULTILINGUAL_ENABLED" = "true" ]; then
+            mkdir -p _release_validation/candidate/{ko,ja,ar} _release_validation/candidate/data/i18n
+            for locale in ko ja ar; do
+              install -m 0600 "_neutral_site/$locale/index.html" \
+                "_release_validation/candidate/$locale/index.html"
+              install -m 0600 "_neutral_site/sitemap-$locale.xml" \
+                "_release_validation/candidate/sitemap-$locale.xml"
+            done
+            install -m 0600 _neutral_site/data/i18n/manifest.json \
+              _release_validation/candidate/data/i18n/manifest.json
+            install -m 0600 "$RUNNER_TEMP/multilingual-review-identity.json" \
+              _release_validation/candidate/multilingual-review-identity.json
+          fi
 
       - name: Upload release validation artifact
         if: steps.release_delta.outputs.changed == 'true'
@@ -473,11 +1124,107 @@ jobs:
           name: neutral-release-validation-${{ github.run_id }}-${{ github.run_attempt }}
           path: _release_validation
           if-no-files-found: error
-          retention-days: 1
+          retention-days: 7
+
+  multilingual_approval:
+    needs: prepare_release
+    if: >-
+      ${{
+        needs.prepare_release.result == 'success' &&
+        needs.prepare_release.outputs.changed == 'true' &&
+        needs.prepare_release.outputs.operation != 'locale-shadow' &&
+        needs.prepare_release.outputs.multilingual_enabled == 'true' &&
+        needs.prepare_release.outputs.multilingual_live != 'true'
+      }}
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    environment:
+      name: kcdesk-multilingual-production
+    steps:
+      - name: Download exact multilingual candidate identity
+        uses: actions/download-artifact@v4
+        with:
+          name: neutral-release-validation-${{ github.run_id }}-${{ github.run_attempt }}
+          path: _release_validation
+
+      - name: Approve exact same-run multilingual candidate
+        env:
+          CANDIDATE_OPERATION: ${{ needs.prepare_release.outputs.operation }}
+          CANDIDATE_COMMIT_SHA: ${{ needs.prepare_release.outputs.candidate_commit }}
+          CANDIDATE_STATIC_TREE: ${{ needs.prepare_release.outputs.static_tree }}
+          CANDIDATE_INDEX_POLICY_SHA256: ${{ needs.prepare_release.outputs.multilingual_index_policy_sha256 }}
+          PORTAL_MULTILINGUAL_ACTIVATION_APPROVED: ${{ vars.PORTAL_MULTILINGUAL_ACTIVATION_APPROVED || 'false' }}
+          PORTAL_MULTILINGUAL_APPROVED_COMMIT_SHA: ${{ vars.PORTAL_MULTILINGUAL_APPROVED_COMMIT_SHA || '' }}
+          PORTAL_MULTILINGUAL_APPROVED_STATIC_TREE: ${{ vars.PORTAL_MULTILINGUAL_APPROVED_STATIC_TREE || '' }}
+          PORTAL_MULTILINGUAL_APPROVED_INDEX_POLICY_SHA256: ${{ vars.PORTAL_MULTILINGUAL_APPROVED_INDEX_POLICY_SHA256 || '' }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          import re
+
+          identity_path = Path(
+              "_release_validation/candidate/multilingual-review-identity.json"
+          )
+          if not identity_path.is_file() or identity_path.is_symlink():
+              raise SystemExit("Same-run multilingual review identity artifact is missing")
+          identity = json.loads(identity_path.read_text(encoding="utf-8"))
+          actual = {
+              "commit_sha": os.environ["CANDIDATE_COMMIT_SHA"],
+              "static_tree_sha256": os.environ["CANDIDATE_STATIC_TREE"],
+              "index_policy_sha256": os.environ["CANDIDATE_INDEX_POLICY_SHA256"],
+          }
+          if re.fullmatch(r"[0-9a-f]{40}", actual["commit_sha"]) is None:
+              raise SystemExit("Same-run multilingual commit SHA is invalid")
+          for field in ("static_tree_sha256", "index_policy_sha256"):
+              if re.fullmatch(r"[0-9a-f]{64}", actual[field]) is None:
+                  raise SystemExit(f"Same-run multilingual {field} is invalid")
+          artifact_identity = {
+              "commit_sha": identity.get("commit_sha"),
+              "static_tree_sha256": identity.get("static_tree_sha256"),
+              "index_policy_sha256": identity.get("index_policy_sha256"),
+          }
+          if (
+              identity.get("schema_version") != 1
+              or identity.get("operation") != os.environ["CANDIDATE_OPERATION"]
+              or not isinstance(identity.get("index_policy"), dict)
+              or artifact_identity != actual
+          ):
+              raise SystemExit("Multilingual review artifact does not match prepare outputs")
+          if os.environ["PORTAL_MULTILINGUAL_ACTIVATION_APPROVED"] != "true":
+              raise SystemExit("Multilingual environment approval flag is not true")
+          approved = {
+              "commit_sha": os.environ["PORTAL_MULTILINGUAL_APPROVED_COMMIT_SHA"],
+              "static_tree_sha256": os.environ["PORTAL_MULTILINGUAL_APPROVED_STATIC_TREE"],
+              "index_policy_sha256": os.environ["PORTAL_MULTILINGUAL_APPROVED_INDEX_POLICY_SHA256"],
+          }
+          if approved != actual:
+              mismatched = ", ".join(key for key in actual if approved.get(key) != actual[key])
+              raise SystemExit(f"Multilingual environment identity mismatch: {mismatched}")
+          with Path(os.environ["GITHUB_STEP_SUMMARY"]).open("a", encoding="utf-8") as summary:
+              summary.write("## Approved multilingual candidate\n\n")
+              summary.write(f"- Commit SHA: `{actual['commit_sha']}`\n")
+              summary.write(f"- Static tree SHA-256: `{actual['static_tree_sha256']}`\n")
+              summary.write(f"- Index policy SHA-256: `{actual['index_policy_sha256']}`\n")
+          print("Same-run multilingual candidate identity approved")
+          PY
 
   cutover:
-    needs: prepare_release
-    if: needs.prepare_release.outputs.changed == 'true'
+    needs: [prepare_release, multilingual_approval]
+    if: >-
+      ${{
+        always() &&
+        needs.prepare_release.result == 'success' &&
+        needs.prepare_release.outputs.changed == 'true' &&
+        needs.prepare_release.outputs.operation != 'locale-shadow' &&
+        (
+          needs.prepare_release.outputs.multilingual_enabled != 'true' ||
+          needs.prepare_release.outputs.multilingual_live == 'true' ||
+          needs.multilingual_approval.result == 'success'
+        )
+      }}
     runs-on: ubuntu-22.04
     timeout-minutes: 65
     env:
@@ -489,6 +1236,8 @@ jobs:
       PREVIOUS_STATIC_RELEASE: ${{ needs.prepare_release.outputs.previous_release }}
       PREVIOUS_STATIC_TREE: ${{ needs.prepare_release.outputs.previous_tree }}
       NEUTRAL_OPERATION: ${{ needs.prepare_release.outputs.operation }}
+      PORTAL_MULTILINGUAL_ENABLED: ${{ needs.prepare_release.outputs.multilingual_enabled }}
+      PORTAL_MULTILINGUAL_LIVE: ${{ needs.prepare_release.outputs.multilingual_live }}
     steps:
       - name: Checkout audited cutover source
         uses: actions/checkout@v4
@@ -567,6 +1316,33 @@ jobs:
           cmp _release_validation/previous/edge-state.json "$RUNNER_TEMP/live-state-before.json"
           cmp _release_validation/previous/catalog.json "$RUNNER_TEMP/live-catalog-before.json"
           python3 -B scripts/edge_route_cutover.py verify
+
+      - name: Require live Portal Worker locale search capability
+        if: needs.prepare_release.outputs.multilingual_enabled == 'true'
+        timeout-minutes: 2
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error --max-redirs 0 \
+            --connect-timeout 5 --max-time 30 --header 'Cache-Control: no-cache' \
+            --output "$RUNNER_TEMP/portal-worker-capabilities.json" \
+            "$LIVE_ORIGIN/api/health"
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          health = json.loads(
+              Path(os.environ["RUNNER_TEMP"])
+              .joinpath("portal-worker-capabilities.json")
+              .read_text(encoding="utf-8")
+          )
+          capabilities = health.get("capabilities") or {}
+          if health.get("ok") is not True:
+              raise SystemExit("Live Portal Worker health is not ok")
+          if capabilities.get("hot_report_locale_ids_v1") is not True:
+              raise SystemExit("Live Portal Worker lacks hot_report_locale_ids_v1")
+          print("live_portal_worker_capability=hot_report_locale_ids_v1")
+          PY
 
       - name: Prepare neutral edge runtime
         env:
@@ -711,6 +1487,206 @@ jobs:
           cmp _release_validation/candidate/sitemap.xml "$RUNNER_TEMP/public-sitemap-after.xml"
           cmp _release_validation/candidate/release-semantics.json "$RUNNER_TEMP/release-semantics-after.json"
           cmp _release_validation/candidate/release-semantics.json "$RUNNER_TEMP/public-semantics-after.json"
+          if [ "$PORTAL_MULTILINGUAL_ENABLED" = "true" ]; then
+            for locale in ko ja ar; do
+              curl --fail --silent --show-error --max-redirs 0 \
+                --connect-timeout 5 --max-time 60 --header 'Cache-Control: no-cache' \
+                --dump-header "$RUNNER_TEMP/public-$locale-headers-after.txt" \
+                --output "$RUNNER_TEMP/public-$locale-index-after.html" \
+                "$origin/$locale/"
+              curl --fail --silent --show-error --max-redirs 0 \
+                --connect-timeout 5 --max-time 60 --header 'Cache-Control: no-cache' \
+                --output "$RUNNER_TEMP/public-sitemap-$locale-after.xml" \
+                "$origin/sitemap-$locale.xml"
+              cmp "_release_validation/candidate/$locale/index.html" \
+                "$RUNNER_TEMP/public-$locale-index-after.html"
+              cmp "_release_validation/candidate/sitemap-$locale.xml" \
+                "$RUNNER_TEMP/public-sitemap-$locale-after.xml"
+              LOCALE="$locale" \
+              LOCALE_HEADERS="$RUNNER_TEMP/public-$locale-headers-after.txt" \
+              LOCALE_HTML="$RUNNER_TEMP/public-$locale-index-after.html" \
+                python3 - <<'PY'
+          import os
+          from pathlib import Path
+          import re
+
+          locale = os.environ["LOCALE"]
+          headers = Path(os.environ["LOCALE_HEADERS"]).read_text(encoding="iso-8859-1")
+          values = [
+              line.split(":", 1)[1].strip().lower()
+              for line in headers.splitlines()
+              if line.lower().startswith("content-language:")
+          ]
+          if values != [locale]:
+              raise SystemExit(f"Unexpected Content-Language for /{locale}/: {values}")
+          html = Path(os.environ["LOCALE_HTML"]).read_text(encoding="utf-8")[:16_384]
+          match = re.search(r"<html\b([^>]*)>", html, flags=re.I)
+          if match is None:
+              raise SystemExit(f"Live locale page has no html element: {locale}")
+          attrs = {
+              key.lower(): value.strip().lower()
+              for key, _quote, value in re.findall(
+                  r"\b(lang|dir)\s*=\s*(['\"])(.*?)\2",
+                  match.group(1),
+                  flags=re.I,
+              )
+          }
+          expected_direction = "rtl" if locale == "ar" else "ltr"
+          if attrs.get("lang") != locale or attrs.get("dir") != expected_direction:
+              raise SystemExit(f"Live locale html language or direction is invalid: {locale}")
+          PY
+              LOCALE="$locale" \
+              SITE_ORIGIN="$origin" \
+              LOCALE_SITEMAP="$RUNNER_TEMP/public-sitemap-$locale-after.xml" \
+              DEEP_URL_FILE="$RUNNER_TEMP/public-$locale-deep-url.txt" \
+                python3 - <<'PY'
+          import os
+          from pathlib import Path
+          from urllib.parse import urlsplit
+          import xml.etree.ElementTree as ET
+
+          locale = os.environ["LOCALE"]
+          origin = urlsplit(os.environ["SITE_ORIGIN"])
+          prefix = f"/{locale}/"
+          candidates = []
+          tree = ET.parse(os.environ["LOCALE_SITEMAP"])
+          for node in tree.findall(".//{*}loc"):
+              value = str(node.text or "").strip()
+              parsed = urlsplit(value)
+              if (
+                  parsed.scheme != origin.scheme
+                  or parsed.netloc != origin.netloc
+                  or parsed.query
+                  or parsed.fragment
+                  or not parsed.path.startswith(prefix)
+              ):
+                  continue
+              relative = parsed.path[len(prefix):].strip("/")
+              if "/" in relative:
+                  candidates.append(value)
+          if not candidates:
+              raise SystemExit(f"Locale sitemap has no deterministic deep URL: {locale}")
+          Path(os.environ["DEEP_URL_FILE"]).write_text(sorted(set(candidates))[0], encoding="utf-8")
+          PY
+              IFS= read -r deep_url < "$RUNNER_TEMP/public-$locale-deep-url.txt"
+              deep_status="$(curl --fail --silent --show-error --max-redirs 0 \
+                --connect-timeout 5 --max-time 60 --header 'Cache-Control: no-cache' \
+                --write-out '%{http_code}' \
+                --output "$RUNNER_TEMP/public-$locale-deep-after.html" \
+                "$deep_url")"
+              test "$deep_status" = "200"
+              LOCALE="$locale" \
+              SITE_ORIGIN="$origin" \
+              DEEP_URL="$deep_url" \
+              DEEP_HTML="$RUNNER_TEMP/public-$locale-deep-after.html" \
+                python3 - <<'PY'
+          from html.parser import HTMLParser
+          import json
+          import os
+          from pathlib import Path
+          from urllib.parse import urlsplit, urlunsplit
+
+
+          class MetadataParser(HTMLParser):
+              def __init__(self):
+                  super().__init__(convert_charrefs=True)
+                  self.canonicals = []
+                  self.alternates = {}
+                  self.meta = {}
+                  self.json_ld = []
+                  self._json_parts = None
+
+              def handle_starttag(self, tag, attrs):
+                  attributes = {str(key).lower(): str(value or "") for key, value in attrs}
+                  if tag.lower() == "link":
+                      rel = {value.lower() for value in attributes.get("rel", "").split()}
+                      if "canonical" in rel and attributes.get("href"):
+                          self.canonicals.append(attributes["href"])
+                      if "alternate" in rel and attributes.get("hreflang") and attributes.get("href"):
+                          self.alternates.setdefault(attributes["hreflang"], []).append(attributes["href"])
+                  elif tag.lower() == "meta":
+                      key = (attributes.get("property") or attributes.get("name") or "").lower()
+                      if key:
+                          self.meta.setdefault(key, []).append(attributes.get("content", ""))
+                  elif tag.lower() == "script" and attributes.get("type", "").lower() == "application/ld+json":
+                      self._json_parts = []
+
+              def handle_data(self, data):
+                  if self._json_parts is not None:
+                      self._json_parts.append(data)
+
+              def handle_endtag(self, tag):
+                  if tag.lower() == "script" and self._json_parts is not None:
+                      self.json_ld.append("".join(self._json_parts))
+                      self._json_parts = None
+
+
+          locale = os.environ["LOCALE"]
+          origin = urlsplit(os.environ["SITE_ORIGIN"])
+          deep_url = os.environ["DEEP_URL"]
+          deep = urlsplit(deep_url)
+          prefix = f"/{locale}"
+          if not (deep.path == prefix or deep.path.startswith(prefix + "/")):
+              raise SystemExit(f"Deep locale URL is outside /{locale}: {deep_url}")
+          root_path = deep.path[len(prefix):] or "/"
+          root_url = urlunsplit((origin.scheme, origin.netloc, root_path, "", ""))
+          expected_alternates = {"zh-Hans": root_url, "x-default": root_url}
+          for language in ("ko", "ja", "ar"):
+              localized_path = f"/{language}" + (root_path if root_path.startswith("/") else "/" + root_path)
+              expected_alternates[language] = urlunsplit(
+                  (origin.scheme, origin.netloc, localized_path, "", "")
+              )
+
+          parser = MetadataParser()
+          parser.feed(Path(os.environ["DEEP_HTML"]).read_text(encoding="utf-8"))
+          if parser.canonicals != [deep_url]:
+              raise SystemExit(f"Deep locale page does not have one self canonical: {locale}")
+          if parser.meta.get("og:url") != [deep_url]:
+              raise SystemExit(f"Deep locale page og:url is not self-referential: {locale}")
+          if set(parser.alternates) != set(expected_alternates):
+              raise SystemExit(f"Deep locale page hreflang language set is incomplete: {locale}")
+          for language, expected_url in expected_alternates.items():
+              if parser.alternates.get(language) != [expected_url]:
+                  raise SystemExit(f"Deep locale page hreflang is invalid: {locale}/{language}")
+
+          documents = []
+          for source in parser.json_ld:
+              try:
+                  documents.append(json.loads(source))
+              except json.JSONDecodeError as error:
+                  raise SystemExit(f"Deep locale page has invalid JSON-LD: {locale}") from error
+          if not documents:
+              raise SystemExit(f"Deep locale page has no JSON-LD: {locale}")
+
+          def has_locale_language(value):
+              if isinstance(value, dict):
+                  language = value.get("inLanguage")
+                  if isinstance(language, str) and (
+                      language.lower() == locale or language.lower().startswith(locale + "-")
+                  ):
+                      return True
+                  if isinstance(language, list) and any(
+                      isinstance(item, str)
+                      and (item.lower() == locale or item.lower().startswith(locale + "-"))
+                      for item in language
+                  ):
+                      return True
+                  return any(has_locale_language(item) for item in value.values())
+              if isinstance(value, list):
+                  return any(has_locale_language(item) for item in value)
+              return False
+
+          if not any(has_locale_language(document) for document in documents):
+              raise SystemExit(f"Deep locale page JSON-LD has no localized inLanguage: {locale}")
+          PY
+            done
+            curl --fail --silent --show-error --max-redirs 0 \
+              --connect-timeout 5 --max-time 60 --header 'Cache-Control: no-cache' \
+              --output "$RUNNER_TEMP/public-locale-manifest-after.json" \
+              "$origin/data/i18n/manifest.json"
+            cmp _release_validation/candidate/data/i18n/manifest.json \
+              "$RUNNER_TEMP/public-locale-manifest-after.json"
+          fi
           public_brand_root="$RUNNER_TEMP/public-brand-after"
           mkdir -p "$public_brand_root/assets"
           curl --fail --silent --show-error --max-redirs 0 \

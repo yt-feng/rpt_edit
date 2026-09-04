@@ -31,7 +31,14 @@ def item(report_id: str, title: str, bank_name: str = "Example Research") -> dic
     }
 
 
-def write_page(root: Path, url: str, *, canonical: str | None = None, robots: str = "index,follow") -> None:
+def write_page(
+    root: Path,
+    url: str,
+    *,
+    canonical: str | None = None,
+    robots: str = "index,follow",
+    body: str = "page",
+) -> None:
     path = indexnow.site_path_for_url(root, url, BASE_URL)
     assert path is not None
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -39,7 +46,7 @@ def write_page(root: Path, url: str, *, canonical: str | None = None, robots: st
         "<!doctype html><html><head>"
         f'<meta name="robots" content="{robots}">'
         f'<link rel="canonical" href="{canonical or url}">'
-        "</head><body>page</body></html>",
+        f"</head><body>{body}</body></html>",
         encoding="utf-8",
     )
 
@@ -244,6 +251,276 @@ class SubmissionPlanTests(unittest.TestCase):
                 encoding="utf-8",
             )
             self.assertEqual({article: "2026-08-30"}, indexnow.load_sitemap(root / "sitemap.xml"))
+
+    def test_discovery_includes_only_live_self_canonical_locale_sitemap_urls(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            site = Path(directory)
+            valid = {
+                "ko": f"{BASE_URL}/ko/reports/report-ko.html",
+                "ja": f"{BASE_URL}/ja/blog/article-ja.html",
+                "ar": f"{BASE_URL}/ar/reports/topics/artificial-intelligence/",
+            }
+            for url in valid.values():
+                write_page(site, url)
+
+            missing = f"{BASE_URL}/ja/reports/missing.html"
+            wrong_canonical = f"{BASE_URL}/ar/reports/wrong.html"
+            unlisted = f"{BASE_URL}/ko/reports/unlisted.html"
+            write_page(site, wrong_canonical, canonical=f"{BASE_URL}/reports/wrong.html")
+            write_page(site, unlisted)
+            write_sitemap(site / "sitemap-ko.xml", {valid["ko"]: "2026-09-04"})
+            write_sitemap(
+                site / "sitemap-ja.xml",
+                {valid["ja"]: "2026-09-04", missing: "2026-09-04"},
+            )
+            write_sitemap(
+                site / "sitemap-ar.xml",
+                {valid["ar"]: "2026-09-04", wrong_canonical: "2026-09-04"},
+            )
+
+            urls = indexnow.discover_public_site_urls(site, BASE_URL)
+
+            self.assertTrue(set(valid.values()).issubset(urls))
+            self.assertNotIn(missing, urls)
+            self.assertNotIn(wrong_canonical, urls)
+            self.assertNotIn(unlisted, urls)
+
+    def test_report_delta_submits_all_live_sitemap_listed_locale_variants(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            site = Path(directory)
+            report_same = f"{BASE_URL}/reports/report-same.html"
+            report_added = f"{BASE_URL}/reports/report-added.html"
+            write_page(site, report_same)
+            write_page(site, report_added)
+
+            localized = {
+                locale: f"{BASE_URL}/{locale}/reports/report-added.html"
+                for locale in indexnow.LOCALIZED_LOCALES
+            }
+            for locale, url in localized.items():
+                write_page(site, url)
+                write_sitemap(site / f"sitemap-{locale}.xml", {url: "2026-09-04"})
+
+            plan = indexnow.build_submission_plan(
+                {"items": [item("report-same", "same"), item("report-added", "added")]},
+                {"items": [item("report-same", "same")]},
+                {report_same: "2026-09-03", report_added: "2026-09-04"},
+                {report_same: "2026-09-03"},
+                site,
+                BASE_URL,
+                3,
+            )
+
+            self.assertEqual({report_added, *localized.values()}, set(plan.urls))
+            self.assertEqual(4, plan.reason_counts["report_added"])
+
+    def test_report_delta_skips_unlisted_or_noncanonical_locale_variants(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            site = Path(directory)
+            report_same = f"{BASE_URL}/reports/report-same.html"
+            report_added = f"{BASE_URL}/reports/report-added.html"
+            write_page(site, report_same)
+            write_page(site, report_added)
+
+            ko = f"{BASE_URL}/ko/reports/report-added.html"
+            ja = f"{BASE_URL}/ja/reports/report-added.html"
+            ar = f"{BASE_URL}/ar/reports/report-added.html"
+            ja_home = f"{BASE_URL}/ja/"
+            write_page(site, ko)
+            write_page(site, ja)
+            write_page(site, ja_home)
+            write_page(site, ar, canonical=report_added)
+            write_sitemap(site / "sitemap-ko.xml", {ko: "2026-09-04"})
+            write_sitemap(site / "sitemap-ja.xml", {ja_home: "2026-09-04"})
+            write_sitemap(site / "sitemap-ar.xml", {ar: "2026-09-04"})
+
+            plan = indexnow.build_submission_plan(
+                {"items": [item("report-same", "same"), item("report-added", "added")]},
+                {"items": [item("report-same", "same")]},
+                {report_same: "2026-09-03", report_added: "2026-09-04"},
+                {report_same: "2026-09-03"},
+                site,
+                BASE_URL,
+                3,
+            )
+
+            self.assertEqual({report_added, ko, ja_home}, set(plan.urls))
+            self.assertNotIn(ja, plan.urls)
+            self.assertNotIn(ar, plan.urls)
+            self.assertEqual(2, plan.reason_counts["locale_added"])
+            self.assertEqual(1, plan.skipped_reason_counts["locale_not_in_canonical_sitemap"])
+            self.assertEqual(1, plan.skipped_reason_counts["locale_not_indexable_self_canonical"])
+
+    def test_removed_locale_urls_are_submitted_from_previous_locale_sitemaps(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            site = root / "current"
+            previous_site = root / "previous"
+            site.mkdir()
+            previous_site.mkdir()
+
+            home = f"{BASE_URL}/"
+            report = f"{BASE_URL}/reports/report-same.html"
+            write_page(site, home)
+            write_page(site, report)
+            localized_reports = {
+                locale: f"{BASE_URL}/{locale}/reports/report-same.html"
+                for locale in indexnow.LOCALIZED_LOCALES
+            }
+            for locale, localized_report in localized_reports.items():
+                localized_home = f"{BASE_URL}/{locale}/"
+                write_page(site, localized_home)
+                write_sitemap(site / f"sitemap-{locale}.xml", {localized_home: "2026-09-04"})
+                write_sitemap(
+                    previous_site / f"sitemap-{locale}.xml",
+                    {
+                        localized_home: "2026-09-03",
+                        localized_report: "2026-09-03",
+                    },
+                )
+
+            catalog = {"items": [item("report-same", "same")]}
+            source_sitemap = {home: "2026-09-04", report: "2026-09-04"}
+            plan = indexnow.build_submission_plan(
+                catalog,
+                catalog,
+                source_sitemap,
+                source_sitemap,
+                site,
+                BASE_URL,
+                3,
+                previous_site,
+            )
+
+            self.assertEqual(set(localized_reports.values()), set(plan.urls))
+            self.assertNotIn(report, plan.urls, "the unchanged Chinese source URL must stay untouched")
+            self.assertEqual(3, plan.reason_counts["report_retired"])
+            self.assertEqual({}, dict(plan.skipped_reason_counts))
+
+    def test_initial_locale_inventory_additions_submit_without_a_source_delta(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            site = root / "current"
+            previous_site = root / "previous"
+            site.mkdir()
+            previous_site.mkdir()
+
+            source_url = f"{BASE_URL}/reports/report-same.html"
+            source_sitemap = {source_url: "2026-09-03"}
+            localized = {
+                locale: f"{BASE_URL}/{locale}/reports/report-same.html"
+                for locale in indexnow.LOCALIZED_LOCALES
+            }
+            noindex_url = f"{BASE_URL}/ko/reports/historical.html"
+            for locale, localized_url in localized.items():
+                write_page(site, localized_url)
+                rows = {localized_url: "2026-09-03"}
+                if locale == "ko":
+                    write_page(site, noindex_url, robots="noindex,follow")
+                    rows[noindex_url] = "2026-09-03"
+                write_sitemap(site / f"sitemap-{locale}.xml", rows)
+
+            catalog = {"items": [item("report-same", "same")]}
+            plan = indexnow.build_submission_plan(
+                catalog,
+                catalog,
+                source_sitemap,
+                source_sitemap,
+                site,
+                BASE_URL,
+                3,
+                previous_site,
+            )
+
+            self.assertEqual(set(localized.values()), set(plan.urls))
+            self.assertNotIn(noindex_url, plan.urls)
+            self.assertEqual(3, plan.reason_counts["locale_added"])
+            self.assertEqual(1, plan.skipped_reason_counts["current_not_indexable_self_canonical"])
+
+    def test_translation_only_html_change_submits_with_inherited_lastmod_unchanged(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            site = root / "current"
+            previous_site = root / "previous"
+            site.mkdir()
+            previous_site.mkdir()
+
+            localized_url = f"{BASE_URL}/ja/blog/article-same.html"
+            write_page(site, localized_url, body="corrected Japanese translation")
+            write_page(previous_site, localized_url, body="previous Japanese translation")
+            for release in (site, previous_site):
+                write_sitemap(release / "sitemap-ja.xml", {localized_url: "2026-09-03"})
+
+            source_sitemap = {f"{BASE_URL}/blog/article-same.html": "2026-09-03"}
+            plan = indexnow.build_submission_plan(
+                {"items": []},
+                {"items": []},
+                source_sitemap,
+                source_sitemap,
+                site,
+                BASE_URL,
+                3,
+                previous_site,
+            )
+
+            self.assertEqual([localized_url], plan.urls)
+            self.assertEqual(1, plan.reason_counts["locale_updated"])
+
+    def test_unchanged_locale_html_and_inventory_submit_nothing(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            site = root / "current"
+            previous_site = root / "previous"
+            site.mkdir()
+            previous_site.mkdir()
+
+            localized_url = f"{BASE_URL}/ar/reports/topics/still-live/"
+            for release in (site, previous_site):
+                write_page(release, localized_url, body="same Arabic translation")
+                write_sitemap(release / "sitemap-ar.xml", {localized_url: "2026-09-03"})
+
+            source_sitemap = {f"{BASE_URL}/reports/topics/still-live/": "2026-09-03"}
+            plan = indexnow.build_submission_plan(
+                {"items": []},
+                {"items": []},
+                source_sitemap,
+                source_sitemap,
+                site,
+                BASE_URL,
+                3,
+                previous_site,
+            )
+
+            self.assertEqual([], plan.urls)
+            self.assertEqual({}, plan.reason_counts)
+
+    def test_locale_url_still_in_current_locale_sitemap_is_not_retired(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            site = root / "current"
+            previous_site = root / "previous"
+            site.mkdir()
+            previous_site.mkdir()
+
+            localized_page = f"{BASE_URL}/ja/reports/topics/still-live/"
+            write_page(site, localized_page)
+            write_sitemap(site / "sitemap-ja.xml", {localized_page: "2026-09-04"})
+            write_sitemap(previous_site / "sitemap-ja.xml", {localized_page: "2026-09-03"})
+
+            source_sitemap = {f"{BASE_URL}/": "2026-09-04"}
+            plan = indexnow.build_submission_plan(
+                {"items": []},
+                {"items": []},
+                source_sitemap,
+                source_sitemap,
+                site,
+                BASE_URL,
+                3,
+                previous_site,
+            )
+
+            self.assertEqual([], plan.urls)
+            self.assertEqual({}, dict(plan.skipped_reason_counts))
 
     def test_cli_dry_run_emits_reason_counts(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

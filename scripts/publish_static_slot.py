@@ -423,6 +423,26 @@ def upload_extra_args(descriptor: dict[str, Any]) -> dict[str, Any]:
     return extra
 
 
+def remote_object_matches_descriptor(
+    client: Any,
+    bucket: str,
+    key: str,
+    descriptor: dict[str, Any],
+) -> bool:
+    """Verify an object before trusting a previous manifest's skip decision."""
+    try:
+        metadata = client.head_object(Bucket=bucket, Key=key)
+    except Exception as error:
+        if upload_error_code(error) in {"404", "nosuchkey", "notfound"}:
+            return False
+        raise
+    return (
+        int(metadata.get("ContentLength", -1)) == int(descriptor["size"])
+        and str((metadata.get("Metadata") or {}).get("sha256") or "")
+        == descriptor["sha256"]
+    )
+
+
 def required_release_paths(root: Path) -> tuple[str, ...]:
     catalog = json.loads((root / "data" / "catalog.json").read_text(encoding="utf-8"))
     report_id = next(
@@ -452,7 +472,7 @@ def verify_required_objects(
         if int(metadata.get("ContentLength", -1)) != int(entries[relative]["size"]):
             raise RuntimeError(f"Required static release object has the wrong size: {relative}")
         remote_sha = str((metadata.get("Metadata") or {}).get("sha256") or "")
-        if remote_sha and remote_sha != entries[relative]["sha256"]:
+        if remote_sha != entries[relative]["sha256"]:
             raise RuntimeError(f"Required static release object has the wrong digest: {relative}")
         verified += 1
     return verified
@@ -639,6 +659,7 @@ def publish_static_slot(
     active_slot: str = "",
     *,
     member_contact_card: Path,
+    skip_shared_private_assets: bool = False,
     max_workers: int = 4,
     transfer_config: Any = None,
     required: Iterable[str] | None = None,
@@ -648,11 +669,13 @@ def publish_static_slot(
     active = validate_slot(active_slot, allow_empty=True)
     root = Path(root)
     member_card = Path(member_contact_card)
-    member_descriptor = describe_member_contact_card(member_card)
-    root_resolved = root.resolve(strict=False)
-    member_resolved = member_card.resolve(strict=True)
-    if member_resolved == root_resolved or root_resolved in member_resolved.parents:
-        raise ValueError("Member contact card must remain outside the public static root")
+    member_descriptor: dict[str, Any] | None = None
+    if not skip_shared_private_assets:
+        member_descriptor = describe_member_contact_card(member_card)
+        root_resolved = root.resolve(strict=False)
+        member_resolved = member_card.resolve(strict=True)
+        if member_resolved == root_resolved or root_resolved in member_resolved.parents:
+            raise ValueError("Member contact card must remain outside the public static root")
     slot = target_slot(active)
     prefix = slot_prefix(slot)
     check_public_brand(root)
@@ -663,6 +686,9 @@ def publish_static_slot(
     incomplete_release = str((incomplete or {}).get("release_id") or "")
     force_reupload = bool(incomplete_release and incomplete_release != previous_release)
     remote_before = list_objects(client, bucket, prefix)
+    protected_qr_keys = (
+        set(LEGACY_PUBLIC_CONTACT_CARD_KEYS) if skip_shared_private_assets else set()
+    )
 
     put_json(
         client,
@@ -673,6 +699,7 @@ def publish_static_slot(
 
     previous_files = (previous or {}).get("files") or {}
     upload_relatives = []
+    skip_candidates = []
     skipped = 0
     for relative, descriptor in entries.items():
         key = prefix + relative
@@ -681,9 +708,31 @@ def publish_static_slot(
             and previous_files.get(relative) == descriptor
             and remote_before.get(key) == int(descriptor["size"])
         ):
-            skipped += 1
+            skip_candidates.append(relative)
         else:
             upload_relatives.append(relative)
+
+    # Listing proves only key and length.  Before carrying an object into a new
+    # release manifest, require the SHA-256 metadata written by this publisher;
+    # an old, missing, or same-length overwritten object is uploaded again.
+    verification_workers = min(24, max(1, int(max_workers) * 4))
+    with ThreadPoolExecutor(max_workers=verification_workers) as executor:
+        futures = {
+            executor.submit(
+                remote_object_matches_descriptor,
+                client,
+                bucket,
+                prefix + relative,
+                entries[relative],
+            ): relative
+            for relative in skip_candidates
+        }
+        for future in as_completed(futures):
+            relative = futures[future]
+            if future.result():
+                skipped += 1
+            else:
+                upload_relatives.append(relative)
 
     def upload(relative: str) -> tuple[str, int]:
         descriptor = entries[relative]
@@ -707,16 +756,21 @@ def publish_static_slot(
             uploaded_bytes += size
 
     desired_keys = {prefix + relative for relative in entries}
-    stale_keys = set(remote_before) - desired_keys
+    stale_keys = set(remote_before) - desired_keys - protected_qr_keys
     deleted = delete_keys(client, bucket, stale_keys)
 
     remote_after = list_objects(client, bucket, prefix)
+    managed_remote_after = {
+        key: size for key, size in remote_after.items() if key not in protected_qr_keys
+    }
     expected_sizes = {prefix + relative: int(descriptor["size"]) for relative, descriptor in entries.items()}
-    if remote_after != expected_sizes:
-        missing = len(set(expected_sizes) - set(remote_after))
-        unexpected = len(set(remote_after) - set(expected_sizes))
+    if managed_remote_after != expected_sizes:
+        missing = len(set(expected_sizes) - set(managed_remote_after))
+        unexpected = len(set(managed_remote_after) - set(expected_sizes))
         wrong_size = sum(
-            1 for key in set(remote_after) & set(expected_sizes) if remote_after[key] != expected_sizes[key]
+            1
+            for key in set(managed_remote_after) & set(expected_sizes)
+            if managed_remote_after[key] != expected_sizes[key]
         )
         raise RuntimeError(
             f"Static slot verification failed: missing={missing} unexpected={unexpected} wrong_size={wrong_size}"
@@ -730,14 +784,19 @@ def publish_static_slot(
         entries,
         required if required is not None else required_release_paths(root),
     )
-    removed_legacy_contact_cards = delete_legacy_public_contact_cards(client, bucket)
-    published_member_descriptor = upload_member_contact_card(
-        client,
-        bucket,
-        member_card,
-        member_descriptor,
-        transfer_config=transfer_config,
-    )
+    removed_legacy_contact_cards = 0
+    published_member_descriptor = {"sha256": "", "size": 0}
+    if not skip_shared_private_assets:
+        if member_descriptor is None:  # Defensive guard for static type narrowing.
+            raise RuntimeError("Member contact card descriptor is unavailable")
+        removed_legacy_contact_cards = delete_legacy_public_contact_cards(client, bucket)
+        published_member_descriptor = upload_member_contact_card(
+            client,
+            bucket,
+            member_card,
+            member_descriptor,
+            transfer_config=transfer_config,
+        )
     runtime_uploaded, runtime_skipped, runtime_manifest = sync_runtime_data(
         client,
         bucket,
@@ -785,6 +844,7 @@ def publish_static_slot(
         "runtime_skipped_files": runtime_skipped,
         "runtime_prefix": runtime_manifest["prefix"],
         "runtime_tree_sha256": runtime_manifest["tree_sha256"],
+        "shared_private_assets_published": not skip_shared_private_assets,
         "legacy_public_contact_cards_removed": removed_legacy_contact_cards,
         "member_contact_card_sha256": published_member_descriptor["sha256"],
         "member_contact_card_bytes": published_member_descriptor["size"],
@@ -837,6 +897,11 @@ def main() -> int:
     parser.add_argument("--release", default=os.environ.get("STATIC_RELEASE", ""))
     parser.add_argument("--active-slot", default=os.environ.get("ACTIVE_STATIC_SLOT", ""))
     parser.add_argument("--member-contact-card", required=True)
+    parser.add_argument(
+        "--skip-shared-private-assets",
+        action="store_true",
+        help="Do not upload the shared member QR or delete legacy QR objects",
+    )
     parser.add_argument("--max-workers", type=int, default=4)
     args = parser.parse_args()
 
@@ -849,6 +914,7 @@ def main() -> int:
             args.release,
             args.active_slot,
             member_contact_card=Path(args.member_contact_card),
+            skip_shared_private_assets=args.skip_shared_private_assets,
             max_workers=args.max_workers,
             transfer_config=transfer,
         )
@@ -878,6 +944,7 @@ def main() -> int:
                     "deleted_files",
                     "runtime_uploaded_files",
                     "runtime_skipped_files",
+                    "shared_private_assets_published",
                     "legacy_public_contact_cards_removed",
                     "member_contact_card_bytes",
                     "verified_release_objects",

@@ -7,7 +7,7 @@ const appPath = new URL("../site_src/assets/app.js", import.meta.url);
 const htmlPath = new URL("../site_src/index.html", import.meta.url);
 const stylesPath = new URL("../site_src/assets/styles.css", import.meta.url);
 
-test("home first paint uses a preview and atomically upgrades to the full catalog", async () => {
+test("localized home first paint defers the full catalog while zh-Hans keeps its established start", async () => {
   const source = await readFile(appPath, "utf8");
   const initIndex = source.slice(source.indexOf("async function initIndex()"), source.indexOf("function filenameFromDisposition"));
   assert.match(source, /loadOptionalJson\("data\/catalog_preview\.json", null\)/);
@@ -16,13 +16,124 @@ test("home first paint uses a preview and atomically upgrades to the full catalo
       < source.indexOf("const startFullCatalogLoad = () =>"),
     "the small preview must be resolved before the full catalog loader is created",
   );
-  assert.match(source, /loadHotReports\(initialHotReportQuery\);\s*const backgroundFullCatalogPromise = startFullCatalogLoad\(\);/);
-  assert.match(source, /backgroundFullCatalogPromise\.then\(async \(fullCatalog\) =>/);
+  assert.match(initIndex, /const deferLocalizedHomeCatalog = shouldDeferLocalizedHomeCatalog\(CONTENT_LOCALE\)/);
+  assert.match(initIndex, /function startFullCatalogUpgrade\(\)[\s\S]*const upgrade = startFullCatalogLoad\(\)\.then\(async \(fullCatalog\) =>/);
+  assert.match(initIndex, /const initialCatalog = initialHomeCatalog\(previewCatalog, deferLocalizedHomeCatalog\);[\s\S]*if \(initialCatalog\.needsSynchronousFullCatalog\) catalog = await startFullCatalogLoad\(\);/);
+  assert.match(initIndex, /fullCatalogRetryAfter = Date\.now\(\) \+ LOCALIZED_FULL_CATALOG_RETRY_COOLDOWN_MS/);
+  assert.match(initIndex, /if \(!fullCatalogReady && fullCatalogUpgradePromise === upgrade\) \{\s*fullCatalogUpgradePromise = null;/);
+  assert.match(initIndex, /const startedNow = localizedCatalogStarter\.startNow\(\);[\s\S]*const retryDelay = Math\.max\(0, fullCatalogRetryAfter - Date\.now\(\)\);[\s\S]*fullCatalogIntentRetryTimer = window\.setTimeout\([\s\S]*if \(!fullCatalogReady\) void startFullCatalogUpgrade\(\);/);
+  assert.match(initIndex, /loadHotReports\(initialHotReportQuery\);[\s\S]*if \(deferLocalizedHomeCatalog\) \{\s*localizedHotOverlayStarter\.schedule\(\);\s*\} else \{\s*localizedCatalogStarter\.startNow\(\);/);
+  assert.doesNotMatch(initIndex, /localizedCatalogStarter\.schedule\(\)/);
   assert.match(source, /await rebuildCatalogDerivedInChunks\(fullCatalog, catalogPdfOverrides\);\s*fullCatalogReady = true;/);
+  assert.match(initIndex, /render\(\{ resetPage: earlyInputTouched \|\| Boolean\(input\.value\.trim\(\)\) \}\)/);
   assert.match(source, /overrideVersion !== catalogOverrideVersion/);
   assert.match(source, /cache: "reload"/);
   assert.match(source, /loadCatalogPdfOverrides\(workerUrl\)\.then\(\(overrides\) =>/);
+  assert.match(initIndex, /const localizedHotOverlayStarter = createIdleOrIntentStarter\(\(\) => \{[\s\S]*const localizeDeferredHotReports = deferredHotReportLocalization;[\s\S]*const localizedCatalogStarter = createIdleOrIntentStarter\(\(\) => \{\s*void startFullCatalogUpgrade\(\);\s*void startCatalogPdfOverridesLoad\(\);/);
   assert.doesNotMatch(initIndex, /const catalogPdfOverrides = await loadCatalogPdfOverrides/);
+  assert.doesNotMatch(initIndex, /backgroundFullCatalogPromise/);
+});
+
+test("bounded background scheduling is reusable while the full catalog remains intent-only", async () => {
+  const source = await readFile(appPath, "utf8");
+  const helperStart = source.indexOf("const LOCALIZED_HOME_CATALOG_LOCALES");
+  const helperEnd = source.indexOf("const INDUSTRY_RULES", helperStart);
+  assert.ok(helperStart >= 0 && helperEnd > helperStart, "localized catalog scheduling helpers must exist");
+  const sandbox = {};
+  vm.runInNewContext(`
+    ${source.slice(helperStart, helperEnd)}
+    globalThis.catalogScheduling = {
+      locales: [...LOCALIZED_HOME_CATALOG_LOCALES],
+      idleTimeout: LOCALIZED_FULL_CATALOG_IDLE_TIMEOUT_MS,
+      fallbackDelay: LOCALIZED_FULL_CATALOG_FALLBACK_DELAY_MS,
+      retryCooldown: LOCALIZED_FULL_CATALOG_RETRY_COOLDOWN_MS,
+      shouldDeferLocalizedHomeCatalog,
+      initialHomeCatalog,
+      shouldDeferInitialHotOverlay,
+      createIdleOrIntentStarter,
+    };
+  `, sandbox);
+  const helpers = sandbox.catalogScheduling;
+  assert.deepEqual(Array.from(helpers.locales), ["ko", "ja", "ar"]);
+  assert.equal(helpers.idleTimeout, 6_000, "idle work must have a six-second upper bound");
+  assert.equal(helpers.fallbackDelay, 3_000, "browsers without requestIdleCallback must still start promptly");
+  assert.equal(helpers.retryCooldown, 2_000, "failed full-catalog requests must use a short retry cooldown");
+  assert.equal(helpers.shouldDeferLocalizedHomeCatalog("zh-Hans"), false);
+  assert.equal(helpers.shouldDeferLocalizedHomeCatalog("ko"), true);
+  assert.equal(helpers.shouldDeferLocalizedHomeCatalog("ja"), true);
+  assert.equal(helpers.shouldDeferLocalizedHomeCatalog("ar"), true);
+  const localizedMissingPreview = helpers.initialHomeCatalog(null, true);
+  assert.equal(localizedMissingPreview.needsSynchronousFullCatalog, false);
+  assert.deepEqual(Array.from(localizedMissingPreview.catalog.items), []);
+  assert.equal(
+    helpers.initialHomeCatalog(null, false).needsSynchronousFullCatalog,
+    true,
+    "zh-Hans keeps its established synchronous fallback when the preview is missing",
+  );
+  const preview = { items: [{ id: "latest" }] };
+  assert.equal(helpers.initialHomeCatalog(preview, true).catalog, preview);
+  assert.equal(helpers.shouldDeferInitialHotOverlay("ko", false, "", 0, true), true);
+  assert.equal(helpers.shouldDeferInitialHotOverlay("zh-Hans", false, "", 0, true), false);
+  assert.equal(helpers.shouldDeferInitialHotOverlay("ko", true, "", 0, true), false);
+  assert.equal(helpers.shouldDeferInitialHotOverlay("ko", false, "ai", 0, true), false);
+
+  let startCount = 0;
+  let idleCallback = null;
+  let idleOptions = null;
+  const cancelledIdle = [];
+  const idleScheduler = {
+    requestIdleCallback(callback, options) {
+      idleCallback = callback;
+      idleOptions = options;
+      return 41;
+    },
+    cancelIdleCallback(handle) { cancelledIdle.push(handle); },
+    setTimeout() { throw new Error("idle-capable scheduler must not use a timer"); },
+    clearTimeout() {},
+  };
+  const starter = helpers.createIdleOrIntentStarter(() => { startCount += 1; }, idleScheduler);
+  starter.schedule();
+  assert.equal(startCount, 0, "scheduled background work must not start during first-paint setup");
+  assert.equal(idleOptions.timeout, 6_000);
+  assert.equal(starter.startNow(), true, "explicit intent must start work immediately");
+  assert.equal(startCount, 1);
+  assert.deepEqual(cancelledIdle, [41]);
+  idleCallback();
+  assert.equal(startCount, 1, "a later idle callback must not issue a duplicate full-catalog request");
+  assert.equal(starter.startNow(), false);
+
+  let fallbackCallback = null;
+  let fallbackDelay = null;
+  let fallbackStarts = 0;
+  const fallbackScheduler = {
+    setTimeout(callback, delay) {
+      fallbackCallback = callback;
+      fallbackDelay = delay;
+      return 9;
+    },
+    clearTimeout() {},
+  };
+  const fallbackStarter = helpers.createIdleOrIntentStarter(() => { fallbackStarts += 1; }, fallbackScheduler);
+  fallbackStarter.schedule();
+  assert.equal(fallbackDelay, 3_000);
+  assert.equal(fallbackStarts, 0);
+  fallbackCallback();
+  assert.equal(fallbackStarts, 1, "fallback scheduling must prevent indefinite deferral");
+});
+
+test("localized first paint defers the Hot overlay and atomically reapplies it after idle or intent", async () => {
+  const source = await readFile(appPath, "utf8");
+  const initIndex = source.slice(source.indexOf("async function initIndex()"), source.indexOf("function filenameFromDisposition"));
+  assert.match(initIndex, /const deferHotOverlay = shouldDeferInitialHotOverlay\([\s\S]*\) && typeof hotReportLocalizer === "function"/);
+  assert.match(initIndex, /if \(deferHotOverlay\) \{[\s\S]*const sourceData = data;[\s\S]*deferredHotReportLocalization = \(\) => \{[\s\S]*hotReportLocalizer\(sourceData\)/);
+  assert.match(initIndex, /retainLocalizedPageDuringDeferredOverlay = Boolean\(currentHotReportPage\(\)\)[\s\S]*cleanQuery === hotReportActiveQuery/);
+  assert.match(initIndex, /if \(retainLocalizedPageDuringDeferredOverlay\) \{[\s\S]*setHotReportsStatus\("翻译正在更新，请稍后再试。"\)[\s\S]*\} else \{\s*data = \{\s*generation:[\s\S]*items: \[\],\s*total: 0,\s*next_cursor: "",\s*has_more: false,\s*locale_translation_pending: true/);
+  assert.match(initIndex, /if \(!retainLocalizedPageDuringDeferredOverlay\) \{\s*applyHotReportPayload\(data, \{[\s\S]*cacheFirstPage: !deferHotOverlay/);
+  assert.match(initIndex, /localizedData && localizedData\.locale_translation_pending === true[\s\S]*retainLocalizedPageDuringDeferredOverlay[\s\S]*setHotReportsStatus\("翻译正在更新，请稍后再试。"\)[\s\S]*else \{\s*applyHotReportPayload\(localizedData/);
+  assert.match(initIndex, /const localizedHotOverlayStarter = createIdleOrIntentStarter\(\(\) => \{\s*localizedBackgroundStarted = true;\s*const localizeDeferredHotReports = deferredHotReportLocalization;\s*if \(localizeDeferredHotReports\) localizeDeferredHotReports\(\);\s*\}\);/);
+  assert.match(initIndex, /const localizedCatalogStarter = createIdleOrIntentStarter\(\(\) => \{\s*void startFullCatalogUpgrade\(\);\s*void startCatalogPdfOverridesLoad\(\);\s*\}\);/);
+  assert.match(initIndex, /requestVersion !== hotReportRequestVersion \|\| cleanQuery !== hotReportActiveQuery/);
+  assert.doesNotMatch(initIndex, /if \(deferHotOverlay\)[\s\S]{0,1600}applyHotReportPayload\(sourceData/);
 });
 
 test("hot reports paint a validated last-good first page before refreshing in the background", async () => {
@@ -149,7 +260,10 @@ test("remote sources use independent deadlines and generic source fallback warni
   assert.match(remoteSearch, /remoteSearchControllers\.set\(source, controller\)/);
   assert.match(remoteSearch, /remoteSearchControllers\.get\(source\) === controller/);
   assert.match(remoteSearch, /const label = remoteSourceLabels\[source\] \|\| "此来源"/);
-  assert.match(remoteSearch, /warning:\s*publicMessageText\(data\.warning\)/);
+  assert.match(
+    remoteSearch,
+    /warning:\s*data\.warning[\s\S]{0,240}localizedServiceMessage\(data\.warning, "The upstream source is temporarily unavailable; cached results may be shown\."\)/,
+  );
   assert.match(remoteSearch, /cacheStatus:\s*String\(data\.cache_status \|\| ""\)\.trim\(\)/);
   assert.match(remoteSearch, /externalResponseMeta\.cacheStatus === "miss"/);
   assert.match(remoteSearch, /sourceUnavailable \? "error" : "done"/);
