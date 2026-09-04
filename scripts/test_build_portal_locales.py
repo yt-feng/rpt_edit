@@ -123,6 +123,7 @@ class PortalLocaleBuildTests(unittest.TestCase):
     <meta property="og:url" content="https://kcdesk.com/">
     <link rel="canonical" href="https://kcdesk.com/">
     <link rel="alternate" hreflang="zh-Hans" href="https://kcdesk.com/">
+    <link rel="alternate" hreflang="x-default" href="https://kcdesk.com/">
     <title>中文金融研究报告检索</title>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"KC桌面金融研究","url":"https://kcdesk.com/","inLanguage":"zh-Hans","potentialAction":{"@type":"SearchAction","target":"https://kcdesk.com/?q={search_term_string}"}}</script>
   </head>
@@ -875,13 +876,38 @@ class PortalLocaleBuildTests(unittest.TestCase):
             ),
         )
 
+        old_blog_path = self.site / "blog" / "old-blog.html"
+        deferred_zh = (
+            '  <link data-existing="deferred-zh" href="https://kcdesk.com/blog/old-blog.html" '
+            'rel="alternate" hreflang="zh-Hans">'
+        )
+        deferred_default = (
+            '  <link data-existing="deferred-default" hreflang="x-default" '
+            'href="https://kcdesk.com/blog/old-blog.html" rel="alternate">'
+        )
+        deferred_english = (
+            '  <link data-existing="deferred-english" rel="alternate" hreflang="en" '
+            'href="https://kcdesk.com/en/blog/old-blog.html">'
+        )
+        old_blog_source = old_blog_path.read_text(encoding="utf-8").replace(
+            "</head>",
+            "\n".join((
+                deferred_zh,
+                deferred_default,
+                deferred_english,
+                '  <link data-stale="deferred-ko" rel="alternate" hreflang="ko" '
+                'href="https://stale.example/ko/blog/old-blog.html">',
+                "</head>",
+            )),
+        )
+        old_blog_path.write_text(old_blog_source, encoding="utf-8")
+
         home_path = self.site / "index.html"
         home_source = home_path.read_text(encoding="utf-8").replace(
             "</main>",
             '<a href="/reports/old-report.html">历史报告站内入口</a></main>',
         )
         home_path.write_text(home_source, encoding="utf-8")
-        old_blog_path = self.site / "blog" / "old-blog.html"
         chinese_old_blog_body = body_bytes(old_blog_path)
 
         sitemap_path = self.site / "sitemap-pages.xml"
@@ -1046,7 +1072,18 @@ class PortalLocaleBuildTests(unittest.TestCase):
 
         self.assertEqual(body_bytes(old_blog_path), chinese_old_blog_body)
         self.assertIn(b"zsxq.img", body_bytes(old_blog_path))
-        self.assertNotIn('hreflang="', old_blog_path.read_text(encoding="utf-8"))
+        deferred_root = old_blog_path.read_text(encoding="utf-8")
+        for existing in (deferred_zh, deferred_default, deferred_english):
+            self.assertEqual(deferred_root.count(existing), 1)
+        self.assertNotIn("data-stale=", deferred_root)
+        self.assertEqual(alternate_links(deferred_root), {
+            "zh-Hans": f"{SITE_URL}/blog/old-blog.html",
+            "x-default": f"{SITE_URL}/blog/old-blog.html",
+            "en": f"{SITE_URL}/en/blog/old-blog.html",
+        })
+        for locale in builder.LOCALES:
+            self.assertNotIn(f'hreflang="{locale}"', deferred_root)
+        self.assertEqual(deferred_root.count("data-kc-locale-bootstrap"), 1)
         for name, before in chinese_llms.items():
             current = (self.site / name).read_bytes()
             self.assertEqual(current, before)
@@ -1178,12 +1215,70 @@ class PortalLocaleBuildTests(unittest.TestCase):
             )
 
     def test_gzip_cache_is_deterministic_and_skips_all_second_build_calls(self) -> None:
+        home_path = self.site / "index.html"
+        source = home_path.read_text(encoding="utf-8")
+        existing_zh = (
+            '    <link data-existing="zh" href="https://kcdesk.com/" '
+            'hreflang="zh-Hans" rel="alternate">'
+        )
+        existing_default = (
+            '    <link data-existing="default" rel="alternate" '
+            'href="https://kcdesk.com/" hreflang="x-default">'
+        )
+        existing_english = (
+            '    <link data-existing="english" hreflang="en" '
+            'rel="alternate" href="https://kcdesk.com/en/">'
+        )
+        stale_locale_rows = "\n".join(
+            f'    <link data-stale="{locale}" rel="alternate" hreflang="{locale}" '
+            f'href="https://stale.example/{locale}/">'
+            for locale in builder.LOCALES
+        )
+        source = source.replace(
+            '    <link rel="alternate" hreflang="zh-Hans" href="https://kcdesk.com/">\n'
+            '    <link rel="alternate" hreflang="x-default" href="https://kcdesk.com/">',
+            "\n".join((existing_zh, existing_default, existing_english, stale_locale_rows)),
+        ).replace(
+            "  </head>",
+            '    <link rel="stylesheet" href="/assets/locale.css?v=stale">\n'
+            '    <script src="/assets/locale-runtime.js?v=stale"></script>\n'
+            '    <script data-kc-locale-bootstrap>staleBootstrap()</script>\n'
+            "  </head>",
+        )
+        home_path.write_text(source, encoding="utf-8")
+
         first_translator = RecordingTranslator()
         first_manifest = self._build(first_translator)
         first_cache = self.cache.read_bytes()
+        first_home = home_path.read_text(encoding="utf-8")
         cache_payload = json.loads(gzip.decompress(first_cache).decode("utf-8"))
         self.assertEqual(cache_payload["schema_version"], builder.CACHE_SCHEMA_VERSION)
         self.assertTrue(all(cache_payload["locales"][locale] for locale in builder.LOCALES))
+        for existing in (existing_zh, existing_default, existing_english):
+            self.assertEqual(first_home.count(existing), 1)
+        self.assertNotIn("data-stale=", first_home)
+        self.assertNotIn("staleBootstrap", first_home)
+        self.assertNotIn("?v=stale", first_home)
+        self.assertEqual(alternate_links(first_home), {
+            "zh-Hans": f"{SITE_URL}/",
+            "x-default": f"{SITE_URL}/",
+            "en": f"{SITE_URL}/en/",
+            "ko": f"{SITE_URL}/ko/",
+            "ja": f"{SITE_URL}/ja/",
+            "ar": f"{SITE_URL}/ar/",
+        })
+        self.assertEqual(first_home.count("data-kc-locale-bootstrap"), 1)
+
+        for locale in builder.LOCALES:
+            localized_home = (self.site / locale / "index.html").read_text(encoding="utf-8")
+            self.assertEqual(alternate_links(localized_home), {
+                "zh-Hans": f"{SITE_URL}/",
+                "ko": f"{SITE_URL}/ko/",
+                "ja": f"{SITE_URL}/ja/",
+                "ar": f"{SITE_URL}/ar/",
+                "x-default": f"{SITE_URL}/",
+            })
+            self.assertNotIn('hreflang="en"', localized_home)
 
         second_translator = mock.Mock(side_effect=AssertionError("cache miss on second build"))
         second_manifest = self._build(second_translator, cache_in=self.cache)
@@ -1191,6 +1286,7 @@ class PortalLocaleBuildTests(unittest.TestCase):
         second_translator.assert_not_called()
         self.assertEqual(self.cache.read_bytes(), first_cache)
         self.assertEqual(first_manifest, second_manifest)
+        self.assertEqual(home_path.read_text(encoding="utf-8"), first_home)
         robots = (self.site / "robots.txt").read_text(encoding="utf-8")
         for locale in builder.LOCALES:
             self.assertEqual(robots.count(f"Sitemap: {SITE_URL}/sitemap-{locale}.xml"), 1)

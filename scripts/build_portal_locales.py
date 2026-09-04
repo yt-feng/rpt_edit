@@ -3613,7 +3613,14 @@ def filter_locale_llms_source(
     return filtered
 
 
-def discovery_links(canonical: str, site_url: str, asset_version: str, *, defer_runtime: bool) -> str:
+def discovery_links(
+    canonical: str,
+    site_url: str,
+    asset_version: str,
+    *,
+    defer_runtime: bool,
+    hreflangs: Iterable[str] | None = None,
+) -> str:
     if defer_runtime:
         # The Chinese site already loads app.js. Avoid adding any locale asset
         # request for Simplified-Chinese browsers while still giving other
@@ -3641,21 +3648,46 @@ def discovery_links(canonical: str, site_url: str, asset_version: str, *, defer_
             path = root_path if code == "zh-Hans" else locale_path(root_path, code)
             return urlunsplit((base.scheme, base.netloc, path, urlsplit(root_canonical).query, ""))
 
-        rows.extend([
-            f'\n    <link rel="alternate" hreflang="zh-Hans" href="{html_escape(url_for("zh-Hans"), quote=True)}">',
-            f'\n    <link rel="alternate" hreflang="ko" href="{html_escape(url_for("ko"), quote=True)}">',
-            f'\n    <link rel="alternate" hreflang="ja" href="{html_escape(url_for("ja"), quote=True)}">',
-            f'\n    <link rel="alternate" hreflang="ar" href="{html_escape(url_for("ar"), quote=True)}">',
-            f'\n    <link rel="alternate" hreflang="x-default" href="{html_escape(url_for("zh-Hans"), quote=True)}">',
-        ])
+        selected_hreflangs = (
+            tuple(hreflangs)
+            if hreflangs is not None
+            else ("zh-Hans", *LOCALES, "x-default")
+        )
+        for code in selected_hreflangs:
+            target_code = "zh-Hans" if code == "x-default" else code
+            rows.append(
+                f'\n    <link rel="alternate" hreflang="{html_escape(code, quote=True)}" '
+                f'href="{html_escape(url_for(target_code), quote=True)}">'
+            )
     rows.append("\n  ")
     return "".join(rows)
 
 
-def remove_existing_locale_discovery(head: str) -> str:
+def remove_existing_locale_discovery(
+    head: str,
+    *,
+    hreflangs_to_remove: frozenset[str] | None = None,
+) -> str:
+    targets = (
+        None
+        if hreflangs_to_remove is None
+        else frozenset(value.casefold() for value in hreflangs_to_remove)
+    )
+
+    def remove_alternate(match: re.Match[str]) -> str:
+        tag = match.group("tag")
+        attribute = re.search(r"\bhreflang\s*=\s*([\"'])(.*?)\1", tag, flags=re.I | re.S)
+        if attribute is None:
+            return match.group(0)
+        if targets is None or attribute.group(2).strip().casefold() in targets:
+            return ""
+        return match.group(0)
+
     value = re.sub(
-        r"\s*<link\b(?=[^>]*\brel=[\"'][^\"']*\balternate\b[^\"']*[\"'])(?=[^>]*\bhreflang=[\"'][^\"']+[\"'])[^>]*>",
-        "",
+        r"(?P<prefix>(?:\r?\n[ \t]*)?)(?P<tag><link\b"
+        r"(?=[^>]*\brel=[\"'][^\"']*\balternate\b[^\"']*[\"'])"
+        r"(?=[^>]*\bhreflang=[\"'][^\"']+[\"'])[^>]*>)",
+        remove_alternate,
         head,
         flags=re.I,
     )
@@ -3674,8 +3706,17 @@ def inject_root_discovery(source: str, canonical: str, site_url: str, asset_vers
     match = re.search(r"</head\s*>", source, flags=re.I)
     if not match:
         raise TranslationError("Generated HTML has no closing head tag")
-    head = remove_existing_locale_discovery(source[:match.start()])
-    return head + discovery_links(canonical, site_url, asset_version, defer_runtime=True) + source[match.start():]
+    head = remove_existing_locale_discovery(
+        source[:match.start()],
+        hreflangs_to_remove=frozenset(LOCALES),
+    ).rstrip()
+    return head + discovery_links(
+        canonical,
+        site_url,
+        asset_version,
+        defer_runtime=True,
+        hreflangs=tuple(LOCALES),
+    ) + source[match.start():]
 
 
 def sitemap_lastmod_lookup(root: Path) -> dict[str, str]:

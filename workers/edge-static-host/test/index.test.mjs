@@ -80,6 +80,7 @@ function fixture() {
   bucket.seed("assets/guide/index.html", "asset-guide", { contentType: "text/html; charset=utf-8" });
   bucket.seed("data/i18n/ar/catalog-titles.json", '{"locale":"ar","titles":{}}', { etag: '"ar-titles-v1"' });
   bucket.seed("sitemap-ja.xml", "<urlset></urlset>", { contentType: "application/xml", etag: '"ja-map-v1"' });
+  bucket.seed("robots.txt", "User-agent: *\nAllow: /\n", { contentType: "text/plain; charset=utf-8", etag: '"robots-v1"' });
   bucket.seed("404.html", "missing", { contentType: "text/html; charset=utf-8", etag: '"missing-v1"' });
   bucket.seed("data/catalog.json", '{"items":[]}', { etag: '"catalog-v1"' });
   bucket.seed("data/catalog_preview.json", '{"items":[]}', { etag: '"catalog-preview-v1"' });
@@ -347,6 +348,92 @@ test("API service-binding responses pass through without static cache mutation",
   assert.equal(response.headers.get("cache-control"), "private, no-store");
   assert.equal(response.headers.get("cloudflare-cdn-cache-control"), null);
   assert.equal(response.headers.get("x-upstream"), "preserved");
+});
+
+test("shadow robots blocks crawling for GET and HEAD without reading the R2 representation", async () => {
+  for (const method of ["GET", "HEAD"]) {
+    const env = fixture();
+    env.SHADOW_MODE = "true";
+    env.STATIC_BUCKET.get = async () => { throw new Error("shadow robots must not read R2"); };
+    env.STATIC_BUCKET.head = async () => { throw new Error("shadow robots must not read R2"); };
+    const response = await worker.fetch(
+      new Request("https://static.example.invalid/robots.txt", { method }),
+      env,
+    );
+    assert.equal(response.status, 200, method);
+    assert.equal(response.headers.get("x-robots-tag"), "noindex, nofollow, noarchive", method);
+    assert.equal(response.headers.get("cache-control"), "no-store", method);
+    assert.equal(response.headers.get("cloudflare-cdn-cache-control"), "no-store", method);
+    assert.equal(response.headers.get("content-language"), "zh-Hans", method);
+    assert.equal(response.headers.get("content-length"), "26", method);
+    assert.equal(
+      await response.text(),
+      method === "HEAD" ? "" : "User-agent: *\nDisallow: /\n",
+      method,
+    );
+  }
+});
+
+test("production robots remains the R2 object with no shadow crawl header", async () => {
+  const response = await request("/robots.txt");
+  assert.equal(response.status, 200);
+  assert.equal(await response.text(), "User-agent: *\nAllow: /\n");
+  assert.equal(response.headers.get("etag"), '"robots-v1"');
+  assert.equal(response.headers.get("cache-control"), "public, max-age=300");
+  assert.equal(response.headers.get("x-robots-tag"), null);
+});
+
+test("shadow mode protects static, redirect, API, and error responses", async () => {
+  const env = fixture();
+  env.SHADOW_MODE = "true";
+  env.CANONICAL_HOST = "static.example.invalid";
+  const upstream = new Response(new ReadableStream({
+    start(controller) {
+      controller.enqueue(new TextEncoder().encode("streamed "));
+      controller.enqueue(new TextEncoder().encode("api"));
+      controller.close();
+    },
+  }), {
+    status: 202,
+    statusText: "Accepted",
+    headers: {
+      "cache-control": "private, no-store",
+      "content-type": "text/plain",
+      "x-upstream": "preserved",
+    },
+  });
+  env.API = { fetch: async () => upstream };
+
+  const success = await worker.fetch(new Request("https://static.example.invalid/"), env);
+  assert.equal(success.status, 200);
+  assert.equal(await success.text(), "home");
+  assert.equal(success.headers.get("x-robots-tag"), "noindex, nofollow, noarchive");
+  assert.equal(success.headers.get("etag"), '"home-v1"');
+
+  const redirect = await worker.fetch(
+    new Request("https://static.example.invalid/reports/index.html?q=ai"),
+    env,
+  );
+  assert.equal(redirect.status, 301);
+  assert.equal(redirect.headers.get("location"), "https://static.example.invalid/reports/?q=ai");
+  assert.equal(redirect.headers.get("x-robots-tag"), "noindex, nofollow, noarchive");
+
+  const api = await worker.fetch(new Request("https://static.example.invalid/api/session"), env);
+  assert.notEqual(api, upstream);
+  assert.equal(api.status, 202);
+  assert.equal(api.statusText, "Accepted");
+  assert.equal(api.headers.get("cache-control"), "private, no-store");
+  assert.equal(api.headers.get("x-upstream"), "preserved");
+  assert.equal(api.headers.get("x-robots-tag"), "noindex, nofollow, noarchive");
+  assert.equal(await api.text(), "streamed api");
+
+  const missing = await worker.fetch(
+    new Request("https://static.example.invalid/does-not-exist"),
+    env,
+  );
+  assert.equal(missing.status, 404);
+  assert.equal(await missing.text(), "missing");
+  assert.equal(missing.headers.get("x-robots-tag"), "noindex, nofollow, noarchive");
 });
 
 test("If-None-Match supports wildcard, lists, and weak comparison", async () => {

@@ -72,6 +72,9 @@ jobs:
       multilingual_enabled: ${{ steps.operation.outputs.multilingual_enabled }}
       multilingual_live: ${{ steps.operation.outputs.multilingual_live }}
       multilingual_index_policy_sha256: ${{ steps.locale_policy.outputs.index_policy_sha256 }}
+      chinese_parity_sha256: ${{ steps.chinese_parity.outputs.sha256 }}
+      shadow_worker_name: ${{ steps.shadow_context.outputs.worker_name }}
+      shadow_preview_url: ${{ steps.shadow_identity.outputs.preview_url }}
     steps:
       - name: Require reviewed main operation
         id: operation
@@ -176,6 +179,8 @@ jobs:
             scripts/check_public_brand.py \
             scripts/compare_portal_release_semantics.py \
             scripts/build_portal_locales.py \
+            scripts/verify_portal_chinese_parity.py \
+            scripts/audit_portal_shadow_preview.py \
             scripts/edge_route_cutover.py \
             scripts/capture_edge_worker_deployment.py \
             scripts/publish_static_slot.py
@@ -186,6 +191,8 @@ jobs:
           python3 -B scripts/test_publish_static_slot.py
           python3 -B scripts/test_capture_edge_worker_deployment.py
           python3 -B scripts/test_build_portal_locales.py
+          python3 -B scripts/test_verify_portal_chinese_parity.py
+          python3 -B scripts/test_audit_portal_shadow_preview.py
           python3 scripts/test_portal_seo.py
           python3 scripts/test_portal_blog_build.py
           python3 scripts/test_edge_route_cutover.py
@@ -323,6 +330,77 @@ jobs:
               exit 1
               ;;
           esac
+
+      - name: Capture exact active static manifest
+        if: steps.operation.outputs.multilingual_enabled == 'true'
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          MULTILINGUAL_LIVE: ${{ steps.operation.outputs.multilingual_live }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          import os
+          import hashlib
+          from pathlib import Path
+          import sys
+
+          sys.path.insert(0, "scripts")
+          from chart_search_r2 import client_and_bucket
+          from publish_static_slot import slot_prefix, valid_manifest
+
+          runner = Path(os.environ["RUNNER_TEMP"])
+          state = json.loads(runner.joinpath("previous-edge-state.json").read_text(encoding="utf-8"))
+          client, bucket = client_and_bucket()
+          key = f"edge-static/slot-manifests/{state['slot']}.json"
+          try:
+              response = client.get_object(Bucket=bucket, Key=key)
+              body = response["Body"].read(64 * 1024 * 1024 + 1)
+          except Exception as error:
+              raise SystemExit("Active static manifest is unavailable") from error
+          if not body or len(body) > 64 * 1024 * 1024:
+              raise SystemExit("Active static manifest is empty or oversized")
+          try:
+              payload = json.loads(body)
+          except (UnicodeDecodeError, json.JSONDecodeError) as error:
+              raise SystemExit("Active static manifest is invalid JSON") from error
+          manifest = valid_manifest(payload, state["slot"])
+          if (
+              manifest is None
+              or manifest.get("release_id") != state["release_id"]
+              or manifest.get("tree_sha256") != state["tree_sha256"]
+          ):
+              raise SystemExit("Active static manifest does not match the live Edge state")
+          output = runner / "previous-slot-manifest.json"
+          output.write_text(
+              json.dumps(manifest, ensure_ascii=True, sort_keys=True, separators=(",", ":")) + "\n",
+              encoding="utf-8",
+          )
+          output.chmod(0o600)
+          if os.environ["MULTILINGUAL_LIVE"] != "true":
+              descriptor = manifest["files"].get("assets/app.js")
+              if not isinstance(descriptor, dict):
+                  raise SystemExit("Active static manifest has no Chinese app bundle")
+              app_response = client.get_object(
+                  Bucket=bucket,
+                  Key=slot_prefix(state["slot"]) + "assets/app.js",
+              )
+              app_body = app_response["Body"].read(16 * 1024 * 1024 + 1)
+              if (
+                  not app_body
+                  or len(app_body) > 16 * 1024 * 1024
+                  or len(app_body) != int(descriptor["size"])
+                  or hashlib.sha256(app_body).hexdigest() != descriptor["sha256"]
+              ):
+                  raise SystemExit("Active Chinese app bundle does not match its manifest")
+              active_app = runner / "previous-active-app.js"
+              active_app.write_bytes(app_body)
+              active_app.chmod(0o600)
+          print(f"active_static_manifest_files={manifest['file_count']}")
+          PY
 
       - name: Materialize private deployment profile
         env:
@@ -504,6 +582,67 @@ jobs:
             --catalog portal_suite/data/catalog.json \
             --chart-output _neutral_site/data/chart_search_index.json
 
+      - name: Snapshot protected Chinese release before locale build
+        if: steps.operation.outputs.multilingual_enabled == 'true'
+        env:
+          MULTILINGUAL_LIVE: ${{ steps.operation.outputs.multilingual_live }}
+        run: |
+          set -euo pipefail
+          CANDIDATE_APP="_neutral_site/assets/app.js" \
+          ACTIVE_APP="$RUNNER_TEMP/previous-active-app.js" \
+          PERFORMANCE_REPORT="$RUNNER_TEMP/chinese-performance.json" \
+          MULTILINGUAL_LIVE="$MULTILINGUAL_LIVE" python3 - <<'PY'
+          import gzip
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+
+          candidate = Path(os.environ["CANDIDATE_APP"]).read_bytes()
+          candidate_gzip = gzip.compress(candidate, compresslevel=9, mtime=0)
+          if len(candidate) > 700_000 or len(candidate_gzip) > 150_000:
+              raise SystemExit("Chinese app bundle exceeds its absolute loading budget")
+          report = {
+              "schema_version": 1,
+              "candidate_bytes": len(candidate),
+              "candidate_gzip_bytes": len(candidate_gzip),
+              "candidate_sha256": hashlib.sha256(candidate).hexdigest(),
+              "active_compared": False,
+          }
+          if os.environ["MULTILINGUAL_LIVE"] != "true":
+              active = Path(os.environ["ACTIVE_APP"]).read_bytes()
+              active_gzip = gzip.compress(active, compresslevel=9, mtime=0)
+              raw_delta = len(candidate) - len(active)
+              gzip_delta = len(candidate_gzip) - len(active_gzip)
+              if raw_delta > 24_000 or gzip_delta > 6_000:
+                  raise SystemExit("Chinese app bundle exceeds its active-release delta budget")
+              report.update({
+                  "active_compared": True,
+                  "active_bytes": len(active),
+                  "active_gzip_bytes": len(active_gzip),
+                  "active_sha256": hashlib.sha256(active).hexdigest(),
+                  "raw_delta_bytes": raw_delta,
+                  "gzip_delta_bytes": gzip_delta,
+              })
+          report_bytes = json.dumps(
+              report,
+              ensure_ascii=True,
+              sort_keys=True,
+              separators=(",", ":"),
+          ).encode("utf-8") + b"\n"
+          Path(os.environ["PERFORMANCE_REPORT"]).write_bytes(report_bytes)
+          print(json.dumps(report, ensure_ascii=True, sort_keys=True))
+          PY
+          active_manifest_args=()
+          if [ "$MULTILINGUAL_LIVE" != "true" ]; then
+            active_manifest_args+=(--active-manifest "$RUNNER_TEMP/previous-slot-manifest.json")
+          fi
+          python3 -B scripts/verify_portal_chinese_parity.py snapshot \
+            --root _neutral_site \
+            --site-url "$LIVE_ORIGIN" \
+            --output "$RUNNER_TEMP/chinese-before-locales.json" \
+            "${active_manifest_args[@]}"
+
       - name: Build Korean Japanese and Arabic static locales
         if: steps.operation.outputs.multilingual_enabled == 'true'
         env:
@@ -595,6 +734,25 @@ jobs:
         with:
           path: ${{ runner.temp }}/portal-locale-cache/cache-v1.json.gz
           key: portal-locale-cache-${{ hashFiles('scripts/build_portal_locales.py') }}-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Verify protected Chinese release after locale build
+        id: chinese_parity
+        if: steps.operation.outputs.multilingual_enabled == 'true'
+        run: |
+          set -euo pipefail
+          python3 -B scripts/verify_portal_chinese_parity.py verify \
+            --root _neutral_site \
+            --snapshot "$RUNNER_TEMP/chinese-before-locales.json" \
+            --site-url "$LIVE_ORIGIN" \
+            --output "$RUNNER_TEMP/chinese-parity.json"
+          PARITY_REPORT="$RUNNER_TEMP/chinese-parity.json" python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import hashlib
+          import os
+          from pathlib import Path
+
+          report = Path(os.environ["PARITY_REPORT"])
+          print(f"sha256={hashlib.sha256(report.read_bytes()).hexdigest()}")
+          PY
 
       - name: Validate complete static release
         env:
@@ -1038,6 +1196,127 @@ jobs:
             --member-contact-card "$RUNNER_TEMP/member-contact-card.jpg" \
             --max-workers 4 "${private_asset_args[@]}"
 
+      - name: Prepare isolated multilingual shadow worker
+        id: shadow_context
+        if: >-
+          ${{
+            steps.release_delta.outputs.changed == 'true' &&
+            steps.operation.outputs.multilingual_enabled == 'true' &&
+            (
+              steps.operation.outputs.operation == 'locale-shadow' ||
+              steps.operation.outputs.multilingual_live != 'true'
+            )
+          }}
+        env:
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          SHADOW_STATIC_PREFIX: ${{ steps.static_upload.outputs.static_prefix }}
+          SHADOW_STATIC_TREE: ${{ steps.static_upload.outputs.tree_sha256 }}
+        run: |
+          set -euo pipefail
+          worker_name="kcdesk-locale-shadow-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          test "${#worker_name}" -le 63
+          R2_BUCKET_VALUE="$R2_BUCKET" WORKER_NAME="$worker_name" python3 - <<'PY'
+          import os
+          import re
+
+          bucket = os.environ["R2_BUCKET_VALUE"]
+          worker = os.environ["WORKER_NAME"]
+          if re.fullmatch(r"[a-z][a-z0-9-]{2,62}", worker) is None:
+              raise SystemExit("Generated shadow Worker name is invalid")
+          if re.fullmatch(r"[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]", bucket) is None:
+              raise SystemExit("Configured R2 bucket name is invalid")
+          PY
+          mkdir -p .neutral_edge_shadow
+          cp workers/edge-static-host/src/index.js .neutral_edge_shadow/index.js
+          cat > .neutral_edge_shadow/wrangler.toml <<EOF
+          name = "$worker_name"
+          main = "index.js"
+          compatibility_date = "2026-08-12"
+          workers_dev = true
+          preview_urls = false
+
+          [vars]
+          STATIC_PREFIX = "$SHADOW_STATIC_PREFIX"
+          STATIC_RELEASE = "$STATIC_RELEASE"
+          STATIC_TREE_SHA256 = "$SHADOW_STATIC_TREE"
+          CANONICAL_HOST = ""
+          SHADOW_MODE = "true"
+
+          [[r2_buckets]]
+          binding = "STATIC_BUCKET"
+          bucket_name = "$R2_BUCKET"
+
+          [[services]]
+          binding = "API"
+          service = "portal-suite-worker"
+
+          [observability]
+          enabled = false
+          EOF
+          python3 -B scripts/audit_portal_shadow_preview.py plan \
+            --root _neutral_site \
+            --output "$RUNNER_TEMP/shadow-samples.json"
+          printf 'worker_name=%s\n' "$worker_name" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy isolated multilingual shadow worker
+        id: shadow_deploy
+        if: steps.shadow_context.outcome == 'success'
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID }}
+          workingDirectory: .neutral_edge_shadow
+          command: deploy
+          wranglerVersion: "4.125.0"
+
+      - name: Verify isolated multilingual shadow worker
+        id: shadow_identity
+        if: steps.shadow_deploy.outcome == 'success'
+        env:
+          SHADOW_PREVIEW_URL: ${{ steps.shadow_deploy.outputs.deployment-url }}
+          SHADOW_WORKER_NAME: ${{ steps.shadow_context.outputs.worker_name }}
+          SHADOW_STATIC_SLOT: ${{ steps.static_upload.outputs.static_slot }}
+          SHADOW_STATIC_TREE: ${{ steps.static_upload.outputs.tree_sha256 }}
+          CANDIDATE_COMMIT_SHA: ${{ steps.operation.outputs.commit_sha }}
+        run: |
+          set -euo pipefail
+          preview_url="${SHADOW_PREVIEW_URL%/}"
+          test -n "$preview_url"
+          python3 -B scripts/audit_portal_shadow_preview.py audit \
+            --base-url "$preview_url" \
+            --samples "$RUNNER_TEMP/shadow-samples.json" \
+            --expected-release "$STATIC_RELEASE" \
+            --expected-tree "$SHADOW_STATIC_TREE" \
+            --output "$RUNNER_TEMP/shadow-http-audit.json"
+          PREVIEW_URL="$preview_url" python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          payload = {
+              "schema_version": 1,
+              "worker_name": os.environ["SHADOW_WORKER_NAME"],
+              "preview_url": os.environ["PREVIEW_URL"],
+              "commit_sha": os.environ["CANDIDATE_COMMIT_SHA"],
+              "static_slot": os.environ["SHADOW_STATIC_SLOT"],
+              "release_id": os.environ["STATIC_RELEASE"],
+              "tree_sha256": os.environ["SHADOW_STATIC_TREE"],
+          }
+          target = Path(os.environ["RUNNER_TEMP"]) / "shadow-preview.json"
+          target.write_text(
+              json.dumps(payload, ensure_ascii=True, sort_keys=True, separators=(",", ":")) + "\n",
+              encoding="utf-8",
+          )
+          PY
+          printf 'preview_url=%s\n' "$preview_url" >> "$GITHUB_OUTPUT"
+          {
+            echo "## Isolated multilingual shadow"
+            echo
+            echo "- Worker: \`$SHADOW_WORKER_NAME\`"
+            echo "- Candidate release: \`$STATIC_RELEASE\`"
+            echo "- Candidate tree: \`$SHADOW_STATIC_TREE\`"
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: Publish multilingual review identity
         if: steps.release_delta.outputs.changed == 'true' && steps.operation.outputs.multilingual_enabled == 'true'
         env:
@@ -1045,6 +1324,7 @@ jobs:
           CANDIDATE_COMMIT_SHA: ${{ steps.operation.outputs.commit_sha }}
           CANDIDATE_STATIC_TREE: ${{ steps.static_upload.outputs.tree_sha256 }}
           CANDIDATE_INDEX_POLICY_SHA256: ${{ steps.locale_policy.outputs.index_policy_sha256 }}
+          CANDIDATE_CHINESE_PARITY_SHA256: ${{ steps.chinese_parity.outputs.sha256 }}
         run: |
           set -euo pipefail
           python3 - <<'PY'
@@ -1058,10 +1338,11 @@ jobs:
               "commit_sha": os.environ["CANDIDATE_COMMIT_SHA"],
               "static_tree_sha256": os.environ["CANDIDATE_STATIC_TREE"],
               "index_policy_sha256": os.environ["CANDIDATE_INDEX_POLICY_SHA256"],
+              "chinese_parity_sha256": os.environ["CANDIDATE_CHINESE_PARITY_SHA256"],
           }
           if re.fullmatch(r"[0-9a-f]{40}", actual["commit_sha"]) is None:
               raise SystemExit("Candidate multilingual commit SHA is invalid")
-          for field in ("static_tree_sha256", "index_policy_sha256"):
+          for field in ("static_tree_sha256", "index_policy_sha256", "chinese_parity_sha256"):
               if re.fullmatch(r"[0-9a-f]{64}", actual[field]) is None:
                   raise SystemExit(f"Candidate multilingual {field} is invalid")
 
@@ -1085,6 +1366,7 @@ jobs:
               summary.write(f"- Commit SHA: `{actual['commit_sha']}`\n")
               summary.write(f"- Static tree SHA-256: `{actual['static_tree_sha256']}`\n")
               summary.write(f"- Index policy SHA-256: `{actual['index_policy_sha256']}`\n")
+              summary.write(f"- Chinese parity SHA-256: `{actual['chinese_parity_sha256']}`\n")
               summary.write(f"- Operation: `{operation}`\n")
           print("Multilingual candidate identity is ready for same-run approval")
           PY
@@ -1104,7 +1386,24 @@ jobs:
           install -m 0600 _neutral_site/sitemap-baidu.xml _release_validation/candidate/sitemap.xml
           install -m 0600 _neutral_site/data/release-semantics.json _release_validation/candidate/release-semantics.json
           if [ "$PORTAL_MULTILINGUAL_ENABLED" = "true" ]; then
-            mkdir -p _release_validation/candidate/{ko,ja,ar} _release_validation/candidate/data/i18n
+            mkdir -p \
+              _release_validation/candidate/{ko,ja,ar} \
+              _release_validation/candidate/assets \
+              _release_validation/candidate/data/i18n
+            install -m 0600 _neutral_site/index.html \
+              _release_validation/candidate/index.html
+            install -m 0600 _neutral_site/feed.xml \
+              _release_validation/candidate/feed.xml
+            install -m 0600 _neutral_site/assets/styles.css \
+              _release_validation/candidate/assets/styles.css
+            install -m 0600 _neutral_site/assets/locale.css \
+              _release_validation/candidate/assets/locale.css
+            install -m 0600 _neutral_site/assets/locale-runtime.js \
+              _release_validation/candidate/assets/locale-runtime.js
+            install -m 0600 "$RUNNER_TEMP/chinese-parity.json" \
+              _release_validation/candidate/chinese-parity.json
+            install -m 0600 "$RUNNER_TEMP/chinese-performance.json" \
+              _release_validation/candidate/chinese-performance.json
             for locale in ko ja ar; do
               install -m 0600 "_neutral_site/$locale/index.html" \
                 "_release_validation/candidate/$locale/index.html"
@@ -1115,6 +1414,14 @@ jobs:
               _release_validation/candidate/data/i18n/manifest.json
             install -m 0600 "$RUNNER_TEMP/multilingual-review-identity.json" \
               _release_validation/candidate/multilingual-review-identity.json
+            if [ -s "$RUNNER_TEMP/shadow-preview.json" ]; then
+              install -m 0600 "$RUNNER_TEMP/shadow-preview.json" \
+                _release_validation/candidate/shadow-preview.json
+              install -m 0600 "$RUNNER_TEMP/shadow-samples.json" \
+                _release_validation/candidate/shadow-samples.json
+              install -m 0600 "$RUNNER_TEMP/shadow-http-audit.json" \
+                _release_validation/candidate/shadow-http-audit.json
+            fi
           fi
 
       - name: Upload release validation artifact
@@ -1125,6 +1432,67 @@ jobs:
           path: _release_validation
           if-no-files-found: error
           retention-days: 7
+
+  shadow_review_hold:
+    needs: prepare_release
+    if: >-
+      ${{
+        needs.prepare_release.result == 'success' &&
+        needs.prepare_release.outputs.changed == 'true' &&
+        needs.prepare_release.outputs.operation == 'locale-shadow' &&
+        needs.prepare_release.outputs.shadow_worker_name != '' &&
+        needs.prepare_release.outputs.shadow_preview_url != ''
+      }}
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    environment:
+      name: kcdesk-multilingual-shadow-review
+    steps:
+      - name: Download exact shadow review artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: neutral-release-validation-${{ github.run_id }}-${{ github.run_attempt }}
+          path: _release_validation
+
+      - name: Confirm reviewed shadow identity
+        env:
+          EXPECTED_WORKER_NAME: ${{ needs.prepare_release.outputs.shadow_worker_name }}
+          EXPECTED_PREVIEW_URL: ${{ needs.prepare_release.outputs.shadow_preview_url }}
+          EXPECTED_RELEASE: ${{ needs.prepare_release.outputs.static_release }}
+          EXPECTED_TREE: ${{ needs.prepare_release.outputs.static_tree }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          preview = json.loads(
+              Path("_release_validation/candidate/shadow-preview.json").read_text(encoding="utf-8")
+          )
+          expected = {
+              "worker_name": os.environ["EXPECTED_WORKER_NAME"],
+              "preview_url": os.environ["EXPECTED_PREVIEW_URL"],
+              "release_id": os.environ["EXPECTED_RELEASE"],
+              "tree_sha256": os.environ["EXPECTED_TREE"],
+          }
+          if preview.get("schema_version") != 1 or any(
+              preview.get(key) != value for key, value in expected.items()
+          ):
+              raise SystemExit("Reviewed shadow does not match the prepared candidate")
+          audit = json.loads(
+              Path("_release_validation/candidate/shadow-http-audit.json").read_text(encoding="utf-8")
+          )
+          if (
+              audit.get("schema_version") != 1
+              or audit.get("base_url") != expected["preview_url"]
+              or audit.get("release_id") != expected["release_id"]
+              or audit.get("tree_sha256") != expected["tree_sha256"]
+              or int(audit.get("sample_count") or 0) < 18
+          ):
+              raise SystemExit("Reviewed shadow audit does not match the prepared candidate")
+          print("Exact isolated multilingual shadow approved")
+          PY
 
   multilingual_approval:
     needs: prepare_release
@@ -1153,10 +1521,12 @@ jobs:
           CANDIDATE_COMMIT_SHA: ${{ needs.prepare_release.outputs.candidate_commit }}
           CANDIDATE_STATIC_TREE: ${{ needs.prepare_release.outputs.static_tree }}
           CANDIDATE_INDEX_POLICY_SHA256: ${{ needs.prepare_release.outputs.multilingual_index_policy_sha256 }}
+          CANDIDATE_CHINESE_PARITY_SHA256: ${{ needs.prepare_release.outputs.chinese_parity_sha256 }}
           PORTAL_MULTILINGUAL_ACTIVATION_APPROVED: ${{ vars.PORTAL_MULTILINGUAL_ACTIVATION_APPROVED || 'false' }}
           PORTAL_MULTILINGUAL_APPROVED_COMMIT_SHA: ${{ vars.PORTAL_MULTILINGUAL_APPROVED_COMMIT_SHA || '' }}
           PORTAL_MULTILINGUAL_APPROVED_STATIC_TREE: ${{ vars.PORTAL_MULTILINGUAL_APPROVED_STATIC_TREE || '' }}
           PORTAL_MULTILINGUAL_APPROVED_INDEX_POLICY_SHA256: ${{ vars.PORTAL_MULTILINGUAL_APPROVED_INDEX_POLICY_SHA256 || '' }}
+          PORTAL_MULTILINGUAL_APPROVED_CHINESE_PARITY_SHA256: ${{ vars.PORTAL_MULTILINGUAL_APPROVED_CHINESE_PARITY_SHA256 || '' }}
         run: |
           set -euo pipefail
           python3 - <<'PY'
@@ -1175,16 +1545,18 @@ jobs:
               "commit_sha": os.environ["CANDIDATE_COMMIT_SHA"],
               "static_tree_sha256": os.environ["CANDIDATE_STATIC_TREE"],
               "index_policy_sha256": os.environ["CANDIDATE_INDEX_POLICY_SHA256"],
+              "chinese_parity_sha256": os.environ["CANDIDATE_CHINESE_PARITY_SHA256"],
           }
           if re.fullmatch(r"[0-9a-f]{40}", actual["commit_sha"]) is None:
               raise SystemExit("Same-run multilingual commit SHA is invalid")
-          for field in ("static_tree_sha256", "index_policy_sha256"):
+          for field in ("static_tree_sha256", "index_policy_sha256", "chinese_parity_sha256"):
               if re.fullmatch(r"[0-9a-f]{64}", actual[field]) is None:
                   raise SystemExit(f"Same-run multilingual {field} is invalid")
           artifact_identity = {
               "commit_sha": identity.get("commit_sha"),
               "static_tree_sha256": identity.get("static_tree_sha256"),
               "index_policy_sha256": identity.get("index_policy_sha256"),
+              "chinese_parity_sha256": identity.get("chinese_parity_sha256"),
           }
           if (
               identity.get("schema_version") != 1
@@ -1199,6 +1571,7 @@ jobs:
               "commit_sha": os.environ["PORTAL_MULTILINGUAL_APPROVED_COMMIT_SHA"],
               "static_tree_sha256": os.environ["PORTAL_MULTILINGUAL_APPROVED_STATIC_TREE"],
               "index_policy_sha256": os.environ["PORTAL_MULTILINGUAL_APPROVED_INDEX_POLICY_SHA256"],
+              "chinese_parity_sha256": os.environ["PORTAL_MULTILINGUAL_APPROVED_CHINESE_PARITY_SHA256"],
           }
           if approved != actual:
               mismatched = ", ".join(key for key in actual if approved.get(key) != actual[key])
@@ -1208,6 +1581,7 @@ jobs:
               summary.write(f"- Commit SHA: `{actual['commit_sha']}`\n")
               summary.write(f"- Static tree SHA-256: `{actual['static_tree_sha256']}`\n")
               summary.write(f"- Index policy SHA-256: `{actual['index_policy_sha256']}`\n")
+              summary.write(f"- Chinese parity SHA-256: `{actual['chinese_parity_sha256']}`\n")
           print("Same-run multilingual candidate identity approved")
           PY
 
@@ -1837,3 +2211,41 @@ jobs:
           else
             test "${{ steps.edge_rollback.outcome }}" = "skipped"
           fi
+
+  cleanup_multilingual_shadow:
+    needs: [prepare_release, shadow_review_hold, multilingual_approval, cutover]
+    if: >-
+      ${{
+        always() &&
+        needs.prepare_release.outputs.shadow_worker_name != ''
+      }}
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+    steps:
+      - name: Delete exact isolated shadow worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID }}
+          SHADOW_WORKER_NAME: ${{ needs.prepare_release.outputs.shadow_worker_name }}
+        run: |
+          set -euo pipefail
+          expected="kcdesk-locale-shadow-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          test "$SHADOW_WORKER_NAME" = "$expected"
+          response="$RUNNER_TEMP/shadow-delete.json"
+          status="$(curl --silent --show-error --request DELETE \
+            --connect-timeout 5 --max-time 30 \
+            --header "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            --header 'Content-Type: application/json' \
+            --output "$response" --write-out '%{http_code}' \
+            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/workers/scripts/$SHADOW_WORKER_NAME")"
+          test "$status" = "200"
+          DELETE_RESPONSE="$response" python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          payload = json.loads(Path(os.environ["DELETE_RESPONSE"]).read_text(encoding="utf-8"))
+          if payload.get("success") is not True:
+              raise SystemExit("Cloudflare did not confirm deletion of the isolated shadow Worker")
+          print("Isolated multilingual shadow Worker deleted")
+          PY

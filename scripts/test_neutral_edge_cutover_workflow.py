@@ -336,6 +336,54 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn("--public-root _neutral_site", delta)
         self.assertIn('if [ "$PORTAL_MULTILINGUAL_ENABLED" = "true" ]; then', delta)
 
+    def test_multilingual_chinese_parity_gate_wraps_locale_build(self) -> None:
+        validate_source = self.workflow[
+            self.workflow.index("Validate public source"):
+            self.workflow.index("Prepare masked release context")
+        ]
+        capture_manifest = self.workflow.index("Capture exact active static manifest")
+        base_build = self.workflow.index("Build private static release")
+        snapshot = self.workflow.index("Snapshot protected Chinese release before locale build")
+        locale_build = self.workflow.index("Build Korean Japanese and Arabic static locales")
+        save_checkpoint = self.workflow.index("Save multilingual translation checkpoint")
+        parity = self.workflow.index("Verify protected Chinese release after locale build")
+        validate_release = self.workflow.index("Validate complete static release")
+
+        self.assertLess(capture_manifest, base_build)
+        self.assertLess(base_build, snapshot)
+        self.assertLess(snapshot, locale_build)
+        self.assertLess(locale_build, save_checkpoint)
+        self.assertLess(save_checkpoint, parity)
+        self.assertLess(parity, validate_release)
+
+        active_manifest_step = self.workflow[capture_manifest:base_build]
+        self.assertIn('manifest["files"].get("assets/app.js")', active_manifest_step)
+        self.assertIn('slot_prefix(state["slot"]) + "assets/app.js"', active_manifest_step)
+        self.assertIn('runner / "previous-active-app.js"', active_manifest_step)
+
+        snapshot_step = self.workflow[snapshot:locale_build]
+        self.assertIn("if: steps.operation.outputs.multilingual_enabled == 'true'", snapshot_step)
+        self.assertIn('if [ "$MULTILINGUAL_LIVE" != "true" ]; then', snapshot_step)
+        self.assertIn('--active-manifest "$RUNNER_TEMP/previous-slot-manifest.json"', snapshot_step)
+        self.assertIn("verify_portal_chinese_parity.py snapshot", snapshot_step)
+        self.assertIn('--output "$RUNNER_TEMP/chinese-before-locales.json"', snapshot_step)
+        self.assertIn("candidate_gzip = gzip.compress(candidate, compresslevel=9, mtime=0)", snapshot_step)
+        self.assertIn("len(candidate) > 700_000 or len(candidate_gzip) > 150_000", snapshot_step)
+        self.assertIn("raw_delta > 24_000 or gzip_delta > 6_000", snapshot_step)
+
+        parity_step = self.workflow[parity:validate_release]
+        self.assertIn("id: chinese_parity", parity_step)
+        self.assertIn("verify_portal_chinese_parity.py verify", parity_step)
+        self.assertIn('--snapshot "$RUNNER_TEMP/chinese-before-locales.json"', parity_step)
+        self.assertIn('--output "$RUNNER_TEMP/chinese-parity.json"', parity_step)
+        self.assertIn('print(f"sha256={hashlib.sha256(report.read_bytes()).hexdigest()}")', parity_step)
+
+        self.assertIn("scripts/test_verify_portal_chinese_parity.py", validate_source)
+        self.assertIn("scripts/test_audit_portal_shadow_preview.py", validate_source)
+        self.assertIn("chinese_parity_sha256: ${{ steps.chinese_parity.outputs.sha256 }}", self.workflow)
+        self.assertIn("PORTAL_MULTILINGUAL_APPROVED_CHINESE_PARITY_SHA256", self.workflow)
+        self.assertIn('_release_validation/candidate/chinese-performance.json', self.workflow)
+
     def test_multilingual_candidate_is_exactly_accepted_without_rollback_assumption(self) -> None:
         artifact = self.workflow[
             self.workflow.index("Build public validation artifact"):
@@ -410,6 +458,66 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertNotIn('"$origin/$locale/"', rollback)
         self.assertNotIn('"$origin/sitemap-$locale.xml"', rollback)
         self.assertNotIn("public-locale-manifest", rollback)
+
+    def test_multilingual_shadow_is_isolated_reviewable_and_removed(self) -> None:
+        upload = self.workflow.index("Upload inactive static slot and immutable runtime")
+        prepare = self.workflow.index("Prepare isolated multilingual shadow worker")
+        deploy = self.workflow.index("Deploy isolated multilingual shadow worker")
+        verify = self.workflow.index("Verify isolated multilingual shadow worker")
+        artifact = self.workflow.index("Build public validation artifact")
+        hold = self.workflow.index("  shadow_review_hold:\n")
+        approval = self.workflow.index("  multilingual_approval:\n")
+        cleanup = self.workflow.index("  cleanup_multilingual_shadow:\n")
+        self.assertLess(upload, prepare)
+        self.assertLess(prepare, deploy)
+        self.assertLess(deploy, verify)
+        self.assertLess(verify, artifact)
+        self.assertLess(artifact, hold)
+        self.assertLess(hold, approval)
+        self.assertGreater(cleanup, self.workflow.index("  cutover:\n"))
+
+        shadow = self.workflow[prepare:artifact]
+        self.assertIn("kcdesk-locale-shadow-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}", shadow)
+        self.assertIn("workers_dev = true", shadow)
+        self.assertIn("preview_urls = false", shadow)
+        self.assertIn('CANONICAL_HOST = ""', shadow)
+        self.assertIn('SHADOW_MODE = "true"', shadow)
+        self.assertIn('service = "portal-suite-worker"', shadow)
+        self.assertIn("steps.operation.outputs.operation == 'locale-shadow'", shadow)
+        self.assertIn("steps.operation.outputs.multilingual_live != 'true'", shadow)
+        self.assertIn("uses: cloudflare/wrangler-action@v4", shadow)
+        self.assertIn("workingDirectory: .neutral_edge_shadow", shadow)
+        self.assertIn("command: deploy", shadow)
+        self.assertNotIn("versions deploy", shadow)
+        self.assertIn("audit_portal_shadow_preview.py plan", shadow)
+        self.assertIn("audit_portal_shadow_preview.py audit", shadow)
+
+        artifact_section = self.workflow[artifact:self.workflow.index("Upload release validation artifact")]
+        for name in (
+            "chinese-parity.json",
+            "shadow-preview.json",
+            "shadow-samples.json",
+            "shadow-http-audit.json",
+            "assets/locale.css",
+            "assets/locale-runtime.js",
+        ):
+            self.assertIn(name, artifact_section)
+
+        hold_section = self.workflow[hold:approval]
+        self.assertIn("name: kcdesk-multilingual-shadow-review", hold_section)
+        self.assertIn("needs.prepare_release.outputs.operation == 'locale-shadow'", hold_section)
+        self.assertIn("Download exact shadow review artifact", hold_section)
+        self.assertIn("Confirm reviewed shadow identity", hold_section)
+        self.assertIn("shadow-http-audit.json", hold_section)
+
+        cleanup_section = self.workflow[cleanup:]
+        self.assertIn(
+            "needs: [prepare_release, shadow_review_hold, multilingual_approval, cutover]",
+            cleanup_section,
+        )
+        self.assertIn('test "$SHADOW_WORKER_NAME" = "$expected"', cleanup_section)
+        self.assertIn("/workers/scripts/$SHADOW_WORKER_NAME", cleanup_section)
+        self.assertIn('payload.get("success") is not True', cleanup_section)
 
     def test_multilingual_cutover_is_bound_to_the_reviewed_candidate_identity(self) -> None:
         policy_start = self.workflow.index("Compute multilingual index policy identity")

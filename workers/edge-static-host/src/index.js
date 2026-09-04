@@ -3,6 +3,8 @@ const RELEASE_ID = /^[0-9a-f]{32}$/;
 const TREE_SHA256 = /^[0-9a-f]{64}$/;
 const RELEASE_CHECK_PATH = /^\/\.well-known\/edge-release\/([0-9a-f]{32})(?:\/(.*))?$/;
 const EDGE_STATE_PATH = "/.well-known/edge-state";
+const SHADOW_ROBOTS_POLICY = "noindex, nofollow, noarchive";
+const SHADOW_ROBOTS_BODY = "User-agent: *\nDisallow: /\n";
 
 const CACHE_POLICY = Object.freeze({
   html: Object.freeze({
@@ -335,7 +337,38 @@ async function resolveObject(env, prefix, relative, headOnly, request, allowRang
   return null;
 }
 
-export default {
+function isShadowMode(env) {
+  return env.SHADOW_MODE === "true";
+}
+
+function protectShadowResponse(response, shadowMode) {
+  if (!shadowMode) return response;
+  const headers = new Headers(response.headers);
+  headers.set("x-robots-tag", SHADOW_ROBOTS_POLICY);
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
+function shadowRobotsResponse(request) {
+  const headers = new Headers({
+    "content-type": "text/plain; charset=utf-8",
+    "content-language": "zh-Hans",
+    "content-length": String(new TextEncoder().encode(SHADOW_ROBOTS_BODY).byteLength),
+    "cache-control": "no-store",
+    "cloudflare-cdn-cache-control": "no-store",
+    "x-origin-class": "edge-static",
+    "x-robots-tag": SHADOW_ROBOTS_POLICY,
+  });
+  return new Response(request.method === "HEAD" ? null : SHADOW_ROBOTS_BODY, {
+    status: 200,
+    headers,
+  });
+}
+
+const productionWorker = {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.pathname === "/api" || url.pathname.startsWith("/api/")) {
@@ -478,5 +511,18 @@ export default {
       headers.set("content-length", String(object.size));
     }
     return new Response(headOnly ? null : object.body, { status, headers });
+  },
+};
+
+export default {
+  async fetch(request, env) {
+    const shadowMode = isShadowMode(env);
+    const url = new URL(request.url);
+    if (shadowMode
+      && url.pathname === "/robots.txt"
+      && (request.method === "GET" || request.method === "HEAD")) {
+      return shadowRobotsResponse(request);
+    }
+    return protectShadowResponse(await productionWorker.fetch(request, env), shadowMode);
   },
 };
