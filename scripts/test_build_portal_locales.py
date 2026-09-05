@@ -2096,12 +2096,13 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
         self.assertEqual(payload["thinking"], {"type": "disabled"})
         message = json.loads(payload["messages"][1]["content"])
         self.assertEqual(message["items"], [{"id": "0", "context": unit.context, "source_text": unit.source}])
-        self.assertEqual(message["target_language"], "ko")
-        self.assertIn("韩语（한국어）", message["task"])
+        self.assertEqual(message["target_language"], "Korean (한국어)")
+        self.assertEqual(message["locale"], "ko")
+        self.assertIn("Korean (한국어)", message["task"])
         self.assertNotIn("translations", message)
         self.assertNotIn(unit.key, json.dumps(payload))
         self.assertIn(
-            "不能复制原文或仅加目标语言前缀",
+            "Do not copy the source or merely add a target-language prefix",
             payload["messages"][0]["content"],
         )
 

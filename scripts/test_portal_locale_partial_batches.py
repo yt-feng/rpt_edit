@@ -339,7 +339,9 @@ class PartialBatchTests(unittest.TestCase):
                             cache_path=path, model=builder.DEFAULT_DEEPSEEK_MODEL,
                             base_url="https://api.deepseek.com", workers=500, timeout=1,
                             attempts=2, preflight_only=True, preflight_batches_per_locale=1,
-                            max_provider_requests=1 if ending == "request_limit" else 6,
+                            # Exhaust the stated cap in the empty-response case;
+                            # available canary calls now repair sparse omissions.
+                            max_provider_requests={"request_limit": 1, "empty": 2, "http402": 6}[ending],
                         )
                 saved = builder.load_cache(path, builder.DEFAULT_DEEPSEEK_MODEL)
                 self.assertEqual(saved["locales"]["ko"][self.units[0].key]["translation"], self.good["text"])
