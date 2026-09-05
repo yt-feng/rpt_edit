@@ -1,4 +1,6 @@
 """DeepL is reachable only through the residual queue; all providers are mocked."""
+from collections import Counter
+import json
 from pathlib import Path
 import sys
 import tempfile
@@ -87,6 +89,191 @@ class DeepLFallbackTests(unittest.TestCase):
         with self.assertRaises(builder.TranslationStopped):
             state.reserve()
         self.assertEqual(state.data["provider_requests"], 1)
+
+
+class GroupedDeepLPreflightTests(unittest.TestCase):
+    def run_case(self, *, accepted=2, repair_echo=False, repair_xml_error=False, http_status=200,
+                 transport_failure=False, preflight_only=True, retry_succeeds=False):
+        units = {
+            f"{index:064x}": builder.TranslationUnit(
+                f"{index:064x}", "html:text:p", f"第{index}段金融研究报告的完整内容及行业分析。",
+            ) for index in range(32)
+        }
+        cache = builder.empty_cache()
+        history_key = "f" * 64
+        for locale in builder.LOCALES:
+            cache["locales"][locale][history_key] = {
+                "source": "应保留的历史译文", "translation": NATIVE[locale],
+            }
+        state = builder.TranslationRun(max_requests=6)
+        calls, primary_sources, repair_sources = [], [], []
+        attempts = Counter()
+        repair = mock.Mock()
+
+        def primary(_url, **kwargs):
+            payload = kwargs["payload"]
+            self.assertIn("response_format", payload, "grouped canaries must not spend on per-row DeepSeek plain retries")
+            message = json.loads(payload["messages"][1]["content"])
+            locale, rows = message["locale"], message["items"]
+            sources = [row["source_text"] for row in rows]
+            primary_sources.append((locale, sources))
+            calls.append(("deepseek", locale, len(rows)))
+            attempts[locale] += 1
+            if transport_failure:
+                raise OSError("offline transport unavailable")
+            content = json.dumps({"translations": [
+                {"id": row["id"], "text": NATIVE[locale]
+                 if index < accepted or (retry_succeeds and attempts[locale] > 1)
+                 else row["source_text"]}
+                for index, row in enumerate(rows)
+            ]})
+            response = mock.Mock(status_code=http_status)
+            response.json.return_value = {
+                "choices": [{"message": {"content": content}, "finish_reason": "stop"}],
+                "usage": {"prompt_tokens": 5, "completion_tokens": 7, "total_tokens": 12,
+                          "prompt_cache_hit_tokens": 0, "prompt_cache_miss_tokens": 5},
+            }
+            return response
+
+        def grouped_repair(locale, sources):
+            self.assertGreater(len(sources), 1)
+            self.assertLessEqual(len(sources), 50)
+            repair_sources.append((locale, list(sources)))
+            calls.append(("deepl", locale, len(sources)))
+            if repair_xml_error:
+                raise deepl.DeepLRepairError("Invalid repair XML", partial_translations={
+                    index: NATIVE[locale] for index in range(1, len(sources))
+                })
+            return [source if repair_echo and index == 0 else NATIVE[locale]
+                    for index, source in enumerate(sources)]
+
+        repair.translate_many.side_effect = grouped_repair
+        repair.translate.side_effect = AssertionError("A grouped residual must not be split into paid singleton requests")
+        repair.snapshot.side_effect = lambda: {
+            "provider_requests": len(repair_sources),
+            "balance_requests": int(bool(repair_sources)),
+            "billed_characters": sum(len(source) for _locale, sources in repair_sources for source in sources),
+            "remaining_character_budget": 490000,
+            "unobserved_requests": 0, "stop_reason": "",
+        }
+        provider = mock.Mock(side_effect=primary)
+        with tempfile.TemporaryDirectory() as directory, \
+                mock.patch.dict("os.environ", {"DEEPSEEK_API_KEY": "offline-primary", "DEEPL_API_KEY": "offline-repair"}, clear=True), \
+                mock.patch.dict(sys.modules, {"deepseek_http": mock.Mock(request_with_key_fallback=provider)}), \
+                mock.patch.object(deepl, "DeepLRepair", return_value=repair), mock.patch.object(builder, "log"):
+            path = Path(directory) / "cache.json.gz"
+            error = None
+            try:
+                builder.translate_missing_units(
+                    units, cache, cache_path=path, model=builder.DEFAULT_DEEPSEEK_MODEL,
+                    base_url="https://api.deepseek.com", workers=500 if preflight_only else 1,
+                    timeout=1, attempts=2, max_batch_items=32, max_batch_chars=100000,
+                    preflight_only=preflight_only, preflight_batches_per_locale=1, run_state=state,
+                )
+            except builder.TranslationError as caught:
+                error = caught
+            saved = builder.load_cache(path)
+        self.assertEqual(state.data["provider_requests"], provider.call_count)
+        self.assertEqual(state.translation_attempts(), len(calls))
+        self.assertEqual(state.data["translation_requests_total"], len(calls))
+        self.assertLessEqual(len(calls), 6)
+        repair.translate.assert_not_called()
+        if preflight_only:
+            for locale in builder.LOCALES:
+                self.assertIn(history_key, saved["locales"][locale])
+        return state.data, saved, calls, primary_sources, repair_sources, error, units
+
+    def test_all_locales_with_thirty_echoes_use_exactly_six_shared_posts(self):
+        report, cache, calls, primary, repaired, error, units = self.run_case()
+        self.assertIsNone(error)
+        self.assertEqual(calls, [
+            (provider, locale, count)
+            for locale in builder.LOCALES
+            for provider, count in (("deepseek", 32), ("deepl", 30))
+        ])
+        expected_sources = [unit.source for unit in units.values()]
+        for locale, sources in primary:
+            self.assertEqual(sources, expected_sources)
+        for locale, sources in repaired:
+            self.assertEqual(sources, expected_sources[2:])
+            self.assertTrue(set(expected_sources[:2]).isdisjoint(sources), "paid successes must never reach DeepL")
+        self.assertEqual(report["status"], "passed")
+        self.assertEqual(report["failed_batches"], 0)
+        self.assertEqual(report["remaining_units_total"], 0)
+        self.assertEqual(report["repaired_units"], 90)
+        self.assertEqual(report["provider_requests"], 3)
+        self.assertEqual(report["external_repair_attempts"], 3)
+        self.assertEqual(report["deepl_repair"]["provider_requests"], 3)
+        self.assertEqual(report["usage_totals"]["total_tokens"], 36, "DeepL characters must not enter DeepSeek token usage")
+        self.assertEqual(report["pending_repairs"], [])
+        for locale in builder.LOCALES:
+            self.assertTrue(set(units).issubset(cache["locales"][locale]))
+
+    def test_all_locales_with_zero_accepted_rows_still_fit_six_posts(self):
+        report, cache, calls, _primary, repaired, error, units = self.run_case(accepted=0)
+        self.assertIsNone(error)
+        self.assertEqual(calls, [
+            (provider, locale, 32) for locale in builder.LOCALES for provider in ("deepseek", "deepl")
+        ])
+        for _locale, sources in repaired:
+            self.assertEqual(sources, [unit.source for unit in units.values()])
+        self.assertEqual(report["status"], "passed")
+        self.assertEqual(report["repaired_units"], 96)
+        for locale in builder.LOCALES:
+            self.assertTrue(set(units).issubset(cache["locales"][locale]))
+
+    def test_one_deepl_echo_preserves_other_rows_and_stops_before_next_locale(self):
+        report, cache, calls, _primary, repaired, error, units = self.run_case(repair_echo=True)
+        self.assertIsNotNone(error)
+        self.assertEqual(calls, [("deepseek", "ko", 32), ("deepl", "ko", 30)])
+        self.assertEqual(report["status"], "failed")
+        self.assertEqual(report["repaired_units"], 29)
+        missing_key = list(units)[2]
+        self.assertNotIn(missing_key, cache["locales"]["ko"])
+        self.assertEqual(set(cache["locales"]["ko"]) & set(units), set(units) - {missing_key})
+        for locale in ("ja", "ar"):
+            self.assertTrue(set(cache["locales"][locale]).isdisjoint(units))
+        self.assertEqual(len(repaired), 1)
+        self.assertEqual(report["pending_repairs"][0]["repair_attempts"], 1)
+
+    def test_http_failure_never_enters_grouped_fallback(self):
+        for status in (401, 402, 403, 429, 500):
+            with self.subTest(status=status):
+                report, _cache, calls, _primary, repaired, error, _units = self.run_case(http_status=status)
+                self.assertIsNotNone(error)
+                self.assertEqual(calls, [("deepseek", "ko", 32)])
+                self.assertFalse(repaired)
+                self.assertEqual(report["status"], "failed")
+
+    def test_adapter_partial_xml_error_preserves_every_other_paid_row(self):
+        report, cache, calls, _primary, _repaired, error, units = self.run_case(repair_xml_error=True)
+        self.assertIsNotNone(error)
+        self.assertEqual(calls, [("deepseek", "ko", 32), ("deepl", "ko", 30)])
+        self.assertEqual(report["status"], "failed")
+        self.assertEqual(report["repaired_units"], 29)
+        self.assertEqual(set(cache["locales"]["ko"]) & set(units), set(units) - {list(units)[2]})
+
+    def test_transport_failure_never_enters_grouped_fallback(self):
+        report, _cache, calls, _primary, repaired, error, _units = self.run_case(transport_failure=True)
+        self.assertIsNotNone(error)
+        self.assertEqual(calls, [("deepseek", "ko", 32)])
+        self.assertFalse(repaired)
+        self.assertEqual(report["status"], "failed")
+        self.assertEqual(report["unobserved_provider_requests"], 1)
+
+    def test_normal_full_build_keeps_two_primary_attempts_before_deepl(self):
+        report, _cache, calls, primary, repaired, error, units = self.run_case(
+            preflight_only=False, retry_succeeds=True,
+        )
+        self.assertIsNone(error)
+        self.assertFalse(repaired)
+        self.assertEqual(calls, [
+            ("deepseek", locale, count) for locale in builder.LOCALES for count in (32, 30)
+        ])
+        for _locale, sources in primary[1::2]:
+            self.assertEqual(sources, [unit.source for unit in units.values()][2:])
+        self.assertEqual(report["status"], "passed")
+        self.assertEqual(report["provider_requests"], 6)
 
 
 if __name__ == "__main__":

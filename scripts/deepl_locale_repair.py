@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from collections import Counter
 import html
+import json
 import os
 import re
 import threading
@@ -18,10 +19,15 @@ PLACEHOLDER_RE = re.compile(r"__KC_PH_\d+__")
 TARGET_LANGUAGES = {"ko": "KO", "ja": "JA", "ar": "AR"}
 QUOTA_RESERVE_CHARACTERS = 1000
 DEFAULT_MAX_REQUESTS = 2500
+MAX_REPAIR_BODY_BYTES = 120_000
 
 
 class DeepLRepairError(Exception):
     """A safe, provider-body-free repair failure."""
+
+    def __init__(self, message: str, *, partial_translations: dict[int, str] | None = None):
+        super().__init__(message)
+        self.partial_translations = dict(partial_translations or {})
 
 
 class DeepLQuotaExhausted(DeepLRepairError):
@@ -47,6 +53,46 @@ def _protect_source(source: str) -> tuple[str, dict[str, str]]:
     pieces.append(html.escape(source[cursor:], quote=False))
     pieces.append("</t>")
     return "".join(pieces), placeholders
+
+
+def _translation_payload(locale: str, texts: list[str]) -> dict[str, Any]:
+    return {
+        "text": texts, "target_lang": TARGET_LANGUAGES[locale],
+        "tag_handling": "xml", "ignore_tags": ["x"],
+        "show_billed_characters": True,
+    }
+
+
+def _payload_size(payload: dict[str, Any]) -> int:
+    # requests' json= encoding uses ASCII escaping and the default separators.
+    return len(json.dumps(payload, ensure_ascii=True, allow_nan=False).encode("ascii"))
+
+
+def pack_repair_indexes(sources: list[str]) -> list[list[int]]:
+    """Keep ordered source identities in <=50-text, <=120000-byte request groups."""
+    if not isinstance(sources, list) or any(not isinstance(source, str) or not source.strip() for source in sources):
+        raise DeepLRepairError("DeepL packing requires nonempty source strings")
+    # All supported target codes have the same encoded length. Input inventory
+    # is escaped only once; no repeated full-group JSON serialization is needed.
+    base_size = _payload_size(_translation_payload("ko", []))
+    groups: list[list[int]] = []
+    current: list[int] = []
+    current_size = base_size
+    for index, source in enumerate(sources):
+        protected, _placeholders = _protect_source(source)
+        single_size = _payload_size(_translation_payload("ko", [protected]))
+        if single_size > MAX_REPAIR_BODY_BYTES:
+            raise DeepLRepairError("DeepL repair source exceeds the request body limit")
+        text_size = single_size - base_size
+        separator_size = 2 if current else 0  # Default JSON list separator: ', '.
+        if current and (len(current) >= 50 or current_size + separator_size + text_size > MAX_REPAIR_BODY_BYTES):
+            groups.append(current)
+            current, current_size, separator_size = [], base_size, 0
+        current.append(index)
+        current_size += separator_size + text_size
+    if current:
+        groups.append(current)
+    return groups
 
 
 def _restore_translation(text: str, placeholders: dict[str, str]) -> str:
@@ -170,10 +216,20 @@ class DeepLRepair:
             }
 
     def translate(self, locale: str, source: str) -> str:
-        if locale not in TARGET_LANGUAGES or not isinstance(source, str) or not source.strip():
-            raise DeepLRepairError("DeepL repair needs a supported locale and nonempty source")
-        protected, placeholders = _protect_source(source)
-        reservation = max(len(source), len(source.encode("utf-8")))
+        return self.translate_many(locale, [source])[0]
+
+    def translate_many(self, locale: str, sources: list[str]) -> list[str]:
+        """Translate up to 50 ordered texts with one POST and one shared reservation."""
+        if (locale not in TARGET_LANGUAGES or not isinstance(sources, list)
+                or not 1 <= len(sources) <= 50
+                or any(not isinstance(source, str) or not source.strip() for source in sources)):
+            raise DeepLRepairError("DeepL repair needs a supported locale and 1 to 50 nonempty sources")
+        protected = [_protect_source(source) for source in sources]
+        request_payload = _translation_payload(locale, [text for text, _placeholders in protected])
+        if _payload_size(request_payload) > MAX_REPAIR_BODY_BYTES:
+            raise DeepLRepairError("DeepL repair batch exceeds the request body limit")
+        reservations = [max(len(source), len(source.encode("utf-8"))) for source in sources]
+        reservation = sum(reservations)
         with self._lock:
             self._raise_if_stopped()
             if self._provider_requests >= self._max_requests:
@@ -189,11 +245,7 @@ class DeepLRepair:
         try:
             response = self._transport.post(
                 API_ROOT + "/translate", headers=self._headers(),
-                json={
-                    "text": [protected], "target_lang": TARGET_LANGUAGES[locale],
-                    "tag_handling": "xml", "ignore_tags": ["x"],
-                    "show_billed_characters": True,
-                },
+                json=request_payload,
                 timeout=30, allow_redirects=False,
             )
         except requests.RequestException:
@@ -213,15 +265,32 @@ class DeepLRepair:
         except (ValueError, requests.RequestException):
             payload = None
         rows = payload.get("translations") if isinstance(payload, dict) else None
-        row = rows[0] if isinstance(rows, list) and len(rows) == 1 and isinstance(rows[0], dict) else None
-        billed = row.get("billed_characters") if row is not None else None
+        aligned = isinstance(rows, list) and len(rows) == len(sources)
+        billed_rows = [row.get("billed_characters") if isinstance(row, dict) else None for row in rows] if aligned else []
+        verified_billing = aligned and all(
+            _nonnegative_integer(billed) and billed <= reserved
+            for billed, reserved in zip(billed_rows, reservations)
+        )
         with self._lock:
-            if _nonnegative_integer(billed) and billed <= reservation:
+            if verified_billing:
                 self._reserved -= reservation
-                self._billed += billed
+                self._billed += sum(billed_rows)
             else:
                 self._unobserved += 1
                 self._stop("DeepL billed usage is unverified; retained allowance and stopped new repairs")
-        if row is None or not isinstance(row.get("text"), str):
+        if not aligned:
+            # DeepL maps responses by order. A shortened response cannot safely
+            # identify which source was omitted; do not guess a partial mapping.
             raise DeepLRepairError("DeepL returned no valid repair result")
-        return _restore_translation(row["text"], placeholders)
+        translated: dict[int, str] = {}
+        first_error = ""
+        for index, (row, (_text, placeholders)) in enumerate(zip(rows, protected)):
+            try:
+                if not isinstance(row, dict) or not isinstance(row.get("text"), str):
+                    raise DeepLRepairError("DeepL returned no valid repair result")
+                translated[index] = _restore_translation(row["text"], placeholders)
+            except DeepLRepairError as error:
+                first_error = first_error or str(error)
+        if first_error:
+            raise DeepLRepairError(first_error, partial_translations=translated) from None
+        return [translated[index] for index in range(len(sources))]

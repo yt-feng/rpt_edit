@@ -1337,7 +1337,7 @@ def translate_missing_units(
     # not depend on the repair provider and existing paid rows remain reusable.
     deepl_repair = None
     if os.getenv("DEEPL_API_KEY", "").strip():
-        from deepl_locale_repair import DeepLRepair, DeepLRepairError, DeepLQuotaExhausted
+        from deepl_locale_repair import DeepLRepair, DeepLRepairError, DeepLQuotaExhausted, pack_repair_indexes
         deepl_repair = DeepLRepair(max_requests=run_state.max_requests)
     run_state.data["repair_provider"] = "deepl" if deepl_repair is not None else "deepseek"
 
@@ -1349,15 +1349,32 @@ def translate_missing_units(
         if single_item_plain and deepl_repair is not None:
             run_state.reserve_external_repair()
             try:
-                translated = deepl_repair.translate(locale, batch[0].source)
-                validate_translation_quality(locale, batch[0], translated)
-                result = {batch[0].key: translated}
+                translations = (
+                    [deepl_repair.translate(locale, batch[0].source)] if len(batch) == 1
+                    else deepl_repair.translate_many(locale, [unit.source for unit in batch])
+                )
+                result = {}
+                errors = []
+                for unit, translated in zip(batch, translations, strict=True):
+                    try:
+                        validate_translation_quality(locale, unit, translated)
+                        result[unit.key] = translated
+                    except TranslationError as error:
+                        errors.append(str(error))
+                if errors:
+                    raise PartialTranslationError(errors[0], result)
             except DeepLQuotaExhausted:
                 run_state.stop("DeepL repair allowance exhausted; saved untranslated gaps", category="deepl_quota")
                 raise TranslationStopped(run_state.stop_reason) from None
             except DeepLRepairError as error:
                 run_state.stop("DeepL repair unavailable; saved completed translations")
-                raise TranslationError(str(error)) from None
+                partial = {}
+                for index, translated in getattr(error, "partial_translations", {}).items():
+                    if type(index) is int and 0 <= index < len(batch):
+                        unit = batch[index]
+                        if _valid_cache_row(locale, unit, _translation_cache_row(unit, translated)):
+                            partial[unit.key] = translated
+                raise PartialTranslationError(str(error), partial) from None
             finally:
                 with run_state.lock:
                     run_state.data["deepl_repair"] = deepl_repair.snapshot()
@@ -1370,7 +1387,10 @@ def translate_missing_units(
                 model=model,
                 base_url=base_url,
                 timeout=timeout,
-                attempts=1 if single_item_plain else min(2, max(1, attempts)) if preflight_only else attempts,
+                # With an independent repair provider, the canary reserves one
+                # primary + one grouped repair POST per locale (six total).
+                attempts=1 if single_item_plain or (preflight_only and deepl_repair is not None)
+                else min(2, max(1, attempts)) if preflight_only else attempts,
                 run_state=run_state,
                 single_item_plain=single_item_plain,
             )
@@ -1389,11 +1409,19 @@ def translate_missing_units(
         )
 
     def repair_pending(*, deadline: float | None = None) -> None:
-        # One attempt per source, with at most eight in flight. Only this
-        # coordinator mutates cache/queue; requests share the existing budget.
-        repair_workers = min(8, worker_count)
-        repair_jobs = [(identity, record) for identity, record in deferred.items()
-                       if record["repair_attempts"] == 0]
+        # DeepL batches up to 50 texts per POST. Dispatch one group at a time
+        # so transient UTF-8 quota reservations cannot exhaust each other.
+        # Primary DeepSeek workers are unaffected; no source is retried here.
+        repair_workers = 1 if deepl_repair is not None else min(8, worker_count)
+        repair_jobs = []
+        for locale in LOCALES:
+            pending_rows = [(identity, record) for identity, record in deferred.items()
+                            if identity[0] == locale and record["repair_attempts"] == 0]
+            if deepl_repair is not None:
+                groups = pack_repair_indexes([units[identity[1]].source for identity, _ in pending_rows])
+                repair_jobs.extend([pending_rows[index] for index in group] for group in groups)
+            else:
+                repair_jobs.extend([row] for row in pending_rows)
         next_job = 0
         started = time.monotonic()
         if deadline is None:
@@ -1404,7 +1432,7 @@ def translate_missing_units(
         run_state.write()
         try:
             with concurrent.futures.ThreadPoolExecutor(max_workers=repair_workers) as executor:
-                in_flight: dict[Any, tuple[tuple[str, str], dict[str, Any]]] = {}
+                in_flight: dict[Any, list[tuple[tuple[str, str], dict[str, Any]]]] = {}
                 while in_flight or next_job < len(repair_jobs):
                     while (next_job < len(repair_jobs) and len(in_flight) < repair_workers
                            and not run_state.stop_reason):
@@ -1412,40 +1440,48 @@ def translate_missing_units(
                             run_state.data["repair_dispatch_limit_reached"] = True
                             run_state.stop("Plain repair dispatch time limit reached; saved outstanding queue", category="repair_limit")
                             break
-                        identity, record = repair_jobs[next_job]
+                        group = repair_jobs[next_job]
                         next_job += 1
-                        locale, key = identity
-                        record["repair_attempts"] += 1
-                        future = executor.submit(run, (locale, [units[key]]), single_item_plain=True)
-                        in_flight[future] = (identity, record)
+                        locale = group[0][0][0]
+                        for _identity, record in group:
+                            record["repair_attempts"] += 1
+                        future = executor.submit(run, (locale, [units[identity[1]] for identity, _ in group]), single_item_plain=True)
+                        in_flight[future] = group
                     if not in_flight:
                         break
                     done, _ = concurrent.futures.wait(
                         in_flight, timeout=60, return_when=concurrent.futures.FIRST_COMPLETED,
                     )
                     for future in done:
-                        identity, record = in_flight.pop(future)
+                        group = in_flight.pop(future)
                         if future.cancelled():
-                            record["repair_attempts"] -= 1
+                            for _identity, record in group:
+                                record["repair_attempts"] -= 1
                             continue
-                        locale, key = identity
-                        unit = units[key]
+                        locale = group[0][0][0]
+                        repair_error = None
                         try:
                             _locale, result, _batch = future.result()
-                            translated = result.get(key)
-                            if not isinstance(translated, str) or not translated.strip():
-                                raise TranslationError(f"{locale}: missing plain repair for {key}")
-                            validate_translation_quality(locale, unit, translated)
-                            cache["locales"][locale][key] = _translation_cache_row(unit, translated)
-                            del deferred[identity]
-                            run_state.data["repaired_units"] += 1
                         except Exception as error:
-                            record["reason"] = str(error) if isinstance(error, TranslationError) else type(error).__name__
-                            run_state.failure(locale, error, [unit])
-                            if isinstance(error, ProviderHTTPError) and error.status in {401, 402, 403}:
-                                run_state.stop(f"DeepSeek HTTP {error.status}; stopped new provider requests")
-                            elif isinstance(error, TranslationStopped) or transport_failure(error):
-                                run_state.stop(record["reason"])
+                            result = getattr(error, "partial_translations", {})
+                            repair_error = error
+                        for identity, record in group:
+                            key = identity[1]
+                            unit = units[key]
+                            translated = result.get(key)
+                            if isinstance(translated, str) and _valid_cache_row(locale, unit, _translation_cache_row(unit, translated)):
+                                cache["locales"][locale][key] = _translation_cache_row(unit, translated)
+                                del deferred[identity]
+                                run_state.data["repaired_units"] += 1
+                            else:
+                                repair_error = repair_error or TranslationError(f"{locale}: missing plain repair for {key}")
+                                record["reason"] = str(repair_error) if isinstance(repair_error, TranslationError) else type(repair_error).__name__
+                        if repair_error is not None:
+                            run_state.failure(locale, repair_error, [units[identity[1]] for identity, _ in group])
+                            if isinstance(repair_error, ProviderHTTPError) and repair_error.status in {401, 402, 403}:
+                                run_state.stop(f"DeepSeek HTTP {repair_error.status}; stopped new provider requests")
+                            elif isinstance(repair_error, TranslationStopped) or transport_failure(repair_error):
+                                run_state.stop(str(repair_error))
                     sync_repairs()
                     now = time.monotonic()
                     if next_job < len(repair_jobs) and now >= deadline:
@@ -1522,13 +1558,14 @@ def translate_missing_units(
                         remaining = [unit for unit in batch if unit.key not in cache["locales"][locale]]
                         preflight_repair_fits = (
                             run_state.max_requests is not None
-                            and len(remaining) + len(jobs) - submitted
+                            and (len(pack_repair_indexes([unit.source for unit in remaining])) if deepl_repair is not None else len(remaining)) + len(jobs) - submitted
                             <= run_state.max_requests - run_state.translation_attempts()
                         )
                         can_defer = (
                             (not preflight_only or preflight_repair_fits)
                             and isinstance(error, PartialTranslationError)
-                            and saved > 0 and 0 < len(remaining) <= 4
+                            and (deepl_repair is not None or saved > 0)
+                            and 0 < len(remaining) <= (50 if deepl_repair is not None else 4)
                             and not run_state.stop_reason and not transport_failure(error)
                         )
                         if can_defer:

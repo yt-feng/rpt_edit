@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Six bounded DeepL repair checks, without website or production cache writes."""
+"""Bounded grouped DeepL checks, without website or production cache writes."""
 from __future__ import annotations
 
 import argparse
@@ -12,6 +12,7 @@ from deepl_locale_repair import DeepLRepair
 SOURCES = (
     "，比去年同期提升__KC_PH_000__个百分点。",
     "MS-Walt Disney Co（DIS.UN）The Force Awakens – Reiterate OW-__KC_PH_000__",
+    "区间，远低于",
 )
 
 
@@ -23,8 +24,8 @@ def run_preflight(path: Path, *, repair=None) -> dict:
             raise ValueError("DeepL preflight exceeds its source bound")
         repair = repair or DeepLRepair(max_requests=6)
         for locale in builder.LOCALES:
-            for index, source in enumerate(SOURCES):
-                text = repair.translate(locale, source)
+            translations = repair.translate_many(locale, list(SOURCES))
+            for index, (source, text) in enumerate(zip(SOURCES, translations, strict=True)):
                 unit = builder.TranslationUnit(f"{index:064x}", "html:text:p", source)
                 builder.validate_translation_quality(locale, unit, text)
                 report["samples"].append({"locale": locale, "source": source, "translation": text})
