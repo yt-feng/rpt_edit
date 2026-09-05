@@ -35,8 +35,15 @@ jobs:
           fail-on-cache-miss: true
       - name: Inspect cached public scripts without any translation credentials
         run: |
+          set -euo pipefail
+          public_assets="$RUNNER_TEMP/locale-javascript-audit/source"
+          mkdir -p "$public_assets"
+          for asset in app.js charts.js contact.js report-chat.js report-research-export.js site-runtime.js xlsx-export.js; do
+            curl --fail --silent --show-error --retry 2 --max-time 30 \
+              "https://kcdesk.com/assets/$asset" --output "$public_assets/$asset"
+          done
           python3 scripts/audit_portal_locale_javascript_cache.py \
-            --assets portal_suite/site_src/assets \
+            --assets "$public_assets" \
             --cache "$RUNNER_TEMP/portal-locale-cache/cache-v1.json.gz" \
             --output "$RUNNER_TEMP/locale-javascript-audit"
       - uses: actions/upload-artifact@v4

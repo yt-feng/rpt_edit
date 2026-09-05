@@ -34,6 +34,8 @@ class CachedJavascriptAuditTests(unittest.TestCase):
             self.assertEqual(report["provider_requests"], 0)
             self.assertEqual(len(report["assets"]), 21)
             self.assertEqual(path.read_bytes(), before)
+            subset = builder.load_cache(root / "out" / "public-script-cache.json.gz")
+            self.assertEqual(subset["locales"], cache["locales"])
             self.assertTrue((root / "out" / "ko" / "app.js").is_file())
             self.assertEqual(json.loads((root / "out" / "audit.json").read_text())["status"], "passed")
 
