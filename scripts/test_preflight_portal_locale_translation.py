@@ -91,6 +91,20 @@ class PreflightTests(unittest.TestCase):
         self.assertFalse(calls[0]["cache_path"].exists())
         self.assertEqual(len(calls), 1)
 
+    def test_bounded_sample_includes_english_terms_at_end_of_mixed_keyword_list(self) -> None:
+        base = fixture_fetcher()
+        keywords = "金融研报,宏观策略,行业研究,公司研究,股票研究,国际智库,市场观察,全球经济,投资研究,Chinese financial research,investment bank research"
+
+        def fetch(url: str) -> bytes:
+            if url == ORIGIN + "/":
+                return metadata("首页", f'<meta name="keywords" content="{keywords}">')
+            return base(url)
+
+        units, _sampling = preflight.collect_samples(ORIGIN, fetch)
+        selected = {unit.source for unit in units.values() if unit.context == "html:meta:keyword"}
+        self.assertTrue({"Chinese financial research", "investment bank research"}.issubset(selected))
+        self.assertLessEqual(len(units), 16)
+
     def test_failed_provider_response_records_usage_and_stops_after_one_request(self) -> None:
         response = Mock(status_code=402)
         response.json.return_value = {
