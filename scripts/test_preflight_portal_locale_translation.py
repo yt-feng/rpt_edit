@@ -70,6 +70,7 @@ class PreflightTests(unittest.TestCase):
 
         def translate(units, cache, **kwargs):
             calls.append(kwargs)
+            self.assertLessEqual(len(units), preflight.MAX_SAMPLE_UNITS)
             self.assertEqual(kwargs["workers"], 1)
             self.assertEqual(kwargs["attempts"], 2)
             self.assertEqual(kwargs["max_provider_requests"], 6)
@@ -92,6 +93,28 @@ class PreflightTests(unittest.TestCase):
         self.assertFalse(calls[0]["cache_path"].exists())
         self.assertEqual(len(calls), 1)
 
+    def test_real_failure_regressions_are_deterministic_within_live_sample_budget(self) -> None:
+        fetcher = fixture_fetcher()
+        units, sampling = preflight.collect_samples(ORIGIN, fetcher)
+        again, repeated = preflight.collect_samples(ORIGIN, fixture_fetcher())
+        self.assertEqual(list(units), list(again))
+        self.assertEqual(sampling, repeated)
+        self.assertEqual(fetcher.call_count, 4)
+        self.assertEqual(len(units), 16)
+        self.assertEqual(sampling["regression_unit_count"], 2)
+        self.assertEqual(sum(sampling["source_counts"].values()), 14)
+        self.assertEqual(set(sampling["source_counts"]), {"home", "blog", "latest-blog", "catalog-preview"})
+        self.assertTrue(all(count > 0 for count in sampling["source_counts"].values()))
+        expected = {
+            "，比去年同期提升__KC_PH_000__个百分点。": "html:text:p",
+            "MS-Walt Disney Co（DIS.UN）The Force Awakens – Reiterate OW-__KC_PH_000__": "chart:report:title",
+        }
+        regressions = {units[key].source: units[key].context for key in sampling["regression_keys"]}
+        self.assertEqual(regressions, expected)
+        self.assertEqual(preflight.MAX_PROVIDER_REQUESTS, 6)
+        for key in sampling["regression_keys"]:
+            self.assertEqual(units[key].data_placeholders, ("__KC_PH_000__",))
+
     def test_bounded_sample_includes_english_terms_at_end_of_mixed_keyword_list(self) -> None:
         base = fixture_fetcher()
         keywords = "金融研报,宏观策略,行业研究,公司研究,股票研究,国际智库,市场观察,全球经济,投资研究,Chinese financial research,investment bank research"
@@ -111,10 +134,22 @@ class PreflightTests(unittest.TestCase):
         translated = {"ko": "검증된 금융 연구 문안입니다", "ja": "検証済みの金融リサーチ文です", "ar": "هذا نص بحث مالي مترجم وموثوق"}
 
         def respond(_url: str, **kwargs: object) -> Mock:
-            message = json.loads(kwargs["payload"]["messages"][1]["content"])
-            locale = message["target_language"]
+            payload = kwargs["payload"]
+            plain = "response_format" not in payload
+            message = None if plain else json.loads(payload["messages"][1]["content"])
+            locale = kwargs["label"].split()[0] if plain else message["target_language"]
             attempts[locale] = attempts.get(locale, 0) + 1
-            self.assertEqual(len(message["items"]), 16 if attempts[locale] == 1 else 1)
+            self.assertEqual(plain, attempts[locale] == 2)
+            if plain:
+                response = Mock(status_code=200)
+                response.json.return_value = {
+                    "choices": [{"message": {"content": " ".join([
+                        translated[locale], *preflight.builder.PLACEHOLDER_RE.findall(payload["messages"][1]["content"]),
+                    ])}}],
+                    "usage": {"prompt_tokens": 10, "completion_tokens": 10, "total_tokens": 20},
+                }
+                return response
+            self.assertEqual(len(message["items"]), 16)
             rows = [{
                 "id": item["id"],
                 "text": "" if attempts[locale] == 1 and index == 0 else " ".join([

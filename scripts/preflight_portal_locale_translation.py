@@ -23,6 +23,12 @@ MAX_DOCUMENT_BYTES = 3 * 1024 * 1024
 MAX_FIELD_CHARS = 600
 MAX_SAMPLE_UNITS = 16
 MAX_PROVIDER_REQUESTS = 6
+# Public source fragments from failed real-inventory batches, not reference
+# translations. Numeric examples recreate their canonical placeholder form.
+REGRESSION_SOURCES = (
+    ("，比去年同期提升3.2个百分点。", "html:text:p"),
+    ("MS-Walt Disney Co（DIS.UN）The Force Awakens – Reiterate OW-20260905", "chart:report:title"),
+)
 
 
 class PreflightError(RuntimeError):
@@ -155,7 +161,12 @@ def collect_samples(origin: str, fetcher: Callable[[str], bytes]) -> tuple[dict,
         0 if unit.context == "html:meta:keyword" and re.search(r"[A-Za-z]{3}", unit.source)
              and not builder.CJK_RE.search(unit.source) else 1,
     ))) for label, units in groups.items()}
+    # Reserve two of the existing sixteen slots for known failure shapes;
+    # retain all four live sources without increasing provider request limits.
     selected, counts = {}, Counter()
+    for source, context in REGRESSION_SOURCES:
+        builder.collect_text_units(source, context, selected)
+    regression_keys = list(selected)
     while len(selected) < MAX_SAMPLE_UNITS and any(queues.values()):
         for label, queue in queues.items():
             if not queue or len(selected) >= MAX_SAMPLE_UNITS:
@@ -168,6 +179,7 @@ def collect_samples(origin: str, fetcher: Callable[[str], bytes]) -> tuple[dict,
         raise PreflightError("Public metadata sources do not provide four distinct sample groups")
     return selected, {
         "source_counts": dict(counts), "unit_count": len(selected),
+        "regression_unit_count": len(regression_keys), "regression_keys": regression_keys,
         "contexts": dict(Counter(unit.context for unit in selected.values())),
         "source_characters": sum(len(unit.source) for unit in selected.values()),
     }

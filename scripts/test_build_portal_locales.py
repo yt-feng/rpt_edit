@@ -2758,8 +2758,10 @@ class ProviderCostGuardTests(unittest.TestCase):
             )
         self.assertEqual(result[unit.key], "재무 보고서 요약")
         self.assertEqual(len(seen[0]["messages"]), 2)
-        self.assertEqual(len(seen[1]["messages"]), 3)
-        self.assertIn("unchanged source text for 0", seen[1]["messages"][2]["content"])
+        self.assertEqual(len(seen[1]["messages"]), 2)
+        self.assertNotIn("response_format", seen[1])
+        self.assertIn("unchanged source text for 0", seen[1]["messages"][0]["content"])
+        self.assertEqual(seen[1]["messages"][1]["content"], unit.source)
         self.assertEqual(state.data["provider_requests"], 2)
 
     @staticmethod
@@ -2841,7 +2843,7 @@ class ProviderCostGuardTests(unittest.TestCase):
         request = mock.Mock(return_value=self.response({"prompt_tokens": 10, "completion_tokens": 5, "total_tokens": 15}))
         unit = builder.TranslationUnit("a" * 64, "html:text:p", "公开研究内容")
         with mock.patch.dict(sys.modules, {"deepseek_http": mock.Mock(request_with_key_fallback=request)}):
-            with self.assertRaisesRegex(builder.TranslationError, "invalid translation JSON"):
+            with self.assertRaisesRegex(builder.TranslationError, "no Hangul"):
                 builder.deepseek_translate_batch(
                     "ko", [unit], model=builder.DEFAULT_DEEPSEEK_MODEL,
                     base_url="https://api.deepseek.com", timeout=1, attempts=2, run_state=state,
