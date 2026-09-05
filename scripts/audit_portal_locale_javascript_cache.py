@@ -41,7 +41,8 @@ def audit(assets: Path, cache_path: Path, output: Path) -> dict:
                     if (not builder.CJK_RE.search(translated_value)
                             or builder.javascript_literal_is_transport_data(nested, start, end)):
                         continue
-                    if builder.javascript_cjk_literal_is_allowlisted(value, nested, start, end):
+                    if (builder.CJK_RE.search(value)
+                            and builder.javascript_cjk_literal_is_allowlisted(value, nested, start, end)):
                         continue
                     _, unit = builder.unit_for_text(value, f"javascript:{name}")
                     cached = cache["locales"][locale].get(unit.key, {}) if unit else {}
