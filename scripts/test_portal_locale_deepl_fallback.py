@@ -111,6 +111,31 @@ class DeepLFallbackTests(unittest.TestCase):
             self.run_translation(mock.Mock(side_effect=builder.ProviderHTTPError(402, "primary")))
         self.repair.translate.assert_not_called()
 
+    def test_useful_warmup_never_makes_an_incomplete_full_build_publishable(self):
+        self.units = {
+            f"{index:064x}": builder.TranslationUnit(
+                f"{index:064x}", "html:text:p", f"第{index}段金融研究报告的完整内容。"
+            ) for index in range(32)
+        }
+        self.cache = builder.empty_cache()
+        self.repair.translate.side_effect = lambda locale, source: source if locale == "ko" else NATIVE[locale]
+
+        def primary(locale, batch):
+            raise builder.PartialTranslationError("One missing row", {
+                unit.key: NATIVE[locale] for unit in batch[:-1]
+            })
+
+        with self.assertRaises(builder.TranslationError):
+            builder.translate_missing_units(
+                self.units, self.cache, cache_path=self.path, model=builder.DEFAULT_DEEPSEEK_MODEL,
+                base_url="https://api.deepseek.com", workers=500, timeout=1, attempts=2,
+                max_batch_items=32, max_batch_chars=100000, batch_translator=primary, run_state=self.state,
+            )
+        self.assertTrue(self.state.data["warmup_passed"])
+        self.assertEqual(self.state.data["status"], "failed")
+        self.assertEqual(self.state.data["remaining_units_total"], 1)
+        self.assertEqual(self.repair.translate.call_count, 3, "Never repeat the same repair to force a green run")
+
     def test_preflight_request_limit_is_shared_not_six_per_provider(self):
         state = builder.TranslationRun(max_requests=2)
         state.reserve()
@@ -122,7 +147,7 @@ class DeepLFallbackTests(unittest.TestCase):
 
 
 class GroupedDeepLPreflightTests(unittest.TestCase):
-    def run_case(self, *, accepted=2, repair_echo=False, repair_xml_error=False, http_status=200,
+    def run_case(self, *, accepted=2, repair_echo=False, repair_echo_count=1, repair_xml_error=False, http_status=200,
                  transport_failure=False, preflight_only=True, retry_succeeds=False):
         units = {
             f"{index:064x}": builder.TranslationUnit(
@@ -174,7 +199,7 @@ class GroupedDeepLPreflightTests(unittest.TestCase):
                 raise deepl.DeepLRepairError("Invalid repair XML", partial_translations={
                     index: NATIVE[locale] for index in range(1, len(sources))
                 })
-            return [source if repair_echo and index == 0 else NATIVE[locale]
+            return [source if repair_echo and index < repair_echo_count else NATIVE[locale]
                     for index, source in enumerate(sources)]
 
         repair.translate_many.side_effect = grouped_repair
@@ -252,19 +277,19 @@ class GroupedDeepLPreflightTests(unittest.TestCase):
         for locale in builder.LOCALES:
             self.assertTrue(set(units).issubset(cache["locales"][locale]))
 
-    def test_one_deepl_echo_preserves_other_rows_and_stops_before_next_locale(self):
+    def test_one_deepl_echo_keeps_gap_but_passes_useful_all_language_canary(self):
         report, cache, calls, _primary, repaired, error, units = self.run_case(repair_echo=True)
-        self.assertIsNotNone(error)
-        self.assertEqual(calls, [("deepseek", "ko", 32), ("deepl", "ko", 30)])
-        self.assertEqual(report["status"], "failed")
-        self.assertEqual(report["repaired_units"], 29)
+        self.assertIsNone(error)
+        self.assertEqual(len(calls), 6)
+        self.assertEqual(report["status"], "passed")
+        self.assertEqual(report["repaired_units"], 87)
         missing_key = list(units)[2]
-        self.assertNotIn(missing_key, cache["locales"]["ko"])
-        self.assertEqual(set(cache["locales"]["ko"]) & set(units), set(units) - {missing_key})
-        for locale in ("ja", "ar"):
-            self.assertTrue(set(cache["locales"][locale]).isdisjoint(units))
-        self.assertEqual(len(repaired), 1)
-        self.assertEqual(report["pending_repairs"][0]["repair_attempts"], 1)
+        for locale in builder.LOCALES:
+            self.assertEqual(set(cache["locales"][locale]) & set(units), set(units) - {missing_key})
+            self.assertEqual(report["preflight_sample_coverage"][locale]["pending"], 1)
+            self.assertTrue(report["preflight_sample_coverage"][locale]["passed"])
+        self.assertEqual(len(repaired), 3)
+        self.assertTrue(all(row["repair_attempts"] == 1 for row in report["pending_repairs"]))
 
     def test_http_failure_never_enters_grouped_fallback(self):
         for status in (401, 402, 403, 429, 500):
@@ -275,13 +300,23 @@ class GroupedDeepLPreflightTests(unittest.TestCase):
                 self.assertFalse(repaired)
                 self.assertEqual(report["status"], "failed")
 
+    def test_canary_with_too_many_untranslated_rows_still_fails(self):
+        report, _cache, calls, _primary, _repaired, error, _units = self.run_case(
+            repair_echo=True, repair_echo_count=4,
+        )
+        self.assertIsNotNone(error)
+        self.assertEqual(report["status"], "failed")
+        self.assertEqual(len(calls), 2, "Stop before buying other languages after an unusable sample")
+        self.assertTrue(all(not row["passed"] for row in report["preflight_sample_coverage"].values()))
+
     def test_adapter_partial_xml_error_preserves_every_other_paid_row(self):
         report, cache, calls, _primary, _repaired, error, units = self.run_case(repair_xml_error=True)
-        self.assertIsNotNone(error)
-        self.assertEqual(calls, [("deepseek", "ko", 32), ("deepl", "ko", 30)])
-        self.assertEqual(report["status"], "failed")
-        self.assertEqual(report["repaired_units"], 29)
-        self.assertEqual(set(cache["locales"]["ko"]) & set(units), set(units) - {list(units)[2]})
+        self.assertIsNone(error)
+        self.assertEqual(len(calls), 6)
+        self.assertEqual(report["status"], "passed")
+        self.assertEqual(report["repaired_units"], 87)
+        for locale in builder.LOCALES:
+            self.assertEqual(set(cache["locales"][locale]) & set(units), set(units) - {list(units)[2]})
 
     def test_transport_failure_never_enters_grouped_fallback(self):
         report, _cache, calls, _primary, repaired, error, _units = self.run_case(transport_failure=True)

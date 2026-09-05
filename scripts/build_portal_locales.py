@@ -1547,6 +1547,25 @@ def translate_missing_units(
     completed = 0
     consecutive_failures = 0
     last_checkpoint = time.monotonic()
+
+    def sample_coverage(sample_jobs):
+        # A canary proves usable provider output in every requested language;
+        # it is not the publication completeness gate. Keep isolated omissions
+        # queued, but never ramp up after predominantly unusable sample output.
+        keys_by_locale: dict[str, set[str]] = {}
+        for locale, batch in sample_jobs:
+            keys_by_locale.setdefault(locale, set()).update(unit.key for unit in batch)
+        coverage = {}
+        for locale, keys in keys_by_locale.items():
+            translated = sum(key in cache["locales"][locale] for key in keys)
+            required = max(1, (len(keys) * 9 + 9) // 10)
+            coverage[locale] = {
+                "total": len(keys), "translated": translated,
+                "pending": len(keys) - translated, "minimum_translated": required,
+                "passed": translated >= required,
+            }
+        return coverage
+
     try:
         with concurrent.futures.ThreadPoolExecutor(max_workers=worker_count) as executor:
             pending: dict[Any, tuple[str, list[TranslationUnit]]] = {}
@@ -1637,9 +1656,10 @@ def translate_missing_units(
                                 # on its missing rows, before trying another locale.
                                 # The preflight coordinator remains single-threaded.
                                 repair_pending()
-                                if deferred:
-                                    failures.append(f"{locale}/{batch[0].key[:12]}: Preflight plain repair incomplete")
-                                    run_state.stop("Preflight plain repair incomplete; saved completed rows")
+                                coverage = sample_coverage([(locale, batch)])
+                                if not all(row["passed"] for row in coverage.values()):
+                                    failures.append(f"{locale}/{batch[0].key[:12]}: Preflight output is insufficient")
+                                    run_state.stop("Preflight output is insufficient; saved completed rows")
                             continue
                         consecutive_failures += 1
                         systemic_failure = consecutive_failures >= 3 or (
@@ -1658,8 +1678,10 @@ def translate_missing_units(
                 if warmup_size and completed == warmup_size and not run_state.stop_reason:
                     if deferred:
                         repair_pending()
-                    if deferred:
-                        run_state.stop("Initial small-cohort plain repair incomplete; saved completed rows before high concurrency")
+                    coverage = sample_coverage(jobs[:warmup_size])
+                    run_state.data["warmup_sample_coverage"] = coverage
+                    if not all(row["passed"] for row in coverage.values()):
+                        run_state.stop("Initial small-cohort output is insufficient; saved completed rows before high concurrency")
                     if not run_state.stop_reason:
                         run_state.data["warmup_passed"] = True
                         write_cache(cache_path, cache)
@@ -1728,7 +1750,12 @@ def translate_missing_units(
             any(unit.key not in cache["locales"][locale] for unit in batch)
             for locale, batch in jobs
         )
-        incomplete = unresolved_batches if preflight_only else sum(remaining_counts.values())
+        if preflight_only:
+            coverage = sample_coverage(jobs)
+            run_state.data["preflight_sample_coverage"] = coverage
+            incomplete = sum(not row["passed"] for row in coverage.values())
+        else:
+            incomplete = sum(remaining_counts.values())
         run_state.data.update({
             "completed_batches": completed,
             "failed_batches": len(failures) if preflight_only else unresolved_batches,

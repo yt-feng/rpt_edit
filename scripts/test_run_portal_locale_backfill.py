@@ -29,6 +29,21 @@ def cache(path: Path, count: int) -> None:
     }}}).encode()))
 
 
+def translation_gap(*, rows: int = 4, **diagnostics) -> dict:
+    return {
+        "returncode": 1, "rows": rows,
+        "diagnostics": {
+            "status": "failed", "ready": False, "preflight_only": False,
+            "stop_category": None, "stop_reason": "", "remaining_units_total": 1,
+            "build_error": "Locale translation has 1 unresolved source units; completed rows saved",
+            "usage_complete_responses": 2,
+            "deepl_repair": {"provider_requests": 1, "billed_characters": 30,
+                             "unobserved_requests": 0, "reserved_characters": 0, "stop_reason": ""},
+            **diagnostics,
+        },
+    }
+
+
 class PortalLocaleBackfillTests(unittest.TestCase):
     def setUp(self) -> None:
         self.temp = TemporaryDirectory(prefix="locale-backfill-test-")
@@ -89,6 +104,98 @@ class PortalLocaleBackfillTests(unittest.TestCase):
         self.assertEqual(report["usage_totals"]["total_tokens"], 60)
         self.assertEqual(len(list(self.root.glob("locale-full-diagnostics-round-*.json"))), 2)
         self.assertEqual(len(list(self.root.glob("locale-full-diagnostics-balance-*.json"))), 2)
+
+    def test_residual_translation_gaps_resume_saved_growth_then_require_complete_build(self):
+        report, reader, provider = self.run_backfill([
+            translation_gap(rows=4), {"rows": 5, "diagnostics": {"status": "passed", "ready": True}},
+        ], balances=[balance("500"), balance("80")])
+        self.assertEqual((reader.call_count, provider.call_count), (2, 2))
+        self.assertEqual(self.commands[1][self.commands[1].index("--cache-in") + 1], str(self.output))
+        self.assertEqual([command[command.index("--max-provider-cost-cny") + 1] for command in self.commands], ["400", "60"])
+        self.assertEqual(report["rounds"][0]["stop_category"], "translation_gaps")
+        self.assertEqual(report["rounds"][0]["cache_rows_before"], 2)
+        self.assertEqual(report["rounds"][0]["cache_rows_after"], 4)
+        self.assertEqual(report["rounds"][0]["remaining_units_total"], 1)
+        self.assertFalse(report["rounds"][0]["ready"])
+        self.assertEqual(report["status"], "passed")
+        self.assertTrue(report["ready"])
+
+    def test_budget_checkpoint_with_unsettled_deepl_usage_never_resumes(self):
+        for unobserved, reserved in ((1, 300), (0, 300), (1, 0)):
+            with self.subTest(unobserved=unobserved, reserved=reserved):
+                self.commands.clear()
+                report, reader, provider = self.run_backfill([{
+                    "rows": 4,
+                    "diagnostics": {"stop_category": "budget", "deepl_repair": {
+                        "provider_requests": 1, "billed_characters": 0, "stop_reason": "",
+                        "unobserved_requests": unobserved, "reserved_characters": reserved,
+                    }},
+                }])
+                self.assertEqual((reader.call_count, provider.call_count), (1, 1))
+                self.assertEqual(report["status"], "failed")
+                self.assertEqual(report["stop_category"], "incomplete_usage")
+                self.assertFalse(report["ready"])
+
+    def test_repair_limit_checkpoint_with_unsettled_deepl_usage_never_resumes(self):
+        report, reader, provider = self.run_backfill([{
+            "rows": 4,
+            "diagnostics": {"stop_category": "repair_limit", "deepl_repair": {
+                "provider_requests": 1, "billed_characters": 0, "stop_reason": "",
+                "unobserved_requests": 1, "reserved_characters": 300,
+            }},
+        }])
+        self.assertEqual((reader.call_count, provider.call_count), (1, 1))
+        self.assertEqual(report["status"], "failed")
+        self.assertEqual(report["stop_category"], "incomplete_usage")
+        self.assertFalse(report["ready"])
+
+    def test_residual_translation_gaps_without_cache_growth_never_resume(self):
+        report, reader, provider = self.run_backfill([translation_gap(rows=2)])
+        self.assertEqual((reader.call_count, provider.call_count), (1, 1))
+        self.assertEqual(report["status"], "checkpointed")
+        self.assertEqual(report["stop_category"], "no_progress")
+        self.assertFalse(report["ready"])
+
+    def test_residual_translation_gaps_keep_existing_three_round_limit(self):
+        report, reader, provider = self.run_backfill([translation_gap(rows=rows) for rows in (3, 4, 5)])
+        self.assertEqual((reader.call_count, provider.call_count), (3, 3))
+        self.assertEqual(report["status"], "checkpointed")
+        self.assertEqual(report["stop_category"], "round_limit")
+        self.assertFalse(report["ready"])
+        self.assertTrue(all(not row["ready"] for row in report["rounds"]))
+
+    def test_residual_translation_retry_rejects_unknown_or_unobserved_usage(self):
+        for change in (
+            {"usage_unknown_responses": 1}, {"usage_partial_responses": 1},
+            {"unobserved_provider_requests": 1}, {"usage_complete_responses": 1},
+            {"usage_complete_responses": None},
+            {"usage_totals": {"prompt_tokens": 10, "completion_tokens": 20, "total_tokens": 40}},
+            {"deepl_repair": {"unobserved_requests": 1, "reserved_characters": 30, "stop_reason": ""}},
+            {"deepl_repair": {"unobserved_requests": 0, "reserved_characters": 30, "stop_reason": ""}},
+        ):
+            with self.subTest(change=change):
+                self.commands.clear()
+                report, reader, provider = self.run_backfill([translation_gap(**change)])
+                self.assertEqual((reader.call_count, provider.call_count), (1, 1))
+                self.assertEqual(report["status"], "failed")
+                self.assertFalse(report["ready"])
+
+    def test_residual_translation_retry_never_accepts_terminal_preflight_or_render_errors(self):
+        for change in (
+            {"stop_reason": "provider transport failed"}, {"stop_category": "systemic"},
+            {"stop_category": "deepl_quota"}, {"stop_category": "provider"},
+            {"deepl_repair": {"unobserved_requests": 0, "reserved_characters": 0, "stop_reason": "quota"}},
+            {"preflight_only": True}, {"remaining_units_total": 0},
+            {"remaining_units_total": 2}, {"remaining_units_total": True},
+            {"build_error": "Chinese HTML must contain exactly one locale bootstrap: about.html"},
+            {"build_error": "ValueError"}, {"ready": True},
+        ):
+            with self.subTest(change=change):
+                self.commands.clear()
+                report, reader, provider = self.run_backfill([translation_gap(**change)])
+                self.assertEqual((reader.call_count, provider.call_count), (1, 1))
+                self.assertEqual(report["status"], "failed")
+                self.assertFalse(report["ready"])
 
     def test_at_most_three_rounds_and_incomplete_candidate_never_ready(self):
         report, reader, provider = self.run_backfill([{}, {}, {}])
