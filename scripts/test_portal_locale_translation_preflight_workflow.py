@@ -45,17 +45,26 @@ class PreflightWorkflowTests(unittest.TestCase):
 
     def test_protocol_mode_is_explicit_and_does_not_replace_default_sampling(self) -> None:
         workflow = WORKFLOW.read_text(encoding="utf-8")
-        self.assertRegex(workflow, r"mode:[\s\S]*?options:\s+- sample\s+- protocol\s+default: sample")
+        self.assertRegex(workflow, r"mode:[\s\S]*?options:\s+- sample\s+- protocol\s+- balance\s+default: sample")
         self.assertIn("PREFLIGHT_MODE: ${{ inputs.mode }}", workflow)
         self.assertIn("sample) diagnostic_script=scripts/preflight_portal_locale_translation.py", workflow)
         self.assertIn("protocol) diagnostic_script=scripts/probe_portal_locale_protocol.py", workflow)
         self.assertIn("python3 -B scripts/test_probe_portal_locale_protocol.py", workflow)
 
+    def test_balance_mode_has_its_read_only_script_and_offline_regression(self) -> None:
+        workflow = WORKFLOW.read_text(encoding="utf-8")
+        self.assertIn("balance) diagnostic_script=scripts/check_deepseek_balance.py", workflow)
+        self.assertIn("python3 -B scripts/test_check_deepseek_balance.py", workflow)
+        self.assertIn('report.get("mode") == "balance"', workflow)
+        self.assertIn('"balance_requests", "is_available", "balance_infos"', workflow)
+
     def test_public_identity_guard_accepts_every_new_source(self) -> None:
         paths = (WORKFLOW, ROOT / "scripts/preflight_portal_locale_translation.py",
                  ROOT / "scripts/test_preflight_portal_locale_translation.py",
                  ROOT / "scripts/probe_portal_locale_protocol.py",
-                 ROOT / "scripts/test_probe_portal_locale_protocol.py", Path(__file__))
+                 ROOT / "scripts/test_probe_portal_locale_protocol.py",
+                 ROOT / "scripts/check_deepseek_balance.py",
+                 ROOT / "scripts/test_check_deepseek_balance.py", Path(__file__))
         for path in paths:
             skeleton = identity.confusable_skeleton(path.read_text(encoding="utf-8"))
             with self.subTest(path=path.name):

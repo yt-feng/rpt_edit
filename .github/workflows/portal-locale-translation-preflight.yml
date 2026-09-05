@@ -4,12 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: Up to six sampled translation requests or four protocol control requests
+        description: Translation sample, protocol controls, or read-only account balance
         required: true
         type: choice
         options:
           - sample
           - protocol
+          - balance
         default: sample
 
 permissions:
@@ -39,6 +40,8 @@ jobs:
             scripts/test_portal_locale_partial_batches.py
             scripts/probe_portal_locale_protocol.py
             scripts/test_probe_portal_locale_protocol.py
+            scripts/check_deepseek_balance.py
+            scripts/test_check_deepseek_balance.py
             scripts/test_portal_locale_translation_preflight_workflow.py
             scripts/build_portal_locales.py
             scripts/deepseek_http.py
@@ -56,6 +59,7 @@ jobs:
           python3 -B scripts/test_portal_locale_partial_batches.py
           python3 -B scripts/test_preflight_portal_locale_translation.py
           python3 -B scripts/test_probe_portal_locale_protocol.py
+          python3 -B scripts/test_check_deepseek_balance.py
           python3 -B scripts/test_portal_locale_translation_preflight_workflow.py
           python3 -B scripts/check_public_identity.py
 
@@ -74,6 +78,7 @@ jobs:
           case "$PREFLIGHT_MODE" in
             sample) diagnostic_script=scripts/preflight_portal_locale_translation.py ;;
             protocol) diagnostic_script=scripts/probe_portal_locale_protocol.py ;;
+            balance) diagnostic_script=scripts/check_deepseek_balance.py ;;
             *) echo "Unsupported translation diagnostic mode" >&2; exit 2 ;;
           esac
           python3 -B "$diagnostic_script" \
@@ -91,8 +96,11 @@ jobs:
           if path.is_file():
               report = json.loads(path.read_text(encoding="utf-8"))
               with Path(os.environ["GITHUB_STEP_SUMMARY"]).open("a", encoding="utf-8") as summary:
-                  summary.write("## Public metadata translation preflight\n\n")
-                  for key in ("status", "provider_requests", "max_provider_requests", "usage_totals", "usage_unknown_responses"):
+                  summary.write("## Bounded DeepSeek diagnostic\n\n")
+                  keys = (("status", "mode", "provider_requests", "balance_requests", "is_available", "balance_infos")
+                          if report.get("mode") == "balance" else
+                          ("status", "provider_requests", "max_provider_requests", "usage_totals", "usage_unknown_responses"))
+                  for key in keys:
                       summary.write(f"- {key}: `{json.dumps(report.get(key), ensure_ascii=True)}`\n")
                   summary.write("\nDetailed validation failures and public samples are in the diagnostics artifact.\n")
           PY
