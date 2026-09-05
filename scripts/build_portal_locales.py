@@ -36,7 +36,7 @@ import xml.etree.ElementTree as ET
 from zoneinfo import ZoneInfo
 
 from portal_locale_history import plan_history_release
-from portal_locale_literals import is_machine_asset_reference
+from portal_locale_literals import is_latin_name_literal, is_machine_asset_reference
 from portal_locale_scope import deferred_locale_source, restrict_html_to_cohort
 
 CACHE_SCHEMA_VERSION = 1
@@ -770,7 +770,11 @@ def collect_text_units(value: str, context: str, target: dict[str, TranslationUn
                 optional = previous.data_placeholders
                 if previous.data_placeholders != unit.data_placeholders:
                     optional = tuple(token for token in previous.data_placeholders if token in unit.data_placeholders)
-                merged_context = unit.context if unit.context in STRUCTURED_NAME_CONTEXTS else previous.context
+                merged_context = unit.context if (
+                    unit.context in STRUCTURED_NAME_CONTEXTS
+                    or (previous.context not in STRUCTURED_NAME_CONTEXTS
+                        and is_latin_name_literal(unit.source, unit.context))
+                ) else previous.context
                 if merged_context != previous.context or optional != previous.data_placeholders:
                     target[unit.key] = TranslationUnit(previous.key, merged_context, previous.source, optional)
 
@@ -784,6 +788,12 @@ def _quality_visible_text(value: str) -> str:
 
 def _quality_compact(value: str) -> str:
     return "".join(character.casefold() for character in value if character.isalnum())
+
+
+def _unchanged_latin_name(unit: TranslationUnit, translated: str) -> bool:
+    source = _quality_visible_text(unit.source)
+    return (is_latin_name_literal(source, unit.context)
+            and _quality_compact(source) == _quality_compact(_quality_visible_text(translated)))
 
 
 def validate_translation_quality(locale: str, unit: TranslationUnit, translated: str) -> None:
@@ -809,6 +819,8 @@ def validate_translation_quality(locale: str, unit: TranslationUnit, translated:
         return
     source_compact = _quality_compact(source_visible)
     translated_compact = _quality_compact(translated_visible)
+    if _unchanged_latin_name(unit, text):
+        return
     # Names/acronyms and short Japanese Kanji headings can legitimately remain
     # identical. Do not infer language quality from spelling or script ratios.
     if locale == "ja" and len(source_compact) <= 12 and all(
@@ -841,7 +853,7 @@ def _cache_validation_unit(unit: TranslationUnit, row: dict[str, Any]) -> Transl
 
 def _translation_cache_row(unit: TranslationUnit, translated: str) -> dict[str, Any]:
     row: dict[str, Any] = {"source": unit.source, "translation": translated.strip()}
-    if unit.context in STRUCTURED_NAME_CONTEXTS:
+    if unit.context in STRUCTURED_NAME_CONTEXTS or _unchanged_latin_name(unit, translated):
         row["entity_name"] = True
     return row
 
@@ -875,7 +887,7 @@ def prune_translation_cache(
             if row is None:
                 continue
             if _valid_cache_row(locale, unit, row):
-                if unit.context in STRUCTURED_NAME_CONTEXTS:
+                if unit.context in STRUCTURED_NAME_CONTEXTS or _unchanged_latin_name(unit, row["translation"]):
                     row["entity_name"] = True
                 retained[key] = row
             else:
@@ -1234,7 +1246,8 @@ def translate_missing_units(
             for key in invalid:
                 del entries[key]
             for key, unit in units.items():
-                if key in entries and unit.context in STRUCTURED_NAME_CONTEXTS:
+                if key in entries and (unit.context in STRUCTURED_NAME_CONTEXTS
+                                       or _unchanged_latin_name(unit, entries[key]["translation"])):
                     entries[key]["entity_name"] = True
             prune_counts[locale] = {"retained": len(entries), "stale": 0, "invalid": len(invalid)}
     else:
