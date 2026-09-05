@@ -227,6 +227,21 @@ TOKEN_RE = re.compile(
     r"|(?<![A-Za-z0-9_.])(?:[$€£¥₩د.إر.س]\s*)?[+-]?\d[\d,.:/-]*(?:\s*[%％]|\s*(?:bps?|x))?(?![A-Za-z0-9_])",
     flags=re.S,
 )
+# Interpolation splits a template's static text before `${...}`, sometimes in
+# an opening tag. Protect only an ASCII structural tail with an attribute
+# assignment; ordinary prose and Chinese attribute labels remain in scope.
+JAVASCRIPT_TOKEN_RE = re.compile(
+    TOKEN_RE.pattern
+    + r"|<[A-Za-z][A-Za-z0-9:-]*\s+[A-Za-z_:][A-Za-z0-9_.:-]*\s*=\s*[\t\r\n\x20-\x3b\x3d\x3f-\x7e]*\Z"
+    # The next static part can start with the tail of an interpolated ID,
+    # followed by its quote and real attributes. Do not match plain `x > y`.
+    + r'''|\A[A-Za-z0-9_.:-]*["'](?:\s+[A-Za-z_:][A-Za-z0-9_.:-]*(?:\s*=\s*(?:"[^"<>]*"|'[^'<>]*'|[^\s"'<>`=]+))?)*\s*/?>'''
+    # An accessible label may itself end at interpolation. Protect its opening
+    # markup, but leave the unfinished label value visible to translation.
+    + r'''|<[A-Za-z][A-Za-z0-9:-]*(?:\s+[A-Za-z_:][A-Za-z0-9_.:-]*(?:\s*=\s*(?:"[^"<>]*"|'[^'<>]*'|[^\s"'<>`=]+))?)*\s+(?:alt|aria-description|aria-label|aria-roledescription|placeholder|title)\s*=\s*["'](?=[^"'<>]*\Z)'''
+    + r'''|["']/?>''',
+    flags=re.S,
+)
 
 
 # Numeric masks keep cache reuse stable, but their fidelity is not a retry gate.
@@ -659,7 +674,7 @@ def write_cache(path: Path, cache: dict[str, Any]) -> None:
     temporary.replace(path)
 
 
-def protect_text(value: str) -> ProtectedText:
+def protect_text(value: str, *, javascript_fragment: bool = False) -> ProtectedText:
     source = str(value or "")
     if PLACEHOLDER_RE.search(source):
         raise TranslationError("Source text contains a reserved translation placeholder")
@@ -674,7 +689,8 @@ def protect_text(value: str) -> ProtectedText:
         replacements.append(LATIN_PUBLIC_BRAND if token in {LATIN_PUBLIC_BRAND, "KC桌面"} else token)
         return f"__KC_PH_{len(replacements) - 1:03d}__"
 
-    return ProtectedText(leading, TOKEN_RE.sub(replace, body), trailing, tuple(replacements))
+    tokens = JAVASCRIPT_TOKEN_RE if javascript_fragment else TOKEN_RE
+    return ProtectedText(leading, tokens.sub(replace, body), trailing, tuple(replacements))
 
 
 def text_needs_translation(canonical: str, context: str = "") -> bool:
@@ -729,7 +745,7 @@ def split_text(value: str, limit: int = MAX_UNIT_CHARS) -> list[str]:
 
 
 def unit_for_text(value: str, context: str) -> tuple[ProtectedText, TranslationUnit | None]:
-    protected = protect_text(value)
+    protected = protect_text(value, javascript_fragment=context.startswith("javascript:"))
     if is_machine_asset_reference(value):
         # A filename used as image alt text is not prose. Preserve it exactly
         # instead of paying providers to return the same machine identifier.
@@ -1385,7 +1401,12 @@ def translate_missing_units(
                 run_state.stop("DeepL repair allowance exhausted; saved untranslated gaps", category="deepl_quota")
                 raise TranslationStopped(run_state.stop_reason) from None
             except DeepLRepairError as error:
-                run_state.stop("DeepL repair unavailable; saved completed translations")
+                # A single malformed/uncertain response owns only its batch.
+                # The adapter retains its quota reservation and fences replay;
+                # keep repairing distinct rows unless it declares a terminal
+                # auth/quota/accounting or repeated-uncertainty stop.
+                if deepl_repair.snapshot().get("stop_reason"):
+                    run_state.stop("DeepL repair unavailable; saved completed translations")
                 partial = {}
                 for index, translated in getattr(error, "partial_translations", {}).items():
                     if type(index) is int and 0 <= index < len(batch):
@@ -2663,7 +2684,7 @@ def javascript_literal_needs_translation(
         return stripped[0].isupper() and stripped.lower() in SINGLE_WORD_UI
     if javascript_literal_has_translatable_html_attribute(value):
         return True
-    return text_needs_translation(protect_text(value).canonical)
+    return text_needs_translation(protect_text(value, javascript_fragment=True).canonical)
 
 
 def _javascript_regex_starts(source: str, start: int) -> bool:

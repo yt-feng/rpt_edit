@@ -1801,6 +1801,120 @@ const markup = `<section>${ready ? "嵌套第一分支" : `<span aria-label="图
         self.assertNotIn("相关知名机构", rendered)
         self.assertNotIn("标签", rendered)
 
+    def test_real_javascript_split_opening_tag_is_structural_not_translation_copy(self) -> None:
+        app = ROOT.joinpath("portal_suite/site_src/assets/app.js").read_text(encoding="utf-8")
+        source = app[app.index("  function accountAdminListModalMarkup("):app.index("  function openAccountAdminListModal(")]
+        units: dict[str, builder.TranslationUnit] = {}
+        builder.collect_javascript_units(source, "app.js", units)
+        count_units = [unit for unit in units.values() if unit.source.startswith("条")]
+        self.assertEqual(len(count_units), 1)
+        count_unit = count_units[0]
+        self.assertEqual(builder._quality_visible_text(count_unit.source), "条")
+        self.assertNotIn("account-admin-list-body", count_unit.source)
+        self.assertEqual(len(builder.PLACEHOLDER_RE.findall(count_unit.source)), 5)
+        translations = {"完整列表": "القائمة الكاملة", "关闭": "إغلاق", "条": "عنصر"}
+        cache = builder.empty_cache()
+        for unit in units.values():
+            translated = unit.source
+            for chinese, arabic in translations.items():
+                translated = translated.replace(chinese, arabic)
+            builder.validate_translation_quality("ar", unit, translated)
+            cache["locales"]["ar"][unit.key] = builder._translation_cache_row(unit, translated)
+        rendered = builder.render_localized_javascript(source, "app.js", "ar", cache)
+        self.assertIn('<div class="account-admin-list-body ${listClass}" id="accountAdminListBody">', rendered)
+        self.assertIn('${String(options.bodyHtml || "")}', rendered)
+        self.assertIn("${count} عنصر</span>", rendered)
+        builder.validate_localized_javascript_residuals(source, rendered, "app.js", "ar")
+        with self.assertRaisesRegex(builder.TranslationError, "placeholder mismatch"):
+            builder.validate_translation_quality("ar", count_unit, "عنصر")
+
+    def test_javascript_incomplete_tag_protection_preserves_unrelated_cache_identities(self) -> None:
+        for source in (
+            '显示 <span class="total">100</span> 条',
+            '报告总数 ${count} 条',
+            '可见文案没有任何标签',
+            '比较值 < threshold',
+            'count > limit',
+            '普通比较 count > limit',
+            'Report title "Quoted" > expected',
+        ):
+            with self.subTest(source=source):
+                old = builder.protect_text(source)
+                protected, unit = builder.unit_for_text(source, "javascript:app.js")
+                self.assertEqual(protected, old)
+                expected = hashlib.sha256(
+                    f"{builder.PROMPT_VERSION}\0copy\0{old.canonical}".encode("utf-8")
+                ).hexdigest()
+                self.assertEqual(unit.key, expected)
+        source = ' 条</span><div class="account-admin-list-body '
+        old = builder.protect_text(source)
+        protected, unit = builder.unit_for_text(source, "javascript:app.js")
+        self.assertNotEqual(protected.canonical, old.canonical)
+        self.assertEqual(protected.restore(protected.canonical), source)
+        self.assertEqual(protected.replacements[-1], '<div class="account-admin-list-body')
+        self.assertEqual(protected.suffix, " ")
+        html_protected, _html_unit = builder.unit_for_text(source, "html:text:p")
+        self.assertEqual(html_protected, old)
+        self.assertFalse(builder.javascript_literal_needs_translation('<div class="account-admin-list-body '))
+
+    def test_real_dynamic_id_continuations_never_translate_program_identifiers(self) -> None:
+        app = ROOT.joinpath("portal_suite/site_src/assets/app.js").read_text(encoding="utf-8")
+        source = app[app.index("  function adminPdfUploadProgressMarkup("):app.index("  function adminPdfUploadUi(")]
+        source += 'const button = `<button id="${prefix}Custom" aria-label="可见按钮">继续</button>`;\n'
+        units: dict[str, builder.TranslationUnit] = {}
+        builder.collect_javascript_units(source, "app.js", units)
+        self.assertEqual(len(units), 5)
+        translations = {"等待上传": "انتظار الرفع", "取消传输": "إلغاء النقل", "检查上传结果": "تحقق من نتيجة الرفع", "可见按钮": "زر ظاهر", "继续": "متابعة"}
+        cache = builder.empty_cache()
+        for unit in units.values():
+            self.assertFalse(any(token in unit.source for token in ("Progress", "Elapsed", "Cancel", "Check", "Custom")))
+            translated = unit.source
+            for chinese, arabic in translations.items():
+                translated = translated.replace(chinese, arabic)
+            builder.validate_translation_quality("ar", unit, translated)
+            cache["locales"]["ar"][unit.key] = builder._translation_cache_row(unit, translated)
+        rendered = builder.render_localized_javascript(source, "app.js", "ar", cache)
+        for identifier in ("Progress", "ProgressText", "Elapsed", "Cancel", "Check"):
+            self.assertIn('${escapeHtml(prefix)}' + identifier + '"', rendered)
+        self.assertIn('${prefix}Custom" aria-label="زر ظاهر">متابعة</button>', rendered)
+        builder.validate_localized_javascript_residuals(source, rendered, "app.js", "ar")
+        for fragment in ('Progress" hidden><span></span>', 'Elapsed"></span>'):
+            self.assertFalse(builder.javascript_literal_needs_translation(fragment))
+            protected, unit = builder.unit_for_text(fragment, "javascript:app.js")
+            self.assertIsNone(unit)
+            self.assertEqual(protected.restore(protected.canonical), fragment)
+
+    def test_dynamic_accessibility_attribute_keeps_markup_and_translates_value(self) -> None:
+        app = ROOT.joinpath("portal_suite/site_src/assets/report-chat.js").read_text(encoding="utf-8")
+        start = app.index("  function recommendationHtml(item) {")
+        source = app[start:app.index("\n  function ", start + 10)]
+        units: dict[str, builder.TranslationUnit] = {}
+        builder.collect_javascript_units(source, "report-chat.js", units)
+        translations = {
+            "资料吸引力": "جاذبية المادة", "星": "نجوم", "课程资料": "مواد الدورة",
+            "在会员文件目录中查看": "العرض في دليل ملفات الأعضاء", "页": "صفحات",
+            "报告资料": "مواد التقرير",
+        }
+        cache = builder.empty_cache()
+        for unit in units.values():
+            self.assertNotIn("report-chat-score", unit.source)
+            self.assertNotIn("aria-label=", unit.source)
+            translated = unit.source
+            for chinese, arabic in translations.items():
+                translated = translated.replace(chinese, arabic)
+            builder.validate_translation_quality("ar", unit, translated)
+            cache["locales"]["ar"][unit.key] = builder._translation_cache_row(unit, translated)
+        rendered = builder.render_localized_javascript(source, "report-chat.js", "ar", cache)
+        self.assertEqual(rendered.count(
+            '<span class="report-chat-score" aria-label="جاذبية المادة ${escapeHtml(item.attraction_score)} نجوم">${stars}</span>'
+        ), 2)
+        builder.validate_localized_javascript_residuals(source, rendered, "report-chat.js", "ar")
+        source = '输入 <input placeholder="请输入内容'
+        protected, _unit = builder.unit_for_text(source, "javascript:app.js")
+        self.assertIn("请输入内容", protected.canonical)
+        self.assertNotIn("placeholder=", protected.canonical)
+        self.assertEqual(protected.restore(protected.canonical), source)
+
     def test_javascript_transport_literals_never_enter_translation_inventory(self) -> None:
         source = r'''
 const uiModel = { label: "可见对象标签" };

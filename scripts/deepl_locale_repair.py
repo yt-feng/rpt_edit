@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from collections import Counter
+import hashlib
 import html
 import json
 import os
@@ -20,6 +21,7 @@ TARGET_LANGUAGES = {"ko": "KO", "ja": "JA", "ar": "AR"}
 QUOTA_RESERVE_CHARACTERS = 1000
 DEFAULT_MAX_REQUESTS = 2500
 MAX_REPAIR_BODY_BYTES = 120_000
+MAX_CONSECUTIVE_UNCERTAIN_RESPONSES = 3
 
 
 class DeepLRepairError(Exception):
@@ -147,6 +149,10 @@ class DeepLRepair:
         self._billed = 0
         self._reserved = 0
         self._unobserved = 0
+        self._uncertain_sources: set[tuple[str, str]] = set()
+        self._consecutive_uncertain = 0
+        self._uncertainty_reasons: Counter[str] = Counter()
+        self._billing_over_reservation = 0
         self._stop_reason = ""
         self._stop_exception: type[DeepLRepairError] = DeepLRepairError
 
@@ -161,6 +167,16 @@ class DeepLRepair:
 
     def _headers(self) -> dict[str, str]:
         return {"Authorization": "DeepL-Auth-Key " + self._api_key}
+
+    def _record_uncertain(self, identities: set[tuple[str, str]], reason: str) -> None:
+        # The entire encoded request reservation remains charged against the
+        # allowance. No balance reset and no automatic replay of these sources.
+        self._uncertain_sources.update(identities)
+        self._unobserved += 1
+        self._consecutive_uncertain += 1
+        self._uncertainty_reasons[reason] += 1
+        if self._consecutive_uncertain >= MAX_CONSECUTIVE_UNCERTAIN_RESPONSES:
+            self._stop("DeepL repeated uncertain responses; retained allowance and stopped new repairs")
 
     def _ensure_balance(self) -> None:
         # Called with the lock held: concurrent repairs issue only one usage GET.
@@ -212,6 +228,10 @@ class DeepLRepair:
                 "remaining_character_budget": remaining,
                 "quota_reserve_characters": QUOTA_RESERVE_CHARACTERS,
                 "unobserved_requests": self._unobserved,
+                "consecutive_uncertain_responses": self._consecutive_uncertain,
+                "max_consecutive_uncertain_responses": MAX_CONSECUTIVE_UNCERTAIN_RESPONSES,
+                "uncertainty_reasons": dict(self._uncertainty_reasons),
+                "billing_over_reservation_responses": self._billing_over_reservation,
                 "stop_reason": self._stop_reason,
             }
 
@@ -226,12 +246,17 @@ class DeepLRepair:
             raise DeepLRepairError("DeepL repair needs a supported locale and 1 to 50 nonempty sources")
         protected = [_protect_source(source) for source in sources]
         request_payload = _translation_payload(locale, [text for text, _placeholders in protected])
-        if _payload_size(request_payload) > MAX_REPAIR_BODY_BYTES:
+        reservation = _payload_size(request_payload)
+        if reservation > MAX_REPAIR_BODY_BYTES:
             raise DeepLRepairError("DeepL repair batch exceeds the request body limit")
-        reservations = [max(len(source), len(source.encode("utf-8"))) for source in sources]
-        reservation = sum(reservations)
+        # Billing is source-character based, not output-token based. Encoded
+        # request bytes bound all source codepoints including XML markup and
+        # escaping, avoiding the former unprotected-source-only underestimate.
+        identities = {(locale, hashlib.sha256(source.encode("utf-8")).hexdigest()) for source in sources}
         with self._lock:
             self._raise_if_stopped()
+            if identities & self._uncertain_sources:
+                raise DeepLRepairError("DeepL uncertain source was already submitted; no automatic replay")
             if self._provider_requests >= self._max_requests:
                 self._stop("DeepL repair request allowance exhausted", DeepLQuotaExhausted)
                 self._raise_if_stopped()
@@ -250,15 +275,15 @@ class DeepLRepair:
             )
         except requests.RequestException:
             with self._lock:
-                self._unobserved += 1
-                self._stop("DeepL repair request failed; allowance retained without retry")
+                self._record_uncertain(identities, "transport")
             raise DeepLRepairError("DeepL repair request failed; allowance retained without retry") from None
         if response.status_code != 200:
             error = DeepLQuotaExhausted if response.status_code == 456 else DeepLRepairError
             message = "DeepL repair HTTP " + str(int(response.status_code)) + "; no automatic retry"
             with self._lock:
-                self._unobserved += 1
-                self._stop(message, error)
+                self._record_uncertain(identities, "http_" + str(int(response.status_code)))
+                if response.status_code not in {408, 425, 429} and not 500 <= response.status_code <= 599:
+                    self._stop(message, error)
             raise error(message)
         try:
             payload = response.json()
@@ -268,16 +293,25 @@ class DeepLRepair:
         aligned = isinstance(rows, list) and len(rows) == len(sources)
         billed_rows = [row.get("billed_characters") if isinstance(row, dict) else None for row in rows] if aligned else []
         verified_billing = aligned and all(
-            _nonnegative_integer(billed) and billed <= reserved
-            for billed, reserved in zip(billed_rows, reservations)
+            _nonnegative_integer(billed) for billed in billed_rows
         )
         with self._lock:
             if verified_billing:
+                actual_billed = sum(billed_rows)
                 self._reserved -= reservation
-                self._billed += sum(billed_rows)
+                self._billed += actual_billed
+                self._consecutive_uncertain = 0
+                if actual_billed > reservation:
+                    # Never discard an observed charge or pretend our bound
+                    # held. Cache usable text, but permit no further POSTs.
+                    self._billing_over_reservation += 1
+                    self._uncertain_sources.update(identities)
+                    self._stop("DeepL billed usage exceeded reservation; actual charge retained and new repairs stopped")
             else:
-                self._unobserved += 1
-                self._stop("DeepL billed usage is unverified; retained allowance and stopped new repairs")
+                reason = "response_alignment" if not aligned else (
+                    "billing_missing" if any(billed is None for billed in billed_rows) else "billing_invalid"
+                )
+                self._record_uncertain(identities, reason)
         if not aligned:
             # DeepL maps responses by order. A shortened response cannot safely
             # identify which source was omitted; do not guess a partial mapping.
