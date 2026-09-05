@@ -76,6 +76,36 @@ class DeepLFallbackTests(unittest.TestCase):
         self.assertEqual(self.state.data["status"], "failed")
         self.assertEqual(self.state.data["remaining_units_total"], 3)
 
+    def test_one_uncertain_repair_keeps_distinct_repairs_and_paid_cache(self):
+        def repair(locale, _source):
+            if locale == "ko":
+                raise deepl.DeepLRepairError("Uncertain response; allowance retained")
+            return NATIVE[locale]
+
+        self.repair.translate.side_effect = repair
+        with self.assertRaises(builder.TranslationError):
+            self.run_translation(self.primary)
+        self.assertEqual(self.repair.translate.call_count, 3)
+        self.assertFalse(self.state.stop_reason)
+        self.assertEqual(self.state.data["remaining_units_total"], 1)
+        saved = builder.load_cache(self.path)
+        for locale in builder.LOCALES:
+            self.assertIn("0" * 64, saved["locales"][locale])
+            self.assertIn("1" * 64, saved["locales"][locale])
+        self.assertNotIn("2" * 64, saved["locales"]["ko"])
+        for locale in ("ja", "ar"):
+            self.assertIn("2" * 64, saved["locales"][locale])
+
+    def test_terminal_repair_stop_still_stops_distinct_paid_requests(self):
+        self.repair.translate.side_effect = deepl.DeepLRepairError("Authentication failed")
+        self.repair.snapshot.return_value = {"provider_requests": 1, "stop_reason": "Authentication failed"}
+        self.repair.snapshot.side_effect = None
+        with self.assertRaises(builder.TranslationError):
+            self.run_translation(self.primary)
+        self.repair.translate.assert_called_once()
+        self.assertTrue(self.state.stop_reason)
+        self.assertTrue(self.path.is_file())
+
     def test_primary_auth_failure_never_reaches_deepl(self):
         with self.assertRaises(builder.TranslationError):
             self.run_translation(mock.Mock(side_effect=builder.ProviderHTTPError(402, "primary")))
