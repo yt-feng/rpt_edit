@@ -34,13 +34,17 @@ jobs:
             portal-locale-cache-
           fail-on-cache-miss: true
       - name: Inspect cached public scripts without any translation credentials
+        env:
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
         run: |
           set -euo pipefail
+          test -n "$PORTAL_SITE_URL"
+          case "$PORTAL_SITE_URL" in https://*) ;; *) exit 1 ;; esac
           public_assets="$RUNNER_TEMP/locale-javascript-audit/source"
           mkdir -p "$public_assets"
           for asset in app.js charts.js contact.js report-chat.js report-research-export.js site-runtime.js xlsx-export.js; do
             curl --fail --silent --show-error --retry 2 --max-time 30 \
-              "https://kcdesk.com/assets/$asset" --output "$public_assets/$asset"
+              "${PORTAL_SITE_URL%/}/assets/$asset" --output "$public_assets/$asset"
           done
           python3 scripts/audit_portal_locale_javascript_cache.py \
             --assets "$public_assets" \
