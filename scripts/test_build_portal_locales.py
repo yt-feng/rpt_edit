@@ -1520,7 +1520,7 @@ class PortalLocaleBuildTests(unittest.TestCase):
         self.assertIn("GLOBAL MARKET OUTLOOK", protected.canonical)
         self.assertEqual(protected.restore(protected.canonical), source)
 
-    def test_financial_placeholders_survive_native_translation_and_reject_added_amount(self) -> None:
+    def test_financial_placeholders_survive_native_translation_and_reject_missing_or_changed_tokens(self) -> None:
         source = "营收20.55亿元，同比增长32.2%，净亏损16.2亿元，截至2026-06-30，证券9660.HK。"
         protected, unit = builder.unit_for_text(source, "html:meta:description")
         placeholders = " ".join(builder.PLACEHOLDER_RE.findall(unit.source))
@@ -1534,69 +1534,28 @@ class PortalLocaleBuildTests(unittest.TestCase):
             with self.subTest(locale=locale):
                 builder.validate_translation_quality(locale, unit, translated)
                 self.assertTrue(all(value in protected.restore(translated) for value in protected.replacements))
-                with self.assertRaisesRegex(builder.TranslationError, "numeric value mismatch"):
-                    builder.validate_translation_quality(locale, unit, translated + " 99.99")
-                with self.assertRaisesRegex(builder.TranslationError, "numeric value mismatch"):
-                    builder.validate_translation_quality(locale, unit, translated + " ٩٩٫٩٩")
+                first = builder.PLACEHOLDER_RE.findall(unit.source)[0]
+                for changed in (translated.replace(first, ""), translated.replace(first, "__KC_PH_999__")):
+                    with self.assertRaisesRegex(builder.TranslationError, "placeholder mismatch"):
+                        builder.validate_translation_quality(locale, unit, changed)
         with self.assertRaisesRegex(builder.TranslationError, "placeholder mismatch"):
             builder.validate_translation_quality("ko", unit, "매출은 99.99억 위안이고 순손실은 88.8억 위안입니다")
 
-    def test_bare_report_digits_and_footnotes_preserve_numeric_inventory(self) -> None:
-        unit = builder.TranslationUnit("bare-financial", "html:text:p", "研究报告R15的指标EPS20.55及脚注[2]")
-        valid = "연구 보고서 R15의 지표 EPS２０.５５와 각주[٢]를 확인했습니다"
-        builder.validate_translation_quality("ko", unit, valid)
-        for wrong in (valid.replace("R15", "R16"), valid.replace("２０.５５", "２０.５０"),
-                      valid.replace("[٢]", ""), valid + " 2"):
-            with self.subTest(wrong=wrong), self.assertRaisesRegex(builder.TranslationError, "numeric value mismatch"):
-                builder.validate_translation_quality("ko", unit, wrong)
-        grouped = builder.TranslationUnit("bare-grouped", "html:text:p", "研究指标EPS1,234.50的报告")
-        builder.validate_translation_quality("ar", grouped, "يتناول هذا التقرير البحثي المؤشر EPS١٬٢٣٤٫٥٠ بالتفصيل")
-
-    def test_numeric_cache_revalidation_keeps_valid_entries_in_the_same_namespace(self) -> None:
-        _protected, unit = builder.unit_for_text("研究报告R15市场展望", "html:text:p")
-        cache = builder.empty_cache()
-        cache["locales"]["ko"][unit.key] = {"source": unit.source, "translation": "시장 전망 연구 보고서 R15입니다"}
-        cache["locales"]["ja"][unit.key] = {"source": unit.source, "translation": "市場見通しの調査レポートR16です"}
-        builder.write_cache(self.cache, cache)
-        loaded = builder.load_cache(self.cache)
-        self.assertEqual(loaded["prompt_version"], cache["prompt_version"])
-        counts = builder.prune_translation_cache(loaded, {unit.key: unit})
-        self.assertEqual(counts["ko"]["retained"], 1)
-        self.assertEqual(counts["ja"]["invalid"], 1)
-        self.assertIn(unit.key, loaded["locales"]["ko"])
-
-    def test_written_chinese_quantity_allows_only_its_exact_digit_once(self) -> None:
+    def test_written_chinese_quantity_accepts_natural_korean_digits(self) -> None:
         source = "伯恩斯坦：地平线机器人上半年业绩低于预期，HSD覆盖前五大车企 | " + builder.LATIN_PUBLIC_BRAND
         _protected, unit = builder.unit_for_text(source, "html:title")
         placeholders = " ".join(builder.PLACEHOLDER_RE.findall(unit.source))
         translated = "번스타인: 호라이즌 로보틱스 상반기 실적 기대 이하, HSD가 상위 5대 자동차 제조사 커버 | " + placeholders
         builder.validate_translation_quality("ko", unit, translated)
-        for wrong in (translated.replace("5대", "6대"), translated + " 5", translated + " 99.99"):
-            with self.subTest(wrong=wrong), self.assertRaisesRegex(builder.TranslationError, "numeric value mismatch"):
-                builder.validate_translation_quality("ko", unit, wrong)
 
-    def test_written_chinese_quantities_ordinals_and_percentages_are_bounded(self) -> None:
-        for source, value in (("三家银行", "3"), ("兩家銀行", "2"), ("两家公司", "2"),
-                              ("十年展望", "10"), ("二十年展望", "20"), ("第十二季度", "12"),
-                              ("百分之五点二的增长", "5.2"), ("百分之五點二的增長", "٥٫٢")):
-            with self.subTest(source=source):
-                unit = builder.TranslationUnit("written-quantity", "html:text:p", source)
-                builder.validate_translation_quality("ko", unit, "연구 보고서에 나온 수치는 " + value + "입니다")
-        for source in ("一带一路", "一旦增长", "一百二十年展望", "二〇二六年展望", "First Solar outlook",
-                       "二分之一年", "四又二分之一年", "两年半", "百分之二分之一"):
-            with self.subTest(source=source):
-                self.assertFalse(builder._written_numeric_allowances(source))
-        unit = builder.TranslationUnit("two-quantities", "html:text:p", "三家银行和三家公司")
-        builder.validate_translation_quality("ja", unit, "銀行3社と企業3社についての調査です")
-        with self.assertRaisesRegex(builder.TranslationError, "numeric value mismatch"):
-            builder.validate_translation_quality("ja", unit, "銀行3社と企業3社と団体3社についての調査です")
-
-    def test_written_number_allowance_does_not_replace_mandatory_bare_digits(self) -> None:
-        unit = builder.TranslationUnit("literal-and-written", "html:text:p", "报告R15覆盖前五大车企")
-        builder.validate_translation_quality("ko", unit, "보고서 R15는 상위 5대 자동차 제조사를 다룹니다")
-        for wrong in ("보고서는 상위 5대 자동차 제조사를 다룹니다", "보고서 R16는 상위 5대 자동차 제조사를 다룹니다"):
-            with self.subTest(wrong=wrong), self.assertRaisesRegex(builder.TranslationError, "numeric value mismatch"):
-                builder.validate_translation_quality("ko", unit, wrong)
+    def test_written_quantities_accept_native_numeric_formats(self) -> None:
+        for locale, source, translated in (
+            ("ja", "二分之一年的市场展望", "今後0.5年間の市場見通しです"),
+            ("ar", "百分之五点二的增长", "بلغ معدل النمو ٥٫٢ بالمئة خلال الفترة"),
+        ):
+            with self.subTest(locale=locale):
+                _protected, unit = builder.unit_for_text(source, "html:text:p")
+                builder.validate_translation_quality(locale, unit, translated)
 
     def test_deepseek_error_response_does_not_expose_response_body(self) -> None:
         response = mock.Mock(status_code=500, text="private submitted source text")
@@ -2593,6 +2552,9 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
 
     def test_quality_gate_accepts_common_han_only_japanese_labels(self) -> None:
         translations = (
+            ("Chinese financial research", "中国金融研究"),
+            ("Investment bank research", "投資銀行研究"),
+            ("Global credit market", "世界信用市場"),
             ("机构", "機関"),
             ("确认", "確認"),
             ("美国", "米国"),

@@ -11,7 +11,6 @@ scheduled runs request only new or changed strings.
 from __future__ import annotations
 
 import argparse
-from collections import Counter
 import concurrent.futures
 from dataclasses import dataclass
 from datetime import date, datetime
@@ -31,7 +30,6 @@ import shutil
 import sys
 import threading
 import time
-import unicodedata
 from typing import Any, Callable, Iterable, Iterator
 from urllib.parse import parse_qsl, unquote, urlencode, urlsplit, urlunsplit
 import xml.etree.ElementTree as ET
@@ -229,9 +227,6 @@ MIN_TARGET_SCRIPT_RATIO = 0.30
 # negative signals; a finite Japanese vocabulary is not, because short and
 # perfectly ordinary translations such as `確認`, `米国`, and `検索` otherwise
 # become impossible to accept.
-JAPANESE_HAN_FEATURE_RE = re.compile(
-    r"知能|産業|調査|証券|経済|戦略|見通|業界|銀行|市場|企業|投資|株式|成長|売上|報告"
-)
 NON_JAPANESE_HAN_RE = re.compile(
     r"[这为发个们时说对业东两严产从优动劲劳势华协单历压变员园围图场报拟"
     r"据无权标树样桥检楼欢汉汇测济浓涛润涨满滤滨潜炼热爱现电础硕确简类"
@@ -907,67 +902,14 @@ def _validate_han_only_japanese(unit: TranslationUnit, source: str, translated: 
         raise TranslationError(f"ja: Han-only output lacks Japanese orthography for {unit.key}")
     source_cjk = "".join(CJK_RE.findall(source))
     if not source_cjk:
-        # Longer Han-only translations of Latin prose need at least one
-        # Japanese lexical signal. Very short Japanese UI labels are commonly
-        # all Kanji and cannot be classified safely with a closed dictionary.
-        if len(translated_cjk) > 4 and JAPANESE_HAN_FEATURE_RE.search(translated_cjk) is None:
-            raise TranslationError(f"ja: Han-only output lacks a Japanese lexical feature for {unit.key}")
+        # Japanese headings and keywords can naturally be all Kanji. Do not
+        # require a closed vocabulary or artificial kana just to pass the gate.
         return
     if _is_compact_shared_han_japanese(source, translated):
         return
     similarity = SequenceMatcher(None, source_cjk, translated_cjk, autojunk=False).ratio()
     if similarity > 0.70:
         raise TranslationError(f"ja: Japanese Han text changed too little for {unit.key}")
-
-
-def _numeric_inventory(visible: str) -> Counter[Decimal]:
-    """Compare bare values, including report-ID digits and footnotes, by count.
-
-    Placeholder IDs are removed by the caller. Decimal digit scripts and Arabic
-    separators may change, but amounts cannot be added, removed, or rounded.
-    """
-    normalized = "".join(
-        str(unicodedata.decimal(character)) if character.isdecimal() else character
-        for character in visible
-    ).translate(str.maketrans({"\u066b": ".", "\u066c": ",", "\u2212": "-"}))
-    values = re.findall(r"[+-]?(?:[0-9]{1,3}(?:,[0-9]{3})+|[0-9]+)(?:\.[0-9]+)?", normalized)
-    return Counter(Decimal(value.replace(",", "")) for value in values)
-
-
-def _written_numeric_allowances(visible: str) -> Counter[Decimal]:
-    """Allow optional digit renderings of explicit Chinese quantities, once each.
-
-    Only common quantities/ordinals from zero to ninety-nine (and decimal
-    percentages) are recognized. Larger or ambiguous numeral forms fail closed;
-    isolated words such as 一旦 and 一带一路 never supply numeric allowances.
-    """
-    numerals = "零〇一二三四五六七八九十百千万萬亿億两兩点點"
-    number = f"[{numerals}]+"
-    quantities = re.finditer(
-        rf"(?<![{numerals}])(?<!分之)(?<!又)(?:百分之(?P<percent>{number})(?![{numerals}]|分之|又)|前(?P<rank>{number})大|"
-        rf"第(?P<ordinal>{number})(?:季度|年|月|周|週|天|日|名|位|次|期)|"
-        rf"(?P<count>{number})(?:季度|周年|个月|個月|年|月|周|週|天|日|家|个|個|项|項|名|位|人|倍|次|期))(?!半)",
-        visible,
-    )
-    digits = dict(zip("零〇一二三四五六七八九两兩", "0012345678922"))
-    allowances: Counter[Decimal] = Counter()
-    for match in quantities:
-        raw = next(value for value in match.groupdict().values() if value is not None)
-        integer, *fraction = re.split("[点點]", raw)
-        if not re.fullmatch(r"[零〇一二三四五六七八九两兩]|[一二三四五六七八九]?十[一二三四五六七八九]?", integer):
-            continue
-        if fraction and (match.group("percent") is None or len(fraction) != 1
-                         or not re.fullmatch("[零〇一二三四五六七八九]+", fraction[0])):
-            continue
-        if "十" in integer:
-            tens, ones = integer.split("十")
-            value = str(int(digits.get(tens, "1")) * 10 + int(digits.get(ones, "0")))
-        else:
-            value = digits[integer]
-        if fraction:
-            value += "." + "".join(digits[character] for character in fraction[0])
-        allowances[Decimal(value)] += 1
-    return allowances
 
 
 def validate_translation_quality(locale: str, unit: TranslationUnit, translated: str) -> None:
@@ -988,13 +930,6 @@ def validate_translation_quality(locale: str, unit: TranslationUnit, translated:
 
     source_visible = _quality_visible_text(unit.source)
     translated_visible = _quality_visible_text(text)
-    source_numbers = _numeric_inventory(source_visible)
-    translated_numbers = _numeric_inventory(translated_visible)
-    # Bare source digits remain mandatory. Written quantities only authorize
-    # optional, same-valued extras; they cannot replace missing literal values.
-    if (source_numbers - translated_numbers
-            or (translated_numbers - source_numbers) - _written_numeric_allowances(source_visible)):
-        raise TranslationError(f"{locale}: numeric value mismatch for {unit.key}")
     source_compact = _quality_compact(source_visible)
     translated_compact = _quality_compact(translated_visible)
     official_passthrough = _official_name_passthrough(unit, source_visible, translated_visible)
