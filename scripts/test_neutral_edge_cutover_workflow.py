@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 import subprocess
+import sys
+import tempfile
 import textwrap
 import unittest
 from pathlib import Path
@@ -976,6 +978,41 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         )
         self.assertIn('"$LIVE_ORIGIN/api/health"', capability)
         self.assertIn('capabilities.get("hot_report_locale_ids_v1") is not True', capability)
+
+    def test_live_deep_url_python_to_shell_handoff_survives_errexit(self) -> None:
+        acceptance = self.workflow.split("Accept prepared release through the live edge", 1)[1].split(
+            "Roll back failed release or completed rehearsal", 1)[0]
+        selection = acceptance.split('DEEP_URL_FILE="$RUNNER_TEMP/public-$locale-deep-url.txt"', 1)[1]
+        selection = textwrap.dedent(selection.split("python3 - <<'PY'\n", 1)[1].split("\n          PY", 1)[0])
+        read_line = next(line.strip() for line in acceptance.splitlines() if "IFS= read -r deep_url" in line)
+        with tempfile.TemporaryDirectory() as temporary:
+            for locale in ("ko", "ja", "ar"):
+                with self.subTest(locale=locale):
+                    sitemap = Path(temporary) / f"sitemap-{locale}.xml"
+                    expected = f"https://portal.example.invalid/{locale}/blog/ready.html"
+                    sitemap.write_text(
+                        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+                        f'<url><loc>https://portal.example.invalid/{locale}/</loc></url>'
+                        f'<url><loc>{expected}</loc></url></urlset>', encoding="utf-8",
+                    )
+                    destination = Path(temporary) / f"public-{locale}-deep-url.txt"
+                    selected = subprocess.run(
+                        [sys.executable, "-B", "-c", selection],
+                        env={"LOCALE": locale, "SITE_ORIGIN": "https://portal.example.invalid",
+                             "LOCALE_SITEMAP": str(sitemap), "DEEP_URL_FILE": str(destination)},
+                        capture_output=True, text=True, check=False,
+                    )
+                    self.assertEqual(selected.returncode, 0, selected.stdout + selected.stderr)
+                    # Execute the workflow's actual read command under its exact
+                    # strict-shell mode. An unterminated final line exits 1 and
+                    # would trigger rollback before the live deep-page check.
+                    result = subprocess.run(
+                        ["/bin/bash", "-c", 'set -euo pipefail\n' + read_line + '\nprintf "%s" "$deep_url"'],
+                        env={"RUNNER_TEMP": temporary, "locale": locale},
+                        capture_output=True, text=True, check=False,
+                    )
+                    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+                    self.assertEqual(result.stdout, expected)
 
     def test_destructive_and_nontransactional_tail_actions_are_absent(self) -> None:
         self.assertIn('CATALOG_PDF_CLEANUP_ENABLED: "false"', self.workflow)

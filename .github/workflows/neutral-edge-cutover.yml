@@ -2080,7 +2080,7 @@ jobs:
                   candidates.append(value)
           if not candidates:
               raise SystemExit(f"Locale sitemap has no deterministic deep URL: {locale}")
-          Path(os.environ["DEEP_URL_FILE"]).write_text(sorted(set(candidates))[0], encoding="utf-8")
+          Path(os.environ["DEEP_URL_FILE"]).write_text(sorted(set(candidates))[0] + "\n", encoding="utf-8")
           PY
               IFS= read -r deep_url < "$RUNNER_TEMP/public-$locale-deep-url.txt"
               deep_status="$(curl --fail --silent --show-error --max-redirs 0 \
