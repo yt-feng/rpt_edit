@@ -26,6 +26,14 @@ on:
           - locale-shadow
           - migrate
         default: rehearse
+      translation_scope:
+        description: "Release translates the bounded publication cohort; month prepays the fixed month in locale-shadow only"
+        required: true
+        type: choice
+        options:
+          - release
+          - month
+        default: release
 
 permissions:
   contents: read
@@ -705,8 +713,19 @@ jobs:
           PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH: ${{ vars.PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH || '' }}
           PORTAL_MULTILINGUAL_HISTORY_START_DATE: ${{ vars.PORTAL_MULTILINGUAL_HISTORY_START_DATE || '2026-08-05' }}
           PORTAL_MULTILINGUAL_HISTORY_PAUSED: ${{ vars.PORTAL_MULTILINGUAL_HISTORY_PAUSED || 'false' }}
+          PORTAL_MULTILINGUAL_TRANSLATION_SCOPE: ${{ inputs.translation_scope || 'release' }}
         run: |
           set -euo pipefail
+          case "$PORTAL_MULTILINGUAL_TRANSLATION_SCOPE" in
+            release) ;;
+            month)
+              if [ "$NEUTRAL_OPERATION" != "locale-shadow" ]; then
+                echo "::error::Month pretranslation is only allowed for locale-shadow"
+                exit 2
+              fi
+              ;;
+            *) echo "::error::Translation scope must be release or month"; exit 2 ;;
+          esac
           case "$PORTAL_MULTILINGUAL_WORKERS" in
             ''|*[!0-9]*)
               echo "::error::PORTAL_MULTILINGUAL_WORKERS must be an integer from 1 to 500"
@@ -769,6 +788,7 @@ jobs:
             --model "$DEEPSEEK_MODEL"
             --deepseek-base-url "$DEEPSEEK_BASE_URL"
             --timeout 120
+            --translation-scope "$PORTAL_MULTILINGUAL_TRANSLATION_SCOPE"
             "${index_args[@]}"
           )
           # A failed paid canary must stop this shell before high concurrency begins.
@@ -791,6 +811,8 @@ jobs:
           report = json.loads((Path(os.environ["RUNNER_TEMP"]) / "locale-full-diagnostics.json").read_text())
           ready = report.get("status") == "passed" and report.get("ready") is True
           print(f"ready={'true' if ready else 'false'}")
+          with Path(os.environ["GITHUB_STEP_SUMMARY"]).open("a", encoding="utf-8") as summary:
+              summary.write(f"Locale translation scope: {os.environ['PORTAL_MULTILINGUAL_TRANSLATION_SCOPE']}.\n\n")
           if ready:
               history = json.loads(Path("_neutral_site/data/i18n/history-release.json").read_text())
               with Path(os.environ["GITHUB_STEP_SUMMARY"]).open("a", encoding="utf-8") as summary:

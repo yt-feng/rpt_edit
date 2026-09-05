@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import subprocess
+import textwrap
 import unittest
 from pathlib import Path
 
@@ -29,6 +31,47 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn('TZ=Asia/Shanghai date +%F', locale_step)
         self.assertIn('--history-start-date "$PORTAL_MULTILINGUAL_HISTORY_START_DATE"', locale_step)
         self.assertIn('true) index_args+=(--history-paused)', locale_step)
+
+    def test_release_scope_is_default_and_shared_by_canary_and_full_build(self):
+        trigger = self.workflow.split("\npermissions:\n", 1)[0]
+        scope_input = trigger.split("      translation_scope:\n", 1)[1]
+        self.assertIn("required: true", scope_input)
+        self.assertIn("type: choice", scope_input)
+        self.assertRegex(scope_input, r"options:\n\s+- release\n\s+- month\n\s+default: release")
+        locale = self.workflow.split("Build Korean Japanese and Arabic static locales", 1)[1].split(
+            "Detect multilingual translation checkpoint", 1)[0]
+        self.assertIn(
+            "PORTAL_MULTILINGUAL_TRANSLATION_SCOPE: ${{ inputs.translation_scope || 'release' }}",
+            locale,
+        )
+        shared_args = locale.split("          locale_args=(\n", 1)[1].split("\n          )", 1)[0]
+        self.assertIn('--translation-scope "$PORTAL_MULTILINGUAL_TRANSLATION_SCOPE"', shared_args)
+        self.assertEqual(locale.count("--translation-scope"), 1)
+        self.assertIn('scripts/build_portal_locales.py "${locale_args[@]}"', locale)
+        self.assertIn('scripts/run_portal_locale_backfill.py "${locale_args[@]}"', locale)
+        self.assertIn("--workers 1 --attempts 2 --max-provider-requests 6", locale)
+        self.assertIn("Locale translation scope:", locale)
+
+    def test_month_scope_is_rejected_before_provider_calls_unless_shadow(self):
+        locale = self.workflow.split("Build Korean Japanese and Arabic static locales", 1)[1].split(
+            "Detect multilingual translation checkpoint", 1)[0]
+        shell = locale.split("        run: |\n", 1)[1]
+        guard = textwrap.dedent(shell.split('          case "$PORTAL_MULTILINGUAL_WORKERS" in', 1)[0])
+        self.assertIn('case "$PORTAL_MULTILINGUAL_TRANSLATION_SCOPE" in', guard)
+        self.assertNotIn("python", guard)
+        self.assertNotIn("curl", guard)
+        for scope in ("release", "month", "", "all", "month; exit 0"):
+            for operation in ("locale-shadow", "rehearse", "migrate"):
+                with self.subTest(scope=scope, operation=operation):
+                    result = subprocess.run(
+                        ["/bin/bash", "-c", guard],
+                        env={"PORTAL_MULTILINGUAL_TRANSLATION_SCOPE": scope, "NEUTRAL_OPERATION": operation},
+                        capture_output=True, text=True, check=False,
+                    )
+                    allowed = scope == "release" or (scope == "month" and operation == "locale-shadow")
+                    self.assertEqual(result.returncode, 0 if allowed else 2, result.stdout + result.stderr)
+        cutover = self.workflow.split("\n  cutover:\n", 1)[1].split("\n    runs-on:", 1)[0]
+        self.assertIn("needs.prepare_release.outputs.operation != 'locale-shadow'", cutover)
 
     def test_schedule_and_content_triggers_are_gated_and_reviewed(self) -> None:
         trigger = self.workflow[: self.workflow.index("\npermissions:\n")]

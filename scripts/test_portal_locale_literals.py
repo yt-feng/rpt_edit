@@ -6,7 +6,7 @@ import unittest
 from unittest import mock
 
 import build_portal_locales as builder
-from portal_locale_literals import is_latin_name_literal, is_machine_asset_reference
+from portal_locale_literals import is_latin_name_literal, is_machine_asset_reference, is_short_latin_label_translation
 
 
 class AssetReferenceTests(unittest.TestCase):
@@ -174,6 +174,89 @@ class LatinNameLiteralTests(unittest.TestCase):
                 for locale in builder.LOCALES:
                     self.assertIs(cache["locales"][locale][unit.key].get("entity_name"), True)
                     self.assertEqual(builder.translated_text(source, "html:text:p", locale, cache), source)
+
+
+class ShortLatinLabelTranslationTests(unittest.TestCase):
+    def test_short_translated_brands_and_acronyms_are_valid_in_all_locales(self):
+        for source, translated in (
+            ("惠普", "HP"), ("慧与", "HPE"), ("国内生产总值", "GDP"),
+            ("电子商务", "eCommerce"), ("英伟达", "NVIDIA"), ("明尼苏达矿业", "3M"),
+        ):
+            with self.subTest(source=source, translated=translated):
+                self.assertTrue(is_short_latin_label_translation(source, translated))
+                for context in ("chart:keywords", "html:text:span", "html:text:p", "html:meta:keyword"):
+                    unit = builder.TranslationUnit("a" * 64, context, source)
+                    for locale in builder.LOCALES:
+                        builder.validate_translation_quality(locale, unit, translated)
+
+    def test_no_paragraph_or_unchanged_chinese_is_accepted_as_a_short_latin_label(self):
+        cases = (
+            ("惠普", "惠普"), ("惠普", ""), ("惠普", "Company Details Are Discussed Below"),
+            ("惠普", "这家公司的收入持续增长。"), ("惠普", "회사의 매출이 계속 증가하고 있습니다."),
+            ("惠普", "123"), ("惠普", "N" * 17),
+            ("这是需要完整翻译的中文行业研究正文", "HP"), ("惠普的收入增长了。", "HP"),
+            ("惠普\n收入", "HP"), ("Revenue is expected to grow this year.", "GDP"),
+        )
+        for source, translated in cases:
+            with self.subTest(source=source, translated=translated):
+                self.assertFalse(is_short_latin_label_translation(source, translated))
+                unit = builder.TranslationUnit("a" * 64, "chart:keywords", source)
+                with self.assertRaises(builder.TranslationError):
+                    builder.validate_translation_quality("ar", unit, translated)
+        unit = builder.TranslationUnit("b" * 64, "html:text:p", "这是需要完整翻译的中文行业研究正文")
+        for locale in builder.LOCALES:
+            for output in (unit.source, "Company details are discussed below in this untranslated English paragraph."):
+                with self.subTest(locale=locale, output=output), self.assertRaises(builder.TranslationError):
+                    builder.validate_translation_quality(locale, unit, output)
+
+    def test_short_label_does_not_bypass_structural_placeholders(self):
+        unit = builder.TranslationUnit("a" * 64, "chart:keywords", "惠普 __KC_PH_000__")
+        for locale in builder.LOCALES:
+            builder.validate_translation_quality(locale, unit, "HP __KC_PH_000__")
+            for output in ("HP", "HP __KC_PH_001__", "HP __KC_PH_000__ __KC_PH_000__"):
+                with self.subTest(locale=locale, output=output), self.assertRaises(builder.TranslationError):
+                    builder.validate_translation_quality(locale, unit, output)
+
+    def test_keyword_cache_pair_reuses_html_without_any_entity_bypass_or_provider_calls(self):
+        _protected, keyword_unit = builder.unit_for_text("惠普", "chart:keywords")
+        _protected, body_unit = builder.unit_for_text("惠普", "html:text:p")
+        self.assertEqual(keyword_unit.key, body_unit.key)
+        for context_order in (("chart:keywords", "html:text:p"), ("html:text:p", "chart:keywords")):
+            for preserve in (False, True):
+                with self.subTest(context_order=context_order, preserve=preserve), tempfile.TemporaryDirectory() as directory:
+                    units = {}
+                    for context in context_order:
+                        builder.collect_text_units("惠普", context, units)
+                    cache = builder.empty_cache()
+                    for locale in builder.LOCALES:
+                        # Previously saved rows have no new marker to migrate.
+                        cache["locales"][locale][keyword_unit.key] = {"source": "惠普", "translation": "HP"}
+                    provider = mock.Mock(side_effect=AssertionError("Saved label must not be translated again"))
+                    state = builder.TranslationRun()
+                    path = Path(directory) / "cache.json.gz"
+                    with mock.patch.dict("os.environ", {}, clear=True), mock.patch.object(builder, "log"):
+                        missing = builder.translate_missing_units(
+                            units, cache, cache_path=path, model=builder.DEFAULT_DEEPSEEK_MODEL,
+                            base_url="https://api.deepseek.com", workers=500, timeout=1, attempts=2,
+                            batch_translator=provider, preserve_unused_cache=preserve, run_state=state,
+                        )
+                    self.assertEqual(missing, {locale: 0 for locale in builder.LOCALES})
+                    self.assertEqual(state.data["status"], "passed")
+                    self.assertEqual(state.data["provider_requests"], 0)
+                    provider.assert_not_called()
+                    saved = builder.load_cache(path)
+                    for locale in builder.LOCALES:
+                        row = saved["locales"][locale][keyword_unit.key]
+                        self.assertIsNot(row.get("entity_name"), True)
+                        self.assertEqual(builder.translated_text("惠普", "html:text:p", locale, saved), "HP")
+                        wrong = {**row, "translation": "Company Details Are Discussed Below"}
+                        # Preserve the existing Japanese short-Kanji tolerance;
+                        # this patch does not invalidate those paid cache rows.
+                        if locale != "ja":
+                            self.assertFalse(builder._valid_cache_row(locale, body_unit, wrong))
+                        self.assertFalse(builder._valid_cache_row(locale, body_unit, {**row, "source": "惠普的收入增长了"}))
+                    fresh = builder._translation_cache_row(keyword_unit, "HP")
+                    self.assertIsNot(fresh.get("entity_name"), True)
 
 
 if __name__ == "__main__":

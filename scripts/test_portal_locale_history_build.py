@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import gzip
+import copy
 import json
 from pathlib import Path
 import unittest
@@ -46,6 +47,8 @@ class HistoryBuildTests(unittest.TestCase):
         self.fixture.tearDown()
 
     def build(self, translator, today="2026-09-05", previous=False, **kwargs):
+        # Existing prepaid-month regressions remain explicit opt-in coverage.
+        kwargs.setdefault("translation_scope", "month")
         return self.fixture._build(
             translator, index_start_date="2026-09-05", history_start_date="2026-08-05",
             history_release_date=today, history_daily_limit=1,
@@ -217,6 +220,91 @@ class HistoryBuildTests(unittest.TestCase):
         with self.assertRaises(builder.TranslationError):
             self.build(fail, today="2026-09-06", previous=True, cache_in=self.fixture.cache)
         self.assertEqual(self.ledger.read_bytes(), previous_bytes)
+
+    def test_release_scope_only_buys_published_cohort_and_preserves_chinese(self):
+        translator = fixtures.RecordingTranslator()
+        manifest = self.build(translator, translation_scope="release")
+        ledger = self.activate_fixture_ledger()
+        paid = "\n".join(translator.sources)
+        self.assertEqual(manifest["index_policy"]["history_release"]["translation_mode"], "translate-published-cohort")
+        self.assertEqual(len(ledger["released"]), 1)
+        self.assertEqual(ledger["pending_count"], 2)
+        for canonical, title in self.sources.items():
+            selected = canonical in ledger["released"] or canonical.endswith("/blog/new.html")
+            self.assertEqual(title in paid, selected, canonical)
+            relative = canonical.removeprefix(fixtures.SITE_URL + "/")
+            for locale in builder.LOCALES:
+                page = (self.site / locale / relative).read_text()
+                self.assertEqual('data-kc-locale-deferred="true"' in page, not selected)
+                self.assertEqual(f"/{locale}/{relative}" in (self.site / f"sitemap-{locale}.xml").read_text(), selected)
+        for relative, body in self.protected.items():
+            self.assertEqual(fixtures.body_bytes(self.site / relative), body)
+        self.assertEqual((self.site / "assets/app.js").read_bytes(), self.app_bytes)
+
+    def test_release_scope_continues_next_batch_without_rebuying_successes(self):
+        self.build(fixtures.RecordingTranslator(), translation_scope="release")
+        first = self.activate_fixture_ledger()
+        same_day = fixtures.RecordingTranslator()
+        self.build(same_day, translation_scope="release", previous=True, cache_in=self.fixture.cache)
+        self.assertEqual(same_day.calls, [])
+        tomorrow = fixtures.RecordingTranslator()
+        self.build(tomorrow, translation_scope="release", today="2026-09-06", previous=True, cache_in=self.fixture.cache)
+        later = self.activate_fixture_ledger()
+        paid = "\n".join(tomorrow.sources)
+        self.assertEqual(len(later["released"]), 2)
+        for canonical in first["released"]:
+            self.assertNotIn(self.sources[canonical], paid)
+        newly_released = set(later["released"]) - set(first["released"])
+        self.assertEqual(len(newly_released), 1)
+        self.assertIn(self.sources[newly_released.pop()], paid)
+
+    def test_unpublished_translation_failure_cannot_block_release_scope(self):
+        recorder = fixtures.RecordingTranslator()
+        def translator(locale, units):
+            if any("月内深入研究文章乙" in unit.source or "月内研究资产报告" in unit.source for unit in units):
+                raise builder.TranslationError("An unpublished historical page must not block publication")
+            return recorder(locale, units)
+        manifest = self.build(translator, translation_scope="release")
+        self.assertTrue(all(value == 1 for value in manifest["coverage"].values()))
+        self.assertNotIn(fixtures.SITE_URL + "/blog/history-b.html", self.activate_fixture_ledger()["released"])
+
+    def test_standalone_month_metadata_is_prepaid_only_when_requested(self):
+        chart_path = self.site / "data/chart_search_index.json"
+        chart_payload = json.loads(chart_path.read_text())
+        template = copy.deepcopy(chart_payload["reports"][0])
+        for day, identity, label in (("260904", "historic", "独立历史图表标题"), ("20260905", "new", "独立新增图表标题")):
+            report = copy.deepcopy(template)
+            report.pop("report_id")
+            report["report_ref"] = identity
+            report["date_folder"] = day
+            report["title"] = label
+            report["charts"][0]["id"] = identity + "-chart"
+            chart_payload["reports"].append(report)
+        chart_path.write_text(json.dumps(chart_payload, ensure_ascii=False))
+        hot_payload = json.loads(self.fixture.hot_report_index.read_text())
+        newest = copy.deepcopy(hot_payload["items"][0])
+        newest.update(id="hot:fedcba9876543210", title="独立新增热门报告", title_cn="独立新增热门报告", date="2026-09-05")
+        hot_payload["items"].append(newest)
+        self.fixture.hot_report_index.write_text(json.dumps(hot_payload, ensure_ascii=False))
+        release = fixtures.RecordingTranslator()
+        self.build(release, translation_scope="release")
+        paid = "\n".join(release.sources)
+        self.assertNotIn("独立历史图表标题", paid)
+        self.assertNotIn("人工智能热门报告中文标题", paid)
+        self.assertIn("独立新增图表标题", paid)
+        self.assertIn("独立新增热门报告", paid)
+        overlay_paths = [self.site / f"data/i18n/{locale}/{filename}" for locale in builder.LOCALES
+                         for filename in (builder.CHART_OVERLAY_FILE, builder.HOT_REPORT_OVERLAY_FILE)]
+        published_bytes = {path: path.read_bytes() for path in overlay_paths}
+        month = fixtures.RecordingTranslator()
+        self.build(month, translation_scope="month", cache_in=self.fixture.cache)
+        self.assertIn("独立历史图表标题", "\n".join(month.sources))
+        self.assertIn("人工智能热门报告中文标题", "\n".join(month.sources))
+        for path, before in published_bytes.items():
+            self.assertEqual(path.read_bytes(), before, "prepayment must not publish extra historical metadata")
+        saved = fixtures.RecordingTranslator()
+        self.build(saved, translation_scope="release", cache_in=self.fixture.cache)
+        self.assertEqual(saved.calls, [])
 
 
 if __name__ == "__main__":
