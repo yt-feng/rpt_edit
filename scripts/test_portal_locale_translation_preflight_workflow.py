@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+import re
 import sys
 import unittest
 
@@ -13,6 +14,13 @@ WORKFLOW = ROOT / ".github/workflows/portal-locale-translation-preflight.yml"
 
 
 class PreflightWorkflowTests(unittest.TestCase):
+    def test_every_invoked_script_is_in_sparse_checkout(self) -> None:
+        workflow = WORKFLOW.read_text(encoding="utf-8")
+        checkout = workflow.split("sparse-checkout: |\n", 1)[1].split("\n\n", 1)[0].split()
+        for script in re.findall(r"python3(?: -B)? (scripts/[A-Za-z0-9_.]+)", workflow):
+            with self.subTest(script=script):
+                self.assertIn(script, checkout)
+
     def test_manual_main_only_without_deployment_or_full_build(self) -> None:
         workflow = WORKFLOW.read_text(encoding="utf-8")
         self.assertIn("workflow_dispatch:", workflow)

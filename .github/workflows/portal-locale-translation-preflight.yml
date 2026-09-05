@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: Six sampled metadata batches or four protocol control requests
+        description: Up to six sampled translation requests or four protocol control requests
         required: true
         type: choice
         options:
@@ -36,6 +36,7 @@ jobs:
             .github/workflows/portal-locale-translation-preflight.yml
             scripts/preflight_portal_locale_translation.py
             scripts/test_preflight_portal_locale_translation.py
+            scripts/test_portal_locale_partial_batches.py
             scripts/probe_portal_locale_protocol.py
             scripts/test_probe_portal_locale_protocol.py
             scripts/test_portal_locale_translation_preflight_workflow.py
