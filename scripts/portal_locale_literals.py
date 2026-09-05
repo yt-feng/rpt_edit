@@ -17,7 +17,7 @@ _NAME_CONNECTORS = frozenset({"of", "the", "and", "de", "del", "la", "du", "da",
 _LEGAL_SUFFIXES = frozenset({"inc", "incorporated", "ltd", "limited", "corp", "corporation", "co", "company", "llc", "llp", "plc", "ag", "sa", "se", "nv", "gmbh"})
 # This is an identity-literal check, not a language-quality classifier. Common
 # sentence openings/verbs keep an English sentence containing a name in scope.
-_PROSE_WORDS = frozenset({"we", "you", "they", "it", "this", "that", "these", "those", "is", "are", "was", "were", "will", "should", "could", "buy", "sell", "expect", "expects", "expected", "grow", "grows", "grew", "increased", "decreased", "improved", "because", "covers"})
+_PROSE_WORDS = frozenset({"we", "you", "they", "it", "this", "that", "these", "those", "is", "are", "was", "were", "will", "should", "could", "buy", "sell", "expect", "expects", "expected", "grow", "grows", "grew", "increased", "decreased", "improve", "improves", "improved", "continue", "continues", "remain", "remains", "because", "covers"})
 
 
 def is_latin_name_literal(value: object, context: str = "") -> bool:
@@ -32,7 +32,7 @@ def is_latin_name_literal(value: object, context: str = "") -> bool:
     if len(value) > 160 or not _LATIN_NAME.fullmatch(value):
         return False
     words = re.findall(r"[A-Za-z0-9]+(?:['’][A-Za-z]+)?", value)
-    if not words or len(words) > 16 or any(word.casefold() in _PROSE_WORDS for word in words):
+    if not words or len(words) > 16:
         return False
     name_case = all(
         word.casefold() in _NAME_CONNECTORS or word[0].isdigit()
@@ -42,8 +42,12 @@ def is_latin_name_literal(value: object, context: str = "") -> bool:
     if not name_case:
         return False
     if words[-1].casefold() in _LEGAL_SUFFIXES:
-        return True
-    return context == "chart:keywords" and len(words) <= 6
+        # IT and Will can themselves be part of a legal company name. A suffix
+        # gives stronger identity evidence than a keyword's capitalization.
+        return not any(word.casefold() in _PROSE_WORDS - {"it", "will"} for word in words)
+    return (context == "chart:keywords" and len(words) <= 6
+            and not value.endswith((".", ","))
+            and not any(word.casefold() in _PROSE_WORDS for word in words))
 
 
 def is_machine_asset_reference(value: object) -> bool:

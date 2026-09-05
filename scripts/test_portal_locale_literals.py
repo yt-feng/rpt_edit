@@ -45,6 +45,8 @@ class LatinNameLiteralTests(unittest.TestCase):
             ("Ping An Insurance Group Co of China Ltd", "chart:keywords"),
             ("Ping An Insurance Group Co of China Ltd", "html:text:span"),
             ("Palo Alto Networks", "chart:keywords"),
+            ("IT Services Ltd", "html:text:p"),
+            ("Will Semiconductor Co Ltd", "chart:keywords"),
         ):
             with self.subTest(value=value, context=context):
                 self.assertTrue(is_latin_name_literal(value, context))
@@ -66,6 +68,9 @@ class LatinNameLiteralTests(unittest.TestCase):
             "Revenue is expected to grow this year.",
             "Revenue Increased Sharply Because Demand Improved",
             "We Expect Revenue To Grow",
+            "Demand Continues To Improve.",
+            "The Market Remains Under Pressure",
+            "Buy Apple Inc",
             "JD.Com Inc expects revenue to grow",
             "The report covers JD.Com Inc",
             "平安保险集团", "关于 JD.Com Inc 的行业研究", "", None,
