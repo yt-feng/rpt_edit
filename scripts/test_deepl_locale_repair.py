@@ -11,7 +11,8 @@ from unittest import mock
 import requests
 
 from deepl_locale_repair import (
-    API_ROOT, DeepLQuotaExhausted, DeepLRepair, DeepLRepairError,
+    API_ROOT, MAX_REPAIR_BODY_BYTES, DeepLQuotaExhausted, DeepLRepair, DeepLRepairError,
+    _payload_size, _translation_payload, pack_repair_indexes,
 )
 
 
@@ -316,6 +317,206 @@ class DeepLRepairTests(unittest.TestCase):
         for maximum in (-1, True, 1.5):
             with self.assertRaises(ValueError):
                 DeepLRepair(max_requests=maximum, transport=transport)
+
+    def test_batch_preserves_order_and_per_item_placeholder_namespaces(self):
+        sources = ['甲 __KC_PH_000__ __KC_PH_000__', '乙 __KC_PH_000__ __KC_PH_001__', '丙 & <正文>']
+        transport = Transport(response=Response({"translations": [
+            {"text": '<t>الأول <x id="0">__KC_PH_000__</x> <x id="1">__KC_PH_000__</x></t>', "billed_characters": 3},
+            {"text": '<t>الثاني <x id="1">__KC_PH_001__</x> <x id="0">__KC_PH_000__</x></t>', "billed_characters": 4},
+            {"text": '<t>الثالث &amp; &lt;نص&gt;</t>', "billed_characters": 5},
+        ]}))
+        repair = DeepLRepair(transport=transport)
+        self.assertEqual(repair.translate_many('ar', sources), [
+            'الأول __KC_PH_000__ __KC_PH_000__', 'الثاني __KC_PH_001__ __KC_PH_000__', 'الثالث & <نص>',
+        ])
+        self.assertEqual(len(transport.gets), 1)
+        self.assertEqual(len(transport.posts), 1)
+        url, kwargs = transport.posts[0]
+        self.assertEqual(url, API_ROOT + '/translate')
+        self.assertEqual(kwargs['json']['target_lang'], 'AR')
+        self.assertEqual(len(kwargs['json']['text']), 3)
+        self.assertIn('<x id="0">__KC_PH_000__</x>', kwargs['json']['text'][0])
+        self.assertIn('<x id="0">__KC_PH_000__</x>', kwargs['json']['text'][1])
+        stats = repair.snapshot()
+        self.assertEqual(stats['provider_requests'], 1)
+        self.assertEqual(stats['billed_characters'], 12)
+        self.assertEqual(stats['reserved_characters'], 0)
+        self.assertEqual(stats['remaining_character_budget'], 500000 - 288 - 12)
+        self.assertNotIn('test-only-deepl-key', json.dumps(stats))
+
+    def test_fifty_texts_count_as_one_request_and_fifty_one_never_calls_provider(self):
+        def echo(_url, **kwargs):
+            return Response({'translations': [{'text': text, 'billed_characters': 1} for text in kwargs['json']['text']]})
+        transport = Transport(response=echo)
+        repair = DeepLRepair(max_requests=1, transport=transport)
+        sources = [f'第{index}项' for index in range(50)]
+        self.assertEqual(repair.translate_many('ja', sources), sources)
+        with self.assertRaises(DeepLQuotaExhausted):
+            repair.translate_many('ja', ['后续'])
+        self.assertEqual(len(transport.posts), 1)
+        self.assertEqual(repair.snapshot()['billed_characters'], 50)
+        for invalid in ([], sources + ['第51项'], 'not-a-list', ['文字', ''], ['文字', None], ['文字', 'invalid\x00source']):
+            with self.subTest(invalid_type=type(invalid).__name__):
+                unused = Transport()
+                with self.assertRaises(DeepLRepairError):
+                    DeepLRepair(transport=unused).translate_many('ja', invalid)
+                self.assertEqual(unused.gets, [])
+                self.assertEqual(unused.posts, [])
+
+    def test_batch_quota_reserves_sum_before_any_translation_post(self):
+        transport = Transport(count=0, limit=1007)
+        repair = DeepLRepair(transport=transport)
+        with self.assertRaises(DeepLQuotaExhausted):
+            repair.translate_many('ja', ['文字', '文字'])  # 12 bytes plus the 1000-character margin.
+        self.assertEqual(len(transport.gets), 1)
+        self.assertEqual(transport.posts, [])
+        self.assertEqual(repair.snapshot()['reserved_characters'], 0)
+
+    def test_batch_billing_requires_each_row_not_only_a_plausible_total(self):
+        for billed in (None, True, -1, 3):
+            with self.subTest(billed=billed):
+                transport = Transport(response=Response({'translations': [
+                    {'text': '<t>第一</t>', 'billed_characters': 0},
+                    {'text': '<t>第二</t>', 'billed_characters': billed},
+                ]}))
+                repair = DeepLRepair(transport=transport)
+                self.assertEqual(repair.translate_many('ja', ['aa', 'b']), ['第一', '第二'])
+                with self.assertRaises(DeepLRepairError):
+                    repair.translate_many('ja', ['次'])
+                self.assertEqual(repair.snapshot()['billed_characters'], 0)
+                self.assertEqual(repair.snapshot()['reserved_characters'], 3)
+                self.assertEqual(repair.snapshot()['unobserved_requests'], 1)
+                self.assertEqual(len(transport.posts), 1)
+
+    def test_wrong_response_count_never_guesses_partial_mapping_or_retries(self):
+        for count in (0, 1, 3):
+            with self.subTest(count=count):
+                transport = Transport(response=Response({'translations': [
+                    {'text': '<t>翻訳</t>', 'billed_characters': 1} for _ in range(count)
+                ]}))
+                repair = DeepLRepair(transport=transport)
+                with self.assertRaises(DeepLRepairError) as caught:
+                    repair.translate_many('ja', ['甲', '乙'])
+                self.assertEqual(caught.exception.partial_translations, {})
+                with self.assertRaises(DeepLRepairError):
+                    repair.translate_many('ja', ['甲', '乙'])
+                self.assertEqual(len(transport.posts), 1)
+                self.assertEqual(repair.snapshot()['billed_characters'], 0)
+                self.assertEqual(repair.snapshot()['reserved_characters'], 6)
+
+    def test_aligned_partial_xml_error_retains_valid_rows_and_all_billed_usage(self):
+        transport = Transport(response=Response({'translations': [
+            {'text': '<t>第一 <x id="0">__KC_PH_000__</x></t>', 'billed_characters': 2},
+            {'text': '<t>missing placeholder</t>', 'billed_characters': 3},
+            {'text': '<t>第三</t>', 'billed_characters': 1},
+        ]}))
+        repair = DeepLRepair(transport=transport)
+        with self.assertRaises(DeepLRepairError) as caught:
+            repair.translate_many('ja', ['甲 __KC_PH_000__', '乙 __KC_PH_001__', '丙'])
+        self.assertEqual(caught.exception.partial_translations, {0: '第一 __KC_PH_000__', 2: '第三'})
+        self.assertEqual(repair.snapshot()['billed_characters'], 6)
+        self.assertEqual(repair.snapshot()['reserved_characters'], 0)
+        self.assertEqual(len(transport.posts), 1)
+
+    def test_aligned_missing_row_preserves_other_text_but_retains_unknown_reservation(self):
+        transport = Transport(response=Response({'translations': [
+            {'text': '<t>第一</t>', 'billed_characters': 1}, None,
+        ]}))
+        repair = DeepLRepair(transport=transport)
+        with self.assertRaises(DeepLRepairError) as caught:
+            repair.translate_many('ja', ['甲', '乙'])
+        self.assertEqual(caught.exception.partial_translations, {0: '第一'})
+        self.assertEqual(repair.snapshot()['reserved_characters'], 6)
+        self.assertEqual(repair.snapshot()['billed_characters'], 0)
+        self.assertEqual(repair.snapshot()['unobserved_requests'], 1)
+        with self.assertRaises(DeepLRepairError):
+            repair.translate_many('ja', ['后续'])
+        self.assertEqual(len(transport.posts), 1)
+
+    def test_batch_transport_exception_full_traceback_is_sanitized(self):
+        marker = 'test-only-deepl-key'
+        transport = Transport(response=requests.Timeout('Authorization: ' + marker))
+        repair = DeepLRepair(transport=transport)
+        try:
+            repair.translate_many('ar', ['甲', '乙'])
+        except DeepLRepairError:
+            output = traceback.format_exc()
+            self.assertNotIn(marker, output)
+            self.assertNotIn('Authorization:', output)
+        else:
+            self.fail('Transport failure must fail the batch')
+        self.assertEqual(repair.snapshot()['reserved_characters'], 6)
+        self.assertEqual(repair.snapshot()['unobserved_requests'], 1)
+        with self.assertRaises(DeepLRepairError):
+            repair.translate_many('ar', ['后续'])
+        self.assertEqual(len(transport.posts), 1)
+
+    def test_packed_long_han_and_placeholder_heavy_sources_have_bounded_actual_requests(self):
+        fixtures = [
+            [f'{index}' + '中' * 3500 for index in range(50)],
+            [f'{index}' + '&<>' * 100 + ' __KC_PH_000__' * 200 for index in range(50)],
+        ]
+        for sources in fixtures:
+            with self.subTest(source_length=len(sources[0])):
+                groups = pack_repair_indexes(sources)
+                self.assertGreater(len(groups), 1)
+                self.assertEqual([index for group in groups for index in group], list(range(len(sources))))
+                self.assertTrue(all(1 <= len(group) <= 50 for group in groups))
+                observed = []
+
+                def echo(url, **kwargs):
+                    prepared = requests.Request('POST', url, json=kwargs['json']).prepare()
+                    observed.append(len(prepared.body))
+                    self.assertEqual(len(prepared.body), _payload_size(kwargs['json']))
+                    self.assertLessEqual(len(prepared.body), MAX_REPAIR_BODY_BYTES)
+                    return Response({'translations': [
+                        {'text': text, 'billed_characters': 1} for text in kwargs['json']['text']
+                    ]})
+
+                transport = Transport(response=echo)
+                repair = DeepLRepair(transport=transport)
+                restored = []
+                for group in groups:
+                    restored.extend(repair.translate_many('ar', [sources[index] for index in group]))
+                self.assertEqual(restored, sources)
+                self.assertEqual(len(observed), len(groups))
+                self.assertEqual(len(transport.gets), 1)
+                self.assertEqual(repair.snapshot()['provider_requests'], len(groups))
+                self.assertEqual(pack_repair_indexes(sources), groups)
+
+    def test_packing_preserves_coverage_and_fifty_item_cap_for_short_sources(self):
+        self.assertEqual(pack_repair_indexes([]), [])
+        groups = pack_repair_indexes(['短文'] * 101)
+        self.assertEqual([len(group) for group in groups], [50, 50, 1])
+        self.assertEqual([index for group in groups for index in group], list(range(101)))
+
+    def test_oversized_ascii_encoded_or_xml_expanded_batch_is_blocked_before_any_request(self):
+        for sources in (['中' * 3500] * 50, ['&' * 30000], ['中' * 20000]):
+            with self.subTest(source_count=len(sources)):
+                transport = Transport()
+                repair = DeepLRepair(transport=transport)
+                with self.assertRaisesRegex(DeepLRepairError, 'request body limit'):
+                    repair.translate_many('ja', sources)
+                self.assertEqual(transport.gets, [])
+                self.assertEqual(transport.posts, [])
+                self.assertEqual(repair.snapshot()['reserved_characters'], 0)
+        for source in ('&' * 30000, '中' * 20000):
+            with self.assertRaisesRegex(DeepLRepairError, 'request body limit'):
+                pack_repair_indexes([source])
+
+    def test_exact_body_limit_is_accepted_and_one_more_byte_is_rejected(self):
+        overhead = _payload_size(_translation_payload('ko', ['<t></t>']))
+        source = 'a' * (MAX_REPAIR_BODY_BYTES - overhead)
+        self.assertEqual(pack_repair_indexes([source]), [[0]])
+        transport = Transport()
+        repair = DeepLRepair(transport=transport)
+        self.assertEqual(repair.translate_many('ko', [source]), [source])
+        self.assertEqual(_payload_size(transport.posts[0][1]['json']), MAX_REPAIR_BODY_BYTES)
+        unused = Transport()
+        with self.assertRaisesRegex(DeepLRepairError, 'request body limit'):
+            DeepLRepair(transport=unused).translate_many('ko', [source + 'a'])
+        self.assertEqual(unused.gets, [])
+        self.assertEqual(unused.posts, [])
 
 
 if __name__ == "__main__":
