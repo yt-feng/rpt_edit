@@ -1740,6 +1740,114 @@ if (mode === "程序枚举") document.getElementById("中文节点");
             with self.subTest(asset_name=asset_name):
                 builder.validate_javascript_translation_coverage(source, asset_name)
 
+    def test_javascript_residuals_accept_validated_bilingual_labels(self) -> None:
+        source = 'const label = "人民币";\n'
+        units: dict[str, builder.TranslationUnit] = {}
+        builder.collect_javascript_units(source, "bilingual.js", units)
+        self.assertEqual(len(units), 1)
+        unit = next(iter(units.values()))
+        for locale, translation in (
+            ("ko", "위안화(人民币)"),
+            ("ko", "위안화 「人民币」"),
+            ("ar", "اليوان الصيني (人民币)"),
+            ("ar", "اليوان الصيني 「人民币」"),
+        ):
+            with self.subTest(locale=locale, translation=translation):
+                builder.validate_translation_quality(locale, unit, translation)
+                cache = builder.empty_cache()
+                cache["locales"][locale][unit.key] = builder._translation_cache_row(unit, translation)
+                rendered = builder.render_localized_javascript(source, "bilingual.js", locale, cache)
+                self.assertIn(translation, rendered)
+                builder.validate_localized_javascript_residuals(source, rendered, "bilingual.js", locale)
+
+    def test_javascript_residuals_reject_wholly_untranslated_labels(self) -> None:
+        source = 'const label = "人民币";\n'
+        for locale in ("ko", "ar"):
+            with self.subTest(locale=locale):
+                with self.assertRaisesRegex(builder.TranslationError, "Chinese UI literals remain"):
+                    builder.validate_localized_javascript_residuals(source, source, "untranslated.js", locale)
+
+    def test_javascript_residuals_reject_target_prefix_with_complete_unquoted_source(self) -> None:
+        source = 'const label = "人民币";\n'
+        for locale, prefix in (("ko", "가"), ("ar", "ي")):
+            with self.subTest(locale=locale):
+                localized = f'const label = "{prefix} 人民币";\n'
+                with self.assertRaisesRegex(builder.TranslationError, "Chinese UI literals remain"):
+                    builder.validate_localized_javascript_residuals(source, localized, "prefixed.js", locale)
+
+    def test_javascript_residuals_reject_unchanged_mixed_language_source(self) -> None:
+        for locale, value in (("ko", "위안화(人民币)"), ("ar", "اليوان الصيني (人民币)")):
+            with self.subTest(locale=locale):
+                source = f'const label = "{value}";\n'
+                with self.assertRaisesRegex(builder.TranslationError, "Chinese UI literals remain"):
+                    builder.validate_localized_javascript_residuals(source, source, "mixed.js", locale)
+
+    def test_real_javascript_fake_cache_roundtrip_preserves_literal_structure(self) -> None:
+        translator = RecordingTranslator()
+        for asset_name in builder.LOCALIZED_JS_ASSETS:
+            source = (ROOT / "portal_suite" / "site_src" / "assets" / asset_name).read_text(encoding="utf-8")
+            units: dict[str, builder.TranslationUnit] = {}
+            builder.collect_javascript_units(source, asset_name, units)
+            for locale in ("ko", "ar"):
+                with self.subTest(asset_name=asset_name, locale=locale):
+                    cache = builder.empty_cache()
+                    translations = translator(locale, list(units.values()))
+                    for unit in units.values():
+                        translation = translations[unit.key]
+                        builder.validate_translation_quality(locale, unit, translation)
+                        cache["locales"][locale][unit.key] = builder._translation_cache_row(unit, translation)
+                    rendered = builder.render_localized_javascript(source, asset_name, locale, cache)
+                    builder.validate_localized_javascript_residuals(source, rendered, asset_name, locale)
+                    self.assertEqual(
+                        len(list(builder.iter_javascript_literal_parts(source))),
+                        len(list(builder.iter_javascript_literal_parts(rendered))),
+                    )
+
+    def test_javascript_residuals_preserve_exact_validated_entity_name(self) -> None:
+        source = 'const label = "摩根大通";'
+        _, unit = builder.unit_for_text("摩根大通", "javascript:entity.js")
+        for locale in ("ko", "ar"):
+            with self.subTest(locale=locale):
+                cache = builder.empty_cache()
+                cache["locales"][locale][unit.key] = {
+                    "source": unit.source, "translation": unit.source, "entity_name": True,
+                }
+                self.assertTrue(builder._valid_cache_row(locale, unit, cache["locales"][locale][unit.key]))
+                rendered = builder.render_localized_javascript(source, "entity.js", locale, cache)
+                builder.validate_localized_javascript_residuals(source, rendered, "entity.js", locale, cache)
+                with self.assertRaisesRegex(builder.TranslationError, "Chinese UI literals remain"):
+                    builder.validate_localized_javascript_residuals(source, rendered, "entity.js", locale)
+
+    def test_javascript_entity_cache_does_not_authorize_different_output(self) -> None:
+        source = 'const label = "摩根大通";'
+        _, unit = builder.unit_for_text("摩根大通", "javascript:entity.js")
+        for locale in ("ko", "ar"):
+            cache = builder.empty_cache()
+            cache["locales"][locale][unit.key] = {
+                "source": unit.source, "translation": unit.source, "entity_name": True,
+            }
+            with self.subTest(locale=locale), self.assertRaisesRegex(builder.TranslationError, "Chinese UI literals remain"):
+                builder.validate_localized_javascript_residuals(
+                    source, 'const label = "未经翻译的其他文字";', "entity.js", locale, cache,
+                )
+
+    def test_javascript_entity_cache_does_not_authorize_containing_sentence(self) -> None:
+        source = 'const label = "查看摩根大通的研究报告";'
+        _, unit = builder.unit_for_text("摩根大通", "javascript:entity.js")
+        for locale in ("ko", "ar"):
+            cache = builder.empty_cache()
+            cache["locales"][locale][unit.key] = {
+                "source": unit.source, "translation": unit.source, "entity_name": True,
+            }
+            with self.subTest(locale=locale), self.assertRaisesRegex(builder.TranslationError, "Chinese UI literals remain"):
+                builder.validate_localized_javascript_residuals(source, source, "entity.js", locale, cache)
+
+    def test_javascript_residuals_reject_unchanged_attribute_only_markup(self) -> None:
+        source = 'const markup = `<span aria-label="人民币"></span>`;'
+        for locale in ("ko", "ar"):
+            with self.subTest(locale=locale), self.assertRaisesRegex(builder.TranslationError, "Chinese UI literals remain"):
+                builder.validate_localized_javascript_residuals(source, source, "attribute.js", locale)
+
     def test_nested_template_expression_strings_are_translated_and_residuals_fail_closed(self) -> None:
         source = '''
 const markup = `<section>${ready ? "嵌套第一分支" : `<span aria-label="图表证据">嵌套回退文案</span>`}</section>`;

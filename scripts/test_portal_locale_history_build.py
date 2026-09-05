@@ -120,6 +120,49 @@ class HistoryBuildTests(unittest.TestCase):
             self.assertIn('content="noindex,follow"', (self.site / locale / "reports/report-ai-1.html").read_text())
             self.assertNotIn(f"/{locale}/reports/report-ai-1.html", (self.site / f"sitemap-{locale}.xml").read_text())
 
+    def test_released_history_does_not_promote_same_canonical_legacy_redirect(self):
+        import build_portal_suite_site as site_builder
+        import verify_portal_chinese_parity as parity
+
+        # The real canonical article has protected Chinese discovery; its old
+        # hash slug is a noindex refresh alias with no hreflang cluster.
+        for path in self.site.rglob("*.html"):
+            source = path.read_text()
+            canonical = builder.extract_canonical(source)
+            if canonical and 'hreflang="zh-Hans"' not in source:
+                links = "".join(
+                    f'<link rel="alternate" hreflang="{language}" href="{canonical}">'
+                    for language in ("zh-Hans", "x-default")
+                )
+                path.write_text(source.replace("</head>", links + "</head>"))
+        alias = self.site / "blog/history-old-hash.html"
+        original = site_builder.render_blog_legacy_redirect({"slug": "history-a"}, fixtures.SITE_URL)
+        alias.write_text(original)
+        for name in ("sitemap-baidu.xml", "sitemap-sogou.xml"):
+            (self.site / name).write_bytes((self.site / "sitemap-pages.xml").read_bytes())
+        snapshot = self.fixture.temporary_root / "legacy-redirect-before.json"
+        snapshot.write_text(json.dumps(parity.create_snapshot(root=self.site, site_origin=fixtures.SITE_URL)))
+
+        self.build(fixtures.RecordingTranslator(), translation_scope="release")
+        canonical = fixtures.SITE_URL + "/blog/history-a.html"
+        ledger = self.activate_fixture_ledger()
+        self.assertEqual(ledger["released"], [canonical])
+        self.assertNotIn("history-old-hash", json.dumps(ledger))
+        self.assertEqual(fixtures.body_bytes(alias), original[original.index("<body>"):].encode())
+        self.assertEqual(fixtures.alternate_links(alias.read_text()), {})
+        self.assertIn('<meta name="robots" content="noindex,follow">', alias.read_text())
+        self.assertIn('<meta http-equiv="refresh" content="0; url=history-a.html">', alias.read_text())
+        for locale in builder.LOCALES:
+            localized = (self.site / locale / "blog/history-old-hash.html").read_text()
+            self.assertFalse(builder.is_indexable_html(localized))
+            self.assertEqual(fixtures.alternate_links(localized), {})
+            sitemap = (self.site / f"sitemap-{locale}.xml").read_text()
+            self.assertNotIn("history-old-hash", sitemap)
+            self.assertIn(f"{fixtures.SITE_URL}/{locale}/blog/history-a.html", sitemap)
+        # Proves the protected Chinese head as well as body stayed unchanged;
+        # only the approved guarded bootstrap is allowed on the old alias.
+        parity.verify_snapshot(root=self.site, snapshot_path=snapshot)
+
     def test_old_catalog_date_does_not_spend_even_with_new_publication_date(self):
         self.set_report_dates("2026-08-04", "2026-09-05")
         translator = fixtures.RecordingTranslator()

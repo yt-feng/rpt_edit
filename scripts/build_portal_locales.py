@@ -3239,24 +3239,29 @@ def validate_localized_javascript_residuals(
     localized: str,
     asset_name: str,
     locale: str,
+    cache: dict[str, Any] | None = None,
 ) -> None:
-    """Reject residual Chinese UI in Korean/Arabic output after rendering.
+    """Reject untranslated UI, using the same rules as the paid-cache gate.
 
-    Japanese legitimately uses Han characters, so its fail-closed guarantees
-    come from source-inventory coverage plus the Japanese no-echo quality gate.
-    Korean and Arabic can additionally reject every non-allowlisted Han literal.
+    A localized label may retain a Chinese name or quoted original. Rejecting
+    every Han character here contradicts the per-unit completeness policy and
+    discards otherwise valid bilingual output after translation has finished.
     """
     if locale == "ja":
         return
+    source_parts = list(iter_javascript_literal_parts(source))
+    localized_parts = list(iter_javascript_literal_parts(localized))
+    if len(source_parts) != len(localized_parts):
+        raise TranslationError(f"{asset_name}: localized JavaScript literal structure changed")
     allowed_program_values = {
         value.strip()
-        for nested_source, start, end, value in iter_javascript_literal_parts(source)
+        for nested_source, start, end, value in source_parts
         if CJK_RE.search(value)
         and not javascript_literal_needs_translation(value, source=nested_source, start=start, end=end)
         and javascript_cjk_literal_is_allowlisted(value, nested_source, start, end)
     }
     residuals = []
-    for _nested_source, _start, _end, value in iter_javascript_literal_parts(localized):
+    for original, (_nested_source, _start, _end, value) in zip(source_parts, localized_parts):
         if not CJK_RE.search(value):
             continue
         if value.strip() in allowed_program_values:
@@ -3265,7 +3270,31 @@ def validate_localized_javascript_residuals(
         for token in JAVASCRIPT_ALLOWED_CJK_PRESENTATION_TOKENS:
             remainder = remainder.replace(token, "")
         if CJK_RE.search(remainder):
-            residuals.append(value)
+            # The shared cache can explicitly retain an official entity name.
+            # Honor that provenance only for this complete source/key and its
+            # exact rendered value, never for a sentence containing the name.
+            if cache is not None:
+                protected, cached_unit = unit_for_text(original[3], f"javascript:{asset_name}")
+                row = cache.get("locales", {}).get(locale, {}).get(cached_unit.key) if cached_unit else None
+                if (cached_unit and isinstance(row, dict) and row.get("entity_name") is True
+                        and _valid_cache_row(locale, cached_unit, row)):
+                    expected = render_javascript_html_attributes(
+                        protected.restore(row["translation"]), asset_name, locale, cache,
+                    )
+                    expected = escape_javascript_literal(expected, original[0][original[1]])
+                    if value == expected:
+                        continue
+            if value == original[3]:
+                residuals.append(value)
+                continue
+            # These are restored literals, not provider payloads: compare their
+            # visible copy directly so changed numeric formatting is not turned
+            # into a new structural placeholder requirement.
+            unit = TranslationUnit("javascript-residual", f"javascript:{asset_name}", original[3])
+            try:
+                validate_translation_quality(locale, unit, value)
+            except TranslationError:
+                residuals.append(value)
     if residuals:
         raise TranslationError(
             f"{asset_name}: {len(residuals)} Chinese UI literals remain in the {locale} JavaScript"
@@ -4748,7 +4777,9 @@ def _build_localized_release(
         )
         released = frozenset(history_plan["released"])
         for path, decision in list(index_plan.items()):
-            if decision.canonical_root in released:
+            # Legacy redirects can share the released article's canonical URL.
+            # Releasing that article must not undo the alias's original noindex.
+            if decision.canonical_root in released and is_indexable_html(original_html[path]):
                 index_plan[path] = replace(decision, indexable=True, force_noindex_follow=False, reason="released-history")
         run_state.data["history_release"] = history_plan
         run_state.write()
@@ -5064,7 +5095,7 @@ def _build_localized_release(
         for asset_name, source in javascript_sources.items():
             target = locale_root / "assets" / asset_name
             localized_javascript = render_localized_javascript(source, asset_name, locale, cache)
-            validate_localized_javascript_residuals(source, localized_javascript, asset_name, locale)
+            validate_localized_javascript_residuals(source, localized_javascript, asset_name, locale, cache)
             target.write_text(localized_javascript, encoding="utf-8")
             locale_script_digests[asset_name] = hashlib.sha256(target.read_bytes()).hexdigest()[:12]
         for path, source in localized_html_sources.items():
