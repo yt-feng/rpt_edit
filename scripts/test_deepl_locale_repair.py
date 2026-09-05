@@ -10,7 +10,7 @@ from unittest import mock
 
 import requests
 
-from scripts.deepl_locale_repair import (
+from deepl_locale_repair import (
     API_ROOT, DeepLQuotaExhausted, DeepLRepair, DeepLRepairError,
 )
 

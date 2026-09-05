@@ -3,7 +3,7 @@ from __future__ import annotations
 import copy
 import unittest
 
-from scripts.portal_locale_history import plan_history_release
+from portal_locale_history import plan_history_release
 
 
 class HistoryReleaseTests(unittest.TestCase):
