@@ -36,7 +36,7 @@ import xml.etree.ElementTree as ET
 from zoneinfo import ZoneInfo
 
 from portal_locale_history import plan_history_release
-from portal_locale_literals import is_latin_name_literal, is_machine_asset_reference
+from portal_locale_literals import is_latin_name_literal, is_machine_asset_reference, is_short_latin_label_translation
 from portal_locale_scope import deferred_locale_source, restrict_html_to_cohort
 
 CACHE_SCHEMA_VERSION = 1
@@ -820,6 +820,11 @@ def validate_translation_quality(locale: str, unit: TranslationUnit, translated:
     source_compact = _quality_compact(source_visible)
     translated_compact = _quality_compact(translated_visible)
     if _unchanged_latin_name(unit, text):
+        return
+    if is_short_latin_label_translation(source_visible, translated_visible):
+        # Localized short labels can legitimately be a Latin brand/acronym.
+        # Check the same exact pair in every context; do not grant a reusable
+        # entity-name bypass to arbitrary later text under this cache row.
         return
     # Names/acronyms and short Japanese Kanji headings can legitimately remain
     # identical. Do not infer language quality from spelling or script ratios.
@@ -3796,6 +3801,9 @@ def load_hot_report_public_index(path: Path) -> dict[str, Any]:
         public_items.append({
             "id": item_id,
             **display_fields,
+            # Scheduling metadata only: never send dates or private source
+            # fields to the translator. Missing/invalid dates stay unselected.
+            "date": (scheduled.isoformat() if (scheduled := parse_catalog_schedule_date(raw.get("date"))) else ""),
         })
     return {
         "version": HOT_REPORT_PUBLIC_INDEX_VERSION,
@@ -4588,6 +4596,7 @@ def _build_localized_release(
     history_release_date: str | None = None,
     history_daily_limit: int = 100,
     history_paused: bool = False,
+    translation_scope: str = "release",
     batch_translator: Callable[[str, list[TranslationUnit]], dict[str, str]] | None = None,
     preflight_only: bool = False,
     preflight_batches_per_locale: int = 2,
@@ -4596,6 +4605,8 @@ def _build_localized_release(
     max_provider_cost_cny: str | float | int | None = None,
     run_state: TranslationRun,
 ) -> dict[str, Any]:
+    if translation_scope not in {"release", "month"}:
+        raise TranslationError("Translation scope must be release or month")
     root = root.resolve()
     if not root.is_dir() or root == Path(root.anchor):
         raise TranslationError(f"Invalid built site root: {root}")
@@ -4705,11 +4716,21 @@ def _build_localized_release(
     translation_canonicals = frozenset(
         decision.canonical_root for path, decision in index_plan.items()
         if decision.indexable or (
-            history_plan is not None and scheduling_dates[path] is not None
+            translation_scope == "month"
+            and history_plan is not None and scheduling_dates[path] is not None
             and scheduling_dates[path] >= date.fromisoformat(history_start_date)
             and is_indexable_html(original_html[path])
         )
     )
+    run_state.data.update(
+        translation_scope=translation_scope,
+        translation_page_count=len(translation_canonicals),
+        published_detail_count=sum(
+            decision.indexable and decision.page_kind in {"report-detail", "blog-detail"}
+            for decision in index_plan.values()
+        ),
+    )
+    run_state.write()
     translation_report_ids = frozenset(
         unquote(urlsplit(decision.canonical_root).path.rsplit("/", 1)[-1][:-5])
         for decision in index_plan.values()
@@ -4784,19 +4805,24 @@ def _build_localized_release(
     if len(chart_ids) != len(set(chart_ids)):
         raise TranslationError("Built public chart index has duplicate chart ids")
     if history_plan is not None:
-        # Standalone chart/Hot Reports metadata has its own publication date.
-        # It is not part of the SEO detail-page release quota, but must still
-        # respect the fixed month boundary before collecting any paid text.
-        def in_month(item: dict[str, Any]) -> bool:
+        # Standalone metadata is not an SEO detail page. Daily publishing must
+        # not implicitly buy the entire historical chart/Hot Reports archive.
+        # Explicit month pretranslation can collect it without publishing it.
+        def in_metadata_window(item: dict[str, Any], start: date) -> bool:
             raw = item.get("date") or item.get("date_folder") or ""
             published = parse_catalog_schedule_date(raw) or parse_publication_date(raw)
-            return published is not None and published >= date.fromisoformat(history_start_date)
+            return published is not None and published >= start
+        metadata_start = date.fromisoformat(history_start_date) if translation_scope == "month" else configured_start_date
         chart_index = {**chart_index, "reports": [
             report for report in chart_index["reports"]
             if str(report.get("report_id") or report.get("id") or "") in translation_report_ids
-            or (not report.get("report_id") and in_month(report))
+            or (not report.get("report_id") and in_metadata_window(report, metadata_start))
         ]}
-        hot_report_index = {**hot_report_index, "items": [item for item in hot_report_index["items"] if in_month(item)]}
+        hot_report_index = {**hot_report_index, "items": [
+            item for item in hot_report_index["items"]
+            if str(item.get("report_id") or item.get("id") or "") in translation_report_ids
+            or in_metadata_window(item, metadata_start)
+        ]}
 
     units: dict[str, TranslationUnit] = {}
     priority_units: dict[str, TranslationUnit] = {}
@@ -4809,9 +4835,8 @@ def _build_localized_release(
         relative = path.relative_to(root)
         if history_plan is not None:
             decision = index_plan[path]
-            # Translate the complete authorized month now; publication is a
-            # separate smaller cohort. No future daily release has to buy the
-            # same historical body again.
+            # The normal publishing path buys only the current release cohort.
+            # Explicit month pretranslation additionally fills future cache.
             if decision.canonical_root in translation_canonicals:
                 prepaid_source = restrict_html_to_cohort(
                     source, canonical_by_path[path], translation_canonicals, known_canonicals,
@@ -5065,7 +5090,8 @@ def _build_localized_release(
         if history_plan is not None:
             published_chart_index = {**chart_index, "reports": [
                 report for report in chart_index["reports"]
-                if not report.get("report_id") or str(report["report_id"]) in eligible_report_ids
+                if str(report.get("report_id") or report.get("id") or "") in eligible_report_ids
+                or (not report.get("report_id") and in_metadata_window(report, configured_start_date))
             ]}
         chart_overlay = render_chart_overlay(published_chart_index, locale, cache)
         if history_plan is not None:
@@ -5082,7 +5108,14 @@ def _build_localized_release(
             "byte_size": len(chart_overlay_bytes),
             "sha256": hashlib.sha256(chart_overlay_bytes).hexdigest(),
         }
-        hot_report_overlay = render_hot_report_overlay(hot_report_index, locale, cache)
+        published_hot_report_index = hot_report_index
+        if history_plan is not None:
+            published_hot_report_index = {**hot_report_index, "items": [
+                item for item in hot_report_index["items"]
+                if str(item.get("report_id") or item.get("id") or "") in eligible_report_ids
+                or in_metadata_window(item, configured_start_date)
+            ]}
+        hot_report_overlay = render_hot_report_overlay(published_hot_report_index, locale, cache)
         if history_plan is not None:
             hot_report_overlay["scoped"] = True
         relative_hot_report_overlay_path = Path("data") / "i18n" / locale / HOT_REPORT_OVERLAY_FILE
@@ -5204,7 +5237,7 @@ def _build_localized_release(
             "selected_today_count": len(history_plan["selected_today"]),
             "pending_count": history_plan["pending_count"],
             "paused": history_paused,
-            "translation_mode": "pretranslate-entire-fixed-month",
+            "translation_mode": ("pretranslate-entire-fixed-month" if translation_scope == "month" else "translate-published-cohort"),
             "translation_page_count": len(translation_canonicals),
             "report_date_basis": "catalog-date-with-publication-fallback",
             "blog_date_basis": "publication-date",
@@ -5294,6 +5327,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--history-release-date", help="One fixed Asia/Shanghai calendar date for this candidate")
     parser.add_argument("--history-daily-limit", type=int, default=100)
     parser.add_argument("--history-paused", action="store_true")
+    parser.add_argument("--translation-scope", choices=("release", "month"), default="release",
+                        help="Translate the bounded published cohort by default; month also prepays unreleased history")
     allowlist_default = os.getenv("PORTAL_LOCALE_INDEX_ALLOWLIST", "").strip()
     parser.add_argument(
         "--index-allowlist",
@@ -5332,6 +5367,7 @@ def main() -> int:
             history_release_date=args.history_release_date,
             history_daily_limit=args.history_daily_limit,
             history_paused=args.history_paused,
+            translation_scope=args.translation_scope,
         )
     except (OSError, ValueError, TranslationError, json.JSONDecodeError, ET.ParseError) as error:
         print(f"portal locale build failed: {error}", file=sys.stderr)
