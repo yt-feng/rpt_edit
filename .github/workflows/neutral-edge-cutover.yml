@@ -191,6 +191,7 @@ jobs:
           python3 -B scripts/test_publish_static_slot.py
           python3 -B scripts/test_capture_edge_worker_deployment.py
           python3 -B scripts/test_build_portal_locales.py
+          python3 -B scripts/test_portal_locale_partial_batches.py
           python3 -B scripts/test_verify_portal_chinese_parity.py
           python3 -B scripts/test_audit_portal_shadow_preview.py
           python3 scripts/test_portal_seo.py

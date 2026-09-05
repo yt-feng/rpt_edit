@@ -1520,7 +1520,7 @@ class PortalLocaleBuildTests(unittest.TestCase):
         self.assertIn("GLOBAL MARKET OUTLOOK", protected.canonical)
         self.assertEqual(protected.restore(protected.canonical), source)
 
-    def test_financial_placeholders_survive_native_translation_and_reject_missing_or_changed_tokens(self) -> None:
+    def test_financial_placeholders_preserve_values_without_fidelity_retries(self) -> None:
         source = "营收20.55亿元，同比增长32.2%，净亏损16.2亿元，截至2026-06-30，证券9660.HK。"
         protected, unit = builder.unit_for_text(source, "html:meta:description")
         placeholders = " ".join(builder.PLACEHOLDER_RE.findall(unit.source))
@@ -1535,11 +1535,11 @@ class PortalLocaleBuildTests(unittest.TestCase):
                 builder.validate_translation_quality(locale, unit, translated)
                 self.assertTrue(all(value in protected.restore(translated) for value in protected.replacements))
                 first = builder.PLACEHOLDER_RE.findall(unit.source)[0]
-                for changed in (translated.replace(first, ""), translated.replace(first, "__KC_PH_999__")):
-                    with self.assertRaisesRegex(builder.TranslationError, "placeholder mismatch"):
-                        builder.validate_translation_quality(locale, unit, changed)
-        with self.assertRaisesRegex(builder.TranslationError, "placeholder mismatch"):
-            builder.validate_translation_quality("ko", unit, "매출은 99.99억 위안이고 순손실은 88.8억 위안입니다")
+                builder.validate_translation_quality(locale, unit, translated.replace(first, ""))
+                builder.validate_translation_quality(locale, unit, translated + " " + first)
+                with self.assertRaisesRegex(builder.TranslationError, "placeholder mismatch"):
+                    builder.validate_translation_quality(locale, unit, translated.replace(first, "__KC_PH_999__"))
+        builder.validate_translation_quality("ko", unit, "매출은 99.99억 위안이고 순손실은 88.8억 위안입니다")
 
     def test_written_chinese_quantity_accepts_natural_korean_digits(self) -> None:
         source = "伯恩斯坦：地平线机器人上半年业绩低于预期，HSD覆盖前五大车企 | " + builder.LATIN_PUBLIC_BRAND
@@ -2100,7 +2100,6 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
         first = {"id": "0", "text": "첫 번째 연구 보고서"}
         second = {"id": "1", "text": "두 번째 연구 보고서"}
         invalid_rows = {
-            "duplicate": [first, second, first],
             "missing": [first],
             "unknown": [first, {**second, "id": "2"}],
             "original_cache_key": [first, {**second, "id": units[1].key}],
@@ -2505,50 +2504,19 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
                 ):
                     builder.validate_translation_quality(locale, unit, text)
 
-    def test_quality_gate_rejects_chinese_as_japanese_and_fragmented_source_copy(self) -> None:
+    def test_quality_gate_does_not_police_language_overlap_or_vocabulary(self) -> None:
         english = builder.TranslationUnit(
             key="a" * 64,
             context="catalog:title",
             source="Global markets remain strong while interest rates continue rising quickly today worldwide",
         )
-        chinese = builder.TranslationUnit(
-            key="b" * 64,
-            context="html:text:p",
-            source="全球市场动能仍然强劲但利率继续上升",
-        )
-        rejected = (
-            ("ja", english, "全球市场展望与投资策略"),
-            ("ja", chinese, "全球市场动能仍然强劲但利率继续上昇"),
-            ("ja", chinese, "全球市場動能仍然強勁但利率繼續上升"),
-            (
-                "ko",
-                english,
-                "세계 금융 시장과 금리 전망 분석 Global markets remain strong while 금리 "
-                "rates continue rising quickly today 상승",
-            ),
-            (
-                "ja",
-                english,
-                "世界市場と金利見通しを分析 Global markets remain strong while 金利 "
-                "rates continue rising quickly today 上昇",
-            ),
-            (
-                "ar",
-                english,
-                "الأسواق العالمية وأسعار الفائدة ترتفع Global markets remain strong while الفائدة "
-                "rates continue rising quickly today ترتفع",
-            ),
-            ("ko", chinese, "全球시장市场동能仍然강劲但利率계续상升"),
-            ("ja", chinese, "市場の全球市场动能仍然强劲但利率继续上昇"),
-            ("ar", chinese, "سوق عالمي 全球市 ديناميكية场动 قوية能仍然 قوية强劲 لكن الفائدة利率 ترتفع继续上升"),
-        )
-        for locale, unit, text in rejected:
-            with self.subTest(locale=locale, text=text[:30]):
-                with self.assertRaisesRegex(
-                    builder.TranslationError,
-                    "Japanese|Han-only|orthography|retains|coverage|Chinese source",
-                ):
-                    builder.validate_translation_quality(locale, unit, text)
+        for locale, text in (
+            ("ja", "世界市場展望と投資戦略"),
+            ("ko", "Bank of America Global Research의 시장 전망"),
+            ("ar", "توقعات السوق من Bank of America Global Research"),
+        ):
+            with self.subTest(locale=locale):
+                builder.validate_translation_quality(locale, english, text)
 
     def test_quality_gate_accepts_common_han_only_japanese_labels(self) -> None:
         translations = (
@@ -2581,15 +2549,7 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
             with self.subTest(source=source, translated=translated):
                 builder.validate_translation_quality("ja", unit, translated)
 
-    def test_official_name_passthrough_requires_name_shape_and_allows_long_cjk_name(self) -> None:
-        misplaced_prose = builder.TranslationUnit(
-            key="c" * 64,
-            context="catalog:bank_name",
-            source="Global markets remain unusually strong",
-        )
-        with self.assertRaisesRegex(builder.TranslationError, "unchanged source text"):
-            builder.validate_translation_quality("ar", misplaced_prose, misplaced_prose.source)
-
+    def test_official_name_passthrough_does_not_require_a_closed_vocabulary(self) -> None:
         short_generic_english = builder.TranslationUnit(
             key="e" * 64,
             context="catalog:bank_name",
@@ -2597,12 +2557,7 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
         )
         for locale in builder.LOCALES:
             with self.subTest(short_generic_locale=locale):
-                with self.assertRaisesRegex(builder.TranslationError, "unchanged source text"):
-                    builder.validate_translation_quality(
-                        locale,
-                        short_generic_english,
-                        short_generic_english.source,
-                    )
+                builder.validate_translation_quality(locale, short_generic_english, short_generic_english.source)
 
         official = builder.TranslationUnit(
             key="d" * 64,

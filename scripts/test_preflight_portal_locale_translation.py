@@ -114,13 +114,13 @@ class PreflightTests(unittest.TestCase):
             message = json.loads(kwargs["payload"]["messages"][1]["content"])
             locale = message["target_language"]
             attempts[locale] = attempts.get(locale, 0) + 1
-            self.assertEqual(len(message["items"]), 16)
+            self.assertEqual(len(message["items"]), 16 if attempts[locale] == 1 else 1)
             rows = [{
                 "id": item["id"],
-                "text": item["source_text"] if attempts[locale] == 1 else " ".join([
+                "text": "" if attempts[locale] == 1 and index == 0 else " ".join([
                     translated[locale], *preflight.builder.PLACEHOLDER_RE.findall(item["source_text"]),
                 ]),
-            } for item in message["items"]]
+            } for index, item in enumerate(message["items"])]
             response = Mock(status_code=200)
             response.json.return_value = {
                 "choices": [{"message": {"content": json.dumps({"translations": rows})}}],
