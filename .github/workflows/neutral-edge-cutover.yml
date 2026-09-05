@@ -715,8 +715,8 @@ jobs:
           )
           # A failed paid canary must stop this shell before high concurrency begins.
           python3 -B scripts/build_portal_locales.py "${locale_args[@]}" \
-            --preflight-only --preflight-batches-per-locale 2 \
-            --workers 1 --attempts 1 --max-provider-requests 6 \
+            --preflight-only --preflight-batches-per-locale 1 \
+            --workers 1 --attempts 2 --max-provider-requests 6 \
             --diagnostics-out "$RUNNER_TEMP/locale-preflight-diagnostics.json" \
             "${cache_args[@]}"
           test -s _neutral_site/data/i18n/cache-v1.json.gz
