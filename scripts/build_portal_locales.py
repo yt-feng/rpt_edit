@@ -934,6 +934,42 @@ def _numeric_inventory(visible: str) -> Counter[Decimal]:
     return Counter(Decimal(value.replace(",", "")) for value in values)
 
 
+def _written_numeric_allowances(visible: str) -> Counter[Decimal]:
+    """Allow optional digit renderings of explicit Chinese quantities, once each.
+
+    Only common quantities/ordinals from zero to ninety-nine (and decimal
+    percentages) are recognized. Larger or ambiguous numeral forms fail closed;
+    isolated words such as 一旦 and 一带一路 never supply numeric allowances.
+    """
+    numerals = "零〇一二三四五六七八九十百千万萬亿億两兩点點"
+    number = f"[{numerals}]+"
+    quantities = re.finditer(
+        rf"(?<![{numerals}])(?:百分之(?P<percent>{number})|前(?P<rank>{number})大|"
+        rf"第(?P<ordinal>{number})(?:季度|年|月|周|週|天|日|名|位|次|期)|"
+        rf"(?P<count>{number})(?:季度|周年|个月|個月|年|月|周|週|天|日|家|个|個|项|項|名|位|人|倍|次|期))",
+        visible,
+    )
+    digits = dict(zip("零〇一二三四五六七八九两兩", "0012345678922"))
+    allowances: Counter[Decimal] = Counter()
+    for match in quantities:
+        raw = next(value for value in match.groupdict().values() if value is not None)
+        integer, *fraction = re.split("[点點]", raw)
+        if not re.fullmatch(r"[零〇一二三四五六七八九两兩]|[一二三四五六七八九]?十[一二三四五六七八九]?", integer):
+            continue
+        if fraction and (match.group("percent") is None or len(fraction) != 1
+                         or not re.fullmatch("[零〇一二三四五六七八九]+", fraction[0])):
+            continue
+        if "十" in integer:
+            tens, ones = integer.split("十")
+            value = str(int(digits.get(tens, "1")) * 10 + int(digits.get(ones, "0")))
+        else:
+            value = digits[integer]
+        if fraction:
+            value += "." + "".join(digits[character] for character in fraction[0])
+        allowances[Decimal(value)] += 1
+    return allowances
+
+
 def validate_translation_quality(locale: str, unit: TranslationUnit, translated: str) -> None:
     """Fail closed when a translation is missing its target language or echoes source.
 
@@ -952,7 +988,12 @@ def validate_translation_quality(locale: str, unit: TranslationUnit, translated:
 
     source_visible = _quality_visible_text(unit.source)
     translated_visible = _quality_visible_text(text)
-    if _numeric_inventory(source_visible) != _numeric_inventory(translated_visible):
+    source_numbers = _numeric_inventory(source_visible)
+    translated_numbers = _numeric_inventory(translated_visible)
+    # Bare source digits remain mandatory. Written quantities only authorize
+    # optional, same-valued extras; they cannot replace missing literal values.
+    if (source_numbers - translated_numbers
+            or (translated_numbers - source_numbers) - _written_numeric_allowances(source_visible)):
         raise TranslationError(f"{locale}: numeric value mismatch for {unit.key}")
     source_compact = _quality_compact(source_visible)
     translated_compact = _quality_compact(translated_visible)
