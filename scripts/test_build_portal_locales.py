@@ -1974,7 +1974,7 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
             "choices": [{
                 "message": {
                     "content": json.dumps({
-                        "translations": [{"id": unit.key, "text": "번역 결과"}],
+                        "translations": [{"id": "0", "text": "번역 결과"}],
                     }, ensure_ascii=False),
                 },
             }],
@@ -1995,10 +1995,81 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
         payload = request.call_args.kwargs["payload"]
         self.assertEqual(payload["response_format"], {"type": "json_object"})
         self.assertEqual(payload["thinking"], {"type": "disabled"})
+        self.assertEqual(json.loads(payload["messages"][1]["content"]), {
+            "translations": [{"id": "0", "text": unit.source}],
+        })
+        self.assertNotIn(unit.key, json.dumps(payload))
         self.assertIn(
             "Never attach a target-language label or prefix",
             payload["messages"][0]["content"],
         )
+
+    def test_deepseek_compact_ids_map_unordered_responses_to_cache_keys(self) -> None:
+        units = [
+            builder.TranslationUnit(key="a" * 64, context="test:first", source="第一段研究报告"),
+            builder.TranslationUnit(key="b" * 64, context="test:second", source="第二段研究报告"),
+        ]
+        response = mock.Mock(status_code=200)
+        response.json.return_value = {
+            "choices": [{"message": {"content": json.dumps({
+                "translations": [
+                    {"id": "1", "text": "두 번째 연구 보고서"},
+                    {"id": "0", "text": "첫 번째 연구 보고서"},
+                ],
+            }, ensure_ascii=False)}}],
+        }
+        request = mock.Mock(return_value=response)
+        with mock.patch.dict(sys.modules, {"deepseek_http": mock.Mock(request_with_key_fallback=request)}):
+            result = builder.deepseek_translate_batch(
+                "ko", units, model=builder.DEFAULT_DEEPSEEK_MODEL,
+                base_url="https://api.deepseek.com", timeout=1, attempts=1,
+            )
+
+        self.assertEqual(result, {
+            units[0].key: "첫 번째 연구 보고서",
+            units[1].key: "두 번째 연구 보고서",
+        })
+        payload = request.call_args.kwargs["payload"]
+        self.assertEqual(json.loads(payload["messages"][1]["content"]), {
+            "translations": [{"id": str(index), "text": unit.source} for index, unit in enumerate(units)],
+        })
+        for unit in units:
+            self.assertNotIn(unit.key, json.dumps(payload))
+
+    def test_deepseek_compact_ids_reject_invalid_responses(self) -> None:
+        units = [
+            builder.TranslationUnit(key="a" * 64, context="test:first", source="第一段研究报告"),
+            builder.TranslationUnit(key="b" * 64, context="test:second", source="第二段研究报告"),
+        ]
+        first = {"id": "0", "text": "첫 번째 연구 보고서"}
+        second = {"id": "1", "text": "두 번째 연구 보고서"}
+        invalid_rows = {
+            "duplicate": [first, second, first],
+            "missing": [first],
+            "unknown": [first, {**second, "id": "2"}],
+            "original_cache_key": [first, {**second, "id": units[1].key}],
+            "numeric": [first, {**second, "id": 1}],
+            "missing_id": [first, {"text": second["text"]}],
+            "invalid_type": [first, {**second, "id": ["1"]}],
+            "unchanged_source": [first, {**second, "text": units[1].source}],
+        }
+        for label, rows in invalid_rows.items():
+            with self.subTest(label=label):
+                response = mock.Mock(status_code=200)
+                response.json.return_value = {
+                    "choices": [{"message": {"content": json.dumps({
+                        "translations": rows,
+                    }, ensure_ascii=False)}}],
+                }
+                request = mock.Mock(return_value=response)
+                with mock.patch.dict(sys.modules, {
+                    "deepseek_http": mock.Mock(request_with_key_fallback=request),
+                }):
+                    with self.assertRaises(builder.TranslationError):
+                        builder.deepseek_translate_batch(
+                            "ko", units, model=builder.DEFAULT_DEEPSEEK_MODEL,
+                            base_url="https://api.deepseek.com", timeout=1, attempts=1,
+                        )
 
     def test_cjk_source_echo_is_rejected(self) -> None:
         _protected, unit = builder.unit_for_text("需要翻译的完整中文文本", "test:echo")

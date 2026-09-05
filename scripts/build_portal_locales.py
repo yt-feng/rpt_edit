@@ -831,9 +831,9 @@ def parse_translation_batch(value: str, units: list[TranslationUnit], locale: st
     for row in rows:
         if not isinstance(row, dict):
             raise TranslationError(f"{locale}: translation response row is invalid")
-        key = str(row.get("id") or "")
+        key = row.get("id")
         text = str(row.get("text") or "").strip()
-        if key not in expected or key in translated or not text:
+        if not isinstance(key, str) or key not in expected or key in translated or not text:
             raise TranslationError(f"{locale}: translation response IDs are incomplete")
         validate_translation_quality(locale, expected[key], text)
         translated[key] = text
@@ -856,7 +856,12 @@ def deepseek_translate_batch(
     from deepseek_http import request_with_key_fallback
 
     config = LOCALES[locale]
-    request_rows = [{"id": unit.key, "text": unit.source} for unit in units]
+    # Compact IDs save request and response tokens without changing cache keys.
+    request_units = [
+        TranslationUnit(key=str(index), context=unit.context, source=unit.source)
+        for index, unit in enumerate(units)
+    ]
+    request_rows = [{"id": unit.key, "text": unit.source} for unit in request_units]
     system = (
         f"You are the senior {config.language_name} editor for {LATIN_PUBLIC_BRAND}, a financial research website. "
         f"Translate every input into natural, publication-ready {config.language_name}. "
@@ -895,7 +900,8 @@ def deepseek_translate_batch(
                 allow_model_fallback=False,
                 logger=log,
             )
-            return parse_translation_batch(_response_content(response, label), units, locale)
+            translated = parse_translation_batch(_response_content(response, label), request_units, locale)
+            return {unit.key: translated[str(index)] for index, unit in enumerate(units)}
         except TranslationError as error:
             last_error = error
             if output_attempt >= max(1, attempts):
