@@ -2708,6 +2708,28 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
 
 
 class ProviderCostGuardTests(unittest.TestCase):
+    def test_output_retry_gets_validation_feedback_without_extra_request_budget(self) -> None:
+        unit = builder.TranslationUnit("a" * 64, "html:text:p", "财报摘要")
+        seen = []
+
+        def provider(_url: str, **kwargs: object) -> mock.Mock:
+            seen.append(json.loads(json.dumps(kwargs["payload"])))
+            text = unit.source if len(seen) == 1 else "재무 보고서 요약"
+            return self.response({"prompt_tokens": 5, "completion_tokens": 5, "total_tokens": 10},
+                                 json.dumps({"translations": [{"id": "0", "text": text}]}))
+
+        state = builder.TranslationRun(max_requests=2)
+        with mock.patch.dict(sys.modules, {"deepseek_http": mock.Mock(request_with_key_fallback=provider)}):
+            result = builder.deepseek_translate_batch(
+                "ko", [unit], model=builder.DEFAULT_DEEPSEEK_MODEL,
+                base_url="https://api.deepseek.com", timeout=1, attempts=2, run_state=state,
+            )
+        self.assertEqual(result[unit.key], "재무 보고서 요약")
+        self.assertEqual(len(seen[0]["messages"]), 2)
+        self.assertEqual(len(seen[1]["messages"]), 3)
+        self.assertIn("unchanged source text for 0", seen[1]["messages"][2]["content"])
+        self.assertEqual(state.data["provider_requests"], 2)
+
     @staticmethod
     def payload(max_tokens: int = 1000) -> dict:
         return {
