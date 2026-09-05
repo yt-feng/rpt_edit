@@ -52,7 +52,7 @@ DEFAULT_BATCH_ITEMS = 32
 MAX_UNIT_CHARS = 3_500
 LOCALE_DIRS = frozenset({"ko", "ja", "ar"})
 SITE_VERIFICATION_HTML_RE = re.compile(
-    r"baidu_verify_codeva-[A-Za-z0-9]{10}\.html"
+    r"(?:baidu_verify_codeva-[A-Za-z0-9]{10}|google[0-9a-f]{16})\.html"
 )
 SITE_VERIFICATION_BODY_RE = re.compile(rb"[0-9a-f]{32}(?:\r?\n)?\Z")
 SHARED_ROOT_PREFIXES = ("/api/", "/assets/", "/data/", "/.well-known/")
@@ -3327,6 +3327,11 @@ def is_site_verification_html(relative: Path) -> bool:
 
 
 def validate_site_verification_html(relative: Path, data: bytes) -> None:
+    if relative.name.startswith("google"):
+        expected = f"google-site-verification: {relative.name}".encode("ascii")
+        if data in (expected, expected + b"\n", expected + b"\r\n"):
+            return
+        raise TranslationError(f"site verification token is invalid: {relative.as_posix()}")
     if not SITE_VERIFICATION_BODY_RE.fullmatch(data):
         raise TranslationError(f"site verification token is invalid: {relative.as_posix()}")
 
