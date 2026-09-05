@@ -55,6 +55,29 @@ class CachedJavascriptAuditTests(unittest.TestCase):
             self.assertEqual(len(report["assets"]), 21)
             self.assertTrue(all(row["status"] == "failed" for row in report["assets"]))
 
+    def test_diagnostics_include_chinese_introduced_into_english_source(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            assets = root / "assets"
+            assets.mkdir()
+            source = 'const markup = `<a href="${url}" target="_blank" rel="noopener noreferrer">Download</a>`;'
+            units = {}
+            builder.collect_javascript_units(source, "app.js", units)
+            self.assertTrue(units)
+            cache = builder.empty_cache()
+            for locale in builder.LOCALES:
+                for unit in units.values():
+                    cache["locales"][locale][unit.key] = builder._translation_cache_row(unit, unit.source.replace("Download", "下载"))
+            for name in builder.LOCALIZED_JS_ASSETS:
+                (assets / name).write_text(source)
+            path = root / "cache.json.gz"
+            builder.write_cache(path, cache)
+            report = auditor.audit(assets, path, root / "out")
+            for row in report["assets"]:
+                if row["locale"] in {"ko", "ar"}:
+                    self.assertEqual(row["status"], "failed")
+                    self.assertIn("下载", row["cjk_candidates"][0]["localized"])
+
 
 if __name__ == "__main__":
     unittest.main()

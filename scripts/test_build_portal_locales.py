@@ -1794,6 +1794,12 @@ if (mode === "程序枚举") document.getElementById("中文节点");
                     translations = translator(locale, list(units.values()))
                     for unit in units.values():
                         translation = translations[unit.key]
+                        if re.search(r"\b(?:aria-[a-z-]+|alt|placeholder|title)\s*=", unit.source):
+                            # Split-tag attributes are not complete protected
+                            # tags. This structural mock must retain their
+                            # attribute syntax, just like a real provider.
+                            replacement = {"ko": "가", "ar": "ي"}[locale]
+                            translation = builder.CJK_RE.sub(replacement, unit.source)
                         builder.validate_translation_quality(locale, unit, translation)
                         cache["locales"][locale][unit.key] = builder._translation_cache_row(unit, translation)
                     rendered = builder.render_localized_javascript(source, asset_name, locale, cache)
@@ -1884,6 +1890,57 @@ const markup = `<section>${ready ? "嵌套第一分支" : `<span aria-label="图
         builder.validate_localized_javascript_residuals(source, rendered, "nested.js", "ko")
         with self.assertRaisesRegex(builder.TranslationError, "Chinese UI literals remain"):
             builder.validate_localized_javascript_residuals(source, source, "nested.js", "ko")
+
+    def test_split_tag_attributes_use_source_keys_not_already_translated_japanese(self) -> None:
+        source = 'const markup = `<div id="${id}" aria-label="机构下载权限">查看权限</div>`;'
+        units = {}
+        builder.collect_javascript_units(source, "app.js", units)
+        cache = builder.empty_cache()
+        for unit in units.values():
+            translation = unit.source.replace("机构下载权限", "機関ダウンロード権限").replace("查看权限", "権限を確認")
+            cache["locales"]["ja"][unit.key] = builder._translation_cache_row(unit, translation)
+        before = json.dumps(cache, ensure_ascii=False, sort_keys=True)
+        rendered = builder.render_localized_javascript(source, "app.js", "ja", cache)
+        self.assertIn('aria-label="機関ダウンロード権限"', rendered)
+        self.assertIn("権限を確認", rendered)
+        self.assertIn('${id}', rendered)
+        self.assertEqual(json.dumps(cache, ensure_ascii=False, sort_keys=True), before)
+
+    def test_source_link_repairs_wrong_language_cache_without_touching_the_cache(self) -> None:
+        source = 'const markup = `<a href="${url}" target="_blank" rel="noopener noreferrer">Source</a>`;'
+        units = {}
+        builder.collect_javascript_units(source, "app.js", units)
+        cache = builder.empty_cache()
+        for locale in builder.LOCALES:
+            for unit in units.values():
+                cache["locales"][locale][unit.key] = builder._translation_cache_row(unit, unit.source.replace("Source", "来源"))
+        before = json.dumps(cache, ensure_ascii=False, sort_keys=True)
+        for locale, label in (("ko", "출처"), ("ja", "出典"), ("ar", "المصدر")):
+            rendered = builder.render_localized_javascript(source, "app.js", locale, cache)
+            self.assertIn(f'>{label}</a>', rendered)
+            self.assertNotIn("来源", rendered)
+            self.assertIn('${url}', rendered)
+            builder.validate_localized_javascript_residuals(source, rendered, "app.js", locale, cache)
+        self.assertEqual(json.dumps(cache, ensure_ascii=False, sort_keys=True), before)
+
+    def test_localized_attributes_cannot_add_or_remove_controls(self) -> None:
+        with self.assertRaisesRegex(builder.TranslationError, "attribute structure changed"):
+            builder.render_javascript_html_attributes(
+                '<span title="추가">내용</span>', "app.js", "ko", builder.empty_cache(),
+                source='<span>内容</span>',
+            )
+
+    def test_account_form_copy_is_complete_in_all_locales_without_retranslating_cache(self) -> None:
+        source = '<label id="accountEmailLabel" hidden>常用邮箱（必填）<input placeholder="至少 4 位"></label>'
+        for locale in builder.LOCALES:
+            with self.subTest(locale=locale):
+                attributes = builder.render_javascript_html_attributes(source, "app.js", locale, builder.empty_cache(), source=source)
+                rendered = builder.render_localized_account_form(attributes, "app.js", locale)
+                self.assertIn(builder.ACCOUNT_FORM_COPY[locale]["email"], rendered)
+                self.assertIn(builder.ACCOUNT_FORM_COPY[locale]["password_minimum"], rendered)
+                self.assertNotIn("常用邮箱", rendered)
+                self.assertIn('id="accountEmailLabel" hidden', rendered)
+        self.assertEqual(builder.render_localized_account_form(source, "other.js", "ko"), source)
 
     def test_javascript_markup_translates_visible_attributes_without_touching_structure(self) -> None:
         source = 'const markup = ready ? `<span aria-label="相关知名机构">标签</span>` : "";\n'

@@ -948,6 +948,12 @@ def translated_text(value: str, context: str, locale: str, cache: dict[str, Any]
         if unit is None:
             output.append(protected.restore(protected.canonical))
             continue
+        if context.startswith("javascript:") and PLACEHOLDER_RE.sub("", unit.source).strip() == "Source":
+            # A fixed source-link label is UI, not an entity name. Some older
+            # cache rows translated this English label back into Chinese.
+            label = {"ko": "출처", "ja": "出典", "ar": "المصدر"}[locale]
+            output.append(protected.restore(unit.source.replace("Source", label)))
+            continue
         row = entries.get(unit.key)
         if not isinstance(row, dict) or row.get("source") != unit.source:
             raise TranslationError(f"Missing {locale} translation for {unit.key}")
@@ -2621,6 +2627,25 @@ JAVASCRIPT_HTML_ATTRIBUTE_RE = re.compile(
     flags=re.I | re.S | re.X,
 )
 
+# Stable account-form copy is code-reviewed, so a cached mixed-language block
+# cannot leave this basic registration control untranslated. Chinese assets
+# never pass through these locale-only renderers.
+ACCOUNT_FORM_COPY = {
+    "ko": {"email": "이메일 주소(필수)", "password_minimum": "최소 4자"},
+    "ja": {"email": "メールアドレス（必須）", "password_minimum": "4文字以上"},
+    "ar": {"email": "البريد الإلكتروني (مطلوب)", "password_minimum": "4 أحرف على الأقل"},
+}
+
+
+def render_localized_account_form(value: str, asset_name: str, locale: str) -> str:
+    if asset_name != "app.js":
+        return value
+    return re.sub(
+        r'(<label\b[^>]*\bid=["\']accountEmailLabel["\'][^>]*>)[^<]*',
+        lambda match: match.group(1) + ACCOUNT_FORM_COPY[locale]["email"],
+        value,
+    )
+
 
 def javascript_html_attribute_values(value: str) -> Iterator[tuple[str, str]]:
     """Yield user-visible HTML attributes embedded in JavaScript markup."""
@@ -2649,21 +2674,35 @@ def render_javascript_html_attributes(
     asset_name: str,
     locale: str,
     cache: dict[str, Any],
+    *,
+    source: str | None = None,
 ) -> str:
+    # A provider may already translate an attribute in a split opening tag.
+    # Resolve every attribute against the original inventory, not that output:
+    # Japanese Kanji is not a new Chinese source requiring another paid row.
+    originals = list(JAVASCRIPT_HTML_ATTRIBUTE_RE.finditer(source if source is not None else value))
+    rendered = list(JAVASCRIPT_HTML_ATTRIBUTE_RE.finditer(value))
+    if [match.group("name").lower() for match in originals] != [match.group("name").lower() for match in rendered]:
+        raise TranslationError(f"{asset_name}: localized HTML attribute structure changed")
+    original_iterator = iter(originals)
+
     def replace(match: re.Match[str]) -> str:
         name = match.group("name").lower()
-        source_value = match.group("value")
+        source_value = next(original_iterator).group("value")
         if not text_needs_translation(
             protect_text(source_value).canonical,
             f"html:attribute:{name}",
         ):
             return match.group(0)
-        translated = translated_text(
-            source_value,
-            f"javascript-html:{asset_name}:{name}",
-            locale,
-            cache,
-        )
+        if asset_name == "app.js" and name == "placeholder" and source_value == "至少 4 位":
+            translated = ACCOUNT_FORM_COPY[locale]["password_minimum"]
+        else:
+            translated = translated_text(
+                source_value,
+                f"javascript-html:{asset_name}:{name}",
+                locale,
+                cache,
+            )
         return (
             match.group("prefix")
             + match.group("quote")
@@ -3290,7 +3329,7 @@ def validate_localized_javascript_residuals(
                 if (cached_unit and isinstance(row, dict) and row.get("entity_name") is True
                         and _valid_cache_row(locale, cached_unit, row)):
                     expected = render_javascript_html_attributes(
-                        protected.restore(row["translation"]), asset_name, locale, cache,
+                        protected.restore(row["translation"]), asset_name, locale, cache, source=original[3],
                     )
                     expected = escape_javascript_literal(expected, original[0][original[1]])
                     if value == expected:
@@ -3361,14 +3400,16 @@ def render_localized_javascript(source: str, asset_name: str, locale: str, cache
                     if javascript_literal_needs_translation(part, source=source, start=start, end=end)
                     else part
                 )
-                translated = render_javascript_html_attributes(translated, asset_name, locale, cache)
+                translated = render_javascript_html_attributes(translated, asset_name, locale, cache, source=part)
+                translated = render_localized_account_form(translated, asset_name, locale)
                 translated_parts.append(escape_javascript_literal(translated, quote))
             pieces.append(quote + "".join(translated_parts) + quote)
         else:
             translated = inner
             if javascript_literal_needs_translation(inner, source=source, start=start, end=end):
                 translated = translated_text(inner, f"javascript:{asset_name}", locale, cache)
-                translated = render_javascript_html_attributes(translated, asset_name, locale, cache)
+                translated = render_javascript_html_attributes(translated, asset_name, locale, cache, source=inner)
+                translated = render_localized_account_form(translated, asset_name, locale)
             pieces.append(quote + escape_javascript_literal(translated, quote) + quote)
         cursor = end
     pieces.append(source[cursor:])
