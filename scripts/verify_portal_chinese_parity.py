@@ -42,6 +42,8 @@ REQUIRED_PROTECTED_PATHS = frozenset(
         "assets/styles.css",
     )
 )
+ACTIVE_MANIFEST_FIXED_PATHS = frozenset(("robots.txt", "assets/styles.css"))
+ACTIVE_MANIFEST_SCOPE = "cross-release-static-css-robots-and-verification"
 
 HEAD_RE = re.compile(rb"<head\b[^>]*>.*?</head\s*>", flags=re.I | re.S)
 BODY_RE = re.compile(rb"<body\b", flags=re.I)
@@ -67,7 +69,7 @@ SITEMAP_LOC_RE = re.compile(
 )
 SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
 SITE_VERIFICATION_HTML_RE = re.compile(
-    r"baidu_verify_codeva-[A-Za-z0-9]{10}\.html"
+    r"(?:baidu_verify_codeva-[A-Za-z0-9]{10}|google[0-9a-f]{16})\.html"
 )
 SITE_VERIFICATION_BODY_RE = re.compile(rb"[0-9a-f]{32}(?:\r?\n)?\Z")
 
@@ -141,7 +143,14 @@ def is_site_verification_html(relative: str) -> bool:
 
 
 def validate_site_verification_html(relative: str, data: bytes) -> None:
-    if not SITE_VERIFICATION_BODY_RE.fullmatch(data):
+    if not is_site_verification_html(relative):
+        raise ParityError(f"site verification token is invalid: {relative}")
+    if PurePosixPath(relative).name.startswith("google"):
+        expected = f"google-site-verification: {PurePosixPath(relative).name}".encode("ascii")
+        valid = data in (expected, expected + b"\n", expected + b"\r\n")
+    else:
+        valid = SITE_VERIFICATION_BODY_RE.fullmatch(data) is not None
+    if not valid:
         raise ParityError(f"site verification token is invalid: {relative}")
 
 
@@ -384,6 +393,11 @@ def _validate_final_head(
     additions_present = {locale for locale in LOCALES if locale in final}
     has_cluster_baseline = "zh-hans" in before and "x-default" in before
 
+    if not additions_present:
+        if final != before:
+            raise ParityError(f"existing hreflang metadata changed: {relative}")
+        return False
+
     if has_cluster_baseline:
         if additions_present != set(LOCALES):
             raise ParityError(f"locale hreflang cluster is incomplete: {relative}")
@@ -403,11 +417,7 @@ def _validate_final_head(
                 raise ParityError(f"incorrect {locale} hreflang URL: {relative}")
         return True
 
-    if additions_present:
-        raise ParityError(f"locale hreflang was added to a page without a protected zh-Hans cluster: {relative}")
-    if final != before:
-        raise ParityError(f"existing hreflang metadata changed: {relative}")
-    return False
+    raise ParityError(f"locale hreflang was added to a page without a protected zh-Hans cluster: {relative}")
 
 
 def _protected_paths(paths: Iterable[str]) -> list[str]:
@@ -425,6 +435,26 @@ def _protected_paths(paths: Iterable[str]) -> list[str]:
         ):
             result.append(relative)
     return sorted(set(result))
+
+
+def _active_protected_paths(paths: Iterable[str]) -> set[str]:
+    return {
+        relative
+        for relative in paths
+        if relative in ACTIVE_MANIFEST_FIXED_PATHS or is_site_verification_html(relative)
+    }
+
+
+def _source_refresh_scope(paths: Iterable[str]) -> dict[str, Any]:
+    paths = tuple(paths)
+    return {
+        "phase": "before-locale-snapshot",
+        "paths": sorted((set(_protected_paths(paths)) | {"sitemap.xml"}) - _active_protected_paths(paths)),
+        "locale_build_policy": (
+            "Feed, llms and Chinese sitemap files must retain their snapshot bytes; "
+            "sitemap.xml may add only the exact locale sitemap entries"
+        ),
+    }
 
 
 def _robot_locale_lines(data: bytes, *, relative: str) -> list[tuple[str, str]]:
@@ -557,11 +587,10 @@ def _validate_active_manifest(
     rows = manifest.get("files")
     if not isinstance(rows, dict):
         raise ParityError("active static manifest has no files object")
-    # The candidate site builder may legitimately rotate query hashes inside
-    # HTML before locale generation.  Active-slot comparison therefore covers
-    # the stable Chinese discovery/CSS contract only; the much stronger
-    # pre/post-locale body + neutralized-head gate below covers every HTML file.
-    checked_paths = set(_protected_paths(files)) | {"sitemap.xml"}
+    # The base release refreshes report content, feeds, sitemaps, and llms files
+    # before the snapshot. Only cross-release static files compare with active;
+    # every refreshed file remains protected by the pre/post-locale gate.
+    checked_paths = _active_protected_paths(files)
     active: dict[str, dict[str, Any]] = {}
     for raw_relative, raw_descriptor in rows.items():
         if not isinstance(raw_relative, str):
@@ -569,7 +598,7 @@ def _validate_active_manifest(
         relative = _valid_relative(raw_relative)
         if _excluded(relative):
             continue
-        if relative not in checked_paths:
+        if relative not in ACTIVE_MANIFEST_FIXED_PATHS and not is_site_verification_html(relative):
             continue
         if not isinstance(raw_descriptor, dict):
             raise ParityError(f"active manifest descriptor is invalid: {relative}")
@@ -592,7 +621,8 @@ def _validate_active_manifest(
         "checked": True,
         "file_count": len(active),
         "manifest_sha256": _sha256(_read(manifest_path)),
-        "scope": "protected-discovery-and-styles",
+        "scope": ACTIVE_MANIFEST_SCOPE,
+        "source_refresh_scope": _source_refresh_scope(files),
         "skipped_html_reason": (
             "HTML can contain candidate asset query hashes; every Chinese HTML body and "
             "neutralized head is instead enforced by the pre/post locale gate"
@@ -662,7 +692,8 @@ def create_snapshot(
         "checked": False,
         "file_count": 0,
         "manifest_sha256": "",
-        "scope": "protected-discovery-and-styles",
+        "scope": ACTIVE_MANIFEST_SCOPE,
+        "source_refresh_scope": _source_refresh_scope(inventory),
         "skipped_html_reason": (
             "HTML can contain candidate asset query hashes; every Chinese HTML body and "
             "neutralized head is instead enforced by the pre/post locale gate"
@@ -804,6 +835,7 @@ def verify_snapshot(
             "hreflang_clusters": cluster_pages,
         },
         "verified_tree_digest": _sha256(_json_bytes(verification_files)),
+        "source_refresh_scope": _source_refresh_scope(expected_paths),
     }
     return _with_digest(report)
 

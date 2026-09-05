@@ -154,6 +154,10 @@ class PortalLocaleBuildTests(unittest.TestCase):
             "0123456789abcdef0123456789abcdef\n",
             encoding="utf-8",
         )
+        (self.site / "google0123456789abcdef.html").write_text(
+            "google-site-verification: google0123456789abcdef.html\n",
+            encoding="utf-8",
+        )
         (self.site / "assets" / "app.js").write_text(
             """(() => {
   "use strict";
@@ -433,6 +437,47 @@ class PortalLocaleBuildTests(unittest.TestCase):
         with self.assertRaisesRegex(builder.TranslationError, "token is invalid"):
             self._build(RecordingTranslator())
 
+    def test_google_verification_must_match_its_filename(self) -> None:
+        path = self.site / "google0123456789abcdef.html"
+        for invalid in (
+            "google-site-verification: googleffffffffffffffff.html\n",
+            "<html><head></head><body>fake</body></html>",
+        ):
+            with self.subTest(invalid=invalid):
+                path.write_text(invalid, encoding="utf-8")
+                translator = RecordingTranslator()
+                with self.assertRaisesRegex(builder.TranslationError, "token is invalid"):
+                    self._build(translator)
+                self.assertFalse(translator.calls)
+
+    def test_real_builder_output_passes_chinese_parity_with_deferred_history(self) -> None:
+        import verify_portal_chinese_parity as parity
+
+        topic = self.site / "reports/topics/ai/index.html"
+        old = self.site / "blog/old.html"
+        old.parent.mkdir()
+        old.write_text(topic.read_text(encoding="utf-8").replace(
+            "/reports/topics/ai/", "/blog/old.html"
+        ), encoding="utf-8")
+        for page in (topic, old):
+            source = page.read_text(encoding="utf-8")
+            canonical = builder.extract_canonical(source)
+            links = "".join(
+                f'<link rel="alternate" hreflang="{language}" href="{canonical}">'
+                for language in ("zh-Hans", "x-default")
+            )
+            page.write_text(source.replace("</head>", links + "</head>"), encoding="utf-8")
+        for name in ("sitemap-baidu.xml", "sitemap-sogou.xml"):
+            (self.site / name).write_bytes((self.site / "sitemap-pages.xml").read_bytes())
+        snapshot_path = self.temporary_root / "chinese-before.json"
+        snapshot_path.write_text(json.dumps(parity.create_snapshot(
+            root=self.site, site_origin=SITE_URL,
+        )), encoding="utf-8")
+        self._build(RecordingTranslator(), index_start_date="2026-09-05")
+        report = parity.verify_snapshot(root=self.site, snapshot_path=snapshot_path)
+        self.assertEqual(report["counts"]["html"], 3)
+        self.assertEqual(report["counts"]["hreflang_clusters"], 2)
+
     def test_builds_complete_locale_routes_and_preserves_chinese_bodies(self) -> None:
         chinese_pages = [
             self.site / "index.html",
@@ -448,6 +493,7 @@ class PortalLocaleBuildTests(unittest.TestCase):
         }
         chinese_css_before = (self.site / "assets" / "styles.css").read_bytes()
         verification_before = (self.site / "baidu_verify_codeva-FzG1Vh5prB.html").read_bytes()
+        google_before = (self.site / "google0123456789abcdef.html").read_bytes()
         translator = RecordingTranslator()
 
         manifest = self._build(translator)
@@ -458,6 +504,7 @@ class PortalLocaleBuildTests(unittest.TestCase):
         self.assertNotIn("PRIVATE-OBJECT-KEY-MUST-NOT-LEAVE", translator.sources)
         self.assertNotIn("PRIVATE-HOT-REPORT-TEXT-MUST-NOT-LEAVE", translator.sources)
         self.assertNotIn("0123456789abcdef0123456789abcdef", translator.sources)
+        self.assertNotIn("google-site-verification: google0123456789abcdef.html", translator.sources)
         self.assertGreater(manifest["source_unit_count"], 0)
         self.assertEqual(manifest["quality_gate_version"], builder.QUALITY_GATE_VERSION)
         cache_text = gzip.decompress(self.cache.read_bytes()).decode("utf-8")
@@ -483,6 +530,7 @@ class PortalLocaleBuildTests(unittest.TestCase):
             (self.site / "baidu_verify_codeva-FzG1Vh5prB.html").read_bytes(),
             verification_before,
         )
+        self.assertEqual((self.site / "google0123456789abcdef.html").read_bytes(), google_before)
         self.assertEqual(set(alternate_links((self.site / "index.html").read_text(encoding="utf-8"))), {
             "zh-Hans", "ko", "ja", "ar", "x-default",
         })
@@ -498,6 +546,7 @@ class PortalLocaleBuildTests(unittest.TestCase):
         og_locales = {"ko": "ko_KR", "ja": "ja_JP", "ar": "ar_AE"}
         for locale, direction in directions.items():
             self.assertFalse((self.site / locale / "baidu_verify_codeva-FzG1Vh5prB.html").exists())
+            self.assertFalse((self.site / locale / "google0123456789abcdef.html").exists())
             home = (self.site / locale / "index.html").read_text(encoding="utf-8")
             deep = (self.site / locale / "reports" / "topics" / "ai" / "index.html").read_text(encoding="utf-8")
             self.assertRegex(home, rf'<html\b[^>]*\blang="{locale}"[^>]*\bdir="{direction}"')

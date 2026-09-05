@@ -20,6 +20,8 @@ import verify_portal_chinese_parity as parity  # noqa: E402
 
 ORIGIN = "https://portal.example.invalid"
 ASSET_VERSION = "0123456789ab"
+GOOGLE_VERIFICATION_FILE = "google7c4728949c87e799.html"
+GOOGLE_VERIFICATION_BODY = f"google-site-verification: {GOOGLE_VERIFICATION_FILE}".encode("ascii")
 BOOTSTRAP = (
     '<script data-kc-locale-bootstrap>(function(){'
     'var n=navigator,l=String(n.language||n.languages&&n.languages[0]||"").toLowerCase();'
@@ -77,6 +79,7 @@ class ChineseParityTests(unittest.TestCase):
         self._write("index.html", self._html())
         self._write("reports/market/index.html", self._html(path="/reports/market/", title="市场报告"))
         self._write("baidu_verify_codeva-FzG1Vh5prB.html", "0123456789abcdef0123456789abcdef\n")
+        self._write(GOOGLE_VERIFICATION_FILE, GOOGLE_VERIFICATION_BODY + b"\n")
         self._write("assets/app.js", "console.log('zh root');\n")
         self._write("assets/styles.css", "body { color: #111; }\n")
         self._write("data/catalog.json", '{"items":[]}\n')
@@ -167,6 +170,8 @@ class ChineseParityTests(unittest.TestCase):
         self.assertIn("head_neutralized_sha256", snapshot["files"]["index.html"])
         self.assertNotIn("body_sha256", snapshot["files"]["baidu_verify_codeva-FzG1Vh5prB.html"])
         self.assertIn("baidu_verify_codeva-FzG1Vh5prB.html", snapshot["protected_files"])
+        self.assertNotIn("body_sha256", snapshot["files"][GOOGLE_VERIFICATION_FILE])
+        self.assertIn(GOOGLE_VERIFICATION_FILE, snapshot["protected_files"])
         self._apply_locale_discovery()
         result = self._verify()
         self.assertEqual(result["counts"]["hreflang_clusters"], 2)
@@ -190,6 +195,8 @@ class ChineseParityTests(unittest.TestCase):
         snapshot = self._snapshot(active_manifest=manifest)
         self.assertTrue(snapshot["active_manifest"]["checked"])
         self.assertIn("query hashes", snapshot["active_manifest"]["skipped_html_reason"])
+        self.assertEqual(snapshot["active_manifest"]["scope"], "cross-release-static-css-robots-and-verification")
+        self.assertEqual(snapshot["active_manifest"]["file_count"], 4)
 
     def test_active_manifest_rejects_protected_content_mismatch(self) -> None:
         preliminary = parity.create_snapshot(root=self.site, site_origin=ORIGIN)
@@ -198,10 +205,49 @@ class ChineseParityTests(unittest.TestCase):
             relative: {"size": row["size"], "sha256": row["sha256"]}
             for relative, row in preliminary["files"].items()
         }
-        rows["assets/styles.css"]["sha256"] = "f" * 64
-        manifest.write_text(json.dumps({"files": rows}), encoding="utf-8")
-        with self.assertRaisesRegex(parity.ParityError, "active manifest"):
+        for relative in ("assets/styles.css", "robots.txt", "baidu_verify_codeva-FzG1Vh5prB.html", GOOGLE_VERIFICATION_FILE):
+            with self.subTest(relative=relative):
+                changed = {**rows, relative: {"size": rows[relative]["size"], "sha256": "f" * 64}}
+                manifest.write_text(json.dumps({"files": changed}), encoding="utf-8")
+                with self.assertRaisesRegex(parity.ParityError, "active manifest"):
+                    self._snapshot(active_manifest=manifest)
+
+    def test_active_manifest_rejects_missing_verification_file(self) -> None:
+        preliminary = self._snapshot()
+        manifest = self.base / "active.json"
+        manifest.write_text(json.dumps({"files": preliminary["files"]}), encoding="utf-8")
+        (self.site / GOOGLE_VERIFICATION_FILE).unlink()
+        with self.assertRaisesRegex(parity.ParityError, "active manifest protected path set differs"):
             self._snapshot(active_manifest=manifest)
+
+    def test_daily_discovery_refresh_is_allowed_before_snapshot_but_protected_afterward(self) -> None:
+        preliminary = self._snapshot()
+        manifest = self.base / "active.json"
+        manifest.write_text(json.dumps({"files": preliminary["files"]}), encoding="utf-8")
+        refreshed = (
+            "sitemap.xml", "sitemap-baidu.xml", "sitemap-sogou.xml", "sitemap-pages.xml",
+            "sitemap-reports-01.xml", "sitemap-blog-01.xml", "feed.xml", "llms.txt", "llms-full.txt",
+        )
+        for relative in refreshed:
+            path = self.site / relative
+            addition = b"<!-- source refresh: 2026-09-05 -->\n" if relative.endswith(".xml") else b"# Source refresh: 2026-09-05\n"
+            path.write_bytes(path.read_bytes() + addition)
+        snapshot = self._snapshot(active_manifest=manifest)
+        scope = snapshot["active_manifest"]["source_refresh_scope"]
+        self.assertEqual(scope["phase"], "before-locale-snapshot")
+        self.assertEqual(set(scope["paths"]), set(refreshed))
+        self._apply_locale_discovery()
+        self.assertEqual(self._verify()["source_refresh_scope"], scope)
+        for relative in refreshed:
+            with self.subTest(relative=relative):
+                path = self.site / relative
+                baseline = path.read_bytes()
+                try:
+                    path.write_bytes(baseline + b"<!-- changed during locale generation -->\n")
+                    with self.assertRaisesRegex(parity.ParityError, "changed"):
+                        self._verify()
+                finally:
+                    path.write_bytes(baseline)
 
     def test_body_change_fails(self) -> None:
         self._verified_site()
@@ -266,6 +312,35 @@ class ChineseParityTests(unittest.TestCase):
         with self.assertRaisesRegex(parity.ParityError, "token changed"):
             self._verify()
 
+    def test_google_verification_accepts_only_exact_binding_with_optional_line_ending(self) -> None:
+        for ending in (b"", b"\n", b"\r\n"):
+            with self.subTest(ending=ending):
+                self._write(GOOGLE_VERIFICATION_FILE, GOOGLE_VERIFICATION_BODY + ending)
+                snapshot = self._snapshot()
+                self.assertEqual(snapshot["counts"]["html"], 2)
+                self.assertIn(GOOGLE_VERIFICATION_FILE, snapshot["protected_files"])
+        self._apply_locale_discovery()
+        self._verify()
+
+    def test_google_verification_rejects_wrong_content_or_filename_binding(self) -> None:
+        for content in (
+            b"0" * 32,
+            b"google-site-verification: google0000000000000000.html\n",
+            GOOGLE_VERIFICATION_BODY + b"\n\n",
+            GOOGLE_VERIFICATION_BODY + b" ",
+            b"<html><head></head><body>fake</body></html>",
+        ):
+            with self.subTest(content=content):
+                self._write(GOOGLE_VERIFICATION_FILE, content)
+                with self.assertRaisesRegex(parity.ParityError, "token is invalid"):
+                    self._snapshot()
+
+    def test_google_verification_line_ending_is_byte_protected(self) -> None:
+        self._verified_site()
+        self._write(GOOGLE_VERIFICATION_FILE, GOOGLE_VERIFICATION_BODY + b"\r\n")
+        with self.assertRaisesRegex(parity.ParityError, "token changed"):
+            self._verify()
+
     def test_site_verification_filename_cannot_exempt_arbitrary_html(self) -> None:
         path = self.site / "baidu_verify_codeva-FzG1Vh5prB.html"
         path.write_text("<html><head></head><body>fake</body></html>", encoding="utf-8")
@@ -281,6 +356,36 @@ class ChineseParityTests(unittest.TestCase):
         self._write("nested/baidu_verify_codeva-FzG1Vh5prB.html", "0" * 32 + "\n")
         with self.assertRaisesRegex(parity.ParityError, "head element"):
             self._snapshot()
+
+    def test_nested_google_verification_filename_is_not_exempt(self) -> None:
+        self._write(f"nested/{GOOGLE_VERIFICATION_FILE}", GOOGLE_VERIFICATION_BODY + b"\n")
+        with self.assertRaisesRegex(parity.ParityError, "head element"):
+            self._snapshot()
+
+    def test_deferred_historical_page_keeps_existing_cluster_without_new_locale_links(self) -> None:
+        path = self.site / "reports/market/index.html"
+        before = path.read_text(encoding="utf-8").replace('content="index,follow"', 'content="noindex,follow"')
+        path.write_text(before, encoding="utf-8")
+        self._snapshot()
+        self._apply_locale_discovery()
+        path.write_text(before.replace("  </head>", f"    {BOOTSTRAP}\n  </head>"), encoding="utf-8")
+        self.assertEqual(self._verify()["counts"]["hreflang_clusters"], 1)
+        path.write_text(path.read_text(encoding="utf-8").replace(
+            f'hreflang="x-default" href="{ORIGIN}/reports/market/"',
+            f'hreflang="x-default" href="{ORIGIN}/changed/"',
+        ), encoding="utf-8")
+        with self.assertRaisesRegex(parity.ParityError, "existing hreflang metadata changed"):
+            self._verify()
+
+    def test_partial_locale_hreflang_additions_still_fail(self) -> None:
+        self._verified_site()
+        path = self.site / "index.html"
+        source = path.read_text(encoding="utf-8").replace(
+            f'<link rel="alternate" hreflang="ja" href="{ORIGIN}/ja/">', "",
+        )
+        path.write_text(source, encoding="utf-8")
+        with self.assertRaisesRegex(parity.ParityError, "cluster is incomplete"):
+            self._verify()
 
     def test_root_path_set_change_fails(self) -> None:
         self._verified_site()
