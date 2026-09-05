@@ -71,11 +71,12 @@ class PreflightTests(unittest.TestCase):
         def translate(units, cache, **kwargs):
             calls.append(kwargs)
             self.assertEqual(kwargs["workers"], 1)
-            self.assertEqual(kwargs["attempts"], 1)
+            self.assertEqual(kwargs["attempts"], 2)
             self.assertEqual(kwargs["max_provider_requests"], 6)
             self.assertTrue(kwargs["preflight_only"])
-            self.assertEqual(kwargs["preflight_batches_per_locale"], 2)
-            self.assertEqual(kwargs["max_batch_items"], 8)
+            self.assertEqual(kwargs["preflight_batches_per_locale"], 1)
+            self.assertEqual(kwargs["max_batch_items"], 16)
+            self.assertEqual(kwargs["max_batch_chars"], 16 * 600)
             self.assertTrue(all(not cache["locales"][locale] for locale in preflight.builder.LOCALES))
             kwargs["cache_path"].write_bytes(b"temporary checkpoint")
             kwargs["diagnostics_out"].write_text(json.dumps({
@@ -104,6 +105,62 @@ class PreflightTests(unittest.TestCase):
         selected = {unit.source for unit in units.values() if unit.context == "html:meta:keyword"}
         self.assertTrue({"Chinese financial research", "investment bank research"}.issubset(selected))
         self.assertLessEqual(len(units), 16)
+
+    def test_one_batch_per_language_can_correct_once_within_six_requests(self) -> None:
+        attempts: dict[str, int] = {}
+        translated = {"ko": "검증된 금융 연구 문안입니다", "ja": "検証済みの金融リサーチ文です", "ar": "هذا نص بحث مالي مترجم وموثوق"}
+
+        def respond(_url: str, **kwargs: object) -> Mock:
+            message = json.loads(kwargs["payload"]["messages"][1]["content"])
+            locale = message["target_language"]
+            attempts[locale] = attempts.get(locale, 0) + 1
+            self.assertEqual(len(message["items"]), 16)
+            rows = [{
+                "id": item["id"],
+                "text": item["source_text"] if attempts[locale] == 1 else " ".join([
+                    translated[locale], *preflight.builder.PLACEHOLDER_RE.findall(item["source_text"]),
+                ]),
+            } for item in message["items"]]
+            response = Mock(status_code=200)
+            response.json.return_value = {
+                "choices": [{"message": {"content": json.dumps({"translations": rows})}}],
+                "usage": {"prompt_tokens": 10, "completion_tokens": 10, "total_tokens": 20},
+            }
+            return response
+
+        provider = Mock(side_effect=respond)
+        with patch.dict("os.environ", {"DEEPSEEK_API_KEY": "fake-key"}), patch.dict(
+            sys.modules, {"deepseek_http": SimpleNamespace(request_with_key_fallback=provider)},
+        ):
+            report = preflight.run_preflight(site_url=ORIGIN, diagnostics_out=self.report_path, fetcher=fixture_fetcher())
+        self.assertEqual(report["status"], "passed")
+        self.assertEqual(attempts, {"ko": 2, "ja": 2, "ar": 2})
+        self.assertEqual(provider.call_count, 6)
+        self.assertEqual(report["provider_requests"], 6)
+        self.assertEqual(report["selected_batches"], 3)
+        self.assertEqual(report["sampling"]["unit_count"], 16)
+        self.assertEqual(report["usage_totals"]["total_tokens"], 120)
+
+    def test_two_invalid_outputs_stop_canary_before_the_next_language(self) -> None:
+        def echo(_url: str, **kwargs: object) -> Mock:
+            message = json.loads(kwargs["payload"]["messages"][1]["content"])
+            response = Mock(status_code=200)
+            response.json.return_value = {"choices": [{"message": {"content": json.dumps({
+                "translations": [{"id": item["id"], "text": item["source_text"]} for item in message["items"]],
+            })}}]}
+            return response
+
+        provider = Mock(side_effect=echo)
+        with patch.dict("os.environ", {"DEEPSEEK_API_KEY": "fake-key"}), patch.dict(
+            sys.modules, {"deepseek_http": SimpleNamespace(request_with_key_fallback=provider)},
+        ):
+            with self.assertRaises(preflight.PreflightError):
+                preflight.run_preflight(site_url=ORIGIN, diagnostics_out=self.report_path, fetcher=fixture_fetcher())
+        report = json.loads(self.report_path.read_text(encoding="utf-8"))
+        self.assertEqual(provider.call_count, 2)
+        self.assertEqual(report["provider_requests"], 2)
+        self.assertEqual(report["failed_batches"], 1)
+        self.assertEqual(report["status"], "failed")
 
     def test_failed_provider_response_records_usage_and_stops_after_one_request(self) -> None:
         response = Mock(status_code=402)

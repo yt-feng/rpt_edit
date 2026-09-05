@@ -1505,6 +1505,66 @@ class PortalLocaleBuildTests(unittest.TestCase):
         self.assertNotIn("@page", protected_css.canonical)
         self.assertEqual(protected_css.restore(protected_css.canonical), embedded_css)
 
+    def test_chinese_adjacent_financial_numbers_and_dates_are_protected_whole(self) -> None:
+        source = "营收20.55亿元，同比增长32.2%，净亏损16.2亿元，截至2026-06-30的报告，变动-8.5%。"
+        protected = builder.protect_text(source)
+        self.assertEqual(protected.replacements, ("20.55", "32.2%", "16.2", "2026-06-30", "-8.5%"))
+        self.assertEqual(protected.restore(protected.canonical), source)
+        self.assertNotIn("32.", protected.canonical)
+        self.assertNotIn("2026", protected.canonical)
+
+    def test_explicit_stock_identifiers_are_whole_without_masking_uppercase_titles(self) -> None:
+        source = "证券9660.HK、600000.SH、000001.SZ、$AAPL及NYSE:AAPL；GLOBAL MARKET OUTLOOK"
+        protected = builder.protect_text(source)
+        self.assertEqual(protected.replacements, ("9660.HK", "600000.SH", "000001.SZ", "$AAPL", "NYSE:AAPL"))
+        self.assertIn("GLOBAL MARKET OUTLOOK", protected.canonical)
+        self.assertEqual(protected.restore(protected.canonical), source)
+
+    def test_financial_placeholders_survive_native_translation_and_reject_added_amount(self) -> None:
+        source = "营收20.55亿元，同比增长32.2%，净亏损16.2亿元，截至2026-06-30，证券9660.HK。"
+        protected, unit = builder.unit_for_text(source, "html:meta:description")
+        placeholders = " ".join(builder.PLACEHOLDER_RE.findall(unit.source))
+        native = {
+            "ko": "매출과 성장률 및 순손실을 집계한 증권 연구 보고서입니다",
+            "ja": "売上と成長率および純損失を集計した証券調査レポートです",
+            "ar": "هذا تقرير أبحاث الأوراق المالية عن الإيرادات والنمو وصافي الخسائر",
+        }
+        for locale, text in native.items():
+            translated = text + " " + placeholders
+            with self.subTest(locale=locale):
+                builder.validate_translation_quality(locale, unit, translated)
+                self.assertTrue(all(value in protected.restore(translated) for value in protected.replacements))
+                with self.assertRaisesRegex(builder.TranslationError, "numeric value mismatch"):
+                    builder.validate_translation_quality(locale, unit, translated + " 99.99")
+                with self.assertRaisesRegex(builder.TranslationError, "numeric value mismatch"):
+                    builder.validate_translation_quality(locale, unit, translated + " ٩٩٫٩٩")
+        with self.assertRaisesRegex(builder.TranslationError, "placeholder mismatch"):
+            builder.validate_translation_quality("ko", unit, "매출은 99.99억 위안이고 순손실은 88.8억 위안입니다")
+
+    def test_bare_report_digits_and_footnotes_preserve_numeric_inventory(self) -> None:
+        unit = builder.TranslationUnit("bare-financial", "html:text:p", "研究报告R15的指标EPS20.55及脚注[2]")
+        valid = "연구 보고서 R15의 지표 EPS２０.５５와 각주[٢]를 확인했습니다"
+        builder.validate_translation_quality("ko", unit, valid)
+        for wrong in (valid.replace("R15", "R16"), valid.replace("２０.５５", "２０.５０"),
+                      valid.replace("[٢]", ""), valid + " 2"):
+            with self.subTest(wrong=wrong), self.assertRaisesRegex(builder.TranslationError, "numeric value mismatch"):
+                builder.validate_translation_quality("ko", unit, wrong)
+        grouped = builder.TranslationUnit("bare-grouped", "html:text:p", "研究指标EPS1,234.50的报告")
+        builder.validate_translation_quality("ar", grouped, "يتناول هذا التقرير البحثي المؤشر EPS١٬٢٣٤٫٥٠ بالتفصيل")
+
+    def test_numeric_cache_revalidation_keeps_valid_entries_in_the_same_namespace(self) -> None:
+        _protected, unit = builder.unit_for_text("研究报告R15市场展望", "html:text:p")
+        cache = builder.empty_cache()
+        cache["locales"]["ko"][unit.key] = {"source": unit.source, "translation": "시장 전망 연구 보고서 R15입니다"}
+        cache["locales"]["ja"][unit.key] = {"source": unit.source, "translation": "市場見通しの調査レポートR16です"}
+        builder.write_cache(self.cache, cache)
+        loaded = builder.load_cache(self.cache)
+        self.assertEqual(loaded["prompt_version"], cache["prompt_version"])
+        counts = builder.prune_translation_cache(loaded, {unit.key: unit})
+        self.assertEqual(counts["ko"]["retained"], 1)
+        self.assertEqual(counts["ja"]["invalid"], 1)
+        self.assertIn(unit.key, loaded["locales"]["ko"])
+
     def test_deepseek_error_response_does_not_expose_response_body(self) -> None:
         response = mock.Mock(status_code=500, text="private submitted source text")
         response.json.return_value = {"error": "private submitted source text"}
@@ -1998,7 +2058,7 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
         self.assertEqual(payload["response_format"], {"type": "json_object"})
         self.assertEqual(payload["thinking"], {"type": "disabled"})
         message = json.loads(payload["messages"][1]["content"])
-        self.assertEqual(message["items"], [{"id": "0", "source_text": unit.source}])
+        self.assertEqual(message["items"], [{"id": "0", "context": unit.context, "source_text": unit.source}])
         self.assertEqual(message["target_language"], "ko")
         self.assertIn("韩语（한국어）", message["task"])
         self.assertNotIn("translations", message)
@@ -2035,7 +2095,7 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
         })
         payload = request.call_args.kwargs["payload"]
         self.assertEqual(json.loads(payload["messages"][1]["content"])["items"], [
-            {"id": str(index), "source_text": unit.source} for index, unit in enumerate(units)
+            {"id": str(index), "context": unit.context, "source_text": unit.source} for index, unit in enumerate(units)
         ])
         for unit in units:
             self.assertNotIn(unit.key, json.dumps(payload))
@@ -2280,7 +2340,7 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
         diagnostics = self.temporary_root / "late-row.json"
         state = builder.TranslationRun(diagnostics, max_requests=1)
         units = [builder.TranslationUnit(f"{i:064x}", "html:text:p", f"公开研究内容 {i}") for i in range(32)]
-        rows = [{"id": str(i), "text": "검증된 금융 연구 문안입니다 " * 8} for i in range(32)]
+        rows = [{"id": str(i), "text": "검증된 금융 연구 문안입니다 " * 8 + str(i)} for i in range(32)]
         rows[23]["text"] = units[23].source
         response = mock.Mock(status_code=200)
         response.json.return_value = {"choices": [{"message": {"content": json.dumps({
@@ -2308,7 +2368,7 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
         for failed_row, source_id, selection in cases:
             with self.subTest(failed_row=failed_row):
                 state = builder.TranslationRun()
-                rows = [{"id": str(i), "text": FAKE_COPY["ko"]} for i in range(8)]
+                rows = [{"id": str(i), "text": FAKE_COPY["ko"] + f" {i}"} for i in range(8)]
                 rows[7] = failed_row
                 content = json.dumps({"translations": rows}, ensure_ascii=False)
                 with self.assertRaises(builder.TranslationError) as raised:
@@ -2325,7 +2385,7 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
         units = [builder.TranslationUnit(str(i), "html:text:p", f"公开研究内容 {i}") for i in range(8)]
         state = builder.TranslationRun()
         content = json.dumps({"translations": [
-            {"id": str(i), "text": FAKE_COPY["ko"]} for i in range(7)
+            {"id": str(i), "text": FAKE_COPY["ko"] + f" {i}"} for i in range(7)
         ]}, ensure_ascii=False)
         with self.assertRaises(builder.TranslationError) as raised:
             builder.parse_translation_batch(content, units, "ko")
@@ -2584,7 +2644,7 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
         cache = builder.empty_cache()
         cache["locales"]["ko"][unit.key] = {
             "source": unit.source,
-            "translation": '<script data-test="injected">alert(1)</script> 번역 및 검증이 완료되었습니다',
+            "translation": '<script data-test="injected">alert("injected")</script> 번역 및 검증이 완료되었습니다',
         }
 
         rendered = builder.render_localized_html(
@@ -2705,6 +2765,28 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
         self.assertEqual(observed_workers, [builder.MAX_TRANSLATION_WORKERS])
         self.assertEqual(missing, {locale: 1 for locale in builder.LOCALES})
         self.assertEqual({locale for locale, _keys in translator.calls}, set(builder.LOCALES))
+
+
+class PreflightAttemptLimitTests(unittest.TestCase):
+    def test_preflight_respects_requested_attempts_up_to_two(self) -> None:
+        unit = builder.TranslationUnit("a" * 64, "html:text:p", "公开研究内容")
+        with tempfile.TemporaryDirectory() as folder:
+            for requested, expected in ((1, 1), (2, 2), (9, 2)):
+                with self.subTest(requested=requested):
+                    translator = RecordingTranslator()
+
+                    def translate(locale: str, units: list[builder.TranslationUnit], **kwargs: object) -> dict[str, str]:
+                        self.assertEqual(kwargs["attempts"], expected)
+                        return translator(locale, units)
+
+                    with mock.patch.dict("os.environ", {"DEEPSEEK_API_KEY": "fake-key"}, clear=True), mock.patch.object(builder, "deepseek_translate_batch", side_effect=translate) as provider:
+                        builder.translate_missing_units(
+                            {unit.key: unit}, builder.empty_cache(), cache_path=Path(folder) / "cache.json.gz",
+                            model=builder.DEFAULT_DEEPSEEK_MODEL, base_url="https://api.deepseek.com",
+                            workers=99, timeout=1, attempts=requested, preflight_only=True,
+                            preflight_batches_per_locale=1, max_provider_requests=6,
+                        )
+                    self.assertEqual(provider.call_count, 3)
 
 
 class ProviderCostGuardTests(unittest.TestCase):
