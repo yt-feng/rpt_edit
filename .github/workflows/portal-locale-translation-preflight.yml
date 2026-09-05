@@ -2,6 +2,15 @@ name: Portal locale translation preflight
 
 on:
   workflow_dispatch:
+    inputs:
+      mode:
+        description: Six sampled metadata batches or four protocol control requests
+        required: true
+        type: choice
+        options:
+          - sample
+          - protocol
+        default: sample
 
 permissions:
   contents: read
@@ -27,6 +36,8 @@ jobs:
             .github/workflows/portal-locale-translation-preflight.yml
             scripts/preflight_portal_locale_translation.py
             scripts/test_preflight_portal_locale_translation.py
+            scripts/probe_portal_locale_protocol.py
+            scripts/test_probe_portal_locale_protocol.py
             scripts/test_portal_locale_translation_preflight_workflow.py
             scripts/build_portal_locales.py
             scripts/deepseek_http.py
@@ -42,11 +53,13 @@ jobs:
       - name: Test bounded preflight without provider requests
         run: |
           python3 -B scripts/test_preflight_portal_locale_translation.py
+          python3 -B scripts/test_probe_portal_locale_protocol.py
           python3 -B scripts/test_portal_locale_translation_preflight_workflow.py
           python3 -B scripts/check_public_identity.py
 
-      - name: Diagnose six public metadata translation batches
+      - name: Run the selected bounded translation diagnostic
         env:
+          PREFLIGHT_MODE: ${{ inputs.mode }}
           LIVE_ORIGIN: ${{ secrets.PORTAL_SITE_URL || vars.PORTAL_SITE_URL }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DEEPSEEK_API_KEY_BACKUP: ${{ secrets.DEEPSEEK_API_KEY_BACKUP }}
@@ -56,7 +69,12 @@ jobs:
           DEEPSEEK_MODEL: ${{ vars.DEEPSEEK_MODEL || 'deepseek-v4-flash' }}
         run: |
           set -euo pipefail
-          python3 -B scripts/preflight_portal_locale_translation.py \
+          case "$PREFLIGHT_MODE" in
+            sample) diagnostic_script=scripts/preflight_portal_locale_translation.py ;;
+            protocol) diagnostic_script=scripts/probe_portal_locale_protocol.py ;;
+            *) echo "Unsupported translation diagnostic mode" >&2; exit 2 ;;
+          esac
+          python3 -B "$diagnostic_script" \
             --diagnostics-out "$RUNNER_TEMP/portal-locale-preflight/diagnostics.json"
 
       - name: Summarize bounded translation diagnostics
