@@ -1584,6 +1584,12 @@ def translate_missing_units(
                                 }
                                 run_state.data["deferred_units_total"] += 1
                             sync_repairs()
+                            if deepl_repair is not None and len(deferred) >= 1024 and not run_state.stop_reason:
+                                # A large archive can contain many short source
+                                # fragments. Drain its bounded repair queue now
+                                # instead of restarting paid primary batches in
+                                # another backfill round merely for queue space.
+                                repair_pending()
                             if len(deferred) >= 1024:
                                 run_state.stop("Pending translation repair queue limit reached; saved completed rows", category="repair_limit")
                             completed += 1

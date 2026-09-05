@@ -275,6 +275,46 @@ class GroupedDeepLPreflightTests(unittest.TestCase):
         self.assertEqual(report["status"], "passed")
         self.assertEqual(report["provider_requests"], 6)
 
+    def test_large_residual_queue_drains_without_restarting_primary_batches(self):
+        units = {f"{index:064x}": builder.TranslationUnit(
+            f"{index:064x}", "html:text:p", f"第{index}段短句区间，远低于去年水平。",
+        ) for index in range(1600)}
+        cache = builder.empty_cache()
+        for locale in ("ja", "ar"):
+            cache["locales"][locale] = {
+                key: builder._translation_cache_row(unit, NATIVE[locale]) for key, unit in units.items()
+            }
+        primary_batches, repaired_sources = [], []
+        def primary(locale, batch):
+            self.assertEqual(locale, "ko")
+            primary_batches.append([unit.key for unit in batch])
+            raise builder.PartialTranslationError("unchanged short fragments", {})
+        def grouped(locale, sources):
+            self.assertEqual(locale, "ko")
+            repaired_sources.extend(sources)
+            return [NATIVE[locale]] * len(sources)
+        repair = mock.Mock()
+        repair.translate_many.side_effect = grouped
+        repair.translate.side_effect = lambda locale, source: grouped(locale, [source])[0]
+        repair.snapshot.return_value = {"provider_requests": 0, "stop_reason": ""}
+        state = builder.TranslationRun()
+        with tempfile.TemporaryDirectory() as directory, \
+                mock.patch.dict("os.environ", {"DEEPL_API_KEY": "offline-repair"}, clear=True), \
+                mock.patch.object(deepl, "DeepLRepair", return_value=repair), mock.patch.object(builder, "log"):
+            builder.translate_missing_units(
+                units, cache, cache_path=Path(directory) / "cache.json.gz",
+                model=builder.DEFAULT_DEEPSEEK_MODEL, base_url="https://provider.example.invalid",
+                workers=500, timeout=1, attempts=2, batch_translator=primary, run_state=state,
+            )
+        self.assertEqual(state.data["status"], "passed")
+        self.assertTrue(state.data["warmup_passed"])
+        self.assertEqual(state.data["repair_workers"], 1)
+        self.assertEqual(state.data["remaining_units_total"], 0)
+        self.assertEqual(state.data["repaired_units"], 1600)
+        self.assertCountEqual([key for batch in primary_batches for key in batch], units)
+        self.assertEqual(len(primary_batches), 50)
+        self.assertCountEqual(repaired_sources, [unit.source for unit in units.values()])
+
 
 if __name__ == "__main__":
     unittest.main()
