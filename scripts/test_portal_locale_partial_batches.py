@@ -45,6 +45,88 @@ class PartialBatchTests(unittest.TestCase):
                 with self.assertRaisesRegex(builder.TranslationError, "unchanged source"):
                     builder.validate_translation_quality("ko", unit, source)
 
+    def test_entity_identity_merges_both_collection_orders_without_changing_key(self):
+        alias = "Bank of America Merrill Lynch"
+        _protected, old_unit = builder.unit_for_text(alias, "jsonld:alternateName")
+        for entity_first in (False, True):
+            with self.subTest(entity_first=entity_first):
+                units = {}
+                collectors = [
+                    lambda: builder.collect_text_units(alias, "html:text:span", units),
+                    lambda: builder.json_ld_walk({"@type": "Organization", "alternateName": alias}, units=units),
+                ]
+                for collect in reversed(collectors) if entity_first else collectors:
+                    collect()
+                self.assertEqual(set(units), {old_unit.key})
+                self.assertIn(units[old_unit.key].context, builder.STRUCTURED_NAME_CONTEXTS)
+                for locale in builder.LOCALES:
+                    builder.validate_translation_quality(locale, units[old_unit.key], alias)
+
+    def test_old_entity_cache_is_annotated_without_requests_and_renders_other_fields(self):
+        alias = "Bank of America Merrill Lynch"
+        units = {}
+        builder.collect_text_units(alias, "html:text:span", units)
+        builder.json_ld_walk({"@type": "Organization", "alternateName": alias}, units=units)
+        unit = next(iter(units.values()))
+        for preflight in (False, True):
+            with self.subTest(preflight=preflight), tempfile.TemporaryDirectory() as directory:
+                cache = builder.empty_cache()
+                for locale in builder.LOCALES:
+                    cache["locales"][locale][unit.key] = {"source": alias, "translation": alias}
+                translator = mock.Mock(side_effect=AssertionError("Existing paid translation must be reused"))
+                path = Path(directory) / "cache.json.gz"
+                builder.translate_missing_units(
+                    units, cache, cache_path=path, model=builder.DEFAULT_DEEPSEEK_MODEL,
+                    base_url="https://api.deepseek.com", workers=1, timeout=1, attempts=2,
+                    preflight_only=preflight, batch_translator=translator,
+                )
+                translator.assert_not_called()
+                stored = builder.load_cache(path, builder.DEFAULT_DEEPSEEK_MODEL)
+                for locale in builder.LOCALES:
+                    self.assertTrue(stored["locales"][locale][unit.key]["entity_name"])
+                    rendered = builder.render_localized_html(
+                        f"<html><body><span>{alias}</span></body></html>",
+                        locale=locale, cache=stored, site_url="https://portal.example.invalid", discovery_markup="",
+                    )
+                    self.assertIn(f"<span>{alias}</span>", rendered)
+                    sentence = f"{alias} expects global markets to remain strong while interest rates rise."
+                    _protected, prose = builder.unit_for_text(sentence, "html:text:p")
+                    self.assertNotEqual(prose.key, unit.key)
+                    stored["locales"][locale][prose.key] = {"source": prose.source, "translation": prose.source}
+                    with self.assertRaisesRegex(builder.TranslationError, "unchanged source"):
+                        builder.translated_text(sentence, "html:text:p", locale, stored)
+
+    def test_success_and_partial_cache_rows_retain_entity_identity(self):
+        alias = "Bank of America Merrill Lynch"
+        units = {}
+        builder.json_ld_walk({"@type": "Organization", "alternateName": alias}, units=units)
+        entity = next(iter(units.values()))
+        for partial in (False, True):
+            with self.subTest(partial=partial), tempfile.TemporaryDirectory() as directory:
+                inventory = dict(units)
+                if partial:
+                    builder.collect_text_units("Ordinary market outlook remains unchanged", "html:text:p", inventory)
+
+                def translator(locale, batch):
+                    if partial:
+                        raise builder.PartialTranslationError("Only entity row completed", {entity.key: alias})
+                    return {unit.key: alias for unit in batch}
+
+                path = Path(directory) / "cache.json.gz"
+                kwargs = dict(
+                    cache_path=path, model=builder.DEFAULT_DEEPSEEK_MODEL,
+                    base_url="https://api.deepseek.com", workers=1, timeout=1, attempts=2,
+                    preflight_only=True, batch_translator=translator,
+                )
+                if partial:
+                    with self.assertRaises(builder.TranslationError):
+                        builder.translate_missing_units(inventory, builder.empty_cache(), **kwargs)
+                else:
+                    builder.translate_missing_units(inventory, builder.empty_cache(), **kwargs)
+                stored = builder.load_cache(path, builder.DEFAULT_DEEPSEEK_MODEL)
+                self.assertTrue(stored["locales"]["ko"][entity.key]["entity_name"])
+                self.assertEqual(builder.translated_text(alias, "html:text:span", "ko", stored), alias)
+
     def setUp(self):
         self.units = [
             builder.TranslationUnit("a" * 64, "html:text:p", "第一段公开研究报告的完整内容。"),

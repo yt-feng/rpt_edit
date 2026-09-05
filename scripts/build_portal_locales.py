@@ -740,11 +740,15 @@ def collect_text_units(value: str, context: str, target: dict[str, TranslationUn
             previous = target.get(unit.key)
             if previous is None:
                 target[unit.key] = unit
-            elif previous.data_placeholders != unit.data_placeholders:
+            else:
                 # A deduplicated slot may be a number on one page and a URL
                 # on another. Any structural use keeps that slot required.
-                optional = tuple(token for token in previous.data_placeholders if token in unit.data_placeholders)
-                target[unit.key] = TranslationUnit(previous.key, previous.context, previous.source, optional)
+                optional = previous.data_placeholders
+                if previous.data_placeholders != unit.data_placeholders:
+                    optional = tuple(token for token in previous.data_placeholders if token in unit.data_placeholders)
+                merged_context = unit.context if unit.context in STRUCTURED_NAME_CONTEXTS else previous.context
+                if merged_context != previous.context or optional != previous.data_placeholders:
+                    target[unit.key] = TranslationUnit(previous.key, merged_context, previous.source, optional)
 
 
 def _quality_visible_text(value: str) -> str:
@@ -800,6 +804,21 @@ def validate_translation_quality(locale: str, unit: TranslationUnit, translated:
         raise TranslationError(f"{locale}: translation has no {language_label} text for {unit.key}")
 
 
+def _cache_validation_unit(unit: TranslationUnit, row: dict[str, Any]) -> TranslationUnit:
+    # Identity provenance applies only to this complete source/key, never to a
+    # sentence that merely contains the name. It survives cross-field rendering.
+    if row.get("entity_name") is True and row.get("source") == unit.source:
+        return TranslationUnit(unit.key, "jsonld:entity:name", unit.source, unit.data_placeholders)
+    return unit
+
+
+def _translation_cache_row(unit: TranslationUnit, translated: str) -> dict[str, Any]:
+    row: dict[str, Any] = {"source": unit.source, "translation": translated.strip()}
+    if unit.context in STRUCTURED_NAME_CONTEXTS:
+        row["entity_name"] = True
+    return row
+
+
 def _valid_cache_row(locale: str, unit: TranslationUnit, row: Any) -> bool:
     if not isinstance(row, dict) or row.get("source") != unit.source:
         return False
@@ -807,7 +826,7 @@ def _valid_cache_row(locale: str, unit: TranslationUnit, row: Any) -> bool:
     if not isinstance(translated, str) or not translated.strip():
         return False
     try:
-        validate_translation_quality(locale, unit, translated)
+        validate_translation_quality(locale, _cache_validation_unit(unit, row), translated)
     except TranslationError:
         return False
     return True
@@ -829,6 +848,8 @@ def prune_translation_cache(
             if row is None:
                 continue
             if _valid_cache_row(locale, unit, row):
+                if unit.context in STRUCTURED_NAME_CONTEXTS:
+                    row["entity_name"] = True
                 retained[key] = row
             else:
                 invalid += 1
@@ -862,7 +883,7 @@ def translated_text(value: str, context: str, locale: str, cache: dict[str, Any]
         if not isinstance(row, dict) or row.get("source") != unit.source:
             raise TranslationError(f"Missing {locale} translation for {unit.key}")
         translated = str(row.get("translation") or "")
-        validate_translation_quality(locale, unit, translated)
+        validate_translation_quality(locale, _cache_validation_unit(unit, row), translated)
         output.append(protected.restore(translated))
     return "".join(output)
 
@@ -1107,6 +1128,9 @@ def translate_missing_units(
                        if key in entries and not _valid_cache_row(locale, unit, entries[key])]
             for key in invalid:
                 del entries[key]
+            for key, unit in units.items():
+                if key in entries and unit.context in STRUCTURED_NAME_CONTEXTS:
+                    entries[key]["entity_name"] = True
             prune_counts[locale] = {"retained": len(entries), "stale": 0, "invalid": len(invalid)}
     else:
         prune_counts = prune_translation_cache(cache, units)
@@ -1236,12 +1260,15 @@ def translate_missing_units(
                             if not isinstance(translated, str) or not translated.strip():
                                 raise TranslationError(f"{result_locale}: missing batch result for {unit.key}")
                             validate_translation_quality(result_locale, unit, translated)
-                            entries[unit.key] = {"source": unit.source, "translation": translated.strip()}
+                            entries[unit.key] = _translation_cache_row(unit, translated)
                         consecutive_failures = 0
                     except Exception as error:  # Retain other completed, validated results.
                         partial = getattr(error, "partial_translations", {})
                         for unit in batch:
-                            row = {"source": unit.source, "translation": partial.get(unit.key)}
+                            translated = partial.get(unit.key)
+                            if not isinstance(translated, str):
+                                continue
+                            row = _translation_cache_row(unit, translated)
                             if _valid_cache_row(locale, unit, row):
                                 cache["locales"][locale][unit.key] = row
                         reason = str(error) if isinstance(error, TranslationError) else type(error).__name__
