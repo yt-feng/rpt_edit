@@ -197,6 +197,8 @@ jobs:
             scripts/run_portal_locale_backfill.py \
             scripts/verify_portal_chinese_parity.py \
             scripts/audit_portal_shadow_preview.py \
+            scripts/audit_portal_chinese_discovery_plan.py \
+            scripts/audit_portal_locale_javascript_cache.py \
             scripts/edge_route_cutover.py \
             scripts/capture_edge_worker_deployment.py \
             scripts/publish_static_slot.py
@@ -207,6 +209,8 @@ jobs:
           python3 -B scripts/test_publish_static_slot.py
           python3 -B scripts/test_capture_edge_worker_deployment.py
           python3 -B scripts/test_build_portal_locales.py
+          python3 -B scripts/test_audit_portal_chinese_discovery_plan.py
+          python3 -B scripts/test_audit_portal_locale_javascript_cache.py
           python3 -B scripts/test_portal_locale_partial_batches.py
           python3 -B scripts/test_portal_locale_residual_repair.py
           python3 -B scripts/test_portal_locale_preflight_repair.py
@@ -673,6 +677,12 @@ jobs:
             --site-url "$LIVE_ORIGIN" \
             --output "$RUNNER_TEMP/chinese-before-locales.json" \
             "${active_manifest_args[@]}"
+
+      - name: Validate planned Chinese discovery before paid translation
+        if: steps.operation.outputs.multilingual_enabled == 'true'
+        run: |
+          python3 -B scripts/audit_portal_chinese_discovery_plan.py \
+            --root _neutral_site --site-url "$LIVE_ORIGIN"
 
       - name: Restore history release ledger from active production only
         if: steps.operation.outputs.multilingual_enabled == 'true'

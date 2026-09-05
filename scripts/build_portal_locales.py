@@ -4599,6 +4599,45 @@ def remove_existing_locale_discovery(
     return value
 
 
+class _RootDiscoveryHead(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.canonicals: list[str] = []
+        self.alternates: dict[str, list[str]] = {}
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag.lower() != "link":
+            return
+        values = {key.lower(): str(value or "").strip() for key, value in attrs}
+        relations = values.get("rel", "").lower().split()
+        if "canonical" in relations:
+            self.canonicals.append(values.get("href", ""))
+        if "alternate" in relations and values.get("hreflang"):
+            self.alternates.setdefault(values["hreflang"].lower(), []).append(values.get("href", ""))
+
+
+def root_discovery_eligible(source: str, canonical: str, site_url: str) -> bool:
+    """Extend existing Chinese clusters; never invent one on an English page."""
+    if not canonical or not is_indexable_html(source):
+        return False
+    parsed, origin = urlsplit(canonical), urlsplit(site_url)
+    if (parsed.scheme.lower() != "https" or parsed.netloc.lower() != origin.netloc.lower()
+            or not parsed.path.startswith("/") or parsed.fragment
+            or re.match(r"^/(?:ko|ja|ar)(?:/|$)", parsed.path, flags=re.I)):
+        return False
+    head = re.search(r"<head\b[^>]*>.*?</head\s*>", source, flags=re.I | re.S)
+    if not head:
+        return False
+    links = _RootDiscoveryHead()
+    links.feed(head.group(0))
+    links.close()
+    return (
+        links.canonicals == [canonical]
+        and links.alternates.get("zh-hans") == [canonical]
+        and links.alternates.get("x-default") == [canonical]
+    )
+
+
 def inject_root_discovery(source: str, canonical: str, site_url: str, asset_version: str) -> str:
     match = re.search(r"</head\s*>", source, flags=re.I)
     if not match:
@@ -4608,7 +4647,7 @@ def inject_root_discovery(source: str, canonical: str, site_url: str, asset_vers
         hreflangs_to_remove=frozenset(LOCALES),
     ).rstrip()
     return head + discovery_links(
-        canonical,
+        canonical if root_discovery_eligible(source, canonical, site_url) else "",
         site_url,
         asset_version,
         defer_runtime=True,
