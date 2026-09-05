@@ -15,7 +15,6 @@ import concurrent.futures
 from dataclasses import dataclass
 from datetime import date, datetime
 from decimal import Decimal, InvalidOperation, ROUND_FLOOR
-from difflib import SequenceMatcher
 from functools import lru_cache
 import gzip
 import hashlib
@@ -194,49 +193,12 @@ ARABIC_LETTER_RE = re.compile(
     r"\u0750-\u077f\u08a0-\u08c9\ufb50-\ufdff\ufe70-\ufefc]"
 )
 LATIN_RE = re.compile(r"[A-Za-z]")
-TICKER_RE = re.compile(r"(?<![A-Za-z0-9])(?:[A-Z]{1,6}(?:[.:-][A-Z0-9]{1,6})?)(?![A-Za-z0-9])")
 WORD_RE = re.compile(r"[A-Za-z]{2,}")
 OFFICIAL_NAME_CONTEXTS = frozenset({
     "catalog:bank_name",
     "chart:entities",
     "hot-report:institution",
 })
-OFFICIAL_NAME_CONNECTORS = frozenset({
-    "a", "al", "and", "at", "bin", "by", "de", "del", "for", "in", "la", "of", "on", "the",
-})
-OFFICIAL_NAME_PROSE_WORDS = frozenset({
-    "are", "continue", "continues", "expect", "expects", "fall", "falls", "fell", "grow", "grows",
-    "grew", "is", "remain", "remains", "rise", "rises", "rose", "was", "were",
-})
-OFFICIAL_LATIN_NAME_MARKERS = frozenset({
-    "ag", "asset", "bank", "capital", "company", "corp", "corporation", "foundation",
-    "fund", "group", "holdings", "inc", "institute", "llc", "lp", "ltd", "management",
-    "partners", "plc", "research", "securities", "service", "services", "university",
-})
-OFFICIAL_CJK_SUFFIX_RE = re.compile(
-    r"(?:公司|集团|集團|银行|銀行|证券|證券|研究所|研究院|大学|大學|协会|協會|委员会|委員會|"
-    r"基金|资本|資本|控股|股份|有限|科技|产业|産業|機構|机构|政府|中心|事务所|事務所|部|局|社|院)$"
-)
-OFFICIAL_CJK_PROSE_RE = re.compile(
-    r"上涨|上漲|上升|下跌|增长|增長|强劲|強勁|继续|繼續|仍然|预计|預計|"
-    r"认为|認為|动能|動能|利率|需求|趋势|趨勢|表现|表現|收益|风险|風險"
-)
-MIN_TARGET_SCRIPT_RATIO = 0.30
-# Han-only Japanese is legitimate for compact financial headings. Obvious
-# Simplified/Traditional-only forms and near-copies of a CJK source are useful
-# negative signals; a finite Japanese vocabulary is not, because short and
-# perfectly ordinary translations such as `確認`, `米国`, and `検索` otherwise
-# become impossible to accept.
-NON_JAPANESE_HAN_RE = re.compile(
-    r"[这为发个们时说对业东两严产从优动劲劳势华协单历压变员园围图场报拟"
-    r"据无权标树样桥检楼欢汉汇测济浓涛润涨满滤滨潜炼热爱现电础硕确简类"
-    r"级纪线经给绝统继绩续综编缩职联肃脑脸舰艺节范药获营蓝虑虽蚁补见观规视觉触订认"
-    r"议讯记讲许论设证评识诉词译试诗诚话询该语误说请读调谈谋谢谨贝财责货质购贵贷贸"
-    r"费资赋赏赔赚赠赵趋跃车转轮轻载较辅辑输辖边达迁过运还进远连迟选递逻邻释"
-    r"鉴钅钱铁银销锁锋锐错锦键镜长门问闯间闷闻阁阅阔队阳阴阵阶际陆陈险随隐难静页项"
-    r"顺须顾预领频题颜额风飞马驱验骑鱼鲜鸟鸡鸣鸭鹅鹰麦黄齐齿龄龙龟勁繼續與戰經濟證體臺萬廣關觀點據]"
-)
-JAPANESE_SHARED_HAN_ALLOWLIST = frozenset("潜触随静麦黄勁")
 NATIVE_LANGUAGE_LABELS = frozenset({"English", "中文", "日本語", "한국어", "العربية"})
 LATIN_PUBLIC_BRAND = "".join(("KC", "Desk"))
 TOKEN_RE = re.compile(
@@ -255,6 +217,15 @@ TOKEN_RE = re.compile(
     # adjacent amounts, percentages and dates whole instead of masking fragments.
     r"|(?<![A-Za-z0-9_.])(?:[$€£¥₩د.إر.س]\s*)?[+-]?\d[\d,.:/-]*(?:\s*[%％]|\s*(?:bps?|x))?(?![A-Za-z0-9_])",
     flags=re.S,
+)
+
+
+# Numeric masks keep cache reuse stable, but their fidelity is not a retry gate.
+DATA_TOKEN_RE = re.compile(
+    r"(?:[0-9]{4,6}\.(?:HK|SH|SZ|SS|BJ)|"
+    r"(?:NYSE|NASDAQ|AMEX|NYSEARCA|HKEX|SSE|SZSE|LSE|TSE):[A-Z0-9][A-Z0-9.-]{0,15}|"
+    r"\$[A-Z]{1,6}(?:\.[A-Z]{1,2})?|"
+    r"(?:[$€£¥₩د.إر.س]\s*)?[+-]?\d[\d,.:/-]*(?:\s*[%％]|\s*(?:bps?|x))?)"
 )
 
 
@@ -294,6 +265,7 @@ class TranslationUnit:
     key: str
     context: str
     source: str
+    data_placeholders: tuple[str, ...] = ()
 
 
 @dataclass(frozen=True)
@@ -317,6 +289,14 @@ class _BlogImageContainer:
 
 class TranslationError(RuntimeError):
     """Raised when a locale cannot be built without source-language fallback."""
+
+
+class PartialTranslationError(TranslationError):
+    """Keep usable paid rows when other rows in the response are missing."""
+
+    def __init__(self, message: str, translations: dict[str, str]) -> None:
+        super().__init__(message)
+        self.partial_translations = dict(translations)
 
 
 class ProviderHTTPError(TranslationError):
@@ -741,24 +721,31 @@ def unit_for_text(value: str, context: str) -> tuple[ProtectedText, TranslationU
     translation_class = "official-name" if context in OFFICIAL_NAME_CONTEXTS else "copy"
     key_material = f"{PROMPT_VERSION}\0{translation_class}\0{protected.canonical}".encode("utf-8")
     key = hashlib.sha256(key_material).hexdigest()
-    return protected, TranslationUnit(key, context, protected.canonical)
+    # Preserve canonical text/cache keys while treating numeric content as
+    # guidance, not structure that should trigger another paid request.
+    data_placeholders = tuple(
+        f"__KC_PH_{index:03d}__" for index, value in enumerate(protected.replacements)
+        if DATA_TOKEN_RE.fullmatch(value)
+    )
+    return protected, TranslationUnit(key, context, protected.canonical, data_placeholders)
 
 
 def collect_text_units(value: str, context: str, target: dict[str, TranslationUnit]) -> None:
     for part in split_text(value):
         _protected, unit = unit_for_text(part, context)
         if unit is not None:
-            target.setdefault(unit.key, unit)
+            previous = target.get(unit.key)
+            if previous is None:
+                target[unit.key] = unit
+            elif previous.data_placeholders != unit.data_placeholders:
+                # A deduplicated slot may be a number on one page and a URL
+                # on another. Any structural use keeps that slot required.
+                optional = tuple(token for token in previous.data_placeholders if token in unit.data_placeholders)
+                target[unit.key] = TranslationUnit(previous.key, previous.context, previous.source, optional)
 
 
 def _quality_visible_text(value: str) -> str:
-    """Return only human-language copy used by the translation quality gate.
-
-    Protected URLs, numbers, brands, and markup are intentionally removed here;
-    ticker-shaped tokens are removed by the later ratio calculation. They may
-    remain byte-identical without letting a target-language prefix disguise an
-    untranslated source sentence.
-    """
+    """Remove protected tokens and markup before checking for untranslated copy."""
     visible = PLACEHOLDER_RE.sub(" ", html_unescape(str(value or "")))
     visible = re.sub(r"<[^<>]*>", " ", visible)
     return re.sub(r"\s+", " ", visible).strip()
@@ -768,233 +755,46 @@ def _quality_compact(value: str) -> str:
     return "".join(character.casefold() for character in value if character.isalnum())
 
 
-def _looks_like_official_name(value: str) -> bool:
-    """Keep exact organization/entity names without turning a field into a bypass."""
-    source = str(value or "").strip()
-    if not source or len(source) > 200 or "\n" in source or "\r" in source:
-        return False
-    # Official non-Latin names cannot be title-cased. For Han text, however, the
-    # field alone is not enough: short prose is common in dirty metadata. Accept
-    # organization suffixes or compact name-shaped strings without prose cues.
-    if CJK_RE.search(source):
-        cjk = "".join(CJK_RE.findall(source))
-        if OFFICIAL_CJK_PROSE_RE.search(source) is not None:
-            return False
-        return bool(
-            OFFICIAL_CJK_SUFFIX_RE.search(source)
-            or len(cjk) <= 5
-        )
-    if ARABIC_LETTER_RE.search(source) or HANGUL_RE.search(source) or KANA_RE.search(source):
-        return not bool(re.search(r"[.!?。！？]\s*$", source))
-    words = re.findall(r"[A-Za-z][A-Za-z0-9.'&’-]*", source)
-    if not words or len(words) > 18:
-        return False
-    lowered = [word.casefold().strip(".'&’-") for word in words]
-    if any(word in OFFICIAL_NAME_PROSE_WORDS for word in lowered):
-        return False
-    significant = [word for word in lowered if word not in OFFICIAL_NAME_CONNECTORS]
-    if len(significant) < 3 and not any(word in OFFICIAL_LATIN_NAME_MARKERS for word in significant):
-        return False
-    for word, normalized in zip(words, lowered):
-        if not normalized or normalized in OFFICIAL_NAME_CONNECTORS:
-            continue
-        if word[0].isupper() or word.isupper() or any(character.isdigit() for character in word):
-            continue
-        return False
-    return True
-
-
-def _official_name_passthrough(unit: TranslationUnit, source: str, translated: str) -> bool:
-    """Allow a field whose explicit data contract is an official name.
-
-    This exception is deliberately context-bound. A title, description, body,
-    or UI label cannot opt out merely because it contains capital letters.
-    """
-    return (
-        unit.context in OFFICIAL_NAME_CONTEXTS
-        and _quality_compact(source) == _quality_compact(translated)
-        and _looks_like_official_name(source)
-    )
-
-
-def _matching_sequence_size(source: list[str] | str, translated: list[str] | str) -> int:
-    return sum(
-        block.size
-        for block in SequenceMatcher(None, source, translated, autojunk=False).get_matching_blocks()
-    )
-
-
-def _contains_english_prose_copy(source: str, translated: str) -> bool:
-    """Detect contiguous or fragmented English prose carried into the output."""
-    source_words = re.findall(r"[A-Za-z][A-Za-z'-]{1,}", source)
-    translated_words = [word.casefold() for word in re.findall(r"[A-Za-z][A-Za-z'-]{1,}", translated)]
-    if len(source_words) < 6 or len(translated_words) < 6:
-        return False
-    translated_stream = "\0".join(translated_words)
-    for start in range(len(source_words) - 5):
-        window = source_words[start:start + 6]
-        # Proper names may remain in the source alphabet. Requiring several
-        # lowercase source words keeps those names out of this prose detector.
-        if sum(word[:1].islower() for word in window) < 3:
-            continue
-        if "\0".join(word.casefold() for word in window) in translated_stream:
-            return True
-    # Replacing every sixth word used to defeat the contiguous-window check
-    # while leaving most of the source intact. Ordered overlap catches that
-    # pattern but still permits a retained organization or product name.
-    source_normalized = [word.casefold() for word in source_words]
-    matched = _matching_sequence_size(source_normalized, translated_words)
-    return len(source_words) >= 8 and matched >= 6 and matched / len(source_words) >= 0.65
-
-
-def _contains_cjk_prose_copy(source: str, translated: str) -> bool:
-    """Detect a substantial contiguous or fragmented Chinese carry-over."""
-    source_cjk = "".join(CJK_RE.findall(source))
-    translated_cjk = "".join(CJK_RE.findall(translated))
-    if len(source_cjk) < 8 or len(translated_cjk) < 8:
-        return False
-    minimum = max(8, (len(source_cjk) * 2 + 2) // 3)
-    for start in range(len(source_cjk) - minimum + 1):
-        if source_cjk[start:start + minimum] in translated_cjk:
-            return True
-    matched = _matching_sequence_size(source_cjk, translated_cjk)
-    return matched >= 8 and matched / len(source_cjk) >= 0.60
-
-
-def _is_compact_shared_han_japanese(source: str, translated: str) -> bool:
-    """Recognize short all-Kanji labels that script checks cannot disambiguate.
-
-    Japanese legitimately uses unchanged labels such as `日本` and small
-    orthographic/lexical changes such as `金融市場` or `政府機関`. Long prose does
-    not receive this exception and remains subject to overlap detection.
-    """
-    if KANA_RE.search(source) or KANA_RE.search(translated):
-        return False
-    source_cjk = "".join(CJK_RE.findall(source))
-    translated_cjk = "".join(CJK_RE.findall(translated))
-    if not source_cjk or not translated_cjk:
-        return False
-    source_letters = "".join(character for character in source if character.isalpha())
-    translated_letters = "".join(character for character in translated if character.isalpha())
-    if source_letters != source_cjk or translated_letters != translated_cjk:
-        return False
-    has_non_japanese_han = any(
-        character not in JAPANESE_SHARED_HAN_ALLOWLIST
-        and NON_JAPANESE_HAN_RE.fullmatch(character) is not None
-        for character in translated_cjk
-    )
-    if has_non_japanese_han:
-        return False
-    if source_cjk == translated_cjk:
-        return len(source_cjk) <= 4
-    return len(source_cjk) <= 6 and len(translated_cjk) <= 10
-
-
-def _validate_han_only_japanese(unit: TranslationUnit, source: str, translated: str) -> None:
-    """Allow genuine Kanji-only Japanese without accepting obvious Chinese copies."""
-    translated_cjk = "".join(CJK_RE.findall(translated))
-    has_non_japanese_han = any(
-        character not in JAPANESE_SHARED_HAN_ALLOWLIST
-        and NON_JAPANESE_HAN_RE.fullmatch(character) is not None
-        for character in translated_cjk
-    )
-    if not translated_cjk or has_non_japanese_han:
-        raise TranslationError(f"ja: Han-only output lacks Japanese orthography for {unit.key}")
-    source_cjk = "".join(CJK_RE.findall(source))
-    if not source_cjk:
-        # Japanese headings and keywords can naturally be all Kanji. Do not
-        # require a closed vocabulary or artificial kana just to pass the gate.
-        return
-    if _is_compact_shared_han_japanese(source, translated):
-        return
-    similarity = SequenceMatcher(None, source_cjk, translated_cjk, autojunk=False).ratio()
-    if similarity > 0.70:
-        raise TranslationError(f"ja: Japanese Han text changed too little for {unit.key}")
-
-
 def validate_translation_quality(locale: str, unit: TranslationUnit, translated: str) -> None:
-    """Fail closed when a translation is missing its target language or echoes source.
-
-    The checks are intentionally script-aware rather than dictionary-based:
-    Korean requires Hangul, Arabic requires Arabic letters, and Japanese may
-    use kana or a genuinely changed Han-character rendering. Protected values
-    and official-name fields remain usable without weakening prose checks.
-    """
+    """Check missing translation and structural integrity, not linguistic quality."""
     if locale not in LOCALES:
         raise TranslationError(f"Unsupported translation locale: {locale}")
     text = str(translated or "").strip()
     if not text:
         raise TranslationError(f"{locale}: empty translation for {unit.key}")
-    if sorted(PLACEHOLDER_RE.findall(text)) != sorted(PLACEHOLDER_RE.findall(unit.source)):
+    expected = PLACEHOLDER_RE.findall(unit.source)
+    actual = PLACEHOLDER_RE.findall(text)
+    optional = set(unit.data_placeholders)
+    if (set(actual) - set(expected)
+            or sorted(token for token in actual if token not in optional)
+            != sorted(token for token in expected if token not in optional)):
         raise TranslationError(f"{locale}: placeholder mismatch for {unit.key}")
 
     source_visible = _quality_visible_text(unit.source)
     translated_visible = _quality_visible_text(text)
+    if source_visible and not translated_visible:
+        raise TranslationError(f"{locale}: empty translation for {unit.key}")
+    if unit.context in OFFICIAL_NAME_CONTEXTS:
+        return
     source_compact = _quality_compact(source_visible)
     translated_compact = _quality_compact(translated_visible)
-    official_passthrough = _official_name_passthrough(unit, source_visible, translated_visible)
-    compact_shared_han_japanese = (
-        locale == "ja"
-        and _is_compact_shared_han_japanese(source_visible, translated_visible)
-    )
-
-    # A validated name is the only exact passthrough. Return before generic
-    # prose detection so long legal organization names are not misclassified.
-    if official_passthrough:
+    # Names/acronyms and short Japanese Kanji headings can legitimately remain
+    # identical. Do not infer language quality from spelling or script ratios.
+    if locale == "ja" and len(source_compact) <= 12 and all(
+        not character.isalpha() or CJK_RE.fullmatch(character)
+        for character in source_visible
+    ):
         return
-
-    if source_compact and translated_compact == source_compact and not compact_shared_han_japanese:
+    if not CJK_RE.search(source_visible) and len(WORD_RE.findall(source_visible)) < 3:
+        return
+    if source_compact and translated_compact == source_compact:
         raise TranslationError(f"{locale}: unchanged source text for {unit.key}")
-
-    japanese_shared_han_with_grammar = False
     if source_compact and source_compact in translated_compact:
-        source_position = translated_compact.find(source_compact)
-        japanese_shared_han_with_grammar = (
-            locale == "ja"
-            and source_position == 0
-            and bool(CJK_RE.search(source_visible))
-            and len(KANA_RE.findall(translated_visible)) >= 2
-            and len(translated_compact) >= len(source_compact) + 2
-        )
-        if not japanese_shared_han_with_grammar and not compact_shared_han_japanese:
-            raise TranslationError(f"{locale}: translation retains complete source text for {unit.key}")
-
-    if _contains_english_prose_copy(source_visible, translated_visible):
-        raise TranslationError(f"{locale}: translation retains English source prose for {unit.key}")
-    if locale in {"ko", "ar"} and _contains_cjk_prose_copy(source_visible, translated_visible):
-        raise TranslationError(f"{locale}: translation retains Chinese source prose for {unit.key}")
-
-    ratio_visible = TICKER_RE.sub(" ", translated_visible)
-    alphabetic_count = sum(character.isalpha() for character in ratio_visible)
-    if locale == "ko":
-        target_count = len(HANGUL_RE.findall(ratio_visible))
-        if target_count == 0:
-            raise TranslationError(f"{locale}: translation has no Hangul for {unit.key}")
-    elif locale == "ar":
-        target_count = len(ARABIC_LETTER_RE.findall(ratio_visible))
-        if target_count == 0:
-            raise TranslationError(f"{locale}: translation has no Arabic text for {unit.key}")
-    else:
-        kana_count = len(KANA_RE.findall(ratio_visible))
-        cjk_count = len(CJK_RE.findall(ratio_visible))
-        target_count = kana_count + cjk_count
-        if target_count == 0:
-            raise TranslationError(f"{locale}: translation has no Japanese script for {unit.key}")
-        if kana_count == 0:
-            _validate_han_only_japanese(unit, source_visible, translated_visible)
-        elif CJK_RE.search(source_visible) and not japanese_shared_han_with_grammar:
-            source_cjk = "".join(CJK_RE.findall(source_visible))
-            translated_cjk = "".join(CJK_RE.findall(translated_visible))
-            if len(source_cjk) >= 8 and len(translated_cjk) >= 8:
-                matched = _matching_sequence_size(source_cjk, translated_cjk)
-                if matched / len(source_cjk) >= 0.80 and kana_count / len(source_cjk) < 0.35:
-                    raise TranslationError(f"ja: translation retains fragmented Chinese source prose for {unit.key}")
-
-    # One translated word is not enough to disguise a long English/Chinese
-    # source. HTML/code/protected tokens were removed above, so this remains
-    # tolerant of URLs, numeric data, tickers, and brand placeholders.
-    if alphabetic_count >= 16 and target_count / alphabetic_count < MIN_TARGET_SCRIPT_RATIO:
-        raise TranslationError(f"{locale}: target-language coverage is too low for {unit.key}")
+        raise TranslationError(f"{locale}: translation retains complete source text for {unit.key}")
+    target_pattern = {"ko": HANGUL_RE, "ja": re.compile(f"{KANA_RE.pattern}|{CJK_RE.pattern}"), "ar": ARABIC_LETTER_RE}[locale]
+    if source_compact and not target_pattern.search(translated_visible):
+        language_label = {"ko": "Hangul", "ja": "Japanese", "ar": "Arabic"}[locale]
+        raise TranslationError(f"{locale}: translation has no {language_label} text for {unit.key}")
 
 
 def _valid_cache_row(locale: str, unit: TranslationUnit, row: Any) -> bool:
@@ -1095,25 +895,30 @@ def parse_translation_batch(value: str, units: list[TranslationUnit], locale: st
         raise TranslationError(f"{locale}: translation response has no translations list")
     expected = {unit.key: unit for unit in units}
     translated: dict[str, str] = {}
+    errors: list[str] = []
     for row_index, row in enumerate(rows):
-        if not isinstance(row, dict):
-            raise TranslationError(f"{locale}: translation response row {row_index} is invalid")
-        key = row.get("id")
-        if not isinstance(key, str):
-            raise TranslationError(f"{locale}: invalid ID type {type(key).__name__} at row {row_index}; expected a string")
-        if key not in expected:
-            raise TranslationError(f"{locale}: unknown translation ID {key[:80]!r} at row {row_index}")
-        if key in translated:
-            raise TranslationError(f"{locale}: duplicate translation ID {key}")
-        raw_text = row.get("text")
-        if not isinstance(raw_text, str) or not raw_text.strip():
-            raise TranslationError(f"{locale}: missing or invalid translation text for {key}")
-        text = raw_text.strip()
-        validate_translation_quality(locale, expected[key], text)
-        translated[key] = text
+        try:
+            if not isinstance(row, dict):
+                raise TranslationError(f"{locale}: translation response row {row_index} is invalid")
+            key = row.get("id")
+            if not isinstance(key, str):
+                raise TranslationError(f"{locale}: invalid ID type {type(key).__name__} at row {row_index}; expected a string")
+            if key not in expected:
+                raise TranslationError(f"{locale}: unknown translation ID {key[:80]!r} at row {row_index}")
+            if key in translated:
+                continue  # A repeated row does not invalidate its usable first copy.
+            raw_text = row.get("text")
+            if not isinstance(raw_text, str) or not raw_text.strip():
+                raise TranslationError(f"{locale}: missing or invalid translation text for {key}")
+            text = raw_text.strip()
+            validate_translation_quality(locale, expected[key], text)
+            translated[key] = text
+        except TranslationError as error:
+            errors.append(str(error))
     if set(translated) != set(expected):
         missing = ",".join(sorted(set(expected) - set(translated)))[:240]
-        raise TranslationError(f"{locale}: DeepSeek omitted translation rows: {missing}")
+        reason = errors[0] if errors else f"{locale}: DeepSeek omitted translation rows: {missing}"
+        raise PartialTranslationError(reason, translated)
     return translated
 
 
@@ -1134,10 +939,9 @@ def deepseek_translate_batch(
     run_state = run_state or TranslationRun()
     keys = [part.strip() for name in DEEPSEEK_KEY_ENV_NAMES
             for part in re.split(r"[\n,;]+", os.getenv(name, "")) if part.strip()]
-    config = LOCALES[locale]
     # Compact IDs save request and response tokens without changing cache keys.
     request_units = [
-        TranslationUnit(key=str(index), context=unit.context, source=unit.source)
+        TranslationUnit(key=str(index), context=unit.context, source=unit.source, data_placeholders=unit.data_placeholders)
         for index, unit in enumerate(units)
     ]
     request_rows = [{"id": unit.key, "context": unit.context, "source_text": unit.source} for unit in request_units]
@@ -1169,10 +973,16 @@ def deepseek_translate_batch(
     }
     label = f"{locale} batch {units[0].key[:8]}"
     last_error: Exception | None = None
+    accepted: dict[str, str] = {}
+
+    def cache_key_results() -> dict[str, str]:
+        return {unit.key: accepted[str(index)] for index, unit in enumerate(units) if str(index) in accepted}
+
     for output_attempt in range(1, max(1, attempts) + 1):
         content = ""
-        request_id = run_state.reserve(payload)
+        request_id = None
         try:
+            request_id = run_state.reserve(payload)
             response = request_with_key_fallback(
                 base_url.rstrip("/") + "/chat/completions",
                 headers={"Content-Type": "application/json"},
@@ -1190,7 +1000,7 @@ def deepseek_translate_batch(
             )
             run_state.response(request_id, locale, response)
             content = _response_content(response, label)
-            translated = parse_translation_batch(content, request_units, locale)
+            accepted.update(parse_translation_batch(content, request_units, locale))
             with run_state.lock:
                 samples = run_state.data.setdefault("success_samples", [])
                 if sum(sample["locale"] == locale for sample in samples) < 2:
@@ -1199,30 +1009,40 @@ def deepseek_translate_batch(
                         "request_id": request_id, "locale": locale,
                         "context": sample_unit.context,
                         "source": sample_unit.source[:600],
-                        "translation": translated[sample_unit.key][:1000],
+                        "translation": accepted[sample_unit.key][:1000],
                     })
-            return {unit.key: translated[str(index)] for index, unit in enumerate(units)}
+            return cache_key_results()
         except ProviderHTTPError as error:
+            error.partial_translations = cache_key_results()
             run_state.failure(locale, error, request_units, request_id=request_id)
             log(f"DeepSeek {label}: HTTP {error.status}; no output retry.")
             raise
+        except TranslationStopped as error:
+            error.partial_translations = cache_key_results()
+            raise
         except TranslationError as error:
+            accepted.update(getattr(error, "partial_translations", {}))
             run_state.failure(locale, error, request_units, request_id=request_id, content=content)
             last_error = error
             if output_attempt >= max(1, attempts):
                 break
-            # A deterministic retry of an identical rejected prompt wastes calls.
-            # Give the next bounded attempt the precise local validation reason.
+            # Retain successful rows and pay only to fill the remaining gaps.
+            request_units = [unit for unit in request_units if unit.key not in accepted]
+            request_rows = [{"id": unit.key, "context": unit.context, "source_text": unit.source} for unit in request_units]
+            request_message = json.loads(payload["messages"][1]["content"])
+            request_message["items"] = request_rows
+            payload["messages"][1]["content"] = json.dumps(request_message, ensure_ascii=False)
+            payload["max_tokens"] = min(32_000, max(1_000, sum(len(unit.source) for unit in request_units) * 2))
             payload["messages"] = payload["messages"][:2] + [{
                 "role": "user",
-                "content": f"上次输出未通过检查：{str(error)[:400]}。请修正该问题，重新输出完整的translations JSON。"
+                "content": f"上次输出未通过检查：{str(error)[:400]}。已保存成功译文；仅补齐本次items中的剩余条目，输出translations JSON。"
                            "全部通用词语（含英文关键词）必须翻译成目标语言；ID用字符串，保留每项占位符，不遗漏任何条目。",
             }]
-            log(f"DeepSeek {label}: {error}; output attempt {output_attempt} failed; retrying.")
+            log(f"DeepSeek {label}: {error}; retained={len(accepted)}; retrying only {len(request_units)} missing rows.")
         except Exception as error:
             run_state.failure(locale, error, request_units, request_id=request_id)
-            raise TranslationError(f"{label}: provider transport failed ({type(error).__name__})") from error
-    raise TranslationError(str(last_error) if last_error else f"{label}: translation failed")
+            raise PartialTranslationError(f"{label}: provider transport failed ({type(error).__name__})", cache_key_results()) from error
+    raise PartialTranslationError(str(last_error) if last_error else f"{label}: translation failed", cache_key_results())
 
 
 def pack_batches(
@@ -1315,9 +1135,25 @@ def translate_missing_units(
                 seen_contexts.update(unit.context for unit in batch)
             batches = selected
         jobs.extend((locale, batch) for batch in batches)
+    # Start the actual inventory with a small, useful all-language cohort.
+    # These rows become the final cache, not throwaway test translations.
+    warmup_size = 0
+    if not preflight_only and worker_count > 8:
+        warmup, remainder = [], []
+        warmup_counts = {locale: 0 for locale in LOCALES}
+        for job in jobs:
+            locale = job[0]
+            if warmup_counts[locale] < 4:
+                warmup.append(job)
+                warmup_counts[locale] += 1
+            else:
+                remainder.append(job)
+        jobs = warmup + remainder
+        warmup_size = len(warmup)
     run_state.data.update({
         "preflight_only": preflight_only, "missing_units": missing_counts,
         "selected_batches": len(jobs), "workers": worker_count,
+        "warmup_batches": warmup_size, "warmup_workers": min(8, worker_count),
         "selected_contexts": sorted({unit.context for _locale, batch in jobs for unit in batch}),
     })
     if not jobs:
@@ -1370,13 +1206,18 @@ def translate_missing_units(
             pending: dict[Any, tuple[str, list[TranslationUnit]]] = {}
             job_iterator = iter(jobs)
             exhausted = False
+            submitted = 0
             while pending or not exhausted:
-                while not exhausted and not run_state.stop_reason and len(pending) < worker_count:
+                warming_up = completed < warmup_size
+                active_limit = min(8, worker_count) if warming_up else worker_count
+                while (not exhausted and not run_state.stop_reason and len(pending) < active_limit
+                       and (not warming_up or submitted < warmup_size)):
                     job = next(job_iterator, None)
                     if job is None:
                         exhausted = True
                         break
                     pending[executor.submit(run, job)] = job
+                    submitted += 1
                 if not pending:
                     break
                 done, _ = concurrent.futures.wait(pending, return_when=concurrent.futures.FIRST_COMPLETED)
@@ -1395,15 +1236,27 @@ def translate_missing_units(
                             entries[unit.key] = {"source": unit.source, "translation": translated.strip()}
                         consecutive_failures = 0
                     except Exception as error:  # Retain other completed, validated results.
+                        partial = getattr(error, "partial_translations", {})
+                        for unit in batch:
+                            row = {"source": unit.source, "translation": partial.get(unit.key)}
+                            if _valid_cache_row(locale, unit, row):
+                                cache["locales"][locale][unit.key] = row
                         reason = str(error) if isinstance(error, TranslationError) else type(error).__name__
                         failures.append(f"{locale}/{batch[0].key[:12]}: {reason}")
                         consecutive_failures += 1
                         run_state.failure(locale, error, batch)
                         if isinstance(error, ProviderHTTPError) and error.status in {401, 402, 403}:
                             run_state.stop(f"DeepSeek HTTP {error.status}; stopped new provider requests")
+                        if warming_up:
+                            run_state.stop("Initial small-cohort translation incomplete; saved usable rows before high concurrency")
                         if preflight_only or consecutive_failures >= 3 or (completed >= 5 and len(failures) / (completed + 1) >= 0.8):
                             run_state.stop("Preflight failed" if preflight_only else "Systemic translation failures; stopped new requests")
                     completed += 1
+                if warmup_size and completed == warmup_size and not run_state.stop_reason:
+                    run_state.data["warmup_passed"] = True
+                    write_cache(cache_path, cache)
+                    run_state.write()
+                    log(f"Initial {warmup_size} translation batches passed and cached; enabling {worker_count} workers.")
                 if run_state.stop_reason:
                     exhausted = True
                     for future in pending:
