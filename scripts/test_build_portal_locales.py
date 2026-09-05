@@ -1582,7 +1582,8 @@ class PortalLocaleBuildTests(unittest.TestCase):
             with self.subTest(source=source):
                 unit = builder.TranslationUnit("written-quantity", "html:text:p", source)
                 builder.validate_translation_quality("ko", unit, "연구 보고서에 나온 수치는 " + value + "입니다")
-        for source in ("一带一路", "一旦增长", "一百二十年展望", "二〇二六年展望", "First Solar outlook"):
+        for source in ("一带一路", "一旦增长", "一百二十年展望", "二〇二六年展望", "First Solar outlook",
+                       "二分之一年", "四又二分之一年", "两年半", "百分之二分之一"):
             with self.subTest(source=source):
                 self.assertFalse(builder._written_numeric_allowances(source))
         unit = builder.TranslationUnit("two-quantities", "html:text:p", "三家银行和三家公司")

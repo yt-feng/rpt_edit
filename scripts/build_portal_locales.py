@@ -944,9 +944,9 @@ def _written_numeric_allowances(visible: str) -> Counter[Decimal]:
     numerals = "零〇一二三四五六七八九十百千万萬亿億两兩点點"
     number = f"[{numerals}]+"
     quantities = re.finditer(
-        rf"(?<![{numerals}])(?:百分之(?P<percent>{number})|前(?P<rank>{number})大|"
+        rf"(?<![{numerals}])(?<!分之)(?<!又)(?:百分之(?P<percent>{number})(?![{numerals}]|分之|又)|前(?P<rank>{number})大|"
         rf"第(?P<ordinal>{number})(?:季度|年|月|周|週|天|日|名|位|次|期)|"
-        rf"(?P<count>{number})(?:季度|周年|个月|個月|年|月|周|週|天|日|家|个|個|项|項|名|位|人|倍|次|期))",
+        rf"(?P<count>{number})(?:季度|周年|个月|個月|年|月|周|週|天|日|家|个|個|项|項|名|位|人|倍|次|期))(?!半)",
         visible,
     )
     digits = dict(zip("零〇一二三四五六七八九两兩", "0012345678922"))
