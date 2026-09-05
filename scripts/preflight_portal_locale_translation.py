@@ -193,9 +193,9 @@ def run_preflight(
             builder.translate_missing_units(
                 units, builder.empty_cache(model),
                 cache_path=Path(temporary) / "cache-v1.json.gz",
-                model=model, base_url=base_url, workers=1, timeout=120, attempts=1,
-                max_batch_chars=8 * MAX_FIELD_CHARS, max_batch_items=8,
-                preflight_only=True, preflight_batches_per_locale=2,
+                model=model, base_url=base_url, workers=1, timeout=120, attempts=2,
+                max_batch_chars=MAX_SAMPLE_UNITS * MAX_FIELD_CHARS, max_batch_items=MAX_SAMPLE_UNITS,
+                preflight_only=True, preflight_batches_per_locale=1,
                 diagnostics_out=diagnostics_out, max_provider_requests=MAX_PROVIDER_REQUESTS,
             )
     except Exception as error:
