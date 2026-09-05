@@ -1,0 +1,48 @@
+name: Inspect cached locale JavaScript
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portal-locale-cache-audit
+  cancel-in-progress: false
+
+jobs:
+  inspect:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            scripts
+            portal_suite/site_src/assets
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/cache/restore@v4
+        with:
+          path: ${{ runner.temp }}/portal-locale-cache/cache-v1.json.gz
+          key: locale-cache-audit-${{ github.run_id }}
+          restore-keys: |
+            portal-locale-cache-
+          fail-on-cache-miss: true
+      - name: Inspect cached public scripts without any translation credentials
+        run: |
+          python3 scripts/audit_portal_locale_javascript_cache.py \
+            --assets portal_suite/site_src/assets \
+            --cache "$RUNNER_TEMP/portal-locale-cache/cache-v1.json.gz" \
+            --output "$RUNNER_TEMP/locale-javascript-audit"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: locale-javascript-audit-${{ github.run_id }}
+          path: ${{ runner.temp }}/locale-javascript-audit
+          if-no-files-found: error
+          retention-days: 7
