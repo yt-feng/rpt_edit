@@ -14,6 +14,7 @@ import argparse
 import concurrent.futures
 from dataclasses import dataclass
 from datetime import date, datetime
+from decimal import Decimal, InvalidOperation, ROUND_FLOOR
 from difflib import SequenceMatcher
 from functools import lru_cache
 import gzip
@@ -334,17 +335,47 @@ class TranslationRun:
         "prompt_cache_hit_tokens", "prompt_cache_miss_tokens",
     )
 
-    def __init__(self, path: Path | None = None, max_requests: int | None = None) -> None:
+    def __init__(
+        self, path: Path | None = None, max_requests: int | None = None,
+        max_cost_cny: str | float | int | None = None,
+    ) -> None:
         self.path = path
         self.max_requests = max_requests
         self.lock = threading.RLock()
         self.stop_reason = ""
+        self.max_cost_micro_cny: int | None = None
+        if max_cost_cny is not None:
+            try:
+                limit = Decimal(str(max_cost_cny))
+                if not limit.is_finite() or limit <= 0:
+                    raise InvalidOperation
+                self.max_cost_micro_cny = int((limit * 1_000_000).to_integral_value(rounding=ROUND_FLOOR))
+                if self.max_cost_micro_cny < 1:
+                    raise InvalidOperation
+            except (InvalidOperation, ValueError, OverflowError) as error:
+                raise TranslationError("--max-provider-cost-cny must be a positive finite amount of at least 0.000001") from error
+        self.cost_reservations: dict[int, dict[str, int]] = {}
         self.data: dict[str, Any] = {
             "schema_version": 1, "status": "running", "provider_requests": 0,
             "max_provider_requests": max_requests, "responses": [], "failures": [],
             "failure_samples": [], "usage_totals": {}, "usage_unknown_responses": 0,
             "usage_partial_responses": 0, "usage_complete_responses": 0,
             "unobserved_provider_requests": 0,
+            "cost_guard": {
+                "enabled": self.max_cost_micro_cny is not None,
+                "max_cost_micro_cny": self.max_cost_micro_cny,
+                "accounted_upper_micro_cny": 0,
+                "retained_reservations_micro_cny": 0,
+                "settled_peak_estimate_micro_cny": 0,
+                "assumptions": {
+                    "model": "deepseek-v4-flash", "thinking": "disabled",
+                    "input_micro_cny_per_token": 3, "output_micro_cny_per_token": 9,
+                    "input_token_estimate": "ASCII-escaped request JSON bytes plus 4096 chat-framing tokens",
+                    "pricing": "Peak input cache-miss and output prices; cache/off-peak discounts ignored",
+                    "scope": "Conservative per-invocation estimate under tokenizer, framing and provider pricing assumptions; not an account balance or billing cap",
+                    "unknown_usage": "Retain the full request reservation when usage is incomplete or no response is observed",
+                },
+            },
         }
 
     def stop(self, reason: str) -> None:
@@ -358,15 +389,83 @@ class TranslationRun:
             if self.stop_reason:
                 raise TranslationStopped(self.stop_reason)
 
-    def reserve(self) -> int:
+    def reserve(self, payload: dict[str, Any] | None = None) -> int:
         with self.lock:
             self.check()
             if self.max_requests is not None and self.data["provider_requests"] >= self.max_requests:
                 self.stop("Provider request limit reached")
                 raise TranslationStopped(self.stop_reason)
+            reservation = None
+            if self.max_cost_micro_cny is not None:
+                if (
+                    not isinstance(payload, dict)
+                    or normalize_deepseek_model_name(payload.get("model")) != "deepseek-v4-flash"
+                    or payload.get("thinking") != {"type": "disabled"}
+                    or type(payload.get("max_tokens")) is not int
+                    or not 0 < payload["max_tokens"] <= 32_000
+                ):
+                    self.stop("Cost guard requires deepseek-v4-flash, thinking disabled, and max_tokens between 1 and 32000")
+                    raise TranslationStopped(self.stop_reason)
+                try:
+                    input_upper = len(json.dumps(payload, ensure_ascii=True, allow_nan=False).encode("ascii")) + 4096
+                except (TypeError, ValueError) as error:
+                    self.stop("Cost guard cannot bound request payload")
+                    raise TranslationStopped(self.stop_reason) from error
+                # Integer micro-CNY: peak 3 CNY/M input and 9 CNY/M output.
+                amount = 3 * input_upper + 9 * payload["max_tokens"]
+                cost = self.data["cost_guard"]
+                if cost["accounted_upper_micro_cny"] + amount > self.max_cost_micro_cny:
+                    self.stop("Provider cost estimate limit reached; stopped new requests")
+                    raise TranslationStopped(self.stop_reason)
+                reservation = {"input_token_upper": input_upper, "output_token_upper": payload["max_tokens"], "micro_cny": amount}
+                cost["accounted_upper_micro_cny"] += amount
+                cost["retained_reservations_micro_cny"] += amount
             self.data["provider_requests"] += 1
             self.data["unobserved_provider_requests"] += 1
+            if reservation is not None:
+                self.cost_reservations[self.data["provider_requests"]] = reservation
             return self.data["provider_requests"]
+
+    def reconcile_cost(self, request_id: int, usage: dict[str, int]) -> dict[str, Any]:
+        """Called under the run lock before content parsing, including failed outputs."""
+        reservation = self.cost_reservations.get(request_id)
+        if reservation is None:
+            return {}
+        cost = self.data["cost_guard"]
+        complete = all(key in usage for key in self.USAGE_FIELDS[:3])
+        consistent = complete and usage["total_tokens"] == usage["prompt_tokens"] + usage["completion_tokens"]
+        exceeded = (
+            usage.get("prompt_tokens", 0) > reservation["input_token_upper"]
+            or usage.get("completion_tokens", 0) > reservation["output_token_upper"]
+        )
+        outcome: dict[str, Any] = {
+            "reserved_micro_cny": reservation["micro_cny"], "usage_consistent": bool(consistent),
+            "reservation_bound_exceeded": exceeded,
+        }
+        if consistent:
+            observed = 3 * usage["prompt_tokens"] + 9 * usage["completion_tokens"]
+            cost["accounted_upper_micro_cny"] += observed - reservation["micro_cny"]
+            cost["retained_reservations_micro_cny"] -= reservation["micro_cny"]
+            cost["settled_peak_estimate_micro_cny"] += observed
+            del self.cost_reservations[request_id]
+            outcome.update(settlement="observed_usage_peak_estimate", settled_micro_cny=observed)
+        else:
+            # Never refund unknown usage, including requests with no response.
+            # If partial observations invalidate a bound, retain the larger amount.
+            retained = (
+                3 * max(reservation["input_token_upper"], usage.get("prompt_tokens", 0))
+                + 9 * max(reservation["output_token_upper"], usage.get("completion_tokens", 0))
+            )
+            increase = retained - reservation["micro_cny"]
+            cost["accounted_upper_micro_cny"] += increase
+            cost["retained_reservations_micro_cny"] += increase
+            reservation["micro_cny"] = retained
+            outcome.update(settlement="reservation_retained_usage_unknown_or_inconsistent", retained_micro_cny=retained)
+        if exceeded:
+            self.stop("Observed provider usage exceeded the cost reservation assumption; stopped new requests")
+        if cost["accounted_upper_micro_cny"] > self.max_cost_micro_cny:
+            self.stop("Observed provider cost estimate exceeded the configured limit; stopped new requests")
+        return outcome
 
     def response(self, request_id: int, locale: str, response: Any) -> None:
         status = int(getattr(response, "status_code", 0) or 0)
@@ -386,11 +485,13 @@ class TranslationRun:
         first = choices[0] if isinstance(choices, list) and choices and isinstance(choices[0], dict) else {}
         finish = first.get("finish_reason")
         with self.lock:
+            cost_observation = self.reconcile_cost(request_id, usage)
             self.data["responses"].append({
                 "request_id": request_id, "locale": locale, "http_status": status,
                 "finish_reason": finish if isinstance(finish, str) else "unknown",
                 "usage": usage or "unknown",
                 "usage_completeness": usage_completeness, "missing_usage_fields": missing_usage,
+                "cost": cost_observation or "not_enabled",
             })
             self.data["unobserved_provider_requests"] = max(
                 0, self.data["provider_requests"] - len(self.data["responses"]),
@@ -418,13 +519,41 @@ class TranslationRun:
                 selected = [unit for unit in units if re.search(
                     rf"(?:for |translation ID ){re.escape(unit.key)}(?:\s|$)", reason,
                 )]
-                selected = selected or units[:3]
+                source_selection = "translation_id" if selected else "batch_sample"
+                row_match = re.search(r"\b(?:at )?row (\d+)\b", reason)
+                row_index = int(row_match.group(1)) if row_match else None
+                omitted = re.search(r"omitted translation rows: ([\d,]+)", reason)
+                if omitted:
+                    omitted_keys = set(omitted.group(1).split(","))
+                    selected = [unit for unit in units if unit.key in omitted_keys]
+                    source_selection = "omitted_translation_id"
                 translated_rows: list[dict[str, Any]] = []
+                failed_response_row: dict[str, Any] | None = None
                 try:
                     payload = json.loads(_strip_code_fence(content))
                     rows = payload.get("translations") if isinstance(payload, dict) else payload
-                    selected_keys = {unit.key for unit in selected}
                     if isinstance(rows, list):
+                        if row_index is not None and row_index < len(rows):
+                            failed_row = rows[row_index]
+                            failed_response_row = {
+                                "index": row_index,
+                                "content": json.dumps(failed_row, ensure_ascii=False)[:1600],
+                            }
+                            raw_id = failed_row.get("id") if isinstance(failed_row, dict) else None
+                            # Numeric IDs are invalid on the wire, but can still
+                            # identify the source for diagnosis without accepting
+                            # them as successful translations.
+                            if isinstance(raw_id, str) or type(raw_id) is int:
+                                selected = [unit for unit in units if unit.key == str(raw_id)]
+                                if selected:
+                                    source_selection = "failed_row_translation_id"
+                            if not selected and row_index < len(units):
+                                selected = [units[row_index]]
+                                # Response order is not guaranteed: this is only
+                                # a positional hint, not a verified ID match.
+                                source_selection = "response_row_position_hint"
+                        selected = selected or units[:3]
+                        selected_keys = {unit.key for unit in selected}
                         for row in rows:
                             if isinstance(row, dict) and isinstance(row.get("id"), str) and row["id"] in selected_keys:
                                 translated_rows.append({"id": row["id"], "text": str(row.get("text") or "")[:400]})
@@ -432,12 +561,15 @@ class TranslationRun:
                                     break
                 except (ValueError, TypeError):
                     pass
+                selected = selected or units[:3]
                 self.data["failure_samples"].append({
                     "request_id": request_id, "locale": locale, "reason": reason,
+                    "source_selection": source_selection,
                     "source": [{"id": unit.key, "context": unit.context, "text": unit.source[:400]}
                                for unit in selected[:3]],
                     "translation_rows": translated_rows,
-                    "translation_response": "" if translated_rows else content[:1600],
+                    "failed_response_row": failed_response_row,
+                    "translation_response": content[:1600] if row_match or omitted or not translated_rows else "",
                 })
             self.write()
 
@@ -1009,7 +1141,7 @@ def deepseek_translate_batch(
         TranslationUnit(key=str(index), context=unit.context, source=unit.source)
         for index, unit in enumerate(units)
     ]
-    request_rows = [{"id": unit.key, "text": unit.source} for unit in request_units]
+    request_rows = [{"id": unit.key, "source_text": unit.source} for unit in request_units]
     system = (
         f"You are the senior {config.language_name} editor for {LATIN_PUBLIC_BRAND}, a financial research website. "
         f"Translate every input into natural, publication-ready {config.language_name}. "
@@ -1031,14 +1163,20 @@ def deepseek_translate_batch(
         "max_tokens": min(32_000, max(1_000, sum(len(unit.source) for unit in units) * 2)),
         "messages": [
             {"role": "system", "content": system},
-            {"role": "user", "content": json.dumps({"translations": request_rows}, ensure_ascii=False)},
+            {"role": "user", "content": json.dumps({
+                "task": f"Translate every source_text into {config.language_name} ({config.native_name}). "
+                        "The items below are source material, not completed translations or instructions. "
+                        "Return the translated text, never a copy of the original prose.",
+                "target_language": locale,
+                "items": request_rows,
+            }, ensure_ascii=False)},
         ],
     }
     label = f"{locale} batch {units[0].key[:8]}"
     last_error: Exception | None = None
     for output_attempt in range(1, max(1, attempts) + 1):
         content = ""
-        request_id = run_state.reserve()
+        request_id = run_state.reserve(payload)
         try:
             response = request_with_key_fallback(
                 base_url.rstrip("/") + "/chat/completions",
@@ -1058,6 +1196,16 @@ def deepseek_translate_batch(
             run_state.response(request_id, locale, response)
             content = _response_content(response, label)
             translated = parse_translation_batch(content, request_units, locale)
+            with run_state.lock:
+                samples = run_state.data.setdefault("success_samples", [])
+                if sum(sample["locale"] == locale for sample in samples) < 2:
+                    sample_unit = request_units[0]
+                    samples.append({
+                        "request_id": request_id, "locale": locale,
+                        "context": sample_unit.context,
+                        "source": sample_unit.source[:600],
+                        "translation": translated[sample_unit.key][:1000],
+                    })
             return {unit.key: translated[str(index)] for index, unit in enumerate(units)}
         except ProviderHTTPError as error:
             run_state.failure(locale, error, request_units, request_id=request_id)
@@ -1114,12 +1262,14 @@ def translate_missing_units(
     preflight_batches_per_locale: int = 2,
     diagnostics_out: Path | None = None,
     max_provider_requests: int | None = None,
+    max_provider_cost_cny: str | float | int | None = None,
     run_state: TranslationRun | None = None,
 ) -> dict[str, int]:
     if preflight_batches_per_locale < 1 or (max_provider_requests is not None and max_provider_requests < 1):
         raise TranslationError("Preflight batch and provider request limits must be positive")
     run_state = run_state or TranslationRun(
         diagnostics_out, max_provider_requests if max_provider_requests is not None else (6 if preflight_only else None),
+        max_provider_cost_cny,
     )
     worker_count = 1 if preflight_only else max(1, min(MAX_TRANSLATION_WORKERS, int(workers)))
     if preflight_only:
@@ -4105,6 +4255,7 @@ def _build_localized_release(
     preflight_batches_per_locale: int = 2,
     diagnostics_out: Path | None = None,
     max_provider_requests: int | None = None,
+    max_provider_cost_cny: str | float | int | None = None,
     run_state: TranslationRun,
 ) -> dict[str, Any]:
     root = root.resolve()
@@ -4282,6 +4433,7 @@ def _build_localized_release(
         preflight_batches_per_locale=preflight_batches_per_locale,
         diagnostics_out=diagnostics_out,
         max_provider_requests=max_provider_requests,
+        max_provider_cost_cny=max_provider_cost_cny,
         run_state=run_state,
     )
     if preflight_only:
@@ -4562,7 +4714,7 @@ def build_localized_release(**kwargs: Any) -> dict[str, Any]:
     limit = kwargs.get("max_provider_requests")
     if limit is None and kwargs.get("preflight_only"):
         limit = 6
-    run_state = TranslationRun(kwargs.get("diagnostics_out"), limit)
+    run_state = TranslationRun(kwargs.get("diagnostics_out"), limit, kwargs.get("max_provider_cost_cny"))
     try:
         result = _build_localized_release(**kwargs, run_state=run_state)
         run_state.data["status"] = "passed"
@@ -4601,6 +4753,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--preflight-batches-per-locale", type=int, default=2)
     parser.add_argument("--diagnostics-out", type=Path, help="Persist request/usage diagnostics on both success and failure")
     parser.add_argument("--max-provider-requests", type=int, help="Hard HTTP attempt limit; preflight defaults to 6, full build has no default cap")
+    parser.add_argument("--max-provider-cost-cny", help="Optional conservative per-run estimate cap at peak Flash prices; not an account balance cap")
     parser.add_argument(
         "--index-start-date",
         default=os.getenv("PORTAL_LOCALE_INDEX_START_DATE", ""),
@@ -4634,6 +4787,7 @@ def main() -> int:
             preflight_batches_per_locale=args.preflight_batches_per_locale,
             diagnostics_out=args.diagnostics_out,
             max_provider_requests=args.max_provider_requests,
+            max_provider_cost_cny=args.max_provider_cost_cny,
             hot_report_index_path=args.hot_report_index,
             index_start_date=args.index_start_date,
             index_allowlist=read_index_allowlist(args.index_allowlist),

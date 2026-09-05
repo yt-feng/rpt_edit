@@ -722,6 +722,7 @@ jobs:
           python3 -B scripts/build_portal_locales.py "${locale_args[@]}" \
             --cache-in _neutral_site/data/i18n/cache-v1.json.gz \
             --workers "$PORTAL_MULTILINGUAL_WORKERS" \
+            --max-provider-cost-cny 400 \
             --attempts 2 \
             --diagnostics-out "$RUNNER_TEMP/locale-full-diagnostics.json"
 
