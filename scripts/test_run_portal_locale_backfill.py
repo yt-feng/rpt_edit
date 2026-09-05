@@ -213,6 +213,27 @@ class PortalLocaleBackfillTests(unittest.TestCase):
         self.assertEqual(reader.call_count, 1)
         self.assertTrue(report["ready"])
 
+    def test_deepl_exhaustion_checkpoints_without_starting_another_paid_round(self):
+        report, reader, provider = self.run_backfill([{"diagnostics": {
+            "stop_category": "deepl_quota", "deepl_repair": {"provider_requests": 2, "billed_characters": 30, "stop_reason": "quota"},
+        }}])
+        self.assertEqual(provider.call_count, 1)
+        self.assertEqual(reader.call_count, 1)
+        self.assertEqual(report["status"], "checkpointed")
+        self.assertEqual(report["stop_category"], "deepl_quota")
+        self.assertFalse(report["ready"])
+        self.assertEqual(report["rounds"][0]["deepl_repair"]["billed_characters"], 30)
+
+    def test_unknown_deepl_usage_prevents_budget_continuation(self):
+        report, reader, provider = self.run_backfill([{"diagnostics": {
+            "stop_category": "budget", "deepl_repair": {"provider_requests": 1, "stop_reason": "usage unverified"},
+        }}])
+        self.assertEqual(provider.call_count, 1)
+        self.assertEqual(reader.call_count, 1)
+        self.assertEqual(report["status"], "checkpointed")
+        self.assertEqual(report["stop_category"], "deepl_stopped")
+        self.assertFalse(report["ready"])
+
 
 if __name__ == "__main__":
     unittest.main()

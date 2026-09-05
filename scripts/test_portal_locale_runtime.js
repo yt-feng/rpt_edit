@@ -255,6 +255,7 @@ function createHarness({
         locale,
         kind,
         source_generation: String(configured.sourceGeneration || ""),
+        ...(configured.scoped === undefined ? {} : { scoped: configured.scoped }),
         item_count: rows.length,
         fields,
         rows,
@@ -744,6 +745,134 @@ async function assertHotReportLocaleQueryFoldingAndFallback() {
   );
 }
 
+async function assertScopedCatalogExcludesUnpublishedRowsOnly() {
+  const original = {
+    item_count: 3, count: 3, total: 3,
+    items: [
+      { id: "recent", title: "已选择原文", title_zh: "旧中文副标题" },
+      { id: "old", title: "未选择旧原文" },
+      { id: "group", title: "Structural group", items: [{ id: "old", title: "未选择旧原文" }] },
+    ],
+    controls: [{ id: "sort", title: "Sort control" }],
+    metadata: { id: "metadata", title: "Structural metadata" },
+  };
+  const harness = createHarness({
+    htmlLang: "ja", browserLanguages: ["zh-CN"], responsePayload: original,
+    overlayTranslations: { preview: { scoped: true, items: { recent: { title: "公開済み記事" } } } },
+  });
+  const localized = await (await harness.window.fetch("data/catalog_preview.json")).json();
+  assert.deepEqual(localized.items.map((item) => item.id), ["recent", "group"]);
+  assert.equal(localized.items[0].title, "公開済み記事");
+  assert.equal(localized.items[0].title_zh, "", "scoped translated cards must not show the Chinese source subtitle");
+  assert.equal(localized.items[1].items.length, 0, "unpublished group children must be filtered without deleting the group");
+  assert.deepEqual(localized.controls, original.controls);
+  assert.deepEqual(localized.metadata, original.metadata);
+  assert.equal(localized.item_count, 2);
+  assert.equal(localized.count, 2);
+  assert.equal(localized.total, 2);
+  assert.equal(JSON.stringify(localized).includes("未选择旧原文"), false);
+  assert.equal(harness.fetchCalls.length, 2, "scoped catalogs must not add another discovery request");
+
+  const unchanged = cloneJson(original);
+  harness.window.PortalLocale.localizePayload(unchanged, "zh-Hans", {}, {}, { scoped: true });
+  assert.deepEqual(unchanged, original, "Chinese data must remain byte-equivalent even with scoped metadata");
+  const legacy = cloneJson(original);
+  harness.window.PortalLocale.localizePayload(legacy, "ja", {}, { recent: { title: "Legacy localized" } });
+  assert.equal(legacy.items.length, 3, "unscoped callers must retain their current list behavior");
+  assert.equal(legacy.items[0].title_zh, "已选择原文");
+  const invalid = createHarness({
+    htmlLang: "ja", browserLanguages: ["zh-CN"], responsePayload: original,
+    overlayTranslations: { preview: { scoped: "true", items: { recent: { title: "公開済み記事" } } } },
+  });
+  await assert.rejects(
+    async () => (await invalid.window.fetch("data/catalog_preview.json")).json(),
+    /translation scope is invalid/,
+    "malformed scope metadata must not fall back to unfiltered source data",
+  );
+}
+
+async function assertScopedDetailMapDropsMissingPrimaryAndRelatedRows() {
+  const harness = createHarness({
+    htmlLang: "ko", browserLanguages: ["zh-CN"],
+    responsePayload: {
+      item_count: 2,
+      reports: {
+        "ab-recent": { item: { id: "ab-recent", title: "原文" }, related: [
+          { id: "cd-recent", title: "相关原文" }, { id: "ab-old", title: "未发布相关原文" },
+        ] },
+        "ab-old": { item: { id: "ab-old", title: "未发布主条目" }, related: [{ id: "cd-recent", title: "相关原文" }] },
+      },
+    },
+    overlayTranslations: { "detail:ab": { scoped: true, items: {
+      "ab-recent": { title: "공개 보고서" }, "cd-recent": { title: "관련 보고서" },
+    } } },
+  });
+  const localized = await (await harness.window.fetch("data/report_details/ab.json")).json();
+  assert.deepEqual(Object.keys(localized.reports), ["ab-recent"]);
+  assert.equal(localized.reports["ab-recent"].item.title, "공개 보고서");
+  assert.deepEqual(localized.reports["ab-recent"].related.map((item) => item.id), ["cd-recent"]);
+  assert.equal(localized.item_count, 1);
+  assert.equal(JSON.stringify(localized).includes("未发布"), false);
+  const empty = harness.window.PortalLocale.localizePayload(
+    { item: { id: "absent", title: "Not published" } }, "ko", {}, {}, { scoped: true },
+  );
+  assert.deepEqual(cloneJson(empty), {}, "an excluded standalone detail primary must become an empty record");
+}
+
+async function assertScopedChartsRequireTheirOwnTranslation() {
+  const harness = createHarness({
+    htmlLang: "ar", browserLanguages: ["zh-CN"],
+    responsePayload: {
+      report_count: 2, chart_count: 3,
+      reports: [
+        { report_id: "selected", title: "原报告", chart_count: 2, charts: [
+          { id: "selected-chart", report_id: "selected", analysis_version: "chart-search-v2", title: "原图表" },
+          { id: "old-chart", report_id: "selected", analysis_version: "chart-search-v2", title: "未发布图表" },
+        ] },
+        { report_id: "old-report", title: "未发布报告", charts: [
+          { id: "orphan-chart", analysis_version: "chart-search-v2", title: "孤立图表" },
+        ] },
+      ],
+    },
+    overlayTranslations: { charts: { scoped: true, items: {
+      "report:selected": { title: "التقرير المنشور" },
+      "chart:selected-chart": { title: "الرسم المنشور" },
+      "chart:orphan-chart": { title: "رسم بلا تقرير" },
+    } } },
+  });
+  const localized = await (await harness.window.fetch("data/chart_search_index.json")).json();
+  assert.equal(localized.reports.length, 1);
+  assert.equal(localized.reports[0].charts.length, 1, "a translated parent report must not admit an untranslated chart");
+  assert.equal(localized.reports[0].charts[0].title, "الرسم المنشور");
+  assert.equal(localized.reports[0].chart_count, 1);
+  assert.equal(localized.report_count, 1);
+  assert.equal(localized.chart_count, 1);
+  assert.equal(JSON.stringify(localized).includes("未发布"), false);
+}
+
+async function assertScopedHotReportsStayLazyAndDoNotExposeOmissions() {
+  const harness = createHarness({
+    htmlLang: "ja", browserLanguages: ["zh-CN"],
+    overlayTranslations: { "hot-reports": {
+      scoped: true, sourceGeneration: "0123456789abcdef",
+      items: { "hot:0123456789abcdef": { title: "公開済みホットレポート" } },
+    } },
+  });
+  assert.equal(harness.fetchCalls.length, 0);
+  const localized = await harness.window.PortalLocale.localizeHotReports({
+    generation: "0123456789abcdef", total: 2,
+    items: [
+      { id: "hot:0123456789abcdef", title: "原文" },
+      { id: "hot:1111111111111111", title: "未发布原文" },
+    ],
+  });
+  assert.equal(localized.items.length, 1);
+  assert.equal(localized.total, 1);
+  assert.equal(localized.items[0].title_zh, "");
+  assert.equal(JSON.stringify(localized).includes("未发布原文"), false);
+  assert.deepEqual(harness.fetchCalls, ["/data/i18n/ja/hot-reports.json"]);
+}
+
 function assertArabicInputDirection() {
   const harness = createHarness({
     htmlLang: "ar",
@@ -811,6 +940,10 @@ function assertDynamicLinkLocalization() {
   await assertChartContentOverlay();
   await assertHotReportOverlayIsLazyAndGenerationBound();
   await assertHotReportLocaleQueryFoldingAndFallback();
+  await assertScopedCatalogExcludesUnpublishedRowsOnly();
+  await assertScopedDetailMapDropsMissingPrimaryAndRelatedRows();
+  await assertScopedChartsRequireTheirOwnTranslation();
+  await assertScopedHotReportsStayLazyAndDoNotExposeOmissions();
   assertArabicInputDirection();
   assertDynamicLinkLocalization();
   console.log("portal locale runtime contract: ok");

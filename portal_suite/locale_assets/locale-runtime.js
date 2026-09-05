@@ -80,17 +80,27 @@
     return value;
   }
 
-  function localizePayload(value, locale, titleTranslations = {}, itemTranslations = {}) {
+  function localizePayload(value, locale, titleTranslations = {}, itemTranslations = {}, scope = {}) {
     if (!LOCALIZED.has(locale) || !value || typeof value !== "object") return value;
-    const visit = (node) => {
-      if (!node || typeof node !== "object") return;
+    const scoped = scope && scope.scoped === true;
+    const removed = Symbol("unpublished locale content");
+    const itemPositions = new Set(["items", "related", "item", "charts", "detail-record"]);
+    const visit = (node, position = "") => {
+      if (!node || typeof node !== "object") return node;
       if (Array.isArray(node)) {
-        node.forEach(visit);
-        return;
+        if (!scoped) {
+          node.forEach((child) => visit(child, position));
+          return node;
+        }
+        const retained = node.map((child) => visit(child, position)).filter((child) => child !== removed);
+        retained.forEach((child, index) => { node[index] = child; });
+        node.length = retained.length;
+        return node;
       }
       const itemId = String(node.id || "").trim();
       const lookupKeys = [];
-      if (String(node.analysis_version || "") === "chart-search-v2" && itemId) {
+      const isChart = String(node.analysis_version || "") === "chart-search-v2" && itemId;
+      if (isChart) {
         lookupKeys.push(`chart:${itemId}`);
       }
       const reportId = String(node.report_id || "").trim();
@@ -101,13 +111,24 @@
       const overlayKey = lookupKeys.find((key) => (
         itemTranslations[key] && typeof itemTranslations[key] === "object"
       )) || "";
+      const isGroup = ["items", "groups", "children"].some((key) => Array.isArray(node[key]));
+      const isReport = (reportId || reportRef) && (typeof node.title === "string" || Array.isArray(node.charts));
+      const isContentItem = Boolean(isChart || isReport || (itemId && itemPositions.has(position) && !isGroup));
+      const requiredKey = isChart ? `chart:${itemId}`
+        : itemId && itemPositions.has(position) ? itemId
+        : reportId ? `report:${reportId}` : reportRef ? `report-ref:${reportRef}` : itemId;
+      if (scoped && isContentItem && !(
+        itemTranslations[requiredKey] && typeof itemTranslations[requiredKey] === "object"
+        || requiredKey === itemId && String(titleTranslations[itemId] || "").trim()
+      )) return removed;
       const localizedFields = overlayKey ? itemTranslations[overlayKey] : {};
       const localizedTitle = String(localizedFields.title || itemId && titleTranslations[itemId] || "").trim();
       if (localizedTitle) {
         const sourceTitle = String(node.title || "").trim();
         node.title = localizedTitle;
-        node.title_zh = sourceTitle && sourceTitle !== localizedTitle ? sourceTitle : "";
+        node.title_zh = !scoped && sourceTitle && sourceTitle !== localizedTitle ? sourceTitle : "";
       }
+      if (scoped && isContentItem && Object.prototype.hasOwnProperty.call(node, "title_zh")) node.title_zh = "";
       for (const field of ["title_cn", "institution", "bank_name", "industry", "sector", "category"]) {
         const translated = String(localizedFields[field] || "").trim();
         if (translated) node[field] = translated;
@@ -122,11 +143,36 @@
       }
       for (const [key, child] of Object.entries(node)) {
         if (["text", "content", "search_text", "extracted_text"].includes(key)) continue;
-        if (child && typeof child === "object") visit(child);
+        if (child && typeof child === "object") {
+          const childPosition = position === "report-map" ? "detail-record"
+            : key === "reports" && !Array.isArray(child) ? "report-map" : key;
+          const localized = visit(child, childPosition);
+          if (localized === removed) {
+            if (scoped && key === "item") return removed;
+            delete node[key];
+          }
+        }
       }
+      if (scoped) {
+        if (Array.isArray(node.items)) {
+          for (const key of ["item_count", "count", "total"]) {
+            if (typeof node[key] === "number") node[key] = node.items.length;
+          }
+        }
+        if (Array.isArray(node.charts) && typeof node.chart_count === "number") node.chart_count = node.charts.length;
+        if (node.reports && typeof node.reports === "object") {
+          const reports = Array.isArray(node.reports) ? node.reports : Object.values(node.reports);
+          for (const key of ["item_count", "report_count"]) {
+            if (typeof node[key] === "number") node[key] = reports.length;
+          }
+          if (typeof node.chart_count === "number") {
+            node.chart_count = reports.reduce((sum, report) => sum + (Array.isArray(report.charts) ? report.charts.length : 0), 0);
+          }
+        }
+      }
+      return node;
     };
-    visit(value);
-    return value;
+    return visit(value) === removed ? {} : value;
   }
 
   function catalogOverlayKind(value) {
@@ -173,6 +219,9 @@
     if (!payload || payload.locale !== locale || (payload.kind && payload.kind !== kind)) {
       throw new Error(`Portal ${locale} ${kind} translations are invalid.`);
     }
+    if (payload.scoped !== undefined && typeof payload.scoped !== "boolean") {
+      throw new Error(`Portal ${locale} ${kind} translation scope is invalid.`);
+    }
     if (Array.isArray(payload.fields) && Array.isArray(payload.rows)) {
       const allowedFields = kind === "charts"
         ? CHART_OVERLAY_FIELDS
@@ -210,6 +259,7 @@
       return {
         titles,
         items,
+        scoped: payload.scoped === true,
         sourceGeneration: String(payload.source_generation || "").trim(),
       };
     }
@@ -219,6 +269,7 @@
     return {
       titles: payload.titles,
       items: payload.items && typeof payload.items === "object" ? payload.items : {},
+      scoped: payload.scoped === true,
       sourceGeneration: String(payload.source_generation || "").trim(),
     };
   }
@@ -340,6 +391,7 @@
                 locale,
                 overlayResult.translations.titles,
                 overlayResult.translations.items,
+                overlayResult.translations,
               );
             };
           }
@@ -364,7 +416,7 @@
           if (!sourceGeneration || translations.sourceGeneration !== sourceGeneration) {
             return pendingHotReportTranslation(payload);
           }
-          return localizePayload(payload, locale, translations.titles, translations.items);
+          return localizePayload(payload, locale, translations.titles, translations.items, translations);
         } catch (_error) {
           return pendingHotReportTranslation(payload);
         }

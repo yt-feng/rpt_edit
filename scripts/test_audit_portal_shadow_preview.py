@@ -114,10 +114,20 @@ def locale_html(locale: str, direction: str) -> bytes:
     ).encode("utf-8")
 
 
+def write_plan_site(root: Path) -> None:
+    for sample in sample_plan()["samples"]:
+        relative = sample["path"].lstrip("/")
+        if relative.endswith("/"):
+            relative += "index.html"
+        page = root / relative
+        page.parent.mkdir(parents=True, exist_ok=True)
+        page.write_bytes(locale_html(sample["locale"], sample["direction"]))
+
+
 def manifest_fixture() -> tuple[dict, dict[str, bytes]]:
     manifest = {
         "schema_version": 1,
-        "quality_gate_version": 2,
+        "quality_gate_version": 3,
         "locales": list(audit.LOCALES),
         "coverage": {locale: 1.0 for locale in audit.LOCALES},
         "catalog_overlays": {locale: {} for locale in audit.LOCALES},
@@ -300,6 +310,114 @@ class ShadowPreviewAuditTests(unittest.TestCase):
                 path.write_text("<html></html>", encoding="utf-8")
             with self.assertRaisesRegex(audit.AuditError, "no blog detail"):
                 audit.build_plan(root)
+
+    def test_first_detail_skips_deferred_notices_and_noindex_content(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory).resolve()
+            blog = root / "blog"
+            blog.mkdir()
+            (blog / "a-notice.html").write_text(
+                '<html><body><main data-kc-locale-deferred="true">Generic translated notice</main></body></html>',
+                encoding="utf-8",
+            )
+            (blog / "b-noindex.html").write_text(
+                "<html><head><meta content='NOINDEX, FOLLOW' name='robots'></head><body>Unpublished old article</body></html>",
+                encoding="utf-8",
+            )
+            published = blog / "c-published.html"
+            published.write_text(
+                '<html><head><meta name="robots" content="index,follow"></head><body>Published article</body></html>',
+                encoding="utf-8",
+            )
+            self.assertEqual(audit.first_detail(root, "blog"), published)
+            published.write_text('<html><meta name="robots" content="none"></html>', encoding="utf-8")
+            with self.assertRaisesRegex(audit.AuditError, "no published blog detail"):
+                audit.first_detail(root, "blog")
+
+    def test_build_plan_zsxq_uses_published_counterpart_not_first_chinese_source(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            write_plan_site(root)
+            source_blog = root / "blog"
+            source_blog.mkdir()
+            for name in ("a-unreleased.html", "z-published.html"):
+                (source_blog / name).write_text('<html><img src="https://zsxq.img/image"></html>', encoding="utf-8")
+            for locale, direction in audit.LOCALES.items():
+                (root / locale / "blog/a-unreleased.html").write_text(
+                    '<html><main data-kc-locale-deferred="true">Translated notice</main></html>', encoding="utf-8",
+                )
+                (root / locale / "blog/z-published.html").write_bytes(locale_html(locale, direction))
+            plan = audit.build_plan(root)
+            self.assertEqual(len(audit.validate_samples(plan)), 21)
+            for locale in audit.LOCALES:
+                self.assertEqual(plan["zsxq_cleanup"][locale], {
+                    "status": "sampled", "path": f"/{locale}/blog/z-published.html",
+                })
+                self.assertFalse(any("a-unreleased.html" in row["path"] for row in plan["samples"]))
+
+    def test_unreleased_image_source_is_explicitly_not_applicable_in_audit_result(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            write_plan_site(root)
+            source = root / "blog/a-unreleased.html"
+            source.parent.mkdir()
+            source.write_text('<html><img src="https://zsxq.img/image"></html>', encoding="utf-8")
+            for locale in audit.LOCALES:
+                (root / locale / "blog/a-unreleased.html").write_text(
+                    '<html><meta name="robots" content="noindex,follow"><main data-kc-locale-deferred="true">Notice</main></html>',
+                    encoding="utf-8",
+                )
+            plan = audit.build_plan(root)
+        self.assertEqual(len(audit.validate_samples(plan)), 18)
+        _, responses = response_fixture()
+        result, opener = self.run_audit(plan, responses)
+        for locale in audit.LOCALES:
+            self.assertEqual(result["zsxq_cleanup"][locale], {
+                "status": "not_applicable", "reason": "no-published-localized-source-image-page",
+            })
+        self.assertEqual(result["sample_count"], 18)
+        self.assertEqual(result["asset_count"], 5)
+        self.assertEqual(len(opener.requests), len(responses))
+        self.assertEqual({row["path"] for row in result["checks"]}, set(responses))
+
+    def test_zsxq_source_already_selected_as_detail_is_verified_without_duplicate_fetch(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            write_plan_site(root)
+            source = root / "blog/market-outlook.html"
+            source.parent.mkdir()
+            source.write_text('<html><img src="https://zsxq.img/image"></html>', encoding="utf-8")
+            plan = audit.build_plan(root)
+        _, responses = response_fixture()
+        result, opener = self.run_audit(plan, responses)
+        self.assertEqual(result["sample_count"], 18)
+        self.assertEqual(len(opener.requests), len(responses))
+        for locale in audit.LOCALES:
+            self.assertEqual(result["zsxq_cleanup"][locale], {
+                "status": "passed", "path": f"/{locale}/blog/market-outlook.html",
+            })
+
+    def test_shadow_detail_cannot_change_to_a_notice_after_plan_selection(self) -> None:
+        for marker in (
+            '<main data-kc-locale-deferred="true">Notice</main>',
+            '<meta name="robots" content="noindex,follow">',
+        ):
+            with self.subTest(marker=marker):
+                plan, responses = response_fixture()
+                path = "/ko/blog/market-outlook.html"
+                body = locale_html("ko", "ltr").replace(b"</body>", marker.encode("utf-8") + b"</body>")
+                responses[path] = FakeResponse(body, headers=protected_headers("ko"))
+                with self.assertRaisesRegex(audit.AuditError, "not published content"):
+                    self.run_audit(plan, responses)
+
+    def test_unverified_zsxq_path_cannot_be_claimed_as_sampled(self) -> None:
+        plan, responses = response_fixture()
+        plan["zsxq_cleanup"] = {
+            locale: {"status": "sampled", "path": f"/{locale}/blog/not-in-plan.html"}
+            for locale in audit.LOCALES
+        }
+        with self.assertRaisesRegex(audit.AuditError, "cleanup applicability is invalid"):
+            self.run_audit(plan, responses)
 
     def test_full_offline_shadow_audit_succeeds(self) -> None:
         plan, responses = response_fixture()

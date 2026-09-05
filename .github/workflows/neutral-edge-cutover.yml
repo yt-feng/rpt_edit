@@ -181,6 +181,10 @@ jobs:
             scripts/compare_portal_release_semantics.py \
             scripts/build_portal_locales.py \
             scripts/check_deepseek_balance.py \
+            scripts/deepl_locale_repair.py \
+            scripts/portal_locale_history.py \
+            scripts/portal_locale_scope.py \
+            scripts/preflight_deepl_locale_repair.py \
             scripts/run_portal_locale_backfill.py \
             scripts/verify_portal_chinese_parity.py \
             scripts/audit_portal_shadow_preview.py \
@@ -198,6 +202,12 @@ jobs:
           python3 -B scripts/test_portal_locale_residual_repair.py
           python3 -B scripts/test_portal_locale_preflight_repair.py
           python3 -B scripts/test_check_deepseek_balance.py
+          python3 -B scripts/test_deepl_locale_repair.py
+          python3 -B scripts/test_portal_locale_history.py
+          python3 -B scripts/test_portal_locale_scope.py
+          python3 -B scripts/test_portal_locale_history_build.py
+          python3 -B scripts/test_portal_locale_deepl_fallback.py
+          python3 -B scripts/test_preflight_deepl_locale_repair.py
           python3 -B scripts/test_run_portal_locale_backfill.py
           python3 -B scripts/test_verify_portal_chinese_parity.py
           python3 -B scripts/test_audit_portal_shadow_preview.py
@@ -654,6 +664,29 @@ jobs:
             --output "$RUNNER_TEMP/chinese-before-locales.json" \
             "${active_manifest_args[@]}"
 
+      - name: Restore history release ledger from active production only
+        if: steps.operation.outputs.multilingual_enabled == 'true'
+        env:
+          MULTILINGUAL_LIVE: ${{ steps.operation.outputs.multilingual_live }}
+        run: |
+          set -euo pipefail
+          ledger="$RUNNER_TEMP/active-locale-history.json"
+          status="$(curl --silent --show-error --max-redirs 0 \
+            --connect-timeout 5 --max-time 60 --header 'Cache-Control: no-cache' \
+            --output "$ledger" --write-out '%{http_code}' \
+            "$LIVE_ORIGIN/.well-known/edge-release/$PREVIOUS_STATIC_RELEASE/data/i18n/history-release.json")"
+          case "$status" in
+            200) test -s "$ledger" ;;
+            404)
+              if [ "$MULTILINGUAL_LIVE" = "true" ]; then
+                echo "::error::Live locale history ledger is missing; do not reset the daily release quota"
+                exit 1
+              fi
+              rm -f "$ledger"
+              ;;
+            *) echo "::error::Cannot read active history ledger: HTTP $status"; exit 1 ;;
+          esac
+
       - name: Build Korean Japanese and Arabic static locales
         id: locale_build
         if: steps.operation.outputs.multilingual_enabled == 'true'
@@ -662,11 +695,14 @@ jobs:
           DEEPSEEK_API_KEY_BACKUP: ${{ secrets.DEEPSEEK_API_KEY_BACKUP }}
           DEEPSEEK_API_KEY_2: ${{ secrets.DEEPSEEK_API_KEY_2 }}
           DEEPSEEK_API_KEYS: ${{ secrets.DEEPSEEK_API_KEYS }}
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
           DEEPSEEK_BASE_URL: ${{ vars.DEEPSEEK_BASE_URL || 'https://api.deepseek.com' }}
           DEEPSEEK_MODEL: ${{ vars.DEEPSEEK_MODEL || 'deepseek-v4-flash' }}
           PORTAL_MULTILINGUAL_WORKERS: ${{ vars.PORTAL_MULTILINGUAL_WORKERS || '32' }}
           PORTAL_MULTILINGUAL_INDEX_START_DATE: ${{ vars.PORTAL_MULTILINGUAL_INDEX_START_DATE || '' }}
           PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH: ${{ vars.PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH || '' }}
+          PORTAL_MULTILINGUAL_HISTORY_START_DATE: ${{ vars.PORTAL_MULTILINGUAL_HISTORY_START_DATE || '2026-08-05' }}
+          PORTAL_MULTILINGUAL_HISTORY_PAUSED: ${{ vars.PORTAL_MULTILINGUAL_HISTORY_PAUSED || 'false' }}
         run: |
           set -euo pipefail
           case "$PORTAL_MULTILINGUAL_WORKERS" in
@@ -686,6 +722,17 @@ jobs:
             cache_args+=(--cache-in "$RUNNER_TEMP/portal-locale-cache/cache-v1.json.gz")
           fi
           index_args=(--index-start-date "$PORTAL_MULTILINGUAL_INDEX_START_DATE")
+          release_date="$(TZ=Asia/Shanghai date +%F)"
+          index_args+=(--history-start-date "$PORTAL_MULTILINGUAL_HISTORY_START_DATE" \
+            --history-release-date "$release_date" --history-daily-limit 100)
+          if [ -s "$RUNNER_TEMP/active-locale-history.json" ]; then
+            index_args+=(--history-state-in "$RUNNER_TEMP/active-locale-history.json")
+          fi
+          case "$PORTAL_MULTILINGUAL_HISTORY_PAUSED" in
+            true) index_args+=(--history-paused) ;;
+            false) ;;
+            *) echo "::error::History pause must be true or false"; exit 2 ;;
+          esac
           if [ -n "$PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH" ]; then
             INDEX_ALLOWLIST_PATH="$PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH" python3 - <<'PY'
           import os
@@ -742,6 +789,13 @@ jobs:
           report = json.loads((Path(os.environ["RUNNER_TEMP"]) / "locale-full-diagnostics.json").read_text())
           ready = report.get("status") == "passed" and report.get("ready") is True
           print(f"ready={'true' if ready else 'false'}")
+          if ready:
+              history = json.loads(Path("_neutral_site/data/i18n/history-release.json").read_text())
+              with Path(os.environ["GITHUB_STEP_SUMMARY"]).open("a", encoding="utf-8") as summary:
+                  summary.write("## Locale history release candidate\n\n")
+                  summary.write(f"History window: {history['history_start_date']} to {history['launch_date']} (exclusive).\n\n")
+                  summary.write(f"Historical pages: {len(history['released'])} cumulative; {len(history['selected_today'])} selected today; {history['pending_count']} pending.\n\n")
+                  summary.write("This is a candidate only. The daily ledger advances only after successful production cutover.\n")
           if not ready:
               if report.get("status") != "checkpointed":
                   raise SystemExit("Locale build did not complete or safely checkpoint")
@@ -917,7 +971,7 @@ jobs:
           if cache.get("schema_version") != 1 or set(cache.get("locales", {})) != set(locale_directions):
               raise SystemExit("Multilingual cache is invalid or incomplete")
           manifest = json.loads(root.joinpath("data/i18n/manifest.json").read_text(encoding="utf-8"))
-          if manifest.get("quality_gate_version") != 2:
+          if manifest.get("quality_gate_version") != 3:
               raise SystemExit("Multilingual manifest quality gate version is invalid")
           if set(manifest.get("locales", [])) != set(locale_directions):
               raise SystemExit("Multilingual manifest locale set is invalid")

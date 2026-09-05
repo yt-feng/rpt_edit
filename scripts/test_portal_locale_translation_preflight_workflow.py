@@ -20,6 +20,12 @@ class PreflightWorkflowTests(unittest.TestCase):
         for script in re.findall(r"python3(?: -B)? (scripts/[A-Za-z0-9_.]+)", workflow):
             with self.subTest(script=script):
                 self.assertIn(script, checkout)
+        for script in re.findall(r"diagnostic_script=(scripts/[A-Za-z0-9_.]+)", workflow):
+            with self.subTest(diagnostic=script):
+                self.assertIn(script, checkout)
+        for dependency in ("build_portal_locales.py", "deepseek_http.py", "deepl_locale_repair.py"):
+            with self.subTest(dependency=dependency):
+                self.assertIn(f"scripts/{dependency}", checkout)
 
     def test_manual_main_only_without_deployment_or_full_build(self) -> None:
         workflow = WORKFLOW.read_text(encoding="utf-8")
@@ -35,7 +41,7 @@ class PreflightWorkflowTests(unittest.TestCase):
     def test_uses_existing_private_configuration_and_uploads_failure_diagnostics(self) -> None:
         workflow = WORKFLOW.read_text(encoding="utf-8")
         self.assertIn("LIVE_ORIGIN: ${{ secrets.PORTAL_SITE_URL || vars.PORTAL_SITE_URL }}", workflow)
-        for secret in ("DEEPSEEK_API_KEY", "DEEPSEEK_API_KEY_BACKUP", "DEEPSEEK_API_KEY_2", "DEEPSEEK_API_KEYS"):
+        for secret in ("DEEPSEEK_API_KEY", "DEEPSEEK_API_KEY_BACKUP", "DEEPSEEK_API_KEY_2", "DEEPSEEK_API_KEYS", "DEEPL_API_KEY"):
             self.assertIn(f"{secret}: ${{{{ secrets.{secret} }}}}", workflow)
         upload = workflow[workflow.index("Upload translation diagnostics even when preflight fails"):]
         self.assertIn("if: always()", upload)
@@ -45,7 +51,7 @@ class PreflightWorkflowTests(unittest.TestCase):
 
     def test_protocol_mode_is_explicit_and_does_not_replace_default_sampling(self) -> None:
         workflow = WORKFLOW.read_text(encoding="utf-8")
-        self.assertRegex(workflow, r"mode:[\s\S]*?options:\s+- sample\s+- protocol\s+- balance\s+default: sample")
+        self.assertRegex(workflow, r"mode:[\s\S]*?options:\s+- sample\s+- protocol\s+- balance\s+- deepl\s+default: sample")
         self.assertIn("PREFLIGHT_MODE: ${{ inputs.mode }}", workflow)
         self.assertIn("sample) diagnostic_script=scripts/preflight_portal_locale_translation.py", workflow)
         self.assertIn("protocol) diagnostic_script=scripts/probe_portal_locale_protocol.py", workflow)
@@ -58,13 +64,35 @@ class PreflightWorkflowTests(unittest.TestCase):
         self.assertIn('report.get("mode") == "balance"', workflow)
         self.assertIn('"balance_requests", "is_available", "balance_infos"', workflow)
 
+    def test_deepl_canary_is_explicit_with_offline_tests_and_allowlisted_summary(self) -> None:
+        workflow = WORKFLOW.read_text(encoding="utf-8")
+        self.assertIn("deepl) diagnostic_script=scripts/preflight_deepl_locale_repair.py", workflow)
+        for script in ("test_deepl_locale_repair.py", "test_portal_locale_deepl_fallback.py",
+                       "test_preflight_deepl_locale_repair.py"):
+            self.assertIn(f"python3 -B scripts/{script}", workflow)
+        self.assertIn('report.get("mode") == "deepl"', workflow)
+        self.assertIn('keys = ("status", "provider_requests", "billed_characters", "remaining_character_budget")', workflow)
+        self.assertNotIn("report.items()", workflow)
+        secret = "DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}"
+        self.assertEqual(workflow.count(secret), 1)
+        diagnostic = workflow.split("Run the selected bounded translation diagnostic", 1)[1].split(
+            "Summarize bounded translation diagnostics", 1)[0]
+        self.assertIn(secret, diagnostic)
+        self.assertNotIn("DEEPL_API_KEY", workflow.split("Test bounded preflight without provider requests", 1)[1].split(
+            "Run the selected bounded translation diagnostic", 1)[0])
+
     def test_public_identity_guard_accepts_every_new_source(self) -> None:
         paths = (WORKFLOW, ROOT / "scripts/preflight_portal_locale_translation.py",
                  ROOT / "scripts/test_preflight_portal_locale_translation.py",
                  ROOT / "scripts/probe_portal_locale_protocol.py",
                  ROOT / "scripts/test_probe_portal_locale_protocol.py",
                  ROOT / "scripts/check_deepseek_balance.py",
-                 ROOT / "scripts/test_check_deepseek_balance.py", Path(__file__))
+                 ROOT / "scripts/test_check_deepseek_balance.py",
+                 ROOT / "scripts/deepl_locale_repair.py",
+                 ROOT / "scripts/test_deepl_locale_repair.py",
+                 ROOT / "scripts/test_portal_locale_deepl_fallback.py",
+                 ROOT / "scripts/preflight_deepl_locale_repair.py",
+                 ROOT / "scripts/test_preflight_deepl_locale_repair.py", Path(__file__))
         for path in paths:
             skeleton = identity.confusable_skeleton(path.read_text(encoding="utf-8"))
             with self.subTest(path=path.name):

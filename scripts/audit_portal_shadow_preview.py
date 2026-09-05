@@ -72,6 +72,27 @@ class AssetParser(HTMLParser):
             self.assets.add(parsed.path + (("?" + parsed.query) if parsed.query else ""))
 
 
+class PublicationParser(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.deferred = False
+        self.noindex = False
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        values = {str(key).lower(): str(value or "").strip().lower() for key, value in attrs}
+        if values.get("data-kc-locale-deferred") == "true":
+            self.deferred = True
+        if tag.lower() == "meta" and values.get("name") in {"robots", "googlebot", "bingbot"}:
+            directives = set(re.split(r"[\s,]+", values.get("content", "")))
+            self.noindex = self.noindex or bool(directives & {"noindex", "none"})
+
+
+def is_published_detail(source: str) -> bool:
+    parser = PublicationParser()
+    parser.feed(source)
+    return not parser.deferred and not parser.noindex
+
+
 def safe_output(path: Path) -> Path:
     target = Path(path)
     if target.exists() and (target.is_symlink() or not target.is_file()):
@@ -207,13 +228,17 @@ def first_detail(root: Path, section: str) -> Path:
     if section_root.is_symlink() or not section_root.is_dir():
         raise AuditError(f"Shadow review has no {section} detail page")
     candidates = [
-        require_page(path, f"{section} detail", root=root)
+        path
         for path in sorted(section_root.rglob("*.html"))
         if path.is_file() and not path.is_symlink() and path != section_root / "index.html"
     ]
     if not candidates:
         raise AuditError(f"Shadow review has no {section} detail page")
-    return next((path for path in candidates if path.name.lower() != "index.html"), candidates[0])
+    for path in sorted(candidates, key=lambda candidate: candidate.name.lower() == "index.html"):
+        require_page(path, f"{section} detail", root=root)
+        if is_published_detail(path.read_text(encoding="utf-8")):
+            return path
+    raise AuditError(f"Shadow review has no published {section} detail page")
 
 
 def build_plan(root: Path) -> dict[str, Any]:
@@ -221,13 +246,12 @@ def build_plan(root: Path) -> dict[str, Any]:
     if not root.is_dir():
         raise AuditError("Static root is unavailable")
     samples: list[dict[str, Any]] = []
+    zsxq_cleanup: dict[str, dict[str, str]] = {}
     zsxq_sources = [
         path
         for path in sorted(root.joinpath("blog").rglob("*.html"))
         if path.is_file() and not path.is_symlink() and b"zsxq.img" in path.read_bytes().lower()
     ]
-    zsxq_relative = zsxq_sources[0].relative_to(root) if zsxq_sources else None
-
     for locale, direction in LOCALES.items():
         locale_root = root / locale
         if not locale_root.is_dir() or locale_root.is_symlink():
@@ -248,13 +272,26 @@ def build_plan(root: Path) -> dict[str, Any]:
             ("report-detail", first_detail(locale_root, "reports"), False),
             ("charts", require_page(locale_root / "charts.html", f"{locale} charts", root=locale_root), False),
         ]
-        if zsxq_relative is not None:
-            localized_zsxq = require_page(
-                locale_root / zsxq_relative,
-                f"{locale} zsxq-clean blog",
-                root=locale_root,
-            )
+        localized_zsxq = None
+        for source in zsxq_sources:
+            candidate = locale_root / source.relative_to(root)
+            if not candidate.is_file() or candidate.is_symlink():
+                continue
+            require_page(candidate, f"{locale} zsxq-clean blog", root=locale_root)
+            if is_published_detail(candidate.read_text(encoding="utf-8")):
+                localized_zsxq = candidate
+                break
+        if localized_zsxq is not None:
             selected.append(("blog-zsxq-clean", localized_zsxq, True))
+            zsxq_cleanup[locale] = {
+                "status": "sampled",
+                "path": route_for_html(locale, locale_root, localized_zsxq),
+            }
+        else:
+            zsxq_cleanup[locale] = {
+                "status": "not_applicable",
+                "reason": "no-published-localized-source-image-page" if zsxq_sources else "no-source-image-page",
+            }
         seen: set[str] = set()
         for kind, page, forbid_zsxq in selected:
             route = route_for_html(locale, locale_root, page)
@@ -271,7 +308,7 @@ def build_plan(root: Path) -> dict[str, Any]:
 
     if len(samples) < 18:
         raise AuditError("Shadow review plan is incomplete")
-    return {"schema_version": 1, "samples": samples}
+    return {"schema_version": 1, "samples": samples, "zsxq_cleanup": zsxq_cleanup}
 
 
 def expected_sample_path(locale: str, kind: str, path: str) -> bool:
@@ -331,6 +368,42 @@ def validate_samples(plan: dict[str, Any]) -> list[dict[str, Any]]:
     if required_seen != expected:
         raise AuditError("Shadow review plan is incomplete")
     return samples
+
+
+def validate_zsxq_cleanup(plan: dict[str, Any], samples: list[dict[str, Any]]) -> dict[str, dict[str, str]]:
+    metadata = plan.get("zsxq_cleanup")
+    if metadata is None:
+        # Older reviewed plans remain usable, but do not claim a source-image
+        # removal check merely because ordinary blog samples contained no image.
+        return {
+            locale: next((
+                {"status": "sampled", "path": sample["path"]}
+                for sample in samples
+                if sample["locale"] == locale and sample["kind"] == "blog-zsxq-clean"
+            ), {"status": "not_declared"})
+            for locale in LOCALES
+        }
+    if not isinstance(metadata, dict) or set(metadata) != set(LOCALES):
+        raise AuditError("Shadow zsxq cleanup applicability is invalid")
+    checked: dict[str, dict[str, str]] = {}
+    for locale, row in metadata.items():
+        if not isinstance(row, dict):
+            raise AuditError("Shadow zsxq cleanup applicability is invalid")
+        if row.get("status") == "sampled" and any(
+            sample["locale"] == locale
+            and sample["path"] == row.get("path")
+            and sample["kind"] in {"blog-detail", "blog-zsxq-clean"}
+            and sample["forbid_zsxq"] is True
+            for sample in samples
+        ):
+            checked[locale] = {"status": "sampled", "path": row["path"]}
+        elif row.get("status") == "not_applicable" and row.get("reason") in {
+            "no-source-image-page", "no-published-localized-source-image-page",
+        }:
+            checked[locale] = {"status": "not_applicable", "reason": row["reason"]}
+        else:
+            raise AuditError("Shadow zsxq cleanup applicability is invalid")
+    return checked
 
 
 def write_json(path: Path, payload: dict[str, Any]) -> None:
@@ -494,7 +567,7 @@ def manifest_files(manifest: dict[str, Any]) -> dict[str, tuple[str, int, str]]:
     coverage = manifest.get("coverage")
     if (
         manifest.get("schema_version") != 1
-        or manifest.get("quality_gate_version") != 2
+        or manifest.get("quality_gate_version") != 3
         or not isinstance(locales, list)
         or len(locales) != len(LOCALES)
         or set(locales) != set(LOCALES)
@@ -562,6 +635,7 @@ def audit_preview(
         raise AuditError("Expected shadow release identity is invalid")
     plan = read_json_object(samples_path, "Shadow review plan")
     samples = validate_samples(plan)
+    zsxq_cleanup = validate_zsxq_cleanup(plan, samples)
 
     opener = build_opener(NoRedirect())
     rows: list[dict[str, Any]] = []
@@ -607,6 +681,8 @@ def audit_preview(
         }
         if attrs.get("lang") != locale or attrs.get("dir") != direction:
             raise AuditError(f"Shadow locale direction is invalid: {path}")
+        if sample.get("kind") in {"blog-detail", "report-detail", "blog-zsxq-clean"} and not is_published_detail(text):
+            raise AuditError(f"Shadow detail is not published content: {path}")
         if "/assets/locale.css" not in text or "/assets/locale-runtime.js" not in text:
             raise AuditError(f"Shadow locale runtime is missing: {path}")
         if sample.get("forbid_zsxq") is True and "zsxq.img" in text.lower():
@@ -676,6 +752,10 @@ def audit_preview(
         "tree_sha256": expected_tree,
         "sample_count": len(samples),
         "asset_count": len(assets),
+        "zsxq_cleanup": {
+            locale: {**row, "status": "passed" if row["status"] == "sampled" else row["status"]}
+            for locale, row in zsxq_cleanup.items()
+        },
         "checks": rows,
     }
 

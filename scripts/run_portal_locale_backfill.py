@@ -106,8 +106,15 @@ def _summary(raw: dict[str, Any]) -> dict[str, Any]:
         field: usage[field] for field in USAGE_FIELDS
         if type(usage.get(field)) is int and usage[field] >= 0
     }
-    if raw.get("stop_category") in {"budget", "repair_limit", "provider", "transport", "quality", "systemic"}:
+    if raw.get("stop_category") in {"budget", "repair_limit", "deepl_quota", "provider", "transport", "quality", "systemic"}:
         result["stop_category"] = raw["stop_category"]
+    repair = raw.get("deepl_repair")
+    if isinstance(repair, dict):
+        result["deepl_repair"] = {
+            key: repair[key] for key in ("provider_requests", "balance_requests", "billed_characters", "reserved_characters", "remaining_character_budget")
+            if type(repair.get(key)) is int and repair[key] >= 0
+        }
+        result["deepl_repair"]["stopped"] = bool(repair.get("stop_reason"))
     return result
 
 
@@ -189,8 +196,14 @@ def run_backfill(
             if current["status"] == "passed":
                 report.update(status="passed", ready=True)
                 break
+            if current.get("stop_category") == "deepl_quota" and raw.get("ready") is False:
+                report.update(status="checkpointed", stop_category="deepl_quota")
+                break
             if current.get("stop_category") not in {"budget", "repair_limit"} or raw.get("ready") is not False:
                 raise ValueError("Unrecognized builder checkpoint")
+            if current.get("deepl_repair", {}).get("stopped"):
+                report.update(status="checkpointed", stop_category="deepl_stopped")
+                break
             if any(current.get(field) != 0 for field in OBSERVATION_FIELDS):
                 current.update(status="failed", ready=False)
                 report.update(status="failed", stop_category="incomplete_usage")

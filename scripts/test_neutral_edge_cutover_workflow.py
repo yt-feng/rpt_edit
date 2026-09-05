@@ -14,6 +14,22 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.workflow = WORKFLOW.read_text(encoding="utf-8")
 
+    def test_history_release_uses_only_active_ledger_and_fixed_daily_quota(self):
+        restore = self.workflow.index("Restore history release ledger from active production only")
+        build = self.workflow.index("Build Korean Japanese and Arabic static locales")
+        self.assertLess(restore, build)
+        ledger_step = self.workflow[restore:build]
+        self.assertIn("$PREVIOUS_STATIC_RELEASE/data/i18n/history-release.json", ledger_step)
+        self.assertNotIn("actions/cache", ledger_step)
+        self.assertIn('if [ "$MULTILINGUAL_LIVE" = "true" ]', ledger_step)
+        self.assertIn("do not reset the daily release quota", ledger_step)
+        locale_step = self.workflow[build:self.workflow.index("Detect multilingual translation checkpoint")]
+        self.assertIn('--history-daily-limit 100', locale_step)
+        self.assertIn('--history-state-in "$RUNNER_TEMP/active-locale-history.json"', locale_step)
+        self.assertIn('TZ=Asia/Shanghai date +%F', locale_step)
+        self.assertIn('--history-start-date "$PORTAL_MULTILINGUAL_HISTORY_START_DATE"', locale_step)
+        self.assertIn('true) index_args+=(--history-paused)', locale_step)
+
     def test_schedule_and_content_triggers_are_gated_and_reviewed(self) -> None:
         trigger = self.workflow[: self.workflow.index("\npermissions:\n")]
         self.assertIn('cron: "30 1,5,9,13 * * *"', trigger)
@@ -192,6 +208,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
             "DEEPSEEK_API_KEY_BACKUP",
             "DEEPSEEK_API_KEY_2",
             "DEEPSEEK_API_KEYS",
+            "DEEPL_API_KEY",
         ):
             self.assertIn(f"{secret}: ${{{{ secrets.{secret} }}}}", locale)
         self.assertIn("DEEPSEEK_BASE_URL", locale)
@@ -273,6 +290,22 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn("scripts/build_portal_locales.py", validate_source)
         self.assertIn("portal_suite/locale_assets/locale-runtime.js", validate_source)
 
+    def test_deepl_is_only_a_build_time_secret_with_offline_validation(self) -> None:
+        locale = self.workflow.split("Build Korean Japanese and Arabic static locales", 1)[1].split(
+            "Detect multilingual translation checkpoint", 1)[0]
+        secret = "DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}"
+        self.assertEqual(self.workflow.count(secret), 1)
+        self.assertIn(secret, locale)
+        validation = self.workflow.split("Validate public source", 1)[1].split("Prepare masked release context", 1)[0]
+        compile_step = validation.split("python3 -m py_compile", 1)[1].split("python3 -B", 1)[0]
+        for script in ("deepl_locale_repair.py", "preflight_deepl_locale_repair.py"):
+            self.assertIn(f"scripts/{script}", compile_step)
+        for script in ("test_deepl_locale_repair.py", "test_portal_locale_deepl_fallback.py",
+                       "test_preflight_deepl_locale_repair.py"):
+            self.assertIn(f"python3 -B scripts/{script}", validation)
+        self.assertNotIn("DEEPL_API_KEY", validation)
+        self.assertIn("--workers 1 --attempts 2 --max-provider-requests 6", locale)
+
     def test_checkpointed_locales_never_reach_publication_but_keep_chinese_evidence(self) -> None:
         def step(name: str) -> str:
             return self.workflow.split(f"      - name: {name}\n", 1)[1].split("\n      - name:", 1)[0]
@@ -345,7 +378,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn('locale_directions = {"ko": "ltr", "ja": "ltr", "ar": "rtl"}', release_gate)
         self.assertIn('root / f"sitemap-{locale}.xml"', release_gate)
         self.assertIn("gzip.open(cache_path", release_gate)
-        self.assertIn('manifest.get("quality_gate_version") != 2', release_gate)
+        self.assertIn('manifest.get("quality_gate_version") != 3', release_gate)
         self.assertIn('manifest.get("coverage")', release_gate)
         self.assertIn('manifest.get("html_page_count")', release_gate)
         self.assertIn('actual_html_page_count != expected_html_page_count', release_gate)
