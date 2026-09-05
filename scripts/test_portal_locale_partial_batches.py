@@ -11,6 +11,52 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build_portal_locales as builder
 
 
+class SeoPracticalChecks(unittest.TestCase):
+    def test_real_numeric_marker_hallucination_keeps_usable_japanese_prose(self):
+        unit = builder.TranslationUnit("0", "html:text:p", "，但OEM厂商已通过提高PC售价来覆盖内存成本，导致出货量预计环比下降超过")
+        output = "だが、OEMメーカーはPC販売価格を引き上げてメモリコストを賄っており、出荷台数は前期比で__KC_PH_000__%以上減少すると予想される"
+        result = builder.parse_translation_batch(json.dumps({"translations": [{"id": "0", "text": output}]}), [unit], "ja")
+        self.assertEqual(result["0"], output.replace("__KC_PH_000__", ""))
+
+    def test_missing_structural_marker_and_javascript_markers_remain_checked(self):
+        for context, source, translated in (
+            ("html:text:p", "详情见__KC_PH_000__", "자세한 내용은 __KC_PH_001__을 참조하세요"),
+            ("javascript:ui", "查看详情", "자세히 __KC_PH_000__"),
+        ):
+            with self.subTest(context=context):
+                unit = builder.TranslationUnit("0", context, source)
+                with self.assertRaisesRegex(builder.TranslationError, "placeholder"):
+                    builder.parse_translation_batch(json.dumps({"translations": [{"id": "0", "text": translated}]}), [unit], "ko")
+
+    def test_translated_quotation_does_not_count_as_a_missing_translation(self):
+        unit = builder.TranslationUnit("0", "html:text:p", "Global investment outlook")
+        builder.validate_translation_quality("ko", unit, "글로벌 투자 전망 — 원제: 「Global investment outlook」")
+        with self.assertRaisesRegex(builder.TranslationError, "unchanged source"):
+            builder.validate_translation_quality("ko", unit, unit.source)
+        with self.assertRaisesRegex(builder.TranslationError, "retains complete source"):
+            builder.validate_translation_quality("ko", unit, "번역 " + unit.source)
+
+    def test_indexable_units_run_first_and_all_languages_share_the_queue(self):
+        units = {f"{i:064x}": builder.TranslationUnit(f"{i:064x}", "html:text:p", "公开研究报告内容") for i in range(5)}
+        priority = frozenset(list(units)[-2:])
+        calls = []
+        native = {"ko": "공개 연구 보고서입니다", "ja": "公開調査レポートです", "ar": "هذا تقرير بحثي عام"}
+        def translator(locale, batch):
+            calls.append((locale, batch[0].key))
+            return {unit.key: native[locale] for unit in batch}
+        with tempfile.TemporaryDirectory() as directory:
+            state = builder.TranslationRun()
+            builder.translate_missing_units(units, builder.empty_cache(),
+                cache_path=Path(directory) / "cache.json.gz", model=builder.DEFAULT_DEEPSEEK_MODEL,
+                base_url="https://api.deepseek.com", workers=1, timeout=1, attempts=1,
+                max_batch_items=1, batch_translator=translator, priority_keys=priority, run_state=state)
+        self.assertEqual([locale for locale, key in calls[:6]], list(builder.LOCALES) * 2)
+        self.assertTrue(all(key in priority for locale, key in calls[:6]))
+        self.assertTrue(all(key not in priority for locale, key in calls[6:]))
+        self.assertEqual(len(calls), 15)
+        self.assertEqual(state.data["status"], "passed")
+
+
 class PlainRepairTests(unittest.TestCase):
     def test_real_failed_fragment_changes_protocol_and_reuses_31_paid_rows(self):
         units = [builder.TranslationUnit(f"{i:064x}", "html:text:p", "公开研究报告内容") for i in range(32)]

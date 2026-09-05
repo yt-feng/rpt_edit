@@ -71,6 +71,7 @@ jobs:
       candidate_commit: ${{ steps.operation.outputs.commit_sha }}
       multilingual_enabled: ${{ steps.operation.outputs.multilingual_enabled }}
       multilingual_live: ${{ steps.operation.outputs.multilingual_live }}
+      locale_ready: ${{ steps.locale_build.outputs.ready }}
       multilingual_index_policy_sha256: ${{ steps.locale_policy.outputs.index_policy_sha256 }}
       chinese_parity_sha256: ${{ steps.chinese_parity.outputs.sha256 }}
       shadow_worker_name: ${{ steps.shadow_context.outputs.worker_name }}
@@ -179,6 +180,8 @@ jobs:
             scripts/check_public_brand.py \
             scripts/compare_portal_release_semantics.py \
             scripts/build_portal_locales.py \
+            scripts/check_deepseek_balance.py \
+            scripts/run_portal_locale_backfill.py \
             scripts/verify_portal_chinese_parity.py \
             scripts/audit_portal_shadow_preview.py \
             scripts/edge_route_cutover.py \
@@ -192,6 +195,9 @@ jobs:
           python3 -B scripts/test_capture_edge_worker_deployment.py
           python3 -B scripts/test_build_portal_locales.py
           python3 -B scripts/test_portal_locale_partial_batches.py
+          python3 -B scripts/test_portal_locale_residual_repair.py
+          python3 -B scripts/test_check_deepseek_balance.py
+          python3 -B scripts/test_run_portal_locale_backfill.py
           python3 -B scripts/test_verify_portal_chinese_parity.py
           python3 -B scripts/test_audit_portal_shadow_preview.py
           python3 scripts/test_portal_seo.py
@@ -586,6 +592,7 @@ jobs:
             --chart-output _neutral_site/data/chart_search_index.json
 
       - name: Snapshot protected Chinese release before locale build
+        id: chinese_snapshot
         if: steps.operation.outputs.multilingual_enabled == 'true'
         env:
           MULTILINGUAL_LIVE: ${{ steps.operation.outputs.multilingual_live }}
@@ -647,6 +654,7 @@ jobs:
             "${active_manifest_args[@]}"
 
       - name: Build Korean Japanese and Arabic static locales
+        id: locale_build
         if: steps.operation.outputs.multilingual_enabled == 'true'
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
@@ -720,12 +728,27 @@ jobs:
             --diagnostics-out "$RUNNER_TEMP/locale-preflight-diagnostics.json" \
             "${cache_args[@]}"
           test -s _neutral_site/data/i18n/cache-v1.json.gz
-          python3 -B scripts/build_portal_locales.py "${locale_args[@]}" \
+          python3 -B scripts/run_portal_locale_backfill.py "${locale_args[@]}" \
             --cache-in _neutral_site/data/i18n/cache-v1.json.gz \
             --workers "$PORTAL_MULTILINGUAL_WORKERS" \
-            --max-provider-cost-cny 400 \
             --attempts 2 \
             --diagnostics-out "$RUNNER_TEMP/locale-full-diagnostics.json"
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          import os
+          from pathlib import Path
+
+          report = json.loads((Path(os.environ["RUNNER_TEMP"]) / "locale-full-diagnostics.json").read_text())
+          ready = report.get("status") == "passed" and report.get("ready") is True
+          print(f"ready={'true' if ready else 'false'}")
+          if not ready:
+              if report.get("status") != "checkpointed":
+                  raise SystemExit("Locale build did not complete or safely checkpoint")
+              with Path(os.environ["GITHUB_STEP_SUMMARY"]).open("a", encoding="utf-8") as summary:
+                  summary.write("## Multilingual translation checkpoint\n\n")
+                  summary.write("已保存已完成译文；本候选仍未完成，not published。中文线上版本保持不变。\n\n")
+                  summary.write("最多三轮余额检查后的续翻已结束；缓存将在后续运行中复用，未完成页面不会发布或索引。\n")
+          PY
 
       - name: Detect multilingual translation checkpoint
         id: locale_checkpoint
@@ -749,20 +772,9 @@ jobs:
           path: ${{ runner.temp }}/portal-locale-cache/cache-v1.json.gz
           key: portal-locale-cache-${{ hashFiles('scripts/build_portal_locales.py') }}-${{ github.run_id }}-${{ github.run_attempt }}
 
-      - name: Preserve translation diagnostics even on failure
-        if: always() && steps.operation.outputs.multilingual_enabled == 'true'
-        uses: actions/upload-artifact@v4
-        with:
-          name: neutral-translation-diagnostics-${{ github.run_id }}-${{ github.run_attempt }}
-          path: |
-            ${{ runner.temp }}/locale-preflight-diagnostics.json
-            ${{ runner.temp }}/locale-full-diagnostics.json
-          if-no-files-found: ignore
-          retention-days: 7
-
       - name: Verify protected Chinese release after locale build
         id: chinese_parity
-        if: steps.operation.outputs.multilingual_enabled == 'true'
+        if: always() && steps.operation.outputs.multilingual_enabled == 'true' && steps.chinese_snapshot.outcome == 'success'
         run: |
           set -euo pipefail
           python3 -B scripts/verify_portal_chinese_parity.py verify \
@@ -779,7 +791,21 @@ jobs:
           print(f"sha256={hashlib.sha256(report.read_bytes()).hexdigest()}")
           PY
 
+      - name: Preserve translation diagnostics even on failure
+        if: always() && steps.operation.outputs.multilingual_enabled == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: neutral-translation-diagnostics-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/locale-preflight-diagnostics.json
+            ${{ runner.temp }}/locale-full-diagnostics*.json
+            ${{ runner.temp }}/chinese-parity.json
+            ${{ runner.temp }}/chinese-performance.json
+          if-no-files-found: ignore
+          retention-days: 7
+
       - name: Validate complete static release
+        if: steps.operation.outputs.multilingual_enabled != 'true' || steps.locale_build.outputs.ready == 'true'
         env:
           PORTAL_MULTILINGUAL_ENABLED: ${{ steps.operation.outputs.multilingual_enabled }}
           PORTAL_MULTILINGUAL_INDEX_START_DATE: ${{ vars.PORTAL_MULTILINGUAL_INDEX_START_DATE || '' }}
@@ -1099,11 +1125,12 @@ jobs:
           PY
 
       - name: Validate built public brand
+        if: steps.operation.outputs.multilingual_enabled != 'true' || steps.locale_build.outputs.ready == 'true'
         run: python3 -B scripts/check_public_brand.py _neutral_site
 
       - name: Compute multilingual index policy identity
         id: locale_policy
-        if: steps.operation.outputs.multilingual_enabled == 'true'
+        if: steps.operation.outputs.multilingual_enabled == 'true' && steps.locale_build.outputs.ready == 'true'
         env:
           PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH: ${{ vars.PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH || '' }}
         run: |
@@ -1151,6 +1178,7 @@ jobs:
 
       - name: Detect meaningful public release changes
         id: release_delta
+        if: steps.operation.outputs.multilingual_enabled != 'true' || steps.locale_build.outputs.ready == 'true'
         env:
           PORTAL_MULTILINGUAL_ENABLED: ${{ steps.operation.outputs.multilingual_enabled }}
         run: |
@@ -1202,7 +1230,7 @@ jobs:
 
       - name: Upload inactive static slot and immutable runtime
         id: static_upload
-        if: steps.release_delta.outputs.changed == 'true'
+        if: steps.release_delta.outputs.changed == 'true' && (steps.operation.outputs.multilingual_enabled != 'true' || steps.locale_build.outputs.ready == 'true')
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -1226,6 +1254,7 @@ jobs:
         if: >-
           ${{
             steps.release_delta.outputs.changed == 'true' &&
+            steps.locale_build.outputs.ready == 'true' &&
             steps.operation.outputs.multilingual_enabled == 'true' &&
             (
               steps.operation.outputs.operation == 'locale-shadow' ||
@@ -1285,7 +1314,7 @@ jobs:
 
       - name: Deploy isolated multilingual shadow worker
         id: shadow_deploy
-        if: steps.shadow_context.outcome == 'success'
+        if: steps.shadow_context.outcome == 'success' && steps.locale_build.outputs.ready == 'true'
         uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -1296,7 +1325,7 @@ jobs:
 
       - name: Verify isolated multilingual shadow worker
         id: shadow_identity
-        if: steps.shadow_deploy.outcome == 'success'
+        if: steps.shadow_deploy.outcome == 'success' && steps.locale_build.outputs.ready == 'true'
         env:
           SHADOW_PREVIEW_URL: ${{ steps.shadow_deploy.outputs.deployment-url }}
           SHADOW_WORKER_NAME: ${{ steps.shadow_context.outputs.worker_name }}
@@ -1344,7 +1373,7 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Publish multilingual review identity
-        if: steps.release_delta.outputs.changed == 'true' && steps.operation.outputs.multilingual_enabled == 'true'
+        if: steps.release_delta.outputs.changed == 'true' && steps.operation.outputs.multilingual_enabled == 'true' && steps.locale_build.outputs.ready == 'true'
         env:
           REVIEW_OPERATION: ${{ steps.operation.outputs.operation }}
           CANDIDATE_COMMIT_SHA: ${{ steps.operation.outputs.commit_sha }}
@@ -1398,7 +1427,7 @@ jobs:
           PY
 
       - name: Build public validation artifact
-        if: steps.release_delta.outputs.changed == 'true'
+        if: steps.release_delta.outputs.changed == 'true' && (steps.operation.outputs.multilingual_enabled != 'true' || steps.locale_build.outputs.ready == 'true')
         env:
           PORTAL_MULTILINGUAL_ENABLED: ${{ steps.operation.outputs.multilingual_enabled }}
         run: |
@@ -1451,7 +1480,7 @@ jobs:
           fi
 
       - name: Upload release validation artifact
-        if: steps.release_delta.outputs.changed == 'true'
+        if: steps.release_delta.outputs.changed == 'true' && (steps.operation.outputs.multilingual_enabled != 'true' || steps.locale_build.outputs.ready == 'true')
         uses: actions/upload-artifact@v4
         with:
           name: neutral-release-validation-${{ github.run_id }}-${{ github.run_attempt }}
@@ -1464,6 +1493,7 @@ jobs:
     if: >-
       ${{
         needs.prepare_release.result == 'success' &&
+        needs.prepare_release.outputs.locale_ready == 'true' &&
         needs.prepare_release.outputs.changed == 'true' &&
         needs.prepare_release.outputs.operation == 'locale-shadow' &&
         needs.prepare_release.outputs.shadow_worker_name != '' &&
@@ -1525,6 +1555,7 @@ jobs:
     if: >-
       ${{
         needs.prepare_release.result == 'success' &&
+        needs.prepare_release.outputs.locale_ready == 'true' &&
         needs.prepare_release.outputs.changed == 'true' &&
         needs.prepare_release.outputs.operation != 'locale-shadow' &&
         needs.prepare_release.outputs.multilingual_enabled == 'true' &&
@@ -1617,6 +1648,10 @@ jobs:
       ${{
         always() &&
         needs.prepare_release.result == 'success' &&
+        (
+          needs.prepare_release.outputs.multilingual_enabled != 'true' ||
+          needs.prepare_release.outputs.locale_ready == 'true'
+        ) &&
         needs.prepare_release.outputs.changed == 'true' &&
         needs.prepare_release.outputs.operation != 'locale-shadow' &&
         (

@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import argparse
 import concurrent.futures
+from collections import deque
 from dataclasses import dataclass
 from datetime import date, datetime
 from decimal import Decimal, InvalidOperation, ROUND_FLOOR
@@ -35,7 +36,7 @@ import xml.etree.ElementTree as ET
 
 CACHE_SCHEMA_VERSION = 1
 PROMPT_VERSION = "portal-public-locales-v4"
-QUALITY_GATE_VERSION = 2
+QUALITY_GATE_VERSION = 3
 DEFAULT_DEEPSEEK_MODEL = "deepseek-v4-flash"
 LEGACY_DEEPSEEK_MODEL_ALIASES = {
     "deepseek-chat": DEFAULT_DEEPSEEK_MODEL,
@@ -363,11 +364,12 @@ class TranslationRun:
             },
         }
 
-    def stop(self, reason: str) -> None:
+    def stop(self, reason: str, *, category: str = "failure") -> None:
         with self.lock:
             if not self.stop_reason:
                 self.stop_reason = reason
                 self.data["stop_reason"] = reason
+                self.data["stop_category"] = category
 
     def check(self) -> None:
         with self.lock:
@@ -400,7 +402,7 @@ class TranslationRun:
                 amount = 3 * input_upper + 9 * payload["max_tokens"]
                 cost = self.data["cost_guard"]
                 if cost["accounted_upper_micro_cny"] + amount > self.max_cost_micro_cny:
-                    self.stop("Provider cost estimate limit reached; stopped new requests")
+                    self.stop("Provider cost estimate limit reached; saved progress for a budgeted continuation", category="budget")
                     raise TranslationStopped(self.stop_reason)
                 reservation = {"input_token_upper": input_upper, "output_token_upper": payload["max_tokens"], "micro_cny": amount}
                 cost["accounted_upper_micro_cny"] += amount
@@ -796,7 +798,10 @@ def validate_translation_quality(locale: str, unit: TranslationUnit, translated:
         return
     if source_compact and translated_compact == source_compact:
         raise TranslationError(f"{locale}: unchanged source text for {unit.key}")
-    if source_compact and source_compact in translated_compact:
+    # A real translation may retain a quoted headline, institution name or a
+    # bilingual label. Equality still detects a wholly untranslated item; a
+    # substring is not, by itself, evidence of an incomplete page.
+    if source_compact and source_compact in translated_compact and not re.search(r'["“”「」『』()（）]', translated_visible):
         raise TranslationError(f"{locale}: translation retains complete source text for {unit.key}")
     target_pattern = {"ko": HANGUL_RE, "ja": re.compile(f"{KANA_RE.pattern}|{CJK_RE.pattern}"), "ar": ARABIC_LETTER_RE}[locale]
     if source_compact and not target_pattern.search(translated_visible):
@@ -909,6 +914,14 @@ def _response_content(response: Any, label: str) -> str:
         raise TranslationError(f"{label}: unexpected DeepSeek response") from error
 
 
+def normalize_prose_translation(unit: TranslationUnit, text: str) -> str:
+    """Remove invented data markers, never invent missing structural values."""
+    if unit.context.startswith(("html:", "jsonld:", "catalog:", "chart:", "hot-report:")):
+        known = set(PLACEHOLDER_RE.findall(unit.source))
+        text = PLACEHOLDER_RE.sub(lambda match: match.group(0) if match.group(0) in known else "", text)
+    return text.strip()
+
+
 def parse_translation_batch(value: str, units: list[TranslationUnit], locale: str) -> dict[str, str]:
     try:
         payload = json.loads(_strip_code_fence(value))
@@ -934,7 +947,7 @@ def parse_translation_batch(value: str, units: list[TranslationUnit], locale: st
             raw_text = row.get("text")
             if not isinstance(raw_text, str) or not raw_text.strip():
                 raise TranslationError(f"{locale}: missing or invalid translation text for {key}")
-            text = raw_text.strip()
+            text = normalize_prose_translation(expected[key], raw_text)
             validate_translation_quality(locale, expected[key], text)
             translated[key] = text
         except TranslationError as error:
@@ -1066,6 +1079,7 @@ def deepseek_translate_batch(
                                 text = decoded.strip()
                         except json.JSONDecodeError:
                             pass
+                    text = normalize_prose_translation(request_units[0], text)
                     validate_translation_quality(locale, request_units[0], text)
                     accepted[request_units[0].key] = text
             else:
@@ -1132,11 +1146,12 @@ def pack_batches(
     *,
     max_chars: int = DEFAULT_BATCH_CHARS,
     max_items: int = DEFAULT_BATCH_ITEMS,
+    priority_keys: frozenset[str] = frozenset(),
 ) -> list[list[TranslationUnit]]:
     batches: list[list[TranslationUnit]] = []
     current: list[TranslationUnit] = []
     current_chars = 0
-    for unit in sorted(units, key=lambda row: row.key):
+    for unit in sorted(units, key=lambda row: (row.key not in priority_keys, row.key)):
         size = len(unit.source)
         if current and (len(current) >= max_items or current_chars + size > max_chars):
             batches.append(current)
@@ -1168,6 +1183,7 @@ def translate_missing_units(
     max_provider_requests: int | None = None,
     max_provider_cost_cny: str | float | int | None = None,
     run_state: TranslationRun | None = None,
+    priority_keys: frozenset[str] = frozenset(),
 ) -> dict[str, int]:
     if preflight_batches_per_locale < 1 or (max_provider_requests is not None and max_provider_requests < 1):
         raise TranslationError("Preflight batch and provider request limits must be positive")
@@ -1206,7 +1222,7 @@ def translate_missing_units(
         entries = cache["locales"][locale]
         missing = [unit for unit in units.values() if unit.key not in entries]
         missing_counts[locale] = len(missing)
-        batches = pack_batches(missing, max_chars=max_batch_chars, max_items=max_batch_items)
+        batches = pack_batches(missing, max_chars=max_batch_chars, max_items=max_batch_items, priority_keys=priority_keys)
         if preflight_only:
             selected: list[list[TranslationUnit]] = []
             seen_contexts: set[str] = set()
@@ -1220,6 +1236,20 @@ def translate_missing_units(
                 seen_contexts.update(unit.context for unit in batch)
             batches = selected
         jobs.extend((locale, batch) for batch in batches)
+    if not preflight_only:
+        # Finish public hubs/UI and indexable pages across all three languages
+        # first. Archive ordering must not starve Arabic behind two full corpora.
+        ordered_jobs = []
+        for priority in (True, False):
+            queues = {locale: deque() for locale in LOCALES}
+            for locale, batch in jobs:
+                if any(unit.key in priority_keys for unit in batch) == priority:
+                    queues[locale].append(batch)
+            while any(queues.values()):
+                for locale, queue in queues.items():
+                    if queue:
+                        ordered_jobs.append((locale, queue.popleft()))
+        jobs = ordered_jobs
     # Start the actual inventory with a small, useful all-language cohort.
     # These rows become the final cache, not throwaway test translations.
     warmup_size = 0
@@ -1240,6 +1270,7 @@ def translate_missing_units(
         "selected_batches": len(jobs), "workers": worker_count,
         "warmup_batches": warmup_size, "warmup_workers": min(8, worker_count),
         "selected_contexts": sorted({unit.context for _locale, batch in jobs for unit in batch}),
+        "priority_unit_count": len(priority_keys), "language_scheduling": "round-robin" if not preflight_only else "preflight",
         "pending_repairs": [], "pending_repair_count": 0,
         "deferred_units_total": 0, "deferred_batches": 0,
         "repaired_units": 0, "repair_queue_limit": 1024,
@@ -1295,14 +1326,16 @@ def translate_missing_units(
             error.__cause__ is not None and not isinstance(error.__cause__, TranslationError)
         )
 
-    def repair_pending() -> None:
+    def repair_pending(*, deadline: float | None = None) -> None:
         # One attempt per source, with at most eight in flight. Only this
         # coordinator mutates cache/queue; requests share the existing budget.
         repair_workers = min(8, worker_count)
-        repair_jobs = list(deferred.items())
+        repair_jobs = [(identity, record) for identity, record in deferred.items()
+                       if record["repair_attempts"] == 0]
         next_job = 0
         started = time.monotonic()
-        deadline = started + 15 * 60
+        if deadline is None:
+            deadline = started + 15 * 60
         checkpoint = started
         run_state.data.update({"repair_workers": repair_workers, "repair_dispatch_limit_seconds": 900})
         write_cache(cache_path, cache)
@@ -1315,7 +1348,7 @@ def translate_missing_units(
                            and not run_state.stop_reason):
                         if time.monotonic() >= deadline:
                             run_state.data["repair_dispatch_limit_reached"] = True
-                            run_state.stop("Plain repair dispatch time limit reached; saved outstanding queue")
+                            run_state.stop("Plain repair dispatch time limit reached; saved outstanding queue", category="repair_limit")
                             break
                         identity, record = repair_jobs[next_job]
                         next_job += 1
@@ -1355,7 +1388,7 @@ def translate_missing_units(
                     now = time.monotonic()
                     if next_job < len(repair_jobs) and now >= deadline:
                         run_state.data["repair_dispatch_limit_reached"] = True
-                        run_state.stop("Plain repair dispatch time limit reached; saved outstanding queue")
+                        run_state.stop("Plain repair dispatch time limit reached; saved outstanding queue", category="repair_limit")
                     if run_state.stop_reason:
                         for future in in_flight:
                             future.cancel()
@@ -1447,7 +1480,7 @@ def translate_missing_units(
                                 run_state.data["deferred_units_total"] += 1
                             sync_repairs()
                             if len(deferred) >= 1024:
-                                run_state.stop("Pending translation repair queue limit reached; saved completed rows")
+                                run_state.stop("Pending translation repair queue limit reached; saved completed rows", category="repair_limit")
                             completed += 1
                             continue
                         consecutive_failures += 1
@@ -1457,6 +1490,8 @@ def translate_missing_units(
                         failures.append(f"{locale}/{batch[0].key[:12]}: {reason}")
                         if isinstance(error, ProviderHTTPError) and error.status in {401, 402, 403}:
                             run_state.stop(f"DeepSeek HTTP {error.status}; stopped new provider requests")
+                        elif isinstance(error, TranslationStopped) or transport_failure(error):
+                            run_state.stop(reason)
                         if warming_up:
                             run_state.stop("Initial small-cohort translation incomplete; saved usable rows before high concurrency")
                         if preflight_only or systemic_failure:
@@ -1482,23 +1517,78 @@ def translate_missing_units(
                     run_state.write()
                     log(f"  translation batches {completed}/{len(jobs)} failures={len(failures)}")
                     last_checkpoint = now
-        if deferred and not run_state.stop_reason and not failures:
-            repair_pending()
+        if not preflight_only and not run_state.stop_reason and completed == len(jobs):
+            # Cache rows are validated on entry and on every write. Rebuild the
+            # complete residual inventory rather than relying on sparse-gap
+            # deferral: isolated zero-row/invalid-JSON batches need repair too.
+            residual = [(locale, unit) for locale in LOCALES for unit in units.values()
+                        if unit.key not in cache["locales"][locale]]
+            run_state.data["tail_repair_units"] = len(residual)
+            previous_records = deferred
+            failed_records: dict[tuple[str, str], dict[str, Any]] = {}
+            deadline = time.monotonic() + 15 * 60
+            for offset in range(0, len(residual), 1024):
+                deferred = {}
+                for locale, unit in residual[offset:offset + 1024]:
+                    identity = (locale, unit.key)
+                    deferred[identity] = previous_records.pop(identity, None) or {
+                        "locale": locale, "key": unit.key,
+                        "reason": "Missing validated translation after main batches",
+                        "context": unit.context, "source": unit.source[:600],
+                        "batch_key": unit.key, "repair_attempts": 0,
+                    }
+                run_state.data["tail_repair_chunks"] = run_state.data.get("tail_repair_chunks", 0) + 1
+                sync_repairs()
+                repair_pending(deadline=deadline)
+                for identity, record in deferred.items():
+                    if len(failed_records) < 1024:
+                        failed_records[identity] = record
+                if run_state.stop_reason:
+                    break
+            # Keep a bounded actionable sample, including undispatched rows.
+            # Full remaining counts below are authoritative when it exceeds the
+            # queue limit; the cache itself is the complete resume checkpoint.
+            deferred = {}
+            for locale, unit in residual:
+                identity = (locale, unit.key)
+                if unit.key not in cache["locales"][locale] and len(deferred) < 1024:
+                    deferred[identity] = failed_records.get(identity) or previous_records.get(identity) or {
+                        "locale": locale, "key": unit.key,
+                        "reason": "Missing validated translation after main batches",
+                        "context": unit.context, "source": unit.source[:600],
+                        "batch_key": unit.key, "repair_attempts": 0,
+                    }
     finally:
         sync_repairs()
-        unresolved_batches = {(row["locale"], row["batch_key"]) for row in deferred.values()}
+        # Preflight checks only its representative jobs. A full run must cover
+        # the complete inventory, including work left undispatched by a stop.
+        remaining_counts = {
+            locale: sum(unit.key not in cache["locales"][locale] for unit in units.values())
+            for locale in LOCALES
+        }
+        unresolved_batches = sum(
+            any(unit.key not in cache["locales"][locale] for unit in batch)
+            for locale, batch in jobs
+        )
+        incomplete = unresolved_batches if preflight_only else sum(remaining_counts.values())
         run_state.data.update({
-            "completed_batches": completed, "failed_batches": len(failures) + len(unresolved_batches),
-            "status": "failed" if failures or deferred or run_state.stop_reason or completed < len(jobs) else "passed",
+            "completed_batches": completed,
+            "failed_batches": len(failures) if preflight_only else unresolved_batches,
+            "remaining_batches": unresolved_batches,
+            "original_failed_batches": len(failures), "original_batch_errors": list(failures),
+            "remaining_units": remaining_counts, "remaining_units_total": sum(remaining_counts.values()),
+            "status": "failed" if incomplete or run_state.stop_reason or completed < len(jobs) else "passed",
         })
         write_cache(cache_path, cache)
         run_state.write()
-    if failures:
-        raise TranslationError("Locale translation failed: " + " | ".join(failures[:10]))
     if run_state.stop_reason:
+        if failures and run_state.data.get("stop_category") not in {"budget", "repair_limit"}:
+            raise TranslationError("Locale translation failed: " + " | ".join(failures[:10]))
         raise TranslationStopped(run_state.stop_reason)
-    if deferred:
-        raise TranslationError(f"Locale translation has {len(deferred)} unresolved source units; completed rows saved")
+    if incomplete:
+        raise TranslationError(f"Locale translation has {incomplete} unresolved source units; completed rows saved")
+    if completed < len(jobs):
+        raise TranslationError("Locale translation left undispatched batches; completed rows saved")
     return missing_counts
 
 
@@ -4456,6 +4546,7 @@ def _build_localized_release(
         raise TranslationError("Built public chart index has duplicate chart ids")
 
     units: dict[str, TranslationUnit] = {}
+    priority_units: dict[str, TranslationUnit] = {}
     localized_html_sources: dict[Path, str] = {}
     for path, source in original_html.items():
         relative = path.relative_to(root)
@@ -4467,6 +4558,8 @@ def _build_localized_release(
         localized_html_sources[path] = localized_source
         try:
             collect_html_units(localized_source, units)
+            if index_plan[path].indexable:
+                collect_html_units(localized_source, priority_units)
         except TranslationError as error:
             raise TranslationError(f"{path.relative_to(root)}: {error}") from error
     javascript_sources: dict[str, str] = {}
@@ -4477,6 +4570,7 @@ def _build_localized_release(
         javascript_sources[asset_name] = path.read_text(encoding="utf-8")
         validate_javascript_translation_coverage(javascript_sources[asset_name], asset_name)
         collect_javascript_units(javascript_sources[asset_name], asset_name, units)
+        collect_javascript_units(javascript_sources[asset_name], asset_name, priority_units)
     css_content_rules: list[CSSContentRule] = []
     for path in sorted((root / "assets").rglob("*.css")):
         if path.name == "locale.css":
@@ -4484,6 +4578,7 @@ def _build_localized_release(
         asset_name = path.relative_to(root / "assets").as_posix()
         css_content_rules.extend(scan_css_content_rules(path.read_text(encoding="utf-8"), asset_name))
     collect_css_content_units(css_content_rules, units)
+    collect_css_content_units(css_content_rules, priority_units)
     collect_catalog_units(catalog, units)
     for detail_catalog in detail_overlay_sources.values():
         collect_catalog_units(detail_catalog, units)
@@ -4526,6 +4621,7 @@ def _build_localized_release(
         max_provider_requests=max_provider_requests,
         max_provider_cost_cny=max_provider_cost_cny,
         run_state=run_state,
+        priority_keys=frozenset(priority_units),
     )
     if preflight_only:
         result = {
@@ -4802,6 +4898,7 @@ def read_index_allowlist(path: Path | None) -> tuple[str, ...]:
 
 def build_localized_release(**kwargs: Any) -> dict[str, Any]:
     """Persist diagnostics even when inventory collection or rendering fails."""
+    checkpoint_on_budget = kwargs.pop("checkpoint_on_budget", False)
     limit = kwargs.get("max_provider_requests")
     if limit is None and kwargs.get("preflight_only"):
         limit = 6
@@ -4811,6 +4908,14 @@ def build_localized_release(**kwargs: Any) -> dict[str, Any]:
         run_state.data["status"] = "passed"
         return result
     except BaseException as error:
+        if (checkpoint_on_budget and isinstance(error, TranslationError)
+                and run_state.data.get("stop_category") in {"budget", "repair_limit"}):
+            # Translation stops before rendering, so this is a saved work item,
+            # never a deployable partial locale. The workflow gates on ready.
+            run_state.data.update(status="checkpointed", ready=False)
+            run_state.data["build_error"] = run_state.stop_reason
+            log("Locale translation checkpoint saved; bounded continuation required; no locale release rendered.")
+            return {"status": "checkpointed", "ready": False, "stop_reason": run_state.stop_reason}
         run_state.data["status"] = "failed"
         run_state.data["build_error"] = str(error) if isinstance(error, TranslationError) else type(error).__name__
         raise
@@ -4845,6 +4950,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--diagnostics-out", type=Path, help="Persist request/usage diagnostics on both success and failure")
     parser.add_argument("--max-provider-requests", type=int, help="Hard HTTP attempt limit; preflight defaults to 6, full build has no default cap")
     parser.add_argument("--max-provider-cost-cny", help="Optional conservative per-run estimate cap at peak Flash prices; not an account balance cap")
+    parser.add_argument("--checkpoint-on-budget", action="store_true", help="Save a non-publishable checkpoint at the configured budget or bounded repair limit")
     parser.add_argument(
         "--index-start-date",
         default=os.getenv("PORTAL_LOCALE_INDEX_START_DATE", ""),
@@ -4879,6 +4985,7 @@ def main() -> int:
             diagnostics_out=args.diagnostics_out,
             max_provider_requests=args.max_provider_requests,
             max_provider_cost_cny=args.max_provider_cost_cny,
+            checkpoint_on_budget=args.checkpoint_on_budget,
             hot_report_index_path=args.hot_report_index,
             index_start_date=args.index_start_date,
             index_allowlist=read_index_allowlist(args.index_allowlist),
