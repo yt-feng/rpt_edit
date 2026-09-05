@@ -163,9 +163,13 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
             "${{ github.run_id }}-${{ github.run_attempt }}",
             restore_cache,
         )
-        self.assertIn(
-            "portal-locale-cache-${{ hashFiles('scripts/build_portal_locales.py') }}-",
-            restore_cache,
+        restore_keys = restore_cache.split("restore-keys: |\n", 1)[1].split("\n\n", 1)[0]
+        self.assertEqual(
+            [line.strip() for line in restore_keys.splitlines()],
+            [
+                "portal-locale-cache-${{ hashFiles('scripts/build_portal_locales.py') }}-",
+                "portal-locale-cache-",
+            ],
         )
 
         cache = self.workflow[active_cache:base_build]

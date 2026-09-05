@@ -525,8 +525,10 @@ jobs:
         with:
           path: ${{ runner.temp }}/portal-locale-cache/cache-v1.json.gz
           key: portal-locale-cache-${{ hashFiles('scripts/build_portal_locales.py') }}-${{ github.run_id }}-${{ github.run_attempt }}
+          # Loader/prune validate schema, prompt/provider/model, and each source/quality entry.
           restore-keys: |
             portal-locale-cache-${{ hashFiles('scripts/build_portal_locales.py') }}-
+            portal-locale-cache-
 
       - name: Use active multilingual cache only without a CI checkpoint
         if: steps.operation.outputs.multilingual_enabled == 'true'
