@@ -1704,6 +1704,13 @@ class PortalHTMLProcessor(HTMLParser):
         return self.locale is not None and self.cache is not None
 
     def process_text(self, value: str, context: str) -> str:
+        if context == "html:meta:keywords":
+            # Each keyword is its own translation obligation. Keep delimiters
+            # and surrounding whitespace identical in collection and rendering.
+            return "".join(
+                part if index % 2 or not part.strip() else self.process_text(part, "html:meta:keyword")
+                for index, part in enumerate(re.split(r"([,，、])", value))
+            )
         value = localized_presentation_source(value, context)
         if self.units is not None:
             collect_text_units(value, context, self.units)

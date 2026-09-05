@@ -149,7 +149,12 @@ def collect_samples(origin: str, fetcher: Callable[[str], bytes]) -> tuple[dict,
     if any(not units for units in groups.values()):
         raise PreflightError("A required public metadata source has no translatable sample")
 
-    queues = {label: deque(units.values()) for label, units in groups.items()}
+    # Exercise mixed-language keyword handling in the bounded real-site canary;
+    # otherwise a long list's final English terms fall outside the 16-unit sample.
+    queues = {label: deque(sorted(units.values(), key=lambda unit: (
+        0 if unit.context == "html:meta:keyword" and re.search(r"[A-Za-z]{3}", unit.source)
+             and not builder.CJK_RE.search(unit.source) else 1,
+    ))) for label, units in groups.items()}
     selected, counts = {}, Counter()
     while len(selected) < MAX_SAMPLE_UNITS and any(queues.values()):
         for label, queue in queues.items():

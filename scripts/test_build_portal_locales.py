@@ -2850,5 +2850,74 @@ class ProviderCostGuardTests(unittest.TestCase):
             state.reserve(self.payload())
 
 
+class MetaKeywordTranslationTests(unittest.TestCase):
+    def test_mixed_keywords_translate_individually_preserving_delimiters_and_original(self) -> None:
+        keywords = f"  {builder.LATIN_PUBLIC_BRAND},金融研报， Chinese financial research 、investment bank research,  ,金融研报  "
+        source = f'<html lang="zh-Hans"><head><meta name="keywords" content="{keywords}"></head><body></body></html>'
+        units: dict[str, builder.TranslationUnit] = {}
+        builder.collect_html_units(source, units)
+        translations = {
+            "金融研报": "금융 리서치",
+            "Chinese financial research": "중국 금융 리서치",
+            "investment bank research": "투자은행 리서치",
+        }
+        self.assertEqual({unit.source for unit in units.values()}, set(translations))
+        self.assertEqual({unit.context for unit in units.values()}, {"html:meta:keyword"})
+        self.assertEqual(len(units), 3, "duplicate keywords share the same cache unit")
+        cache = builder.empty_cache()
+        cache["locales"]["ko"] = {
+            unit.key: {"source": unit.source, "translation": translations[unit.source]}
+            for unit in units.values()
+        }
+        with tempfile.TemporaryDirectory() as folder:
+            original = Path(folder) / "index.html"
+            original.write_text(source, encoding="utf-8")
+            before = original.read_bytes()
+            localized = builder.render_localized_html(
+                original.read_text(encoding="utf-8"), locale="ko", cache=cache,
+                site_url=SITE_URL, discovery_markup="",
+            )
+            self.assertEqual(original.read_bytes(), before)
+        expected = f"  {builder.LATIN_PUBLIC_BRAND},금융 리서치， 중국 금융 리서치 、투자은행 리서치,  ,금융 리서치  "
+        self.assertIn(f'content="{expected}"', localized)
+        self.assertNotIn("Chinese financial research", localized)
+        self.assertNotIn("investment bank research", localized)
+
+    def test_keyword_cache_deduplicates_across_pages_but_other_meta_is_not_split(self) -> None:
+        units: dict[str, builder.TranslationUnit] = {}
+        for keywords in ("金融研报,Chinese financial research", " Chinese financial research 、 金融研报 "):
+            builder.collect_html_units(f'<meta name="keywords" content="{keywords}">', units)
+        self.assertEqual(len(units), 2)
+        prior_keys = set(units)
+        builder.collect_html_units('<meta name="description" content="金融研报,Chinese financial research">', units)
+        added = [unit for key, unit in units.items() if key not in prior_keys]
+        self.assertEqual(len(added), 1)
+        self.assertEqual(added[0].source, "金融研报,Chinese financial research")
+        self.assertEqual(added[0].context, "html:meta:description")
+        parser = builder.PortalHTMLProcessor(units={})
+        self.assertEqual(parser.process_text(" ,， 、 ", "html:meta:keywords"), " ,， 、 ")
+        self.assertEqual(parser.units, {})
+
+    def test_untranslated_english_keyword_is_rejected_independently(self) -> None:
+        source = '<meta name="keywords" content="金融研报,Chinese financial research,investment bank research">'
+        units: dict[str, builder.TranslationUnit] = {}
+        builder.collect_html_units(source, units)
+        cache = builder.empty_cache()
+        for unit in units.values():
+            cache["locales"]["ko"][unit.key] = {
+                "source": unit.source,
+                "translation": "금융 리서치" if unit.source == "金融研报" else unit.source,
+            }
+        with self.assertRaisesRegex(builder.TranslationError, "unchanged source text"):
+            builder.render_localized_html(
+                source, locale="ko", cache=cache, site_url=SITE_URL, discovery_markup="",
+            )
+        english = next(unit for unit in units.values() if unit.source == "Chinese financial research")
+        with self.assertRaisesRegex(builder.TranslationError, "unchanged source text"):
+            builder.parse_translation_batch(json.dumps({
+                "translations": [{"id": english.key, "text": english.source}],
+            }), [english], "ko")
+
+
 if __name__ == "__main__":
     unittest.main()
