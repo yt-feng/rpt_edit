@@ -38,6 +38,7 @@ jobs:
             scripts/preflight_portal_locale_translation.py
             scripts/test_preflight_portal_locale_translation.py
             scripts/test_portal_locale_partial_batches.py
+            scripts/test_portal_locale_residual_repair.py
             scripts/probe_portal_locale_protocol.py
             scripts/test_probe_portal_locale_protocol.py
             scripts/check_deepseek_balance.py
@@ -57,6 +58,7 @@ jobs:
       - name: Test bounded preflight without provider requests
         run: |
           python3 -B scripts/test_portal_locale_partial_batches.py
+          python3 -B scripts/test_portal_locale_residual_repair.py
           python3 -B scripts/test_preflight_portal_locale_translation.py
           python3 -B scripts/test_probe_portal_locale_protocol.py
           python3 -B scripts/test_check_deepseek_balance.py

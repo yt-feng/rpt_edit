@@ -394,6 +394,51 @@ class PortalLocaleBuildTests(unittest.TestCase):
             **options,
         )
 
+    @mock.patch.dict("os.environ", {"DEEPSEEK_API_KEY": "offline-test-key"}, clear=True)
+    def test_budget_checkpoint_does_not_render_or_mutate_protected_chinese(self) -> None:
+        before = {path: path.read_bytes() for path in self.site.rglob("*") if path.is_file()}
+        diagnostics = self.temporary_root / "budget-checkpoint.json"
+        provider = mock.Mock(side_effect=AssertionError("Insufficient estimate budget must stop before HTTP"))
+        with mock.patch.dict(sys.modules, {"deepseek_http": mock.Mock(request_with_key_fallback=provider)}):
+            result = self._build(None, workers=1, checkpoint_on_budget=True,
+                                 max_provider_cost_cny="0.000001", diagnostics_out=diagnostics)
+        self.assertEqual(result["status"], "checkpointed")
+        self.assertFalse(result["ready"])
+        self.assertEqual(before, {path: path.read_bytes() for path in self.site.rglob("*") if path.is_file()})
+        self.assertTrue(self.cache.is_file())
+        self.assertFalse((self.site / "ko").exists())
+        report = json.loads(diagnostics.read_text())
+        self.assertEqual(report["stop_category"], "budget")
+        self.assertEqual(report["build_error"], report["stop_reason"])
+        self.assertEqual(report["provider_requests"], 0)
+        provider.assert_not_called()
+
+    def test_checkpoint_flag_does_not_hide_real_translation_or_source_errors(self) -> None:
+        diagnostics = self.temporary_root / "real-error.json"
+        translator = mock.Mock(side_effect=builder.TranslationError("missing required link placeholder"))
+        with self.assertRaisesRegex(builder.TranslationError, "missing required link placeholder"):
+            self._build(translator, checkpoint_on_budget=True, diagnostics_out=diagnostics)
+        self.assertEqual(json.loads(diagnostics.read_text())["status"], "failed")
+        self.assertFalse((self.site / "ko").exists())
+
+    def test_bounded_repair_checkpoint_cannot_be_mistaken_for_a_release(self) -> None:
+        diagnostics = self.temporary_root / "repair-checkpoint.json"
+        before = {path: path.read_bytes() for path in self.site.rglob("*") if path.is_file()}
+
+        def stop_at_repair_limit(**kwargs: object) -> None:
+            run_state = kwargs["run_state"]
+            run_state.stop("Bounded repair deadline reached", category="repair_limit")
+            raise builder.TranslationStopped(run_state.stop_reason)
+
+        with mock.patch.object(builder, "_build_localized_release", side_effect=stop_at_repair_limit):
+            result = self._build(None, checkpoint_on_budget=True, diagnostics_out=diagnostics)
+        self.assertEqual(result["status"], "checkpointed")
+        self.assertFalse(result["ready"])
+        self.assertEqual(before, {path: path.read_bytes() for path in self.site.rglob("*") if path.is_file()})
+        report = json.loads(diagnostics.read_text())
+        self.assertEqual(report["stop_category"], "repair_limit")
+        self.assertFalse(report["ready"])
+
     def test_hot_report_source_fails_closed_and_uses_only_public_display_fields(self) -> None:
         self.hot_report_index.unlink()
         with self.assertRaisesRegex(builder.TranslationError, "Hot Reports public index"):
@@ -2261,10 +2306,11 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
         def provider(_url: str, **kwargs: object) -> mock.Mock:
             payload = kwargs["payload"]
             rows = json.loads(payload["messages"][1]["content"])["items"]
+            native_text = FAKE_COPY[kwargs["label"].split()[0]]
             response = mock.Mock(status_code=200)
             response.json.return_value = {
                 "choices": [{"finish_reason": "stop", "message": {"content": json.dumps({
-                    "translations": [{"id": row["id"], "text": "공개 연구 내용입니다"} for row in rows],
+                    "translations": [{"id": row["id"], "text": native_text} for row in rows],
                 })}}],
                 "usage": {"prompt_tokens": 5, "completion_tokens": 4, "total_tokens": 9},
             }

@@ -229,16 +229,17 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn('test -s _neutral_site/data/i18n/cache-v1.json.gz', locale[preflight:full])
         self.assertIn('"$RUNNER_TEMP/locale-preflight-diagnostics.json"', locale)
         self.assertIn('"$RUNNER_TEMP/locale-full-diagnostics.json"', locale)
-        self.assertIn("--max-provider-cost-cny 400", locale[full:])
+        self.assertIn("scripts/run_portal_locale_backfill.py", locale)
+        self.assertNotIn("--max-provider-cost-cny 400", locale[full:])
         self.assertNotIn("|| true", locale)
         diagnostics = self.workflow.index("Preserve translation diagnostics even on failure")
         self.assertLess(save_checkpoint, diagnostics)
         self.assertLess(diagnostics, validate_release)
-        diagnostics_step = self.workflow[diagnostics:self.workflow.index("Verify protected Chinese release", diagnostics)]
+        diagnostics_step = self.workflow[diagnostics:validate_release]
         self.assertIn("if: always() && steps.operation.outputs.multilingual_enabled == 'true'", diagnostics_step)
         self.assertIn("uses: actions/upload-artifact@v4", diagnostics_step)
         self.assertIn("locale-preflight-diagnostics.json", diagnostics_step)
-        self.assertIn("locale-full-diagnostics.json", diagnostics_step)
+        self.assertIn("locale-full-diagnostics*.json", diagnostics_step)
         self.assertIn('index_args=(--index-start-date "$PORTAL_MULTILINGUAL_INDEX_START_DATE")', locale)
         self.assertIn('if [ -n "$PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH" ]; then', locale)
         self.assertIn('PurePosixPath(value)', locale)
@@ -271,6 +272,50 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn("scripts/test_portal_locale_runtime.js", validate_source)
         self.assertIn("scripts/build_portal_locales.py", validate_source)
         self.assertIn("portal_suite/locale_assets/locale-runtime.js", validate_source)
+
+    def test_checkpointed_locales_never_reach_publication_but_keep_chinese_evidence(self) -> None:
+        def step(name: str) -> str:
+            return self.workflow.split(f"      - name: {name}\n", 1)[1].split("\n      - name:", 1)[0]
+
+        candidate_condition = "steps.operation.outputs.multilingual_enabled != 'true' || steps.locale_build.outputs.ready == 'true'"
+        for name in (
+            "Validate complete static release", "Validate built public brand",
+            "Detect meaningful public release changes", "Upload inactive static slot and immutable runtime",
+            "Build public validation artifact", "Upload release validation artifact",
+        ):
+            with self.subTest(step=name):
+                self.assertIn(candidate_condition, step(name).split("\n        run:", 1)[0])
+        for name in ("Compute multilingual index policy identity", "Prepare isolated multilingual shadow worker"):
+            self.assertIn("steps.locale_build.outputs.ready == 'true'", step(name).split("\n        env:", 1)[0])
+        for prefix in ("steps.shadow_context.outcome == 'success'", "steps.shadow_deploy.outcome == 'success'"):
+            self.assertIn(f"if: {prefix} && steps.locale_build.outputs.ready == 'true'", self.workflow)
+        for job in ("shadow_review_hold", "multilingual_approval", "cutover"):
+            header = self.workflow.split(f"\n  {job}:\n", 1)[1].split("\n    runs-on:", 1)[0]
+            self.assertIn("needs.prepare_release.outputs.locale_ready == 'true'", header)
+        cutover_header = self.workflow.split("\n  cutover:\n", 1)[1].split("\n    runs-on:", 1)[0]
+        self.assertIn("needs.prepare_release.outputs.multilingual_enabled != 'true' ||", cutover_header)
+        self.assertIn("locale_ready: ${{ steps.locale_build.outputs.ready }}", self.workflow)
+        self.assertIn("id: locale_build", step("Build Korean Japanese and Arabic static locales"))
+        self.assertIn('report.get("status") == "passed" and report.get("ready") is True', self.workflow)
+        self.assertIn("not published", self.workflow)
+        parity = step("Verify protected Chinese release after locale build")
+        self.assertIn("if: always()", parity)
+        self.assertIn("steps.chinese_snapshot.outcome == 'success'", parity)
+        self.assertNotIn("steps.locale_build.outputs.ready", parity)
+        self.assertIn("id: chinese_snapshot", step("Snapshot protected Chinese release before locale build"))
+        diagnostics = step("Preserve translation diagnostics even on failure")
+        self.assertIn("if: always()", diagnostics)
+        for filename in ("locale-full-diagnostics*.json", "chinese-parity.json", "chinese-performance.json"):
+            self.assertIn(filename, diagnostics)
+        self.assertLess(self.workflow.index("Verify protected Chinese release after locale build"),
+                        self.workflow.index("Preserve translation diagnostics even on failure"))
+        for script in ("test_check_deepseek_balance.py", "test_run_portal_locale_backfill.py", "test_portal_locale_residual_repair.py"):
+            self.assertIn(f"python3 -B scripts/{script}", step("Validate public source"))
+
+    def test_static_release_validation_still_requires_full_locale_integrity(self) -> None:
+        validate_release = self.workflow.index("Validate complete static release")
+        brand_check = self.workflow.index("Validate built public brand")
+        upload = self.workflow.index("Upload inactive static slot and immutable runtime")
 
         release_gate = self.workflow[validate_release:brand_check]
         for path in (
