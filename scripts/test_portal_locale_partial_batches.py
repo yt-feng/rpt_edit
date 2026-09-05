@@ -12,6 +12,39 @@ import build_portal_locales as builder
 
 
 class PartialBatchTests(unittest.TestCase):
+    def test_structured_entity_aliases_are_identity_not_untranslated_prose(self):
+        alias = "Bank of America Merrill Lynch"
+        node = {"@type": "Organization", "name": "Bank of America", "alternateName": [alias]}
+        inventory = {}
+        builder.json_ld_walk(node, units=inventory)
+        _protected, old_unit = builder.unit_for_text(alias, "jsonld:alternateName")
+        current = inventory[old_unit.key]
+        self.assertEqual(current.source, old_unit.source)
+        self.assertEqual(current.context, "jsonld:entity:alternateName")
+        cache = builder.empty_cache()
+        for locale in builder.LOCALES:
+            for unit in inventory.values():
+                builder.validate_translation_quality(locale, unit, unit.source)
+                cache["locales"][locale][unit.key] = {"source": unit.source, "translation": unit.source}
+            self.assertEqual(builder.json_ld_walk(node, locale=locale, cache=cache), node)
+        for schema_type in ("Person", "Brand", ["Thing", "Organization"], "https://schema.org/Organization"):
+            units = {}
+            builder.json_ld_walk({"@type": schema_type, "alternateName": alias}, units=units)
+            builder.validate_translation_quality("ko", units[old_unit.key], alias)
+
+    def test_structured_entity_rule_does_not_exempt_body_or_page_headlines(self):
+        source = "Global markets remain strong while interest rates continue rising"
+        for node in (
+            {"@type": "Organization", "description": source},
+            {"@type": "WebPage", "name": source},
+            {"@type": "Article", "alternateName": source},
+        ):
+            units = {}
+            builder.json_ld_walk(node, units=units)
+            for unit in units.values():
+                with self.assertRaisesRegex(builder.TranslationError, "unchanged source"):
+                    builder.validate_translation_quality("ko", unit, source)
+
     def setUp(self):
         self.units = [
             builder.TranslationUnit("a" * 64, "html:text:p", "第一段公开研究报告的完整内容。"),

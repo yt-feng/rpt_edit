@@ -199,6 +199,9 @@ OFFICIAL_NAME_CONTEXTS = frozenset({
     "chart:entities",
     "hot-report:institution",
 })
+# These are identity fields, not prose. Keep this separate from the cache-key
+# namespace above so existing paid translations stay reusable.
+STRUCTURED_NAME_CONTEXTS = frozenset({"jsonld:entity:name", "jsonld:entity:alternateName"})
 NATIVE_LANGUAGE_LABELS = frozenset({"English", "中文", "日本語", "한국어", "العربية"})
 LATIN_PUBLIC_BRAND = "".join(("KC", "Desk"))
 TOKEN_RE = re.compile(
@@ -774,7 +777,7 @@ def validate_translation_quality(locale: str, unit: TranslationUnit, translated:
     translated_visible = _quality_visible_text(text)
     if source_visible and not translated_visible:
         raise TranslationError(f"{locale}: empty translation for {unit.key}")
-    if unit.context in OFFICIAL_NAME_CONTEXTS:
+    if unit.context in OFFICIAL_NAME_CONTEXTS or unit.context in STRUCTURED_NAME_CONTEXTS:
         return
     source_compact = _quality_compact(source_visible)
     translated_compact = _quality_compact(translated_visible)
@@ -1473,6 +1476,7 @@ def json_ld_walk(
     cache: dict[str, Any] | None = None,
     site_url: str = "",
     parent_key: str = "",
+    entity_name: bool = False,
 ) -> Any:
     if isinstance(value, dict):
         output: dict[str, Any] = {}
@@ -1481,6 +1485,11 @@ def json_ld_walk(
             schema_types = [schema_types]
         is_report = isinstance(schema_types, list) and any(
             str(schema_type or "").strip().lower() == "report"
+            for schema_type in schema_types
+        )
+        is_entity = isinstance(schema_types, list) and any(
+            str(schema_type or "").rstrip("/").rsplit("/", 1)[-1].lower()
+            in {"organization", "person", "brand", "corporation", "bankorcreditunion"}
             for schema_type in schema_types
         )
         for key, child in value.items():
@@ -1501,6 +1510,7 @@ def json_ld_walk(
                     cache=cache,
                     site_url=site_url,
                     parent_key=key,
+                    entity_name=is_entity and key in {"name", "alternateName"},
                 )
         return output
     if isinstance(value, list):
@@ -1512,6 +1522,7 @@ def json_ld_walk(
                 cache=cache,
                 site_url=site_url,
                 parent_key=parent_key,
+                entity_name=entity_name,
             )
             for child in value
         ]
@@ -1521,7 +1532,7 @@ def json_ld_walk(
         return absolute_locale_url(value, locale, site_url)
     if parent_key not in JSON_LD_TRANSLATABLE_KEYS:
         return value
-    context = f"jsonld:{parent_key}"
+    context = f"jsonld:entity:{parent_key}" if entity_name else f"jsonld:{parent_key}"
     if units is not None:
         collect_text_units(value, context, units)
         return value
