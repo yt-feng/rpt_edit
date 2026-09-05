@@ -4,13 +4,14 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: Translation sample, protocol controls, or read-only account balance
+        description: Translation sample, protocol controls, read-only account balance, or bounded DeepL repair canary
         required: true
         type: choice
         options:
           - sample
           - protocol
           - balance
+          - deepl
         default: sample
 
 permissions:
@@ -44,8 +45,17 @@ jobs:
             scripts/test_probe_portal_locale_protocol.py
             scripts/check_deepseek_balance.py
             scripts/test_check_deepseek_balance.py
+            scripts/deepl_locale_repair.py
+            scripts/test_deepl_locale_repair.py
+            scripts/test_portal_locale_deepl_fallback.py
+            scripts/preflight_deepl_locale_repair.py
+            scripts/test_preflight_deepl_locale_repair.py
             scripts/test_portal_locale_translation_preflight_workflow.py
             scripts/build_portal_locales.py
+            scripts/portal_locale_history.py
+            scripts/test_portal_locale_history.py
+            scripts/portal_locale_scope.py
+            scripts/test_portal_locale_scope.py
             scripts/deepseek_http.py
             scripts/check_public_identity.py
 
@@ -64,6 +74,11 @@ jobs:
           python3 -B scripts/test_preflight_portal_locale_translation.py
           python3 -B scripts/test_probe_portal_locale_protocol.py
           python3 -B scripts/test_check_deepseek_balance.py
+          python3 -B scripts/test_deepl_locale_repair.py
+          python3 -B scripts/test_portal_locale_history.py
+          python3 -B scripts/test_portal_locale_scope.py
+          python3 -B scripts/test_portal_locale_deepl_fallback.py
+          python3 -B scripts/test_preflight_deepl_locale_repair.py
           python3 -B scripts/test_portal_locale_translation_preflight_workflow.py
           python3 -B scripts/check_public_identity.py
 
@@ -75,6 +90,7 @@ jobs:
           DEEPSEEK_API_KEY_BACKUP: ${{ secrets.DEEPSEEK_API_KEY_BACKUP }}
           DEEPSEEK_API_KEY_2: ${{ secrets.DEEPSEEK_API_KEY_2 }}
           DEEPSEEK_API_KEYS: ${{ secrets.DEEPSEEK_API_KEYS }}
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
           DEEPSEEK_BASE_URL: ${{ vars.DEEPSEEK_BASE_URL || 'https://api.deepseek.com' }}
           DEEPSEEK_MODEL: ${{ vars.DEEPSEEK_MODEL || 'deepseek-v4-flash' }}
         run: |
@@ -83,6 +99,7 @@ jobs:
             sample) diagnostic_script=scripts/preflight_portal_locale_translation.py ;;
             protocol) diagnostic_script=scripts/probe_portal_locale_protocol.py ;;
             balance) diagnostic_script=scripts/check_deepseek_balance.py ;;
+            deepl) diagnostic_script=scripts/preflight_deepl_locale_repair.py ;;
             *) echo "Unsupported translation diagnostic mode" >&2; exit 2 ;;
           esac
           python3 -B "$diagnostic_script" \
@@ -100,10 +117,13 @@ jobs:
           if path.is_file():
               report = json.loads(path.read_text(encoding="utf-8"))
               with Path(os.environ["GITHUB_STEP_SUMMARY"]).open("a", encoding="utf-8") as summary:
-                  summary.write("## Bounded DeepSeek diagnostic\n\n")
-                  keys = (("status", "mode", "provider_requests", "balance_requests", "is_available", "balance_infos")
-                          if report.get("mode") == "balance" else
-                          ("status", "provider_requests", "max_provider_requests", "usage_totals", "usage_unknown_responses"))
+                  summary.write("## Bounded translation diagnostic\n\n")
+                  if report.get("mode") == "deepl":
+                      keys = ("status", "provider_requests", "billed_characters", "remaining_character_budget")
+                  elif report.get("mode") == "balance":
+                      keys = ("status", "mode", "provider_requests", "balance_requests", "is_available", "balance_infos")
+                  else:
+                      keys = ("status", "provider_requests", "max_provider_requests", "usage_totals", "usage_unknown_responses")
                   for key in keys:
                       summary.write(f"- {key}: `{json.dumps(report.get(key), ensure_ascii=True)}`\n")
                   summary.write("\nDetailed validation failures and public samples are in the diagnostics artifact.\n")

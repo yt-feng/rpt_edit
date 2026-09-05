@@ -13,7 +13,7 @@ from __future__ import annotations
 import argparse
 import concurrent.futures
 from collections import deque
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import date, datetime
 from decimal import Decimal, InvalidOperation, ROUND_FLOOR
 from functools import lru_cache
@@ -31,8 +31,12 @@ import sys
 import threading
 import time
 from typing import Any, Callable, Iterable, Iterator
-from urllib.parse import parse_qsl, unquote, urlencode, urlsplit, urlunsplit
+from urllib.parse import parse_qsl, unquote, urlencode, urljoin, urlsplit, urlunsplit
 import xml.etree.ElementTree as ET
+from zoneinfo import ZoneInfo
+
+from portal_locale_history import plan_history_release
+from portal_locale_scope import deferred_locale_source, restrict_html_to_cohort
 
 CACHE_SCHEMA_VERSION = 1
 PROMPT_VERSION = "portal-public-locales-v4"
@@ -379,7 +383,7 @@ class TranslationRun:
     def reserve(self, payload: dict[str, Any] | None = None) -> int:
         with self.lock:
             self.check()
-            if self.max_requests is not None and self.data["provider_requests"] >= self.max_requests:
+            if self.max_requests is not None and self.translation_attempts() >= self.max_requests:
                 self.stop("Provider request limit reached")
                 raise TranslationStopped(self.stop_reason)
             reservation = None
@@ -412,6 +416,19 @@ class TranslationRun:
             if reservation is not None:
                 self.cost_reservations[self.data["provider_requests"]] = reservation
             return self.data["provider_requests"]
+
+    def translation_attempts(self) -> int:
+        with self.lock:
+            return self.data["provider_requests"] + self.data.get("external_repair_attempts", 0)
+
+    def reserve_external_repair(self) -> None:
+        """Share the canary cap, but never mix DeepL characters with DeepSeek tokens."""
+        with self.lock:
+            self.check()
+            if self.max_requests is not None and self.translation_attempts() >= self.max_requests:
+                self.stop("Provider request limit reached")
+                raise TranslationStopped(self.stop_reason)
+            self.data["external_repair_attempts"] = self.data.get("external_repair_attempts", 0) + 1
 
     def reconcile_cost(self, request_id: int, usage: dict[str, int]) -> dict[str, Any]:
         """Called under the run lock before content parsing, including failed outputs."""
@@ -1192,6 +1209,7 @@ def translate_missing_units(
     max_provider_cost_cny: str | float | int | None = None,
     run_state: TranslationRun | None = None,
     priority_keys: frozenset[str] = frozenset(),
+    preserve_unused_cache: bool = False,
 ) -> dict[str, int]:
     if preflight_batches_per_locale < 1 or (max_provider_requests is not None and max_provider_requests < 1):
         raise TranslationError("Preflight batch and provider request limits must be positive")
@@ -1200,7 +1218,7 @@ def translate_missing_units(
         max_provider_cost_cny,
     )
     worker_count = 1 if preflight_only else max(1, min(MAX_TRANSLATION_WORKERS, int(workers)))
-    if preflight_only:
+    if preflight_only or preserve_unused_cache:
         # A standalone preflight may provide only a representative inventory.
         # Never remove the rest of an existing full translation checkpoint.
         prune_counts = {}
@@ -1275,6 +1293,13 @@ def translate_missing_units(
         warmup_size = len(warmup)
     run_state.data.update({
         "preflight_only": preflight_only, "missing_units": missing_counts,
+        "source_unit_count": len(units),
+        "source_character_count": sum(len(unit.source) for unit in units.values()),
+        "missing_characters": {
+            locale: sum(len(unit.source) for unit in units.values()
+                        if not _valid_cache_row(locale, unit, cache["locales"][locale].get(unit.key)))
+            for locale in LOCALES
+        },
         "selected_batches": len(jobs), "workers": worker_count,
         "warmup_batches": warmup_size, "warmup_workers": min(8, worker_count),
         "selected_contexts": sorted({unit.context for _locale, batch in jobs for unit in batch}),
@@ -1302,12 +1327,36 @@ def translate_missing_units(
         run_state.write()
         raise TranslationError("A DeepSeek API key is required for missing locale translations")
 
+    # Optional secondary provider is only reachable from the existing residual
+    # repair queue. Fresh inventory always stays with DeepSeek; cache keys do
+    # not depend on the repair provider and existing paid rows remain reusable.
+    deepl_repair = None
+    if os.getenv("DEEPL_API_KEY", "").strip():
+        from deepl_locale_repair import DeepLRepair, DeepLRepairError, DeepLQuotaExhausted
+        deepl_repair = DeepLRepair(max_requests=run_state.max_requests)
+    run_state.data["repair_provider"] = "deepl" if deepl_repair is not None else "deepseek"
+
     def run(
         job: tuple[str, list[TranslationUnit]], *, single_item_plain: bool = False,
     ) -> tuple[str, dict[str, str], list[TranslationUnit]]:
         locale, batch = job
         run_state.check()
-        if batch_translator is not None:
+        if single_item_plain and deepl_repair is not None:
+            run_state.reserve_external_repair()
+            try:
+                translated = deepl_repair.translate(locale, batch[0].source)
+                validate_translation_quality(locale, batch[0], translated)
+                result = {batch[0].key: translated}
+            except DeepLQuotaExhausted:
+                run_state.stop("DeepL repair allowance exhausted; saved untranslated gaps", category="deepl_quota")
+                raise TranslationStopped(run_state.stop_reason) from None
+            except DeepLRepairError as error:
+                run_state.stop("DeepL repair unavailable; saved completed translations")
+                raise TranslationError(str(error)) from None
+            finally:
+                with run_state.lock:
+                    run_state.data["deepl_repair"] = deepl_repair.snapshot()
+        elif batch_translator is not None:
             result = batch_translator(locale, batch)
         else:
             result = deepseek_translate_batch(
@@ -1469,7 +1518,7 @@ def translate_missing_units(
                         preflight_repair_fits = (
                             run_state.max_requests is not None
                             and len(remaining) + len(jobs) - submitted
-                            <= run_state.max_requests - run_state.data["provider_requests"]
+                            <= run_state.max_requests - run_state.translation_attempts()
                         )
                         can_defer = (
                             (not preflight_only or preflight_repair_fits)
@@ -1601,10 +1650,15 @@ def translate_missing_units(
             "remaining_units": remaining_counts, "remaining_units_total": sum(remaining_counts.values()),
             "status": "failed" if incomplete or run_state.stop_reason or completed < len(jobs) else "passed",
         })
+        if deepl_repair is not None:
+            run_state.data["deepl_repair"] = deepl_repair.snapshot()
+        run_state.data["translation_requests_total"] = (
+            run_state.data["provider_requests"] + run_state.data.get("deepl_repair", {}).get("provider_requests", 0)
+        )
         write_cache(cache_path, cache)
         run_state.write()
     if run_state.stop_reason:
-        if failures and run_state.data.get("stop_category") not in {"budget", "repair_limit"}:
+        if failures and run_state.data.get("stop_category") not in {"budget", "repair_limit", "deepl_quota"}:
             raise TranslationError("Locale translation failed: " + " | ".join(failures[:10]))
         raise TranslationStopped(run_state.stop_reason)
     if incomplete:
@@ -4453,6 +4507,11 @@ def _build_localized_release(
     hot_report_index_path: Path,
     index_start_date: date | str | None = None,
     index_allowlist: Iterable[str] = (),
+    history_start_date: str | None = None,
+    history_state_in: Path | None = None,
+    history_release_date: str | None = None,
+    history_daily_limit: int = 100,
+    history_paused: bool = False,
     batch_translator: Callable[[str, list[TranslationUnit]], dict[str, str]] | None = None,
     preflight_only: bool = False,
     preflight_batches_per_locale: int = 2,
@@ -4503,6 +4562,33 @@ def _build_localized_release(
         index_start_date=configured_start_date,
         index_allowlist=configured_allowlist,
     )
+    history_plan = None
+    if history_start_date:
+        if configured_start_date is None:
+            raise TranslationError("History release requires the fixed launch/index start date")
+        if configured_allowlist:
+            raise TranslationError("History release cannot bypass its month boundary through an allowlist")
+        previous_history = json.loads(history_state_in.read_text(encoding="utf-8")) if history_state_in else None
+        history_plan = plan_history_release(
+            {
+                decision.canonical_root: decision.publication_date.isoformat()
+                for path, decision in index_plan.items()
+                if decision.page_kind in {"report-detail", "blog-detail"}
+                and decision.publication_date and is_indexable_html(original_html[path])
+            },
+            history_start_date=history_start_date,
+            launch_date=configured_start_date.isoformat(),
+            today=history_release_date or datetime.now(ZoneInfo("Asia/Shanghai")).date().isoformat(),
+            previous=previous_history,
+            daily_limit=history_daily_limit,
+            paused=history_paused,
+        )
+        released = frozenset(history_plan["released"])
+        for path, decision in list(index_plan.items()):
+            if decision.canonical_root in released:
+                index_plan[path] = replace(decision, indexable=True, force_noindex_follow=False, reason="released-history")
+        run_state.data["history_release"] = history_plan
+        run_state.write()
     canonicals = [
         decision.canonical_root
         for decision in index_plan.values()
@@ -4512,6 +4598,30 @@ def _build_localized_release(
         decision.canonical_root for decision in index_plan.values() if decision.canonical_root
     )
     eligible_canonicals = frozenset(canonicals)
+    translation_canonicals = frozenset(
+        decision.canonical_root for decision in index_plan.values()
+        if decision.indexable or (
+            history_plan is not None and decision.publication_date is not None
+            and decision.publication_date >= date.fromisoformat(history_start_date)
+        )
+    )
+    translation_report_ids = frozenset(
+        unquote(urlsplit(decision.canonical_root).path.rsplit("/", 1)[-1][:-5])
+        for decision in index_plan.values()
+        if decision.canonical_root in translation_canonicals and decision.page_kind == "report-detail"
+    )
+    eligible_report_ids = frozenset(
+        unquote(urlsplit(decision.canonical_root).path.rsplit("/", 1)[-1][:-5])
+        for decision in index_plan.values()
+        if decision.indexable and decision.page_kind == "report-detail"
+    )
+
+    def scoped_items(payload: dict[str, Any], *, for_translation: bool = False) -> dict[str, Any]:
+        if history_plan is None:
+            return payload
+        included_ids = translation_report_ids if for_translation else eligible_report_ids
+        items = [item for item in payload.get("items", []) if str(item.get("id") or "") in included_ids]
+        return {**payload, "items": items, "item_count": len(items)}
 
     catalog_sources: dict[str, dict[str, Any]] = {}
     catalog_ids: dict[str, set[str]] = {}
@@ -4531,7 +4641,7 @@ def _build_localized_release(
             item_ids.append(item_id)
         if len(item_ids) != len(set(item_ids)):
             raise TranslationError(f"Built public {kind} catalog has duplicate ids: {filename}")
-        catalog_sources[kind] = source_payload
+        catalog_sources[kind] = scoped_items(source_payload, for_translation=True)
         catalog_ids[kind] = set(item_ids)
 
     catalog = catalog_sources["full"]
@@ -4544,6 +4654,8 @@ def _build_localized_release(
             )
 
     detail_overlay_sources = load_report_detail_overlay_sources(root)
+    if history_plan is not None:
+        detail_overlay_sources = {key: scoped_items(payload, for_translation=True) for key, payload in detail_overlay_sources.items()}
 
     chart_index_path = root / "data" / "chart_search_index.json"
     try:
@@ -4566,12 +4678,56 @@ def _build_localized_release(
             chart_ids.append(chart_id)
     if len(chart_ids) != len(set(chart_ids)):
         raise TranslationError("Built public chart index has duplicate chart ids")
+    if history_plan is not None:
+        # Standalone chart/Hot Reports metadata has its own publication date.
+        # It is not part of the SEO detail-page release quota, but must still
+        # respect the fixed month boundary before collecting any paid text.
+        def in_month(item: dict[str, Any]) -> bool:
+            raw = item.get("date") or item.get("date_folder") or ""
+            if re.fullmatch(r"\d{6}", str(raw)):
+                raw = f"20{str(raw)[:2]}-{str(raw)[2:4]}-{str(raw)[4:]}"
+            published = parse_publication_date(raw)
+            return published is not None and published >= date.fromisoformat(history_start_date)
+        chart_index = {**chart_index, "reports": [
+            report for report in chart_index["reports"]
+            if str(report.get("report_id") or report.get("id") or "") in translation_report_ids
+            or (not report.get("report_id") and in_month(report))
+        ]}
+        hot_report_index = {**hot_report_index, "items": [item for item in hot_report_index["items"] if in_month(item)]}
 
     units: dict[str, TranslationUnit] = {}
     priority_units: dict[str, TranslationUnit] = {}
     localized_html_sources: dict[Path, str] = {}
+    eligible_detail_urls = frozenset(
+        decision.canonical_root for decision in index_plan.values()
+        if decision.indexable and decision.page_kind in {"report-detail", "blog-detail"}
+    )
     for path, source in original_html.items():
         relative = path.relative_to(root)
+        if history_plan is not None:
+            decision = index_plan[path]
+            # Translate the complete authorized month now; publication is a
+            # separate smaller cohort. No future daily release has to buy the
+            # same historical body again.
+            if decision.canonical_root in translation_canonicals:
+                prepaid_source = restrict_html_to_cohort(
+                    source, canonical_by_path[path], translation_canonicals, known_canonicals,
+                )
+                if relative.parts and relative.parts[0] == "blog":
+                    prepaid_source = remove_localized_blog_zsxq_images(prepaid_source)
+                collect_html_units(prepaid_source, units)
+            if not decision.indexable and decision.page_kind not in {"hub", "core"}:
+                source = deferred_locale_source(decision.canonical_root)
+                source = source.replace("<body", '<body data-kc-locale-deferred="true"', 1)
+            else:
+                source = restrict_html_to_cohort(source, canonical_by_path[path], eligible_canonicals, known_canonicals)
+                if decision.page_kind == "hub" and urlsplit(decision.canonical_root).path not in {"/", "/reports/", "/blog/"}:
+                    linked = {
+                        urljoin(canonical_by_path[path], html_unescape(raw)).split("#", 1)[0].split("?", 1)[0]
+                        for _quote, raw in re.findall(r'\bhref\s*=\s*([\"\'])(.*?)\1', source, flags=re.I | re.S)
+                    }
+                    if not linked.intersection(eligible_detail_urls):
+                        index_plan[path] = replace(decision, indexable=False, force_noindex_follow=True, reason="empty-cohort-hub")
         localized_source = (
             remove_localized_blog_zsxq_images(source)
             if relative.parts and relative.parts[0] == "blog"
@@ -4584,6 +4740,10 @@ def _build_localized_release(
                 collect_html_units(localized_source, priority_units)
         except TranslationError as error:
             raise TranslationError(f"{path.relative_to(root)}: {error}") from error
+    # Empty historical pagination/topic hubs are available for navigation but
+    # are not submitted as indexable content simply because a hub URL exists.
+    canonicals = [decision.canonical_root for decision in index_plan.values() if decision.indexable]
+    eligible_canonicals = frozenset(canonicals)
     javascript_sources: dict[str, str] = {}
     for asset_name in LOCALIZED_JS_ASSETS:
         path = root / "assets" / asset_name
@@ -4617,12 +4777,23 @@ def _build_localized_release(
     feed_path = root / "feed.xml"
     if feed_path.is_file():
         feed_tree = ET.parse(feed_path).getroot()
+        if history_plan is not None:
+            for channel in feed_tree.findall("channel"):
+                for item in list(channel.findall("item")):
+                    link = str(item.findtext("link") or "").strip()
+                    if link not in translation_canonicals:
+                        channel.remove(item)
         collect_xml_units(feed_tree, units, "rss")
     llms_sources: dict[str, str] = {}
     for name in ("llms.txt", "llms-full.txt"):
         path = root / name
         if path.is_file():
             llms_sources[name] = path.read_text(encoding="utf-8")
+            if history_plan is not None:
+                llms_sources[name] = filter_locale_llms_source(
+                    llms_sources[name], name, site_url=site_url,
+                    known_canonicals=known_canonicals, eligible_canonicals=translation_canonicals,
+                )
             collect_llms_units(llms_sources[name], name, units)
 
     cache = load_cache(cache_in, model)
@@ -4644,6 +4815,7 @@ def _build_localized_release(
         max_provider_cost_cny=max_provider_cost_cny,
         run_state=run_state,
         priority_keys=frozenset(priority_units),
+        preserve_unused_cache=history_plan is not None,
     )
     if preflight_only:
         result = {
@@ -4754,8 +4926,10 @@ def _build_localized_release(
             }
         overlay_manifest[locale] = {}
         for kind in CATALOG_OVERLAY_SOURCES:
-            source_payload = catalog_sources[kind]
+            source_payload = scoped_items(catalog_sources[kind])
             overlay = render_catalog_overlay(source_payload, locale, cache, kind=kind)
+            if history_plan is not None:
+                overlay["scoped"] = True
             relative_overlay_path = Path("data") / "i18n" / locale / CATALOG_OVERLAY_FILES[kind]
             overlay_path = root / relative_overlay_path
             overlay_path.parent.mkdir(parents=True, exist_ok=True)
@@ -4770,7 +4944,10 @@ def _build_localized_release(
         detail_overlay_manifest[locale] = {}
         for prefix, source_payload in detail_overlay_sources.items():
             kind = f"detail:{prefix}"
+            source_payload = scoped_items(source_payload)
             overlay = render_catalog_overlay(source_payload, locale, cache, kind=kind)
+            if history_plan is not None:
+                overlay["scoped"] = True
             relative_overlay_path = Path("data") / "i18n" / locale / f"catalog-detail-{prefix}.json"
             overlay_path = root / relative_overlay_path
             overlay_bytes = stable_json_bytes(overlay)
@@ -4781,7 +4958,15 @@ def _build_localized_release(
                 "byte_size": len(overlay_bytes),
                 "sha256": hashlib.sha256(overlay_bytes).hexdigest(),
             }
-        chart_overlay = render_chart_overlay(chart_index, locale, cache)
+        published_chart_index = chart_index
+        if history_plan is not None:
+            published_chart_index = {**chart_index, "reports": [
+                report for report in chart_index["reports"]
+                if not report.get("report_id") or str(report["report_id"]) in eligible_report_ids
+            ]}
+        chart_overlay = render_chart_overlay(published_chart_index, locale, cache)
+        if history_plan is not None:
+            chart_overlay["scoped"] = True
         relative_chart_overlay_path = Path("data") / "i18n" / locale / CHART_OVERLAY_FILE
         chart_overlay_path = root / relative_chart_overlay_path
         chart_overlay_bytes = stable_json_bytes(chart_overlay)
@@ -4795,6 +4980,8 @@ def _build_localized_release(
             "sha256": hashlib.sha256(chart_overlay_bytes).hexdigest(),
         }
         hot_report_overlay = render_hot_report_overlay(hot_report_index, locale, cache)
+        if history_plan is not None:
+            hot_report_overlay["scoped"] = True
         relative_hot_report_overlay_path = Path("data") / "i18n" / locale / HOT_REPORT_OVERLAY_FILE
         hot_report_overlay_path = root / relative_hot_report_overlay_path
         hot_report_overlay_bytes = stable_json_bytes(hot_report_overlay)
@@ -4808,6 +4995,11 @@ def _build_localized_release(
         }
         if feed_tree is not None:
             localized_feed = ET.fromstring(ET.tostring(feed_tree, encoding="utf-8"))
+            if history_plan is not None:
+                for channel in localized_feed.findall("channel"):
+                    for item in list(channel.findall("item")):
+                        if str(item.findtext("link") or "").strip() not in eligible_canonicals:
+                            channel.remove(item)
             (locale_root / "feed.xml").write_text(
                 render_localized_feed(localized_feed, locale, cache, site_url),
                 encoding="utf-8",
@@ -4845,6 +5037,7 @@ def _build_localized_release(
         "quality_gate_version": QUALITY_GATE_VERSION,
         "model": cache["model"],
         "source_unit_count": len(units),
+        "source_character_count": sum(len(unit.source) for unit in units.values()),
         "html_page_count": len(html_paths),
         "indexable_page_count": len(set(canonicals)),
         "source_indexable_page_count": len({
@@ -4900,6 +5093,19 @@ def _build_localized_release(
     manifest_path = root / "data" / "i18n" / "manifest.json"
     manifest_path.parent.mkdir(parents=True, exist_ok=True)
     manifest_path.write_bytes(stable_json_bytes(manifest))
+    if history_plan is not None:
+        manifest["index_policy"]["history_release"] = {
+            "history_start_date": history_start_date,
+            "daily_limit": history_daily_limit,
+            "released_count": len(history_plan["released"]),
+            "selected_today_count": len(history_plan["selected_today"]),
+            "pending_count": history_plan["pending_count"],
+            "paused": history_paused,
+            "translation_mode": "pretranslate-entire-fixed-month",
+            "translation_page_count": len(translation_canonicals),
+        }
+        manifest_path.write_bytes(stable_json_bytes(manifest))
+        (manifest_path.parent / "history-release.json").write_bytes(stable_json_bytes(history_plan))
     log(
         f"Localized release complete: pages={len(html_paths)} units={len(units)} "
         f"catalog={len(catalog.get('items', []))} locales={','.join(LOCALES)}"
@@ -4931,7 +5137,7 @@ def build_localized_release(**kwargs: Any) -> dict[str, Any]:
         return result
     except BaseException as error:
         if (checkpoint_on_budget and isinstance(error, TranslationError)
-                and run_state.data.get("stop_category") in {"budget", "repair_limit"}):
+                and run_state.data.get("stop_category") in {"budget", "repair_limit", "deepl_quota"}):
             # Translation stops before rendering, so this is a saved work item,
             # never a deployable partial locale. The workflow gates on ready.
             run_state.data.update(status="checkpointed", ready=False)
@@ -4978,6 +5184,11 @@ def parse_args() -> argparse.Namespace:
         default=os.getenv("PORTAL_LOCALE_INDEX_START_DATE", ""),
         help="Fixed YYYY-MM-DD publication cutoff; omitted means hubs/core only",
     )
+    parser.add_argument("--history-start-date", default=None, help="Fixed oldest historical date; enables bounded daily release")
+    parser.add_argument("--history-state-in", type=Path, help="History ledger from the current immutable production release, never a CI checkpoint")
+    parser.add_argument("--history-release-date", help="One fixed Asia/Shanghai calendar date for this candidate")
+    parser.add_argument("--history-daily-limit", type=int, default=100)
+    parser.add_argument("--history-paused", action="store_true")
     allowlist_default = os.getenv("PORTAL_LOCALE_INDEX_ALLOWLIST", "").strip()
     parser.add_argument(
         "--index-allowlist",
@@ -5011,6 +5222,11 @@ def main() -> int:
             hot_report_index_path=args.hot_report_index,
             index_start_date=args.index_start_date,
             index_allowlist=read_index_allowlist(args.index_allowlist),
+            history_start_date=args.history_start_date,
+            history_state_in=args.history_state_in,
+            history_release_date=args.history_release_date,
+            history_daily_limit=args.history_daily_limit,
+            history_paused=args.history_paused,
         )
     except (OSError, ValueError, TranslationError, json.JSONDecodeError, ET.ParseError) as error:
         print(f"portal locale build failed: {error}", file=sys.stderr)
