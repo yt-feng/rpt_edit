@@ -95,7 +95,7 @@ def _summary(raw: dict[str, Any]) -> dict[str, Any]:
     if status not in {"passed", "checkpointed", "failed"}:
         raise ValueError("Invalid builder status")
     result: dict[str, Any] = {"status": status, "ready": status == "passed"}
-    for field in ("provider_requests", "completed_batches", "failed_batches", *OBSERVATION_FIELDS):
+    for field in ("provider_requests", "completed_batches", "failed_batches", "remaining_units_total", *OBSERVATION_FIELDS):
         value = raw.get(field)
         if type(value) is int and value >= 0:
             result[field] = value
@@ -116,6 +116,39 @@ def _summary(raw: dict[str, Any]) -> dict[str, Any]:
         }
         result["deepl_repair"]["stopped"] = bool(repair.get("stop_reason"))
     return result
+
+
+def _resumable_translation_gaps(raw: dict[str, Any]) -> bool:
+    """Recognize only the completed translation phase's exact residual error."""
+    remaining = raw.get("remaining_units_total")
+    requests = raw.get("provider_requests")
+    if (
+        raw.get("status") != "failed" or raw.get("preflight_only") is not False
+        or raw.get("ready") is True or type(remaining) is not int or remaining <= 0
+        or raw.get("stop_reason") not in (None, "") or raw.get("stop_category") not in (None, "")
+        or raw.get("build_error") != f"Locale translation has {remaining} unresolved source units; completed rows saved"
+        or type(requests) is not int or requests < 0
+        or type(raw.get("usage_complete_responses")) is not int
+        or raw["usage_complete_responses"] != requests
+        or any(type(raw.get(field)) is not int or raw[field] != 0 for field in OBSERVATION_FIELDS)
+    ):
+        return False
+    usage = raw.get("usage_totals")
+    if requests and (
+        not isinstance(usage, dict)
+        or any(type(usage.get(field)) is not int or usage[field] < 0
+               for field in ("prompt_tokens", "completion_tokens", "total_tokens"))
+        or usage["prompt_tokens"] + usage["completion_tokens"] != usage["total_tokens"]
+    ):
+        return False
+    repair = raw.get("deepl_repair")
+    if repair is not None and (
+        not isinstance(repair, dict) or repair.get("stop_reason") not in (None, "")
+        or any(type(repair.get(field)) is not int or repair[field] != 0
+               for field in ("unobserved_requests", "reserved_characters"))
+    ):
+        return False
+    return True
 
 
 def run_backfill(
@@ -186,10 +219,15 @@ def run_backfill(
                 report[field] += current.get(field, 0)
             for field, value in current["usage_totals"].items():
                 report["usage_totals"][field] = report["usage_totals"].get(field, 0) + value
+            resumable_gaps = completed.returncode == 1 and _resumable_translation_gaps(raw)
             if completed.returncode != 0 or current["status"] == "failed":
-                current.update(status="failed", ready=False)
-                report.update(status="failed", stop_category="builder_failure")
-                break
+                if not resumable_gaps:
+                    current.update(status="failed", ready=False)
+                    report.update(status="failed", stop_category="builder_failure")
+                    break
+                # A failed residual-quality phase has no rendered release. Only
+                # its newly saved translations may advance a bounded retry.
+                current.update(status="checkpointed", ready=False, stop_category="translation_gaps")
             if not cache_out.is_file():
                 raise ValueError("Builder checkpoint missing")
             current["cache_rows_after"] = _cache_rows(cache_out)
@@ -199,7 +237,9 @@ def run_backfill(
             if current.get("stop_category") == "deepl_quota" and raw.get("ready") is False:
                 report.update(status="checkpointed", stop_category="deepl_quota")
                 break
-            if current.get("stop_category") not in {"budget", "repair_limit"} or raw.get("ready") is not False:
+            if current.get("stop_category") not in {"budget", "repair_limit", "translation_gaps"} or (
+                not resumable_gaps and raw.get("ready") is not False
+            ):
                 raise ValueError("Unrecognized builder checkpoint")
             if current.get("deepl_repair", {}).get("stopped"):
                 report.update(status="checkpointed", stop_category="deepl_stopped")
