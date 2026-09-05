@@ -229,6 +229,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn('test -s _neutral_site/data/i18n/cache-v1.json.gz', locale[preflight:full])
         self.assertIn('"$RUNNER_TEMP/locale-preflight-diagnostics.json"', locale)
         self.assertIn('"$RUNNER_TEMP/locale-full-diagnostics.json"', locale)
+        self.assertIn("--max-provider-cost-cny 400", locale[full:])
         self.assertNotIn("|| true", locale)
         diagnostics = self.workflow.index("Preserve translation diagnostics even on failure")
         self.assertLess(save_checkpoint, diagnostics)

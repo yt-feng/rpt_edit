@@ -1997,9 +1997,11 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
         payload = request.call_args.kwargs["payload"]
         self.assertEqual(payload["response_format"], {"type": "json_object"})
         self.assertEqual(payload["thinking"], {"type": "disabled"})
-        self.assertEqual(json.loads(payload["messages"][1]["content"]), {
-            "translations": [{"id": "0", "text": unit.source}],
-        })
+        message = json.loads(payload["messages"][1]["content"])
+        self.assertEqual(message["items"], [{"id": "0", "source_text": unit.source}])
+        self.assertEqual(message["target_language"], "ko")
+        self.assertIn("Korean (한국어)", message["task"])
+        self.assertNotIn("translations", message)
         self.assertNotIn(unit.key, json.dumps(payload))
         self.assertIn(
             "Never attach a target-language label or prefix",
@@ -2032,9 +2034,9 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
             units[1].key: "두 번째 연구 보고서",
         })
         payload = request.call_args.kwargs["payload"]
-        self.assertEqual(json.loads(payload["messages"][1]["content"]), {
-            "translations": [{"id": str(index), "text": unit.source} for index, unit in enumerate(units)],
-        })
+        self.assertEqual(json.loads(payload["messages"][1]["content"])["items"], [
+            {"id": str(index), "source_text": unit.source} for index, unit in enumerate(units)
+        ])
         for unit in units:
             self.assertNotIn(unit.key, json.dumps(payload))
 
@@ -2207,7 +2209,7 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
 
         def provider(_url: str, **kwargs: object) -> mock.Mock:
             payload = kwargs["payload"]
-            rows = json.loads(payload["messages"][1]["content"])["translations"]
+            rows = json.loads(payload["messages"][1]["content"])["items"]
             response = mock.Mock(status_code=200)
             response.json.return_value = {
                 "choices": [{"finish_reason": "stop", "message": {"content": json.dumps({
@@ -2295,6 +2297,44 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
         self.assertEqual([row["id"] for row in sample["source"]], ["23"])
         self.assertEqual(sample["source"][0]["text"], units[23].source)
         self.assertEqual(sample["translation_rows"], [{"id": "23", "text": units[23].source}])
+
+    def test_structural_failure_sample_keeps_actual_late_response_row(self) -> None:
+        units = [builder.TranslationUnit(str(i), "html:text:p", f"公开研究内容 {i}") for i in range(8)]
+        cases = (
+            ({"id": 3, "text": FAKE_COPY["ko"]}, "3", "failed_row_translation_id"),
+            ({"id": "unexpected", "text": FAKE_COPY["ko"]}, "7", "response_row_position_hint"),
+            (["malformed row"], "7", "response_row_position_hint"),
+        )
+        for failed_row, source_id, selection in cases:
+            with self.subTest(failed_row=failed_row):
+                state = builder.TranslationRun()
+                rows = [{"id": str(i), "text": FAKE_COPY["ko"]} for i in range(8)]
+                rows[7] = failed_row
+                content = json.dumps({"translations": rows}, ensure_ascii=False)
+                with self.assertRaises(builder.TranslationError) as raised:
+                    builder.parse_translation_batch(content, units, "ko")
+                state.failure("ko", raised.exception, units, request_id=1, content=content)
+                sample = state.data["failure_samples"][0]
+                self.assertEqual(sample["failed_response_row"]["index"], 7)
+                self.assertEqual(json.loads(sample["failed_response_row"]["content"]), failed_row)
+                self.assertEqual([row["id"] for row in sample["source"]], [source_id])
+                self.assertEqual(sample["source_selection"], selection)
+                self.assertTrue(sample["translation_response"])
+
+    def test_omitted_translation_sample_identifies_missing_source(self) -> None:
+        units = [builder.TranslationUnit(str(i), "html:text:p", f"公开研究内容 {i}") for i in range(8)]
+        state = builder.TranslationRun()
+        content = json.dumps({"translations": [
+            {"id": str(i), "text": FAKE_COPY["ko"]} for i in range(7)
+        ]}, ensure_ascii=False)
+        with self.assertRaises(builder.TranslationError) as raised:
+            builder.parse_translation_batch(content, units, "ko")
+        state.failure("ko", raised.exception, units, request_id=1, content=content)
+        sample = state.data["failure_samples"][0]
+        self.assertEqual([row["id"] for row in sample["source"]], ["7"])
+        self.assertEqual(sample["source_selection"], "omitted_translation_id")
+        self.assertEqual(sample["translation_rows"], [])
+        self.assertTrue(sample["translation_response"])
 
     def test_diagnostics_persist_when_inventory_collection_fails(self) -> None:
         diagnostics = self.temporary_root / "inventory-failure.json"
@@ -2665,6 +2705,127 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
         self.assertEqual(observed_workers, [builder.MAX_TRANSLATION_WORKERS])
         self.assertEqual(missing, {locale: 1 for locale in builder.LOCALES})
         self.assertEqual({locale for locale, _keys in translator.calls}, set(builder.LOCALES))
+
+
+class ProviderCostGuardTests(unittest.TestCase):
+    @staticmethod
+    def payload(max_tokens: int = 1000) -> dict:
+        return {
+            "model": builder.DEFAULT_DEEPSEEK_MODEL, "thinking": {"type": "disabled"},
+            "max_tokens": max_tokens, "messages": [{"role": "user", "content": "公开研究内容"}],
+        }
+
+    @staticmethod
+    def response(usage: dict | None, content: str = "invalid translation JSON") -> mock.Mock:
+        response = mock.Mock(status_code=200)
+        response.json.return_value = {
+            "usage": usage, "choices": [{"finish_reason": "stop", "message": {"content": content}}],
+        }
+        return response
+
+    def test_concurrent_reservations_cannot_oversubscribe_the_run_limit(self) -> None:
+        state = builder.TranslationRun(max_cost_cny="1")
+        payload = self.payload(32_000)
+
+        def reserve(_index: int) -> int | None:
+            try:
+                return state.reserve(payload)
+            except builder.TranslationStopped:
+                return None
+
+        with concurrent.futures.ThreadPoolExecutor(max_workers=32) as executor:
+            results = list(executor.map(reserve, range(500)))
+        admitted = [value for value in results if value is not None]
+        self.assertGreater(len(admitted), 0)
+        self.assertLess(len(admitted), 500)
+        self.assertEqual(len(admitted), len(set(admitted)))
+        cost = state.data["cost_guard"]
+        self.assertLessEqual(cost["accounted_upper_micro_cny"], 1_000_000)
+        self.assertEqual(cost["accounted_upper_micro_cny"], sum(row["micro_cny"] for row in state.cost_reservations.values()))
+        self.assertEqual(state.data["provider_requests"], len(admitted))
+
+    def test_complete_usage_settles_at_peak_prices_and_releases_reservation(self) -> None:
+        state = builder.TranslationRun(max_cost_cny="1")
+        request_id = state.reserve(self.payload())
+        state.response(request_id, "ko", self.response({
+            "prompt_tokens": 10, "completion_tokens": 5, "total_tokens": 15,
+            "prompt_cache_hit_tokens": 10, "prompt_cache_miss_tokens": 0,
+        }))
+        cost = state.data["cost_guard"]
+        self.assertEqual(cost["accounted_upper_micro_cny"], 75)
+        self.assertEqual(cost["settled_peak_estimate_micro_cny"], 75)
+        self.assertEqual(cost["retained_reservations_micro_cny"], 0)
+        self.assertEqual(state.reserve(self.payload()), 2)
+
+    def test_partial_and_unobserved_usage_keep_the_full_fee_reservation(self) -> None:
+        state = builder.TranslationRun(max_cost_cny="1")
+        first = state.reserve(self.payload())
+        state.reserve(self.payload())  # Simulates a dispatched request with no response.
+        reserved = state.data["cost_guard"]["accounted_upper_micro_cny"]
+        state.response(first, "ko", self.response({"total_tokens": 15}))
+        self.assertEqual(state.data["cost_guard"]["accounted_upper_micro_cny"], reserved)
+        self.assertEqual(state.data["cost_guard"]["retained_reservations_micro_cny"], reserved)
+        self.assertEqual(state.data["unobserved_provider_requests"], 1)
+        self.assertEqual(state.data["cost_guard"]["settled_peak_estimate_micro_cny"], 0)
+        self.assertIn("not an account", state.data["cost_guard"]["assumptions"]["scope"])
+
+    def test_unknown_model_and_thinking_are_rejected_before_paid_call(self) -> None:
+        request = mock.Mock()
+        unit = builder.TranslationUnit("a" * 64, "html:text:p", "公开研究内容")
+        with mock.patch.dict(sys.modules, {"deepseek_http": mock.Mock(request_with_key_fallback=request)}):
+            with self.assertRaisesRegex(builder.TranslationStopped, "requires deepseek-v4-flash"):
+                builder.deepseek_translate_batch(
+                    "ko", [unit], model="other-model", base_url="https://api.deepseek.com",
+                    timeout=1, attempts=3, run_state=builder.TranslationRun(max_cost_cny="1"),
+                )
+        request.assert_not_called()
+        with self.assertRaisesRegex(builder.TranslationStopped, "thinking disabled"):
+            builder.TranslationRun(max_cost_cny="1").reserve({**self.payload(), "thinking": {"type": "enabled"}})
+
+    def test_invalid_output_still_settles_real_usage_and_retries_reserve_again(self) -> None:
+        state = builder.TranslationRun(max_requests=2, max_cost_cny="1")
+        request = mock.Mock(return_value=self.response({"prompt_tokens": 10, "completion_tokens": 5, "total_tokens": 15}))
+        unit = builder.TranslationUnit("a" * 64, "html:text:p", "公开研究内容")
+        with mock.patch.dict(sys.modules, {"deepseek_http": mock.Mock(request_with_key_fallback=request)}):
+            with self.assertRaisesRegex(builder.TranslationError, "invalid translation JSON"):
+                builder.deepseek_translate_batch(
+                    "ko", [unit], model=builder.DEFAULT_DEEPSEEK_MODEL,
+                    base_url="https://api.deepseek.com", timeout=1, attempts=2, run_state=state,
+                )
+        self.assertEqual(request.call_count, 2)
+        self.assertEqual(state.data["cost_guard"]["settled_peak_estimate_micro_cny"], 150)
+        self.assertEqual(state.data["cost_guard"]["retained_reservations_micro_cny"], 0)
+
+    def test_cost_ceiling_stops_before_http_and_saves_cache_and_diagnostics(self) -> None:
+        unit = builder.TranslationUnit("a" * 64, "html:text:p", "公开研究内容")
+        request = mock.Mock()
+        with tempfile.TemporaryDirectory() as folder:
+            cache_path = Path(folder) / "cache.json.gz"
+            diagnostics = Path(folder) / "diagnostics.json"
+            with mock.patch.dict("os.environ", {"DEEPSEEK_API_KEY": "fake-key"}, clear=True), mock.patch.dict(sys.modules, {"deepseek_http": mock.Mock(request_with_key_fallback=request)}):
+                with self.assertRaisesRegex(builder.TranslationError, "cost estimate limit"):
+                    builder.translate_missing_units(
+                        {unit.key: unit}, builder.empty_cache(), cache_path=cache_path,
+                        model=builder.DEFAULT_DEEPSEEK_MODEL, base_url="https://api.deepseek.com",
+                        workers=4, timeout=1, attempts=3, diagnostics_out=diagnostics,
+                        max_provider_cost_cny="0.000001",
+                    )
+            request.assert_not_called()
+            self.assertTrue(cache_path.exists())
+            report = json.loads(diagnostics.read_text())
+            self.assertEqual(report["status"], "failed")
+            self.assertEqual(report["provider_requests"], 0)
+            self.assertEqual(report["cost_guard"]["accounted_upper_micro_cny"], 0)
+
+    def test_reservation_bound_violation_stops_new_requests(self) -> None:
+        state = builder.TranslationRun(max_cost_cny="1")
+        request_id = state.reserve(self.payload(max_tokens=1000))
+        state.response(request_id, "ko", self.response({
+            "prompt_tokens": 10, "completion_tokens": 1001, "total_tokens": 1011,
+        }))
+        self.assertTrue(state.data["responses"][0]["cost"]["reservation_bound_exceeded"])
+        with self.assertRaisesRegex(builder.TranslationStopped, "reservation assumption"):
+            state.reserve(self.payload())
 
 
 if __name__ == "__main__":
