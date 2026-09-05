@@ -1,0 +1,87 @@
+name: Portal locale translation preflight
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portal-locale-translation-preflight
+  cancel-in-progress: false
+
+jobs:
+  preflight:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    steps:
+      - name: Checkout reviewed preflight source
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .github/workflows/portal-locale-translation-preflight.yml
+            scripts/preflight_portal_locale_translation.py
+            scripts/test_preflight_portal_locale_translation.py
+            scripts/test_portal_locale_translation_preflight_workflow.py
+            scripts/build_portal_locales.py
+            scripts/deepseek_http.py
+            scripts/check_public_identity.py
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install public HTTP dependency
+        run: python3 -m pip install requests
+
+      - name: Test bounded preflight without provider requests
+        run: |
+          python3 -B scripts/test_preflight_portal_locale_translation.py
+          python3 -B scripts/test_portal_locale_translation_preflight_workflow.py
+          python3 -B scripts/check_public_identity.py
+
+      - name: Diagnose six public metadata translation batches
+        env:
+          LIVE_ORIGIN: ${{ secrets.PORTAL_SITE_URL || vars.PORTAL_SITE_URL }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_API_KEY_BACKUP: ${{ secrets.DEEPSEEK_API_KEY_BACKUP }}
+          DEEPSEEK_API_KEY_2: ${{ secrets.DEEPSEEK_API_KEY_2 }}
+          DEEPSEEK_API_KEYS: ${{ secrets.DEEPSEEK_API_KEYS }}
+          DEEPSEEK_BASE_URL: ${{ vars.DEEPSEEK_BASE_URL || 'https://api.deepseek.com' }}
+          DEEPSEEK_MODEL: ${{ vars.DEEPSEEK_MODEL || 'deepseek-v4-flash' }}
+        run: |
+          set -euo pipefail
+          python3 -B scripts/preflight_portal_locale_translation.py \
+            --diagnostics-out "$RUNNER_TEMP/portal-locale-preflight/diagnostics.json"
+
+      - name: Summarize bounded translation diagnostics
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          path = Path(os.environ["RUNNER_TEMP"]) / "portal-locale-preflight/diagnostics.json"
+          if path.is_file():
+              report = json.loads(path.read_text(encoding="utf-8"))
+              with Path(os.environ["GITHUB_STEP_SUMMARY"]).open("a", encoding="utf-8") as summary:
+                  summary.write("## Public metadata translation preflight\n\n")
+                  for key in ("status", "provider_requests", "max_provider_requests", "usage_totals", "usage_unknown_responses"):
+                      summary.write(f"- {key}: `{json.dumps(report.get(key), ensure_ascii=True)}`\n")
+                  summary.write("\nDetailed validation failures and public samples are in the diagnostics artifact.\n")
+          PY
+
+      - name: Upload translation diagnostics even when preflight fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: portal-locale-preflight-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/portal-locale-preflight/diagnostics.json
+          if-no-files-found: warn
+          retention-days: 3

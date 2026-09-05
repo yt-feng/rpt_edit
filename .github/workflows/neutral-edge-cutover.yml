@@ -701,19 +701,29 @@ jobs:
             git ls-files --error-unmatch -- "$PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH" >/dev/null
             index_args+=(--index-allowlist "$PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH")
           fi
-          python3 -B scripts/build_portal_locales.py \
-            --root _neutral_site \
-            --site-url "$LIVE_ORIGIN" \
-            --hot-report-index "$RUNNER_TEMP/hot-reports-public-v2.json" \
-            --cache-out _neutral_site/data/i18n/cache-v1.json.gz \
-            --assets-root portal_suite/locale_assets \
-            --workers "$PORTAL_MULTILINGUAL_WORKERS" \
-            --model "$DEEPSEEK_MODEL" \
-            --deepseek-base-url "$DEEPSEEK_BASE_URL" \
-            --timeout 120 \
-            --attempts 2 \
-            "${index_args[@]}" \
+          locale_args=(
+            --root _neutral_site
+            --site-url "$LIVE_ORIGIN"
+            --hot-report-index "$RUNNER_TEMP/hot-reports-public-v2.json"
+            --cache-out _neutral_site/data/i18n/cache-v1.json.gz
+            --assets-root portal_suite/locale_assets
+            --model "$DEEPSEEK_MODEL"
+            --deepseek-base-url "$DEEPSEEK_BASE_URL"
+            --timeout 120
+            "${index_args[@]}"
+          )
+          # A failed paid canary must stop this shell before high concurrency begins.
+          python3 -B scripts/build_portal_locales.py "${locale_args[@]}" \
+            --preflight-only --preflight-batches-per-locale 2 \
+            --workers 1 --attempts 1 --max-provider-requests 6 \
+            --diagnostics-out "$RUNNER_TEMP/locale-preflight-diagnostics.json" \
             "${cache_args[@]}"
+          test -s _neutral_site/data/i18n/cache-v1.json.gz
+          python3 -B scripts/build_portal_locales.py "${locale_args[@]}" \
+            --cache-in _neutral_site/data/i18n/cache-v1.json.gz \
+            --workers "$PORTAL_MULTILINGUAL_WORKERS" \
+            --attempts 2 \
+            --diagnostics-out "$RUNNER_TEMP/locale-full-diagnostics.json"
 
       - name: Detect multilingual translation checkpoint
         id: locale_checkpoint
@@ -736,6 +746,17 @@ jobs:
         with:
           path: ${{ runner.temp }}/portal-locale-cache/cache-v1.json.gz
           key: portal-locale-cache-${{ hashFiles('scripts/build_portal_locales.py') }}-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Preserve translation diagnostics even on failure
+        if: always() && steps.operation.outputs.multilingual_enabled == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: neutral-translation-diagnostics-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/locale-preflight-diagnostics.json
+            ${{ runner.temp }}/locale-full-diagnostics.json
+          if-no-files-found: ignore
+          retention-days: 7
 
       - name: Verify protected Chinese release after locale build
         id: chinese_parity

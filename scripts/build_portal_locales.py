@@ -27,6 +27,7 @@ from pathlib import Path
 import re
 import shutil
 import sys
+import threading
 import time
 from typing import Any, Callable, Iterable, Iterator
 from urllib.parse import parse_qsl, unquote, urlencode, urlsplit, urlunsplit
@@ -313,6 +314,141 @@ class _BlogImageContainer:
 
 class TranslationError(RuntimeError):
     """Raised when a locale cannot be built without source-language fallback."""
+
+
+class ProviderHTTPError(TranslationError):
+    def __init__(self, status: int, label: str) -> None:
+        self.status = status
+        super().__init__(f"{label}: DeepSeek HTTP {status}")
+
+
+class TranslationStopped(TranslationError):
+    """The shared request budget or stop condition prevents further requests."""
+
+
+class TranslationRun:
+    """Thread-safe, builder-local accounting; never stores credentials or headers."""
+
+    USAGE_FIELDS = (
+        "prompt_tokens", "completion_tokens", "total_tokens",
+        "prompt_cache_hit_tokens", "prompt_cache_miss_tokens",
+    )
+
+    def __init__(self, path: Path | None = None, max_requests: int | None = None) -> None:
+        self.path = path
+        self.max_requests = max_requests
+        self.lock = threading.RLock()
+        self.stop_reason = ""
+        self.data: dict[str, Any] = {
+            "schema_version": 1, "status": "running", "provider_requests": 0,
+            "max_provider_requests": max_requests, "responses": [], "failures": [],
+            "failure_samples": [], "usage_totals": {}, "usage_unknown_responses": 0,
+            "usage_partial_responses": 0, "usage_complete_responses": 0,
+            "unobserved_provider_requests": 0,
+        }
+
+    def stop(self, reason: str) -> None:
+        with self.lock:
+            if not self.stop_reason:
+                self.stop_reason = reason
+                self.data["stop_reason"] = reason
+
+    def check(self) -> None:
+        with self.lock:
+            if self.stop_reason:
+                raise TranslationStopped(self.stop_reason)
+
+    def reserve(self) -> int:
+        with self.lock:
+            self.check()
+            if self.max_requests is not None and self.data["provider_requests"] >= self.max_requests:
+                self.stop("Provider request limit reached")
+                raise TranslationStopped(self.stop_reason)
+            self.data["provider_requests"] += 1
+            self.data["unobserved_provider_requests"] += 1
+            return self.data["provider_requests"]
+
+    def response(self, request_id: int, locale: str, response: Any) -> None:
+        status = int(getattr(response, "status_code", 0) or 0)
+        try:
+            payload = response.json()
+        except Exception:  # Response decoding must not discard request accounting.
+            payload = {}
+        payload = payload if isinstance(payload, dict) else {}
+        raw_usage = payload.get("usage")
+        usage = {
+            key: raw_usage[key] for key in self.USAGE_FIELDS
+            if isinstance(raw_usage, dict) and type(raw_usage.get(key)) is int and raw_usage[key] >= 0
+        }
+        missing_usage = [key for key in self.USAGE_FIELDS[:3] if key not in usage]
+        usage_completeness = "unknown" if not usage else "partial" if missing_usage else "complete"
+        choices = payload.get("choices")
+        first = choices[0] if isinstance(choices, list) and choices and isinstance(choices[0], dict) else {}
+        finish = first.get("finish_reason")
+        with self.lock:
+            self.data["responses"].append({
+                "request_id": request_id, "locale": locale, "http_status": status,
+                "finish_reason": finish if isinstance(finish, str) else "unknown",
+                "usage": usage or "unknown",
+                "usage_completeness": usage_completeness, "missing_usage_fields": missing_usage,
+            })
+            self.data["unobserved_provider_requests"] = max(
+                0, self.data["provider_requests"] - len(self.data["responses"]),
+            )
+            self.data[f"usage_{usage_completeness}_responses"] += 1
+            for key, value in usage.items():
+                self.data["usage_totals"][key] = self.data["usage_totals"].get(key, 0) + value
+            if status in {401, 402, 403}:
+                self.stop(f"DeepSeek HTTP {status}; stopped new provider requests")
+
+    def failure(
+        self, locale: str, error: Exception, units: list[TranslationUnit],
+        *, request_id: int | None = None, content: str = "",
+    ) -> None:
+        # TranslationError strings are generated locally; arbitrary transport
+        # exception messages can contain request details, so retain their type only.
+        reason = str(error) if isinstance(error, TranslationError) else type(error).__name__
+        with self.lock:
+            if len(self.data["failures"]) < 100:
+                self.data["failures"].append({
+                    "request_id": request_id, "locale": locale, "reason": reason,
+                    "category": type(error).__name__,
+                })
+            if len(self.data["failure_samples"]) < 5 and content:
+                selected = [unit for unit in units if re.search(
+                    rf"(?:for |translation ID ){re.escape(unit.key)}(?:\s|$)", reason,
+                )]
+                selected = selected or units[:3]
+                translated_rows: list[dict[str, Any]] = []
+                try:
+                    payload = json.loads(_strip_code_fence(content))
+                    rows = payload.get("translations") if isinstance(payload, dict) else payload
+                    selected_keys = {unit.key for unit in selected}
+                    if isinstance(rows, list):
+                        for row in rows:
+                            if isinstance(row, dict) and isinstance(row.get("id"), str) and row["id"] in selected_keys:
+                                translated_rows.append({"id": row["id"], "text": str(row.get("text") or "")[:400]})
+                                if len(translated_rows) >= 3:
+                                    break
+                except (ValueError, TypeError):
+                    pass
+                self.data["failure_samples"].append({
+                    "request_id": request_id, "locale": locale, "reason": reason,
+                    "source": [{"id": unit.key, "context": unit.context, "text": unit.source[:400]}
+                               for unit in selected[:3]],
+                    "translation_rows": translated_rows,
+                    "translation_response": "" if translated_rows else content[:1600],
+                })
+            self.write()
+
+    def write(self) -> None:
+        if self.path is None:
+            return
+        with self.lock:
+            self.path.parent.mkdir(parents=True, exist_ok=True)
+            temporary = self.path.with_suffix(self.path.suffix + ".tmp")
+            temporary.write_bytes(stable_json_bytes(self.data))
+            temporary.replace(self.path)
 
 
 def log(message: str) -> None:
@@ -807,7 +943,7 @@ def _strip_code_fence(value: str) -> str:
 def _response_content(response: Any, label: str) -> str:
     status = int(getattr(response, "status_code", 0) or 0)
     if status >= 400:
-        raise TranslationError(f"{label}: DeepSeek HTTP {status}")
+        raise ProviderHTTPError(status, label)
     try:
         payload = response.json()
     except Exception as error:  # noqa: BLE001
@@ -828,17 +964,25 @@ def parse_translation_batch(value: str, units: list[TranslationUnit], locale: st
         raise TranslationError(f"{locale}: translation response has no translations list")
     expected = {unit.key: unit for unit in units}
     translated: dict[str, str] = {}
-    for row in rows:
+    for row_index, row in enumerate(rows):
         if not isinstance(row, dict):
-            raise TranslationError(f"{locale}: translation response row is invalid")
+            raise TranslationError(f"{locale}: translation response row {row_index} is invalid")
         key = row.get("id")
-        text = str(row.get("text") or "").strip()
-        if not isinstance(key, str) or key not in expected or key in translated or not text:
-            raise TranslationError(f"{locale}: translation response IDs are incomplete")
+        if not isinstance(key, str):
+            raise TranslationError(f"{locale}: invalid ID type {type(key).__name__} at row {row_index}; expected a string")
+        if key not in expected:
+            raise TranslationError(f"{locale}: unknown translation ID {key[:80]!r} at row {row_index}")
+        if key in translated:
+            raise TranslationError(f"{locale}: duplicate translation ID {key}")
+        raw_text = row.get("text")
+        if not isinstance(raw_text, str) or not raw_text.strip():
+            raise TranslationError(f"{locale}: missing or invalid translation text for {key}")
+        text = raw_text.strip()
         validate_translation_quality(locale, expected[key], text)
         translated[key] = text
     if set(translated) != set(expected):
-        raise TranslationError(f"{locale}: DeepSeek omitted translation rows")
+        missing = ",".join(sorted(set(expected) - set(translated)))[:240]
+        raise TranslationError(f"{locale}: DeepSeek omitted translation rows: {missing}")
     return translated
 
 
@@ -850,11 +994,15 @@ def deepseek_translate_batch(
     base_url: str,
     timeout: float,
     attempts: int,
+    run_state: TranslationRun | None = None,
 ) -> dict[str, str]:
     # Keep the HTTP dependency lazy so deterministic locale build tests need no
     # network client installation and cannot accidentally make an API call.
     from deepseek_http import request_with_key_fallback
 
+    run_state = run_state or TranslationRun()
+    keys = [part.strip() for name in DEEPSEEK_KEY_ENV_NAMES
+            for part in re.split(r"[\n,;]+", os.getenv(name, "")) if part.strip()]
     config = LOCALES[locale]
     # Compact IDs save request and response tokens without changing cache keys.
     request_units = [
@@ -865,13 +1013,15 @@ def deepseek_translate_batch(
     system = (
         f"You are the senior {config.language_name} editor for {LATIN_PUBLIC_BRAND}, a financial research website. "
         f"Translate every input into natural, publication-ready {config.language_name}. "
-        "Preserve every __KC_PH_000__ style placeholder exactly once, including its spelling. "
+        "Within each input item, preserve that item's __KC_PH_000__ style placeholders exactly once, "
+        "including their spelling. Placeholder numbers may repeat in different items. "
         "Keep official organization names, stock tickers, report IDs, URLs, dates, numbers, currencies, "
         f"HTML structure, and code fragments unchanged. {LATIN_PUBLIC_BRAND} is a protected brand name. "
         f"Use genuine {config.language_name} script and syntax throughout all translatable prose. "
         "Never attach a target-language label or prefix to an untranslated source sentence. "
         "Do not summarize, omit, add commentary, or return markdown. Return strict JSON only as "
-        '{"translations":[{"id":"...","text":"..."}]}, with exactly one row per input ID.'
+        '{"translations":[{"id":"...","text":"..."}]}, with exactly one row per input ID. '
+        "Copy each input ID exactly as a JSON string."
     )
     payload = {
         "model": normalize_deepseek_model_name(model),
@@ -887,26 +1037,41 @@ def deepseek_translate_batch(
     label = f"{locale} batch {units[0].key[:8]}"
     last_error: Exception | None = None
     for output_attempt in range(1, max(1, attempts) + 1):
+        content = ""
+        request_id = run_state.reserve()
         try:
             response = request_with_key_fallback(
                 base_url.rstrip("/") + "/chat/completions",
                 headers={"Content-Type": "application/json"},
                 payload=payload,
                 label=label,
+                # One helper call is exactly one HTTP attempt: no hidden key
+                # failover or HTTP retry may bypass the shared request budget.
+                api_keys=[("configured", keys[0])] if keys else [],
                 timeout=timeout,
-                max_attempts=4,
+                max_attempts=1,
                 retry_base_seconds=4,
                 retry_max_seconds=45,
                 allow_model_fallback=False,
                 logger=log,
             )
-            translated = parse_translation_batch(_response_content(response, label), request_units, locale)
+            run_state.response(request_id, locale, response)
+            content = _response_content(response, label)
+            translated = parse_translation_batch(content, request_units, locale)
             return {unit.key: translated[str(index)] for index, unit in enumerate(units)}
+        except ProviderHTTPError as error:
+            run_state.failure(locale, error, request_units, request_id=request_id)
+            log(f"DeepSeek {label}: HTTP {error.status}; no output retry.")
+            raise
         except TranslationError as error:
+            run_state.failure(locale, error, request_units, request_id=request_id, content=content)
             last_error = error
             if output_attempt >= max(1, attempts):
                 break
-            log(f"DeepSeek {label}: invalid output on attempt {output_attempt}; retrying.")
+            log(f"DeepSeek {label}: {error}; output attempt {output_attempt} failed; retrying.")
+        except Exception as error:
+            run_state.failure(locale, error, request_units, request_id=request_id)
+            raise TranslationError(f"{label}: provider transport failed ({type(error).__name__})") from error
     raise TranslationError(str(last_error) if last_error else f"{label}: translation failed")
 
 
@@ -945,9 +1110,31 @@ def translate_missing_units(
     max_batch_chars: int = DEFAULT_BATCH_CHARS,
     max_batch_items: int = DEFAULT_BATCH_ITEMS,
     batch_translator: Callable[[str, list[TranslationUnit]], dict[str, str]] | None = None,
+    preflight_only: bool = False,
+    preflight_batches_per_locale: int = 2,
+    diagnostics_out: Path | None = None,
+    max_provider_requests: int | None = None,
+    run_state: TranslationRun | None = None,
 ) -> dict[str, int]:
-    worker_count = max(1, min(MAX_TRANSLATION_WORKERS, int(workers)))
-    prune_counts = prune_translation_cache(cache, units)
+    if preflight_batches_per_locale < 1 or (max_provider_requests is not None and max_provider_requests < 1):
+        raise TranslationError("Preflight batch and provider request limits must be positive")
+    run_state = run_state or TranslationRun(
+        diagnostics_out, max_provider_requests if max_provider_requests is not None else (6 if preflight_only else None),
+    )
+    worker_count = 1 if preflight_only else max(1, min(MAX_TRANSLATION_WORKERS, int(workers)))
+    if preflight_only:
+        # A standalone preflight may provide only a representative inventory.
+        # Never remove the rest of an existing full translation checkpoint.
+        prune_counts = {}
+        for locale in LOCALES:
+            entries = cache["locales"][locale]
+            invalid = [key for key, unit in units.items()
+                       if key in entries and not _valid_cache_row(locale, unit, entries[key])]
+            for key in invalid:
+                del entries[key]
+            prune_counts[locale] = {"retained": len(entries), "stale": 0, "invalid": len(invalid)}
+    else:
+        prune_counts = prune_translation_cache(cache, units)
     if any(row["stale"] or row["invalid"] for row in prune_counts.values()):
         log(
             "Pruned translation cache to current public inventory: "
@@ -962,12 +1149,29 @@ def translate_missing_units(
         entries = cache["locales"][locale]
         missing = [unit for unit in units.values() if unit.key not in entries]
         missing_counts[locale] = len(missing)
-        jobs.extend(
-            (locale, batch)
-            for batch in pack_batches(missing, max_chars=max_batch_chars, max_items=max_batch_items)
-        )
+        batches = pack_batches(missing, max_chars=max_batch_chars, max_items=max_batch_items)
+        if preflight_only:
+            selected: list[list[TranslationUnit]] = []
+            seen_contexts: set[str] = set()
+            for _index in range(min(preflight_batches_per_locale, len(batches))):
+                best = max(range(len(batches)), key=lambda index: (
+                    len({unit.context for unit in batches[index]} - seen_contexts),
+                    sum(len(unit.source) for unit in batches[index]),
+                ))
+                batch = batches.pop(best)
+                selected.append(batch)
+                seen_contexts.update(unit.context for unit in batch)
+            batches = selected
+        jobs.extend((locale, batch) for batch in batches)
+    run_state.data.update({
+        "preflight_only": preflight_only, "missing_units": missing_counts,
+        "selected_batches": len(jobs), "workers": worker_count,
+        "selected_contexts": sorted({unit.context for _locale, batch in jobs for unit in batch}),
+    })
     if not jobs:
         write_cache(cache_path, cache)
+        run_state.data["status"] = "passed"
+        run_state.write()
         log(f"Translation cache complete: {len(units)} source units; no DeepSeek requests needed.")
         return missing_counts
 
@@ -977,10 +1181,15 @@ def translate_missing_units(
         for part in re.split(r"[\n,;]+", os.getenv(env_name, ""))
     )
     if batch_translator is None and not configured_keys:
+        run_state.data["status"] = "failed"
+        run_state.stop("A DeepSeek API key is required for missing locale translations")
+        write_cache(cache_path, cache)
+        run_state.write()
         raise TranslationError("A DeepSeek API key is required for missing locale translations")
 
     def run(job: tuple[str, list[TranslationUnit]]) -> tuple[str, dict[str, str], list[TranslationUnit]]:
         locale, batch = job
+        run_state.check()
         if batch_translator is not None:
             result = batch_translator(locale, batch)
         else:
@@ -990,7 +1199,8 @@ def translate_missing_units(
                 model=model,
                 base_url=base_url,
                 timeout=timeout,
-                attempts=attempts,
+                attempts=1 if preflight_only else attempts,
+                run_state=run_state,
             )
         return locale, result, batch
 
@@ -1001,30 +1211,68 @@ def translate_missing_units(
     )
     failures: list[str] = []
     completed = 0
+    consecutive_failures = 0
     last_checkpoint = time.monotonic()
-    with concurrent.futures.ThreadPoolExecutor(max_workers=worker_count) as executor:
-        futures = {executor.submit(run, job): job for job in jobs}
-        for future in concurrent.futures.as_completed(futures):
-            locale, batch = futures[future]
-            try:
-                result_locale, result, completed_batch = future.result()
-                entries = cache["locales"][result_locale]
-                for unit in completed_batch:
-                    translated = result.get(unit.key)
-                    if not isinstance(translated, str) or not translated.strip():
-                        raise TranslationError(f"{result_locale}: missing batch result for {unit.key}")
-                    validate_translation_quality(result_locale, unit, translated)
-                    entries[unit.key] = {"source": unit.source, "translation": translated.strip()}
-            except Exception as error:  # noqa: BLE001 - retain other successful checkpoints.
-                failures.append(f"{locale}/{batch[0].key[:12]}: {error}")
-            completed += 1
-            now = time.monotonic()
-            if completed % 2_000 == 0 or now - last_checkpoint >= 60 or completed == len(jobs):
-                write_cache(cache_path, cache)
-                log(f"  translation batches {completed}/{len(jobs)} failures={len(failures)}")
-                last_checkpoint = now
+    try:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=worker_count) as executor:
+            pending: dict[Any, tuple[str, list[TranslationUnit]]] = {}
+            job_iterator = iter(jobs)
+            exhausted = False
+            while pending or not exhausted:
+                while not exhausted and not run_state.stop_reason and len(pending) < worker_count:
+                    job = next(job_iterator, None)
+                    if job is None:
+                        exhausted = True
+                        break
+                    pending[executor.submit(run, job)] = job
+                if not pending:
+                    break
+                done, _ = concurrent.futures.wait(pending, return_when=concurrent.futures.FIRST_COMPLETED)
+                for future in done:
+                    locale, batch = pending.pop(future)
+                    if future.cancelled():
+                        continue
+                    try:
+                        result_locale, result, completed_batch = future.result()
+                        entries = cache["locales"][result_locale]
+                        for unit in completed_batch:
+                            translated = result.get(unit.key)
+                            if not isinstance(translated, str) or not translated.strip():
+                                raise TranslationError(f"{result_locale}: missing batch result for {unit.key}")
+                            validate_translation_quality(result_locale, unit, translated)
+                            entries[unit.key] = {"source": unit.source, "translation": translated.strip()}
+                        consecutive_failures = 0
+                    except Exception as error:  # Retain other completed, validated results.
+                        reason = str(error) if isinstance(error, TranslationError) else type(error).__name__
+                        failures.append(f"{locale}/{batch[0].key[:12]}: {reason}")
+                        consecutive_failures += 1
+                        run_state.failure(locale, error, batch)
+                        if isinstance(error, ProviderHTTPError) and error.status in {401, 402, 403}:
+                            run_state.stop(f"DeepSeek HTTP {error.status}; stopped new provider requests")
+                        if preflight_only or consecutive_failures >= 3 or (completed >= 5 and len(failures) / (completed + 1) >= 0.8):
+                            run_state.stop("Preflight failed" if preflight_only else "Systemic translation failures; stopped new requests")
+                    completed += 1
+                if run_state.stop_reason:
+                    exhausted = True
+                    for future in pending:
+                        future.cancel()
+                now = time.monotonic()
+                if preflight_only or now - last_checkpoint >= 60:
+                    write_cache(cache_path, cache)
+                    run_state.write()
+                    log(f"  translation batches {completed}/{len(jobs)} failures={len(failures)}")
+                    last_checkpoint = now
+    finally:
+        run_state.data.update({
+            "completed_batches": completed, "failed_batches": len(failures),
+            "status": "failed" if failures or run_state.stop_reason or completed < len(jobs) else "passed",
+        })
+        write_cache(cache_path, cache)
+        run_state.write()
     if failures:
         raise TranslationError("Locale translation failed: " + " | ".join(failures[:10]))
+    if run_state.stop_reason:
+        raise TranslationStopped(run_state.stop_reason)
     return missing_counts
 
 
@@ -3837,7 +4085,7 @@ def copy_locale_assets(root: Path, locale: str) -> None:
     shutil.copytree(source, target, dirs_exist_ok=True)
 
 
-def build_localized_release(
+def _build_localized_release(
     *,
     root: Path,
     site_url: str,
@@ -3853,6 +4101,11 @@ def build_localized_release(
     index_start_date: date | str | None = None,
     index_allowlist: Iterable[str] = (),
     batch_translator: Callable[[str, list[TranslationUnit]], dict[str, str]] | None = None,
+    preflight_only: bool = False,
+    preflight_batches_per_locale: int = 2,
+    diagnostics_out: Path | None = None,
+    max_provider_requests: int | None = None,
+    run_state: TranslationRun,
 ) -> dict[str, Any]:
     root = root.resolve()
     if not root.is_dir() or root == Path(root.anchor):
@@ -4025,7 +4278,20 @@ def build_localized_release(
         timeout=timeout,
         attempts=attempts,
         batch_translator=batch_translator,
+        preflight_only=preflight_only,
+        preflight_batches_per_locale=preflight_batches_per_locale,
+        diagnostics_out=diagnostics_out,
+        max_provider_requests=max_provider_requests,
+        run_state=run_state,
     )
+    if preflight_only:
+        result = {
+            "preflight_only": True, "status": "passed", "source_unit_count": len(units),
+            "missing_units": missing_counts, "selected_batches": run_state.data["selected_batches"],
+            "provider_requests": run_state.data["provider_requests"],
+        }
+        log(f"Locale preflight passed: batches={result['selected_batches']} requests={result['provider_requests']}; cache saved.")
+        return result
     overlay_manifest: dict[str, dict[str, dict[str, Any]]] = {}
     detail_overlay_manifest: dict[str, dict[str, dict[str, Any]]] = {}
     chart_overlay_manifest: dict[str, dict[str, Any]] = {}
@@ -4291,6 +4557,24 @@ def read_index_allowlist(path: Path | None) -> tuple[str, ...]:
     return tuple(rows)
 
 
+def build_localized_release(**kwargs: Any) -> dict[str, Any]:
+    """Persist diagnostics even when inventory collection or rendering fails."""
+    limit = kwargs.get("max_provider_requests")
+    if limit is None and kwargs.get("preflight_only"):
+        limit = 6
+    run_state = TranslationRun(kwargs.get("diagnostics_out"), limit)
+    try:
+        result = _build_localized_release(**kwargs, run_state=run_state)
+        run_state.data["status"] = "passed"
+        return result
+    except BaseException as error:
+        run_state.data["status"] = "failed"
+        run_state.data["build_error"] = str(error) if isinstance(error, TranslationError) else type(error).__name__
+        raise
+    finally:
+        run_state.write()
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, required=True, help="Built Chinese static release directory")
@@ -4313,6 +4597,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
     parser.add_argument("--timeout", type=float, default=float(os.getenv("DEEPSEEK_TIMEOUT", "180")))
     parser.add_argument("--attempts", type=int, default=int(os.getenv("DEEPSEEK_OUTPUT_ATTEMPTS", "3")))
+    parser.add_argument("--preflight-only", action="store_true", help="Translate representative missing batches, save cache, and exit before rendering")
+    parser.add_argument("--preflight-batches-per-locale", type=int, default=2)
+    parser.add_argument("--diagnostics-out", type=Path, help="Persist request/usage diagnostics on both success and failure")
+    parser.add_argument("--max-provider-requests", type=int, help="Hard HTTP attempt limit; preflight defaults to 6, full build has no default cap")
     parser.add_argument(
         "--index-start-date",
         default=os.getenv("PORTAL_LOCALE_INDEX_START_DATE", ""),
@@ -4342,6 +4630,10 @@ def main() -> int:
             deepseek_base_url=args.deepseek_base_url,
             timeout=args.timeout,
             attempts=args.attempts,
+            preflight_only=args.preflight_only,
+            preflight_batches_per_locale=args.preflight_batches_per_locale,
+            diagnostics_out=args.diagnostics_out,
+            max_provider_requests=args.max_provider_requests,
             hot_report_index_path=args.hot_report_index,
             index_start_date=args.index_start_date,
             index_allowlist=read_index_allowlist(args.index_allowlist),
