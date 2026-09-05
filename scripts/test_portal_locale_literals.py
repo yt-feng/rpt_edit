@@ -6,7 +6,7 @@ import unittest
 from unittest import mock
 
 import build_portal_locales as builder
-from portal_locale_literals import is_latin_name_literal, is_machine_asset_reference, is_short_latin_label_translation
+from portal_locale_literals import is_latin_name_literal, is_machine_asset_reference, is_shared_japanese_keyword, is_short_latin_label_translation
 
 
 class AssetReferenceTests(unittest.TestCase):
@@ -176,11 +176,61 @@ class LatinNameLiteralTests(unittest.TestCase):
                     self.assertEqual(builder.translated_text(source, "html:text:p", locale, cache), source)
 
 
+class SharedJapaneseKeywordTests(unittest.TestCase):
+    def test_real_short_keyword_failures_are_valid_only_in_japanese(self):
+        for source in ("人保P&C", "MSCI指数", "中国A50", "MSCI中国", "美国CPI"):
+            unit = builder.TranslationUnit("a" * 64, "chart:keywords", source)
+            with self.subTest(source=source):
+                self.assertTrue(is_shared_japanese_keyword(source, source, unit.context))
+                builder.validate_translation_quality("ja", unit, source)
+                for locale in ("ko", "ar"):
+                    with self.assertRaises(builder.TranslationError):
+                        builder.validate_translation_quality(locale, unit, source)
+
+    def test_keyword_provenance_survives_both_collection_orders_without_other_locale_bypass(self):
+        for contexts in (("chart:keywords", "html:text:p"), ("html:text:p", "chart:keywords")):
+            with self.subTest(contexts=contexts):
+                units = {}
+                for context in contexts:
+                    builder.collect_text_units("MSCI指数", context, units)
+                self.assertEqual(len(units), 1)
+                unit = next(iter(units.values()))
+                self.assertEqual(unit.context, "chart:keywords")
+                row = builder._translation_cache_row(unit, unit.source)
+                self.assertTrue(row.get("ja_keyword_name"))
+                self.assertNotIn("entity_name", row)
+                cache = builder.empty_cache()
+                cache["locales"]["ja"][unit.key] = row
+                self.assertEqual(builder.translated_text("MSCI指数", "html:text:p", "ja", cache), "MSCI指数")
+                _, body_unit = builder.unit_for_text("MSCI指数", "html:text:p")
+                for locale in ("ko", "ar"):
+                    self.assertFalse(builder._valid_cache_row(locale, body_unit, row))
+                for sentence in ("MSCI指数上涨了。", "请查看MSCI指数完整研究报告"):
+                    with self.assertRaises(builder.TranslationError):
+                        builder.translated_text(sentence, "html:text:p", "ja", cache)
+
+    def test_short_keyword_rule_does_not_accept_sentences_or_changed_names(self):
+        for source, translated, context in (
+            ("MSCI指数", "MSCI指数", "javascript:app.js"),
+            ("MSCI指数", "MSCI指数", "html:text:p"),
+            ("MSCI指数", "其他指数", "chart:keywords"),
+            ("MSCI指数今日大幅上涨", "MSCI指数今日大幅上涨", "chart:keywords"),
+            ("MSCI指数。", "MSCI指数。", "chart:keywords"),
+        ):
+            with self.subTest(source=source, context=context):
+                self.assertFalse(is_shared_japanese_keyword(source, translated, context))
+        _, body_unit = builder.unit_for_text("MSCI指数", "html:text:p")
+        self.assertFalse(builder._valid_cache_row("ja", body_unit, {
+            "source": "不同来源", "translation": "MSCI指数", "ja_keyword_name": True,
+        }))
+
+
 class ShortLatinLabelTranslationTests(unittest.TestCase):
     def test_short_translated_brands_and_acronyms_are_valid_in_all_locales(self):
         for source, translated in (
             ("惠普", "HP"), ("慧与", "HPE"), ("国内生产总值", "GDP"),
             ("电子商务", "eCommerce"), ("英伟达", "NVIDIA"), ("明尼苏达矿业", "3M"),
+            ("人保P&C", "PICC P&C"),
         ):
             with self.subTest(source=source, translated=translated):
                 self.assertTrue(is_short_latin_label_translation(source, translated))
@@ -194,6 +244,7 @@ class ShortLatinLabelTranslationTests(unittest.TestCase):
             ("惠普", "惠普"), ("惠普", ""), ("惠普", "Company Details Are Discussed Below"),
             ("惠普", "这家公司的收入持续增长。"), ("惠普", "회사의 매출이 계속 증가하고 있습니다."),
             ("惠普", "123"), ("惠普", "N" * 17),
+            ("惠普", "Company Details"), ("人保P&C", "PICC P&C report"),
             ("这是需要完整翻译的中文行业研究正文", "HP"), ("惠普的收入增长了。", "HP"),
             ("惠普\n收入", "HP"), ("Revenue is expected to grow this year.", "GDP"),
         )

@@ -36,7 +36,7 @@ import xml.etree.ElementTree as ET
 from zoneinfo import ZoneInfo
 
 from portal_locale_history import plan_history_release
-from portal_locale_literals import is_latin_name_literal, is_machine_asset_reference, is_short_latin_label_translation
+from portal_locale_literals import is_latin_name_literal, is_machine_asset_reference, is_shared_japanese_keyword, is_short_latin_label_translation
 from portal_locale_scope import deferred_locale_source, restrict_html_to_cohort
 
 CACHE_SCHEMA_VERSION = 1
@@ -789,7 +789,8 @@ def collect_text_units(value: str, context: str, target: dict[str, TranslationUn
                 merged_context = unit.context if (
                     unit.context in STRUCTURED_NAME_CONTEXTS
                     or (previous.context not in STRUCTURED_NAME_CONTEXTS
-                        and is_latin_name_literal(unit.source, unit.context))
+                        and (is_latin_name_literal(unit.source, unit.context)
+                             or is_shared_japanese_keyword(unit.source, unit.source, unit.context)))
                 ) else previous.context
                 if merged_context != previous.context or optional != previous.data_placeholders:
                     target[unit.key] = TranslationUnit(previous.key, merged_context, previous.source, optional)
@@ -842,6 +843,8 @@ def validate_translation_quality(locale: str, unit: TranslationUnit, translated:
         # Check the same exact pair in every context; do not grant a reusable
         # entity-name bypass to arbitrary later text under this cache row.
         return
+    if locale == "ja" and is_shared_japanese_keyword(source_visible, translated_visible, unit.context):
+        return
     # Names/acronyms and short Japanese Kanji headings can legitimately remain
     # identical. Do not infer language quality from spelling or script ratios.
     if locale == "ja" and len(source_compact) <= 12 and all(
@@ -869,6 +872,8 @@ def _cache_validation_unit(unit: TranslationUnit, row: dict[str, Any]) -> Transl
     # sentence that merely contains the name. It survives cross-field rendering.
     if row.get("entity_name") is True and row.get("source") == unit.source:
         return TranslationUnit(unit.key, "jsonld:entity:name", unit.source, unit.data_placeholders)
+    if row.get("ja_keyword_name") is True and row.get("source") == unit.source:
+        return TranslationUnit(unit.key, "ja:shared-keyword", unit.source, unit.data_placeholders)
     return unit
 
 
@@ -876,6 +881,8 @@ def _translation_cache_row(unit: TranslationUnit, translated: str) -> dict[str, 
     row: dict[str, Any] = {"source": unit.source, "translation": translated.strip()}
     if unit.context in STRUCTURED_NAME_CONTEXTS or _unchanged_latin_name(unit, translated):
         row["entity_name"] = True
+    if is_shared_japanese_keyword(unit.source, translated, unit.context):
+        row["ja_keyword_name"] = True
     return row
 
 
@@ -910,6 +917,8 @@ def prune_translation_cache(
             if _valid_cache_row(locale, unit, row):
                 if unit.context in STRUCTURED_NAME_CONTEXTS or _unchanged_latin_name(unit, row["translation"]):
                     row["entity_name"] = True
+                if is_shared_japanese_keyword(unit.source, row["translation"], unit.context):
+                    row["ja_keyword_name"] = True
                 retained[key] = row
             else:
                 invalid += 1
@@ -1270,6 +1279,8 @@ def translate_missing_units(
                 if key in entries and (unit.context in STRUCTURED_NAME_CONTEXTS
                                        or _unchanged_latin_name(unit, entries[key]["translation"])):
                     entries[key]["entity_name"] = True
+                if key in entries and is_shared_japanese_keyword(unit.source, entries[key]["translation"], unit.context):
+                    entries[key]["ja_keyword_name"] = True
             prune_counts[locale] = {"retained": len(entries), "stale": 0, "invalid": len(invalid)}
     else:
         prune_counts = prune_translation_cache(cache, units)
