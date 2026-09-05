@@ -120,6 +120,35 @@ class PortalLocaleBackfillTests(unittest.TestCase):
         self.assertEqual(report["status"], "passed")
         self.assertTrue(report["ready"])
 
+    def test_budget_checkpoint_with_unsettled_deepl_usage_never_resumes(self):
+        for unobserved, reserved in ((1, 300), (0, 300), (1, 0)):
+            with self.subTest(unobserved=unobserved, reserved=reserved):
+                self.commands.clear()
+                report, reader, provider = self.run_backfill([{
+                    "rows": 4,
+                    "diagnostics": {"stop_category": "budget", "deepl_repair": {
+                        "provider_requests": 1, "billed_characters": 0, "stop_reason": "",
+                        "unobserved_requests": unobserved, "reserved_characters": reserved,
+                    }},
+                }])
+                self.assertEqual((reader.call_count, provider.call_count), (1, 1))
+                self.assertEqual(report["status"], "failed")
+                self.assertEqual(report["stop_category"], "incomplete_usage")
+                self.assertFalse(report["ready"])
+
+    def test_repair_limit_checkpoint_with_unsettled_deepl_usage_never_resumes(self):
+        report, reader, provider = self.run_backfill([{
+            "rows": 4,
+            "diagnostics": {"stop_category": "repair_limit", "deepl_repair": {
+                "provider_requests": 1, "billed_characters": 0, "stop_reason": "",
+                "unobserved_requests": 1, "reserved_characters": 300,
+            }},
+        }])
+        self.assertEqual((reader.call_count, provider.call_count), (1, 1))
+        self.assertEqual(report["status"], "failed")
+        self.assertEqual(report["stop_category"], "incomplete_usage")
+        self.assertFalse(report["ready"])
+
     def test_residual_translation_gaps_without_cache_growth_never_resume(self):
         report, reader, provider = self.run_backfill([translation_gap(rows=2)])
         self.assertEqual((reader.call_count, provider.call_count), (1, 1))

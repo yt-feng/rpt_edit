@@ -111,7 +111,7 @@ def _summary(raw: dict[str, Any]) -> dict[str, Any]:
     repair = raw.get("deepl_repair")
     if isinstance(repair, dict):
         result["deepl_repair"] = {
-            key: repair[key] for key in ("provider_requests", "balance_requests", "billed_characters", "reserved_characters", "remaining_character_budget")
+            key: repair[key] for key in ("provider_requests", "balance_requests", "billed_characters", "reserved_characters", "unobserved_requests", "remaining_character_budget")
             if type(repair.get(key)) is int and repair[key] >= 0
         }
         result["deepl_repair"]["stopped"] = bool(repair.get("stop_reason"))
@@ -244,7 +244,15 @@ def run_backfill(
             if current.get("deepl_repair", {}).get("stopped"):
                 report.update(status="checkpointed", stop_category="deepl_stopped")
                 break
-            if any(current.get(field) != 0 for field in OBSERVATION_FIELDS):
+            repair = raw.get("deepl_repair")
+            repair_usage_incomplete = repair is not None and (
+                not isinstance(repair, dict)
+                or any(type(repair.get(field)) is not int or repair[field] != 0
+                       for field in ("unobserved_requests", "reserved_characters"))
+            )
+            # Every continuation starts a new adapter. Never discard the old
+            # adapter's reservation/replay fence while billing is unresolved.
+            if repair_usage_incomplete or any(current.get(field) != 0 for field in OBSERVATION_FIELDS):
                 current.update(status="failed", ready=False)
                 report.update(status="failed", stop_category="incomplete_usage")
                 break
