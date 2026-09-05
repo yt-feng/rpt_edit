@@ -1565,6 +1565,39 @@ class PortalLocaleBuildTests(unittest.TestCase):
         self.assertEqual(counts["ja"]["invalid"], 1)
         self.assertIn(unit.key, loaded["locales"]["ko"])
 
+    def test_written_chinese_quantity_allows_only_its_exact_digit_once(self) -> None:
+        source = "伯恩斯坦：地平线机器人上半年业绩低于预期，HSD覆盖前五大车企 | " + builder.LATIN_PUBLIC_BRAND
+        _protected, unit = builder.unit_for_text(source, "html:title")
+        placeholders = " ".join(builder.PLACEHOLDER_RE.findall(unit.source))
+        translated = "번스타인: 호라이즌 로보틱스 상반기 실적 기대 이하, HSD가 상위 5대 자동차 제조사 커버 | " + placeholders
+        builder.validate_translation_quality("ko", unit, translated)
+        for wrong in (translated.replace("5대", "6대"), translated + " 5", translated + " 99.99"):
+            with self.subTest(wrong=wrong), self.assertRaisesRegex(builder.TranslationError, "numeric value mismatch"):
+                builder.validate_translation_quality("ko", unit, wrong)
+
+    def test_written_chinese_quantities_ordinals_and_percentages_are_bounded(self) -> None:
+        for source, value in (("三家银行", "3"), ("兩家銀行", "2"), ("两家公司", "2"),
+                              ("十年展望", "10"), ("二十年展望", "20"), ("第十二季度", "12"),
+                              ("百分之五点二的增长", "5.2"), ("百分之五點二的增長", "٥٫٢")):
+            with self.subTest(source=source):
+                unit = builder.TranslationUnit("written-quantity", "html:text:p", source)
+                builder.validate_translation_quality("ko", unit, "연구 보고서에 나온 수치는 " + value + "입니다")
+        for source in ("一带一路", "一旦增长", "一百二十年展望", "二〇二六年展望", "First Solar outlook",
+                       "二分之一年", "四又二分之一年", "两年半", "百分之二分之一"):
+            with self.subTest(source=source):
+                self.assertFalse(builder._written_numeric_allowances(source))
+        unit = builder.TranslationUnit("two-quantities", "html:text:p", "三家银行和三家公司")
+        builder.validate_translation_quality("ja", unit, "銀行3社と企業3社についての調査です")
+        with self.assertRaisesRegex(builder.TranslationError, "numeric value mismatch"):
+            builder.validate_translation_quality("ja", unit, "銀行3社と企業3社と団体3社についての調査です")
+
+    def test_written_number_allowance_does_not_replace_mandatory_bare_digits(self) -> None:
+        unit = builder.TranslationUnit("literal-and-written", "html:text:p", "报告R15覆盖前五大车企")
+        builder.validate_translation_quality("ko", unit, "보고서 R15는 상위 5대 자동차 제조사를 다룹니다")
+        for wrong in ("보고서는 상위 5대 자동차 제조사를 다룹니다", "보고서 R16는 상위 5대 자동차 제조사를 다룹니다"):
+            with self.subTest(wrong=wrong), self.assertRaisesRegex(builder.TranslationError, "numeric value mismatch"):
+                builder.validate_translation_quality("ko", unit, wrong)
+
     def test_deepseek_error_response_does_not_expose_response_body(self) -> None:
         response = mock.Mock(status_code=500, text="private submitted source text")
         response.json.return_value = {"error": "private submitted source text"}
