@@ -374,6 +374,7 @@ class PortalLocaleBuildTests(unittest.TestCase):
         workers: int = 4,
         index_start_date: str | None = None,
         index_allowlist: tuple[str, ...] = (),
+        **options: object,
     ) -> dict:
         return builder.build_localized_release(
             root=self.site,
@@ -390,6 +391,7 @@ class PortalLocaleBuildTests(unittest.TestCase):
             index_start_date=index_start_date,
             index_allowlist=index_allowlist,
             batch_translator=translator,
+            **options,
         )
 
     def test_hot_report_source_fails_closed_and_uses_only_public_display_fields(self) -> None:
@@ -2070,6 +2072,238 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
                             "ko", units, model=builder.DEFAULT_DEEPSEEK_MODEL,
                             base_url="https://api.deepseek.com", timeout=1, attempts=1,
                         )
+
+    def test_preflight_saves_partial_cache_without_rendering_or_requiring_full_coverage(self) -> None:
+        before = {path: path.read_bytes() for path in self.site.rglob("*") if path.is_file()}
+        diagnostics = self.temporary_root / "preflight.json"
+        translator = RecordingTranslator()
+        result = self._build(
+            translator, preflight_only=True, preflight_batches_per_locale=1,
+            diagnostics_out=diagnostics, max_provider_requests=6,
+        )
+        self.assertTrue(result["preflight_only"])
+        self.assertEqual(result["selected_batches"], 3)
+        self.assertEqual(len(translator.calls), 3)
+        self.assertEqual(before, {path: path.read_bytes() for path in self.site.rglob("*") if path.is_file()})
+        cached = builder.load_cache(self.cache, builder.DEFAULT_DEEPSEEK_MODEL)
+        for locale in builder.LOCALES:
+            self.assertGreater(len(cached["locales"][locale]), 0)
+            self.assertLess(len(cached["locales"][locale]), result["source_unit_count"])
+        report = json.loads(diagnostics.read_text())
+        self.assertEqual(report["status"], "passed")
+        self.assertEqual(report["workers"], 1)
+        self.assertGreater(len(report["selected_contexts"]), 1)
+
+    def test_failed_preflight_stops_after_first_batch_and_does_not_render(self) -> None:
+        diagnostics = self.temporary_root / "failed-preflight.json"
+        translator = mock.Mock(side_effect=builder.TranslationError("placeholder mismatch"))
+        with self.assertRaisesRegex(builder.TranslationError, "placeholder mismatch"):
+            self._build(translator, preflight_only=True, diagnostics_out=diagnostics)
+        self.assertEqual(translator.call_count, 1)
+        self.assertTrue(self.cache.exists())
+        self.assertFalse((self.site / "ko").exists())
+        self.assertEqual(json.loads(diagnostics.read_text())["status"], "failed")
+
+    def test_preflight_subset_preserves_unreferenced_full_cache(self) -> None:
+        unit = builder.TranslationUnit("a" * 64, "html:text:p", "公开研究内容")
+        other = builder.TranslationUnit("b" * 64, "html:text:p", "其他公开研究内容")
+        cache = builder.empty_cache()
+        for locale in builder.LOCALES:
+            cache["locales"][locale][other.key] = {
+                "source": other.source, "translation": FAKE_COPY[locale],
+            }
+        builder.translate_missing_units(
+            {unit.key: unit}, cache, cache_path=self.cache,
+            model=builder.DEFAULT_DEEPSEEK_MODEL, base_url="https://api.deepseek.com",
+            workers=50, timeout=1, attempts=3, preflight_only=True,
+            batch_translator=RecordingTranslator(),
+        )
+        stored = builder.load_cache(self.cache, builder.DEFAULT_DEEPSEEK_MODEL)
+        for locale in builder.LOCALES:
+            self.assertEqual(set(stored["locales"][locale]), {unit.key, other.key})
+
+    @mock.patch.dict("os.environ", {"DEEPSEEK_API_KEY": "test-primary-secret", "DEEPSEEK_API_KEY_BACKUP": "test-backup-secret"}, clear=True)
+    def test_request_budget_includes_output_retries_and_records_usage_before_parse_failure(self) -> None:
+        diagnostics = self.temporary_root / "usage.json"
+        state = builder.TranslationRun(diagnostics, max_requests=2)
+        response = mock.Mock(status_code=200)
+        response.json.return_value = {
+            "choices": [{"finish_reason": "length", "message": {"content": '{"translations":['}}],
+            "usage": {"prompt_tokens": 11, "completion_tokens": 7, "total_tokens": 18},
+        }
+        request = mock.Mock(return_value=response)
+        unit = builder.TranslationUnit("a" * 64, "html:text:p", "公开研究内容")
+        with mock.patch.dict(sys.modules, {"deepseek_http": mock.Mock(request_with_key_fallback=request)}):
+            with self.assertRaisesRegex(builder.TranslationStopped, "limit"):
+                builder.deepseek_translate_batch(
+                    "ko", [unit], model=builder.DEFAULT_DEEPSEEK_MODEL,
+                    base_url="https://api.deepseek.com", timeout=1, attempts=5, run_state=state,
+                )
+        state.write()
+        self.assertEqual(request.call_count, 2)
+        for call in request.call_args_list:
+            self.assertEqual(call.kwargs["max_attempts"], 1)
+            self.assertEqual(call.kwargs["api_keys"], [("configured", "test-primary-secret")])
+        report = json.loads(diagnostics.read_text())
+        self.assertEqual(report["provider_requests"], 2)
+        self.assertEqual(report["usage_totals"], {"prompt_tokens": 22, "completion_tokens": 14, "total_tokens": 36})
+        self.assertEqual([row["finish_reason"] for row in report["responses"]], ["length", "length"])
+        self.assertEqual(len(report["failure_samples"]), 2)
+        self.assertNotIn("test-primary-secret", diagnostics.read_text())
+        self.assertNotIn("test-backup-secret", diagnostics.read_text())
+
+    @mock.patch.dict("os.environ", {"DEEPSEEK_API_KEY": "fake-key"}, clear=True)
+    def test_402_stops_new_batches_without_retry_or_invalid_output_label(self) -> None:
+        units = {f"{i:064x}": builder.TranslationUnit(f"{i:064x}", "html:text:p", "公开研究内容") for i in range(20)}
+        diagnostics = self.temporary_root / "http402.json"
+        response = mock.Mock(status_code=402)
+        response.json.return_value = {"error": {"message": "Insufficient Balance"}}
+        request = mock.Mock(return_value=response)
+        with mock.patch.dict(sys.modules, {"deepseek_http": mock.Mock(request_with_key_fallback=request)}), mock.patch.object(builder, "log") as logger:
+            with self.assertRaisesRegex(builder.TranslationError, "HTTP 402"):
+                builder.translate_missing_units(
+                    units, builder.empty_cache(), cache_path=self.cache,
+                    model=builder.DEFAULT_DEEPSEEK_MODEL, base_url="https://api.deepseek.com",
+                    workers=1, timeout=1, attempts=3, max_batch_items=1, diagnostics_out=diagnostics,
+                )
+        self.assertEqual(request.call_count, 1)
+        self.assertTrue(self.cache.exists())
+        self.assertFalse(any("invalid output" in call.args[0] for call in logger.call_args_list))
+        report = json.loads(diagnostics.read_text())
+        self.assertEqual(report["status"], "failed")
+        self.assertEqual(report["provider_requests"], 1)
+        self.assertEqual(report["responses"][0]["usage"], "unknown")
+        self.assertEqual(report["usage_unknown_responses"], 1)
+
+    def test_systemic_failures_stop_bounded_queue_and_preserve_completed_cache(self) -> None:
+        units = {f"{i:064x}": builder.TranslationUnit(f"{i:064x}", "html:text:p", "公开研究内容") for i in range(20)}
+        translator = RecordingTranslator()
+        calls = 0
+
+        def fail_after_success(locale: str, batch: list[builder.TranslationUnit]) -> dict[str, str]:
+            nonlocal calls
+            calls += 1
+            if calls > 1:
+                raise builder.TranslationError("translation has no Hangul")
+            return translator(locale, batch)
+
+        with mock.patch.object(builder.concurrent.futures, "ThreadPoolExecutor", wraps=concurrent.futures.ThreadPoolExecutor) as executor:
+            with self.assertRaisesRegex(builder.TranslationError, "no Hangul"):
+                builder.translate_missing_units(
+                    units, builder.empty_cache(), cache_path=self.cache,
+                    model=builder.DEFAULT_DEEPSEEK_MODEL, base_url="https://api.deepseek.com",
+                    workers=1, timeout=1, attempts=1, max_batch_items=1,
+                    batch_translator=fail_after_success,
+                )
+        executor.assert_called_once_with(max_workers=1)
+        self.assertEqual(calls, 4, "only one successful batch plus three failures may run, not all 60 jobs")
+        cache = builder.load_cache(self.cache, builder.DEFAULT_DEEPSEEK_MODEL)
+        self.assertEqual(sum(len(rows) for rows in cache["locales"].values()), 1)
+
+    @mock.patch.dict("os.environ", {"DEEPSEEK_API_KEY": "fake-key"}, clear=True)
+    def test_parallel_provider_budget_and_pending_queue_are_bounded(self) -> None:
+        units = {f"{i:064x}": builder.TranslationUnit(f"{i:064x}", "html:text:p", "公开研究内容") for i in range(20)}
+        diagnostics = self.temporary_root / "parallel-budget.json"
+
+        def provider(_url: str, **kwargs: object) -> mock.Mock:
+            payload = kwargs["payload"]
+            rows = json.loads(payload["messages"][1]["content"])["translations"]
+            response = mock.Mock(status_code=200)
+            response.json.return_value = {
+                "choices": [{"finish_reason": "stop", "message": {"content": json.dumps({
+                    "translations": [{"id": row["id"], "text": "공개 연구 내용입니다"} for row in rows],
+                })}}],
+                "usage": {"prompt_tokens": 5, "completion_tokens": 4, "total_tokens": 9},
+            }
+            return response
+
+        request = mock.Mock(side_effect=provider)
+        real_wait = concurrent.futures.wait
+        observed_pending: list[int] = []
+
+        def check_pending(futures: object, **kwargs: object) -> object:
+            observed_pending.append(len(futures))
+            return real_wait(futures, **kwargs)
+
+        with mock.patch.dict(sys.modules, {"deepseek_http": mock.Mock(request_with_key_fallback=request)}), mock.patch.object(builder.concurrent.futures, "wait", side_effect=check_pending):
+            with self.assertRaisesRegex(builder.TranslationError, "limit"):
+                builder.translate_missing_units(
+                    units, builder.empty_cache(), cache_path=self.cache,
+                    model=builder.DEFAULT_DEEPSEEK_MODEL, base_url="https://api.deepseek.com",
+                    workers=4, timeout=1, attempts=3, max_batch_items=1,
+                    max_provider_requests=6, diagnostics_out=diagnostics,
+                )
+        self.assertEqual(request.call_count, 6)
+        self.assertLessEqual(max(observed_pending), 4)
+        report = json.loads(diagnostics.read_text())
+        self.assertEqual(report["provider_requests"], 6)
+        self.assertEqual(report["usage_totals"]["total_tokens"], 54)
+        self.assertEqual(len(report["responses"]), 6)
+        stored = builder.load_cache(self.cache, builder.DEFAULT_DEEPSEEK_MODEL)
+        self.assertEqual(sum(len(rows) for rows in stored["locales"].values()), 6)
+
+    def test_partial_usage_and_transport_without_response_are_explicitly_unknown(self) -> None:
+        diagnostics = self.temporary_root / "partial-usage.json"
+        state = builder.TranslationRun(diagnostics, max_requests=2)
+        response = mock.Mock(status_code=200)
+        response.json.return_value = {
+            "choices": [{"message": {"content": json.dumps({
+                "translations": [{"id": "0", "text": "공개 연구 내용입니다"}],
+            })}}],
+            "usage": {"total_tokens": 9},
+        }
+        request = mock.Mock(side_effect=[response, OSError("private transport request details")])
+        unit = builder.TranslationUnit("a" * 64, "html:text:p", "公开研究内容")
+        with mock.patch.dict(sys.modules, {"deepseek_http": mock.Mock(request_with_key_fallback=request)}):
+            builder.deepseek_translate_batch(
+                "ko", [unit], model=builder.DEFAULT_DEEPSEEK_MODEL,
+                base_url="https://api.deepseek.com", timeout=1, attempts=3, run_state=state,
+            )
+            with self.assertRaisesRegex(builder.TranslationError, "transport failed"):
+                builder.deepseek_translate_batch(
+                    "ko", [unit], model=builder.DEFAULT_DEEPSEEK_MODEL,
+                    base_url="https://api.deepseek.com", timeout=1, attempts=3, run_state=state,
+                )
+        report = json.loads(diagnostics.read_text())
+        self.assertEqual(report["provider_requests"], 2)
+        self.assertEqual(report["unobserved_provider_requests"], 1)
+        self.assertEqual(report["usage_partial_responses"], 1)
+        self.assertEqual(report["usage_complete_responses"], 0)
+        self.assertEqual(report["responses"][0]["usage_completeness"], "partial")
+        self.assertEqual(report["responses"][0]["missing_usage_fields"], ["prompt_tokens", "completion_tokens"])
+        self.assertEqual(report["usage_totals"], {"total_tokens": 9})
+        self.assertNotIn("private transport", diagnostics.read_text())
+
+    def test_quality_failure_sample_locates_late_wire_id_and_matching_translation(self) -> None:
+        diagnostics = self.temporary_root / "late-row.json"
+        state = builder.TranslationRun(diagnostics, max_requests=1)
+        units = [builder.TranslationUnit(f"{i:064x}", "html:text:p", f"公开研究内容 {i}") for i in range(32)]
+        rows = [{"id": str(i), "text": "검증된 금융 연구 문안입니다 " * 8} for i in range(32)]
+        rows[23]["text"] = units[23].source
+        response = mock.Mock(status_code=200)
+        response.json.return_value = {"choices": [{"message": {"content": json.dumps({
+            "translations": rows,
+        }, ensure_ascii=False)}}]}
+        request = mock.Mock(return_value=response)
+        with mock.patch.dict(sys.modules, {"deepseek_http": mock.Mock(request_with_key_fallback=request)}):
+            with self.assertRaisesRegex(builder.TranslationError, "unchanged source text for 23"):
+                builder.deepseek_translate_batch(
+                    "ko", units, model=builder.DEFAULT_DEEPSEEK_MODEL,
+                    base_url="https://api.deepseek.com", timeout=1, attempts=1, run_state=state,
+                )
+        sample = json.loads(diagnostics.read_text())["failure_samples"][0]
+        self.assertEqual([row["id"] for row in sample["source"]], ["23"])
+        self.assertEqual(sample["source"][0]["text"], units[23].source)
+        self.assertEqual(sample["translation_rows"], [{"id": "23", "text": units[23].source}])
+
+    def test_diagnostics_persist_when_inventory_collection_fails(self) -> None:
+        diagnostics = self.temporary_root / "inventory-failure.json"
+        (self.site / "index.html").unlink()
+        with self.assertRaisesRegex(builder.TranslationError, "incomplete"):
+            self._build(RecordingTranslator(), preflight_only=True, diagnostics_out=diagnostics)
+        report = json.loads(diagnostics.read_text())
+        self.assertEqual(report["status"], "failed")
+        self.assertEqual(report["provider_requests"], 0)
 
     def test_cjk_source_echo_is_rejected(self) -> None:
         _protected, unit = builder.unit_for_text("需要翻译的完整中文文本", "test:echo")
