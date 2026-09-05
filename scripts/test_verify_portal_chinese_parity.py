@@ -7,6 +7,7 @@ import hashlib
 import json
 from pathlib import Path
 import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -176,6 +177,44 @@ class ChineseParityTests(unittest.TestCase):
         result = self._verify()
         self.assertEqual(result["counts"]["hreflang_clusters"], 2)
         self.assertRegex(result["digest"], r"^[0-9a-f]{64}$")
+
+    def test_cli_keeps_full_evidence_file_but_stdout_is_compact_allowlist(self) -> None:
+        expected_snapshot = parity.create_snapshot(root=self.site, site_origin=ORIGIN)
+        command = [sys.executable, "-B", str(ROOT / "scripts/verify_portal_chinese_parity.py")]
+        completed = subprocess.run(command + [
+            "snapshot", "--root", str(self.site), "--site-url", ORIGIN,
+            "--output", str(self.snapshot_path),
+        ], check=True, text=True, capture_output=True)
+        saved = json.loads(self.snapshot_path.read_text(encoding="utf-8"))
+        self.assertEqual(saved, expected_snapshot)
+        self.assertGreater(self.snapshot_path.stat().st_size, 2000)
+        self.assertIn("body_sha256", saved["files"]["index.html"])
+        self.assertEqual(set(saved["files"]), set(saved["paths"]))
+        self.assertLess(len(completed.stdout), 2000)
+        summary = json.loads(completed.stdout)
+        self.assertEqual(set(summary), {"status", "counts", "digest"})
+        self.assertEqual(summary["status"], "passed")
+        self.assertEqual(summary["counts"], saved["counts"])
+        self.assertEqual(summary["digest"], saved["digest"])
+        self.assertNotIn("index.html", completed.stdout)
+        self.assertNotIn("body_sha256", completed.stdout)
+
+        self._apply_locale_discovery()
+        verification_path = self.base / "verification.json"
+        expected_verification = self._verify()
+        completed = subprocess.run(command + [
+            "verify", "--root", str(self.site), "--snapshot", str(self.snapshot_path),
+            "--output", str(verification_path),
+        ], check=True, text=True, capture_output=True)
+        saved = json.loads(verification_path.read_text(encoding="utf-8"))
+        self.assertEqual(saved, expected_verification)
+        self.assertIn("source_refresh_scope", saved)
+        self.assertLess(len(completed.stdout), 2000)
+        summary = json.loads(completed.stdout)
+        self.assertEqual(set(summary), {"status", "counts", "digest", "snapshot_digest", "verified_tree_digest"})
+        self.assertEqual(summary["digest"], saved["digest"])
+        self.assertEqual(summary["verified_tree_digest"], saved["verified_tree_digest"])
+        self.assertNotIn("source_refresh_scope", completed.stdout)
 
     def test_active_manifest_checks_stable_protected_scope_and_skips_html(self) -> None:
         preliminary = parity.create_snapshot(root=self.site, site_origin=ORIGIN)
