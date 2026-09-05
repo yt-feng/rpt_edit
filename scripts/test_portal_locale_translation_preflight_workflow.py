@@ -2,8 +2,11 @@
 from __future__ import annotations
 
 from pathlib import Path
+import os
 import re
+import subprocess
 import sys
+import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -14,6 +17,18 @@ WORKFLOW = ROOT / ".github/workflows/portal-locale-translation-preflight.yml"
 
 
 class PreflightWorkflowTests(unittest.TestCase):
+    def test_new_test_entrypoints_run_like_actions_without_repository_pythonpath(self):
+        env = os.environ.copy()
+        env.pop("PYTHONPATH", None)
+        with tempfile.TemporaryDirectory() as directory:
+            for name in ("test_deepl_locale_repair.py", "test_portal_locale_history.py"):
+                with self.subTest(script=name):
+                    result = subprocess.run(
+                        [sys.executable, "-B", str(ROOT / "scripts" / name)],
+                        cwd=directory, env=env, capture_output=True, text=True, timeout=30,
+                    )
+                    self.assertEqual(result.returncode, 0, result.stderr)
+
     def test_every_invoked_script_is_in_sparse_checkout(self) -> None:
         workflow = WORKFLOW.read_text(encoding="utf-8")
         checkout = workflow.split("sparse-checkout: |\n", 1)[1].split("\n\n", 1)[0].split()
