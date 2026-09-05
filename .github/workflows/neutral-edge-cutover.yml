@@ -196,6 +196,7 @@ jobs:
           python3 -B scripts/test_build_portal_locales.py
           python3 -B scripts/test_portal_locale_partial_batches.py
           python3 -B scripts/test_portal_locale_residual_repair.py
+          python3 -B scripts/test_portal_locale_preflight_repair.py
           python3 -B scripts/test_check_deepseek_balance.py
           python3 -B scripts/test_run_portal_locale_backfill.py
           python3 -B scripts/test_verify_portal_chinese_parity.py

@@ -137,7 +137,7 @@ class PreflightTests(unittest.TestCase):
             payload = kwargs["payload"]
             plain = "response_format" not in payload
             message = None if plain else json.loads(payload["messages"][1]["content"])
-            locale = kwargs["label"].split()[0] if plain else message["target_language"]
+            locale = kwargs["label"].split()[0] if plain else message["locale"]
             attempts[locale] = attempts.get(locale, 0) + 1
             self.assertEqual(plain, attempts[locale] == 2)
             if plain:
