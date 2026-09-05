@@ -18,8 +18,24 @@ _LEGAL_SUFFIXES = frozenset({"inc", "incorporated", "ltd", "limited", "corp", "c
 # This is an identity-literal check, not a language-quality classifier. Common
 # sentence openings/verbs keep an English sentence containing a name in scope.
 _PROSE_WORDS = frozenset({"we", "you", "they", "it", "this", "that", "these", "those", "is", "are", "was", "were", "will", "should", "could", "buy", "sell", "expect", "expects", "expected", "grow", "grows", "grew", "increased", "decreased", "improve", "improves", "improved", "continue", "continues", "remain", "remains", "because", "covers"})
-_SHORT_SOURCE_LABEL = re.compile(r"[A-Za-z0-9\u3400-\u9fff]{1,12}")
+_SHORT_SOURCE_LABEL = re.compile(r"[A-Za-z0-9&\u3400-\u9fff]{1,12}")
 _SHORT_LATIN_LABEL = re.compile(r"[A-Za-z0-9][A-Za-z0-9.&+\-]{0,15}")
+_ACRONYM_PAIR = re.compile(r"[A-Z0-9][A-Z0-9.&+\-]* [A-Z0-9][A-Z0-9.&+\-]*")
+_SHARED_JAPANESE_KEYWORD = re.compile(r"[A-Z0-9&+./\-\u3400-\u9fff]{1,12}")
+
+
+def is_shared_japanese_keyword(source: object, translated: object, context: str) -> bool:
+    """Short Kanji/acronym index names may be identical in Japanese metadata."""
+    if context not in {"chart:keywords", "ja:shared-keyword"}:
+        return False
+    if not isinstance(source, str) or not isinstance(translated, str):
+        return False
+    source = source.strip()
+    return bool(
+        source == translated.strip() and _SHARED_JAPANESE_KEYWORD.fullmatch(source)
+        and re.search(r"[A-Z]", source)
+        and 1 <= len(re.findall(r"[\u3400-\u9fff]", source)) <= 4
+    )
 
 
 def is_short_latin_label_translation(source: object, translated: object) -> bool:
@@ -34,7 +50,8 @@ def is_short_latin_label_translation(source: object, translated: object) -> bool
     return bool(
         _SHORT_SOURCE_LABEL.fullmatch(source)
         and re.search(r"[\u3400-\u9fff]", source)
-        and _SHORT_LATIN_LABEL.fullmatch(translated)
+        and (_SHORT_LATIN_LABEL.fullmatch(translated)
+             or (len(translated) <= 16 and _ACRONYM_PAIR.fullmatch(translated)))
         and re.search(r"[A-Za-z]", translated)
     )
 
