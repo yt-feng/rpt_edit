@@ -13,8 +13,10 @@ def audit(assets: Path, cache_path: Path, output: Path) -> dict:
     cache = builder.load_cache(cache_path)
     output.mkdir(parents=True, exist_ok=True)
     report = {"schema_version": 1, "provider_requests": 0, "status": "passed", "assets": []}
+    public_units = {}
     for name in builder.LOCALIZED_JS_ASSETS:
         source = (assets / name).read_text(encoding="utf-8")
+        builder.collect_javascript_units(source, name, public_units)
         for locale in builder.LOCALES:
             row = {"asset": name, "locale": locale, "status": "passed"}
             report["assets"].append(row)
@@ -55,6 +57,15 @@ def audit(assets: Path, cache_path: Path, output: Path) -> dict:
             finally:
                 if "localized" in locals():
                     del localized
+    # Export only rows belonging to these public scripts for reproducible,
+    # offline debugging. Never rewrite the restored, paid translation cache.
+    subset = builder.empty_cache()
+    for locale in builder.LOCALES:
+        subset["locales"][locale] = {
+            key: cache["locales"][locale][key]
+            for key in public_units if key in cache["locales"][locale]
+        }
+    builder.write_cache(output / "public-script-cache.json.gz", subset)
     (output / "audit.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return report
 
