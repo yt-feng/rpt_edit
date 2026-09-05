@@ -56,6 +56,80 @@ class HistoryBuildTests(unittest.TestCase):
         self.ledger.write_bytes((self.site / "data/i18n/history-release.json").read_bytes())
         return json.loads(self.ledger.read_text())
 
+    def set_report_dates(self, catalog_date, publication_date=None, noindex=False):
+        for filename in builder.CATALOG_PUBLIC_SOURCES.values():
+            path = self.site / "data" / filename
+            payload = json.loads(path.read_text())
+            for item in payload["items"]:
+                if item["id"] == "report-ai-1":
+                    item["date_folder"] = catalog_date
+            path.write_text(json.dumps(payload, ensure_ascii=False))
+        path = self.site / "reports/report-ai-1.html"
+        source = path.read_text()
+        source = source.replace(', "datePublished": "2026-09-04"', "")
+        if publication_date:
+            source = source.replace('"@type": "Report"', f'"@type": "Report", "datePublished": "{publication_date}"')
+        if noindex:
+            source = source.replace('content="index,follow"', 'content="noindex,follow"')
+        path.write_text(source)
+        return path, source
+
+    def test_recent_catalog_report_without_publication_date_is_pretranslated(self):
+        path, source = self.set_report_dates("260904")
+        translator = fixtures.RecordingTranslator()
+        self.build(translator)
+        self.assertIn("月内研究资产报告", "\n".join(translator.sources))
+        ledger = self.activate_fixture_ledger()
+        self.assertEqual(ledger["pending_count"], 2)
+        self.assertNotIn("datePublished", path.read_text())
+        self.assertEqual(fixtures.body_bytes(path), source[source.index("<body>"):].encode())
+        # With this one-page test quota, two blog rows precede the report.
+        reuse = fixtures.RecordingTranslator()
+        self.build(reuse, today="2026-09-06", previous=True, cache_in=self.fixture.cache)
+        self.activate_fixture_ledger()
+        self.build(reuse, today="2026-09-07", previous=True, cache_in=self.fixture.cache)
+        self.assertEqual(reuse.calls, [])
+        for locale in ("ko", "ja", "ar"):
+            page = (self.site / locale / "reports/report-ai-1.html").read_text()
+            self.assertNotIn('data-kc-locale-deferred="true"', page)
+            self.assertNotIn("datePublished", page)
+
+    def test_catalog_date_controls_schedule_without_rewriting_real_publication(self):
+        path, _source = self.set_report_dates("20260905", "2025-01-02")
+        self.build(fixtures.RecordingTranslator())
+        self.assertIn('"datePublished": "2025-01-02"', path.read_text())
+        for locale in ("ko", "ja", "ar"):
+            page = (self.site / locale / "reports/report-ai-1.html").read_text()
+            self.assertNotIn('content="noindex,follow"', page)
+            self.assertIn("2025-01-02", page)
+            self.assertNotIn('data-kc-locale-deferred="true"', page)
+
+    def test_missing_catalog_date_falls_back_to_genuine_publication(self):
+        self.set_report_dates("2026-02-31", "2026-09-05")
+        self.build(fixtures.RecordingTranslator())
+        self.assertNotIn('content="noindex,follow"', (self.site / "ko/reports/report-ai-1.html").read_text())
+
+    def test_recent_catalog_never_promotes_source_noindex(self):
+        self.set_report_dates("2026-09-05", noindex=True)
+        translator = fixtures.RecordingTranslator()
+        self.build(translator)
+        for locale in ("ko", "ja", "ar"):
+            self.assertIn('content="noindex,follow"', (self.site / locale / "reports/report-ai-1.html").read_text())
+            self.assertNotIn(f"/{locale}/reports/report-ai-1.html", (self.site / f"sitemap-{locale}.xml").read_text())
+
+    def test_old_catalog_date_does_not_spend_even_with_new_publication_date(self):
+        self.set_report_dates("2026-08-04", "2026-09-05")
+        translator = fixtures.RecordingTranslator()
+        self.build(translator)
+        self.assertNotIn("月内研究资产报告", "\n".join(translator.sources))
+        self.assertIn('data-kc-locale-deferred="true"', (self.site / "ko/reports/report-ai-1.html").read_text())
+
+    def test_catalog_date_parser_is_strict(self):
+        for text in ("260904", "20260904", "2026-09-04"):
+            self.assertEqual(builder.parse_catalog_schedule_date(text).isoformat(), "2026-09-04")
+        for text in (None, "", "2026-02-31", "260231", "on 2026-09-04", "2026-09-04/other", "99999999"):
+            self.assertIsNone(builder.parse_catalog_schedule_date(text))
+
     def test_entire_month_prepaid_but_only_selected_history_and_new_content_indexed(self):
         translator = fixtures.RecordingTranslator()
         manifest = self.build(translator)

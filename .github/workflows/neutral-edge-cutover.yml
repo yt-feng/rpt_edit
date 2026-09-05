@@ -184,6 +184,7 @@ jobs:
             scripts/deepl_locale_repair.py \
             scripts/portal_locale_history.py \
             scripts/portal_locale_scope.py \
+            scripts/portal_locale_literals.py \
             scripts/preflight_deepl_locale_repair.py \
             scripts/run_portal_locale_backfill.py \
             scripts/verify_portal_chinese_parity.py \
@@ -205,6 +206,7 @@ jobs:
           python3 -B scripts/test_deepl_locale_repair.py
           python3 -B scripts/test_portal_locale_history.py
           python3 -B scripts/test_portal_locale_scope.py
+          python3 -B scripts/test_portal_locale_literals.py
           python3 -B scripts/test_portal_locale_history_build.py
           python3 -B scripts/test_portal_locale_deepl_fallback.py
           python3 -B scripts/test_preflight_deepl_locale_repair.py

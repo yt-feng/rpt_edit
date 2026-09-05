@@ -36,6 +36,7 @@ import xml.etree.ElementTree as ET
 from zoneinfo import ZoneInfo
 
 from portal_locale_history import plan_history_release
+from portal_locale_literals import is_machine_asset_reference
 from portal_locale_scope import deferred_locale_source, restrict_html_to_cohort
 
 CACHE_SCHEMA_VERSION = 1
@@ -729,6 +730,10 @@ def split_text(value: str, limit: int = MAX_UNIT_CHARS) -> list[str]:
 
 def unit_for_text(value: str, context: str) -> tuple[ProtectedText, TranslationUnit | None]:
     protected = protect_text(value)
+    if is_machine_asset_reference(value):
+        # A filename used as image alt text is not prose. Preserve it exactly
+        # instead of paying providers to return the same machine identifier.
+        return protected, None
     if str(value or "").strip() in NATIVE_LANGUAGE_LABELS:
         # Language-switcher self names remain canonical only when the entire
         # visible value is that label. The same word inside titles, metadata,
@@ -4027,6 +4032,21 @@ def parse_publication_date(value: object) -> date | None:
         return None
 
 
+def parse_catalog_schedule_date(value: object) -> date | None:
+    """Parse the public catalog/index date, without inventing publication dates."""
+    text = str(value or "").strip()
+    if re.fullmatch(r"\d{6}", text):
+        text = "20" + text
+    if re.fullmatch(r"\d{8}", text):
+        text = f"{text[:4]}-{text[4:6]}-{text[6:]}"
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", text):
+        return None
+    try:
+        return date.fromisoformat(text)
+    except ValueError:
+        return None
+
+
 class JsonLdDocumentCollector(HTMLParser):
     """Collect JSON-LD documents without trusting visible page text."""
 
@@ -4563,18 +4583,46 @@ def _build_localized_release(
         index_allowlist=configured_allowlist,
     )
     history_plan = None
+    scheduling_dates = {path: decision.publication_date for path, decision in index_plan.items()}
     if history_start_date:
         if configured_start_date is None:
             raise TranslationError("History release requires the fixed launch/index start date")
         if configured_allowlist:
             raise TranslationError("History release cannot bypass its month boundary through an allowlist")
+        # Most reports expose a catalog date but no genuine datePublished.
+        # Use that public date only for cohort scheduling; never rewrite the
+        # original or translated structured-data publication date.
+        catalog_path = root / "data" / CATALOG_PUBLIC_SOURCES["full"]
+        try:
+            report_catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as error:
+            raise TranslationError("Built public full catalog is invalid: catalog.json") from error
+        if not isinstance(report_catalog, dict) or not isinstance(report_catalog.get("items"), list):
+            raise TranslationError("Built public full catalog is invalid: catalog.json")
+        report_dates = {
+            str(item.get("id") or "").strip(): parse_catalog_schedule_date(item.get("date_folder"))
+            for item in report_catalog["items"] if isinstance(item, dict)
+        }
+        for path, decision in list(index_plan.items()):
+            if decision.page_kind != "report-detail":
+                continue
+            report_id = unquote(urlsplit(decision.canonical_root).path.rsplit("/", 1)[-1][:-5])
+            scheduled = report_dates.get(report_id) or decision.publication_date
+            scheduling_dates[path] = scheduled
+            if not is_indexable_html(original_html[path]):
+                continue
+            new_report = scheduled is not None and scheduled >= configured_start_date
+            index_plan[path] = replace(
+                decision, indexable=new_report, force_noindex_follow=not new_report,
+                reason="new-report-catalog-date" if new_report else "deferred-report-catalog-date",
+            )
         previous_history = json.loads(history_state_in.read_text(encoding="utf-8")) if history_state_in else None
         history_plan = plan_history_release(
             {
-                decision.canonical_root: decision.publication_date.isoformat()
+                decision.canonical_root: scheduling_dates[path].isoformat()
                 for path, decision in index_plan.items()
                 if decision.page_kind in {"report-detail", "blog-detail"}
-                and decision.publication_date and is_indexable_html(original_html[path])
+                and scheduling_dates[path] and is_indexable_html(original_html[path])
             },
             history_start_date=history_start_date,
             launch_date=configured_start_date.isoformat(),
@@ -4599,10 +4647,11 @@ def _build_localized_release(
     )
     eligible_canonicals = frozenset(canonicals)
     translation_canonicals = frozenset(
-        decision.canonical_root for decision in index_plan.values()
+        decision.canonical_root for path, decision in index_plan.items()
         if decision.indexable or (
-            history_plan is not None and decision.publication_date is not None
-            and decision.publication_date >= date.fromisoformat(history_start_date)
+            history_plan is not None and scheduling_dates[path] is not None
+            and scheduling_dates[path] >= date.fromisoformat(history_start_date)
+            and is_indexable_html(original_html[path])
         )
     )
     translation_report_ids = frozenset(
@@ -4684,9 +4733,7 @@ def _build_localized_release(
         # respect the fixed month boundary before collecting any paid text.
         def in_month(item: dict[str, Any]) -> bool:
             raw = item.get("date") or item.get("date_folder") or ""
-            if re.fullmatch(r"\d{6}", str(raw)):
-                raw = f"20{str(raw)[:2]}-{str(raw)[2:4]}-{str(raw)[4:]}"
-            published = parse_publication_date(raw)
+            published = parse_catalog_schedule_date(raw) or parse_publication_date(raw)
             return published is not None and published >= date.fromisoformat(history_start_date)
         chart_index = {**chart_index, "reports": [
             report for report in chart_index["reports"]
@@ -5103,6 +5150,8 @@ def _build_localized_release(
             "paused": history_paused,
             "translation_mode": "pretranslate-entire-fixed-month",
             "translation_page_count": len(translation_canonicals),
+            "report_date_basis": "catalog-date-with-publication-fallback",
+            "blog_date_basis": "publication-date",
         }
         manifest_path.write_bytes(stable_json_bytes(manifest))
         (manifest_path.parent / "history-release.json").write_bytes(stable_json_bytes(history_plan))

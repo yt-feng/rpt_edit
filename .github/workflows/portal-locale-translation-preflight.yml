@@ -56,6 +56,8 @@ jobs:
             scripts/test_portal_locale_history.py
             scripts/portal_locale_scope.py
             scripts/test_portal_locale_scope.py
+            scripts/portal_locale_literals.py
+            scripts/test_portal_locale_literals.py
             scripts/deepseek_http.py
             scripts/check_public_identity.py
 
@@ -77,6 +79,7 @@ jobs:
           python3 -B scripts/test_deepl_locale_repair.py
           python3 -B scripts/test_portal_locale_history.py
           python3 -B scripts/test_portal_locale_scope.py
+          python3 -B scripts/test_portal_locale_literals.py
           python3 -B scripts/test_portal_locale_deepl_fallback.py
           python3 -B scripts/test_preflight_deepl_locale_repair.py
           python3 -B scripts/test_portal_locale_translation_preflight_workflow.py

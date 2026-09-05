@@ -903,7 +903,14 @@ def main(argv: list[str] | None = None) -> int:
         _write_json(output, result)
     except ParityError as error:
         raise SystemExit(f"Chinese parity gate failed: {error}") from error
-    print(json.dumps(result, ensure_ascii=False, sort_keys=True))
+    # Full per-file evidence stays in --output, never in cloud stdout logs.
+    summary = {
+        "status": "passed",
+        "counts": {key: result["counts"][key] for key in
+                   ("files", "html", "protected", "hreflang_clusters") if key in result["counts"]},
+        **{key: result[key] for key in ("digest", "snapshot_digest", "verified_tree_digest") if key in result},
+    }
+    print(json.dumps(summary, ensure_ascii=True, sort_keys=True))
     return 0
 
 
