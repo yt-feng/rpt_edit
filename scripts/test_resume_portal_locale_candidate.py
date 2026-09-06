@@ -11,6 +11,7 @@ from pathlib import Path
 import tempfile
 import unittest
 from unittest.mock import Mock, patch
+from urllib.error import HTTPError
 import zipfile
 
 import publish_static_slot as publisher
@@ -233,6 +234,72 @@ class ResumeTests(unittest.TestCase):
         with self.assertRaisesRegex(resume.ResumeError, "during candidate restore"):
             self.restore()
         self.assertFalse((self.work / "locale-resume-identity.json").exists())
+
+
+class ReadTransportTests(unittest.TestCase):
+    def test_github_user_agent_identifies_the_resume_client(self):
+        client = resume.GitHubClient("private-test-token")
+        client.opener = Mock()
+        client.opener.open.return_value = io.BytesIO(b"{}")
+        self.assertEqual(client.json("/repos/example/repository/actions/runs/321"), {})
+        request = client.opener.open.call_args.args[0]
+        self.assertEqual(request.get_header("User-agent"), "Portal-Locale-Resume/1.0")
+        self.assertEqual(request.get_header("Authorization"), "Bearer private-test-token")
+
+    def test_github_forbidden_error_names_safe_api_route_and_json_message(self):
+        client = resume.GitHubClient("private-test-token")
+        error = HTTPError(
+            "https://signed-download.example.invalid/data?signature=SECRET",
+            403, "Forbidden", {"X-Private": "header-secret"}, io.BytesIO(encoded({
+                "message": "Resource not accessible by integration. private-test-token\n"
+                           "https://signed-download.example.invalid/data?signature=SECRET ghp_other_private_token",
+                "headers": {"X-Private": "header-secret"},
+            })),
+        )
+        client.opener = Mock()
+        client.opener.open.side_effect = error
+        with self.assertRaises(resume.ResumeError) as captured:
+            client.bytes("/repos/example/repository/actions/jobs/123/logs?private-query=omitted")
+        text = str(captured.exception)
+        self.assertIn("route=/repos/example/repository/actions/jobs/123/logs status=403", text)
+        self.assertIn("Resource not accessible by integration", text)
+        for secret in ("private-test-token", "ghp_other_private_token", "signed-download", "signature", "SECRET", "header-secret", "private-query", "\n"):
+            self.assertNotIn(secret, text)
+
+    def test_non_json_github_error_does_not_print_download_body_or_url(self):
+        client = resume.GitHubClient("test-token")
+        client.opener = Mock()
+        client.opener.open.side_effect = HTTPError("https://signed.invalid/?secret=value", 403, "Forbidden", {}, io.BytesIO(b"<Error>private XML</Error>"))
+        with self.assertRaisesRegex(resume.ResumeError, r"route=/repos/example/repository/actions/artifacts/99/zip status=403$"):
+            client.bytes("/repos/example/repository/actions/artifacts/99/zip")
+
+    @patch.object(resume, "request_status")
+    def test_live_identity_uses_existing_curl_get_reader(self, reader):
+        body = encoded(PREVIOUS)
+        reader.return_value = (200, {"content-length": str(len(body))}, body)
+        self.assertEqual(resume.live_state(ORIGIN), PREVIOUS)
+        reader.assert_called_once_with(ORIGIN + "/.well-known/edge-state", method="GET", headers={"Cache-Control": "no-cache"})
+
+    @patch.object(resume, "request_status")
+    def test_live_identity_rejects_redirect_timeout_truncation_and_oversized_length(self, reader):
+        for response in ((302, {}, encoded(PREVIOUS)), (0, {}, b""), (403, {}, b"denied"),
+                         (200, {}, b" " * 65536), (200, {"content-length": "65537"}, encoded(PREVIOUS))):
+            with self.subTest(status=response[0], size=len(response[2])):
+                reader.return_value = response
+                with self.assertRaises(resume.ResumeError):
+                    resume.live_state(ORIGIN)
+
+    @patch.object(resume, "request_status")
+    def test_live_identity_still_requires_bare_https_origin(self, reader):
+        for origin in ("http://example.invalid", "https://name:secret@example.invalid", ORIGIN + "/other", ORIGIN + "?query=1"):
+            with self.subTest(origin=origin), self.assertRaises(resume.ResumeError):
+                resume.live_state(origin)
+        reader.assert_not_called()
+
+    def test_phase_progress_is_flushed(self):
+        with patch("builtins.print") as output:
+            resume.phase("source_attempt")
+        output.assert_called_once_with("Locale resume phase=source_attempt", flush=True)
 
 
 if __name__ == "__main__":

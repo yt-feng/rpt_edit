@@ -13,11 +13,13 @@ from pathlib import Path
 import re
 import sys
 from typing import Any, Callable
+from urllib.error import HTTPError
 from urllib.parse import urlsplit
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 import zipfile
 
 import publish_static_slot as publisher
+from edge_route_cutover import request_status
 import verify_portal_chinese_parity as parity
 from verify_prepared_static_slot import static_tree_sha256
 
@@ -71,9 +73,8 @@ class GitHubRedirect(HTTPRedirectHandler):
         return redirected
 
 
-class NoRedirect(HTTPRedirectHandler):
-    def redirect_request(self, request, fp, code, msg, headers, newurl):
-        raise ResumeError("Live identity endpoint must not redirect")
+def phase(name: str) -> None:
+    print(f"Locale resume phase={name}", flush=True)
 
 
 class GitHubClient:
@@ -87,9 +88,29 @@ class GitHubClient:
         request = Request("https://api.github.com" + path, headers={
             "Authorization": "Bearer " + self.token,
             "Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28",
+            "User-Agent": "Portal-Locale-Resume/1.0",
         })
-        with self.opener.open(request, timeout=60) as response:
-            body = response.read(MAX_API_BYTES + 1)
+        try:
+            with self.opener.open(request, timeout=60) as response:
+                body = response.read(MAX_API_BYTES + 1)
+        except HTTPError as error:
+            # Report the requested API route, never a redirected signed URL or
+            # response headers. GitHub's bounded JSON message explains token
+            # permission failures that would otherwise appear as bare HTTP 403.
+            message = ""
+            try:
+                payload = json.loads(error.read(8192))
+                value = payload.get("message") if isinstance(payload, dict) else None
+                if isinstance(value, str):
+                    value = value.replace(self.token, "[redacted]")
+                    value = re.sub(r"https?://[^\s<>\"']+", "[URL omitted]", value)
+                    value = re.sub(r"\b(?:gh[pousr]_[A-Za-z0-9_]+|github_pat_[A-Za-z0-9_]+)", "[redacted]", value)
+                    message = " message=" + " ".join(value.split())[:500]
+            except (OSError, UnicodeDecodeError, ValueError):
+                pass
+            finally:
+                error.close()
+            raise ResumeError(f"GitHub API request failed: route={urlsplit(path).path} status={error.code}{message}") from None
         require(len(body) <= MAX_API_BYTES, "GitHub response is oversized")
         return body
 
@@ -102,10 +123,16 @@ def live_state(origin: str) -> dict[str, Any]:
     require(parsed.scheme == "https" and bool(parsed.netloc) and not parsed.username
             and not parsed.password and parsed.path in {"", "/"} and not parsed.query
             and not parsed.fragment, "LIVE_ORIGIN must be a bare HTTPS origin")
-    request = Request(origin.rstrip("/") + "/.well-known/edge-state", headers={"Cache-Control": "no-cache"})
-    with build_opener(NoRedirect()).open(request, timeout=30) as response:
-        body = response.read(65537)
-    require(len(body) <= 65536, "Live identity response is oversized")
+    status, headers, body = request_status(
+        origin.rstrip("/") + "/.well-known/edge-state", method="GET", headers={"Cache-Control": "no-cache"},
+    )
+    require(status == 200, f"Live identity request failed: route=/.well-known/edge-state status={status}")
+    # request_status reads at most 64 KiB. Reject a full buffer because it may
+    # have been truncated; the Edge identity document is only a few hundred bytes.
+    require(len(body) < 65536, "Live identity response is oversized or truncated")
+    content_length = headers.get("content-length")
+    require(content_length is None or (content_length.isdigit() and int(content_length) <= 65536),
+            "Live identity response content length is invalid or oversized")
     return decode_json(body, "Live identity")
 
 
@@ -126,6 +153,7 @@ def verify_source_run(github: Any, repository: str, run_id: int, attempt: int, c
     require(run_id > 0 and attempt > 0, "Source run and attempt must be positive")
     require(bool(SHA40.fullmatch(commit)), "Candidate commit must be a full lowercase SHA")
     base = f"/repos/{repository}/actions/runs/{run_id}"
+    phase("source_attempt")
     run = github.json(f"{base}/attempts/{attempt}")
     require(run.get("id") == run_id and run.get("run_attempt") == attempt, "Source run attempt does not match")
     require(run.get("status") == "completed" and run.get("conclusion") == "failure", "Source attempt must be a completed failed run")
@@ -134,6 +162,7 @@ def verify_source_run(github: Any, repository: str, run_id: int, attempt: int, c
             and (run.get("head_repository") or {}).get("full_name") == repository,
             "Source run must belong to this repository, including its head repository")
     require(run.get("head_sha") == commit, "Candidate commit does not match the source run")
+    phase("source_jobs")
     jobs = paged_rows(github, f"{base}/attempts/{attempt}/jobs", "jobs")
     selected = [job for job in jobs if job.get("name") == "prepare_release"]
     require(len(selected) == 1, "Source must have one prepare_release job")
@@ -155,6 +184,7 @@ def verify_source_run(github: Any, repository: str, run_id: int, attempt: int, c
     require(all(step.get("conclusion") not in {"failure", "cancelled", "timed_out"}
                 or int(step.get("number", 0)) >= audit_number for step in steps),
             "Source failed before shadow audit")
+    phase("source_logs")
     logs = github.bytes(f"/repos/{repository}/actions/jobs/{int(job['id'])}/logs").decode("utf-8")
     upload_started = by_name[REQUIRED_STEPS[2]].get("started_at", "")
     require(bool(re.fullmatch(r"\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:\.\d+)?Z", upload_started)), "Source upload step has no trusted timestamp")
@@ -190,12 +220,14 @@ def verify_logged_identity(logs: str, *, slot: str, release: str, tree: str, com
 
 def download_diagnostics(github: Any, repository: str, run_id: int, attempt: int, destination: Path) -> None:
     name = f"neutral-translation-diagnostics-{run_id}-{attempt}"
+    phase("diagnostic_artifact_metadata")
     artifacts = paged_rows(github, f"/repos/{repository}/actions/runs/{run_id}/artifacts", "artifacts")
     matches = [artifact for artifact in artifacts if artifact.get("name") == name and not artifact.get("expired")]
     require(len(matches) == 1, "Source diagnostics artifact is missing, expired, or ambiguous")
     artifact = matches[0]
     workflow_run = artifact.get("workflow_run") or {}
     require(not workflow_run or workflow_run.get("id") == run_id, "Diagnostics artifact belongs to another run")
+    phase("diagnostic_artifact_download")
     data = github.bytes(f"/repos/{repository}/actions/artifacts/{int(artifact['id'])}/zip")
     required: dict[str, bytes] = {}
     try:
@@ -354,11 +386,16 @@ def resume_candidate(*, github: Any, client: Any, bucket: str, repository: str, 
     require(slot != previous["slot"], "Cannot resume the active slot")
     run, logs, identity_logs = verify_source_run(github, repository, run_id, run_attempt, expected_commit)
     verify_logged_identity(identity_logs, slot=slot, release=release, tree=expected_tree, commit=expected_commit, previous=previous)
+    phase("live_baseline")
     require(fetch_live(origin) == previous, "Live Edge state changed since baseline capture")
+    phase("remote_slot_verification")
     manifest = validate_remote_slot(client, bucket, slot, release, expected_tree, workers=workers)
     download_diagnostics(github, repository, run_id, run_attempt, diagnostics_dir)
+    phase("candidate_file_download")
     downloaded = download_candidate_files(client, bucket, manifest, site_dir, workers=workers)
+    phase("diagnostic_validation")
     diagnostics = validate_diagnostics(diagnostics_dir, site_dir, logs, origin)
+    phase("final_identity_recheck")
     require(fetch_live(origin) == previous, "Live Edge state changed during candidate restore")
     assert_no_incomplete(client, bucket, slot)
     final_manifest = publisher.valid_manifest(publisher.read_json_object(client, bucket, publisher.manifest_key(slot)), slot)
@@ -375,6 +412,7 @@ def resume_candidate(*, github: Any, client: Any, bucket: str, repository: str, 
         "remote_mutations": 0, **diagnostics,
     }
     write_local(work_dir, "locale-resume-identity.json", publisher.json_bytes(result))
+    phase("complete")
     return result
 
 
@@ -390,6 +428,7 @@ def main() -> int:
     parser.add_argument("--workers", type=int, default=16)
     args = parser.parse_args()
     try:
+        phase("initialize_clients")
         github = GitHubClient(publisher.require_env("GH_TOKEN"))
         client, _transfer = publisher.build_r2_client()
         result = resume_candidate(
