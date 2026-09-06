@@ -88,7 +88,7 @@ class GitHubClient:
         request = Request("https://api.github.com" + path, headers={
             "Authorization": "Bearer " + self.token,
             "Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28",
-            "User-Agent": "KCDesk-Locale-Resume/1.0",
+            "User-Agent": "Portal-Locale-Resume/1.0",
         })
         try:
             with self.opener.open(request, timeout=60) as response:

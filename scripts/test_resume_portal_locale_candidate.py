@@ -243,7 +243,7 @@ class ReadTransportTests(unittest.TestCase):
         client.opener.open.return_value = io.BytesIO(b"{}")
         self.assertEqual(client.json("/repos/example/repository/actions/runs/321"), {})
         request = client.opener.open.call_args.args[0]
-        self.assertEqual(request.get_header("User-agent"), "KCDesk-Locale-Resume/1.0")
+        self.assertEqual(request.get_header("User-agent"), "Portal-Locale-Resume/1.0")
         self.assertEqual(request.get_header("Authorization"), "Bearer private-test-token")
 
     def test_github_forbidden_error_names_safe_api_route_and_json_message(self):
