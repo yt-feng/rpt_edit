@@ -5187,6 +5187,12 @@ def _build_localized_release(
         if not path.is_file():
             continue
         javascript_sources[asset_name] = path.read_text(encoding="utf-8")
+        # Check the materialized application contract before any paid provider
+        # request. Deployment profiles may rename storage keys in this source.
+        # Keep the raw Chinese asset unchanged; actual injection remains below,
+        # after localization and before content-addressed script URLs are made.
+        for locale in LOCALES:
+            inject_locale_detail_hooks(javascript_sources[asset_name], asset_name, locale)
         validate_javascript_translation_coverage(javascript_sources[asset_name], asset_name)
         collect_javascript_units(javascript_sources[asset_name], asset_name, units)
         collect_javascript_units(javascript_sources[asset_name], asset_name, priority_units)

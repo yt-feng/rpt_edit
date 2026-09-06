@@ -396,6 +396,20 @@ class PortalLocaleBuildTests(unittest.TestCase):
             **options,
         )
 
+    def test_detail_source_contract_fails_before_translation_and_chinese_mutation(self) -> None:
+        before = {path: path.read_bytes() for path in self.site.rglob("*") if path.is_file()}
+        for preflight_only in (False, True):
+            with self.subTest(preflight_only=preflight_only):
+                translator = mock.Mock()
+                with mock.patch.object(builder, "inject_locale_detail_hooks", side_effect=ValueError("Invalid detail source contract")) as hooks:
+                    with mock.patch.object(builder, "translate_missing_units") as translate:
+                        with self.assertRaisesRegex(ValueError, "Invalid detail source contract"):
+                            self._build(translator, preflight_only=preflight_only)
+                        hooks.assert_called_once()
+                        translate.assert_not_called()
+                        translator.assert_not_called()
+                self.assertEqual(before, {path: path.read_bytes() for path in self.site.rglob("*") if path.is_file()})
+
     @mock.patch.dict("os.environ", {"DEEPSEEK_API_KEY": "offline-test-key"}, clear=True)
     def test_budget_checkpoint_does_not_render_or_mutate_protected_chinese(self) -> None:
         before = {path: path.read_bytes() for path in self.site.rglob("*") if path.is_file()}

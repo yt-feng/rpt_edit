@@ -10,6 +10,10 @@ import shutil
 import subprocess
 import unittest
 
+import build_portal_locales as builder
+import render_private_config as materializer
+import test_build_portal_locales as build_fixtures
+
 from portal_locale_detail_hooks import (
     defer_unverified_report_preview,
     inject_locale_detail_hooks,
@@ -24,6 +28,30 @@ REPORT = REPORT_PATH.read_text(encoding="utf-8")
 LOCALES = ("ko", "ja", "ar")
 PREVIEW = re.compile(r'(<script id="reportPreviewBootstrap">)(.*?)(</script>)', re.DOTALL)
 NODE = shutil.which("node")
+CACHE_KEYS = {"DOC_ITEM_CACHE_KEY": "portal_doc_item_cache_v2", "REPORT_PREVIEW_CACHE_KEY": "portal_report_preview_cache"}
+DEPLOYMENT_DOC_KEY = "deployment_doc_item_cache_v2"
+NODE_SYNTAX = "const vm=require('node:vm');const fs=require('node:fs');const v=JSON.parse(fs.readFileSync(0,'utf8'));new vm.Script(v.source);process.stdout.write('{}');"
+
+
+class StructuralRecordingTranslator(build_fixtures.RecordingTranslator):
+    """Offline translations retain partial HTML attribute syntax in real app.js."""
+
+    def __call__(self, locale, units):
+        translations = super().__call__(locale, units)
+        for unit in units:
+            if re.search(r"\b(?:aria-[a-z-]+|alt|placeholder|title)\s*=", unit.source):
+                translations[unit.key] = builder.CJK_RE.sub({"ko": "가", "ja": "カ", "ar": "ي"}[locale], unit.source)
+        return translations
+
+
+def cache_declarations(source: str) -> dict[str, str]:
+    values = {}
+    for name in CACHE_KEYS:
+        matches = re.findall(r"\bconst " + name + r"\s*=\s*([\"'])([^\"']+)\1\s*;", source)
+        if len(matches) != 1:
+            raise AssertionError(f"Expected one generated cache declaration: {name}")
+        values[name] = matches[0][1]
+    return values
 
 
 def run_node(program: str, payload: dict) -> dict:
@@ -263,6 +291,126 @@ class LocaleDetailHookContracts(unittest.TestCase):
                 self.assertIn(locale, value)
                 seen[name].add(value)
         self.assertTrue(all(len(values) == len(LOCALES) for values in seen.values()))
+
+    def test_cache_declarations_preserve_materialized_namespace_and_quote_style(self):
+        for name, public_key in CACHE_KEYS.items():
+            anchor = f'  const {name} = "{public_key}";'
+            for key in ("deployment_doc_item_cache_v2", "tenant-A.cache:v3", "7", "a" * 128):
+                for quote in ('"', "'"):
+                    declaration = f"\tconst {name}\t=  {quote}{key}{quote} ;  "
+                    source = APP.replace(anchor, declaration, 1)
+                    for locale in LOCALES:
+                        with self.subTest(name=name, key=key, quote=quote, locale=locale):
+                            generated = inject_locale_detail_hooks(source, "app.js", locale)
+                            self.assertEqual(cache_declarations(generated)[name], f"{key}:{locale}")
+                            self.assertIn(declaration.replace(f"{quote}{key}{quote}", f"{quote}{key}:{locale}{quote}"), generated)
+                            self.assertEqual(inject_locale_detail_hooks(generated, "app.js", locale), generated)
+                            self.assertEqual(inject_locale_detail_hooks(source, "app.js", "zh-Hans"), source)
+
+    def test_cache_declarations_fail_closed_for_missing_duplicate_or_malformed_values(self):
+        for name, public_key in CACHE_KEYS.items():
+            anchor = f'  const {name} = "{public_key}";'
+            replacements = (
+                "/* missing declaration */",
+                anchor + "\n" + f'  const {name} = "deployment_duplicate_v2";',
+                anchor + "\n" + f'  let {name} = "deployment_duplicate_v2";',
+                f'  let {name} = "deployment_v2";',
+                f'  var {name} = "deployment_v2";',
+                f'  const {name} = window.deploymentCache;',
+                f'  const {name} = "deployment_v2" + ":suffix";',
+                f'  const {name} = `deployment_v2`;',
+                f'  const {name} = "";',
+                f'  const {name} = "_deployment_v2";',
+                f'  const {name} = "部署命名空间";',
+                f'  const {name} = "deployment key";',
+                f'  const {name} = "deployment/key";',
+                f'  const {name} = "deployment\\u005fkey";',
+                f'  const {name} = "' + "a" * 129 + '";',
+                f'  const {name} = "deployment_v2"; // ambiguous tail',
+                f'  const {name} = "deployment_v2", other = "cache";',
+                f'  const {name} = "deployment_v2"',
+                f'  const {name} = "deployment_v2\';',
+            )
+            for index, declaration in enumerate(replacements):
+                with self.subTest(name=name, malformed_case=index):
+                    with self.assertRaises(ValueError) as caught:
+                        inject_locale_detail_hooks(APP.replace(anchor, declaration, 1), "app.js", "ja")
+                    self.assertEqual(str(caught.exception), f"Locale detail hook requires one literal cache declaration: {name}")
+
+    @unittest.skipUnless(NODE, "Node.js is required for materialized real-app syntax checks")
+    def test_materialized_real_app_survives_render_residuals_and_hooks_in_all_locales(self):
+        pattern, mapping = materializer._replacement_engine(
+            (materializer.Replacement(CACHE_KEYS["DOC_ITEM_CACHE_KEY"], DEPLOYMENT_DOC_KEY),), reverse=False,
+        )
+        source = pattern.sub(lambda match: mapping[match.group(0)], APP)
+        self.assertEqual(cache_declarations(source), {**CACHE_KEYS, "DOC_ITEM_CACHE_KEY": DEPLOYMENT_DOC_KEY})
+        units = {}
+        builder.collect_javascript_units(source, "app.js", units)
+        self.assertGreater(len(units), 100, "Exercise the complete real app, not a small hook fixture")
+        translator = StructuralRecordingTranslator()
+        cache = builder.empty_cache()
+        for locale in LOCALES:
+            translations = translator(locale, list(units.values()))
+            for unit in units.values():
+                translated = translations[unit.key]
+                builder.validate_translation_quality(locale, unit, translated)
+                cache["locales"][locale][unit.key] = builder._translation_cache_row(unit, translated)
+            with self.subTest(locale=locale):
+                rendered = builder.render_localized_javascript(source, "app.js", locale, cache)
+                builder.validate_localized_javascript_residuals(source, rendered, "app.js", locale, cache)
+                generated = inject_locale_detail_hooks(rendered, "app.js", locale)
+                self.assertEqual(cache_declarations(generated), {
+                    "DOC_ITEM_CACHE_KEY": f"{DEPLOYMENT_DOC_KEY}:{locale}",
+                    "REPORT_PREVIEW_CACHE_KEY": f"{CACHE_KEYS['REPORT_PREVIEW_CACHE_KEY']}:{locale}",
+                })
+                run_node(NODE_SYNTAX, {"source": generated})
+        self.assertEqual(APP_PATH.read_text(encoding="utf-8"), APP)
+
+    @unittest.skipUnless(NODE, "Node.js is required for complete materialized build checks")
+    def test_full_materialized_app_build_preserves_chinese_and_reuses_translation_cache(self):
+        fixture = build_fixtures.PortalLocaleBuildTests(methodName="runTest")
+        fixture.setUp()
+        self.addCleanup(fixture.tearDown)
+        protected_paths = (APP_PATH, REPORT_PATH, APP_PATH.with_name("styles.css"))
+        protected = {path: path.read_bytes() for path in protected_paths}
+        chinese_app = fixture.site / "assets/app.js"
+        chinese_app.write_bytes(protected[APP_PATH])
+        counts = materializer.render_text_files(
+            (materializer.Root(path=chinese_app, is_directory=False),),
+            (materializer.Replacement(CACHE_KEYS["DOC_ITEM_CACHE_KEY"], DEPLOYMENT_DOC_KEY),),
+            reverse=False, excluded=set(),
+        )
+        self.assertEqual(counts, (1, 1))
+        materialized = chinese_app.read_bytes()
+        self.assertEqual(cache_declarations(materialized.decode()), {**CACHE_KEYS, "DOC_ITEM_CACHE_KEY": DEPLOYMENT_DOC_KEY})
+        chinese_style = (fixture.site / "assets/styles.css").read_bytes()
+        first_translator = StructuralRecordingTranslator()
+        fixture._build(first_translator, workers=1)
+        self.assertTrue(first_translator.calls)
+        self.assertFalse(any(DEPLOYMENT_DOC_KEY in source for source in first_translator.sources),
+                         "Cache namespace is transport data, never a translation unit")
+        generated_before = {}
+        seen = {name: set() for name in CACHE_KEYS}
+        for locale in LOCALES:
+            generated_path = fixture.site / locale / "assets/app.js"
+            generated_before[locale] = generated_path.read_bytes()
+            generated = generated_before[locale].decode()
+            values = cache_declarations(generated)
+            for name, base in {**CACHE_KEYS, "DOC_ITEM_CACHE_KEY": DEPLOYMENT_DOC_KEY}.items():
+                self.assertEqual(values[name], f"{base}:{locale}")
+                seen[name].add(values[name])
+            run_node(NODE_SYNTAX, {"source": generated})
+        self.assertTrue(all(len(values) == 3 for values in seen.values()))
+        first_cache = fixture.cache.read_bytes()
+        second_translator = StructuralRecordingTranslator()
+        fixture._build(second_translator, cache_in=fixture.cache, workers=1)
+        self.assertEqual(second_translator.calls, [], "The same valid cache must make zero fake-provider calls")
+        self.assertEqual(fixture.cache.read_bytes(), first_cache)
+        for locale, generated in generated_before.items():
+            self.assertEqual((fixture.site / locale / "assets/app.js").read_bytes(), generated)
+        self.assertEqual(chinese_app.read_bytes(), materialized)
+        self.assertEqual((fixture.site / "assets/styles.css").read_bytes(), chinese_style)
+        self.assertEqual(protected, {path: path.read_bytes() for path in protected_paths})
 
     def test_transforms_never_write_protected_source_files(self):
         originals = {path: hashlib.sha256(path.read_bytes()).hexdigest() for path in (APP_PATH, REPORT_PATH)}
