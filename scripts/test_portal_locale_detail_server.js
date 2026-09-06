@@ -59,7 +59,10 @@ async function main() {
         assert.equal(options.timeout, 18000);
         assert.equal(options.maxResponseBytes, 65536);
         assert.ok(options.maxTokens <= 6000);
-        const fields = JSON.parse(messages[1].content);
+        const payload = JSON.parse(messages[1].content);
+        assert.ok(["ko", "ja", "ar"].includes(payload.locale));
+        assert.match(payload.target_language, /Korean|Japanese|Arabic/);
+        const fields = payload.fields;
         assert.deepEqual(Object.keys(fields), ["title", "institution", "summary"]);
         assert.doesNotMatch(messages[1].content, /PRIVATE|MEMBER|password|pdf_url|filename|原始文件名/);
         return Object.fromEntries(Object.keys(fields).map((key) => [key, `日本語の${key}`]));
@@ -222,6 +225,89 @@ async function main() {
       assert.equal((await handle(request(input, "GET"), h.env, h.ctx, h.deps)).status, 503);
       assert.equal(JSON.parse(h.bucket.matching("/budget/")[0][1].text).count, 1);
     }
+  });
+
+  await test("real Japanese canary rejects Chinese prose once, with no paid retry", async () => {
+    const h = harness();
+    const canary = { source: "external", id: "1289771588484468736", locale: "ja" };
+    h.deps.validId = (sourceName, id) => sourceName === "external" && id === canary.id;
+    h.deps.resolve = async () => ({ title: "Initiating at Buy: Capturing AI server and CPO growth through optical semiconductor photodiodes-20260825" });
+    h.deps.translate = async (_env, messages) => {
+      h.counts.translate += 1;
+      assert.match(messages[0].content, /必ず自然な日本語/);
+      assert.match(messages[0].content, /中国語で回答したり/);
+      assert.equal(JSON.parse(messages[1].content).target_language, "Japanese (日本語)");
+      assert.equal(JSON.parse(messages[1].content).locale, "ja");
+      return { title: "买入评级启动：通过光半导体光电二极管把握AI服务器与CPO增长机遇-20260825" };
+    };
+    assert.equal((await handle(request(canary), h.env, h.ctx, h.deps)).status, 202);
+    await h.drain();
+    for (const method of ["GET", "POST", "GET"]) {
+      const result = await handle(request(canary, method), h.env, h.ctx, h.deps);
+      assert.equal(result.status, 503);
+      const body = await result.json();
+      assert.equal(body.status, "failed");
+      assert.equal(body.code, "translation_unavailable");
+      assert.equal(body.retry_after, 600);
+      assert.equal(body.fields, undefined);
+    }
+    assert.equal(h.counts.translate, 1);
+    assert.equal(JSON.parse(h.bucket.matching("/budget/")[0][1].text).count, 1);
+  });
+
+  await test("all-kanji Japanese titles and official English institution names remain valid", async () => {
+    for (const title of ["中国経済展望", "半導体産業動向", "世界経済及国際金融市場長期展望調査報告", "買い推奨で調査開始：光半導体フォトダイオードを通じてAIサーバーとCPOの成長機会を捉える-20260825"]) {
+      const h = harness();
+      h.deps.translate = async () => ({ title, institution: "Morgan Stanley Research", summary: "世界経済展望" });
+      await handle(request(), h.env, h.ctx, h.deps); await h.drain();
+      const result = await handle(request(input, "GET"), h.env, h.ctx, h.deps);
+      assert.equal(result.status, 200);
+      const body = await result.json();
+      assert.equal(body.fields.title, title);
+      assert.equal(body.fields.institution, "Morgan Stanley Research");
+    }
+  });
+
+  await test("native Korean and Arabic prompts retain their own display prose", async () => {
+    for (const [locale, title, expectedPrompt] of [["ko", "AI 서버와 CPO의 성장 기회를 활용하는 광반도체 기업", /반드시 자연스러운 한국어/], ["ar", "اغتنام فرص نمو خوادم الذكاء الاصطناعي والتقنيات الضوئية", /إلى عربية طبيعية/]]) {
+      const h = harness();
+      h.deps.translate = async (_env, messages) => {
+        assert.match(messages[0].content, expectedPrompt);
+        return { title, institution: "Morgan Stanley", summary: title };
+      };
+      const target = { ...input, locale };
+      await handle(request(target), h.env, h.ctx, h.deps); await h.drain();
+      assert.equal((await handle(request(target, "GET"), h.env, h.ctx, h.deps)).status, 200);
+    }
+  });
+
+  await test("prompt version bypasses old bad cache while preserving v1 daily ledger and old objects", async () => {
+    const h = harness({ LOCALE_DETAIL_DAILY_MAX_REQUESTS: "2" });
+    const hash = (value) => require("node:crypto").createHash("sha256").update(JSON.stringify(value)).digest("hex");
+    const sourceHash = hash({ title: "中文报告", institution: "公开机构", summary: "公开摘要" });
+    const oldIdentity = hash({ ...input, model: "deepseek-v4-flash", version: "public-detail-v1", source_hash: sourceHash });
+    const oldKey = `_locale/report-detail/v1/cache/${oldIdentity}.json`;
+    const oldFields = Object.fromEntries(api.LOCALE_DETAIL_FIELDS.map((key) => [key, ""]));
+    for (const key of ["title", "title_cn", "title_zh", "display_title"]) oldFields[key] = "买入评级启动：通过光半导体把握AI服务器增长机遇";
+    const oldRow = { etag: "old-paid-cache", text: JSON.stringify({ version: "public-detail-v1", identity: oldIdentity, status: "ready", fields: oldFields }) };
+    h.bucket.rows.set(oldKey, oldRow);
+    const budgetKey = "_locale/report-detail/v1/budget/2026-09-06.json";
+    h.bucket.rows.set(budgetKey, { etag: "existing-budget", text: JSON.stringify({ version: "public-detail-v1", day: "2026-09-06", count: 1, chars: 100 }) });
+    assert.equal((await handle(request(input, "GET"), h.env, h.ctx, h.deps)).status, 404);
+    assert.equal(h.counts.translate, 0);
+    assert.equal((await handle(request(), h.env, h.ctx, h.deps)).status, 202);
+    await h.drain();
+    const ready = await handle(request(), h.env, h.ctx, h.deps);
+    assert.equal(ready.status, 200);
+    assert.equal(h.counts.translate, 1);
+    assert.equal(h.bucket.rows.get(oldKey), oldRow, "prior paid cache is preserved verbatim");
+    const budget = JSON.parse(h.bucket.rows.get(budgetKey).text);
+    assert.equal(budget.version, "public-detail-v1");
+    assert.equal(budget.count, 2);
+    assert.equal(h.bucket.matching("/budget/").length, 1);
+    assert.equal(h.bucket.matching("/cache/").length, 2);
+    assert.equal((await handle(request({ ...input, id: "b".repeat(24) }), h.env, h.ctx, h.deps)).status, 429);
+    assert.equal(h.counts.translate, 1);
   });
 
   await test("source, locale and model version changes have separate cache identities", async () => {
