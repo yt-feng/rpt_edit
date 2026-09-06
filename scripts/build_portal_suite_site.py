@@ -4418,7 +4418,7 @@ def copy_site(src: Path, output: Path) -> None:
 
 
 def assert_no_public_mail_client_actions(output: Path) -> None:
-    """Fail the build when first-party pages can still open a mail client."""
+    """Keep in-site requests, allowing only the approved public account mailbox."""
     candidates = list(output.rglob("*.html"))
     candidates.extend(
         output / relative
@@ -4438,7 +4438,14 @@ def assert_no_public_mail_client_actions(output: Path) -> None:
             text = path.read_text(encoding="utf-8")
         except UnicodeDecodeError:
             continue
-        if re.search(r"mailto\s*:", text, flags=re.I):
+        # Account opening is now explicitly offered through this one public
+        # mailbox. Do not permit other recipients, query-based cc/bcc, or
+        # dynamic mail actions to replace the existing in-site request forms.
+        unapproved = re.sub(
+            r"mailto:" + re.escape("info@kcdesk.com") + r"(?=[\"'`<>]|$)",
+            "", text, flags=re.I,
+        )
+        if re.search(r"mailto\s*:", unapproved, flags=re.I):
             offenders.append(path.relative_to(output).as_posix())
     if offenders:
         raise RuntimeError(

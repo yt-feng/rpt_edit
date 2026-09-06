@@ -530,7 +530,7 @@ class SeoOutputTests(unittest.TestCase):
             self.assertRegex(versioned_institution, r'\.\./\.\./\.\./assets/styles\.css\?v=[0-9a-f]{8}')
             self.assertRegex(versioned_institution, r'\.\./\.\./\.\./assets/analytics\.js\?v=[0-9a-f]{8}')
 
-    def test_public_pages_use_in_site_request_buttons_instead_of_mail_clients(self) -> None:
+    def test_public_pages_keep_requests_and_allow_only_public_account_mailbox(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory)
             shutil.copytree(ROOT / "portal_suite" / "site_src", output, dirs_exist_ok=True)
@@ -543,6 +543,13 @@ class SeoOutputTests(unittest.TestCase):
             self.assertIn("?request=membership", about)
             self.assertIn("?request=access", llms)
             builder.assert_no_public_mail_client_actions(output)
+            approved = output / "public-contact.html"
+            approved.write_text('<a href="mailto:info@kcdesk.com">开通账号联系 info@kcdesk.com</a>', encoding="utf-8")
+            builder.assert_no_public_mail_client_actions(output)
+            approved.write_text('<a href="mailto:info@kcdesk.com?cc=owner@example.invalid">Email</a>', encoding="utf-8")
+            with self.assertRaisesRegex(RuntimeError, "public-contact.html"):
+                builder.assert_no_public_mail_client_actions(output)
+            approved.write_text('<p>开通账号联系 info@kcdesk.com</p>', encoding="utf-8")
 
             bad_page = output / "legacy-mail-action.html"
             bad_page.write_text('<a href="mailto:owner@example.invalid">Email</a>', encoding="utf-8")
