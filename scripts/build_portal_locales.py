@@ -4512,6 +4512,29 @@ def filter_locale_llms_source(
     return filtered
 
 
+LOCALE_RECOVERY_EARLY_BOOTSTRAP = r"""(() => {
+  if (!/^\/(ko|ja|ar)(?:\/|$)/.test(window.location.pathname) || window.PortalLocaleEarly || window.PortalLocaleRecovery) return;
+  let reason = "";
+  const remember = (kind) => { if (!reason) reason = kind; };
+  const error = (event) => {
+    const target = event.target;
+    if (!target || target === window) remember("runtime-error");
+    else if (String(target.tagName).toLowerCase() === "script") remember("script-error");
+  };
+  const rejection = () => remember("unhandled-rejection");
+  window.addEventListener("error", error, true);
+  window.addEventListener("unhandledrejection", rejection);
+  window.PortalLocaleEarly = () => {
+    window.removeEventListener("error", error, true);
+    window.removeEventListener("unhandledrejection", rejection);
+    const saved = reason;
+    reason = "";
+    delete window.PortalLocaleEarly;
+    return saved;
+  };
+})();"""
+
+
 def discovery_links(
     canonical: str,
     site_url: str,
@@ -4527,6 +4550,7 @@ def discovery_links(
     else:
         rows = [
             f'\n    <link rel="stylesheet" href="/assets/locale.css?v={asset_version}">',
+            f'\n    <script data-kc-locale-early>{LOCALE_RECOVERY_EARLY_BOOTSTRAP}</script>',
             f'\n    <script defer src="/assets/locale-recovery.js?v={asset_version}"></script>',
             f'\n    <script src="/assets/locale-runtime.js?v={asset_version}"></script>',
         ]

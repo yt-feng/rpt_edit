@@ -187,6 +187,10 @@ class IncrementalBuildTests(unittest.TestCase):
                     self.assertIn("data-kc-chinese-equivalent", source)
                     self.assertIn("mailto:info@kcdesk.com", source)
                     self.assertIn("/assets/locale-recovery.js", source)
+                    self.assertEqual(source.count("<script data-kc-locale-early>"), 1)
+                    self.assertLess(source.index("<script data-kc-locale-early>"), source.index('<script defer src="/assets/locale-recovery.js'))
+                    self.assertLess(source.index("<script data-kc-locale-early>"), source.index('<script src="/assets/locale-runtime.js'))
+                    self.assertLess(source.index("<script data-kc-locale-early>"), source.index("assets/app.js"))
                     self.assertEqual(manifest["application_routes"][locale][name]["path"], f"{locale}/{name}")
                     self.assertNotIn(f"/{locale}/{name}", self.site.joinpath(f"sitemap-{locale}.xml").read_text())
             self.assertIn(f'/{locale}/report.html?id=report-new-5', self.site.joinpath(locale, "reports/report-new-5.html").read_text())
@@ -195,6 +199,8 @@ class IncrementalBuildTests(unittest.TestCase):
             self.assertEqual(current[current.index("<body"):], original[original.index("<body"):])
             self.assertNotIn("locale-runtime.js", current)
             self.assertNotIn("locale-recovery.js", current)
+            self.assertNotIn("data-kc-locale-early", current)
+            self.assertNotIn("PortalLocaleEarly", current)
         self.assertTrue(self.site.joinpath("assets/locale-recovery.js").is_file())
         def generated_response(url, timeout):
             relative = url.removeprefix(fixtures.SITE_URL + "/")
@@ -234,6 +240,10 @@ class IncrementalBuildTests(unittest.TestCase):
         again = fixtures.RecordingTranslator()
         self.build(again, cache_in=self.fixture.cache)
         self.assertEqual(again.calls, [])
+        for locale in builder.LOCALES:
+            for relative in ("blog/new.html", "blog/new-six.html", "reports/report-new-5.html", "reports/report-new-6.html"):
+                source = self.site.joinpath(locale, relative).read_text()
+                self.assertEqual(source.count("<script data-kc-locale-early>"), 1)
 
     def test_cutoff_and_no_history_contract_fail_before_translation(self):
         for kwargs in ({"index_start_date": None}, {"history_start_date": "2026-08-05"},

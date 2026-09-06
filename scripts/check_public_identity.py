@@ -26,8 +26,8 @@ def private_markers() -> tuple[str, ...]:
         "/".join((owner, repository)),
         account,
         # The Chinese public-facing editorial term is intentionally allowed.
-        # Keep the private deployment domain and historical English identity
-        # blocked; the public term itself must remain indexable for SEO.
+        # The approved public website/contact are allowlisted below; unrelated
+        # deployment identifiers and historical aliases remain guarded.
         "".join(("kc", "娱乐")),
         "".join(("x-", "kc")),
         base64.b64encode(compact + b".com").decode("ascii").rstrip("="),
@@ -78,11 +78,15 @@ def repository_paths() -> tuple[Path, ...]:
 
 
 def redact_approved_public_contact(skeleton: str) -> str:
-    # This exact account-opening address is deliberately public. Keep the
-    # deployment domain, alternate addresses and all other identities blocked.
-    return re.sub(
+    # The owner explicitly approved this public website and account mailbox.
+    # This does not approve personal mailboxes or other deployment identifiers.
+    skeleton = re.sub(
         r"(?<![a-z0-9.!#$%&'*+/=?^_`{|}~-])" + re.escape("info@kcdesk.com") + r"(?![a-z0-9.-])",
         "[approved-public-account-email]", skeleton,
+    )
+    return re.sub(
+        r"(?<![a-z0-9._%+@-])(?:www\.)?" + re.escape("kcdesk.com") + r"(?![a-z0-9.@-])",
+        "[approved-public-website]", skeleton,
     )
 
 
