@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "locale": "ja",
+  "reviewed_at": "2026-09-06",
+  "scope": "13 confirmed Chinese-sentence catalog titles and the same HSBC report detail title; no language heuristic or unrelated corrections",
+  "evidence_origin": "public production locale catalog and report pages",
+  "repairs": [
+    {
+      "report_id": "d8e9f41e66a987f0f82345d4",
+      "unit_key": "2c49c63dc01dfd8b8b5e23f355aa3c0d6f556ae7cdccc7ff43ca705eb7fe1613",
+      "source_title": "MS-The Viewpoint-China’s Deleveraging-deflation Risks Re-emerge-260902",
+      "translation_title": "モルガン・スタンレー-見解-中国のデレバレッジ-デフレリスク再燃-260902",
+      "source": "MS-The Viewpoint-China’s Deleveraging-deflation Risks Re-emerge-__KC_PH_000__",
+      "translation": "モルガン・スタンレー-見解-中国のデレバレッジ-デフレリスク再燃-__KC_PH_000__",
+      "observed_translations": [
+        "MS-观点-中国的去杠杆-通缩风险重现-__KC_PH_000__",
+        "MS-观点-中国的去杠杆-通缩风险重现-260902"
+      ],
+      "observed_title": "MS-观点-中国的去杠杆-通缩风险重现-260902"
+    },
+    {
+      "report_id": "bafc8ffcc31ea1e2832de4c3",
+      "unit_key": "8e38003a5d2af90522470c6c12c41883347811511046f09e5e49ca2ebe3627aa",
+      "source_title": "MS-Software:Signs of Life: Making the Case That SaaS Is ALIVE-260903",
+      "translation_title": "モルガン・スタンレー-ソフトウェア：生命の兆し—SaaSの健在を示す論拠-260903",
+      "source": "MS-Software:Signs of Life: Making the Case That SaaS Is ALIVE-__KC_PH_000__",
+      "translation": "モルガン・スタンレー-ソフトウェア：生命の兆し—SaaSの健在を示す論拠-__KC_PH_000__",
+      "observed_translations": [
+        "摩根士丹利-软件:生命迹象:论证SaaS是活着的-__KC_PH_000__",
+        "摩根士丹利-软件:生命迹象:论证SaaS是活着的-260903"
+      ],
+      "observed_title": "摩根士丹利-软件:生命迹象:论证SaaS是活着的-260903"
+    },
+    {
+      "report_id": "bcecace98cf7cfeb910fccb7",
+      "unit_key": "ba210e4a23665aa287b8beb0bd0b82ed526e123d5921fa3172f07b2192fab6b3",
+      "source_title": "JPM-PCs and Servers:Read~through from Dell’s Jul~26 earnings-260902",
+      "translation_title": "JPモルガン-PCとサーバー：デルの2026年7月期決算から読み解く-260902",
+      "source": "JPM-PCs and Servers:Read~through from Dell’s Jul~__KC_PH_000__ earnings-__KC_PH_001__",
+      "translation": "JPモルガン-PCとサーバー：デルの20__KC_PH_000__年7月期決算から読み解く-__KC_PH_001__",
+      "observed_translations": [
+        "摩根大通-个人电脑与服务器:从戴尔7月__KC_PH_000__财报中解读-__KC_PH_001__",
+        "摩根大通-个人电脑与服务器:从戴尔7月__KC_PH_000__财报中解读-260902",
+        "摩根大通-个人电脑与服务器:从戴尔7月26财报中解读-__KC_PH_001__",
+        "摩根大通-个人电脑与服务器:从戴尔7月26财报中解读-260902"
+      ],
+      "observed_title": "摩根大通-个人电脑与服务器:从戴尔7月26财报中解读-260902"
+    },
+    {
+      "report_id": "683f674b1df8b7fda9eea4e5",
+      "unit_key": "8bdb682b2a49c3231ebc59f7a4489435eb3c3d684c733ddc71e5e696812c6609",
+      "source_title": "JPM-China Battery & Materials September production remains strong despite material shortages; CATL continues to lead-260902",
+      "translation_title": "JPモルガン-中国の電池・材料：材料不足でも9月の生産量は堅調、CATLが引き続き先行-260902",
+      "source": "JPM-China Battery & Materials September production remains strong despite material shortages; CATL continues to lead-__KC_PH_000__",
+      "translation": "JPモルガン-中国の電池・材料：材料不足でも9月の生産量は堅調、CATLが引き続き先行-__KC_PH_000__",
+      "observed_translations": [
+        "摩根大通-中国电池与材料 9月产量在材料短缺下依然强劲;宁德时代持续领先-__KC_PH_000__",
+        "摩根大通-中国电池与材料 9月产量在材料短缺下依然强劲;宁德时代持续领先-260902"
+      ],
+      "observed_title": "摩根大通-中国电池与材料 9月产量在材料短缺下依然强劲;宁德时代持续领先-260902"
+    },
+    {
+      "report_id": "69a8d73da74f01a2f1756ac3",
+      "unit_key": "100565bb3beb0d0ec6bb20800fd58eb609ac286f7a1308e6f1e87b529e81051d",
+      "source_title": "HSBC-On Warsh and AI-260902",
+      "translation_title": "HSBC-ウォーシュとAIについて-260902",
+      "source": "HSBC-On Warsh and AI-__KC_PH_000__",
+      "translation": "HSBC-ウォーシュとAIについて-__KC_PH_000__",
+      "observed_translations": [
+        "HSBC-关于沃什与人工智能-__KC_PH_000__",
+        "HSBC-关于沃什与人工智能-260902"
+      ],
+      "observed_title": "HSBC-关于沃什与人工智能-260902"
+    },
+    {
+      "report_id": "a762bb3a99278186b12d881d",
+      "unit_key": "887e992b5f6d9d817e51bbe6b2d849787e30b05375cff9b99cc8a485268872e9",
+      "source_title": "GS-WUS (002463): Asia Leaders Conference 2026 Takeaways: AI PCB mix upgrade with capacity expansion; Buy-260903",
+      "translation_title": "GS-WUS (002463)：アジア・リーダーズ・カンファレンス2026の要点：AI向けPCBの製品ミックス改善と生産能力拡大；買い-260903",
+      "source": "GS-WUS (__KC_PH_000__): Asia Leaders Conference __KC_PH_001__ Takeaways: AI PCB mix upgrade with capacity expansion; Buy-__KC_PH_002__",
+      "translation": "GS-WUS (__KC_PH_000__)：アジア・リーダーズ・カンファレンス__KC_PH_001__の要点：AI向けPCBの製品ミックス改善と生産能力拡大；買い-__KC_PH_002__",
+      "observed_translations": [
+        "GS-WUS (__KC_PH_000__): 亚洲领袖会议__KC_PH_001__要点: AI PCB混合升级与产能扩张;买入-__KC_PH_002__",
+        "GS-WUS (__KC_PH_000__): 亚洲领袖会议__KC_PH_001__要点: AI PCB混合升级与产能扩张;买入-260903",
+        "GS-WUS (__KC_PH_000__): 亚洲领袖会议2026要点: AI PCB混合升级与产能扩张;买入-__KC_PH_002__",
+        "GS-WUS (__KC_PH_000__): 亚洲领袖会议2026要点: AI PCB混合升级与产能扩张;买入-260903",
+        "GS-WUS (002463): 亚洲领袖会议__KC_PH_001__要点: AI PCB混合升级与产能扩张;买入-__KC_PH_002__",
+        "GS-WUS (002463): 亚洲领袖会议__KC_PH_001__要点: AI PCB混合升级与产能扩张;买入-260903",
+        "GS-WUS (002463): 亚洲领袖会议2026要点: AI PCB混合升级与产能扩张;买入-__KC_PH_002__",
+        "GS-WUS (002463): 亚洲领袖会议2026要点: AI PCB混合升级与产能扩张;买入-260903"
+      ],
+      "observed_title": "GS-WUS (002463): 亚洲领袖会议2026要点: AI PCB混合升级与产能扩张;买入-260903"
+    },
+    {
+      "report_id": "889e3bcd1f508f60083e5d48",
+      "unit_key": "1f71faf32cd6a88a382f8540fe23448662ad935de024f97a7c5356a22b321db7",
+      "source_title": "GS-NATURAL GAS ANALYST:US Softening in 2027, Until Demand Growth Large Enough From 2029-260903",
+      "translation_title": "GS-天然ガスアナリスト：米国市場は軟化へ：2027, 十分な需要拡大は以下の年以降：2029-260903",
+      "source": "GS-NATURAL GAS ANALYST:US Softening in __KC_PH_000__ Until Demand Growth Large Enough From __KC_PH_001__",
+      "translation": "GS-天然ガスアナリスト：米国市場は軟化へ：__KC_PH_000__ 十分な需要拡大は以下の年以降：__KC_PH_001__",
+      "observed_translations": [
+        "GS-天然气分析师：美国在__KC_PH_000__年走软，直到需求增长足够大从__KC_PH_001__",
+        "GS-天然气分析师：美国在__KC_PH_000__年走软，直到需求增长足够大从2029-260903",
+        "GS-天然气分析师：美国在2027,年走软，直到需求增长足够大从__KC_PH_001__",
+        "GS-天然气分析师：美国在2027,年走软，直到需求增长足够大从2029-260903"
+      ],
+      "observed_title": "GS-天然气分析师：美国在2027,年走软，直到需求增长足够大从2029-260903"
+    },
+    {
+      "report_id": "2d4ccac57ece4a6d06d500ff",
+      "unit_key": "0f87e4403fa5de355f59555aa797f7bad320af8042cebead87578189052509d9",
+      "source_title": "GS-Milkyway (603713): Asia Leaders Conference 2026 Takeaways: Mild core recovery; new verticals offer upside-260902",
+      "translation_title": "GS-Milkyway (603713)：アジア・リーダーズ・カンファレンス2026の要点：主力事業は緩やかに回復、新規事業分野が上振れ余地をもたらす-260902",
+      "source": "GS-Milkyway (__KC_PH_000__): Asia Leaders Conference __KC_PH_001__ Takeaways: Mild core recovery; new verticals offer upside-__KC_PH_002__",
+      "translation": "GS-Milkyway (__KC_PH_000__)：アジア・リーダーズ・カンファレンス__KC_PH_001__の要点：主力事業は緩やかに回復、新規事業分野が上振れ余地をもたらす-__KC_PH_002__",
+      "observed_translations": [
+        "GS-Milkyway (__KC_PH_000__): 亚洲领袖会议__KC_PH_001__要点:温和的核心复苏;新垂直领域提供上行空间-__KC_PH_002__",
+        "GS-Milkyway (__KC_PH_000__): 亚洲领袖会议__KC_PH_001__要点:温和的核心复苏;新垂直领域提供上行空间-260902",
+        "GS-Milkyway (__KC_PH_000__): 亚洲领袖会议2026要点:温和的核心复苏;新垂直领域提供上行空间-__KC_PH_002__",
+        "GS-Milkyway (__KC_PH_000__): 亚洲领袖会议2026要点:温和的核心复苏;新垂直领域提供上行空间-260902",
+        "GS-Milkyway (603713): 亚洲领袖会议__KC_PH_001__要点:温和的核心复苏;新垂直领域提供上行空间-__KC_PH_002__",
+        "GS-Milkyway (603713): 亚洲领袖会议__KC_PH_001__要点:温和的核心复苏;新垂直领域提供上行空间-260902",
+        "GS-Milkyway (603713): 亚洲领袖会议2026要点:温和的核心复苏;新垂直领域提供上行空间-__KC_PH_002__",
+        "GS-Milkyway (603713): 亚洲领袖会议2026要点:温和的核心复苏;新垂直领域提供上行空间-260902"
+      ],
+      "observed_title": "GS-Milkyway (603713): 亚洲领袖会议2026要点:温和的核心复苏;新垂直领域提供上行空间-260902"
+    },
+    {
+      "report_id": "cf7da0fa4c0be02fbb10c94c",
+      "unit_key": "7ff571292b57861a90602119eec91e6bad998dc8a6ae3e80af8fd447ea7799de",
+      "source_title": "GS-CHINA REAL ESTATE:Quantify the impacts from a completed property sales model-260903",
+      "translation_title": "GS-中国不動産：完成後販売方式の影響を定量化する-260903",
+      "source": "GS-CHINA REAL ESTATE:Quantify the impacts from a completed property sales model-__KC_PH_000__",
+      "translation": "GS-中国不動産：完成後販売方式の影響を定量化する-__KC_PH_000__",
+      "observed_translations": [
+        "GS-中国房地产：量化已完成物业销售模式的影响-__KC_PH_000__",
+        "GS-中国房地产：量化已完成物业销售模式的影响-260903"
+      ],
+      "observed_title": "GS-中国房地产：量化已完成物业销售模式的影响-260903"
+    },
+    {
+      "report_id": "6f52947e39a7b00cc06d3053",
+      "unit_key": "1b0b8c0c2c4e72311fa9ad458c0a4287bb8cd0199083ee0bc952c0bd7f0d4ffa",
+      "source_title": "GS-China Economic Activity and Policy Tracker-260904",
+      "translation_title": "GS-中国の経済活動・政策トラッカー-260904",
+      "source": "GS-China Economic Activity and Policy Tracker-__KC_PH_000__",
+      "translation": "GS-中国の経済活動・政策トラッカー-__KC_PH_000__",
+      "observed_translations": [
+        "GS-中国经济活动与政策追踪-__KC_PH_000__",
+        "GS-中国经济活动与政策追踪-260904"
+      ],
+      "observed_title": "GS-中国经济活动与政策追踪-260904"
+    },
+    {
+      "report_id": "abf32ad633c144483b5afb4c",
+      "unit_key": "bf397f575c9b1d95376d08ebdb6791eb8f10e9a54d8059de536e72831f126dd5",
+      "source_title": "GS-Asia Pacific Data Centers SE Asia Data Center Expert Call Takeaways-260904",
+      "translation_title": "ゴールドマン・サックス-アジア太平洋のデータセンター：東南アジアのデータセンター専門家との電話会議の要点-260904",
+      "source": "GS-Asia Pacific Data Centers SE Asia Data Center Expert Call Takeaways-__KC_PH_000__",
+      "translation": "ゴールドマン・サックス-アジア太平洋のデータセンター：東南アジアのデータセンター専門家との電話会議の要点-__KC_PH_000__",
+      "observed_translations": [
+        "高盛-亚太数据中心东南亚数据中心专家电话会议要点-__KC_PH_000__",
+        "高盛-亚太数据中心东南亚数据中心专家电话会议要点-260904"
+      ],
+      "observed_title": "高盛-亚太数据中心东南亚数据中心专家电话会议要点-260904"
+    },
+    {
+      "report_id": "565cf54b2423132e03a44c6a",
+      "unit_key": "bb491e3aa0e427c63eace1c8fe1e5c41934d3776851805106e4867bdcc8f78d0",
+      "source_title": "BofA-China Consumer (H-A) Learnings from earnings-highlights vs. lowlights in 1H26-260902",
+      "translation_title": "バンク・オブ・アメリカ-中国消費（H-A）：1H26決算からの示唆—好調点と低調点-260902",
+      "source": "BofA-China Consumer (H-A) Learnings from earnings-highlights vs. lowlights in 1H26-__KC_PH_000__",
+      "translation": "バンク・オブ・アメリカ-中国消費（H-A）：1H26決算からの示唆—好調点と低調点-__KC_PH_000__",
+      "observed_translations": [
+        "美银-中国消费（H-A）从1H26财报中学习：亮点与低点-__KC_PH_000__",
+        "美银-中国消费（H-A）从1H26财报中学习：亮点与低点-260902"
+      ],
+      "observed_title": "美银-中国消费（H-A）从1H26财报中学习：亮点与低点-260902"
+    },
+    {
+      "report_id": "d42af121bcc38e73db485cb8",
+      "unit_key": "1f8b3b86c456badf7ac481f90609d9ab904cccdbca6f20effe56ea3a776b32c1",
+      "source_title": "Bernstein-Global Luxury Goods-Another Chinese false dawn--260902",
+      "translation_title": "バーンスタイン-世界の高級品：中国で再び「false dawn（見せかけの回復）」--260902",
+      "source": "Bernstein-Global Luxury Goods-Another Chinese __KC_PH_000__ dawn-__KC_PH_001__",
+      "translation": "バーンスタイン-世界の高級品：中国で再び「__KC_PH_000__ dawn（見せかけの回復）」-__KC_PH_001__",
+      "observed_translations": [
+        "伯恩斯坦-全球奢侈品-又一次中国的__KC_PH_000__曙光-__KC_PH_001__",
+        "伯恩斯坦-全球奢侈品-又一次中国的__KC_PH_000__曙光--260902",
+        "伯恩斯坦-全球奢侈品-又一次中国的false曙光-__KC_PH_001__",
+        "伯恩斯坦-全球奢侈品-又一次中国的false曙光--260902"
+      ],
+      "observed_title": "伯恩斯坦-全球奢侈品-又一次中国的false曙光--260902"
+    },
+    {
+      "report_id": "69a8d73da74f01a2f1756ac3",
+      "unit_key": "bcfa4c74412e8931f17e159da6e5da42d20eccde880650f130f9e4f81ecd7c17",
+      "source_title": "汇丰-关于沃什与人工智能-260902",
+      "translation_title": "HSBC-ウォーシュとAIについて-260902",
+      "source": "汇丰-关于沃什与人工智能__KC_PH_000__",
+      "translation": "HSBC-ウォーシュとAIについて__KC_PH_000__",
+      "observed_translations": [
+        "汇丰-关于沃什与人工智能__KC_PH_000__",
+        "汇丰-关于沃什与人工智能-260902"
+      ],
+      "observed_title": "汇丰-关于沃什与人工智能-260902"
+    }
+  ]
+}

@@ -13,6 +13,7 @@ from unittest import mock
 import build_portal_locales as builder
 import test_build_portal_locales as fixtures
 import verify_portal_chinese_parity as parity
+from repair_portal_ja_catalog_titles import load_repairs
 
 
 class IncrementalBuildTests(unittest.TestCase):
@@ -203,6 +204,36 @@ class IncrementalBuildTests(unittest.TestCase):
                 with self.assertRaises(builder.TranslationError):
                     self.build(translator, **kwargs)
                 self.assertEqual(translator.calls, [])
+
+    def test_reviewed_japanese_title_repair_is_free_and_preserves_other_locales(self):
+        repair = load_repairs()[0]
+        report_id = "report-title-repair"  # Fixture detail records belong to shard re.json.
+        self.add_report(report_id, "260905", repair["source_title"])
+        self.build(fixtures.RecordingTranslator())
+        cache = builder.load_cache(self.fixture.cache)
+        self.assertIn(repair["unit_key"], cache["locales"]["ja"])
+        cache["locales"]["ja"][repair["unit_key"]]["translation"] = repair["observed_translations"][0]
+        builder.write_cache(self.fixture.cache, cache)
+        protected = {
+            self.site / f"{locale}/reports/{report_id}.html": fixtures.body_bytes(self.site / f"{locale}/reports/{report_id}.html")
+            for locale in ("ko", "ar")
+        }
+        chinese = self.site / f"reports/{report_id}.html"
+        protected[chinese] = fixtures.body_bytes(chinese)
+        translator = fixtures.RecordingTranslator()
+        self.build(translator, cache_in=self.fixture.cache)
+        self.assertEqual(translator.calls, [])
+        corrected = builder.load_cache(self.fixture.cache)
+        self.assertEqual(corrected["locales"]["ja"][repair["unit_key"]]["translation"], repair["translation"])
+        for locale in ("ko", "ar"):
+            self.assertEqual(corrected["locales"][locale], cache["locales"][locale])
+        for path, original in protected.items():
+            self.assertEqual(fixtures.body_bytes(path), original)
+        overlay = json.loads((self.site / "data/i18n/ja/catalog-titles.json").read_text())
+        rows = [dict(zip(["id", *overlay["fields"]], row)) for row in overlay["rows"]]
+        translated = next(row for row in rows if row["id"] == report_id)
+        self.assertEqual(translated["title"], repair["translation_title"])
+        self.assertIn(repair["translation_title"], (self.site / f"ja/reports/{report_id}.html").read_text())
 
     def test_switching_from_history_removes_old_artifacts_and_keeps_paid_cache(self):
         self.fixture._build(fixtures.RecordingTranslator(), index_start_date="2026-09-05",

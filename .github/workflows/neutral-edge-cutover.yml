@@ -222,6 +222,7 @@ jobs:
           python3 -B scripts/test_portal_locale_literals.py
           python3 -B scripts/test_portal_locale_history_build.py
           python3 -B scripts/test_portal_locale_incremental.py
+          python3 -B scripts/test_repair_portal_ja_catalog_titles.py
           python3 -B scripts/test_portal_locale_deepl_fallback.py
           python3 -B scripts/test_preflight_deepl_locale_repair.py
           python3 -B scripts/test_run_portal_locale_backfill.py
