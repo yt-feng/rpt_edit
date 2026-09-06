@@ -4,6 +4,8 @@ from __future__ import annotations
 import hashlib
 import importlib.util
 import json
+from email.message import Message
+import subprocess
 import tempfile
 import unittest
 from pathlib import Path
@@ -557,6 +559,105 @@ class ShadowPreviewAuditTests(unittest.TestCase):
         response.headers.clear()
         with self.assertRaisesRegex(audit.AuditError, "indexing header is missing"):
             self.run_audit(plan, responses)
+
+    def test_shadow_header_accepts_equivalent_http_directives_only(self) -> None:
+        for values in (
+            ["NOARCHIVE, nofollow, noindex"],
+            ["noindex, nofollow, noarchive, noindex"],
+            ["noindex", "nofollow, noarchive"],
+        ):
+            with self.subTest(values=values):
+                headers = Message()
+                for value in values:
+                    headers["X-Robots-Tag"] = value
+                audit.require_shadow_header(headers, "/robots.txt")
+        for values in (
+            [],
+            ["noindex"],
+            ["noindex, nofollow"],
+            ["noindex, nofollow, noarchive", "index"],
+            ["noindex, nofollow, noarchive", "follow"],
+            ["googlebot: noindex, nofollow, noarchive"],
+        ):
+            with self.subTest(values=values):
+                headers = Message()
+                for value in values:
+                    headers["X-Robots-Tag"] = value
+                with self.assertRaisesRegex(audit.AuditError, "header is missing or invalid"):
+                    audit.require_shadow_header(headers, "/robots.txt")
+
+    def test_robots_retries_header_and_body_contract_before_accepting(self) -> None:
+        for first in (
+            FakeResponse(audit.SHADOW_ROBOTS, headers={"Content-Type": "text/plain"}),
+            FakeResponse(b"User-agent: *\nAllow: /\n", headers=protected_headers()),
+        ):
+            with self.subTest(body=first.body, headers=first.headers):
+                opener = mock.Mock()
+                opener.open.side_effect = [
+                    first, FakeResponse(audit.SHADOW_ROBOTS, headers=protected_headers()),
+                ]
+                with mock.patch.object(audit.time, "sleep"):
+                    body, headers, _elapsed = audit.fetch(
+                        opener, BASE_URL, "/robots.txt", validate_response=audit.require_shadow_robots,
+                    )
+                self.assertEqual(opener.open.call_count, 2)
+                self.assertEqual(body, audit.SHADOW_ROBOTS)
+                audit.require_shadow_header(headers, "/robots.txt")
+
+    def test_robots_missing_header_still_fails_with_response_evidence(self) -> None:
+        opener = mock.Mock()
+        opener.open.return_value = FakeResponse(
+            audit.SHADOW_ROBOTS, headers={"Content-Type": "text/plain", "CF-Ray": "fixture-ray"},
+        )
+        with mock.patch.object(audit.time, "sleep"):
+            with self.assertRaises(audit.AuditError) as failure:
+                audit.fetch(opener, BASE_URL, "/robots.txt", validate_response=audit.require_shadow_robots)
+        self.assertEqual(opener.open.call_count, 6)
+        self.assertIn("header is missing or invalid", str(failure.exception))
+        self.assertIn("fixture-ray", str(failure.exception))
+        self.assertIn(hashlib.sha256(audit.SHADOW_ROBOTS).hexdigest(), str(failure.exception))
+
+    def test_real_worker_robots_and_identity_responses_satisfy_python_audit(self) -> None:
+        # Exercise the deployed JS handler and the Python HTTP contract together;
+        # no network, browser, Worker deployment, or R2 reads are involved.
+        script = """
+          import worker from './workers/edge-static-host/src/index.js';
+          const env = {
+            SHADOW_MODE: 'true',
+            STATIC_PREFIX: 'edge-static/slots/b/',
+            STATIC_RELEASE: 'a'.repeat(32),
+            STATIC_TREE_SHA256: 'b'.repeat(64),
+            STATIC_BUCKET: {
+              get() { throw new Error('Unexpected R2 read'); },
+              head() { throw new Error('Unexpected R2 head'); },
+            },
+          };
+          const rows = [];
+          for (const [path, method] of [
+            ['/.well-known/edge-state', 'GET'], ['/robots.txt', 'GET'], ['/robots.txt', 'HEAD'],
+          ]) {
+            const response = await worker.fetch(new Request('https://shadow.example.workers.dev' + path, { method }), env);
+            rows.push({ path, method, status: response.status, headers: Object.fromEntries(response.headers), body: await response.text() });
+          }
+          process.stdout.write(JSON.stringify(rows));
+        """
+        executed = subprocess.run(
+            ["node", "--input-type=module", "-e", script],
+            cwd=ROOT, check=True, capture_output=True, text=True, timeout=15,
+        )
+        plan, responses = response_fixture()
+        for row in json.loads(executed.stdout):
+            headers = FakeHeaders(row["headers"])
+            self.assertEqual(row["status"], 200)
+            audit.require_shadow_header(headers, row["path"])
+            if row["method"] == "HEAD":
+                self.assertEqual(row["body"], "")
+                self.assertEqual(headers.get("Content-Length"), str(len(audit.SHADOW_ROBOTS)))
+            else:
+                responses[row["path"]] = FakeResponse(row["body"].encode("utf-8"), headers=row["headers"])
+        result, _opener = self.run_audit(plan, responses)
+        self.assertEqual(result["release_id"], RELEASE)
+        self.assertEqual(result["sample_count"], 18)
 
     def test_requires_global_robots_disallow(self) -> None:
         plan, responses = response_fixture()

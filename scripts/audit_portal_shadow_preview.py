@@ -10,7 +10,7 @@ import json
 from pathlib import Path
 import re
 import time
-from typing import Any
+from typing import Any, Callable
 from urllib.error import HTTPError, URLError
 from urllib.parse import quote, unquote, urljoin, urlsplit
 from urllib.request import HTTPRedirectHandler, Request, build_opener
@@ -418,7 +418,14 @@ def write_json(path: Path, payload: dict[str, Any]) -> None:
     )
 
 
-def fetch(opener: Any, base_url: str, relative: str, *, attempts: int = 6) -> tuple[bytes, Any, float]:
+def fetch(
+    opener: Any,
+    base_url: str,
+    relative: str,
+    *,
+    attempts: int = 6,
+    validate_response: Callable[[bytes, Any], None] | None = None,
+) -> tuple[bytes, Any, float]:
     validate_preview_path(relative, allow_query=True)
     base = validate_workers_dev_origin(base_url)
     target = urljoin(base + "/", relative)
@@ -448,18 +455,46 @@ def fetch(opener: Any, base_url: str, relative: str, *, attempts: int = 6) -> tu
                 raise AuditError(f"Preview returned HTTP {response.status}: {relative}")
             if len(body) > MAX_RESPONSE_BYTES:
                 raise AuditError(f"Preview response is oversized: {relative}")
+            if validate_response is not None:
+                validate_response(body, response.headers)
             return body, response.headers, elapsed
         except (HTTPError, URLError, TimeoutError, AuditError) as error:
             last_error = error
             if attempt < attempts:
                 time.sleep(2)
-    raise AuditError(f"Preview fetch failed after retries: {relative}") from last_error
+    detail = f"; {last_error}" if isinstance(last_error, AuditError) else ""
+    raise AuditError(f"Preview fetch failed after retries: {relative}{detail}") from last_error
 
 
 def require_shadow_header(headers: Any, path: str) -> None:
-    value = str(headers.get("X-Robots-Tag") or "").strip().lower()
-    if value != SHADOW_ROBOTS_HEADER:
-        raise AuditError(f"Preview indexing header is missing: {path}")
+    # HTTP may combine repeated fields or reorder/repeat their directives.
+    # Require exactly the same protection, including rejecting index/follow.
+    values = headers.get_all("X-Robots-Tag", []) if hasattr(headers, "get_all") else [headers.get("X-Robots-Tag")]
+    directives = {
+        directive.strip().lower()
+        for value in values
+        for directive in str(value or "").split(",")
+        if directive.strip()
+    }
+    if directives != {"noindex", "nofollow", "noarchive"}:
+        observed = repr(values)[:512]
+        raise AuditError(f"Preview indexing header is missing or invalid: {path}; observed={observed}")
+
+
+def require_shadow_robots(body: bytes, headers: Any) -> None:
+    try:
+        require_shadow_header(headers, "/robots.txt")
+        if body != SHADOW_ROBOTS:
+            raise AuditError("Shadow robots.txt does not disallow the preview")
+    except AuditError as error:
+        # Preserve bounded diagnostics from a fresh deployment's HTTP 200
+        # response while retrying the entire unchanged crawl/header contract.
+        evidence = {
+            key: str(headers.get(key) or "")[:160]
+            for key in ("Content-Type", "X-Origin-Class", "CF-Cache-Status", "CF-Ray")
+        }
+        evidence.update(bytes=len(body), sha256=hashlib.sha256(body).hexdigest())
+        raise AuditError(f"{error}; response={json.dumps(evidence, sort_keys=True)}") from error
 
 
 def json_object(body: bytes, label: str) -> dict[str, Any]:
@@ -655,10 +690,9 @@ def audit_preview(
         raise AuditError("Shadow Edge state does not match the uploaded candidate")
     rows.append({"path": "/.well-known/edge-state", "bytes": len(state_body), "milliseconds": round(elapsed * 1000)})
 
-    robots, robots_headers, elapsed = fetch(opener, base_url, "/robots.txt")
-    require_shadow_header(robots_headers, "/robots.txt")
-    if robots != SHADOW_ROBOTS:
-        raise AuditError("Shadow robots.txt does not disallow the preview")
+    robots, _robots_headers, elapsed = fetch(
+        opener, base_url, "/robots.txt", validate_response=require_shadow_robots,
+    )
     rows.append({"path": "/robots.txt", "bytes": len(robots), "milliseconds": round(elapsed * 1000)})
 
     assets: set[str] = {"/assets/locale.css", "/assets/locale-runtime.js"}
