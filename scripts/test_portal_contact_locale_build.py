@@ -43,7 +43,7 @@ class PublicContactBuildTests(unittest.TestCase):
                 builder.validate_localized_javascript_residuals(SOURCE, rendered, "contact.js", locale, cache)
                 for literal in (*COPY, "info@kcdesk.com", "data-kc-public-account-contact", ".legal-footer"):
                     self.assertIn(literal, rendered)
-                self.assertIn('link.href = `mailto:${PUBLIC_ACCOUNT_EMAIL}`', rendered)
+                self.assertIn('link.href = "mailto:info@kcdesk.com"', rendered)
                 self.assertIn('return `/?request=${encodeURIComponent(requestKind(value))}`', rendered)
                 self.assertIn('const PUBLIC_ACCOUNT_COPY = Object.freeze(JSON.parse(JSON.stringify({', rendered)
                 result = subprocess.run(["node", "--check"], input=rendered, text=True, capture_output=True)

@@ -81,7 +81,7 @@
     contact.setAttribute("lang", locale);
     contact.appendChild(doc.createTextNode(`${PUBLIC_ACCOUNT_COPY[locale]} `));
     const link = doc.createElement("a");
-    link.href = `mailto:${PUBLIC_ACCOUNT_EMAIL}`;
+    link.href = "mailto:info@kcdesk.com";
     link.textContent = PUBLIC_ACCOUNT_EMAIL;
     link.setAttribute("dir", "ltr");
     contact.appendChild(link);
