@@ -8,7 +8,9 @@ import os
 import tempfile
 import threading
 import unittest
+from contextlib import redirect_stderr
 from pathlib import Path
+from unittest.mock import patch
 
 from PIL import Image
 
@@ -190,6 +192,56 @@ class StaticSlotPublisherTests(unittest.TestCase):
             skip_shared_private_assets=skip_shared_private_assets,
             max_workers=4,
         )
+
+    def test_progress_is_flushed_and_bounded_by_count_or_elapsed_time(self) -> None:
+        with patch.object(publisher.time, "monotonic", return_value=0.0) as clock:
+            with patch("builtins.print") as output:
+                progress = publisher._PublishProgress("upload_static", total=2000, workers=16)
+                for completed in range(1, 1000):
+                    progress.update(completed)
+                self.assertEqual(output.call_count, 1)
+                progress.update(1000, bytes=5000)
+                progress.update(1001)
+                self.assertEqual(output.call_count, 2)
+                clock.return_value = 30.0
+                progress.update(1002, bytes=5010)
+                progress.finish(completed=1002, bytes=5010)
+                self.assertEqual(output.call_count, 4)
+        messages = [call.args[0] for call in output.call_args_list]
+        self.assertIn("state=started elapsed_seconds=0.0 total=2000 workers=16", messages[0])
+        self.assertIn("completed=1000 bytes=5000", messages[1])
+        self.assertIn("state=progress elapsed_seconds=30.0", messages[2])
+        self.assertIn("state=completed elapsed_seconds=30.0", messages[3])
+        self.assertTrue(all(call.kwargs.get("flush") is True for call in output.call_args_list))
+        self.assertTrue(all(call.kwargs.get("file") is publisher.sys.stderr for call in output.call_args_list))
+
+    def test_progress_distinguishes_publish_phases_and_never_reports_failed_commit(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            build_site(root)
+            client = FakeR2()
+            output = io.StringIO()
+            with redirect_stderr(output):
+                result = self.publish(client, root, 1)
+            messages = output.getvalue()
+            for phase in (
+                "brand_validation", "local_inventory", "remote_inventory",
+                "verify_unchanged", "upload_static", "cleanup_stale", "verify_tree",
+                "verify_required", "shared_private_assets", "immutable_runtime", "commit_manifest",
+            ):
+                self.assertIn(f"phase={phase} state=started", messages)
+                self.assertIn(f"phase={phase} state=completed", messages)
+            self.assertIn(f"completed={result['uploaded_files']} bytes={result['uploaded_bytes']}", messages)
+            self.assertNotIn("assets/app.js", messages)
+
+            output = io.StringIO()
+            client.fail_upload_suffix = "assets/app.js"
+            with redirect_stderr(output):
+                with self.assertRaisesRegex(RuntimeError, "injected upload failure"):
+                    self.publish(client, root, 2, "a")
+            self.assertIn("phase=upload_static state=started", output.getvalue())
+            self.assertNotIn("phase=upload_static state=completed", output.getvalue())
+            self.assertNotIn("phase=commit_manifest", output.getvalue())
 
     def test_two_complete_slots_then_zero_and_single_file_content_uploads(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:

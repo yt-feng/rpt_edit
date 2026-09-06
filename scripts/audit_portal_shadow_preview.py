@@ -202,6 +202,10 @@ def route_for_html(locale: str, locale_root: Path, page: Path) -> str:
     relative = page.relative_to(locale_root).as_posix()
     if relative == "index.html":
         route = f"/{locale}/"
+    elif relative == "charts.html":
+        # edge-static-host explicitly serves charts.html at /charts. Request
+        # that canonical route directly so the shadow audit keeps redirects off.
+        route = f"/{locale}/charts"
     elif relative.endswith("/index.html"):
         route = f"/{locale}/{relative[:-len('index.html')]}"
     else:
@@ -316,7 +320,7 @@ def expected_sample_path(locale: str, kind: str, path: str) -> bool:
         "home": f"/{locale}/",
         "blog": f"/{locale}/blog/",
         "reports": f"/{locale}/reports/",
-        "charts": f"/{locale}/charts.html",
+        "charts": f"/{locale}/charts",
     }
     if kind in exact:
         return path == exact[kind]

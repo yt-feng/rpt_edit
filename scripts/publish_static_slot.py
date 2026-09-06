@@ -64,6 +64,39 @@ DEFAULT_REQUIRED_PATHS = (
 )
 
 
+class _PublishProgress:
+    """Emit bounded, flushed phase progress without logging individual objects."""
+
+    def __init__(self, phase: str, **details: Any) -> None:
+        self.phase = phase
+        self.details = details
+        self.started_at = time.monotonic()
+        self.last_logged_at = self.started_at
+        self.last_logged_count = 0
+        self._emit("started", now=self.started_at)
+
+    def _emit(self, state: str, *, now: float | None = None, **details: Any) -> None:
+        current = time.monotonic() if now is None else now
+        values = {**self.details, **details}
+        print(
+            f"Static publish phase={self.phase} state={state} "
+            f"elapsed_seconds={current - self.started_at:.1f}"
+            + "".join(f" {key}={value}" for key, value in values.items()),
+            file=sys.stderr,
+            flush=True,
+        )
+
+    def update(self, completed: int, **details: Any) -> None:
+        now = time.monotonic()
+        if completed - self.last_logged_count >= 1000 or now - self.last_logged_at >= 30:
+            self._emit("progress", now=now, completed=completed, **details)
+            self.last_logged_at = now
+            self.last_logged_count = completed
+
+    def finish(self, **details: Any) -> None:
+        self._emit("completed", **details)
+
+
 def require_env(name: str) -> str:
     value = os.environ.get(name, "").strip()
     if not value:
@@ -678,14 +711,20 @@ def publish_static_slot(
             raise ValueError("Member contact card must remain outside the public static root")
     slot = target_slot(active)
     prefix = slot_prefix(slot)
+    progress = _PublishProgress("brand_validation")
     check_public_brand(root)
+    progress.finish()
+    progress = _PublishProgress("local_inventory")
     paths, entries, tree_sha256, total_bytes = build_inventory(root)
+    progress.finish(files=len(entries), bytes=total_bytes)
+    progress = _PublishProgress("remote_inventory", slot=slot)
     previous = valid_manifest(read_json_object(client, bucket, manifest_key(slot)), slot)
     incomplete = read_json_object(client, bucket, incomplete_key(slot))
     previous_release = str((previous or {}).get("release_id") or "")
     incomplete_release = str((incomplete or {}).get("release_id") or "")
     force_reupload = bool(incomplete_release and incomplete_release != previous_release)
     remote_before = list_objects(client, bucket, prefix)
+    progress.finish(objects=len(remote_before), recovered_incomplete_slot=force_reupload)
     protected_qr_keys = (
         set(LEGACY_PUBLIC_CONTACT_CARD_KEYS) if skip_shared_private_assets else set()
     )
@@ -716,6 +755,10 @@ def publish_static_slot(
     # release manifest, require the SHA-256 metadata written by this publisher;
     # an old, missing, or same-length overwritten object is uploaded again.
     verification_workers = min(24, max(1, int(max_workers) * 4))
+    progress = _PublishProgress(
+        "verify_unchanged", total=len(skip_candidates), workers=verification_workers,
+    )
+    verified_candidates = 0
     with ThreadPoolExecutor(max_workers=verification_workers) as executor:
         futures = {
             executor.submit(
@@ -733,6 +776,9 @@ def publish_static_slot(
                 skipped += 1
             else:
                 upload_relatives.append(relative)
+            verified_candidates += 1
+            progress.update(verified_candidates, skipped=skipped)
+    progress.finish(completed=verified_candidates, skipped=skipped)
 
     def upload(relative: str) -> tuple[str, int]:
         descriptor = entries[relative]
@@ -749,16 +795,26 @@ def publish_static_slot(
         return relative, int(descriptor["size"])
 
     uploaded_bytes = 0
+    uploaded_files = 0
+    progress = _PublishProgress(
+        "upload_static", total=len(upload_relatives), workers=max(1, int(max_workers)),
+    )
     with ThreadPoolExecutor(max_workers=max(1, int(max_workers))) as executor:
         futures = {executor.submit(upload, relative): relative for relative in upload_relatives}
         for future in as_completed(futures):
             _relative, size = future.result()
             uploaded_bytes += size
+            uploaded_files += 1
+            progress.update(uploaded_files, bytes=uploaded_bytes)
+    progress.finish(completed=uploaded_files, bytes=uploaded_bytes)
 
     desired_keys = {prefix + relative for relative in entries}
     stale_keys = set(remote_before) - desired_keys - protected_qr_keys
+    progress = _PublishProgress("cleanup_stale", total=len(stale_keys))
     deleted = delete_keys(client, bucket, stale_keys)
+    progress.finish(deleted=deleted)
 
+    progress = _PublishProgress("verify_tree", expected=len(entries))
     remote_after = list_objects(client, bucket, prefix)
     managed_remote_after = {
         key: size for key, size in remote_after.items() if key not in protected_qr_keys
@@ -775,7 +831,9 @@ def publish_static_slot(
         raise RuntimeError(
             f"Static slot verification failed: missing={missing} unexpected={unexpected} wrong_size={wrong_size}"
         )
+    progress.finish(objects=len(managed_remote_after))
 
+    progress = _PublishProgress("verify_required")
     verified_required = verify_required_objects(
         client,
         bucket,
@@ -784,9 +842,11 @@ def publish_static_slot(
         entries,
         required if required is not None else required_release_paths(root),
     )
+    progress.finish(verified=verified_required)
     removed_legacy_contact_cards = 0
     published_member_descriptor = {"sha256": "", "size": 0}
     if not skip_shared_private_assets:
+        progress = _PublishProgress("shared_private_assets")
         if member_descriptor is None:  # Defensive guard for static type narrowing.
             raise RuntimeError("Member contact card descriptor is unavailable")
         removed_legacy_contact_cards = delete_legacy_public_contact_cards(client, bucket)
@@ -797,6 +857,8 @@ def publish_static_slot(
             member_descriptor,
             transfer_config=transfer_config,
         )
+        progress.finish(legacy_objects_removed=removed_legacy_contact_cards)
+    progress = _PublishProgress("immutable_runtime")
     runtime_uploaded, runtime_skipped, runtime_manifest = sync_runtime_data(
         client,
         bucket,
@@ -805,6 +867,7 @@ def publish_static_slot(
         paths=runtime_paths,
         transfer_config=transfer_config,
     )
+    progress.finish(uploaded=runtime_uploaded, skipped=runtime_skipped)
     manifest = {
         "schema_version": SCHEMA_VERSION,
         "slot": slot,
@@ -820,6 +883,7 @@ def publish_static_slot(
             "tree_sha256": runtime_manifest["tree_sha256"],
         },
     }
+    progress = _PublishProgress("commit_manifest", slot=slot)
     put_json(
         client,
         bucket,
@@ -828,6 +892,7 @@ def publish_static_slot(
         Metadata={"tree-sha256": tree_sha256, "release-id": release},
     )
     delete_keys(client, bucket, (incomplete_key(slot),))
+    progress.finish()
 
     return {
         "static_slot": slot,

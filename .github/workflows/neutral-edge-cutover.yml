@@ -1,5 +1,5 @@
 name: Neutral edge catalog refresh
-run-name: Neutral edge catalog ${{ github.event_name == 'workflow_dispatch' && inputs.operation || 'migrate' }}
+run-name: Neutral edge ${{ github.event_name == 'workflow_dispatch' && format('{0} ({1})', inputs.operation, inputs.translation_scope || 'incremental') || 'automatic incremental refresh' }}
 
 on:
   schedule:
@@ -27,13 +27,14 @@ on:
           - migrate
         default: rehearse
       translation_scope:
-        description: "Release translates the bounded publication cohort; month prepays the fixed month in locale-shadow only"
+        description: "Incremental publishes new content only; release/month are explicit historical modes"
         required: true
         type: choice
         options:
+          - incremental
           - release
           - month
-        default: release
+        default: incremental
 
 permissions:
   contents: read
@@ -220,6 +221,7 @@ jobs:
           python3 -B scripts/test_portal_locale_scope.py
           python3 -B scripts/test_portal_locale_literals.py
           python3 -B scripts/test_portal_locale_history_build.py
+          python3 -B scripts/test_portal_locale_incremental.py
           python3 -B scripts/test_portal_locale_deepl_fallback.py
           python3 -B scripts/test_preflight_deepl_locale_repair.py
           python3 -B scripts/test_run_portal_locale_backfill.py
@@ -685,7 +687,7 @@ jobs:
             --root _neutral_site --site-url "$LIVE_ORIGIN"
 
       - name: Restore history release ledger from active production only
-        if: steps.operation.outputs.multilingual_enabled == 'true'
+        if: steps.operation.outputs.multilingual_enabled == 'true' && (inputs.translation_scope || 'incremental') != 'incremental'
         env:
           MULTILINGUAL_LIVE: ${{ steps.operation.outputs.multilingual_live }}
         run: |
@@ -723,18 +725,18 @@ jobs:
           PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH: ${{ vars.PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH || '' }}
           PORTAL_MULTILINGUAL_HISTORY_START_DATE: ${{ vars.PORTAL_MULTILINGUAL_HISTORY_START_DATE || '2026-08-05' }}
           PORTAL_MULTILINGUAL_HISTORY_PAUSED: ${{ vars.PORTAL_MULTILINGUAL_HISTORY_PAUSED || 'false' }}
-          PORTAL_MULTILINGUAL_TRANSLATION_SCOPE: ${{ inputs.translation_scope || 'release' }}
+          PORTAL_MULTILINGUAL_TRANSLATION_SCOPE: ${{ inputs.translation_scope || 'incremental' }}
         run: |
           set -euo pipefail
           case "$PORTAL_MULTILINGUAL_TRANSLATION_SCOPE" in
-            release) ;;
+            incremental|release) ;;
             month)
               if [ "$NEUTRAL_OPERATION" != "locale-shadow" ]; then
                 echo "::error::Month pretranslation is only allowed for locale-shadow"
                 exit 2
               fi
               ;;
-            *) echo "::error::Translation scope must be release or month"; exit 2 ;;
+            *) echo "::error::Translation scope must be incremental, release or month"; exit 2 ;;
           esac
           case "$PORTAL_MULTILINGUAL_WORKERS" in
             ''|*[!0-9]*)
@@ -753,17 +755,19 @@ jobs:
             cache_args+=(--cache-in "$RUNNER_TEMP/portal-locale-cache/cache-v1.json.gz")
           fi
           index_args=(--index-start-date "$PORTAL_MULTILINGUAL_INDEX_START_DATE")
-          release_date="$(TZ=Asia/Shanghai date +%F)"
-          index_args+=(--history-start-date "$PORTAL_MULTILINGUAL_HISTORY_START_DATE" \
-            --history-release-date "$release_date" --history-daily-limit 100)
-          if [ -s "$RUNNER_TEMP/active-locale-history.json" ]; then
-            index_args+=(--history-state-in "$RUNNER_TEMP/active-locale-history.json")
+          if [ "$PORTAL_MULTILINGUAL_TRANSLATION_SCOPE" != "incremental" ]; then
+            release_date="$(TZ=Asia/Shanghai date +%F)"
+            index_args+=(--history-start-date "$PORTAL_MULTILINGUAL_HISTORY_START_DATE" \
+              --history-release-date "$release_date" --history-daily-limit 100)
+            if [ -s "$RUNNER_TEMP/active-locale-history.json" ]; then
+              index_args+=(--history-state-in "$RUNNER_TEMP/active-locale-history.json")
+            fi
+            case "$PORTAL_MULTILINGUAL_HISTORY_PAUSED" in
+              true) index_args+=(--history-paused) ;;
+              false) ;;
+              *) echo "::error::History pause must be true or false"; exit 2 ;;
+            esac
           fi
-          case "$PORTAL_MULTILINGUAL_HISTORY_PAUSED" in
-            true) index_args+=(--history-paused) ;;
-            false) ;;
-            *) echo "::error::History pause must be true or false"; exit 2 ;;
-          esac
           if [ -n "$PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH" ]; then
             INDEX_ALLOWLIST_PATH="$PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH" python3 - <<'PY'
           import os
@@ -823,7 +827,14 @@ jobs:
           print(f"ready={'true' if ready else 'false'}")
           with Path(os.environ["GITHUB_STEP_SUMMARY"]).open("a", encoding="utf-8") as summary:
               summary.write(f"Locale translation scope: {os.environ['PORTAL_MULTILINGUAL_TRANSLATION_SCOPE']}.\n\n")
-          if ready:
+          if ready and os.environ["PORTAL_MULTILINGUAL_TRANSLATION_SCOPE"] == "incremental":
+              manifest = json.loads(Path("_neutral_site/data/i18n/manifest.json").read_text())
+              with Path(os.environ["GITHUB_STEP_SUMMARY"]).open("a", encoding="utf-8") as summary:
+                  summary.write("## Incremental multilingual MVP candidate\n\n")
+                  summary.write(f"Fixed new-content start: {manifest['index_policy']['index_start_date']}.\n\n")
+                  summary.write(f"HTML pages per language: {manifest['html_page_count']}. Historical backfill and historical placeholder pages are disabled.\n\n")
+                  summary.write("Saved translations are reused; this is not published until production cutover succeeds.\n")
+          elif ready:
               history = json.loads(Path("_neutral_site/data/i18n/history-release.json").read_text())
               with Path(os.environ["GITHUB_STEP_SUMMARY"]).open("a", encoding="utf-8") as summary:
                   summary.write("## Locale history release candidate\n\n")
@@ -898,6 +909,7 @@ jobs:
         env:
           PORTAL_MULTILINGUAL_ENABLED: ${{ steps.operation.outputs.multilingual_enabled }}
           PORTAL_MULTILINGUAL_INDEX_START_DATE: ${{ vars.PORTAL_MULTILINGUAL_INDEX_START_DATE || '' }}
+          PORTAL_MULTILINGUAL_TRANSLATION_SCOPE: ${{ inputs.translation_scope || 'incremental' }}
         run: |
           set -euo pipefail
           required_paths=(
@@ -1025,12 +1037,23 @@ jobs:
 
           index_policy = manifest.get("index_policy") or {}
           configured_start_date = os.environ.get("PORTAL_MULTILINGUAL_INDEX_START_DATE", "") or None
+          configured_scope = os.environ["PORTAL_MULTILINGUAL_TRANSLATION_SCOPE"]
+          incremental = configured_scope == "incremental"
+          expected_mode = "incremental-publication-cutoff" if incremental else "fixed-publication-cutoff"
+          expected_default = "new-content-and-core-hubs" if incremental else "hubs-only"
           if (
-              index_policy.get("mode") != "fixed-publication-cutoff"
-              or index_policy.get("default") != "hubs-only"
+              manifest.get("translation_scope") != configured_scope
+              or index_policy.get("mode") != expected_mode
+              or index_policy.get("default") != expected_default
               or index_policy.get("index_start_date") != configured_start_date
           ):
               raise SystemExit("Multilingual manifest index policy does not match the staged release")
+          if incremental and (
+              index_policy.get("history_release_count") != 0
+              or "history_release" in index_policy
+              or index_policy.get("translation_mode") != "new-content-only"
+          ):
+              raise SystemExit("Incremental MVP must not publish historical content")
 
           def safe_required_path(value: object) -> PurePosixPath:
               if not isinstance(value, str) or not value or "\\" in value:
@@ -1317,6 +1340,13 @@ jobs:
             "${locale_contract_args[@]}" "${previous_args[@]}" "${force_args[@]}"
           test -s _neutral_site/data/release-semantics.json
 
+      - name: Validate multilingual shadow sample plan before upload
+        if: steps.release_delta.outputs.changed == 'true' && steps.operation.outputs.multilingual_enabled == 'true' && steps.locale_build.outputs.ready == 'true'
+        run: |
+          python3 -B scripts/audit_portal_shadow_preview.py plan \
+            --root _neutral_site \
+            --output "$RUNNER_TEMP/shadow-samples.json"
+
       - name: Upload inactive static slot and immutable runtime
         id: static_upload
         if: steps.release_delta.outputs.changed == 'true' && (steps.operation.outputs.multilingual_enabled != 'true' || steps.locale_build.outputs.ready == 'true')
@@ -1336,7 +1366,7 @@ jobs:
             --root _neutral_site --release "$STATIC_RELEASE" \
             --active-slot "$ACTIVE_STATIC_SLOT" \
             --member-contact-card "$RUNNER_TEMP/member-contact-card.jpg" \
-            --max-workers 4 "${private_asset_args[@]}"
+            --max-workers 16 "${private_asset_args[@]}"
 
       - name: Prepare isolated multilingual shadow worker
         id: shadow_context
@@ -1396,9 +1426,7 @@ jobs:
           [observability]
           enabled = false
           EOF
-          python3 -B scripts/audit_portal_shadow_preview.py plan \
-            --root _neutral_site \
-            --output "$RUNNER_TEMP/shadow-samples.json"
+          test -s "$RUNNER_TEMP/shadow-samples.json"
           printf 'worker_name=%s\n' "$worker_name" >> "$GITHUB_OUTPUT"
 
       - name: Deploy isolated multilingual shadow worker

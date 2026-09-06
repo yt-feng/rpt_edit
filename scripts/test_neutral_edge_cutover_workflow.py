@@ -34,16 +34,16 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn('--history-start-date "$PORTAL_MULTILINGUAL_HISTORY_START_DATE"', locale_step)
         self.assertIn('true) index_args+=(--history-paused)', locale_step)
 
-    def test_release_scope_is_default_and_shared_by_canary_and_full_build(self):
+    def test_incremental_scope_is_default_and_shared_by_canary_and_full_build(self):
         trigger = self.workflow.split("\npermissions:\n", 1)[0]
         scope_input = trigger.split("      translation_scope:\n", 1)[1]
         self.assertIn("required: true", scope_input)
         self.assertIn("type: choice", scope_input)
-        self.assertRegex(scope_input, r"options:\n\s+- release\n\s+- month\n\s+default: release")
+        self.assertRegex(scope_input, r"options:\n\s+- incremental\n\s+- release\n\s+- month\n\s+default: incremental")
         locale = self.workflow.split("Build Korean Japanese and Arabic static locales", 1)[1].split(
             "Detect multilingual translation checkpoint", 1)[0]
         self.assertIn(
-            "PORTAL_MULTILINGUAL_TRANSLATION_SCOPE: ${{ inputs.translation_scope || 'release' }}",
+            "PORTAL_MULTILINGUAL_TRANSLATION_SCOPE: ${{ inputs.translation_scope || 'incremental' }}",
             locale,
         )
         shared_args = locale.split("          locale_args=(\n", 1)[1].split("\n          )", 1)[0]
@@ -62,7 +62,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn('case "$PORTAL_MULTILINGUAL_TRANSLATION_SCOPE" in', guard)
         self.assertNotIn("python", guard)
         self.assertNotIn("curl", guard)
-        for scope in ("release", "month", "", "all", "month; exit 0"):
+        for scope in ("incremental", "release", "month", "", "all", "month; exit 0"):
             for operation in ("locale-shadow", "rehearse", "migrate"):
                 with self.subTest(scope=scope, operation=operation):
                     result = subprocess.run(
@@ -70,10 +70,77 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
                         env={"PORTAL_MULTILINGUAL_TRANSLATION_SCOPE": scope, "NEUTRAL_OPERATION": operation},
                         capture_output=True, text=True, check=False,
                     )
-                    allowed = scope == "release" or (scope == "month" and operation == "locale-shadow")
+                    allowed = scope in {"incremental", "release"} or (scope == "month" and operation == "locale-shadow")
                     self.assertEqual(result.returncode, 0 if allowed else 2, result.stdout + result.stderr)
         cutover = self.workflow.split("\n  cutover:\n", 1)[1].split("\n    runs-on:", 1)[0]
         self.assertIn("needs.prepare_release.outputs.operation != 'locale-shadow'", cutover)
+
+    def test_incremental_scope_does_not_restore_or_pass_historical_ledger(self):
+        ledger = self.workflow.split("Restore history release ledger from active production only", 1)[1].split(
+            "Build Korean Japanese and Arabic static locales", 1)[0]
+        self.assertIn("(inputs.translation_scope || 'incremental') != 'incremental'", ledger)
+        locale = self.workflow.split("Build Korean Japanese and Arabic static locales", 1)[1].split(
+            "Detect multilingual translation checkpoint", 1)[0]
+        setup = locale.split('          index_args=(--index-start-date', 1)[1].split(
+            '          if [ -n "$PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH" ]', 1)[0]
+        setup = 'index_args=(--index-start-date ' + textwrap.dedent(setup)
+        for scope in ("incremental", "release"):
+            with tempfile.TemporaryDirectory() as temporary:
+                env = {
+                    "PORTAL_MULTILINGUAL_TRANSLATION_SCOPE": scope,
+                    "PORTAL_MULTILINGUAL_INDEX_START_DATE": "2026-09-05",
+                    "PORTAL_MULTILINGUAL_HISTORY_START_DATE": "2026-08-05",
+                    "PORTAL_MULTILINGUAL_HISTORY_PAUSED": "false",
+                    "RUNNER_TEMP": temporary,
+                    "PATH": "/usr/bin:/bin",
+                }
+                result = subprocess.run(["/bin/bash", "-c", setup + '\nprintf "%s\\n" "${index_args[@]}"'],
+                                        env=env, capture_output=True, text=True)
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assertEqual("--history-start-date" in result.stdout, scope == "release")
+                self.assertIn("--index-start-date\n2026-09-05", result.stdout)
+        self.assertIn('elif ready:', locale)
+        self.assertIn('Historical backfill and historical placeholder pages are disabled.', locale)
+
+    def test_shadow_plan_is_validated_before_bounded_parallel_upload(self):
+        plan = self.workflow.index("Validate multilingual shadow sample plan before upload")
+        upload = self.workflow.index("Upload inactive static slot and immutable runtime")
+        self.assertLess(plan, upload)
+        self.assertIn("scripts/audit_portal_shadow_preview.py plan", self.workflow[plan:upload])
+        upload_step = self.workflow[upload:self.workflow.index("Prepare isolated multilingual shadow worker")]
+        self.assertIn('--max-workers 16', upload_step)
+        self.assertIn('automatic incremental refresh', self.workflow.split('\non:', 1)[0])
+
+    def test_static_policy_validation_matches_only_the_selected_scope(self):
+        import os
+        from unittest.mock import patch
+        block = self.workflow.split('          index_policy = manifest.get("index_policy") or {}', 1)[1].split(
+            '          def safe_required_path', 1)[0]
+        block = textwrap.dedent('          index_policy = manifest.get("index_policy") or {}' + block)
+        for scope in ("incremental", "release", "month"):
+            incremental = scope == "incremental"
+            manifest = {"translation_scope": scope, "index_policy": {
+                "index_start_date": "2026-09-05",
+                "mode": "incremental-publication-cutoff" if incremental else "fixed-publication-cutoff",
+                "default": "new-content-and-core-hubs" if incremental else "hubs-only",
+                "history_release_count": 0,
+                "translation_mode": "new-content-only",
+            }}
+            env = {"PORTAL_MULTILINGUAL_INDEX_START_DATE": "2026-09-05", "PORTAL_MULTILINGUAL_TRANSLATION_SCOPE": scope}
+            with patch.dict(os.environ, env), self.subTest(scope=scope):
+                exec(block, {"manifest": manifest, "os": os})
+                manifest["translation_scope"] = "different"
+                with self.assertRaises(SystemExit):
+                    exec(block, {"manifest": manifest, "os": os})
+                manifest["translation_scope"] = scope
+                manifest["index_policy"]["index_start_date"] = "2026-08-05"
+                with self.assertRaises(SystemExit):
+                    exec(block, {"manifest": manifest, "os": os})
+                manifest["index_policy"]["index_start_date"] = "2026-09-05"
+                if incremental:
+                    manifest["index_policy"]["history_release_count"] = 1
+                    with self.assertRaises(SystemExit):
+                        exec(block, {"manifest": manifest, "os": os})
 
     def test_schedule_and_content_triggers_are_gated_and_reviewed(self) -> None:
         trigger = self.workflow[: self.workflow.index("\npermissions:\n")]
@@ -154,7 +221,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertLess(approval, cutover)
         self.assertLess(upload, cutover)
         self.assertLess(cutover, deploy)
-        self.assertIn("--max-workers 4", self.workflow[upload:cutover])
+        self.assertIn("--max-workers 16", self.workflow[upload:cutover])
         self.assertIn("timeout-minutes: 150", self.workflow[prepare:cutover])
         self.assertIn("timeout-minutes: 65", self.workflow[cutover:])
         self.assertEqual(self.workflow.count("ref: ${{ github.sha }}"), 2)
@@ -635,7 +702,8 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn("workingDirectory: .neutral_edge_shadow", shadow)
         self.assertIn("command: deploy", shadow)
         self.assertNotIn("versions deploy", shadow)
-        self.assertIn("audit_portal_shadow_preview.py plan", shadow)
+        self.assertIn('test -s "$RUNNER_TEMP/shadow-samples.json"', shadow)
+        self.assertIn("audit_portal_shadow_preview.py plan", self.workflow[:prepare])
         self.assertIn("audit_portal_shadow_preview.py audit", shadow)
 
         artifact_section = self.workflow[artifact:self.workflow.index("Upload release validation artifact")]
