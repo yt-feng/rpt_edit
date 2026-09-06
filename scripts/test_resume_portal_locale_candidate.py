@@ -10,7 +10,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
-from unittest.mock import Mock, patch
+from unittest.mock import Mock, call, patch
 from urllib.error import HTTPError
 import zipfile
 
@@ -234,6 +234,112 @@ class ResumeTests(unittest.TestCase):
         with self.assertRaisesRegex(resume.ResumeError, "during candidate restore"):
             self.restore()
         self.assertFalse((self.work / "locale-resume-identity.json").exists())
+
+
+class CandidateReadRetryTests(unittest.TestCase):
+    BODY = b"committed candidate object"
+    KEY = "edge-static/slots/b/ko/blog/new.html"
+
+    def descriptor(self):
+        return {"size": len(self.BODY), "sha256": hashlib.sha256(self.BODY).hexdigest()}
+
+    @staticmethod
+    def read_error(code):
+        error = RuntimeError("injected object read error")
+        error.response = {"Error": {"Code": code}}
+        return error
+
+    @patch.object(resume.time, "sleep")
+    def test_service_unavailable_and_slowdown_retry_then_succeed(self, sleep):
+        for code in ("ServiceUnavailable", "SlowDown"):
+            with self.subTest(code=code):
+                sleep.reset_mock()
+                stream = io.BytesIO(self.BODY)
+                client = Mock()
+                client.get_object.side_effect = [self.read_error(code), self.read_error(code), {"Body": stream}]
+                self.assertEqual(resume.read_candidate_object(client, "bucket", self.KEY, self.descriptor()), self.BODY)
+                self.assertEqual(client.get_object.call_count, 3)
+                self.assertEqual(sleep.call_args_list, [call(2), call(5)])
+                self.assertTrue(stream.closed)
+
+    @patch.object(resume.time, "sleep")
+    def test_access_denied_and_no_such_key_never_retry(self, sleep):
+        for code in ("AccessDenied", "NoSuchKey"):
+            with self.subTest(code=code):
+                client = Mock()
+                client.get_object.side_effect = self.read_error(code)
+                with self.assertRaisesRegex(resume.ResumeError, "Candidate object read failed"):
+                    resume.read_candidate_object(client, "bucket", self.KEY, self.descriptor())
+                client.get_object.assert_called_once_with(Bucket="bucket", Key=self.KEY)
+        sleep.assert_not_called()
+
+    @patch.object(resume.time, "sleep")
+    def test_hash_mismatch_never_retries_and_closes_stream(self, sleep):
+        stream = io.BytesIO(b"x" * len(self.BODY))
+        client = Mock()
+        client.get_object.return_value = {"Body": stream}
+        with self.assertRaisesRegex(resume.ResumeError, "differs from manifest"):
+            resume.read_candidate_object(client, "bucket", self.KEY, self.descriptor())
+        self.assertEqual(client.get_object.call_count, 1)
+        self.assertTrue(stream.closed)
+        sleep.assert_not_called()
+
+    @patch.object(resume.time, "sleep")
+    def test_successful_stream_is_closed_without_wait(self, sleep):
+        stream = io.BytesIO(self.BODY)
+        client = Mock()
+        client.get_object.return_value = {"Body": stream}
+        self.assertEqual(resume.read_candidate_object(client, "bucket", self.KEY, self.descriptor()), self.BODY)
+        self.assertTrue(stream.closed)
+        sleep.assert_not_called()
+
+    @patch.object(resume.time, "sleep")
+    def test_nonretryable_stream_failure_is_closed(self, sleep):
+        stream = Mock()
+        stream.read.side_effect = ValueError("malformed stream")
+        client = Mock()
+        client.get_object.return_value = {"Body": stream}
+        with self.assertRaisesRegex(resume.ResumeError, "ValueError"):
+            resume.read_candidate_object(client, "bucket", self.KEY, self.descriptor())
+        stream.close.assert_called_once_with()
+        self.assertEqual(client.get_object.call_count, 1)
+        sleep.assert_not_called()
+
+    @patch.object(resume.time, "sleep")
+    def test_transient_stream_is_closed_before_backoff_and_next_attempt(self, sleep):
+        failed_stream = Mock()
+        failed_stream.read.side_effect = self.read_error("ServiceUnavailable")
+        good_stream = io.BytesIO(self.BODY)
+        client = Mock()
+        client.get_object.side_effect = [{"Body": failed_stream}, {"Body": good_stream}]
+        sleep.side_effect = lambda _delay: failed_stream.close.assert_called_once_with()
+        self.assertEqual(resume.read_candidate_object(client, "bucket", self.KEY, self.descriptor()), self.BODY)
+        failed_stream.close.assert_called_once_with()
+        self.assertTrue(good_stream.closed)
+        sleep.assert_called_once_with(2)
+
+    @patch.object(resume.time, "sleep")
+    def test_retry_exhaustion_has_six_attempts_and_bounded_waits(self, sleep):
+        client = Mock()
+        client.get_object.side_effect = self.read_error("SlowDown")
+        with self.assertRaisesRegex(resume.ResumeError, "code=slowdown"):
+            resume.read_candidate_object(client, "bucket", self.KEY, self.descriptor())
+        self.assertEqual(client.get_object.call_count, 6)
+        self.assertEqual(sleep.call_args_list, [call(2), call(5), call(10), call(20), call(30)])
+
+    @patch.object(resume.time, "sleep")
+    def test_retry_exhaustion_closes_every_failed_stream(self, sleep):
+        streams = [Mock() for _ in range(6)]
+        for stream in streams:
+            stream.read.side_effect = self.read_error("ServiceUnavailable")
+        client = Mock()
+        client.get_object.side_effect = [{"Body": stream} for stream in streams]
+        with self.assertRaisesRegex(resume.ResumeError, "code=serviceunavailable"):
+            resume.read_candidate_object(client, "bucket", self.KEY, self.descriptor())
+        for stream in streams:
+            stream.close.assert_called_once_with()
+        self.assertEqual(client.get_object.call_count, 6)
+        self.assertEqual(sleep.call_count, 5)
 
 
 class ReadTransportTests(unittest.TestCase):
