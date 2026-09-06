@@ -34,6 +34,24 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn('--history-start-date "$PORTAL_MULTILINGUAL_HISTORY_START_DATE"', locale_step)
         self.assertIn('true) index_args+=(--history-paused)', locale_step)
 
+    def test_materialized_detail_contract_is_checked_before_expensive_work(self):
+        materialize = self.workflow.index("Materialize private deployment profile")
+        preflight = self.workflow.index("Validate materialized locale detail hooks before refresh")
+        refresh = self.workflow.index("Refresh report catalog with additive PDF sync")
+        translation = self.workflow.index("Translate missing report titles")
+        self.assertLess(materialize, preflight)
+        self.assertLess(preflight, refresh)
+        self.assertLess(preflight, translation)
+        step = self.workflow[preflight:refresh]
+        self.assertIn("steps.operation.outputs.multilingual_enabled == 'true'", step)
+        self.assertIn('Path("portal_suite/site_src/assets/app.js").read_text', step)
+        self.assertIn("for locale in LOCALES:", step)
+        self.assertIn('inject_locale_detail_hooks(source, "app.js", locale)', step)
+        self.assertIn('["node", "--check"]', step)
+        self.assertIn("capture_output=True", step)
+        self.assertNotIn("DEEPSEEK_API_KEY", step)
+        self.assertNotIn("print(source)", step)
+
     def test_incremental_scope_is_default_and_shared_by_canary_and_full_build(self):
         trigger = self.workflow.split("\npermissions:\n", 1)[0]
         scope_input = trigger.split("      translation_scope:\n", 1)[1]

@@ -19,6 +19,26 @@ def _once(source: str, old: str, new: str) -> str:
     return source.replace(old, new, 1)
 
 
+def _namespace_cache_key(source: str, name: str, locale: str) -> str:
+    # Deployment materialization may rename a cache's literal value before the
+    # locale build. The stable contract is its declaration, not its public name.
+    declarations = re.findall(r"\b(?:const|let|var)\s+" + re.escape(name) + r"\b", source)
+    literal = re.compile(
+        r"^([ \t]*const " + re.escape(name) + r"[ \t]*=[ \t]*)"
+        r"(?P<quote>[\"'])(?P<key>[A-Za-z0-9][A-Za-z0-9_.:-]{0,127})(?P=quote)"
+        r"(?P<end>[ \t]*;[ \t]*)$",
+        re.M,
+    )
+    matches = list(literal.finditer(source))
+    if len(declarations) != 1 or len(matches) != 1:
+        # Never echo materialized values or malformed initializer contents.
+        raise ValueError(f"Locale detail hook requires one literal cache declaration: {name}")
+    match = matches[0]
+    namespaced = f"{match.group('key')}:{locale}"
+    replacement = match.group(1) + match.group("quote") + namespaced + match.group("quote") + match.group("end")
+    return source[:match.start()] + replacement + source[match.end():]
+
+
 def inject_locale_detail_hooks(source: str, asset_name: str, locale: str) -> str:
     if locale not in LOCALES or asset_name != "app.js" or MARKER in source:
         return source
@@ -54,8 +74,8 @@ def inject_locale_detail_hooks(source: str, asset_name: str, locale: str) -> str
   }}
 '''
     source = _once(source, "(function () {\n", "(function () {\n" + helper)
-    for name, key in (("DOC_ITEM_CACHE_KEY", "portal_doc_item_cache_v2"), ("REPORT_PREVIEW_CACHE_KEY", "portal_report_preview_cache")):
-        source = _once(source, f'const {name} = "{key}";', f'const {name} = "{key}:{locale}";')
+    for name in ("DOC_ITEM_CACHE_KEY", "REPORT_PREVIEW_CACHE_KEY"):
+        source = _namespace_cache_key(source, name, locale)
     source = _once(source,
         '  async function initReport() {\n    const params = new URLSearchParams(window.location.search);\n    const id = params.get("id");',
         '  async function initReport() {\n    const params = new URLSearchParams(window.location.search);\n    const id = params.get("id");\n'

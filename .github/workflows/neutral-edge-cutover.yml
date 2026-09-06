@@ -488,6 +488,27 @@ jobs:
           test "$(wc -c < "$social_card")" -le 1048576
           install -m 0600 "$social_card" portal_suite/site_src/assets/social-card.jpg
 
+      - name: Validate materialized locale detail hooks before refresh
+        if: steps.operation.outputs.multilingual_enabled == 'true'
+        run: |
+          set -euo pipefail
+          python3 -B - <<'PY'
+          from pathlib import Path
+          import subprocess
+          import sys
+
+          sys.path.insert(0, "scripts")
+          from portal_locale_detail_hooks import LOCALES, inject_locale_detail_hooks
+
+          source = Path("portal_suite/site_src/assets/app.js").read_text(encoding="utf-8")
+          for locale in LOCALES:
+              compiled = inject_locale_detail_hooks(source, "app.js", locale)
+              result = subprocess.run(["node", "--check"], input=compiled, text=True, capture_output=True)
+              if result.returncode:
+                  raise SystemExit(f"Materialized locale detail syntax check failed: {locale}")
+          print("Materialized locale detail hooks passed for ko, ja, ar; no provider calls.")
+          PY
+
       - name: Refresh report catalog with additive PDF sync
         env:
           DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
