@@ -207,7 +207,7 @@ class IncrementalBuildTests(unittest.TestCase):
             return 200, {"content-language": relative.split("/", 1)[0]}, self.site.joinpath(relative).read_bytes()
         report = verify_locale_routes(manifest, fixtures.SITE_URL, fetcher=generated_response)
         self.assertEqual(report["status"], "passed", report)
-        self.assertEqual(report["request_count"], 16)
+        self.assertEqual(report["request_count"], 17)
 
     def test_next_day_keeps_fixed_cutoff_reuses_paid_cache_and_preserves_chinese(self):
         snapshot = self.fixture.temporary_root / "chinese-before.json"

@@ -171,11 +171,13 @@ jobs:
           node --input-type=module --check < workers/edge-static-host/src/index.js
           node --input-type=module --check < workers/portal-suite-worker/src/index.js
           node --input-type=module --check < workers/portal-suite-worker/src/source-lead-adapter.js
+          node --input-type=module --check < workers/portal-suite-worker/src/locale-report-detail.js
           node --check portal_suite/site_src/assets/app.js
           node --check portal_suite/site_src/assets/report-chat.js
           node --check portal_suite/site_src/assets/charts.js
           node --check portal_suite/site_src/assets/site-runtime.js
           node --check portal_suite/locale_assets/locale-runtime.js
+          node --check portal_suite/locale_assets/locale-detail.js
           node --test workers/edge-static-host/test/index.test.mjs
           for test_file in portal_suite/tests/*.test.mjs; do
             node "$test_file"
@@ -237,6 +239,9 @@ jobs:
           python3 -B scripts/test_verify_prepared_static_slot.py
           node scripts/test_portal_locale_runtime.js
           node scripts/test_portal_locale_recovery.js
+          node scripts/test_portal_locale_detail.js
+          node scripts/test_portal_locale_detail_server.js
+          python3 -B scripts/test_portal_locale_detail_hooks.py
           node scripts/test_portal_contact_locale.js
           python3 -B scripts/test_portal_contact_locale_build.py
           python3 -B scripts/test_portal_locale_report_preview.py
@@ -929,7 +934,7 @@ jobs:
             reports/institutions/bernstein/index.html sitemap-baidu.xml
           )
           if [ "$PORTAL_MULTILINGUAL_ENABLED" = "true" ]; then
-            required_paths+=(assets/locale.css assets/locale-runtime.js)
+            required_paths+=(assets/locale.css assets/locale-runtime.js assets/locale-detail.js)
             for locale in ko ja ar; do
               required_paths+=(
                 "$locale/index.html"
@@ -940,7 +945,7 @@ jobs:
                 "sitemap-$locale.xml"
               )
               for locale_asset in \
-                app.js charts.js contact.js locale-runtime.js report-chat.js \
+                app.js charts.js contact.js locale-runtime.js locale-detail.js report-chat.js \
                 report-research-export.js site-runtime.js xlsx-export.js locale.css
               do
                 required_paths+=("$locale/assets/$locale_asset")
@@ -978,6 +983,7 @@ jobs:
           html_attr = re.compile(r"\b(lang|dir)\s*=\s*(['\"])(.*?)\2", flags=re.I)
           locale_asset_limits = {
               "assets/locale-runtime.js": 32_768,
+              "assets/locale-detail.js": 16_384,
               "assets/locale.css": 24_576,
           }
           for relative, maximum_asset_bytes in locale_asset_limits.items():

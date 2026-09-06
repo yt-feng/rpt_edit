@@ -440,9 +440,12 @@ class ChineseParityTests(unittest.TestCase):
             path.write_bytes(data)
         self._verify()
         path = self.site / "index.html"
-        path.write_text(path.read_text().replace("</head>", '<script src="/assets/locale-recovery.js"></script></head>'))
-        with self.assertRaisesRegex(parity.ParityError, "statically loads locale assets"):
-            self._verify()
+        original = path.read_text()
+        for asset in ("locale-recovery.js", "locale-detail.js"):
+            with self.subTest(asset=asset):
+                path.write_text(original.replace("</head>", f'<script src="/assets/{asset}"></script></head>'))
+                with self.assertRaisesRegex(parity.ParityError, "statically loads locale assets"):
+                    self._verify()
 
     def test_wrong_locale_href_fails(self) -> None:
         self._verified_site()

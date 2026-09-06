@@ -24,6 +24,7 @@ APPLICATION_PAGES = {
     "courses.html": "course",
 }
 RECOVERY_PATH = "assets/locale-recovery.js"
+DETAIL_PATH = "assets/locale-detail.js"
 MAX_RESPONSE_BYTES = 16 * 1024 * 1024
 MAX_MANIFEST_BYTES = 2 * 1024 * 1024
 TIMEOUT_SECONDS = 20
@@ -81,6 +82,8 @@ def declared_checks(manifest: dict[str, Any]) -> list[dict[str, Any]] | None:
             checks.append({**descriptor(rows[filename], f"{locale}/{filename}"),
                            "locale": locale, "filename": filename})
     checks.append(descriptor(manifest.get("recovery_asset"), RECOVERY_PATH))
+    if "detail_asset" in manifest:
+        checks.append(descriptor(manifest["detail_asset"], DETAIL_PATH))
     return checks
 
 
@@ -243,7 +246,8 @@ def verify_locale_routes(
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
         results = list(pool.map(verify, checks))
     return {"schema_version": 1, "status": "passed" if all(row["status"] == "passed" for row in results) else "failed",
-            "origin": origin, "request_count": len(results), "route_count": 15, "asset_count": 1,
+            "origin": origin, "request_count": len(results), "route_count": 15,
+            "asset_count": sum("locale" not in row for row in checks),
             "elapsed_seconds": round(time.monotonic() - started, 3), "checks": results}
 
 

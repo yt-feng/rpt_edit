@@ -1008,6 +1008,38 @@ async function assertLocalizedReportShellUsesScopedDetailPayload() {
   }
 }
 
+async function assertOnDemandSingleDetailHelpers() {
+  for (const locale of ["ko", "ja", "ar"]) {
+    const harness = createHarness({
+      htmlLang: locale,
+      href: `https://portal.example.invalid/${locale}/report.html?id=ab-new`,
+      responsePayloads: { "/data/report_details/ab.json": { reports: {
+        "ab-new": { item: { id: "ab-new", title: "未发布中文详情" }, related: [
+          { id: "ab-published", title: "原关联标题" }, { id: "ab-old", title: "旧内容" },
+        ] },
+        "ab-old": { item: { id: "ab-old", title: "不得整批放行" }, related: [] },
+      } } },
+      overlayTranslations: { "detail:ab": { scoped: true, items: {
+        "ab-published": { title: "Published related title" },
+      } } },
+    });
+    assert.equal(await harness.window.PortalLocale.detailTranslation("catalog", "ab-new"), null);
+    assert.equal((await harness.window.PortalLocale.detailTranslation("catalog", "ab-published")).title, "Published related title");
+    const record = await harness.window.PortalLocale.readCatalogDetail("ab-new", { title: "One on-demand title" });
+    assert.equal(record.item.id, "ab-new");
+    assert.equal(record.item.title, "One on-demand title");
+    assert.deepEqual(record.related.map((item) => item.id), ["ab-published"]);
+    assert.equal(await harness.window.PortalLocale.readCatalogDetail("../private", { title: "x" }), null);
+    assert.equal(await harness.window.PortalLocale.detailTranslation("external", "123456"), null);
+    assert.deepEqual(harness.fetchCalls, [`/data/i18n/${locale}/catalog-detail-ab.json`, "/data/report_details/ab.json"],
+      "Read only one existing overlay and current detail shard, never the full catalog or provider API");
+  }
+  const chinese = createHarness({ htmlLang: "zh-Hans" });
+  assert.equal(await chinese.window.PortalLocale.detailTranslation("catalog", "ab-new"), null);
+  assert.equal(await chinese.window.PortalLocale.readCatalogDetail("ab-new", { title: "x" }), null);
+  assert.equal(chinese.fetchCalls.length, 0);
+}
+
 async function assertScopedChartsRequireTheirOwnTranslation() {
   const harness = createHarness({
     htmlLang: "ar", browserLanguages: ["zh-CN"],
@@ -1255,6 +1287,7 @@ function assertIndexUiLocalization() {
   await assertScopedCatalogExcludesUnpublishedRowsOnly();
   await assertScopedDetailMapDropsMissingPrimaryAndRelatedRows();
   await assertLocalizedReportShellUsesScopedDetailPayload();
+  await assertOnDemandSingleDetailHelpers();
   await assertScopedChartsRequireTheirOwnTranslation();
   await assertScopedHotReportsStayLazyAndDoNotExposeOmissions();
   assertArabicInputDirection();

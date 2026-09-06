@@ -27,8 +27,7 @@ jobs:
             .github/workflows/portal-worker-emergency-deploy.yml
             .github/workflows/course-directory-private-publish.yml
             .github/workflows/market-views-latex-pdf.yml
-            workers/portal-suite-worker/src/index.js
-            workers/portal-suite-worker/src/source-lead-adapter.js
+            workers/portal-suite-worker/src
             portal_suite/locale_assets
             portal_suite/site_src
             portal_suite/tests
@@ -56,6 +55,7 @@ jobs:
             scripts/test_portal_source_lead_integration.js
             scripts/test_portal_chart_search_frontend.js
             scripts/test_portal_site_runtime.js
+            scripts/test_portal_locale_detail_server.js
             scripts/test_build_member_course_directory.py
             scripts/test_capture_edge_worker_deployment.py
             scripts/test_check_public_brand.py
@@ -70,6 +70,8 @@ jobs:
           python3 -B scripts/check_public_identity.py
           node --input-type=module --check < workers/portal-suite-worker/src/index.js
           node --input-type=module --check < workers/portal-suite-worker/src/source-lead-adapter.js
+          node --input-type=module --check < workers/portal-suite-worker/src/locale-report-detail.js
+          node scripts/test_portal_locale_detail_server.js
           node --check portal_suite/site_src/assets/app.js
           node --check portal_suite/site_src/assets/report-chat.js
           node --check portal_suite/site_src/assets/charts.js
@@ -128,6 +130,9 @@ jobs:
           NEWSFEED_EMAIL_PROVIDER: ${{ vars.NEWSFEED_EMAIL_PROVIDER || 'cloudflare' }}
           OPS_ALERT_EMAIL: ${{ secrets.OPS_ALERT_EMAIL || vars.OPS_ALERT_EMAIL || '' }}
           HOT_REPORT_CLEANUP_ENABLED: ${{ vars.HOT_REPORT_CLEANUP_ENABLED || 'false' }}
+          LOCALE_DETAIL_TRANSLATION_ENABLED: ${{ vars.LOCALE_DETAIL_TRANSLATION_ENABLED || 'false' }}
+          LOCALE_DETAIL_DAILY_MAX_REQUESTS: ${{ vars.LOCALE_DETAIL_DAILY_MAX_REQUESTS || '100' }}
+          LOCALE_DETAIL_DAILY_MAX_CHARS: ${{ vars.LOCALE_DETAIL_DAILY_MAX_CHARS || '100000' }}
         run: |
           for name in PORTAL_SITE_URL R2_BUCKET_NAME R2_OBJECT_PREFIX CLOUDFLARE_ACCOUNT_ID; do
             if [ -z "${!name}" ]; then
@@ -150,6 +155,15 @@ jobs:
               ;;
           esac
           PORTAL_SITE_URL="${PORTAL_SITE_URL%/}"
+          python3 - <<'PY'
+          import os
+          if os.environ["LOCALE_DETAIL_TRANSLATION_ENABLED"] not in ("true", "false"):
+              raise SystemExit("LOCALE_DETAIL_TRANSLATION_ENABLED must be true or false")
+          for name, maximum in (("LOCALE_DETAIL_DAILY_MAX_REQUESTS", 1000), ("LOCALE_DETAIL_DAILY_MAX_CHARS", 1000000)):
+              value = os.environ[name]
+              if not value.isascii() or not value.isdecimal() or not 0 <= int(value) <= maximum:
+                  raise SystemExit(f"Invalid bounded locale translation setting: {name}")
+          PY
           R2_OBJECT_PREFIX="$(python3 scripts/portal_r2_prefix.py "$R2_OBJECT_PREFIX")"
           export PORTAL_SITE_URL R2_OBJECT_PREFIX
           cat > workers/portal-suite-worker/wrangler.toml <<EOF
@@ -170,6 +184,9 @@ jobs:
           NEWSFEED_EMAIL_PROVIDER = "$NEWSFEED_EMAIL_PROVIDER"
           OPS_ALERT_EMAIL = "$OPS_ALERT_EMAIL"
           HOT_REPORT_CLEANUP_ENABLED = "$HOT_REPORT_CLEANUP_ENABLED"
+          LOCALE_DETAIL_TRANSLATION_ENABLED = "$LOCALE_DETAIL_TRANSLATION_ENABLED"
+          LOCALE_DETAIL_DAILY_MAX_REQUESTS = "$LOCALE_DETAIL_DAILY_MAX_REQUESTS"
+          LOCALE_DETAIL_DAILY_MAX_CHARS = "$LOCALE_DETAIL_DAILY_MAX_CHARS"
 
           [triggers]
           crons = [
@@ -382,6 +399,7 @@ jobs:
         timeout-minutes: 8
         env:
           PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+          LOCALE_DETAIL_TRANSLATION_ENABLED: ${{ vars.LOCALE_DETAIL_TRANSLATION_ENABLED || 'false' }}
         run: |
           set -euo pipefail
           echo "::add-mask::$PORTAL_SITE_URL"
@@ -392,12 +410,16 @@ jobs:
               "$origin/api/health" --output "$RUNNER_TEMP/api-health.json" \
               && python3 - "$RUNNER_TEMP/api-health.json" <<'PY'
           import json
+          import os
           import sys
           from pathlib import Path
 
           payload = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
           if payload.get("ok") is not True:
               raise SystemExit(1)
+          expected = os.environ["LOCALE_DETAIL_TRANSLATION_ENABLED"] == "true"
+          if payload.get("locale_detail_translation_v1") != {"supported": True, "enabled": expected}:
+              raise SystemExit("Locale detail capability or activation does not match this release")
           PY
             then
               ready=1
@@ -406,6 +428,20 @@ jobs:
             sleep 5
           done
           test "$ready" = 1
+
+          # Invalid locale is rejected before reading content, reserving quota,
+          # or calling DeepSeek. Never use a valid translation as a cloud smoke.
+          code="$(curl --silent --show-error --max-time 20 \
+            --request POST --header 'Content-Type: application/json' \
+            --data '{"source":"catalog","id":"locale-smoke","locale":"zh-Hans"}' \
+            --output "$RUNNER_TEMP/api-locale-invalid.json" \
+            --write-out '%{http_code}' "$origin/api/locale/report-detail")"
+          if [ "$LOCALE_DETAIL_TRANSLATION_ENABLED" = "true" ]; then
+            test "$code" = 400
+          else
+            test "$code" = 503
+          fi
+          python3 -m json.tool "$RUNNER_TEMP/api-locale-invalid.json" >/dev/null
 
           for endpoint in rewards course/access; do
             code="$(curl --silent --show-error --max-time 20 \
