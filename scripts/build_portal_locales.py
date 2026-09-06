@@ -38,6 +38,7 @@ from zoneinfo import ZoneInfo
 from portal_locale_history import plan_history_release
 from portal_locale_literals import is_latin_name_literal, is_machine_asset_reference, is_shared_japanese_keyword, is_short_latin_label_translation
 from portal_locale_scope import deferred_locale_source, restrict_html_to_cohort
+from repair_portal_ja_catalog_titles import apply_ja_catalog_title_repairs
 
 CACHE_SCHEMA_VERSION = 1
 PROMPT_VERSION = "portal-public-locales-v4"
@@ -5167,6 +5168,10 @@ def _build_localized_release(
 
     cache = load_cache(cache_in, model)
     cache["model"] = normalize_deepseek_model_name(model)
+    title_repairs = apply_ja_catalog_title_repairs(cache, units)
+    if title_repairs["replaced"] or title_repairs["seeded"]:
+        log("Applied reviewed Japanese title repairs without provider calls: "
+            f"replaced={title_repairs['replaced']} seeded={title_repairs['seeded']}")
     missing_counts = translate_missing_units(
         units,
         cache,
