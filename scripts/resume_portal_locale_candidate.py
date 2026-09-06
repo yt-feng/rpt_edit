@@ -12,6 +12,7 @@ import os
 from pathlib import Path
 import re
 import sys
+import time
 from typing import Any, Callable
 from urllib.error import HTTPError
 from urllib.parse import urlsplit
@@ -44,6 +45,8 @@ PUBLIC_PATHS = frozenset((
 ))
 SHA40 = re.compile(r"[0-9a-f]{40}\Z")
 MAX_API_BYTES = 64 * 1024 * 1024
+READ_RETRY_DELAYS = (2, 5, 10, 20, 30)
+DOWNLOAD_WORKERS = 4
 
 
 class ResumeError(RuntimeError):
@@ -305,6 +308,36 @@ def validate_remote_slot(client: Any, bucket: str, slot: str, release: str, tree
     return manifest
 
 
+def read_candidate_object(client: Any, bucket: str, key: str, descriptor: dict[str, Any]) -> bytes:
+    """Retry only transient object reads; always close streams and verify bytes."""
+    for attempt in range(len(READ_RETRY_DELAYS) + 1):
+        stream = None
+        try:
+            stream = client.get_object(Bucket=bucket, Key=key)["Body"]
+            body = publisher.body_bytes(stream)
+        except Exception as error:
+            if stream is not None and hasattr(stream, "close"):
+                stream.close()
+                stream = None
+            code = publisher.upload_error_code(error)
+            retryable = code in publisher.RETRYABLE_UPLOAD_ERROR_CODES or type(error).__name__ in {
+                "ReadTimeoutError", "ResponseStreamingError", "IncompleteReadError", "ConnectionClosedError",
+            }
+            if not retryable or attempt >= len(READ_RETRY_DELAYS):
+                raise ResumeError(f"Candidate object read failed: {key}; code={code or type(error).__name__}") from error
+            delay = READ_RETRY_DELAYS[attempt]
+            print(f"Locale resume read_retry attempt={attempt + 1} delay_seconds={delay} code={code}", flush=True)
+            time.sleep(delay)
+            continue
+        finally:
+            if stream is not None and hasattr(stream, "close"):
+                stream.close()
+        require(len(body) == descriptor["size"] and hashlib.sha256(body).hexdigest() == descriptor["sha256"],
+                f"Candidate downloaded file differs from manifest: {key}")
+        return body
+    raise AssertionError("Unreachable read retry state")
+
+
 def download_candidate_files(client: Any, bucket: str, manifest: dict[str, Any], site_dir: Path, *, workers: int = 16) -> set[str]:
     files = manifest["files"]
     prefix = publisher.slot_prefix(manifest["slot"])
@@ -312,9 +345,7 @@ def download_candidate_files(client: Any, bucket: str, manifest: dict[str, Any],
     def fetch_one(relative: str) -> str:
         require(relative in files, f"Candidate audit file is absent from manifest: {relative}")
         descriptor = files[relative]
-        body = publisher.body_bytes(client.get_object(Bucket=bucket, Key=prefix + relative)["Body"])
-        require(len(body) == descriptor["size"] and hashlib.sha256(body).hexdigest() == descriptor["sha256"],
-                f"Candidate downloaded file differs from manifest: {relative}")
+        body = read_candidate_object(client, bucket, prefix + relative, descriptor)
         write_local(site_dir, relative, body)
         return relative
     downloaded.add(fetch_one("data/i18n/manifest.json"))
@@ -336,8 +367,14 @@ def download_candidate_files(client: Any, bucket: str, manifest: dict[str, Any],
         wanted.update(locale_pages)
         wanted.update(relative[len(locale) + 1:] for relative in locale_pages)
     require(wanted.issubset(files), "Candidate is missing an audit or public artifact file")
-    with ThreadPoolExecutor(max_workers=workers) as pool:
-        downloaded.update(pool.map(fetch_one, sorted(wanted - downloaded)))
+    download_workers = min(workers, DOWNLOAD_WORKERS)
+    progress = publisher._PublishProgress("resume_download", objects=len(wanted), workers=download_workers)
+    with ThreadPoolExecutor(max_workers=download_workers) as pool:
+        futures = {pool.submit(fetch_one, relative): relative for relative in sorted(wanted - downloaded)}
+        for future in as_completed(futures):
+            downloaded.add(future.result())
+            progress.update(len(downloaded))
+    progress.finish(downloaded=len(downloaded))
     return downloaded
 
 
