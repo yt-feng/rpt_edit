@@ -552,9 +552,10 @@ class SeoOutputTests(unittest.TestCase):
             approved.write_text('<p>开通账号联系 info@kcdesk.com</p>', encoding="utf-8")
 
             bad_page = output / "legacy-mail-action.html"
-            bad_page.write_text('<a href="mailto:owner@example.invalid">Email</a>', encoding="utf-8")
-            with self.assertRaisesRegex(RuntimeError, "legacy-mail-action.html"):
-                builder.assert_no_public_mail_client_actions(output)
+            for address in ("owner@example.invalid", "private.fixture@gmail.com"):
+                bad_page.write_text(f'<a href="mailto:{address}">Email</a>', encoding="utf-8")
+                with self.assertRaisesRegex(RuntimeError, "legacy-mail-action.html"):
+                    builder.assert_no_public_mail_client_actions(output)
 
     def test_static_report_has_canonical_schema_and_related_links(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

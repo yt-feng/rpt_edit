@@ -38,6 +38,18 @@
         for (const key of queryKeys) {
           if (current.searchParams.has(key)) target.searchParams.set(key, current.searchParams.get(key));
         }
+        // Existing detail access remains valid only for the exact Chinese
+        // counterpart. Never copy credentials to another page or a homepage.
+        const sameDetail = ["report.html", "doc.html", "delivery.html"].some((filename) =>
+          current.pathname === `/${locale}/${filename}` && target.pathname === `/${filename}`);
+        if (sameDetail && !current.username && !current.password) {
+          const queryPassword = current.searchParams.get("password");
+          if (queryPassword) target.searchParams.set("password", queryPassword);
+          else {
+            const hashPassword = new URLSearchParams(current.hash.replace(/^#\??/, "")).get("password");
+            if (hashPassword) target.hash = new URLSearchParams({ password: hashPassword }).toString();
+          }
+        }
         link.setAttribute("href", target.href);
       } catch (_) {
         // A malformed entry must not prevent the other static links from working.
@@ -139,6 +151,12 @@
     show("runtime-error");
   }, true);
   window.addEventListener("unhandledrejection", () => show("unhandled-rejection"));
+  // The inline head listener covers parser-blocking application scripts before
+  // this deferred script runs. Take over without retaining events or URLs.
+  if (typeof window.PortalLocaleEarly === "function") {
+    const earlyReason = window.PortalLocaleEarly();
+    if (["script-error", "runtime-error", "unhandled-rejection"].includes(earlyReason)) show(earlyReason);
+  }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot, { once: true });
   else boot();
 })();
