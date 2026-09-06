@@ -236,6 +236,12 @@ jobs:
           python3 -B scripts/test_resume_portal_locale_candidate.py
           python3 -B scripts/test_verify_prepared_static_slot.py
           node scripts/test_portal_locale_runtime.js
+          node scripts/test_portal_locale_recovery.js
+          node scripts/test_portal_contact_locale.js
+          python3 -B scripts/test_portal_contact_locale_build.py
+          python3 -B scripts/test_portal_locale_report_preview.py
+          python3 -B scripts/test_verify_portal_locale_routes.py
+          python3 -B scripts/test_check_public_identity.py
 
       - name: Prepare masked release context
         id: runtime_context
@@ -2056,6 +2062,10 @@ jobs:
           cmp _release_validation/candidate/release-semantics.json "$RUNNER_TEMP/release-semantics-after.json"
           cmp _release_validation/candidate/release-semantics.json "$RUNNER_TEMP/public-semantics-after.json"
           if [ "$PORTAL_MULTILINGUAL_ENABLED" = "true" ]; then
+            python3 -B scripts/verify_portal_locale_routes.py \
+              --manifest _release_validation/candidate/data/i18n/manifest.json \
+              --origin "$origin" \
+              --output "$RUNNER_TEMP/live-locale-routes.json"
             for locale in ko ja ar; do
               curl --fail --silent --show-error --max-redirs 0 \
                 --connect-timeout 5 --max-time 60 --header 'Cache-Control: no-cache' \

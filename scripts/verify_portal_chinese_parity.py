@@ -28,7 +28,7 @@ VERIFY_KIND = "portal-chinese-parity-verification"
 DEFAULT_SITE_ORIGIN = "https://portal.example.invalid"
 LOCALES = ("ko", "ja", "ar")
 LOCALE_DIRS = frozenset(LOCALES)
-LOCALE_ASSET_PATHS = frozenset(("assets/locale.css", "assets/locale-runtime.js"))
+LOCALE_ASSET_PATHS = frozenset(("assets/locale.css", "assets/locale-runtime.js", "assets/locale-recovery.js"))
 LOCALE_SITEMAPS = frozenset(f"sitemap-{locale}.xml" for locale in LOCALES)
 REQUIRED_PROTECTED_PATHS = frozenset(
     (
@@ -116,7 +116,7 @@ class _HeadLinks(HTMLParser):
                 self.direct_locale_assets.append(href)
         elif lowered == "script":
             source = values.get("src", "").strip()
-            if source and _is_direct_locale_asset(source, "locale-runtime.js"):
+            if source and any(_is_direct_locale_asset(source, asset) for asset in ("locale-runtime.js", "locale-recovery.js")):
                 self.direct_locale_assets.append(source)
             if "data-kc-locale-bootstrap" in values:
                 self._bootstrap_depth += 1
@@ -380,11 +380,15 @@ def _validate_final_head(
         raise ParityError(
             f"Chinese HTML statically loads locale assets instead of using the guarded bootstrap: {relative}"
         )
-    if len(parser.bootstrap_bodies) != 1:
-        raise ParityError(f"Chinese HTML must contain exactly one locale bootstrap: {relative}")
-    match = BOOTSTRAP_BODY_RE.fullmatch(parser.bootstrap_bodies[0])
-    if match is None or match.group(1) != match.group(2):
-        raise ParityError(f"Chinese HTML locale bootstrap guard is not the approved contract: {relative}")
+    # New releases have no picker at all on Chinese pages. Still validate the
+    # old guarded form when auditing an immutable release prepared before this
+    # policy changed; never accept duplicate or unguarded scripts.
+    if len(parser.bootstrap_bodies) > 1:
+        raise ParityError(f"Chinese HTML contains duplicate locale bootstrap: {relative}")
+    if parser.bootstrap_bodies:
+        match = BOOTSTRAP_BODY_RE.fullmatch(parser.bootstrap_bodies[0])
+        if match is None or match.group(1) != match.group(2):
+            raise ParityError(f"Chinese HTML locale bootstrap guard is not the approved contract: {relative}")
 
     final = _alternate_map(parser, relative=relative)
     before = baseline.get("alternates")

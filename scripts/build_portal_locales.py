@@ -38,6 +38,7 @@ from zoneinfo import ZoneInfo
 from portal_locale_history import plan_history_release
 from portal_locale_literals import is_latin_name_literal, is_machine_asset_reference, is_shared_japanese_keyword, is_short_latin_label_translation
 from portal_locale_scope import deferred_locale_source, restrict_html_to_cohort
+from portal_locale_report_preview import localize_report_preview
 from repair_portal_ja_catalog_titles import apply_ja_catalog_title_repairs
 
 CACHE_SCHEMA_VERSION = 1
@@ -4520,21 +4521,13 @@ def discovery_links(
     hreflangs: Iterable[str] | None = None,
 ) -> str:
     if defer_runtime:
-        # The Chinese site already loads app.js. Avoid adding any locale asset
-        # request for Simplified-Chinese browsers while still giving other
-        # visitors an explicit language switcher on eligible root pages.
-        rows = [
-            '\n    <script data-kc-locale-bootstrap>(function(){'
-            'var n=navigator,l=String(n.language||n.languages&&n.languages[0]||"").toLowerCase();'
-            'if(l==="zh"||/^zh-(?:cn|sg|hans)(?:-|$)/.test(l))return;'
-            'var h=document.head,c=document.createElement("link"),s=document.createElement("script");'
-            f'c.rel="stylesheet";c.href="/assets/locale.css?v={asset_version}";'
-            f's.src="/assets/locale-runtime.js?v={asset_version}";s.defer=true;'
-            'h.appendChild(c);h.appendChild(s)})()</script>',
-        ]
+        # Chinese pages retain SEO alternates, but never load language-picker
+        # resources, regardless of the visitor's browser language.
+        rows = []
     else:
         rows = [
             f'\n    <link rel="stylesheet" href="/assets/locale.css?v={asset_version}">',
+            f'\n    <script defer src="/assets/locale-recovery.js?v={asset_version}"></script>',
             f'\n    <script src="/assets/locale-runtime.js?v={asset_version}"></script>',
         ]
     if canonical:
@@ -4559,6 +4552,41 @@ def discovery_links(
             )
     rows.append("\n  ")
     return "".join(rows)
+
+
+LOCALE_APPLICATION_SHELLS = frozenset({
+    "report.html", "doc.html", "delivery.html", "newsfeed.html", "courses.html",
+})
+LOCALE_HELP_COPY = {
+    "ko": ("중국어로 이 페이지 보기", "중국어 홈페이지", "계정 개설 문의"),
+    "ja": ("このページを中国語で開く", "中国語ホーム", "アカウント開設のお問い合わせ"),
+    "ar": ("فتح هذه الصفحة بالصينية", "الصفحة الرئيسية بالصينية", "لفتح حساب، تواصل مع"),
+}
+
+
+def inject_locale_help(source: str, locale: str, root_path: str, site_url: str) -> str:
+    """Static escape hatch: available even when every application script fails."""
+    equivalent, homepage, account = LOCALE_HELP_COPY[locale]
+    home_url = site_url.rstrip("/") + "/"
+    page_url = home_url + root_path.lstrip("/")
+    markup = (
+        '<aside class="kc-locale-help" data-kc-locale-help>'
+        f'<a data-kc-chinese-entry data-kc-chinese-equivalent hreflang="zh-Hans" '
+        f'href="{html_escape(page_url, quote=True)}">中文 · {equivalent}</a>'
+        f'<a data-kc-chinese-entry hreflang="zh-Hans" href="{html_escape(home_url, quote=True)}">'
+        f'{homepage} · {html_escape(urlsplit(site_url).netloc)}</a>'
+        f'<span data-kc-public-account-contact>{account} '
+        '<a href="mailto:info@kcdesk.com" dir="ltr">info@kcdesk.com</a></span>'
+        '<p data-kc-locale-error role="status" hidden></p></aside>'
+    )
+    # Place it in normal document flow, near navigation and before application
+    # content. No overlay, remote dependency, auto-redirect or layout polling.
+    header = re.search(r"</header\s*>", source, re.I)
+    body = re.search(r"<body\b[^>]*>", source, re.I)
+    match = header or body
+    if match is None:
+        raise TranslationError("Locale page has no body for its Chinese fallback")
+    return source[:match.end()] + markup + source[match.end():]
 
 
 def remove_existing_locale_discovery(
@@ -4766,6 +4794,7 @@ def incremental_locale_html_sources(
     selected = {
         path: source for path, source in original_html.items()
         if index_plan[path].page_kind in {"core", "hub"}
+        or path.relative_to(root).as_posix() in LOCALE_APPLICATION_SHELLS
         or (index_plan[path].indexable and index_plan[path].page_kind in {"report-detail", "blog-detail"})
     }
     details = frozenset(
@@ -4793,9 +4822,15 @@ def incremental_locale_html_sources(
             index_plan[path] = replace(
                 decision, indexable=False, force_noindex_follow=True, reason="incremental-out-of-scope",
             )
-    available = frozenset(index_plan[path].canonical_root for path in selected if index_plan[path].canonical_root)
+    available = frozenset(
+        [index_plan[path].canonical_root for path in selected if index_plan[path].canonical_root]
+        + [site_url + "/" + path.relative_to(root).as_posix() for path in selected
+           if path.relative_to(root).as_posix() in LOCALE_APPLICATION_SHELLS]
+    )
     return {
-        path: restrict_html_to_cohort(source, canonical_by_path[path], available, known)
+        path: restrict_html_to_cohort(
+            source, canonical_by_path[path] or site_url + "/" + path.relative_to(root).as_posix(), available, known,
+        )
         for path, source in selected.items()
     }, known
 
@@ -4879,6 +4914,12 @@ def _build_localized_release(
         index_start_date=configured_start_date,
         index_allowlist=configured_allowlist,
     )
+    for path, decision in list(index_plan.items()):
+        if path.relative_to(root).as_posix() in LOCALE_APPLICATION_SHELLS:
+            index_plan[path] = replace(
+                decision, page_kind="core", indexable=False,
+                force_noindex_follow=True, reason="application-shell",
+            )
     history_plan = None
     scheduling_dates = {path: decision.publication_date for path, decision in index_plan.items()}
     if history_start_date:
@@ -5221,7 +5262,8 @@ def _build_localized_release(
 
     locale_css_source = assets_root / "locale.css"
     locale_runtime_source = assets_root / "locale-runtime.js"
-    for source_path in (locale_css_source, locale_runtime_source):
+    locale_recovery_source = assets_root / "locale-recovery.js"
+    for source_path in (locale_css_source, locale_runtime_source, locale_recovery_source):
         if not source_path.is_file():
             raise TranslationError(f"Missing locale asset: {source_path}")
     localized_css = (
@@ -5231,9 +5273,11 @@ def _build_localized_release(
     )
     (root / "assets" / "locale.css").write_text(localized_css, encoding="utf-8")
     shutil.copy2(locale_runtime_source, root / "assets" / "locale-runtime.js")
+    shutil.copy2(locale_recovery_source, root / "assets" / "locale-recovery.js")
     asset_digest = hashlib.sha256(
         (root / "assets" / "locale.css").read_bytes()
         + (root / "assets" / "locale-runtime.js").read_bytes()
+        + (root / "assets" / "locale-recovery.js").read_bytes()
     ).hexdigest()[:12]
 
     body_snapshots = {
@@ -5287,6 +5331,8 @@ def _build_localized_release(
                 localized_html = remove_localized_blog_zsxq_images(localized_html)
             if index_plan[path].force_noindex_follow:
                 localized_html = force_noindex_follow(localized_html)
+            localized_html = localize_report_preview(localized_html, locale)
+            localized_html = inject_locale_help(localized_html, locale, relative.as_posix(), site_url)
             target.write_text(localized_html, encoding="utf-8")
         if course_source is not None:
             target = locale_root / "data" / "course-materials.json"
@@ -5475,6 +5521,18 @@ def _build_localized_release(
         },
         "locales": list(LOCALES),
     }
+    def route_descriptor(relative: str) -> dict[str, Any]:
+        body = (root / relative).read_bytes()
+        return {"path": relative, "byte_size": len(body), "sha256": hashlib.sha256(body).hexdigest()}
+
+    manifest["application_routes"] = {
+        locale: {
+            name: route_descriptor(f"{locale}/{name}")
+            for name in sorted(LOCALE_APPLICATION_SHELLS) if root / name in localized_html_sources
+        }
+        for locale in LOCALES
+    }
+    manifest["recovery_asset"] = route_descriptor("assets/locale-recovery.js")
     if incremental:
         manifest["index_policy"].update(
             mode="incremental-publication-cutoff",

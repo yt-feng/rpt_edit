@@ -45,13 +45,6 @@
       || text.startsWith("zh-hans-");
   }
 
-  function primaryBrowserLocale() {
-    const languages = Array.isArray(navigator.languages) ? navigator.languages : [];
-    // navigator.language is the browser UI's primary language. The ordered
-    // content preference list may intentionally start with another language.
-    return String(navigator.language || languages[0] || "");
-  }
-
   function rootPathname(pathname) {
     const source = String(pathname || "/");
     const match = source.match(/^\/(?:ko|ja|ar)(?=\/|$)(.*)$/i);
@@ -426,6 +419,10 @@
 
   function rewriteAnchor(anchor, locale) {
     if (!LOCALIZED.has(locale) || !anchor || !anchor.getAttribute) return;
+    // Recovery and language-navigation links intentionally leave this locale.
+    // Preserve their full URL, including report id, query and fragment.
+    if (anchor.getAttribute("data-kc-chinese-entry") !== null
+      || /^zh(?:-|$)/i.test(String(anchor.getAttribute("hreflang") || "").trim())) return;
     const raw = String(anchor.getAttribute("href") || "").trim();
     if (!raw || raw.startsWith("#") || /^(?:mailto|tel|javascript|data):/i.test(raw)) return;
     let url;
@@ -572,37 +569,21 @@
   }
 
   function installSwitcher(locale) {
-    if (isSimplifiedChineseUi(primaryBrowserLocale())) return null;
+    // The content locale controls this entry point, not the browser language.
+    // Chinese pages never promote other languages; every locale keeps a way back.
+    if (!LOCALIZED.has(locale)) return null;
     if (document.querySelector("[data-kc-locale-switcher]")) return null;
-    const publishedAlternates = {};
-    if (!LOCALIZED.has(locale)) {
-      // Historical Chinese pages have no locale copies in incremental releases.
-      // Only offer the translated URLs explicitly published in the page head.
-      for (const alternate of document.head.querySelectorAll('link[rel~="alternate"][hreflang]')) {
-        const code = String(alternate.getAttribute("hreflang") || "").trim().toLowerCase();
-        if (!LOCALIZED.has(code)) continue;
-        if (publishedAlternates[code]) return null;
-        let url;
-        try {
-          url = new URL(alternate.getAttribute("href") || "", window.location.href);
-        } catch (_error) {
-          return null;
-        }
-        if (url.origin !== window.location.origin || !url.pathname.startsWith(`/${code}/`)) return null;
-        publishedAlternates[code] = url.toString();
-      }
-      if ([...LOCALIZED].some((code) => !publishedAlternates[code])) return null;
-    }
     const nav = document.createElement("nav");
     nav.className = "kc-locale-switcher";
     nav.dataset.kcLocaleSwitcher = "";
     nav.setAttribute("aria-label", switcherLabel(locale));
     for (const [code, config] of Object.entries(LOCALES)) {
       const link = document.createElement("a");
-      link.href = publishedAlternates[code] || localeUrl(code);
+      link.href = localeUrl(code);
       link.hreflang = code;
       link.lang = code;
       link.textContent = config.label;
+      if (code === "zh-Hans") link.setAttribute("data-kc-chinese-entry", "");
       if (code === locale) {
         link.className = "is-current";
         link.setAttribute("aria-current", "page");
