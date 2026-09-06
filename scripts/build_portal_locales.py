@@ -4744,6 +4744,61 @@ def copy_locale_assets(root: Path, locale: str) -> None:
     shutil.copytree(source, target, dirs_exist_ok=True)
 
 
+def incremental_locale_html_sources(
+    original_html: dict[Path, str],
+    canonical_by_path: dict[Path, str],
+    index_plan: dict[Path, LocaleIndexDecision],
+    *,
+    root: Path,
+    site_url: str,
+) -> tuple[dict[Path, str], frozenset[str]]:
+    """Select new detail pages and useful hubs before collecting paid units.
+
+    The plan is updated for omitted secondary hubs, so Chinese hreflang,
+    locale sitemaps, feeds, and rendering all use the same publication set.
+    Known URLs include aliases' actual paths, which have no locale copy.
+    """
+    known = frozenset(
+        [decision.canonical_root for decision in index_plan.values() if decision.canonical_root]
+        + [site_url + "/" + path.relative_to(root).as_posix() for path in original_html]
+    )
+    selected = {
+        path: source for path, source in original_html.items()
+        if index_plan[path].page_kind in {"core", "hub"}
+        or (index_plan[path].indexable and index_plan[path].page_kind in {"report-detail", "blog-detail"})
+    }
+    details = frozenset(
+        index_plan[path].canonical_root for path in selected
+        if index_plan[path].page_kind in {"report-detail", "blog-detail"}
+    )
+    omitted: set[Path] = set()
+    for path, source in selected.items():
+        decision = index_plan[path]
+        if decision.page_kind != "hub" or urlsplit(decision.canonical_root).path in {"/", "/reports/", "/blog/"}:
+            continue
+        linked = {
+            urljoin(canonical_by_path[path], html_unescape(raw)).split("#", 1)[0].split("?", 1)[0]
+            for _quote, raw in re.findall(r'\bhref\s*=\s*([\"\'])(.*?)\1', source, flags=re.I | re.S)
+        }
+        if not linked.intersection(details):
+            omitted.add(path)
+    for path in omitted:
+        selected.pop(path)
+        index_plan[path] = replace(
+            index_plan[path], indexable=False, force_noindex_follow=True, reason="empty-cohort-hub",
+        )
+    for path, decision in list(index_plan.items()):
+        if path not in selected and path not in omitted:
+            index_plan[path] = replace(
+                decision, indexable=False, force_noindex_follow=True, reason="incremental-out-of-scope",
+            )
+    available = frozenset(index_plan[path].canonical_root for path in selected if index_plan[path].canonical_root)
+    return {
+        path: restrict_html_to_cohort(source, canonical_by_path[path], available, known)
+        for path, source in selected.items()
+    }, known
+
+
 def _build_localized_release(
     *,
     root: Path,
@@ -4773,8 +4828,16 @@ def _build_localized_release(
     max_provider_cost_cny: str | float | int | None = None,
     run_state: TranslationRun,
 ) -> dict[str, Any]:
-    if translation_scope not in {"release", "month"}:
-        raise TranslationError("Translation scope must be release or month")
+    if translation_scope not in {"release", "month", "incremental"}:
+        raise TranslationError("Translation scope must be release, month, or incremental")
+    incremental = translation_scope == "incremental"
+    configured_start_date = parse_index_start_date(index_start_date)
+    configured_allowlist = tuple(index_allowlist)
+    if incremental:
+        if configured_start_date is None:
+            raise TranslationError("Incremental translation requires the fixed launch/index start date")
+        if history_start_date or history_state_in or configured_allowlist:
+            raise TranslationError("Incremental translation cannot include history release or an index allowlist")
     root = root.resolve()
     if not root.is_dir() or root == Path(root.anchor):
         raise TranslationError(f"Invalid built site root: {root}")
@@ -4808,8 +4871,6 @@ def _build_localized_release(
         html_paths.append(path)
     original_html = {path: path.read_text(encoding="utf-8") for path in html_paths}
     canonical_by_path = {path: extract_canonical(source) for path, source in original_html.items()}
-    configured_start_date = parse_index_start_date(index_start_date)
-    configured_allowlist = tuple(index_allowlist)
     index_plan = build_locale_index_plan(
         original_html,
         canonical_by_path,
@@ -4824,6 +4885,7 @@ def _build_localized_release(
             raise TranslationError("History release requires the fixed launch/index start date")
         if configured_allowlist:
             raise TranslationError("History release cannot bypass its month boundary through an allowlist")
+    if history_start_date or incremental:
         # Most reports expose a catalog date but no genuine datePublished.
         # Use that public date only for cohort scheduling; never rewrite the
         # original or translated structured-data publication date.
@@ -4851,6 +4913,7 @@ def _build_localized_release(
                 decision, indexable=new_report, force_noindex_follow=not new_report,
                 reason="new-report-catalog-date" if new_report else "deferred-report-catalog-date",
             )
+    if history_start_date:
         previous_history = json.loads(history_state_in.read_text(encoding="utf-8")) if history_state_in else None
         history_plan = plan_history_release(
             {
@@ -4874,12 +4937,19 @@ def _build_localized_release(
                 index_plan[path] = replace(decision, indexable=True, force_noindex_follow=False, reason="released-history")
         run_state.data["history_release"] = history_plan
         run_state.write()
+    scoped_cohort = history_plan is not None or incremental
+    incremental_sources: dict[Path, str] | None = None
+    incremental_known: frozenset[str] = frozenset()
+    if incremental:
+        incremental_sources, incremental_known = incremental_locale_html_sources(
+            original_html, canonical_by_path, index_plan, root=root, site_url=site_url,
+        )
     canonicals = [
         decision.canonical_root
         for decision in index_plan.values()
         if decision.indexable
     ]
-    known_canonicals = frozenset(
+    known_canonicals = incremental_known or frozenset(
         decision.canonical_root for decision in index_plan.values() if decision.canonical_root
     )
     eligible_canonicals = frozenset(canonicals)
@@ -4913,7 +4983,7 @@ def _build_localized_release(
     )
 
     def scoped_items(payload: dict[str, Any], *, for_translation: bool = False) -> dict[str, Any]:
-        if history_plan is None:
+        if not scoped_cohort:
             return payload
         included_ids = translation_report_ids if for_translation else eligible_report_ids
         items = [item for item in payload.get("items", []) if str(item.get("id") or "") in included_ids]
@@ -4950,7 +5020,7 @@ def _build_localized_release(
             )
 
     detail_overlay_sources = load_report_detail_overlay_sources(root)
-    if history_plan is not None:
+    if scoped_cohort:
         detail_overlay_sources = {key: scoped_items(payload, for_translation=True) for key, payload in detail_overlay_sources.items()}
 
     chart_index_path = root / "data" / "chart_search_index.json"
@@ -4974,7 +5044,7 @@ def _build_localized_release(
             chart_ids.append(chart_id)
     if len(chart_ids) != len(set(chart_ids)):
         raise TranslationError("Built public chart index has duplicate chart ids")
-    if history_plan is not None:
+    if scoped_cohort:
         # Standalone metadata is not an SEO detail page. Daily publishing must
         # not implicitly buy the entire historical chart/Hot Reports archive.
         # Explicit month pretranslation can collect it without publishing it.
@@ -4991,7 +5061,7 @@ def _build_localized_release(
         hot_report_index = {**hot_report_index, "items": [
             item for item in hot_report_index["items"]
             if str(item.get("report_id") or item.get("id") or "") in translation_report_ids
-            or in_metadata_window(item, metadata_start)
+            or ((not incremental or not item.get("report_id")) and in_metadata_window(item, metadata_start))
         ]}
 
     units: dict[str, TranslationUnit] = {}
@@ -5001,7 +5071,8 @@ def _build_localized_release(
         decision.canonical_root for decision in index_plan.values()
         if decision.indexable and decision.page_kind in {"report-detail", "blog-detail"}
     )
-    for path, source in original_html.items():
+    html_source_inventory = incremental_sources if incremental_sources is not None else original_html
+    for path, source in html_source_inventory.items():
         relative = path.relative_to(root)
         if history_plan is not None:
             decision = index_plan[path]
@@ -5075,7 +5146,7 @@ def _build_localized_release(
     feed_path = root / "feed.xml"
     if feed_path.is_file():
         feed_tree = ET.parse(feed_path).getroot()
-        if history_plan is not None:
+        if scoped_cohort:
             for channel in feed_tree.findall("channel"):
                 for item in list(channel.findall("item")):
                     link = str(item.findtext("link") or "").strip()
@@ -5087,7 +5158,7 @@ def _build_localized_release(
         path = root / name
         if path.is_file():
             llms_sources[name] = path.read_text(encoding="utf-8")
-            if history_plan is not None:
+            if scoped_cohort:
                 llms_sources[name] = filter_locale_llms_source(
                     llms_sources[name], name, site_url=site_url,
                     known_canonicals=known_canonicals, eligible_canonicals=translation_canonicals,
@@ -5113,7 +5184,7 @@ def _build_localized_release(
         max_provider_cost_cny=max_provider_cost_cny,
         run_state=run_state,
         priority_keys=frozenset(priority_units),
-        preserve_unused_cache=history_plan is not None,
+        preserve_unused_cache=scoped_cohort,
     )
     if preflight_only:
         result = {
@@ -5226,7 +5297,7 @@ def _build_localized_release(
         for kind in CATALOG_OVERLAY_SOURCES:
             source_payload = scoped_items(catalog_sources[kind])
             overlay = render_catalog_overlay(source_payload, locale, cache, kind=kind)
-            if history_plan is not None:
+            if scoped_cohort:
                 overlay["scoped"] = True
             relative_overlay_path = Path("data") / "i18n" / locale / CATALOG_OVERLAY_FILES[kind]
             overlay_path = root / relative_overlay_path
@@ -5244,7 +5315,7 @@ def _build_localized_release(
             kind = f"detail:{prefix}"
             source_payload = scoped_items(source_payload)
             overlay = render_catalog_overlay(source_payload, locale, cache, kind=kind)
-            if history_plan is not None:
+            if scoped_cohort:
                 overlay["scoped"] = True
             relative_overlay_path = Path("data") / "i18n" / locale / f"catalog-detail-{prefix}.json"
             overlay_path = root / relative_overlay_path
@@ -5257,14 +5328,14 @@ def _build_localized_release(
                 "sha256": hashlib.sha256(overlay_bytes).hexdigest(),
             }
         published_chart_index = chart_index
-        if history_plan is not None:
+        if scoped_cohort:
             published_chart_index = {**chart_index, "reports": [
                 report for report in chart_index["reports"]
                 if str(report.get("report_id") or report.get("id") or "") in eligible_report_ids
                 or (not report.get("report_id") and in_metadata_window(report, configured_start_date))
             ]}
         chart_overlay = render_chart_overlay(published_chart_index, locale, cache)
-        if history_plan is not None:
+        if scoped_cohort:
             chart_overlay["scoped"] = True
         relative_chart_overlay_path = Path("data") / "i18n" / locale / CHART_OVERLAY_FILE
         chart_overlay_path = root / relative_chart_overlay_path
@@ -5279,14 +5350,14 @@ def _build_localized_release(
             "sha256": hashlib.sha256(chart_overlay_bytes).hexdigest(),
         }
         published_hot_report_index = hot_report_index
-        if history_plan is not None:
+        if scoped_cohort:
             published_hot_report_index = {**hot_report_index, "items": [
                 item for item in hot_report_index["items"]
                 if str(item.get("report_id") or item.get("id") or "") in eligible_report_ids
-                or in_metadata_window(item, configured_start_date)
+                or ((not incremental or not item.get("report_id")) and in_metadata_window(item, configured_start_date))
             ]}
         hot_report_overlay = render_hot_report_overlay(published_hot_report_index, locale, cache)
-        if history_plan is not None:
+        if scoped_cohort:
             hot_report_overlay["scoped"] = True
         relative_hot_report_overlay_path = Path("data") / "i18n" / locale / HOT_REPORT_OVERLAY_FILE
         hot_report_overlay_path = root / relative_hot_report_overlay_path
@@ -5301,7 +5372,7 @@ def _build_localized_release(
         }
         if feed_tree is not None:
             localized_feed = ET.fromstring(ET.tostring(feed_tree, encoding="utf-8"))
-            if history_plan is not None:
+            if scoped_cohort:
                 for channel in localized_feed.findall("channel"):
                     for item in list(channel.findall("item")):
                         if str(item.findtext("link") or "").strip() not in eligible_canonicals:
@@ -5344,7 +5415,10 @@ def _build_localized_release(
         "model": cache["model"],
         "source_unit_count": len(units),
         "source_character_count": sum(len(unit.source) for unit in units.values()),
-        "html_page_count": len(html_paths),
+        "translation_scope": translation_scope,
+        "html_page_count": len(localized_html_sources),
+        "source_html_page_count": len(html_paths),
+        "omitted_html_page_count": len(html_paths) - len(localized_html_sources),
         "indexable_page_count": len(set(canonicals)),
         "source_indexable_page_count": len({
             decision.canonical_root
@@ -5353,8 +5427,8 @@ def _build_localized_release(
         }),
         "deferred_index_page_count": len({
             decision.canonical_root
-            for decision in index_plan.values()
-            if decision.canonical_root and decision.force_noindex_follow
+            for path, decision in index_plan.items()
+            if path in localized_html_sources and decision.canonical_root and decision.force_noindex_follow
         }),
         "index_policy": {
             "mode": "fixed-publication-cutoff",
@@ -5396,9 +5470,22 @@ def _build_localized_release(
         },
         "locales": list(LOCALES),
     }
+    if incremental:
+        manifest["index_policy"].update(
+            mode="incremental-publication-cutoff",
+            default="new-content-and-core-hubs",
+            translation_mode="new-content-only",
+            history_release_count=0,
+            report_date_basis="catalog-date-with-publication-fallback",
+            blog_date_basis="publication-date",
+        )
     manifest_path = root / "data" / "i18n" / "manifest.json"
     manifest_path.parent.mkdir(parents=True, exist_ok=True)
     manifest_path.write_bytes(stable_json_bytes(manifest))
+    if incremental:
+        # Rebuilding a previously staged history candidate must not retain an
+        # obsolete publication ledger beside the new-content-only manifest.
+        (manifest_path.parent / "history-release.json").unlink(missing_ok=True)
     if history_plan is not None:
         manifest["index_policy"]["history_release"] = {
             "history_start_date": history_start_date,
@@ -5415,7 +5502,7 @@ def _build_localized_release(
         manifest_path.write_bytes(stable_json_bytes(manifest))
         (manifest_path.parent / "history-release.json").write_bytes(stable_json_bytes(history_plan))
     log(
-        f"Localized release complete: pages={len(html_paths)} units={len(units)} "
+        f"Localized release complete: pages={len(localized_html_sources)} units={len(units)} "
         f"catalog={len(catalog.get('items', []))} locales={','.join(LOCALES)}"
     )
     return manifest
@@ -5497,8 +5584,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--history-release-date", help="One fixed Asia/Shanghai calendar date for this candidate")
     parser.add_argument("--history-daily-limit", type=int, default=100)
     parser.add_argument("--history-paused", action="store_true")
-    parser.add_argument("--translation-scope", choices=("release", "month"), default="release",
-                        help="Translate the bounded published cohort by default; month also prepays unreleased history")
+    parser.add_argument("--translation-scope", choices=("release", "month", "incremental"), default="release",
+                        help="release translates the published cohort; month prepays history; incremental emits only new content and core hubs")
     allowlist_default = os.getenv("PORTAL_LOCALE_INDEX_ALLOWLIST", "").strip()
     parser.add_argument(
         "--index-allowlist",

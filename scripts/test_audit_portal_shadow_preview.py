@@ -92,7 +92,7 @@ def sample_plan() -> dict:
             ("blog-detail", f"/{locale}/blog/market-outlook.html", True),
             ("reports", f"/{locale}/reports/", False),
             ("report-detail", f"/{locale}/reports/ai-industry.html", False),
-            ("charts", f"/{locale}/charts.html", False),
+            ("charts", f"/{locale}/charts", False),
         ):
             samples.append({
                 "kind": kind,
@@ -117,7 +117,9 @@ def locale_html(locale: str, direction: str) -> bytes:
 def write_plan_site(root: Path) -> None:
     for sample in sample_plan()["samples"]:
         relative = sample["path"].lstrip("/")
-        if relative.endswith("/"):
+        if sample["kind"] == "charts":
+            relative += ".html"
+        elif relative.endswith("/"):
             relative += "index.html"
         page = root / relative
         page.parent.mkdir(parents=True, exist_ok=True)
@@ -264,6 +266,26 @@ class ShadowPreviewAuditTests(unittest.TestCase):
                 )
         return result, opener
 
+    def test_route_for_html_matches_worker_canonicals_for_every_locale(self) -> None:
+        cases = (
+            ("index.html", ""),
+            ("blog/index.html", "blog/"),
+            ("blog/market-outlook.html", "blog/market-outlook.html"),
+            ("reports/index.html", "reports/"),
+            ("reports/ai-industry.html", "reports/ai-industry.html"),
+            ("reports/institutions/nomura/index.html", "reports/institutions/nomura/"),
+            ("charts.html", "charts"),
+            ("blog/charts.html", "blog/charts.html"),
+        )
+        for locale in audit.LOCALES:
+            locale_root = Path("site") / locale
+            for filename, route in cases:
+                with self.subTest(locale=locale, filename=filename):
+                    self.assertEqual(
+                        audit.route_for_html(locale, locale_root, locale_root / filename),
+                        f"/{locale}/{route}",
+                    )
+
     def test_build_plan_covers_each_locale_surface_and_zsxq_cleanup_sample(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -294,6 +316,10 @@ class ShadowPreviewAuditTests(unittest.TestCase):
                     set(audit.REQUIRED_SAMPLE_KINDS) | {"blog-zsxq-clean"},
                 )
                 self.assertIn(f"/{locale}/blog/z-paid-note.html", {row["path"] for row in locale_samples})
+                self.assertEqual(
+                    next(row["path"] for row in locale_samples if row["kind"] == "charts"),
+                    f"/{locale}/charts",
+                )
 
     def test_build_plan_requires_real_detail_pages(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -431,6 +457,52 @@ class ShadowPreviewAuditTests(unittest.TestCase):
         for request in opener.requests:
             self.assertEqual(request.get_header("Cache-control"), "no-cache")
             self.assertEqual(request.get_header("User-agent"), "Portal-Shadow-Audit/1.0")
+
+    def test_generated_plan_audits_canonical_charts_without_following_aliases(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            write_plan_site(root)
+            plan = audit.build_plan(root)
+        _, responses = response_fixture()
+        aliases = set()
+        for locale in audit.LOCALES:
+            alias = f"/{locale}/charts.html"
+            aliases.add(alias)
+            responses[alias] = FakeResponse(
+                b"", status=301,
+                headers={"Location": f"{BASE_URL}/{locale}/charts"},
+            )
+        result, opener = self.run_audit(plan, responses)
+        requested_paths = {urlsplit(request.full_url).path for request in opener.requests}
+        self.assertEqual(result["sample_count"], 18)
+        self.assertTrue({f"/{locale}/charts" for locale in audit.LOCALES} <= requested_paths)
+        self.assertFalse(aliases & requested_paths)
+
+    def test_rejects_noncanonical_charts_samples_before_network(self) -> None:
+        for locale in audit.LOCALES:
+            for suffix in ("charts.html", "charts/", "charts/index.html"):
+                with self.subTest(locale=locale, suffix=suffix):
+                    plan = sample_plan()
+                    sample = next(
+                        row for row in plan["samples"]
+                        if row["locale"] == locale and row["kind"] == "charts"
+                    )
+                    sample["path"] = f"/{locale}/{suffix}"
+                    with self.assertRaisesRegex(audit.AuditError, "sample identity is invalid"):
+                        audit.validate_samples(plan)
+
+    def test_canonical_sample_redirects_still_fail_closed(self) -> None:
+        for location in (f"{BASE_URL}/ko/charts/", f"{PUBLIC_ORIGIN}/ko/charts"):
+            with self.subTest(location=location):
+                plan, responses = response_fixture()
+                responses["/ko/charts"] = FakeResponse(
+                    b"", status=301, headers={"Location": location},
+                )
+                with self.assertRaisesRegex(audit.AuditError, "fetch failed after retries"):
+                    self.run_audit(plan, responses)
+                self.assertIsNone(audit.NoRedirect().redirect_request(
+                    None, None, 301, "Moved Permanently", {"Location": location}, location,
+                ))
 
     def test_rejects_non_bare_or_malformed_shadow_origins_before_network(self) -> None:
         plan, responses = response_fixture()

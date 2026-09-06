@@ -27,6 +27,7 @@ function createHarness({
   overlayTranslations = {},
   overlayFailures = [],
   initialControls = [],
+  headAlternates = [],
 } = {}) {
   const observers = [];
   const redirects = [];
@@ -99,6 +100,11 @@ function createHarness({
       if (selector === "a[href]") {
         return this.tagName === "A" && this.getAttribute("href") !== null;
       }
+      if (selector === 'link[rel~="alternate"][hreflang]') {
+        return this.tagName === "LINK"
+          && String(this.getAttribute("rel") || "").split(/\s+/).includes("alternate")
+          && this.getAttribute("hreflang") !== null;
+      }
       if (selector === "textarea") return this.tagName === "TEXTAREA";
       const inputType = String(selector).match(/^input\[type=["']([^"']+)["']\]$/);
       return Boolean(
@@ -123,11 +129,13 @@ function createHarness({
 
   const html = new ElementMock("html");
   html.lang = htmlLang;
+  const head = new ElementMock("head");
   const body = new ElementMock("body");
 
   document = {
     readyState: "complete",
     documentElement: html,
+    head,
     body,
     createElement(tagName) {
       return new ElementMock(tagName);
@@ -154,6 +162,13 @@ function createHarness({
       for (const callback of observers) callback([{ addedNodes: [node] }]);
     },
   };
+  for (const { hreflang, href: alternateHref } of headAlternates) {
+    const alternate = document.createElement("link");
+    alternate.setAttribute("rel", "alternate");
+    alternate.setAttribute("hreflang", hreflang);
+    alternate.setAttribute("href", alternateHref);
+    document.head.append(alternate);
+  }
   const initialControlNodes = initialControls.map(({ tagName, type }) => {
     const control = document.createElement(tagName);
     if (type) control.setAttribute("type", type);
@@ -322,6 +337,9 @@ function assertNoSwitcherForSimplifiedChinese() {
       htmlLang: "zh-Hans",
       browserLanguages: [browserLocale, "en-US"],
       href: originalHref,
+      headAlternates: ["ko", "ja", "ar"].map((hreflang) => ({
+        hreflang, href: `https://portal.example.invalid/${hreflang}/reports/`,
+      })),
     });
     assert.equal(
       harness.document.querySelector("[data-kc-locale-switcher]"),
@@ -393,6 +411,43 @@ function assertSwitcherForNonSimplifiedBrowser() {
     "the link observer must not rewrite the switcher's Chinese root-site link back into the current locale",
   );
   assert.equal(harness.redirects.length, 0, "creating the switcher must not navigate");
+}
+
+function assertRootSwitcherRequiresPublishedAlternates() {
+  const published = ["ko", "ja", "ar"].map((hreflang) => ({
+    hreflang, href: `https://portal.example.invalid/${hreflang}/blog/current.html`,
+  }));
+  for (const headAlternates of [
+    [],
+    published.slice(0, 2),
+    [...published.slice(0, 2), { hreflang: "ar", href: "https://other.example.invalid/ar/blog/current.html" }],
+    [...published.slice(0, 2), { hreflang: "ar", href: "/ko/blog/current.html" }],
+    [...published, published[0]],
+  ]) {
+    const harness = createHarness({
+      href: "https://portal.example.invalid/blog/old.html", headAlternates,
+    });
+    assert.equal(harness.document.querySelector("[data-kc-locale-switcher]"), null,
+      "Chinese pages without one valid published alternate for every language must not offer missing locale pages");
+    assert.deepEqual(harness.fetchCalls, [], "checking published alternates must not make requests");
+  }
+  const harness = createHarness({
+    href: "https://portal.example.invalid/blog/current-alias.html?from=nav#summary",
+    headAlternates: published,
+  });
+  const switcher = harness.document.querySelector("[data-kc-locale-switcher]");
+  assert.ok(switcher, "published Chinese pages must retain the language switcher");
+  assert.equal(switcher.children.length, 4);
+  for (const alternate of published) {
+    const link = switcher.children.find((item) => item.hreflang === alternate.hreflang);
+    assert.equal(link.href, alternate.href, "use the declared canonical alternate instead of inventing an alias URL");
+  }
+  assert.equal(harness.redirects.length, 0, "checking published alternates must not navigate");
+  const localizedAccount = createHarness({
+    htmlLang: "ko", href: "https://portal.example.invalid/ko/account.html",
+  });
+  assert.equal(localizedAccount.document.querySelector("[data-kc-locale-switcher]").children.length, 4,
+    "localized account pages keep all language choices even without indexable hreflang declarations");
 }
 
 async function assertCatalogTitleOverlay() {
@@ -934,6 +989,7 @@ function assertDynamicLinkLocalization() {
   assertLocalePathMapping();
   assertLocaleFormattingConfiguration();
   assertSwitcherForNonSimplifiedBrowser();
+  assertRootSwitcherRequiresPublishedAlternates();
   await assertCatalogTitleOverlay();
   await assertOverlaySelectionAndUnrelatedJsonIsolation();
   await assertReportDetailUsesPrefixOverlay();

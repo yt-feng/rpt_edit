@@ -471,13 +471,32 @@
   function installSwitcher(locale) {
     if (isSimplifiedChineseUi(primaryBrowserLocale())) return null;
     if (document.querySelector("[data-kc-locale-switcher]")) return null;
+    const publishedAlternates = {};
+    if (!LOCALIZED.has(locale)) {
+      // Historical Chinese pages have no locale copies in incremental releases.
+      // Only offer the translated URLs explicitly published in the page head.
+      for (const alternate of document.head.querySelectorAll('link[rel~="alternate"][hreflang]')) {
+        const code = String(alternate.getAttribute("hreflang") || "").trim().toLowerCase();
+        if (!LOCALIZED.has(code)) continue;
+        if (publishedAlternates[code]) return null;
+        let url;
+        try {
+          url = new URL(alternate.getAttribute("href") || "", window.location.href);
+        } catch (_error) {
+          return null;
+        }
+        if (url.origin !== window.location.origin || !url.pathname.startsWith(`/${code}/`)) return null;
+        publishedAlternates[code] = url.toString();
+      }
+      if ([...LOCALIZED].some((code) => !publishedAlternates[code])) return null;
+    }
     const nav = document.createElement("nav");
     nav.className = "kc-locale-switcher";
     nav.dataset.kcLocaleSwitcher = "";
     nav.setAttribute("aria-label", switcherLabel(locale));
     for (const [code, config] of Object.entries(LOCALES)) {
       const link = document.createElement("a");
-      link.href = localeUrl(code);
+      link.href = publishedAlternates[code] || localeUrl(code);
       link.hreflang = code;
       link.lang = code;
       link.textContent = config.label;
