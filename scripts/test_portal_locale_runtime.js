@@ -476,7 +476,29 @@ function assertLocaleFormattingConfiguration() {
   }
 }
 
-function assertSwitcherForNonSimplifiedBrowser() {
+function assertSwitcherForEveryLocalizedPage() {
+  for (const locale of ["ko", "ja", "ar"]) {
+    for (const browserLocale of ["zh-CN", "zh-Hans", "en-US", "ja-JP"]) {
+      for (const page of ["", "report.html?id=report-1#download", "reports/example.html", "blog/current.html", "account.html"]) {
+        const harness = createHarness({
+          htmlLang: locale, browserLanguage: browserLocale, browserLanguages: [browserLocale],
+          href: `https://portal.example.invalid/${locale}/${page}`,
+        });
+        const switcher = harness.document.querySelector("[data-kc-locale-switcher]");
+        assert.ok(switcher, `${locale}/${page} keeps Chinese entry for a ${browserLocale} browser`);
+        const chineseLink = switcher.children.find((link) => link.hreflang === "zh-Hans");
+        assert.equal(chineseLink.href, `https://portal.example.invalid/${page}`);
+        assert.equal(chineseLink.getAttribute("data-kc-chinese-entry"), "");
+        assert.equal(harness.redirects.length, 0);
+        // Moving an existing switcher under newly inserted content must not
+        // send its Chinese link back through the current locale.
+        const wrapper = harness.document.createElement("section");
+        wrapper.append(switcher);
+        harness.document.body.append(wrapper);
+        assert.equal(chineseLink.href, `https://portal.example.invalid/${page}`);
+      }
+    }
+  }
   const harness = createHarness({
     htmlLang: "ja",
     browserLanguage: "en-US",
@@ -497,7 +519,7 @@ function assertSwitcherForNonSimplifiedBrowser() {
   assert.equal(harness.redirects.length, 0, "creating the switcher must not navigate");
 }
 
-function assertRootSwitcherRequiresPublishedAlternates() {
+function assertChinesePagesNeverShowLanguageSwitcher() {
   const published = ["ko", "ja", "ar"].map((hreflang) => ({
     hreflang, href: `https://portal.example.invalid/${hreflang}/blog/current.html`,
   }));
@@ -515,18 +537,16 @@ function assertRootSwitcherRequiresPublishedAlternates() {
       "Chinese pages without one valid published alternate for every language must not offer missing locale pages");
     assert.deepEqual(harness.fetchCalls, [], "checking published alternates must not make requests");
   }
-  const harness = createHarness({
-    href: "https://portal.example.invalid/blog/current-alias.html?from=nav#summary",
-    headAlternates: published,
-  });
-  const switcher = harness.document.querySelector("[data-kc-locale-switcher]");
-  assert.ok(switcher, "published Chinese pages must retain the language switcher");
-  assert.equal(switcher.children.length, 4);
-  for (const alternate of published) {
-    const link = switcher.children.find((item) => item.hreflang === alternate.hreflang);
-    assert.equal(link.href, alternate.href, "use the declared canonical alternate instead of inventing an alias URL");
+  for (const browserLocale of ["zh-CN", "en-US", "ja-JP", "ko-KR", "ar"]) {
+    const harness = createHarness({
+      href: "https://portal.example.invalid/blog/current-alias.html?from=nav#summary",
+      browserLanguages: [browserLocale], headAlternates: published,
+    });
+    assert.equal(harness.document.querySelector("[data-kc-locale-switcher]"), null,
+      "even published Chinese pages must not proactively show language choices");
+    assert.equal(harness.redirects.length, 0, "Chinese pages must not navigate");
+    assert.deepEqual(harness.fetchCalls, [], "Chinese pages must not request locale resources");
   }
-  assert.equal(harness.redirects.length, 0, "checking published alternates must not navigate");
   const localizedAccount = createHarness({
     htmlLang: "ko", href: "https://portal.example.invalid/ko/account.html",
   });
@@ -960,6 +980,34 @@ async function assertScopedDetailMapDropsMissingPrimaryAndRelatedRows() {
   assert.deepEqual(cloneJson(empty), {}, "an excluded standalone detail primary must become an empty record");
 }
 
+async function assertLocalizedReportShellUsesScopedDetailPayload() {
+  for (const locale of ["ko", "ja", "ar"]) {
+    const reportId = "ab-published";
+    const harness = createHarness({
+      htmlLang: locale, browserLanguages: ["zh-CN"],
+      href: `https://portal.example.invalid/${locale}/report.html?id=${reportId}#download`,
+      responsePayloads: {
+        "/data/report_details/ab.json": { reports: {
+          [reportId]: { item: { id: reportId, title: "Source report", title_zh: "中文原题" }, related: [] },
+          "ab-omitted": { item: { id: "ab-omitted", title: "Old report" }, related: [] },
+        } },
+      },
+      overlayTranslations: { "detail:ab": {
+        scoped: true, items: { [reportId]: { title: "Published localized title" } },
+      } },
+    });
+    const response = await harness.window.fetch("data/report_details/ab.json");
+    const payload = await response.json();
+    assert.deepEqual(Object.keys(payload.reports), [reportId]);
+    assert.equal(payload.reports[reportId].item.id, reportId);
+    assert.equal(payload.reports[reportId].item.title, "Published localized title");
+    assert.equal(payload.reports[reportId].item.title_zh, "");
+    assert.deepEqual(harness.fetchCalls, ["/data/report_details/ab.json", `/data/i18n/${locale}/catalog-detail-ab.json`],
+      "the noindex report shell loads the shared detail shard and only its matching locale overlay");
+    assert.equal(harness.redirects.length, 0);
+  }
+}
+
 async function assertScopedChartsRequireTheirOwnTranslation() {
   const harness = createHarness({
     htmlLang: "ar", browserLanguages: ["zh-CN"],
@@ -1067,6 +1115,29 @@ function assertDynamicLinkLocalization() {
       `${sharedHref} is shared infrastructure and must not receive a locale prefix`,
     );
   }
+  for (const attributes of [
+    { "data-kc-chinese-entry": "" },
+    { "data-kc-chinese-entry": "true" },
+    { hreflang: "zh-Hans" },
+    { hreflang: "zh-CN" },
+    { hreflang: "zh" },
+  ]) {
+    const anchor = harness.document.createElement("a");
+    const chineseHref = "/report.html?id=report-1&ref=recovery#download";
+    anchor.setAttribute("href", chineseHref);
+    for (const [name, value] of Object.entries(attributes)) anchor.setAttribute(name, value);
+    harness.document.body.append(anchor);
+    assert.equal(anchor.getAttribute("href"), chineseHref,
+      "an explicitly Chinese recovery link must retain its root path, query and hash");
+  }
+  const wrapper = harness.document.createElement("section");
+  const nested = harness.document.createElement("a");
+  nested.setAttribute("href", "https://portal.example.invalid/reports/report-1.html?q=bank#source");
+  nested.setAttribute("data-kc-chinese-entry", "");
+  wrapper.append(nested);
+  harness.document.body.append(wrapper);
+  assert.equal(nested.href, "https://portal.example.invalid/reports/report-1.html?q=bank#source",
+    "a fallback inside dynamically inserted markup must also remain Chinese");
   assert.equal(harness.redirects.length, 0, "link rewriting must not navigate the page");
 }
 
@@ -1173,8 +1244,8 @@ function assertIndexUiLocalization() {
   assertNoSwitcherForSimplifiedChinese();
   assertLocalePathMapping();
   assertLocaleFormattingConfiguration();
-  assertSwitcherForNonSimplifiedBrowser();
-  assertRootSwitcherRequiresPublishedAlternates();
+  assertSwitcherForEveryLocalizedPage();
+  assertChinesePagesNeverShowLanguageSwitcher();
   await assertCatalogTitleOverlay();
   await assertOverlaySelectionAndUnrelatedJsonIsolation();
   await assertReportDetailUsesPrefixOverlay();
@@ -1183,6 +1254,7 @@ function assertIndexUiLocalization() {
   await assertHotReportLocaleQueryFoldingAndFallback();
   await assertScopedCatalogExcludesUnpublishedRowsOnly();
   await assertScopedDetailMapDropsMissingPrimaryAndRelatedRows();
+  await assertLocalizedReportShellUsesScopedDetailPayload();
   await assertScopedChartsRequireTheirOwnTranslation();
   await assertScopedHotReportsStayLazyAndDoNotExposeOmissions();
   assertArabicInputDirection();

@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import base64
+import re
 import subprocess
 import sys
 import unicodedata
@@ -76,6 +77,15 @@ def repository_paths() -> tuple[Path, ...]:
     return tuple(paths)
 
 
+def redact_approved_public_contact(skeleton: str) -> str:
+    # This exact account-opening address is deliberately public. Keep the
+    # deployment domain, alternate addresses and all other identities blocked.
+    return re.sub(
+        r"(?<![a-z0-9.!#$%&'*+/=?^_`{|}~-])" + re.escape("info@kcdesk.com") + r"(?![a-z0-9.-])",
+        "[approved-public-account-email]", skeleton,
+    )
+
+
 def main() -> int:
     markers = tuple(marker.casefold() for marker in private_markers())
     failed_paths: set[str] = set()
@@ -90,7 +100,7 @@ def main() -> int:
             failed_paths.add(path.as_posix())
             continue
         try:
-            skeleton = confusable_skeleton(data.decode("utf-8"))
+            skeleton = redact_approved_public_contact(confusable_skeleton(data.decode("utf-8")))
         except UnicodeDecodeError:
             lowered = data.lower()
             if any(

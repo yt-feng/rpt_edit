@@ -14,6 +14,7 @@ import build_portal_locales as builder
 import test_build_portal_locales as fixtures
 import verify_portal_chinese_parity as parity
 from repair_portal_ja_catalog_titles import load_repairs
+from verify_portal_locale_routes import verify_locale_routes
 
 
 class IncrementalBuildTests(unittest.TestCase):
@@ -163,6 +164,44 @@ class IncrementalBuildTests(unittest.TestCase):
             self.assertTrue(hot["scoped"])
         for relative in ("reports/report-ai-1.html", "blog/old.html", "reports/page-17.html"):
             self.assertNotIn("ko", fixtures.alternate_links((self.site / relative).read_text()))
+
+    def test_real_uncanonicalized_application_shells_survive_incremental_publication(self):
+        template_root = Path(builder.__file__).resolve().parents[1] / "portal_suite/site_src"
+        originals = {}
+        for name in builder.LOCALE_APPLICATION_SHELLS:
+            template = template_root / name
+            self.assertTrue(template.is_file(), name)
+            originals[name] = template.read_text()
+            self.site.joinpath(name).write_text(originals[name])
+        self.assertIn("report.html", originals)
+        self.assertEqual(builder.extract_canonical(originals["report.html"]), "")
+        detail = self.site / "reports/report-new-5.html"
+        detail.write_text(detail.read_text().replace("</main>", '<a href="/report.html?id=report-new-5">打开报告</a></main>'))
+        manifest = self.build(fixtures.RecordingTranslator())
+        for locale in builder.LOCALES:
+            for name in originals:
+                with self.subTest(locale=locale, shell=name):
+                    source = self.site.joinpath(locale, name).read_text()
+                    self.assertIn('content="noindex,follow"', source)
+                    self.assertIn("data-kc-locale-help", source)
+                    self.assertIn("data-kc-chinese-equivalent", source)
+                    self.assertIn("mailto:info@kcdesk.com", source)
+                    self.assertIn("/assets/locale-recovery.js", source)
+                    self.assertEqual(manifest["application_routes"][locale][name]["path"], f"{locale}/{name}")
+                    self.assertNotIn(f"/{locale}/{name}", self.site.joinpath(f"sitemap-{locale}.xml").read_text())
+            self.assertIn(f'/{locale}/report.html?id=report-new-5', self.site.joinpath(locale, "reports/report-new-5.html").read_text())
+        for name, original in originals.items():
+            current = self.site.joinpath(name).read_text()
+            self.assertEqual(current[current.index("<body"):], original[original.index("<body"):])
+            self.assertNotIn("locale-runtime.js", current)
+            self.assertNotIn("locale-recovery.js", current)
+        self.assertTrue(self.site.joinpath("assets/locale-recovery.js").is_file())
+        def generated_response(url, timeout):
+            relative = url.removeprefix(fixtures.SITE_URL + "/")
+            return 200, {"content-language": relative.split("/", 1)[0]}, self.site.joinpath(relative).read_bytes()
+        report = verify_locale_routes(manifest, fixtures.SITE_URL, fetcher=generated_response)
+        self.assertEqual(report["status"], "passed", report)
+        self.assertEqual(report["request_count"], 16)
 
     def test_next_day_keeps_fixed_cutoff_reuses_paid_cache_and_preserves_chinese(self):
         snapshot = self.fixture.temporary_root / "chinese-before.json"

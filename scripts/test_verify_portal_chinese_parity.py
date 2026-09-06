@@ -432,6 +432,18 @@ class ChineseParityTests(unittest.TestCase):
         with self.assertRaisesRegex(parity.ParityError, "path set changed"):
             self._verify()
 
+    def test_chinese_without_picker_bootstrap_passes_but_direct_recovery_asset_fails(self) -> None:
+        self._verified_site()
+        for path in self.site.glob("*.html"):
+            data = path.read_bytes()
+            data = parity.BOOTSTRAP_RE.sub(b"", data)
+            path.write_bytes(data)
+        self._verify()
+        path = self.site / "index.html"
+        path.write_text(path.read_text().replace("</head>", '<script src="/assets/locale-recovery.js"></script></head>'))
+        with self.assertRaisesRegex(parity.ParityError, "statically loads locale assets"):
+            self._verify()
+
     def test_wrong_locale_href_fails(self) -> None:
         self._verified_site()
         path = self.site / "index.html"

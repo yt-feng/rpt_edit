@@ -110,6 +110,7 @@ class PortalLocaleBuildTests(unittest.TestCase):
         (self.site / "data").mkdir(parents=True)
         (self.site / "reports" / "topics" / "ai").mkdir(parents=True)
         self.assets.mkdir(parents=True)
+        (self.assets / "locale-recovery.js").write_text("// locale recovery test fixture\n", encoding="utf-8")
 
         (self.site / "index.html").write_text(
             """<!doctype html>
@@ -583,9 +584,9 @@ class PortalLocaleBuildTests(unittest.TestCase):
         })
         root_home = (self.site / "index.html").read_text(encoding="utf-8")
         self.assertIn('<meta property="og:site_name" content="KC桌面">', root_home)
-        self.assertRegex(root_home, r"<script data-kc-locale-bootstrap>.*locale-runtime\.js\?v=[0-9a-f]{12}")
-        self.assertIn('n.language||n.languages&&n.languages[0]', root_home)
-        self.assertIn('l==="zh"||/^zh-(?:cn|sg|hans)(?:-|$)/.test(l)', root_home)
+        self.assertNotIn("data-kc-locale-bootstrap", root_home)
+        self.assertNotIn("locale-runtime.js", root_home)
+        self.assertNotIn("locale-recovery.js", root_home)
         self.assertNotRegex(root_home, r'<script defer src="/assets/locale-runtime\.js')
         self.assertNotRegex(root_home, r'<link rel="stylesheet" href="/assets/locale\.css')
 
@@ -1142,7 +1143,7 @@ class PortalLocaleBuildTests(unittest.TestCase):
             for relative in deferred:
                 localized = (self.site / locale / relative.lstrip("/")).read_text(encoding="utf-8")
                 self.assertIn('<meta name="robots" content="noindex,follow">', localized)
-                self.assertNotIn('hreflang="', localized)
+            self.assertEqual(alternate_links(localized), {})
             for relative in ("reports/recent-report.html", "reports/curated-report.html", "blog/recent-blog.html"):
                 localized = (self.site / locale / relative).read_text(encoding="utf-8")
                 self.assertNotIn('content="noindex,follow"', localized)
@@ -1199,7 +1200,7 @@ class PortalLocaleBuildTests(unittest.TestCase):
         })
         for locale in builder.LOCALES:
             self.assertNotIn(f'hreflang="{locale}"', deferred_root)
-        self.assertEqual(deferred_root.count("data-kc-locale-bootstrap"), 1)
+        self.assertEqual(deferred_root.count("data-kc-locale-bootstrap"), 0)
         for name, before in chinese_llms.items():
             current = (self.site / name).read_bytes()
             self.assertEqual(current, before)
@@ -1383,7 +1384,7 @@ class PortalLocaleBuildTests(unittest.TestCase):
             "ja": f"{SITE_URL}/ja/",
             "ar": f"{SITE_URL}/ar/",
         })
-        self.assertEqual(first_home.count("data-kc-locale-bootstrap"), 1)
+        self.assertEqual(first_home.count("data-kc-locale-bootstrap"), 0)
 
         for locale in builder.LOCALES:
             localized_home = (self.site / locale / "index.html").read_text(encoding="utf-8")
