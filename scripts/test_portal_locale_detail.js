@@ -180,7 +180,15 @@ async function run() {
       translate: async (_env, messages) => {
         translations++;
         assert.doesNotMatch(messages[1].content, /NEVER_SEND|filename/);
-        return Object.fromEntries(Object.keys(JSON.parse(messages[1].content)).map((key) => [key, "日本語の公開レポート"]));
+        const input = JSON.parse(messages[1].content);
+        assert.deepEqual(Object.keys(input).sort(), ["fields", "locale", "target_language", "task"]);
+        assert.equal(input.locale, "ja");
+        assert.equal(input.target_language, "Japanese (日本語)");
+        assert.match(input.task, /Translate every field completely into Japanese/);
+        assert.deepEqual(input.fields, { title: "中文公开标题", summary: "中文公开摘要" });
+        // The prompt envelope is not the provider's output schema: only the
+        // nested source fields are returned as translated display fields.
+        return Object.fromEntries(Object.keys(input.fields).map((key) => [key, "日本語の公開レポート"]));
       },
     };
     const fetch = async (url, init) => {
@@ -191,6 +199,7 @@ async function run() {
     for (let visit = 0; visit < 2; visit++) {
       const h = harness({ fetch });
       assert.equal(await h.window.PortalLocaleDetail.prepare({ id: "ab-report" }, h.target), true);
+      assert.deepEqual(h.requests.map((row) => row.init.method), visit === 0 ? ["POST", "GET"] : ["POST"]);
       assert.equal(h.window.PortalLocaleDetail.apply({ id: "ab-report", filename: "source.pdf" }).filename, "source.pdf");
     }
     assert.equal(translations, 1, "A fresh page visit reuses the server's successful cache");
