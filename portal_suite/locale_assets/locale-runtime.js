@@ -155,7 +155,7 @@
       }
       if (scoped) {
         if (Array.isArray(node.items)) {
-          for (const key of ["item_count", "count", "total"]) {
+          for (const key of ["item_count", "count", "total", "total_item_count"]) {
             if (typeof node[key] === "number") node[key] = node.items.length;
           }
         }
@@ -461,6 +461,109 @@
     observer.observe(document.documentElement, { childList: true, subtree: true });
   }
 
+  const INDEX_UI = {
+    ko: {
+      labels: ["기관", "산업", "시작일", "종료일", "검색 범위", "표시 행 수"],
+      clear: "초기화", previous: "이전", next: "다음", allIndustries: "전체 산업", allInstitutions: "전체 기관",
+      scopes: ["전체 검색 (빠름)", "제목만", "목록 정보", "문서 본문 (대용량 색인)", "차트 텍스트"],
+      industries: ["은행 / 금융", "에너지 / 유틸리티", "주식 전략", "헬스케어 / 바이오", "금속 / 광업"],
+      reports: "개 보고서", page: "페이지", of: "/", updated: "업데이트", index: "본문 색인",
+      ready: "제목 및 목록 검색 준비 완료", unavailable: "본문 색인을 사용할 수 없음", recent: "최근 본문",
+      noFilters: "필터 없음",
+    },
+    ja: {
+      labels: ["機関", "業種", "開始日", "終了日", "検索対象", "表示件数"],
+      clear: "クリア", previous: "前へ", next: "次へ", allIndustries: "すべての業種", allInstitutions: "すべての機関",
+      scopes: ["すべて検索（高速）", "タイトルのみ", "カタログ項目", "文書本文（大規模索引）", "グラフのテキスト"],
+      industries: ["銀行 / 金融", "エネルギー / 公益事業", "株式戦略", "ヘルスケア / バイオ", "金属 / 鉱業"],
+      reports: "件のレポート", page: "ページ", of: "/", updated: "更新", index: "本文索引",
+      ready: "タイトル・カタログ検索の準備完了", unavailable: "本文索引を利用できません", recent: "最近の本文",
+      noFilters: "フィルターなし",
+    },
+    ar: {
+      labels: ["المؤسسة", "القطاع", "من تاريخ", "إلى تاريخ", "نطاق البحث", "عدد الصفوف"],
+      clear: "مسح", previous: "السابق", next: "التالي", allIndustries: "جميع القطاعات", allInstitutions: "جميع المؤسسات",
+      scopes: ["البحث في الكل (سريع)", "العنوان فقط", "حقول الفهرس", "نص المستند (فهرس كبير)", "نص الرسوم البيانية"],
+      industries: ["البنوك / الخدمات المالية", "الطاقة / المرافق", "استراتيجية الأسهم", "الرعاية الصحية / التقنية الحيوية", "المعادن / التعدين"],
+      reports: "تقرير", page: "الصفحة", of: "من", updated: "آخر تحديث", index: "فهرس النصوص",
+      ready: "البحث في العناوين والفهرس جاهز", unavailable: "فهرس النصوص غير متاح", recent: "النصوص الحديثة",
+      noFilters: "لا توجد عوامل تصفية",
+    },
+  };
+
+  function installIndexUi(locale) {
+    const words = INDEX_UI[locale];
+    if (!words || typeof document.getElementById !== "function") return;
+    const jobs = [];
+    const setText = (node, value) => {
+      if (node && node.textContent !== value) node.textContent = value;
+    };
+    const watch = (node, update) => {
+      if (node) jobs.push({ node, update: () => update(node) });
+    };
+    ["bankFilter", "industryFilter", "startDate", "endDate", "scopeFilter", "pageSize"].forEach((id, index) => {
+      const control = document.getElementById(id);
+      const label = control && control.parentNode && control.parentNode.querySelector("span");
+      watch(label, (node) => setText(node, words.labels[index]));
+    });
+    for (const [id, label] of [["clearFilters", words.clear], ["prevPage", words.previous], ["nextPage", words.next]]) {
+      watch(document.getElementById(id), (node) => setText(node, label));
+    }
+    const industryNames = ["Banks / Financials", "Energy / Utilities", "Equity Strategy", "Healthcare / Biotech", "Metals / Mining"];
+    watch(document.getElementById("industryFilter"), (node) => {
+      for (const option of node.querySelectorAll("option")) {
+        if (option.value === "") { setText(option, words.allIndustries); continue; }
+        const match = option.textContent.match(/^(.*?)(\s+\([\d,]+\))?$/);
+        const index = industryNames.indexOf(match ? match[1] : "");
+        if (index >= 0) setText(option, words.industries[index] + (match[2] || ""));
+      }
+    });
+    watch(document.getElementById("bankFilter"), (node) => {
+      for (const option of node.querySelectorAll("option")) {
+        if (option.value === "") setText(option, words.allInstitutions);
+      }
+    });
+    watch(document.getElementById("scopeFilter"), (node) => {
+      for (const option of node.querySelectorAll("option")) {
+        const index = ["all", "title", "catalog", "fulltext", "charts"].indexOf(option.value);
+        if (index >= 0) setText(option, words.scopes[index]);
+      }
+    });
+    watch(document.getElementById("pageInfo"), (node) => {
+      const match = node.textContent.trim().match(/^Page ([\d,]+) \/ ([\d,]+)$/);
+      if (match) setText(node, `${words.page} ${match[1]} ${words.of} ${match[2]}`);
+    });
+    watch(document.getElementById("resultCount"), (node) => {
+      const match = node.textContent.trim().match(/^([\d,]+) of ([\d,]+) reports$/);
+      if (match) setText(node, `${match[1]} ${words.of} ${match[2]} ${words.reports}`);
+    });
+    watch(document.getElementById("activeFilters"), (node) => {
+      if (node.textContent === "No filters") setText(node, words.noFilters);
+    });
+    watch(document.getElementById("catalogMeta"), (node) => {
+      const text = node.textContent.split(" | ").map((part) => {
+        if (part === "Title and catalog search ready") return words.ready;
+        if (part === "Text index unavailable") return words.unavailable;
+        if (part.startsWith("Updated ")) return `${words.updated} ${part.slice(8)}`;
+        const count = part.match(/^([\d,]+) reports$/);
+        if (count) return `${count[1]} ${words.reports}`;
+        const index = part.match(/^Text index ([\d,]+) reports( \+)?( \(recent text\))?$/);
+        return index ? `${words.index} ${index[1]} ${words.reports}${index[2] || ""}${index[3] ? ` (${words.recent})` : ""}` : part;
+      }).join(" | ");
+      setText(node, text);
+    });
+    jobs.forEach((job) => job.update());
+    if (!jobs.length || typeof MutationObserver !== "function") return;
+    const observer = new MutationObserver((records) => {
+      // Observe only the named UI fields. Idempotent writes settle after one
+      // update and never scan or translate report titles or institution names.
+      for (const job of jobs) {
+        if (records.some((record) => record.target === job.node || job.node.contains(record.target))) job.update();
+      }
+    });
+    jobs.forEach(({ node }) => observer.observe(node, { childList: true, subtree: true, characterData: true }));
+  }
+
   function switcherLabel(locale) {
     if (locale === "ko") return "언어 선택";
     if (locale === "ja") return "言語を選択";
@@ -518,6 +621,7 @@
   function start() {
     rewriteLocalizedLinks(contentLocale);
     applyArabicInputDirection(contentLocale);
+    installIndexUi(contentLocale);
     installSwitcher(contentLocale);
     watchLocalizedLinks(contentLocale);
   }
