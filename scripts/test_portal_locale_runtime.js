@@ -28,12 +28,14 @@ function createHarness({
   overlayFailures = [],
   initialControls = [],
   headAlternates = [],
+  indexUi = false,
 } = {}) {
   const observers = [];
   const redirects = [];
   const fetchCalls = [];
   let currentHref = href;
   let document;
+  let mutationCount = 0;
 
   class ElementMock {
     constructor(tagName) {
@@ -44,7 +46,7 @@ function createHarness({
       this.attributes = new Map();
       this.dataset = {};
       this.className = "";
-      this.textContent = "";
+      this._textContent = "";
       this.classList = {
         values: new Set(),
         add: (...names) => names.forEach((name) => this.classList.values.add(name)),
@@ -60,6 +62,22 @@ function createHarness({
       const key = String(name);
       return this.attributes.has(key) ? this.attributes.get(key) : null;
     }
+
+    get textContent() { return this._textContent; }
+
+    set textContent(value) {
+      this._textContent = String(value);
+      if (document) document.notify({ type: "childList", target: this, addedNodes: [] });
+    }
+
+    get value() { return this.getAttribute("value") || ""; }
+    set value(value) { this.setAttribute("value", value); }
+
+    contains(node) {
+      return this === node || this.children.some((child) => child === node || child.contains && child.contains(node));
+    }
+
+    querySelector(selector) { return this.querySelectorAll(selector)[0] || null; }
 
     set href(value) {
       this.setAttribute("href", value);
@@ -106,6 +124,7 @@ function createHarness({
           && this.getAttribute("hreflang") !== null;
       }
       if (selector === "textarea") return this.tagName === "TEXTAREA";
+      if (/^[a-z]+$/.test(selector)) return this.tagName === selector.toUpperCase();
       const inputType = String(selector).match(/^input\[type=["']([^"']+)["']\]$/);
       return Boolean(
         inputType
@@ -131,6 +150,9 @@ function createHarness({
   html.lang = htmlLang;
   const head = new ElementMock("head");
   const body = new ElementMock("body");
+  html.children.push(head, body);
+  head.parentNode = html;
+  body.parentNode = html;
 
   document = {
     readyState: "complete",
@@ -158,8 +180,26 @@ function createHarness({
     querySelectorAll(selector) {
       return body.querySelectorAll(selector);
     },
+    getElementById(id) {
+      const nodes = [html];
+      while (nodes.length) {
+        const node = nodes.shift();
+        if (node.getAttribute && node.getAttribute("id") === id) return node;
+        nodes.push(...(node.children || []));
+      }
+      return null;
+    },
     notifyAdded(node) {
-      for (const callback of observers) callback([{ addedNodes: [node] }]);
+      this.notify({ type: "childList", target: node.parentNode, addedNodes: [node] });
+    },
+    notify(record) {
+      mutationCount += 1;
+      assert.ok(mutationCount < 2000, "UI observer must settle without a mutation loop");
+      for (const observer of observers) {
+        if (observer.targets.some(({ target, options }) => (
+          options[record.type] && (target === record.target || options.subtree && target.contains(record.target))
+        ))) observer.callback([record]);
+      }
     },
   };
   for (const { hreflang, href: alternateHref } of headAlternates) {
@@ -176,13 +216,55 @@ function createHarness({
     return control;
   });
 
+  if (indexUi) {
+    for (const [id, label, tagName] of [
+      ["bankFilter", "Institution", "select"], ["industryFilter", "行业", "select"],
+      ["startDate", "From", "input"], ["endDate", "To", "input"],
+      ["scopeFilter", "Search In", "select"], ["pageSize", "Rows", "select"],
+    ]) {
+      const wrapper = document.createElement("label");
+      const span = document.createElement("span");
+      span.textContent = label;
+      const control = document.createElement(tagName);
+      control.setAttribute("id", id);
+      wrapper.append(span, control);
+      document.body.append(wrapper);
+    }
+    const addOption = (id, value, text) => {
+      const option = document.createElement("option");
+      option.value = value;
+      option.textContent = text;
+      document.getElementById(id).append(option);
+    };
+    addOption("bankFilter", "", "All institutions");
+    addOption("bankFilter", "jpm", "J.P. Morgan (12)");
+    addOption("industryFilter", "", "All industries");
+    ["Banks / Financials", "Energy / Utilities", "Equity Strategy", "Healthcare / Biotech", "Metals / Mining"].forEach((name) => {
+      addOption("industryFilter", name, `${name} (8)`);
+    });
+    ["all", "title", "catalog", "fulltext", "charts"].forEach((value) => addOption("scopeFilter", value, value));
+    addOption("pageSize", "50", "50");
+    for (const [id, text] of [
+      ["clearFilters", "Clear"], ["prevPage", "上一个"], ["nextPage", "下一页"],
+      ["pageInfo", "Page 1 / 1"], ["resultCount", "40 of 40 reports"], ["activeFilters", "No filters"],
+      ["catalogMeta", "14551 reports | Updated 2026-09-06 10:44:48 +0800 | Title and catalog search ready"],
+    ]) {
+      const node = document.createElement(id.endsWith("Page") || id === "clearFilters" ? "button" : "span");
+      node.setAttribute("id", id);
+      node.textContent = text;
+      document.body.append(node);
+    }
+  }
+
   class MutationObserverMock {
     constructor(callback) {
       this.callback = callback;
+      this.targets = [];
     }
 
-    observe() {
-      observers.push(this.callback);
+    observe(target, options) {
+      if (!this.targets.length) observers.push(this);
+      this.targets.push({ target, options });
     }
   }
 
@@ -327,6 +409,8 @@ function createHarness({
     location,
     redirects,
     window,
+    mutationCount: () => mutationCount,
+    observerCount: () => observers.length,
   };
 }
 
@@ -802,7 +886,7 @@ async function assertHotReportLocaleQueryFoldingAndFallback() {
 
 async function assertScopedCatalogExcludesUnpublishedRowsOnly() {
   const original = {
-    item_count: 3, count: 3, total: 3,
+    item_count: 3, count: 3, total: 3, total_item_count: 14551,
     items: [
       { id: "recent", title: "已选择原文", title_zh: "旧中文副标题" },
       { id: "old", title: "未选择旧原文" },
@@ -825,6 +909,7 @@ async function assertScopedCatalogExcludesUnpublishedRowsOnly() {
   assert.equal(localized.item_count, 2);
   assert.equal(localized.count, 2);
   assert.equal(localized.total, 2);
+  assert.equal(localized.total_item_count, 2, "the visible locale total must exclude omitted history");
   assert.equal(JSON.stringify(localized).includes("未选择旧原文"), false);
   assert.equal(harness.fetchCalls.length, 2, "scoped catalogs must not add another discovery request");
 
@@ -835,6 +920,7 @@ async function assertScopedCatalogExcludesUnpublishedRowsOnly() {
   harness.window.PortalLocale.localizePayload(legacy, "ja", {}, { recent: { title: "Legacy localized" } });
   assert.equal(legacy.items.length, 3, "unscoped callers must retain their current list behavior");
   assert.equal(legacy.items[0].title_zh, "已选择原文");
+  assert.equal(legacy.total_item_count, 14551, "unscoped payload totals remain unchanged");
   const invalid = createHarness({
     htmlLang: "ja", browserLanguages: ["zh-CN"], responsePayload: original,
     overlayTranslations: { preview: { scoped: "true", items: { recent: { title: "公開済み記事" } } } },
@@ -984,6 +1070,105 @@ function assertDynamicLinkLocalization() {
   assert.equal(harness.redirects.length, 0, "link rewriting must not navigate the page");
 }
 
+function assertIndexUiLocalization() {
+  const expected = {
+    ko: {
+      labels: ["기관", "산업", "시작일", "종료일", "검색 범위", "표시 행 수"],
+      buttons: ["초기화", "이전", "다음"], page: "페이지", reports: "개 보고서", of: "/", updated: "업데이트",
+      industries: ["은행 / 금융", "에너지 / 유틸리티", "주식 전략", "헬스케어 / 바이오", "금속 / 광업"],
+    },
+    ja: {
+      labels: ["機関", "業種", "開始日", "終了日", "検索対象", "表示件数"],
+      buttons: ["クリア", "前へ", "次へ"], page: "ページ", reports: "件のレポート", of: "/", updated: "更新",
+      industries: ["銀行 / 金融", "エネルギー / 公益事業", "株式戦略", "ヘルスケア / バイオ", "金属 / 鉱業"],
+    },
+    ar: {
+      labels: ["المؤسسة", "القطاع", "من تاريخ", "إلى تاريخ", "نطاق البحث", "عدد الصفوف"],
+      buttons: ["مسح", "السابق", "التالي"], page: "الصفحة", reports: "تقرير", of: "من", updated: "آخر تحديث",
+      industries: ["البنوك / الخدمات المالية", "الطاقة / المرافق", "استراتيجية الأسهم", "الرعاية الصحية / التقنية الحيوية", "المعادن / التعدين"],
+    },
+  };
+  for (const [htmlLang, words] of Object.entries(expected)) {
+    const harness = createHarness({ htmlLang, browserLanguages: ["zh-CN"], indexUi: true });
+    const get = (id) => harness.document.getElementById(id);
+    ["bankFilter", "industryFilter", "startDate", "endDate", "scopeFilter", "pageSize"].forEach((id, i) => {
+      assert.equal(get(id).parentNode.querySelector("span").textContent, words.labels[i], `${htmlLang}/${id}`);
+    });
+    ["clearFilters", "prevPage", "nextPage"].forEach((id, i) => assert.equal(get(id).textContent, words.buttons[i]));
+    const options = get("industryFilter").querySelectorAll("option");
+    options.slice(1).forEach((option, i) => assert.equal(option.textContent, `${words.industries[i]} (8)`));
+    assert.equal(get("bankFilter").querySelectorAll("option")[1].textContent, "J.P. Morgan (12)");
+    assert.equal(get("pageSize").querySelectorAll("option")[0].textContent, "50");
+    assert.equal(get("pageInfo").textContent, `${words.page} 1 ${words.of} 1`);
+    assert.equal(get("resultCount").textContent, `40 ${words.of} 40 ${words.reports}`);
+    assert.ok(get("catalogMeta").textContent.startsWith(`14551 ${words.reports} | ${words.updated} 2026-09-06 10:44:48 +0800 | `));
+    assert.doesNotMatch(get("catalogMeta").textContent, /reports|Updated|Title and catalog/);
+    assert.deepEqual(get("scopeFilter").querySelectorAll("option").map((option) => option.value), ["all", "title", "catalog", "fulltext", "charts"]);
+    assert.ok(get("scopeFilter").querySelectorAll("option").every((option) => option.textContent !== option.value));
+
+    get("industryFilter").value = "Banks / Financials";
+    options[1].selected = true;
+    get("prevPage").disabled = true;
+    const click = () => {};
+    get("nextPage").onclick = click;
+    const before = harness.mutationCount();
+    get("pageInfo").textContent = "Page 2 / 7";
+    get("resultCount").textContent = "25 of 350 reports";
+    get("catalogMeta").textContent = "350 reports | Updated 2026-09-07 10:44:48 +0800 | Text index 90 reports + (recent text)";
+    options[1].textContent = "Banks / Financials (12)";
+    assert.equal(get("pageInfo").textContent, `${words.page} 2 ${words.of} 7`);
+    assert.equal(get("resultCount").textContent, `25 ${words.of} 350 ${words.reports}`);
+    assert.doesNotMatch(get("catalogMeta").textContent, /reports|Updated|Text index|recent text/);
+    assert.ok(get("catalogMeta").textContent.includes("2026-09-07 10:44:48 +0800"));
+    assert.ok(get("catalogMeta").textContent.includes("90"));
+    assert.equal(options[1].textContent, `${words.industries[0]} (12)`);
+    assert.equal(options[1].value, "Banks / Financials");
+    assert.equal(options[1].selected, true);
+    assert.equal(get("industryFilter").value, "Banks / Financials");
+    assert.equal(get("prevPage").disabled, true);
+    assert.equal(get("nextPage").onclick, click);
+    assert.ok(harness.mutationCount() - before <= 8, "four external updates require at most four local text writes");
+    const inserted = harness.document.createElement("option");
+    inserted.value = "Energy / Utilities";
+    inserted.textContent = "Energy / Utilities (19)";
+    get("industryFilter").append(inserted);
+    assert.equal(inserted.textContent, `${words.industries[1]} (19)`, "newly inserted industry options must be translated");
+    assert.equal(inserted.value, "Energy / Utilities");
+    const properName = harness.document.createElement("option");
+    properName.value = "Goldman Sachs";
+    properName.textContent = "Goldman Sachs (7)";
+    get("bankFilter").append(properName);
+    assert.equal(properName.textContent, "Goldman Sachs (7)");
+
+    // A framework may update an existing text node instead of textContent.
+    get("pageInfo")._textContent = "Page 0 / 0";
+    const textNode = { nodeType: 3, parentNode: get("pageInfo") };
+    get("pageInfo").children.push(textNode);
+    harness.document.notify({ type: "characterData", target: textNode });
+    assert.equal(get("pageInfo").textContent, `${words.page} 0 ${words.of} 0`);
+    const settled = harness.mutationCount();
+    harness.document.notify({ type: "childList", target: get("industryFilter"), addedNodes: [] });
+    assert.equal(harness.mutationCount(), settled + 1, "already localized text must not trigger another mutation");
+    assert.equal(harness.fetchCalls.length, 0, "fixed UI localization must not add requests");
+    assert.equal(harness.redirects.length, 0);
+  }
+
+  const chinese = createHarness({ htmlLang: "zh-Hans", browserLanguages: ["zh-CN"], indexUi: true });
+  const get = (id) => chinese.document.getElementById(id);
+  assert.equal(get("industryFilter").parentNode.querySelector("span").textContent, "行业");
+  assert.equal(get("startDate").parentNode.querySelector("span").textContent, "From");
+  assert.equal(get("prevPage").textContent, "上一个");
+  assert.equal(get("nextPage").textContent, "下一页");
+  get("pageInfo").textContent = "Page 2 / 7";
+  get("resultCount").textContent = "25 of 350 reports";
+  assert.equal(get("pageInfo").textContent, "Page 2 / 7");
+  assert.equal(get("resultCount").textContent, "25 of 350 reports");
+  assert.equal(chinese.observerCount(), 0);
+  assert.equal(chinese.fetchCalls.length, 0);
+  assert.equal(chinese.redirects.length, 0);
+  assert.ok(Buffer.byteLength(runtimeSource, "utf8") < 32768, "shared locale runtime must remain within the release byte budget");
+}
+
 (async () => {
   assertNoSwitcherForSimplifiedChinese();
   assertLocalePathMapping();
@@ -1002,6 +1187,7 @@ function assertDynamicLinkLocalization() {
   await assertScopedHotReportsStayLazyAndDoNotExposeOmissions();
   assertArabicInputDirection();
   assertDynamicLinkLocalization();
+  assertIndexUiLocalization();
   console.log("portal locale runtime contract: ok");
 })().catch((error) => {
   console.error(error);
