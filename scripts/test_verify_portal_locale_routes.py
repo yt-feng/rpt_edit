@@ -55,7 +55,7 @@ class PublicLocaleRouteTests(unittest.TestCase):
 
     def fetch(self, url, timeout):
         self.calls.append((url, timeout))
-        self.assertIn(url, self.responses, "Only the sixteen declared exact public routes may be fetched")
+        self.assertIn(url, self.responses, "Only declared exact public routes may be fetched")
         self.assertEqual(timeout, 20)
         response = self.responses[url]
         if isinstance(response, Exception):
@@ -79,6 +79,24 @@ class PublicLocaleRouteTests(unittest.TestCase):
         self.assertEqual(len(self.calls), 16)
         self.assertEqual(len(set(url for url, _ in self.calls)), 16)
         self.assertTrue(all(row["status"] == "passed" for row in report["checks"]))
+
+    def test_declared_detail_module_is_verified_as_one_additional_exact_asset(self):
+        body = b'(() => { "use strict"; /* locale detail */ })();\n'
+        self.manifest["detail_asset"] = describe(audit.DETAIL_PATH, body)
+        self.responses[ORIGIN + "/" + audit.DETAIL_PATH] = (200, {}, body)
+        report = self.verify()
+        self.assertEqual(report["status"], "passed")
+        self.assertEqual((report["route_count"], report["asset_count"], report["request_count"]), (15, 2, 17))
+        self.responses[ORIGIN + "/" + audit.DETAIL_PATH] = (404, {}, b"Not Found")
+        self.assertEqual(self.verify()["status"], "failed")
+
+    def test_declared_detail_module_cannot_be_null_or_an_arbitrary_url(self):
+        for value in (None, describe("https://other.invalid/code.js", b"code")):
+            with self.subTest(value=value):
+                self.manifest["detail_asset"] = value
+                with self.assertRaises(audit.RouteVerificationError):
+                    self.verify()
+                self.assertEqual(self.calls, [])
 
     def test_legacy_manifest_explicitly_skips_without_claims_or_requests(self):
         report = audit.verify_locale_routes({"schema_version": 1}, ORIGIN, fetcher=self.fetch)

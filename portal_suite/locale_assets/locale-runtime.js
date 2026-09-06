@@ -323,6 +323,8 @@
       return {
         localizeHotReports: async (payload) => payload,
         matchHotReportLocaleIds: async () => null,
+        detailTranslation: async () => null,
+        readCatalogDetail: async () => null,
       };
     }
     const originalFetch = window.fetch.bind(window);
@@ -394,6 +396,33 @@
       });
     };
     return {
+      detailTranslation: async (source, id, generation = "") => {
+        const prefix = String(id || "").toLowerCase().replace(/[^a-z0-9]/g, "_").slice(0, 2).padEnd(2, "_");
+        const kind = source === "catalog" ? `detail:${prefix}` : source === "hot" ? "hot-reports" : "";
+        if (!kind) return null;
+        try {
+          const overlay = await loadOverlay(kind);
+          if (source === "hot" && (!generation || overlay.sourceGeneration !== generation)) return null;
+          const item = overlay.items[id];
+          const title = item && item.title || overlay.titles[id];
+          return title ? { ...(item || {}), title } : null;
+        } catch (_) { return null; }
+      },
+      readCatalogDetail: async (id, translated) => {
+        if (!/^[A-Za-z0-9_.:-]{1,256}$/.test(String(id || ""))) return null;
+        const prefix = id.toLowerCase().replace(/[^a-z0-9]/g, "_").slice(0, 2).padEnd(2, "_");
+        const [response, overlay] = await Promise.all([
+          originalFetch(`/data/report_details/${prefix}.json`, { cache: "default" }),
+          loadOverlay(`detail:${prefix}`).catch(() => ({ titles: {}, items: {} })),
+        ]);
+        if (!response.ok) return null;
+        const payload = await response.json();
+        const record = payload && payload.reports && payload.reports[id];
+        if (!record || !record.item || record.item.id !== id) return null;
+        const localized = localizePayload({ reports: { [id]: record } }, locale, overlay.titles,
+          { ...overlay.items, [id]: translated }, { scoped: true });
+        return localized.reports && localized.reports[id] || null;
+      },
       matchHotReportLocaleIds: async (query) => {
         try {
           const translations = await loadOverlay("hot-reports");
@@ -616,6 +645,8 @@
     localeUrl,
     localizeHotReports: localizedFetch.localizeHotReports,
     matchHotReportLocaleIds: localizedFetch.matchHotReportLocaleIds,
+    detailTranslation: localizedFetch.detailTranslation,
+    readCatalogDetail: localizedFetch.readCatalogDetail,
     localizePayload,
     rootPathname,
   });

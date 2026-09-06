@@ -244,6 +244,7 @@ const HOT_REPORT_LOCALE_IDS_MAX_LENGTH = HOT_REPORT_LOCALE_IDS_MAX_ITEMS * 16
   + HOT_REPORT_LOCALE_IDS_MAX_ITEMS - 1;
 const PORTAL_PUBLIC_CAPABILITIES = Object.freeze({
   hot_report_locale_ids_v1: true,
+  locale_detail_translation_v1: true,
 });
 const HOT_REPORT_LIST_CONCURRENCY = 20;
 const HOT_REPORT_RETENTION_MAX_CANDIDATES_PER_RUN = 250;
@@ -13852,7 +13853,8 @@ async function deepseekJson(env, messages, options = {}) {
   const maxTokens = Math.max(0, Math.min(8000, Math.floor(Number(options.maxTokens) || 0)));
   try {
     reportResearchBudgetSpend(options.budget, 1, options.budgetStage || "deepseek");
-    const response = await fetchWithTimeout(`${baseUrl.replace(/\/+$/, "")}/chat/completions`, {
+    const providerUrl = `${baseUrl.replace(/\/+$/, "")}/chat/completions`;
+    const providerRequest = {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${apiKey}`,
@@ -13867,9 +13869,16 @@ async function deepseekJson(env, messages, options = {}) {
         response_format: { type: "json_object" },
         ...(maxTokens ? { max_tokens: maxTokens } : {}),
       }),
-    }, options.timeout || 45000);
-    if (!response.ok) return null;
-    const payload = await response.json();
+    };
+    let payload;
+    if (options.maxResponseBytes) {
+      const { localeDetailProviderPayload } = await import("./locale-report-detail.js");
+      payload = await localeDetailProviderPayload(providerUrl, providerRequest, options);
+    } else {
+      const response = await fetchWithTimeout(providerUrl, providerRequest, options.timeout || 45000);
+      if (!response.ok) return null;
+      payload = await response.json();
+    }
     const content = payload && payload.choices && payload.choices[0] && payload.choices[0].message && payload.choices[0].message.content;
     if (!content) return null;
     return extractJsonObject(content);
@@ -24636,6 +24645,65 @@ async function handleReportAPdf(request, env) {
   return handleContactReportPdf(request, env, HIBOR_SOURCE);
 }
 
+function validLocaleDetailId(source, id) {
+  if (source === "catalog") return cleanCatalogReportId(id) === id;
+  if (source === "external") return isExternalId(id);
+  if (source === "hot") return cleanHotReportId(id) === id;
+  if (source === THINKTANK_SOURCE) return Boolean(parseThinkTankId(id));
+  return Boolean(cleanContactReportSource(source) && cleanContactReportOriginId(source, id) === id);
+}
+
+async function resolveLocaleDetailPublicItem(env, source, id) {
+  // These are the same public metadata resolvers as the existing item routes.
+  // Never invoke report-text, PDF delivery, access decisions or signed targets.
+  if (source === "catalog") {
+    const item = findReport(await loadCatalog(env), id);
+    if (!item) return null;
+    return {
+      title: publicSourceText(item.title), title_zh: publicSourceText(item.title_zh),
+      bank_name: publicSourceText(reportBankLabel(item)), industry: publicBrandText(inferReportIndustry(item)),
+      sector: publicSourceText(item.sector), category: publicSourceText(item.category),
+      summary: publicSourceText(item.summary), description: publicSourceText(item.description),
+    };
+  }
+  if (source === "external") {
+    // The ordinary item endpoint accepts an upstream placeholder. This paid
+    // path requires a real public title and bounds the complete metadata read.
+    const { localeDetailProviderPayload } = await import("./locale-report-detail.js");
+    const data = await localeDetailProviderPayload(`${EXTERNAL_API}/reports/${id}`, {
+      headers: externalHeaders(),
+    }, { timeout: 6000, maxResponseBytes: 131072 });
+    const main = data && data.main;
+    const title = main && (main.title || main.title_cn);
+    if (!main || typeof main !== "object" || Array.isArray(main)
+        || typeof title !== "string" || !publicSourceText(title)) return null;
+    return slimExternalDetailItem(main, id);
+  }
+  if (source === "hot") return (await findHotReportRow(env, id))?.item || null;
+  if (source === THINKTANK_SOURCE) {
+    const row = await findThinkTankRow(env, id);
+    return row ? slimThinkTankItem(row) : null;
+  }
+  if (cleanContactReportSource(source)) {
+    const binding = await readContactReportBinding(env, source, id, { verifyObject: true });
+    let target = normalizeContactReportTarget(binding?.row, source, id);
+    if (!target) {
+      // The legacy public resolver tolerates saved-target read errors. A paid
+      // translation must not interpret that error as a cache miss and recover.
+      const stored = await r2GetJsonStrict(env, await contactReportTargetKey(source, id));
+      target = normalizeContactReportTarget(stored, source, id);
+      if (stored !== null && !target) throw new Error("Invalid public report target");
+    }
+    if (!target) {
+      target = source === HIBOR_SOURCE
+        ? await recoverHiborContactReportTarget(id)
+        : await recoverAuthorityContactReportTarget(env, id);
+    }
+    return binding || target ? publicContactReportItem(binding?.row, target || { source, origin_id: id }) : null;
+  }
+  return null;
+}
+
 export default {
   __analyticsTest: Object.freeze({
     addAnalyticsDaySummaryEvent,
@@ -24693,6 +24761,14 @@ export default {
       return new Response(null, { status: 204, headers: corsHeaders(request, env) });
     }
 
+    if (pathname === "/locale/report-detail") {
+      const { handleLocaleReportDetail } = await import("./locale-report-detail.js");
+      return handleLocaleReportDetail(request, env, ctx, {
+        validId: validLocaleDetailId, resolve: resolveLocaleDetailPublicItem,
+        translate: deepseekJson, sanitize: publicBrandDocumentText,
+      });
+    }
+
     if (pathname === "/health") {
       const runtimeProbeRequested = url.searchParams.get("runtime-data") === "1";
       const [filesSnapshot, picksSnapshot, legacyPicksSnapshot, analyticsSnapshot, opsMirrorState, runtimeData] = await Promise.all([
@@ -24707,6 +24783,10 @@ export default {
       return jsonResponse(request, env, 200, {
         ok: true,
         capabilities: PORTAL_PUBLIC_CAPABILITIES,
+        locale_detail_translation_v1: {
+          supported: true,
+          enabled: String(env.LOCALE_DETAIL_TRANSLATION_ENABLED || "").toLowerCase() === "true",
+        },
         dashboard_cache: {
           files: adminSnapshotStatus(filesSnapshot, ADMIN_FILES_SNAPSHOT_FRESH_MS),
           picks: {

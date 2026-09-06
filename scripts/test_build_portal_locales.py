@@ -111,6 +111,7 @@ class PortalLocaleBuildTests(unittest.TestCase):
         (self.site / "reports" / "topics" / "ai").mkdir(parents=True)
         self.assets.mkdir(parents=True)
         (self.assets / "locale-recovery.js").write_text("// locale recovery test fixture\n", encoding="utf-8")
+        (self.assets / "locale-detail.js").write_text("// locale detail test fixture\n", encoding="utf-8")
 
         (self.site / "index.html").write_text(
             """<!doctype html>

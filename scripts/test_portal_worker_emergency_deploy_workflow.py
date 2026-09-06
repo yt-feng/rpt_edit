@@ -62,6 +62,22 @@ class PortalWorkerEmergencyDeployWorkflowTests(unittest.TestCase):
         self.assertGreaterEqual(self.workflow.count("timeout-minutes: 5"), 4)
         self.assertIn("timeout-minutes: 8", self.workflow)
 
+    def test_locale_module_is_shipped_with_bounded_opt_in_and_zero_cost_smoke(self) -> None:
+        self.assertIn("            workers/portal-suite-worker/src\n", self.workflow)
+        self.assertIn("node scripts/test_portal_locale_detail_server.js", self.workflow)
+        self.assertIn("< workers/portal-suite-worker/src/locale-report-detail.js", self.workflow)
+        for name, default in (("LOCALE_DETAIL_TRANSLATION_ENABLED", "false"),
+                              ("LOCALE_DETAIL_DAILY_MAX_REQUESTS", "100"),
+                              ("LOCALE_DETAIL_DAILY_MAX_CHARS", "100000")):
+            self.assertIn("vars." + name + " || '" + default + "'", self.workflow)
+            self.assertIn(name + ' = "$' + name + '"', self.workflow)
+        smoke = self.workflow.split("- name: Smoke deployed API through the live edge", 1)[1].split("- name: Roll back", 1)[0]
+        self.assertIn('payload.get("locale_detail_translation_v1")', smoke)
+        self.assertIn('"locale":"zh-Hans"', smoke)
+        self.assertNotIn('"locale":"ja"', smoke)
+        self.assertIn('test "$code" = 400', smoke)
+        self.assertIn('test "$code" = 503', smoke)
+
     def test_portal_suite_uses_stable_isolated_node_runner(self) -> None:
         self.assertIn("portal_suite/locale_assets", self.workflow)
         self.assertIn("for test_file in portal_suite/tests/*.test.mjs; do", self.workflow)

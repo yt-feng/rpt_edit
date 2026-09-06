@@ -39,6 +39,7 @@ from portal_locale_history import plan_history_release
 from portal_locale_literals import is_latin_name_literal, is_machine_asset_reference, is_shared_japanese_keyword, is_short_latin_label_translation
 from portal_locale_scope import deferred_locale_source, restrict_html_to_cohort
 from portal_locale_report_preview import localize_report_preview
+from portal_locale_detail_hooks import defer_unverified_report_preview, inject_locale_detail_hooks
 from repair_portal_ja_catalog_titles import apply_ja_catalog_title_repairs
 
 CACHE_SCHEMA_VERSION = 1
@@ -4552,6 +4553,7 @@ def discovery_links(
             f'\n    <link rel="stylesheet" href="/assets/locale.css?v={asset_version}">',
             f'\n    <script data-kc-locale-early>{LOCALE_RECOVERY_EARLY_BOOTSTRAP}</script>',
             f'\n    <script defer src="/assets/locale-recovery.js?v={asset_version}"></script>',
+            f'\n    <script defer src="/assets/locale-detail.js?v={asset_version}"></script>',
             f'\n    <script src="/assets/locale-runtime.js?v={asset_version}"></script>',
         ]
     if canonical:
@@ -5287,7 +5289,8 @@ def _build_localized_release(
     locale_css_source = assets_root / "locale.css"
     locale_runtime_source = assets_root / "locale-runtime.js"
     locale_recovery_source = assets_root / "locale-recovery.js"
-    for source_path in (locale_css_source, locale_runtime_source, locale_recovery_source):
+    locale_detail_source = assets_root / "locale-detail.js"
+    for source_path in (locale_css_source, locale_runtime_source, locale_recovery_source, locale_detail_source):
         if not source_path.is_file():
             raise TranslationError(f"Missing locale asset: {source_path}")
     localized_css = (
@@ -5298,10 +5301,12 @@ def _build_localized_release(
     (root / "assets" / "locale.css").write_text(localized_css, encoding="utf-8")
     shutil.copy2(locale_runtime_source, root / "assets" / "locale-runtime.js")
     shutil.copy2(locale_recovery_source, root / "assets" / "locale-recovery.js")
+    shutil.copy2(locale_detail_source, root / "assets" / "locale-detail.js")
     asset_digest = hashlib.sha256(
         (root / "assets" / "locale.css").read_bytes()
         + (root / "assets" / "locale-runtime.js").read_bytes()
         + (root / "assets" / "locale-recovery.js").read_bytes()
+        + (root / "assets" / "locale-detail.js").read_bytes()
     ).hexdigest()[:12]
 
     body_snapshots = {
@@ -5331,6 +5336,7 @@ def _build_localized_release(
             target = locale_root / "assets" / asset_name
             localized_javascript = render_localized_javascript(source, asset_name, locale, cache)
             validate_localized_javascript_residuals(source, localized_javascript, asset_name, locale, cache)
+            localized_javascript = inject_locale_detail_hooks(localized_javascript, asset_name, locale)
             target.write_text(localized_javascript, encoding="utf-8")
             locale_script_digests[asset_name] = hashlib.sha256(target.read_bytes()).hexdigest()[:12]
         for path, source in localized_html_sources.items():
@@ -5356,6 +5362,7 @@ def _build_localized_release(
             if index_plan[path].force_noindex_follow:
                 localized_html = force_noindex_follow(localized_html)
             localized_html = localize_report_preview(localized_html, locale)
+            localized_html = defer_unverified_report_preview(localized_html, locale)
             localized_html = inject_locale_help(localized_html, locale, relative.as_posix(), site_url)
             target.write_text(localized_html, encoding="utf-8")
         if course_source is not None:
@@ -5557,6 +5564,7 @@ def _build_localized_release(
         for locale in LOCALES
     }
     manifest["recovery_asset"] = route_descriptor("assets/locale-recovery.js")
+    manifest["detail_asset"] = route_descriptor("assets/locale-detail.js")
     if incremental:
         manifest["index_policy"].update(
             mode="incremental-publication-cutoff",

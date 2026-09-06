@@ -115,7 +115,11 @@ test("health advertises locale-ID Hot Reports filtering before multilingual cuto
   assert.equal(response.status, 200);
   const payload = await response.json();
   assert.equal(payload.ok, true);
-  assert.deepEqual(payload.capabilities, { hot_report_locale_ids_v1: true });
+  assert.deepEqual(payload.capabilities, {
+    hot_report_locale_ids_v1: true,
+    locale_detail_translation_v1: true,
+  });
+  assert.deepEqual(payload.locale_detail_translation_v1, { supported: true, enabled: false });
 });
 
 test("the public hot-report first page caches once while forced and filtered requests stay live", async () => {

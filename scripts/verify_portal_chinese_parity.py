@@ -28,7 +28,7 @@ VERIFY_KIND = "portal-chinese-parity-verification"
 DEFAULT_SITE_ORIGIN = "https://portal.example.invalid"
 LOCALES = ("ko", "ja", "ar")
 LOCALE_DIRS = frozenset(LOCALES)
-LOCALE_ASSET_PATHS = frozenset(("assets/locale.css", "assets/locale-runtime.js", "assets/locale-recovery.js"))
+LOCALE_ASSET_PATHS = frozenset(("assets/locale.css", "assets/locale-runtime.js", "assets/locale-recovery.js", "assets/locale-detail.js"))
 LOCALE_SITEMAPS = frozenset(f"sitemap-{locale}.xml" for locale in LOCALES)
 REQUIRED_PROTECTED_PATHS = frozenset(
     (
@@ -116,7 +116,7 @@ class _HeadLinks(HTMLParser):
                 self.direct_locale_assets.append(href)
         elif lowered == "script":
             source = values.get("src", "").strip()
-            if source and any(_is_direct_locale_asset(source, asset) for asset in ("locale-runtime.js", "locale-recovery.js")):
+            if source and any(_is_direct_locale_asset(source, asset) for asset in ("locale-runtime.js", "locale-recovery.js", "locale-detail.js")):
                 self.direct_locale_assets.append(source)
             if "data-kc-locale-bootstrap" in values:
                 self._bootstrap_depth += 1
