@@ -3424,6 +3424,22 @@
     "oecd:https://www.oecd.org/en/publications/tracking-progress-in-the-governance-of-critical-risks_66bcd7b0-en.html": {
       "first_seen": "2026-09-06",
       "status": "downloaded"
+    },
+    "oecd:https://www.oecd.org/en/publications/oecd-reviews-of-national-statistical-systems-kazakhstan-2026_f7edbacb-en.html": {
+      "first_seen": "2026-09-07",
+      "status": "downloaded"
+    },
+    "unctad:https://unctad.org/publication/global-trade-update-september-2026-services-are-reshaping-global-trade": {
+      "first_seen": "2026-09-07",
+      "status": "downloaded"
+    },
+    "unctad:https://unctad.org/publication/measuring-servicification-and-impacts-services-trade-and-policy": {
+      "first_seen": "2026-09-07",
+      "status": "downloaded"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/agri_01sep26_479_e.htm": {
+      "first_seen": "2026-09-07",
+      "status": "no_pdf"
     }
   }
 }
