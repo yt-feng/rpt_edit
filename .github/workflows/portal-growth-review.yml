@@ -32,6 +32,7 @@ jobs:
           sparse-checkout: |
             scripts/archive_portal_growth_review.py
             scripts/summarize_portal_growth_range.py
+            scripts/audit_portal_research_coverage.py
             scripts/build_portal_suite_site.py
             portal_suite/growth_actions.json
           sparse-checkout-cone-mode: false
@@ -95,6 +96,17 @@ jobs:
             --output private-summary/growth-review.json \
             --markdown-output private-summary/growth-review.md
 
+      - name: Read research and chart index coverage
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python scripts/audit_portal_research_coverage.py \
+            --catalog private-input/catalog.json \
+            --output private-summary/research-coverage.json
+
       - name: Verify aggregate-only output
         run: |
           python - <<'PY'
@@ -114,6 +126,7 @@ jobs:
                   for child in value:
                       check(child)
           check(report)
+          check(json.loads(Path("private-summary/research-coverage.json").read_text(encoding="utf-8")))
           assert report.get("privacy") and not any(report["privacy"].values())
           PY
 
@@ -140,5 +153,6 @@ jobs:
           path: |
             private-summary/growth-review.json
             private-summary/growth-review.md
+            private-summary/research-coverage.json
           if-no-files-found: error
           retention-days: 1

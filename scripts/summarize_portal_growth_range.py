@@ -42,6 +42,37 @@ ADMIN_EVENT_TYPES = {
     "daily_file_download",
     "delivery_link_generate",
 }
+SERVER_AUDIT_EVENT_TYPES = {"report_chat"}
+JOURNEY_ACTIONS: dict[str, set[str]] = {
+    "account_auth": {
+        "cta_impression", "cta_click", "modal_open", "mode_selected", "form_start",
+        "form_submit", "form_abandon", "modal_close", "intent_resumed", "register",
+        "login", "login_recovered", "logout", "password_change",
+    },
+    "report_chat_interaction": {
+        "entry_impression", "entry_click", "composer_impression", "composer_start",
+        "prompt_selected", "auth_prompt", "auth_resume", "submit", "success", "error",
+        "timeout", "cancel", "limit_reached", "popular_impression", "popular_click",
+        "popular_success", "popular_error", "export_docx_started", "export_docx_ready",
+        "export_docx_error", "export_pdf_started", "export_pdf_ready", "export_pdf_error",
+        "export_pdf_print_opened", "limit_request_cancel", "limit_request_error",
+        "limit_request_submit", "limit_request_success", "limit_request_timeout",
+    },
+    "reward_checkin": {"daily", "impression", "click", "error", "goal_impression", "goal_click"},
+    "reward_claim": {"daily", "points"},
+    "report_chat": {"answer", "limit", "request", "popular_list", "popular_read"},
+}
+JOURNEY_STATUSES = {
+    "success", "ok", "completed", "error", "failure", "failed", "limit", "sent",
+    "login", "register", "validation", "request_failed", "list_unavailable",
+    "already_claimed_today", "already_owned", "anonymous", "authenticated",
+}
+JOURNEY_PLACEMENTS = {
+    "navigation", "home_hero", "research_intro", "research_limit", "report_detail",
+    "daily_goal", "account_modal", "research_tab", "home_research", "public_cache",
+    "guest", "registered", "member", "admin", "free", "paid", "premium",
+}
+JOURNEY_CONTEXTS = {"report", "course"}
 ENGAGEMENT_EVENT_TYPES = {
     "search",
     "report_open",
@@ -367,6 +398,7 @@ def is_product_event(event: dict[str, Any]) -> bool:
     return bool(
         not is_bot_event(event)
         and event_type not in ADMIN_EVENT_TYPES
+        and event_type not in SERVER_AUDIT_EVENT_TYPES
         and not event_type.startswith("admin_")
     )
 
@@ -384,6 +416,7 @@ def build_sessions(
     bot_events = 0
     admin_events = 0
     missing_identity_events = 0
+    server_audit_events = 0
     for index, event in enumerate(events):
         day = event_date(event)
         if not day or not start <= day <= end:
@@ -392,6 +425,9 @@ def build_sessions(
             bot_events += 1
             continue
         event_type = clean_text(event.get("type"), 80).lower()
+        if event_type in SERVER_AUDIT_EVENT_TYPES:
+            server_audit_events += 1
+            continue
         if event_type in ADMIN_EVENT_TYPES or event_type.startswith("admin_"):
             admin_events += 1
             continue
@@ -429,6 +465,87 @@ def build_sessions(
         "known_bot_events_excluded": bot_events,
         "administrative_events_excluded": admin_events,
         "non_bot_events_without_session_identity_excluded": missing_identity_events,
+        "server_audit_events_excluded_from_sessions": server_audit_events,
+    }
+
+
+def controlled_journey_value(value: Any, allowed: set[str]) -> str:
+    text = clean_text(value, 80).lower()
+    return text if text in allowed else ("other" if text else "unspecified")
+
+
+def public_journey_diagnostics(events: Iterable[dict[str, Any]], start: date, end: date) -> dict[str, Any]:
+    """Count observed client actions separately from server audit records.
+
+    Only literal session_id values are used, in memory, for client session
+    counts. Feature-hashed visitor IDs and server IP-derived identities cannot
+    safely be joined. Unknown dimension values are collapsed, never echoed.
+    Counts are action occurrence rates, not an ordered or causal funnel.
+    """
+    grouped: dict[tuple[str, str, str, str, str], list[dict[str, Any]]] = defaultdict(list)
+    daily: dict[tuple[str, str, str], list[dict[str, Any]]] = defaultdict(list)
+    for event in events:
+        day = event_date(event)
+        event_type = clean_text(event.get("type"), 80).lower()
+        if not day or not start <= day <= end or is_bot_event(event) or event_type not in JOURNEY_ACTIONS:
+            continue
+        action = controlled_journey_value(event.get("action"), JOURNEY_ACTIONS[event_type])
+        status = controlled_journey_value(event.get("status"), JOURNEY_STATUSES)
+        placement = controlled_journey_value(event.get("placement"), JOURNEY_PLACEMENTS)
+        context = controlled_journey_value(event.get("context"), JOURNEY_CONTEXTS)
+        grouped[(event_type, action, status, placement, context)].append(event)
+        daily[(day.isoformat(), event_type, action)].append(event)
+
+    def counts(rows: list[dict[str, Any]], server: bool) -> dict[str, int | None]:
+        session_ids = {clean_text(row.get("session_id"), 160) for row in rows if clean_text(row.get("session_id"), 160)}
+        return {
+            "events": len(rows),
+            "client_sessions": None if server else len(session_ids),
+            "events_without_client_session": sum(not clean_text(row.get("session_id"), 160) for row in rows),
+        }
+
+    client_rows, server_rows = [], []
+    for (event_type, action, status, placement, context), rows in sorted(grouped.items()):
+        server = event_type in SERVER_AUDIT_EVENT_TYPES
+        item = {
+            "event_type": event_type, "action": action, "status": status,
+            "placement": placement, "context": context, **counts(rows, server),
+        }
+        numeric_metrics = {}
+        for field_name in ("source_count", "chart_count", "question_length", "remaining", "current_streak"):
+            values = [
+                float(row[field_name]) for row in rows
+                if isinstance(row.get(field_name), (int, float))
+                and not isinstance(row.get(field_name), bool)
+                and 0 <= row[field_name] <= 1_000_000
+            ]
+            numeric_metrics[field_name] = {
+                "observed_events": len(values), "missing_events": len(rows) - len(values),
+                "zero_events": sum(value == 0 for value in values),
+                "positive_events": sum(value > 0 for value in values),
+            }
+        item["numeric_metric_coverage"] = numeric_metrics
+        (server_rows if server else client_rows).append(item)
+    return {
+        "schema": "portal-journey-diagnostics-v1",
+        "client_actions": client_rows,
+        "server_audit_actions": server_rows,
+        "daily_actions": [
+            {"date": day, "event_type": event_type, "action": action,
+             **counts(rows, event_type in SERVER_AUDIT_EVENT_TYPES)}
+            for (day, event_type, action), rows in sorted(daily.items())
+        ],
+        "notes": [
+            "Missing exposure actions mean exposure is unmeasured, not that nobody saw the feature.",
+            "Historical popular_impression records list rendering, not viewport exposure.",
+            "Client session counts use explicit session_id only; server audit records never become visitor sessions.",
+            "Do not sum dimension-level sessions: the same session may contain multiple actions or placements.",
+            "Actions are observed occurrences, not a verified sequential funnel or unique registered-account count.",
+            "Feature-hashed visitor IDs prevent reliable cross-feature visitor and retention joins; use session counts for journey analysis.",
+            "Historical missing context, source_count, chart_count and current_streak cannot be reconstructed from client events.",
+            "Admin account activity on ordinary product surfaces and internal QA are not excluded automatically.",
+            "export_pdf_print_opened confirms a print dialog only, not a rendered PDF download.",
+        ],
     }
 
 
@@ -465,6 +582,16 @@ def public_channel_rows(sessions: Iterable[Session], site_hosts: set[str]) -> li
             "download_success_rate": safe_rate(metrics["download_success_sessions"], metrics["sessions"]),
         })
     return result
+
+
+def public_landing_family_rows(sessions: Iterable[Session], site_hosts: set[str]) -> list[dict[str, Any]]:
+    grouped: dict[str, list[Session]] = defaultdict(list)
+    for session in sessions:
+        grouped[page_family(session.landing_path)].append(session)
+    return [
+        {"family": family, **session_metrics(rows, site_hosts)}
+        for family, rows in sorted(grouped.items(), key=lambda item: (-len(item[1]), item[0]))
+    ]
 
 
 def public_landing_rows(
@@ -920,7 +1047,9 @@ def build_growth_review(
         ],
         "acquisition_channels": channels,
         "onsite_search_demand": public_search_demand(session_rows, min_count),
+        "journey_diagnostics": public_journey_diagnostics(rows, start, end),
         "top_landing_pages": public_landing_rows(session_rows, site_hosts, min_count),
+        "landing_page_families": public_landing_family_rows(session_rows, site_hosts),
         "daily": daily_rows(session_rows, rows, start, end, site_hosts),
         "retention": retention_rows(session_rows, start, end),
         "action_impacts": action_impact_rows(
@@ -949,6 +1078,8 @@ def build_growth_review(
                 "On-site search demand uses overlapping controlled institution and topic labels; raw queries are discarded from output.",
                 "External search keywords and AI prompts are not available in site analytics.",
                 "No purchase or revenue event exists, so this report cannot attribute revenue.",
+                "Server report_chat audits are excluded from sessions; earlier v1 reports included IP-derived audit sessions and are not directly comparable.",
+                "Visitors are observed storage identities, not verified people; feature-specific visitor hashing can split cross-feature identities.",
             ],
         },
         "privacy": {
@@ -984,6 +1115,24 @@ def markdown_summary(review: dict[str, Any]) -> str:
             f"| {row['channel']} | {row['sessions']} | {row['engaged_sessions']} | "
             f"{row['report_open_sessions']} | {row['download_success_sessions']} |"
         )
+    journey = review.get("journey_diagnostics", {})
+    for title, key in (("注册、研究与签到：客户端动作", "client_actions"), ("研究：服务端审计", "server_audit_actions")):
+        lines.extend([
+            "", f"## {title}", "",
+            "| 类型 | 动作 | 状态 | 入口 | 上下文 | 事件 | 客户端会话 | 无客户端会话事件 |",
+            "|---|---|---|---|---|---:|---:|---:|",
+        ])
+        for row in journey.get(key, []):
+            sessions = row["client_sessions"] if row["client_sessions"] is not None else "不适用"
+            lines.append(
+                f"| {row['event_type']} | {row['action']} | {row['status']} | {row['placement']} | "
+                f"{row['context']} | {row['events']} | {sessions} | {row['events_without_client_session']} |"
+            )
+    lines.extend([
+        "", "未记录入口曝光不能解释为没人看见；popular_impression 历史记录仅代表列表渲染。",
+        "服务端审计与客户端动作分开统计，功能内散列访客标识不能作为跨功能人数；各行动会话不能相加。",
+        "现有 PDF 打印打开事件不代表已下载渲染完成的 PDF。", "",
+    ])
     demand = review.get("onsite_search_demand", {})
     lines.extend([
         "",
