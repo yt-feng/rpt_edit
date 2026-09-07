@@ -734,6 +734,7 @@ def verify_snapshot(
     root: str | Path,
     snapshot_path: str | Path,
     site_origin: str | None = None,
+    locale_build_complete: bool = True,
 ) -> dict[str, Any]:
     site_root = _safe_root(root)
     snapshot_file = _safe_input_file(snapshot_path, label="Chinese parity snapshot")
@@ -777,7 +778,12 @@ def verify_snapshot(
             raise ParityError(f"snapshot descriptor is invalid: {relative}")
         data = _read(inventory[relative])
         actual = _descriptor(data)
-        if is_site_verification_html(relative):
+        if not locale_build_complete:
+            # Translation stops before discovery is rendered. Compare every
+            # original byte instead of requiring not-yet-built locale markup.
+            if actual != {"size": baseline.get("size"), "sha256": baseline.get("sha256")}:
+                raise ParityError(f"Chinese static file changed during incomplete locale build: {relative}")
+        elif is_site_verification_html(relative):
             validate_site_verification_html(relative, data)
             if actual != {"size": baseline.get("size"), "sha256": baseline.get("sha256")}:
                 raise ParityError(f"site verification token changed: {relative}")
@@ -841,6 +847,9 @@ def verify_snapshot(
         "verified_tree_digest": _sha256(_json_bytes(verification_files)),
         "source_refresh_scope": _source_refresh_scope(expected_paths),
     }
+    if not locale_build_complete:
+        report["verification_mode"] = "incomplete-build-original-bytes"
+        report["publishable"] = False
     return _with_digest(report)
 
 
@@ -884,6 +893,8 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     verify.add_argument("--snapshot", required=True)
     verify.add_argument("--output", required=True)
     verify.add_argument("--site-url")
+    verify.add_argument("--locale-build-incomplete", action="store_true",
+                        help="require unchanged original bytes; does not qualify a release for publication")
     return parser.parse_args(argv)
 
 
@@ -903,6 +914,7 @@ def main(argv: list[str] | None = None) -> int:
                 root=root,
                 snapshot_path=args.snapshot,
                 site_origin=args.site_url,
+                locale_build_complete=not args.locale_build_incomplete,
             )
         _write_json(output, result)
     except ParityError as error:

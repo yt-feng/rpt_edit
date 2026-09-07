@@ -22,6 +22,35 @@ _SHORT_SOURCE_LABEL = re.compile(r"[A-Za-z0-9&\u3400-\u9fff]{1,12}")
 _SHORT_LATIN_LABEL = re.compile(r"[A-Za-z0-9][A-Za-z0-9.&+\-]{0,15}")
 _ACRONYM_PAIR = re.compile(r"[A-Z0-9][A-Z0-9.&+\-]* [A-Z0-9][A-Z0-9.&+\-]*")
 _SHARED_JAPANESE_KEYWORD = re.compile(r"[A-Z0-9&+./\-\u3400-\u9fff]{1,12}")
+# These modifiers are also Japanese words. Combining them with a known metric
+# does not make a label Chinese prose; e.g. a styled paragraph can expose just
+# `国内RevPar` before its next <span>. Keep both vocabularies closed so arbitrary
+# mixed-script copy such as `国内AI增长` never acquires an identity exemption.
+_JAPANESE_FINANCIAL_LABEL = re.compile(
+    r"(?:国内|海外|連結|単体|全社|通期|上期|下期|調整後)\s*"
+    r"(?:RevPAR|ADR|EBITDA|EBIT|EPS|PER|PBR|ROE|ROA|ROIC|FCF|NAV|AUM|GDP|CPI|PPI)",
+    re.IGNORECASE,
+)
+# HTMLParser preserves entities separately, so `三井E&amp;S` can expose the
+# native company-name fragment `三井E`. Neither spelling needs a new Japanese
+# rendering. Do not extend this to arbitrary Kanji + Latin company-like text.
+_JAPANESE_ENTITY_LITERALS = frozenset({"三井E", "三井E&S"})
+
+
+def is_japanese_identity_label(source: object, translated: object) -> bool:
+    """Recognize complete Japanese entity/metric labels, never surrounding copy.
+
+    This check is context independent: inline markup can leave a standalone
+    label inside a paragraph, heading, or metadata field. The caller must check
+    structural placeholders first and invoke it only for Japanese output.
+    """
+    if not isinstance(source, str) or not isinstance(translated, str):
+        return False
+    source = source.strip()
+    return bool(
+        source == translated.strip()
+        and (source in _JAPANESE_ENTITY_LITERALS or _JAPANESE_FINANCIAL_LABEL.fullmatch(source))
+    )
 
 
 def is_shared_japanese_keyword(source: object, translated: object, context: str) -> bool:

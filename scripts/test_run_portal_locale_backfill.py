@@ -21,10 +21,10 @@ def balance(amount: str = "500", *, available: bool = True) -> dict:
     }
 
 
-def cache(path: Path, count: int) -> None:
+def cache(path: Path, count: int, *, revision: str = "") -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_bytes(gzip.compress(json.dumps({"locales": {"ko": {
-        str(index): {"source": f"source-{index}", "translation": f"translated-{index}"}
+        str(index): {"source": f"source-{index}", "translation": f"translated-{index}{revision}"}
         for index in range(count)
     }}}).encode()))
 
@@ -67,8 +67,13 @@ class PortalLocaleBackfillTests(unittest.TestCase):
                 "usage_totals": {"prompt_tokens": 10, "completion_tokens": 20, "total_tokens": 30},
                 **outcome.get("diagnostics", {}),
             }
+            # A real successful full builder normally omits the optional ready
+            # field; only checkpoints explicitly set it to false.
+            if report["status"] == "passed" and "ready" not in outcome.get("diagnostics", {}):
+                report.pop("ready")
             if outcome.get("write_cache", True):
-                cache(Path(command[command.index("--cache-out") + 1]), outcome.get("rows", 2 + len(self.commands)))
+                cache(Path(command[command.index("--cache-out") + 1]), outcome.get("rows", 2 + len(self.commands)),
+                      revision=outcome.get("cache_revision", ""))
             if outcome.get("write_diagnostics", True):
                 Path(command[command.index("--diagnostics-out") + 1]).write_text(json.dumps(report))
             return SimpleNamespace(returncode=outcome.get("returncode", 0))
@@ -100,11 +105,78 @@ class PortalLocaleBackfillTests(unittest.TestCase):
             self.assertEqual(command[command.index("--workers") + 1], "500")
         self.assertEqual(report["status"], "passed")
         self.assertTrue(report["ready"])
+        self.assertEqual(report["remaining_units_total"], 0)
+        self.assertNotIn("stop_category", report)
         self.assertEqual(report["provider_requests"], 4)
         self.assertEqual(report["usage_totals"]["total_tokens"], 60)
         self.assertEqual(len(list(self.root.glob("locale-full-diagnostics-round-*.json"))), 2)
         self.assertEqual(len(list(self.root.glob("locale-full-diagnostics-balance-*.json"))), 2)
 
+    def test_validated_inventory_progress_survives_pruning_larger_restored_cache(self):
+        cache(self.initial, 20)
+        report, reader, provider = self.run_backfill([
+            translation_gap(rows=4, missing_units={"ko": 2, "ja": 2, "ar": 1},
+                            remaining_units={"ko": 0, "ja": 1, "ar": 0}),
+            {"rows": 5, "diagnostics": {"status": "passed"}},
+        ])
+        self.assertEqual((reader.call_count, provider.call_count), (2, 2))
+        first = report["rounds"][0]
+        self.assertEqual(first["cache_rows_delta"], -16)
+        self.assertEqual(first["resolved_units"], 4)
+        self.assertEqual(first["progress_basis"], "validated_inventory")
+        self.assertTrue(first["cache_changed"])
+        self.assertTrue(report["ready"])
+
+    def test_validated_replacements_resume_without_increasing_cache_row_count(self):
+        first = translation_gap(rows=2, missing_units={"ko": 2, "ja": 0, "ar": 0},
+                                remaining_units={"ko": 1, "ja": 0, "ar": 0})
+        first["cache_revision"] = "-revalidated"
+        report, _, provider = self.run_backfill([
+            first, {"rows": 3, "diagnostics": {"status": "passed"}},
+        ])
+        self.assertEqual(provider.call_count, 2)
+        self.assertEqual(report["rounds"][0]["cache_rows_delta"], 0)
+        self.assertEqual(report["rounds"][0]["resolved_units"], 1)
+        self.assertTrue(report["rounds"][0]["cache_changed"])
+        self.assertTrue(report["ready"])
+
+    def test_inventory_progress_requires_changed_saved_checkpoint(self):
+        report, reader, provider = self.run_backfill([
+            translation_gap(rows=2, missing_units={"ko": 2, "ja": 0, "ar": 0},
+                            remaining_units={"ko": 1, "ja": 0, "ar": 0}),
+        ])
+        self.assertEqual((reader.call_count, provider.call_count), (1, 1))
+        self.assertEqual(report["rounds"][0]["resolved_units"], 1)
+        self.assertFalse(report["rounds"][0]["cache_changed"])
+        self.assertEqual(report["stop_category"], "no_progress")
+        self.assertFalse(report["ready"])
+
+    def test_cache_growth_cannot_override_zero_current_inventory_progress(self):
+        report, reader, provider = self.run_backfill([
+            translation_gap(rows=4, missing_units={"ko": 1, "ja": 0, "ar": 0},
+                            remaining_units={"ko": 1, "ja": 0, "ar": 0}),
+        ])
+        self.assertEqual((reader.call_count, provider.call_count), (1, 1))
+        self.assertEqual(report["rounds"][0]["resolved_units"], 0)
+        self.assertTrue(report["rounds"][0]["cache_changed"])
+        self.assertEqual(report["stop_category"], "no_progress")
+        self.assertFalse(report["ready"])
+
+    def test_malformed_or_inconsistent_inventory_never_resumes(self):
+        for change in (
+            {"missing_units": {"ko": True, "ja": 0, "ar": 0}},
+            {"missing_units": {"ko": 2}},
+            {"missing_units": {"ko": 2, "ja": 0, "ar": 0},
+             "remaining_units": {"ko": 0, "ja": 1, "ar": 0}},
+            {"missing_units": {"ko": 2, "ja": 0, "ar": 0},
+             "remaining_units": {"ko": 0, "ja": 0, "ar": 0}},
+        ):
+            with self.subTest(change=change):
+                self.commands.clear()
+                report, reader, provider = self.run_backfill([translation_gap(**change)])
+                self.assertEqual((reader.call_count, provider.call_count), (1, 1))
+                self.assertEqual(report["status"], "failed")
+                self.assertFalse(report["ready"])
     def test_residual_translation_gaps_resume_saved_growth_then_require_complete_build(self):
         report, reader, provider = self.run_backfill([
             translation_gap(rows=4), {"rows": 5, "diagnostics": {"status": "passed", "ready": True}},
@@ -119,6 +191,8 @@ class PortalLocaleBackfillTests(unittest.TestCase):
         self.assertFalse(report["rounds"][0]["ready"])
         self.assertEqual(report["status"], "passed")
         self.assertTrue(report["ready"])
+        self.assertEqual(report["remaining_units_total"], 0)
+        self.assertNotIn("stop_category", report)
 
     def test_budget_checkpoint_with_unsettled_deepl_usage_never_resumes(self):
         for unobserved, reserved in ((1, 300), (0, 300), (1, 0)):
@@ -286,6 +360,34 @@ class PortalLocaleBackfillTests(unittest.TestCase):
                 report, _, provider = self.run_backfill([{field: False}])
                 self.assertEqual(provider.call_count, 1)
                 self.assertEqual(report["status"], "failed")
+
+    def test_stale_diagnostics_from_previous_attempt_cannot_make_missing_report_pass(self):
+        stale = self.diagnostics.with_name(f"{self.diagnostics.stem}-round-1.json")
+        stale.write_text(json.dumps({"status": "passed", "provider_requests": 0}))
+        report, reader, provider = self.run_backfill([{"write_diagnostics": False}])
+        self.assertEqual((reader.call_count, provider.call_count), (1, 1))
+        self.assertFalse(stale.exists())
+        self.assertEqual(report["status"], "failed")
+        self.assertFalse(report["ready"])
+
+    def test_passed_preflight_report_is_never_a_ready_full_build(self):
+        report, reader, provider = self.run_backfill([{"diagnostics": {
+            "status": "passed", "preflight_only": True,
+        }}])
+        self.assertEqual((reader.call_count, provider.call_count), (1, 1))
+        self.assertEqual(report["status"], "failed")
+        self.assertFalse(report["ready"])
+
+    def test_passed_status_cannot_override_explicit_incomplete_builder_state(self):
+        for change in ({"ready": False}, {"remaining_units_total": 3}, {"remaining_units_total": True}):
+            with self.subTest(change=change):
+                self.commands.clear()
+                report, reader, provider = self.run_backfill([{"diagnostics": {
+                    "status": "passed", **change,
+                }}])
+                self.assertEqual((reader.call_count, provider.call_count), (1, 1))
+                self.assertEqual(report["status"], "failed")
+                self.assertFalse(report["ready"])
 
     def test_balance_failure_or_missing_cny_is_not_silently_checkpointed(self):
         snapshots = [{"status": "failed", "balance_requests": 1},

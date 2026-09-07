@@ -162,6 +162,42 @@ class ChineseParityTests(unittest.TestCase):
     def _verify(self) -> dict:
         return parity.verify_snapshot(root=self.site, snapshot_path=self.snapshot_path)
 
+    def test_incomplete_translation_checks_original_bytes_without_locale_sitemaps(self) -> None:
+        self._snapshot()
+        self._write("data/i18n/cache-v1.json.gz", b"saved translation checkpoint")
+        result = parity.verify_snapshot(root=self.site, snapshot_path=self.snapshot_path,
+                                        locale_build_complete=False)
+        self.assertEqual(result["verification_mode"], "incomplete-build-original-bytes")
+        self.assertIs(result["publishable"], False)
+        self.assertEqual(result["counts"]["hreflang_clusters"], 0)
+        # The same unfinished candidate must still fail the publication gate.
+        with self.assertRaises(parity.ParityError):
+            self._verify()
+
+    def test_incomplete_translation_still_rejects_changed_chinese_files(self) -> None:
+        self._snapshot()
+        for relative in ("index.html", "robots.txt", "sitemap.xml", "feed.xml",
+                         "assets/app.js", GOOGLE_VERIFICATION_FILE):
+            with self.subTest(path=relative):
+                path = self.site / relative
+                original = path.read_bytes()
+                path.write_bytes(original + b"changed")
+                with self.assertRaisesRegex(parity.ParityError, "changed during incomplete locale build"):
+                    parity.verify_snapshot(root=self.site, snapshot_path=self.snapshot_path,
+                                           locale_build_complete=False)
+                path.write_bytes(original)
+
+    def test_incomplete_translation_cli_emits_nonpublishable_evidence(self) -> None:
+        self._snapshot()
+        output = self.base / "incomplete-verification.json"
+        completed = subprocess.run([
+            sys.executable, "-B", str(ROOT / "scripts/verify_portal_chinese_parity.py"),
+            "verify", "--root", str(self.site), "--snapshot", str(self.snapshot_path),
+            "--output", str(output), "--locale-build-incomplete",
+        ], capture_output=True, text=True)
+        self.assertEqual(completed.returncode, 0, completed.stderr)
+        self.assertIs(json.loads(output.read_text())["publishable"], False)
+
     def test_correct_controlled_additions_pass_and_emit_auditable_digest(self) -> None:
         snapshot = self._snapshot()
         self.assertEqual(snapshot["schema_version"], 1)

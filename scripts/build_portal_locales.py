@@ -36,7 +36,7 @@ import xml.etree.ElementTree as ET
 from zoneinfo import ZoneInfo
 
 from portal_locale_history import plan_history_release
-from portal_locale_literals import is_latin_name_literal, is_machine_asset_reference, is_shared_japanese_keyword, is_short_latin_label_translation
+from portal_locale_literals import is_japanese_identity_label, is_latin_name_literal, is_machine_asset_reference, is_shared_japanese_keyword, is_short_latin_label_translation
 from portal_locale_scope import deferred_locale_source, restrict_html_to_cohort
 from portal_locale_report_preview import localize_report_preview
 from portal_locale_detail_hooks import defer_unverified_report_preview, inject_locale_detail_hooks
@@ -848,6 +848,8 @@ def validate_translation_quality(locale: str, unit: TranslationUnit, translated:
         return
     if locale == "ja" and is_shared_japanese_keyword(source_visible, translated_visible, unit.context):
         return
+    if locale == "ja" and is_japanese_identity_label(source_visible, translated_visible):
+        return
     # Names/acronyms and short Japanese Kanji headings can legitimately remain
     # identical. Do not infer language quality from spelling or script ratios.
     if locale == "ja" and len(source_compact) <= 12 and all(
@@ -1361,6 +1363,7 @@ def translate_missing_units(
         },
         "selected_batches": len(jobs), "workers": worker_count,
         "warmup_batches": warmup_size, "warmup_workers": min(8, worker_count),
+        "warmup_requires_ramp": bool(warmup_size and warmup_size < len(jobs)),
         "selected_contexts": sorted({unit.context for _locale, batch in jobs for unit in batch}),
         "priority_unit_count": len(priority_keys), "language_scheduling": "round-robin" if not preflight_only else "preflight",
         "pending_repairs": [], "pending_repair_count": 0,
@@ -1690,7 +1693,7 @@ def translate_missing_units(
                             run_state.stop(f"DeepSeek HTTP {error.status}; stopped new provider requests")
                         elif isinstance(error, TranslationStopped) or transport_failure(error):
                             run_state.stop(reason)
-                        if warming_up:
+                        if warming_up and warmup_size < len(jobs):
                             run_state.stop("Initial small-cohort translation incomplete; saved usable rows before high concurrency")
                         if preflight_only or systemic_failure:
                             run_state.stop("Preflight failed" if preflight_only else "Systemic translation failures; stopped new requests")
@@ -1700,13 +1703,21 @@ def translate_missing_units(
                         repair_pending()
                     coverage = sample_coverage(jobs[:warmup_size])
                     run_state.data["warmup_sample_coverage"] = coverage
-                    if not all(row["passed"] for row in coverage.values()):
+                    sample_passed = all(row["passed"] for row in coverage.values())
+                    # A resumed tail may be the entire warmup. There is no
+                    # concurrency ramp to authorize in that case: let residual
+                    # repair and the full coverage gate report the missing rows.
+                    # Provider/transport/systemic stops above remain terminal.
+                    if not sample_passed and warmup_size < len(jobs):
                         run_state.stop("Initial small-cohort output is insufficient; saved completed rows before high concurrency")
-                    if not run_state.stop_reason:
+                    if sample_passed and not run_state.stop_reason:
                         run_state.data["warmup_passed"] = True
                         write_cache(cache_path, cache)
                         run_state.write()
-                        log(f"Initial {warmup_size} translation batches passed and cached; enabling {worker_count} workers.")
+                        if warmup_size < len(jobs):
+                            log(f"Initial {warmup_size} translation batches passed and cached; enabling {worker_count} workers.")
+                        else:
+                            log(f"All {warmup_size} remaining translation batches passed and cached.")
                 if run_state.stop_reason:
                     exhausted = True
                     for future in pending:
