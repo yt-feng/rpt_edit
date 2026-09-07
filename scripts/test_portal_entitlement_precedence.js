@@ -282,8 +282,8 @@ assert.doesNotMatch(
 );
 assert.match(
   app,
-  /loadAccountAdminSummary\(workerUrl, targets\)\.then\([\s\S]*?canManageUsers[\s\S]*?loadFreshAdminUsers\(workerUrl, targets\)/,
-  "opening the super admin panel must replace its cached user list with a live verified list",
+  /loadAccountAdminSummary\(workerUrl, targets\)\.then\([\s\S]*?!adminUsersSnapshotIsFresh\(summary\) && canManageUsers && exportUsers[\s\S]*?loadFreshAdminUsers\(workerUrl, targets\)/,
+  "opening the super admin panel must verify stale or missing user snapshots without refetching a fresh snapshot",
 );
 assert.match(
   app,
@@ -292,7 +292,7 @@ assert.match(
 );
 assert.match(
   app,
-  /if \(targets\.canManageUsers && targets\.exportUsers && document\.getElementById\("accountAdminModal"\)\)/,
+  /if \(!adminUsersSnapshotIsFresh\(summary\) && targets\.canManageUsers && targets\.exportUsers && document\.getElementById\("accountAdminModal"\)\)/,
   "background refresh must not call the super-only user export endpoint for an operator",
 );
 assert.match(

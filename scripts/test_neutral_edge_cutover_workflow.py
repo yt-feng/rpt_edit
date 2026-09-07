@@ -952,6 +952,47 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn("needs.prepare_release.outputs.operation != 'locale-shadow'", cutover_header)
         self.assertIn("release-semantics-after.json", self.workflow)
 
+    def test_unchanged_preparation_keeps_baseline_validation_without_full_route_probes(self) -> None:
+        preparation = self.workflow.split("\n  shadow_review_hold:\n", 1)[0]
+        self.assertNotIn("scripts/edge_route_cutover.py verify", preparation)
+        baseline = preparation.split("Capture exact previous state and public discovery", 1)[1].split(
+            "Capture active release semantics", 1)[0]
+        for path in ("/.well-known/edge-state", "/data/catalog.json", "/sitemap-baidu.xml"):
+            self.assertIn(f'"$origin{path}"', baseline)
+        for failure in (
+            "Previous Edge state is invalid",
+            "Previous public catalog is empty or invalid",
+            "Previous public sitemap is empty or invalid",
+        ):
+            self.assertIn(f'raise SystemExit("{failure}")', baseline)
+        cutover_header = self.workflow.split("\n  cutover:\n", 1)[1].split("    steps:\n", 1)[0]
+        self.assertIn("needs.prepare_release.outputs.changed == 'true'", cutover_header)
+        for name in ("Build public validation artifact", "Upload release validation artifact"):
+            step = preparation.split(f"      - name: {name}\n", 1)[1].split("      - name:", 1)[0]
+            self.assertIn("steps.release_delta.outputs.changed == 'true'", step)
+        self.assertIn('install -m 0600 "$RUNNER_TEMP/previous-edge-state.json"', preparation)
+        self.assertIn('install -m 0600 "$RUNNER_TEMP/previous-public-catalog.json"', preparation)
+
+    def test_reduced_preflight_preserves_full_post_cutover_and_rollback_acceptance(self) -> None:
+        preflight = self.workflow.split("Prove live release is unchanged before cutover", 1)[1].split(
+            "Require live Portal Worker locale search capability", 1)[0]
+        self.assertIn('EDGE_VERIFY_CONSECUTIVE: "1"', preflight)
+        self.assertIn("cmp _release_validation/previous/edge-state.json", preflight)
+        self.assertIn("cmp _release_validation/previous/catalog.json", preflight)
+        acceptance = self.workflow.split("Accept prepared release through the live edge", 1)[1].split(
+            "Roll back failed release or completed rehearsal", 1)[0]
+        rollback = self.workflow.split("Verify exact previous release after rollback", 1)[1].split(
+            "Enforce transactional outcome", 1)[0]
+        for step in (acceptance, rollback):
+            self.assertIn('EDGE_VERIFY_CONSECUTIVE: "3"', step)
+            self.assertIn('EDGE_VERIFY_ATTEMPTS: "6"', step)
+            self.assertIn("scripts/edge_route_cutover.py verify", step)
+            self.assertIn("api/health?runtime-data=1", step)
+            self.assertIn("scripts/check_public_brand.py", step)
+        self.assertIn("scripts/verify_portal_locale_routes.py", acceptance)
+        self.assertIn('runtime.get("catalog_versioned") is not True', acceptance)
+        self.assertIn('runtime.get("rules_versioned") is not True', acceptance)
+
     def test_public_brand_gate_covers_build_publish_and_live_acceptance(self) -> None:
         build = self.workflow.index("Build private static release")
         brand_check = self.workflow.index("Validate built public brand")

@@ -93,7 +93,7 @@ jobs:
           node --test workers/edge-static-host/test/index.test.mjs
 
 '''
-    for name in ('Prepare masked release context', 'Gate preparation on stable live routes',
+    for name in ('Prepare masked release context',
                  'Capture exact previous state and public discovery'):
         result += steps[name]
     result += '''      - name: Restore verified uploaded candidate without rebuilding or translating

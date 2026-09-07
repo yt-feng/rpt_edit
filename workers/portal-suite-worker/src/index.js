@@ -339,6 +339,8 @@ const ANALYTICS_DAY_SUMMARY_JOB_PREFIX = "_account/analytics-summary-jobs";
 const ANALYTICS_DAY_SUMMARY_PREFIX = "_account/analytics-day-summaries";
 const ANALYTICS_DAY_SUMMARY_JOB_TTL_MS = 2 * 60 * 60 * 1000;
 const ANALYTICS_EVENT_MAX_BODY_BYTES = 24 * 1024;
+const ANALYTICS_EVENT_MAX_BATCH_SIZE = 20;
+const ANALYTICS_EVENT_WRITE_CONCURRENCY = 4;
 const PUBLIC_ANALYTICS_EVENT_TYPES = new Set([
   "account_auth",
   "course_material_request",
@@ -7907,6 +7909,10 @@ async function persistAnalyticsEvent(request, env, payload, userOverride = undef
       : Promise.resolve(analyticsUserSnapshot(userOverride)),
     analyticsIpHash(request, env),
   ]);
+  return writeAnalyticsEvent(request, env, payload, user, ipHash);
+}
+
+async function writeAnalyticsEvent(request, env, payload, user, ipHash) {
   const event = analyticsEventFromPayload(request, payload, user, ipHash);
   if (event.visitor_id) {
     const isReportChatVisitor = event.type === "report_chat" || event.type === "report_chat_interaction";
@@ -7929,6 +7935,19 @@ async function persistAnalyticsEvent(request, env, payload, userOverride = undef
     env.REPORT_BUCKET.put(`${ANALYTICS_BACKUP_PREFIX}/${suffix}`, body, metadata),
   ]);
   return event;
+}
+
+async function persistAnalyticsBatch(request, env, payloads) {
+  if (!env.REPORT_BUCKET) return;
+  // Every event retains its own primary/backup record and existing sanitization.
+  // Request identity is verified once, never accepted from a batch item.
+  const [user, ipHash] = await Promise.all([
+    optionalAnalyticsUser(request, env),
+    analyticsIpHash(request, env),
+  ]);
+  await mapWithConcurrency(payloads, ANALYTICS_EVENT_WRITE_CONCURRENCY, (payload) => (
+    writeAnalyticsEvent(request, env, payload, user, ipHash).catch(() => null)
+  ));
 }
 
 async function handleAnalyticsEvent(request, env, ctx = null) {
@@ -7957,11 +7976,24 @@ async function handleAnalyticsEvent(request, env, ctx = null) {
   if (!payload || typeof payload !== "object" || Array.isArray(payload)) {
     return jsonResponse(request, env, 400, { detail: "Invalid analytics event." });
   }
-  const eventType = cleanAnalyticsText(payload.type || (payload.data && payload.data.type), 60).toLowerCase();
-  if (!PUBLIC_ANALYTICS_EVENT_TYPES.has(eventType)) {
-    return jsonResponse(request, env, 400, { detail: "Unsupported analytics event." });
+  const isBatch = Object.prototype.hasOwnProperty.call(payload, "events");
+  const payloads = isBatch ? payload.events : [payload];
+  if (!Array.isArray(payloads) || !payloads.length || payloads.length > ANALYTICS_EVENT_MAX_BATCH_SIZE) {
+    return jsonResponse(request, env, 400, { detail: "Invalid analytics batch." });
   }
-  const write = persistAnalyticsEvent(request, env, payload).catch(() => null);
+  // Validate the entire envelope before writing anything; batches cannot smuggle
+  // server-only event types or partly write a malformed request.
+  for (const item of payloads) {
+    if (!item || typeof item !== "object" || Array.isArray(item)
+      || Object.prototype.hasOwnProperty.call(item, "events")) {
+      return jsonResponse(request, env, 400, { detail: "Invalid analytics event." });
+    }
+    const eventType = cleanAnalyticsText(item.type || (item.data && item.data.type), 60).toLowerCase();
+    if (!PUBLIC_ANALYTICS_EVENT_TYPES.has(eventType)) {
+      return jsonResponse(request, env, 400, { detail: "Unsupported analytics event." });
+    }
+  }
+  const write = persistAnalyticsBatch(request, env, payloads).catch(() => null);
   if (ctx && typeof ctx.waitUntil === "function") {
     ctx.waitUntil(write);
   } else {

@@ -325,17 +325,22 @@ class EdgeRouteCutoverTests(unittest.TestCase):
         ).read_text(encoding="utf-8")
         deploy_name = "      - name: Deploy prepared neutral edge release\n"
         verify_name = "      - name: Accept prepared release through the live edge\n"
-        preflight_name = "      - name: Gate preparation on stable live routes\n"
-        upload_name = "      - name: Upload inactive static slot and immutable runtime\n"
+        preflight_name = "      - name: Prove live release is unchanged before cutover\n"
+        rollback_name = "      - name: Verify exact previous release after rollback\n"
         deploy_start = workflow.index(deploy_name)
         verify_start = workflow.index(verify_name)
         preflight_start = workflow.index(preflight_name)
-        upload_start = workflow.index(upload_name)
-        self.assertLess(preflight_start, upload_start)
+        rollback_start = workflow.index(rollback_name)
+        self.assertLess(preflight_start, deploy_start)
         self.assertLess(deploy_start, verify_start)
-        verify_step = workflow[verify_start:]
-        self.assertIn("python3 -B scripts/edge_route_cutover.py verify", verify_step)
-        self.assertIn("EDGE_VERIFY_CONSECUTIVE: \"3\"", workflow[preflight_start:upload_start])
+        preflight_step = workflow[preflight_start:deploy_start]
+        self.assertIn("python3 -B scripts/edge_route_cutover.py verify", preflight_step)
+        self.assertIn('EDGE_VERIFY_ATTEMPTS: "3"', preflight_step)
+        self.assertIn('EDGE_VERIFY_CONSECUTIVE: "1"', preflight_step)
+        for step in (workflow[verify_start:rollback_start], workflow[rollback_start:]):
+            self.assertIn("python3 -B scripts/edge_route_cutover.py verify", step)
+            self.assertIn('EDGE_VERIFY_ATTEMPTS: "6"', step)
+            self.assertIn('EDGE_VERIFY_CONSECUTIVE: "3"', step)
         self.assertIn("enabled = false", workflow)
         self.assertIn("Roll back failed release or completed rehearsal", workflow)
         self.assertIn("Verify exact previous release after rollback", workflow)

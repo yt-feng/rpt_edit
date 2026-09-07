@@ -6,8 +6,27 @@
   const SESSION_KEY = "portal_analytics_session";
   const AUTH_SESSION_KEY = "portal_auth_session";
   const SESSION_IDLE_MS = 30 * 60 * 1000;
+  const MAX_BATCH_EVENTS = 20;
+  const MAX_BODY_BYTES = 24 * 1024;
+  const MAX_PENDING_EVENTS = 100;
+  const MAX_PENDING_BYTES = 48 * 1024;
+  // Keep the public ingestion contract separate from server-only audit events.
+  // An unsupported caller must not poison valid events in the same batch.
+  const PUBLIC_EVENT_TYPES = new Set([
+    "account_auth", "course_material_request", "daily_file_download",
+    "delivery_link_generate", "download_attempt", "download_error",
+    "download_pending", "download_success", "newsfeed_interaction",
+    "newsfeed_topic_request", "page_view", "report_open", "report_request",
+    "report_chat_interaction", "report_text_view", "reward_checkin",
+    "reward_claim", "search",
+  ]);
   const sentPageViews = new Set();
   let configPromise = null;
+  let resolvedWorkerUrl = "";
+  let flushScheduled = false;
+  let pendingEvents = 0;
+  let pendingBytes = 0;
+  let queue = [];
 
   function randomId(prefix) {
     if (root.crypto && typeof root.crypto.randomUUID === "function") return root.crypto.randomUUID();
@@ -118,7 +137,10 @@
       configPromise = root.fetch("/data/config.json", { cache: "no-store" })
         .then((response) => response.ok ? response.json() : {})
         .catch(() => ({}))
-        .then(workerBaseUrl);
+        .then((config) => {
+          resolvedWorkerUrl = workerBaseUrl(config);
+          return resolvedWorkerUrl;
+        });
     }
     return configPromise;
   }
@@ -169,13 +191,77 @@
     };
   }
 
+  function sendBatch(workerUrl, entries) {
+    const body = entries.length === 1
+      ? entries[0].body
+      : `{"events":[${entries.map((entry) => entry.body).join(",")}]}`;
+    const finish = (ok) => {
+      for (const entry of entries) {
+        pendingEvents -= 1;
+        pendingBytes -= entry.bytes;
+        entry.resolve(ok);
+      }
+    };
+    try {
+      Promise.resolve(root.fetch(`${workerUrl}/analytics`, {
+        method: "POST",
+        cache: "no-store",
+        keepalive: true,
+        headers: { "Content-Type": "application/json", ...entries[0].headers },
+        body,
+      })).then((response) => finish(Boolean(response.ok)), () => finish(false));
+    } catch (_error) {
+      finish(false);
+    }
+  }
+
+  function flush(workerUrl) {
+    const entries = queue;
+    queue = [];
+    let batch = [];
+    let bytes = 13; // The UTF-8 size of {"events":[]} before adding event bodies.
+    for (const entry of entries) {
+      if (batch.length && (batch.length >= MAX_BATCH_EVENTS
+        || batch[0].headers.Authorization !== entry.headers.Authorization
+        || bytes + entry.bytes + 1 > MAX_BODY_BYTES)) {
+        sendBatch(workerUrl, batch);
+        batch = [];
+        bytes = 13;
+      }
+      bytes += entry.bytes + (batch.length ? 1 : 0);
+      batch.push(entry);
+    }
+    if (batch.length) sendBatch(workerUrl, batch);
+  }
+
+  function scheduleFlush() {
+    if (flushScheduled) return;
+    flushScheduled = true;
+    // A single microtask combines synchronous bursts such as popular-card
+    // impressions without adding a timer to page views or navigation events.
+    Promise.resolve().then(loadWorkerBaseUrl).then((workerUrl) => {
+      flushScheduled = false;
+      flush(workerUrl);
+    }).catch(() => {
+      flushScheduled = false;
+      flush(resolvedWorkerUrl || "/api");
+    });
+  }
+
+  function flushBeforeLeaving() {
+    // Start keepalive requests synchronously, even if config is still loading.
+    // The usual scheduled flush will see an empty queue and cannot resend it.
+    if (queue.length) flush(resolvedWorkerUrl || "/api");
+  }
+
   async function track(type, data) {
     const eventType = String(type || "event").toLowerCase();
+    if (!PUBLIC_EVENT_TYPES.has(eventType)) return false;
     const path = cleanPath();
+    let pageViewKey = "";
     if (eventType === "page_view") {
-      const key = `${path}\u001f${String(data && data.page || root.document.body && root.document.body.dataset.page || "")}`;
-      if (sentPageViews.has(key)) return false;
-      sentPageViews.add(key);
+      pageViewKey = `${path}\u001f${String(data && data.page || root.document.body && root.document.body.dataset.page || "")}`;
+      if (sentPageViews.has(pageViewKey)) return false;
     }
     const context = { ...baseContext(), ...(data || {}) };
     const payload = {
@@ -187,16 +273,20 @@
       data: context,
     };
     try {
-      const workerUrl = await loadWorkerBaseUrl();
-      if (!workerUrl) return false;
-      await root.fetch(`${workerUrl}/analytics`, {
-        method: "POST",
-        cache: "no-store",
-        keepalive: true,
-        headers: { "Content-Type": "application/json", ...authHeaders() },
-        body: JSON.stringify(payload),
+      const body = JSON.stringify(payload);
+      const bytes = new TextEncoder().encode(body).byteLength;
+      if (bytes > MAX_BODY_BYTES || pendingEvents >= MAX_PENDING_EVENTS
+        || pendingBytes + bytes > MAX_PENDING_BYTES) return false;
+      // Capture identity now: a login/logout while config loads must not assign
+      // earlier events to the next account or merge the two accounts' batches.
+      const headers = authHeaders();
+      if (pageViewKey) sentPageViews.add(pageViewKey);
+      pendingEvents += 1;
+      pendingBytes += bytes;
+      return await new Promise((resolve) => {
+        queue.push({ body, bytes, headers, resolve });
+        scheduleFlush();
       });
-      return true;
     } catch (_error) {
       return false;
     }
@@ -219,6 +309,13 @@
     currentSession,
     loadWorkerBaseUrl,
   };
+
+  if (typeof root.addEventListener === "function") {
+    root.addEventListener("pagehide", flushBeforeLeaving);
+  }
+  root.document.addEventListener("visibilitychange", () => {
+    if (root.document.visibilityState === "hidden") flushBeforeLeaving();
+  });
 
   if (root.document.readyState === "loading") {
     root.document.addEventListener("DOMContentLoaded", autoPageView, { once: true });
