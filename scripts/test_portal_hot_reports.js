@@ -178,7 +178,8 @@ assert.match(indexHtml, /3个月及以上会员可下载全文/);
 assert.match(indexHtml, /id="hotReportsPrev"[\s\S]*?id="hotReportsPageInfo"[\s\S]*?id="hotReportsNext"/, "hot reports must expose accessible page navigation");
 assert.match(indexHtml, /id="hotReportsRetry"[\s\S]*?重新加载/, "a failed page request must offer an explicit retry action");
 assert.match(app, /fetch\(hotReportRequestUrl\(cleanQuery, cursor, localeIds\), \{ signal: controller\.signal \}\)/, "the home UI must load indexed hot-report pages");
-assert.match(extractFunction(app, "loadAdminHotReports"), /URLSearchParams\(\{ limit: "60" \}\)[\s\S]*?params\.set\("cursor", cursor\)/, "the admin UI must follow every indexed hot-report page");
+assert.match(extractAsyncFunction(app, "fetchAdminHotReportPage"), /URLSearchParams\(\{ limit: "60" \}\)[\s\S]*?params\.set\("cursor", previous\.nextCursor\)/, "admin pages must retain the server's indexed cursor");
+assert.match(extractFunction(app, "openAdminHotReportList"), /addEventListener\("click"[\s\S]*?loadAdminHotReports\(workerUrl, targets, \{ append: true \}\)/, "the admin UI must load subsequent indexed pages on request");
 assert.match(app, /const HOT_REPORT_PAGE_SIZE = 24/, "the home page must request a small first page");
 assert.match(
   app,
