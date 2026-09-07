@@ -121,6 +121,59 @@ class ResidualRepairTests(unittest.TestCase):
         self.assertEqual(self.state.data["original_failed_batches"], 1)
         self.assert_complete(units, cache)
 
+    def test_small_resume_tail_uses_full_coverage_gate_without_a_concurrency_ramp(self):
+        units = self.inventory(3)
+        cache = self.cache_for(units)
+        calls = []
+
+        def translator(locale, batch):
+            calls.append(tuple(unit.key for unit in batch))
+            if len(batch) > 1:
+                raise builder.PartialTranslationError("isolated missing row", {batch[0].key: NATIVE[locale]})
+            return {unit.key: NATIVE[locale] for unit in batch}
+
+        self.translate(units, cache, translator, workers=500)
+        self.assertFalse(self.state.data["warmup_requires_ramp"])
+        self.assertEqual(len(calls), 3)
+        self.assert_complete(units, cache)
+
+    def test_small_resume_tail_zero_saved_batch_still_receives_bounded_plain_repair(self):
+        units = self.inventory(1)
+        cache = self.cache_for(units)
+        calls = []
+
+        def translator(locale, batch):
+            calls.append(batch)
+            if len(calls) == 1:
+                raise builder.PartialTranslationError("missing translation", {})
+            return {unit.key: NATIVE[locale] for unit in batch}
+
+        self.translate(units, cache, translator, workers=500)
+        self.assertEqual(len(calls), 2)
+        self.assertFalse(self.state.data["warmup_requires_ramp"])
+        self.assertEqual(self.state.data["tail_repair_units"], 1)
+        self.assert_complete(units, cache)
+
+    def test_small_tail_with_validated_progress_reports_exact_unresolved_count(self):
+        units = self.inventory(3)
+        cache = self.cache_for(units)
+        calls = []
+
+        def translator(locale, batch):
+            calls.append(batch)
+            if len(batch) > 1:
+                raise builder.PartialTranslationError("isolated missing rows", {batch[0].key: NATIVE[locale]})
+            return {unit.key: unit.source for unit in batch}
+
+        with self.assertRaisesRegex(builder.TranslationError, "2 unresolved source units"):
+            self.translate(units, cache, translator, workers=500)
+        self.assertFalse(self.state.stop_reason)
+        self.assertFalse(self.state.data["warmup_requires_ramp"])
+        self.assertEqual(len(calls), 3)
+        self.assertEqual(self.state.data["remaining_units_total"], 2)
+        self.assertEqual(self.state.data["status"], "failed")
+        self.assertEqual(len(builder.load_cache(self.path)["locales"]["ko"]), 1)
+
     def test_sparse_omission_and_historical_whole_batch_error_both_repair(self):
         units = self.inventory(6)
         cache = self.cache_for(units, missing_locales=builder.LOCALES)

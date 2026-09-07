@@ -464,7 +464,12 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         parity = step("Verify protected Chinese release after locale build")
         self.assertIn("if: always()", parity)
         self.assertIn("steps.chinese_snapshot.outcome == 'success'", parity)
-        self.assertNotIn("steps.locale_build.outputs.ready", parity)
+        self.assertIn("LOCALE_READY: ${{ steps.locale_build.outputs.ready }}", parity)
+        self.assertIn("parity_args+=(--locale-build-incomplete)", parity)
+        self.assertLess(parity.index('if [ "$LOCALE_READY" != "true" ]; then',
+                                     parity.index('"${parity_args[@]}"')),
+                        parity.index('PARITY_REPORT='))
+        self.assertIn("not publishable", parity)
         self.assertIn("id: chinese_snapshot", step("Snapshot protected Chinese release before locale build"))
         diagnostics = step("Preserve translation diagnostics even on failure")
         self.assertIn("if: always()", diagnostics)

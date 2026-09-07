@@ -1,0 +1,56 @@
+# Locale refresh reliability
+
+## Incident: 2026-09-08
+
+Run `34169047186`
+stopped during multilingual preparation. The upload and cutover jobs did not run.
+The initial translation pass left eight source units. The next pass repaired five
+but rejected three valid Japanese labels as unchanged source text:
+
+- `三井E`
+- `__KC_PH_000__ 三井E`
+- `国内RevPar`
+
+The first label is an HTML entity boundary fragment of `三井E&amp;S`.
+Both translation providers returned valid same-form Japanese. Retrying the same
+quality rule could not resolve it. The subsequent Chinese parity error required
+locale sitemaps before rendering had completed; it did not establish a Chinese
+content change.
+
+The failed run restored the previous successful translation checkpoint and saved
+its own completed rows. It was not a lost-cache incident. Across the latest 25
+runs inspected on September 8, the automatic-refresh subset contained nine
+successes, one failure and one cancellation. Other failed runs were separate
+source tests, materialization and shadow-route defects.
+
+## Invariants and recovery
+
+- Japanese same-form financial labels and observed entity fragments are accepted
+  only by bounded vocabulary/pattern checks. General unchanged Chinese prose,
+  changed placeholders and invalid translations still fail validation.
+- Backfill keeps its existing three-round bound. Continuation requires observed
+  progress in the current translation inventory and a changed saved checkpoint;
+  pruning obsolete cache entries must not erase evidence of useful progress.
+- Each child invocation must create fresh diagnostics. Preflight results cannot
+  qualify a complete build. Provider errors and unobserved requests remain stops.
+- After an incomplete build, Chinese parity checks every original file's bytes
+  and the complete original path inventory. This evidence is marked
+  `publishable=false` and does not emit the publication approval hash.
+- A completed build still requires the normal full parity gate, complete locale
+  sitemaps and all existing static/shadow/live release checks.
+- The Actions summary distinguishes a complete candidate from a cached,
+  incomplete candidate. Diagnostic artifacts and saved translations survive
+  failure. Inspect the specific pending units before repeating a deterministic
+  quality failure.
+
+## Verification
+
+Regression tests cover the incident's actual labels and HTML fragmentation,
+unchanged Chinese rejection, residual progress with cache pruning, stale child
+reports, failed-build Chinese mutation detection and publication gating.
+Run the workflow's `Validate public source` commands before merging. Then dispatch
+`neutral-edge-cutover.yml` with `operation=migrate`, `translation_scope=incremental`
+from current `main`, and verify preparation, cutover and live release output.
+
+Use an independent worktree/branch for workflow changes. Merge against current
+`main`; do not reset or stage changes in another task's working directory.

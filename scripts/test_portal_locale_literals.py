@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """Asset references do not require translation or paid repair requests."""
 from pathlib import Path
+import json
 import tempfile
 import unittest
 from unittest import mock
 
 import build_portal_locales as builder
-from portal_locale_literals import is_latin_name_literal, is_machine_asset_reference, is_shared_japanese_keyword, is_short_latin_label_translation
+from portal_locale_literals import is_japanese_identity_label, is_latin_name_literal, is_machine_asset_reference, is_shared_japanese_keyword, is_short_latin_label_translation
 
 
 class AssetReferenceTests(unittest.TestCase):
@@ -223,6 +224,101 @@ class SharedJapaneseKeywordTests(unittest.TestCase):
         self.assertFalse(builder._valid_cache_row("ja", body_unit, {
             "source": "不同来源", "translation": "MSCI指数", "ja_keyword_name": True,
         }))
+
+
+class JapaneseIdentityLabelTests(unittest.TestCase):
+    def test_native_incident_rows_are_valid_provider_batch_output(self):
+        units = [
+            builder.TranslationUnit(str(index), context, source)
+            for index, (context, source) in enumerate((
+                ("html:text:h3", "__KC_PH_000__ 三井E"),
+                ("html:text:p", "国内RevPar"),
+                ("html:text:p", "三井E"),
+            ))
+        ]
+        response = json.dumps({"translations": [{"id": unit.key, "text": unit.source} for unit in units]})
+        self.assertEqual(builder.parse_translation_batch(response, units, "ja"),
+                         {unit.key: unit.source for unit in units})
+        for locale in ("ko", "ar"):
+            with self.assertRaises(builder.PartialTranslationError):
+                builder.parse_translation_batch(response, units, locale)
+
+    def test_failed_run_fragments_are_collected_and_reused_across_html_rendering(self):
+        # Run 34169047186: HTML entities and emphasis create these three units.
+        source = (
+            '<h3>2. 三井E&amp;S受益于船用发动机供给紧张</h3>'
+            '<p>三井E&amp;S在国内船用发动机市场占有<span>60%</span></p>'
+            '<p>国内RevPar<span>承压</span></p>'
+        )
+        units = {}
+        builder.collect_html_units(source, units)
+        expected = {"__KC_PH_000__ 三井E", "三井E", "国内RevPar"}
+        self.assertTrue(expected.issubset({unit.source for unit in units.values()}))
+        cache = builder.empty_cache()
+        for unit in units.values():
+            translated = unit.source if unit.source in expected else "関連する調査内容"
+            builder.validate_translation_quality("ja", unit, translated)
+            cache["locales"]["ja"][unit.key] = builder._translation_cache_row(unit, translated)
+        parser = builder.PortalHTMLProcessor(locale="ja", cache=cache)
+        parser.feed(source)
+        parser.close()
+        result = parser.rendered_html()
+        self.assertIn("2. 三井E&amp;", result)
+        self.assertIn("<p>三井E&amp;", result)
+        self.assertIn("<p>国内RevPar<span>", result)
+        for unit in units.values():
+            if unit.source in expected:
+                for locale in ("ko", "ar"):
+                    with self.assertRaises(builder.TranslationError):
+                        builder.validate_translation_quality(locale, unit, unit.source)
+
+    def test_closed_financial_vocabulary_accepts_complete_japanese_labels(self):
+        for source in ("国内RevPar", "海外RevPAR", "連結EBITDA", "単体ROE", "調整後EPS", "通期FCF", "三井E&S"):
+            with self.subTest(source=source):
+                self.assertTrue(is_japanese_identity_label(source, source))
+                for context in ("html:text:p", "html:text:h3", "html:meta:keyword", "chart:description"):
+                    unit = builder.TranslationUnit("a" * 64, context, source)
+                    builder.validate_translation_quality("ja", unit, source)
+                    self.assertFalse(builder._translation_cache_row(unit, source).get("entity_name", False))
+
+    def test_sentences_changed_names_and_unrecognized_mixed_labels_still_require_translation(self):
+        for source in ("国内RevPar同比下降", "国内RevPar承压", "三井E计划增长", "三井E&S在国内市场增长",
+                       "国内AI增长", "调整后EPS", "集团EBITDA", "海外Abc", "国内RevPar。"):
+            with self.subTest(source=source):
+                self.assertFalse(is_japanese_identity_label(source, source))
+                unit = builder.TranslationUnit("a" * 64, "html:text:p", source)
+                with self.assertRaises(builder.TranslationError):
+                    builder.validate_translation_quality("ja", unit, source)
+        self.assertFalse(is_japanese_identity_label("国内RevPar", "海外RevPar"))
+
+    def test_native_label_does_not_bypass_structural_placeholders(self):
+        unit = builder.TranslationUnit("a" * 64, "html:text:h3", "__KC_PH_000__ 三井E")
+        builder.validate_translation_quality("ja", unit, unit.source)
+        for translated in ("三井E", "__KC_PH_001__ 三井E", "__KC_PH_000__ __KC_PH_000__ 三井E"):
+            with self.subTest(translated=translated), self.assertRaisesRegex(builder.TranslationError, "placeholder mismatch"):
+                builder.validate_translation_quality("ja", unit, translated)
+
+    def test_complete_native_labels_survive_cache_pruning_without_new_requests(self):
+        units = {}
+        for source in ("三井E", "国内RevPar", "2. 三井E"):
+            builder.collect_text_units(source, "html:text:p", units)
+        cache = builder.empty_cache()
+        for locale, translated in (("ko", "공개 연구 내용"), ("ja", None), ("ar", "المحتوى البحثي العام")):
+            for unit in units.values():
+                value = translated or unit.source
+                if translated:
+                    value = " ".join(builder.PLACEHOLDER_RE.findall(unit.source) + [value])
+                cache["locales"][locale][unit.key] = builder._translation_cache_row(unit, value)
+        provider = mock.Mock(side_effect=AssertionError("Completed labels must remain reusable"))
+        with tempfile.TemporaryDirectory() as directory, mock.patch.object(builder, "log"):
+            state = builder.TranslationRun()
+            builder.translate_missing_units(
+                units, cache, cache_path=Path(directory) / "cache.json.gz",
+                model=builder.DEFAULT_DEEPSEEK_MODEL, base_url="https://provider.example.invalid",
+                workers=500, timeout=1, attempts=1, batch_translator=provider, run_state=state,
+            )
+        provider.assert_not_called()
+        self.assertEqual(state.data["status"], "passed")
 
 
 class ShortLatinLabelTranslationTests(unittest.TestCase):

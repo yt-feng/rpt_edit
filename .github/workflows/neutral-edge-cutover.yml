@@ -905,13 +905,24 @@ jobs:
       - name: Verify protected Chinese release after locale build
         id: chinese_parity
         if: always() && steps.operation.outputs.multilingual_enabled == 'true' && steps.chinese_snapshot.outcome == 'success'
+        env:
+          LOCALE_READY: ${{ steps.locale_build.outputs.ready }}
         run: |
           set -euo pipefail
+          parity_args=()
+          if [ "$LOCALE_READY" != "true" ]; then
+            parity_args+=(--locale-build-incomplete)
+          fi
           python3 -B scripts/verify_portal_chinese_parity.py verify \
             --root _neutral_site \
             --snapshot "$RUNNER_TEMP/chinese-before-locales.json" \
             --site-url "$LIVE_ORIGIN" \
-            --output "$RUNNER_TEMP/chinese-parity.json"
+            --output "$RUNNER_TEMP/chinese-parity.json" \
+            "${parity_args[@]}"
+          if [ "$LOCALE_READY" != "true" ]; then
+            echo "Chinese original bytes verified; locale build is incomplete and not publishable."
+            exit 0
+          fi
           PARITY_REPORT="$RUNNER_TEMP/chinese-parity.json" python3 - <<'PY' >> "$GITHUB_OUTPUT"
           import hashlib
           import os
@@ -919,6 +930,43 @@ jobs:
 
           report = Path(os.environ["PARITY_REPORT"])
           print(f"sha256={hashlib.sha256(report.read_bytes()).hexdigest()}")
+          PY
+
+      - name: Summarize multilingual translation outcome
+        if: always() && steps.operation.outputs.multilingual_enabled == 'true'
+        env:
+          LOCALE_OUTCOME: ${{ steps.locale_build.outcome }}
+          LOCALE_READY: ${{ steps.locale_build.outputs.ready }}
+          CHECKPOINT_PRESENT: ${{ steps.locale_checkpoint.outputs.present }}
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          report_path = Path(os.environ["RUNNER_TEMP"]) / "locale-full-diagnostics.json"
+          report = {}
+          if report_path.is_file():
+              try:
+                  report = json.loads(report_path.read_text(encoding="utf-8"))
+              except (OSError, ValueError):
+                  pass
+          if not isinstance(report, dict):
+              report = {}
+          ready = os.environ.get("LOCALE_READY") == "true"
+          with Path(os.environ["GITHUB_STEP_SUMMARY"]).open("a", encoding="utf-8") as summary:
+              summary.write("## Multilingual build outcome\n\n")
+              summary.write(f"Build step: {os.environ.get('LOCALE_OUTCOME', 'unknown')}.\n\n")
+              summary.write("Candidate complete; publication checks follow.\n\n" if ready else
+                            "Candidate incomplete; upload and cutover are blocked.\n\n")
+              summary.write(f"Reusable translation checkpoint present: {os.environ.get('CHECKPOINT_PRESENT') == 'true'}.\n\n")
+              for field in ("provider_requests", "remaining_units_total"):
+                  value = report.get(field)
+                  if type(value) is int and value >= 0:
+                      summary.write(f"{field}: {value}\n\n")
+              if not ready:
+                  summary.write("Inspect the attached translation diagnostics for the remaining units and stop reason. "
+                                "The next run reuses completed translations.\n")
           PY
 
       - name: Preserve translation diagnostics even on failure

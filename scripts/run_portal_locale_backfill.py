@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 from decimal import Decimal
 import gzip
+import hashlib
 import json
 from pathlib import Path
 import subprocess
@@ -34,24 +35,35 @@ def _save(path: Path, report: dict[str, Any]) -> None:
     temporary.replace(path)
 
 
-def _cache_rows(path: Path | None) -> int:
+def _cache_snapshot(path: Path | None) -> tuple[int, str]:
+    """Count saved rows and fingerprint their contents, not gzip metadata."""
     if path is None or not path.exists():
-        return 0
+        return 0, ""
     with gzip.open(path, "rt", encoding="utf-8") as handle:
         cache = json.load(handle)
     if not isinstance(cache, dict) or not isinstance(cache.get("locales"), dict):
         raise ValueError("Invalid cache structure")
     count = 0
+    digest = hashlib.sha256()
     for locale in ("ko", "ja", "ar"):
         rows = cache["locales"].get(locale, {})
         if not isinstance(rows, dict):
             raise ValueError("Invalid locale cache structure")
-        count += sum(
-            isinstance(row, dict) and isinstance(row.get("source"), str)
-            and isinstance(row.get("translation"), str) and bool(row["translation"].strip())
-            for row in rows.values()
-        )
-    return count
+        for key, row in sorted(rows.items()):
+            if (isinstance(row, dict) and isinstance(row.get("source"), str)
+                    and isinstance(row.get("translation"), str) and row["translation"].strip()):
+                count += 1
+                digest.update(json.dumps([locale, key, row], sort_keys=True, ensure_ascii=True).encode("utf-8"))
+                digest.update(b"\n")
+    return count, digest.hexdigest()
+
+
+def _unit_counts(raw: Any) -> dict[str, int] | None:
+    if not isinstance(raw, dict) or set(raw) != {"ko", "ja", "ar"}:
+        return None
+    if any(type(value) is not int or value < 0 for value in raw.values()):
+        return None
+    return {locale: raw[locale] for locale in ("ko", "ja", "ar")}
 
 
 def _number(raw: Any) -> Decimal:
@@ -94,11 +106,36 @@ def _summary(raw: dict[str, Any]) -> dict[str, Any]:
     status = raw.get("status")
     if status not in {"passed", "checkpointed", "failed"}:
         raise ValueError("Invalid builder status")
+    if status == "passed" and (
+        ("ready" in raw and raw["ready"] is not True)
+        or ("remaining_units_total" in raw and (
+            type(raw["remaining_units_total"]) is not int or raw["remaining_units_total"] != 0
+        ))
+    ):
+        raise ValueError("Inconsistent builder completion")
     result: dict[str, Any] = {"status": status, "ready": status == "passed"}
     for field in ("provider_requests", "completed_batches", "failed_batches", "remaining_units_total", *OBSERVATION_FIELDS):
         value = raw.get(field)
         if type(value) is int and value >= 0:
             result[field] = value
+    for field in ("missing_units", "remaining_units"):
+        counts = _unit_counts(raw.get(field))
+        if field in raw and counts is None:
+            raise ValueError("Invalid builder inventory")
+        if counts is not None:
+            result[field] = counts
+    if "remaining_units" in result and sum(result["remaining_units"].values()) != result.get("remaining_units_total"):
+        raise ValueError("Inconsistent builder inventory")
+    if "missing_units" in result:
+        result["missing_units_total"] = sum(result["missing_units"].values())
+        remaining = result.get("remaining_units_total")
+        if "remaining_units" in result and any(
+            result["remaining_units"][locale] > result["missing_units"][locale]
+            for locale in result["missing_units"]
+        ):
+            raise ValueError("Inconsistent builder inventory")
+        if type(remaining) is int and remaining <= result["missing_units_total"]:
+            result["resolved_units"] = result["missing_units_total"] - remaining
     usage = raw.get("usage_totals", {})
     if not isinstance(usage, dict):
         raise ValueError("Invalid builder usage")
@@ -106,7 +143,7 @@ def _summary(raw: dict[str, Any]) -> dict[str, Any]:
         field: usage[field] for field in USAGE_FIELDS
         if type(usage.get(field)) is int and usage[field] >= 0
     }
-    if raw.get("stop_category") in {"budget", "repair_limit", "deepl_quota", "provider", "transport", "quality", "systemic"}:
+    if raw.get("stop_category") in {"budget", "repair_limit", "deepl_quota", "provider", "transport", "quality", "systemic", "failure"}:
         result["stop_category"] = raw["stop_category"]
     repair = raw.get("deepl_repair")
     if isinstance(repair, dict):
@@ -195,7 +232,7 @@ def run_backfill(
                 report.update(status="checkpointed", stop_category="balance_reserve")
                 current["status"] = "checkpointed"
                 break
-            before = _cache_rows(cache_in)
+            before, before_digest = _cache_snapshot(cache_in)
             current["cache_rows_before"] = before
             _save(diagnostics_out, report)
             command = [sys.executable, "-B", str(Path(__file__).with_name("build_portal_locales.py")),
@@ -206,6 +243,10 @@ def run_backfill(
                 "--max-provider-cost-cny", format(budget, "f"), "--checkpoint-on-budget",
                 "--diagnostics-out", str(round_path),
             ])
+            # A retry of this orchestrator may reuse the diagnostics directory.
+            # Require a report from this exact invocation, even if the child
+            # exits before writing one.
+            round_path.unlink(missing_ok=True)
             # Child inherits credentials through its environment, never CLI args or diagnostics.
             completed = runner(command, check=False)
             if not round_path.is_file():
@@ -219,6 +260,10 @@ def run_backfill(
                 report[field] += current.get(field, 0)
             for field, value in current["usage_totals"].items():
                 report["usage_totals"][field] = report["usage_totals"].get(field, 0) + value
+            if "remaining_units_total" in current:
+                report["remaining_units_total"] = current["remaining_units_total"]
+            if raw.get("preflight_only") is True:
+                raise ValueError("Preflight cannot complete a locale backfill")
             resumable_gaps = completed.returncode == 1 and _resumable_translation_gaps(raw)
             if completed.returncode != 0 or current["status"] == "failed":
                 if not resumable_gaps:
@@ -230,9 +275,12 @@ def run_backfill(
                 current.update(status="checkpointed", ready=False, stop_category="translation_gaps")
             if not cache_out.is_file():
                 raise ValueError("Builder checkpoint missing")
-            current["cache_rows_after"] = _cache_rows(cache_out)
+            current["cache_rows_after"], after_digest = _cache_snapshot(cache_out)
+            current["cache_rows_delta"] = current["cache_rows_after"] - before
+            current["cache_changed"] = after_digest != before_digest
             if current["status"] == "passed":
-                report.update(status="passed", ready=True)
+                report.update(status="passed", ready=True, remaining_units_total=0)
+                report.pop("stop_category", None)
                 break
             if current.get("stop_category") == "deepl_quota" and raw.get("ready") is False:
                 report.update(status="checkpointed", stop_category="deepl_quota")
@@ -257,7 +305,18 @@ def run_backfill(
                 report.update(status="failed", stop_category="incomplete_usage")
                 break
             report.update(status="checkpointed", stop_category=current["stop_category"])
-            if current["cache_rows_after"] <= before:
+            # Pruning invalid or obsolete restored rows can shrink the cache
+            # even while validated translations are saved. The builder's own
+            # current-inventory counts distinguish this from repeated gaps.
+            # Require changed saved contents as well; diagnostics alone cannot
+            # prove that a resume checkpoint actually contains the progress.
+            if "missing_units" in raw:
+                progress = current.get("resolved_units", 0) > 0 and current["cache_changed"]
+                current["progress_basis"] = "validated_inventory"
+            else:
+                progress = current["cache_rows_after"] > before
+                current["progress_basis"] = "cache_growth"
+            if not progress:
                 report["stop_category"] = "no_progress"
                 break
             if index == MAX_ROUNDS:
