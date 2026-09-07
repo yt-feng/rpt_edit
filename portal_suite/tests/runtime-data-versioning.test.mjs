@@ -373,6 +373,8 @@ test("catalog, search, and rules cache identities follow A to B, rollback, and u
     let catalogFetchedAt = 0;
     let catalogCacheBinding = null;
     let catalogCacheRelease = "";
+    const catalogLoads = new Map();
+    let latestCatalogLoad = null;
     let searchIndexCache = null;
     let searchIndexFetchedAt = 0;
     let searchIndexCacheBinding = null;

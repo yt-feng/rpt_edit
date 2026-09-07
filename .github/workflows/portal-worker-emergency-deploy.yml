@@ -429,6 +429,31 @@ jobs:
           done
           test "$ready" = 1
 
+          # Exercise the real catalog and R2 read paths. A shallow health check
+          # and anonymous auth rejection do not detect resource exhaustion.
+          curl --fail --silent --show-error --max-time 30 \
+            "$origin/api/health?runtime-data=1" \
+            --output "$RUNNER_TEMP/api-runtime-health.json"
+          curl --fail --silent --show-error --max-time 30 \
+            "$origin/api/market-views" \
+            --output "$RUNNER_TEMP/api-market-views.json"
+          python3 - "$RUNNER_TEMP/api-runtime-health.json" "$RUNNER_TEMP/api-market-views.json" <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          health = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+          runtime = health.get("runtime_data") or {}
+          if health.get("ok") is not True or not runtime.get("rules_loaded"):
+              raise SystemExit("Runtime catalog/rules read did not complete")
+          if int(runtime.get("catalog_item_count") or 0) < 1:
+              raise SystemExit("Runtime catalog is empty")
+          views = json.loads(Path(sys.argv[2]).read_text(encoding="utf-8"))
+          if not isinstance(views.get("items"), list) or not views["items"]:
+              raise SystemExit("Market Views read did not return the existing PDFs")
+          print(f"runtime_catalog_items={runtime['catalog_item_count']} market_views_items={len(views['items'])}")
+          PY
+
           # Invalid locale is rejected before reading content, reserving quota,
           # or calling DeepSeek. Never use a valid translation as a cloud smoke.
           code="$(curl --silent --show-error --max-time 20 \

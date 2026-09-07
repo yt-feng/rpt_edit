@@ -937,6 +937,8 @@ let catalogCache = null;
 let catalogFetchedAt = 0;
 let catalogCacheBinding = null;
 let catalogCacheRelease = "";
+const catalogLoads = new Map();
+let latestCatalogLoad = null;
 let rulesCache = null;
 let rulesFetchedAt = 0;
 let rulesCacheBinding = null;
@@ -1288,11 +1290,38 @@ async function loadCatalog(env) {
     && now - catalogFetchedAt < CACHE_TTL_MS
   ) return catalogCache;
   if (!env.CATALOG_URL) throw new Error("CATALOG_URL is not configured");
-  catalogCache = await fetchStaticDataJson(env, "catalog.json", env.CATALOG_URL, release, stateUrl);
-  catalogFetchedAt = now;
-  catalogCacheBinding = binding;
-  catalogCacheRelease = releaseBinding;
-  return catalogCache;
+  let pendingByRelease = catalogLoads.get(binding);
+  if (!pendingByRelease) {
+    pendingByRelease = new Map();
+    catalogLoads.set(binding, pendingByRelease);
+  }
+  let pending = pendingByRelease.get(releaseBinding);
+  if (!pending) {
+    // A cold dashboard can request the same multi-megabyte catalog several
+    // times at once. Share its read and parsed object within this release.
+    pending = {};
+    pendingByRelease.set(releaseBinding, pending);
+    latestCatalogLoad = pending;
+    pending.promise = (async () => {
+      try {
+        const value = await fetchStaticDataJson(env, "catalog.json", env.CATALOG_URL, release, stateUrl);
+        // A slow older release still serves its original callers, but cannot
+        // replace the cache selected by a more recent release or binding.
+        if (latestCatalogLoad === pending) {
+          catalogCache = value;
+          catalogFetchedAt = now;
+          catalogCacheBinding = binding;
+          catalogCacheRelease = releaseBinding;
+        }
+        return value;
+      } finally {
+        pendingByRelease.delete(releaseBinding);
+        if (!pendingByRelease.size) catalogLoads.delete(binding);
+        if (latestCatalogLoad === pending) latestCatalogLoad = null;
+      }
+    })();
+  }
+  return pending.promise;
 }
 
 function searchIndexUrl(env) {
