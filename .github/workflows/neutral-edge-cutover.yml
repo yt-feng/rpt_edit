@@ -293,14 +293,8 @@ jobs:
           printf 'STATIC_RELEASE=%s\n' "$release_id" >> "$GITHUB_ENV"
           printf 'static_release=%s\n' "$release_id" >> "$GITHUB_OUTPUT"
 
-      - name: Gate preparation on stable live routes
-        timeout-minutes: 5
-        env:
-          EDGE_SCRIPT_NAME: svc-04df8d213b73
-          EDGE_VERIFY_ATTEMPTS: "3"
-          EDGE_VERIFY_CONSECUTIVE: "3"
-        run: python3 -B scripts/edge_route_cutover.py verify
-
+      # Read and validate the baseline needed to compare releases here. The full
+      # route matrix runs only for a changed candidate in the cutover job below.
       - name: Capture exact previous state and public discovery
         id: previous_state
         run: |
@@ -1890,7 +1884,9 @@ jobs:
         env:
           EDGE_SCRIPT_NAME: svc-04df8d213b73
           EDGE_VERIFY_ATTEMPTS: "3"
-          EDGE_VERIFY_CONSECUTIVE: "3"
+          # One complete baseline pass; post-deploy acceptance still requires
+          # three consecutive passes with alternating canonical/alias order.
+          EDGE_VERIFY_CONSECUTIVE: "1"
         run: |
           set -euo pipefail
           origin="$LIVE_ORIGIN"

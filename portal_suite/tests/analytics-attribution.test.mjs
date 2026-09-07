@@ -91,12 +91,12 @@ test("analytics auto page view honors manual mode without disabling normal pages
   const analytics = await readFile(path.join(root, "portal_suite/site_src/assets/analytics.js"), "utf8");
 
   const manual = analyticsBrowser({ analyticsAuto: "manual" });
-  vm.runInNewContext(analytics, { window: manual.window, URL, URLSearchParams });
+  vm.runInNewContext(analytics, { window: manual.window, URL, URLSearchParams, TextEncoder });
   await settleAnalytics();
   assert.equal(manual.requests.length, 0, "manual mode must not emit an automatic page_view");
 
   const automatic = analyticsBrowser();
-  vm.runInNewContext(analytics, { window: automatic.window, URL, URLSearchParams });
+  vm.runInNewContext(analytics, { window: automatic.window, URL, URLSearchParams, TextEncoder });
   await settleAnalytics();
   assert.deepEqual(
     automatic.requests.map(({ url }) => url),

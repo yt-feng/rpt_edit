@@ -1,6 +1,6 @@
 # Protected Document Service Architecture
 
-Last updated: 2026-08-12
+Last updated: 2026-09-07
 
 This document describes the protected document service.
 
@@ -156,31 +156,26 @@ committed or older static releases are pruned.
 ## Static Response Caching And Validators
 
 Each edge deployment binds one immutable object-storage prefix, while public
-URLs remain stable across releases. Workers Caching is enabled in the generated
-Wrangler configuration (pinned to a compatible Wrangler version) and remains
-version-isolated, so a new deployment does not inherit stale responses from the
-previous Worker version. The `/api` service-binding branch passes the gateway
-response through unchanged; its private and `no-store` policies remain under
-gateway control.
+URLs remain stable across releases. Workers Caching is disabled in the generated
+Wrangler configuration. The canonical-host gateway must execute before a
+representation is selected, so an alias redirect cannot be replayed for the
+canonical hostname through a shared cache key. The `/api` service-binding branch
+passes the gateway response through unchanged; a more specific API route can
+also reach the gateway directly. Private and `no-store` API policies remain
+under gateway control.
 
 The static host applies cache policy at response time instead of trusting
 upload-time object metadata. Browser and edge policy are deliberately
-separated: `Cache-Control` contains browser freshness only, while
-`Cloudflare-CDN-Cache-Control` contains the edge TTL, stale-while-revalidate,
-and stale-if-error windows and is consumed by Cloudflare before the response
-reaches the browser. The edge policy omits `s-maxage`, `must-revalidate`, and
-`proxy-revalidate`, because those directives disable stale serving in Workers
-Caching.
+separated: `Cache-Control` contains browser freshness, while
+`Cloudflare-CDN-Cache-Control: no-store` prevents shared edge response reuse.
+The `edge` TTL constants in the source are not the active response policy.
+An actual network request for a static file therefore invokes the gateway;
+browser cache hits do not. Moving immutable assets to direct static serving
+requires separate verification of host canonicalization and release identity.
 
-- HTML has a one-minute browser freshness window. The edge also stays fresh for
-  one minute, followed by two minutes of stale-while-revalidate and one day of
-  stale-if-error. This keeps navigation fast without hiding a newly activated
-  release for long.
-- Catalog, configuration, manifest, and search JSON use five-minute browser and
-  edge freshness windows, followed by five minutes of stale-while-revalidate
-  and one day of stale-if-error.
-  A warm edge can serve these large files immediately while refreshing them in
-  the background, without hiding a scheduled catalog refresh for half an hour.
+- HTML has a one-minute browser freshness window.
+- Catalog, configuration, manifest, and search JSON use five-minute browser
+  freshness windows. Explicit client `no-store` fetches bypass that browser cache.
 - JavaScript, CSS, fonts, and images with a content hash in the path or a
   `v=<content-hash>` query are cached for one year with `immutable`. Only real
   hexadecimal content versions receive this policy.
@@ -217,6 +212,34 @@ the neutral static release migrated and its preview/full catalog parity checked.
 The admin surface can expose account, entitlement, analytics, and file-cache operations according to role. The operator surface should expose only the subset needed for daily operations.
 
 Access edits use version fields such as `change_id` or `updated_at` so a stale editor cannot overwrite newer edits from another session. Limited-use grants should update counters with conditional writes.
+
+## Request Volume Controls
+
+- The admin hot-report preview loads one 60-row page. The full-list dialog
+  fetches subsequent cursor pages only when the operator selects Load more.
+  Generation changes restart the first page, and incomplete/duplicate pages
+  cannot silently replace a complete collection.
+- A users snapshot marked fresh with data does not trigger an immediate
+  users-export request on opening the admin panel. Missing or stale snapshots
+  still request current users; explicit refresh and account edits retain live
+  verification.
+- Concurrent authentication refreshes share work for the same session.
+  Report-access and storage metadata initialization wait for that verification
+  and discard superseded responses. Grants are not cached with a new TTL, and
+  the download endpoint remains the final authorization authority.
+- The shared analytics client combines synchronous events into envelopes of at
+  most 20 events and 24 KiB, split by captured authorization identity. Leaving
+  the page flushes queued events with keepalive. The API also accepts legacy
+  single events, validates the entire envelope before persistence, and shares
+  user/IP enrichment while preserving individual sanitized event records.
+- Release preparation retains exact state and discovery-data checks without
+  running the full public route matrix. Changed releases run one complete
+  matrix before cutover and require three consecutive complete passes after
+  cutover. Rollback, immutable release, content, and locale acceptance checks
+  remain mandatory. With the current 37-request matrix, a healthy changed
+  release uses 148 route probes instead of 333; unchanged runs avoid the former
+  111 preparation probes. Other validation requests and failure retries are
+  separate from these counts.
 
 ## Deployment Checks
 

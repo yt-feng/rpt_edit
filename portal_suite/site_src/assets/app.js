@@ -62,6 +62,7 @@
   let activeAdminPdfUpload = null;
   let pdfJsLoadPromise = null;
   const activeAdminButtonActions = new WeakMap();
+  const authSessionRefreshes = new Map();
 
   function versionedSiteAssetUrl(path) {
     const url = new URL(String(path || ""), document.baseURI);
@@ -959,22 +960,49 @@
     return !session && Boolean(getAdminToken());
   }
 
+  function authSessionRequestKey(session = loadAuthSession()) {
+    return JSON.stringify([String(session && session.user && session.user.id || ""), String(session && session.token || "")]);
+  }
+
+  async function waitForAuthSessionRefresh(workerUrl) {
+    const pending = authSessionRefreshes.get(workerUrl);
+    if (pending && pending.sessionKey === authSessionRequestKey()) await pending.promise;
+  }
+
   async function refreshAuthSession(workerUrl) {
     const session = loadAuthSession();
     if (!session || !session.token || !workerUrl) return null;
-    try {
-      const response = await fetch(`${workerUrl}/auth`, {
-        cache: "no-store",
-        headers: authHeaders(),
-      });
-      const data = await response.json().catch(() => ({}));
-      if (!response.ok || !data.token || !data.user) throw new Error(data.detail || "Session expired.");
-      saveAuthSession({ token: data.token, user: data.user });
-      return { token: data.token, user: data.user };
-    } catch (_error) {
-      clearAuthSession();
-      return null;
-    }
+    const sessionKey = authSessionRequestKey(session);
+    const pending = authSessionRefreshes.get(workerUrl);
+    if (pending && pending.sessionKey === sessionKey) return pending.promise;
+    const entry = { sessionKey, promise: null };
+    entry.promise = Promise.resolve().then(async () => {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 10000);
+      try {
+        const response = await fetch(`${workerUrl}/auth`, {
+          cache: "no-store",
+          headers: { "Authorization": `Bearer ${session.token}` },
+          signal: controller.signal,
+        });
+        const data = await response.json().catch(() => ({}));
+        // A slow response for an earlier login must never replace a new login.
+        if (authSessionRequestKey() !== entry.sessionKey) return null;
+        if (!response.ok || !data.token || !data.user) throw new Error(data.detail || "Session expired.");
+        const refreshed = { token: data.token, user: data.user };
+        entry.sessionKey = authSessionRequestKey(refreshed);
+        saveAuthSession(refreshed);
+        return refreshed;
+      } catch (_error) {
+        if (authSessionRequestKey() === entry.sessionKey) clearAuthSession();
+        return null;
+      } finally {
+        clearTimeout(timer);
+        if (authSessionRefreshes.get(workerUrl) === entry) authSessionRefreshes.delete(workerUrl);
+      }
+    });
+    authSessionRefreshes.set(workerUrl, entry);
+    return entry.promise;
   }
 
   function initAccountGate(workerUrl) {
@@ -5350,6 +5378,12 @@
     throw lastError || new Error("后台读取失败。");
   }
 
+  function adminUsersSnapshotIsFresh(summary) {
+    const status = summary && summary.module_status && summary.module_status.users;
+    return Boolean(summary && Array.isArray(summary.users) && status
+      && status.state === "fresh" && status.has_data === true);
+  }
+
   async function loadAccountAdminSummary(workerUrl, targets, options = {}) {
     targets.status.className = "status-line";
     targets.status.textContent = accountAdminLastSummary
@@ -5367,8 +5401,8 @@
         accountAdminRefreshTimer = setTimeout(() => {
           accountAdminRefreshTimer = null;
           if (document.getElementById("accountAdminModal")) {
-            loadAccountAdminSummary(workerUrl, targets, { backgroundRetry: true }).then(() => {
-              if (targets.canManageUsers && targets.exportUsers && document.getElementById("accountAdminModal")) {
+            loadAccountAdminSummary(workerUrl, targets, { backgroundRetry: true }).then((summary) => {
+              if (!adminUsersSnapshotIsFresh(summary) && targets.canManageUsers && targets.exportUsers && document.getElementById("accountAdminModal")) {
                 return loadFreshAdminUsers(workerUrl, targets);
               }
               return null;
@@ -5548,92 +5582,147 @@
     return { formData, originId };
   }
 
-  async function loadAdminHotReports(workerUrl, targets) {
+  async function fetchAdminHotReportPage(workerUrl, previous = null) {
+    const params = new URLSearchParams({ limit: "60" });
+    if (previous && previous.nextCursor) params.set("cursor", previous.nextCursor);
+    const response = await fetch(`${workerUrl}/hot-reports?${params.toString()}`, { cache: "no-store" });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      const failure = new Error(data.detail || "近期热门报告读取失败。");
+      failure.status = response.status;
+      throw failure;
+    }
+    const hasTotal = data.total !== null && data.total !== undefined && data.total !== "";
+    const total = hasTotal ? Number(data.total) : (previous ? previous.total : null);
+    if (hasTotal && (!Number.isSafeInteger(total) || total < 0 || total > 500)) {
+      throw new Error("近期热门报告总数异常，请稍后重试。");
+    }
+    if (previous && previous.total !== null && total !== previous.total) {
+      throw new Error("近期热门报告分页总数不一致，请稍后重试。");
+    }
+    const itemsById = new Map((previous && previous.items || []).map((item) => [String(item.id), item]));
+    if (!Array.isArray(data.items)) throw new Error("近期热门报告分页数据不完整，请稍后重试。");
+    const before = itemsById.size;
+    for (const item of data.items) {
+      const id = String(item && item.id || "");
+      if (!id) throw new Error("近期热门报告分页数据不完整，请稍后重试。");
+      if (itemsById.has(id)) throw new Error("近期热门报告数量校验失败，请稍后重试。");
+      itemsById.set(id, item);
+    }
+    const hasMore = data.has_more === true;
+    const nextCursor = hasMore ? String(data.next_cursor || "") : "";
+    const seenCursors = new Set(previous && previous.seenCursors || []);
+    if (hasMore && (!nextCursor || itemsById.size === before)) {
+      throw new Error("近期热门报告分页数据不完整，请稍后重试。");
+    }
+    if (hasMore && seenCursors.has(nextCursor)) throw new Error("近期热门报告分页状态异常，请稍后重试。");
+    if (itemsById.size > 500 || (hasMore && itemsById.size >= 500)
+      || (total !== null && (itemsById.size > total || (!hasMore && itemsById.size !== total)))) {
+      throw new Error("近期热门报告数量校验失败，请稍后重试。");
+    }
+    if (nextCursor) seenCursors.add(nextCursor);
+    return { items: adminDatedItemsNewestFirst([...itemsById.values()]), total, hasMore, nextCursor, seenCursors };
+  }
+
+  async function loadAdminHotReports(workerUrl, targets, options = {}) {
     if (!targets.hotReportSection || targets.hotReportSection.hidden || !targets.hotReportList) return [];
+    if (targets.hotReportLoadPromise) {
+      if (!options.forceRefresh) return targets.hotReportLoadPromise;
+      // Upload completion must read after the write, even if the preview's
+      // earlier GET is still running. Coalesce concurrent forced refreshes.
+      const source = targets.hotReportLoadPromise;
+      if (!targets.hotReportRefreshPromise || targets.hotReportRefreshSource !== source) {
+        const queued = source.then(() => loadAdminHotReports(workerUrl, targets)).finally(() => {
+          if (targets.hotReportRefreshPromise === queued) {
+            targets.hotReportRefreshPromise = null;
+            targets.hotReportRefreshSource = null;
+          }
+        });
+        // A second upload completed after a queued GET started needs another
+        // read after that GET. Only requests waiting on the same read share it.
+        targets.hotReportRefreshSource = source;
+        targets.hotReportRefreshPromise = queued;
+      }
+      return targets.hotReportRefreshPromise;
+    }
+    const previous = options.append ? targets.hotReportPageState : null;
+    if (previous && !previous.hasMore) return previous.items;
     targets.hotReportStatus.className = "status-line";
     targets.hotReportStatus.textContent = "正在读取已上传报告…";
-    try {
-      async function loadCompleteCollection() {
-        const itemsById = new Map();
-        const seenCursors = new Set();
-        const maxPages = Math.ceil(500 / 60);
-        let cursor = "";
-        let pagesRead = 0;
-        let reportedTotal = null;
-        while (itemsById.size < 500 && pagesRead < maxPages) {
-          const params = new URLSearchParams({ limit: "60" });
-          if (cursor) params.set("cursor", cursor);
-          const response = await fetch(`${workerUrl}/hot-reports?${params.toString()}`, { cache: "no-store" });
-          pagesRead += 1;
-          const data = await response.json().catch(() => ({}));
-          if (!response.ok) {
-            const failure = new Error(data.detail || "近期热门报告读取失败。");
-            failure.status = response.status;
-            throw failure;
-          }
-          const hasReportedTotal = data.total !== null && data.total !== undefined && data.total !== "";
-          const rawTotal = hasReportedTotal ? Number(data.total) : Number.NaN;
-          if (hasReportedTotal && !Number.isSafeInteger(rawTotal)) {
-            throw new Error("近期热门报告总数异常，请稍后重试。");
-          }
-          if (hasReportedTotal) {
-            const pageTotal = rawTotal;
-            if (pageTotal < 0 || pageTotal > 500) throw new Error("近期热门报告总数异常，请稍后重试。");
-            if (reportedTotal !== null && reportedTotal !== pageTotal) {
-              throw new Error("近期热门报告分页总数不一致，请稍后重试。");
-            }
-            reportedTotal = pageTotal;
-          }
-          const pageItems = Array.isArray(data.items) ? data.items : [];
-          for (const item of pageItems) {
-            const id = String(item && item.id || "");
-            if (!id) throw new Error("近期热门报告分页数据不完整，请稍后重试。");
-            if (!itemsById.has(id) && itemsById.size < 500) itemsById.set(id, item);
-          }
-          if (data.has_more !== true || itemsById.size >= 500) break;
-          const nextCursor = String(data.next_cursor || "");
-          if (!nextCursor) throw new Error("近期热门报告分页数据不完整，请稍后重试。");
-          if (seenCursors.has(nextCursor)) throw new Error("近期热门报告分页状态异常，请稍后重试。");
-          if (pagesRead >= maxPages) throw new Error("近期热门报告分页数量异常，请稍后重试。");
-          seenCursors.add(nextCursor);
-          cursor = nextCursor;
-        }
-        const items = [...itemsById.values()];
-        if (reportedTotal !== null && items.length !== reportedTotal) {
-          throw new Error("近期热门报告数量校验失败，请稍后重试。");
-        }
-        return { items, total: reportedTotal === null ? items.length : reportedTotal };
-      }
-
-      let collection = null;
-      for (let attempt = 0; attempt < 2; attempt += 1) {
+    const pending = Promise.resolve().then(async () => {
+      try {
+        let collection;
+        let restarted = false;
         try {
-          collection = await loadCompleteCollection();
-          break;
+          collection = await fetchAdminHotReportPage(workerUrl, previous);
         } catch (error) {
-          if (!(error && error.status === 409 && attempt === 0)) throw error;
-          targets.hotReportStatus.textContent = "报告列表刚刚更新，正在从第一页重新读取…";
+          if (!error || error.status !== 409) throw error;
+          // A generation change invalidates the old cursor and loaded rows.
+          // Restart just the first page; further pages remain user initiated.
+          collection = await fetchAdminHotReportPage(workerUrl);
+          restarted = true;
         }
+        if (targets.hotReportList.isConnected === false) return [];
+        const view = adminCollectionPreview(collection.items);
+        targets.hotReportPageState = collection;
+        accountAdminHotReports = view.all;
+        targets.hotReportList.innerHTML = view.preview.length
+          ? view.preview.map(adminHotReportRow).join("")
+          : '<div class="empty-state">还没有上传近期热门报告。</div>';
+        targets.hotReportCount.textContent = `${collection.total === null ? `${view.all.length}${collection.hasMore ? "+" : ""}` : collection.total} 条`;
+        if (targets.hotReportMore) targets.hotReportMore.hidden = !view.hasMore && !collection.hasMore;
+        targets.hotReportStatus.textContent = restarted ? "报告列表已更新，已重新载入第一页。" : "";
+        return view.all;
+      } catch (error) {
+        if (!previous) {
+          targets.hotReportList.innerHTML = '<div class="empty-state">暂时无法读取已上传报告。</div>';
+          targets.hotReportCount.textContent = "";
+          if (targets.hotReportMore) targets.hotReportMore.hidden = true;
+          targets.hotReportPageState = null;
+          accountAdminHotReports = [];
+        }
+        targets.hotReportStatus.className = "status-line error";
+        targets.hotReportStatus.textContent = error.message || "近期热门报告读取失败。";
+        return previous ? previous.items : [];
+      } finally {
+        if (targets.hotReportLoadPromise === pending) targets.hotReportLoadPromise = null;
       }
-      if (!collection) throw new Error("近期热门报告读取失败。");
-      const view = adminCollectionPreview(collection.items);
-      accountAdminHotReports = view.all;
-      targets.hotReportList.innerHTML = view.preview.length
-        ? view.preview.map(adminHotReportRow).join("")
-        : '<div class="empty-state">还没有上传近期热门报告。</div>';
-      targets.hotReportCount.textContent = `${collection.total} 条`;
-      if (targets.hotReportMore) targets.hotReportMore.hidden = !view.hasMore;
-      targets.hotReportStatus.textContent = "";
-      return view.all;
-    } catch (error) {
-      targets.hotReportList.innerHTML = '<div class="empty-state">暂时无法读取已上传报告。</div>';
-      targets.hotReportCount.textContent = "";
-      if (targets.hotReportMore) targets.hotReportMore.hidden = true;
-      accountAdminHotReports = [];
-      targets.hotReportStatus.className = "status-line error";
-      targets.hotReportStatus.textContent = error.message || "近期热门报告读取失败。";
-      return [];
+    });
+    targets.hotReportLoadPromise = pending;
+    return pending;
+  }
+
+  function openAdminHotReportList(workerUrl, targets) {
+    const initial = targets.hotReportPageState;
+    if (!initial) return null;
+    const list = openAccountAdminListModal({
+      title: "全部近期热门报告",
+      count: initial.total === null ? initial.items.length : initial.total,
+      listClass: "account-admin-hot-list",
+      trigger: targets.hotReportMore,
+    });
+    if (!list) return null;
+    function render() {
+      const state = targets.hotReportPageState;
+      if (!state || list.modal.isConnected === false) return;
+      const count = list.modal.querySelector(".account-admin-list-top span");
+      if (count) count.textContent = `${state.total === null ? state.items.length : state.total} 条`;
+      list.body.innerHTML = state.items.map(adminHotReportRow).join("")
+        + (state.hasMore ? '<button class="secondary-button" type="button" data-admin-hot-report-more>加载更多</button>' : "");
+      list.status.textContent = targets.hotReportStatus.textContent
+        || (state.hasMore ? `已显示 ${state.items.length} 条，点击加载更多继续查看。` : "");
+      list.status.className = targets.hotReportStatus.className;
     }
+    list.body.addEventListener("click", async (event) => {
+      const button = event.target.closest("[data-admin-hot-report-more]");
+      if (!button || button.disabled) return;
+      button.disabled = true;
+      list.status.textContent = "正在加载更多…";
+      await loadAdminHotReports(workerUrl, targets, { append: true });
+      render();
+    });
+    render();
+    return list;
   }
 
   async function uploadAdminHotReport(workerUrl, targets) {
@@ -6006,7 +6095,7 @@
       if (mode === "hot-report") {
         const titleText = String(item && item.title || "报告");
         setIntakeStatus(hotReportStatus, `已上传并发布：${titleText}`, "ok");
-        loadAdminHotReports(workerUrl, targets).catch(() => null);
+        loadAdminHotReports(workerUrl, targets, { forceRefresh: true }).catch(() => null);
         return;
       }
       if (mode === "text-only") {
@@ -6410,21 +6499,13 @@
       });
     }
     if (hotReportMore) {
-      hotReportMore.addEventListener("click", () => {
-        openAccountAdminListModal({
-          title: "全部近期热门报告",
-          count: accountAdminHotReports.length,
-          listClass: "account-admin-hot-list",
-          bodyHtml: accountAdminHotReports.map(adminHotReportRow).join("") || '<div class="empty-state">还没有上传近期热门报告。</div>',
-          trigger: hotReportMore,
-        });
-      });
+      hotReportMore.addEventListener("click", () => openAdminHotReportList(workerUrl, targets));
     }
     refresh.addEventListener("click", async () => {
       await Promise.allSettled([
         loadAccountAdminSummary(workerUrl, targets, { forceRefresh: true }),
         loadAccountAdminMarketViews(workerUrl, targets),
-        canManageUsers ? loadAdminHotReports(workerUrl, targets) : Promise.resolve([]),
+        canManageUsers ? loadAdminHotReports(workerUrl, targets, { forceRefresh: true }) : Promise.resolve([]),
         canManageUsers ? loadAdminReportChatHistory(workerUrl, targets) : Promise.resolve([]),
       ]);
       if (canManageUsers && exportUsers) {
@@ -6504,7 +6585,7 @@
           hotReportForm.reset();
           resetAdminPdfUploadId(hotReportPdf);
           if (hotReportDate) hotReportDate.value = String(item.date || "");
-          await loadAdminHotReports(workerUrl, targets);
+          await loadAdminHotReports(workerUrl, targets, { forceRefresh: true });
           hotReportStatus.className = "status-line ok";
           hotReportStatus.textContent = `已上传并读回确认：${item.title}`;
         } catch (error) {
@@ -6866,8 +6947,8 @@
       }
     });
 
-    loadAccountAdminSummary(workerUrl, targets).then(() => {
-      if (canManageUsers && exportUsers && document.getElementById("accountAdminModal")) {
+    loadAccountAdminSummary(workerUrl, targets).then((summary) => {
+      if (!adminUsersSnapshotIsFresh(summary) && canManageUsers && exportUsers && document.getElementById("accountAdminModal")) {
         renderAdminUsersVerificationState(targets, "正在现场核验全部用户的最新权限…");
         return loadFreshAdminUsers(workerUrl, targets).catch((error) => {
           const hasCachedUsers = accountAdminUsersByEmail.size > 0;
@@ -8443,6 +8524,9 @@
 
     async function refreshInternalStorageMetadata() {
       const requestId = ++internalStorageRequestId;
+      await waitForAuthSessionRefresh(workerUrl);
+      if (requestId !== internalStorageRequestId) return;
+      const sessionKey = authSessionRequestKey();
       showInternalStorageMetadata = isAdminASession();
       internalStorageMetadata = null;
       updateMeta();
@@ -8454,7 +8538,7 @@
         });
         const data = await response.json().catch(() => ({}));
         if (!response.ok) throw new Error(data.detail || "PDF storage metadata is unavailable.");
-        if (requestId !== internalStorageRequestId || !isAdminASession()) return;
+        if (requestId !== internalStorageRequestId || sessionKey !== authSessionRequestKey() || !isAdminASession()) return;
         internalStorageMetadata = data;
       } catch (_error) {
         if (requestId !== internalStorageRequestId) return;
@@ -10550,11 +10634,11 @@
       : `${workerUrl}/entitlement?report_id=${encodeURIComponent(item.id)}&source=${encodeURIComponent(source)}`;
     const response = await fetch(
       endpoint,
-      { cache: "no-store", headers: authHeaders() },
+      { cache: "no-store", headers: { "Authorization": `Bearer ${session.token}` } },
     );
     const data = await response.json().catch(() => ({}));
     if (!response.ok) {
-      if (response.status === 401) clearAuthSession();
+      if (response.status === 401 && authSessionRequestKey(session) === authSessionRequestKey()) clearAuthSession();
       throw new Error(data.detail || "账号状态读取失败。");
     }
     return data;
@@ -10622,6 +10706,7 @@
     const isHotReport = source === HOT_REPORT_SOURCE;
     const isThreeMonthReport = isHotReport || isContactOnlyItem(item);
     const context = { item, source };
+    let accessRequestId = 0;
 
     function statusTarget(text, kind) {
       const requestKind = kind === "error" ? requestKindForVisibleMessage(text) : "";
@@ -10634,8 +10719,14 @@
     }
 
     async function refresh() {
-      if (panel.isConnected === false) return;
+      const requestId = ++accessRequestId;
+      // Revoke the previous visible grant immediately on logout/account change.
+      accountDownload.hidden = true;
+      if (passwordForm) passwordForm.hidden = false;
+      await waitForAuthSessionRefresh(workerUrl);
+      if (requestId !== accessRequestId || panel.isConnected === false) return;
       const session = loadAuthSession();
+      const sessionKey = authSessionRequestKey(session);
       panel.hidden = false;
       if (passwordForm) passwordForm.hidden = false;
       accountDownload.hidden = true;
@@ -10652,6 +10743,7 @@
       statusTarget("正在读取账号权益…");
       try {
         const access = await fetchReportAccess(workerUrl, item, source);
+        if (requestId !== accessRequestId || sessionKey !== authSessionRequestKey() || panel.isConnected === false) return;
         const summary = accountRightSummary(access);
         if (access && access.can_download) {
           accountDownload.hidden = false;
@@ -10669,6 +10761,7 @@
           }
         }
       } catch (error) {
+        if (requestId !== accessRequestId || sessionKey !== authSessionRequestKey() || panel.isConnected === false) return;
         if (passwordForm) passwordForm.hidden = false;
         statusTarget(error.message || "账号状态读取失败。", "error");
       }
