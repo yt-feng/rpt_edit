@@ -1515,6 +1515,41 @@ class PortalLocaleBuildTests(unittest.TestCase):
             self.assertEqual(set(stored["locales"][locale]), {unit.key})
         self.assertNotIn("已经撤稿", gzip.decompress(self.cache.read_bytes()).decode("utf-8"))
 
+    def test_research_ui_labels_complete_without_provider_or_identity_bypass(self) -> None:
+        labels = (("AI 研究", "html:text:a", "AIリサーチ"),
+                  (f"{builder.LATIN_PUBLIC_BRAND} · AI 研究", "html:text:p",
+                   f"{builder.LATIN_PUBLIC_BRAND} · AIリサーチ"))
+        for mode in ({}, {"preflight_only": True}, {"preserve_unused_cache": True}):
+            with self.subTest(mode=mode):
+                cache = builder.empty_cache()
+                units = {}
+                for source, context, _expected in labels:
+                    _, unit = builder.unit_for_text(source, context)
+                    assert unit is not None
+                    units[unit.key] = unit
+                    for locale in builder.LOCALES:
+                        text = unit.source if locale == "ja" else " ".join(
+                            [FAKE_COPY[locale], *builder.PLACEHOLDER_RE.findall(unit.source)])
+                        cache["locales"][locale][unit.key] = {"source": unit.source, "translation": text}
+                    with self.assertRaisesRegex(builder.TranslationError, "unchanged source"):
+                        builder.validate_translation_quality("ja", unit, unit.source)
+                other_locales = {locale: dict(cache["locales"][locale]) for locale in ("ko", "ar")}
+                translator = mock.Mock(side_effect=AssertionError("reviewed UI labels need no provider"))
+                missing = builder.translate_missing_units(
+                    units, cache, cache_path=self.cache, model=builder.DEFAULT_DEEPSEEK_MODEL,
+                    base_url="https://api.deepseek.com", workers=3, timeout=1, attempts=1,
+                    batch_translator=translator, **mode)
+                translator.assert_not_called()
+                self.assertEqual(missing, {locale: 0 for locale in builder.LOCALES})
+                for source, context, expected in labels:
+                    self.assertEqual(builder.translated_text(source, context, "ja", cache), expected)
+                for locale, rows in other_locales.items():
+                    self.assertEqual(cache["locales"][locale], rows)
+                branded = next(unit for unit in units.values() if "__KC_PH_" in unit.source)
+                with self.assertRaisesRegex(builder.TranslationError, "placeholder mismatch"):
+                    builder.validate_translation_quality("ja", branded, "AIリサーチ")
+        self.assertNotIn("AI 研究报告", builder.REVIEWED_JA_UI_TRANSLATIONS)
+
     def test_invalid_active_cache_entry_is_retranslated_before_reuse(self) -> None:
         _protected, unit = builder.unit_for_text("需要翻译的公开研究内容", "html:text:p")
         self.assertIsNotNone(unit)
