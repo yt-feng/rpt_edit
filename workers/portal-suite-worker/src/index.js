@@ -16188,8 +16188,11 @@ function researchQuantitiesAreConsistent(value, evidence) {
     const attached = /^(?:\s|:|=|约|为|是|达|达到|高达|低至|约为|大约|预计|预测|估计|估算|实测|测得|峰值|总计|合计|每年|每月|每机架|每台|每套|在|介于|区间|\b(?:is|are|was|were|of|at|about|around|approximately|estimated|measured|reaches|totals)\b)*$/iu.test(metricTail);
     const metric = attached ? closest?.[0] || "" : "";
     const kind = /成本|费用|价格|售价|造价|开支|支出|cost|price|expense|spending|expenditure|capex/iu.test(metric) ? "currency"
-      : /用电量|耗电量|能耗|energy|electricity/iu.test(metric) ? "energy" : metric ? "power" : "";
-    if (kind && kind !== quantity.kind) return false;
+      // Consumption/demand may be stated as a rate or a period total. Keep
+      // the supplied dimension; these terms still cannot label a money value.
+      : /^(?:功耗|能耗|power\s+(?:consumption|demand)|energy\s+demand|electricity\s+consumption)$/iu.test(metric) ? "power_or_energy"
+        : /用电量|耗电量|energy/iu.test(metric) ? "energy" : metric ? "power" : "";
+    if (kind === "power_or_energy" ? quantity.kind === "currency" : kind && kind !== quantity.kind) return false;
     // A table may put its units in a separate heading. Only reject a unit when
     // an explicitly attached unit in the same dimension contradicts it.
     for (const number of quantity.numbers) {
