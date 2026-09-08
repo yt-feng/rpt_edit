@@ -2361,6 +2361,42 @@ test("report research rejects invented source ids and numeric claims absent from
   }
 });
 
+test("research numeric grounding requires complete values and preserves negative signs", async (t) => {
+  const cases = [
+    { name: "53 is not present inside 153", evidence: "The capacity forecast is 153 in 2030.", unsupported: "容量为53。", value: "53", supported: "预测年份为2030。" },
+    { name: "3 is not present inside 2030", evidence: "The capacity forecast is 153 in 2030.", unsupported: "项目数量为3。", value: "3", supported: "预测年份为2030。" },
+    { name: "negative values cannot support positive claims", evidence: "The reported change is -53 and the margin change is −18%.", unsupported: "增长值为53。正向利润率为18%。", value: "53", supported: "报告变动为-53。利润率变动为−18%。" },
+    { name: "positive values cannot support negative claims", evidence: "The reported change is 53 and the margin change is 18%.", unsupported: "减少值为-53。负向利润率为-18%。", value: "-53", supported: "报告变动为53。利润率变动为18%。" },
+  ];
+  for (const item of cases) await t.test(item.name, async () => {
+    const bucket = new MemoryR2(), reportId = "d8".repeat(12);
+    await seedReportResearchLookup(bucket, [{ id: reportId, title: "AI infrastructure capital expenditure" }], {
+      ai: [{ id: reportId, tf: 5, chunks: ["c0"] }],
+      capex: [{ id: reportId, tf: 4, chunks: ["c0"] }],
+    }, [[`${reportId}:c0`, { id: "c0", report_id: reportId, text: `AI infrastructure capital expenditure depends on equipment availability. ${item.evidence}` }]]);
+    const env = { ...envFor(bucket), DEEPSEEK_API_KEY: "configured-test-key" }, token = await register(env);
+    const original = globalThis.fetch;
+    globalThis.fetch = async (_url, init) => {
+      const request = JSON.parse(init.body);
+      const generated = request.max_tokens === 400
+        ? { core: [{ name: "AI", terms: ["ai"] }], facets: [{ name: "capital expenditure", terms: ["capex"] }], terms: ["ai", "capex"] }
+        : { research_title: "AI资本开支证据核验", executive_summary: `${item.supported}${item.unsupported}`, summary_source_ids: [reportId],
+          findings: [{ title: "数值边界", summary: `${item.supported}${item.unsupported}`, source_ids: [reportId] }],
+          data_points: [{ label: "未经证实数值", value: item.value, source_ids: [reportId] }],
+        };
+      return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify(generated) } }] }), { headers: { "content-type": "application/json" } });
+    };
+    try {
+      const result = await jsonRequest(env, "/report-chat", { method: "POST", headers: { "content-type": "application/json", ...bearer(token) }, body: JSON.stringify({ question: "AI capital expenditure" }) });
+      assert.equal(result.response.status, 200, JSON.stringify(result.data));
+      const expected = item.supported.normalize("NFKC").split(/(?<=。)/u).filter(Boolean).join(" ");
+      assert.equal(result.data.executive_summary, expected);
+      assert.equal(result.data.findings[0].summary, expected);
+      assert.equal(result.data.data_points.length, 0);
+    } finally { globalThis.fetch = original; }
+  });
+});
+
 test("report research cold-cache worst case stays below the 50-subrequest boundary", async () => {
   const bucket = new MemoryR2();
   const reportIds = ["1", "2", "3", "4"].map((digit) => digit.repeat(24));

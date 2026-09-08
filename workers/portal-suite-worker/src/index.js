@@ -16053,14 +16053,20 @@ function groundedResearchSourceIds(value, allowed, limit = 8) {
   }).slice(0, limit);
 }
 
-function researchNumericValueIsGrounded(value, sourceIds, evidenceBySource) {
+function researchNumericTokens(value) {
   // A full stop is punctuation unless it introduces decimal digits. Only
-  // complete thousands groups belong to a comma-separated numeric token.
-  const numeric = String(value || "").match(/(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?(?:\s*%)?/gu) || [];
+  // complete thousands groups belong to a comma-separated numeric token;
+  // Chinese commas separate values. Keep signs and percentages significant.
+  const normalized = String(value || "").replace(/，/gu, " ").normalize("NFKC").replace(/−/gu, "-");
+  return (normalized.match(/(?<!\d)(?:[+-]\s*)?(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?(?:\s*%)?/gu) || [])
+    .map((token) => token.replace(/[\s,]/gu, "").replace(/^\+/u, ""));
+}
+
+function researchNumericValueIsGrounded(value, sourceIds, evidenceBySource) {
+  const numeric = researchNumericTokens(value);
   if (!numeric.length) return true;
-  const corpus = sourceIds.map((id) => evidenceBySource.get(id) || "").join(" ")
-    .normalize("NFKC").toLowerCase().replace(/[\s,]/gu, "");
-  return numeric.every((token) => corpus.includes(token.normalize("NFKC").toLowerCase().replace(/[\s,]/gu, "")));
+  const supported = new Set(sourceIds.flatMap((id) => researchNumericTokens(evidenceBySource.get(id) || "")));
+  return numeric.every((token) => supported.has(token));
 }
 
 function researchGroundedSentences(value, sourceIds, evidenceBySource, limit) {
