@@ -173,6 +173,10 @@ jobs:
           node --input-type=module --check < workers/portal-suite-worker/src/source-lead-adapter.js
           node --input-type=module --check < workers/portal-suite-worker/src/locale-report-detail.js
           node --check portal_suite/site_src/assets/app.js
+          node --input-type=module --check < portal_suite/site_src/assets/newsfeed-app.js
+          python3 -B scripts/check_portal_app_budget.py --candidate portal_suite/site_src/assets/app.js
+          python3 -B scripts/test_check_portal_app_budget.py
+          python3 -B scripts/test_portal_lazy_assets.py
           node --check portal_suite/site_src/assets/report-chat.js
           node --check portal_suite/site_src/assets/charts.js
           node --check portal_suite/site_src/assets/site-runtime.js
@@ -186,6 +190,7 @@ jobs:
           node scripts/test_portal_source_lead_integration.js
           node scripts/test_portal_chart_search_frontend.js
           node scripts/test_portal_site_runtime.js
+          node scripts/test_portal_newsfeed_lazy.js
           python3 -m py_compile \
             scripts/build_member_contact_card.py \
             scripts/check_public_brand.py \
@@ -507,6 +512,12 @@ jobs:
           print("Materialized locale detail hooks passed for ko, ja, ar; no provider calls.")
           PY
 
+      - name: Validate materialized app loading budget before refresh
+        run: |
+          python3 -B scripts/check_portal_app_budget.py \
+            --candidate portal_suite/site_src/assets/app.js \
+            --output "$RUNNER_TEMP/chinese-source-performance.json"
+
       - name: Refresh report catalog with additive PDF sync
         env:
           DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
@@ -659,51 +670,14 @@ jobs:
           MULTILINGUAL_LIVE: ${{ steps.operation.outputs.multilingual_live }}
         run: |
           set -euo pipefail
-          CANDIDATE_APP="_neutral_site/assets/app.js" \
-          ACTIVE_APP="$RUNNER_TEMP/previous-active-app.js" \
-          PERFORMANCE_REPORT="$RUNNER_TEMP/chinese-performance.json" \
-          MULTILINGUAL_LIVE="$MULTILINGUAL_LIVE" python3 - <<'PY'
-          import gzip
-          import hashlib
-          import json
-          import os
-          from pathlib import Path
-
-          candidate = Path(os.environ["CANDIDATE_APP"]).read_bytes()
-          candidate_gzip = gzip.compress(candidate, compresslevel=9, mtime=0)
-          if len(candidate) > 700_000 or len(candidate_gzip) > 150_000:
-              raise SystemExit("Chinese app bundle exceeds its absolute loading budget")
-          report = {
-              "schema_version": 1,
-              "candidate_bytes": len(candidate),
-              "candidate_gzip_bytes": len(candidate_gzip),
-              "candidate_sha256": hashlib.sha256(candidate).hexdigest(),
-              "active_compared": False,
-          }
-          if os.environ["MULTILINGUAL_LIVE"] != "true":
-              active = Path(os.environ["ACTIVE_APP"]).read_bytes()
-              active_gzip = gzip.compress(active, compresslevel=9, mtime=0)
-              raw_delta = len(candidate) - len(active)
-              gzip_delta = len(candidate_gzip) - len(active_gzip)
-              if raw_delta > 24_000 or gzip_delta > 6_000:
-                  raise SystemExit("Chinese app bundle exceeds its active-release delta budget")
-              report.update({
-                  "active_compared": True,
-                  "active_bytes": len(active),
-                  "active_gzip_bytes": len(active_gzip),
-                  "active_sha256": hashlib.sha256(active).hexdigest(),
-                  "raw_delta_bytes": raw_delta,
-                  "gzip_delta_bytes": gzip_delta,
-              })
-          report_bytes = json.dumps(
-              report,
-              ensure_ascii=True,
-              sort_keys=True,
-              separators=(",", ":"),
-          ).encode("utf-8") + b"\n"
-          Path(os.environ["PERFORMANCE_REPORT"]).write_bytes(report_bytes)
-          print(json.dumps(report, ensure_ascii=True, sort_keys=True))
-          PY
+          budget_args=()
+          if [ "$MULTILINGUAL_LIVE" != "true" ]; then
+            budget_args+=(--active "$RUNNER_TEMP/previous-active-app.js")
+          fi
+          python3 -B scripts/check_portal_app_budget.py \
+            --candidate _neutral_site/assets/app.js \
+            --output "$RUNNER_TEMP/chinese-performance.json" \
+            "${budget_args[@]}"
           active_manifest_args=()
           if [ "$MULTILINGUAL_LIVE" != "true" ]; then
             active_manifest_args+=(--active-manifest "$RUNNER_TEMP/previous-slot-manifest.json")
@@ -983,6 +957,7 @@ jobs:
             ${{ runner.temp }}/locale-full-diagnostics*.json
             ${{ runner.temp }}/chinese-parity.json
             ${{ runner.temp }}/chinese-performance.json
+            ${{ runner.temp }}/chinese-source-performance.json
           if-no-files-found: ignore
           retention-days: 7
 
@@ -995,7 +970,7 @@ jobs:
         run: |
           set -euo pipefail
           required_paths=(
-            index.html assets/app.js data/catalog.json data/catalog_preview.json
+            index.html assets/app.js assets/newsfeed-app.js data/catalog.json data/catalog_preview.json
             data/catalog_recommendations.json data/search_index.json
             data/chart_search_index.json data/password_rules.json
             reports/institutions/bernstein/index.html sitemap-baidu.xml
@@ -1012,7 +987,7 @@ jobs:
                 "sitemap-$locale.xml"
               )
               for locale_asset in \
-                app.js charts.js contact.js locale-runtime.js locale-detail.js report-chat.js \
+                app.js newsfeed-app.js charts.js contact.js locale-runtime.js locale-detail.js report-chat.js \
                 report-research-export.js site-runtime.js xlsx-export.js locale.css
               do
                 required_paths+=("$locale/assets/$locale_asset")
@@ -1029,7 +1004,11 @@ jobs:
             for locale in ko ja ar; do
               js_count=0
               while IFS= read -r -d '' script; do
-                node --check "$script"
+                if [[ "$script" == */newsfeed-app.js ]]; then
+                  node --input-type=module --check < "$script"
+                else
+                  node --check "$script"
+                fi
                 js_count=$((js_count + 1))
               done < <(find "_neutral_site/$locale" -type f -name '*.js' -print0)
               test "$js_count" -gt 0

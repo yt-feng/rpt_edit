@@ -7,6 +7,7 @@ import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const appSource = await readFile(path.join(root, "portal_suite/site_src/assets/app.js"), "utf8");
+const newsfeedSource = await readFile(path.join(root, "portal_suite/site_src/assets/newsfeed-app.js"), "utf8");
 const stylesSource = await readFile(path.join(root, "portal_suite/site_src/assets/styles.css"), "utf8");
 
 function extractFunction(source, name) {
@@ -55,11 +56,11 @@ function policyHarness() {
     },
     trackEvent(workerUrl, type, data) { events.push({ workerUrl, type, data }); },
   };
-  const systemIds = appSource.match(/const NEWSFEED_SYSTEM_TOPIC_IDS = new Set\(\[[\s\S]*?\]\);/u);
+  const systemIds = newsfeedSource.match(/const NEWSFEED_SYSTEM_TOPIC_IDS = new Set\(\[[\s\S]*?\]\);/u);
   assert.ok(systemIds, "missing fixed General topic set");
   vm.runInNewContext(`
     ${systemIds[0]}
-    ${helpers.map((name) => extractFunction(appSource, name)).join("\n")}
+    ${helpers.map((name) => extractFunction(newsfeedSource, name)).join("\n")}
     this.newsfeedHelpers = { ${helpers.join(",")} };
   `, context, { filename: "newsfeed-policy-helpers.js" });
   return { events, helpers: context.newsfeedHelpers };
@@ -152,8 +153,8 @@ test("anonymous, member and admin policies normalize from final and compatibilit
 });
 
 test("public initialization has optional auth, epoch protection and auth-change re-layering", () => {
-  const init = extractFunction(appSource, "initNewsfeed");
-  const request = extractFunction(appSource, "newsfeedJson");
+  const init = extractFunction(newsfeedSource, "initNewsfeed");
+  const request = extractFunction(newsfeedSource, "newsfeedJson");
   assert.doesNotMatch(init, /renderNewsfeedAccess/u, "anonymous Newsfeed must not stop at the old login gate");
   assert.doesNotMatch(init, /if\s*\(\s*!isNewsfeedSession/u, "anonymous Newsfeed must load General directly");
   assert.match(request, /\.\.\.authHeaders\(\)/u, "Authorization must remain optional");
@@ -161,12 +162,12 @@ test("public initialization has optional auth, epoch protection and auth-change 
   assert.match(init, /document\.addEventListener\("portal-auth-change", \(\) => window\.location\.reload\(\)\)/u, "login and logout must re-layer the page immediately");
   assert.ok((init.match(/epoch !== state\.requestEpoch/gu) || []).length >= 3, "home, explore and topic responses must all reject stale epochs");
   assert.match(init, /newsfeedShouldShowRequest\(state\)[\s\S]*?renderNewsfeedAdd\(state\)/u, "an initially exhausted account must see the explicit request form");
-  assert.doesNotMatch(appSource, /const\s+NEWSFEED_TOPIC_LIMIT|10,?000\s+custom|10000\s*个/u, "the retired 10,000-topic frontend quota must not return");
+  assert.doesNotMatch(`${appSource}\n${newsfeedSource}`, /const\s+NEWSFEED_TOPIC_LIMIT|10,?000\s+custom|10000\s*个/u, "the retired 10,000-topic frontend quota must not return");
 });
 
 test("localized Newsfeed defaults and controls include Arabic without changing the root default", () => {
-  const languageCode = extractFunction(appSource, "newsfeedLanguageCode");
-  const defaultLanguage = extractFunction(appSource, "newsfeedDefaultLanguage");
+  const languageCode = extractFunction(newsfeedSource, "newsfeedLanguageCode");
+  const defaultLanguage = extractFunction(newsfeedSource, "newsfeedDefaultLanguage");
   const defaultFor = (contentLocale) => {
     const context = {
       window: contentLocale ? { PortalLocale: { contentLocale } } : {},
@@ -185,7 +186,7 @@ test("localized Newsfeed defaults and controls include Arabic without changing t
   assert.equal(defaultFor("ja"), "ja");
   assert.equal(defaultFor("ar"), "ar");
 
-  const copyBlock = appSource.match(/const NEWSFEED_UI_COPY = (\{[\s\S]*?\n  \});/u);
+  const copyBlock = newsfeedSource.match(/const NEWSFEED_UI_COPY = (\{[\s\S]*?\n  \});/u);
   assert.ok(copyBlock, "missing Newsfeed UI copy table");
   const copyContext = {};
   vm.runInNewContext(`${copyBlock[0]}\nthis.copy = NEWSFEED_UI_COPY;`, copyContext, {
@@ -200,7 +201,7 @@ test("localized Newsfeed defaults and controls include Arabic without changing t
       const CONTENT_LOCALE = ${JSON.stringify(contentLocale)};
       function escapeHtml(value) { return String(value); }
       ${extractFunction(appSource, "isLocalizedContentPage")}
-      ${extractFunction(appSource, "newsfeedLanguageOptions")}
+      ${extractFunction(newsfeedSource, "newsfeedLanguageOptions")}
       this.options = newsfeedLanguageOptions(${JSON.stringify(selected)});
     `, optionsContext, { filename: "newsfeed-language-options.js" });
     return optionsContext.options;
@@ -208,14 +209,14 @@ test("localized Newsfeed defaults and controls include Arabic without changing t
   assert.match(optionsFor("ar", "ar"), /value="ar" selected>العربية<\/option>/u);
   assert.doesNotMatch(optionsFor("zh-Hans", "en"), /value="ar"/u, "the Chinese root keeps its existing output-language choices");
 
-  const init = extractFunction(appSource, "initNewsfeed");
+  const init = extractFunction(newsfeedSource, "initNewsfeed");
   assert.match(init, /const defaultLanguage = newsfeedDefaultLanguage\(\)/u);
   assert.match(init, /outputLanguage:\s*defaultLanguage/u);
   assert.match(init, /interfaceLanguage:\s*defaultLanguage/u);
 });
 
 test("topic-limit request is confirmation-only and sends the server-owned contract", () => {
-  const init = extractFunction(appSource, "initNewsfeed");
+  const init = extractFunction(newsfeedSource, "initNewsfeed");
   const requestStart = init.indexOf('if (event.target && event.target.id === "newsTopicRequestForm")');
   const requestEnd = init.indexOf('if (event.target && event.target.id === "newsCustomRegionForm")', requestStart);
   assert.ok(requestStart >= 0 && requestEnd > requestStart, "missing topic request submit handler");
@@ -261,7 +262,7 @@ test("Newsfeed interaction analytics includes tier usage but never raw custom co
   assert.equal(events[0].data.topic_kind, "custom");
   assert.match(events[0].data.topic_hash, /^topic-[a-z0-9]+$/u);
   assert.doesNotMatch(JSON.stringify(events[0]), new RegExp(secretTopic, "u"));
-  const tracker = extractFunction(appSource, "trackNewsfeedInteraction");
+  const tracker = extractFunction(newsfeedSource, "trackNewsfeedInteraction");
   assert.doesNotMatch(tracker, /details\.(?:title|url|email)|details\[(?:"|')(?:title|url|email)/u);
 });
 

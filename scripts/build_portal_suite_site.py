@@ -3,6 +3,8 @@
 
 from __future__ import annotations
 
+from portal_lazy_assets import fingerprint_newsfeed_loader
+
 import argparse
 from datetime import date, datetime, timedelta, timezone
 from email.utils import format_datetime
@@ -4560,6 +4562,7 @@ def assert_no_public_mail_client_actions(output: Path) -> None:
         output / relative
         for relative in (
             "assets/app.js",
+            "assets/newsfeed-app.js",
             "assets/contact.js",
             "assets/report-chat.js",
             "assets/report-research-export.js",
@@ -4597,9 +4600,11 @@ def version_assets(output: Path) -> None:
     URL (`assets/app.js?v=<hash>`) makes each change a new cache key, so deploys take
     effect immediately. Only busts when the file content actually changes.
     """
+    fingerprint_newsfeed_loader(output)
     versions: dict[str, str] = {}
     for rel in (
         "assets/app.js",
+        "assets/newsfeed-app.js",
         "assets/report-research-export.js",
         "assets/report-chat.js",
         "assets/charts.js",

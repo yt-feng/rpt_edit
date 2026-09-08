@@ -34,6 +34,7 @@ jobs:
             scripts/summarize_portal_growth_range.py
             scripts/audit_portal_research_coverage.py
             scripts/build_portal_suite_site.py
+            scripts/portal_lazy_assets.py
             portal_suite/growth_actions.json
           sparse-checkout-cone-mode: false
 

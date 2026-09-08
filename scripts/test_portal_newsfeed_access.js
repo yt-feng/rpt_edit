@@ -6,6 +6,7 @@ const vm = require("node:vm");
 const root = path.resolve(__dirname, "..");
 const worker = fs.readFileSync(path.join(root, "workers/portal-suite-worker/src/index.js"), "utf8");
 const app = fs.readFileSync(path.join(root, "portal_suite/site_src/assets/app.js"), "utf8");
+const newsfeed = fs.readFileSync(path.join(root, "portal_suite/site_src/assets/newsfeed-app.js"), "utf8");
 const localeCss = fs.readFileSync(path.join(root, "portal_suite/locale_assets/locale.css"), "utf8");
 
 function extractFunction(source, name) {
@@ -88,10 +89,10 @@ function newsfeedLocaleUi(locale, targetLanguage = "ar") {
       },
     };
     ${extractFunction(app, "isLocalizedContentPage")}
-    ${extractFunction(app, "newsfeedLanguageCode")}
-    ${extractFunction(app, "newsfeedFixedInterfaceLanguage")}
-    ${extractFunction(app, "newsfeedInterfaceLocaleCode")}
-    ${extractFunction(app, "newsfeedInterfaceNavigationUrl")}
+    ${extractFunction(newsfeed, "newsfeedLanguageCode")}
+    ${extractFunction(newsfeed, "newsfeedFixedInterfaceLanguage")}
+    ${extractFunction(newsfeed, "newsfeedInterfaceLocaleCode")}
+    ${extractFunction(newsfeed, "newsfeedInterfaceNavigationUrl")}
     result = {
       fixed: newsfeedFixedInterfaceLanguage(),
       targetLocale: newsfeedInterfaceLocaleCode(${JSON.stringify(targetLanguage)}),
@@ -117,9 +118,9 @@ vm.runInNewContext(`
   const CONTENT_LOCALE = "ja";
   function normalizeNewsfeedRegionsClient(value) { return value || ["global"]; }
   ${extractFunction(app, "isLocalizedContentPage")}
-  ${extractFunction(app, "newsfeedLanguageCode")}
-  ${extractFunction(app, "newsfeedFixedInterfaceLanguage")}
-  ${extractFunction(app, "applyNewsfeedSettings")}
+  ${extractFunction(newsfeed, "newsfeedLanguageCode")}
+  ${extractFunction(newsfeed, "newsfeedFixedInterfaceLanguage")}
+  ${extractFunction(newsfeed, "applyNewsfeedSettings")}
   state = { interfaceLanguage: "ja", outputLanguage: "en", preferredRegions: ["global"] };
   applyNewsfeedSettings(state, { interface_language: "ar", digest_language: "ko", preferred_regions: ["mena"] });
 `, settingsSandbox);
@@ -141,7 +142,7 @@ vm.runInNewContext(`
     },
   };
   ${extractFunction(app, "isLocalizedContentPage")}
-  ${extractFunction(app, "newsfeedTimeLabel")}
+  ${extractFunction(newsfeed, "newsfeedTimeLabel")}
   result = newsfeedTimeLabel(${JSON.stringify(new Date(Date.now() - 5 * 60 * 1000).toISOString())});
 `, timeSandbox);
 assert.match(timeSandbox.result, /^ja-JP:-\d+:minute$/, "relative Newsfeed time must be formatted through the page locale");
@@ -154,9 +155,9 @@ vm.runInNewContext(`
   const NEWSFEED_SYSTEM_TOPIC_COPY = { "tech-ai": { title: "Technology news" } };
   const NEWSFEED_CATEGORY_COPY = { Tech: "Technology news" };
   const NEWSFEED_SUGGESTED_TOPIC_COPY = { "Original suggestion": "Localized suggestion" };
-  ${extractFunction(app, "newsfeedTopicText")}
-  ${extractFunction(app, "newsfeedCategoryText")}
-  ${extractFunction(app, "newsfeedSuggestedTopicText")}
+  ${extractFunction(newsfeed, "newsfeedTopicText")}
+  ${extractFunction(newsfeed, "newsfeedCategoryText")}
+  ${extractFunction(newsfeed, "newsfeedSuggestedTopicText")}
   result = {
     topic: newsfeedTopicText({ id: "tech-ai", title: "Tech" }),
     category: newsfeedCategoryText("Tech"),
@@ -174,17 +175,17 @@ vm.runInNewContext(`
   const CONTENT_LOCALE = "zh-Hans";
   const CONTENT_INTL_LOCALE = "zh-CN";
   ${extractFunction(app, "isLocalizedContentPage")}
-  ${extractFunction(app, "newsfeedTimeLabel")}
+  ${extractFunction(newsfeed, "newsfeedTimeLabel")}
   result = newsfeedTimeLabel(${JSON.stringify(new Date(Date.now() - 5 * 60 * 1000).toISOString())});
 `, rootTimeSandbox);
 assert.match(rootTimeSandbox.result, /^\d+m ago$/, "the Chinese root keeps its established Newsfeed relative-time format");
 
-assert.match(app, /if \(fixedInterfaceLanguage\) \{[\s\S]{0,260}newsfeedInterfaceNavigationUrl[\s\S]{0,160}window\.location\.href = nextUrl[\s\S]{0,80}return;/, "localized interface selection must navigate instead of mutating lang state");
-assert.match(app, /data-action="home-category"[\s\S]{0,220}newsfeedCategoryText\(item\)/, "home category labels must be localized without changing category values");
-assert.match(app, /data-action="explore-category"[\s\S]{0,220}newsfeedCategoryText\(item\)/, "explore category labels must be localized without changing category values");
-assert.match(app, /newsfeedSuggestedTopicText\(topic\)/, "built-in suggested-topic labels must be localized");
-assert.match(app, /const topicTitle = newsfeedTopicText\(topic\)[\s\S]{0,400}<h2>\$\{escapeHtml\(topicTitle\)\}/, "built-in topic pages must use localized title copy");
-assert.match(app, /localizedServiceMessage\(data\.detail \|\| data\.error, "Newsfeed request failed\."\)/, "localized Newsfeed API errors must use generic translated copy");
+assert.match(newsfeed, /if \(fixedInterfaceLanguage\) \{[\s\S]{0,260}newsfeedInterfaceNavigationUrl[\s\S]{0,160}window\.location\.href = nextUrl[\s\S]{0,80}return;/, "localized interface selection must navigate instead of mutating lang state");
+assert.match(newsfeed, /data-action="home-category"[\s\S]{0,220}newsfeedCategoryText\(item\)/, "home category labels must be localized without changing category values");
+assert.match(newsfeed, /data-action="explore-category"[\s\S]{0,220}newsfeedCategoryText\(item\)/, "explore category labels must be localized without changing category values");
+assert.match(newsfeed, /newsfeedSuggestedTopicText\(topic\)/, "built-in suggested-topic labels must be localized");
+assert.match(newsfeed, /const topicTitle = newsfeedTopicText\(topic\)[\s\S]{0,400}<h2>\$\{escapeHtml\(topicTitle\)\}/, "built-in topic pages must use localized title copy");
+assert.match(newsfeed, /localizedServiceMessage\(data\.detail \|\| data\.error, "Newsfeed request failed\."\)/, "localized Newsfeed API errors must use generic translated copy");
 assert.match(localeCss, /html\[dir="rtl"\] \.course-material-cover > span \{[\s\S]*?border-radius: 0 0 0 12px;/, "the Arabic course-cover badge must mirror its corner radius");
 
 (async () => {
@@ -259,10 +260,10 @@ assert.match(localeCss, /html\[dir="rtl"\] \.course-material-cover > span \{[\s\
     "different accounts must never share a settings object",
   );
 
-  assert.doesNotMatch(app, /NEWSFEED_ACCOUNT_(?:USERNAMES|EMAILS)/, "the frontend must not retain an account allowlist");
+  assert.doesNotMatch(`${app}\n${newsfeed}`, /NEWSFEED_ACCOUNT_(?:USERNAMES|EMAILS)/, "the frontend must not retain an account allowlist");
   assert.match(app, /function isNewsfeedSession[\s\S]*?Boolean\(user\)/, "the frontend exposes Newsfeed to registered sessions");
-  assert.match(app, /id="newsNewsletterTopic"/, "the UI exposes the single-newsletter selector");
-  assert.match(app, /id="newsEmailInput"[\s\S]*?readonly/, "the newsletter recipient is fixed to the account email");
+  assert.match(newsfeed, /id="newsNewsletterTopic"/, "the UI exposes the single-newsletter selector");
+  assert.match(newsfeed, /id="newsEmailInput"[\s\S]*?readonly/, "the newsletter recipient is fixed to the account email");
   const settingsHandler = extractFunction(worker, "handleNewsfeedSettings");
   assert.match(settingsHandler, /requireNewsfeedUser\(request, env\)/, "settings routes require the current user");
   assert.match(settingsHandler, /validateNewsfeedNewsletterSelection\(env, user, next\)/, "newsletter choices are checked against that user's topics");

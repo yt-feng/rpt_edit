@@ -35,6 +35,7 @@ from urllib.parse import parse_qsl, unquote, urlencode, urljoin, urlsplit, urlun
 import xml.etree.ElementTree as ET
 from zoneinfo import ZoneInfo
 
+from portal_lazy_assets import fingerprint_newsfeed_loader
 from portal_locale_history import plan_history_release
 from portal_locale_literals import is_japanese_identity_label, is_latin_name_literal, is_machine_asset_reference, is_shared_japanese_keyword, is_short_latin_label_translation
 from portal_locale_scope import deferred_locale_source, restrict_html_to_cohort
@@ -115,6 +116,7 @@ JSON_LD_URL_KEYS = frozenset({
 })
 LOCALIZED_JS_ASSETS = (
     "app.js",
+    "newsfeed-app.js",
     "charts.js",
     "contact.js",
     "report-chat.js",
@@ -5399,6 +5401,9 @@ def _build_localized_release(
             localized_javascript = inject_locale_detail_hooks(localized_javascript, asset_name, locale)
             target.write_text(localized_javascript, encoding="utf-8")
             locale_script_digests[asset_name] = hashlib.sha256(target.read_bytes()).hexdigest()[:12]
+        fingerprint_newsfeed_loader(locale_root)
+        if "app.js" in locale_script_digests:
+            locale_script_digests["app.js"] = hashlib.sha256((locale_root / "assets/app.js").read_bytes()).hexdigest()[:12]
         for path, source in localized_html_sources.items():
             relative = path.relative_to(root)
             target = locale_root / relative
@@ -5625,6 +5630,11 @@ def _build_localized_release(
     }
     manifest["recovery_asset"] = route_descriptor("assets/locale-recovery.js")
     manifest["detail_asset"] = route_descriptor("assets/locale-detail.js")
+    if "newsfeed-app.js" in javascript_sources:
+        manifest["lazy_javascript_assets"] = {
+            language: route_descriptor(f"{prefix}assets/newsfeed-app.js")
+            for language, prefix in [("zh-Hans", ""), *((locale, f"{locale}/") for locale in LOCALES)]
+        }
     if incremental:
         manifest["index_policy"].update(
             mode="incremental-publication-cutoff",

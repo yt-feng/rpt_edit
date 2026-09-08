@@ -32,7 +32,7 @@ class CachedJavascriptAuditTests(unittest.TestCase):
                 report = auditor.audit(assets, path, root / "out")
             self.assertEqual(report["status"], "passed")
             self.assertEqual(report["provider_requests"], 0)
-            self.assertEqual(len(report["assets"]), 21)
+            self.assertEqual(len(report["assets"]), len(builder.LOCALIZED_JS_ASSETS) * len(builder.LOCALES))
             self.assertEqual(path.read_bytes(), before)
             subset = builder.load_cache(root / "out" / "public-script-cache.json.gz")
             self.assertEqual(subset["locales"], cache["locales"])
@@ -52,7 +52,7 @@ class CachedJavascriptAuditTests(unittest.TestCase):
                 report = auditor.audit(assets, path, root / "out")
             self.assertEqual(report["status"], "failed")
             self.assertEqual(report["provider_requests"], 0)
-            self.assertEqual(len(report["assets"]), 21)
+            self.assertEqual(len(report["assets"]), len(builder.LOCALIZED_JS_ASSETS) * len(builder.LOCALES))
             self.assertTrue(all(row["status"] == "failed" for row in report["assets"]))
 
     def test_diagnostics_include_chinese_introduced_into_english_source(self):
