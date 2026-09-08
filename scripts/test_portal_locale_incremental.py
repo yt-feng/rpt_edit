@@ -204,11 +204,12 @@ class IncrementalBuildTests(unittest.TestCase):
             self.assertNotIn("PortalLocaleEarly", current)
         self.assertTrue(self.site.joinpath("assets/locale-recovery.js").is_file())
         def generated_response(url, timeout):
-            relative = url.removeprefix(fixtures.SITE_URL + "/")
-            return 200, {"content-language": relative.split("/", 1)[0]}, self.site.joinpath(relative).read_bytes()
+            relative = url.removeprefix(fixtures.SITE_URL + "/").split("?", 1)[0]
+            return 200, {"content-language": relative.split("/", 1)[0],
+                         "content-type": "text/javascript" if relative.endswith(".js") else "text/html"}, self.site.joinpath(relative).read_bytes()
         report = verify_locale_routes(manifest, fixtures.SITE_URL, fetcher=generated_response)
         self.assertEqual(report["status"], "passed", report)
-        self.assertEqual(report["request_count"], 20)
+        self.assertEqual(report["request_count"], 24)
 
     def test_next_day_keeps_fixed_cutoff_reuses_paid_cache_and_preserves_chinese(self):
         snapshot = self.fixture.temporary_root / "chinese-before.json"

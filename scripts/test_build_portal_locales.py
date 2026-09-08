@@ -163,6 +163,7 @@ class PortalLocaleBuildTests(unittest.TestCase):
         (self.site / "assets" / "app.js").write_text(
             """(() => {
   "use strict";
+  const NEWSFEED_APP_ASSET = "assets/newsfeed-app.js?v=__NEWSFEED_APP_SHA__";
   const label = "搜索报告";
   const endpoint = "/api/report-chat";
   const reportRoute = "report.html?";
@@ -724,6 +725,12 @@ class PortalLocaleBuildTests(unittest.TestCase):
             for asset_name in builder.LOCALIZED_JS_ASSETS:
                 localized_asset = self.site / locale / "assets" / asset_name
                 localized_digest = hashlib.sha256(localized_asset.read_bytes()).hexdigest()[:12]
+                if asset_name == "newsfeed-app.js":
+                    self.assertIn(f'assets/newsfeed-app.js?v={localized_digest}', localized_javascript)
+                    self.assertNotIn('src="/' + locale + '/assets/newsfeed-app.js', home)
+                    self.assertEqual(manifest["lazy_javascript_assets"][locale]["sha256"],
+                                     hashlib.sha256(localized_asset.read_bytes()).hexdigest())
+                    continue
                 self.assertRegex(
                     home,
                     rf'src="/{locale}/assets/{re.escape(asset_name)}\?[^"#]*v={localized_digest}(?:&[^"#]*)?"',
@@ -1749,7 +1756,8 @@ if (mode === "程序枚举") document.getElementById("中文节点");
 
     def test_real_javascript_covers_all_233_current_chinese_ternary_literals(self) -> None:
         expected_by_asset = {
-            "app.js": 202,
+            "app.js": 196,
+            "newsfeed-app.js": 6,
             "charts.js": 4,
             "contact.js": 0,
             "report-chat.js": 23,

@@ -32,6 +32,7 @@ jobs:
             portal_suite/site_src
             portal_suite/tests
             scripts/build_portal_suite_site.py
+            scripts/portal_lazy_assets.py
             scripts/build_member_course_directory.py
             scripts/capture_edge_worker_deployment.py
             scripts/check_public_brand.py
