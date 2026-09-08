@@ -224,6 +224,13 @@ const THINKTANK_R2_PREFIX = "thinktank";
 const THINKTANK_UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 " +
   "(KHTML, like Gecko) Chrome/137.0 Safari/537.36";
+const CRS_ORIGIN = "https://www.everycrsreport.com";
+const CRS_METADATA_PREFIX = "_thinktank-metadata/crs-v1";
+const CRS_METADATA_FRESH_MS = 15 * 60 * 1000;
+const CRS_METADATA_STALE_MS = 7 * 24 * 60 * 60 * 1000;
+const CRS_METADATA_TIMEOUT_MS = 8000;
+const CRS_METADATA_MAX_BYTES = 512 * 1024;
+const CRS_METADATA_PENDING = new Map();
 const HOT_REPORT_SOURCE = "hot";
 const HOT_REPORT_PREFIX = "_hot-reports";
 const HOT_REPORT_ITEM_PREFIX = `${HOT_REPORT_PREFIX}/items`;
@@ -23977,6 +23984,206 @@ async function handleHiborSearch(request, env) {
 // International think-tank / institution PDF archive
 // ---------------------------------------------------------------------------
 
+function crsReportNumber(value) {
+  const number = String(value || "").trim();
+  return /^[A-Za-z0-9][A-Za-z0-9_-]{1,59}$/.test(number) ? number : "";
+}
+
+function crsReportNumberFromUrl(value) {
+  try {
+    const url = new URL(String(value || ""), CRS_ORIGIN);
+    if (url.origin !== CRS_ORIGIN) return "";
+    const match = url.pathname.match(/^\/reports\/([A-Za-z0-9_-]+)\.html$/);
+    return match ? crsReportNumber(match[1]) : "";
+  } catch (_error) {
+    return "";
+  }
+}
+
+function crsReportRow(number, title, date, extra = {}) {
+  return {
+    ...extra,
+    crs_report_id: number,
+    title: cleanHtmlText(title),
+    published: date,
+    institution_en: "Congressional Research Service (CRS)",
+    institution_cn: "美国国会研究处",
+    report_url: `${CRS_ORIGIN}/reports/${number}.html`,
+  };
+}
+
+function crsIsoDate(value) {
+  const date = String(value || "").trim();
+  const iso = date.match(/^(\d{4}-\d{2}-\d{2})(?:T|$)/);
+  if (iso) return iso[1];
+  const timestamp = Date.parse(`${date} UTC`);
+  return Number.isFinite(timestamp) ? new Date(timestamp).toISOString().slice(0, 10) : "";
+}
+
+async function fetchCrsMetadataText(url, headers = {}) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort("timeout"), CRS_METADATA_TIMEOUT_MS);
+  let reader = null;
+  try {
+    const response = await fetch(url, {
+      headers: { Accept: "application/json,application/rss+xml,text/html;q=0.8", ...headers },
+      signal: controller.signal,
+      redirect: "error",
+    });
+    if (!response.ok) {
+      const error = new Error(`CRS metadata unavailable (${response.status}).`);
+      error.status = response.status;
+      throw error;
+    }
+    if (Number(response.headers.get("content-length") || 0) > CRS_METADATA_MAX_BYTES) {
+      throw new Error("CRS metadata response exceeded the size limit.");
+    }
+    reader = response.body.getReader();
+    const decoder = new TextDecoder();
+    let bytes = 0;
+    let text = "";
+    while (true) {
+      const chunk = await reader.read();
+      if (chunk.done) break;
+      bytes += chunk.value.byteLength;
+      if (bytes > CRS_METADATA_MAX_BYTES) throw new Error("CRS metadata response exceeded the size limit.");
+      text += decoder.decode(chunk.value, { stream: true });
+    }
+    return text + decoder.decode();
+  } finally {
+    clearTimeout(timer);
+    if (reader) await reader.cancel().catch(() => null);
+    controller.abort();
+  }
+}
+
+async function crsCachedMetadata(env, key, loader) {
+  const storageKey = `${CRS_METADATA_PREFIX}/${key}.json`;
+  const cached = env.REPORT_BUCKET ? await r2GetJson(env, storageKey).catch(() => null) : null;
+  const age = Date.now() - Date.parse(cached && cached.cached_at || "");
+  if (cached && cached.payload && age >= 0 && age < CRS_METADATA_FRESH_MS) {
+    return { payload: cached.payload, stale: false, cached: true };
+  }
+  try {
+    let pending = CRS_METADATA_PENDING.get(key);
+    if (!pending) {
+      pending = Promise.resolve().then(loader).finally(() => CRS_METADATA_PENDING.delete(key));
+      CRS_METADATA_PENDING.set(key, pending);
+    }
+    const payload = await pending;
+    if (env.REPORT_BUCKET) {
+      await env.REPORT_BUCKET.put(storageKey, JSON.stringify({ cached_at: new Date().toISOString(), payload }), {
+        httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "private, max-age=900" },
+      }).catch(() => null);
+    }
+    return { payload, stale: false, cached: false };
+  } catch (error) {
+    if (cached && cached.payload && age >= 0 && age < CRS_METADATA_STALE_MS) {
+      return { payload: cached.payload, stale: true, cached: true };
+    }
+    throw error;
+  }
+}
+
+function parseCrsRssRows(xml) {
+  const reports = new Map();
+  for (const block of String(xml || "").match(/<item\b[\s\S]*?<\/item>/gi) || []) {
+    const number = crsReportNumberFromUrl(rssTag(block, "link"));
+    const title = rssTag(block, "title");
+    const date = Date.parse(rssTag(block, "pubDate"));
+    if (!number || !title || !Number.isFinite(date)) continue;
+    const existing = reports.get(number);
+    if (!existing || date > existing.date) {
+      reports.set(number, { date, row: crsReportRow(number, title, new Date(date).toISOString().slice(0, 10)) });
+    }
+  }
+  return [...reports.values()].sort((a, b) => b.date - a.date).slice(0, 100).map((entry) => entry.row);
+}
+
+async function crsRecentMetadata(env) {
+  return crsCachedMetadata(env, "recent", async () => {
+    const rows = parseCrsRssRows(await fetchCrsMetadataText(`${CRS_ORIGIN}/rss.xml`));
+    if (!rows.length) throw new Error("CRS recent report feed is unavailable.");
+    return rows;
+  });
+}
+
+function parseCrsDetailRow(data, expectedNumber) {
+  if (!data || crsReportNumber(data.number || data.id) !== expectedNumber) return null;
+  const versions = Array.isArray(data.versions) ? data.versions : [];
+  const version = versions.slice().sort((a, b) => dateScore(b.date) - dateScore(a.date))[0];
+  if (!version || !version.title) return null;
+  const pdf = (Array.isArray(version.formats) ? version.formats : []).find((format) => String(format.format || "").toUpperCase() === "PDF");
+  let pdfUrl = "";
+  if (pdf && pdf.filename) {
+    try {
+      const url = new URL(pdf.filename, `${CRS_ORIGIN}/`);
+      if (url.origin === CRS_ORIGIN && /^\/files\/[A-Za-z0-9._-]+\.pdf$/i.test(url.pathname) && !url.search && !url.hash) pdfUrl = url.href;
+    } catch (_error) { /* A malformed source locator is never fetched. */ }
+  }
+  if (!pdfUrl) return null;
+  return crsReportRow(expectedNumber, version.title, String(version.date || ""), {
+    pdf_url: pdfUrl,
+    crs_version: String(pdf.sha1 || thinkTankBasename(pdfUrl)).replace(/[^A-Za-z0-9._-]/g, "").slice(0, 140),
+  });
+}
+
+async function crsFindReportRow(env, number) {
+  try {
+    const result = await crsCachedMetadata(env, `reports/${number}`, async () => {
+      const data = JSON.parse(await fetchCrsMetadataText(`${CRS_ORIGIN}/reports/${number}.json`));
+      const row = parseCrsDetailRow(data, number);
+      if (!row) throw new Error("CRS report metadata is unavailable.");
+      return row;
+    });
+    return { ...result.payload, crs_metadata_stale: result.stale };
+  } catch (error) {
+    if (error.status === 404) return null;
+    throw error;
+  }
+}
+
+async function crsSearchConfig(env) {
+  const result = await crsCachedMetadata(env, "search-config", async () => {
+    // The publisher exposes these read-only search settings on its public page.
+    const html = await fetchCrsMetadataText(`${CRS_ORIGIN}/search.html`);
+    const appId = (html.match(/\bappId:\s*['"]([A-Z0-9]{8,20})['"]/) || [])[1];
+    const apiKey = (html.match(/\bapiKey:\s*['"]([a-f0-9]{20,64})['"]/) || [])[1];
+    const indexName = (html.match(/\bindexName:\s*['"]([A-Za-z0-9_-]{1,80})['"]/) || [])[1];
+    if (!appId || !apiKey || !indexName) throw new Error("CRS search configuration is unavailable.");
+    return { appId, apiKey, indexName };
+  });
+  return result;
+}
+
+async function crsSearchRows(env, query, page) {
+  const reportNumber = /^(?:R|RL|RS|IF|IN|LSB|TE)\d{3,8}$/i.test(query) ? query.toUpperCase() : "";
+  if (reportNumber) {
+    const row = await crsFindReportRow(env, reportNumber);
+    return { rows: page === 1 && row ? [row] : [], total: row ? 1 : 0, has_more: false, stale: Boolean(row && row.crs_metadata_stale) };
+  }
+  if (/^(?:CRS|美国国会(?:研究处)?|国会研究处|Congressional Research Service)$/i.test(query)) {
+    const recent = await crsRecentMetadata(env);
+    return { rows: recent.payload.slice((page - 1) * THINKTANK_SEARCH_PAGE_SIZE, page * THINKTANK_SEARCH_PAGE_SIZE), total: recent.payload.length, stale: recent.stale, has_more: page * THINKTANK_SEARCH_PAGE_SIZE < recent.payload.length };
+  }
+  const config = await crsSearchConfig(env);
+  const { appId, apiKey, indexName } = config.payload;
+  const url = new URL(`https://${appId.toLowerCase()}-dsn.algolia.net/1/indexes/${encodeURIComponent(indexName)}`);
+  url.searchParams.set("query", query);
+  url.searchParams.set("page", String(page - 1));
+  url.searchParams.set("hitsPerPage", String(THINKTANK_SEARCH_PAGE_SIZE));
+  url.searchParams.set("attributesToRetrieve", "title,url,date,reportNumber");
+  url.searchParams.set("attributesToHighlight", "[]");
+  url.searchParams.set("attributesToSnippet", "[]");
+  const data = JSON.parse(await fetchCrsMetadataText(url.href, { "X-Algolia-Application-Id": appId, "X-Algolia-API-Key": apiKey }));
+  if (!Array.isArray(data.hits)) throw new Error("CRS search response is unavailable.");
+  const rows = data.hits.slice(0, THINKTANK_SEARCH_PAGE_SIZE).map((hit) => {
+    const number = crsReportNumberFromUrl(hit.url);
+    return number && hit.title ? crsReportRow(number, hit.title, crsIsoDate(hit.date)) : null;
+  }).filter(Boolean);
+  return { rows, total: Math.max(rows.length, Number(data.nbHits) || 0), has_more: page < Number(data.nbPages || 0), stale: config.stale };
+}
+
 function thinkTankBasename(value) {
   return String(value || "")
     .split(/[?#]/)[0]
@@ -23997,6 +24204,7 @@ function thinkTankSlug(row) {
 }
 
 function thinkTankId(row) {
+  if (row && crsReportNumber(row.crs_report_id)) return `${THINKTANK_SOURCE}:crs-${row.crs_report_id}`;
   const hash = thinkTankHashFromFilename(row && row.local_filename);
   return `${THINKTANK_SOURCE}:${hash || thinkTankSlug(row)}`;
 }
@@ -24013,11 +24221,13 @@ function thinkTankHashFromFilename(value) {
 
 function thinkTankRowMatchesId(row, parsed) {
   if (!row || !parsed) return false;
+  if (row.crs_report_id) return parsed.id === thinkTankId(row);
   const hash = thinkTankHashFromFilename(row.local_filename);
   return parsed.slug === hash || parsed.slug === thinkTankSlug(row);
 }
 
 function thinkTankDate(row) {
+  if (row && row.crs_report_id) return crsIsoDate(row.published);
   const date = String(row && row.date || "").trim();
   if (/^\d{6}$/.test(date)) return `20${date.slice(0, 2)}-${date.slice(2, 4)}-${date.slice(4, 6)}`;
   if (/^\d{8}$/.test(date)) return `${date.slice(0, 4)}-${date.slice(4, 6)}-${date.slice(6, 8)}`;
@@ -24149,7 +24359,7 @@ function scoreThinkTankItem(item, query, terms) {
   return score || (compact && haystack.includes(compact) ? 2 : 0);
 }
 
-async function thinkTankSearchPayload(env, query, page, ctx = null) {
+async function thinkTankArchiveSearchPayload(env, query, page, ctx = null) {
   const [rows, wechatTitles] = await Promise.all([
     thinkTankArchiveRows(env),
     thinkTankWechatTitleMap(env),
@@ -24176,27 +24386,80 @@ async function thinkTankSearchPayload(env, query, page, ctx = null) {
     items: pageEntries.map((entry) => entry.item),
     page,
     total: scored.length,
+    has_more: start + THINKTANK_SEARCH_PAGE_SIZE < scored.length,
     source: THINKTANK_SOURCE,
+  };
+}
+
+async function thinkTankSearchPayload(env, query, page, ctx = null) {
+  if (!query) {
+    // Home-page discovery reads only the small RSS feed, never the archive,
+    // WeChat title directories, full CSV index, or any PDF.
+    const recent = await crsRecentMetadata(env);
+    return {
+      items: recent.payload.slice((page - 1) * THINKTANK_SEARCH_PAGE_SIZE, page * THINKTANK_SEARCH_PAGE_SIZE).map((row) => slimThinkTankItem(row)),
+      page,
+      page_size: THINKTANK_SEARCH_PAGE_SIZE,
+      total: recent.payload.length,
+      has_more: page * THINKTANK_SEARCH_PAGE_SIZE < recent.payload.length,
+      source: THINKTANK_SOURCE,
+      ...(recent.stale ? { warning: "美国国会研究处信息源暂时不可用，已展示最近缓存的报告。" } : {}),
+    };
+  }
+  const [archive, crs] = await Promise.allSettled([
+    thinkTankArchiveSearchPayload(env, query, page, ctx),
+    crsSearchRows(env, query, page),
+  ]);
+  if (archive.status === "rejected" && crs.status === "rejected") throw new Error("International report sources are unavailable.");
+  const archiveItems = archive.status === "fulfilled" ? archive.value.items : [];
+  const crsItems = crs.status === "fulfilled" ? crs.value.rows.map((row) => slimThinkTankItem(row)) : [];
+  const partial = archive.status === "rejected" || crs.status === "rejected" || Boolean(crs.value && crs.value.stale);
+  // Each source retains its own 30-result page. Combining the two source pages
+  // keeps every hit reachable without downloading a bulk report index.
+  return {
+    items: [...crsItems, ...archiveItems],
+    page,
+    page_size: THINKTANK_SEARCH_PAGE_SIZE * 2,
+    total: (archive.status === "fulfilled" ? archive.value.total : 0) + (crs.status === "fulfilled" ? crs.value.total : 0),
+    has_more: Boolean(archive.value && archive.value.has_more || crs.value && crs.value.has_more),
+    source: THINKTANK_SOURCE,
+    ...(partial ? { warning: "部分国际智库信息源暂时不可用，已展示可用报告或最近缓存。" } : {}),
   };
 }
 
 async function handleThinkTankSearch(request, env, ctx = null) {
   const url = new URL(request.url);
-  const query = String(url.searchParams.get("q") || "").trim();
-  const page = Math.max(1, Number(url.searchParams.get("page") || "1") || 1);
-  if (!query) return jsonResponse(request, env, 200, { items: [], page: 1, total: 0, source: THINKTANK_SOURCE });
-
-  return handleCachedSearch(request, env, THINKTANK_SOURCE, query, page, {
-    items: [],
-    page,
-    total: 0,
-    source: THINKTANK_SOURCE,
-  }, () => thinkTankSearchPayload(env, query, page, ctx));
+  const query = compactSearchQuery(url.searchParams.get("q") || "");
+  const pageInput = Number(url.searchParams.get("page") || "1");
+  const page = Number.isFinite(pageInput) ? Math.min(1000, Math.max(1, Math.floor(pageInput))) : 1;
+  // A separate namespace makes previously cached archive-only searches obsolete.
+  const cacheSource = "thinktank-crs-v1";
+  const cached = await getSearchCache(env, cacheSource, query, page);
+  const age = Date.now() - Date.parse(cached && cached.cached_at || "");
+  if (cached && cached.payload && age >= 0 && age < CRS_METADATA_FRESH_MS) {
+    return jsonResponse(request, env, 200, { ...publicSearchPayload(THINKTANK_SOURCE, cached.payload), cached: true, cache_status: "fresh" });
+  }
+  try {
+    const payload = publicSearchPayload(THINKTANK_SOURCE, await thinkTankSearchPayload(env, query, page, ctx));
+    // A degraded result must not displace the last complete result or hide a
+    // recovered provider behind the common six-hour search cache.
+    if (!payload.warning) await putSearchCache(env, cacheSource, query, page, payload);
+    return jsonResponse(request, env, 200, { ...payload, cached: false, cache_status: payload.warning ? "partial" : "refreshed" });
+  } catch (_error) {
+    if (cached && cached.payload && age >= 0 && age < CRS_METADATA_STALE_MS) {
+      return jsonResponse(request, env, 200, { ...publicSearchPayload(THINKTANK_SOURCE, cached.payload), cached: true, cache_status: "stale", warning: "国际智库信息源暂时不可用，已展示最近缓存的报告。" });
+    }
+    return jsonResponse(request, env, 200, { items: [], page, total: 0, has_more: false, source: THINKTANK_SOURCE, cached: false, cache_status: "miss", warning: "国际智库信息源暂时不可用，请稍后重试。" });
+  }
 }
 
 async function findThinkTankRow(env, id) {
   const parsed = parseThinkTankId(id);
   if (!parsed) return null;
+  if (parsed.slug.startsWith("crs-")) {
+    const number = crsReportNumber(parsed.slug.slice(4));
+    return number ? crsFindReportRow(env, number) : null;
+  }
   const rows = await thinkTankArchiveRows(env);
   return rows.find((row) => thinkTankRowMatchesId(row, parsed)) || null;
 }
@@ -24208,6 +24471,9 @@ function thinkTankObjectKey(id) {
 }
 
 function thinkTankObjectKeyForRow(row) {
+  if (row && row.crs_report_id && row.crs_version) {
+    return `${THINKTANK_R2_PREFIX}/crs-${row.crs_report_id}-${row.crs_version}.pdf`;
+  }
   return thinkTankObjectKey(thinkTankId(row));
 }
 
@@ -24217,11 +24483,16 @@ async function handleThinkTankItem(request, env) {
   if (!parseThinkTankId(id)) {
     return jsonResponse(request, env, 400, { error: "Invalid report id." });
   }
-  const row = await findThinkTankRow(env, id);
+  let row;
+  try {
+    row = await findThinkTankRow(env, id);
+  } catch (_error) {
+    return jsonResponse(request, env, 503, { error: "Report metadata is temporarily unavailable. Please try again later." });
+  }
   if (!row) {
     return jsonResponse(request, env, 404, { error: "Report not found." });
   }
-  const wechatTitles = await thinkTankWechatTitleMap(env).catch(() => new Map());
+  const wechatTitles = row.crs_report_id ? new Map() : await thinkTankWechatTitleMap(env).catch(() => new Map());
   return jsonResponse(request, env, 200, {
     item: slimThinkTankItem(row, wechatTitles),
   });
@@ -24264,7 +24535,7 @@ async function cacheThinkTankPdf(env, row) {
 async function warmThinkTankRows(env, rows, limit = THINKTANK_WARM_PDF_LIMIT) {
   if (!env.REPORT_BUCKET) return { ok: false, warmed: 0, reason: "bucket-unavailable" };
   const queue = (Array.isArray(rows) ? rows : [])
-    .filter((row) => row && row.pdf_url)
+    .filter((row) => row && row.pdf_url && !row.crs_report_id)
     .slice(0, Math.max(0, limit));
   let warmed = 0;
   let index = 0;
@@ -24311,7 +24582,12 @@ async function handleThinkTankPdf(request, env, ctx = null) {
   if (!parseThinkTankId(id)) {
     return jsonResponse(request, env, 400, { error: "Invalid report id." });
   }
-  const row = await findThinkTankRow(env, id);
+  let row;
+  try {
+    row = await findThinkTankRow(env, id);
+  } catch (_error) {
+    return jsonResponse(request, env, 503, { error: "Report metadata is temporarily unavailable. Please try again later." });
+  }
   if (!row) {
     return jsonResponse(request, env, 404, { error: "Report not found." });
   }
