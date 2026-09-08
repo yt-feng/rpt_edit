@@ -31,18 +31,18 @@ import build_report_chat_index as chat_index
 
 
 SCHEMA_VERSION = 1
-BUILD_FORMAT = b"report-research-random-access-v1.3\0"
+BUILD_FORMAT = b"report-research-random-access-v1.4\0"
 DEFAULT_PREFIX = "_report-research/v1"
 CORPUS_FILENAME = "corpus.jsonl.gz"
 SLOT_SIZE = 12
 QUERY_TOKEN_LIMIT = 8
 REPORT_LIMIT = 8
-POSTING_LIMIT = 48
+POSTING_LIMIT = 192
 EVIDENCE_CHUNKS_PER_REPORT = 2
 MAX_BUCKET_ENTRIES = 8
 MAX_BUCKET_BYTES = 128 * 1024
-DEFAULT_CHUNK_CHARS = 1800
-DEFAULT_CHUNK_OVERLAP = 180
+DEFAULT_CHUNK_CHARS = 2600
+DEFAULT_CHUNK_OVERLAP = 260
 # The current search-index builder has a clean gap between title-only rows
 # (<=216 chars) and extracted report text (>=1,223 chars). This guard prevents
 # a catalog title from being mislabeled as full-text evidence.
@@ -734,7 +734,9 @@ def build_index(
             raise ValueError("full-text research items produced no search tokens")
 
         bucket_counts = {
-            "token_table": _choose_bucket_count(token_count, token_bucket_count),
+            # More postings per token must not enlarge a collision bucket past
+            # the existing 128 KiB range-read ceiling. Use a sparser token map.
+            "token_table": _choose_bucket_count(token_count * 4 if token_bucket_count is None else token_count, token_bucket_count),
             "item_table": _choose_bucket_count(item_count, item_bucket_count),
             "evidence_table": _choose_bucket_count(evidence_count, evidence_bucket_count),
         }

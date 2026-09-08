@@ -2951,6 +2951,61 @@ test("frontend distinguishes an already-used daily reward from a successful clai
   assert.doesNotMatch(duplicateBranch, /portal-reward-change|status:\s*"success"/u);
 });
 
+test("research retrieves beyond the former posting cap and verifies union backfill against report content", async (t) => {
+  for (const mode of ["beyond_cap", "union_backfill"]) await t.test(mode, async () => {
+    const bucket = new MemoryR2(), id = "f1".repeat(12);
+    const decoys = Array.from({ length: 60 }, (_, i) => ({ id: (i + 1).toString(16).padStart(24, "0"), tf: 100, chunks: ["c0"] }));
+    await seedReportResearchLookup(bucket, [{ id, title: "AI data center electricity demand", institution: "Research" }], {
+      ai: mode === "beyond_cap" ? [...decoys, { id, tf: 10, chunks: ["c0"] }] : [],
+      data: [{ id, tf: 10, chunks: ["c0"] }], power: [{ id, tf: 10, chunks: ["c0"] }],
+    }, [[`${id}:c0`, { id: "c0", report_id: id, text: "AI data center electricity demand requires generation capacity and timely grid connections before facilities can become operational." }]]);
+    const env = envFor(bucket), token = await register(env);
+    const result = await jsonRequest(env, "/report-chat", { method: "POST", headers: { "content-type": "application/json", ...bearer(token) }, body: JSON.stringify({ question: "AI data center power" }) });
+    assert.equal(result.response.status, 200, JSON.stringify(result.data));
+    assert.equal(result.data.mode, "research");
+    assert.ok(result.data.sources.some((source) => source.id === id));
+    assert.match(result.data.research_scope, /1 份报告/u);
+  });
+});
+
+test("research combines body and GDELT descriptions without counting news as report text", async () => {
+  const bucket = new MemoryR2(), id = "c1".repeat(12), secondId = "c2".repeat(12);
+  const reportIds = [id, secondId, "c3".repeat(12), "c4".repeat(12)];
+  const terms = ["ai", "data", "center", "power", "electricity", "capital", "expenditure"];
+  await seedReportResearchLookup(bucket, reportIds.map((id) => ({ id, title: "AI data center power investment" })), Object.fromEntries(terms.map((term) => [term, reportIds.map((id) => ({ id, tf: 8, chunks: ["c0", "c1"] }))])), reportIds.flatMap((id) => ["c0", "c1"].map((chunk) => [`${id}:${chunk}`, { id: chunk, report_id: id, text: "AI data center power demand is constrained by electricity grid connections and capital expenditure. Capacity plans depend on equipment delivery." }])));
+  const current = new Date().toISOString();
+  bucket.seed("_research-news/v1/snapshot.json", { schema_version: 1, updated_at: current, items: ["news-one.com", "news-two.com"].map((domain) => ({ id: `news:${"1".repeat(64)}`, title: "AI data center power update", source_url: `https://${domain}/article`, institution: domain, observed_at: current, summary: "Developers of AI data centers report that electricity access and utility connection schedules constrain construction, despite their planned capital investment." })) });
+  const env = { ...envFor(bucket), DEEPSEEK_API_KEY: "configured-test-key" }, token = await register(env);
+  bucket.getKeys.length = 0; bucket.putKeys.length = 0;
+  const original = globalThis.fetch; let modelCalls = 0;
+  globalThis.fetch = async (_url, init) => {
+    modelCalls++;
+    const request = JSON.parse(init.body);
+    let generated;
+    if (request.max_tokens === 400) generated = { core: [{ name: "AI", terms: ["ai"] }, { name: "data center", terms: ["data", "center"] }], facets: [{ name: "power", terms: ["power", "electricity"] }, { name: "capex", terms: ["capital", "expenditure"] }], terms };
+    else {
+      const input = JSON.parse(request.messages[1].content), news = input.sources.filter((source) => source.id.startsWith("news:"));
+      assert.equal(news.length, 2); assert.equal(news[0].published_at, "");
+      assert.match(request.messages[0].content, /1800-2600/u);
+      generated = { research_title: "电力与部署节奏", executive_summary: "电力接入约束部署。\n\n新闻为报告判断补充近期背景。", summary_source_ids: [id, news[0].id], findings: [{ title: "机制分析", summary: "先核对电网接入条件。\n\n再根据设备交付进度判断投产节奏。", source_ids: [id, news[0].id] }] };
+    }
+    return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify(generated) } }] }), { headers: { "content-type": "application/json" } });
+  };
+  try {
+    const result = await jsonRequest(env, "/report-chat", { method: "POST", headers: { "content-type": "application/json", ...bearer(token) }, body: JSON.stringify({ question: "AI data center power capital expenditure", include_news: true }) });
+    assert.equal(result.response.status, 200, JSON.stringify(result.data));
+    assert.equal(result.data.sources.filter((source) => source.id.startsWith("news:")).length, 2);
+    const news = result.data.sources.find((source) => source.id.startsWith("news:"));
+    assert.match(news.source_url, /^https:\/\/news-/u);
+    assert.equal(news.published_at, "");
+    assert.equal(news.evidence_kind, "news_description");
+    assert.match(result.data.research_scope, /4 份报告/u);
+    assert.match(result.data.research_scope, /2 条新闻简介/u);
+    assert.ok(result.data.executive_summary.includes("\n\n"));
+    assert.ok(bucket.getKeys.length + bucket.putKeys.length + modelCalls <= 50);
+  } finally { globalThis.fetch = original; }
+});
+
 test("research links chart-only reports into the evidence whitelist when full text misses or is unavailable", async (t) => {
   for (const mode of ["no_postings", "no_manifest", "unlinked_image"]) await t.test(mode, async () => {
     const bucket = new MemoryR2();

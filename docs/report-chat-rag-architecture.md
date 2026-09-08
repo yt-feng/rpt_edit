@@ -15,16 +15,16 @@
 独立 `/research.html` 页面和导航“研究”入口提供跨报告研究型 RAG；首页保留快捷入口：
 
 1. 独立研究刷新工作流读取现行报告搜索正文和已解析历史正文，`build_report_research_index.py` 把合格正文切成约
-   1,800 字、带 180 字重叠的证据块，并构建私有 token、报告与 evidence 三张随机访问表。
+   2,600 字、带 260 字重叠的证据块，并构建私有 token、报告与 evidence 三张随机访问表。
 2. 额度占位成功后，Worker 先用一次小型 DeepSeek query planner 把当前问题拆成 `core`
    concept groups、research `facets` 与最多 7 个原子检索词；planner 失败时使用相同结构的
    deterministic fallback。检索词按 concept group round-robin 分配，先覆盖不同概念再取
    同义词；AI / artificial / intelligence 属于同组，只贡献 1 票，裸年份、日期和纯数字不
    能成为主题准入词。deterministic fallback 只保留问题中的完整残余实体，不把中文 2–4 字
    滑窗碎片提升为 core，因此“比较全球”等句式片段不会挤占 7 个检索槽。
-3. 每个 token 最多返回 48 个 posting。报告排序先比较 core/facet group coverage，再比较
-   组内最优 posting 分数；候选必须命中全部 `required core`（例如 AI + data center），并在
-   存在 facet 时至少命中一个 facet，不能用“AI + capex”替代缺失的 data center。Worker 最多
+3. 每个 token 最多返回 192 个 posting。先按必要主题覆盖度、facet 覆盖度和组内最优分数排序。
+   posting 名单截断造成的漏召回允许从候选并集补足，但缺失的必要主题必须同时在报告标题与
+   取回的证据上下文中验证。planner 的额外优选词只作 facet，不会意外变成必须满足的主题。Worker 最多
    读取 4 份报告、总计 6 个证据块：先按排名给每份报告 1 块，再
    给前两名（或下一份仍有第 2 块的报告）补第 2 块。请求路径不会下载或解析整份全文索引。
 4. planner、研究随机读取、Chart index 和生成模型共用单请求 38 次子请求账本。完整冷路径为
@@ -35,7 +35,7 @@
    返回“证据不足”的研究结果。
 5. Worker 只把白名单报告元数据、证据块和严格相关的 Charts 交给 DeepSeek。synthesis 的
    `max_tokens` 上限为 7,000、服务端窗口 52 秒；提示要求研究标题、研究范围、结构化长摘要、
-   有证据时 5–8 条长 findings、6–12 个 data points、来源 ID、Chart image ID 与后续问题，
+   有证据时约 1,800–2,600 字的分析正文、5–8 条分段 findings、6–12 个 data points、来源 ID、Chart image ID 与后续问题，
    证据不足时必须少写，不能填充。
 6. 服务端再次校验所有来源 ID 和 Chart ID。数字校验按句/分句执行：一句里只要有不能在所引
    evidence 中逐字找到的数字，就删除整句而不是删除整条 finding；同一 finding 中其他有根据
@@ -67,6 +67,28 @@
 - 当前合格的完整提取优先于历史节选；重复正文保留较完整候选。短标题或不足 1,000 字符的历史文本不会进入证据。历史节选不能覆盖已保存的完整正文，后续正常刷新不会因公开搜索窗缩小而删除稳定语料。
 - 其他报告、报告线索、高权报告和国际智库的实时搜索适配器，以及 `_search-mirror` 元数据缓存，没有整体接入研究正文。下载到 PDF、出现在目录或搜索结果中也不等于已经解析并入库。Charts 覆盖与正文覆盖分别计算。
 - 本地 2026-08-30 输入快照的历史库有 5,488 条已解析文本；站点去重后 5,480 条。严格目录 ID 与长度校验后的实际本地构建为 6,285 份资料（964 份当前正文、5,321 份历史节选）和 96,431 个证据块。此构建未合并或发布生产稳定语料，生产新增量须以专用工作流的实际去重结果为准。
+
+
+### 新闻与近期事件补充
+
+- 前端报告研究请求 `include_news=true`。后台 `research-news-refresh.yml` 每小时从 GDELT GAL
+  最近 75 分钟的分钟文件采集发布者自带简介，合并最近七天的私有 R2 快照。最多六路并发，
+  每次下载/解压受字节上限约束；只保留符合主题的中英文真实简介、HTTPS 来源，按 URL 去重。
+  单快照最多 1,800 条 / 2 MiB；没有新合格记录时不覆盖现有快照，写入后回读验证。
+- Worker 只用一次有预算的 R2 读取查询摘要快照；本次最多四条新闻，并限制同一媒体重复。
+  必要主题必须匹配。摘要不足时，可在剩余额度允许时读取 EIA Today in Energy 和 Federal
+  Reserve FEDS Notes 两个固定官方 RSS；并行截止时间不超过六秒，合计响应不超过 512 KiB。
+  新闻失败或缺失仍继续已有报告/图表研究，研究范围明确没有引用近期新闻。
+- `news_description` 仅指 GAL 发布者简介，`news_snippet` 仅指官方 RSS 摘要，均非新闻全文。
+  `observed_at` 不冒充发布时间，只有官方明确给出的 `pubDate` 写入 `published_at`。原文和
+  图片不会被自动抓取或打包。每条新闻用 `news:<URL SHA-256>` 引用，页面和 Word/PDF 保留
+  原文链接及 GDELT 署名；新闻数量不会计入报告正文覆盖数。
+- 38 次预算仍包括新闻读取，正文 evidence 数量按剩余额度动态缩减，至少预留 Chart 与生成
+  调用。综合要求分别说明事实、证据推论、条件情景，把最新事件与报告判断比较；正文段落
+  从生成、公共响应清理到导出均保留，数字和引用白名单校验继续生效。
+- GDELT DOC/Context 实时 API 本次未取得可验证响应，没有上线猜测 JSON 字段的解析器。
+  GAL 的真实字段已核验；官方文档：
+  https://blog.gdeltproject.org/announcing-the-gdelt-article-list-rss-feed/ 。
 
 ### 研究结果导出
 

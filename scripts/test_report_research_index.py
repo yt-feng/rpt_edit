@@ -76,6 +76,20 @@ def lookup(output: Path, descriptor: dict, key: str):
 
 
 class ReportResearchIndexTests(unittest.TestCase):
+    def test_common_token_retains_reports_beyond_old_top_48(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            ids = [f"{number:024x}" for number in range(1, 221)]
+            catalog = {"items": [{"id": value, "title": "AI data center power research", "date_folder": "260908"} for value in ids]}
+            search = {"items": [{"id": value, "text": ("AI data center power capacity is constrained by grid connection schedules. " * 25)} for value in ids]}
+            (root / "catalog.json").write_text(json.dumps(catalog))
+            (root / "search.json").write_text(json.dumps(search))
+            manifest = indexer.build_index(root / "catalog.json", root / "search.json", root / "output")
+            postings = lookup(root / "output", manifest["token_table"], "ai")
+            self.assertEqual(len(postings), 192)
+            self.assertIn(ids[70], {row["id"] for row in postings})
+            self.assertLessEqual(manifest["token_table"]["max_bucket_bytes"], 128 * 1024)
+
     def catalog(self) -> dict:
         return {
             "schema_version": 1,
