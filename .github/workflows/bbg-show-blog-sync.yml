@@ -1,0 +1,51 @@
+name: BBG Show bilingual blog archive
+
+on:
+  schedule:
+    - cron: "20 3,15 * * *"
+  workflow_dispatch:
+    inputs:
+      history_days:
+        description: Days of published bilingual scripts to recover (1-63)
+        type: number
+        required: false
+        default: 8
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bbg-show-blog-archive
+  cancel-in-progress: false
+
+jobs:
+  archive:
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'schedule' || github.actor == github.repository_owner)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate the bilingual import contract
+        run: python scripts/test_sync_bbg_show_blog.py
+      - name: Archive published scripts
+        env:
+          GH_TOKEN: ${{ github.token }}
+          HISTORY_DAYS: ${{ inputs.history_days || 8 }}
+        run: |
+          python scripts/sync_bbg_show_blog.py \
+            --history-days "$HISTORY_DAYS" \
+            --output-dir portal_suite/data/bbg_show_archive
+      - name: Save bilingual articles for the normal site refresh
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- portal_suite/data/bbg_show_archive
+          if git diff --cached --quiet; then
+            echo "The bilingual archive is current."
+            exit 0
+          fi
+          git commit -m "Archive published BBG Show bilingual scripts"
+          git push origin HEAD:main

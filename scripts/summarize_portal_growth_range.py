@@ -69,7 +69,7 @@ JOURNEY_STATUSES = {
 }
 JOURNEY_PLACEMENTS = {
     "navigation", "home_hero", "research_intro", "research_limit", "report_detail",
-    "daily_goal", "account_modal", "research_tab", "home_research", "public_cache",
+    "daily_goal", "account_modal", "research_tab", "home_research", "blog_article", "public_cache",
     "guest", "registered", "member", "admin", "free", "paid", "premium",
 }
 JOURNEY_CONTEXTS = {"report", "course"}
@@ -474,6 +474,25 @@ def controlled_journey_value(value: Any, allowed: set[str]) -> str:
     return text if text in allowed else ("other" if text else "unspecified")
 
 
+def registration_error_category(value: Any) -> str:
+    """Map private free-text errors to a small public diagnostic vocabulary."""
+    text = clean_text(value, 600).lower()
+    if not text:
+        return "unspecified"
+    for label, pattern in (
+        ("captcha", r"captcha|验证码|驗證碼"),
+        ("existing_account", r"already.*(?:exist|register)|duplicate|已存在|已注册|已被使用|已被注册"),
+        ("email_validation", r"email|e-mail|邮箱|郵箱"),
+        ("password_validation", r"password|密码|密碼"),
+        ("username_validation", r"username|用户名|用戶名"),
+        ("rate_limited", r"rate.limit|too many|频繁|頻繁|429"),
+        ("service_unavailable", r"503|502|504|unavailable|timeout|timed out|failed to fetch|network|超时|暂时不可用"),
+    ):
+        if re.search(pattern, text):
+            return label
+    return "other"
+
+
 def public_journey_diagnostics(events: Iterable[dict[str, Any]], start: date, end: date) -> dict[str, Any]:
     """Count observed client actions separately from server audit records.
 
@@ -484,6 +503,7 @@ def public_journey_diagnostics(events: Iterable[dict[str, Any]], start: date, en
     """
     grouped: dict[tuple[str, str, str, str, str], list[dict[str, Any]]] = defaultdict(list)
     daily: dict[tuple[str, str, str], list[dict[str, Any]]] = defaultdict(list)
+    registration_errors: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for event in events:
         day = event_date(event)
         event_type = clean_text(event.get("type"), 80).lower()
@@ -495,6 +515,8 @@ def public_journey_diagnostics(events: Iterable[dict[str, Any]], start: date, en
         context = controlled_journey_value(event.get("context"), JOURNEY_CONTEXTS)
         grouped[(event_type, action, status, placement, context)].append(event)
         daily[(day.isoformat(), event_type, action)].append(event)
+        if event_type == "account_auth" and action == "register" and status in {"error", "failure", "failed"}:
+            registration_errors[registration_error_category(event.get("error"))].append(event)
 
     def counts(rows: list[dict[str, Any]], server: bool) -> dict[str, int | None]:
         session_ids = {clean_text(row.get("session_id"), 160) for row in rows if clean_text(row.get("session_id"), 160)}
@@ -530,6 +552,10 @@ def public_journey_diagnostics(events: Iterable[dict[str, Any]], start: date, en
         "schema": "portal-journey-diagnostics-v1",
         "client_actions": client_rows,
         "server_audit_actions": server_rows,
+        "registration_error_categories": [
+            {"category": category, **counts(rows, False)}
+            for category, rows in sorted(registration_errors.items())
+        ],
         "daily_actions": [
             {"date": day, "event_type": event_type, "action": action,
              **counts(rows, event_type in SERVER_AUDIT_EVENT_TYPES)}

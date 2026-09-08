@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "id": "92a4ceb7a6986a463a6bf54164686e986d32639d8573faa7e7aa5fe2373d81c2",
+  "slug": "bbg-20260702-92a4ceb7a6986a46",
+  "date": "2026-07-02",
+  "title": "Meta云业务对标亚马逊谷歌卖算力能赚多少？",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-07-01/meta-is-planning-cloud-business-to-sell-ai-compute-power-video",
+  "start": 0.0,
+  "end": 84.72,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 5.0,
+      "en": "Mindy, let's start with what meta is doing. What exactly are they doing with this cloud business?",
+      "zh": "明迪，先说说Meta在做什么。他们的云业务具体是什么？"
+    },
+    {
+      "start": 5.0,
+      "end": 11.72,
+      "en": "Well, they were under pressure with that $150 billion of capex spend to show ROI.",
+      "zh": "他们面临1500亿美元资本支出的压力，需要展示**回报。"
+    },
+    {
+      "start": 11.72,
+      "end": 16.8,
+      "en": "And we know they don't have a frontier model like anthropic and open AI.",
+      "zh": "而且他们没有像Anthropic和OpenAI那样的前沿模型。"
+    },
+    {
+      "start": 16.8,
+      "end": 24.28,
+      "en": "And they will talk about agentic AI being that product, but looks like they have pivoted towards selling compute.",
+      "zh": "他们会把智能体AI作为产品来谈，但似乎已转向出售算力。"
+    },
+    {
+      "start": 24.28,
+      "end": 29.88,
+      "en": "Like SpaceX did right before their IPO. And it is a very lucrative business right now.",
+      "zh": "就像SpaceX在IPO前所做的那样，现在这业务利润丰厚。"
+    },
+    {
+      "start": 29.88,
+      "end": 37.52,
+      "en": "Given the supply constraints, I mean, SpaceX signed those two deals with anthropic and Google for almost a $25 billion run rate",
+      "zh": "考虑到供应限制，SpaceX与Anthropic和Google签了约250亿美元年化收入的协议，对应1吉瓦容量。"
+    },
+    {
+      "start": 37.52,
+      "end": 45.52,
+      "en": "for one gigawatt capacity. So if you apply that type of math, then we could be talking about up to $15 to $20 billion",
+      "zh": "按此推算，Meta每吉瓦容量可能带来150至200亿美元的增量收入。"
+    },
+    {
+      "start": 45.52,
+      "end": 54.48,
+      "en": "in incremental revenue per gigawatt that meta has. When you see that, then, do you view that as a pivot away from their AI ambitions or something that can fund their AI ambitions?",
+      "zh": "那么，你认为这是偏离AI雄心，还是能为AI雄心提供资金？"
+    },
+    {
+      "start": 54.48,
+      "end": 60.44,
+      "en": "It could fund, but I view it as a slight negative in the sense, this field is getting very crowded now.",
+      "zh": "可以提供资金，但我认为略偏负面，因为算力租赁领域现在非常拥挤。"
+    },
+    {
+      "start": 60.44,
+      "end": 68.68,
+      "en": "The field of renting compute. And the frontier models, yes, open AI and anthropic are the ones that are actually monetizing",
+      "zh": "算力租赁领域，前沿模型如OpenAI和Anthropic才是真正实现商业化的。"
+    },
+    {
+      "start": 68.68,
+      "end": 71.8,
+      "en": "at the model layer to an extent Google as well.",
+      "zh": "在模型层，某种程度上谷歌也是如此。"
+    },
+    {
+      "start": 71.8,
+      "end": 75.28,
+      "en": "But everyone else is selling raw compute to these companies.",
+      "zh": "但其他公司都在向这些企业出售原始算力。"
+    },
+    {
+      "start": 75.28,
+      "end": 82.4,
+      "en": "So I'm guessing the users of meta compute would likely be anthropic who would say, OK, I'll take your capacity.",
+      "zh": "所以我猜Meta算力的用户可能是Anthropic，他们会说，好的，我接受你的容量。"
+    },
+    {
+      "start": 82.4,
+      "end": 84.72,
+      "en": "I'll monetize it through my model layer.",
+      "zh": "我会通过我的模型层将其变现。"
+    }
+  ]
+}

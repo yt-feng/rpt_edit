@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "id": "c9d88ef8d0ac5486322baa242fb56a2551868b420781cc34e7d307f25d0a66a9",
+  "slug": "bbg-20260617-c9d88ef8d0ac5486",
+  "date": "2026-06-17",
+  "title": "太空数据中心竞赛：AI算力突破能源瓶颈",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-06-15/the-race-to-build-data-centers-in-space-video",
+  "start": 0.0,
+  "end": 87.82,
+  "segments": [
+    {
+      "start": 3.82,
+      "end": 13.82,
+      "en": "When you ask AI to answer a question, generate an image, or write a line of code, somewhere a machine kicks into gear.",
+      "zh": "当你让AI回答问题、生成图像或编写代码时，某处的机器就会启动。"
+    },
+    {
+      "start": 13.82,
+      "end": 21.82,
+      "en": "A neural network of high-performance computing in data centers that consume huge swathes of land.",
+      "zh": "数据中心的高性能计算神经网络消耗着大片土地。"
+    },
+    {
+      "start": 21.82,
+      "end": 27.82,
+      "en": "There are now thousands of them around the world, and they're getting harder to sustain.",
+      "zh": "全球已有数千个数据中心，且越来越难以为继。"
+    },
+    {
+      "start": 27.82,
+      "end": 38.82,
+      "en": "These AI data centers just require an enormous amount of power in order to run them, also to cool them, and so they've essentially hit what is an energy wall.",
+      "zh": "这些AI数据中心需要大量电力来运行和冷却，因此基本上撞上了能源墙。"
+    },
+    {
+      "start": 38.82,
+      "end": 42.82,
+      "en": "And yet, demand keeps accelerating.",
+      "zh": "然而，需求仍在加速增长。"
+    },
+    {
+      "start": 42.82,
+      "end": 48.82,
+      "en": "Globally, electricity use for data centers is expected to double by 2030.",
+      "zh": "到2030年，全球数据中心的用电量预计将翻倍。"
+    },
+    {
+      "start": 48.82,
+      "end": 55.82,
+      "en": "By 2050, it will likely represent a tenth of all electricity consumed on Earth.",
+      "zh": "到2050年，可能占地球总用电量的十分之一。"
+    },
+    {
+      "start": 56.82,
+      "end": 67.82,
+      "en": "Some forecasts suggest that over just the next three years alone, we will need an additional 50 to 100 gigawatts of new energy for new data center capacity just in North America alone.",
+      "zh": "一些预测显示，仅未来三年，北美就需要新增50到100吉瓦的电力来支持新的数据中心。"
+    },
+    {
+      "start": 67.82,
+      "end": 75.82,
+      "en": "For context, one nuclear power station is about a gigawatts, so you'd be looking at 50 to 100 new nuclear projects in the US.",
+      "zh": "作为参考，一座核电站约1吉瓦，相当于美国要新建50到100座核电站。"
+    },
+    {
+      "start": 75.82,
+      "end": 83.82,
+      "en": "So, what happens when artificial intelligence outpaces the power and land needed to sustain it?",
+      "zh": "那么，当人工智能的增长速度超过维持其所需的电力和土地时，会发生什么？"
+    },
+    {
+      "start": 83.82,
+      "end": 87.82,
+      "en": "Three, two, one.",
+      "zh": "三、二、一。"
+    }
+  ]
+}

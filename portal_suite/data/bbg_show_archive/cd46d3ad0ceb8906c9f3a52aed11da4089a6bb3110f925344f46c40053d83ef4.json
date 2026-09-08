@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "id": "cd46d3ad0ceb8906c9f3a52aed11da4089a6bb3110f925344f46c40053d83ef4",
+  "slug": "bbg-20260710-cd46d3ad0ceb8906",
+  "date": "2026-07-10",
+  "title": "扎克伯格低价AIAPI，Meta云业务能否突围？",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-07-09/exclusive-zuckerberg-on-meta-s-ai-push",
+  "start": 0.0,
+  "end": 90.0,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 6.48,
+      "en": "CEO Mark Zuckerberg told Bloomberg News that Spark 1.1 includes a new paid tier for developers.",
+      "zh": "CEO马克·扎克伯格告诉彭博新闻，Spark 1.1为开发者新增了付费层级。"
+    },
+    {
+      "start": 7.2,
+      "end": 11.92,
+      "en": "Well, let's get more on this now with Bloomberg's Kurt Wagner, who spoke with Zuckerberg.",
+      "zh": "下面有请彭博社的库尔特·瓦格纳，他与扎克伯格进行了对话。"
+    },
+    {
+      "start": 11.92,
+      "end": 15.28,
+      "en": "Kurt, give us some of the finer details. What did Mark tell you?",
+      "zh": "库尔特，请分享一些细节。马克跟你说了什么？"
+    },
+    {
+      "start": 16.72,
+      "end": 25.12,
+      "en": "Yeah, I mean, this is a model that is an updated Muse Spark. Muse Spark was already out. This is Muse Spark 1.1, as you mentioned.",
+      "zh": "是的，这是Muse Spark的更新版本。Muse Spark已经发布，这是Muse Spark 1.1。"
+    },
+    {
+      "start": 25.12,
+      "end": 33.44,
+      "en": "But I think the big thing here is that for the very first time, they're going to sell access to this model to businesses and developers. They have that API",
+      "zh": "但重要的是，他们首次向企业和开发者出售该模型的访问权限，提供了API。"
+    },
+    {
+      "start": 33.44,
+      "end": 37.44,
+      "en": "that we've sort of been waiting for, that a lot of the other AI companies already offer.",
+      "zh": "我们一直在等待这个API，许多其他AI公司已经提供了。"
+    },
+    {
+      "start": 37.44,
+      "end": 47.28,
+      "en": "And so this is a direct revenue stream for them. And one of the things that we spent a lot of time talking about when I chatted with Zuckerberg was the pricing. And the fact that he really wants",
+      "zh": "这成为他们的直接收入来源。我与扎克伯格交谈时，花了很多时间讨论定价。"
+    },
+    {
+      "start": 47.28,
+      "end": 55.52,
+      "en": "to go cheap on the pricing. One, because he thinks the competitors are too expensive.",
+      "zh": "他确实希望定价低廉。一是因为他认为竞争对手太贵。"
+    },
+    {
+      "start": 55.52,
+      "end": 59.2,
+      "en": "Two, because he's trying to get this model into as many hands as possible.",
+      "zh": "二是因为他试图让尽可能多的人使用这个模型。"
+    },
+    {
+      "start": 59.2,
+      "end": 63.68,
+      "en": "And the cheaper he does that, the cheaper he makes, excuse the more likely that is to happen.",
+      "zh": "定价越低，越有可能实现这一目标。"
+    },
+    {
+      "start": 63.68,
+      "end": 69.44,
+      "en": "So this is very much a classic meta strategy. Make things as cheap as possible for as much distribution as possible.",
+      "zh": "这非常符合Meta的经典策略：尽可能降低成本，实现最大范围的覆盖。"
+    },
+    {
+      "start": 69.44,
+      "end": 73.36,
+      "en": "So on one hand, they have this new way of generating revenue with this AI model.",
+      "zh": "一方面，他们通过这个AI模型开辟了新的收入来源。"
+    },
+    {
+      "start": 73.36,
+      "end": 83.92,
+      "en": "And Kurt, you and the team also learning earlier in the month that they're also now setting up a cloud business to sell AI compute. How much of this is just trying to escape this",
+      "zh": "Kurt，你和团队在本月初还了解到，他们正在建立云业务来销售AI算力。这在多大程度上是为了摆脱Meta当前的困境？"
+    },
+    {
+      "start": 83.92,
+      "end": 90.0,
+      "en": "trap that meta is and with it shares now into a bear market about, can you get a return on investment that all the meta, all the spending and catbacks that meta is currently undergoing?",
+      "zh": "随着Meta股价进入熊市，其所有资本支出能否获得回报？"
+    }
+  ]
+}

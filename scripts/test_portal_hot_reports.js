@@ -304,15 +304,15 @@ assert.match(
   /randomAlias\.addEventListener\("click", \(\) => \{\s*if \(!isSuperSession\(\)\) return;/,
   "the random alias action must re-check the administrator session",
 );
-assert.match(
+assert.doesNotMatch(
   extractFunction(app, "updateMeta"),
-  /internalStorageMetadata && internalStorageMetadata\.total_size_bytes[\s\S]*?showInternalStorageMetadata && totalSize/,
-  "PDF storage capacity must stay out of the public header",
+  /internalStorageMetadata|PDF storage|hot archive/,
+  "storage capacity must stay out of the public header for all accounts",
 );
-assert.match(
-  app,
-  /showInternalStorageMetadata = isAdminASession\(\)[\s\S]*?\/internal\/pdf-storage/,
-  "only the exact admin-a session may reveal storage capacity",
+assert.doesNotMatch(
+  extractFunction(app, "initIndex"),
+  /internal\/pdf-storage/,
+  "home initialization must not fetch internal storage metadata",
 );
 const internalStorageHandler = extractFunction(worker, "handleInternalPdfStorage");
 assert.match(

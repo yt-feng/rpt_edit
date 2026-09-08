@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import argparse
-from collections import Counter
 from datetime import datetime, timezone
 import json
 import os
@@ -24,6 +23,8 @@ def coverage_summary(catalog: dict, research: dict, charts: dict) -> dict:
         "catalog_reports": len(catalog_ids),
         "research": {
             "reports": research.get("item_count"),
+            "full_text_reports": research.get("full_text_item_count"),
+            "partial_excerpt_reports": research.get("partial_excerpt_item_count"),
             "evidence_chunks": research.get("chunk_count"),
             "min_full_text_chars": research.get("chunking", {}).get("min_full_text_chars"),
             "per_query_report_limit": research.get("report_limit"),

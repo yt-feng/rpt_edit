@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "id": "babecb437c7792dc6ed7cbab53de87a36f9ec0777229518321ee33a6d21b26f0",
+  "slug": "bbg-20260710-babecb437c7792dc",
+  "date": "2026-07-10",
+  "title": "彭博：机器人热潮遇冷，人工智能赋能何时落地？",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-07-09/opinion-robotics-isn-t-living-up-to-the-hype-video",
+  "start": 0.0,
+  "end": 81.12,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 7.52,
+      "en": "Robot dogs, robots on wheels, robot hands, dancing robots, bad-forage serving robots,",
+      "zh": "机器狗、轮式机器人、机械手、跳舞机器人、送餐机器人，"
+    },
+    {
+      "start": 7.52,
+      "end": 17.92,
+      "en": "the list goes on. At the Automate Show in Chicago, I saw a lot of robots. And the mood at the show was optimistic. The marriage of AI and industrial robots, which are becoming",
+      "zh": "种类繁多。在芝加哥自动化展上，我看到了很多机器人，展会气氛乐观。AI与工业机器人的结合正推动这种乐观情绪，这些机器人凭借改进的传感器变得越来越灵活。"
+    },
+    {
+      "start": 17.92,
+      "end": 28.56,
+      "en": "more and more nimble with improved sensors, is driving this optimism. But the promise of making robots more mobile and versatile by giving them an onboard brain is still in its infancy.",
+      "zh": "但通过内置大脑让机器人更灵活、更通用的承诺仍处于早期阶段。"
+    },
+    {
+      "start": 28.56,
+      "end": 39.04,
+      "en": "That's because robots is complex. A lot can go wrong that can turn a money-saving effort into a money-losing headache. Automation works best on predictable, repetitive,",
+      "zh": "这是因为机器人很复杂，很多环节可能出错，将节省成本的努力变成亏损的麻烦。自动化最适合可预测、重复、高容量的任务。"
+    },
+    {
+      "start": 39.04,
+      "end": 44.24,
+      "en": "high-volume tasks. That's why the automotive industry has been the dominant robot user for decades.",
+      "zh": "这就是为什么汽车行业几十年来一直是机器人的主要用户。"
+    },
+    {
+      "start": 44.24,
+      "end": 54.96,
+      "en": "In fact, these automated systems are so complex they're often set up in program by third-party specialists. They can require custom-made parts to stitch together different machines and sensors.",
+      "zh": "事实上，这些自动化系统非常复杂，通常由第三方专家设置和编程，可能需要定制零件来连接不同的机器和传感器。"
+    },
+    {
+      "start": 54.96,
+      "end": 60.24,
+      "en": "The promise of AI is to reduce this complexity, and at the same time make robots more versatile.",
+      "zh": "AI的承诺是降低这种复杂性，同时让机器人更通用。"
+    },
+    {
+      "start": 60.24,
+      "end": 65.68,
+      "en": "The goal is to make programming a robot for multiple tasks as easy as a verbal command.",
+      "zh": "目标是让机器人通过口头指令就能轻松编程完成多项任务。"
+    },
+    {
+      "start": 65.68,
+      "end": 73.76,
+      "en": "The reality now is that US adoption of automation is far behind Chinese, which installed 295,000",
+      "zh": "现实是，美国的自动化采用率远落后于中国，中国在2024年安装了29.5万台工业机器人。"
+    },
+    {
+      "start": 73.76,
+      "end": 81.12,
+      "en": "industrial robots in 2024. That's compared to just under 35,000 for the US in the same year.",
+      "zh": "相比之下，美国同年仅安装了不到3.5万台。"
+    }
+  ]
+}

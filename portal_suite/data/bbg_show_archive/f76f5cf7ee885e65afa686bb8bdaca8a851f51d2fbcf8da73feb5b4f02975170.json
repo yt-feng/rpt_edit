@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "id": "f76f5cf7ee885e65afa686bb8bdaca8a851f51d2fbcf8da73feb5b4f02975170",
+  "slug": "bbg-20260718-f76f5cf7ee885e65",
+  "date": "2026-07-18",
+  "title": "彭博科技主编：Anthropic指控阿里大规模蒸馏，硅谷担忧配置被中国利用",
+  "speaker": "Mike Shepherd",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-07-18/bloomberg-this-weekend-7-18-2026-video",
+  "start": 432.14,
+  "end": 476.0,
+  "segments": [
+    {
+      "start": 432.14,
+      "end": 441.3,
+      "en": "just a few weeks ago, that Anthropic itself was pointing the finger at Ali Baba, accusing it of a large scale campaign of distillation.",
+      "zh": "就在几周前，Anthropic 指责阿里巴巴进行大规模蒸馏活动。"
+    },
+    {
+      "start": 441.3,
+      "end": 460.6,
+      "en": "Now, to be clear, this is a technique that is commonly accepted when it comes to AI, when you have a larger model used to build a smaller model, a larger frontier model whose data are extracted and results are extracted to produce something that's a little smaller, more focused and less advanced.",
+      "zh": "澄清一下，这是AI领域常见的技术：用大模型来构建小模型，提取前沿模型的数据和结果，生成更小、更专注、不那么先进的模型。"
+    },
+    {
+      "start": 460.6,
+      "end": 476.0,
+      "en": "But the claim from Silicon Valley is that look, what's happening is that all of the physical investments that we're making and spending all these billions of dollars on are being instead used by Chinese competitors to build this rival generation.",
+      "zh": "但硅谷声称，我们投入数十亿美元的所有实体投资，反而被中国竞争对手用来打造竞争性模型。"
+    }
+  ]
+}

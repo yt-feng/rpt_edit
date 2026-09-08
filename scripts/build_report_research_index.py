@@ -31,7 +31,7 @@ import build_report_chat_index as chat_index
 
 
 SCHEMA_VERSION = 1
-BUILD_FORMAT = b"report-research-random-access-v1.2\0"
+BUILD_FORMAT = b"report-research-random-access-v1.3\0"
 DEFAULT_PREFIX = "_report-research/v1"
 CORPUS_FILENAME = "corpus.jsonl.gz"
 SLOT_SIZE = 12
@@ -63,6 +63,7 @@ CORPUS_ITEM_FIELDS = frozenset({
     "attraction_score",
     "public_url",
 })
+CORPUS_SCOPE_FIELDS = frozenset({"partial_excerpt", "text_scope"})
 TABLE_FILES = {
     "token_table": ("tokens.tbl", "tokens.dat"),
     "item_table": ("items.tbl", "items.dat"),
@@ -161,11 +162,16 @@ def _json_bytes(value: Any) -> bytes:
 
 def corpus_public_item(item: dict[str, Any]) -> dict[str, Any]:
     """Return the strict public-metadata allowlist persisted with full text."""
-    return {key: item[key] for key in sorted(CORPUS_ITEM_FIELDS)}
+    partial = item.get("partial_excerpt") is True or item.get("text_scope") == "partial_excerpt"
+    return {
+        **{key: item[key] for key in sorted(CORPUS_ITEM_FIELDS)},
+        "partial_excerpt": partial,
+        "text_scope": "partial_excerpt" if partial else "full_text",
+    }
 
 
 def _validated_corpus_item(value: Any, expected_id: str) -> dict[str, Any]:
-    if not isinstance(value, dict) or set(value) != CORPUS_ITEM_FIELDS:
+    if not isinstance(value, dict) or set(value) not in (CORPUS_ITEM_FIELDS, CORPUS_ITEM_FIELDS | CORPUS_SCOPE_FIELDS):
         raise CorpusError("stable research corpus item metadata is outside the public allowlist")
     report_id = str(value.get("id") or "").strip().lower()
     if report_id != expected_id or not chat_index.CATALOG_ID_RE.fullmatch(report_id):
@@ -203,6 +209,11 @@ def _validated_corpus_item(value: Any, expected_id: str) -> dict[str, Any]:
         "attraction_score": attraction_score,
         "public_url": expected_url,
     })
+    partial = value.get("partial_excerpt", False)
+    scope = value.get("text_scope", "full_text")
+    if not isinstance(partial, bool) or scope != ("partial_excerpt" if partial else "full_text"):
+        raise CorpusError("stable research corpus text scope is invalid")
+    item.update({"partial_excerpt": partial, "text_scope": scope})
     return item
 
 
@@ -352,6 +363,7 @@ def merge_corpus_rows(
     search_by_id: dict[str, str],
     previous_rows: dict[str, dict[str, Any]],
     min_text_chars: int,
+    partial_ids: set[str] | None = None,
 ) -> tuple[dict[str, dict[str, Any]], int, int]:
     merged: dict[str, dict[str, Any]] = {}
     for report_id in sorted(previous_rows):
@@ -373,15 +385,72 @@ def merge_corpus_rows(
         current_item = public_research_item(catalog_by_id[report_id], 0)
         if current_item is None:
             continue
-        public_item = corpus_public_item(current_item)
+        public_item = corpus_public_item({**current_item, "partial_excerpt": report_id in (partial_ids or set())})
         current_text = search_by_id.get(report_id, "")
         if len(current_text) >= min_text_chars:
-            merged[report_id] = {"id": report_id, "item": public_item, "text": current_text}
+            previous = merged.get(report_id)
+            if previous and public_item["partial_excerpt"] and text_rank(previous["text"], previous["item"]["partial_excerpt"]) > text_rank(current_text, True):
+                public_item.update({key: previous["item"][key] for key in CORPUS_SCOPE_FIELDS})
+                merged[report_id] = {**previous, "item": public_item}
+            else:
+                merged[report_id] = {"id": report_id, "item": public_item, "text": current_text}
             current_full_text_count += 1
         elif report_id in merged:
+            public_item.update({key: merged[report_id]["item"][key] for key in CORPUS_SCOPE_FIELDS})
             merged[report_id]["item"] = public_item
     retained_from_previous_count = len(merged) - current_full_text_count
     return merged, current_full_text_count, retained_from_previous_count
+
+
+def text_rank(text: str, partial: bool) -> tuple[bool, int, str]:
+    """A qualified complete extraction wins over a truncated historical excerpt."""
+    return not partial, len(text), text
+
+
+def research_inputs(catalog: dict, search_index: dict, *, min_text_chars: int,
+                    history_catalog_path: Path | None = None,
+                    history_text_dir: Path | None = None,
+                    history_index_path: Path | None = None) -> tuple[dict, dict[str, str], set[str]]:
+    history_rows: list[dict] = []
+    if (history_catalog_path is None) != (history_text_dir is None):
+        raise ValueError("history catalog and text directory must be supplied together")
+    if history_catalog_path is not None:
+        if not history_catalog_path.is_file() or not history_text_dir.is_dir():
+            raise ValueError("history catalog or text directory is missing")
+        if not any(history_text_dir.glob("shard_*.json.gz")):
+            raise ValueError("history text shards are missing")
+        # Use the exact title deduplication and history-to-live ID reconciliation
+        # already used by the report pages. Never invent a second report identity.
+        from build_portal_suite_site import merge_history_catalog
+        catalog, texts, _stats = merge_history_catalog(catalog, history_catalog_path, history_text_dir)
+        history_rows.extend({"id": key, "text": value} for key, value in texts.items())
+    if history_index_path is not None:
+        history_index = json.loads(history_index_path.read_bytes())
+        if not isinstance(history_index, dict) or not isinstance(history_index.get("items"), list):
+            raise ValueError("history index must contain an items array with reconciled report IDs")
+        history_rows.extend(history_index["items"])
+    catalog_by_id = {
+        str(row.get("id", "")).strip().lower(): row for row in catalog["items"]
+        if isinstance(row, dict) and chat_index.CATALOG_ID_RE.fullmatch(str(row.get("id", "")).strip().lower())
+    }
+    selected: dict[str, tuple[str, bool]] = {}
+    for rows, historical in ((history_rows, True), (search_index["items"], False)):
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            report_id = str(row.get("id", "")).strip().lower()
+            # Public search appends chart metadata after this marker; it is not
+            # report-body evidence and has its own typed Charts retrieval path.
+            text = body_text(str(row.get("text") or "").split("[[CHART_SEARCH_V1]]", 1)[0])
+            if report_id not in catalog_by_id or len(text) < min_text_chars:
+                continue
+            # The historical import was capped at 10k characters and has no
+            # per-row completeness proof. All its rows are conservatively excerpts.
+            partial = historical or row.get("partial_excerpt") is True or row.get("text_scope") == "partial_excerpt"
+            previous = selected.get(report_id)
+            if previous is None or text_rank(text, partial) > text_rank(*previous):
+                selected[report_id] = (text, partial)
+    return catalog_by_id, {key: row[0] for key, row in selected.items()}, {key for key, row in selected.items() if row[1]}
 
 
 def _choose_bucket_count(key_count: int, requested: int | None) -> int:
@@ -570,6 +639,9 @@ def build_index(
     chunk_overlap: int = DEFAULT_CHUNK_OVERLAP,
     min_text_chars: int = DEFAULT_MIN_TEXT_CHARS,
     previous_corpus: dict[str, dict[str, Any]] | None = None,
+    history_catalog_path: Path | None = None,
+    history_text_dir: Path | None = None,
+    history_index_path: Path | None = None,
 ) -> dict[str, Any]:
     raw_catalog = catalog_path.read_bytes()
     raw_search_index = search_index_path.read_bytes()
@@ -585,33 +657,18 @@ def build_index(
     # Validate the chunking contract before doing any material work.
     split_chunks("validation text", chunk_chars, chunk_overlap)
 
-    catalog_by_id: dict[str, dict[str, Any]] = {}
-    for report in catalog["items"]:
-        if not isinstance(report, dict):
-            continue
-        report_id = str(report.get("id") or "").strip().lower()
-        if chat_index.CATALOG_ID_RE.fullmatch(report_id) and report_id not in catalog_by_id:
-            catalog_by_id[report_id] = report
-
-    search_by_id: dict[str, str] = {}
-    for row in search_index["items"]:
-        if not isinstance(row, dict):
-            continue
-        report_id = str(row.get("id") or "").strip().lower()
-        if report_id not in catalog_by_id:
-            continue
-        text = body_text(row.get("text"))
-        current = search_by_id.get(report_id, "")
-        # The longest duplicate is the most complete extraction. Lexical order
-        # breaks equal-length ties so input ordering cannot change the release.
-        if (len(text), text) > (len(current), current):
-            search_by_id[report_id] = text
+    catalog_by_id, search_by_id, partial_ids = research_inputs(
+        catalog, search_index, min_text_chars=min_text_chars,
+        history_catalog_path=history_catalog_path, history_text_dir=history_text_dir,
+        history_index_path=history_index_path,
+    )
 
     corpus_rows, _current_full_text_count, _retained_from_previous_count = merge_corpus_rows(
         catalog_by_id,
         search_by_id,
         previous_corpus or {},
         min_text_chars,
+        partial_ids,
     )
     if not corpus_rows:
         raise ValueError("search index and stable corpus produced no full-text research items")
@@ -655,6 +712,8 @@ def build_index(
                     "id": chunk["id"],
                     "report_id": report_id,
                     "text": chunk["text"],
+                    "partial_excerpt": item["partial_excerpt"],
+                    "text_scope": item["text_scope"],
                     "source": {
                         "report_id": report_id,
                         "public_url": item["public_url"],
@@ -710,6 +769,8 @@ def build_index(
             "posting_limit": POSTING_LIMIT,
             "evidence_chunks_per_report": EVIDENCE_CHUNKS_PER_REPORT,
             "item_count": item_count,
+            "full_text_item_count": sum(not row["item"]["partial_excerpt"] for row in corpus_rows.values()),
+            "partial_excerpt_item_count": sum(row["item"]["partial_excerpt"] for row in corpus_rows.values()),
             "chunk_count": evidence_count,
             "token_count": token_count,
             "chunking": {
@@ -805,6 +866,9 @@ def parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--catalog-path", type=Path, required=True)
     parser.add_argument("--search-index-path", type=Path, required=True)
+    parser.add_argument("--history-catalog-path", type=Path)
+    parser.add_argument("--history-text-dir", type=Path)
+    parser.add_argument("--history-index-path", type=Path, help="Optional historical items index with already reconciled report IDs")
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--r2-prefix", default=DEFAULT_PREFIX)
     parser.add_argument(
@@ -832,6 +896,9 @@ def main(argv: Iterable[str] | None = None) -> int:
         args.output_dir,
         args.r2_prefix,
         previous_corpus=previous_corpus,
+        history_catalog_path=args.history_catalog_path,
+        history_text_dir=args.history_text_dir,
+        history_index_path=args.history_index_path,
     )
     if args.upload_r2:
         publish_index(
@@ -848,6 +915,7 @@ def main(argv: Iterable[str] | None = None) -> int:
     print(
         f"report_research_release={manifest['release']} items={manifest['item_count']} "
         f"chunks={manifest['chunk_count']} tokens={manifest['token_count']} bytes={total_bytes} "
+        f"full_text={manifest['full_text_item_count']} partial_excerpt={manifest['partial_excerpt_item_count']} "
         f"published={str(args.upload_r2).lower()}"
     )
     return 0

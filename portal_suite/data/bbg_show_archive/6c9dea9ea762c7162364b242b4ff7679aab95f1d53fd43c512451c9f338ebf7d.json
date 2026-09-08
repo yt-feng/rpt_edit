@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "id": "6c9dea9ea762c7162364b242b4ff7679aab95f1d53fd43c512451c9f338ebf7d",
+  "slug": "bbg-20260904-6c9dea9ea762c716",
+  "date": "2026-09-04",
+  "title": "奥特曼罕见松口：Astra让普通人，也能造软件",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-09-03/openai-s-altman-says-astra-model-took-longer-than-hoped-video",
+  "start": 0.0,
+  "end": 90.0,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 10.8,
+      "en": "Sam, the way that OpenAI is framing Astra is basically an early step toward AGI, but I thought we could start a conversation just with basically what's fundamentally different",
+      "zh": "山姆，OpenAI将Astra定位为迈向AGI的早期步骤，但我想先聊聊，与之前的模型相比，Astra的根本不同之处在哪里？"
+    },
+    {
+      "start": 10.8,
+      "end": 13.84,
+      "en": "with Astra, relative to prior generations of model.",
+      "zh": "相对于前几代模型，Astra有何不同？"
+    },
+    {
+      "start": 15.12,
+      "end": 28.32,
+      "en": "It feels, first of all, thank you for having me. It feels like a new step in this process towards models that can really help us create value, do work, discover new science, help us create,",
+      "zh": "首先，感谢邀请。这感觉像是迈向新阶段的一步，这些模型能真正帮助我们创造价值、完成工作、发现新科学、助力创造，"
+    },
+    {
+      "start": 28.32,
+      "end": 40.16,
+      "en": "help start new companies or create new products. Using it subjectively feels to me very different than any model before. What's the kind of principle use case that's different this time around?",
+      "zh": "帮助创办新公司或创造新产品。主观使用体验上，它与我之前用过的任何模型都截然不同。这次的核心用例有何不同？"
+    },
+    {
+      "start": 40.16,
+      "end": 50.08,
+      "en": "You know, I think we can get into the generations of model that were very coding focused. I know a lot of the development was very cyber security focused, but taking it away from the software engineer,",
+      "zh": "你知道，我们可以深入那些非常注重编码的模型世代。我知道很多开发工作非常注重网络安全，但抛开软件工程师的视角，"
+    },
+    {
+      "start": 50.08,
+      "end": 54.8,
+      "en": "what is the everyday person unlocking AI that they weren't able to do previously?",
+      "zh": "普通人解锁了哪些以前无法实现的AI功能？"
+    },
+    {
+      "start": 54.88,
+      "end": 66.72,
+      "en": "One thing that I think people will immediately notice is if you have an idea and you want to work interactively with an AI to get a complex piece of a whole piece of software built,",
+      "zh": "我认为人们会立刻注意到的一点是，如果你有一个想法，想与AI互动协作，构建一个复杂的软件或整个软件的一部分，"
+    },
+    {
+      "start": 67.84,
+      "end": 79.52,
+      "en": "this is the first model to me where I could tell someone like, just give it a try. There's a good chance it'll work. And I've watched people make computer games, I've watched people do sort of like",
+      "zh": "这是第一个让我觉得可以告诉别人“试试看，很可能成功”的模型。我见过人们制作电脑游戏，也见过人们做类似"
+    },
+    {
+      "start": 79.52,
+      "end": 87.28,
+      "en": "home sort of DIY electrical engineering projects. I've watched people do very complex simulations",
+      "zh": "家庭DIY电气工程项目，还见过人们为正在研究的科学项目进行非常复杂的模拟。"
+    },
+    {
+      "start": 87.28,
+      "end": 90.0,
+      "en": "for some piece of science they're working on. Certainly a lot of the work where you would sort of",
+      "zh": "当然，很多这类工作，你可能会……"
+    }
+  ]
+}

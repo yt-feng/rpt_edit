@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "id": "2ae99ec74124d32ffd60c8a3e0660290bd570271036b131e0172d2ba2bfaf800",
+  "slug": "bbg-20260821-2ae99ec74124d32f",
+  "date": "2026-08-21",
+  "title": "中国AI模型追赶美国，价格优势成关键",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-08-20/china-is-rapidly-catching-up-to-the-us-in-the-ai-race-video",
+  "start": 0.0,
+  "end": 78.88,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 9.2,
+      "en": "Chinese AI models are catching up to U.S. ones faster than ever before, and is doing it with limited access to capital and the best chips.",
+      "zh": "中国的人工智能模型正以前所未有的速度追赶美国，尽管在资本和顶尖芯片方面受限。"
+    },
+    {
+      "start": 9.2,
+      "end": 20.4,
+      "en": "Alongside Val's AI, we asked seven models to be a fictional coffee shop website called Bloomberg. Almost all models were able to create fully functional websites,",
+      "zh": "我们让七个模型为一个虚构的咖啡店网站生成页面，几乎所有模型都能创建功能完整的网站。"
+    },
+    {
+      "start": 20.4,
+      "end": 30.64,
+      "en": "and Forepix Fable 5 took less than an hour to create a polished website with about $50 worth of tokens. It's already a bargain for a website,",
+      "zh": "其中，Forepix Fable 5 用了不到一小时，花费约50美元就打造出一个精美的网站，这已经很划算了。"
+    },
+    {
+      "start": 30.64,
+      "end": 40.56,
+      "en": "but the Kimi K3 model from China's moonshot sputes something similar for about a quarter of the price. Open AI's budget GPT model and Alibaba's",
+      "zh": "但中国月之暗面的Kimi K3模型以约四分之一的价格完成了类似任务。OpenAI的预算模型和阿里的千问甚至更便宜。"
+    },
+    {
+      "start": 40.56,
+      "end": 46.8,
+      "en": "Queen were even cheaper, although Queen 3.7 max outputs was more bare-bones.",
+      "zh": "不过，千问3.7 max的输出较为简陋。"
+    },
+    {
+      "start": 47.6,
+      "end": 53.44,
+      "en": "Cheaper and capable enough Chinese options are becoming irresistible for many companies.",
+      "zh": "对于许多公司来说，中国提供的更便宜且功能足够的选择正变得难以抗拒。"
+    },
+    {
+      "start": 53.52,
+      "end": 58.56,
+      "en": "Major U.S. tech firms like DoorDash and Airbnb have already adopted Chinese AI.",
+      "zh": "DoorDash和Airbnb等美国科技巨头已采用中国的人工智能。"
+    },
+    {
+      "start": 59.2,
+      "end": 63.04,
+      "en": "Users also don't have to send data to China to use Chinese models.",
+      "zh": "用户使用中国模型也无需将数据发送到中国。"
+    },
+    {
+      "start": 63.76,
+      "end": 72.4,
+      "en": "Most of China's top AI models are open-weight, meaning anyone can download, modify, and deploy these models however they want.",
+      "zh": "中国顶尖的人工智能模型大多是开放权重的，任何人都可以下载、修改和部署。"
+    },
+    {
+      "start": 73.28,
+      "end": 78.88,
+      "en": "Still, Washington's hardware expert controls may keep Chinese AI models behind the U.S.",
+      "zh": "不过，华盛顿的硬件出口管制可能仍会让中国的人工智能模型落后于美国。"
+    }
+  ]
+}

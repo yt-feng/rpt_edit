@@ -174,3 +174,26 @@ assert.equal(legacyRows[0].title, "capacity");
 assert.equal(legacyRows[0].reportTitle, "AI source report");
 
 console.log("portal chart-search frontend contract: ok");
+
+const linkedImageId = Function("URL", "IMAGE_ID_RE", `${extractFunction(chartsApp, "linkedImageId")}; return linkedImageId;`)(URL, /^[0-9a-f]{64}$/);
+assert.equal(linkedImageId(`https://kcdesk.com/charts.html?image=${"a".repeat(64)}`), "a".repeat(64));
+assert.equal(linkedImageId("https://kcdesk.com/charts.html?image=../../private"), "");
+assert.equal(linkedImageId("https://kcdesk.com/charts.html?image=https://evil.example"), "");
+
+async function testExactChartLink() {
+  const imageId = "a".repeat(64), state = { rows: [], filtered: [], workerBase: "/api" };
+  const calls = [], opened = [];
+  const elements = { resultStatus: { textContent: "" } };
+  const openLinked = Function("state", "linkedImageId", "window", "loadJson", "clean", "publicText", "publicList", "render", "elements", "openChartLightbox", `return async ${extractFunction(chartsApp, "openLinkedChart")};`)(
+    state, linkedImageId, { location: { href: `https://kcdesk.com/charts.html?image=${imageId}` } },
+    async (url) => { calls.push(url); return { items: [{ image_id: imageId, title: "Actual indexed chart", report_title: "Unlinked report", analysis_version: "chart-search-v2", quality_score: 95 }] }; },
+    (value) => String(value || ""), (value) => String(value || ""), (value) => Array.isArray(value) ? value : [],
+    () => {}, elements, (row) => opened.push(row),
+  );
+  assert.equal(await openLinked(), true);
+  assert.deepEqual(calls, [`/api/charts?image=${imageId}`]);
+  assert.equal(opened[0].imageId, imageId);
+  assert.equal(opened[0].reportId, "");
+  assert.match(elements.resultStatus.textContent, /尚未关联报告全文/u);
+}
+testExactChartLink().catch((error) => { console.error(error); process.exitCode = 1; });

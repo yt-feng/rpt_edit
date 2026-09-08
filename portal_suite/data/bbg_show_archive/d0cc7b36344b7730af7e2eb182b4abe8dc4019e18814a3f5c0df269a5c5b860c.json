@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "id": "d0cc7b36344b7730af7e2eb182b4abe8dc4019e18814a3f5c0df269a5c5b860c",
+  "slug": "bbg-20260617-d0cc7b36344b7730",
+  "date": "2026-06-17",
+  "title": "Hedge Iris董事：DeepSeek发动价格战，智谱难以提价",
+  "speaker": "Felix Wong",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-06-17/the-china-show-6-17-2026-video",
+  "start": 2240.3,
+  "end": 2346.5,
+  "segments": [
+    {
+      "start": 2240.3,
+      "end": 2250.7,
+      "en": "For 5.2, they left the prices the same. So what I'm trying to say here is, it still costs 5x more to run a task with Tsupu's GLM 5.2 model than if you had done it with deepseek V4 pro",
+      "zh": "对于5.2，他们维持价格不变。所以我想说的是，使用智谱GLM 5.2运行任务的成本仍是DeepSeek V4 Pro的5倍。"
+    },
+    {
+      "start": 2250.7,
+      "end": 2262.9,
+      "en": "and the intelligence levels between these two models aren't that far off. So then the bigger picture question you need to ask yourself if your engineer and developer is, what is good enough to get the work done?",
+      "zh": "而这两个模型的智能水平相差不大。所以工程师和开发者需要问自己：什么才是完成工作的足够好的选择？"
+    },
+    {
+      "start": 2262.9,
+      "end": 2276.3,
+      "en": "Do I really need to have the most frontier, most intelligent model out there if I'm paying at least 5x that price?",
+      "zh": "如果我要支付至少5倍的价格，我真的需要最前沿、最智能的模型吗？"
+    },
+    {
+      "start": 2276.3,
+      "end": 2290.4,
+      "en": "So I'm just asking you, because JB Morgan had a very interesting note this week saying that out of all the sort of AI players out there in China, they still think Japan has the most pricing power.",
+      "zh": "我问你，因为摩根大通本周指出，在中国所有AI玩家中，他们仍认为智谱拥有最强的定价权。"
+    },
+    {
+      "start": 2290.4,
+      "end": 2309.9,
+      "en": "I mean, what's the counter-argument to that? So by pricing power, they're talking about what they're priced right now on input and output. But what I'm saying is, that's all rear view mirror.",
+      "zh": "对此有什么反驳？他们说的定价权是指当前的输入输出价格。但我要说，那都是后视镜。"
+    },
+    {
+      "start": 2309.9,
+      "end": 2324.1,
+      "en": "I'm looking at current dynamics today, particularly again with the release of deepseek V4 a couple months ago, is Tsupu able to raise their token prices because of what they have done with the full stack model portfolio?",
+      "zh": "我看的是当前动态，尤其是DeepSeek V4发布几个月后，智谱能否凭借其全栈模型组合提高token价格？"
+    },
+    {
+      "start": 2324.1,
+      "end": 2338.1,
+      "en": "And my answer is no, because deepseek basically created a cost-bottom. And they're basically initiating this hugely damaging LLM price for it.",
+      "zh": "我的答案是不能，因为DeepSeek基本上创造了一个成本底线，他们正在发起极具破坏性的LLM价格战。"
+    },
+    {
+      "start": 2338.1,
+      "end": 2346.5,
+      "en": "And I think it hurts everybody, except deepseek.",
+      "zh": "我认为这伤害了所有人，除了DeepSeek。"
+    }
+  ]
+}

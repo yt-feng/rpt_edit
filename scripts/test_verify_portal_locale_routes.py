@@ -72,12 +72,12 @@ class PublicLocaleRouteTests(unittest.TestCase):
         self.responses[url] = (status, headers, body)
         self.manifest["application_routes"][locale][filename] = describe(f"{locale}/{filename}", body)
 
-    def test_all_fifteen_shells_and_asset_pass_once(self):
+    def test_all_eighteen_shells_and_asset_pass_once(self):
         report = self.verify()
         self.assertEqual(report["status"], "passed")
-        self.assertEqual((report["route_count"], report["asset_count"], report["request_count"]), (15, 1, 16))
-        self.assertEqual(len(self.calls), 16)
-        self.assertEqual(len(set(url for url, _ in self.calls)), 16)
+        self.assertEqual((report["route_count"], report["asset_count"], report["request_count"]), (18, 1, 19))
+        self.assertEqual(len(self.calls), 19)
+        self.assertEqual(len(set(url for url, _ in self.calls)), 19)
         self.assertTrue(all(row["status"] == "passed" for row in report["checks"]))
 
     def test_declared_detail_module_is_verified_as_one_additional_exact_asset(self):
@@ -86,7 +86,7 @@ class PublicLocaleRouteTests(unittest.TestCase):
         self.responses[ORIGIN + "/" + audit.DETAIL_PATH] = (200, {}, body)
         report = self.verify()
         self.assertEqual(report["status"], "passed")
-        self.assertEqual((report["route_count"], report["asset_count"], report["request_count"]), (15, 2, 17))
+        self.assertEqual((report["route_count"], report["asset_count"], report["request_count"]), (18, 2, 20))
         self.responses[ORIGIN + "/" + audit.DETAIL_PATH] = (404, {}, b"Not Found")
         self.assertEqual(self.verify()["status"], "failed")
 
@@ -105,6 +105,16 @@ class PublicLocaleRouteTests(unittest.TestCase):
         self.assertEqual((report["route_count"], report["asset_count"], report["request_count"]), (0, 0, 0))
         self.assertEqual(self.calls, [])
 
+    def test_previous_five_shell_manifest_remains_verifiable_but_mixed_locales_fail(self):
+        del self.manifest["application_routes"]["ar"]["research.html"]
+        with self.assertRaises(audit.RouteVerificationError):
+            self.verify()
+        for locale in ("ko", "ja"):
+            del self.manifest["application_routes"][locale]["research.html"]
+        report = self.verify()
+        self.assertEqual(report["status"], "passed")
+        self.assertEqual((report["route_count"], report["request_count"]), (15, 16))
+
     def test_404_redirect_and_timeout_fail_without_retry(self):
         target = ORIGIN + "/ja/report.html"
         for response in ((404, {}, b"Not found"), (302, {"location": "https://other.invalid/"}, b""), TimeoutError()):
@@ -114,7 +124,7 @@ class PublicLocaleRouteTests(unittest.TestCase):
                 report = self.verify()
                 self.assertEqual(report["status"], "failed")
                 self.assertEqual([url for url, _ in self.calls].count(target), 1)
-                self.assertEqual(len(self.calls), 16)
+                self.assertEqual(len(self.calls), 19)
 
     def test_200_not_found_with_matching_hash_is_not_a_valid_application(self):
         self.replace_body("ja", "report.html", lambda text: text.replace('data-page="report"', 'data-page="404"'))

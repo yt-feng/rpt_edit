@@ -1,4 +1,5 @@
 __pycache__/
+/tmp/
 *.pyc
 .env
 mineru_result.zip

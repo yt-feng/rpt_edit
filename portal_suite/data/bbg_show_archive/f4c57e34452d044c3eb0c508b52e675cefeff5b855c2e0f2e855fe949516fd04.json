@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "id": "f4c57e34452d044c3eb0c508b52e675cefeff5b855c2e0f2e855fe949516fd04",
+  "slug": "bbg-20260811-f4c57e34452d044c",
+  "date": "2026-08-11",
+  "title": "GPU太贵：硅谷开始研究，怎么少用英伟达芯片",
+  "speaker": "Felix Wang",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-08-11/the-china-show-8-11-2026-video",
+  "start": 630.0,
+  "end": 748.0,
+  "segments": [
+    {
+      "start": 630.0,
+      "end": 632.5,
+      "en": "However, I just came back from a memory storage conference out on the West Coast.",
+      "zh": "不过，我刚从西海岸的一场存储大会回来。"
+    },
+    {
+      "start": 632.5,
+      "end": 642.5,
+      "en": "And they were talking about trying to reduce GPUs through innovations in memory architecture because GPUs, HBM, they've become too expensive.",
+      "zh": "会上讨论通过内存架构创新来减少GPU用量，因为GPU和高带宽内存（HBM）成本太高了。"
+    },
+    {
+      "start": 642.5,
+      "end": 648.2,
+      "en": "So that's also weighing on sentiment here on Nvidia.",
+      "zh": "这也对英伟达的市场情绪构成压力。"
+    },
+    {
+      "start": 648.2,
+      "end": 659.1,
+      "en": "Well, you see a deal like this and all these financing deals, you know, it seems like it's almost like a daily sort of occurrence now, I feel like. What's the read through for the semiconductor sector?",
+      "zh": "像这样的融资交易现在几乎每天都有，这对半导体行业意味着什么？"
+    },
+    {
+      "start": 659.1,
+      "end": 673.1,
+      "en": "Is this just more signal that, you know, is this just going to continue to feel growth? Or do you think it's the opposite where we're just dealing with some very expensive bills coming up? Yeah.",
+      "zh": "这是否意味着增长将持续？还是说我们即将面临高额账单？"
+    },
+    {
+      "start": 673.1,
+      "end": 682.3,
+      "en": "I mean, at the end of the day, it's about where do you feel about the AI cycle? Do you see GPU utilization improving? Do you see AI monetization improving?",
+      "zh": "归根结底，关键在于对AI周期的判断：GPU利用率是否提升？AI变现是否改善？"
+    },
+    {
+      "start": 682.3,
+      "end": 692.2,
+      "en": "You know, all of this is critical for more investments in sims, more investment in capital spending, more investment in AI in front.",
+      "zh": "这些对于半导体、资本开支和AI前端的进一步投入都至关重要。"
+    },
+    {
+      "start": 692.2,
+      "end": 700.4,
+      "en": "And financing going back to the main topic today can help facilitate that. But what if the opposite is happening?",
+      "zh": "而融资（回到今天主题）可以为此提供支持。但如果情况相反呢？"
+    },
+    {
+      "start": 700.4,
+      "end": 711.4,
+      "en": "What if we get into a situation where compute is overbilled? You have weak AI monetization, weak GPU utilization, wider credit spreads.",
+      "zh": "如果算力被过度建设，AI变现疲软、GPU利用率低下、信用利差扩大，会怎样？"
+    },
+    {
+      "start": 711.4,
+      "end": 723.3,
+      "en": "That could turn into less demand for sims, less demand for GPU purchases, less demand for memory, HBM and so forth. So net less demand for networking, into connect, all of these things that people got juiced up on for the AI trade goes into reverse.",
+      "zh": "这可能导致对半导体、GPU、内存和HBM的需求下降，进而使网络、互联等AI交易相关需求全面逆转。"
+    },
+    {
+      "start": 723.3,
+      "end": 732.5,
+      "en": "So I, you know, right now we're not saying the latter, we're still seeing good momentum from a lot of the, a lot of my contacts and the supply chain as well as how we track token data, right?",
+      "zh": "目前我们并不认为会出现后者，从供应链接触和token数据来看，势头依然良好。"
+    },
+    {
+      "start": 732.5,
+      "end": 748.0,
+      "en": "I token span, developer span, all of this is very important to drive the AI trade higher. And don't forget the two major AI labs, particularly in the U.S. and philanthropic and open AI.",
+      "zh": "token使用量、开发者活跃度等对推动AI交易至关重要。别忘了美国两大AI实验室，尤其是Anthropic和OpenAI。"
+    }
+  ]
+}

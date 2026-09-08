@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "id": "3abdb6490c79077e056739e77e4f19d33cd7354d6ca4aedd3356cb5324fb8cb8",
+  "slug": "bbg-20260624-3abdb6490c79077e",
+  "date": "2026-06-24",
+  "title": "宁德时代首席制造官：电动车算力远超想象，AI平台技术上可行",
+  "speaker": "Robin Zung",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-06-24/the-china-show-6-24-2026-video",
+  "start": 1963.0,
+  "end": 2044.9,
+  "segments": [
+    {
+      "start": 1963.0,
+      "end": 1969.1,
+      "en": "Each of the new generation intelligence smart EVs, they have so much",
+      "zh": "新一代智能电动车拥有巨大的"
+    },
+    {
+      "start": 1969.1,
+      "end": 1974.0,
+      "en": "computational power to navigate the surrounding, to conduct the autonomous driving.",
+      "zh": "算力来导航和自动驾驶"
+    },
+    {
+      "start": 1974.8,
+      "end": 1979.0,
+      "en": "When you're not driving the vehicle, when you go to work, you're out of 24 hours.",
+      "zh": "当你不开车去上班，一天24小时"
+    },
+    {
+      "start": 1979.1,
+      "end": 1984.8,
+      "en": "You only use a vehicle for one or two hours and when you park in the work and you have an",
+      "zh": "你只用车一两小时，停车时"
+    },
+    {
+      "start": 1984.8,
+      "end": 1991.6,
+      "en": "energy supply, you usually have more than 100 kilowatt hours in the vehicle plus a computational power.",
+      "zh": "车上有超过100度电和算力"
+    },
+    {
+      "start": 1991.6,
+      "end": 1997.5,
+      "en": "If we can create the platform, we have solved the most computational power and energy supply.",
+      "zh": "如果创建平台，就解决了算力和电力供应"
+    },
+    {
+      "start": 1997.5,
+      "end": 2001.1,
+      "en": "Well, that's the challenge, right? You need to build the infrastructure to do this because",
+      "zh": "挑战在于需要建设基础设施"
+    },
+    {
+      "start": 2001.1,
+      "end": 2006.0,
+      "en": "there is vehicle to grid technology where that's the power transmission,",
+      "zh": "车到电网技术用于电力传输"
+    },
+    {
+      "start": 2006.0,
+      "end": 2013.3,
+      "en": "that's right. The energy generation. But how do you get the data and that to those systems?",
+      "zh": "但如何将数据接入系统？"
+    },
+    {
+      "start": 2013.3,
+      "end": 2017.8,
+      "en": "Well, you need a platform to do that. Exactly. We need to create a new platform because the data",
+      "zh": "需要创建一个新平台，因为数据"
+    },
+    {
+      "start": 2017.8,
+      "end": 2025.1,
+      "en": "link, uplink, downlink, it already exists because many of the vehicle has a capability to the OTA",
+      "zh": "上下行链路已存在，很多车有OTA"
+    },
+    {
+      "start": 2025.1,
+      "end": 2033.0,
+      "en": "over the air, upgrading for the software. But we need to upgrade. If you want to use that as a AI",
+      "zh": "空中升级软件，但需要升级带宽用于AI"
+    },
+    {
+      "start": 2033.0,
+      "end": 2040.4,
+      "en": "distributed AITC, we need to upgrade that bandwidth, but now 5G, 6G is coming and this is,",
+      "zh": "分布式AI需要升级带宽，5G、6G即将到来"
+    },
+    {
+      "start": 2040.4,
+      "end": 2044.9,
+      "en": "I think, technically, it's quite feasible. How long will it take to think of for the built-in",
+      "zh": "技术上可行。内置平台需要多久？"
+    }
+  ]
+}

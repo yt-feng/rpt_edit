@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "9b42cd7619129c90d0bbc8d7b5695d2975549e186c2aaafbcae717278ee8e015",
+  "slug": "bbg-20260807-9b42cd7619129c90",
+  "date": "2026-08-07",
+  "title": "星展CEO谈AI成本：中国模型便宜80%，开放架构如何选？",
+  "speaker": "Tan Su Shan",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-08-07/the-china-show-8-7-2026-video",
+  "start": 2387.1,
+  "end": 2444.3,
+  "segments": [
+    {
+      "start": 2387.1,
+      "end": 2392.5,
+      "en": "The irony, and I call it the paradox of token spend, is the more tokens you consume, the lower the cost.",
+      "zh": "讽刺的是，我称之为令牌消耗悖论：消耗越多，成本反而越低。"
+    },
+    {
+      "start": 2392.5,
+      "end": 2399.2,
+      "en": "And we're seeing that tip now, and we're expecting our token consumption, and we're starting to lower our cost because of the cash, the memory, the optimization, the use of SLMs, etc.",
+      "zh": "我们现在正看到这一拐点，预计令牌消耗将增加，但成本开始下降，得益于缓存、内存、优化以及小型语言模型的使用等。"
+    },
+    {
+      "start": 2399.2,
+      "end": 2404.3,
+      "en": "Our people are getting a lot smarter on how to optimize. So, that's good.",
+      "zh": "我们的员工在优化方面越来越聪明，这是好事。"
+    },
+    {
+      "start": 2404.3,
+      "end": 2410.7,
+      "en": "And when it comes to models, I guess the big debate is Western models versus the Chinese models, which are 80% cheaper, some say, how do you take that into consideration?",
+      "zh": "关于模型，最大的争论是西方模型与中国模型，据说中国模型便宜80%，你们如何考虑这一点？"
+    },
+    {
+      "start": 2410.7,
+      "end": 2416.2,
+      "en": "We've always been open around not being too weathered to anyone. I think we have, we have an open architecture.",
+      "zh": "我们一直保持开放，不过度依赖任何一家。我们拥有开放架构。"
+    },
+    {
+      "start": 2416.2,
+      "end": 2421.9,
+      "en": "That means we're not overly reliant on anyone provider, whether it's an SLM or LLM or an AI harness builder, whatever.",
+      "zh": "这意味着我们不过度依赖任何供应商，无论是小型语言模型、大型语言模型还是AI工具构建者。"
+    },
+    {
+      "start": 2421.9,
+      "end": 2430.4,
+      "en": "The key is to see who's good at what. To prove soft concepts, we do POCs with everyone, really, and we figure out who's good.",
+      "zh": "关键看谁擅长什么。为了验证概念，我们与各方进行概念验证，找出谁更优秀。"
+    },
+    {
+      "start": 2430.4,
+      "end": 2437.4,
+      "en": "And then you then figure out for yourself what is sovereign to you? What do you want code to you want to own yourself? What sovereign code? What sovereign model? What sovereign AI?",
+      "zh": "然后你自己确定什么是你的主权？你想拥有哪些代码？主权代码、主权模型、主权AI是什么？"
+    },
+    {
+      "start": 2437.4,
+      "end": 2444.3,
+      "en": "What sovereign AI harness do you want for yourself? And what do you want to use as third parties? So all this work is being done right now.",
+      "zh": "你想要什么样的主权AI工具？哪些使用第三方？这些工作正在进行中。"
+    }
+  ]
+}

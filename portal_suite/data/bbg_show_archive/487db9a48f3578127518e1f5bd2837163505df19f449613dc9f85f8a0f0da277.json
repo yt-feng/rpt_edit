@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "id": "487db9a48f3578127518e1f5bd2837163505df19f449613dc9f85f8a0f0da277",
+  "slug": "bbg-20260720-487db9a48f357812",
+  "date": "2026-07-20",
+  "title": "中国AI模型参数庞大：硬件需求不减，利润承压，市场如何定价？",
+  "speaker": "Jason Louis",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-07-20/the-china-show-7-20-2026-video",
+  "start": 1861.3,
+  "end": 1942.6,
+  "segments": [
+    {
+      "start": 1861.3,
+      "end": 1877.9,
+      "en": "Jason I want to push you a bit as you say there isn't a little bit of an information gap here but when it comes to that hardware versus software debate when it comes to this question of whether essentially demand is just going to be reduced and that nervousness is it justified? How nervous do you think we should be around the ability of these frontier Chinese models to essentially defer to software rather than relying on chips, hardware chips?",
+      "zh": "Jason，我想追问一下。关于硬件与软件之争，需求是否会减少？这种担忧合理吗？对于中国前沿模型能否更多依赖软件而非芯片，我们应有多担心？"
+    },
+    {
+      "start": 1877.9,
+      "end": 1897.4,
+      "en": "Sure I think you have a great point about demand so I think based on what we have seen so far it seems that all these Chinese new open weight model they do have very very large parameters we're talking about trillions of parameters which means that from a hardware standpoint they will also require a lot more hardware in order to run",
+      "zh": "关于需求，你说得对。根据目前情况，中国新的开源模型参数规模非常大，达到万亿级别，这意味着从硬件角度看，它们需要更多硬件来运行。"
+    },
+    {
+      "start": 1897.4,
+      "end": 1912.9,
+      "en": "so the problem at the moment perhaps it's not about the quantity but the price. We have seen based on the companies that have reported earnings for the past one or two months their gross margin is extremely high for a technology hardware company",
+      "zh": "目前问题可能不在数量而在价格。过去一两个月公布业绩的公司，毛利率非常高，对于科技硬件公司而言。"
+    },
+    {
+      "start": 1912.9,
+      "end": 1927.8,
+      "en": "so perhaps one of the things the market is trying to decide is that if we have a transition from high margin to higher volume but lower margin is that enough to justify some of the valuation that we have seen not just in China but the global technology hardware space.",
+      "zh": "市场可能正在判断：从高利润转向高销量但低利润，是否足以支撑当前估值？这不仅是中国，全球科技硬件板块都面临这个问题。"
+    },
+    {
+      "start": 1927.8,
+      "end": 1942.6,
+      "en": "Jason I just want to follow up on that point what about the concentration risks that we're seeing around the AI trade in Asia how should investors be making sense of that?",
+      "zh": "Jason，关于亚洲AI交易集中度风险，投资者应如何理解？"
+    }
+  ]
+}

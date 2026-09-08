@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "id": "8674fbb94b02d138438eb181614aa809172c09ad1831790e4fa5cb743d365e9f",
+  "slug": "bbg-20260625-8674fbb94b02d138",
+  "date": "2026-06-25",
+  "title": "美银Maddie Jow：AI算力需求激增，中国电力需求将翻三倍",
+  "speaker": "Maddie Jow",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-06-25/the-china-show-6-25-2026-video",
+  "start": 1890.0,
+  "end": 1948.0,
+  "segments": [
+    {
+      "start": 1890.0,
+      "end": 1898.0,
+      "en": "We recently see government talking about 2 trillion RMB to be invest into the AI areas as well. I think this will be probably through the telecom company, through the internet company, and also through a lot of the government funding as well.",
+      "zh": "我们最近看到政府讨论投入2万亿元人民币到AI领域。我认为这可能会通过电信公司、互联网公司以及大量政府资金来实现。"
+    },
+    {
+      "start": 1898.0,
+      "end": 1908.9,
+      "en": "What about the power needs? I think do you think the market is still underestimating the power needs that we need when it comes to some of these AI areas? How do you model that sort of?",
+      "zh": "那么电力需求呢？你认为市场是否仍然低估了AI领域所需的电力？你如何建模？"
+    },
+    {
+      "start": 1908.9,
+      "end": 1921.8,
+      "en": "Yeah, sure. If you look at like MVDS models from 2022, through the potential 2028 models, we expect that the debt density to increase 100 times. So that means you basically need a lot more power to support that as well.",
+      "zh": "是的。如果你看从2022年到2028年的MVDS模型，我们预计算力密度将增加100倍。这意味着你需要更多的电力来支持。"
+    },
+    {
+      "start": 1921.8,
+      "end": 1935.5,
+      "en": "So from a power perspective, we are expecting power demand at least to triple in the next five years as well. Similarly in China, we also need to build a lot of the power equipment together with the global as well.",
+      "zh": "从电力角度看，我们预计未来五年电力需求至少翻三倍。同样在中国，我们也需要与全球同步建设大量电力设备。"
+    },
+    {
+      "start": 1935.5,
+      "end": 1948.0,
+      "en": "So we are also seeing various new trends on the power, including like transformer, gas turbine, ESS, power storage, et cetera.",
+      "zh": "我们还看到电力领域的新趋势，包括变压器、燃气轮机、储能系统等。"
+    }
+  ]
+}

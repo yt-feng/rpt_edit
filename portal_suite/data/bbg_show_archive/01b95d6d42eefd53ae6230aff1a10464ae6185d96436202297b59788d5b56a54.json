@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "id": "01b95d6d42eefd53ae6230aff1a10464ae6185d96436202297b59788d5b56a54",
+  "slug": "bbg-20260530-01b95d6d42eefd53",
+  "date": "2026-05-30",
+  "title": "彭博行业研究孟迪普：AI代理部署推动数据库公司Snowflake迎来新机遇",
+  "speaker": "Mandip Singh",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-05-30/bloomberg-this-weekend-5-30-2026-video",
+  "start": 1295.7,
+  "end": 1350.0,
+  "segments": [
+    {
+      "start": 1295.7,
+      "end": 1304.7,
+      "en": "And I want to come back to that because the first thing I want to hit with you is talk to us a little bit about the difference between these kind of legacy physical AIs versus AI Asians.",
+      "zh": "我想回到这个话题，首先请您谈谈传统实体AI与AI代理之间的区别。"
+    },
+    {
+      "start": 1304.7,
+      "end": 1315.7,
+      "en": "And while you're seeing more growth in one part than you are, as you see, almost a little bit of a slump in some of the AI softwares as users decide what they're actually getting an ROI on.",
+      "zh": "一方面某些领域增长更快，另一方面部分AI软件出现疲软，因为用户正在评估实际回报。"
+    },
+    {
+      "start": 1315.7,
+      "end": 1320.7,
+      "en": "I mean, all these companies that are tied at the database layer.",
+      "zh": "所有与数据库层相关的公司。"
+    },
+    {
+      "start": 1320.7,
+      "end": 1336.7,
+      "en": "They're having their moment right now because when you talk about agentic deployments, you have to connect your enterprise database with these LLMs and, you know, it's driving more queries for a company like snowflake.",
+      "zh": "它们现在正迎来高光时刻，因为谈到代理部署，必须将企业数据库与大语言模型连接，这为Snowflake这样的公司带来了更多查询。"
+    },
+    {
+      "start": 1336.7,
+      "end": 1349.7,
+      "en": "And on top of that, snowflake has launched their own coding agent and we know coding agent is the real sort of big category of software that has emerged with the help of LLM.",
+      "zh": "此外，Snowflake还推出了自己的编码代理，我们知道编码代理是大语言模型催生的一个重要软件类别。"
+    },
+    {
+      "start": 1349.7,
+      "end": 1350.0,
+      "en": "So really, they are in that right spot.",
+      "zh": "所以它们确实处于有利位置。"
+    }
+  ]
+}

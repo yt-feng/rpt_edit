@@ -1,0 +1,97 @@
+name: Portal research index refresh
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: Publish the verified research corpus and atomic manifest
+        required: true
+        type: boolean
+        default: false
+  workflow_run:
+    workflows: [Neutral edge catalog refresh]
+    types: [completed]
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portal-production-release
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'workflow_dispatch' ||
+       (vars.PORTAL_RESEARCH_REFRESH_ENABLED == 'true' &&
+        github.event.workflow_run.conclusion == 'success' &&
+        github.event.workflow_run.head_branch == github.event.repository.default_branch &&
+        github.event.workflow_run.head_repository.full_name == github.repository))
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: |
+            scripts
+            .github/workflows/portal-research-index-refresh.yml
+            .github/workflows/neutral-edge-cutover.yml
+            portal_suite/data/history_catalog.json
+            portal_suite/data/history_text
+          sparse-checkout-cone-mode: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install index client and test source boundaries
+        run: |
+          python3 -m pip install --disable-pip-version-check "boto3>=1.34,<2"
+          python3 -B scripts/test_report_research_index.py
+          python3 -B scripts/test_download_report_research_inputs.py
+
+      - name: Read active catalog and current text; require checked-out historical text
+        env:
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+        run: |
+          set -euo pipefail
+          test -s portal_suite/data/history_catalog.json
+          test -d portal_suite/data/history_text
+          python3 scripts/download_report_research_inputs.py --output-dir _research_input
+
+      - name: Merge durable corpus and historical excerpts; optionally publish
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+          PUBLISH_RESEARCH: ${{ inputs.publish == true || github.event_name == 'workflow_run' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          publish_args=()
+          if [[ "$PUBLISH_RESEARCH" == "true" ]]; then publish_args+=(--upload-r2); fi
+          python3 scripts/build_report_research_index.py \
+            --catalog-path _research_input/catalog.json \
+            --search-index-path _research_input/search_index.json \
+            --history-catalog-path portal_suite/data/history_catalog.json \
+            --history-text-dir portal_suite/data/history_text \
+            --output-dir _research_index \
+            --merge-r2-corpus "${publish_args[@]}"
+
+      - name: Summarize coverage without exposing source text
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          manifest = json.loads(Path("_research_index/manifest.json").read_text())
+          fields = ("item_count", "full_text_item_count", "partial_excerpt_item_count", "chunk_count")
+          summary = {key: manifest[key] for key in fields}
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as output:
+              output.write("Research coverage: " + json.dumps(summary) + "\n")
+          PY

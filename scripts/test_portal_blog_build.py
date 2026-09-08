@@ -107,6 +107,70 @@ class BlogSanitizerTests(unittest.TestCase):
 
 
 class BlogBuildTests(unittest.TestCase):
+    def test_bbg_scripts_have_safe_bilingual_pairs_and_separate_pagination(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            archive = root / "bbg"
+            archive.mkdir()
+            for number in range(builder.BLOG_INDEX_PAGE_SIZE + 1):
+                identity = f"{number:016x}" + "0" * 48
+                (archive / f"{identity}.json").write_text(json.dumps({
+                    "schema_version": 1, "id": identity,
+                    "slug": f"bbg-20260907-{identity[:16]}", "date": "2026-09-07",
+                    "title": "市场访谈 <原文>", "speaker": "Analyst",
+                    "start": 60, "end": 70,
+                    "source_url": "https://www.bloomberg.com/news/videos/example",
+                    "segments": [{"start": 61, "end": 65, "zh": "逐段中文 <script>正文</script>", "en": "Original English & context"}],
+                }), encoding="utf-8")
+            articles = builder.build_blog(root / "site", root / "no-drafts", "https://portal.example.invalid", date(2026, 8, 6), bbg_archive_root=archive)
+            self.assertEqual(len(articles), builder.BLOG_INDEX_PAGE_SIZE + 1)
+            first = (root / "site/blog/index.html").read_text()
+            listing = (root / "site/blog/bbg-show.html").read_text()
+            page_two = (root / "site/blog/bbg-show-2.html").read_text()
+            detail = (root / "site/blog" / f'{articles[0]["slug"]}.html').read_text()
+            self.assertIn("BBG Show 中英对照", first)
+            self.assertIn('href="bbg-show-2.html"', listing)
+            self.assertIn('href="bbg-show.html"', page_two)
+            self.assertNotIn('href="page-2.html"', listing)
+            self.assertIn("<title>BBG Show 中英对照 | 双语节目脚本</title>", listing)
+            self.assertIn('lang="en"', detail)
+            self.assertIn('lang="zh-Hans"', detail)
+            self.assertIn("Original English &amp; context", detail)
+            self.assertIn("逐段中文 &lt;script&gt;正文&lt;/script&gt;", detail)
+            self.assertIn("00:01:01 – 00:01:05", detail)
+            self.assertNotIn("<script>正文", detail)
+            self.assertIn('data-auth-placement="blog_article"', detail)
+            self.assertIn('assets/app.js', detail)
+            self.assertIn('href="bbg-show.html">← 返回 BBG Show 中英对照', detail)
+            schema = graph_node(first_json_ld(detail), "BlogPosting")
+            self.assertEqual(schema["inLanguage"], ["zh-Hans", "en"])
+
+    def test_bbg_archive_rejects_false_dates_links_and_timestamps(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            identity = "a" * 64
+            original = {
+                "schema_version": 1, "id": identity, "slug": "bbg-20260907-" + identity[:16],
+                "date": "2026-09-07", "title": "访谈", "start": 60, "end": 70,
+                "source_url": "https://www.bloomberg.com/news/videos/example",
+                "segments": [{"start": 61, "end": 65, "zh": "编辑评论。，", "en": "Original text"}],
+            }
+            path = root / "article.json"
+            path.write_text(json.dumps(original), encoding="utf-8")
+            article = builder.load_bbg_show_articles(root)[0]
+            self.assertIn("编辑评论。，", builder.render_blog_article(article, "https://example.com"))
+            for changes in (
+                {"slug": "bbg-20260906-" + identity[:16]},
+                {"source_url": "mailto:reader@example.com"},
+                {"start": -10},
+                {"segments": [{"start": 65, "end": 61, "zh": "中文", "en": "English"}]},
+                {"segments": [{"start": 65, "end": 99, "zh": "中文", "en": "English"}]},
+            ):
+                with self.subTest(changes=changes):
+                    path.write_text(json.dumps({**original, **changes}), encoding="utf-8")
+                    with self.assertRaises(ValueError):
+                        builder.load_bbg_show_articles(root)
+
     def test_blog_placeholder_is_materialized_only_in_built_article(self) -> None:
         article = {
             "slug": "20260810-0123456789abcdef",

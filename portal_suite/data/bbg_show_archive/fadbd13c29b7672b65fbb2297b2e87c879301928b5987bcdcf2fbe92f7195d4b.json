@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "id": "fadbd13c29b7672b65fbb2297b2e87c879301928b5987bcdcf2fbe92f7195d4b",
+  "slug": "bbg-20260801-fadbd13c29b7672b",
+  "date": "2026-08-01",
+  "title": "AI越界测试：Anthropic模型，攻破三组织，监管能跟上吗？",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-07-31/what-we-know-so-far-about-hacking-by-anthropic-ai-models-video",
+  "start": 0.0,
+  "end": 84.14,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 6.44,
+      "en": "Anthropic has announced that it's AI models breached three different organizations during recent cybersecurity tests.",
+      "zh": "Anthropic 宣布，在最近的网络安全测试中，其 AI 模型攻破了三个不同的组织。"
+    },
+    {
+      "start": 6.44,
+      "end": 13.04,
+      "en": "This news comes a little more than a week after its chief rival, OpenAI, of course, disclosed a similar incident of models going broke.",
+      "zh": "这一消息发布前一周多，其主要竞争对手 OpenAI 也披露了类似事件，模型意外逃逸。"
+    },
+    {
+      "start": 13.04,
+      "end": 19.44,
+      "en": "Our AI reporter, Sharon Gaffrey, joins us now for more. So, should we know about these instances?",
+      "zh": "我们的 AI 记者 Sharon Gaffrey 现在加入我们。那么，我们应该了解这些事件吗？"
+    },
+    {
+      "start": 19.44,
+      "end": 27.52,
+      "en": "And of course, it just adds to these ongoing concerns that there are not enough guardrails or regulation to follow the technology.",
+      "zh": "当然，这加剧了持续的担忧，即缺乏足够的护栏或监管来跟进这项技术。"
+    },
+    {
+      "start": 30.34,
+      "end": 38.82,
+      "en": "That's right. So, what we know is that after the OpenAI security incident and Anthropic launched its own exploration",
+      "zh": "没错。我们知道的是，在 OpenAI 安全事件之后，Anthropic 也展开了自己的调查，"
+    },
+    {
+      "start": 38.82,
+      "end": 45.42,
+      "en": "of whether its models had similarly escaped onto the internet accidentally.",
+      "zh": "以确认其模型是否也意外逃逸到了互联网上。"
+    },
+    {
+      "start": 45.42,
+      "end": 53.82,
+      "en": "And it found in coordination with one of its partners that, yes, its models had actually been able",
+      "zh": "结果发现，与合作伙伴协调后，其模型确实能够"
+    },
+    {
+      "start": 53.82,
+      "end": 65.54,
+      "en": "to reach the internet in three different cases involving third-party organizations and improperly look for ways to sort of do better",
+      "zh": "在涉及第三方组织的三个不同案例中接入互联网，并试图寻找方法在内部评估中表现更好。"
+    },
+    {
+      "start": 65.54,
+      "end": 70.86,
+      "en": "on internal evaluations or achieve internal evaluations.",
+      "zh": "或实现内部评估目标。"
+    },
+    {
+      "start": 70.86,
+      "end": 77.66,
+      "en": "I don't know if Thord is doing anything to help them do better?",
+      "zh": "我不知道 Thord 是否在帮助他们做得更好？"
+    },
+    {
+      "start": 77.66,
+      "end": 84.14,
+      "en": "We don't know at this time. That question is out to Anthropic on if they have discussed this with government.",
+      "zh": "目前我们尚不清楚。关于是否已与政府讨论此事，我们正向Anthropic求证。"
+    }
+  ]
+}

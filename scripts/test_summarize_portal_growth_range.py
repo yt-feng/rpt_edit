@@ -69,7 +69,7 @@ class GrowthReviewTest(unittest.TestCase):
             event("signup", "2026-09-07", "private-session", "private-browser",
                   event_type="account_auth", action="form_submit", status="register", placement="navigation"),
             event("signup-fail", "2026-09-07", "private-session", "private-browser",
-                  event_type="account_auth", action="register", status="error"),
+                  event_type="account_auth", action="register", status="error", error="private-person 验证码错误"),
             event("audit", "2026-09-07", "", "", event_type="report_chat", action="answer",
                   status="success", ip_hash="private-server-ip", session_started_at=""),
             event("legacy", "2026-09-07", "", "private-legacy-hash",
@@ -97,6 +97,9 @@ class GrowthReviewTest(unittest.TestCase):
         self.assertEqual(by_action["popular_click"]["events_without_client_session"], 1)
         self.assertNotIn("entry_impression", by_action, "missing exposure must not be fabricated as zero exposure")
         self.assertEqual(journey["server_audit_actions"][0]["events"], 1)
+        self.assertEqual(journey["registration_error_categories"], [{
+            "category": "captcha", "events": 1, "client_sessions": 1, "events_without_client_session": 0,
+        }])
         self.assertIsNone(journey["server_audit_actions"][0]["client_sessions"])
         self.assertEqual(review["data_quality"]["server_audit_events_excluded_from_sessions"], 1)
         self.assertEqual(review["totals"]["registration_sessions"], 0)
@@ -107,6 +110,7 @@ class GrowthReviewTest(unittest.TestCase):
                        "private question", "private ua", "private-action", "private-status",
                        "private-placement", "private-context"):
             self.assertNotIn(secret, serialized)
+        self.assertNotIn("private-person", serialized)
 
     def test_journey_session_counts_do_not_count_feature_hashes_as_new_people(self) -> None:
         rows = [
@@ -118,6 +122,7 @@ class GrowthReviewTest(unittest.TestCase):
         self.assertEqual(journey["client_actions"][0]["events"], 3)
         self.assertEqual(journey["client_actions"][0]["client_sessions"], 2)
         self.assertEqual(journey["daily_actions"][0]["client_sessions"], 2)
+        self.assertEqual(growth.controlled_journey_value("blog_article", growth.JOURNEY_PLACEMENTS), "blog_article")
 
     def test_primary_backup_and_missing_id_fallback_are_deduplicated(self) -> None:
         first = event("event-a", "2026-08-12", "session-a", "visitor-a")

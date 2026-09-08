@@ -11,6 +11,7 @@ import hashlib
 from html import escape as html_escape, unescape as html_unescape
 from html.parser import HTMLParser
 import json
+import math
 import os
 import re
 import shutil
@@ -3596,19 +3597,129 @@ def blog_csp_meta() -> str:
     )
 
 
+def bbg_timestamp(seconds: Any) -> str:
+    total = max(0, int(float(seconds)))
+    return f"{total // 3600:02d}:{total % 3600 // 60:02d}:{total % 60:02d}"
+
+
+def load_bbg_show_articles(archive_root: Path) -> list[dict[str, Any]]:
+    """Render published bilingual clip scripts without rewriting either language."""
+    if not archive_root.exists():
+        return []
+    articles = []
+    seen = set()
+    for path in sorted(archive_root.glob("*.json")):
+        row = json.loads(path.read_text(encoding="utf-8"))
+        slug = str(row.get("slug", ""))
+        if row.get("schema_version") != 1 or not re.fullmatch(r"bbg-\d{8}-[a-f0-9]{16}", slug):
+            raise ValueError(f"Invalid BBG Show archive schema: {path.name}")
+        if slug in seen:
+            raise ValueError("Duplicate BBG Show article slug")
+        seen.add(slug)
+        date_value = str(row.get("date", ""))
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", date_value):
+            raise ValueError("Invalid BBG Show publication date")
+        date.fromisoformat(date_value)
+        article_id = str(row.get("id", ""))
+        if (not re.fullmatch(r"[a-f0-9]{64}", article_id)
+                or slug != f"bbg-{date_value.replace('-', '')}-{article_id[:16]}"):
+            raise ValueError("BBG Show slug does not match its identity and publication date")
+        clip_start, clip_end = row.get("start"), row.get("end")
+        def valid_time(value: Any) -> bool:
+            return (not isinstance(value, bool) and isinstance(value, (int, float))
+                    and math.isfinite(value) and 0 <= value <= 7 * 24 * 60 * 60)
+        if not valid_time(clip_start) or not valid_time(clip_end) or clip_end <= clip_start:
+            raise ValueError("Invalid BBG Show clip timestamps")
+        segments = row.get("segments")
+        if not isinstance(segments, list) or not segments:
+            raise ValueError("BBG Show script must contain bilingual segments")
+        pairs = []
+        previous_start = clip_start - 0.1
+        for index, segment in enumerate(segments, 1):
+            if not isinstance(segment, dict) or not all(isinstance(segment.get(lang), str) and segment[lang].strip() for lang in ("zh", "en")):
+                raise ValueError("BBG Show segment is missing a language")
+            segment_start, segment_end = segment.get("start"), segment.get("end")
+            if (not valid_time(segment_start) or not valid_time(segment_end)
+                    or segment_end <= segment_start or segment_start < previous_start
+                    or segment_start < clip_start - 0.1 or segment_end > clip_end + 0.1):
+                raise ValueError("Invalid BBG Show segment timestamps")
+            previous_start = segment_start
+            start = bbg_timestamp(segment["start"])
+            end = bbg_timestamp(segment["end"])
+            pairs.append(
+                f'<section class="bbg-pair" id="segment-{index}">'
+                f'<p class="bbg-time">{start} – {end}</p>'
+                f'<div class="bbg-pair-text"><p class="bbg-zh" lang="zh-Hans"><span class="bbg-language">中文</span>{html_escape(segment["zh"])}</p>'
+                f'<p class="bbg-en" lang="en"><span class="bbg-language">ENGLISH</span>{html_escape(segment["en"])}</p></div></section>'
+            )
+        title = str(row.get("title") or "BBG Show 双语片段")
+        speaker = str(row.get("speaker") or "节目访谈")
+        source_url = sanitize_blog_url(str(row.get("source_url") or ""))
+        parsed_source = urlsplit(source_url)
+        source_host = parsed_source.hostname or ""
+        allowed_hosts = ("bloomberg.com", "youtube.com", "youtu.be", "ark-invest.com", "arkinvest.com")
+        if (parsed_source.scheme != "https" or parsed_source.username or parsed_source.password
+                or parsed_source.port not in (None, 443)
+                or not any(source_host == host or source_host.endswith("." + host) for host in allowed_hosts)):
+            raise ValueError("BBG Show script requires a public source link")
+        source_link = f'<a href="{html_escape(source_url, quote=True)}" target="_blank" rel="noopener noreferrer">查看节目来源 ↗</a>'
+        content = (
+            '<p class="bbg-intro">以下为已发布视频片段的中英对照脚本，保留逐段字幕与节目时间，便于阅读和回看。</p>'
+            f'<div class="bbg-script-meta"><span>讲述人：{html_escape(speaker)}</span><span>{len(segments)} 组对照</span>{source_link}</div>'
+            '<div class="bbg-transcript">' + "".join(pairs) + '</div>'
+            '<p class="bbg-transcript-note">本页为视频片段的字幕整理，非整期节目全文。转写与翻译可能存在误差，请结合节目原声核对。</p>'
+        )
+        articles.append({
+            "slug": slug, "date": date_value, "last_date": date_value,
+            "title": title, "digest": segments[0]["zh"][:200], "author": "BBG Show",
+            "content": content, "bbg_script": True,
+            "origins": [{"source": "bbg-show", "source_label": "BBG Show 中英对照", "date": date_value}],
+        })
+    return sorted(articles, key=lambda row: (row["date"], row["slug"]), reverse=True)
+
+
+def render_bbg_show_module(articles: list[dict[str, Any]]) -> str:
+    cards = []
+    for article in articles[:4]:
+        cards.append(
+            '<article class="blog-card bbg-preview-card">'
+            f'<p class="blog-card-meta"><time datetime="{article["date"]}">{article["date"]}</time><span>中英对照</span></p>'
+            f'<h3><a href="{article["slug"]}.html">{html_escape(article["title"])}</a></h3>'
+            f'<p>{html_escape(article["digest"])}</p>'
+            f'<a class="blog-read-more" href="{article["slug"]}.html">阅读双语脚本 →</a></article>'
+        )
+    content = '<div class="blog-card-grid">' + "".join(cards) + '</div>' if cards else '<p>双语脚本整理后将展示在这里。</p>'
+    return (
+        '<section class="bbg-blog-module" aria-labelledby="bbgShowTitle">'
+        '<div class="bbg-module-heading"><div><p class="blog-kicker">BBG SHOW · BILINGUAL SCRIPTS</p>'
+        '<h2 id="bbgShowTitle">BBG Show 中英对照</h2><p>从节目片段到可阅读的双语脚本，逐段对照、保留时间与来源。</p></div>'
+        f'<a class="blog-read-more" href="bbg-show.html">查看全部 {len(articles)} 篇 →</a></div>{content}</section>'
+    )
+
+
 def render_blog_index(
     articles: list[dict[str, Any]],
     base_url: str,
     start_date: date,
     page_number: int = 1,
     page_size: int = BLOG_INDEX_PAGE_SIZE,
+    bbg_articles: list[dict[str, Any]] | None = None,
+    collection: str = "blog",
 ) -> str:
     total_pages = page_count(len(articles), page_size)
     page_number = max(1, min(page_number, total_pages))
     start = (page_number - 1) * page_size
     page_articles = articles[start:start + page_size]
-    canonical = url_join(base_url, collection_page_path("blog", page_number))
+    bbg_collection = collection == "bbg-show"
+    collection_path = ("blog/bbg-show.html" if page_number == 1 else f"blog/bbg-show-{page_number}.html") if bbg_collection else collection_page_path("blog", page_number)
+    canonical = url_join(base_url, collection_path)
     page_suffix = "" if page_number == 1 else f" · 第 {page_number} 页"
+    collection_name = "BBG Show 中英对照" if bbg_collection else f"{BLOG_PUBLIC_BRAND} Blog"
+    collection_description = (
+        "BBG Show 已发布视频片段的中英双语脚本，逐段对照，保留节目时间与来源。"
+        if bbg_collection else f"{BLOG_PUBLIC_BRAND}每日研究文章与公众号正文存档。"
+    )
+    page_title = f"{collection_name}{page_suffix} | {'双语节目脚本' if bbg_collection else '每日研报与研究文章'}"
     grouped: dict[str, list[dict[str, Any]]] = {}
     for article in page_articles:
         grouped.setdefault(str(article.get("date") or ""), []).append(article)
@@ -3644,10 +3755,10 @@ def render_blog_index(
     json_ld = {
         "@context": "https://schema.org",
         "@type": "Blog",
-        "name": f"{BLOG_PUBLIC_BRAND} Blog{page_suffix}",
-        "description": f"{BLOG_PUBLIC_BRAND}每日研究文章与公众号正文存档。",
+        "name": f"{collection_name}{page_suffix}",
+        "description": collection_description,
         "url": canonical,
-        "inLanguage": "zh-Hans",
+        "inLanguage": ["zh-Hans", "en"] if bbg_collection else "zh-Hans",
         "publisher": {
             "@type": "Organization",
             "@id": f"{url_join(base_url, '/')}#organization",
@@ -3665,8 +3776,11 @@ def render_blog_index(
         ],
     }
     pagination = render_collection_pagination(page_number, total_pages, "Blog 文章分页")
+    if bbg_collection:
+        pagination = re.sub(r'href="page-(\d+)\.html"', r'href="bbg-show-\1.html"', pagination)
+        pagination = pagination.replace('href="index.html"', 'href="bbg-show.html"').replace('href="./"', 'href="bbg-show.html"')
     market_views_block = ""
-    if page_number == 1:
+    if page_number == 1 and not bbg_collection:
         market_views_block = f"""
       <section class="blog-market-views" id="blogMarketViews" aria-labelledby="blogMarketViewsTitle">
         <div class="blog-market-views-heading">
@@ -3687,8 +3801,8 @@ def render_blog_index(
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <title>{BLOG_PUBLIC_BRAND} Blog{page_suffix} | 每日研报与研究文章</title>
-    <meta name="description" content="{BLOG_PUBLIC_BRAND}每日整理研报、研究机构与咨询公司文章，提供可持续访问的中文研究存档。">
+    <title>{html_escape(page_title)}</title>
+    <meta name="description" content="{html_escape(collection_description, quote=True)}">
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
     <link rel="canonical" href="{html_escape(canonical, quote=True)}">
     <link rel="alternate" hreflang="zh-Hans" href="{html_escape(canonical, quote=True)}">
@@ -3696,8 +3810,8 @@ def render_blog_index(
     <meta property="og:type" content="website">
     <meta property="og:locale" content="zh_CN">
     <meta property="og:site_name" content="{BLOG_PUBLIC_BRAND}">
-    <meta property="og:title" content="{BLOG_PUBLIC_BRAND} Blog{page_suffix} | 每日研报与研究文章">
-    <meta property="og:description" content="{BLOG_PUBLIC_BRAND}每日研究文章与公众号正文存档。">
+    <meta property="og:title" content="{html_escape(page_title, quote=True)}">
+    <meta property="og:description" content="{html_escape(collection_description, quote=True)}">
     <meta property="og:url" content="{html_escape(canonical, quote=True)}">
     <meta property="og:image" content="{html_escape(url_join(base_url, 'assets/social-card.jpg'), quote=True)}">
     <meta property="og:image:width" content="1200">
@@ -3705,8 +3819,8 @@ def render_blog_index(
     <meta property="og:image:alt" content="{BLOG_PUBLIC_BRAND}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="{html_escape(url_join(base_url, 'assets/social-card.jpg'), quote=True)}">
-    <meta name="twitter:title" content="{BLOG_PUBLIC_BRAND} Blog{page_suffix} | 每日研报与研究文章">
-    <meta name="twitter:description" content="{BLOG_PUBLIC_BRAND}每日研究文章与公众号正文存档。">
+    <meta name="twitter:title" content="{html_escape(page_title, quote=True)}">
+    <meta name="twitter:description" content="{html_escape(collection_description, quote=True)}">
     {blog_csp_meta()}
     <link rel="stylesheet" href="../assets/styles.css">
     <link rel="stylesheet" href="../assets/blog.css">
@@ -3733,10 +3847,12 @@ def render_blog_index(
     <main class="blog-shell">
       <header class="blog-hero">
         <p class="blog-kicker">{BLOG_PUBLIC_BRAND} · DAILY RESEARCH</p>
-        <h1>{BLOG_PUBLIC_BRAND} Blog{page_suffix}</h1>
-        <p>{BLOG_PUBLIC_BRAND}从 {html_escape(start_date.isoformat())} 起完整保存每日公众号文章，按首次入库日期倒序展示。</p>
+        <h1>{'BBG Show 中英对照' if bbg_collection else f'{BLOG_PUBLIC_BRAND} Blog'}{page_suffix}</h1>
+        <p>{'按节目与片段整理已发布的双语脚本，中文和英文逐段对应，可回到节目来源核对。' if bbg_collection else f'{BLOG_PUBLIC_BRAND}从 {html_escape(start_date.isoformat())} 起完整保存每日公众号文章，按首次入库日期倒序展示。'}</p>
         <div class="blog-summary"><strong>{len(articles)}</strong> 篇文章 · 第 {page_number}/{total_pages} 页</div>
+        <nav class="blog-module-nav" aria-label="Blog 内容模块"><a href="./">研究文章</a><a href="bbg-show.html"{' aria-current="page"' if bbg_collection else ''}>BBG Show 中英对照</a><a href="../research.html">AI 研究</a></nav>
       </header>
+      {render_bbg_show_module(bbg_articles or []) if page_number == 1 and not bbg_collection else ''}
       {market_views_block}
       {pagination}
       {"".join(sections)}
@@ -3761,6 +3877,9 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
     digest = blog_public_digest(str(article.get("digest") or ""))
     seo_description = blog_seo_description(digest)
     author = blog_public_author(str(article.get("author") or ""))
+    collection_name = "BBG Show 中英对照" if article.get("bbg_script") else "Blog"
+    collection_href = "bbg-show.html" if article.get("bbg_script") else "./"
+    collection_url = url_join(base_url, "blog/bbg-show.html" if article.get("bbg_script") else "blog/")
     parsed_base = urlsplit(str(base_url or "").strip())
     if parsed_base.scheme != "https" or not parsed_base.hostname:
         raise ValueError("Blog base URL must be an HTTPS origin")
@@ -3770,12 +3889,12 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
         str(article.get("content") or ""),
         flags=re.I,
     )
-    article_content = blog_public_text(article_content)
-    # Legacy archives are immutable source records. Normalize their public
-    # presentation so old drafts follow the current editorial contract.
-    article_content = article_content.replace("编辑评论", "KC评论")
-    article_content = re.sub(r"。\s*[，,]", "。", article_content)
-    article_content = re.sub(r"[，,；;：:]\s*。", "。", article_content)
+    if not article.get("bbg_script"):
+        article_content = blog_public_text(article_content)
+        # Keep legacy editorial formatting out of verbatim bilingual scripts.
+        article_content = article_content.replace("编辑评论", "KC评论")
+        article_content = re.sub(r"。\s*[，,]", "。", article_content)
+        article_content = re.sub(r"[，,；;：:]\s*。", "。", article_content)
     discovery_fields = (blog_title_core(title), digest, blog_html_text(article_content))
     related_institutions = blog_related_institution_hubs(*discovery_fields)
     related_topics = blog_related_topic_hubs(*discovery_fields)
@@ -3822,7 +3941,7 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
         "dateModified": lastmod,
         "url": canonical,
         "mainEntityOfPage": {"@id": f"{canonical}#webpage"},
-        "inLanguage": "zh-Hans",
+        "inLanguage": ["zh-Hans", "en"] if article.get("bbg_script") else "zh-Hans",
         "author": author_schema,
         "publisher": {
             "@type": "Organization",
@@ -3830,7 +3949,7 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
             "name": BLOG_PUBLIC_BRAND,
             "url": url_join(base_url, "/"),
         },
-        "isPartOf": {"@type": "Blog", "name": f"{BLOG_PUBLIC_BRAND} Blog", "url": url_join(base_url, "blog/")},
+        "isPartOf": {"@type": "Blog", "name": collection_name if article.get("bbg_script") else f"{BLOG_PUBLIC_BRAND} Blog", "url": collection_url},
         "keywords": blog_public_keywords(article),
     }
     about_entities: list[dict[str, Any]] = []
@@ -3884,7 +4003,7 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
                 "@type": "BreadcrumbList",
                 "itemListElement": [
                     {"@type": "ListItem", "position": 1, "name": "首页", "item": url_join(base_url, "/")},
-                    {"@type": "ListItem", "position": 2, "name": "Blog", "item": url_join(base_url, "blog/")},
+                    {"@type": "ListItem", "position": 2, "name": collection_name, "item": collection_url},
                     {"@type": "ListItem", "position": 3, "name": title, "item": canonical},
                 ],
             },
@@ -3921,6 +4040,7 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
     <script defer src="../assets/site-runtime.js"></script>
     <script defer src="../assets/contact.js"></script>
     <script defer src="../assets/analytics.js"></script>
+    <script defer src="../assets/app.js"></script>
     <script type="application/ld+json">{render_json_ld(json_ld)}</script>
   </head>
   <body class="blog-page blog-article-page" data-page="blog-article" data-report-title="{html_escape(title, quote=True)}" data-source="blog">
@@ -3933,13 +4053,14 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
         <a class="topbar-link" href="../">首页</a>
         <a class="topbar-link is-active" href="./">Blog</a>
         <a class="topbar-link" href="../reports/">报告索引</a>
+        <button id="accountGate" class="account-button" type="button">登录 / 注册</button>
       </nav>
     </header>
     <main class="blog-article-shell">
-      <a class="blog-back" href="./">← 返回 Blog</a>
+      <a class="blog-back" href="{collection_href}">← 返回 {collection_name}</a>
       <article class="blog-article">
         <header class="blog-article-header">
-          <nav aria-label="面包屑"><a href="../">首页</a> › <a href="./">Blog</a> › <span aria-current="page">正文</span></nav>
+          <nav aria-label="面包屑"><a href="../">首页</a> › <a href="{collection_href}">{collection_name}</a> › <span aria-current="page">正文</span></nav>
           <div class="blog-card-meta">
             <time datetime="{html_escape(article["date"], quote=True)}">{html_escape(article["date"])}</time>
             {blog_source_badges(article)}
@@ -3948,6 +4069,11 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
           {f'<p class="blog-digest">{html_escape(digest)}</p>' if digest else ''}
           <p class="blog-byline">作者：{html_escape(author)} · 来源：{blog_origin_details(article)}</p>
         </header>
+        <aside class="blog-next-step" aria-label="继续研究">
+          <div><strong>把阅读变成自己的研究</strong><p>用自然语言比较多份研报，查看可核对的文字与图表来源。</p></div>
+          <a class="btn" href="../research.html">开始 AI 研究</a>
+          <button type="button" class="account-button" data-auth-open="register" data-auth-placement="blog_article" data-guest-only>免费注册</button>
+        </aside>
         {related_discovery}
         <div class="blog-article-content">
           {article_content}
@@ -3992,6 +4118,7 @@ def build_blog(
     base_url: str,
     start_date: date,
     archive_root: Path | None = None,
+    bbg_archive_root: Path | None = None,
 ) -> list[dict[str, Any]]:
     draft_articles = load_blog_draft_articles(drafts_root, start_date)
     if archive_root is None:
@@ -4002,19 +4129,25 @@ def build_blog(
         persist_blog_archive(archive_root, articles, start_date)
     blog_dir = output / "blog"
     blog_dir.mkdir(parents=True, exist_ok=True)
+    bbg_articles = load_bbg_show_articles(bbg_archive_root) if bbg_archive_root else []
     total_pages = page_count(len(articles), BLOG_INDEX_PAGE_SIZE)
     for page_number in range(1, total_pages + 1):
         output_name = "index.html" if page_number == 1 else f"page-{page_number}.html"
         write_text(
             blog_dir / output_name,
-            render_blog_index(articles, base_url, start_date, page_number, BLOG_INDEX_PAGE_SIZE),
+            render_blog_index(articles, base_url, start_date, page_number, BLOG_INDEX_PAGE_SIZE, bbg_articles),
         )
     for article in articles:
         write_text(blog_dir / f'{article["slug"]}.html', render_blog_article(article, base_url))
         for legacy_slug in article.get("legacy_slugs", []):
             if legacy_slug and legacy_slug != article["slug"]:
                 write_text(blog_dir / f"{legacy_slug}.html", render_blog_legacy_redirect(article, base_url))
-    return articles
+    for page_number in range(1, page_count(len(bbg_articles), BLOG_INDEX_PAGE_SIZE) + 1):
+        name = "bbg-show.html" if page_number == 1 else f"bbg-show-{page_number}.html"
+        write_text(blog_dir / name, render_blog_index(bbg_articles, base_url, start_date, page_number, BLOG_INDEX_PAGE_SIZE, collection="bbg-show"))
+    for article in bbg_articles:
+        write_text(blog_dir / f'{article["slug"]}.html', render_blog_article(article, base_url))
+    return sorted([*articles, *bbg_articles], key=lambda row: (row["date"], row["slug"]), reverse=True)
 
 
 def build_seo_outputs(
@@ -4081,11 +4214,13 @@ def build_seo_outputs(
         (blog_page_lastmod(article) for article in blog_articles),
         default=SEO_PAGE_TEMPLATE_REVISION_DATE,
     )
-    blog_index_pages = page_count(len(blog_articles), BLOG_INDEX_PAGE_SIZE)
+    blog_index_pages = page_count(sum(not article.get("bbg_script") for article in blog_articles), BLOG_INDEX_PAGE_SIZE)
+    bbg_index_pages = page_count(sum(bool(article.get("bbg_script")) for article in blog_articles), BLOG_INDEX_PAGE_SIZE)
     terms_lastmod = policy_page_lastmod(output, "terms.html")
     privacy_lastmod = policy_page_lastmod(output, "privacy.html")
     page_rows = [
         sitemap_url(url_join(base_url, "/"), generated_date, "1.0"),
+        *[sitemap_url(url_join(base_url, "blog/bbg-show.html" if number == 1 else f"blog/bbg-show-{number}.html"), blog_lastmod, "0.7") for number in range(1, bbg_index_pages + 1)],
         *[
             sitemap_url(
                 url_join(base_url, collection_page_path("reports", page_number)),
@@ -4126,6 +4261,7 @@ def build_seo_outputs(
             for page_number in range(1, blog_index_pages + 1)
         ],
         sitemap_url(url_join(base_url, "charts"), generated_date, "0.8"),
+        sitemap_url(url_join(base_url, "research.html"), generated_date, "0.9"),
         sitemap_url(url_join(base_url, "about.html"), generated_date, "0.5"),
         sitemap_url(url_join(base_url, "terms.html"), terms_lastmod, "0.2"),
         sitemap_url(url_join(base_url, "privacy.html"), privacy_lastmod, "0.2"),
@@ -4496,6 +4632,7 @@ def main() -> int:
     parser.add_argument("--wechat-drafts-root", default="wechat_drafts")
     parser.add_argument("--blog-start-date", default=BLOG_START_DATE)
     parser.add_argument("--blog-archive-root", default="portal_suite/data/blog_archive")
+    parser.add_argument("--bbg-archive-root", default="portal_suite/data/bbg_show_archive")
     parser.add_argument("--catalog-path", default="portal_suite/data/catalog.json")
     parser.add_argument("--archive-catalog-path", default="portal_suite/data/archive_catalog.json")
     parser.add_argument("--search-index-path", default="portal_suite/data/search_index.json")
@@ -4596,6 +4733,7 @@ def main() -> int:
         base_url=SITE_BASE_URL,
         start_date=parse_blog_start_date(args.blog_start_date),
         archive_root=Path(args.blog_archive_root),
+        bbg_archive_root=Path(args.bbg_archive_root),
     )
     build_seo_outputs(output_dir, catalog, SITE_BASE_URL, blog_articles)
     assert_no_public_mail_client_actions(output_dir)

@@ -443,6 +443,7 @@ function fakeElement(id = "") {
     validity: { valid: true },
     style: {},
     addEventListener() {},
+    insertBefore() {},
     setAttribute() {},
     remove() {},
     focus() {},
@@ -474,6 +475,9 @@ test("account popup and Twotigers admin initialize in their own runtime scopes",
     addEventListener() {},
   };
   const common = {
+    page: "index",
+    trackEvent() {},
+    registrationNoticeText() { return "账号提示"; },
     document,
     window: { alert() {}, clearInterval, setInterval },
     accountModalMarkup() { return ""; },
@@ -526,7 +530,7 @@ test("unified intake and contact availability UI cover every supported source wi
   assert.match(app, /data-admin-intake-more="request"/u);
   assert.match(app, /data-admin-intake-search-more=/u);
   assert.match(app, /申请队列正在后台建立索引，已展示部分结果，请稍后刷新\/加载。/u);
-  assert.match(app, /contactReportStorageMetaText\(internalStorageMetadata\)/u);
+  assert.doesNotMatch(extractFunction(app, "updateMeta"), /contactReportStorageMetaText/u);
   assert.match(app, /requestIntakeByIdentity\.has\(identity\)/u);
   assert.match(app, /上一笔 PDF 上传结果尚未确认/u);
   assert.match(app, /formData\.set\("target_token", targetToken\)/u);

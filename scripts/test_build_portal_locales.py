@@ -541,6 +541,43 @@ class PortalLocaleBuildTests(unittest.TestCase):
         self.assertEqual(report["counts"]["html"], 3)
         self.assertEqual(report["counts"]["hreflang_clusters"], 2)
 
+    def test_bbg_bilingual_pages_stay_chinese_and_locale_links_return_to_root(self) -> None:
+        blog = self.site / "blog"
+        blog.mkdir(exist_ok=True)
+        slug = "bbg-20260908-0123456789abcdef.html"
+        transcript = '<html lang="zh-CN"><head><title>双语节目</title><link rel="canonical" href="https://portal.example.invalid/blog/' + slug + '"></head><body><p lang="zh-Hans">逐段中文原文不进入翻译</p><p lang="en">ORIGINAL ENGLISH TRANSCRIPT</p></body></html>'
+        snapshots = {}
+        for name in (slug, "bbg-show.html", "bbg-show-2.html"):
+            path = blog / name
+            path.write_text(transcript, encoding="utf-8")
+            snapshots[path] = path.read_bytes()
+        (blog / "index.html").write_text(
+            '<html><head><title>研究文章</title><link rel="canonical" href="https://portal.example.invalid/blog/"></head><body>'
+            '<nav><a href="bbg-show.html">BBG Show 中英对照</a></nav>'
+            '<section class="bbg-blog-module"><article><p>模块双语摘要不进入翻译</p></article></section>'
+            '<p>正常研究文章继续翻译</p></body></html>', encoding="utf-8",
+        )
+        translator = RecordingTranslator()
+        self._build(translator)
+        sources = "\n".join(translator.sources)
+        self.assertNotIn("逐段中文原文不进入翻译", sources)
+        self.assertNotIn("ORIGINAL ENGLISH TRANSCRIPT", sources)
+        self.assertNotIn("模块双语摘要不进入翻译", sources)
+        for path, before in snapshots.items():
+            self.assertEqual(path.read_bytes(), before)
+            self.assertNotIn(b"hreflang", path.read_bytes())
+            for locale in builder.LOCALES:
+                self.assertFalse((self.site / locale / "blog" / path.name).exists())
+        for locale in builder.LOCALES:
+            rendered = (self.site / locale / "blog" / "index.html").read_text(encoding="utf-8")
+            self.assertIn(f'href="{SITE_URL}/blog/bbg-show.html"', rendered)
+            self.assertIn('data-kc-chinese-entry=""', rendered)
+            self.assertNotIn('class="bbg-blog-module"', rendered)
+            self.assertNotIn("bbg-", (self.site / f"sitemap-{locale}.xml").read_text(encoding="utf-8"))
+            self.assertEqual(builder.rewrite_public_url(f"./{slug}?view=full#segment-1", locale, SITE_URL), f"{SITE_URL}/blog/{slug}?view=full#segment-1")
+            self.assertEqual(builder.rewrite_public_url(f"/{locale}/blog/bbg-show-2.html", locale, SITE_URL), f"{SITE_URL}/blog/bbg-show-2.html")
+        self.assertEqual(builder.rewrite_public_url("https://example.org/blog/bbg-show.html", "ja", SITE_URL), "https://example.org/blog/bbg-show.html")
+
     def test_builds_complete_locale_routes_and_preserves_chinese_bodies(self) -> None:
         chinese_pages = [
             self.site / "index.html",
@@ -1710,13 +1747,13 @@ if (mode === "程序枚举") document.getElementById("中文节点");
             with self.subTest(program_token=token):
                 self.assertFalse(needs(token))
 
-    def test_real_javascript_covers_all_220_previously_missed_chinese_ternary_literals(self) -> None:
+    def test_real_javascript_covers_all_230_current_chinese_ternary_literals(self) -> None:
         expected_by_asset = {
-            "app.js": 196,
+            "app.js": 202,
             "charts.js": 4,
             "contact.js": 0,
-            "report-chat.js": 19,
-            "report-research-export.js": 1,
+            "report-chat.js": 21,
+            "report-research-export.js": 3,
             "site-runtime.js": 0,
             "xlsx-export.js": 0,
         }
@@ -1748,7 +1785,7 @@ if (mode === "程序枚举") document.getElementById("中文节点");
                     )
             observed[asset_name] = count
         self.assertEqual(observed, expected_by_asset)
-        self.assertEqual(sum(observed.values()), 220)
+        self.assertEqual(sum(observed.values()), 230)
 
     def test_real_javascript_has_no_unclassified_chinese_ui_literals(self) -> None:
         for asset_name in builder.LOCALIZED_JS_ASSETS:
@@ -2075,6 +2112,8 @@ const markup = `<section>${ready ? "嵌套第一分支" : `<span aria-label="图
             "资料吸引力": "جاذبية المادة", "星": "نجوم", "课程资料": "مواد الدورة",
             "在会员文件目录中查看": "العرض في دليل ملفات الأعضاء", "页": "صفحات",
             "报告资料": "مواد التقرير",
+            "报告正文节选与图表": "مقتطفات نص التقرير والرسوم البيانية", "报告正文节选": "مقتطفات نص التقرير",
+            "图表来源": "مصدر الرسم البياني", "正文与图表": "النص والرسوم البيانية", "正文来源": "مصدر النص",
         }
         cache = builder.empty_cache()
         for unit in units.values():

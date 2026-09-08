@@ -508,6 +508,42 @@
     }
   }
 
+  function linkedImageId(href) {
+    try {
+      const value = new URL(href).searchParams.get("image") || "";
+      return IMAGE_ID_RE.test(value) ? value : "";
+    } catch (_error) { return ""; }
+  }
+
+  async function openLinkedChart() {
+    const imageId = linkedImageId(window.location.href);
+    if (!imageId) return false;
+    let row = state.rows.find((item) => item.imageId === imageId);
+    if (!row) {
+      // The private index may be newer than the public static snapshot.
+      const payload = await loadJson(state.workerBase + "/charts?image=" + imageId, null);
+      const item = payload && Array.isArray(payload.items) && payload.items.find((value) => value.image_id === imageId);
+      if (item && item.analysis_version === "chart-search-v2" && Number(item.quality_score) >= 60) {
+        row = { imageId, id: clean(item.id, 80), title: publicText(item.title),
+          description: publicText(item.description), trend: publicText(item.trend_summary),
+          reportId: clean(item.report_id, 80), reportTitle: publicText(item.report_title),
+          dateFolder: clean(item.date_folder, 16), reportPreview: {},
+          chartType: clean(item.chart_type, 60), contentKind: clean(item.content_kind, 60),
+          metrics: publicList(item.metrics), entities: publicList(item.entities), periods: publicList(item.periods),
+          geographies: publicList(item.geographies), units: publicList(item.units), keywords: publicList(item.keywords),
+        };
+      }
+    }
+    if (!row) {
+      elements.resultStatus.textContent = "该图表暂时无法读取，可稍后刷新或搜索其他图表。";
+      return false;
+    }
+    state.filtered = [row]; state.visible = 1; render();
+    elements.resultStatus.textContent = "正在查看引用图表：" + row.title + (row.reportId ? "" : "（尚未关联报告全文）");
+    openChartLightbox(row, null);
+    return true;
+  }
+
   async function start() {
     const [config, payload] = await Promise.all([
       loadJson("data/config.json", {}),
@@ -518,6 +554,7 @@
       elements.resultStatus.textContent = "图表索引暂时无法读取，请稍后刷新。";
       elements.empty.hidden = false;
       elements.results.setAttribute("aria-busy", "false");
+      await openLinkedChart();
       return;
     }
     state.rows = flattenIndex(payload);
@@ -527,6 +564,7 @@
     elements.updatedAt.textContent = updatedLabel(payload.updated_at_bjt);
     populateFilters();
     render();
+    await openLinkedChart();
   }
 
   elements.query.addEventListener("input", () => {

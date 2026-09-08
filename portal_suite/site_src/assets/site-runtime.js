@@ -54,11 +54,15 @@
         return link;
       };
       const newsfeed = actions.querySelector('a[href$="newsfeed.html"]');
+      const research = createLink("research.html", "AI 研究", /\/research\.html$/i);
+      if (research) research.setAttribute("data-research-entry", "navigation");
       const course = createLink("courses.html", "Course", /\/courses\.html$/i);
       const charts = createLink("charts", "Charts", /\/charts(?:\.html)?\/?$/i);
       if (charts) charts.href = "/charts";
       const insert = (link) => {
         if (!link) return;
+        const localePrefix = window.location.pathname.match(/^\/(ko|ja|ar|en|zh-Hant)(?:\/|$)/i);
+        if (localePrefix) link.href = `/${localePrefix[1]}/${link.getAttribute("href").replace(/^\//, "")}`;
         if (newsfeed) actions.insertBefore(link, newsfeed);
         else {
           const account = actions.querySelector("#accountGate, .account-button");
@@ -66,6 +70,7 @@
           else actions.append(link);
         }
       };
+      insert(research);
       insert(course);
       insert(charts);
     });

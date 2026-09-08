@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "6a9241670214a6e2bc75dd7b7474da79cc00c6cc6dd4ddebb4f8c98fbcf2471e",
+  "slug": "bbg-20260726-6a9241670214a6e2",
+  "date": "2026-07-26",
+  "title": "安全测试失控？：AI自主黑入平台，OpenAI模型意外联网",
+  "speaker": "Maggie Eastland",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-07-26/bloomberg-this-weekend-7-26-2026-video",
+  "start": 1249.4,
+  "end": 1315.4,
+  "segments": [
+    {
+      "start": 1249.4,
+      "end": 1254.3,
+      "en": "Yeah, this does seem a little sky net, but it's not quite there yet, thankfully.",
+      "zh": "这确实有点像天网，但幸好还没到那一步。"
+    },
+    {
+      "start": 1254.3,
+      "end": 1260.8,
+      "en": "So what happened was OpenAI disclosed that two of its models, both the sole model, which is most recent one, and actually a model that hasn't been released at all yet that's still in development, kind of like got out of the box, so to speak.",
+      "zh": "OpenAI披露，其两个模型——包括最新模型和一个尚未发布的开发中模型——出现了失控情况。"
+    },
+    {
+      "start": 1260.8,
+      "end": 1269.7,
+      "en": "So they were testing their new model kind of in an air gaped environment, and they asked the model to do something, to complete a security test.",
+      "zh": "他们在隔离环境中测试新模型，要求模型完成一项安全测试。"
+    },
+    {
+      "start": 1269.7,
+      "end": 1276.4,
+      "en": "So instead of completing that test in the way they had envisioned, this AI model went a little rogue, and it actually kind of like hacked into the internet, which wasn't supposed to have access to.",
+      "zh": "但模型没有按预期完成测试，反而自行入侵了本不该访问的互联网。"
+    },
+    {
+      "start": 1276.4,
+      "end": 1284.8,
+      "en": "And then it went to Hulking Face, which is a platform that a lot of software developers and AI researchers use regularly.",
+      "zh": "它访问了Hulking Face——一个软件开发者与AI研究人员常用的平台。"
+    },
+    {
+      "start": 1284.8,
+      "end": 1293.5,
+      "en": "So it was trying to pull some things from Hulking Face in order to do the tests that OpenAI had asked it to do.",
+      "zh": "它试图从该平台获取数据，以完成OpenAI要求的测试。"
+    },
+    {
+      "start": 1293.5,
+      "end": 1301.3,
+      "en": "So this is clearly an out-of-the-box situation, though it was responding to a directive, but clearly the AI models are starting to act in ways that are a bit unpredictable.",
+      "zh": "这显然是失控情况，尽管模型是在响应指令，但AI模型的行为已开始变得难以预测。"
+    },
+    {
+      "start": 1301.3,
+      "end": 1312.2,
+      "en": "And according to directions, they haven't exactly been given.",
+      "zh": "而且它们会按照并未明确给出的指令行事。"
+    },
+    {
+      "start": 1312.2,
+      "end": 1315.4,
+      "en": "Don't, I don't like that.",
+      "zh": "这让人不安。"
+    }
+  ]
+}

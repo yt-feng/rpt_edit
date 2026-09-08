@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "id": "dae5bda5b2964eb5fdf533300088402accf935e30604f6c8acc2e22941ee5c0b",
+  "slug": "bbg-20260625-dae5bda5b2964eb5",
+  "date": "2026-06-25",
+  "title": "OpenAI与博通合作开发AI芯片“Jalapeno”",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-06-24/openai-broadcom-develop-ai-chip-called-jalapeno-video",
+  "start": 0.0,
+  "end": 81.36,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 9.52,
+      "en": "Open AI just announced its first custom artificial intelligence ship developed in partnership with Broadcom, which shows up to 50% more",
+      "zh": "OpenAI 宣布与博通合作开发首款定制AI芯片，处理成本可降低高达50%"
+    },
+    {
+      "start": 9.52,
+      "end": 12.64,
+      "en": "processing cost savings in stores now.",
+      "zh": "现已上市。"
+    },
+    {
+      "start": 12.64,
+      "end": 16.8,
+      "en": "Get yours while supplies last. Sure, I cannot afford one.",
+      "zh": "赶紧买吧，反正我买不起。"
+    },
+    {
+      "start": 16.8,
+      "end": 25.2,
+      "en": "Let's discuss with Bloomberg tech host Ed Lado of variety of things to discuss. Maybe we start with just that breaking news there.",
+      "zh": "与彭博科技主持人Ed Lado讨论，先从这条突发新闻开始。"
+    },
+    {
+      "start": 25.2,
+      "end": 32.72,
+      "en": "It feels like everyone is trying to look to lower their cost. Companies are pushing back. Is this just Broadcom trying to solve that riddle?",
+      "zh": "似乎大家都在寻求降低成本，企业也在施压。博通是在解决这个难题吗？"
+    },
+    {
+      "start": 32.72,
+      "end": 42.32,
+      "en": "All of the above, but from Open AI's perspective, the point of having jalapeno, that's what it's called, is to a diversify. Open AI just like",
+      "zh": "以上皆是。但对OpenAI来说，推出“Jalapeno”芯片是为了多元化。"
+    },
+    {
+      "start": 42.32,
+      "end": 50.24,
+      "en": "everyone else is still very dependent on Nvidia compute, but everyone is also in an environment where they are compute constrained.",
+      "zh": "像其他公司一样，OpenAI仍高度依赖英伟达算力，但大家都面临算力受限。"
+    },
+    {
+      "start": 50.24,
+      "end": 57.04,
+      "en": "They need more and so seeking alternative sources, including including custom silicon or A6 is a good route.",
+      "zh": "他们需要更多算力，因此寻求替代来源，包括定制芯片或A6，这是好办法。"
+    },
+    {
+      "start": 57.04,
+      "end": 68.64,
+      "en": "The pitch of working with Broadcom on A6 is that, you know, on the measures that matter, a dollar per kilowatt basis or a dollar per token basis, it is a",
+      "zh": "与博通合作A6的卖点是，在每美元每千瓦或每美元每token等关键指标上，性能优于现有市场产品。"
+    },
+    {
+      "start": 68.64,
+      "end": 76.24,
+      "en": "better performing system than what is out there from the market IEM video right now. But that's all on paper. So the plan is for Open AI",
+      "zh": "但这只是纸面数据。OpenAI的计划是……"
+    },
+    {
+      "start": 76.24,
+      "end": 81.36,
+      "en": "to deploy these chips in time in existing Microsoft data centers.",
+      "zh": "及时在现有微软数据中心部署这些芯片。"
+    }
+  ]
+}

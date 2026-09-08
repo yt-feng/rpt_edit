@@ -1799,6 +1799,8 @@ test("report chat mixes same-source and topic-matched Charts without unrelated c
     date_folder: "260829",
     page_count: 42,
     available: true,
+    partial_excerpt: true,
+    text_scope: "partial_excerpt",
   }], {
     ai: [{ id: reportId, tf: 12, chunks: ["c0001"] }],
     data: [{ id: reportId, tf: 8, chunks: ["c0001"] }],
@@ -1907,6 +1909,9 @@ test("report chat mixes same-source and topic-matched Charts without unrelated c
   assert.equal(result.response.status, 200, JSON.stringify(result.data));
   assert.equal(result.data.mode, "research");
   assert.equal(result.data.sources[0].id, reportId);
+  assert.equal(result.data.sources[0].partial_excerpt, true);
+  assert.equal(result.data.sources[0].text_scope, "partial_excerpt");
+  assert.match(String(result.data.research_scope), /含历史正文节选[,，]不代表完整报告正文/u);
   assert.deepEqual(result.data.findings[0].source_ids, [reportId]);
   assert.equal(result.data.charts[0].image_id, imageId);
   assert.equal(result.data.charts[0].report_id, reportId);
@@ -1915,8 +1920,12 @@ test("report chat mixes same-source and topic-matched Charts without unrelated c
   assert.equal(result.data.charts[1].report_title, "Goldman AI data-center power outlook");
   assert.equal(result.data.charts[1].date_folder, "260828");
   assert.equal(result.data.charts.some((chart) => chart.image_id === unrelatedImageId), false);
-  assert.equal(result.data.charts.some((chart) => chart.image_id === unresolvedImageId), false);
-  assert.equal(result.data.charts.length, 2, "irrelevant same-source charts must not be used as filler");
+  assert.equal(result.data.charts.some((chart) => chart.image_id === unresolvedImageId), true);
+  const unlinkedChart = result.data.charts.find((chart) => chart.image_id === unresolvedImageId);
+  assert.equal(unlinkedChart.report_id, "");
+  assert.equal(unlinkedChart.source_id, `chart:${unresolvedImageId}`);
+  assert.ok(result.data.sources.some((source) => source.id === `chart:${unresolvedImageId}`));
+  assert.equal(result.data.charts.length, 3, "relevant unlinked images are citable while irrelevant same-source charts stay excluded");
   assert.match(result.data.findings[0].summary, /grid connection delays/u);
   assert.ok(bucket.rangeReadKeys.some((key) => key.endsWith("evidence.tbl")));
   assert.ok(bucket.rangeReadKeys.some((key) => key.endsWith("evidence.dat")));
@@ -2062,7 +2071,8 @@ test("report research real multi-facet question rejects generic AI, year, import
     });
     assert.equal(result.response.status, 200, JSON.stringify(result.data));
     assert.equal(modelCalls, 2);
-    assert.deepEqual(result.data.sources.map((row) => row.id), [sourceReportId], "a source missing one required core must be rejected");
+    assert.deepEqual(result.data.sources.map((row) => row.id), [sourceReportId, crossReportId], "independently matched chart report joins sources while irrelevant full text stays rejected");
+    assert.equal(result.data.sources[1].evidence_kind, "chart_metadata");
     assert.deepEqual(result.data.charts.map((row) => row.image_id), [capexCross, powerTwo, powerOne]);
     assert.equal(JSON.stringify(result.data).includes(aiRevenue), false);
     assert.equal(JSON.stringify(result.data).includes(yearRevenue), false);
@@ -2939,4 +2949,66 @@ test("frontend distinguishes an already-used daily reward from a successful clai
     source.indexOf("if (data.already_owned)"),
   );
   assert.doesNotMatch(duplicateBranch, /portal-reward-change|status:\s*"success"/u);
+});
+
+test("research links chart-only reports into the evidence whitelist when full text misses or is unavailable", async (t) => {
+  for (const mode of ["no_postings", "no_manifest", "unlinked_image"]) await t.test(mode, async () => {
+    const bucket = new MemoryR2();
+    const reportId = "abababababababababababab", imageId = "7".repeat(64);
+    if (mode === "no_postings") await seedReportResearchLookup(bucket, [], {}, []);
+    bucket.seed("_chart-search/v1/index.json", { schema_version: 1, reports: [{
+      report_id: mode === "unlinked_image" ? "" : reportId, title: "Semiconductor investment forecasts", date_folder: "260908",
+      charts: [{ id: "forecast", image_id: imageId, analysis_version: "chart-search-v2",
+        title: "Semiconductor capex forecasts", content_kind: "chart", quality_score: 96,
+        description: "Semiconductor capex reaches 25 billion in 2026.",
+        trend_summary: "Capital spending rises.", metrics: ["25 billion"], periods: ["2026"], keywords: ["semiconductor", "capex"],
+      }],
+    }] });
+    const sourceId = mode === "unlinked_image" ? `chart:${imageId}` : reportId;
+    const env = { ...envFor(bucket), DEEPSEEK_API_KEY: "configured-test-key" };
+    const token = await register(env);
+    const originalFetch = globalThis.fetch;
+    let calls = 0;
+    globalThis.fetch = async (_input, init) => {
+      calls += 1;
+      const payload = JSON.parse(init.body);
+      const result = payload.max_tokens === 400 ? {
+        core: [{ name: "semiconductor", required: true, terms: ["semiconductor"] }],
+        facets: [{ name: "capital expenditure", terms: ["capex"] }], terms: ["semiconductor", "capex"],
+      } : (() => {
+        const modelInput = JSON.parse(payload.messages[1].content);
+        assert.equal(modelInput.sources[0].id, sourceId);
+        assert.equal(modelInput.sources[0].evidence_kind, "chart_metadata");
+        assert.equal(modelInput.sources[0].evidence[0].image_id, imageId);
+        return {
+          research_title: "半导体资本开支研究", summary_source_ids: [sourceId],
+          executive_summary: "图表预计2026年资本开支为25 billion。",
+          findings: [{ title: "图表预测", summary: "图表预计2026年资本开支为25 billion。", source_ids: [sourceId] }],
+          data_points: [{ label: "资本开支", value: "25 billion", context: "2026", source_ids: [sourceId] }],
+          chart_image_ids: [imageId, "f".repeat(64)],
+        };
+      })();
+      return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify(result) } }] }), { status: 200, headers: { "content-type": "application/json" } });
+    };
+    try {
+      const result = await jsonRequest(env, "/report-chat", { method: "POST", headers: { "content-type": "application/json", ...bearer(token) }, body: JSON.stringify({ question: "semiconductor capex" }) });
+      assert.equal(result.response.status, 200, JSON.stringify(result.data));
+      assert.equal(calls, 2);
+      assert.equal(result.data.mode, "research");
+      assert.equal(result.data.sources[0].evidence_kind, "chart_metadata");
+      assert.match(result.data.research_scope, /未命中报告正文/u);
+      assert.deepEqual(result.data.findings[0].source_ids, [sourceId]);
+      assert.equal(result.data.data_points[0].value, "25 billion");
+      assert.deepEqual(result.data.charts.map((chart) => chart.image_id), [imageId]);
+      assert.equal(bucket.getKeys.filter((key) => key === "_chart-search/v1/index.json").length, 1);
+      const exact = await jsonRequest(env, `/charts?image=${imageId}`);
+      assert.equal(exact.response.status, 200);
+      assert.equal(exact.data.items.length, 1);
+      assert.equal(exact.data.items[0].source_id, sourceId);
+      const absent = await jsonRequest(env, `/charts?image=${"f".repeat(64)}`);
+      assert.equal(absent.data.items.length, 0);
+      assert.equal(bucket.rangeReadKeys.some((key) => key.startsWith("_report-chat/")), false);
+      assert.doesNotMatch(JSON.stringify(result.data), /object_key|_chart-search|_report-research/u);
+    } finally { globalThis.fetch = originalFetch; }
+  });
 });

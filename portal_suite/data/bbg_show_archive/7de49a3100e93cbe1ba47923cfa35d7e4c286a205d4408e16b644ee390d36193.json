@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "id": "7de49a3100e93cbe1ba47923cfa35d7e4c286a205d4408e16b644ee390d36193",
+  "slug": "bbg-20260828-7de49a3100e93cbe",
+  "date": "2026-08-28",
+  "title": "英伟达70%增长：算力不够用，真瓶颈在哪？",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-08-27/nvidia-sees-70-growth-as-ai-boom-accelerates-video",
+  "start": 0.0,
+  "end": 90.0,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 5.92,
+      "en": "Our next guest says the real surprise is in Nvidia's earning the durability of that growth outlook.",
+      "zh": "下一位嘉宾表示，真正令人意外的是英伟达盈利中增长前景的持久性。"
+    },
+    {
+      "start": 5.92,
+      "end": 15.68,
+      "en": "Ducu is deputy chief investment officer, a wealth enhancement group which across funds has about $1.9 billion worth of Nvidia stock. What do you mean by durability?",
+      "zh": "Ducu是财富增强集团的副首席**官，该集团旗下基金持有约19亿美元的英伟达权益资产。你说的持久性是什么意思？"
+    },
+    {
+      "start": 15.68,
+      "end": 20.0,
+      "en": "What was the evidence you saw that this goes beyond, I suppose, fiscal 28?",
+      "zh": "你看到的证据表明，这种增长会持续到2028财年之后吗？"
+    },
+    {
+      "start": 21.04,
+      "end": 34.56,
+      "en": "Yeah, I think, frankly, it really did shift the dynamic to me at least and that massive outlook they put forward. I think it shifted the thought process of is-demand slowing and moving this",
+      "zh": "是的，坦白说，这确实改变了我的看法，他们提出的庞大展望让我觉得，问题不再是需求是否放缓，而是行业是否有能力建造足够的计算能力来满足需求。"
+    },
+    {
+      "start": 34.56,
+      "end": 44.56,
+      "en": "to is the industry physically able to build enough compute to satisfy it. I think that was that shocking number that he was just talking about with 70% growth next year but that supply",
+      "zh": "我认为这就是他刚才提到的70%增长令人震惊的原因，但供应受限。我的意思是，可能达到120%，对吧？"
+    },
+    {
+      "start": 44.56,
+      "end": 54.0,
+      "en": "constrained. I mean, it could be 120, right? And so I think everybody thought this cycle was kind of nearing and they were pretty clear that there was a lot of demand not only through hyperscalers",
+      "zh": "所以我认为每个人都以为这个周期接近尾声，但他们明确表示，不仅超大规模数据中心有大量需求，ASI渠道也是如此，因此我认为这确实很有说服力。"
+    },
+    {
+      "start": 54.0,
+      "end": 58.56,
+      "en": "but also through the ASI channels and so I think that's really compelling.",
+      "zh": "所以Doug，让我们谈谈这个。当Ian和我与首席财务官通电话时，他们非常强调超大规模数据中心仍在激增。他们已经为明年下了订单。"
+    },
+    {
+      "start": 59.2,
+      "end": 68.48,
+      "en": "So Doug, let's go there. When Ian and I were on the phone with the CFO collect press, there was a heavy emphasis on the hyperscalers still surging. They've already put their orders",
+      "zh": "如果有一组数据值得关注，那就是业务仍然集中在超大规模数据中心。你对此怎么看，以及英伟达认为这种集中度会持续到2028财年之后？"
+    },
+    {
+      "start": 68.48,
+      "end": 80.48,
+      "en": "in for next year. If there was a set of numbers under the hood, it was the concentration of business still in the hyperscalers. What do you make of that now and the idea that Nvidia feels that broadens",
+      "zh": "是的，我认为她在电话会议上指出，他们基本上是芯片的买家，而其他渠道则更多是整体解决方案。"
+    },
+    {
+      "start": 80.48,
+      "end": 90.0,
+      "en": "beyond fiscal 28? Yeah, I think you know it's it's I think she pointed out on the call that they are you know buyers of chips essentially where some of the other channels it's much more of a total",
+      "zh": "在2028财年之后？是的，我认为你知道，她在电话会议中指出，他们基本上是芯片的买家，而其他渠道则更多是整体解决方案。"
+    }
+  ]
+}

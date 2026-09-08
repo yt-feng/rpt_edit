@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "id": "8b2f5ae5fb7acf186d7b5bbeb203c8e2186139cde0b99297a61efc30c5bfb258",
+  "slug": "bbg-20260804-8b2f5ae5fb7acf18",
+  "date": "2026-08-04",
+  "title": "彭博智库：AI模型烧钱无底洞，盈利模式尚未验证",
+  "speaker": "Robert Lee",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-08-04/the-china-show-8-4-2026-video",
+  "start": 3937.0,
+  "end": 3994.5,
+  "segments": [
+    {
+      "start": 3937.0,
+      "end": 3946.8,
+      "en": "So very briefly, the US is obviously going down a closed route that they're actually charging for money. There is monetization coming through, and it might be slightly out of date on the numbers.",
+      "zh": "简而言之，美国显然在走一条封闭路线，他们实际上在收费。变现正在发生，数字可能有点过时。"
+    },
+    {
+      "start": 3946.8,
+      "end": 3960.4,
+      "en": "approximately, based on the last disclosure numbers, or estimating numbers, I should say, for OpenAI. For every dollar revenue, they're generating, they're losing a dollar, because these models consume a huge amount of electricity through inference.",
+      "zh": "根据最新披露或估算数据，OpenAI每产生1美元收入，就亏损1美元，因为模型推理消耗大量电力。"
+    },
+    {
+      "start": 3960.4,
+      "end": 3970.0,
+      "en": "So operating these models is expensive, and that's ignoring the catbeck side. So I think the sustainability of the models, the operating model, the commercial model on a global basis is still yet to be proven.",
+      "zh": "运营这些模型成本高昂，这还没算资本开支。所以全球范围内，模型的可持续性、运营模式和商业模式尚未得到验证。"
+    },
+    {
+      "start": 3970.0,
+      "end": 3983.4,
+      "en": "It's the infrastructure companies, the ones who are riding a catbeck cycle who are making the money. But if the ultimate users of that catbecks in those data centers aren't making a net profit, then it's just things sustainable, and I would say it is not.",
+      "zh": "赚钱的是基础设施公司，那些处于资本开支周期中的公司。但如果数据中心资本开支的最终用户没有净利润，那么这就不可持续，我认为不可持续。"
+    },
+    {
+      "start": 3983.4,
+      "end": 3994.5,
+      "en": "There is no evidence to support that whatsoever. This is something that's afflicting both the Chinese and the AI developers, I suppose.",
+      "zh": "没有任何证据支持这一点。我认为这困扰着中国和美国的AI开发者。"
+    }
+  ]
+}

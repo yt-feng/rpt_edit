@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "id": "b17a23fb178a972b368abf58dee51750a8e30d0633984439d6b0089166322ee5",
+  "slug": "bbg-20260712-b17a23fb178a972b",
+  "date": "2026-07-12",
+  "title": "彭博社Olivia Solon：Fear扩展在后台自动点击，劫持佣金",
+  "speaker": "Olivia Solon",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-07-12/bloomberg-this-weekend-7-12-2026-video",
+  "start": 2318.0,
+  "end": 2394.0,
+  "segments": [
+    {
+      "start": 2318.0,
+      "end": 2328.6,
+      "en": "And as you're looking on e-commerce sites, it kind of offers you discount codes. And in theory, fear should only get the commission if a shopper clicks on one of those discount codes or clicks through from the fear app to buying something.",
+      "zh": "当你在电商网站浏览时，它会提供折扣码。理论上，Fear只有在用户点击折扣码或从Fear应用点击购买时才能获得佣金。"
+    },
+    {
+      "start": 2328.6,
+      "end": 2342.6,
+      "en": "That's all like very normal way of affiliate marketing working. But what we found was that if you had the fear extension installed on your mobile browser, it would fire an automatic click in the background.",
+      "zh": "这完全是联盟营销的正常方式。但我们发现，如果你在移动浏览器上安装了Fear扩展，它会在后台自动触发一次点击。"
+    },
+    {
+      "start": 2342.6,
+      "end": 2358.6,
+      "en": "The moment you put something in your shopping cart on any of the sites that had partner with, even if you didn't interact with fears app or extension.",
+      "zh": "当你在任何合作网站上将商品加入购物车时，即使你没有与Fear的应用或扩展互动。"
+    },
+    {
+      "start": 2358.6,
+      "end": 2376.6,
+      "en": "So to go back to the Wirecutter example, you'd click through from Wirecutter, put the laptop in your shopping cart, and fear would automatically click in the background, open a new tab that the user wouldn't see because you're on your mobile browser and you just see the one you're on.",
+      "zh": "回到Wirecutter的例子，你从Wirecutter点击进入，将笔记本电脑加入购物车，Fear会在后台自动点击，打开一个新标签页，用户看不到，因为移动浏览器上只显示当前页面。"
+    },
+    {
+      "start": 2376.6,
+      "end": 2394.0,
+      "en": "And in doing so, set the fear cookie overriding the Wirecutter cookie. And that allows it to take the credit for the subsequent sale, which it's not supposed to do. So instead of Wirecutter getting the commission fear would, it would also do something similar if you just go straight to a retailer's website with no referral from another website.",
+      "zh": "这样，Fear的Cookie覆盖了Wirecutter的Cookie，从而窃取了后续销售的功劳。Wirecutter拿不到佣金，Fear却拿到了。如果你直接访问零售商网站，没有其他网站推荐，它也会做类似的事。"
+    }
+  ]
+}

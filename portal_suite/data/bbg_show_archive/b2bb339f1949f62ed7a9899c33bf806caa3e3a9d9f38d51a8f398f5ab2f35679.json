@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "id": "b2bb339f1949f62ed7a9899c33bf806caa3e3a9d9f38d51a8f398f5ab2f35679",
+  "slug": "bbg-20260721-b2bb339f1949f62e",
+  "date": "2026-07-21",
+  "title": "月之暗面Kimi K3模型冲击美国科技股",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-07-20/how-moonshot-s-ai-model-puts-pressure-on-us-tech-video",
+  "start": 0.0,
+  "end": 86.04,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 5.04,
+      "en": "For that, we're joined by Bloomberg executive editor for Global Technology, Peter Elstrom.",
+      "zh": "我们请到了彭博全球科技执行主编Peter Elstrom。"
+    },
+    {
+      "start": 5.04,
+      "end": 11.96,
+      "en": "So Peter, how do you read this moment? Do you think that it's a deep seek version two or do you think it's something different?",
+      "zh": "Peter，你怎么看？这是DeepSeek第二版还是别的什么？"
+    },
+    {
+      "start": 11.96,
+      "end": 17.44,
+      "en": "Because now a lot of the tech companies kind of had an idea of what the deep seek could do, but this is moonshot.",
+      "zh": "很多科技公司已经了解DeepSeek的能力，但这是Moonshot。"
+    },
+    {
+      "start": 17.44,
+      "end": 28.44,
+      "en": "Maybe it's something new altogether. Yeah, I think the tech companies in the U.S. in particular thought they knew where the competition was coming from in China, and this was a bit of a surprise.",
+      "zh": "可能是个全新事物。美国科技公司以为知道中国竞争来自哪里，这次有点意外。"
+    },
+    {
+      "start": 28.44,
+      "end": 31.52,
+      "en": "We had seen the deep seek moment last year as you had talked about.",
+      "zh": "去年我们看到了DeepSeek时刻。"
+    },
+    {
+      "start": 31.52,
+      "end": 38.88,
+      "en": "There were some other players that were kind of prominent, including Oli Baba, the e-commerce company that has a strong model in Gwen in particular.",
+      "zh": "还有其他突出玩家，比如阿里巴巴，其通义千问模型很强。"
+    },
+    {
+      "start": 38.88,
+      "end": 51.0,
+      "en": "But then over the weekend we got this news from moonshot that they had introduced Kimi K3, which is a very powerful model, it outstrips most of the frontier models on many parameters,",
+      "zh": "周末Moonshot推出Kimi K3，非常强大，在多项参数上超越大多数前沿模型。"
+    },
+    {
+      "start": 51.0,
+      "end": 54.88,
+      "en": "except for the two leading ones from Anthropic and OpenAI.",
+      "zh": "仅落后于Anthropic和OpenAI的两大领先模型。"
+    },
+    {
+      "start": 54.88,
+      "end": 61.8,
+      "en": "So it's a very strong performer, it has 2.8 trillion parameters, which is sort of like equivalent to brain synapses.",
+      "zh": "它拥有2.8万亿参数，相当于大脑突触。"
+    },
+    {
+      "start": 61.8,
+      "end": 70.2,
+      "en": "It's a very powerful model, and I think that's surprised people that there was yet another Chinese company that was able to come and compete with the best from Silicon Valley on",
+      "zh": "这令人惊讶，又一家中国公司能与硅谷顶尖模型竞争。"
+    },
+    {
+      "start": 70.2,
+      "end": 74.56,
+      "en": "a number of parameters at cost that people really don't understand at this point.",
+      "zh": "大量参数的成本，目前人们还不太了解。"
+    },
+    {
+      "start": 74.56,
+      "end": 81.32,
+      "en": "Many of these Chinese models are also open source or open weight, so they're much less expensive, they're offered very broadly.",
+      "zh": "许多中国模型是开源或开放权重的，因此价格更低，应用广泛。"
+    },
+    {
+      "start": 81.32,
+      "end": 86.04,
+      "en": "If you don't want to run them on somebody else's computer systems, you can run them on your own.",
+      "zh": "如果不想用别人的系统，可以自己运行。"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "id": "0a45b49a7d1b965d3688114f2d19960280b33bf908a207b12dfa06312e772b30",
+  "slug": "bbg-20260831-0a45b49a7d1b965d",
+  "date": "2026-08-31",
+  "title": "存储短缺：或延至2029，谁将承压？",
+  "speaker": "Leonid Miranov",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-08-31/the-china-show-8-31-2026-video",
+  "start": 1728.7,
+  "end": 1822.5,
+  "segments": [
+    {
+      "start": 1728.7,
+      "end": 1739.4,
+      "en": "So I think it's clear that DDR5 and now DDR6 is getting much more competitive. And yet, despite the ramp up, it looks like the demand is insatiable, right? It looks like everyone who can make the DR5 and 6 now is able to sell it at a reasonably high rate.",
+      "zh": "显然，DDR5和现在的DDR6竞争越来越激烈。但尽管产能爬坡，需求似乎依然旺盛。现在只要能生产DDR5和DDR6的厂商，都能以相当高的价格卖出去。"
+    },
+    {
+      "start": 1748.0,
+      "end": 1769.7,
+      "en": "It's very hard to tell, because I think of it this way, right? At the very front of the ramp sort of ranking, you have the HBM, right? And HBM is clearly struggling for process, right? So Hynix is clearly struggling to produce in volume and struggling with yields. Something seems like they figured it out, but they don't have enough capacity to saturate the market to themselves.",
+      "zh": "这很难说。我是这么看的：在产能爬坡的最前沿是HBM，而HBM显然在制程上遇到困难。海力士明显在量产和良率上挣扎。似乎他们解决了问题，但产能不足以独自满足整个市场。"
+    },
+    {
+      "start": 1775.4,
+      "end": 1791.4,
+      "en": "So HBM will be sold out completely for a prolonged period of time, right? So the question is, how long does this keep bumping people down into sort of straight up DDR? And I think for the next few years, at least, this is the dynamic, right?",
+      "zh": "因此HBM将在很长一段时间内完全售罄。问题是，这种状况会持续多久，迫使人们转向标准DDR？我认为至少未来几年都会是这样。"
+    },
+    {
+      "start": 1791.4,
+      "end": 1809.8,
+      "en": "Unless there are breakthroughs in terms of efficiency gains and in terms of figuring out ways to use less RAM in general, DRAM in particular, in sort of in-chips, we are likely stuck with this shortage. And at least 27 is clearly going to be a shortage year, 2028 is likely going to be a shortage year.",
+      "zh": "除非在能效提升和减少芯片内RAM/DRAM用量方面取得突破，否则我们很可能陷入短缺。至少2027年明显是短缺年，2028年可能也是短缺年。"
+    },
+    {
+      "start": 1810.8,
+      "end": 1822.5,
+      "en": "And honestly, I don't think people think of about 29 being a shortage year, right? And if that's going to be the case, then the prices have nowhere to go but up. And I think it's a very positive environment for all DR manufacturers.",
+      "zh": "说实话，我认为人们不会想到2029年也是短缺年。如果真是这样，价格只能上涨。我认为这对所有DR制造商来说都是非常有利的环境。"
+    }
+  ]
+}

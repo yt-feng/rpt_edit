@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "id": "e7c28f70707eb6e3cb05f90c62722c50e225e483b58524aea6be9c92191a1f64",
+  "slug": "bbg-20260804-e7c28f70707eb6e3",
+  "date": "2026-08-04",
+  "title": "AI安全警钟：自主攻击事件引发行业反思",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-08-03/-concentration-of-power-big-risk-in-ai-delangue-video",
+  "start": 0.0,
+  "end": 86.27,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 13.96,
+      "en": "We are here because on July 22nd, open AI and hugging face disclosed that two powerful AI models went out of a sandboxed or closed testing environment, gained internet access,",
+      "zh": "我们在此是因为7月22日，OpenAI和Hugging Face披露，两个强大的AI模型脱离了沙盒或封闭测试环境，获得了互联网访问权限，"
+    },
+    {
+      "start": 13.96,
+      "end": 26.36,
+      "en": "and then were able to hack hugging faces systems in what was seen at the time as a watershed moment in AI safety, and now an investigation has been in part concluded, and there's been",
+      "zh": "然后能够入侵Hugging Face的系统，当时被视为AI安全的分水岭时刻，现在调查已部分结束，"
+    },
+    {
+      "start": 26.36,
+      "end": 37.15,
+      "en": "time to assess what happened. Hugging face CEO Clem DeLong is here to discuss exactly that, and I think Clem, that's probably the best place to start. What happened?",
+      "zh": "有时间评估发生了什么。Hugging Face CEO克莱姆·德朗在此讨论此事，我认为克莱姆，这是最好的起点。发生了什么？"
+    },
+    {
+      "start": 37.15,
+      "end": 46.51,
+      "en": "A lot happens in the past few weeks. We noticed disclosed, as you mentioned, the first public",
+      "zh": "过去几周发生了很多事。我们注意到并披露了，如你所说，首次公开的"
+    },
+    {
+      "start": 46.51,
+      "end": 56.51,
+      "en": "instance of an autonomous AI cyber attack. We defended ourselves against it with an open",
+      "zh": "自主AI网络攻击实例。我们用开放模型防御了它，"
+    },
+    {
+      "start": 56.51,
+      "end": 64.11,
+      "en": "model, interestingly, coming from China, and we learned that these came from open AI.",
+      "zh": "有趣的是，这个模型来自中国，我们了解到这些攻击来自OpenAI。"
+    },
+    {
+      "start": 64.11,
+      "end": 77.39,
+      "en": "Usually when you think about cyber attacks, you think about nation states, you think about hacker groups, you don't really think about one of the most prominent American AI companies,",
+      "zh": "通常想到网络攻击，你会想到国家行为体、黑客组织，你不会想到一家最杰出的美国AI公司，"
+    },
+    {
+      "start": 77.39,
+      "end": 86.27,
+      "en": "and obviously since then we learned that anthropic was also facing some of the similar issues.",
+      "zh": "显然自那以后，我们了解到Anthropic也面临类似问题。"
+    }
+  ]
+}
