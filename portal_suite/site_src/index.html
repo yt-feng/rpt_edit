@@ -54,7 +54,7 @@
         <span>KC桌面</span>
       </a>
       <div class="topbar-actions">
-        <div class="catalog-meta" id="catalogMeta">Loading catalog...</div>
+        <a class="topbar-link is-active" href="/" aria-current="page">报告检索</a>
         <a class="topbar-link research-nav" href="research.html" data-research-entry="navigation">AI 研究</a>
         <a class="topbar-link" href="blog/">Blog</a>
         <a class="topbar-link" href="courses.html">Course</a>
@@ -67,23 +67,10 @@
     </header>
 
     <main class="shell">
-      <section class="journey-hero" aria-labelledby="journeyTitle">
-        <div>
-          <p class="journey-eyebrow">从找到报告，到形成自己的判断</p>
-          <h2 id="journeyTitle">带着问题来，带着研究走。</h2>
-          <p>用一句话查找相关报告，综合观点、数据与可用图表，并下载带来源的研究文档。</p>
-          <div class="journey-actions">
-            <a class="primary" href="research.html" data-research-entry="home_hero">开始 AI 研究 <span aria-hidden="true">→</span></a>
-            <button class="secondary-button" type="button" data-auth-open="register" data-auth-placement="home_hero" data-guest-only>免费注册，开启每日研究</button>
-            <button class="secondary-button" type="button" data-auth-open="checkin" data-auth-placement="home_hero" data-member-only hidden>今日目标 · 签到后读一份报告</button>
-          </div>
-          <p class="journey-note" data-guest-only>可先体验 AI 研究；注册后使用账号研究额度、每日签到和报告券。全文下载按账号权益开放。</p>
-        </div>
-        <ol class="journey-steps" aria-label="研究流程"><li><b>01</b>提出研究问题</li><li><b>02</b>核对结论与来源</li><li><b>03</b>下载 Word / PDF</li></ol>
-      </section>
       <section class="search-panel" aria-labelledby="searchTitle">
         <div class="search-copy">
           <h1 id="searchTitle">KC桌面</h1>
+          <div class="subtle" id="catalogMeta">Loading catalog...</div>
           <p class="subtle">KC桌面面向全球中文用户提供研究笔记与金融研报索引，支持简体中文、繁體中文、英文机构名、公司名与 ticker 检索。<a href="reports/institutions/bernstein/">浏览伯恩斯坦研报（Bernstein Research）</a></p>
         </div>
         <label class="search-box search-main">
@@ -320,31 +307,6 @@
         <div id="searchRecommendationsResults" class="related-list"></div>
       </section>
 
-      <section class="report-chat-panel" id="homeReportChat" aria-labelledby="homeReportChatTitle">
-        <div class="report-chat-heading">
-          <div>
-            <p>AI RESEARCH</p>
-            <h2 id="homeReportChatTitle">用自然语言生成跨报告研究</h2>
-            <span>检索多份研究报告的正文、数据与历史 Charts，形成带来源的综合结论。</span>
-          </div>
-          <a class="secondary-button" href="research.html" data-research-entry="home_composer">进入 AI 研究工作台 →</a>
-        </div>
-        <aside class="report-chat-popular" id="homeChatPopular" aria-labelledby="homeChatPopularTitle" hidden>
-          <div class="report-chat-popular-heading">
-            <strong id="homeChatPopularTitle">热门研究问题</strong>
-            <span>点击直接查看已生成研究，不消耗本次生成额度</span>
-          </div>
-          <div class="report-chat-popular-list" id="homeChatPopularList"></div>
-        </aside>
-        <form class="report-chat-form" id="homeChatForm">
-          <textarea id="homeChatInput" rows="3" maxlength="600" placeholder="例如：综合最近半年投行观点，研究 AI 数据中心电力瓶颈、资本开支与主要分歧，并引用数据和图表"></textarea>
-          <button class="primary" type="submit">生成研究</button>
-        </form>
-        <div id="homeChatStatus" class="status-line" aria-live="polite"></div>
-        <div id="homeChatMessages" class="report-chat-messages"></div>
-        <div id="homeChatRecommendations" class="report-chat-recommendations"></div>
-      </section>
-
       <section class="about-section" aria-labelledby="aboutTitle">
         <div class="about-copy">
           <h2 id="aboutTitle">关于我们</h2>
@@ -369,7 +331,5 @@
     <script src="assets/contact.js?v=site-20260901a"></script>
     <script src="assets/analytics.js"></script>
     <script src="assets/app.js?v=site-20260901a"></script>
-    <script src="assets/report-research-export.js"></script>
-    <script src="assets/report-chat.js?v=site-20260901a"></script>
   </body>
 </html>
