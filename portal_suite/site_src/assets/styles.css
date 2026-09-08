@@ -6793,6 +6793,10 @@ a.secondary-button {
   min-width: 0;
 }
 
+.report-research-finding-copy p {
+  white-space: pre-line;
+}
+
 .report-research-findings article p,
 .report-research-data-grid article p {
   margin-top: 7px;

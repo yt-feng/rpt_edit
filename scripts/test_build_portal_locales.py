@@ -1747,13 +1747,13 @@ if (mode === "程序枚举") document.getElementById("中文节点");
             with self.subTest(program_token=token):
                 self.assertFalse(needs(token))
 
-    def test_real_javascript_covers_all_230_current_chinese_ternary_literals(self) -> None:
+    def test_real_javascript_covers_all_233_current_chinese_ternary_literals(self) -> None:
         expected_by_asset = {
             "app.js": 202,
             "charts.js": 4,
             "contact.js": 0,
-            "report-chat.js": 21,
-            "report-research-export.js": 3,
+            "report-chat.js": 23,
+            "report-research-export.js": 4,
             "site-runtime.js": 0,
             "xlsx-export.js": 0,
         }
@@ -1785,7 +1785,7 @@ if (mode === "程序枚举") document.getElementById("中文节点");
                     )
             observed[asset_name] = count
         self.assertEqual(observed, expected_by_asset)
-        self.assertEqual(sum(observed.values()), 230)
+        self.assertEqual(sum(observed.values()), 233)
 
     def test_real_javascript_has_no_unclassified_chinese_ui_literals(self) -> None:
         for asset_name in builder.LOCALIZED_JS_ASSETS:
@@ -2114,6 +2114,7 @@ const markup = `<section>${ready ? "嵌套第一分支" : `<span aria-label="图
             "报告资料": "مواد التقرير",
             "报告正文节选与图表": "مقتطفات نص التقرير والرسوم البيانية", "报告正文节选": "مقتطفات نص التقرير",
             "图表来源": "مصدر الرسم البياني", "正文与图表": "النص والرسوم البيانية", "正文来源": "مصدر النص",
+            "发布时间": "وقت النشر", "监测时间": "وقت الرصد", "新闻简介": "ملخص الخبر", "官方来源摘要": "ملخص المصدر الرسمي",
         }
         cache = builder.empty_cache()
         for unit in units.values():
