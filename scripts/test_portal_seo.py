@@ -522,7 +522,9 @@ class SeoOutputTests(unittest.TestCase):
             builder.version_assets(output)
             versioned_home = (output / "index.html").read_text(encoding="utf-8")
             self.assertRegex(versioned_home, r'assets/app\.js\?v=[0-9a-f]{8}')
-            self.assertRegex(versioned_home, r'assets/report-chat\.js\?v=[0-9a-f]{8}')
+            self.assertNotIn('assets/report-chat.js', versioned_home)
+            versioned_research = (output / "research.html").read_text(encoding="utf-8")
+            self.assertRegex(versioned_research, r'assets/report-chat\.js\?v=[0-9a-f]{8}')
             self.assertRegex(versioned_home, r'assets/styles\.css\?v=[0-9a-f]{8}')
             versioned_institution = (
                 output / "reports" / "institutions" / "goldman-sachs" / "index.html"
