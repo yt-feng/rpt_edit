@@ -52,7 +52,7 @@ function matches(value, terms) {
 function matchesGroup(value, group) {
   const terms = group.terms || [];
   if (terms.includes("datacenter") || (terms.includes("data") && terms.includes("center"))) {
-    return /\bdata[\s-]*cent(?:er|re)s?\b|\bdatacenters?\b|\baidc\b|数据中心|算力中心/iu.test(value);
+    return /\bdata[\s-]*cent(?:er|re)s?\b|\bdatacenters?\b|\baidcs?\b|数据中心|算力中心/iu.test(value);
   }
   return matches(value, terms);
 }
