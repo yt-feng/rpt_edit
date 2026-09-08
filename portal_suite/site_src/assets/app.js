@@ -8764,6 +8764,7 @@
     });
     scopeFilter.addEventListener("change", async () => {
       startCatalogForUserIntent();
+      scheduleExternalSearch();
       if (scopeFilter.value === "charts") {
         if (chartSearchSection) chartSearchSection.hidden = false;
         if (chartSearchStatus) chartSearchStatus.textContent = "正在读取图表索引…";
@@ -8777,7 +8778,6 @@
       }
       scheduleHotReportSearch(scopeFilter.value === "charts" ? "" : input.value.trim(), 0);
       renderHotReports();
-      scheduleExternalSearch();
     });
     pageSize.addEventListener("change", () => render({ resetPage: true }));
     prevPage.addEventListener("click", () => {
@@ -8811,8 +8811,8 @@
     }
 
     // --- 其他报告 integration ---------------------------------------------
-    // Live search through the Worker proxy. Rows open the same password-gated
-    // detail flow used by primary reports.
+    // Live search and the latest think-tank reports use the Worker proxy.
+    // Rows open the same password-gated detail flow used by primary reports.
     const externalUrl = workerUrl;
     const thinkTankSection = document.getElementById("thinkTankSection");
     const thinkTankResults = document.getElementById("thinkTankResults");
@@ -9056,7 +9056,13 @@
     }
 
     function markRemoteSourceUnavailable(source, query, generation, message) {
-      if (generation !== remoteSearchGeneration || query !== input.value.trim()) return;
+      if (generation !== remoteSearchGeneration || query !== input.value.trim() || scopeFilter.value === "charts") return;
+      if (source === "thinktank" && !query) {
+        if (thinkTankResults) thinkTankResults.innerHTML = "";
+        if (thinkTankCount) thinkTankCount.textContent = "";
+        setThinkTankStatus("最新报告暂时无法加载，请稍后重试或输入关键词搜索。", "error");
+        return;
+      }
       if (!["waiting", "searching"].includes(remoteSourceStates.get(source))) return;
       remoteSourceStates.set(source, "error");
       searchResultCounts[source] = "error";
@@ -9100,22 +9106,25 @@
 
     async function runThinkTankSearch(query, signal, generation = remoteSearchGeneration) {
       if (!thinkTankSection || !thinkTankResults) return;
-      if (!externalUrl || !query) {
+      if (!externalUrl || scopeFilter.value === "charts") {
         hideThinkTankResults();
         return;
       }
+      const browsingLatest = !query;
       const token = ++thinkTankToken;
       const isCurrent = () => generation === remoteSearchGeneration
         && query === input.value.trim()
+        && scopeFilter.value !== "charts"
         && token === thinkTankToken;
-      setRemoteSourceState("thinktank", "searching", query);
+      if (!browsingLatest) setRemoteSourceState("thinktank", "searching", query);
+      thinkTankItems.clear();
       thinkTankSection.hidden = false;
-      if (thinkTankCount) thinkTankCount.textContent = "搜索中…";
+      if (thinkTankCount) thinkTankCount.textContent = browsingLatest ? "最新报告" : "搜索中…";
       setThinkTankStatus("");
       thinkTankResults.innerHTML = `
         <div class="loading-state">
           <span class="loading-spinner" aria-hidden="true"></span>
-          <span>正在搜索国际智库…</span>
+          <span>${browsingLatest ? "正在加载美国国会研究处最新报告…" : "正在搜索国际智库…"}</span>
         </div>
       `;
       try {
@@ -9123,37 +9132,54 @@
           `${externalUrl}/thinktank/search?q=${encodeURIComponent(query)}`,
           { cache: "no-store", signal },
         );
-        if (!response.ok) throw new Error(`搜索失败 (${response.status})`);
+        if (!response.ok) throw new Error(`${browsingLatest ? "加载失败" : "搜索失败"} (${response.status})`);
         const data = await response.json();
         if (!isCurrent()) return;
         const items = Array.isArray(data.items)
           ? data.items.map((item) => publicSearchItem(item, THINKTANK_SOURCE))
           : [];
-        searchResultCounts.thinktank = items.length;
+        const partialSources = Array.isArray(data.partial_sources)
+          ? data.partial_sources.length > 0
+          : Boolean(data.partial_sources);
+        const sourceUnavailable = items.length === 0
+          && (["miss", "stale"].includes(data.cache_status) || partialSources || Boolean(data.warning));
+        const warning = data.warning
+          ? localizedServiceMessage(data.warning, "The upstream source is temporarily unavailable; cached results may be shown.")
+          : (data.cache_status === "stale"
+            ? "来源暂时无法更新，当前展示此前取得的报告。"
+            : (partialSources ? "部分智库来源暂不可用，当前结果可能不完整。" : ""));
+        searchResultCounts.thinktank = browsingLatest ? 0 : (sourceUnavailable ? "error" : items.length);
         thinkTankItems.clear();
         items.forEach((item) => thinkTankItems.set(String(item.id), item));
-        if (thinkTankCount) thinkTankCount.textContent = items.length ? `${items.length} 条` : "";
+        if (thinkTankCount) thinkTankCount.textContent = items.length
+          ? `${browsingLatest ? "最新 " : ""}${items.length} 条`
+          : "";
         thinkTankResults.innerHTML = items.length
           ? items.map(thinkTankRow).join("")
-          : '<div class="empty-state">暂无匹配结果。</div>';
-        trackEvent(workerUrl, "search", {
-          source: THINKTANK_SOURCE,
-          query,
-          result_count: items.length,
-          total_count: data.total || 0,
-          cache_status: data.cache_status || "",
-        });
+          : (sourceUnavailable ? "" : `<div class="empty-state">${browsingLatest ? "暂无最新报告，可输入关键词搜索国际智库。" : "暂无匹配结果。"}</div>`);
+        setThinkTankStatus(warning || (sourceUnavailable ? "国际智库来源暂时不可用，请稍后重试。" : ""), sourceUnavailable ? "error" : "");
+        if (!browsingLatest) {
+          trackEvent(workerUrl, "search", {
+            source: THINKTANK_SOURCE,
+            query,
+            result_count: items.length,
+            total_count: data.total || 0,
+            cache_status: data.cache_status || "",
+          });
+          setRemoteSourceState("thinktank", sourceUnavailable ? "error" : "done", query);
+        }
         renderSearchRecommendations();
-        setRemoteSourceState("thinktank", "done", query);
       } catch (error) {
         if (error && error.name === "AbortError") return;
         if (!isCurrent()) return;
         if (thinkTankCount) thinkTankCount.textContent = "";
         thinkTankResults.innerHTML = "";
-        setThinkTankStatus(error.message || "搜索暂不可用。", "error");
-        searchResultCounts.thinktank = "error";
+        setThinkTankStatus(browsingLatest
+          ? "最新报告暂时无法加载，请稍后重试或输入关键词搜索。"
+          : (error.message || "搜索暂不可用。"), "error");
+        searchResultCounts.thinktank = browsingLatest ? 0 : "error";
         renderSearchRecommendations();
-        setRemoteSourceState("thinktank", "error", query);
+        if (!browsingLatest) setRemoteSourceState("thinktank", "error", query);
       }
     }
 
@@ -9414,6 +9440,9 @@
         hideAuthorityResults();
         remoteSourceStates.clear();
         renderRemoteSourceProgress("");
+        if (scopeFilter.value !== "charts") {
+          void runRemoteSearchWithDeadline("thinktank", "", generation, runThinkTankSearch);
+        }
         return;
       }
       remoteSourceStates.clear();
@@ -9586,9 +9615,8 @@
     const initialQuery = new URLSearchParams(window.location.search).get("q");
     if (initialQuery && input) {
       input.value = initialQuery.slice(0, 200);
-      prepareRemoteSearch(input.value.trim());
-      scheduleExternalSearch();
     }
+    scheduleExternalSearch();
 
     let searchIndexPrunedText = false;
     let historyTextState = "idle";
