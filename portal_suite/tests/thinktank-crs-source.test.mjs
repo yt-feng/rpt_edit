@@ -8,6 +8,7 @@ import { fileURLToPath } from "node:url";
 const workerPath = fileURLToPath(new URL("../../workers/portal-suite-worker/src/index.js", import.meta.url));
 const source = fs.readFileSync(workerPath, "utf8")
   .replace(/^import\s*\{[\s\S]*?\}\s*from\s*["']\.\/source-lead-adapter\.js["'];\s*/m, "")
+  .replace(/^import\s*\{[^}]+\}\s*from\s*["']\.\/research-news(?:-snapshot)?\.js["'];\s*/gm, "")
   .replace(/\bexport default\s*\{/, "globalThis.__workerExport = {");
 const names = ["parseCrsRssRows", "parseCrsDetailRow", "crsIsoDate", "crsSearchRows", "thinkTankId", "thinkTankDate", "thinkTankObjectKeyForRow", "handleThinkTankSearch", "handleThinkTankItem", "handleThinkTankPdf", "warmThinkTankRows", "searchCacheKey", "fetchCrsMetadataText"];
 

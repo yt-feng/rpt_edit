@@ -20,6 +20,7 @@ const runnableAdapter = adapterSource.replace(/\nexport\s*\{[\s\S]*?\};\s*$/m, "
 assert.notEqual(runnableAdapter, adapterSource, "adapter exports must be removed for the VM harness");
 const runnableWorker = workerSource
   .replace(importPattern, "")
+  .replace(/^import\s*\{[^}]+\}\s*from\s*["']\.\/research-news(?:-snapshot)?\.js["'];\s*/gm, "")
   .replace(/\bexport default\s*\{/, "globalThis.__workerExport = {");
 
 function extractFunction(source, name) {
