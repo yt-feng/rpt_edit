@@ -24072,7 +24072,9 @@ async function fetchCrsMetadataText(url, headers = {}) {
     const response = await fetch(url, {
       headers: { Accept: "application/json,application/rss+xml,text/html;q=0.8", ...headers },
       signal: controller.signal,
-      redirect: "error",
+      // workerd accepts manual/follow only. Non-2xx (including redirects)
+      // is rejected below, without forwarding headers to another origin.
+      redirect: "manual",
     });
     if (!response.ok) {
       const error = new Error(`CRS metadata unavailable (${response.status}).`);
