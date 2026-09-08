@@ -16062,7 +16062,12 @@ function researchNumericTokens(value) {
     // negative sign on the second year. Standalone signed values stay intact.
     .replace(/(?<![\d.+-])(\d{4})\s*-\s*(?=\d{4}(?!\d|\.\d|%))/gu, "$1–");
   return (normalized.match(/(?<!\d)(?:[+-]\s*)?(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?(?:\s*%)?/gu) || [])
-    .map((token) => token.replace(/[\s,]/gu, "").replace(/^\+/u, ""));
+    // Normalize formatting only, without floating-point conversion or rounding:
+    // ISO month 09 equals 9, and 53.000 equals 53. Signs and % remain intact.
+    .map((token) => token.replace(/[\s,]/gu, "").replace(/^\+/u, "")
+      .replace(/^(-?)0+(?=\d)/u, "$1")
+      .replace(/(\.\d*?)0+(?=%?$)/u, "$1")
+      .replace(/\.(?=%?$)/u, ""));
 }
 
 function researchNumericValueIsGrounded(value, sourceIds, evidenceBySource) {
