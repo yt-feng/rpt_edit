@@ -49,7 +49,8 @@ const request = (route) => new Request(`https://api.example.invalid${route}`);
 test("CRS metadata discovery, cached search and authorized versioned downloads", async () => {
   const requests = [];
   let unavailable = false;
-  const h = harness(async (url) => {
+  const h = harness(async (url, init) => {
+    assert.equal(init.redirect, "manual", "workerd rejects redirect:error before issuing an upstream request");
     requests.push(String(url));
     if (unavailable) return new Response("Unavailable", { status: 503 });
     assert.equal(String(url), "https://www.everycrsreport.com/rss.xml");
@@ -205,5 +206,13 @@ test("CRS metadata discovery, cached search and authorized versioned downloads",
 
   const huge = harness(async () => new Response("x".repeat(512 * 1024 + 1)));
   await assert.rejects(huge.api.fetchCrsMetadataText("https://www.everycrsreport.com/rss.xml"), /size limit/);
+  let redirectRequests = 0;
+  const redirected = harness(async (_url, init) => {
+    redirectRequests += 1;
+    assert.equal(init.redirect, "manual");
+    return new Response(null, { status: 302, headers: { Location: "https://other.invalid/feed.xml" } });
+  });
+  await assert.rejects(redirected.api.fetchCrsMetadataText("https://www.everycrsreport.com/rss.xml"), /302/);
+  assert.equal(redirectRequests, 1, "metadata redirects are rejected without following an untrusted destination");
   console.log("CRS source tests passed: bounded RSS/search metadata, caches and fallback, dates and IDs, independent pagination, authorized/versioned PDF downloads, and no CRS warming.");
 });
