@@ -14902,7 +14902,9 @@ async function reportResearchBundle(env, question, plan, budget) {
     evidence: evidenceBySource.get(row.source.id) || [],
   })).filter((row) => {
     if (!row.evidence.length) return false;
-    const text = normalizeText([row.title, row.title_en, ...row.evidence.map((part) => part.text)].join(" "));
+    // Titles can qualify a candidate or backfill a capped posting, but the
+    // retrieved body must independently ground the required topic and facets.
+    const text = normalizeText(row.evidence.map((part) => part.text).join(" "));
     const title = normalizeText([row.title, row.title_en].join(" "));
     const posting = ranked.find(([id]) => id === row.id);
     const required = (plan.groups || []).filter((group) => requiredCoreGroupIds.has(group.id));

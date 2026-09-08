@@ -2951,6 +2951,27 @@ test("frontend distinguishes an already-used daily reward from a successful clai
   assert.doesNotMatch(duplicateBranch, /portal-reward-change|status:\s*"success"/u);
 });
 
+test("research title matches cannot ground unrelated, legal, or facet-missing report text", async (t) => {
+  const cases = [
+    ["unrelated", "Consumer retail sales reflect changes in household spending, store openings, and seasonal promotions across different markets."],
+    ["legal", "This material is provided for information purposes only and does not constitute investment advice. Redistribution requires written permission from the publisher."],
+    ["facet_missing", "AI data center operators have expanded their range of hosted applications and customer services, with new enterprise software products available this quarter."],
+  ];
+  for (const [name, text] of cases) await t.test(name, async () => {
+    const bucket = new MemoryR2(), id = "be".repeat(12);
+    await seedReportResearchLookup(bucket, [{ id, title: "AI data center power investment" }], {
+      ai: [{ id, tf: 100, title_hit: true, chunks: ["c0"] }],
+      data: [{ id, tf: 100, title_hit: true, chunks: ["c0"] }],
+      power: [{ id, tf: 100, title_hit: true, chunks: ["c0"] }],
+    }, [[`${id}:c0`, { id: "c0", report_id: id, text }]]);
+    const env = envFor(bucket), token = await register(env);
+    const result = await jsonRequest(env, "/report-chat", { method: "POST", headers: { "content-type": "application/json", ...bearer(token) }, body: JSON.stringify({ question: "AI data center power" }) });
+    assert.equal(result.response.status, 200);
+    assert.equal(result.data.findings.length, 0);
+    assert.match(result.data.research_scope, /0 份报告/u);
+  });
+});
+
 test("generic clinical data cannot stand in for a data-center and power question", async () => {
   const bucket = new MemoryR2(), id = "bc".repeat(12);
   await seedReportResearchLookup(bucket, [{ id, title: "AI clinical data improves diagnostic accuracy" }], { ai: [{ id, tf: 100, chunks: ["c0"] }], data: [{ id, tf: 100, chunks: ["c0"] }] }, [[`${id}:c0`, { id: "c0", report_id: id, text: "AI clinical data helps physicians evaluate patient history and diagnostic results to choose a treatment. This concerns medical diagnosis." }]]);

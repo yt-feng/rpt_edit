@@ -31,7 +31,7 @@ import build_report_chat_index as chat_index
 
 
 SCHEMA_VERSION = 1
-BUILD_FORMAT = b"report-research-random-access-v1.6\0"
+BUILD_FORMAT = b"report-research-random-access-v1.7\0"
 DEFAULT_PREFIX = "_report-research/v1"
 CORPUS_FILENAME = "corpus.jsonl.gz"
 SLOT_SIZE = 12
@@ -84,6 +84,65 @@ def body_text(value: Any) -> str:
     text = unicodedata.normalize("NFKC", str(value or ""))
     text = CONTROL_RE.sub(" ", text)
     return " ".join(text.split()).strip()
+
+
+def without_repeated_titles(text: str, item: dict[str, Any]) -> str:
+    """Public search boosts can append the same title many times; these are not body evidence."""
+    for title in sorted({str(item.get(key) or "") for key in ("title", "title_en")}, key=len, reverse=True):
+        words = re.findall(r"[^\W_]+", unicodedata.normalize("NFKC", title).lower())
+        if not words:
+            continue
+        pattern = re.compile(r"(?<!\w)" + r"[\W_]*".join(re.escape(word) for word in words) + r"(?!\w)", re.I)
+        if sum(1 for _ in pattern.finditer(text)) >= 3:
+            remainder = pattern.sub(" ", text)
+            # Short topic names may occur throughout real analysis; only remove
+            # them when they account for nearly all of the purported body.
+            if len("".join(words)) >= 24 or len(re.sub(r"\W", "", remainder)) < 0.2 * len(re.sub(r"\W", "", text)):
+                text = remainder
+    return body_text(text)
+
+
+def without_contact_cover(text: str) -> str:
+    """Skip a front-cover analyst directory while preserving the following original body."""
+    prefix = text[:1800]
+    contacts = []
+    for phone in re.finditer(r"\b(?:\d{1,3}\s+)?\d{2,4}\s+\d{3,4}\s+\d{3,4}\b", prefix):
+        domain = re.search(r"\b[a-z0-9]+[.\s]+(?:com|co[.\s]+uk)\b", prefix[phone.end():phone.end() + 100], re.I)
+        if domain:
+            contacts.append((phone.start(), phone.end() + domain.end()))
+    if (len(contacts) >= 2 and contacts[0][0] < 350
+            and all(current[0] - previous[1] <= 160 for previous, current in zip(contacts, contacts[1:]))
+            and (re.search(r"\b(?:analyst|cfa|ph[.\s]+d)\b", prefix[:contacts[0][0]], re.I) or len(contacts) >= 3)):
+        remainder = text[contacts[-1][1]:].strip()
+        if len(remainder) >= 400:
+            return remainder
+    return text
+
+
+LEGAL_BOILERPLATE = (
+    "all rights reserved", "trademarks and service marks", "not intended to be used for the purpose of",
+    "for informational purposes only", "does not constitute investment advice", "no representation or warranty",
+    "past performance is not", "not a solicitation", "without prior written consent",
+    "analyst certification", "important disclosures", "conflicts of interest",
+    "免责声明", "不构成投资建议", "未经书面许可", "版权所有",
+)
+
+
+def substantive_chunks(text: str, max_chars: int, overlap_chars: int) -> list[dict[str, str]]:
+    chunks = []
+    for chunk in split_chunks(text, max_chars, overlap_chars):
+        lower = chunk["text"].lower()
+        # A lone mention may be substantive legal research; multiple standard
+        # publisher notices indicate a boilerplate section, not report analysis.
+        notices = sorted(match.start() for phrase in LEGAL_BOILERPLATE for match in re.finditer(re.escape(phrase), lower))
+        if len(notices) >= 2:
+            if notices[0] >= max(200, len(lower) // 2):
+                chunk = {**chunk, "text": chunk["text"][:notices[0]].rstrip()}
+            else:
+                continue
+        if len(chunk["text"]) >= 40:
+            chunks.append(chunk)
+    return chunks
 
 
 def iter_search_tokens(value: Any) -> Iterator[str]:
@@ -679,6 +738,12 @@ def build_index(
         min_text_chars,
         partial_ids,
     )
+    qualified = {}
+    for report_id, row in corpus_rows.items():
+        text = without_contact_cover(without_repeated_titles(row["text"], row["item"]))
+        if len(text) >= min_text_chars and substantive_chunks(text, chunk_chars, chunk_overlap):
+            qualified[report_id] = {**row, "text": text}
+    corpus_rows = qualified
     if not corpus_rows:
         raise ValueError("search index and stable corpus produced no full-text research items")
 
@@ -710,7 +775,7 @@ def build_index(
         for report_id in sorted(corpus_rows):
             row = corpus_rows[report_id]
             text = row["text"]
-            chunks = split_chunks(text, chunk_chars, chunk_overlap)
+            chunks = substantive_chunks(text, chunk_chars, chunk_overlap)
             if not chunks:
                 raise CorpusError("merged research corpus produced an empty evidence row")
             item = {**row["item"], "chunk_count": len(chunks)}
