@@ -154,6 +154,13 @@
   }
 
   function reportUrl(id, item = {}) {
+    if (/^news:[0-9a-f]{64}$/u.test(String(id || ""))) {
+      try {
+        const url = new URL(item.source_url);
+        if (url.protocol === "https:" && !url.username && !url.password) return url.href;
+      } catch (_error) { /* Never turn an invalid external source into a report ID. */ }
+      return reportSearchUrl(item.title);
+    }
     const chartSource = String(id || "").match(/^chart:([0-9a-f]{64})$/u);
     if (chartSource) {
       const localePrefix = pagePath().match(/^\/(ko|ja|ar|en|zh-Hant)(?:\/|$)/i);
@@ -268,12 +275,14 @@
         <em>在会员文件目录中查看</em>
       </a>`;
     }
-    const meta = [item.institution, item.industry, item.date_folder, item.page_count ? `${item.page_count}页` : ""]
+    const isNews = /^news:/u.test(String(item.id || ""));
+    const newsDate = item.published_at ? `发布时间 ${item.published_at.slice(0, 10)}` : item.observed_at ? `监测时间 ${item.observed_at.slice(0, 10)}` : "";
+    const meta = [item.institution, item.industry, isNews ? newsDate : item.date_folder, item.page_count ? `${item.page_count}页` : ""]
       .map((value) => String(value || "").trim()).filter(Boolean).join(" · ");
     const partialExcerpt = item.partial_excerpt === true || item.text_scope === "partial_excerpt";
     const evidenceLabel = partialExcerpt
       ? (item.evidence_kind === "full_text_and_charts" ? "报告正文节选与图表" : "报告正文节选")
-      : (({ chart_metadata: "图表来源", full_text_and_charts: "正文与图表", full_text: "正文来源" })[item.evidence_kind] || "");
+      : (({ chart_metadata: "图表来源", full_text_and_charts: "正文与图表", full_text: "正文来源", news_description: "新闻简介 · GDELT", news_snippet: "官方来源摘要" })[item.evidence_kind] || "");
     return `<a class="report-chat-card" href="${escapeHtml(reportUrl(item.id, item))}" target="_blank" rel="noopener noreferrer">
       <span class="report-chat-score" aria-label="资料吸引力 ${escapeHtml(item.attraction_score)} 星">${stars}</span>
       <strong>${escapeHtml(item.title || "报告资料")}</strong>
@@ -373,6 +382,7 @@
     if (partialSourceCount) coverageNotes.push(`本次包含 ${partialSourceCount} 份报告正文节选，相关结论仅基于已索引的节选内容。`);
     const scope = coverageNotes.join(" · ");
     if (scope) sections.push(`<aside class="research-coverage-note"><strong>本次研究覆盖</strong><p>${escapeHtml(scope)}</p></aside>`);
+    if (sourceRows.some((item) => item.evidence_kind === "news_description")) sections.push('<p class="research-coverage-note">新闻简介数据由 <a href="https://www.gdeltproject.org/" target="_blank" rel="noopener noreferrer">GDELT</a> 提供，原文请见各条来源链接。</p>');
     if (executiveSummary) {
       sections.push(`<section class="report-research-summary"><span>研究摘要</span><p>${escapeHtml(executiveSummary)}</p><div class="report-research-source-row">${sourceChipsHtml(data.summary_source_ids, sources)}</div></section>`);
     }
@@ -871,7 +881,7 @@
           cache: "no-store",
           signal: controller.signal,
           headers: optionalAuthHeaders(auth, true),
-          body: JSON.stringify({ question, history, context: surface.context, visitor_id: visitorId() }),
+          body: JSON.stringify({ question, history, context: surface.context, visitor_id: visitorId(), include_news: surface.context === "report" }),
         });
         const data = await response.json().catch(() => ({}));
         responseMeta = {
