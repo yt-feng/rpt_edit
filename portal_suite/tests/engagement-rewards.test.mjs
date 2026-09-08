@@ -2403,6 +2403,71 @@ test("research numeric grounding requires complete values and preserves negative
   });
 });
 
+test("research grounding checks local metric units and definite numeric comparisons", async (t) => {
+  const evidence = "Rack power is 900kW. Rack cost is 673 US$k. Cooling cost is US$2,400-2,500. ASIC cooling cost is US$3,000以上. Alternative cost is US$4,000. Annual electricity consumption is 900kWh. Cost change is 5%.";
+  const cases = [
+    { name: "a currency amount cannot be labeled power", sentence: "机架总功耗达673 US$k。", label: "总功耗", value: "673 US$k", keep: false },
+    { name: "watts cannot be labeled equipment cost", sentence: "机架成本为900kW。", label: "机架成本", value: "900kW", keep: false },
+    { name: "cost and power remain valid in a mixed clause", sentence: "机架功耗为900kW且设备成本为673 US$k。", label: "机架功耗", value: "900kW", context: "设备成本为673 US$k", keep: true },
+    { name: "a mixed paragraph retains both correct metrics", sentence: "机架功耗为900kW，设备成本为673 US$k。", label: "设备成本", value: "673 US$k", context: "机架功耗为900kW", keep: true },
+    { name: "the closest metric overrides an earlier power modifier", sentence: "高功耗设备的成本为673 US$k。", label: "高功耗设备成本", value: "673 US$k", keep: true },
+    { name: "a power modifier does not label a later investment amount", sentence: "高功耗设备采用673 US$k的冷却方案。", label: "高功耗设备采用方案", value: "673 US$k", keep: true },
+    { name: "cost percentages are not treated as currency mismatches", sentence: "设备成本变化为5%。", label: "成本变化", value: "5%", keep: true },
+    { name: "energy and power are distinct metrics", sentence: "全年用电量为900kW。", label: "全年用电量", value: "900kW", keep: false },
+    { name: "correct energy quantities remain", sentence: "全年用电量为900kWh。", label: "全年用电量", value: "900kWh", keep: true },
+    { name: "table headings need not be adjacent to each number", evidence: "AI rack estimates. Columns: power (kW), cost (US$k). Rack A | 900 | 673.", sentence: "机架功耗为900kW，设备成本为673 US$k。", label: "机架功耗", value: "900kW", context: "设备成本为673 US$k", keep: true },
+    { name: "an unrelated equal power value cannot veto a table cell", evidence: "AI rack estimates. Columns: power (kW), cost (US$k). Rack A | 900 | 673. A separate device power is 900W.", sentence: "机架功耗为900kW，设备成本为673 US$k。", label: "机架功耗", value: "900kW", context: "设备成本为673 US$k", keep: true },
+    { name: "an explicitly paired different power scale is rejected", evidence: "Power is 900W.", sentence: "设备功耗为900kW。", label: "设备功耗", value: "900kW", keep: false },
+    { name: "matching power scale is retained", evidence: "Power is 900W.", sentence: "设备功耗为900W。", label: "设备功耗", value: "900W", keep: true },
+    { name: "an explicitly different currency is rejected", evidence: "Equipment cost is US$673.", sentence: "设备成本为673人民币。", label: "设备成本", value: "673人民币", keep: false },
+    { name: "sentence-final currency is still checked", evidence: "Equipment cost is US$673.", sentence: "Power is US$673.", label: "power", value: "US$673.", keep: false },
+    { name: "a lower cost range cannot be described as higher", sentence: "液冷成本为US$2,400-2,500，高于ASIC的US$3,000以上。", label: "液冷成本", value: "US$2,400-2,500", context: "高于ASIC的US$3,000以上", keep: false },
+    { name: "the correct lower cost comparison remains", sentence: "液冷成本为US$2,400-2,500，低于ASIC的US$3,000以上。", label: "液冷成本", value: "US$2,400-2,500", context: "低于ASIC的US$3,000以上", keep: true },
+    { name: "a reversed comparison only in data point context is rejected", sentence: "液冷成本为US$2,400-2,500。", label: "液冷成本", value: "US$2,400-2,500", context: "高于ASIC的US$3,000以上", keep: true, dataKeep: false },
+    { name: "a larger number cannot be described as lower", sentence: "方案成本为US$4,000，低于US$3,000。", label: "方案成本", value: "US$4,000", context: "低于US$3,000", keep: false },
+    { name: "a correct higher comparison remains", sentence: "方案成本为US$4,000，高于US$3,000。", label: "方案成本", value: "US$4,000", context: "高于US$3,000", keep: true },
+    { name: "an unrelated reliability comparison does not compare nearby prices", sentence: "冷却成本US$2,400，可靠性高于去年，预算US$3,000。", label: "冷却成本", value: "US$2,400", context: "可靠性高于去年，预算US$3,000", keep: true },
+    { name: "an unresolved overlapping range is not falsely rejected", evidence: "The two cost ranges are US$2,400-3,500 and US$3,000.", sentence: "方案报价为US$2,400-3,500，可能高于US$3,000。", label: "方案报价", value: "US$2,400-3,500", context: "可能高于US$3,000", keep: true },
+  ];
+  for (const item of cases) await t.test(item.name, async () => {
+    const bucket = new MemoryR2(), reportId = "e8".repeat(12);
+    await seedReportResearchLookup(bucket, [{ id: reportId, title: "AI infrastructure capital expenditure" }], {
+      ai: [{ id: reportId, tf: 5, chunks: ["c0"] }], capex: [{ id: reportId, tf: 4, chunks: ["c0"] }],
+    }, [[`${reportId}:c0`, { id: "c0", report_id: reportId, text: `AI infrastructure capital expenditure depends on equipment availability. ${item.evidence || evidence}` }]]);
+    const env = { ...envFor(bucket), DEEPSEEK_API_KEY: "configured-test-key" }, token = await register(env);
+    const original = globalThis.fetch, anchor = "设备供给影响资本开支。";
+    globalThis.fetch = async (_url, init) => {
+      const request = JSON.parse(init.body);
+      if (request.max_tokens !== 400) {
+        assert.match(request.messages[0].content, /numeric value together with its metric and unit/u);
+        assert.match(request.messages[0].content, /range endpoints/u);
+        assert.match(request.messages[0].content, /explicitly reports a measurement/u);
+        assert.match(request.messages[0].content, /another geography/u);
+        assert.match(request.messages[0].content, /proxy indicators, not direct evidence of exponential regional electricity-demand growth/u);
+      }
+      const generated = request.max_tokens === 400
+        ? { core: [{ name: "AI", terms: ["ai"] }], facets: [{ name: "capital expenditure", terms: ["capex"] }], terms: ["ai", "capex"] }
+        : { research_title: "AI设备证据核验", executive_summary: `${anchor}${item.sentence}`, summary_source_ids: [reportId],
+          findings: [{ title: "指标边界", summary: `${anchor}${item.sentence}`, source_ids: [reportId] }],
+          data_points: [{ label: item.label, value: item.value, context: item.context || "", source_ids: [reportId] }],
+        };
+      return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify(generated) } }] }), { headers: { "content-type": "application/json" } });
+    };
+    try {
+      const result = await jsonRequest(env, "/report-chat", { method: "POST", headers: { "content-type": "application/json", ...bearer(token) }, body: JSON.stringify({ question: "AI capital expenditure" }) });
+      assert.equal(result.response.status, 200, JSON.stringify(result.data));
+      const expected = (item.keep ? `${anchor} ${item.sentence}` : anchor).normalize("NFKC");
+      assert.equal(result.data.executive_summary, expected);
+      assert.equal(result.data.findings[0].summary, expected);
+      assert.equal(result.data.data_points.length, (item.dataKeep ?? item.keep) ? 1 : 0);
+      if (item.dataKeep ?? item.keep) {
+        assert.equal(result.data.data_points[0].value, item.value.normalize("NFKC"));
+        assert.equal(result.data.data_points[0].context, (item.context || "").normalize("NFKC"));
+      }
+    } finally { globalThis.fetch = original; }
+  });
+});
+
 test("report research cold-cache worst case stays below the 50-subrequest boundary", async () => {
   const bucket = new MemoryR2();
   const reportIds = ["1", "2", "3", "4"].map((digit) => digit.repeat(24));
