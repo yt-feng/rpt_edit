@@ -43,7 +43,7 @@ function eventElement(attributes = {}) {
       callbacks.push(listener);
       listeners.set(type, callbacks);
     },
-    emit(type, event = {}) { for (const callback of listeners.get(type) || []) callback(event); },
+    emit(type, event = {}) { return Promise.all((listeners.get(type) || []).map((callback) => callback(event))); },
     hasAttribute(name) { return Object.hasOwn(attributes, name); },
     getAttribute(name) { return attributes[name] ?? null; },
     setAttribute(name, value) { attributes[name] = value; },
@@ -155,6 +155,47 @@ test("captcha HTML errors show a readable retry message and a successful retry c
   assert.equal(status.textContent, "");
   assert.equal(status.className, "status-line");
   assert.equal(refresh.disabled, false);
+});
+
+test("invalid registration names preserve the solved captcha and valid names use the server normalization", async () => {
+  const elements = new Map();
+  const get = (id) => {
+    if (!elements.has(id)) elements.set(id, eventElement());
+    return elements.get(id);
+  };
+  const requests = [];
+  const events = [];
+  let captchaLoads = 0;
+  const showAccount = vm.runInNewContext(`(${functionSource("showAccountModal")})`, {
+    page: "research",
+    document: { body: { insertAdjacentHTML() {} }, getElementById: get, addEventListener() {} },
+    window: { alert() {}, clearInterval, setInterval },
+    trackEvent: (_url, _type, payload) => events.push({ ...payload }),
+    accountModalMarkup: () => "", loadAuthSession: () => null,
+    loadAccountCaptcha: async () => { captchaLoads += 1; return "captcha"; },
+    registrationNoticeText: () => "账号提示", localizedContactText: (value) => String(value || ""),
+    fetch: async (_url, options) => {
+      requests.push(JSON.parse(options.body));
+      return { ok: false, json: async () => ({ detail: "测试：账号服务返回错误" }) };
+    },
+  });
+  await showAccount("/api", { mode: "register", placement: "navigation" });
+  get("accountUsername").value = "中文名字";
+  get("accountEmail").value = "example@example.com";
+  get("accountPassword").value = "sample-password";
+  get("accountCaptchaAnswer").value = "solved";
+  const initialCaptchaLoads = captchaLoads;
+  await get("accountAuthForm").emit("submit", { preventDefault() {} });
+  assert.equal(requests.length, 0, "format errors must be found before the authenticated request");
+  assert.equal(captchaLoads, initialCaptchaLoads, "local validation must not invalidate the captcha");
+  assert.equal(get("accountCaptchaAnswer").value, "solved");
+  assert.equal(events.filter(({ action, status }) => action === "register" && status === "error").length, 1);
+  get("accountUsername").value = " @Yourname_01 ";
+  await get("accountAuthForm").emit("submit", { preventDefault() {} });
+  assert.equal(requests.length, 1);
+  assert.equal(requests[0].username, "yourname_01");
+  assert.equal(requests[0].captcha_answer, "solved");
+  assert.equal(captchaLoads, initialCaptchaLoads + 1, "a sent request still refreshes a consumed captcha");
 });
 
 test("AI research is available before the report list and the workspace has an accessible editable composer", () => {

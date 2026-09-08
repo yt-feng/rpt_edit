@@ -1164,7 +1164,7 @@
           ${!signedIn ? '<p class="account-welcome">一个账号，连接 AI 研究、每日签到与报告权益。</p>' : ""}
           <form id="accountAuthForm" class="auth-form" ${signedIn ? "hidden" : ""}>
             <div class="auth-grid">
-              <label>用户名<input id="accountUsername" type="text" autocomplete="username" placeholder="yourname" required></label>
+              <label>用户名<input id="accountUsername" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" aria-describedby="accountUsernameHint" placeholder="例如 yourname_01" required><small class="auth-field-hint" id="accountUsernameHint">3–32 位，以英文字母或数字开头，可包含点、短横线和下划线；不支持中文或空格。</small></label>
               <label id="accountEmailLabel" hidden>常用邮箱（必填）<input id="accountEmail" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com"></label>
               <label>密码<input id="accountPassword" type="password" autocomplete="current-password" placeholder="至少 4 位" required></label>
             </div>
@@ -1974,16 +1974,23 @@
       trackEvent(workerUrl, "account_auth", { action: "form_submit", placement: authPlacement, status: mode });
       submit.disabled = true;
       setStatus(mode === "register" ? "正在注册…" : "正在登录…");
+      let requestSent = false;
       try {
+        const normalizedUsername = String(username.value || "").trim().toLowerCase().replace(/^@+/, "");
+        if (mode === "register" && !/^[a-z0-9][a-z0-9_.-]{2,31}$/.test(normalizedUsername)) {
+          username.focus();
+          throw new Error("用户名需为 3–32 位，以英文字母或数字开头，仅支持英文字母、数字、点、短横线和下划线。");
+        }
         if (mode === "register" && (!email.value.trim() || !email.validity.valid)) {
           throw new Error("注册必须填写有效的常用邮箱。");
         }
+        requestSent = true;
         const response = await fetch(`${workerUrl}/auth`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             action: mode,
-            username: username.value,
+            username: normalizedUsername,
             password: password.value,
             email: mode === "register" ? email.value : "",
             captcha_token: captchaToken,
@@ -2018,8 +2025,10 @@
           error: error && error.message || "account_request_failed",
         });
         setStatus(error.message || "账号请求失败。", "error");
-        answer.value = "";
-        captchaToken = await loadAccountCaptcha(workerUrl, status);
+        if (requestSent) {
+          answer.value = "";
+          captchaToken = await loadAccountCaptcha(workerUrl, status);
+        }
       } finally {
         submit.disabled = false;
       }
