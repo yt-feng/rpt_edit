@@ -2367,6 +2367,9 @@ test("research numeric grounding requires complete values and preserves negative
     { name: "3 is not present inside 2030", evidence: "The capacity forecast is 153 in 2030.", unsupported: "项目数量为3。", value: "3", supported: "预测年份为2030。" },
     { name: "negative values cannot support positive claims", evidence: "The reported change is -53 and the margin change is −18%.", unsupported: "增长值为53。正向利润率为18%。", value: "53", supported: "报告变动为-53。利润率变动为−18%。" },
     { name: "positive values cannot support negative claims", evidence: "The reported change is 53 and the margin change is 18%.", unsupported: "减少值为-53。负向利润率为-18%。", value: "-53", supported: "报告变动为53。利润率变动为18%。" },
+    { name: "compact year ranges retain both positive years", evidence: "The forecast covers 2025-2030.", unsupported: "额外预测年份为2035。", value: "2035", supported: "预测区间从2025年延伸至2030年。" },
+    { name: "spaced year ranges retain both positive years", evidence: "The forecast covers 2025 - 2030.", unsupported: "额外预测年份为2035。", value: "2035", supported: "预测区间从2025年延伸至2030年。" },
+    { name: "negative percentage ranges retain both negative endpoints", evidence: "The return range is -5%至-3%.", unsupported: "区间上界为3%。", value: "3%", supported: "收益率区间为-5%至-3%。" },
   ];
   for (const item of cases) await t.test(item.name, async () => {
     const bucket = new MemoryR2(), reportId = "d8".repeat(12);

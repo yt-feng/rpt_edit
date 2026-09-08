@@ -16057,7 +16057,10 @@ function researchNumericTokens(value) {
   // A full stop is punctuation unless it introduces decimal digits. Only
   // complete thousands groups belong to a comma-separated numeric token;
   // Chinese commas separate values. Keep signs and percentages significant.
-  const normalized = String(value || "").replace(/，/gu, " ").normalize("NFKC").replace(/−/gu, "-");
+  const normalized = String(value || "").replace(/，/gu, " ").normalize("NFKC").replace(/−/gu, "-")
+    // In a four-digit year range, a spaced hyphen is a separator, not a
+    // negative sign on the second year. Standalone signed values stay intact.
+    .replace(/(?<![\d.+-])(\d{4})\s*-\s*(?=\d{4}(?!\d|\.\d|%))/gu, "$1–");
   return (normalized.match(/(?<!\d)(?:[+-]\s*)?(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?(?:\s*%)?/gu) || [])
     .map((token) => token.replace(/[\s,]/gu, "").replace(/^\+/u, ""));
 }
