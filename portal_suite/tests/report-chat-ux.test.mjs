@@ -194,6 +194,7 @@ function createHarness({ authenticated = true, includePopular = false, contentLo
     DOMException,
     Event,
     CustomEvent,
+    URL,
     URLSearchParams,
     console,
     document,
@@ -296,6 +297,17 @@ test("report research allows a 60 second synthesis window and then allows retry"
   assert.equal(harness.button.disabled, false);
   assert.ok(analyticsActions(harness).includes("timeout"));
   assertAnalyticsHasNoQuestionText(harness, harness.input.value);
+});
+
+test("news evidence opens its original article and labels an observed date instead of a publication date", async () => {
+  const harness = createHarness(), id = `news:${"8".repeat(64)}`;
+  const submit = harness.form.dispatch("submit");
+  harness.fetches[0].resolve({ mode: "research", executive_summary: "有来源的新闻补充。", summary_source_ids: [id], sources: [{ id, title: "News update", institution: "Publisher", source_url: "https://publisher.example/article", evidence_kind: "news_description", observed_at: "2026-09-08T01:00:00Z" }] });
+  await submit;
+  assert.match(harness.messages.innerHTML, /https:\/\/publisher.example\/article/u);
+  assert.doesNotMatch(harness.messages.innerHTML, /report\.html\?id=news/u);
+  assert.match(harness.recommendations.innerHTML, /监测时间 2026-09-08/u);
+  assert.match(harness.recommendations.innerHTML, /新闻简介 · GDELT/u);
 });
 
 test("report research renders grounded findings, data, charts, and escaped source content", async () => {

@@ -301,6 +301,31 @@ test("text-only exports explicitly describe the missing chart evidence", async (
   assert.match(xml, /没有匹配到可引用图表/u);
 });
 
+test("news citations retain external URLs and observation dates in DOCX and PDF", async () => {
+  const { exporter, PDFLib, runtime } = await pdfHarness();
+  const payload = fixture(), id = `news:${"9".repeat(64)}`, url = "https://www.eia.gov/todayinenergy/detail.php?id=123";
+  payload.response.charts = [];
+  payload.response.sources = [{ id, title: "Power demand update", institution: "EIA", source_url: url, observed_at: "2026-09-08T01:00:00Z", evidence_kind: "news_description" }];
+  payload.response.summary_source_ids = [id];
+  payload.response.findings = [{ title: "近期进展", summary: "新闻简介与报告相互补充。", source_ids: [id] }];
+  const docx = await exporter.buildDocx(payload, runtime);
+  const entries = zipEntries(docx.bytes), decoder = new TextDecoder();
+  assert.match(decoder.decode(entries.get("word/document.xml")), /监测时间 2026-09-08/u);
+  assert.match(decoder.decode(entries.get("word/document.xml")), /新闻简介 · GDELT/u);
+  assert.ok(decoder.decode(entries.get("word/_rels/document.xml.rels")).includes(url));
+  assert.doesNotMatch(decoder.decode(entries.get("word/_rels/document.xml.rels")), /report\.html\?id=news/u);
+  const pdf = await exporter.buildPdf(payload, runtime);
+  const document = await PDFLib.PDFDocument.load(pdf.bytes);
+  const urls = document.getPages().flatMap((page) => {
+    const annotations = page.node.Annots();
+    return Array.from({ length: annotations ? annotations.size() : 0 }, (_, index) => annotations.lookup(index, PDFLib.PDFDict).lookup(PDFLib.PDFName.of("A"), PDFLib.PDFDict).lookup(PDFLib.PDFName.of("URI"), PDFLib.PDFString).decodeText());
+  });
+  assert.ok(urls.includes(url));
+  payload.response.sources[0].source_url = "javascript:alert(1)";
+  const invalid = await exporter.buildDocx(payload, runtime);
+  assert.doesNotMatch(decoder.decode(zipEntries(invalid.bytes).get("word/_rels/document.xml.rels")), /javascript:/u);
+});
+
 test("unlinked chart evidence stays inline and cites its exact chart permalink in DOCX and PDF", async () => {
   const { exporter, PDFLib, runtime } = await pdfHarness();
   const payload = fixture(), imageId = "c".repeat(64), sourceId = `chart:${imageId}`;
