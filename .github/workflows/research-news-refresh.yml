@@ -23,6 +23,7 @@ jobs:
           persist-credentials: false
           sparse-checkout-cone-mode: false
           sparse-checkout: |
+            .github/workflows/research-news-refresh.yml
             scripts/build_research_news_snapshot.py
             scripts/test_research_news_snapshot.py
             scripts/build_report_chat_index.py
