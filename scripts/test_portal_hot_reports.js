@@ -577,7 +577,9 @@ const commentOrderPromise = vm.runInNewContext(`(async () => {
 
 assert.match(app, /searchResultCounts\.hot = "error"/);
 assert.match(app, /searchResultCounts\.hot = Number\.isFinite\(page && page\.total\) \? page\.total : pageItems\.length/);
-for (const source of ["thinktank", "external", "reportA", "authority"]) {
+assert.match(app, /searchResultCounts\.thinktank = browsingLatest \? 0 : "error";/,
+  "thinktank search failures remain errors while default latest reports do not enter search recommendations");
+for (const source of ["external", "reportA", "authority"]) {
   assert.match(app, new RegExp(`searchResultCounts\\.${source} = "error"`), `${source} failures must remain distinguishable from zero results`);
 }
 
