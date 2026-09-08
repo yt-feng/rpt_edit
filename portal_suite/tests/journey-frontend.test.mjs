@@ -198,9 +198,11 @@ test("invalid registration names preserve the solved captcha and valid names use
   assert.equal(captchaLoads, initialCaptchaLoads + 1, "a sent request still refreshes a consumed captcha");
 });
 
-test("AI research is available before the report list and the workspace has an accessible editable composer", () => {
-  assert.ok(home.indexOf('data-research-entry="home_hero"') < home.indexOf('id="results"'));
-  assert.match(home, /data-auth-open="register" data-auth-placement="home_hero"/u);
+test("report search and AI research have separate navigation entries and composers", () => {
+  assert.match(home, /href="\/" aria-current="page">报告检索<\/a>/u);
+  assert.match(home, /href="research\.html" data-research-entry="navigation">AI 研究<\/a>/u);
+  assert.match(home, /id="searchInput"/u);
+  assert.doesNotMatch(home, /id="homeChatForm"|id="homeReportChat"|journey-hero|assets\/report-chat\.js|assets\/report-research-export\.js/u);
   assert.match(research, /data-page="research"/u);
   assert.match(research, /<label[^>]+for="homeChatInput"/u);
   assert.match(research, /id="homeChatInput"[^>]+maxlength="600"/u);

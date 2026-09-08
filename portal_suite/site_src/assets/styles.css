@@ -185,6 +185,10 @@ a {
   min-width: 0;
 }
 
+body[data-page="index"] .topbar-actions {
+  flex-wrap: wrap;
+}
+
 .admin-gate {
   flex: 0 0 auto;
   width: 11px;

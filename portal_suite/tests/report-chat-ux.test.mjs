@@ -7,7 +7,7 @@ import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const source = await readFile(path.join(root, "portal_suite/site_src/assets/report-chat.js"), "utf8");
-const homeSource = await readFile(path.join(root, "portal_suite/site_src/index.html"), "utf8");
+const researchSource = await readFile(path.join(root, "portal_suite/site_src/research.html"), "utf8");
 const stylesSource = await readFile(path.join(root, "portal_suite/site_src/assets/styles.css"), "utf8");
 
 class FakeElement {
@@ -622,10 +622,10 @@ test("429 gives visitors an editable email field", async () => {
   assert.doesNotMatch(harness.messages.innerHTML, /type="email"[^>]*readonly/u);
 });
 
-test("home markup and CSS expose the popular and over-limit UX", () => {
-  assert.match(homeSource, /id="homeChatPopular"[\s\S]*热门研究问题/u);
-  assert.match(homeSource, /id="homeChatPopularList"/u);
-  assert.match(homeSource, /assets\/report-research-export\.js/u);
+test("research workspace markup and CSS expose the popular and over-limit UX", () => {
+  assert.match(researchSource, /id="homeChatPopular"[\s\S]*先看一份已生成的研究/u);
+  assert.match(researchSource, /id="homeChatPopularList"/u);
+  assert.match(researchSource, /assets\/report-research-export\.js/u);
   assert.match(stylesSource, /\.report-chat-popular-question/u);
   assert.match(stylesSource, /\.report-chat-limit-card/u);
   assert.match(stylesSource, /\.report-chat-honeypot/u);
