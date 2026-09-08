@@ -602,9 +602,10 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn('--active-manifest "$RUNNER_TEMP/previous-slot-manifest.json"', snapshot_step)
         self.assertIn("verify_portal_chinese_parity.py snapshot", snapshot_step)
         self.assertIn('--output "$RUNNER_TEMP/chinese-before-locales.json"', snapshot_step)
-        self.assertIn("candidate_gzip = gzip.compress(candidate, compresslevel=9, mtime=0)", snapshot_step)
-        self.assertIn("len(candidate) > 700_000 or len(candidate_gzip) > 150_000", snapshot_step)
-        self.assertIn("raw_delta > 24_000 or gzip_delta > 6_000", snapshot_step)
+        self.assertIn("scripts/check_portal_app_budget.py", snapshot_step)
+        self.assertIn('--candidate _neutral_site/assets/app.js', snapshot_step)
+        self.assertIn('--active "$RUNNER_TEMP/previous-active-app.js"', snapshot_step)
+        self.assertIn('--output "$RUNNER_TEMP/chinese-performance.json"', snapshot_step)
 
         parity_step = self.workflow[parity:validate_release]
         self.assertIn("id: chinese_parity", parity_step)
@@ -618,6 +619,19 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn("chinese_parity_sha256: ${{ steps.chinese_parity.outputs.sha256 }}", self.workflow)
         self.assertIn("PORTAL_MULTILINGUAL_APPROVED_CHINESE_PARITY_SHA256", self.workflow)
         self.assertIn('_release_validation/candidate/chinese-performance.json', self.workflow)
+
+    def test_app_budget_is_checked_before_refresh_and_after_materialization(self):
+        source = self.workflow.index("Validate public source")
+        materialize = self.workflow.index("Materialize private deployment profile")
+        budget = self.workflow.index("Validate materialized app loading budget before refresh")
+        refresh = self.workflow.index("Refresh report catalog with additive PDF sync")
+        self.assertLess(source, materialize)
+        self.assertLess(materialize, budget)
+        self.assertLess(budget, refresh)
+        self.assertIn("check_portal_app_budget.py --candidate portal_suite/site_src/assets/app.js",
+                      self.workflow[source:materialize])
+        self.assertIn("scripts/test_check_portal_app_budget.py", self.workflow[source:materialize])
+        self.assertIn("chinese-source-performance.json", self.workflow[budget:refresh])
 
     def test_multilingual_candidate_is_exactly_accepted_without_rollback_assumption(self) -> None:
         artifact = self.workflow[

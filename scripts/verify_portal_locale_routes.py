@@ -92,6 +92,13 @@ def declared_checks(manifest: dict[str, Any]) -> list[dict[str, Any]] | None:
     checks.append(descriptor(manifest.get("recovery_asset"), RECOVERY_PATH))
     if "detail_asset" in manifest:
         checks.append(descriptor(manifest["detail_asset"], DETAIL_PATH))
+    if "lazy_javascript_assets" in manifest:
+        lazy = manifest["lazy_javascript_assets"]
+        if not isinstance(lazy, dict) or set(lazy) != {"zh-Hans", *LOCALES}:
+            raise RouteVerificationError("Lazy Newsfeed assets must cover Chinese and all three locales")
+        for language, prefix in [("zh-Hans", ""), *((locale, f"{locale}/") for locale in LOCALES)]:
+            row = descriptor(lazy[language], f"{prefix}assets/newsfeed-app.js")
+            checks.append({**row, "lazy_module": True})
     return checks
 
 
@@ -237,12 +244,17 @@ def verify_locale_routes(
     def verify(row: dict[str, Any]) -> dict[str, Any]:
         output = {"path": "/" + row["path"], "status": "failed"}
         try:
-            status, headers, body = fetcher(origin + output["path"], TIMEOUT_SECONDS)
+            suffix = "?v=" + row["sha256"][:12] if row.get("lazy_module") else ""
+            status, headers, body = fetcher(origin + output["path"] + suffix, TIMEOUT_SECONDS)
             output["http_status"] = status
             if status != 200:
                 raise RouteVerificationError(f"Expected HTTP 200 without redirects, got {status}")
             if not isinstance(body, bytes) or len(body) != row["byte_size"] or hashlib.sha256(body).hexdigest() != row["sha256"]:
                 raise RouteVerificationError("Public response size/SHA-256 differs from the trusted manifest")
+            if row.get("lazy_module") and headers.get("content-type", "").split(";", 1)[0].strip().lower() not in {
+                "application/javascript", "text/javascript", "application/ecmascript", "text/ecmascript",
+            }:
+                raise RouteVerificationError("Lazy Newsfeed module must have a JavaScript content type")
             if "locale" in row:
                 validate_shell(body, headers, row["locale"], row["filename"], origin)
                 output["locale"] = row["locale"]

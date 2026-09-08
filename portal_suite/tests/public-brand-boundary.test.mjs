@@ -68,8 +68,9 @@ test("frontend sanitizes old metadata before caching, rendering, and sharing", a
   assert.doesNotMatch(app, /two[\s._-]*tigers/iu);
   assert.match(app, /仅 KC桌面管理员/u);
   assert.match(app, /请先登录 KC桌面管理员账号/u);
-  assert.match(app, /newsfeed-avatar">KC</u);
-  assert.doesNotMatch(app, /newsfeed-avatar">PS</u);
+  const newsfeed = await readFile(path.join(siteRoot, "assets", "newsfeed-app.js"), "utf8");
+  assert.match(newsfeed, /newsfeed-avatar">KC</u);
+  assert.doesNotMatch(`${app}\n${newsfeed}`, /newsfeed-avatar">PS</u);
   assert.match(app, /`\$\{PUBLIC_BRAND\}-activity-history-/u);
   assert.match(app, /`\$\{PUBLIC_BRAND\}-users-/u);
   assert.doesNotMatch(app, /portal-(?:activity-history|users)-/u);

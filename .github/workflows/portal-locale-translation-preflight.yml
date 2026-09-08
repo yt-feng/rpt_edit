@@ -52,6 +52,10 @@ jobs:
             scripts/test_preflight_deepl_locale_repair.py
             scripts/test_portal_locale_translation_preflight_workflow.py
             scripts/build_portal_locales.py
+            scripts/portal_lazy_assets.py
+            scripts/portal_locale_report_preview.py
+            scripts/portal_locale_detail_hooks.py
+            scripts/repair_portal_ja_catalog_titles.py
             scripts/portal_locale_history.py
             scripts/test_portal_locale_history.py
             scripts/portal_locale_scope.py

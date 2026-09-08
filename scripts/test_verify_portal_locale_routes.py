@@ -98,6 +98,31 @@ class PublicLocaleRouteTests(unittest.TestCase):
                     self.verify()
                 self.assertEqual(self.calls, [])
 
+    def test_lazy_newsfeed_modules_use_each_localized_content_version(self):
+        self.manifest["lazy_javascript_assets"] = {}
+        urls = []
+        for language, prefix in [("zh-Hans", ""), *((locale, f"{locale}/") for locale in audit.LOCALES)]:
+            body = f"export function initNewsfeedApp() {{ /* {language} */ }}".encode()
+            row = describe(f"{prefix}assets/newsfeed-app.js", body)
+            self.manifest["lazy_javascript_assets"][language] = row
+            url = ORIGIN + "/" + row["path"] + "?v=" + row["sha256"][:12]
+            urls.append(url)
+            self.responses[url] = (200, {"content-type": "text/javascript; charset=utf-8"}, body)
+        self.assertEqual(self.verify()["status"], "passed")
+        self.assertTrue(set(urls).issubset({url for url, _ in self.calls}))
+        target = urls[-1]
+        response = self.responses[target]
+        for failed_response in ((200, {"content-type": "text/html"}, response[2]),
+                                (200, response[1], b"stale module"), (301, {}, b"")):
+            self.responses[target] = failed_response
+            self.assertEqual(self.verify()["status"], "failed")
+
+    def test_lazy_newsfeed_manifest_requires_exact_locale_set(self):
+        self.manifest["lazy_javascript_assets"] = {"zh-Hans": describe("assets/newsfeed-app.js", b"module")}
+        with self.assertRaises(audit.RouteVerificationError):
+            self.verify()
+        self.assertEqual(self.calls, [])
+
     def test_legacy_manifest_explicitly_skips_without_claims_or_requests(self):
         report = audit.verify_locale_routes({"schema_version": 1}, ORIGIN, fetcher=self.fetch)
         self.assertEqual(report["status"], "skipped")
