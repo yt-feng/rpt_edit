@@ -2951,6 +2951,31 @@ test("frontend distinguishes an already-used daily reward from a successful clai
   assert.doesNotMatch(duplicateBranch, /portal-reward-change|status:\s*"success"/u);
 });
 
+test("generic clinical data cannot stand in for a data-center and power question", async () => {
+  const bucket = new MemoryR2(), id = "bc".repeat(12);
+  await seedReportResearchLookup(bucket, [{ id, title: "AI clinical data improves diagnostic accuracy" }], { ai: [{ id, tf: 100, chunks: ["c0"] }], data: [{ id, tf: 100, chunks: ["c0"] }] }, [[`${id}:c0`, { id: "c0", report_id: id, text: "AI clinical data helps physicians evaluate patient history and diagnostic results to choose a treatment. This concerns medical diagnosis." }]]);
+  const env = envFor(bucket), token = await register(env);
+  const result = await jsonRequest(env, "/report-chat", { method: "POST", headers: { "content-type": "application/json", ...bearer(token) }, body: JSON.stringify({ question: "AI data center power" }) });
+  assert.equal(result.response.status, 200);
+  assert.equal(result.data.findings.length, 0);
+  assert.match(result.data.research_scope, /0 份报告/u);
+});
+
+test("concept-aware indexes look up data center as a phrase and keep its evidence chunk first", async () => {
+  const bucket = new MemoryR2(), id = "bd".repeat(12);
+  await seedReportResearchLookup(bucket, [{ id, title: "AI infrastructure" }], { ai: [{ id, tf: 100, chunks: ["generic"] }], datacenter: [{ id, tf: 10, chunks: ["specific"] }], power: [{ id, tf: 8, chunks: ["specific"] }] }, [
+    [`${id}:generic`, { id: "generic", report_id: id, text: "AI industry growth reflects a broad range of enterprise software applications and equipment suppliers." }],
+    [`${id}:specific`, { id: "specific", report_id: id, text: "AI data-center demand is constrained by power and electricity connections, with deployment timing dependent on grid infrastructure." }],
+  ]);
+  const key = "_report-research/v1/manifest.json";
+  bucket.seed(key, { ...JSON.parse(bucket.rows.get(key).value), concept_tokens: ["datacenter"] });
+  const env = envFor(bucket), token = await register(env);
+  const result = await jsonRequest(env, "/report-chat", { method: "POST", headers: { "content-type": "application/json", ...bearer(token) }, body: JSON.stringify({ question: "AI data center power" }) });
+  assert.equal(result.response.status, 200);
+  assert.equal(result.data.sources.length, 1);
+  assert.match(result.data.findings[0].summary, /data-center demand/u);
+});
+
 test("research retrieves beyond the former posting cap and verifies union backfill against report content", async (t) => {
   for (const mode of ["beyond_cap", "union_backfill"]) await t.test(mode, async () => {
     const bucket = new MemoryR2(), id = "f1".repeat(12);

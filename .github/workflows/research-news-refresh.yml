@@ -14,10 +14,18 @@ concurrency:
 
 jobs:
   capture:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            scripts/build_research_news_snapshot.py
+            scripts/test_research_news_snapshot.py
+            scripts/build_report_chat_index.py
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'

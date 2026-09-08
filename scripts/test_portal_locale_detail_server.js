@@ -375,6 +375,7 @@ async function main() {
     assert.match(workerSource, /if \(pathname === "\/locale\/report-detail"\) \{\s*const \{ handleLocaleReportDetail \} = await import\("\.\/locale-report-detail\.js"\)/);
     const code = workerSource.replace(/^import\s*\{[\s\S]*?\}\s*from\s*["']\.\/source-lead-adapter\.js["'];\s*/m,
       "function publicSourceLeadItem() {} async function readStoredSourceLead() {} async function searchSourceLeadMetadata() {} function sourceLeadAdapterEnabled() { return false; }\n")
+      .replace(/^import\s*\{[^}]+\}\s*from\s*["']\.\/research-news(?:-snapshot)?\.js["'];\s*/gm, "")
       .replaceAll('await import("./locale-report-detail.js")', "await __loadLocale()")
       .replace("export default {", "globalThis.worker = {");
     const context = vm.createContext({ crypto: webcrypto, Request, Response, URL, URLSearchParams, TextEncoder, TextDecoder, Headers, AbortController, setTimeout, clearTimeout, console,

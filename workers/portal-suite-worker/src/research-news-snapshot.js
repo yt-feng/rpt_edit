@@ -49,6 +49,14 @@ function matches(value, terms) {
   });
 }
 
+function matchesGroup(value, group) {
+  const terms = group.terms || [];
+  if (terms.includes("datacenter") || (terms.includes("data") && terms.includes("center"))) {
+    return /\bdata[\s-]*cent(?:er|re)s?\b|\bdatacenters?\b|\baidc\b|数据中心|算力中心/iu.test(value);
+  }
+  return matches(value, terms);
+}
+
 /** One bounded R2 read, with a short isolate cache; no upstream article fetches. */
 export async function readResearchNewsSnapshot({ bucket, groups = [], now = Date.now(), consumeBudget } = {}) {
   const empty = (reason) => ({ status: reason === "no_matches" ? "empty" : "unavailable", reason, sources: [] });
@@ -72,8 +80,8 @@ export async function readResearchNewsSnapshot({ bucket, groups = [], now = Date
       const observed = Date.parse(row.observed_at), content = `${title} ${summary}`;
       if (!/^news:[a-f0-9]{64}$/u.test(row.id) || !url || !title || summary.length < 80
         || summary === title || !Number.isFinite(observed) || now - observed > 7 * 86400000 || observed - now > 3600000) return null;
-      if (core.length && !core.every((group) => matches(content, group.terms || []))) return null;
-      const score = groups.reduce((sum, group) => sum + (matches(content, group.terms || []) ? (group.role === "core" ? 3 : 1) : 0), 0);
+      if (core.length && !core.every((group) => matchesGroup(content, group))) return null;
+      const score = groups.reduce((sum, group) => sum + (matchesGroup(content, group) ? (group.role === "core" ? 3 : 1) : 0), 0);
       return score ? { row, title, summary, url, observed, score } : null;
     }).filter(Boolean).sort((a, b) => b.score - a.score || b.observed - a.observed);
     const sources = [], domains = new Set(), urls = new Set();

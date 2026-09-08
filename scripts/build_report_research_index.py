@@ -31,7 +31,7 @@ import build_report_chat_index as chat_index
 
 
 SCHEMA_VERSION = 1
-BUILD_FORMAT = b"report-research-random-access-v1.4\0"
+BUILD_FORMAT = b"report-research-random-access-v1.6\0"
 DEFAULT_PREFIX = "_report-research/v1"
 CORPUS_FILENAME = "corpus.jsonl.gz"
 SLOT_SIZE = 12
@@ -89,6 +89,12 @@ def body_text(value: Any) -> str:
 def iter_search_tokens(value: Any) -> Iterator[str]:
     """Yield exact index tokens while preserving term frequency."""
     raw = unicodedata.normalize("NFKC", str(value or "")).lower()
+    # Preserve the compound concept: a generic occurrence of "data" must not
+    # make clinical/market data reports compete with data-center research.
+    for _ in re.finditer(r"\bdata[\s-]*cent(?:er|re)s?\b|\bdatacenters?\b|\baidc\b|数据中心|算力中心", raw):
+        yield "datacenter"
+    for _ in re.finditer(r"人工智能|\bartificial intelligence\b|\baidc\b", raw):
+        yield "ai"
     for token in LATIN_TOKEN_RE.findall(raw):
         if 2 <= len(token) <= 64:
             yield token
@@ -468,7 +474,7 @@ def _create_store(path: Path) -> sqlite3.Connection:
     connection.execute("PRAGMA temp_store=FILE")
     connection.execute(
         "CREATE TABLE postings ("
-        "token TEXT NOT NULL, report_id TEXT NOT NULL, tf INTEGER NOT NULL, chunks TEXT NOT NULL, "
+        "token TEXT NOT NULL, report_id TEXT NOT NULL, tf INTEGER NOT NULL, chunks TEXT NOT NULL, title_hit INTEGER NOT NULL, "
         "PRIMARY KEY (token, report_id)) WITHOUT ROWID"
     )
     connection.execute(
@@ -495,8 +501,10 @@ def _store_report_postings(
     connection: sqlite3.Connection,
     report_id: str,
     chunks: list[dict[str, str]],
+    title: str = "",
 ) -> None:
     stats: dict[str, list[Any]] = {}
+    title_terms = set(iter_search_tokens(title))
     for chunk in chunks:
         counts = Counter(iter_search_tokens(chunk["text"]))
         for token, count in counts.items():
@@ -516,9 +524,9 @@ def _store_report_postings(
                 :EVIDENCE_CHUNKS_PER_REPORT
             ]
         ]
-        rows.append((token, report_id, min(int(term_frequency), 65535), json.dumps(top_chunks, separators=(",", ":"))))
+        rows.append((token, report_id, min(int(term_frequency), 65535), json.dumps(top_chunks, separators=(",", ":")), int(token in title_terms)))
     connection.executemany(
-        "INSERT INTO postings(token, report_id, tf, chunks) VALUES (?, ?, ?, ?)",
+        "INSERT INTO postings(token, report_id, tf, chunks, title_hit) VALUES (?, ?, ?, ?, ?)",
         rows,
     )
 
@@ -546,16 +554,17 @@ def _populate_token_entries(
     bucket_count: int,
 ) -> int:
     cursor = connection.execute(
-        "SELECT token, report_id, tf, chunks FROM postings ORDER BY token, tf DESC, report_id"
+        "SELECT token, report_id, tf, chunks, title_hit FROM postings ORDER BY token, title_hit DESC, tf DESC, report_id"
     )
     token_count = 0
     for token, group in itertools.groupby(cursor, key=lambda row: row[0]):
         postings = []
-        for _token, report_id, term_frequency, chunks_json in itertools.islice(group, POSTING_LIMIT):
+        for _token, report_id, term_frequency, chunks_json, title_hit in itertools.islice(group, POSTING_LIMIT):
             postings.append({
                 "id": report_id,
                 "tf": int(term_frequency),
                 "chunks": json.loads(chunks_json),
+                "title_hit": bool(title_hit),
             })
         # islice leaves the remaining rows in this group unread. Consume them so
         # itertools.groupby can advance safely to the next exact token.
@@ -721,7 +730,7 @@ def build_index(
                 }
                 _store_raw_entry(connection, "evidence_table", evidence_key, evidence)
                 evidence_count += 1
-            _store_report_postings(connection, report_id, chunks)
+            _store_report_postings(connection, report_id, chunks, f"{item.get('title', '')} {item.get('title_en', '')}")
             item_count += 1
             if item_count % 25 == 0:
                 connection.commit()
@@ -765,6 +774,7 @@ def build_index(
             "index_kind": "report-research-random-access",
             "release": release,
             "normalization": "nfkc-lower-alnum-cjk234-v1",
+            "concept_tokens": ["datacenter"],
             "hash": "sha256-first8-be",
             "query_token_limit": QUERY_TOKEN_LIMIT,
             "report_limit": REPORT_LIMIT,

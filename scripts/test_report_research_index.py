@@ -76,6 +76,12 @@ def lookup(output: Path, descriptor: dict, key: str):
 
 
 class ReportResearchIndexTests(unittest.TestCase):
+    def test_compound_concept_aliases_do_not_promote_generic_data(self) -> None:
+        self.assertIn("datacenter", list(indexer.iter_search_tokens("AI data-centre power capacity")))
+        self.assertIn("datacenter", list(indexer.iter_search_tokens("人工智能数据中心电力需求")))
+        self.assertIn("ai", list(indexer.iter_search_tokens("人工智能数据中心")))
+        self.assertNotIn("datacenter", list(indexer.iter_search_tokens("AI clinical data improves diagnosis")))
+
     def test_common_token_retains_reports_beyond_old_top_48(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
