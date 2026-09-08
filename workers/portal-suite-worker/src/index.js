@@ -14462,10 +14462,12 @@ async function reportChatCandidates(env, question, options = {}) {
 }
 
 const REPORT_RESEARCH_QUERY_CONCEPTS = Object.freeze([
-  { name: "人工智能", role: "core", pattern: /(?:人工智能|\bai\b|\baidc\b|artificial intelligence)/iu, terms: ["ai", "artificial", "intelligence", "人工智能", "aidc"], max_lookup_terms: 1 },
-  { name: "数据中心", role: "core", pattern: /(?:数据中心|算力中心|datacenter|data center|\baidc\b)/iu, terms: ["data", "center", "datacenter", "数据中心", "算力中心"] },
-  { name: "电力与电网", role: "facet", pattern: /(?:电力|电网|供电|electricity|power grid|\bpower\b|\bgrid\b)/iu, terms: ["power", "electricity", "grid"] },
-  { name: "资本开支", role: "facet", pattern: /(?:资本开支|资本支出|capex|capital expenditure)/iu, terms: ["capex", "capital", "expenditure"] },
+  { name: "人工智能", role: "core", pattern: /(?:人工智能|\bai\b|\baidcs?\b|artificial intelligence)/iu, terms: ["ai", "artificial", "intelligence", "人工智能", "aidc", "aidcs"], max_lookup_terms: 1 },
+  { name: "数据中心", role: "core", pattern: /(?:数据中心|算力中心|datacenter|data[ -]cent(?:er|re)s?|\baidcs?\b)/iu, terms: ["data", "center", "datacenter", "数据中心", "算力中心"] },
+  { name: "电力与电网", role: "facet", aspect: "metric", metric_kind: "electricity", pattern: /(?:电力|电网|供电|功率|electricity|power grid|\bpower\b|\bgrid\b)/iu, terms: ["power", "electricity", "grid", "电力", "功率"] },
+  { name: "容量", role: "facet", aspect: "metric", pattern: /(?:容量|产能|\bcapacity\b)/iu, terms: ["capacity", "容量", "产能"], max_lookup_terms: 1 },
+  { name: "用电需求", role: "facet", aspect: "metric", metric_kind: "electricity_consumption", pattern: /(?:用电|耗电|电力消耗|electricity consumption|power consumption|energy consumption)/iu, terms: ["consumption", "用电", "耗电", "电力消耗"], max_lookup_terms: 1 },
+  { name: "资本开支", role: "facet", aspect: "metric", pattern: /(?:资本开支|资本支出|capex|capital expenditure)/iu, terms: ["capex", "capital", "expenditure"] },
   { name: "供电结构", role: "facet", pattern: /(?:供电结构|能源结构|发电结构|供应|供给|supply mix|energy mix|generation mix|\bsupply\b)/iu, terms: ["supply", "generation", "energy"] },
   { name: "中国与美国", role: "facet", pattern: /(?:中美|中国.{0,8}美国|美国.{0,8}中国|china.{0,12}(?:united states|\bus\b)|(?:united states|\bus\b).{0,12}china)/iu, terms: ["china", "us", "united", "states"] },
   { name: "半导体", role: "core", pattern: /(?:半导体|芯片|semiconductor|\bchip\b)/iu, terms: ["semiconductor", "chip"] },
@@ -14482,8 +14484,8 @@ const REPORT_RESEARCH_GENERIC_AI_TERMS = new Set(["ai", "artificial", "intellige
 const REPORT_RESEARCH_QUERY_STOP_TERMS = new Set([
   "analysis", "compare", "comparison", "global", "outlook", "report", "reports", "research", "study",
 ]);
-const REPORT_RESEARCH_DETERMINISTIC_CJK_CONCEPTS = /(?:人工智能|数据中心|算力中心|电力|电网|供电结构|供电|能源结构|发电结构|资本开支|资本支出|半导体|芯片|利率|降息|加息|通胀|外汇|汇率|人民币|估值|盈利|利润|需求|供应|供给|中国|美国|中美)/gu;
-const REPORT_RESEARCH_DETERMINISTIC_CJK_NOISE = /(?:主流机构|比较|对比|综合|分析|研究|机构|全球|最近|过去|重点|判断|报告|研报|资料|年前|年后|前后|之前|之后|以内|未来|分歧|差异|争议|趋势|影响|瓶颈|约束|结构|以及|并且|其中|针对|围绕|关于|如何|哪些|什么|和|与|及|的|对)/gu;
+const REPORT_RESEARCH_DETERMINISTIC_CJK_CONCEPTS = /(?:人工智能|数据中心|算力中心|电力消耗|电力|电网|供电结构|供电|功率|容量|产能|用电|耗电|能源结构|发电结构|资本开支|资本支出|半导体|芯片|利率|降息|加息|通胀|外汇|汇率|人民币|估值|盈利|利润|需求|供应|供给|中国|美国|中美)/gu;
+const REPORT_RESEARCH_DETERMINISTIC_CJK_NOISE = /(?:主流机构|比较|对比|综合|分析|研究|机构|全球|最近|过去|重点|判断|报告|研报|资料|年前|年后|前后|之前|之后|以内|未来|分歧|差异|争议|趋势|增长|预测图表|预测|图表|请结合|说明|影响|瓶颈|约束|结构|以及|并且|其中|针对|围绕|关于|如何|哪些|什么|和|与|及|的|对)/gu;
 
 function reportResearchTermIsTimeOrNumber(value) {
   const term = String(value || "").trim().toLowerCase();
@@ -14502,12 +14504,20 @@ function reportResearchAtomicTerms(value, limit = 16) {
   )))].slice(0, limit);
 }
 
+function reportResearchGroupTerms(values, limit = 6) {
+  // Preserve canonical aliases before optional CJK ngrams consume the group cap.
+  const raw = (Array.isArray(values) ? values : []).map((value) => String(value || "").normalize("NFKC").toLowerCase());
+  const canonical = raw.flatMap((value) => value.match(/[a-z0-9][a-z0-9.+&-]*|[\p{Script=Han}]{2,}/gu) || [])
+    .filter((term) => term.length >= 2 && term.length <= 64 && !reportResearchTermIsTimeOrNumber(term) && !REPORT_RESEARCH_QUERY_STOP_TERMS.has(term));
+  return [...new Set([...canonical, ...raw.flatMap((value) => reportResearchAtomicTerms(value, 6))])].slice(0, limit);
+}
+
 function reportResearchCleanPlanGroup(value, defaultRole, index) {
   const row = value && typeof value === "object" && !Array.isArray(value) ? value : {};
   const fallbackText = typeof value === "string" ? value : "";
   const name = chatLookupSafeText(row.name || row.facet || row.label || fallbackText, 80);
   const rawTerms = Array.isArray(row.terms) ? row.terms : Array.isArray(row.keywords) ? row.keywords : [fallbackText];
-  const terms = [...new Set(rawTerms.flatMap((term) => reportResearchAtomicTerms(term, 6)))].slice(0, 6);
+  const terms = reportResearchGroupTerms(rawTerms);
   if (!terms.length) return null;
   return {
     id: `${defaultRole}-${index}`,
@@ -14525,8 +14535,7 @@ function reportResearchFinalizePlan(groupsValue, preferredTermsValue, source) {
   const groups = [];
   for (const rawGroup of Array.isArray(groupsValue) ? groupsValue : []) {
     if (!rawGroup || !Array.isArray(rawGroup.terms) || !rawGroup.terms.length) continue;
-    const terms = [...new Set(rawGroup.terms
-      .flatMap((term) => reportResearchAtomicTerms(term, 6)))];
+    const terms = reportResearchGroupTerms(rawGroup.terms);
     if (!terms.length) continue;
     terms.sort((left, right) => {
       const leftIndex = preferredTerms.indexOf(left);
@@ -14547,6 +14556,8 @@ function reportResearchFinalizePlan(groupsValue, preferredTermsValue, source) {
       id: `${role}-${groups.length}`,
       name: chatLookupSafeText(rawGroup.name, 80) || terms[0],
       role,
+      aspect: ["metric", "geography"].includes(rawGroup.aspect) ? rawGroup.aspect : "",
+      metric_kind: ["electricity", "power_capacity", "electricity_consumption"].includes(rawGroup.metric_kind) ? rawGroup.metric_kind : "",
       required: role === "core" && rawGroup.required !== false,
       terms: terms.slice(0, 6),
       max_lookup_terms: REPORT_RESEARCH_GENERIC_AI_TERMS.has(terms[0])
@@ -14626,12 +14637,16 @@ function reportResearchDeterministicPlan(question) {
   const groups = matchedConcepts.map((concept) => ({
     name: concept.name,
     role: concept.role,
+    aspect: concept.aspect || "",
+    metric_kind: concept.name === "容量" && /(?:功率容量|电力容量|power[ -]capacity|electrical capacity)/iu.test(raw) ? "power_capacity" : concept.metric_kind || "",
     required: concept.role === "core",
     terms: concept.terms,
     max_lookup_terms: concept.max_lookup_terms || 2,
   }));
   if (/(?:中国|\bchina\b)/iu.test(raw) && !/(?:美国|\bunited states\b|\bus\b)/iu.test(raw)) {
-    groups.push({ name: "中国", role: "facet", required: false, terms: ["china", "中国"], max_lookup_terms: 1 });
+    const geography = { name: "中国", role: "facet", aspect: "geography", required: false, terms: ["china", "中国"], max_lookup_terms: 1 };
+    const genericIndex = groups.findIndex((group) => group.name === "需求");
+    groups.splice(genericIndex < 0 ? groups.length : genericIndex, 0, geography);
   }
   const unmatched = reportResearchDeterministicSubjectTerms(raw, conceptTerms, 3);
   unmatched.slice(0, 3).forEach((term) => groups.push({
@@ -14670,7 +14685,15 @@ function sanitizeReportResearchPlan(generated, fallback) {
   // Keep deterministic concept boundaries first. A planner occasionally groups
   // independent subjects (for example AI + data center) into one broad row;
   // merging in this order preserves the two required core gates.
-  const merged = [...(fallback && fallback.groups || []), ...groups];
+  const deterministicGroups = fallback && fallback.groups || [];
+  const enrichment = groups.flatMap((group) => {
+    const overlaps = deterministicGroups.filter((known) => known.terms.some((term) => group.terms.includes(term)));
+    // A model row spanning AI + data center (or power + demand) must not
+    // turn independent concepts into synonyms or upgrade a metric to a core.
+    if (overlaps.length > 1) return [];
+    return overlaps.length ? [{ ...group, role: overlaps[0].role, required: overlaps[0].required }] : [group];
+  });
+  const merged = [...deterministicGroups, ...enrichment];
   return reportResearchFinalizePlan(merged, preferredTerms, groups.length ? "model" : "deterministic") || fallback;
 }
 
@@ -14728,7 +14751,8 @@ function reportResearchChartTokens(question) {
 
 function reportResearchChartTokenMatches(text, token) {
   if (/^[a-z0-9]+(?: [a-z0-9]+)*$/u.test(token)) {
-    return ` ${text} `.includes(` ${token} `);
+    const escaped = token.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&");
+    return new RegExp(`(?:^|[^a-z0-9])${escaped}(?=$|[^a-z0-9])`, "u").test(text);
   }
   return text.includes(token);
 }
@@ -14933,9 +14957,25 @@ async function reportResearchBundle(env, question, plan, budget) {
 
 function reportResearchMatchedGroupTerms(text, group) {
   const terms = Array.isArray(group && group.terms) ? group.terms : [];
-  if (terms.includes("datacenter") || (terms.includes("data") && terms.includes("center"))) {
-    return /\bdata[\s-]*cent(?:er|re)s?\b|\bdatacenters?\b|\baidc\b|数据中心|算力中心/iu.test(text) ? ["datacenter"] : [];
+  // Keep compound physical metrics intact: memory capacity and generic
+  // chip demand are not evidence of power capacity or electricity use.
+  const electricalUnit = /(?:^|[^a-z])(?:[kmgt]w(?:h)?|gigawatts?|megawatts?|kilowatts?|terawatts?)(?=$|[^a-z])/iu.test(text);
+  const physicalText = text.replace(/\b(?:computing|computational|compute|processing|bargaining|purchasing|pricing)[ -]+power\b/giu, " ");
+  if (group.metric_kind === "power_capacity") {
+    const capacityWithUnit = /(?:\bcapacity\b|容量|装机)(?:[ -]+(?:of|is|at|about|around|approximately|up|to|from|reaches?|will|rises?|grows?|by|over|nearly)){0,5}[ ()0-9.,~-]{0,24}(?:[kmgt]w|gigawatts?|megawatts?|kilowatts?|terawatts?)(?=$|[^a-z])/iu.test(text);
+    return capacityWithUnit || /(?:power|electrical|electricity|grid|facility)[ -]+capacity|capacity[ -]+(?:of[ -]+)?(?:power|electricity)|功率容量|电力容量/iu.test(physicalText) ? ["power_capacity"] : [];
   }
+  if (group.metric_kind === "electricity_consumption") {
+    const consumptionWithUnit = /(?:\bconsumption\b|\bdemand\b|消耗|需求)(?:[ -]+(?:of|is|at|about|around|approximately|up|to|from|reaches?|will|rises?|grows?|by|over|nearly)){0,5}[ ()0-9.,~-]{0,24}[kmgt]wh(?=$|[^a-z])/iu.test(text);
+    return consumptionWithUnit || /(?:power|electricity|energy)[ -]+(?:consumption|demand|use)|(?:consumption|demand)[ -]+(?:of[ -]+)?(?:power|electricity)|用电|耗电|电力消耗/iu.test(physicalText) ? ["electricity_consumption"] : [];
+  }
+  if (group.metric_kind === "electricity") {
+    return electricalUnit || /\b(?:electricity|electrical|grid)\b|\bpower[ -]+(?:capacity|consumption|demand|supply|generation|needed|shortfall|constraints?|bottlenecks?|connections?|investment|infrastructure|availability|use)\b|电力|电网|供电|功率|用电|耗电/iu.test(physicalText) ? ["electricity"] : [];
+  }
+  if (terms.includes("datacenter") || (terms.includes("data") && terms.includes("center"))) {
+    return /\bdata[\s-]*cent(?:er|re)s?\b|\bdatacenters?\b|\baidcs?\b|数据中心|算力中心/iu.test(text) ? ["datacenter"] : [];
+  }
+  if (terms.includes("ai") && /(?:^|[^a-z0-9])aidcs?(?=$|[^a-z0-9])/iu.test(text)) return ["aidc"];
   return terms.filter((term) => reportResearchChartTokenMatches(text, term));
 }
 
@@ -14961,6 +15001,8 @@ async function reportResearchCharts(env, question, sourceIds, plan, budget) {
   const coreGroups = planGroups.filter((group) => group.role === "core");
   const requiredCoreGroups = coreGroups.filter((group) => group.required !== false);
   const facetGroups = planGroups.filter((group) => group.role === "facet");
+  const metricGroups = facetGroups.filter((group) => group.aspect === "metric");
+  const geographyGroups = facetGroups.filter((group) => group.aspect === "geography");
   const tokens = [...new Set([
     ...planGroups.flatMap((group) => group.terms),
     ...reportResearchChartTokens(question),
@@ -14987,28 +15029,39 @@ async function reportResearchCharts(env, question, sourceIds, plan, budget) {
     const requiredChartCoreCoverage = requiredCoreGroups
       .filter((group) => reportResearchMatchedGroupTerms(text, group).length).length;
     const facetCoverage = facetGroups.filter((group) => reportResearchMatchedGroupTerms(text, group).length).length;
+    // Metric fields and the chart's own description outweigh broad topic tags.
+    const metricSegments = [item.title, item.description, item.trend_summary, ...item.metrics]
+      .flatMap((value) => String(value || "").split(/[。；;!?\n]|\.(?:\s|$)/u)).map(normalizeText).filter(Boolean);
+    const metricCoverage = metricGroups.filter((group) => metricSegments.some((text) => reportResearchMatchedGroupTerms(text, group).length)).length;
+    // Explicit chart geography outranks countries mentioned in company titles.
+    const geographyText = normalizeText(item.geographies.length ? item.geographies.join(" ") : item.title);
+    const geographyCoverage = geographyGroups.filter((group) => reportResearchMatchedGroupTerms(geographyText, group).length).length;
+    const missingCore = requiredCoreGroups.filter((group) => !reportResearchMatchedGroupTerms(text, group).length);
+    const dataCenterCore = requiredCoreGroups.find((group) => group.terms.includes("datacenter"));
+    const dataCenterMatched = dataCenterCore && reportResearchMatchedGroupTerms(text, dataCenterCore).length > 0;
+    const onlyAiModifierMissing = missingCore.length > 0 && missingCore.every((group) => group.terms.includes("ai"));
+    const contextAi = onlyAiModifierMissing && missingCore.every((group) => reportResearchMatchedGroupTerms(reportContext, group).length > 0);
+    const powerFacet = metricGroups.find((group) => group.terms.includes("power") && group.terms.includes("electricity"));
+    const powerSupporting = powerFacet && metricSegments.some((text) => reportResearchMatchedGroupTerms(text, powerFacet).length > 0);
+    const supportingContext = onlyAiModifierMissing && dataCenterMatched && (contextAi || powerSupporting);
+    const coreQualified = !missingCore.length || supportingContext;
+    if (metricGroups.length && !metricCoverage) return null;
     const substantiveMatches = matchedTerms.filter((term) => !REPORT_RESEARCH_GENERIC_AI_TERMS.has(term));
     if (!substantiveMatches.length) return null;
-    if (facetGroups.length) {
-      if (sameSource && !(
-        facetCoverage >= 1
-        && (requiredCoreGroups.length
-          ? requiredChartCoreCoverage === requiredCoreGroups.length
-          : chartCoreCoverage >= 1 || reportContextCoreCoverage >= 1)
-      )) return null;
-      if (!sameSource && !(
-        facetCoverage >= 1
-        && (requiredCoreGroups.length
-          ? requiredChartCoreCoverage === requiredCoreGroups.length
-          : chartCoreCoverage >= 1)
-      )) return null;
-    } else if (requiredCoreGroups.length
-      ? requiredChartCoreCoverage !== requiredCoreGroups.length
-      : chartCoreCoverage < 1) {
-      return null;
-    }
+    if (requiredCoreGroups.length ? !coreQualified : chartCoreCoverage < 1) return null;
+    if (facetGroups.length && !facetCoverage) return null;
+    const geographicContext = geographyGroups.length && !geographyCoverage;
+    const scopeNotes = [];
+    if (supportingContext) scopeNotes.push(contextAi
+      ? "配套参考：AI关联来自所属报告；本图指标为一般数据中心口径，不能全部归为AI专用。"
+      : "配套参考：本图为一般数据中心电力约束，不是AI专用容量预测。");
+    if (geographicContext) scopeNotes.push(item.geographies.length
+      ? `原图地区：${item.geographies.join("、")}；仅作地域对照，不代表${geographyGroups.map((group) => group.name).join("、")}预测。`
+      : "本图未独立标明地区，不能仅凭所属报告推定地域口径。");
     return {
-      item,
+      item: scopeNotes.length ? { ...item, description: `${scopeNotes.join(" ")} ${item.description}` } : item,
+      metricCoverage,
+      geographyCoverage,
       sameSource,
       matches,
       rawAsciiMatches,
@@ -15019,7 +15072,9 @@ async function reportResearchCharts(env, question, sourceIds, plan, budget) {
       sourceRank: sameSource ? sourcePriority.get(reportId) : Number.MAX_SAFE_INTEGER,
     };
   }).filter(Boolean).sort((left, right) => (
-    right.facetCoverage - left.facetCoverage
+    right.metricCoverage - left.metricCoverage
+    || right.geographyCoverage - left.geographyCoverage
+    || right.facetCoverage - left.facetCoverage
     || right.chartCoreCoverage - left.chartCoreCoverage
     || right.rawAsciiMatches - left.rawAsciiMatches
     || right.matches - left.matches
@@ -15035,7 +15090,9 @@ async function reportResearchCharts(env, question, sourceIds, plan, budget) {
   const selected = [];
   for (const row of ranked) {
     if (seen.has(row.item.image_id)) continue;
-    const reportId = cleanCatalogReportId(row.item.report_id) || `chart:${row.item.image_id}`;
+    const reportTitle = normalizeText(row.item.report_title);
+    const reportId = cleanCatalogReportId(row.item.report_id)
+      || (reportTitle && reportTitle !== normalizeText("图表所在报告") ? `title:${reportTitle}` : `chart:${row.item.image_id}`);
     const reportCount = Math.max(0, Number(perReport.get(reportId)) || 0);
     if (reportCount >= 2) continue;
     seen.add(row.item.image_id);
