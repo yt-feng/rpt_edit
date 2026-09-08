@@ -103,6 +103,13 @@
 
   function canonicalSourceUrl(id, source = {}, origin = "https://example.invalid") {
     const reportId = text(id || source.id, 180);
+    if (/^news:[0-9a-f]{64}$/u.test(reportId)) {
+      try {
+        const url = new URL(source.source_url);
+        if (url.protocol === "https:" && !url.username && !url.password) return url.href;
+      } catch (_error) { /* Invalid news URLs must not become catalog report URLs. */ }
+      return `${origin}/?q=${encodeURIComponent(text(source.title, 300))}`;
+    }
     const imageSource = /^chart:([0-9a-f]{64})$/u.exec(reportId);
     if (imageSource) return `${origin}/charts.html?image=${imageSource[1]}`;
     if (reportId) return `${origin}/report.html?id=${encodeURIComponent(reportId)}`;
@@ -120,17 +127,30 @@
     }).slice(0, 8);
   }
 
+  function sourceEvidenceLabel(source) {
+    if (source.partial_excerpt) return "报告正文节选";
+    return ({ news_description: "新闻简介 · GDELT", news_snippet: "官方来源摘要", chart_metadata: "图表提取内容" })[source.evidence_kind] || "";
+  }
+
+  function sourcesHeading(model) {
+    return model.sources.some((source) => /^news:/u.test(source.id)) ? "来源报告与新闻" : "来源报告";
+  }
+
   function normalizePayload(payload = {}, runtime = {}) {
     const response = payload.response && typeof payload.response === "object" ? payload.response : payload;
     const sourceRows = (Array.isArray(response.sources) ? response.sources : Array.isArray(response.recommendations) ? response.recommendations : [])
       .filter((item) => item && typeof item === "object" && text(item.id, 180))
-      .slice(0, 8)
+      .slice(0, 12)
       .map((item) => ({
         id: text(item.id, 180),
         title: text(item.title || item.title_zh || item.report_title || "来源报告", 500),
         institution: text(item.institution || item.bank_name, 180),
         industry: text(item.industry, 180),
-        date: text(item.date_folder || item.date, 80),
+        date: /^news:/u.test(String(item.id || ""))
+          ? text(item.published_at ? `发布时间 ${item.published_at}` : item.observed_at ? `监测时间 ${item.observed_at}` : "", 80)
+          : text(item.date_folder || item.date, 80),
+        source_url: text(item.source_url, 1800),
+        evidence_kind: text(item.evidence_kind, 40),
         partial_excerpt: item.partial_excerpt === true || item.text_scope === "partial_excerpt",
       }));
     const sourceMap = new Map(sourceRows.map((item) => [item.id, item]));
@@ -465,9 +485,9 @@
       });
     }
     if (model.sources.length) {
-      body.push(paragraphXml(runXml("来源报告"), { style: "Heading1" }));
+      body.push(paragraphXml(runXml(sourcesHeading(model)), { style: "Heading1" }));
       model.sources.forEach((source) => {
-        const meta = [source.institution, source.industry, source.date, source.partial_excerpt ? "报告正文节选" : ""].filter(Boolean).join(" · ");
+        const meta = [source.institution, source.industry, source.date, sourceEvidenceLabel(source)].filter(Boolean).join(" · ");
         body.push(paragraphXml(hyperlink(source.title || source.id, canonicalSourceUrl(source.id, source, model.source_origin)), { numbered: true }));
         if (meta) body.push(paragraphXml(runXml(meta, { color: "59636E", size: 18 }), { style: "Caption" }));
       });
@@ -476,6 +496,7 @@
       body.push(paragraphXml(runXml("可继续研究"), { style: "Heading1" }));
       model.follow_up_questions.forEach((question) => body.push(paragraphXml(runXml(question), { numbered: 2 })));
     }
+    if (model.sources.some((source) => source.evidence_kind === "news_description")) body.push(paragraphXml(hyperlink("新闻简介数据由 GDELT 提供，原文请见各条来源链接。", "https://www.gdeltproject.org/")));
     body.push(paragraphXml(runXml("说明：本材料由 AI 根据已索引研究资料生成，不构成投资建议；重要结论请以来源报告为准。", { italic: true, color: "59636E", size: 18 })));
     const documentXml = `${XML_DECLARATION}<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><w:body>${body.join("")}<w:sectPr><w:headerReference w:type="default" r:id="rId3"/><w:footerReference w:type="default" r:id="rId4"/><w:pgSz w:w="11906" w:h="16838"/><w:pgMar w:top="1134" w:right="1134" w:bottom="1134" w:left="1134" w:header="708" w:footer="708" w:gutter="0"/><w:cols w:space="720"/><w:docGrid w:linePitch="360"/></w:sectPr></w:body></w:document>`;
     const relationshipTypes = {
@@ -553,7 +574,7 @@
     }
     if (assignment.unmatched.length) body.push(`<section><h2>补充图表证据</h2>${assignment.unmatched.map(chartHtml).join("")}</section>`);
     if (model.data_points.length) body.push(`<section><h2>关键数据</h2><div class="data-grid">${model.data_points.map((item) => `<article><h3>${escapeHtml(item.label)}</h3><strong>${escapeHtml(item.value)}</strong>${item.context ? `<p>${escapeHtml(item.context)}</p>` : ""}${printSourceRefs(item.source_ids, sourceIndex, sourceMap, model.source_origin)}</article>`).join("")}</div></section>`);
-    if (model.sources.length) body.push(`<section><h2>来源报告</h2><ol class="sources">${model.sources.map((source) => `<li><a href="${escapeHtml(canonicalSourceUrl(source.id, source, model.source_origin))}">${escapeHtml(source.title || source.id)}</a>${[source.institution, source.industry, source.date, source.partial_excerpt ? "报告正文节选" : ""].filter(Boolean).length ? `<span>${escapeHtml([source.institution, source.industry, source.date, source.partial_excerpt ? "报告正文节选" : ""].filter(Boolean).join(" · "))}</span>` : ""}</li>`).join("")}</ol></section>`);
+    if (model.sources.length) body.push(`<section><h2>${escapeHtml(sourcesHeading(model))}</h2><ol class="sources">${model.sources.map((source) => `<li><a href="${escapeHtml(canonicalSourceUrl(source.id, source, model.source_origin))}">${escapeHtml(source.title || source.id)}</a>${[source.institution, source.industry, source.date, sourceEvidenceLabel(source)].filter(Boolean).length ? `<span>${escapeHtml([source.institution, source.industry, source.date, sourceEvidenceLabel(source)].filter(Boolean).join(" · "))}</span>` : ""}</li>`).join("")}</ol></section>`);
     if (model.follow_up_questions.length) body.push(`<section><h2>可继续研究</h2><ol>${model.follow_up_questions.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ol></section>`);
     body.push('<p class="disclaimer">说明：本材料由 AI 根据已索引研究资料生成，不构成投资建议；重要结论请以来源报告为准。</p></main>');
     return `<!doctype html><html lang="${CONTENT_DOCUMENT_LANG}" dir="${CONTENT_DOCUMENT_DIR}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KC桌面研究报告</title><style>@page{size:A4;margin:16mm 18mm 18mm}*{box-sizing:border-box}html{color:#17212b;background:#fff;font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;font-size:10.5pt;line-height:1.65}body{margin:0}.cover{display:flex;min-height:250mm;flex-direction:column;align-items:center;justify-content:center;text-align:center;break-after:page}.kicker{margin:0 0 18pt;color:#a06a12;font-size:10pt;font-weight:800;letter-spacing:.16em}.cover h1{max-width:150mm;margin:0;color:#203748;font-size:27pt;line-height:1.28}.subtitle{max-width:148mm;margin:10pt 0 0;color:#2b5163;font-size:14pt}.scope,.date,.notice{max-width:145mm;color:#59636e}.scope{margin:24pt 0 0}.date{margin:7pt 0 0}.notice{margin:56pt 0 0;font-size:9pt;font-style:italic}.report>section{margin:0 0 18pt}.report h2{margin:15pt 0 7pt;color:#2e74b5;font-size:16pt;line-height:1.3;break-after:avoid}.report h3{margin:10pt 0 4pt;color:#1f4d78;font-size:12pt;line-height:1.35;break-after:avoid}.report p{margin:0 0 7pt;white-space:pre-line}.finding{margin-bottom:14pt}.source-refs{display:flex;gap:6pt;align-items:center;color:#59636e;font-size:9pt}.source-refs a,.sources a,figcaption a{color:#0f766e;text-decoration:underline}.data-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8pt}.data-grid article{padding:10pt;border:1px solid #dfe5e8;border-radius:6pt;break-inside:avoid}.data-grid strong{display:block;margin:3pt 0;font-size:15pt}figure{margin:12pt 0 16pt;break-inside:avoid}figure h3{margin-bottom:6pt}figure img{display:block;width:100%;height:auto;max-height:150mm;object-fit:contain;border:1px solid #e2e8eb}figcaption{display:flex;justify-content:space-between;gap:10pt;margin-top:5pt;color:#59636e;font-size:9pt}.sources li{margin:0 0 7pt}.sources span{display:block;color:#59636e;font-size:9pt}.disclaimer{margin-top:24pt;padding-top:8pt;border-top:1px solid #d7dbe2;color:#59636e;font-size:8.5pt;font-style:italic}@media screen{body{max-width:210mm;margin:20px auto;padding:16mm 18mm;box-shadow:0 8px 36px rgba(15,23,42,.12)}.cover{min-height:255mm}}@media print{a{color:#0f766e!important}.data-grid article{border-color:#dfe5e8}}</style></head><body>${body.join("")}</body></html>`;
@@ -757,10 +778,10 @@
       }
     }
     if (model.sources.length) {
-      heading("来源报告");
+      heading(sourcesHeading(model));
       for (const source of model.sources) {
         paragraph(`[S${sourceIndex.get(source.id)}] ${source.title}`, { url: canonicalSourceUrl(source.id, source, model.source_origin), after: 3 });
-        const meta = [source.institution, source.industry, source.date, source.partial_excerpt ? "报告正文节选" : ""].filter(Boolean).join(" · ");
+        const meta = [source.institution, source.industry, source.date, sourceEvidenceLabel(source)].filter(Boolean).join(" · ");
         if (meta) paragraph(meta, { size: 8.5, color: muted, after: 8 });
       }
     }
@@ -768,6 +789,7 @@
       heading("可继续研究");
       model.follow_up_questions.forEach((question, index) => paragraph(`${index + 1}. ${question}`));
     }
+    if (model.sources.some((source) => source.evidence_kind === "news_description")) paragraph("新闻简介数据由 GDELT 提供，原文请见各条来源链接。", { url: "https://www.gdeltproject.org/", size: 8, color: muted });
     paragraph("本材料根据已索引研究资料生成。重要结论请结合来源报告核验。", { size: 8, color: muted });
     const pages = pdf.getPages();
     pages.forEach((item, index) => item.drawText(`${index + 1} / ${pages.length}`, { x: width - margin - 32, y: 32, size: 8, font, color: muted }));
