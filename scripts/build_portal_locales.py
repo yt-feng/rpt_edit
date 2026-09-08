@@ -46,6 +46,12 @@ from repair_portal_ja_catalog_titles import apply_ja_catalog_title_repairs
 CACHE_SCHEMA_VERSION = 1
 PROMPT_VERSION = "portal-public-locales-v4"
 QUALITY_GATE_VERSION = 3
+# Reviewed UI labels: providers return the same mixed-script Chinese/Japanese
+# text for these entries, which cannot pass the unchanged-source check.
+REVIEWED_JA_UI_TRANSLATIONS = {
+    "AI 研究": "AIリサーチ",
+    "__KC_PH_000__ · AI 研究": "__KC_PH_000__ · AIリサーチ",
+}
 DEFAULT_DEEPSEEK_MODEL = "deepseek-v4-flash"
 LEGACY_DEEPSEEK_MODEL_ALIASES = {
     "deepseek-chat": DEFAULT_DEEPSEEK_MODEL,
@@ -1306,6 +1312,14 @@ def translate_missing_units(
                 for locale, row in prune_counts.items()
             )
         )
+    # Seed only exact current-inventory labels after pruning invalid cache rows.
+    # Keep valid paid translations and the ordinary quality/placeholder checks.
+    ja_entries = cache["locales"]["ja"]
+    for key, unit in units.items():
+        reviewed = REVIEWED_JA_UI_TRANSLATIONS.get(unit.source)
+        if reviewed is not None and key not in ja_entries:
+            validate_translation_quality("ja", unit, reviewed)
+            ja_entries[key] = _translation_cache_row(unit, reviewed)
     jobs: list[tuple[str, list[TranslationUnit]]] = []
     missing_counts: dict[str, int] = {}
     for locale in LOCALES:
