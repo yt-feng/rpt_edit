@@ -44,7 +44,7 @@
 .shell.research-shell { max-width: 1100px; padding-top: 24px; }
 .research-intro { max-width: 900px; margin: 0 0 22px; }
 .research-intro .journey-eyebrow { margin-bottom: 10px; }
-.research-intro h1 { margin: 0 0 12px; font-size: clamp(30px, 3.2vw, 40px); line-height: 1.25; letter-spacing: -.035em; }
+.research-intro h1 { margin: 0 0 12px; font-size: clamp(30px, 3.2vw, 40px); line-height: 1.25; letter-spacing: -.035em; text-wrap: balance; }
 .research-intro > p:not(.journey-eyebrow) { color: var(--muted); font-size: 14px; line-height: 1.65; max-width: 800px; margin-bottom: 12px; }
 .research-intro-meta { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 12px; font-weight: 600; color: var(--accent); }
 .research-intro-meta span::before { content: "✓"; margin-inline-end: 7px; }
@@ -93,7 +93,7 @@
   .research-guide { grid-template-columns: 1fr; gap: 16px; }
   .shell.research-shell { padding-top: 18px; }
   .research-intro { margin-top: 0; }
-  .research-intro h1 { font-size: 31px; }
+  .research-intro h1 { font-size: clamp(27px, 7.4vw, 31px); }
   .research-workspace .report-chat-form textarea { font-size: 16px; }
   .research-workspace .report-chat-form > button[type="submit"] { width: 100%; }
   .research-prompts > span { width: 100%; }
@@ -4722,10 +4722,17 @@ a.secondary-button {
 
   .topbar-actions {
     width: 100%;
+    flex-wrap: wrap;
     justify-content: flex-start;
-    overflow-x: auto;
-    padding-bottom: 4px;
-    scrollbar-width: thin;
+    gap: 8px;
+    overflow: visible;
+    padding-bottom: 0;
+  }
+
+  .topbar-actions > .topbar-link,
+  .topbar-actions > .account-button {
+    max-width: 100%;
+    min-height: 40px;
   }
 
   .catalog-meta { display: none; }
