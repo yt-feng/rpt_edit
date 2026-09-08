@@ -306,13 +306,18 @@ test("news citations retain external URLs and observation dates in DOCX and PDF"
   const payload = fixture(), id = `news:${"9".repeat(64)}`, url = "https://www.eia.gov/todayinenergy/detail.php?id=123";
   payload.response.charts = [];
   payload.response.sources = [{ id, title: "Power demand update", institution: "EIA", source_url: url, observed_at: "2026-09-08T01:00:00Z", evidence_kind: "news_description" }];
+  payload.response.executive_summary = "报告解释供电约束。\n\n新闻补充近期进展。";
   payload.response.summary_source_ids = [id];
-  payload.response.findings = [{ title: "近期进展", summary: "新闻简介与报告相互补充。", source_ids: [id] }];
+  payload.response.findings = [{ title: "近期进展", summary: "新闻简介与报告相互补充。\n\n投产节奏仍取决于并网条件。", source_ids: [id] }];
+  payload.response.data_points = [{ label: "并网容量", value: "53 GW", source_ids: [id] }];
   const docx = await exporter.buildDocx(payload, runtime);
   const entries = zipEntries(docx.bytes), decoder = new TextDecoder();
+  assert.equal(docx.model.executive_summary, payload.response.executive_summary);
+  assert.equal(docx.model.findings[0].summary, payload.response.findings[0].summary);
   assert.match(decoder.decode(entries.get("word/document.xml")), /监测时间 2026-09-08/u);
   assert.match(decoder.decode(entries.get("word/document.xml")), /新闻简介 · GDELT/u);
-  assert.ok(decoder.decode(entries.get("word/_rels/document.xml.rels")).includes(url));
+  assert.match(decoder.decode(entries.get("word/document.xml")), /新闻简介与报告相互补充。<\/w:t><w:br\/><w:t xml:space="preserve"><\/w:t><w:br\/><w:t xml:space="preserve">投产节奏仍取决于并网条件。/u);
+  assert.equal(decoder.decode(entries.get("word/_rels/document.xml.rels")).split(url).length - 1, 4, "summary, finding, data point and bibliography must cite the original article");
   assert.doesNotMatch(decoder.decode(entries.get("word/_rels/document.xml.rels")), /report\.html\?id=news/u);
   const pdf = await exporter.buildPdf(payload, runtime);
   const document = await PDFLib.PDFDocument.load(pdf.bytes);
@@ -320,10 +325,25 @@ test("news citations retain external URLs and observation dates in DOCX and PDF"
     const annotations = page.node.Annots();
     return Array.from({ length: annotations ? annotations.size() : 0 }, (_, index) => annotations.lookup(index, PDFLib.PDFDict).lookup(PDFLib.PDFName.of("A"), PDFLib.PDFDict).lookup(PDFLib.PDFName.of("URI"), PDFLib.PDFString).decodeText());
   });
-  assert.ok(urls.includes(url));
+  assert.equal(urls.filter((candidate) => candidate === url).length, 4, "all inline references and the bibliography must cite the original article");
+  assert.ok(urls.every((candidate) => candidate === url || candidate === "https://www.gdeltproject.org/"), JSON.stringify(urls));
   payload.response.sources[0].source_url = "javascript:alert(1)";
   const invalid = await exporter.buildDocx(payload, runtime);
   assert.doesNotMatch(decoder.decode(zipEntries(invalid.bytes).get("word/_rels/document.xml.rels")), /javascript:/u);
+});
+
+test("exports retain twelve available sources and up to eight citations per analytical section", () => {
+  const exporter = loadExporter();
+  const sources = Array.from({ length: 12 }, (_, index) => ({ id: `report-${index}`, title: `Source ${index}` }));
+  const ids = sources.map((source) => source.id);
+  const model = exporter.normalizePayload({ sources, executive_summary: "综合分析。", summary_source_ids: ids,
+    findings: [{ title: "共同约束", summary: "比较证据。", source_ids: ids }],
+    data_points: [{ label: "容量", value: "53 GW", source_ids: ids }],
+  });
+  assert.equal(model.sources.length, 12);
+  assert.deepEqual(Array.from(model.summary_source_ids), ids.slice(0, 8));
+  assert.deepEqual(Array.from(model.findings[0].source_ids), ids.slice(0, 8));
+  assert.deepEqual(Array.from(model.data_points[0].source_ids), ids.slice(0, 8));
 });
 
 test("unlinked chart evidence stays inline and cites its exact chart permalink in DOCX and PDF", async () => {

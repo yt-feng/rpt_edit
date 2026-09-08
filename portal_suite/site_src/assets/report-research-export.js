@@ -730,7 +730,7 @@
     const sourceIndex = new Map(model.sources.map((source, index) => [source.id, index + 1]));
     const refs = (ids) => {
       for (const id of ids.filter((value) => sourceIndex.has(value))) {
-        paragraph(`来源 [S${sourceIndex.get(id)}]`, { size: 8.5, after: 2, url: canonicalSourceUrl(id, {}, model.source_origin) });
+        paragraph(`来源 [S${sourceIndex.get(id)}]`, { size: 8.5, after: 2, url: canonicalSourceUrl(id, model.sources[sourceIndex.get(id) - 1], model.source_origin) });
       }
       y -= 4;
     };
