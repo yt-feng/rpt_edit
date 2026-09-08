@@ -14,7 +14,7 @@ const workerWithoutImports = worker.replace(
    async function searchSourceLeadMetadata() { return { items: [], total: 0 }; }
    function sourceLeadAdapterEnabled() { return false; }
   `,
-);
+).replace(/^[ \t]*import\s*\{[^}]+\}\s*from\s*["']\.\/research-news(?:-snapshot)?\.js["'];\s*/gm, "");
 assert.notEqual(workerWithoutImports, worker, "the Worker module import must be replaced for the VM harness");
 
 function extractFunction(source, name) {
