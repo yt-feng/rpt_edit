@@ -2370,6 +2370,9 @@ test("research numeric grounding requires complete values and preserves negative
     { name: "compact year ranges retain both positive years", evidence: "The forecast covers 2025-2030.", unsupported: "额外预测年份为2035。", value: "2035", supported: "预测区间从2025年延伸至2030年。" },
     { name: "spaced year ranges retain both positive years", evidence: "The forecast covers 2025 - 2030.", unsupported: "额外预测年份为2035。", value: "2035", supported: "预测区间从2025年延伸至2030年。" },
     { name: "negative percentage ranges retain both negative endpoints", evidence: "The return range is -5%至-3%.", unsupported: "区间上界为3%。", value: "3%", supported: "收益率区间为-5%至-3%。" },
+    { name: "equivalent decimal formatting preserves the value", evidence: "Capacity is 53.0 and the unit price is 1,234.5000.", unsupported: "近似单价为1235。", value: "1235", supported: "容量为53。单价为1234.5。" },
+    { name: "trailing zeros do not require rounding", evidence: "The forecast is 53.040.", unsupported: "四舍五入值为53.0。", value: "53.0", supported: "原始预测值为53.04。" },
+    { name: "zero padding preserves negative percentages", evidence: "The margin change is -005.000%.", unsupported: "相反变化为5%。", value: "5%", supported: "利润率变化为-5%。" },
   ];
   for (const item of cases) await t.test(item.name, async () => {
     const bucket = new MemoryR2(), reportId = "d8".repeat(12);
@@ -3104,6 +3107,41 @@ test("research combines body and GDELT descriptions without counting news as rep
     assert.equal(result.data.data_points[0].value, "3817");
     assert.ok(bucket.getKeys.length + bucket.putKeys.length + modelCalls <= 50);
   } finally { globalThis.fetch = original; }
+});
+
+test("research retains Chinese dates grounded in ISO publication and observation metadata", async () => {
+  const NativeDate = globalThis.Date, originalFetch = globalThis.fetch;
+  const instant = NativeDate.parse("2026-09-08T12:34:56.000Z");
+  globalThis.Date = class extends NativeDate {
+    constructor(...args) { super(...(args.length ? args : [instant])); }
+    static now() { return instant; }
+  };
+  try {
+    const bucket = new MemoryR2(), id = "e7".repeat(12);
+    await seedReportResearchLookup(bucket, [{ id, title: "AI capital expenditure" }], { ai: [{ id, tf: 5, chunks: ["c0"] }], capex: [{ id, tf: 4, chunks: ["c0"] }] }, [[`${id}:c0`, { id: "c0", report_id: id, text: "AI capital expenditure depends on equipment delivery and the availability of electricity connections." }]]);
+    const env = { ...envFor(bucket), DEEPSEEK_API_KEY: "configured-test-key" }, token = await register(env);
+    globalThis.fetch = async (url, init) => {
+      if (!String(url).startsWith("https://api.deepseek.com/")) {
+        const origin = new URL(url).origin;
+        return new Response(`<rss><channel><item><title>Artificial intelligence infrastructure update</title><link>${origin}/article</link><pubDate>Mon, 07 Sep 2026 10:23:45 GMT</pubDate><description>Artificial intelligence investment requires electricity grid connections and equipment delivery, so construction schedules depend on the readiness of supporting infrastructure.</description></item></channel></rss>`, { headers: { "content-type": "application/rss+xml" } });
+      }
+      const request = JSON.parse(init.body);
+      let generated;
+      if (request.max_tokens === 400) generated = { core: [{ name: "AI", terms: ["ai"] }], facets: [{ name: "capex", terms: ["capex"] }], terms: ["ai", "capex"] };
+      else {
+        const input = JSON.parse(request.messages[1].content), news = input.sources.find((source) => source.id.startsWith("news:"));
+        assert.equal(news.published_at, "2026-09-07T10:23:45.000Z");
+        assert.equal(news.observed_at, "2026-09-08T12:34:56.000Z");
+        generated = { research_title: "近期信息核验", executive_summary: "官方摘要发布于2026年9月7日，于2026年9月8日被监测收录。", summary_source_ids: [news.id], findings: [{ title: "时间口径", summary: "发布时间为9月7日。监测时间为9月8日。", source_ids: [news.id] }], data_points: [{ label: "发布日期", value: "2026年9月7日", source_ids: [news.id] }] };
+      }
+      return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify(generated) } }] }), { headers: { "content-type": "application/json" } });
+    };
+    const result = await jsonRequest(env, "/report-chat", { method: "POST", headers: { "content-type": "application/json", ...bearer(token) }, body: JSON.stringify({ question: "AI capital expenditure", include_news: true }) });
+    assert.equal(result.response.status, 200, JSON.stringify(result.data));
+    assert.equal(result.data.executive_summary, "官方摘要发布于2026年9月7日,于2026年9月8日被监测收录。");
+    assert.equal(result.data.findings[0].summary, "发布时间为9月7日。 监测时间为9月8日。");
+    assert.equal(result.data.data_points[0].value, "2026年9月7日");
+  } finally { globalThis.Date = NativeDate; globalThis.fetch = originalFetch; }
 });
 
 test("research links chart-only reports into the evidence whitelist when full text misses or is unavailable", async (t) => {
