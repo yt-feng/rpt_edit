@@ -151,3 +151,37 @@ test("explicit US chart geography cannot be overridden by China in a company tit
   assert.match(rows[0].description, /原图地区：US/u);
   assert.match(rows[0].description, /不代表中国预测/u);
 });
+
+
+test("HBM capacity and demand research retains complementary demand charts", async () => {
+  const question = "半导体HBM产能与需求未来如何增长？";
+  const demand = chart("Semiconductor HBM demand forecast", {
+    description: "HBM demand from AI GPU and ASIC products rises through 2027.",
+    metrics: ["HBM demand"], entities: ["semiconductor", "HBM"], units: ["GB"],
+    keywords: ["半导体", "HBM", "需求"],
+  });
+  const capacity = chart("Semiconductor HBM production capacity", {
+    description: "HBM capacity expands in semiconductor fabs.",
+    metrics: ["HBM production capacity"], entities: ["semiconductor", "HBM"], units: ["wafers/month"],
+    keywords: ["半导体", "HBM", "产能"],
+  });
+  const plan = planFor(question);
+  assert.equal(plan.facets.find((group) => group.name === "容量").metric_kind, "");
+  const rows = await chartsFor(gallery([report("HBM demand report", [demand]), report("HBM production report", [capacity])]), question, [], plan);
+  assert.deepEqual(new Set(rows.map((row) => row.image_id)), new Set([demand.image_id, capacity.image_id]));
+});
+
+test("bank earnings and capex research retains both independent financial metrics", async () => {
+  const question = "比较中国与美国银行盈利和资本开支";
+  const earnings = chart("中国与美国银行盈利对比", {
+    description: "中国银行与美国银行盈利增长和净息差变化。",
+    metrics: ["银行利润", "earnings", "net interest margin"], geographies: ["China", "US"], keywords: ["银行", "盈利", "earnings"],
+  });
+  const capex = chart("中国与美国银行资本开支", {
+    description: "中国与美国银行的资本开支变化。", metrics: ["Capital expenditure"], geographies: ["China", "US"], keywords: ["银行", "capex"],
+  });
+  const plan = planFor(question);
+  assert.equal(plan.facets.find((group) => group.name === "资本开支").metric_kind, "");
+  const rows = await chartsFor(gallery([report("Bank earnings", [earnings]), report("Bank capex", [capex])]), question, [], plan);
+  assert.deepEqual(new Set(rows.map((row) => row.image_id)), new Set([earnings.image_id, capex.image_id]));
+});

@@ -15045,7 +15045,9 @@ async function reportResearchCharts(env, question, sourceIds, plan, budget) {
     const powerSupporting = powerFacet && metricSegments.some((text) => reportResearchMatchedGroupTerms(text, powerFacet).length > 0);
     const supportingContext = onlyAiModifierMissing && dataCenterMatched && (contextAi || powerSupporting);
     const coreQualified = !missingCore.length || supportingContext;
-    if (metricGroups.length && !metricCoverage) return null;
+    // Only explicitly qualified physical metrics impose a hard gate. Generic
+    // capacity/capex questions can need complementary demand/earnings charts.
+    if (metricGroups.some((group) => group.metric_kind) && !metricCoverage) return null;
     const substantiveMatches = matchedTerms.filter((term) => !REPORT_RESEARCH_GENERIC_AI_TERMS.has(term));
     if (!substantiveMatches.length) return null;
     if (requiredCoreGroups.length ? !coreQualified : chartCoreCoverage < 1) return null;
