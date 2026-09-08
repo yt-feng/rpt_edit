@@ -667,7 +667,9 @@
     const pdf = await PDFDocument.create();
     pdf.registerFontkit(dependencies.fontkit);
     // Full TrueType embedding avoids fontkit subset glyph loss in CJK PDFs.
-    const font = await pdf.embedFont(fontBytes, { subset: false });
+    // This bundled font's localized digit substitutions do not share the
+    // standard glyph widths/Unicode mapping used by the full-font embedder.
+    const font = await pdf.embedFont(fontBytes, { subset: false, features: { locl: false } });
     pdf.setTitle(model.research_title); pdf.setAuthor(PUBLIC_BRAND);
     pdf.setCreator("Research Export"); pdf.setCreationDate(createdAt); pdf.setModificationDate(createdAt);
     const width = 595.28, height = 841.89, margin = 51, bottom = 55;

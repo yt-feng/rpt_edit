@@ -286,6 +286,36 @@ test("PDF download uses the blob download boundary without opening a window or p
   assert.match(links[0].download, /\.pdf$/u);
 });
 
+test("PDF numeric forecasts and ISO dates retain exact Unicode text when copied", async () => {
+  const { exporter, PDFLib, runtime } = await pdfHarness();
+  const payload = fixture();
+  payload.response.charts = [];
+  payload.response.executive_summary = "预测年份2030E，监测时间2026-09-08T12:34:56Z。容量53.0 GW，变化-5.25%。";
+  const result = await exporter.buildPdf(payload, runtime);
+  const pdf = await PDFLib.PDFDocument.load(result.bytes), lines = [];
+  for (const page of pdf.getPages()) {
+    const fonts = page.node.Resources().lookup(PDFLib.PDFName.of("Font"), PDFLib.PDFDict);
+    // The exporter embeds one text font, with page-local aliases for its runs.
+    const font = fonts.lookup(fonts.keys()[0], PDFLib.PDFDict);
+    const cmap = new TextDecoder().decode(PDFLib.decodePDFRawStream(font.lookup(PDFLib.PDFName.of("ToUnicode"), PDFLib.PDFRawStream)).decode());
+    const unicode = new Map([...cmap.matchAll(/<([0-9A-F]+)>\s+<([0-9A-F]+)>/gu)].map((match) => [match[1], String.fromCharCode(...match[2].match(/.{4}/gu).map((unit) => parseInt(unit, 16)))]));
+    const contents = page.node.Contents();
+    for (let i = 0; i < contents.size(); i += 1) {
+      const operators = new TextDecoder().decode(PDFLib.decodePDFRawStream(contents.lookup(i, PDFLib.PDFRawStream)).decode());
+      for (const match of operators.matchAll(/<([0-9A-F]+)>\s+Tj/gu)) {
+        lines.push(match[1].match(/.{4}/gu).map((cid) => {
+          assert.ok(unicode.has(cid), `unmapped PDF character ${cid}`);
+          return unicode.get(cid);
+        }).join(""));
+      }
+    }
+  }
+  const copied = lines.join("\n");
+  for (const expected of ["2030E", "2026-09-08T12:34:56Z", "53.0 GW", "-5.25%", "预测年份", "监测时间"]) {
+    assert.ok(copied.includes(expected), `PDF text mapping lost ${expected}: ${copied}`);
+  }
+});
+
 test("chart permission failure is actionable and a subsequent export retries the failed image", async () => {
   const exporter = loadExporter();
   await assert.rejects(exporter.buildDocx(fixture(), { fetch: async () => ({ ok: false, status: 403, headers: { get: () => "application/json" } }) }), /重新登录/u);
