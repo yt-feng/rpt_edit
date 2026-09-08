@@ -35,3 +35,32 @@ test("stale or malformed snapshots do not pretend news coverage exists", async (
     assert.equal((await readResearchNewsSnapshot({ bucket: bucketFor([row()], options), groups, now })).status, "unavailable");
   }
 });
+
+
+test("snapshot matches AIDC plurals and Chinese AI data centers with whole acronym boundaries", async (t) => {
+  const conceptGroups = [
+    { role: "core", required: true, terms: ["ai", "artificial", "intelligence", "人工智能", "aidc", "aidcs"] },
+    { role: "core", required: true, terms: ["data", "center", "datacenter", "数据中心", "算力中心"] },
+  ];
+  const cases = [
+    { title: "AIDCs expand their construction pipeline", expected: true },
+    { title: "AIDC expands its construction pipeline", expected: true },
+    { title: "AI data centres expand their construction pipeline", expected: true },
+    { title: "新AI数据中心项目进入建设阶段", expected: true },
+    { title: "新AIDCs项目进入建设阶段", expected: true },
+    { title: "AI software called saidcs receives an update", expected: false },
+    { title: "AI software called aidcservices receives an update", expected: false },
+    { title: "OpenAI data centers receive a software update", expected: false },
+  ];
+  for (const item of cases) await t.test(item.title, async () => {
+    const bucket = bucketFor([row("publisher.com", {
+      title: item.title,
+      summary: "Developers describe construction plans, equipment procurement, financing conditions, and the timing of permits for a new industrial project.",
+    })]);
+    const result = await readResearchNewsSnapshot({ bucket, groups: conceptGroups, now });
+    assert.equal(result.status, item.expected ? "success" : "empty");
+    assert.equal(result.sources.length, item.expected ? 1 : 0);
+    if (item.expected) assert.equal(result.sources[0].title, item.title);
+    assert.equal(bucket.calls, 1);
+  });
+});
