@@ -2289,7 +2289,7 @@ test("report research rejects invented source ids and numeric claims absent from
   }, [[`${reportId}:c000001`, {
     id: "c000001",
     report_id: reportId,
-    text: "AI infrastructure capital expenditure increased 25% in 2026 according to the report evidence.",
+    text: "AI infrastructure capital expenditure increased 25% in 2026 according to the report evidence. Capacity is 53 GW. Scenario values are 20 and 180. Cost estimates are 1,234.5 and 18.",
   }]]);
   const env = { ...envFor(bucket), DEEPSEEK_API_KEY: "configured-test-key" };
   const token = await register(env);
@@ -2314,10 +2314,10 @@ test("report research rejects invented source ids and numeric claims absent from
       choices: [{ message: { content: JSON.stringify({
         research_title: "AI 资本开支证据研究",
         research_scope: "比较 AI 资本开支的证据、分歧与边界。",
-        executive_summary: "证据显示资本开支增长 25%。虚构增长 99%。定性判断仍需结合报告边界。",
+        executive_summary: "证据显示资本开支增长 25%。虚构增长 99%。\n\nCapacity is 53. 两个情景值分别为20，180。定性判断仍需结合报告边界。",
         summary_source_ids: [reportId, "ffffffffffffffffffffffff"],
         findings: [
-          { title: "有证据结论", summary: "资本开支增长 25%。虚构情景达到 99%。定性结论仍然成立。", source_ids: [reportId] },
+          { title: "有证据结论", summary: "资本开支增长 25%。虚构情景达到 99%。\n\nCost estimate is 1,234.5. 两个估算值分别为20,18。定性结论仍然成立。", source_ids: [reportId] },
           { title: "伪来源结论", summary: "不存在的结论。", source_ids: ["ffffffffffffffffffffffff"] },
         ],
         data_points: [
@@ -2344,6 +2344,12 @@ test("report research rejects invented source ids and numeric claims absent from
     assert.equal(result.data.findings.length, 1);
     assert.deepEqual(result.data.findings[0].source_ids, [reportId]);
     assert.match(result.data.findings[0].summary, /定性结论仍然成立/u);
+    assert.match(result.data.executive_summary, /Capacity is 53\./u);
+    assert.match(result.data.executive_summary, /两个情景值分别为20[,，]180/u);
+    assert.match(result.data.findings[0].summary, /Cost estimate is 1,234\.5\./u);
+    assert.match(result.data.findings[0].summary, /两个估算值分别为20,18/u);
+    assert.ok(result.data.executive_summary.includes("\n\n"));
+    assert.ok(result.data.findings[0].summary.includes("\n\n"));
     assert.equal(result.data.data_points.length, 1);
     assert.equal(result.data.data_points[0].value, "25%");
     assert.equal(JSON.stringify(result.data).includes("99%"), false);
@@ -2353,6 +2359,45 @@ test("report research rejects invented source ids and numeric claims absent from
   } finally {
     globalThis.fetch = originalFetch;
   }
+});
+
+test("research numeric grounding requires complete values and preserves negative signs", async (t) => {
+  const cases = [
+    { name: "53 is not present inside 153", evidence: "The capacity forecast is 153 in 2030.", unsupported: "容量为53。", value: "53", supported: "预测年份为2030。" },
+    { name: "3 is not present inside 2030", evidence: "The capacity forecast is 153 in 2030.", unsupported: "项目数量为3。", value: "3", supported: "预测年份为2030。" },
+    { name: "negative values cannot support positive claims", evidence: "The reported change is -53 and the margin change is −18%.", unsupported: "增长值为53。正向利润率为18%。", value: "53", supported: "报告变动为-53。利润率变动为−18%。" },
+    { name: "positive values cannot support negative claims", evidence: "The reported change is 53 and the margin change is 18%.", unsupported: "减少值为-53。负向利润率为-18%。", value: "-53", supported: "报告变动为53。利润率变动为18%。" },
+    { name: "compact year ranges retain both positive years", evidence: "The forecast covers 2025-2030.", unsupported: "额外预测年份为2035。", value: "2035", supported: "预测区间从2025年延伸至2030年。" },
+    { name: "spaced year ranges retain both positive years", evidence: "The forecast covers 2025 - 2030.", unsupported: "额外预测年份为2035。", value: "2035", supported: "预测区间从2025年延伸至2030年。" },
+    { name: "negative percentage ranges retain both negative endpoints", evidence: "The return range is -5%至-3%.", unsupported: "区间上界为3%。", value: "3%", supported: "收益率区间为-5%至-3%。" },
+  ];
+  for (const item of cases) await t.test(item.name, async () => {
+    const bucket = new MemoryR2(), reportId = "d8".repeat(12);
+    await seedReportResearchLookup(bucket, [{ id: reportId, title: "AI infrastructure capital expenditure" }], {
+      ai: [{ id: reportId, tf: 5, chunks: ["c0"] }],
+      capex: [{ id: reportId, tf: 4, chunks: ["c0"] }],
+    }, [[`${reportId}:c0`, { id: "c0", report_id: reportId, text: `AI infrastructure capital expenditure depends on equipment availability. ${item.evidence}` }]]);
+    const env = { ...envFor(bucket), DEEPSEEK_API_KEY: "configured-test-key" }, token = await register(env);
+    const original = globalThis.fetch;
+    globalThis.fetch = async (_url, init) => {
+      const request = JSON.parse(init.body);
+      const generated = request.max_tokens === 400
+        ? { core: [{ name: "AI", terms: ["ai"] }], facets: [{ name: "capital expenditure", terms: ["capex"] }], terms: ["ai", "capex"] }
+        : { research_title: "AI资本开支证据核验", executive_summary: `${item.supported}${item.unsupported}`, summary_source_ids: [reportId],
+          findings: [{ title: "数值边界", summary: `${item.supported}${item.unsupported}`, source_ids: [reportId] }],
+          data_points: [{ label: "未经证实数值", value: item.value, source_ids: [reportId] }],
+        };
+      return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify(generated) } }] }), { headers: { "content-type": "application/json" } });
+    };
+    try {
+      const result = await jsonRequest(env, "/report-chat", { method: "POST", headers: { "content-type": "application/json", ...bearer(token) }, body: JSON.stringify({ question: "AI capital expenditure" }) });
+      assert.equal(result.response.status, 200, JSON.stringify(result.data));
+      const expected = item.supported.normalize("NFKC").split(/(?<=。)/u).filter(Boolean).join(" ");
+      assert.equal(result.data.executive_summary, expected);
+      assert.equal(result.data.findings[0].summary, expected);
+      assert.equal(result.data.data_points.length, 0);
+    } finally { globalThis.fetch = original; }
+  });
 });
 
 test("report research cold-cache worst case stays below the 50-subrequest boundary", async () => {
@@ -2951,6 +2996,27 @@ test("frontend distinguishes an already-used daily reward from a successful clai
   assert.doesNotMatch(duplicateBranch, /portal-reward-change|status:\s*"success"/u);
 });
 
+test("research title matches cannot ground unrelated, legal, or facet-missing report text", async (t) => {
+  const cases = [
+    ["unrelated", "Consumer retail sales reflect changes in household spending, store openings, and seasonal promotions across different markets."],
+    ["legal", "This material is provided for information purposes only and does not constitute investment advice. Redistribution requires written permission from the publisher."],
+    ["facet_missing", "AI data center operators have expanded their range of hosted applications and customer services, with new enterprise software products available this quarter."],
+  ];
+  for (const [name, text] of cases) await t.test(name, async () => {
+    const bucket = new MemoryR2(), id = "be".repeat(12);
+    await seedReportResearchLookup(bucket, [{ id, title: "AI data center power investment" }], {
+      ai: [{ id, tf: 100, title_hit: true, chunks: ["c0"] }],
+      data: [{ id, tf: 100, title_hit: true, chunks: ["c0"] }],
+      power: [{ id, tf: 100, title_hit: true, chunks: ["c0"] }],
+    }, [[`${id}:c0`, { id: "c0", report_id: id, text }]]);
+    const env = envFor(bucket), token = await register(env);
+    const result = await jsonRequest(env, "/report-chat", { method: "POST", headers: { "content-type": "application/json", ...bearer(token) }, body: JSON.stringify({ question: "AI data center power" }) });
+    assert.equal(result.response.status, 200);
+    assert.equal(result.data.findings.length, 0);
+    assert.match(result.data.research_scope, /0 份报告/u);
+  });
+});
+
 test("generic clinical data cannot stand in for a data-center and power question", async () => {
   const bucket = new MemoryR2(), id = "bc".repeat(12);
   await seedReportResearchLookup(bucket, [{ id, title: "AI clinical data improves diagnostic accuracy" }], { ai: [{ id, tf: 100, chunks: ["c0"] }], data: [{ id, tf: 100, chunks: ["c0"] }] }, [[`${id}:c0`, { id: "c0", report_id: id, text: "AI clinical data helps physicians evaluate patient history and diagnostic results to choose a treatment. This concerns medical diagnosis." }]]);
@@ -2999,7 +3065,7 @@ test("research combines body and GDELT descriptions without counting news as rep
   const terms = ["ai", "data", "center", "power", "electricity", "capital", "expenditure"];
   await seedReportResearchLookup(bucket, reportIds.map((id) => ({ id, title: "AI data center power investment" })), Object.fromEntries(terms.map((term) => [term, reportIds.map((id) => ({ id, tf: 8, chunks: ["c0", "c1"] }))])), reportIds.flatMap((id) => ["c0", "c1"].map((chunk) => [`${id}:${chunk}`, { id: chunk, report_id: id, text: "AI data center power demand is constrained by electricity grid connections and capital expenditure. Capacity plans depend on equipment delivery." }])));
   const current = new Date().toISOString();
-  bucket.seed("_research-news/v1/snapshot.json", { schema_version: 1, updated_at: current, items: ["news-one.com", "news-two.com"].map((domain) => ({ id: `news:${"1".repeat(64)}`, title: "AI data center power update", source_url: `https://${domain}/article`, institution: domain, observed_at: current, summary: "Developers of AI data centers report that electricity access and utility connection schedules constrain construction, despite their planned capital investment." })) });
+  bucket.seed("_research-news/v1/snapshot.json", { schema_version: 1, updated_at: current, items: ["news-one.com", "news-two.com", "news-three.com", "news-four.com"].map((domain) => ({ id: `news:${"1".repeat(64)}`, title: "AI data center power update", source_url: `https://${domain}/article`, institution: domain, observed_at: current, summary: "Developers of AI data centers report that electricity access and utility connection schedules constrain construction, despite their planned capital investment." + (domain === "news-four.com" ? " The reported capacity is 3817." : "") })) });
   const env = { ...envFor(bucket), DEEPSEEK_API_KEY: "configured-test-key" }, token = await register(env);
   bucket.getKeys.length = 0; bucket.putKeys.length = 0;
   const original = globalThis.fetch; let modelCalls = 0;
@@ -3010,23 +3076,32 @@ test("research combines body and GDELT descriptions without counting news as rep
     if (request.max_tokens === 400) generated = { core: [{ name: "AI", terms: ["ai"] }, { name: "data center", terms: ["data", "center"] }], facets: [{ name: "power", terms: ["power", "electricity"] }, { name: "capex", terms: ["capital", "expenditure"] }], terms };
     else {
       const input = JSON.parse(request.messages[1].content), news = input.sources.filter((source) => source.id.startsWith("news:"));
-      assert.equal(news.length, 2); assert.equal(news[0].published_at, "");
+      assert.equal(news.length, 4); assert.equal(news[0].published_at, "");
       assert.match(request.messages[0].content, /1800-2600/u);
-      generated = { research_title: "电力与部署节奏", executive_summary: "电力接入约束部署。\n\n新闻为报告判断补充近期背景。", summary_source_ids: [id, news[0].id], findings: [{ title: "机制分析", summary: "先核对电网接入条件。\n\n再根据设备交付进度判断投产节奏。", source_ids: [id, news[0].id] }] };
+      assert.match(request.messages[0].content, /one to eight source_ids/u);
+      assert.equal(input.sources.length, 8);
+      const cited = input.sources.map((source) => source.id);
+      generated = { research_title: "电力与部署节奏", executive_summary: "电力接入约束部署。\n\n新闻显示交付容量为3817，为报告判断补充近期背景。", summary_source_ids: cited, findings: [{ title: "机制分析", summary: "先核对电网接入条件。\n\n新闻显示交付容量为3817，再根据设备交付进度判断投产节奏。", source_ids: cited }], data_points: [{ label: "交付容量", value: "3817", source_ids: cited }] };
     }
     return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify(generated) } }] }), { headers: { "content-type": "application/json" } });
   };
   try {
     const result = await jsonRequest(env, "/report-chat", { method: "POST", headers: { "content-type": "application/json", ...bearer(token) }, body: JSON.stringify({ question: "AI data center power capital expenditure", include_news: true }) });
     assert.equal(result.response.status, 200, JSON.stringify(result.data));
-    assert.equal(result.data.sources.filter((source) => source.id.startsWith("news:")).length, 2);
+    assert.equal(result.data.sources.filter((source) => source.id.startsWith("news:")).length, 4);
     const news = result.data.sources.find((source) => source.id.startsWith("news:"));
     assert.match(news.source_url, /^https:\/\/news-/u);
     assert.equal(news.published_at, "");
     assert.equal(news.evidence_kind, "news_description");
     assert.match(result.data.research_scope, /4 份报告/u);
-    assert.match(result.data.research_scope, /2 条新闻简介/u);
+    assert.match(result.data.research_scope, /4 条新闻简介/u);
     assert.ok(result.data.executive_summary.includes("\n\n"));
+    assert.equal(result.data.summary_source_ids.length, 8);
+    assert.equal(result.data.findings[0].source_ids.length, 8);
+    assert.equal(result.data.data_points[0].source_ids.length, 8);
+    assert.match(result.data.executive_summary, /3817/u);
+    assert.match(result.data.findings[0].summary, /3817/u);
+    assert.equal(result.data.data_points[0].value, "3817");
     assert.ok(bucket.getKeys.length + bucket.putKeys.length + modelCalls <= 50);
   } finally { globalThis.fetch = original; }
 });

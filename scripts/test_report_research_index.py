@@ -6,6 +6,7 @@ import hashlib
 import gzip
 import importlib.util
 import json
+import re
 import struct
 import sys
 import tempfile
@@ -95,6 +96,48 @@ class ReportResearchIndexTests(unittest.TestCase):
             self.assertEqual(len(postings), 192)
             self.assertIn(ids[70], {row["id"] for row in postings})
             self.assertLessEqual(manifest["token_table"]["max_bucket_bytes"], 128 * 1024)
+
+    def test_repeated_search_title_boost_cannot_rank_as_body_evidence(self) -> None:
+        title = "Example AI data-center infrastructure growth outlook 260908"
+        paragraph = "The data-center power requirement depends on rack density and electricity connections. Capacity expansion requires transformers and new substations before computing equipment can be commissioned. "
+        item = {"title": title, "title_en": title}
+        normalized_title = " ".join(re.findall(r"\w+", title.lower()))
+        clean = indexer.without_repeated_titles(paragraph * 8 + (normalized_title + " ") * 20, item)
+        self.assertEqual(clean, (paragraph * 8).strip())
+        self.assertEqual(indexer.without_repeated_titles((normalized_title + " ") * 20, item), "")
+        self.assertEqual(indexer.without_repeated_titles("AI data center power " * 80, {"title": "AI data center power"}), "")
+        self.assertEqual(indexer.without_repeated_titles(title + " " + paragraph, item), title + " " + paragraph.strip())
+
+    def test_legal_boilerplate_is_excluded_but_substantive_analysis_remains(self) -> None:
+        legal = "All rights reserved. Trademarks and service marks are registered. Research data are not intended to be used for the purpose of valuing financial products. "
+        self.assertEqual(indexer.substantive_chunks(legal * 12, 2600, 260), [])
+        analysis = "Electricity demand growth requires timely grid connections. The estimated power capacity reflects utilization, rack density and the timing of new installations. " * 10
+        chunks = indexer.substantive_chunks(analysis, 2600, 260)
+        self.assertEqual(len(chunks), 1)
+        self.assertIn("estimated power capacity", chunks[0]["text"])
+        with_footer = indexer.substantive_chunks(analysis + "All rights reserved. Important disclosures.", 2600, 260)
+        self.assertEqual(with_footer[0]["text"], analysis.strip())
+        self.assertEqual(indexer.substantive_chunks("All rights reserved. " * 80, 2600, 260), [])
+
+    def test_title_only_padded_report_is_absent_from_index_and_durable_corpus(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            catalog, search = self.catalog(), self.search_index()
+            search["items"][2]["text"] = (catalog["items"][2]["title"] + " ") * 40
+            output, manifest = self.build_payload(root, catalog, search)
+            self.assertEqual(manifest["item_count"], 2)
+            self.assertIsNone(lookup(output, manifest["item_table"], "c" * 24))
+            rows, _ = indexer.decode_corpus((output / indexer.CORPUS_FILENAME).read_bytes())
+            self.assertNotIn("c" * 24, rows)
+
+    def test_analyst_contact_cover_is_skipped_without_removing_body(self) -> None:
+        body = "Our forecasts compare AI accelerator shipments, power requirements, data center utilization and the timing of new grid infrastructure. " * 8
+        cover = "Research outlook analyst Alex Doe CFA 852 1234 5678 alex example com analyst Sam Doe 44 20 1234 5678 sam example com "
+        self.assertEqual(indexer.without_contact_cover(cover + body), body.strip())
+        self.assertEqual(indexer.without_contact_cover(body), body)
+        self.assertEqual(indexer.without_contact_cover(body + cover + body), body + cover + body)
+        separated = "Analyst Alex Doe CFA 852 1234 5678 alex example com " + body[:500] + "Analyst Sam Doe 44 20 1234 5678 sam example com " + body
+        self.assertEqual(indexer.without_contact_cover(separated), separated)
 
     def catalog(self) -> dict:
         return {
