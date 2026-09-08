@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "id": "dbe80c33256ac3d9652d64eea3f6fe8e3c147254e1ac30998bfd8313bcec3690",
+  "slug": "bbg-20260718-dbe80c33256ac3d9",
+  "date": "2026-07-18",
+  "title": "中国开源模型冲击硅谷：低成本、可下载，美国AI商业模式受挑战",
+  "speaker": "Mike Shepherd",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-07-18/bloomberg-this-weekend-7-18-2026-video",
+  "start": 543.6,
+  "end": 598.9,
+  "segments": [
+    {
+      "start": 543.6,
+      "end": 559.7,
+      "en": "It's harder to justify if they're cheaper and just as good models out there being offered and also models that can be downloaded. One of the differences that you see with OpenAI and Anthropic is their models are generally accessed through a website, through an API, at an enterprise level.",
+      "zh": "如果存在更便宜、同样好且可下载的模型，就很难证明其合理性。OpenAI和Anthropic的模型通常通过网站或API在企业层面访问。"
+    },
+    {
+      "start": 559.7,
+      "end": 583.7,
+      "en": "With the Chinese approach, you've seen these startups use what's called open weight. That means you can just download it, modify it, adjust the parameters, and really tailor it to your needs. It's a lot harder to do that with some of the frontier models being developed by the US AI labs right now.",
+      "zh": "中国初创公司采用开放权重的方式，你可以直接下载、修改、调整参数，真正定制化。而美国AI实验室的前沿模型很难做到这一点。"
+    },
+    {
+      "start": 583.7,
+      "end": 598.9,
+      "en": "That is again something that people are also questioning, the interoperability and functionality of what the US labs are producing. Then there's the cost that men have pointed to the fact that many of these Chinese companies are now offering their services at a much lower rate.",
+      "zh": "人们也在质疑美国实验室产品的互操作性和功能性。此外，许多中国公司以低得多的价格提供服务。"
+    }
+  ]
+}

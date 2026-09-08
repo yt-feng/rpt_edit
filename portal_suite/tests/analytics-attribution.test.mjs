@@ -178,6 +178,48 @@ test("worker enriches attribution, device and bot fields without storing a raw I
   assert.doesNotMatch(primary[1], /203\.0\.113\.7/u, "the raw client IP must never be persisted");
 });
 
+test("research diagnostics survive ingestion and export without storing the question", async () => {
+  const writes = new Map();
+  const response = await worker.fetch(new Request("https://worker.test/analytics", {
+    method: "POST",
+    headers: { "content-type": "application/json", "Origin": "https://portal.example.invalid" },
+    body: JSON.stringify({
+      type: "report_chat_interaction", visitor_id: "diagnostic-visitor", session_id: "diagnostic-session",
+      path: "/research.html", data: {
+        action: "success", placement: "research", context: "report", source_count: 4, chart_count: 0,
+        question_length: 34, remaining: 1, current_streak: 3,
+        query: "private research question", question: "private research question",
+      },
+    }),
+  }), {
+    REPORT_BUCKET: { async put(key, value) { writes.set(key, String(value)); return { etag: "ok" }; } },
+    MASTER_KEY: "analytics-secret", ALLOWED_ORIGIN: "https://portal.example.invalid",
+  });
+  assert.equal(response.status, 204);
+  const stored = JSON.parse([...writes.values()][0]);
+  const exported = __analyticsTest.publicAnalyticsEvent(stored);
+  for (const event of [stored, exported]) {
+    assert.equal(event.context, "report");
+    assert.equal(event.source_count, 4);
+    assert.equal(event.chart_count, 0, "zero charts is a measured absence, not missing instrumentation");
+    assert.equal(event.question_length, 34);
+    assert.equal(event.remaining, 1);
+    assert.equal(event.current_streak, 3);
+    assert.doesNotMatch(JSON.stringify(event), /private research question/);
+  }
+  const legacy = __analyticsTest.publicAnalyticsEvent({ type: "report_chat_interaction" });
+  assert.equal(legacy.chart_count, null, "historical missing chart counts must remain unknown");
+  const invalid = __analyticsTest.publicAnalyticsEvent({
+    type: "report_chat_interaction", context: "private free text", chart_count: -1, source_count: "not-a-count",
+    current_streak: true, question_length: 3.5,
+  });
+  assert.equal(invalid.context, "");
+  assert.equal(invalid.chart_count, null);
+  assert.equal(invalid.source_count, null);
+  assert.equal(invalid.current_streak, null);
+  assert.equal(invalid.question_length, 3);
+});
+
 test("analytics endpoint rejects foreign origins and unsupported public event types", async () => {
   const bucket = { async put() { throw new Error("must not write"); } };
   const env = {

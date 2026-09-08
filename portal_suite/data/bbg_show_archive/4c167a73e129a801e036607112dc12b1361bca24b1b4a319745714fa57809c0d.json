@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "id": "4c167a73e129a801e036607112dc12b1361bca24b1b4a319745714fa57809c0d",
+  "slug": "bbg-20260729-4c167a73e129a801",
+  "date": "2026-07-29",
+  "title": "彭博记者：美国以国安为由禁售AI机器人和电源逆变器",
+  "speaker": "Min Min Lo",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-07-29/the-china-show-7-29-2026-video",
+  "start": 1845.2,
+  "end": 1891.7,
+  "segments": [
+    {
+      "start": 1845.2,
+      "end": 1854.7,
+      "en": "So these are things that connect renewable energy sources to power grids and data center equipment.",
+      "zh": "这些设备用于将可再生能源接入电网和数据中心。"
+    },
+    {
+      "start": 1854.7,
+      "end": 1860.5,
+      "en": "So the reason in here is to protect national security because the AI-powered robots could potentially surveil Americans, gather data, contribute to foreign intelligence.",
+      "zh": "理由是保护国家安全，因为AI机器人可能监视美国人、收集数据、为外国情报服务。"
+    },
+    {
+      "start": 1860.5,
+      "end": 1865.4,
+      "en": "And could potentially even be remotely controlled by external parties.",
+      "zh": "甚至可能被外部势力远程控制。"
+    },
+    {
+      "start": 1865.4,
+      "end": 1871.7,
+      "en": "And when it comes to the power inverters, that's also an entry point to install malware that could launch cyber security attacks on large energy systems.",
+      "zh": "至于电源逆变器，它也是安装恶意软件的入口，可能对大型能源系统发起网络攻击。"
+    },
+    {
+      "start": 1871.7,
+      "end": 1877.5,
+      "en": "So that's the reason the U.S. is banning them but it applies to new models that are not yet released.",
+      "zh": "因此美国禁止这些产品，但仅适用于尚未发布的新型号。"
+    },
+    {
+      "start": 1877.5,
+      "end": 1882.9,
+      "en": "So existing models that are already approved for sale in the U.S.",
+      "zh": "已获准在美国销售的现有型号不受影响。"
+    }
+  ]
+}

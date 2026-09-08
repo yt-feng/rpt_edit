@@ -73,6 +73,7 @@ TRANSLATABLE_HTML_ATTRIBUTES = frozenset({
     "aria-label",
     "aria-roledescription",
     "placeholder",
+    "data-research-prompt",
     "title",
 })
 TRANSLATABLE_META_KEYS = frozenset({
@@ -1901,6 +1902,24 @@ def locale_path(path: str, locale: str) -> str:
     return f"/{locale}{root if root.startswith('/') else '/' + root}"
 
 
+def chinese_only_bbg_path(path: str) -> str:
+    """BBG transcripts keep their reviewed Chinese/English pair on the root site."""
+    candidate = strip_locale_prefix(str(path or ""))
+    match = re.fullmatch(
+        r"(?:/blog/|(?:\.\./)*(?:\./)?(?:blog/)?)(bbg-show(?:-\d+)?\.html|bbg-\d{8}-[a-f0-9]{16}\.html)",
+        candidate,
+    )
+    return f"/blog/{match.group(1)}" if match else ""
+
+
+def remove_chinese_only_bbg_module(source: str) -> str:
+    # The controlled BBG module contains articles and divs, without nested sections.
+    return re.sub(
+        r'<section\b[^>]*\bclass=["\'][^"\']*\bbbg-blog-module\b[^"\']*["\'][^>]*>.*?</section\s*>',
+        "", source, flags=re.I | re.S,
+    )
+
+
 def rewrite_public_url(value: str, locale: str, site_url: str) -> str:
     source = str(value or "")
     if not source or is_external_or_special_url(source):
@@ -1912,9 +1931,15 @@ def rewrite_public_url(value: str, locale: str, site_url: str) -> str:
         if parsed.scheme not in {"http", "https"} or not internal:
             return source
         path = parsed.path or "/"
+        bbg_path = chinese_only_bbg_path(path)
+        if bbg_path:
+            return urlunsplit((site.scheme, site.netloc, bbg_path, parsed.query, parsed.fragment))
         if path.startswith(SHARED_ROOT_PREFIXES) or re.match(r"^/favicon(?:\.|$)", path, flags=re.I):
             return urlunsplit((site.scheme, site.netloc, path, parsed.query, parsed.fragment))
         return urlunsplit((site.scheme, site.netloc, locale_path(path, locale), parsed.query, parsed.fragment))
+    bbg_path = chinese_only_bbg_path(parsed.path)
+    if bbg_path:
+        return urlunsplit((site.scheme, site.netloc, bbg_path, parsed.query, parsed.fragment))
     if not parsed.path.startswith("/"):
         return source
     if parsed.path.startswith(SHARED_ROOT_PREFIXES) or re.match(r"^/favicon(?:\.|$)", parsed.path, flags=re.I):
@@ -2169,6 +2194,12 @@ class PortalHTMLProcessor(HTMLParser):
                     updated = urlunsplit((parsed.scheme, parsed.netloc, parsed.path, urlencode(query), parsed.fragment))
             translated.append((name, updated))
         result = translated
+        if self.locale and tag == "a":
+            href = urlsplit(attr_value(result, "href"))
+            site = urlsplit(self.site_url)
+            if chinese_only_bbg_path(href.path) and (not href.netloc or href.netloc == site.netloc):
+                # The locale runtime must preserve this intentional Chinese entry.
+                result = set_attr(result, "data-kc-chinese-entry", "")
         if self.locale and tag == "meta" and meta_key == "og:locale":
             result = set_attr(result, "content", LOCALES[self.locale].og_locale)
         return result
@@ -2636,7 +2667,7 @@ def javascript_literal_is_object_key(source: str, start: int, end: int) -> bool:
 
 
 JAVASCRIPT_HTML_ATTRIBUTE_RE = re.compile(
-    r"(?P<prefix>\b(?P<name>alt|aria-description|aria-label|aria-roledescription|placeholder|title)\s*=\s*)"
+    r"(?P<prefix>\b(?P<name>alt|aria-description|aria-label|aria-roledescription|placeholder|title|data-research-prompt)\s*=\s*)"
     r"(?P<quote>['\"])(?P<value>(?:\\.|(?! (?P=quote)).)*)(?P=quote)",
     flags=re.I | re.S | re.X,
 )
@@ -4592,7 +4623,7 @@ def discovery_links(
 
 
 LOCALE_APPLICATION_SHELLS = frozenset({
-    "report.html", "doc.html", "delivery.html", "newsfeed.html", "courses.html",
+    "report.html", "doc.html", "delivery.html", "newsfeed.html", "courses.html", "research.html",
 })
 LOCALE_HELP_COPY = {
     "ko": ("중국어로 이 페이지 보기", "중국어 홈페이지", "계정 개설 문의"),
@@ -4938,6 +4969,8 @@ def _build_localized_release(
         relative = path.relative_to(root)
         if not relative.parts or relative.parts[0] in LOCALE_DIRS:
             continue
+        if chinese_only_bbg_path("/" + relative.as_posix()):
+            continue
         if is_site_verification_html(relative):
             validate_site_verification_html(relative, path.read_bytes())
             continue
@@ -5153,6 +5186,8 @@ def _build_localized_release(
     html_source_inventory = incremental_sources if incremental_sources is not None else original_html
     for path, source in html_source_inventory.items():
         relative = path.relative_to(root)
+        if relative.parts and relative.parts[0] == "blog":
+            source = remove_chinese_only_bbg_module(source)
         if history_plan is not None:
             decision = index_plan[path]
             # The normal publishing path buys only the current release cohort.
@@ -5231,6 +5266,10 @@ def _build_localized_release(
     feed_path = root / "feed.xml"
     if feed_path.is_file():
         feed_tree = ET.parse(feed_path).getroot()
+        for channel in feed_tree.findall("channel"):
+            for item in list(channel.findall("item")):
+                if chinese_only_bbg_path(urlsplit(str(item.findtext("link") or "")).path):
+                    channel.remove(item)
         if scoped_cohort:
             for channel in feed_tree.findall("channel"):
                 for item in list(channel.findall("item")):
@@ -5243,6 +5282,10 @@ def _build_localized_release(
         path = root / name
         if path.is_file():
             llms_sources[name] = path.read_text(encoding="utf-8")
+            llms_sources[name] = "\n".join(
+                line for line in llms_sources[name].split("\n")
+                if not any(chinese_only_bbg_path(urlsplit(url).path) for url in re.findall(r'https?://[^\s<>"\')]+', line))
+            )
             if scoped_cohort:
                 llms_sources[name] = filter_locale_llms_source(
                     llms_sources[name], name, site_url=site_url,

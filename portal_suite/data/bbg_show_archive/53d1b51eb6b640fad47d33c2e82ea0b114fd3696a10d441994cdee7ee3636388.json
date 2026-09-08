@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "id": "53d1b51eb6b640fad47d33c2e82ea0b114fd3696a10d441994cdee7ee3636388",
+  "slug": "bbg-20260901-53d1b51eb6b640fa",
+  "date": "2026-09-01",
+  "title": "英伟达35亿美元入股联发科，押注定制芯片生态",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-08-31/nvidia-investing-3-5-billion-in-chipmaker-mediatek-video",
+  "start": 0.0,
+  "end": 89.44,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 10.4,
+      "en": "Nvidia is going to invest $3.5 billion in Taiwanese chip maker media tech in the form of convertible bonds that convert in the media tech shares. But this is a really interesting",
+      "zh": "英伟达将以可转换债券形式向台湾芯片制造商联发科**35亿美元，这些债券可转换为联发科权益资产。但这确实是一个有趣的故事。"
+    },
+    {
+      "start": 10.4,
+      "end": 16.32,
+      "en": "story that follows directly on from earnings where the world is thinking about custom silicon.",
+      "zh": "这个故事紧跟着财报发布，当时全球都在关注定制芯片。"
+    },
+    {
+      "start": 16.32,
+      "end": 27.04,
+      "en": "So the pitch that Nvidia is making in partnering with MediaTek which has a younger part of its business working on custom chips for hyperscalers and other technology companies is to basically",
+      "zh": "英伟达与联发科合作，后者有部分业务为超大规模数据中心和其他科技公司定制芯片，其目的是提供一种架构技术，让客户没有理由不使用。"
+    },
+    {
+      "start": 27.04,
+      "end": 38.88,
+      "en": "provide the technology in the architecture where there is no excuse. Even if a hyperscaler is using a custom chip and not in videos GPUs, they can take those custom chips and plug them into",
+      "zh": "即使超大规模数据中心使用定制芯片而非英伟达GPU，他们也可以将这些定制芯片插入基于GPU的架构，共享高速内存、网络和机架基础设施。"
+    },
+    {
+      "start": 38.88,
+      "end": 49.44,
+      "en": "a GPU based architecture, share high speed memory, networking, rack infrastructure. And it's all about Nvidia continuing to find ways to grow even if their biggest customers choose to go down",
+      "zh": "这一切都关乎英伟达持续寻找增长途径，即使其最大客户选择走定制芯片路线。"
+    },
+    {
+      "start": 49.44,
+      "end": 58.72,
+      "en": "the custom silicon route and you'll remember in earnings this was a big point of conversation on the call and this wanted to know how gents among feels about that and he's pretty dismissive,",
+      "zh": "在财报电话会议上，这是一个重要话题，黄仁勋对此相当不屑，他强调了英伟达在GPU方面的优越经济性。"
+    },
+    {
+      "start": 58.72,
+      "end": 68.8,
+      "en": "you know, touting Nvidia's superior economics on the GPU side. But it's a very interesting move and once again Nvidia continues to make investments in the ecosystem and those that it's partnering",
+      "zh": "但这是一个非常有趣的举措，英伟达继续**于生态系统，并与合作伙伴共同推进AI建设。"
+    },
+    {
+      "start": 68.8,
+      "end": 76.88,
+      "en": "with in this great AI buildout. Just speaking of gents to themselves at about 30 minutes time, really looking forward to this at 9 AM eastern time. There's two different ways of looking at this",
+      "zh": "说到黄仁勋，他大约30分钟后将发表讲话，我们期待东部时间上午9点的活动。对此有两种看法。"
+    },
+    {
+      "start": 76.88,
+      "end": 86.0,
+      "en": "ad. Just frame it for us. One way you can sit here and say as you indicated alluded to this is great, it has tossed the growth for the whole ecosystem. Others would just say things like",
+      "zh": "一种观点认为，如你所说，这对整个生态系统是好事，促进了增长。另一种观点则提醒要警惕。"
+    },
+    {
+      "start": 86.0,
+      "end": 89.44,
+      "en": "circle of finance beware of what's happening here. How would you frame things?",
+      "zh": "金融界人士会提醒注意这里发生的事情。你会如何解读？"
+    }
+  ]
+}

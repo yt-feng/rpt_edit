@@ -101,6 +101,7 @@ function loadAnalyticsExportHandler(options = {}) {
     "readAnalyticsExportObject",
     "readAnalyticsExportObjects",
     "listAnalyticsExportPage",
+    "analyticsOptionalCount",
     "publicAnalyticsEvent",
     "handleAccountAdminAnalyticsEventsExport",
   ]) {

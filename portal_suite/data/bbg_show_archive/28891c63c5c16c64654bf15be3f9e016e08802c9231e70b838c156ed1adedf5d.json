@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "id": "28891c63c5c16c64654bf15be3f9e016e08802c9231e70b838c156ed1adedf5d",
+  "slug": "bbg-20260826-28891c63c5c16c64",
+  "date": "2026-08-26",
+  "title": "OpenAI自研芯片：测试胜英伟达，高吞吐低延迟能否撼动市场？",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-08-25/openai-says-jalapeno-chips-outperformed-nvidia-in-tests-video",
+  "start": 0.0,
+  "end": 89.04,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 5.0,
+      "en": "Open AI is out with performance results for its first custom inference chip called Palapino.",
+      "zh": "OpenAI发布了其首款自研推理芯片Palapino的性能测试结果。"
+    },
+    {
+      "start": 5.0,
+      "end": 15.64,
+      "en": "The chat GPT maker says in tests, its chip was faster and more efficient than in videos GP300 system. Richard Ho, open AI's Vice President of Hardware, is with us here in San",
+      "zh": "ChatGPT的制造商表示，在测试中，其芯片比Nvidia的GP300系统更快、更高效。OpenAI硬件副总裁Richard Ho在旧金山与我们同在。"
+    },
+    {
+      "start": 15.64,
+      "end": 24.28,
+      "en": "Francisco. I think let's start with the basics of the testing and the performance benchmarks that you've published. What does it tell us about Palapino so far?",
+      "zh": "让我们从测试的基本情况和您发布的性能基准开始。到目前为止，Palapino的表现说明了什么？"
+    },
+    {
+      "start": 24.28,
+      "end": 35.96,
+      "en": "First of all, thanks for having me here. The benchmarks that we did were with an open source benchmark called inferenceX. We did that because it was a fair neutral benchmarking method.",
+      "zh": "首先，感谢邀请。我们使用的基准是开源的InferenceX，因为这是一种公平中立的基准测试方法。"
+    },
+    {
+      "start": 35.96,
+      "end": 45.8,
+      "en": "What we're seeing with Palapino is that we're able to get both high throughput and low latency with the same device, which is kind of a first in the industry. Why does this",
+      "zh": "我们看到Palapino能够在同一设备上实现高吞吐量和低延迟，这在业界尚属首次。为什么这很重要？"
+    },
+    {
+      "start": 45.8,
+      "end": 55.96,
+      "en": "matter? Because high throughput means that you can serve a lot of customers with a lot of tokens much cheaper than you could if you otherwise. Low latency gives you very fast",
+      "zh": "因为高吞吐量意味着你可以以更低的成本为大量客户提供大量令牌。低延迟则带来非常快的响应时间。"
+    },
+    {
+      "start": 55.96,
+      "end": 64.28,
+      "en": "response times. And so, you know, the agent will come back faster, you can do, you know, more coding for curve. And that really, I think, is a real benefit for our products.",
+      "zh": "因此，智能体响应更快，你可以进行更多编码。我认为这对我们的产品来说是一个真正的优势。"
+    },
+    {
+      "start": 64.28,
+      "end": 69.24,
+      "en": "One of the questions that we got immediately was, why didn't you benchmark against Vera Rubin in videos?",
+      "zh": "我们立即收到的一个问题是：为什么没有与Nvidia的Vera Rubin进行对比？"
+    },
+    {
+      "start": 69.24,
+      "end": 73.92,
+      "en": "Yeah. Latest system that's currently in full production. I guess the answer is quite simple, then it's just come out.",
+      "zh": "是的，那是目前全面投产的最新系统。我想答案很简单，它刚刚推出。"
+    },
+    {
+      "start": 73.92,
+      "end": 83.2,
+      "en": "It's just come out. We wanted to use numbers that have been published, that have been optimized, those were available, the GB numbers. The other chip, because also have the numbers",
+      "zh": "它刚刚推出。我们想使用已发布且经过优化的数字，即GB数字。其他芯片也有这些数字。"
+    },
+    {
+      "start": 83.2,
+      "end": 89.04,
+      "en": "in there, it just happens that GB is the best, indeed, product in the current benchmark that are there.",
+      "zh": "在当前的基准测试中，GB确实是最好的产品。"
+    }
+  ]
+}

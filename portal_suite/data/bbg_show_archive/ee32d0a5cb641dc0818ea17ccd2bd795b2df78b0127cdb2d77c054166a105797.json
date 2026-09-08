@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "ee32d0a5cb641dc0818ea17ccd2bd795b2df78b0127cdb2d77c054166a105797",
+  "slug": "bbg-20260616-ee32d0a5cb641dc0",
+  "date": "2026-06-16",
+  "title": "美国政府下令Anthropic禁止外国访问Mythos模型",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-06-15/us-orders-anthropic-to-disable-foreign-access-to-mythos-video",
+  "start": 0.0,
+  "end": 83.26,
+  "segments": [
+    {
+      "start": 0.18,
+      "end": 4.42,
+      "en": "Yeah, absolutely. It definitely helps to get some definitions down to start.",
+      "zh": "是的，当然。先明确一些定义很有帮助。"
+    },
+    {
+      "start": 4.42,
+      "end": 14.3,
+      "en": "Mythos, that was released in April by Anthropic. It's their latest model, but it was not released to the public because the company was too worried that it had a lot of cyber",
+      "zh": "Mythos是Anthropic在4月发布的最新模型，但未公开，因为公司担心其强大的网络能力可能被用于攻击。"
+    },
+    {
+      "start": 14.3,
+      "end": 25.7,
+      "en": "capabilities, and it could be used for cyber attacks. It was only released to a limited group of government and business partners to help those partners shore up their own cybersecurity",
+      "zh": "它仅限部分政府和商业伙伴使用，以帮助他们加强网络安全。"
+    },
+    {
+      "start": 25.7,
+      "end": 36.14,
+      "en": "efforts. What happened last week was Anthropic actually released a version of that model with some added safeguards to the public. So that's what we call Fable 5, and that's",
+      "zh": "上周，Anthropic发布了该模型的增强安全版本，即Fable 5，这引发了与政府的纠纷。"
+    },
+    {
+      "start": 36.14,
+      "end": 47.82,
+      "en": "sort of what started this whole situation between the government and Anthropic. So a few days after that public release, the government sent an Anthropic a letter that was an export",
+      "zh": "公开后几天，政府向Anthropic发出出口管制指令，禁止外国公民访问Fable 5或Mythos 5。"
+    },
+    {
+      "start": 47.82,
+      "end": 61.46,
+      "en": "control directive that essentially blocked anyone who was a foreign national from even accessing that Fable 5 or that Mythos 5 model. So in effect, Anthropic was forced to immediately",
+      "zh": "Anthropic被迫立即禁用这些模型，尤其是考虑到其员工中有外国公民。"
+    },
+    {
+      "start": 61.46,
+      "end": 67.14,
+      "en": "disable those models, especially since they have foreign nationals who are employees.",
+      "zh": "这影响了员工和客户，他们只能向美国公民提供模型，且目前缺乏验证用户所在地的标准。"
+    },
+    {
+      "start": 67.14,
+      "end": 77.34,
+      "en": "So this affects their employees. It affects their customers, all the sudden they're only able to provide these models to US citizens, and they don't even have a way currently of",
+      "zh": "这影响到他们的员工和客户，突然之间他们只能向美国公民提供这些模型，而且目前甚至没有方法"
+    },
+    {
+      "start": 77.34,
+      "end": 83.26,
+      "en": "sort of a know your customer standard in terms of where those people reside who are using their models.",
+      "zh": "类似于了解你的客户标准，即确认使用模型者的所在地。"
+    }
+  ]
+}

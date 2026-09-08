@@ -232,6 +232,10 @@ jobs:
           python3 -B scripts/test_audit_portal_shadow_preview.py
           python3 scripts/test_portal_seo.py
           python3 scripts/test_portal_blog_build.py
+          python3 -B scripts/test_sync_bbg_show_blog.py
+          python3 -B scripts/test_summarize_portal_growth_range.py
+          python3 -B scripts/test_report_research_index.py
+          python3 -B scripts/test_download_report_research_inputs.py
           python3 scripts/test_edge_route_cutover.py
           python3 scripts/test_neutral_edge_cutover_workflow.py
           python3 -B scripts/test_portal_locale_resume_workflow.py
@@ -1411,6 +1415,7 @@ jobs:
             --build-contract "$RUNNER_TEMP/member-contact-card.jpg" \
             --build-contract scripts/compare_portal_release_semantics.py \
             --build-contract scripts/build_portal_suite_site.py \
+            --build-contract portal_suite/data/bbg_show_archive \
             --build-contract scripts/merge_chart_search_index.py \
             --build-contract workers/edge-static-host/src/index.js \
             --public-root _neutral_site \

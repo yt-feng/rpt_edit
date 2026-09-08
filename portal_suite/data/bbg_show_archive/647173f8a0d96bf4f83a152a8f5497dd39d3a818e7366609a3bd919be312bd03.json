@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "id": "647173f8a0d96bf4f83a152a8f5497dd39d3a818e7366609a3bd919be312bd03",
+  "slug": "bbg-20260811-647173f8a0d96bf4",
+  "date": "2026-08-11",
+  "title": "英伟达现金不够花：AI巨头举债扩张，千亿现金流够撑多久？",
+  "speaker": "Felix Weing",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-08-11/the-china-show-8-11-2026-video",
+  "start": 540.7,
+  "end": 648.2,
+  "segments": [
+    {
+      "start": 540.7,
+      "end": 545.3,
+      "en": "I mean, we've been seeing it, you know, it's becoming a bit of under pressure, hopefully.",
+      "zh": "我们一直在关注，英伟达股价确实面临一些压力。"
+    },
+    {
+      "start": 545.3,
+      "end": 552.8,
+      "en": "Yeah, today in particular, but look, I think, you know, when they report earnings, you can't just look at the typical revenues, margins, catbacks, figures anymore, you really need to dig deeper now.",
+      "zh": "尤其是今天。但你看，当英伟达公布财报时，不能再只看常规的收入、利润率、回购这些数字了，需要更深入挖掘。"
+    },
+    {
+      "start": 552.8,
+      "end": 559.4,
+      "en": "and to say looking at accounts receivables, maybe into their investments, maybe looking into the, you know, the footnotes when they talk about commitments, contingencies, because now people are looking at Nvidia as a financing lender, right?",
+      "zh": "要看应收账款、对外配置，还有脚注里的承诺和或有事项。因为现在市场把英伟达看作一个融资方。"
+    },
+    {
+      "start": 559.4,
+      "end": 564.8,
+      "en": "So this, all of these metrics now matter in understanding, you know, what are they going to do with their free cash flow?",
+      "zh": "所以这些指标都很关键，能帮我们判断英伟达会如何运用自由现金流。"
+    },
+    {
+      "start": 564.8,
+      "end": 569.5,
+      "en": "How much investments they're going to make for third parties now? And by the way, their free cash flow is not infinite.",
+      "zh": "他们会为第三方投入多少资金？而且，他们的自由现金流并非无限。"
+    },
+    {
+      "start": 569.5,
+      "end": 574.4,
+      "en": "Right now, you know, my model is around a hundred billion, and they're going around making a lot of deals that's higher than that, right?",
+      "zh": "目前我的模型测算大约一千亿美元，但他们正在进行的交易规模远超这个数字。"
+    },
+    {
+      "start": 574.4,
+      "end": 579.8,
+      "en": "So people can worry, you know, how can Nvidia finance this? Well, they have to raise money.",
+      "zh": "所以市场会担心英伟达如何为这些交易融资？答案是必须举债。"
+    },
+    {
+      "start": 579.8,
+      "end": 584.7,
+      "en": "All of this affects sentiment on the stock. But generally speaking, you know, we have a really good regression model to model Nvidia's data center revenues for the quarter and guidance has a ninety-seven percent on square.",
+      "zh": "这些都会影响市场情绪。但总体而言，我们有一个很好的回归模型来预测英伟达数据中心季度收入，拟合度高达97%。"
+    },
+    {
+      "start": 584.7,
+      "end": 587.7,
+      "en": "And so far, you know, the AI trade continues to trend higher for Nvidia in terms of their Ruben demand and so forth.",
+      "zh": "到目前为止，AI交易对英伟达的Rubin需求等仍在上升。"
+    },
+    {
+      "start": 587.7,
+      "end": 592.3,
+      "en": "However, I just came back from a memory storage conference out on the West Coast.",
+      "zh": "不过，我刚从西海岸的一场存储大会回来。"
+    },
+    {
+      "start": 592.3,
+      "end": 599.4,
+      "en": "And they were talking about trying to reduce GPUs through innovations in memory architecture because GPUs, HBM, they've become too expensive.",
+      "zh": "会上讨论通过内存架构创新来减少GPU用量，因为GPU和HBM太贵了。"
+    },
+    {
+      "start": 599.4,
+      "end": 604.5,
+      "en": "So that's also weighing on sentiment here on Nvidia. Interesting.",
+      "zh": "这也在影响英伟达的市场情绪。确实值得关注。"
+    }
+  ]
+}

@@ -177,7 +177,7 @@ test("public account and analytics payloads never expose private account aliases
     accountRole: (user) => user.role || "user",
     accountDisabled: () => false,
     isGeneratedEmail: () => false,
-  }), ["publicUser", "publicAnalyticsEvent"]);
+  }), ["publicUser", "analyticsOptionalCount", "publicAnalyticsEvent"]);
 
   const account = context.publicUser({
     id: "admin-1",

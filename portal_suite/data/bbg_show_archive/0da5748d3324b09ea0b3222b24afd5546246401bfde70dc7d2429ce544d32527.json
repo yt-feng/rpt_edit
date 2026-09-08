@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "id": "0da5748d3324b09ea0b3222b24afd5546246401bfde70dc7d2429ce544d32527",
+  "slug": "bbg-20260615-0da5748d3324b09e",
+  "date": "2026-06-15",
+  "title": "美国政府下令Anthropic封锁外国访问Mythos AI模型",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-06-15/us-orders-anthropic-to-block-foreign-access-to-mythos-video",
+  "start": 0.0,
+  "end": 203.35,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 4.96,
+      "en": "Major news story, not a deal, a disagreement, fundamental between anthropic and the US government.",
+      "zh": "重大新闻，不是交易，而是分歧，根本在于Anthropic与美国政府之间。"
+    },
+    {
+      "start": 4.96,
+      "end": 14.56,
+      "en": "This really occurred over Friday and Saturday, anthropic, disabling access to its most advanced AI models, including Mythos, following an unprecedented order by the Trump administration",
+      "zh": "这发生在周五和周六，Anthropic禁用其最先进AI模型，包括Mythos，此前特朗普政府下达了前所未有的命令。"
+    },
+    {
+      "start": 14.56,
+      "end": 25.56,
+      "en": "to keep the technology out of the hands of all foreign nationals, the US government, citing national security concerns for ordering anthropic to ban any foreign national from accessing",
+      "zh": "禁止所有外国国民接触该技术，美国政府以国家安全为由，要求Anthropic禁止任何外国人访问其神话级AI模型。"
+    },
+    {
+      "start": 25.56,
+      "end": 37.24,
+      "en": "its fabled five and Mythos five AI models. We're joining out by Bloomberg, Senior Strategy's Neil Campling. Neil, it was a remarkable turn of events and the kind of the tech ecosystem",
+      "zh": "我们连线彭博高级策略师Neil Campling。Neil，这是一次重大转折，科技圈周末都在热议这一决定。"
+    },
+    {
+      "start": 37.24,
+      "end": 52.12,
+      "en": "was on fire talking about this decision over the weekend. What are the details behind this, I think as far as the unprecedented move? Morning, it certainly is. I mean, it's basically",
+      "zh": "这一前所未有的举措背后有何细节？早上好，确实如此。这基本上是Anthropic与美国政府之间的戏剧性对峙。"
+    },
+    {
+      "start": 52.28,
+      "end": 57.56,
+      "en": "ensure it's a dramatic standoff between the AI leaders of anthropic and the US government.",
+      "zh": "确保这是Anthropic与美国政府之间的戏剧性对峙。"
+    },
+    {
+      "start": 59.48,
+      "end": 72.92,
+      "en": "So anthropic describing it as minor vulnerabilities, the US government are saying actually they received an export, you know, they've basically become aware of a method of bypassing,",
+      "zh": "Anthropic称其为小漏洞，美国政府则表示他们实际上收到了出口信息，意识到存在绕过模型的方法。"
+    },
+    {
+      "start": 72.92,
+      "end": 83.56,
+      "en": "in other words, jail breaking these models. It would appear that another company claims they were able to jailbreak Mythos and this is a significant development because these models",
+      "zh": "换句话说，就是越狱这些模型。另一家公司声称他们成功越狱了Mythos，这是一个重大进展，因为这些模型。"
+    },
+    {
+      "start": 83.56,
+      "end": 91.24,
+      "en": "that only been in the market or been used by general use for three days. So it's a significant change",
+      "zh": "上市或通用使用仅三天。所以这是一个重大变化。"
+    },
+    {
+      "start": 92.36,
+      "end": 106.76,
+      "en": "and it's basically suggests that the safeguards that were put in place weren't strong enough despite the fact anthropic had said that the safeguards were so strong that many users had complained",
+      "zh": "这表明设置的安全措施不够强大，尽管Anthropic曾表示安全措施非常严格，以至于许多用户抱怨。"
+    },
+    {
+      "start": 106.76,
+      "end": 116.76,
+      "en": "that they were too restrictive and too broad. So as I say, it's a dramatic standoff really between the US government and anthropic in terms of these export restrictions.",
+      "zh": "他们认为这些限制过于严格且范围太广。所以，正如我所说，美国政府和Anthropic在出口限制问题上确实陷入了僵局。"
+    },
+    {
+      "start": 118.28,
+      "end": 129.16,
+      "en": "Neil, we had an M Live event the other day and one of the kind of topics of discussion that came up from the audience was that regulation could ultimately be the factor that ends the AI bubble.",
+      "zh": "尼尔，我们前几天有个M Live活动，观众提出的一个讨论话题是，监管最终可能成为终结AI泡沫的因素。"
+    },
+    {
+      "start": 129.96,
+      "end": 136.04,
+      "en": "Is this evidence that there is some credibility to that argument? What does it mean for the wider story?",
+      "zh": "这是否证明这个论点有一定可信度？对更广泛的形势意味着什么？"
+    },
+    {
+      "start": 138.87,
+      "end": 148.55,
+      "en": "It's a real difficult conundrum because technology is so crucial and central to US growth,",
+      "zh": "这确实是一个难题，因为技术对美国经济增长、财富创造以及IPO、交易和市场集中度等方面都至关重要。"
+    },
+    {
+      "start": 148.55,
+      "end": 162.31,
+      "en": "to the economic growth, to the wealth creation, to what we're seeing in other parts of the market in terms of the IPOs and the deals and the market concentration in technology. So it's a real difficult",
+      "zh": "所以，这是一个非常困难的平衡，你不需要太多限制。可以说，欧洲在某些方面难以跟上美国，因为那里的限制更多。"
+    },
+    {
+      "start": 162.39,
+      "end": 174.39,
+      "en": "sort of balance that you don't need to have. You don't want to have too many restrictions around the controls. You could argue that in some respects Europe has struggled to keep pace with the US",
+      "zh": "因此，我猜测更可能的是，Anthropic会进一步调整，以便恢复使用。但确保有控制措施又不至于过于限制这个价值数万亿美元的生态系统的发展，确实是一个艰难的平衡。"
+    },
+    {
+      "start": 174.39,
+      "end": 187.67,
+      "en": "because there are a lot more restrictions in place. So whether I suspect more likely is an anthropic will make further adjustments so that you can have the use again. But certainly it's",
+      "zh": "正如我所说，这对许多增长预测至关重要。"
+    },
+    {
+      "start": 187.67,
+      "end": 199.91,
+      "en": "a very difficult balance to make sure that you had controls in place but not too restrictive to to hamper the growth of this whole ecosystem that is trillions of dollars now and as I say,",
+      "zh": "这是一个非常艰难的平衡：既要确保有控制措施，又不能过于严格，以免阻碍这个如今价值数万亿美元的整个生态系统的发展。"
+    },
+    {
+      "start": 199.91,
+      "end": 203.35,
+      "en": "central to much of those growth forecasts.",
+      "zh": "这些增长预测的核心。"
+    }
+  ]
+}

@@ -544,12 +544,12 @@
 
   function registrationNoticeText(mode = "login") {
     return mode === "register"
-      ? "请填写常用邮箱。注册仅创建登录账号；注册后可在账户中心申请加入会员。"
-      : "没有账号？请注册并填写常用邮箱，也可以直接提交会员申请。";
+      ? "免费创建账号，使用账号研究额度、每日签到与报告券。请填写常用邮箱；全文下载以账号权益为准。"
+      : "欢迎回来。登录后继续研究、查看账号权益或完成今日签到。";
   }
 
   function registrationCompleteText() {
-    return "注册成功。可在下方提交会员申请或查看会员联系方式。";
+    return "注册成功。现在可以开始 AI 研究，或完成首次签到。全文下载以账号权益为准。";
   }
 
   function localizedContactText(value) {
@@ -1015,9 +1015,19 @@
       }
       update();
       document.addEventListener("portal-auth-change", update);
-      gate.addEventListener("click", () => showAccountModal(workerUrl));
+      gate.addEventListener("click", () => showAccountModal(workerUrl, { placement: "navigation" }));
       refreshAuthSession(workerUrl).then(update);
     }
+
+    initJourneyEntrypoints(workerUrl);
+    document.addEventListener("portal-open-auth", (event) => {
+      const detail = event.detail || {};
+      showAccountModal(workerUrl, {
+        mode: detail.mode === "register" ? "register" : "login",
+        placement: String(detail.placement || "research_limit").slice(0, 80),
+        resumeIntent: detail.resumeIntent === true,
+      });
+    });
 
     document.addEventListener("click", (event) => {
       const trigger = event.target && event.target.closest
@@ -1034,6 +1044,81 @@
     if (deepLinkKind && MEMBERSHIP_REQUEST_KINDS.has(String(deepLinkKind).trim().toLowerCase())) {
       window.setTimeout(() => showAccountModal(workerUrl, { requestKind: membershipRequestKind(deepLinkKind) }), 0);
     }
+  }
+
+  function journeyPageUrl(name) {
+    const prefix = String(window.location.pathname || "").match(/^\/(ko|ja|ar|en|zh-Hant)(?:\/|$)/i);
+    return `${prefix ? `/${prefix[1]}` : ""}/${name}`;
+  }
+
+  function initJourneyEntrypoints(workerUrl) {
+    const actions = document.querySelector(".topbar-actions");
+    if (actions && !actions.querySelector("[data-auth-open='register']")) {
+      const signup = document.createElement("button");
+      signup.type = "button";
+      signup.className = "account-button signup-button";
+      signup.textContent = "免费注册";
+      signup.setAttribute("data-auth-open", "register");
+      signup.setAttribute("data-auth-placement", "navigation");
+      signup.setAttribute("data-guest-only", "");
+      actions.append(signup);
+    }
+    if (actions && !actions.querySelector("[data-auth-open='checkin']")) {
+      const checkin = document.createElement("button");
+      checkin.type = "button";
+      checkin.className = "topbar-link daily-goal-button";
+      checkin.textContent = "每日签到";
+      checkin.setAttribute("data-auth-open", "checkin");
+      checkin.setAttribute("data-auth-placement", "daily_goal");
+      checkin.setAttribute("data-member-only", "");
+      checkin.hidden = !loadAuthSession();
+      actions.append(checkin);
+    }
+    const seen = new WeakSet();
+    const trackExposure = (element) => {
+      if (seen.has(element) || element.hidden) return;
+      if (element.hasAttribute("data-guest-only") && loadAuthSession()) return;
+      if (element.hasAttribute("data-member-only") && !loadAuthSession()) return;
+      seen.add(element);
+      const research = element.hasAttribute("data-research-entry");
+      trackEvent(workerUrl, research ? "report_chat_interaction" : "account_auth", {
+        action: research ? "entry_impression" : "cta_impression",
+        placement: element.getAttribute(research ? "data-research-entry" : "data-auth-placement") || page,
+        context: "report",
+        status: element.getAttribute("data-auth-open") || "visible",
+      });
+    };
+    const observer = typeof IntersectionObserver === "function" ? new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting && entry.intersectionRatio >= 0.5) trackExposure(entry.target); });
+    }, { threshold: 0.5 }) : null;
+    const sync = () => {
+      const signedIn = Boolean(loadAuthSession());
+      document.querySelectorAll("[data-guest-only]").forEach((element) => { element.hidden = signedIn; });
+      document.querySelectorAll("[data-member-only]").forEach((element) => { element.hidden = !signedIn; });
+      if (observer) document.querySelectorAll("[data-auth-open], [data-research-entry]").forEach((element) => observer.observe(element));
+    };
+    sync();
+    // Shared navigation is inserted by site-runtime at DOMContentLoaded.
+    // Observe those late entrypoints as well as the static first-paint buttons.
+    document.addEventListener("DOMContentLoaded", sync, { once: true });
+    document.addEventListener("portal-auth-change", sync);
+    document.addEventListener("click", (event) => {
+      const trigger = event.target && event.target.closest ? event.target.closest("[data-auth-open], [data-research-entry]") : null;
+      if (!trigger) return;
+      if (trigger.hasAttribute("data-research-entry")) {
+        trackEvent(workerUrl, "report_chat_interaction", { action: "entry_click", context: "report", placement: trigger.getAttribute("data-research-entry") });
+        if (trigger.hasAttribute("data-research-report")) {
+          const title = document.querySelector(".detail-title")?.textContent || new URLSearchParams(window.location.search).get("title") || "";
+          if (title) trigger.href = `${journeyPageUrl("research.html")}?q=${encodeURIComponent(`围绕“${title}”，综合相关报告的主要观点、数据和分歧，并引用来源与可用图表。`.slice(0, 600))}`;
+        }
+        return;
+      }
+      event.preventDefault();
+      const mode = trigger.getAttribute("data-auth-open");
+      const placement = trigger.getAttribute("data-auth-placement") || page;
+      trackEvent(workerUrl, "account_auth", { action: "cta_click", placement, status: mode });
+      showAccountModal(workerUrl, { mode: mode === "register" ? "register" : "login", placement, focusRewards: mode === "checkin" });
+    });
   }
 
   function initNewsfeedNav() {
@@ -1075,10 +1160,11 @@
       <div class="admin-modal account-modal" id="accountModal" role="dialog" aria-modal="true" aria-labelledby="accountModalTitle">
         <div class="admin-dialog account-dialog">
           <button class="admin-close" id="accountClose" type="button" aria-label="Close">&times;</button>
-          <h3 id="accountModalTitle">账号管理</h3>
+          <h3 id="accountModalTitle">${signedIn ? "我的研究账号" : context.mode === "register" ? "免费创建研究账号" : "登录 KC桌面"}</h3>
+          ${!signedIn ? '<p class="account-welcome">一个账号，连接 AI 研究、每日签到与报告权益。</p>' : ""}
           <form id="accountAuthForm" class="auth-form" ${signedIn ? "hidden" : ""}>
             <div class="auth-grid">
-              <label>用户名<input id="accountUsername" type="text" autocomplete="username" placeholder="yourname" required></label>
+              <label>用户名<input id="accountUsername" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" aria-describedby="accountUsernameHint" placeholder="例如 yourname_01" required><small class="auth-field-hint" id="accountUsernameHint">3–32 位，以英文字母或数字开头，可包含点、短横线和下划线；不支持中文或空格。</small></label>
               <label id="accountEmailLabel" hidden>常用邮箱（必填）<input id="accountEmail" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com"></label>
               <label>密码<input id="accountPassword" type="password" autocomplete="current-password" placeholder="至少 4 位" required></label>
             </div>
@@ -1113,6 +1199,7 @@
               <button class="secondary-button" id="accountPasswordSubmit" type="submit">修改密码</button>
             </form>
             <section class="account-rewards" id="accountRewards" hidden>
+              <div class="account-daily-goal"><span>今日小目标</span><strong id="accountRewardGoal">签到后，选择一个问题或读一份报告。</strong><a href="${journeyPageUrl("research.html")}" data-research-entry="account_goal">开始今天的研究 →</a></div>
               <div class="account-rewards-heading">
                 <div>
                   <span>每日签到</span>
@@ -1127,6 +1214,9 @@
                   <strong><b id="accountRewardCredits">0</b> 张</strong>
                 </div>
               </div>
+              <div id="accountRewardJourney" class="reward-journey" aria-label="连续签到进度"></div>
+              <p id="accountRewardProgress" class="reward-progress-label"></p>
+              <progress id="accountRewardProgressBar" class="reward-progress" max="70" value="0" aria-label="积分兑换进度"></progress>
               <p id="accountRewardHint">首签立即得 1 张报告券，第 3 天再得 1 张；每日签到 +10 分，70 分可兑换 1 份报告。</p>
               <button class="primary" id="accountRewardCheckin" type="button">今日签到 +10</button>
               ${rewardReportActions}
@@ -1191,6 +1281,11 @@
     const image = document.getElementById("accountCaptchaImage");
     const refresh = document.getElementById("accountRefreshCaptcha");
     if (!image || !refresh) return "";
+    if (status.dataset.captchaError === "true") {
+      status.textContent = "";
+      status.className = "status-line";
+      delete status.dataset.captchaError;
+    }
     refresh.disabled = true;
     try {
       const response = await fetch(`${workerUrl}/captcha`, { cache: "no-store" });
@@ -1199,8 +1294,11 @@
       image.src = data.image;
       return data.token;
     } catch (error) {
-      status.textContent = error.message || "验证码加载失败。";
+      console.warn("Account captcha could not be loaded", error);
+      image.removeAttribute("src");
+      status.textContent = "验证码暂时无法加载，请重试。";
       status.className = "status-line error";
+      status.dataset.captchaError = "true";
       return "";
     } finally {
       refresh.disabled = false;
@@ -1263,7 +1361,11 @@
     const rewardDailyClaim = document.getElementById("accountRewardDailyClaim");
     const rewardPointsClaim = document.getElementById("accountRewardPointsClaim");
     const rewardStatus = document.getElementById("accountRewardStatus");
-    let mode = "login";
+    let mode = context.mode === "register" ? "register" : "login";
+    const startedAuthModes = new Set();
+    let authCompleted = false;
+    const authPlacement = String(context.placement || (context.item ? "report_detail" : page)).slice(0, 80);
+    trackEvent(workerUrl, "account_auth", { action: "modal_open", placement: authPlacement, status: loadAuthSession() ? "signed_in" : mode });
     let captchaToken = "";
     let currentRewardState = null;
     let rewardActionTimer = 0;
@@ -1479,6 +1581,22 @@
       if (rewardPoints) rewardPoints.textContent = String(Math.max(0, Number(data && data.points || 0)));
       if (rewardStreak) rewardStreak.textContent = String(Math.max(0, Number(data && data.current_streak || 0)));
       if (rewardCredits) rewardCredits.textContent = String(Math.max(0, Number(data && data.credits_available || 0)));
+      const streak = Math.max(0, Number(data && data.current_streak || 0));
+      const points = Math.max(0, Number(data && data.points || 0));
+      const cost = Math.max(1, Number(data && data.points_report_cost || 70));
+      const goal = document.getElementById("accountRewardGoal");
+      const journey = document.getElementById("accountRewardJourney");
+      const progressLabel = document.getElementById("accountRewardProgress");
+      const progressBar = document.getElementById("accountRewardProgressBar");
+      if (goal) goal.textContent = data && data.checked_in_today ? "今日签到已完成。选一个问题，继续研究。" : "先完成今日签到，再读一份报告。";
+      if (journey) {
+        const completed = streak > 0 && streak % 7 === 0 && data && data.checked_in_today ? 7 : streak % 7;
+        const start = Math.max(0, streak - completed);
+        journey.innerHTML = Array.from({ length: 7 }, (_, index) => `<span class="reward-journey-day${index < completed ? " is-complete" : ""}${index === completed && !(data && data.checked_in_today) ? " is-next" : ""}"><b aria-hidden="true">${index < completed ? "✓" : index + start + 1}</b><span>第 ${index + start + 1} 天</span></span>`).join("");
+        journey.setAttribute("aria-label", `当前连续签到 ${streak} 天；${data && data.checked_in_today ? "今日已完成" : "今日待签到"}`);
+      }
+      if (progressLabel) progressLabel.textContent = points >= cost ? `已达 ${cost} 积分，可在报告详情兑换一份符合条件的报告。` : `距离兑换一份报告还差 ${cost - points} 积分（${points} / ${cost}）。`;
+      if (progressBar) { progressBar.max = cost; progressBar.value = Math.min(points, cost); }
       if (!rewardActionActive || options.forceControls) {
         if (rewardCheckin) {
           rewardCheckin.disabled = Boolean(data && data.checked_in_today);
@@ -1505,7 +1623,7 @@
         else if (milestone.type === "d3_credit") milestoneCopy = `再连续 ${Number(milestone.days || 1)} 天，到第 3 天再得 1 张报告券。`;
         else if (milestone.type === "d7_freeze") milestoneCopy = `再连续 ${Number(milestone.days || 1)} 天完成 7 日里程碑。`;
         else if (milestone.type === "bonus_points") milestoneCopy = `再连续 ${Number(milestone.days || 1)} 天可得额外 ${Number(milestone.bonus_points || 0)} 分。`;
-        rewardHint.textContent = `${creditCopy}${milestoneCopy} 每日 +10 分；70 分可兑换 1 份报告。`.trim();
+        rewardHint.textContent = `${creditCopy}${milestoneCopy} 每日 +10 分；${cost} 分可兑换 1 份报告。`.trim();
       }
     }
 
@@ -1644,11 +1762,14 @@
       password.autocomplete = mode === "register" ? "new-password" : "current-password";
       submit.textContent = mode === "register" ? "注册并登录" : "登录";
       toggle.textContent = mode === "register" ? "已有账号，去登录" : "注册新账号";
+      document.getElementById("accountModalTitle").textContent = mode === "register" ? "免费创建研究账号" : "登录 KC桌面";
       answer.value = "";
       loadAccountCaptcha(workerUrl, status).then((token) => { captchaToken = token; });
     }
 
     function finish() {
+      if (!authCompleted && startedAuthModes.has(mode) && !loadAuthSession()) trackEvent(workerUrl, "account_auth", { action: "form_abandon", placement: authPlacement, status: mode });
+      trackEvent(workerUrl, "account_auth", { action: "modal_close", placement: authPlacement, status: authCompleted ? "completed" : mode });
       disposeAccountModal();
       modal.__portalCleanup = null;
       modal.remove();
@@ -1658,7 +1779,15 @@
     modal.addEventListener("click", (event) => {
       if (event.target === modal) finish();
     });
-    toggle.addEventListener("click", () => setMode(mode === "login" ? "register" : "login"));
+    toggle.addEventListener("click", () => {
+      setMode(mode === "login" ? "register" : "login");
+      trackEvent(workerUrl, "account_auth", { action: "mode_selected", placement: authPlacement, status: mode });
+    });
+    form.addEventListener("input", () => {
+      if (startedAuthModes.has(mode)) return;
+      startedAuthModes.add(mode);
+      trackEvent(workerUrl, "account_auth", { action: "form_start", placement: authPlacement, status: mode });
+    });
     refresh.addEventListener("click", () => loadAccountCaptcha(workerUrl, status).then((token) => { captchaToken = token; }));
     if (contactQrToggle) contactQrToggle.addEventListener("click", refreshVerifiedContactQr);
     if (membershipRequestToggle && membershipRequestForm) {
@@ -1842,18 +1971,26 @@
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
+      trackEvent(workerUrl, "account_auth", { action: "form_submit", placement: authPlacement, status: mode });
       submit.disabled = true;
       setStatus(mode === "register" ? "正在注册…" : "正在登录…");
+      let requestSent = false;
       try {
+        const normalizedUsername = String(username.value || "").trim().toLowerCase().replace(/^@+/, "");
+        if (mode === "register" && !/^[a-z0-9][a-z0-9_.-]{2,31}$/.test(normalizedUsername)) {
+          username.focus();
+          throw new Error("用户名需为 3–32 位，以英文字母或数字开头，仅支持英文字母、数字、点、短横线和下划线。");
+        }
         if (mode === "register" && (!email.value.trim() || !email.validity.valid)) {
           throw new Error("注册必须填写有效的常用邮箱。");
         }
+        requestSent = true;
         const response = await fetch(`${workerUrl}/auth`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             action: mode,
-            username: username.value,
+            username: normalizedUsername,
             password: password.value,
             email: mode === "register" ? email.value : "",
             captcha_token: captchaToken,
@@ -1867,27 +2004,46 @@
           target: data.user.username || data.user.email || username.value,
           action: data.recovered ? "login_recovered" : mode,
           status: "success",
+          placement: authPlacement,
         });
+        authCompleted = true;
         password.value = "";
         answer.value = "";
         const registrationStatus = mode === "register" ? registrationCompleteText() : "";
         refreshUi({ statusOverride: registrationStatus });
+        document.dispatchEvent(new CustomEvent("portal-auth-complete", { detail: { resumeIntent: context.resumeIntent === true, placement: authPlacement } }));
+        if (context.resumeIntent) {
+          trackEvent(workerUrl, "account_auth", { action: "intent_resumed", placement: authPlacement, status: "success" });
+          finish();
+        }
       } catch (error) {
         trackEvent(workerUrl, "account_auth", {
           target: username.value,
           action: mode,
           status: "error",
+          placement: authPlacement,
           error: error && error.message || "account_request_failed",
         });
         setStatus(error.message || "账号请求失败。", "error");
-        answer.value = "";
-        captchaToken = await loadAccountCaptcha(workerUrl, status);
+        if (requestSent) {
+          answer.value = "";
+          captchaToken = await loadAccountCaptcha(workerUrl, status);
+        }
       } finally {
         submit.disabled = false;
       }
     });
 
+    // Choose the requested mode before loading one captcha for the initial form.
+    emailLabel.hidden = mode !== "register";
+    email.required = mode === "register";
+    if (registrationNotice) registrationNotice.textContent = registrationNoticeText(mode);
+    password.autocomplete = mode === "register" ? "new-password" : "current-password";
+    submit.textContent = mode === "register" ? "注册并登录" : "登录";
+    toggle.textContent = mode === "register" ? "已有账号，去登录" : "注册新账号";
+    if (rewards && summary) summary.insertBefore(rewards, passwordForm);
     refreshUi();
+    if (context.focusRewards && rewards) rewards.scrollIntoView?.({ behavior: "smooth", block: "center" });
     if (!loadAuthSession() && username) username.focus();
   }
 
@@ -7689,6 +7845,7 @@
   }
 
   async function initIndex() {
+    trackEvent("/api", "page_view", { page: "home" });
     const input = document.getElementById("searchInput");
     const results = document.getElementById("results");
     const count = document.getElementById("resultCount");
@@ -7723,9 +7880,13 @@
     if (input) input.addEventListener("input", captureEarlyInput, { passive: true });
 
     let fullCatalogError = null;
+    const configPromise = loadOptionalJson("data/config.json", {}).then((value) => {
+      initAccountGate(workerBaseUrl(value));
+      return value;
+    });
     const [previewCatalog, config] = await Promise.all([
       loadOptionalJson("data/catalog_preview.json", null),
-      loadOptionalJson("data/config.json", {}),
+      configPromise,
     ]);
     let fullCatalogPromise = null;
     let fullCatalogRetryAfter = 0;
@@ -7779,14 +7940,9 @@
     let currentPage = 1;
     let catalogAnalyticsTimer = 0;
     let lastCatalogAnalyticsKey = "";
-    let showInternalStorageMetadata = false;
-    let internalStorageMetadata = null;
-    let internalStorageRequestId = 0;
 
-    initAccountGate(workerUrl);
     initAdminGate(workerUrl);
     initNewsfeedNav();
-    trackEvent(workerUrl, "page_view", { page: "home", report_count: items.length });
 
     const hotReportsSection = document.getElementById("hotReportsSection");
     const hotReportsResults = document.getElementById("hotReportsResults");
@@ -8499,56 +8655,9 @@
 
     function updateMeta() {
       const visibleTotal = Math.max(items.length, Number(catalog.total_item_count || 0));
-      meta.textContent = `${visibleTotal} reports`;
-      const totalSize = formatSize(internalStorageMetadata && internalStorageMetadata.total_size_bytes);
-      const limitSize = formatSize(internalStorageMetadata && internalStorageMetadata.limit_bytes);
-      const hotTotalSize = formatSize(internalStorageMetadata && internalStorageMetadata.hot_report_size_bytes);
-      const hotLimitSize = formatSize(internalStorageMetadata && internalStorageMetadata.hot_report_limit_bytes);
-      const contactStorageMeta = contactReportStorageMetaText(internalStorageMetadata);
-      if (showInternalStorageMetadata && totalSize && limitSize) {
-        meta.textContent += ` | ${totalSize} / ${limitSize} PDF storage`;
-      } else if (showInternalStorageMetadata && totalSize) {
-        meta.textContent += ` | ${totalSize} PDF storage`;
-      }
-      if (showInternalStorageMetadata && hotTotalSize && hotLimitSize) {
-        meta.textContent += ` | ${hotTotalSize} / ${hotLimitSize} hot archive`;
-      }
-      if (showInternalStorageMetadata && contactStorageMeta) {
-        meta.textContent += ` | ${contactStorageMeta}`;
-      }
-      if (catalog.updated_at_bjt) {
-        meta.textContent += ` | Updated ${catalog.updated_at_bjt}`;
-      }
-      meta.textContent += ` | ${searchIndexLabel}`;
+      meta.textContent = `${visibleTotal.toLocaleString(CONTENT_INTL_LOCALE)} 份报告`;
+      if (catalog.updated_at_bjt) meta.textContent += ` · 更新 ${String(catalog.updated_at_bjt).slice(0, 10)}`;
     }
-
-    async function refreshInternalStorageMetadata() {
-      const requestId = ++internalStorageRequestId;
-      await waitForAuthSessionRefresh(workerUrl);
-      if (requestId !== internalStorageRequestId) return;
-      const sessionKey = authSessionRequestKey();
-      showInternalStorageMetadata = isAdminASession();
-      internalStorageMetadata = null;
-      updateMeta();
-      if (!showInternalStorageMetadata || !workerUrl) return;
-      try {
-        const response = await fetch(`${workerUrl}/internal/pdf-storage`, {
-          cache: "no-store",
-          headers: authHeaders(),
-        });
-        const data = await response.json().catch(() => ({}));
-        if (!response.ok) throw new Error(data.detail || "PDF storage metadata is unavailable.");
-        if (requestId !== internalStorageRequestId || sessionKey !== authSessionRequestKey() || !isAdminASession()) return;
-        internalStorageMetadata = data;
-      } catch (_error) {
-        if (requestId !== internalStorageRequestId) return;
-        internalStorageMetadata = null;
-      }
-      updateMeta();
-    }
-
-    document.addEventListener("portal-auth-change", refreshInternalStorageMetadata);
-    refreshInternalStorageMetadata();
 
     function passesFilters(item, filters) {
       const id = String(item.id || "");
@@ -11316,7 +11425,10 @@
   async function initReport() {
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
-    const configPromise = loadJson("data/config.json").catch(() => ({}));
+    const configPromise = loadJson("data/config.json").catch(() => ({})).then((value) => {
+      initAccountGate(workerBaseUrl(value));
+      return value;
+    });
     initNewsfeedNav();
     const previewItem = reportPreviewFromParams(params, id) || cachedReportPreview(id);
     if (previewItem) {
@@ -11350,7 +11462,6 @@
     renderReportFirstPaint(item, relatedItems);
     const config = await configPromise;
     const workerUrl = workerBaseUrl(config);
-    initAccountGate(workerUrl);
     initAdminGate(workerUrl);
     renderDetail(item, config, items, searchTextById, {
       password: deliveryPasswordFromLocation(params),
@@ -15183,7 +15294,25 @@
     await refresh();
   }
 
-  const boot = page === "report"
+  async function initResearch() {
+    // The research workspace is immediately usable; it never loads the home catalog.
+    const workerUrl = "/api";
+    initAccountGate(workerUrl);
+    initNewsfeedNav();
+    trackEvent(workerUrl, "page_view", { page: "research" });
+  }
+
+  async function initContentAccount() {
+    // Article page views are emitted by the shared automatic analytics script.
+    initAccountGate("/api");
+    initNewsfeedNav();
+  }
+
+  const boot = page === "research"
+    ? initResearch
+    : page === "blog-article"
+      ? initContentAccount
+    : page === "report"
     ? initReport
     : page === "external"
       ? initExternalDetail

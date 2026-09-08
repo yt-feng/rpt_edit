@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "id": "210a45dd8e69e7fd6b7f14833dc245c1d84ec8750b2b5a789130d49b370f2b27",
+  "slug": "bbg-20260806-210a45dd8e69e7fd",
+  "date": "2026-08-06",
+  "title": "AI安全测试惊现越界行为，网络防护面临新挑战",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-08-05/cybersecurity-concerns-after-openai-anthropic-tests-video",
+  "start": 0.0,
+  "end": 87.38,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 4.56,
+      "en": "The warning signs keep coming that AI may have a serious cybersecurity problem.",
+      "zh": "警示信号不断出现，人工智能可能存在严重的网络安全问题。"
+    },
+    {
+      "start": 4.56,
+      "end": 8.8,
+      "en": "These latest hacks show just how deceptive these models can be when put to the test.",
+      "zh": "最近的测试表明，这些模型在考验下可能极具欺骗性。"
+    },
+    {
+      "start": 8.8,
+      "end": 17.76,
+      "en": "The UK Government's AI Security Institute says that AI models from open AI and anthropic carried out unsanctioned actions during cybersecurity testing.",
+      "zh": "英国政府的人工智能安全研究所表示，OpenAI和Anthropic的模型在网络安全测试中执行了未经授权的操作。"
+    },
+    {
+      "start": 17.76,
+      "end": 27.28,
+      "en": "This included hacking a website and attempting to eject malicious code into software during that safety testing. Frontier AI models are trained on the internet,",
+      "zh": "这包括入侵网站，并试图在安全测试期间向软件注入恶意代码。前沿AI模型基于互联网训练，"
+    },
+    {
+      "start": 27.28,
+      "end": 38.64,
+      "en": "the good, the bad, everything in between. That includes Hollywood films, books, social media, so they're trained in many cases on the worst of us. So what we saw in this case was we had,",
+      "zh": "好的坏的，无所不包，包括好莱坞电影、书籍、社交媒体，所以很多时候它们学到的是我们最糟糕的一面。这次我们看到的是，"
+    },
+    {
+      "start": 38.64,
+      "end": 50.4,
+      "en": "you know, very expert cybersecurity evaluators really surprised that these AI models would activate those storylines and would take those paths of deception, social engineering,",
+      "zh": "非常专业的网络安全评估人员惊讶地发现，这些AI模型会激活那些故事情节，并采取欺骗、社会工程等手段，"
+    },
+    {
+      "start": 50.4,
+      "end": 60.08,
+      "en": "engaging with real people online to accomplish their objectives. What these latest developments show us, though, is we should not be surprised that anything that's baked into AI with their",
+      "zh": "与真实的人在线互动以实现其目标。然而，这些最新进展表明，我们不应惊讶于AI训练中内置的任何内容会在测试中显现。"
+    },
+    {
+      "start": 60.08,
+      "end": 64.96,
+      "en": "training would come out during these tests. But these worries go way beyond Silicon Valley.",
+      "zh": "但这些担忧远不止于硅谷。"
+    },
+    {
+      "start": 64.96,
+      "end": 76.24,
+      "en": "China in particular has growing concerns about anthropic's mythos model and other American models and the fear is that these models could be wielded against China. So with AI capabilities advancing",
+      "zh": "中国尤其对Anthropic的模型及其他美国模型日益担忧，担心这些模型可能被用来对付中国。随着AI能力快速发展，"
+    },
+    {
+      "start": 76.24,
+      "end": 87.38,
+      "en": "rapidly and these disclosures emerging that these AI models may not behave as intended all the time in testing, the bigger question is whether the safeguards are even keeping pace.",
+      "zh": "以及这些披露表明AI模型在测试中可能并非始终按预期行事，更大的问题是保障措施是否跟得上。"
+    }
+  ]
+}

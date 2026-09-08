@@ -43,7 +43,7 @@
   function session() {
     try {
       const value = JSON.parse(localStorage.getItem(AUTH_SESSION_KEY) || "null");
-      return value && value.token && value.user && value.user.email ? value : null;
+      return value && value.token && value.user && (value.user.id || value.user.email) ? value : null;
     } catch (_error) {
       return null;
     }
@@ -78,7 +78,7 @@
     };
     const questionHash = String(data.question_hash || "").replace(/[^a-zA-Z0-9_-]/gu, "").slice(0, 128);
     if (questionHash) payload.question_hash = questionHash;
-    for (const key of ["tier", "period", "popular_id", "status", "request_hint"]) {
+    for (const key of ["tier", "period", "popular_id", "status", "request_hint", "placement"]) {
       const value = String(data[key] || "").trim().slice(0, 120);
       if (value) payload[key] = value;
     }
@@ -154,6 +154,11 @@
   }
 
   function reportUrl(id, item = {}) {
+    const chartSource = String(id || "").match(/^chart:([0-9a-f]{64})$/u);
+    if (chartSource) {
+      const localePrefix = pagePath().match(/^\/(ko|ja|ar|en|zh-Hant)(?:\/|$)/i);
+      return `${localePrefix ? `/${localePrefix[1]}` : ""}/charts.html?image=${chartSource[1]}`;
+    }
     const params = [["id", String(id || "")]];
     const preview = {
       title: item.title,
@@ -168,13 +173,15 @@
     for (const [key, value] of Object.entries(preview)) {
       if (value !== undefined && value !== null && value !== "") params.push([key, String(value)]);
     }
-    return `/report.html?${params.map(([key, value]) => (
+    const localePrefix = pagePath().match(/^\/(ko|ja|ar|en|zh-Hant)(?:\/|$)/i);
+    return `${localePrefix ? `/${localePrefix[1]}` : ""}/report.html?${params.map(([key, value]) => (
       `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
     )).join("&")}`;
   }
 
   function reportSearchUrl(title) {
-    return `/?q=${encodeURIComponent(String(title || "").trim().slice(0, 300))}`;
+    const localePrefix = pagePath().match(/^\/(ko|ja|ar|en|zh-Hant)(?:\/|$)/i);
+    return `${localePrefix ? `/${localePrefix[1]}` : ""}/?q=${encodeURIComponent(String(title || "").trim().slice(0, 300))}`;
   }
 
   function sourceReportUrl(id, item = {}) {
@@ -263,10 +270,15 @@
     }
     const meta = [item.institution, item.industry, item.date_folder, item.page_count ? `${item.page_count}页` : ""]
       .map((value) => String(value || "").trim()).filter(Boolean).join(" · ");
+    const partialExcerpt = item.partial_excerpt === true || item.text_scope === "partial_excerpt";
+    const evidenceLabel = partialExcerpt
+      ? (item.evidence_kind === "full_text_and_charts" ? "报告正文节选与图表" : "报告正文节选")
+      : (({ chart_metadata: "图表来源", full_text_and_charts: "正文与图表", full_text: "正文来源" })[item.evidence_kind] || "");
     return `<a class="report-chat-card" href="${escapeHtml(reportUrl(item.id, item))}" target="_blank" rel="noopener noreferrer">
       <span class="report-chat-score" aria-label="资料吸引力 ${escapeHtml(item.attraction_score)} 星">${stars}</span>
       <strong>${escapeHtml(item.title || "报告资料")}</strong>
       <span>${escapeHtml(meta)}</span>
+      ${evidenceLabel ? `<span class="research-evidence-label">${evidenceLabel}</span>` : ""}
     </a>`;
   }
 
@@ -289,7 +301,7 @@
 
   function chartFigureHtml(item, sources) {
     const imageId = String(item.image_id || "");
-    const reportId = String(item.report_id || "").trim();
+    const reportId = String(item.source_id || item.report_id || "").trim();
     const chartReportTitle = String(item.report_title || "").trim();
     const report = sources.get(reportId) || {
       id: reportId,
@@ -299,7 +311,7 @@
     };
     const reportTitle = String(report.report_title || report.title || chartReportTitle || "图表所在报告").trim();
     const sourceUrl = sourceReportUrl(reportId, report);
-    const sourceAction = reportId ? `来源报告 · ${reportTitle}` : `搜索来源报告 · ${reportTitle}`;
+    const sourceAction = reportId.startsWith("chart:") ? "查看图表来源" : reportId ? `来源报告 · ${reportTitle}` : `搜索来源报告 · ${reportTitle}`;
     const title = String(item.title || "研究图表").trim();
     const description = String(item.description || item.trend_summary || "").trim();
     const metrics = (Array.isArray(item.metrics) ? item.metrics : [])
@@ -322,7 +334,7 @@
     const unmatched = [];
     const findingSources = findings.map((item) => new Set(sourceIds(item.source_ids, sources)));
     charts.forEach((chart) => {
-      const reportId = String(chart.report_id || "").trim();
+      const reportId = String(chart.source_id || chart.report_id || "").trim();
       const findingIndex = reportId
         ? findingSources.findIndex((ids) => ids.has(reportId))
         : -1;
@@ -337,7 +349,7 @@
       <div><strong>保存当前研究结果</strong><span>直接使用上方已生成内容，不会再次调用模型或消耗额度。</span></div>
       <div class="report-research-export-actions">
         <button type="button" class="secondary-button" data-report-research-export="docx">下载 Word (.docx)</button>
-        <button type="button" class="secondary-button" data-report-research-export="pdf">导出 PDF（打开保存界面）</button>
+        <button type="button" class="secondary-button" data-report-research-export="pdf">下载 PDF</button>
       </div>
       <p class="status-line" data-report-research-export-status role="status" aria-live="polite"></p>
     </section>`;
@@ -352,10 +364,15 @@
     const dataPoints = (Array.isArray(data.data_points) ? data.data_points : []).filter((item) => item && typeof item === "object").slice(0, 12);
     const charts = (Array.isArray(data.charts) ? data.charts : []).filter((item) => {
       if (!item || typeof item !== "object" || !/^[0-9a-f]{64}$/u.test(String(item.image_id || ""))) return false;
-      return Boolean(String(item.report_id || item.report_title || "").trim());
+      return Boolean(String(item.source_id || item.report_id || item.report_title || "").trim());
     }).slice(0, 6);
     const chartPlacement = chartsByFinding(findings, charts, sources);
     const sections = [];
+    const coverageNotes = (Array.isArray(data.research_scope) ? data.research_scope : [data.research_scope]).filter(Boolean).map((value) => String(value));
+    const partialSourceCount = sourceRows.filter((item) => item.partial_excerpt === true || item.text_scope === "partial_excerpt").length;
+    if (partialSourceCount) coverageNotes.push(`本次包含 ${partialSourceCount} 份报告正文节选，相关结论仅基于已索引的节选内容。`);
+    const scope = coverageNotes.join(" · ");
+    if (scope) sections.push(`<aside class="research-coverage-note"><strong>本次研究覆盖</strong><p>${escapeHtml(scope)}</p></aside>`);
     if (executiveSummary) {
       sections.push(`<section class="report-research-summary"><span>研究摘要</span><p>${escapeHtml(executiveSummary)}</p><div class="report-research-source-row">${sourceChipsHtml(data.summary_source_ids, sources)}</div></section>`);
     }
@@ -378,6 +395,7 @@
         return `<article><span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong>${context ? `<p>${escapeHtml(context)}</p>` : ""}<div class="report-research-source-row">${sourceChipsHtml(item.source_ids, sources)}</div></article>`;
       }).join("")}</div></section>`);
     }
+    if (sections.length && !charts.length) sections.push('<p class="research-coverage-note">本次没有匹配到可引用图表，导出以文字和来源为主。</p>');
     return sections.length ? `${sections.join("")}${researchExportHtml()}` : "";
   }
 
@@ -445,6 +463,7 @@
     const emailHelp = accountEmail ? "将发送至当前登录账号邮箱" : "请填写接收后续回复的邮箱";
     return `<article class="report-chat-limit-card">
       <div class="report-chat-limit-copy"><span>本次额度已用完</span><h3>申请继续研究</h3><p>${escapeHtml(usageStatusText(usage) || "提交后，研究问题会通过邮件转交人工继续处理。")}</p></div>
+      ${!auth ? '<div class="research-signup-prompt"><strong>免费注册，使用账号研究额度</strong><p>刚才的问题会保留，登录后继续提交。已有账号也可直接登录。</p><button type="button" class="primary" data-research-auth="register">注册并继续研究</button><button type="button" class="secondary-button" data-research-auth="login">登录并继续</button></div>' : ""}
       <form class="report-chat-limit-form" data-report-chat-request>
         <label><span>接收回复的邮箱</span><input type="email" name="requester_email" value="${escapeHtml(accountEmail)}" placeholder="name@example.com" autocomplete="email" required${accountEmail ? " readonly" : ""}></label>
         <label class="report-chat-honeypot" aria-hidden="true">请勿填写<input type="text" name="honeypot" tabindex="-1" autocomplete="off"></label>
@@ -537,6 +556,47 @@
     let popularItems = new Map();
     let progressCard = null;
     let progressRemovalId = 0;
+    let waitingForAuth = false;
+    let composerStarted = false;
+    const placement = document.body && document.body.dataset && document.body.dataset.page === "research" ? "research_workspace" : surface.context === "course" ? "course_composer" : "home_composer";
+    const draftKey = `portal_research_draft:${surface.context}`;
+    const persistDraft = () => {
+      try { sessionStorage.setItem(draftKey, String(input.value || "").slice(0, 600)); } catch (_error) { /* The current input remains available. */ }
+    };
+    if (surface.context === "report") {
+      const linkedQuestion = new URLSearchParams(window.location.search || "").get("q");
+      if (placement === "research_workspace" && linkedQuestion) input.value = String(linkedQuestion).slice(0, 600);
+      else {
+        try { if (!input.value) input.value = sessionStorage.getItem(draftKey) || ""; } catch (_error) { /* Optional session draft. */ }
+      }
+    }
+    input.addEventListener("input", () => {
+      persistDraft();
+      if (composerStarted) return;
+      composerStarted = true;
+      trackInteraction("composer_start", { context: surface.context, placement });
+    });
+    if (typeof IntersectionObserver === "function") {
+      const observer = new IntersectionObserver((entries) => {
+        if (!entries.some((entry) => entry.isIntersecting && entry.intersectionRatio >= 0.5)) return;
+        trackInteraction("composer_impression", { context: surface.context, placement });
+        observer.disconnect();
+      }, { threshold: 0.5 });
+      observer.observe(form);
+    }
+    document.querySelectorAll?.("[data-research-prompt]").forEach((prompt) => prompt.addEventListener("click", () => {
+      input.value = String(prompt.getAttribute("data-research-prompt") || "").slice(0, 600);
+      persistDraft();
+      input.focus?.();
+      trackInteraction("prompt_selected", { context: surface.context, placement, question_length: input.value.length });
+    }));
+    document.addEventListener("portal-auth-complete", (event) => {
+      if (!waitingForAuth || !event.detail || !event.detail.resumeIntent || !session()) return;
+      waitingForAuth = false;
+      trackInteraction("auth_resume", { context: surface.context, placement });
+      status.textContent = "已登录，继续刚才的研究问题。";
+      if (typeof form.requestSubmit === "function") form.requestSubmit();
+    });
     recommendations.addEventListener("click", (event) => {
       const card = event.target.closest("[data-course-query]");
       if (!card) return;
@@ -548,6 +608,15 @@
       document.getElementById("courseResourceDirectory")?.scrollIntoView({ behavior: "smooth", block: "start" });
     });
     messages.addEventListener("click", async (event) => {
+      const authButton = event.target.closest("[data-research-auth]");
+      if (authButton) {
+        event.preventDefault();
+        waitingForAuth = true;
+        persistDraft();
+        trackInteraction("auth_prompt", { context: surface.context, placement: "research_limit" });
+        document.dispatchEvent(new CustomEvent("portal-open-auth", { detail: { mode: authButton.getAttribute("data-research-auth"), placement: "research_limit", resumeIntent: true } }));
+        return;
+      }
       const exportButton = event.target.closest("[data-report-research-export]");
       if (exportButton) {
         event.preventDefault();
@@ -566,19 +635,19 @@
         };
         activeExport = kind;
         exportButton.disabled = true;
-        exportButton.textContent = kind === "docx" ? "正在生成 Word…" : "正在准备 PDF…";
+        exportButton.textContent = kind === "docx" ? "正在生成 Word…" : "正在生成 PDF…";
         messages.setAttribute("aria-busy", "true");
-        if (exportStatus) exportStatus.textContent = kind === "docx" ? "正在嵌入图表并生成 Word 文件…" : "正在准备 A4 打印版，随后请在系统界面选择“另存为 PDF”。";
+        if (exportStatus) exportStatus.textContent = kind === "docx" ? "正在嵌入图表并生成 Word 文件…" : "正在排版文字与图表，生成 PDF 文件…";
         trackInteraction(`export_${kind}_started`, meta);
         try {
           if (kind === "docx") await exportApi.downloadDocx(exportPayload);
-          else await exportApi.openPdfPrint(exportPayload);
-          if (exportStatus) exportStatus.textContent = kind === "docx" ? "Word 文件已开始下载。" : "打印保存界面已打开，请选择“另存为 PDF”。";
-          trackInteraction(kind === "docx" ? "export_docx_ready" : "export_pdf_print_opened", meta);
+          else await exportApi.downloadPdf(exportPayload);
+          if (exportStatus) exportStatus.textContent = kind === "docx" ? "Word 文件已开始下载。" : "PDF 文件已开始下载。";
+          trackInteraction(kind === "docx" ? "export_docx_ready" : "export_pdf_ready", meta);
         } catch (_error) {
           if (exportStatus) exportStatus.textContent = kind === "docx"
             ? "Word 文件生成失败，请检查图表后重试。"
-            : "PDF 打印版准备失败，请允许弹出窗口后重试。";
+            : "PDF 文件生成失败，请稍后重试。";
           trackInteraction(`export_${kind}_error`, { ...meta, status: "failed" });
         } finally {
           activeExport = null;
@@ -760,11 +829,14 @@
       }
       const auth = session();
       if (!auth && surface.context === "course") {
-        status.textContent = "请先点击右上角注册 / 登录，再使用资料 Chat。";
-        document.getElementById("accountGate")?.click();
+        waitingForAuth = true;
+        persistDraft();
+        status.textContent = "登录后继续刚才的问题。";
+        document.dispatchEvent(new CustomEvent("portal-open-auth", { detail: { mode: "login", placement: "course_composer", resumeIntent: true } }));
         return;
       }
-      trackInteraction("submit", { context: surface.context, question_length: question.length });
+      persistDraft();
+      trackInteraction("submit", { context: surface.context, placement, question_length: question.length });
       if (progressRemovalId) window.clearTimeout(progressRemovalId);
       if (progressCard) progressCard.card.remove();
       progressCard = createProgressCard(form, surface.context);

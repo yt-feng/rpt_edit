@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <title>AI 研究 · 自然语言跨报告研究 | KC桌面</title>
+    <meta name="description" content="向 KC桌面提出一个研究问题，查找相关报告，综合观点、数据和可用图表，下载附有来源的 Word 与 PDF 研究文档。">
+    <link rel="canonical" href="https://portal.example.invalid/research.html">
+    <meta name="robots" content="index,follow">
+    <link rel="stylesheet" href="assets/styles.css?v=site-20260908a">
+  </head>
+  <body data-page="research" data-analytics-auto="manual">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="KC桌面 home"><img src="assets/app-mark.svg" alt="" width="34" height="34"><span>KC桌面</span></a>
+      <nav class="topbar-actions" aria-label="站点导航">
+        <a class="topbar-link" href="/">报告检索</a>
+        <a class="topbar-link research-nav is-active" href="research.html" aria-current="page" data-research-entry="navigation">AI 研究</a>
+        <a class="topbar-link" href="blog/">Blog</a>
+        <a id="newsfeedNav" class="topbar-link" href="newsfeed.html">Newsfeed</a>
+        <button id="accountGate" class="account-button" type="button">登录</button>
+        <button class="account-button signup-button" type="button" data-auth-open="register" data-auth-placement="navigation" data-guest-only>免费注册</button>
+      </nav>
+    </header>
+    <main class="shell research-shell">
+      <section class="research-intro" aria-labelledby="researchTitle">
+        <p class="journey-eyebrow">KC桌面 · AI 研究</p>
+        <h1 id="researchTitle">一个问题，串起多份报告。</h1>
+        <p>描述你的研究主题，获得综合观点、关键数据、可用图表和可追溯来源。生成后直接下载 Word 或 PDF。</p>
+        <div class="research-intro-meta"><span>支持自然语言提问</span><span>跨报告综合</span><span>图文研究文档</span></div>
+      </section>
+      <section class="report-chat-panel research-workspace" id="homeReportChat" aria-labelledby="homeReportChatTitle">
+        <div class="report-chat-heading"><div><h2 id="homeReportChatTitle">你想研究什么？</h2><span>建议写明主题、时间范围和想比较的指标。</span></div></div>
+        <form class="report-chat-form" id="homeChatForm">
+          <label class="sr-only" for="homeChatInput">研究问题</label>
+          <textarea id="homeChatInput" rows="4" maxlength="600" placeholder="例如：比较最近半年 AI 数据中心的电力需求、资本开支和机构观点分歧，引用数据与图表。"></textarea>
+          <button class="primary" type="submit">生成研究 →</button>
+        </form>
+        <div class="research-prompts" aria-label="示例研究问题">
+          <span>试试这些问题</span>
+          <button type="button" data-research-prompt="比较最近半年 AI 数据中心的电力需求、资本开支和机构观点分歧，引用数据与图表。">AI 数据中心与电力</button>
+          <button type="button" data-research-prompt="综合近期研究，比较美联储降息对美元、黄金和美债的影响，指出不同机构的分歧与依据。">降息如何影响资产价格</button>
+          <button type="button" data-research-prompt="研究中国消费行业的复苏进展，对比不同细分行业的需求、盈利与估值，引用报告数据。">中国消费复苏进展</button>
+        </div>
+        <p class="research-access-note" data-guest-only>可以先试用。<button type="button" class="inline-request-button" data-auth-open="register" data-auth-placement="research_intro">免费注册</button>后使用账号研究额度；剩余次数以本次返回的权益为准。</p>
+        <div id="homeChatStatus" class="status-line" role="status" aria-live="polite"></div>
+        <div id="homeChatMessages" class="report-chat-messages"></div>
+        <div id="homeChatRecommendations" class="report-chat-recommendations"></div>
+        <aside class="report-chat-popular" id="homeChatPopular" aria-labelledby="homeChatPopularTitle" hidden>
+          <div class="report-chat-popular-heading"><strong id="homeChatPopularTitle">先看一份已生成的研究</strong><span>点击查看热门研究，不消耗生成额度</span></div>
+          <div class="report-chat-popular-list" id="homeChatPopularList"></div>
+        </aside>
+      </section>
+      <section class="research-guide" aria-label="使用说明">
+        <article><span>01 · 提问</span><h2>说清楚你要做的判断</h2><p>公司、行业或宏观主题都可以。加上时间范围、地区和比较对象，更容易找到有关证据。</p></article>
+        <article><span>02 · 核对</span><h2>沿着来源看依据</h2><p>正文与图表依赖当前可检索的内容。查看结果中的来源和覆盖说明，原文权限按账号权益开放。</p></article>
+        <article><span>03 · 带走</span><h2>下载后继续编辑</h2><p>Word 可编辑，PDF 可直接分享。匹配到的图表随结果导出；没有图表时会明确说明。</p></article>
+      </section>
+    </main>
+    <footer class="legal-footer"><a href="/">报告检索</a><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a><a href="/?request=support">联系 KC桌面</a></footer>
+    <script src="assets/site-runtime.js"></script>
+    <script src="assets/contact.js?v=site-20260908a"></script>
+    <script src="assets/analytics.js"></script>
+    <script src="assets/app.js?v=site-20260908a"></script>
+    <script src="assets/report-research-export.js"></script>
+    <script src="assets/report-chat.js"></script>
+  </body>
+</html>

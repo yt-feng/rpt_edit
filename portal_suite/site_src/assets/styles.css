@@ -12,6 +12,93 @@
   --shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
 }
 
+/* Research entrypoints and the daily reading journey. */
+.journey-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 36px;
+  margin-bottom: 24px;
+  padding: clamp(24px, 4vw, 42px);
+  border: 1px solid #c9e4df;
+  border-radius: 20px;
+  background: linear-gradient(120deg, #eaf6f2 0%, #f8fbf3 70%, #f3f7ee 100%);
+}
+.journey-eyebrow { margin: 0 0 12px; color: var(--accent); font-size: 13px; font-weight: 700; letter-spacing: .06em; }
+.journey-hero h2 { margin: 0 0 14px; font-size: clamp(25px, 3.3vw, 38px); line-height: 1.3; letter-spacing: -.03em; }
+.journey-hero p:not(.journey-eyebrow) { max-width: 760px; line-height: 1.8; color: #42615b; }
+.journey-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.journey-actions a.primary { display: inline-flex; align-items: center; justify-content: center; gap: 18px; min-height: 44px; padding: 12px 20px; border-radius: 10px; background: var(--accent); color: white; font-size: 14px; font-weight: 700; text-decoration: none; }
+.journey-actions a.primary:hover { background: var(--accent-strong); }
+.journey-note { font-size: 12px; margin: 14px 0 0; }
+.journey-steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 20px; min-width: 175px; font-size: 13px; color: #42615b; }
+.journey-steps li { display: flex; align-items: center; gap: 12px; }
+.journey-steps b { display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: white; color: var(--accent); }
+.topbar-actions .research-nav, .topbar-actions a[href$="research.html"] { color: var(--accent-strong); font-weight: 700; }
+.topbar-actions .signup-button { background: var(--accent); border-color: var(--accent); color: #fff; white-space: nowrap; }
+.topbar-actions .signup-button:hover { background: var(--accent-strong); }
+.daily-goal-button { white-space: nowrap; }
+.report-journey { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 20px 24px; margin-bottom: 20px; background: #edf7f3; border: 1px solid #cce5dc; border-radius: 14px; }
+.report-journey strong, .report-journey span { display: block; }
+.report-journey span { color: var(--muted); font-size: 13px; margin-top: 8px; line-height: 1.7; }
+.shell.research-shell { max-width: 1100px; padding-top: 24px; }
+.research-intro { max-width: 900px; margin: 0 0 22px; }
+.research-intro .journey-eyebrow { margin-bottom: 10px; }
+.research-intro h1 { margin: 0 0 12px; font-size: clamp(30px, 3.2vw, 40px); line-height: 1.25; letter-spacing: -.035em; text-wrap: balance; }
+.research-intro > p:not(.journey-eyebrow) { color: var(--muted); font-size: 14px; line-height: 1.65; max-width: 800px; margin-bottom: 12px; }
+.research-intro-meta { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 12px; font-weight: 600; color: var(--accent); }
+.research-intro-meta span::before { content: "✓"; margin-inline-end: 7px; }
+.research-workspace { margin-top: 0 !important; padding: clamp(20px, 2vw, 24px) !important; box-shadow: 0 14px 40px rgba(15, 118, 110, .05); }
+.research-workspace .report-chat-heading h2 { margin: 0; font-size: 24px; line-height: 1.25; }
+.research-workspace .report-chat-heading span { margin-top: 6px; font-size: 13px; line-height: 1.6; }
+.research-workspace .report-chat-form { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); align-items: start; gap: 10px; margin-top: 16px; }
+.research-workspace .report-chat-form > label.sr-only { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0); clip-path: inset(50%); white-space: nowrap; border: 0 !important; }
+.research-workspace .report-chat-form textarea { grid-column: 1; grid-row: 1; width: 100%; min-width: 0; min-height: 126px; height: 126px; font-size: 16px; line-height: 1.6; }
+.research-workspace .report-chat-form > button[type="submit"] { grid-column: 1; grid-row: 2; justify-self: end; min-width: 172px; width: auto; min-height: 44px; }
+.research-prompts { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 14px 0; }
+.research-prompts > span { color: var(--muted); font-size: 12px; margin-inline-end: 4px; }
+.research-prompts button { padding: 8px 12px; background: #f4f8f7; color: #38675f; border: 1px solid #dce9e5; border-radius: 20px; font-size: 12px; cursor: pointer; }
+.research-prompts button:hover { border-color: var(--accent); background: #e9f4ef; }
+.research-access-note { color: var(--muted); font-size: 12px; line-height: 1.8; }
+.research-guide { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin: 38px 0; }
+.research-guide article { border-top: 1px solid var(--line); padding-top: 22px; }
+.research-guide article > span { color: var(--accent); font-size: 12px; font-weight: 700; }
+.research-guide h2 { font-size: 16px; margin: 12px 0; }
+.research-guide p { color: var(--muted); font-size: 13px; line-height: 1.85; }
+.research-signup-prompt { padding: 18px; margin: 12px 0; border: 1px solid #c9e4df; border-radius: 12px; background: #edf7f3; }
+.research-signup-prompt p, .research-coverage-note { color: var(--muted); font-size: 13px; line-height: 1.8; }
+.research-signup-prompt button { margin-inline-end: 10px; margin-top: 8px; }
+.research-coverage-note { padding: 14px 18px; border: 1px dashed var(--line); border-radius: 10px; }
+.account-welcome { color: var(--muted); font-size: 13px; line-height: 1.7; margin-top: -4px; }
+.account-daily-goal { display: grid; gap: 7px; padding-bottom: 18px; margin-bottom: 18px; border-bottom: 1px solid #cce3da; }
+.account-daily-goal > span { font-size: 12px; color: var(--accent); font-weight: 700; }
+.account-daily-goal strong { font-size: 15px; line-height: 1.65; }
+.account-daily-goal a { justify-self: start; font-size: 13px; color: var(--accent); }
+.reward-journey { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; margin: 22px 0 16px; }
+.reward-journey-day { display: grid; justify-items: center; gap: 7px; color: #62766f; font-size: 10px; white-space: nowrap; }
+.reward-journey-day b { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #fff; border: 1px solid #d3e2dc; color: #748b81; font-size: 12px; }
+.reward-journey-day.is-complete b { background: var(--accent); border-color: var(--accent); color: #fff; }
+.reward-journey-day.is-next b { border: 2px solid var(--accent); color: var(--accent); }
+.reward-progress-label { font-size: 12px; color: #496b5e; line-height: 1.75; }
+.reward-progress { display: block; width: 100%; height: 8px; margin: 8px 0 16px; accent-color: var(--accent); border: 0; border-radius: 8px; overflow: hidden; }
+.reward-progress::-webkit-progress-bar { background: #dce8e2; }
+.reward-progress::-webkit-progress-value { background: var(--accent); }
+@media (max-width: 760px) {
+  .journey-hero { grid-template-columns: 1fr; gap: 22px; }
+  .journey-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; min-width: 0; }
+  .journey-steps li { flex-direction: column; align-items: start; gap: 8px; font-size: 11px; }
+  .journey-actions { gap: 10px; }
+  .journey-actions a.primary { min-height: 44px; }
+  .report-journey { flex-direction: column; align-items: stretch; padding: 18px; }
+  .research-guide { grid-template-columns: 1fr; gap: 16px; }
+  .shell.research-shell { padding-top: 18px; }
+  .research-intro { margin-top: 0; }
+  .research-intro h1 { font-size: clamp(27px, 7.4vw, 31px); }
+  .research-workspace .report-chat-form textarea { font-size: 16px; }
+  .research-workspace .report-chat-form > button[type="submit"] { width: 100%; }
+  .research-prompts > span { width: 100%; }
+}
+
 [hidden] {
   display: none !important;
 }
@@ -2829,6 +2916,7 @@ a.secondary-button {
 .auth-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
   gap: 12px;
 }
 
@@ -2850,6 +2938,12 @@ a.secondary-button {
   padding: 0 12px;
   color: var(--ink);
   font: inherit;
+}
+
+.auth-field-hint {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 .captcha-row {
@@ -4635,10 +4729,17 @@ a.secondary-button {
 
   .topbar-actions {
     width: 100%;
+    flex-wrap: wrap;
     justify-content: flex-start;
-    overflow-x: auto;
-    padding-bottom: 4px;
-    scrollbar-width: thin;
+    gap: 8px;
+    overflow: visible;
+    padding-bottom: 0;
+  }
+
+  .topbar-actions > .topbar-link,
+  .topbar-actions > .account-button {
+    max-width: 100%;
+    min-height: 40px;
   }
 
   .catalog-meta { display: none; }

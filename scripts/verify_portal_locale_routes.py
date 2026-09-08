@@ -22,6 +22,7 @@ APPLICATION_PAGES = {
     "delivery.html": "delivery",
     "newsfeed.html": "newsfeed",
     "courses.html": "course",
+    "research.html": "research",
 }
 RECOVERY_PATH = "assets/locale-recovery.js"
 DETAIL_PATH = "assets/locale-detail.js"
@@ -74,11 +75,18 @@ def declared_checks(manifest: dict[str, Any]) -> list[dict[str, Any]] | None:
     if not isinstance(groups, dict) or set(groups) != set(LOCALES):
         raise RouteVerificationError("Application routes must contain all three locales")
     checks = []
+    declared_names: set[str] | None = None
+    legacy_names = set(APPLICATION_PAGES) - {"research.html"}
     for locale in LOCALES:
         rows = groups[locale]
-        if not isinstance(rows, dict) or set(rows) != set(APPLICATION_PAGES):
-            raise RouteVerificationError(f"Application routes must contain all five exact shells: {locale}")
+        if not isinstance(rows, dict) or set(rows) not in (set(APPLICATION_PAGES), legacy_names):
+            raise RouteVerificationError(f"Application routes must contain the exact declared shells: {locale}")
+        if declared_names is not None and set(rows) != declared_names:
+            raise RouteVerificationError("Application routes must declare the same shells in every locale")
+        declared_names = set(rows)
         for filename in APPLICATION_PAGES:
+            if filename not in rows:
+                continue
             checks.append({**descriptor(rows[filename], f"{locale}/{filename}"),
                            "locale": locale, "filename": filename})
     checks.append(descriptor(manifest.get("recovery_asset"), RECOVERY_PATH))
@@ -246,7 +254,7 @@ def verify_locale_routes(
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
         results = list(pool.map(verify, checks))
     return {"schema_version": 1, "status": "passed" if all(row["status"] == "passed" for row in results) else "failed",
-            "origin": origin, "request_count": len(results), "route_count": 15,
+            "origin": origin, "request_count": len(results), "route_count": sum("filename" in row for row in checks),
             "asset_count": sum("locale" not in row for row in checks),
             "elapsed_seconds": round(time.monotonic() - started, 3), "checks": results}
 

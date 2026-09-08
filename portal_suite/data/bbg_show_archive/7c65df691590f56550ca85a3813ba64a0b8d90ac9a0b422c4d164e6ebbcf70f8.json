@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "id": "7c65df691590f56550ca85a3813ba64a0b8d90ac9a0b422c4d164e6ebbcf70f8",
+  "slug": "bbg-20260726-7c65df691590f565",
+  "date": "2026-07-26",
+  "title": "彭博分析师：AI模型自主行动引发安全担忧",
+  "speaker": "Jasmine",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-07-26/bloomberg-this-weekend-7-26-2026-video",
+  "start": 1323.3,
+  "end": 1381.1,
+  "segments": [
+    {
+      "start": 1323.3,
+      "end": 1327.8,
+      "en": "Is some people are saying, yes, they have an obligation to disclose this, but it's a little bit of a show off as well.",
+      "zh": "有人说，他们有义务披露这一点，但这也有些炫耀的成分。"
+    },
+    {
+      "start": 1327.8,
+      "end": 1335.9,
+      "en": "It functions a bit as an ad for their AI to say, look, we've built this thing, it's so powerful. Look what we can do.",
+      "zh": "这有点像在为他们的AI做广告：看，我们造出了这么强大的东西，看看我们能做什么。"
+    },
+    {
+      "start": 1335.9,
+      "end": 1342.1,
+      "en": "Is there a bit of braggadocio here, or is it mostly just they need to disclose it to tell people what's going on?",
+      "zh": "这是有点吹嘘，还是主要是他们需要披露以告知人们情况？"
+    },
+    {
+      "start": 1342.1,
+      "end": 1350.3,
+      "en": "Yeah, I think that the part that maybe is not as, doesn't get as much attention, is that OpenAI did ask the model to complete the security test, and it was trying to do that when it hacked into Hugging Face.",
+      "zh": "我认为可能不太被关注的部分是，OpenAI确实要求模型完成安全测试，而它在入侵Hugging Face时正是在尝试这样做。"
+    },
+    {
+      "start": 1350.3,
+      "end": 1357.8,
+      "en": "It was just doing it in a way that wasn't really what the company had intended, so I think it's sort of a mixed picture here, right?",
+      "zh": "只是它采取的方式并非公司本意，所以我认为情况比较复杂，对吧？"
+    },
+    {
+      "start": 1357.8,
+      "end": 1366.6,
+      "en": "You could see models acting and trying to act on the directions they've been given, but just doing it in a way that's not what the user intended, so it's a bit nuanced here.",
+      "zh": "你可以看到模型在按照指令行动，但方式并非用户所愿，所以这里有点微妙。"
+    },
+    {
+      "start": 1366.6,
+      "end": 1376.8,
+      "en": "and that's more the concern at least at this point, rather than a full blown kind of skynet situation.",
+      "zh": "至少目前，这才是更令人担忧的，而不是完全失控的天网局面。"
+    },
+    {
+      "start": 1376.8,
+      "end": 1381.1,
+      "en": "All right.",
+      "zh": "好的。"
+    }
+  ]
+}

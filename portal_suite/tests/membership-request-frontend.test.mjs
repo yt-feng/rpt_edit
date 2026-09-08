@@ -55,6 +55,7 @@ test("account modal exposes a public in-site membership request form", () => {
     accessContactGuidanceHtml() { return "提交站内申请"; },
     authUserLabel() { return "账户"; },
     registrationNoticeText() { return "账号提示"; },
+    journeyPageUrl(name) { return `/${name}`; },
   });
 
   const guestMarkup = render({ requestKind: "membership" });

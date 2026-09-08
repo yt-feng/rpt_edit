@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "id": "4ad49bf5926f340e1cf0852a7c47c5f545e7be3efe5a0583869f1a562686cede",
+  "slug": "bbg-20260901-4ad49bf5926f340e",
+  "date": "2026-09-01",
+  "title": "黄仁勋：我们加速全球每一个AI模型",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-08-31/we-accelerate-every-ai-model-in-the-world-huang-says-video",
+  "start": 0.0,
+  "end": 82.12,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 4.88,
+      "en": "Gents, and on the earnings call last week, you talked about, we've confidence, right?",
+      "zh": "先生们，在上周的财报电话会议上，你们谈到了我们有信心，对吧？"
+    },
+    {
+      "start": 4.88,
+      "end": 8.64,
+      "en": "The GPU-based architecture has superior economics.",
+      "zh": "基于GPU的架构具有更优的经济性。"
+    },
+    {
+      "start": 8.64,
+      "end": 16.12,
+      "en": "You were talking about that in the context of the frontier labs, largely because you were asked about custom silicon.",
+      "zh": "你们是在前沿实验室的背景下谈论这个的，主要是因为你们被问到了定制芯片。"
+    },
+    {
+      "start": 16.12,
+      "end": 24.36,
+      "en": "The simple terms of it is that NVLink fusion just makes it easy to take XPU and just drop it into the data center.",
+      "zh": "简单来说，NVLink Fusion使得将XPU轻松接入数据中心成为可能。"
+    },
+    {
+      "start": 24.36,
+      "end": 29.84,
+      "en": "That would show that Nvidia does see XPU coming into the market.",
+      "zh": "这表明英伟达确实看到了XPU进入市场。"
+    },
+    {
+      "start": 29.84,
+      "end": 34.88,
+      "en": "Is the difference if you're thinking this week to what you outlined last week?",
+      "zh": "本周你的想法与上周概述的有何不同？"
+    },
+    {
+      "start": 34.88,
+      "end": 41.12,
+      "en": "I see XPUs in the market. It's not coming into the market, it's in the market.",
+      "zh": "我看到XPU已经在市场中了，不是即将进入，而是已经存在。"
+    },
+    {
+      "start": 41.12,
+      "end": 44.68,
+      "en": "Look, an XPU is a specialized chip.",
+      "zh": "看，XPU是一种专用芯片。"
+    },
+    {
+      "start": 44.68,
+      "end": 49.88,
+      "en": "Nvidia's GPU is a general purpose accelerator.",
+      "zh": "英伟达的GPU是通用加速器。"
+    },
+    {
+      "start": 49.88,
+      "end": 61.88,
+      "en": "We accelerate the entire lifecycle of AI from data processing, which data processing, the pre-training to post-training to agent AI inferencing.",
+      "zh": "我们加速AI的整个生命周期，从数据处理（包括数据预处理、预训练、后训练）到智能体AI推理。"
+    },
+    {
+      "start": 61.88,
+      "end": 73.28,
+      "en": "We accelerate every single AI model in the world, from closed models, every closed model, every open model, video models and language models, biological models and physics models",
+      "zh": "我们加速世界上每一个AI模型，包括闭源模型、开源模型、视频模型、语言模型、生物模型和物理模型"
+    },
+    {
+      "start": 73.28,
+      "end": 82.12,
+      "en": "and robotics models. We literally accelerate every single area of AI.",
+      "zh": "以及机器人模型。我们确实加速了AI的每一个领域。"
+    }
+  ]
+}

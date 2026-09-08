@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "id": "e1919d4b5ed3fccf62b3e52d5baf9b6982c521a662767251eacf9be2ff8e2a03",
+  "slug": "bbg-20260712-e1919d4b5ed3fccf",
+  "date": "2026-07-12",
+  "title": "彭博社Olivia Solon：揭秘“Cookie填充”如何窃取电商佣金",
+  "speaker": "Olivia Solon",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-07-12/bloomberg-this-weekend-7-12-2026-video",
+  "start": 2252.6,
+  "end": 2318.0,
+  "segments": [
+    {
+      "start": 2252.6,
+      "end": 2256.6,
+      "en": "To break this all down, Bloomberg News looked into it and technology editor Olivia Solon joins us now.",
+      "zh": "彭博新闻对此进行了调查，科技编辑Olivia Solon现在加入我们。"
+    },
+    {
+      "start": 2256.6,
+      "end": 2261.6,
+      "en": "This is complicated to explain. I think I understand it, but I think you will explain it better.",
+      "zh": "这解释起来有点复杂。我觉得我懂了，但你能说得更清楚。"
+    },
+    {
+      "start": 2261.6,
+      "end": 2268.6,
+      "en": "So please explain to us what cookie-stuffing is and why it matters and why it's considered fraud, essentially.",
+      "zh": "请解释什么是Cookie填充，为什么它重要，以及为什么它被视为欺诈。"
+    },
+    {
+      "start": 2268.6,
+      "end": 2277.6,
+      "en": "Well, buckle up for a little explainer of affiliate marketing first. At its most basic, this is where retailers will pay a small commission to either publishers or influencers who send someone to buy something on their website.",
+      "zh": "先来简单解释一下联盟营销。最基本的是，零售商向将用户引导至其网站并促成购买的发布商或网红支付小额佣金。"
+    },
+    {
+      "start": 2277.6,
+      "end": 2290.6,
+      "en": "So let's say you're on a review site like Wirecutter and you're looking for laptops, you decide to buy one, you click through from Wirecutter to Walmart. And the link that you use to land on Walmart's page will have a special code in it, which will result in a little web cookie, there's the cookie, being left on the person's browser that basically says this shop came from Wirecutter.",
+      "zh": "假设你在Wirecutter这样的评测网站上看笔记本电脑，决定购买，从Wirecutter点击进入沃尔玛。链接中带有特殊代码，会在浏览器中留下一个小型网络Cookie，表明这次访问来自Wirecutter。"
+    },
+    {
+      "start": 2290.6,
+      "end": 2302.6,
+      "en": "So when that person buys the laptop, Walmart pays a commission to Wirecutter. But the key thing is to get the commission, the user has to have intentionally interacted with the affiliate in this case, Wirecutter.",
+      "zh": "当用户购买笔记本电脑时，沃尔玛向Wirecutter支付佣金。但关键是，要获得佣金，用户必须有意与联盟伙伴（此处为Wirecutter）互动。"
+    },
+    {
+      "start": 2302.6,
+      "end": 2318.0,
+      "en": "So clicking through from Wirecutter to Walmart. Now, fear is a startup. It has an app which lets you browse for close. And it also has this browser extension, which is a little program that you add to your browser.",
+      "zh": "即从Wirecutter点击进入沃尔玛。Fear是一家初创公司，它有一个应用可以让你浏览商品，还有一个浏览器扩展程序。"
+    }
+  ]
+}

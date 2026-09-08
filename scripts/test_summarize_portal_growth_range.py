@@ -55,6 +55,75 @@ def event(
 
 
 class GrowthReviewTest(unittest.TestCase):
+    def test_journey_actions_separate_server_audits_and_preserve_privacy(self) -> None:
+        page = event("page", "2026-09-07", "private-session", "private-browser")
+        submit = event(
+            "submit", "2026-09-07", "private-session", "private-feature-hash",
+            event_type="report_chat_interaction", action="submit", context="report",
+            placement="research_tab", query="private question", user_agent="private ua",
+        )
+        rows = [
+            page, submit, dict(submit),
+            event("ready", "2026-09-07", "private-session", "private-feature-hash",
+                  event_type="report_chat_interaction", action="export_docx_ready", context="report", chart_count=0, source_count=3),
+            event("signup", "2026-09-07", "private-session", "private-browser",
+                  event_type="account_auth", action="form_submit", status="register", placement="navigation"),
+            event("signup-fail", "2026-09-07", "private-session", "private-browser",
+                  event_type="account_auth", action="register", status="error", error="private-person 验证码错误"),
+            event("audit", "2026-09-07", "", "", event_type="report_chat", action="answer",
+                  status="success", ip_hash="private-server-ip", session_started_at=""),
+            event("legacy", "2026-09-07", "", "private-legacy-hash",
+                  event_type="report_chat_interaction", action="popular_click"),
+            event("untrusted", "2026-09-07", "private-session", "private-browser",
+                  event_type="reward_checkin", action="private-action", status="private-status",
+                  placement="private-placement", context="private-context"),
+            event("bot", "2026-09-07", "bot-session", "bot-browser",
+                  event_type="report_chat_interaction", action="submit", bot_hint="verified_bot"),
+            event("outside", "2026-09-06", "other-session", "other-browser",
+                  event_type="reward_checkin", action="daily"),
+        ]
+        review = growth.build_growth_review(rows, "2026-09-07", "2026-09-07")
+        journey = review["journey_diagnostics"]
+        by_action = {row["action"]: row for row in journey["client_actions"]}
+        self.assertEqual(by_action["submit"]["events"], 1, "primary and backup must not double count")
+        self.assertEqual(by_action["submit"]["client_sessions"], 1)
+        self.assertEqual(by_action["form_submit"]["status"], "register")
+        self.assertEqual(by_action["form_submit"]["placement"], "navigation")
+        self.assertEqual(by_action["export_docx_ready"]["numeric_metric_coverage"]["chart_count"]["zero_events"], 1)
+        self.assertEqual(by_action["export_docx_ready"]["numeric_metric_coverage"]["source_count"]["positive_events"], 1)
+        self.assertEqual(by_action["submit"]["numeric_metric_coverage"]["chart_count"]["missing_events"], 1)
+        self.assertEqual(by_action["submit"]["numeric_metric_coverage"]["chart_count"]["zero_events"], 0)
+        self.assertEqual(by_action["popular_click"]["client_sessions"], 0)
+        self.assertEqual(by_action["popular_click"]["events_without_client_session"], 1)
+        self.assertNotIn("entry_impression", by_action, "missing exposure must not be fabricated as zero exposure")
+        self.assertEqual(journey["server_audit_actions"][0]["events"], 1)
+        self.assertEqual(journey["registration_error_categories"], [{
+            "category": "captcha", "events": 1, "client_sessions": 1, "events_without_client_session": 0,
+        }])
+        self.assertIsNone(journey["server_audit_actions"][0]["client_sessions"])
+        self.assertEqual(review["data_quality"]["server_audit_events_excluded_from_sessions"], 1)
+        self.assertEqual(review["totals"]["registration_sessions"], 0)
+        self.assertEqual(review["totals"]["sessions"], 2, "only explicit browser session and legacy client fallback remain")
+        self.assertEqual(sum(row["sessions"] for row in review["landing_page_families"]), 2)
+        serialized = json.dumps(review) + growth.markdown_summary(review)
+        for secret in ("private-session", "private-browser", "private-feature-hash", "private-server-ip",
+                       "private question", "private ua", "private-action", "private-status",
+                       "private-placement", "private-context"):
+            self.assertNotIn(secret, serialized)
+        self.assertNotIn("private-person", serialized)
+
+    def test_journey_session_counts_do_not_count_feature_hashes_as_new_people(self) -> None:
+        rows = [
+            event("a", "2026-09-07", "same-session", "browser-id", event_type="report_chat_interaction", action="submit"),
+            event("b", "2026-09-07", "same-session", "feature-hash", event_type="report_chat_interaction", action="submit"),
+            event("c", "2026-09-07", "second-session", "another-hash", event_type="report_chat_interaction", action="submit"),
+        ]
+        journey = growth.build_growth_review(rows, "2026-09-07", "2026-09-07")["journey_diagnostics"]
+        self.assertEqual(journey["client_actions"][0]["events"], 3)
+        self.assertEqual(journey["client_actions"][0]["client_sessions"], 2)
+        self.assertEqual(journey["daily_actions"][0]["client_sessions"], 2)
+        self.assertEqual(growth.controlled_journey_value("blog_article", growth.JOURNEY_PLACEMENTS), "blog_article")
+
     def test_primary_backup_and_missing_id_fallback_are_deduplicated(self) -> None:
         first = event("event-a", "2026-08-12", "session-a", "visitor-a")
         mirror = dict(first)

@@ -108,11 +108,12 @@ function createScheduler() {
   };
 }
 
-function createHarness({ authenticated = true, includePopular = false, contentLocale = "" } = {}) {
+function createHarness({ authenticated = true, includePopular = false, contentLocale = "", pathname = "/", search = "", page = "index" } = {}) {
   const form = new FakeElement("homeChatForm");
   const button = new FakeElement("homeChatSubmit");
   button.textContent = "开始查找";
   form.submitButton = button;
+  form.requestSubmit = () => form.dispatch("submit");
   const input = new FakeElement("homeChatInput");
   input.value = "最近的 AI 数据中心报告";
   const status = new FakeElement("homeChatStatus");
@@ -144,18 +145,21 @@ function createHarness({ authenticated = true, includePopular = false, contentLo
     options.signal?.addEventListener("abort", () => reject(new DOMException("Aborted", "AbortError")), { once: true });
     fetches.push(request);
   });
+  const documentEvents = new Map();
   const document = {
     readyState: "complete",
+    body: { dataset: { page } },
     getElementById(id) { return elements[id] || null; },
     createElement() { return new FakeElement(); },
-    addEventListener() {},
+    addEventListener(name, callback) { const listeners = documentEvents.get(name) || []; listeners.push(callback); documentEvents.set(name, listeners); },
+    dispatchEvent(event) { for (const callback of documentEvents.get(event.type) || []) callback(event); },
   };
   const window = {
     setTimeout: scheduler.setTimeout,
     clearTimeout: scheduler.clearTimeout,
     setInterval: scheduler.setInterval,
     clearInterval: scheduler.clearInterval,
-    location: { pathname: "/" },
+    location: { pathname, search },
   };
   if (contentLocale) window.PortalLocale = { contentLocale };
   const analyticsEvents = [];
@@ -172,9 +176,9 @@ function createHarness({ authenticated = true, includePopular = false, contentLo
       exportCalls.push({ kind: "docx", payload });
       return { status: "downloaded" };
     },
-    async openPdfPrint(payload) {
+    async downloadPdf(payload) {
       exportCalls.push({ kind: "pdf", payload });
-      return { status: "print_dialog_opened" };
+      return { status: "downloaded" };
     },
   };
   const localStorage = {
@@ -189,6 +193,8 @@ function createHarness({ authenticated = true, includePopular = false, contentLo
     Date,
     DOMException,
     Event,
+    CustomEvent,
+    URLSearchParams,
     console,
     document,
     encodeURIComponent,
@@ -196,7 +202,7 @@ function createHarness({ authenticated = true, includePopular = false, contentLo
     localStorage,
     window,
   }, { filename: "report-chat.js" });
-  return { analyticsEvents, button, exportCalls, fetches, form, input, messages, popular, popularList, recommendations, scheduler, status, window };
+  return { analyticsEvents, button, document, exportCalls, fetches, form, input, messages, popular, popularList, recommendations, scheduler, status, window, authenticate() { authenticated = true; } };
 }
 
 function analyticsActions(harness) {
@@ -343,11 +349,11 @@ test("report research renders grounded findings, data, charts, and escaped sourc
   assert.doesNotMatch(harness.messages.innerHTML, /undefined/u);
   assert.match(harness.recommendations.innerHTML, /摩根大通 AI 电力报告/u);
   assert.match(harness.messages.innerHTML, /下载 Word \(\.docx\)/u);
-  assert.match(harness.messages.innerHTML, /导出 PDF（打开保存界面）/u);
+  assert.match(harness.messages.innerHTML, /下载 PDF/u);
   assert.equal(harness.form.insertedElement.querySelector("[data-chat-progress-label]").textContent, "研究已生成");
 });
 
-test("successful research exports Word and print-PDF from the same response without another RAG request", async () => {
+test("successful research directly downloads Word and PDF from the same response without another RAG request", async () => {
   const harness = createHarness();
   const question = harness.input.value;
   const submit = harness.form.dispatch("submit");
@@ -366,7 +372,7 @@ test("successful research exports Word and print-PDF from the same response with
   docxButton.setAttribute("data-report-research-export", "docx");
   await harness.messages.dispatch("click", { target: docxButton });
   const pdfButton = new FakeElement("pdfExport");
-  pdfButton.textContent = "导出 PDF（打开保存界面）";
+  pdfButton.textContent = "下载 PDF";
   pdfButton.setAttribute("data-report-research-export", "pdf");
   await harness.messages.dispatch("click", { target: pdfButton });
 
@@ -378,7 +384,7 @@ test("successful research exports Word and print-PDF from the same response with
   assert.ok(analyticsActions(harness).includes("export_docx_started"));
   assert.ok(analyticsActions(harness).includes("export_docx_ready"));
   assert.ok(analyticsActions(harness).includes("export_pdf_started"));
-  assert.ok(analyticsActions(harness).includes("export_pdf_print_opened"));
+  assert.ok(analyticsActions(harness).includes("export_pdf_ready"));
   assertAnalyticsHasNoQuestionText(harness, question);
 });
 
@@ -624,4 +630,83 @@ test("report chat source contains all three visible progress stages and no wait 
   assert.match(source, /archive_id: limitedArchiveId/u);
   assert.match(source, /PortalSuiteAnalytics/u);
   assert.doesNotMatch(source, /cursor\s*:\s*wait/u);
+});
+
+test("registration from a research limit resumes the same question only after authenticated completion", async () => {
+  const harness = createHarness({ authenticated: false });
+  const question = harness.input.value;
+  const submitted = harness.form.dispatch("submit");
+  harness.fetches[0].resolve({ usage: { tier: "anonymous", limit: 1, remaining: 0 } }, { status: 429, ok: false });
+  await submitted;
+  assert.match(harness.messages.innerHTML, /注册并继续研究/u);
+  const button = new FakeElement("researchRegister");
+  button.setAttribute("data-research-auth", "register");
+  let openDetail = null;
+  harness.document.addEventListener("portal-open-auth", (event) => { openDetail = event.detail; });
+  await harness.messages.dispatch("click", { target: button });
+  assert.equal(openDetail.resumeIntent, true);
+  assert.equal(openDetail.mode, "register");
+  harness.document.dispatchEvent(new CustomEvent("portal-auth-complete", { detail: { resumeIntent: true } }));
+  assert.equal(harness.fetches.length, 1, "an unverified auth event must not submit");
+  harness.authenticate();
+  harness.document.dispatchEvent(new CustomEvent("portal-auth-complete", { detail: { resumeIntent: true } }));
+  assert.equal(harness.fetches.length, 2);
+  assert.equal(JSON.parse(harness.fetches[1].options.body).question, question);
+  assert.equal(harness.fetches[1].options.headers.Authorization, "Bearer session-token");
+  harness.fetches[1].resolve({ mode: "research", executive_summary: "继续研究完成", charts: [] });
+  await new Promise(setImmediate);
+  assert.match(harness.messages.innerHTML, /没有匹配到可引用图表/u);
+  assert.ok(analyticsActions(harness).includes("auth_resume"));
+  assertAnalyticsHasNoQuestionText(harness, question);
+});
+
+test("a localized workspace prefills the question and keeps report evidence in the locale", async () => {
+  const question = "AI 电力需求";
+  const harness = createHarness({ pathname: "/ja/research.html", search: `?q=${encodeURIComponent(question)}`, page: "research" });
+  assert.equal(harness.input.value, question);
+  assert.equal(harness.fetches.length, 0, "opening a deep link does not consume research quota");
+  const submitted = harness.form.dispatch("submit");
+  harness.fetches[0].resolve({ mode: "research", executive_summary: "结论", summary_source_ids: ["r1"], sources: [{ id: "r1", title: "来源" }] });
+  await submitted;
+  assert.match(harness.messages.innerHTML, /href="\/ja\/report\.html\?id=r1/u);
+  assert.equal(harness.analyticsEvents.find((event) => event.data.action === "submit").data.placement, "research_workspace");
+});
+
+test("a chart-only source opens the exact chart and joins its cited finding without inventing a report ID", async () => {
+  const harness = createHarness({ pathname: "/ar/research.html", page: "research" });
+  const imageId = "b".repeat(64);
+  const sourceId = `chart:${imageId}`;
+  const submitted = harness.form.dispatch("submit");
+  harness.fetches[0].resolve({
+    mode: "research", executive_summary: "图表证据", research_scope: "本次仅检索到图表元数据，未取得报告正文。",
+    findings: [{ title: "供需变化", summary: "依据图表", source_ids: [sourceId] }],
+    sources: [{ id: sourceId, title: "供需图", evidence_kind: "chart_metadata" }],
+    charts: [{ image_id: imageId, source_id: sourceId, report_id: "", title: "供需图" }],
+  });
+  await submitted;
+  assert.match(harness.messages.innerHTML, /本次研究覆盖/u);
+  assert.match(harness.messages.innerHTML, /未取得报告正文/u);
+  assert.match(harness.messages.innerHTML, /report-research-inline-charts/u);
+  assert.match(harness.messages.innerHTML, new RegExp(`/ar/charts\\.html\\?image=${imageId}`, "u"));
+  assert.doesNotMatch(harness.messages.innerHTML, /report\.html\?id=chart/u);
+  assert.match(harness.recommendations.innerHTML, /图表来源/u);
+});
+
+test("historical excerpts are identified in source cards and research coverage without implying complete text", async () => {
+  const harness = createHarness({ pathname: "/research.html", page: "research" });
+  const submitted = harness.form.dispatch("submit");
+  harness.fetches[0].resolve({
+    mode: "research", executive_summary: "依据历史节选的结论", research_scope: "正文与图表检索。",
+    sources: [
+      { id: "archive-a", title: "历史资料一", evidence_kind: "full_text", partial_excerpt: true },
+      { id: "archive-b", title: "历史资料二", evidence_kind: "full_text_and_charts", text_scope: "partial_excerpt" },
+      { id: "complete", title: "完整资料", evidence_kind: "full_text", text_scope: "full_text", partial_excerpt: false },
+    ],
+  });
+  await submitted;
+  assert.match(harness.messages.innerHTML, /本次包含 2 份报告正文节选/u);
+  assert.match(harness.messages.innerHTML, /仅基于已索引的节选内容/u);
+  assert.match(harness.recommendations.innerHTML, /research-evidence-label">报告正文节选<\/span>/u);
+  assert.match(harness.recommendations.innerHTML, /research-evidence-label">报告正文节选与图表<\/span>/u);
+  assert.match(harness.recommendations.innerHTML, /research-evidence-label">正文来源<\/span>/u);
 });

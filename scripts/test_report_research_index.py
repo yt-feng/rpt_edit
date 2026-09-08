@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import hashlib
+import gzip
 import importlib.util
 import json
 import struct
@@ -210,7 +211,7 @@ class ReportResearchIndexTests(unittest.TestCase):
             self.assertEqual(set(corpus), {"a" * 24, "b" * 24})
             for row in corpus.values():
                 self.assertEqual(set(row), {"id", "item", "text"})
-                self.assertEqual(set(row["item"]), indexer.CORPUS_ITEM_FIELDS)
+                self.assertEqual(set(row["item"]), indexer.CORPUS_ITEM_FIELDS | indexer.CORPUS_SCOPE_FIELDS)
                 self.assertNotIn("filename", row["item"])
                 self.assertNotIn("r2_key", row["item"])
                 self.assertNotIn("source_path", row["item"])
@@ -377,6 +378,94 @@ class ReportResearchIndexTests(unittest.TestCase):
         workflow = SCRIPT.parent.parent.joinpath(".github/workflows/neutral-edge-cutover.yml").read_text(encoding="utf-8")
         self.assertNotIn("scripts/build_report_research_index.py", workflow)
         self.assertNotIn("_report-research/v1/manifest.json", workflow)
+
+    def test_history_remaps_live_titles_and_keeps_only_qualified_excerpts(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            history_catalog = root / "history.json"
+            texts = root / "texts"
+            texts.mkdir()
+            catalog = self.catalog()
+            history_catalog.write_text(json.dumps({"items": [
+                {"id": "d" * 24, "title": catalog["items"][0]["title"]},
+                {"id": "e" * 24, "title": "Historical new report"},
+                {"id": "f" * 24, "title": "Historical short report"},
+            ]}))
+            (texts / "shard_2601.json.gz").write_bytes(gzip.compress(json.dumps({
+                "d" * 24: "historical duplicate " * 500,
+                "e" * 24: "historical body " * 800,
+                "f" * 24: "only a title",
+            }).encode()))
+            ids, bodies, partial = indexer.research_inputs(catalog, self.search_index(),
+                min_text_chars=1000, history_catalog_path=history_catalog, history_text_dir=texts)
+            self.assertNotIn("d" * 24, ids)
+            self.assertNotIn("d" * 24, bodies)
+            self.assertNotIn("f" * 24, bodies)
+            self.assertEqual(bodies["a" * 24], indexer.body_text(self.search_index()["items"][0]["text"]))
+            self.assertEqual(partial, {"e" * 24})
+
+    def test_history_index_boundary_is_conservative_and_ignores_chart_metadata(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            history = root / "history.json"
+            history.write_text(json.dumps({"items": [
+                {"id": "a" * 24, "text": "x" * 10000, "partial_excerpt": False},
+                {"id": "b" * 24, "text": "x" * 999},
+                {"id": "c" * 24, "text": "x" * 1000},
+                {"id": "not-catalog", "text": "x" * 2000},
+            ]}))
+            ids, bodies, partial = indexer.research_inputs(self.catalog(), {"items": [
+                {"id": "b" * 24, "text": "title\n[[CHART_SEARCH_V1]]\n" + "chart data " * 1000},
+            ]}, min_text_chars=1000, history_index_path=history)
+            self.assertEqual(set(bodies), {"a" * 24, "c" * 24})
+            self.assertEqual(partial, set(bodies))
+            corpus, _, _ = indexer.merge_corpus_rows(ids, bodies, {}, 1000, partial)
+            self.assertTrue(corpus["a" * 24]["item"]["partial_excerpt"])
+            self.assertEqual(corpus["c" * 24]["item"]["text_scope"], "partial_excerpt")
+
+    def test_complete_stable_body_cannot_be_replaced_by_longer_history_excerpt(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            output, _ = self.build(Path(temporary))
+            previous = indexer.read_corpus(output / indexer.CORPUS_FILENAME)
+            ids = {row["id"]: row for row in self.catalog()["items"]}
+            merged, _, _ = indexer.merge_corpus_rows(ids, {"a" * 24: "excerpt " * 2000}, previous, 80, {"a" * 24})
+            self.assertEqual(merged["a" * 24]["text"], previous["a" * 24]["text"])
+            self.assertFalse(merged["a" * 24]["item"]["partial_excerpt"])
+
+    def test_history_scope_reaches_random_access_item_evidence_and_durable_corpus(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            catalog = root / "catalog.json"
+            search = root / "search.json"
+            history = root / "history.json"
+            catalog.write_text(json.dumps(self.catalog()))
+            search.write_text('{"items":[]}')
+            history.write_text(json.dumps({"items": [{"id": "a" * 24, "text": "historicalexcerpt context " * 500}]}))
+            output = root / "output"
+            manifest = indexer.build_index(catalog, search, output, history_index_path=history)
+            self.assertEqual(manifest["partial_excerpt_item_count"], 1)
+            self.assertEqual(manifest["full_text_item_count"], 0)
+            item = lookup(output, manifest["item_table"], "a" * 24)
+            evidence = lookup(output, manifest["evidence_table"], "a" * 24 + ":c000000")
+            self.assertTrue(item["partial_excerpt"])
+            self.assertEqual(evidence["text_scope"], "partial_excerpt")
+            rows = indexer.read_corpus(output / indexer.CORPUS_FILENAME)
+            self.assertEqual(rows["a" * 24]["item"]["text_scope"], "partial_excerpt")
+            legacy = dict(rows["a" * 24]["item"])
+            for key in indexer.CORPUS_SCOPE_FIELDS:
+                legacy.pop(key)
+            self.assertFalse(indexer._validated_corpus_item(legacy, "a" * 24)["partial_excerpt"])
+            with self.assertRaises(indexer.CorpusError):
+                indexer._validated_corpus_item({**legacy, "partial_excerpt": True, "text_scope": "full_text"}, "a" * 24)
+
+    def test_dedicated_refresh_keeps_review_default_and_atomic_corpus_publish(self) -> None:
+        workflow = SCRIPT.parent.parent.joinpath(".github/workflows/portal-research-index-refresh.yml").read_text()
+        for required in ("group: portal-production-release", "cancel-in-progress: false", "default: false",
+                         "--merge-r2-corpus", "--upload-r2", "--history-catalog-path", "--history-text-dir",
+                         "download_report_research_inputs.py", "test_report_research_index.py"):
+            self.assertIn(required, workflow)
+        self.assertNotIn("portal_suite_catalog.py", workflow)
+        self.assertNotIn("--sync-r2", workflow)
 
 
 if __name__ == "__main__":

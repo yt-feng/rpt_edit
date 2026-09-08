@@ -59,7 +59,7 @@ class ChineseDiscoveryPlanTests(unittest.TestCase):
             before = {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in root.glob("*.html")}
             with mock.patch.object(builder, "translate_missing_units", side_effect=AssertionError("No paid calls")):
                 report = audit_module.audit(root, ORIGIN)
-            self.assertEqual(report, {"status": "passed", "html_checked": 11, "eligible_clusters": 2, "provider_requests": 0})
+            self.assertEqual(report, {"status": "passed", "html_checked": 12, "eligible_clusters": 2, "provider_requests": 0})
             self.assertEqual(before, {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in root.glob("*.html")})
             for name in ("privacy.html", "terms.html"):
                 source = (root / name).read_text()

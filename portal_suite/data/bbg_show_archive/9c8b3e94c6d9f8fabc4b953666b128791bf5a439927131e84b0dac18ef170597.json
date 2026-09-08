@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "id": "9c8b3e94c6d9f8fabc4b953666b128791bf5a439927131e84b0dac18ef170597",
+  "slug": "bbg-20260904-9c8b3e94c6d9f8fa",
+  "date": "2026-09-04",
+  "title": "最难驾驶的伦敦：竟成无人出租车首发地，安全员先随车，何时能去掉？",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-09-03/wayve-uber-bring-robotaxi-rides-to-london-video",
+  "start": 0.0,
+  "end": 90.0,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 8.8,
+      "en": "Self-driving technology startup Wave has reached a deal with Uber to offer RoboTaxi rides in London with a safety driver. It's the latest move in the global race",
+      "zh": "自动驾驶初创公司Wave与Uber达成协议，将在伦敦推出配备安全员的Robotaxi服务。这是全球自动驾驶出行商业化竞赛的最新举措。"
+    },
+    {
+      "start": 8.8,
+      "end": 14.56,
+      "en": "to commercialise autonomous ride hailing. Wave CEO Alex Kendall is back with us on Bloomberg Tech.",
+      "zh": "Wave首席执行官Alex Kendall再次做客Bloomberg Tech。"
+    },
+    {
+      "start": 14.56,
+      "end": 24.96,
+      "en": "You know Alex, in covering this industry, I know that this is a source of frustration, but the first question is always, what's the path for the safety driver coming out of the vehicle?",
+      "zh": "Alex，在报道这个行业时，我知道这让人沮丧，但第一个问题总是：安全员何时会从车里撤出？"
+    },
+    {
+      "start": 24.96,
+      "end": 28.0,
+      "en": "Take that and explain the London case study to us.",
+      "zh": "请以此为例，给我们讲讲伦敦的情况。"
+    },
+    {
+      "start": 28.0,
+      "end": 34.56,
+      "en": "Hey Ed, well firstly, as you know, London is an incredibly difficult place to drive.",
+      "zh": "Ed，首先，如你所知，伦敦是一个非常难开车的地方。"
+    },
+    {
+      "start": 34.56,
+      "end": 44.88,
+      "en": "It's a 2000-year-old city. It's full of narrow roads, frequent pedestrians and cyclists, and so I'm delighted that we've been able to bring out technology here. We've been",
+      "zh": "这是一座有着2000年历史的城市，狭窄的道路、频繁的行人和骑行者，所以我很高兴我们能把技术带到这里。"
+    },
+    {
+      "start": 44.88,
+      "end": 54.0,
+      "en": "learning to drive here for a decade, and it's I think one of the hardest places in the world to learn to drive. But we're starting with a supervised service this week with safety operators",
+      "zh": "我们在这里学习驾驶已有十年，我认为这是世界上最难学开车的地方之一。但本周我们将从有安全员的监督服务开始。"
+    },
+    {
+      "start": 54.0,
+      "end": 64.16,
+      "en": "in the path to get to launch a driverless service. It's really three things. The first one is to move to a scalable vehicle platform. You know, our business model works with auto makers",
+      "zh": "要实现无人驾驶服务，需要三件事：第一，转向可扩展的车辆平台。我们的商业模式是与汽车制造商合作，由他们制造Robotaxi，无需改装，而是内置量产硬件。"
+    },
+    {
+      "start": 64.16,
+      "end": 69.36,
+      "en": "so that they build the RoboTaxis, no retrofits, or built-in mass production hardware.",
+      "zh": "第二，验证无人驾驶所需的安全指标。"
+    },
+    {
+      "start": 69.36,
+      "end": 73.68,
+      "en": "Our second, of course, validating the safety metrics we need for a driverless operation.",
+      "zh": "其次，当然，验证我们无人驾驶运营所需的安全指标。"
+    },
+    {
+      "start": 73.68,
+      "end": 83.52,
+      "en": "And third, we've got a permit today for supervised operations, and we're working with regulators towards a driverless permit. So those three things, which we're working on very quickly over here",
+      "zh": "第三，我们今天获得了监督运营的许可，我们正在与监管机构合作，争取获得无人驾驶许可。所以这三件事，我们正在伦敦这里快速推进。"
+    },
+    {
+      "start": 83.52,
+      "end": 90.0,
+      "en": "in London. At the same time, you know, you have multiple projects in parallel, right? There is the driverless platform of Nissan, for example, where there's a future in London. But other cities",
+      "zh": "与此同时，你们知道，多个项目在并行推进，对吧？比如日产无人驾驶平台，未来在伦敦有应用。但其他城市……"
+    }
+  ]
+}

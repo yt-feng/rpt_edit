@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "id": "88492d18aaec6aadc2ec477d979d4d2e8b3ee45ae76ab8fb23a7679e1a8d95f4",
+  "slug": "bbg-20260805-88492d18aaec6aad",
+  "date": "2026-08-05",
+  "title": "中国AI最佳入口：云和数据中心，阿里云增长45%意味着什么？",
+  "speaker": "Ronald Cunghead",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-08-05/the-china-show-8-5-2026-video",
+  "start": 2107.3,
+  "end": 2220.0,
+  "segments": [
+    {
+      "start": 2107.3,
+      "end": 2115.1,
+      "en": "It sounds like also, as you alluded to, workplace applications seem to be the next realm of competition.",
+      "zh": "听起来，正如您提到的，工作场所应用似乎是下一个竞争领域。"
+    },
+    {
+      "start": 2115.1,
+      "end": 2119.8,
+      "en": "Where does this leave the older internet names? I mean, how do things stack up then?",
+      "zh": "这对老牌互联网公司意味着什么？它们如何应对？"
+    },
+    {
+      "start": 2121.1,
+      "end": 2125.9,
+      "en": "Yes, so amongst the mega-caps by Dan Sali Baba Tencent, they have been focusing on various",
+      "zh": "是的，在阿里巴巴、腾讯等巨头中，它们一直专注于不同方面"
+    },
+    {
+      "start": 2125.9,
+      "end": 2131.4,
+      "en": "aspects of frontier, either the Quen 3.8 Max that we talked about, or Tencent,",
+      "zh": "前沿领域，比如我们提到的Qwen 3.8 Max，或者腾讯"
+    },
+    {
+      "start": 2131.4,
+      "end": 2136.8,
+      "en": "when you're in 3HY3 is actually much smaller model but has very low cost and a much lower pricing",
+      "zh": "腾讯的3HY3实际上是一个更小的模型，但成本非常低，定价也低得多"
+    },
+    {
+      "start": 2136.8,
+      "end": 2141.6,
+      "en": "set up, and then we think by Dan Sali Baba Tencent is a multi-modal focused, which means not just",
+      "zh": "我们认为阿里巴巴和腾讯是多模态聚焦，这意味着不仅"
+    },
+    {
+      "start": 2141.6,
+      "end": 2146.6,
+      "en": "their text model dole bow and a consumer-facing app that is one number one in China, but they also",
+      "zh": "它们的文本模型和面向消费者的应用在中国排名第一，而且它们还"
+    },
+    {
+      "start": 2146.6,
+      "end": 2151.8,
+      "en": "have a very strong multi-modal video generation called SeaDream, a SeaDance and SeaDream for Image,",
+      "zh": "拥有非常强大的多模态视频生成模型，如Seedream、SeaDance和Seedream图像生成"
+    },
+    {
+      "start": 2151.9,
+      "end": 2157.4,
+      "en": "so SeaDance is where recently the H3 from Minimax is coming up with an open-weight approach,",
+      "zh": "SeaDance方面，最近MiniMax的MiniMax H3采用了开放权重方法"
+    },
+    {
+      "start": 2157.4,
+      "end": 2164.0,
+      "en": "so if we looked at the deep-seek moment which is the open-source approach for text models,",
+      "zh": "如果我们回顾DeepSeek时刻，那是文本模型的开源方法"
+    },
+    {
+      "start": 2164.0,
+      "end": 2171.0,
+      "en": "then the recent launch of Minimax H3 after bringing an open-weight really useful and",
+      "zh": "那么最近MiniMax MiniMax H3的发布，将开放权重真正实用且"
+    },
+    {
+      "start": 2171.0,
+      "end": 2176.0,
+      "en": "comprehensive model up to the open-weight, so yes, competition will increase but our mega-caps are",
+      "zh": "全面的模型提升到开放权重，所以竞争将加剧，但我们的巨头们"
+    },
+    {
+      "start": 2176.0,
+      "end": 2181.0,
+      "en": "first focused on keeping themselves in the model layer, but also the harness that we talked about,",
+      "zh": "首先专注于保持在模型层，同时也关注我们提到的调度层"
+    },
+    {
+      "start": 2181.1,
+      "end": 2185.8,
+      "en": "and we haven't talked about yet is cloud and data centers which is our top sub-sector in China",
+      "zh": "我们还没提到的是云和数据中心，这是我们在中国互联网领域的首选子板块"
+    },
+    {
+      "start": 2185.8,
+      "end": 2191.6,
+      "en": "Internet. Okay, so my question is what's the best way to play China AI now? Across we think we",
+      "zh": "那么，现在参与中国AI的最佳方式是什么？我们认为"
+    },
+    {
+      "start": 2191.6,
+      "end": 2197.2,
+      "en": "believe that growth in tokens and the catpacks uplift that we're anticipating for the second half",
+      "zh": "我们相信token增长和资本开支提升，我们预计下半年"
+    },
+    {
+      "start": 2197.2,
+      "end": 2203.7,
+      "en": "of this year as domestic chip supply increases cloud and data centers our top preferred sub-sector",
+      "zh": "随着国内芯片供应增加，云和数据中心是我们首选子板块"
+    },
+    {
+      "start": 2203.7,
+      "end": 2208.2,
+      "en": "and that's where the hyper-scalers which are the internet mega-caps are best position with strong",
+      "zh": "这正是超大规模云服务商即互联网巨头的最佳位置，它们拥有强劲的"
+    },
+    {
+      "start": 2208.2,
+      "end": 2213.2,
+      "en": "cash flows, the ability to fund the catpacks and grow a cloud business where we're estimating",
+      "zh": "现金流，有能力为资本开支提供资金并发展云业务，我们估计"
+    },
+    {
+      "start": 2213.2,
+      "end": 2220.0,
+      "en": "45% growth for Alibaba cloud business in the June quarter that we anticipate, so these are the key",
+      "zh": "阿里巴巴云业务在六月季度预计增长45%，这些是关键"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "id": "25e03f45cb963b1eedc7a5f48fc3ad76eda83d60d8de824ba92d181772db5f0b",
+  "slug": "bbg-20260903-25e03f45cb963b1e",
+  "date": "2026-09-03",
+  "title": "英伟达拟140亿美元收购Hugging Face，AI生态版图再扩张",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-09-02/nvidia-in-advanced-talks-for-hugging-face-video",
+  "start": 0.0,
+  "end": 86.84,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 3.6,
+      "en": "We've known about in the number of $12.9 billion.",
+      "zh": "我们已知收购金额为129亿美元。"
+    },
+    {
+      "start": 3.6,
+      "end": 9.88,
+      "en": "That's the kind of acquisition. And we've known that it's closed. This $14 billion figure, what does that include?",
+      "zh": "那是这类收购的规模，且已知交易已完成。这140亿美元的数字包含什么？"
+    },
+    {
+      "start": 9.88,
+      "end": 15.76,
+      "en": "What's the new bit here? Yeah, I mean, according to our reporting, that includes an extra sort of billion dollars of retention.",
+      "zh": "新信息是什么？根据我们的报道，这包括额外约10亿美元的留任奖励。"
+    },
+    {
+      "start": 15.76,
+      "end": 24.12,
+      "en": "Obviously, Nvidia doesn't want the talent, the core of that company due to just disappear overnight when it acquires it.",
+      "zh": "显然，英伟达不希望收购后公司核心人才一夜之间流失。"
+    },
+    {
+      "start": 24.12,
+      "end": 29.44,
+      "en": "That's about keeping the staff. Rachel, it seems strange place to go next, but what is hugging face?",
+      "zh": "这是为了留住员工。Rachel，接下来似乎有些奇怪，但什么是Hugging Face？"
+    },
+    {
+      "start": 29.44,
+      "end": 37.24,
+      "en": "Like we've been talking about them so often of late because they were subject to a mistaken hack by open AI models as one example.",
+      "zh": "我们最近经常提到它，因为它曾遭遇OpenAI模型的错误入侵，这只是其中一个例子。"
+    },
+    {
+      "start": 37.24,
+      "end": 42.68,
+      "en": "But what is it that they actually do? Yeah, so hugging face does a couple of different things.",
+      "zh": "但他们实际做什么？Hugging Face做几件不同的事。"
+    },
+    {
+      "start": 42.68,
+      "end": 49.92,
+      "en": "It offers a platform that a lot of companies use to showcase AI models that they're releasing.",
+      "zh": "它提供一个平台，许多公司用来展示他们发布的AI模型。"
+    },
+    {
+      "start": 49.92,
+      "end": 57.84,
+      "en": "It's also a place where anybody could post AI models or similar kinds of work that they're working on that they want to share with other people.",
+      "zh": "它也是一个任何人都可以发布AI模型或类似工作成果的地方，供他人分享。"
+    },
+    {
+      "start": 57.92,
+      "end": 62.8,
+      "en": "And the company also, for a long time, has really focused on doing its own research.",
+      "zh": "而且该公司长期以来一直专注于自己的研究。"
+    },
+    {
+      "start": 62.8,
+      "end": 70.32,
+      "en": "It's very focused on open research, open models, and has been fostering that sort of ecosystem for a long time.",
+      "zh": "它非常专注于开放研究和开放模型，并且长期以来一直在培育这样的生态系统。"
+    },
+    {
+      "start": 71.4,
+      "end": 76.44,
+      "en": "Ian, why would Nvidia want to buy hugging face as Rachel's just described it?",
+      "zh": "伊恩，正如瑞秋刚才描述的，为什么英伟达想要收购Hugging Face？"
+    },
+    {
+      "start": 76.44,
+      "end": 80.72,
+      "en": "What she said was key there, which is open models, right?",
+      "zh": "她刚才说的关键点在于开放模型，对吧？"
+    },
+    {
+      "start": 80.72,
+      "end": 86.84,
+      "en": "At the moment, the industry is very concentrated on the hyperscalers and what they produce on what open AI does.",
+      "zh": "目前，行业高度集中于超大规模云服务商及其产品，以及OpenAI所做的事情。"
+    }
+  ]
+}

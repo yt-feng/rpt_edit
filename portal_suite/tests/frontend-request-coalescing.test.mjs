@@ -139,30 +139,12 @@ test("a reward change performs a fresh access check without caching a previous g
   assert.equal(nodes.get("accountDownloadReport").hidden, true);
 });
 
-test("storage initialization and auth event share one verified-account metadata request", async () => {
-  const { context, requests, respond } = setup();
-  Object.assign(context, {
-    workerUrl: "/api", internalStorageRequestId: 0, internalStorageMetadata: null,
-    showInternalStorageMetadata: false, updateMeta() {},
-    isAdminASession: () => context.loadAuthSession()?.user.role === "super",
-  });
-  vm.runInContext(extractFunction("refreshInternalStorageMetadata"), context);
-  const auth = context.refreshAuthSession("/api");
-  context.document.addEventListener("portal-auth-change", context.refreshInternalStorageMetadata);
-  const initial = context.refreshInternalStorageMetadata();
-  await flush();
-  assert.equal(requests.length, 1);
-  respond(0, { token: "rotated-a", user: sessionA.user });
-  await auth;
-  await flush();
-  assert.equal(requests.length, 2);
-  assert.equal(requests[1].url, "/api/internal/pdf-storage");
-  context.saveAuthSession(sessionB);
-  respond(1, { total_size_bytes: 100 });
-  await initial;
-  await flush();
-  assert.equal(context.internalStorageMetadata, null);
-  assert.equal(context.showInternalStorageMetadata, false);
+test("public home metadata never fetches internal storage", () => {
+  const metadata = extractFunction("updateMeta");
+  assert.match(metadata, /visibleTotal/u);
+  assert.match(metadata, /updated_at_bjt/u);
+  assert.doesNotMatch(metadata, /internalStorage|storage|searchIndexLabel/u);
+  assert.doesNotMatch(extractFunction("initIndex"), /internal\/pdf-storage/u);
 });
 
 test("only a verified fresh users snapshot avoids the automatic live users export", () => {

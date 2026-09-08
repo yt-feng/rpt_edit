@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "id": "c4ccabc4ace47a8c02d0d9d7925894cb2de4705e3f012ec23be037459d30e274",
+  "slug": "bbg-20260825-c4ccabc4ace47a8c",
+  "date": "2026-08-25",
+  "title": "英伟达客户面临AI成本上涨，15%涨幅引关注",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-08-24/nvidia-customers-brace-for-higher-ai-costs-video",
+  "start": 0.0,
+  "end": 89.0,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 8.0,
+      "en": "This reporting is based on the OEMs, the server makers going to customers and saying this is what we see happening in the new year.",
+      "zh": "这份报道基于原始设备制造商和服务器制造商向客户传达的信息，即他们对新一年的展望。"
+    },
+    {
+      "start": 8.0,
+      "end": 15.0,
+      "en": "15% hike in some cases on Blackwell and Ruben systems, just to start your reaction to that.",
+      "zh": "在某些情况下，Blackwell和Ruben系统的价格上涨了15%，您对此有何反应？"
+    },
+    {
+      "start": 15.0,
+      "end": 22.0,
+      "en": "Yeah, I'm not surprised by it. It's been very clear that the cost of memory has been increasing.",
+      "zh": "我对此并不感到意外。很明显，内存成本一直在上升。"
+    },
+    {
+      "start": 22.0,
+      "end": 33.0,
+      "en": "We have observed and heard the large hyperscale operators forecasting higher capital spending budgets and the biggest driver for that has been the cost of memory.",
+      "zh": "我们观察到并听说大型超大规模运营商预测资本支出预算将增加，而最大的驱动因素就是内存成本。"
+    },
+    {
+      "start": 33.0,
+      "end": 36.0,
+      "en": "So there really should be very little surprise.",
+      "zh": "所以，这确实不应该让人感到意外。"
+    },
+    {
+      "start": 36.0,
+      "end": 51.0,
+      "en": "As a matter of fact, given the percentage increase in the cost of memory and the amount of memory required in these AI platforms, 15% really doesn't seem all that demanding when we consider the amount of spending.",
+      "zh": "事实上，考虑到内存成本的百分比增长以及这些AI平台所需的内存量，15%的涨幅在支出规模面前并不显得过高。"
+    },
+    {
+      "start": 52.0,
+      "end": 59.0,
+      "en": "Each Blackwell and Ruben GPU has eight corresponding HBM stacks, which in turn are 12 layers of DRAM.",
+      "zh": "每个Blackwell和Ruben GPU都有八个对应的HBM堆栈，每个堆栈由12层DRAM组成。"
+    },
+    {
+      "start": 59.0,
+      "end": 64.0,
+      "en": "15% could you see that going higher Simon with that in mind?",
+      "zh": "西蒙，考虑到这一点，您认为15%的涨幅还会继续上升吗？"
+    },
+    {
+      "start": 64.0,
+      "end": 76.0,
+      "en": "Well, I think it's possible that the challenges is we don't know what Nvidia built into the prior pricing, so there's a lot we don't know at this point.",
+      "zh": "我认为有可能，但挑战在于我们不知道Nvidia在之前的定价中包含了什么，所以目前有很多未知因素。"
+    },
+    {
+      "start": 76.0,
+      "end": 86.0,
+      "en": "Recall that that Jensen Wang has said repeatedly that they predicted that the amount of memory they need two years ago.",
+      "zh": "回想一下，黄仁勋曾多次表示，他们两年前就预测到了所需的内存量。"
+    },
+    {
+      "start": 86.0,
+      "end": 89.0,
+      "en": "So they've been working on locking and supply.",
+      "zh": "所以他们一直在努力锁定供应。"
+    }
+  ]
+}

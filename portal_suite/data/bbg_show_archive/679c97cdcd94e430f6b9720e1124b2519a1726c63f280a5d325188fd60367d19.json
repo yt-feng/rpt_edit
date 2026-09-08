@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "id": "679c97cdcd94e430f6b9720e1124b2519a1726c63f280a5d325188fd60367d19",
+  "slug": "bbg-20260813-679c97cdcd94e430",
+  "date": "2026-08-13",
+  "title": "花旗杨霭仪：腾讯AI三线布局，混元、元宝、小微各司其职",
+  "speaker": "Alicia Yapp",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-08-13/the-china-show-8-13-2026-video",
+  "start": 1796.5,
+  "end": 1903.5,
+  "segments": [
+    {
+      "start": 1796.5,
+      "end": 1803.5,
+      "en": "In terms of the AI product lineup for Tencent, obviously there's been a lot of talk about work buddy being very popular.",
+      "zh": "关于腾讯的AI产品线，显然元宝很受欢迎。"
+    },
+    {
+      "start": 1803.5,
+      "end": 1808.5,
+      "en": "What do you make of the whole lineup? Whether it's the LLM, the coding assistance and the like.",
+      "zh": "您如何看待整个产品线？包括大语言模型、编程助手等。"
+    },
+    {
+      "start": 1808.5,
+      "end": 1814.5,
+      "en": "I mean, do you see them stacking up pretty competitively with the likes of Baba or Bite Dance now?",
+      "zh": "您认为他们现在能与阿里、字节等竞争吗？"
+    },
+    {
+      "start": 1814.5,
+      "end": 1818.5,
+      "en": "If you look at, they did highlight three key areas.",
+      "zh": "他们强调了三个关键领域。"
+    },
+    {
+      "start": 1818.5,
+      "end": 1822.5,
+      "en": "One is their Hunyuan model. So now it's a Hunyuan 3.",
+      "zh": "一是混元大模型，现在是混元3。"
+    },
+    {
+      "start": 1822.5,
+      "end": 1825.5,
+      "en": "They are working on the Hunyuan 4. It's not the soda yet.",
+      "zh": "他们正在研发混元4，但还不是最先进的。"
+    },
+    {
+      "start": 1825.5,
+      "end": 1830.5,
+      "en": "I don't think Hunyuan 4 will be the soda. They don't expect Hunyuan 4 will be the soda.",
+      "zh": "我认为混元4不会是最先进的，他们也不期望如此。"
+    },
+    {
+      "start": 1830.5,
+      "end": 1832.5,
+      "en": "But they will continue to work on it one day. They're going to read the soda.",
+      "zh": "但他们将继续努力，未来会达到最先进水平。"
+    },
+    {
+      "start": 1832.5,
+      "end": 1835.5,
+      "en": "And then the next thing is work buddy, which is the productivity agent.",
+      "zh": "接下来是元宝，这是一个生产力智能体。"
+    },
+    {
+      "start": 1835.5,
+      "end": 1840.5,
+      "en": "Which is already generating some revenue, even though it's small, because it's not for everyone.",
+      "zh": "它已经开始产生收入，虽然规模小，因为它不是面向所有人。"
+    },
+    {
+      "start": 1840.5,
+      "end": 1845.5,
+      "en": "It's for enterprise, for consumer individual professional.",
+      "zh": "它面向企业、消费者和个人专业人士。"
+    },
+    {
+      "start": 1845.5,
+      "end": 1848.5,
+      "en": "But that actually is already quite effective.",
+      "zh": "但实际上已经相当有效。"
+    },
+    {
+      "start": 1849.5,
+      "end": 1855.5,
+      "en": "And they will continue to work on and fine tune and potentially getting more user onboarding the work buddy.",
+      "zh": "他们将继续优化，并可能让更多用户使用元宝。"
+    },
+    {
+      "start": 1855.5,
+      "end": 1860.5,
+      "en": "And then the third one is a consumer AI, which is the Xiaowei, the AI agent.",
+      "zh": "第三个是消费者AI，即小微，一个AI智能体。"
+    },
+    {
+      "start": 1861.5,
+      "end": 1868.5,
+      "en": "Inside we check which in the future, you and me could actually easily maybe just using a voice and say tap into.",
+      "zh": "在微信里，未来你我可能只需用语音就能轻松接入。"
+    },
+    {
+      "start": 1868.5,
+      "end": 1870.5,
+      "en": "And then they can function some task for us.",
+      "zh": "然后它就能帮我们执行一些任务。"
+    },
+    {
+      "start": 1871.5,
+      "end": 1879.5,
+      "en": "So this I think they did also mention into the future, the Xiaowei is not going to use a lot of the inferencing.",
+      "zh": "他们还提到，未来小微不会使用大量推理。"
+    },
+    {
+      "start": 1879.5,
+      "end": 1886.5,
+      "en": "Because first I think obviously the in-device inferencing could be coming along over time.",
+      "zh": "因为首先，端侧推理会逐渐发展。"
+    },
+    {
+      "start": 1886.5,
+      "end": 1897.5,
+      "en": "But then in the meantime, the VLM, which is the model that specifically designed to fit the Xiaowei AI agent, is a very, very small model.",
+      "zh": "同时，专为小微设计的VLM模型非常小。"
+    },
+    {
+      "start": 1897.5,
+      "end": 1903.5,
+      "en": "And then all the inferencing causes actually will be very small compared to the other LLM that we are looking at.",
+      "zh": "因此推理成本相比其他大模型会非常低。"
+    }
+  ]
+}

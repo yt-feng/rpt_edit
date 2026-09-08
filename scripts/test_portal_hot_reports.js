@@ -304,15 +304,15 @@ assert.match(
   /randomAlias\.addEventListener\("click", \(\) => \{\s*if \(!isSuperSession\(\)\) return;/,
   "the random alias action must re-check the administrator session",
 );
-assert.match(
+assert.doesNotMatch(
   extractFunction(app, "updateMeta"),
-  /internalStorageMetadata && internalStorageMetadata\.total_size_bytes[\s\S]*?showInternalStorageMetadata && totalSize/,
-  "PDF storage capacity must stay out of the public header",
+  /internalStorageMetadata|PDF storage|hot archive/,
+  "storage capacity must stay out of the public header for all accounts",
 );
-assert.match(
-  app,
-  /showInternalStorageMetadata = isAdminASession\(\)[\s\S]*?\/internal\/pdf-storage/,
-  "only the exact admin-a session may reveal storage capacity",
+assert.doesNotMatch(
+  extractFunction(app, "initIndex"),
+  /internal\/pdf-storage/,
+  "home initialization must not fetch internal storage metadata",
 );
 const internalStorageHandler = extractFunction(worker, "handleInternalPdfStorage");
 assert.match(
@@ -577,7 +577,9 @@ const commentOrderPromise = vm.runInNewContext(`(async () => {
 
 assert.match(app, /searchResultCounts\.hot = "error"/);
 assert.match(app, /searchResultCounts\.hot = Number\.isFinite\(page && page\.total\) \? page\.total : pageItems\.length/);
-for (const source of ["thinktank", "external", "reportA", "authority"]) {
+assert.match(app, /searchResultCounts\.thinktank = browsingLatest \? 0 : "error";/,
+  "thinktank search failures remain errors while default latest reports do not enter search recommendations");
+for (const source of ["external", "reportA", "authority"]) {
   assert.match(app, new RegExp(`searchResultCounts\\.${source} = "error"`), `${source} failures must remain distinguishable from zero results`);
 }
 

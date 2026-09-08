@@ -12,9 +12,9 @@
 
 ## 报告研究检索与生成
 
-首页报告入口是跨报告研究型 RAG，不再只做标题推荐：
+独立 `/research.html` 页面和导航“研究”入口提供跨报告研究型 RAG；首页保留快捷入口：
 
-1. 静态发布生成全文搜索数据后，`build_report_research_index.py` 把有正文的报告切成约
+1. 独立研究刷新工作流读取现行报告搜索正文和已解析历史正文，`build_report_research_index.py` 把合格正文切成约
    1,800 字、带 180 字重叠的证据块，并构建私有 token、报告与 evidence 三张随机访问表。
 2. 额度占位成功后，Worker 先用一次小型 DeepSeek query planner 把当前问题拆成 `core`
    concept groups、research `facets` 与最多 7 个原子检索词；planner 失败时使用相同结构的
@@ -46,23 +46,41 @@
    年份或无关实体的图不会入选；每份报告最多 2 张、总计最多 6 张。最终响应严格采用模型返回
    的数组型 `chart_image_ids` 白名单顺序；字段缺失、类型错误或 ID 不在候选白名单时返回空图表，
    不再把全部候选无条件塞入结果。
-8. 前端把摘要、发现、数据、Charts 和来源报告链接组合成一份研究材料。研究响应同时带安全的
-   `research_title`、`research_scope` 与服务端 `generated_at`。若研究索引尚未发布或 posting
-   阶段没有全文命中，才回退到 Report Chat v2 的“找报告”结果，不伪装成全文研究。
+8. 全文没有命中、证据读取部分失败或研究 manifest 不可用时，同一次请求仍会查询独立的
+   Charts 索引。满足主题与质量条件的图表以 `chart_metadata` 证据参与综合，不把图表提取
+   内容冒充报告全文。独立图表报告加入来源白名单，因此不要求它必须是前四份正文报告之一。
+   没有 catalog `report_id` 的真实图表使用 `chart:<image_id>` 独立来源，不制造报告 ID；
+   来源链接为 `/charts.html?image=<image_id>`。Charts 页面按确切图像 ID 打开；静态索引
+   滞后时经 `/api/charts?image=<image_id>` 查询私有索引中实际存在的公开图表元数据。
+   若正文和 Charts 都没有合格证据，才走原报告发现 fallback。
+9. 前端把摘要、发现、数据、Charts 和来源报告链接组合成一份研究材料。研究响应同时带安全的
+   `research_title`、`research_scope` 与服务端 `generated_at`。服务端根据实际正文证据块与图表数量生成研究范围；仅命中图表时明确说明未命中报告正文。
 
-当前 provenance 精度是“报告 + evidence chunk”。现有搜索正文已被扁平化，没有可靠页码，
+当前 provenance 精度是“报告 + evidence chunk”或“真实图像 ID + 已识别图表内容”。现有搜索正文已被扁平化，没有可靠页码，
 因此界面不生成虚假页码；未来只有在解析层保存 page/figure 坐标后才增加页级引用。
+
+### 正文覆盖与历史节选边界
+
+- catalog 是资料目录，并不代表每条都有已解析正文。当前正文输入只来自 `search_index.json` 中匹配 catalog ID、长度至少 1,000 字符的报告正文；附加的 `[[CHART_SEARCH_V1]]` 图表描述会被剥离，仍由独立 Charts 通道检索。
+- `--history-catalog-path` 与 `--history-text-dir` 复用站点现有 `merge_history_catalog` 标题去重和 ID remap，直接读取已经解析的历史 gzip 文本，无需重新下载或解析 PDF。也可用 `--history-index-path` 传入已完成 ID 对齐的历史 items 索引。
+- 历史导入最多保留每条 10,000 字符，且没有逐条完整性证明，因此全部保守标为 `partial_excerpt=true`、`text_scope=partial_excerpt`，不称完整全文。范围标识贯穿持久语料、item/evidence、Worker、界面和 Word/PDF；模型同样收到节选限制。
+- 当前合格的完整提取优先于历史节选；重复正文保留较完整候选。短标题或不足 1,000 字符的历史文本不会进入证据。历史节选不能覆盖已保存的完整正文，后续正常刷新不会因公开搜索窗缩小而删除稳定语料。
+- 其他报告、报告线索、高权报告和国际智库的实时搜索适配器，以及 `_search-mirror` 元数据缓存，没有整体接入研究正文。下载到 PDF、出现在目录或搜索结果中也不等于已经解析并入库。Charts 覆盖与正文覆盖分别计算。
+- 本地 2026-08-30 输入快照的历史库有 5,488 条已解析文本；站点去重后 5,480 条。严格目录 ID 与长度校验后的实际本地构建为 6,285 份资料（964 份当前正文、5,321 份历史节选）和 96,431 个证据块。此构建未合并或发布生产稳定语料，生产新增量须以专用工作流的实际去重结果为准。
 
 ### 研究结果导出
 
 - Word 下载直接复用已经返回并通过服务端白名单校验的研究 JSON，不再次请求模型，也不消耗
   研究额度。前端生成真实 OOXML `.docx`，把相关 Chart 作为 JPEG 嵌入文档，并把来源写成
-  可点击的当前站点 `/report.html?id=...` 外部链接；导出包不包含原始问题、账号、归档 ID、
+  可点击的当前站点 `/report.html?id=...` 链接；无报告关联的图表使用精确图表链接；文件名不包含原始问题，正文可保留研究问题；导出包不含账号、归档 ID、
   R2 对象键或报告原 PDF。
-- PDF 使用同一份规范化研究数据生成 A4 打印版，保留可搜索、可复制的中文正文、图表和可点击
-  来源；按钮会打开系统打印保存界面，由用户选择“另存为 PDF”。当前不把正文栅格化为图片，
-  也不依赖 Worker 运行时、Python 或第三方浏览器导出服务。
-- Chart 只有在 `report_id` 与 finding 的 `source_ids` 精确一致时才嵌入该结论；未匹配 Chart
+- PDF 使用同一份规范化研究数据直接生成可下载的 A4 PDF 二进制文件，保留可搜索、可复制
+  的中文正文、内嵌 JPEG 图表和可点击来源链接，不再打开打印对话框。仅点击导出时懒加载
+  同站点固定版本的 pdf-lib、fontkit 与 TrueType 中文字体；图表与研究数据不送第三方。
+  完整嵌入字体解决 CJK 子集丢字问题，典型图文 PDF 约 6.5 MB；首次字体下载约 10.6 MB。
+  资源失败、图像格式错误、权限变化和超时均显示可重试错误，不生成缺图的成功文件。
+- Chart 只有在 `source_id`（有报告关联时等于 `report_id`）与 finding 的 `source_ids`
+  精确一致时才嵌入该结论；未匹配 Chart
   统一放入“补充图表证据”，不能通过数组顺序或泛化关键词伪装成某条结论的直接证据。
 - 热门问题的公开缓存使用相同导出器，因此点击历史快照后同样可以导出，且不会重新触发
   R2 evidence 检索、DeepSeek 或额度占用。
@@ -76,7 +94,7 @@
 最多 128 KiB；整个 data 对象可以大于 128 MiB，因为 Worker 永远只读取目标 range。
 
 token value 包含报告 ID、词频和相关 chunk ID；item value 只含公开报告字段；evidence
-value 只含 `report_id`、chunk ID 与正文。索引不包含文件名、私有路径、PDF/R2 对象键或
+value 包含 `report_id`、chunk ID、正文与 `partial_excerpt` / `text_scope` 范围标识。索引不包含文件名、私有路径、PDF/R2 对象键或
 上游定位信息。
 
 每个 release 还保存一份确定性 gzip JSONL 研究语料。下一轮发布先从当前 manifest 读取并
@@ -113,6 +131,16 @@ Course Chat 仅返回具体资料标题、主题、文件类型、公开机构�
 律所与监管机构在相关度相当时获得更高吸引力评分。推荐卡可把具体标题回填到会员目录
 搜索框。Chat 索引不包含完整目录白名单之外的字段，也不能新增源路径、对象键或品牌字段。
 
+## 检索覆盖边界
+
+- 标题目录可发现的报告数量不等于正文研究覆盖数量。研究正文来自已匹配报告的 MinerU
+  `source_mineru.md` 及持久化历史语料；银行目录抓取只贡献标题，默认不足 1000 字不会
+  进入正文证据库。未解析 PDF、仅目录标题、博客与独立 Course 会员目录不等于已纳入正文。
+- 图表来自独立图像提取与视觉分析索引；目前是图表识别内容和指标供综合模型使用，图像
+  原件用于结果展示与导出。此过程不意味着综合模型重新逐页阅读所有原 PDF。
+- 私有研究与 Charts 索引、公开静态 Charts 列表有各自发布时间，核对覆盖数量时必须标注
+  各自更新时间。新图的引用深链支持精确 API 回补，避免静态列表滞后导致来源打不开。
+
 ## 防滥用与提示注入
 
 - 请求体最多 16 KB，问题限制 600 字，对话历史最多 6 条；只接受 `user` / `assistant` 角色。
@@ -135,10 +163,13 @@ Course Chat 仅返回具体资料标题、主题、文件类型、公开机构�
 ## 部署顺序
 
 1. 运行 Worker / 前端自动化测试与语法检查。
-2. 推送主分支，使静态构建包含 `assets/report-chat.js` 和两个 Chat 入口。
+2. 推送主分支，使静态构建包含 `assets/report-chat.js`、独立研究页 `/research.html`、导航研究入口及 Course Chat。
 3. catalog 刷新并完成标题翻译后，运行 `build_report_chat_index.py --upload-r2`，保留报告发现 fallback。
-4. 静态全文构建完成后，运行 `build_report_research_index.py --merge-r2-corpus --upload-r2`；
-   稳定语料与六个不可变对象全部上传并校验后才提交 `_report-research/v1/manifest.json`。
+4. 静态发布完成后，运行独立 `Portal research index refresh` 工作流。手动默认 `publish=false` 只构建核查；
+   `publish=true` 才发布。启用 `PORTAL_RESEARCH_REFRESH_ENABLED=true` 后，成功的主分支静态刷新自动触发。
+   工作流读取现行 catalog/search_index，并合并仓库中 history_catalog/history_text 与 R2 稳定语料；
+   使用现有 `--merge-r2-corpus --upload-r2` 原子发布契约，稳定语料与六个不可变对象全部校验后才提交 manifest。
+   研究刷新与静态发布共用生产串行锁，但不属于 neutral-edge-cutover 事务。
 5. 运行私有 Course 目录发布任务；先生成并校验完整目录、兼容 Chat 对象和四个 revisioned
    lookup 对象，最后才原子替换稳定 manifest。任何分片构建、上传或摘要校验失败都保留旧
    manifest，不能让 Worker 看到半套索引。

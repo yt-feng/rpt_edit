@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "id": "c534d216ec9ef09155a238cb98d98b132093d12155437c3f87c7fcb04bff1e19",
+  "slug": "bbg-20260723-c534d216ec9ef091",
+  "date": "2026-07-23",
+  "title": "OpenAI模型意外入侵Hugging Face，AI网络战升级",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-07-22/openai-says-its-models-hacked-hugging-face-by-mistake-video",
+  "start": 0.0,
+  "end": 86.88,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 8.04,
+      "en": "We have this pretty extraordinary story out today. OpenAI says it's advanced sort of visual intelligence models, basically inadvertently hacked hugging phase.",
+      "zh": "今天有个相当惊人的消息。OpenAI称其高级视觉智能模型意外入侵了Hugging Face。"
+    },
+    {
+      "start": 8.04,
+      "end": 13.16,
+      "en": "I mean, this raises questions about the ability to carry out cyber attacks.",
+      "zh": "这引发了对网络攻击能力的质疑。"
+    },
+    {
+      "start": 13.16,
+      "end": 21.36,
+      "en": "Yeah, it does not. Obviously, we already had a kind of a precursor of this with the mythos, a bit mythos, that demonstrated incredible cyber capabilities,",
+      "zh": "是的，之前Mythos就展现了惊人的网络能力，现在OpenAI的工具也类似。"
+    },
+    {
+      "start": 21.36,
+      "end": 24.72,
+      "en": "seeing similar things with OpenAI's tools.",
+      "zh": "OpenAI的工具也出现了类似情况。"
+    },
+    {
+      "start": 24.72,
+      "end": 32.36,
+      "en": "I think what's interesting is that this was an agentic led attack, and to some degree was kind of intentional.",
+      "zh": "有趣的是，这是一次自主AI发起的攻击，某种程度上是故意的。"
+    },
+    {
+      "start": 32.36,
+      "end": 41.52,
+      "en": "They were trying to test the capitals of the model, but the hugging phase responded with its own agentic AI capabilities, so you kind of got this new cyber warfare",
+      "zh": "他们试图测试模型能力，但Hugging Face用自主AI反击，形成了新的网络战。"
+    },
+    {
+      "start": 41.52,
+      "end": 51.16,
+      "en": "if you're going on between agentic AI, just kind of raises the bar again in terms of what you need to be capable of doing in cyber warfare.",
+      "zh": "自主AI之间的网络战再次提升了网络战的能力要求。"
+    },
+    {
+      "start": 51.16,
+      "end": 59.64,
+      "en": "And it's good that OpenAI have been transparent about this. They're showing what they did, why they did it, how it worked, and they're working with the likes of hugging phase",
+      "zh": "OpenAI的透明做法很好，他们展示了攻击过程，并与Hugging Face合作。"
+    },
+    {
+      "start": 59.64,
+      "end": 69.12,
+      "en": "so that they can understand the capabilities of these models, so that they can boot their cyber defenses, so that hopefully we kind of end up in a similar situation.",
+      "zh": "这样双方都能了解模型能力，加强网络防御，希望最终达成类似局面。"
+    },
+    {
+      "start": 69.12,
+      "end": 74.32,
+      "en": "Every day, there's a warfare going on in the background on the cyber front between bad actors and good actors.",
+      "zh": "每天，网络战都在幕后进行，好坏势力交锋。"
+    },
+    {
+      "start": 74.32,
+      "end": 77.36,
+      "en": "It's no different in the AI world. It's just a lot more sophisticated.",
+      "zh": "AI领域也一样，只是更复杂了。"
+    },
+    {
+      "start": 77.36,
+      "end": 81.32,
+      "en": "Sophisticated, but it also feels like a big deal, right? Because it's the first incident.",
+      "zh": "复杂，但感觉也是大事，因为是首次事件。"
+    },
+    {
+      "start": 81.32,
+      "end": 86.88,
+      "en": "So if you're a government, are you worried about regulation and eventually will these models and systems be able to patch it?",
+      "zh": "如果你是政府，会担心监管吗？这些模型和系统最终能自我修复吗？"
+    }
+  ]
+}

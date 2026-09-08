@@ -25,6 +25,7 @@ function loadExporter() {
     btoa,
     console,
     setTimeout,
+    clearTimeout,
     window,
   }, { filename: "report-research-export.js" });
   return window.PortalReportResearchExport;
@@ -76,6 +77,18 @@ function fixture() {
   };
 }
 
+test("historical excerpts retain their boundary in export data and Word even with old cached scope", async () => {
+  const exporter = loadExporter();
+  const payload = fixture();
+  payload.response.sources[0].partial_excerpt = true;
+  const model = exporter.normalizePayload(payload);
+  assert.equal(model.sources[0].partial_excerpt, true);
+  assert.match(model.research_scope.join(" "), /含 1 份历史正文节选，不代表完整报告正文/u);
+  const document = await exporter.buildDocx(payload, { fetch: imageFetch([]) });
+  const xml = new TextDecoder().decode(zipEntries(document.bytes).get("word/document.xml"));
+  assert.match(xml, /历史正文节选，不代表完整报告正文/u);
+});
+
 function imageFetch(log, contentType = "image/jpeg") {
   return async (url) => {
     log.push(url);
@@ -117,8 +130,8 @@ test("DOCX export is a real OOXML package with inline charts and canonical sourc
   assert.match(documentXml, /多份报告显示 &lt;供电&gt; 是主要约束/u);
   assert.match(documentXml, /补充图表证据/u);
   assert.equal((documentXml.match(/<wp:inline\b/gu) || []).length, 2);
-  assert.match(documentXml, /w:pgSz w:w="12240" w:h="15840"/u);
-  assert.match(documentXml, /w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440"/u);
+  assert.match(documentXml, /w:pgSz w:w="11906" w:h="16838"/u);
+  assert.match(documentXml, /w:pgMar w:top="1134" w:right="1134" w:bottom="1134" w:left="1134"/u);
   assert.match(styles, /w:styleId="Normal"[\s\S]*w:spacing w:before="0" w:after="120" w:line="264"/u);
   assert.match(styles, /w:ascii="Arial Unicode MS" w:hAnsi="Arial Unicode MS" w:eastAsia="Arial Unicode MS"/u);
   assert.match(decode("word/numbering.xml"), /w:abstractNumId="0"[\s\S]*w:abstractNumId="1"[\s\S]*w:numId="1"[\s\S]*w:numId="2"/u);
@@ -211,4 +224,106 @@ test("export stops visibly when a chart response is not JPEG", async () => {
     exporter.buildDocx(fixture(), { fetch: imageFetch([], "text/html") }),
     /暂时无法导出/u,
   );
+});
+
+async function pdfHarness() {
+  const vendor = path.join(root, "portal_suite/site_src/assets/vendor/research-pdf");
+  const context = vm.createContext({ Blob, Date, Intl, Promise, TextEncoder, Uint8Array, URL, btoa, setTimeout, clearTimeout, console, window: {} });
+  vm.runInContext(await readFile(path.join(vendor, "pdf-lib-1.17.1.min.js"), "utf8"), context);
+  vm.runInContext(await readFile(path.join(vendor, "fontkit-1.1.1.min.js"), "utf8"), context);
+  vm.runInContext(source, context);
+  const fontFilename = source.match(/ResearchSans-Regular-[0-9a-f]+\.ttf/u)[0];
+  return { exporter: context.window.PortalReportResearchExport, PDFLib: context.PDFLib, runtime: {
+    PDFLib: context.PDFLib, fontkit: context.fontkit,
+    fontBytes: new Uint8Array(await readFile(path.join(vendor, fontFilename))),
+    fetch: imageFetch([]), origin: "https://portal.example",
+  } };
+}
+
+test("PDF export produces an A4 binary with embedded Chinese font, chart images and clickable source links", async () => {
+  const { exporter, PDFLib, runtime } = await pdfHarness();
+  const result = await exporter.buildPdf(fixture(), runtime);
+  assert.equal(result.blob.type, "application/pdf");
+  assert.match(result.filename, /\.pdf$/u);
+  assert.equal(new TextDecoder().decode(result.bytes.subarray(0, 5)), "%PDF-");
+  const pdf = await PDFLib.PDFDocument.load(result.bytes);
+  assert.ok(pdf.getPageCount() >= 1);
+  let images = 0, links = 0;
+  for (const page of pdf.getPages()) {
+    assert.ok(Math.abs(page.getWidth() - 595.28) < 0.01);
+    assert.ok(Math.abs(page.getHeight() - 841.89) < 0.01);
+    const resources = page.node.Resources();
+    const fonts = resources.lookup(PDFLib.PDFName.of("Font"), PDFLib.PDFDict);
+    const font = fonts.lookup(fonts.keys()[0], PDFLib.PDFDict);
+    assert.ok(font.has(PDFLib.PDFName.of("ToUnicode")), "Chinese text must remain searchable/copyable");
+    const objects = resources.lookup(PDFLib.PDFName.of("XObject"), PDFLib.PDFDict);
+    images += objects.keys().length;
+    const annots = page.node.Annots();
+    for (let i = 0; annots && i < annots.size(); i += 1) {
+      const annotation = annots.lookup(i, PDFLib.PDFDict);
+      const action = annotation.lookup(PDFLib.PDFName.of("A"), PDFLib.PDFDict);
+      const url = action.lookup(PDFLib.PDFName.of("URI"), PDFLib.PDFString).decodeText();
+      assert.match(url, /^https:\/\/portal\.example\/report\.html\?id=report-/u);
+      links += 1;
+    }
+  }
+  assert.equal(images, 2);
+  assert.ok(links >= 6);
+  assert.ok(result.bytes.length < 10 * 1024 * 1024, "embedded CJK text and chart files remain bounded");
+});
+
+test("PDF download uses the blob download boundary without opening a window or print dialog", async () => {
+  const { exporter, runtime } = await pdfHarness();
+  const links = [];
+  let clicked = 0;
+  const document = { body: { appendChild(link) { links.push(link); } }, createElement() { return { style: {}, click() { clicked += 1; }, remove() {} }; } };
+  const result = await exporter.downloadPdf(fixture(), { ...runtime, document,
+    URL: { createObjectURL(blob) { assert.equal(blob.type, "application/pdf"); return "blob:pdf"; }, revokeObjectURL() {} },
+    setTimeout(fn) { fn(); }, window: { open() { throw new Error("unexpected popup"); }, print() { throw new Error("unexpected print"); } },
+  });
+  assert.equal(clicked, 1);
+  assert.equal(result.status, "downloaded");
+  assert.match(links[0].download, /\.pdf$/u);
+});
+
+test("chart permission failure is actionable and a subsequent export retries the failed image", async () => {
+  const exporter = loadExporter();
+  await assert.rejects(exporter.buildDocx(fixture(), { fetch: async () => ({ ok: false, status: 403, headers: { get: () => "application/json" } }) }), /重新登录/u);
+  const result = await exporter.buildDocx(fixture(), { fetch: imageFetch([]) });
+  assert.ok(result.bytes.length > 1000);
+});
+
+test("text-only exports explicitly describe the missing chart evidence", async () => {
+  const exporter = loadExporter();
+  const payload = fixture(); payload.response.charts = [];
+  const result = await exporter.buildDocx(payload);
+  const xml = new TextDecoder().decode(zipEntries(result.bytes).get("word/document.xml"));
+  assert.match(xml, /没有匹配到可引用图表/u);
+});
+
+test("unlinked chart evidence stays inline and cites its exact chart permalink in DOCX and PDF", async () => {
+  const { exporter, PDFLib, runtime } = await pdfHarness();
+  const payload = fixture(), imageId = "c".repeat(64), sourceId = `chart:${imageId}`;
+  payload.response.sources = [{ id: sourceId, title: "尚未关联全文的图表", evidence_kind: "chart_metadata" }];
+  payload.response.summary_source_ids = [sourceId];
+  payload.response.findings = [{ title: "图表证据", summary: "根据图表提取内容生成。", source_ids: [sourceId] }];
+  payload.response.charts = [{ image_id: imageId, source_id: sourceId, report_id: "", report_title: "图表所在报告", title: "独立图表" }];
+  const model = exporter.normalizePayload(payload);
+  assert.equal(exporter.chartAssignments(model).groups[0].length, 1);
+  const docx = await exporter.buildDocx(payload, runtime);
+  const rels = new TextDecoder().decode(zipEntries(docx.bytes).get("word/_rels/document.xml.rels"));
+  assert.match(rels, new RegExp(`/charts\\.html\\?image=${imageId}`, "u"));
+  assert.doesNotMatch(rels, /report\.html\?id=chart/u);
+  const pdf = await exporter.buildPdf(payload, runtime);
+  const document = await PDFLib.PDFDocument.load(pdf.bytes);
+  const urls = [];
+  for (const page of document.getPages()) {
+    const annotations = page.node.Annots();
+    for (let i = 0; annotations && i < annotations.size(); i += 1) {
+      const action = annotations.lookup(i, PDFLib.PDFDict).lookup(PDFLib.PDFName.of("A"), PDFLib.PDFDict);
+      urls.push(action.lookup(PDFLib.PDFName.of("URI"), PDFLib.PDFString).decodeText());
+    }
+  }
+  assert.ok(urls.length >= 2);
+  assert.ok(urls.every((url) => url === `https://portal.example/charts.html?image=${imageId}`));
 });

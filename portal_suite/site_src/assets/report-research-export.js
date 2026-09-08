@@ -103,6 +103,8 @@
 
   function canonicalSourceUrl(id, source = {}, origin = "https://example.invalid") {
     const reportId = text(id || source.id, 180);
+    const imageSource = /^chart:([0-9a-f]{64})$/u.exec(reportId);
+    if (imageSource) return `${origin}/charts.html?image=${imageSource[1]}`;
     if (reportId) return `${origin}/report.html?id=${encodeURIComponent(reportId)}`;
     const title = text(source.report_title || source.title, 300);
     return title ? `${origin}/?q=${encodeURIComponent(title)}` : `${origin}/`;
@@ -129,6 +131,7 @@
         institution: text(item.institution || item.bank_name, 180),
         industry: text(item.industry, 180),
         date: text(item.date_folder || item.date, 80),
+        partial_excerpt: item.partial_excerpt === true || item.text_scope === "partial_excerpt",
       }));
     const sourceMap = new Map(sourceRows.map((item) => [item.id, item]));
     const findings = (Array.isArray(response.findings) ? response.findings : [])
@@ -155,6 +158,7 @@
       .map((item) => ({
         image_id: String(item.image_id),
         report_id: text(item.report_id, 180),
+        source_id: text(item.report_id, 180) || `chart:${item.image_id}`,
         report_title: text(item.report_title, 500),
         title: text(item.title || "研究图表", 500),
         description: text(item.description || item.trend_summary, 3000),
@@ -163,13 +167,17 @@
     const question = text(payload.question || response.research_title || response.question || "KC桌面跨报告研究", 600);
     const researchTitle = text(response.research_title || question || "KC桌面跨报告研究", 600);
     const questionHash = text(payload.questionHash || payload.question_hash || response.question_hash, 128).replace(/[^a-zA-Z0-9_-]/gu, "");
+    const researchScope = (Array.isArray(response.research_scope)
+      ? response.research_scope : text(response.research_scope, 1200) ? [response.research_scope] : [])
+      .map((item) => text(item, 500)).filter(Boolean).slice(0, 8);
+    const partialCount = sourceRows.filter((source) => source.partial_excerpt).length;
+    if (partialCount && !researchScope.some((scope) => /正文节选|partial.*excerpt/iu.test(scope))) {
+      researchScope.push(`含 ${partialCount} 份历史正文节选，不代表完整报告正文。`);
+    }
     return {
       question,
       research_title: researchTitle,
-      research_scope: (Array.isArray(response.research_scope)
-        ? response.research_scope
-        : text(response.research_scope, 1200) ? [response.research_scope] : [])
-        .map((item) => text(item, 240)).filter(Boolean).slice(0, 8),
+      research_scope: researchScope,
       generated_at: text(response.generated_at || payload.generated_at, 80),
       question_hash: questionHash,
       source_origin: publicOrigin(runtime),
@@ -188,7 +196,7 @@
     const unmatched = [];
     const sourceSets = model.findings.map((finding) => new Set(finding.source_ids));
     for (const chart of model.charts) {
-      const index = chart.report_id ? sourceSets.findIndex((ids) => ids.has(chart.report_id)) : -1;
+      const index = (chart.source_id || chart.report_id) ? sourceSets.findIndex((ids) => ids.has(chart.source_id || chart.report_id)) : -1;
       if (index >= 0) groups[index].push(chart);
       else unmatched.push(chart);
     }
@@ -219,17 +227,34 @@
     throw new Error("无法读取图表尺寸。");
   }
 
+  async function readExportResponse(fetchRef, url, options, label) {
+    const controller = typeof AbortController === "function" ? new AbortController() : null;
+    let timer;
+    try {
+      return await Promise.race([
+        (async () => {
+          const response = await fetchRef(url, { ...options, ...(controller ? { signal: controller.signal } : {}) });
+          const bytes = response && response.ok ? new Uint8Array(await response.arrayBuffer()) : null;
+          return { response, bytes };
+        })(),
+        new Promise((_resolve, reject) => {
+          timer = setTimeout(() => { if (controller) controller.abort(); reject(new Error(`${label}加载超时，请重试。`)); }, 30000);
+        }),
+      ]);
+    } finally { clearTimeout(timer); }
+  }
+
   async function fetchChart(chart, runtime = {}) {
     if (chartCache.has(chart.image_id)) return chartCache.get(chart.image_id);
     const task = (async () => {
       const fetchRef = runtime.fetch || (typeof fetch === "function" ? fetch : null);
       if (!fetchRef) throw new Error("当前浏览器无法读取图表。");
-      const response = await fetchRef(`/api/charts/image?id=${encodeURIComponent(chart.image_id)}`, {
+      const { response, bytes } = await readExportResponse(fetchRef, `/api/charts/image?id=${encodeURIComponent(chart.image_id)}`, {
         method: "GET", cache: "force-cache", credentials: "same-origin",
-      });
+      }, "图表");
       const contentType = String(response && response.headers && response.headers.get("content-type") || "").split(";", 1)[0].trim().toLowerCase();
+      if (response && [401, 403].includes(response.status)) throw new Error(`图表“${chart.title}”访问权限已变化，请重新登录后导出。`);
       if (!response || !response.ok || contentType !== "image/jpeg") throw new Error(`图表“${chart.title}”暂时无法导出，请重试。`);
-      const bytes = new Uint8Array(await response.arrayBuffer());
       if (!bytes.length || bytes.length > MAX_CHART_BYTES) throw new Error(`图表“${chart.title}”文件大小异常。`);
       return { ...chart, bytes, ...parseJpeg(bytes) };
     })();
@@ -347,7 +372,7 @@
   }
 
   function stylesXml() {
-    return `${XML_DECLARATION}<w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:docDefaults><w:rPrDefault><w:rPr><w:rFonts w:ascii="Arial Unicode MS" w:hAnsi="Arial Unicode MS" w:eastAsia="Arial Unicode MS"/><w:sz w:val="22"/><w:szCs w:val="22"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/></w:rPr></w:rPrDefault><w:pPrDefault><w:pPr><w:spacing w:after="120" w:line="264" w:lineRule="auto"/></w:pPr></w:pPrDefault></w:docDefaults><w:style w:type="paragraph" w:default="1" w:styleId="Normal"><w:name w:val="Normal"/><w:qFormat/><w:pPr><w:spacing w:before="0" w:after="120" w:line="264" w:lineRule="auto"/></w:pPr><w:rPr><w:rFonts w:ascii="Arial Unicode MS" w:hAnsi="Arial Unicode MS" w:eastAsia="Arial Unicode MS"/><w:sz w:val="22"/><w:szCs w:val="22"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Title"><w:name w:val="Title"/><w:basedOn w:val="Normal"/><w:qFormat/><w:pPr><w:jc w:val="center"/><w:spacing w:before="0" w:after="160"/></w:pPr><w:rPr><w:b/><w:color w:val="203748"/><w:sz w:val="60"/><w:szCs w:val="60"/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Subtitle"><w:name w:val="Subtitle"/><w:basedOn w:val="Normal"/><w:pPr><w:jc w:val="center"/><w:spacing w:after="80"/></w:pPr><w:rPr><w:color w:val="2B5163"/><w:sz w:val="30"/><w:szCs w:val="30"/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Kicker"><w:name w:val="Kicker"/><w:basedOn w:val="Normal"/><w:pPr><w:jc w:val="center"/><w:spacing w:before="1200" w:after="360"/></w:pPr><w:rPr><w:b/><w:color w:val="A06A12"/><w:sz w:val="20"/><w:szCs w:val="20"/><w:spacing w:val="24"/></w:rPr></w:style>${[["Heading1", "heading 1", 32, "2E74B5", 320, 160], ["Heading2", "heading 2", 26, "2E74B5", 240, 120], ["Heading3", "heading 3", 24, "1F4D78", 160, 80]].map(([id, name, size, color, before, after], index) => `<w:style w:type="paragraph" w:styleId="${id}"><w:name w:val="${name}"/><w:basedOn w:val="Normal"/><w:next w:val="Normal"/><w:qFormat/><w:pPr><w:keepNext/><w:spacing w:before="${before}" w:after="${after}"/></w:pPr><w:rPr><w:b/><w:color w:val="${color}"/><w:sz w:val="${size}"/><w:szCs w:val="${size}"/></w:rPr></w:style>`).join("")}<w:style w:type="paragraph" w:styleId="Caption"><w:name w:val="Caption"/><w:basedOn w:val="Normal"/><w:pPr><w:spacing w:before="40" w:after="120"/></w:pPr><w:rPr><w:color w:val="59636E"/><w:sz w:val="18"/><w:szCs w:val="18"/><w:i/></w:rPr></w:style><w:style w:type="character" w:styleId="Hyperlink"><w:name w:val="Hyperlink"/><w:unhideWhenUsed/><w:rPr><w:color w:val="0F766E"/><w:u w:val="single"/></w:rPr></w:style></w:styles>`;
+    return `${XML_DECLARATION}<w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:docDefaults><w:rPrDefault><w:rPr><w:rFonts w:ascii="Arial Unicode MS" w:hAnsi="Arial Unicode MS" w:eastAsia="Arial Unicode MS"/><w:sz w:val="22"/><w:szCs w:val="22"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/></w:rPr></w:rPrDefault><w:pPrDefault><w:pPr><w:spacing w:after="120" w:line="264" w:lineRule="auto"/></w:pPr></w:pPrDefault></w:docDefaults><w:style w:type="paragraph" w:default="1" w:styleId="Normal"><w:name w:val="Normal"/><w:qFormat/><w:pPr><w:spacing w:before="0" w:after="120" w:line="264" w:lineRule="auto"/></w:pPr><w:rPr><w:rFonts w:ascii="Arial Unicode MS" w:hAnsi="Arial Unicode MS" w:eastAsia="Arial Unicode MS"/><w:sz w:val="22"/><w:szCs w:val="22"/><w:lang w:val="en-US" w:eastAsia="zh-CN"/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Title"><w:name w:val="Title"/><w:basedOn w:val="Normal"/><w:qFormat/><w:pPr><w:jc w:val="center"/><w:spacing w:before="0" w:after="160"/></w:pPr><w:rPr><w:b/><w:color w:val="000000"/><w:sz w:val="44"/><w:szCs w:val="44"/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Subtitle"><w:name w:val="Subtitle"/><w:basedOn w:val="Normal"/><w:pPr><w:jc w:val="center"/><w:spacing w:after="80"/></w:pPr><w:rPr><w:color w:val="000000"/><w:sz w:val="30"/><w:szCs w:val="30"/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Kicker"><w:name w:val="Kicker"/><w:basedOn w:val="Normal"/><w:pPr><w:jc w:val="center"/><w:spacing w:before="0" w:after="160"/></w:pPr><w:rPr><w:b/><w:color w:val="000000"/><w:sz w:val="20"/><w:szCs w:val="20"/><w:spacing w:val="24"/></w:rPr></w:style>${[["Heading1", "heading 1", 32, "000000", 320, 160], ["Heading2", "heading 2", 26, "000000", 240, 120], ["Heading3", "heading 3", 24, "000000", 160, 80]].map(([id, name, size, color, before, after], index) => `<w:style w:type="paragraph" w:styleId="${id}"><w:name w:val="${name}"/><w:basedOn w:val="Normal"/><w:next w:val="Normal"/><w:qFormat/><w:pPr><w:keepNext/><w:spacing w:before="${before}" w:after="${after}"/></w:pPr><w:rPr><w:b/><w:color w:val="${color}"/><w:sz w:val="${size}"/><w:szCs w:val="${size}"/></w:rPr></w:style>`).join("")}<w:style w:type="paragraph" w:styleId="Caption"><w:name w:val="Caption"/><w:basedOn w:val="Normal"/><w:pPr><w:spacing w:before="40" w:after="120"/></w:pPr><w:rPr><w:color w:val="59636E"/><w:sz w:val="18"/><w:szCs w:val="18"/><w:i/></w:rPr></w:style><w:style w:type="character" w:styleId="Hyperlink"><w:name w:val="Hyperlink"/><w:unhideWhenUsed/><w:rPr><w:color w:val="0F766E"/><w:u w:val="single"/></w:rPr></w:style></w:styles>`;
   }
 
   function numberingXml() {
@@ -396,12 +421,12 @@
       relationships.push({ id: relationId, type: "image", target: `media/${filename}` });
       media.push({ name: `word/media/${filename}`, data: asset.bytes });
       const source = model.sources.find((item) => item.id === chart.report_id) || { id: chart.report_id, title: chart.report_title };
-      const url = canonicalSourceUrl(chart.report_id, source, model.source_origin);
+      const url = canonicalSourceUrl(chart.source_id || chart.report_id, source, model.source_origin);
       const caption = [chart.description, chart.metrics.join(" · ")].filter(Boolean).join("  ");
       return [
-        paragraphXml(runXml(chart.title, { bold: true, color: "1F4D78", size: 22 }), { keepNext: true }),
+        paragraphXml(runXml(chart.title, { bold: true, color: "000000", size: 22 }), { keepNext: true }),
         paragraphXml(drawingXml(asset, relationId, drawingId++), { align: "center", keepNext: true }),
-        paragraphXml(`${caption ? runXml(`${caption}  `, { color: "59636E", size: 18 }) : ""}${hyperlink("查看来源报告", url)}`, { style: "Caption" }),
+        paragraphXml(`${caption ? runXml(`${caption}  `, { color: "59636E", size: 18 }) : ""}${hyperlink(chart.report_id ? "查看来源报告" : "查看图表来源", url)}`, { style: "Caption" }),
       ].join("");
     };
     const assignment = chartAssignments(model);
@@ -412,7 +437,7 @@
     if (model.research_scope.length) body.push(paragraphXml(runXml(`研究范围：${model.research_scope.join(" · ")}`, { color: "59636E", size: 20 }), { align: "center" }));
     body.push(paragraphXml(runXml(`生成时间：${dateLabel(model.generated_at || createdAt)}`, { color: "59636E", size: 20 }), { align: "center" }));
     body.push(paragraphXml(runXml("基于 KC桌面跨报告 RAG 的来源化研究摘要。请结合来源报告核验后使用。", { italic: true, color: "59636E", size: 19 }), { align: "center" }));
-    body.push(paragraphXml(runXml(""), { pageBreakBefore: true }));
+    if (!model.charts.length) body.push(paragraphXml(runXml("本次没有匹配到可引用图表，导出包含文字研究与来源报告。", { color: "59636E", size: 19 })));
     if (model.executive_summary) {
       body.push(paragraphXml(runXml("研究摘要"), { style: "Heading1" }));
       body.push(paragraphXml(runXml(model.executive_summary)));
@@ -442,8 +467,9 @@
     if (model.sources.length) {
       body.push(paragraphXml(runXml("来源报告"), { style: "Heading1" }));
       model.sources.forEach((source) => {
-        const meta = [source.institution, source.industry, source.date].filter(Boolean).join(" · ");
-        body.push(paragraphXml(`${hyperlink(source.title || source.id, canonicalSourceUrl(source.id, source, model.source_origin))}${meta ? runXml(`\n${meta}`, { color: "59636E", size: 18 }) : ""}`, { numbered: true }));
+        const meta = [source.institution, source.industry, source.date, source.partial_excerpt ? "报告正文节选" : ""].filter(Boolean).join(" · ");
+        body.push(paragraphXml(hyperlink(source.title || source.id, canonicalSourceUrl(source.id, source, model.source_origin)), { numbered: true }));
+        if (meta) body.push(paragraphXml(runXml(meta, { color: "59636E", size: 18 }), { style: "Caption" }));
       });
     }
     if (model.follow_up_questions.length) {
@@ -451,7 +477,7 @@
       model.follow_up_questions.forEach((question) => body.push(paragraphXml(runXml(question), { numbered: 2 })));
     }
     body.push(paragraphXml(runXml("说明：本材料由 AI 根据已索引研究资料生成，不构成投资建议；重要结论请以来源报告为准。", { italic: true, color: "59636E", size: 18 })));
-    const documentXml = `${XML_DECLARATION}<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><w:body>${body.join("")}<w:sectPr><w:headerReference w:type="default" r:id="rId3"/><w:footerReference w:type="default" r:id="rId4"/><w:pgSz w:w="12240" w:h="15840"/><w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440" w:header="708" w:footer="708" w:gutter="0"/><w:cols w:space="720"/><w:docGrid w:linePitch="360"/></w:sectPr></w:body></w:document>`;
+    const documentXml = `${XML_DECLARATION}<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><w:body>${body.join("")}<w:sectPr><w:headerReference w:type="default" r:id="rId3"/><w:footerReference w:type="default" r:id="rId4"/><w:pgSz w:w="11906" w:h="16838"/><w:pgMar w:top="1134" w:right="1134" w:bottom="1134" w:left="1134" w:header="708" w:footer="708" w:gutter="0"/><w:cols w:space="720"/><w:docGrid w:linePitch="360"/></w:sectPr></w:body></w:document>`;
     const relationshipTypes = {
       styles: "http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles",
       numbering: "http://schemas.openxmlformats.org/officeDocument/2006/relationships/numbering",
@@ -512,7 +538,7 @@
       const asset = assets.get(chart.image_id);
       const source = sourceMap.get(chart.report_id) || { id: chart.report_id, title: chart.report_title };
       const caption = [chart.description, chart.metrics.join(" · ")].filter(Boolean).join(" · ");
-      return `<figure><h3>${escapeHtml(chart.title)}</h3><img src="${bytesToDataUrl(asset.bytes)}" width="${asset.width}" height="${asset.height}" alt="${escapeHtml(chart.title)}"><figcaption>${caption ? `<span>${escapeHtml(caption)}</span>` : ""}<a href="${escapeHtml(canonicalSourceUrl(chart.report_id, source, model.source_origin))}">查看来源报告</a></figcaption></figure>`;
+      return `<figure><h3>${escapeHtml(chart.title)}</h3><img src="${bytesToDataUrl(asset.bytes)}" width="${asset.width}" height="${asset.height}" alt="${escapeHtml(chart.title)}"><figcaption>${caption ? `<span>${escapeHtml(caption)}</span>` : ""}<a href="${escapeHtml(canonicalSourceUrl(chart.source_id || chart.report_id, source, model.source_origin))}">查看来源报告</a></figcaption></figure>`;
     };
     const body = [];
     body.push(`<section class="cover"><p class="kicker">KC桌面研究报告</p><h1>${escapeHtml(model.research_title || model.question)}</h1>${model.question && model.question !== model.research_title ? `<p class="subtitle">${escapeHtml(model.question)}</p>` : ""}${model.research_scope.length ? `<p class="scope">研究范围：${escapeHtml(model.research_scope.join(" · "))}</p>` : ""}<p class="date">生成时间：${escapeHtml(dateLabel(model.generated_at))}</p><p class="notice">基于 KC桌面跨报告 RAG 的来源化研究摘要。请结合来源报告核验后使用。</p></section>`);
@@ -527,7 +553,7 @@
     }
     if (assignment.unmatched.length) body.push(`<section><h2>补充图表证据</h2>${assignment.unmatched.map(chartHtml).join("")}</section>`);
     if (model.data_points.length) body.push(`<section><h2>关键数据</h2><div class="data-grid">${model.data_points.map((item) => `<article><h3>${escapeHtml(item.label)}</h3><strong>${escapeHtml(item.value)}</strong>${item.context ? `<p>${escapeHtml(item.context)}</p>` : ""}${printSourceRefs(item.source_ids, sourceIndex, sourceMap, model.source_origin)}</article>`).join("")}</div></section>`);
-    if (model.sources.length) body.push(`<section><h2>来源报告</h2><ol class="sources">${model.sources.map((source) => `<li><a href="${escapeHtml(canonicalSourceUrl(source.id, source, model.source_origin))}">${escapeHtml(source.title || source.id)}</a>${[source.institution, source.industry, source.date].filter(Boolean).length ? `<span>${escapeHtml([source.institution, source.industry, source.date].filter(Boolean).join(" · "))}</span>` : ""}</li>`).join("")}</ol></section>`);
+    if (model.sources.length) body.push(`<section><h2>来源报告</h2><ol class="sources">${model.sources.map((source) => `<li><a href="${escapeHtml(canonicalSourceUrl(source.id, source, model.source_origin))}">${escapeHtml(source.title || source.id)}</a>${[source.institution, source.industry, source.date, source.partial_excerpt ? "报告正文节选" : ""].filter(Boolean).length ? `<span>${escapeHtml([source.institution, source.industry, source.date, source.partial_excerpt ? "报告正文节选" : ""].filter(Boolean).join(" · "))}</span>` : ""}</li>`).join("")}</ol></section>`);
     if (model.follow_up_questions.length) body.push(`<section><h2>可继续研究</h2><ol>${model.follow_up_questions.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ol></section>`);
     body.push('<p class="disclaimer">说明：本材料由 AI 根据已索引研究资料生成，不构成投资建议；重要结论请以来源报告为准。</p></main>');
     return `<!doctype html><html lang="${CONTENT_DOCUMENT_LANG}" dir="${CONTENT_DOCUMENT_DIR}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KC桌面研究报告</title><style>@page{size:A4;margin:16mm 18mm 18mm}*{box-sizing:border-box}html{color:#17212b;background:#fff;font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;font-size:10.5pt;line-height:1.65}body{margin:0}.cover{display:flex;min-height:250mm;flex-direction:column;align-items:center;justify-content:center;text-align:center;break-after:page}.kicker{margin:0 0 18pt;color:#a06a12;font-size:10pt;font-weight:800;letter-spacing:.16em}.cover h1{max-width:150mm;margin:0;color:#203748;font-size:27pt;line-height:1.28}.subtitle{max-width:148mm;margin:10pt 0 0;color:#2b5163;font-size:14pt}.scope,.date,.notice{max-width:145mm;color:#59636e}.scope{margin:24pt 0 0}.date{margin:7pt 0 0}.notice{margin:56pt 0 0;font-size:9pt;font-style:italic}.report>section{margin:0 0 18pt}.report h2{margin:15pt 0 7pt;color:#2e74b5;font-size:16pt;line-height:1.3;break-after:avoid}.report h3{margin:10pt 0 4pt;color:#1f4d78;font-size:12pt;line-height:1.35;break-after:avoid}.report p{margin:0 0 7pt;white-space:pre-line}.finding{margin-bottom:14pt}.source-refs{display:flex;gap:6pt;align-items:center;color:#59636e;font-size:9pt}.source-refs a,.sources a,figcaption a{color:#0f766e;text-decoration:underline}.data-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8pt}.data-grid article{padding:10pt;border:1px solid #dfe5e8;border-radius:6pt;break-inside:avoid}.data-grid strong{display:block;margin:3pt 0;font-size:15pt}figure{margin:12pt 0 16pt;break-inside:avoid}figure h3{margin-bottom:6pt}figure img{display:block;width:100%;height:auto;max-height:150mm;object-fit:contain;border:1px solid #e2e8eb}figcaption{display:flex;justify-content:space-between;gap:10pt;margin-top:5pt;color:#59636e;font-size:9pt}.sources li{margin:0 0 7pt}.sources span{display:block;color:#59636e;font-size:9pt}.disclaimer{margin-top:24pt;padding-top:8pt;border-top:1px solid #d7dbe2;color:#59636e;font-size:8.5pt;font-style:italic}@media screen{body{max-width:210mm;margin:20px auto;padding:16mm 18mm;box-shadow:0 8px 36px rgba(15,23,42,.12)}.cover{min-height:255mm}}@media print{a{color:#0f766e!important}.data-grid article{border-color:#dfe5e8}}</style></head><body>${body.join("")}</body></html>`;
@@ -551,38 +577,221 @@
     return result;
   }
 
-  async function openPdfPrint(payload, runtime = {}) {
-    const windowRef = runtime.window || window;
-    const printWindow = runtime.printWindow || windowRef.open("", "_blank");
-    if (!printWindow) throw new Error("浏览器拦截了 PDF 保存窗口，请允许弹出窗口后重试。");
-    try { printWindow.opener = null; } catch (_error) { /* Best effort. */ }
-    printWindow.document.open();
-    printWindow.document.write(`<!doctype html><html lang="${CONTENT_DOCUMENT_LANG}" dir="${CONTENT_DOCUMENT_DIR}"><meta charset="utf-8"><title>正在准备研究报告</title><body style="font-family:system-ui;padding:32px">正在准备可打印的研究报告与图表…</body></html>`);
-    printWindow.document.close();
-    try {
-      const html = await buildPrintHtml(payload, runtime);
-      printWindow.document.open(); printWindow.document.write(html); printWindow.document.close();
-      if (printWindow.document.fonts && printWindow.document.fonts.ready) await printWindow.document.fonts.ready;
-      const images = Array.from(printWindow.document.images || []);
-      await Promise.all(images.map((image) => image.complete
-        ? (typeof image.decode === "function" ? image.decode().catch(() => {}) : Promise.resolve())
-        : new Promise((resolve, reject) => { image.addEventListener("load", resolve, { once: true }); image.addEventListener("error", reject, { once: true }); })));
-      printWindow.focus(); printWindow.print();
-      return { filename: "", model: normalizePayload(payload, runtime), status: "print_dialog_opened" };
-    } catch (error) {
-      try { printWindow.close(); } catch (_closeError) { /* Best effort. */ }
-      throw error;
+  const PDF_MIME_TYPE = "application/pdf";
+  const PDF_ASSET_ROOT = "/assets/vendor/research-pdf/";
+  let pdfDependencies;
+  let pdfFontBytes;
+
+  function loadPdfScript(filename, globalName, runtime) {
+    if (window[globalName]) return Promise.resolve(window[globalName]);
+    const documentRef = runtime.document || (typeof document !== "undefined" ? document : null);
+    if (!documentRef) return Promise.reject(new Error("当前环境无法加载 PDF 导出组件。"));
+    return new Promise((resolve, reject) => {
+      const script = documentRef.createElement("script");
+      const timer = setTimeout(() => {
+        script.remove(); reject(new Error("PDF 导出组件加载超时，请重试。"));
+      }, 30000);
+      script.src = `${PDF_ASSET_ROOT}${filename}`;
+      script.async = true;
+      script.onload = () => {
+        clearTimeout(timer);
+        if (window[globalName]) resolve(window[globalName]);
+        else reject(new Error("PDF 导出组件无法初始化，请刷新页面后重试。"));
+      };
+      script.onerror = () => {
+        clearTimeout(timer); script.remove(); reject(new Error("PDF 导出组件加载失败，请重试。"));
+      };
+      documentRef.head.appendChild(script);
+    });
+  }
+
+  async function loadPdfDependencies(runtime) {
+    if (runtime.PDFLib && runtime.fontkit) return { PDFLib: runtime.PDFLib, fontkit: runtime.fontkit };
+    if (!pdfDependencies) {
+      pdfDependencies = Promise.all([
+        loadPdfScript("pdf-lib-1.17.1.min.js", "PDFLib", runtime),
+        loadPdfScript("fontkit-1.1.1.min.js", "fontkit", runtime),
+      ]).then(([PDFLib, fontkit]) => ({ PDFLib, fontkit })).catch((error) => {
+        pdfDependencies = null; throw error;
+      });
     }
+    return pdfDependencies;
+  }
+
+  async function loadPdfFont(runtime) {
+    if (runtime.fontBytes) return runtime.fontBytes;
+    if (!pdfFontBytes) {
+      pdfFontBytes = (async () => {
+        const fetchRef = runtime.fetch || fetch;
+        const { response, bytes } = await readExportResponse(fetchRef, `${PDF_ASSET_ROOT}ResearchSans-Regular-a08975ee9c1e.ttf`, { credentials: "same-origin", cache: "force-cache" }, "PDF 中文字体");
+        if (!response.ok) throw new Error("PDF 中文字体加载失败，请重试。");
+        if (bytes.length < 1000 || bytes.length > 12 * 1024 * 1024
+          || !(bytes[0] === 0 && bytes[1] === 1 && bytes[2] === 0 && bytes[3] === 0)) {
+          throw new Error("PDF 中文字体文件异常，请刷新页面后重试。");
+        }
+        return bytes;
+      })().catch((error) => { pdfFontBytes = null; throw error; });
+    }
+    return pdfFontBytes;
+  }
+
+  async function buildPdf(payload, runtime = {}) {
+    if (typeof Blob !== "function") throw new Error("当前浏览器不支持 PDF 导出。");
+    const model = normalizePayload(payload, runtime);
+    const createdAt = normalizeDate(runtime.createdAt || model.generated_at);
+    const [assets, dependencies, fontBytes] = await Promise.all([
+      chartAssets(model, runtime), loadPdfDependencies(runtime), loadPdfFont(runtime),
+    ]);
+    const { PDFDocument, PDFName, PDFString, rgb } = dependencies.PDFLib;
+    const pdf = await PDFDocument.create();
+    pdf.registerFontkit(dependencies.fontkit);
+    // Full TrueType embedding avoids fontkit subset glyph loss in CJK PDFs.
+    const font = await pdf.embedFont(fontBytes, { subset: false });
+    pdf.setTitle(model.research_title); pdf.setAuthor(PUBLIC_BRAND);
+    pdf.setCreator("Research Export"); pdf.setCreationDate(createdAt); pdf.setModificationDate(createdAt);
+    const width = 595.28, height = 841.89, margin = 51, bottom = 55;
+    const bodyWidth = width - margin * 2;
+    const ink = rgb(0.09, 0.13, 0.17), muted = rgb(0.35, 0.39, 0.43), linkColor = rgb(0.04, 0.39, 0.37);
+    let page, y;
+    const newPage = () => {
+      page = pdf.addPage([width, height]); y = height - 75;
+      page.drawText("KC桌面  |  RESEARCH BRIEF", { x: margin, y: height - 37, size: 8, font, color: muted });
+      page.drawLine({ start: { x: margin, y: height - 46 }, end: { x: width - margin, y: height - 46 }, thickness: 0.4, color: rgb(0.83, 0.86, 0.88) });
+    };
+    const ensure = (points) => { if (!page || y - points < bottom) newPage(); };
+    const wrap = (value, size, maxWidth = bodyWidth) => {
+      const lines = [];
+      for (const paragraph of text(value).replace(/\t/gu, "    ").split(/\r?\n/u)) {
+        let line = "";
+        // Keep words intact where possible; CJK wraps between characters.
+        const tokens = paragraph.match(/[A-Za-z0-9]+(?:[.,:/+&'_-][A-Za-z0-9]+)*|\s+|[^\s]/gu) || [""];
+        for (const token of tokens) {
+          if (line && font.widthOfTextAtSize(line + token, size) > maxWidth) {
+            lines.push(line.trimEnd()); line = "";
+          }
+          for (const character of token) {
+            if (line && font.widthOfTextAtSize(line + character, size) > maxWidth) {
+              lines.push(line.trimEnd()); line = "";
+            }
+            if (line || character.trim()) line += character;
+          }
+        }
+        lines.push(line.trimEnd());
+      }
+      return lines;
+    };
+    const linkRect = (url, x, lineY, lineWidth, size) => {
+      const annotation = pdf.context.obj({
+        Type: "Annot", Subtype: "Link", Rect: [x, lineY - 2, x + lineWidth, lineY + size], Border: [0, 0, 0],
+        A: { Type: "Action", S: "URI", URI: PDFString.of(url) },
+      });
+      const ref = pdf.context.register(annotation);
+      const existing = page.node.Annots();
+      if (existing) existing.push(ref); else page.node.set(PDFName.of("Annots"), pdf.context.obj([ref]));
+    };
+    const paragraph = (value, options = {}) => {
+      const size = options.size || 10.5, leading = options.leading || size * 1.65;
+      const lines = wrap(value, size);
+      ensure(Math.min(lines.length, options.keepNext ? 4 : 2) * leading + (options.keepNext ? 28 : 0));
+      for (const line of lines) {
+        ensure(leading);
+        if (line) {
+          page.drawText(line, { x: margin, y, size, font, color: options.url ? linkColor : options.color || ink });
+          if (options.url) linkRect(options.url, margin, y, font.widthOfTextAtSize(line, size), size);
+        }
+        y -= leading;
+      }
+      y -= options.after === undefined ? 8 : options.after;
+    };
+    const heading = (value, level = 1) => {
+      ensure(70); y -= 8; paragraph(value, { size: level === 1 ? 15 : 12, keepNext: true, after: 5 });
+    };
+    const sourceIndex = new Map(model.sources.map((source, index) => [source.id, index + 1]));
+    const refs = (ids) => {
+      for (const id of ids.filter((value) => sourceIndex.has(value))) {
+        paragraph(`来源 [S${sourceIndex.get(id)}]`, { size: 8.5, after: 2, url: canonicalSourceUrl(id, {}, model.source_origin) });
+      }
+      y -= 4;
+    };
+    const chartBlock = async (chart) => {
+      const asset = assets.get(chart.image_id);
+      const image = await pdf.embedJpg(asset.bytes);
+      const scale = Math.min(bodyWidth / asset.width, 280 / asset.height);
+      const imageWidth = asset.width * scale, imageHeight = asset.height * scale;
+      const titleLines = wrap(chart.title, 11).length;
+      ensure(imageHeight + titleLines * 18 + 48);
+      paragraph(chart.title, { size: 11, keepNext: true, after: 4 });
+      page.drawImage(image, { x: margin + (bodyWidth - imageWidth) / 2, y: y - imageHeight, width: imageWidth, height: imageHeight });
+      y -= imageHeight + 13;
+      if (chart.description) paragraph(chart.description, { size: 8.5, color: muted, after: 3 });
+      if (chart.metrics.length) paragraph(chart.metrics.join(" · "), { size: 8.5, color: muted, after: 3 });
+      paragraph(`图表来源 ${chart.report_title || `[S${sourceIndex.get(chart.report_id) || "图表"}]`}`, {
+        size: 8.5, after: 12, url: canonicalSourceUrl(chart.source_id || chart.report_id, chart, model.source_origin),
+      });
+    };
+    newPage();
+    paragraph(model.research_title, { size: 22, leading: 31, keepNext: true, after: 14 });
+    if (model.research_scope.length) paragraph(`研究范围：${model.research_scope.join(" · ")}`, { size: 9, color: muted, after: 3 });
+    paragraph(`生成时间：${dateLabel(model.generated_at || createdAt)}`, { size: 9, color: muted, after: 14 });
+    if (model.executive_summary) { heading("研究摘要"); paragraph(model.executive_summary); refs(model.summary_source_ids); }
+    const assignment = chartAssignments(model);
+    if (model.findings.length) heading("主要发现");
+    for (let index = 0; index < model.findings.length; index += 1) {
+      const finding = model.findings[index];
+      heading(`${index + 1}. ${finding.title}`, 2);
+      if (finding.summary) paragraph(finding.summary);
+      refs(finding.source_ids);
+      for (const chart of assignment.groups[index]) await chartBlock(chart);
+    }
+    if (assignment.unmatched.length) {
+      heading("补充图表证据");
+      for (const chart of assignment.unmatched) await chartBlock(chart);
+    }
+    if (!model.charts.length) paragraph("本次没有匹配到可引用图表，以下为文字研究与来源报告。", { size: 9, color: muted });
+    if (model.data_points.length) {
+      heading("关键数据");
+      for (const item of model.data_points) {
+        heading(`${item.label}  ${item.value}`, 2);
+        if (item.context) paragraph(item.context);
+        refs(item.source_ids);
+      }
+    }
+    if (model.sources.length) {
+      heading("来源报告");
+      for (const source of model.sources) {
+        paragraph(`[S${sourceIndex.get(source.id)}] ${source.title}`, { url: canonicalSourceUrl(source.id, source, model.source_origin), after: 3 });
+        const meta = [source.institution, source.industry, source.date, source.partial_excerpt ? "报告正文节选" : ""].filter(Boolean).join(" · ");
+        if (meta) paragraph(meta, { size: 8.5, color: muted, after: 8 });
+      }
+    }
+    if (model.follow_up_questions.length) {
+      heading("可继续研究");
+      model.follow_up_questions.forEach((question, index) => paragraph(`${index + 1}. ${question}`));
+    }
+    paragraph("本材料根据已索引研究资料生成。重要结论请结合来源报告核验。", { size: 8, color: muted });
+    const pages = pdf.getPages();
+    pages.forEach((item, index) => item.drawText(`${index + 1} / ${pages.length}`, { x: width - margin - 32, y: 32, size: 8, font, color: muted }));
+    const bytes = await pdf.save();
+    return { blob: new Blob([bytes], { type: PDF_MIME_TYPE }), bytes, filename: safeFilename("pdf", model, createdAt), model };
+  }
+
+  async function downloadPdf(payload, runtime = {}) {
+    const result = await buildPdf(payload, runtime);
+    saveBlob(result.blob, result.filename, runtime);
+    return { ...result, status: "downloaded" };
   }
 
   window.PortalReportResearchExport = Object.freeze({
     DOCX_MIME_TYPE,
+    PDF_MIME_TYPE,
     normalizePayload,
     chartAssignments,
     buildDocx,
     buildPrintHtml,
     downloadDocx,
-    openPdfPrint,
+    buildPdf,
+    downloadPdf,
+    openPdfPrint: downloadPdf,
     _clearChartCache: () => chartCache.clear(),
   });
 })();
