@@ -66,8 +66,8 @@ ASCII-escaped JSON request occupied 13,951 bytes.
 
 The adapter compared JSON bytes plus the 1,000-character margin against the
 character allowance. [DeepL counts source Unicode code points](https://developers.deepl.com/docs/resources/usage-limits),
-so the encoded-byte estimate incorrectly rejected the request. The adapter now
-reserves the protected XML text's Unicode length as a conservative character
+so the encoded-byte estimate incorrectly rejected the request. The first fix
+reserved the protected XML text's Unicode length as a conservative character
 upper bound; the 120,000-byte body limit remains a separate check. Actual returned
 billing still settles reservations, and uncertain responses retain their reserved
 characters. The request cap, quota margin, translation quality and publication
@@ -92,3 +92,32 @@ DeepSeek and failed protected-placeholder validation in DeepL. Its exact
 paragraph now has a reviewed Arabic rendering with all three quantities
 preserved. Existing valid translations retain priority; different text or
 contexts continue through normal translation. No quality gate is disabled.
+
+## Follow-up: 2026-09-09 — exclude XML protection markup from quota
+
+Run `34320977236` exposed a second allowance overestimate in the earlier fix.
+The remaining 31-row Japanese repair had 5,281 original source code points but
+7,010 after XML protection, against a remaining allowance of 7,529. Including the
+1,000-character margin, the original text fitted while the XML estimate did not.
+
+[DeepL excludes XML tags when tag handling is enabled](https://developers.deepl.com/docs/best-practices/estimating-character-usage).
+Character reservations therefore now count the original source code points,
+including all placeholder text conservatively, without counting generated tags
+or entity-escape expansion. The independent request-byte limit, actual billed
+settlement, unknown-response reservations and 1,000-character margin remain.
+Tests compare the original source count against parsed XML text nodes and cover
+a multilingual canary whose source fits but whose XML representation does not.
+
+The rerun also restored the preceding locale checkpoint correctly but still
+generated 313 missing units: both runs translated 449 Chinese report titles
+anew, and changed wording in those titles changed their derived HTML/LLMS source
+keys. Chinese titles now have a separate source/model/prompt-keyed checkpoint,
+restored before title translation and saved immediately after it, including when
+the translation step fails. It only fills missing titles; it never restores a
+whole old catalog over refreshed report metadata. Successful title results are
+saved atomically as they complete. The initial checkpoint can reuse published
+Chinese titles only when the report ID and full normalized original title both
+match; existing titles and checkpoint entries retain priority. The new title
+checkpoint is validated before CI saves it. Multilingual cache restore also selects the
+newest cumulative checkpoint across code revisions, with existing compatibility
+and per-entry quality validation retained.

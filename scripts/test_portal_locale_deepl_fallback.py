@@ -149,6 +149,15 @@ class DeepLFallbackTests(unittest.TestCase):
 
 class GroupedDeepLPreflightTests(unittest.TestCase):
     def test_real_adapter_repairs_arabic_canary_with_12854_characters_remaining(self):
+        self.run_real_adapter_canary(remaining_budget=12854)
+
+    def test_real_adapter_does_not_charge_xml_overhead_against_5000_character_budget(self):
+        # Run 34320977236 still stopped when raw source characters fitted the
+        # allowance but added XML tags and escaping did not. DeepL does not
+        # bill those wrappers; the same grouped request must remain usable.
+        self.run_real_adapter_canary(remaining_budget=5000)
+
+    def run_real_adapter_canary(self, *, remaining_budget):
         # Run 34292953933 stopped on 32 Arabic rows although 12,854 characters
         # remained. Preserve their lengths, placeholder counts and non-ASCII
         # counts without embedding report copy or depending on CI artifacts.
@@ -175,6 +184,8 @@ class GroupedDeepLPreflightTests(unittest.TestCase):
         source_by_xml = dict(zip(protected, sources))
         self.assertEqual(sum(map(len, sources)), 3724)
         self.assertEqual(sum(map(len, protected)), 4606)
+        self.assertLess(sum(map(len, sources)) + deepl.QUOTA_RESERVE_CHARACTERS, remaining_budget)
+        self.assertGreater(sum(map(len, protected)) + deepl.QUOTA_RESERVE_CHARACTERS, 5000)
         self.assertLess(sum(map(len, protected)) + deepl.QUOTA_RESERVE_CHARACTERS, 12854)
         self.assertGreater(deepl._payload_size(deepl._translation_payload("ar", protected)), 12854)
         self.assertLess(deepl._payload_size(deepl._translation_payload("ar", protected)), deepl.MAX_REPAIR_BODY_BYTES)
@@ -184,7 +195,7 @@ class GroupedDeepLPreflightTests(unittest.TestCase):
         accepted_keys = {key for index, (key, unit) in enumerate(units.items())
                          if index < 16 or len(unit.source) <= 12}
         residual_sources = [unit.source for key, unit in units.items() if key not in accepted_keys]
-        allowance = 12854 + 2 * sum(map(len, residual_sources))
+        allowance = remaining_budget + 2 * sum(map(len, residual_sources))
         calls, repairs = [], []
         transport = mock.Mock()
         transport.get.return_value = mock.Mock(status_code=200)
@@ -217,7 +228,7 @@ class GroupedDeepLPreflightTests(unittest.TestCase):
             repairs.append((locale, repaired_sources))
             if locale == "ar":
                 snapshot = adapter.snapshot()
-                self.assertEqual(snapshot["remaining_character_budget"] + snapshot["reserved_characters"], 12854)
+                self.assertEqual(snapshot["remaining_character_budget"] + snapshot["reserved_characters"], remaining_budget)
             rows = []
             for text, source in zip(payload["text"], repaired_sources, strict=True):
                 root = ET.fromstring(text)
@@ -264,7 +275,7 @@ class GroupedDeepLPreflightTests(unittest.TestCase):
         self.assertEqual(provider.call_count, 3, "The saved cache must prevent repeated primary requests")
         self.assertEqual(transport.post.call_count, 3, "The saved cache must prevent repeated paid repairs")
         transport.get.assert_called_once()
-        self.assertEqual(adapter.snapshot()["remaining_character_budget"], 12854 - 3724)
+        self.assertEqual(adapter.snapshot()["remaining_character_budget"], remaining_budget - 3724)
         self.assertEqual(adapter.snapshot()["stop_reason"], "")
 
     def run_case(self, *, accepted=2, repair_echo=False, repair_echo_count=1, repair_xml_error=False, http_status=200,

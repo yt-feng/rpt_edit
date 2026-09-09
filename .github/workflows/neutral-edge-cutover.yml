@@ -224,6 +224,7 @@ jobs:
           python3 -B scripts/test_portal_locale_preflight_repair.py
           python3 -B scripts/test_check_deepseek_balance.py
           python3 -B scripts/test_deepl_locale_repair.py
+          python3 -B scripts/test_translate_portal_titles.py
           python3 -B scripts/test_portal_locale_history.py
           python3 -B scripts/test_portal_locale_scope.py
           python3 -B scripts/test_portal_locale_literals.py
@@ -541,6 +542,14 @@ jobs:
             --password-rules portal_suite/password_rules.json \
             --r2-prefix "$R2_OBJECT_PREFIX" --storage-limit-gb 100 --sync-r2
 
+      - name: Restore Chinese report title checkpoint
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ runner.temp }}/portal-title-cache/cache-v1.json
+          key: portal-title-cache-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            portal-title-cache-v1-
+
       - name: Translate missing report titles
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
@@ -550,7 +559,31 @@ jobs:
           set -euo pipefail
           python3 scripts/translate_portal_titles.py \
             --catalog-path portal_suite/data/catalog.json \
+            --cache-path "$RUNNER_TEMP/portal-title-cache/cache-v1.json" \
+            --seed-catalog-path "$RUNNER_TEMP/previous-public-catalog.json" \
             --model "$DEEPSEEK_MODEL" --deepseek-base-url "$DEEPSEEK_BASE_URL" --workers 500
+
+      - name: Detect Chinese report title checkpoint
+        id: title_checkpoint
+        if: always()
+        run: |
+          set -euo pipefail
+          if [ -s "$RUNNER_TEMP/portal-title-cache/cache-v1.json" ]; then
+            PYTHONPATH=scripts python3 - <<'PY'
+          import os
+          from pathlib import Path
+          from translate_portal_titles import load_title_cache
+          load_title_cache(Path(os.environ["RUNNER_TEMP"]) / "portal-title-cache/cache-v1.json")
+          PY
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Save Chinese report title checkpoint
+        if: always() && steps.title_checkpoint.outputs.present == 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ runner.temp }}/portal-title-cache/cache-v1.json
+          key: portal-title-cache-v1-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Download private chart search index
         env:
@@ -604,9 +637,9 @@ jobs:
         with:
           path: ${{ runner.temp }}/portal-locale-cache/cache-v1.json.gz
           key: portal-locale-cache-${{ hashFiles('scripts/build_portal_locales.py') }}-${{ github.run_id }}-${{ github.run_attempt }}
-          # Loader/prune validate schema, prompt/provider/model, and each source/quality entry.
+          # Use the newest cumulative checkpoint across code revisions. Loader/prune
+          # validate schema, prompt/provider/model, and each source/quality entry.
           restore-keys: |
-            portal-locale-cache-${{ hashFiles('scripts/build_portal_locales.py') }}-
             portal-locale-cache-
 
       - name: Use active multilingual cache only without a CI checkpoint

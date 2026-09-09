@@ -7,6 +7,7 @@ import threading
 import traceback
 import unittest
 from unittest import mock
+import xml.etree.ElementTree as ET
 
 import requests
 
@@ -14,6 +15,12 @@ from deepl_locale_repair import (
     API_ROOT, MAX_REPAIR_BODY_BYTES, DeepLQuotaExhausted, DeepLRepair, DeepLRepairError,
     _payload_size, _translation_payload, pack_repair_indexes,
 )
+
+
+def decoded_source_characters(payload):
+    # XML handling excludes tags and decodes entities. Count ignored-placeholder
+    # text too: its source length remains reserved until actual billing arrives.
+    return sum(len("".join(ET.fromstring(text).itertext())) for text in payload["text"])
 
 
 class Response:
@@ -152,25 +159,27 @@ class DeepLRepairTests(unittest.TestCase):
         self.assertEqual(transport.gets, [])
         self.assertEqual(transport.posts, [])
 
-    def test_character_reservation_includes_xml_and_preserves_1000_character_margin(self):
-        transport = Transport(count=0, limit=1005)
+    def test_source_character_reservation_preserves_1000_character_margin(self):
+        transport = Transport(count=0, limit=1001)
         repair = DeepLRepair(transport=transport)
         for _ in range(2):
             with self.assertRaises(DeepLQuotaExhausted):
-                repair.translate("ja", "文字")  # 9 protected XML codepoints plus the margin.
+                repair.translate("ja", "文字")  # 2 source codepoints plus the margin.
         self.assertEqual(len(transport.gets), 1)
         self.assertEqual(transport.posts, [])
 
-    def test_unicode_and_xml_character_budget_is_independent_of_json_bytes(self):
+    def test_unicode_source_exactly_fits_when_xml_and_json_exceed_character_budget(self):
         # Include CJK, a non-BMP character, combining text, XML escaping and
         # duplicate protected placeholders. Only the encoded body uses bytes.
         source = "深😀e\u0301<& __KC_PH_000__ __KC_PH_000__"
         expected_xml = ('<t>深😀e\u0301&lt;&amp; '
                         '<x id="0">__KC_PH_000__</x> '
                         '<x id="1">__KC_PH_000__</x></t>')
-        character_bound = len(expected_xml)
+        character_bound = len(source)
         request_body_bytes = _payload_size(_translation_payload("ja", [expected_xml]))
-        self.assertGreater(request_body_bytes, character_bound)
+        self.assertGreater(request_body_bytes, len(expected_xml))
+        self.assertGreater(len(expected_xml), character_bound)
+        self.assertEqual(decoded_source_characters({"text": [expected_xml]}), character_bound)
         for allowance, succeeds in ((character_bound, True), (character_bound - 1, False)):
             with self.subTest(allowance=allowance):
                 transport = Transport(count=0, limit=1000 + allowance,
@@ -186,13 +195,46 @@ class DeepLRepairTests(unittest.TestCase):
                         repair.translate("ja", source)
                     self.assertEqual(transport.posts, [])
 
+    def test_thirty_one_row_incident_fits_source_quota_despite_xml_overhead(self):
+        # Same source/XML character counts and remaining allowance as run
+        # 34320977236, without depending on downloaded diagnostics at test time.
+        sources = []
+        for index in range(31):
+            marker_count = 4 if index < 15 else 3
+            markers = " ".join(f"__KC_PH_{marker:03d}__" for marker in range(marker_count))
+            prefix = f"{index}: {markers} "
+            sources.append(prefix + "深" * ((171 if index < 11 else 170) - len(prefix)))
+        source_characters = sum(map(len, sources))
+        self.assertEqual(source_characters, 5281)
+
+        def echo(_url, **kwargs):
+            payload = kwargs["json"]
+            protected_characters = sum(map(len, payload["text"]))
+            self.assertEqual(protected_characters, 7010)
+            self.assertGreater(protected_characters + 1000, 7529)
+            self.assertEqual(decoded_source_characters(payload), source_characters)
+            return Response({"translations": [
+                {"text": text, "billed_characters": len(source)}
+                for text, source in zip(payload["text"], sources, strict=True)
+            ]})
+
+        transport = Transport(count=0, limit=7529, response=echo)
+        repair = DeepLRepair(transport=transport)
+        self.assertEqual(repair.translate_many("ja", sources), sources)
+        self.assertEqual(len(transport.gets), 1)
+        self.assertEqual(len(transport.posts), 1)
+        self.assertEqual(repair.snapshot()["billed_characters"], 5281)
+        self.assertEqual(repair.snapshot()["remaining_character_budget"], 2248)
+        self.assertEqual(repair.snapshot()["reserved_characters"], 0)
+        self.assertEqual(repair.snapshot()["stop_reason"], "")
+
     def test_unknown_billing_keeps_reservation_and_text_without_blocking_distinct_work(self):
         for billed in (None, "1", True, -1):
             with self.subTest(billed=billed):
                 transport = Transport(response=Response({"translations": [{"text": "<t>翻訳</t>", "billed_characters": billed}]}))
                 repair = DeepLRepair(transport=transport)
                 self.assertEqual(repair.translate("ja", "文字"), "翻訳")
-                retained = sum(map(len, transport.posts[0][1]["json"]["text"]))
+                retained = decoded_source_characters(transport.posts[0][1]["json"])
                 with self.assertRaises(DeepLRepairError):
                     repair.translate("ja", "文字")
                 transport.response = Response({"translations": [{"text": "<t>次</t>", "billed_characters": 1}]})
@@ -218,12 +260,20 @@ class DeepLRepairTests(unittest.TestCase):
         self.assertEqual(stats["billing_over_reservation_responses"], 1)
         self.assertEqual(len(transport.posts), 1)
 
-    def test_xml_entity_expansion_above_source_only_bound_is_pre_reserved(self):
-        # Count escaped XML conservatively even though normal billing excludes tags.
-        transport = Transport(response=Response({"translations": [{"text": "<t>翻訳</t>", "billed_characters": 10}]}))
+    def test_xml_tags_and_entity_escaping_do_not_add_billed_characters(self):
+        source = "a & <b> 😀"
+        expected_xml = "<t>a &amp; &lt;b&gt; 😀</t>"
+        transport = Transport(count=0, limit=1000 + len(source), response=Response({
+            "translations": [{"text": expected_xml, "billed_characters": len(source)}],
+        }))
         repair = DeepLRepair(transport=transport)
-        self.assertEqual(repair.translate("ja", "a & b"), "翻訳")
-        self.assertEqual(repair.snapshot()["billed_characters"], 10)
+        self.assertEqual(repair.translate("ja", source), source)
+        self.assertEqual(transport.posts[0][1]["json"]["text"], [expected_xml])
+        self.assertEqual(decoded_source_characters(transport.posts[0][1]["json"]), len(source))
+        self.assertGreater(len(expected_xml), len(source))
+        self.assertEqual(repair.snapshot()["billed_characters"], len(source))
+        self.assertEqual(repair.snapshot()["reserved_characters"], 0)
+        self.assertEqual(repair.snapshot()["remaining_character_budget"], 1000)
         self.assertEqual(repair.snapshot()["stop_reason"], "")
         self.assertEqual(repair.snapshot()["unobserved_requests"], 0)
 
@@ -238,12 +288,12 @@ class DeepLRepairTests(unittest.TestCase):
         self.assertEqual(stats["unobserved_requests"], 3)
         self.assertEqual(stats["consecutive_uncertain_responses"], 3)
         self.assertEqual(stats["uncertainty_reasons"], {"billing_missing": 3})
-        self.assertEqual(stats["reserved_characters"], sum(len(text) for _, kwargs in transport.posts for text in kwargs["json"]["text"]))
+        self.assertEqual(stats["reserved_characters"], sum(decoded_source_characters(kwargs["json"]) for _, kwargs in transport.posts))
         self.assertEqual(len(transport.posts), 3)
         self.assertEqual(len(transport.gets), 1)
 
     def test_unknown_billing_cannot_spend_retained_reservations_again(self):
-        reservation = len("<t>a</t>")
+        reservation = len("a")
         transport = Transport(count=0, limit=1000 + 2 * reservation,
                               response=Response({"translations": [{"text": "<t>翻訳</t>"}]}))
         repair = DeepLRepair(transport=transport)
@@ -295,7 +345,7 @@ class DeepLRepairTests(unittest.TestCase):
                         repair.translate("ja", "文字")
                     self.assertNotIn("test-only-deepl-key", str(caught.exception))
                 self.assertEqual(len(transport.posts), 1)
-                self.assertEqual(repair.snapshot()["reserved_characters"], sum(map(len, transport.posts[0][1]["json"]["text"])))
+                self.assertEqual(repair.snapshot()["reserved_characters"], decoded_source_characters(transport.posts[0][1]["json"]))
 
     def test_transport_failure_retains_reservation_and_sanitizes_exception(self):
         transport = Transport(response=requests.ConnectionError("Authorization test-only-deepl-key"))
@@ -305,7 +355,7 @@ class DeepLRepairTests(unittest.TestCase):
                 repair.translate("ar", "文字")
             self.assertNotIn("test-only-deepl-key", str(caught.exception))
         self.assertEqual(len(transport.posts), 1)
-        self.assertEqual(repair.snapshot()["reserved_characters"], sum(map(len, transport.posts[0][1]["json"]["text"])))
+        self.assertEqual(repair.snapshot()["reserved_characters"], decoded_source_characters(transport.posts[0][1]["json"]))
         self.assertEqual(repair.snapshot()["unobserved_requests"], 1)
 
     def test_missing_or_invalid_result_stops_without_losing_reservation(self):
@@ -317,7 +367,7 @@ class DeepLRepairTests(unittest.TestCase):
                     with self.assertRaises(DeepLRepairError):
                         repair.translate("ko", "文字")
                 self.assertEqual(len(transport.posts), 1)
-                self.assertEqual(repair.snapshot()["reserved_characters"], sum(map(len, transport.posts[0][1]["json"]["text"])))
+                self.assertEqual(repair.snapshot()["reserved_characters"], decoded_source_characters(transport.posts[0][1]["json"]))
 
     def test_missing_key_blocks_all_network(self):
         with mock.patch.dict(os.environ, {"DEEPL_API_KEY": ""}):
@@ -394,7 +444,7 @@ class DeepLRepairTests(unittest.TestCase):
                 raise AssertionError("test release timed out")
             return Response({"translations": [{"text": "<t>訳</t>", "billed_characters": 20}]})
 
-        reservation = len("<t>" + "中" * 20 + "</t>")
+        reservation = len("中" * 20)
         transport = Transport(count=0, limit=1000 + 2 * reservation, response=pending_response)
         repair = DeepLRepair(transport=transport)
         with ThreadPoolExecutor(max_workers=2) as pool:
@@ -474,10 +524,10 @@ class DeepLRepairTests(unittest.TestCase):
                 self.assertEqual(unused.posts, [])
 
     def test_batch_quota_reserves_sum_before_any_translation_post(self):
-        transport = Transport(count=0, limit=1007)
+        transport = Transport(count=0, limit=1003)
         repair = DeepLRepair(transport=transport)
         with self.assertRaises(DeepLQuotaExhausted):
-            repair.translate_many('ja', ['文字', '文字'])  # 18 protected XML codepoints plus the margin.
+            repair.translate_many('ja', ['文字', '文字'])  # 4 source codepoints plus the margin.
         self.assertEqual(len(transport.gets), 1)
         self.assertEqual(transport.posts, [])
         self.assertEqual(repair.snapshot()['reserved_characters'], 0)
@@ -494,7 +544,7 @@ class DeepLRepairTests(unittest.TestCase):
                 with self.assertRaises(DeepLRepairError):
                     repair.translate_many('ja', ['b'])
                 self.assertEqual(repair.snapshot()['billed_characters'], 0)
-                self.assertEqual(repair.snapshot()['reserved_characters'], sum(map(len, transport.posts[0][1]['json']['text'])))
+                self.assertEqual(repair.snapshot()['reserved_characters'], decoded_source_characters(transport.posts[0][1]['json']))
                 self.assertEqual(repair.snapshot()['unobserved_requests'], 1)
                 self.assertEqual(len(transport.posts), 1)
                 self.assertEqual(repair.snapshot()['stop_reason'], '')
@@ -513,7 +563,7 @@ class DeepLRepairTests(unittest.TestCase):
                     repair.translate_many('ja', ['甲', '乙'])
                 self.assertEqual(len(transport.posts), 1)
                 self.assertEqual(repair.snapshot()['billed_characters'], 0)
-                self.assertEqual(repair.snapshot()['reserved_characters'], sum(map(len, transport.posts[0][1]['json']['text'])))
+                self.assertEqual(repair.snapshot()['reserved_characters'], decoded_source_characters(transport.posts[0][1]['json']))
 
     def test_aligned_partial_xml_error_retains_valid_rows_and_all_billed_usage(self):
         transport = Transport(response=Response({'translations': [
@@ -537,7 +587,7 @@ class DeepLRepairTests(unittest.TestCase):
         with self.assertRaises(DeepLRepairError) as caught:
             repair.translate_many('ja', ['甲', '乙'])
         self.assertEqual(caught.exception.partial_translations, {0: '第一'})
-        retained = sum(map(len, transport.posts[0][1]['json']['text']))
+        retained = decoded_source_characters(transport.posts[0][1]['json'])
         self.assertEqual(repair.snapshot()['reserved_characters'], retained)
         self.assertEqual(repair.snapshot()['billed_characters'], 0)
         self.assertEqual(repair.snapshot()['unobserved_requests'], 1)
@@ -561,7 +611,7 @@ class DeepLRepairTests(unittest.TestCase):
             self.assertNotIn('Authorization:', output)
         else:
             self.fail('Transport failure must fail the batch')
-        self.assertEqual(repair.snapshot()['reserved_characters'], sum(map(len, transport.posts[0][1]['json']['text'])))
+        self.assertEqual(repair.snapshot()['reserved_characters'], decoded_source_characters(transport.posts[0][1]['json']))
         self.assertEqual(repair.snapshot()['unobserved_requests'], 1)
         with self.assertRaises(DeepLRepairError):
             repair.translate_many('ar', ['甲', '乙'])
