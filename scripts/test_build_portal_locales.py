@@ -1550,6 +1550,53 @@ class PortalLocaleBuildTests(unittest.TestCase):
                     builder.validate_translation_quality("ja", branded, "AIリサーチ")
         self.assertNotIn("AI 研究报告", builder.REVIEWED_JA_UI_TRANSLATIONS)
 
+    def test_reviewed_arabic_paragraph_preserves_quantities_and_valid_cache(self) -> None:
+        source, expected = next(iter(builder.REVIEWED_AR_PARAGRAPH_TRANSLATIONS.items()))
+        unit = builder.TranslationUnit("e" * 64, "html:text:p", source)
+        placeholders = builder.PLACEHOLDER_RE.findall(source)
+        self.assertEqual(sorted(builder.PLACEHOLDER_RE.findall(expected)), sorted(placeholders))
+        for mode in ({}, {"preflight_only": True}, {"preserve_unused_cache": True}):
+            for existing in (None, source, expected + " "):
+                with self.subTest(mode=mode, existing=existing):
+                    cache = builder.empty_cache()
+                    for locale in ("ko", "ja"):
+                        cache["locales"][locale][unit.key] = builder._translation_cache_row(
+                            unit, FAKE_COPY[locale] + " " + " ".join(placeholders))
+                    if existing is not None:
+                        cache["locales"]["ar"][unit.key] = {"source": source, "translation": existing}
+                    provider = mock.Mock(side_effect=AssertionError("Reviewed repair must not call providers"))
+                    builder.translate_missing_units(
+                        {unit.key: unit}, cache, cache_path=self.cache,
+                        model=builder.DEFAULT_DEEPSEEK_MODEL, base_url="https://provider.example.invalid",
+                        workers=3, timeout=1, attempts=1, batch_translator=provider, **mode)
+                    provider.assert_not_called()
+                    row = builder.load_cache(self.cache)["locales"]["ar"][unit.key]
+                    self.assertEqual(row["translation"], existing if existing == expected + " " else expected)
+                    self.assertNotIn("entity_name", row)
+        with self.assertRaises(builder.TranslationError):
+            builder.validate_translation_quality("ar", unit, source)
+        for placeholder in placeholders:
+            with self.assertRaisesRegex(builder.TranslationError, "placeholder mismatch"):
+                builder.validate_translation_quality("ar", unit, expected.replace(placeholder, ""))
+
+    def test_reviewed_arabic_paragraph_requires_exact_source_and_context(self) -> None:
+        source = next(iter(builder.REVIEWED_AR_PARAGRAPH_TRANSLATIONS))
+        for context, text in (("html:text:title", source),
+                              ("html:text:p", source.replace("一半", "三分之一"))):
+            with self.subTest(context=context, source=text):
+                unit = builder.TranslationUnit("e" * 64, context, text)
+                cache = builder.empty_cache()
+                translated = {locale: FAKE_COPY[locale] + " " + " ".join(builder.PLACEHOLDER_RE.findall(text))
+                              for locale in builder.LOCALES}
+                for locale in ("ko", "ja"):
+                    cache["locales"][locale][unit.key] = builder._translation_cache_row(unit, translated[locale])
+                provider = mock.Mock(return_value={unit.key: translated["ar"]})
+                builder.translate_missing_units(
+                    {unit.key: unit}, cache, cache_path=self.cache,
+                    model=builder.DEFAULT_DEEPSEEK_MODEL, base_url="https://provider.example.invalid",
+                    workers=1, timeout=1, attempts=1, batch_translator=provider)
+                provider.assert_called_once_with("ar", [unit])
+
     def test_invalid_active_cache_entry_is_retranslated_before_reuse(self) -> None:
         _protected, unit = builder.unit_for_text("需要翻译的公开研究内容", "html:text:p")
         self.assertIsNotNone(unit)

@@ -37,7 +37,7 @@ from zoneinfo import ZoneInfo
 
 from portal_lazy_assets import fingerprint_newsfeed_loader
 from portal_locale_history import plan_history_release
-from portal_locale_literals import is_japanese_identity_label, is_latin_name_literal, is_machine_asset_reference, is_shared_japanese_keyword, is_short_latin_label_translation
+from portal_locale_literals import is_chart_metric_identity_label, is_japanese_identity_label, is_latin_name_literal, is_machine_asset_reference, is_shared_japanese_keyword, is_short_latin_label_translation
 from portal_locale_scope import deferred_locale_source, restrict_html_to_cohort
 from portal_locale_report_preview import localize_report_preview
 from portal_locale_detail_hooks import defer_unverified_report_preview, inject_locale_detail_hooks
@@ -51,6 +51,13 @@ QUALITY_GATE_VERSION = 3
 REVIEWED_JA_UI_TRANSLATIONS = {
     "AI 研究": "AIリサーチ",
     "__KC_PH_000__ · AI 研究": "__KC_PH_000__ · AIリサーチ",
+}
+# This exact paragraph repeatedly echoed Chinese or lost protected quantities
+# in both providers. Preserve every quantity in the reviewed Arabic rendering;
+# do not relax the ordinary placeholder or untranslated-source checks.
+REVIEWED_AR_PARAGRAPH_TRANSLATIONS = {
+    "，而陆上机队仍有约一半未获市场合约。西方公司的活跃地震勘探船队从__KC_PH_000__年前的__KC_PH_001__艘降至不足__KC_PH_002__艘，但这一缩减是通过十多年破产和折价出售实现的。":
+    "، بينما لا يزال نحو نصف الأسطول البري دون عقود في السوق. وانخفض أسطول سفن المسح الزلزالي النشطة لدى الشركات الغربية من __KC_PH_001__ سفينة قبل __KC_PH_000__ سنة إلى أقل من __KC_PH_002__ سفينة، لكن هذا الانكماش تحقق عبر أكثر من عشر سنوات من حالات الإفلاس والبيع بأسعار مخفضة.",
 }
 DEFAULT_DEEPSEEK_MODEL = "deepseek-v4-flash"
 LEGACY_DEEPSEEK_MODEL_ALIASES = {
@@ -767,6 +774,8 @@ def unit_for_text(value: str, context: str) -> tuple[ProtectedText, TranslationU
         # visible value is that label. The same word inside titles, metadata,
         # feeds, or prose must be translated with its surrounding sentence.
         return protected, None
+    if is_chart_metric_identity_label(value, value, context):
+        return protected, None
     if not text_needs_translation(protected.canonical, context):
         return protected, None
     # The API prompt is identical across ordinary presentation contexts, so one
@@ -840,6 +849,8 @@ def validate_translation_quality(locale: str, unit: TranslationUnit, translated:
             != sorted(token for token in expected if token not in optional)):
         raise TranslationError(f"{locale}: placeholder mismatch for {unit.key}")
 
+    if is_chart_metric_identity_label(unit.source, text, unit.context):
+        return
     source_visible = _quality_visible_text(unit.source)
     translated_visible = _quality_visible_text(text)
     if source_visible and not translated_visible:
@@ -1312,14 +1323,19 @@ def translate_missing_units(
                 for locale, row in prune_counts.items()
             )
         )
-    # Seed only exact current-inventory labels after pruning invalid cache rows.
+    # Seed only exact reviewed inventory text after pruning invalid cache rows.
     # Keep valid paid translations and the ordinary quality/placeholder checks.
     ja_entries = cache["locales"]["ja"]
+    ar_entries = cache["locales"]["ar"]
     for key, unit in units.items():
         reviewed = REVIEWED_JA_UI_TRANSLATIONS.get(unit.source)
         if reviewed is not None and key not in ja_entries:
             validate_translation_quality("ja", unit, reviewed)
             ja_entries[key] = _translation_cache_row(unit, reviewed)
+        reviewed_ar = REVIEWED_AR_PARAGRAPH_TRANSLATIONS.get(unit.source) if unit.context == "html:text:p" else None
+        if reviewed_ar is not None and key not in ar_entries:
+            validate_translation_quality("ar", unit, reviewed_ar)
+            ar_entries[key] = _translation_cache_row(unit, reviewed_ar)
     jobs: list[tuple[str, list[TranslationUnit]]] = []
     missing_counts: dict[str, int] = {}
     for locale in LOCALES:
