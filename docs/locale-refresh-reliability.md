@@ -54,3 +54,25 @@ from current `main`, and verify preparation, cutover and live release output.
 
 Use an independent worktree/branch for workflow changes. Merge against current
 `main`; do not reset or stage changes in another task's working directory.
+
+## Incident: 2026-09-09 — character allowance versus request bytes
+
+Run `34292953933` stopped in the multilingual canary before upload or cutover.
+DeepSeek returned incomplete translations; DeepL repaired the Korean and Japanese
+rows but the local allowance check blocked the 32-row Arabic repair before its
+POST. The diagnostics recorded 12,854 remaining characters. That repair contained
+3,724 source Unicode code points, or 4,606 after XML protection, but its
+ASCII-escaped JSON request occupied 13,951 bytes.
+
+The adapter compared JSON bytes plus the 1,000-character margin against the
+character allowance. [DeepL counts source Unicode code points](https://developers.deepl.com/docs/resources/usage-limits),
+so the encoded-byte estimate incorrectly rejected the request. The adapter now
+reserves the protected XML text's Unicode length as a conservative character
+upper bound; the 120,000-byte body limit remains a separate check. Actual returned
+billing still settles reservations, and uncertain responses retain their reserved
+characters. The request cap, quota margin, translation quality and publication
+gates are unchanged.
+
+Regression coverage includes a 32-row multilingual canary with a small remaining
+allowance, Unicode and XML boundaries, concurrent and uncertain reservations,
+true quota exhaustion, and the unchanged encoded request-body boundary.

@@ -6,6 +6,7 @@ import sys
 import tempfile
 import unittest
 from unittest import mock
+import xml.etree.ElementTree as ET
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build_portal_locales as builder
@@ -147,6 +148,125 @@ class DeepLFallbackTests(unittest.TestCase):
 
 
 class GroupedDeepLPreflightTests(unittest.TestCase):
+    def test_real_adapter_repairs_arabic_canary_with_12854_characters_remaining(self):
+        # Run 34292953933 stopped on 32 Arabic rows although 12,854 characters
+        # remained. Preserve their lengths, placeholder counts and non-ASCII
+        # counts without embedding report copy or depending on CI artifacts.
+        shapes = (
+            (39, 0, 39), (21, 0, 21), (56, 0, 56), (116, 5, 45),
+            (324, 2, 74), (6, 0, 6), (26, 0, 26), (140, 3, 66),
+            (49, 0, 49), (106, 0, 106), (156, 5, 41), (78, 0, 0),
+            (130, 3, 53), (39, 1, 24), (20, 0, 17), (47, 0, 47),
+            (358, 2, 80), (34, 1, 13), (17, 0, 17), (359, 5, 64),
+            (34, 1, 19), (162, 0, 162), (2, 0, 2), (66, 2, 31),
+            (198, 5, 72), (132, 3, 61), (32, 0, 32), (156, 2, 130),
+            (319, 4, 55), (157, 3, 75), (74, 0, 74), (271, 0, 246),
+        )
+        units = {}
+        for index, (length, placeholder_count, non_ascii_count) in enumerate(shapes):
+            placeholders = "".join(f"__KC_PH_{number:03d}__" for number in range(placeholder_count))
+            latin_length = length - non_ascii_count - len(placeholders)
+            source = "研" * non_ascii_count + placeholders + ("market research outlook " * length)[:latin_length]
+            key = f"{index:064x}"
+            units[key] = builder.TranslationUnit(key, "html:text:p", source)
+            self.assertEqual(len(source), length)
+        sources = [unit.source for unit in units.values()]
+        protected = [deepl._protect_source(source)[0] for source in sources]
+        source_by_xml = dict(zip(protected, sources))
+        self.assertEqual(sum(map(len, sources)), 3724)
+        self.assertEqual(sum(map(len, protected)), 4606)
+        self.assertLess(sum(map(len, protected)) + deepl.QUOTA_RESERVE_CHARACTERS, 12854)
+        self.assertGreater(deepl._payload_size(deepl._translation_payload("ar", protected)), 12854)
+        self.assertLess(deepl._payload_size(deepl._translation_payload("ar", protected)), deepl.MAX_REPAIR_BODY_BYTES)
+
+        # Short Kanji labels can legitimately pass the Japanese quality check;
+        # translate them explicitly with the first half of ko/ja primary rows.
+        accepted_keys = {key for index, (key, unit) in enumerate(units.items())
+                         if index < 16 or len(unit.source) <= 12}
+        residual_sources = [unit.source for key, unit in units.items() if key not in accepted_keys]
+        allowance = 12854 + 2 * sum(map(len, residual_sources))
+        calls, repairs = [], []
+        transport = mock.Mock()
+        transport.get.return_value = mock.Mock(status_code=200)
+        transport.get.return_value.json.return_value = {"character_count": 0, "character_limit": allowance}
+
+        def primary(_url, **kwargs):
+            payload = kwargs["payload"]
+            self.assertIn("response_format", payload)
+            message = json.loads(payload["messages"][1]["content"])
+            locale, rows = message["locale"], message["items"]
+            calls.append(("deepseek", locale, len(rows)))
+            translated = []
+            for row, unit in zip(rows, units.values(), strict=True):
+                self.assertEqual(row["source_text"], unit.source)
+                text = unit.source
+                if locale != "ar" and unit.key in accepted_keys:
+                    text = NATIVE[locale] + " " + " ".join(deepl.PLACEHOLDER_RE.findall(unit.source))
+                translated.append({"id": row["id"], "text": text})
+            response = mock.Mock(status_code=200)
+            response.json.return_value = {"choices": [{"message": {
+                "content": json.dumps({"translations": translated}),
+            }, "finish_reason": "stop"}]}
+            return response
+
+        def repair_post(_url, **kwargs):
+            payload = kwargs["json"]
+            locale = payload["target_lang"].lower()
+            repaired_sources = [source_by_xml[text] for text in payload["text"]]
+            calls.append(("deepl", locale, len(repaired_sources)))
+            repairs.append((locale, repaired_sources))
+            if locale == "ar":
+                snapshot = adapter.snapshot()
+                self.assertEqual(snapshot["remaining_character_budget"] + snapshot["reserved_characters"], 12854)
+            rows = []
+            for text, source in zip(payload["text"], repaired_sources, strict=True):
+                root = ET.fromstring(text)
+                root.text = NATIVE[locale]
+                for child in root:
+                    child.tail = " "
+                rows.append({"text": ET.tostring(root, encoding="unicode"), "billed_characters": len(source)})
+            response = mock.Mock(status_code=200)
+            response.json.return_value = {"translations": rows}
+            return response
+
+        transport.post.side_effect = repair_post
+        provider = mock.Mock(side_effect=primary)
+        state = builder.TranslationRun(max_requests=6)
+        with tempfile.TemporaryDirectory() as directory, \
+                mock.patch.dict("os.environ", {"DEEPSEEK_API_KEY": "offline-primary", "DEEPL_API_KEY": "offline-repair"}, clear=True), \
+                mock.patch.dict(sys.modules, {"deepseek_http": mock.Mock(request_with_key_fallback=provider)}), \
+                mock.patch.object(builder, "log"):
+            adapter = deepl.DeepLRepair(max_requests=6, transport=transport)
+            path = Path(directory) / "cache.json.gz"
+            kwargs = dict(cache_path=path, model=builder.DEFAULT_DEEPSEEK_MODEL,
+                          base_url="https://api.deepseek.com", workers=500, timeout=1, attempts=2,
+                          max_batch_items=32, max_batch_chars=100000,
+                          preflight_only=True, preflight_batches_per_locale=1)
+            with mock.patch.object(deepl, "DeepLRepair", return_value=adapter):
+                builder.translate_missing_units(units, builder.empty_cache(), run_state=state, **kwargs)
+                saved = builder.load_cache(path)
+                for locale in builder.LOCALES:
+                    self.assertEqual(set(saved["locales"][locale]), set(units))
+                    self.assertTrue(state.data["preflight_sample_coverage"][locale]["passed"])
+                    for key, unit in units.items():
+                        builder.validate_translation_quality(locale, unit, saved["locales"][locale][key]["translation"])
+                builder.translate_missing_units(units, saved, run_state=builder.TranslationRun(max_requests=6), **kwargs)
+
+        self.assertEqual(calls, [(provider_name, locale, count)
+                               for locale in builder.LOCALES
+                               for provider_name, count in (("deepseek", 32),
+                                   ("deepl", 32 if locale == "ar" else len(residual_sources)))])
+        self.assertEqual(repairs, [(locale, sources if locale == "ar" else residual_sources) for locale in builder.LOCALES])
+        self.assertEqual(state.data["status"], "passed")
+        self.assertEqual(state.data["remaining_units_total"], 0)
+        self.assertEqual(state.data["pending_repairs"], [])
+        self.assertEqual(state.data["translation_requests_total"], 6)
+        self.assertEqual(provider.call_count, 3, "The saved cache must prevent repeated primary requests")
+        self.assertEqual(transport.post.call_count, 3, "The saved cache must prevent repeated paid repairs")
+        transport.get.assert_called_once()
+        self.assertEqual(adapter.snapshot()["remaining_character_budget"], 12854 - 3724)
+        self.assertEqual(adapter.snapshot()["stop_reason"], "")
+
     def run_case(self, *, accepted=2, repair_echo=False, repair_echo_count=1, repair_xml_error=False, http_status=200,
                  transport_failure=False, preflight_only=True, retry_succeeds=False):
         units = {
