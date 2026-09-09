@@ -52,6 +52,28 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertNotIn("DEEPSEEK_API_KEY", step)
         self.assertNotIn("print(source)", step)
 
+    def test_title_checkpoint_is_saved_before_multilingual_work(self):
+        restore = self.workflow.index("Restore Chinese report title checkpoint")
+        translate = self.workflow.index("Translate missing report titles")
+        detect = self.workflow.index("Detect Chinese report title checkpoint")
+        save = self.workflow.index("Save Chinese report title checkpoint")
+        locale = self.workflow.index("Build Korean Japanese and Arabic static locales")
+        self.assertLess(restore, translate)
+        self.assertLess(translate, detect)
+        self.assertLess(detect, save)
+        self.assertLess(save, locale)
+        self.assertIn("uses: actions/cache/restore@v4", self.workflow[restore:translate])
+        self.assertIn('portal-title-cache-v1-', self.workflow[restore:translate])
+        self.assertIn('--cache-path "$RUNNER_TEMP/portal-title-cache/cache-v1.json"', self.workflow[translate:detect])
+        self.assertIn('--seed-catalog-path "$RUNNER_TEMP/previous-public-catalog.json"', self.workflow[translate:detect])
+        self.assertIn("if: always()", self.workflow[detect:save])
+        self.assertIn("from translate_portal_titles import load_title_cache", self.workflow[detect:save])
+        self.assertLess(self.workflow[detect:save].index("load_title_cache(Path("),
+                        self.workflow[detect:save].index('echo "present=true"'))
+        self.assertIn("if: always() && steps.title_checkpoint.outputs.present == 'true'", self.workflow[save:locale])
+        self.assertIn("uses: actions/cache/save@v4", self.workflow[save:locale])
+        self.assertIn("python3 -B scripts/test_translate_portal_titles.py", self.workflow)
+
     def test_incremental_scope_is_default_and_shared_by_canary_and_full_build(self):
         trigger = self.workflow.split("\npermissions:\n", 1)[0]
         scope_input = trigger.split("      translation_scope:\n", 1)[1]
@@ -313,7 +335,6 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertEqual(
             [line.strip() for line in restore_keys.splitlines()],
             [
-                "portal-locale-cache-${{ hashFiles('scripts/build_portal_locales.py') }}-",
                 "portal-locale-cache-",
             ],
         )
