@@ -169,7 +169,7 @@ class DeepLRepair:
         return {"Authorization": "DeepL-Auth-Key " + self._api_key}
 
     def _record_uncertain(self, identities: set[tuple[str, str]], reason: str) -> None:
-        # The entire encoded request reservation remains charged against the
+        # The protected source-character reservation remains charged against the
         # allowance. No balance reset and no automatic replay of these sources.
         self._uncertain_sources.update(identities)
         self._unobserved += 1
@@ -246,12 +246,14 @@ class DeepLRepair:
             raise DeepLRepairError("DeepL repair needs a supported locale and 1 to 50 nonempty sources")
         protected = [_protect_source(source) for source in sources]
         request_payload = _translation_payload(locale, [text for text, _placeholders in protected])
-        reservation = _payload_size(request_payload)
-        if reservation > MAX_REPAIR_BODY_BYTES:
+        if _payload_size(request_payload) > MAX_REPAIR_BODY_BYTES:
             raise DeepLRepairError("DeepL repair batch exceeds the request body limit")
-        # Billing is source-character based, not output-token based. Encoded
-        # request bytes bound all source codepoints including XML markup and
-        # escaping, avoiding the former unprotected-source-only underestimate.
+        # DeepL bills source Unicode code points, not JSON bytes. Reserve the
+        # full protected XML text (including markup and entity escaping) as a
+        # conservative character bound. ASCII JSON escaping belongs only to the
+        # independent request-body limit above; it inflates CJK text sixfold.
+        # https://developers.deepl.com/docs/resources/usage-limits
+        reservation = sum(len(text) for text, _placeholders in protected)
         identities = {(locale, hashlib.sha256(source.encode("utf-8")).hexdigest()) for source in sources}
         with self._lock:
             self._raise_if_stopped()
