@@ -7,7 +7,105 @@ import unittest
 from unittest import mock
 
 import build_portal_locales as builder
-from portal_locale_literals import is_japanese_identity_label, is_latin_name_literal, is_machine_asset_reference, is_shared_japanese_keyword, is_short_latin_label_translation
+from portal_locale_literals import is_chart_metric_identity_label, is_japanese_identity_label, is_latin_name_literal, is_machine_asset_reference, is_shared_japanese_keyword, is_short_latin_label_translation
+
+
+class ChartMetricIdentityTests(unittest.TestCase):
+    def test_actual_failure_and_bounded_measurement_variants_are_identity_labels(self):
+        for source in ("GRM (US$/bbl)", "-200mm SOI ASP", "300mm SOI ASP",
+                       "200mm SOI ASP", "+200mm SOI ASP", "150.5mm SOI ASP"):
+            with self.subTest(source=source):
+                self.assertTrue(is_chart_metric_identity_label(source, source, "chart:metrics"))
+                self.assertTrue(is_chart_metric_identity_label(" " + source, source + " ", "chart:metrics"))
+
+    def test_context_and_complete_identity_are_required(self):
+        for source in ("GRM (US$/bbl)", "-200mm SOI ASP", "300mm SOI ASP"):
+            for context in ("", "html:text:p", "html:text:title", "chart:keywords",
+                            "chart:metrics:label", "jsonld:headline", "javascript:app.js"):
+                with self.subTest(source=source, context=context):
+                    self.assertFalse(is_chart_metric_identity_label(source, source, context))
+            for output in (source + " report", "GRM (USD/bbl)", "200mm SOI ASP", "指标说明"):
+                if output != source:
+                    with self.subTest(source=source, output=output):
+                        self.assertFalse(is_chart_metric_identity_label(source, output, "chart:metrics"))
+
+    def test_prose_unknown_acronyms_and_unbounded_numbers_are_not_exempt(self):
+        for source in (
+            "GRM (US$/bbl) increased", "The GRM (US$/bbl) is improving.",
+            "GRM (US$/bbl) 增长", "300mm SOI ASP上涨", "这是需要完整翻译的研究正文。",
+            "REVENUE WILL GROW", "SOI ASP WILL RISE", "ABC (US$/bbl)",
+            "GRM (US$/unknown)", "GRM (USD/bbl)", "GRM", "SOI ASP",
+            "300cm SOI ASP", "300mm XYZ ASP", "300mm SOI FOO", "300mm soi asp",
+            "10000mm SOI ASP", "200.123mm SOI ASP", "0mm SOI ASP", "0200mm SOI ASP",
+            "300mm\nSOI ASP", "300mm SOI ASP;", "GRM (US$/bbl) __KC_PH_000__",
+            "", None, 300,
+        ):
+            with self.subTest(source=source):
+                self.assertFalse(is_chart_metric_identity_label(source, source, "chart:metrics"))
+
+    def test_metric_acceptance_does_not_apply_to_prose_or_changed_output_in_builder(self):
+        for source in ("GRM (US$/bbl)", "-200mm SOI ASP", "300mm SOI ASP"):
+            metric = builder.TranslationUnit("a" * 64, "chart:metrics", source)
+            body = builder.TranslationUnit("a" * 64, "html:text:p", source)
+            for locale in builder.LOCALES:
+                with self.subTest(source=source, locale=locale):
+                    builder.validate_translation_quality(locale, metric, source)
+                    with self.assertRaises(builder.TranslationError):
+                        builder.validate_translation_quality(locale, body, source)
+                    with self.assertRaises(builder.TranslationError):
+                        builder.validate_translation_quality(locale, metric, "Revenue is expected to grow this year.")
+                    with self.assertRaises(builder.TranslationError):
+                        builder.validate_translation_quality(locale, metric, source + " __KC_PH_000__")
+
+    def test_saved_metric_rows_are_reused_without_granting_cross_field_identity(self):
+        units = {}
+        for source in ("GRM (US$/bbl)", "-200mm SOI ASP", "300mm SOI ASP"):
+            _protected, body_unit = builder.unit_for_text(source, "html:text:p")
+            units[body_unit.key] = builder.TranslationUnit(body_unit.key, "chart:metrics", body_unit.source)
+        self.assertEqual(len(units), 3)
+        cache = builder.empty_cache()
+        for locale in builder.LOCALES:
+            for unit in units.values():
+                cache["locales"][locale][unit.key] = builder._translation_cache_row(unit, unit.source)
+        provider = mock.Mock(side_effect=AssertionError("Saved metric literals must not be translated again"))
+        with tempfile.TemporaryDirectory() as directory, mock.patch.object(builder, "log"):
+            path = Path(directory) / "cache.json.gz"
+            state = builder.TranslationRun()
+            missing = builder.translate_missing_units(
+                units, cache, cache_path=path, model=builder.DEFAULT_DEEPSEEK_MODEL,
+                base_url="https://provider.example.invalid", workers=500, timeout=1,
+                attempts=1, batch_translator=provider, run_state=state,
+            )
+            saved = builder.load_cache(path)
+        provider.assert_not_called()
+        self.assertEqual(missing, {locale: 0 for locale in builder.LOCALES})
+        self.assertEqual(state.data["status"], "passed")
+        for locale in builder.LOCALES:
+            for unit in units.values():
+                row = saved["locales"][locale][unit.key]
+                self.assertNotIn("entity_name", row)
+                self.assertEqual(builder.translated_text(unit.source, "chart:metrics", locale, saved), unit.source)
+                body = builder.TranslationUnit(unit.key, "html:text:p", unit.source)
+                self.assertFalse(builder._valid_cache_row(locale, body, row))
+
+    def test_fresh_chart_metrics_need_no_translation_but_prose_remains_in_inventory(self):
+        for source in ("GRM (US$/bbl)", "-200mm SOI ASP", "300mm SOI ASP"):
+            with self.subTest(source=source):
+                units = {}
+                builder.collect_text_units(source, "chart:metrics", units)
+                self.assertEqual(units, {})
+                for locale in builder.LOCALES:
+                    self.assertEqual(builder.translated_text(source, "chart:metrics", locale, builder.empty_cache()), source)
+                builder.collect_text_units(source, "html:text:p", units)
+                self.assertEqual(len(units), 1)
+                unit = next(iter(units.values()))
+                for locale in builder.LOCALES:
+                    with self.assertRaises(builder.TranslationError):
+                        builder.validate_translation_quality(locale, unit, source)
+        for source in ("The GRM (US$/bbl) is improving.", "300mm SOI ASP上涨"):
+            units = {}
+            builder.collect_text_units(source, "chart:metrics", units)
+            self.assertEqual(len(units), 1)
 
 
 class AssetReferenceTests(unittest.TestCase):

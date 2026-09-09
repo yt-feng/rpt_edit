@@ -35,6 +35,20 @@ _JAPANESE_FINANCIAL_LABEL = re.compile(
 # native company-name fragment `三井E`. Neither spelling needs a new Japanese
 # rendering. Do not extend this to arbitrary Kanji + Latin company-like text.
 _JAPANESE_ENTITY_LITERALS = frozenset({"三井E", "三井E&S"})
+# Chart metric names can consist entirely of international abbreviations and
+# measurement units. Keep the vocabulary and complete-string grammar closed;
+# generic uppercase words or a sentence containing a metric are still prose.
+_CHART_METRIC_IDENTITY = re.compile(
+    r"(?:GRM \(US\$/bbl\)|[+-]?[1-9][0-9]{0,3}(?:\.[0-9]{1,2})?mm SOI ASP)"
+)
+
+
+def is_chart_metric_identity_label(source: object, translated: object, context: str) -> bool:
+    """Accept unchanged bounded metric/unit labels only in chart metrics."""
+    if context != "chart:metrics" or not isinstance(source, str) or not isinstance(translated, str):
+        return False
+    source = source.strip()
+    return bool(source == translated.strip() and _CHART_METRIC_IDENTITY.fullmatch(source))
 
 
 def is_japanese_identity_label(source: object, translated: object) -> bool:

@@ -76,3 +76,19 @@ gates are unchanged.
 Regression coverage includes a 32-row multilingual canary with a small remaining
 allowance, Unicode and XML boundaries, concurrent and uncertain reservations,
 true quota exhaustion, and the unchanged encoded request-body boundary.
+
+## Follow-up: 2026-09-09 — five deterministic residuals
+
+Run `34318194995` passed all three canary samples (32/32 each), then saved
+1,050 newly completed translation units. Five residuals remained after a second
+round made no progress: Korean `GRM (US$/bbl)` and `-200mm SOI ASP`, Japanese
+`300mm SOI ASP` and `-200mm SOI ASP`, and one Arabic paragraph about seismic
+survey fleets. The run checkpointed with `ready=false`; cutover did not run.
+
+The chart labels are measurement/acronym identities. A closed grammar now
+preserves them only in `chart:metrics`, while the same strings in prose remain
+subject to translation checks. The Arabic source was echoed unchanged by
+DeepSeek and failed protected-placeholder validation in DeepL. Its exact
+paragraph now has a reviewed Arabic rendering with all three quantities
+preserved. Existing valid translations retain priority; different text or
+contexts continue through normal translation. No quality gate is disabled.
