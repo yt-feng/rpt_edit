@@ -25,6 +25,7 @@ REQUEST_PREFIX = "_course-material-requests/v1/items/"
 REPLAY_PREFIX = "_ops/owner-notification-replay/v1/course/"
 MAX_RECORDS = 200
 MAX_JSON_BYTES = 2_000_000
+MAX_ERROR_BYTES = 4096
 HASH_RE = re.compile(r"^[a-f0-9]{64}$")
 MATERIAL_RE = re.compile(r"^[a-z0-9][a-z0-9_-]{0,79}$")
 EMAIL_RE = re.compile(r"^[^\s@<>,;:\\]+@(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$")
@@ -38,6 +39,55 @@ EVENT_NAMES = frozenset({
 
 class ReplayError(RuntimeError):
     """Only constant, non-private text is passed to this exception."""
+
+
+class BrevoHTTPError(ReplayError):
+    def __init__(self, status: int, category: str):
+        allowed = {"ip_not_authorized", "key_invalid_or_disabled", "permission_denied", "authentication_failed", "http_error"}
+        self.status = status if isinstance(status, int) and 400 <= status <= 599 else 0
+        self.category = category if category in allowed else "http_error"
+        super().__init__(f"Brevo request returned HTTP {self.status}; category={self.category}.")
+
+
+def classify_brevo_http_error(status: int, raw: bytes) -> str:
+    """Inspect a bounded body in memory and return only an allowlisted category."""
+    message = code = ""
+    if len(raw) <= MAX_ERROR_BYTES:
+        try:
+            payload = json.loads(raw)
+            if isinstance(payload, dict):
+                message = payload.get("message", "")
+                code = payload.get("code", "")
+                message = message.lower() if isinstance(message, str) else ""
+                code = code.lower() if isinstance(code, str) else ""
+        except (ValueError, UnicodeDecodeError):
+            pass
+    if status in {401, 403}:
+        if re.search(r"(?:unrecogni[sz]ed|unknown|unauthori[sz]ed).*\bip\b|\bip\b.*(?:not (?:authori[sz]ed|allowed)|blocked)", message):
+            return "ip_not_authorized"
+        if any(phrase in message for phrase in (
+            "key not found", "key is invalid", "invalid api key", "api key is not enabled",
+            "api key not enabled", "api key is disabled", "api key has expired", "api key is expired",
+        )):
+            return "key_invalid_or_disabled"
+        if status == 403 or code == "permission_denied":
+            return "permission_denied"
+        return "authentication_failed"
+    return "http_error"
+
+
+def safe_failure(error: Exception) -> dict:
+    if isinstance(error, BrevoHTTPError):
+        return {"status": "unavailable", "http_status": error.status, "category": error.category}
+    return {"status": "unavailable", "category": "operation_failed"}
+
+
+def emit_summary(summary: dict) -> None:
+    rendered = json.dumps(summary, ensure_ascii=False, indent=2)
+    print(rendered, flush=True)
+    if os.environ.get("GITHUB_STEP_SUMMARY"):
+        with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as handle:
+            handle.write("```json\n" + rendered + "\n```\n")
 
 
 def now_text() -> str:
@@ -172,7 +222,16 @@ class Brevo:
                     raise ReplayError("Brevo returned an invalid response.")
                 return result
         except urllib.error.HTTPError as error:
-            raise ReplayError(f"Brevo request returned HTTP {error.code}; provider response withheld.") from None
+            try:
+                raw_error = error.read(MAX_ERROR_BYTES + 1)
+            except Exception:
+                raw_error = b""
+            finally:
+                try:
+                    error.close()
+                except Exception:
+                    pass
+            raise BrevoHTTPError(error.code, classify_brevo_http_error(error.code, raw_error)) from None
         except ReplayError:
             raise
         except Exception:
@@ -310,10 +369,11 @@ def run(client: Any, bucket: str, provider: Brevo, *, mode: str, owner: str, sen
         message_id = str(result.get("messageId", "")).strip()
         if not message_id or len(message_id) > 200:
             raise ReplayError("Brevo acceptance is ambiguous because no usable message ID was returned.")
-    except Exception:
+    except Exception as error:
         marker.update(state="unknown_requires_audit", updated_at=now_text())
         write_marker(client, bucket, marker_key, marker)
         summary["replay_state"] = marker["state"]
+        summary["provider_error"] = safe_failure(error)
         return summary
     marker.update(state="accepted", message_id=message_id, updated_at=now_text())
     write_marker(client, bucket, marker_key, marker)
@@ -331,6 +391,7 @@ def main() -> int:
     parser.add_argument("--inventory-start", default="")
     parser.add_argument("--inventory-end", default="")
     args = parser.parse_args()
+    inventory = None
     try:
         import boto3
         from botocore.config import Config
@@ -338,28 +399,33 @@ def main() -> int:
                               aws_access_key_id=require_env("R2_ACCESS_KEY_ID"),
                               aws_secret_access_key=require_env("R2_SECRET_ACCESS_KEY"), region_name="auto",
                               config=Config(retries={"max_attempts": 0}, connect_timeout=15, read_timeout=25))
+        if args.mode == "audit":
+            from audit_portal_owner_requests import audit_owner_requests
+            inventory_end = args.inventory_end or now_text()
+            inventory = audit_owner_requests(
+                client, require_env("R2_BUCKET"), args.inventory_start or (stamp(inventory_end) - timedelta(days=7)).isoformat(),
+                inventory_end, owner_email=require_env("OWNER_NOTIFICATION_EMAIL"),
+            )
+            # Publish the independent R2 result before any provider access, so
+            # authentication errors or a provider timeout cannot hide it.
+            emit_summary({"mode": "audit", "phase": "inventory", "owner_request_inventory": inventory})
         summary = run(client, require_env("R2_BUCKET"), Brevo(require_env("BREVO_API_KEY")), mode=args.mode,
                       owner=require_env("OWNER_NOTIFICATION_EMAIL"),
                       sender={"email": require_env("BREVO_SENDER_EMAIL"), "name": require_env("BREVO_SENDER_NAME")},
                       request_id=args.request_id, material_id=args.material_id, attempted_at=args.attempted_at)
-        if args.mode == "audit":
-            from audit_portal_owner_requests import audit_owner_requests
-            summary["owner_request_inventory"] = audit_owner_requests(
-                client, require_env("R2_BUCKET"), args.inventory_start or (datetime.now(timezone.utc) - timedelta(days=7)).isoformat(),
-                args.inventory_end or now_text(), owner_email=require_env("OWNER_NOTIFICATION_EMAIL"),
-            )
-        rendered = json.dumps(summary, ensure_ascii=False, indent=2)
-        print(rendered)
-        if os.environ.get("GITHUB_STEP_SUMMARY"):
-            with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as handle:
-                handle.write("```json\n" + rendered + "\n```\n")
-        incomplete_inventory = summary.get("owner_request_inventory", {}).get("complete") is False
+        summary["phase"] = "provider"
+        emit_summary(summary)
+        incomplete_inventory = inventory is not None and inventory.get("complete") is False
         unresolved_send = summary["replay_state"] in {"unknown_requires_audit", "sending", "unknown"}
         return 1 if incomplete_inventory or unresolved_send else 0
     except ReplayError as error:
+        if inventory is not None:
+            emit_summary({"mode": args.mode, "phase": "provider", "provider_error": safe_failure(error)})
         print(str(error), file=sys.stderr)
         return 1
-    except Exception:
+    except Exception as error:
+        if inventory is not None:
+            emit_summary({"mode": args.mode, "phase": "provider", "provider_error": safe_failure(error)})
         print("Owner notification operation failed; private diagnostic details were withheld.", file=sys.stderr)
         return 1
 
