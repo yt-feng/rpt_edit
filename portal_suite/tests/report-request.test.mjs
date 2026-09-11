@@ -214,7 +214,43 @@ test("report request persists before sending to the fixed contact and escapes HT
   assert.doesNotMatch(responseText, /attacker@example\.net/u);
   const saved = bucket.jsonRows("_report-requests/v1/items/");
   assert.equal(saved[0].value.status, "sent");
+  assert.equal(saved[0].value.notification_recipient, EXPECTED_CONTACT);
   assert.ok(saved[0].value.sent_at);
+});
+
+test("owner notification configuration controls provider delivery without leaking or accepting client recipients", async () => {
+  const ownerEmail = "owner-direct@example.invalid";
+  const cases = [
+    { label: "configured and normalized", setting: "  Owner-Direct@EXAMPLE.INVALID  ", expected: ownerEmail },
+    { label: "missing", setting: undefined, expected: EXPECTED_CONTACT },
+    { label: "empty", setting: "  ", expected: EXPECTED_CONTACT },
+    { label: "deployment placeholder", setting: "unconfigured", expected: EXPECTED_CONTACT },
+    { label: "invalid mailbox", setting: "not-an-email", expected: EXPECTED_CONTACT },
+    { label: "recipient list", setting: `${ownerEmail},attacker@example.invalid`, expected: EXPECTED_CONTACT },
+    { label: "header injection", setting: `${ownerEmail}\r\nBcc:attacker@example.invalid`, expected: EXPECTED_CONTACT },
+    { label: "display name", setting: `Owner<${ownerEmail}>`, expected: EXPECTED_CONTACT },
+    { label: "invalid domain", setting: "owner@example.invalid/path", expected: EXPECTED_CONTACT },
+  ];
+  for (const fixture of cases) {
+    const bucket = new MemoryR2();
+    const env = { ...envFor(bucket), OWNER_NOTIFICATION_EMAIL: fixture.setting };
+    let delivery;
+    const result = await withMockFetch(async (_url, init) => {
+      delivery = JSON.parse(init.body);
+      return brevoSuccess(`owner-notification-${fixture.label}`);
+    }, () => postReportRequest(env, requestBody({
+      to: "attacker@example.invalid",
+      recipient: "attacker@example.invalid",
+      OWNER_NOTIFICATION_EMAIL: "attacker@example.invalid",
+      notification_recipient: "attacker@example.invalid",
+    })));
+    assert.equal(result.response.status, 202, fixture.label);
+    assert.deepEqual(delivery.to, [{ email: fixture.expected }], fixture.label);
+    const saved = bucket.jsonRows("_report-requests/v1/items/");
+    assert.equal(saved[0].value.notification_recipient, fixture.expected, fixture.label);
+    assert.doesNotMatch(JSON.stringify(result.data), /owner-direct|attacker|notification_recipient|OWNER_NOTIFICATION_EMAIL/iu, fixture.label);
+    assert.equal(JSON.stringify(result.data).includes(EXPECTED_CONTACT), false, fixture.label);
+  }
 });
 
 test("an id-only Report A detail self-heals canonical metadata and sends exactly one real provider request", async () => {

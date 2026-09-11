@@ -25,6 +25,9 @@ GH_REPO = "source/example"
 # Optional for scheduled Newsfeed digest emails via Cloudflare Email Service:
 # NEWSFEED_EMAIL_PROVIDER = "cloudflare"
 # NEWSFEED_EMAIL_FROM = "Portal Suite Newsfeed <updates@portal.example.invalid>"
+# Optional private destination for course, research, topic, membership and report requests.
+# Falls back to the existing contact mailbox when unset; never exposed in the public API.
+# wrangler secret put OWNER_NOTIFICATION_EMAIL
 # Optional signed workflow-failure alerts through the same email provider:
 # OPS_ALERT_EMAIL = "operator@example.com"
 # wrangler secret put OPS_ALERT_SIGNING_KEY

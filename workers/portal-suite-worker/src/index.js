@@ -5664,10 +5664,11 @@ async function handleCourseMaterialRequest(request, env, ctx) {
       });
     }
     const content = courseMaterialRequestEmailContent(reservation.record);
+    const notificationRecipient = ownerNotificationEmail(env);
     let result;
     try {
       result = await sendNewsfeedEmail(env, {
-        to: CONTACT_EMAIL,
+        to: notificationRecipient,
         subject: content.subject,
         html: content.html,
         text: content.text,
@@ -5680,6 +5681,7 @@ async function handleCourseMaterialRequest(request, env, ctx) {
     const completed = {
       ...reservation.record,
       status: result && result.sent ? "sent" : "failed",
+      notification_recipient: notificationRecipient,
       provider: cleanReportRequestText(result && result.provider, 40),
       message_id: cleanReportRequestText(result && result.messageId, 200),
       last_error: result && result.sent ? "" : cleanReportRequestText(result && result.detail, 500),
@@ -5726,6 +5728,13 @@ async function handleCourseMaterialRequest(request, env, ctx) {
 function cleanEnv(value) {
   const text = String(value || "").trim();
   return text === "unconfigured" ? "" : text;
+}
+
+function ownerNotificationEmail(env) {
+  const email = normalizeEmail(cleanEnv(env.OWNER_NOTIFICATION_EMAIL));
+  // This secret is one plain mailbox, never a display name or recipient list.
+  const mailboxPattern = /^[a-z0-9.!#$%&'*+/=?^_`{|}~-]+@(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$/u;
+  return email.length <= 254 && mailboxPattern.test(email) ? email : CONTACT_EMAIL;
 }
 
 function paddleClientToken(env) {
@@ -16037,10 +16046,11 @@ async function handleReportChatRequest(request, env, ctx) {
       });
     }
     const content = reportChatRequestEmailContent(reservation.record);
+    const notificationRecipient = ownerNotificationEmail(env);
     let result;
     try {
       result = await sendNewsfeedEmail(env, {
-        to: CONTACT_EMAIL,
+        to: notificationRecipient,
         subject: content.subject,
         html: content.html,
         text: content.text,
@@ -16053,6 +16063,7 @@ async function handleReportChatRequest(request, env, ctx) {
     const completed = {
       ...reservation.record,
       status: result && result.sent ? "sent" : "failed",
+      notification_recipient: notificationRecipient,
       provider: cleanReportRequestText(result && result.provider, 40),
       message_id: cleanReportRequestText(result && result.messageId, 200),
       last_error: result && result.sent ? "" : cleanReportRequestText(result && result.detail, 500),
@@ -17495,10 +17506,11 @@ async function handleNewsfeedTopicRequest(request, env, ctx) {
       });
     }
     const content = newsfeedTopicRequestEmailContent(reservation.record);
+    const notificationRecipient = ownerNotificationEmail(env);
     let result;
     try {
       result = await sendNewsfeedEmail(env, {
-        to: CONTACT_EMAIL,
+        to: notificationRecipient,
         subject: content.subject,
         html: content.html,
         text: content.text,
@@ -17511,6 +17523,7 @@ async function handleNewsfeedTopicRequest(request, env, ctx) {
     const completed = {
       ...reservation.record,
       status: result && result.sent ? "sent" : "failed",
+      notification_recipient: notificationRecipient,
       provider: cleanReportRequestText(result && result.provider, 40),
       message_id: cleanReportRequestText(result && result.messageId, 200),
       last_error: result && result.sent ? "" : cleanReportRequestText(result && result.detail, 500),
@@ -18399,10 +18412,11 @@ async function handleMembershipRequest(request, env) {
     }
 
     const content = membershipRequestEmailContent(reservation.record);
+    const notificationRecipient = ownerNotificationEmail(env);
     let result;
     try {
       result = await sendNewsfeedEmail(env, {
-        to: CONTACT_EMAIL,
+        to: notificationRecipient,
         subject: content.subject,
         html: content.html,
         text: content.text,
@@ -18415,6 +18429,7 @@ async function handleMembershipRequest(request, env) {
     const completed = {
       ...reservation.record,
       status: result && result.sent ? "sent" : "failed",
+      notification_recipient: notificationRecipient,
       provider: cleanReportRequestText(result && result.provider, 40),
       message_id: cleanReportRequestText(result && result.messageId, 200),
       last_error: result && result.sent ? "" : cleanReportRequestText(result && result.detail, 500),
@@ -18837,10 +18852,11 @@ async function handleReportRequest(request, env) {
     }
 
     const content = reportRequestEmailContent(reservation.record);
+    const notificationRecipient = ownerNotificationEmail(env);
     let result;
     try {
       result = await sendNewsfeedEmail(env, {
-        to: CONTACT_EMAIL,
+        to: notificationRecipient,
         subject: content.subject,
         html: content.html,
         text: content.text,
@@ -18853,6 +18869,7 @@ async function handleReportRequest(request, env) {
     const completed = {
       ...reservation.record,
       status: result && result.sent ? "sent" : "failed",
+      notification_recipient: notificationRecipient,
       provider: cleanReportRequestText(result && result.provider, 40),
       message_id: cleanReportRequestText(result && result.messageId, 200),
       last_error: result && result.sent ? "" : cleanReportRequestText(result && result.detail, 500),
