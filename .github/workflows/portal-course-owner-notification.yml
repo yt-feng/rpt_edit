@@ -1,0 +1,94 @@
+name: Portal course owner notification audit or replay
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Audit delivery or resend the saved notification to the configured owner
+        type: choice
+        options:
+          - audit
+          - resend
+        default: audit
+        required: true
+      request_id:
+        description: Exact private request hash, or leave empty and provide both fields below
+        type: string
+        default: ''
+      material_id:
+        description: Material identifier used with the exact attempted_at timestamp
+        type: string
+        default: ''
+      attempted_at:
+        description: Exact saved UTC attempted_at timestamp, including milliseconds
+        type: string
+        default: ''
+      inventory_start:
+        description: Audit inventory start in UTC (empty means seven days ago)
+        type: string
+        default: ''
+      inventory_end:
+        description: Audit inventory end in UTC (empty means current time)
+        type: string
+        default: ''
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portal-course-owner-notification
+  cancel-in-progress: false
+
+jobs:
+  notification:
+    if: github.actor == github.repository_owner && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            scripts/replay_course_owner_notification.py
+            scripts/test_replay_course_owner_notification.py
+            scripts/audit_portal_owner_requests.py
+            scripts/test_audit_portal_owner_requests.py
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate owner-only replay boundaries
+        run: |
+          python3 -B scripts/test_replay_course_owner_notification.py
+          python3 -B scripts/test_audit_portal_owner_requests.py
+
+      - name: Install private archive client
+        run: python3 -m pip install --disable-pip-version-check --quiet boto3==1.40.1
+
+      - name: Audit or resend one original owner notification
+        env:
+          OPERATION_MODE: ${{ inputs.mode }}
+          REQUEST_ID: ${{ inputs.request_id }}
+          MATERIAL_ID: ${{ inputs.material_id }}
+          ATTEMPTED_AT: ${{ inputs.attempted_at }}
+          INVENTORY_START: ${{ inputs.inventory_start }}
+          INVENTORY_END: ${{ inputs.inventory_end }}
+          OWNER_NOTIFICATION_EMAIL: ${{ secrets.OWNER_NOTIFICATION_EMAIL }}
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          BREVO_SENDER_EMAIL: ${{ secrets.BREVO_SENDER_EMAIL || vars.BREVO_SENDER_EMAIL }}
+          BREVO_SENDER_NAME: ${{ secrets.BREVO_SENDER_NAME || vars.BREVO_SENDER_NAME || 'Portal Suite Newsfeed' }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python3 -B scripts/replay_course_owner_notification.py \
+            --mode "$OPERATION_MODE" \
+            --request-id "$REQUEST_ID" \
+            --material-id "$MATERIAL_ID" \
+            --attempted-at "$ATTEMPTED_AT" \
+            --inventory-start "$INVENTORY_START" \
+            --inventory-end "$INVENTORY_END"
