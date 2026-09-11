@@ -7,19 +7,49 @@ import unittest
 from unittest import mock
 
 import build_portal_locales as builder
-from portal_locale_literals import is_chart_metric_identity_label, is_japanese_identity_label, is_latin_name_literal, is_machine_asset_reference, is_shared_japanese_keyword, is_short_latin_label_translation
+from portal_locale_literals import is_chart_geography_identity_label, is_chart_metric_identity_label, is_japanese_identity_label, is_latin_name_literal, is_machine_asset_reference, is_shared_japanese_keyword, is_short_latin_label_translation
+
+
+class ChartGeographyIdentityTests(unittest.TestCase):
+    def test_actual_failure_and_bounded_observed_code_lists_are_identity_labels(self):
+        for source in ("EU/JN/UK/AU/CA/SZ", "EU/UK", "SZ/CA/AU", "EU / JN / UK"):
+            with self.subTest(source=source):
+                self.assertTrue(is_chart_geography_identity_label(source, source, "chart:geographies"))
+                self.assertTrue(is_chart_geography_identity_label(" " + source, source + " ", "chart:geographies"))
+
+    def test_context_and_complete_unchanged_identity_are_required(self):
+        source = "EU/JN/UK/AU/CA/SZ"
+        for context in ("", "html:text:p", "html:text:title", "chart:keywords",
+                        "chart:metrics", "chart:geographies:label", "jsonld:keywords"):
+            with self.subTest(context=context):
+                self.assertFalse(is_chart_geography_identity_label(source, source, context))
+        for translated in ("EU/JN", "EU/JP/UK/AU/CA/SZ", source + " report", "欧洲/日本", None):
+            with self.subTest(translated=translated):
+                self.assertFalse(is_chart_geography_identity_label(source, translated, "chart:geographies"))
+
+    def test_unknown_codes_uppercase_prose_and_incomplete_lists_are_not_exempt(self):
+        for source in (
+            "REVENUE/WILL/GROW", "EU/UNKNOWN", "EU/ZZ", "EU/123", "EU/us", "eu/UK",
+            "EU/JN/UK/AU/CA/SZ increased", "EU/UK市场", "Market: EU/UK", "EU/UK.",
+            "EU", "EU/", "/EU/UK", "EU//UK", "EU,UK", "EU UK", "EU/\nUK",
+            "EU/UK __KC_PH_000__", "/".join(["EU"] * 9), "", None, 12,
+        ):
+            with self.subTest(source=source):
+                self.assertFalse(is_chart_geography_identity_label(source, source, "chart:geographies"))
 
 
 class ChartMetricIdentityTests(unittest.TestCase):
+    incident_labels = ("GRM (US$/bbl)", "-200mm SOI ASP", "300mm SOI ASP",
+                       "AST2600 ASP (US$)", "AST2700 ASP (US$)")
+
     def test_actual_failure_and_bounded_measurement_variants_are_identity_labels(self):
-        for source in ("GRM (US$/bbl)", "-200mm SOI ASP", "300mm SOI ASP",
-                       "200mm SOI ASP", "+200mm SOI ASP", "150.5mm SOI ASP"):
+        for source in self.incident_labels + ("200mm SOI ASP", "+200mm SOI ASP", "150.5mm SOI ASP"):
             with self.subTest(source=source):
                 self.assertTrue(is_chart_metric_identity_label(source, source, "chart:metrics"))
                 self.assertTrue(is_chart_metric_identity_label(" " + source, source + " ", "chart:metrics"))
 
     def test_context_and_complete_identity_are_required(self):
-        for source in ("GRM (US$/bbl)", "-200mm SOI ASP", "300mm SOI ASP"):
+        for source in self.incident_labels:
             for context in ("", "html:text:p", "html:text:title", "chart:keywords",
                             "chart:metrics:label", "jsonld:headline", "javascript:app.js"):
                 with self.subTest(source=source, context=context):
@@ -38,13 +68,16 @@ class ChartMetricIdentityTests(unittest.TestCase):
             "300cm SOI ASP", "300mm XYZ ASP", "300mm SOI FOO", "300mm soi asp",
             "10000mm SOI ASP", "200.123mm SOI ASP", "0mm SOI ASP", "0200mm SOI ASP",
             "300mm\nSOI ASP", "300mm SOI ASP;", "GRM (US$/bbl) __KC_PH_000__",
+            "AST2600 ASP (US$) increased", "AST2700 ASP (US$)上涨", "AST2800 ASP (US$)",
+            "AST260 ASP (US$)", "AST26000 ASP (US$)", "AST2600 ASP (USD)",
+            "AST2600 XYZ (US$)", "ast2600 ASP (US$)", "AST2600 ASP (US$);",
             "", None, 300,
         ):
             with self.subTest(source=source):
                 self.assertFalse(is_chart_metric_identity_label(source, source, "chart:metrics"))
 
     def test_metric_acceptance_does_not_apply_to_prose_or_changed_output_in_builder(self):
-        for source in ("GRM (US$/bbl)", "-200mm SOI ASP", "300mm SOI ASP"):
+        for source in self.incident_labels:
             metric = builder.TranslationUnit("a" * 64, "chart:metrics", source)
             body = builder.TranslationUnit("a" * 64, "html:text:p", source)
             for locale in builder.LOCALES:
@@ -59,10 +92,10 @@ class ChartMetricIdentityTests(unittest.TestCase):
 
     def test_saved_metric_rows_are_reused_without_granting_cross_field_identity(self):
         units = {}
-        for source in ("GRM (US$/bbl)", "-200mm SOI ASP", "300mm SOI ASP"):
+        for source in self.incident_labels:
             _protected, body_unit = builder.unit_for_text(source, "html:text:p")
             units[body_unit.key] = builder.TranslationUnit(body_unit.key, "chart:metrics", body_unit.source)
-        self.assertEqual(len(units), 3)
+        self.assertEqual(len(units), len(self.incident_labels))
         cache = builder.empty_cache()
         for locale in builder.LOCALES:
             for unit in units.values():
@@ -89,7 +122,7 @@ class ChartMetricIdentityTests(unittest.TestCase):
                 self.assertFalse(builder._valid_cache_row(locale, body, row))
 
     def test_fresh_chart_metrics_need_no_translation_but_prose_remains_in_inventory(self):
-        for source in ("GRM (US$/bbl)", "-200mm SOI ASP", "300mm SOI ASP"):
+        for source in self.incident_labels:
             with self.subTest(source=source):
                 units = {}
                 builder.collect_text_units(source, "chart:metrics", units)
@@ -137,8 +170,39 @@ class AssetReferenceTests(unittest.TestCase):
 
 
 class LatinNameLiteralTests(unittest.TestCase):
+    def test_legal_suffix_case_variants_preserve_whole_company_names(self):
+        # The provider correctly preserved Arm Holdings plc in run 34547101625.
+        # Exercise every supported legal form so a different lowercase suffix
+        # cannot reproduce the same preflight/repair loop.
+        suffixes = ("inc", "incorporated", "ltd", "limited", "corp", "corporation",
+                    "co", "company", "llc", "llp", "plc", "ag", "sa", "se", "nv", "gmbh")
+        for suffix in suffixes:
+            for spelling in (suffix, suffix.title(), suffix.upper()):
+                for context in ("chart:keywords", "html:text:p"):
+                    value = "Arm Holdings " + spelling
+                    with self.subTest(value=value, context=context):
+                        self.assertTrue(is_latin_name_literal(value, context))
+        for value in ("Arm Holdings plc", "Arm Holdings, plc.", "Arm Holdings pLc",
+                      "Ping An Insurance Group co of China ltd"):
+            with self.subTest(value=value):
+                self.assertTrue(is_latin_name_literal(value, "chart:keywords"))
+
+    def test_lowercase_legal_forms_do_not_exempt_prose_or_lowercase_names(self):
+        for value in (
+            "arm holdings plc", "Arm holdings plc", "Report about Arm Holdings plc",
+            "Buy Arm Holdings plc", "We Expect Arm Holdings plc", "Revenue Grows At Arm Holdings plc",
+            "Arm Holdings plc is growing", "Arm Holdings plc Improves", "Arm Holdings plc增长",
+            "Example co Research", "Arm Holdings plc __KC_PH_000__",
+            "Example gmbh co kg Ltd", "plc", "company", "co ltd", "the company",
+        ):
+            for context in ("chart:keywords", "html:text:p", "chart:report:title"):
+                with self.subTest(value=value, context=context):
+                    self.assertFalse(is_latin_name_literal(value, context))
+
     def test_real_company_failures_are_identity_literals(self):
         for value, context in (
+            ("Arm Holdings plc", "chart:keywords"),
+            ("Arm Holdings plc", "html:text:p"),
             ("JD.Com Inc", "chart:keywords"),
             ("JD.Com Inc", "html:text:p"),
             ("Ping An Insurance Group Co of China Ltd", "chart:keywords"),
@@ -276,6 +340,31 @@ class LatinNameLiteralTests(unittest.TestCase):
 
 
 class SharedJapaneseKeywordTests(unittest.TestCase):
+    def test_index_separator_left_by_protected_number_is_still_a_complete_label(self):
+        for source in ("S&P 指数", "MSCI 指数"):
+            with self.subTest(source=source):
+                for context in ("chart:keywords", "ja:shared-keyword"):
+                    self.assertTrue(is_shared_japanese_keyword(source, source, context))
+                self.assertFalse(is_shared_japanese_keyword(source, source, "html:text:p"))
+                self.assertFalse(is_shared_japanese_keyword(source, source.replace(" ", ""), "chart:keywords"))
+        for source in ("S&P 指数上涨", "S&P 指数。", "S&P 收入", "MSCI 中国",
+                       "S&P  指数", "S&P\n指数", "ABCDEFGHIJ 指数", "123 指数",
+                       "S&P __KC_PH_000__指数"):
+            with self.subTest(source=source):
+                self.assertFalse(is_shared_japanese_keyword(source, source, "chart:keywords"))
+
+    def test_protected_index_number_keeps_structural_checks_and_locale_scope(self):
+        source = "S&P __KC_PH_000__指数"
+        unit = builder.TranslationUnit("a" * 64, "chart:keywords", source)
+        builder.validate_translation_quality("ja", unit, source)
+        for locale in ("ko", "ar"):
+            with self.subTest(locale=locale), self.assertRaises(builder.TranslationError):
+                builder.validate_translation_quality(locale, unit, source)
+        for translated in ("S&P 指数", "S&P __KC_PH_001__指数",
+                           "S&P __KC_PH_000__ __KC_PH_000__指数"):
+            with self.subTest(translated=translated), self.assertRaisesRegex(builder.TranslationError, "placeholder mismatch"):
+                builder.validate_translation_quality("ja", unit, translated)
+
     def test_real_short_keyword_failures_are_valid_only_in_japanese(self):
         for source in ("人保P&C", "MSCI指数", "中国A50", "MSCI中国", "美国CPI"):
             unit = builder.TranslationUnit("a" * 64, "chart:keywords", source)

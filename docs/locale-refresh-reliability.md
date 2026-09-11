@@ -121,3 +121,42 @@ match; existing titles and checkpoint entries retain priority. The new title
 checkpoint is validated before CI saves it. Multilingual cache restore also selects the
 newest cumulative checkpoint across code revisions, with existing compatibility
 and per-entry quality validation retained.
+
+## Incident: 2026-09-10–11 — literal labels stranded in the checkpoint
+
+Run `34418515695` stopped its Korean canary after completing 23 of 26 rows,
+below the required 24. The remaining rows were geography codes
+`EU/JN/UK/AU/CA/SZ` and metric labels `AST2600 ASP (US$)` and
+`AST2700 ASP (US$)`. The providers had preserved valid source identities.
+
+Run `34546744028` subsequently saved 769 of 808 missing translations but did
+not publish: `LOCALE_READY=false`, with Korean 2, Japanese 1 and Arabic 36
+remaining. The Korean company name `Arm Holdings plc` and the geography codes
+were then the entire Korean sample in run `34547101625`. Both providers
+preserved them, and the canary failed again. Japanese `S&P 500指数` was also
+stranded because protecting its numeric component left `S&P 指数`, a form the
+same-name check did not recognize. A smaller residual inventory magnified these
+classification defects; repeating the same provider calls could not repair them.
+
+The company classifier now allows case-insensitive legal suffixes only alongside
+a named token and a terminal legal form. Geography lists use a closed vocabulary
+in `chart:geographies`; the two observed metric models extend the existing
+`chart:metrics` grammar. These fields preserve the source code without inferring
+its expansion. Japanese index labels use the same visible-text normalization
+for validation, deduplication and cache provenance, after structural placeholder
+checks.
+
+Missing legal-company-name and accepted Japanese identity rows are now initialized before
+the paid queue. Existing valid localized names keep priority, source keys remain
+stable, and complete source/context checks prevent a sentence containing a name
+from inheriting its exemption. Repeated refreshes therefore reuse these rows
+without asking a provider to echo them. Diagnostics count initialized identity
+rows per locale as `identity_seeded_units`.
+Title-case chart keywords without a legal suffix still go to translation;
+capitalization alone does not justify initializing an unchanged cache row.
+
+The pull-request audit now runs the literal, canary, DeepL character-accounting
+and Chinese-title-cache regression suites before merge. The full refresh still
+requires complete translations, Chinese parity, static validation and successful
+cutover. A green checkpoint run remains an incomplete release; verify cutover
+and the active public release independently.
