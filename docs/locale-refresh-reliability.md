@@ -141,7 +141,8 @@ classification defects; repeating the same provider calls could not repair them.
 The company classifier now allows case-insensitive legal suffixes only alongside
 a named token and a terminal legal form. Geography lists use a closed vocabulary
 in `chart:geographies`; the two observed metric models extend the existing
-`chart:metrics` grammar. These fields preserve the source code without inferring
+`chart:metrics` grammar, along with the `JPM PT LC` Arabic residual from the same
+checkpoint. These fields preserve the source code without inferring
 its expansion. Japanese index labels use the same visible-text normalization
 for validation, deduplication and cache provenance, after structural placeholder
 checks.

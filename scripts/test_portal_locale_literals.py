@@ -40,7 +40,7 @@ class ChartGeographyIdentityTests(unittest.TestCase):
 
 class ChartMetricIdentityTests(unittest.TestCase):
     incident_labels = ("GRM (US$/bbl)", "-200mm SOI ASP", "300mm SOI ASP",
-                       "AST2600 ASP (US$)", "AST2700 ASP (US$)")
+                       "AST2600 ASP (US$)", "AST2700 ASP (US$)", "JPM PT LC")
 
     def test_actual_failure_and_bounded_measurement_variants_are_identity_labels(self):
         for source in self.incident_labels + ("200mm SOI ASP", "+200mm SOI ASP", "150.5mm SOI ASP"):
@@ -71,6 +71,7 @@ class ChartMetricIdentityTests(unittest.TestCase):
             "AST2600 ASP (US$) increased", "AST2700 ASP (US$)上涨", "AST2800 ASP (US$)",
             "AST260 ASP (US$)", "AST26000 ASP (US$)", "AST2600 ASP (USD)",
             "AST2600 XYZ (US$)", "ast2600 ASP (US$)", "AST2600 ASP (US$);",
+            "JPM PT LC increased", "JPM PT LC上涨", "JPM PT USD", "GS PT LC", "jpm pt lc",
             "", None, 300,
         ):
             with self.subTest(source=source):
