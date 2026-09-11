@@ -44,7 +44,7 @@ _JAPANESE_ENTITY_LITERALS = frozenset({"三井E", "三井E&S"})
 # generic uppercase words or a sentence containing a metric are still prose.
 _CHART_METRIC_IDENTITY = re.compile(
     r"(?:GRM \(US\$/bbl\)|[+-]?[1-9][0-9]{0,3}(?:\.[0-9]{1,2})?mm SOI ASP"
-    r"|AST(?:2600|2700) ASP \(US\$\))"
+    r"|AST(?:2600|2700) ASP \(US\$\)|JPM PT LC)"
 )
 # Preserve geography codes exactly as supplied by chart metadata. These are
 # observed source codes, not inferred country names or a general uppercase
