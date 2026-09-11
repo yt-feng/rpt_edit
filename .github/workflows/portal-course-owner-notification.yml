@@ -55,6 +55,7 @@ jobs:
             scripts/test_replay_course_owner_notification.py
             scripts/audit_portal_owner_requests.py
             scripts/test_audit_portal_owner_requests.py
+            workers/portal-suite-worker/src/index.js
 
       - uses: actions/setup-python@v5
         with:
