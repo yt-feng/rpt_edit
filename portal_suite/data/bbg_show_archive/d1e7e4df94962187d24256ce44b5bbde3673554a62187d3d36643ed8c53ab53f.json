@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "id": "d1e7e4df94962187d24256ce44b5bbde3673554a62187d3d36643ed8c53ab53f",
+  "slug": "bbg-20260910-d1e7e4df94962187",
+  "date": "2026-09-10",
+  "title": "Upstage李秀卿：携手AMD，推理吞吐提升25%",
+  "speaker": "Sook Lee",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-09-10/the-china-show-9-10-2026-video",
+  "start": 1848.9,
+  "end": 1916.8,
+  "segments": [
+    {
+      "start": 1848.9,
+      "end": 1854.4,
+      "en": "an equity partner as well. They've invested. I know you guys have been talking quite regularly and",
+      "zh": "也是股权合作伙伴。他们已投入。我知道你们一直定期交流，"
+    },
+    {
+      "start": 1854.4,
+      "end": 1862.2,
+      "en": "frequently with Lisa too. Essentially your CEO has talked about wanting more GPUs from AMD. The",
+      "zh": "也经常与Lisa沟通。本质上，你们的CEO谈到希望从AMD获得更多GPU。"
+    },
+    {
+      "start": 1862.2,
+      "end": 1868.6,
+      "en": "less reliant on the bigger guy in the video. So where are you in that partnership with AMD and have",
+      "zh": "减少对视频中更大玩家的依赖。那么你们与AMD的合作进展如何，"
+    },
+    {
+      "start": 1868.6,
+      "end": 1877.8,
+      "en": "you secured AMD GPUs? Yeah. How many too? Yeah. So partnership with AMD keeps",
+      "zh": "是否已确保获得AMD GPU？是的。多少？是的。与AMD的合作持续"
+    },
+    {
+      "start": 1877.8,
+      "end": 1888.3,
+      "en": "expanding now. Since AMD's strategy investment in 2025, we have deepened our technical collaboration.",
+      "zh": "扩展。自AMD在2025年战略投入以来，我们深化了技术合作。"
+    },
+    {
+      "start": 1888.3,
+      "end": 1896.5,
+      "en": "For example, our Solar Pro 4, our latest model, handles a large scale production traffic on AMD GPUs.",
+      "zh": "例如，我们最新的Solar Pro 4模型在AMD GPU上处理大规模生产流量。"
+    },
+    {
+      "start": 1896.5,
+      "end": 1907.1,
+      "en": "Working closely with AMD, we improved inference throughput by 25%, which helped Solar Pro 4 scale",
+      "zh": "与AMD紧密合作，我们将推理吞吐量提升了25%，帮助Solar Pro 4扩展"
+    },
+    {
+      "start": 1907.1,
+      "end": 1916.8,
+      "en": "up to more than 100 billion tokens per day. So that is big things. So where do you still need to",
+      "zh": "到每天超过1000亿token。这是大事。那么你们还需要在"
+    }
+  ]
+}
