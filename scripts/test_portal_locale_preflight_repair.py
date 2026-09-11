@@ -107,5 +107,110 @@ class PreflightRepairTests(unittest.TestCase):
         self.assertEqual(report["status"], "passed")
 
 
+class IdentityCheckpointTests(unittest.TestCase):
+    def translate(self, units, cache, path, provider, *, preflight=False):
+        state = builder.TranslationRun(max_requests=6 if preflight else None)
+        with mock.patch.dict("os.environ", {}, clear=True), mock.patch.object(builder, "log"):
+            builder.translate_missing_units(
+                units, cache, cache_path=path, model=builder.DEFAULT_DEEPSEEK_MODEL,
+                base_url="https://provider.example.invalid", workers=500, timeout=1,
+                attempts=2, batch_translator=provider, run_state=state,
+                preflight_only=preflight, preflight_batches_per_locale=1,
+            )
+        return state.data, builder.load_cache(path)
+
+    def test_fresh_legal_names_are_cached_without_paid_echo_and_reused_on_resume(self):
+        sources = ("Arm Holdings plc", "Example Networks ltd", "Example Semiconductor co ltd")
+        units = {}
+        for source in sources:
+            # The same cache key must work regardless of collection order.
+            builder.collect_text_units(source, "html:text:p", units)
+            builder.collect_text_units(source, "chart:keywords", units)
+        provider = mock.Mock(side_effect=AssertionError("Literal names must not reach a provider"))
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "cache.json.gz"
+            report, cache = self.translate(units, builder.empty_cache(), path, provider, preflight=True)
+            self.assertEqual(report["identity_seeded_units"], {locale: 3 for locale in builder.LOCALES})
+            for locale in builder.LOCALES:
+                for source in sources:
+                    self.assertEqual(builder.translated_text(source, "html:text:p", locale, cache), source)
+            report, cache = self.translate(units, cache, path, provider)
+        self.assertEqual(report["identity_seeded_units"], {locale: 0 for locale in builder.LOCALES})
+        self.assertEqual(report["status"], "passed")
+        self.assertEqual(report["provider_requests"], 0)
+        provider.assert_not_called()
+
+    def test_incident_tail_preserves_paid_rows_and_sends_only_prose_to_provider(self):
+        units = {}
+        company = "Arm Holdings plc"
+        geography = "EU/JN/UK/AU/CA/SZ"
+        index = "S&P 500指数"
+        prose = "这些公司的收入预计将在下一年度继续增长。"
+        for source, context in ((company, "chart:keywords"), (geography, "chart:geographies"),
+                                (index, "chart:keywords"), (prose, "html:text:p")):
+            builder.collect_text_units(source, context, units)
+        self.assertEqual(len(units), 3, "Geography codes must never enter the paid inventory")
+        company_unit = builder.unit_for_text(company, "chart:keywords")[1]
+        index_unit = builder.unit_for_text(index, "chart:keywords")[1]
+        self.assertEqual(company_unit.key[:12], "2781e7cd017b", "Keep the incident cache key stable")
+        self.assertEqual(index_unit.source, "S&P __KC_PH_000__指数")
+        cache = builder.empty_cache()
+        for locale in ("ja", "ar"):
+            cache["locales"][locale][company_unit.key] = builder._translation_cache_row(company_unit, NATIVE[locale])
+        for locale in ("ko", "ar"):
+            cache["locales"][locale][index_unit.key] = builder._translation_cache_row(index_unit, NATIVE[locale])
+        calls = []
+
+        def provider(locale, batch):
+            calls.extend(unit.source for unit in batch)
+            return {unit.key: NATIVE[locale] for unit in batch}
+
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "cache.json.gz"
+            report, saved = self.translate(units, cache, path, provider, preflight=True)
+            self.assertEqual(report["status"], "passed")
+            self.assertEqual(report["identity_seeded_units"], {"ko": 1, "ja": 1, "ar": 0})
+            self.assertEqual(calls, [prose] * 3)
+            self.assertEqual(builder.translated_text(index, "html:meta:keyword", "ja", saved), index)
+            for locale in ("ja", "ar"):
+                self.assertEqual(saved["locales"][locale][company_unit.key]["translation"], NATIVE[locale])
+            for locale in builder.LOCALES:
+                self.assertEqual(builder.translated_text(geography, "chart:geographies", locale, saved), geography)
+            report, _ = self.translate(units, saved, path, mock.Mock(side_effect=AssertionError("No replay")))
+        self.assertEqual(report["status"], "passed")
+        self.assertEqual(report["remaining_units_total"] if "remaining_units_total" in report else 0, 0)
+
+    def test_identity_seeding_does_not_complete_untranslated_prose(self):
+        for source in ("Arm Holdings plc expects revenue to grow.",
+                       "这是需要完整翻译的中文研究正文。", "EU/UNKNOWN/UK outlook improves"):
+            for preflight in (True, False):
+                with self.subTest(source=source, preflight=preflight), tempfile.TemporaryDirectory() as directory:
+                    unit = builder.unit_for_text(source, "chart:keywords")[1]
+                    cache = builder.empty_cache()
+                    provider = mock.Mock(side_effect=lambda locale, batch: {row.key: row.source for row in batch})
+                    with self.assertRaises(builder.TranslationError):
+                        self.translate({unit.key: unit}, cache, Path(directory) / "cache.json.gz", provider,
+                                       preflight=preflight)
+                    self.assertTrue(provider.called)
+                    for locale in builder.LOCALES:
+                        self.assertNotIn(unit.key, cache["locales"][locale])
+
+    def test_title_case_keywords_still_reach_translation_provider(self):
+        units = {}
+        for source in ("Operating Cash Flow", "Net Income Growth", "Annual Revenue Outlook",
+                       "Total Shareholder Return", "Palo Alto Networks"):
+            builder.collect_text_units(source, "chart:keywords", units)
+        calls = []
+
+        def provider(locale, batch):
+            calls.extend((locale, unit.source) for unit in batch)
+            return {unit.key: NATIVE[locale] for unit in batch}
+
+        with tempfile.TemporaryDirectory() as directory:
+            report, _ = self.translate(units, builder.empty_cache(), Path(directory) / "cache.json.gz", provider)
+        self.assertEqual(set(calls), {(locale, unit.source) for locale in builder.LOCALES for unit in units.values()})
+        self.assertEqual(report["identity_seeded_units"], {locale: 0 for locale in builder.LOCALES})
+
+
 if __name__ == "__main__":
     unittest.main()

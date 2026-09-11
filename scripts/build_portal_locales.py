@@ -37,7 +37,7 @@ from zoneinfo import ZoneInfo
 
 from portal_lazy_assets import fingerprint_newsfeed_loader
 from portal_locale_history import plan_history_release
-from portal_locale_literals import is_chart_metric_identity_label, is_japanese_identity_label, is_latin_name_literal, is_machine_asset_reference, is_shared_japanese_keyword, is_short_latin_label_translation
+from portal_locale_literals import is_chart_geography_identity_label, is_chart_metric_identity_label, is_japanese_identity_label, is_latin_name_literal, is_machine_asset_reference, is_shared_japanese_keyword, is_short_latin_label_translation
 from portal_locale_scope import deferred_locale_source, restrict_html_to_cohort
 from portal_locale_report_preview import localize_report_preview
 from portal_locale_detail_hooks import defer_unverified_report_preview, inject_locale_detail_hooks
@@ -774,7 +774,8 @@ def unit_for_text(value: str, context: str) -> tuple[ProtectedText, TranslationU
         # visible value is that label. The same word inside titles, metadata,
         # feeds, or prose must be translated with its surrounding sentence.
         return protected, None
-    if is_chart_metric_identity_label(value, value, context):
+    if (is_chart_metric_identity_label(value, value, context)
+            or is_chart_geography_identity_label(value, value, context)):
         return protected, None
     if not text_needs_translation(protected.canonical, context):
         return protected, None
@@ -811,7 +812,7 @@ def collect_text_units(value: str, context: str, target: dict[str, TranslationUn
                     unit.context in STRUCTURED_NAME_CONTEXTS
                     or (previous.context not in STRUCTURED_NAME_CONTEXTS
                         and (is_latin_name_literal(unit.source, unit.context)
-                             or is_shared_japanese_keyword(unit.source, unit.source, unit.context)))
+                             or _shared_japanese_keyword(unit, unit.source)))
                 ) else previous.context
                 if merged_context != previous.context or optional != previous.data_placeholders:
                     target[unit.key] = TranslationUnit(previous.key, merged_context, previous.source, optional)
@@ -834,6 +835,12 @@ def _unchanged_latin_name(unit: TranslationUnit, translated: str) -> bool:
             and _quality_compact(source) == _quality_compact(_quality_visible_text(translated)))
 
 
+def _shared_japanese_keyword(unit: TranslationUnit, translated: str) -> bool:
+    return is_shared_japanese_keyword(
+        _quality_visible_text(unit.source), _quality_visible_text(translated), unit.context,
+    )
+
+
 def validate_translation_quality(locale: str, unit: TranslationUnit, translated: str) -> None:
     """Check missing translation and structural integrity, not linguistic quality."""
     if locale not in LOCALES:
@@ -849,7 +856,8 @@ def validate_translation_quality(locale: str, unit: TranslationUnit, translated:
             != sorted(token for token in expected if token not in optional)):
         raise TranslationError(f"{locale}: placeholder mismatch for {unit.key}")
 
-    if is_chart_metric_identity_label(unit.source, text, unit.context):
+    if (is_chart_metric_identity_label(unit.source, text, unit.context)
+            or is_chart_geography_identity_label(unit.source, text, unit.context)):
         return
     source_visible = _quality_visible_text(unit.source)
     translated_visible = _quality_visible_text(text)
@@ -906,7 +914,7 @@ def _translation_cache_row(unit: TranslationUnit, translated: str) -> dict[str, 
     row: dict[str, Any] = {"source": unit.source, "translation": translated.strip()}
     if unit.context in STRUCTURED_NAME_CONTEXTS or _unchanged_latin_name(unit, translated):
         row["entity_name"] = True
-    if is_shared_japanese_keyword(unit.source, translated, unit.context):
+    if _shared_japanese_keyword(unit, translated):
         row["ja_keyword_name"] = True
     return row
 
@@ -942,7 +950,7 @@ def prune_translation_cache(
             if _valid_cache_row(locale, unit, row):
                 if unit.context in STRUCTURED_NAME_CONTEXTS or _unchanged_latin_name(unit, row["translation"]):
                     row["entity_name"] = True
-                if is_shared_japanese_keyword(unit.source, row["translation"], unit.context):
+                if _shared_japanese_keyword(unit, row["translation"]):
                     row["ja_keyword_name"] = True
                 retained[key] = row
             else:
@@ -1310,7 +1318,7 @@ def translate_missing_units(
                 if key in entries and (unit.context in STRUCTURED_NAME_CONTEXTS
                                        or _unchanged_latin_name(unit, entries[key]["translation"])):
                     entries[key]["entity_name"] = True
-                if key in entries and is_shared_japanese_keyword(unit.source, entries[key]["translation"], unit.context):
+                if key in entries and _shared_japanese_keyword(unit, entries[key]["translation"]):
                     entries[key]["ja_keyword_name"] = True
             prune_counts[locale] = {"retained": len(entries), "stale": 0, "invalid": len(invalid)}
     else:
@@ -1323,6 +1331,23 @@ def translate_missing_units(
                 for locale, row in prune_counts.items()
             )
         )
+    # Strong identities already accepted by the quality gate do not need
+    # a provider to echo them. Seed only missing rows, keeping valid localized
+    # names and the existing source keys/provenance for cross-field rendering.
+    identity_seeded = {locale: 0 for locale in LOCALES}
+    for key, unit in units.items():
+        # Without chart:keywords' loose title-case heuristic: ordinary phrases
+        # such as Operating Cash Flow must still be offered for translation.
+        latin_name = is_latin_name_literal(_quality_visible_text(unit.source))
+        japanese_label = (_shared_japanese_keyword(unit, unit.source)
+                          or is_japanese_identity_label(unit.source, unit.source))
+        for locale in LOCALES:
+            entries = cache["locales"][locale]
+            if key not in entries and (latin_name or (locale == "ja" and japanese_label)):
+                validate_translation_quality(locale, unit, unit.source)
+                entries[key] = _translation_cache_row(unit, unit.source)
+                identity_seeded[locale] += 1
+    run_state.data["identity_seeded_units"] = identity_seeded
     # Seed only exact reviewed inventory text after pruning invalid cache rows.
     # Keep valid paid translations and the ordinary quality/placeholder checks.
     ja_entries = cache["locales"]["ja"]

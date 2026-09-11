@@ -22,6 +22,10 @@ _SHORT_SOURCE_LABEL = re.compile(r"[A-Za-z0-9&\u3400-\u9fff]{1,12}")
 _SHORT_LATIN_LABEL = re.compile(r"[A-Za-z0-9][A-Za-z0-9.&+\-]{0,15}")
 _ACRONYM_PAIR = re.compile(r"[A-Z0-9][A-Z0-9.&+\-]* [A-Z0-9][A-Z0-9.&+\-]*")
 _SHARED_JAPANESE_KEYWORD = re.compile(r"[A-Z0-9&+./\-\u3400-\u9fff]{1,12}")
+# Removing a protected index number leaves a separator, e.g. S&P 500指数
+# becomes S&P 指数. Permit that complete index-label form, not arbitrary
+# spaces in mixed-script keywords or any structural placeholder token.
+_SHARED_JAPANESE_INDEX_KEYWORD = re.compile(r"[A-Z0-9&+./\-]{1,9} 指数")
 # These modifiers are also Japanese words. Combining them with a known metric
 # does not make a label Chinese prose; e.g. a styled paragraph can expose just
 # `国内RevPar` before its next <span>. Keep both vocabularies closed so arbitrary
@@ -39,8 +43,24 @@ _JAPANESE_ENTITY_LITERALS = frozenset({"三井E", "三井E&S"})
 # measurement units. Keep the vocabulary and complete-string grammar closed;
 # generic uppercase words or a sentence containing a metric are still prose.
 _CHART_METRIC_IDENTITY = re.compile(
-    r"(?:GRM \(US\$/bbl\)|[+-]?[1-9][0-9]{0,3}(?:\.[0-9]{1,2})?mm SOI ASP)"
+    r"(?:GRM \(US\$/bbl\)|[+-]?[1-9][0-9]{0,3}(?:\.[0-9]{1,2})?mm SOI ASP"
+    r"|AST(?:2600|2700) ASP \(US\$\))"
 )
+# Preserve geography codes exactly as supplied by chart metadata. These are
+# observed source codes, not inferred country names or a general uppercase
+# exemption. Require a complete, bounded slash-separated list in its own field.
+_CHART_GEOGRAPHY_CODE = r"(?:AU|CA|EU|JN|SZ|UK)"
+_CHART_GEOGRAPHY_IDENTITY = re.compile(
+    rf"{_CHART_GEOGRAPHY_CODE}(?:[ \t]*/[ \t]*{_CHART_GEOGRAPHY_CODE}){{1,7}}"
+)
+
+
+def is_chart_geography_identity_label(source: object, translated: object, context: str) -> bool:
+    """Accept unchanged lists of observed codes only in chart geographies."""
+    if context != "chart:geographies" or not isinstance(source, str) or not isinstance(translated, str):
+        return False
+    source = source.strip()
+    return bool(source == translated.strip() and _CHART_GEOGRAPHY_IDENTITY.fullmatch(source))
 
 
 def is_chart_metric_identity_label(source: object, translated: object, context: str) -> bool:
@@ -75,7 +95,8 @@ def is_shared_japanese_keyword(source: object, translated: object, context: str)
         return False
     source = source.strip()
     return bool(
-        source == translated.strip() and _SHARED_JAPANESE_KEYWORD.fullmatch(source)
+        source == translated.strip()
+        and (_SHARED_JAPANESE_KEYWORD.fullmatch(source) or _SHARED_JAPANESE_INDEX_KEYWORD.fullmatch(source))
         and re.search(r"[A-Z]", source)
         and 1 <= len(re.findall(r"[\u3400-\u9fff]", source)) <= 4
     )
@@ -113,14 +134,23 @@ def is_latin_name_literal(value: object, context: str = "") -> bool:
     words = re.findall(r"[A-Za-z0-9]+(?:['’][A-Za-z]+)?", value)
     if not words or len(words) > 16:
         return False
+    has_legal_suffix = words[-1].casefold() in _LEGAL_SUFFIXES
+    has_named_token = any(
+        word.casefold() not in _LEGAL_SUFFIXES | _NAME_CONNECTORS
+        and (word[0].isdigit() or any(character.isupper() for character in word))
+        for word in words
+    )
     name_case = all(
         word.casefold() in _NAME_CONNECTORS or word[0].isdigit()
+        # Legal forms such as plc and co are routinely lowercase. They may
+        # relax casing only alongside a name and a terminal legal suffix.
+        or (has_legal_suffix and has_named_token and word.casefold() in _LEGAL_SUFFIXES)
         or any(character.isupper() for character in word)
         for word in words
     )
     if not name_case:
         return False
-    if words[-1].casefold() in _LEGAL_SUFFIXES:
+    if has_legal_suffix:
         # IT and Will can themselves be part of a legal company name. A suffix
         # gives stronger identity evidence than a keyword's capitalization.
         return not any(word.casefold() in _PROSE_WORDS - {"it", "will"} for word in words)
