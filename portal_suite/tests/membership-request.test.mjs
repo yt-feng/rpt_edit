@@ -222,9 +222,10 @@ test("membership request rejects invalid origins, bodies, fields, and silently a
   assert.equal(bucket.jsonRows("_membership-requests/v1/").length, 0);
 });
 
-test("guest membership request persists privately before fixed-recipient delivery and never echoes PII", async () => {
+test("guest membership request persists privately before configured owner delivery and never echoes PII", async () => {
   const bucket = new MemoryR2();
-  const env = envFor(bucket);
+  const ownerEmail = "membership-owner@example.invalid";
+  const env = { ...envFor(bucket), OWNER_NOTIFICATION_EMAIL: ownerEmail };
   let delivery = null;
   const body = requestBody({
     requester_email: "guest@example.net",
@@ -248,11 +249,11 @@ test("guest membership request persists privately before fixed-recipient deliver
   assert.equal(result.data.ok, true);
   assert.equal(result.data.deduplicated, false);
   const publicPayload = JSON.stringify(result.data);
-  for (const privateValue of [body.requester_email, body.contact_value, body.note, EXPECTED_CONTACT, "attacker@example.net", "brevo"]) {
+  for (const privateValue of [body.requester_email, body.contact_value, body.note, EXPECTED_CONTACT, ownerEmail, "notification_recipient", "attacker@example.net", "brevo"]) {
     assert.equal(publicPayload.includes(privateValue), false, `response leaked ${privateValue}`);
   }
   assert.equal(delivery.url, "https://api.brevo.com/v3/smtp/email");
-  assert.deepEqual(delivery.body.to, [{ email: EXPECTED_CONTACT }]);
+  assert.deepEqual(delivery.body.to, [{ email: ownerEmail }]);
   assert.deepEqual(delivery.body.tags, ["membership-request"]);
   assert.doesNotMatch(JSON.stringify(delivery.body), /attacker@example\.net|Attacker subject/u);
   assert.match(delivery.body.htmlContent, /guest-&lt;wechat&gt;/u);
@@ -262,6 +263,7 @@ test("guest membership request persists privately before fixed-recipient deliver
   const saved = bucket.jsonRows("_membership-requests/v1/items/");
   assert.equal(saved.length, 1);
   assert.equal(saved[0].value.status, "sent");
+  assert.equal(saved[0].value.notification_recipient, ownerEmail);
   assert.equal(saved[0].value.request_kind, "privacy");
   assert.equal(saved[0].value.requester_email, "guest@example.net");
   assert.equal(saved[0].value.contact_value, "guest-<wechat>");
@@ -533,15 +535,15 @@ test("contact card is read only after active account authentication and always u
   assert.equal(disabledBucket.getKeys.includes(CONTACT_CARD_KEY), false);
 });
 
-test("CONTACT_EMAIL is retained only for fixed server-side owner delivery", async () => {
+test("CONTACT_EMAIL is retained only as the server-side owner fallback", async () => {
   const source = await readFile(workerPath, "utf8");
   const uses = source.split("\n")
     .map((line, index) => ({ line: index + 1, text: line.trim() }))
     .filter((entry) => entry.text.includes("CONTACT_EMAIL"));
-  assert.ok(uses.length >= 2);
+  assert.equal(uses.length, 2);
   assert.match(uses[0].text, /^const CONTACT_EMAIL =/u);
   for (const use of uses.slice(1)) {
-    assert.match(use.text, /^to: CONTACT_EMAIL,$/u, `public CONTACT_EMAIL use at line ${use.line}`);
+    assert.match(use.text, /^return .+ \? email : CONTACT_EMAIL;$/u, `public CONTACT_EMAIL use at line ${use.line}`);
   }
   assert.doesNotMatch(source, /contact:\s*CONTACT_EMAIL|联系邮箱\s*\$\{CONTACT_EMAIL\}|Contact:\s*\$\{CONTACT_EMAIL\}/u);
 });

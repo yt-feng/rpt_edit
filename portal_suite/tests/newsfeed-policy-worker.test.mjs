@@ -465,10 +465,11 @@ test("member topic limits are atomic, tiered, unlimited for super, and recover e
   assert.equal(recovered.data.custom_topic_count, 3, "an expired orphan reservation must not permanently consume capacity");
 });
 
-test("topic-limit requests are member-owned, deduplicated, private, and always email the fixed contact", async (t) => {
+test("topic-limit requests are member-owned, deduplicated, private, and email the configured owner", async (t) => {
   const fetchState = installFetchMock(t);
   const bucket = new MemoryR2();
-  const env = envFor(bucket, { BREVO_API_KEY: "brevo-test", NEWSFEED_EMAIL_PROVIDER: "brevo" });
+  const ownerEmail = "topic-owner@example.invalid";
+  const env = envFor(bucket, { BREVO_API_KEY: "brevo-test", NEWSFEED_EMAIL_PROVIDER: "brevo", OWNER_NOTIFICATION_EMAIL: ownerEmail });
   const { user, token } = seedUser(bucket);
   seedMemberAccess(bucket, user, 1);
   for (let index = 1; index <= 3; index += 1) seedCustomTopic(bucket, user, `member-${index}`);
@@ -494,12 +495,15 @@ test("topic-limit requests are member-owned, deduplicated, private, and always e
   assert.equal(first.data.ok, true);
   assert.equal(first.data.policy.request_allowed, true);
   assert.equal(fetchState.emails.length, 1);
-  assert.deepEqual(fetchState.emails[0].to, [{ email: ["info", "@", "kc", "desk", ".com"].join("") }]);
+  assert.deepEqual(fetchState.emails[0].to, [{ email: ownerEmail }]);
+  assert.equal(JSON.stringify(first.data).includes(ownerEmail), false);
+  assert.equal(Object.hasOwn(first.data, "notification_recipient"), false);
   assert.doesNotMatch(JSON.stringify(fetchState.emails[0]), /attacker@example\.net/u);
   const requestRows = [...bucket.rows.entries()].filter(([key]) => key.startsWith("_newsfeed/topic-requests/v1/items/"));
   assert.equal(requestRows.length, 1);
   const requestRecord = JSON.parse(requestRows[0][1].value);
   assert.equal(requestRecord.status, "sent");
+  assert.equal(requestRecord.notification_recipient, ownerEmail);
   assert.equal(requestRecord.qualifying_months, 1);
   assert.equal(requestRecord.output_language, "zh-CN");
   assert.deepEqual(requestRecord.preferred_regions, ["china", "mena"]);

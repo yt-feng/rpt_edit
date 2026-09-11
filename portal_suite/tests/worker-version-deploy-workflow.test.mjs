@@ -28,3 +28,9 @@ test("Worker smoke accepts anonymous Report Chat and fails before model work wit
   assert.match(workflow, /payload\.get\("stage_code"\) != "DEVICE_ID_REQUIRED"/gu);
   assert.doesNotMatch(workflow, /api-anonymous-chat\.json[\s\S]{0,180}test "\$code" = 401/gu);
 });
+
+test("owner notification recipient ships as a Worker secret and never as a public variable", () => {
+  assert.match(workflow, /OWNER_NOTIFICATION_EMAIL:\s*\$\{\{ secrets\.OWNER_NOTIFICATION_EMAIL \|\| 'unconfigured' \}\}/u);
+  assert.match(workflow, /names = \([\s\S]*?"OWNER_NOTIFICATION_EMAIL",[\s\S]*?values = \{name: os\.environ/u);
+  assert.doesNotMatch(workflow, /vars\.OWNER_NOTIFICATION_EMAIL|OWNER_NOTIFICATION_EMAIL = /u);
+});

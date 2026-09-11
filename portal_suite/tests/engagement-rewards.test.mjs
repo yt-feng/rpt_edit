@@ -1291,7 +1291,8 @@ test("course decks never stream from the site and eligible members request each 
       { id: "maifu-02", title: "从数据到深刻洞察", topic: "数据洞察", pages: 32 },
     ],
   });
-  const env = { ...envFor(bucket), BREVO_API_KEY: "brevo-test-key" };
+  const ownerEmail = "request-owner@example.invalid";
+  const env = { ...envFor(bucket), BREVO_API_KEY: "brevo-test-key", OWNER_NOTIFICATION_EMAIL: ownerEmail };
   const materialPath = "/course/material?id=maifu-01";
   const materialKey = "_course-materials/v1/maifu-01.pdf";
   const pdf = new TextEncoder().encode("%PDF-1.7\ncourse-material-body\n%%EOF");
@@ -1350,7 +1351,9 @@ test("course decks never stream from the site and eligible members request each 
     const first = await submit("maifu-01");
     assert.equal(first.response.status, 202, JSON.stringify(first.data));
     assert.equal(first.data.deduplicated, false);
-    assert.deepEqual(sent[0].body.to, [{ email: ["info", "@", "kc", "desk", ".com"].join("") }]);
+    assert.equal(JSON.stringify(first.data).includes(ownerEmail), false);
+    assert.equal(Object.hasOwn(first.data, "notification_recipient"), false);
+    assert.deepEqual(sent[0].body.to, [{ email: ownerEmail }]);
     const serializedEmail = JSON.stringify(sent[0].body);
     assert.match(serializedEmail, /PPT项目故事线撰写指南/u);
     assert.doesNotMatch(serializedEmail, /伪造标题|attacker@example\.net/u);
@@ -1367,6 +1370,7 @@ test("course decks never stream from the site and eligible members request each 
     const requestRows = [...bucket.rows.entries()].filter(([key]) => key.startsWith("_course-material-requests/v1/items/"));
     assert.equal(requestRows.length, 2);
     assert.ok(requestRows.every(([, row]) => JSON.parse(row.value).status === "sent"));
+    assert.ok(requestRows.every(([, row]) => JSON.parse(row.value).notification_recipient === ownerEmail));
   } finally {
     globalThis.fetch = originalFetch;
   }
@@ -1579,11 +1583,12 @@ test("the super account has unlimited report chat", async () => {
   assert.equal([...bucket.rows.keys()].some((key) => key.startsWith("_account/report-chat-v3/") && key.includes("admin-a")), false);
 });
 
-test("report chat archives privately, supports admin curation and public cache reads, and emails only the fixed contact", async () => {
+test("report chat archives privately, supports admin curation and public cache reads, and emails the configured owner", async () => {
   const bucket = new MemoryR2();
   const report = { id: "archive-public-report", title: "AI infrastructure archive research", attraction_score: 5 };
   await seedReportChatLookup(bucket, [report], { ai: [report.id], 基础设施: [report.id] });
-  const env = { ...envFor(bucket), BREVO_API_KEY: "brevo-test-key" };
+  const ownerEmail = "request-owner@example.invalid";
+  const env = { ...envFor(bucket), BREVO_API_KEY: "brevo-test-key", OWNER_NOTIFICATION_EMAIL: ownerEmail };
   const visitorId = "visitor-archive-0001";
   const success = await jsonRequest(env, "/report-chat", {
     method: "POST",
@@ -1687,13 +1692,16 @@ test("report chat archives privately, supports admin curation and public cache r
     });
     assert.equal(requestResult.response.status, 202, JSON.stringify(requestResult.data));
     assert.equal(requestResult.data.status, "sent");
+    assert.equal(JSON.stringify(requestResult.data).includes(ownerEmail), false);
+    assert.equal(Object.hasOwn(requestResult.data, "notification_recipient"), false);
     assert.equal(sent.length, 1);
     assert.equal(sent[0].url, "https://api.brevo.com/v3/smtp/email");
-    assert.deepEqual(sent[0].body.to, [{ email: ["info", "@", "kc", "desk", ".com"].join("") }]);
+    assert.deepEqual(sent[0].body.to, [{ email: ownerEmail }]);
     assert.equal(JSON.stringify(sent[0].body).includes("attacker@example.net"), false);
     const persistedRequests = [...bucket.rows.entries()].filter(([key]) => key.startsWith("_report-chat-requests/v1/items/"));
     assert.equal(persistedRequests.length, 1);
     assert.equal(JSON.parse(persistedRequests[0][1].value).status, "sent");
+    assert.equal(JSON.parse(persistedRequests[0][1].value).notification_recipient, ownerEmail);
 
     const duplicate = await jsonRequest(env, "/report-chat/request", {
       method: "POST",
