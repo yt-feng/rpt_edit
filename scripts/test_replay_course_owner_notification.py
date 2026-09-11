@@ -1,7 +1,14 @@
 import copy
+import contextlib
 import io
 import json
+import pathlib
+import sys
+import tempfile
+import types
 import unittest
+import urllib.error
+from unittest import mock
 
 import replay_course_owner_notification as replay
 
@@ -217,6 +224,90 @@ class ReplayTests(unittest.TestCase):
             {"messageId": "another", "email": OWNER, "event": "blocked"},
         ]}
         self.assertEqual(len(provider.events(message_id=RECORD["message_id"], recipient=OWNER)), 1)
+
+    def test_http_errors_expose_only_allowlisted_classification(self):
+        cases = [
+            (401, {"code": "unauthorized", "message": "We have detected an unrecognised IP address 203.0.113.67 PRIVATE-KEY"}, "ip_not_authorized"),
+            (401, {"code": "unauthorized", "message": "IP not authorized: 203.0.113.67 PRIVATE-KEY"}, "ip_not_authorized"),
+            (401, {"code": "unauthorized", "message": "API Key is not enabled: PRIVATE-KEY"}, "key_invalid_or_disabled"),
+            (403, {"code": "permission_denied", "message": "PRIVATE-KEY " + APPLICANT}, "permission_denied"),
+            (401, {"code": "PRIVATE-KEY", "message": APPLICANT}, "authentication_failed"),
+            (503, {"code": "PRIVATE-KEY", "message": APPLICANT}, "http_error"),
+        ]
+        for status, body, expected in cases:
+            with self.subTest(status=status, expected=expected):
+                provider = replay.Brevo("PRIVATE-KEY")
+                error = urllib.error.HTTPError("https://api.brevo.com/v3/smtp/statistics/events", status, APPLICANT, {}, io.BytesIO(replay.json_bytes(body)))
+                provider.opener.open = mock.Mock(side_effect=error)
+                with self.assertRaises(replay.BrevoHTTPError) as caught:
+                    provider.events(message_id=RECORD["message_id"])
+                self.assertEqual(caught.exception.category, expected)
+                self.assertEqual(caught.exception.status, status)
+                rendered = str(caught.exception) + json.dumps(replay.safe_failure(caught.exception))
+                for private in ("203.0.113.67", "PRIVATE-KEY", APPLICANT, RECORD["message_id"]):
+                    self.assertNotIn(private, rendered)
+
+    def test_http_error_body_read_is_bounded_and_invalid_payload_is_withheld(self):
+        class RecordedBody(io.BytesIO):
+            def __init__(self, raw):
+                super().__init__(raw)
+                self.sizes = []
+
+            def read(self, size=-1):
+                self.sizes.append(size)
+                return super().read(size)
+
+        for raw in (b"PRIVATE-KEY invalid-json", b"PRIVATE-KEY " * replay.MAX_ERROR_BYTES):
+            body = RecordedBody(raw)
+            provider = replay.Brevo("PRIVATE-KEY")
+            error = urllib.error.HTTPError("https://api.brevo.com/v3/smtp/statistics/events", 401, "private", {}, body)
+            provider.opener.open = mock.Mock(side_effect=error)
+            with self.assertRaises(replay.BrevoHTTPError) as caught:
+                provider.events(message_id=RECORD["message_id"])
+            self.assertEqual(body.sizes, [replay.MAX_ERROR_BYTES + 1])
+            self.assertTrue(body.closed)
+            self.assertEqual(caught.exception.category, "authentication_failed")
+            self.assertNotIn("PRIVATE-KEY", str(caught.exception))
+
+    def test_cli_publishes_inventory_before_provider_401_and_exits_nonzero(self):
+        environment = {
+            "R2_ACCOUNT_ID": "private-account", "R2_ACCESS_KEY_ID": "private-key", "R2_SECRET_ACCESS_KEY": "private-secret",
+            "R2_BUCKET": "private-bucket", "OWNER_NOTIFICATION_EMAIL": OWNER,
+            "BREVO_API_KEY": "PRIVATE-KEY", "BREVO_SENDER_EMAIL": SENDER["email"], "BREVO_SENDER_NAME": SENDER["name"],
+        }
+        boto3 = types.SimpleNamespace(client=lambda *_args, **_kwargs: self.s3)
+        config_module = types.SimpleNamespace(Config=lambda **kwargs: kwargs)
+        arguments = ["replay", "--mode", "audit", "--material-id", "material-02", "--attempted-at", ATTEMPTED_AT,
+                     "--inventory-start", "2026-09-03T16:00:00Z", "--inventory-end", "2026-09-11T04:00:00Z"]
+        with tempfile.TemporaryDirectory() as directory:
+            summary_path = pathlib.Path(directory) / "step-summary.md"
+            environment["GITHUB_STEP_SUMMARY"] = str(summary_path)
+            with contextlib.redirect_stdout(output := io.StringIO()), contextlib.redirect_stderr(errors := io.StringIO()):
+                def blocked_request(*_args, **_kwargs):
+                    # Both outputs must exist before the first provider request.
+                    self.assertIn('"total_requests": 1', output.getvalue())
+                    self.assertIn('"owner_request_inventory"', summary_path.read_text())
+                    body = replay.json_bytes({"code": "unauthorized", "message": "Unrecognised IP address 203.0.113.67 PRIVATE-KEY " + APPLICANT})
+                    raise urllib.error.HTTPError("https://api.brevo.com/v3/smtp/statistics/events", 401, "private", {}, io.BytesIO(body))
+
+                opener = types.SimpleNamespace(open=blocked_request)
+                with mock.patch.dict(sys.modules, {"boto3": boto3, "botocore.config": config_module}), \
+                     mock.patch.dict(replay.os.environ, environment), \
+                     mock.patch.object(sys, "argv", arguments), \
+                     mock.patch.object(replay.urllib.request, "build_opener", return_value=opener):
+                    self.assertEqual(replay.main(), 1)
+            decoder = json.JSONDecoder()
+            first, end = decoder.raw_decode(output.getvalue())
+            second = json.loads(output.getvalue()[end:].strip())
+            self.assertEqual(first["phase"], "inventory")
+            self.assertTrue(first["owner_request_inventory"]["complete"])
+            self.assertEqual(first["owner_request_inventory"]["total_requests"], 1)
+            self.assertEqual(second["provider_error"], {"status": "unavailable", "http_status": 401, "category": "ip_not_authorized"})
+            rendered = output.getvalue() + errors.getvalue() + summary_path.read_text()
+            for private in ("203.0.113.67", "PRIVATE-KEY", "private-account", "private-key", "private-secret", "private-bucket",
+                            OWNER, APPLICANT, REQUEST_ID, RECORD["message_id"], RECORD["material_title"]):
+                self.assertNotIn(private, rendered)
+            self.assertEqual(self.s3.writes, [])
 
 
 if __name__ == "__main__":
