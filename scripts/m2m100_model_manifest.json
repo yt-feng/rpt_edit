@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "provider": "m2m100-offline",
+  "model_id": "facebook/m2m100_418M",
+  "revision": "55c2e61bbf05dfb8d7abccdc3fae6fc8512fd636",
+  "model_card_url": "https://huggingface.co/facebook/m2m100_418M",
+  "model_license": "MIT",
+  "license_evidence": {
+    "file": "README.md",
+    "pattern": "^license:\\s*mit\\s*$",
+    "source": "pinned official Hugging Face model card at revision 55c2e61bbf05dfb8d7abccdc3fae6fc8512fd636"
+  },
+  "quantization": "int8",
+  "conversion": {
+    "converter": "ctranslate2.converters.TransformersConverter",
+    "model_type": "M2M100Config",
+    "source_framework": "PyTorch",
+    "runtime_requires_transformers": false
+  },
+  "source_files": [
+    "README.md",
+    "config.json",
+    "generation_config.json",
+    "pytorch_model.bin",
+    "sentencepiece.bpe.model",
+    "special_tokens_map.json",
+    "tokenizer_config.json",
+    "vocab.json"
+  ],
+  "runtime_files": [
+    "model.bin",
+    "model.json",
+    "shared_vocabulary.json",
+    "sentencepiece.bpe.model",
+    "vocab.json",
+    "special_tokens_map.json",
+    "tokenizer_config.json",
+    "README.md"
+  ],
+  "routes": [
+    ["zh", "en"],
+    ["en", "zh"],
+    ["zh", "ko"],
+    ["zh", "ja"],
+    ["zh", "ar"],
+    ["en", "ko"],
+    ["en", "ja"],
+    ["en", "ar"]
+  ],
+  "runtime": {
+    "ctranslate2": "4.8.2",
+    "sentencepiece": "0.2.1"
+  },
+  "provisioning_runtime": {
+    "torch": "2.8.0",
+    "transformers": "4.57.6",
+    "huggingface-hub": "0.35.3"
+  },
+  "integrity_policy": "Download the exact Hugging Face revision, record every source and converted runtime file SHA-256, and refuse a cache whose revision or license evidence does not match.",
+  "cache_policy": "Translation cache keys include provider, converted model identity, source language, target language, and exact source SHA-256. A cache hit is accepted only after numeric and structural checks pass."
+}

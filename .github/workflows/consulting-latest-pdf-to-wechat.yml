@@ -139,6 +139,11 @@ jobs:
             --batch-size 5 \
             --skip-existing "$SKIP_EXISTING" 2>&1 | tee consulting_xhs_progress.log
 
+      - name: Set up free local translation models
+        uses: ./.github/actions/setup-offline-translation
+        with:
+          targets: zh,en
+
       - name: Build Portal translated report PDFs
         if: ${{ steps.fetch.outputs.pdf_count != '0' }}
         env:

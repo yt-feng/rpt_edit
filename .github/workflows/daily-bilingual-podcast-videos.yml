@@ -164,6 +164,11 @@ jobs:
             --max-images 8 \
             --watermark "KC桌面" 2>&1 | tee "$OUTPUT_DIR/pdf_to_notes_progress.log"
 
+      - name: Set up free local translation models
+        uses: ./.github/actions/setup-offline-translation
+        with:
+          targets: zh,en
+
       - name: Generate ElevenLabs bilingual podcast and explainer videos
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}

@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "index_source": "https://raw.githubusercontent.com/argosopentech/argospm-index/main/index.json",
+  "index_checked_date": "2026-09-12",
+  "integrity_policy": "Exact archive URL, metadata version and SHA-256 are pinned from official model downloads audited by Actions run 34674689210.",
+  "license_policy": "Library licensing does not establish model licensing. Installer records each archive's metadata and bundled license/readme files for inspection.",
+  "runtime": {
+    "argostranslate": "1.11.0",
+    "ctranslate2": "4.8.2",
+    "sentencepiece": "0.2.1",
+    "packaging": "25.0",
+    "sacremoses": "0.1.1"
+  },
+  "models": [
+    {
+      "source": "zh",
+      "target": "en",
+      "version": "1.9",
+      "url": "https://argos-net.com/v1/translate-zh_en-1_9.argosmodel",
+      "sha256": "62e7af5a3a48b530e47b7b3e5c78c2de79073ecd815750d2bf3ab35b4a67da2d"
+    },
+    {
+      "source": "en",
+      "target": "zh",
+      "version": "1.9",
+      "url": "https://argos-net.com/v1/translate-en_zh-1_9.argosmodel",
+      "sha256": "433e7c4f034d87fbe2353161e05f18646d7999452f801a4e1f0378522b9850ab"
+    },
+    {
+      "source": "en",
+      "target": "ja",
+      "version": "1.1",
+      "url": "https://argos-net.com/v1/translate-en_ja-1_1.argosmodel",
+      "sha256": "16300cc4eaa85320520cabcf433b63d01be40ef6966251de72043a083408f716"
+    },
+    {
+      "source": "en",
+      "target": "ko",
+      "version": "1.1",
+      "url": "https://argos-net.com/v1/translate-en_ko-1_1.argosmodel",
+      "sha256": "e03d8e65e6d44525ec5808c3409fcf8728c76c2c76925372b6d3dc3278de17fc"
+    },
+    {
+      "source": "en",
+      "target": "ar",
+      "version": "1.0",
+      "url": "https://argos-net.com/v1/translate-en_ar-1_0.argosmodel",
+      "sha256": "e2a6e84337f7ebbb55f9dc61dcba3a861c0d786ae5a46fa198fd8d6473f5c775"
+    }
+  ]
+}
