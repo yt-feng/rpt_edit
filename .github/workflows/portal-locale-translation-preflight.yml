@@ -2,6 +2,11 @@ name: Portal offline translation preflight
 
 on:
   workflow_dispatch:
+    inputs:
+      compare_m2m100:
+        description: Also compare full sentences with the MIT M2M100 CPU model
+        type: boolean
+        default: false
   pull_request:
     paths:
       - '.github/actions/setup-offline-translation/**'
@@ -57,4 +62,29 @@ jobs:
           name: portal-locale-preflight-${{ github.run_id }}-${{ github.run_attempt }}
           path: ${{ runner.temp }}/portal-locale-preflight/diagnostics.json
           if-no-files-found: warn
+          retention-days: 3
+
+  compare_m2m100:
+    if: github.event_name == 'workflow_dispatch' && inputs.compare_m2m100
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install CPU comparison runtime
+        run: |
+          python -m pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install transformers==4.57.6 sentencepiece==0.2.1
+      - name: Compare complete public financial sentences
+        run: python scripts/compare_offline_translation_models.py --diagnostics-out "$RUNNER_TEMP/m2m100-comparison.json"
+      - name: Upload comparative samples
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: m2m100-comparison-${{ github.run_id }}
+          path: ${{ runner.temp }}/m2m100-comparison.json
           retention-days: 3

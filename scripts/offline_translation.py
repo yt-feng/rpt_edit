@@ -15,33 +15,36 @@ from pathlib import Path
 import re
 import tempfile
 import threading
+import unicodedata
+from collections import Counter, defaultdict, deque
 from datetime import datetime, timezone
 
 PROVIDER = "argos-offline"
 INSTALL_COMMAND = "python -m pip install -r requirements-translation.txt && python -m pip install --no-deps argostranslate==1.11.0"
 MANIFEST_PATH = Path(__file__).with_name("offline_translation_models.json")
 MANIFEST = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
-MODEL_ID = "argos-cpu-v1-" + hashlib.sha256(MANIFEST_PATH.read_bytes()).hexdigest()[:16]
+MODEL_ID = "argos-cpu-v2-context-" + hashlib.sha256(MANIFEST_PATH.read_bytes()).hexdigest()[:16]
 MODELS = {(m["source"], m["target"]): m for m in MANIFEST["models"]}
 _ENGINE_LOCK = threading.RLock()
 _ENGINES: dict[tuple[str, str, str], object] = {}
 _CJK = re.compile(r"[\u3400-\u9fff]")
 _LETTERS = re.compile(r"[A-Za-z\u3400-\u9fff\u3040-\u30ff\uac00-\ud7af\u0600-\u06ff]")
 _FINANCIAL_CODES = "USD|EUR|GBP|JPY|CNY|RMB|HKD|AUD|CAD|CHF|SGD|AED|GDP|CPI|PPI|PMI|PCE|EBITDA|EBIT|EPS|ROE|ROA|ROI|ROIC|DCF|NPV|IRR|CAGR|AI|ETF|IPO|FX|ESG|USA|US|UK|EU|SEC|IMF|OECD|NYSE|NASDAQ"
-# Protected spans never enter a model, so URLs, amounts, tickers and placeholders
-# survive even when a neural model repeats, moves or drops unfamiliar tokens.
+_PLACEHOLDERS = re.compile(r"__[A-Za-z0-9_]+__")
+_NUMBERS = re.compile(r"(?<!\d)[-+−]?\d+(?:[.,]\d+)*(?:[ \t]*[%％‰])?")
+# Structural spans never enter a model. Quantities stay inside their sentence,
+# and placeholders use numeric sentinels; their multiset is verified on output.
 _PROTECTED = re.compile(
     r"(?P<code>(?<!`)(?P<ticks>`+)(?!`).*?(?<!`)(?P=ticks)(?!`))"
     r"|(?P<math>\$\$.*?\$\$|(?<![\\\w])\$(?=[A-Za-z\\])(?=[^$\n]*[=^_{}+*/\\])[^$\n]+\$)"
     r"|(?P<htmlraw><(?:script|style|pre|code)\b[^>]*>.*?</(?:script|style|pre|code)\s*>)"
     r"|(?P<image>!\[(?:\\.|[^\]\\])*\]\((?:[^()\n]|\([^()\n]*\))*\))"
-    r"|(?P<token>__[A-Za-z0-9_]+__|\[\[[A-Za-z0-9_:-]+\]\])"
+    r"|(?P<token>\[\[[A-Za-z0-9_:-]+\]\])"
     r"|(?P<destination>\]\((?:[^()\n]|\([^()\n]*\))*\)|\]\[[^\]\n]*\])"
     r"|(?P<html><!--.*?-->|<(?:\"[^\"]*\"|'[^']*'|[^'\">])*>)"
     r"|(?P<url>(?:https?://|mailto:)[^\s<>]+)"
     r"|(?P<entity>&(?:\#\d+|\#x[\da-fA-F]+|[A-Za-z]+);)"
     r"|(?P<ticker>(?<![A-Za-z])(?:\$[A-Z]{1,8}|[A-Z]{1,10}[.:-][A-Z0-9]{1,10}|" + _FINANCIAL_CODES + r")(?![A-Za-z]))"
-    r"|(?P<number>[-+−]?(?:[$€£¥￥]\s*)?\d+(?:[.,:/\-]\d+)*(?:\s?[%％‰])?)"
     r"|(?P<syntax>\\.|[|\[\]*_~]+)", re.DOTALL,
 )
 
@@ -79,13 +82,52 @@ def split_text(text: str, limit: int = 240) -> list[str]:
     """Lossless deterministic splitting; never drop an oversized sentence's tail."""
     result = []
     while len(text) > limit:
-        candidates = list(re.finditer(r"[。！？.!?;；]\s*|\s+", text[:limit]))
+        candidates = list(re.finditer(r"[。！？;；]\s*|[.!?](?!\d)\s*|\s+", text[:limit]))
         end = candidates[-1].end() if candidates and candidates[-1].end() > limit // 3 else limit
+        for number in _NUMBERS.finditer(text):
+            if number.start() < end < number.end():
+                if number.start() == 0:
+                    raise OfflineTranslationError("A numeric value exceeds the offline chunk bound")
+                end = number.start()
+                break
         result.append(text[:end])
         text = text[end:]
     if text:
         result.append(text)
     return result
+
+
+def _number_key(value: str) -> str:
+    value = "".join(str(unicodedata.digit(char)) if char.isdecimal() else char for char in value)
+    value = re.sub(r"[ \t]", "", value).replace("％", "%").replace("−", "-")
+    return re.sub(r"(?<=\d),(?=\d{3}(?:\D|$))", "", value)
+
+
+def _verify_numbers(source: str, translated: str) -> str:
+    originals = defaultdict(deque)
+    for match in _NUMBERS.finditer(source):
+        originals[_number_key(match.group())].append(match.group())
+    expected = Counter({key: len(values) for key, values in originals.items()})
+    actual = Counter(_number_key(match.group()) for match in _NUMBERS.finditer(translated))
+    if expected != actual:
+        raise OfflineTranslationError("Offline translation changed, omitted or repeated a numeric value/placeholder; output rejected")
+    # Permit digit glyph/spacing/thousands-grouping changes but restore the
+    # exact source spelling after proving that every numeric value survived.
+    return _NUMBERS.sub(lambda match: originals[_number_key(match.group())].popleft(), translated)
+
+
+def _mask_placeholders(text: str) -> tuple[str, dict[str, str]]:
+    replacements = {}
+    sentinel = 9370101
+
+    def replace(match):
+        nonlocal sentinel
+        while str(sentinel) in text or str(sentinel) in replacements:
+            sentinel += 1
+        replacements[str(sentinel)] = match.group()
+        return str(sentinel)
+
+    return _PLACEHOLDERS.sub(replace, text), replacements
 
 
 class _ArgosEngine:
@@ -169,9 +211,10 @@ class OfflineTranslator:
                 try:
                     cached = json.loads(path.read_text(encoding="utf-8"))
                     if all(cached.get(k) == v for k, v in identity.items()) and isinstance(cached.get("translation"), str) and cached["translation"].strip():
+                        verified = _verify_numbers(text, cached["translation"])
                         self.stats["cache_hits"] += 1
-                        return cached["translation"]
-                except (ValueError, OSError):
+                        return verified
+                except (ValueError, OSError, OfflineTranslationError):
                     pass  # A partial/stale cache entry is recalculated, never treated as output.
             try:
                 result = self._engine(source, target).translate(text)
@@ -181,6 +224,7 @@ class OfflineTranslator:
                 raise OfflineTranslationError(f"Offline translation failed for {source}->{target}: {exc}") from exc
             if not isinstance(result, str) or not result.strip():
                 raise OfflineTranslationError(f"Empty offline translation for {source}->{target}")
+            result = _verify_numbers(text, result)
             atomic_json(path, {**identity, "translation": result, "created_at": datetime.now(timezone.utc).isoformat()})
             self.stats["translated_fragments"] += 1
             return result
@@ -192,7 +236,7 @@ class OfflineTranslator:
         # Translate Latin phrases independently when both scripts are present;
         # an English model must never be asked to interpret a Chinese paragraph.
         if source is None and _CJK.search(text) and re.search(r"[A-Za-z]", text):
-            runs = re.findall(r"[A-Za-z]+(?:[ \t’'\-]+[A-Za-z]+)*|[^A-Za-z]+", text)
+            runs = re.findall(r"[A-Za-z][A-Za-z0-9 \t’'.,:;%％+$€£¥()/\-]*|[^A-Za-z]+", text)
             return "".join(self._fragment(run, target, "zh" if _CJK.search(run) else "en") for run in runs)
         source = source or ("zh" if _CJK.search(text) else "en")
         outputs = []
@@ -209,6 +253,9 @@ class OfflineTranslator:
     def translate(self, text: str, target: str, source: str | None = None) -> str:
         target = normalize_language(target)
         source = normalize_language(source) if source else None
+        if source == target:
+            return text
+        text, placeholders = _mask_placeholders(text)
         pieces, cursor = [], 0
         # Newlines are structural for subtitles, prose and HTML alike.
         for match in re.finditer(r"\r?\n|" + _PROTECTED.pattern, text, re.DOTALL):
@@ -216,7 +263,13 @@ class OfflineTranslator:
             pieces.append(match.group())
             cursor = match.end()
         pieces.append(self._fragment(text[cursor:], target, source))
-        return "".join(pieces)
+        result = "".join(pieces)
+        for sentinel, original in placeholders.items():
+            pattern = re.compile(r"(?<!\d)" + sentinel + r"(?!\d)")
+            if len(pattern.findall(result)) != 1:
+                raise OfflineTranslationError("Offline translation omitted or repeated a protected placeholder; output rejected")
+            result = pattern.sub(lambda _match: original, result)
+        return result
 
     def translate_markdown(self, markdown: str, target: str = "zh", source: str | None = "en") -> str:
         output, fence, raw_html = [], None, None

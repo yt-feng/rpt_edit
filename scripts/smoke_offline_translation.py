@@ -16,7 +16,7 @@ def main() -> int:
     parser.add_argument('--diagnostics-out', type=Path, required=True)
     args = parser.parse_args()
     report = {'provider': 'argos', 'provider_requests': 0, 'api_cost_cny': 0,
-              'status': 'running', 'samples': [], 'errors': []}
+              'status': 'running', 'semantic_review': 'required', 'samples': [], 'errors': []}
     translator = OfflineTranslator()
     started = time.monotonic()
     # Model downloads belong to the separate installer. Translation is offline.

@@ -3,6 +3,7 @@
 import importlib.metadata
 import json
 from pathlib import Path
+import re
 import tempfile
 import types
 import unittest
@@ -29,13 +30,56 @@ class OfflineTranslationTests(unittest.TestCase):
         self.calls = []
         self.translator = OfflineTranslator(cache_dir=self.temp.name, engine_factory=lambda source, target: FakeEngine(self.calls, (source, target)))
 
-    def test_protected_values_never_reach_model(self):
+    def test_structure_is_protected_but_quantities_keep_context(self):
         text = 'Growth __KC_PH_000__ for $AAPL is $1,234.50 (+12.5%) [[PORTAL_IMAGE_001]] <b data-x="42">forecast</b> https://example.com/a?q=2'
         output = self.translator.translate(text, "zh", "en")
-        for value in ["__KC_PH_000__", "$AAPL", "$1,234.50", "+12.5%", "[[PORTAL_IMAGE_001]]", '<b data-x="42">', "</b>", "https://example.com/a?q=2"]:
+        for value in ["__KC_PH_000__", "$AAPL", "[[PORTAL_IMAGE_001]]", '<b data-x="42">', "</b>", "https://example.com/a?q=2"]:
             self.assertIn(value, output)
             self.assertFalse(any(value in call[2] for call in self.calls), value)
-        self.assertIn("译{growth}", output)
+        for amount in ["$1,234.50", "+12.5%"]:
+            self.assertIn(amount, output)
+            self.assertTrue(any(amount in call[2] for call in self.calls))
+        self.assertIn("growth", output)
+
+    def test_cash_flow_sentence_reaches_model_with_percent_and_year(self):
+        sentence = "Operating cash flow rose by 15% in 2026."
+        translated = "2026年经营现金流增长了15%。"
+
+        def contextual(text):
+            self.assertEqual(text, sentence, "Translation lost the sentence context around quantities")
+            return translated
+
+        engine = types.SimpleNamespace(translate=contextual)
+        translator = OfflineTranslator(cache_dir=self.temp.name, engine_factory=lambda *_args: engine)
+        self.assertEqual(translator.translate(sentence, "zh", "en"), translated)
+
+    def test_placeholders_keep_sentence_context_and_can_reorder(self):
+        sentence = "Revenue rose by __KC_PH_000__ in __KC_PH_001__."
+
+        def contextual(text):
+            self.assertRegex(text, r"^Revenue rose by \d+ in \d+\.$")
+            first, second = re.findall(r"\d+", text)
+            return f"{second}年营收增长{first}。"
+
+        translator = OfflineTranslator(cache_dir=self.temp.name, engine_factory=lambda *_args: types.SimpleNamespace(translate=contextual))
+        self.assertEqual(translator.translate(sentence, "zh", "en"), "__KC_PH_001__年营收增长__KC_PH_000__。")
+
+    def test_changed_missing_or_repeated_numeric_values_are_rejected(self):
+        for altered in ["2026年现金流增加。", "2026年现金流增长16%。", "2026年2026年现金流增长15%。"]:
+            with self.subTest(altered=altered):
+                translator = OfflineTranslator(cache_dir=self.temp.name, engine_factory=lambda *_args: types.SimpleNamespace(translate=lambda _text: altered))
+                with self.assertRaisesRegex(OfflineTranslationError, "numeric value"):
+                    translator.translate("Cash flow rose by 15% in 2026.", "zh", "en")
+
+    def test_identical_language_preserves_original_and_skips_engine(self):
+        text = "现金流 __KC_PH_000__ 和 12.5%\n<tag>  字符串  </tag>"
+        self.assertEqual(self.translator.translate(text, "zh-CN", "zh"), text)
+        self.assertEqual(self.calls, [])
+
+    def test_numeric_spellings_restored_after_safe_grouping_changes(self):
+        engine = types.SimpleNamespace(translate=lambda _text: "增长 ١٢.٥ %，达到1234.50。")
+        translator = OfflineTranslator(cache_dir=self.temp.name, engine_factory=lambda *_args: engine)
+        self.assertEqual(translator.translate("Growth of 12.5% to 1,234.50.", "zh", "en"), "增长 12.5%，达到1,234.50。")
 
     def test_allcaps_prose_is_translated_and_explicit_codes_preserved(self):
         output = self.translator.translate("REVENUE / OPERATING CASH FLOW in USD for NASDAQ:AAPL and BRK.B", "zh", "en")
