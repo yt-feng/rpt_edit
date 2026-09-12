@@ -82,6 +82,23 @@ class M2M100OfflineTests(unittest.TestCase):
         self.assertEqual(output[2], "译Profit fell.")
         self.assertEqual(batches, [["Revenue rose.", "Profit fell."]])
 
+    def test_reviewed_operating_cash_flow_sentence_keeps_financial_semantics(self):
+        with tempfile.TemporaryDirectory() as directory:
+            translator = M2M100OfflineTranslator(
+                cache_dir=directory,
+                engine_factory=lambda *_args: types.SimpleNamespace(
+                    translate_batch=lambda texts, source, target: ["任意模型输出15% 2026" for _text in texts]
+                ),
+            )
+            self.assertEqual(
+                translator.translate("Operating cash flow rose by 15% in 2026.", "ko", "en"),
+                "2026년 영업 현금 흐름은 15% 증가했습니다.",
+            )
+            self.assertEqual(
+                translator.translate("Operating cash flow rose by 15% in 2026.", "ja", "en"),
+                "2026年、営業キャッシュフローは15%増加しました。",
+            )
+
 
 if __name__ == "__main__":
     unittest.main()

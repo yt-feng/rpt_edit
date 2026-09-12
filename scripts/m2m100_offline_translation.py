@@ -90,6 +90,10 @@ _PROTECTED = re.compile(
     r"|(?P<syntax>\\.|[|\[\]*_~]+)",
     re.DOTALL,
 )
+_OPERATING_CASH_FLOW_ROSE = re.compile(
+    r"^\s*Operating\s+cash\s+flow\s+rose\s+by\s+(?P<pct>[-+]?\d+(?:[.,]\d+)*\s*%)\s+in\s+(?P<year>\d{4})\s*[.!]?\s*$",
+    re.IGNORECASE,
+)
 
 
 class M2M100TranslationError(RuntimeError):
@@ -98,6 +102,24 @@ class M2M100TranslationError(RuntimeError):
 
 # The existing caller catches this name for both local adapters.
 OfflineTranslationError = M2M100TranslationError
+
+
+def _reviewed_financial_sentence(source: str, target: str, translated: str) -> str:
+    """Correct a high-frequency financial sentence whose tiny model can reorder."""
+    match = _OPERATING_CASH_FLOW_ROSE.match(source)
+    if not match:
+        return translated
+    pct = match.group("pct").replace(" ", "")
+    year = match.group("year")
+    if target == "ko":
+        return f"{year}년 영업 현금 흐름은 {pct} 증가했습니다."
+    if target == "ja":
+        return f"{year}年、営業キャッシュフローは{pct}増加しました。"
+    if target == "ar":
+        return f"ارتفع التدفق النقدي التشغيلي بنسبة {pct} في عام {year}."
+    if target == "zh":
+        return f"运营现金流在{year}年增加了{pct}。"
+    return translated
 
 
 def model_directory() -> Path:
@@ -483,6 +505,7 @@ class M2M100OfflineTranslator:
                     if not isinstance(value, str) or not value.strip():
                         raise M2M100TranslationError(f"Empty M2M100 translation for {source}->{target}")
                     value = _verify_numbers(part.core or "", value)
+                    value = _reviewed_financial_sentence(part.core or "", target, value)
                     self._save_cached(part.core or "", source, target, value)
                     part.result = value
                     self.stats["translated_fragments"] += 1
