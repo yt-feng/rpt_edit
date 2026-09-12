@@ -235,6 +235,35 @@ class DeepLRepair:
                 "stop_reason": self._stop_reason,
             }
 
+    def can_fit(self, sources: list[str], *, request_count: int | None = None) -> bool:
+        """Check the cached allowance without reserving it or submitting repairs.
+
+        Callers spanning locales must provide their total packed request count,
+        since different target languages cannot share a translation request.
+        This is an observation, not a reservation; translate_many checks again.
+        """
+        groups = pack_repair_indexes(sources)
+        if not groups:
+            raise DeepLRepairError("DeepL allowance check requires nonempty source strings")
+        requests_needed = len(groups) if request_count is None else request_count
+        if not _nonnegative_integer(requests_needed) or requests_needed < len(groups):
+            raise DeepLRepairError("DeepL allowance check requires a valid packed request count")
+        reservation = sum(len(source) for source in sources)
+        with self._lock:
+            self._raise_if_stopped()
+            self._ensure_balance()
+            available = (self._limit or 0) - (self._initial_count or 0) - self._billed - self._reserved
+            fits = (
+                reservation + QUOTA_RESERVE_CHARACTERS <= available
+                and requests_needed <= self._max_requests - self._provider_requests
+            )
+            if not fits and self._unobserved:
+                # Retained reservations bound further repairs, but do not prove
+                # exhausted provider balance after an unobserved charge. Never
+                # turn this uncertainty into an alternate-provider decision.
+                raise DeepLRepairError("DeepL allowance is uncertain after an unobserved response")
+            return fits
+
     def translate(self, locale: str, source: str) -> str:
         return self.translate_many(locale, [source])[0]
 

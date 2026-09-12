@@ -74,7 +74,7 @@ class ResidualRepairTests(unittest.TestCase):
                 content = json.dumps({"translations": []})
             else:
                 self.assertNotIn("response_format", payload)
-                self.assertEqual(payload["messages"][1]["content"], next(iter(units.values())).source)
+                self.assertEqual(payload["messages"][1]["content"].split("\n\n", 1)[1], next(iter(units.values())).source)
                 content = NATIVE["ko"]
             response = mock.Mock(status_code=200)
             response.json.return_value = {"choices": [{"message": {"content": content}}]}
@@ -99,11 +99,11 @@ class ResidualRepairTests(unittest.TestCase):
         def provider(_url, **kwargs):
             payload = kwargs["payload"]
             if "response_format" in payload:
-                sources = [row["source_text"] for row in json.loads(payload["messages"][1]["content"])["items"]]
+                sources = [row["source_text"] for row in json.loads(payload["messages"][1]["content"].split("\n\n", 1)[1])["items"]]
                 self.assertEqual(len(sources), 6)
                 content = '{"translations":['
             else:
-                sources = [payload["messages"][1]["content"]]
+                sources = [payload["messages"][1]["content"].split("\n\n", 1)[1]]
                 content = NATIVE["ko"]
             calls.append(sources)
             self.assertNotIn(paid.source, sources)

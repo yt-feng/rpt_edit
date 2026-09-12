@@ -28,11 +28,11 @@ class PreflightRepairTests(unittest.TestCase):
             plain = "response_format" not in payload
             calls.append((locale, plain))
             if plain:
-                source = payload["messages"][1]["content"]
+                source = payload["messages"][1]["content"].split("\n\n", 1)[1]
                 plain_sources.append(source)
                 text = NATIVE[locale] if plain_ok else source
             else:
-                rows = json.loads(payload["messages"][1]["content"])["items"]
+                rows = json.loads(payload["messages"][1]["content"].split("\n\n", 1)[1])["items"]
                 bad = (10 if attempts[locale] == 1 else missing) if locale == bad_locale else 0
                 text = json.dumps({"translations": [
                     {"id": row["id"], "text": row["source_text"] if index >= len(rows)-bad else NATIVE[locale]}

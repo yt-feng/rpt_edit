@@ -57,6 +57,72 @@ class SeoPracticalChecks(unittest.TestCase):
         self.assertEqual(state.data["status"], "passed")
 
 
+class NativeUserInstructionTests(unittest.TestCase):
+    def test_english_headline_echo_retries_only_residual_rows_with_native_user_instruction(self):
+        # The first title was echoed by both AR requests in run 34670519267.
+        sources = [
+            "GS-Space Exploration Technologies Corp. (SPCX) Communacopia-__KC_PH_000__",
+            "摩根大通：中国茶饮加盟商调研-蜜雪同店承压、古茗改善",
+            "全球市场展望",
+        ]
+        texts = [
+            "غولدمان ساكس - شركة تقنيات استكشاف الفضاء (SPCX)، مؤتمر كوميوناكوبيا - __KC_PH_000__",
+            "جيه بي مورغان: دراسة أصحاب امتياز مشروبات الشاي في الصين - ضغوط على ميشيو وتحسن غومينغ",
+            "آفاق الأسواق العالمية",
+        ]
+        units = [builder.TranslationUnit(str(i) * 64, "html:meta:keyword", source) for i, source in enumerate(sources)]
+        seen = []
+
+        def provider(_url, **kwargs):
+            payload = kwargs["payload"]
+            self.assertNotIn("temperature", payload, "Do not force the zero-temperature JSON echo protocol")
+            instruction, data = payload["messages"][1]["content"].split("\n\n", 1)
+            self.assertTrue(instruction.startswith("ترجم إلى العربية فقط."))
+            self.assertIn("Chinese, English or mixed", instruction)
+            self.assertIn("do not leave an entire Latin headline unchanged", instruction)
+            rows = json.loads(data)["items"]
+            seen.append(rows)
+            if len(seen) == 2:
+                self.assertTrue(payload["messages"][-1]["content"].startswith("ترجم إلى العربية فقط."))
+            output = [{"id": row["id"], "text": (
+                row["source_text"] if len(seen) == 1 and row["id"] != "2" else texts[int(row["id"])])}
+                for row in rows]
+            response = mock.Mock(status_code=200)
+            response.json.return_value = {"choices": [{"message": {"content": json.dumps({"translations": output})}}]}
+            return response
+
+        state = builder.TranslationRun(max_requests=2)
+        with mock.patch.dict(sys.modules, {"deepseek_http": mock.Mock(request_with_key_fallback=provider)}):
+            result = builder.deepseek_translate_batch("ar", units, model=builder.DEFAULT_DEEPSEEK_MODEL,
+                base_url="https://provider.example.invalid", timeout=1, attempts=2, run_state=state)
+        self.assertEqual(result, {unit.key: text for unit, text in zip(units, texts)})
+        self.assertEqual([[row["id"] for row in rows] for rows in seen], [["0", "1", "2"], ["0", "1"]])
+        self.assertEqual(state.data["provider_requests"], 2)
+
+    def test_plain_fragment_request_preserves_source_and_native_instruction_for_every_locale(self):
+        source = "，比去年同期提升__KC_PH_000__个百分点。"
+        cases = {
+            "ko": ("한국어로만 번역하세요.", "전년 동기 대비 __KC_PH_000__퍼센트포인트 상승했다."),
+            "ja": ("日本語だけに翻訳してください。", "前年同期比で__KC_PH_000__ポイント上昇した。"),
+            "ar": ("ترجم إلى العربية فقط.", "، بارتفاع __KC_PH_000__ نقطة مئوية مقارنة بالفترة نفسها من العام الماضي."),
+        }
+        for locale, (instruction, translated) in cases.items():
+            with self.subTest(locale=locale):
+                response = mock.Mock(status_code=200)
+                response.json.return_value = {"choices": [{"message": {"content": translated}}]}
+                request = mock.Mock(return_value=response)
+                with mock.patch.dict(sys.modules, {"deepseek_http": mock.Mock(request_with_key_fallback=request)}):
+                    result = builder.deepseek_translate_batch(locale, [builder.TranslationUnit("key", "html:text:p", source)],
+                        model=builder.DEFAULT_DEEPSEEK_MODEL, base_url="https://provider.example.invalid",
+                        timeout=1, attempts=1, single_item_plain=True)
+                content = request.call_args.kwargs["payload"]["messages"][1]["content"]
+                self.assertNotIn("temperature", request.call_args.kwargs["payload"])
+                self.assertTrue(content.startswith(instruction))
+                self.assertEqual(content.split("\n\n", 1)[1], source)
+                self.assertEqual(result, {"key": translated})
+                request.assert_called_once()
+
+
 class PlainRepairTests(unittest.TestCase):
     def test_real_failed_fragment_changes_protocol_and_reuses_31_paid_rows(self):
         units = [builder.TranslationUnit(f"{i:064x}", "html:text:p", "公开研究报告内容") for i in range(32)]
@@ -76,7 +142,7 @@ class PlainRepairTests(unittest.TestCase):
                 ]})
             else:
                 self.assertNotIn("response_format", payload)
-                self.assertEqual(payload["messages"][1]["content"], fragment)
+                self.assertEqual(payload["messages"][1]["content"].split("\n\n", 1)[1], fragment)
                 content = "전년 동기 대비 __KC_PH_000__퍼센트포인트 상승했다."
             response = mock.Mock(status_code=200)
             response.json.return_value = {
@@ -289,9 +355,9 @@ class PartialBatchTests(unittest.TestCase):
 
         result = self.translate(provider)
         self.assertEqual(result, {self.units[0].key: self.good["text"], self.units[1].key: self.other["text"]})
-        self.assertEqual([row["id"] for row in json.loads(seen[0]["messages"][1]["content"])["items"]], ["0", "1"])
+        self.assertEqual([row["id"] for row in json.loads(seen[0]["messages"][1]["content"].split("\n\n", 1)[1])["items"]], ["0", "1"])
         self.assertNotIn("response_format", seen[1])
-        self.assertEqual(seen[1]["messages"][1]["content"], self.units[1].source)
+        self.assertEqual(seen[1]["messages"][1]["content"].split("\n\n", 1)[1], self.units[1].source)
         self.assertNotIn(self.units[0].source, seen[1]["messages"][1]["content"])
 
     def test_valid_rows_after_bad_row_are_not_lost(self):

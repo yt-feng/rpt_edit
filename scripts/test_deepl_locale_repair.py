@@ -91,6 +91,163 @@ class DeepLRepairTests(unittest.TestCase):
         self.assertNotIn("test-only-deepl-key", json.dumps(stats))
         self.assertNotIn("待补译文字", json.dumps(stats))
 
+    def test_can_fit_caches_usage_and_preserves_exact_115_character_allowance(self):
+        transport = Transport(count=498885, limit=500000)
+        repair = DeepLRepair(transport=transport)
+        self.assertFalse(repair.can_fit(["中" * 116]))
+        checked = repair.snapshot()
+        self.assertEqual(checked["remaining_character_budget"], 1115)
+        self.assertTrue(repair.can_fit(["深😀e\u0301<& " + "中" * 108]))
+        self.assertTrue(repair.can_fit(["中" * 114, "文"]))
+        self.assertFalse(repair.can_fit(["中" * 114, "文字"]))
+        self.assertEqual(repair.snapshot(), checked)
+        self.assertEqual(len(transport.gets), 1)
+        self.assertEqual(transport.posts, [])
+        self.assertEqual(checked["provider_requests"], 0)
+        self.assertEqual(checked["reserved_characters"], 0)
+        self.assertEqual(checked["stop_reason"], "")
+
+    def test_can_fit_false_does_not_stop_a_smaller_distinct_translation(self):
+        transport = Transport(count=0, limit=1115)
+        repair = DeepLRepair(transport=transport)
+        self.assertFalse(repair.can_fit(["中" * 116]))
+        self.assertEqual(repair.translate("ja", "短文"), "短文")
+        self.assertEqual(len(transport.gets), 1)
+        self.assertEqual(len(transport.posts), 1)
+        self.assertEqual(repair.snapshot()["stop_reason"], "")
+        self.assertEqual(repair.snapshot()["reserved_characters"], 0)
+
+    def test_can_fit_counts_packing_and_explicit_separate_locale_requests(self):
+        transport = Transport()
+        repair = DeepLRepair(max_requests=2, transport=transport)
+        self.assertTrue(repair.can_fit(["文字"] * 51))
+        self.assertFalse(repair.can_fit(["文字"] * 101))
+        self.assertTrue(repair.can_fit(["文字"] * 3))
+        self.assertFalse(repair.can_fit(["文字"] * 3, request_count=3))
+        self.assertTrue(repair.can_fit(["文字"] * 2, request_count=2))
+        self.assertEqual(repair.translate("ja", "已译"), "已译")
+        self.assertFalse(repair.can_fit(["文字"] * 51))
+        self.assertTrue(repair.can_fit(["后续"]))
+        self.assertEqual(len(transport.gets), 1)
+        self.assertEqual(len(transport.posts), 1)
+        self.assertEqual(repair.snapshot()["provider_requests"], 1)
+        self.assertEqual(repair.snapshot()["stop_reason"], "")
+
+    def test_can_fit_does_not_hide_invalid_usage_behind_empty_request_allowance(self):
+        failures = (
+            Response({}, status=403), Response({}),
+            Response({"character_count": False, "character_limit": 500000}),
+            Response(ValueError("test-only-deepl-key")),
+            requests.Timeout("test-only-deepl-key"),
+        )
+        for usage in failures:
+            with self.subTest(usage=type(usage).__name__):
+                transport = Transport()
+                transport.usage = usage
+                repair = DeepLRepair(max_requests=0, transport=transport)
+                for _ in range(2):
+                    with self.assertRaises(DeepLRepairError) as caught:
+                        repair.can_fit(["文字"])
+                    self.assertNotIn("test-only-deepl-key", str(caught.exception))
+                self.assertEqual(len(transport.gets), 1)
+                self.assertEqual(transport.posts, [])
+                self.assertEqual(repair.snapshot()["reserved_characters"], 0)
+                self.assertEqual(repair.snapshot()["provider_requests"], 0)
+
+    def test_can_fit_missing_key_and_preexisting_stop_raise_without_network(self):
+        with mock.patch.dict(os.environ, {"DEEPL_API_KEY": ""}):
+            transport = Transport()
+            repair = DeepLRepair(transport=transport)
+            with self.assertRaisesRegex(DeepLRepairError, "key is not configured"):
+                repair.can_fit(["文字"])
+            self.assertEqual(transport.gets, [])
+            self.assertEqual(transport.posts, [])
+        transport = Transport()
+        repair = DeepLRepair(max_requests=0, transport=transport)
+        with self.assertRaises(DeepLQuotaExhausted):
+            repair.translate("ja", "文字")
+        with self.assertRaisesRegex(DeepLQuotaExhausted, "request allowance exhausted"):
+            repair.can_fit(["文字"])
+        self.assertEqual(transport.gets, [])
+        self.assertEqual(transport.posts, [])
+
+    def test_can_fit_uncertain_insufficiency_raises_but_adequate_allowance_remains_usable(self):
+        for maximum in (1, 3):
+            with self.subTest(maximum=maximum):
+                transport = Transport(count=0, limit=1115, response=Response({
+                    "translations": [{"text": "<t>翻訳</t>"}],
+                }))
+                repair = DeepLRepair(max_requests=maximum, transport=transport)
+                self.assertEqual(repair.translate("ja", "初文"), "翻訳")
+                previous = repair.snapshot()
+                with self.assertRaisesRegex(DeepLRepairError, "allowance is uncertain"):
+                    repair.can_fit(["中" * (114 if maximum > 1 else 1)])
+                self.assertEqual(repair.snapshot(), previous)
+                if maximum > 1:
+                    self.assertTrue(repair.can_fit(["中" * 113]))
+                    self.assertEqual(repair.snapshot(), previous)
+                    transport.response = Response({"translations": [{
+                        "text": "<t>次</t>", "billed_characters": 1,
+                    }]})
+                    self.assertEqual(repair.translate("ja", "次文"), "次")
+                self.assertEqual(len(transport.gets), 1)
+                self.assertEqual(repair.snapshot()["stop_reason"], "")
+
+    def test_can_fit_subtracts_known_inflight_reservations_without_stopping(self):
+        entered = threading.Event()
+        release = threading.Event()
+
+        def pending_response(_url, **_kwargs):
+            entered.set()
+            if not release.wait(timeout=5):
+                raise AssertionError("test release timed out")
+            return Response({"translations": [{"text": "<t>訳</t>", "billed_characters": 20}]})
+
+        transport = Transport(count=0, limit=1040, response=pending_response)
+        repair = DeepLRepair(max_requests=2, transport=transport)
+        with ThreadPoolExecutor(max_workers=1) as pool:
+            pending = pool.submit(repair.translate, "ja", "中" * 20)
+            try:
+                self.assertTrue(entered.wait(timeout=5))
+                previous = repair.snapshot()
+                self.assertTrue(repair.can_fit(["文" * 20]))
+                self.assertFalse(repair.can_fit(["文" * 21]))
+                self.assertFalse(repair.can_fit(["文"], request_count=2))
+                self.assertEqual(repair.snapshot(), previous)
+            finally:
+                release.set()
+            self.assertEqual(pending.result(), "訳")
+        self.assertEqual(len(transport.gets), 1)
+        self.assertEqual(len(transport.posts), 1)
+        self.assertEqual(repair.snapshot()["stop_reason"], "")
+
+    def test_can_fit_concurrent_checks_share_one_usage_without_reservations(self):
+        transport = Transport(count=0, limit=1115)
+        repair = DeepLRepair(max_requests=1, transport=transport)
+        with ThreadPoolExecutor(max_workers=12) as pool:
+            results = list(pool.map(lambda _: repair.can_fit(["中" * 115]), range(50)))
+        self.assertTrue(all(results))
+        self.assertEqual(len(transport.gets), 1)
+        self.assertEqual(transport.posts, [])
+        self.assertEqual(repair.snapshot()["reserved_characters"], 0)
+        self.assertEqual(repair.snapshot()["provider_requests"], 0)
+
+    def test_can_fit_validates_sources_body_packing_and_request_count_before_usage(self):
+        transport = Transport()
+        repair = DeepLRepair(transport=transport)
+        for sources in ([], "文字", [""], [" "], [None], ["invalid\x00source"], ["中" * 20000]):
+            with self.subTest(sources_type=type(sources).__name__):
+                with self.assertRaises(DeepLRepairError):
+                    repair.can_fit(sources)
+        for count in (0, -1, True, 1.5, "1"):
+            with self.subTest(count=count):
+                with self.assertRaises(DeepLRepairError):
+                    repair.can_fit(["文字"], request_count=count)
+        with self.assertRaises(DeepLRepairError):
+            repair.can_fit(["文字"] * 51, request_count=1)
+        self.assertEqual(transport.gets, [])
+        self.assertEqual(transport.posts, [])
+
     def test_escapes_source_and_preserves_every_placeholder_occurrence(self):
         source = 'A & B < 9 "quoted" __KC_PH_000__ __KC_PH_000__ __KC_PH_23__'
         transport = Transport()
