@@ -824,7 +824,7 @@ jobs:
             --hot-report-index "$RUNNER_TEMP/hot-reports-public-v2.json"
             --cache-out _neutral_site/data/i18n/cache-v1.json.gz
             --assets-root portal_suite/locale_assets
-            --provider argos
+            --provider m2m100
             --timeout 120
             --translation-scope "$PORTAL_MULTILINGUAL_TRANSLATION_SCOPE"
             "${index_args[@]}"

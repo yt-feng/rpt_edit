@@ -36,7 +36,7 @@ class PreflightWorkflowTests(unittest.TestCase):
         step = text.split('Build Korean Japanese and Arabic static locales', 1)[1].split('Detect multilingual translation checkpoint', 1)[0]
         for forbidden in ('DEEPSEEK', 'DEEPL', 'run_portal_locale_backfill.py', 'max-provider-cost-cny'):
             self.assertNotIn(forbidden, step)
-        self.assertIn('--provider argos', step)
+        self.assertIn('--provider m2m100', step)
         title = text.split('- name: Translate missing report titles', 1)[1].split('- name: Detect Chinese', 1)[0]
         self.assertNotIn('DEEPSEEK', title)
         self.assertIn('--fail-on-error', title)

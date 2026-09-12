@@ -383,7 +383,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
             "--cache-out _neutral_site/data/i18n/cache-v1.json.gz",
             "--assets-root portal_suite/locale_assets",
             '--workers 1',
-            '--provider argos',
+            '--provider m2m100',
         ):
             self.assertIn(argument, locale)
         self.assertIn('cache_args+=(--cache-in "$RUNNER_TEMP/portal-locale-cache/cache-v1.json.gz")', locale)

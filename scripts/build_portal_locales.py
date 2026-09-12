@@ -296,6 +296,7 @@ LOCALES: dict[str, LocaleConfig] = {
     "ja": LocaleConfig("ja", "Japanese", "日本語", "ltr", "ja_JP", "ja-JP"),
     "ar": LocaleConfig("ar", "Arabic", "العربية", "rtl", "ar_AE", "ar"),
 }
+OFFLINE_PROVIDERS = frozenset({"argos", "m2m100"})
 
 
 @dataclass(frozen=True)
@@ -677,7 +678,7 @@ def load_cache(path: Path | None, model: str = DEFAULT_DEEPSEEK_MODEL, *, provid
     if not isinstance(payload, dict) or payload.get("schema_version") != CACHE_SCHEMA_VERSION:
         raise TranslationError(f"Unsupported translation cache schema: {path}")
     cached_model = str(payload.get("model") or "").strip()
-    offline_model_changed = (provider == "argos" and payload.get("provider") == "argos"
+    offline_model_changed = (provider in OFFLINE_PROVIDERS and payload.get("provider") in OFFLINE_PROVIDERS
                              and payload.get("prompt_version") == PROMPT_VERSION
                              and cached_model != requested_model)
     if offline_model_changed:
@@ -693,8 +694,9 @@ def load_cache(path: Path | None, model: str = DEFAULT_DEEPSEEK_MODEL, *, provid
                 and normalize_deepseek_model_name(row.get("model")) == DEFAULT_DEEPSEEK_MODEL
             }
         payload["model"] = requested_model
+        payload["provider"] = provider
         cached_model = requested_model
-    legacy_import = (provider == "argos" and payload.get("provider") == "deepseek"
+    legacy_import = (provider in OFFLINE_PROVIDERS and payload.get("provider") == "deepseek"
                      and normalize_deepseek_model_name(cached_model) == DEFAULT_DEEPSEEK_MODEL)
     if (
         payload.get("prompt_version") != PROMPT_VERSION
@@ -1366,9 +1368,9 @@ def translate_missing_units(
         diagnostics_out, max_provider_requests if max_provider_requests is not None else (6 if preflight_only else None),
         max_provider_cost_cny,
     )
-    if provider == "argos":
-        run_state.data.update(provider="argos", api_cost_cny=0, repair_provider="none")
-    worker_count = 1 if preflight_only or provider == "argos" else max(1, min(MAX_TRANSLATION_WORKERS, int(workers)))
+    if provider in OFFLINE_PROVIDERS:
+        run_state.data.update(provider=provider, api_cost_cny=0, repair_provider="none")
+    worker_count = 1 if preflight_only or provider in OFFLINE_PROVIDERS else max(1, min(MAX_TRANSLATION_WORKERS, int(workers)))
     if preflight_only or preserve_unused_cache:
         # A standalone preflight may provide only a representative inventory.
         # Never remove the rest of an existing full translation checkpoint.
@@ -1540,12 +1542,12 @@ def translate_missing_units(
         log(f"Translation cache complete: {len(units)} source units; no translation requests needed.")
         return missing_counts
 
-    if provider == "argos":
+    if provider in OFFLINE_PROVIDERS:
         # Offline inference has no provider balance, HTTP retries or paid repair.
         # Save valid rows even if a neighbouring row fails the quality gate.
         from offline_translation import OfflineTranslator, OfflineTranslationError, PROVIDER as offline_provider
         translator = OfflineTranslator()
-        run_state.data.update(provider="argos", offline_engine=offline_provider, api_cost_cny=0, repair_provider="none", workers=1)
+        run_state.data.update(provider=provider, offline_engine=offline_provider, api_cost_cny=0, repair_provider="none", workers=1)
         failed = 0
         deadline = time.monotonic() + 3600  # Leave time for checkpoint upload before the job timeout.
         for locale, batch in jobs:
@@ -1571,7 +1573,7 @@ def translate_missing_units(
                                   else translator.translate(unit.source, locale))
                     validate_translation_quality(locale, unit, translated)
                     cache["locales"][locale][unit.key] = {
-                        **_translation_cache_row(unit, translated), "provider": "argos", "offline_engine": offline_provider, "model": model,
+                        **_translation_cache_row(unit, translated), "provider": provider, "offline_engine": offline_provider, "model": model,
                     }
                 except OfflineTranslationError as error:
                     write_cache(cache_path, cache)
@@ -5211,7 +5213,7 @@ def _build_localized_release(
     if site.scheme != "https" or not site.netloc or site.path not in {"", "/"}:
         raise TranslationError("--site-url must be an HTTPS origin without a path")
     site_url = urlunsplit((site.scheme, site.netloc, "", "", "")).rstrip("/")
-    if provider not in {"argos", "deepseek"}:
+    if provider not in OFFLINE_PROVIDERS | {"deepseek"}:
         raise TranslationError("Unsupported translation provider")
     if provider == "deepseek" and batch_translator is None:
         deepseek_base_url = validate_deepseek_base_url(deepseek_base_url)
@@ -5992,7 +5994,7 @@ def parse_args() -> argparse.Namespace:
         required=True,
         help="Downloaded R2 _hot-reports/indexes/public-v2.json public metadata snapshot",
     )
-    parser.add_argument("--provider", choices=("argos",), default="argos", help="Offline translation only; no paid API fallback")
+    parser.add_argument("--provider", choices=("m2m100", "argos"), default="m2m100", help="Offline translation only; no paid API fallback")
     parser.add_argument("--workers", type=int, default=1)
     parser.add_argument("--model", help="Deprecated compatibility option; pinned offline model identity is used")
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
