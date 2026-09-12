@@ -161,3 +161,28 @@ and Chinese-title-cache regression suites before merge. The full refresh still
 requires complete translations, Chinese parity, static validation and successful
 cutover. A green checkpoint run remains an incomplete release; verify cutover
 and the active public release independently.
+
+## Incident: 2026-09-12 — primary retry suppressed by an exhausted repair key
+
+Runs `34659578270`, `34660587113` and `34662419021` stopped in the locale
+canary. The latest diagnostic had 1,115 DeepL characters remaining, including
+the retained 1,000-character margin, and made no repair POST. Japanese's last
+row passed; Arabic still had 33 missing rows. Merely configuring a DeepL key
+had reduced each primary canary to one output attempt, even though the workflow
+requested two. A partial response therefore went straight to an unaffordable
+secondary repair.
+
+The canary now honors up to two requested primary output attempts. The second
+request includes only unresolved rows and validation feedback. Primary and
+secondary POSTs still share the existing six-request cap; grouped repairs run
+only if the remaining allowance fits. Provider HTTP/transport failures and real
+DeepL exhaustion retain their stop behavior. No quota or quality gate changes.
+
+The exact paragraph date fragment `__KC_PH_000__月__KC_PH_001__日，` also has a
+reviewed Arabic rendering, with the day and month placeholders reordered to
+match Arabic wording. Its source and paragraph context must match exactly, and
+an existing valid translation keeps priority. It no longer needs a paid request.
+
+Regression coverage exercises primary recovery with the secondary key present,
+reuse of accepted rows, the shared request cap, unchanged-source rejection,
+and exact date/placeholder preservation.
