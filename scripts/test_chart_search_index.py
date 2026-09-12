@@ -789,6 +789,56 @@ class ChartSearchIndexTests(unittest.TestCase):
                     [(15, 90)] * 3,
                 )
 
+    def test_requests_wrapped_body_timeout_uses_adaptive_read_deadline(self) -> None:
+        # Exercise Requests' actual Response.content path, which turns urllib3's
+        # body-read timeout into ConnectionError. No socket or provider is used.
+        stalled = chart.requests.Response()
+        stalled.status_code = 200
+        stalled.raw = Mock()
+        stalled.raw.stream.side_effect = chart.ReadTimeoutError(
+            None, "https://private.invalid/secret", "private-sentinel",
+        )
+        completed = chart.requests.Response()
+        completed.status_code = 200
+        completed._content = json.dumps({
+            "choices": [{"message": {"content": json.dumps(sample_analysis())}}],
+        }).encode()
+        responses = iter((stalled, completed))
+
+        def post(*_args, **_kwargs):
+            response = next(responses)
+            # Session.send consumes .content before returning unless stream=True.
+            _ = response.content
+            return response
+
+        with tempfile.TemporaryDirectory() as temp:
+            image_path = Path(temp) / "image.png"
+            write_image(image_path)
+            client = chart.VisionClient(
+                api_base="https://vision.example.invalid/v1",
+                api_key="fixture", model="fixture-model", timeout=90,
+                retries=2, retry_backoff=0.1, min_interval=0,
+            )
+            client.session = Mock()
+            client.session.post.side_effect = post
+            with patch.object(chart.time, "sleep"), patch("builtins.print") as output:
+                self.assertTrue(client.analyze(image_path)["is_chart"])
+            self.assertEqual(
+                [call.kwargs["timeout"] for call in client.session.post.call_args_list],
+                [(15, 90), (15, 180)],
+            )
+            self.assertIn("reason=read_timeout", str(output.call_args_list))
+            self.assertNotIn("private-sentinel", str(output.call_args_list))
+            self.assertNotIn("private.invalid", str(output.call_args_list))
+
+    def test_transport_cause_classification_ignores_text_and_handles_cycles(self) -> None:
+        misleading = chart.requests.ConnectionError("ReadTimeoutError read timed out")
+        misleading.__cause__ = misleading
+        self.assertEqual(chart.transport_reason_code(misleading), "transport")
+        nested = chart.requests.ConnectionError("private-sentinel")
+        nested.__cause__ = RuntimeError(chart.ReadTimeoutError(None, "private", "private"))
+        self.assertEqual(chart.transport_reason_code(nested), "read_timeout")
+
     def test_exhausted_read_timeout_keeps_sanitized_retryable_checkpoint(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             workspace = Path(temp)

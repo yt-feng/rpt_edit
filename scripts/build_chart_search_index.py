@@ -27,6 +27,7 @@ from urllib.parse import urlsplit
 
 import requests
 from PIL import Image, UnidentifiedImageError
+from urllib3.exceptions import ReadTimeoutError
 
 
 SCHEMA_VERSION = 1
@@ -139,6 +140,36 @@ def retryable_reason_code(exc: BaseException) -> str:
         return "other"
     reason = str(getattr(exc, "reason", "other"))
     return reason if reason in RETRYABLE_REASON_CODES else "other"
+
+
+def transport_reason_code(exc: requests.RequestException) -> str:
+    """Classify typed transport causes without inspecting private exception text.
+
+    Requests wraps body-read timeouts in ConnectionError, unlike the ReadTimeout
+    raised while waiting for headers. Walk the bounded exception chain so both
+    receive the same response-deadline recovery.
+    """
+    pending: list[BaseException] = [exc]
+    seen: set[int] = set()
+    while pending and len(seen) < 32:
+        current = pending.pop()
+        if id(current) in seen:
+            continue
+        seen.add(id(current))
+        if isinstance(current, (requests.ReadTimeout, ReadTimeoutError)):
+            return "read_timeout"
+        pending.extend(
+            item for item in (
+                current.__cause__, current.__context__,
+                getattr(current, "reason", None), *current.args,
+            )
+            if isinstance(item, BaseException) and id(item) not in seen
+        )
+    if isinstance(exc, requests.ConnectTimeout):
+        return "connect_timeout"
+    if isinstance(exc, requests.Timeout):
+        return "transport_timeout"
+    return "transport"
 
 
 @dataclass(frozen=True)
@@ -596,34 +627,18 @@ class VisionClient:
                     json=payload,
                     timeout=(self.connect_timeout, read_timeout),
                 )
-            except requests.ReadTimeout as exc:
+            except requests.RequestException as exc:
+                reason = transport_reason_code(exc)
                 last_error = RetryableVisionError(
-                    "Vision response exceeded the read timeout",
-                    reason="read_timeout",
+                    "Vision request failed at the transport layer",
+                    reason=reason,
                 )
                 last_error.__cause__ = exc
                 # Slow images otherwise exhaust every retry at the identical
                 # deadline. Increase only the response wait, with a fixed cap;
                 # endpoint connection failures keep their short deadline.
-                read_timeout = min(read_timeout * 2, self.max_read_timeout)
-            except requests.ConnectTimeout as exc:
-                last_error = RetryableVisionError(
-                    "Vision connection exceeded the connect timeout",
-                    reason="connect_timeout",
-                )
-                last_error.__cause__ = exc
-            except requests.Timeout as exc:
-                last_error = RetryableVisionError(
-                    "Vision request exceeded a transport timeout",
-                    reason="transport_timeout",
-                )
-                last_error.__cause__ = exc
-            except requests.RequestException as exc:
-                last_error = RetryableVisionError(
-                    "Vision request failed at the transport layer",
-                    reason="transport",
-                )
-                last_error.__cause__ = exc
+                if reason == "read_timeout":
+                    read_timeout = min(read_timeout * 2, self.max_read_timeout)
             else:
                 if not 200 <= response.status_code < 300:
                     classified = classify_http_error(response)
