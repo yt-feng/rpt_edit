@@ -60,6 +60,13 @@ REVIEWED_AR_PARAGRAPH_TRANSLATIONS = {
     "، بينما لا يزال نحو نصف الأسطول البري دون عقود في السوق. وانخفض أسطول سفن المسح الزلزالي النشطة لدى الشركات الغربية من __KC_PH_001__ سفينة قبل __KC_PH_000__ سنة إلى أقل من __KC_PH_002__ سفينة، لكن هذا الانكماش تحقق عبر أكثر من عشر سنوات من حالات الإفلاس والبيع بأسعار مخفضة.",
     "__KC_PH_000__月__KC_PH_001__日，":
     "في اليوم __KC_PH_001__ من الشهر __KC_PH_000__،",
+    "”的结论。": "» كخلاصة.",
+}
+# This exact name/event headline repeatedly echoes as a whole. Keep its ticker
+# and date marker unchanged; this is not a general English-title exemption.
+REVIEWED_AR_METADATA_TRANSLATIONS = {
+    ("html:meta:keyword", "GS-Space Exploration Technologies Corp. (SPCX) Communacopia-__KC_PH_000__"):
+    "غولدمان ساكس - شركة سبيس إكسبلوريشن تكنولوجيز (SPCX)، مؤتمر كوميوناكوبيا - __KC_PH_000__",
 }
 DEFAULT_DEEPSEEK_MODEL = "deepseek-v4-flash"
 LEGACY_DEEPSEEK_MODEL_ALIASES = {
@@ -1405,6 +1412,8 @@ def translate_missing_units(
             validate_translation_quality("ja", unit, reviewed)
             ja_entries[key] = _translation_cache_row(unit, reviewed)
         reviewed_ar = REVIEWED_AR_PARAGRAPH_TRANSLATIONS.get(unit.source) if unit.context == "html:text:p" else None
+        if reviewed_ar is None:
+            reviewed_ar = REVIEWED_AR_METADATA_TRANSLATIONS.get((unit.context, unit.source))
         if reviewed_ar is not None and key not in ar_entries:
             validate_translation_quality("ar", unit, reviewed_ar)
             ar_entries[key] = _translation_cache_row(unit, reviewed_ar)
@@ -1475,6 +1484,44 @@ def translate_missing_units(
         "deferred_units_total": 0, "deferred_batches": 0,
         "repaired_units": 0, "repair_queue_limit": 1024,
     })
+
+    def capture_preflight_inventory() -> None:
+        if not preflight_only:
+            return
+        # Retain complete ordinary canaries, including rows declined before
+        # repair deferral. Explicit bounds keep unusual caller input finite;
+        # residuals have their own cap so later gaps are not hidden by successes.
+        unit_limit, source_limit = 6 * DEFAULT_BATCH_ITEMS, 16_384
+        selected, residual = [], []
+        selected_total = residual_total = 0
+        for locale, batch in jobs:
+            for unit in batch:
+                selected_total += 1
+                missing = unit.key not in cache["locales"][locale]
+                residual_total += int(missing)
+                if len(selected) >= unit_limit and (not missing or len(residual) >= unit_limit):
+                    continue
+                row = {
+                    "locale": locale, "batch_key": batch[0].key, "key": unit.key,
+                    "context": unit.context, "source": unit.source[:source_limit],
+                    "data_placeholders": list(unit.data_placeholders),
+                    "source_length": len(unit.source), "source_complete": len(unit.source) <= source_limit,
+                }
+                if len(selected) < unit_limit:
+                    selected.append(row)
+                if missing and len(residual) < unit_limit:
+                    residual.append(row)
+        run_state.data.update({
+            "preflight_diagnostic_unit_limit": unit_limit,
+            "preflight_diagnostic_source_limit": source_limit,
+            "preflight_selected_units": selected, "preflight_residual_units": residual,
+            "preflight_selected_units_total": selected_total,
+            "preflight_residual_units_total": residual_total,
+            "preflight_selected_units_truncated": len(selected) < selected_total,
+            "preflight_residual_units_truncated": len(residual) < residual_total,
+        })
+
+    capture_preflight_inventory()
     if not jobs:
         write_cache(cache_path, cache)
         run_state.data["status"] = "passed"
@@ -1515,6 +1562,7 @@ def translate_missing_units(
             run_state.data["completed_batches"] = run_state.data.get("completed_batches", 0) + 1
             write_cache(cache_path, cache)
             run_state.write()
+            capture_preflight_inventory()
             log(f"Offline locale checkpoint: {locale}; batches={run_state.data['completed_batches']}/{len(jobs)}")
         remaining = {locale: sum(not _valid_cache_row(locale, unit, cache["locales"][locale].get(key))
                                  for key, unit in units.items()) for locale in LOCALES}
@@ -1548,11 +1596,11 @@ def translate_missing_units(
     run_state.data["repair_provider"] = "deepl" if use_deepl_repairs else "deepseek"
 
     def run(
-        job: tuple[str, list[TranslationUnit]], *, single_item_plain: bool = False,
+        job: tuple[str, list[TranslationUnit]], *, repair: bool = False,
     ) -> tuple[str, dict[str, str], list[TranslationUnit]]:
         locale, batch = job
         run_state.check()
-        if single_item_plain and use_deepl_repairs:
+        if repair and use_deepl_repairs:
             run_state.reserve_external_repair()
             try:
                 translations = (
@@ -1602,10 +1650,10 @@ def translate_missing_units(
                 # Keep the requested primary output retry, which only sends
                 # unresolved rows. All providers still share the canary cap;
                 # grouped repairs run only when its remaining budget fits.
-                attempts=1 if single_item_plain
+                attempts=1 if repair
                 else min(2, max(1, attempts)) if preflight_only else attempts,
                 run_state=run_state,
-                single_item_plain=single_item_plain,
+                single_item_plain=repair and len(batch) == 1,
             )
         return locale, result, batch
 
@@ -1640,12 +1688,20 @@ def translate_missing_units(
                 use_deepl_repairs = False
                 run_state.data.update({
                     "repair_provider": "deepseek",
-                    "repair_provider_selection": "DeepL allowance cannot fit planned residuals; using bounded primary plain repairs",
+                    "repair_provider_selection": "DeepL allowance cannot fit planned residuals; using bounded primary repairs",
                 })
         except DeepLRepairError:
             run_state.stop("DeepL repair allowance precheck failed; saved completed translations", category="deepl_precheck")
         finally:
             run_state.data["deepl_repair"] = deepl_repair.snapshot()
+
+    def repair_group_indexes(sources: list[str]) -> list[list[int]]:
+        if use_deepl_repairs:
+            return pack_repair_indexes(sources)
+        # A sparse preflight omission can use one small JSON request. Full
+        # builds retain their existing singleton plain repair protocol.
+        size = 8 if preflight_only else 1
+        return [list(range(start, min(start + size, len(sources)))) for start in range(0, len(sources), size)]
 
     def repair_pending(*, deadline: float | None = None) -> None:
         started = time.monotonic()
@@ -1663,11 +1719,8 @@ def translate_missing_units(
         for locale in LOCALES:
             pending_rows = [(identity, record) for identity, record in deferred.items()
                             if identity[0] == locale and record["repair_attempts"] == 0]
-            if use_deepl_repairs:
-                groups = pack_repair_indexes([units[identity[1]].source for identity, _ in pending_rows])
-                repair_jobs.extend([pending_rows[index] for index in group] for group in groups)
-            else:
-                repair_jobs.extend([row] for row in pending_rows)
+            groups = repair_group_indexes([units[identity[1]].source for identity, _ in pending_rows])
+            repair_jobs.extend([pending_rows[index] for index in group] for group in groups)
         next_job = 0
         checkpoint = started
         run_state.data.update({"repair_workers": repair_workers, "repair_dispatch_limit_seconds": 900})
@@ -1688,7 +1741,7 @@ def translate_missing_units(
                         locale = group[0][0][0]
                         for _identity, record in group:
                             record["repair_attempts"] += 1
-                        future = executor.submit(run, (locale, [units[identity[1]] for identity, _ in group]), single_item_plain=True)
+                        future = executor.submit(run, (locale, [units[identity[1]] for identity, _ in group]), repair=True)
                         in_flight[future] = group
                     if not in_flight:
                         break
@@ -1825,14 +1878,14 @@ def translate_missing_units(
                             ] + [(locale, unit) for unit in remaining])
                         preflight_repair_fits = (
                             run_state.max_requests is not None
-                            and (len(pack_repair_indexes([unit.source for unit in remaining])) if use_deepl_repairs else len(remaining)) + len(jobs) - submitted
+                            and len(repair_group_indexes([unit.source for unit in remaining])) + len(jobs) - submitted
                             <= run_state.max_requests - run_state.translation_attempts()
                         )
                         can_defer = (
                             (not preflight_only or preflight_repair_fits)
                             and isinstance(error, PartialTranslationError)
                             and (use_deepl_repairs or saved > 0)
-                            and 0 < len(remaining) <= (50 if use_deepl_repairs else 4)
+                            and 0 < len(remaining) <= (50 if use_deepl_repairs else 8 if preflight_only else 4)
                             and not run_state.stop_reason and not transport_failure(error)
                         )
                         if can_defer:
@@ -1957,6 +2010,7 @@ def translate_missing_units(
                     }
     finally:
         sync_repairs()
+        capture_preflight_inventory()
         # Preflight checks only its representative jobs. A full run must cover
         # the complete inventory, including work left undispatched by a stop.
         remaining_counts = {
