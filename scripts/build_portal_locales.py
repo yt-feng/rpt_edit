@@ -308,7 +308,18 @@ class ProtectedText:
     def restore(self, translated: str) -> str:
         value = translated
         for index, replacement in enumerate(self.replacements):
-            value = value.replace(f"__KC_PH_{index:03d}__", replacement)
+            token = f"__KC_PH_{index:03d}__"
+            # Numeric masking may include the source sentence's terminal dot.
+            # If a translated sentence adds a year suffix or its own final
+            # punctuation, keep only one separator (2026年 / 2026.).
+            def restore_match(match: re.Match[str]) -> str:
+                restored = replacement
+                following = value[match.end():]
+                if restored.endswith(".") and (following.startswith(("年", "년")) or following.startswith(".")):
+                    restored = restored.rstrip(".")
+                return restored
+
+            value = re.sub(re.escape(token), restore_match, value)
         return self.prefix + value + self.suffix
 
 

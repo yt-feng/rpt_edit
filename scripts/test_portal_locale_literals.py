@@ -10,6 +10,19 @@ import build_portal_locales as builder
 from portal_locale_literals import is_chart_geography_identity_label, is_chart_metric_identity_label, is_japanese_identity_label, is_latin_name_literal, is_machine_asset_reference, is_shared_japanese_keyword, is_short_latin_label_translation
 
 
+class ProtectedTextRestoreTests(unittest.TestCase):
+    def test_year_placeholder_drops_source_terminal_dot_before_target_suffix(self):
+        protected = builder.protect_text("Operating cash flow rose by 15% in 2026.")
+        self.assertEqual(
+            protected.restore("__KC_PH_001__년 영업 현금 흐름은 __KC_PH_000__ 증가했습니다."),
+            "2026년 영업 현금 흐름은 15% 증가했습니다.",
+        )
+        self.assertEqual(
+            protected.restore("ارتفع التدفق النقدي التشغيلي بنسبة 15% في عام __KC_PH_001__."),
+            "ارتفع التدفق النقدي التشغيلي بنسبة 15% في عام 2026.",
+        )
+
+
 class ChartGeographyIdentityTests(unittest.TestCase):
     def test_actual_failure_and_bounded_observed_code_lists_are_identity_labels(self):
         for source in ("EU/JN/UK/AU/CA/SZ", "EU/UK", "SZ/CA/AU", "EU / JN / UK"):
