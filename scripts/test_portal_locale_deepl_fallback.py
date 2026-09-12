@@ -204,7 +204,7 @@ class GroupedDeepLPreflightTests(unittest.TestCase):
         def primary(_url, **kwargs):
             payload = kwargs["payload"]
             self.assertIn("response_format", payload)
-            message = json.loads(payload["messages"][1]["content"])
+            message = json.loads(payload["messages"][1]["content"].split("\n\n", 1)[1])
             locale, rows = message["locale"], message["items"]
             calls.append(("deepseek", locale, len(rows)))
             translated = []
@@ -299,7 +299,7 @@ class GroupedDeepLPreflightTests(unittest.TestCase):
         def primary(_url, **kwargs):
             payload = kwargs["payload"]
             self.assertIn("response_format", payload, "grouped canaries must not spend on per-row DeepSeek plain retries")
-            message = json.loads(payload["messages"][1]["content"])
+            message = json.loads(payload["messages"][1]["content"].split("\n\n", 1)[1])
             locale, rows = message["locale"], message["items"]
             sources = [row["source_text"] for row in rows]
             primary_sources.append((locale, sources))

@@ -2542,7 +2542,7 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
         payload = request.call_args.kwargs["payload"]
         self.assertEqual(payload["response_format"], {"type": "json_object"})
         self.assertEqual(payload["thinking"], {"type": "disabled"})
-        message = json.loads(payload["messages"][1]["content"])
+        message = json.loads(payload["messages"][1]["content"].split("\n\n", 1)[1])
         self.assertEqual(message["items"], [{"id": "0", "context": unit.context, "source_text": unit.source}])
         self.assertEqual(message["target_language"], "Korean (한국어)")
         self.assertEqual(message["locale"], "ko")
@@ -2580,7 +2580,7 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
             units[1].key: "두 번째 연구 보고서",
         })
         payload = request.call_args.kwargs["payload"]
-        self.assertEqual(json.loads(payload["messages"][1]["content"])["items"], [
+        self.assertEqual(json.loads(payload["messages"][1]["content"].split("\n\n", 1)[1])["items"], [
             {"id": str(index), "context": unit.context, "source_text": unit.source} for index, unit in enumerate(units)
         ])
         for unit in units:
@@ -2754,7 +2754,7 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
 
         def provider(_url: str, **kwargs: object) -> mock.Mock:
             payload = kwargs["payload"]
-            rows = json.loads(payload["messages"][1]["content"])["items"]
+            rows = json.loads(payload["messages"][1]["content"].split("\n\n", 1)[1])["items"]
             native_text = FAKE_COPY[kwargs["label"].split()[0]]
             response = mock.Mock(status_code=200)
             response.json.return_value = {
@@ -3256,7 +3256,7 @@ class ProviderCostGuardTests(unittest.TestCase):
         self.assertEqual(len(seen[1]["messages"]), 2)
         self.assertNotIn("response_format", seen[1])
         self.assertIn("unchanged source text for 0", seen[1]["messages"][0]["content"])
-        self.assertEqual(seen[1]["messages"][1]["content"], unit.source)
+        self.assertEqual(seen[1]["messages"][1]["content"].split("\n\n", 1)[1], unit.source)
         self.assertEqual(state.data["provider_requests"], 2)
 
     @staticmethod

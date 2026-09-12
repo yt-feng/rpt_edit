@@ -1,5 +1,27 @@
 # Locale refresh reliability
 
+## Follow-up: 2026-09-12 — Arabic source echoes in JSON requests
+
+Run `34670519267` confirmed that primary preflight retries were restored: Arabic
+accepted five of 32 rows initially and three more on its second request. The
+remaining 24 rows contained unchanged English report titles and Chinese prose.
+Both responses completed normally. DeepL had only 115 usable characters after
+its reserve, against 3,466 source characters, so its allowance stop was correct.
+The latest cumulative translation checkpoint restored successfully; the refreshed
+source inventory had grown to 41,639 units. Korean and Japanese samples passed.
+
+The system message already specified Arabic, but the user message contained only
+JSON data; a plain repair similarly supplied only the source. Requests now put a
+native target-language instruction before both JSON and plain source content.
+They explicitly cover Chinese, English and mixed report titles, including target
+names or transliterations when an entire headline consists of names. Residual
+batch retries retain the same instruction and send only unaccepted rows.
+
+Cache keys, validated paid rows, placeholder and language validation, the shared
+preflight request cap, and backfill spending limits remain unchanged. Tests cover
+the observed English headline, mixed-source batches, retained translations,
+native instructions on residual retries and plain fragments in all three locales.
+
 ## Incident: 2026-09-08
 
 Run `34169047186`

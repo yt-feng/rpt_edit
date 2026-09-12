@@ -136,7 +136,7 @@ class PreflightTests(unittest.TestCase):
         def respond(_url: str, **kwargs: object) -> Mock:
             payload = kwargs["payload"]
             plain = "response_format" not in payload
-            message = None if plain else json.loads(payload["messages"][1]["content"])
+            message = None if plain else json.loads(payload["messages"][1]["content"].split("\n\n", 1)[1])
             locale = kwargs["label"].split()[0] if plain else message["locale"]
             attempts[locale] = attempts.get(locale, 0) + 1
             self.assertEqual(plain, attempts[locale] == 2)
@@ -144,7 +144,7 @@ class PreflightTests(unittest.TestCase):
                 response = Mock(status_code=200)
                 response.json.return_value = {
                     "choices": [{"message": {"content": " ".join([
-                        translated[locale], *preflight.builder.PLACEHOLDER_RE.findall(payload["messages"][1]["content"]),
+                        translated[locale], *preflight.builder.PLACEHOLDER_RE.findall(payload["messages"][1]["content"].split("\n\n", 1)[1]),
                     ])}}],
                     "usage": {"prompt_tokens": 10, "completion_tokens": 10, "total_tokens": 20},
                 }
@@ -178,7 +178,7 @@ class PreflightTests(unittest.TestCase):
 
     def test_two_invalid_outputs_stop_canary_before_the_next_language(self) -> None:
         def echo(_url: str, **kwargs: object) -> Mock:
-            message = json.loads(kwargs["payload"]["messages"][1]["content"])
+            message = json.loads(kwargs["payload"]["messages"][1]["content"].split("\n\n", 1)[1])
             response = Mock(status_code=200)
             response.json.return_value = {"choices": [{"message": {"content": json.dumps({
                 "translations": [{"id": item["id"], "text": item["source_text"]} for item in message["items"]],
