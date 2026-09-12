@@ -147,6 +147,158 @@ class DeepLFallbackTests(unittest.TestCase):
         self.assertEqual(state.data["provider_requests"], 1)
 
 
+class ExhaustedAllowanceSelectionTests(unittest.TestCase):
+    def run_case(self, *, bad_locale="ar", missing=2, plain_ok=True, usage_status=200,
+                 usage_payload=None, preflight=True, budget_exhausted=False):
+        units = {f"{i:064x}": builder.TranslationUnit(
+            f"{i:064x}", "html:text:p", f"第{i}段金融研究报告的完整内容。" * 5 + "__KC_PH_000__",
+        ) for i in range(16)}
+        text = {locale: NATIVE[locale] + " __KC_PH_000__" for locale in builder.LOCALES}
+        cache = builder.empty_cache()
+        for locale in builder.LOCALES:
+            cache["locales"][locale]["0" * 64] = builder._translation_cache_row(units["0" * 64], text[locale])
+            if not preflight and locale != bad_locale:
+                cache["locales"][locale].update({key: builder._translation_cache_row(unit, text[locale])
+                                                for key, unit in units.items()})
+        history = {"source": "以前已验证的译文", "translation": NATIVE["ko"]}
+        cache["locales"]["ko"]["f" * 64] = history.copy()
+        state = builder.TranslationRun(max_requests=6, max_cost_cny="1")
+        reserve = state.reserve
+
+        def reserve_with_budget(payload=None):
+            if budget_exhausted and payload is not None and "response_format" not in payload:
+                # A repair must enter the same reservation guard even after
+                # provider selection has proved DeepL cannot fit these rows.
+                state.max_cost_micro_cny = 1
+            return reserve(payload)
+
+        state.reserve = reserve_with_budget
+        transport = mock.Mock()
+        transport.get.return_value.status_code = usage_status
+        transport.get.return_value.json.return_value = (
+            {"character_count": 498885, "character_limit": 500000} if usage_payload is None else usage_payload
+        )
+        transport.post.side_effect = AssertionError("Insufficient planned allowance must not allocate a DeepL POST")
+        attempts, calls, sent_sources = Counter(), [], []
+
+        def primary(_url, **kwargs):
+            payload = kwargs["payload"]
+            locale = kwargs["label"].split()[0]
+            plain = "response_format" not in payload
+            calls.append((locale, plain))
+            if plain:
+                source = payload["messages"][1]["content"].split("\n\n", 1)[1]
+                sent_sources.append((locale, [source]))
+                content = text[locale] if plain_ok else source
+            else:
+                rows = json.loads(payload["messages"][1]["content"].split("\n\n", 1)[1])["items"]
+                sent_sources.append((locale, [row["source_text"] for row in rows]))
+                attempts[locale] += 1
+                bad = (10 if attempts[locale] == 1 else missing) if locale == bad_locale else 0
+                content = json.dumps({"translations": [
+                    {"id": row["id"], "text": row["source_text"] if index >= len(rows) - bad else text[locale]}
+                    for index, row in enumerate(rows)
+                ]})
+            response = mock.Mock(status_code=200)
+            response.json.return_value = {
+                "choices": [{"message": {"content": content}, "finish_reason": "stop"}],
+                "usage": {"prompt_tokens": 5, "completion_tokens": 5, "total_tokens": 10,
+                          "prompt_cache_hit_tokens": 0, "prompt_cache_miss_tokens": 5},
+            }
+            return response
+
+        provider = mock.Mock(side_effect=primary)
+        with tempfile.TemporaryDirectory() as directory, \
+                mock.patch.dict("os.environ", {"DEEPSEEK_API_KEY": "offline-primary", "DEEPL_API_KEY": "offline-repair"}, clear=True), \
+                mock.patch.dict(sys.modules, {"deepseek_http": mock.Mock(request_with_key_fallback=provider)}), \
+                mock.patch.object(builder, "log"):
+            adapter = deepl.DeepLRepair(max_requests=6, transport=transport)
+            with mock.patch.object(deepl, "DeepLRepair", return_value=adapter):
+                path = Path(directory) / "cache.json.gz"
+                error = None
+                try:
+                    builder.translate_missing_units(
+                        units, cache, cache_path=path, model=builder.DEFAULT_DEEPSEEK_MODEL,
+                        base_url="https://provider.example.invalid", workers=500 if preflight else 1,
+                        timeout=1, attempts=2, max_batch_items=16, max_batch_chars=100000,
+                        preflight_only=preflight, preflight_batches_per_locale=1, run_state=state,
+                    )
+                except builder.TranslationError as caught:
+                    error = caught
+                saved = builder.load_cache(path)
+        transport.get.assert_called_once()
+        transport.post.assert_not_called()
+        self.assertEqual(state.data.get("external_repair_attempts", 0), 0)
+        self.assertEqual(state.data["deepl_repair"]["provider_requests"], 0)
+        self.assertEqual(state.data["deepl_repair"]["reserved_characters"], 0)
+        self.assertEqual(state.translation_attempts(), len(calls))
+        self.assertLessEqual(len(calls), 6)
+        self.assertTrue(all(units["0" * 64].source not in sources for _, sources in sent_sources))
+        if preflight:
+            self.assertEqual(saved["locales"]["ko"]["f" * 64], history)
+        return state.data, saved, calls, sent_sources, error, units
+
+    def test_verified_115_character_allowance_uses_two_primary_repairs_within_six_calls(self):
+        report, cache, calls, sources, error, units = self.run_case()
+        self.assertIsNone(error)
+        self.assertEqual(calls, [("ko", False), ("ja", False), ("ar", False), ("ar", False), ("ar", True), ("ar", True)])
+        self.assertEqual([source for _, rows in sources[-2:] for source in rows],
+                         [unit.source for unit in list(units.values())[-2:]])
+        self.assertEqual(report["repair_provider"], "deepseek")
+        self.assertEqual(report["repaired_units"], 2)
+        self.assertEqual(report["status"], "passed")
+        self.assertEqual(report["deepl_repair"]["stop_reason"], "")
+        for locale in builder.LOCALES:
+            self.assertTrue(set(units).issubset(cache["locales"][locale]))
+
+    def test_first_locale_reserves_room_for_other_language_jobs(self):
+        report, _, calls, _, error, _ = self.run_case(bad_locale="ko")
+        self.assertIsNone(error)
+        self.assertEqual(calls, [("ko", False), ("ko", False), ("ko", True), ("ko", True), ("ja", False), ("ar", False)])
+        self.assertEqual(report["provider_requests"], 6)
+
+    def test_three_repairs_that_would_consume_other_language_slots_are_not_started(self):
+        for locale in ("ko", "ar"):
+            with self.subTest(locale=locale):
+                report, cache, calls, _, error, units = self.run_case(bad_locale=locale, missing=3)
+                self.assertIsNotNone(error)
+                self.assertFalse(any(plain for _, plain in calls))
+                self.assertEqual(len(calls), 2 if locale == "ko" else 4)
+                self.assertEqual(len(set(units) & set(cache["locales"][locale])), 13)
+                self.assertEqual(report["status"], "failed")
+
+    def test_usage_errors_stop_without_alternate_provider_repairs(self):
+        for kwargs in ({"usage_status": 403}, {"usage_payload": {"character_count": "unknown", "character_limit": 500000}}):
+            with self.subTest(kwargs=kwargs):
+                report, cache, calls, _, error, units = self.run_case(bad_locale="ko", **kwargs)
+                self.assertIsNotNone(error)
+                self.assertEqual(calls, [("ko", False), ("ko", False)])
+                self.assertEqual(report["stop_category"], "deepl_precheck")
+                self.assertEqual(report["repair_provider"], "deepl")
+                self.assertEqual(len(set(units) & set(cache["locales"]["ko"])), 14)
+
+    def test_plain_echo_still_fails_quality_gate_and_preserves_partial_rows(self):
+        report, cache, calls, _, error, units = self.run_case(bad_locale="ko", plain_ok=False)
+        self.assertIsNotNone(error)
+        self.assertEqual(len(calls), 4)
+        self.assertEqual(report["status"], "failed")
+        self.assertEqual(len(set(units) & set(cache["locales"]["ko"])), 14)
+
+    def test_full_run_tail_reuses_same_bounded_primary_repair_path(self):
+        report, _, calls, _, error, _ = self.run_case(preflight=False)
+        self.assertIsNone(error)
+        self.assertEqual(calls, [("ar", False), ("ar", False), ("ar", True), ("ar", True)])
+        self.assertEqual(report["status"], "passed")
+        self.assertEqual(report["remaining_units_total"], 0)
+
+    def test_primary_repair_still_obeys_shared_cost_guard(self):
+        report, cache, calls, _, error, units = self.run_case(budget_exhausted=True)
+        self.assertIsNotNone(error)
+        self.assertFalse(any(plain for _, plain in calls))
+        self.assertEqual(report["stop_category"], "budget")
+        self.assertEqual(len(set(units) & set(cache["locales"]["ar"])), 14)
+
+
 class GroupedDeepLPreflightTests(unittest.TestCase):
     def test_real_adapter_repairs_arabic_canary_with_12854_characters_remaining(self):
         self.run_real_adapter_canary(remaining_budget=12854)

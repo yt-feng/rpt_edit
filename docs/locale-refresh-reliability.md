@@ -17,6 +17,36 @@ They explicitly cover Chinese, English and mixed report titles, including target
 names or transliterations when an entire headline consists of names. Residual
 batch retries retain the same instruction and send only unaccepted rows.
 
+A direct test against the complete 24 pending sources showed that the prefix
+alone was insufficient: two zero-temperature JSON requests accepted no rows.
+Keeping the same request and omitting the forced zero temperature accepted 22
+rows on the first response; a plain request translated the name-only English
+headline correctly. Translation now uses the provider's default sampling instead
+of forcing its coding/math setting. The [provider parameter guide](https://api-docs.deepseek.com/quick_start/parameter_settings/)
+documents a default of 1.0 and a translation recommendation of 1.3. Prompts also
+require target-language names and no retained Chinese characters for Arabic and
+Korean. Actual validated output, not the presence of prompt text, is the recovery
+evidence.
+
+The final request was then verified against all 24 saved residual sources:
+24 passed the existing quality gate in one provider request, with no Chinese
+characters and every placeholder retained. The final request payload matches
+that live test exactly. These are source-echo and structural checks; some mixed
+metadata retains English names or search phrases and is not an exhaustive
+editorial certification of every translation.
+
+Residual provider selection now checks DeepL's cached usage before grouping rows
+or reserving a translation request. When the verified allowance cannot fit the
+planned source characters and 1,000-character reserve, the invocation selects
+the existing one-row DeepSeek plain repairs. The usage lookup is shared; this
+decision allocates no DeepL POST, character reservation or external request slot.
+Primary repair fit still reserves room for the other canary languages within six
+total requests, and the normal cost guard, queue limit and dispatch deadline apply.
+Authentication failures, invalid usage and insufficient allowance after uncertain
+billing stop the run; a failure after a DeepL submission never triggers an
+alternate-provider replay. Regression cases cover the observed 115 usable
+characters, retained translations, six-request fit and rejected repairs.
+
 Cache keys, validated paid rows, placeholder and language validation, the shared
 preflight request cap, and backfill spending limits remain unchanged. Tests cover
 the observed English headline, mixed-source batches, retained translations,

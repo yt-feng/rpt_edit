@@ -75,6 +75,7 @@ class NativeUserInstructionTests(unittest.TestCase):
 
         def provider(_url, **kwargs):
             payload = kwargs["payload"]
+            self.assertNotIn("temperature", payload, "Do not force the zero-temperature JSON echo protocol")
             instruction, data = payload["messages"][1]["content"].split("\n\n", 1)
             self.assertTrue(instruction.startswith("ترجم إلى العربية فقط."))
             self.assertIn("Chinese, English or mixed", instruction)
@@ -115,6 +116,7 @@ class NativeUserInstructionTests(unittest.TestCase):
                         model=builder.DEFAULT_DEEPSEEK_MODEL, base_url="https://provider.example.invalid",
                         timeout=1, attempts=1, single_item_plain=True)
                 content = request.call_args.kwargs["payload"]["messages"][1]["content"]
+                self.assertNotIn("temperature", request.call_args.kwargs["payload"])
                 self.assertTrue(content.startswith(instruction))
                 self.assertEqual(content.split("\n\n", 1)[1], source)
                 self.assertEqual(result, {"key": translated})
