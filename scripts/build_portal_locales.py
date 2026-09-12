@@ -52,6 +52,13 @@ REVIEWED_JA_UI_TRANSLATIONS = {
     "AI 研究": "AIリサーチ",
     "__KC_PH_000__ · AI 研究": "__KC_PH_000__ · AIリサーチ",
 }
+# This exact chart title was left unresolved after the provider returned a
+# malformed `translation` key, then echoed the source on its plain retry.
+# Keep the reviewed Japanese unit scoped to its chart-title context and retain
+# the source's date marker and acronym verbatim.
+REVIEWED_JA_CHART_TRANSLATIONS = {
+    ("chart:title", "FY3/__KC_PH_000__ FYJY mm"): "FY3/__KC_PH_000__ FYJY 百万円",
+}
 # This exact paragraph repeatedly echoed Chinese or lost protected quantities
 # in both providers. Preserve every quantity in the reviewed Arabic rendering;
 # do not relax the ordinary placeholder or untranslated-source checks.
@@ -1378,6 +1385,8 @@ def translate_missing_units(
     ar_entries = cache["locales"]["ar"]
     for key, unit in units.items():
         reviewed = REVIEWED_JA_UI_TRANSLATIONS.get(unit.source)
+        if reviewed is None:
+            reviewed = REVIEWED_JA_CHART_TRANSLATIONS.get((unit.context, unit.source))
         if reviewed is not None and key not in ja_entries:
             validate_translation_quality("ja", unit, reviewed)
             ja_entries[key] = _translation_cache_row(unit, reviewed)
