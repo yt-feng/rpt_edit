@@ -121,6 +121,9 @@ IMAGE_ERROR_MARKERS = (
 DEFAULT_CIRCUIT_BREAKER_THRESHOLD = 3
 RETRYABLE_REASON_CODES = {
     "transport",
+    "connect_timeout",
+    "read_timeout",
+    "transport_timeout",
     "http_transient",
     "http_unexpected",
     "response_json",
@@ -540,12 +543,15 @@ class VisionClient:
         retries: int,
         retry_backoff: float,
         min_interval: float,
+        max_read_timeout: float = 240.0,
     ) -> None:
         self.endpoint = validate_api_base(api_base)
         self.model = clean_text(model, 160)
         if not api_key.strip() or not self.model:
             raise VisionConfigurationError("Vision API key and model are required")
         self.timeout = timeout
+        self.connect_timeout = min(timeout, 15.0)
+        self.max_read_timeout = max(timeout, max_read_timeout)
         self.retries = max(1, retries)
         self.retry_backoff = max(0.1, retry_backoff)
         self.min_interval = max(0.0, min_interval)
@@ -577,6 +583,7 @@ class VisionClient:
             "response_format": {"type": "json_object"},
         }
         last_error: RetryableVisionError | None = None
+        read_timeout = self.timeout
         for attempt in range(1, self.retries + 1):
             response: requests.Response | None = None
             elapsed = time.monotonic() - self.last_request_at
@@ -584,8 +591,34 @@ class VisionClient:
                 time.sleep(self.min_interval - elapsed)
             try:
                 self.last_request_at = time.monotonic()
-                response = self.session.post(self.endpoint, json=payload, timeout=self.timeout)
-            except (requests.Timeout, requests.ConnectionError, requests.RequestException) as exc:
+                response = self.session.post(
+                    self.endpoint,
+                    json=payload,
+                    timeout=(self.connect_timeout, read_timeout),
+                )
+            except requests.ReadTimeout as exc:
+                last_error = RetryableVisionError(
+                    "Vision response exceeded the read timeout",
+                    reason="read_timeout",
+                )
+                last_error.__cause__ = exc
+                # Slow images otherwise exhaust every retry at the identical
+                # deadline. Increase only the response wait, with a fixed cap;
+                # endpoint connection failures keep their short deadline.
+                read_timeout = min(read_timeout * 2, self.max_read_timeout)
+            except requests.ConnectTimeout as exc:
+                last_error = RetryableVisionError(
+                    "Vision connection exceeded the connect timeout",
+                    reason="connect_timeout",
+                )
+                last_error.__cause__ = exc
+            except requests.Timeout as exc:
+                last_error = RetryableVisionError(
+                    "Vision request exceeded a transport timeout",
+                    reason="transport_timeout",
+                )
+                last_error.__cause__ = exc
+            except requests.RequestException as exc:
                 last_error = RetryableVisionError(
                     "Vision request failed at the transport layer",
                     reason="transport",
@@ -634,6 +667,11 @@ class VisionClient:
                                     last_error.__cause__ = exc
 
             if attempt < self.retries:
+                print(
+                    f"chart_vision_retry reason={retryable_reason_code(last_error)} "
+                    f"attempt={attempt}/{self.retries} next_read_timeout={read_timeout:g}s",
+                    flush=True,
+                )
                 retry_after = response.headers.get("Retry-After", "") if response is not None else ""
                 try:
                     delay = float(retry_after)
@@ -1098,6 +1136,10 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--max-per-report", type=int, default=0, help="Maximum images per report; 0 is unlimited")
     parser.add_argument("--timeout", type=float, default=90.0)
+    parser.add_argument(
+        "--max-read-timeout", type=float, default=240.0,
+        help="Maximum response wait after read-timeout retries; connection wait stays bounded",
+    )
     parser.add_argument("--retries", type=int, default=4)
     parser.add_argument("--retry-backoff", type=float, default=1.5)
     parser.add_argument("--min-interval", type=float, default=0.4)
@@ -1158,6 +1200,7 @@ def main() -> int:
         api_key=os.environ.get("VISION_INDEX_API_KEY", ""),
         model=os.environ.get("VISION_INDEX_MODEL", ""),
         timeout=max(5.0, args.timeout),
+        max_read_timeout=max(5.0, args.max_read_timeout),
         retries=max(1, args.retries),
         retry_backoff=max(0.1, args.retry_backoff),
         min_interval=max(0.0, args.min_interval),

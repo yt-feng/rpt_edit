@@ -95,9 +95,19 @@ The client rejects non-HTTPS bases, embedded URL credentials, query strings, and
 fragments. Authentication/configuration failures such as HTTP 401/403 stop the run
 immediately. Throttling, server failures, network timeouts, and malformed server/model
 JSON remain retryable and can never quarantine an image. Logs and private checkpoints
-store only bounded, provider-neutral reason codes (for example `transport`,
+store only bounded, provider-neutral reason codes (for example `read_timeout`,
+`connect_timeout`, `transport_timeout`, `transport`,
 `http_transient`, or `model_json`), never response bodies, request endpoints, or model
 output.
+
+Requests begin with a 90-second response deadline and at most 15 seconds to connect.
+A read timeout doubles only that image's next response deadline, capped at 240 seconds
+(`--max-read-timeout`). The four attempts therefore wait up to 90, 180, 240, and 240
+seconds for responses instead of repeating the same inadequate deadline. Connection
+errors and HTTP/model errors do not increase the deadline, and each new image starts
+at 90 seconds again. Retries log only the bounded reason, attempt number, and next
+deadline. Exhausted timeouts retain the retryable checkpoint and still block publication;
+the workflow's 300-minute job deadline and parent's 360-minute wait remain in force.
 
 ## Incremental, Deduplication, and Resume Rules
 

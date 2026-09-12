@@ -524,6 +524,9 @@ class ChartSearchIndexTests(unittest.TestCase):
     def test_retryable_reason_codes_are_provider_neutral(self) -> None:
         fixtures = {
             "transport",
+            "connect_timeout",
+            "read_timeout",
+            "transport_timeout",
             "http_transient",
             "http_unexpected",
             "response_json",
@@ -713,6 +716,112 @@ class ChartSearchIndexTests(unittest.TestCase):
             with self.assertRaises(chart.VisionConfigurationError):
                 client.analyze(image_path)
             self.assertEqual(client.session.post.call_count, 1)
+
+    def test_slow_response_retries_expand_read_timeout_with_a_cap(self) -> None:
+        response = Mock()
+        response.status_code = 200
+        response.headers = {}
+        response.json.return_value = {
+            "choices": [{"message": {"content": json.dumps(sample_analysis())}}]
+        }
+        with tempfile.TemporaryDirectory() as temp:
+            image_path = Path(temp) / "image.png"
+            write_image(image_path)
+            client = chart.VisionClient(
+                api_base="https://vision.example.invalid/v1",
+                api_key="fixture",
+                model="fixture-model",
+                timeout=90,
+                retries=4,
+                retry_backoff=0.1,
+                min_interval=0,
+                max_read_timeout=240,
+            )
+            client.session = Mock()
+            private_error = "https://private.invalid/?token=private-sentinel"
+            client.session.post.side_effect = [
+                chart.requests.ReadTimeout(private_error),
+                chart.requests.ReadTimeout(private_error),
+                chart.requests.ReadTimeout(private_error),
+                response,
+            ]
+            with patch.object(chart.time, "sleep"), patch("builtins.print") as output:
+                self.assertTrue(client.analyze(image_path)["is_chart"])
+            self.assertEqual(
+                [call.kwargs["timeout"] for call in client.session.post.call_args_list],
+                [(15, 90), (15, 180), (15, 240), (15, 240)],
+            )
+            self.assertNotIn(private_error, str(output.call_args_list))
+            self.assertIn("reason=read_timeout", str(output.call_args_list))
+            # A slow image must not increase the next image's initial deadline.
+            client.session.post.side_effect = None
+            client.session.post.return_value = response
+            client.analyze(image_path)
+            self.assertEqual(client.session.post.call_args.kwargs["timeout"], (15, 90))
+
+    def test_connection_failures_do_not_inflate_response_deadline(self) -> None:
+        for error, reason in (
+            (chart.requests.ConnectTimeout("private-sentinel"), "connect_timeout"),
+            (chart.requests.ConnectionError("private-sentinel"), "transport"),
+            (chart.requests.Timeout("private-sentinel"), "transport_timeout"),
+        ):
+            with self.subTest(reason=reason), tempfile.TemporaryDirectory() as temp:
+                image_path = Path(temp) / "image.png"
+                write_image(image_path)
+                client = chart.VisionClient(
+                    api_base="https://vision.example.invalid/v1",
+                    api_key="fixture",
+                    model="fixture-model",
+                    timeout=90,
+                    retries=3,
+                    retry_backoff=0.1,
+                    min_interval=0,
+                )
+                client.session = Mock()
+                client.session.post.side_effect = error
+                with patch.object(chart.time, "sleep"), patch("builtins.print"):
+                    with self.assertRaises(chart.RetryableVisionError) as caught:
+                        client.analyze(image_path)
+                self.assertEqual(chart.retryable_reason_code(caught.exception), reason)
+                self.assertNotIn("private-sentinel", str(caught.exception))
+                self.assertEqual(
+                    [call.kwargs["timeout"] for call in client.session.post.call_args_list],
+                    [(15, 90)] * 3,
+                )
+
+    def test_exhausted_read_timeout_keeps_sanitized_retryable_checkpoint(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            workspace = Path(temp)
+            write_report(workspace / "input", "report", "Report")
+            candidates = chart.discover_candidates(workspace / "input", {}, date_folder="260911")
+            self.assertTrue(candidates)
+            client = chart.VisionClient(
+                api_base="https://vision.example.invalid/v1",
+                api_key="fixture",
+                model="fixture-model",
+                timeout=90,
+                retries=4,
+                retry_backoff=0.1,
+                min_interval=0,
+            )
+            client.session = Mock()
+            client.session.post.side_effect = chart.requests.ReadTimeout("private-sentinel")
+            state = {"schema_version": 1, "items": {}}
+            with patch.object(chart.time, "sleep"), patch("builtins.print"):
+                _, summary = chart.build_index(
+                    candidates,
+                    state=state,
+                    previous_index={"schema_version": 1, "reports": []},
+                    state_path=workspace / "state.json",
+                    asset_output_dir=workspace / "assets",
+                    analyze=client.analyze,
+                    max_model_calls=1,
+                    attempt_run_id="slow-image-run",
+                )
+            self.assertEqual(summary["retryable_reasons"], {"read_timeout": 1})
+            self.assertEqual(summary["quarantined_count"], 0)
+            self.assertEqual(state["items"][candidates[0].image_sha256]["status"], "error")
+            self.assertNotIn("private-sentinel", json.dumps({"state": state, "summary": summary}))
 
     def test_server_invalid_json_and_throttling_are_retryable(self) -> None:
         invalid = Mock()
