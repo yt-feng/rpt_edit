@@ -175,13 +175,9 @@ def run_probe(
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--diagnostics-out", type=Path, required=True)
-    parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
-    args = parser.parse_args()
-    report = run_probe(diagnostics_out=args.diagnostics_out, base_url=args.deepseek_base_url)
-    print(json.dumps({key: report[key] for key in ("status", "provider_requests", "max_provider_requests", "usage_totals")}))
-    return 0 if report["status"] == "passed" else 1
+    print("Paid translation CLI retired. Use scripts/smoke_offline_translation.py for samples "
+          "or scripts/build_portal_locales.py for an offline release.")
+    return 2
 
 
 if __name__ == "__main__":

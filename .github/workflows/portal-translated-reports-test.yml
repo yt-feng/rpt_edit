@@ -76,6 +76,11 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends fonts-noto-cjk
 
+      - name: Set up free local translation models
+        uses: ./.github/actions/setup-offline-translation
+        with:
+          targets: zh,en
+
       - name: Build Portal translated report PDF
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}

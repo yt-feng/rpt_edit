@@ -1,0 +1,3 @@
+# CPU inference only. CI uses Python 3.12; no paid translation credentials.
+argostranslate==1.11.0
+ctranslate2==4.8.2

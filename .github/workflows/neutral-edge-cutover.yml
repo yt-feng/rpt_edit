@@ -225,6 +225,8 @@ jobs:
           python3 -B scripts/test_check_deepseek_balance.py
           python3 -B scripts/test_deepl_locale_repair.py
           python3 -B scripts/test_translate_portal_titles.py
+          python3 -B scripts/test_offline_translation.py
+          python3 -B scripts/test_portal_offline_locales.py
           python3 -B scripts/test_portal_locale_history.py
           python3 -B scripts/test_portal_locale_scope.py
           python3 -B scripts/test_portal_locale_literals.py
@@ -550,18 +552,19 @@ jobs:
           restore-keys: |
             portal-title-cache-v1-
 
+      - name: Set up free local translation models
+        uses: ./.github/actions/setup-offline-translation
+        with:
+          targets: ${{ steps.operation.outputs.multilingual_enabled == 'true' && 'zh,en,ko,ja,ar' || 'zh,en' }}
+
       - name: Translate missing report titles
-        env:
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-          DEEPSEEK_BASE_URL: ${{ vars.DEEPSEEK_BASE_URL || 'https://api.deepseek.com' }}
-          DEEPSEEK_MODEL: ${{ vars.DEEPSEEK_MODEL || 'deepseek-v4-flash' }}
         run: |
           set -euo pipefail
           python3 scripts/translate_portal_titles.py \
             --catalog-path portal_suite/data/catalog.json \
             --cache-path "$RUNNER_TEMP/portal-title-cache/cache-v1.json" \
             --seed-catalog-path "$RUNNER_TEMP/previous-public-catalog.json" \
-            --model "$DEEPSEEK_MODEL" --deepseek-base-url "$DEEPSEEK_BASE_URL" --workers 500
+            --workers 1 --fail-on-error
 
       - name: Detect Chinese report title checkpoint
         id: title_checkpoint
@@ -721,7 +724,7 @@ jobs:
             --output "$RUNNER_TEMP/chinese-before-locales.json" \
             "${active_manifest_args[@]}"
 
-      - name: Validate planned Chinese discovery before paid translation
+      - name: Validate planned Chinese discovery before translation
         if: steps.operation.outputs.multilingual_enabled == 'true'
         run: |
           python3 -B scripts/audit_portal_chinese_discovery_plan.py \
@@ -754,14 +757,6 @@ jobs:
         id: locale_build
         if: steps.operation.outputs.multilingual_enabled == 'true'
         env:
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-          DEEPSEEK_API_KEY_BACKUP: ${{ secrets.DEEPSEEK_API_KEY_BACKUP }}
-          DEEPSEEK_API_KEY_2: ${{ secrets.DEEPSEEK_API_KEY_2 }}
-          DEEPSEEK_API_KEYS: ${{ secrets.DEEPSEEK_API_KEYS }}
-          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
-          DEEPSEEK_BASE_URL: ${{ vars.DEEPSEEK_BASE_URL || 'https://api.deepseek.com' }}
-          DEEPSEEK_MODEL: ${{ vars.DEEPSEEK_MODEL || 'deepseek-v4-flash' }}
-          PORTAL_MULTILINGUAL_WORKERS: ${{ vars.PORTAL_MULTILINGUAL_WORKERS || '32' }}
           PORTAL_MULTILINGUAL_INDEX_START_DATE: ${{ vars.PORTAL_MULTILINGUAL_INDEX_START_DATE || '' }}
           PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH: ${{ vars.PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH || '' }}
           PORTAL_MULTILINGUAL_HISTORY_START_DATE: ${{ vars.PORTAL_MULTILINGUAL_HISTORY_START_DATE || '2026-08-05' }}
@@ -779,18 +774,6 @@ jobs:
               ;;
             *) echo "::error::Translation scope must be incremental, release or month"; exit 2 ;;
           esac
-          case "$PORTAL_MULTILINGUAL_WORKERS" in
-            ''|*[!0-9]*)
-              echo "::error::PORTAL_MULTILINGUAL_WORKERS must be an integer from 1 to 500"
-              exit 2
-              ;;
-          esac
-          if [ "$PORTAL_MULTILINGUAL_WORKERS" -lt 1 ] \
-            || [ "$PORTAL_MULTILINGUAL_WORKERS" -gt 500 ]
-          then
-            echo "::error::PORTAL_MULTILINGUAL_WORKERS must be an integer from 1 to 500"
-            exit 2
-          fi
           cache_args=()
           if [ -s "$RUNNER_TEMP/portal-locale-cache/cache-v1.json.gz" ]; then
             cache_args+=(--cache-in "$RUNNER_TEMP/portal-locale-cache/cache-v1.json.gz")
@@ -840,23 +823,21 @@ jobs:
             --hot-report-index "$RUNNER_TEMP/hot-reports-public-v2.json"
             --cache-out _neutral_site/data/i18n/cache-v1.json.gz
             --assets-root portal_suite/locale_assets
-            --model "$DEEPSEEK_MODEL"
-            --deepseek-base-url "$DEEPSEEK_BASE_URL"
+            --provider argos
             --timeout 120
             --translation-scope "$PORTAL_MULTILINGUAL_TRANSLATION_SCOPE"
             "${index_args[@]}"
           )
-          # A failed paid canary must stop this shell before high concurrency begins.
+          # Reuse accepted translations; offline failures never call a paid repair provider.
           python3 -B scripts/build_portal_locales.py "${locale_args[@]}" \
             --preflight-only --preflight-batches-per-locale 1 \
-            --workers 1 --attempts 2 --max-provider-requests 6 \
+            --workers 1 \
             --diagnostics-out "$RUNNER_TEMP/locale-preflight-diagnostics.json" \
             "${cache_args[@]}"
           test -s _neutral_site/data/i18n/cache-v1.json.gz
-          python3 -B scripts/run_portal_locale_backfill.py "${locale_args[@]}" \
+          python3 -B scripts/build_portal_locales.py "${locale_args[@]}" \
             --cache-in _neutral_site/data/i18n/cache-v1.json.gz \
-            --workers "$PORTAL_MULTILINGUAL_WORKERS" \
-            --attempts 2 \
+            --workers 1 \
             --diagnostics-out "$RUNNER_TEMP/locale-full-diagnostics.json"
           python3 - <<'PY' >> "$GITHUB_OUTPUT"
           import json

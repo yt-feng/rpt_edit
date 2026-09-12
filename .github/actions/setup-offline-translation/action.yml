@@ -1,0 +1,38 @@
+name: Set up offline translation
+description: Install local CPU translation models; no translation API or credentials
+inputs:
+  targets:
+    description: Comma-separated target languages
+    default: zh,en
+runs:
+  using: composite
+  steps:
+    - name: Configure local model and memo directories
+      shell: bash
+      run: |
+        echo "ARGOS_PACKAGES_DIR=$RUNNER_TEMP/argos-packages" >> "$GITHUB_ENV"
+        echo "PORTAL_OFFLINE_TRANSLATION_CACHE=$RUNNER_TEMP/offline-translation-memo" >> "$GITHUB_ENV"
+        echo "PORTAL_OFFLINE_TRANSLATION_THREADS=2" >> "$GITHUB_ENV"
+        echo "ARGOS_DEVICE_TYPE=cpu" >> "$GITHUB_ENV"
+    - name: Install pinned translation runtime
+      shell: bash
+      run: python -m pip install --disable-pip-version-check -r requirements-translation.txt
+    - name: Restore public model files only
+      uses: actions/cache@v4
+      with:
+        path: ${{ runner.temp }}/argos-packages
+        key: argos-models-v1-${{ runner.os }}-${{ inputs.targets }}-${{ hashFiles('requirements-translation.txt', 'scripts/install_offline_translation_models.py', 'scripts/offline_translation_models.json') }}
+    - name: Install and audit selected model packages
+      shell: bash
+      env:
+        TRANSLATION_TARGETS: ${{ inputs.targets }}
+      run: |
+        python scripts/install_offline_translation_models.py \
+          --targets "$TRANSLATION_TARGETS" \
+          --audit-out "$RUNNER_TEMP/offline-model-audit.json"
+    - name: Preserve model provenance
+      uses: actions/upload-artifact@v4
+      with:
+        name: offline-model-audit-${{ github.job }}-${{ github.run_attempt }}
+        path: ${{ runner.temp }}/offline-model-audit.json
+        retention-days: 3

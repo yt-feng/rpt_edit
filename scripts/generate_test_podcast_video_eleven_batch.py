@@ -208,26 +208,18 @@ def draw_frame_v2(image_path: Path | None, title: str, title_terms: list[str], s
 
 
 def translate_english_lines_to_zh(timeline: list[dict[str, Any]], args: argparse.Namespace) -> dict[int, str]:
-    payload = [{"i": i, "text": seg.get("text", "")} for i, seg in enumerate(timeline)]
-    prompt = f"""
-Translate these English short-video subtitle lines into concise natural Chinese.
-Return JSON only: {{"lines":[{{"i":0,"zh":"..."}}]}}
-Keep each Chinese line short, neutral, and suitable for on-screen subtitles.
-Do not include markdown.
+    from offline_translation import OfflineTranslator
 
-Lines:
-{json.dumps(payload, ensure_ascii=False)}
-""".strip()
-    try:
-        data = gen.extract_json(gen.deepseek(prompt, args, temperature=0.15))
-        result: dict[int, str] = {}
-        for row in data.get("lines", []):
-            idx = int(row.get("i"))
-            result[idx] = gen.sanitize_public_text(str(row.get("zh", "")), "zh")
-        return result
-    except Exception as exc:
-        log(f"Chinese subtitle translation failed, using empty Chinese captions: {exc}")
-        return {}
+    if not hasattr(args, "_offline_subtitle_translator"):
+        args._offline_subtitle_translator = OfflineTranslator()
+    result: dict[int, str] = {}
+    for index, segment in enumerate(timeline):
+        source = str(segment.get("text") or "")
+        translated = args._offline_subtitle_translator.translate(source, target="zh", source="en")
+        if source.strip() and not translated.strip():
+            raise RuntimeError(f"Local subtitle translation returned an empty line at {index}")
+        result[index] = gen.sanitize_public_text(translated, "zh")
+    return result
 
 
 def wrap_mixed_pages(seg: dict[str, Any], zh_text: str) -> list[dict[str, Any]]:

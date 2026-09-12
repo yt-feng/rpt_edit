@@ -22,7 +22,7 @@ class TitleCheckpointTests(unittest.TestCase):
         self.root = Path(self.temporary.name)
         self.catalog_path = self.root / "catalog.json"
         self.cache_path = self.root / "cache-v1.json"
-        self.model = "deepseek-v4-flash"
+        self.model = titles.active_title_model()
 
     def write_catalog(self, items, **metadata):
         payload = {"schema_version": 1, "items": items, **metadata}
@@ -169,9 +169,16 @@ class TitleCheckpointTests(unittest.TestCase):
                 self.assertEqual(len(entries), 2)
                 self.assertEqual(entries[titles.title_cache_key(source, self.model)]["source"], source)
 
-    def test_model_and_prompt_changes_do_not_reuse_or_erase_old_entries(self):
-        for changed_model, changed_prompt in (("another-model", titles.TITLE_PROMPT_VERSION),
-                                             (self.model, "portal-title-zh-v2")):
+    def test_legacy_model_cli_cannot_switch_back_to_paid_provider(self):
+        self.seed_cache()
+        self.write_catalog([{"id": "same-report", "title": "Report outlook"}])
+        with mock.patch.object(titles, "translate_title") as provider:
+            self.assertEqual(self.run_main(model="deepseek-v4-flash"), 0)
+        provider.assert_not_called()
+        self.assertEqual(self.catalog()["items"][0]["title_zh"], "报告展望")
+
+    def test_prompt_change_does_not_reuse_or_erase_old_entries(self):
+        for changed_model, changed_prompt in ((self.model, "portal-title-zh-v2"),):
             with self.subTest(model=changed_model, prompt=changed_prompt):
                 self.seed_cache()
                 self.write_catalog([{"id": "same-report", "title": "Report outlook"}])
@@ -180,6 +187,37 @@ class TitleCheckpointTests(unittest.TestCase):
                     self.assertEqual(self.run_main(model=changed_model), 0)
                 provider.assert_called_once()
                 self.assertEqual(len(titles.load_title_cache(self.cache_path)["entries"]), 2)
+
+    def test_exact_legacy_deepseek_result_survives_offline_switch(self):
+        cache = {"schema_version": 1, "provider": "deepseek", "entries": {}}
+        source = "Report outlook"
+        legacy_model = "deepseek-v4-flash"
+        key = titles.title_cache_key(source, legacy_model)
+        cache["entries"][key] = {"source": source, "model": legacy_model,
+                                 "prompt_version": titles.TITLE_PROMPT_VERSION, "title_zh": "已付费的报告展望"}
+        titles.write_json(self.cache_path, cache)
+        self.write_catalog([{"id": "same-report", "title": source}])
+        with mock.patch.object(titles, "translate_title") as provider:
+            self.assertEqual(self.run_main(api_key=""), 0)
+        provider.assert_not_called()
+        self.assertEqual(self.catalog()["items"][0]["title_zh"], "已付费的报告展望")
+        self.assertIn(key, titles.load_title_cache(self.cache_path)["entries"])
+
+    def test_conflicting_or_unknown_legacy_results_cannot_migrate(self):
+        for rows in (("deepseek-v4-flash", "deepseek-chat"), ("unrelated-model",)):
+            cache = {"schema_version": 1, "provider": "deepseek", "entries": {}}
+            for index, model in enumerate(rows):
+                cache["entries"][titles.title_cache_key("Report outlook", model)] = {
+                    "source": "Report outlook", "model": model,
+                    "prompt_version": titles.TITLE_PROMPT_VERSION, "title_zh": f"旧翻译{index}"}
+            titles.write_json(self.cache_path, cache)
+            self.write_catalog([{"id": "report", "title": "Report outlook"}])
+            with mock.patch.object(titles, "translate_title", return_value="本地新译文") as provider:
+                self.assertEqual(self.run_main(api_key=""), 0)
+            provider.assert_called_once()
+            self.assertEqual(self.catalog()["items"][0]["title_zh"], "本地新译文")
+            row = titles.load_title_cache(self.cache_path)["entries"][titles.title_cache_key("Report outlook", self.model)]
+            self.assertEqual(row["provider"], "argos-offline")
 
     def test_cache_only_fills_missing_titles_and_preserves_current_catalog(self):
         self.seed_cache()

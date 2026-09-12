@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Translate Portal Suite report titles to Simplified Chinese with DeepSeek."""
+"""Translate Portal Suite report titles locally with reusable translation memory."""
 
 from __future__ import annotations
 
@@ -11,18 +11,16 @@ import os
 import re
 import sys
 import tempfile
-import time
 from collections import Counter
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Any
 
-import requests
-
-
 CJK_RE = re.compile(r"[\u3400-\u9fff]")
 TITLE_CACHE_SCHEMA_VERSION = 1
 TITLE_PROMPT_VERSION = "portal-title-zh-v1"
+OFFLINE_TITLE_MODEL = "argos-offline"
+LEGACY_TITLE_MODELS = frozenset({"deepseek-v4-flash", "deepseek-chat", "deepseek-reasoner"})
 
 
 def log(message: str) -> None:
@@ -63,8 +61,14 @@ def title_cache_key(source: str, model: str, prompt_version: str | None = None) 
     return hashlib.sha256(material.encode("utf-8")).hexdigest()
 
 
+def active_title_model() -> str:
+    # Import only the adapter's pinned manifest identity, without loading models.
+    from offline_translation import MODEL_ID
+    return MODEL_ID
+
+
 def load_title_cache(path: Path | None) -> dict[str, Any]:
-    empty = {"schema_version": TITLE_CACHE_SCHEMA_VERSION, "provider": "deepseek", "entries": {}}
+    empty = {"schema_version": TITLE_CACHE_SCHEMA_VERSION, "provider": "translation-memory", "entries": {}}
     if path is None or not path.is_file():
         return empty
     try:
@@ -73,7 +77,7 @@ def load_title_cache(path: Path | None) -> dict[str, Any]:
         raise RuntimeError(f"Invalid title translation cache: {path}") from error
     if (not isinstance(cache, dict)
             or cache.get("schema_version") != TITLE_CACHE_SCHEMA_VERSION
-            or cache.get("provider") != "deepseek"
+            or cache.get("provider") not in {"deepseek", "argos-offline", "translation-memory"}
             or not isinstance(cache.get("entries"), dict)):
         raise RuntimeError(f"Unsupported title translation cache: {path}")
     for key, row in cache["entries"].items():
@@ -83,6 +87,20 @@ def load_title_cache(path: Path | None) -> dict[str, Any]:
                 or key != title_cache_key(row["source"], row["model"], row["prompt_version"])):
             raise RuntimeError(f"Invalid title translation cache entry: {path}")
     return cache
+
+
+def cached_title(cache: dict[str, Any], source: str) -> dict[str, Any] | None:
+    """Reuse an exact current result or one unambiguous legacy translation."""
+    current = cache["entries"].get(title_cache_key(source, active_title_model()))
+    if current is not None:
+        return current
+    legacy = [row for row in cache["entries"].values()
+              if row["source"] == source and row["prompt_version"] == TITLE_PROMPT_VERSION
+              and row["model"] in LEGACY_TITLE_MODELS
+              and row.get("provider", "deepseek") == "deepseek"]
+    if legacy and len({row["title_zh"] for row in legacy}) == 1:
+        return legacy[0]
+    return None
 
 
 def seed_title_cache(cache: dict[str, Any], catalog: dict[str, Any], candidates: list[dict[str, Any]],
@@ -110,7 +128,7 @@ def seed_title_cache(cache: dict[str, Any], catalog: dict[str, Any], candidates:
             continue
         source = str(item.get("title") or "")
         key = title_cache_key(source, model)
-        if key in cache["entries"]:
+        if cached_title(cache, source) is not None:
             continue
         report_id = str(item.get("id") or "")
         matches = seed_rows.get(report_id, [])
@@ -124,7 +142,7 @@ def seed_title_cache(cache: dict[str, Any], catalog: dict[str, Any], candidates:
             continue
         cache["entries"][key] = {
             "source": source, "model": model, "prompt_version": TITLE_PROMPT_VERSION,
-            "title_zh": translation, "provenance": "active-public-catalog",
+            "title_zh": translation, "provider": "published", "provenance": "active-public-catalog",
         }
         seeded += 1
     return seeded
@@ -144,64 +162,16 @@ def normalize_translation(value: str) -> str:
     return text
 
 
-def parse_deepseek_response(response: requests.Response, label: str) -> str:
-    try:
-        data = response.json()
-    except Exception as exc:
-        raise RuntimeError(f"{label}: HTTP {response.status_code}, non-json response: {response.text[:500]}") from exc
-    if response.status_code >= 400:
-        raise RuntimeError(f"{label}: HTTP {response.status_code}, response={json.dumps(data, ensure_ascii=False)[:800]}")
-    try:
-        return str(data["choices"][0]["message"]["content"])
-    except (KeyError, IndexError, TypeError) as exc:
-        raise RuntimeError(f"{label}: unexpected DeepSeek response: {json.dumps(data, ensure_ascii=False)[:800]}") from exc
-
-
 def translate_title(title: str, args: argparse.Namespace) -> str:
-    api_key = os.getenv("DEEPSEEK_API_KEY")
-    if not api_key:
-        raise RuntimeError("Missing DEEPSEEK_API_KEY")
+    from offline_translation import OfflineTranslator
 
-    payload: dict[str, Any] = {
-        "model": args.model,
-        "thinking": {"type": "disabled"},
-        "temperature": 0,
-        "max_tokens": 220,
-        "messages": [
-            {
-                "role": "system",
-                "content": (
-                    "你是金融研报标题翻译编辑。将英文研报标题翻译成简体中文，"
-                    "保留机构名、公司名、股票代码、评级、日期、货币、数字和专有名词；"
-                    "只输出标题本身，不解释，不加引号。"
-                ),
-            },
-            {
-                "role": "user",
-                "content": f"请翻译这个金融研报标题：\n{title}",
-            },
-        ],
-    }
-
-    last_error: Exception | None = None
-    for attempt in range(1, args.retries + 1):
-        try:
-            response = requests.post(
-                args.deepseek_base_url.rstrip("/") + "/chat/completions",
-                headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
-                json=payload,
-                timeout=args.timeout,
-            )
-            translated = normalize_translation(parse_deepseek_response(response, title[:80]))
-            if not translated:
-                raise RuntimeError("DeepSeek returned an empty translation")
-            return translated
-        except Exception as exc:  # noqa: BLE001 - retry transient HTTP/network/model errors.
-            last_error = exc
-            if attempt >= args.retries:
-                break
-            time.sleep(min(2 ** (attempt - 1), 8))
-    raise RuntimeError(str(last_error) if last_error else "Unknown DeepSeek error")
+    if not hasattr(args, "_offline_translator"):
+        args._offline_translator = OfflineTranslator()
+    args._offline_model_id = args._offline_translator.model_id
+    translated = normalize_translation(args._offline_translator.translate(title, target="zh"))
+    if not translated:
+        raise RuntimeError("Local title translation returned an empty result")
+    return translated
 
 
 def candidate_items(catalog: dict[str, Any], force: bool, limit: int) -> list[dict[str, Any]]:
@@ -226,9 +196,9 @@ def main() -> int:
     parser.add_argument("--catalog-path", default="portal_suite/data/catalog.json")
     parser.add_argument("--cache-path", help="Read and atomically checkpoint translated titles in this JSON file.")
     parser.add_argument("--seed-catalog-path", help="Reuse published Chinese titles only for matching unique report IDs and source titles.")
-    parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-v4-flash"))
-    parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
-    parser.add_argument("--workers", type=int, default=int(os.getenv("DEEPSEEK_TITLE_WORKERS", "500")))
+    parser.add_argument("--model", default=OFFLINE_TITLE_MODEL, help="Compatibility option; titles always use local Argos models.")
+    parser.add_argument("--deepseek-base-url", default="", help="Compatibility option; no API requests are made.")
+    parser.add_argument("--workers", type=int, default=1, help="Compatibility option; local inference uses one worker.")
     parser.add_argument("--timeout", type=int, default=45)
     parser.add_argument("--retries", type=int, default=3)
     parser.add_argument("--limit", type=int, default=0, help="Translate at most this many missing titles. 0 means all.")
@@ -236,6 +206,8 @@ def main() -> int:
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--fail-on-error", action="store_true")
     args = parser.parse_args()
+    args.model = active_title_model()
+    args.workers = 1
 
     catalog_path = Path(args.catalog_path)
     cache_path = Path(args.cache_path) if args.cache_path else None
@@ -263,7 +235,7 @@ def main() -> int:
     pending: dict[str, list[dict[str, Any]]] = {}
     for item in items:
         source = str(item.get("title") or "")
-        row = cache["entries"].get(title_cache_key(source, args.model)) if not args.force else None
+        row = cached_title(cache, source) if not args.force else None
         if row is not None:
             item["title_zh"] = row["title_zh"]
             cached += 1
@@ -271,15 +243,9 @@ def main() -> int:
             pending.setdefault(source, []).append(item)
     if cached:
         log(f"Reused {cached} Portal Suite title translations from checkpoint.")
-    if pending and not os.getenv("DEEPSEEK_API_KEY"):
-        log("DEEPSEEK_API_KEY is missing; skipping uncached title translation.")
-        if not cached:
-            return 0
-        pending = {}
-
     if pending:
         log(f"Translating {sum(len(rows) for rows in pending.values())} Portal Suite titles "
-            f"with DeepSeek model={args.model}, workers={args.workers}")
+            f"locally with Argos, workers={args.workers}")
     translated = 0
     failed = 0
 
@@ -304,9 +270,11 @@ def main() -> int:
             else:
                 cache["entries"][title_cache_key(source, args.model)] = {
                     "source": source, "model": args.model, "prompt_version": TITLE_PROMPT_VERSION,
-                    "title_zh": title_zh,
+                    "title_zh": title_zh, "provider": "argos-offline" if not has_cjk(source) or args.force else "source",
+                    "engine_model_id": getattr(args, "_offline_model_id", args.model),
                 }
-                # Persist each paid success before later requests or catalog writes can fail.
+                cache["provider"] = "translation-memory"
+                # Persist each result before later translations or catalog writes can fail.
                 if cache_path is not None and not args.dry_run:
                     write_json(cache_path, cache)
                 for item in target_items:
@@ -316,7 +284,8 @@ def main() -> int:
                 log(f"  progress {index}/{len(futures)} sources translated={translated} failed={failed}")
 
     catalog["title_translation"] = {
-        "provider": "deepseek",
+        "provider": "translation-memory",
+        "new_translation_provider": "argos-offline",
         "model": args.model,
         "updated_at_bjt": bjt_now(),
         "translated_title_count": sum(1 for item in catalog.get("items", []) if str(item.get("title_zh") or "").strip()),

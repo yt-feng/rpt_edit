@@ -184,6 +184,11 @@ jobs:
             --include-types "${{ github.event.inputs.include_types || 'Articles,Newsletters,White Papers,Crypto Reports' }}" \
             2>&1 | tee ark_feed_progress.log
 
+      - name: Set up free local translation models
+        uses: ./.github/actions/setup-offline-translation
+        with:
+          targets: zh,en
+
       - name: Build ARK Portal translated articles
         if: ${{ steps.replay.outputs.enabled != 'true' && steps.fetch.outputs.article_count != '0' }}
         env:

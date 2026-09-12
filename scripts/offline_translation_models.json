@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "index_source": "https://raw.githubusercontent.com/argosopentech/argospm-index/main/index.json",
+  "index_checked_date": "2026-09-12",
+  "integrity_policy": "Exact URLs and metadata versions are pinned. The upstream index supplies no checksums. Installation records SHA-256 and rejects a changed archive against its previous receipt.",
+  "license_policy": "Library licensing does not establish model licensing. Installer records each archive's metadata and bundled license/readme files for inspection.",
+  "runtime": {"argostranslate": "1.11.0", "ctranslate2": "4.8.2"},
+  "models": [
+    {"source": "zh", "target": "en", "version": "1.9", "url": "https://argos-net.com/v1/translate-zh_en-1_9.argosmodel"},
+    {"source": "en", "target": "zh", "version": "1.9", "url": "https://argos-net.com/v1/translate-en_zh-1_9.argosmodel"},
+    {"source": "en", "target": "ja", "version": "1.1", "url": "https://argos-net.com/v1/translate-en_ja-1_1.argosmodel"},
+    {"source": "en", "target": "ko", "version": "1.1", "url": "https://argos-net.com/v1/translate-en_ko-1_1.argosmodel"},
+    {"source": "en", "target": "ar", "version": "1.0", "url": "https://argos-net.com/v1/translate-en_ar-1_0.argosmodel"}
+  ]
+}

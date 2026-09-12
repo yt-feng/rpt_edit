@@ -7,7 +7,8 @@ Input is the post-MinerU report folders created by the XHS shard workflow:
 
 The script strips front-matter author/contact blocks and trailing disclosure
 appendices, keeps body text plus chart/image references, translates the cleaned
-Markdown to Chinese with DeepSeek, and renders one branded PDF per report.
+Markdown locally with Argos, and renders one branded PDF per report. Editorial
+article rewrites for public institutions and consulting reports remain separate.
 """
 from __future__ import annotations
 
@@ -18,7 +19,6 @@ import os
 import re
 import shutil
 import sys
-import time
 from pathlib import Path
 from typing import Any
 
@@ -786,55 +786,28 @@ def title_is_sensitive(title: str, args: argparse.Namespace) -> bool:
     return bool(wechat_title_neutrality_issues(title))
 
 
+def offline_translator(args: argparse.Namespace, cache_dir: Path | None = None):
+    from offline_translation import OfflineTranslator
+
+    if cache_dir is not None:
+        args._offline_translator = OfflineTranslator(cache_dir=cache_dir)
+    elif not hasattr(args, "_offline_translator"):
+        args._offline_translator = OfflineTranslator()
+    return args._offline_translator
+
+
 def translate_chunk(chunk: str, args: argparse.Namespace, chunk_index: int, chunk_total: int) -> str:
-    prompt = f"""
-请把下面这段英文/混合语言研报正文精译成简体中文。
-
-硬性要求：
-1. 保留 Markdown 标题、列表、段落结构。
-2. 必须原样保留所有形如 [[PORTAL_IMAGE_001]] 的图片占位符，不能改编号、不能删除。
-3. 不要摘要，不要扩写，不要增加原文没有的信息。
-4. 如果仍出现作者姓名、邮箱、电话、投行免责声明、评级分布、法律披露，请删除。
-5. 投行名不要作为标题或署名露出；例如 “CITI'S TAKE” 译为“核心观点”，不要译为“Citi观点”。
-6. 公司名、产品名、股票代码可保留英文；分析逻辑、结论、图表标题和注释翻译成自然中文。
-7. 只输出译文 Markdown，不要输出代码块，不要解释。
-
-片段：{chunk_index}/{chunk_total}
-
-待翻译内容：
-{chunk}
-""".strip()
-    return call_deepseek(
-        prompt,
-        args,
-        f"translate chunk {chunk_index}/{chunk_total}",
-        max_attempts=1,
-    )
+    # Compatibility entry point: model inference is local, with no API fallback.
+    del chunk_index, chunk_total
+    return offline_translator(args).translate_markdown(chunk, target="zh", source="en")
 
 
 def translate_markdown(markdown: str, args: argparse.Namespace) -> str:
-    chunks = split_markdown_chunks(markdown, args.chunk_chars)
-    translated: list[str] = []
-    for idx, chunk in enumerate(chunks, 1):
-        log(f"Translating chunk {idx}/{len(chunks)} ({len(chunk)} chars)")
-        last_error: Exception | None = None
-        attempts = max(1, int(args.deepseek_retries))
-        for attempt in range(1, attempts + 1):
-            try:
-                text = translate_chunk(chunk, args, idx, len(chunks))
-                translated.append(text)
-                break
-            except Exception as exc:
-                last_error = exc
-                if attempt < attempts:
-                    wait = min(60, 5 * attempt)
-                    log(f"DeepSeek chunk {idx} attempt {attempt}/{attempts} failed: {exc}; retrying in {wait}s")
-                    time.sleep(wait)
-        else:
-            raise RuntimeError(f"DeepSeek translation failed for chunk {idx}: {last_error}")
-    text = "\n\n".join(translated)
-    text = re.sub(r"```(?:markdown)?\s*", "", text)
-    text = text.replace("```", "")
+    # The adapter preserves Markdown/image tokens and checkpoints individual
+    # text segments. A resumed report reuses its successful segment translations.
+    text = offline_translator(args).translate_markdown(markdown, target="zh", source="en")
+    if markdown.strip() and not text.strip():
+        raise RuntimeError("Local report translation returned an empty result")
     return sanitize_text(text).strip() + "\n"
 
 
@@ -959,7 +932,16 @@ def wechat_title_from_filename(
     translated_md: str,
     institution_name: str,
     args: argparse.Namespace,
+    *,
+    editorial: bool = True,
 ) -> tuple[str, dict[str, Any]]:
+    if not editorial:
+        translated = offline_translator(args).translate(source_filename, target="zh")
+        selected, decision = decide_filename_anchored_title(
+            [translated], source_filename, institution_name, evidence_text=translated_md,
+        )
+        decision.update(translation_provider="argos-offline", repair_attempted=False)
+        return selected, decision
     if not getattr(args, "title_refine", True):
         return decide_filename_anchored_title([], source_filename, institution_name)
     article_excerpt = re.sub(r"[ \t]+", " ", re.sub(r"[#>*`!\\[\\]()]+", " ", translated_md))
@@ -1248,6 +1230,9 @@ def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.N
     if article_style:
         translated_md = generate_article_style_markdown(clean_md, source_title, institution_name, figures, args)
     else:
+        # Report text stays with private report outputs; never put this memo in
+        # the shared public model cache used by GitHub Actions.
+        offline_translator(args, report_out_dir / ".translation_cache")
         translated_md = translate_markdown(clean_md, args)
     translated_md, stock_changes = sanitize_wechat_stock_language(translated_md)
     display_title, title_decision = wechat_title_from_filename(
@@ -1255,6 +1240,7 @@ def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.N
         translated_md,
         institution_name,
         args,
+        editorial=article_style,
     )
     display_title, title_stock_changes = sanitize_wechat_stock_language(display_title, strict_wording=False)
     title_before_neutralization = display_title
@@ -1291,7 +1277,10 @@ def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.N
         "source_report_dir": str(report_dir),
         "title": display_title,
         "source_title": source_title,
-        "wechat_title_source": "source_filename_weighted_finetune",
+        "wechat_title_source": "source_filename_weighted_finetune" if article_style else "offline_filename_translation",
+        "body_provider": "deepseek-editorial" if article_style else "argos-offline",
+        "translation_model": args.model if article_style else offline_translator(args).model_id,
+        "title_provider": "deepseek-editorial" if article_style and getattr(args, "title_refine", True) else "deterministic" if article_style else "argos-offline",
         "wechat_title_decision": title_decision,
         "source_clean": "source_clean.md",
         "translated_markdown": "translated.md",

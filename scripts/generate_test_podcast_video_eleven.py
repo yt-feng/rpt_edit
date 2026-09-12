@@ -404,19 +404,16 @@ def looks_chinese(text: str) -> bool:
 
 
 def translate_title_to_english(title: str, source_text: str, args: argparse.Namespace) -> str:
-    prompt = f"""Translate or rewrite this video title into concise English, under 60 characters.
-Use neutral research wording. Do not include Chinese. Return only the title.
+    from offline_translation import OfflineTranslator
 
-Current title: {title}
-Report context: {trim(source_text, 1600)}"""
-    try:
-        translated = deepseek(prompt, args, temperature=0.15).strip().strip('"')
-        translated = re.sub(r"^[#>*\-\s]+", "", translated).strip()
-        if translated and not looks_chinese(translated):
-            return sanitize_public_text(translated[:80], "en")
-    except Exception as exc:
-        log(f"English title rewrite failed: {exc}")
-    return str(LANGS["en"]["title_fallback"])
+    del source_text
+    if not hasattr(args, "_offline_title_translator"):
+        args._offline_title_translator = OfflineTranslator()
+    translated = args._offline_title_translator.translate(title, target="en").strip().strip('"')
+    translated = re.sub(r"^[#>*\-\s]+", "", translated).strip()
+    if not translated or looks_chinese(translated):
+        raise RuntimeError("Local English video title translation is incomplete")
+    return sanitize_public_text(translated[:80], "en")
 
 
 def report_title(item_dir: Path, lang: str, source_text: str, args: argparse.Namespace) -> str:

@@ -637,20 +637,20 @@ def stable_json_bytes(value: Any) -> bytes:
     return (json.dumps(value, ensure_ascii=False, separators=(",", ":"), sort_keys=True) + "\n").encode("utf-8")
 
 
-def empty_cache(model: str = DEFAULT_DEEPSEEK_MODEL) -> dict[str, Any]:
+def empty_cache(model: str = DEFAULT_DEEPSEEK_MODEL, *, provider: str = "deepseek") -> dict[str, Any]:
     return {
         "schema_version": CACHE_SCHEMA_VERSION,
         "prompt_version": PROMPT_VERSION,
-        "provider": "deepseek",
+        "provider": provider,
         "model": normalize_deepseek_model_name(model),
         "locales": {code: {} for code in LOCALES},
     }
 
 
-def load_cache(path: Path | None, model: str = DEFAULT_DEEPSEEK_MODEL) -> dict[str, Any]:
+def load_cache(path: Path | None, model: str = DEFAULT_DEEPSEEK_MODEL, *, provider: str = "deepseek") -> dict[str, Any]:
     requested_model = normalize_deepseek_model_name(model)
     if path is None or not path.is_file():
-        return empty_cache(requested_model)
+        return empty_cache(requested_model, provider=provider)
     raw = path.read_bytes()
     try:
         payload = json.loads(gzip.decompress(raw).decode("utf-8"))
@@ -659,14 +659,33 @@ def load_cache(path: Path | None, model: str = DEFAULT_DEEPSEEK_MODEL) -> dict[s
     if not isinstance(payload, dict) or payload.get("schema_version") != CACHE_SCHEMA_VERSION:
         raise TranslationError(f"Unsupported translation cache schema: {path}")
     cached_model = str(payload.get("model") or "").strip()
+    offline_model_changed = (provider == "argos" and payload.get("provider") == "argos"
+                             and payload.get("prompt_version") == PROMPT_VERSION
+                             and cached_model != requested_model)
+    if offline_model_changed:
+        # A new model must not relabel old local inference as current. Previously
+        # paid, source-validated translations remain reusable across upgrades.
+        for locale, entries in payload.get("locales", {}).items():
+            if not isinstance(entries, dict):
+                raise TranslationError(f"Translation cache locale is invalid: {locale}")
+            payload["locales"][locale] = {
+                key: row for key, row in entries.items()
+                if isinstance(row, dict) and row.get("provider") == "legacy-cache"
+                and row.get("source_cache_provider") == "deepseek"
+                and normalize_deepseek_model_name(row.get("model")) == DEFAULT_DEEPSEEK_MODEL
+            }
+        payload["model"] = requested_model
+        cached_model = requested_model
+    legacy_import = (provider == "argos" and payload.get("provider") == "deepseek"
+                     and normalize_deepseek_model_name(cached_model) == DEFAULT_DEEPSEEK_MODEL)
     if (
         payload.get("prompt_version") != PROMPT_VERSION
-        or payload.get("provider") != "deepseek"
+        or (payload.get("provider") != provider and not legacy_import)
         or not cached_model
-        or normalize_deepseek_model_name(cached_model) != requested_model
+        or (normalize_deepseek_model_name(cached_model) != requested_model and not legacy_import)
     ):
         log("Translation cache namespace changed; starting with an empty cache.")
-        return empty_cache(requested_model)
+        return empty_cache(requested_model, provider=provider)
     locales = payload.get("locales")
     if not isinstance(locales, dict):
         raise TranslationError(f"Translation cache has no locales: {path}")
@@ -683,6 +702,13 @@ def load_cache(path: Path | None, model: str = DEFAULT_DEEPSEEK_MODEL) -> dict[s
                 or not row["translation"].strip()
             ):
                 raise TranslationError(f"Translation cache entry is invalid: {locale}/{key}")
+    if legacy_import:
+        for entries in locales.values():
+            for row in entries.values():
+                row.setdefault("provider", "legacy-cache")
+                row.setdefault("source_cache_provider", "deepseek")
+                row.setdefault("model", cached_model)
+    payload["provider"] = provider
     payload["model"] = requested_model
     return payload
 
@@ -964,11 +990,12 @@ def prune_translation_cache(
         }
         normalized_locales[locale] = retained
     model = normalize_deepseek_model_name(str(cache.get("model") or DEFAULT_DEEPSEEK_MODEL))
+    provider = cache.get("provider", "deepseek")
     cache.clear()
     cache.update({
         "schema_version": CACHE_SCHEMA_VERSION,
         "prompt_version": PROMPT_VERSION,
-        "provider": "deepseek",
+        "provider": provider,
         "model": model,
         "locales": normalized_locales,
     })
@@ -1313,6 +1340,7 @@ def translate_missing_units(
     run_state: TranslationRun | None = None,
     priority_keys: frozenset[str] = frozenset(),
     preserve_unused_cache: bool = False,
+    provider: str = "deepseek",
 ) -> dict[str, int]:
     if preflight_batches_per_locale < 1 or (max_provider_requests is not None and max_provider_requests < 1):
         raise TranslationError("Preflight batch and provider request limits must be positive")
@@ -1320,7 +1348,9 @@ def translate_missing_units(
         diagnostics_out, max_provider_requests if max_provider_requests is not None else (6 if preflight_only else None),
         max_provider_cost_cny,
     )
-    worker_count = 1 if preflight_only else max(1, min(MAX_TRANSLATION_WORKERS, int(workers)))
+    if provider == "argos":
+        run_state.data.update(provider="argos", api_cost_cny=0, repair_provider="none")
+    worker_count = 1 if preflight_only or provider == "argos" else max(1, min(MAX_TRANSLATION_WORKERS, int(workers)))
     if preflight_only or preserve_unused_cache:
         # A standalone preflight may provide only a representative inventory.
         # Never remove the rest of an existing full translation checkpoint.
@@ -1449,7 +1479,44 @@ def translate_missing_units(
         write_cache(cache_path, cache)
         run_state.data["status"] = "passed"
         run_state.write()
-        log(f"Translation cache complete: {len(units)} source units; no DeepSeek requests needed.")
+        log(f"Translation cache complete: {len(units)} source units; no translation requests needed.")
+        return missing_counts
+
+    if provider == "argos":
+        # Offline inference has no provider balance, HTTP retries or paid repair.
+        # Save valid rows even if a neighbouring row fails the quality gate.
+        from offline_translation import OfflineTranslator, OfflineTranslationError
+        translator = OfflineTranslator()
+        run_state.data.update(provider="argos", api_cost_cny=0, repair_provider="none", workers=1)
+        failed = 0
+        for locale, batch in jobs:
+            run_state.check()
+            for unit in batch:
+                try:
+                    translated = translator.translate(unit.source, locale)
+                    validate_translation_quality(locale, unit, translated)
+                    cache["locales"][locale][unit.key] = {
+                        **_translation_cache_row(unit, translated), "provider": "argos", "model": model,
+                    }
+                except OfflineTranslationError as error:
+                    write_cache(cache_path, cache)
+                    run_state.stop(str(error), category="failure")
+                    run_state.write()
+                    raise TranslationError(str(error)) from error
+                except TranslationError as error:
+                    failed += 1
+                    run_state.failure(locale, error, [unit])
+            run_state.data["completed_batches"] = run_state.data.get("completed_batches", 0) + 1
+            write_cache(cache_path, cache)
+            run_state.write()
+            log(f"Offline locale checkpoint: {locale}; batches={run_state.data['completed_batches']}/{len(jobs)}")
+        remaining = {locale: sum(not _valid_cache_row(locale, unit, cache["locales"][locale].get(key))
+                                 for key, unit in units.items()) for locale in LOCALES}
+        run_state.data.update(remaining_units=remaining, remaining_units_total=sum(remaining.values()),
+                              failed_units=failed, failed_batches=0 if not failed else failed)
+        run_state.write()
+        if failed or (not preflight_only and sum(remaining.values())):
+            raise TranslationError(f"Offline translation has {sum(remaining.values())} unresolved source units; completed rows saved")
         return missing_counts
 
     configured_keys = any(
@@ -5036,6 +5103,7 @@ def _build_localized_release(
     history_daily_limit: int = 100,
     history_paused: bool = False,
     translation_scope: str = "release",
+    provider: str = "deepseek",
     batch_translator: Callable[[str, list[TranslationUnit]], dict[str, str]] | None = None,
     preflight_only: bool = False,
     preflight_batches_per_locale: int = 2,
@@ -5061,7 +5129,9 @@ def _build_localized_release(
     if site.scheme != "https" or not site.netloc or site.path not in {"", "/"}:
         raise TranslationError("--site-url must be an HTTPS origin without a path")
     site_url = urlunsplit((site.scheme, site.netloc, "", "", "")).rstrip("/")
-    if batch_translator is None:
+    if provider not in {"argos", "deepseek"}:
+        raise TranslationError("Unsupported translation provider")
+    if provider == "deepseek" and batch_translator is None:
         deepseek_base_url = validate_deepseek_base_url(deepseek_base_url)
 
     required = [
@@ -5405,7 +5475,7 @@ def _build_localized_release(
                 )
             collect_llms_units(llms_sources[name], name, units)
 
-    cache = load_cache(cache_in, model)
+    cache = load_cache(cache_in, model, provider=provider)
     cache["model"] = normalize_deepseek_model_name(model)
     title_repairs = apply_ja_catalog_title_repairs(cache, units)
     if title_repairs["replaced"] or title_repairs["seeded"]:
@@ -5429,6 +5499,7 @@ def _build_localized_release(
         run_state=run_state,
         priority_keys=frozenset(priority_units),
         preserve_unused_cache=scoped_cohort,
+        provider=provider,
     )
     if preflight_only:
         result = {
@@ -5804,6 +5875,7 @@ def build_localized_release(**kwargs: Any) -> dict[str, Any]:
     try:
         result = _build_localized_release(**kwargs, run_state=run_state)
         run_state.data["status"] = "passed"
+        run_state.data["ready"] = not kwargs.get("preflight_only", False)
         return result
     except BaseException as error:
         if (checkpoint_on_budget and isinstance(error, TranslationError)
@@ -5838,8 +5910,9 @@ def parse_args() -> argparse.Namespace:
         required=True,
         help="Downloaded R2 _hot-reports/indexes/public-v2.json public metadata snapshot",
     )
-    parser.add_argument("--workers", type=int, default=int(os.getenv("PORTAL_TRANSLATION_WORKERS", "32")))
-    parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", DEFAULT_DEEPSEEK_MODEL))
+    parser.add_argument("--provider", choices=("argos",), default="argos", help="Offline translation only; no paid API fallback")
+    parser.add_argument("--workers", type=int, default=1)
+    parser.add_argument("--model", help="Deprecated compatibility option; pinned offline model identity is used")
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
     parser.add_argument("--timeout", type=float, default=float(os.getenv("DEEPSEEK_TIMEOUT", "180")))
     parser.add_argument("--attempts", type=int, default=int(os.getenv("DEEPSEEK_OUTPUT_ATTEMPTS", "3")))
@@ -5873,6 +5946,7 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
+    from offline_translation import MODEL_ID
     try:
         build_localized_release(
             root=args.root,
@@ -5881,7 +5955,7 @@ def main() -> int:
             cache_out=args.cache_out,
             assets_root=args.assets_root,
             workers=args.workers,
-            model=args.model,
+            model=MODEL_ID,
             deepseek_base_url=args.deepseek_base_url,
             timeout=args.timeout,
             attempts=args.attempts,
@@ -5900,6 +5974,7 @@ def main() -> int:
             history_daily_limit=args.history_daily_limit,
             history_paused=args.history_paused,
             translation_scope=args.translation_scope,
+            provider=args.provider,
         )
     except (OSError, ValueError, TranslationError, json.JSONDecodeError, ET.ParseError) as error:
         print(f"portal locale build failed: {error}", file=sys.stderr)
