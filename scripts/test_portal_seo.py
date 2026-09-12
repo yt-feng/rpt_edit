@@ -326,7 +326,7 @@ class SeoOutputTests(unittest.TestCase):
             sitemap_pages = (output / "sitemap-pages.xml").read_text(encoding="utf-8")
             self.assertIn(
                 "<loc>https://portal.example.invalid/terms.html</loc>\n"
-                "    <lastmod>2026-08-27</lastmod>",
+                "    <lastmod>2026-09-12</lastmod>",
                 sitemap_pages,
             )
             self.assertIn(
