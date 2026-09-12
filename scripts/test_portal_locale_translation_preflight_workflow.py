@@ -23,6 +23,8 @@ class PreflightWorkflowTests(unittest.TestCase):
         cached = text.split('Restore public model files only', 1)[1].split('Install and audit', 1)[0]
         self.assertIn('argos-packages', cached)
         self.assertNotIn('offline-translation-memo', cached)
+        self.assertIn('steps.configure.outputs.model-key', cached)
+        self.assertNotIn('inputs.targets', cached)
         self.assertIn('requirements-translation.txt', text)
         self.assertIn('--audit-out', text)
 

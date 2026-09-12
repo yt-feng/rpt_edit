@@ -8,8 +8,16 @@ runs:
   using: composite
   steps:
     - name: Configure local model and memo directories
+      id: configure
+      env:
+        TRANSLATION_TARGETS: ${{ inputs.targets }}
       shell: bash
       run: |
+        if [[ ! "$TRANSLATION_TARGETS" =~ ^(zh|en|ko|ja|ar)(,(zh|en|ko|ja|ar))*$ ]]; then
+          echo "Unsupported translation targets" >&2
+          exit 2
+        fi
+        echo "model-key=${TRANSLATION_TARGETS//,/-}" >> "$GITHUB_OUTPUT"
         echo "ARGOS_PACKAGES_DIR=$RUNNER_TEMP/argos-packages" >> "$GITHUB_ENV"
         echo "PORTAL_OFFLINE_TRANSLATION_CACHE=$RUNNER_TEMP/offline-translation-memo" >> "$GITHUB_ENV"
         echo "PORTAL_OFFLINE_TRANSLATION_THREADS=2" >> "$GITHUB_ENV"
@@ -23,7 +31,7 @@ runs:
       uses: actions/cache@v4
       with:
         path: ${{ runner.temp }}/argos-packages
-        key: argos-models-v1-${{ runner.os }}-${{ inputs.targets }}-${{ hashFiles('requirements-translation.txt', 'scripts/install_offline_translation_models.py', 'scripts/offline_translation_models.json') }}
+        key: argos-models-v1-${{ runner.os }}-${{ steps.configure.outputs.model-key }}-${{ hashFiles('requirements-translation.txt', 'scripts/install_offline_translation_models.py', 'scripts/offline_translation_models.json') }}
     - name: Install and audit selected model packages
       shell: bash
       env:
