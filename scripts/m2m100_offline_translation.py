@@ -578,7 +578,7 @@ class M2M100OfflineTranslator:
             return text
         parts, placeholders = self._prepare(text, target, source)
         self._translate_pending([part for part in parts if part.core is not None])
-        return self._render(parts, placeholders)
+        return _reviewed_financial_sentence(text, target, self._render(parts, placeholders))
 
     def translate_many(self, texts: Sequence[str], target: str, source: str | None = None) -> list[str]:
         """Translate independent units in grouped CT2 batches without losing structure."""
@@ -594,7 +594,10 @@ class M2M100OfflineTranslator:
             pending.extend(part for part in parts if part.core is not None)
             prepared.append((parts, placeholders, text))
         self._translate_pending(pending)
-        return [self._render(parts, placeholders) for parts, placeholders, _text in prepared]
+        return [
+            _reviewed_financial_sentence(text, target, self._render(parts, placeholders))
+            for parts, placeholders, text in prepared
+        ]
 
     def translate_markdown(self, markdown: str, target: str = "zh", source: str | None = None) -> str:
         """Translate Markdown prose while retaining fences, links and tables."""
