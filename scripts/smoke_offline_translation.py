@@ -12,6 +12,13 @@ from offline_translation import OfflineTranslator
 import build_portal_locales as locales
 
 
+REVIEWED_FINANCIAL_SAMPLES = {
+    ("Operating cash flow rose by 15% in 2026.", "ko"): "2026년 영업 현금 흐름은 15% 증가했습니다.",
+    ("Operating cash flow rose by 15% in 2026.", "ja"): "2026年、営業キャッシュフローは15%増加しました。",
+    ("Operating cash flow rose by 15% in 2026.", "ar"): "ارتفع التدفق النقدي التشغيلي بنسبة 15% في عام 2026.",
+}
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--diagnostics-out', type=Path, required=True)
@@ -33,6 +40,9 @@ def main() -> int:
                     row['translation'] = translator.translate(unit.source, locale)
                     locales.validate_translation_quality(locale, unit, row['translation'])
                     row['translation'] = protected.restore(row['translation'])
+                    expected = REVIEWED_FINANCIAL_SAMPLES.get((source, locale))
+                    if expected is not None and row['translation'] != expected:
+                        raise ValueError("Reviewed financial sample does not preserve the approved cash-flow meaning")
                     row['status'] = 'passed'
                 except Exception as error:
                     row['status'] = 'failed'
