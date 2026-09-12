@@ -166,7 +166,10 @@ class ExhaustedAllowanceSelectionTests(unittest.TestCase):
         reserve = state.reserve
 
         def reserve_with_budget(payload=None):
-            if budget_exhausted and payload is not None and "response_format" not in payload:
+            repair = payload is not None and ("response_format" not in payload or (
+                preflight and len(json.loads(payload["messages"][1]["content"].split("\n\n", 1)[1])["items"]) <= 8
+            ))
+            if budget_exhausted and repair:
                 # A repair must enter the same reservation guard even after
                 # provider selection has proved DeepL cannot fit these rows.
                 state.max_cost_micro_cny = 1
@@ -194,7 +197,9 @@ class ExhaustedAllowanceSelectionTests(unittest.TestCase):
                 rows = json.loads(payload["messages"][1]["content"].split("\n\n", 1)[1])["items"]
                 sent_sources.append((locale, [row["source_text"] for row in rows]))
                 attempts[locale] += 1
-                bad = (10 if attempts[locale] == 1 else missing) if locale == bad_locale else 0
+                bad = (0 if plain_ok else len(rows)) if attempts[locale] > 2 else (
+                    (10 if attempts[locale] == 1 else missing) if locale == bad_locale else 0
+                )
                 content = json.dumps({"translations": [
                     {"id": row["id"], "text": row["source_text"] if index >= len(rows) - bad else text[locale]}
                     for index, row in enumerate(rows)
@@ -238,11 +243,11 @@ class ExhaustedAllowanceSelectionTests(unittest.TestCase):
             self.assertEqual(saved["locales"]["ko"]["f" * 64], history)
         return state.data, saved, calls, sent_sources, error, units
 
-    def test_verified_115_character_allowance_uses_two_primary_repairs_within_six_calls(self):
+    def test_verified_115_character_allowance_uses_one_grouped_primary_repair_within_six_calls(self):
         report, cache, calls, sources, error, units = self.run_case()
         self.assertIsNone(error)
-        self.assertEqual(calls, [("ko", False), ("ja", False), ("ar", False), ("ar", False), ("ar", True), ("ar", True)])
-        self.assertEqual([source for _, rows in sources[-2:] for source in rows],
+        self.assertEqual(calls, [("ko", False), ("ja", False), ("ar", False), ("ar", False), ("ar", False)])
+        self.assertEqual([source for _, rows in sources[-1:] for source in rows],
                          [unit.source for unit in list(units.values())[-2:]])
         self.assertEqual(report["repair_provider"], "deepseek")
         self.assertEqual(report["repaired_units"], 2)
@@ -254,17 +259,17 @@ class ExhaustedAllowanceSelectionTests(unittest.TestCase):
     def test_first_locale_reserves_room_for_other_language_jobs(self):
         report, _, calls, _, error, _ = self.run_case(bad_locale="ko")
         self.assertIsNone(error)
-        self.assertEqual(calls, [("ko", False), ("ko", False), ("ko", True), ("ko", True), ("ja", False), ("ar", False)])
-        self.assertEqual(report["provider_requests"], 6)
+        self.assertEqual(calls, [("ko", False), ("ko", False), ("ko", False), ("ja", False), ("ar", False)])
+        self.assertEqual(report["provider_requests"], 5)
 
-    def test_three_repairs_that_would_consume_other_language_slots_are_not_started(self):
+    def test_nine_residuals_do_not_enter_small_primary_group_repairs(self):
         for locale in ("ko", "ar"):
             with self.subTest(locale=locale):
-                report, cache, calls, _, error, units = self.run_case(bad_locale=locale, missing=3)
+                report, cache, calls, _, error, units = self.run_case(bad_locale=locale, missing=9)
                 self.assertIsNotNone(error)
                 self.assertFalse(any(plain for _, plain in calls))
                 self.assertEqual(len(calls), 2 if locale == "ko" else 4)
-                self.assertEqual(len(set(units) & set(cache["locales"][locale])), 13)
+                self.assertEqual(len(set(units) & set(cache["locales"][locale])), 7)
                 self.assertEqual(report["status"], "failed")
 
     def test_usage_errors_stop_without_alternate_provider_repairs(self):
@@ -277,10 +282,10 @@ class ExhaustedAllowanceSelectionTests(unittest.TestCase):
                 self.assertEqual(report["repair_provider"], "deepl")
                 self.assertEqual(len(set(units) & set(cache["locales"]["ko"])), 14)
 
-    def test_plain_echo_still_fails_quality_gate_and_preserves_partial_rows(self):
+    def test_grouped_echo_still_fails_quality_gate_and_preserves_partial_rows(self):
         report, cache, calls, _, error, units = self.run_case(bad_locale="ko", plain_ok=False)
         self.assertIsNotNone(error)
-        self.assertEqual(len(calls), 4)
+        self.assertEqual(len(calls), 3)
         self.assertEqual(report["status"], "failed")
         self.assertEqual(len(set(units) & set(cache["locales"]["ko"])), 14)
 

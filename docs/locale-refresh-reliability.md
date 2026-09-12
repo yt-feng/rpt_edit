@@ -38,7 +38,7 @@ editorial certification of every translation.
 Residual provider selection now checks DeepL's cached usage before grouping rows
 or reserving a translation request. When the verified allowance cannot fit the
 planned source characters and 1,000-character reserve, the invocation selects
-the existing one-row DeepSeek plain repairs. The usage lookup is shared; this
+bounded DeepSeek residual repairs. The usage lookup is shared; this
 decision allocates no DeepL POST, character reservation or external request slot.
 Primary repair fit still reserves room for the other canary languages within six
 total requests, and the normal cost guard, queue limit and dispatch deadline apply.
@@ -46,6 +46,34 @@ Authentication failures, invalid usage and insufficient allowance after uncertai
 billing stop the run; a failure after a DeepL submission never triggers an
 alternate-provider replay. Regression cases cover the observed 115 usable
 characters, retained translations, six-request fit and rejected repairs.
+
+Run `34672413981` then retained 27 of 32 Arabic sample rows after two primary
+requests. The five remaining rows could not fit five singleton repairs into the
+two remaining request slots. Preflight now groups up to eight residual rows into
+one JSON repair request, with one output attempt; singleton repairs still use
+plain text. This path requires some accepted primary output and reserves one
+request for every unsubmitted canary job. Partial repairs retain validated rows,
+and the existing 90% sample gate decides whether preflight can continue. Full
+builds keep singleton primary repairs and still require complete final coverage.
+
+Two exactly observed Arabic failures now use the existing reviewed-translation
+seeding mechanism: the paragraph tail `”的结论。` and the metadata keyword
+`GS-Space Exploration Technologies Corp. (SPCX) Communacopia-__KC_PH_000__`.
+The mappings retain the conclusion's meaning, company/event names, ticker and
+placeholder; they apply only to the exact text and context and never replace a
+valid cached translation. The old artifact saved only the first invalid row from
+each response, so it cannot reconstruct or establish a paid-provider pass for
+the complete five-row residual batch. A representative live group translated
+three rows but echoed these two; exact-text regressions cover the reviewed
+renderings. The complete cloud inventory remains the release verification gate.
+
+Preflight diagnostics now save the selected and remaining source inventories,
+including rows whose repair was declined. Each list has an independent 192-row
+limit, with up to 16,384 characters per source, exact locale/context/cache and
+batch keys, numeric-placeholder metadata, authoritative totals and explicit
+completeness/truncation flags.
+Ordinary three-language, 32-row samples are preserved in full for reproduction;
+request headers, credentials and raw response bodies are not part of these lists.
 
 Cache keys, validated paid rows, placeholder and language validation, the shared
 preflight request cap, and backfill spending limits remain unchanged. Tests cover

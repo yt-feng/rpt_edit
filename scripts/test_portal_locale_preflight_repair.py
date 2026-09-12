@@ -1,4 +1,4 @@
-"""The actual 4-request canary omission must fit the existing 6-call cap."""
+"""Small residual batches must fit the existing shared six-call canary cap."""
 from collections import Counter
 import json
 from pathlib import Path
@@ -14,7 +14,8 @@ NATIVE = {"ko": "금융 연구의 주요 내용입니다.", "ja": "金融調査�
 
 
 class PreflightRepairTests(unittest.TestCase):
-    def run_case(self, *, bad_locale="ar", missing=2, plain_ok=True, count=16, max_items=16):
+    def run_case(self, *, bad_locale="ar", missing=2, plain_ok=True, count=16, max_items=16,
+                 initial_missing=10, preflight_batches=1, repair_accepts=None):
         units = {f"{i:064x}": builder.TranslationUnit(f"{i:064x}", "html:text:p", f"第{i}段金融研究正文及完整行业分析内容。") for i in range(count)}
         cache = builder.empty_cache()
         cache["locales"]["ko"]["f" * 64] = {"source": "保留历史缓存", "translation": NATIVE["ko"]}
@@ -33,7 +34,13 @@ class PreflightRepairTests(unittest.TestCase):
                 text = NATIVE[locale] if plain_ok else source
             else:
                 rows = json.loads(payload["messages"][1]["content"].split("\n\n", 1)[1])["items"]
-                bad = (10 if attempts[locale] == 1 else missing) if locale == bad_locale else 0
+                if attempts[locale] > 2 and locale == bad_locale:
+                    self.assertLessEqual(len(rows), 8)
+                    plain_sources.extend(row["source_text"] for row in rows)
+                    accepted = repair_accepts if repair_accepts is not None else len(rows) if plain_ok else 0
+                    bad = len(rows) - accepted
+                else:
+                    bad = (initial_missing if attempts[locale] == 1 else missing) if locale == bad_locale else 0
                 text = json.dumps({"translations": [
                     {"id": row["id"], "text": row["source_text"] if index >= len(rows)-bad else NATIVE[locale]}
                     for index, row in enumerate(rows)
@@ -53,7 +60,7 @@ class PreflightRepairTests(unittest.TestCase):
                 builder.translate_missing_units(units, cache, cache_path=path, model=builder.DEFAULT_DEEPSEEK_MODEL,
                     base_url="https://provider.example.invalid", workers=500, timeout=1, attempts=2,
                     max_batch_items=max_items, max_batch_chars=100000, preflight_only=True,
-                    preflight_batches_per_locale=1, run_state=state)
+                    preflight_batches_per_locale=preflight_batches, run_state=state)
             except builder.TranslationError as caught:
                 error = caught
             saved = builder.load_cache(path)
@@ -62,10 +69,10 @@ class PreflightRepairTests(unittest.TestCase):
         self.assertIn("f" * 64, saved["locales"]["ko"])
         return state.data, saved, calls, plain_sources, error, units
 
-    def test_actual_arabic_two_omissions_are_repaired_in_exactly_six_calls(self):
+    def test_two_arabic_omissions_use_one_grouped_repair_within_six_calls(self):
         report, cache, calls, repaired, error, units = self.run_case()
         self.assertIsNone(error)
-        self.assertEqual(calls, [("ko",False),("ja",False),("ar",False),("ar",False),("ar",True),("ar",True)])
+        self.assertEqual(calls, [("ko",False),("ja",False),("ar",False),("ar",False),("ar",False)])
         self.assertEqual(set(repaired), {unit.source for unit in list(units.values())[-2:]})
         self.assertEqual(report["status"], "passed")
         self.assertEqual(report["failed_batches"], 0)
@@ -76,23 +83,23 @@ class PreflightRepairTests(unittest.TestCase):
     def test_first_language_repairs_before_next_language_without_extra_calls(self):
         report, _, calls, repaired, error, _ = self.run_case(bad_locale="ko")
         self.assertIsNone(error)
-        self.assertEqual(calls, [("ko",False),("ko",False),("ko",True),("ko",True),("ja",False),("ar",False)])
+        self.assertEqual(calls, [("ko",False),("ko",False),("ko",False),("ja",False),("ar",False)])
         self.assertEqual(len(repaired), 2)
-        self.assertEqual(report["provider_requests"], 6)
+        self.assertEqual(report["provider_requests"], 5)
 
-    def test_unchanged_plain_repair_stops_before_next_language_and_keeps_cache(self):
+    def test_unchanged_grouped_repair_stops_before_next_language_and_keeps_cache(self):
         report, cache, calls, _, error, units = self.run_case(bad_locale="ko", plain_ok=False)
         self.assertIsNotNone(error)
         self.assertEqual(report["status"], "failed")
         self.assertEqual(report["failed_batches"], 1)
-        self.assertEqual(len(calls), 4)
+        self.assertEqual(len(calls), 3)
         self.assertTrue(all(locale=="ko" for locale, _ in calls))
         self.assertEqual(len(set(units)&set(cache["locales"]["ko"])), 14)
 
-    def test_insufficient_remaining_allowance_never_starts_plain_repairs(self):
+    def test_more_than_eight_residuals_never_enter_grouped_primary_repairs(self):
         for locale in ("ko", "ar"):
             with self.subTest(locale=locale):
-                report, _, calls, repaired, error, _ = self.run_case(bad_locale=locale, missing=3)
+                report, _, calls, repaired, error, _ = self.run_case(bad_locale=locale, missing=9)
                 self.assertIsNotNone(error)
                 self.assertEqual(report["failed_batches"], 1)
                 self.assertFalse(repaired)
@@ -101,10 +108,62 @@ class PreflightRepairTests(unittest.TestCase):
     def test_full_inventory_outside_canary_is_not_translated_or_required(self):
         report, _, calls, repaired, error, _ = self.run_case(count=32)
         self.assertIsNone(error)
-        self.assertEqual(len(calls), 6)
+        self.assertEqual(len(calls), 5)
         self.assertEqual(len(repaired), 2)
         self.assertEqual(report["remaining_units_total"], 48)
         self.assertEqual(report["status"], "passed")
+
+    def test_actual_arabic_27_of_32_canary_repairs_five_rows_in_one_json_request(self):
+        report, cache, calls, repaired, error, units = self.run_case(
+            count=32, max_items=32, initial_missing=29, missing=5,
+        )
+        self.assertIsNone(error)
+        self.assertEqual(len(calls), 5)
+        self.assertEqual(repaired, [unit.source for unit in list(units.values())[-5:]])
+        self.assertEqual(report["preflight_sample_coverage"]["ar"]["translated"], 32)
+        self.assertEqual(report["preflight_residual_units"], [])
+        self.assertEqual(len(set(units) & set(cache["locales"]["ar"])), 32)
+
+    def test_partial_group_repair_keeps_the_existing_ninety_percent_gate(self):
+        report, _, calls, repaired, error, _ = self.run_case(
+            count=32, max_items=32, initial_missing=29, missing=5, repair_accepts=2,
+        )
+        self.assertIsNone(error)
+        self.assertEqual(len(calls), 5)
+        self.assertEqual(len(repaired), 5)
+        self.assertEqual(report["preflight_sample_coverage"]["ar"]["translated"], 29)
+        self.assertEqual(report["preflight_residual_units_total"], 3)
+        self.assertEqual(len(report["pending_repairs"]), 3)
+
+    def test_zero_accepted_primary_batch_never_enters_grouped_repair(self):
+        report, _, calls, repaired, error, _ = self.run_case(
+            bad_locale="ko", count=32, max_items=32, initial_missing=32, missing=32,
+        )
+        self.assertIsNotNone(error)
+        self.assertEqual(calls, [("ko", False), ("ko", False)])
+        self.assertFalse(repaired)
+        self.assertEqual(report["preflight_sample_coverage"]["ko"]["translated"], 0)
+
+    def test_grouped_repair_does_not_steal_remaining_canary_job_slots(self):
+        report, _, calls, repaired, error, units = self.run_case(
+            bad_locale="ko", count=32, max_items=16, initial_missing=10, missing=5,
+            preflight_batches=2,
+        )
+        self.assertIsNotNone(error)
+        self.assertEqual(calls, [("ko", False), ("ko", False)])
+        self.assertFalse(repaired)
+        self.assertEqual(report["selected_batches"], 6)
+        first_batch_key = report["preflight_selected_units"][0]["batch_key"]
+        residual = [row for row in report["preflight_residual_units"]
+                    if row["locale"] == "ko" and row["batch_key"] == first_batch_key]
+        self.assertEqual(len(residual), 5, "Declined repairs still expose every exact source")
+
+    def test_single_residual_still_uses_plain_protocol(self):
+        report, _, calls, repaired, error, _ = self.run_case(missing=1)
+        self.assertIsNone(error)
+        self.assertEqual(calls[-1], ("ar", True))
+        self.assertEqual(len(repaired), 1)
+        self.assertEqual(report["provider_requests"], 5)
 
 
 class IdentityCheckpointTests(unittest.TestCase):
