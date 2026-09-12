@@ -133,6 +133,21 @@ class DeepLRepairTests(unittest.TestCase):
         self.assertEqual(repair.snapshot()["provider_requests"], 1)
         self.assertEqual(repair.snapshot()["stop_reason"], "")
 
+    def test_can_fit_accepts_actual_locale_packing_below_global_greedy_count(self):
+        sources = ["中" * 3500] * 8 + ["中" * 2500] * 4
+        locale_sources = [sources[:4] + sources[8:10], sources[4:8] + sources[10:]]
+        self.assertEqual(len(pack_repair_indexes(sources)), 3)
+        self.assertEqual([len(pack_repair_indexes(rows)) for rows in locale_sources], [1, 1])
+        for maximum, expected in ((2, True), (1, False)):
+            with self.subTest(maximum=maximum):
+                transport = Transport(count=0)
+                repair = DeepLRepair(max_requests=maximum, transport=transport)
+                self.assertEqual(repair.can_fit(sources, request_count=2), expected)
+                self.assertEqual(len(transport.gets), 1)
+                self.assertEqual(transport.posts, [])
+                self.assertEqual(repair.snapshot()["provider_requests"], 0)
+                self.assertEqual(repair.snapshot()["reserved_characters"], 0)
+
     def test_can_fit_does_not_hide_invalid_usage_behind_empty_request_allowance(self):
         failures = (
             Response({}, status=403), Response({}),

@@ -246,7 +246,10 @@ class DeepLRepair:
         if not groups:
             raise DeepLRepairError("DeepL allowance check requires nonempty source strings")
         requests_needed = len(groups) if request_count is None else request_count
-        if not _nonnegative_integer(requests_needed) or requests_needed < len(groups):
+        # A locale-separated packing can use fewer groups than greedy packing
+        # of interleaved languages. Only the text-count bound is universal;
+        # the caller supplies its actual per-locale body-validated group count.
+        if not _nonnegative_integer(requests_needed) or requests_needed < (len(sources) + 49) // 50:
             raise DeepLRepairError("DeepL allowance check requires a valid packed request count")
         reservation = sum(len(source) for source in sources)
         with self._lock:
