@@ -99,6 +99,21 @@ class M2M100OfflineTests(unittest.TestCase):
                 "2026年、営業キャッシュフローは15%増加しました。",
             )
 
+    def test_reviewed_sentence_accepts_portal_numeric_placeholders(self):
+        with tempfile.TemporaryDirectory() as directory:
+            translator = M2M100OfflineTranslator(
+                cache_dir=directory,
+                engine_factory=lambda *_args: types.SimpleNamespace(
+                    translate_batch=lambda texts, source, target: [
+                        "任意模型输出9370101 9370102" for _text in texts
+                    ]
+                ),
+            )
+            result = translator.translate(
+                "Operating cash flow rose by __KC_PH_000__ in __KC_PH_001__", "ko", "en"
+            )
+        self.assertEqual(result, "__KC_PH_001__년 영업 현금 흐름은 __KC_PH_000__ 증가했습니다.")
+
 
 if __name__ == "__main__":
     unittest.main()

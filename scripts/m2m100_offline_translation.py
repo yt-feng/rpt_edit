@@ -91,7 +91,7 @@ _PROTECTED = re.compile(
     re.DOTALL,
 )
 _OPERATING_CASH_FLOW_ROSE = re.compile(
-    r"^\s*Operating\s+cash\s+flow\s+rose\s+by\s+(?P<pct>[-+]?\d+(?:[.,]\d+)*\s*%)\s+in\s+(?P<year>\d{4})\s*[.!]?\s*$",
+    r"^\s*Operating\s+cash\s+flow\s+rose\s+by\s+(?P<pct>[-+]?\d+(?:[.,]\d+)*\s*%|__KC_PH_\d+__)\s+in\s+(?P<year>\d{4}|__KC_PH_\d+__)\s*[.!]?\s*$",
     re.IGNORECASE,
 )
 
