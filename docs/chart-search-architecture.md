@@ -108,6 +108,9 @@ errors and HTTP/model errors do not increase the deadline, and each new image st
 at 90 seconds again. Retries log only the bounded reason, attempt number, and next
 deadline. Exhausted timeouts retain the retryable checkpoint and still block publication;
 the workflow's 300-minute job deadline and parent's 360-minute wait remain in force.
+The client recognizes typed read-timeout causes inside Requests' `ConnectionError`
+wrapper when a response body stalls after its headers arrive. Classification walks a
+bounded exception chain; it never matches or logs private exception messages.
 
 ## Incremental, Deduplication, and Resume Rules
 
