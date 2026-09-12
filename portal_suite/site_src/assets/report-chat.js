@@ -282,7 +282,7 @@
     const partialExcerpt = item.partial_excerpt === true || item.text_scope === "partial_excerpt";
     const evidenceLabel = partialExcerpt
       ? (item.evidence_kind === "full_text_and_charts" ? "报告正文节选与图表" : "报告正文节选")
-      : (({ chart_metadata: "图表来源", full_text_and_charts: "正文与图表", full_text: "正文来源", news_description: "新闻简介 · GDELT", news_snippet: "官方来源摘要" })[item.evidence_kind] || "");
+      : (({ chart_metadata: "图表来源", full_text_and_charts: "正文与图表", full_text: "正文来源", news_description: "新闻简介", news_snippet: "官方来源摘要" })[item.evidence_kind] || "");
     return `<a class="report-chat-card" href="${escapeHtml(reportUrl(item.id, item))}" target="_blank" rel="noopener noreferrer">
       <span class="report-chat-score" aria-label="资料吸引力 ${escapeHtml(item.attraction_score)} 星">${stars}</span>
       <strong>${escapeHtml(item.title || "报告资料")}</strong>
@@ -382,7 +382,7 @@
     if (partialSourceCount) coverageNotes.push(`本次包含 ${partialSourceCount} 份报告正文节选，相关结论仅基于已索引的节选内容。`);
     const scope = coverageNotes.join(" · ");
     if (scope) sections.push(`<aside class="research-coverage-note"><strong>本次研究覆盖</strong><p>${escapeHtml(scope)}</p></aside>`);
-    if (sourceRows.some((item) => item.evidence_kind === "news_description")) sections.push('<p class="research-coverage-note">新闻简介数据由 <a href="https://www.gdeltproject.org/" target="_blank" rel="noopener noreferrer">GDELT</a> 提供，原文请见各条来源链接。</p>');
+    if (sourceRows.some((item) => item.evidence_kind === "news_description")) sections.push('<p class="research-coverage-note">新闻来源摘要仅作辅助参考，原文请见各条来源链接。</p>');
     if (executiveSummary) {
       sections.push(`<section class="report-research-summary"><span>研究摘要</span><p>${escapeHtml(executiveSummary)}</p><div class="report-research-source-row">${sourceChipsHtml(data.summary_source_ids, sources)}</div></section>`);
     }

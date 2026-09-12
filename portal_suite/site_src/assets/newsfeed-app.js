@@ -56,7 +56,9 @@ export async function initNewsfeedApp(dependencies) {
   }
 
   function newsfeedSourceName(item) {
-    return String(item && (item.source || item.source_name || item.domain) || "News").replace(/^GDELT\s*\/\s*/i, "");
+    return String(item && (item.source || item.source_name || item.domain) || "News")
+      .replace(/^[^/]{1,48}\s*\/\s*/u, "")
+      .trim() || "News";
   }
 
   const NEWSFEED_UI_COPY = {

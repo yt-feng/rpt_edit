@@ -307,7 +307,8 @@ test("news evidence opens its original article and labels an observed date inste
   assert.match(harness.messages.innerHTML, /https:\/\/publisher.example\/article/u);
   assert.doesNotMatch(harness.messages.innerHTML, /report\.html\?id=news/u);
   assert.match(harness.recommendations.innerHTML, /监测时间 2026-09-08/u);
-  assert.match(harness.recommendations.innerHTML, /新闻简介 · GDELT/u);
+  assert.match(harness.recommendations.innerHTML, /新闻简介/u);
+  assert.doesNotMatch(harness.recommendations.innerHTML, /GDELT|RAG/u);
 });
 
 test("report research renders grounded findings, data, charts, and escaped source content", async () => {

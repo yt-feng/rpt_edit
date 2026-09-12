@@ -129,7 +129,7 @@
 
   function sourceEvidenceLabel(source) {
     if (source.partial_excerpt) return "报告正文节选";
-    return ({ news_description: "新闻简介 · GDELT", news_snippet: "官方来源摘要", chart_metadata: "图表提取内容" })[source.evidence_kind] || "";
+    return ({ news_description: "新闻简介", news_snippet: "官方来源摘要", chart_metadata: "图表提取内容" })[source.evidence_kind] || "";
   }
 
   function sourcesHeading(model) {
@@ -456,7 +456,7 @@
     if (model.question && model.question !== model.research_title) body.push(paragraphXml(runXml(model.question), { style: "Subtitle" }));
     if (model.research_scope.length) body.push(paragraphXml(runXml(`研究范围：${model.research_scope.join(" · ")}`, { color: "59636E", size: 20 }), { align: "center" }));
     body.push(paragraphXml(runXml(`生成时间：${dateLabel(model.generated_at || createdAt)}`, { color: "59636E", size: 20 }), { align: "center" }));
-    body.push(paragraphXml(runXml("基于 KC桌面跨报告 RAG 的来源化研究摘要。请结合来源报告核验后使用。", { italic: true, color: "59636E", size: 19 }), { align: "center" }));
+    body.push(paragraphXml(runXml("基于 KC桌面已索引资料的来源化研究摘要。请结合来源报告核验后使用。", { italic: true, color: "59636E", size: 19 }), { align: "center" }));
     if (!model.charts.length) body.push(paragraphXml(runXml("本次没有匹配到可引用图表，导出包含文字研究与来源报告。", { color: "59636E", size: 19 })));
     if (model.executive_summary) {
       body.push(paragraphXml(runXml("研究摘要"), { style: "Heading1" }));
@@ -496,7 +496,7 @@
       body.push(paragraphXml(runXml("可继续研究"), { style: "Heading1" }));
       model.follow_up_questions.forEach((question) => body.push(paragraphXml(runXml(question), { numbered: 2 })));
     }
-    if (model.sources.some((source) => source.evidence_kind === "news_description")) body.push(paragraphXml(hyperlink("新闻简介数据由 GDELT 提供，原文请见各条来源链接。", "https://www.gdeltproject.org/")));
+    if (model.sources.some((source) => source.evidence_kind === "news_description")) body.push(paragraphXml(runXml("新闻来源摘要仅作辅助参考，原文请见各条来源链接。", { color: "59636E", size: 18 })));
     body.push(paragraphXml(runXml("说明：本材料由 AI 根据已索引研究资料生成，不构成投资建议；重要结论请以来源报告为准。", { italic: true, color: "59636E", size: 18 })));
     const documentXml = `${XML_DECLARATION}<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><w:body>${body.join("")}<w:sectPr><w:headerReference w:type="default" r:id="rId3"/><w:footerReference w:type="default" r:id="rId4"/><w:pgSz w:w="11906" w:h="16838"/><w:pgMar w:top="1134" w:right="1134" w:bottom="1134" w:left="1134" w:header="708" w:footer="708" w:gutter="0"/><w:cols w:space="720"/><w:docGrid w:linePitch="360"/></w:sectPr></w:body></w:document>`;
     const relationshipTypes = {
@@ -562,7 +562,7 @@
       return `<figure><h3>${escapeHtml(chart.title)}</h3><img src="${bytesToDataUrl(asset.bytes)}" width="${asset.width}" height="${asset.height}" alt="${escapeHtml(chart.title)}"><figcaption>${caption ? `<span>${escapeHtml(caption)}</span>` : ""}<a href="${escapeHtml(canonicalSourceUrl(chart.source_id || chart.report_id, source, model.source_origin))}">查看来源报告</a></figcaption></figure>`;
     };
     const body = [];
-    body.push(`<section class="cover"><p class="kicker">KC桌面研究报告</p><h1>${escapeHtml(model.research_title || model.question)}</h1>${model.question && model.question !== model.research_title ? `<p class="subtitle">${escapeHtml(model.question)}</p>` : ""}${model.research_scope.length ? `<p class="scope">研究范围：${escapeHtml(model.research_scope.join(" · "))}</p>` : ""}<p class="date">生成时间：${escapeHtml(dateLabel(model.generated_at))}</p><p class="notice">基于 KC桌面跨报告 RAG 的来源化研究摘要。请结合来源报告核验后使用。</p></section>`);
+    body.push(`<section class="cover"><p class="kicker">KC桌面研究报告</p><h1>${escapeHtml(model.research_title || model.question)}</h1>${model.question && model.question !== model.research_title ? `<p class="subtitle">${escapeHtml(model.question)}</p>` : ""}${model.research_scope.length ? `<p class="scope">研究范围：${escapeHtml(model.research_scope.join(" · "))}</p>` : ""}<p class="date">生成时间：${escapeHtml(dateLabel(model.generated_at))}</p><p class="notice">基于 KC桌面已索引资料的来源化研究摘要。请结合来源报告核验后使用。</p></section>`);
     body.push('<main class="report">');
     if (model.executive_summary) body.push(`<section><h2>研究摘要</h2><p>${escapeHtml(model.executive_summary)}</p>${printSourceRefs(model.summary_source_ids, sourceIndex, sourceMap, model.source_origin)}</section>`);
     if (model.findings.length) {
@@ -791,7 +791,7 @@
       heading("可继续研究");
       model.follow_up_questions.forEach((question, index) => paragraph(`${index + 1}. ${question}`));
     }
-    if (model.sources.some((source) => source.evidence_kind === "news_description")) paragraph("新闻简介数据由 GDELT 提供，原文请见各条来源链接。", { url: "https://www.gdeltproject.org/", size: 8, color: muted });
+    if (model.sources.some((source) => source.evidence_kind === "news_description")) paragraph("新闻来源摘要仅作辅助参考，原文请见各条来源链接。", { size: 8, color: muted });
     paragraph("本材料根据已索引研究资料生成。重要结论请结合来源报告核验。", { size: 8, color: muted });
     const pages = pdf.getPages();
     pages.forEach((item, index) => item.drawText(`${index + 1} / ${pages.length}`, { x: width - margin - 32, y: 32, size: 8, font, color: muted }));

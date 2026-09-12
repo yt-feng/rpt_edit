@@ -78,7 +78,7 @@ test("RAG archive section is rendered only for the super-admin management view",
   const superSection = superMarkup.match(sectionPattern)?.[0] || "";
   const operatorSection = operatorMarkup.match(sectionPattern)?.[0] || "";
 
-  assert.match(superMarkup, /RAG 问答档案/u);
+  assert.match(superMarkup, /研究问答档案/u);
   assert.doesNotMatch(superSection, /\bhidden\b/u);
   assert.match(operatorSection, /\bhidden\b/u);
   assert.match(app, /showReportChatArchives:\s*canManageUsers/u);
@@ -210,7 +210,7 @@ test("RAG history loader skips non-super views and exposes empty and error state
   targets.canManageUsers = true;
   await sandbox.loadAdminReportChatHistory("/api", targets);
   assert.equal(fetchCount, 1);
-  assert.match(targets.reportChatArchiveList.innerHTML, /还没有 RAG 问答存档/u);
+  assert.match(targets.reportChatArchiveList.innerHTML, /还没有研究问答存档/u);
   assert.equal(targets.reportChatArchiveStatus.className, "status-line ok");
 
   mode = "error";
@@ -259,7 +259,7 @@ test("RAG curation posts the exact archive action and the UI refreshes after suc
 });
 
 test("analytics labels cover RAG, RAG interactions, and course material requests", () => {
-  assert.match(app, /report_chat:\s*"RAG 研究问答"/u);
-  assert.match(app, /report_chat_interaction:\s*"RAG 问答交互"/u);
+  assert.match(app, /report_chat:\s*"研究问答"/u);
+  assert.match(app, /report_chat_interaction:\s*"研究问答交互"/u);
   assert.match(app, /course_material_request:\s*"课程材料索取"/u);
 });

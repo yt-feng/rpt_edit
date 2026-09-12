@@ -2722,7 +2722,7 @@
   function renderAdminReportChatArchives(items) {
     return items.length
       ? items.map(adminReportChatArchiveRow).join("")
-      : '<div class="empty-state">还没有 RAG 问答存档。</div>';
+      : '<div class="empty-state">还没有研究问答存档。</div>';
   }
 
   async function fetchAdminReportChatHistory(workerUrl) {
@@ -2731,7 +2731,7 @@
       headers: authHeaders(),
     });
     const data = await response.json().catch(() => ({}));
-    if (!response.ok) throw new Error(data.detail || "RAG 问答档案读取失败。");
+    if (!response.ok) throw new Error(data.detail || "研究问答档案读取失败。");
     const rows = Array.isArray(data.items)
       ? data.items
       : (Array.isArray(data.archives) ? data.archives : (Array.isArray(data.history) ? data.history : []));
@@ -2745,7 +2745,7 @@
     if (!targets || !targets.canManageUsers || !targets.reportChatArchiveSection
       || !targets.reportChatArchiveList || !targets.reportChatArchiveStatus) return [];
     targets.reportChatArchiveStatus.className = "status-line";
-    targets.reportChatArchiveStatus.textContent = "正在读取 RAG 问答档案…";
+    targets.reportChatArchiveStatus.textContent = "正在读取研究问答档案…";
     targets.reportChatArchiveList.innerHTML = '<div class="empty-state">正在读取问答存档…</div>';
     if (targets.reportChatArchiveRefresh) targets.reportChatArchiveRefresh.disabled = true;
     try {
@@ -2754,12 +2754,12 @@
       targets.reportChatArchiveStatus.className = "status-line ok";
       targets.reportChatArchiveStatus.textContent = data.items.length
         ? `已加载 ${data.items.length} 条问答存档${data.total > data.items.length ? `，共 ${data.total} 条` : ""}。`
-        : "还没有 RAG 问答存档。";
+        : "还没有研究问答存档。";
       return data.items;
     } catch (error) {
-      targets.reportChatArchiveList.innerHTML = '<div class="error-state">RAG 问答档案暂时无法读取，请稍后重试。</div>';
+      targets.reportChatArchiveList.innerHTML = '<div class="error-state">研究问答档案暂时无法读取，请稍后重试。</div>';
       targets.reportChatArchiveStatus.className = "status-line error";
-      targets.reportChatArchiveStatus.textContent = error.message || "RAG 问答档案读取失败。";
+      targets.reportChatArchiveStatus.textContent = error.message || "研究问答档案读取失败。";
       return [];
     } finally {
       if (targets.reportChatArchiveRefresh) targets.reportChatArchiveRefresh.disabled = false;
@@ -2952,7 +2952,7 @@
           </section>
           <section class="account-admin-section" id="accountAdminReportChatArchiveSection" ${showReportChatArchives ? "" : "hidden"}>
             <div class="account-admin-heading">
-              <strong>RAG 问答档案</strong>
+              <strong>研究问答档案</strong>
               <span>查看历史问答并选择首页公开内容</span>
               <button class="secondary-button" id="accountAdminReportChatArchiveRefresh" type="button">刷新问答档案</button>
             </div>
@@ -4140,8 +4140,8 @@
     account_auth: "账号操作",
     admin_user_update: "用户权限操作",
     daily_file_download: "每日文件下载",
-    report_chat: "RAG 研究问答",
-    report_chat_interaction: "RAG 问答交互",
+    report_chat: "研究问答",
+    report_chat_interaction: "研究问答交互",
     course_material_request: "课程材料索取",
   };
 

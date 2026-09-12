@@ -345,7 +345,8 @@ test("news citations retain external URLs and observation dates in DOCX and PDF"
   assert.equal(docx.model.executive_summary, payload.response.executive_summary);
   assert.equal(docx.model.findings[0].summary, payload.response.findings[0].summary);
   assert.match(decoder.decode(entries.get("word/document.xml")), /监测时间 2026-09-08/u);
-  assert.match(decoder.decode(entries.get("word/document.xml")), /新闻简介 · GDELT/u);
+  assert.match(decoder.decode(entries.get("word/document.xml")), /新闻简介/u);
+  assert.doesNotMatch(decoder.decode(entries.get("word/document.xml")), /GDELT|RAG/u);
   assert.match(decoder.decode(entries.get("word/document.xml")), /新闻简介与报告相互补充。<\/w:t><w:br\/><w:t xml:space="preserve"><\/w:t><w:br\/><w:t xml:space="preserve">投产节奏仍取决于并网条件。/u);
   assert.equal(decoder.decode(entries.get("word/_rels/document.xml.rels")).split(url).length - 1, 4, "summary, finding, data point and bibliography must cite the original article");
   assert.doesNotMatch(decoder.decode(entries.get("word/_rels/document.xml.rels")), /report\.html\?id=news/u);
@@ -356,7 +357,7 @@ test("news citations retain external URLs and observation dates in DOCX and PDF"
     return Array.from({ length: annotations ? annotations.size() : 0 }, (_, index) => annotations.lookup(index, PDFLib.PDFDict).lookup(PDFLib.PDFName.of("A"), PDFLib.PDFDict).lookup(PDFLib.PDFName.of("URI"), PDFLib.PDFString).decodeText());
   });
   assert.equal(urls.filter((candidate) => candidate === url).length, 4, "all inline references and the bibliography must cite the original article");
-  assert.ok(urls.every((candidate) => candidate === url || candidate === "https://www.gdeltproject.org/"), JSON.stringify(urls));
+  assert.ok(urls.every((candidate) => candidate === url), JSON.stringify(urls));
   payload.response.sources[0].source_url = "javascript:alert(1)";
   const invalid = await exporter.buildDocx(payload, runtime);
   assert.doesNotMatch(decoder.decode(zipEntries(invalid.bytes).get("word/_rels/document.xml.rels")), /javascript:/u);
