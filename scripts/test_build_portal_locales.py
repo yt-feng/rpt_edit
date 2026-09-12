@@ -1550,6 +1550,27 @@ class PortalLocaleBuildTests(unittest.TestCase):
                     builder.validate_translation_quality("ja", branded, "AIリサーチ")
         self.assertNotIn("AI 研究报告", builder.REVIEWED_JA_UI_TRANSLATIONS)
 
+    def test_reviewed_japanese_chart_title_repairs_exact_provider_gap(self) -> None:
+        (context, source), expected = next(iter(builder.REVIEWED_JA_CHART_TRANSLATIONS.items()))
+        unit = builder.TranslationUnit(
+            "e" * 64, context, source, ("__KC_PH_000__",)
+        )
+        cache = builder.empty_cache()
+        for locale in ("ko", "ar"):
+            cache["locales"][locale][unit.key] = builder._translation_cache_row(
+                unit, FAKE_COPY[locale] + " __KC_PH_000__"
+            )
+        cache["locales"]["ja"][unit.key] = builder._translation_cache_row(unit, source)
+        provider = mock.Mock(side_effect=AssertionError("reviewed chart title needs no provider"))
+        builder.translate_missing_units(
+            {unit.key: unit}, cache, cache_path=self.cache,
+            model=builder.DEFAULT_DEEPSEEK_MODEL, base_url="https://provider.example.invalid",
+            workers=1, timeout=1, attempts=2, batch_translator=provider,
+        )
+        provider.assert_not_called()
+        self.assertEqual(cache["locales"]["ja"][unit.key]["translation"], expected)
+        self.assertEqual(builder.PLACEHOLDER_RE.findall(expected), ["__KC_PH_000__"])
+
     def test_reviewed_arabic_paragraph_preserves_quantities_and_valid_cache(self) -> None:
         source, expected = next(iter(builder.REVIEWED_AR_PARAGRAPH_TRANSLATIONS.items()))
         unit = builder.TranslationUnit("e" * 64, "html:text:p", source)
