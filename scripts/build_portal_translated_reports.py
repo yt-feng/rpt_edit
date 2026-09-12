@@ -799,13 +799,13 @@ def offline_translator(args: argparse.Namespace, cache_dir: Path | None = None):
 def translate_chunk(chunk: str, args: argparse.Namespace, chunk_index: int, chunk_total: int) -> str:
     # Compatibility entry point: model inference is local, with no API fallback.
     del chunk_index, chunk_total
-    return offline_translator(args).translate_markdown(chunk, target="zh", source="en")
+    return offline_translator(args).translate_markdown(chunk, target="zh", source=None)
 
 
 def translate_markdown(markdown: str, args: argparse.Namespace) -> str:
     # The adapter preserves Markdown/image tokens and checkpoints individual
     # text segments. A resumed report reuses its successful segment translations.
-    text = offline_translator(args).translate_markdown(markdown, target="zh", source="en")
+    text = offline_translator(args).translate_markdown(markdown, target="zh", source=None)
     if markdown.strip() and not text.strip():
         raise RuntimeError("Local report translation returned an empty result")
     return sanitize_text(text).strip() + "\n"

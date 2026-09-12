@@ -18,6 +18,7 @@ import threading
 from datetime import datetime, timezone
 
 PROVIDER = "argos-offline"
+INSTALL_COMMAND = "python -m pip install -r requirements-translation.txt && python -m pip install --no-deps argostranslate==1.11.0"
 MANIFEST_PATH = Path(__file__).with_name("offline_translation_models.json")
 MANIFEST = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
 MODEL_ID = "argos-cpu-v1-" + hashlib.sha256(MANIFEST_PATH.read_bytes()).hexdigest()[:16]
@@ -93,13 +94,13 @@ class _ArgosEngine:
         try:
             for distribution, version in MANIFEST["runtime"].items():
                 if importlib.metadata.version(distribution) != version:
-                    raise OfflineTranslationError(f"Install pinned runtime: pip install -r requirements-translation.txt ({distribution}=={version})")
+                    raise OfflineTranslationError(f"Install pinned runtime: {INSTALL_COMMAND} ({distribution}=={version})")
             # Do not import argostranslate.translate: its sentence splitters may
             # download external resources. Package + tokenizer are local only.
             from argostranslate.package import Package
             import ctranslate2
         except ImportError as exc:
-            raise OfflineTranslationError("Install the offline runtime: pip install -r requirements-translation.txt") from exc
+            raise OfflineTranslationError(f"Install the offline runtime: {INSTALL_COMMAND}") from exc
         package_path = None
         for metadata_path in sorted(packages_dir.glob("*/metadata.json")):
             metadata = json.loads(metadata_path.read_text(encoding="utf-8"))

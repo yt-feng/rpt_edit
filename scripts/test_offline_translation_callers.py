@@ -44,7 +44,7 @@ class OfflineTranslationCallerTests(unittest.TestCase):
         source = "# Output\n\n- More output\n\n[[PORTAL_IMAGE_001]]\n"
         self.assertIn("[[PORTAL_IMAGE_001]]", reports.translate_markdown(source, args))
         reports.translate_chunk(source, args, 1, 1)
-        self.engine.translate_markdown.assert_called_with(source, target="zh", source="en")
+        self.engine.translate_markdown.assert_called_with(source, target="zh", source=None)
         self.assertEqual(self.factory.call_count, 1)
         self.paid.assert_not_called()
 

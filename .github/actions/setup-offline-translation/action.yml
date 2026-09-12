@@ -16,7 +16,9 @@ runs:
         echo "ARGOS_DEVICE_TYPE=cpu" >> "$GITHUB_ENV"
     - name: Install pinned translation runtime
       shell: bash
-      run: python -m pip install --disable-pip-version-check -r requirements-translation.txt
+      run: |
+        python -m pip install --disable-pip-version-check --no-deps argostranslate==1.11.0
+        python -m pip install --disable-pip-version-check -r requirements-translation.txt
     - name: Restore public model files only
       uses: actions/cache@v4
       with:

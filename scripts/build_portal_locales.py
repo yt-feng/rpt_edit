@@ -1489,9 +1489,15 @@ def translate_missing_units(
         translator = OfflineTranslator()
         run_state.data.update(provider="argos", api_cost_cny=0, repair_provider="none", workers=1)
         failed = 0
+        deadline = time.monotonic() + 3600  # Leave time for checkpoint upload before the job timeout.
         for locale, batch in jobs:
             run_state.check()
             for unit in batch:
+                if time.monotonic() >= deadline:
+                    write_cache(cache_path, cache)
+                    run_state.stop("Offline translation time window ended; completed rows saved", category="budget")
+                    run_state.write()
+                    raise TranslationStopped(run_state.stop_reason)
                 try:
                     translated = translator.translate(unit.source, locale)
                     validate_translation_quality(locale, unit, translated)

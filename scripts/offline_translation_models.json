@@ -4,7 +4,7 @@
   "index_checked_date": "2026-09-12",
   "integrity_policy": "Exact URLs and metadata versions are pinned. The upstream index supplies no checksums. Installation records SHA-256 and rejects a changed archive against its previous receipt.",
   "license_policy": "Library licensing does not establish model licensing. Installer records each archive's metadata and bundled license/readme files for inspection.",
-  "runtime": {"argostranslate": "1.11.0", "ctranslate2": "4.8.2"},
+  "runtime": {"argostranslate": "1.11.0", "ctranslate2": "4.8.2", "sentencepiece": "0.2.1", "packaging": "25.0", "sacremoses": "0.1.1"},
   "models": [
     {"source": "zh", "target": "en", "version": "1.9", "url": "https://argos-net.com/v1/translate-zh_en-1_9.argosmodel"},
     {"source": "en", "target": "zh", "version": "1.9", "url": "https://argos-net.com/v1/translate-en_zh-1_9.argosmodel"},

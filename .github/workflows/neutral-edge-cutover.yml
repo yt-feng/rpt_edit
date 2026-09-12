@@ -837,7 +837,7 @@ jobs:
           test -s _neutral_site/data/i18n/cache-v1.json.gz
           python3 -B scripts/build_portal_locales.py "${locale_args[@]}" \
             --cache-in _neutral_site/data/i18n/cache-v1.json.gz \
-            --workers 1 \
+            --checkpoint-on-budget --workers 1 \
             --diagnostics-out "$RUNNER_TEMP/locale-full-diagnostics.json"
           python3 - <<'PY' >> "$GITHUB_OUTPUT"
           import json

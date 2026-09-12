@@ -1,3 +1,10 @@
-# CPU inference only. CI uses Python 3.12; no paid translation credentials.
-argostranslate==1.11.0
+# Direct dependencies of our CPU-only Argos Package/tokenizer + CTranslate2 path.
+# Install this file normally so pip resolves these packages' own dependencies.
+# Then: python -m pip install --no-deps argostranslate==1.11.0
+# Argos' high-level stanza/spacy/minisbd sentence splitters are deliberately not
+# used by offline_translation.py; installing their torch stack is unnecessary.
+# CI uses Python 3.12 and performs real inference to validate this narrow API.
 ctranslate2==4.8.2
+sentencepiece==0.2.1
+packaging==25.0
+sacremoses==0.1.1
