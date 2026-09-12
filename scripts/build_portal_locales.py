@@ -58,6 +58,8 @@ REVIEWED_JA_UI_TRANSLATIONS = {
 REVIEWED_AR_PARAGRAPH_TRANSLATIONS = {
     "，而陆上机队仍有约一半未获市场合约。西方公司的活跃地震勘探船队从__KC_PH_000__年前的__KC_PH_001__艘降至不足__KC_PH_002__艘，但这一缩减是通过十多年破产和折价出售实现的。":
     "، بينما لا يزال نحو نصف الأسطول البري دون عقود في السوق. وانخفض أسطول سفن المسح الزلزالي النشطة لدى الشركات الغربية من __KC_PH_001__ سفينة قبل __KC_PH_000__ سنة إلى أقل من __KC_PH_002__ سفينة، لكن هذا الانكماش تحقق عبر أكثر من عشر سنوات من حالات الإفلاس والبيع بأسعار مخفضة.",
+    "__KC_PH_000__月__KC_PH_001__日，":
+    "في اليوم __KC_PH_001__ من الشهر __KC_PH_000__،",
 }
 DEFAULT_DEEPSEEK_MODEL = "deepseek-v4-flash"
 LEGACY_DEEPSEEK_MODEL_ALIASES = {
@@ -1507,9 +1509,11 @@ def translate_missing_units(
                 model=model,
                 base_url=base_url,
                 timeout=timeout,
-                # With an independent repair provider, the canary reserves one
-                # primary + one grouped repair POST per locale (six total).
-                attempts=1 if single_item_plain or (preflight_only and deepl_repair is not None)
+                # A configured secondary key does not prove repair allowance.
+                # Keep the requested primary output retry, which only sends
+                # unresolved rows. All providers still share the canary cap;
+                # grouped repairs run only when its remaining budget fits.
+                attempts=1 if single_item_plain
                 else min(2, max(1, attempts)) if preflight_only else attempts,
                 run_state=run_state,
                 single_item_plain=single_item_plain,

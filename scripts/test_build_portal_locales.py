@@ -1597,6 +1597,29 @@ class PortalLocaleBuildTests(unittest.TestCase):
                     workers=1, timeout=1, attempts=1, batch_translator=provider)
                 provider.assert_called_once_with("ar", [unit])
 
+    def test_reviewed_arabic_date_fragment_preserves_day_month_and_paid_cache(self) -> None:
+        source = "__KC_PH_000__月__KC_PH_001__日，"
+        expected = "في اليوم __KC_PH_001__ من الشهر __KC_PH_000__،"
+        unit = builder.TranslationUnit("d" * 64, "html:text:p", source)
+        for existing in (None, expected.replace("في اليوم", "بتاريخ اليوم")):
+            cache = builder.empty_cache()
+            for locale in ("ko", "ja"):
+                cache["locales"][locale][unit.key] = builder._translation_cache_row(
+                    unit, FAKE_COPY[locale] + " __KC_PH_000__ __KC_PH_001__")
+            if existing:
+                cache["locales"]["ar"][unit.key] = builder._translation_cache_row(unit, existing)
+            provider = mock.Mock(side_effect=AssertionError("Date fragment needs no paid translation"))
+            builder.translate_missing_units(
+                {unit.key: unit}, cache, cache_path=self.cache,
+                model=builder.DEFAULT_DEEPSEEK_MODEL, base_url="https://provider.example.invalid",
+                workers=1, timeout=1, attempts=2, batch_translator=provider, preflight_only=True)
+            provider.assert_not_called()
+            self.assertEqual(cache["locales"]["ar"][unit.key]["translation"], existing or expected)
+        for changed in (expected.replace("__KC_PH_001__", ""), source):
+            with self.assertRaises(builder.TranslationError):
+                builder.validate_translation_quality("ar", unit, changed)
+        self.assertNotIn(source + "报告发布", builder.REVIEWED_AR_PARAGRAPH_TRANSLATIONS)
+
     def test_invalid_active_cache_entry_is_retranslated_before_reuse(self) -> None:
         _protected, unit = builder.unit_for_text("需要翻译的公开研究内容", "html:text:p")
         self.assertIsNotNone(unit)

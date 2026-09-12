@@ -250,7 +250,7 @@ class GroupedDeepLPreflightTests(unittest.TestCase):
             adapter = deepl.DeepLRepair(max_requests=6, transport=transport)
             path = Path(directory) / "cache.json.gz"
             kwargs = dict(cache_path=path, model=builder.DEFAULT_DEEPSEEK_MODEL,
-                          base_url="https://api.deepseek.com", workers=500, timeout=1, attempts=2,
+                          base_url="https://api.deepseek.com", workers=500, timeout=1, attempts=1,
                           max_batch_items=32, max_batch_chars=100000,
                           preflight_only=True, preflight_batches_per_locale=1)
             with mock.patch.object(deepl, "DeepLRepair", return_value=adapter):
@@ -279,7 +279,7 @@ class GroupedDeepLPreflightTests(unittest.TestCase):
         self.assertEqual(adapter.snapshot()["stop_reason"], "")
 
     def run_case(self, *, accepted=2, repair_echo=False, repair_echo_count=1, repair_xml_error=False, http_status=200,
-                 transport_failure=False, preflight_only=True, retry_succeeds=False):
+                 transport_failure=False, preflight_only=True, retry_succeeds=False, primary_attempts=None):
         units = {
             f"{index:064x}": builder.TranslationUnit(
                 f"{index:064x}", "html:text:p", f"第{index}段金融研究报告的完整内容及行业分析。",
@@ -353,7 +353,9 @@ class GroupedDeepLPreflightTests(unittest.TestCase):
                 builder.translate_missing_units(
                     units, cache, cache_path=path, model=builder.DEFAULT_DEEPSEEK_MODEL,
                     base_url="https://api.deepseek.com", workers=500 if preflight_only else 1,
-                    timeout=1, attempts=2, max_batch_items=32, max_batch_chars=100000,
+                    timeout=1, attempts=(primary_attempts if primary_attempts is not None else
+                                        1 if preflight_only else 2),
+                    max_batch_items=32, max_batch_chars=100000,
                     preflight_only=preflight_only, preflight_batches_per_locale=1, run_state=state,
                 )
             except builder.TranslationError as caught:
@@ -470,6 +472,30 @@ class GroupedDeepLPreflightTests(unittest.TestCase):
             self.assertEqual(sources, [unit.source for unit in units.values()][2:])
         self.assertEqual(report["status"], "passed")
         self.assertEqual(report["provider_requests"], 6)
+
+    def test_preflight_keeps_requested_primary_retry_without_needing_deepl(self):
+        report, cache, calls, primary, repaired, error, units = self.run_case(
+            primary_attempts=2, retry_succeeds=True,
+        )
+        self.assertIsNone(error)
+        self.assertFalse(repaired, "A configured repair key must not suppress primary recovery")
+        self.assertEqual(calls, [
+            ("deepseek", locale, count) for locale in builder.LOCALES for count in (32, 30)
+        ])
+        for _locale, sources in primary[1::2]:
+            self.assertEqual(sources, [unit.source for unit in units.values()][2:])
+        self.assertEqual(report["translation_requests_total"], 6)
+        self.assertEqual(report["status"], "passed")
+        for locale in builder.LOCALES:
+            self.assertTrue(set(units).issubset(cache["locales"][locale]))
+
+    def test_two_primary_attempts_and_repairs_never_expand_the_shared_cap(self):
+        report, _cache, calls, _primary, _repaired, error, _units = self.run_case(
+            primary_attempts=2, accepted=0,
+        )
+        self.assertIsNotNone(error)
+        self.assertLessEqual(len(calls), 6)
+        self.assertEqual(report["status"], "failed")
 
     def test_large_residual_queue_drains_without_restarting_primary_batches(self):
         units = {f"{index:064x}": builder.TranslationUnit(
