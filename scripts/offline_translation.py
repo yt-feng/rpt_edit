@@ -19,19 +19,30 @@ import unicodedata
 from collections import Counter, defaultdict, deque
 from datetime import datetime, timezone
 
-PROVIDER = "argos-offline"
+PROVIDER = "m2m100-offline" if os.environ.get("OFFLINE_TRANSLATION_BACKEND", "argos").strip().lower() == "m2m100" else "argos-offline"
 INSTALL_COMMAND = "python -m pip install -r requirements-translation.txt && python -m pip install --no-deps argostranslate==1.11.0"
 MANIFEST_PATH = Path(__file__).with_name("offline_translation_models.json")
 MANIFEST = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
-MODEL_ID = "argos-cpu-v2-context-" + hashlib.sha256(MANIFEST_PATH.read_bytes()).hexdigest()[:16]
+M2M100_MODEL_ID = "facebook/m2m100_418M"
+M2M100_REVISION = "55c2e61bbf05dfb8d7abccdc3fae6fc8512fd636"
+M2M100_MANIFEST_PATH = Path(__file__).with_name("m2m100_model_manifest.json")
+M2M100_MANIFEST = json.loads(M2M100_MANIFEST_PATH.read_text(encoding="utf-8")) if M2M100_MANIFEST_PATH.exists() else {}
+M2M100_RUNTIME_ID = "m2m100-418m-ct2-int8-" + hashlib.sha256(M2M100_MANIFEST_PATH.read_bytes()).hexdigest()[:16] if M2M100_MANIFEST_PATH.exists() else "m2m100-418m-ct2-int8-unmanifested"
+M2M100_LANGUAGES = {"zh", "en", "ja", "ko", "ar"}
+ARGOS_MODEL_ID = "argos-cpu-v2-context-" + hashlib.sha256(MANIFEST_PATH.read_bytes()).hexdigest()[:16]
 MODELS = {(m["source"], m["target"]): m for m in MANIFEST["models"]}
+# Callers use MODEL_ID for cache namespaces. Actions set the backend before
+# importing this module, so an M2M100 cache can never be silently relabelled as
+# an Argos cache (or reused after a model switch).
+MODEL_ID = M2M100_RUNTIME_ID if os.environ.get("OFFLINE_TRANSLATION_BACKEND", "argos").strip().lower() == "m2m100" else ARGOS_MODEL_ID
 _ENGINE_LOCK = threading.RLock()
 _ENGINES: dict[tuple[str, str, str], object] = {}
 _CJK = re.compile(r"[\u3400-\u9fff]")
 _LETTERS = re.compile(r"[A-Za-z\u3400-\u9fff\u3040-\u30ff\uac00-\ud7af\u0600-\u06ff]")
 _FINANCIAL_CODES = "USD|EUR|GBP|JPY|CNY|RMB|HKD|AUD|CAD|CHF|SGD|AED|GDP|CPI|PPI|PMI|PCE|EBITDA|EBIT|EPS|ROE|ROA|ROI|ROIC|DCF|NPV|IRR|CAGR|AI|ETF|IPO|FX|ESG|USA|US|UK|EU|SEC|IMF|OECD|NYSE|NASDAQ"
 _PLACEHOLDERS = re.compile(r"__[A-Za-z0-9_]+__")
-_NUMBERS = re.compile(r"(?<!\d)[-+−]?\d+(?:[.,]\d+)*(?:[ \t]*[%％‰])?")
+_NUMBERS = re.compile(r"(?<!\d)[-+−]?\d+(?:[.,٫٬]\d+)*(?:[ \t]*[%％٪‰])?")
+_FINANCIAL_AMOUNT = r"(?<![\w])(?:(?i:USD|EUR|GBP|JPY|CNY|RMB|HKD|AUD|CAD|CHF|SGD|AED)\s*[-+−]?\d+(?:[.,٫٬]\d+)*(?:\s+(?i:million|billion|trillion|thousand|mn|bn|m|b))?|[$€£¥]\s*[-+−]?\d+(?:[.,٫٬]\d+)*\s+(?i:million|billion|trillion|thousand|mn|bn|m|b))(?![\w])"
 # Structural spans never enter a model. Quantities stay inside their sentence,
 # and placeholders use numeric sentinels; their multiset is verified on output.
 _PROTECTED = re.compile(
@@ -44,6 +55,7 @@ _PROTECTED = re.compile(
     r"|(?P<html><!--.*?-->|<(?:\"[^\"]*\"|'[^']*'|[^'\">])*>)"
     r"|(?P<url>(?:https?://|mailto:)[^\s<>]+)"
     r"|(?P<entity>&(?:\#\d+|\#x[\da-fA-F]+|[A-Za-z]+);)"
+    r"|(?P<amount>" + _FINANCIAL_AMOUNT + r")"
     r"|(?P<ticker>(?<![A-Za-z])(?:\$[A-Z]{1,8}|[A-Z]{1,10}[.:-][A-Z0-9]{1,10}|" + _FINANCIAL_CODES + r")(?![A-Za-z]))"
     r"|(?P<syntax>\\.|[|\[\]*_~]+)", re.DOTALL,
 )
@@ -56,6 +68,11 @@ class OfflineTranslationError(RuntimeError):
 def model_directory() -> Path:
     data = Path(os.environ.get("XDG_DATA_HOME", str(Path.home() / ".local/share")))
     return Path(os.environ.get("ARGOS_PACKAGES_DIR", str(data / "argos-translate/packages")))
+
+
+def m2m100_model_directory() -> Path:
+    """Return the local converted M2M100 directory; never download here."""
+    return Path(os.environ.get("M2M100_MODEL_DIR", str(Path.home() / ".cache/m2m100-translation")))
 
 
 def atomic_json(path: Path, value: object) -> None:
@@ -99,7 +116,7 @@ def split_text(text: str, limit: int = 240) -> list[str]:
 
 def _number_key(value: str) -> str:
     value = "".join(str(unicodedata.digit(char)) if char.isdecimal() else char for char in value)
-    value = re.sub(r"[ \t]", "", value).replace("％", "%").replace("−", "-")
+    value = re.sub(r"[ \t]", "", value).translate(str.maketrans({"％": "%", "٪": "%", "٫": ".", "٬": ",", "−": "-"}))
     return re.sub(r"(?<=\d),(?=\d{3}(?:\D|$))", "", value)
 
 
@@ -177,14 +194,88 @@ class _ArgosEngine:
         return value.strip()
 
 
+class _M2M100Engine:
+    """CTranslate2 runtime for the pinned, multilingual M2M100 checkpoint.
+
+    The installer performs the network download and conversion. This class only
+    reads the converted directory and tokenizer files, so translation jobs can
+    be run with network access disabled and without any paid provider fallback.
+    """
+
+    def __init__(self, source: str, target: str, model_dir: Path):
+        if source not in M2M100_LANGUAGES or target not in M2M100_LANGUAGES:
+            raise OfflineTranslationError(f"Unsupported M2M100 language route: {source}->{target}")
+        try:
+            if importlib.metadata.version("ctranslate2") != str(M2M100_MANIFEST.get("runtime", {}).get("ctranslate2", "4.8.2")):
+                raise OfflineTranslationError("Install the pinned M2M100 CTranslate2 runtime")
+            if importlib.metadata.version("sentencepiece") != str(M2M100_MANIFEST.get("runtime", {}).get("sentencepiece", "0.2.1")):
+                raise OfflineTranslationError("Install the pinned M2M100 SentencePiece runtime")
+            import ctranslate2
+            from transformers import M2M100Tokenizer
+        except ImportError as exc:
+            raise OfflineTranslationError(
+                "Install the pinned M2M100 runtime: python -m pip install -r requirements-translation.txt"
+            ) from exc
+        if not model_dir.is_dir() or not (model_dir / "ct2-int8").is_dir():
+            raise OfflineTranslationError(
+                f"Missing converted M2M100 model at {model_dir}; run scripts/install_m2m100_translation_model.py"
+            )
+        tokenizer_files = model_dir / "tokenizer_config.json"
+        if not tokenizer_files.is_file():
+            raise OfflineTranslationError(f"Missing pinned M2M100 tokenizer files at {model_dir}")
+        try:
+            self.tokenizer = M2M100Tokenizer.from_pretrained(str(model_dir), local_files_only=True)
+            threads = max(1, min(4, int(os.environ.get("PORTAL_OFFLINE_TRANSLATION_THREADS", "2"))))
+            self.model = ctranslate2.Translator(
+                str(model_dir / "ct2-int8"), device="cpu", compute_type="int8",
+                inter_threads=1, intra_threads=threads,
+            )
+        except Exception as exc:
+            raise OfflineTranslationError(f"Cannot load the local M2M100 model: {exc}") from exc
+        self.source = source
+        self.target = target
+
+    def _tokens(self, text: str) -> list[str]:
+        self.tokenizer.src_lang = self.source
+        encoded = self.tokenizer.encode(text, add_special_tokens=True)
+        return self.tokenizer.convert_ids_to_tokens(encoded)
+
+    def translate(self, text: str) -> str:
+        tokens = self._tokens(text)
+        if len(tokens) > 512:
+            if len(text) < 2:
+                raise OfflineTranslationError("A single character exceeds the M2M100 tokenizer bound")
+            return "".join(self.translate(piece) for piece in split_text(text, max(1, len(text) // 2)))
+        target_id = self.tokenizer.get_lang_id(self.target)
+        target_token = self.tokenizer.convert_ids_to_tokens([target_id])[0]
+        try:
+            result = self.model.translate_batch(
+                [tokens], target_prefix=[[target_token]], beam_size=4,
+                num_hypotheses=1, max_decoding_length=512, length_penalty=0.2,
+            )[0]
+            hypothesis = result.hypotheses[0]
+            if len(hypothesis) >= 512:
+                raise OfflineTranslationError("M2M100 decoder reached its output limit")
+            ids = self.tokenizer.convert_tokens_to_ids(hypothesis)
+            return self.tokenizer.decode(ids, skip_special_tokens=True).strip()
+        except OfflineTranslationError:
+            raise
+        except Exception as exc:
+            raise OfflineTranslationError(f"M2M100 inference failed for {self.source}->{self.target}: {exc}") from exc
+
+
 class OfflineTranslator:
-    def __init__(self, cache_dir: str | Path | None = None, *, engine_factory=None):
+    def __init__(self, cache_dir: str | Path | None = None, *, engine_factory=None, backend: str | None = None):
         self.cache_dir = Path(cache_dir or os.environ.get("PORTAL_OFFLINE_TRANSLATION_CACHE", ".cache/offline-translation"))
-        self.packages_dir = model_directory()
+        self.backend = (backend or os.environ.get("OFFLINE_TRANSLATION_BACKEND", "argos")).strip().lower()
+        if self.backend not in {"argos", "m2m100"}:
+            raise OfflineTranslationError(f"Unsupported offline translation backend: {self.backend}")
+        self.packages_dir = m2m100_model_directory() if self.backend == "m2m100" else model_directory()
         self._engine_factory = engine_factory
-        receipt = self.packages_dir / "offline-model-provenance.json"
+        receipt_name = "m2m100-model-provenance.json" if self.backend == "m2m100" else "offline-model-provenance.json"
+        receipt = self.packages_dir / receipt_name
         receipt_hash = hashlib.sha256(receipt.read_bytes()).hexdigest() if receipt.exists() else "unreceipted"
-        self.model_id = MODEL_ID + ":" + receipt_hash
+        self.model_id = (M2M100_RUNTIME_ID if self.backend == "m2m100" else MODEL_ID) + ":" + receipt_hash
         self.stats = {"cache_hits": 0, "translated_fragments": 0}
 
     def _engine(self, source: str, target: str):
@@ -192,13 +283,18 @@ class OfflineTranslator:
             return self._engine_factory(source, target)
         key = (str(self.packages_dir.resolve()), source, target)
         if key not in _ENGINES:
-            _ENGINES[key] = _ArgosEngine(source, target, self.packages_dir)
+            _ENGINES[key] = (_M2M100Engine(source, target, self.packages_dir)
+                             if self.backend == "m2m100"
+                             else _ArgosEngine(source, target, self.packages_dir))
         return _ENGINES[key]
 
     def _run(self, text: str, source: str, target: str) -> str:
         if source == target or not _LETTERS.search(text):
             return text
-        if (source, target) not in MODELS:
+        if self.backend == "m2m100":
+            if source not in M2M100_LANGUAGES or target not in M2M100_LANGUAGES:
+                raise OfflineTranslationError(f"No pinned M2M100 route {source}->{target}")
+        elif (source, target) not in MODELS:
             if source == "zh" and target in {"ja", "ko", "ar"}:
                 return self._run(self._run(text, "zh", "en"), "en", target)
             raise OfflineTranslationError(f"No pinned offline route {source}->{target}")
@@ -301,3 +397,22 @@ class OfflineTranslator:
             prefix = re.match(r"^(?:\s*>\s*)*(?:\s{0,3}#{1,6}\s+|\s*[-+*]\s+(?:\[[ xX]\]\s+)?|\s*\d+[.)]\s+)?", line).group()
             output.append(prefix + self.translate(line[len(prefix):], target, source))
         return "".join(output)
+
+
+# GitHub Actions sets this before importing callers. Keep the Argos adapter
+# importable for rollback and structure tests, while production jobs use the
+# direct multilingual M2M100 implementation with batch inference.
+if os.environ.get("OFFLINE_TRANSLATION_BACKEND", "argos").strip().lower() == "m2m100":
+    from m2m100_offline_translation import (  # noqa: E402  (intentional backend seam)
+        M2M100OfflineTranslator,
+        M2M100TranslationError,
+        OfflineTranslationError as M2M100OfflineTranslationError,
+        PROVIDER as M2M100_PROVIDER,
+        MODEL_ID as M2M100_MODEL_RUNTIME_ID,
+        split_text as m2m100_split_text,
+    )
+    PROVIDER = M2M100_PROVIDER
+    MODEL_ID = M2M100_MODEL_RUNTIME_ID
+    OfflineTranslator = M2M100OfflineTranslator
+    OfflineTranslationError = M2M100OfflineTranslationError
+    split_text = m2m100_split_text

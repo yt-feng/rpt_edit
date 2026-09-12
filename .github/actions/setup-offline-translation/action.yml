@@ -18,27 +18,25 @@ runs:
           exit 2
         fi
         echo "model-key=${TRANSLATION_TARGETS//,/-}" >> "$GITHUB_OUTPUT"
-        echo "ARGOS_PACKAGES_DIR=$RUNNER_TEMP/argos-packages" >> "$GITHUB_ENV"
+        echo "M2M100_MODEL_DIR=$RUNNER_TEMP/m2m100-model" >> "$GITHUB_ENV"
+        echo "OFFLINE_TRANSLATION_BACKEND=m2m100" >> "$GITHUB_ENV"
         echo "PORTAL_OFFLINE_TRANSLATION_CACHE=$RUNNER_TEMP/offline-translation-memo" >> "$GITHUB_ENV"
         echo "PORTAL_OFFLINE_TRANSLATION_THREADS=2" >> "$GITHUB_ENV"
-        echo "ARGOS_DEVICE_TYPE=cpu" >> "$GITHUB_ENV"
-    - name: Install pinned translation runtime
+    - name: Install pinned M2M100 CPU runtime
       shell: bash
       run: |
-        python -m pip install --disable-pip-version-check --no-deps argostranslate==1.11.0
+        python -m pip install --disable-pip-version-check torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
         python -m pip install --disable-pip-version-check -r requirements-translation.txt
-    - name: Restore public model files only
+    - name: Restore converted public model files only
       uses: actions/cache@v4
       with:
-        path: ${{ runner.temp }}/argos-packages
-        key: argos-models-v1-${{ runner.os }}-${{ steps.configure.outputs.model-key }}-${{ hashFiles('requirements-translation.txt', 'scripts/install_offline_translation_models.py', 'scripts/offline_translation_models.json') }}
-    - name: Install and audit selected model packages
+        path: ${{ runner.temp }}/m2m100-model
+        key: m2m100-ct2-int8-v1-${{ runner.os }}-${{ hashFiles('requirements-translation.txt', 'scripts/install_m2m100_translation_model.py', 'scripts/m2m100_model_manifest.json') }}
+    - name: Install and audit pinned M2M100 model
       shell: bash
-      env:
-        TRANSLATION_TARGETS: ${{ inputs.targets }}
       run: |
-        python scripts/install_offline_translation_models.py \
-          --targets "$TRANSLATION_TARGETS" \
+        python scripts/install_m2m100_translation_model.py \
+          --model-dir "$M2M100_MODEL_DIR" \
           --audit-out "$RUNNER_TEMP/offline-model-audit.json"
     - name: Preserve model provenance
       uses: actions/upload-artifact@v4

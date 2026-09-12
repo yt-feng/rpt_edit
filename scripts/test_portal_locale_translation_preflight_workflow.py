@@ -20,13 +20,16 @@ class PreflightWorkflowTests(unittest.TestCase):
 
     def test_model_cache_never_contains_report_memo(self):
         text = (ROOT / '.github/actions/setup-offline-translation/action.yml').read_text()
-        cached = text.split('Restore public model files only', 1)[1].split('Install and audit', 1)[0]
-        self.assertIn('argos-packages', cached)
+        cached = text.split('Restore converted public model files only', 1)[1].split('Install and audit', 1)[0]
+        self.assertIn('m2m100-model', cached)
+        self.assertIn('m2m100-ct2-int8-v1', cached)
         self.assertNotIn('offline-translation-memo', cached)
-        self.assertIn('steps.configure.outputs.model-key', cached)
+        self.assertIn('hashFiles', cached)
         self.assertNotIn('inputs.targets', cached)
         self.assertIn('requirements-translation.txt', text)
         self.assertIn('--audit-out', text)
+        self.assertIn('OFFLINE_TRANSLATION_BACKEND=m2m100', text)
+        self.assertIn('install_m2m100_translation_model.py', text)
 
     def test_production_locale_step_has_no_paid_provider_path(self):
         text = (ROOT / '.github/workflows/neutral-edge-cutover.yml').read_text()

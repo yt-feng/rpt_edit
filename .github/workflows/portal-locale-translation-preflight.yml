@@ -13,8 +13,11 @@ on:
       - '.github/workflows/portal-locale-translation-preflight.yml'
       - 'requirements-translation.txt'
       - 'scripts/offline_translation.py'
+      - 'scripts/m2m100_model_manifest.json'
       - 'scripts/offline_translation_models.json'
       - 'scripts/install_offline_translation_models.py'
+      - 'scripts/install_m2m100_translation_model.py'
+      - 'scripts/test_m2m100_offline_translation.py'
       - 'scripts/smoke_offline_translation.py'
       - 'scripts/build_portal_locales.py'
       - 'scripts/translate_portal_titles.py'
@@ -30,7 +33,7 @@ concurrency:
 jobs:
   preflight:
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
         with:
@@ -41,11 +44,12 @@ jobs:
       - name: Test offline adapters and integration
         run: |
           python -m pip install requests Pillow
-          python -B scripts/test_offline_translation.py
+          OFFLINE_TRANSLATION_BACKEND=argos python -B scripts/test_offline_translation.py
+          python -B scripts/test_m2m100_offline_translation.py
           python -B scripts/test_portal_offline_locales.py
           python -B scripts/test_portal_locale_preflight_diagnostics.py
           python -B scripts/test_translate_portal_titles.py
-          python -B scripts/test_offline_translation_callers.py
+          OFFLINE_TRANSLATION_BACKEND=argos python -B scripts/test_offline_translation_callers.py
           python -B scripts/test_portal_locale_translation_preflight_workflow.py
       - name: Set up free local translation models
         uses: ./.github/actions/setup-offline-translation

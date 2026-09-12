@@ -23,6 +23,11 @@ OFFLINE_TITLE_MODEL = "argos-offline"
 LEGACY_TITLE_MODELS = frozenset({"deepseek-v4-flash", "deepseek-chat", "deepseek-reasoner"})
 
 
+def offline_provider() -> str:
+    from offline_translation import PROVIDER
+    return PROVIDER
+
+
 def log(message: str) -> None:
     print(message, flush=True)
 
@@ -77,7 +82,7 @@ def load_title_cache(path: Path | None) -> dict[str, Any]:
         raise RuntimeError(f"Invalid title translation cache: {path}") from error
     if (not isinstance(cache, dict)
             or cache.get("schema_version") != TITLE_CACHE_SCHEMA_VERSION
-            or cache.get("provider") not in {"deepseek", "argos-offline", "translation-memory"}
+            or cache.get("provider") not in {"deepseek", "argos-offline", "m2m100-offline", "translation-memory"}
             or not isinstance(cache.get("entries"), dict)):
         raise RuntimeError(f"Unsupported title translation cache: {path}")
     for key, row in cache["entries"].items():
@@ -270,7 +275,7 @@ def main() -> int:
             else:
                 cache["entries"][title_cache_key(source, args.model)] = {
                     "source": source, "model": args.model, "prompt_version": TITLE_PROMPT_VERSION,
-                    "title_zh": title_zh, "provider": "argos-offline" if not has_cjk(source) or args.force else "source",
+                    "title_zh": title_zh, "provider": offline_provider() if not has_cjk(source) or args.force else "source",
                     "engine_model_id": getattr(args, "_offline_model_id", args.model),
                 }
                 cache["provider"] = "translation-memory"
@@ -285,7 +290,7 @@ def main() -> int:
 
     catalog["title_translation"] = {
         "provider": "translation-memory",
-        "new_translation_provider": "argos-offline",
+        "new_translation_provider": offline_provider(),
         "model": args.model,
         "updated_at_bjt": bjt_now(),
         "translated_title_count": sum(1 for item in catalog.get("items", []) if str(item.get("title_zh") or "").strip()),

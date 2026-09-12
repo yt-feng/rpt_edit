@@ -81,6 +81,28 @@ class OfflineTranslationTests(unittest.TestCase):
         translator = OfflineTranslator(cache_dir=self.temp.name, engine_factory=lambda *_args: engine)
         self.assertEqual(translator.translate("Growth of 12.5% to 1,234.50.", "zh", "en"), "增长 12.5%，达到1,234.50。")
 
+    def test_arabic_percent_and_separators_restore_exact_source_spelling(self):
+        engine = types.SimpleNamespace(translate=lambda _text: "نمو ١٢٫٥٪ إلى ١٬٢٣٤٫٥٠.")
+        translator = OfflineTranslator(cache_dir=self.temp.name, engine_factory=lambda *_args: engine)
+        self.assertEqual(translator.translate("Growth of 12.5% to 1,234.50.", "ar", "en"), "نمو 12.5% إلى 1,234.50.")
+
+    def test_m2m100_backend_keeps_full_currency_scale_opaque(self):
+        calls = []
+
+        def contextual(text):
+            calls.append(text)
+            return "收入为 " if text == "Revenue was" else "净利润下降3%。"
+
+        translator = OfflineTranslator(
+            cache_dir=self.temp.name,
+            backend="m2m100",
+            engine_factory=lambda *_args: types.SimpleNamespace(translate=contextual),
+        )
+        output = translator.translate("Revenue was USD 120 million and net profit declined by 3%.", "zh", "en")
+        self.assertIn("USD 120 million", output)
+        self.assertEqual(calls, ["Revenue was", "and net profit declined by 3%."])
+        self.assertEqual(translator.model_id.split(":", 1)[0].split("-")[0], "m2m100")
+
     def test_allcaps_prose_is_translated_and_explicit_codes_preserved(self):
         output = self.translator.translate("REVENUE / OPERATING CASH FLOW in USD for NASDAQ:AAPL and BRK.B", "zh", "en")
         self.assertIn("译{revenue / operating cash flow in}", output)

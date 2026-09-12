@@ -3,6 +3,7 @@
 from __future__ import annotations
 import argparse
 import json
+import os
 from pathlib import Path
 import time
 from unittest import mock
@@ -15,7 +16,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--diagnostics-out', type=Path, required=True)
     args = parser.parse_args()
-    report = {'provider': 'argos', 'provider_requests': 0, 'api_cost_cny': 0,
+    report = {'provider': os.environ.get('OFFLINE_TRANSLATION_BACKEND', 'argos') + '-offline', 'provider_requests': 0, 'api_cost_cny': 0,
               'status': 'running', 'semantic_review': 'required', 'samples': [], 'errors': []}
     translator = OfflineTranslator()
     started = time.monotonic()

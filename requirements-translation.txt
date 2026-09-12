@@ -1,10 +1,9 @@
-# Direct dependencies of our CPU-only Argos Package/tokenizer + CTranslate2 path.
-# Install this file normally so pip resolves these packages' own dependencies.
-# Then: python -m pip install --no-deps argostranslate==1.11.0
-# Argos' high-level stanza/spacy/minisbd sentence splitters are deliberately not
-# used by offline_translation.py; installing their torch stack is unnecessary.
-# CI uses Python 3.12 and performs real inference to validate this narrow API.
+# Pinned CPU-only runtimes for the free local translation path. Argos remains
+# available as a deterministic rollback backend; production Actions use the
+# multilingual M2M100 model and CTranslate2 int8 runtime.
 ctranslate2==4.8.2
 sentencepiece==0.2.1
 packaging==25.0
 sacremoses==0.1.1
+transformers==4.57.6
+huggingface-hub==0.35.3

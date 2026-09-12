@@ -796,6 +796,11 @@ def offline_translator(args: argparse.Namespace, cache_dir: Path | None = None):
     return args._offline_translator
 
 
+def offline_translation_provider() -> str:
+    from offline_translation import PROVIDER
+    return PROVIDER
+
+
 def translate_chunk(chunk: str, args: argparse.Namespace, chunk_index: int, chunk_total: int) -> str:
     # Compatibility entry point: model inference is local, with no API fallback.
     del chunk_index, chunk_total
@@ -940,7 +945,7 @@ def wechat_title_from_filename(
         selected, decision = decide_filename_anchored_title(
             [translated], source_filename, institution_name, evidence_text=translated_md,
         )
-        decision.update(translation_provider="argos-offline", repair_attempted=False)
+        decision.update(translation_provider=offline_translation_provider(), repair_attempted=False)
         return selected, decision
     if not getattr(args, "title_refine", True):
         return decide_filename_anchored_title([], source_filename, institution_name)
@@ -1278,9 +1283,9 @@ def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.N
         "title": display_title,
         "source_title": source_title,
         "wechat_title_source": "source_filename_weighted_finetune" if article_style else "offline_filename_translation",
-        "body_provider": "deepseek-editorial" if article_style else "argos-offline",
+        "body_provider": "deepseek-editorial" if article_style else offline_translation_provider(),
         "translation_model": args.model if article_style else offline_translator(args).model_id,
-        "title_provider": "deepseek-editorial" if article_style and getattr(args, "title_refine", True) else "deterministic" if article_style else "argos-offline",
+        "title_provider": "deepseek-editorial" if article_style and getattr(args, "title_refine", True) else "deterministic" if article_style else offline_translation_provider(),
         "wechat_title_decision": title_decision,
         "source_clean": "source_clean.md",
         "translated_markdown": "translated.md",

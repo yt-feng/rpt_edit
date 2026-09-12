@@ -2,19 +2,21 @@
 
 核验日期：2026-09-12。目标是让项目的纯翻译流程改用开源模型在 GitHub Actions runner 内执行，取消 DeepSeek 翻译 API 调用，同时复用已经通过检查的译文。
 
-## 选择：Argos Translate 在 runner 内离线运行
+## 选择：M2M100 在 runner 内离线运行
 
 | 方案 | 当前官方说明 | 本项目选择 |
 | --- | --- | --- |
-| Argos Translate | 离线 Python 库，支持语言包及中间语言转译；库为 MIT/CC0 双许可 | 首选，适配现有 Python 流程 |
+| Argos Translate | 离线 Python 库，支持语言包及中间语言转译；库为 MIT/CC0 双许可 | 保留为回滚和单元测试路线，不作为生产默认 |
 | LibreTranslate 自托管 | 使用 Argos 引擎，HTTP 服务为 AGPLv3 | 批处理无需再启动 API 服务 |
 | Marian / OPUS-MT | 双语模型，许可逐模型核对；官方 `opus-mt-zh-en` 为 CC-BY-4.0 | 保留为具体语言质量对照方案 |
-| M2M100 418M | 官方模型卡为 MIT，可直接处理 100 种语言间翻译；CTranslate2 提供转换示例 | 后续对照，先完成轻量方案实测 |
+| M2M100 418M | 官方模型卡为 MIT，可直接处理 100 种语言间翻译；CTranslate2 提供转换示例 | 生产候选：单个多语模型、CPU INT8、整句处理 |
 | NLLB 600M | CC-BY-NC-4.0；模型卡称其为研究模型，不面向生产部署或文档翻译 | 本次不采用 |
 
 依据：[Argos Translate](https://github.com/argosopentech/argos-translate)、[LibreTranslate](https://github.com/LibreTranslate/LibreTranslate)、[OPUS 中文到英文模型](https://huggingface.co/Helsinki-NLP/opus-mt-zh-en)、[M2M100 模型](https://huggingface.co/facebook/m2m100_418M)、[CTranslate2 转换示例](https://opennmt.net/CTranslate2/guides/transformers.html)、[NLLB 模型](https://huggingface.co/facebook/nllb-200-distilled-600M)。
 
 ## 语言与模型
+
+生产 Actions 使用固定 revision 的 `facebook/m2m100_418M`，只在模型准备步骤下载一次并转换为 CTranslate2 INT8；推理步骤只读 `M2M100_MODEL_DIR`，网络和 DeepSeek 凭据均不参与。模型卡声明 MIT，模型 revision、模型卡许可证据、源文件和转换后文件 SHA-256 会写入 `m2m100-model-provenance.json`。Argos 包路由仍保留在清单中，供回滚和无模型结构单元测试使用。
 
 以下文件来自 [Argos 官方模型索引](https://raw.githubusercontent.com/argosopentech/argospm-index/main/index.json)。只安装所需语言包，推理期间不临时下载模型。
 
@@ -26,7 +28,7 @@
 | 英文 → 韩文 | `translate-en_ko-1_1.argosmodel` |
 | 英文 → 阿拉伯文 | `translate-en_ar-1_0.argosmodel` |
 
-英文源直接译为日、韩、阿文；中文源经英文中转，再译为日、韩、阿文。英文报告与标题译中文使用独立的英文到中文模型。中文已经存在的内容直接复用。
+M2M100 直接覆盖中文、英文、日文、韩文和阿拉伯文之间的当前项目路由，不再用中文到英文的中转。金额短语（例如 `USD 120 million`）在进入模型前保持为源文片段，百分比、日期、负数和其他数字在输出后做数量与原始格式校验。中文已经存在的内容直接复用。
 
 Argos 官方明确说明，中间语言转译可能降低质量。因此，验收应使用本项目真实金融文本，覆盖标题、长段落、表格、指标名称、百分比、负数、日期、币种、机构名称、专有名词及引用。继续检查段落覆盖、数字、占位符、链接和目标语言；通顺或出现目标语言文字本身不能证明译意正确。固定界面词与审定术语优先使用已有译文。依据：[Argos 中转说明](https://argos-translate.readthedocs.io/en/latest/)。
 
@@ -40,7 +42,7 @@ Argos 官方明确说明，中间语言转译可能降低质量。因此，验�
 
 本方案用于本仓库软件项目自身的静态多语种网站、内容构建和发布。GitHub 条款要求 hosted runner 工作与关联项目的生产、测试、部署或发布有关，并限制把 Actions 当作通用托管服务。前述用途是对条款与本项目实现方式的工程判断，并非 GitHub 对本项目的单独确认。依据：[GitHub Actions 条款](https://docs.github.com/en/site-policy/github-terms/github-terms-for-additional-products-and-features#actions)。
 
-运行依赖候选为 Python 3.11、`argostranslate==1.11.0`、`ctranslate2==4.8.2`。版本满足 Argos 声明的 CTranslate2 `>=4,<5` 范围；实际安装、五个模型推理和样文结果仍以验证记录为准。采用 CPU INT8，明确限制线程数，避免在同时运行其他项目的 Mac 上进行全量模型任务。依据：[Argos 版本](https://pypi.org/project/argostranslate/1.11.0/)、[依赖范围](https://raw.githubusercontent.com/argosopentech/argos-translate/v1.11.0/requirements.txt)、[CTranslate2 版本](https://pypi.org/project/ctranslate2/)、[INT8 支持](https://opennmt.net/CTranslate2/quantization.html)。
+运行依赖为 Python 3.11、`ctranslate2==4.8.2`、`transformers==4.57.6`、`sentencepiece==0.2.1` 和 Actions CPU 版 `torch==2.8.0`。采用 CPU INT8，明确限制线程数；本地适配器测试不会下载模型，实际模型任务只在 GitHub Actions runner 执行。依据：[M2M100 模型](https://huggingface.co/facebook/m2m100_418M)、[CTranslate2 转换示例](https://opennmt.net/CTranslate2/guides/transformers.html)、[CTranslate2 版本](https://pypi.org/project/ctranslate2/)、[INT8 支持](https://opennmt.net/CTranslate2/quantization.html)。
 
 ## 当前诊断与迁移范围
 
@@ -53,8 +55,8 @@ Argos 官方明确说明，中间语言转译可能降低质量。因此，验�
 
 ## 实测与验收记录
 
-2026-09-12，独立分支 Actions 完成五个包安装，并在禁止 HTTP 的环境运行九句日韩阿样文和一个中文 Markdown 报告样例。结构检查通过、翻译 API 请求为零。**初版人工复核未通过**：按数字分割句子破坏上下文，导致英文 `rose` 被当作花名、`in` 被误译，个别金融术语泛化。该版本不可作为译意质量通过或生产上线的证明。后续整句处理版本须重新核验实际输出。
+2026-09-12，独立分支 Actions 已完成 M2M100 PyTorch CPU 对照：19 个完整句子在约 55 秒内完成，翻译 API 请求为零。相对 Argos 的按数字切分版本，`Operating cash flow rose by 15% in 2026.` 的日韩译文已保持为整句语义；首次对照仍发现日文小数标点和 `USD 120 million` 单位边界问题，因此加入源文金额保护和数字格式恢复。本分支需要重新跑模型准备、结构样本和人工金融语义复核，复核通过前不宣称可直接发布。
 
-运行时只安装已锁定的 Argos 包（`--no-deps`）及 CTranslate2、SentencePiece、packaging、sacremoses 与后者实际依赖，不安装本路径不用的 Stanza、spaCy、MiniSBD、Torch/CUDA。具体版本见 `requirements-translation.txt` 与模型清单。
+运行时只安装锁定的 CPU M2M100 推理依赖；模型准备步骤临时安装 Torch 用于读取官方权重和 CTranslate2 转换，最终翻译步骤只使用 CTranslate2、SentencePiece 和 tokenizer 文件。不会调用翻译 API，也不把模型文件或译文缓存放进公共仓库缓存以外的发布物。
 
 网站与中文标题沿用公开内容的 Actions 译文缓存。完整报告段落缓存放在各自报告输出目录 `.translation_cache`，不会进入公共模型缓存；只有该私有输出目录仍在或被恢复时，才能跨运行复用。当前新 runner 未自动恢复历史报告输出，不能宣称它已支持所有报告的跨工作流续译。
