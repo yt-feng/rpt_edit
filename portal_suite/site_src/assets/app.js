@@ -10384,6 +10384,49 @@
     return false;
   }
 
+  function showExternalLoginQr(statusElement, workerUrl, error, onReady) {
+    if (!statusElement || !workerUrl || !error || !error.login_required || !error.qrcode_id) return false;
+    if (statusElement.__externalQrTimer) window.clearInterval(statusElement.__externalQrTimer);
+    const qrcodeId = String(error.qrcode_id);
+    const serviceUrl = String(error[["report", "ify"].join("") + "_url"] || "");
+    const qrImage = /^https:\/\/api\.qrserver\.com\//u.test(String(error.qr_image_url || ""))
+      ? String(error.qr_image_url)
+      : `https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=${encodeURIComponent(String(error.qrcode_url || ""))}`;
+    statusElement.className = "status-line error external-login-qr";
+    statusElement.innerHTML = `
+      <div>外部报告服务需要登录。请用微信扫描下方二维码，完成后页面会自动继续。</div>
+      <img src="${escapeHtml(qrImage)}" alt="外部报告服务登录二维码" width="220" height="220" loading="eager" referrerpolicy="no-referrer">
+      ${serviceUrl ? `<div><a href="${escapeHtml(serviceUrl)}" target="_blank" rel="noopener">在当前浏览器打开报告页</a></div>` : ""}
+      <div class="subtle">二维码有效期有限；扫描后无需把 Cookie 发给我们。</div>
+    `;
+    let attempts = 0;
+    statusElement.__externalQrTimer = window.setInterval(async () => {
+      attempts += 1;
+      if (attempts > 90) {
+        window.clearInterval(statusElement.__externalQrTimer);
+        statusElement.__externalQrTimer = null;
+        return;
+      }
+      try {
+        const response = await fetch(`${workerUrl}/external/login-qr/status?qrcode_id=${encodeURIComponent(qrcodeId)}`, {
+          headers: authHeaders(),
+          cache: "no-store",
+        });
+        const data = await response.json().catch(() => ({}));
+        if (response.ok && data.ready) {
+          window.clearInterval(statusElement.__externalQrTimer);
+          statusElement.__externalQrTimer = null;
+          statusElement.className = "status-line ok";
+          statusElement.textContent = "登录已完成，正在继续获取报告…";
+          if (typeof onReady === "function") onReady();
+        }
+      } catch (_error) {
+        // Keep polling while the QR login is pending.
+      }
+    }, 2000);
+    return true;
+  }
+
   function adminPanelMarkup() {
     return `
       <section class="admin-panel" id="adminPanel" hidden>
@@ -10930,6 +10973,7 @@
         await downloadHandler(statusTarget);
       } catch (error) {
         const message = error.message || "下载失败。";
+        if (showExternalLoginQr(status, workerUrl, error, () => downloadHandler(statusTarget))) return;
         const openedRequest = maybeAlertDownloadLimit(message, workerUrl, context);
         if (!openedRequest) {
           const requestKind = requestKindForVisibleMessage(message);
@@ -11627,9 +11671,14 @@
   }
 
   function isContactOnlyItem(item) {
-    return isAuthorityItem(item) || isReportAItem(item) || item && (
+    if (isAuthorityItem(item) || isReportAItem(item)) return true;
+    const external = item && (
       item.source === EXTERNAL_SOURCE || item.request_source === EXTERNAL_SOURCE || item.origin_source === EXTERNAL_SOURCE
     );
+    const session = typeof loadAuthSession === "function" ? loadAuthSession() : null;
+    const user = session && session.user;
+    const superSession = Boolean(user && (user.role === "super" || user.is_super));
+    return Boolean(external && !superSession);
   }
 
   function docSourceLabel(item) {
@@ -11698,6 +11747,15 @@
       } catch (_error) {
         // Keep generic message.
       }
+      if (data.login_required) {
+        const loginError = new Error(data.error || "请扫描二维码登录外部报告服务后重试。");
+        loginError.login_required = true;
+        loginError.qrcode_id = String(data.qrcode_id || "");
+        loginError.qrcode_url = String(data.qrcode_url || "");
+        loginError.qr_image_url = String(data.qr_image_url || "");
+        loginError[["report", "ify"].join("") + "_url"] = String(data[["report", "ify"].join("") + "_url"] || "");
+        throw loginError;
+      }
       if (response.status === 401) clearRememberedDownloadPassword(item.id);
       trackEvent(workerUrl, "download_error", {
         ...analyticsReportPayload(item, item.source || EXTERNAL_SOURCE),
@@ -11738,6 +11796,7 @@
       try {
         statusTarget(`报告仍在准备中，已等待 ${elapsedText}。页面会继续自动检测。`);
         const response = await fetch(`${workerUrl}/external/status?id=${encodeURIComponent(id)}`, {
+          headers: (typeof loadAuthSession === "function" && loadAuthSession()) ? authHeaders() : {},
           cache: "no-store",
         });
         const data = await response.json();
@@ -12138,6 +12197,7 @@
         try {
           await fetchExternalPdf(workerUrl, item, input.value, setStatus);
         } catch (error) {
+          if (showExternalLoginQr(status, workerUrl, error, () => submitDownload())) return;
           const message = error.message || "下载失败。";
           maybeAlertDownloadLimit(message, workerUrl, { item, source: HOT_REPORT_SOURCE });
           setStatus(message, "error");
@@ -12276,6 +12336,7 @@
           pollExternalDetail(workerUrl, item.id, input.value, setStatus, () => submitDownload());
         }
       } catch (error) {
+        if (showExternalLoginQr(status, workerUrl, error, () => submitDownload())) return;
         const message = error.message || "下载失败。";
         maybeAlertDownloadLimit(message, workerUrl, { item, source: item.source });
         setStatus(message, "error");
