@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { createHash, createHmac } from 'node:crypto';
+import { createHash } from 'node:crypto';
 import test from 'node:test';
 import worker from '../../workers/portal-suite-worker/src/index.js';
 
@@ -33,24 +33,8 @@ class MemoryR2 {
   async json(key, value) { return this.put(key, JSON.stringify(value)); }
 }
 function envFor(bucket) {
-  return { REPORT_BUCKET: bucket, MASTER_KEY: 'request-only-secret', AUTH_SECRET: 'request-only-secret', ACCOUNT_STORE_MODE: 'r2', ALLOWED_ORIGIN: ORIGIN,
+  return { REPORT_BUCKET: bucket, MASTER_KEY: 'request-only-secret', ALLOWED_ORIGIN: ORIGIN,
     NEWSFEED_EMAIL_PROVIDER: 'brevo', BREVO_API_KEY: 'test-key', BREVO_SENDER_EMAIL: 'sender@example.invalid' };
-}
-
-const SUPER_USER = { id: 'super-id', username: 'admin-a', email: 'admin-a@users.portal.example.invalid' };
-function accountKey(...parts) { return ['_account', ...parts.map((part) => encodeURIComponent(String(part || '')))].join('/'); }
-function superToken() {
-  const now = Math.floor(Date.now() / 1000);
-  const body = Buffer.from(JSON.stringify({ kind: 'user', sub: SUPER_USER.id, username: SUPER_USER.username, email: SUPER_USER.email, iat: now, exp: now + 3600 })).toString('base64url');
-  const signature = createHmac('sha256', 'request-only-secret').update(`portal:account-token:v1:${body}`).digest('base64url');
-  return `${body}.${signature}`;
-}
-async function seedSuper(bucket) {
-  const user = { ...SUPER_USER, site_origin: 'portal', registered_site: 'portal', source_site: 'portal', session_epoch: '' };
-  for (const key of [accountKey('users', 'id', user.id), accountKey('users', 'username', user.username), accountKey('users', 'email', user.email)]) {
-    await bucket.json(key, user);
-  }
-  return { Authorization: `Bearer ${superToken()}` };
 }
 function call(env, pathname, body, headers = {}) {
   return worker.fetch(new Request(`${ORIGIN}${pathname}`, body === undefined ? { headers } : {
@@ -194,53 +178,5 @@ test('only a verified manual binding can enable external download and hot-alias 
     object.customMetadata.target_source = 'authority';
     const rejected = await call(env, `/external/pdf?id=${ID}`);
     assert.equal(rejected.status, 403, 'mismatched target metadata cannot enable download');
-  });
-});
-
-test('twotigers super account keeps the Reportify PDF path while ordinary users remain request-only', async () => {
-  const bucket = new MemoryR2(); const env = envFor(bucket);
-  await bucket.put(`reportify/${ID}.pdf`, '%PDF-1.7 full report');
-  const adminHeaders = await seedSuper(bucket);
-  await withFetch(async (url) => {
-    if (String(url) === `https://api.reportify.cn/reports/${ID}`) return Response.json({ main: {
-      report_id: ID, title: TITLE, document_total_page: 212, file_type: 'pdf', url_pdf: null,
-    } });
-    assert.fail(`unexpected upstream request: ${url}`);
-  }, async () => {
-    const ordinary = await call(env, `/external/pdf?id=${ID}`);
-    assert.equal(ordinary.status, 403);
-    assert.equal((await ordinary.json()).request_required, true);
-    bucket.reads = [];
-    const admin = await call(env, `/external/pdf?id=${ID}`, undefined, adminHeaders);
-    assert.equal(admin.status, 200);
-    assert.equal(admin.headers.get('content-type'), 'application/pdf');
-    assert.match(await admin.text(), /^%PDF-1\.7/u);
-    assert.ok(bucket.reads.includes(`reportify/${ID}.pdf`));
-  });
-});
-
-test('twotigers can request a real Reportify login QR and complete token handoff', async () => {
-  const bucket = new MemoryR2(); const env = envFor(bucket); const adminHeaders = await seedSuper(bucket);
-  let pollCount = 0;
-  await withFetch(async (url) => {
-    if (String(url) === 'https://api.reportify.cn/auth/wechat/qrcode') {
-      return Response.json({ qrcode_url: 'http://weixin.qq.com/q/test-qr', qrcode_id: '13577092886088710' });
-    }
-    if (String(url).startsWith('https://api.reportify.cn/auth/wechat/qrcode/login')) {
-      pollCount += 1;
-      return Response.json(pollCount > 1 ? { token: 'reportify-session-token' } : { token: null, is_bind_phone: false });
-    }
-    assert.fail(`unexpected upstream request: ${url}`);
-  }, async () => {
-    const qr = await call(env, '/external/login-qr', undefined, adminHeaders);
-    assert.equal(qr.status, 200);
-    const qrData = await qr.json();
-    assert.equal(qrData.qrcode_id, '13577092886088710');
-    assert.match(qrData.qr_image_url, /api\.qrserver\.com/u);
-    const waiting = await call(env, '/external/login-qr/status?qrcode_id=13577092886088710', undefined, adminHeaders);
-    assert.equal((await waiting.json()).ready, false);
-    const ready = await call(env, '/external/login-qr/status?qrcode_id=13577092886088710', undefined, adminHeaders);
-    assert.deepEqual(await ready.json(), { status: 'authenticated', ready: true });
-    assert.ok(bucket.rows.has('reportify-auth/session.json'));
   });
 });

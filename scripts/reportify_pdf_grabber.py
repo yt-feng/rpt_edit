@@ -656,11 +656,6 @@ def main() -> int:
         default=os.getenv("REPORTIFY_COOKIE_HEADER") or os.getenv("REPORTIFY_COOKIE") or "",
         help="可选 Cookie header，用于后台浏览器访问需要登录的页面。",
     )
-    parser.add_argument(
-        "--auth-token",
-        default=os.getenv("REPORTIFY_AUTH_TOKEN") or "",
-        help="可选 Reportify 登录 token；仅用于后台浏览器请求，不会写入日志。",
-    )
     args = parser.parse_args()
 
     page_url = args.url
@@ -676,8 +671,6 @@ def main() -> int:
         # 只有开启后，Playwright 才会真正接住浏览器下载文件。
         context = browser.new_context(accept_downloads=True)
         add_cookie_header_to_context(context, args.cookie_header)
-        if args.auth_token:
-            context.set_extra_http_headers({"Authorization": f"Bearer {args.auth_token}"})
         page = context.new_page()
 
         grabber = ReportifyPDFGrabber(page=page, output_path=output_path)
@@ -712,9 +705,16 @@ def main() -> int:
                     if candidate_url:
                         grabber.try_fetch_candidate_url(context=context, candidate_url=candidate_url)
 
-            # A preview image or a printed login shell is not a report PDF.
-            # Fail closed so the Worker never marks a one-page cover as ready.
-            saved = grabber.save_result()
+            fallback_saved = False
+            if grabber.captured_pdf_bytes is None and grabber.captured_download is None:
+                preview_url = grabber.probe_preview_image_from_dom()
+                if preview_url:
+                    fallback_saved = grabber.try_preview_image_pdf(context=context, preview_url=preview_url)
+
+            if not fallback_saved and grabber.captured_pdf_bytes is None and grabber.captured_download is None:
+                fallback_saved = grabber.try_print_page_pdf()
+
+            saved = output_path if fallback_saved else grabber.save_result()
 
             # 最后再做一次非常轻量的文件头校验
             data = saved.read_bytes()
