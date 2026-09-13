@@ -74,7 +74,7 @@ test("public course page keeps the member directory and chat out of static HTML"
     ["W", "SP"].join(""),
     ["Fundamental", " Edge"].join(""),
   ];
-  assert.match(html, /data-page="course-public"/u);
+  assert.match(html, /data-page="course"/u);
   assert.doesNotMatch(html, /courseCatalog|course\/directory|data-directory-file|courseDirectoryPopular|courseChatForm/u);
   for (const marker of restrictedMarkers) assert.equal(html.includes(marker), false);
 });

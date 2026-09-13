@@ -13580,7 +13580,7 @@
             ? initNewsfeed
             : page === "blog"
               ? initBlog
-              : page === "course-public"
+              : page === "course-public" || (page === "course" && document.getElementById("coursePublicLogin"))
                 ? initCourseLanding
               : page === "course-library" || page === "course"
                 ? initCourse
