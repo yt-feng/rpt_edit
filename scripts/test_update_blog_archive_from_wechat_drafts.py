@@ -134,6 +134,48 @@ class BlogArchiveUpdateTest(unittest.TestCase):
             self.assertIn("new_articles=0", second.stdout)
             self.assertEqual(2, len(list(archive.glob("*/*.json"))))
 
+    def test_hard_blocks_nomura_rmb_fixing_articles_before_archive_persistence(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            temp = Path(temporary)
+            drafts = temp / "wechat_drafts"
+            archive = temp / "portal_suite" / "data" / "blog_archive"
+            write_payload(drafts, "xhs_notes", "260911", "draft_payload_01.json", [
+                {
+                    "title": "野村：美元兑人民币中间价模型预测6.7193",
+                    "content": (
+                        "<p>人民币中间价模型观察。</p>"
+                        "<p>Original report: 91-NOM-USD CNY fix model-Projection-6.7193-260911</p>"
+                    ),
+                },
+                {
+                    "title": "野村：行业技术与相关数据观察",
+                    "content": "<p>普通行业研究内容。</p><p>Original report: 92-NOM-Industry-observation-260911</p>",
+                },
+                {"title": "保留的研究笔记", "content": "<p>普通内容</p>"},
+            ])
+
+            result = subprocess.run(
+                [
+                    sys.executable,
+                    str(SCRIPT),
+                    "--wechat-drafts-root",
+                    str(drafts),
+                    "--blog-archive-root",
+                    str(archive),
+                ],
+                check=True,
+                text=True,
+                capture_output=True,
+            )
+
+            self.assertIn("hard_blocked_drafts_skipped=1", result.stdout)
+            self.assertIn("archived_after=2", result.stdout)
+            records = list(archive.glob("*/*.json"))
+            self.assertEqual(2, len(records))
+            serialized = "\n".join(path.read_text(encoding="utf-8") for path in records)
+            self.assertNotIn("USD CNY", serialized)
+            self.assertIn("行业技术与相关数据观察", serialized)
+
 
 if __name__ == "__main__":
     unittest.main()

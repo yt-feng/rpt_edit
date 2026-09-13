@@ -290,6 +290,15 @@ NOMURA_CURRENCY_DIRECTION_RE = re.compile(
     r")",
     re.I,
 )
+NOMURA_RMB_FIXING_RE = re.compile(
+    r"(?:"
+    r"\bUSD\s*[/_-]?\s*CNY\b|\bCNY\b|\bCNH\b|\bRMB\b|"
+    r"\brenminbi\b|\byuan\b|人民币|美元兑人民币"
+    r")"
+    r"[^\n]{0,80}"
+    r"(?:fix(?:ing|ed)?|mid[- ]?point|pricing|定价|中间价|定盘|固定)",
+    re.I,
+)
 
 # Public-account titles may use source-backed facts, numbers and directional
 # verbs.  The guard is intentionally limited to inflammatory, adversarial or
@@ -455,6 +464,8 @@ def nomura_sensitive_wechat_report_reasons(
         for code in wechat_title_neutrality_issues(value):
             if code in NOMURA_SENSITIVE_TITLE_REASON_CODES:
                 add(f"{field}:{code}")
+        if NOMURA_RMB_FIXING_RE.search(value):
+            add(f"{field}:rmb_fixing_or_pricing")
         if field in {"raw_title", "original_title", "source_report_name"}:
             if NOMURA_CURRENCY_DIRECTION_RE.search(value):
                 add(f"{field}:directional_currency_trade")

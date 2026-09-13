@@ -91,6 +91,48 @@ class SensitiveTitleGuardTests(unittest.TestCase):
             nomura_sensitive_wechat_report_reason(metadata),
         )
 
+    def test_nomura_usd_cny_fix_model_family_is_hard_blocked(self) -> None:
+        metadata = {
+            "institution_name": "野村",
+            "raw_title": "NOM-USD CNY fix model:Projection:6.7193-260911",
+            "wechat_title": "野村：CNY中间价模型预测6.7193",
+            "source_report_name": "NOM-USD CNY fix model:Projection:6.7193-260911.pdf",
+        }
+        reasons = nomura_sensitive_wechat_report_reasons(metadata)
+
+        self.assertIn("raw_title:rmb_fixing_or_pricing", reasons)
+        self.assertIn("source_report_name:rmb_fixing_or_pricing", reasons)
+        self.assertEqual(
+            "nomura_sensitive_report",
+            nomura_sensitive_wechat_report_reason(metadata),
+        )
+
+    def test_nomura_chinese_and_cnh_fixing_variants_are_hard_blocked(self) -> None:
+        cases = (
+            "野村：人民币中间价预测模型",
+            "99-NOM-Asia Insights CNH- Mitigating factors despite today's large positive fixing error",
+        )
+        for source_report_name in cases:
+            with self.subTest(source_report_name=source_report_name):
+                metadata = {
+                    "institution_name": "野村",
+                    "raw_title": source_report_name,
+                    "source_report_name": source_report_name,
+                }
+                self.assertEqual(
+                    "nomura_sensitive_report",
+                    nomura_sensitive_wechat_report_reason(metadata),
+                )
+
+    def test_non_nomura_rmb_fix_model_is_not_caught_by_nomura_policy(self) -> None:
+        metadata = {
+            "institution_name": "花旗",
+            "raw_title": "Citi-USD CNY fix model:Projection:6.7193-260911",
+            "source_report_name": "Citi-USD CNY fix model:Projection:6.7193-260911.pdf",
+        }
+        self.assertEqual([], nomura_sensitive_wechat_report_reasons(metadata))
+        self.assertIsNone(nomura_sensitive_wechat_report_reason(metadata))
+
     def test_nomura_sensitive_title_decision_is_blocked(self) -> None:
         metadata = {
             "institution_name": "野村",

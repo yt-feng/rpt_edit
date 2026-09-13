@@ -40,6 +40,7 @@ from push_xhs_notes_to_wechat_drafts import (
     AUTHOR as XHS_AUTHOR,
     BRAND as XHS_BRAND,
     choose_cover_image,
+    hard_blocked_xhs_title_record,
 )
 
 
@@ -245,6 +246,26 @@ class WeChatOutputContractTests(unittest.TestCase):
         self.assertIsNotNone(record)
         self.assertEqual("forbidden_title_term_rmb_pricing", record["skip_reason"])
         self.assertEqual("wechat_title", record["matched_title_field"])
+
+    def test_nomura_usd_cny_fix_model_is_hard_blocked_at_portal_entrypoint(self) -> None:
+        record = hard_blocked_portal_title_record({
+            "institution_name": "野村",
+            "raw_title": "NOM-USD CNY fix model:Projection:6.7193-260911",
+            "source_report_name": "NOM-USD CNY fix model:Projection:6.7193-260911.pdf",
+            "wechat_title": "野村：美元兑人民币中间价模型观察6.7193",
+        })
+        self.assertIsNotNone(record)
+        self.assertEqual("nomura_sensitive_report", record["skip_reason"])
+
+    def test_nomura_usd_cny_fix_model_is_hard_blocked_at_xhs_entrypoint(self) -> None:
+        record = hard_blocked_xhs_title_record({
+            "institution_name": "野村",
+            "raw_title": "NOM-USD CNY fix model:Projection:6.7193-260911",
+            "source_report_name": "NOM-USD CNY fix model:Projection:6.7193-260911.pdf",
+            "wechat_title": "野村：美元兑人民币中间价模型观察6.7193",
+        })
+        self.assertIsNotNone(record)
+        self.assertEqual("nomura_sensitive_report", record["skip_reason"])
 
     def test_comment_renderer_always_uses_public_label_once(self) -> None:
         legacy = portal_comment_html("**编辑评论：** 结合样本范围理解。")
