@@ -43,3 +43,10 @@ test("the grabber fails closed instead of treating a preview image or printed sh
   assert.doesNotMatch(main, /try_preview_image_pdf\(/u);
   assert.doesNotMatch(main, /try_print_page_pdf\(/u);
 });
+
+test("small cached external PDFs are invalidated instead of reported ready", () => {
+  assert.match(workerSource, /function externalPdfLooksLikePreview\(/u);
+  assert.match(workerSource, /size < 256 \* 1024 && pages >= 20/u);
+  assert.match(workerSource, /REPORT_BUCKET\.delete\(externalObjectKey\(id\)\)/u);
+  assert.match(workerSource, /head\.size \|\| 0\) >= 256 \* 1024/u);
+});
