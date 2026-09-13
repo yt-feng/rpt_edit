@@ -80,7 +80,10 @@ LEGACY_DEEPSEEK_MODEL_ALIASES = {
     "deepseek-chat": DEFAULT_DEEPSEEK_MODEL,
     "deepseek-reasoner": DEFAULT_DEEPSEEK_MODEL,
 }
-MAX_TRANSLATION_WORKERS = 500
+# DeepSeek can return sparse/empty JSON when too many requests arrive at once.
+# Keep the caller-configurable value for compatibility, but never let a
+# production run fan out beyond a provider-stable concurrency ceiling.
+MAX_TRANSLATION_WORKERS = 32
 DEEPSEEK_KEY_ENV_NAMES = (
     "DEEPSEEK_API_KEY",
     "DEEPSEEK_API_KEY_BACKUP",
@@ -1816,17 +1819,34 @@ def translate_missing_units(
                             and len(repair_group_indexes([unit.source for unit in remaining])) + len(jobs) - submitted
                             <= run_state.max_requests - run_state.translation_attempts()
                         )
+                        retry_empty_quality_batch = (
+                            saved == 0
+                            and len(batch) > 1
+                            and any(marker in reason for marker in (
+                                "translation has no ", "omitted translation rows",
+                            ))
+                        )
+                        partial_batch_limit = DEFAULT_BATCH_ITEMS if retry_empty_quality_batch else 4
                         can_defer = (
                             (not preflight_only or preflight_repair_fits)
                             and isinstance(error, PartialTranslationError)
-                            and (use_deepl_repairs or saved > 0)
-                            and 0 < len(remaining) <= (50 if use_deepl_repairs else 8 if preflight_only else 4)
+                            and (use_deepl_repairs or saved > 0 or retry_empty_quality_batch)
+                            # A multi-row response that contains no usable
+                            # target-language rows is recoverable: retry its
+                            # bounded rows as isolated requests. Preserve the
+                            # tighter bound for singleton/partial/invalid-JSON
+                            # failures so repeated bad output still trips the
+                            # systemic-failure guard.
+                            and 0 < len(remaining) <= (
+                                50 if use_deepl_repairs else partial_batch_limit
+                                if not preflight_only else 8
+                            )
                             and not run_state.stop_reason and not transport_failure(error)
                         )
                         if can_defer:
-                            # Sparse omissions are not an unusable batch. At 500
-                            # workers, completion order must not turn three small
-                            # gaps into a systemic provider failure.
+                            # Sparse omissions are not an unusable batch. A
+                            # caller-requested high fanout must not turn a few
+                            # small gaps into a systemic provider failure.
                             consecutive_failures = 0
                             run_state.data["deferred_batches"] += 1
                             for unit in remaining:
@@ -1883,7 +1903,15 @@ def translate_missing_units(
                     # repair and the full coverage gate report the missing rows.
                     # Provider/transport/systemic stops above remain terminal.
                     if not sample_passed and warmup_size < len(jobs):
-                        run_state.stop("Initial small-cohort output is insufficient; saved completed rows before high concurrency")
+                        # Leave this as a resumable incomplete inventory rather
+                        # than a terminal provider failure. The orchestrator
+                        # can reuse the checkpoint and try the isolated repair
+                        # rows again on its next bounded round.
+                        run_state.data["warmup_incomplete"] = True
+                        exhausted = True
+                        for future in pending:
+                            future.cancel()
+                        log("Initial small-cohort output is incomplete; keeping the checkpoint for a bounded resume.")
                     if sample_passed and not run_state.stop_reason:
                         run_state.data["warmup_passed"] = True
                         write_cache(cache_path, cache)

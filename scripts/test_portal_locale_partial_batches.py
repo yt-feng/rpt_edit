@@ -442,10 +442,10 @@ class PartialBatchTests(unittest.TestCase):
 
     def test_incomplete_warmup_never_dispatches_high_concurrency(self):
         units = {f"{i:064x}": builder.TranslationUnit(f"{i:064x}", "html:text:p", "公开研究报告内容") for i in range(100)}
-        calls = []
+        state, calls = builder.TranslationRun(), []
 
         def translator(locale, batch):
-            calls.append((locale, batch[0].key))
+            calls.append((locale, len(batch), state.data.get("warmup_passed", False)))
             raise builder.PartialTranslationError("missing row", {})
 
         with tempfile.TemporaryDirectory() as directory:
@@ -454,9 +454,36 @@ class PartialBatchTests(unittest.TestCase):
                     units, builder.empty_cache(), cache_path=Path(directory) / "cache.json.gz",
                     model=builder.DEFAULT_DEEPSEEK_MODEL, base_url="https://api.deepseek.com",
                     workers=500, timeout=1, attempts=1, max_batch_items=1,
-                    batch_translator=translator,
+                    batch_translator=translator, run_state=state,
                 )
         self.assertLessEqual(len(calls), 8)
+        self.assertTrue(state.stop_reason)
+
+    def test_empty_provider_batch_is_split_into_bounded_singleton_repairs(self):
+        units = self.queue_inventory(20)
+        state, calls = builder.TranslationRun(), []
+        native = {"ko": "공개 연구 보고서입니다", "ja": "公開調査レポートです", "ar": "هذا تقرير بحثي عام"}
+        empty_batch_seen = set()
+
+        def translator(locale, batch):
+            calls.append((locale, len(batch), state.data.get("warmup_passed", False)))
+            if locale == "ko" and len(batch) == 2 and batch[0].key == f"{0:064x}" and not empty_batch_seen:
+                empty_batch_seen.add(locale)
+                raise builder.PartialTranslationError("ko: translation has no Hangul text for 0", {})
+            return {unit.key: native[locale] for unit in batch}
+
+        with tempfile.TemporaryDirectory() as directory:
+            builder.translate_missing_units(
+                units, builder.empty_cache(), cache_path=Path(directory) / "cache.json.gz",
+                model=builder.DEFAULT_DEEPSEEK_MODEL, base_url="https://api.deepseek.com",
+                workers=500, timeout=1, attempts=2, max_batch_items=2,
+                batch_translator=translator, run_state=state,
+            )
+
+        self.assertEqual([call for call in calls if call[0] == "ko" and call[1] == 1], [("ko", 1, False), ("ko", 1, False)])
+        self.assertTrue(state.data["warmup_passed"])
+        self.assertEqual(state.data["pending_repair_count"], 0)
+        self.assertEqual(state.data["status"], "passed")
 
     @staticmethod
     def queue_inventory(count):
@@ -529,7 +556,7 @@ class PartialBatchTests(unittest.TestCase):
                 raise builder.PartialTranslationError("isolated missing row", {batch[0].key: native[locale]})
             return {unit.key: unit.source if len(batch) == 1 else native[locale] for unit in batch}
 
-        with tempfile.TemporaryDirectory() as directory, self.assertRaises(builder.TranslationStopped):
+        with tempfile.TemporaryDirectory() as directory, self.assertRaises(builder.TranslationError):
             builder.translate_missing_units(
                 units, builder.empty_cache(), cache_path=Path(directory) / "cache.json.gz",
                 model=builder.DEFAULT_DEEPSEEK_MODEL, base_url="https://api.deepseek.com",
@@ -541,12 +568,15 @@ class PartialBatchTests(unittest.TestCase):
         self.assertEqual(state.data["pending_repair_count"], 1)
         self.assertEqual(state.data["status"], "failed")
 
-    def test_more_than_four_missing_rows_are_not_deferred(self):
+    def test_more_than_four_missing_rows_in_a_partial_batch_are_not_deferred(self):
         units = self.queue_inventory(6)
         state = builder.TranslationRun()
-        translator = mock.Mock(side_effect=builder.PartialTranslationError(
-            "five missing rows", {f"{0:064x}": "공개 연구 보고서입니다"},
-        ))
+        native = {"ko": "공개 연구 보고서입니다", "ja": "公開調査レポートです", "ar": "هذا تقرير بحثي عام"}
+
+        def translator(locale, _batch):
+            raise builder.PartialTranslationError(
+                "five missing rows", {f"{0:064x}": native[locale]},
+            )
         with tempfile.TemporaryDirectory() as directory, self.assertRaises(builder.TranslationError):
             builder.translate_missing_units(
                 units, builder.empty_cache(), cache_path=Path(directory) / "cache.json.gz",

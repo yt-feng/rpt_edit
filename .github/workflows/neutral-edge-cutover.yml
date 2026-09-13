@@ -792,6 +792,13 @@ jobs:
             echo "::error::PORTAL_MULTILINGUAL_WORKERS must be an integer from 1 to 500"
             exit 2
           fi
+          locale_worker_cap=32
+          effective_workers="$PORTAL_MULTILINGUAL_WORKERS"
+          if [ "$effective_workers" -gt "$locale_worker_cap" ]; then
+            echo "::warning::PORTAL_MULTILINGUAL_WORKERS=$effective_workers exceeds the provider-stable cap; using $locale_worker_cap"
+            effective_workers="$locale_worker_cap"
+          fi
+          echo "Locale translation workers: requested=$PORTAL_MULTILINGUAL_WORKERS effective=$effective_workers"
           cache_args=()
           if [ -s "$RUNNER_TEMP/portal-locale-cache/cache-v1.json.gz" ]; then
             cache_args+=(--cache-in "$RUNNER_TEMP/portal-locale-cache/cache-v1.json.gz")
@@ -856,7 +863,7 @@ jobs:
           test -s _neutral_site/data/i18n/cache-v1.json.gz
           python3 -B scripts/run_portal_locale_backfill.py "${locale_args[@]}" \
             --cache-in _neutral_site/data/i18n/cache-v1.json.gz \
-            --workers "$PORTAL_MULTILINGUAL_WORKERS" \
+            --workers "$effective_workers" \
             --attempts 2 \
             --diagnostics-out "$RUNNER_TEMP/locale-full-diagnostics.json"
           python3 - <<'PY' >> "$GITHUB_OUTPUT"
