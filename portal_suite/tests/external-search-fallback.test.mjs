@@ -42,7 +42,7 @@ test("external search uses its full-request 10 second budget without changing th
   let boundedSearchArgs;
   const handlerSource = sourceBetween(
     "async function handleExternalSearch",
-    "// Fetch the upstream detail",
+    "function bytesToBinaryString",
   );
   const { functions } = evaluateFunctions(handlerSource, ["handleExternalSearch"], {
     URL,

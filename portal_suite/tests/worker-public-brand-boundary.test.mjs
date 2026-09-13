@@ -44,6 +44,18 @@ function addFunctions(context, names) {
   return context;
 }
 
+function addContactLeadFunctions(context) {
+  Object.assign(context, {
+    CONTACT_REPORT_SOURCES: new Set(["report-a", "authority", "external"]),
+    HIBOR_SOURCE: "report-a", AUTHORITY_SOURCE: "authority",
+  });
+  return addFunctions(context, [
+    "cleanReportRequestText", "cleanPublicReportText", "isExternalId",
+    "cleanContactReportSource", "cleanContactReportOriginId", "normalizeHotReportDate",
+    "normalizeContactReportTarget", "validateContactReportBinding", "publicContactReportItem",
+  ]);
+}
+
 const oldNotesBrand = ["KC", "Desk", "Notes"].join(" ");
 const legacySourcePattern = new RegExp(
   ["Reportify", "Nash[\\s._-]*AI", "Macro[\\s._-]*Gate", "Support[\\s._-]*Contact", "Portal[\\s._-]+Suite", oldNotesBrand, "Two[\\s._-]*tigers", "\\bmaifu\\b", "慧博", "麦府(?:课堂|学堂)", "hibor\\.com\\.cn"].join("|"),
@@ -51,10 +63,10 @@ const legacySourcePattern = new RegExp(
 );
 
 test("public report metadata removes aggregator brands while preserving real institutions", () => {
-  const context = addFunctions(brandContext(), ["publicSearchItem", "publicSearchPayload", "reportAPublicText"]);
+  const context = addContactLeadFunctions(addFunctions(brandContext(), ["publicSearchItem", "publicSearchPayload", "reportAPublicText"]));
   const payload = context.publicSearchPayload("external", {
     items: [{
-      id: "external-1",
+      id: "1295384700889731072",
       title: "Reportify | AI Infrastructure Outlook",
       title_cn: "NashAI：人工智能基础设施",
       institution: "Nash AI",
@@ -72,6 +84,9 @@ test("public report metadata removes aggregator brands while preserving real ins
   assert.equal(payload.items[0].title_cn, "人工智能基础设施");
   assert.equal(payload.items[0].institution, "");
   assert.equal(payload.items[0].author, "Goldman Sachs Research");
+  assert.equal(payload.items[0].contact_only, true);
+  assert.equal(payload.items[0].available, false);
+  assert.equal(Object.hasOwn(payload.items[0], "summary"), false);
   assert.equal(Object.hasOwn(payload.items[0], "channel_name"), false);
   assert.equal(payload.institutions.length, 1);
   assert.equal(payload.institutions[0].label, "Morgan Stanley");
@@ -87,7 +102,7 @@ test("public report metadata removes aggregator brands while preserving real ins
 
 test("fresh, stale and mirror search responses all pass the same public boundary", async () => {
   let cachedPayload = {
-    items: [{ id: "fresh", title: "Reportify: Fresh title", institution: "NashAI" }],
+    items: [{ id: "1295384700889731072", title: "Reportify: Fresh title", institution: "NashAI" }],
   };
   let fresh = true;
   const context = addFunctions(brandContext({
@@ -97,6 +112,7 @@ test("fresh, stale and mirror search responses all pass the same public boundary
     putSearchCache: async () => {},
     searchPayloadHasItems: (payload) => Boolean(payload && payload.items && payload.items.length),
   }), ["publicSearchItem", "publicSearchPayload", "handleCachedSearch"]);
+  addContactLeadFunctions(context);
 
   const fetcher = async () => { throw new Error("upstream unavailable"); };
   const freshResponse = await context.handleCachedSearch({}, {}, "external", "AI", 1, { items: [] }, fetcher);
@@ -104,7 +120,7 @@ test("fresh, stale and mirror search responses all pass the same public boundary
   assert.equal(freshResponse.payload.items[0].institution, "");
 
   fresh = false;
-  cachedPayload = { items: [{ id: "stale", title: "NashAI - Stale title", institution: "Jefferies" }] };
+  cachedPayload = { items: [{ id: "1295384700889731072", title: "NashAI - Stale title", institution: "Jefferies" }] };
   const staleResponse = await context.handleCachedSearch({}, {}, "external", "AI", 1, { items: [] }, fetcher);
   assert.equal(staleResponse.payload.cache_status, "stale");
   assert.equal(staleResponse.payload.items[0].title, "Stale title");
