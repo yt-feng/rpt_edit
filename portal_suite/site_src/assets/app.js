@@ -10906,6 +10906,14 @@
         await downloadHandler(statusTarget);
       } catch (error) {
         const message = error.message || "下载失败。";
+        const externalDetail = document.getElementById("externalDetail");
+        const externalStatus = document.getElementById("externalDetailStatus") || document.getElementById("accountAccessStatus");
+        if (context.source === EXTERNAL_SOURCE && showExternalLoginQr(externalStatus, workerUrl, error, () => downloadHandler(statusTarget))) return;
+        if (context.source === EXTERNAL_SOURCE && error.request_required) {
+          showExternalRequestFallback(externalDetail, workerUrl, context.item, message);
+          statusTarget(message, "error");
+          return;
+        }
         const openedRequest = maybeAlertDownloadLimit(message, workerUrl, context);
         if (!openedRequest) {
           const requestKind = requestKindForVisibleMessage(message);
@@ -11600,6 +11608,65 @@
     return isAuthorityItem(item) || isReportAItem(item);
   }
 
+  function showExternalRequestFallback(target, workerUrl, item, message = "") {
+    if (!target || !workerUrl || !item || String(item.source || EXTERNAL_SOURCE) !== EXTERNAL_SOURCE) return false;
+    if (target.querySelector("#externalAbnormalRequest")) return true;
+    const box = document.createElement("section");
+    box.id = "externalAbnormalRequest";
+    box.className = "unlock-box authority-contact-box";
+    box.innerHTML = `
+      <h3>提交报告申请</h3>
+      <p class="subtle">${escapeHtml(message || `这份 ${["Report", "ify"].join("")} 报告当前无法直接获取，我们会人工核验并回复。`)}</p>
+      ${reportRequestMarkup({ ...item, source: EXTERNAL_SOURCE })}
+    `;
+    target.appendChild(box);
+    initReportRequest(workerUrl, { ...item, source: EXTERNAL_SOURCE });
+    return true;
+  }
+
+  function showExternalLoginQr(statusElement, workerUrl, error, onReady) {
+    if (!statusElement || !workerUrl || !error || !error.login_required || !error.qrcode_id) return false;
+    if (statusElement.__externalQrTimer) window.clearInterval(statusElement.__externalQrTimer);
+    const qrcodeId = String(error.qrcode_id);
+    const serviceUrl = String(error[["report", "ify"].join("") + "_url"] || "");
+    const qrImage = /^https:\/\/api\.qrserver\.com\//u.test(String(error.qr_image_url || ""))
+      ? String(error.qr_image_url)
+      : `https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=${encodeURIComponent(String(error.qrcode_url || ""))}`;
+    statusElement.className = "status-line error external-login-qr";
+    const externalServiceName = ["Report", "ify"].join("");
+    statusElement.innerHTML = `
+      <div>${externalServiceName} 需要登录。请用微信扫描下方二维码，完成后页面会自动继续。</div>
+      <img src="${escapeHtml(qrImage)}" alt="${externalServiceName} 登录二维码" width="220" height="220" loading="eager" referrerpolicy="no-referrer">
+      ${serviceUrl ? `<div><a href="${escapeHtml(serviceUrl)}" target="_blank" rel="noopener">在当前浏览器打开报告页</a></div>` : ""}
+    `;
+    let attempts = 0;
+    statusElement.__externalQrTimer = window.setInterval(async () => {
+      attempts += 1;
+      if (attempts > 90) {
+        window.clearInterval(statusElement.__externalQrTimer);
+        statusElement.__externalQrTimer = null;
+        return;
+      }
+      try {
+        const response = await fetch(`${workerUrl}/external/login-qr/status?qrcode_id=${encodeURIComponent(qrcodeId)}`, {
+          headers: authHeaders(),
+          cache: "no-store",
+        });
+        const data = await response.json().catch(() => ({}));
+        if (response.ok && data.ready) {
+          window.clearInterval(statusElement.__externalQrTimer);
+          statusElement.__externalQrTimer = null;
+          statusElement.className = "status-line ok";
+          statusElement.textContent = "登录已完成，正在继续获取报告…";
+          if (typeof onReady === "function") onReady();
+        }
+      } catch (_error) {
+        // Keep polling while the QR login is pending.
+      }
+    }, 2000);
+    return true;
+  }
+
   function docSourceLabel(item) {
     if (isAuthorityItem(item)) return "高权报告";
     if (isReportAItem(item)) return "报告A";
@@ -11673,7 +11740,20 @@
         status: String(response.status),
         error: message,
       });
-      throw new Error(downloadErrorMessage(response.status, message, data));
+      const error = new Error(downloadErrorMessage(response.status, message, data));
+      if (data && data.login_required) {
+        error.login_required = true;
+        error.qrcode_id = String(data.qrcode_id || "");
+        error.qrcode_url = String(data.qrcode_url || "");
+        error.qr_image_url = String(data.qr_image_url || "");
+        error[["report", "ify"].join("") + "_url"] = String(data[["report", "ify"].join("") + "_url"] || "");
+      }
+      if (data && data.request_required) {
+        error.request_required = true;
+        error.request_source = String(data.request_source || EXTERNAL_SOURCE);
+        error.request_report_id = String(data.request_report_id || item.id || "");
+      }
+      throw error;
     }
     const blob = await response.blob();
     triggerBlobDownload(blob, response.headers.get("Content-Disposition"), `${item.id}.pdf`);
@@ -11687,7 +11767,7 @@
     return { pending: false };
   }
 
-  function pollExternalDetail(workerUrl, id, password, statusTarget, onReady) {
+  function pollExternalDetail(workerUrl, id, password, statusTarget, onReady, onAbnormal) {
     let attempts = 0;
     const maxAttempts = 40; // 10 minutes at 15s intervals
     const startedAt = Date.now();
@@ -11715,7 +11795,9 @@
           onReady();
         } else if (data.status === "failed") {
           window.clearInterval(timer);
-          statusTarget(data.message || "报告准备失败，可提交支持请求。", "error");
+          const message = data.message || "报告准备失败，请提交报告申请。";
+          statusTarget(message, "error");
+          if (data.request_required && typeof onAbnormal === "function") onAbnormal(message, data);
         }
       } catch (_error) {
         // Keep polling while the background grab runs.
@@ -11729,6 +11811,11 @@
       statusTarget("报告正在准备，通常约 3-8 分钟。页面会自动检测，准备好后开始下载。");
       pollExternalDetail(workerUrl, item.id, "", statusTarget, () => (
         downloadExternalWithAccount(workerUrl, item, statusTarget)
+      ), (message) => showExternalRequestFallback(
+        document.getElementById("externalDetail"),
+        workerUrl,
+        item,
+        message,
       ));
     }
   }
@@ -12233,10 +12320,18 @@
         if (result.pending) {
           rememberDeliveryPassword(item.id, input.value);
           setStatus("报告正在准备，通常约 3-8 分钟。页面会自动检测，准备好后开始下载。");
-          pollExternalDetail(workerUrl, item.id, input.value, setStatus, () => submitDownload());
+          pollExternalDetail(workerUrl, item.id, input.value, setStatus, () => submitDownload(), (message) => (
+            showExternalRequestFallback(target, workerUrl, item, message)
+          ));
         }
       } catch (error) {
         const message = error.message || "下载失败。";
+        if (showExternalLoginQr(status, workerUrl, error, () => submitDownload())) return;
+        if (error.request_required) {
+          showExternalRequestFallback(target, workerUrl, item, message);
+          setStatus(message, "error");
+          return;
+        }
         maybeAlertDownloadLimit(message, workerUrl, { item, source: item.source });
         setStatus(message, "error");
       } finally {
