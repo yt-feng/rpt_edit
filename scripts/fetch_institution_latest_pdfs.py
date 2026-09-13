@@ -93,6 +93,7 @@ DDG_SEARCH_ENDPOINTS = (
     ("html", "https://html.duckduckgo.com/html/"),
 )
 IMF_PROXY_TEST_URL = "https://www.imf.org/en/Publications"
+DETERMINISTIC_SKIP_STATUSES = {"too_large"}
 
 # Anchor hrefs that look like a downloadable document.
 PDF_HREF_RE = re.compile(r'(?:href|data-href|content)=["\']([^"\']+?\.(?:pdf|ashx)[^"\']*)["\']', re.I)
@@ -247,6 +248,8 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
         # unctad.org/system/files/.
         "kind": "html_listing",
         "pdf": "scrape",
+        "impersonate": True,
+        "use_proxy": True,
         "recency_filter": False,
         "listing_urls": [
             "https://unctad.org/publications",
@@ -1788,6 +1791,15 @@ def main() -> int:
                     if len(resolution_failure_samples) < 3:
                         resolution_failure_samples.append(f"landing fallback: {type(exc).__name__}: {exc}")
             if status != "ok" or used_url is None:
+                if status in DETERMINISTIC_SKIP_STATUSES:
+                    seen_items[dedup_key] = {
+                        "first_seen": today,
+                        "status": status,
+                        "max_pdf_mb": args.max_pdf_mb,
+                    }
+                    warn(f"  skipped ({status}): {title[:80]}")
+                    skipped.append({"institution": key, "title": title, "reason": status, "source_url": item["source_url"]})
+                    continue
                 # Could not download; do NOT mark seen so a transient failure is retried.
                 warn(f"  download failed ({status}): {title[:80]}")
                 skipped.append({"institution": key, "title": title, "reason": status, "source_url": item["source_url"]})
