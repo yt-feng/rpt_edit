@@ -21,6 +21,10 @@ _PROSE_WORDS = frozenset({"we", "you", "they", "it", "this", "that", "these", "t
 _SHORT_SOURCE_LABEL = re.compile(r"[A-Za-z0-9&\u3400-\u9fff]{1,12}")
 _SHORT_LATIN_LABEL = re.compile(r"[A-Za-z0-9][A-Za-z0-9.&+\-]{0,15}")
 _ACRONYM_PAIR = re.compile(r"[A-Z0-9][A-Z0-9.&+\-]* [A-Z0-9][A-Z0-9.&+\-]*")
+# A prose fragment can carry a list delimiter immediately before a short
+# proper name, e.g. `、台积电`. Strip only this list delimiter while checking
+# the label; sentence punctuation remains ineligible.
+_SHORT_LABEL_EDGE_PUNCTUATION = "、"
 _SHARED_JAPANESE_KEYWORD = re.compile(r"[A-Z0-9&+./\-\u3400-\u9fff]{1,12}")
 # Removing a protected index number leaves a separator, e.g. S&P 500指数
 # becomes S&P 指数. Permit that complete index-label form, not arbitrary
@@ -111,12 +115,16 @@ def is_short_latin_label_translation(source: object, translated: object) -> bool
     if not isinstance(source, str) or not isinstance(translated, str):
         return False
     source, translated = source.strip(), translated.strip()
+    source_core = source.strip(_SHORT_LABEL_EDGE_PUNCTUATION)
+    translated_core = translated.strip(_SHORT_LABEL_EDGE_PUNCTUATION)
+    edge_delimited = source_core != source or translated_core != translated
     return bool(
-        _SHORT_SOURCE_LABEL.fullmatch(source)
-        and re.search(r"[\u3400-\u9fff]", source)
-        and (_SHORT_LATIN_LABEL.fullmatch(translated)
-             or (len(translated) <= 16 and _ACRONYM_PAIR.fullmatch(translated)))
-        and re.search(r"[A-Za-z]", translated)
+        _SHORT_SOURCE_LABEL.fullmatch(source_core)
+        and re.search(r"[\u3400-\u9fff]", source_core)
+        and (not edge_delimited or len(source_core) <= 4)
+        and (_SHORT_LATIN_LABEL.fullmatch(translated_core)
+             or (len(translated_core) <= 16 and _ACRONYM_PAIR.fullmatch(translated_core)))
+        and re.search(r"[A-Za-z]", translated_core)
     )
 
 

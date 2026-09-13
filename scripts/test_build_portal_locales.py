@@ -3104,6 +3104,16 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
             with self.subTest(source=source, translated=translated):
                 builder.validate_translation_quality("ja", unit, translated)
 
+    def test_quality_gate_accepts_edge_delimited_short_cjk_company_label(self) -> None:
+        unit = builder.TranslationUnit(
+            key="b" * 64,
+            context="html:text:p",
+            source="、台积电",
+        )
+        for locale in builder.LOCALES:
+            with self.subTest(locale=locale):
+                builder.validate_translation_quality(locale, unit, "TSMC")
+
     def test_official_name_passthrough_does_not_require_a_closed_vocabulary(self) -> None:
         short_generic_english = builder.TranslationUnit(
             key="e" * 64,
