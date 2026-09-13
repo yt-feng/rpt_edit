@@ -25,6 +25,22 @@ on:
         description: "Artifact pattern used with source_artifact_run_id"
         required: true
         default: "final-dropbox-macro-shard-*"
+      institution_handoff_run_id:
+        description: "Optional Market Views institution source handoff run id"
+        required: false
+        default: ""
+      institution_handoff_date:
+        description: "Institution source date under xhs_notes/institutions; empty defaults to expected_bank_date"
+        required: false
+        default: ""
+      consulting_handoff_run_id:
+        description: "Optional Market Views consulting source handoff run id"
+        required: false
+        default: ""
+      consulting_handoff_date:
+        description: "Consulting source date under xhs_notes/consulting; empty defaults to expected_bank_date"
+        required: false
+        default: ""
       expected_shards:
         description: "Expected historical shard count; 0 disables the check"
         required: true
@@ -57,7 +73,10 @@ permissions:
 
 env:
   PYTHONUNBUFFERED: "1"
-  PRIVATE_HANDOFF_ROOT: "_private-workflow-handoff/xhs"
+  BANK_HANDOFF_ROOT: "_private-workflow-handoff/market-views/dropbox"
+  LEGACY_BANK_HANDOFF_ROOT: "_private-workflow-handoff/xhs"
+  INSTITUTION_HANDOFF_ROOT: "_private-workflow-handoff/market-views/institutions"
+  CONSULTING_HANDOFF_ROOT: "_private-workflow-handoff/market-views/consulting"
 
 concurrency:
   group: market-views-daily-pdf
@@ -94,16 +113,28 @@ jobs:
           SOURCE_HANDOFF_RUN_ID: ${{ github.event.inputs.source_handoff_run_id }}
           SOURCE_ARTIFACT_RUN_ID: ${{ github.event.inputs.source_artifact_run_id }}
           EXPECTED_BANK_DATE: ${{ github.event.inputs.expected_bank_date }}
+          INSTITUTION_HANDOFF_RUN_ID: ${{ github.event.inputs.institution_handoff_run_id }}
+          INSTITUTION_HANDOFF_DATE: ${{ github.event.inputs.institution_handoff_date }}
+          CONSULTING_HANDOFF_RUN_ID: ${{ github.event.inputs.consulting_handoff_run_id }}
+          CONSULTING_HANDOFF_DATE: ${{ github.event.inputs.consulting_handoff_date }}
         run: |
           if [ -n "$SOURCE_HANDOFF_RUN_ID" ] && [ -n "$SOURCE_ARTIFACT_RUN_ID" ]; then
             echo "source_handoff_run_id and source_artifact_run_id are mutually exclusive." >&2
             exit 1
           fi
-          if { [ -n "$SOURCE_HANDOFF_RUN_ID" ] || [ -n "$SOURCE_ARTIFACT_RUN_ID" ]; } && \
+          if { [ -n "$SOURCE_HANDOFF_RUN_ID" ] || [ -n "$SOURCE_ARTIFACT_RUN_ID" ] || \
+               [ -n "$INSTITUTION_HANDOFF_RUN_ID" ] || [ -n "$INSTITUTION_HANDOFF_DATE" ] || \
+               [ -n "$CONSULTING_HANDOFF_RUN_ID" ] || [ -n "$CONSULTING_HANDOFF_DATE" ]; } && \
              ! printf '%s\n' "$EXPECTED_BANK_DATE" | grep -Eq '^[0-9]{6,8}$'; then
             echo "A valid expected_bank_date is required with a private input source." >&2
             exit 1
           fi
+          for AUX_DATE in "$INSTITUTION_HANDOFF_DATE" "$CONSULTING_HANDOFF_DATE"; do
+            if [ -n "$AUX_DATE" ] && ! printf '%s\n' "$AUX_DATE" | grep -Eq '^[0-9]{6,8}$'; then
+              echo "Auxiliary handoff dates must be YYMMDD or YYYYMMDD: $AUX_DATE" >&2
+              exit 1
+            fi
+          done
 
       - name: Download historical bank shard artifacts
         if: ${{ github.event.inputs.source_artifact_run_id != '' }}
@@ -140,15 +171,94 @@ jobs:
             echo "A valid expected_bank_date is required with source_handoff_run_id." >&2
             exit 1
           fi
-          python scripts/private_workflow_handoff.py download-shards \
-            --prefix "$PRIVATE_HANDOFF_ROOT/${{ github.event.inputs.source_handoff_run_id }}/$EXPECTED_BANK_DATE" \
-            --destination "xhs_notes/dropbox/$EXPECTED_BANK_DATE"
+          if ! python scripts/private_workflow_handoff.py download-shards \
+              --prefix "$BANK_HANDOFF_ROOT/${{ github.event.inputs.source_handoff_run_id }}/$EXPECTED_BANK_DATE" \
+              --destination "xhs_notes/dropbox/$EXPECTED_BANK_DATE" \
+              --expected-count "${{ github.event.inputs.expected_shards || '0' }}"; then
+            echo "::notice::Falling back to legacy bank handoff root for run ${{ github.event.inputs.source_handoff_run_id }}."
+            python scripts/private_workflow_handoff.py download-shards \
+              --prefix "$LEGACY_BANK_HANDOFF_ROOT/${{ github.event.inputs.source_handoff_run_id }}/$EXPECTED_BANK_DATE" \
+              --destination "xhs_notes/dropbox/$EXPECTED_BANK_DATE" \
+              --expected-count "${{ github.event.inputs.expected_shards || '0' }}"
+          fi
+
+      - name: Download latest bank inputs from Market Views handoff
+        if: ${{ github.event.inputs.source_handoff_run_id == '' && github.event.inputs.source_artifact_run_id == '' && github.event.inputs.expected_bank_date != '' }}
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          EXPECTED_BANK_DATE="${{ github.event.inputs.expected_bank_date }}"
+          python scripts/private_workflow_handoff.py download-latest-shards \
+            --root "$BANK_HANDOFF_ROOT" \
+            --date "$EXPECTED_BANK_DATE" \
+            --destination "xhs_notes/dropbox/$EXPECTED_BANK_DATE" \
+            --expected-count "${{ github.event.inputs.expected_shards || '0' }}"
+
+      - name: Download auxiliary Market Views inputs from private R2
+        if: >-
+          ${{
+            github.event.inputs.institution_handoff_run_id != '' ||
+            github.event.inputs.institution_handoff_date != '' ||
+            github.event.inputs.consulting_handoff_run_id != '' ||
+            github.event.inputs.consulting_handoff_date != ''
+          }}
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+          EXPECTED_BANK_DATE: ${{ github.event.inputs.expected_bank_date }}
+          INSTITUTION_HANDOFF_RUN_ID: ${{ github.event.inputs.institution_handoff_run_id }}
+          INSTITUTION_HANDOFF_DATE: ${{ github.event.inputs.institution_handoff_date }}
+          CONSULTING_HANDOFF_RUN_ID: ${{ github.event.inputs.consulting_handoff_run_id }}
+          CONSULTING_HANDOFF_DATE: ${{ github.event.inputs.consulting_handoff_date }}
+        run: |
+          materialize_aux_source() {
+            local label="$1"
+            local root="$2"
+            local destination_root="$3"
+            local run_id="$4"
+            local source_date="${5:-$EXPECTED_BANK_DATE}"
+            if ! printf '%s\n' "$source_date" | grep -Eq '^[0-9]{6,8}$'; then
+              echo "Invalid $label handoff date: $source_date" >&2
+              exit 1
+            fi
+            if [ -n "$run_id" ]; then
+              python scripts/private_workflow_handoff.py download-dir \
+                --key "$root/$run_id/$source_date/xhs_notes.tar.gz" \
+                --destination "$destination_root/$source_date"
+            else
+              python scripts/private_workflow_handoff.py download-latest-dir \
+                --root "$root" \
+                --date "$source_date" \
+                --archive-name xhs_notes.tar.gz \
+                --destination "$destination_root/$source_date" \
+                --optional
+            fi
+          }
+
+          if [ -n "$INSTITUTION_HANDOFF_RUN_ID" ] || [ -n "$INSTITUTION_HANDOFF_DATE" ]; then
+            materialize_aux_source "institution" "$INSTITUTION_HANDOFF_ROOT" "xhs_notes/institutions" "$INSTITUTION_HANDOFF_RUN_ID" "$INSTITUTION_HANDOFF_DATE"
+          fi
+          if [ -n "$CONSULTING_HANDOFF_RUN_ID" ] || [ -n "$CONSULTING_HANDOFF_DATE" ]; then
+            materialize_aux_source "consulting" "$CONSULTING_HANDOFF_ROOT" "xhs_notes/consulting" "$CONSULTING_HANDOFF_RUN_ID" "$CONSULTING_HANDOFF_DATE"
+          fi
 
       - name: Resolve and validate primary bank source
         env:
           REQUESTED_DATE_FOLDER: ${{ github.event.inputs.date_folder || 'latest' }}
           EXPECTED_BANK_DATE: ${{ github.event.inputs.expected_bank_date || '' }}
+          EXPECTED_ARTICLES: ${{ github.event.inputs.expected_articles || '0' }}
           FORCE_REBUILD: ${{ github.event.inputs.force_rebuild || 'false' }}
+          SOURCE_HANDOFF_RUN_ID: ${{ github.event.inputs.source_handoff_run_id || '' }}
+          SOURCE_ARTIFACT_RUN_ID: ${{ github.event.inputs.source_artifact_run_id || '' }}
+          INSTITUTION_HANDOFF_RUN_ID: ${{ github.event.inputs.institution_handoff_run_id || '' }}
+          INSTITUTION_HANDOFF_DATE: ${{ github.event.inputs.institution_handoff_date || '' }}
+          CONSULTING_HANDOFF_RUN_ID: ${{ github.event.inputs.consulting_handoff_run_id || '' }}
+          CONSULTING_HANDOFF_DATE: ${{ github.event.inputs.consulting_handoff_date || '' }}
         run: |
           BUILD_DATE_FOLDER="$REQUESTED_DATE_FOLDER"
           PRIMARY_DATE_FOLDER="$REQUESTED_DATE_FOLDER"
@@ -174,10 +284,22 @@ jobs:
             echo "Primary bank source has no parsed report folders: $PRIMARY_DIR" >&2
             exit 1
           fi
+          if ! printf '%s\n' "$EXPECTED_ARTICLES" | grep -Eq '^[0-9]+$'; then
+            echo "expected_articles must be a non-negative integer: $EXPECTED_ARTICLES" >&2
+            exit 1
+          fi
+          if [ "$EXPECTED_ARTICLES" -gt 0 ] && [ "$REPORT_COUNT" -ne "$EXPECTED_ARTICLES" ]; then
+            echo "Expected $EXPECTED_ARTICLES parsed bank reports, found $REPORT_COUNT in $PRIMARY_DIR." >&2
+            exit 1
+          fi
 
           SOURCE_DIRS=()
           if [ "$BUILD_DATE_FOLDER" = "latest" ]; then
             for SOURCE_ROOT in xhs_notes/dropbox xhs_notes/institutions xhs_notes/consulting; do
+              if [ ! -d "$SOURCE_ROOT" ]; then
+                echo "::notice::Source root has no materialized inputs, skipping: $SOURCE_ROOT"
+                continue
+              fi
               LATEST_SOURCE_DATE="$(find "$SOURCE_ROOT" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | grep -E '^[0-9]{6,8}$' | sort -n | tail -1)"
               if [ -n "$LATEST_SOURCE_DATE" ]; then
                 SOURCE_DIRS+=("$SOURCE_ROOT/$LATEST_SOURCE_DATE")
@@ -204,6 +326,13 @@ jobs:
 
           EXISTING_PDF="market_view_summaries/$EXPECTED_DATE_FOLDER/market_views_$EXPECTED_DATE_FOLDER.pdf"
           if [ "$FORCE_REBUILD" != "true" ] && \
+             [ -z "$EXPECTED_BANK_DATE" ] && \
+             [ -z "$SOURCE_HANDOFF_RUN_ID" ] && \
+             [ -z "$SOURCE_ARTIFACT_RUN_ID" ] && \
+             [ -z "$INSTITUTION_HANDOFF_RUN_ID" ] && \
+             [ -z "$INSTITUTION_HANDOFF_DATE" ] && \
+             [ -z "$CONSULTING_HANDOFF_RUN_ID" ] && \
+             [ -z "$CONSULTING_HANDOFF_DATE" ] && \
              [ -f "$EXISTING_PDF" ] && \
              [ "$(stat -c '%s' "$EXISTING_PDF")" -gt 1024 ] && \
              [ "$(head -c 5 "$EXISTING_PDF")" = '%PDF-' ]; then
