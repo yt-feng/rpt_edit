@@ -24316,31 +24316,43 @@ async function handleExternalPdf(request, env, ctx = null) {
     const object = await env.REPORT_BUCKET.get(externalObjectKey(id));
     if (object) {
       const sanitized = await sanitizePdfExternalLinksBody(object.body);
-      if (externalPdfLooksLikePreview(sanitized, direct.item)) {
-        if (typeof env.REPORT_BUCKET.delete === "function") await env.REPORT_BUCKET.delete(externalObjectKey(id)).catch(() => null);
+      if (!externalPdfLooksLikePreview(sanitized, direct.item)) {
+        const consumed = await finalizeAccountDownloadDecision(env, request, accountDecision, id, "external");
+        if (!consumed.ok) {
+          return jsonResponse(request, env, consumed.status || 403, {
+            error: consumed.error || TRIAL_LIMIT_MESSAGE,
+            request_action: consumed.request_action || membershipRequestAction("access"),
+            limit_exceeded: Boolean(consumed.limit_exceeded),
+          });
+        }
+        scheduleHotReportArchive(
+          ctx,
+          () => archiveReportAsHot(env, externalReportHotArchiveInput(id, direct.item, sanitized)),
+          { source: "external", report_id: id },
+        );
+        return externalPdfResponse(request, env, sanitized, direct.title, id);
+      }
+      if (typeof env.REPORT_BUCKET.delete === "function") await env.REPORT_BUCKET.delete(externalObjectKey(id)).catch(() => null);
+      if (isAdmin && !reportifyToken) {
+        const qr = await reportifyLoginQr();
+        return jsonResponse(request, env, 503, {
+          error: "报告缓存异常。请扫描二维码登录 Reportify 后重试。",
+          login_required: true,
+          reportify_url: `${EXTERNAL_SITE}/reports/${id}`,
+          ...(qr || {}),
+        });
+      }
+      if (!isAdmin) {
         return jsonResponse(request, env, 503, {
           error: "这份报告缓存异常，请提交报告申请。",
-          request_required: !isAdmin,
+          request_required: true,
           request_source: "external",
           request_report_id: id,
           title: direct.title,
           institution: direct.item && direct.item.institution || "",
         });
       }
-      const consumed = await finalizeAccountDownloadDecision(env, request, accountDecision, id, "external");
-      if (!consumed.ok) {
-        return jsonResponse(request, env, consumed.status || 403, {
-          error: consumed.error || TRIAL_LIMIT_MESSAGE,
-          request_action: consumed.request_action || membershipRequestAction("access"),
-          limit_exceeded: Boolean(consumed.limit_exceeded),
-        });
-      }
-      scheduleHotReportArchive(
-        ctx,
-        () => archiveReportAsHot(env, externalReportHotArchiveInput(id, direct.item, sanitized)),
-        { source: "external", report_id: id },
-      );
-      return externalPdfResponse(request, env, sanitized, direct.title, id);
+      // An authenticated administrator retries the normal grab path below.
     }
   }
 
@@ -24430,17 +24442,19 @@ async function handleExternalStatus(request, env) {
     return jsonResponse(request, env, 400, { error: "Invalid report id." });
   }
   let ready = false;
+  let invalidCache = false;
   if (env.REPORT_BUCKET) {
     const head = await env.REPORT_BUCKET.head(externalObjectKey(id));
     if (head && Number(head.size || 0) >= 256 * 1024) ready = true;
     else if (head && typeof env.REPORT_BUCKET.delete === "function") {
+      invalidCache = true;
       await env.REPORT_BUCKET.delete(externalObjectKey(id)).catch(() => null);
     }
   }
   if (ready) return jsonResponse(request, env, 200, { ready, status: "ready" });
 
   const stored = await externalStoredStatus(env, id);
-  if (stored && stored.status === "failed") {
+  if (stored && (stored.status === "failed" || (invalidCache && stored.status === "ready"))) {
     const isAdmin = await externalAdminRequest(request, env);
     const token = await reportifyStoredToken(env);
     if (isAdmin && !token) {
@@ -24448,7 +24462,7 @@ async function handleExternalStatus(request, env) {
       return jsonResponse(request, env, 200, {
         ready: false,
         status: "failed",
-        message: "报告准备失败。请扫描二维码登录 Reportify 后重试。",
+        message: invalidCache ? "报告缓存异常。请扫描二维码登录 Reportify 后重试。" : "报告准备失败。请扫描二维码登录 Reportify 后重试。",
         login_required: true,
         reportify_url: `${EXTERNAL_SITE}/reports/${id}`,
         ...(qr || {}),
@@ -24458,7 +24472,7 @@ async function handleExternalStatus(request, env) {
     return jsonResponse(request, env, 200, {
       ready: false,
       status: "failed",
-      message: "报告准备失败，请提交报告申请。",
+      message: invalidCache ? "报告缓存异常，请提交报告申请。" : "报告准备失败，请提交报告申请。",
       request_required: !isAdmin,
       request_source: "external",
       request_report_id: id,
