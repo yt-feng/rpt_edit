@@ -169,14 +169,14 @@ const VID2PPT_GIFT_SOURCES = new Set(["vid2ppt_nova", "vid2ppt_atlas"]);
 const VID2PPT_REDEEM_URL = "https://vid2ppt.com/api/usage";
 const VID2PPT_CODE_PATTERN = /^[A-Z0-9][A-Z0-9-]{7,39}$/;
 
-// External reports provide title leads to ordinary users. The twotigers super
-// account retains a separate authenticated full-report acquisition path.
+// External report integration. Search/detail endpoints are public; PDF access
+// still requires a password.
 const EXTERNAL_HOST = "report" + "ify.cn";
 const EXTERNAL_API = `https://api.${EXTERNAL_HOST}`;
 const EXTERNAL_SITE = `https://${EXTERNAL_HOST}`;
+const EXTERNAL_SESSION_KEY = "reportify-auth/session.json";
 const EXTERNAL_R2_PREFIX = "report" + "ify";
 const EXTERNAL_STATUS_PREFIX = "report" + "ify-status";
-const EXTERNAL_SESSION_KEY = "reportify-auth/session.json";
 const EXTERNAL_SEARCH_PAGE_SIZE = 20;
 const EXTERNAL_SEARCH_MAX_PAGES = 3;
 const EXTERNAL_UA =
@@ -240,12 +240,12 @@ const HOT_REPORT_ITEM_PREFIX = `${HOT_REPORT_PREFIX}/items`;
 const HOT_REPORT_PDF_PREFIX = `${HOT_REPORT_PREFIX}/pdfs`;
 const HOT_REPORT_COMMENT_PREFIX = `${HOT_REPORT_PREFIX}/comments`;
 const HOT_REPORT_COMMENT_ORDER_PREFIX = `${HOT_REPORT_PREFIX}/comment-orders`;
-const HOT_REPORT_PUBLIC_INDEX_KEY = `${HOT_REPORT_PREFIX}/indexes/public-v3.json`;
-const HOT_REPORT_PUBLIC_INDEX_STALE_KEY = `${HOT_REPORT_PREFIX}/indexes/public-v3-stale.json`;
+const HOT_REPORT_PUBLIC_INDEX_KEY = `${HOT_REPORT_PREFIX}/indexes/public-v2.json`;
+const HOT_REPORT_PUBLIC_INDEX_STALE_KEY = `${HOT_REPORT_PREFIX}/indexes/public-v2-stale.json`;
 const HOT_REPORT_ID_PATTERN = /^hot:[a-f0-9]{16}$/;
 const HOT_REPORT_PUBLIC_MAX_ITEMS = 500;
 const HOT_REPORT_PUBLIC_INDEX_MAX_CANDIDATES = 750;
-const HOT_REPORT_PUBLIC_INDEX_VERSION = 3;
+const HOT_REPORT_PUBLIC_INDEX_VERSION = 2;
 const HOT_REPORT_PUBLIC_DEFAULT_PAGE_SIZE = 24;
 const HOT_REPORT_PUBLIC_MAX_PAGE_SIZE = 60;
 const HOT_REPORT_PUBLIC_CURSOR_MAX_LENGTH = 1024;
@@ -297,7 +297,7 @@ const REPORT_REQUEST_ADMIN_INDEX_KEY = "_report-requests/v1/admin-index.json";
 const REPORT_REQUEST_ADMIN_INDEX_VERSION = 1;
 const REPORT_REQUEST_ADMIN_DIRTY_PREFIX = "_report-requests/v1/index-dirty";
 const REPORT_REQUEST_ADMIN_MIGRATION_BATCH = 50;
-const CONTACT_REPORT_SOURCES = new Set([HIBOR_SOURCE, AUTHORITY_SOURCE, "external"]);
+const CONTACT_REPORT_SOURCES = new Set([HIBOR_SOURCE, AUTHORITY_SOURCE]);
 const MARKET_VIEW_PREFIX = "_market-views";
 const MARKET_VIEW_ITEM_PREFIX = `${MARKET_VIEW_PREFIX}/items`;
 const MARKET_VIEW_PDF_PREFIX = `${MARKET_VIEW_PREFIX}/pdfs`;
@@ -7753,11 +7753,23 @@ async function handleAdminReportPassword(request, env) {
     return jsonResponse(request, env, 401, { error: error.message || "Admin session is invalid." });
   }
 
-  if (source === AUTHORITY_SOURCE || source === "external") {
+  if (source === AUTHORITY_SOURCE) {
     return jsonResponse(request, env, 403, {
-      error: "该报告仅提供检索线索，完整报告需要另行提交申请。",
+      error: "高权报告仅提供检索线索，无法生成下载发货链接。请通过站内入口提交支持请求。",
       request_action: membershipRequestAction("support"),
     });
+  }
+
+  if (source === "external") {
+    try {
+      return jsonResponse(request, env, 200, {
+        id,
+        source,
+        password: await derivedReportPassword(env, id),
+      });
+    } catch (_error) {
+      return jsonResponse(request, env, 503, { error: "Could not calculate report password." });
+    }
   }
 
   if (source === HOT_REPORT_SOURCE) {
@@ -7768,12 +7780,6 @@ async function handleAdminReportPassword(request, env) {
       return jsonResponse(request, env, 503, { error: "Hot report storage is unavailable." });
     }
     if (!found) return jsonResponse(request, env, 404, { error: "Report not found." });
-    if (found.item.origin_source === "external" && !(await externalAdminRequest(request, env))) {
-      return jsonResponse(request, env, 403, {
-        error: "该报告仅提供检索线索，完整报告需要另行提交申请。",
-        request_required: true,
-      });
-    }
     try {
       return jsonResponse(request, env, 200, {
         id,
@@ -9800,9 +9806,6 @@ async function prepareHotReportArchiveWrite(env, id, source, originId) {
 }
 
 async function archiveReportAsHot(env, input = {}) {
-  if (cleanHotReportOriginSource(input.origin_source) === "external" && input.allow_external !== true) {
-    throw new Error("External reports require manual contact-report fulfillment.");
-  }
   if (
     !env.REPORT_BUCKET
     || typeof env.REPORT_BUCKET.get !== "function"
@@ -9891,6 +9894,23 @@ function catalogReportHotArchiveInput(report, descriptor, reason = "successful_d
   };
 }
 
+function externalReportHotArchiveInput(id, item, bytes) {
+  const title = String(item && (item.title || item.title_cn) || id || "近期热门报告");
+  return {
+    origin_source: "external",
+    origin_report_id: String(id || ""),
+    title,
+    title_cn: String(item && item.title_cn || ""),
+    institution: String(item && item.institution || ""),
+    date: normalizeHotReportDate(item && item.date),
+    description: String(item && item.summary || ""),
+    filename: safePdfFilename(`${title}.pdf`),
+    size_bytes: Math.max(0, Number(bytes && bytes.byteLength || item && item.size_bytes || 0) || 0),
+    body: bytes,
+    reason: "successful_download",
+  };
+}
+
 function thinkTankHotArchiveInput(row, bytes) {
   const item = slimThinkTankItem(row || {});
   return {
@@ -9912,28 +9932,16 @@ function publicHotReportItem(row) {
   const id = cleanHotReportId(row && row.id);
   const retentionState = String(row && row.retention_state || "active");
   if (!id || retentionState !== "active") return null;
-  const originSource = cleanHotReportOriginSource(row.origin_source);
-  const originId = cleanHotReportOriginId(row.origin_report_id);
-  const requestOnly = originSource === "external";
   return {
     id,
     source: HOT_REPORT_SOURCE,
-    ...(requestOnly ? {
-      origin_source: originSource,
-      origin_report_id: originId,
-      request_source: "external",
-      request_report_id: isExternalId(originId) ? originId : "",
-      available: false,
-      availability: "contact_only",
-      contact_only: true,
-    } : {}),
     title: publicSourceText(cleanHotReportText(row.title, 320)) || "近期热门报告",
     title_cn: publicSourceText(cleanHotReportText(row.title_cn, 320)),
     institution: publicSourceText(cleanHotReportText(row.institution, 160)),
     date: cleanHotReportText(row.date, 10),
-    description: requestOnly ? "" : publicBrandText(cleanHotReportText(row.description, 1600)),
-    filename: requestOnly ? "" : safeFilename(publicBrandText(row.filename || `${id}.pdf`)),
-    size_bytes: requestOnly ? 0 : Math.max(0, Number(row.size_bytes || 0) || 0),
+    description: publicBrandText(cleanHotReportText(row.description, 1600)),
+    filename: safeFilename(publicBrandText(row.filename || `${id}.pdf`)),
+    size_bytes: Math.max(0, Number(row.size_bytes || 0) || 0),
     sort_order: Number(row.sort_order || 0) || 0,
     created_at: String(row.created_at || ""),
     updated_at: String(row.updated_at || ""),
@@ -10406,7 +10414,6 @@ async function findHotReportRow(env, value) {
   const row = await r2GetJsonStrict(env, key);
   const item = publicHotReportItem(row);
   if (!item) return null;
-  if (item.origin_source === "external") return { row, item };
   const object = await env.REPORT_BUCKET.head(hotReportPdfKey(item.id));
   return object ? { row, item } : null;
 }
@@ -11058,29 +11065,6 @@ async function handleHotReportItem(request, env) {
   try {
     const found = await findHotReportRow(env, id);
     if (!found) return jsonResponse(request, env, 404, { detail: "Hot report not found." });
-    if (found.item.origin_source === "external") {
-      const originId = cleanContactReportOriginId("external", found.item.origin_report_id);
-      const target = normalizeContactReportTarget({ ...found.row, id: originId, source: "external" }, "external", originId);
-      if (target) {
-        await putContactReportTarget(env, target);
-        const token = await createContactReportTargetToken(env, "external", originId, target);
-        const binding = await readContactReportBinding(env, "external", originId, { verifyObject: true });
-        const availability = publicContactReportItem(binding && binding.row, target);
-        return jsonResponse(request, env, 200, {
-          item: {
-            ...found.item,
-            available: availability.available,
-            availability: availability.availability,
-            contact_only: availability.contact_only,
-            download_url: availability.download_url,
-            filename: availability.filename,
-            size_bytes: availability.size_bytes,
-            target_token: token,
-            request_token: token,
-          },
-        });
-      }
-    }
     return jsonResponse(request, env, 200, { item: found.item });
   } catch (error) {
     return jsonResponse(request, env, 503, { detail: error.message || "近期热门报告暂时无法读取。" });
@@ -11276,7 +11260,7 @@ async function handleHotReportAccess(request, env) {
   }
 }
 
-async function handleHotReportPdf(request, env, ctx = null) {
+async function handleHotReportPdf(request, env) {
   let payload = {};
   try {
     if (request.method === "GET") {
@@ -11293,27 +11277,6 @@ async function handleHotReportPdf(request, env, ctx = null) {
   }
   const id = cleanHotReportId(payload.id);
   if (!id) return jsonResponse(request, env, 400, { error: "Invalid hot report id." });
-  let found;
-  try {
-    found = await findHotReportRow(env, id);
-  } catch (_error) {
-    return jsonResponse(request, env, 503, { error: "Report availability is temporarily unavailable." });
-  }
-  if (!found) return jsonResponse(request, env, 404, { error: "Hot report not found." });
-  if (found.item.origin_source === "external") {
-    if (await externalAdminRequest(request, env)) {
-      return handleExternalPdf(new Request(request.url, {
-        method: "POST",
-        headers: request.headers,
-        body: JSON.stringify({ id: found.item.origin_report_id, password: payload.password || "" }),
-      }), env, ctx);
-    }
-      return handleContactReportPdf(new Request(request.url, {
-        method: "POST",
-        headers: request.headers,
-        body: JSON.stringify({ source: "external", id: found.item.origin_report_id }),
-    }), env, "external");
-  }
   const password = String(payload.password || "");
   let passwordAllowed = false;
   if (password) {
@@ -11347,6 +11310,8 @@ async function handleHotReportPdf(request, env, ctx = null) {
         });
       }
     }
+    const found = await findHotReportRow(env, id);
+    if (!found) return jsonResponse(request, env, 404, { error: "Hot report not found." });
     const object = await env.REPORT_BUCKET.get(hotReportPdfKey(id));
     if (!object) return jsonResponse(request, env, 404, { error: "PDF is not currently available.", archived: true });
     return new Response(object.body, {
@@ -19166,7 +19131,6 @@ function cleanContactReportSource(value) {
 function cleanContactReportOriginId(sourceValue, value) {
   const source = cleanContactReportSource(sourceValue);
   const id = String(value || "").normalize("NFKC").trim();
-  if (source === "external") return isExternalId(id) ? id : "";
   if (source === HIBOR_SOURCE) {
     const match = id.match(/^report-a:([A-Za-z0-9_-]{1,180})$/);
     return match ? `report-a:${match[1]}` : "";
@@ -19268,9 +19232,7 @@ async function contactSearchResponseWithTargetTokens(request, env, source, respo
       ? await createContactReportTargetToken(env, source, target.origin_id, target)
       : "";
     return {
-      ...(source === "external"
-        ? { ...publicContactReportItem(null, target || {}), title_cn: publicSourceText(item && item.title_cn) }
-        : item),
+      ...item,
       target_token: targetToken,
       request_token: targetToken,
     };
@@ -19503,8 +19465,6 @@ async function resolveContactReportTarget(env, sourceValue, originIdValue, optio
     recovered = await recoverHiborContactReportTarget(originId);
   } else if (source === AUTHORITY_SOURCE) {
     recovered = await recoverAuthorityContactReportTarget(env, originId);
-  } else if (source === "external") {
-    recovered = await recoverExternalContactReportTarget(env, originId);
   }
   const target = normalizeContactReportTarget(recovered, source, originId);
   if (!target) return null;
@@ -19801,13 +19761,6 @@ async function handleContactReportPdf(request, env, forcedSource = "") {
   if (!binding) {
     return jsonResponse(request, env, 403, {
       error: accessContactMessage(request, "该报告尚未入库。", "This report is not yet available. "),
-      ...(source === "external" ? {
-        source,
-        id: originId,
-        contact_only: true,
-        availability: "contact_only",
-        request_required: true,
-      } : {}),
     });
   }
   let user;
@@ -20370,9 +20323,7 @@ async function catalogPdfIntakeCandidates(env, queryValue, pageValue) {
 async function contactReportSearchCandidates(request, env, source) {
   const response = source === HIBOR_SOURCE
     ? await handleHiborSearch(request, env)
-    : source === "external"
-      ? await handleExternalSearch(request, env)
-      : await handleAuthoritySearch(request, env);
+    : await handleAuthoritySearch(request, env);
   const data = await response.json().catch(() => ({}));
   if (!response.ok) return { status: response.status, data };
   const index = (await readContactReportIndexObject(env)).index;
@@ -20405,7 +20356,7 @@ async function handleAccountAdminPdfIntakeSearch(request, env) {
   }
   const url = new URL(request.url);
   const source = String(url.searchParams.get("source") || "").trim().toLowerCase();
-  if (source !== "catalog" && !CONTACT_REPORT_SOURCES.has(source)) {
+  if (!["catalog", HIBOR_SOURCE, AUTHORITY_SOURCE].includes(source)) {
     return jsonResponse(request, env, 400, { detail: "报告来源无效。" });
   }
   try {
@@ -20686,17 +20637,11 @@ function publicSearchItem(item) {
   return row;
 }
 
-function publicSearchPayload(source, payload) {
+function publicSearchPayload(_source, payload) {
   if (!payload || typeof payload !== "object" || Array.isArray(payload)) return payload;
   const output = { ...payload };
-  const publicItem = source === "external"
-    ? (item) => ({
-      ...publicContactReportItem(null, { ...item, source: "external" }),
-      title_cn: publicSourceText(item && item.title_cn),
-    })
-    : publicSearchItem;
-  if (Array.isArray(output.items)) output.items = output.items.map(publicItem);
-  if (Array.isArray(output.facetItems)) output.facetItems = output.facetItems.map(publicItem);
+  if (Array.isArray(output.items)) output.items = output.items.map(publicSearchItem);
+  if (Array.isArray(output.facetItems)) output.facetItems = output.facetItems.map(publicSearchItem);
   if (Array.isArray(output.institutions)) {
     output.institutions = output.institutions
       .map((facet) => {
@@ -23817,6 +23762,10 @@ function externalStatusKey(id) {
   return `${EXTERNAL_STATUS_PREFIX}/${id}.json`;
 }
 
+function isExternalId(value) {
+  return /^[0-9]{6,25}$/.test(String(value || "").trim());
+}
+
 async function externalStoredStatus(env, id) {
   if (!env.REPORT_BUCKET) return null;
   try {
@@ -23838,10 +23787,13 @@ async function externalPutStatus(env, id, status, message = "") {
       message: String(message || "").slice(0, 500),
       updated_at: new Date().toISOString(),
     }), {
-      httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "no-store" },
+      httpMetadata: {
+        contentType: "application/json; charset=utf-8",
+        cacheControl: "no-store",
+      },
     });
   } catch (_error) {
-    // Status is best-effort; the PDF object remains the source of truth.
+    // Status files are best-effort; the PDF path remains the source of truth.
   }
 }
 
@@ -23893,6 +23845,14 @@ async function reportifyLoginQr() {
   }
 }
 
+async function externalAdminRequest(request, env) {
+  try {
+    return isSuperAccount(await currentUserFromRequest(env, request));
+  } catch (_error) {
+    return false;
+  }
+}
+
 function externalStatusAgeMs(stored) {
   const updated = Date.parse(String(stored && stored.updated_at || ""));
   if (!Number.isFinite(updated)) return Number.POSITIVE_INFINITY;
@@ -23916,18 +23876,6 @@ function externalPendingResponse(request, env, stored = null) {
   });
 }
 
-async function externalAdminRequest(request, env) {
-  try {
-    return isSuperAccount(await currentUserFromRequest(env, request));
-  } catch (_error) {
-    return false;
-  }
-}
-
-function isExternalId(value) {
-  return /^[0-9]{6,25}$/.test(String(value || "").trim());
-}
-
 function externalIsoDate(publishAt) {
   const ms = Number(publishAt || 0);
   if (!ms) return "";
@@ -23944,7 +23892,6 @@ function slimExternalItem(item) {
   const summary = publicSourceText(item.summary);
   return {
     id: String(item.report_id || ""),
-    source: "external",
     title: title || "Untitled report",
     title_cn: publicSourceText(item.title_cn),
     institution: publicSourceText(item.institution_name),
@@ -23974,97 +23921,29 @@ async function externalDetailItem(id, authToken = "") {
     return {
       item: slimExternalDetailItem(main, id),
       pdf_url: String(main.url_pdf || "").trim(),
+      readable: main.readable !== false,
+      resource_limit: Object.prototype.hasOwnProperty.call(main, "resource_limit")
+        ? Number(main.resource_limit || 0) || 0
+        : null,
+      resource_limit_known: Object.prototype.hasOwnProperty.call(main, "resource_limit"),
+      render_type: String(main.render_type || "").trim().toLowerCase(),
     };
   } catch (_error) {
     return null;
   }
 }
 
-async function recoverExternalContactReportTarget(env, originId) {
-  const mirror = await getSearchMirror(env, "external");
-  const item = mirror && Array.isArray(mirror.items)
-    ? mirror.items.find((candidate) => String(candidate && candidate.id || "") === originId)
-    : null;
-  const mirrored = normalizeContactReportTarget(item, "external", originId);
-  if (mirrored) return mirrored;
-  // Legacy hot archives retain canonical metadata even when their PDF came
-  // from the retired automatic pipeline. Recover only the title lead.
-  const hotId = await automaticHotReportId("external", originId);
-  const archived = await safeR2GetJson(env, hotReportItemKey(hotId));
-  if (archived && archived.id === hotId && archived.origin_source === "external"
-    && String(archived.origin_report_id || "") === originId) {
-    const target = normalizeContactReportTarget({ ...archived, id: originId, source: "external" }, "external", originId);
-    if (target) return target;
-  }
-  const detail = await externalDetailItem(originId);
-  return normalizeContactReportTarget(detail && detail.item, "external", originId);
-}
-
-// Fetch the upstream detail and return a signed PDF URL when the upstream
-// account already has access. The URL is never sent to ordinary users.
-async function externalDirectPdfUrl(id, authToken = "") {
-  const detail = await externalDetailItem(id, authToken);
-  const item = detail && detail.item ? detail.item : {};
-  return {
-    url: detail ? String(detail.pdf_url || "").trim() : "",
-    title: String(item.title || item.title_cn || "").trim(),
-    item: item && item.id ? item : { id, source: "external", title: String(item.title || id) },
-  };
-}
-
-function externalReportHotArchiveInput(id, item, bytes) {
-  const title = String(item && (item.title || item.title_cn) || id || "近期热门报告");
-  return {
-    origin_source: "external",
-    origin_report_id: String(id || ""),
-    title,
-    title_cn: String(item && item.title_cn || ""),
-    institution: String(item && item.institution || ""),
-    date: normalizeHotReportDate(item && item.date),
-    description: String(item && item.summary || ""),
-    filename: safePdfFilename(`${title}.pdf`),
-    size_bytes: Math.max(0, Number(bytes && bytes.byteLength || item && item.size_bytes || 0) || 0),
-    body: bytes,
-    reason: "successful_download",
-    allow_external: true,
-  };
-}
-
-// Ask GitHub to run the browser grab workflow for the privileged account.
-async function triggerExternalGrab(env, id, reportifyToken = "") {
-  const repo = String(env.GH_REPO || "").trim();
-  const token = String(env.GH_DISPATCH_TOKEN || "").trim();
-  if (!repo || !token || token === "unconfigured") return false;
-  try {
-    const resp = await fetch(`https://api.github.com/repos/${repo}/dispatches`, {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${token}`,
-        "Accept": "application/vnd.github+json",
-        "Content-Type": "application/json",
-        "User-Agent": "portal-suite-worker",
-        "X-GitHub-Api-Version": "2022-11-28",
-      },
-      body: JSON.stringify({
-        event_type: "report" + "ify-grab",
-        client_payload: { id, reportify_token: String(reportifyToken || "") },
-      }),
-    });
-    return resp.ok;
-  } catch (_error) {
-    return false;
-  }
-}
-
 async function handleExternalItem(request, env) {
-  if (await externalAdminRequest(request, env)) {
-    const id = String(new URL(request.url).searchParams.get("id") || "").trim();
-    if (!isExternalId(id)) return jsonResponse(request, env, 400, { error: "Invalid report id." });
-    const detail = await externalDetailItem(id, await reportifyStoredToken(env));
-    if (!detail || !detail.item || !detail.item.id) return jsonResponse(request, env, 404, { error: "Report not found." });
-    return jsonResponse(request, env, 200, { item: detail.item });
+  const url = new URL(request.url);
+  const id = String(url.searchParams.get("id") || "").trim();
+  if (!isExternalId(id)) {
+    return jsonResponse(request, env, 400, { error: "Invalid report id." });
   }
-  return handleContactReportItem(request, env, "external");
+  const detail = await externalDetailItem(id, await reportifyStoredToken(env));
+  if (!detail || !detail.item || !detail.item.id) {
+    return jsonResponse(request, env, 404, { error: "Report not found." });
+  }
+  return jsonResponse(request, env, 200, { item: detail.item });
 }
 
 function normalizeEmbeddedSearchDate(value) {
@@ -24278,6 +24157,22 @@ async function handleExternalSearch(request, env) {
   }, (_error) => externalSearchMirrorFallback(env, query, page, filters));
 }
 
+// Fetch the upstream detail and, if the report is directly readable, return its
+// presigned PDF url. Returns "" when the PDF is gated (needs a browser grab).
+async function externalDirectPdfUrl(id, authToken = "") {
+  const detail = await externalDetailItem(id, authToken);
+  const item = detail && detail.item ? detail.item : {};
+  return {
+    url: detail ? String(detail.pdf_url || "").trim() : "",
+    title: String(item.title || item.title_cn || "").trim(),
+    item: item && item.id ? item : { id, source: "external", title: String(item.title || id) },
+    readable: detail ? detail.readable !== false : false,
+    resource_limit: detail && detail.resource_limit_known ? Number(detail.resource_limit || 0) || 0 : null,
+    resource_limit_known: Boolean(detail && detail.resource_limit_known),
+    render_type: detail ? String(detail.render_type || "") : "",
+  };
+}
+
 function bytesToBinaryString(bytes) {
   let out = "";
   const chunk = 0x8000;
@@ -24321,13 +24216,34 @@ function externalPdfResponse(request, env, sanitized, title, id) {
   });
 }
 
-async function handleExternalPdf(request, env, ctx = null) {
-  // Ordinary users stay on the verified manual-fulfillment path. Only the
-  // server-verified super account (the twotigers administrator) may use the
-  // legacy Reportify acquisition path.
-  if (!(await externalAdminRequest(request, env))) {
-    return handleContactReportPdf(request, env, "external");
+// Ask GitHub to run the external grab workflow for a gated report. Returns true
+// when the dispatch was accepted (HTTP 204).
+async function triggerExternalGrab(env, id, reportifyToken = "") {
+  const repo = String(env.GH_REPO || "").trim();
+  const token = String(env.GH_DISPATCH_TOKEN || "").trim();
+  if (!repo || !token || token === "unconfigured") return false;
+  try {
+    const resp = await fetch(`https://api.github.com/repos/${repo}/dispatches`, {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${token}`,
+        "Accept": "application/vnd.github+json",
+        "Content-Type": "application/json",
+        "User-Agent": "portal-suite-worker",
+        "X-GitHub-Api-Version": "2022-11-28",
+      },
+      body: JSON.stringify({
+        event_type: "report" + "ify-grab",
+        client_payload: { id, reportify_token: String(reportifyToken || "") },
+      }),
+    });
+    return resp.ok;
+  } catch (_error) {
+    return false;
   }
+}
+
+async function handleExternalPdf(request, env, ctx = null) {
   const url = new URL(request.url);
   let payload = {};
   if (request.method === "POST") {
@@ -24339,8 +24255,9 @@ async function handleExternalPdf(request, env, ctx = null) {
   }
   const id = String(payload.id || url.searchParams.get("id") || "").trim();
   const password = String(payload.password || url.searchParams.get("password") || "");
-  if (!isExternalId(id)) return jsonResponse(request, env, 400, { error: "Invalid report id." });
-
+  if (!isExternalId(id)) {
+    return jsonResponse(request, env, 400, { error: "Invalid report id." });
+  }
   const accountDecision = await accountDownloadDecision(env, request, id, "external");
   const accountAllowed = Boolean(accountDecision.allowed);
   if (!password && !accountAllowed) {
@@ -24354,7 +24271,10 @@ async function handleExternalPdf(request, env, ctx = null) {
     return jsonResponse(request, env, 401, { error: "Password is incorrect." });
   }
 
+  const isAdmin = await externalAdminRequest(request, env);
   const reportifyToken = await reportifyStoredToken(env);
+
+  // 1) Directly readable reports expose a presigned PDF url - stream it (instant).
   const direct = await externalDirectPdfUrl(id, reportifyToken);
   if (direct.url) {
     try {
@@ -24362,55 +24282,53 @@ async function handleExternalPdf(request, env, ctx = null) {
       if (pdf.ok) {
         const sanitized = await sanitizePdfExternalLinksBody(pdf.body);
         const consumed = await finalizeAccountDownloadDecision(env, request, accountDecision, id, "external");
-        if (!consumed.ok) return jsonResponse(request, env, consumed.status || 403, {
-          error: consumed.error || TRIAL_LIMIT_MESSAGE,
-          request_action: consumed.request_action || membershipRequestAction("access"),
-          limit_exceeded: Boolean(consumed.limit_exceeded),
-        });
-        scheduleHotReportArchive(ctx, () => archiveReportAsHot(
-          env,
-          externalReportHotArchiveInput(id, direct.item, sanitized),
-        ), { source: "external", report_id: id });
+        if (!consumed.ok) {
+          return jsonResponse(request, env, consumed.status || 403, {
+            error: consumed.error || TRIAL_LIMIT_MESSAGE,
+            request_action: consumed.request_action || membershipRequestAction("access"),
+            limit_exceeded: Boolean(consumed.limit_exceeded),
+          });
+        }
+        scheduleHotReportArchive(
+          ctx,
+          () => archiveReportAsHot(env, externalReportHotArchiveInput(id, direct.item, sanitized)),
+          { source: "external", report_id: id },
+        );
         return externalPdfResponse(request, env, sanitized, direct.title, id);
       }
     } catch (_error) {
-      // Fall through to the mirrored object / browser grab paths.
+      // Fall through to the R2 / grab paths below.
     }
   }
 
+  // 2) Already grabbed by the workflow and mirrored to R2.
   if (env.REPORT_BUCKET) {
     const object = await env.REPORT_BUCKET.get(externalObjectKey(id));
     if (object) {
       const sanitized = await sanitizePdfExternalLinksBody(object.body);
       const consumed = await finalizeAccountDownloadDecision(env, request, accountDecision, id, "external");
-      if (!consumed.ok) return jsonResponse(request, env, consumed.status || 403, {
-        error: consumed.error || TRIAL_LIMIT_MESSAGE,
-        request_action: consumed.request_action || membershipRequestAction("access"),
-        limit_exceeded: Boolean(consumed.limit_exceeded),
-      });
-      scheduleHotReportArchive(ctx, () => archiveReportAsHot(
-        env,
-        externalReportHotArchiveInput(id, direct.item, sanitized),
-      ), { source: "external", report_id: id });
+      if (!consumed.ok) {
+        return jsonResponse(request, env, consumed.status || 403, {
+          error: consumed.error || TRIAL_LIMIT_MESSAGE,
+          request_action: consumed.request_action || membershipRequestAction("access"),
+          limit_exceeded: Boolean(consumed.limit_exceeded),
+        });
+      }
+      scheduleHotReportArchive(
+        ctx,
+        () => archiveReportAsHot(env, externalReportHotArchiveInput(id, direct.item, sanitized)),
+        { source: "external", report_id: id },
+      );
       return externalPdfResponse(request, env, sanitized, direct.title, id);
     }
   }
 
-  const stored = await externalStoredStatus(env, id);
-  if (externalStatusIsActive(stored)) return externalPendingResponse(request, env, stored);
-  if (externalStatusIsRecentFailure(stored)) {
-    const qr = reportifyToken ? null : await reportifyLoginQr();
-    return jsonResponse(request, env, 503, {
-      error: "报告刚刚准备失败，请稍后重试或通过站内入口提交支持请求。",
-      request_action: membershipRequestAction("support"),
-      updated_at: String(stored.updated_at || ""),
-      login_required: !reportifyToken,
-      reportify_url: `${EXTERNAL_SITE}/reports/${id}`,
-      ...(qr || {}),
-    });
-  }
-
-  if (!reportifyToken) {
+  // A gated image-only response is an upstream login/entitlement failure, not
+  // a usable PDF. Ordinary users should be offered the report request form
+  // immediately; the privileged admin can scan a QR code and retry.
+  const upstreamRequiresLogin = direct.readable === false
+    || (direct.render_type === "image" && direct.resource_limit_known && direct.resource_limit <= 0);
+  if (upstreamRequiresLogin && isAdmin && !reportifyToken) {
     const qr = await reportifyLoginQr();
     return jsonResponse(request, env, 409, {
       error: "Reportify 需要登录。请扫描二维码登录后重试。",
@@ -24419,53 +24337,112 @@ async function handleExternalPdf(request, env, ctx = null) {
       ...(qr || {}),
     });
   }
+  if (upstreamRequiresLogin && !isAdmin) {
+    return jsonResponse(request, env, 503, {
+      error: "这份报告当前无法直接获取，请提交报告申请。",
+      request_required: true,
+      request_source: "external",
+      request_report_id: id,
+      reportify_url: `${EXTERNAL_SITE}/reports/${id}`,
+      title: direct.title,
+      institution: direct.item && direct.item.institution || "",
+    });
+  }
+
+  // 3) Gated and not yet mirrored - request preparation and let the page poll.
+  const stored = await externalStoredStatus(env, id);
+  if (externalStatusIsActive(stored)) {
+    return externalPendingResponse(request, env, stored);
+  }
+  if (externalStatusIsRecentFailure(stored)) {
+    if (isAdmin && !reportifyToken) {
+      const qr = await reportifyLoginQr();
+      return jsonResponse(request, env, 503, {
+        error: "报告准备失败。请扫描二维码登录 Reportify 后重试。",
+        login_required: true,
+        reportify_url: `${EXTERNAL_SITE}/reports/${id}`,
+        ...(qr || {}),
+      });
+    }
+    return jsonResponse(request, env, 503, {
+      error: "报告准备失败，请提交报告申请。",
+      request_required: !isAdmin,
+      request_source: "external",
+      request_report_id: id,
+      reportify_url: `${EXTERNAL_SITE}/reports/${id}`,
+      title: direct.title,
+      institution: direct.item && direct.item.institution || "",
+      updated_at: String(stored.updated_at || ""),
+    });
+  }
 
   await externalPutStatus(env, id, "queued");
   const dispatched = await triggerExternalGrab(env, id, reportifyToken);
   if (!dispatched) {
     await externalPutStatus(env, id, "failed", "dispatch failed");
+    if (isAdmin && !reportifyToken) {
+      const qr = await reportifyLoginQr();
+      return jsonResponse(request, env, 503, {
+        error: "Reportify 登录态不可用。请扫描二维码登录后重试。",
+        login_required: true,
+        reportify_url: `${EXTERNAL_SITE}/reports/${id}`,
+        ...(qr || {}),
+      });
+    }
     return jsonResponse(request, env, 503, {
-      error: "Reportify 登录态不可用。请在当前 Chrome 中打开报告页完成登录后重试。",
+      error: "文件准备服务暂时不可用，请提交报告申请。",
+      request_required: !isAdmin,
+      request_source: "external",
+      request_report_id: id,
       reportify_url: `${EXTERNAL_SITE}/reports/${id}`,
-      login_required: true,
-      request_action: membershipRequestAction("support"),
+      title: direct.title,
+      institution: direct.item && direct.item.institution || "",
     });
   }
   return externalPendingResponse(request, env, { status: "queued", updated_at: new Date().toISOString() });
 }
 
 async function handleExternalStatus(request, env) {
-  const id = String(new URL(request.url).searchParams.get("id") || "").trim();
-  if (!isExternalId(id)) return jsonResponse(request, env, 400, { error: "Invalid report id." });
-  if (!(await externalAdminRequest(request, env))) {
-    return jsonResponse(request, env, 200, {
-      id,
-      source: "external",
-      ready: false,
-      status: "contact_only",
-      availability: "contact_only",
-      contact_only: true,
-      request_required: true,
-      message: "完整报告需要另行提交申请。",
-    });
+  const url = new URL(request.url);
+  const id = String(url.searchParams.get("id") || "").trim();
+  if (!isExternalId(id)) {
+    return jsonResponse(request, env, 400, { error: "Invalid report id." });
   }
   let ready = false;
-  if (env.REPORT_BUCKET) ready = Boolean(await env.REPORT_BUCKET.head(externalObjectKey(id)));
-  if (ready) return jsonResponse(request, env, 200, { id, source: "external", ready: true, status: "ready" });
+  if (env.REPORT_BUCKET) {
+    const head = await env.REPORT_BUCKET.head(externalObjectKey(id));
+    ready = Boolean(head);
+  }
+  if (ready) return jsonResponse(request, env, 200, { ready, status: "ready" });
+
   const stored = await externalStoredStatus(env, id);
-  if (stored && stored.status === "failed") return jsonResponse(request, env, 200, {
-    id,
-    source: "external",
-    ready: false,
-    status: "failed",
-    message: "报告准备失败，请在当前 Chrome 中打开报告页完成登录后重试。",
-    reportify_url: `${EXTERNAL_SITE}/reports/${id}`,
-    login_required: true,
-    updated_at: String(stored.updated_at || ""),
-  });
+  if (stored && stored.status === "failed") {
+    const isAdmin = await externalAdminRequest(request, env);
+    const token = await reportifyStoredToken(env);
+    if (isAdmin && !token) {
+      const qr = await reportifyLoginQr();
+      return jsonResponse(request, env, 200, {
+        ready: false,
+        status: "failed",
+        message: "报告准备失败。请扫描二维码登录 Reportify 后重试。",
+        login_required: true,
+        reportify_url: `${EXTERNAL_SITE}/reports/${id}`,
+        ...(qr || {}),
+        updated_at: String(stored.updated_at || ""),
+      });
+    }
+    return jsonResponse(request, env, 200, {
+      ready: false,
+      status: "failed",
+      message: "报告准备失败，请提交报告申请。",
+      request_required: !isAdmin,
+      request_source: "external",
+      request_report_id: id,
+      reportify_url: `${EXTERNAL_SITE}/reports/${id}`,
+      updated_at: String(stored.updated_at || ""),
+    });
+  }
   return jsonResponse(request, env, 200, {
-    id,
-    source: "external",
     ready: false,
     status: stored && stored.status ? String(stored.status) : "pending",
     updated_at: stored && stored.updated_at ? String(stored.updated_at) : "",
@@ -26160,7 +26137,7 @@ export default {
     }
 
     if (pathname === "/hot-reports/pdf" && (request.method === "GET" || request.method === "POST")) {
-      return handleHotReportPdf(request, env, ctx);
+      return handleHotReportPdf(request, env);
     }
 
     if (pathname === "/hot-reports/comments" && (request.method === "GET" || request.method === "POST")) {
@@ -26188,15 +26165,7 @@ export default {
     }
 
     if (pathname === "/external/search" && request.method === "GET") {
-      if (await externalAdminRequest(request, env)) {
-        return handleExternalSearch(request, env);
-      }
-      return contactSearchResponseWithTargetTokens(
-        request,
-        env,
-        "external",
-        await handleExternalSearch(request, env),
-      );
+      return handleExternalSearch(request, env);
     }
 
     if (pathname === "/external/pdf" && (request.method === "GET" || request.method === "POST")) {

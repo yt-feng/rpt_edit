@@ -17,7 +17,7 @@
   const HOT_REPORT_FIRST_PAGE_CACHE_KEY = CONTENT_LOCALE === "zh-Hans"
     ? "portal_hot_report_first_page_v1"
     : `portal_hot_report_first_page_v1:${CONTENT_LOCALE}`;
-  const HOT_REPORT_FIRST_PAGE_CACHE_VERSION = 2;
+  const HOT_REPORT_FIRST_PAGE_CACHE_VERSION = 1;
   const HOT_REPORT_FIRST_PAGE_CACHE_MAX_ITEMS = 24;
   const HOT_REPORT_FIRST_PAGE_CACHE_TTL_MS = 24 * 60 * 60 * 1000;
   const ADMIN_PDF_UPLOAD_SESSION_KEY = "portal_admin_pdf_upload_v1";
@@ -230,9 +230,7 @@
         title_cn: publicBrandText(String(rawItem.title_cn || "").trim().slice(0, 320)),
         institution: publicBrandText(String(rawItem.institution || "").trim().slice(0, 160)),
         date: String(rawItem.date || "").trim().slice(0, 10),
-        description: rawItem.origin_source === "external" || rawItem.request_source === "external"
-          ? ""
-          : publicBrandText(String(rawItem.description || "").trim().slice(0, 1600)),
+        description: publicBrandText(String(rawItem.description || "").trim().slice(0, 1600)),
         filename: publicBrandText(String(rawItem.filename || "").trim().slice(0, 320), "report.pdf", PUBLIC_BRAND),
         size_bytes: Number.isFinite(size) && size > 0 ? Math.floor(size) : 0,
         sort_order: Number.isSafeInteger(sortOrder) ? sortOrder : 0,
@@ -241,13 +239,6 @@
         hot_report_generation: String(rawItem.hot_report_generation || "").trim().slice(0, 32),
         required_plan: publicBrandText(String(rawItem.required_plan || "").trim().slice(0, 64)),
         required_months: Number.isFinite(requiredMonths) && requiredMonths > 0 ? Math.floor(requiredMonths) : 0,
-        origin_source: String(rawItem.origin_source || "").trim(),
-        origin_report_id: String(rawItem.origin_report_id || "").trim(),
-        request_source: String(rawItem.request_source || "").trim(),
-        request_report_id: String(rawItem.request_report_id || "").trim(),
-        contact_only: rawItem.contact_only === true,
-        availability: String(rawItem.availability || "").trim(),
-        available: rawItem.available === true,
       });
     }
     const rawTotal = rawPage.total;
@@ -508,15 +499,11 @@
       if (Object.prototype.hasOwnProperty.call(item, key)) item[key] = publicBrandText(item[key]);
     }
     if (Object.prototype.hasOwnProperty.call(item, "channel_name")) delete item.channel_name;
-    if (item.source === EXTERNAL_SOURCE || item.request_source === EXTERNAL_SOURCE || item.origin_source === EXTERNAL_SOURCE) {
-      delete item.description;
-      delete item.summary;
-    }
     return item;
   }
 
   function publicSearchItem(value, source = "") {
-    const item = publicDocItem(source ? { ...value, source } : value) || {};
+    const item = publicDocItem(value) || {};
     if (source === EXTERNAL_SOURCE) {
       item.institution = publicBrandText(item.institution || item.institution_name || "");
       delete item.institution_name;
@@ -2083,7 +2070,7 @@
     if (!["hot-report", "text-only", "request"].includes(mode)) return null;
     if (!["uploading", "processing", "unknown"].includes(state)) return null;
     if (!Number.isFinite(startedAt) || startedAt <= 0) return null;
-    if (source && !["catalog", "authority", "report-a", "external"].includes(source)) return null;
+    if (source && !["catalog", "authority", "report-a"].includes(source)) return null;
     if (targetId.length > 240) return null;
     return {
       version: ADMIN_PDF_UPLOAD_SESSION_VERSION,
@@ -2842,7 +2829,7 @@
               <strong>PDF 入库中心</strong>
               <span>统一处理新报告、缺失 PDF 与报告申请</span>
             </div>
-            <p class="account-admin-intake-scope">当前可补齐：Text only、已声明有 PDF 但对象缺失或归档失效的 Catalog 报告、报告A、高权报告、其他报告。</p>
+            <p class="account-admin-intake-scope">当前可补齐：Text only、已声明有 PDF 但对象缺失或归档失效的 Catalog 报告、报告A、高权报告。External 与国际智库的临时准备失败不会被当作永久缺失。</p>
             <div class="account-admin-upload-recovery" id="accountAdminUploadRecovery" hidden>
               <strong>发现尚未确认的上传</strong>
               <p id="accountAdminUploadRecoveryText"></p>
@@ -2915,7 +2902,7 @@
             </div>
             <div class="account-admin-intake-panel" id="accountAdminIntakeRequest" role="tabpanel" aria-labelledby="accountAdminIntakeRequestTab" hidden>
               <div class="account-admin-intake-request-top">
-                <p class="subtle">选择高权报告、报告A或其他报告的申请记录，上传并绑定原报告；完成后原详情会切换为会员下载入口。</p>
+                <p class="subtle">选择高权报告或报告A申请记录，上传并绑定原报告；完成后原详情会切换为会员下载入口。</p>
                 <button class="secondary-button" id="accountAdminRequestQueueRefresh" type="button">刷新申请队列</button>
               </div>
               <form id="accountAdminRequestQueueSearch" class="account-admin-intake-search" role="search">
@@ -5616,7 +5603,6 @@
   function adminIntakeSourceLabel(source) {
     if (source === "authority") return "高权报告";
     if (source === "report-a") return "报告A";
-    if (source === "external") return "其他报告";
     return "Catalog";
   }
 
@@ -5717,7 +5703,7 @@
   function contactReportDetailUrl(item) {
     const id = String(item && (item.origin_id || item.report_id || item.id) || "");
     const source = String(item && item.source || "");
-    if (!id || !["authority", "report-a", "external"].includes(source)) return "";
+    if (!id || !["authority", "report-a"].includes(source)) return "";
     return externalPageUrl({ ...item, id, source }, "");
   }
 
@@ -5726,7 +5712,7 @@
     const originId = String(item && (item.report_id || item.origin_id || item.id) || "");
     const requestId = String(item && item.request_id || "");
     const targetToken = String(item && item.target_token || "");
-    if (!originId || !["authority", "report-a", "external"].includes(source)) {
+    if (!originId || !["authority", "report-a"].includes(source)) {
       throw new Error("原报告来源或编号无效，请重新搜索并选择。");
     }
     if (!requestId && !targetToken) {
@@ -6185,8 +6171,8 @@
     let requestQueueHasMore = false;
     let requestQueueIndexBuilding = false;
     let requestSearchQuery = "";
-    const requestSearchPage = { "report-a": 1, authority: 1, external: 1 };
-    const requestSearchHasMore = { "report-a": false, authority: false, external: false };
+    const requestSearchPage = { "report-a": 1, authority: 1 };
+    const requestSearchHasMore = { "report-a": false, authority: false };
     let catalogIntakePage = 1;
     let catalogIntakeCursor = "";
 
@@ -6221,7 +6207,7 @@
       requestIntakeItems.clear();
       Array.from(requestIntakeByIdentity.values()).forEach((item) => requestIntakeItems.set(intakeItemKey(item), item));
       const items = Array.from(requestIntakeByIdentity.values());
-      const moreButtons = ["report-a", "authority", "external"]
+      const moreButtons = ["report-a", "authority"]
         .filter((source) => requestSearchHasMore[source])
         .map((source) => `<button class="secondary-button account-admin-intake-more" type="button" data-admin-intake-search-more="${source}">加载更多${adminIntakeSourceLabel(source)}原记录</button>`)
         .join("");
@@ -6367,14 +6353,13 @@
       requestQueueLoaded = true;
       if (!append) requestQueueIndexBuilding = false;
       const query = String(requestQueueQuery && requestQueueQuery.value || "").trim();
-      setIntakeStatus(requestQueueStatus, append ? "正在加载下一页申请…" : "正在读取报告申请队列…");
+      setIntakeStatus(requestQueueStatus, append ? "正在加载下一页申请…" : "正在读取报告A与高权报告申请队列…");
       if (requestQueueResults && !append) requestQueueResults.innerHTML = '<div class="empty-state">正在读取申请队列…</div>';
       try {
         const tasks = [fetchAdminReportRequestQueue(workerUrl, query, { cursor: append ? requestQueueCursor : "" })];
         if (!append && query) {
           tasks.push(fetchAdminPdfIntakeCandidates(workerUrl, "report-a", query));
           tasks.push(fetchAdminPdfIntakeCandidates(workerUrl, "authority", query));
-          tasks.push(fetchAdminPdfIntakeCandidates(workerUrl, "external", query));
         }
         const results = await Promise.allSettled(tasks);
         const queueResult = results[0];
@@ -6389,10 +6374,8 @@
           requestSearchQuery = query;
           requestSearchPage["report-a"] = 1;
           requestSearchPage.authority = 1;
-          requestSearchPage.external = 1;
           requestSearchHasMore["report-a"] = false;
           requestSearchHasMore.authority = false;
-          requestSearchHasMore.external = false;
         }
         if (queueResult.status === "fulfilled") {
           queueResult.value.items.forEach((item) => requestIntakeByIdentity.set(requestIntakeIdentity(item), item));
@@ -6403,7 +6386,7 @@
         if (!append) {
           results.slice(1).forEach((result, index) => {
             if (result.status !== "fulfilled") return;
-            const source = ["report-a", "authority", "external"][index];
+            const source = index === 0 ? "report-a" : "authority";
             requestSearchHasMore[source] = result.value.has_more === true;
             result.value.items.forEach((item) => {
               const normalized = { ...item, source: item.source || source };
@@ -6429,7 +6412,7 @@
     }
 
     async function loadMoreRequestSearch(source) {
-      if (!["report-a", "authority", "external"].includes(source) || !requestSearchHasMore[source] || !requestSearchQuery) return;
+      if (!["report-a", "authority"].includes(source) || !requestSearchHasMore[source] || !requestSearchQuery) return;
       const page = requestSearchPage[source] + 1;
       setIntakeStatus(requestQueueStatus, `正在加载更多${adminIntakeSourceLabel(source)}原记录…`);
       try {
@@ -7677,13 +7660,6 @@
         description: remembered.description || "",
         filename: remembered.filename || "",
         required_plan: remembered.required_plan || "",
-        origin_source: remembered.origin_source || "",
-        origin_report_id: remembered.origin_report_id || "",
-        request_source: remembered.request_source || "",
-        request_report_id: remembered.request_report_id || "",
-        contact_only: remembered.contact_only === true,
-        availability: remembered.availability || "",
-        available: remembered.available === true,
       },
     };
     const entries = Object.entries(cache)
@@ -7722,7 +7698,7 @@
 
   function externalRow(item) {
     item = publicSearchItem(item, EXTERNAL_SOURCE);
-    const meta = [externalMeta(item), "仅提供标题，完整报告请提交申请"].filter(Boolean).join(" · ");
+    const meta = externalMeta(item);
     const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
     rememberDocItem({ ...item, source: EXTERNAL_SOURCE });
     const url = externalPageUrl(item, "");
@@ -7776,8 +7752,8 @@
     const meta = [
       item.institution,
       item.date,
-      isContactOnlyItem(item) ? "仅提供标题，完整报告请提交申请" : formatSize(item.size_bytes),
-      isContactOnlyItem(item) ? "" : "3个月及以上会员",
+      formatSize(item.size_bytes),
+      "3个月及以上会员",
     ].map((value) => String(value || "").trim()).filter(Boolean).join(" · ");
     const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
     return `
@@ -10384,49 +10360,6 @@
     return false;
   }
 
-  function showExternalLoginQr(statusElement, workerUrl, error, onReady) {
-    if (!statusElement || !workerUrl || !error || !error.login_required || !error.qrcode_id) return false;
-    if (statusElement.__externalQrTimer) window.clearInterval(statusElement.__externalQrTimer);
-    const qrcodeId = String(error.qrcode_id);
-    const serviceUrl = String(error[["report", "ify"].join("") + "_url"] || "");
-    const qrImage = /^https:\/\/api\.qrserver\.com\//u.test(String(error.qr_image_url || ""))
-      ? String(error.qr_image_url)
-      : `https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=${encodeURIComponent(String(error.qrcode_url || ""))}`;
-    statusElement.className = "status-line error external-login-qr";
-    statusElement.innerHTML = `
-      <div>外部报告服务需要登录。请用微信扫描下方二维码，完成后页面会自动继续。</div>
-      <img src="${escapeHtml(qrImage)}" alt="外部报告服务登录二维码" width="220" height="220" loading="eager" referrerpolicy="no-referrer">
-      ${serviceUrl ? `<div><a href="${escapeHtml(serviceUrl)}" target="_blank" rel="noopener">在当前浏览器打开报告页</a></div>` : ""}
-      <div class="subtle">二维码有效期有限；扫描后无需把 Cookie 发给我们。</div>
-    `;
-    let attempts = 0;
-    statusElement.__externalQrTimer = window.setInterval(async () => {
-      attempts += 1;
-      if (attempts > 90) {
-        window.clearInterval(statusElement.__externalQrTimer);
-        statusElement.__externalQrTimer = null;
-        return;
-      }
-      try {
-        const response = await fetch(`${workerUrl}/external/login-qr/status?qrcode_id=${encodeURIComponent(qrcodeId)}`, {
-          headers: authHeaders(),
-          cache: "no-store",
-        });
-        const data = await response.json().catch(() => ({}));
-        if (response.ok && data.ready) {
-          window.clearInterval(statusElement.__externalQrTimer);
-          statusElement.__externalQrTimer = null;
-          statusElement.className = "status-line ok";
-          statusElement.textContent = "登录已完成，正在继续获取报告…";
-          if (typeof onReady === "function") onReady();
-        }
-      } catch (_error) {
-        // Keep polling while the QR login is pending.
-      }
-    }, 2000);
-    return true;
-  }
-
   function adminPanelMarkup() {
     return `
       <section class="admin-panel" id="adminPanel" hidden>
@@ -10973,7 +10906,14 @@
         await downloadHandler(statusTarget);
       } catch (error) {
         const message = error.message || "下载失败。";
-        if (showExternalLoginQr(status, workerUrl, error, () => downloadHandler(statusTarget))) return;
+        const externalDetail = document.getElementById("externalDetail");
+        const externalStatus = document.getElementById("externalDetailStatus") || document.getElementById("accountAccessStatus");
+        if (context.source === EXTERNAL_SOURCE && showExternalLoginQr(externalStatus, workerUrl, error, () => downloadHandler(statusTarget))) return;
+        if (context.source === EXTERNAL_SOURCE && error.request_required) {
+          showExternalRequestFallback(externalDetail, workerUrl, context.item, message);
+          statusTarget(message, "error");
+          return;
+        }
         const openedRequest = maybeAlertDownloadLimit(message, workerUrl, context);
         if (!openedRequest) {
           const requestKind = requestKindForVisibleMessage(message);
@@ -11097,7 +11037,7 @@
     if (password) return url.toString();
     const compact = options.compact === true;
     const requestToken = String(item && item.request_token || "").trim();
-    if (!compact && ["authority", "report-a", "external"].includes(String(item.request_source || item.source || "")) && requestToken) {
+    if (!compact && ["authority", "report-a"].includes(String(item && item.source || "")) && requestToken) {
       url.searchParams.set("rt", requestToken.slice(0, 4096));
     }
     const previewKeys = compact
@@ -11107,7 +11047,6 @@
         "kind_label", "page_count", "size_bytes", "report_type", "language", "category",
         "author", "rating", "description", "filename", "required_plan",
         "hot_report_generation",
-        "origin_source", "origin_report_id", "request_source", "request_report_id", "contact_only",
       ];
     for (const key of previewKeys) {
       const value = item && item[key];
@@ -11624,11 +11563,6 @@
       filename: params.get("filename") || "",
       required_plan: params.get("required_plan") || "",
       hot_report_generation: params.get("hot_report_generation") || "",
-      origin_source: params.get("origin_source") || "",
-      origin_report_id: params.get("origin_report_id") || "",
-      request_source: params.get("request_source") || "",
-      request_report_id: params.get("request_report_id") || "",
-      contact_only: params.get("contact_only") === "true",
     });
   }
 
@@ -11642,7 +11576,7 @@
       <div>
         <h1 class="detail-title">${escapeHtml(title)}</h1>
         ${zh ? `<p class="detail-title-zh">${escapeHtml(zh)}</p>` : ""}
-        <p class="subtle">${isContactOnlyItem(item) ? "仅提供报告标题；如需完整报告，请提交申请。" : "下载权限与相关报告将在后台补充。"}</p>
+        <p class="subtle">下载权限与相关报告将在后台补充。</p>
       </div>
       <div class="detail-grid">
         ${field("Institution", item.institution || "正在读取")}
@@ -11671,14 +11605,66 @@
   }
 
   function isContactOnlyItem(item) {
-    if (isAuthorityItem(item) || isReportAItem(item)) return true;
-    const external = item && (
-      item.source === EXTERNAL_SOURCE || item.request_source === EXTERNAL_SOURCE || item.origin_source === EXTERNAL_SOURCE
-    );
-    const session = typeof loadAuthSession === "function" ? loadAuthSession() : null;
-    const user = session && session.user;
-    const superSession = Boolean(user && (user.role === "super" || user.is_super));
-    return Boolean(external && !superSession);
+    return isAuthorityItem(item) || isReportAItem(item);
+  }
+
+  function showExternalRequestFallback(target, workerUrl, item, message = "") {
+    if (!target || !workerUrl || !item || String(item.source || EXTERNAL_SOURCE) !== EXTERNAL_SOURCE) return false;
+    if (target.querySelector("#externalAbnormalRequest")) return true;
+    const box = document.createElement("section");
+    box.id = "externalAbnormalRequest";
+    box.className = "unlock-box authority-contact-box";
+    box.innerHTML = `
+      <h3>提交报告申请</h3>
+      <p class="subtle">${escapeHtml(message || `这份 ${["Report", "ify"].join("")} 报告当前无法直接获取，我们会人工核验并回复。`)}</p>
+      ${reportRequestMarkup({ ...item, source: EXTERNAL_SOURCE })}
+    `;
+    target.appendChild(box);
+    initReportRequest(workerUrl, { ...item, source: EXTERNAL_SOURCE });
+    return true;
+  }
+
+  function showExternalLoginQr(statusElement, workerUrl, error, onReady) {
+    if (!statusElement || !workerUrl || !error || !error.login_required || !error.qrcode_id) return false;
+    if (statusElement.__externalQrTimer) window.clearInterval(statusElement.__externalQrTimer);
+    const qrcodeId = String(error.qrcode_id);
+    const serviceUrl = String(error[["report", "ify"].join("") + "_url"] || "");
+    const qrImage = /^https:\/\/api\.qrserver\.com\//u.test(String(error.qr_image_url || ""))
+      ? String(error.qr_image_url)
+      : `https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=${encodeURIComponent(String(error.qrcode_url || ""))}`;
+    statusElement.className = "status-line error external-login-qr";
+    const externalServiceName = ["Report", "ify"].join("");
+    statusElement.innerHTML = `
+      <div>${externalServiceName} 需要登录。请用微信扫描下方二维码，完成后页面会自动继续。</div>
+      <img src="${escapeHtml(qrImage)}" alt="${externalServiceName} 登录二维码" width="220" height="220" loading="eager" referrerpolicy="no-referrer">
+      ${serviceUrl ? `<div><a href="${escapeHtml(serviceUrl)}" target="_blank" rel="noopener">在当前浏览器打开报告页</a></div>` : ""}
+    `;
+    let attempts = 0;
+    statusElement.__externalQrTimer = window.setInterval(async () => {
+      attempts += 1;
+      if (attempts > 90) {
+        window.clearInterval(statusElement.__externalQrTimer);
+        statusElement.__externalQrTimer = null;
+        return;
+      }
+      try {
+        const response = await fetch(`${workerUrl}/external/login-qr/status?qrcode_id=${encodeURIComponent(qrcodeId)}`, {
+          headers: authHeaders(),
+          cache: "no-store",
+        });
+        const data = await response.json().catch(() => ({}));
+        if (response.ok && data.ready) {
+          window.clearInterval(statusElement.__externalQrTimer);
+          statusElement.__externalQrTimer = null;
+          statusElement.className = "status-line ok";
+          statusElement.textContent = "登录已完成，正在继续获取报告…";
+          if (typeof onReady === "function") onReady();
+        }
+      } catch (_error) {
+        // Keep polling while the QR login is pending.
+      }
+    }, 2000);
+    return true;
   }
 
   function docSourceLabel(item) {
@@ -11711,7 +11697,7 @@
       action: options.auth ? "account_download" : "password_download",
     });
     const contactDownload = isContactOnlyItem(item);
-    const contactParams = new URLSearchParams({ source: item.request_source || item.source, id: item.request_report_id || item.id });
+    const contactParams = new URLSearchParams({ source: item.source, id: item.id });
     const response = await fetch(contactDownload
       ? `${workerUrl}/contact-report/pdf?${contactParams.toString()}`
       : `${workerUrl}/${docEndpoint(item)}/pdf`, contactDownload ? {
@@ -11747,15 +11733,6 @@
       } catch (_error) {
         // Keep generic message.
       }
-      if (data.login_required) {
-        const loginError = new Error(data.error || "请扫描二维码登录外部报告服务后重试。");
-        loginError.login_required = true;
-        loginError.qrcode_id = String(data.qrcode_id || "");
-        loginError.qrcode_url = String(data.qrcode_url || "");
-        loginError.qr_image_url = String(data.qr_image_url || "");
-        loginError[["report", "ify"].join("") + "_url"] = String(data[["report", "ify"].join("") + "_url"] || "");
-        throw loginError;
-      }
       if (response.status === 401) clearRememberedDownloadPassword(item.id);
       trackEvent(workerUrl, "download_error", {
         ...analyticsReportPayload(item, item.source || EXTERNAL_SOURCE),
@@ -11763,7 +11740,20 @@
         status: String(response.status),
         error: message,
       });
-      throw new Error(downloadErrorMessage(response.status, message, data));
+      const error = new Error(downloadErrorMessage(response.status, message, data));
+      if (data && data.login_required) {
+        error.login_required = true;
+        error.qrcode_id = String(data.qrcode_id || "");
+        error.qrcode_url = String(data.qrcode_url || "");
+        error.qr_image_url = String(data.qr_image_url || "");
+        error[["report", "ify"].join("") + "_url"] = String(data[["report", "ify"].join("") + "_url"] || "");
+      }
+      if (data && data.request_required) {
+        error.request_required = true;
+        error.request_source = String(data.request_source || EXTERNAL_SOURCE);
+        error.request_report_id = String(data.request_report_id || item.id || "");
+      }
+      throw error;
     }
     const blob = await response.blob();
     triggerBlobDownload(blob, response.headers.get("Content-Disposition"), `${item.id}.pdf`);
@@ -11777,7 +11767,7 @@
     return { pending: false };
   }
 
-  function pollExternalDetail(workerUrl, id, password, statusTarget, onReady) {
+  function pollExternalDetail(workerUrl, id, password, statusTarget, onReady, onAbnormal) {
     let attempts = 0;
     const maxAttempts = 40; // 10 minutes at 15s intervals
     const startedAt = Date.now();
@@ -11796,7 +11786,6 @@
       try {
         statusTarget(`报告仍在准备中，已等待 ${elapsedText}。页面会继续自动检测。`);
         const response = await fetch(`${workerUrl}/external/status?id=${encodeURIComponent(id)}`, {
-          headers: (typeof loadAuthSession === "function" && loadAuthSession()) ? authHeaders() : {},
           cache: "no-store",
         });
         const data = await response.json();
@@ -11806,7 +11795,9 @@
           onReady();
         } else if (data.status === "failed") {
           window.clearInterval(timer);
-          statusTarget(data.message || "报告准备失败，可提交支持请求。", "error");
+          const message = data.message || "报告准备失败，请提交报告申请。";
+          statusTarget(message, "error");
+          if (data.request_required && typeof onAbnormal === "function") onAbnormal(message, data);
         }
       } catch (_error) {
         // Keep polling while the background grab runs.
@@ -11820,6 +11811,11 @@
       statusTarget("报告正在准备，通常约 3-8 分钟。页面会自动检测，准备好后开始下载。");
       pollExternalDetail(workerUrl, item.id, "", statusTarget, () => (
         downloadExternalWithAccount(workerUrl, item, statusTarget)
+      ), (message) => showExternalRequestFallback(
+        document.getElementById("externalDetail"),
+        workerUrl,
+        item,
+        message,
       ));
     }
   }
@@ -11899,8 +11895,6 @@
     const status = document.getElementById("reportRequestStatus");
     if (!form || !email || !submit || !status) return;
     let requestItem = mergeDocItemMetadata(item);
-    requestItem.id = item.request_report_id || item.id;
-    requestItem.source = item.request_source || item.source;
     let requestToken = String(requestItem.request_token || "");
 
     function setRequestStatus(message, state = "") {
@@ -11925,7 +11919,7 @@
       submit.textContent = "正在提交…";
       setRequestStatus("正在通知 KC桌面，请稍候…");
       try {
-        if (["authority", "report-a", "external"].includes(String(requestItem.source || ""))
+        if (["authority", "report-a"].includes(String(requestItem.source || ""))
           && (!requestToken || !hasMeaningfulDocTitle(requestItem))) {
           setRequestStatus("正在刷新报告验证信息…");
           const params = new URLSearchParams({ source: requestItem.source, id: requestItem.id });
@@ -11933,8 +11927,8 @@
           const tokenData = await tokenResponse.json().catch(() => ({}));
           if (tokenResponse.ok && tokenData.item && typeof tokenData.item === "object") {
             requestItem = mergeDocItemMetadata(requestItem, tokenData.item);
-            requestItem.id = item.request_report_id || item.id;
-            requestItem.source = item.request_source || item.source;
+            requestItem.id = item.id;
+            requestItem.source = item.source;
             requestToken = String(requestItem.request_token || requestToken);
           }
           if (!tokenResponse.ok || !requestToken || !hasMeaningfulDocTitle(requestItem)) {
@@ -12058,13 +12052,6 @@
         ${field("Pages", item.page_count ? `${item.page_count}页` : "-")}
         ${contactAvailable ? field("PDF", formatSize(item.size_bytes) || "Available") : ""}
         ${contactAvailable ? field("全文权限", "3个月及以上会员") : ""}
-      ` : (isContactOnlyItem(item) ? `
-        ${field("板块", docSourceLabel(item))}
-        ${field("Institution", item.institution || "-")}
-        ${field("Date", item.date || "-")}
-        ${field("Pages", item.page_count ? `${item.page_count}页` : "-")}
-        ${contactAvailable ? field("PDF", formatSize(item.size_bytes) || "Available") : ""}
-        ${contactAvailable ? field("全文权限", "3个月及以上会员") : ""}
       ` : (isHotReportItem(item) ? `
         ${field("板块", docSourceLabel(item))}
         ${field("Institution", item.institution || "-")}
@@ -12082,13 +12069,13 @@
         ${field("Institution", item.institution || "-")}
         ${field("Date", item.date || "-")}
         ${field("Type", item.file_type || "-")}
-      `))));
+      `)));
     const detailHeader = `
       <div>
         <h1 class="detail-title">${escapeHtml(displayTitle)}</h1>
         ${zh ? `<p class="detail-title-zh">${escapeHtml(zh)}</p>` : ""}
         <p class="subtle">${isContactOnlyItem(item)
-          ? (contactAvailable ? "3个月及以上会员可下载全文。" : "仅提供报告标题；如需完整报告，请提交申请。")
+          ? (contactAvailable ? "3个月及以上会员可下载全文。" : `${docSourceLabel(item)}检索线索。`)
           : (isHotReportItem(item) ? "3个月及以上会员可下载全文。" : "Password-protected report delivery.")}</p>
       </div>
       <div class="detail-grid">
@@ -12097,18 +12084,17 @@
     `;
     if (isContactOnlyItem(item)) {
       if (contactAvailable) {
-        const contactItem = { ...item, id: item.request_report_id || item.id, source: item.request_source || item.source };
         target.innerHTML = `
           ${detailHeader}
           <section class="unlock-box authority-contact-box contact-report-available-box">
             <h3>PDF 已补齐</h3>
             <p class="subtle">这份报告已绑定原检索记录。3个月及以上会员登录后可直接下载全文。</p>
           </section>
-          ${workerUrl ? accountAccessMarkup(contactItem) : ""}
+          ${workerUrl ? accountAccessMarkup(item) : ""}
           ${externalRelatedMarkup()}
         `;
-        initReportAccessControls(contactItem, workerUrl, contactItem.source, (statusTarget) => (
-          downloadExternalWithAccount(workerUrl, contactItem, statusTarget)
+        initReportAccessControls(item, workerUrl, item.source, (statusTarget) => (
+          downloadExternalWithAccount(workerUrl, item, statusTarget)
         ));
         searchIndexPromise.then(() => initExternalRelated(
           item,
@@ -12119,7 +12105,9 @@
         ));
         return;
       }
-      const hint = "请填写邮箱并提交申请，我们会另行回复完整报告的获取结果。";
+      const hint = isAuthorityItem(item)
+        ? "高权报告仅提供检索线索，无法在本站直接下载。"
+        : "这份报告当前仅提供检索线索，无法在本站直接下载。";
       target.innerHTML = `
         ${detailHeader}
         <section class="unlock-box authority-contact-box">
@@ -12197,7 +12185,6 @@
         try {
           await fetchExternalPdf(workerUrl, item, input.value, setStatus);
         } catch (error) {
-          if (showExternalLoginQr(status, workerUrl, error, () => submitDownload())) return;
           const message = error.message || "下载失败。";
           maybeAlertDownloadLimit(message, workerUrl, { item, source: HOT_REPORT_SOURCE });
           setStatus(message, "error");
@@ -12333,11 +12320,18 @@
         if (result.pending) {
           rememberDeliveryPassword(item.id, input.value);
           setStatus("报告正在准备，通常约 3-8 分钟。页面会自动检测，准备好后开始下载。");
-          pollExternalDetail(workerUrl, item.id, input.value, setStatus, () => submitDownload());
+          pollExternalDetail(workerUrl, item.id, input.value, setStatus, () => submitDownload(), (message) => (
+            showExternalRequestFallback(target, workerUrl, item, message)
+          ));
         }
       } catch (error) {
-        if (showExternalLoginQr(status, workerUrl, error, () => submitDownload())) return;
         const message = error.message || "下载失败。";
+        if (showExternalLoginQr(status, workerUrl, error, () => submitDownload())) return;
+        if (error.request_required) {
+          showExternalRequestFallback(target, workerUrl, item, message);
+          setStatus(message, "error");
+          return;
+        }
         maybeAlertDownloadLimit(message, workerUrl, { item, source: item.source });
         setStatus(message, "error");
       } finally {

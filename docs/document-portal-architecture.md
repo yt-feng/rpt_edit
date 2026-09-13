@@ -1,6 +1,6 @@
 # Document Portal Architecture
 
-Last updated: 2026-09-13
+Last updated: 2026-08-27
 
 This document describes the protected document portal.
 
@@ -87,20 +87,6 @@ requests continue to use the normal unversioned paths and cache policy.
 | Policy pages | Public policy and generic support instructions. |
 
 Support language and support channels are resolved by the deployed frontend.
-
-## External Report Requests
-
-External report search provides title leads and metadata. Full reports use the
-same in-site request form, canonical server metadata, request queue, and manual
-fulfillment path as authority reports. The public detail page must not prepare
-or automatically download an upstream PDF or convert a preview image into a
-deliverable.
-
-The on-demand `reportify-grab.yml` workflow is retired. Existing external PDF
-objects and their hot-report copies are not evidence of completed fulfillment;
-legacy detail, status, and download URLs must use the request policy as well.
-Only a manually supplied contact-report binding can enable a fulfilled download,
-with the same account checks as other request-based reports.
 
 ## Accounts, Roles, And Sessions
 

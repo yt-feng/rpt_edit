@@ -712,8 +712,8 @@ def main() -> int:
                     if candidate_url:
                         grabber.try_fetch_candidate_url(context=context, candidate_url=candidate_url)
 
-            # A preview image or a printed login shell is not a report PDF.
-            # Fail closed so the Worker never marks a one-page cover as ready.
+            # A preview image or printed login shell is not a report PDF. Fail
+            # closed so a one-page cover cannot be marked ready in R2.
             saved = grabber.save_result()
 
             # 最后再做一次非常轻量的文件头校验
