@@ -170,6 +170,23 @@ class AssetReferenceTests(unittest.TestCase):
             self.assertIsNotNone(builder.unit_for_text(value, "html:attribute:alt")[1])
 
 
+class ShortLatinLabelTests(unittest.TestCase):
+    def test_short_cjk_company_label_with_edge_delimiter_can_use_latin_acronym(self):
+        for source in ("台积电", "、台积电", "台积电、"):
+            with self.subTest(source=source):
+                self.assertTrue(is_short_latin_label_translation(source, "TSMC"))
+                self.assertTrue(is_short_latin_label_translation(source, "、TSMC"))
+
+    def test_edge_delimiter_extension_does_not_admit_prose(self):
+        for source, translated in (
+            ("、台积电增长", "TSMC"),
+            ("、台积电", "TSMC is growing"),
+            ("惠普的收入增长了。", "HP"),
+        ):
+            with self.subTest(source=source, translated=translated):
+                self.assertFalse(is_short_latin_label_translation(source, translated))
+
+
 class LatinNameLiteralTests(unittest.TestCase):
     def test_legal_suffix_case_variants_preserve_whole_company_names(self):
         # The provider correctly preserved Arm Holdings plc in run 34547101625.
