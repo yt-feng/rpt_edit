@@ -1919,9 +1919,9 @@ if (mode === "程序枚举") document.getElementById("中文节点");
             with self.subTest(program_token=token):
                 self.assertFalse(needs(token))
 
-    def test_real_javascript_covers_all_233_current_chinese_ternary_literals(self) -> None:
+    def test_real_javascript_covers_all_235_current_chinese_ternary_literals(self) -> None:
         expected_by_asset = {
-            "app.js": 196,
+            "app.js": 198,
             "newsfeed-app.js": 6,
             "charts.js": 4,
             "contact.js": 0,
@@ -1958,7 +1958,7 @@ if (mode === "程序枚举") document.getElementById("中文节点");
                     )
             observed[asset_name] = count
         self.assertEqual(observed, expected_by_asset)
-        self.assertEqual(sum(observed.values()), 233)
+        self.assertEqual(sum(observed.values()), 235)
 
     def test_real_javascript_has_no_unclassified_chinese_ui_literals(self) -> None:
         for asset_name in builder.LOCALIZED_JS_ASSETS:
