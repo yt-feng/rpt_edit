@@ -176,6 +176,9 @@ test("session recovery persists only upload id and non-sensitive metadata", () =
   assert.equal(persisted.requester_email, undefined);
   assert.equal(persisted.filename, undefined);
   assert.equal(sandbox.readAdminPdfUploadSession().target_id, "foreign:42");
+  sandbox.writeAdminPdfUploadSession({ ...persisted, source: "external", target_id: "1295384700889731072" });
+  assert.equal(sandbox.readAdminPdfUploadSession().source, "external");
+  assert.equal(sandbox.readAdminPdfUploadSession().target_id, "1295384700889731072");
 });
 
 test("a server-declared failed upload clears recovery and assigns a fresh file upload id", async () => {
@@ -318,6 +321,13 @@ test("catalog/contact intake search forwards the requested page and legacy queue
   }, pdf).formData;
   assert.equal(verified.get("request_id"), "verified-request");
   assert.equal(verified.get("target_token"), null, "new verified requests do not require a redundant token");
+
+  const external = build({
+    source: "external", report_id: "1295384700889731072", request_id: "external-request", title: "Industrial report",
+  }, pdf).formData;
+  assert.equal(external.get("source"), "external");
+  assert.equal(external.get("origin_id"), "1295384700889731072");
+  assert.equal(external.get("request_id"), "external-request");
 });
 
 test("contact request token survives search link, new page parsing, detail fetch, and report request POST", async () => {
@@ -522,7 +532,7 @@ test("account popup and Twotigers admin initialize in their own runtime scopes",
 test("unified intake and contact availability UI cover every supported source without exposing a naked PDF link", () => {
   assert.match(app, /PDF 入库中心/u);
   assert.match(app, /Text only、已声明有 PDF 但对象缺失或归档失效的 Catalog 报告、报告A、高权报告/u);
-  assert.match(app, /External 与国际智库的临时准备失败不会被当作永久缺失/u);
+  assert.match(app, /报告A、高权报告、其他报告/u);
   assert.match(app, /account-admin\/pdf-intake-search/u);
   assert.match(app, /account-admin\/report-requests/u);
   assert.match(app, /account-admin\/contact-report-pdf/u);
