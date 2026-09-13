@@ -383,6 +383,7 @@ const COURSE_DIRECTORY_R2_KEY = "_course-directory/v1/directory.json";
 const COURSE_MATERIAL_R2_PREFIX = "_course-materials/v1";
 const COURSE_MATERIAL_MANIFEST_R2_KEY = `${COURSE_MATERIAL_R2_PREFIX}/manifest.json`;
 const COURSE_MATERIAL_REQUEST_PREFIX = "_course-material-requests/v1";
+const COURSE_DIRECTORY_REQUEST_PREFIX = "_course-directory-requests/v1";
 const COURSE_MATERIAL_REQUEST_MAX_BODY_BYTES = 8 * 1024;
 const REPORT_CHAT_LOOKUP_MANIFEST_R2_KEY = "_report-chat/v2/manifest.json";
 const REPORT_RESEARCH_LOOKUP_MANIFEST_R2_KEY = "_report-research/v1/manifest.json";
@@ -5722,6 +5723,220 @@ async function handleCourseMaterialRequest(request, env, ctx) {
       ok: false,
       retryable: true,
       detail: "材料索取服务暂时不可用，请稍后重试。",
+    });
+  }
+}
+
+function cleanCourseDirectoryRequestId(value) {
+  const id = String(value || "").trim().toLowerCase();
+  return /^[a-z0-9][a-z0-9_-]{7,79}$/u.test(id) ? id : "";
+}
+
+async function courseDirectoryRequestItem(env, idValue) {
+  const id = cleanCourseDirectoryRequestId(idValue);
+  if (!id) return null;
+  const directory = await loadCourseDirectory(env);
+  const item = directory.items.find((candidate) => candidate && candidate.id === id);
+  if (!item) return null;
+  const course = COURSE_DIRECTORY_COURSES.get(item.course_id);
+  if (!course) return null;
+  return {
+    id,
+    title: item.name,
+    course_id: item.course_id,
+    course_title: course.title,
+    category: item.category,
+    folders: item.folders.join(" / "),
+    extension: item.extension,
+    file_type: item.file_type,
+    size_label: item.size_label,
+    date: item.date,
+    entities: item.entities.join("、"),
+  };
+}
+
+function courseDirectoryRequestEmailContent(record) {
+  const fields = [
+    ["课程", record.course_title],
+    ["资源标题", record.resource_title],
+    ["资源编号", record.directory_item_id],
+    ["学习方向", record.category],
+    ["所在目录", record.folders],
+    ["文件类型", record.file_type || record.extension],
+    ["文件大小", record.size_label],
+    ["目录日期", record.date],
+    ["相关机构/规则", record.entities],
+    ["会员账号", record.requester_email],
+    ["用户名", record.requester_username],
+    ["页面路径", record.page_path],
+    ["提交时间", record.attempted_at],
+  ].filter(([, value]) => value);
+  const text = [
+    "收到一条会员资料库资源申请。",
+    "",
+    ...fields.map(([label, value]) => `${label}：${value}`),
+    "",
+    "请按目录记录核对并单独回复会员；站点不会直接解锁原文件。",
+  ].join("\n");
+  const rows = fields.map(([label, value]) => `
+    <tr>
+      <th style="padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #e5e7eb;color:#475467;white-space:nowrap;">${escapeNewsfeedHtml(label)}</th>
+      <td style="padding:9px 12px;border-bottom:1px solid #e5e7eb;color:#101828;word-break:break-word;">${escapeNewsfeedHtml(value)}</td>
+    </tr>`).join("");
+  return {
+    subject: cleanReportRequestText(`会员资料库资源申请：${record.resource_title}`, 160),
+    text,
+    html: `
+      <div style="margin:0;padding:24px;background:#f6f7fb;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#101828;">
+        <div style="max-width:680px;margin:0 auto;background:#ffffff;border-radius:10px;padding:28px;">
+          <h1 style="margin:0 0 18px;font-size:22px;line-height:1.35;">会员资料库资源申请</h1>
+          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border:1px solid #e5e7eb;border-radius:8px;border-collapse:collapse;">${rows}</table>
+          <p style="margin:20px 0 0;color:#475467;font-size:14px;">该申请来自隐藏会员链接页；请按目录记录单独处理。</p>
+        </div>
+      </div>`,
+  };
+}
+
+async function handleCourseDirectoryRequest(request, env, ctx) {
+  if (!reportRequestOriginAllowed(request, env)) {
+    return privateJsonResponse(request, env, 403, { ok: false, detail: "申请来源无效。" });
+  }
+  const declaredLength = Number(request.headers.get("Content-Length") || 0);
+  if (Number.isFinite(declaredLength) && declaredLength > COURSE_MATERIAL_REQUEST_MAX_BODY_BYTES) {
+    return privateJsonResponse(request, env, 413, { ok: false, detail: "申请内容过大。" });
+  }
+  const rawBody = await request.text().catch(() => "");
+  if (new TextEncoder().encode(rawBody).byteLength > COURSE_MATERIAL_REQUEST_MAX_BODY_BYTES) {
+    return privateJsonResponse(request, env, 413, { ok: false, detail: "申请内容过大。" });
+  }
+  let payload;
+  try {
+    payload = rawBody ? JSON.parse(rawBody) : {};
+  } catch (_error) {
+    return privateJsonResponse(request, env, 400, { ok: false, detail: "申请格式无效。" });
+  }
+  if (!payload || typeof payload !== "object" || Array.isArray(payload)) {
+    return privateJsonResponse(request, env, 400, { ok: false, detail: "申请格式无效。" });
+  }
+  if (String(payload.honeypot || payload.website || "").trim()) {
+    return privateJsonResponse(request, env, 202, { ok: true, deduplicated: true, detail: "申请已记录。" });
+  }
+  let user;
+  try {
+    user = await currentUserFromRequest(env, request);
+  } catch (error) {
+    return privateJsonResponse(request, env, 401, { ok: false, detail: error.message || "请先登录。" });
+  }
+  let access;
+  try {
+    access = await courseAccessForUser(env, user);
+  } catch (_error) {
+    return privateJsonResponse(request, env, 503, { ok: false, detail: "课程会员资格暂时无法核验。" });
+  }
+  if (!access.can_access) {
+    return privateJsonResponse(request, env, 403, {
+      ok: false,
+      detail: "仅剩余有效期至少 30 天的会员可以申请目录资源。",
+      required_remaining_days: COURSE_MIN_REMAINING_DAYS,
+    });
+  }
+  let resource;
+  try {
+    resource = await courseDirectoryRequestItem(env, payload.directory_item_id);
+  } catch (_error) {
+    return privateJsonResponse(request, env, 503, { ok: false, detail: "课程文件目录暂时无法核验。" });
+  }
+  if (!resource) return privateJsonResponse(request, env, 404, { ok: false, detail: "目录资源不存在。" });
+
+  const requesterEmail = normalizeEmail(user.email);
+  const nowMs = Date.now();
+  const digest = await reportRequestPrivateHash(env, "course-directory-dedupe", `${requesterEmail}|${resource.id}`);
+  const key = `${COURSE_DIRECTORY_REQUEST_PREFIX}/items/${digest}.json`;
+  const record = {
+    request_id: digest,
+    directory_item_id: resource.id,
+    resource_title: resource.title,
+    course_id: resource.course_id,
+    course_title: resource.course_title,
+    category: resource.category,
+    folders: resource.folders,
+    extension: resource.extension,
+    file_type: resource.file_type,
+    size_label: resource.size_label,
+    date: resource.date,
+    entities: resource.entities,
+    requester_email: requesterEmail,
+    requester_user_id: cleanReportRequestText(user.id, 100),
+    requester_username: cleanReportRequestText(user.username, 80),
+    authenticated: true,
+    page_path: cleanReportRequestPagePath(payload.page_path),
+  };
+  try {
+    const reservation = await reserveReportRequestRecord(env, key, record, nowMs);
+    if (reservation.disposition !== "reserved") {
+      return privateJsonResponse(request, env, 202, {
+        ok: true,
+        deduplicated: true,
+        request_id: digest,
+        detail: "这份资源的申请已经收到，无需重复提交。",
+      });
+    }
+    const content = courseDirectoryRequestEmailContent(reservation.record);
+    let result;
+    try {
+      result = await sendNewsfeedEmail(env, {
+        to: CONTACT_EMAIL,
+        subject: content.subject,
+        html: content.html,
+        text: content.text,
+        tags: ["portal-course-directory-request"],
+      });
+    } catch (error) {
+      result = { sent: false, detail: String(error && error.message || "Email send failed.") };
+    }
+    const completedAt = new Date().toISOString();
+    const completed = {
+      ...reservation.record,
+      status: result && result.sent ? "sent" : "failed",
+      provider: cleanReportRequestText(result && result.provider, 40),
+      message_id: cleanReportRequestText(result && result.messageId, 200),
+      last_error: result && result.sent ? "" : cleanReportRequestText(result && result.detail, 500),
+      sent_at: result && result.sent ? completedAt : "",
+      updated_at: completedAt,
+    };
+    await r2PutJson(env, key, completed);
+    rewardWaitUntil(ctx, persistAnalyticsEvent(request, env, {
+      type: "course_material_request",
+      path: "/course/directory-request",
+      data: {
+        page: "course-library",
+        source: "directory",
+        action: completed.status === "sent" ? "submitted" : "failed",
+        status: completed.status,
+        material_id: resource.id,
+        material_title: resource.title,
+        result_count: completed.status === "sent" ? 1 : 0,
+      },
+    }, user));
+    if (completed.status !== "sent") {
+      return privateJsonResponse(request, env, 502, {
+        ok: false,
+        retryable: true,
+        request_id: digest,
+        detail: "申请已保存，但通知发送失败，请稍后重试。",
+      });
+    }
+    return privateJsonResponse(request, env, 202, {
+      ok: true,
+      deduplicated: false,
+      request_id: digest,
+      detail: "申请已发送，我们会通过会员账号邮箱继续处理。",
+    });
+  } catch (_error) {
+    return privateJsonResponse(request, env, 503, {
+      ok: false,
+      retryable: true,
+      detail: "资源申请服务暂时不可用，请稍后重试。",
     });
   }
 }
@@ -25728,6 +25943,10 @@ export default {
 
     if (pathname === "/course/material-request" && request.method === "POST") {
       return handleCourseMaterialRequest(request, env, ctx);
+    }
+
+    if (pathname === "/course/directory-request" && request.method === "POST") {
+      return handleCourseDirectoryRequest(request, env, ctx);
     }
 
     if (pathname === "/report-chat/popular" && request.method === "GET") {

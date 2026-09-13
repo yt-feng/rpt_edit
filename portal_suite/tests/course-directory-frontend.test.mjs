@@ -8,7 +8,8 @@ import vm from "node:vm";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const appPath = path.join(root, "portal_suite/site_src/assets/app.js");
 const stylesPath = path.join(root, "portal_suite/site_src/assets/styles.css");
-const pagePath = path.join(root, "portal_suite/site_src/courses.html");
+const publicPagePath = path.join(root, "portal_suite/site_src/courses.html");
+const pagePath = path.join(root, "portal_suite/site_src/member-resource-library-7c4e91.html");
 const materialsPath = path.join(root, "portal_suite/site_src/data/course-materials.json");
 
 function extractFunction(source, name) {
@@ -66,16 +67,30 @@ function courseMaterialRequestHarness(response) {
 
 const appSource = await readFile(appPath, "utf8");
 
-test("course page keeps all member directory records out of static HTML", async () => {
-  const html = await readFile(pagePath, "utf8");
+test("public course page keeps the member directory and chat out of static HTML", async () => {
+  const html = await readFile(publicPagePath, "utf8");
   const restrictedMarkers = [
     ["W", "SO"].join(""),
     ["W", "SP"].join(""),
     ["Fundamental", " Edge"].join(""),
   ];
-  assert.match(html, /id="courseCatalog"[^>]*hidden/u);
-  assert.doesNotMatch(html, /course\/directory|data-directory-file|courseDirectoryPopular/u);
+  assert.match(html, /data-page="course-public"/u);
+  assert.doesNotMatch(html, /courseCatalog|course\/directory|data-directory-file|courseDirectoryPopular|courseChatForm/u);
   for (const marker of restrictedMarkers) assert.equal(html.includes(marker), false);
+});
+
+test("member resource library is link-only and excluded from public references", async () => {
+  const html = await readFile(pagePath, "utf8");
+  assert.match(html, /data-page="course-library"/u);
+  assert.match(html, /name="robots" content="noindex,nofollow,noarchive"/u);
+  assert.match(html, /id="courseCatalog"[^>]*hidden/u);
+  assert.match(html, /id="courseAssistantDialog"/u);
+  const publicPages = await Promise.all([
+    readFile(publicPagePath, "utf8"),
+    readFile(path.join(root, "portal_suite/site_src/index.html"), "utf8"),
+    readFile(path.join(root, "portal_suite/site_src/charts.html"), "utf8"),
+  ]);
+  for (const publicHtml of publicPages) assert.equal(publicHtml.includes("member-resource-library-7c4e91"), false);
 });
 
 test("directory API is authenticated and mounted only after course access succeeds", async () => {
@@ -104,6 +119,8 @@ test("member directory supports filters, entity hooks, hierarchy, and pagination
   }
   assert.match(source, /facets\.top_entities/u);
   assert.match(source, /data-directory-entity/u);
+  assert.match(source, /data-directory-request/u);
+  assert.match(source, /course\/directory-request/u);
   assert.match(source, /Array\.isArray\(value\.folders\)/u);
   assert.match(source, /<details class="course-directory-tree"/u);
   assert.match(source, /escapeHtml\(item\.name\)/u);
@@ -134,7 +151,7 @@ test("member-only Maifu carousel shell stays hidden before the Course gate succe
     'aria-roledescription="轮播"',
   ]) assert.ok(html.includes(marker), marker);
   assert.match(html, /id="courseMaterials"[\s\S]*?hidden/u);
-  assert.match(html, /会员封面预览，每份材料均需单独索取/u);
+  assert.match(html, /会员封面预览 · 每份单独索取/u);
   assert.doesNotMatch(html, /\.pdf|source_filename|sha256|_course-directory|R2/u);
 });
 

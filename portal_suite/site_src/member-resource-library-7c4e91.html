@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <title>会员资料库 | Portal Suite</title>
+    <meta name="description" content="会员资料库与专业资源检索入口。">
+    <meta name="robots" content="noindex,nofollow,noarchive">
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body data-page="course-library">
+    <header class="topbar">
+      <a class="brand compact" href="/" aria-label="Portal Suite home">
+        <img src="assets/app-mark.svg" alt="" width="30" height="30">
+        <span>Portal Suite</span>
+      </a>
+      <nav class="topbar-actions" aria-label="站点导航">
+        <a class="topbar-link" href="/">首页</a>
+        <a class="topbar-link" href="blog/">Blog</a>
+        <a class="topbar-link is-active" href="courses.html" aria-current="page">Course</a>
+        <a id="newsfeedNav" class="topbar-link" href="newsfeed.html">Newsfeed</a>
+        <button id="accountGate" class="account-button" type="button">登录</button>
+      </nav>
+    </header>
+
+    <main class="shell course-shell">
+      <section class="course-hero">
+        <p class="course-kicker">MEMBER RESOURCE LIBRARY</p>
+        <h1>会员资料库</h1>
+        <p>这是会员专用链接页，不在公开导航或站点地图中。登录后可浏览已整理的具体文件目录，也可以直接描述需求，让资料助手帮你定位并提交资源申请。</p>
+        <button class="primary course-assistant-trigger" id="courseAssistantOpen" type="button">打开资料助手</button>
+      </section>
+
+      <section
+        class="course-materials"
+        id="courseMaterials"
+        aria-labelledby="courseMaterialsTitle"
+        aria-roledescription="轮播"
+        hidden
+      >
+        <header class="course-materials-heading">
+          <div>
+            <p>FEATURED COLLECTION</p>
+            <h2 id="courseMaterialsTitle">麦府学堂</h2>
+            <span id="courseMaterialsDescription">战略与商业分析方法论 · 会员封面预览 · 每份单独索取</span>
+          </div>
+          <div class="course-materials-controls" aria-label="轮播控制">
+            <button class="course-materials-arrow" id="courseMaterialsPrevious" type="button" aria-controls="courseMaterialsTrack" aria-label="上一份材料">←</button>
+            <span id="courseMaterialsPosition" aria-label="当前材料">1 / 1</span>
+            <button class="course-materials-arrow" id="courseMaterialsNext" type="button" aria-controls="courseMaterialsTrack" aria-label="下一份材料">→</button>
+          </div>
+        </header>
+        <div class="course-materials-track" id="courseMaterialsTrack" role="region" aria-label="麦府学堂精选材料" tabindex="0"></div>
+        <p class="course-materials-status" id="courseMaterialsStatus" aria-live="polite"></p>
+      </section>
+
+      <section class="course-gate" id="courseGate" aria-live="polite">
+        <h2 id="courseGateTitle">正在核验会员资格…</h2>
+        <p id="courseGateMessage">请稍候。</p>
+        <button class="primary" id="courseLoginButton" type="button" hidden>注册 / 登录</button>
+      </section>
+
+      <section class="course-catalog" id="courseCatalog" hidden aria-label="可咨询课程"></section>
+
+      <dialog class="course-assistant-dialog" id="courseAssistantDialog" aria-labelledby="courseAssistantDialogTitle">
+        <div class="course-assistant-dialog-panel">
+          <header class="course-assistant-dialog-header">
+            <div>
+              <p>PRIVATE LINK · RESOURCE ASSISTANT</p>
+              <h2 id="courseAssistantDialogTitle">按需求查找资源</h2>
+            </div>
+            <button class="course-assistant-dialog-close" id="courseAssistantClose" type="button" aria-label="关闭资料助手">×</button>
+          </header>
+          <section class="report-chat-panel course-chat-panel" id="courseReportChat" aria-labelledby="courseChatTitle">
+            <div class="report-chat-heading">
+              <div>
+                <p>AI MATERIAL GUIDE</p>
+                <h2 id="courseChatTitle">告诉我你要解决什么问题</h2>
+                <span>可以直接提问，也可以输入机构、行业、岗位、法规或文件关键词。助手只会从当前会员目录中返回匹配项；确认后可逐条提交资源申请。</span>
+              </div>
+            </div>
+            <form class="report-chat-form" id="courseChatForm">
+              <textarea id="courseChatInput" rows="3" maxlength="600" placeholder="例如：我准备科技投行面试，想找高盛、摩根大通的建模和行业研究资料"></textarea>
+              <button class="primary" type="submit">查找资源</button>
+            </form>
+            <div id="courseChatStatus" class="status-line" aria-live="polite"></div>
+            <div id="courseChatMessages" class="report-chat-messages"></div>
+            <div id="courseChatRecommendations" class="report-chat-recommendations"></div>
+          </section>
+        </div>
+      </dialog>
+    </main>
+
+    <footer class="legal-footer">
+      <a href="/">首页检索</a>
+      <a href="blog/">Blog</a>
+      <a href="courses.html">Course</a>
+      <a href="terms.html">Terms of Service</a>
+    </footer>
+
+    <script src="assets/site-runtime.js"></script>
+    <script src="assets/contact.js"></script>
+    <script src="assets/analytics.js"></script>
+    <script src="assets/app.js"></script>
+    <script src="assets/report-chat.js"></script>
+  </body>
+</html>

@@ -12548,6 +12548,15 @@
     await Promise.all([loadMarketViews(), refreshAccess()]);
   }
 
+  async function initCourseLanding() {
+    const config = await loadOptionalJson("data/config.json", {});
+    const workerUrl = workerBaseUrl(config);
+    initAccountGate(workerUrl);
+    initNewsfeedNav();
+    const login = document.getElementById("coursePublicLogin");
+    if (login) login.addEventListener("click", () => showAccountModal(workerUrl));
+  }
+
   async function initCourse() {
     const config = await loadOptionalJson("data/config.json", {});
     const workerUrl = workerBaseUrl(config);
@@ -12564,6 +12573,9 @@
     const materialsNext = document.getElementById("courseMaterialsNext");
     const materialsPosition = document.getElementById("courseMaterialsPosition");
     const materialsStatus = document.getElementById("courseMaterialsStatus");
+    const assistantDialog = document.getElementById("courseAssistantDialog");
+    const assistantOpen = document.getElementById("courseAssistantOpen");
+    const assistantClose = document.getElementById("courseAssistantClose");
     let directoryEpoch = 0;
     let courseMaterialEpoch = 0;
     let courseMaterialAccess = false;
@@ -12572,6 +12584,30 @@
     const courseMaterialById = new Map();
     initAccountGate(workerUrl);
     initNewsfeedNav();
+    if (assistantDialog && assistantOpen && assistantClose) {
+      const closeAssistant = () => {
+        if (typeof assistantDialog.close === "function" && assistantDialog.open) assistantDialog.close();
+        else {
+          assistantDialog.hidden = true;
+          assistantDialog.removeAttribute("open");
+        }
+        document.body.classList.remove("course-assistant-open");
+      };
+      const openAssistant = () => {
+        assistantDialog.hidden = false;
+        if (typeof assistantDialog.showModal === "function") assistantDialog.showModal();
+        else assistantDialog.setAttribute("open", "");
+        document.body.classList.add("course-assistant-open");
+        document.getElementById("courseChatInput")?.focus();
+      };
+      assistantOpen.addEventListener("click", openAssistant);
+      assistantClose.addEventListener("click", closeAssistant);
+      assistantDialog.addEventListener("click", (event) => {
+        if (event.target === assistantDialog) closeAssistant();
+        if (event.target.closest("[data-course-query]")) closeAssistant();
+      });
+      assistantDialog.addEventListener("close", () => document.body.classList.remove("course-assistant-open"));
+    }
     if (!gate || !title || !message || !login || !catalog) return;
 
     function courseMaterialText(value, limit) {
@@ -12916,6 +12952,7 @@
         page: 1,
         pageSize: 36,
       };
+      const itemById = new Map();
 
       const integer = (value, fallback = 0) => {
         const parsed = Number.parseInt(String(value || ""), 10);
@@ -13039,6 +13076,9 @@
               ${item.folders.length ? `<span class="course-directory-path">${item.folders.map(escapeHtml).join(" / ")}</span>` : ""}
               <span class="course-directory-meta">${metadata.map((value) => `<span>${escapeHtml(value)}</span>`).join("")}</span>
               ${entityHtml(item.entities)}
+              <span class="course-directory-file-actions">
+                <button class="course-directory-request" type="button" data-directory-request="${escapeHtml(item.id)}" data-directory-title="${escapeHtml(item.name)}">申请此资源</button>
+              </span>
             </span>
           </article>`;
       };
@@ -13143,6 +13183,8 @@
           state.page = payload.page;
           state.pageSize = payload.pageSize;
           updateFacets(payload.facets);
+          itemById.clear();
+          payload.items.forEach((item) => itemById.set(item.id, item));
           renderBreadcrumb();
           const tree = buildTree(payload.items);
           results.innerHTML = payload.items.length
@@ -13169,6 +13211,67 @@
           if (controller === activeController) {
             directory.classList.remove("is-loading");
             directory.removeAttribute("aria-busy");
+          }
+        }
+      };
+
+      const requestCourseDirectoryItem = async (item, button) => {
+        if (!loadAuthSession()) {
+          await showAccountModal(workerUrl);
+          return;
+        }
+        if (!courseMaterialAccess) {
+          status.textContent = "当前账号需通过会员资格核验后才能申请资源。";
+          gate.scrollIntoView({ behavior: "smooth", block: "center" });
+          return;
+        }
+        button.disabled = true;
+        button.textContent = "提交中…";
+        status.textContent = `正在提交《${item.name}》的资源申请…`;
+        let completed = false;
+        let responseStatus = 0;
+        try {
+          const response = await fetch(`${workerUrl}/course/directory-request`, {
+            method: "POST",
+            cache: "no-store",
+            headers: { "Content-Type": "application/json", ...authHeaders() },
+            body: JSON.stringify({
+              directory_item_id: item.id,
+              page_path: currentAnalyticsPath(),
+              honeypot: "",
+            }),
+          });
+          responseStatus = Number(response.status || 0);
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok || !data.ok) {
+            if (response.status === 401) clearAuthSession();
+            throw new Error(data.detail || "资源申请提交失败，请稍后重试。");
+          }
+          completed = true;
+          button.dataset.requested = "true";
+          button.textContent = data.deduplicated ? "申请已记录" : "申请已提交";
+          status.textContent = data.detail || (data.deduplicated
+            ? `《${item.name}》的申请已经记录，无需重复提交。`
+            : `《${item.name}》的资源申请已提交，我们会通过账号邮箱回复。`);
+          trackEvent(workerUrl, "course_directory_request", {
+            action: data.deduplicated ? "deduplicated" : "submitted",
+            directory_item_id: item.id,
+            directory_item_title: item.name,
+            page: currentAnalyticsPath(),
+          });
+        } catch (error) {
+          status.textContent = error.message || "资源申请提交失败，请稍后重试。";
+          trackEvent(workerUrl, "course_directory_request", {
+            action: "failed",
+            directory_item_id: item.id,
+            directory_item_title: item.name,
+            page: currentAnalyticsPath(),
+            response_status: responseStatus,
+          });
+        } finally {
+          if (!completed) {
+            button.disabled = false;
+            button.textContent = "重新申请";
           }
         }
       };
@@ -13216,6 +13319,7 @@
       directory.addEventListener("click", (event) => {
         const entityButton = event.target.closest("[data-directory-entity]");
         const retryButton = event.target.closest("[data-directory-retry]");
+        const requestButton = event.target.closest("[data-directory-request]");
         if (entityButton) {
           state.query = entityButton.dataset.directoryEntity || "";
           queryInput.value = state.query;
@@ -13223,6 +13327,10 @@
           loadDirectory();
         } else if (retryButton) {
           loadDirectory();
+        } else if (requestButton) {
+          event.preventDefault();
+          const item = itemById.get(requestButton.dataset.directoryRequest || "");
+          if (item) requestCourseDirectoryItem(item, requestButton);
         }
       });
       loadDirectory();
@@ -13472,7 +13580,9 @@
             ? initNewsfeed
             : page === "blog"
               ? initBlog
-              : page === "course"
+              : page === "course-public"
+                ? initCourseLanding
+              : page === "course-library" || page === "course"
                 ? initCourse
               : initIndex;
   boot().catch((error) => {

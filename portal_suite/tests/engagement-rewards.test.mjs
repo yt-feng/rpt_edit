@@ -1241,6 +1241,81 @@ test("course directory stays private, searchable, paginated, and strips storage 
   assert.equal(Object.hasOwn(expiredSoon.data, "facets"), false);
 });
 
+test("eligible members can request a matched directory resource without exposing its locator", async () => {
+  const bucket = new MemoryR2();
+  bucket.seed("edge-static/runtime-data/catalog.json", { items: [] });
+  bucket.seed("_course-directory/v1/directory.json", {
+    schema_version: 1,
+    generated_at: "2026-08-10T12:00:00+08:00",
+    items: [{
+      id: "file-directory-01",
+      course_id: "cap-03",
+      name: "中国证监会 IPO 审核规则与案例",
+      folders: ["IPO 上市实务", "监管审核"],
+      extension: "pdf",
+      size_label: "12.4 MB",
+      date: "2026-08-10",
+      entities: ["中国证监会", "上交所"],
+      source_path: "private/source/path.pdf",
+    }],
+  });
+  const env = { ...envFor(bucket), BREVO_API_KEY: "brevo-test-key" };
+  const token = await register(env);
+  const email = "reward-reader@example.com";
+  bucket.seed(`_account/entitlements/${encodeURIComponent(email)}`, {
+    id: "entitlement-course-directory-request",
+    email,
+    plan: "annual",
+    status: "active",
+    lifetime: false,
+    current_period_end: new Date(Date.now() + 31 * 24 * 60 * 60 * 1000).toISOString(),
+    updated_at: new Date().toISOString(),
+  });
+
+  const originalFetch = globalThis.fetch;
+  const sent = [];
+  globalThis.fetch = async (url, options = {}) => {
+    sent.push({ url: String(url), body: JSON.parse(String(options.body || "{}")) });
+    return new Response(JSON.stringify({ messageId: `directory-message-${sent.length}` }), {
+      status: 201,
+      headers: { "content-type": "application/json" },
+    });
+  };
+  try {
+    const submit = async (directoryItemId) => jsonRequest(env, "/course/directory-request", {
+      method: "POST",
+      headers: { "content-type": "application/json", Origin: "https://portal.example.invalid", ...bearer(token) },
+      body: JSON.stringify({
+        directory_item_id: directoryItemId,
+        resource_title: "伪造标题",
+        recipient: "attacker@example.net",
+        page_path: "/member-resource-library-7c4e91.html",
+        honeypot: "",
+      }),
+    });
+    const first = await submit("file-directory-01");
+    assert.equal(first.response.status, 202, JSON.stringify(first.data));
+    assert.equal(first.data.deduplicated, false);
+    assert.equal(sent.length, 1);
+    assert.match(JSON.stringify(sent[0].body), /中国证监会 IPO 审核规则与案例/u);
+    assert.doesNotMatch(JSON.stringify(sent[0].body), /伪造标题|attacker@example\.net|private\/source/u);
+
+    const duplicate = await submit("file-directory-01");
+    assert.equal(duplicate.response.status, 202);
+    assert.equal(duplicate.data.deduplicated, true);
+    assert.equal(sent.length, 1);
+
+    const missing = await submit("file-directory-99");
+    assert.equal(missing.response.status, 404);
+    assert.equal(sent.length, 1);
+    const requestRows = [...bucket.rows.entries()].filter(([key]) => key.startsWith("_course-directory-requests/v1/items/"));
+    assert.equal(requestRows.length, 1);
+    assert.equal(JSON.parse(requestRows[0][1].value).status, "sent");
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
 test("course directory falls back to text parsing when the R2 body has no json method", async () => {
   const bucket = new MemoryR2();
   const directoryKey = "_course-directory/v1/directory.json";
@@ -3037,12 +3112,15 @@ test("chart gallery exposes only opaque image ids and streams immutable images",
 test("restricted course catalog and contact are absent from the unauthenticated static page", async () => {
   const { readFile } = await import("node:fs/promises");
   const html = await readFile(path.join(root, "portal_suite/site_src/courses.html"), "utf8");
+  const libraryHtml = await readFile(path.join(root, "portal_suite/site_src/member-resource-library-7c4e91.html"), "utf8");
   const loweredHtml = html.toLowerCase();
   for (const marker of restrictedCourseMarkers) {
     assert.equal(loweredHtml.includes(marker.toLowerCase()), false, `restricted marker leaked: ${marker}`);
   }
   assert.doesNotMatch(html, /Support Contact|support@portal\.example\.invalid|mailto:/u);
-  assert.match(html, /id="courseCatalog"[^>]*hidden/u);
+  assert.doesNotMatch(html, /courseCatalog|courseChatForm|course\/directory/u);
+  assert.match(libraryHtml, /id="courseCatalog"[^>]*hidden/u);
+  assert.match(libraryHtml, /id="courseAssistantDialog"/u);
 });
 
 test("course frontend renders the complete structured catalog with topic filters", async () => {

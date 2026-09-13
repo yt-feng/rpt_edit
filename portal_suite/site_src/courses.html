@@ -9,7 +9,7 @@
     <meta name="robots" content="noindex,nofollow,noarchive">
     <link rel="stylesheet" href="assets/styles.css?v=site-20260901a">
   </head>
-  <body data-page="course">
+  <body data-page="course-public">
     <header class="topbar">
       <a class="brand compact" href="/" aria-label="KC桌面 home">
         <img src="assets/app-mark.svg" alt="" width="30" height="30">
@@ -24,77 +24,18 @@
       </nav>
     </header>
 
-    <main class="shell course-shell">
+    <main class="shell course-shell course-public-shell">
       <section class="course-hero">
         <p class="course-kicker">MEMBER LEARNING</p>
         <h1>Course</h1>
-        <p>面向仍有至少 30 天有效期的会员，提供主题课程、具体文件目录以及机构与法规关键词检索。KC桌面学堂仅展示会员封面预览，每份材料均需单独索取。</p>
+        <p>面向仍有至少 30 天有效期的会员，提供主题课程、具体文件目录以及机构与法规关键词检索。完整资料目录与资料助手位于会员专用链接页，不在公开导航中展示。</p>
       </section>
 
-      <section
-        class="course-materials"
-        id="courseMaterials"
-        aria-labelledby="courseMaterialsTitle"
-        aria-roledescription="轮播"
-        hidden
-      >
-        <header class="course-materials-heading">
-          <div>
-            <p>FEATURED COLLECTION</p>
-            <h2 id="courseMaterialsTitle">KC桌面学堂</h2>
-            <span id="courseMaterialsDescription">战略与商业分析方法论 · 会员封面预览 · 每份单独索取</span>
-          </div>
-          <div class="course-materials-controls" aria-label="轮播控制">
-            <button
-              class="course-materials-arrow"
-              id="courseMaterialsPrevious"
-              type="button"
-              aria-controls="courseMaterialsTrack"
-              aria-label="上一份材料"
-            >←</button>
-            <span id="courseMaterialsPosition" aria-label="当前材料">1 / 1</span>
-            <button
-              class="course-materials-arrow"
-              id="courseMaterialsNext"
-              type="button"
-              aria-controls="courseMaterialsTrack"
-              aria-label="下一份材料"
-            >→</button>
-          </div>
-        </header>
-        <div
-          class="course-materials-track"
-          id="courseMaterialsTrack"
-          role="region"
-          aria-label="KC桌面学堂精选材料"
-          tabindex="0"
-        ></div>
-        <p class="course-materials-status" id="courseMaterialsStatus" aria-live="polite"></p>
-      </section>
-
-      <section class="course-gate" id="courseGate" aria-live="polite">
-        <h2 id="courseGateTitle">正在核验会员资格…</h2>
-        <p id="courseGateMessage">请稍候。</p>
-        <button class="primary" id="courseLoginButton" type="button" hidden>注册 / 登录</button>
-      </section>
-
-      <section class="course-catalog" id="courseCatalog" hidden aria-label="可咨询课程"></section>
-
-      <section class="report-chat-panel course-chat-panel" id="courseReportChat" aria-labelledby="courseChatTitle">
-        <div class="report-chat-heading">
-          <div>
-            <p>AI MATERIAL GUIDE</p>
-            <h2 id="courseChatTitle">不知道从哪里开始？直接问资料助手</h2>
-            <span>告诉我目标岗位、行业或想练的能力；剩余有效期至少 30 天的会员可获得按匹配度、机构吸引力和时效排序的具体课程文件建议。</span>
-          </div>
-        </div>
-        <form class="report-chat-form" id="courseChatForm">
-          <textarea id="courseChatInput" rows="3" maxlength="600" placeholder="例如：我准备科技投行面试，推荐最值得看的高盛、摩根大通建模和行业研究资料"></textarea>
-          <button class="primary" type="submit">推荐资料</button>
-        </form>
-        <div id="courseChatStatus" class="status-line" aria-live="polite"></div>
-        <div id="courseChatMessages" class="report-chat-messages"></div>
-        <div id="courseChatRecommendations" class="report-chat-recommendations"></div>
+      <section class="course-gate course-public-entry" aria-labelledby="coursePublicEntryTitle">
+        <p class="course-kicker">MEMBER ACCESS</p>
+        <h2 id="coursePublicEntryTitle">课程资料按会员专用链接提供</h2>
+        <p>如果你已获得资料库链接，请直接打开该链接并登录。只有通过会员资格核验后，系统才会加载具体文件标题、目录层级和资源申请入口。</p>
+        <button class="primary" id="coursePublicLogin" type="button">注册 / 登录</button>
       </section>
     </main>
 
