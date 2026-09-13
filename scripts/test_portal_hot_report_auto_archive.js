@@ -57,16 +57,16 @@ function assertSchedulesOnlyAfterFinalize(handlerName, expectedSchedules) {
 }
 
 const catalogDownload = assertSchedulesOnlyAfterFinalize("handleDownload", 1);
-const externalDownload = assertSchedulesOnlyAfterFinalize("handleExternalPdf", 2);
+const externalDownload = extractFunction(worker, "handleExternalPdf");
 assert.match(externalDownload, /handleContactReportPdf\(request, env, "external"\)/);
-assert.match(externalDownload, /triggerExternalGrab|externalDirectPdfUrl/);
+assert.doesNotMatch(externalDownload, /scheduleHotReportArchive|triggerExternalGrab|externalDirectPdfUrl/);
 const thinkTankDownload = assertSchedulesOnlyAfterFinalize("handleThinkTankPdf", 2);
 
 assert.match(catalogDownload, /function handleDownload\(request, env, ctx = null\)/);
-assert.match(externalDownload, /function handleExternalPdf\(request, env, ctx = null\)/);
+assert.match(externalDownload, /function handleExternalPdf\(request, env\)/);
 assert.match(thinkTankDownload, /function handleThinkTankPdf\(request, env, ctx = null\)/);
 assert.match(worker, /pathname === "\/download"[\s\S]*?handleDownload\(request, env, ctx\)/);
-assert.match(worker, /pathname === "\/external\/pdf"[\s\S]*?handleExternalPdf\(request, env, ctx\)/);
+assert.match(worker, /pathname === "\/external\/pdf"[\s\S]*?handleExternalPdf\(request, env\)/);
 assert.match(worker, /pathname === "\/thinktank\/pdf"[\s\S]*?handleThinkTankPdf\(request, env, ctx\)/);
 assert.match(
   worker,
