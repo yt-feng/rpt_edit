@@ -24454,7 +24454,7 @@ async function handleExternalStatus(request, env) {
   if (ready) return jsonResponse(request, env, 200, { ready, status: "ready" });
 
   const stored = await externalStoredStatus(env, id);
-  if (stored && (stored.status === "failed" || (invalidCache && stored.status === "ready"))) {
+  if (stored && (stored.status === "failed" || stored.status === "ready")) {
     const isAdmin = await externalAdminRequest(request, env);
     const token = await reportifyStoredToken(env);
     if (isAdmin && !token) {
@@ -24462,7 +24462,7 @@ async function handleExternalStatus(request, env) {
       return jsonResponse(request, env, 200, {
         ready: false,
         status: "failed",
-        message: invalidCache ? "报告缓存异常。请扫描二维码登录 Reportify 后重试。" : "报告准备失败。请扫描二维码登录 Reportify 后重试。",
+        message: invalidCache || stored.status === "ready" ? "报告缓存异常。请扫描二维码登录 Reportify 后重试。" : "报告准备失败。请扫描二维码登录 Reportify 后重试。",
         login_required: true,
         reportify_url: `${EXTERNAL_SITE}/reports/${id}`,
         ...(qr || {}),
@@ -24472,7 +24472,7 @@ async function handleExternalStatus(request, env) {
     return jsonResponse(request, env, 200, {
       ready: false,
       status: "failed",
-      message: invalidCache ? "报告缓存异常，请提交报告申请。" : "报告准备失败，请提交报告申请。",
+      message: invalidCache || stored.status === "ready" ? "报告缓存异常，请提交报告申请。" : "报告准备失败，请提交报告申请。",
       request_required: !isAdmin,
       request_source: "external",
       request_report_id: id,
