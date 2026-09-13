@@ -57,16 +57,14 @@ function assertSchedulesOnlyAfterFinalize(handlerName, expectedSchedules) {
 }
 
 const catalogDownload = assertSchedulesOnlyAfterFinalize("handleDownload", 1);
-const externalDownload = extractFunction(worker, "handleExternalPdf");
-assert.match(externalDownload, /handleContactReportPdf\(request, env, "external"\)/);
-assert.doesNotMatch(externalDownload, /scheduleHotReportArchive|triggerExternalGrab|externalDirectPdfUrl/);
+const externalDownload = assertSchedulesOnlyAfterFinalize("handleExternalPdf", 2);
 const thinkTankDownload = assertSchedulesOnlyAfterFinalize("handleThinkTankPdf", 2);
 
 assert.match(catalogDownload, /function handleDownload\(request, env, ctx = null\)/);
-assert.match(externalDownload, /function handleExternalPdf\(request, env\)/);
+assert.match(externalDownload, /function handleExternalPdf\(request, env, ctx = null\)/);
 assert.match(thinkTankDownload, /function handleThinkTankPdf\(request, env, ctx = null\)/);
 assert.match(worker, /pathname === "\/download"[\s\S]*?handleDownload\(request, env, ctx\)/);
-assert.match(worker, /pathname === "\/external\/pdf"[\s\S]*?handleExternalPdf\(request, env\)/);
+assert.match(worker, /pathname === "\/external\/pdf"[\s\S]*?handleExternalPdf\(request, env, ctx\)/);
 assert.match(worker, /pathname === "\/thinktank\/pdf"[\s\S]*?handleThinkTankPdf\(request, env, ctx\)/);
 assert.match(
   worker,
@@ -79,7 +77,14 @@ assert.match(
   "the 30-minute quota cleanup must remain dormant unless explicitly enabled",
 );
 
-for (const source of [catalogDownload, thinkTankDownload]) {
+const externalPendingBranch = externalDownload.slice(externalDownload.indexOf("// 3) Gated and not yet mirrored"));
+assert.ok(externalPendingBranch.length > 0, "external 202 branch must remain identifiable");
+assert.doesNotMatch(
+  externalPendingBranch,
+  /scheduleHotReportArchive\(/,
+  "queued/202 external reports must not be archived before a PDF is delivered",
+);
+for (const source of [catalogDownload, externalDownload, thinkTankDownload]) {
   const firstSchedule = source.indexOf("scheduleHotReportArchive(");
   assert.ok(firstSchedule > source.indexOf("if (!consumed.ok)"), "failed finalization must return before archive scheduling");
 }
@@ -260,12 +265,6 @@ async function readJson(bucket, key) {
   assert.equal(stableId, await api.automaticHotReportId("catalog", originId));
   assert.notEqual(stableId, await api.automaticHotReportId("external", originId));
   assert.notEqual(stableId, await api.automaticHotReportId("catalog", "bbbbbbbbbbbbbbbb"));
-
-  const rejectedExternalBucket = new MockR2Bucket();
-  await assert.rejects(() => api.archiveReportAsHot({ REPORT_BUCKET: rejectedExternalBucket }, {
-    origin_source: "external", origin_report_id: "1295384700889731072", body: new Uint8Array([37, 80, 68, 70, 45]),
-  }), /manual contact-report fulfillment/);
-  assert.equal(rejectedExternalBucket.objects.size, 0, "external title leads must never create an automatic PDF archive");
 
   const disabledCleanupBucket = new MockR2Bucket();
   const disabledCleanupId = "hot:0101010101010101";
@@ -1024,11 +1023,11 @@ async function readJson(bucket, key) {
     retention_state: "active",
   });
   const staleGeneration = "abcdefabcdefabcd";
-  await repairBucket.put("_hot-reports/indexes/public-v3-stale.json", JSON.stringify({
-    version: 3,
+  await repairBucket.put("_hot-reports/indexes/public-v2-stale.json", JSON.stringify({
+    version: 2,
     generation: staleGeneration,
   }), { customMetadata: { generation: staleGeneration } });
-  repairBucket.conditionalPutConflicts.add("_hot-reports/indexes/public-v3.json");
+  repairBucket.conditionalPutConflicts.add("_hot-reports/indexes/public-v2.json");
   const racedRepair = await api.repairHotReportPublicIndexIfNeeded({ REPORT_BUCKET: repairBucket });
   assert.equal(racedRepair.rebuilt, true);
   assert.equal(
@@ -1090,8 +1089,8 @@ async function readJson(bucket, key) {
     sort_order: 20,
   });
   const fastStaleGeneration = "2020202020202020";
-  await fastBucket.put("_hot-reports/indexes/public-v3-stale.json", JSON.stringify({
-    version: 3,
+  await fastBucket.put("_hot-reports/indexes/public-v2-stale.json", JSON.stringify({
+    version: 2,
     generation: fastStaleGeneration,
   }), { customMetadata: { generation: fastStaleGeneration } });
   const staleContext = {
@@ -1182,8 +1181,8 @@ async function readJson(bucket, key) {
   await api.repairHotReportPublicIndexIfNeeded({ REPORT_BUCKET: markerFailureBucket });
   const markerSource = "reports/marker-failure.pdf";
   await markerFailureBucket.put(markerSource, new Uint8Array([37, 80, 68, 70, 45]));
-  markerFailureBucket.failPutKeys.add("_hot-reports/indexes/public-v3.json");
-  markerFailureBucket.failPutKeys.add("_hot-reports/indexes/public-v3-stale.json");
+  markerFailureBucket.failPutKeys.add("_hot-reports/indexes/public-v2.json");
+  markerFailureBucket.failPutKeys.add("_hot-reports/indexes/public-v2-stale.json");
   const markerFailureLogs = [];
   const originalConsoleError = console.error;
   console.error = (...values) => markerFailureLogs.push(values);
@@ -1198,8 +1197,8 @@ async function readJson(bucket, key) {
         reason: "successful_download",
       }),
       (error) => {
-        assert.match(error.message, /mock R2 PUT failed.*public-v3\.json/);
-        assert.match(error.message, /stale marker write failed.*public-v3-stale\.json/);
+        assert.match(error.message, /mock R2 PUT failed.*public-v2\.json/);
+        assert.match(error.message, /stale marker write failed.*public-v2-stale\.json/);
         assert.equal(error.code, "HOT_REPORT_INDEX_MARKER_FAILED");
         return true;
       },
@@ -1256,7 +1255,7 @@ async function readJson(bucket, key) {
     "a healthy public index must eliminate per-report metadata reads",
   );
   assert.equal(
-    listingBucket.getCalls.filter((key) => key === "_hot-reports/indexes/public-v3.json").length,
+    listingBucket.getCalls.filter((key) => key === "_hot-reports/indexes/public-v2.json").length,
     1,
     "a healthy public listing must read one lightweight index object",
   );

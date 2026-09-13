@@ -149,7 +149,7 @@ test("hot reports paint a validated last-good first page before refreshing in th
     const PUBLIC_BRAND = "KC桌面";
     ${source.slice(brandStart, brandEnd)}
     const HOT_REPORT_FIRST_PAGE_CACHE_KEY = "portal_hot_report_first_page_v1";
-    ${source.match(/const HOT_REPORT_FIRST_PAGE_CACHE_VERSION = \d+;/u)[0]}
+    const HOT_REPORT_FIRST_PAGE_CACHE_VERSION = 1;
     const HOT_REPORT_FIRST_PAGE_CACHE_MAX_ITEMS = 24;
     const HOT_REPORT_FIRST_PAGE_CACHE_TTL_MS = 24 * 60 * 60 * 1000;
     const HOT_REPORT_SOURCE = "hot";
@@ -194,19 +194,6 @@ test("hot reports paint a validated last-good first page before refreshing in th
   assert.doesNotMatch(JSON.stringify(cached), /Reportify|Nash[\s._-]*AI|Macro[\s._-]*Gate|Portal[\s._-]*Suite/iu);
   assert.equal(cached.total, 500);
   assert.equal(cached.nextCursor, "cursor-2");
-
-  rows.set("portal_hot_report_first_page_v1", JSON.stringify({ version: 1, saved_at: now, page }));
-  assert.equal(sandbox.cacheHelpers.readHotReportFirstPageCache(storage, now), null,
-    "legacy cache rows without source/request metadata must be discarded");
-  assert.equal(sandbox.cacheHelpers.writeHotReportFirstPageCache({
-    ...page,
-    items: [{ ...page.items[0], origin_source: "external", request_source: "external", request_report_id: "1295384700889731072", contact_only: true, availability: "contact_only" }],
-  }, storage, now), true);
-  const requestOnlyCached = sandbox.cacheHelpers.readHotReportFirstPageCache(storage, now);
-  assert.equal(requestOnlyCached.items[0].request_source, "external");
-  assert.equal(requestOnlyCached.items[0].request_report_id, "1295384700889731072");
-  assert.equal(requestOnlyCached.items[0].contact_only, true);
-  assert.equal(requestOnlyCached.items[0].description, "");
 
   assert.equal(
     sandbox.cacheHelpers.readHotReportFirstPageCache(storage, now + 24 * 60 * 60 * 1000 + 1),

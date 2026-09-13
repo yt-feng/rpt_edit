@@ -6,8 +6,8 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const { default: worker } = await import(path.join(root, "workers/portal-suite-worker/src/index.js"));
 
-const INDEX_KEY = "_hot-reports/indexes/public-v3.json";
-const STALE_KEY = "_hot-reports/indexes/public-v3-stale.json";
+const INDEX_KEY = "_hot-reports/indexes/public-v2.json";
+const STALE_KEY = "_hot-reports/indexes/public-v2-stale.json";
 
 class MemoryR2 {
   constructor() {
@@ -25,7 +25,7 @@ class MemoryR2 {
 
   seedIndexItems(items, generation = "0123456789abcdef") {
     this.rows.set(INDEX_KEY, JSON.stringify({
-      version: 3,
+      version: 2,
       generation,
       stale_marker: "",
       updated_at: "2026-08-27T12:00:00.000Z",
@@ -49,7 +49,7 @@ class MemoryR2 {
 
   seedStaleMarker() {
     this.rows.set(STALE_KEY, JSON.stringify({
-      version: 3,
+      version: 2,
       generation: "fedcba9876543210",
       marked_at: "2026-08-27T12:01:00.000Z",
     }));
