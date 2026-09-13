@@ -1,0 +1,200 @@
+name: Social publishing reach monitor
+
+on:
+  schedule:
+    # Hourly, offset from publishing and credential workflows.
+    - cron: "47 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  # Shared with publishing so a durable zero-reach pause cannot race a POST.
+  group: social-publishing-control-plane
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    if: vars.SOCIAL_REACH_MONITOR_ENABLED == 'true' && github.ref == 'refs/heads/main'
+    environment: social-monitor
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        checkpoint_hours:
+          - 1
+          - 24
+    steps:
+      - name: Checkout encrypted locators and monitor code
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            social_publish/receipts
+            scripts/check_social_reach.py
+            scripts/test_check_social_reach.py
+            scripts/social_receipt_crypto.mjs
+            scripts/test_social_receipt_crypto.mjs
+            scripts/render_private_config.py
+            scripts/send_portal_ops_alert.py
+            scripts/test_send_portal_ops_alert.py
+
+      - name: Test reach and encrypted-receipt contracts without credentials
+        run: |
+          python3 -B scripts/test_check_social_reach.py
+          node --test scripts/test_social_receipt_crypto.mjs
+          python3 -B scripts/test_send_portal_ops_alert.py
+
+      - name: Decrypt provider locators only inside this hosted runner
+        env:
+          SOCIAL_RECEIPT_KEY_B64: ${{ secrets.SOCIAL_RECEIPT_KEY_B64 }}
+        run: |
+          set -euo pipefail
+          destination="$RUNNER_TEMP/social-private-receipts"
+          mkdir -p "$destination"
+          shopt -s nullglob
+          encrypted_receipts=(social_publish/receipts/*.json.enc)
+          for encrypted_receipt in "${encrypted_receipts[@]}"; do
+            filename="$(basename "$encrypted_receipt" .enc)"
+            node scripts/social_receipt_crypto.mjs open \
+              --input "$encrypted_receipt" \
+              --output "$destination/$filename"
+          done
+          echo "Decrypted ${#encrypted_receipts[@]} authenticated receipt locator(s)."
+
+      - name: Run read-only reach checkpoint
+        id: reach
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_ANALYTICS_PERMISSION: ${{ vars.LINKEDIN_ANALYTICS_PERMISSION }}
+          LINKEDIN_ANALYTICS_PERMISSION_GRANTED: ${{ vars.LINKEDIN_ANALYTICS_PERMISSION_GRANTED || 'false' }}
+          LINKEDIN_ANALYTICS_URL_TEMPLATE: ${{ secrets.LINKEDIN_ANALYTICS_URL_TEMPLATE }}
+          LINKEDIN_ANALYTICS_METRIC_PATH: ${{ vars.LINKEDIN_ANALYTICS_METRIC_PATH }}
+          LINKEDIN_API_VERSION: ${{ vars.LINKEDIN_API_VERSION || '202608' }}
+          SOCIAL_REACH_MAX_RECEIPTS: ${{ vars.SOCIAL_REACH_MAX_RECEIPTS || '50' }}
+          SOCIAL_REACH_PAUSE_AFTER_CONSECUTIVE: ${{ vars.SOCIAL_REACH_PAUSE_AFTER_CONSECUTIVE || '2' }}
+          CHECKPOINT_HOURS: ${{ matrix.checkpoint_hours }}
+        run: |
+          python3 -B scripts/check_social_reach.py \
+            --receipts-dir "$RUNNER_TEMP/social-private-receipts" \
+            --age-hours "$CHECKPOINT_HOURS" \
+            --json-output "$RUNNER_TEMP/social-reach-$CHECKPOINT_HOURS.json" \
+            --email-output "$RUNNER_TEMP/social-reach-$CHECKPOINT_HOURS-email.txt" \
+            --github-output "$GITHUB_OUTPUT"
+
+      - name: Write sanitized reach summary
+        env:
+          CHECKPOINT_HOURS: ${{ matrix.checkpoint_hours }}
+          DUE_COUNT: ${{ steps.reach.outputs.due_count }}
+          ZERO_REACH_COUNT: ${{ steps.reach.outputs.zero_reach_count }}
+          UNSUPPORTED_COUNT: ${{ steps.reach.outputs.unsupported_count }}
+          UNAVAILABLE_COUNT: ${{ steps.reach.outputs.unavailable_count }}
+          SHOULD_ALERT: ${{ steps.reach.outputs.should_alert }}
+          PAUSE_SIGNAL: ${{ steps.reach.outputs.pause_signal }}
+        run: |
+          {
+            echo "### 社媒触达检查：${CHECKPOINT_HOURS}h"
+            echo ""
+            echo "- 本次窗口：$DUE_COUNT"
+            echo "- 明确零触达：$ZERO_REACH_COUNT"
+            echo "- 指标不支持：$UNSUPPORTED_COUNT"
+            echo "- 暂不可读：$UNAVAILABLE_COUNT"
+            echo "- 需要邮件：$SHOULD_ALERT"
+            echo "- 连续零触达信号：$PAUSE_SIGNAL"
+            echo "- 只读检查；unsupported/unavailable 不会被计为 0"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload sanitized reach report
+        uses: actions/upload-artifact@v4
+        with:
+          name: social-reach-${{ matrix.checkpoint_hours }}h-${{ github.run_id }}
+          path: ${{ steps.reach.outputs.json_file }}
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Write durable automatic-publishing pause
+        if: matrix.checkpoint_hours == 24 && steps.reach.outputs.should_alert == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REACH_JSON_FILE: ${{ steps.reach.outputs.json_file }}
+          ZERO_REACH_COUNT: ${{ steps.reach.outputs.zero_reach_count }}
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          report = json.loads(Path(os.environ["REACH_JSON_FILE"]).read_text(encoding="utf-8"))
+          platforms = sorted({
+              row.get("platform") for row in report.get("results", [])
+              if row.get("should_alert") is True
+              and row.get("platform") in {"youtube", "linkedin", "x"}
+          })
+          payload = {
+              "schema_version": 1,
+              "state": "paused",
+              "reason": "confirmed_zero_reach_after_24h",
+              "created_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+              "platforms": platforms,
+              "zero_reach_count": int(os.environ["ZERO_REACH_COUNT"]),
+              "run_id": os.environ["GITHUB_RUN_ID"],
+          }
+          Path("social_publish/PAUSED.json").write_text(
+              json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          PY
+          encoded="$(base64 < social_publish/PAUSED.json | tr -d '\n')"
+          args=(
+            --method PUT
+            "repos/$GITHUB_REPOSITORY/contents/social_publish/PAUSED.json"
+            --raw-field "message=Pause social publishing after confirmed zero reach"
+            --raw-field "content=$encoded"
+            --raw-field "branch=main"
+          )
+          if gh api "repos/$GITHUB_REPOSITORY/contents/social_publish/PAUSED.json?ref=main" --silent >/dev/null 2>&1; then
+            echo "A durable pause already exists; preserving it unchanged."
+            exit 0
+          fi
+          gh api "${args[@]}" >/dev/null
+
+      - name: Materialize private email runtime values
+        if: always() && steps.reach.outputs.should_alert == 'true'
+        env:
+          PORTAL_PRIVATE_CONFIG_B64: ${{ secrets.PORTAL_PRIVATE_CONFIG_B64 }}
+        run: |
+          python3 -B scripts/render_private_config.py \
+            --root scripts/send_portal_ops_alert.py \
+            --github-add-mask \
+            --skip-generated-files
+
+      - name: Email zero-reach pause notice
+        if: always() && steps.reach.outputs.should_alert == 'true'
+        env:
+          OPS_ALERT_SIGNING_KEY: ${{ secrets.OPS_ALERT_SIGNING_KEY || secrets.PASSWORD_SECRET }}
+          PORTAL_WORKER_URL: ${{ secrets.PORTAL_WORKER_URL }}
+          ALERT_SUBJECT: ${{ steps.reach.outputs.subject }}
+          ALERT_TEXT_FILE: ${{ steps.reach.outputs.email_file }}
+          ALERT_DEDUPE_KEY: ${{ steps.reach.outputs.alert_key }}
+        run: |
+          python3 -B scripts/send_portal_ops_alert.py \
+            --subject "$ALERT_SUBJECT" \
+            --text-file "$ALERT_TEXT_FILE" \
+            --dedupe-key "$ALERT_DEDUPE_KEY" \
+            --dedupe-hours 168 \
+            --severity critical
