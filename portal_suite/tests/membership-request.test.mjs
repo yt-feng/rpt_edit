@@ -540,10 +540,13 @@ test("CONTACT_EMAIL is retained only as the server-side owner fallback", async (
   const uses = source.split("\n")
     .map((line, index) => ({ line: index + 1, text: line.trim() }))
     .filter((entry) => entry.text.includes("CONTACT_EMAIL"));
-  assert.equal(uses.length, 2);
+  assert.equal(uses.length, 3);
   assert.match(uses[0].text, /^const CONTACT_EMAIL =/u);
-  for (const use of uses.slice(1)) {
+  const fallbackUses = uses.slice(1).filter((entry) => entry.text.startsWith("return "));
+  assert.equal(fallbackUses.length, 1);
+  for (const use of fallbackUses) {
     assert.match(use.text, /^return .+ \? email : CONTACT_EMAIL;$/u, `public CONTACT_EMAIL use at line ${use.line}`);
   }
+  assert.equal(uses.slice(1).filter((entry) => /^to: CONTACT_EMAIL,$/u.test(entry.text)).length, 1);
   assert.doesNotMatch(source, /contact:\s*CONTACT_EMAIL|联系邮箱\s*\$\{CONTACT_EMAIL\}|Contact:\s*\$\{CONTACT_EMAIL\}/u);
 });
