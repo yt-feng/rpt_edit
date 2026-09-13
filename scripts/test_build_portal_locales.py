@@ -3234,7 +3234,7 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
         self.assertEqual(request.call_count, len(builder.LOCALES))
         self.assertEqual(missing, {locale: 1 for locale in builder.LOCALES})
 
-    def test_translation_worker_count_is_clamped_to_500(self) -> None:
+    def test_translation_worker_count_is_clamped_to_provider_stable_32(self) -> None:
         unit = builder.TranslationUnit(
             key="a" * 64,
             context="test:worker-clamp",
@@ -3268,6 +3268,7 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
             )
 
         self.assertEqual(observed_workers, [builder.MAX_TRANSLATION_WORKERS])
+        self.assertEqual(builder.MAX_TRANSLATION_WORKERS, 32)
         self.assertEqual(missing, {locale: 1 for locale in builder.LOCALES})
         self.assertEqual({locale for locale, _keys in translator.calls}, set(builder.LOCALES))
 

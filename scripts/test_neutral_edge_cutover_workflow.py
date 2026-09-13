@@ -94,6 +94,14 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn("--workers 1 --attempts 2 --max-provider-requests 6", locale)
         self.assertIn("Locale translation scope:", locale)
 
+    def test_locale_translation_workers_are_hard_capped_before_backfill(self):
+        locale = self.workflow.split("Build Korean Japanese and Arabic static locales", 1)[1].split(
+            "Detect multilingual translation checkpoint", 1)[0]
+        self.assertIn("locale_worker_cap=32", locale)
+        self.assertIn('effective_workers="$PORTAL_MULTILINGUAL_WORKERS"', locale)
+        self.assertIn('effective_workers="$locale_worker_cap"', locale)
+        self.assertIn('--workers "$effective_workers"', locale)
+
     def test_month_scope_is_rejected_before_provider_calls_unless_shadow(self):
         locale = self.workflow.split("Build Korean Japanese and Arabic static locales", 1)[1].split(
             "Detect multilingual translation checkpoint", 1)[0]
@@ -382,7 +390,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
             '--hot-report-index "$RUNNER_TEMP/hot-reports-public-v2.json"',
             "--cache-out _neutral_site/data/i18n/cache-v1.json.gz",
             "--assets-root portal_suite/locale_assets",
-            '--workers "$PORTAL_MULTILINGUAL_WORKERS"',
+            '--workers "$effective_workers"',
             '--model "$DEEPSEEK_MODEL"',
             '--deepseek-base-url "$DEEPSEEK_BASE_URL"',
         ):
