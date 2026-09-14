@@ -301,6 +301,12 @@ jobs:
           PORTAL_PRIVATE_PUBLISH_ASSET_KEY: ${{ secrets.PORTAL_PRIVATE_PUBLISH_ASSET_KEY }}
         run: bash scripts/materialize_private_social_asset.sh prompts
 
+      - name: Restore accepted WeChat draft receipts
+        uses: ./.github/actions/restore-wechat-diagnostics
+        with:
+          name: ark-invest-wechat-drafts-${{ needs.fetch-and-build.outputs.date_folder }}-${{ github.run_id }}
+          path: .
+
       - name: Build and upload WeChat drafts
         env:
           WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
@@ -335,6 +341,7 @@ jobs:
             "${ARGS[@]}" 2>&1 | tee ark_wechat_progress.log
 
       - name: Archive WeChat draft diagnostics
+        if: ${{ always() }}
         uses: ./.github/actions/resilient-diagnostic-artifact
         with:
           name: ark-invest-wechat-drafts-${{ needs.fetch-and-build.outputs.date_folder }}-${{ github.run_id }}

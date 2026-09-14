@@ -43,6 +43,10 @@ from push_portal_translated_to_wechat_drafts import (  # noqa: E402
     add_draft,
     article_payload,
     content_within_limits,
+    checkpoint_wechat_drafts,
+    draft_group_key,
+    saved_draft_receipt,
+    saved_draft_prefix_length,
     digest_from_markdown,
     download_pollinations_image,
     fake_static_image_url,
@@ -872,6 +876,15 @@ def main() -> int:
         nonlocal use_safe_cover_for_future, safe_cover_without_crop
         public_articles = article_payload(group)
         articles = materialize_private_article_payload(public_articles, args.site_url)
+        receipt = {} if args.dry_run else saved_draft_receipt(output_dir, public_articles)
+        if not args.dry_run and not receipt:
+            saved_prefix = saved_draft_prefix_length(output_dir, public_articles)
+            if saved_prefix:
+                create_draft(group[:saved_prefix])
+                create_draft(group[saved_prefix:])
+                return
+        publish_id = str(receipt.get("publish_id") or "")
+        draft_get = {"ok": False, "status": "pending_verification"}
         payload_bytes = utf8_byte_count(json.dumps({"articles": articles}, ensure_ascii=False, separators=(",", ":")))
         draft_index = len(drafts) + 1
         log(
@@ -892,7 +905,7 @@ def main() -> int:
             if session is None or access_token is None:
                 raise RuntimeError("session and access_token are required outside dry-run")
             log(f"Checking recent drafts before creating WeChat draft {draft_index}")
-            existing_media_id = find_recent_draft_by_titles(
+            existing_media_id = str(receipt.get("media_id") or "") or find_recent_draft_by_titles(
                 session,
                 access_token,
                 payload_article_titles(articles),
@@ -994,21 +1007,6 @@ def main() -> int:
                         return
                     else:
                         raise
-            log(f"Verifying WeChat draft {draft_index}: media_id={media_id}")
-            pacing_sleep(
-                f"Before verifying WeChat draft {draft_index}",
-                args.draft_verify_delay_seconds,
-                args.dry_run,
-            )
-            draft_get = verify_draft_get(
-                session,
-                access_token,
-                media_id,
-                args.timeout,
-                len(articles),
-                articles,
-            )
-            publish_id = submit_publish(session, access_token, media_id, args.timeout) if args.publish else ""
 
         payload_path = output_dir / f"draft_payload_{draft_index:02d}.json"
         # Keep the deployment hostname out of public Blog archive inputs.
@@ -1016,6 +1014,8 @@ def main() -> int:
         drafts.append(
             {
                 "draft_index": draft_index,
+                "group_key": draft_group_key(public_articles),
+                "status": "dry_run" if args.dry_run else "pending_verification",
                 "media_id": media_id,
                 "publish_id": publish_id,
                 "published": bool(publish_id),
@@ -1029,6 +1029,20 @@ def main() -> int:
                 "draft_get": draft_get,
             }
         )
+        checkpoint_wechat_drafts(output_dir, drafts, dry_run=args.dry_run)
+        if not args.dry_run:
+            log(f"Verifying WeChat draft {draft_index}: media_id={media_id}")
+            pacing_sleep(f"Before verifying WeChat draft {draft_index}", args.draft_verify_delay_seconds, False)
+            draft_get = verify_draft_get(session, access_token, media_id, args.timeout, len(articles), articles)
+            drafts[-1]["draft_get"] = draft_get
+            drafts[-1]["status"] = "verified" if draft_get.get("ok") else "verification_failed"
+            checkpoint_wechat_drafts(output_dir, drafts, dry_run=False)
+            if not draft_get.get("ok"):
+                raise WeChatError(f"draft/get verification failed for media_id={media_id}; receipt saved in {output_dir / 'wechat_draft_summary.json'}")
+            if args.publish and not publish_id:
+                publish_id = submit_publish(session, access_token, media_id, args.timeout)
+                drafts[-1].update(publish_id=publish_id, published=True)
+                checkpoint_wechat_drafts(output_dir, drafts, dry_run=False)
         if publish_id:
             log(f"Draft {draft_index}: articles={len(articles)} media_id={media_id} publish_id={publish_id}")
         else:
@@ -1105,6 +1119,7 @@ def main() -> int:
             for item in built_articles
         ],
     }
+    summary["status"] = "dry_run" if args.dry_run else "verified"
     summary_path = output_dir / "wechat_draft_summary.json"
     write_json(summary_path, summary)
     log(f"Wrote summary: {summary_path}")

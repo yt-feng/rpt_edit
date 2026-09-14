@@ -1,0 +1,80 @@
+name: Verify existing WeChat drafts
+run-name: Verify WeChat drafts from run ${{ inputs.source_run_id }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: "Existing upload run containing draft diagnostics"
+        required: true
+        type: string
+      artifact_name:
+        description: "Exact diagnostic artifact name from the upload run"
+        required: true
+        type: string
+
+permissions:
+  actions: read
+  contents: read
+
+concurrency:
+  group: wechat-draft-readback
+  cancel-in-progress: false
+
+jobs:
+  verify-existing:
+    runs-on: [self-hosted, wechat-draft]
+    timeout-minutes: 20
+    steps:
+      - name: Validate source run
+        env:
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          ARTIFACT_NAME: ${{ inputs.artifact_name }}
+        run: |
+          [[ "$SOURCE_RUN_ID" =~ ^[0-9]+$ ]]
+          [[ "$ARTIFACT_NAME" =~ ^[a-zA-Z0-9_-]+$ ]]
+
+      - name: Checkout verification code
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            .github/workflows
+            scripts
+            requirements.txt
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install verification dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Test draft readback
+        run: python scripts/test_verify_existing_wechat_drafts.py
+
+      - name: Download existing draft diagnostics
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ inputs.artifact_name }}
+          run-id: ${{ inputs.source_run_id }}
+          github-token: ${{ github.token }}
+          path: _wechat_readback_source
+
+      - name: Verify existing drafts without creating or publishing
+        env:
+          WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
+          WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+        run: |
+          python scripts/verify_existing_wechat_drafts.py \
+            --artifact-root _wechat_readback_source \
+            --output _wechat_readback_result/verification.json
+
+      - name: Archive readback result
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: wechat-readback-${{ github.run_id }}
+          path: _wechat_readback_result/verification.json
+          if-no-files-found: warn
+          retention-days: 7

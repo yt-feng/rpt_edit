@@ -13,6 +13,7 @@ optionally submit those drafts for publishing.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import html
 import json
 import mimetypes
@@ -1971,8 +1972,10 @@ def post_wechat_json(
             )
         except requests.RequestException as exc:
             if attempt >= max_attempts:
-                raise WeChatError(f"{label} request failed after {max_attempts} attempt(s): {exc}") from exc
-            sleep_before_wechat_retry(label, attempt, max_attempts, str(exc))
+                # Requests exceptions can contain the complete token-bearing
+                # URL. Neither the message nor its traceback belongs in logs.
+                raise WeChatError(f"{label} request failed after {max_attempts} attempt(s): {type(exc).__name__}") from None
+            sleep_before_wechat_retry(label, attempt, max_attempts, type(exc).__name__)
             continue
 
         if is_retryable_wechat_response(response) and attempt < max_attempts:
@@ -2004,11 +2007,13 @@ def get_stable_access_token(session: requests.Session, appid: str, secret: str, 
 
 def parse_wechat_json(response: requests.Response, label: str) -> dict[str, Any]:
     try:
-        data = response.json()
-    except Exception as exc:
-        snippet = normalize_space(response.text[:300])
-        detail = f": {snippet}" if snippet else ""
-        raise WeChatError(f"{label} returned non-JSON response: HTTP {response.status_code}{detail}") from exc
+        # WeChat can return UTF-8 JSON with a text/* Content-Type. Requests then
+        # assumes Latin-1, corrupting Chinese before title and footer checks.
+        data = json.loads(response.content.decode("utf-8-sig"))
+    except (UnicodeError, ValueError):
+        raise WeChatError(f"{label} returned non-JSON response: HTTP {response.status_code} (expected UTF-8 JSON)") from None
+    if not isinstance(data, dict):
+        raise WeChatError(f"{label} returned non-object JSON response: HTTP {response.status_code}")
     errcode = data.get("errcode")
     if errcode not in (None, 0):
         raise WeChatError(
@@ -2016,6 +2021,8 @@ def parse_wechat_json(response: requests.Response, label: str) -> dict[str, Any]
             errcode=int(errcode) if isinstance(errcode, int) or str(errcode).isdigit() else None,
             errmsg=str(data.get("errmsg") or ""),
         )
+    if not 200 <= response.status_code < 300:
+        raise WeChatError(f"{label} returned HTTP {response.status_code}")
     return data
 
 
@@ -2025,8 +2032,10 @@ def is_retryable_wechat_response(response: requests.Response) -> bool:
 
 def retryable_wechat_json_error(response: requests.Response) -> str:
     try:
-        data = response.json()
-    except Exception:
+        data = json.loads(response.content.decode("utf-8-sig"))
+    except (UnicodeError, ValueError):
+        return ""
+    if not isinstance(data, dict):
         return ""
     errcode = data.get("errcode")
     if errcode in WECHAT_RETRYABLE_ERRCODES:
@@ -2062,9 +2071,9 @@ def upload_wechat_file(
         except requests.RequestException as exc:
             if attempt >= max_attempts:
                 raise WeChatError(
-                    f"{label} upload failed after {max_attempts} attempt(s) for {path}: {exc}"
-                ) from exc
-            sleep_before_wechat_retry(label, attempt, max_attempts, str(exc))
+                    f"{label} upload failed after {max_attempts} attempt(s) for {path}: {type(exc).__name__}"
+                ) from None
+            sleep_before_wechat_retry(label, attempt, max_attempts, type(exc).__name__)
             continue
 
         if is_retryable_wechat_response(response) and attempt < max_attempts:
@@ -2183,8 +2192,29 @@ def batchget_recent_drafts(session: requests.Session, access_token: str, timeout
         )
         data = parse_wechat_json(response, "draft/batchget")
         items = data.get("item")
-        if not isinstance(items, list) or not items:
+        if items is None and data.get("total_count") == 0:
+            items = []
+        if not isinstance(items, list) or any(not isinstance(item, dict) for item in items):
+            raise WeChatError("draft/batchget returned malformed draft list; refusing to assume it is empty")
+        if not items:
+            if offset == 0 and data.get("total_count", 0) != 0:
+                raise WeChatError("draft/batchget returned an empty list with nonzero total_count")
             break
+        for item in items:
+            media_id = item.get("media_id")
+            content = item.get("content") if isinstance(item.get("content"), dict) else item
+            news_items = content.get("news_item", content.get("articles"))
+            if (
+                not isinstance(media_id, str) or not media_id.strip()
+                or not isinstance(news_items, list) or not news_items
+                or any(
+                    not isinstance(news, dict)
+                    or not isinstance(news.get("title"), str) or not news["title"].strip()
+                    or not isinstance(news.get("content"), str) or not news["content"].strip()
+                    for news in news_items
+                )
+            ):
+                raise WeChatError("draft/batchget returned incomplete draft content with no_content=0; refusing to assume no matching draft exists")
         drafts.extend(item for item in items if isinstance(item, dict))
         total_count = data.get("total_count")
         if isinstance(total_count, int) and offset + len(items) >= total_count:
@@ -2205,11 +2235,9 @@ def find_recent_draft_by_titles(
     if not expected_titles:
         return ""
     expected_keys = [draft_title_key(title) for title in expected_titles]
-    try:
-        recent_items = batchget_recent_drafts(session, access_token, timeout, limit=limit)
-    except WeChatError as exc:
-        log(f"Could not batchget recent drafts while recovering draft/add: {exc}")
-        return ""
+    # A failed lookup is not proof that no draft exists. Stop rather than
+    # allowing an API read failure to create a duplicate.
+    recent_items = batchget_recent_drafts(session, access_token, timeout, limit=limit)
     for item in recent_items:
         if not isinstance(item, dict):
             continue
@@ -2266,13 +2294,17 @@ def add_draft(session: requests.Session, access_token: str, articles: list[dict[
                 raise WeChatError(f"draft/add did not return media_id: {data}")
             return str(media_id)
         except WeChatError as exc:
-            if "non-JSON response" in str(exc):
+            ambiguous = exc.errcode is None and any(
+                marker in str(exc)
+                for marker in ("non-JSON response", "non-object JSON", "request failed", "did not return media_id", "returned HTTP")
+            )
+            if ambiguous:
                 media_id = recover_draft_after_ambiguous_add(session, access_token, articles, timeout)
                 if media_id:
                     return media_id
             if is_article_size_error(exc) or attempt >= max_attempts:
                 raise
-            if exc.errcode not in WECHAT_RETRYABLE_ERRCODES and "request failed" not in str(exc) and "non-JSON response" not in str(exc):
+            if exc.errcode not in WECHAT_RETRYABLE_ERRCODES and not ambiguous:
                 raise
             sleep_before_wechat_retry("draft/add", attempt, max_attempts, exc.errmsg or str(exc))
     raise WeChatError(f"draft/add failed after {max_attempts} attempt(s)")
@@ -2284,7 +2316,9 @@ def get_draft(session: requests.Session, access_token: str, media_id: str, timeo
         f"https://api.weixin.qq.com/cgi-bin/draft/get?access_token={access_token}",
         {"media_id": media_id},
         timeout,
-        max_attempts=WECHAT_REQUEST_MAX_ATTEMPTS,
+        # verify_draft_get owns the readback retry budget, including malformed
+        # JSON and temporarily incomplete content, so do not multiply retries.
+        max_attempts=1,
     )
     return parse_wechat_json(response, "draft/get")
 
@@ -2321,11 +2355,16 @@ def summarize_draft_get_response(
         and all(item["matches"] for item in contract_checks)
     )
     matches_expected_article_count = article_count == expected_article_count
+    matches_expected_titles = (
+        expected_articles is None
+        or titles == payload_article_titles(expected_articles)
+    )
     return {
-        "ok": matches_expected_article_count and matches_editorial_contract,
+        "ok": matches_expected_article_count and matches_editorial_contract and matches_expected_titles,
         "article_count": article_count,
         "expected_article_count": expected_article_count,
         "matches_expected_article_count": matches_expected_article_count,
+        "matches_expected_titles": matches_expected_titles,
         "matches_editorial_contract": matches_editorial_contract,
         "editorial_contract": contract_checks,
         "titles": titles,
@@ -2342,29 +2381,102 @@ def verify_draft_get(
     expected_article_count: int,
     expected_articles: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
-    try:
-        summary = summarize_draft_get_response(
-            get_draft(session, access_token, media_id, timeout),
-            expected_article_count,
-            expected_articles,
-        )
-    except WeChatError as exc:
-        summary = {
-            "ok": False,
-            "expected_article_count": expected_article_count,
-            "errcode": exc.errcode,
-            "errmsg": exc.errmsg,
-            "error": str(exc),
-        }
-        log(f"Draft get verification failed for media_id={media_id}: {exc}")
-        return summary
-
-    log(
-        "Verified draft/get: "
-        f"media_id={media_id} articles={summary['article_count']}/{expected_article_count} "
-        f"editorial_contract={summary['matches_editorial_contract']}"
-    )
+    max_attempts = 3
+    for attempt in range(1, max_attempts + 1):
+        retryable = True
+        try:
+            summary = summarize_draft_get_response(
+                get_draft(session, access_token, media_id, timeout),
+                expected_article_count,
+                expected_articles,
+            )
+        except WeChatError as exc:
+            summary = {
+                "ok": False,
+                "expected_article_count": expected_article_count,
+                "errcode": exc.errcode,
+                "errmsg": exc.errmsg,
+                "error": str(exc),
+            }
+            retryable = exc.errcode is None or exc.errcode in WECHAT_RETRYABLE_ERRCODES
+        summary["attempts"] = attempt
+        if summary["ok"]:
+            log(f"Verified draft/get: media_id={media_id} articles={summary['article_count']}/{expected_article_count} editorial_contract=True")
+            return summary
+        if not retryable or attempt == max_attempts:
+            break
+        sleep_before_wechat_retry("draft/get verification", attempt, max_attempts, summary.get("error") or "returned content does not match expected articles")
+    log(f"Draft get verification FAILED: media_id={media_id} articles={summary.get('article_count', 'unknown')}/{expected_article_count} editorial_contract={summary.get('matches_editorial_contract', False)}")
     return summary
+
+
+def draft_group_key(articles: list[dict[str, Any]]) -> str:
+    """Identify the source text even when a retry reuploads image media."""
+    identity = [
+        {
+            "title": item.get("title", ""),
+            "author": item.get("author", ""),
+            "text": visible_wechat_content_text(item.get("content")),
+        }
+        for item in articles
+    ]
+    return hashlib.sha256(json.dumps(identity, ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()
+
+
+def saved_draft_receipt(output_dir: Path, public_articles: list[dict[str, Any]]) -> dict[str, Any]:
+    summary_path = output_dir / "wechat_draft_summary.json"
+    summary = read_json(summary_path)
+    if summary_path.exists() and not isinstance(summary, dict):
+        raise WeChatError(f"Cannot read existing draft receipt: {summary_path}")
+    if not isinstance(summary, dict) or summary.get("dry_run"):
+        return {}
+    key = draft_group_key(public_articles)
+    for draft in reversed(summary.get("drafts", [])):
+        if not isinstance(draft, dict) or not draft.get("media_id"):
+            continue
+        saved_key = draft.get("group_key")
+        if not saved_key and draft.get("payload"):
+            # Historical diagnostics use runner-absolute paths. Only read the
+            # known local payload basename when restoring an artifact.
+            payload = read_json(output_dir / Path(draft["payload"]).name)
+            if isinstance(payload, dict) and isinstance(payload.get("articles"), list):
+                saved_key = draft_group_key(payload["articles"])
+        if saved_key == key:
+            return dict(draft)
+    return {}
+
+
+def saved_draft_prefix_length(output_dir: Path, public_articles: list[dict[str, Any]]) -> int:
+    """Resume an accepted child group before retrying a previously split batch."""
+    for length in range(len(public_articles) - 1, 0, -1):
+        if saved_draft_receipt(output_dir, public_articles[:length]):
+            return length
+    return 0
+
+
+def checkpoint_wechat_drafts(output_dir: Path, drafts: list[dict[str, Any]], *, dry_run: bool) -> None:
+    """Persist accepted IDs before verification/publish or any later failure."""
+    path = output_dir / "wechat_draft_summary.json"
+    previous = read_json(path)
+    previous = previous if isinstance(previous, dict) and previous.get("dry_run", False) == dry_run else {}
+    by_id = {
+        str(item["media_id"]): item
+        for item in previous.get("drafts", [])
+        if isinstance(item, dict) and item.get("media_id")
+    }
+    by_id.update({str(item["media_id"]): item for item in drafts})
+    all_drafts = list(by_id.values())
+    summary = {
+        **previous,
+        "date_folder": output_dir.name,
+        "dry_run": dry_run,
+        "status": "verification_failed" if any(item.get("status") == "verification_failed" for item in all_drafts) else "in_progress",
+        "draft_count": len(all_drafts),
+        "drafts": all_drafts,
+    }
+    temporary = path.with_suffix(".json.tmp")
+    write_json(temporary, summary)
+    temporary.replace(path)
 
 
 def submit_publish(session: requests.Session, access_token: str, media_id: str, timeout: int) -> str:
@@ -3057,6 +3169,15 @@ def main() -> int:
     def create_draft(group: list[dict[str, Any]]) -> None:
         public_articles = article_payload(group)
         articles = materialize_private_article_payload(public_articles, args.site_url)
+        receipt = {} if args.dry_run else saved_draft_receipt(output_dir, public_articles)
+        if not args.dry_run and not receipt:
+            saved_prefix = saved_draft_prefix_length(output_dir, public_articles)
+            if saved_prefix:
+                create_draft(group[:saved_prefix])
+                create_draft(group[saved_prefix:])
+                return
+        publish_id = str(receipt.get("publish_id") or "")
+        draft_get = {"ok": False, "status": "pending_verification"}
         payload_bytes = utf8_byte_count(json.dumps({"articles": articles}, ensure_ascii=False, separators=(",", ":")))
         draft_index = len(drafts) + 1
         log(
@@ -3077,7 +3198,7 @@ def main() -> int:
             if session is None or access_token is None:
                 raise RuntimeError("session and access_token are required outside dry-run")
             log(f"Checking recent drafts before creating WeChat draft {draft_index}")
-            existing_media_id = find_recent_draft_by_titles(
+            existing_media_id = str(receipt.get("media_id") or "") or find_recent_draft_by_titles(
                 session,
                 access_token,
                 payload_article_titles(articles),
@@ -3142,17 +3263,6 @@ def main() -> int:
                         return
                     else:
                         raise
-            log(f"Verifying WeChat draft {draft_index}: media_id={media_id}")
-            pacing_sleep(f"Before verifying WeChat draft {draft_index}", args.draft_verify_delay_seconds, args.dry_run)
-            draft_get = verify_draft_get(
-                session,
-                access_token,
-                media_id,
-                args.timeout,
-                len(articles),
-                articles,
-            )
-            publish_id = submit_publish(session, access_token, media_id, args.timeout) if args.publish else ""
 
         payload_path = output_dir / f"draft_payload_{draft_index:02d}.json"
         # Persist only the public template. The deployment hostname exists
@@ -3161,6 +3271,8 @@ def main() -> int:
         drafts.append(
             {
                 "draft_index": draft_index,
+                "group_key": draft_group_key(public_articles),
+                "status": "dry_run" if args.dry_run else "pending_verification",
                 "media_id": media_id,
                 "publish_id": publish_id,
                 "published": bool(publish_id),
@@ -3174,6 +3286,20 @@ def main() -> int:
                 "draft_get": draft_get,
             }
         )
+        checkpoint_wechat_drafts(output_dir, drafts, dry_run=args.dry_run)
+        if not args.dry_run:
+            log(f"Verifying WeChat draft {draft_index}: media_id={media_id}")
+            pacing_sleep(f"Before verifying WeChat draft {draft_index}", args.draft_verify_delay_seconds, False)
+            draft_get = verify_draft_get(session, access_token, media_id, args.timeout, len(articles), articles)
+            drafts[-1]["draft_get"] = draft_get
+            drafts[-1]["status"] = "verified" if draft_get.get("ok") else "verification_failed"
+            checkpoint_wechat_drafts(output_dir, drafts, dry_run=False)
+            if not draft_get.get("ok"):
+                raise WeChatError(f"draft/get verification failed for media_id={media_id}; receipt saved in {output_dir / 'wechat_draft_summary.json'}")
+            if args.publish and not publish_id:
+                publish_id = submit_publish(session, access_token, media_id, args.timeout)
+                drafts[-1].update(publish_id=publish_id, published=True)
+                checkpoint_wechat_drafts(output_dir, drafts, dry_run=False)
         if publish_id:
             log(f"Draft {draft_index}: articles={len(articles)} media_id={media_id} publish_id={publish_id}")
         else:
@@ -3236,6 +3362,7 @@ def main() -> int:
             for item in built_articles
         ],
     }
+    summary["status"] = "dry_run" if args.dry_run else "verified"
     summary_path = output_dir / "wechat_draft_summary.json"
     write_json(summary_path, summary)
     log(f"Wrote summary: {summary_path}")

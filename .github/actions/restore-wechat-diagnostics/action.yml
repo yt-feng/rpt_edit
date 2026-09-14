@@ -1,0 +1,37 @@
+name: Restore accepted WeChat draft receipts
+description: Restore same-run draft receipts before retrying an interrupted upload.
+
+inputs:
+  name:
+    description: Exact diagnostic artifact name for this upload job
+    required: true
+  path:
+    description: Original extraction directory
+    required: false
+    default: "."
+
+runs:
+  using: composite
+  steps:
+    - name: Locate prior draft receipts
+      id: locate
+      if: ${{ github.run_attempt > 1 }}
+      uses: actions/github-script@v7
+      env:
+        RECEIPT_ARTIFACT_NAME: ${{ inputs.name }}
+      with:
+        script: |
+          const artifacts = await github.paginate(github.rest.actions.listWorkflowRunArtifacts, {
+            owner: context.repo.owner, repo: context.repo.repo, run_id: context.runId,
+          });
+          const receipt = artifacts.find(item => item.name === process.env.RECEIPT_ARTIFACT_NAME);
+          if (receipt?.expired) throw new Error('Prior draft receipt expired; verify existing drafts before retrying.');
+          core.setOutput('found', receipt ? 'true' : 'false');
+          if (!receipt) core.notice('No prior draft diagnostic artifact exists for this job.');
+
+    - name: Restore prior draft receipts
+      if: ${{ steps.locate.outputs.found == 'true' }}
+      uses: actions/download-artifact@v4
+      with:
+        name: ${{ inputs.name }}
+        path: ${{ inputs.path }}

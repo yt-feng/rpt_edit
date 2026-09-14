@@ -9,6 +9,7 @@ import tempfile
 import threading
 import unittest
 from contextlib import redirect_stderr
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from unittest.mock import patch
 
@@ -51,6 +52,8 @@ class FakeR2:
         self.fail_upload_suffix = ""
         self.upload_attempts: dict[str, int] = {}
         self.upload_failures: dict[str, list[BaseException]] = {}
+        self.head_attempts: dict[str, int] = {}
+        self.head_failures: dict[str, list[BaseException]] = {}
         self.lock = threading.Lock()
 
     def get_paginator(self, name: str):
@@ -70,6 +73,10 @@ class FakeR2:
         del Bucket
         with self.lock:
             self.operations.append(("head", Key))
+            self.head_attempts[Key] = self.head_attempts.get(Key, 0) + 1
+            failures = self.head_failures.get(Key) or []
+            if failures:
+                raise failures.pop(0)
             if Key not in self.objects:
                 raise MissingObject(Key)
             row = self.objects[Key]
@@ -340,6 +347,131 @@ class StaticSlotPublisherTests(unittest.TestCase):
             self.assertEqual(client.upload_attempts[key], 3)
             self.assertEqual(delays, [5.0, 10.0])
             self.assertIn(key, client.objects)
+
+    def test_transient_head_errors_retry_then_verify_metadata(self) -> None:
+        for code in ("429", "SlowDown", "ServiceUnavailable", "500", "502", "503", "504"):
+            with self.subTest(code=code):
+                client = FakeR2()
+                key = "edge-static/slots/a/index.html"
+                client.put_object(Bucket="bucket", Key=key, Body=b"site", Metadata={"sha256": "digest"})
+                client.head_failures[key] = [R2UploadError(code), R2UploadError(code)]
+                with patch.object(publisher.time, "sleep") as sleep:
+                    matches = publisher.remote_object_matches_descriptor(
+                        client, "bucket", key, {"size": 4, "sha256": "digest"},
+                    )
+                self.assertTrue(matches)
+                self.assertEqual(client.head_attempts[key], 3)
+                self.assertEqual([call.args[0] for call in sleep.call_args_list], [2.0, 4.0])
+
+    def test_head_http_status_is_retryable_without_a_known_s3_error_code(self) -> None:
+        client = FakeR2()
+        key = "edge-static/slots/a/index.html"
+        client.put_object(Bucket="bucket", Key=key, Body=b"site")
+        error = R2UploadError("UnknownError")
+        error.response["ResponseMetadata"] = {"HTTPStatusCode": 429}
+        client.head_failures[key] = [error]
+        delays = []
+        metadata = publisher.head_object_with_retry(client, "bucket", key, retry_sleep=delays.append)
+        self.assertEqual(metadata["ContentLength"], 4)
+        self.assertEqual(client.head_attempts[key], 2)
+        self.assertEqual(delays, [2.0])
+
+    def test_head_retry_exhaustion_does_not_accept_or_commit_an_unverified_object(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            build_site(root)
+            client = FakeR2()
+            self.publish(client, root, 1)
+            key = publisher.slot_prefix("a") + "assets/app.js"
+            previous_manifest = client.objects[publisher.manifest_key("a")]["body"]
+            previous_uploads = dict(client.upload_attempts)
+            attempts = client.head_attempts.get(key, 0)
+            client.head_failures[key] = [R2UploadError("429") for _ in range(6)]
+
+            with patch.object(publisher.time, "sleep") as sleep:
+                with self.assertRaisesRegex(R2UploadError, "429"):
+                    self.publish(client, root, 2, "b")
+
+            self.assertEqual(client.head_attempts[key] - attempts, 6)
+            self.assertEqual([call.args[0] for call in sleep.call_args_list], [2.0, 4.0, 8.0, 16.0, 30.0])
+            self.assertEqual(client.upload_attempts, previous_uploads)
+            self.assertEqual(client.objects[publisher.manifest_key("a")]["body"], previous_manifest)
+
+    def test_head_missing_and_mismatched_objects_are_not_verified(self) -> None:
+        client = FakeR2()
+        key = "edge-static/slots/a/index.html"
+        descriptor = {"size": 4, "sha256": "digest"}
+        with patch.object(publisher.time, "sleep") as sleep:
+            self.assertFalse(publisher.remote_object_matches_descriptor(client, "bucket", key, descriptor))
+            client.put_object(Bucket="bucket", Key=key, Body=b"same", Metadata={"sha256": "wrong"})
+            self.assertFalse(publisher.remote_object_matches_descriptor(client, "bucket", key, descriptor))
+            client.put_object(Bucket="bucket", Key=key, Body=b"longer", Metadata={"sha256": "digest"})
+            self.assertFalse(publisher.remote_object_matches_descriptor(client, "bucket", key, descriptor))
+            sleep.assert_not_called()
+        self.assertEqual(client.head_attempts[key], 3)
+
+    def test_permanent_head_errors_are_not_retried(self) -> None:
+        for error in (R2UploadError("AccessDenied"), R2UploadError("400"), ValueError("malformed response")):
+            with self.subTest(error=str(error)):
+                client = FakeR2()
+                key = "edge-static/slots/a/index.html"
+                client.head_failures[key] = [error]
+                delays = []
+                with self.assertRaises(type(error)) as raised:
+                    publisher.head_object_with_retry(client, "bucket", key, retry_sleep=delays.append)
+                self.assertIs(raised.exception, error)
+                self.assertEqual(client.head_attempts[key], 1)
+                self.assertEqual(delays, [])
+
+    def test_unchanged_head_concurrency_is_independent_and_bounded(self) -> None:
+        for requested, expected in ((None, 4), (2, 2), (999, 8)):
+            with self.subTest(requested=requested), tempfile.TemporaryDirectory() as temporary:
+                root = Path(temporary)
+                build_site(root)
+                client = FakeR2()
+                self.publish(client, root, 1)
+                original_head = client.head_object
+                head_lock = threading.Lock()
+                capacity = threading.Event()
+                overflow = threading.Event()
+                unblock = threading.Event()
+                active = 0
+                maximum = 0
+
+                def tracked_head(*, Bucket, Key):
+                    nonlocal active, maximum
+                    with head_lock:
+                        active += 1
+                        maximum = max(maximum, active)
+                        if active == expected:
+                            capacity.set()
+                        if active > expected:
+                            overflow.set()
+                    try:
+                        if not unblock.wait(5):
+                            raise RuntimeError("HEAD concurrency test did not release its requests")
+                        return original_head(Bucket=Bucket, Key=Key)
+                    finally:
+                        with head_lock:
+                            active -= 1
+
+                kwargs = {} if requested is None else {"head_workers": requested}
+                with patch.object(client, "head_object", side_effect=tracked_head):
+                    with ThreadPoolExecutor(max_workers=1) as execution:
+                        future = execution.submit(
+                            publisher.publish_static_slot,
+                            client, "bucket", root, release(2), "b",
+                            member_contact_card=self.member_contact_card(), max_workers=32,
+                            **kwargs,
+                        )
+                        try:
+                            self.assertTrue(capacity.wait(3), "verification never reached its configured capacity")
+                            self.assertFalse(overflow.wait(0.1), "HEAD concurrency exceeded the bound")
+                        finally:
+                            unblock.set()
+                        result = future.result(timeout=5)
+                self.assertEqual(maximum, expected)
+                self.assertEqual(result["uploaded_files"], 0)
 
     def test_transient_upload_error_stops_after_four_total_attempts(self) -> None:
         with tempfile.NamedTemporaryFile() as handle:

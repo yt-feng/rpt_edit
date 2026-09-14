@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Reduced from https://www.bis.org/doclist/bis_fsi_publs.rss on 2026-09-14.
+     The second modern item and all legacy/excluded items exercise compatibility. -->
+<rdf:RDF xmlns="http://purl.org/rss/1.0/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <item rdf:about="https://www.bis.org/publications/working-paper-1376-what-determines-banks-excess-demand-reserves">
+    <title>What determines banks' excess demand for reserves?</title>
+    <link>https://www.bis.org/publications/working-paper-1376-what-determines-banks-excess-demand-reserves</link>
+    <dc:date>2026-09-07T00:00:00Z</dc:date>
+  </item>
+  <item>
+    <title>When machines attack: frontier AI cyber threats and policy responses in the financial sector</title>
+    <link>https://www.bis.org/publications/fsi-paper-28-when-machines-attack-frontier-ai-cyber-threats-and-policy-responses-financial-sector</link>
+    <dc:date>2026-09-09T00:00:00Z</dc:date>
+  </item>
+  <item><title>Legacy duplicate working paper</title><link>https://www.bis.org/publ/work1376.htm</link><dc:date>2026-09-07T00:00:00Z</dc:date></item>
+  <item><title>Legacy BCBS report</title><link>https://www.bis.org/bcbs/publ/d600.htm</link><dc:date>2026-09-01T00:00:00Z</dc:date></item>
+  <item><title>Legacy FSI report</title><link>https://www.bis.org/fsi/publ/insights77.htm</link><dc:date>2026-08-13T00:00:00Z</dc:date></item>
+  <item><title>Legacy annual report</title><link>https://www.bis.org/publ/arpdf/ar2026e.htm</link><dc:date>2026-06-30T00:00:00Z</dc:date></item>
+  <item><title>Legacy quarterly review</title><link>https://www.bis.org/publ/qtrpdf/r_qt2606.htm</link><dc:date>2026-06-30T00:00:00Z</dc:date></item>
+  <item><title>Legacy BIS paper</title><link>https://www.bis.org/publ/bppdf/bispap172.htm</link><dc:date>2026-06-30T00:00:00Z</dc:date></item>
+  <item><title>Speech</title><link>https://www.bis.org/speeches/example</link></item>
+  <item><title>Publication listing</title><link>https://www.bis.org/publications/</link></item>
+  <item><title>Unrelated host</title><link>https://www.bis.org.example.com/publications/example</link></item>
+  <item><title>Embedded publication URL</title><link>https://example.com/?url=https://www.bis.org/publications/example</link></item>
+</rdf:RDF>

@@ -4,6 +4,9 @@
 from __future__ import annotations
 
 import unittest
+import json
+import tempfile
+from pathlib import Path
 from unittest.mock import Mock, patch
 
 import fetch_institution_latest_pdfs as fetcher
@@ -28,6 +31,7 @@ class FakeResponse:
         status_code: int = 200,
     ) -> None:
         self.text = text
+        self.content = text.encode("utf-8")
         self._json_data = json_data or {}
         self.status_code = status_code
 
@@ -36,6 +40,97 @@ class FakeResponse:
 
     def raise_for_status(self) -> None:
         return None
+
+
+class BISRedesignTests(unittest.TestCase):
+    FIXTURES = Path(__file__).parent / "fixtures" / "institution_sources"
+    REPORT_URL = "https://www.bis.org/publications/working-paper-1376-what-determines-banks-excess-demand-reserves"
+
+    def test_modern_feed_keeps_publications_dates_and_legacy_dedup(self) -> None:
+        response = FakeResponse(text=(self.FIXTURES / "bis_research_redesign.rss").read_text())
+        with patch.object(fetcher, "http_get", return_value=response) as get:
+            items = fetcher.collect_rss_items(fetcher.INSTITUTIONS["bis"], object(), 10)
+        self.assertEqual(get.call_count, 1)
+        self.assertEqual(len(items), 7)
+        self.assertEqual(items[0]["source_url"], self.REPORT_URL)
+        self.assertEqual(items[0]["guid"], "https://www.bis.org/publ/work1376.htm")
+        self.assertEqual(items[0]["date"], "2026-09-07T00:00:00Z")
+        self.assertEqual(items[0]["pdf_candidates"], [])
+        self.assertEqual(items[0]["scrape_url"], self.REPORT_URL)
+        self.assertEqual(items[2]["pdf_candidates"], ["https://www.bis.org/bcbs/publ/d600.pdf"])
+        self.assertEqual(items[3]["pdf_candidates"], ["https://www.bis.org/fsi/publ/insights77.pdf"])
+        self.assertEqual([item["pdf_candidates"][0] for item in items[4:]], [
+            "https://www.bis.org/publ/arpdf/ar2026e.pdf",
+            "https://www.bis.org/publ/qtrpdf/r_qt2606.pdf",
+            "https://www.bis.org/publ/bppdf/bispap172.pdf",
+        ])
+
+    def test_scoped_download_ignores_related_reports_and_attachments(self) -> None:
+        page = (self.FIXTURES / "bis_work1376_download.html").read_text()
+        self.assertEqual(fetcher.scrape_pdf_candidates(page, self.REPORT_URL), [self.REPORT_URL + ".pdf"])
+
+    def test_primary_download_can_point_to_official_file_storage(self) -> None:
+        page = '<div class="hero-publication__buttons"><a class="btn btn--primary" href="/content/dam/bis/papers/work1376.pdf">PDF (38 Pages)</a></div>'
+        self.assertEqual(fetcher.scrape_pdf_candidates(page, self.REPORT_URL), ["https://www.bis.org/content/dam/bis/papers/work1376.pdf"])
+
+    def test_missing_main_pdf_does_not_use_related_file_or_non_bis_host(self) -> None:
+        page = '<a href="/publications/unrelated.pdf">Related paper</a><div class="hero-publication__buttons"><a class="btn btn--primary" href="https://example.org/report.pdf">PDF</a></div>'
+        self.assertEqual(fetcher.scrape_pdf_candidates(page, self.REPORT_URL), [])
+
+    def test_legacy_page_pdf_and_query_compatibility(self) -> None:
+        cfg = fetcher.INSTITUTIONS["bis"]
+        page_url = "https://www.bis.org/publ/work1376.htm"
+        self.assertEqual(fetcher._derive_pdf_candidates(cfg, page_url + "?download=1"), ["https://www.bis.org/publ/work1376.pdf?download=1"])
+        page = '<a href="work1376.pdf">Full paper</a><a href="work1375.pdf">Previous paper</a>'
+        self.assertEqual(fetcher.scrape_pdf_candidates(page, page_url), ["https://www.bis.org/publ/work1376.pdf"])
+
+    def test_known_series_keep_existing_seen_state_keys(self) -> None:
+        for modern, old in (
+            ("working-paper-1373-settlement-liquidity", "publ/work1373.htm"),
+            ("bulletin-134-supervisory-screening", "publ/bisbull134.htm"),
+            ("fsi-insight-77-high-expectation", "fsi/publ/insights77.htm"),
+        ):
+            with self.subTest(modern=modern):
+                self.assertEqual(fetcher.bis_publication_guid("https://www.bis.org/publications/" + modern), "https://www.bis.org/" + old)
+
+    def run_bis_main(self, directory: str, items: list[dict], seen: dict | None = None) -> tuple[int, dict, dict]:
+        path = Path(directory)
+        state_path = path / "seen.json"
+        state_path.write_text(json.dumps({"version": 1, "items": seen or {}}))
+        argv = ["fetcher", "--institutions", "bis", "--output-dir", str(path / "pdfs"), "--seen-state-path", str(state_path), "--archive-path", str(path / "archive.jsonl"), "--since-days", "7"]
+        with (
+            patch.object(fetcher.sys, "argv", argv),
+            patch.object(fetcher, "collect_rss_items", return_value=items),
+            patch.object(fetcher, "http_get", return_value=FakeResponse(text='<a href="/unrelated.pdf">Related paper</a>')),
+            patch.object(fetcher, "write_github_output"),
+            patch.object(fetcher, "write_source_health_summary"),
+        ):
+            code = fetcher.main()
+        return code, json.loads(state_path.read_text()), json.loads((path / "pdfs" / "institution_run_manifest.json").read_text())
+
+    def test_main_pdf_missing_is_reported_and_remains_retryable(self) -> None:
+        item = {"title": "Fixture report", "source_url": self.REPORT_URL, "guid": self.REPORT_URL, "date": fetcher.datetime.now(fetcher.timezone.utc).isoformat(), "pdf_candidates": [], "scrape_url": self.REPORT_URL}
+        with tempfile.TemporaryDirectory() as directory:
+            code, state, manifest = self.run_bis_main(directory, [item])
+        self.assertEqual(code, 2)
+        self.assertNotIn("bis:" + self.REPORT_URL, state["items"])
+        self.assertEqual(manifest["source_checks"][0]["resolution_failure_count"], 1)
+        self.assertEqual(manifest["skipped"][0]["reason"], "main_pdf_missing")
+
+    def test_existing_seen_identity_and_recency_still_skip_downloads(self) -> None:
+        now = fetcher.datetime.now(fetcher.timezone.utc)
+        guid = fetcher.bis_publication_guid(self.REPORT_URL)
+        items = [
+            {"title": "Seen report", "source_url": self.REPORT_URL, "guid": guid, "date": now.isoformat(), "pdf_candidates": [], "scrape_url": self.REPORT_URL},
+            {"title": "Older report", "source_url": self.REPORT_URL + "-older", "guid": "older", "date": (now - fetcher.timedelta(days=8)).isoformat(), "pdf_candidates": [], "scrape_url": self.REPORT_URL},
+        ]
+        seen = {"bis:" + guid: {"status": "downloaded", "first_seen": now.date().isoformat()}}
+        with tempfile.TemporaryDirectory() as directory:
+            code, state, manifest = self.run_bis_main(directory, items, seen)
+        self.assertEqual(code, 0)
+        self.assertEqual(manifest["source_checks"][0]["eligible_item_count"], 0)
+        self.assertEqual(state["items"]["bis:" + guid]["status"], "downloaded")
+        self.assertEqual(state["items"]["bis:older"]["status"], "too_old")
 
 
 class CoveoPreviewTests(unittest.TestCase):

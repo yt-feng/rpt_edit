@@ -61,6 +61,26 @@ def delete_draft(session: requests.Session, access_token: str, media_id: str, ti
     return parse_wechat_json(response, "draft/delete")
 
 
+def invalidate_deleted_receipt(summary_path: Path | None, summary: dict[str, Any], media_id: str) -> None:
+    """Remove only confirmed deletions from the uploader's reusable receipts."""
+    if summary_path is None or not summary_path.exists():
+        return
+    drafts = summary.get("drafts") or []
+    removed = [
+        item for item in drafts
+        if isinstance(item, dict) and normalize_space(str(item.get("media_id") or "")) == media_id
+    ]
+    if not removed:
+        return
+    summary["drafts"] = [item for item in drafts if item not in removed]
+    summary["draft_count"] = len(summary["drafts"])
+    summary["status"] = "partially_deleted" if summary["drafts"] else "deleted"
+    summary.setdefault("deleted_drafts", []).extend({**item, "deleted": True} for item in removed)
+    temporary = summary_path.with_suffix(summary_path.suffix + ".tmp")
+    write_json(temporary, summary)
+    temporary.replace(summary_path)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Delete WeChat drafts by media_id from a summary file.")
     parser.add_argument("--summary", type=Path)
@@ -116,6 +136,9 @@ def main() -> int:
                 raise RuntimeError("session is required outside dry-run")
             delete_draft(session, access_token, media_id, args.timeout)
             record["deleted"] = True
+            # Persist immediately: a later API failure must not resurrect an
+            # already deleted ID when the upload stage restores this summary.
+            invalidate_deleted_receipt(args.summary, summary, media_id)
             log(f"Deleted WeChat draft media_id={media_id}")
         except WeChatError as exc:
             record["deleted"] = False
