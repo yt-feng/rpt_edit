@@ -127,6 +127,21 @@ test("member directory supports filters, entity hooks, hierarchy, and pagination
   assert.match(source, /entity\.name/u);
 });
 
+test("course cards link into the matching member file directory", async () => {
+  const source = await readFile(appPath, "utf8");
+  const styles = await readFile(stylesPath, "utf8");
+  assert.match(source, /class="course-card course-card-link"/u);
+  assert.match(source, /href="#courseResourceDirectory"/u);
+  assert.match(source, /data-course-jump="\$\{escapeHtml\(product\.id\)\}"/u);
+  assert.match(source, /查看对应文件目录/u);
+  assert.match(source, /directoryCategory\.dispatchEvent\(new Event\("change"/u);
+  assert.match(source, /directoryProduct\.dispatchEvent\(new Event\("change"/u);
+  assert.match(source, /directory\.scrollIntoView\(\{ behavior: "smooth", block: "start" \}\)/u);
+  assert.match(styles, /\.course-card-link\s*\{[\s\S]*?text-decoration: none/u);
+  assert.match(styles, /\.course-card-link:focus-visible\s*\{/u);
+  assert.match(styles, /\.course-card-cta\s*\{/u);
+});
+
 test("course directory styles retain the portal layout on desktop and mobile", async () => {
   const styles = await readFile(stylesPath, "utf8");
   assert.match(styles, /\.course-directory-controls\s*\{[\s\S]*?grid-template-columns:/u);

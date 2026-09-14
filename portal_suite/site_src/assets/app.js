@@ -13362,7 +13362,13 @@
           .map((product, index) => ({ product, index }))
           .filter(({ product }) => product.category === category);
         const cards = categoryProducts.map(({ product, index }) => `
-          <article class="course-card" data-course-index="${index}">
+          <a
+            class="course-card course-card-link"
+            href="#courseResourceDirectory"
+            data-course-index="${index}"
+            data-course-jump="${escapeHtml(product.id)}"
+            aria-label="${escapeHtml(product.title)} · 查看对应文件目录"
+          >
             <div class="course-card-heading">
               <span>${escapeHtml(product.id)}</span>
               <span>主题课程</span>
@@ -13370,7 +13376,8 @@
             <h3>${escapeHtml(product.title)}</h3>
             <p class="course-card-summary">${escapeHtml(product.summary)}</p>
             <p class="course-card-audience"><strong>适合</strong>${escapeHtml(product.audience)}</p>
-          </article>
+            <span class="course-card-cta">查看对应文件目录 <span aria-hidden="true">→</span></span>
+          </a>
         `).join("");
         return `
           <section class="course-group" data-course-group data-course-category="${escapeHtml(category)}">
@@ -13498,6 +13505,26 @@
       if (categoryFilter) categoryFilter.addEventListener("change", applyFilters);
       applyFilters();
       setupCourseDirectoryIndex(products);
+      catalog.addEventListener("click", (event) => {
+        const courseLink = event.target.closest("[data-course-jump]");
+        if (!courseLink) return;
+        event.preventDefault();
+        const product = products.find((candidate) => candidate.id === courseLink.dataset.courseJump);
+        const directory = catalog.querySelector("#courseResourceDirectory");
+        const directoryCategory = directory?.querySelector("#courseDirectoryCategory");
+        const directoryProduct = directory?.querySelector("#courseDirectoryProduct");
+        const directorySearch = directory?.querySelector("#courseDirectorySearch");
+        if (!product || !directory || !directoryCategory || !directoryProduct) return;
+        if (directorySearch) {
+          directorySearch.value = "";
+          directorySearch.dispatchEvent(new Event("input", { bubbles: true }));
+        }
+        directoryCategory.value = product.category;
+        directoryCategory.dispatchEvent(new Event("change", { bubbles: true }));
+        directoryProduct.value = product.id;
+        directoryProduct.dispatchEvent(new Event("change", { bubbles: true }));
+        directory.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
     }
 
     async function refresh() {
