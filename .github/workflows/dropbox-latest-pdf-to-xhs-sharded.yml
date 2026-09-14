@@ -645,6 +645,12 @@ jobs:
           PORTAL_PRIVATE_PUBLISH_ASSET_KEY: ${{ secrets.PORTAL_PRIVATE_PUBLISH_ASSET_KEY }}
         run: bash scripts/materialize_private_social_asset.sh prompts
 
+      - name: Restore accepted WeChat draft receipts
+        uses: ./.github/actions/restore-wechat-diagnostics
+        with:
+          name: xhs-notes-wechat-drafts-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ github.run_id }}
+          path: .
+
       - name: Upload generated xhs notes to WeChat drafts
         id: upload_xhs_wechat
         continue-on-error: true
@@ -843,6 +849,12 @@ jobs:
           PORTAL_PRIVATE_PUBLISH_ASSET_KEY: ${{ secrets.PORTAL_PRIVATE_PUBLISH_ASSET_KEY }}
         run: bash scripts/materialize_private_social_asset.sh prompts
 
+      - name: Restore accepted WeChat draft receipts
+        uses: ./.github/actions/restore-wechat-diagnostics
+        with:
+          name: portal-translated-wechat-drafts-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ github.run_id }}
+          path: .
+
       - name: Upload Portal translated reports to WeChat drafts
         env:
           WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
@@ -851,6 +863,7 @@ jobs:
         run: |
           set -o pipefail
           DATE_FOLDER="${{ needs.select-macro-reports.outputs.latest_folder }}"
+          echo "WECHAT_DRAFT_DIR=wechat_drafts/$DATE_FOLDER" >> "$GITHUB_ENV"
           MAX_ARTICLES="${{ needs.resolve-inputs.outputs.translated_report_count }}"
           PUBLISH_ARGS=()
           if [ "${{ needs.resolve-inputs.outputs.wechat_freepublish }}" = "true" ]; then
@@ -869,9 +882,9 @@ jobs:
             --min-inline-images "${{ needs.resolve-inputs.outputs.wechat_draft_min_inline_images }}" \
             --max-inline-images "${{ needs.resolve-inputs.outputs.wechat_draft_max_inline_images }}" \
             "${PUBLISH_ARGS[@]}" 2>&1 | tee wechat_drafts_progress.log
-          echo "WECHAT_DRAFT_DIR=wechat_drafts/$DATE_FOLDER" >> "$GITHUB_ENV"
 
       - name: Archive WeChat draft diagnostics
+        if: ${{ always() }}
         uses: ./.github/actions/resilient-diagnostic-artifact
         with:
           name: portal-translated-wechat-drafts-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ github.run_id }}

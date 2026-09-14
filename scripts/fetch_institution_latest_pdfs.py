@@ -62,6 +62,7 @@ from collections.abc import Callable
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from html.entities import name2codepoint
+from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any, Iterable
 from urllib.parse import unquote, urljoin, urlsplit
@@ -107,6 +108,7 @@ PDF_HREF_RE = re.compile(r'(?:href|data-href|content)=["\']([^"\']+?\.(?:pdf|ash
 # pdf:
 #   "scrape"        -> open the item's landing page and look for a PDF link.
 #   "swap_htm_pdf"  -> derive the PDF by swapping the .htm(l) suffix for .pdf.
+#   "bis_publication" -> legacy PDF URL, or the main download on a BIS page.
 #   "direct"        -> the item already carries a direct PDF url.
 #
 # To enable/disable a source or add a feed, edit this dict. ``include`` is an
@@ -146,22 +148,16 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
         "name_cn": "国际清算银行",
         "token": "BIS",
         "kind": "rss",
-        "pdf": "swap_htm_pdf",
+        "pdf": "bis_publication",
         "feeds": [
-            # BIS' public RSS page labels this broader feed "Research papers"; it
-            # includes the Annual Economic Report, BIS Bulletins, FSI papers and
-            # working papers. The old wppubls feed only covered working papers.
+            # The current official /rss directory lists this as "Research papers".
+            # wppubls, bcbspubls and cgfs_publs were retired in the 2026 redesign.
             "https://www.bis.org/doclist/bis_fsi_publs.rss",
-            "https://www.bis.org/doclist/wppubls.rss",
-            # Basel Committee (bis.org/bcbs/publ/dNNN.htm) and Committee on the
-            # Global Financial System (bis.org/publ/cgfsNN.htm) publications.
-            "https://www.bis.org/doclist/bcbspubls.rss",
-            "https://www.bis.org/doclist/cgfs_publs.rss",
         ],
-        # Only keep substantive publication pages, skip speeches / central-bank
-        # reviews. Publication paths vary by committee: /publ/, /bcbs/publ/,
-        # /fsi/publ/ all carry the swap-htm-for-pdf convention.
-        "include": r"bis\.org/(?:\w+/)?publ/",
+        # Keep both the new publication slugs and the legacy report URLs, while
+        # excluding navigation pages, speeches and other hosts.
+        "include": r"^https?://(?:www\.)?bis\.org/(?:publications/[^/?#]+/?|(?:\w+/)?publ/(?:[^/?#]+/)*[^/?#]+\.html?)(?:[?#].*)?$",
+        "require_pdf": True,
         "required_for_clean_zero": True,
     },
     "worldbank": {
@@ -824,6 +820,7 @@ def http_post(
 def collect_rss_items(cfg: dict[str, Any], session: requests.Session, timeout: int) -> list[dict[str, Any]]:
     include = re.compile(cfg["include"], re.I) if cfg.get("include") else None
     items: list[dict[str, Any]] = []
+    seen_guids: set[str] = set()
     for feed_url in cfg["feeds"]:
         try:
             resp = http_get(session, feed_url, timeout, cfg.get("impersonate", False), profile=cfg.get("impersonate_profile"), proxy=cfg.get("_proxy"))
@@ -846,23 +843,43 @@ def collect_rss_items(cfg: dict[str, Any], session: requests.Session, timeout: i
                 continue
             if include and not include.search(link):
                 continue
+            guid = entry["guid"]
+            if cfg.get("pdf") == "bis_publication":
+                guid = bis_publication_guid(link)
+            if guid in seen_guids:
+                continue
+            seen_guids.add(guid)
             items.append({
                 "title": entry["title"],
                 "source_url": link,
-                "guid": entry["guid"],
+                "guid": guid,
                 "date": entry["date"],
                 "pdf_candidates": _derive_pdf_candidates(cfg, link),
-                "scrape_url": link if cfg.get("pdf") == "scrape" else "",
+                "scrape_url": link if cfg.get("pdf") in {"scrape", "bis_publication"} else "",
             })
     return items
 
 
 def _derive_pdf_candidates(cfg: dict[str, Any], link: str) -> list[str]:
-    if cfg.get("pdf") == "swap_htm_pdf":
+    if cfg.get("pdf") in {"swap_htm_pdf", "bis_publication"} and re.search(r"\.html?(?:[?#]|$)", link, re.I):
         return [re.sub(r"\.html?(\?|#|$)", r".pdf\1", link, flags=re.IGNORECASE)]
     if cfg.get("pdf") == "direct":
         return [link]
     return []
+
+
+def bis_publication_guid(link: str) -> str:
+    """Keep the seen-state identity of numbered series through BIS' URL migration."""
+    path = urlsplit(link).path.rstrip("/")
+    for prefix, legacy in (
+        ("working-paper", "publ/work"),
+        ("bulletin", "publ/bisbull"),
+        ("fsi-insight", "fsi/publ/insights"),
+    ):
+        match = re.fullmatch(rf"/publications/{prefix}-(\d+)-[^/]+", path, re.I)
+        if match:
+            return f"https://www.bis.org/{legacy}{match.group(1)}.htm"
+    return link
 
 
 def collect_worldbank_items(cfg: dict[str, Any], session: requests.Session, timeout: int, rows: int) -> list[dict[str, Any]]:
@@ -1339,6 +1356,8 @@ def collect_coveo_items(cfg: dict[str, Any], session: requests.Session, timeout:
 
 
 def scrape_pdf_candidates(html_text: str, base_url: str) -> list[str]:
+    if urlsplit(base_url).hostname in {"bis.org", "www.bis.org"}:
+        return scrape_bis_pdf_candidates(html_text, base_url)
     host = urlsplit(base_url).netloc
     candidates: list[str] = []
     seen: set[str] = set()
@@ -1372,6 +1391,68 @@ def scrape_pdf_candidates(html_text: str, base_url: str) -> list[str]:
         return value
 
     return sorted(candidates, key=score, reverse=True)
+
+
+class _BISPublicationDownloads(HTMLParser):
+    """Read main publication downloads without collecting related attachments."""
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.stack: list[tuple[str, bool]] = []
+        self.primary_hrefs: list[str] = []
+        self.pdf_metadata: list[str] = []
+        self.all_hrefs: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        values = dict(attrs)
+        classes = set((values.get("class") or "").split())
+        in_downloads = any(active for _, active in self.stack) or bool(classes & {
+            "hero-publication__buttons", "publication-body__buttons",
+        })
+        if tag == "a" and values.get("href"):
+            self.all_hrefs.append(values["href"])
+            if in_downloads and "btn--primary" in classes:
+                self.primary_hrefs.append(values["href"])
+        if tag == "meta" and (values.get("name") or "").lower() == "citation_pdf_url":
+            if values.get("content"):
+                self.pdf_metadata.append(values["content"])
+        if tag not in {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}:
+            self.stack.append((tag, in_downloads))
+
+    def handle_endtag(self, tag: str) -> None:
+        for index in range(len(self.stack) - 1, -1, -1):
+            if self.stack[index][0] == tag:
+                del self.stack[index:]
+                break
+
+
+def scrape_bis_pdf_candidates(html_text: str, base_url: str) -> list[str]:
+    """Use links actually advertised as this BIS report's main PDF.
+
+    New /publications/<slug> pages offer the PDF in two primary button groups.
+    Legacy pages can still expose a matching /publ/<id>.pdf anchor. Do not fall
+    back to arbitrary PDFs elsewhere on the page (annexes, summaries, or links
+    to related reports), because that would silently archive the wrong report.
+    """
+    parser = _BISPublicationDownloads()
+    parser.feed(html_text)
+    page_path = urlsplit(base_url).path.rstrip("/")
+    expected_path = re.sub(r"\.html?$", "", page_path, flags=re.I) + ".pdf"
+    matching_hrefs = [
+        href for href in parser.all_hrefs
+        if urlsplit(urljoin(base_url, href)).path == expected_path
+    ]
+    candidates: list[str] = []
+    for href in matching_hrefs + parser.pdf_metadata + parser.primary_hrefs:
+        full = urljoin(base_url, html.unescape(href.strip()))
+        parsed = urlsplit(full)
+        if parsed.scheme not in {"http", "https"} or parsed.hostname not in {"bis.org", "www.bis.org"}:
+            continue
+        if not parsed.path.lower().endswith(".pdf"):
+            continue
+        if full not in candidates:
+            candidates.append(full)
+    return candidates
 
 
 def scrape_imf_preview_candidates(html_text: str, base_url: str) -> list[str]:
@@ -1703,7 +1784,7 @@ def main() -> int:
                 try:
                     page = http_get(session, item["scrape_url"], args.request_timeout, cfg.get("impersonate", False), profile=cfg.get("impersonate_profile"), proxy=cfg.get("_proxy"))
                     page.raise_for_status()
-                    candidates = scrape_pdf_candidates(page.text, item["scrape_url"])
+                    candidates = scrape_pdf_candidates(page.text, getattr(page, "url", None) or item["scrape_url"])
                     if not item["title"]:
                         item["title"] = _extract_html_title(page.text)
                 except Exception as exc:  # noqa: BLE001 - network error: retry next run
@@ -1719,6 +1800,14 @@ def main() -> int:
                 item["title"] = _title_from_url_slug(item["source_url"]) or item["title"]
 
             if not candidates:
+                if cfg.get("require_pdf"):
+                    # A substantive report feed promises a PDF. A changed page
+                    # template must be visible and retried, not recorded as seen.
+                    resolution_failure_count += 1
+                    if len(resolution_failure_samples) < 3:
+                        resolution_failure_samples.append(f"main PDF missing: {item['source_url']}")
+                    skipped.append({"institution": key, "title": item["title"], "reason": "main_pdf_missing", "source_url": item["source_url"]})
+                    continue
                 # Page reachable but has no downloadable PDF (e.g. a Brookings op-ed).
                 seen_items[dedup_key] = {"first_seen": today, "status": "no_pdf"}
                 skipped.append({"institution": key, "title": item["title"], "reason": "no_pdf", "source_url": item["source_url"]})
@@ -1766,7 +1855,7 @@ def main() -> int:
                 try:
                     page = http_get(session, item["scrape_url"], args.request_timeout, cfg.get("impersonate", False), profile=cfg.get("impersonate_profile"), proxy=cfg.get("_proxy"))
                     page.raise_for_status()
-                    scraped_candidates = scrape_pdf_candidates(page.text, item["scrape_url"])
+                    scraped_candidates = scrape_pdf_candidates(page.text, getattr(page, "url", None) or item["scrape_url"])
                     if cfg.get("pdf_exclude"):
                         scraped_candidates = [
                             candidate for candidate in scraped_candidates

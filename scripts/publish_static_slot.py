@@ -38,6 +38,9 @@ MEMBER_CONTACT_CARD_CACHE_CONTROL = "private, no-store"
 MEMBER_CONTACT_CARD_MIN_BYTES = 4096
 MEMBER_CONTACT_CARD_MAX_BYTES = 1024 * 1024
 UPLOAD_RETRY_DELAYS_SECONDS = (5.0, 10.0, 20.0)
+HEAD_RETRY_DELAYS_SECONDS = (2.0, 4.0, 8.0, 16.0, 30.0)
+DEFAULT_HEAD_WORKERS = 4
+MAX_HEAD_WORKERS = 8
 RETRYABLE_UPLOAD_ERROR_CODES = frozenset(
     {
         "internalerror",
@@ -45,6 +48,13 @@ RETRYABLE_UPLOAD_ERROR_CODES = frozenset(
         "requesttimeoutexception",
         "serviceunavailable",
         "slowdown",
+    }
+)
+RETRYABLE_HEAD_ERROR_CODES = RETRYABLE_UPLOAD_ERROR_CODES | frozenset(
+    {
+        "408", "429", "500", "502", "503", "504",
+        "throttling", "throttlingexception", "toomanyrequests",
+        "toomanyrequestsexception", "requestlimitexceeded",
     }
 )
 LEGACY_PUBLIC_CONTACT_CARD_KEYS = tuple(
@@ -260,6 +270,45 @@ def upload_file_with_retry(
     raise RuntimeError("R2 upload retry loop ended unexpectedly")
 
 
+def head_object_with_retry(
+    client: Any,
+    bucket: str,
+    key: str,
+    *,
+    retry_sleep: Callable[[float], None] | None = None,
+) -> dict[str, Any]:
+    """Retry transient HEAD failures that R2 may expose as numeric S3 codes.
+
+    In particular, an HTTP 429 can escape botocore's adaptive retry handler.
+    Keep this application retry bounded, and leave missing objects and permanent
+    errors to the caller so a throttled request is never treated as verification.
+    """
+    sleeper = retry_sleep or time.sleep
+    total_attempts = len(HEAD_RETRY_DELAYS_SECONDS) + 1
+    for attempt in range(1, total_attempts + 1):
+        try:
+            return client.head_object(Bucket=bucket, Key=key)
+        except Exception as error:
+            code = upload_error_code(error)
+            response = getattr(error, "response", None)
+            metadata = response.get("ResponseMetadata") if isinstance(response, dict) else None
+            status = str(metadata.get("HTTPStatusCode") or "") if isinstance(metadata, dict) else ""
+            if (
+                code not in RETRYABLE_HEAD_ERROR_CODES
+                and status not in {"408", "429", "500", "502", "503", "504"}
+            ) or attempt >= total_attempts:
+                raise
+            delay = HEAD_RETRY_DELAYS_SECONDS[attempt - 1]
+            print(
+                f"Retryable R2 HEAD error {code or status} on attempt "
+                f"{attempt}/{total_attempts}; retrying in {delay:g}s.",
+                file=sys.stderr,
+                flush=True,
+            )
+            sleeper(delay)
+    raise RuntimeError("R2 HEAD retry loop ended unexpectedly")
+
+
 def upload_member_contact_card(
     client: Any,
     bucket: str,
@@ -281,7 +330,7 @@ def upload_member_contact_card(
     if transfer_config is not None:
         kwargs["Config"] = transfer_config
     upload_file_with_retry(client, str(path), bucket, MEMBER_CONTACT_CARD_KEY, **kwargs)
-    verified = client.head_object(Bucket=bucket, Key=MEMBER_CONTACT_CARD_KEY)
+    verified = head_object_with_retry(client, bucket, MEMBER_CONTACT_CARD_KEY)
     if not member_contact_card_matches(verified, descriptor):
         raise RuntimeError("Member contact card verification failed")
     return descriptor
@@ -292,7 +341,7 @@ def delete_legacy_public_contact_cards(client: Any, bucket: str) -> int:
     delete_keys(client, bucket, LEGACY_PUBLIC_CONTACT_CARD_KEYS)
     for key in LEGACY_PUBLIC_CONTACT_CARD_KEYS:
         try:
-            client.head_object(Bucket=bucket, Key=key)
+            head_object_with_retry(client, bucket, key)
         except Exception as error:  # botocore is optional during local unit tests.
             response_code = str(
                 getattr(error, "response", {}).get("Error", {}).get("Code", "")
@@ -464,7 +513,7 @@ def remote_object_matches_descriptor(
 ) -> bool:
     """Verify an object before trusting a previous manifest's skip decision."""
     try:
-        metadata = client.head_object(Bucket=bucket, Key=key)
+        metadata = head_object_with_retry(client, bucket, key)
     except Exception as error:
         if upload_error_code(error) in {"404", "nosuchkey", "notfound"}:
             return False
@@ -501,7 +550,7 @@ def verify_required_objects(
         relative = safe_relative_path(relative_value)
         if relative not in paths or paths[relative].stat().st_size <= 0:
             raise RuntimeError(f"Required static release path is missing: {relative}")
-        metadata = client.head_object(Bucket=bucket, Key=prefix + relative)
+        metadata = head_object_with_retry(client, bucket, prefix + relative)
         if int(metadata.get("ContentLength", -1)) != int(entries[relative]["size"]):
             raise RuntimeError(f"Required static release object has the wrong size: {relative}")
         remote_sha = str((metadata.get("Metadata") or {}).get("sha256") or "")
@@ -632,7 +681,7 @@ def sync_runtime_data(
         key = f"{prefix}{filename}"
         current = None
         try:
-            current = client.head_object(Bucket=bucket, Key=key)
+            current = head_object_with_retry(client, bucket, key)
         except Exception as error:
             response_code = str(
                 getattr(error, "response", {}).get("Error", {}).get("Code", "")
@@ -655,7 +704,7 @@ def sync_runtime_data(
         if transfer_config is not None:
             kwargs["Config"] = transfer_config
         upload_file_with_retry(client, str(path), bucket, key, **kwargs)
-        verified = client.head_object(Bucket=bucket, Key=key)
+        verified = head_object_with_retry(client, bucket, key)
         if not runtime_object_matches(verified, descriptor, release):
             raise RuntimeError(f"Runtime data verification failed: {filename}")
         uploaded += 1
@@ -694,6 +743,7 @@ def publish_static_slot(
     member_contact_card: Path,
     skip_shared_private_assets: bool = False,
     max_workers: int = 4,
+    head_workers: int = DEFAULT_HEAD_WORKERS,
     transfer_config: Any = None,
     required: Iterable[str] | None = None,
     runtime_paths: Iterable[str] = DEFAULT_RUNTIME_PATHS,
@@ -754,7 +804,9 @@ def publish_static_slot(
     # Listing proves only key and length.  Before carrying an object into a new
     # release manifest, require the SHA-256 metadata written by this publisher;
     # an old, missing, or same-length overwritten object is uploaded again.
-    verification_workers = min(24, max(1, int(max_workers) * 4))
+    # Metadata verification makes many tiny requests.  Bound it independently
+    # from upload concurrency, rather than multiplying the upload worker count.
+    verification_workers = min(MAX_HEAD_WORKERS, max(1, int(head_workers)))
     progress = _PublishProgress(
         "verify_unchanged", total=len(skip_candidates), workers=verification_workers,
     )
@@ -770,14 +822,19 @@ def publish_static_slot(
             ): relative
             for relative in skip_candidates
         }
-        for future in as_completed(futures):
-            relative = futures[future]
-            if future.result():
-                skipped += 1
-            else:
-                upload_relatives.append(relative)
-            verified_candidates += 1
-            progress.update(verified_candidates, skipped=skipped)
+        try:
+            for future in as_completed(futures):
+                relative = futures[future]
+                if future.result():
+                    skipped += 1
+                else:
+                    upload_relatives.append(relative)
+                verified_candidates += 1
+                progress.update(verified_candidates, skipped=skipped)
+        except Exception:
+            for pending in futures:
+                pending.cancel()
+            raise
     progress.finish(completed=verified_candidates, skipped=skipped)
 
     def upload(relative: str) -> tuple[str, int]:
@@ -968,6 +1025,10 @@ def main() -> int:
         help="Do not upload the shared member QR or delete legacy QR objects",
     )
     parser.add_argument("--max-workers", type=int, default=4)
+    parser.add_argument(
+        "--head-workers", type=int, default=DEFAULT_HEAD_WORKERS,
+        help=f"Concurrent unchanged-object HEAD checks (default {DEFAULT_HEAD_WORKERS}, maximum {MAX_HEAD_WORKERS})",
+    )
     args = parser.parse_args()
 
     try:
@@ -981,6 +1042,7 @@ def main() -> int:
             member_contact_card=Path(args.member_contact_card),
             skip_shared_private_assets=args.skip_shared_private_assets,
             max_workers=args.max_workers,
+            head_workers=args.head_workers,
             transfer_config=transfer,
         )
         append_github_values(

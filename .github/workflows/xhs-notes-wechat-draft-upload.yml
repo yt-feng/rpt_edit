@@ -177,6 +177,12 @@ jobs:
           PORTAL_PRIVATE_PUBLISH_ASSET_KEY: ${{ secrets.PORTAL_PRIVATE_PUBLISH_ASSET_KEY }}
         run: bash scripts/materialize_private_social_asset.sh prompts
 
+      - name: Restore accepted WeChat draft receipts
+        uses: ./.github/actions/restore-wechat-diagnostics
+        with:
+          name: xhs-notes-wechat-drafts-${{ github.event.inputs.date_folder || 'latest' }}-${{ github.run_id }}
+          path: .
+
       - name: Upload generated XHS notes to WeChat drafts
         id: upload_xhs_wechat
         continue-on-error: true

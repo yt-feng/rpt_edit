@@ -154,6 +154,12 @@ jobs:
           echo "::notice::date_folder=$DATE_FOLDER"
           echo "::notice::summary_path=$SUMMARY_PATH"
 
+      - name: Restore accepted WeChat draft receipts
+        uses: ./.github/actions/restore-wechat-diagnostics
+        with:
+          name: portal-wechat-draft-maintenance-${{ env.DATE_FOLDER }}-${{ github.run_id }}
+          path: ${{ env.WECHAT_DRAFT_DIR }}
+
       - name: Delete existing WeChat drafts from summary
         if: ${{ inputs.delete_existing == true }}
         env:
@@ -203,6 +209,7 @@ jobs:
             "${PUBLISH_ARGS[@]}" 2>&1 | tee "$WECHAT_DRAFT_DIR/wechat_drafts_progress.log"
 
       - name: Archive WeChat draft maintenance diagnostics
+        if: ${{ always() }}
         uses: ./.github/actions/resilient-diagnostic-artifact
         with:
           name: portal-wechat-draft-maintenance-${{ env.DATE_FOLDER }}-${{ github.run_id }}
