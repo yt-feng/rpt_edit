@@ -3580,6 +3580,42 @@
     "unctad:https://unctad.org/publication/smaller-firms-greater-risks-how-strait-hormuz-disruptions-could-trigger-exclusion": {
       "first_seen": "2026-09-11",
       "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publications/fsi-paper-28-when-machines-attack-frontier-ai-cyber-threats-and-policy-responses-financial-sector": {
+      "first_seen": "2026-09-14",
+      "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publ/work1376.htm": {
+      "first_seen": "2026-09-14",
+      "status": "too_old"
+    },
+    "bis:https://www.bis.org/publ/work1375.htm": {
+      "first_seen": "2026-09-14",
+      "status": "too_old"
+    },
+    "bis:https://www.bis.org/fsi/publ/insights78.htm": {
+      "first_seen": "2026-09-14",
+      "status": "too_old"
+    },
+    "bis:https://www.bis.org/publ/work1374.htm": {
+      "first_seen": "2026-09-14",
+      "status": "too_old"
+    },
+    "bis:https://www.bis.org/publications/fsi-brief-33-regulating-stablecoin-issuance--permissible-entities-and-activities": {
+      "first_seen": "2026-09-14",
+      "status": "too_old"
+    },
+    "bis:https://www.bis.org/publications/fsi-summary-effective-resolution-strategies-and-plans-insurers---executive-summary": {
+      "first_seen": "2026-09-14",
+      "status": "too_old"
+    },
+    "bis:https://www.bis.org/publications/dollarisation-and-monetary-control-what-lessons-rise-stablecoins": {
+      "first_seen": "2026-09-14",
+      "status": "too_old"
+    },
+    "adb:1175431": {
+      "first_seen": "2026-09-14",
+      "status": "downloaded"
     }
   }
 }
