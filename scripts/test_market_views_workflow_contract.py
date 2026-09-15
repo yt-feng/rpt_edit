@@ -58,6 +58,10 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
             or "-f source_handoff_run_id=" in block
         }
         self.assertTrue(consumers, "No producer handoff consumers were found")
+        cleanup = blocks["cleanup-private-handoff"]
+        cleanup_needs = re.search(r"(?s)needs:\n(.*?)    if:", cleanup).group(1)
+        cleanup_results = dict.fromkeys(re.findall(r"(?m)^      - ([\w-]+)$", cleanup_needs), "success")
+        self.assertTrue(gate(cleanup, cleanup_results))
         for name, block in consumers.items():
             with self.subTest(consumer=name):
                 needs = re.search(r"needs: \[(.*?)\]", block).group(1).split(", ")
@@ -70,6 +74,8 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
                     self.assertIn('-f expected_shards="$EXPECTED_SHARDS"', block)
                 self.assertIn(f"      - {name}\n", blocks["cleanup-private-handoff"])
                 self.assertIn(f"      - {name}\n", blocks["notify-failure"])
+                for status in ("failure", "cancelled"):
+                    self.assertFalse(gate(cleanup, {**cleanup_results, name: status}))
                 for package in ("success", "failure", "cancelled", "skipped"):
                     self.assertTrue(gate(block, {
                         "process-shard": "success", "package-publish-ready": package,

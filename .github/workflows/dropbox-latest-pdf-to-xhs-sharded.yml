@@ -971,10 +971,7 @@ jobs:
         needs.package-publish-ready.result == 'success' &&
         needs.trigger-market-views.result == 'success' &&
         !contains(needs.*.result, 'cancelled') &&
-        needs.trigger-chart-search-index.result != 'failure' &&
-        needs.push-xhs-notes-wechat-drafts.result != 'failure' &&
-        needs.build-portal-translated-reports.result != 'failure' &&
-        needs.push-portal-translated-wechat-drafts.result != 'failure'
+        !contains(needs.*.result, 'failure')
       }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
