@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "id": "1b178991c64faa2f73c59d851e5a85863aa75fad2579153bf3d1216e282506cf",
+  "slug": "bbg-20260914-1b178991c64faa2f",
+  "date": "2026-09-14",
+  "title": "最强开放权重模型：来自中国实验室，美国同行紧张什么？",
+  "speaker": "Micah Hill Smith",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-09-14/the-china-show-9-14-2026-video",
+  "start": 634.6,
+  "end": 720.0,
+  "segments": [
+    {
+      "start": 634.6,
+      "end": 645.6,
+      "en": "I mean the fact that China has its own sort of ecosystem right cheap models and the fact that there is a bit of a decoupling in this whole AI race net net then do you think",
+      "zh": "中国有自己的生态、有低成本模型，而且整个AI竞赛中存在一定程度的脱钩，那么你觉得"
+    },
+    {
+      "start": 645.6,
+      "end": 655.7,
+      "en": "that you know it's not going to slow the pace of development among some of these Chinese startups because that speed culture within these startups is very much ingrained in the DNA of some of these companies.",
+      "zh": "这不会拖慢一些中国初创公司的发展节奏吧？因为这种速度文化已经深深植入这些公司的基因。"
+    },
+    {
+      "start": 655.7,
+      "end": 666.3,
+      "en": "Yeah so there has been an aspect to date that none of the Chinese companies have got into a point of having the smartest model in any given time and there is an untested question here",
+      "zh": "到目前为止，还没有一家中国公司达到过在任何时间点拥有最智能模型的水平，这是一个尚未验证的问题。"
+    },
+    {
+      "start": 666.3,
+      "end": 678.9,
+      "en": "of whether it would be possible for them to achieve that. Putting that aside though I very much expect them to continue competing.",
+      "zh": "他们是否有可能做到这一点。不过撇开这个不谈，我非常预期他们会继续竞争。"
+    },
+    {
+      "start": 678.9,
+      "end": 689.7,
+      "en": "One of the aspects that is most interesting in the setup today are that many of the leading Chinese AI labs are being much more aggressive about giving away open weights copies of their models than the leading American labs",
+      "zh": "当前格局中最有意思的一点是，许多领先的中国AI实验室在开放模型权重方面，比美国头部实验室要激进得多。"
+    },
+    {
+      "start": 689.7,
+      "end": 701.4,
+      "en": "leading to the strongest open weights models coming from the Chinese labs. That is of particular interest in a lot of these conversations because while there is a story around being able to own your own destiny and run",
+      "zh": "这使得最强的开放权重模型来自中国实验室。这在很多讨论中特别受关注，因为一方面有关于掌握自己命运、"
+    },
+    {
+      "start": 701.4,
+      "end": 712.0,
+      "en": "those models on your own hardware instead of getting to trust a third party with all of your data there is another side to it that once a model has been released open weights there's nowhere to",
+      "zh": "在自己的硬件上运行这些模型、而不必把全部数据托付给第三方的叙事，但另一面是，一旦模型以开放权重发布，就无处"
+    },
+    {
+      "start": 712.0,
+      "end": 720.0,
+      "en": "take that back which means the risk profile is different of releasing an open weights model. There's",
+      "zh": "收回，这意味着发布开放权重模型的风险特征是不同的。"
+    }
+  ]
+}
