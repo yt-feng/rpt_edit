@@ -503,6 +503,8 @@ jobs:
           retention-days: 2
 
   package-publish-ready:
+    # ZIP packaging and direct R2 consumers are sibling branches. Only actual
+    # artifact consumers should depend on packaging; all must finish before cleanup.
     needs: [resolve-inputs, select-macro-reports, process-shard]
     if: ${{ !cancelled() && needs.process-shard.result == 'success' }}
     runs-on: ubuntu-latest
@@ -601,8 +603,8 @@ jobs:
           gh run watch "$MARKET_RUN_ID" --repo "$GITHUB_REPOSITORY" --compact --exit-status --interval 15
 
   push-xhs-notes-wechat-drafts:
-    needs: [resolve-inputs, select-macro-reports, package-publish-ready]
-    if: ${{ !cancelled() && needs.package-publish-ready.result == 'success' && needs.resolve-inputs.outputs.wechat_draft_upload == 'true' && needs.resolve-inputs.outputs.wechat_draft_source == 'xhs_notes' }}
+    needs: [resolve-inputs, select-macro-reports, process-shard]
+    if: ${{ !cancelled() && needs.process-shard.result == 'success' && needs.resolve-inputs.outputs.wechat_draft_upload == 'true' && needs.resolve-inputs.outputs.wechat_draft_source == 'xhs_notes' }}
     runs-on: [self-hosted, wechat-draft]
     timeout-minutes: 180
     steps:
@@ -727,8 +729,8 @@ jobs:
           exit 1
 
   build-portal-translated-reports:
-    needs: [resolve-inputs, select-macro-reports, package-publish-ready]
-    if: ${{ !cancelled() && needs.package-publish-ready.result == 'success' && needs.resolve-inputs.outputs.translated_report_count != '0' }}
+    needs: [resolve-inputs, select-macro-reports, process-shard]
+    if: ${{ !cancelled() && needs.process-shard.result == 'success' && needs.resolve-inputs.outputs.translated_report_count != '0' }}
     runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
@@ -969,10 +971,7 @@ jobs:
         needs.package-publish-ready.result == 'success' &&
         needs.trigger-market-views.result == 'success' &&
         !contains(needs.*.result, 'cancelled') &&
-        needs.trigger-chart-search-index.result != 'failure' &&
-        needs.push-xhs-notes-wechat-drafts.result != 'failure' &&
-        needs.build-portal-translated-reports.result != 'failure' &&
-        needs.push-portal-translated-wechat-drafts.result != 'failure'
+        !contains(needs.*.result, 'failure')
       }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
