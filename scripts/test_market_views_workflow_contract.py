@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Replay workflow gates for the ZIP timeout that suppressed the daily PDF."""
+"""Guard dependency isolation and input lifetime for every Dropbox R2 consumer."""
 
 import re
 import unittest
@@ -18,7 +18,7 @@ def job(path, name):
     ).group(1)
 
 
-def gate(block, results, *, selected="64", cancelled=False):
+def gate(block, results, *, selected="64", cancelled=False, plan=None):
     expression = re.search(r"(?s)\bif:.*?\$\{\{(.*?)\}\}", block).group(1)
     expression = expression.replace("needs.*.result", repr(list(results.values())))
     expression = re.sub(
@@ -27,6 +27,16 @@ def gate(block, results, *, selected="64", cancelled=False):
     expression = expression.replace(
         "needs.select-macro-reports.outputs.selected_count", repr(selected)
     )
+    options = {
+        "wechat_draft_upload": "true", "wechat_draft_source": "xhs_notes",
+        "translated_report_count": "3",
+        **(plan or {}),
+    }
+    expression = re.sub(
+        r"needs\.resolve-inputs\.outputs\.(\w+)",
+        lambda m: repr(options[m[1]]), expression,
+    )
+    expression = expression.replace("vars.CHART_SEARCH_ENABLED", repr("true"))
     expression = expression.replace("always()", "True")
     expression = expression.replace("cancelled()", repr(cancelled))
     expression = expression.replace("&&", " and ").replace("||", " or ")
@@ -37,6 +47,50 @@ def gate(block, results, *, selected="64", cancelled=False):
 
 
 class MarketViewsWorkflowContractTests(unittest.TestCase):
+    def test_every_r2_consumer_is_isolated_and_participates_in_cleanup(self):
+        blocks = dict(re.findall(
+            r"(?ms)^  ([\w-]+):\n(.*?)(?=^  [\w-]+:\n|\Z)",
+            UPSTREAM.read_text(encoding="utf-8"),
+        ))
+        consumers = {
+            name: block for name, block in blocks.items()
+            if "private_workflow_handoff.py download-shards" in block
+            or "-f source_handoff_run_id=" in block
+        }
+        self.assertTrue(consumers, "No producer handoff consumers were found")
+        for name, block in consumers.items():
+            with self.subTest(consumer=name):
+                needs = re.search(r"needs: \[(.*?)\]", block).group(1).split(", ")
+                self.assertIn("process-shard", needs)
+                self.assertNotIn("package-publish-ready", needs)
+                if "private_workflow_handoff.py download-shards" in block:
+                    self.assertIn('--expected-count "${{ needs.select-macro-reports.outputs.effective_shard_count }}"', block)
+                else:
+                    self.assertIn("EXPECTED_SHARDS: ${{ needs.select-macro-reports.outputs.effective_shard_count }}", block)
+                    self.assertIn('-f expected_shards="$EXPECTED_SHARDS"', block)
+                self.assertIn(f"      - {name}\n", blocks["cleanup-private-handoff"])
+                self.assertIn(f"      - {name}\n", blocks["notify-failure"])
+                for package in ("success", "failure", "cancelled", "skipped"):
+                    self.assertTrue(gate(block, {
+                        "process-shard": "success", "package-publish-ready": package,
+                    }))
+                for shards in ("failure", "cancelled", "skipped"):
+                    self.assertFalse(gate(block, {"process-shard": shards}))
+                self.assertFalse(gate(block, {"process-shard": "success"}, cancelled=True))
+
+    def test_optional_outputs_keep_user_selection_gates(self):
+        results = {"process-shard": "success"}
+        drafts = job(UPSTREAM, "push-xhs-notes-wechat-drafts")
+        self.assertFalse(gate(drafts, results, plan={"wechat_draft_upload": "false"}))
+        self.assertFalse(gate(drafts, results, plan={"wechat_draft_source": "portal_translated"}))
+        translated = job(UPSTREAM, "build-portal-translated-reports")
+        self.assertFalse(gate(translated, results, plan={"translated_report_count": "0"}))
+        # This branch actually consumes translated artifacts, so it must keep
+        # its dependency on their producer rather than on the raw R2 shards.
+        translated_drafts = job(UPSTREAM, "push-portal-translated-wechat-drafts")
+        needs = re.search(r"needs: \[(.*?)\]", translated_drafts).group(1).split(", ")
+        self.assertIn("build-portal-translated-reports", needs)
+
     def test_zip_timeout_cannot_suppress_complete_shards(self):
         trigger = job(UPSTREAM, "trigger-market-views")
         needs = re.search(r"needs: \[(.*?)\]", trigger).group(1).split(", ")
