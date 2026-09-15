@@ -5,7 +5,16 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from private_workflow_handoff import create_archive, extract_archive, validate_key, validate_prefix
+from private_workflow_handoff import (
+    create_archive,
+    download_latest_directory,
+    download_latest_shards,
+    extract_archive,
+    latest_run_with_archive,
+    latest_run_with_shards,
+    validate_key,
+    validate_prefix,
+)
 
 
 class PrivateWorkflowHandoffTests(unittest.TestCase):
@@ -46,6 +55,80 @@ class PrivateWorkflowHandoffTests(unittest.TestCase):
         for value in ("", "../escape"):
             with self.assertRaises(ValueError):
                 validate_prefix(value)
+
+    def test_latest_run_selection_for_dated_market_views_handoffs(self) -> None:
+        keys = [
+            "_private-workflow-handoff/market-views/dropbox/100/260804/shard_0.tar.gz",
+            "_private-workflow-handoff/market-views/dropbox/101/260803/shard_0.tar.gz",
+            "_private-workflow-handoff/market-views/dropbox/102/260804/shard_0.tar.gz",
+            "_private-workflow-handoff/market-views/dropbox/102/260804/shard_1.tar.gz",
+            "_private-workflow-handoff/market-views/institutions/99/260804/xhs_notes.tar.gz",
+            "_private-workflow-handoff/market-views/institutions/103/260804/xhs_notes.tar.gz",
+        ]
+
+        class FakeClient:
+            def list_objects_v2(self, **_kwargs):  # type: ignore[no-untyped-def]
+                return {"Contents": [{"Key": key} for key in keys]}
+
+        client = FakeClient()
+        self.assertEqual(
+            "102",
+            latest_run_with_shards(
+                "_private-workflow-handoff/market-views/dropbox",
+                "260804",
+                client=client,
+                bucket="bucket",
+            ),
+        )
+        self.assertEqual(
+            "103",
+            latest_run_with_archive(
+                "_private-workflow-handoff/market-views/institutions",
+                "260804",
+                "xhs_notes.tar.gz",
+                client=client,
+                bucket="bucket",
+            ),
+        )
+        self.assertIsNone(
+            latest_run_with_archive(
+                "_private-workflow-handoff/market-views/consulting",
+                "260804",
+                "xhs_notes.tar.gz",
+                client=client,
+                bucket="bucket",
+            )
+        )
+
+    def test_optional_latest_downloads_can_be_absent(self) -> None:
+        class EmptyClient:
+            def list_objects_v2(self, **_kwargs):  # type: ignore[no-untyped-def]
+                return {}
+
+        client = EmptyClient()
+        self.assertEqual(
+            0,
+            download_latest_shards(
+                "_private-workflow-handoff/market-views/dropbox",
+                "260804",
+                Path("unused"),
+                optional=True,
+                client=client,
+                bucket="bucket",
+            ),
+        )
+        self.assertEqual(
+            0,
+            download_latest_directory(
+                "_private-workflow-handoff/market-views/institutions",
+                "260804",
+                "xhs_notes.tar.gz",
+                Path("unused"),
+                optional=True,
+                client=client,
+                bucket="bucket",
+            ),
+        )
 
 
 if __name__ == "__main__":

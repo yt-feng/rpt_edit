@@ -23,6 +23,7 @@ from typing import Any, Iterable
 EXCLUDED_DIR_NAMES = {".git", "__pycache__", "mineru_raw"}
 EXCLUDED_SUFFIXES = {".pdf", ".zip", ".mp3", ".wav", ".m4a", ".mp4", ".mov"}
 SHARD_KEY_RE = re.compile(r"(?:^|/)shard_(\d+)\.tar\.gz$")
+RUN_ID_RE = re.compile(r"^\d+$")
 
 
 def require_env(name: str) -> str:
@@ -244,6 +245,120 @@ def download_shards(
     return len(shard_keys)
 
 
+def _relative_key_parts(root: str, key: str) -> tuple[str, ...] | None:
+    root_parts = PurePosixPath(validate_prefix(root).rstrip("/")).parts
+    key_parts = PurePosixPath(key.strip().lstrip("/")).parts
+    if len(key_parts) <= len(root_parts) or key_parts[: len(root_parts)] != root_parts:
+        return None
+    return tuple(key_parts[len(root_parts):])
+
+
+def latest_run_with_shards(
+    root: str,
+    date: str,
+    *,
+    client: Any | None = None,
+    bucket: str | None = None,
+) -> str | None:
+    root = validate_prefix(root).rstrip("/")
+    resolved_client = client or build_r2_client()
+    resolved_bucket = bucket or r2_bucket()
+    run_ids: set[str] = set()
+    for key in list_keys(root, client=resolved_client, bucket=resolved_bucket):
+        parts = _relative_key_parts(root, key)
+        if len(parts or ()) != 3:
+            continue
+        run_id, key_date, filename = parts or ("", "", "")
+        if key_date == date and RUN_ID_RE.match(run_id) and SHARD_KEY_RE.match(filename):
+            run_ids.add(run_id)
+    if not run_ids:
+        return None
+    return max(run_ids, key=int)
+
+
+def latest_run_with_archive(
+    root: str,
+    date: str,
+    archive_name: str,
+    *,
+    client: Any | None = None,
+    bucket: str | None = None,
+) -> str | None:
+    root = validate_prefix(root).rstrip("/")
+    validate_key(archive_name)
+    resolved_client = client or build_r2_client()
+    resolved_bucket = bucket or r2_bucket()
+    run_ids: set[str] = set()
+    for key in list_keys(root, client=resolved_client, bucket=resolved_bucket):
+        parts = _relative_key_parts(root, key)
+        if len(parts or ()) != 3:
+            continue
+        run_id, key_date, filename = parts or ("", "", "")
+        if key_date == date and filename == archive_name and RUN_ID_RE.match(run_id):
+            run_ids.add(run_id)
+    if not run_ids:
+        return None
+    return max(run_ids, key=int)
+
+
+def download_latest_shards(
+    root: str,
+    date: str,
+    destination: Path,
+    expected_count: int = 0,
+    *,
+    optional: bool = False,
+    client: Any | None = None,
+    bucket: str | None = None,
+) -> int:
+    resolved_client = client or build_r2_client()
+    resolved_bucket = bucket or r2_bucket()
+    run_id = latest_run_with_shards(root, date, client=resolved_client, bucket=resolved_bucket)
+    if not run_id:
+        message = f"No dated shard handoff found under {validate_prefix(root)} for {date}"
+        if optional:
+            print(f"Optional private handoff missing: {message}")
+            return 0
+        raise RuntimeError(message)
+    print(f"Selected latest shard handoff: root={validate_prefix(root)}, date={date}, run_id={run_id}")
+    return download_shards(
+        f"{validate_prefix(root).rstrip('/')}/{run_id}/{date}",
+        destination,
+        max(0, expected_count),
+        client=resolved_client,
+        bucket=resolved_bucket,
+    )
+
+
+def download_latest_directory(
+    root: str,
+    date: str,
+    archive_name: str,
+    destination: Path,
+    *,
+    optional: bool = False,
+    client: Any | None = None,
+    bucket: str | None = None,
+) -> int:
+    archive_name = validate_key(archive_name)
+    resolved_client = client or build_r2_client()
+    resolved_bucket = bucket or r2_bucket()
+    run_id = latest_run_with_archive(root, date, archive_name, client=resolved_client, bucket=resolved_bucket)
+    if not run_id:
+        message = f"No dated archive handoff found under {validate_prefix(root)} for {date}/{archive_name}"
+        if optional:
+            print(f"Optional private handoff missing: {message}")
+            return 0
+        raise RuntimeError(message)
+    print(f"Selected latest archive handoff: root={validate_prefix(root)}, date={date}, run_id={run_id}")
+    return download_directory(
+        f"{validate_prefix(root).rstrip('/')}/{run_id}/{date}/{archive_name}",
+        destination,
+        client=resolved_client,
+        bucket=resolved_bucket,
+    )
+
+
 def delete_prefix(prefix: str, *, client: Any | None = None, bucket: str | None = None) -> int:
     resolved_client = client or build_r2_client()
     resolved_bucket = bucket or r2_bucket()
@@ -275,6 +390,20 @@ def parse_args() -> argparse.Namespace:
     shards.add_argument("--destination", required=True)
     shards.add_argument("--expected-count", type=int, default=0)
 
+    latest_shards = subparsers.add_parser("download-latest-shards")
+    latest_shards.add_argument("--root", required=True)
+    latest_shards.add_argument("--date", required=True)
+    latest_shards.add_argument("--destination", required=True)
+    latest_shards.add_argument("--expected-count", type=int, default=0)
+    latest_shards.add_argument("--optional", action="store_true")
+
+    latest_dir = subparsers.add_parser("download-latest-dir")
+    latest_dir.add_argument("--root", required=True)
+    latest_dir.add_argument("--date", required=True)
+    latest_dir.add_argument("--archive-name", required=True)
+    latest_dir.add_argument("--destination", required=True)
+    latest_dir.add_argument("--optional", action="store_true")
+
     cleanup = subparsers.add_parser("delete-prefix")
     cleanup.add_argument("--prefix", required=True)
     return parser.parse_args()
@@ -288,6 +417,22 @@ def main() -> int:
         download_directory(args.key, Path(args.destination))
     elif args.command == "download-shards":
         download_shards(args.prefix, Path(args.destination), max(0, args.expected_count))
+    elif args.command == "download-latest-shards":
+        download_latest_shards(
+            args.root,
+            args.date,
+            Path(args.destination),
+            max(0, args.expected_count),
+            optional=bool(args.optional),
+        )
+    elif args.command == "download-latest-dir":
+        download_latest_directory(
+            args.root,
+            args.date,
+            args.archive_name,
+            Path(args.destination),
+            optional=bool(args.optional),
+        )
     elif args.command == "delete-prefix":
         delete_prefix(args.prefix)
     else:  # pragma: no cover
