@@ -4,11 +4,38 @@ from __future__ import annotations
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import Mock, patch
 
-from private_workflow_handoff import create_archive, extract_archive, validate_key, validate_prefix
+from private_workflow_handoff import create_archive, download_shards, extract_archive, validate_key, validate_prefix
 
 
 class PrivateWorkflowHandoffTests(unittest.TestCase):
+    def test_missing_shard_is_rejected_before_materialization(self) -> None:
+        prefix = "private/run/260914"
+        with tempfile.TemporaryDirectory() as temp_dir:
+            destination = Path(temp_dir) / "bank"
+            with patch("private_workflow_handoff.list_keys", return_value=[
+                f"{prefix}/shard_{i}.tar.gz" for i in range(12)
+            ]), patch("private_workflow_handoff.download_directory") as download:
+                with self.assertRaisesRegex(RuntimeError, "Expected 13 shard handoffs.*found 12"):
+                    download_shards(prefix, destination, 13, client=Mock(), bucket="test")
+                download.assert_not_called()
+                self.assertFalse(destination.exists())
+
+    def test_complete_shards_are_all_materialized(self) -> None:
+        prefix = "private/run/260914"
+        with tempfile.TemporaryDirectory() as temp_dir:
+            destination = Path(temp_dir) / "bank"
+            with patch("private_workflow_handoff.list_keys", return_value=[
+                f"{prefix}/shard_{i}.tar.gz" for i in reversed(range(13))
+            ]), patch("private_workflow_handoff.download_directory") as download:
+                self.assertEqual(13, download_shards(prefix, destination, 13, client=Mock(), bucket="test"))
+                self.assertEqual(13, download.call_count)
+                self.assertEqual(
+                    [destination / f"shard_{i}" for i in range(13)],
+                    [call.args[1] for call in download.call_args_list],
+                )
+
     def test_archive_excludes_raw_pdfs_and_media(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)

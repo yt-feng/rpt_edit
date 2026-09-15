@@ -567,8 +567,9 @@ jobs:
           retention-days: 2
 
   trigger-market-views:
-    needs: [resolve-inputs, select-macro-reports, package-publish-ready]
-    if: ${{ !cancelled() && needs.package-publish-ready.result == 'success' && needs.select-macro-reports.outputs.selected_count != '0' }}
+    # PDF synthesis consumes the complete R2 shards directly, not the ZIP artifact.
+    needs: [resolve-inputs, select-macro-reports, process-shard]
+    if: ${{ !cancelled() && needs.process-shard.result == 'success' && needs.select-macro-reports.outputs.selected_count != '0' }}
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
@@ -576,6 +577,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           DATE_FOLDER: ${{ needs.select-macro-reports.outputs.latest_folder }}
+          EXPECTED_SHARDS: ${{ needs.select-macro-reports.outputs.effective_shard_count }}
           MODEL: ${{ needs.resolve-inputs.outputs.model }}
           DEEPSEEK_BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
         run: |
@@ -586,6 +588,7 @@ jobs:
             -f date_folder=latest \
             -f expected_bank_date="$DATE_FOLDER" \
             -f source_handoff_run_id="${{ github.run_id }}" \
+            -f expected_shards="$EXPECTED_SHARDS" \
             -f model="$MODEL" \
             -f deepseek_base_url="$DEEPSEEK_BASE_URL" \
             -f compile_latex=false)"
@@ -964,7 +967,8 @@ jobs:
       ${{
         always() && !cancelled() &&
         needs.package-publish-ready.result == 'success' &&
-        needs.trigger-market-views.result != 'failure' &&
+        needs.trigger-market-views.result == 'success' &&
+        !contains(needs.*.result, 'cancelled') &&
         needs.trigger-chart-search-index.result != 'failure' &&
         needs.push-xhs-notes-wechat-drafts.result != 'failure' &&
         needs.build-portal-translated-reports.result != 'failure' &&
@@ -1004,7 +1008,7 @@ jobs:
       - build-portal-translated-reports
       - push-portal-translated-wechat-drafts
       - cleanup-private-handoff
-    if: ${{ always() && !cancelled() && contains(needs.*.result, 'failure') }}
+    if: ${{ always() && (contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled')) }}
     uses: ./.github/workflows/portal-ops-alert.yml
     with:
       source_workflow: Final PDF to XHS notes

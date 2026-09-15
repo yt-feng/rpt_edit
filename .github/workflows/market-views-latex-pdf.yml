@@ -26,7 +26,7 @@ on:
         required: true
         default: "final-dropbox-macro-shard-*"
       expected_shards:
-        description: "Expected historical shard count; 0 disables the check"
+        description: "Expected R2 or historical artifact shard count; 0 disables the check"
         required: true
         default: "0"
       expected_articles:
@@ -142,7 +142,8 @@ jobs:
           fi
           python scripts/private_workflow_handoff.py download-shards \
             --prefix "$PRIVATE_HANDOFF_ROOT/${{ github.event.inputs.source_handoff_run_id }}/$EXPECTED_BANK_DATE" \
-            --destination "xhs_notes/dropbox/$EXPECTED_BANK_DATE"
+            --destination "xhs_notes/dropbox/$EXPECTED_BANK_DATE" \
+            --expected-count "${{ github.event.inputs.expected_shards || '0' }}"
 
       - name: Resolve and validate primary bank source
         env:
@@ -392,7 +393,7 @@ jobs:
 
   notify-failure:
     needs: [build-market-views-pdf]
-    if: ${{ always() && !cancelled() && needs.build-market-views-pdf.result == 'failure' }}
+    if: ${{ always() && (contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled')) }}
     uses: ./.github/workflows/portal-ops-alert.yml
     with:
       source_workflow: Market views daily PDF
