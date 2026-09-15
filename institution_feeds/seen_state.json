@@ -3616,6 +3616,50 @@
     "adb:1175431": {
       "first_seen": "2026-09-14",
       "status": "downloaded"
+    },
+    "imf:2d191db84eca40fb831b6d6001adf318649cfccd06a103ea4ba0c57f6312": {
+      "first_seen": "2026-09-15",
+      "status": "downloaded"
+    },
+    "worldbank:099416309142637653": {
+      "first_seen": "2026-09-15",
+      "status": "downloaded"
+    },
+    "worldbank:099901109142672312": {
+      "first_seen": "2026-09-15",
+      "status": "downloaded"
+    },
+    "worldbank:099756509142664774": {
+      "first_seen": "2026-09-15",
+      "status": "downloaded"
+    },
+    "worldbank:099504209142634007": {
+      "first_seen": "2026-09-15",
+      "status": "downloaded"
+    },
+    "oecd:https://www.oecd.org/en/publications/competition-law-enforcement-in-informal-markets-in-latin-america-and-the-caribbean_05e8b43c-en.html": {
+      "first_seen": "2026-09-15",
+      "status": "downloaded"
+    },
+    "unctad:https://unctad.org/publication/deconstructing-poverty-and-inequality-nigeria": {
+      "first_seen": "2026-09-15",
+      "status": "downloaded"
+    },
+    "unctad:https://unctad.org/publication/productive-capacities-index-3rd-generation": {
+      "first_seen": "2026-09-15",
+      "status": "downloaded"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/safe_rus_14sep26_485_e.htm": {
+      "first_seen": "2026-09-15",
+      "status": "no_pdf"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/dtech_14sep26_486_e.htm": {
+      "first_seen": "2026-09-15",
+      "status": "no_pdf"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/dtech_14sep26_488_e.htm": {
+      "first_seen": "2026-09-15",
+      "status": "no_pdf"
     }
   }
 }
