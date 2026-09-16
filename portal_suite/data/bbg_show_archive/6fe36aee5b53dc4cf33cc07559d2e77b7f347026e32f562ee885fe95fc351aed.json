@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "6fe36aee5b53dc4cf33cc07559d2e77b7f347026e32f562ee885fe95fc351aed",
+  "slug": "bbg-20260916-6fe36aee5b53dc4c",
+  "date": "2026-09-16",
+  "title": "Agility发布Digit 5人形机器人 可与人类近距离协同作业",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-09-15/agility-unveils-humanoid-built-to-work-with-people-video",
+  "start": 0.0,
+  "end": 85.68,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 5.36,
+      "en": "Peggy, tell me about digit five. What is new on this generation of humanoid platform?",
+      "zh": "Peggy，请介绍一下Digit 5。这一代人形平台有什么新进展？"
+    },
+    {
+      "start": 6.56,
+      "end": 14.0,
+      "en": "So digit five is the first humanoid to be able to work in close proximity to other humans.",
+      "zh": "Digit 5是首款能够近距离与人协同工作的人形机器人。"
+    },
+    {
+      "start": 14.0,
+      "end": 26.88,
+      "en": "That means the physical safety barriers that have kept them separated from humans up until now is coming down. And agility has solved for that problem. And it will allow humanoids to come",
+      "zh": "这意味着此前将机器人与人类隔开的物理安全屏障正在被打破。Agility已经解决了这个问题，这将允许人形机器人"
+    },
+    {
+      "start": 26.88,
+      "end": 33.36,
+      "en": "outside of that work cell and operate throughout a facility. Peggy, how is agility solved for that?",
+      "zh": "走出工作单元，在整个设施内运行。Peggy，Agility是如何解决这个问题的？"
+    },
+    {
+      "start": 33.36,
+      "end": 46.08,
+      "en": "When I am reporting on and investigating the progress of the field, humanoid robotics, a lot of the work is actually on the software side, right, making sure that there's a grounding",
+      "zh": "在我报道和调研人形机器人领域进展时，很多工作实际上是在软件层面，确保有扎实的"
+    },
+    {
+      "start": 46.08,
+      "end": 58.32,
+      "en": "in real world physics, so that the humanoid of any type can be in close proximity to its human colleagues or counterparts. Like, where did you focus the work with digit five?",
+      "zh": "现实物理基础，让人形机器人无论类型都能与人类同事或伙伴近距离共处。那么，你们在Digit 5上的工作重点是什么？"
+    },
+    {
+      "start": 59.36,
+      "end": 64.64,
+      "en": "It actually was a little bit of both. So the hardware itself had to be improved.",
+      "zh": "实际上两者都有涉及。硬件本身必须改进。"
+    },
+    {
+      "start": 64.64,
+      "end": 79.6,
+      "en": "Digit has 360-degree vision. It needs to be able to see all around so that it can monitor, observe for humans, and when humans become within a certain very or a certain radius,",
+      "zh": "Digit拥有360度视觉。它需要能够环顾四周，以便监测和观察人类，当人类进入一定半径范围内时，"
+    },
+    {
+      "start": 80.56,
+      "end": 85.68,
+      "en": "it will bring itself safely down to the ground until the human passes.",
+      "zh": "它会安全地降至地面，直到人类通过。"
+    }
+  ]
+}

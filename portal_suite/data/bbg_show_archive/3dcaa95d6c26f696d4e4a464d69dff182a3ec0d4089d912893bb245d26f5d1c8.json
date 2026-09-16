@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "id": "3dcaa95d6c26f696d4e4a464d69dff182a3ec0d4089d912893bb245d26f5d1c8",
+  "slug": "bbg-20260915-3dcaa95d6c26f696",
+  "date": "2026-09-15",
+  "title": "美国AI放缓：芯片订单不降反扩散，供给才是硬瓶颈？",
+  "speaker": "Hwasong Kwan",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-09-15/the-china-show-9-15-2026-video",
+  "start": 4420.0,
+  "end": 4506.6,
+  "segments": [
+    {
+      "start": 4420.0,
+      "end": 4429.7,
+      "en": "Maybe this is not, you know, if AI labs in the US slowdown, it's not going to derail the growth picture for, of course, North Asia.",
+      "zh": "也许这并不是说，如果美国AI实验室放缓，就会破坏北亚的增长前景。"
+    },
+    {
+      "start": 4429.7,
+      "end": 4443.0,
+      "en": "The biggest picture is that, you know, the chip is in short supply. So think about AI chips and HEPM, and advanced packaging capacity all remain in short supply.",
+      "zh": "最大的图景是，芯片供应短缺。想想AI芯片、高带宽内存和先进封装产能，都仍然供不应求。"
+    },
+    {
+      "start": 4443.0,
+      "end": 4451.6,
+      "en": "So in the near-term, you know, the production in the factory would be constrained more by supply, rather than demand.",
+      "zh": "所以短期内，工厂的生产更多受限于供给，而不是需求。"
+    },
+    {
+      "start": 4451.6,
+      "end": 4467.4,
+      "en": "And what I think is that even if, you know, AI developers slowdown their AI development, but it actually wouldn't lead to a substantial reduction in, you know, chip demand, because now demand for AI, or demand for AI chips is broadening to inferences from training.",
+      "zh": "我认为，即使AI开发者放缓AI开发，实际上也不会导致芯片需求大幅减少，因为现在AI需求，或者说AI芯片需求，正从训练扩展到推理。"
+    },
+    {
+      "start": 4467.4,
+      "end": 4487.2,
+      "en": "And at the same time, think about that AI investment, like data center, has a multi-year lead time. So even if AI developed, AI companies, like open AI would pace, you know, pace AI development, it would lead to a reduction in AI investment, new investment at the same, you know, in the near-term, not the current investment.",
+      "zh": "同时，想想AI配置，比如数据中心，有数年的前置时间。所以即使AI公司，比如OpenAI，放缓AI开发，也会导致AI新配置减少，是在短期内，而不是当前配置。"
+    }
+  ]
+}
