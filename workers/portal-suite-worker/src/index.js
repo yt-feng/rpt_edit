@@ -11287,8 +11287,8 @@ async function handleHotReportPdf(request, env) {
     }
   }
   try {
+    let user = null;
     if (!passwordAllowed) {
-      let user;
       try {
         user = await currentUserFromRequest(env, request);
       } catch (error) {
@@ -11297,6 +11297,37 @@ async function handleHotReportPdf(request, env) {
           required_plan: HOT_REPORT_REQUIRED_PLAN,
         });
       }
+    }
+    const found = await findHotReportRow(env, id);
+    if (!found) return jsonResponse(request, env, 404, { error: "Hot report not found." });
+    // Archived copies keep the source's access policy. Check both the row
+    // and object metadata so older catalog rows cannot expose a full PDF.
+    const head = await env.REPORT_BUCKET.head(hotReportPdfKey(id));
+    const metadata = head && head.customMetadata || {};
+    const origins = [found.row || {}, metadata];
+    const externalOrigin = origins.find((origin) => cleanHotReportOriginSource(origin.origin_source) === "external");
+    if (externalOrigin) {
+      let signedDelivery = false;
+      if (password) {
+        try {
+          signedDelivery = await derivedPasswordMatches(env, id, password);
+        } catch (_error) {
+          signedDelivery = false;
+        }
+      }
+      const isAdmin = user ? isSuperAccount(user) : await externalAdminRequest(request, env);
+      if (!isAdmin && !signedDelivery) {
+        const previewId = origins.map((origin) => String(origin.origin_report_id || ""))
+          .find((originId) => isExternalId(originId)) || "";
+        return privateJsonResponse(request, env, 403, {
+          error: "普通会员可查看这份报告的单页预览，完整报告由管理员连接账号后获取。",
+          error_code: "preview_only", preview_only: true, preview_pages: 1,
+          preview_report_id: previewId,
+          preview_url: previewId ? `/api/external/preview?id=${encodeURIComponent(previewId)}` : "",
+        });
+      }
+    }
+    if (!passwordAllowed) {
       const access = await hotReportAccessForUser(env, user);
       if (!access.can_download) {
         return jsonResponse(request, env, 402, {
@@ -11310,8 +11341,6 @@ async function handleHotReportPdf(request, env) {
         });
       }
     }
-    const found = await findHotReportRow(env, id);
-    if (!found) return jsonResponse(request, env, 404, { error: "Hot report not found." });
     const object = await env.REPORT_BUCKET.get(hotReportPdfKey(id));
     if (!object) return jsonResponse(request, env, 404, { error: "PDF is not currently available.", archived: true });
     return new Response(object.body, {
@@ -23980,6 +24009,184 @@ async function handleExternalItem(request, env) {
   return jsonResponse(request, env, 200, { item: detail.item });
 }
 
+function externalPreviewAssetUrl(value) {
+  if (typeof value !== "string" || /[\s\x00-\x1f]/.test(value)) return "";
+  try {
+    const url = new URL(value);
+    if (url.protocol !== "https:" || !["files.reportify.cn", "s.reportify.cn"].includes(url.hostname)
+      || url.username || url.password || (url.port && url.port !== "443") || url.hash) return "";
+    return url.href;
+  } catch (_error) {
+    return "";
+  }
+}
+
+async function externalPreviewReadBytes(response, maximum) {
+  const declared = Number(response.headers.get("Content-Length") || 0);
+  if (!response.body || (Number.isFinite(declared) && declared > maximum)) {
+    if (response.body) await response.body.cancel();
+    throw new Error("Preview response is unavailable.");
+  }
+  const reader = response.body.getReader();
+  const chunks = [];
+  let size = 0;
+  const deadline = Date.now() + 20000;
+  try {
+    while (true) {
+      let timer;
+      const remaining = deadline - Date.now();
+      if (remaining <= 0) throw new Error("Preview response timed out.");
+      const result = await Promise.race([
+        reader.read(),
+        new Promise((_resolve, reject) => {
+          timer = setTimeout(() => reject(new Error("Preview response timed out.")), remaining);
+        }),
+      ]).finally(() => clearTimeout(timer));
+      if (result.done) break;
+      size += result.value.byteLength;
+      if (size > maximum) throw new Error("Preview response is too large.");
+      chunks.push(result.value);
+    }
+  } catch (error) {
+    await reader.cancel().catch(() => null);
+    throw error;
+  } finally {
+    reader.releaseLock();
+  }
+  const bytes = new Uint8Array(size);
+  let offset = 0;
+  for (const chunk of chunks) {
+    bytes.set(chunk, offset);
+    offset += chunk.byteLength;
+  }
+  return bytes;
+}
+
+function externalPreviewImageType(bytes) {
+  if (!bytes || bytes.length < 12) return "";
+  const ascii = (start, length) => String.fromCharCode(...bytes.subarray(start, start + length));
+  const be32 = (offset) => ((bytes[offset] << 24) | (bytes[offset + 1] << 16)
+    | (bytes[offset + 2] << 8) | bytes[offset + 3]) >>> 0;
+  const le32 = (offset) => ((bytes[offset + 3] << 24) | (bytes[offset + 2] << 16)
+    | (bytes[offset + 1] << 8) | bytes[offset]) >>> 0;
+  if (bytes[0] === 0xff && bytes[1] === 0xd8 && bytes[2] === 0xff
+    && bytes[bytes.length - 2] === 0xff && bytes[bytes.length - 1] === 0xd9) {
+    let dimensions = false;
+    for (let offset = 2; offset + 4 <= bytes.length;) {
+      if (bytes[offset++] !== 0xff) return "";
+      while (bytes[offset] === 0xff) offset += 1;
+      const marker = bytes[offset++];
+      const length = (bytes[offset] << 8) | bytes[offset + 1];
+      if (length < 2 || offset + length > bytes.length) return "";
+      if ([0xc0, 0xc1, 0xc2, 0xc3, 0xc5, 0xc6, 0xc7, 0xc9, 0xca, 0xcb, 0xcd, 0xce, 0xcf].includes(marker)) {
+        dimensions = length >= 8 && ((bytes[offset + 3] << 8) | bytes[offset + 4]) > 0
+          && ((bytes[offset + 5] << 8) | bytes[offset + 6]) > 0;
+      }
+      if (marker === 0xda) return dimensions && offset + length < bytes.length - 2 ? "image/jpeg" : "";
+      offset += length;
+    }
+    return "";
+  }
+  if ([137, 80, 78, 71, 13, 10, 26, 10].every((value, index) => bytes[index] === value)
+    && bytes.length >= 45 && ascii(12, 4) === "IHDR" && be32(8) === 13 && be32(16) && be32(20)) {
+    let imageData = false;
+    for (let offset = 8; offset + 12 <= bytes.length;) {
+      const length = be32(offset);
+      const kind = ascii(offset + 4, 4);
+      const end = offset + length + 12;
+      if (end > bytes.length || kind === "acTL") return "";
+      if (kind === "IDAT" && length) imageData = true;
+      if (kind === "IEND") return imageData && length === 0 && end === bytes.length ? "image/png" : "";
+      offset = end;
+    }
+    return "";
+  }
+  if (ascii(0, 4) === "RIFF" && ascii(8, 4) === "WEBP"
+    && ["VP8 ", "VP8L", "VP8X"].includes(ascii(12, 4))) {
+    if (le32(4) + 8 !== bytes.length) return "";
+    let frames = 0;
+    for (let offset = 12; offset + 8 <= bytes.length;) {
+      const kind = ascii(offset, 4);
+      const length = le32(offset + 4);
+      const end = offset + 8 + length + (length % 2);
+      if (end > bytes.length || kind === "ANIM" || kind === "ANMF"
+        || (kind === "VP8X" && (length !== 10 || (bytes[offset + 8] & 2)))) return "";
+      if (["VP8 ", "VP8L"].includes(kind) && length > 4) frames += 1;
+      if (end === bytes.length) return frames === 1 ? "image/webp" : "";
+      offset = end;
+    }
+  }
+  return "";
+}
+
+async function handleExternalPreview(request, env) {
+  try {
+    await currentUserFromRequest(env, request);
+  } catch (_error) {
+    return privateJsonResponse(request, env, 401, { error: "请先登录后查看单页预览。" });
+  }
+  const id = String(new URL(request.url).searchParams.get("id") || "").trim();
+  if (!isExternalId(id)) return privateJsonResponse(request, env, 400, { error: "Invalid report id." });
+  try {
+    // Preview is the exact public image disclosed by the anonymous detail
+    // API. It never uses the shared upstream account or the full-PDF cache.
+    const detailResponse = await fetchWithTimeout(`${EXTERNAL_API}/reports/${id}`, {
+      headers: externalHeaders(), redirect: "manual",
+    });
+    if (!detailResponse.ok) throw new Error("Preview detail unavailable.");
+    const detail = JSON.parse(new TextDecoder().decode(await externalPreviewReadBytes(detailResponse, 2 * 1024 * 1024)));
+    let imageUrl = externalPreviewAssetUrl(detail && detail.main && detail.main.preview_image);
+    if (!imageUrl) throw new Error("Preview image unavailable.");
+    for (let redirects = 0; redirects <= 3; redirects += 1) {
+      const response = await fetchWithTimeout(imageUrl, {
+        redirect: "manual",
+        headers: { "User-Agent": EXTERNAL_UA, "Referer": `${EXTERNAL_SITE}/`, "Accept": "image/jpeg,image/png,image/webp" },
+      });
+      if ([301, 302, 303, 307, 308].includes(response.status)) {
+        const location = response.headers.get("Location");
+        if (response.body) await response.body.cancel();
+        imageUrl = location && externalPreviewAssetUrl(new URL(location, imageUrl).href);
+        if (!imageUrl) throw new Error("Preview redirect unavailable.");
+        continue;
+      }
+      if (!response.ok) throw new Error("Preview image unavailable.");
+      const mime = String(response.headers.get("Content-Type") || "").split(";", 1)[0].trim().toLowerCase();
+      if (!["image/jpeg", "image/png", "image/webp"].includes(mime)) {
+        if (response.body) await response.body.cancel();
+        throw new Error("Preview image type unavailable.");
+      }
+      const bytes = await externalPreviewReadBytes(response, 10 * 1024 * 1024);
+      if (externalPreviewImageType(bytes) !== mime) throw new Error("Preview image validation failed.");
+      return new Response(bytes, { headers: {
+        ...corsHeaders(request, env),
+        "Content-Type": mime,
+        "Content-Length": String(bytes.byteLength),
+        "Cache-Control": "no-store, private",
+        "X-Content-Type-Options": "nosniff",
+        "X-Portal-Preview-Pages": "1",
+        "X-Portal-Preview": "report-cover",
+      } });
+    }
+    throw new Error("Preview redirect limit reached.");
+  } catch (_error) {
+    return privateJsonResponse(request, env, 503, {
+      error: "单页预览暂时无法读取，请稍后重试。", error_code: "preview_unavailable", preview_pages: 1,
+    });
+  }
+}
+
+async function handleExternalConnectionStatus(request, env) {
+  if (!(await externalAdminRequest(request, env))) {
+    return privateJsonResponse(request, env, 403, { error: "Admin access denied." });
+  }
+  const session = await reportifyStoredSession(env);
+  return privateJsonResponse(request, env, 200, {
+    connected: Boolean(session),
+    updated_at: session ? session.updated_at : "",
+    expires_at: session ? new Date(Date.parse(session.updated_at) + 12 * 60 * 60 * 1000).toISOString() : "",
+  });
+}
+
 function normalizeEmbeddedSearchDate(value) {
   const text = String(value || "").trim();
   if (!/^20\d{2}-\d{2}-\d{2}$/.test(text)) return "";
@@ -24334,7 +24541,26 @@ async function handleExternalPdf(request, env, ctx = null) {
   if (!isExternalId(id)) {
     return jsonResponse(request, env, 400, { error: "Invalid report id." });
   }
-  const accountDecision = await accountDownloadDecision(env, request, id, "external");
+  const isAdmin = await externalAdminRequest(request, env);
+  let signedDelivery = false;
+  if (password) {
+    try {
+      signedDelivery = await derivedPasswordMatches(env, id, password);
+    } catch (_error) {
+      signedDelivery = false;
+    }
+  }
+  // Ordinary membership and the shared password authorize only this report's
+  // preview. Preserve explicit administrator-issued, report-bound deliveries.
+  if (!isAdmin && !signedDelivery) {
+    return privateJsonResponse(request, env, 403, {
+      error: "普通会员可查看这份报告的单页预览，完整报告由管理员连接账号后获取。",
+      error_code: "preview_only", preview_only: true, preview_pages: 1,
+      preview_report_id: id,
+      preview_url: `/api/external/preview?id=${encodeURIComponent(id)}`,
+    });
+  }
+  const accountDecision = signedDelivery ? { allowed: false } : await accountDownloadDecision(env, request, id, "external");
   const accountAllowed = Boolean(accountDecision.allowed);
   if (!password && !accountAllowed) {
     return jsonResponse(request, env, accountDecision.status || 402, {
@@ -24347,7 +24573,6 @@ async function handleExternalPdf(request, env, ctx = null) {
     return jsonResponse(request, env, 401, { error: "Password is incorrect." });
   }
 
-  const isAdmin = await externalAdminRequest(request, env);
   const reportifySession = await reportifyStoredSession(env);
   const reportifyToken = reportifySession ? reportifySession.token : "";
 
@@ -26233,6 +26458,14 @@ export default {
 
     if (pathname === "/external/item" && request.method === "GET") {
       return handleExternalItem(request, env);
+    }
+
+    if (pathname === "/external/preview" && request.method === "GET") {
+      return handleExternalPreview(request, env);
+    }
+
+    if (pathname === "/external/connection-status" && request.method === "GET") {
+      return handleExternalConnectionStatus(request, env);
     }
 
     if (pathname === "/report-a/search" && request.method === "GET") {
