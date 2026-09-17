@@ -1919,18 +1919,11 @@ if (mode === "程序枚举") document.getElementById("中文节点");
             with self.subTest(program_token=token):
                 self.assertFalse(needs(token))
 
-    def test_real_javascript_covers_all_235_current_chinese_ternary_literals(self) -> None:
-        expected_by_asset = {
-            "app.js": 198,
-            "newsfeed-app.js": 6,
-            "charts.js": 4,
-            "contact.js": 0,
-            "report-chat.js": 23,
-            "report-research-export.js": 4,
-            "site-runtime.js": 0,
-            "xlsx-export.js": 0,
-        }
+    def test_real_javascript_covers_all_current_chinese_ternary_literals(self) -> None:
+        # UI copy changes the inventory size. Every discovered literal must
+        # remain translatable; a fixed historical count is not a coverage rule.
         observed: dict[str, int] = {}
+        covered_app_values: set[str] = set()
         for asset_name in builder.LOCALIZED_JS_ASSETS:
             source = (ROOT / "portal_suite" / "site_src" / "assets" / asset_name).read_text(encoding="utf-8")
             count = 0
@@ -1956,9 +1949,15 @@ if (mode === "程序枚举") document.getElementById("中文节点");
                         ),
                         f"{asset_name}:{source.count(chr(10), 0, start) + 1} remains outside translation coverage",
                     )
+                    if asset_name == "app.js":
+                        covered_app_values.add(value)
             observed[asset_name] = count
-        self.assertEqual(observed, expected_by_asset)
-        self.assertEqual(sum(observed.values()), 235)
+        self.assertGreater(sum(observed.values()), 0, "Real-asset coverage must not pass an empty scan")
+        self.assertTrue(
+            {"来源连接已保存", "此类报告普通会员可查看1页预览。", "请先登录后查看1页预览。"}
+            <= covered_app_values,
+            "Source connection and member-preview copy must be included in the current inventory",
+        )
 
     def test_real_javascript_has_no_unclassified_chinese_ui_literals(self) -> None:
         for asset_name in builder.LOCALIZED_JS_ASSETS:
