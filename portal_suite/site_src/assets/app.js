@@ -6047,7 +6047,7 @@
       qr.className = "status-line";
       qr.textContent = "正在生成连接二维码…";
       try {
-        const response = await fetch(`${workerUrl}/external/login-qr`, { headers: authHeaders(), cache: "no-store" });
+        const response = await fetch(`${workerUrl}/external/login-qr?qr_format=inline-v1`, { headers: authHeaders(), cache: "no-store" });
         const data = await response.json().catch(() => ({}));
         if (closed) return;
         if (!response.ok) throw new Error(data.error || "连接二维码暂时无法读取。");
@@ -11832,9 +11832,12 @@
     if (statusElement.__externalQrTimer) window.clearInterval(statusElement.__externalQrTimer);
     const qrcodeId = String(error.qrcode_id);
     const serviceUrl = String(error[["report", "ify"].join("") + "_url"] || "");
-    const qrImage = /^https:\/\/api\.qrserver\.com\//u.test(String(error.qr_image_url || ""))
-      ? String(error.qr_image_url)
-      : `https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=${encodeURIComponent(String(error.qrcode_url || ""))}`;
+    const qrImage = String(error.qr_image_url || "");
+    if (qrImage.length > 80000 || !/^data:image\/svg\+xml;base64,[A-Za-z0-9+/]+={0,2}$/u.test(qrImage)) {
+      statusElement.className = "status-line error";
+      statusElement.textContent = "二维码暂时无法显示，请刷新页面后重新连接。";
+      return true;
+    }
     statusElement.className = "status-line error external-login-qr";
     const externalServiceName = ["Report", "ify"].join("");
     statusElement.innerHTML = `
@@ -11924,7 +11927,7 @@
     const contactParams = new URLSearchParams({ source: item.source, id: item.id });
     const response = await fetch(contactDownload
       ? `${workerUrl}/contact-report/pdf?${contactParams.toString()}`
-      : `${workerUrl}/${docEndpoint(item)}/pdf`, contactDownload ? {
+      : `${workerUrl}/${docEndpoint(item)}/pdf?qr_format=inline-v1`, contactDownload ? {
         method: "GET",
         headers: options.auth ? authHeaders() : {},
         cache: "no-store",
@@ -11973,7 +11976,6 @@
         error.login_required = Boolean(data.login_required);
         error.reauth_available = Boolean(data.reauth_available);
         error.qrcode_id = String(data.qrcode_id || "");
-        error.qrcode_url = String(data.qrcode_url || "");
         error.qr_image_url = String(data.qr_image_url || "");
         error[["report", "ify"].join("") + "_url"] = String(data[["report", "ify"].join("") + "_url"] || "");
       }
@@ -12019,7 +12021,7 @@
       }
       try {
         statusTarget(`报告仍在准备中，已等待 ${elapsedText}。页面会继续自动检测。`);
-        const response = await fetch(`${workerUrl}/external/status?id=${encodeURIComponent(id)}`, {
+        const response = await fetch(`${workerUrl}/external/status?id=${encodeURIComponent(id)}&qr_format=inline-v1`, {
           headers: authHeaders(),
           cache: "no-store",
         });

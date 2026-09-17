@@ -177,6 +177,7 @@ jobs:
           python3 -B scripts/check_portal_app_budget.py --candidate portal_suite/site_src/assets/app.js
           python3 -B scripts/test_check_portal_app_budget.py
           python3 -B scripts/test_reportify_api_grab.py
+          python3 -B scripts/test_reportify_local_qr.py
           python3 -B scripts/test_portal_lazy_assets.py
           node --check portal_suite/site_src/assets/report-chat.js
           node --check portal_suite/site_src/assets/charts.js

@@ -31,7 +31,7 @@ test("QR phone-binding and timeout states stop polling with actionable messages"
     vm.runInContext(fn("showExternalLoginQr"), context);
     const target = node();
     context.showExternalLoginQr(target, "https://worker.example.test", {
-      login_required: true, qrcode_id: "123456789", qrcode_url: "https://example.test/qr",
+      login_required: true, qrcode_id: "123456789", qr_image_url: "data:image/svg+xml;base64,PHN2Zy8+",
     }, () => { ready = true; });
     for (let count = 0; count < (status === "waiting" ? 91 : 1); count += 1) await tick();
     assert.equal(cleared, true);
@@ -56,7 +56,7 @@ function connectionHarness({ owner = true, connected = false, statusFailure = fa
     window: { clearInterval: (id) => { cleared = id; } },
     fetch: async (url, options) => {
       calls.push({ url, options });
-      if (url.endsWith("/external/login-qr")) return { ok: true, json: async () => ({ qrcode_id: "123456789", qrcode_url: "https://example.test/qr" }) };
+      if (url.endsWith("/external/login-qr?qr_format=inline-v1")) return { ok: true, json: async () => ({ qrcode_id: "123456789", qr_image_url: "data:image/svg+xml;base64,PHN2Zy8+" }) };
       return { ok: !statusFailure, json: async () => statusFailure ? { error: "readback failed" }
         : { connected: currentConnected, updated_at: "2026-09-17T01:00:00Z", expires_at: "2026-09-17T13:00:00Z" } };
     },
@@ -106,7 +106,7 @@ test("owner connects through authenticated QR flow and confirms server connectio
     assert.equal(call.options.headers.Authorization, "Bearer owner-session");
     assert.equal(call.options.cache, "no-store");
   }
-  assert.equal(h.calls.some((call) => call.url.endsWith("/external/login-qr")), true);
+  assert.equal(h.calls.some((call) => call.url.endsWith("/external/login-qr?qr_format=inline-v1")), true);
   h.controller.close();
   assert.equal(h.cleared(), 99);
 });
