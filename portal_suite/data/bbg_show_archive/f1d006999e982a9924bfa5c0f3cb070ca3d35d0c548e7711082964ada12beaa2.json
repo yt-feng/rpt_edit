@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "f1d006999e982a9924bfa5c0f3cb070ca3d35d0c548e7711082964ada12beaa2",
+  "slug": "bbg-20260917-f1d006999e982a99",
+  "date": "2026-09-17",
+  "title": "OpenAI的Brockman谈AI开发与Hugging Face后的安全评估",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-09-16/openai-s-brockman-on-ai-in-the-wake-of-hugging-face-video",
+  "start": 0.0,
+  "end": 90.0,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 9.68,
+      "en": "I think of open AI and anthropicist companies, but people like to call them, quote, labs. And when I think of labs, I think like, wow, like, you know, a lab, if we were talking about",
+      "zh": "我想到OpenAI和Anthropic这类公司，但人们喜欢叫它们“实验室”。说到实验室，我会想，哇，如果我们谈论的是"
+    },
+    {
+      "start": 9.68,
+      "end": 16.32,
+      "en": "a bio lab or a chemical lab, would have just like all kinds of like rules and materials handling.",
+      "zh": "生物实验室或化学实验室，那会有各种规则和材料处理规定。"
+    },
+    {
+      "start": 16.32,
+      "end": 26.8,
+      "en": "And then maybe in this case, you would be like handling of the weights and whose computers they're on and who can access those computers. And FDA approval before you go to market. Yeah. And all of these",
+      "zh": "也许在这种情况下，你会处理权重、它们所在的计算机以及谁可以访问这些计算机。还有上市前的FDA批准。是的。所有这些"
+    },
+    {
+      "start": 26.8,
+      "end": 38.64,
+      "en": "things like just like an or even a restaurant, someone would come in and they say like, oh, is the stove sufficiently far back from the wall, et cetera. So not just like, okay, like,",
+      "zh": "事情，就像甚至一家餐厅，有人会进来说，哦，炉子离墙足够远吗，等等。所以不只是，好吧，"
+    },
+    {
+      "start": 38.64,
+      "end": 51.52,
+      "en": "measuring the capabilities of the risks of the models themselves, but I'm thinking like the auditing of the lab process, the way that any other lab probably has regular inspections of",
+      "zh": "衡量模型本身风险的能力，而是我在想实验室流程的审计，就像任何其他实验室可能都有定期检查"
+    },
+    {
+      "start": 51.92,
+      "end": 63.68,
+      "en": "how safe is the lab environment? Well, this is what I'd say has been changing just even over the past couple of weeks. Okay. Because the focus for, we'll say the past 12 months, 24 months,",
+      "zh": "实验室环境有多安全？嗯，这就是我要说的，甚至在过去几周里一直在变化。好的。因为过去12个月、24个月的重点，"
+    },
+    {
+      "start": 63.68,
+      "end": 74.32,
+      "en": "something like that has been on deployment. Yeah. Right. So you have a model, you produce the model, you want to release it to the world. How do you decide whether you're at the right level there?",
+      "zh": "类似这样的，一直是在部署上。是的。对。所以你有一个模型，你生产模型，你想向世界发布它。你如何决定你是否处于正确的水平？"
+    },
+    {
+      "start": 74.32,
+      "end": 83.44,
+      "en": "And we have a preparedness framework and anthropic as a responsible scaling policy. There's certain evaluations. Again, there's the case, the UK's, there's a whole ecosystem that's been built up",
+      "zh": "我们有准备框架，Anthropic有负负责任扩展政策。有一些评估。再次，有案例，英国的，有一个完整的生态系统已经建立起来"
+    },
+    {
+      "start": 83.44,
+      "end": 90.0,
+      "en": "around that. I think the thing that hugging face has shown is that it is time to start pulling",
+      "zh": "围绕这个。我认为Hugging Face所展示的是，是时候开始拉动"
+    }
+  ]
+}
