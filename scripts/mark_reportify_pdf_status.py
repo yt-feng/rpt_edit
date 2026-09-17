@@ -9,6 +9,9 @@ import json
 import os
 import re
 from datetime import datetime, timezone
+from pathlib import Path
+
+from reportify_result import read_result, status_fields
 
 DEFAULT_BUCKET = "portal-suite-pdfs"
 STATUS_PREFIX = "reportify-status"
@@ -42,6 +45,7 @@ def main() -> int:
     parser.add_argument("--id", required=True, help="Numeric report id.")
     parser.add_argument("--status", required=True, choices=["running", "ready", "failed"])
     parser.add_argument("--message", default="")
+    parser.add_argument("--result-json", type=Path, help="Grabber result; required for ready status")
     args = parser.parse_args()
 
     report_id = args.id.strip()
@@ -54,6 +58,8 @@ def main() -> int:
         "message": args.message.strip()[:500],
         "updated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
     }
+    result = read_result(args.result_json, report_id) if args.result_json and args.result_json.is_file() else None
+    payload.update(status_fields(args.status, result))
     body = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
     bucket = os.getenv("R2_BUCKET", "").strip() or DEFAULT_BUCKET
     key = f"{STATUS_PREFIX}/{report_id}.json"

@@ -57,7 +57,7 @@ function assertSchedulesOnlyAfterFinalize(handlerName, expectedSchedules) {
 }
 
 const catalogDownload = assertSchedulesOnlyAfterFinalize("handleDownload", 1);
-const externalDownload = assertSchedulesOnlyAfterFinalize("handleExternalPdf", 2);
+const externalDownload = assertSchedulesOnlyAfterFinalize("handleExternalPdf", 1);
 const thinkTankDownload = assertSchedulesOnlyAfterFinalize("handleThinkTankPdf", 2);
 
 assert.match(catalogDownload, /function handleDownload\(request, env, ctx = null\)/);

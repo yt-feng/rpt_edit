@@ -23797,28 +23797,36 @@ async function externalPutStatus(env, id, status, message = "") {
   }
 }
 
-async function reportifyStoredToken(env) {
-  if (!env.REPORT_BUCKET) return "";
+async function reportifyStoredSession(env) {
+  if (!env.REPORT_BUCKET) return null;
   try {
     const object = await env.REPORT_BUCKET.get(EXTERNAL_SESSION_KEY);
-    if (!object) return "";
+    if (!object) return null;
     const data = JSON.parse(await object.text());
     const updated = Date.parse(String(data && data.updated_at || ""));
-    if (!data || !data.token || !Number.isFinite(updated) || Date.now() - updated > 12 * 60 * 60 * 1000) return "";
-    return String(data.token);
+    if (!data || typeof data.token !== "string" || !data.token.trim() || !Number.isFinite(updated)
+      || updated > Date.now() || Date.now() - updated > 12 * 60 * 60 * 1000) return null;
+    return { token: data.token.trim(), updated_at: data.updated_at };
   } catch (_error) {
-    return "";
+    return null;
   }
 }
 
+async function reportifyStoredToken(env) {
+  const session = await reportifyStoredSession(env);
+  return session ? session.token : "";
+}
+
 async function reportifyStoreToken(env, token) {
-  if (!env.REPORT_BUCKET || !token) return false;
+  if (!env.REPORT_BUCKET || typeof token !== "string" || !token.trim()) return false;
+  const value = token.trim();
   try {
     await env.REPORT_BUCKET.put(EXTERNAL_SESSION_KEY, JSON.stringify({
-      token: String(token),
+      token: value,
       updated_at: new Date().toISOString(),
     }), { httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "no-store, private" } });
-    return true;
+    const saved = await reportifyStoredSession(env);
+    return Boolean(saved && saved.token === value);
   } catch (_error) {
     return false;
   }
@@ -23902,32 +23910,58 @@ function slimExternalItem(item) {
 }
 
 function slimExternalDetailItem(main, id) {
+  const metadata = main.meta_data && typeof main.meta_data === "object" ? main.meta_data : {};
   const item = slimExternalItem({
     ...main,
     report_id: id || main.report_id || main.id,
   });
   item.source = "external";
   item.size_bytes = Number(main.size_bytes || main.file_size || main.file_size_bytes || 0) || 0;
-  item.page_count = Number(main.document_total_page || main.page_count || main.pages || 0) || 0;
+  const pageValue = metadata.document_total_page || main.document_total_page || main.page_count || main.pages || 0;
+  const pages = Number(pageValue);
+  item.page_count = typeof pageValue !== "boolean" && /^[1-9][0-9]*$/.test(String(pageValue).trim())
+    && Number.isSafeInteger(pages) ? pages : 0;
+  if (!item.file_type) item.file_type = String(metadata.file_type || "").trim();
   return item;
+}
+
+function externalDetailPayload(data, id, authenticated = false) {
+  if (!data || typeof data !== "object" || Array.isArray(data)
+    || !data.main || typeof data.main !== "object" || Array.isArray(data.main)) return null;
+  const main = data.main;
+  const own = (object, key) => Object.prototype.hasOwnProperty.call(object, key);
+  // Access controls are on the response envelope. Only genuinely older
+  // payloads without envelope controls may fall back to main.
+  const controls = own(data, "readable") || own(data, "resource_limit") ? data : main;
+  const limitKnown = own(controls, "resource_limit");
+  const limit = limitKnown ? controls.resource_limit : null;
+  const valid = typeof controls.readable === "boolean"
+    && (!limitKnown || (typeof limit === "number" && Number.isFinite(limit) && limit >= 0));
+  // resource_limit can describe a summary allowance. Explicit report
+  // readability controls PDF access; a zero allowance alone cannot revoke it.
+  const readable = valid && controls.readable === true;
+  const pdfUrl = String(main.url_pdf || "").trim();
+  return {
+    item: slimExternalDetailItem(main, id),
+    pdf_url: readable && /^https:\/\//i.test(pdfUrl) ? pdfUrl : "",
+    readable,
+    resource_limit: limitKnown && typeof limit === "number" ? limit : null,
+    resource_limit_known: limitKnown,
+    render_type: String(main.render_type || "").trim().toLowerCase(),
+    access_state: !valid ? "unavailable" : readable ? "readable" : authenticated ? "access_required" : "login_required",
+  };
 }
 
 async function externalDetailItem(id, authToken = "") {
   try {
     const resp = await fetchWithTimeout(`${EXTERNAL_API}/reports/${id}`, { headers: externalHeaders(authToken) });
+    if (resp.status === 401 || resp.status === 403) {
+      return { item: { id, source: "external" }, pdf_url: "", readable: false,
+        access_state: resp.status === 403 && authToken ? "access_required" : "login_required" };
+    }
     if (!resp.ok) return null;
     const data = await resp.json();
-    const main = data && data.main && typeof data.main === "object" ? data.main : {};
-    return {
-      item: slimExternalDetailItem(main, id),
-      pdf_url: String(main.url_pdf || "").trim(),
-      readable: main.readable !== false,
-      resource_limit: Object.prototype.hasOwnProperty.call(main, "resource_limit")
-        ? Number(main.resource_limit || 0) || 0
-        : null,
-      resource_limit_known: Object.prototype.hasOwnProperty.call(main, "resource_limit"),
-      render_type: String(main.render_type || "").trim().toLowerCase(),
-    };
+    return externalDetailPayload(data, id, Boolean(authToken));
   } catch (_error) {
     return null;
   }
@@ -24170,6 +24204,7 @@ async function externalDirectPdfUrl(id, authToken = "") {
     resource_limit: detail && detail.resource_limit_known ? Number(detail.resource_limit || 0) || 0 : null,
     resource_limit_known: Boolean(detail && detail.resource_limit_known),
     render_type: detail ? String(detail.render_type || "") : "",
+    access_state: detail ? String(detail.access_state || "unavailable") : "unavailable",
   };
 }
 
@@ -24216,18 +24251,50 @@ function externalPdfResponse(request, env, sanitized, title, id) {
   });
 }
 
-function externalPdfLooksLikePreview(bytes, item = null) {
-  const size = bytes && typeof bytes.length === "number" ? Number(bytes.length) : 0;
-  const pages = Number(item && item.page_count || 0) || 0;
-  // A multi-page Reportify report represented by a tiny one-page cover is not
-  // a deliverable PDF. Keep this conservative and fail closed to the request
-  // form instead of returning a misleading preview.
-  return size > 0 && size < 256 * 1024 && pages >= 20;
+function externalPdfHasHeader(bytes) {
+  // This only detects corrupt/non-PDF bytes; parsed page-count metadata is
+  // required separately and is never replaced by a size heuristic.
+  return Boolean(bytes && bytes.length >= 5 && bytesToBinaryString(bytes.subarray(0, 5)) === "%PDF-");
 }
 
-// Ask GitHub to run the external grab workflow for a gated report. Returns true
+function externalValidatedPdfMetadata(object, item = null) {
+  const metadata = object && object.customMetadata || {};
+  const pages = Number(metadata.page_count || 0);
+  const expected = Number(item && item.page_count || metadata.expected_page_count || 0);
+  return metadata.validated === "true" && Number.isInteger(pages) && pages > 0
+    && Number.isInteger(expected) && expected >= 0 && (!expected || pages === expected);
+}
+
+async function externalAccessFailure(request, env, id, state, isAdmin, item = null) {
+  const code = state === "login_required" ? "upstream_login_required"
+    : state === "access_required" ? "upstream_access_required" : "upstream_unavailable";
+  if (isAdmin && state !== "unavailable") {
+    const qr = await reportifyLoginQr();
+    return jsonResponse(request, env, 409, {
+      error: state === "access_required"
+        ? "Reportify 当前连接账号没有这份报告的可用下载权益或额度。请确认套餐，或连接已有权益的账号。"
+        : "Reportify 登录态不可用。请扫描二维码连接账号后重试。",
+      error_code: code,
+      login_required: state === "login_required",
+      reauth_available: state === "access_required",
+      reportify_url: `${EXTERNAL_SITE}/reports/${id}`,
+      ...(qr || {}),
+    });
+  }
+  return jsonResponse(request, env, 503, {
+    error: "这份报告当前无法直接获取，请提交报告申请。",
+    error_code: code,
+    request_required: !isAdmin,
+    request_source: "external",
+    request_report_id: id,
+    title: String(item && item.title || ""),
+    institution: String(item && item.institution || ""),
+  });
+}
+
+// Ask GitHub to validate cached bytes or acquire an authorized report. Returns true
 // when the dispatch was accepted (HTTP 204).
-async function triggerExternalGrab(env, id, reportifyToken = "") {
+async function triggerExternalGrab(env, id) {
   const repo = String(env.GH_REPO || "").trim();
   const token = String(env.GH_DISPATCH_TOKEN || "").trim();
   if (!repo || !token || token === "unconfigured") return false;
@@ -24243,7 +24310,7 @@ async function triggerExternalGrab(env, id, reportifyToken = "") {
       },
       body: JSON.stringify({
         event_type: "report" + "ify-grab",
-        client_payload: { id, reportify_token: String(reportifyToken || "") },
+        client_payload: { id },
       }),
     });
     return resp.ok;
@@ -24281,42 +24348,20 @@ async function handleExternalPdf(request, env, ctx = null) {
   }
 
   const isAdmin = await externalAdminRequest(request, env);
-  const reportifyToken = await reportifyStoredToken(env);
+  const reportifySession = await reportifyStoredSession(env);
+  const reportifyToken = reportifySession ? reportifySession.token : "";
 
-  // 1) Directly readable reports expose a presigned PDF url - stream it (instant).
+  // Source access is checked here; full PDFs are parsed and page-count
+  // verified by the acquisition workflow before this Worker serves them.
   const direct = await externalDirectPdfUrl(id, reportifyToken);
-  if (direct.url) {
-    try {
-      const pdf = await fetchWithTimeout(direct.url, { headers: { "User-Agent": EXTERNAL_UA } }, UPSTREAM_PDF_TIMEOUT_MS);
-      if (pdf.ok) {
-        const sanitized = await sanitizePdfExternalLinksBody(pdf.body);
-        if (externalPdfLooksLikePreview(sanitized, direct.item)) throw new Error("Reportify returned a preview image instead of the full PDF.");
-        const consumed = await finalizeAccountDownloadDecision(env, request, accountDecision, id, "external");
-        if (!consumed.ok) {
-          return jsonResponse(request, env, consumed.status || 403, {
-            error: consumed.error || TRIAL_LIMIT_MESSAGE,
-            request_action: consumed.request_action || membershipRequestAction("access"),
-            limit_exceeded: Boolean(consumed.limit_exceeded),
-          });
-        }
-        scheduleHotReportArchive(
-          ctx,
-          () => archiveReportAsHot(env, externalReportHotArchiveInput(id, direct.item, sanitized)),
-          { source: "external", report_id: id },
-        );
-        return externalPdfResponse(request, env, sanitized, direct.title, id);
-      }
-    } catch (_error) {
-      // Fall through to the R2 / grab paths below.
-    }
-  }
+  let cachedNeedsValidation = false;
 
   // 2) Already grabbed by the workflow and mirrored to R2.
   if (env.REPORT_BUCKET) {
     const object = await env.REPORT_BUCKET.get(externalObjectKey(id));
     if (object) {
       const sanitized = await sanitizePdfExternalLinksBody(object.body);
-      if (!externalPdfLooksLikePreview(sanitized, direct.item)) {
+      if (externalValidatedPdfMetadata(object, direct.item) && externalPdfHasHeader(sanitized)) {
         const consumed = await finalizeAccountDownloadDecision(env, request, accountDecision, id, "external");
         if (!consumed.ok) {
           return jsonResponse(request, env, consumed.status || 403, {
@@ -24332,62 +24377,28 @@ async function handleExternalPdf(request, env, ctx = null) {
         );
         return externalPdfResponse(request, env, sanitized, direct.title, id);
       }
-      if (typeof env.REPORT_BUCKET.delete === "function") await env.REPORT_BUCKET.delete(externalObjectKey(id)).catch(() => null);
-      if (isAdmin && !reportifyToken) {
-        const qr = await reportifyLoginQr();
-        return jsonResponse(request, env, 503, {
-          error: "报告缓存异常。请扫描二维码登录 Reportify 后重试。",
-          login_required: true,
-          reportify_url: `${EXTERNAL_SITE}/reports/${id}`,
-          ...(qr || {}),
-        });
-      }
-      if (!isAdmin) {
-        return jsonResponse(request, env, 503, {
-          error: "这份报告缓存异常，请提交报告申请。",
-          request_required: true,
-          request_source: "external",
-          request_report_id: id,
-          title: direct.title,
-          institution: direct.item && direct.item.institution || "",
-        });
-      }
-      // An authenticated administrator retries the normal grab path below.
+      // Missing validation metadata is not evidence of corrupt bytes. Keep
+      // legacy objects until the acquisition workflow uploads a verified
+      // replacement; never delete them merely because they are small.
+      cachedNeedsValidation = Number.isInteger(direct.item.page_count) && direct.item.page_count > 0;
+      // Existing bytes can be validated without a new upstream download.
     }
   }
 
   // A gated image-only response is an upstream login/entitlement failure, not
   // a usable PDF. Ordinary users should be offered the report request form
   // immediately; the privileged admin can scan a QR code and retry.
-  const upstreamRequiresLogin = direct.readable === false
-    || (direct.render_type === "image" && direct.resource_limit_known && direct.resource_limit <= 0);
-  if (upstreamRequiresLogin && isAdmin && !reportifyToken) {
-    const qr = await reportifyLoginQr();
-    return jsonResponse(request, env, 409, {
-      error: "Reportify 需要登录。请扫描二维码登录后重试。",
-      reportify_url: `${EXTERNAL_SITE}/reports/${id}`,
-      login_required: true,
-      ...(qr || {}),
-    });
-  }
-  if (upstreamRequiresLogin && !isAdmin) {
-    return jsonResponse(request, env, 503, {
-      error: "这份报告当前无法直接获取，请提交报告申请。",
-      request_required: true,
-      request_source: "external",
-      request_report_id: id,
-      reportify_url: `${EXTERNAL_SITE}/reports/${id}`,
-      title: direct.title,
-      institution: direct.item && direct.item.institution || "",
-    });
+  if (direct.access_state !== "readable" && !cachedNeedsValidation) {
+    return externalAccessFailure(request, env, id, direct.access_state, isAdmin, direct.item);
   }
 
-  // 3) Gated and not yet mirrored - request preparation and let the page poll.
+  // 3) Eligible acquisition or cached-byte validation: prepare and poll.
   const stored = await externalStoredStatus(env, id);
   if (externalStatusIsActive(stored)) {
     return externalPendingResponse(request, env, stored);
   }
-  if (externalStatusIsRecentFailure(stored)) {
+  const restoredSession = reportifySession && Date.parse(reportifySession.updated_at) > Date.parse(String(stored && stored.updated_at || ""));
+  if (externalStatusIsRecentFailure(stored) && !restoredSession) {
     if (isAdmin && !reportifyToken) {
       const qr = await reportifyLoginQr();
       return jsonResponse(request, env, 503, {
@@ -24402,7 +24413,6 @@ async function handleExternalPdf(request, env, ctx = null) {
       request_required: !isAdmin,
       request_source: "external",
       request_report_id: id,
-      reportify_url: `${EXTERNAL_SITE}/reports/${id}`,
       title: direct.title,
       institution: direct.item && direct.item.institution || "",
       updated_at: String(stored.updated_at || ""),
@@ -24410,7 +24420,7 @@ async function handleExternalPdf(request, env, ctx = null) {
   }
 
   await externalPutStatus(env, id, "queued");
-  const dispatched = await triggerExternalGrab(env, id, reportifyToken);
+  const dispatched = await triggerExternalGrab(env, id);
   if (!dispatched) {
     await externalPutStatus(env, id, "failed", "dispatch failed");
     if (isAdmin && !reportifyToken) {
@@ -24427,7 +24437,6 @@ async function handleExternalPdf(request, env, ctx = null) {
       request_required: !isAdmin,
       request_source: "external",
       request_report_id: id,
-      reportify_url: `${EXTERNAL_SITE}/reports/${id}`,
       title: direct.title,
       institution: direct.item && direct.item.institution || "",
     });
@@ -24445,11 +24454,8 @@ async function handleExternalStatus(request, env) {
   let invalidCache = false;
   if (env.REPORT_BUCKET) {
     const head = await env.REPORT_BUCKET.head(externalObjectKey(id));
-    if (head && Number(head.size || 0) >= 256 * 1024) ready = true;
-    else if (head && typeof env.REPORT_BUCKET.delete === "function") {
-      invalidCache = true;
-      await env.REPORT_BUCKET.delete(externalObjectKey(id)).catch(() => null);
-    }
+    if (head && externalValidatedPdfMetadata(head)) ready = true;
+    else if (head) invalidCache = true;
   }
   if (ready) return jsonResponse(request, env, 200, { ready, status: "ready" });
 
@@ -24457,15 +24463,17 @@ async function handleExternalStatus(request, env) {
   if (stored && (stored.status === "failed" || stored.status === "ready")) {
     const isAdmin = await externalAdminRequest(request, env);
     const token = await reportifyStoredToken(env);
-    if (isAdmin && !token) {
-      const qr = await reportifyLoginQr();
+    const credentialFailure = !token || stored.error_code === "upstream_login_required";
+    const accessFailure = stored.error_code === "upstream_access_required";
+    if (isAdmin && (credentialFailure || accessFailure)) {
+      const response = await externalAccessFailure(request, env, id,
+        credentialFailure ? "login_required" : "access_required", true);
+      const recovery = await response.json();
       return jsonResponse(request, env, 200, {
+        ...recovery,
         ready: false,
         status: "failed",
-        message: invalidCache || stored.status === "ready" ? "报告缓存异常。请扫描二维码登录 Reportify 后重试。" : "报告准备失败。请扫描二维码登录 Reportify 后重试。",
-        login_required: true,
-        reportify_url: `${EXTERNAL_SITE}/reports/${id}`,
-        ...(qr || {}),
+        message: recovery.error,
         updated_at: String(stored.updated_at || ""),
       });
     }
@@ -24476,7 +24484,6 @@ async function handleExternalStatus(request, env) {
       request_required: !isAdmin,
       request_source: "external",
       request_report_id: id,
-      reportify_url: `${EXTERNAL_SITE}/reports/${id}`,
       updated_at: String(stored.updated_at || ""),
     });
   }
@@ -24510,9 +24517,11 @@ async function handleReportifyLoginQrStatus(request, env) {
     });
     if (!response.ok) return jsonResponse(request, env, 502, { error: "Reportify 登录状态暂时无法读取。" });
     const data = await response.json();
-    const token = String(data && data.token || "").trim();
+    const token = data && typeof data.token === "string" ? data.token.trim() : "";
     if (token) {
-      await reportifyStoreToken(env, token);
+      if (!(await reportifyStoreToken(env, token))) {
+        return jsonResponse(request, env, 503, { error: "登录已完成，但后台连接保存失败，请重试。", ready: false });
+      }
       return jsonResponse(request, env, 200, { status: "authenticated", ready: true });
     }
     return jsonResponse(request, env, 200, {

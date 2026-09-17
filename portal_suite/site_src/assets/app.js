@@ -11625,7 +11625,7 @@
   }
 
   function showExternalLoginQr(statusElement, workerUrl, error, onReady) {
-    if (!statusElement || !workerUrl || !error || !error.login_required || !error.qrcode_id) return false;
+    if (!statusElement || !workerUrl || !error || !(error.login_required || error.reauth_available) || !error.qrcode_id) return false;
     if (statusElement.__externalQrTimer) window.clearInterval(statusElement.__externalQrTimer);
     const qrcodeId = String(error.qrcode_id);
     const serviceUrl = String(error[["report", "ify"].join("") + "_url"] || "");
@@ -11635,7 +11635,9 @@
     statusElement.className = "status-line error external-login-qr";
     const externalServiceName = ["Report", "ify"].join("");
     statusElement.innerHTML = `
-      <div>${externalServiceName} 需要登录。请用微信扫描下方二维码，完成后页面会自动继续。</div>
+      <div>${escapeHtml(error.reauth_available
+        ? `${externalServiceName} 当前连接账号没有可用下载权益或额度。可连接已有权益的账号后重试。`
+        : `${externalServiceName} 需要登录。请用微信扫描下方二维码，完成后页面会自动继续。`)}</div>
       <img src="${escapeHtml(qrImage)}" alt="${externalServiceName} 登录二维码" width="220" height="220" loading="eager" referrerpolicy="no-referrer">
       ${serviceUrl ? `<div><a href="${escapeHtml(serviceUrl)}" target="_blank" rel="noopener">在当前浏览器打开报告页</a></div>` : ""}
     `;
@@ -11658,7 +11660,19 @@
           statusElement.__externalQrTimer = null;
           statusElement.className = "status-line ok";
           statusElement.textContent = "登录已完成，正在继续获取报告…";
-          if (typeof onReady === "function") onReady();
+          if (typeof onReady === "function") {
+            try {
+              await onReady();
+            } catch (error) {
+              if (!showExternalLoginQr(statusElement, workerUrl, error, onReady)) {
+                statusElement.className = "status-line error";
+                statusElement.textContent = error.message || "连接已保存，但这份报告仍无法获取。";
+              }
+            }
+          }
+        } else if (!response.ok) {
+          statusElement.className = "status-line error";
+          statusElement.textContent = data.error || "后台连接暂时无法保存，请重试。";
         }
       } catch (_error) {
         // Keep polling while the QR login is pending.
@@ -11741,8 +11755,9 @@
         error: message,
       });
       const error = new Error(downloadErrorMessage(response.status, message, data));
-      if (data && data.login_required) {
-        error.login_required = true;
+      if (data && (data.login_required || data.reauth_available)) {
+        error.login_required = Boolean(data.login_required);
+        error.reauth_available = Boolean(data.reauth_available);
         error.qrcode_id = String(data.qrcode_id || "");
         error.qrcode_url = String(data.qrcode_url || "");
         error.qr_image_url = String(data.qr_image_url || "");
@@ -11786,17 +11801,28 @@
       try {
         statusTarget(`报告仍在准备中，已等待 ${elapsedText}。页面会继续自动检测。`);
         const response = await fetch(`${workerUrl}/external/status?id=${encodeURIComponent(id)}`, {
+          headers: authHeaders(),
           cache: "no-store",
         });
         const data = await response.json();
         if (data.ready) {
           window.clearInterval(timer);
           statusTarget("报告已就绪，正在下载…", "ok");
-          onReady();
+          try {
+            await onReady();
+          } catch (error) {
+            const message = error.message || "报告已准备，但下载失败，请重试。";
+            statusTarget(message, "error");
+            const statusElement = document.getElementById("externalDetailStatus") || document.getElementById("accountAccessStatus");
+            if (showExternalLoginQr(statusElement, workerUrl, error, onReady)) return;
+            if (error.request_required && typeof onAbnormal === "function") onAbnormal(message, error);
+          }
         } else if (data.status === "failed") {
           window.clearInterval(timer);
           const message = data.message || "报告准备失败，请提交报告申请。";
           statusTarget(message, "error");
+          const statusElement = document.getElementById("externalDetailStatus") || document.getElementById("accountAccessStatus");
+          if (showExternalLoginQr(statusElement, workerUrl, data, onReady)) return;
           if (data.request_required && typeof onAbnormal === "function") onAbnormal(message, data);
         }
       } catch (_error) {
