@@ -1,6 +1,6 @@
 name: Reportify Grab
 
-# On-demand download of a single reportify.cn report PDF. The Portal Suite Worker
+# On-demand authorized full PDF download. The Portal Suite Worker
 # fires this via repository_dispatch (event type "reportify-grab") when a user clicks
 # a gated report. The grabbed PDF is mirrored to R2 at reportify/<id>.pdf, where the
 # Worker's GET /reportify/pdf?id=<id> serves it on the next request.
@@ -13,6 +13,9 @@ on:
         description: "Reportify report id (numeric, e.g. 1264649995240476672)"
         required: true
         type: string
+
+permissions:
+  contents: read
 
 # Avoid duplicate grabs of the same report racing each other.
 concurrency:
@@ -34,8 +37,10 @@ jobs:
 
       - name: Resolve report id
         id: resolve
+        env:
+          REPORT_ID: ${{ github.event.client_payload.id || github.event.inputs.report_id }}
         run: |
-          ID="${{ github.event.client_payload.id || github.event.inputs.report_id }}"
+          ID="$REPORT_ID"
           if ! printf '%s' "$ID" | grep -qE '^[0-9]{6,25}$'; then
             echo "Invalid report id: '$ID'" >&2
             exit 1
@@ -45,8 +50,10 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install playwright boto3 pypdf pillow
-          python -m playwright install --with-deps chromium
+          pip install boto3 "pypdf>=4,<6"
+
+      - name: Verify authorized PDF acquisition
+        run: python -m unittest discover -s scripts -p 'test_reportify_api_grab.py' -v
 
       - name: Mark preparation running
         env:
@@ -62,13 +69,16 @@ jobs:
       - name: Grab reportify PDF
         env:
           REPORTIFY_COOKIE_HEADER: ${{ secrets.REPORTIFY_COOKIE_HEADER || secrets.REPORTIFY_COOKIE || '' }}
-          REPORTIFY_AUTH_TOKEN: ${{ github.event.client_payload.reportify_token || '' }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET || 'portal-suite-pdfs' }}
         run: |
           python scripts/reportify_pdf_grabber.py \
             --url "https://reportify.cn/reports/${{ steps.resolve.outputs.id }}" \
             --output "/tmp/${{ steps.resolve.outputs.id }}.pdf" \
-            --auth-token "$REPORTIFY_AUTH_TOKEN" \
-            --headless
+            --result-json "/tmp/${{ steps.resolve.outputs.id }}.result.json" \
+            --session-from-r2
 
       - name: Upload PDF to R2
         env:
@@ -79,7 +89,8 @@ jobs:
         run: |
           python scripts/upload_reportify_pdf_to_r2.py \
             --id "${{ steps.resolve.outputs.id }}" \
-            --pdf "/tmp/${{ steps.resolve.outputs.id }}.pdf"
+            --pdf "/tmp/${{ steps.resolve.outputs.id }}.pdf" \
+            --result-json "/tmp/${{ steps.resolve.outputs.id }}.result.json"
 
       - name: Mark preparation ready
         env:
@@ -90,10 +101,11 @@ jobs:
         run: |
           python scripts/mark_reportify_pdf_status.py \
             --id "${{ steps.resolve.outputs.id }}" \
-            --status ready
+            --status ready \
+            --result-json "/tmp/${{ steps.resolve.outputs.id }}.result.json"
 
       - name: Mark preparation failed
-        if: failure()
+        if: ${{ failure() && steps.resolve.outputs.id != '' }}
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -103,4 +115,5 @@ jobs:
           python scripts/mark_reportify_pdf_status.py \
             --id "${{ steps.resolve.outputs.id }}" \
             --status failed \
+            --result-json "/tmp/${{ steps.resolve.outputs.id }}.result.json" \
             --message "Background preparation failed"

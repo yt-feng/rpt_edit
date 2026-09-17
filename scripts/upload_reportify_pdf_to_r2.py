@@ -15,12 +15,15 @@ Run:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import os
 import re
 import sys
 from pathlib import Path
 
 from sanitize_pdf_links import sanitize_pdf_links
+from reportify_pdf_grabber import validate_pdf
+from reportify_result import read_result, ready_metadata
 
 REPORTIFY_R2_PREFIX = "reportify"
 DEFAULT_BUCKET = "portal-suite-pdfs"
@@ -53,6 +56,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Upload a Reportify PDF to R2.")
     parser.add_argument("--id", required=True, help="Numeric reportify report id.")
     parser.add_argument("--pdf", required=True, help="Path to the grabbed PDF.")
+    parser.add_argument("--result-json", type=Path, help="Verified grabber result (default: PDF path + .result.json)")
     args = parser.parse_args()
 
     report_id = args.id.strip()
@@ -63,11 +67,18 @@ def main() -> int:
     data = pdf_path.read_bytes() if pdf_path.exists() else b""
     if not data.startswith(b"%PDF-"):
         raise SystemExit(f"Not a valid PDF (missing %PDF- header): {pdf_path}")
+    result_path = args.result_json or pdf_path.with_name(pdf_path.name + ".result.json")
+    result = read_result(result_path, report_id)
+    metadata = ready_metadata(result, data)
     try:
         if sanitize_pdf_links(pdf_path):
             data = pdf_path.read_bytes()
-    except Exception as exc:
-        print(f"warning: could not sanitize PDF links: {exc}", file=sys.stderr)
+    except Exception:
+        print("warning: could not sanitize PDF links", file=sys.stderr)
+    data = pdf_path.read_bytes()
+    # Sanitization must preserve the verified page count as well.
+    validate_pdf(data, result["expected_page_count"])
+    metadata["sha256"] = hashlib.sha256(data).hexdigest()
 
     bucket = os.getenv("R2_BUCKET", "").strip() or DEFAULT_BUCKET
     key = f"{REPORTIFY_R2_PREFIX}/{report_id}.pdf"
@@ -79,9 +90,13 @@ def main() -> int:
             key,
             ExtraArgs={
                 "ContentType": "application/pdf",
-                "Metadata": {"source": "reportify"},
+                "Metadata": metadata,
             },
         )
+    head = client.head_object(Bucket=bucket, Key=key)
+    if (head.get("ContentLength") != len(data)
+            or any(head.get("Metadata", {}).get(name) != value for name, value in metadata.items())):
+        raise RuntimeError("Uploaded report PDF metadata or size failed readback verification")
     print(f"Uploaded {pdf_path} ({len(data) // 1024} KB) -> r2://{bucket}/{key}")
     return 0
 
