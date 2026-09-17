@@ -273,7 +273,7 @@ class IdentityCheckpointTests(unittest.TestCase):
     def test_september_17_preflight_tail_completes_without_provider_and_renders(self):
         # Failed production run 35164881042 had only these two Japanese
         # residuals; the first echoed acronym row blocked the entire release.
-        html = '<meta name="keywords" content="NPO CPO OCS-2026"><p>9月17日WCLC</p>'
+        html = '<meta name="keywords" content="NPO CPO OCS-260914"><p>9月14日WCLC</p>'
         units = {}
         builder.collect_html_units(html, units)
         self.assertEqual(len(units), 1, "International acronym lists are not paid translation copy")
@@ -294,8 +294,8 @@ class IdentityCheckpointTests(unittest.TestCase):
             parser.feed(html)
             parser.close()
             rendered = parser.rendered_html()
-            self.assertIn('content="NPO CPO OCS-2026"', rendered)
-            self.assertIn('<p>9月17日WCLC</p>', rendered)
+            self.assertIn('content="NPO CPO OCS-260914"', rendered)
+            self.assertIn('<p>9月14日WCLC</p>', rendered)
             report, _ = self.translate(units, saved, path, provider)
             self.assertEqual(report["status"], "passed")
             self.assertEqual(report["identity_seeded_units"], {locale: 0 for locale in builder.LOCALES})

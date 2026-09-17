@@ -12,7 +12,8 @@ from portal_locale_literals import is_chart_geography_identity_label, is_chart_m
 
 class OpticalAcronymIdentityTests(unittest.TestCase):
     def test_failed_preflight_and_bounded_lists_do_not_enter_paid_inventory(self):
-        for source in ("NPO CPO OCS-2026", "NPO CPO OCS-1", "NPO/CPO/OCS", "CPO, OCS"):
+        for source in ("NPO CPO OCS-260914", "NPO CPO OCS-20260914", "NPO CPO OCS-2026",
+                       "NPO CPO OCS-1", "NPO/CPO/OCS", "CPO, OCS"):
             with self.subTest(source=source):
                 self.assertTrue(is_optical_acronym_label(source, source))
                 for context in ("html:meta:keyword", "chart:keywords", "html:text:p"):
@@ -26,7 +27,7 @@ class OpticalAcronymIdentityTests(unittest.TestCase):
 
     def test_uppercase_prose_and_unrecognized_tokens_do_not_gain_identity(self):
         for source in ("NPO CPO OCS GROWTH", "NPO CPO OCS增长", "REVENUE WILL GROW",
-                       "NPO CPO OCS outlook", "NPO CPO OCS.", "NPO CPO OCS-12345",
+                       "NPO CPO OCS outlook", "NPO CPO OCS.", "NPO CPO OCS-123456789",
                        "NPO CPO UNKNOWN", "NPO CPO OCS __KC_PH_000__", "NPO\nCPO OCS",
                        "NPO " * 7, "", None):
             with self.subTest(source=source):
