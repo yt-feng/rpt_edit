@@ -85,6 +85,25 @@ class PortalWorkerEmergencyDeployWorkflowTests(unittest.TestCase):
         self.assertNotIn("node --test portal_suite/tests/*.test.mjs", self.workflow)
         self.assertNotIn("--test-isolation", self.workflow)
 
+    def test_reportify_acquisition_contract_dependencies_are_in_sparse_checkout(self) -> None:
+        sparse = self.workflow.split("sparse-checkout: |", 1)[1].split("\n      - name:", 1)[0]
+        paths = {line.strip() for line in sparse.splitlines() if line.strip()}
+        # The API acquisition tests read the workflow contract and import the
+        # uploader/status helpers. Full-checkout PR tests cannot catch an
+        # omitted runtime dependency in the emergency deployment checkout.
+        for path in (
+            ".github/workflows/reportify-grab.yml",
+            "scripts/test_reportify_api_grab.py",
+            "scripts/reportify_pdf_grabber.py",
+            "scripts/reportify_result.py",
+            "scripts/upload_reportify_pdf_to_r2.py",
+            "scripts/mark_reportify_pdf_status.py",
+            "scripts/sanitize_pdf_links.py",
+        ):
+            with self.subTest(path=path):
+                self.assertIn(path, paths)
+        self.assertIn("python3 -B scripts/test_reportify_api_grab.py", self.workflow)
+
     def test_materialized_public_site_is_brand_checked_before_worker_upload(self) -> None:
         self.assertIn("scripts/check_public_brand.py", self.workflow)
         self.assertIn("scripts/test_check_public_brand.py", self.workflow)
