@@ -7,7 +7,48 @@ import unittest
 from unittest import mock
 
 import build_portal_locales as builder
-from portal_locale_literals import is_chart_geography_identity_label, is_chart_metric_identity_label, is_japanese_identity_label, is_latin_name_literal, is_machine_asset_reference, is_shared_japanese_keyword, is_short_latin_label_translation
+from portal_locale_literals import is_chart_geography_identity_label, is_chart_metric_identity_label, is_japanese_identity_label, is_latin_name_literal, is_machine_asset_reference, is_optical_acronym_label, is_shared_japanese_keyword, is_short_latin_label_translation
+
+
+class OpticalAcronymIdentityTests(unittest.TestCase):
+    def test_failed_preflight_and_bounded_lists_do_not_enter_paid_inventory(self):
+        for source in ("NPO CPO OCS-2026", "NPO CPO OCS-1", "NPO/CPO/OCS", "CPO, OCS"):
+            with self.subTest(source=source):
+                self.assertTrue(is_optical_acronym_label(source, source))
+                for context in ("html:meta:keyword", "chart:keywords", "html:text:p"):
+                    protected, unit = builder.unit_for_text(source, context)
+                    self.assertIsNone(unit)
+                    for locale in builder.LOCALES:
+                        self.assertEqual(builder.translated_text(source, context, locale, builder.empty_cache()), source)
+                        # Previously created checkpoint rows must also remain valid.
+                        row = builder.TranslationUnit("incident", context, protected.canonical)
+                        builder.validate_translation_quality(locale, row, row.source)
+
+    def test_uppercase_prose_and_unrecognized_tokens_do_not_gain_identity(self):
+        for source in ("NPO CPO OCS GROWTH", "NPO CPO OCS增长", "REVENUE WILL GROW",
+                       "NPO CPO OCS outlook", "NPO CPO OCS.", "NPO CPO OCS-12345",
+                       "NPO CPO UNKNOWN", "NPO CPO OCS __KC_PH_000__", "NPO\nCPO OCS",
+                       "NPO " * 7, "", None):
+            with self.subTest(source=source):
+                self.assertFalse(is_optical_acronym_label(source, source))
+        for source in ("NPO CPO OCS增长", "REVENUE WILL GROW", "NPO CPO OCS outlook"):
+            unit = builder.unit_for_text(source, "html:meta:keyword")[1]
+            self.assertIsNotNone(unit)
+            for locale in builder.LOCALES:
+                with self.assertRaises(builder.TranslationError):
+                    builder.validate_translation_quality(locale, unit, unit.source)
+
+    def test_identity_cannot_drop_replace_or_duplicate_structural_placeholders(self):
+        source = "NPO CPO OCS-__KC_PH_000__"
+        unit = builder.TranslationUnit("incident", "html:meta:keyword", source)
+        for locale in builder.LOCALES:
+            builder.validate_translation_quality(locale, unit, source)
+            for output in ("NPO CPO OCS", "NPO CPO OCS-__KC_PH_001__",
+                           source + " __KC_PH_000__"):
+                with self.subTest(locale=locale, output=output), self.assertRaisesRegex(
+                    builder.TranslationError, "placeholder mismatch",
+                ):
+                    builder.validate_translation_quality(locale, unit, output)
 
 
 class ChartGeographyIdentityTests(unittest.TestCase):
@@ -432,6 +473,19 @@ class SharedJapaneseKeywordTests(unittest.TestCase):
 
 
 class JapaneseIdentityLabelTests(unittest.TestCase):
+    def test_failed_preflight_date_event_is_japanese_only_and_complete(self):
+        for source in ("9月7日WCLC", "9月17日WCLC", "__KC_PH_000__月__KC_PH_001__日WCLC"):
+            with self.subTest(source=source):
+                self.assertTrue(is_japanese_identity_label(source, source))
+                unit = builder.TranslationUnit("date-event", "html:text:p", source)
+                builder.validate_translation_quality("ja", unit, source)
+                for locale in ("ko", "ar"):
+                    with self.assertRaises(builder.TranslationError):
+                        builder.validate_translation_quality(locale, unit, source)
+        for source in ("9月17日WCLC发布数据", "9月17日WCLC results", "9月17日UNKNOWN",
+                       "9月WCLC", "月日WCLC", "9月17日WCLC。"):
+            self.assertFalse(is_japanese_identity_label(source, source))
+
     def test_native_incident_rows_are_valid_provider_batch_output(self):
         units = [
             builder.TranslationUnit(str(index), context, source)

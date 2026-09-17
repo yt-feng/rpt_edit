@@ -43,6 +43,16 @@ _JAPANESE_FINANCIAL_LABEL = re.compile(
 # native company-name fragment `三井E`. Neither spelling needs a new Japanese
 # rendering. Do not extend this to arbitrary Kanji + Latin company-like text.
 _JAPANESE_ENTITY_LITERALS = frozenset({"三井E", "三井E&S"})
+# These optical-interconnect terms are international acronyms, including in
+# Japanese. A complete bounded list is an identity; uppercase prose is not.
+_OPTICAL_ACRONYM = r"(?:NPO|CPO|OCS)(?:-(?:[0-9]{1,4}|__KC_PH_[0-9]{3}__))?"
+_OPTICAL_ACRONYM_LABEL = re.compile(rf"{_OPTICAL_ACRONYM}(?:[ /,]+{_OPTICAL_ACRONYM}){{0,5}}")
+# Month/day event labels are already valid Japanese. Keep the event vocabulary
+# closed and accept protected numeric fields without dropping their identity.
+_JAPANESE_EVENT_DATE = re.compile(
+    r"(?:[0-9]{1,2}|__KC_PH_[0-9]{3}__)月"
+    r"(?:[0-9]{1,2}|__KC_PH_[0-9]{3}__)日[ ]*WCLC"
+)
 # Chart metric names can consist entirely of international abbreviations and
 # measurement units. Keep the vocabulary and complete-string grammar closed;
 # generic uppercase words or a sentence containing a metric are still prose.
@@ -75,6 +85,14 @@ def is_chart_metric_identity_label(source: object, translated: object, context: 
     return bool(source == translated.strip() and _CHART_METRIC_IDENTITY.fullmatch(source))
 
 
+def is_optical_acronym_label(source: object, translated: object) -> bool:
+    """Preserve complete known acronym lists, never surrounding prose."""
+    if not isinstance(source, str) or not isinstance(translated, str):
+        return False
+    source = source.strip()
+    return bool(source == translated.strip() and _OPTICAL_ACRONYM_LABEL.fullmatch(source))
+
+
 def is_japanese_identity_label(source: object, translated: object) -> bool:
     """Recognize complete Japanese entity/metric labels, never surrounding copy.
 
@@ -87,7 +105,9 @@ def is_japanese_identity_label(source: object, translated: object) -> bool:
     source = source.strip()
     return bool(
         source == translated.strip()
-        and (source in _JAPANESE_ENTITY_LITERALS or _JAPANESE_FINANCIAL_LABEL.fullmatch(source))
+        and (source in _JAPANESE_ENTITY_LITERALS
+             or _JAPANESE_FINANCIAL_LABEL.fullmatch(source)
+             or _JAPANESE_EVENT_DATE.fullmatch(source))
     )
 
 

@@ -270,6 +270,37 @@ class IdentityCheckpointTests(unittest.TestCase):
         self.assertEqual(set(calls), {(locale, unit.source) for locale in builder.LOCALES for unit in units.values()})
         self.assertEqual(report["identity_seeded_units"], {locale: 0 for locale in builder.LOCALES})
 
+    def test_september_17_preflight_tail_completes_without_provider_and_renders(self):
+        # Failed production run 35164881042 had only these two Japanese
+        # residuals; the first echoed acronym row blocked the entire release.
+        html = '<meta name="keywords" content="NPO CPO OCS-2026"><p>9月17日WCLC</p>'
+        units = {}
+        builder.collect_html_units(html, units)
+        self.assertEqual(len(units), 1, "International acronym lists are not paid translation copy")
+        unit = next(iter(units.values()))
+        self.assertEqual(unit.source, "__KC_PH_000__月__KC_PH_001__日WCLC")
+        self.assertEqual(unit.key[:12], "d8afcecabcb9", "Keep the incident checkpoint key stable")
+        cache = builder.empty_cache()
+        for locale in ("ko", "ar"):
+            cache["locales"][locale][unit.key] = builder._translation_cache_row(unit, NATIVE[locale])
+        provider = mock.Mock(side_effect=AssertionError("Identity tail must not call a provider"))
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "cache.json.gz"
+            report, saved = self.translate(units, cache, path, provider, preflight=True)
+            self.assertEqual(report["status"], "passed")
+            self.assertEqual(report["identity_seeded_units"], {"ko": 0, "ja": 1, "ar": 0})
+            self.assertEqual(report["provider_requests"], 0)
+            parser = builder.PortalHTMLProcessor(locale="ja", cache=saved)
+            parser.feed(html)
+            parser.close()
+            rendered = parser.rendered_html()
+            self.assertIn('content="NPO CPO OCS-2026"', rendered)
+            self.assertIn('<p>9月17日WCLC</p>', rendered)
+            report, _ = self.translate(units, saved, path, provider)
+            self.assertEqual(report["status"], "passed")
+            self.assertEqual(report["identity_seeded_units"], {locale: 0 for locale in builder.LOCALES})
+        provider.assert_not_called()
+
 
 if __name__ == "__main__":
     unittest.main()
