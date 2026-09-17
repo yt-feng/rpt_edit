@@ -46,4 +46,5 @@ jobs:
         run: |
           python3 -m pip install --disable-pip-version-check "pypdf>=4,<6"
           python3 -B scripts/test_reportify_api_grab.py
+          python3 -B scripts/test_portal_worker_emergency_deploy_workflow.py
           node portal_suite/tests/reportify-fallback.test.mjs
