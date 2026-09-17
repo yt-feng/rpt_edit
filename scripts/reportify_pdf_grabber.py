@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fetch only an explicitly authorized full PDF from the report detail API.
+"""Fetch an authorized full PDF from the detail or official download API.
 
 The cloud workflow reads the short-lived session from R2. Preview images, guessed
 CDN paths and browser printouts are never considered deliverable report PDFs.
@@ -182,6 +182,67 @@ def authorized_pdf(detail: dict, *, authenticated: bool) -> tuple[str, int]:
     return url.strip(), expected
 
 
+def fetch_official_pdf(report_id: str, expected_pages: int, *, token: str = "", cookie: str = "",
+                       fetch=fetch_bytes) -> bytes:
+    """Resolve the source's authenticated download route, without guessing CDN paths.
+
+    Called only after explicit detail permission and a missing inline PDF URL.
+    Unknown/ambiguous response shapes fail closed until they can be verified.
+    """
+    if not token and not cookie:
+        raise ReportifyUnavailable("upstream_login_required", "download_session_required",
+                                   expected_page_count=expected_pages)
+    if not expected_pages:
+        raise ReportifyUnavailable("upstream_unavailable", "expected_page_count_missing")
+    body = fetch(f"{API_ORIGIN}/reports/{report_id}/download", token=token, cookie=cookie,
+                 maximum=MAX_PDF_BYTES, accept="application/pdf, application/json")
+    if body.startswith(b"%PDF-"):
+        return body
+    if len(body) > 64 * 1024:
+        raise ReportifyUnavailable("upstream_unavailable", "invalid_download_response")
+    try:
+        payload = json.loads(body)
+    except (ValueError, UnicodeError):
+        raise ReportifyUnavailable("upstream_unavailable", "invalid_download_response") from None
+    candidates = []
+    envelopes = [payload]
+    if isinstance(payload, dict) and "data" in payload:
+        if not isinstance(payload["data"], (str, dict)):
+            raise ReportifyUnavailable("upstream_unavailable", "invalid_download_response")
+        envelopes.append(payload["data"])
+    for envelope in envelopes:
+        if isinstance(envelope, str):
+            candidates.append(envelope.strip())
+        elif isinstance(envelope, dict):
+            if str(envelope.get("code", "")) == "401000":
+                raise ReportifyUnavailable("upstream_login_required", "download_token_invalid")
+            # Only the source's invalid-token code has been observed so far.
+            # Do not infer a successful code/status contract from a URL alone.
+            if "code" in envelope or "status" in envelope:
+                raise ReportifyUnavailable("upstream_unavailable", "download_status_unverified")
+            if envelope.get("readable") is False:
+                raise ReportifyUnavailable("upstream_access_required", "download_access_denied")
+            for key in ("ok", "success", "readable"):
+                if key in envelope and envelope[key] is not True:
+                    raise ReportifyUnavailable("upstream_unavailable", "download_response_error")
+            error = envelope.get("error")
+            if error is not None and error is not False and error != "":
+                raise ReportifyUnavailable("upstream_unavailable", "download_response_error")
+            for key in ("url", "url_pdf", "download_url"):
+                if key in envelope:
+                    value = envelope[key]
+                    if not isinstance(value, str) or not value.strip():
+                        raise ReportifyUnavailable("upstream_unavailable", "invalid_download_response")
+                    candidates.append(value.strip())
+    urls = set(candidates)
+    if len(urls) != 1:
+        raise ReportifyUnavailable("upstream_unavailable", "invalid_download_response")
+    url = urls.pop()
+    if not allowed_asset_url(url):
+        raise ReportifyUnavailable("upstream_unavailable", "invalid_asset_url")
+    return fetch(url, token=token, cookie=cookie, maximum=MAX_PDF_BYTES, accept="application/pdf")
+
+
 def validate_pdf(data: bytes, expected_pages: int) -> int:
     if not data.startswith(b"%PDF-"):
         raise ReportifyUnavailable("invalid_pdf", "not_pdf", expected_page_count=expected_pages)
@@ -240,11 +301,15 @@ def grab_report(report_id: str, output: Path, *, token: str = "", cookie: str = 
     if data is None:
         try:
             url, expected = authorized_pdf(detail, authenticated=bool(token or cookie))
-        except ReportifyUnavailable:
-            if cache_error is not None:
+        except ReportifyUnavailable as exc:
+            if exc.detail_code == "full_pdf_not_exposed":
+                data = fetch_official_pdf(report_id, expected, token=token, cookie=cookie, fetch=fetch)
+            elif cache_error is not None:
                 raise cache_error
-            raise
-        data = fetch(url, token=token, cookie=cookie, maximum=MAX_PDF_BYTES, accept="application/pdf")
+            else:
+                raise
+        else:
+            data = fetch(url, token=token, cookie=cookie, maximum=MAX_PDF_BYTES, accept="application/pdf")
     pages = validate_pdf(data, expected)
     output.parent.mkdir(parents=True, exist_ok=True)
     temporary = output.with_name(output.name + ".download")

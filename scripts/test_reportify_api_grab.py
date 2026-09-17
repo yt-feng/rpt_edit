@@ -108,6 +108,84 @@ class ReportifyApiGrabTests(unittest.TestCase):
             grab.authorized_pdf(detail(url=""), authenticated=True)
         self.assertEqual(caught.exception.detail_code, "full_pdf_not_exposed")
 
+    def test_authorized_missing_inline_url_uses_official_download_route(self):
+        url = "https://files.reportify.cn/report/full.pdf?signature=private"
+        for response in (url, {"url": url}, {"url_pdf": url}, {"download_url": url},
+                         {"data": {"url": url}}, {"data": url}):
+            with self.subTest(response_type=type(response).__name__):
+                data = pdf(6)
+                fetch = mock.Mock(side_effect=[json.dumps(detail(6, url="")).encode(),
+                                              json.dumps(response).encode(), data])
+                result = grab.grab_report("1256239582803005440", self.output,
+                                          token="runtime-secret", fetch=fetch)
+                self.assertEqual(result["page_count"], 6)
+                self.assertEqual(self.output.read_bytes(), data)
+                self.assertEqual(fetch.call_args_list[1].args[0],
+                                 "https://api.reportify.cn/reports/1256239582803005440/download")
+                self.assertEqual(fetch.call_args_list[2].args[0], url)
+                self.assertNotIn("private", json.dumps(result))
+                self.assertNotIn("runtime-secret", json.dumps(result))
+
+    def test_official_download_can_return_pdf_bytes_but_preview_still_fails(self):
+        for pages in (1, 5):
+            with self.subTest(pages=pages):
+                fetch = mock.Mock(side_effect=[json.dumps(detail(url="")).encode(), pdf(pages)])
+                if pages == 5:
+                    result = grab.grab_report("1294129388408934400", self.output,
+                                              token="runtime-secret", fetch=fetch)
+                    self.assertEqual(result["page_count"], 5)
+                else:
+                    with self.assertRaises(grab.ReportifyUnavailable) as caught:
+                        grab.grab_report("1294129388408934400", self.output,
+                                         token="runtime-secret", fetch=fetch)
+                    self.assertEqual(caught.exception.detail_code, "page_count_mismatch")
+                    self.assertFalse(self.output.exists())
+                self.assertEqual(fetch.call_count, 2)
+
+    def test_official_download_requires_session_and_known_page_count(self):
+        for token, pages, code in (("", 5, "download_session_required"),
+                                   ("runtime-secret", 0, "expected_page_count_missing")):
+            with self.subTest(code=code):
+                fetch = mock.Mock(return_value=json.dumps(detail(pages, url="")).encode())
+                with self.assertRaises(grab.ReportifyUnavailable) as caught:
+                    grab.grab_report("1294129388408934400", self.output, token=token, fetch=fetch)
+                self.assertEqual(caught.exception.detail_code, code)
+                self.assertEqual(fetch.call_count, 1)
+
+    def test_official_download_rejects_unknown_ambiguous_error_or_external_urls(self):
+        url = "https://files.reportify.cn/report/full.pdf"
+        for payload in ({}, {"href": url}, {"url": url, "download_url": url + "?other"},
+                        {"success": False, "url": url}, {"url": "https://evil.example/file.pdf"},
+                        {"code": 401000, "url": url},
+                        {"code": 401000, "data": {"url": url}},
+                        {"readable": False, "url": url},
+                        {"url": url, "data": {"status": "error", "message": "denied"}},
+                        {"code": 200, "url": url}, {"status": "success", "url": url},
+                        {"readable": "true", "url": url}, {"ok": 1, "url": url},
+                        {"url": url, "error": {}}, {"url": url, "data": []},
+                        {"data": {"url": None}}, {"url": "data:application/pdf;base64,anything"}):
+            with self.subTest(payload_type=type(payload).__name__):
+                fetch = mock.Mock(side_effect=[json.dumps(detail(url="")).encode(), json.dumps(payload).encode()])
+                with self.assertRaises(grab.ReportifyUnavailable):
+                    grab.grab_report("1294129388408934400", self.output,
+                                     token="runtime-secret", fetch=fetch)
+                self.assertEqual(fetch.call_count, 2)
+                self.assertFalse(self.output.exists())
+
+    def test_official_download_denial_preserves_typed_failure_without_fallback(self):
+        for reason, code in (("upstream_login_required", "http_401"),
+                             ("upstream_access_required", "http_403"),
+                             ("upstream_unavailable", "http_429")):
+            with self.subTest(code=code):
+                fetch = mock.Mock(side_effect=[json.dumps(detail(url="")).encode(),
+                                              grab.ReportifyUnavailable(reason, code)])
+                with self.assertRaises(grab.ReportifyUnavailable) as caught:
+                    grab.grab_report("1294129388408934400", self.output,
+                                     token="runtime-secret", fetch=fetch)
+                self.assertEqual(caught.exception.reason, reason)
+                self.assertEqual(fetch.call_count, 2)
+                self.assertFalse(self.output.exists())
+
     def test_one_page_preview_cannot_satisfy_five_or_six_page_report(self):
         for expected in (5, 6):
             fetch = mock.Mock(side_effect=[json.dumps(detail(expected)).encode(), pdf(1)])
