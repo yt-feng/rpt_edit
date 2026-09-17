@@ -37,7 +37,7 @@ from zoneinfo import ZoneInfo
 
 from portal_lazy_assets import fingerprint_newsfeed_loader
 from portal_locale_history import plan_history_release
-from portal_locale_literals import is_chart_geography_identity_label, is_chart_metric_identity_label, is_japanese_identity_label, is_latin_name_literal, is_machine_asset_reference, is_shared_japanese_keyword, is_short_latin_label_translation
+from portal_locale_literals import is_chart_geography_identity_label, is_chart_metric_identity_label, is_japanese_identity_label, is_latin_name_literal, is_machine_asset_reference, is_optical_acronym_label, is_shared_japanese_keyword, is_short_latin_label_translation
 from portal_locale_scope import deferred_locale_source, restrict_html_to_cohort
 from portal_locale_report_preview import localize_report_preview
 from portal_locale_detail_hooks import defer_unverified_report_preview, inject_locale_detail_hooks
@@ -794,7 +794,8 @@ def unit_for_text(value: str, context: str) -> tuple[ProtectedText, TranslationU
         # feeds, or prose must be translated with its surrounding sentence.
         return protected, None
     if (is_chart_metric_identity_label(value, value, context)
-            or is_chart_geography_identity_label(value, value, context)):
+            or is_chart_geography_identity_label(value, value, context)
+            or is_optical_acronym_label(value, value)):
         return protected, None
     if not text_needs_translation(protected.canonical, context):
         return protected, None
@@ -876,7 +877,8 @@ def validate_translation_quality(locale: str, unit: TranslationUnit, translated:
         raise TranslationError(f"{locale}: placeholder mismatch for {unit.key}")
 
     if (is_chart_metric_identity_label(unit.source, text, unit.context)
-            or is_chart_geography_identity_label(unit.source, text, unit.context)):
+            or is_chart_geography_identity_label(unit.source, text, unit.context)
+            or is_optical_acronym_label(unit.source, text)):
         return
     source_visible = _quality_visible_text(unit.source)
     translated_visible = _quality_visible_text(text)
@@ -895,7 +897,8 @@ def validate_translation_quality(locale: str, unit: TranslationUnit, translated:
         return
     if locale == "ja" and is_shared_japanese_keyword(source_visible, translated_visible, unit.context):
         return
-    if locale == "ja" and is_japanese_identity_label(source_visible, translated_visible):
+    if locale == "ja" and (is_japanese_identity_label(unit.source, text)
+                            or is_japanese_identity_label(source_visible, translated_visible)):
         return
     # Names/acronyms and short Japanese Kanji headings can legitimately remain
     # identical. Do not infer language quality from spelling or script ratios.
