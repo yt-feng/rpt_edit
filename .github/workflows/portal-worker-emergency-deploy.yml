@@ -39,6 +39,7 @@ jobs:
             scripts/mark_reportify_pdf_status.py
             scripts/sanitize_pdf_links.py
             scripts/test_reportify_api_grab.py
+            scripts/test_reportify_local_qr.py
             scripts/portal_lazy_assets.py
             scripts/build_member_course_directory.py
             scripts/capture_edge_worker_deployment.py
@@ -75,8 +76,9 @@ jobs:
 
       - name: Validate legacy access compatibility
         run: |
-          python3 -m pip install --disable-pip-version-check "pypdf>=4,<6"
+          python3 -m pip install --disable-pip-version-check "pypdf>=4,<6" "Pillow>=10.1,<12" "zxing-cpp>=2.3,<4"
           python3 -B scripts/test_reportify_api_grab.py
+          python3 -B scripts/test_reportify_local_qr.py
           python3 -B scripts/check_public_identity.py
           node --input-type=module --check < workers/portal-suite-worker/src/index.js
           node --input-type=module --check < workers/portal-suite-worker/src/source-lead-adapter.js

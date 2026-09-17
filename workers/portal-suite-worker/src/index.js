@@ -23884,22 +23884,25 @@ async function reportifyStoreToken(env, token) {
   }
 }
 
-function reportifyQrImageUrl(qrcodeUrl) {
-  const value = String(qrcodeUrl || "").trim();
-  return value
-    ? `https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=${encodeURIComponent(value)}`
-    : "";
+async function reportifyQrImageUrl(qrcodeUrl) {
+  const { reportifyQrDataUrl } = await import("./reportify-login-qr.js");
+  return reportifyQrDataUrl(qrcodeUrl);
 }
 
-async function reportifyLoginQr() {
+async function reportifyLoginQr(request) {
+  // Older clients send the ticket to an external QR service. Do not return a
+  // ticket or QR id until the client declares support for local images.
+  if (new URL(request.url).searchParams.get("qr_format") !== "inline-v1") {
+    return { client_upgrade_required: true, error: "页面版本已更新，请刷新页面后重新连接报告来源。" };
+  }
   try {
     const response = await fetch(`${EXTERNAL_API}/auth/wechat/qrcode`, { headers: externalHeaders() });
     if (!response.ok) return null;
     const data = await response.json();
     const qrcodeId = String(data && data.qrcode_id || "").trim();
-    const qrcodeUrl = String(data && data.qrcode_url || "").trim();
-    if (!qrcodeId || !qrcodeUrl) return null;
-    return { qrcode_id: qrcodeId, qrcode_url: qrcodeUrl, qr_image_url: reportifyQrImageUrl(qrcodeUrl) };
+    const qrcodeUrl = data && data.qrcode_url;
+    if (!/^\d{8,30}$/.test(qrcodeId) || typeof qrcodeUrl !== "string") return null;
+    return { qrcode_id: qrcodeId, qr_image_url: await reportifyQrImageUrl(qrcodeUrl) };
   } catch (_error) {
     return null;
   }
@@ -24499,7 +24502,7 @@ async function externalAccessFailure(request, env, id, state, isAdmin, item = nu
   const code = state === "login_required" ? "upstream_login_required"
     : state === "access_required" ? "upstream_access_required" : "upstream_unavailable";
   if (isAdmin && state !== "unavailable") {
-    const qr = await reportifyLoginQr();
+    const qr = await reportifyLoginQr(request);
     return jsonResponse(request, env, 409, {
       error: state === "access_required"
         ? "Reportify 当前连接账号没有这份报告的可用下载权益或额度。请确认套餐，或连接已有权益的账号。"
@@ -24648,7 +24651,7 @@ async function handleExternalPdf(request, env, ctx = null) {
   const restoredSession = reportifySession && Date.parse(reportifySession.updated_at) > Date.parse(String(stored && stored.updated_at || ""));
   if (externalStatusIsRecentFailure(stored) && !restoredSession) {
     if (isAdmin && !reportifyToken) {
-      const qr = await reportifyLoginQr();
+      const qr = await reportifyLoginQr(request);
       return jsonResponse(request, env, 503, {
         error: "报告准备失败。请扫描二维码登录 Reportify 后重试。",
         login_required: true,
@@ -24672,7 +24675,7 @@ async function handleExternalPdf(request, env, ctx = null) {
   if (!dispatched) {
     await externalPutStatus(env, id, "failed", "dispatch failed");
     if (isAdmin && !reportifyToken) {
-      const qr = await reportifyLoginQr();
+      const qr = await reportifyLoginQr(request);
       return jsonResponse(request, env, 503, {
         error: "Reportify 登录态不可用。请扫描二维码登录后重试。",
         login_required: true,
@@ -24746,9 +24749,9 @@ async function handleReportifyLoginQr(request, env) {
   if (!(await externalAdminRequest(request, env))) {
     return jsonResponse(request, env, 403, { error: "Admin access denied." });
   }
-  const qr = await reportifyLoginQr();
+  const qr = await reportifyLoginQr(request);
   if (!qr) return jsonResponse(request, env, 503, { error: "Reportify 登录二维码暂时无法读取。" });
-  return jsonResponse(request, env, 200, qr);
+  return privateJsonResponse(request, env, qr.client_upgrade_required ? 409 : 200, qr);
 }
 
 async function handleReportifyLoginQrStatus(request, env) {

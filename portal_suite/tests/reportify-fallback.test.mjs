@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 import vm from "node:vm";
+import { reportifyQrDataUrl } from "../../workers/portal-suite-worker/src/reportify-login-qr.js";
 
 const workerSource = await readFile(new URL("../../workers/portal-suite-worker/src/index.js", import.meta.url), "utf8");
 const appSource = await readFile(new URL("../site_src/assets/app.js", import.meta.url), "utf8");
@@ -44,6 +45,7 @@ function harness({ payload = fixture(), owner = false, session = null, status = 
     EXTERNAL_API: "https://api.reportify.cn", EXTERNAL_SITE: "https://reportify.cn", EXTERNAL_UA: "test",
     EXTERNAL_SESSION_KEY: "reportify-auth/session.json", EXTERNAL_R2_PREFIX: "reportify", EXTERNAL_STATUS_PREFIX: "reportify-status",
     publicSourceText: (value) => String(value || ""), externalHeaders: () => ({}),
+    reportifyQrImageUrl: async (value) => reportifyQrDataUrl(value),
     currentUserFromRequest: async () => owner ? { username: "owner", email: "owner@example.test" } : { username: "member" },
     isSuperAccount: (user) => user.username === "owner" && user.email === "owner@example.test",
     jsonResponse: (_request, _env, statusCode, data) => new Response(JSON.stringify(data), { status: statusCode }),
@@ -57,20 +59,20 @@ function harness({ payload = fixture(), owner = false, session = null, status = 
     fetch: async (url, init = {}) => {
       calls.push({ url, init });
       if (url.includes("/auth/wechat/qrcode/login")) return new Response(JSON.stringify({ token: "test-session-value" }));
-      if (url.includes("/auth/wechat/qrcode")) return new Response(JSON.stringify({ qrcode_id: "123456789012", qrcode_url: "https://example.test/qr" }));
+      if (url.includes("/auth/wechat/qrcode")) return new Response(JSON.stringify({ qrcode_id: "123456789012", qrcode_url: "http://weixin.qq.com/q/test-login-fixture" }));
       return new Response(null, { status: 204 });
     },
   };
   vm.createContext(context);
   const names = ["isExternalId", "externalObjectKey", "externalStatusKey", "externalStoredStatus", "externalPutStatus",
-    "reportifyStoredSession", "reportifyStoredToken", "reportifyStoreToken", "reportifyQrImageUrl", "reportifyLoginQr",
+    "reportifyStoredSession", "reportifyStoredToken", "reportifyStoreToken", "reportifyLoginQr",
     "externalAdminRequest", "externalStatusAgeMs", "externalStatusIsActive", "externalStatusIsRecentFailure", "externalPendingResponse",
     "externalIsoDate", "slimExternalItem", "slimExternalDetailItem", "externalDetailPayload", "externalDetailItem", "externalDirectPdfUrl",
     "bytesToBinaryString", "binaryStringToBytes", "sanitizePdfExternalLinksBytes", "sanitizePdfExternalLinksBody", "externalPdfHasHeader",
     "externalValidatedPdfMetadata", "externalAccessFailure", "triggerExternalGrab", "handleExternalPdf", "handleExternalStatus", "handleReportifyLoginQrStatus"];
   vm.runInContext(names.map((name) => extractFunction(workerSource, name)).join("\n"), context);
   const env = { REPORT_BUCKET: bucket, GH_REPO: "example/repo", GH_DISPATCH_TOKEN: "test-dispatch" };
-  const request = new Request("https://worker.example.test/external/pdf", { method: "POST", body: JSON.stringify({ id: "1256239582803005440" }) });
+  const request = new Request("https://worker.example.test/external/pdf?qr_format=inline-v1", { method: "POST", body: JSON.stringify({ id: "1256239582803005440" }) });
   return { context, env, request, calls, values, finalized: () => finalized };
 }
 

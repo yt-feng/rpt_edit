@@ -45,8 +45,9 @@ jobs:
 
       - name: Check authenticated external report delivery before merge
         run: |
-          python3 -m pip install --disable-pip-version-check "pypdf>=4,<6"
+          python3 -m pip install --disable-pip-version-check "pypdf>=4,<6" "Pillow>=10.1,<12" "zxing-cpp>=2.3,<4"
           python3 -B scripts/test_reportify_api_grab.py
+          python3 -B scripts/test_reportify_local_qr.py
           python3 -B scripts/test_portal_worker_emergency_deploy_workflow.py
           for test_file in portal_suite/tests/reportify*.test.mjs; do
             node "$test_file"
