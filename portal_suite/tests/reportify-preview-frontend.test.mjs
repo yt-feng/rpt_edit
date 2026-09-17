@@ -224,9 +224,10 @@ test("external-origin archived reports switch to a one-page preview after a sour
   assert.equal(h.ids.accountDownloadReport.disabled, false);
   assert.match(h.ids.accountAccessStatus.textContent, /预览不是完整报告/);
   assert.equal(h.previews[0].preview_report_id, "1256239582803005440");
-  const access = await accessHarness({ source: "hot", access: { ...response, can_download: false } });
+  const access = await accessHarness({ source: "hot", access: { ...response, can_download: false, membership_months: 0 } });
   assert.equal(access.ids.accountDownloadReport.hidden, true);
   assert.match(access.ids.accountAccessHint.textContent, /1页预览/);
+  assert.equal(access.previews[0].preview_report_id, "1256239582803005440");
 });
 
 test("archived preview uses only the original report id and does not create duplicate preview cards", () => {

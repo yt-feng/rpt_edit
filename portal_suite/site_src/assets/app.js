@@ -11033,7 +11033,7 @@
       } catch (error) {
         const message = error.message || "下载失败。";
         const externalDetail = document.getElementById("externalDetail");
-        const externalStatus = document.getElementById("externalDetailStatus") || document.getElementById("accountAccessStatus");
+        const externalStatus = status;
         if (error.preview_only) {
           showPreviewOnly(error);
           return;
@@ -11996,10 +11996,15 @@
     return { pending: false };
   }
 
-  function pollExternalDetail(workerUrl, id, password, statusTarget, onReady, onAbnormal) {
+  function pollExternalDetail(workerUrl, id, password, statusTarget, onReady, onAbnormal, preferredStatusElement = null) {
     let attempts = 0;
     const maxAttempts = 40; // 10 minutes at 15s intervals
     const startedAt = Date.now();
+    function visibleStatusElement() {
+      return [preferredStatusElement, document.getElementById("accountAccessStatus"), document.getElementById("externalDetailStatus")]
+        .find((element) => element && element.isConnected !== false && !element.hidden
+          && !(typeof element.closest === "function" && element.closest("[hidden]"))) || null;
+    }
     statusTarget("报告正在准备，页面每 15 秒自动检测一次。准备好后会自动开始下载。");
     const timer = window.setInterval(async () => {
       attempts += 1;
@@ -12027,7 +12032,7 @@
           } catch (error) {
             const message = error.message || "报告已准备，但下载失败，请重试。";
             statusTarget(message, "error");
-            const statusElement = document.getElementById("externalDetailStatus") || document.getElementById("accountAccessStatus");
+            const statusElement = visibleStatusElement();
             if (showExternalLoginQr(statusElement, workerUrl, error, onReady)) return;
             if (error.request_required && typeof onAbnormal === "function") onAbnormal(message, error);
           }
@@ -12035,7 +12040,7 @@
           window.clearInterval(timer);
           const message = data.message || "报告准备失败，请提交报告申请。";
           statusTarget(message, "error");
-          const statusElement = document.getElementById("externalDetailStatus") || document.getElementById("accountAccessStatus");
+          const statusElement = visibleStatusElement();
           if (showExternalLoginQr(statusElement, workerUrl, data, onReady)) return;
           if (data.request_required && typeof onAbnormal === "function") onAbnormal(message, data);
         }
@@ -12056,7 +12061,7 @@
         workerUrl,
         item,
         message,
-      ));
+      ), document.getElementById("accountAccessStatus"));
     }
   }
 
@@ -12564,7 +12569,7 @@
           setStatus("报告正在准备，通常约 3-8 分钟。页面会自动检测，准备好后开始下载。");
           pollExternalDetail(workerUrl, item.id, input.value, setStatus, () => submitDownload(), (message) => (
             showExternalRequestFallback(target, workerUrl, item, message)
-          ));
+          ), status);
         }
       } catch (error) {
         const message = error.message || "下载失败。";

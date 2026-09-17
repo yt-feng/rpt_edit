@@ -29,7 +29,8 @@ function harness({ signedIn = true, admin = false, previewImage = assetUrl, asse
     EXTERNAL_API: "https://api.reportify.cn", EXTERNAL_SITE: "https://reportify.cn", EXTERNAL_UA: "test",
     EXTERNAL_SESSION_KEY: "auth/session.json", HOT_REPORT_REQUIRED_PLAN: "pro", HOT_REPORT_MIN_MONTHS: 3, THINKTANK_SOURCE: "thinktank",
     currentUserFromRequest: async () => { if (!signedIn) throw new Error("Login required"); return { admin }; },
-    isSuperAccount: (user) => Boolean(user.admin),
+    isSuperAccount: (user) => Boolean(user.admin), publicUser: (user) => ({ admin: user.admin }),
+    accessErrorStatus: () => 401,
     corsHeaders: () => ({}), privateJsonResponse: json, jsonResponse: json,
     accountDownloadDecision: async () => { calls.push("quota-decision"); return { allowed: true }; },
     finalizeAccountDownloadDecision: async (_env, _request, decision) => { finalizations.push(decision); return { ok: true }; },
@@ -44,7 +45,7 @@ function harness({ signedIn = true, admin = false, previewImage = assetUrl, asse
     triggerExternalGrab: prohibited("full grab"),
     cleanHotReportId: (id) => id === hotId ? id : "",
     hotReportPdfKey: (id) => `hot/${id}.pdf`,
-    hotReportAccessForUser: async () => ({ can_download: membership }),
+    hotReportAccessForUser: async () => { calls.push("hot-membership"); return { can_download: membership }; },
     accessContactMessage: (_request, message) => message,
     findHotReportRow: async () => ({ row: { origin_source: rowOrigin, origin_report_id: reportId }, item: { filename: "research.pdf" } }),
     contentDisposition: () => 'attachment; filename="research.pdf"',
@@ -60,14 +61,14 @@ function harness({ signedIn = true, admin = false, previewImage = assetUrl, asse
   vm.createContext(context);
   for (const name of ["isExternalId", "cleanHotReportOriginSource", "externalHeaders", "reportifyStoredSession", "externalAdminRequest",
     "externalPreviewAssetUrl", "externalPreviewReadBytes", "externalPreviewImageType", "handleExternalPreview",
-    "handleExternalConnectionStatus", "handleExternalPdf", "handleHotReportPdf"]) vm.runInContext(extract(name), context);
+    "handleExternalConnectionStatus", "handleExternalPdf", "hotReportExternalOrigin", "handleHotReportAccess", "handleHotReportPdf"]) vm.runInContext(extract(name), context);
   const env = { REPORT_BUCKET: {
     async get(key) {
       if (key === "auth/session.json") { calls.push("read-session"); return session ? { text: async () => JSON.stringify(session) } : null; }
       bodyReads.push(key);
       return { body: new TextEncoder().encode("%PDF-verified-complete"), customMetadata: { origin_source: objectOrigin } };
     },
-    async head() { return { customMetadata: { origin_source: objectOrigin, origin_report_id: reportId } }; },
+    async head() { calls.push("read-hot-metadata"); return { customMetadata: { origin_source: objectOrigin, origin_report_id: reportId } }; },
     put: prohibited("R2 write"), delete: prohibited("R2 delete"),
   } };
   return { context, env, calls, bodyReads, finalizations };
@@ -220,6 +221,47 @@ test("hot archives preserve super access and exact hot-report deliveries without
     assert.equal(response.status, status);
     assert.equal(h.bodyReads.length, status === 200 ? 1 : 0);
   }
+});
+
+test("per-report hot access exposes external previews before the three-month membership gate", async () => {
+  for (const [rowOrigin, objectOrigin] of [["external", ""], ["", "external"], ["catalog", "external"]]) {
+    for (const membership of [false, true]) {
+      const h = harness({ rowOrigin, objectOrigin, membership });
+      const response = await h.context.handleHotReportAccess(new Request(`https://worker.test/hot-reports/access?report_id=${hotId}`), h.env);
+      assert.equal(response.status, 200);
+      const data = await response.json();
+      assert.equal(data.can_download, false);
+      assert.equal(data.preview_only, true);
+      assert.equal(data.preview_report_id, reportId);
+      assert.equal(h.calls.includes("hot-membership"), false);
+      assert.equal(h.bodyReads.length, 0);
+    }
+  }
+});
+
+test("global hot access, super access, and non-external report access keep existing membership behavior", async () => {
+  for (const [options, includeId] of [[{}, false], [{ admin: true }, true],
+    [{ rowOrigin: "catalog", objectOrigin: "catalog" }, true],
+    [{ rowOrigin: "thinktank", objectOrigin: "thinktank", membership: false }, true]]) {
+    const h = harness(options);
+    const response = await h.context.handleHotReportAccess(new Request(`https://worker.test/hot-reports/access${includeId ? `?report_id=${hotId}` : ""}`), h.env);
+    const data = await response.json();
+    assert.equal(data.can_download, options.membership !== false);
+    assert.equal(data.preview_only, undefined);
+    assert.equal(h.calls.includes("hot-membership"), true);
+    assert.equal(h.bodyReads.length, 0);
+  }
+});
+
+test("per-report hot access authenticates before metadata and takes preview ID only from an external origin", async () => {
+  const anonymous = harness({ signedIn: false });
+  const request = new Request(`https://worker.test/hot-reports/access?report_id=${hotId}`);
+  assert.equal((await anonymous.context.handleHotReportAccess(request, anonymous.env)).status, 401);
+  assert.equal(anonymous.calls.length, 0);
+  const h = harness({ objectOrigin: "external" });
+  h.context.findHotReportRow = async () => ({ row: { origin_source: "catalog", origin_report_id: "999999999" } });
+  const data = await (await h.context.handleHotReportAccess(request, h.env)).json();
+  assert.equal(data.preview_report_id, reportId);
 });
 
 test("production router exposes only the authenticated preview and super connection GET handlers", () => {

@@ -11245,9 +11245,38 @@ async function handleAccountAdminHotReportUpload(request, env, ctx = null) {
   }
 }
 
+async function hotReportExternalOrigin(env, id, found) {
+  // Archived copies keep the source's access policy. Older catalog rows
+  // may lack origin fields, so inspect object metadata before reading bytes.
+  const head = await env.REPORT_BUCKET.head(hotReportPdfKey(id));
+  const origins = [found.row || {}, head && head.customMetadata || {}]
+    .filter((origin) => cleanHotReportOriginSource(origin.origin_source) === "external");
+  if (!origins.length) return null;
+  return {
+    preview_report_id: origins.map((origin) => String(origin.origin_report_id || "").trim())
+      .find((originId) => isExternalId(originId)) || "",
+  };
+}
+
 async function handleHotReportAccess(request, env) {
   try {
     const user = await currentUserFromRequest(env, request);
+    const requestedId = new URL(request.url).searchParams.get("report_id");
+    if (requestedId && !isSuperAccount(user)) {
+      const id = cleanHotReportId(requestedId);
+      if (!id) return privateJsonResponse(request, env, 400, { error: "Invalid hot report id." });
+      const found = await findHotReportRow(env, id);
+      if (!found) return privateJsonResponse(request, env, 404, { error: "Hot report not found." });
+      const origin = await hotReportExternalOrigin(env, id, found);
+      if (origin) {
+        return privateJsonResponse(request, env, 200, {
+          user: publicUser(user), can_download: false,
+          preview_only: true, preview_pages: 1,
+          preview_report_id: origin.preview_report_id,
+          preview_url: origin.preview_report_id ? `/api/external/preview?id=${encodeURIComponent(origin.preview_report_id)}` : "",
+        });
+      }
+    }
     const access = await hotReportAccessForUser(env, user);
     return jsonResponse(request, env, 200, { user: publicUser(user), ...access });
   } catch (error) {
@@ -11300,12 +11329,7 @@ async function handleHotReportPdf(request, env) {
     }
     const found = await findHotReportRow(env, id);
     if (!found) return jsonResponse(request, env, 404, { error: "Hot report not found." });
-    // Archived copies keep the source's access policy. Check both the row
-    // and object metadata so older catalog rows cannot expose a full PDF.
-    const head = await env.REPORT_BUCKET.head(hotReportPdfKey(id));
-    const metadata = head && head.customMetadata || {};
-    const origins = [found.row || {}, metadata];
-    const externalOrigin = origins.find((origin) => cleanHotReportOriginSource(origin.origin_source) === "external");
+    const externalOrigin = await hotReportExternalOrigin(env, id, found);
     if (externalOrigin) {
       let signedDelivery = false;
       if (password) {
@@ -11317,8 +11341,7 @@ async function handleHotReportPdf(request, env) {
       }
       const isAdmin = user ? isSuperAccount(user) : await externalAdminRequest(request, env);
       if (!isAdmin && !signedDelivery) {
-        const previewId = origins.map((origin) => String(origin.origin_report_id || ""))
-          .find((originId) => isExternalId(originId)) || "";
+        const previewId = externalOrigin.preview_report_id;
         return privateJsonResponse(request, env, 403, {
           error: "普通会员可查看这份报告的单页预览，完整报告由管理员连接账号后获取。",
           error_code: "preview_only", preview_only: true, preview_pages: 1,
