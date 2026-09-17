@@ -2787,6 +2787,17 @@
     const showAnalytics = options.showAnalytics !== false;
     const showHotReports = options.showHotReports !== false;
     const showReportChatArchives = options.showReportChatArchives === true;
+    const sourceConnectionMarkup = options.showSourceConnection === true ? `
+          <section class="account-admin-section" id="accountAdminSourceConnection">
+            <div class="account-admin-heading"><strong>报告来源连接</strong></div>
+            <p class="subtle">扫描二维码连接账号。完整报告取决于该账号的下载权益。</p>
+            <div class="account-access-actions">
+              <button class="secondary-button" id="accountAdminSourceConnect" type="button">扫描二维码连接</button>
+              <button class="secondary-button" id="accountAdminSourceRefresh" type="button">检查连接</button>
+            </div>
+            <div id="accountAdminSourceState" class="status-line" aria-live="polite">正在检查来源连接…</div>
+            <div id="accountAdminSourceQr" class="status-line" aria-live="polite"></div>
+          </section>` : "";
     const uploadProgressMarkup = typeof adminPdfUploadProgressMarkup === "function"
       ? adminPdfUploadProgressMarkup
       : () => "";
@@ -2799,6 +2810,7 @@
             <button class="secondary-button" id="accountAdminRefresh" type="button">刷新</button>
           </div>
           <div id="accountAdminStatus" class="status-line" aria-live="polite">正在读取后台信息…</div>
+          ${sourceConnectionMarkup}
           <section class="account-admin-section account-admin-picks-section">
             <div class="account-admin-heading">
               <strong>每日精选</strong>
@@ -5992,6 +6004,79 @@
     }
   }
 
+  function initExternalSourceConnection(workerUrl, modal) {
+    const inactive = { refresh: async () => {}, close: () => {} };
+    if (!workerUrl || !modal || !isSuperSession()) return inactive;
+    const section = modal.querySelector("#accountAdminSourceConnection");
+    if (!section) return inactive;
+    const state = section.querySelector("#accountAdminSourceState");
+    const qr = section.querySelector("#accountAdminSourceQr");
+    const connect = section.querySelector("#accountAdminSourceConnect");
+    const check = section.querySelector("#accountAdminSourceRefresh");
+    let closed = false;
+
+    async function refresh() {
+      if (closed || !isSuperSession()) return;
+      check.disabled = true;
+      state.className = "status-line";
+      state.textContent = "正在检查来源连接…";
+      try {
+        const response = await fetch(`${workerUrl}/external/connection-status`, { headers: authHeaders(), cache: "no-store" });
+        const data = await response.json().catch(() => ({}));
+        if (closed) return;
+        if (!response.ok) throw new Error(data.error || "来源连接状态暂时无法读取。");
+        state.className = data.connected ? "status-line ok" : "status-line";
+        state.textContent = data.connected
+          ? `来源连接已保存${data.expires_at ? `，有效至 ${formatAdminDateTime(data.expires_at)}` : ""}。完整报告仍需账号具备下载权益。`
+          : "尚未连接或连接已过期。请扫描二维码连接账号。";
+        connect.textContent = data.connected ? "更换 / 重新连接账号" : "扫描二维码连接";
+        return data;
+      } catch (error) {
+        if (!closed) {
+          state.className = "status-line error";
+          state.textContent = error.message || "来源连接状态暂时无法读取。";
+        }
+      } finally {
+        if (!closed) check.disabled = false;
+      }
+    }
+
+    connect.addEventListener("click", async () => {
+      if (closed || !isSuperSession()) return;
+      connect.disabled = true;
+      qr.className = "status-line";
+      qr.textContent = "正在生成连接二维码…";
+      try {
+        const response = await fetch(`${workerUrl}/external/login-qr`, { headers: authHeaders(), cache: "no-store" });
+        const data = await response.json().catch(() => ({}));
+        if (closed) return;
+        if (!response.ok) throw new Error(data.error || "连接二维码暂时无法读取。");
+        if (!showExternalLoginQr(qr, workerUrl, { ...data, login_required: true }, async () => {
+          const saved = await refresh();
+          if (!saved || !saved.connected) throw new Error("登录已完成，但来源连接尚未确认，请检查连接。");
+          if (!closed) qr.textContent = "来源连接已保存，可返回报告页获取完整报告。";
+        }, {
+          prompt: "请用微信扫描二维码连接来源账号。连接后会保存登录状态，完整报告仍取决于该账号的下载权益。",
+          completionMessage: "来源连接已保存。",
+        })) throw new Error("未取得有效连接二维码，请重试。");
+      } catch (error) {
+        if (!closed) {
+          qr.className = "status-line error";
+          qr.textContent = error.message || "连接二维码暂时无法读取。";
+        }
+      } finally {
+        if (!closed) connect.disabled = false;
+      }
+    });
+    check.addEventListener("click", refresh);
+    refresh();
+    return { refresh, close: () => {
+      closed = true;
+      if (qr.__externalQrTimer) window.clearInterval(qr.__externalQrTimer);
+      qr.__externalQrTimer = null;
+    } };
+  }
+
   function showAccountAdminModal(workerUrl) {
     if (!workerUrl || !canOpenOperationsPanel()) return;
     const session = loadAuthSession();
@@ -6001,7 +6086,10 @@
     if (accountAdminLastSummaryOwner && accountAdminLastSummaryOwner !== summaryOwner) accountAdminLastSummary = null;
     accountAdminLastSummaryOwner = summaryOwner;
     const existing = document.getElementById("accountAdminModal");
-    if (existing) existing.remove();
+    if (existing) {
+      if (existing.__externalSourceConnection) existing.__externalSourceConnection.close();
+      existing.remove();
+    }
     document.body.insertAdjacentHTML("beforeend", accountAdminModalMarkup({
       title: isOperatorOnly ? "运营后台" : "管理后台",
       showWechat: !isOperatorOnly,
@@ -6009,9 +6097,12 @@
       showAnalytics: !isOperatorOnly,
       showHotReports: !isOperatorOnly,
       showReportChatArchives: canManageUsers,
+      showSourceConnection: isSuperSession(session),
     }));
 
     const modal = document.getElementById("accountAdminModal");
+    const sourceConnection = initExternalSourceConnection(workerUrl, modal);
+    modal.__externalSourceConnection = sourceConnection;
     const title = document.getElementById("accountAdminTitle");
     const close = document.getElementById("accountAdminClose");
     const refresh = document.getElementById("accountAdminRefresh");
@@ -6618,6 +6709,7 @@
     }
 
     function finish() {
+      sourceConnection.close();
       if (accountAdminRefreshTimer) {
         clearTimeout(accountAdminRefreshTimer);
         accountAdminRefreshTimer = null;
@@ -6652,6 +6744,7 @@
     }
     refresh.addEventListener("click", async () => {
       await Promise.allSettled([
+        sourceConnection.refresh(),
         loadAccountAdminSummary(workerUrl, targets, { forceRefresh: true }),
         loadAccountAdminMarketViews(workerUrl, targets),
         canManageUsers ? loadAdminHotReports(workerUrl, targets, { forceRefresh: true }) : Promise.resolve([]),
@@ -10727,10 +10820,11 @@
 
   function accountAccessMarkup(item = {}) {
     const contactReport = isContactOnlyItem(item);
+    const externalReport = item.source === EXTERNAL_SOURCE;
     return `
       <section class="account-access" id="accountAccess" hidden>
-        <h3>${contactReport ? "会员下载" : "Account access"}</h3>
-        <p class="subtle" id="accountAccessHint">${contactReport ? "3个月及以上会员可下载全文。" : "登录后可查看账号下载权限。"}</p>
+        <h3>${contactReport ? "会员下载" : externalReport ? "报告访问" : "Account access"}</h3>
+        <p class="subtle" id="accountAccessHint">${contactReport ? "3个月及以上会员可下载全文。" : externalReport ? "登录后可查看1页预览。" : "登录后可查看账号下载权限。"}</p>
         <div class="account-access-actions">
           <button class="secondary-button" id="openAccountPanel" type="button">注册 / 登录</button>
           <button class="primary" id="accountDownloadReport" type="button" hidden>账号下载</button>
@@ -10769,7 +10863,12 @@
     const data = await response.json().catch(() => ({}));
     if (!response.ok) {
       if (response.status === 401 && authSessionRequestKey(session) === authSessionRequestKey()) clearAuthSession();
-      throw new Error(data.detail || "账号状态读取失败。");
+      const error = new Error(data.detail || data.error || "账号状态读取失败。");
+      if (data.preview_only || data.error_code === "preview_only") {
+        error.preview_only = true;
+        error.preview_report_id = String(data.preview_report_id || "");
+      }
+      throw error;
     }
     return data;
   }
@@ -10848,11 +10947,20 @@
       setLineHtmlStatus(status, html, kind);
     }
 
+    function showPreviewOnly(access) {
+      accountDownload.hidden = true;
+      if (passwordForm) passwordForm.hidden = passwordForm.dataset.explicitDelivery !== "true";
+      hint.textContent = "此类报告普通会员可查看1页预览。";
+      statusTarget("可查看1页预览。预览不是完整报告。");
+      showExternalPreviewOnlyFallback(document.getElementById("externalDetail"), workerUrl, item, access);
+    }
+
     async function refresh() {
       const requestId = ++accessRequestId;
       // Revoke the previous visible grant immediately on logout/account change.
       accountDownload.hidden = true;
-      if (passwordForm) passwordForm.hidden = false;
+      if (passwordForm) passwordForm.hidden = source === EXTERNAL_SOURCE && !isSuperSession()
+        && passwordForm.dataset.explicitDelivery !== "true";
       await waitForAuthSessionRefresh(workerUrl);
       if (requestId !== accessRequestId || panel.isConnected === false) return;
       const session = loadAuthSession();
@@ -10862,6 +10970,12 @@
       accountDownload.hidden = true;
       openAccount.hidden = false;
       openAccount.textContent = session ? "签到 / 领取" : "注册 / 登录";
+      if (source === EXTERNAL_SOURCE && !isSuperSession(session)) {
+        if (passwordForm) passwordForm.hidden = passwordForm.dataset.explicitDelivery !== "true";
+        hint.textContent = session ? "此类报告普通会员可查看1页预览。" : "登录后可查看此类报告的1页预览。";
+        statusTarget("请使用上方“查看1页预览”。预览不是完整报告。");
+        return;
+      }
       if (!session) {
         hint.innerHTML = isThreeMonthReport
           ? "登录后可查看下载权限；需至少 3 个月会员。"
@@ -10874,6 +10988,10 @@
       try {
         const access = await fetchReportAccess(workerUrl, item, source);
         if (requestId !== accessRequestId || sessionKey !== authSessionRequestKey() || panel.isConnected === false) return;
+        if (access && access.preview_only) {
+          showPreviewOnly(access);
+          return;
+        }
         const summary = accountRightSummary(access);
         if (access && access.can_download) {
           accountDownload.hidden = false;
@@ -10892,6 +11010,10 @@
         }
       } catch (error) {
         if (requestId !== accessRequestId || sessionKey !== authSessionRequestKey() || panel.isConnected === false) return;
+        if (error.preview_only) {
+          showPreviewOnly(error);
+          return;
+        }
         if (passwordForm) passwordForm.hidden = false;
         statusTarget(error.message || "账号状态读取失败。", "error");
       }
@@ -10899,6 +11021,10 @@
 
     openAccount.addEventListener("click", () => showAccountModal(workerUrl, context));
     accountDownload.addEventListener("click", async () => {
+      if (source === EXTERNAL_SOURCE && !isSuperSession()) {
+        statusTarget("此类报告普通会员可查看1页预览，请使用上方预览入口。");
+        return;
+      }
       const idleLabel = accountDownload.textContent || "账号下载";
       accountDownload.disabled = true;
       accountDownload.textContent = "准备中…";
@@ -10908,6 +11034,10 @@
         const message = error.message || "下载失败。";
         const externalDetail = document.getElementById("externalDetail");
         const externalStatus = document.getElementById("externalDetailStatus") || document.getElementById("accountAccessStatus");
+        if (error.preview_only) {
+          showPreviewOnly(error);
+          return;
+        }
         if (context.source === EXTERNAL_SOURCE && showExternalLoginQr(externalStatus, workerUrl, error, () => downloadHandler(statusTarget))) return;
         if (context.source === EXTERNAL_SOURCE && error.request_required) {
           showExternalRequestFallback(externalDetail, workerUrl, context.item, message);
@@ -11608,6 +11738,79 @@
     return isAuthorityItem(item) || isReportAItem(item);
   }
 
+  function externalSinglePagePreviewMarkup() {
+    return `
+      <section class="unlock-box" id="externalSinglePagePreview">
+        <h3>1页预览</h3>
+        <p class="subtle">仅展示报告的1页预览，不是完整报告。</p>
+        <button class="secondary-button" id="externalPreviewOpen" type="button">查看1页预览</button>
+        <div id="externalPreviewStatus" class="status-line" aria-live="polite"></div>
+        <figure id="externalPreviewFigure" hidden>
+          <img id="externalPreviewImage" alt="报告第1页预览，非完整报告" style="display:block;max-width:100%;height:auto">
+          <figcaption>第1页预览 · 非完整报告</figcaption>
+        </figure>
+      </section>`;
+  }
+
+  function initExternalSinglePagePreview(workerUrl, item, target) {
+    const section = target && target.querySelector("#externalSinglePagePreview");
+    if (!workerUrl || !item || !section) return;
+    const button = section.querySelector("#externalPreviewOpen");
+    const status = section.querySelector("#externalPreviewStatus");
+    const figure = section.querySelector("#externalPreviewFigure");
+    const previewImage = section.querySelector("#externalPreviewImage");
+    let previewUrl = "";
+    function releasePreview() {
+      if (previewUrl) URL.revokeObjectURL(previewUrl);
+      previewUrl = "";
+    }
+    window.addEventListener("pagehide", releasePreview, { once: true });
+    button.addEventListener("click", async () => {
+      button.disabled = true;
+      status.className = "status-line";
+      status.textContent = "正在读取1页预览…";
+      figure.hidden = true;
+      try {
+        const response = await fetch(`${workerUrl}/external/preview?id=${encodeURIComponent(item.id)}`, {
+          headers: authHeaders(), cache: "no-store",
+        });
+        if (!response.ok) {
+          const data = await response.json().catch(() => ({}));
+          throw new Error(response.status === 401 ? "请先登录后查看1页预览。" : data.error || "这份报告的1页预览暂时不可用。");
+        }
+        const blob = await response.blob();
+        if (!/^image\/(?:jpeg|png|webp)$/i.test(blob.type) || !blob.size) {
+          throw new Error("未取得有效的1页预览图片，请稍后重试。");
+        }
+        releasePreview();
+        previewUrl = URL.createObjectURL(blob);
+        previewImage.src = previewUrl;
+        if (typeof previewImage.decode === "function") await previewImage.decode();
+        figure.hidden = false;
+        status.className = "status-line ok";
+        status.textContent = "已显示1页预览，不是完整报告。";
+        button.textContent = "重新加载1页预览";
+      } catch (error) {
+        releasePreview();
+        status.className = "status-line error";
+        status.textContent = error.message || "这份报告的1页预览暂时不可用。";
+      } finally {
+        button.disabled = false;
+      }
+    });
+  }
+
+  function showExternalPreviewOnlyFallback(target, workerUrl, item, response) {
+    if (!target || !workerUrl || !response || !(response.preview_only || response.error_code === "preview_only")) return false;
+    const id = String(response.preview_report_id || (item && item.source === EXTERNAL_SOURCE ? item.id : "") || "");
+    if (!/^[0-9]{6,25}$/.test(id)) return false;
+    if (!target.querySelector("#externalSinglePagePreview")) {
+      target.insertAdjacentHTML("afterbegin", externalSinglePagePreviewMarkup());
+      initExternalSinglePagePreview(workerUrl, { id }, target);
+    }
+    return true;
+  }
+
   function showExternalRequestFallback(target, workerUrl, item, message = "") {
     if (!target || !workerUrl || !item || String(item.source || EXTERNAL_SOURCE) !== EXTERNAL_SOURCE) return false;
     if (target.querySelector("#externalAbnormalRequest")) return true;
@@ -11624,7 +11827,7 @@
     return true;
   }
 
-  function showExternalLoginQr(statusElement, workerUrl, error, onReady) {
+  function showExternalLoginQr(statusElement, workerUrl, error, onReady, options = {}) {
     if (!statusElement || !workerUrl || !error || !(error.login_required || error.reauth_available) || !error.qrcode_id) return false;
     if (statusElement.__externalQrTimer) window.clearInterval(statusElement.__externalQrTimer);
     const qrcodeId = String(error.qrcode_id);
@@ -11635,9 +11838,9 @@
     statusElement.className = "status-line error external-login-qr";
     const externalServiceName = ["Report", "ify"].join("");
     statusElement.innerHTML = `
-      <div>${escapeHtml(error.reauth_available
+      <div>${escapeHtml(options.prompt || (error.reauth_available
         ? `${externalServiceName} 当前连接账号没有可用下载权益或额度。可连接已有权益的账号后重试。`
-        : `${externalServiceName} 需要登录。请用微信扫描下方二维码，完成后页面会自动继续。`)}</div>
+        : `${externalServiceName} 需要登录。请用微信扫描下方二维码，完成后页面会自动继续。`))}</div>
       <img src="${escapeHtml(qrImage)}" alt="${externalServiceName} 登录二维码" width="220" height="220" loading="eager" referrerpolicy="no-referrer">
       ${serviceUrl ? `<div><a href="${escapeHtml(serviceUrl)}" target="_blank" rel="noopener">在当前浏览器打开报告页</a></div>` : ""}
     `;
@@ -11647,6 +11850,8 @@
       if (attempts > 90) {
         window.clearInterval(statusElement.__externalQrTimer);
         statusElement.__externalQrTimer = null;
+        statusElement.className = "status-line error";
+        statusElement.textContent = "二维码已超时，请重新点击连接或下载以获取新的二维码。";
         return;
       }
       try {
@@ -11659,17 +11864,22 @@
           window.clearInterval(statusElement.__externalQrTimer);
           statusElement.__externalQrTimer = null;
           statusElement.className = "status-line ok";
-          statusElement.textContent = "登录已完成，正在继续获取报告…";
+          statusElement.textContent = options.completionMessage || "登录已完成，正在继续获取报告…";
           if (typeof onReady === "function") {
             try {
               await onReady();
             } catch (error) {
-              if (!showExternalLoginQr(statusElement, workerUrl, error, onReady)) {
+              if (!showExternalLoginQr(statusElement, workerUrl, error, onReady, options)) {
                 statusElement.className = "status-line error";
                 statusElement.textContent = error.message || "连接已保存，但这份报告仍无法获取。";
               }
             }
           }
+        } else if (data.status === "bind_phone") {
+          window.clearInterval(statusElement.__externalQrTimer);
+          statusElement.__externalQrTimer = null;
+          statusElement.className = "status-line error";
+          statusElement.textContent = `${externalServiceName} 账号尚未完成手机号绑定。请先在原站完成绑定，再重新扫码连接。`;
         } else if (!response.ok) {
           statusElement.className = "status-line error";
           statusElement.textContent = data.error || "后台连接暂时无法保存，请重试。";
@@ -11755,6 +11965,10 @@
         error: message,
       });
       const error = new Error(downloadErrorMessage(response.status, message, data));
+      if (data.preview_only || data.error_code === "preview_only") {
+        error.preview_only = true;
+        error.preview_report_id = String(data.preview_report_id || "");
+      }
       if (data && (data.login_required || data.reauth_available)) {
         error.login_required = Boolean(data.login_required);
         error.reauth_available = Boolean(data.reauth_available);
@@ -12275,7 +12489,8 @@
 
     target.innerHTML = `
       ${detailHeader}
-      <form class="unlock-box" id="externalDetailForm">
+      ${workerUrl ? externalSinglePagePreviewMarkup() : ""}
+      <form class="unlock-box" id="externalDetailForm" data-explicit-delivery="${passwordFromLink ? "true" : "false"}" ${isSuperSession() || passwordFromLink ? "" : "hidden"}>
         <h3>PDF Download</h3>
         <p class="subtle">Enter the report password to download the PDF.</p>
         <div class="password-row">
@@ -12302,6 +12517,7 @@
       </section>
       ${externalRelatedMarkup()}
     `;
+    initExternalSinglePagePreview(workerUrl, item, target);
     searchIndexPromise.then(() => initExternalRelated(
       item,
       workerUrl,

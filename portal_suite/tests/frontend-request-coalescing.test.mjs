@@ -32,6 +32,7 @@ function setup() {
     AUTH_SESSION_KEY: "session",
     authSessionRefreshes: new Map(),
     HOT_REPORT_SOURCE: "hot",
+    EXTERNAL_SOURCE: "external",
     localStorage: { getItem: (key) => store.get(key), setItem: (key, value) => store.set(key, value), removeItem: (key) => store.delete(key) },
     CustomEvent: class { constructor(type) { this.type = type; } },
     document: {

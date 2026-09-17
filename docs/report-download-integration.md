@@ -20,3 +20,11 @@ Two report IDs, `1294129388408934400` and `1256239582803005440`, failed in Actio
 The status poll also omitted Portal authentication headers, hiding the owner's reconnect instructions. A separate size-only status check could reject valid short PDFs; verification now relies on the file's actual page count and stored validation evidence.
 
 Production acceptance requires the live page and API state, the background job's typed result, and a full validated PDF when the connected account permits it. A merged change, accepted dispatch, PDF header or green upload step alone does not establish successful delivery.
+
+## Member preview and owner connection
+
+Ordinary signed-in members can view the source-provided first-page image, clearly labeled as one-page preview. Preview requests use the anonymous source detail and never use the owner's saved source session, consume a full-download allowance, create a PDF, populate the full-file cache, or dispatch acquisition. The image proxy accepts only supported image bytes from the source's permitted asset hosts.
+
+Account-based full download is restricted to the existing super account, including source reports mirrored into the hot-report archive. A previously issued report-specific signed delivery credential remains an explicit owner grant; a generic shared password is not a substitute for that grant.
+
+The existing super account has a dedicated source-connection panel with connection status and a QR reconnect action. Only that account can inspect connection timestamps or start the QR flow; credentials are never returned to the browser. A saved session permits the owner to attempt full acquisition, subject to the source account's actual access and the full-file validation described above.

@@ -118,6 +118,10 @@ class ReportifyApiGrabTests(unittest.TestCase):
             self.assertFalse(self.output.exists())
 
     def test_missing_page_count_untrusted_host_and_nonpdf_fail_closed(self):
+        # The current source detail uses this first-party asset host for previews;
+        # a full-file URL still requires explicit API permission and parsed pages.
+        first_party = detail(url="https://files.reportify.cn/report/full.pdf")
+        self.assertEqual(grab.authorized_pdf(first_party, authenticated=True)[1], 5)
         for value, code in ((detail(pages=0), "expected_page_count_missing"),
                             (detail(url="https://evil.example/secret.pdf"), "invalid_asset_url"),
                             (detail(url="http://s.reportify.cn/file.pdf"), "invalid_asset_url")):

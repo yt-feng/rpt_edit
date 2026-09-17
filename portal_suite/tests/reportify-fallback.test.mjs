@@ -47,6 +47,8 @@ function harness({ payload = fixture(), owner = false, session = null, status = 
     currentUserFromRequest: async () => owner ? { username: "owner", email: "owner@example.test" } : { username: "member" },
     isSuperAccount: (user) => user.username === "owner" && user.email === "owner@example.test",
     jsonResponse: (_request, _env, statusCode, data) => new Response(JSON.stringify(data), { status: statusCode }),
+    privateJsonResponse: (_request, _env, statusCode, data) => new Response(JSON.stringify(data), { status: statusCode }),
+    derivedPasswordMatches: async () => false,
     accountDownloadDecision: async () => ({ allowed: true }),
     finalizeAccountDownloadDecision: async () => { finalized += 1; return { ok: true }; },
     scheduleHotReportArchive: () => {},
@@ -131,10 +133,13 @@ test("connected but unreadable source is an access requirement, not an anonymous
   assert.equal(h.calls.some(({ url }) => url.includes("api.github.com")), false);
 });
 
-test("member failure has a request path and no upstream identity, token, or QR", async () => {
+test("member full PDF request returns only its preview path without upstream identity, token, or QR", async () => {
   const h = harness({ session: freshSession() });
-  const data = await (await h.context.handleExternalPdf(h.request, h.env)).json();
-  assert.equal(data.request_required, true);
+  const response = await h.context.handleExternalPdf(h.request, h.env);
+  const data = await response.json();
+  assert.equal(response.status, 403);
+  assert.equal(data.preview_only, true);
+  assert.equal(data.preview_report_id, "1256239582803005440");
   assert.doesNotMatch(JSON.stringify(data), /reportify|qrcode|test-session-value/i);
   assert.equal(h.calls.length, 0);
 });
@@ -185,7 +190,7 @@ test("small complete validated PDFs are ready, while unverified legacy objects a
 test("legacy bytes are not deleted and unsigned direct URLs never bypass PDF validation", async () => {
   const input = fixture({ readable: true });
   input.main.url_pdf = "https://files.example.test/full.pdf";
-  const h = harness({ payload: input, object: { body: new TextEncoder().encode("%PDF-legacy"), customMetadata: {} } });
+  const h = harness({ owner: true, payload: input, object: { body: new TextEncoder().encode("%PDF-legacy"), customMetadata: {} } });
   const response = await h.context.handleExternalPdf(h.request, h.env);
   assert.equal(response.status, 202);
   assert.equal(h.finalized(), 0);
@@ -193,7 +198,7 @@ test("legacy bytes are not deleted and unsigned direct URLs never bypass PDF val
 });
 
 test("existing cached bytes can be validated without new upstream download permission", async () => {
-  const h = harness({ payload: fixture(), object: { body: new TextEncoder().encode("%PDF-legacy"), customMetadata: {} } });
+  const h = harness({ owner: true, payload: fixture(), object: { body: new TextEncoder().encode("%PDF-legacy"), customMetadata: {} } });
   const response = await h.context.handleExternalPdf(h.request, h.env);
   assert.equal(response.status, 202);
   assert.equal(h.finalized(), 0);
@@ -204,7 +209,7 @@ test("existing cached bytes can be validated without new upstream download permi
 test("verified complete cache is delivered even when upstream now requires access", async () => {
   const object = { body: new TextEncoder().encode("%PDF-verified-six-pages"), size: 24,
     customMetadata: { validated: "true", page_count: "6", expected_page_count: "6" } };
-  const h = harness({ object });
+  const h = harness({ owner: true, object });
   const response = await h.context.handleExternalPdf(h.request, h.env);
   assert.equal(response.status, 200);
   assert.equal(response.headers.get("Content-Type"), "application/pdf");
