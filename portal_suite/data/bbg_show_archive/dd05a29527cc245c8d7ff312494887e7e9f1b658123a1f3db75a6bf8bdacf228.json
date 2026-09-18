@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "dd05a29527cc245c8d7ff312494887e7e9f1b658123a1f3db75a6bf8bdacf228",
+  "slug": "bbg-20260917-dd05a29527cc245c",
+  "date": "2026-09-17",
+  "title": "李开复·零一万物：AI失控是下一代的事，眼下难题是没人能担责？",
+  "speaker": "Kai-Fu Lee",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-09-17/the-china-show-9-17-2026-video",
+  "start": 5170.7,
+  "end": 5261.7,
+  "segments": [
+    {
+      "start": 5170.7,
+      "end": 5178.7,
+      "en": "Yeah, I think it's a different set of issues. Anthropically is worried about AI getting out of control, but that's the next generation.",
+      "zh": "对，我认为这是另一类问题。Anthropic担心的是AI失控，但那是下一代的事。"
+    },
+    {
+      "start": 5178.7,
+      "end": 5188.7,
+      "en": "The most CEOs haven't even implemented the last generation AI. OK, so that concern is not serious yet. It will be, but it's not.",
+      "zh": "大多数CEO连上一代AI都还没落地。所以那个担忧目前还不严重。未来会严重，但现在不是。"
+    },
+    {
+      "start": 5188.7,
+      "end": 5197.7,
+      "en": "Well, the CEO should be concerned about our agents cannot generally be accountable, because agents can't be punished or rewarded.",
+      "zh": "CEO真正该担心的是，智能体通常无法被问责，因为智能体不能被惩罚或奖励。"
+    },
+    {
+      "start": 5197.7,
+      "end": 5205.7,
+      "en": "They don't have a self-awareness or motivation. They can get things done, but who's to blame when something goes wrong?",
+      "zh": "它们没有自我意识或动机。它们能把事做成，但出了错该怪谁？"
+    },
+    {
+      "start": 5205.7,
+      "end": 5218.7,
+      "en": "So for serious tasks like building an AI to help the CEO, it really is just that. It cannot make CEO level decisions, because the board needs to fire somebody when things go wrong.",
+      "zh": "所以像打造AI来辅助CEO这类严肃任务，问题就在这。它不能做CEO级别的决策，因为出了事董事会得有人被问责。"
+    },
+    {
+      "start": 5218.7,
+      "end": 5230.7,
+      "en": "Right. So for big, big issues, there needs to be a human accountable. And that human cannot be someone who just trusts AI for everything and be the fall guy.",
+      "zh": "对。所以重大问题上，必须有人类担责。而这个人不能是那种全盘信任AI、最后当替罪羊的人。"
+    },
+    {
+      "start": 5230.7,
+      "end": 5240.7,
+      "en": "That person has to know how to manage harness the AI and see when there are problems and stop it. So that's the heavy cognitive workload.",
+      "zh": "这个人必须懂得管理和驾驭AI，能看出问题并叫停。这是很重的认知负担。"
+    },
+    {
+      "start": 5240.7,
+      "end": 5252.7,
+      "en": "There are a lot of simple things AI agents can do. Find things for you on the internet, buying a ticket that generally requires a basic level of safeguard.",
+      "zh": "AI智能体能做很多简单的事。帮你在网上找东西、买票，这些通常需要基本的安全保障。"
+    },
+    {
+      "start": 5252.7,
+      "end": 5261.7,
+      "en": "Not let it exceed, not let it spend infinite tokens, not let it withdraw all of your money, set limits on these kinds of things.",
+      "zh": "别让它越界，别让它无限消耗算力，别让它把你账户里的钱全转走，这类事情要设好限额。"
+    }
+  ]
+}

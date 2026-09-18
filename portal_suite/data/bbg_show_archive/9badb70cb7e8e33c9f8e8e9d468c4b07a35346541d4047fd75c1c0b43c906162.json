@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "id": "9badb70cb7e8e33c9f8e8e9d468c4b07a35346541d4047fd75c1c0b43c906162",
+  "slug": "bbg-20260918-9badb70cb7e8e33c",
+  "date": "2026-09-18",
+  "title": "SpaceX 拟购困境初创数据 用于AI模型",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-09-17/spacex-may-buy-data-from-failed-startups-for-ai-models-video",
+  "start": 0.0,
+  "end": 24.51,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 12.56,
+      "en": "Some breaking news on the Bloomberg terminal, Elon Musk's SpaceX has held internal discussions about buying customer and operational information data from troubled or defunct start-ups according",
+      "zh": "彭博终端突发消息，马斯克的SpaceX内部讨论过从陷入困境或已停运的初创公司购买客户和运营数据。"
+    },
+    {
+      "start": 12.56,
+      "end": 24.4,
+      "en": "to sources. It's targeting a more affordable data source to improve its AI models. The people said the talks within teams in the SpaceX AI are informal and may not result in deals.",
+      "zh": "据知情人士称，此举旨在获取更实惠的数据源以改进其AI模型。这些讨论在SpaceX AI团队内部是非正式的，可能不会达成交易。"
+    }
+  ]
+}
