@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "id": "a78af6e4fdfcc60e3d3063febe8c1cca2f387fa83593d66ba193773c963c5331",
+  "slug": "bbg-20260918-a78af6e4fdfcc60e",
+  "date": "2026-09-18",
+  "title": "PTX资本Alvin Leo：AI如何把临床试验从数月压到数周？",
+  "speaker": "Alvin Leo",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-09-18/the-china-show-9-18-2026-video",
+  "start": 3824.9,
+  "end": 3910.5,
+  "segments": [
+    {
+      "start": 3824.9,
+      "end": 3831.0,
+      "en": "I think the pharmaceutical industry is a good example, it's a very important player in healthcare around the world.",
+      "zh": "我认为制药行业是个好例子，它是全球医疗健康中非常重要的参与者。"
+    },
+    {
+      "start": 3831.0,
+      "end": 3847.7,
+      "en": "Once a pharmaceutical company has a drug candidate, there's actually a series of complex processes that need to happen to translate that drug candidate into a revenue-generating asset, and collectively, this process can be called clinical development.",
+      "zh": "一旦制药公司有了候选药物，实际上需要一系列复杂流程才能将其转化为能产生收入的产品，这一过程统称为临床开发。"
+    },
+    {
+      "start": 3847.7,
+      "end": 3862.4,
+      "en": "And it involves designing the optimal clinical trial, recruiting patients, and insurance safety, et cetera. All these workflows are incredibly complex, including multiple teams, multiple stakeholders, again, very labor intensive.",
+      "zh": "它涉及设计最优临床试验、招募患者、保障安全等。所有这些工作流都极其复杂，涉及多个团队、多个利益相关方，同样非常劳动密集。"
+    },
+    {
+      "start": 3862.4,
+      "end": 3873.0,
+      "en": "For example, we recently invested in a company called Fairway AI, and our co-investors included the venture arm of Merck, General Catalyst, and Section 32.",
+      "zh": "例如，我们最近配置了一家公司叫Fairway AI，联合出资方包括默克的创投部门、General Catalyst和Section 32。"
+    },
+    {
+      "start": 3873.0,
+      "end": 3882.2,
+      "en": "There's a company founded by industry veterans who have been doing clinical trial design for decades, and they deeply understand the pain points.",
+      "zh": "这家公司由行业资深人士创立，他们做了几十年临床试验设计，深刻理解痛点。"
+    },
+    {
+      "start": 3882.2,
+      "end": 3895.6,
+      "en": "By combining, prepare to a real world data, agent AI workflow, and reasoning, they're able to develop very quickly a series of AI products that generate very concrete improvement in KPIs.",
+      "zh": "通过结合真实世界数据、智能体AI工作流和推理，他们能非常快速地开发出一系列AI产品，带来非常具体的KPI改善。"
+    },
+    {
+      "start": 3895.6,
+      "end": 3910.5,
+      "en": "For example, shrinking the clinical trial design process for months to weeks, and saving millions of dollars per clinical trial by telling their funders what kind of data not to collect.",
+      "zh": "例如，将临床试验设计流程从数月缩短到数周，并通过告诉出资方哪些数据不必收集，为每个临床试验节省数百万美元。"
+    }
+  ]
+}
