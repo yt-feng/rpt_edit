@@ -2,6 +2,11 @@ name: Portal Suite Worker Emergency Deploy
 
 on:
   workflow_dispatch:
+    inputs:
+      allow_manual_deploy:
+        description: "Deploy this Worker on main for this manual run while general automation remains disabled"
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -12,7 +17,7 @@ concurrency:
 
 jobs:
   deploy:
-    if: ${{ vars.PORTAL_AUTOMATION_ENABLED == 'true' }}
+    if: ${{ vars.PORTAL_AUTOMATION_ENABLED == 'true' || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && inputs.allow_manual_deploy == true) }}
     runs-on: ubuntu-22.04
     timeout-minutes: 35
     steps:

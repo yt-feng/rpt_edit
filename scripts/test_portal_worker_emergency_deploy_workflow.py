@@ -14,6 +14,15 @@ class PortalWorkerEmergencyDeployWorkflowTests(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.workflow = WORKFLOW.read_text(encoding="utf-8")
 
+    def test_manual_deployment_override_is_explicit_main_only_and_defaults_off(self) -> None:
+        trigger = self.workflow.split("permissions:", 1)[0]
+        self.assertIn("workflow_dispatch:", trigger)
+        self.assertIn("allow_manual_deploy:", trigger)
+        self.assertIn("type: boolean", trigger)
+        self.assertIn("default: false", trigger)
+        self.assertNotIn("schedule:", trigger)
+        self.assertIn("vars.PORTAL_AUTOMATION_ENABLED == 'true' || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && inputs.allow_manual_deploy == true)", self.workflow)
+
     def test_release_is_version_only_and_does_not_touch_edge_or_static_data(self) -> None:
         self.assertIn("versions upload --keep-vars", self.workflow)
         self.assertIn("versions deploy", self.workflow)
