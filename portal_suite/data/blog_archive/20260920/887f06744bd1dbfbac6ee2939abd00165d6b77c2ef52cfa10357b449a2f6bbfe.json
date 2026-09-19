@@ -1,0 +1,21 @@
+{
+  "author": "KC桌面",
+  "content": "<section style=\"margin:0 0 22px;padding:18px 16px;border-left:5px solid #C9A227;background:#F7F3E8\"><p style=\"margin:0 0 8px;color:#7A5B12;font-size:14px;font-weight:700\">外资精译</p><p style=\"margin:0;color:#142033;font-size:21px;font-weight:700;line-height:1.4\">高盛：SEC创新豁免令允许代币化公司交易</p></section>\n<p style=\"margin:10px 0;line-height:1.78;color:#202631;font-size:16px\">9月17日，SEC发布一项命令，给予部分交易所和流动性提供方五年附条件注册豁免，允许其在美国境内提供基于区块链的公司（代币化公司）交易。GS认为，这是美国首次在较大范围内为代币化美股打开通道，长期可能推动这一市场成长。但报告同时列出了三条硬约束，它们决定了这件事推进的速度和边界。</p>\n<p style=\"margin:10px 0;line-height:1.78;color:#202631;font-size:16px\">先看最直接的限制：只有采用自动做市商（AMM）订单簿的场所才能使用豁免，而传统交易所和多数中心化加密交易所用的是中央限价订单簿（CLOB）。AMM靠代币库存给长尾合约提供流动性，适合新市场；交易规模一大，智能合约的稀缺定价会放大滑点，深度市场反而更适合CLOB。这条门槛看起来是刻意留给DeFi里规模较小、更早期的执行场所。</p>\n<p style=\"margin:10px 0;line-height:1.78;color:#202631;font-size:16px\">第二条约束关于产品形态。豁免只覆盖具备“原生代币化”特征的公司，即代币持有者享有与底层公司相当的股东权利和分红。某些机构在海外提供的代币化公司属于非原生、类衍生品结构，不在允许范围内。第三条更关键：命令允许发行人在交易开始前提出反对，拒绝自己公司被代币化。如果发行人普遍选择拒绝，产品的可寻址市场就会被压缩。</p>\n<section style=\"margin:18px 0;padding:13px 15px;background:#F1F8F4;border-left:4px solid #2F8F5B;color:#223044;font-size:15px;line-height:1.75\"><strong>KC评论：</strong> 把这三条放在一起看，豁免更像是在小范围里开了一个试验口，而不是全面放开。AMM限制决定了它先服务小规模市场，发行人否决权则把最终边界交回给了上市公司；后续更值得观察的是，有多少发行人愿意在早期点头。</section>\n<p style=\"margin:10px 0;line-height:1.78;color:#202631;font-size:16px\">对GS覆盖的公司来说，受益路径并不平均。COIN被点名为最可能受益的一方，原因是其机构端的代币化公司产品已经具备接近本次豁免要求的股东权利和分红特征，技术升级需求有限。它还有两块基础设施可以承接外部需求：代币化平台和托管业务。不过，如果COIN想自己搭一个代币化公司交易所，由于现有交易所用的是CLOB，仍需新建AMM技术。</p>\n<p style=\"margin:10px 0;line-height:1.78;color:#202631;font-size:16px\">HOOD的情况要绕一层。它在欧洲的代币化公司产品属于非原生结构，不符合本次豁免条件，要进入美国市场需要重新做产品开发。另一个被提到的方向是结算：代币化公司在链上交易，可能带动代币化现金作为结算货币的使用，进而利好USDC及其发行方CRCL，COIN也能从中获得宏观环境收益。</p>\n<p style=\"margin:10px 0;line-height:1.78;color:#202631;font-size:16px\">传统交易所受到的影响被判断为有限。NDAQ和NYSE（ICE）本身就是注册的国家标的交易所，交易代币化公司不需要从“交易所”定义中获得豁免，两者都在既有市场基础设施框架内推进代币化，而非走TSV路径。NDAQ今年3月获批的试点允许DTC合格标的的代币化版本在同一订单簿上交易，覆盖罗素1000成分股和指数ETF，DTCC的代币化服务预计10月上线。NYSE也在DTC试点框架内，并另建一个支持全天候交易、即时结算和稳定币资金的平台，但该平台仍需监管批准。</p>\n<section style=\"margin:18px 0;padding:13px 15px;background:#F1F8F4;border-left:4px solid #2F8F5B;color:#223044;font-size:15px;line-height:1.75\"><strong>KC评论：</strong> 这里的分叉值得留意：传统交易所是把代币化塞进现有订单簿，TSV则要另起一套AMM场所。前者天然承接最流动的公司，后者受限于标的数量和交易量上限。</section>\n<section style=\"margin:28px 0 0;padding-top:12px;border-top:1px solid #D9DEE7;color:#737D8C;font-size:12px;line-height:1.75\"><p style=\"margin:0 0 8px\">——人工智能免责声明（部分内容由人工智能工具辅助生成）</p><p style=\"margin:0\">撰稿：Sophie<br>责编：KC<br>排版：胡桃</p></section>\n<p style=\"margin:14px 0;text-align:center\"><img src=\"https://mmbiz.qpic.cn/mmbiz_jpg/YBsHov7VYOUEHv2TM3e1LQwXz9CGxkbV4efXibUYsHicu31QxklzOXJ7MJO0ibkiauZlPWGEXNBPFyp9YjQH5JtcTzUapIzXllAhrr2AEqZyUNY/0?from=appmsg\" alt=\"KC桌面\" style=\"max-width:100%;height:auto;display:block;margin:0 auto\" loading=\"lazy\" decoding=\"async\" referrerpolicy=\"no-referrer\"></p>\n<p style=\"margin:16px 0 0;color:#A3ABB8;font-size:12px;line-height:1.55;text-align:left\">Original report: 13-GS-AMERICAS CRYPTO - EXCHANGES-Overviewing the SEC innovation exemption order permitting trading of tokenized equities-260918</p>\n<p style=\"margin:16px 0 0;padding:14px 16px;background:#EAF2FB;border-left:4px solid #2E6FB7;color:#152033;font-size:15px;line-height:1.75;font-weight:600\">更新信息参见portal.example.invalid</p>",
+  "date": "2026-09-20",
+  "digest": "外资精译 高盛：SEC创新豁免令允许代币化公司交易 9月17日，SEC发布一项命令，给予部分交易所和流动性提供方五年附条件注册豁免，允许其在美国境内提供基于区块链的公司（代币化公司）交易。GS认为，这是美国首次在较大范围内为代币化美股打开通道，长期可能推动这一市场成长。但报告同时列出了三条硬约束，它们决定了这件事推进的速度和边界。 先看最直接的限制：只有采用自动做市商（AMM）订单簿的场所才能使用豁免，而传统交易所和多数中心化加密交易所",
+  "fingerprint": "887f06744bd1dbfbac6ee2939abd00165d6b77c2ef52cfa10357b449a2f6bbfe",
+  "last_date": "2026-09-20",
+  "legacy_slugs": [
+    "20260920-xhs_notes-887f06744bd1dbfb"
+  ],
+  "origins": [
+    {
+      "date": "2026-09-20",
+      "source": "xhs_notes"
+    }
+  ],
+  "schema_version": 1,
+  "slug": "20260920-887f06744bd1dbfb",
+  "source": "xhs_notes",
+  "title": "高盛：SEC创新豁免令允许代币化公司交易"
+}
