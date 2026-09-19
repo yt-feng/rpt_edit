@@ -473,6 +473,108 @@ class SharedJapaneseKeywordTests(unittest.TestCase):
         }))
 
 
+class JapaneseStructuralIdentityTests(unittest.TestCase):
+    date_fragment = "年__KC_PH_000__月__KC_PH_001__日，USU6（"
+
+    def test_actual_incident_and_bounded_unit_variants_are_japanese_identities(self):
+        for source in ("倍 (x)", "倍(x)", "倍（x）", "倍 (X)", "倍（×）", "倍"):
+            with self.subTest(source=source):
+                self.assertTrue(is_japanese_identity_label(source, source))
+                for context in ("chart:units", "html:text:p", "html:meta:keyword"):
+                    unit = builder.TranslationUnit("unit-label", context, source)
+                    builder.validate_translation_quality("ja", unit, source)
+                    for locale in ("ko", "ar"):
+                        with self.assertRaises(builder.TranslationError):
+                            builder.validate_translation_quality(locale, unit, source)
+
+    def test_complete_date_contract_fragments_accept_only_identity_punctuation_changes(self):
+        for source in (self.date_fragment, "2026年9月19日，USU6（", "年09月19日、ESZ26(",
+                       "9月19日, CLZ26", "__KC_PH_000__年__KC_PH_001__月__KC_PH_002__日，TYM7（"):
+            for translated in (source, source.replace("，", "、").replace("(", "（")):
+                with self.subTest(source=source, translated=translated):
+                    self.assertTrue(is_japanese_identity_label(source, translated))
+                    unit = builder.TranslationUnit("date-contract", "html:text:p", source)
+                    builder.validate_translation_quality("ja", unit, translated)
+                    for locale in ("ko", "ar"):
+                        with self.assertRaises(builder.TranslationError):
+                            builder.validate_translation_quality(locale, unit, translated)
+
+    def test_prose_and_unrecognized_units_or_contracts_get_no_identity_exemption(self):
+        for source in (
+            "倍 (x) 增长", "增长倍 (x)", "倍(x)同比上涨", "倍 (x) revenue", "收益 (x)",
+            "倍 (growth)", "倍（x)", "倍(x）", "倍 (xx)", "倍 (x)。", "倍\n(x)",
+            self.date_fragment + "美国利率下降", "今年" + self.date_fragment,
+            "截至" + self.date_fragment, "年9月19日，USU6上涨", "年9月19日，USU6（价格下降）",
+            "年9月19日，USU6（REVENUE WILL GROW", "年9月19日，USU6（。",
+            "年9月19日，USU6（、TYZ6", "年9月19日，UNKNOWN（", "年9月19日，ABC123（",
+            "年9月19日，USY6（", "年9月19日，USU666（", "年9月19日，usu6（",
+            "年13月19日，USU6（", "年9月32日，USU6（", "年月日，USU6（",
+            "年9月19日\n，USU6（", "年9月19日，USU6（__KC_PH_002__", None, 123,
+        ):
+            with self.subTest(source=source):
+                self.assertFalse(is_japanese_identity_label(source, source))
+        for source in ("倍 (x)同比上涨", self.date_fragment + "美国利率下降", "截至" + self.date_fragment,
+                       "年9月19日，USU6上涨", "这是需要完整翻译的中文句子，不能因为含有日期或倍数就跳过。"):
+            unit = builder.TranslationUnit("unchanged-prose", "html:text:p", source)
+            with self.subTest(source=source), self.assertRaises(builder.TranslationError):
+                builder.validate_translation_quality("ja", unit, source)
+
+    def test_date_identity_never_changes_tokens_or_bypasses_structural_placeholders(self):
+        source = self.date_fragment
+        for translated in (source.replace("USU6", "USZ6"), source.replace("年", ""),
+                           source.replace("__KC_PH_000__", "__KC_PH_001__"),
+                           source.replace("__KC_PH_000__", ""),
+                           source.replace("__KC_PH_000__", "__KC_PH_000____KC_PH_000__")):
+            with self.subTest(translated=translated):
+                self.assertFalse(is_japanese_identity_label(source, translated))
+        unit = builder.TranslationUnit("date-structure", "html:text:p", source)
+        for translated in (source.replace("__KC_PH_000__", "__KC_PH_002__"),
+                           source.replace("__KC_PH_000__", ""),
+                           source.replace("__KC_PH_000__", "__KC_PH_000____KC_PH_000__")):
+            with self.subTest(translated=translated), self.assertRaisesRegex(builder.TranslationError, "placeholder mismatch"):
+                builder.validate_translation_quality("ja", unit, translated)
+
+    def test_missing_incident_rows_are_seeded_without_provider_calls_and_paid_rows_survive(self):
+        for preflight_only in (False, True):
+            for existing_date in (False, True):
+                with self.subTest(preflight_only=preflight_only, existing_date=existing_date):
+                    units = {}
+                    builder.collect_text_units("倍 (x)", "chart:units", units)
+                    builder.collect_text_units("年9月19日，USU6（", "html:text:p", units)
+                    self.assertEqual({unit.source for unit in units.values()}, {"倍 (x)", self.date_fragment})
+                    cache = builder.empty_cache()
+                    for locale, text in (("ko", "공개 연구 내용"), ("ar", "المحتوى البحثي العام")):
+                        for unit in units.values():
+                            translated = " ".join(builder.PLACEHOLDER_RE.findall(unit.source) + [text])
+                            cache["locales"][locale][unit.key] = builder._translation_cache_row(unit, translated)
+                    date_unit = next(unit for unit in units.values() if unit.source == self.date_fragment)
+                    if existing_date:
+                        cache["locales"]["ja"][date_unit.key] = builder._translation_cache_row(
+                            date_unit, self.date_fragment.replace("，", "、"),
+                        )
+                    provider = mock.Mock(side_effect=AssertionError("Identity rows must not call paid translation"))
+                    with tempfile.TemporaryDirectory() as directory, mock.patch.object(builder, "log"):
+                        path = Path(directory) / "cache.json.gz"
+                        state = builder.TranslationRun()
+                        missing = builder.translate_missing_units(
+                            units, cache, cache_path=path, model=builder.DEFAULT_DEEPSEEK_MODEL,
+                            base_url="https://provider.example.invalid", workers=32, timeout=1, attempts=1,
+                            preflight_only=preflight_only, batch_translator=provider, run_state=state,
+                        )
+                        cache = builder.load_cache(path)
+                    provider.assert_not_called()
+                    self.assertEqual(missing, {locale: 0 for locale in builder.LOCALES})
+                    self.assertEqual(state.data["provider_requests"], 0)
+                    self.assertEqual(state.data["identity_seeded_units"], {"ko": 0, "ja": 1 if existing_date else 2, "ar": 0})
+                    self.assertEqual(state.data["status"], "passed")
+                    self.assertEqual(builder.translated_text("倍 (x)", "html:text:p", "ja", cache), "倍 (x)")
+                    self.assertEqual(builder.translated_text("年9月19日，USU6（", "html:text:p", "ja", cache),
+                                     "年9月19日、USU6（" if existing_date else "年9月19日，USU6（")
+                    for row in cache["locales"]["ja"].values():
+                        self.assertNotIn("entity_name", row)
+                        self.assertNotIn("ja_keyword_name", row)
+
+
 class JapaneseIdentityLabelTests(unittest.TestCase):
     def test_failed_preflight_date_event_is_japanese_only_and_complete(self):
         for source in ("9月7日WCLC", "9月17日WCLC", "__KC_PH_000__月__KC_PH_001__日WCLC"):

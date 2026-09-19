@@ -53,6 +53,23 @@ _JAPANESE_EVENT_DATE = re.compile(
     r"(?:[0-9]{1,2}|__KC_PH_[0-9]{3}__)月"
     r"(?:[0-9]{1,2}|__KC_PH_[0-9]{3}__)日[ ]*WCLC"
 )
+# A complete multiplication-unit label is shared by Chinese and Japanese.
+# The closed unit and symbol grammar must not accept labels containing prose,
+# e.g. `倍 (x) 增长`, or arbitrary Chinese + Latin parenthetical text.
+_JAPANESE_MULTIPLE_UNIT = re.compile(r"倍(?:[ ]*(?:\([xX×]\)|（[xX×]）))?")
+# Inline HTML can split a date after its year, leaving `年9月19日，USU6（`.
+# Calendar suffixes and exchange futures codes do not need translation. Keep
+# the entire fragment structural: no Chinese words besides 年/月/日, one
+# bounded contract code with a futures month letter and year, and at most one
+# trailing opening parenthesis. Never infer an exemption from a substring.
+_PROTECTED_NUMBER = r"__KC_PH_[0-9]{3}__"
+_JAPANESE_DATE_TICKER_FRAGMENT = re.compile(
+    rf"(?:(?:[12][0-9]{{3}}|{_PROTECTED_NUMBER})?年)?"
+    rf"(?:0?[1-9]|1[0-2]|{_PROTECTED_NUMBER})月"
+    rf"(?:0?[1-9]|[12][0-9]|3[01]|{_PROTECTED_NUMBER})日[ ]*[,，、][ ]*"
+    r"[A-Z]{1,5}[FGHJKMNQUVXZ][0-9]{1,2}[ ]*[（(]?"
+)
+_JAPANESE_DATE_PUNCTUATION = str.maketrans({",": "，", "、": "，", "(": "（"})
 # Chart metric names can consist entirely of international abbreviations and
 # measurement units. Keep the vocabulary and complete-string grammar closed;
 # generic uppercase words or a sentence containing a metric are still prose.
@@ -102,12 +119,22 @@ def is_japanese_identity_label(source: object, translated: object) -> bool:
     """
     if not isinstance(source, str) or not isinstance(translated, str):
         return False
-    source = source.strip()
+    source, translated = source.strip(), translated.strip()
+    if _JAPANESE_DATE_TICKER_FRAGMENT.fullmatch(source):
+        # Japanese punctuation may differ while every date/ticker token stays
+        # byte-for-byte intact. This also retains cached provider output using
+        # `、`, without allowing reordered, dropped or duplicated placeholders.
+        return bool(
+            _JAPANESE_DATE_TICKER_FRAGMENT.fullmatch(translated)
+            and source.translate(_JAPANESE_DATE_PUNCTUATION)
+            == translated.translate(_JAPANESE_DATE_PUNCTUATION)
+        )
     return bool(
-        source == translated.strip()
+        source == translated
         and (source in _JAPANESE_ENTITY_LITERALS
              or _JAPANESE_FINANCIAL_LABEL.fullmatch(source)
-             or _JAPANESE_EVENT_DATE.fullmatch(source))
+             or _JAPANESE_EVENT_DATE.fullmatch(source)
+             or _JAPANESE_MULTIPLE_UNIT.fullmatch(source))
     )
 
 
