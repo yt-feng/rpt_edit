@@ -1386,8 +1386,12 @@ def is_bernstein_text(value: str) -> bool:
 
 def blog_institution_alias_matches(value: str, alias: str) -> bool:
     """Match editorial text without treating short bank codes as entities."""
-    normalized_value = normalize_search_text(value)
-    normalized_alias = normalize_search_text(alias)
+    return normalized_blog_institution_alias_matches(
+        normalize_search_text(value), normalize_search_text(alias),
+    )
+
+
+def normalized_blog_institution_alias_matches(normalized_value: str, normalized_alias: str) -> bool:
     if not normalized_value or not normalized_alias:
         return False
     if normalized_alias.isascii():
@@ -1406,16 +1410,18 @@ def blog_related_institution_hubs(
     content_text: str,
 ) -> list[dict[str, Any]]:
     """Return up to four controlled institution hubs ranked by field prominence."""
-    fields = (title, digest, content_text)
+    # Each article body is shared by every alias check; normalize it once.
+    fields = tuple(normalize_search_text(value) for value in (title, digest, content_text))
     matches: list[tuple[int, int, dict[str, Any]]] = []
     for definition_index, definition in enumerate(INSTITUTION_HUBS):
+        aliases = tuple(normalize_search_text(str(alias)) for alias in definition["aliases"])
         field_index = next(
             (
                 index
                 for index, value in enumerate(fields)
                 if any(
-                    blog_institution_alias_matches(value, str(alias))
-                    for alias in definition["aliases"]
+                    normalized_blog_institution_alias_matches(value, alias)
+                    for alias in aliases
                 )
             ),
             None,
@@ -2721,23 +2727,35 @@ def write_urlset(path: Path, rows: list[str]) -> None:
 
 
 def build_related_reports(items: list[dict[str, Any]], limit: int = 6) -> dict[str, list[dict[str, Any]]]:
+    # These fields do not change between comparisons. Key by object identity so
+    # distinct records sharing a report ID retain the original stable ordering.
+    facts = {
+        id(item): (
+            normalize_search_text(item_institution(item)),
+            normalize_search_text(item_industry(item)),
+            sort_date_value(str(item.get("date_folder") or "")),
+            item_lastmod(item),
+            int(bool(item.get("available") and not item.get("pdf_archived"))),
+        )
+        for item in items
+    }
     sorted_items = sorted(
         items,
-        key=lambda item: (item_lastmod(item), sort_date_value(str(item.get("date_folder") or ""))),
+        key=lambda item: (facts[id(item)][3], facts[id(item)][2]),
         reverse=True,
     )
     institution_buckets: dict[str, list[dict[str, Any]]] = {}
     industry_buckets: dict[str, list[dict[str, Any]]] = {}
     for item in sorted_items:
-        institution_buckets.setdefault(normalize_search_text(item_institution(item)), []).append(item)
-        industry_buckets.setdefault(normalize_search_text(item_industry(item)), []).append(item)
+        institution_key, industry_key, _, _, _ = facts[id(item)]
+        institution_buckets.setdefault(institution_key, []).append(item)
+        industry_buckets.setdefault(industry_key, []).append(item)
 
     related: dict[str, list[dict[str, Any]]] = {}
     for item in sorted_items:
         report_id = str(item.get("id") or "")
         candidates: dict[str, dict[str, Any]] = {}
-        institution_key = normalize_search_text(item_institution(item))
-        industry_key = normalize_search_text(item_industry(item))
+        institution_key, industry_key, _, _, _ = facts[id(item)]
         for candidate in institution_buckets.get(institution_key, [])[:40]:
             candidate_id = str(candidate.get("id") or "")
             if candidate_id and candidate_id != report_id:
@@ -2747,15 +2765,13 @@ def build_related_reports(items: list[dict[str, Any]], limit: int = 6) -> dict[s
             if candidate_id and candidate_id != report_id:
                 candidates[candidate_id] = candidate
 
-        def relation_key(candidate: dict[str, Any]) -> tuple[int, int, str]:
-            score = 0
-            if normalize_search_text(item_institution(candidate)) == institution_key:
+        def relation_key(candidate: dict[str, Any]) -> tuple[int, tuple[int, int, str], str]:
+            candidate_institution, candidate_industry, candidate_date, candidate_lastmod, score = facts[id(candidate)]
+            if candidate_institution == institution_key:
                 score += 4
-            if normalize_search_text(item_industry(candidate)) == industry_key:
+            if candidate_industry == industry_key:
                 score += 3
-            if candidate.get("available") and not candidate.get("pdf_archived"):
-                score += 1
-            return score, sort_date_value(str(candidate.get("date_folder") or "")), item_lastmod(candidate)
+            return score, candidate_date, candidate_lastmod
 
         related[report_id] = sorted(candidates.values(), key=relation_key, reverse=True)[:limit]
     return related

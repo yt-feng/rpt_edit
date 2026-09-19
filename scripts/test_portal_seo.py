@@ -10,6 +10,7 @@ import shutil
 import sys
 import tempfile
 import unittest
+from unittest import mock
 import xml.etree.ElementTree as ET
 
 
@@ -819,6 +820,148 @@ class IndexNowTests(unittest.TestCase):
                 self.assertEqual(indexnow.main(), 0)
             finally:
                 sys.argv = old_argv
+
+
+# Frozen pre-optimization implementations independently pin ordering and text.
+def legacy_blog_institution_alias_matches(value: str, alias: str) -> bool:
+    """Match editorial text without treating short bank codes as entities."""
+    normalized_value = builder.normalize_search_text(value)
+    normalized_alias = builder.normalize_search_text(alias)
+    if not normalized_value or not normalized_alias:
+        return False
+    if normalized_alias.isascii():
+        # GS / MS / DB and similar codes are useful in structured catalog
+        # fields, but are too ambiguous in long-form editorial text. Full
+        # Latin names must still occupy complete normalized word boundaries.
+        if len(normalized_alias.replace(" ", "")) <= 4:
+            return False
+        return f" {normalized_alias} " in f" {normalized_value} "
+    return normalized_alias in normalized_value
+
+
+def legacy_blog_related_institution_hubs(
+    title: str,
+    digest: str,
+    content_text: str,
+) -> list[dict[str, Any]]:
+    """Return up to four controlled institution hubs ranked by field prominence."""
+    fields = (title, digest, content_text)
+    matches: list[tuple[int, int, dict[str, Any]]] = []
+    for definition_index, definition in enumerate(builder.INSTITUTION_HUBS):
+        field_index = next(
+            (
+                index
+                for index, value in enumerate(fields)
+                if any(
+                    legacy_blog_institution_alias_matches(value, str(alias))
+                    for alias in definition["aliases"]
+                )
+            ),
+            None,
+        )
+        if field_index is not None:
+            matches.append((field_index, definition_index, definition))
+    matches.sort(key=lambda row: (row[0], row[1]))
+    return [definition for _, _, definition in matches[:4]]
+
+
+def legacy_build_related_reports(items: list[dict[str, Any]], limit: int = 6) -> dict[str, list[dict[str, Any]]]:
+    sorted_items = sorted(
+        items,
+        key=lambda item: (builder.item_lastmod(item), builder.sort_date_value(str(item.get("date_folder") or ""))),
+        reverse=True,
+    )
+    institution_buckets: dict[str, list[dict[str, Any]]] = {}
+    industry_buckets: dict[str, list[dict[str, Any]]] = {}
+    for item in sorted_items:
+        institution_buckets.setdefault(builder.normalize_search_text(builder.item_institution(item)), []).append(item)
+        industry_buckets.setdefault(builder.normalize_search_text(builder.item_industry(item)), []).append(item)
+
+    related: dict[str, list[dict[str, Any]]] = {}
+    for item in sorted_items:
+        report_id = str(item.get("id") or "")
+        candidates: dict[str, dict[str, Any]] = {}
+        institution_key = builder.normalize_search_text(builder.item_institution(item))
+        industry_key = builder.normalize_search_text(builder.item_industry(item))
+        for candidate in institution_buckets.get(institution_key, [])[:40]:
+            candidate_id = str(candidate.get("id") or "")
+            if candidate_id and candidate_id != report_id:
+                candidates[candidate_id] = candidate
+        for candidate in industry_buckets.get(industry_key, [])[:40]:
+            candidate_id = str(candidate.get("id") or "")
+            if candidate_id and candidate_id != report_id:
+                candidates[candidate_id] = candidate
+
+        def relation_key(candidate: dict[str, Any]) -> tuple[int, int, str]:
+            score = 0
+            if builder.normalize_search_text(builder.item_institution(candidate)) == institution_key:
+                score += 4
+            if builder.normalize_search_text(builder.item_industry(candidate)) == industry_key:
+                score += 3
+            if candidate.get("available") and not candidate.get("pdf_archived"):
+                score += 1
+            return score, builder.sort_date_value(str(candidate.get("date_folder") or "")), builder.item_lastmod(candidate)
+
+        related[report_id] = sorted(candidates.values(), key=relation_key, reverse=True)[:limit]
+    return related
+
+
+class BuildPerformanceParityTests(unittest.TestCase):
+    def test_related_report_metadata_is_computed_once_with_stable_ties_and_windows(self) -> None:
+        items = [sample_item(f"report-{index:03d}", "宏观策略", "2026-07-17") for index in range(85)]
+        for index, item in enumerate(items):
+            item["industry"] = "Tech / AI / Semis" if index % 3 else "Macro / FX / Rates"
+            item["available"] = index % 2 == 0
+            item["pdf_archived"] = index % 5 == 0
+        # Equal IDs can carry distinct metadata. Preserve object selection and
+        # insertion-order tie breaking, including the first-40 bucket boundary.
+        items.append({**items[0], "bank_code": "MS", "bank_name": "摩根士丹利", "date_folder": "2026-07-16"})
+        expected = legacy_build_related_reports(items)
+        with mock.patch.object(builder, "item_institution", wraps=builder.item_institution) as institution, \
+                mock.patch.object(builder, "item_industry", wraps=builder.item_industry) as industry, \
+                mock.patch.object(builder, "item_lastmod", wraps=builder.item_lastmod) as lastmod:
+            actual = builder.build_related_reports(items)
+        self.assertEqual(json.dumps(actual, ensure_ascii=False), json.dumps(expected, ensure_ascii=False))
+        self.assertEqual(institution.call_count, len(items))
+        self.assertEqual(industry.call_count, len(items))
+        self.assertEqual(lastmod.call_count, len(items))
+        for limit in (0, 1, 9):
+            self.assertEqual(builder.build_related_reports(items, limit), legacy_build_related_reports(items, limit))
+
+    def test_blog_normalizes_each_field_once_and_preserves_alias_boundaries(self) -> None:
+        cases = [
+            ("Goldman Sachs outlook", "摩根士丹利", "高盛 摩根大通 UBS Research Bernstein Research"),
+            ("ＳＡＮＦＯＲＤ Ｃ． ＢＥＲＮＳＴＥＩＮ", "", "The UBS view and DB, MS, GS codes are not entity names."),
+            ("", "", "unrelated goldman sachsville microsystems 雨天与报告正文"),
+            ("", "", ""),
+        ]
+        for fields in cases:
+            with self.subTest(fields=fields):
+                expected = legacy_blog_related_institution_hubs(*fields)
+                with mock.patch.object(builder, "normalize_search_text", wraps=builder.normalize_search_text) as normalize:
+                    actual = builder.blog_related_institution_hubs(*fields)
+                self.assertEqual(actual, expected)
+                self.assertEqual(normalize.call_count, 3 + sum(len(row["aliases"]) for row in builder.INSTITUTION_HUBS))
+
+    def test_real_catalog_and_blog_outputs_match_frozen_reference_byte_for_byte(self) -> None:
+        items = []
+        for name in ("catalog", "history_catalog", "archive_catalog"):
+            items.extend(json.loads((ROOT / "portal_suite/data" / f"{name}.json").read_text())["items"])
+        reports = items[::max(1, len(items) // 300)][:300]
+        self.assertEqual(len(reports), 300)
+        self.assertEqual(
+            json.dumps(builder.build_related_reports(reports), ensure_ascii=False),
+            json.dumps(legacy_build_related_reports(reports), ensure_ascii=False),
+        )
+        paths = sorted((ROOT / "portal_suite/data/blog_archive").glob("*/*.json"))
+        articles = [json.loads(path.read_text()) for path in paths[::max(1, len(paths) // 30)][:30]]
+        self.assertEqual(len(articles), 30)
+        for article in articles:
+            with self.subTest(slug=article["slug"]):
+                actual = builder.render_blog_article(article, builder.SITE_BASE_URL)
+                with mock.patch.object(builder, "blog_related_institution_hubs", legacy_blog_related_institution_hubs):
+                    expected = builder.render_blog_article(article, builder.SITE_BASE_URL)
+                self.assertEqual(actual.encode("utf-8"), expected.encode("utf-8"))
 
 
 if __name__ == "__main__":
