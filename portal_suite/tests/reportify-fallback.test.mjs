@@ -103,6 +103,35 @@ test("explicit readability is not overridden by an unrelated zero allowance", ()
   assert.equal(context.externalDetailPayload(input, "1256239582803005440", true).pdf_url, input.main.url_pdf);
 });
 
+test("public PDF minus-one allowance is accepted only with explicit readability", () => {
+  const { context } = harness();
+  const input = fixture({ readable: true, resource_limit: -1 });
+  Object.assign(input.main, { render_type: "pdf", preview_image: null,
+    url_pdf: "https://s.reportify.cn/r/public-report.pdf" });
+  input.main.meta_data.document_total_page = 21;
+  const actual = context.externalDetailPayload(input, "1283195192727441408");
+  assert.equal(actual.readable, true);
+  assert.equal(actual.resource_limit, -1);
+  assert.equal(actual.resource_limit_known, true);
+  assert.equal(actual.pdf_url, input.main.url_pdf);
+  assert.equal(actual.item.page_count, 21);
+  assert.equal(actual.access_state, "readable");
+  const legacy = { main: { ...input.main, readable: true, resource_limit: -1 } };
+  assert.equal(context.externalDetailPayload(legacy, "1283195192727441408").readable, true);
+  for (const readable of [false, undefined, null, "true", 1]) {
+    const result = context.externalDetailPayload({ ...input, readable }, "1283195192727441408");
+    assert.equal(result.readable, false);
+    assert.equal(result.pdf_url, "");
+    assert.equal(result.access_state, "unavailable");
+  }
+  for (const resource_limit of [-2, -0.5, "-1", null, true, Infinity, NaN]) {
+    const result = context.externalDetailPayload({ ...input, resource_limit }, "1283195192727441408");
+    assert.equal(result.readable, false);
+    assert.equal(result.pdf_url, "");
+    assert.equal(result.access_state, "unavailable");
+  }
+});
+
 test("legacy nested controls work only when envelope controls are absent; malformed data fails closed", () => {
   const { context } = harness();
   const legacy = { main: { readable: true, resource_limit: 1, url_pdf: "https://files.example.test/full.pdf" } };

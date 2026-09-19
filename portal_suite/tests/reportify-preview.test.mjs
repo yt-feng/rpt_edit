@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 import vm from "node:vm";
+import pdfLib from "../site_src/assets/vendor/research-pdf/pdf-lib-1.17.1.min.js";
+import { createExternalPreviewPdf } from "../../workers/portal-suite-worker/src/external-preview-pdf.mjs";
 
 const source = await readFile(new URL("../../workers/portal-suite-worker/src/index.js", import.meta.url), "utf8");
 const reportId = "1256239582803005440";
@@ -18,7 +20,7 @@ function extract(name) {
 function json(_request, _env, status, data) {
   return new Response(JSON.stringify(data), { status, headers: { "Cache-Control": "no-store, private" } });
 }
-function harness({ signedIn = true, admin = false, previewImage = assetUrl, asset,
+function harness({ signedIn = true, admin = false, previewImage = assetUrl, asset, detailData,
   session = null, rowOrigin = "external", objectOrigin = "external", membership = true } = {}) {
   const calls = [];
   const bodyReads = [];
@@ -26,6 +28,7 @@ function harness({ signedIn = true, admin = false, previewImage = assetUrl, asse
   const prohibited = (name) => () => { throw new Error(`unexpected ${name}`); };
   const context = {
     URL, Request, Response, Uint8Array, TextDecoder, Date, setTimeout, clearTimeout,
+    createExternalPreviewPdf, publicSourceText: (text) => String(text || ""),
     EXTERNAL_API: "https://api.reportify.cn", EXTERNAL_SITE: "https://reportify.cn", EXTERNAL_UA: "test",
     EXTERNAL_SESSION_KEY: "auth/session.json", HOT_REPORT_REQUIRED_PLAN: "pro", HOT_REPORT_MIN_MONTHS: 3, THINKTANK_SOURCE: "thinktank",
     currentUserFromRequest: async () => { if (!signedIn) throw new Error("Login required"); return { admin }; },
@@ -52,7 +55,7 @@ function harness({ signedIn = true, admin = false, previewImage = assetUrl, asse
     fetchWithTimeout: async (url, init) => {
       calls.push({ url, init });
       if (url === `https://api.reportify.cn/reports/${reportId}`) {
-        return Response.json({ readable: false, resource_limit: 0, main: { preview_image: previewImage,
+        return Response.json(detailData || { readable: false, resource_limit: 0, main: { preview_image: previewImage,
           meta_data: { document_total_page: 6 } } });
       }
       return asset ? asset(url, init, calls) : new Response(png, { headers: { "Content-Type": "image/png" } });
@@ -60,6 +63,7 @@ function harness({ signedIn = true, admin = false, previewImage = assetUrl, asse
   };
   vm.createContext(context);
   for (const name of ["isExternalId", "cleanHotReportOriginSource", "externalHeaders", "reportifyStoredSession", "externalAdminRequest",
+    "externalIsoDate", "slimExternalItem", "slimExternalDetailItem", "externalDetailPayload",
     "externalPreviewAssetUrl", "externalPreviewReadBytes", "externalPreviewImageType", "handleExternalPreview",
     "handleExternalConnectionStatus", "handleExternalPdf", "hotReportExternalOrigin", "handleHotReportAccess", "handleHotReportPdf"]) vm.runInContext(extract(name), context);
   const env = { REPORT_BUCKET: {
@@ -115,6 +119,77 @@ test("missing and untrusted API preview URLs never trigger guessed URLs or PDF c
     assert.equal(response.status, 503, String(previewImage));
     assert.equal(h.calls.length, 1);
     assert.doesNotMatch(await response.text(), /reportify|evil\.test/i);
+  }
+});
+
+const publicPdfUrl = "https://s.reportify.cn/public-report.pdf?signature=example";
+function publicPdfDetail(overrides = {}, mainOverrides = {}) {
+  return { readable: true, resource_limit: -1, ...overrides, main: {
+    preview_image: null, render_type: "pdf", url_pdf: publicPdfUrl,
+    meta_data: { document_total_page: 2 }, ...mainOverrides,
+  } };
+}
+
+test("public PDF reports without a cover image return only a server-extracted first page", async () => {
+  const document = await pdfLib.PDFDocument.create();
+  document.addPage([595, 842]).drawText("FIRST PAGE");
+  document.addPage([595, 842]).drawText("SECOND PAGE");
+  const original = await document.save();
+  for (const resource_limit of [-1, 0, 4]) {
+    const h = harness({ detailData: publicPdfDetail({ resource_limit }),
+      asset: () => new Response(original, { headers: { "Content-Type": "application/pdf" } }),
+      session: { token: "unused-upstream-token", updated_at: new Date().toISOString() } });
+    const response = await h.context.handleExternalPreview(previewRequest(), h.env);
+    assert.equal(response.status, 200);
+    assert.equal(response.headers.get("Content-Type"), "application/pdf");
+    assert.equal(response.headers.get("X-Portal-Preview-Pages"), "1");
+    assert.equal(response.headers.get("Cache-Control"), "no-store, private");
+    const output = new Uint8Array(await response.arrayBuffer());
+    assert.equal((await pdfLib.PDFDocument.load(output)).getPageCount(), 1);
+    assert.notDeepEqual(output, original);
+    assert.deepEqual(h.calls.map(({ url }) => url), [`https://api.reportify.cn/reports/${reportId}`, publicPdfUrl]);
+    for (const { init } of h.calls) {
+      assert.equal(init.redirect, "manual");
+      assert.equal(new Headers(init.headers).has("Authorization"), false);
+      assert.equal(new Headers(init.headers).has("Cookie"), false);
+    }
+    assert.deepEqual(h.bodyReads, []);
+    assert.deepEqual(h.finalizations, []);
+  }
+});
+
+test("PDF preview fallback requires explicit anonymous readability, valid metadata, and an allowed disclosed URL", async () => {
+  const details = [
+    publicPdfDetail({ readable: false }), publicPdfDetail({ readable: undefined }),
+    publicPdfDetail({ readable: "true" }), publicPdfDetail({ resource_limit: -2 }),
+    publicPdfDetail({}, { render_type: "image" }), publicPdfDetail({}, { url_pdf: "https://evil.test/a.pdf" }),
+    publicPdfDetail({}, { url_pdf: "http://s.reportify.cn/a.pdf" }),
+    publicPdfDetail({}, { meta_data: {} }), publicPdfDetail({}, { meta_data: { document_total_page: true } }),
+    publicPdfDetail({}, { preview_image: "https://evil.test/preview.png" }),
+  ];
+  for (const detailData of details) {
+    const h = harness({ detailData });
+    const response = await h.context.handleExternalPreview(previewRequest(), h.env);
+    assert.equal(response.status, 503);
+    assert.equal(h.calls.length, 1);
+    assert.doesNotMatch(await response.text(), /signature|evil|reportify/i);
+  }
+});
+
+test("public PDF fallback rejects invalid bytes, wrong page counts, excessive bodies and external redirects", async () => {
+  const onePage = await pdfLib.PDFDocument.create();
+  onePage.addPage();
+  const original = await onePage.save();
+  for (const asset of [
+    () => new Response("<html>login</html>", { headers: { "Content-Type": "application/pdf" } }),
+    () => new Response(original, { headers: { "Content-Type": "application/pdf" } }),
+    () => new Response(original, { headers: { "Content-Type": "application/pdf", "Content-Length": String(25 * 1024 * 1024 + 1) } }),
+    () => new Response(null, { status: 302, headers: { Location: "https://evil.test/a.pdf" } }),
+  ]) {
+    const h = harness({ detailData: publicPdfDetail(), asset });
+    assert.equal((await h.context.handleExternalPreview(previewRequest(), h.env)).status, 503);
+    assert.equal(h.calls.length, 2);
+    assert.deepEqual(h.bodyReads, []);
   }
 });
 

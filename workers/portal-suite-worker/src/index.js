@@ -992,7 +992,7 @@ function corsHeaders(request, env) {
     "Access-Control-Allow-Origin": allowedOrigin(request, env),
     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type, Authorization, Range, X-Portal-Timestamp, X-Portal-Signature, X-Upload-ID, X-Upload-Fingerprint",
-    "Access-Control-Expose-Headers": "Content-Disposition, Content-Length, Content-Range, Accept-Ranges",
+    "Access-Control-Expose-Headers": "Content-Disposition, Content-Length, Content-Range, Accept-Ranges, X-Portal-Preview-Pages",
     "Vary": "Origin",
   };
 }
@@ -23992,8 +23992,12 @@ function externalDetailPayload(data, id, authenticated = false) {
   const controls = own(data, "readable") || own(data, "resource_limit") ? data : main;
   const limitKnown = own(controls, "resource_limit");
   const limit = limitKnown ? controls.resource_limit : null;
+  // Public readable PDF details also return -1 (observed on AIDC-20260806).
+  // Accept that sentinel only with explicit permission; it cannot grant access.
+  const validLimit = typeof limit === "number" && Number.isFinite(limit)
+    && (limit >= 0 || (limit === -1 && controls.readable === true));
   const valid = typeof controls.readable === "boolean"
-    && (!limitKnown || (typeof limit === "number" && Number.isFinite(limit) && limit >= 0));
+    && (!limitKnown || validLimit);
   // resource_limit can describe a summary allowance. Explicit report
   // readability controls PDF access; a zero allowance alone cannot revoke it.
   const readable = valid && controls.readable === true;
@@ -24035,6 +24039,11 @@ async function handleExternalItem(request, env) {
     return jsonResponse(request, env, 404, { error: "Report not found." });
   }
   return jsonResponse(request, env, 200, { item: detail.item });
+}
+
+async function createExternalPreviewPdf(bytes, expectedPages) {
+  const preview = await import("./external-preview-pdf.mjs");
+  return preview.createExternalPreviewPdf(bytes, expectedPages);
 }
 
 function externalPreviewAssetUrl(value) {
@@ -24156,19 +24165,25 @@ async function handleExternalPreview(request, env) {
   const id = String(new URL(request.url).searchParams.get("id") || "").trim();
   if (!isExternalId(id)) return privateJsonResponse(request, env, 400, { error: "Invalid report id." });
   try {
-    // Preview is the exact public image disclosed by the anonymous detail
-    // API. It never uses the shared upstream account or the full-PDF cache.
+    // Use only anonymous detail assets. Public PDFs are reduced to one page
+    // on the server; neither the shared account nor the full-PDF cache is used.
     const detailResponse = await fetchWithTimeout(`${EXTERNAL_API}/reports/${id}`, {
       headers: externalHeaders(), redirect: "manual",
     });
     if (!detailResponse.ok) throw new Error("Preview detail unavailable.");
     const detail = JSON.parse(new TextDecoder().decode(await externalPreviewReadBytes(detailResponse, 2 * 1024 * 1024)));
-    let imageUrl = externalPreviewAssetUrl(detail && detail.main && detail.main.preview_image);
-    if (!imageUrl) throw new Error("Preview image unavailable.");
+    const previewImage = detail && detail.main && detail.main.preview_image;
+    const pdfDetail = !previewImage && detail && detail.readable === true
+      ? externalDetailPayload(detail, id) : null;
+    const usePdf = Boolean(pdfDetail && pdfDetail.readable && pdfDetail.render_type === "pdf"
+      && pdfDetail.item.page_count > 0);
+    let imageUrl = externalPreviewAssetUrl(usePdf ? pdfDetail.pdf_url : previewImage);
+    if (!imageUrl) throw new Error("Preview asset unavailable.");
     for (let redirects = 0; redirects <= 3; redirects += 1) {
       const response = await fetchWithTimeout(imageUrl, {
         redirect: "manual",
-        headers: { "User-Agent": EXTERNAL_UA, "Referer": `${EXTERNAL_SITE}/`, "Accept": "image/jpeg,image/png,image/webp" },
+        headers: { "User-Agent": EXTERNAL_UA, "Referer": `${EXTERNAL_SITE}/`,
+          "Accept": usePdf ? "application/pdf" : "image/jpeg,image/png,image/webp" },
       });
       if ([301, 302, 303, 307, 308].includes(response.status)) {
         const location = response.headers.get("Location");
@@ -24178,13 +24193,17 @@ async function handleExternalPreview(request, env) {
         continue;
       }
       if (!response.ok) throw new Error("Preview image unavailable.");
-      const mime = String(response.headers.get("Content-Type") || "").split(";", 1)[0].trim().toLowerCase();
-      if (!["image/jpeg", "image/png", "image/webp"].includes(mime)) {
+      let mime = String(response.headers.get("Content-Type") || "").split(";", 1)[0].trim().toLowerCase();
+      const allowedTypes = usePdf ? ["application/pdf", "application/octet-stream"] : ["image/jpeg", "image/png", "image/webp"];
+      if (!allowedTypes.includes(mime)) {
         if (response.body) await response.body.cancel();
         throw new Error("Preview image type unavailable.");
       }
-      const bytes = await externalPreviewReadBytes(response, 10 * 1024 * 1024);
-      if (externalPreviewImageType(bytes) !== mime) throw new Error("Preview image validation failed.");
+      let bytes = await externalPreviewReadBytes(response, (usePdf ? 25 : 10) * 1024 * 1024);
+      if (usePdf) {
+        bytes = await createExternalPreviewPdf(bytes, pdfDetail.item.page_count);
+        mime = "application/pdf";
+      } else if (externalPreviewImageType(bytes) !== mime) throw new Error("Preview image validation failed.");
       return new Response(bytes, { headers: {
         ...corsHeaders(request, env),
         "Content-Type": mime,

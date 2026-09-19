@@ -165,7 +165,10 @@ def authorized_pdf(detail: dict, *, authenticated: bool) -> tuple[str, int]:
     # explicit readable=true with an actual full-PDF URL, nor grant access.
     if "resource_limit" in permissions:
         limit = permissions["resource_limit"]
-        if type(limit) not in (int, float) or not math.isfinite(limit) or limit < 0:
+        # Anonymous readable PDF details also expose -1. Honor that observed
+        # sentinel only alongside explicit permission, never as permission.
+        if (type(limit) not in (int, float) or not math.isfinite(limit)
+                or (limit < 0 and not (limit == -1 and readable is True))):
             raise ReportifyUnavailable("upstream_unavailable", "invalid_resource_limit", expected_page_count=expected)
     if readable is False:
         raise ReportifyUnavailable("upstream_access_required" if authenticated else "upstream_login_required",

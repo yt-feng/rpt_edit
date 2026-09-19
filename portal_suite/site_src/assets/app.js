@@ -11752,6 +11752,38 @@
       </section>`;
   }
 
+  async function renderExternalSinglePagePreviewPdf(blob) {
+    const invalid = () => new Error("未取得有效的1页预览图片，请稍后重试。");
+    const pdfjs = await loadPdfJs();
+    const loadingTask = pdfjs.getDocument({
+      data: new Uint8Array(await blob.arrayBuffer()),
+      isEvalSupported: false,
+      maxImageSize: 16000000,
+    });
+    let canvas;
+    try {
+      const pdf = await loadingTask.promise;
+      if (pdf.numPages !== 1) throw invalid();
+      const page = await pdf.getPage(1);
+      const base = page.getViewport({ scale: 1 });
+      if (![base.width, base.height].every((value) => Number.isFinite(value) && value > 0)) throw invalid();
+      const viewport = page.getViewport({ scale: Math.min(2, 1600 / Math.max(base.width, base.height)) });
+      if (![viewport.width, viewport.height].every((value) => Number.isFinite(value) && value > 0)) throw invalid();
+      canvas = document.createElement("canvas");
+      canvas.width = Math.min(1600, Math.max(1, Math.ceil(viewport.width)));
+      canvas.height = Math.min(1600, Math.max(1, Math.ceil(viewport.height)));
+      const context = canvas.getContext("2d", { alpha: false });
+      if (!context) throw invalid();
+      await page.render({ canvasContext: context, viewport, background: "rgb(255,255,255)" }).promise;
+      const image = await new Promise((resolve) => canvas.toBlob(resolve, "image/png"));
+      if (!image || image.type !== "image/png" || !image.size) throw invalid();
+      return image;
+    } finally {
+      if (canvas) { canvas.width = 0; canvas.height = 0; }
+      await loadingTask.destroy();
+    }
+  }
+
   function initExternalSinglePagePreview(workerUrl, item, target) {
     const section = target && target.querySelector("#externalSinglePagePreview");
     if (!workerUrl || !item || !section) return;
@@ -11778,10 +11810,13 @@
           const data = await response.json().catch(() => ({}));
           throw new Error(response.status === 401 ? "请先登录后查看1页预览。" : data.error || "这份报告的1页预览暂时不可用。");
         }
-        const blob = await response.blob();
-        if (!/^image\/(?:jpeg|png|webp)$/i.test(blob.type) || !blob.size) {
+        if (response.headers.get("X-Portal-Preview-Pages") !== "1") {
           throw new Error("未取得有效的1页预览图片，请稍后重试。");
         }
+        let blob = await response.blob();
+        if (!blob.size || blob.size > 10 * 1024 * 1024) throw new Error("未取得有效的1页预览图片，请稍后重试。");
+        if (blob.type.toLowerCase() === "application/pdf") blob = await renderExternalSinglePagePreviewPdf(blob);
+        if (!/^image\/(?:jpeg|png|webp)$/i.test(blob.type)) throw new Error("未取得有效的1页预览图片，请稍后重试。");
         releasePreview();
         previewUrl = URL.createObjectURL(blob);
         previewImage.src = previewUrl;
