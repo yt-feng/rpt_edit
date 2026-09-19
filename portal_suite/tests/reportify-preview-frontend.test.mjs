@@ -120,27 +120,53 @@ test("unconfirmed connection is not presented as successful", async () => {
   assert.doesNotMatch(h.ids.accountAdminSourceQr.textContent, /来源连接已保存/);
 });
 
-function previewHarness({ mime = "image/jpeg", responseStatus = 200, decodeFailure = false } = {}) {
+function previewHarness({ mime = "image/jpeg", responseStatus = 200, decodeFailure = false,
+  previewPages = "1", blobSize = 4096, pdfPages = 1, pdfWidth = 600, pdfHeight = 800,
+  pdfParseFailure = false, pdfRenderFailure = false, pdfBlobFailure = false, canvasFailure = false } = {}) {
   const ids = Object.fromEntries(["externalPreviewOpen", "externalPreviewStatus", "externalPreviewFigure", "externalPreviewImage"].map((id) => [id, node()]));
   ids.externalPreviewImage.decode = async () => { if (decodeFailure) throw new Error("image decode failed"); };
   ids.externalPreviewFigure.hidden = true;
-  const calls = [], created = [], revoked = [];
+  const calls = [], created = [], revoked = [], pdfCalls = [], canvases = [];
+  let blobReads = 0, pdfDestroyed = 0;
   const events = {};
   const context = {
-    encodeURIComponent, authHeaders: () => ({ Authorization: "Bearer member-session" }),
+    Uint8Array, encodeURIComponent, authHeaders: () => ({ Authorization: "Bearer member-session" }),
     window: { addEventListener: (name, callback) => { events[name] = callback; } },
     URL: { createObjectURL: (blob) => { created.push(blob); return `blob:preview-${created.length}`; }, revokeObjectURL: (url) => revoked.push(url) },
+    document: { createElement: (tag) => {
+      assert.equal(tag, "canvas");
+      const canvas = { width: 0, height: 0, getContext: () => canvasFailure ? null : {},
+        toBlob: (callback, type) => { assert.equal(type, "image/png"); callback(pdfBlobFailure ? null : { type, size: 2048 }); } };
+      canvases.push(canvas);
+      return canvas;
+    } },
+    loadPdfJs: async () => ({ getDocument: (options) => {
+      pdfCalls.push({ kind: "document", options });
+      return { destroy: async () => { pdfDestroyed += 1; }, promise: (async () => {
+        if (pdfParseFailure) throw new Error("PDF parse failed");
+        return { numPages: pdfPages, getPage: async (page) => {
+          pdfCalls.push({ kind: "page", page });
+          return { getViewport: ({ scale }) => ({ width: pdfWidth * scale, height: pdfHeight * scale }),
+            render: (options) => {
+              pdfCalls.push({ kind: "render", options, width: canvases.at(-1).width, height: canvases.at(-1).height });
+              return { promise: pdfRenderFailure ? Promise.reject(new Error("PDF render failed")) : Promise.resolve() };
+            } };
+        } };
+      })() };
+    } }),
     fetch: async (url, options) => {
       calls.push({ url, options });
       return { ok: responseStatus === 200, status: responseStatus, json: async () => ({ error: "预览暂时不可用" }),
-        blob: async () => ({ type: mime, size: 4096 }) };
+        headers: { get: (name) => name === "X-Portal-Preview-Pages" ? previewPages : null },
+        blob: async () => { blobReads += 1; return { type: mime, size: blobSize, arrayBuffer: async () => new Uint8Array([37, 80, 68, 70]).buffer }; } };
     },
   };
   vm.createContext(context);
+  vm.runInContext(fn("renderExternalSinglePagePreviewPdf"), context);
   vm.runInContext(fn("initExternalSinglePagePreview"), context);
   const section = { querySelector: (selector) => ids[selector.slice(1)] };
   context.initExternalSinglePagePreview("https://worker.example.test", { id: "1256239582803005440" }, { querySelector: () => section });
-  return { ids, calls, created, revoked, events };
+  return { ids, calls, created, revoked, events, pdfCalls, canvases, blobReads: () => blobReads, pdfDestroyed: () => pdfDestroyed };
 }
 
 test("single-page preview is labeled as partial and displayed as an authenticated image", async () => {
@@ -160,14 +186,79 @@ test("single-page preview is labeled as partial and displayed as an authenticate
   assert.deepEqual(h.revoked, ["blob:preview-1"]);
 });
 
-test("preview refuses PDF/error responses and never displays an undecodable image", async () => {
-  for (const options of [{ mime: "application/pdf" }, { responseStatus: 401 }, { decodeFailure: true }]) {
+test("preview refuses unsupported/error responses and never displays an undecodable image", async () => {
+  for (const options of [{ mime: "text/html" }, { responseStatus: 401 }, { decodeFailure: true }, { blobSize: 0 }, { blobSize: 10 * 1024 * 1024 + 1 }]) {
     const h = previewHarness(options);
     await h.ids.externalPreviewOpen.listeners.click();
     assert.equal(h.ids.externalPreviewFigure.hidden, true);
     assert.equal(h.ids.externalPreviewStatus.className, "status-line error");
     assert.equal(h.ids.externalPreviewOpen.disabled, false);
     if (options.responseStatus === 401) assert.match(h.ids.externalPreviewStatus.textContent, /先登录/);
+  }
+});
+
+test("image and PDF previews require the exact server one-page marker before reading their body", async () => {
+  for (const mime of ["image/png", "application/pdf"]) {
+    for (const previewPages of [null, "", "0", "2", "01", "1, 2"]) {
+      const h = previewHarness({ mime, previewPages });
+      await h.ids.externalPreviewOpen.listeners.click();
+      assert.equal(h.ids.externalPreviewFigure.hidden, true);
+      assert.equal(h.ids.externalPreviewStatus.className, "status-line error");
+      assert.equal(h.blobReads(), 0);
+      assert.equal(h.pdfCalls.length, 0);
+      assert.equal(h.created.length, 0);
+    }
+  }
+});
+
+test("verified one-page PDF renders to a bounded PNG image and releases parser and canvas resources", async () => {
+  for (const dimensions of [{ pdfWidth: 600, pdfHeight: 800 }, { pdfWidth: 90000, pdfHeight: 70000 }]) {
+    const h = previewHarness({ mime: "application/pdf", ...dimensions });
+    await h.ids.externalPreviewOpen.listeners.click();
+    assert.equal(h.ids.externalPreviewFigure.hidden, false);
+    assert.equal(h.created.length, 1);
+    assert.equal(h.created[0].type, "image/png");
+    assert.equal(h.pdfCalls[0].options.isEvalSupported, false);
+    assert.equal(h.pdfCalls[0].options.maxImageSize, 16000000);
+    assert.deepEqual(h.pdfCalls.filter((call) => call.kind === "page").map((call) => call.page), [1]);
+    const rendered = h.pdfCalls.find((call) => call.kind === "render");
+    assert.ok(rendered.width > 0 && rendered.width <= 1600);
+    assert.ok(rendered.height > 0 && rendered.height <= 1600);
+    assert.ok(rendered.width * rendered.height <= 2560000);
+    assert.equal(h.pdfDestroyed(), 1);
+    assert.equal(h.canvases[0].width, 0);
+    assert.equal(h.canvases[0].height, 0);
+    assert.match(h.ids.externalPreviewStatus.textContent, /不是完整报告/);
+    await h.ids.externalPreviewOpen.listeners.click();
+    assert.deepEqual(h.revoked, ["blob:preview-1"]);
+    h.events.pagehide();
+    assert.deepEqual(h.revoked, ["blob:preview-1", "blob:preview-2"]);
+  }
+});
+
+test("PDF preview rejects multiple or unknown pages before requesting or rendering any page", async () => {
+  for (const pdfPages of [0, 2, 57, undefined, "1"]) {
+    const h = previewHarness({ mime: "application/pdf", pdfPages: pdfPages === undefined ? null : pdfPages });
+    await h.ids.externalPreviewOpen.listeners.click();
+    assert.equal(h.ids.externalPreviewFigure.hidden, true);
+    assert.equal(h.ids.externalPreviewStatus.className, "status-line error");
+    assert.equal(h.pdfCalls.filter((call) => call.kind !== "document").length, 0);
+    assert.equal(h.created.length, 0);
+    assert.equal(h.pdfDestroyed(), 1);
+  }
+});
+
+test("PDF parse, invalid geometry, canvas, render and encoding failures release resources and allow retry", async () => {
+  for (const options of [{ pdfParseFailure: true }, { pdfWidth: Infinity }, { pdfHeight: 0 },
+    { canvasFailure: true }, { pdfRenderFailure: true }, { pdfBlobFailure: true }]) {
+    const h = previewHarness({ mime: "application/pdf", ...options });
+    await h.ids.externalPreviewOpen.listeners.click();
+    assert.equal(h.ids.externalPreviewFigure.hidden, true);
+    assert.equal(h.ids.externalPreviewStatus.className, "status-line error");
+    assert.equal(h.ids.externalPreviewOpen.disabled, false);
+    assert.equal(h.created.length, 0);
+    assert.equal(h.pdfDestroyed(), 1);
+    for (const canvas of h.canvases) assert.equal(canvas.width + canvas.height, 0);
   }
 });
 

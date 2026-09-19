@@ -72,6 +72,37 @@ class ReportifyApiGrabTests(unittest.TestCase):
         self.assertNotIn("signature", json.dumps(result))
         self.assertNotIn("runtime-secret", json.dumps(result))
 
+    def test_observed_public_pdf_minus_one_limit_requires_explicit_permission(self):
+        value = detail(pages=21)
+        value.update(resource_limit=-1)
+        value["main"].update(render_type="pdf", preview_image=None)
+        self.assertEqual(grab.authorized_pdf(value, authenticated=False),
+                         (value["main"]["url_pdf"], 21))
+        legacy = {"main": {**value["main"], "readable": True, "resource_limit": -1}}
+        self.assertEqual(grab.authorized_pdf(legacy, authenticated=False)[1], 21)
+        for readable in (False, None, "true", 1):
+            with self.subTest(readable=readable), self.assertRaises(grab.ReportifyUnavailable) as caught:
+                grab.authorized_pdf({**value, "readable": readable}, authenticated=False)
+            self.assertEqual(caught.exception.detail_code, "invalid_resource_limit")
+
+    def test_public_pdf_minus_one_limit_still_validates_exact_full_page_count(self):
+        value = detail(pages=21)
+        value.update(resource_limit=-1)
+        value["main"].update(render_type="pdf", preview_image=None)
+        for actual in (1, 21):
+            with self.subTest(actual=actual):
+                data = pdf(actual)
+                fetch = mock.Mock(side_effect=[json.dumps(value).encode(), data])
+                if actual == 21:
+                    result = grab.grab_report("1283195192727441408", self.output, fetch=fetch)
+                    self.assertEqual(result["page_count"], 21)
+                    self.assertEqual(self.output.read_bytes(), data)
+                else:
+                    with self.assertRaises(grab.ReportifyUnavailable) as caught:
+                        grab.grab_report("1283195192727441408", self.output, fetch=fetch)
+                    self.assertEqual(caught.exception.detail_code, "page_count_mismatch")
+                    self.assertFalse(self.output.exists())
+
     def test_legacy_main_permission_supported_but_unknown_permission_is_not(self):
         value = detail()
         value.pop("readable")
@@ -90,7 +121,7 @@ class ReportifyApiGrabTests(unittest.TestCase):
         with self.assertRaises(grab.ReportifyUnavailable) as caught:
             grab.authorized_pdf(value, authenticated=True)
         self.assertEqual(caught.exception.detail_code, "read_permission_unknown")
-        for invalid in (None, "0", {}, [], True, -1):
+        for invalid in (None, "0", "-1", {}, [], True, -2, -0.5, float("inf"), float("nan")):
             with self.subTest(limit=invalid), self.assertRaises(grab.ReportifyUnavailable) as caught:
                 grab.authorized_pdf({**detail(), "resource_limit": invalid}, authenticated=True)
             self.assertEqual(caught.exception.detail_code, "invalid_resource_limit")
