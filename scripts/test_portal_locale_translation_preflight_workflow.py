@@ -56,8 +56,10 @@ class PreflightWorkflowTests(unittest.TestCase):
     def test_uses_existing_private_configuration_and_uploads_failure_diagnostics(self) -> None:
         workflow = WORKFLOW.read_text(encoding="utf-8")
         self.assertIn("LIVE_ORIGIN: ${{ secrets.PORTAL_SITE_URL || vars.PORTAL_SITE_URL }}", workflow)
-        for secret in ("DEEPSEEK_API_KEY", "DEEPSEEK_API_KEY_BACKUP", "DEEPSEEK_API_KEY_2", "DEEPSEEK_API_KEYS", "DEEPL_API_KEY"):
-            self.assertIn(f"{secret}: ${{{{ secrets.{secret} }}}}", workflow)
+        self.assertIn("DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_REPORT_TRANSLATION_API_KEY }}", workflow)
+        for fallback in ("DEEPSEEK_API_KEY_BACKUP", "DEEPSEEK_API_KEY_2", "DEEPSEEK_API_KEYS"):
+            self.assertIn(f'{fallback}: ""', workflow)
+        self.assertIn("DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}", workflow)
         upload = workflow[workflow.index("Upload translation diagnostics even when preflight fails"):]
         self.assertIn("if: always()", upload)
         self.assertIn("actions/upload-artifact@v4", upload)

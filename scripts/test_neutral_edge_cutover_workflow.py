@@ -362,14 +362,10 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertNotIn('rm -f "$cache_path"', cache)
 
         locale = self.workflow[locale_build:detect_checkpoint]
-        for secret in (
-            "DEEPSEEK_API_KEY",
-            "DEEPSEEK_API_KEY_BACKUP",
-            "DEEPSEEK_API_KEY_2",
-            "DEEPSEEK_API_KEYS",
-            "DEEPL_API_KEY",
-        ):
-            self.assertIn(f"{secret}: ${{{{ secrets.{secret} }}}}", locale)
+        self.assertIn("DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_REPORT_TRANSLATION_API_KEY }}", locale)
+        for fallback in ("DEEPSEEK_API_KEY_BACKUP", "DEEPSEEK_API_KEY_2", "DEEPSEEK_API_KEYS"):
+            self.assertIn(f'{fallback}: ""', locale)
+        self.assertIn("DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}", locale)
         self.assertIn("DEEPSEEK_BASE_URL", locale)
         self.assertIn("DEEPSEEK_MODEL", locale)
         self.assertIn("PORTAL_MULTILINGUAL_WORKERS: ${{ vars.PORTAL_MULTILINGUAL_WORKERS || '32' }}", locale)

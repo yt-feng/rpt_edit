@@ -78,7 +78,7 @@ jobs:
 
       - name: Build Portal translated report PDF
         env:
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_REPORT_TRANSLATION_API_KEY }}
           DEEPSEEK_BASE_URL: ${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}
         run: |
           DATE_FOLDER="${{ github.event.inputs.date_folder || 'latest' }}"

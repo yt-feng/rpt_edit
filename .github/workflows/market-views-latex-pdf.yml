@@ -256,7 +256,7 @@ jobs:
       - name: Build market views data and LaTeX source
         if: ${{ env.SHOULD_BUILD != 'false' }}
         env:
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_MARKET_VIEWS_API_KEY }}
           DEEPSEEK_BASE_URL: ${{ inputs.deepseek_base_url || 'https://api.deepseek.com' }}
         run: |
           set -o pipefail

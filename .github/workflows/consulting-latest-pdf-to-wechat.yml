@@ -119,8 +119,8 @@ jobs:
       - name: Generate MinerU source text and notes
         if: ${{ steps.fetch.outputs.pdf_count != '0' }}
         env:
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-          DEEPSEEK_API_KEY_BACKUP: ${{ secrets.DEEPSEEK_API_KEY_BACKUP }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_REPORT_NOTES_API_KEY }}
+          DEEPSEEK_API_KEY_BACKUP: ""
           MINER_U: ${{ secrets.MINER_U }}
           MINER_U_2: ${{ secrets.MINER_U_2 }}
           MINER_U_3: ${{ secrets.MINER_U_3 }}
@@ -142,8 +142,8 @@ jobs:
       - name: Build Portal translated report PDFs
         if: ${{ steps.fetch.outputs.pdf_count != '0' }}
         env:
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-          DEEPSEEK_API_KEY_BACKUP: ${{ secrets.DEEPSEEK_API_KEY_BACKUP }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_REPORT_TRANSLATION_API_KEY }}
+          DEEPSEEK_API_KEY_BACKUP: ""
           DEEPSEEK_BASE_URL: "https://api.deepseek.com"
         run: |
           set -o pipefail
