@@ -50,7 +50,10 @@ class ProtocolProbeTests(unittest.TestCase):
         self.assertEqual(result["provider_requests"], 4)
         self.assertEqual(result["usage_totals"]["total_tokens"], 120)
         payloads = [call.kwargs["payload"] for call in transport.call_args_list]
-        self.assertEqual({**payloads[0], "model": "deepseek-v4-pro"}, payloads[3])
+        self.assertEqual({payload["model"] for payload in payloads}, {"deepseek-flash"})
+        self.assertEqual(result["cases"][3]["control_case"], "flash-json-ar")
+        self.assertEqual(payloads[3]["response_format"], {"type": "json_object"})
+        self.assertIn("阿拉伯", payloads[3]["messages"][0]["content"])
         for call, row in zip(transport.call_args_list, result["cases"]):
             self.assertEqual(call.kwargs["api_keys"], [("configured", SECRET)])
             self.assertEqual(call.kwargs["max_attempts"], 1)

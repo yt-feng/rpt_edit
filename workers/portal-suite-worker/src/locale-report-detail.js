@@ -222,7 +222,9 @@ export async function handleLocaleReportDetail(request, env, ctx, dependencies) 
     fields = publicFields(await dependencies.resolve(env, source, id), sanitize);
   } catch (_error) { return failed("source_unavailable"); }
   if (!fields) return failed("not_found", 404, 0);
-  const model = String(env.DEEPSEEK_MODEL || "deepseek-v4-flash").trim();
+  const configuredModel = String(env.DEEPSEEK_MODEL || "deepseek-flash").trim();
+  const model = /^(?:deepseek-(?:chat|reasoner|pro)|deepseek-v4(?:\.1)?-(?:flash|pro(?:-[a-z0-9][a-z0-9._-]*)?))$/i.test(configuredModel)
+    ? "deepseek-flash" : configuredModel;
   if (!model || model.length > 100) return failed("configuration_unavailable");
   const sourceHash = await digest(fields);
   const identity = await digest({ source, id, locale, model, version: VERSION, source_hash: sourceHash, prompt_version: PROMPT_VERSION });

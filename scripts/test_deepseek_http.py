@@ -31,7 +31,7 @@ class DeepSeekHttpTests(unittest.TestCase):
         options.update(overrides)
         return request_with_retry("https://api.deepseek.com/chat/completions", **options)
 
-    def test_maps_retired_chat_alias_to_v4_flash(self) -> None:
+    def test_maps_retired_chat_alias_to_canonical_flash(self) -> None:
         payload = prepare_deepseek_payload({"model": "deepseek-chat", "messages": []})
 
         self.assertEqual(payload["model"], DEFAULT_DEEPSEEK_MODEL)
@@ -42,6 +42,37 @@ class DeepSeekHttpTests(unittest.TestCase):
 
         self.assertEqual(payload["model"], DEFAULT_DEEPSEEK_MODEL)
         self.assertEqual(payload["thinking"], {"type": "enabled"})
+
+    def test_legacy_pro_and_flash_overrides_use_canonical_flash_with_thinking_support(self) -> None:
+        for alias in ("deepseek-v4-pro", "deepseek-pro", "deepseek-v4-flash", "deepseek-v4.1-flash", "deepseek-flash"):
+            with self.subTest(alias=alias):
+                payload = prepare_deepseek_payload({"model": alias, "messages": []})
+                self.assertEqual(payload["model"], "deepseek-flash")
+                self.assertEqual(payload["thinking"], {"type": "disabled"})
+        explicit = prepare_deepseek_payload({"model": "deepseek-v4-pro", "thinking": {"type": "enabled"}})
+        self.assertEqual(explicit["thinking"], {"type": "enabled"})
+
+    @patch("deepseek_http.requests.post")
+    def test_dated_pro_overrides_are_normalized_at_request_boundary(self, post: Mock) -> None:
+        post.return_value = Mock(status_code=200, headers={})
+        for model, expected in (
+            ("deepseek-v4-pro-0813", "deepseek-flash"),
+            ("deepseek-v4.1-pro-20260919", "deepseek-flash"),
+            ("other-provider-pro-0813", "other-provider-pro-0813"),
+        ):
+            with self.subTest(model=model):
+                self.request(payload={"model": model})
+                self.assertEqual(post.call_args.kwargs["json"]["model"], expected)
+
+    @patch("deepseek_http.requests.post")
+    def test_rejected_flash_never_escalates_to_pro_from_provider_or_environment(self, post: Mock) -> None:
+        rejected = Mock(status_code=400, headers={}, text="Unsupported model. Supported model: deepseek-v4-pro-0813")
+        post.return_value = rejected
+        with patch.dict("os.environ", {"DEEPSEEK_MODEL_FALLBACK": "deepseek-v4.1-pro-20260919"}):
+            response = self.request(payload={"model": "deepseek-flash"})
+        self.assertIs(response, rejected)
+        post.assert_called_once()
+        self.assertEqual(post.call_args.kwargs["json"]["model"], "deepseek-flash")
 
     @patch("deepseek_http.time.sleep")
     @patch("deepseek_http.requests.post")

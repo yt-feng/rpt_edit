@@ -14214,7 +14214,9 @@ async function deepseekJson(env, messages, options = {}) {
   const apiKey = cleanEnv(env.DEEPSEEK_API_KEY);
   if (!apiKey) return null;
   const baseUrl = cleanEnv(env.DEEPSEEK_BASE_URL) || "https://api.deepseek.com";
-  const model = cleanEnv(env.DEEPSEEK_MODEL) || "deepseek-v4-flash";
+  const configuredModel = cleanEnv(env.DEEPSEEK_MODEL);
+  const model = /^(?:deepseek-(?:chat|reasoner|pro)|deepseek-v4(?:\.1)?-(?:flash|pro(?:-[a-z0-9][a-z0-9._-]*)?))$/i.test(configuredModel)
+    ? "deepseek-flash" : configuredModel || "deepseek-flash";
   const maxTokens = Math.max(0, Math.min(8000, Math.floor(Number(options.maxTokens) || 0)));
   try {
     reportResearchBudgetSpend(options.budget, 1, options.budgetStage || "deepseek");

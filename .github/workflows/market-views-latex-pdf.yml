@@ -36,7 +36,7 @@ on:
       model:
         description: "DeepSeek model for synthesis"
         required: true
-        default: "deepseek-v4-flash"
+        default: "deepseek-flash"
       deepseek_base_url:
         description: "DeepSeek API base URL"
         required: true
@@ -260,7 +260,7 @@ jobs:
           DEEPSEEK_BASE_URL: ${{ inputs.deepseek_base_url || 'https://api.deepseek.com' }}
         run: |
           set -o pipefail
-          MODEL="${{ github.event.inputs.model || 'deepseek-v4-flash' }}"
+          MODEL="${{ github.event.inputs.model || 'deepseek-flash' }}"
           BASE_URL="${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}"
           COMPILE_LATEX="${{ github.event.inputs.compile_latex || 'false' }}"
           echo "::notice::Building bank-led Market Views with dynamic topic planning and per-section DeepSeek coverage validation."

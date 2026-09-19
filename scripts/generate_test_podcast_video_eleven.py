@@ -21,6 +21,8 @@ from pathlib import Path
 from typing import Any
 
 import requests
+
+from deepseek_http import normalize_deepseek_model_name
 from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 
 SIZE = (1080, 1920)
@@ -131,7 +133,7 @@ def deepseek(prompt: str, args: argparse.Namespace, temperature: float = 0.55) -
     data = post_json(
         args.deepseek_base_url.rstrip("/") + "/chat/completions",
         {"Content-Type": "application/json", "Authorization": f"Bearer {key}"},
-        {"model": args.model, "thinking": {"type": "disabled"}, "temperature": temperature, "messages": [
+        {"model": normalize_deepseek_model_name(args.model), "thinking": {"type": "disabled"}, "temperature": temperature, "messages": [
             {"role": "system", "content": "You are a careful podcast and short-video producer. Return exactly the requested format."},
             {"role": "user", "content": prompt},
         ]},
@@ -655,7 +657,7 @@ def generate_language(item_dir: Path, lang: str, source_text: str, args: argpars
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output-dir", required=True)
-    parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-v4-flash"))
+    parser.add_argument("--model", type=normalize_deepseek_model_name, default=os.getenv("DEEPSEEK_MODEL", "deepseek-flash"))
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
     parser.add_argument("--podcast-minutes", type=int, default=5)
     parser.add_argument("--prompt-chars", type=int, default=26000)

@@ -23,6 +23,8 @@ from pathlib import Path
 from typing import Any
 
 import requests
+
+from deepseek_http import normalize_deepseek_model_name
 from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 
 VIDEO_SIZE = (1080, 1920)
@@ -63,7 +65,7 @@ def call_deepseek(prompt: str, args: argparse.Namespace, label: str, temperature
         args.deepseek_base_url.rstrip("/") + "/chat/completions",
         headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
         json={
-            "model": args.model,
+            "model": normalize_deepseek_model_name(args.model),
             "thinking": {"type": "disabled"},
             "temperature": temperature,
             "messages": [
@@ -499,7 +501,7 @@ def find_single_item_dir(output_dir: Path) -> Path:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output-dir", required=True)
-    parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-v4-flash"))
+    parser.add_argument("--model", type=normalize_deepseek_model_name, default=os.getenv("DEEPSEEK_MODEL", "deepseek-flash"))
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
     parser.add_argument("--prompt-template", default="prompts/podcast_zh_only_prompt.md")
     parser.add_argument("--podcast-minutes", type=int, default=5)

@@ -39,3 +39,9 @@ python3 -B scripts/test_deepseek_http.py
 ```
 
 Also parse changed workflow YAML and confirm no shared DeepSeek secret references remain in `.github/workflows/`.
+
+## Model selection
+
+Production requests use the current DeepSeek V4.1 Flash API identifier, `deepseek-flash` (see the [provider update notes](https://api-docs.deepseek.com/updates)). Old V4 Flash and Pro overrides are normalized to this identifier before model requests. The bounded protocol diagnostic compares plain/JSON Korean/Arabic requests on Flash only, and automatic model recovery cannot promote Flash to Pro.
+
+Set the repository and any environment `DEEPSEEK_MODEL` variable, and the deployed portal Worker's corresponding binding, to `deepseek-flash`. The source defaults and alias normalization also cover previously saved workflow inputs and runtime overrides. Locale cost controls retain conservative assumed ceilings of ¥3 per million input tokens and ¥9 per million output tokens; these are guard estimates, not quoted provider prices.

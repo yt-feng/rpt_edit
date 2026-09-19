@@ -3390,11 +3390,19 @@ class ProviderCostGuardTests(unittest.TestCase):
         self.assertEqual(state.data["cost_guard"]["settled_peak_estimate_micro_cny"], 0)
         self.assertIn("not an account", state.data["cost_guard"]["assumptions"]["scope"])
 
+    def test_pro_override_normalizes_before_cost_reservation(self) -> None:
+        for alias in ("deepseek-v4-pro", "deepseek-pro", "deepseek-v4-flash", "deepseek-v4.1-flash", "deepseek-v4-pro-0813", "deepseek-v4.1-pro-20260919"):
+            with self.subTest(alias=alias):
+                self.assertEqual(builder.normalize_deepseek_model_name(alias), "deepseek-flash")
+                state = builder.TranslationRun(max_cost_cny="1")
+                self.assertEqual(state.reserve({**self.payload(), "model": alias}), 1)
+                self.assertEqual(state.data["cost_guard"]["assumptions"]["model"], "deepseek-flash")
+
     def test_unknown_model_and_thinking_are_rejected_before_paid_call(self) -> None:
         request = mock.Mock()
         unit = builder.TranslationUnit("a" * 64, "html:text:p", "公开研究内容")
         with mock.patch.dict(sys.modules, {"deepseek_http": mock.Mock(request_with_key_fallback=request)}):
-            with self.assertRaisesRegex(builder.TranslationStopped, "requires deepseek-v4-flash"):
+            with self.assertRaisesRegex(builder.TranslationStopped, "requires deepseek-flash"):
                 builder.deepseek_translate_batch(
                     "ko", [unit], model="other-model", base_url="https://api.deepseek.com",
                     timeout=1, attempts=3, run_state=builder.TranslationRun(max_cost_cny="1"),

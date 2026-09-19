@@ -11,10 +11,15 @@ from typing import Any
 
 import requests
 
-DEFAULT_DEEPSEEK_MODEL = "deepseek-v4-flash"
+DEFAULT_DEEPSEEK_MODEL = "deepseek-flash"
 LEGACY_DEEPSEEK_MODEL_ALIASES = {
     "deepseek-chat": DEFAULT_DEEPSEEK_MODEL,
     "deepseek-reasoner": DEFAULT_DEEPSEEK_MODEL,
+    "deepseek-v4-flash": DEFAULT_DEEPSEEK_MODEL,
+    "deepseek-v4-pro": DEFAULT_DEEPSEEK_MODEL,
+    "deepseek-v4.1-flash": DEFAULT_DEEPSEEK_MODEL,
+    "deepseek-v4.1-pro": DEFAULT_DEEPSEEK_MODEL,
+    "deepseek-pro": DEFAULT_DEEPSEEK_MODEL,
 }
 RETRYABLE_HTTP_STATUSES = {408, 409, 425, 429, 500, 502, 503, 504}
 KEY_FAILOVER_HTTP_STATUSES = RETRYABLE_HTTP_STATUSES | {401, 402, 403}
@@ -26,8 +31,10 @@ TRANSIENT_REQUEST_ERRORS = (
 
 
 def normalize_deepseek_model_name(value: str | None) -> str:
-    """Map retired official model aliases before an API request is sent."""
+    """Route legacy and Pro model aliases to current Flash before API calls."""
     model = str(value or "").strip() or DEFAULT_DEEPSEEK_MODEL
+    if re.fullmatch(r"deepseek-v4(?:\.1)?-pro-[a-z0-9][a-z0-9._-]*", model, re.IGNORECASE):
+        return DEFAULT_DEEPSEEK_MODEL
     return LEGACY_DEEPSEEK_MODEL_ALIASES.get(model.lower(), model)
 
 
@@ -36,7 +43,8 @@ def prepare_deepseek_payload(payload: dict[str, Any]) -> dict[str, Any]:
     prepared = dict(payload)
     requested_model = str(prepared.get("model") or "").strip().lower()
     prepared["model"] = normalize_deepseek_model_name(requested_model)
-    if prepared["model"].startswith("deepseek-v4-") and "thinking" not in prepared:
+    supports_thinking = prepared["model"] == DEFAULT_DEEPSEEK_MODEL or prepared["model"].startswith("deepseek-v4-")
+    if supports_thinking and "thinking" not in prepared:
         prepared["thinking"] = {
             "type": "enabled" if requested_model == "deepseek-reasoner" else "disabled"
         }
@@ -62,7 +70,10 @@ def _model_replacement_from_response(
     ):
         return None
     suggested = list(
-        dict.fromkeys(re.findall(r"\bdeepseek-[a-z0-9][a-z0-9._-]*\b", lowered))
+        dict.fromkeys(
+            normalize_deepseek_model_name(name)
+            for name in re.findall(r"\bdeepseek-[a-z0-9][a-z0-9._-]*\b", lowered)
+        )
     )
     configured = normalize_deepseek_model_name(
         os.getenv("DEEPSEEK_MODEL_FALLBACK", DEFAULT_DEEPSEEK_MODEL)

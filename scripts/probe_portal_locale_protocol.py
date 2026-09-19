@@ -30,10 +30,10 @@ class Control:
 
 def controls() -> tuple[Control, ...]:
     return (
-        Control("flash-plain-ko", "deepseek-v4-flash", "ko"),
-        Control("flash-plain-ar", "deepseek-v4-flash", "ar"),
-        Control("flash-json-ko", "deepseek-v4-flash", "ko", True),
-        Control("pro-plain-ko", "deepseek-v4-pro", "ko"),
+        Control("flash-plain-ko", "deepseek-flash", "ko"),
+        Control("flash-plain-ar", "deepseek-flash", "ar"),
+        Control("flash-json-ko", "deepseek-flash", "ko", True),
+        Control("flash-json-ar", "deepseek-flash", "ar", True),
     )
 
 

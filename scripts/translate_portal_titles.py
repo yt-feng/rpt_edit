@@ -19,6 +19,8 @@ from typing import Any
 
 import requests
 
+from deepseek_http import normalize_deepseek_model_name
+
 
 CJK_RE = re.compile(r"[\u3400-\u9fff]")
 TITLE_CACHE_SCHEMA_VERSION = 1
@@ -163,7 +165,7 @@ def translate_title(title: str, args: argparse.Namespace) -> str:
         raise RuntimeError("Missing DEEPSEEK_API_KEY")
 
     payload: dict[str, Any] = {
-        "model": args.model,
+        "model": normalize_deepseek_model_name(args.model),
         "thinking": {"type": "disabled"},
         "temperature": 0,
         "max_tokens": 220,
@@ -226,7 +228,7 @@ def main() -> int:
     parser.add_argument("--catalog-path", default="portal_suite/data/catalog.json")
     parser.add_argument("--cache-path", help="Read and atomically checkpoint translated titles in this JSON file.")
     parser.add_argument("--seed-catalog-path", help="Reuse published Chinese titles only for matching unique report IDs and source titles.")
-    parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-v4-flash"))
+    parser.add_argument("--model", type=normalize_deepseek_model_name, default=os.getenv("DEEPSEEK_MODEL", "deepseek-flash"))
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
     parser.add_argument("--workers", type=int, default=int(os.getenv("DEEPSEEK_TITLE_WORKERS", "500")))
     parser.add_argument("--timeout", type=int, default=45)
@@ -303,7 +305,7 @@ def main() -> int:
                     log(f"  [failed] {str(item.get('id') or '')}: {exc}")
             else:
                 cache["entries"][title_cache_key(source, args.model)] = {
-                    "source": source, "model": args.model, "prompt_version": TITLE_PROMPT_VERSION,
+                    "source": source, "model": normalize_deepseek_model_name(args.model), "prompt_version": TITLE_PROMPT_VERSION,
                     "title_zh": title_zh,
                 }
                 # Persist each paid success before later requests or catalog writes can fail.
@@ -317,7 +319,7 @@ def main() -> int:
 
     catalog["title_translation"] = {
         "provider": "deepseek",
-        "model": args.model,
+        "model": normalize_deepseek_model_name(args.model),
         "updated_at_bjt": bjt_now(),
         "translated_title_count": sum(1 for item in catalog.get("items", []) if str(item.get("title_zh") or "").strip()),
         "last_run_translated": translated,

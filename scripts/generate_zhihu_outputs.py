@@ -10,6 +10,8 @@ from typing import Any
 
 import requests
 
+from deepseek_http import normalize_deepseek_model_name
+
 try:
     from finalize_outputs import sanitize_text, trim_source_text
 except Exception:
@@ -47,7 +49,7 @@ def call_deepseek(prompt: str, args: argparse.Namespace, label: str) -> str:
         args.deepseek_base_url.rstrip("/") + "/chat/completions",
         headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
         json={
-            "model": args.model,
+            "model": normalize_deepseek_model_name(args.model),
             "thinking": {"type": "disabled"},
             "temperature": 0.55,
             "messages": [
@@ -105,7 +107,7 @@ def update_item_status(item_dir: Path, update: dict[str, str]) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output-dir", required=True)
-    parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-v4-flash"))
+    parser.add_argument("--model", type=normalize_deepseek_model_name, default=os.getenv("DEEPSEEK_MODEL", "deepseek-flash"))
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
     parser.add_argument("--zhihu-prompt-template", default="prompts/zhihu_report_article_prompt.md")
     parser.add_argument("--zhihu-prompt-chars", type=int, default=26000)

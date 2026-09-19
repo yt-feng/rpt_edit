@@ -22,6 +22,8 @@ from typing import Any
 
 import requests
 
+from deepseek_http import normalize_deepseek_model_name
+
 TARGET_FILENAMES = {
     "note.md",
     "wechat_article.md",
@@ -1061,7 +1063,7 @@ def deepseek_rewrite(text: str, detected_hits: list[dict[str, Any]], model: str,
         base_url.rstrip("/") + "/chat/completions",
         headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
         json={
-            "model": model,
+            "model": normalize_deepseek_model_name(model),
             "thinking": {"type": "disabled"},
             "temperature": 0.2,
             "messages": [
@@ -1145,7 +1147,7 @@ def run_sensitive_guard(output_dir: Path, args: argparse.Namespace) -> list[dict
 def build_arg_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output-dir", required=True)
-    parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-v4-flash"))
+    parser.add_argument("--model", type=normalize_deepseek_model_name, default=os.getenv("DEEPSEEK_MODEL", "deepseek-flash"))
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
     parser.add_argument("--sensitive-api-url", default=os.getenv("SENSITIVE_API_URL", "https://v.api.aa1.cn/api/api-mgc/index.php"))
     parser.add_argument("--use-free-api", default="true")

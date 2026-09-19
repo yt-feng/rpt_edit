@@ -75,10 +75,15 @@ REVIEWED_AR_METADATA_TRANSLATIONS = {
     ("html:meta:keyword", "GS-Space Exploration Technologies Corp. (SPCX) Communacopia-__KC_PH_000__"):
     "غولدمان ساكس - شركة سبيس إكسبلوريشن تكنولوجيز (SPCX)، مؤتمر كوميوناكوبيا - __KC_PH_000__",
 }
-DEFAULT_DEEPSEEK_MODEL = "deepseek-v4-flash"
+DEFAULT_DEEPSEEK_MODEL = "deepseek-flash"
 LEGACY_DEEPSEEK_MODEL_ALIASES = {
     "deepseek-chat": DEFAULT_DEEPSEEK_MODEL,
     "deepseek-reasoner": DEFAULT_DEEPSEEK_MODEL,
+    "deepseek-v4-flash": DEFAULT_DEEPSEEK_MODEL,
+    "deepseek-v4-pro": DEFAULT_DEEPSEEK_MODEL,
+    "deepseek-v4.1-flash": DEFAULT_DEEPSEEK_MODEL,
+    "deepseek-v4.1-pro": DEFAULT_DEEPSEEK_MODEL,
+    "deepseek-pro": DEFAULT_DEEPSEEK_MODEL,
 }
 # DeepSeek can return sparse/empty JSON when too many requests arrive at once.
 # Keep the caller-configurable value for compatibility, but never let a
@@ -412,10 +417,10 @@ class TranslationRun:
                 "retained_reservations_micro_cny": 0,
                 "settled_peak_estimate_micro_cny": 0,
                 "assumptions": {
-                    "model": "deepseek-v4-flash", "thinking": "disabled",
+                    "model": "deepseek-flash", "thinking": "disabled",
                     "input_micro_cny_per_token": 3, "output_micro_cny_per_token": 9,
                     "input_token_estimate": "ASCII-escaped request JSON bytes plus 4096 chat-framing tokens",
-                    "pricing": "Peak input cache-miss and output prices; cache/off-peak discounts ignored",
+                    "pricing": "Conservative assumed input/output unit-cost ceilings; provider discounts ignored",
                     "scope": "Conservative per-invocation estimate under tokenizer, framing and provider pricing assumptions; not an account balance or billing cap",
                     "unknown_usage": "Retain the full request reservation when usage is incomplete or no response is observed",
                 },
@@ -444,12 +449,12 @@ class TranslationRun:
             if self.max_cost_micro_cny is not None:
                 if (
                     not isinstance(payload, dict)
-                    or normalize_deepseek_model_name(payload.get("model")) != "deepseek-v4-flash"
+                    or normalize_deepseek_model_name(payload.get("model")) != "deepseek-flash"
                     or payload.get("thinking") != {"type": "disabled"}
                     or type(payload.get("max_tokens")) is not int
                     or not 0 < payload["max_tokens"] <= 32_000
                 ):
-                    self.stop("Cost guard requires deepseek-v4-flash, thinking disabled, and max_tokens between 1 and 32000")
+                    self.stop("Cost guard requires deepseek-flash, thinking disabled, and max_tokens between 1 and 32000")
                     raise TranslationStopped(self.stop_reason)
                 try:
                     input_upper = len(json.dumps(payload, ensure_ascii=True, allow_nan=False).encode("ascii")) + 4096
@@ -647,6 +652,8 @@ def log(message: str) -> None:
 
 def normalize_deepseek_model_name(value: str | None) -> str:
     model = str(value or "").strip() or DEFAULT_DEEPSEEK_MODEL
+    if re.fullmatch(r"deepseek-v4(?:\.1)?-pro-[a-z0-9][a-z0-9._-]*", model, re.IGNORECASE):
+        return DEFAULT_DEEPSEEK_MODEL
     return LEGACY_DEEPSEEK_MODEL_ALIASES.get(model.lower(), model)
 
 

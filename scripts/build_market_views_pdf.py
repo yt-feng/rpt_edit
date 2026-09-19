@@ -22,6 +22,8 @@ from typing import Any
 
 import requests
 
+from deepseek_http import normalize_deepseek_model_name
+
 try:
     from finalize_outputs import sanitize_text
 except Exception:
@@ -592,7 +594,7 @@ def call_deepseek(prompt: str, args: argparse.Namespace, label: str) -> str:
         args.deepseek_base_url.rstrip("/") + "/chat/completions",
         headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
         json={
-            "model": args.model,
+            "model": normalize_deepseek_model_name(args.model),
             "thinking": {"type": "disabled"},
             "temperature": 0.25,
             "max_tokens": getattr(args, "deepseek_max_tokens", 8192),
@@ -1807,7 +1809,7 @@ def main() -> int:
                         help="Comma list of extra output roots to merge for the same date, e.g. xhs_notes/institutions.")
     parser.add_argument("--date-folder", default="latest")
     parser.add_argument("--output-root", default="market_view_summaries")
-    parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-v4-flash"))
+    parser.add_argument("--model", type=normalize_deepseek_model_name, default=os.getenv("DEEPSEEK_MODEL", "deepseek-flash"))
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
     parser.add_argument("--deepseek-max-tokens", type=int, default=8192)
     parser.add_argument("--max-reports", type=int, default=0, help="0 means no limit")

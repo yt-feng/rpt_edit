@@ -18,7 +18,7 @@ on:
       model:
         description: "DeepSeek model for translation"
         required: true
-        default: "deepseek-v4-flash"
+        default: "deepseek-flash"
       deepseek_base_url:
         description: "DeepSeek API base URL"
         required: true
@@ -84,7 +84,7 @@ jobs:
           DATE_FOLDER="${{ github.event.inputs.date_folder || 'latest' }}"
           MAX_REPORTS="${{ github.event.inputs.max_reports || '1' }}"
           REPORT_OFFSET="${{ github.event.inputs.report_offset || '0' }}"
-          MODEL="${{ github.event.inputs.model || 'deepseek-v4-flash' }}"
+          MODEL="${{ github.event.inputs.model || 'deepseek-flash' }}"
           BASE_URL="${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}"
           echo "::notice::Building $MAX_REPORTS Portal translated report PDF(s) from xhs_notes/dropbox/$DATE_FOLDER"
           python scripts/build_portal_translated_reports.py \

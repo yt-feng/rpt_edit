@@ -310,6 +310,17 @@ async function main() {
     assert.equal(h.counts.translate, 1);
   });
 
+  await test("legacy Pro and Flash environment overrides share canonical Flash cache identity", async () => {
+    const h = harness({ DEEPSEEK_MODEL: "deepseek-v4-pro" });
+    await handle(request(), h.env, h.ctx, h.deps); await h.drain();
+    for (const model of ["deepseek-v4-flash", "deepseek-v4.1-flash", "deepseek-flash", "deepseek-v4-pro-0813", "deepseek-v4.1-pro-20260919"]) {
+      h.env.DEEPSEEK_MODEL = model;
+      assert.equal((await handle(request(input, "GET"), h.env, h.ctx, h.deps)).status, 200);
+    }
+    assert.equal(h.counts.translate, 1);
+    assert.equal(h.bucket.matching("/cache/").length, 1);
+  });
+
   await test("source, locale and model version changes have separate cache identities", async () => {
     const h = harness();
     await handle(request(), h.env, h.ctx, h.deps); await h.drain();
@@ -389,6 +400,16 @@ async function main() {
     const healthBody = await health.json();
     assert.equal(healthBody.locale_detail_translation_v1.enabled, false);
     assert.equal(healthBody.capabilities.locale_detail_translation_v1, true);
+    const modelPayloads = [];
+    context.fetchWithTimeout = async (_url, options) => {
+      modelPayloads.push(JSON.parse(options.body));
+      return new Response(JSON.stringify({ choices: [{ message: { content: '{"ok":true}' } }] }));
+    };
+    for (const model of ["deepseek-v4-pro", "deepseek-pro", "deepseek-v4-flash", "deepseek-v4.1-flash", "deepseek-flash", "deepseek-v4-pro-0813", "deepseek-v4.1-pro-20260919"]) {
+      await context.deepseekJson({ DEEPSEEK_API_KEY: "test-placeholder-only", DEEPSEEK_MODEL: model }, []);
+    }
+    assert.equal(modelPayloads.length, 7);
+    assert.ok(modelPayloads.every((payload) => payload.model === "deepseek-flash" && payload.thinking.type === "disabled"));
     assert.equal(importCalls, 0);
     const invalid = await context.worker.fetch(request({ ...input, locale: "zh-CN" }), h.env, h.ctx);
     assert.equal(invalid.status, 400);

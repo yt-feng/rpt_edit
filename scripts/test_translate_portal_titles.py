@@ -22,7 +22,16 @@ class TitleCheckpointTests(unittest.TestCase):
         self.root = Path(self.temporary.name)
         self.catalog_path = self.root / "catalog.json"
         self.cache_path = self.root / "cache-v1.json"
-        self.model = "deepseek-v4-flash"
+        self.model = "deepseek-flash"
+
+    def test_direct_title_request_normalizes_pro_override_before_transport(self):
+        args = mock.Mock(model="deepseek-v4-pro", deepseek_base_url="https://provider.example.invalid", retries=1, timeout=1)
+        response = mock.Mock(status_code=200)
+        response.json.return_value = {"choices": [{"message": {"content": "报告展望"}}]}
+        with mock.patch.dict(os.environ, {"DEEPSEEK_API_KEY": "test-key"}), \
+                mock.patch.object(titles.requests, "post", return_value=response) as transport:
+            self.assertEqual(titles.translate_title("Report outlook", args), "报告展望")
+        self.assertEqual(transport.call_args.kwargs["json"]["model"], "deepseek-flash")
 
     def write_catalog(self, items, **metadata):
         payload = {"schema_version": 1, "items": items, **metadata}
