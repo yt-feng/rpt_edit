@@ -1,0 +1,112 @@
+name: Hy-MT2 CPU translation comparison
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/hymt-translation-comparison.yml'
+      - 'scripts/compare_hymt_translation.py'
+      - 'scripts/hymt_translation_model_manifest.json'
+      - 'scripts/test_compare_hymt_translation.py'
+      - 'scripts/translation_quality_samples.json'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hymt-translation-comparison-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  compare:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate comparison and resolve immutable sources
+        id: manifest
+        shell: bash
+        run: |
+          python -B scripts/test_compare_hymt_translation.py
+          mkdir -p "$RUNNER_TEMP/hymt-comparison" "$RUNNER_TEMP/hymt-model"
+          cp scripts/hymt_translation_model_manifest.json scripts/translation_quality_samples.json "$RUNNER_TEMP/hymt-comparison/"
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          manifest = json.loads(Path('scripts/hymt_translation_model_manifest.json').read_text())
+          model = manifest['model']
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write(f"runtime_revision={manifest['runtime']['revision']}\n")
+              output.write(f"model_sha256={model['sha256']}\n")
+          with open(os.environ['GITHUB_ENV'], 'a') as output:
+              output.write(f"HYM_MODEL_URL=https://huggingface.co/{model['repository']}/resolve/{model['revision']}/{model['filename']}\n")
+              output.write(f"HYM_MODEL_FILE={model['filename']}\n")
+              output.write(f"HYM_MODEL_SHA256={model['sha256']}\n")
+          PY
+      - name: Check out official pinned llama.cpp source
+        uses: actions/checkout@v4
+        with:
+          repository: ggml-org/llama.cpp
+          ref: ${{ steps.manifest.outputs.runtime_revision }}
+          path: .hymt-llama.cpp
+          persist-credentials: false
+      - name: Build official CPU runtime on this runner
+        shell: bash
+        run: |
+          test "$(git -C .hymt-llama.cpp rev-parse HEAD)" = '${{ steps.manifest.outputs.runtime_revision }}'
+          cmake -S .hymt-llama.cpp -B .hymt-llama.cpp/build \
+            -DCMAKE_BUILD_TYPE=Release -DLLAMA_BUILD_IS_DEV=OFF -DGGML_NATIVE=ON \
+            -DGGML_CUDA=OFF -DGGML_METAL=OFF -DGGML_VULKAN=OFF \
+            -DLLAMA_BUILD_TESTS=OFF -DLLAMA_BUILD_EXAMPLES=OFF \
+            -DLLAMA_BUILD_SERVER=ON -DLLAMA_BUILD_APP=OFF -DLLAMA_OPENSSL=OFF \
+            -DLLAMA_BUILD_UI=OFF -DLLAMA_USE_PREBUILT_UI=OFF \
+            2>&1 | tee "$RUNNER_TEMP/hymt-comparison/build-configure.log"
+          cmake --build .hymt-llama.cpp/build --config Release --target llama-server -j 4 \
+            2>&1 | tee "$RUNNER_TEMP/hymt-comparison/build.log"
+      - name: Restore only the public official model
+        uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/hymt-model
+          key: hymt2-official-q8-v1-${{ steps.manifest.outputs.model_sha256 }}
+      - name: Download and verify pinned official Q8 model
+        shell: bash
+        run: |
+          model_path="$RUNNER_TEMP/hymt-model/$HYM_MODEL_FILE"
+          if [ ! -f "$model_path" ]; then
+            curl --fail --location --retry 2 --connect-timeout 30 --max-time 900 \
+              "$HYM_MODEL_URL" --output "$model_path.partial"
+            mv "$model_path.partial" "$model_path"
+          fi
+          printf '%s  %s\n' "$HYM_MODEL_SHA256" "$model_path" | sha256sum --check
+      - name: Translate complete public financial samples on CPU
+        shell: bash
+        run: |
+          python -u scripts/compare_hymt_translation.py \
+            --model "$RUNNER_TEMP/hymt-model/$HYM_MODEL_FILE" \
+            --runtime-source "$GITHUB_WORKSPACE/.hymt-llama.cpp" \
+            --server-bin "$GITHUB_WORKSPACE/.hymt-llama.cpp/build/bin/llama-server" \
+            --output-dir "$RUNNER_TEMP/hymt-comparison" \
+            --threads 4 --sample-timeout 180 --max-seconds 1800
+      - name: Show all public outputs for semantic review
+        if: always()
+        shell: bash
+        run: |
+          if [ -f "$RUNNER_TEMP/hymt-comparison/review.md" ]; then
+            cat "$RUNNER_TEMP/hymt-comparison/review.md" >> "$GITHUB_STEP_SUMMARY"
+          else
+            printf '%s\n' 'Hy-MT2 comparison did not reach inference. Inspect the build or download logs.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Upload public comparison and timing evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hymt-translation-comparison-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/hymt-comparison/
+          if-no-files-found: warn
+          retention-days: 14
