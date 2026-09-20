@@ -51,7 +51,7 @@ _KOREAN_FINANCIAL_TERMS = (
     (r'毛(?:利润|利)率|\bgross(?:\s+profit)?\s+margin\b', '매출총이익률', True),
     (r'(?:营业|经营)利润率|\boperating(?:\s+profit)?\s+margin\b', '영업이익률', True),
     (r'净利润率|净利率|\bnet(?:\s+profit)?\s+margin\b', '순이익률', True),
-    (r'毛(?:利润|利)(?!率)|\bgross\s+profit\b(?!\s+margin)', '매출총이익', False),
+    (r'毛利润(?!率)|毛利(?!润?率)|\bgross\s+profit\b(?!\s+margin)', '매출총이익', False),
     (r'(?:营业|经营)利润(?!率)|\boperating\s+profit\b(?!\s+margin)', '영업이익', False),
     (r'净利润(?!率)|\bnet\s+profit\b(?!\s+margin)', '순이익', False),
     (r'销售收入|营业收入|\bsales\s+revenue\b', '매출액', False),
