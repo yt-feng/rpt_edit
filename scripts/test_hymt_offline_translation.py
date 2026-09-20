@@ -61,6 +61,38 @@ class HyMTTests(unittest.TestCase):
         self.assertEqual(output, source.replace('# Revenue', '# 收入').replace('| Revenue', '| 收入'))
     def test_source_language_mixed_name(self):
         self.assertEqual(h._detect_source('The report from 中国银行 forecasts revenue growth in 2026.'), 'en')
+    def test_korean_gross_margin_confusion_is_rejected_and_not_cached(self):
+        translator = self.translator(lambda _: '영업 이익률은 23%이고 매출은 4.7% 감소했습니다.')
+        with self.assertRaisesRegex(h.OfflineTranslationError, 'financial margin'):
+            translator.translate('毛利率为23%，销售收入同比下降4.7%。', 'ko', 'zh')
+        self.assertFalse(list(Path(self.directory.name).rglob('*.json')))
+
+    def test_masked_locale_distinguishes_gross_and_operating_margin(self):
+        source = '毛利率为__KC_PH_000__，营业利润率为__KC_PH_001__。'
+        translator = self.translator(lambda _: '매출총이익률은 __KC_PH_000__, 영업이익률은 __KC_PH_001__입니다.')
+        result = translator.translate(source, 'ko', 'zh')
+        self.assertIn('매출총이익률', result)
+        self.assertIn('영업이익률', result)
+        self.assertEqual(self.engine.calls[0][0], source)
+
+    def test_glossary_works_for_arbitrary_english_gross_margin_sentence(self):
+        source = 'Gross margin remained at 31%, while net profit margin was 7%.'
+        h.validate_result(source, '매출총이익률은 31%를 유지했으며 순이익률은 7%였습니다.', 'en', 'ko')
+        with self.assertRaises(h.OfflineTranslationError):
+            h.validate_result(source, '영업이익률은 31%를 유지했으며 순이익률은 7%였습니다.', 'en', 'ko')
+
+    def test_engine_prompt_adds_concept_glossary_without_replacing_source(self):
+        engine = object.__new__(h._HyMTEngine)
+        engine.port = 1
+        source = '毛利率为__KC_PH_000__。'
+        response = {'choices': [{'finish_reason': 'stop', 'message': {'content': '매출총이익률은 __KC_PH_000__입니다.'}}]}
+        with mock.patch.object(h, 'request_json', return_value=response) as request:
+            engine.translate(source, 'zh', 'ko')
+        prompt = request.call_args.args[2]['messages'][0]['content']
+        self.assertIn('毛利率 = 매출총이익률', prompt)
+        self.assertTrue(prompt.endswith(source))
+        self.assertEqual(h.financial_glossary(source, 'ja'), '')
+
     def test_no_local_inference(self):
         with mock.patch.dict(os.environ, {'GITHUB_ACTIONS': 'false'}):
             with self.assertRaisesRegex(h.OfflineTranslationError, 'restricted'):

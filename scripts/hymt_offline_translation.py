@@ -29,7 +29,7 @@ MANIFEST = json.loads(MANIFEST_PATH.read_text(encoding='utf-8'))
 PROVIDER = 'hymt'
 MODEL = MANIFEST['model']['repository']
 REVISION = MANIFEST['model']['revision']
-MODEL_ID = f"{MODEL}@{REVISION}:Q8_0:natural-sentence-v1:{hashlib.sha256(MANIFEST_PATH.read_bytes()).hexdigest()[:16]}"
+MODEL_ID = f"{MODEL}@{REVISION}:Q8_0:natural-sentence-v2-financial-terms:{hashlib.sha256(MANIFEST_PATH.read_bytes()).hexdigest()[:16]}"
 INSTALL_COMMAND = 'Use .github/actions/setup-offline-translation on a Linux GitHub Actions runner'
 _PLACEHOLDERS = re.compile(r'__[A-Za-z0-9_]+__')
 _LETTERS = re.compile(r'[A-Za-z\u3400-\u9fff\u3040-\u30ff\uac00-\ud7af\u0600-\u06ff]')
@@ -45,6 +45,45 @@ _OPAQUE = re.compile(
     r'|&(?:\#\d+|\#x[\da-fA-F]+|[A-Za-z]+);', re.DOTALL)
 _ENGINES: dict[str, object] = {}
 _LOCK = threading.RLock()
+# Finance vocabulary constrains individual concepts, never whole sentences.
+# Rates must remain distinct from the corresponding absolute profit amounts.
+_KOREAN_FINANCIAL_TERMS = (
+    (r'毛(?:利润|利)率|\bgross(?:\s+profit)?\s+margin\b', '매출총이익률', True),
+    (r'(?:营业|经营)利润率|\boperating(?:\s+profit)?\s+margin\b', '영업이익률', True),
+    (r'净利润率|净利率|\bnet(?:\s+profit)?\s+margin\b', '순이익률', True),
+    (r'毛(?:利润|利)(?!率)|\bgross\s+profit\b(?!\s+margin)', '매출총이익', False),
+    (r'(?:营业|经营)利润(?!率)|\boperating\s+profit\b(?!\s+margin)', '영업이익', False),
+    (r'净利润(?!率)|\bnet\s+profit\b(?!\s+margin)', '순이익', False),
+    (r'销售收入|营业收入|\bsales\s+revenue\b', '매출액', False),
+)
+
+
+def financial_glossary(text: str, target: str) -> str:
+    if target != 'ko':
+        return ''
+    constraints = []
+    for pattern, term, _is_rate in _KOREAN_FINANCIAL_TERMS:
+        match = re.search(pattern, text, re.I)
+        if match:
+            constraints.append(f'{match.group()} = {term}')
+    if not constraints:
+        return ''
+    return ('Use these Korean financial terms for the corresponding source concepts: '
+            + '; '.join(constraints)
+            + '. Keep gross, operating and net profit margins distinct from one another and from profit amounts. ')
+
+
+def validate_financial_terms(source: str, translated: str, target: str) -> None:
+    if target != 'ko':
+        return
+    compact = re.sub(r'\s+', '', translated)
+    expected = {term for pattern, term, is_rate in _KOREAN_FINANCIAL_TERMS
+                if is_rate and re.search(pattern, source, re.I)}
+    if any(term not in compact for term in expected):
+        raise OfflineTranslationError('Hy-MT2 changed or omitted a Korean financial margin concept')
+    # An isolated gross-margin assertion must not acquire an operating margin.
+    if '매출총이익률' in expected and '영업이익률' not in expected and '영업이익률' in compact:
+        raise OfflineTranslationError('Hy-MT2 confused gross margin with operating margin')
 
 class OfflineTranslationError(RuntimeError):
     """Missing pinned runtime or an incomplete/structurally invalid translation."""
@@ -113,6 +152,7 @@ def validate_result(source: str, result: str, source_language: str, target: str)
         raise OfflineTranslationError('Empty Hy-MT2 translation')
     if Counter(_PLACEHOLDERS.findall(source)) != Counter(_PLACEHOLDERS.findall(result)):
         raise OfflineTranslationError('Hy-MT2 changed, omitted, or duplicated a protected placeholder')
+    validate_financial_terms(source, result, target)
     problems = quantity_issues(source, result, source_language, target)
     if problems:
         raise OfflineTranslationError('Hy-MT2 quantity validation failed: ' + '; '.join(problems))
@@ -184,7 +224,8 @@ class _HyMTEngine:
         prompt = (f'Translate the following text into {LANGUAGES[target]}. '
                   'Note that you should only output the translated result without any additional explanation. '
                   'Preserve all __KC_PH_...__ and __HYMTPH_...__ placeholders exactly, including their order. '
-                  'Preserve Markdown formatting. Do not change financial facts, units, or comparisons.\n' + text)
+                  'Preserve Markdown formatting. Do not change financial facts, units, or comparisons. '
+                  + financial_glossary(text, target) + '\n' + text)
         response = request_json(self.port, '/v1/chat/completions', {
             'model': 'hymt-offline', 'messages': [{'role': 'user', 'content': prompt}],
             'stream': False, 'cache_prompt': False, **MANIFEST['sampling'],

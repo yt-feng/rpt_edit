@@ -1,12 +1,7 @@
 name: Compare offline financial translation models
 on:
   workflow_dispatch:
-  pull_request:
-    paths:
-      - 'scripts/compare_offline_translation_models.py'
-      - 'scripts/offline_translation_comparison_models.json'
-      - 'scripts/translation_quality_samples.json'
-      - '.github/workflows/offline-translation-model-comparison.yml'
+
 permissions:
   contents: read
 concurrency:

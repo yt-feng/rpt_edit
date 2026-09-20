@@ -13,6 +13,7 @@ import build_portal_translated_reports as reports
 import generate_test_podcast_video_eleven_batch as subtitles
 import generate_test_podcast_video_eleven_batch_v2 as subtitles_v2
 import translate_portal_titles as titles
+from offline_translation import atomic_json
 
 
 class OfflineTranslationCallerTests(unittest.TestCase):
@@ -24,7 +25,8 @@ class OfflineTranslationCallerTests(unittest.TestCase):
         module = ModuleType("offline_translation")
         module.OfflineTranslator = Mock(return_value=self.engine)
         module.MODEL_ID = "test-pinned-model"
-        module.PROVIDER = "argos-offline"
+        module.PROVIDER = "hymt"
+        module.atomic_json = atomic_json
         self.factory = module.OfflineTranslator
         patch.object(titles, "OfflineTranslator", self.factory).start()
         self.addCleanup(patch.stopall)
@@ -61,7 +63,7 @@ class OfflineTranslationCallerTests(unittest.TestCase):
             title, decision = reports.wechat_title_from_filename(
                 "Semiconductor output grows", "正文", "", Namespace(title_refine=True), editorial=False)
         self.assertEqual(title, "最终标题")
-        self.assertEqual(decision["translation_provider"], "argos-offline")
+        self.assertEqual(decision["translation_provider"], "hymt")
         selector.assert_called_once_with(["半导体产量增长"], "Semiconductor output grows", "", evidence_text="正文")
         self.paid.assert_not_called()
 
@@ -76,8 +78,8 @@ class OfflineTranslationCallerTests(unittest.TestCase):
                     patch.object(reports, "prepare_clean_markdown", return_value=("# Output\n\nMore output", [])), \
                     patch.object(reports, "render_pdf"):
                 result = reports.process_report(source, Path(tmp) / "out", 1, args)
-        self.assertEqual(result["body_provider"], "argos-offline")
-        self.assertEqual(result["title_provider"], "argos-offline")
+        self.assertEqual(result["body_provider"], "hymt")
+        self.assertEqual(result["title_provider"], "hymt")
         self.assertFalse(result["article_style"])
         self.paid.assert_not_called()
 

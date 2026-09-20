@@ -2,13 +2,6 @@ name: Hy-MT2 CPU translation comparison
 
 on:
   workflow_dispatch:
-  pull_request:
-    paths:
-      - '.github/workflows/hymt-translation-comparison.yml'
-      - 'scripts/compare_hymt_translation.py'
-      - 'scripts/hymt_translation_model_manifest.json'
-      - 'scripts/test_compare_hymt_translation.py'
-      - 'scripts/translation_quality_samples.json'
 
 permissions:
   contents: read
