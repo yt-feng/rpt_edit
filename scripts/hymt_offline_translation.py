@@ -29,7 +29,7 @@ MANIFEST = json.loads(MANIFEST_PATH.read_text(encoding='utf-8'))
 PROVIDER = 'hymt'
 MODEL = MANIFEST['model']['repository']
 REVISION = MANIFEST['model']['revision']
-MODEL_ID = f"{MODEL}@{REVISION}:Q8_0:natural-sentence-v2-financial-terms:{hashlib.sha256(MANIFEST_PATH.read_bytes()).hexdigest()[:16]}"
+MODEL_ID = f"{MODEL}@{REVISION}:Q8_0:natural-sentence-v3-controlled-terms:{hashlib.sha256(MANIFEST_PATH.read_bytes()).hexdigest()[:16]}"
 INSTALL_COMMAND = 'Use .github/actions/setup-offline-translation on a Linux GitHub Actions runner'
 _PLACEHOLDERS = re.compile(r'__[A-Za-z0-9_]+__')
 _LETTERS = re.compile(r'[A-Za-z\u3400-\u9fff\u3040-\u30ff\uac00-\ud7af\u0600-\u06ff]')
@@ -38,11 +38,16 @@ _LETTERS = re.compile(r'[A-Za-z\u3400-\u9fff\u3040-\u30ff\uac00-\ud7af\u0600-\u0
 _OPAQUE = re.compile(
     r'(?<!`)(?P<ticks>`+)(?!`).*?(?<!`)(?P=ticks)(?!`)'
     r'|!\[(?:\\.|[^\]\\])*\]\((?:[^()\n]|\([^()\n]*\))*\)'
+    r'|\[\[[A-Za-z0-9_:-]+\]\]'
+    r'|(?<=\]\()(?:(?:[^()\n]|\([^()\n]*\))+)(?=\))'
+    r'|(?<=\]\[)[^\]\n]+(?=\])'
+    r'|(?i:<(?:script|style|pre|code)\b[^>]*>.*?</(?:script|style|pre|code)\s*>)'
     r'|\$\$.*?\$\$'
     r'|(?<![\\\w])\$(?=[A-Za-z\\])(?=[^$\n]*[=^_{}+*/\\])[^$\n]+\$'
     r'|<!--.*?-->|<(?:"[^"]*"|\x27[^\x27]*\x27|[^\x27">])*>'
-    r'|(?:https?://|mailto:)[^\s<>\])]+(?:\([^\s<>]*\))?'
-    r'|&(?:\#\d+|\#x[\da-fA-F]+|[A-Za-z]+);', re.DOTALL)
+    r'|(?:https?://|mailto:)(?:[^\s<>\[\]()]|\([^\s<>\[\]()]*\))+'
+    r'|&(?:\#\d+|\#x[\da-fA-F]+|[A-Za-z]+);'
+    r'|\\.', re.DOTALL)
 _ENGINES: dict[str, object] = {}
 _LOCK = threading.RLock()
 # Finance vocabulary constrains individual concepts, never whole sentences.
@@ -74,6 +79,7 @@ def financial_glossary(text: str, target: str) -> str:
 
 
 def validate_financial_terms(source: str, translated: str, target: str) -> None:
+    """Optional review diagnostic; never called by the production release gate."""
     if target != 'ko':
         return
     compact = re.sub(r'\s+', '', translated)
@@ -134,17 +140,28 @@ def split_sentences(text: str, limit: int = 1800) -> list[str]:
     return parts
 
 
-def _mask(text: str) -> tuple[str, dict[str, str]]:
-    replacements = {}
-    def replace(match: re.Match) -> str:
-        index = len(replacements)
+def _mask(text: str, target: str) -> tuple[str, dict[str, str], dict[str, str]]:
+    replacements: dict[str, str] = {}
+    terms: dict[str, str] = {}
+    def reserve(value: str, dictionary: dict[str, str]) -> str:
+        index = len(replacements) + len(terms)
         token = f'__HYMTPH_{index:04d}__'
-        while token in text or token in replacements:
+        while token in text or token in replacements or token in terms:
             index += 1
             token = f'__HYMTPH_{index:04d}__'
-        replacements[token] = match.group()
+        dictionary[token] = value
         return token
-    return _OPAQUE.sub(replace, text), replacements
+    masked = _OPAQUE.sub(lambda match: reserve(match.group(), replacements), text)
+    if target == 'ko':
+        for pattern, term, _is_rate in _KOREAN_FINANCIAL_TERMS:
+            masked = re.sub(pattern, lambda _match, term=term: reserve(term, terms), masked, flags=re.I)
+    return masked, replacements, terms
+
+
+def _restore_terms(value: str, terms: dict[str, str]) -> str:
+    for token, term in terms.items():
+        value = value.replace(token, term)
+    return value
 
 
 def validate_result(source: str, result: str, source_language: str, target: str) -> None:
@@ -152,14 +169,17 @@ def validate_result(source: str, result: str, source_language: str, target: str)
         raise OfflineTranslationError('Empty Hy-MT2 translation')
     if Counter(_PLACEHOLDERS.findall(source)) != Counter(_PLACEHOLDERS.findall(result)):
         raise OfflineTranslationError('Hy-MT2 changed, omitted, or duplicated a protected placeholder')
-    validate_financial_terms(source, result, target)
+    # Korean/Japanese GEO copy is gated on structure and quantities, not wording.
     problems = quantity_issues(source, result, source_language, target)
     if problems:
         raise OfflineTranslationError('Hy-MT2 quantity validation failed: ' + '; '.join(problems))
     # Structural punctuation, unlike linguistic punctuation, must stay exact.
-    for marker in ('|', '[', ']', '**', '~~'):
+    for marker in ('|', '[', ']', '*', '_', '~', '`'):
         if source.count(marker) != result.count(marker):
             raise OfflineTranslationError(f'Hy-MT2 changed Markdown structure: {marker}')
+    destination_shape = r'\]\(__HYMTPH_\d+__\)|\]\[__HYMTPH_\d+__\]'
+    if Counter(re.findall(destination_shape, source)) != Counter(re.findall(destination_shape, result)):
+        raise OfflineTranslationError('Hy-MT2 changed a Markdown link destination boundary')
     clean = _PLACEHOLDERS.sub('', result)
     if _LETTERS.search(_PLACEHOLDERS.sub('', source)):
         scripts = {'zh': r'[\u3400-\u9fff]', 'en': r'[A-Za-z]', 'ko': r'[\uac00-\ud7af]',
@@ -224,6 +244,8 @@ class _HyMTEngine:
         prompt = (f'Translate the following text into {LANGUAGES[target]}. '
                   'Note that you should only output the translated result without any additional explanation. '
                   'Preserve all __KC_PH_...__ and __HYMTPH_...__ placeholders exactly, including their order. '
+                  'Do not append inferred units or percent signs to placeholders. '
+                  'Each __HYMTPH_...__ is an already translated noun or protected resource; integrate it without rewriting it. '
                   'Preserve Markdown formatting. Do not change financial facts, units, or comparisons. '
                   + financial_glossary(text, target) + '\n' + text)
         response = request_json(self.port, '/v1/chat/completions', {
@@ -238,10 +260,13 @@ class _HyMTEngine:
 
 class HyMTOfflineTranslator:
     def __init__(self, cache_dir: str | Path | None = None, *, model_dir: str | Path | None = None,
-                 engine_factory: Callable[[str, str], object] | None = None, batch_size: int = 1):
+                 engine_factory: Callable[[str, str], object] | None = None, batch_size: int = 1,
+                 diagnostic_callback: Callable[[dict], None] | None = None):
         self.cache_dir = Path(cache_dir or os.environ.get('HYMT_TRANSLATION_CACHE') or os.environ.get('PORTAL_OFFLINE_TRANSLATION_CACHE', '.cache/hymt-translation'))
         self.model_dir = Path(model_dir or os.environ.get('HYMT_MODEL_DIR', '.cache/hymt-model'))
         self._engine_factory = engine_factory
+        # Explicit opt-in for the fixed public smoke corpus only; never printed or persisted here.
+        self._diagnostic_callback = diagnostic_callback
         self.model_id = MODEL_ID
         self.stats = {'cache_hits': 0, 'translated_fragments': 0, 'batch_requests': 0}
 
@@ -263,7 +288,7 @@ class HyMTOfflineTranslator:
                     'target_language': target, 'source_sha256': hashlib.sha256(core.encode()).hexdigest()}
         key = hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()
         path = self.cache_dir / key[:2] / f'{key}.json'
-        masked, replacements = _mask(core)
+        masked, replacements, terms = _mask(core, target)
         try:
             cached = json.loads(path.read_text(encoding='utf-8'))
             if all(cached.get(name) == value for name, value in identity.items()):
@@ -277,6 +302,10 @@ class HyMTOfflineTranslator:
             try:
                 with _LOCK:
                     value = self._engine(detected, target).translate(masked, detected, target)
+                if self._diagnostic_callback is not None:
+                    self._diagnostic_callback({'model_input': masked, 'raw_translation': value,
+                                               'source_language': detected, 'target_language': target,
+                                               'controlled_terms': dict(terms)})
                 validate_result(masked, value, detected, target)
             except OfflineTranslationError:
                 raise
@@ -285,6 +314,7 @@ class HyMTOfflineTranslator:
             atomic_json(path, {**identity, 'translation': value, 'created_at': datetime.now(timezone.utc).isoformat()})
             self.stats['translated_fragments'] += 1
             self.stats['batch_requests'] += 1
+        value = _restore_terms(value, terms)
         for token, original in replacements.items():
             value = value.replace(token, original)
         return leading + value.strip() + trailing

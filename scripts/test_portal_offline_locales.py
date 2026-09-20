@@ -97,5 +97,26 @@ class OfflineLocaleTests(unittest.TestCase):
         self.assertTrue(self.path.exists())
 
 
+class PercentPlaceholderRestorationTests(unittest.TestCase):
+    def test_added_percent_is_removed_only_for_known_percent_value(self):
+        protected = b.protect_text('收入增长12.5%，利润率为8%。')
+        translated = '売上は__KC_PH_000__%増加し、利益率は__KC_PH_001__％でした。'
+        self.assertEqual(protected.restore(translated), '売上は12.5%増加し、利益率は8%でした。')
+
+    def test_plain_number_with_model_percent_is_not_silently_rewritten(self):
+        protected = b.protect_text('数值为8。')
+        self.assertEqual(protected.restore('__KC_PH_000__%'), '8%')
+
+    def test_literal_source_double_percent_is_preserved(self):
+        protected = b.protect_text('显示12.5%%。')
+        self.assertEqual(protected.restore('__KC_PH_000__%'), '12.5%%')
+        self.assertEqual(protected.restore('__KC_PH_000__%%'), '12.5%%')
+
+    def test_unrelated_percent_and_nonadjacent_symbols_are_not_rewritten(self):
+        protected = b.protect_text('增长12.5%。')
+        translated = '__KC_PH_000__相当; 另一个真实符号%%'
+        self.assertEqual(protected.restore(translated), '12.5%相当; 另一个真实符号%%')
+
+
 if __name__ == '__main__':
     unittest.main()

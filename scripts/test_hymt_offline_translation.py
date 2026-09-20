@@ -61,25 +61,35 @@ class HyMTTests(unittest.TestCase):
         self.assertEqual(output, source.replace('# Revenue', '# 收入').replace('| Revenue', '| 收入'))
     def test_source_language_mixed_name(self):
         self.assertEqual(h._detect_source('The report from 中国银行 forecasts revenue growth in 2026.'), 'en')
-    def test_korean_gross_margin_confusion_is_rejected_and_not_cached(self):
+    def test_missing_controlled_term_placeholder_is_rejected_and_not_cached(self):
         translator = self.translator(lambda _: '영업 이익률은 23%이고 매출은 4.7% 감소했습니다.')
-        with self.assertRaisesRegex(h.OfflineTranslationError, 'financial margin'):
+        with self.assertRaisesRegex(h.OfflineTranslationError, 'placeholder'):
             translator.translate('毛利率为23%，销售收入同比下降4.7%。', 'ko', 'zh')
         self.assertFalse(list(Path(self.directory.name).rglob('*.json')))
 
     def test_masked_locale_distinguishes_gross_and_operating_margin(self):
         source = '毛利率为__KC_PH_000__，营业利润率为__KC_PH_001__。'
-        translator = self.translator(lambda _: '매출총이익률은 __KC_PH_000__, 영업이익률은 __KC_PH_001__입니다.')
+        translator = self.translator(lambda _: '__HYMTPH_0000__은 __KC_PH_000__, __HYMTPH_0001__은 __KC_PH_001__입니다.')
         result = translator.translate(source, 'ko', 'zh')
         self.assertIn('매출총이익률', result)
         self.assertIn('영업이익률', result)
-        self.assertEqual(self.engine.calls[0][0], source)
+        self.assertEqual(self.engine.calls[0][0], '__HYMTPH_0000__为__KC_PH_000__，__HYMTPH_0001__为__KC_PH_001__。')
 
     def test_glossary_works_for_arbitrary_english_gross_margin_sentence(self):
         source = 'Gross margin remained at 31%, while net profit margin was 7%.'
-        h.validate_result(source, '매출총이익률은 31%를 유지했으며 순이익률은 7%였습니다.', 'en', 'ko')
+        h.validate_financial_terms(source, '매출총이익률은 31%를 유지했으며 순이익률은 7%였습니다.', 'ko')
         with self.assertRaises(h.OfflineTranslationError):
-            h.validate_result(source, '영업이익률은 31%를 유지했으며 순이익률은 7%였습니다.', 'en', 'ko')
+            h.validate_financial_terms(source, '영업이익률은 31%를 유지했으며 순이익률은 7%였습니다.', 'ko')
+
+    def test_korean_wording_diagnostic_does_not_block_runtime_validation(self):
+        source = 'Gross margin was 31%.'
+        h.validate_result(source, '영업이익률은 31%였습니다.', 'en', 'ko')
+        translator = self.translator(lambda _: '__HYMTPH_0000__ (영업이익률)은 31%입니다.')
+        with mock.patch.object(h, 'validate_financial_terms', side_effect=AssertionError('Optional review must not block release')):
+            first = translator.translate(source, 'ko', 'en')
+            self.assertEqual(translator.translate(source, 'ko', 'en'), first)
+        with self.assertRaisesRegex(h.OfflineTranslationError, 'quantity'):
+            h.validate_result(source, '영업이익률은 32%였습니다.', 'en', 'ko')
 
     def test_engine_prompt_adds_concept_glossary_without_replacing_source(self):
         engine = object.__new__(h._HyMTEngine)
@@ -92,6 +102,61 @@ class HyMTTests(unittest.TestCase):
         self.assertIn('毛利率 = 매출총이익률', prompt)
         self.assertTrue(prompt.endswith(source))
         self.assertEqual(h.financial_glossary(source, 'ja'), '')
+
+    def test_controlled_nouns_leave_quantities_and_predicates_in_one_model_call(self):
+        source = 'Gross margin remained at 31%, while operating profit increased by 7%.'
+        translator = self.translator(lambda _: '__HYMTPH_0000__은 31%를 유지했으며 __HYMTPH_0001__은 7% 증가했습니다.')
+        output = translator.translate(source, 'ko', 'en')
+        self.assertIn('매출총이익률', output)
+        self.assertIn('영업이익', output)
+        self.assertEqual(self.engine.calls[0][0], '__HYMTPH_0000__ remained at 31%, while __HYMTPH_0001__ increased by 7%.')
+        self.assertEqual(len(self.engine.calls), 1)
+
+    def test_public_diagnostic_opt_in_retains_rejected_raw_without_caching(self):
+        captured = []
+        engine = Engine(lambda _: '잘못된 출력 100%')
+        translator = h.OfflineTranslator(cache_dir=self.directory.name,
+            engine_factory=lambda s,t: engine, diagnostic_callback=captured.append)
+        with self.assertRaises(h.OfflineTranslationError):
+            translator.translate('Gross margin was 31%.', 'ko', 'en')
+        self.assertEqual(captured[0]['raw_translation'], '잘못된 출력 100%')
+        self.assertEqual(captured[0]['model_input'], '__HYMTPH_0000__ was 31%.')
+        self.assertFalse(list(Path(self.directory.name).rglob('*.json')))
+        self.assertIsNone(h.OfflineTranslator(cache_dir=self.directory.name)._diagnostic_callback)
+
+    def test_report_image_marker_standalone_never_loads_model(self):
+        translator = self.translator(lambda _: self.fail('Opaque-only marker must not reach the model'))
+        source = '[[PORTAL_IMAGE_001]]\n'
+        self.assertEqual(translator.translate_markdown(source, 'zh', 'en'), source)
+        self.assertEqual(self.engine.calls, [])
+
+    def test_report_image_marker_inline_is_protected_with_its_sentence(self):
+        translator = self.translator(lambda text: text.replace('See', '参见').replace('for the chart', '中的图表'))
+        source = 'See [[PORTAL_IMAGE_001]] for the chart.'
+        output = translator.translate_markdown(source, 'zh', 'en')
+        self.assertIn('[[PORTAL_IMAGE_001]]', output)
+        self.assertEqual(self.engine.calls[0][0], 'See __HYMTPH_0000__ for the chart.')
+
+    def test_relative_nested_and_reference_link_destinations_stay_exact(self):
+        translator = self.translator(lambda text: text.replace('See', '参见').replace('report', '报告').replace('source', '来源'))
+        source = 'See [report](../files/report_(v2).pdf) and [source][report-2026].'
+        output = translator.translate_markdown(source, 'zh', 'en')
+        self.assertIn('[报告](../files/report_(v2).pdf)', output)
+        self.assertIn('[来源][report-2026]', output)
+        self.assertNotIn('report_(v2)', self.engine.calls[0][0])
+
+    def test_inline_raw_code_and_escaped_markdown_stay_exact(self):
+        translator = self.translator(lambda text: text.replace('Read', '阅读').replace('and', '和'))
+        source = r'Read <code>gross_margin = 23</code> and \*literal\*.'
+        output = translator.translate(source, 'zh', 'en')
+        self.assertIn('<code>gross_margin = 23</code>', output)
+        self.assertIn(r'\*literal\*', output)
+        self.assertNotIn('gross_margin', self.engine.calls[0][0])
+
+    def test_link_delimiter_damage_is_rejected(self):
+        translator = self.translator(lambda _: '参见[报告]__HYMTPH_0000__。')
+        with self.assertRaisesRegex(h.OfflineTranslationError, 'destination boundary'):
+            translator.translate('See [report](../report.pdf).', 'zh', 'en')
 
     def test_no_local_inference(self):
         with mock.patch.dict(os.environ, {'GITHUB_ACTIONS': 'false'}):

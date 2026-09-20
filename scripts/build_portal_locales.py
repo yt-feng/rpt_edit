@@ -325,6 +325,18 @@ class ProtectedText:
         value = translated
         for index, replacement in enumerate(self.replacements):
             token = f"__KC_PH_{index:03d}__"
+            # Only a placeholder whose stored source value already includes a
+            # percent sign may absorb a duplicate sign supplied by the model.
+            # Preserve any signs explicitly present beside that token in the
+            # canonical source (e.g. a literal source 12.5%%).
+            if re.fullmatch(r"[+−-]?\d+(?:[.,]\d+)*\s*[%％٪]", replacement):
+                adjacent = re.search(re.escape(token) + r"((?:[ \t]*[%％٪])*)", self.canonical)
+                source_suffix = adjacent[1] if adjacent else ""
+                source_count = len(re.findall(r"[%％٪]", source_suffix))
+                def remove_added_percent(match: re.Match[str]) -> str:
+                    added_count = len(re.findall(r"[%％٪]", match[1]))
+                    return token + source_suffix if added_count > source_count else match.group()
+                value = re.sub(re.escape(token) + r"((?:[ \t]*[%％٪])+)", remove_added_percent, value)
             # Numeric masking may include the source sentence's terminal dot.
             # If a translated sentence adds a year suffix or its own final
             # punctuation, keep only one separator (2026年 / 2026.).
