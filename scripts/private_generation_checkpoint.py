@@ -22,6 +22,7 @@ from private_workflow_handoff import download_directory, upload_directory
 CHECKPOINT_FILE = "_generation_checkpoint.json"
 VERSION = 1
 GENERATION_FILES = (
+    ".github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml",
     "scripts/pdf_to_xhs_batch.py", "scripts/run_pdf_to_xhs_in_batches.py",
     "scripts/finalize_outputs.py", "scripts/postprocess_podcast.py",
     "scripts/sensitive_content_guard.py", "scripts/wechat_title_optimizer.py",
@@ -31,6 +32,8 @@ GENERATION_FILES = (
 OPTION_NAMES = (
     "model", "deepseek_base_url", "mineru_model", "language", "ocr",
     "wechat_length", "community_cta", "reports_per_shard", "batch_size",
+    "generate_xhs", "generate_xianyu", "generate_podcast", "generate_audio",
+    "generate_english_article", "generate_zhihu", "max_images",
 )
 
 

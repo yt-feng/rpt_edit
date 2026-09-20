@@ -82,6 +82,14 @@ class GenerationCheckpointTests(unittest.TestCase):
             self.assertNotEqual(self.identity, checkpoint.input_identity(self.manifest, 0, 5, self.options, REPO))
         self.assertEqual(self.identity, checkpoint.input_identity(self.manifest, 0, 5, {**self.options, "force_reprocess": "true"}, REPO))
 
+    def test_reenabled_generation_cannot_reuse_disabled_output_checkpoint(self):
+        self.assertIn(".github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml", checkpoint.GENERATION_FILES)
+        for name in ("generate_xhs", "generate_xianyu", "generate_podcast", "generate_audio"):
+            with self.subTest(name=name):
+                disabled = checkpoint.input_identity(self.manifest, 0, 5, {**self.options, name: "false"}, REPO)
+                enabled = checkpoint.input_identity(self.manifest, 0, 5, {**self.options, name: "true"}, REPO)
+                self.assertNotEqual(disabled, enabled)
+
     def test_source_identity_matches_lexical_batch_order_above_99_reports(self):
         rows = [{**self.row, "process_rank": rank, "process_local_path": f"_selected/{rank:02d}-report-{rank}.pdf"} for rank in (10, 11, 100)]
         self.manifest.write_text(json.dumps(rows))
