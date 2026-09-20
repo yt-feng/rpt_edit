@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "id": "0c7716e861ffbf608a163733e5ba5530c8d09d605213fe4e0cc1f5ad27ac5de2",
+  "slug": "bbg-20260920-0c7716e861ffbf60",
+  "date": "2026-09-20",
+  "title": "黄仁勋谈AI产品测试：未就绪就应暂缓发布",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-09-17/huang-says-ai-firms-should-be-more-rigorous-in-testing-video",
+  "start": 0.0,
+  "end": 83.88,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 9.72,
+      "en": "It is the responsibility of the AI companies, ourselves, to develop the technology safely and to properly test it.",
+      "zh": "AI公司有责任安全开发技术并做好测试。"
+    },
+    {
+      "start": 9.72,
+      "end": 22.8,
+      "en": "There were incidents, and those incidents thankfully didn't know harm, but those incidents are a reminder that as we move from labs to product development, the companies have to",
+      "zh": "发生过一些事件，所幸未造成伤害，但提醒我们：从实验室走向产品开发，公司必须"
+    },
+    {
+      "start": 22.8,
+      "end": 37.88,
+      "en": "become much more rigorous in testing and securing and making sure that the products are ready for use before it's released, and in doing so, if it's not ready, just hold it back.",
+      "zh": "在测试和安全上更加严谨，确保产品发布前就绪，如果没准备好，就暂缓推出。"
+    },
+    {
+      "start": 37.88,
+      "end": 41.0,
+      "en": "You should go as fast as you can, but no faster than that.",
+      "zh": "应尽可能快，但不能超出准备就绪的限度。"
+    },
+    {
+      "start": 41.0,
+      "end": 45.44,
+      "en": "At the moment, the incidents are related to products not ready to be released.",
+      "zh": "目前这些事件都与产品尚未准备好发布有关。"
+    },
+    {
+      "start": 45.44,
+      "end": 54.16,
+      "en": "This is no different than, you know, an omelette's not ready to be released, or a car's not ready to be released, an airplane engine not ready to be released.",
+      "zh": "这就像煎蛋没做好、汽车没造好、飞机引擎没准备好一样。"
+    },
+    {
+      "start": 54.16,
+      "end": 63.28,
+      "en": "You should properly test it, you have rigorous testing systems, the testing labs should be contained, and products should not be released to the public until it's ready to",
+      "zh": "应充分测试，建立严谨的测试体系，测试实验室要隔离，产品就绪前不向公众发布，"
+    },
+    {
+      "start": 63.28,
+      "end": 74.84,
+      "en": "be used by the public. That's engineering, good old-fashioned engineering is not more than that, it's not less than that, and so we have to just go back to core engineering, make sure that we have to rigor",
+      "zh": "直到可供公众使用。这就是工程，传统工程不过如此，不多也不少，所以必须回归核心工程，确保严谨"
+    },
+    {
+      "start": 74.84,
+      "end": 78.32,
+      "en": "of testing these products properly before we release it to the public.",
+      "zh": "在产品向公众发布前进行充分测试。"
+    },
+    {
+      "start": 78.32,
+      "end": 83.88,
+      "en": "Of course, every government should be involved, because this is such an impactful technology.",
+      "zh": "当然，每个政府都应参与，因为这项技术影响深远。"
+    }
+  ]
+}

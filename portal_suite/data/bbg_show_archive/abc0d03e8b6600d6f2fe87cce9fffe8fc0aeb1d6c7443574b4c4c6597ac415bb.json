@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "id": "abc0d03e8b6600d6f2fe87cce9fffe8fc0aeb1d6c7443574b4c4c6597ac415bb",
+  "slug": "bbg-20260920-abc0d03e8b6600d6",
+  "date": "2026-09-20",
+  "title": "李开复谈前沿AI节奏与行业自律",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-09-17/01-ai-s-kai-fu-lee-on-pacing-frontier-ai-development-video",
+  "start": 0.0,
+  "end": 86.24,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 8.32,
+      "en": "When you look at news from the U.S. tech executives saying they want to pace the frontier, where do you think the motivations are coming from? What is the motivation there in you suspect?",
+      "zh": "当看到美国科技高管说要放缓前沿开发，你觉得动机是什么？你怀疑背后有什么？"
+    },
+    {
+      "start": 8.32,
+      "end": 20.16,
+      "en": "Yeah, I suspect they have in their labs something that's really great, but also really scary, and that if they release it, it would cause potential issues because could be used by bad guys,",
+      "zh": "我猜他们实验室里有很棒但也吓人的东西，一旦发布可能被坏人利用，"
+    },
+    {
+      "start": 20.8,
+      "end": 34.72,
+      "en": "cause issues on cyber security. This is my personal speculation, so I believe it's a genuine message to the world that AI has become super intelligent, and what should we do?",
+      "zh": "引发网络安全问题。这是我个人猜测，所以我认为这是向世界发出的真诚信号：AI已超级智能，我们该怎么办？"
+    },
+    {
+      "start": 35.76,
+      "end": 47.36,
+      "en": "That's the question. And in a whose job is it? Is it more a private sector job who are operating at the frontier? Is there room for regulation? Should it be the regulators or is it better fit to the",
+      "zh": "这就是问题。该由谁负责？是前沿运营的私营部门，还是监管有空间？该由监管者还是更懂的人来管？"
+    },
+    {
+      "start": 47.36,
+      "end": 59.36,
+      "en": "people that understand it best? If it's regulated, it has to be very fast-moving, because usual pace of regulation isn't going to catch up with the AI improvement. And until there's regulation,",
+      "zh": "如果监管，必须非常快，因为常规监管速度跟不上AI进步。在监管出台前，"
+    },
+    {
+      "start": 59.36,
+      "end": 67.28,
+      "en": "I think private sector discussions on ideas and self-discipline might be a reasonable solution.",
+      "zh": "我认为私营部门讨论想法和自律可能是合理方案。"
+    },
+    {
+      "start": 68.4,
+      "end": 80.56,
+      "en": "How does this affect, if any, what China is doing separately? On its own strategy and its own AI labs in the frontier, very much part of the ecosystem? Generally speaking, Chinese companies are",
+      "zh": "这对中国单独行动有何影响？其自身战略和前沿AI实验室是生态重要部分？总体而言，中国企业"
+    },
+    {
+      "start": 80.56,
+      "end": 86.24,
+      "en": "commercially oriented. They're more focused on building open-source models and applications.",
+      "zh": "更商业化，更专注于构建开源模型和应用。"
+    }
+  ]
+}
