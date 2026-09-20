@@ -10,7 +10,7 @@ from typing import Any
 
 import requests
 
-from deepseek_http import normalize_deepseek_model_name
+from deepseek_http import normalize_deepseek_model_name, request_with_retry
 
 try:
     from finalize_outputs import sanitize_text, trim_source_text
@@ -45,10 +45,10 @@ def call_deepseek(prompt: str, args: argparse.Namespace, label: str) -> str:
     api_key = os.getenv("DEEPSEEK_API_KEY")
     if not api_key:
         return f"未检测到 DEEPSEEK_API_KEY。请复制 prompt_for_zhihu.md 手动生成：{label}\n"
-    response = requests.post(
+    response = request_with_retry(
         args.deepseek_base_url.rstrip("/") + "/chat/completions",
         headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
-        json={
+        payload={
             "model": normalize_deepseek_model_name(args.model),
             "thinking": {"type": "disabled"},
             "temperature": 0.55,
@@ -57,7 +57,9 @@ def call_deepseek(prompt: str, args: argparse.Namespace, label: str) -> str:
                 {"role": "user", "content": prompt},
             ],
         },
+        label=label,
         timeout=240,
+        max_attempts=1,
     )
     data = parse_json_response(response, f"DeepSeek generate {label}")
     return sanitize_text(data["choices"][0]["message"]["content"].strip() + "\n")

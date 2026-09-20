@@ -51,6 +51,7 @@ permissions:
   actions: read
 
 env:
+  DEEPSEEK_USAGE_DIR: ${{ github.workspace }}/../deepseek-usage
   PYTHONUNBUFFERED: "1"
 
 concurrency:
@@ -184,10 +185,33 @@ jobs:
             --include-types "${{ github.event.inputs.include_types || 'Articles,Newsletters,White Papers,Crypto Reports' }}" \
             2>&1 | tee ark_feed_progress.log
 
-      - name: Build ARK Portal translated articles
+      - name: Set up free local translation models
+        if: ${{ steps.replay.outputs.enabled != 'true' && steps.fetch.outputs.article_count != '0' }}
+        uses: ./.github/actions/setup-offline-translation
+        with:
+          targets: zh,en
+
+      - name: Restore private report translation checkpoint
+        id: translation_checkpoint
         if: ${{ steps.replay.outputs.enabled != 'true' && steps.fetch.outputs.article_count != '0' }}
         env:
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_REPORT_TRANSLATION_API_KEY }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python -m pip install boto3
+          echo "REPORT_TRANSLATION_CACHE_DIR=$RUNNER_TEMP/report-translation-cache" >> "$GITHUB_ENV"
+          python scripts/private_translation_checkpoint.py restore \
+            --scope ark --date-folder "${{ steps.fetch.outputs.date_folder }}" \
+            --directory "$RUNNER_TEMP/report-translation-cache"
+
+      - name: Build ARK Portal translated articles
+        timeout-minutes: 45
+        if: ${{ steps.replay.outputs.enabled != 'true' && steps.fetch.outputs.article_count != '0' }}
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_REPORT_NOTES_API_KEY }}
+          DEEPSEEK_USAGE_STAGE: report-article
           DEEPSEEK_API_KEY_BACKUP: ""
           DEEPSEEK_BASE_URL: "https://api.deepseek.com"
         run: |
@@ -200,6 +224,18 @@ jobs:
             --max-reports "all" \
             --title-guard \
             2>&1 | tee ark_translated_progress.log
+
+      - name: Save completed private report translations even on failure
+        if: ${{ always() && steps.translation_checkpoint.outcome == 'success' }}
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python scripts/private_translation_checkpoint.py save \
+            --scope ark --date-folder "${{ steps.fetch.outputs.date_folder }}" \
+            --directory "$RUNNER_TEMP/report-translation-cache"
 
       - name: Commit ARK feed state
         if: ${{ steps.replay.outputs.enabled != 'true' && steps.fetch.outputs.article_count != '0' }}
@@ -242,6 +278,23 @@ jobs:
             portal_translated_reports/ark
           if-no-files-found: error
           overwrite: true
+
+      - name: Summarize observed DeepSeek usage
+        if: ${{ always() && hashFiles('scripts/summarize_deepseek_usage.py') != '' }}
+        run: |
+          python scripts/summarize_deepseek_usage.py \
+            --input-dir "$DEEPSEEK_USAGE_DIR" \
+            --output "$DEEPSEEK_USAGE_DIR/summary.json" \
+            --markdown "$DEEPSEEK_USAGE_DIR/summary.md" --github-summary
+
+      - name: Upload content-free DeepSeek usage
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: deepseek-usage-${{ github.job }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ env.DEEPSEEK_USAGE_DIR }}
+          if-no-files-found: ignore
+          retention-days: 30
 
   upload-wechat-drafts:
     needs: fetch-and-build

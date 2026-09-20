@@ -1,0 +1,29 @@
+{
+  "opus-en-zh": {
+    "model_id": "Helsinki-NLP/opus-mt-en-zh",
+    "revision": "408d9bc410a388e1d9aef112a2daba955b945255",
+    "license": "apache-2.0",
+    "family": "marian",
+    "source": "en",
+    "target": "zh",
+    "source_prefix": ">>cmn_Hans<< "
+  },
+  "opus-zh-en": {
+    "model_id": "Helsinki-NLP/opus-mt-zh-en",
+    "revision": "cf109095479db38d6df799875e34039d4938aaa6",
+    "license": "cc-by-4.0",
+    "family": "marian",
+    "source": "zh",
+    "target": "en",
+    "source_prefix": ""
+  },
+  "m2m100-418m": {
+    "model_id": "facebook/m2m100_418M",
+    "revision": "55c2e61bbf05dfb8d7abccdc3fae6fc8512fd636",
+    "license": "mit",
+    "family": "m2m100",
+    "source": "*",
+    "target": "*",
+    "source_prefix": ""
+  }
+}

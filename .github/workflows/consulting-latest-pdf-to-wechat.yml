@@ -51,6 +51,7 @@ permissions:
   contents: write
 
 env:
+  DEEPSEEK_USAGE_DIR: ${{ github.workspace }}/../deepseek-usage
   PYTHONUNBUFFERED: "1"
   PRIVATE_HANDOFF_ROOT: "_private-workflow-handoff/consulting"
 
@@ -116,11 +117,9 @@ jobs:
             --force-reprocess "${{ github.event.inputs.force_reprocess || 'false' }}" \
             2>&1 | tee consulting_fetch_progress.log
 
-      - name: Generate MinerU source text and notes
+      - name: Extract MinerU source and original images without paid copy
         if: ${{ steps.fetch.outputs.pdf_count != '0' }}
         env:
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_REPORT_NOTES_API_KEY }}
-          DEEPSEEK_API_KEY_BACKUP: ""
           MINER_U: ${{ secrets.MINER_U }}
           MINER_U_2: ${{ secrets.MINER_U_2 }}
           MINER_U_3: ${{ secrets.MINER_U_3 }}
@@ -137,12 +136,37 @@ jobs:
             --input-dir _consulting_latest_pdfs \
             --output-dir "xhs_notes/consulting/$DATE" \
             --batch-size 5 \
+            --chart-source-only \
+            --keep-mineru-raw \
             --skip-existing "$SKIP_EXISTING" 2>&1 | tee consulting_xhs_progress.log
 
-      - name: Build Portal translated report PDFs
+      - name: Set up free local translation models
+        if: ${{ steps.fetch.outputs.pdf_count != '0' }}
+        uses: ./.github/actions/setup-offline-translation
+        with:
+          targets: zh,en
+
+      - name: Restore private report translation checkpoint
+        id: translation_checkpoint
         if: ${{ steps.fetch.outputs.pdf_count != '0' }}
         env:
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_REPORT_TRANSLATION_API_KEY }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python -m pip install boto3
+          echo "REPORT_TRANSLATION_CACHE_DIR=$RUNNER_TEMP/report-translation-cache" >> "$GITHUB_ENV"
+          python scripts/private_translation_checkpoint.py restore \
+            --scope consulting --date-folder "${{ steps.fetch.outputs.date_folder }}" \
+            --directory "$RUNNER_TEMP/report-translation-cache"
+
+      - name: Build Portal translated report PDFs
+        timeout-minutes: 60
+        if: ${{ steps.fetch.outputs.pdf_count != '0' }}
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_REPORT_NOTES_API_KEY }}
+          DEEPSEEK_USAGE_STAGE: report-article
           DEEPSEEK_API_KEY_BACKUP: ""
           DEEPSEEK_BASE_URL: "https://api.deepseek.com"
         run: |
@@ -158,6 +182,18 @@ jobs:
             --max-reports "${{ github.event.inputs.max_translated || 'all' }}" \
             --title-guard \
             2>&1 | tee consulting_translated_progress.log
+
+      - name: Save completed private report translations even on failure
+        if: ${{ always() && steps.translation_checkpoint.outcome == 'success' }}
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python scripts/private_translation_checkpoint.py save \
+            --scope consulting --date-folder "${{ steps.fetch.outputs.date_folder }}" \
+            --directory "$RUNNER_TEMP/report-translation-cache"
 
       - name: Commit PDF link archive and seen state
         run: |
@@ -188,6 +224,23 @@ jobs:
             consulting_translated_progress.log
           if-no-files-found: ignore
           retention-days: 2
+
+      - name: Summarize observed DeepSeek usage
+        if: ${{ always() && hashFiles('scripts/summarize_deepseek_usage.py') != '' }}
+        run: |
+          python scripts/summarize_deepseek_usage.py \
+            --input-dir "$DEEPSEEK_USAGE_DIR" \
+            --output "$DEEPSEEK_USAGE_DIR/summary.json" \
+            --markdown "$DEEPSEEK_USAGE_DIR/summary.md" --github-summary
+
+      - name: Upload content-free DeepSeek usage
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: deepseek-usage-${{ github.job }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ env.DEEPSEEK_USAGE_DIR }}
+          if-no-files-found: ignore
+          retention-days: 30
 
   upload-wechat-drafts:
     needs: fetch-and-build

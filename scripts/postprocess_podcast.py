@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """Post-process generated report folders.
 
-Adds:
+By default only image references are updated. Paid English article and podcast
+generation require explicit opt-in.
+
+Optional outputs:
 1. WeChat markdown image refs using original MinerU/source images.
 2. English long-form article.
 3. Conversational Chinese and English podcast scripts.
@@ -446,6 +449,8 @@ def render_video(audio_path: Path, timeline: list[dict[str, Any]], image_paths: 
 
 
 def process_item(item_dir: Path, args: argparse.Namespace) -> dict[str, Any]:
+    from wechat_editorial_binding import advance_binding, read_bound_article
+
     status_path = item_dir / "status.json"
     status: dict[str, Any] = {}
     if status_path.exists():
@@ -457,9 +462,19 @@ def process_item(item_dir: Path, args: argparse.Namespace) -> dict[str, Any]:
     image_paths = find_original_images(item_dir)
     article_path = item_dir / "wechat_article.md"
     if article_path.exists() and image_paths:
+        binding_before = read_bound_article(item_dir)
         article = article_path.read_text(encoding="utf-8", errors="ignore")
         article_path.write_text(embed_original_images(article, image_paths, max_images=args.max_wechat_images, alt="研报原图"), encoding="utf-8")
+        advance_binding(item_dir, binding_before, status=status)
         status["wechat_images"] = image_paths[: args.max_wechat_images]
+
+    generate_english = as_bool(getattr(args, "generate_english_article", False))
+    generate_podcast = as_bool(getattr(args, "generate_podcast", False))
+    status["podcast_generation_enabled"] = generate_podcast
+    status["english_article_generation_enabled"] = generate_english
+    if not generate_english and not generate_podcast:
+        status_path.write_text(json.dumps(status, ensure_ascii=False, indent=2), encoding="utf-8")
+        return status
 
     source_path = item_dir / "source_mineru.md"
     if not source_path.exists():
@@ -469,18 +484,22 @@ def process_item(item_dir: Path, args: argparse.Namespace) -> dict[str, Any]:
 
     source_text = source_path.read_text(encoding="utf-8", errors="ignore")
 
-    en_article_prompt = build_english_article_prompt(Path(args.english_article_prompt_template), source_text, args)
-    (item_dir / "prompt_for_wechat_en.md").write_text(en_article_prompt, encoding="utf-8")
-    try:
-        en_article = call_deepseek(en_article_prompt, args, "English WeChat-style article")
-    except Exception as exc:
-        en_article = f"DeepSeek generated English article failed: {exc}\n"
-        status["wechat_en_error"] = str(exc)
-    if image_paths:
-        en_article = embed_original_images(en_article, image_paths, max_images=args.max_wechat_images, alt="Report chart")
     en_article_path = item_dir / "wechat_article_en.md"
-    en_article_path.write_text(en_article, encoding="utf-8")
-    status["wechat_article_en"] = "wechat_article_en.md"
+    if generate_english:
+        en_article_prompt = build_english_article_prompt(Path(args.english_article_prompt_template), source_text, args)
+        (item_dir / "prompt_for_wechat_en.md").write_text(en_article_prompt, encoding="utf-8")
+        try:
+            en_article = call_deepseek(en_article_prompt, args, "English WeChat-style article")
+        except Exception as exc:
+            en_article = f"DeepSeek generated English article failed: {exc}\n"
+            status["wechat_en_error"] = str(exc)
+        if image_paths:
+            en_article = embed_original_images(en_article, image_paths, max_images=args.max_wechat_images, alt="Report chart")
+        en_article_path.write_text(en_article, encoding="utf-8")
+        status["wechat_article_en"] = "wechat_article_en.md"
+    if not generate_podcast:
+        status_path.write_text(json.dumps(status, ensure_ascii=False, indent=2), encoding="utf-8")
+        return status
 
     prompt = build_podcast_prompt(Path(args.podcast_prompt_template), source_text, args)
     (item_dir / "prompt_for_podcast.md").write_text(prompt, encoding="utf-8")
@@ -529,7 +548,7 @@ def process_item(item_dir: Path, args: argparse.Namespace) -> dict[str, Any]:
     return status
 
 
-def main() -> int:
+def build_arg_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output-dir", default="xhs_notes")
     parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-flash"))
@@ -537,7 +556,9 @@ def main() -> int:
     parser.add_argument("--podcast-prompt-template", default="prompts/podcast_zh_en_prompt.md")
     parser.add_argument("--podcast-minutes", type=int, default=5)
     parser.add_argument("--podcast-prompt-chars", type=int, default=26000)
-    parser.add_argument("--generate-audio", default="true")
+    parser.add_argument("--generate-english-article", default="false", help="Opt in to an extra English article; normal translation lives in the shared translation pipeline.")
+    parser.add_argument("--generate-podcast", default="false", help="Opt in to Chinese and English podcast scripts.")
+    parser.add_argument("--generate-audio", default="false", help="Opt in to podcast audio/video; also requires --generate-podcast true.")
     parser.add_argument("--tts-engine", default="edge", choices=["edge", "piper"])
     parser.add_argument("--max-wechat-images", type=int, default=3)
     parser.add_argument("--english-article-prompt-template", default="prompts/wechat_report_article_en_prompt.md")
@@ -551,7 +572,11 @@ def main() -> int:
     parser.add_argument("--edge-zh-b-voice", default="zh-CN-YunxiNeural")
     parser.add_argument("--edge-en-a-voice", default="en-US-JennyNeural")
     parser.add_argument("--edge-en-b-voice", default="en-US-GuyNeural")
-    args = parser.parse_args()
+    return parser
+
+
+def main() -> int:
+    args = build_arg_parser().parse_args()
 
     output_dir = Path(args.output_dir)
     if not output_dir.exists():

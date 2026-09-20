@@ -1,0 +1,36 @@
+{
+  "model": {
+    "repository": "tencent/Hy-MT2-1.8B-GGUF",
+    "revision": "a0c709d9fac510f2c807aa3af52872340dc37a4a",
+    "filename": "Hy-MT2-1.8B-Q8_0.gguf",
+    "sha256": "5c3fe0b1408a5ceb0143184ef247b11b579c525f4b02b060e6c851bb76fef1a4",
+    "quantization": "Q8_0",
+    "license": "Apache-2.0",
+    "source_url": "https://huggingface.co/tencent/Hy-MT2-1.8B-GGUF/tree/a0c709d9fac510f2c807aa3af52872340dc37a4a",
+    "license_url": "https://huggingface.co/tencent/Hy-MT2-1.8B-GGUF/blob/a0c709d9fac510f2c807aa3af52872340dc37a4a/LICENSE.txt"
+  },
+  "runtime": {
+    "repository": "ggml-org/llama.cpp",
+    "version": "v0.4.1",
+    "revision": "b29c606e28a01b1bc8c1351026a0fa6e616bf6c4",
+    "license": "MIT",
+    "source_url": "https://github.com/ggml-org/llama.cpp/tree/b29c606e28a01b1bc8c1351026a0fa6e616bf6c4",
+    "backend": "CPU"
+  },
+  "sampling": {
+    "temperature": 0.7,
+    "top_p": 0.6,
+    "top_k": 20,
+    "repeat_penalty": 1.05,
+    "repeat_last_n": 8192,
+    "min_p": 0.0,
+    "max_tokens": 4096,
+    "seed": 20260920
+  },
+  "notes": [
+    "Official recommended 1.8B sampling, plus a fixed seed and disabled llama.cpp min-p default; repetition window covers the complete 8192-token server context (the HTTP API requires a nonnegative value).",
+    "Q8_0 uses standard upstream kernels; the model card's experimental STQ branch is not used.",
+    "Successful execution and structural checks alone do not establish complete semantic fidelity.",
+    "Inference and model download run only in GitHub Actions; no paid API is configured."
+  ]
+}

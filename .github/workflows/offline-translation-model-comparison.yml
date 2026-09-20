@@ -1,0 +1,47 @@
+name: Compare offline financial translation models
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: offline-model-comparison-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  compare:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        model: [opus-en-zh, opus-zh-en, m2m100-418m]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test comparison contract without models
+        run: python scripts/test_compare_offline_translation_models.py
+      - name: Install pinned CPU runtime
+        run: |
+          python -m pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install -r requirements-translation.txt requests
+      - uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/comparison-${{ matrix.model }}
+          key: offline-comparison-v1-${{ matrix.model }}-${{ hashFiles('scripts/offline_translation_comparison_models.json', 'requirements-translation.txt') }}
+      - name: Run raw and structured translations with no paid API
+        run: |
+          python scripts/compare_offline_translation_models.py \
+            --model '${{ matrix.model }}' \
+            --model-root "$RUNNER_TEMP/comparison-${{ matrix.model }}" \
+            --diagnostics-out "$RUNNER_TEMP/comparison-${{ matrix.model }}.json"
+      - name: Preserve model provenance and readable source-translation comparisons
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: offline-comparison-${{ matrix.model }}-${{ github.run_id }}
+          path: ${{ runner.temp }}/comparison-${{ matrix.model }}.json
+          retention-days: 3

@@ -6,10 +6,13 @@ import os
 import random
 import re
 import time
+import uuid
 from collections.abc import Callable
 from typing import Any
 
 import requests
+
+from deepseek_usage import operation_from_stack, record_attempt, usage_enabled
 
 DEFAULT_DEEPSEEK_MODEL = "deepseek-flash"
 LEGACY_DEEPSEEK_MODEL_ALIASES = {
@@ -143,13 +146,23 @@ def request_with_retry(
     retry_jitter_ratio: float = 0.25,
     allow_model_fallback: bool = True,
     logger: Callable[[str], None] = print,
+    usage_operation: str | None = None,
+    _usage_request_id: str | None = None,
+    _usage_key_index: int = 1,
 ) -> requests.Response:
     """POST once for permanent failures and retry bounded transient failures."""
     attempts = max(1, int(max_attempts))
     request_payload = prepare_deepseek_payload(payload)
     attempt = 1
     model_switches = 0
+    physical_attempt = 0
+    request_id = _usage_request_id or uuid.uuid4().hex
+    operation = usage_operation or (operation_from_stack() if usage_enabled() else "unknown")
     while attempt <= attempts:
+        physical_attempt += 1
+        started = time.monotonic()
+        thinking = request_payload.get("thinking")
+        thinking_mode = thinking.get("type") if isinstance(thinking, dict) else "unknown"
         try:
             response = requests.post(
                 url,
@@ -158,6 +171,14 @@ def request_with_retry(
                 timeout=timeout,
             )
         except TRANSIENT_REQUEST_ERRORS as exc:
+            record_attempt(
+                request_id=request_id, operation=operation,
+                model=str(request_payload.get("model") or ""),
+                attempt=physical_attempt, retry_attempt=attempt,
+                model_switches=model_switches, key_index=_usage_key_index,
+                elapsed_ms=int((time.monotonic() - started) * 1000),
+                transport_error=True, thinking_mode=thinking_mode,
+            )
             if attempt >= attempts:
                 raise
             delay = _retry_delay(
@@ -174,6 +195,14 @@ def request_with_retry(
             attempt += 1
             continue
 
+        record_attempt(
+            request_id=request_id, operation=operation,
+            model=str(request_payload.get("model") or ""),
+            attempt=physical_attempt, retry_attempt=attempt,
+            model_switches=model_switches, key_index=_usage_key_index,
+            elapsed_ms=int((time.monotonic() - started) * 1000),
+            response=response, thinking_mode=thinking_mode,
+        )
         replacement = (
             _model_replacement_from_response(
                 response,
@@ -228,12 +257,15 @@ def request_with_key_fallback(
     retry_jitter_ratio: float = 0.25,
     allow_model_fallback: bool = True,
     logger: Callable[[str], None] = print,
+    usage_operation: str | None = None,
 ) -> requests.Response:
     """Retry each key and switch only after a key-specific failure is exhausted."""
     candidates = api_keys if api_keys is not None else deepseek_api_keys_from_env()
     if not candidates:
         raise RuntimeError("Missing DEEPSEEK_API_KEY")
 
+    request_id = uuid.uuid4().hex
+    operation = usage_operation or (operation_from_stack() if usage_enabled() else "unknown")
     last_response: requests.Response | None = None
     last_exception: Exception | None = None
     for index, (key_label, api_key) in enumerate(candidates):
@@ -253,6 +285,9 @@ def request_with_key_fallback(
                 retry_jitter_ratio=retry_jitter_ratio,
                 allow_model_fallback=allow_model_fallback,
                 logger=logger,
+                usage_operation=operation,
+                _usage_request_id=request_id,
+                _usage_key_index=index + 1,
             )
         except TRANSIENT_REQUEST_ERRORS as exc:
             last_exception = exc

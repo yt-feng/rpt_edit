@@ -46,6 +46,7 @@ from wechat_article_quality import (
     sanitize_wechat_article_markdown,
 )
 from deepseek_http import deepseek_api_keys_from_env, request_with_key_fallback
+from wechat_editorial_binding import bind_generated_article
 
 MINERU_BASE_URL = "https://mineru.net"
 IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp", ".bmp"}
@@ -512,6 +513,35 @@ def render_pdf_page_cards(pdf_path: Path, assets_dir: Path, max_pages: int, titl
     return cards
 
 
+def write_source_image_map(result_dir: Path, assets_dir: Path, copied_images: list[tuple[Path, Path]]) -> None:
+    """Preserve original Markdown references after private handoff drops raw OCR."""
+    import hashlib
+
+    report_dir = assets_dir.parent
+    markdown_path = find_markdown(result_dir)
+    references: dict[str, str] = {}
+    ambiguous: set[str] = set()
+    for image, target in copied_images:
+        asset = target.relative_to(report_dir).as_posix()
+        relative = image.relative_to(result_dir).as_posix()
+        aliases = {relative, f"mineru_raw/{relative}"}
+        if markdown_path:
+            aliases.add(Path(os.path.relpath(image, markdown_path.parent)).as_posix())
+        for reference in aliases:
+            if reference in references and references[reference] != asset:
+                ambiguous.add(reference)
+            references[reference] = asset
+    for reference in ambiguous:
+        references.pop(reference, None)
+    source = report_dir / "source_mineru.md"
+    payload = {
+        "version": 1,
+        "source_sha256": hashlib.sha256(source.read_bytes()).hexdigest() if source.is_file() else "",
+        "images": references,
+    }
+    (report_dir / "source_image_map.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
 def create_visual_assets(result_dir: Path, pdf_path: Path, assets_dir: Path, max_images: int, title: str) -> list[str]:
     """Create stable Xiaohongshu image cards.
 
@@ -521,6 +551,8 @@ def create_visual_assets(result_dir: Path, pdf_path: Path, assets_dir: Path, max
     assets_dir.mkdir(parents=True, exist_ok=True)
     images = [p for p in result_dir.rglob("*") if p.is_file() and p.suffix.lower() in IMAGE_SUFFIXES]
     cards: list[str] = []
+    copied_images: list[tuple[Path, Path]] = []
+    write_source_image_map(result_dir, assets_dir, copied_images)
 
     if images:
         draw_title_card(title, assets_dir / "xhs_card_01.png")
@@ -533,6 +565,7 @@ def create_visual_assets(result_dir: Path, pdf_path: Path, assets_dir: Path, max
         for index, image in enumerate(chart_images, 1):
             original_target = assets_dir / f"source_image_{index:02d}{image.suffix.lower()}"
             shutil.copy2(image, original_target)
+            copied_images.append((image, original_target))
             card_target = assets_dir / f"xhs_card_{index + 1:02d}.png"
             if pad_image_for_xhs(image, card_target, chart_number=index, show_next_arrow=index < total):
                 cards.append(str(card_target.relative_to(assets_dir.parent)))
@@ -542,6 +575,7 @@ def create_visual_assets(result_dir: Path, pdf_path: Path, assets_dir: Path, max
         log("MinerU result contained no standalone chart images; creating title card only.")
         draw_title_card(title, assets_dir / "xhs_card_01.png")
         cards.append("assets/xhs_card_01.png")
+    write_source_image_map(result_dir, assets_dir, copied_images)
     return cards
 
 
@@ -550,10 +584,13 @@ def create_chart_source_assets(result_dir: Path, assets_dir: Path, max_images: i
     assets_dir.mkdir(parents=True, exist_ok=True)
     images = [p for p in result_dir.rglob("*") if p.is_file() and p.suffix.lower() in IMAGE_SUFFIXES]
     copied: list[str] = []
+    copied_images: list[tuple[Path, Path]] = []
     for index, image in enumerate(select_chart_images(images, max_images), 1):
         target = assets_dir / f"source_image_{index:02d}{image.suffix.lower()}"
         shutil.copy2(image, target)
+        copied_images.append((image, target))
         copied.append(str(target.relative_to(assets_dir.parent)))
+    write_source_image_map(result_dir, assets_dir, copied_images)
     return copied
 
 
@@ -924,7 +961,8 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
             status["chart_source_only"] = True
             status["images"] = create_chart_source_assets(raw_dir, assets_dir, args.max_images)
             status["chart_source_image_count"] = len(status["images"])
-            shutil.rmtree(raw_dir)
+            if not getattr(args, "keep_mineru_raw", False):
+                shutil.rmtree(raw_dir)
         else:
             status["images"] = create_visual_assets(
                 raw_dir,
@@ -943,7 +981,8 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
         status["source_markdown"] = "source_mineru.md"
         status["images"] = create_chart_source_assets(raw_dir, assets_dir, args.max_images)
         status["chart_source_image_count"] = len(status["images"])
-        shutil.rmtree(raw_dir)
+        if not getattr(args, "keep_mineru_raw", False):
+            shutil.rmtree(raw_dir)
         (item_dir / "status.json").write_text(
             json.dumps(status, ensure_ascii=False, indent=2),
             encoding="utf-8",
@@ -952,13 +991,18 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
     institution_name = infer_institution_name(pdf_path.name, status.get("source_pdf"), source_text[:2000])
     if institution_name:
         status["institution_name"] = institution_name
-    xhs_prompt = build_xhs_prompt(Path(args.prompt_template), source_text, args)
-    (item_dir / "prompt_for_xhs.md").write_text(xhs_prompt, encoding="utf-8")
-    note = safe_generate_text(xhs_prompt, args, "Xiaohongshu note")
-    note = clean_xhs_note(note)
-    note = limit_xhs_note_length(note, args.length)
-    (item_dir / "note.md").write_text(note, encoding="utf-8")
-    title, subtitle = extract_cover_titles(note, fallback_title)
+    # XHS is optional; WeChat and the report pipeline do not require its copy.
+    # Keep existing note.md files intact when the stage is disabled.
+    title, subtitle = fallback_title, "研报原图与阅读笔记"
+    status["xhs_generation_enabled"] = bool(getattr(args, "generate_xhs", False))
+    if status["xhs_generation_enabled"]:
+        xhs_prompt = build_xhs_prompt(Path(args.prompt_template), source_text, args)
+        (item_dir / "prompt_for_xhs.md").write_text(xhs_prompt, encoding="utf-8")
+        note = safe_generate_text(xhs_prompt, args, "Xiaohongshu note")
+        note = clean_xhs_note(note)
+        note = limit_xhs_note_length(note, args.length)
+        (item_dir / "note.md").write_text(note, encoding="utf-8")
+        title, subtitle = extract_cover_titles(note, fallback_title)
     status["cover_short_title"] = title
     status["cover_subtitle"] = subtitle
     status["images"] = create_visual_assets(raw_dir, pdf_path, assets_dir, args.max_images, title=title)
@@ -1039,15 +1083,18 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
     except Exception as exc:
         status["cover_error"] = str(exc)
     status["wechat_article"] = "wechat_article.md"
+    status["wechat_editorial_model"] = args.model
+    bind_generated_article(item_dir, status)
     (item_dir / "status.json").write_text(json.dumps(status, ensure_ascii=False, indent=2), encoding="utf-8")
     return status
 
 
 def build_arg_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Convert repo PDFs to Xiaohongshu notes and WeChat teaser articles.")
+    parser = argparse.ArgumentParser(description="Convert repo PDFs to WeChat articles; optional XHS copy is disabled by default.")
     parser.add_argument("--input-dir", default="pdfs")
     parser.add_argument("--output-dir", default="xhs_notes")
     parser.add_argument("--prompt-template", default="prompts/xhs_report_note_prompt.md")
+    parser.add_argument("--generate-xhs", action="store_true", help="Opt in to optional Xiaohongshu copy generation.")
     parser.add_argument("--wechat-prompt-template", default="prompts/wechat_report_article_prompt.md")
     parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-flash"))
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
@@ -1068,6 +1115,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Run MinerU and retain source markdown/chart images without generating XHS or WeChat content.",
     )
+    parser.add_argument("--keep-mineru-raw", action="store_true", help="In source-only mode retain original image paths for downstream report rendering.")
     parser.add_argument(
         "--community-cta",
         default=(

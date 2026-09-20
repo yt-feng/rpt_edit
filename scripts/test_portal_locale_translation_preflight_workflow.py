@@ -1,120 +1,52 @@
-#!/usr/bin/env python3
-from __future__ import annotations
-
+"""Validate the free translation CI boundary, executable entrypoints and diagnostics."""
 from pathlib import Path
-import os
 import re
-import subprocess
-import sys
-import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "scripts"))
-import check_public_identity as identity
-
-WORKFLOW = ROOT / ".github/workflows/portal-locale-translation-preflight.yml"
-
 
 class PreflightWorkflowTests(unittest.TestCase):
-    def test_new_test_entrypoints_run_like_actions_without_repository_pythonpath(self):
-        env = os.environ.copy()
-        env.pop("PYTHONPATH", None)
-        with tempfile.TemporaryDirectory() as directory:
-            for name in ("test_deepl_locale_repair.py", "test_portal_locale_history.py"):
-                with self.subTest(script=name):
-                    result = subprocess.run(
-                        [sys.executable, "-B", str(ROOT / "scripts" / name)],
-                        cwd=directory, env=env, capture_output=True, text=True, timeout=30,
-                    )
-                    self.assertEqual(result.returncode, 0, result.stderr)
-
-    def test_every_invoked_script_is_in_sparse_checkout(self) -> None:
-        workflow = WORKFLOW.read_text(encoding="utf-8")
-        checkout = workflow.split("sparse-checkout: |\n", 1)[1].split("\n\n", 1)[0].split()
-        for script in re.findall(r"python3(?: -B)? (scripts/[A-Za-z0-9_.]+)", workflow):
-            with self.subTest(script=script):
-                self.assertIn(script, checkout)
-        for script in re.findall(r"diagnostic_script=(scripts/[A-Za-z0-9_.]+)", workflow):
-            with self.subTest(diagnostic=script):
-                self.assertIn(script, checkout)
-        for dependency in ("build_portal_locales.py", "deepseek_http.py", "deepl_locale_repair.py"):
-            with self.subTest(dependency=dependency):
-                self.assertIn(f"scripts/{dependency}", checkout)
-
-    def test_manual_main_only_without_deployment_or_full_build(self) -> None:
-        workflow = WORKFLOW.read_text(encoding="utf-8")
+    def test_preflight_has_no_paid_provider_credentials_or_deployment(self):
+        workflow = (ROOT / ".github/workflows/portal-locale-translation-preflight.yml").read_text()
+        self.assertIn("pull_request:", workflow)
         self.assertIn("workflow_dispatch:", workflow)
-        self.assertIn("github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'", workflow)
-        self.assertNotRegex(workflow, r"(?m)^\s+(?:schedule|push|pull_request|workflow_run):")
         self.assertIn("contents: read", workflow)
-        self.assertNotIn("contents: write", workflow)
-        for forbidden in ("wrangler", "publish_static_slot.py", "build_portal_suite_site.py", "cancel-in-progress: true"):
+        # The separate manual-only storage smoke needs R2 credentials. PR model
+        # preflight remains secret-free and cannot execute the storage job.
+        preflight = workflow.split("  preflight:\n", 1)[1].split("  private-checkpoint-smoke:\n", 1)[0]
+        self.assertNotIn("secrets.", preflight)
+        for forbidden in ("contents: write", "wrangler", "run_portal_locale_backfill.py", "DEEPSEEK_API_KEY"):
             self.assertNotIn(forbidden, workflow)
-        self.assertIn("python3 -m pip install requests", workflow)
-
-    def test_uses_existing_private_configuration_and_uploads_failure_diagnostics(self) -> None:
-        workflow = WORKFLOW.read_text(encoding="utf-8")
-        self.assertIn("LIVE_ORIGIN: ${{ secrets.PORTAL_SITE_URL || vars.PORTAL_SITE_URL }}", workflow)
-        self.assertIn("DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_REPORT_TRANSLATION_API_KEY }}", workflow)
-        for fallback in ("DEEPSEEK_API_KEY_BACKUP", "DEEPSEEK_API_KEY_2", "DEEPSEEK_API_KEYS"):
-            self.assertIn(f'{fallback}: ""', workflow)
-        self.assertIn("DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}", workflow)
-        upload = workflow[workflow.index("Upload translation diagnostics even when preflight fails"):]
+        self.assertIn("scripts/smoke_hymt_translation.py", workflow)
+        upload = workflow.split("Upload translation diagnostics even when preflight fails", 1)[1]
         self.assertIn("if: always()", upload)
-        self.assertIn("actions/upload-artifact@v4", upload)
-        self.assertIn("portal-locale-preflight/diagnostics.json", upload)
-        self.assertNotIn("cache-v1.json.gz", upload)
+        self.assertIn("portal-locale-preflight/", upload)
 
-    def test_protocol_mode_is_explicit_and_does_not_replace_default_sampling(self) -> None:
-        workflow = WORKFLOW.read_text(encoding="utf-8")
-        self.assertRegex(workflow, r"mode:[\s\S]*?options:\s+- sample\s+- protocol\s+- balance\s+- deepl\s+default: sample")
-        self.assertIn("PREFLIGHT_MODE: ${{ inputs.mode }}", workflow)
-        self.assertIn("sample) diagnostic_script=scripts/preflight_portal_locale_translation.py", workflow)
-        self.assertIn("protocol) diagnostic_script=scripts/probe_portal_locale_protocol.py", workflow)
-        self.assertIn("python3 -B scripts/test_probe_portal_locale_protocol.py", workflow)
+    def test_all_invoked_scripts_exist(self):
+        workflow = (ROOT / ".github/workflows/portal-locale-translation-preflight.yml").read_text()
+        for script in re.findall(r"python(?:3)?(?: -B)? (scripts/[A-Za-z0-9_.]+)", workflow):
+            self.assertTrue((ROOT / script).is_file(), script)
 
-    def test_balance_mode_has_its_read_only_script_and_offline_regression(self) -> None:
-        workflow = WORKFLOW.read_text(encoding="utf-8")
-        self.assertIn("balance) diagnostic_script=scripts/check_deepseek_balance.py", workflow)
-        self.assertIn("python3 -B scripts/test_check_deepseek_balance.py", workflow)
-        self.assertIn('report.get("mode") == "balance"', workflow)
-        self.assertIn('"balance_requests", "is_available", "balance_infos"', workflow)
-
-    def test_deepl_canary_is_explicit_with_offline_tests_and_allowlisted_summary(self) -> None:
-        workflow = WORKFLOW.read_text(encoding="utf-8")
-        self.assertIn("deepl) diagnostic_script=scripts/preflight_deepl_locale_repair.py", workflow)
-        for script in ("test_deepl_locale_repair.py", "test_portal_locale_deepl_fallback.py",
-                       "test_preflight_deepl_locale_repair.py"):
-            self.assertIn(f"python3 -B scripts/{script}", workflow)
-        self.assertIn('report.get("mode") == "deepl"', workflow)
-        self.assertIn('keys = ("status", "provider_requests", "billed_characters", "remaining_character_budget")', workflow)
-        self.assertNotIn("report.items()", workflow)
-        secret = "DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}"
-        self.assertEqual(workflow.count(secret), 1)
-        diagnostic = workflow.split("Run the selected bounded translation diagnostic", 1)[1].split(
-            "Summarize bounded translation diagnostics", 1)[0]
-        self.assertIn(secret, diagnostic)
-        self.assertNotIn("DEEPL_API_KEY", workflow.split("Test bounded preflight without provider requests", 1)[1].split(
-            "Run the selected bounded translation diagnostic", 1)[0])
-
-    def test_public_identity_guard_accepts_every_new_source(self) -> None:
-        paths = (WORKFLOW, ROOT / "scripts/preflight_portal_locale_translation.py",
-                 ROOT / "scripts/test_preflight_portal_locale_translation.py",
-                 ROOT / "scripts/probe_portal_locale_protocol.py",
-                 ROOT / "scripts/test_probe_portal_locale_protocol.py",
-                 ROOT / "scripts/check_deepseek_balance.py",
-                 ROOT / "scripts/test_check_deepseek_balance.py",
-                 ROOT / "scripts/deepl_locale_repair.py",
-                 ROOT / "scripts/test_deepl_locale_repair.py",
-                 ROOT / "scripts/test_portal_locale_deepl_fallback.py",
-                 ROOT / "scripts/preflight_deepl_locale_repair.py",
-                 ROOT / "scripts/test_preflight_deepl_locale_repair.py", Path(__file__))
-        for path in paths:
-            skeleton = identity.confusable_skeleton(path.read_text(encoding="utf-8"))
-            with self.subTest(path=path.name):
-                self.assertFalse(any(marker.casefold() in skeleton for marker in identity.private_markers()))
-
+    def test_setup_caches_only_public_pinned_model_files(self):
+        action = (ROOT / ".github/actions/setup-offline-translation/action.yml").read_text()
+        self.assertIn("hymt-official-q8-", action)
+        self.assertIn("scripts/hymt_translation_model_manifest.json", action)
+        cache = action.split("uses: actions/cache/restore@v4", 1)[1].split("- name:", 1)[0]
+        self.assertIn("path: ${{ runner.temp }}/hymt-model", cache)
+        self.assertNotIn("translation-cache", cache)
+        self.assertEqual(action.count("uses: actions/cache/save@v4"), 2)
+        for block in re.split(r"uses: actions/cache/(?:restore|save)@v4", action)[1:]:
+            cache_path = re.search(r"path:\s*(.+)", block.split("- name:", 1)[0]).group(1)
+            self.assertIn(cache_path, ("${{ runner.temp }}/hymt-model", "${{ runner.temp }}/hymt-runtime/build"))
+        self.assertIn("-DGGML_NATIVE=OFF", action)
+        self.assertIn("runtime-revision", action)
+        # Different Ubuntu releases have different glibc/libstdc++ ABIs even
+        # when both runners report Linux/X64. Never share their native binaries.
+        self.assertIn("platform.freedesktop_os_release()", action)
+        runtime_keys = re.findall(r"key: (hymt-cpu-[^\n]+)", action)
+        self.assertEqual(len(runtime_keys), 2)
+        self.assertTrue(all("steps.configure.outputs.runner-image" in key for key in runtime_keys))
+        self.assertIn("persist-credentials: false", action)
 
 if __name__ == "__main__":
-    unittest.main(verbosity=2)
+    unittest.main()
