@@ -97,7 +97,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
     def test_locale_translation_uses_one_offline_engine_without_provider_secrets(self):
         locale = self.workflow.split("Build Korean Japanese and Arabic static locales", 1)[1].split(
             "Detect multilingual translation checkpoint", 1)[0]
-        self.assertIn("--provider m2m100", locale)
+        self.assertIn("--provider hymt", locale)
         self.assertIn("--checkpoint-on-budget --workers 1", locale)
         self.assertNotIn("DEEPSEEK_API_KEY", locale)
         self.assertNotIn("DEEPL_API_KEY", locale)
@@ -197,6 +197,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         for producer in (
             "Bank report catalog",
             "Final PDF to XHS notes",
+            "Daily report articles and translations",
             "Institution latest PDF to WeChat",
             "Consulting latest PDF to WeChat",
             "ARK Invest feed to WeChat",
@@ -364,7 +365,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         locale = self.workflow[locale_build:detect_checkpoint]
         self.assertNotIn("DEEPSEEK_API_KEY", locale)
         self.assertNotIn("DEEPL_API_KEY", locale)
-        self.assertIn("--provider m2m100", locale)
+        self.assertIn("--provider hymt", locale)
         self.assertIn(
             "PORTAL_MULTILINGUAL_INDEX_START_DATE: "
             "${{ vars.PORTAL_MULTILINGUAL_INDEX_START_DATE || '' }}",
@@ -382,7 +383,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
             "--cache-out _neutral_site/data/i18n/cache-v1.json.gz",
             "--assets-root portal_suite/locale_assets",
             '--workers 1',
-            '--provider m2m100',
+            '--provider hymt',
         ):
             self.assertIn(argument, locale)
         self.assertIn('cache_args+=(--cache-in "$RUNNER_TEMP/portal-locale-cache/cache-v1.json.gz")', locale)

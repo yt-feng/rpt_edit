@@ -11,7 +11,11 @@ class PreflightWorkflowTests(unittest.TestCase):
         self.assertIn("pull_request:", workflow)
         self.assertIn("workflow_dispatch:", workflow)
         self.assertIn("contents: read", workflow)
-        for forbidden in ("secrets.", "contents: write", "wrangler", "run_portal_locale_backfill.py"):
+        # The separate manual-only storage smoke needs R2 credentials. PR model
+        # preflight remains secret-free and cannot execute the storage job.
+        preflight = workflow.split("  preflight:\n", 1)[1].split("  private-checkpoint-smoke:\n", 1)[0]
+        self.assertNotIn("secrets.", preflight)
+        for forbidden in ("contents: write", "wrangler", "run_portal_locale_backfill.py", "DEEPSEEK_API_KEY"):
             self.assertNotIn(forbidden, workflow)
         self.assertIn("scripts/smoke_hymt_translation.py", workflow)
         upload = workflow.split("Upload translation diagnostics even when preflight fails", 1)[1]

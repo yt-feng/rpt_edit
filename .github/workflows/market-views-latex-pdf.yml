@@ -14,7 +14,7 @@ on:
         required: false
         default: ""
       source_handoff_run_id:
-        description: "Private XHS handoff run id supplied by Final PDF to XHS notes"
+        description: "Private report handoff run id supplied by Daily report articles and translations"
         required: false
         default: ""
       source_artifact_run_id:

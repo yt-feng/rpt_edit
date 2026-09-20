@@ -8,6 +8,7 @@ on:
     workflows:
       - Bank report catalog
       - Final PDF to XHS notes
+      - Daily report articles and translations
       - Institution latest PDF to WeChat
       - Consulting latest PDF to WeChat
       - ARK Invest feed to WeChat
@@ -228,7 +229,8 @@ jobs:
           python3 -B scripts/test_check_deepseek_balance.py
           python3 -B scripts/test_deepl_locale_repair.py
           python3 -B scripts/test_translate_portal_titles.py
-          python3 -B scripts/test_m2m100_offline_translation.py
+          python3 -B scripts/test_hymt_offline_translation.py
+          python3 -B scripts/test_financial_quantity_integrity.py
           python3 -B scripts/test_portal_offline_locales.py
           python3 -B scripts/test_portal_locale_history.py
           python3 -B scripts/test_portal_locale_scope.py

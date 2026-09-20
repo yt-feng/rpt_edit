@@ -1,4 +1,4 @@
-name: Final PDF to XHS notes
+name: Daily report articles and translations
 
 on:
   workflow_dispatch:
@@ -1215,7 +1215,7 @@ jobs:
     if: ${{ always() && (contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled')) }}
     uses: ./.github/workflows/portal-ops-alert.yml
     with:
-      source_workflow: Final PDF to XHS notes
+      source_workflow: Daily report articles and translations
       source_results: >-
         resolve=${{ needs.resolve-inputs.result }},
         select=${{ needs.select-macro-reports.result }},
