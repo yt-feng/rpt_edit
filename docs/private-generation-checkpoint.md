@@ -12,6 +12,28 @@ publication jobs delete after completion. Text, images, prompts and generation
 memos remain private. The handoff archive policy excludes original PDFs, ZIPs,
 raw MinerU folders and audio/video.
 
+## Optional generation switches
+
+The generators and prompt templates are retained. Automatic production defaults
+are off; re-enabling an output requires changing its explicit pipeline option:
+
+| Output | Generator switch | Matching finalization switch |
+| --- | --- | --- |
+| Xiaohongshu | `--generate-xhs` on the batch runner | `--guard-xhs true` |
+| Xianyu | `--generate-xianyu true` on finalization | Included by the same switch |
+| Podcast scripts | `--generate-podcast true` on postprocessing | `--guard-podcast true` |
+| Additional English article | `--generate-english-article true` | `--guard-english-article true` |
+| Postprocessed podcast audio/video | `--generate-podcast true --generate-audio true` | Same podcast switch |
+
+The separate `Daily bilingual podcast videos` workflow is also disabled in
+GitHub and has no schedule. To run it again, enable the workflow in Actions and
+manually select `enable_generation=true`. Its offline title/subtitle dependencies
+are installed for that opted-in run. Restoring daily execution additionally
+requires an explicit schedule and corresponding job condition; merely enabling
+the workflow does not schedule generation.
+
+## Cache validity
+
 The input identity includes the actual SHA-256 of each selected PDF, its copied
 filename, shard membership, relevant generation options, active code and prompt
 files. Source hashes are calculated when selected PDFs are copied into the

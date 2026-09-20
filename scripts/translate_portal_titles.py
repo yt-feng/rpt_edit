@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Translate Portal Suite report titles to Simplified Chinese with the pinned offline M2M100 model."""
+"""Translate Portal Suite report titles to Simplified Chinese with the pinned offline Hy-MT2 model."""
 
 from __future__ import annotations
 

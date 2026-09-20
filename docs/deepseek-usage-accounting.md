@@ -65,6 +65,22 @@ content-free warning and does not retry a paid request solely for logging.
 
 ## Daily breakdown and billing comparison
 
+`deepseek-usage-daily.yml` runs daily at 10:20 Asia/Shanghai and summarizes the
+previous local calendar day. It can also be dispatched with a specific date.
+The collector uses `actions: read` to download only unexpired `deepseek-usage-*`
+artifacts. It considers uploads on the requested day and the following day, then
+filters individual events by their actual timestamp; an upload date is not the
+token-consumption date. Download/authentication failures stop the collection
+instead of producing a successful empty bill.
+
+Only artifacts already uploaded at collection time are visible. In-flight jobs,
+failed/cancelled uploads, expired/deleted artifacts, and uploads outside that
+two-day window are not recovered automatically. Re-dispatch the date after late
+jobs finish to include available late arrivals. The collection manifest reports
+artifact/event counts and this coverage limit. A zero count means no matching
+observations were found, not zero account spend. Neither the collector nor extra
+API keys can reconstruct operation-level history from before instrumentation.
+
 Download relevant `deepseek-usage-*` artifacts, keeping all original event files,
 and aggregate them recursively:
 
@@ -88,7 +104,11 @@ per million tokens. Populate these from the applicable provider rate sheet. A
 cost estimate is calculated only for responses containing every required token
 counter and a configured rate; unpriced responses are counted separately. The
 output labels this as an estimate, never the provider invoice. By default the
-cost is unknown, not zero.
+cost is unknown, not zero. The scheduled daily workflow does not supply a price
+file, so its default output is token breakdown rather than a currency estimate.
+With rates configured, the estimate is only the subtotal of priceable responses;
+always read it alongside missing-usage and unpriced-response counts. It is not a
+billing cap or a reconstruction of unobserved charges.
 
 ## Coverage and current key map
 
@@ -100,7 +120,7 @@ cost is unknown, not zero.
 - `DEEPSEEK_FINALIZE_API_KEY`: remaining finalization and content rewrites.
 - `DEEPSEEK_MARKET_VIEWS_API_KEY`: daily Market Views synthesis.
 - `DEEPSEEK_REPORT_TRANSLATION_API_KEY`: no longer used by scheduled pure
-  translation; these steps use offline models. Remaining editorial calls in report
+  translation; these steps use pinned Hy-MT2 CPU inference on Actions. Remaining editorial calls in report
   PDF jobs use the report-notes key, including the manual PDF test workflow.
 - `DEEPSEEK_CATALOG_TITLES_API_KEY`: no longer needed by scheduled title
   translation after migration to offline models.
@@ -118,7 +138,12 @@ runtime calls, other repositories, historical calls before instrumentation, and
 old manually launched test scripts that bypass the wrapper are outside it.
 Worker locale-detail translation has its own persistent cache and daily limits;
 its provider usage belongs to the portal-runtime key and must be compared
-separately. A run without recorded events does not establish that the whole
+separately. A cache-missing POST can still call DeepSeek when the Worker key is
+configured; GET polling does not call the provider. The current defaults are
+100 requests and 100,000 source characters per UTC day, configurable separately
+from the Actions ledger. Offline batch migration does not disable this path.
+Other services such as source PDF parsing are also outside DeepSeek accounting.
+A run without recorded events does not establish that the whole
 account had no consumption. Historical screenshots cannot be retroactively split
 into operations that were not instrumented at the time.
 
@@ -126,7 +151,8 @@ into operations that were not instrumented at the time.
 
 ```sh
 PYTHONPATH=scripts python3 -m unittest \
-  scripts.test_deepseek_http scripts.test_deepseek_usage
+  scripts.test_deepseek_http scripts.test_deepseek_usage \
+  scripts.test_collect_deepseek_usage_artifacts
 ```
 
 The accounting tests cover content/key exclusion, transport failures and HTTP

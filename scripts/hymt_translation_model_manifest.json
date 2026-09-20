@@ -30,7 +30,7 @@
   "notes": [
     "Official recommended 1.8B sampling, plus a fixed seed and disabled llama.cpp min-p default; repetition window covers the complete 8192-token server context (the HTTP API requires a nonnegative value).",
     "Q8_0 uses standard upstream kernels; the model card's experimental STQ branch is not used.",
-    "Comparison only: successful execution is not semantic approval or production enablement.",
+    "Successful execution and structural checks alone do not establish complete semantic fidelity.",
     "Inference and model download run only in GitHub Actions; no paid API is configured."
   ]
 }
