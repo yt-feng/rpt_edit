@@ -29,7 +29,7 @@ MANIFEST = json.loads(MANIFEST_PATH.read_text(encoding='utf-8'))
 PROVIDER = 'hymt'
 MODEL = MANIFEST['model']['repository']
 REVISION = MANIFEST['model']['revision']
-MODEL_ID = f"{MODEL}@{REVISION}:Q8_0:natural-sentence-v3-controlled-terms:{hashlib.sha256(MANIFEST_PATH.read_bytes()).hexdigest()[:16]}"
+MODEL_ID = f"{MODEL}@{REVISION}:Q8_0:natural-sentence-v4-table-structure:{hashlib.sha256(MANIFEST_PATH.read_bytes()).hexdigest()[:16]}"
 INSTALL_COMMAND = 'Use .github/actions/setup-offline-translation on a Linux GitHub Actions runner'
 _PLACEHOLDERS = re.compile(r'__[A-Za-z0-9_]+__')
 _LETTERS = re.compile(r'[A-Za-z\u3400-\u9fff\u3040-\u30ff\uac00-\ud7af\u0600-\u06ff]')
@@ -162,6 +162,26 @@ def _restore_terms(value: str, terms: dict[str, str]) -> str:
     for token, term in terms.items():
         value = value.replace(token, term)
     return value
+
+
+def _restore_table_edges(source: str, result: str) -> str:
+    """Restore optional row-edge pipes only when all data columns still match.
+
+    Markdown permits a table row without its exterior pipes. The translation
+    output keeps the source spelling, while dropped interior separators remain
+    an error. Values and text are never split into separate model requests.
+    """
+    source = source.strip()
+    if not (source.startswith('|') and source.endswith('|') and source.count('|') >= 2):
+        return result
+    inner = result.strip()
+    if inner.startswith('|'):
+        inner = inner[1:]
+    if inner.endswith('|'):
+        inner = inner[:-1]
+    if len(inner.split('|')) != len(source[1:-1].split('|')):
+        return result
+    return '|' + inner + '|'
 
 
 def validate_result(source: str, result: str, source_language: str, target: str) -> None:
@@ -306,6 +326,7 @@ class HyMTOfflineTranslator:
                     self._diagnostic_callback({'model_input': masked, 'raw_translation': value,
                                                'source_language': detected, 'target_language': target,
                                                'controlled_terms': dict(terms)})
+                value = _restore_table_edges(masked, value)
                 validate_result(masked, value, detected, target)
             except OfflineTranslationError:
                 raise

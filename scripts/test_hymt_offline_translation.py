@@ -158,6 +158,24 @@ class HyMTTests(unittest.TestCase):
         with self.assertRaisesRegex(h.OfflineTranslationError, 'destination boundary'):
             translator.translate('See [report](../report.pdf).', 'zh', 'en')
 
+    def test_table_edge_pipes_restored_when_columns_and_money_are_intact(self):
+        translator = self.translator(lambda _: '现金储备 | 1.2亿美元')
+        source = '| Cash reserves | USD 120 million |'
+        self.assertEqual(translator.translate_markdown(source, 'zh', 'en'), '|现金储备 | 1.2亿美元|')
+        self.assertEqual(self.engine.calls[0][0], source)
+
+    def test_table_interior_separator_loss_or_added_column_is_rejected(self):
+        for output in ('现金储备 1.2亿美元', '现金储备 | 新增 | 1.2亿美元'):
+            with self.subTest(output=output):
+                translator = self.translator(lambda _, output=output: output)
+                with self.assertRaisesRegex(h.OfflineTranslationError, 'Markdown structure'):
+                    translator.translate_markdown('| Cash reserves | USD 120 million |', 'zh', 'en')
+
+    def test_table_edges_do_not_hide_quantity_damage(self):
+        translator = self.translator(lambda _: '现金储备 | 120万美元')
+        with self.assertRaisesRegex(h.OfflineTranslationError, 'quantity'):
+            translator.translate_markdown('| Cash reserves | USD 120 million |', 'zh', 'en')
+
     def test_no_local_inference(self):
         with mock.patch.dict(os.environ, {'GITHUB_ACTIONS': 'false'}):
             with self.assertRaisesRegex(h.OfflineTranslationError, 'restricted'):
