@@ -15,7 +15,7 @@ from zoneinfo import ZoneInfo
 
 from deepseek_usage import SCHEMA_VERSION, TOKEN_FIELDS, _identifier, _integer
 
-GROUP_FIELDS = ("day", "workflow", "job", "run_id", "run_attempt", "stage", "operation", "model")
+GROUP_FIELDS = ("day", "workflow", "job", "run_id", "run_attempt", "stage", "operation", "model", "thinking_mode")
 PRICE_FIELDS = ("input_cache_hit", "input_cache_miss", "output")
 COVERAGE_NOTE = (
     "Observed instrumented HTTP attempts only; this is not a DeepSeek invoice or "
@@ -167,19 +167,19 @@ def markdown_report(summary: dict[str, Any]) -> str:
         f"attempts without usage: **{totals['usage_missing_attempts']}**; "
         f"duplicate events ignored: **{summary['duplicate_events_ignored']}**.", "",
         f"Cost: {summary['cost_basis']}.", "",
-        "| Date | Workflow / job | Stage | Operation | Run / attempt | HTTP calls | Input | Output | Cache hit | Cache miss | Missing usage |",
-        "|---|---|---|---|---|---:|---:|---:|---:|---:|---:|",
+        "| Date | Workflow / job | Stage | Operation | Thinking | Run / attempt | HTTP calls | Input | Output | Reasoning (within output) | Cache hit | Cache miss | Missing usage |",
+        "|---|---|---|---|---|---|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for row in summary["groups"]:
         lines.append(
             f"| {row['day']} | {row['workflow']} / {row['job']} | {row['stage']} | "
-            f"{row['operation']} | {row['run_id']} / {row['run_attempt']} | "
+            f"{row['operation']} | {row['thinking_mode']} | {row['run_id']} / {row['run_attempt']} | "
             f"{row['http_attempts']} | {row['prompt_tokens']} | {row['completion_tokens']} | "
-            f"{row['prompt_cache_hit_tokens']} | {row['prompt_cache_miss_tokens']} | {row['usage_missing_attempts']} |"
+            f"{row['reasoning_tokens']} | {row['prompt_cache_hit_tokens']} | {row['prompt_cache_miss_tokens']} | {row['usage_missing_attempts']} |"
         )
     if not summary["groups"]:
-        lines.append("| — | No instrumented events found | — | — | — | 0 | 0 | 0 | 0 | 0 | 0 |")
-    lines.extend(["", "Missing provider counters contribute no known tokens; they are not evidence of zero billed tokens."])
+        lines.append("| — | No instrumented events found | — | — | — | — | 0 | 0 | 0 | 0 | 0 | 0 | 0 |")
+    lines.extend(["", "Missing provider counters contribute no known tokens; they are not evidence of zero billed tokens. Reasoning tokens are a subset of output tokens and are never added again to totals or estimated costs."])
     if totals["estimated_cost_cny"] is not None:
         lines.extend(["", f"Configured-rate estimate: CNY {totals['estimated_cost_cny']}; "
                       f"unpriced responses with usage: {totals['unpriced_usage_attempts']}."])

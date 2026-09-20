@@ -918,7 +918,7 @@ def generate_article_style_markdown(
         if cache_path.is_file():
             saved = json.loads(cache_path.read_text(encoding="utf-8"))
             body = saved.get("article", "")
-            if body and not audit_wechat_article_markdown(body):
+            if body and not set(audit_wechat_article_markdown(body)) & {"forbidden_meta_section", "model_cta"}:
                 log("  Reused source-matched editorial checkpoint")
                 return body
     article = call_deepseek(
@@ -950,6 +950,31 @@ def generate_article_style_markdown(
 
 
 def wechat_title_from_filename(
+    source_filename: str, translated_md: str, institution_name: str,
+    args: argparse.Namespace, *, editorial: bool = True,
+) -> tuple[str, dict[str, Any]]:
+    cache_root = getattr(args, "_generation_cache_dir", None)
+    if not editorial or cache_root is None:
+        return _generate_wechat_title_from_filename(source_filename, translated_md, institution_name, args, editorial=editorial)
+    contract = hashlib.sha256(Path(__file__).with_name("wechat_title_optimizer.py").read_bytes()).hexdigest()
+    identity = json.dumps({"source": source_filename, "body": translated_md, "institution": institution_name,
+        "model": getattr(args, "model", "deepseek-flash"), "refine": getattr(args, "title_refine", True),
+        "contract": contract, "version": "filename-title-v1"}, ensure_ascii=False, sort_keys=True)
+    path = Path(cache_root) / "titles" / (hashlib.sha256(identity.encode()).hexdigest() + ".json")
+    if path.is_file():
+        row = json.loads(path.read_text(encoding="utf-8"))
+        if isinstance(row.get("title"), str) and row["title"] and isinstance(row.get("decision"), dict):
+            log("  Reused source-matched filename title checkpoint")
+            return row["title"], row["decision"]
+    title, decision = _generate_wechat_title_from_filename(source_filename, translated_md, institution_name, args, editorial=True)
+    # A failed/rejected provider response must remain eligible for correction.
+    if title and not decision.get("needs_model_repair"):
+        from m2m100_offline_translation import atomic_json
+        atomic_json(path, {"title": title, "decision": decision})
+    return title, decision
+
+
+def _generate_wechat_title_from_filename(
     source_filename: str,
     translated_md: str,
     institution_name: str,

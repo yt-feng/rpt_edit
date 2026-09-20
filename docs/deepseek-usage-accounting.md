@@ -9,7 +9,16 @@ remain useful for comparing these observations against the provider dashboard.
 Each immutable JSON event contains the workflow, job, run ID, run attempt,
 configured stage, source-code operation/call site, requested model after model
 normalization, HTTP/retry/model-switch/key-ordinal counters, elapsed time, status,
-and the provider's input/output/cache-hit/cache-miss/total token counters.
+and the provider's input/output/cache-hit/cache-miss/total token counters. It also
+records `thinking_mode` (`enabled`, `disabled`, or `unknown`) and the optional
+`usage.completion_tokens_details.reasoning_tokens` counter. Reasoning is a subset
+of output tokens: it is shown separately for attribution and never added again to
+output/total tokens or estimated cost. Absent reasoning counters remain unknown.
+
+The shared wrapper explicitly disables thinking for ordinary editing calls. An
+explicit thinking override (including the legacy reasoner alias) is preserved and
+identified in the ledger, allowing its usage to be compared separately. This is a
+statement of current request behavior, not proof of any historical savings.
 
 The operation comes from a source-code function and line number, or an explicit
 static operation name. **Report labels/titles, prompts, generated text, URLs,
@@ -67,7 +76,7 @@ python scripts/summarize_deepseek_usage.py \
 ```
 
 `--input-dir` may be repeated. The summary groups by local calendar date,
-workflow/job, run/attempt, stage, operation and model. UTC event times are
+workflow/job, run/attempt, stage, operation, model and thinking mode. UTC event times are
 converted to the requested timezone before filtering. Re-downloaded/copy artifacts
 are deduplicated by event ID; separately billed reruns are not deduplicated.
 Malformed records and conflicting duplicates are explicitly counted. Unique
@@ -123,4 +132,4 @@ PYTHONPATH=scripts python3 -m unittest \
 The accounting tests cover content/key exclusion, transport failures and HTTP
 retries, model fallback/key failover, copied-artifact deduplication versus real
 reruns, concurrent immutable writes, timezone boundaries, malformed counters,
-explicit cost estimates, and a logging failure that must never repeat a paid call.
+explicit cost estimates, reasoning as an output subset, and a logging failure that must never repeat a paid call.

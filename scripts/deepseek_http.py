@@ -161,6 +161,8 @@ def request_with_retry(
     while attempt <= attempts:
         physical_attempt += 1
         started = time.monotonic()
+        thinking = request_payload.get("thinking")
+        thinking_mode = thinking.get("type") if isinstance(thinking, dict) else "unknown"
         try:
             response = requests.post(
                 url,
@@ -175,7 +177,7 @@ def request_with_retry(
                 attempt=physical_attempt, retry_attempt=attempt,
                 model_switches=model_switches, key_index=_usage_key_index,
                 elapsed_ms=int((time.monotonic() - started) * 1000),
-                transport_error=True,
+                transport_error=True, thinking_mode=thinking_mode,
             )
             if attempt >= attempts:
                 raise
@@ -199,7 +201,7 @@ def request_with_retry(
             attempt=physical_attempt, retry_attempt=attempt,
             model_switches=model_switches, key_index=_usage_key_index,
             elapsed_ms=int((time.monotonic() - started) * 1000),
-            response=response,
+            response=response, thinking_mode=thinking_mode,
         )
         replacement = (
             _model_replacement_from_response(

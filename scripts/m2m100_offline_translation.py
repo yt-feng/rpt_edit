@@ -612,7 +612,11 @@ class M2M100OfflineTranslator:
         cursor = 0
         for match in re.finditer(r"\r?\n|" + _PROTECTED.pattern, masked, re.DOTALL):
             self._append_plain(parts, masked[cursor : match.start()], target, source)
-            parts.append(_TranslationPart(literal=_protected_literal(match.group(), match.lastgroup, target)))
+            literal = _protected_literal(match.group(), match.lastgroup, target)
+            if target == "en" and (match.lastgroup in {"zh_amount", "zh_date"}
+                                   or (match.lastgroup == "points" and "个百分点" in match.group())):
+                literal = " " + literal + " "
+            parts.append(_TranslationPart(literal=literal))
             cursor = match.end()
         self._append_plain(parts, masked[cursor:], target, source)
         return parts, placeholders

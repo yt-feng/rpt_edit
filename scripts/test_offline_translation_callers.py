@@ -88,6 +88,39 @@ class OfflineTranslationCallerTests(unittest.TestCase):
         self.paid.assert_called_once()
         self.engine.translate_markdown.assert_not_called()
 
+    def test_accepted_editorial_body_is_reused_until_source_changes(self):
+        self.paid.side_effect = None
+        self.paid.return_value = "# 机构报告导读\n\n该报告记录了产量数据的变化。"
+        with tempfile.TemporaryDirectory() as directory:
+            args = Namespace(model="deepseek-flash", _generation_cache_dir=Path(directory))
+            with patch.object(reports, "audit_wechat_article_markdown", return_value=[]):
+                first = reports.generate_article_style_markdown("Source body", "Title", "", [], args)
+                second = reports.generate_article_style_markdown("Source body", "Title", "", [], args)
+                self.assertEqual(first, second)
+                self.assertEqual(self.paid.call_count, 1)
+                reports.generate_article_style_markdown("Changed body", "Title", "", [], args)
+                self.assertEqual(self.paid.call_count, 2)
+
+    def test_editorial_filename_title_reuses_source_and_body_checkpoint(self):
+        with tempfile.TemporaryDirectory() as directory:
+            args = Namespace(model="deepseek-flash", _generation_cache_dir=Path(directory))
+            with patch.object(reports, "_generate_wechat_title_from_filename", return_value=("事实标题", {})) as generate:
+                reports.wechat_title_from_filename("Source", "Accepted body", "机构", args)
+                reports.wechat_title_from_filename("Source", "Accepted body", "机构", args)
+                self.assertEqual(generate.call_count, 1)
+                reports.wechat_title_from_filename("Source", "Changed body", "机构", args)
+                self.assertEqual(generate.call_count, 2)
+
+    def test_rejected_editorial_body_is_never_cached(self):
+        self.paid.side_effect = None
+        self.paid.return_value = "Rejected generated body"
+        with tempfile.TemporaryDirectory() as directory:
+            args = Namespace(model="deepseek-flash", _generation_cache_dir=Path(directory))
+            with patch.object(reports, "audit_wechat_article_markdown", return_value=["model_cta"]):
+                with self.assertRaisesRegex(RuntimeError, "editorial guard"):
+                    reports.generate_article_style_markdown("Source", "Title", "", [], args)
+            self.assertFalse(list(Path(directory).rglob("*.json")))
+
     def test_subtitle_indices_and_v2_wrapper_keep_offline_translation(self):
         timeline = [{"text": "Output rises."}, {"text": "Output rises."}]
         args = Namespace()

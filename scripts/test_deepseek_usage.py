@@ -69,7 +69,8 @@ class DeepSeekUsageTests(unittest.TestCase):
         post.return_value = response()
         self.request()
         [event] = self.read_events()
-        self.assertEqual(event["usage"], USAGE)
+        self.assertEqual(event["usage"], {**USAGE, "reasoning_tokens": None})
+        self.assertEqual(event["thinking_mode"], "disabled")
         self.assertEqual(event["model"], "deepseek-flash")
         self.assertEqual(event["stage"], "report-notes")
         self.assertEqual(event["workflow"], "Daily reports")
@@ -77,6 +78,35 @@ class DeepSeekUsageTests(unittest.TestCase):
         self.assertIn("test_deepseek_usage", event["operation"])
         self.assertNotIn("private", json.dumps(event))
         self.assertEqual(event["outcome"], "success")
+
+    @patch("deepseek_http.requests.post")
+    def test_reasoning_is_observed_as_output_subset_without_double_counting(self, post):
+        post.return_value = response(200, {
+            **USAGE,
+            "completion_tokens_details": {"reasoning_tokens": 8, "private_detail": "private reasoning text"},
+        })
+        self.request(payload={"model": "deepseek-reasoner"}, usage_operation="report.edit")
+        self.request(payload={"model": "deepseek-flash"}, usage_operation="report.edit")
+        events = self.read_events()
+        self.assertEqual({row["thinking_mode"] for row in events}, {"enabled", "disabled"})
+        self.assertEqual([row["usage"]["reasoning_tokens"] for row in events], [8, 8])
+        self.assertNotIn("private", json.dumps(events))
+        prices = {"deepseek-flash": {"input_cache_hit": Decimal("1"), "input_cache_miss": Decimal("2"), "output": Decimal("3")}}
+        summary = summarize([self.events], prices=prices)
+        self.assertEqual(summary["totals"]["reasoning_tokens"], 16)
+        self.assertEqual(summary["totals"]["completion_tokens"], 40)
+        self.assertEqual(summary["totals"]["total_tokens"], 240)
+        self.assertEqual(Decimal(summary["totals"]["estimated_cost_cny"]), Decimal("0.00038"))
+        self.assertEqual(len(summary["groups"]), 2)
+        self.assertIn("within output", markdown_report(summary))
+
+    @patch("deepseek_http.requests.post")
+    def test_missing_or_invalid_reasoning_counter_remains_unknown(self, post):
+        for details in (None, {"reasoning_tokens": "8"}, {"reasoning_tokens": -1}):
+            post.return_value = response(200, {**USAGE, "completion_tokens_details": details})
+            self.request()
+        self.assertTrue(all(row["usage"]["reasoning_tokens"] is None for row in self.read_events()))
+        self.assertEqual(summarize([self.events])["totals"]["missing_token_fields"]["reasoning_tokens"], 3)
 
     @patch("deepseek_http.time.sleep")
     @patch("deepseek_http.requests.post")

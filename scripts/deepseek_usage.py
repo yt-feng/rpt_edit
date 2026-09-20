@@ -20,7 +20,7 @@ import uuid
 SCHEMA_VERSION = 1
 TOKEN_FIELDS = (
     "prompt_tokens", "completion_tokens", "total_tokens",
-    "prompt_cache_hit_tokens", "prompt_cache_miss_tokens",
+    "prompt_cache_hit_tokens", "prompt_cache_miss_tokens", "reasoning_tokens",
 )
 _WARNING_PRINTED = False
 
@@ -67,6 +67,7 @@ def record_attempt(
     *, request_id: str, operation: str, model: str, attempt: int,
     retry_attempt: int, model_switches: int, key_index: int,
     elapsed_ms: int, response: Any = None, transport_error: bool = False,
+    thinking_mode: str = "unknown",
 ) -> None:
     """Record allowlisted metadata; accounting failures never retry a paid call."""
     directory = os.getenv("DEEPSEEK_USAGE_DIR", "").strip()
@@ -83,6 +84,13 @@ def record_attempt(
             except Exception:
                 pass
         counters = {name: _integer(usage.get(name)) for name in TOKEN_FIELDS}
+        # Reasoning is a subset of completion tokens, never an extra charge or
+        # an addition to the provider's total_tokens.
+        completion_details = usage.get("completion_tokens_details")
+        counters["reasoning_tokens"] = _integer(
+            completion_details.get("reasoning_tokens")
+            if isinstance(completion_details, dict) else None
+        )
         now = datetime.now(timezone.utc)
         event_id = uuid.uuid4().hex
         status = _integer(getattr(response, "status_code", None))
@@ -99,6 +107,7 @@ def record_attempt(
             "stage": _identifier(os.getenv("DEEPSEEK_USAGE_STAGE", "unspecified")),
             "operation": _identifier(operation),
             "model": _identifier(model),
+            "thinking_mode": thinking_mode if isinstance(thinking_mode, str) and thinking_mode in {"enabled", "disabled"} else "unknown",
             "attempt": attempt,
             "retry_attempt": retry_attempt,
             "model_switches": model_switches,

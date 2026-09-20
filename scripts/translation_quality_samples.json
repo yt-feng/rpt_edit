@@ -1,0 +1,114 @@
+[
+  {
+    "id": "en-zh-yoy",
+    "source_language": "en",
+    "target_language": "zh",
+    "text": "Revenue fell by 8.2% year on year in the first half of 2026.",
+    "review_notes": "同比下降，不是每年下降；2026上半年和8.2%保持。"
+  },
+  {
+    "id": "en-zh-margin",
+    "source_language": "en",
+    "target_language": "zh",
+    "text": "The operating margin increased by 2.5 percentage points to 18.5%.",
+    "review_notes": "营业利润率上升2.5个百分点，最终18.5%；不是营收/利润额或运营边界。"
+  },
+  {
+    "id": "en-zh-cash",
+    "source_language": "en",
+    "target_language": "zh",
+    "text": "Cash reserves were USD 120 million on September 15, 2026.",
+    "review_notes": "2026-09-15时点现金储备1.2亿美元；金额单位、静态存量保持。"
+  },
+  {
+    "id": "zh-en-yoy",
+    "source_language": "zh",
+    "target_language": "en",
+    "text": "2026年上半年，公司收入同比下降8.2%。",
+    "review_notes": "Must explicitly preserve year-on-year comparison, decline, first half of 2026 and 8.2%."
+  },
+  {
+    "id": "zh-en-margin",
+    "source_language": "zh",
+    "target_language": "en",
+    "text": "营业利润率上升2.5个百分点，达到18.5%。",
+    "review_notes": "Operating profit margin, not profits or revenue; increase 2.5 percentage points to 18.5%."
+  },
+  {
+    "id": "zh-en-cash",
+    "source_language": "zh",
+    "target_language": "en",
+    "text": "截至2026年9月15日，现金储备为1.2亿美元。",
+    "review_notes": "As of September 15 2026, cash reserves USD 120 million; correct Chinese 亿 scale."
+  },
+  {
+    "id": "en-zh-paragraph",
+    "source_language": "en",
+    "target_language": "zh",
+    "text": "In the first half of 2026, revenue declined by 8.2% year on year, while operating profit increased by 6%. The operating margin was 18.5%, up 2.5 percentage points from a year earlier. As of September 15, 2026, cash reserves were USD 120 million and debt was USD 45 million. These figures describe the reporting period and are not a forecast.",
+    "review_notes": "完整覆盖四句：收入同比下降，利润上升，利润率期末水平+同比百分点，现金/负债金额，历史非预测。不得把所有指标都译为同方向。"
+  },
+  {
+    "id": "zh-en-paragraph",
+    "source_language": "zh",
+    "target_language": "en",
+    "text": "2026年上半年，公司收入同比下降8.2%，营业利润增长6%。营业利润率为18.5%，较上年同期上升2.5个百分点。截至2026年9月15日，现金储备为1.2亿美元，债务为4500万美元。以上数据反映报告期内的实际情况，不代表未来预测。",
+    "review_notes": "Preserve mixed directions; rate vs profit, percentage points, USD 120m cash and USD 45m debt; historical, not forecast."
+  },
+  {
+    "id": "zh-ko-two-metrics",
+    "source_language": "zh",
+    "target_language": "ko",
+    "text": "今年公司收入增长12.5%，营业利润率为8%。",
+    "review_notes": "Revenue grows 12.5%; operating profit margin IS 8%, not grows to/by 8%. Two independent predicates."
+  },
+  {
+    "id": "zh-ko-reversed-metrics",
+    "source_language": "zh",
+    "target_language": "ko",
+    "text": "毛利率为23%，销售收入同比下降4.7%。",
+    "review_notes": "Gross margin IS 23%; sales revenue falls 4.7% year on year. Static vs change, denominator and direction."
+  },
+  {
+    "id": "zh-ja-two-metrics",
+    "source_language": "zh",
+    "target_language": "ja",
+    "text": "今年公司收入增长12.5%，营业利润率为8%。",
+    "review_notes": "Revenue grows 12.5%; operating profit margin IS 8%, not grows to/by 8%. Two independent predicates."
+  },
+  {
+    "id": "zh-ja-reversed-metrics",
+    "source_language": "zh",
+    "target_language": "ja",
+    "text": "毛利率为23%，销售收入同比下降4.7%。",
+    "review_notes": "Gross margin IS 23%; sales revenue falls 4.7% year on year. Static vs change, denominator and direction."
+  },
+  {
+    "id": "zh-ar-two-metrics",
+    "source_language": "zh",
+    "target_language": "ar",
+    "text": "今年公司收入增长12.5%，营业利润率为8%。",
+    "review_notes": "Revenue grows 12.5%; operating profit margin IS 8%, not grows to/by 8%. Two independent predicates."
+  },
+  {
+    "id": "zh-ar-reversed-metrics",
+    "source_language": "zh",
+    "target_language": "ar",
+    "text": "毛利率为23%，销售收入同比下降4.7%。",
+    "review_notes": "Gross margin IS 23%; sales revenue falls 4.7% year on year. Static vs change, denominator and direction."
+  },
+  {
+    "id": "en-zh-negative",
+    "source_language": "en",
+    "target_language": "zh",
+    "text": "Net profit fell from USD 10 million to USD 8 million, a decline of 20%, while gross margin remained unchanged at 23%.",
+    "review_notes": "净利润1000万到800万美元下降20%，毛利率维持23%不变。"
+  },
+  {
+    "id": "zh-en-negative",
+    "source_language": "zh",
+    "target_language": "en",
+    "text": "净利润从1000万美元降至800万美元，降幅为20%，毛利率仍为23%。",
+    "review_notes": "Net profit USD 10m to USD 8m declines20%; gross margin stays23%."
+  }
+]
