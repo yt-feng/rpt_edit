@@ -34,13 +34,14 @@ runs:
         echo "HYMT_TRANSLATION_CACHE=$RUNNER_TEMP/offline-translation-memo" >> "$GITHUB_ENV"
         echo "PORTAL_OFFLINE_TRANSLATION_THREADS=4" >> "$GITHUB_ENV"
     - name: Restore public model files only
-      uses: actions/cache@v4
+      id: model-cache
+      uses: actions/cache/restore@v4
       with:
         path: ${{ runner.temp }}/hymt-model
         key: hymt-official-q8-${{ steps.configure.outputs.model-sha }}
     - name: Restore pinned CPU runtime
       id: runtime-cache
-      uses: actions/cache@v4
+      uses: actions/cache/restore@v4
       with:
         path: ${{ runner.temp }}/hymt-runtime/build
         key: hymt-cpu-portable-v1-${{ runner.os }}-${{ runner.arch }}-${{ steps.configure.outputs.runtime-revision }}
@@ -70,6 +71,20 @@ runs:
         python scripts/install_hymt_translation_model.py \
           --model-dir "$HYMT_MODEL_DIR" --server-bin "$HYMT_SERVER_BIN" \
           --audit-out "$RUNNER_TEMP/offline-model-audit.json"
+    # Save verified public dependencies before content translation starts. A
+    # rejected translation must not force the next run to rebuild the runtime.
+    - name: Save verified public model cache
+      if: steps.model-cache.outputs.cache-hit != 'true'
+      uses: actions/cache/save@v4
+      with:
+        path: ${{ runner.temp }}/hymt-model
+        key: hymt-official-q8-${{ steps.configure.outputs.model-sha }}
+    - name: Save verified CPU runtime cache
+      if: steps.runtime-cache.outputs.cache-hit != 'true'
+      uses: actions/cache/save@v4
+      with:
+        path: ${{ runner.temp }}/hymt-runtime/build
+        key: hymt-cpu-portable-v1-${{ runner.os }}-${{ runner.arch }}-${{ steps.configure.outputs.runtime-revision }}
     - name: Preserve model provenance
       uses: actions/upload-artifact@v4
       with:

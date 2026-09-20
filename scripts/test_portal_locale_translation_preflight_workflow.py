@@ -31,9 +31,13 @@ class PreflightWorkflowTests(unittest.TestCase):
         action = (ROOT / ".github/actions/setup-offline-translation/action.yml").read_text()
         self.assertIn("hymt-official-q8-", action)
         self.assertIn("scripts/hymt_translation_model_manifest.json", action)
-        cache = action.split("uses: actions/cache@v4", 1)[1].split("- name:", 1)[0]
+        cache = action.split("uses: actions/cache/restore@v4", 1)[1].split("- name:", 1)[0]
         self.assertIn("path: ${{ runner.temp }}/hymt-model", cache)
         self.assertNotIn("translation-cache", cache)
+        self.assertEqual(action.count("uses: actions/cache/save@v4"), 2)
+        for block in re.split(r"uses: actions/cache/(?:restore|save)@v4", action)[1:]:
+            cache_path = re.search(r"path:\s*(.+)", block.split("- name:", 1)[0]).group(1)
+            self.assertIn(cache_path, ("${{ runner.temp }}/hymt-model", "${{ runner.temp }}/hymt-runtime/build"))
         self.assertIn("-DGGML_NATIVE=OFF", action)
         self.assertIn("runtime-revision", action)
         self.assertIn("persist-credentials: false", action)
