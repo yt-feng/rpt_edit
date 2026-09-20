@@ -175,7 +175,7 @@ def run_probe(
 
 
 def main() -> int:
-    print("Paid translation CLI retired. Use scripts/smoke_offline_translation.py for samples "
+    print("Paid translation CLI retired. Use scripts/smoke_hymt_translation.py for samples "
           "or scripts/build_portal_locales.py for an offline release.")
     return 2
 

@@ -19,6 +19,7 @@ import json
 import os
 import re
 import shutil
+import signal
 import sys
 from pathlib import Path
 from typing import Any
@@ -944,7 +945,7 @@ def generate_article_style_markdown(
         raise RuntimeError(f"WeChat article failed deterministic editorial guard: {blocking_issues}")
     article = sanitize_text(article).strip() + "\n"
     if cache_path is not None:
-        from m2m100_offline_translation import atomic_json
+        from offline_translation import atomic_json
         atomic_json(cache_path, {"article": article, "provider": "deepseek-editorial"})
     return article
 
@@ -969,7 +970,7 @@ def wechat_title_from_filename(
     title, decision = _generate_wechat_title_from_filename(source_filename, translated_md, institution_name, args, editorial=True)
     # A failed/rejected provider response must remain eligible for correction.
     if title and not decision.get("needs_model_repair"):
-        from m2m100_offline_translation import atomic_json
+        from offline_translation import atomic_json
         atomic_json(path, {"title": title, "decision": decision})
     return title, decision
 
@@ -1281,7 +1282,7 @@ def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.N
     else:
         # Report text stays with private report outputs; never put this memo in
         # the shared public model cache used by GitHub Actions.
-        offline_translator(args, cache_root / "m2m100")
+        offline_translator(args, cache_root / "hymt")
         translated_md = translate_markdown(clean_md, args)
     translated_md, stock_changes = sanitize_wechat_stock_language(translated_md)
     display_title, title_decision = wechat_title_from_filename(
@@ -1323,6 +1324,7 @@ def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.N
     render_pdf(translated_md, figures, output_pdf, display_title)
 
     status = {
+        "global_index": index,
         "source_report_dir": str(report_dir),
         "title": display_title,
         "source_title": source_title,
@@ -1352,6 +1354,11 @@ def main() -> int:
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
     parser.add_argument("--max-reports", default="1")
     parser.add_argument("--report-offset", type=int, default=0)
+    parser.add_argument("--report-plan", type=Path,
+                        help="Private deterministic Dropbox report selection manifest")
+    parser.add_argument("--translation-shard-index", type=int, default=0)
+    parser.add_argument("--max-seconds", type=int, default=0,
+                        help="Soft processing budget; retain partial segment checkpoints on expiry")
     parser.add_argument("--chunk-chars", type=int, default=7200)
     parser.add_argument("--max-images-per-report", type=int, default=28)
     parser.add_argument("--deepseek-timeout", type=int, default=300)
@@ -1408,10 +1415,20 @@ def main() -> int:
         if not all_reports:
             raise RuntimeError(f"All reports under {date_dir} were excluded by --exclude-institutions={args.exclude_institutions}")
 
-    if max_reports is None:
+    plan = None
+    if args.report_plan:
+        from portal_translation_shards import load_plan, selected_reports
+        if args.report_offset or args.include_institutions or args.exclude_institutions:
+            raise ValueError("Report-plan selection cannot be combined with offset/institution filters")
+        plan = load_plan(args.report_plan)
+        selected_entries = selected_reports(plan, args.translation_shard_index, date_dir)
+        selected = [directory for _, directory in selected_entries]
+    elif max_reports is None:
         selected = all_reports[args.report_offset :]
+        selected_entries = list(enumerate(selected, 1))
     else:
         selected = all_reports[args.report_offset : args.report_offset + max_reports]
+        selected_entries = list(enumerate(selected, 1))
     if not selected:
         raise RuntimeError(f"Report offset {args.report_offset} selected no reports from {len(all_reports)} available reports")
 
@@ -1421,7 +1438,18 @@ def main() -> int:
 
     summary: list[dict[str, Any]] = []
     failures: list[dict[str, Any]] = []
-    for idx, report_dir in enumerate(selected, 1):
+    class TranslationDeadline(BaseException):
+        pass
+
+    def deadline_expired(_signum, _frame):
+        # BaseException deliberately bypasses per-segment retry handlers.
+        raise TranslationDeadline()
+
+    previous_alarm = None
+    if args.max_seconds > 0:
+        previous_alarm = signal.signal(signal.SIGALRM, deadline_expired)
+        signal.setitimer(signal.ITIMER_REAL, args.max_seconds)
+    for idx, report_dir in selected_entries:
         try:
             if args.title_guard:
                 title = report_title(report_dir)
@@ -1432,11 +1460,19 @@ def main() -> int:
                         f"{title} ({', '.join(issues)})"
                     )
             summary.append(process_report(report_dir, out_dir, idx, args))
+        except TranslationDeadline:
+            log("Translation processing budget exhausted; retaining completed segment checkpoints for rerun")
+            failures.append({"source_report_dir": str(report_dir), "error": "translation_time_budget_exhausted"})
+            break
         except Exception as exc:
             log(f"ERROR processing {report_dir}: {exc}")
             failures.append({"source_report_dir": str(report_dir), "error": str(exc)})
-            if len(selected) == 1:
+            if len(selected) == 1 and not plan:
                 raise
+
+    if args.max_seconds > 0:
+        signal.setitimer(signal.ITIMER_REAL, 0)
+        signal.signal(signal.SIGALRM, previous_alarm)
 
     payload = {
         "date_folder": date_dir.name,
@@ -1455,7 +1491,11 @@ def main() -> int:
         "failures": failures,
         "reports": summary,
     }
-    (out_dir / "translation_summary.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    summary_name = "translation_summary.json"
+    if plan:
+        payload.update(plan_sha256=plan["plan_sha256"], translation_shard_index=args.translation_shard_index)
+        summary_name = f"translation_shard_{args.translation_shard_index}.json"
+    (out_dir / summary_name).write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     if not summary:
         return 2
     log(

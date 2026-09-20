@@ -1,13 +1,16 @@
 name: Set up offline translation
-description: Install local CPU translation models; no translation API or credentials
+description: Install pinned Hy-MT2 and CPU llama.cpp on Actions; no paid provider
 inputs:
   targets:
     description: Comma-separated target languages
     default: zh,en
+  audit-suffix:
+    description: Unique suffix for matrix job provenance artifacts
+    default: ''
 runs:
   using: composite
   steps:
-    - name: Configure local model and memo directories
+    - name: Configure pinned CPU model and runtime
       id: configure
       env:
         TRANSLATION_TARGETS: ${{ inputs.targets }}
@@ -17,35 +20,59 @@ runs:
           echo "Unsupported translation targets" >&2
           exit 2
         fi
-        echo "model-key=${TRANSLATION_TARGETS//,/-}" >> "$GITHUB_OUTPUT"
-        echo "M2M100_MODEL_DIR=$RUNNER_TEMP/m2m100-model" >> "$GITHUB_ENV"
-        echo "OFFLINE_TRANSLATION_BACKEND=m2m100" >> "$GITHUB_ENV"
-        echo "M2M100_TRANSLATION_CACHE=$RUNNER_TEMP/offline-translation-memo" >> "$GITHUB_ENV"
-        echo "PORTAL_OFFLINE_TRANSLATION_THREADS=2" >> "$GITHUB_ENV"
-    - name: Install pinned M2M100 CPU runtime
-      shell: bash
-      run: |
-        python -m pip install --disable-pip-version-check torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
-        python -m pip install --disable-pip-version-check -r requirements-translation.txt
-    - name: Restore converted public model files only
+        python - <<'PY'
+        import json, os
+        from pathlib import Path
+        manifest = json.loads(Path('scripts/hymt_translation_model_manifest.json').read_text())
+        with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+            output.write('runtime-revision=' + manifest['runtime']['revision'] + '\n')
+            output.write('model-sha=' + manifest['model']['sha256'] + '\n')
+        PY
+        echo "HYMT_MODEL_DIR=$RUNNER_TEMP/hymt-model" >> "$GITHUB_ENV"
+        echo "HYMT_SERVER_BIN=$RUNNER_TEMP/hymt-runtime/build/bin/llama-server" >> "$GITHUB_ENV"
+        echo "OFFLINE_TRANSLATION_BACKEND=hymt" >> "$GITHUB_ENV"
+        echo "HYMT_TRANSLATION_CACHE=$RUNNER_TEMP/offline-translation-memo" >> "$GITHUB_ENV"
+        echo "PORTAL_OFFLINE_TRANSLATION_THREADS=4" >> "$GITHUB_ENV"
+    - name: Restore public model files only
       uses: actions/cache@v4
       with:
-        path: ${{ runner.temp }}/m2m100-model
-        key: m2m100-ct2-int8-v1-${{ runner.os }}-${{ hashFiles('requirements-translation.txt', 'scripts/install_m2m100_translation_model.py', 'scripts/m2m100_model_manifest.json') }}
-    - name: Install and audit pinned M2M100 model
+        path: ${{ runner.temp }}/hymt-model
+        key: hymt-official-q8-${{ steps.configure.outputs.model-sha }}
+    - name: Restore pinned CPU runtime
+      id: runtime-cache
+      uses: actions/cache@v4
+      with:
+        path: ${{ runner.temp }}/hymt-runtime/build
+        key: hymt-cpu-portable-v1-${{ runner.os }}-${{ runner.arch }}-${{ steps.configure.outputs.runtime-revision }}
+    - name: Checkout immutable official llama.cpp source
+      if: steps.runtime-cache.outputs.cache-hit != 'true'
+      uses: actions/checkout@v4
+      with:
+        repository: ggml-org/llama.cpp
+        ref: ${{ steps.configure.outputs.runtime-revision }}
+        path: .hymt-runtime-source
+        persist-credentials: false
+    - name: Build pinned CPU runtime
+      if: steps.runtime-cache.outputs.cache-hit != 'true'
       shell: bash
       run: |
-        python scripts/install_m2m100_translation_model.py \
-          --model-dir "$M2M100_MODEL_DIR" \
+        test "$(git -C .hymt-runtime-source rev-parse HEAD)" = '${{ steps.configure.outputs.runtime-revision }}'
+        cmake -S .hymt-runtime-source -B "$RUNNER_TEMP/hymt-runtime/build" \
+          -DCMAKE_BUILD_TYPE=Release -DLLAMA_BUILD_IS_DEV=OFF -DGGML_NATIVE=OFF \
+          -DGGML_CUDA=OFF -DGGML_METAL=OFF -DGGML_VULKAN=OFF \
+          -DLLAMA_BUILD_TESTS=OFF -DLLAMA_BUILD_EXAMPLES=OFF \
+          -DLLAMA_BUILD_SERVER=ON -DLLAMA_BUILD_APP=OFF -DLLAMA_OPENSSL=OFF \
+          -DLLAMA_BUILD_UI=OFF -DLLAMA_USE_PREBUILT_UI=OFF
+        cmake --build "$RUNNER_TEMP/hymt-runtime/build" --target llama-server -j 4
+    - name: Download and audit immutable Hy-MT2 model
+      shell: bash
+      run: |
+        python scripts/install_hymt_translation_model.py \
+          --model-dir "$HYMT_MODEL_DIR" --server-bin "$HYMT_SERVER_BIN" \
           --audit-out "$RUNNER_TEMP/offline-model-audit.json"
-    - name: Disable model downloads during inference
-      shell: bash
-      run: |
-        echo "HF_HUB_OFFLINE=1" >> "$GITHUB_ENV"
-        echo "TRANSFORMERS_OFFLINE=1" >> "$GITHUB_ENV"
     - name: Preserve model provenance
       uses: actions/upload-artifact@v4
       with:
-        name: offline-model-audit-${{ github.job }}-${{ github.run_attempt }}
+        name: offline-model-audit-${{ github.job }}-${{ github.run_attempt }}${{ inputs.audit-suffix }}
         path: ${{ runner.temp }}/offline-model-audit.json
         retention-days: 3

@@ -16,7 +16,7 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Any
 
-from m2m100_offline_translation import MODEL_ID, PROVIDER, OfflineTranslator, _detect_source
+from offline_translation import MODEL_ID, PROVIDER, OfflineTranslator, _detect_source
 
 
 CJK_RE = re.compile(r"[\u3400-\u9fff]")

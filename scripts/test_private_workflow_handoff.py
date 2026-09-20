@@ -74,6 +74,28 @@ class PrivateWorkflowHandoffTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 validate_prefix(value)
 
+    def test_explicit_translated_pdf_whitelist_preserves_raw_exclusions(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            report = root / "source" / "01-report"
+            report.mkdir(parents=True)
+            (report / "translation_status.json").write_text('{}')
+            (report / "portal_translated_report_01.pdf").write_bytes(b'translated')
+            (report / "original.pdf").write_bytes(b'original')
+            (report / "portal_translated_report_01.pdf.zip").write_bytes(b'zip')
+            raw = report / "mineru_raw"
+            raw.mkdir()
+            (raw / "translation_status.json").write_text('{}')
+            (raw / "portal_translated_report_01.pdf").write_bytes(b'raw')
+            unmarked = root / "source" / "02-unmarked"
+            unmarked.mkdir()
+            (unmarked / "portal_translated_report_02.pdf").write_bytes(b'no-status')
+            archive = root / "payload.tar.gz"
+            create_archive(root / "source", archive, include_translated_pdfs=True)
+            extract_archive(archive, root / "restored")
+            files = {path.relative_to(root / "restored").as_posix() for path in (root / "restored").rglob('*') if path.is_file()}
+            self.assertEqual(files, {'01-report/translation_status.json', '01-report/portal_translated_report_01.pdf'})
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -24,24 +24,24 @@ class OfflineLocaleTests(unittest.TestCase):
             cache['locales'][language][self.unit.key] = b._translation_cache_row(
                 self.unit, {'ko': '최신 보고서 읽기', 'ja': '最新レポートを読む', 'ar': 'اقرأ أحدث تقرير'}[language])
         b.write_cache(self.path, cache)
-        imported = b.load_cache(self.path, 'm2m100-offline-v1', provider='m2m100')
-        self.assertEqual(imported['provider'], 'm2m100')
+        imported = b.load_cache(self.path, 'hymt-offline-v1', provider='hymt')
+        self.assertEqual(imported['provider'], 'hymt')
         with mock.patch('offline_translation.OfflineTranslator', side_effect=AssertionError('Cache should avoid model load')):
             missing = self.run_translation(imported)
         self.assertEqual(sum(missing.values()), 0)
-        restored = b.load_cache(self.path, 'm2m100-offline-v1', provider='m2m100')
+        restored = b.load_cache(self.path, 'hymt-offline-v1', provider='hymt')
         self.assertEqual(restored['locales']['ko'][self.unit.key]['provider'], 'legacy-cache')
 
     def test_changed_namespace_is_not_imported(self):
         cache = b.empty_cache('unknown-model')
         cache['locales']['ko'][self.unit.key] = b._translation_cache_row(self.unit, '최신 보고서 읽기')
         b.write_cache(self.path, cache)
-        loaded = b.load_cache(self.path, 'm2m100-offline-v1', provider='m2m100')
+        loaded = b.load_cache(self.path, 'hymt-offline-v1', provider='hymt')
         self.assertFalse(loaded['locales']['ko'])
         cache = b.empty_cache()
         cache['prompt_version'] = 'old-prompt'
         b.write_cache(self.path, cache)
-        self.assertEqual(b.load_cache(self.path, 'm2m100-offline-v1', provider='m2m100')['prompt_version'], b.PROMPT_VERSION)
+        self.assertEqual(b.load_cache(self.path, 'hymt-offline-v1', provider='hymt')['prompt_version'], b.PROMPT_VERSION)
 
     def test_retired_paid_commands_cannot_call_the_provider(self):
         import preflight_portal_locale_translation
@@ -54,22 +54,22 @@ class OfflineLocaleTests(unittest.TestCase):
                 self.assertEqual(module.main(), 2)
 
     def test_model_upgrade_keeps_paid_rows_but_invalidates_old_offline_rows(self):
-        cache = b.empty_cache('old-offline-model', provider='m2m100')
+        cache = b.empty_cache('old-offline-model', provider='hymt')
         paid = {**b._translation_cache_row(self.unit, '최신 보고서 읽기'),
                 'provider': 'legacy-cache', 'source_cache_provider': 'deepseek',
                 'model': b.DEFAULT_DEEPSEEK_MODEL}
         cache['locales']['ko'][self.unit.key] = paid
         cache['locales']['ar'][self.unit.key] = {**b._translation_cache_row(self.unit, 'اقرأ أحدث تقرير'),
-                                               'provider': 'm2m100', 'model': 'old-offline-model'}
+                                               'provider': 'hymt', 'model': 'old-offline-model'}
         b.write_cache(self.path, cache)
-        loaded = b.load_cache(self.path, 'new-offline-model', provider='m2m100')
+        loaded = b.load_cache(self.path, 'new-offline-model', provider='hymt')
         self.assertIn(self.unit.key, loaded['locales']['ko'])
         self.assertFalse(loaded['locales']['ar'])
 
     def run_translation(self, cache):
         return b.translate_missing_units({self.unit.key: self.unit}, cache, cache_path=self.path,
-            model='m2m100-offline-v1', base_url='https://example.invalid', workers=32,
-            timeout=1, attempts=3, provider='m2m100')
+            model='hymt-offline-v1', base_url='https://example.invalid', workers=32,
+            timeout=1, attempts=3, provider='hymt')
 
     def test_offline_failure_keeps_other_languages_and_never_repairs_via_api(self):
         def translate(source, language):
@@ -79,12 +79,12 @@ class OfflineLocaleTests(unittest.TestCase):
              mock.patch.object(b, 'deepseek_translate_batch', side_effect=AssertionError('Paid fallback')):
             factory.return_value.translate.side_effect = translate
             with self.assertRaisesRegex(b.TranslationError, 'unresolved'):
-                self.run_translation(b.empty_cache('m2m100-offline-v1', provider='m2m100'))
+                self.run_translation(b.empty_cache('hymt-offline-v1', provider='hymt'))
         saved = json.loads(gzip.decompress(self.path.read_bytes()))
         self.assertIn(self.unit.key, saved['locales']['ko'])
         self.assertIn(self.unit.key, saved['locales']['ar'])
         self.assertNotIn(self.unit.key, saved['locales']['ja'])
-        self.assertEqual(saved['locales']['ko'][self.unit.key]['provider'], 'm2m100')
+        self.assertEqual(saved['locales']['ko'][self.unit.key]['provider'], 'hymt')
 
     def test_missing_model_stops_instead_of_spending_or_reporting_success(self):
         from offline_translation import OfflineTranslationError
@@ -92,7 +92,7 @@ class OfflineLocaleTests(unittest.TestCase):
              mock.patch.object(b, 'deepseek_translate_batch', side_effect=AssertionError('Paid fallback')):
             factory.return_value.translate.side_effect = OfflineTranslationError('Model not installed')
             with self.assertRaisesRegex(b.TranslationError, 'not installed'):
-                self.run_translation(b.empty_cache('m2m100-offline-v1', provider='m2m100'))
+                self.run_translation(b.empty_cache('hymt-offline-v1', provider='hymt'))
             self.assertEqual(factory.return_value.translate.call_count, 1)
         self.assertTrue(self.path.exists())
 

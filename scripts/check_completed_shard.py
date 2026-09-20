@@ -56,9 +56,14 @@ def manifest_source_names(manifest_path: Path, shard_index: int, reports_per_sha
     payload = read_json(manifest_path)
     if not isinstance(payload, list):
         raise ValueError(f"Manifest must contain a list: {manifest_path}")
+    rows = [item for item in payload if isinstance(item, dict)]
     ordered = sorted(
-        (item for item in payload if isinstance(item, dict)),
-        key=lambda item: (int(item.get("process_rank") or 10**9), int(item.get("id") or 10**9)),
+        rows,
+        # Match the batch runner's actual lexical PDF ordering. Rank prefixes
+        # are only two digits, so e.g. 100-... sorts before 11-....
+        key=(lambda item: str(item["process_local_path"]))
+        if rows and all(item.get("process_local_path") for item in rows)
+        else (lambda item: (int(item.get("process_rank") or 10**9), int(item.get("id") or 10**9))),
     )
     start = shard_index * reports_per_shard
     selected = ordered[start : start + reports_per_shard]

@@ -16,6 +16,7 @@ DeepSeek fails or returns invalid JSON, a conservative filename heuristic is use
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -298,7 +299,8 @@ def copy_selected(selected: list[dict[str, Any]], output_dir: Path, process_coun
         source = Path(row["local_path"])
         target = output_dir / f"{idx:02d}-{sanitize_filename(row['name'], f'report-{idx}.pdf')}"
         shutil.copy2(source, target)
-        copied.append({**row, "process_rank": idx, "process_local_path": str(target)})
+        copied.append({**row, "process_rank": idx, "process_local_path": str(target),
+                       "content_sha256": hashlib.sha256(target.read_bytes()).hexdigest()})
     return copied
 
 

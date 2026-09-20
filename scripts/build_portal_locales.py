@@ -311,7 +311,7 @@ LOCALES: dict[str, LocaleConfig] = {
     "ja": LocaleConfig("ja", "Japanese", "日本語", "ltr", "ja_JP", "ja-JP"),
     "ar": LocaleConfig("ar", "Arabic", "العربية", "rtl", "ar_AE", "ar"),
 }
-OFFLINE_PROVIDERS = frozenset({"m2m100"})
+OFFLINE_PROVIDERS = frozenset({"m2m100", "hymt"})
 
 
 @dataclass(frozen=True)
@@ -1565,7 +1565,7 @@ def translate_missing_units(
         return missing_counts
 
     if provider in OFFLINE_PROVIDERS:
-        # Offline inference has no provider balance, HTTP retries or paid repair.
+        # Offline inference uses the runner-local server; no paid provider or paid repair.
         # Save valid rows even if a neighbouring row fails the quality gate.
         from offline_translation import OfflineTranslator, OfflineTranslationError, PROVIDER as offline_provider
         translator = OfflineTranslator()
@@ -6043,7 +6043,7 @@ def parse_args() -> argparse.Namespace:
         required=True,
         help="Downloaded R2 _hot-reports/indexes/public-v2.json public metadata snapshot",
     )
-    parser.add_argument("--provider", choices=("m2m100",), default="m2m100", help="Offline translation only; no paid API fallback")
+    parser.add_argument("--provider", choices=("hymt",), default="hymt", help="Offline translation only; no paid API fallback")
     parser.add_argument("--workers", type=int, default=1)
     parser.add_argument("--model", help="Deprecated compatibility option; pinned offline model identity is used")
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))

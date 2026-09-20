@@ -70,29 +70,34 @@ def validate_prefix(prefix: str) -> str:
     return cleaned + "/"
 
 
-def is_private_handoff_file(path: Path, source: Path) -> bool:
+def is_private_handoff_file(path: Path, source: Path, *, include_translated_pdfs: bool = False) -> bool:
     relative = path.relative_to(source)
     if any(part in EXCLUDED_DIR_NAMES for part in relative.parts[:-1]):
         return False
     if path.suffix.lower() in EXCLUDED_SUFFIXES:
-        return False
+        # Only the translated renderer's named outputs may opt into the private
+        # handoff. Source PDFs, other PDFs, raw directories and media stay out.
+        if not (include_translated_pdfs
+                and re.fullmatch(r"portal_translated_report_\d+\.pdf", path.name)
+                and (path.parent / "translation_status.json").is_file()):
+            return False
     return path.is_file() and not path.is_symlink()
 
 
-def iter_handoff_files(source: Path) -> Iterable[Path]:
+def iter_handoff_files(source: Path, *, include_translated_pdfs: bool = False) -> Iterable[Path]:
     for path in sorted(source.rglob("*")):
-        if is_private_handoff_file(path, source):
+        if is_private_handoff_file(path, source, include_translated_pdfs=include_translated_pdfs):
             yield path
 
 
-def create_archive(source: Path, archive_path: Path) -> tuple[int, int, str]:
+def create_archive(source: Path, archive_path: Path, *, include_translated_pdfs: bool = False) -> tuple[int, int, str]:
     source = source.resolve()
     if not source.is_dir():
         raise RuntimeError(f"Handoff source directory does not exist: {source}")
 
     file_count = 0
     with tarfile.open(archive_path, "w:gz", format=tarfile.PAX_FORMAT) as archive:
-        for path in iter_handoff_files(source):
+        for path in iter_handoff_files(source, include_translated_pdfs=include_translated_pdfs):
             archive.add(path, arcname=path.relative_to(source).as_posix(), recursive=False)
             file_count += 1
 
@@ -131,13 +136,14 @@ def extract_archive(archive_path: Path, destination: Path, *, replace: bool = Tr
     return sum(1 for path in destination.rglob("*") if path.is_file())
 
 
-def upload_directory(source: Path, key: str, *, client: Any | None = None, bucket: str | None = None) -> None:
+def upload_directory(source: Path, key: str, *, client: Any | None = None, bucket: str | None = None,
+                     include_translated_pdfs: bool = False) -> None:
     key = validate_key(key)
     resolved_client = client or build_r2_client()
     resolved_bucket = bucket or r2_bucket()
     with tempfile.TemporaryDirectory(prefix="private-handoff-") as temp_dir:
         archive_path = Path(temp_dir) / "payload.tar.gz"
-        file_count, size, digest = create_archive(source, archive_path)
+        file_count, size, digest = create_archive(source, archive_path, include_translated_pdfs=include_translated_pdfs)
         resolved_client.upload_file(
             str(archive_path),
             resolved_bucket,
@@ -265,6 +271,8 @@ def parse_args() -> argparse.Namespace:
     upload = subparsers.add_parser("upload-dir")
     upload.add_argument("--source", required=True)
     upload.add_argument("--key", required=True)
+    upload.add_argument("--include-translated-pdfs", action="store_true",
+                        help="Include only portal_translated_report_<index>.pdf beside translation_status.json")
 
     download = subparsers.add_parser("download-dir")
     download.add_argument("--key", required=True)
@@ -283,7 +291,7 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     args = parse_args()
     if args.command == "upload-dir":
-        upload_directory(Path(args.source), args.key)
+        upload_directory(Path(args.source), args.key, include_translated_pdfs=args.include_translated_pdfs)
     elif args.command == "download-dir":
         download_directory(args.key, Path(args.destination))
     elif args.command == "download-shards":

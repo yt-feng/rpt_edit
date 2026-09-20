@@ -5,6 +5,12 @@ on:
     paths:
       - "scripts/*wechat*"
       - "scripts/*generation_cost_controls*"
+      - "scripts/*generation_checkpoint*"
+      - "scripts/*portal_translation_shards*"
+      - "scripts/*private_workflow_handoff*"
+      - "scripts/build_portal_translated_reports.py"
+      - "scripts/select_macro_trend_pdfs.py"
+      - "scripts/check_completed_shard.py"
       - "scripts/*pdf_to_xhs*"
       - "scripts/finalize_outputs.py"
       - "scripts/postprocess_podcast.py"
@@ -22,6 +28,12 @@ on:
     paths:
       - "scripts/*wechat*"
       - "scripts/*generation_cost_controls*"
+      - "scripts/*generation_checkpoint*"
+      - "scripts/*portal_translation_shards*"
+      - "scripts/*private_workflow_handoff*"
+      - "scripts/build_portal_translated_reports.py"
+      - "scripts/select_macro_trend_pdfs.py"
+      - "scripts/check_completed_shard.py"
       - "scripts/*pdf_to_xhs*"
       - "scripts/finalize_outputs.py"
       - "scripts/postprocess_podcast.py"
@@ -56,6 +68,11 @@ jobs:
           python scripts/test_source_monitoring.py
           python scripts/test_publish_static_slot.py
           python scripts/test_generation_cost_controls.py
+          python scripts/test_private_generation_checkpoint.py
+          python scripts/test_portal_translation_shards.py
+          python scripts/test_private_workflow_handoff.py
+          python scripts/test_market_views_workflow_contract.py
+          python scripts/test_check_completed_shard.py
           python scripts/test_wechat_output_contract.py
           python scripts/test_wechat_api_verification.py
           python scripts/test_delete_wechat_drafts.py

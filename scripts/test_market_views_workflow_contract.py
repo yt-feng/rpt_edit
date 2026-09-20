@@ -85,7 +85,7 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
                 self.assertFalse(gate(block, {"process-shard": "success"}, cancelled=True))
 
     def test_optional_outputs_keep_user_selection_gates(self):
-        results = {"process-shard": "success"}
+        results = {"process-shard": "success", "translate-report-shard": "success"}
         drafts = job(UPSTREAM, "push-xhs-notes-wechat-drafts")
         self.assertFalse(gate(drafts, results, plan={"wechat_draft_upload": "false"}))
         self.assertFalse(gate(drafts, results, plan={"wechat_draft_source": "portal_translated"}))

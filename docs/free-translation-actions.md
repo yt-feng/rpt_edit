@@ -1,36 +1,34 @@
 # GitHub Actions 离线翻译
 
-实施更新：2026-09-20。本次将纯翻译入口切到固定版本 `facebook/m2m100_418M`，在 GitHub Actions 标准 CPU runner 上使用 CTranslate2 INT8 推理。模型缺失、数字变更或译文校验失败时保留已完成结果并报错，不调用 DeepSeek / DeepL 补译。
+更新：2026-09-20。生产候选已切至腾讯官方 `Hy-MT2-1.8B-GGUF` 的 Q8_0 权重，使用固定版本 `llama.cpp` 在 GitHub Actions CPU runner 推理。是否上线以生产适配器 preflight 的原文/译文人工复核及实际生产运行记录为准，不能把结构检查通过当作金融语义合格。
 
-## 覆盖范围
+## 模型和运行机制
 
-- 报告全文英文 → 中文、中文报告目录标题、完整报告的文件名标题。
-- 网站韩文、日文、阿拉伯文，直接从中文或英文译出，不先生成重复的英文中转版本。
-- 兼容脚本中的字幕及中文 → 英文视频标题；日常 podcast / 视频生成流程另行关闭。
-- 公共机构和咨询报告的微信文章是基于原报告的编辑改写，保留 DeepSeek。成功通过编辑检查的正文按完整提示词、系统提示词、模型及版本缓存。
+`hymt_translation_model_manifest.json` 固定 Hugging Face revision、GGUF SHA-256、上游 llama.cpp commit 和采样参数。模型为 Apache-2.0，运行时为 MIT；安装时保留许可证和来源审计记录。公共 Actions cache 只存模型及编译后的 CPU runtime；构建关闭 NATIVE，避免缓存要求另一台 runner 的特定指令集。
 
-CLI 只提供离线生产入口。旧付费 locale 诊断命令拒绝执行；历史低层函数保留用于兼容回归，不接入工作流。`requirements-translation.txt` 和模型 manifest 固定依赖、模型 revision、量化方式及许可证据。模型准备步骤可下载；后续 `HF_HUB_OFFLINE=1`、`TRANSFORMERS_OFFLINE=1`，推理本身没有 HTTP 请求。
+`setup-offline-translation` 安装并校验模型。推理进程只允许 Linux GitHub Actions；在 runner 内启动绑定 `127.0.0.1` 的 llama-server，Python 通过本机 HTTP 调用该进程。没有外部翻译 API 请求或自动付费补译。本机开发测试使用注入的假引擎，不下载或运行模型。
 
-## 去重与恢复
+报告全文英译中、报告标题、网站韩/日/阿译文、兼容脚本中的英译字幕与视频标题走同一模型。中文或英文直接译出目标语言。公共机构/咨询报告微信文章属于编辑写作，仍保留 DeepSeek，其成功结果单独去重。已关闭的 podcast、视频、XHS/闲鱼流程不会因离线翻译而重新开启。
 
-| 内容 | 复用规则 | 保存位置 |
+## 文本与缓存
+
+金额、单位、日期、同比关系和百分比留在完整自然句中。长段落仅在完整句末拆分；超长单句明确拒绝，保留原文。Markdown 链接目标、图片、代码及 HTML 作为不可修改内容保留；locale 使用原有 `__KC_PH_...__` 数据占位协议。输出校验占位符数量和结构，并对金额尺度、币种、日期、百分比与百分点做类型归一检查；它们不证明所有词义、比较对象或因果关系都正确。
+
+| 内容 | 复用条件 | 保存位置 |
 | --- | --- | --- |
-| 模型权重 | 固定 revision + 依赖/installer/manifest 哈希，校验文件 SHA-256 | Actions model cache，仅模型公开文件 |
-| 中文目录标题 | 原标题精确匹配 + 模型/翻译版本；已发布种子另要求唯一报告 ID 与匹配原题 | 既有 public title cache，每成功一条即写入 |
-| 多语言网站内容 | 规范化原文 + 目标语言 +版本；旧 DeepSeek 缓存通过源文/质量校验后复用并保留来源 | 既有 locale cache，逐批保存，失败不清空 |
-| 报告段落 | 精确文本 SHA-256 + 源/目标语言 + 模型 revision/转换文件身份；同批相同文本只推理一次 | 私有 R2 `_workflow-cache/report-translation/v1/<pipeline>/<YYMMDD>.tar.gz` |
-| 微信编辑正文 | 源文形成的完整 prompt + system prompt + 模型 + 编辑版本 | 同上私有缓存 |
+| 目录标题 | 原标题精确匹配、目标/模型版本；发布种子另需唯一报告 ID | 既有公开 title cache，每条落盘 |
+| 网站 locale | 源文、目标、提示及模型版本 | 既有 locale cache，逐批落盘 |
+| 报告段落 | 精确源文 SHA-256、源/目标语言、固定模型和适配器版本 | 私有 R2 report-translation checkpoint |
+| 微信编辑正文/文件名 | 完整提示、模型及编辑/标题优化版本 | 同上私有 R2 checkpoint |
 
-四条生产报告链（Dropbox、公共机构、咨询、ARK）会先恢复私有缓存，无论本轮成功或失败都保存已完成内容。当前跨运行覆盖同一 pipeline、同一天的重跑；内容键可去重当天多个报告中的同文。不同日期、不同 pipeline 的独立存储尚未做全局合并。报告全文不写入公开 Actions cache。
+旧 DeepSeek 已通过质量检查的译文保留来源并继续复用；不因换模型全量重翻。淘汰的离线模型结果不被冒充为新模型结果。报告正文不放进公开 Actions cache。四条报告链均恢复私有 checkpoint；错误或预留的软超时后仍保存已完成片段。私有报告缓存当前覆盖同一 pipeline、同一天的跨运行恢复；不同日期/不同 pipeline 尚未全局合并。分片运行使用独立上传内容并合并最终索引。
 
-所有语言共用一个模型实例，避免为每个语言对重复占用内存。单引擎批处理，长输入按完整覆盖切片；数字/百分比/链接/占位符/代码块和表格结构检查继续执行。Locale 单轮最多运行一小时并保存 checkpoint，未完成的候选不能切换上线。旧付费译文不因切换 provider 而被整批丢弃。
+## 验证记录与限制
 
-## 验证边界
+2026-09-12 的 PR #138 从未合并，因此旧免费翻译测试不能证明此前生产已切换。2026-09-20 的实模型对照 run `35497801759` 显示：M2M100 曾改变美元金额数量级、丢失句子和同比关系；OPUS 速度更快，但会把“营业利润率”译成 turnover rate、“毛利率”译成 Māori rate。两者均被排除出生产候选。
 
-2026-09-12 的旧分支曾完成 Actions 小样本推理（run `34677068121`），但 PR #138 未合并，因此那次结果不代表生产已经改为免费翻译。本次必须以新提交的 `Portal offline translation preflight` 实测及生产运行记录为准。
+Hy-MT2 独立对照与 production adapter preflight 分开执行。后者直接覆盖自然英中/中英金融句、长段落、真实 locale 数字占位输入、Markdown 表格和链接，保存完整源文、模型实际输入及译文供人工检查。没有逐句硬编码答案或例句自动替换。候选不合格时保留已完成结果、报错并停止，不回退到付费服务。
 
-该 preflight 无付费 API secret，只执行固定公开样本：英译中、中译英、韩/日/阿 locale 以及包含数字、图表 URL、表格的 Markdown。JSON 产物保留源文与译文供语义审查。现金流例句有已审定术语修正，同时保留没有硬编码答案的同比下降、百分点、币种金额和日期例句；结构检查通过不能替代金融含义审查。
+免费 CPU 计算不等于无限吞吐；locale 采用增量缓存和一小时软窗口，报告任务分片并留 checkpoint 上传时间。实际吞吐须以新模型在 Actions 的每条样本时长及生产报告完成时间衡量。
 
-标准 GitHub-hosted runner 对公开仓库的适用计算时长按 GitHub 官方规则；离线翻译不产生按 token 收费的 API 请求。模型 cache 和产物保留三天审计证据，R2 使用项目现有私有桶。
-
-参考：[M2M100 官方模型](https://huggingface.co/facebook/m2m100_418M)、[CTranslate2 转换](https://opennmt.net/CTranslate2/guides/transformers.html)、[GitHub Actions 计费](https://docs.github.com/en/billing/concepts/product-billing/github-actions)。
+参考：[腾讯官方模型](https://huggingface.co/tencent/Hy-MT2-1.8B-GGUF)、[llama.cpp](https://github.com/ggml-org/llama.cpp)、[GitHub Actions 计费规则](https://docs.github.com/en/billing/concepts/product-billing/github-actions)。
