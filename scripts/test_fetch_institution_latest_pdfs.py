@@ -73,6 +73,26 @@ class BISRedesignTests(unittest.TestCase):
         page = '<div class="hero-publication__buttons"><a class="btn btn--primary" href="/content/dam/bis/papers/work1376.pdf">PDF (38 Pages)</a></div>'
         self.assertEqual(fetcher.scrape_pdf_candidates(page, self.REPORT_URL), ["https://www.bis.org/content/dam/bis/papers/work1376.pdf"])
 
+    def test_quarterly_review_download_uses_issue_hero_not_related_pdfs(self) -> None:
+        page_url = "https://www.bis.org/publications/qr-202609"
+        page = '''<div class="hero-quaterly container-xxl">
+          <div class="col-12 hero-quaterly__buttons"><div class="button">
+          <a class="btn btn--primary btn--size-large btn--inverted"
+             href="https://www.bis.org/publications/qr-202609_0.pdf"
+             aria-label="PDF (90 Pages)">PDF (90 Pages)</a></div></div></div>
+          <div class="related"><a class="btn btn--primary"
+             href="/publications/qr-202606.pdf">Previous issue</a></div>'''
+        self.assertEqual(fetcher.scrape_pdf_candidates(page, page_url), [
+            "https://www.bis.org/publications/qr-202609_0.pdf",
+        ])
+
+    def test_quarterly_review_without_issue_pdf_stays_unresolved(self) -> None:
+        page = '''<div class="hero-quaterly__buttons"><a class="btn btn--outline"
+          href="#">Share</a></div><a class="btn btn--primary"
+          href="/publications/unrelated.pdf">Related report</a>'''
+        self.assertEqual(fetcher.scrape_pdf_candidates(
+            page, "https://www.bis.org/publications/qr-202609"), [])
+
     def test_missing_main_pdf_does_not_use_related_file_or_non_bis_host(self) -> None:
         page = '<a href="/publications/unrelated.pdf">Related paper</a><div class="hero-publication__buttons"><a class="btn btn--primary" href="https://example.org/report.pdf">PDF</a></div>'
         self.assertEqual(fetcher.scrape_pdf_candidates(page, self.REPORT_URL), [])

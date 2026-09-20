@@ -1408,6 +1408,8 @@ class _BISPublicationDownloads(HTMLParser):
         classes = set((values.get("class") or "").split())
         in_downloads = any(active for _, active in self.stack) or bool(classes & {
             "hero-publication__buttons", "publication-body__buttons",
+            # BIS uses this spelling on its Quarterly Review issue template.
+            "hero-quaterly__buttons", "hero-quarterly__buttons",
         })
         if tag == "a" and values.get("href"):
             self.all_hrefs.append(values["href"])
