@@ -22,16 +22,18 @@ class TitleCheckpointTests(unittest.TestCase):
         self.root = Path(self.temporary.name)
         self.catalog_path = self.root / "catalog.json"
         self.cache_path = self.root / "cache-v1.json"
-        self.model = "deepseek-flash"
+        self.model = titles.MODEL_ID
 
-    def test_direct_title_request_normalizes_pro_override_before_transport(self):
-        args = mock.Mock(model="deepseek-v4-pro", deepseek_base_url="https://provider.example.invalid", retries=1, timeout=1)
-        response = mock.Mock(status_code=200)
-        response.json.return_value = {"choices": [{"message": {"content": "报告展望"}}]}
-        with mock.patch.dict(os.environ, {"DEEPSEEK_API_KEY": "test-key"}), \
-                mock.patch.object(titles.requests, "post", return_value=response) as transport:
+    def test_direct_title_translation_uses_offline_model_without_key(self):
+        from argparse import Namespace
+        args = Namespace(model="deepseek-v4-pro")
+        with mock.patch.dict(os.environ, {}, clear=True), \
+                mock.patch.object(titles, "OfflineTranslator") as factory:
+            factory.return_value.translate.return_value = "报告展望"
             self.assertEqual(titles.translate_title("Report outlook", args), "报告展望")
-        self.assertEqual(transport.call_args.kwargs["json"]["model"], "deepseek-flash")
+            titles.translate_title("Another report", args)
+        factory.assert_called_once()
+        factory.return_value.translate.assert_called_with("Another report", target="zh")
 
     def write_catalog(self, items, **metadata):
         payload = {"schema_version": 1, "items": items, **metadata}
@@ -185,6 +187,7 @@ class TitleCheckpointTests(unittest.TestCase):
                 self.seed_cache()
                 self.write_catalog([{"id": "same-report", "title": "Report outlook"}])
                 with mock.patch.object(titles, "TITLE_PROMPT_VERSION", changed_prompt), \
+                        mock.patch.object(titles, "MODEL_ID", changed_model), \
                         mock.patch.object(titles, "translate_title", return_value="新翻译") as provider:
                     self.assertEqual(self.run_main(model=changed_model), 0)
                 provider.assert_called_once()

@@ -1,0 +1,126 @@
+# DeepSeek usage accounting
+
+The Python request wrapper now records provider-reported token counts for each
+physical HTTP attempt. It does not require another API key. Existing stage keys
+remain useful for comparing these observations against the provider dashboard.
+
+## What is recorded
+
+Each immutable JSON event contains the workflow, job, run ID, run attempt,
+configured stage, source-code operation/call site, requested model after model
+normalization, HTTP/retry/model-switch/key-ordinal counters, elapsed time, status,
+and the provider's input/output/cache-hit/cache-miss/total token counters.
+
+The operation comes from a source-code function and line number, or an explicit
+static operation name. **Report labels/titles, prompts, generated text, URLs,
+response IDs, headers, API keys/key fingerprints, and original errors are never
+recorded.** The ledger is suitable for public Actions artifacts. The existing
+content and operational log artifacts have separate handling and are not made
+public by this feature.
+
+Only numeric provider usage is counted. An HTTP or transport failure with no
+usage is marked missing; it is not assumed to have consumed zero billed tokens.
+Every real rerun remains a new set of attempts. Model fallback and key failover
+are visible. Key fallback shares a logical request ID, without storing key names
+or values.
+
+## Workflow integration
+
+Set this workflow/job environment variable outside the checkout so that generated
+usage does not enter content commits and survives a checkout reset:
+
+```yaml
+env:
+  DEEPSEEK_USAGE_DIR: ${{ github.workspace }}/../deepseek-usage
+```
+
+Set `DEEPSEEK_USAGE_STAGE` on each paid step to a stable stage such as `selection`,
+`report-notes`, `report-article`, `finalize`, or `market-views`. Stages can contain many distinct
+source-code operations; splitting those operations does not require new keys.
+Each GitHub-hosted job has an independent ledger directory. A matrix job must
+include its matrix identity in the upload artifact name.
+
+At job end, including failures:
+
+```sh
+python scripts/summarize_deepseek_usage.py \
+  --input-dir "$DEEPSEEK_USAGE_DIR" \
+  --output "$DEEPSEEK_USAGE_DIR/summary.json" \
+  --markdown "$DEEPSEEK_USAGE_DIR/summary.md" --github-summary
+```
+
+Upload the directory with an artifact name beginning `deepseek-usage-`, containing
+run ID and run attempt (plus shard ID for matrices). The current workflows retain
+these artifacts for 30 days. If usage cannot be persisted, accounting emits a
+content-free warning and does not retry a paid request solely for logging.
+
+## Daily breakdown and billing comparison
+
+Download relevant `deepseek-usage-*` artifacts, keeping all original event files,
+and aggregate them recursively:
+
+```sh
+python scripts/summarize_deepseek_usage.py \
+  --input-dir downloaded-usage \
+  --date 2026-09-20 --timezone Asia/Shanghai \
+  --output usage-day.json --markdown usage-day.md --github-summary
+```
+
+`--input-dir` may be repeated. The summary groups by local calendar date,
+workflow/job, run/attempt, stage, operation and model. UTC event times are
+converted to the requested timezone before filtering. Re-downloaded/copy artifacts
+are deduplicated by event ID; separately billed reruns are not deduplicated.
+Malformed records and conflicting duplicates are explicitly counted. Unique
+atomic event files avoid concurrent append corruption and lost counter updates.
+
+No prices are hard-coded. Optional `--prices-json` accepts a JSON object keyed by
+model, each with `input_cache_hit`, `input_cache_miss`, and `output` rates in CNY
+per million tokens. Populate these from the applicable provider rate sheet. A
+cost estimate is calculated only for responses containing every required token
+counter and a configured rate; unpriced responses are counted separately. The
+output labels this as an estimate, never the provider invoice. By default the
+cost is unknown, not zero.
+
+## Coverage and current key map
+
+- `DEEPSEEK_SELECTION_API_KEY`: macro report selection.
+- `DEEPSEEK_REPORT_NOTES_API_KEY`: report/WeChat drafting. Article-style report
+  jobs use stage `report-article`; operations separate body editing, title
+  refinement, and title repair. A job with "translated" in its name may still
+  contain institution/consulting editorial work, including mixed Dropbox batches.
+- `DEEPSEEK_FINALIZE_API_KEY`: remaining finalization and content rewrites.
+- `DEEPSEEK_MARKET_VIEWS_API_KEY`: daily Market Views synthesis.
+- `DEEPSEEK_REPORT_TRANSLATION_API_KEY`: no longer used by scheduled pure
+  translation; these steps use offline models. Remaining editorial calls in report
+  PDF jobs use the report-notes key, including the manual PDF test workflow.
+- `DEEPSEEK_CATALOG_TITLES_API_KEY`: no longer needed by scheduled title
+  translation after migration to offline models.
+- `DEEPSEEK_PODCAST_API_KEY`: unused by disabled automatic podcast production.
+- `DEEPSEEK_PORTAL_RUNTIME_API_KEY`: separately deployed Worker use; outside this
+  Python/Actions ledger.
+
+Shared Python-wrapper coverage includes selection, report drafting, finalization,
+content rewriting, Market Views, the retained Zhihu generator, and any explicit legacy paid locale
+translation paths using the wrapper. Offline translation makes no paid API calls
+and contributes no DeepSeek tokens.
+
+**This is an observation ledger, not an account-wide bill.** Existing Worker
+runtime calls, other repositories, historical calls before instrumentation, and
+old manually launched test scripts that bypass the wrapper are outside it.
+Worker locale-detail translation has its own persistent cache and daily limits;
+its provider usage belongs to the portal-runtime key and must be compared
+separately. A run without recorded events does not establish that the whole
+account had no consumption. Historical screenshots cannot be retroactively split
+into operations that were not instrumented at the time.
+
+## Verification
+
+```sh
+PYTHONPATH=scripts python3 -m unittest \
+  scripts.test_deepseek_http scripts.test_deepseek_usage
+```
+
+The accounting tests cover content/key exclusion, transport failures and HTTP
+retries, model fallback/key failover, copied-artifact deduplication versus real
+reruns, concurrent immutable writes, timezone boundaries, malformed counters,
+explicit cost estimates, and a logging failure that must never repeat a paid call.

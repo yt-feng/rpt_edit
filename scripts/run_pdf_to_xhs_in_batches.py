@@ -7,7 +7,7 @@ submitted at once. The wrapper can also process a deterministic shard so GitHub
 Actions can run many shards in parallel.
 
 It also skips already-converted PDFs by default. If an expected output folder
-already has source_mineru.md, note.md, and wechat_article.md, the PDF is not sent
+already has source_mineru.md and wechat_article.md, the PDF is not sent
 to MinerU again.
 """
 from __future__ import annotations
@@ -24,7 +24,7 @@ from pathlib import Path
 from typing import Any
 
 PDFRecord = tuple[int, Path]
-REPORT_MARKERS = {"note.md", "wechat_article.md"}
+REPORT_MARKERS = {"wechat_article.md"}
 CHART_SOURCE_MARKERS = {"source_mineru.md", "status.json"}
 
 
@@ -83,15 +83,19 @@ def expected_item_dir(output_dir: Path, pdf: Path, index: int) -> Path:
     return output_dir / slug(unique_batch_name(pdf, index))
 
 
-def is_already_converted(item_dir: Path, *, chart_source_only: bool = False) -> bool:
+def is_already_converted(item_dir: Path, *, chart_source_only: bool = False, generate_xhs: bool = False) -> bool:
     required = CHART_SOURCE_MARKERS if chart_source_only else {"source_mineru.md", *REPORT_MARKERS}
+    if generate_xhs and not chart_source_only:
+        required = {*required, "note.md"}
     return item_dir.is_dir() and all((item_dir / name).exists() for name in required)
 
 
-def count_generated_report_dirs(output_dir: Path, *, chart_source_only: bool = False) -> int:
+def count_generated_report_dirs(output_dir: Path, *, chart_source_only: bool = False, generate_xhs: bool = False) -> int:
     if not output_dir.exists():
         return 0
     markers = CHART_SOURCE_MARKERS if chart_source_only else REPORT_MARKERS
+    if generate_xhs and not chart_source_only:
+        markers = {*markers, "note.md"}
     return sum(
         1 for path in output_dir.iterdir()
         if path.is_dir() and all((path / marker).exists() for marker in markers)
@@ -104,6 +108,7 @@ def split_existing(
     skip_existing: bool,
     *,
     chart_source_only: bool = False,
+    generate_xhs: bool = False,
 ) -> tuple[list[PDFRecord], list[dict[str, str]]]:
     if not skip_existing:
         return records, []
@@ -111,7 +116,7 @@ def split_existing(
     skipped: list[dict[str, str]] = []
     for index, pdf in records:
         item_dir = expected_item_dir(output_dir, pdf, index)
-        if is_already_converted(item_dir, chart_source_only=chart_source_only):
+        if is_already_converted(item_dir, chart_source_only=chart_source_only, generate_xhs=generate_xhs):
             log(f"Skipping already converted PDF: {pdf.name} -> {item_dir}")
             skipped.append({"source": str(pdf), "expected_item_dir": str(item_dir), "reason": "already_converted"})
         else:
@@ -159,6 +164,10 @@ def build_child_command(args: argparse.Namespace, tmp_input: Path) -> list[str]:
         cmd.append("--no-wechat-title-refine")
     if args.chart_source_only:
         cmd.append("--chart-source-only")
+    if getattr(args, "keep_mineru_raw", False):
+        cmd.append("--keep-mineru-raw")
+    if getattr(args, "generate_xhs", False):
+        cmd.append("--generate-xhs")
     return cmd
 
 
@@ -220,8 +229,10 @@ def main() -> int:
         action="store_true",
         help="Retain only MinerU source markdown and source chart images.",
     )
+    parser.add_argument("--keep-mineru-raw", action="store_true", help="Retain source image paths for a later report rendering step.")
 
     parser.add_argument("--prompt-template", default="prompts/xhs_report_note_prompt.md")
+    parser.add_argument("--generate-xhs", action="store_true", help="Opt in to optional Xiaohongshu copy generation.")
     parser.add_argument("--wechat-prompt-template", default="prompts/wechat_report_article_prompt.md")
     parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-flash"))
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
@@ -270,6 +281,7 @@ def main() -> int:
         output_dir,
         skip_existing=as_bool(args.skip_existing),
         chart_source_only=args.chart_source_only,
+        generate_xhs=args.generate_xhs,
     )
     if not records:
         log(f"Shard {args.shard_index}/{args.shard_count}: all {len(sharded_pdfs)} PDFs are already converted. Skipping MinerU.")
@@ -310,6 +322,7 @@ def main() -> int:
     generated_report_count = count_generated_report_dirs(
         output_dir,
         chart_source_only=args.chart_source_only,
+        generate_xhs=args.generate_xhs,
     )
 
     write_summary(output_dir, {

@@ -3,6 +3,11 @@ name: Daily bilingual podcast videos
 on:
   workflow_dispatch:
     inputs:
+      enable_generation:
+        description: "Explicitly re-enable the retired podcast/video generator for this manual run"
+        required: true
+        type: boolean
+        default: false
       dropbox_root:
         description: "Dropbox root folder containing date-named backup folders"
         required: true
@@ -52,9 +57,6 @@ on:
         required: true
         type: boolean
         default: true
-  schedule:
-    # 23:00 UTC = 07:00 Asia/Shanghai.
-    - cron: "0 23 * * *"
 
 permissions:
   contents: write
@@ -68,6 +70,8 @@ concurrency:
 
 jobs:
   daily-bilingual-podcast-videos:
+    # No automatic schedule. Manual runs also default to no generation.
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.enable_generation == true }}
     runs-on: ubuntu-latest
     timeout-minutes: 180
     steps:

@@ -1,0 +1,9 @@
+# Pinned CPU-only runtimes for the free local translation path. Argos remains
+# available as a deterministic rollback backend; production Actions use the
+# multilingual M2M100 model and CTranslate2 int8 runtime.
+ctranslate2==4.8.2
+sentencepiece==0.2.1
+packaging==25.0
+sacremoses==0.1.1
+transformers==4.57.6
+huggingface-hub==0.35.3

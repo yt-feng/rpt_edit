@@ -90,23 +90,23 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn('--translation-scope "$PORTAL_MULTILINGUAL_TRANSLATION_SCOPE"', shared_args)
         self.assertEqual(locale.count("--translation-scope"), 1)
         self.assertIn('scripts/build_portal_locales.py "${locale_args[@]}"', locale)
-        self.assertIn('scripts/run_portal_locale_backfill.py "${locale_args[@]}"', locale)
-        self.assertIn("--workers 1 --attempts 2 --max-provider-requests 6", locale)
+        self.assertIn('scripts/build_portal_locales.py "${locale_args[@]}"', locale)
+        self.assertIn("--workers 1", locale)
         self.assertIn("Locale translation scope:", locale)
 
-    def test_locale_translation_workers_are_hard_capped_before_backfill(self):
+    def test_locale_translation_uses_one_offline_engine_without_provider_secrets(self):
         locale = self.workflow.split("Build Korean Japanese and Arabic static locales", 1)[1].split(
             "Detect multilingual translation checkpoint", 1)[0]
-        self.assertIn("locale_worker_cap=32", locale)
-        self.assertIn('effective_workers="$PORTAL_MULTILINGUAL_WORKERS"', locale)
-        self.assertIn('effective_workers="$locale_worker_cap"', locale)
-        self.assertIn('--workers "$effective_workers"', locale)
+        self.assertIn("--provider m2m100", locale)
+        self.assertIn("--checkpoint-on-budget --workers 1", locale)
+        self.assertNotIn("DEEPSEEK_API_KEY", locale)
+        self.assertNotIn("DEEPL_API_KEY", locale)
 
     def test_month_scope_is_rejected_before_provider_calls_unless_shadow(self):
         locale = self.workflow.split("Build Korean Japanese and Arabic static locales", 1)[1].split(
             "Detect multilingual translation checkpoint", 1)[0]
         shell = locale.split("        run: |\n", 1)[1]
-        guard = textwrap.dedent(shell.split('          case "$PORTAL_MULTILINGUAL_WORKERS" in', 1)[0])
+        guard = textwrap.dedent(shell.split('          cache_args=()', 1)[0])
         self.assertIn('case "$PORTAL_MULTILINGUAL_TRANSLATION_SCOPE" in', guard)
         self.assertNotIn("python", guard)
         self.assertNotIn("curl", guard)
@@ -362,13 +362,9 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertNotIn('rm -f "$cache_path"', cache)
 
         locale = self.workflow[locale_build:detect_checkpoint]
-        self.assertIn("DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_REPORT_TRANSLATION_API_KEY }}", locale)
-        for fallback in ("DEEPSEEK_API_KEY_BACKUP", "DEEPSEEK_API_KEY_2", "DEEPSEEK_API_KEYS"):
-            self.assertIn(f'{fallback}: ""', locale)
-        self.assertIn("DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}", locale)
-        self.assertIn("DEEPSEEK_BASE_URL", locale)
-        self.assertIn("DEEPSEEK_MODEL", locale)
-        self.assertIn("PORTAL_MULTILINGUAL_WORKERS: ${{ vars.PORTAL_MULTILINGUAL_WORKERS || '32' }}", locale)
+        self.assertNotIn("DEEPSEEK_API_KEY", locale)
+        self.assertNotIn("DEEPL_API_KEY", locale)
+        self.assertIn("--provider m2m100", locale)
         self.assertIn(
             "PORTAL_MULTILINGUAL_INDEX_START_DATE: "
             "${{ vars.PORTAL_MULTILINGUAL_INDEX_START_DATE || '' }}",
@@ -379,16 +375,14 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
             "${{ vars.PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH || '' }}",
             locale,
         )
-        self.assertIn('[ "$PORTAL_MULTILINGUAL_WORKERS" -gt 500 ]', locale)
         for argument in (
             "--root _neutral_site",
             '--site-url "$LIVE_ORIGIN"',
             '--hot-report-index "$RUNNER_TEMP/hot-reports-public-v2.json"',
             "--cache-out _neutral_site/data/i18n/cache-v1.json.gz",
             "--assets-root portal_suite/locale_assets",
-            '--workers "$effective_workers"',
-            '--model "$DEEPSEEK_MODEL"',
-            '--deepseek-base-url "$DEEPSEEK_BASE_URL"',
+            '--workers 1',
+            '--provider m2m100',
         ):
             self.assertIn(argument, locale)
         self.assertIn('cache_args+=(--cache-in "$RUNNER_TEMP/portal-locale-cache/cache-v1.json.gz")', locale)
@@ -397,11 +391,11 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         full = locale.index("--cache-in _neutral_site/data/i18n/cache-v1.json.gz")
         self.assertLess(preflight, full)
         self.assertIn("set -euo pipefail", locale)
-        self.assertIn("--workers 1 --attempts 2 --max-provider-requests 6", locale[:full])
+        self.assertIn("--workers 1", locale[:full])
         self.assertIn('test -s _neutral_site/data/i18n/cache-v1.json.gz', locale[preflight:full])
         self.assertIn('"$RUNNER_TEMP/locale-preflight-diagnostics.json"', locale)
         self.assertIn('"$RUNNER_TEMP/locale-full-diagnostics.json"', locale)
-        self.assertIn("scripts/run_portal_locale_backfill.py", locale)
+        self.assertIn("scripts/build_portal_locales.py", locale)
         self.assertNotIn("--max-provider-cost-cny 400", locale[full:])
         self.assertNotIn("|| true", locale)
         diagnostics = self.workflow.index("Preserve translation diagnostics even on failure")
@@ -449,8 +443,8 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         locale = self.workflow.split("Build Korean Japanese and Arabic static locales", 1)[1].split(
             "Detect multilingual translation checkpoint", 1)[0]
         secret = "DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}"
-        self.assertEqual(self.workflow.count(secret), 1)
-        self.assertIn(secret, locale)
+        self.assertEqual(self.workflow.count(secret), 0)
+        self.assertNotIn(secret, locale)
         validation = self.workflow.split("Validate public source", 1)[1].split("Prepare masked release context", 1)[0]
         compile_step = validation.split("python3 -m py_compile", 1)[1].split("python3 -B", 1)[0]
         for script in ("deepl_locale_repair.py", "preflight_deepl_locale_repair.py"):
@@ -459,7 +453,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
                        "test_preflight_deepl_locale_repair.py"):
             self.assertIn(f"python3 -B scripts/{script}", validation)
         self.assertNotIn("DEEPL_API_KEY", validation)
-        self.assertIn("--workers 1 --attempts 2 --max-provider-requests 6", locale)
+        self.assertIn("--workers 1", locale)
 
     def test_checkpointed_locales_never_reach_publication_but_keep_chinese_evidence(self) -> None:
         def step(name: str) -> str:

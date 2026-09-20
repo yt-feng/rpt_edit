@@ -336,15 +336,9 @@ def run_backfill(
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__, allow_abbrev=False)
-    parser.add_argument("--cache-in", type=Path)
-    parser.add_argument("--cache-out", type=Path, required=True)
-    parser.add_argument("--diagnostics-out", type=Path, required=True)
-    args, builder_args = parser.parse_known_args()
-    report = run_backfill(builder_args, cache_in=args.cache_in, cache_out=args.cache_out,
-                          diagnostics_out=args.diagnostics_out)
-    print(json.dumps({field: report[field] for field in ("status", "ready", "provider_requests", "balance_requests")}, sort_keys=True))
-    return 0 if report["status"] in {"passed", "checkpointed"} else 1
+    print("Paid translation CLI retired. Use scripts/smoke_offline_translation.py for samples "
+          "or scripts/build_portal_locales.py for an offline release.")
+    return 2
 
 
 if __name__ == "__main__":

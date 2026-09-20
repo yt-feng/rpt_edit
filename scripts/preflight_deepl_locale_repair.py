@@ -44,12 +44,9 @@ def run_preflight(path: Path, *, repair=None) -> dict:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--diagnostics-out", type=Path, required=True)
-    args = parser.parse_args()
-    report = run_preflight(args.diagnostics_out)
-    print(json.dumps({key: report.get(key) for key in ("status", "provider_requests", "billed_characters", "remaining_character_budget")}))
-    return 0 if report["status"] == "passed" else 1
+    print("Paid translation CLI retired. Use scripts/smoke_offline_translation.py for samples "
+          "or scripts/build_portal_locales.py for an offline release.")
+    return 2
 
 
 if __name__ == "__main__":

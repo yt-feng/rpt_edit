@@ -4,23 +4,35 @@ on:
   pull_request:
     paths:
       - "scripts/*wechat*"
+      - "scripts/*generation_cost_controls*"
+      - "scripts/*pdf_to_xhs*"
+      - "scripts/finalize_outputs.py"
+      - "scripts/postprocess_podcast.py"
+      - "scripts/sensitive_content_guard.py"
       - "scripts/*xhs_draft*"
       - "scripts/*institution_latest*"
       - "scripts/fixtures/institution_sources/**"
       - "scripts/*publish_static_slot*"
       - ".github/workflows/*wechat*"
       - ".github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml"
+      - ".github/workflows/daily-bilingual-podcast-videos.yml"
       - ".github/actions/restore-wechat-diagnostics/**"
   push:
     branches: [main]
     paths:
       - "scripts/*wechat*"
+      - "scripts/*generation_cost_controls*"
+      - "scripts/*pdf_to_xhs*"
+      - "scripts/finalize_outputs.py"
+      - "scripts/postprocess_podcast.py"
+      - "scripts/sensitive_content_guard.py"
       - "scripts/*xhs_draft*"
       - "scripts/*institution_latest*"
       - "scripts/fixtures/institution_sources/**"
       - "scripts/*publish_static_slot*"
       - ".github/workflows/*wechat*"
       - ".github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml"
+      - ".github/workflows/daily-bilingual-podcast-videos.yml"
       - ".github/actions/restore-wechat-diagnostics/**"
   workflow_dispatch:
 
@@ -43,6 +55,7 @@ jobs:
           python scripts/test_fetch_institution_latest_pdfs.py
           python scripts/test_source_monitoring.py
           python scripts/test_publish_static_slot.py
+          python scripts/test_generation_cost_controls.py
           python scripts/test_wechat_output_contract.py
           python scripts/test_wechat_api_verification.py
           python scripts/test_delete_wechat_drafts.py

@@ -13,6 +13,7 @@ publishing public-facing notes.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -22,7 +23,7 @@ from typing import Any
 
 import requests
 
-from deepseek_http import normalize_deepseek_model_name
+from deepseek_http import normalize_deepseek_model_name, request_with_retry
 
 TARGET_FILENAMES = {
     "note.md",
@@ -1059,10 +1060,10 @@ def deepseek_rewrite(text: str, detected_hits: list[dict[str, Any]], model: str,
 原文：
 {text}
     """.strip()
-    response = requests.post(
+    response = request_with_retry(
         base_url.rstrip("/") + "/chat/completions",
         headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
-        json={
+        payload={
             "model": normalize_deepseek_model_name(model),
             "thinking": {"type": "disabled"},
             "temperature": 0.2,
@@ -1071,7 +1072,10 @@ def deepseek_rewrite(text: str, detected_hits: list[dict[str, Any]], model: str,
                 {"role": "user", "content": prompt},
             ],
         },
+        label="content_rewrite",
         timeout=240,
+        max_attempts=1,
+        usage_operation="content_rewrite",
     )
     if response.status_code >= 400:
         raise RuntimeError(f"DeepSeek rewrite failed: HTTP {response.status_code}, {response.text[:500]}")
@@ -1129,13 +1133,43 @@ def guard_file(path: Path, args: argparse.Namespace) -> dict[str, Any]:
 
 
 def run_sensitive_guard(output_dir: Path, args: argparse.Namespace) -> list[dict[str, Any]]:
+    cache_path = output_dir / "sensitive_content_guard_cache.json"
+    try:
+        cache = json.loads(cache_path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        cache = {}
+    if not isinstance(cache, dict):
+        cache = {}
+    policy = {
+        "code": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        "model": args.model,
+        "base_url": args.deepseek_base_url,
+        "use_free_api": args.use_free_api,
+        "api_url": args.sensitive_api_url,
+        "max_check_chunks": args.max_check_chunks,
+    }
+
+    def fingerprint(path: Path) -> str:
+        return hashlib.sha256(path.read_bytes() + json.dumps(policy, sort_keys=True).encode("utf-8")).hexdigest()
+
+    excluded = set(getattr(args, "exclude_filenames", "").split(","))
     results: list[dict[str, Any]] = []
     for path in sorted(output_dir.rglob("*")):
-        if path.is_file() and should_process(path):
+        if path.is_file() and path.name not in excluded and should_process(path):
             try:
-                results.append(guard_file(path, args))
+                # Finalization sanitizes all text/JSON outputs. Hash the path
+                # too so brand replacements cannot change a cache entry's key.
+                path_key = hashlib.sha256(str(path.relative_to(output_dir)).encode("utf-8")).hexdigest()
+                if cache.get(path_key) == fingerprint(path):
+                    results.append({"path": str(path), "changed": False, "reused": True})
+                    continue
+                result = guard_file(path, args)
+                results.append(result)
+                if not result.get("api_errors") and not result.get("rewrite_error"):
+                    cache[path_key] = fingerprint(path)
             except Exception as exc:
                 results.append({"path": str(path), "changed": False, "error": str(exc)})
+    cache_path.write_text(json.dumps(cache, ensure_ascii=False, indent=2), encoding="utf-8")
     summary_path = output_dir / "sensitive_content_guard_summary.json"
     summary_path.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
     changed = sum(1 for item in results if item.get("changed"))
@@ -1152,6 +1186,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--sensitive-api-url", default=os.getenv("SENSITIVE_API_URL", "https://v.api.aa1.cn/api/api-mgc/index.php"))
     parser.add_argument("--use-free-api", default="true")
     parser.add_argument("--max-check-chunks", type=int, default=20)
+    parser.add_argument("--exclude-filenames", default="", help="Comma-separated disabled outputs that must be left untouched.")
     return parser
 
 

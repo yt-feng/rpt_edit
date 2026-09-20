@@ -3,7 +3,7 @@
 
 Responsibilities:
 1. Sanitize investment-bank brand names in generated text outputs.
-2. Generate Xianyu listing copy.
+2. Generate Xianyu listing copy only when explicitly requested.
 3. Generate Zhihu-style article copy.
 4. Normalize WeChat endings.
 5. Run sensitive-content guard on public-facing notes.
@@ -11,6 +11,7 @@ Responsibilities:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -172,7 +173,7 @@ def normalize_wechat_ending(text: str, include_zsxq: bool) -> str:
     for pattern in CHINESE_DISCLAIMER_PATTERNS:
         text = re.sub(pattern, "", text, flags=re.IGNORECASE).strip()
     text = re.sub(
-        r'<p\s+style="color:#999999;font-size:12px;">[^<]*(?:not investment advice|investment, legal, tax, accounting)[^<]*</p>',
+        r'<p\s+style="color:#999999;font-size:12px;">[^<]*(?:not investment advice|investment,\s*legal,\s*tax,\s*accounting)[^<]*</p>',
         "",
         text,
         flags=re.IGNORECASE,
@@ -182,7 +183,11 @@ def normalize_wechat_ending(text: str, include_zsxq: bool) -> str:
     if include_zsxq:
         parts.append(ZSXQ_IMAGE_MD)
     parts.append(GRAY_DISCLAIMER)
-    return "\n\n".join(part for part in parts if part).strip() + "\n"
+    normalized = "\n\n".join(part for part in parts if part).strip() + "\n"
+    # Use the same deterministic normalization as the later guard, including
+    # the footer, so a retry neither duplicates disclaimers nor invalidates
+    # the content cache just by restoring comma whitespace.
+    return sanitize_wechat_stock_language(normalized)[0]
 
 
 def normalize_wechat_articles(output_dir: Path) -> int:
@@ -269,6 +274,14 @@ def trim_source_text(source_text: str, max_chars: int) -> str:
     return source_text
 
 
+def generated_text_is_usable(text: str) -> bool:
+    return bool(text.strip()) and not re.search(
+        r"(?:未检测到 DEEPSEEK_API_KEY|请复制.*prompt|DeepSeek.{0,100}(?:失败|failed))",
+        text,
+        re.I,
+    )
+
+
 def generate_from_template(item_dir: Path, args: argparse.Namespace, source_path: Path, template_path: Path, output_name: str, prompt_name: str, label: str, prompt_chars: int, target_length: int | None = None) -> dict[str, str]:
     status: dict[str, str] = {}
     if not source_path.exists():
@@ -283,13 +296,36 @@ def generate_from_template(item_dir: Path, args: argparse.Namespace, source_path
     if target_length is not None:
         format_args["target_length"] = target_length
     prompt = sanitize_text(template.format(**format_args))
+    # Cache successful work by the full source, prompt, model and endpoint. The
+    # generated article may subsequently receive deterministic formatting, so
+    # its bytes are deliberately not part of the input fingerprint.
+    cache_key = hashlib.sha256(json.dumps({
+        "source": source_path.read_text(encoding="utf-8", errors="ignore"),
+        "prompt": prompt,
+        "model": args.model,
+        "base_url": args.deepseek_base_url,
+        "version": 1,
+    }, sort_keys=True, ensure_ascii=False).encode("utf-8")).hexdigest()
+    output_path = item_dir / output_name
+    cache_path = item_dir / f"{output_name}.generation.json"
+    if output_path.exists() and cache_path.exists():
+        try:
+            cached = json.loads(cache_path.read_text(encoding="utf-8"))
+            existing = output_path.read_text(encoding="utf-8").strip()
+            if isinstance(cached, dict) and cached.get("input_sha256") == cache_key and generated_text_is_usable(existing):
+                log(f"Reusing unchanged {label}: {item_dir.name}")
+                return {output_name: output_name, prompt_name: prompt_name, f"{output_name}_reused": "true"}
+        except (ValueError, OSError):
+            pass
     (item_dir / prompt_name).write_text(prompt, encoding="utf-8")
     try:
         text = call_deepseek(prompt, args, label)
     except Exception as exc:
         text = f"DeepSeek 生成 {label} 失败：{exc}\n\n请复制 {prompt_name} 手动生成。\n"
         status[f"{output_name}_error"] = str(exc)
-    (item_dir / output_name).write_text(sanitize_text(text), encoding="utf-8")
+    output_path.write_text(sanitize_text(text), encoding="utf-8")
+    if generated_text_is_usable(text) and not status.get(f"{output_name}_error"):
+        cache_path.write_text(json.dumps({"input_sha256": cache_key}, indent=2), encoding="utf-8")
     status[output_name] = output_name
     status[prompt_name] = prompt_name
     return status
@@ -351,6 +387,12 @@ def run_guard_if_enabled(output_dir: Path, args: argparse.Namespace) -> None:
         log("Sensitive content guard import failed; skipping.")
         return
     guard_parser = build_sensitive_arg_parser()
+    excluded = [
+        "note.md", "wechat_article_en.md", "podcast_script_zh.md",
+        "podcast_script_en.md", "podcast_zh.md", "podcast_en.md",
+    ]
+    if str(args.generate_xianyu).lower() not in {"1", "true", "yes", "y", "on"}:
+        excluded.append("xianyu_note.md")
     guard_args = guard_parser.parse_args([
         "--output-dir", str(output_dir),
         "--model", args.model,
@@ -358,16 +400,17 @@ def run_guard_if_enabled(output_dir: Path, args: argparse.Namespace) -> None:
         "--sensitive-api-url", args.sensitive_api_url,
         "--use-free-api", args.use_free_api,
         "--max-check-chunks", str(args.max_check_chunks),
+        "--exclude-filenames", ",".join(excluded),
     ])
     run_sensitive_guard(output_dir, guard_args)
 
 
-def main() -> int:
+def build_arg_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output-dir", default="xhs_notes")
     parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-flash"))
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
-    parser.add_argument("--generate-xianyu", default="true")
+    parser.add_argument("--generate-xianyu", default="false")
     parser.add_argument("--xianyu-prompt-template", default="prompts/xianyu_report_listing_prompt.md")
     parser.add_argument("--xianyu-prompt-chars", type=int, default=22000)
     parser.add_argument("--generate-zhihu", default="true")
@@ -378,7 +421,11 @@ def main() -> int:
     parser.add_argument("--sensitive-api-url", default=os.getenv("SENSITIVE_API_URL", "https://v.api.aa1.cn/api/api-mgc/index.php"))
     parser.add_argument("--use-free-api", default="true")
     parser.add_argument("--max-check-chunks", type=int, default=20)
-    args = parser.parse_args()
+    return parser
+
+
+def main() -> int:
+    args = build_arg_parser().parse_args()
 
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)

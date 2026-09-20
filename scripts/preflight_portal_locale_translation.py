@@ -224,20 +224,9 @@ def run_preflight(
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--site-url", default=os.getenv("LIVE_ORIGIN", ""))
-    parser.add_argument("--diagnostics-out", type=Path, required=True)
-    parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", builder.DEFAULT_DEEPSEEK_MODEL))
-    parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
-    args = parser.parse_args()
-    try:
-        report = run_preflight(site_url=args.site_url, diagnostics_out=args.diagnostics_out,
-                               model=args.model, base_url=args.deepseek_base_url)
-    except PreflightError as error:
-        print(f"portal locale preflight failed: {error}", file=sys.stderr)
-        return 1
-    print(json.dumps({key: report.get(key) for key in ("status", "provider_requests", "usage_totals", "usage_unknown_responses")}))
-    return 0
+    print("Paid translation CLI retired. Use scripts/smoke_offline_translation.py for samples "
+          "or scripts/build_portal_locales.py for an offline release.")
+    return 2
 
 
 if __name__ == "__main__":

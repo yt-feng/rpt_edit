@@ -924,7 +924,8 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
             status["chart_source_only"] = True
             status["images"] = create_chart_source_assets(raw_dir, assets_dir, args.max_images)
             status["chart_source_image_count"] = len(status["images"])
-            shutil.rmtree(raw_dir)
+            if not getattr(args, "keep_mineru_raw", False):
+                shutil.rmtree(raw_dir)
         else:
             status["images"] = create_visual_assets(
                 raw_dir,
@@ -943,7 +944,8 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
         status["source_markdown"] = "source_mineru.md"
         status["images"] = create_chart_source_assets(raw_dir, assets_dir, args.max_images)
         status["chart_source_image_count"] = len(status["images"])
-        shutil.rmtree(raw_dir)
+        if not getattr(args, "keep_mineru_raw", False):
+            shutil.rmtree(raw_dir)
         (item_dir / "status.json").write_text(
             json.dumps(status, ensure_ascii=False, indent=2),
             encoding="utf-8",
@@ -952,13 +954,18 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
     institution_name = infer_institution_name(pdf_path.name, status.get("source_pdf"), source_text[:2000])
     if institution_name:
         status["institution_name"] = institution_name
-    xhs_prompt = build_xhs_prompt(Path(args.prompt_template), source_text, args)
-    (item_dir / "prompt_for_xhs.md").write_text(xhs_prompt, encoding="utf-8")
-    note = safe_generate_text(xhs_prompt, args, "Xiaohongshu note")
-    note = clean_xhs_note(note)
-    note = limit_xhs_note_length(note, args.length)
-    (item_dir / "note.md").write_text(note, encoding="utf-8")
-    title, subtitle = extract_cover_titles(note, fallback_title)
+    # XHS is optional; WeChat and the report pipeline do not require its copy.
+    # Keep existing note.md files intact when the stage is disabled.
+    title, subtitle = fallback_title, "研报原图与阅读笔记"
+    status["xhs_generation_enabled"] = bool(getattr(args, "generate_xhs", False))
+    if status["xhs_generation_enabled"]:
+        xhs_prompt = build_xhs_prompt(Path(args.prompt_template), source_text, args)
+        (item_dir / "prompt_for_xhs.md").write_text(xhs_prompt, encoding="utf-8")
+        note = safe_generate_text(xhs_prompt, args, "Xiaohongshu note")
+        note = clean_xhs_note(note)
+        note = limit_xhs_note_length(note, args.length)
+        (item_dir / "note.md").write_text(note, encoding="utf-8")
+        title, subtitle = extract_cover_titles(note, fallback_title)
     status["cover_short_title"] = title
     status["cover_subtitle"] = subtitle
     status["images"] = create_visual_assets(raw_dir, pdf_path, assets_dir, args.max_images, title=title)
@@ -1044,10 +1051,11 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
 
 
 def build_arg_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Convert repo PDFs to Xiaohongshu notes and WeChat teaser articles.")
+    parser = argparse.ArgumentParser(description="Convert repo PDFs to WeChat articles; optional XHS copy is disabled by default.")
     parser.add_argument("--input-dir", default="pdfs")
     parser.add_argument("--output-dir", default="xhs_notes")
     parser.add_argument("--prompt-template", default="prompts/xhs_report_note_prompt.md")
+    parser.add_argument("--generate-xhs", action="store_true", help="Opt in to optional Xiaohongshu copy generation.")
     parser.add_argument("--wechat-prompt-template", default="prompts/wechat_report_article_prompt.md")
     parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-flash"))
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
@@ -1068,6 +1076,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Run MinerU and retain source markdown/chart images without generating XHS or WeChat content.",
     )
+    parser.add_argument("--keep-mineru-raw", action="store_true", help="In source-only mode retain original image paths for downstream report rendering.")
     parser.add_argument(
         "--community-cta",
         default=(

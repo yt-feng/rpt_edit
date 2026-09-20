@@ -1,0 +1,70 @@
+name: DeepSeek daily usage breakdown
+
+on:
+  schedule:
+    # Collect yesterday after the longest overnight jobs can upload their ledger.
+    - cron: '20 2 * * *'
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Asia/Shanghai date YYYY-MM-DD, or yesterday'
+        required: true
+        default: yesterday
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: deepseek-daily-usage
+  cancel-in-progress: false
+
+jobs:
+  summarize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Resolve accounting date
+        id: date
+        env:
+          REQUESTED_DATE: ${{ inputs.date || 'yesterday' }}
+        run: |
+          python - <<'PY'
+          from datetime import datetime, timedelta, date
+          from zoneinfo import ZoneInfo
+          import os
+          requested = os.environ['REQUESTED_DATE']
+          day = ((datetime.now(ZoneInfo('Asia/Shanghai')) - timedelta(days=1)).date()
+                 if requested == 'yesterday' else date.fromisoformat(requested))
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write(f'date={day.isoformat()}\n')
+          PY
+      - name: Collect instrumented job ledgers
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ACCOUNTING_DATE: ${{ steps.date.outputs.date }}
+        run: |
+          python scripts/collect_deepseek_usage_artifacts.py \
+            --repo "$GITHUB_REPOSITORY" --date "$ACCOUNTING_DATE" \
+            --output-dir usage-input
+      - name: Summarize per workflow, stage and operation
+        env:
+          ACCOUNTING_DATE: ${{ steps.date.outputs.date }}
+        run: |
+          python scripts/summarize_deepseek_usage.py \
+            --input-dir usage-input --date "$ACCOUNTING_DATE" \
+            --output usage-summary/summary.json --markdown usage-summary/summary.md \
+            --github-summary
+          cp usage-input/collection.json usage-summary/collection.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: deepseek-daily-breakdown-${{ steps.date.outputs.date }}-${{ github.run_id }}
+          path: usage-summary
+          retention-days: 30
+          if-no-files-found: error

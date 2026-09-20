@@ -33,6 +33,7 @@ permissions:
   contents: write
 
 env:
+  DEEPSEEK_USAGE_DIR: ${{ github.workspace }}/../deepseek-usage
   PYTHONUNBUFFERED: "1"
 
 concurrency:
@@ -76,9 +77,15 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends fonts-noto-cjk
 
+      - name: Set up free local translation models
+        uses: ./.github/actions/setup-offline-translation
+        with:
+          targets: zh,en
+
       - name: Build Portal translated report PDF
         env:
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_REPORT_TRANSLATION_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_REPORT_NOTES_API_KEY }}
+          DEEPSEEK_USAGE_STAGE: report-article
           DEEPSEEK_BASE_URL: ${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}
         run: |
           DATE_FOLDER="${{ github.event.inputs.date_folder || 'latest' }}"
@@ -118,3 +125,19 @@ jobs:
         if: ${{ github.event.inputs.commit_results == 'true' }}
         run: |
           bash scripts/commit_output_dir.sh "portal_translated_reports" "Generate Portal translated report PDFs" 8
+      - name: Summarize observed DeepSeek usage
+        if: ${{ always() && hashFiles('scripts/summarize_deepseek_usage.py') != '' }}
+        run: |
+          python scripts/summarize_deepseek_usage.py \
+            --input-dir "$DEEPSEEK_USAGE_DIR" \
+            --output "$DEEPSEEK_USAGE_DIR/summary.json" \
+            --markdown "$DEEPSEEK_USAGE_DIR/summary.md" --github-summary
+
+      - name: Upload content-free DeepSeek usage
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: deepseek-usage-${{ github.job }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ env.DEEPSEEK_USAGE_DIR }}
+          if-no-files-found: ignore
+          retention-days: 30
