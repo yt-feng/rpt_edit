@@ -39,6 +39,8 @@ class PrivateTranslationCheckpointTests(unittest.TestCase):
     def test_keys_have_fixed_private_prefix_and_safe_scope_date(self):
         self.assertEqual(checkpoint.checkpoint_key("institution", "260920"),
                          "_workflow-cache/report-translation/v1/institution/260920.tar.gz")
+        self.assertEqual(checkpoint.checkpoint_key("dropbox-p5-n16-i0", "20260920"),
+                         "_workflow-cache/report-translation/v1/dropbox-p5-n16-i0/20260920.tar.gz")
         for scope, date in (("../public", "260920"), ("institution", "latest"), ("", "260920")):
             with self.assertRaises(ValueError):
                 checkpoint.checkpoint_key(scope, date)

@@ -12,8 +12,8 @@ from private_workflow_handoff import download_directory, upload_directory
 def checkpoint_key(scope: str, date_folder: str) -> str:
     if not re.fullmatch(r"[a-z][a-z0-9-]{0,63}", scope):
         raise ValueError("Invalid translation checkpoint scope")
-    if not re.fullmatch(r"\d{6}", date_folder):
-        raise ValueError("Translation checkpoint date must be YYMMDD")
+    if not re.fullmatch(r"\d{6,8}", date_folder):
+        raise ValueError("Translation checkpoint date must contain 6 to 8 digits")
     return f"_workflow-cache/report-translation/v1/{scope}/{date_folder}.tar.gz"
 
 

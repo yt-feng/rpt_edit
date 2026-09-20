@@ -449,6 +449,8 @@ def render_video(audio_path: Path, timeline: list[dict[str, Any]], image_paths: 
 
 
 def process_item(item_dir: Path, args: argparse.Namespace) -> dict[str, Any]:
+    from wechat_editorial_binding import advance_binding, read_bound_article
+
     status_path = item_dir / "status.json"
     status: dict[str, Any] = {}
     if status_path.exists():
@@ -460,8 +462,10 @@ def process_item(item_dir: Path, args: argparse.Namespace) -> dict[str, Any]:
     image_paths = find_original_images(item_dir)
     article_path = item_dir / "wechat_article.md"
     if article_path.exists() and image_paths:
+        binding_before = read_bound_article(item_dir)
         article = article_path.read_text(encoding="utf-8", errors="ignore")
         article_path.write_text(embed_original_images(article, image_paths, max_images=args.max_wechat_images, alt="研报原图"), encoding="utf-8")
+        advance_binding(item_dir, binding_before, status=status)
         status["wechat_images"] = image_paths[: args.max_wechat_images]
 
     generate_english = as_bool(getattr(args, "generate_english_article", False))

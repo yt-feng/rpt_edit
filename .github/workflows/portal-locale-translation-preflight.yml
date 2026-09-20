@@ -35,7 +35,11 @@ concurrency:
 
 jobs:
   preflight:
-    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [ubuntu-22.04, ubuntu-24.04]
+    runs-on: ${{ matrix.runner }}
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
@@ -60,6 +64,7 @@ jobs:
         uses: ./.github/actions/setup-offline-translation
         with:
           targets: zh,en,ko,ja,ar
+          audit-suffix: -${{ matrix.runner }}
       - name: Translate public samples with the runner-local CPU server
         run: |
           python scripts/smoke_hymt_translation.py \
@@ -68,7 +73,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: portal-locale-preflight-${{ github.run_id }}-${{ github.run_attempt }}
+          name: portal-locale-preflight-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.runner }}
           path: ${{ runner.temp }}/portal-locale-preflight/
           if-no-files-found: warn
           retention-days: 3

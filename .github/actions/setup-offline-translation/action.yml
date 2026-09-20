@@ -21,12 +21,14 @@ runs:
           exit 2
         fi
         python - <<'PY'
-        import json, os
+        import json, os, platform
         from pathlib import Path
         manifest = json.loads(Path('scripts/hymt_translation_model_manifest.json').read_text())
         with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
             output.write('runtime-revision=' + manifest['runtime']['revision'] + '\n')
             output.write('model-sha=' + manifest['model']['sha256'] + '\n')
+            release = platform.freedesktop_os_release()
+            output.write('runner-image=' + release['ID'] + '-' + release['VERSION_ID'] + '\n')
         PY
         echo "HYMT_MODEL_DIR=$RUNNER_TEMP/hymt-model" >> "$GITHUB_ENV"
         echo "HYMT_SERVER_BIN=$RUNNER_TEMP/hymt-runtime/build/bin/llama-server" >> "$GITHUB_ENV"
@@ -44,7 +46,7 @@ runs:
       uses: actions/cache/restore@v4
       with:
         path: ${{ runner.temp }}/hymt-runtime/build
-        key: hymt-cpu-portable-v1-${{ runner.os }}-${{ runner.arch }}-${{ steps.configure.outputs.runtime-revision }}
+        key: hymt-cpu-portable-v2-${{ runner.os }}-${{ runner.arch }}-${{ steps.configure.outputs.runner-image }}-${{ steps.configure.outputs.runtime-revision }}
     - name: Checkout immutable official llama.cpp source
       if: steps.runtime-cache.outputs.cache-hit != 'true'
       uses: actions/checkout@v4
@@ -84,7 +86,7 @@ runs:
       uses: actions/cache/save@v4
       with:
         path: ${{ runner.temp }}/hymt-runtime/build
-        key: hymt-cpu-portable-v1-${{ runner.os }}-${{ runner.arch }}-${{ steps.configure.outputs.runtime-revision }}
+        key: hymt-cpu-portable-v2-${{ runner.os }}-${{ runner.arch }}-${{ steps.configure.outputs.runner-image }}-${{ steps.configure.outputs.runtime-revision }}
     - name: Preserve model provenance
       uses: actions/upload-artifact@v4
       with:

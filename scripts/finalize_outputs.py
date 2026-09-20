@@ -27,12 +27,17 @@ try:
         build_arg_parser as build_sensitive_arg_parser,
         run_sensitive_guard,
         sanitize_wechat_stock_language,
+        is_source_material,
     )
 except Exception:
     run_sensitive_guard = None
     build_sensitive_arg_parser = None
     def sanitize_wechat_stock_language(text: str) -> tuple[str, list[str]]:
         return text, []
+    def is_source_material(path: Path) -> bool:
+        return path.name.lower() in {"source_mineru.md", "source_image_map.json"} or any(
+            part.lower() == "mineru_raw" for part in path.parts
+        )
 
 TEXT_SUFFIXES = {".md", ".txt", ".json", ".srt", ".vtt"}
 ZSXQ_IMAGE_MD = "![](https://github.com/source/example/blob/main/prompts/zsxq_img.jpg)"
@@ -159,6 +164,8 @@ def enforce_xianyu_constraints(text: str) -> str:
 def enforce_xianyu_constraints_in_dir(output_dir: Path) -> int:
     changed = 0
     for path in output_dir.rglob("xianyu_note.md"):
+        if is_source_material(path):
+            continue
         original = path.read_text(encoding="utf-8", errors="ignore")
         constrained = enforce_xianyu_constraints(original)
         if constrained != original:
@@ -191,14 +198,22 @@ def normalize_wechat_ending(text: str, include_zsxq: bool) -> str:
 
 
 def normalize_wechat_articles(output_dir: Path) -> int:
+    from wechat_editorial_binding import advance_binding, read_bound_article
+
     count = 0
     for path in output_dir.rglob("wechat_article.md"):
+        if is_source_material(path):
+            continue
         try:
+            binding_before = read_bound_article(path.parent)
             path.write_text(normalize_wechat_ending(path.read_text(encoding="utf-8", errors="ignore"), include_zsxq=True), encoding="utf-8")
+            advance_binding(path.parent, binding_before)
             count += 1
         except Exception as exc:
             log(f"Could not normalize {path}: {exc}")
     for path in output_dir.rglob("wechat_article_en.md"):
+        if is_source_material(path):
+            continue
         try:
             path.write_text(normalize_wechat_ending(path.read_text(encoding="utf-8", errors="ignore"), include_zsxq=False), encoding="utf-8")
             count += 1
@@ -208,6 +223,10 @@ def normalize_wechat_articles(output_dir: Path) -> int:
 
 
 def sanitize_file(path: Path) -> bool:
+    from wechat_editorial_binding import advance_binding, read_bound_article
+
+    if is_source_material(path):
+        return False
     try:
         original = path.read_text(encoding="utf-8", errors="ignore")
     except Exception as exc:
@@ -215,7 +234,9 @@ def sanitize_file(path: Path) -> bool:
         return False
     sanitized = sanitize_text(original)
     if sanitized != original:
+        binding_before = read_bound_article(path.parent) if path.name == "wechat_article.md" else None
         path.write_text(sanitized, encoding="utf-8")
+        advance_binding(path.parent, binding_before)
         return True
     return False
 
@@ -387,10 +408,17 @@ def run_guard_if_enabled(output_dir: Path, args: argparse.Namespace) -> None:
         log("Sensitive content guard import failed; skipping.")
         return
     guard_parser = build_sensitive_arg_parser()
-    excluded = [
-        "note.md", "wechat_article_en.md", "podcast_script_zh.md",
-        "podcast_script_en.md", "podcast_zh.md", "podcast_en.md",
-    ]
+    enabled_values = {"1", "true", "yes", "y", "on"}
+    excluded = []
+    if str(getattr(args, "guard_xhs", False)).lower() not in enabled_values:
+        excluded.append("note.md")
+    if str(getattr(args, "guard_english_article", False)).lower() not in enabled_values:
+        excluded.append("wechat_article_en.md")
+    if str(getattr(args, "guard_podcast", False)).lower() not in enabled_values:
+        excluded.extend([
+            "podcast_script_zh.md", "podcast_script_en.md", "podcast_zh.md", "podcast_en.md",
+            "podcast_script.txt", "podcast_zh_script.txt", "podcast_en_script.txt",
+        ])
     if str(args.generate_xianyu).lower() not in {"1", "true", "yes", "y", "on"}:
         excluded.append("xianyu_note.md")
     guard_args = guard_parser.parse_args([
@@ -411,6 +439,12 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-flash"))
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
     parser.add_argument("--generate-xianyu", default="false")
+    parser.add_argument("--guard-xhs", default="false",
+                        help="Guard explicitly re-enabled XHS copy; does not generate it.")
+    parser.add_argument("--guard-english-article", default="false",
+                        help="Guard explicitly re-enabled English article copy; does not generate it.")
+    parser.add_argument("--guard-podcast", default="false",
+                        help="Guard explicitly re-enabled podcast scripts (Markdown and TXT); does not generate them.")
     parser.add_argument("--xianyu-prompt-template", default="prompts/xianyu_report_listing_prompt.md")
     parser.add_argument("--xianyu-prompt-chars", type=int, default=22000)
     parser.add_argument("--generate-zhihu", default="true")

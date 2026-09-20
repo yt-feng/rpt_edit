@@ -7,7 +7,7 @@ Input is the post-MinerU report folders created by the XHS shard workflow:
 
 The script strips front-matter author/contact blocks and trailing disclosure
 appendices, keeps body text plus chart/image references, translates the cleaned
-Markdown locally with M2M100, and renders one branded PDF per report. Editorial
+Markdown locally with HyMT, and renders one branded PDF per report. Editorial
 article rewrites for public institutions and consulting reports remain separate.
 """
 from __future__ import annotations
@@ -27,6 +27,7 @@ from typing import Any
 import requests
 
 from deepseek_http import deepseek_api_keys_from_env, request_with_key_fallback
+from wechat_editorial_binding import BoundArticle, read_bound_article
 
 try:
     from finalize_outputs import sanitize_text
@@ -408,17 +409,43 @@ def resolve_image_path(markdown_path: Path, image_ref: str) -> Path | None:
     if ref.startswith("http://") or ref.startswith("https://"):
         return None
     ref = ref.split("#", 1)[0].split("?", 1)[0]
+    report_dir = markdown_path.parent.resolve()
+
+    def within_report(candidate: Path) -> Path | None:
+        resolved = candidate.resolve()
+        if resolved.is_relative_to(report_dir) and resolved.is_file():
+            return resolved
+        return None
+
+    # Original filenames are intentionally not copied into private handoffs.
+    # Resolve the producer's exact source-bound aliases to retained assets.
+    map_path = report_dir / "source_image_map.json"
+    if map_path.is_file() and not map_path.is_symlink():
+        try:
+            mapping = json.loads(map_path.read_text(encoding="utf-8"))
+            if (isinstance(mapping, dict) and mapping.get("version") == 1
+                    and mapping.get("source_sha256") == hashlib.sha256(markdown_path.read_bytes()).hexdigest()
+                    and isinstance(mapping.get("images"), dict)):
+                target = mapping["images"].get(Path(ref).as_posix())
+                if isinstance(target, str) and not Path(target).is_absolute() and ".." not in Path(target).parts:
+                    resolved = within_report(report_dir / target)
+                    if resolved:
+                        return resolved
+        except (OSError, ValueError, TypeError):
+            pass
     for candidate in [
         markdown_path.parent / ref,
         markdown_path.parent / "mineru_raw" / ref,
         markdown_path.parent.parent / ref,
     ]:
-        if candidate.exists() and candidate.is_file():
-            return candidate
+        resolved = within_report(candidate)
+        if resolved:
+            return resolved
     basename = Path(ref).name
     for candidate in markdown_path.parent.rglob(basename):
-        if candidate.is_file():
-            return candidate
+        resolved = within_report(candidate)
+        if resolved:
+            return resolved
     return None
 
 
@@ -1251,6 +1278,27 @@ def render_pdf(translated_markdown: str, figures: list[dict[str, Any]], output_p
     log(f"PDF generated: {output_pdf} ({output_pdf.stat().st_size} bytes)")
 
 
+def reusable_upstream_editorial(report_dir: Path, figures: list[dict[str, Any]]) -> tuple[str, BoundArticle] | None:
+    bound = read_bound_article(report_dir)
+    if bound is None or re.search(r"未检测到 DEEPSEEK_API_KEY|请复制.*prompt|DeepSeek.{0,100}(?:失败|failed)", bound.article, re.I):
+        return None
+    if set(audit_wechat_article_markdown(bound.article)) & {"forbidden_meta_section", "model_cta", "missing_h1"}:
+        return None
+    # Old article assets and the fixed WeChat footer belong to the upstream
+    # rendering. Use only this renderer's freshly filtered chart references.
+    from finalize_outputs import GRAY_DISCLAIMER
+    body = bound.article.replace(GRAY_DISCLAIMER, "")
+    body = IMAGE_RE.sub("", body)
+    body = re.sub(r"<img\b[^>]*>", "", body, flags=re.I)
+    body = IMAGE_TOKEN_RE.sub("", body)
+    body, _changes = sanitize_wechat_article_markdown(body)
+    tokens = [str(item["token"]) for item in figures[:ARTICLE_STYLE_MAX_IMAGE_TOKENS] if item.get("token")]
+    body = insert_article_tokens(body, tokens)
+    if not body.strip() or set(audit_wechat_article_markdown(body)) & {"forbidden_meta_section", "model_cta", "missing_h1"}:
+        return None
+    return body, bound
+
+
 def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.Namespace) -> dict[str, Any]:
     source_title = report_title(report_dir)
     report_out_dir = out_dir / f"{index:02d}-{slug(report_dir.name)}"
@@ -1277,7 +1325,11 @@ def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.N
 
     cache_root = Path(os.environ.get("REPORT_TRANSLATION_CACHE_DIR", str(out_dir / ".translation_cache")))
     args._generation_cache_dir = cache_root / "editorial"
-    if article_style:
+    reused = reusable_upstream_editorial(report_dir, figures) if article_style else None
+    if reused:
+        translated_md = reused[0]
+        log("  Reused verified upstream WeChat body and title without another editorial request")
+    elif article_style:
         translated_md = generate_article_style_markdown(clean_md, source_title, institution_name, figures, args)
     else:
         # Report text stays with private report outputs; never put this memo in
@@ -1285,13 +1337,16 @@ def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.N
         offline_translator(args, cache_root / "hymt")
         translated_md = translate_markdown(clean_md, args)
     translated_md, stock_changes = sanitize_wechat_stock_language(translated_md)
-    display_title, title_decision = wechat_title_from_filename(
-        source_title,
-        translated_md,
-        institution_name,
-        args,
-        editorial=article_style,
-    )
+    if reused:
+        display_title, title_decision = reused[1].title, {**reused[1].decision, "upstream_editorial_reused": True}
+    else:
+        display_title, title_decision = wechat_title_from_filename(
+            source_title,
+            translated_md,
+            institution_name,
+            args,
+            editorial=article_style,
+        )
     display_title, title_stock_changes = sanitize_wechat_stock_language(display_title, strict_wording=False)
     title_before_neutralization = display_title
     display_title, title_neutralization_changes = ensure_publishable_neutral_title(
@@ -1328,10 +1383,10 @@ def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.N
         "source_report_dir": str(report_dir),
         "title": display_title,
         "source_title": source_title,
-        "wechat_title_source": "source_filename_weighted_finetune" if article_style else "offline_filename_translation",
-        "body_provider": "deepseek-editorial" if article_style else offline_translation_provider(),
-        "translation_model": args.model if article_style else offline_translator(args).model_id,
-        "title_provider": "deepseek-editorial" if article_style and getattr(args, "title_refine", True) else "deterministic" if article_style else offline_translation_provider(),
+        "wechat_title_source": "verified_upstream_filename_title" if reused else "source_filename_weighted_finetune" if article_style else "offline_filename_translation",
+        "body_provider": "upstream-editorial-cache" if reused else "deepseek-editorial" if article_style else offline_translation_provider(),
+        "translation_model": reused[1].model if reused else args.model if article_style else offline_translator(args).model_id,
+        "title_provider": "upstream-editorial-cache" if reused else "deepseek-editorial" if article_style and getattr(args, "title_refine", True) else "deterministic" if article_style else offline_translation_provider(),
         "wechat_title_decision": title_decision,
         "source_clean": "source_clean.md",
         "translated_markdown": "translated.md",
@@ -1339,6 +1394,7 @@ def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.N
         "figure_count": len(figures),
         "institution_name": institution_name,
         "article_style": article_style,
+        "upstream_editorial_binding": reused[1].binding if reused else None,
         "stock_language_sanitized": stock_changes[:40] + title_stock_changes[:20] + stock_changes_after_title[:20],
     }
     (report_out_dir / "translation_status.json").write_text(json.dumps(status, ensure_ascii=False, indent=2), encoding="utf-8")

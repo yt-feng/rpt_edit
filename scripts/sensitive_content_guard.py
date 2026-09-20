@@ -35,6 +35,9 @@ TARGET_FILENAMES = {
     "podcast_script_en.md",
     "podcast_zh.md",
     "podcast_en.md",
+    "podcast_script.txt",
+    "podcast_zh_script.txt",
+    "podcast_en_script.txt",
 }
 SKIP_NAMES = {
     "source_mineru.md",
@@ -1083,7 +1086,16 @@ def deepseek_rewrite(text: str, detected_hits: list[dict[str, Any]], model: str,
     return data["choices"][0]["message"]["content"].strip() + "\n"
 
 
+def is_source_material(path: Path) -> bool:
+    """Original extraction files are input evidence, never generated copy."""
+    return path.name.lower() in {"source_mineru.md", "source_image_map.json"} or any(
+        part.lower() == "mineru_raw" for part in path.parts
+    )
+
+
 def should_process(path: Path) -> bool:
+    if is_source_material(path):
+        return False
     if path.name in SKIP_NAMES:
         return False
     if path.name in TARGET_FILENAMES:
@@ -1094,6 +1106,11 @@ def should_process(path: Path) -> bool:
 
 
 def guard_file(path: Path, args: argparse.Namespace) -> dict[str, Any]:
+    from wechat_editorial_binding import advance_binding, read_bound_article
+
+    if is_source_material(path):
+        return {"path": str(path), "changed": False, "skipped": "original_source_material"}
+    binding_before = read_bound_article(path.parent) if path.name == "wechat_article.md" else None
     original = path.read_text(encoding="utf-8", errors="ignore")
     local_text, local_changes = apply_local_guard(original)
     if path.name in WECHAT_STOCK_ARTICLE_FILENAMES:
@@ -1121,6 +1138,8 @@ def guard_file(path: Path, args: argparse.Namespace) -> dict[str, Any]:
     changed = final_text != original
     if changed:
         path.write_text(final_text, encoding="utf-8")
+        if not rewrite_error and not check.get("errors"):
+            advance_binding(path.parent, binding_before)
     return {
         "path": str(path),
         "changed": changed,

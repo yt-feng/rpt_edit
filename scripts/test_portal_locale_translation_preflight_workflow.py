@@ -40,6 +40,12 @@ class PreflightWorkflowTests(unittest.TestCase):
             self.assertIn(cache_path, ("${{ runner.temp }}/hymt-model", "${{ runner.temp }}/hymt-runtime/build"))
         self.assertIn("-DGGML_NATIVE=OFF", action)
         self.assertIn("runtime-revision", action)
+        # Different Ubuntu releases have different glibc/libstdc++ ABIs even
+        # when both runners report Linux/X64. Never share their native binaries.
+        self.assertIn("platform.freedesktop_os_release()", action)
+        runtime_keys = re.findall(r"key: (hymt-cpu-[^\n]+)", action)
+        self.assertEqual(len(runtime_keys), 2)
+        self.assertTrue(all("steps.configure.outputs.runner-image" in key for key in runtime_keys))
         self.assertIn("persist-credentials: false", action)
 
 if __name__ == "__main__":

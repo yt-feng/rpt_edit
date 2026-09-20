@@ -26,7 +26,7 @@ GENERATION_FILES = (
     "scripts/finalize_outputs.py", "scripts/postprocess_podcast.py",
     "scripts/sensitive_content_guard.py", "scripts/wechat_title_optimizer.py",
     "scripts/wechat_article_quality.py", "scripts/institution_names.py",
-    "scripts/deepseek_http.py",
+    "scripts/deepseek_http.py", "scripts/wechat_editorial_binding.py",
 )
 OPTION_NAMES = (
     "model", "deepseek_base_url", "mineru_model", "language", "ocr",
