@@ -16,6 +16,8 @@ from urllib.parse import quote, unquote, urljoin, urlsplit
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 from xml.etree import ElementTree as ET
 
+from portal_locale_manifest import LocaleManifestError, validate_translation_resolution
+
 
 LOCALES = {"ko": "ltr", "ja": "ltr", "ar": "rtl"}
 SHADOW_ROBOTS = b"User-agent: *\nDisallow: /\n"
@@ -603,23 +605,18 @@ def validate_manifest_row(row: Any, locale: str, label: str) -> tuple[str, int, 
 
 def manifest_files(manifest: dict[str, Any]) -> dict[str, tuple[str, int, str]]:
     locales = manifest.get("locales")
-    coverage = manifest.get("coverage")
     if (
         manifest.get("schema_version") != 1
         or manifest.get("quality_gate_version") != 3
         or not isinstance(locales, list)
         or len(locales) != len(LOCALES)
         or set(locales) != set(LOCALES)
-        or not isinstance(coverage, dict)
-        or set(coverage) != set(LOCALES)
-        or any(
-            not isinstance(coverage.get(locale), (int, float))
-            or isinstance(coverage.get(locale), bool)
-            or float(coverage[locale]) != 1.0
-            for locale in LOCALES
-        )
     ):
         raise AuditError("Shadow multilingual manifest is incomplete")
+    try:
+        validate_translation_resolution(manifest, LOCALES)
+    except LocaleManifestError as error:
+        raise AuditError(f"Shadow multilingual manifest is incomplete: {error}") from error
 
     rows: dict[str, tuple[str, int, str]] = {}
 

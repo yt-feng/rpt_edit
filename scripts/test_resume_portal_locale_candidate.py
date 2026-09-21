@@ -133,6 +133,26 @@ class ResumeTests(unittest.TestCase):
     def save_manifest(self):
         self.r2.objects[publisher.manifest_key("b")] = {"body": encoded(self.manifest)}
 
+    def test_download_accepts_only_accounted_source_fallbacks(self):
+        from test_portal_locale_manifest import with_source_fallback
+
+        path = "data/i18n/manifest.json"
+        object_key = publisher.slot_prefix("b") + path
+        payload = with_source_fallback(json.loads(self.r2.objects[object_key]["body"]))
+
+        def save_payload():
+            body = encoded(payload)
+            self.r2.objects[object_key]["body"] = body
+            self.manifest["files"][path].update(size=len(body), sha256=hashlib.sha256(body).hexdigest())
+
+        save_payload()
+        restored = resume.download_candidate_files(self.r2, "bucket", self.manifest, self.site, workers=1)
+        self.assertIn(path, restored)
+        payload["source_fallbacks"]["counts"]["ko"] = 2
+        save_payload()
+        with self.assertRaisesRegex(resume.ResumeError, "source fallback count differs"):
+            resume.download_candidate_files(self.r2, "bucket", self.manifest, self.site, workers=1)
+
     def restore(self, **kwargs):
         options = dict(github=self.github, client=self.r2, bucket="bucket", repository=REPO, run_id=321, run_attempt=1,
                        site_dir=self.site, diagnostics_dir=self.diag, work_dir=self.work, origin=ORIGIN,

@@ -23,6 +23,7 @@ from html import escape as html_escape
 from html import unescape as html_unescape
 from html.parser import HTMLParser
 import json
+import math
 import os
 from pathlib import Path
 import re
@@ -380,6 +381,10 @@ class _BlogImageContainer:
 
 class TranslationError(RuntimeError):
     """Raised when a locale cannot be built without source-language fallback."""
+
+
+class TranslationQualityError(TranslationError):
+    """A model response changed protected content or lacks a translation."""
 
 
 class PartialTranslationError(TranslationError):
@@ -757,6 +762,9 @@ def load_cache(path: Path | None, model: str = DEFAULT_DEEPSEEK_MODEL, *, provid
                 row.setdefault("provider", "legacy-cache")
                 row.setdefault("source_cache_provider", "deepseek")
                 row.setdefault("model", cached_model)
+    # Source retention is a single-build rendering decision, never a memoized
+    # translation. A checkpoint must retry those units on its next build.
+    payload.pop("_source_fallbacks", None)
     payload["provider"] = provider
     payload["model"] = requested_model
     return payload
@@ -764,7 +772,8 @@ def load_cache(path: Path | None, model: str = DEFAULT_DEEPSEEK_MODEL, *, provid
 
 def write_cache(path: Path, cache: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    compressed = gzip.compress(stable_json_bytes(cache), compresslevel=6, mtime=0)
+    persisted = {key: value for key, value in cache.items() if key != "_source_fallbacks"}
+    compressed = gzip.compress(stable_json_bytes(persisted), compresslevel=6, mtime=0)
     temporary = path.with_suffix(path.suffix + ".tmp")
     temporary.write_bytes(compressed)
     temporary.replace(path)
@@ -925,14 +934,14 @@ def validate_translation_quality(locale: str, unit: TranslationUnit, translated:
         raise TranslationError(f"Unsupported translation locale: {locale}")
     text = str(translated or "").strip()
     if not text:
-        raise TranslationError(f"{locale}: empty translation for {unit.key}")
+        raise TranslationQualityError(f"{locale}: empty translation for {unit.key}")
     expected = PLACEHOLDER_RE.findall(unit.source)
     actual = PLACEHOLDER_RE.findall(text)
     optional = set(unit.data_placeholders)
     if (set(actual) - set(expected)
             or sorted(token for token in actual if token not in optional)
             != sorted(token for token in expected if token not in optional)):
-        raise TranslationError(f"{locale}: placeholder mismatch for {unit.key}")
+        raise TranslationQualityError(f"{locale}: placeholder mismatch for {unit.key}")
 
     if (is_chart_metric_identity_label(unit.source, text, unit.context)
             or is_chart_geography_identity_label(unit.source, text, unit.context)
@@ -941,7 +950,7 @@ def validate_translation_quality(locale: str, unit: TranslationUnit, translated:
     source_visible = _quality_visible_text(unit.source)
     translated_visible = _quality_visible_text(text)
     if source_visible and not translated_visible:
-        raise TranslationError(f"{locale}: empty translation for {unit.key}")
+        raise TranslationQualityError(f"{locale}: empty translation for {unit.key}")
     if unit.context in OFFICIAL_NAME_CONTEXTS or unit.context in STRUCTURED_NAME_CONTEXTS:
         return
     source_compact = _quality_compact(source_visible)
@@ -968,16 +977,16 @@ def validate_translation_quality(locale: str, unit: TranslationUnit, translated:
     if not CJK_RE.search(source_visible) and len(WORD_RE.findall(source_visible)) < 3:
         return
     if source_compact and translated_compact == source_compact:
-        raise TranslationError(f"{locale}: unchanged source text for {unit.key}")
+        raise TranslationQualityError(f"{locale}: unchanged source text for {unit.key}")
     # A real translation may retain a quoted headline, institution name or a
     # bilingual label. Equality still detects a wholly untranslated item; a
     # substring is not, by itself, evidence of an incomplete page.
     if source_compact and source_compact in translated_compact and not re.search(r'["“”「」『』()（）]', translated_visible):
-        raise TranslationError(f"{locale}: translation retains complete source text for {unit.key}")
+        raise TranslationQualityError(f"{locale}: translation retains complete source text for {unit.key}")
     target_pattern = {"ko": HANGUL_RE, "ja": re.compile(f"{KANA_RE.pattern}|{CJK_RE.pattern}"), "ar": ARABIC_LETTER_RE}[locale]
     if source_compact and not target_pattern.search(translated_visible):
         language_label = {"ko": "Hangul", "ja": "Japanese", "ar": "Arabic"}[locale]
-        raise TranslationError(f"{locale}: translation has no {language_label} text for {unit.key}")
+        raise TranslationQualityError(f"{locale}: translation has no {language_label} text for {unit.key}")
 
 
 def _cache_validation_unit(unit: TranslationUnit, row: dict[str, Any]) -> TranslationUnit:
@@ -1054,6 +1063,13 @@ def prune_translation_cache(
     return counts
 
 
+def _valid_source_fallback(locale: str, unit: TranslationUnit, cache: dict[str, Any]) -> bool:
+    row = cache.get("_source_fallbacks", {}).get(locale, {}).get(unit.key)
+    return (isinstance(row, dict) and row.get("source") == unit.source
+            and row.get("source_sha256") == hashlib.sha256(unit.source.encode("utf-8")).hexdigest()
+            and isinstance(row.get("reason"), str) and bool(row["reason"]))
+
+
 def translated_text(value: str, context: str, locale: str, cache: dict[str, Any]) -> str:
     output: list[str] = []
     entries = cache["locales"][locale]
@@ -1070,6 +1086,11 @@ def translated_text(value: str, context: str, locale: str, cache: dict[str, Any]
             continue
         row = entries.get(unit.key)
         if not isinstance(row, dict) or row.get("source") != unit.source:
+            if _valid_source_fallback(locale, unit, cache):
+                # Keep the original occurrence byte-for-byte, including its
+                # quantities/links, rather than restoring a rejected response.
+                output.append(part)
+                continue
             raise TranslationError(f"Missing {locale} translation for {unit.key}")
         translated = str(row.get("translation") or "")
         validate_translation_quality(locale, _cache_validation_unit(unit, row), translated)
@@ -1393,13 +1414,18 @@ def translate_missing_units(
     priority_keys: frozenset[str] = frozenset(),
     preserve_unused_cache: bool = False,
     provider: str = "deepseek",
+    allow_source_fallback: bool = False,
+    offline_time_budget_seconds: float = 3600,
 ) -> dict[str, int]:
+    if not math.isfinite(offline_time_budget_seconds) or offline_time_budget_seconds <= 0:
+        raise TranslationError("Offline translation time budget must be positive")
     if preflight_batches_per_locale < 1 or (max_provider_requests is not None and max_provider_requests < 1):
         raise TranslationError("Preflight batch and provider request limits must be positive")
     run_state = run_state or TranslationRun(
         diagnostics_out, max_provider_requests if max_provider_requests is not None else (6 if preflight_only else None),
         max_provider_cost_cny,
     )
+    cache.pop("_source_fallbacks", None)
     if provider in OFFLINE_PROVIDERS:
         run_state.data.update(provider=provider, api_cost_cny=0, repair_provider="none")
     worker_count = 1 if preflight_only or provider in OFFLINE_PROVIDERS else max(1, min(MAX_TRANSLATION_WORKERS, int(workers)))
@@ -1579,24 +1605,52 @@ def translate_missing_units(
     if provider in OFFLINE_PROVIDERS:
         # Offline inference uses the runner-local server; no paid provider or paid repair.
         # Save valid rows even if a neighbouring row fails the quality gate.
-        from offline_translation import OfflineTranslator, OfflineTranslationError, PROVIDER as offline_provider
+        from offline_translation import (OfflineTranslator, OfflineTranslationError,
+                                         OfflineTranslationValidationError, PROVIDER as offline_provider)
         translator = OfflineTranslator()
         run_state.data.update(provider=provider, offline_engine=offline_provider, api_cost_cny=0, repair_provider="none", workers=1)
+        source_fallbacks: dict[str, dict[str, dict[str, Any]]] = {locale: {} for locale in LOCALES}
+        if allow_source_fallback:
+            cache["_source_fallbacks"] = source_fallbacks
+            run_state.data["source_fallbacks"] = source_fallbacks
+
+        def stop_offline_runtime(error: OfflineTranslationError) -> None:
+            write_cache(cache_path, cache)
+            run_state.stop(str(error), category="failure")
+            run_state.write()
+            raise TranslationError(str(error)) from error
+
+        def retain_source(locale: str, unit: TranslationUnit, reason: str) -> None:
+            source_fallbacks[locale][unit.key] = {
+                "source": unit.source,
+                "source_sha256": hashlib.sha256(unit.source.encode("utf-8")).hexdigest(),
+                "context": unit.context,
+                "translation_class": "official-name" if unit.context in OFFICIAL_NAME_CONTEXTS else "copy",
+                "reason": reason,
+            }
+
         failed = 0
-        deadline = time.monotonic() + 3600  # Leave time for checkpoint upload before the job timeout.
+        budget_reached = False
+        deadline = time.monotonic() + offline_time_budget_seconds
         for locale, batch in jobs:
             run_state.check()
             translated_batch: list[str] | None = None
             translate_many = getattr(translator, "translate_many", None)
-            if callable(translate_many) and callable(getattr(type(translator), "translate_many", None)):
+            if (not allow_source_fallback and callable(translate_many)
+                    and callable(getattr(type(translator), "translate_many", None))):
                 try:
                     translated_batch = translate_many([unit.source for unit in batch], locale)
-                except OfflineTranslationError:
+                except OfflineTranslationValidationError:
                     # Retry only the independent local units. Completed fragments
                     # already reside in the exact-source memo; never use a paid repair.
                     translated_batch = None
+                except OfflineTranslationError as error:
+                    stop_offline_runtime(error)
             for index, unit in enumerate(batch):
                 if time.monotonic() >= deadline:
+                    if allow_source_fallback:
+                        budget_reached = True
+                        break
                     write_cache(cache_path, cache)
                     run_state.stop("Offline translation time window ended; completed rows saved", category="budget")
                     run_state.write()
@@ -1608,28 +1662,39 @@ def translate_missing_units(
                     cache["locales"][locale][unit.key] = {
                         **_translation_cache_row(unit, translated), "provider": provider, "offline_engine": offline_provider, "model": model,
                     }
+                except (OfflineTranslationValidationError, TranslationQualityError) as error:
+                    failed += 1
+                    run_state.failure(locale, error, [unit])
+                    if allow_source_fallback:
+                        if isinstance(error, TranslationQualityError):
+                            translator.discard_translation(unit.source, locale)
+                        retain_source(locale, unit, str(error))
                 except OfflineTranslationError as error:
-                    if re.search(r"missing|not installed|restricted|pinned runtime|provenance", str(error), re.I):
-                        write_cache(cache_path, cache)
-                        run_state.stop(str(error), category="failure")
-                        run_state.write()
-                        raise TranslationError(str(error)) from error
-                    failed += 1
-                    run_state.failure(locale, error, [unit])
-                except TranslationError as error:
-                    failed += 1
-                    run_state.failure(locale, error, [unit])
-            run_state.data["completed_batches"] = run_state.data.get("completed_batches", 0) + 1
+                    stop_offline_runtime(error)
+            if not budget_reached:
+                run_state.data["completed_batches"] = run_state.data.get("completed_batches", 0) + 1
             write_cache(cache_path, cache)
             run_state.write()
             capture_preflight_inventory()
-            log(f"Offline locale checkpoint: {locale}; batches={run_state.data['completed_batches']}/{len(jobs)}")
+            log(f"Offline locale checkpoint: {locale}; batches={run_state.data.get('completed_batches', 0)}/{len(jobs)}")
+            if budget_reached:
+                for pending_locale in LOCALES:
+                    for key, pending_unit in units.items():
+                        if (not _valid_cache_row(pending_locale, pending_unit, cache["locales"][pending_locale].get(key))
+                                and not _valid_source_fallback(pending_locale, pending_unit, cache)):
+                            retain_source(pending_locale, pending_unit, "translation_time_budget")
+                run_state.data["translation_time_budget_reached"] = True
+                break
         remaining = {locale: sum(not _valid_cache_row(locale, unit, cache["locales"][locale].get(key))
                                  for key, unit in units.items()) for locale in LOCALES}
         run_state.data.update(remaining_units=remaining, remaining_units_total=sum(remaining.values()),
-                              failed_units=failed, failed_batches=0 if not failed else failed)
+                              failed_units=failed, failed_batches=0 if not failed else failed,
+                              source_fallback_counts={locale: len(rows) for locale, rows in source_fallbacks.items()})
         run_state.write()
-        if failed or (not preflight_only and sum(remaining.values())):
+        unresolved = {locale: sum(not _valid_cache_row(locale, unit, cache["locales"][locale].get(key))
+                                 and not _valid_source_fallback(locale, unit, cache)
+                                 for key, unit in units.items()) for locale in LOCALES}
+        if (failed and not allow_source_fallback) or (not preflight_only and sum(unresolved.values())):
             raise TranslationError(f"Offline translation has {sum(remaining.values())} unresolved source units; completed rows saved")
         return missing_counts
 
@@ -3666,7 +3731,8 @@ def validate_localized_javascript_residuals(
     every Han character here contradicts the per-unit completeness policy and
     discards otherwise valid bilingual output after translation has finished.
     """
-    if locale == "ja":
+    has_source_fallbacks = bool(cache and cache.get("_source_fallbacks", {}).get(locale))
+    if locale == "ja" and not has_source_fallbacks:
         return
     source_parts = list(iter_javascript_literal_parts(source))
     localized_parts = list(iter_javascript_literal_parts(localized))
@@ -3680,8 +3746,21 @@ def validate_localized_javascript_residuals(
         and javascript_cjk_literal_is_allowlisted(value, nested_source, start, end)
     }
     residuals = []
-    for original, (_nested_source, _start, _end, value) in zip(source_parts, localized_parts):
-        if not CJK_RE.search(value):
+    retained_expected_parts = None
+    for part_index, (original, (_nested_source, _start, _end, value)) in enumerate(zip(source_parts, localized_parts)):
+        if has_source_fallbacks:
+            retained_units: dict[str, TranslationUnit] = {}
+            collect_text_units(original[3], f"javascript:{asset_name}", retained_units)
+            collect_javascript_html_attribute_units(original[3], asset_name, retained_units)
+            if any(_valid_source_fallback(locale, unit, cache) for unit in retained_units.values()):
+                if retained_expected_parts is None:
+                    retained_expected_parts = list(iter_javascript_literal_parts(
+                        render_localized_javascript(source, asset_name, locale, cache)))
+                if (len(retained_expected_parts) != len(source_parts)
+                        or value != retained_expected_parts[part_index][3]):
+                    residuals.append(value)
+                continue
+        if locale == "ja" or not CJK_RE.search(value):
             continue
         if value.strip() in allowed_program_values:
             continue
@@ -5249,6 +5328,8 @@ def _build_localized_release(
     history_paused: bool = False,
     translation_scope: str = "release",
     provider: str = "deepseek",
+    allow_source_fallback: bool = False,
+    offline_time_budget_seconds: float = 3600,
     batch_translator: Callable[[str, list[TranslationUnit]], dict[str, str]] | None = None,
     preflight_only: bool = False,
     preflight_batches_per_locale: int = 2,
@@ -5645,6 +5726,8 @@ def _build_localized_release(
         priority_keys=frozenset(priority_units),
         preserve_unused_cache=scoped_cohort,
         provider=provider,
+        allow_source_fallback=allow_source_fallback,
+        offline_time_budget_seconds=offline_time_budget_seconds,
     )
     if preflight_only:
         result = {
@@ -5662,6 +5745,7 @@ def _build_localized_release(
         locale: {} for locale in LOCALES
     }
     resolved_translation_counts: dict[str, int] = {}
+    resolved_entry_counts: dict[str, int] = {}
     for locale in LOCALES:
         entries = cache["locales"][locale]
         resolved = {
@@ -5669,10 +5753,12 @@ def _build_localized_release(
             for unit in units.values()
             if _valid_cache_row(locale, unit, entries.get(unit.key))
         }
-        unresolved = [unit.key for unit in units.values() if unit.key not in resolved]
+        retained = {unit.key for unit in units.values() if _valid_source_fallback(locale, unit, cache)}
+        unresolved = [unit.key for unit in units.values() if unit.key not in resolved | retained]
         if unresolved:
             raise TranslationError(f"{locale} translation coverage is incomplete: {len(unresolved)} units")
         resolved_translation_counts[locale] = len(resolved)
+        resolved_entry_counts[locale] = len(resolved | retained)
 
     locale_css_source = assets_root / "locale.css"
     locale_runtime_source = assets_root / "locale-runtime.js"
@@ -5937,6 +6023,16 @@ def _build_localized_release(
             ]
         ),
         "translation_entry_count": resolved_translation_counts,
+        "resolved_entry_count": resolved_entry_counts,
+        "resolved_coverage": {
+            locale: (resolved_entry_counts[locale] / len(units) if units else 1.0)
+            for locale in LOCALES
+        },
+        "source_fallbacks": {
+            "schema_version": 1,
+            "units": cache.get("_source_fallbacks", {locale: {} for locale in LOCALES}),
+            "counts": {locale: len(cache.get("_source_fallbacks", {}).get(locale, {})) for locale in LOCALES},
+        },
         "coverage": {
             locale: (resolved_translation_counts[locale] / len(units) if units else 1.0)
             for locale in LOCALES
@@ -6056,6 +6152,10 @@ def parse_args() -> argparse.Namespace:
         help="Downloaded R2 _hot-reports/indexes/public-v2.json public metadata snapshot",
     )
     parser.add_argument("--provider", choices=("hymt",), default="hymt", help="Offline translation only; no paid API fallback")
+    parser.add_argument("--allow-source-fallback", action="store_true",
+                        help="Retain exact source for rejected model content; retry those units on the next build")
+    parser.add_argument("--offline-time-budget-seconds", type=float, default=3600,
+                        help="Local model work budget; source fallback retains remaining units when explicitly enabled")
     parser.add_argument("--workers", type=int, default=1)
     parser.add_argument("--model", help="Deprecated compatibility option; pinned offline model identity is used")
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
@@ -6120,6 +6220,8 @@ def main() -> int:
             history_paused=args.history_paused,
             translation_scope=args.translation_scope,
             provider=args.provider,
+            allow_source_fallback=args.allow_source_fallback,
+            offline_time_budget_seconds=args.offline_time_budget_seconds,
         )
     except (OSError, ValueError, TranslationError, json.JSONDecodeError, ET.ParseError) as error:
         print(f"portal locale build failed: {error}", file=sys.stderr)

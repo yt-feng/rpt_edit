@@ -98,6 +98,9 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
             locale,
         )
         shared_args = locale.split("          locale_args=(\n", 1)[1].split("\n          )", 1)[0]
+        self.assertIn('--allow-source-fallback', shared_args)
+        self.assertIn('--offline-time-budget-seconds 60', locale)
+        self.assertIn('--offline-time-budget-seconds 600', locale)
         self.assertIn('--translation-scope "$PORTAL_MULTILINGUAL_TRANSLATION_SCOPE"', shared_args)
         self.assertEqual(locale.count("--translation-scope"), 1)
         self.assertIn('scripts/build_portal_locales.py "${locale_args[@]}"', locale)
@@ -545,7 +548,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn('root / f"sitemap-{locale}.xml"', release_gate)
         self.assertIn("gzip.open(cache_path", release_gate)
         self.assertIn('manifest.get("quality_gate_version") != 3', release_gate)
-        self.assertIn('manifest.get("coverage")', release_gate)
+        self.assertIn('validate_translation_resolution(manifest, locale_directions)', release_gate)
         self.assertIn('manifest.get("html_page_count")', release_gate)
         self.assertIn('actual_html_page_count != expected_html_page_count', release_gate)
         self.assertNotIn('"data/i18n/$locale/catalog-titles.json"', release_gate)
