@@ -33,7 +33,7 @@ class TitleCheckpointTests(unittest.TestCase):
             self.assertEqual(titles.translate_title("Report outlook", args), "报告展望")
             titles.translate_title("Another report", args)
         factory.assert_called_once()
-        factory.return_value.translate.assert_called_with("Another report", target="zh", markdown=False)
+        factory.return_value.translate.assert_called_with("Another report", target="zh", source="en", markdown=False)
 
     def test_title_identifiers_are_exact_but_financial_assertion_stays_in_model_context(self):
         from argparse import Namespace
@@ -46,6 +46,20 @@ class TitleCheckpointTests(unittest.TestCase):
         self.assertEqual(result, '花旗-示例（2338.HK）2026年第四季度增长12.5%-260918')
         self.assertEqual(engine.translate.call_args.args[0],
                          'Citi-Example__KC_PH_0000__4Q26 growth 12.5%__KC_PH_0001__')
+
+    def test_mixed_title_keeps_source_language_from_before_identifier_protection(self):
+        from argparse import Namespace
+        from hymt_offline_translation import OfflineTranslator
+        source = '中海油(CNOOC.US) ESG Update-260918'
+        protected, _identifiers = titles.protect_title_identifiers(source)
+        self.assertEqual(titles._detect_source(source), 'en')
+        self.assertEqual(titles._detect_source(protected), 'zh')
+        engine = mock.Mock()
+        engine.translate.return_value = '中海油__KC_PH_0000__ESG更新__KC_PH_0001__'
+        translator = OfflineTranslator(cache_dir=self.root / 'memo', engine_factory=lambda *_: engine)
+        result = titles.translate_title(source, Namespace(_offline_translator=translator))
+        self.assertEqual(result, '中海油(CNOOC.US)ESG更新-260918')
+        engine.translate.assert_called_once_with(protected, 'en', 'zh')
 
     def test_identifier_mask_never_protects_amounts_years_or_invalid_calendar_suffixes(self):
         source = 'Outlook (2026): earnings -5%, debt USD 120 million, plants (12)-260230'

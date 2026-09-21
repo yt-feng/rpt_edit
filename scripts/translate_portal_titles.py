@@ -190,7 +190,8 @@ def translate_title(title: str, args: argparse.Namespace) -> str:
         args._offline_title_calls.clear()
     protected, identifiers = protect_title_identifiers(title)
     try:
-        translated = normalize_translation(args._offline_translator.translate(protected, target="zh", markdown=False))
+        translated = normalize_translation(args._offline_translator.translate(
+            protected, target="zh", source=_detect_source(title), markdown=False))
         for token, value in identifiers.items():
             if translated.count(token) != 1:
                 raise RuntimeError("Offline model changed a protected title identifier")

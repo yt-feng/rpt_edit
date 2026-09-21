@@ -40,7 +40,7 @@ class OfflineTranslationCallerTests(unittest.TestCase):
             self.assertEqual(titles.translate_title("Semiconductor output grows", args), "半导体产量增长")
             titles.translate_title("Another title", args)
         self.assertEqual(self.factory.call_count, 1)
-        self.engine.translate.assert_called_with("Another title", target="zh")
+        self.engine.translate.assert_called_with("Another title", target="zh", source="en", markdown=False)
 
     def test_report_markdown_and_compatibility_chunk_use_local_structure_aware_adapter(self):
         args = Namespace(deepseek_retries=3, chunk_chars=7200)
