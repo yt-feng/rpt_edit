@@ -1312,6 +1312,14 @@
     "bcg:https://www.bcg.com/publications/2026/india-now-that-everyone-has-ai": {
       "first_seen": "2026-09-20",
       "status": "downloaded"
+    },
+    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/business%20functions/people%20and%20organization/our%20insights/the%20state%20of%20organizations/2026/the-state-of-organizations-2026.pdf": {
+      "first_seen": "2026-09-21",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/india-powering-ai-ambition": {
+      "first_seen": "2026-09-21",
+      "status": "downloaded"
     }
   }
 }
