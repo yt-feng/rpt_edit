@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Pinned Hy-MT2 CPU translation, exclusively on Linux GitHub Actions.
 
-Quantities remain inside complete sentences. Only opaque Markdown resources and
-code are masked; accepted translations are memoized by exact source and model.
+Amounts and rates remain inside complete sentences. Opaque Markdown resources,
+code and bounded controlled terminology (including a source-derived five-year
+planning period) are masked; accepted translations are memoized by exact source and model.
 The private runner-local llama server never uses a paid translation provider.
 """
 from __future__ import annotations
@@ -22,7 +23,7 @@ import time
 from typing import Callable, Sequence
 
 from compare_hymt_translation import LANGUAGES, request_json, require_actions, verify_model, file_sha256
-from financial_quantity_integrity import quantity_issues
+from financial_quantity_integrity import FIVE_YEAR_PERIOD_RE, quantity_issues
 
 MANIFEST_PATH = Path(__file__).with_name('hymt_translation_model_manifest.json')
 MANIFEST = json.loads(MANIFEST_PATH.read_text(encoding='utf-8'))
@@ -31,10 +32,14 @@ MODEL = MANIFEST['model']['repository']
 REVISION = MANIFEST['model']['revision']
 MODEL_ID = f"{MODEL}@{REVISION}:Q8_0:natural-sentence-v4-table-structure:{hashlib.sha256(MANIFEST_PATH.read_bytes()).hexdigest()[:16]}"
 INSTALL_COMMAND = 'Use .github/actions/setup-offline-translation on a Linux GitHub Actions runner'
-_PLACEHOLDERS = re.compile(r'__[A-Za-z0-9_]+__')
+# Recognize the complete reserved token even when a filename underscore or
+# Markdown emphasis touches it; those surrounding underscores are punctuation.
+_PLACEHOLDERS = re.compile(r'__(?:KC_PH_\d+|HYMTPH_\d+)__|__[A-Za-z0-9][A-Za-z0-9_]*?__')
 _LETTERS = re.compile(r'[A-Za-z\u3400-\u9fff\u3040-\u30ff\uac00-\ud7af\u0600-\u06ff]')
 # Financial amounts, dates, percentages, names, and predicates are intentionally
-# absent: splitting those away from the sentence changed financial meaning.
+# absent from opaque-resource masking: splitting those away from the sentence
+# changed financial meaning. Exact five-year period terminology is handled
+# separately below, with its ordinal derived directly from the source.
 _OPAQUE = re.compile(
     r'(?<!`)(?P<ticks>`+)(?!`).*?(?<!`)(?P=ticks)(?!`)'
     r'|!\[(?:\\.|[^\]\\])*\]\((?:[^()\n]|\([^()\n]*\))*\)'
@@ -152,6 +157,16 @@ def _mask(text: str, target: str) -> tuple[str, dict[str, str], dict[str, str]]:
         dictionary[token] = value
         return token
     masked = _OPAQUE.sub(lambda match: reserve(match.group(), replacements), text)
+    if target == 'zh':
+        # The model can replace a current plan with the historically common
+        # preceding plan (15th -> 14th). Treat this named planning period as a
+        # controlled term, deriving its ordinal from the exact source digits.
+        # All surrounding claims and amounts remain in the same model request.
+        masked = FIVE_YEAR_PERIOD_RE.sub(
+            lambda match: reserve(f'第{int(match[1])}个五年', terms), masked)
+        # Keep the source innovation category visible instead of allowing the
+        # model to collapse FIC Innovation into generic medical innovation.
+        masked = re.sub(r'\bFIC\s+Innovation\b', lambda _match: reserve('FIC创新', terms), masked, flags=re.I)
     if target == 'ko':
         for pattern, term, _is_rate in _KOREAN_FINANCIAL_TERMS:
             masked = re.sub(pattern, lambda _match, term=term: reserve(term, terms), masked, flags=re.I)

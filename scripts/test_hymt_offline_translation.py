@@ -190,6 +190,45 @@ class HyMTTests(unittest.TestCase):
         with self.assertRaisesRegex(h.OfflineTranslationError, 'placeholder'):
             h.validate_result(source + '__KC_PH_0000__', '短期增长12.5%', 'en', 'zh', markdown=False)
 
+    def test_real_catalog_plan_regression_keeps_ordinal_and_fic_in_one_model_request(self):
+        source = ('JPM-China Healthcare New _15th Five~Year” Healthcare Industry Plan Targets Increased '
+                  'FIC Innovation，AI Applications and Global Competitiveness__KC_PH_0000__')
+        # This exact rejected output occurred on Ubuntu 22.04 and 24.04 in
+        # production-adapter preflight 35572961434. Never accept its changed plan.
+        damaged = 'JPM-中国医疗保健“十四五”规划目标：提升医疗创新、人工智能应用及全球竞争力__KC_PH_0000__'
+        with self.assertRaisesRegex(h.OfflineTranslationError, 'quantity'):
+            h.validate_result(source, damaged, 'en', 'zh', markdown=False)
+        translator = self.translator(lambda _: 'JPM-中国医疗：新__HYMTPH_0000__行业规划旨在加强'
+                                     '__HYMTPH_0001__、人工智能应用和全球竞争力__KC_PH_0000__')
+        output = translator.translate(source, 'zh', 'en', markdown=False)
+        self.assertIn('第15个五年', output)
+        self.assertIn('FIC创新', output)
+        self.assertEqual(len(self.engine.calls), 1)
+        model_input = self.engine.calls[0][0]
+        self.assertIn('New ___HYMTPH_0000__” Healthcare Industry Plan Targets Increased __HYMTPH_0001__', model_input)
+        self.assertIn('AI Applications and Global Competitiveness', model_input)
+
+    def test_planning_term_ordinal_is_source_derived_and_numeric_claims_are_unmasked(self):
+        source = 'The 16th Five-Year Plan forecasts revenue growth of 12.5% and USD 120 million investment.'
+        masked, _resources, terms = h._mask(source, 'zh')
+        self.assertEqual(terms, {'__HYMTPH_0000__': '第16个五年'})
+        self.assertIn('12.5%', masked)
+        self.assertIn('USD 120 million', masked)
+        for output, error in [
+            ('第15个五年计划预计收入增长12.5%，投资1.2亿美元。', 'placeholder'),
+            ('__HYMTPH_0000__计划预计收入增长125%，投资1.2亿美元。', 'quantity'),
+            ('__HYMTPH_0000__计划预计收入增长12.5%，投资120万美元。', 'quantity'),
+        ]:
+            with self.subTest(output=output):
+                translator = self.translator(lambda _, output=output: output)
+                with self.assertRaisesRegex(h.OfflineTranslationError, error):
+                    translator.translate(source, 'zh', 'en', markdown=False)
+        self.assertFalse(list(Path(self.directory.name).rglob('*.json')))
+
+    def test_controlled_period_next_to_markdown_underscores_keeps_emphasis(self):
+        translator = self.translator(lambda _: '___HYMTPH_0000___规划')
+        self.assertEqual(translator.translate('_15th Five-Year_ plan', 'zh', 'en'), '_第15个五年_规划')
+
     def test_no_local_inference(self):
         with mock.patch.dict(os.environ, {'GITHUB_ACTIONS': 'false'}):
             with self.assertRaisesRegex(h.OfflineTranslationError, 'restricted'):

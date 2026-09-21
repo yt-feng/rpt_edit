@@ -43,6 +43,8 @@ MONTH_NAMES = "January February March April May June July August September Octob
 MONTHS = {name.casefold(): i for i, name in enumerate(MONTH_NAMES, 1)}
 MONTHS.update({name[:3].casefold(): i for i, name in enumerate(MONTH_NAMES, 1)})
 MONTH = "(?:" + "|".join(sorted(MONTHS, key=len, reverse=True)) + r")\.?"
+FIVE_YEAR_PERIOD_RE = re.compile(
+    r"(?<![A-Za-z0-9])(\d+)(?:st|nd|rd|th)\s+Five[~\s-]+Year(?![A-Za-z0-9])", re.IGNORECASE)
 
 
 def _normalized(text: str) -> str:
@@ -143,7 +145,7 @@ def quantities(text: str) -> Counter:
                 total += (current or 1) * {'十': 10, '百': 100, '千': 1000}[char]
                 current = 0
         return total + current
-    take(r"(?<![A-Za-z0-9])(\d+)(?:st|nd|rd|th)\s+Five[~\s-]+Year\b",
+    take(FIVE_YEAR_PERIOD_RE.pattern,
          lambda m: ("five_year_plan", int(m[1])))
     take(r"第?(\d+|[零〇一二两三四五六七八九十百千]+)(?:个)?五年",
          lambda m: ("five_year_plan", chinese_ordinal(m[1])))
