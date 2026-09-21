@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - "scripts/*wechat*"
+      - "scripts/test_post_blog_refresh.py"
       - "scripts/*generation_cost_controls*"
       - "scripts/*generation_checkpoint*"
       - "scripts/*portal_translation_shards*"
@@ -29,6 +30,7 @@ on:
     branches: [main]
     paths:
       - "scripts/*wechat*"
+      - "scripts/test_post_blog_refresh.py"
       - "scripts/*generation_cost_controls*"
       - "scripts/*generation_checkpoint*"
       - "scripts/*portal_translation_shards*"
@@ -79,6 +81,7 @@ jobs:
           python scripts/test_private_workflow_handoff.py
           python scripts/test_recover_private_wechat_handoff.py
           python scripts/test_market_views_workflow_contract.py
+          python scripts/test_post_blog_refresh.py
           python scripts/test_check_completed_shard.py
           python scripts/test_wechat_output_contract.py
           python scripts/test_wechat_api_verification.py
