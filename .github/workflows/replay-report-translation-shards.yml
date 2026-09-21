@@ -1,0 +1,176 @@
+name: Replay failed report PDF translations
+run-name: Replay PDF shards ${{ inputs.failed_shards }} for ${{ inputs.date_folder }} from ${{ inputs.source_run_id }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: "Original daily workflow run whose PDF translation matrix failed"
+        required: true
+      date_folder:
+        description: "Exact Dropbox date folder stored in the original private plan"
+        required: true
+      failed_shards:
+        description: "All failed translation shard indices, comma separated (for example 0,4)"
+        required: true
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: report-pdf-replay-${{ inputs.source_run_id }}
+  cancel-in-progress: false
+
+env:
+  SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+  DATE_FOLDER: ${{ inputs.date_folder }}
+  FAILED_SHARDS: ${{ inputs.failed_shards }}
+  GH_TOKEN: ${{ github.token }}
+  R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+  R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+  R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+  R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+  PYTHONUNBUFFERED: "1"
+  DEEPSEEK_API_KEY: ""
+  DEEPSEEK_API_KEY_BACKUP: ""
+  DEEPSEEK_API_KEY_2: ""
+  DEEPSEEK_API_KEYS: ""
+
+jobs:
+  validate-plan:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    outputs:
+      shard_indices: ${{ steps.plan.outputs.shard_indices }}
+      plan_sha256: ${{ steps.plan.outputs.plan_sha256 }}
+      selected_count: ${{ steps.plan.outputs.selected_count }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install boto3
+      - name: Verify completed failed jobs and exact original plan
+        id: plan
+        run: |
+          python scripts/replay_report_translation_shards.py prepare \
+            --source-run-id "$SOURCE_RUN_ID" --date-folder "$DATE_FOLDER" \
+            --failed-shards "$FAILED_SHARDS" --plan-dir "$RUNNER_TEMP/translation-plan" \
+            --output-root "$RUNNER_TEMP/translation-output"
+
+  replay-shard:
+    needs: validate-plan
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        shard_index: ${{ fromJson(needs.validate-plan.outputs.shard_indices) }}
+    env:
+      PLAN_SHA256: ${{ needs.validate-plan.outputs.plan_sha256 }}
+      SHARD_INDEX: ${{ matrix.shard_index }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install translation and PDF dependencies
+        run: python -m pip install -r requirements.txt reportlab boto3
+      - name: Restore only requested failed sources or reuse a completed PDF slot
+        id: sources
+        run: |
+          python scripts/replay_report_translation_shards.py materialize \
+            --source-run-id "$SOURCE_RUN_ID" --date-folder "$DATE_FOLDER" \
+            --failed-shards "$FAILED_SHARDS" --plan-dir "$RUNNER_TEMP/translation-plan" \
+            --plan-sha256 "$PLAN_SHA256" --shard-index "$SHARD_INDEX" \
+            --output-root "$RUNNER_TEMP/translation-output"
+      - name: Install Chinese fonts
+        if: steps.sources.outputs.complete != 'true'
+        timeout-minutes: 5
+        continue-on-error: true
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends fonts-noto-cjk
+      - name: Set up free local translation models
+        if: steps.sources.outputs.complete != 'true'
+        uses: ./.github/actions/setup-offline-translation
+        with:
+          targets: zh,en
+          audit-suffix: -replay-shard-${{ matrix.shard_index }}
+      - name: Restore original shard translation checkpoint
+        id: translation_checkpoint
+        if: steps.sources.outputs.complete != 'true'
+        run: |
+          echo "REPORT_TRANSLATION_CACHE_DIR=$RUNNER_TEMP/report-translation-cache" >> "$GITHUB_ENV"
+          python scripts/private_translation_checkpoint.py restore \
+            --scope "$TRANSLATION_CHECKPOINT_SCOPE" --date-folder "$DATE_FOLDER" \
+            --directory "$RUNNER_TEMP/report-translation-cache"
+      - name: Render failed PDF shard using original global indices
+        if: steps.sources.outputs.complete != 'true'
+        timeout-minutes: 300
+        run: |
+          set -o pipefail
+          mkdir -p "$RUNNER_TEMP/translation-output/translation_shard_logs"
+          python scripts/build_portal_translated_reports.py \
+            --dropbox-output-root xhs_notes/dropbox --date-folder "$DATE_FOLDER" \
+            --output-root "$RUNNER_TEMP/translation-output/portal_translated_reports" \
+            --max-reports all --report-plan "$RUNNER_TEMP/translation-plan/plan.json" \
+            --translation-shard-index "$SHARD_INDEX" --max-seconds 16500 \
+            --offline-only --title-guard 2>&1 | tee "$RUNNER_TEMP/translation-output/translation_shard_logs/shard_$SHARD_INDEX.log"
+      - name: Preserve completed translation segments even on failure
+        if: ${{ always() && steps.translation_checkpoint.outcome == 'success' }}
+        run: |
+          python scripts/private_translation_checkpoint.py save \
+            --scope "$TRANSLATION_CHECKPOINT_SCOPE" --date-folder "$DATE_FOLDER" \
+            --directory "$RUNNER_TEMP/report-translation-cache"
+      - name: Save completed PDF shard into its original private slot
+        if: steps.sources.outputs.complete != 'true'
+        run: |
+          python scripts/replay_report_translation_shards.py publish \
+            --source-run-id "$SOURCE_RUN_ID" --date-folder "$DATE_FOLDER" \
+            --failed-shards "$FAILED_SHARDS" --plan-dir "$RUNNER_TEMP/translation-plan" \
+            --plan-sha256 "$PLAN_SHA256" --shard-index "$SHARD_INDEX" \
+            --output-root "$RUNNER_TEMP/translation-output"
+
+  merge-all-pdfs:
+    needs: [validate-plan, replay-shard]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      PLAN_SHA256: ${{ needs.validate-plan.outputs.plan_sha256 }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install boto3
+      - name: Merge and verify the complete original report selection
+        run: |
+          python scripts/replay_report_translation_shards.py merge \
+            --source-run-id "$SOURCE_RUN_ID" --date-folder "$DATE_FOLDER" \
+            --failed-shards "$FAILED_SHARDS" --plan-dir "$RUNNER_TEMP/translation-plan" \
+            --plan-sha256 "$PLAN_SHA256" --output-root .
+          echo "Verified all ${{ needs.validate-plan.outputs.selected_count }} original reports" >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload complete recovered PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: portal-translated-reports-${{ inputs.date_folder }}-${{ github.run_id }}
+          path: |
+            portal_translated_reports/${{ inputs.date_folder }}
+            portal_translated_reports_progress.log
+          if-no-files-found: error
+          overwrite: true
+          retention-days: 2

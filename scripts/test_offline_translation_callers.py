@@ -2,18 +2,19 @@
 
 from __future__ import annotations
 
+import json
 import tempfile
 import unittest
 from argparse import Namespace
 from pathlib import Path
 from types import ModuleType
-from unittest.mock import Mock, patch
+from unittest.mock import ANY, Mock, patch
 
 import build_portal_translated_reports as reports
 import generate_test_podcast_video_eleven_batch as subtitles
 import generate_test_podcast_video_eleven_batch_v2 as subtitles_v2
 import translate_portal_titles as titles
-from offline_translation import atomic_json
+from offline_translation import atomic_json, OfflineTranslationValidationError, OfflineTranslator
 
 
 class OfflineTranslationCallerTests(unittest.TestCase):
@@ -27,6 +28,7 @@ class OfflineTranslationCallerTests(unittest.TestCase):
         module.MODEL_ID = "test-pinned-model"
         module.PROVIDER = "hymt"
         module.atomic_json = atomic_json
+        module.OfflineTranslationValidationError = OfflineTranslationValidationError
         self.factory = module.OfflineTranslator
         patch.object(titles, "OfflineTranslator", self.factory).start()
         self.addCleanup(patch.stopall)
@@ -47,7 +49,7 @@ class OfflineTranslationCallerTests(unittest.TestCase):
         source = "# Output\n\n- More output\n\n[[PORTAL_IMAGE_001]]\n"
         self.assertIn("[[PORTAL_IMAGE_001]]", reports.translate_markdown(source, args))
         reports.translate_chunk(source, args, 1, 1)
-        self.engine.translate_markdown.assert_called_with(source, target="zh", source=None)
+        self.engine.translate_markdown.assert_called_with(source, target="zh", source=None, source_fallback=ANY)
         self.assertEqual(self.factory.call_count, 1)
         self.paid.assert_not_called()
 
@@ -81,7 +83,70 @@ class OfflineTranslationCallerTests(unittest.TestCase):
         self.assertEqual(result["body_provider"], "hymt")
         self.assertEqual(result["title_provider"], "hymt")
         self.assertFalse(result["article_style"])
+        self.assertEqual(result['untranslated_unit_count'], 0)
         self.paid.assert_not_called()
+
+    def test_full_report_partial_source_notice_metadata_and_clean_rerun(self):
+        engine = Mock()
+        def respond(text, _source, _target):
+            return {'Cash reserves were USD 120 million.': '现金储备为120万美元。',
+                    'Revenue grew.': '收入增长。', 'Growth report': '增长报告'}[text]
+        engine.translate.side_effect = respond
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source = root / 'source'
+            source.mkdir()
+            translator = OfflineTranslator(cache_dir=root / 'memo', engine_factory=lambda *_: engine)
+            self.factory.return_value = translator
+            args = Namespace(max_images_per_report=1, title_refine=True)
+            with patch.object(reports, 'report_title', return_value='Growth report'), \
+                    patch.object(reports, 'is_public_or_consulting_report', return_value=False), \
+                    patch.object(reports, 'prepare_clean_markdown') as prepare, \
+                    patch.object(reports, 'render_pdf') as render:
+                prepare.return_value = ('# Revenue grew.\n\nCash reserves were USD 120 million.\n', [])
+                result = reports.process_report(source, root / 'out', 1, args)
+                self.assertEqual(result['untranslated_unit_count'], 1)
+                self.assertEqual(result['translation_fallbacks'][0]['phase'], 'body')
+                self.assertEqual(result['translation_notice'], '部分内容保留原文')
+                self.assertIn('> 部分内容保留原文。', render.call_args.args[0])
+                self.assertIn('Cash reserves were USD 120 million.', render.call_args.args[0])
+                diagnostics = Path(result['output_dir']) / 'translation_fallbacks.json'
+                self.assertEqual(json.loads(diagnostics.read_text())['untranslated_unit_count'], 1)
+                prepare.return_value = ('# Revenue grew.\n', [])
+                rerun = reports.process_report(source, root / 'out', 1, args)
+                self.assertEqual(rerun['untranslated_unit_count'], 0)
+                self.assertEqual(json.loads(diagnostics.read_text()), {'untranslated_unit_count': 0, 'fallbacks': []})
+                self.assertNotIn('部分内容保留原文', render.call_args.args[0])
+        self.paid.assert_not_called()
+
+    def test_rejected_full_report_title_retains_source_without_acceptance_cache(self):
+        source = 'Revenue grew 12.5%'
+        engine = Mock()
+        engine.translate.return_value = '收入增长125%'
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            translator = OfflineTranslator(cache_dir=root / 'memo', engine_factory=lambda *_: engine)
+            args = Namespace(_offline_translator=translator, _generation_cache_dir=root / 'editorial')
+            title, decision = reports.wechat_title_from_filename(source, '正文', '', args, editorial=False)
+            self.assertEqual(title, source)
+            self.assertTrue(decision['source_retained'])
+            self.assertEqual(args._translation_source_fallbacks[0]['phase'], 'title')
+            self.assertFalse(list(root.rglob('*.json')))
+            engine.translate.return_value = '收入增长12.5%'
+            with patch.object(reports, 'decide_filename_anchored_title', return_value=('收入增长12.5%', {})):
+                title, decision = reports.wechat_title_from_filename(source, '正文', '', args, editorial=False)
+            self.assertEqual(title, '收入增长12.5%')
+            self.assertFalse(decision.get('source_retained'))
+            self.assertEqual(engine.translate.call_count, 2)
+            self.assertFalse((root / 'editorial').exists())
+        self.paid.assert_not_called()
+
+    def test_full_report_filename_runtime_failure_is_not_source_fallback(self):
+        self.engine.translate.side_effect = RuntimeError('runtime unavailable')
+        args = Namespace()
+        with self.assertRaisesRegex(RuntimeError, 'runtime unavailable'):
+            reports.wechat_title_from_filename('Source title', '正文', '', args, editorial=False)
+        self.assertFalse(hasattr(args, '_translation_source_fallbacks'))
 
     def test_article_style_generation_remains_editorial(self):
         self.paid.side_effect = None

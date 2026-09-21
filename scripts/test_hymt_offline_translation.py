@@ -229,6 +229,57 @@ class HyMTTests(unittest.TestCase):
         translator = self.translator(lambda _: '___HYMTPH_0000___规划')
         self.assertEqual(translator.translate('_15th Five-Year_ plan', 'zh', 'en'), '_第15个五年_规划')
 
+    def test_opted_in_markdown_fallback_preserves_bad_units_and_translates_neighbors(self):
+        cash = '- Cash reserves were USD 120 million; see [source](../2026/report.pdf).\r\n'
+        figure = '> See [[PORTAL_IMAGE_001]] for the chart.\r\n'
+        source = '# Revenue\r\n\r\n' + cash + figure + 'Revenue grew 12.5%.\r\n'
+        def respond(text):
+            if text.startswith('Cash reserves'):
+                return text.replace('Cash reserves were USD 120 million', '现金储备为120万美元')
+            if text.startswith('See '):
+                return '参见图表。'
+            return text.replace('Revenue grew', '收入增长').replace('Revenue', '收入')
+        translator = self.translator(respond)
+        events = []
+        result = translator.translate_markdown(source, 'zh', 'en', source_fallback=events.append)
+        self.assertIn(cash, result)
+        self.assertIn(figure, result)
+        self.assertIn('# 收入\r\n', result)
+        self.assertIn('收入增长 12.5%.\r\n', result)
+        self.assertEqual([row['line'] for row in events], [3, 4])
+        self.assertEqual(events[0]['source_sha256'], h.hashlib.sha256(cash.encode()).hexdigest())
+        self.assertIn('quantity', events[0]['reason'])
+        self.assertIn('placeholder', events[1]['reason'])
+        self.assertEqual(len(list(Path(self.directory.name).rglob('*.json'))), 2)
+        self.assertEqual(len(self.engine.calls), 4)
+        translator.translate_markdown(source, 'zh', 'en', source_fallback=events.append)
+        self.assertEqual(len(self.engine.calls), 6)  # Only rejected units retried.
+        self.assertEqual(len(list(Path(self.directory.name).rglob('*.json'))), 2)
+        with self.assertRaises(h.OfflineTranslationValidationError):
+            translator.translate_markdown(source, 'zh', 'en')
+
+    def test_markdown_fallback_does_not_swallow_runtime_transport_or_programming_errors(self):
+        for error in (h.OfflineTranslationError('Missing model provenance'),
+                      OSError('transport failed'), TypeError('programming failure')):
+            with self.subTest(error=error):
+                def fail(_text, error=error):
+                    raise error
+                translator = self.translator(fail)
+                events = []
+                with self.assertRaises(h.OfflineTranslationError) as caught:
+                    translator.translate_markdown('Revenue grew 12.5%.\n', 'zh', 'en', source_fallback=events.append)
+                self.assertNotIsInstance(caught.exception, h.OfflineTranslationValidationError)
+                self.assertEqual(events, [])
+        self.assertFalse(list(Path(self.directory.name).rglob('*.json')))
+
+    def test_diagnostic_write_failure_still_stops_report_fallback(self):
+        translator = self.translator(lambda _: '收入增长125%。')
+        def failed_diagnostics(_event):
+            raise OSError('diagnostic checkpoint write failed')
+        with self.assertRaisesRegex(OSError, 'checkpoint write failed'):
+            translator.translate_markdown('Revenue grew 12.5%.\n', 'zh', 'en', source_fallback=failed_diagnostics)
+        self.assertFalse(list(Path(self.directory.name).rglob('*.json')))
+
     def test_no_local_inference(self):
         with mock.patch.dict(os.environ, {'GITHUB_ACTIONS': 'false'}):
             with self.assertRaisesRegex(h.OfflineTranslationError, 'restricted'):

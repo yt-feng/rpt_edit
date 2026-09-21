@@ -7,6 +7,7 @@ on:
       - "scripts/*generation_cost_controls*"
       - "scripts/*generation_checkpoint*"
       - "scripts/*portal_translation_shards*"
+      - "scripts/*replay_report_translation_shards*"
       - "scripts/*private_workflow_handoff*"
       - "scripts/build_portal_translated_reports.py"
       - "scripts/select_macro_trend_pdfs.py"
@@ -21,6 +22,7 @@ on:
       - "scripts/*publish_static_slot*"
       - ".github/workflows/*wechat*"
       - ".github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml"
+      - ".github/workflows/replay-report-translation-shards.yml"
       - ".github/workflows/daily-bilingual-podcast-videos.yml"
       - ".github/actions/restore-wechat-diagnostics/**"
   push:
@@ -30,6 +32,7 @@ on:
       - "scripts/*generation_cost_controls*"
       - "scripts/*generation_checkpoint*"
       - "scripts/*portal_translation_shards*"
+      - "scripts/*replay_report_translation_shards*"
       - "scripts/*private_workflow_handoff*"
       - "scripts/build_portal_translated_reports.py"
       - "scripts/select_macro_trend_pdfs.py"
@@ -44,6 +47,7 @@ on:
       - "scripts/*publish_static_slot*"
       - ".github/workflows/*wechat*"
       - ".github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml"
+      - ".github/workflows/replay-report-translation-shards.yml"
       - ".github/workflows/daily-bilingual-podcast-videos.yml"
       - ".github/actions/restore-wechat-diagnostics/**"
   workflow_dispatch:
@@ -71,6 +75,7 @@ jobs:
           python scripts/test_wechat_editorial_binding.py
           python scripts/test_private_generation_checkpoint.py
           python scripts/test_portal_translation_shards.py
+          python scripts/test_replay_report_translation_shards.py
           python scripts/test_private_workflow_handoff.py
           python scripts/test_recover_private_wechat_handoff.py
           python scripts/test_market_views_workflow_contract.py
