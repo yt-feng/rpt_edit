@@ -40,6 +40,12 @@ jobs:
           python3 -B scripts/test_build_portal_locales.py
           python3 -B scripts/test_portal_locale_manifest.py
           python3 -B scripts/test_portal_locale_source_fallback.py
+          python3 -B scripts/test_verify_portal_locale_routes.py
+          python3 -B scripts/test_verify_prepared_static_slot.py
+          python3 -B scripts/test_resume_portal_locale_candidate.py
+          python3 -B scripts/test_audit_portal_shadow_preview.py
+          python3 -B scripts/test_neutral_edge_cutover_workflow.py
+          python3 -B scripts/test_portal_locale_resume_workflow.py
           python3 -B scripts/test_portal_locale_preflight_repair.py
           python3 -B scripts/test_portal_locale_preflight_diagnostics.py
           python3 -B scripts/test_deepl_locale_repair.py

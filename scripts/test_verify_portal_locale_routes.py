@@ -12,6 +12,7 @@ import unittest
 from unittest.mock import patch
 
 import verify_portal_locale_routes as audit
+from portal_locale_manifest import MAX_LOCALE_MANIFEST_BYTES, load_locale_manifest
 
 
 ORIGIN = "https://portal.example.invalid"
@@ -277,6 +278,89 @@ class PublicLocaleRouteTests(unittest.TestCase):
             with patch("sys.argv", args), patch.object(audit, "verify_locale_routes", return_value={"schema_version": 1, "status": "failed", "checks": []}), patch("builtins.print"):
                 self.assertEqual(audit.main(), 1)
             self.assertEqual(json.loads(output.read_text())["status"], "failed")
+
+    def test_large_trusted_manifest_reaches_the_real_route_verifier(self):
+        # Full translation audit records previously exceeded the live-only
+        # 2 MiB cap despite every declared route being valid.
+        self.manifest["translation_audit"] = {"retained_source": "x" * 3_100_000}
+        original_verify = audit.verify_locale_routes
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            manifest, output = root / "manifest.json", root / "result.json"
+            manifest.write_text(json.dumps(self.manifest))
+            self.assertGreater(manifest.stat().st_size, 3 * 1024 * 1024 - 100_000)
+            args = ["verify_portal_locale_routes.py", "--manifest", str(manifest), "--origin", ORIGIN, "--output", str(output)]
+            with patch("sys.argv", args), patch.object(audit, "verify_locale_routes", side_effect=lambda value, origin: original_verify(value, origin, fetcher=self.fetch)), patch("builtins.print"):
+                self.assertEqual(audit.main(), 0)
+            self.assertEqual(json.loads(output.read_text())["status"], "passed")
+            self.assertEqual(len(self.calls), 19)
+
+    def test_shared_size_schema_and_file_guards_reject_before_requests(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            manifest, output = root / "manifest.json", root / "result.json"
+            args = ["verify_portal_locale_routes.py", "--manifest", str(manifest), "--origin", ORIGIN, "--output", str(output)]
+            for body in (b" " * (MAX_LOCALE_MANIFEST_BYTES + 1), b"", b"not json", b'[]', b'{"schema_version":2}', b'{"schema_version":true}'):
+                with self.subTest(size=len(body)):
+                    manifest.write_bytes(body)
+                    with patch("sys.argv", args), patch.object(audit, "verify_locale_routes") as verify, patch("builtins.print"):
+                        self.assertEqual(audit.main(), 1)
+                        verify.assert_not_called()
+            manifest.unlink()
+            target = root / "real.json"
+            target.write_text(json.dumps(self.manifest))
+            manifest.symlink_to(target)
+            with self.assertRaises(ValueError):
+                load_locale_manifest(manifest)
+
+    def test_shadow_requests_keep_canonical_public_links(self):
+        shadow = "https://candidate.example.invalid"
+        self.responses = {url.replace(ORIGIN, shadow): value for url, value in self.responses.items()}
+        report = audit.verify_locale_routes(self.manifest, ORIGIN, request_origin=shadow, fetcher=self.fetch)
+        self.assertEqual(report["status"], "passed")
+        self.assertTrue(all(url.startswith(shadow + "/") for url, _ in self.calls))
+
+    def write_prepared_files(self, root):
+        for url, (_status, _headers, body) in self.responses.items():
+            path = root / url.removeprefix(ORIGIN + "/")
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(body)
+
+    def test_local_cli_checks_the_same_shell_contract_without_network(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            self.write_prepared_files(root)
+            manifest, output = root / "manifest.json", root / "result.json"
+            manifest.write_text(json.dumps(self.manifest))
+            args = ["verify_portal_locale_routes.py", "--manifest", str(manifest), "--origin", ORIGIN,
+                    "--local-root", str(root), "--output", str(output)]
+            with patch("sys.argv", args), patch.object(audit.subprocess, "run", side_effect=AssertionError("local validation must not use HTTP")), patch("builtins.print"):
+                self.assertEqual(audit.main(), 0)
+                self.assertEqual(json.loads(output.read_text())["validation_mode"], "prepared-files")
+                page = root / "ja/report.html"
+                changed = page.read_bytes().replace(b'data-page="report"', b'data-page="not-found"')
+                page.write_bytes(changed)
+                self.manifest["application_routes"]["ja"]["report.html"] = describe("ja/report.html", changed)
+                manifest.write_text(json.dumps(self.manifest))
+                self.assertEqual(audit.main(), 1)
+                report = json.loads(output.read_text())
+                self.assertTrue(any("wrong page identity" in row.get("error", "") for row in report["checks"]))
+
+    def test_local_route_hash_and_symlink_changes_are_rejected(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            self.write_prepared_files(root)
+            page = root / "ko/doc.html"
+            original = page.read_bytes()
+            page.write_bytes(original + b"changed")
+            self.assertEqual(audit.verify_local_locale_routes(self.manifest, ORIGIN, root)["status"], "failed")
+            real = root / "real.html"
+            real.write_bytes(original)
+            page.unlink()
+            page.symlink_to(real)
+            report = audit.verify_local_locale_routes(self.manifest, ORIGIN, root)
+            self.assertEqual(report["status"], "failed")
+            self.assertTrue(any("symlink" in row.get("error", "") for row in report["checks"]))
 
 
 if __name__ == "__main__":

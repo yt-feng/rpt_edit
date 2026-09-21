@@ -3,11 +3,45 @@
 from __future__ import annotations
 
 import hashlib
+import json
+from pathlib import Path
 from typing import Any, Iterable
+
+
+MAX_LOCALE_MANIFEST_BYTES = 16 * 1024 * 1024
 
 
 class LocaleManifestError(ValueError):
     """A locale manifest does not account for its source units faithfully."""
+
+
+def parse_locale_manifest(body: bytes) -> dict[str, Any]:
+    """Use one bounded input contract for generated, staged, and live manifests."""
+    if not isinstance(body, bytes) or not 0 < len(body) <= MAX_LOCALE_MANIFEST_BYTES:
+        actual = len(body) if isinstance(body, bytes) else "invalid"
+        raise LocaleManifestError(
+            f"Locale manifest byte size {actual} is outside 1..{MAX_LOCALE_MANIFEST_BYTES}"
+        )
+    try:
+        manifest = json.loads(body.decode("utf-8"))
+    except (ValueError, UnicodeError, RecursionError) as error:
+        raise LocaleManifestError("Locale manifest must be valid UTF-8 JSON") from error
+    if not isinstance(manifest, dict) or type(manifest.get("schema_version")) is not int or manifest["schema_version"] != 1:
+        raise LocaleManifestError("Locale manifest schema is invalid")
+    return manifest
+
+
+def load_locale_manifest(path: Path) -> dict[str, Any]:
+    path = Path(path)
+    if path.is_symlink() or not path.is_file():
+        raise LocaleManifestError("Locale manifest must be a regular non-symlink file")
+    size = path.stat().st_size
+    if not 0 < size <= MAX_LOCALE_MANIFEST_BYTES:
+        raise LocaleManifestError(
+            f"Locale manifest byte size {size} is outside 1..{MAX_LOCALE_MANIFEST_BYTES}"
+        )
+    with path.open("rb") as handle:
+        return parse_locale_manifest(handle.read(MAX_LOCALE_MANIFEST_BYTES + 1))
 
 
 def validate_translation_resolution(manifest: dict[str, Any], locales: Iterable[str]) -> None:

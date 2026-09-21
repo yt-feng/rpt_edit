@@ -21,7 +21,7 @@ on:
   workflow_dispatch:
     inputs:
       source_run_id:
-        description: "Completed source run with successful upload and static validation"
+        description: "Failed source run: uploaded shadow audit failure or verified rollback after live acceptance failure"
         required: true
         type: string
       source_run_attempt:
@@ -66,7 +66,9 @@ concurrency:
 jobs:
   prepare_release:
     runs-on: ubuntu-22.04
-    timeout-minutes: 20
+    # Restoring and verifying the complete immutable candidate includes thousands
+    # of bounded object reads before shadow acceptance; it does not rerun models.
+    timeout-minutes: 60
 '''
     outputs = prepare.split('    outputs:\n', 1)[1].split('    steps:\n', 1)[0]
     outputs = outputs.replace('steps.runtime_context.outputs.static_release', 'steps.static_upload.outputs.static_release')
@@ -88,6 +90,7 @@ jobs:
           python3 -B scripts/build_portal_locale_resume_workflow.py --check
           python3 -B scripts/test_portal_locale_resume_workflow.py
           python3 -B scripts/test_resume_portal_locale_candidate.py
+          python3 -B scripts/test_verify_portal_locale_routes.py
           python3 -B scripts/test_verify_prepared_static_slot.py
           python3 -B scripts/test_audit_portal_shadow_preview.py
           node --test workers/edge-static-host/test/index.test.mjs
@@ -139,7 +142,8 @@ jobs:
         run: echo 'changed=true' >> "$GITHUB_OUTPUT"
 
 '''
-    names = ('Compute multilingual index policy identity',
+    names = ('Validate locale application routes before upload',
+             'Compute multilingual index policy identity',
              'Validate multilingual shadow sample plan before upload',
              'Prepare isolated multilingual shadow worker', 'Deploy isolated multilingual shadow worker',
              'Verify isolated multilingual shadow worker', 'Publish multilingual review identity',

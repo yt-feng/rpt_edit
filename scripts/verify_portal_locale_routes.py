@@ -14,6 +14,7 @@ import time
 from typing import Any, Callable
 from urllib.parse import urlsplit
 
+from portal_locale_manifest import MAX_LOCALE_MANIFEST_BYTES, load_locale_manifest
 
 LOCALES = {"ko": "ltr", "ja": "ltr", "ar": "rtl"}
 APPLICATION_PAGES = {
@@ -27,7 +28,7 @@ APPLICATION_PAGES = {
 RECOVERY_PATH = "assets/locale-recovery.js"
 DETAIL_PATH = "assets/locale-detail.js"
 MAX_RESPONSE_BYTES = 16 * 1024 * 1024
-MAX_MANIFEST_BYTES = 2 * 1024 * 1024
+MAX_MANIFEST_BYTES = MAX_LOCALE_MANIFEST_BYTES
 TIMEOUT_SECONDS = 20
 MAX_WORKERS = 4
 VOID_TAGS = frozenset("area base br col embed hr img input link meta param source track wbr".split())
@@ -232,8 +233,10 @@ def validate_shell(body: bytes, headers: dict[str, str], locale: str, filename: 
 def verify_locale_routes(
     manifest: dict[str, Any], origin: str,
     *, fetcher: Callable[[str, int], tuple[int, dict[str, str], bytes]] = fetch_public,
+    request_origin: str | None = None,
 ) -> dict[str, Any]:
     origin = validate_origin(origin)
+    request_origin = validate_origin(request_origin) if request_origin is not None else origin
     checks = declared_checks(manifest)
     if checks is None:
         return {"schema_version": 1, "status": "skipped", "origin": origin,
@@ -245,7 +248,7 @@ def verify_locale_routes(
         output = {"path": "/" + row["path"], "status": "failed"}
         try:
             suffix = "?v=" + row["sha256"][:12] if row.get("lazy_module") else ""
-            status, headers, body = fetcher(origin + output["path"] + suffix, TIMEOUT_SECONDS)
+            status, headers, body = fetcher(request_origin + output["path"] + suffix, TIMEOUT_SECONDS)
             output["http_status"] = status
             if status != 200:
                 raise RouteVerificationError(f"Expected HTTP 200 without redirects, got {status}")
@@ -271,17 +274,46 @@ def verify_locale_routes(
             "elapsed_seconds": round(time.monotonic() - started, 3), "checks": results}
 
 
+def verify_local_locale_routes(manifest: dict[str, Any], origin: str, root: Path) -> dict[str, Any]:
+    """Run live byte/HTML contracts on prepared files before any deployment."""
+    if root.is_symlink() or not root.is_dir():
+        raise RouteVerificationError("Prepared site root must be a regular directory")
+    root = root.resolve(strict=True)
+
+    def fetch_local(url: str, _timeout: int) -> tuple[int, dict[str, str], bytes]:
+        relative = urlsplit(url).path.lstrip("/")
+        path = root / relative
+        if any(parent.is_symlink() for parent in [path, *path.parents] if parent != root and root in parent.parents):
+            raise RouteVerificationError("Prepared route must not use a symlink")
+        if not path.is_file() or not path.resolve().is_relative_to(root):
+            raise RouteVerificationError("Prepared route is missing or outside the site root")
+        if not 0 < path.stat().st_size <= MAX_RESPONSE_BYTES:
+            raise RouteVerificationError("Prepared route exceeds the response size bound")
+        with path.open("rb") as handle:
+            body = handle.read(MAX_RESPONSE_BYTES + 1)
+        headers = {"content-type": "application/javascript" if path.suffix == ".js" else "text/html"}
+        locale = relative.split("/", 1)[0]
+        if locale in LOCALES:
+            headers["content-language"] = locale
+        return 200, headers, body
+
+    report = verify_locale_routes(manifest, origin, fetcher=fetch_local)
+    report["validation_mode"] = "prepared-files"
+    return report
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--origin", required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--local-root", type=Path,
+                        help="Validate prepared files with the live contracts without HTTP requests")
     args = parser.parse_args()
     try:
-        if args.manifest.is_symlink() or not args.manifest.is_file() or not 0 < args.manifest.stat().st_size <= MAX_MANIFEST_BYTES:
-            raise RouteVerificationError("Trusted locale manifest is missing or exceeds its size bound")
-        manifest = json.loads(args.manifest.read_text(encoding="utf-8"))
-        report = verify_locale_routes(manifest, args.origin)
+        manifest = load_locale_manifest(args.manifest)
+        report = (verify_local_locale_routes(manifest, args.origin, args.local_root)
+                  if args.local_root is not None else verify_locale_routes(manifest, args.origin))
     except (OSError, ValueError, RouteVerificationError) as error:
         report = {"schema_version": 1, "status": "failed", "error": str(error)}
     args.output.parent.mkdir(parents=True, exist_ok=True)

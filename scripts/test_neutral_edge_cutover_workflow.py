@@ -1046,6 +1046,22 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn('runtime.get("catalog_versioned") is not True', acceptance)
         self.assertIn('runtime.get("rules_versioned") is not True', acceptance)
 
+    def test_locale_acceptance_contract_runs_before_upload_and_deployment(self) -> None:
+        local_gate = self.workflow.index("Validate locale application routes before upload")
+        upload = self.workflow.index("Upload inactive static slot and immutable runtime")
+        remote_gate = self.workflow.index("Verify committed candidate immediately before cutover")
+        deployment = self.workflow.index("      - name: Deploy prepared neutral edge release")
+        self.assertLess(local_gate, upload)
+        self.assertLess(remote_gate, deployment)
+        local = self.workflow[local_gate:self.workflow.index("Validate built public brand", local_gate)]
+        self.assertIn("scripts/verify_portal_locale_routes.py", local)
+        self.assertIn('--local-root _neutral_site --origin "$LIVE_ORIGIN"', local)
+        remote = self.workflow[remote_gate:deployment]
+        self.assertIn('locale_args+=(--locale-origin "$LIVE_ORIGIN")', remote)
+        self.assertIn('"${locale_args[@]}"', remote)
+        complete = self.workflow[self.workflow.index("Validate complete static release"):local_gate]
+        self.assertIn('load_locale_manifest(root / "data/i18n/manifest.json")', complete)
+
     def test_public_brand_gate_covers_build_publish_and_live_acceptance(self) -> None:
         build = self.workflow.index("Build private static release")
         brand_check = self.workflow.index("Validate built public brand")

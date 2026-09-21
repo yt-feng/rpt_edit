@@ -42,6 +42,7 @@ from portal_locale_literals import is_chart_geography_identity_label, is_chart_m
 from portal_locale_scope import deferred_locale_source, restrict_html_to_cohort
 from portal_locale_report_preview import localize_report_preview
 from portal_locale_detail_hooks import defer_unverified_report_preview, inject_locale_detail_hooks
+from portal_locale_manifest import LocaleManifestError, parse_locale_manifest
 from repair_portal_ja_catalog_titles import apply_ja_catalog_title_repairs
 
 CACHE_SCHEMA_VERSION = 1
@@ -688,6 +689,15 @@ def normalize_deepseek_model_name(value: str | None) -> str:
 
 def stable_json_bytes(value: Any) -> bytes:
     return (json.dumps(value, ensure_ascii=False, separators=(",", ":"), sort_keys=True) + "\n").encode("utf-8")
+
+
+def write_locale_manifest(path: Path, manifest: dict[str, Any]) -> None:
+    body = stable_json_bytes(manifest)
+    try:
+        parse_locale_manifest(body)
+    except LocaleManifestError as error:
+        raise TranslationError(str(error)) from error
+    path.write_bytes(body)
 
 
 def empty_cache(model: str = DEFAULT_DEEPSEEK_MODEL, *, provider: str = "deepseek") -> dict[str, Any]:
@@ -6068,7 +6078,7 @@ def _build_localized_release(
         )
     manifest_path = root / "data" / "i18n" / "manifest.json"
     manifest_path.parent.mkdir(parents=True, exist_ok=True)
-    manifest_path.write_bytes(stable_json_bytes(manifest))
+    write_locale_manifest(manifest_path, manifest)
     if incremental:
         # Rebuilding a previously staged history candidate must not retain an
         # obsolete publication ledger beside the new-content-only manifest.
@@ -6086,7 +6096,7 @@ def _build_localized_release(
             "report_date_basis": "catalog-date-with-publication-fallback",
             "blog_date_basis": "publication-date",
         }
-        manifest_path.write_bytes(stable_json_bytes(manifest))
+        write_locale_manifest(manifest_path, manifest)
         (manifest_path.parent / "history-release.json").write_bytes(stable_json_bytes(history_plan))
     log(
         f"Localized release complete: pages={len(localized_html_sources)} units={len(units)} "

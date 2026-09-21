@@ -17,6 +17,7 @@ import zipfile
 import publish_static_slot as publisher
 import resume_portal_locale_candidate as resume
 import verify_portal_chinese_parity as parity
+import verify_portal_locale_routes as locale_routes
 from test_publish_static_slot import FakeR2
 
 
@@ -78,7 +79,7 @@ class ResumeTests(unittest.TestCase):
         files["blog/historical.html"] = b"historical content must not be downloaded"
         for name in publisher.DEFAULT_RUNTIME_PATHS:
             files.setdefault(name, b"{}")
-        locale_manifest = {"quality_gate_version": 3, "locales": list(resume.LOCALES),
+        locale_manifest = {"schema_version": 1, "quality_gate_version": 3, "locales": list(resume.LOCALES),
                            "coverage": {locale: 1 for locale in resume.LOCALES}, "html_page_count": 6,
                            "translation_scope": "incremental", "index_policy": {"mode": "incremental-publication-cutoff"},
                            "required_paths": ["data/i18n/ko/overlay.json"]}
@@ -133,6 +134,176 @@ class ResumeTests(unittest.TestCase):
     def save_manifest(self):
         self.r2.objects[publisher.manifest_key("b")] = {"body": encoded(self.manifest)}
 
+    def prepare_declared_locale_routes(self):
+        from test_verify_portal_locale_routes import describe, fixture
+
+        declared, responses = fixture()
+        declared["lazy_javascript_assets"] = {}
+        for language, prefix in [("zh-Hans", ""), *((locale, f"{locale}/") for locale in resume.LOCALES)]:
+            path = prefix + "assets/newsfeed-app.js"
+            body = f"export function initNewsfeedApp() {{ /* {language} */ }}".encode()
+            declared["lazy_javascript_assets"][language] = describe(path, body)
+            responses[ORIGIN + "/" + path] = (200, {}, body)
+        path = locale_routes.DETAIL_PATH
+        body = b"/* locale detail */"
+        declared["detail_asset"] = describe(path, body)
+        responses[ORIGIN + "/" + path] = (200, {}, body)
+
+        def store(relative, body):
+            descriptor = {"size": len(body), "sha256": hashlib.sha256(body).hexdigest(),
+                          "content_type": "application/javascript" if relative.endswith(".js") else "text/html",
+                          "cache_control": "public, max-age=0, must-revalidate"}
+            self.manifest["files"][relative] = descriptor
+            self.r2.objects[publisher.slot_prefix("b") + relative] = {
+                "body": body, "metadata": {"sha256": descriptor["sha256"]}}
+
+        for url, response in responses.items():
+            relative = url.removeprefix(ORIGIN + "/")
+            store(relative, response[2])
+            if relative.endswith(".html"):
+                store(relative.split("/", 1)[1], b"Chinese original application")
+        manifest_path = "data/i18n/manifest.json"
+        locale_manifest = json.loads(self.r2.objects[publisher.slot_prefix("b") + manifest_path]["body"])
+        locale_manifest.update(declared)
+        locale_manifest["html_page_count"] = 12
+        store(manifest_path, encoded(locale_manifest))
+        return locale_manifest, store
+
+    def test_download_restores_all_declared_routes_for_the_local_live_contract_gate(self):
+        manifest, _store = self.prepare_declared_locale_routes()
+        self.r2.operations.clear()
+        downloaded = resume.download_candidate_files(self.r2, "bucket", self.manifest, self.site, workers=1)
+        expected_assets = {"assets/locale-recovery.js", "assets/locale-detail.js", "assets/newsfeed-app.js",
+                           *(f"{locale}/assets/newsfeed-app.js" for locale in resume.LOCALES)}
+        self.assertTrue(expected_assets.issubset(downloaded))
+        with patch("verify_portal_locale_routes.subprocess.run", side_effect=AssertionError("No live HTTP")):
+            report = locale_routes.verify_local_locale_routes(manifest, ORIGIN, self.site)
+        self.assertEqual(report["status"], "passed")
+        self.assertEqual((report["route_count"], report["asset_count"]), (18, 6))
+        self.assertTrue(all(operation == "get" for operation, _key in self.r2.operations))
+
+    def test_declared_asset_must_match_committed_size_and_hash_before_body_downloads(self):
+        manifest, store = self.prepare_declared_locale_routes()
+        original = copy.deepcopy(manifest)
+        for field, value in (("sha256", "0" * 64), ("byte_size", 1)):
+            with self.subTest(field=field):
+                manifest = copy.deepcopy(original)
+                manifest["lazy_javascript_assets"]["ar"][field] = value
+                store("data/i18n/manifest.json", encoded(manifest))
+                self.r2.operations.clear()
+                with self.assertRaisesRegex(resume.ResumeError, "descriptor differs from the committed static manifest"):
+                    resume.download_candidate_files(self.r2, "bucket", self.manifest, self.site, workers=1)
+                self.assertEqual(self.r2.operations, [("get", publisher.slot_prefix("b") + "data/i18n/manifest.json")])
+
+    def use_rolled_back_source(self):
+        prepare = self.github.jobs[0]
+        prepare["conclusion"] = "success"
+        for step in prepare["steps"]:
+            step["status"] = "completed"
+            if step["name"] == "Verify isolated multilingual shadow worker":
+                step["conclusion"] = "skipped"
+        for number, name in enumerate(("Publish multilingual review identity", "Build public validation artifact",
+                                       "Upload release validation artifact"), 5):
+            prepare["steps"].append({"name": name, "number": number, "status": "completed", "conclusion": "success"})
+        outcomes = (
+            ("Download release validation artifact", "success"),
+            ("Prove live release is unchanged before cutover", "success"),
+            ("Capture exact edge rollback target", "success"),
+            ("Verify committed candidate immediately before cutover", "success"),
+            ("Deploy prepared neutral edge release", "success"),
+            ("Accept prepared release through the live edge", "failure"),
+            ("Roll back failed release or completed rehearsal", "success"),
+            ("Verify exact previous release after rollback", "success"),
+            ("Enforce transactional outcome", "failure"),
+        )
+        self.github.jobs.append({"id": 456, "name": "cutover", "status": "completed", "conclusion": "failure",
+                                 "steps": [{"name": name, "number": number, "status": "completed", "conclusion": outcome}
+                                           for number, (name, outcome) in enumerate(outcomes, 1)]})
+
+    def test_completed_prepare_and_verified_rollback_restores_without_remote_mutation(self):
+        self.use_rolled_back_source()
+        result = self.restore()
+        self.assertEqual(result["source_failure_phase"], "live_acceptance_rolled_back")
+        self.assertEqual(result["source_cutover_job_id"], 456)
+        self.assertIs(result["source_rollback_verified"], True)
+        self.assertEqual(result["remote_mutations"], 0)
+        self.assertEqual(result["verified_remote_objects"], self.manifest["file_count"])
+        self.assertEqual(self.live.call_count, 2)
+        self.assertTrue((self.site / "ko/blog/new.html").is_file())
+        self.assertTrue(all(operation in {"head", "get"} for operation, _key in self.r2.operations))
+
+    def test_rollback_source_rejects_each_missing_or_unsuccessful_gate_before_remote_reads(self):
+        self.use_rolled_back_source()
+        original = copy.deepcopy(self.github.jobs)
+        for job_index, job in enumerate(original):
+            for step_index, step in enumerate(job["steps"]):
+                if step["name"] == "Verify isolated multilingual shadow worker":
+                    continue  # A successful prepare may intentionally skip this isolated preview.
+                for outcome in ("skipped", "cancelled", "timed_out", "success" if step["conclusion"] == "failure" else "failure"):
+                    with self.subTest(step=step["name"], outcome=outcome):
+                        self.github.jobs = copy.deepcopy(original)
+                        self.github.jobs[job_index]["steps"][step_index]["conclusion"] = outcome
+                        with self.assertRaises(resume.ResumeError):
+                            self.restore()
+                with self.subTest(missing_step=step["name"]):
+                    self.github.jobs = copy.deepcopy(original)
+                    del self.github.jobs[job_index]["steps"][step_index]
+                    with self.assertRaises(resume.ResumeError):
+                        self.restore()
+        self.assertEqual(self.r2.operations, [])
+        self.live.assert_not_called()
+
+    def test_rollback_source_rejects_ambiguous_extra_or_out_of_order_failure_evidence(self):
+        self.use_rolled_back_source()
+        original = copy.deepcopy(self.github.jobs)
+        def cutover(steps):
+            return steps[1]["steps"]
+        mutations = (
+            lambda jobs: jobs.append(copy.deepcopy(jobs[1])),
+            lambda jobs: jobs.append({"name": "other", "status": "completed", "conclusion": "failure"}),
+            lambda jobs: jobs.append({"name": "other", "status": "in_progress", "conclusion": None}),
+            lambda jobs: jobs.append({"name": "earlier_cutover", "status": "completed", "conclusion": "success"}),
+            lambda jobs: jobs[1].update(conclusion="success"),
+            lambda jobs: jobs[1].update(status="in_progress"),
+            lambda jobs: jobs[1].update(id=True),
+            lambda jobs: cutover(jobs).append({"name": "Extra failure", "number": 10, "status": "completed", "conclusion": "failure"}),
+            lambda jobs: cutover(jobs).append({"name": "Accept prepared release through the live edge", "number": 10, "status": "completed", "conclusion": "failure"}),
+            lambda jobs: cutover(jobs)[7].update(number=cutover(jobs)[6]["number"]),
+            lambda jobs: cutover(jobs)[7].update(number=11),
+            lambda jobs: cutover(jobs)[7].update(status="in_progress"),
+            lambda jobs: jobs[0]["steps"][-1].update(number=0),
+        )
+        for index, mutate in enumerate(mutations):
+            with self.subTest(index=index):
+                self.github.jobs = copy.deepcopy(original)
+                mutate(self.github.jobs)
+                with self.assertRaises(resume.ResumeError):
+                    self.restore()
+        self.assertEqual(self.r2.operations, [])
+
+    def test_rollback_source_still_requires_original_attempt_identity_and_unchanged_active_release(self):
+        self.use_rolled_back_source()
+        original = copy.deepcopy(self.github.run)
+        for change in ({"head_branch": "feature"}, {"head_sha": "9" * 40}, {"run_attempt": 2},
+                       {"conclusion": "success"}, {"repository": {"full_name": "other/repo"}}):
+            with self.subTest(change=change):
+                self.github.run = {**original, **change}
+                with self.assertRaises(resume.ResumeError):
+                    self.restore()
+        self.github.run = original
+        self.live.return_value = {**PREVIOUS, "release_id": "7" * 32}
+        with self.assertRaisesRegex(resume.ResumeError, "changed"):
+            self.restore()
+        self.assertEqual(self.r2.operations, [])
+
+    def test_rollback_source_does_not_relax_committed_manifest_integrity(self):
+        self.use_rolled_back_source()
+        self.manifest["files"]["index.html"]["sha256"] = "0" * 64
+        self.save_manifest()
+        with self.assertRaisesRegex(resume.ResumeError, "tree digest"):
+            self.restore()
+        self.assertFalse((self.work / "locale-resume-identity.json").exists())
+
     def test_download_accepts_only_accounted_source_fallbacks(self):
         from test_portal_locale_manifest import with_source_fallback
 
@@ -153,6 +324,24 @@ class ResumeTests(unittest.TestCase):
         with self.assertRaisesRegex(resume.ResumeError, "source fallback count differs"):
             resume.download_candidate_files(self.r2, "bucket", self.manifest, self.site, workers=1)
 
+    def test_candidate_download_uses_shared_manifest_schema_and_finite_size_contract(self):
+        path = "data/i18n/manifest.json"
+        object_key = publisher.slot_prefix("b") + path
+        original = json.loads(self.r2.objects[object_key]["body"])
+        def save_payload(payload):
+            body = encoded(payload)
+            self.r2.objects[object_key]["body"] = body
+            self.manifest["files"][path].update(size=len(body), sha256=hashlib.sha256(body).hexdigest())
+        save_payload({**original, "diagnostic_padding": "x" * (3 * 1024 * 1024)})
+        restored = resume.download_candidate_files(self.r2, "bucket", self.manifest, self.site, workers=1)
+        self.assertIn(path, restored)
+        for payload in ({**original, "schema_version": 2},
+                        {**original, "diagnostic_padding": "x" * (17 * 1024 * 1024)}):
+            with self.subTest(schema=payload["schema_version"], oversized="diagnostic_padding" in payload):
+                save_payload(payload)
+                with self.assertRaisesRegex(resume.ResumeError, "locale manifest is invalid"):
+                    resume.download_candidate_files(self.r2, "bucket", self.manifest, self.site, workers=1)
+
     def restore(self, **kwargs):
         options = dict(github=self.github, client=self.r2, bucket="bucket", repository=REPO, run_id=321, run_attempt=1,
                        site_dir=self.site, diagnostics_dir=self.diag, work_dir=self.work, origin=ORIGIN,
@@ -163,6 +352,7 @@ class ResumeTests(unittest.TestCase):
 
     def test_complete_restore_verifies_all_metadata_downloads_only_audit_files_and_never_mutates_remote(self):
         result = self.restore()
+        self.assertEqual(result["source_failure_phase"], "shadow_http_audit")
         self.assertEqual(result["static_release"], RELEASE)
         self.assertEqual(result["verified_remote_objects"], self.manifest["file_count"])
         self.assertEqual(result["remote_mutations"], 0)

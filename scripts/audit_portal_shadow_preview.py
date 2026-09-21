@@ -16,7 +16,8 @@ from urllib.parse import quote, unquote, urljoin, urlsplit
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 from xml.etree import ElementTree as ET
 
-from portal_locale_manifest import LocaleManifestError, validate_translation_resolution
+from portal_locale_manifest import LocaleManifestError, parse_locale_manifest, validate_translation_resolution
+from verify_portal_locale_routes import RouteVerificationError, verify_locale_routes
 
 
 LOCALES = {"ko": "ltr", "ja": "ltr", "ar": "rtl"}
@@ -426,6 +427,7 @@ def fetch(
     relative: str,
     *,
     attempts: int = 6,
+    timeout: int = 30,
     validate_response: Callable[[bytes, Any], None] | None = None,
 ) -> tuple[bytes, Any, float]:
     validate_preview_path(relative, allow_query=True)
@@ -443,13 +445,15 @@ def fetch(
         raise AuditError(f"Unsafe preview path: {relative}")
     if not isinstance(attempts, int) or isinstance(attempts, bool) or not 1 <= attempts <= 10:
         raise AuditError("Preview retry count is invalid")
+    if type(timeout) is not int or not 1 <= timeout <= 30:
+        raise AuditError("Preview timeout is invalid")
     last_error: BaseException | None = None
     for attempt in range(1, attempts + 1):
         started = time.monotonic()
         try:
             response = opener.open(
                 Request(target, headers={"Cache-Control": "no-cache", "User-Agent": "Portal-Shadow-Audit/1.0"}),
-                timeout=30,
+                timeout=timeout,
             )
             body = response.read(MAX_RESPONSE_BYTES + 1)
             elapsed = time.monotonic() - started
@@ -734,13 +738,41 @@ def audit_preview(
 
     manifest_body, manifest_headers, elapsed = fetch(opener, base_url, "/data/i18n/manifest.json")
     require_shadow_header(manifest_headers, "/data/i18n/manifest.json")
-    manifest = json_object(manifest_body, "Shadow multilingual manifest")
+    try:
+        manifest = parse_locale_manifest(manifest_body)
+    except LocaleManifestError as error:
+        raise AuditError(str(error)) from error
     required_files = manifest_files(manifest)
     rows.append({
         "path": "/data/i18n/manifest.json",
         "bytes": len(manifest_body),
         "milliseconds": round(elapsed * 1000),
     })
+
+    def fetch_application_route(url: str, timeout: int) -> tuple[int, dict[str, str], bytes]:
+        parsed = urlsplit(url)
+        if f"{parsed.scheme}://{parsed.netloc}" != base_url:
+            raise RouteVerificationError("Application route request escaped the shadow origin")
+        relative = parsed.path + (("?" + parsed.query) if parsed.query else "")
+        try:
+            body, headers, _elapsed = fetch(opener, base_url, relative, attempts=1, timeout=timeout)
+            require_shadow_header(headers, relative)
+        except AuditError as error:
+            raise RouteVerificationError(str(error)) from error
+        return 200, {str(key).lower(): str(value) for key, value in headers.items()}, body
+
+    try:
+        application_routes = verify_locale_routes(
+            manifest, public_origin, fetcher=fetch_application_route, request_origin=base_url,
+        )
+    except RouteVerificationError as error:
+        raise AuditError(str(error)) from error
+    if application_routes["status"] == "failed":
+        failures = "; ".join(
+            f"{row['path']}: {row.get('error', 'verification failed')}"
+            for row in application_routes["checks"] if row["status"] != "passed"
+        )
+        raise AuditError(f"Shadow application routes failed: {failures}")
 
     for locale in LOCALES:
         sitemap_path = f"/sitemap-{locale}.xml"
@@ -787,6 +819,7 @@ def audit_preview(
         "tree_sha256": expected_tree,
         "sample_count": len(samples),
         "asset_count": len(assets),
+        "application_routes": application_routes,
         "zsxq_cleanup": {
             locale: {**row, "status": "passed" if row["status"] == "sampled" else row["status"]}
             for locale, row in zsxq_cleanup.items()
