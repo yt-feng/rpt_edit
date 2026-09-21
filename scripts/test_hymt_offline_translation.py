@@ -103,6 +103,22 @@ class HyMTTests(unittest.TestCase):
         self.assertTrue(prompt.endswith(source))
         self.assertEqual(h.financial_glossary(source, 'ja'), '')
 
+    def test_only_explicit_length_finish_is_content_failure(self):
+        engine = object.__new__(h._HyMTEngine)
+        engine.port = 1
+        translator = h.OfflineTranslator(cache_dir=self.directory.name, engine_factory=lambda _s, _t: engine)
+        for response, expected_error in (
+            ({'choices': [{'finish_reason': 'length', 'message': {'content': '截断'}}]}, h.OfflineTranslationValidationError),
+            ({'choices': [{'finish_reason': 'unknown', 'message': {'content': '异常'}}]}, h.OfflineTranslationError),
+            ({'choices': [{'message': {'content': '异常'}}]}, h.OfflineTranslationError),
+            ({'choices': []}, h.OfflineTranslationError),
+        ):
+            with self.subTest(response=response), mock.patch.object(h, 'request_json', return_value=response):
+                with self.assertRaises(h.OfflineTranslationError) as caught:
+                    translator.translate('Read the complete report.', 'zh', 'en')
+                self.assertIs(type(caught.exception), expected_error)
+        self.assertFalse(list(Path(self.directory.name).rglob('*.json')))
+
     def test_controlled_nouns_leave_quantities_and_predicates_in_one_model_call(self):
         source = 'Gross margin remained at 31%, while operating profit increased by 7%.'
         translator = self.translator(lambda _: '__HYMTPH_0000__은 31%를 유지했으며 __HYMTPH_0001__은 7% 증가했습니다.')

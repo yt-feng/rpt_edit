@@ -296,6 +296,8 @@ class _HyMTEngine:
             'stream': False, 'cache_prompt': False, **MANIFEST['sampling'],
         }, timeout=240)
         choice = response['choices'][0]
+        if choice.get('finish_reason') == 'length':
+            raise OfflineTranslationValidationError('Hy-MT2 output reached token limit')
         if choice.get('finish_reason') != 'stop':
             raise OfflineTranslationError('Hy-MT2 output reached token limit or did not finish')
         return choice['message'].get('content') or ''
@@ -321,18 +323,31 @@ class HyMTOfflineTranslator:
             _ENGINES[key] = _HyMTEngine(self.model_dir)
         return _ENGINES[key]
 
+    def _memo_identity(self, core: str, target: str, source: str, *, markdown: bool) -> tuple[dict, Path]:
+        identity = {'provider': PROVIDER, 'model': MODEL_ID, 'source_language': source,
+                    'target_language': target, 'source_sha256': hashlib.sha256(core.encode()).hexdigest()}
+        if not markdown:
+            identity['text_format'] = 'plain'
+        key = hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()
+        path = self.cache_dir / key[:2] / f'{key}.json'
+        return identity, path
+
+    def discard_translation(self, text: str, target: str, source: str | None = None, *, markdown: bool = True) -> None:
+        """Retry this exact unit after a caller rejects its content quality."""
+        target = normalize_language(target)
+        source = normalize_language(source) if source else None
+        for piece in split_sentences(text):
+            core = piece.strip()
+            _identity, path = self._memo_identity(core, target, source or _detect_source(core), markdown=markdown)
+            path.unlink(missing_ok=True)
+
     def _translate_part(self, text: str, target: str, source: str | None, *, markdown: bool = True) -> str:
         leading, trailing = text[:len(text) - len(text.lstrip())], text[len(text.rstrip()):]
         core = text.strip()
         detected = source or _detect_source(core)
         if not core or detected == target or not _LETTERS.search(_PLACEHOLDERS.sub('', _OPAQUE.sub('', core))):
             return text
-        identity = {'provider': PROVIDER, 'model': MODEL_ID, 'source_language': detected,
-                    'target_language': target, 'source_sha256': hashlib.sha256(core.encode()).hexdigest()}
-        if not markdown:
-            identity['text_format'] = 'plain'
-        key = hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()
-        path = self.cache_dir / key[:2] / f'{key}.json'
+        identity, path = self._memo_identity(core, target, detected, markdown=markdown)
         masked, replacements, terms = _mask(core, target)
         try:
             cached = json.loads(path.read_text(encoding='utf-8'))

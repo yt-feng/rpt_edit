@@ -23,6 +23,7 @@ import publish_static_slot as publisher
 from edge_route_cutover import request_status
 import verify_portal_chinese_parity as parity
 from verify_prepared_static_slot import static_tree_sha256
+from portal_locale_manifest import LocaleManifestError, validate_translation_resolution
 
 
 LOCALES = ("ko", "ja", "ar")
@@ -350,8 +351,12 @@ def download_candidate_files(client: Any, bucket: str, manifest: dict[str, Any],
         return relative
     downloaded.add(fetch_one("data/i18n/manifest.json"))
     locale_manifest = decode_json((site_dir / "data/i18n/manifest.json").read_bytes(), "Locale manifest")
-    require(locale_manifest.get("quality_gate_version") == 3 and set(locale_manifest.get("locales", [])) == set(LOCALES)
-            and all((locale_manifest.get("coverage") or {}).get(locale) == 1 for locale in LOCALES), "Candidate locale coverage is incomplete")
+    require(locale_manifest.get("quality_gate_version") == 3 and set(locale_manifest.get("locales", [])) == set(LOCALES),
+            "Candidate locale coverage is incomplete")
+    try:
+        validate_translation_resolution(locale_manifest, LOCALES)
+    except LocaleManifestError as error:
+        raise ResumeError(f"Candidate locale coverage is incomplete: {error}") from error
     require(locale_manifest.get("translation_scope") == "incremental" and
             (locale_manifest.get("index_policy") or {}).get("mode") == "incremental-publication-cutoff",
             "Candidate is not an incremental locale release")

@@ -244,6 +244,8 @@ jobs:
           python3 -B scripts/test_run_portal_locale_backfill.py
           python3 -B scripts/test_verify_portal_chinese_parity.py
           python3 -B scripts/test_audit_portal_shadow_preview.py
+          python3 -B scripts/test_portal_locale_manifest.py
+          python3 -B scripts/test_portal_locale_source_fallback.py
           python3 scripts/test_portal_seo.py
           python3 scripts/test_portal_blog_build.py
           python3 -B scripts/test_sync_bbg_show_blog.py
@@ -839,6 +841,7 @@ jobs:
             --cache-out _neutral_site/data/i18n/cache-v1.json.gz
             --assets-root portal_suite/locale_assets
             --provider hymt
+            --allow-source-fallback
             --timeout 120
             --translation-scope "$PORTAL_MULTILINGUAL_TRANSLATION_SCOPE"
             "${index_args[@]}"
@@ -846,12 +849,14 @@ jobs:
           # Offline inference has no paid fallback; accepted translations persist on failure.
           python3 -B scripts/build_portal_locales.py "${locale_args[@]}" \
             --preflight-only --preflight-batches-per-locale 1 \
+            --offline-time-budget-seconds 60 \
             --workers 1 \
             --diagnostics-out "$RUNNER_TEMP/locale-preflight-diagnostics.json" \
             "${cache_args[@]}"
           test -s _neutral_site/data/i18n/cache-v1.json.gz
           python3 -B scripts/build_portal_locales.py "${locale_args[@]}" \
             --cache-in _neutral_site/data/i18n/cache-v1.json.gz \
+            --offline-time-budget-seconds 600 \
             --checkpoint-on-budget --workers 1 \
             --diagnostics-out "$RUNNER_TEMP/locale-full-diagnostics.json"
           python3 - <<'PY' >> "$GITHUB_OUTPUT"
@@ -1123,9 +1128,8 @@ jobs:
                       f"Localized HTML page count does not match manifest: "
                       f"{locale}={actual_html_page_count}!={expected_html_page_count}"
                   )
-          coverage = manifest.get("coverage") or {}
-          if any(coverage.get(locale) != 1.0 for locale in locale_directions):
-              raise SystemExit("Multilingual manifest coverage is incomplete")
+          from scripts.portal_locale_manifest import validate_translation_resolution
+          validate_translation_resolution(manifest, locale_directions)
 
           index_policy = manifest.get("index_policy") or {}
           configured_start_date = os.environ.get("PORTAL_MULTILINGUAL_INDEX_START_DATE", "") or None

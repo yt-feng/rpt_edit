@@ -719,6 +719,22 @@ class ShadowPreviewAuditTests(unittest.TestCase):
         with self.assertRaisesRegex(audit.AuditError, "crosses locale boundaries"):
             self.run_audit(plan, responses)
 
+    def test_source_fallback_requires_exact_provenance_and_keeps_file_checks(self) -> None:
+        from test_portal_locale_manifest import with_source_fallback
+
+        manifest, _bodies = manifest_fixture()
+        expected_files = audit.manifest_files(manifest)
+        with_source_fallback(manifest)
+        self.assertEqual(audit.manifest_files(manifest), expected_files)
+        row = next(iter(manifest["source_fallbacks"]["units"]["ko"].values()))
+        row["source"] += " changed"
+        with self.assertRaisesRegex(audit.AuditError, "source fallback hash differs"):
+            audit.manifest_files(manifest)
+        with_source_fallback(manifest)
+        manifest["chart_overlays"]["ko"]["path"] = "data/i18n/ja/crossed.json"
+        with self.assertRaisesRegex(audit.AuditError, "crosses locale boundaries"):
+            audit.manifest_files(manifest)
+
     def test_verifies_manifest_data_size_and_digest(self) -> None:
         plan, responses = response_fixture()
         response = responses["/data/i18n/ja/charts.json"]
