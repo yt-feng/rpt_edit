@@ -54,14 +54,9 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          [[ "$SOURCE_RUN_ID" =~ ^[1-9][0-9]*$ ]] || exit 2
-          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$SOURCE_RUN_ID" > "$RUNNER_TEMP/recovery-source-run.json"
-          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$SOURCE_RUN_ID/jobs?per_page=100" > "$RUNNER_TEMP/recovery-source-jobs.json"
           python scripts/recover_private_wechat_handoff.py validate-run \
             --source "$SOURCE" --source-run-id "$SOURCE_RUN_ID" \
-            --date-folder "$DATE_FOLDER" --expected-count "$EXPECTED_COUNT" \
-            --run-json "$RUNNER_TEMP/recovery-source-run.json" \
-            --jobs-json "$RUNNER_TEMP/recovery-source-jobs.json"
+            --date-folder "$DATE_FOLDER" --expected-count "$EXPECTED_COUNT"
 
       - name: Install Python dependencies
         run: |
@@ -118,7 +113,7 @@ jobs:
             --date-folder "$DATE_FOLDER" --expected-count "$EXPECTED_COUNT"
 
       - name: Archive WeChat draft diagnostics
-        if: ${{ always() && steps.restore.outcome == 'success' }}
+        if: ${{ always() }}
         uses: ./.github/actions/resilient-diagnostic-artifact
         with:
           name: recovered-wechat-drafts-${{ github.run_id }}

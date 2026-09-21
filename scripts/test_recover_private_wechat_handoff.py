@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """Recovery must reuse only a complete handoff from a producer that never uploaded."""
 import copy
+import io
 import json
 import shutil
 import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import Mock, patch
+from urllib.error import HTTPError
 
 import recover_private_wechat_handoff as recovery
 from private_workflow_handoff import create_archive
@@ -16,7 +18,7 @@ class RecoveryTests(unittest.TestCase):
     def setUp(self):
         self.run = {
             "id": 35545560867, "path": recovery.SOURCES["institution"][1],
-            "head_branch": "main", "head_repository": {"full_name": "yt-feng/rpt_edit"},
+            "head_branch": "main", "head_repository": {"full_name": "example/repo"},
             "status": "completed", "conclusion": "failure", "run_attempt": 1,
         }
         self.jobs = {"jobs": [
@@ -29,10 +31,35 @@ class RecoveryTests(unittest.TestCase):
 
     def validate_run(self, run=None, jobs=None):
         recovery.validate_run(run or self.run, jobs or self.jobs, source="institution",
-                              run_id="35545560867", repository="yt-feng/rpt_edit")
+                              run_id="35545560867", repository="example/repo")
 
     def test_exact_blocked_producer_is_allowed(self):
         self.validate_run()
+
+    def test_api_fetch_uses_exact_run_urls_auth_and_bounded_timeout(self):
+        responses = [io.BytesIO(json.dumps(value).encode()) for value in (self.run, self.jobs)]
+        with patch.object(recovery, "urlopen", side_effect=responses) as request:
+            run, jobs = recovery.fetch_source_metadata("example/repo", "35545560867", "test-token")
+        self.assertEqual((run, jobs), (self.run, self.jobs))
+        base = "https://api.github.com/repos/example/repo/actions/runs/35545560867"
+        self.assertEqual([call.args[0].full_url for call in request.call_args_list], [base, base + "/jobs?per_page=100"])
+        for call in request.call_args_list:
+            self.assertEqual(call.args[0].get_header("Authorization"), "Bearer test-token")
+            self.assertEqual(call.kwargs, {"timeout": 30})
+
+    def test_invalid_api_coordinates_never_issue_request(self):
+        with patch.object(recovery, "urlopen") as request:
+            for repository, run_id in (("owner/repo/other", "1"), ("owner/repo?query", "1"),
+                                       ("owner/repo", "../1"), ("owner/repo", "1/jobs")):
+                with self.subTest(repository=repository, run_id=run_id), self.assertRaises(ValueError):
+                    recovery.fetch_source_metadata(repository, run_id, "test-token")
+            request.assert_not_called()
+
+    def test_api_errors_do_not_expose_response_body_or_token(self):
+        error = HTTPError("https://api.github.com/", 403, "private response body", {}, None)
+        with patch.object(recovery, "urlopen", side_effect=error):
+            with self.assertRaisesRegex(RuntimeError, r"^GitHub source-run verification failed: HTTP 403$"):
+                recovery.fetch_source_metadata("owner/repo", "1", "private-token")
 
     def test_prior_or_unknown_attempts_cannot_hide_earlier_uploads(self):
         for attempt in (None, 2, 3):
@@ -197,6 +224,7 @@ class RecoveryTests(unittest.TestCase):
         self.assertLess(workflow.index("restore-wechat-diagnostics"), workflow.index("id: restore"))
         for forbidden in ("--publish", "build_portal_translated_reports.py", "fetch_institution_latest_pdfs.py", "delete-prefix"):
             self.assertNotIn(forbidden, workflow)
+        self.assertNotIn("gh api", workflow)
 
     def test_coordinates_reject_traversal_and_invalid_dates(self):
         for run_id, date in (("../7", "260921"), ("1", "260932"), ("1", "26/921")):

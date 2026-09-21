@@ -10,6 +10,8 @@ import re
 import tempfile
 from datetime import datetime
 from pathlib import Path
+from urllib.error import HTTPError, URLError
+from urllib.request import Request, urlopen
 
 from private_workflow_handoff import build_r2_client, download_directory, r2_bucket, upload_directory
 
@@ -17,6 +19,37 @@ SOURCES = {
     "institution": ("institutions", ".github/workflows/institution-latest-pdf-to-wechat.yml"),
     "consulting": ("consulting", ".github/workflows/consulting-latest-pdf-to-wechat.yml"),
 }
+
+
+def fetch_source_metadata(repository: str, run_id: str, token: str) -> tuple[dict, dict]:
+    if (not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.-]*/[A-Za-z0-9][A-Za-z0-9_.-]*", repository)
+            or not re.fullmatch(r"[1-9][0-9]*", run_id)):
+        raise ValueError("Invalid repository or source run ID")
+    if not token:
+        raise ValueError("GH_TOKEN is required for source-run verification")
+    base = f"https://api.github.com/repos/{repository}/actions/runs/{run_id}"
+    results = []
+    for url in (base, base + "/jobs?per_page=100"):
+        request = Request(url, headers={
+            "Authorization": f"Bearer {token}",
+            "Accept": "application/vnd.github+json",
+            "X-GitHub-Api-Version": "2022-11-28",
+        })
+        try:
+            with urlopen(request, timeout=30) as response:
+                result = json.load(response)
+        except HTTPError as exc:
+            status = exc.code
+            exc.close()
+            raise RuntimeError(f"GitHub source-run verification failed: HTTP {status}") from None
+        except (URLError, TimeoutError):
+            raise RuntimeError("GitHub source-run verification could not connect within the request timeout") from None
+        except (json.JSONDecodeError, UnicodeError):
+            raise RuntimeError("GitHub source-run verification returned invalid JSON") from None
+        if not isinstance(result, dict):
+            raise ValueError("GitHub source-run verification returned an unexpected response")
+        results.append(result)
+    return results[0], results[1]
 
 
 def coordinates(source: str, run_id: str, date: str) -> tuple[str, str]:
@@ -166,8 +199,14 @@ def main() -> int:
     translated = Path("portal_translated_reports") / scope / args.date_folder
     receipts = Path("wechat_drafts") / scope / args.date_folder
     if args.command == "validate-run":
-        validate_run(json.loads(args.run_json.read_text()), json.loads(args.jobs_json.read_text()),
-                     source=args.source, run_id=args.source_run_id, repository=os.environ["GITHUB_REPOSITORY"])
+        repository = os.environ["GITHUB_REPOSITORY"]
+        if args.run_json is not None and args.jobs_json is not None:
+            run, jobs = json.loads(args.run_json.read_text()), json.loads(args.jobs_json.read_text())
+        elif args.run_json is not None or args.jobs_json is not None:
+            raise ValueError("Provide both --run-json and --jobs-json, or neither")
+        else:
+            run, jobs = fetch_source_metadata(repository, args.source_run_id, os.environ.get("GH_TOKEN", ""))
+        validate_run(run, jobs, source=args.source, run_id=args.source_run_id, repository=repository)
         if args.expected_count < 1:
             raise ValueError("expected_count must be positive")
         with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:

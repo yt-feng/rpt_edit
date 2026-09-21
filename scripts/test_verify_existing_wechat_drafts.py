@@ -102,7 +102,7 @@ class ExistingDraftTests(unittest.TestCase):
                 if step.startswith(("Archive WeChat draft diagnostics\n", "Archive WeChat draft maintenance diagnostics\n")):
                     self.assertIn("if: ${{ always() }}", step, str(path))
                     checked += 1
-        self.assertEqual(8, checked)
+        self.assertEqual(9, checked)
 
     def test_portal_diagnostic_directory_is_set_before_upload_can_fail(self):
         root = Path(__file__).resolve().parents[1] / ".github" / "workflows"
