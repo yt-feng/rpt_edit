@@ -72,6 +72,7 @@ jobs:
           python scripts/test_private_generation_checkpoint.py
           python scripts/test_portal_translation_shards.py
           python scripts/test_private_workflow_handoff.py
+          python scripts/test_recover_private_wechat_handoff.py
           python scripts/test_market_views_workflow_contract.py
           python scripts/test_check_completed_shard.py
           python scripts/test_wechat_output_contract.py
