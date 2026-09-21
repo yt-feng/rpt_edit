@@ -100,6 +100,10 @@ class OfflineTranslationError(RuntimeError):
     """Missing pinned runtime or an incomplete/structurally invalid translation."""
 
 
+class OfflineTranslationValidationError(OfflineTranslationError):
+    """A completed model response failed content validation, not runtime setup."""
+
+
 def atomic_json(path: Path, value: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     fd, temporary = tempfile.mkstemp(prefix=path.name + '.', dir=path.parent)
@@ -202,29 +206,29 @@ def _restore_table_edges(source: str, result: str) -> str:
 def validate_result(source: str, result: str, source_language: str, target: str,
                     *, markdown: bool = True) -> None:
     if not result.strip():
-        raise OfflineTranslationError('Empty Hy-MT2 translation')
+        raise OfflineTranslationValidationError('Empty Hy-MT2 translation')
     if Counter(_PLACEHOLDERS.findall(source)) != Counter(_PLACEHOLDERS.findall(result)):
-        raise OfflineTranslationError('Hy-MT2 changed, omitted, or duplicated a protected placeholder')
+        raise OfflineTranslationValidationError('Hy-MT2 changed, omitted, or duplicated a protected placeholder')
     # Korean/Japanese GEO copy is gated on structure and quantities, not wording.
     problems = quantity_issues(source, result, source_language, target)
     if problems:
-        raise OfflineTranslationError('Hy-MT2 quantity validation failed: ' + '; '.join(problems))
+        raise OfflineTranslationValidationError('Hy-MT2 quantity validation failed: ' + '; '.join(problems))
     # Catalog filenames are plain text: their ~ and _ characters are often
     # punctuation substitutions, not Markdown. The caller must opt in to that
     # format; report Markdown retains all existing structural checks.
     if markdown:
         for marker in ('|', '[', ']', '*', '_', '~', '`'):
             if source.count(marker) != result.count(marker):
-                raise OfflineTranslationError(f'Hy-MT2 changed Markdown structure: {marker}')
+                raise OfflineTranslationValidationError(f'Hy-MT2 changed Markdown structure: {marker}')
         destination_shape = r'\]\(__HYMTPH_\d+__\)|\]\[__HYMTPH_\d+__\]'
         if Counter(re.findall(destination_shape, source)) != Counter(re.findall(destination_shape, result)):
-            raise OfflineTranslationError('Hy-MT2 changed a Markdown link destination boundary')
+            raise OfflineTranslationValidationError('Hy-MT2 changed a Markdown link destination boundary')
     clean = _PLACEHOLDERS.sub('', result)
     if _LETTERS.search(_PLACEHOLDERS.sub('', source)):
         scripts = {'zh': r'[\u3400-\u9fff]', 'en': r'[A-Za-z]', 'ko': r'[\uac00-\ud7af]',
                    'ja': r'[\u3040-\u30ff\u3400-\u9fff]', 'ar': r'[\u0600-\u06ff]'}
         if not re.search(scripts[target], clean):
-            raise OfflineTranslationError('Hy-MT2 target script missing')
+            raise OfflineTranslationValidationError('Hy-MT2 target script missing')
 
 
 class _HyMTEngine:
@@ -372,9 +376,10 @@ class HyMTOfflineTranslator:
     def translate_many(self, texts: Sequence[str], target: str, source: str | None = None) -> list[str]:
         return [self.translate(text, target, source) for text in texts]
 
-    def translate_markdown(self, markdown: str, target: str = 'zh', source: str | None = None) -> str:
+    def translate_markdown(self, markdown: str, target: str = 'zh', source: str | None = None,
+                           *, source_fallback: Callable[[dict], None] | None = None) -> str:
         result, fence, raw_end = [], None, None
-        for line in markdown.splitlines(keepends=True):
+        for line_number, line in enumerate(markdown.splitlines(keepends=True), start=1):
             marker = re.match(r'^\s*(`{3,}|~{3,})', line)
             if raw_end:
                 result.append(line)
@@ -398,7 +403,18 @@ class HyMTOfflineTranslator:
                 result.append(line)
                 continue
             prefix = re.match(r'^(?:\s*>\s*)*(?:\s{0,3}#{1,6}\s+|\s*[-+*]\s+(?:\[[ xX]\]\s+)?|\s*\d+[.)]\s+)?', line).group()
-            result.append(prefix + self.translate(line[len(prefix):], target, source))
+            try:
+                translated = prefix + self.translate(line[len(prefix):], target, source)
+            except OfflineTranslationValidationError as error:
+                if source_fallback is None:
+                    raise
+                # Preserve the complete source unit, including its exact
+                # prefix, links, figures and line ending. Invalid model output
+                # was never checkpointed by _translate_part.
+                source_fallback({'line': line_number, 'source_sha256': hashlib.sha256(line.encode()).hexdigest(),
+                                 'reason': str(error)})
+                translated = line
+            result.append(translated)
         return ''.join(result)
 
 OfflineTranslator = HyMTOfflineTranslator

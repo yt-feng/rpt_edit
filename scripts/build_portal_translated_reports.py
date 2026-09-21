@@ -771,6 +771,8 @@ def call_deepseek(
     system_content: str | None = None,
     max_attempts: int | None = None,
 ) -> str:
+    if getattr(args, "offline_only", False):
+        raise RuntimeError("Paid editorial calls are disabled for offline-only PDF replay")
     api_keys = deepseek_api_keys_from_env()
     if not api_keys:
         raise RuntimeError("Missing DEEPSEEK_API_KEY")
@@ -830,16 +832,30 @@ def offline_translation_provider() -> str:
     return PROVIDER
 
 
+def record_translation_source_fallback(args: argparse.Namespace, phase: str, event: dict[str, Any]) -> None:
+    fallbacks = getattr(args, '_translation_source_fallbacks', None)
+    if fallbacks is None:
+        args._translation_source_fallbacks = fallbacks = []
+    fallbacks.append({'phase': phase, **event})
+    diagnostic_path = getattr(args, '_translation_diagnostics_path', None)
+    if diagnostic_path is not None:
+        from offline_translation import atomic_json
+        atomic_json(Path(diagnostic_path), {'untranslated_unit_count': len(fallbacks), 'fallbacks': fallbacks})
+    log('  部分内容保留原文' + (f"（第 {event['line']} 行）" if phase == 'body' else '（标题）'))
+
+
 def translate_chunk(chunk: str, args: argparse.Namespace, chunk_index: int, chunk_total: int) -> str:
     # Compatibility entry point: model inference is local, with no API fallback.
     del chunk_index, chunk_total
-    return offline_translator(args).translate_markdown(chunk, target="zh", source=None)
+    return offline_translator(args).translate_markdown(chunk, target="zh", source=None,
+        source_fallback=lambda event: record_translation_source_fallback(args, 'body', event))
 
 
 def translate_markdown(markdown: str, args: argparse.Namespace) -> str:
     # The adapter preserves Markdown/image tokens and checkpoints individual
     # text segments. A resumed report reuses its successful segment translations.
-    text = offline_translator(args).translate_markdown(markdown, target="zh", source=None)
+    text = offline_translator(args).translate_markdown(markdown, target="zh", source=None,
+        source_fallback=lambda event: record_translation_source_fallback(args, 'body', event))
     if markdown.strip() and not text.strip():
         raise RuntimeError("Local report translation returned an empty result")
     return sanitize_text(text).strip() + "\n"
@@ -1011,7 +1027,18 @@ def _generate_wechat_title_from_filename(
     editorial: bool = True,
 ) -> tuple[str, dict[str, Any]]:
     if not editorial:
-        translated = offline_translator(args).translate(source_filename, target="zh")
+        from offline_translation import OfflineTranslationValidationError
+        try:
+            translated = offline_translator(args).translate(source_filename, target="zh")
+        except OfflineTranslationValidationError as error:
+            record_translation_source_fallback(args, 'title', {
+                'source_sha256': hashlib.sha256(source_filename.encode()).hexdigest(), 'reason': str(error),
+            })
+            return source_filename, {
+                'selected_title': source_filename, 'selection_reason': 'offline_source_retained',
+                'source_retained': True, 'needs_model_repair': True,
+                'translation_provider': offline_translation_provider(), 'repair_attempted': False,
+            }
         selected, decision = decide_filename_anchored_title(
             [translated], source_filename, institution_name, evidence_text=translated_md,
         )
@@ -1303,6 +1330,10 @@ def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.N
     source_title = report_title(report_dir)
     report_out_dir = out_dir / f"{index:02d}-{slug(report_dir.name)}"
     report_out_dir.mkdir(parents=True, exist_ok=True)
+    args._translation_source_fallbacks = []
+    args._translation_diagnostics_path = report_out_dir / 'translation_fallbacks.json'
+    from offline_translation import atomic_json
+    atomic_json(args._translation_diagnostics_path, {'untranslated_unit_count': 0, 'fallbacks': []})
     log(f"Processing report {index}: {source_title}")
 
     source_preview = ""
@@ -1372,6 +1403,10 @@ def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.N
         translated_md,
         strict_h1_wording=False,
     )
+    source_fallbacks = list(args._translation_source_fallbacks)
+    if source_fallbacks:
+        heading, separator, rest = translated_md.partition('\n')
+        translated_md = heading + separator + '\n> 部分内容保留原文。\n' + rest
     translated_path = report_out_dir / "translated.md"
     translated_path.write_text(translated_md, encoding="utf-8")
 
@@ -1394,6 +1429,9 @@ def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.N
         "figure_count": len(figures),
         "institution_name": institution_name,
         "article_style": article_style,
+        "untranslated_unit_count": len(source_fallbacks),
+        "translation_fallbacks": source_fallbacks,
+        "translation_notice": "部分内容保留原文" if source_fallbacks else "",
         "upstream_editorial_binding": reused[1].binding if reused else None,
         "stock_language_sanitized": stock_changes[:40] + title_stock_changes[:20] + stock_changes_after_title[:20],
     }
@@ -1415,6 +1453,8 @@ def main() -> int:
     parser.add_argument("--translation-shard-index", type=int, default=0)
     parser.add_argument("--max-seconds", type=int, default=0,
                         help="Soft processing budget; retain partial segment checkpoints on expiry")
+    parser.add_argument("--offline-only", action="store_true",
+                        help="Reject all paid editorial calls; reuse bound articles or translate locally")
     parser.add_argument("--chunk-chars", type=int, default=7200)
     parser.add_argument("--max-images-per-report", type=int, default=28)
     parser.add_argument("--deepseek-timeout", type=int, default=300)
