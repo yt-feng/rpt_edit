@@ -8,6 +8,7 @@ import time
 import build_portal_locales as locales
 from offline_translation import MODEL_ID, PROVIDER, OfflineTranslator
 from financial_quantity_integrity import quantity_issues
+from translate_portal_titles import translate_title
 
 
 def main() -> int:
@@ -73,6 +74,14 @@ def main() -> int:
                 raise ValueError(f'Markdown lost protected content: {token}')
         return value
     record({'id': 'report-markdown', 'text': markdown, 'mode': 'production-markdown'}, translate_report)
+    # Exact source titles of the twelve persistent catalog failures on 2026-09-21.
+    # Exercise the production title adapter, including identifier protection,
+    # using the real pinned model on the runner rather than test-double outputs.
+    title_samples = json.loads(Path(__file__).with_name('portal_title_regression_samples.json').read_text())
+    title_args = argparse.Namespace(_offline_translator=translator)
+    for sample in title_samples['samples']:
+        record({**sample, 'mode': 'production-catalog-title'},
+               lambda s=sample: translate_title(s['text'], title_args))
     report['seconds'] = round(time.monotonic() - started, 3)
     report['cache_stats'] = translator.stats
     report['status'] = 'failed' if report['errors'] else 'structural-checks-passed'

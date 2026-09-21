@@ -5,13 +5,13 @@ on:
     paths:
       - 'scripts/*deepseek*'
       - 'scripts/*generation_cost_controls*'
-      - '.github/workflows/deepseek-usage*'
+      - '.github/workflows/*.yml'
   push:
     branches: [main]
     paths:
       - 'scripts/*deepseek*'
       - 'scripts/*generation_cost_controls*'
-      - '.github/workflows/deepseek-usage*'
+      - '.github/workflows/*.yml'
   workflow_dispatch:
 
 permissions:
@@ -22,6 +22,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      - name: Initialize DeepSeek usage ledger
+        shell: bash
+        run: |
+          usage_dir="$(mktemp -d "$RUNNER_TEMP/deepseek-usage.XXXXXX")"
+          usage_dir="$(cd "$usage_dir" && pwd -P)"
+          echo "DEEPSEEK_USAGE_DIR=$usage_dir" >> "$GITHUB_ENV"
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
@@ -32,3 +38,23 @@ jobs:
           python scripts/test_deepseek_http.py
           python scripts/test_deepseek_usage.py
           python scripts/test_collect_deepseek_usage_artifacts.py
+          python scripts/test_deepseek_usage_workflows.py
+      - name: Write synthetic upload fixture
+        run: |
+          mkdir -p "$DEEPSEEK_USAGE_DIR/fixture"
+          printf '%s\n' '{"kind":"artifact-path-smoke"}' > "$DEEPSEEK_USAGE_DIR/fixture/path-check.json"
+      - name: Verify canonical usage directory uploads
+        uses: actions/upload-artifact@v4
+        with:
+          # Keep fixtures outside the daily collector's deepseek-usage-* prefix.
+          name: usage-path-smoke-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ env.DEEPSEEK_USAGE_DIR }}
+          if-no-files-found: error
+          retention-days: 1
+      - name: Download synthetic upload fixture
+        uses: actions/download-artifact@v4
+        with:
+          name: usage-path-smoke-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/usage-path-roundtrip
+      - name: Verify uploaded ledger layout and contents
+        run: cmp "$DEEPSEEK_USAGE_DIR/fixture/path-check.json" "$RUNNER_TEMP/usage-path-roundtrip/fixture/path-check.json"

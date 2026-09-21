@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Pinned Hy-MT2 CPU translation, exclusively on Linux GitHub Actions.
 
-Quantities remain inside complete sentences. Only opaque Markdown resources and
-code are masked; accepted translations are memoized by exact source and model.
+Amounts and rates remain inside complete sentences. Opaque Markdown resources,
+code and bounded controlled terminology (including a source-derived five-year
+planning period) are masked; accepted translations are memoized by exact source and model.
 The private runner-local llama server never uses a paid translation provider.
 """
 from __future__ import annotations
@@ -22,7 +23,7 @@ import time
 from typing import Callable, Sequence
 
 from compare_hymt_translation import LANGUAGES, request_json, require_actions, verify_model, file_sha256
-from financial_quantity_integrity import quantity_issues
+from financial_quantity_integrity import FIVE_YEAR_PERIOD_RE, quantity_issues
 
 MANIFEST_PATH = Path(__file__).with_name('hymt_translation_model_manifest.json')
 MANIFEST = json.loads(MANIFEST_PATH.read_text(encoding='utf-8'))
@@ -31,10 +32,14 @@ MODEL = MANIFEST['model']['repository']
 REVISION = MANIFEST['model']['revision']
 MODEL_ID = f"{MODEL}@{REVISION}:Q8_0:natural-sentence-v4-table-structure:{hashlib.sha256(MANIFEST_PATH.read_bytes()).hexdigest()[:16]}"
 INSTALL_COMMAND = 'Use .github/actions/setup-offline-translation on a Linux GitHub Actions runner'
-_PLACEHOLDERS = re.compile(r'__[A-Za-z0-9_]+__')
+# Recognize the complete reserved token even when a filename underscore or
+# Markdown emphasis touches it; those surrounding underscores are punctuation.
+_PLACEHOLDERS = re.compile(r'__(?:KC_PH_\d+|HYMTPH_\d+)__|__[A-Za-z0-9][A-Za-z0-9_]*?__')
 _LETTERS = re.compile(r'[A-Za-z\u3400-\u9fff\u3040-\u30ff\uac00-\ud7af\u0600-\u06ff]')
 # Financial amounts, dates, percentages, names, and predicates are intentionally
-# absent: splitting those away from the sentence changed financial meaning.
+# absent from opaque-resource masking: splitting those away from the sentence
+# changed financial meaning. Exact five-year period terminology is handled
+# separately below, with its ordinal derived directly from the source.
 _OPAQUE = re.compile(
     r'(?<!`)(?P<ticks>`+)(?!`).*?(?<!`)(?P=ticks)(?!`)'
     r'|!\[(?:\\.|[^\]\\])*\]\((?:[^()\n]|\([^()\n]*\))*\)'
@@ -152,6 +157,16 @@ def _mask(text: str, target: str) -> tuple[str, dict[str, str], dict[str, str]]:
         dictionary[token] = value
         return token
     masked = _OPAQUE.sub(lambda match: reserve(match.group(), replacements), text)
+    if target == 'zh':
+        # The model can replace a current plan with the historically common
+        # preceding plan (15th -> 14th). Treat this named planning period as a
+        # controlled term, deriving its ordinal from the exact source digits.
+        # All surrounding claims and amounts remain in the same model request.
+        masked = FIVE_YEAR_PERIOD_RE.sub(
+            lambda match: reserve(f'第{int(match[1])}个五年', terms), masked)
+        # Keep the source innovation category visible instead of allowing the
+        # model to collapse FIC Innovation into generic medical innovation.
+        masked = re.sub(r'\bFIC\s+Innovation\b', lambda _match: reserve('FIC创新', terms), masked, flags=re.I)
     if target == 'ko':
         for pattern, term, _is_rate in _KOREAN_FINANCIAL_TERMS:
             masked = re.sub(pattern, lambda _match, term=term: reserve(term, terms), masked, flags=re.I)
@@ -184,7 +199,8 @@ def _restore_table_edges(source: str, result: str) -> str:
     return '|' + inner + '|'
 
 
-def validate_result(source: str, result: str, source_language: str, target: str) -> None:
+def validate_result(source: str, result: str, source_language: str, target: str,
+                    *, markdown: bool = True) -> None:
     if not result.strip():
         raise OfflineTranslationError('Empty Hy-MT2 translation')
     if Counter(_PLACEHOLDERS.findall(source)) != Counter(_PLACEHOLDERS.findall(result)):
@@ -193,13 +209,16 @@ def validate_result(source: str, result: str, source_language: str, target: str)
     problems = quantity_issues(source, result, source_language, target)
     if problems:
         raise OfflineTranslationError('Hy-MT2 quantity validation failed: ' + '; '.join(problems))
-    # Structural punctuation, unlike linguistic punctuation, must stay exact.
-    for marker in ('|', '[', ']', '*', '_', '~', '`'):
-        if source.count(marker) != result.count(marker):
-            raise OfflineTranslationError(f'Hy-MT2 changed Markdown structure: {marker}')
-    destination_shape = r'\]\(__HYMTPH_\d+__\)|\]\[__HYMTPH_\d+__\]'
-    if Counter(re.findall(destination_shape, source)) != Counter(re.findall(destination_shape, result)):
-        raise OfflineTranslationError('Hy-MT2 changed a Markdown link destination boundary')
+    # Catalog filenames are plain text: their ~ and _ characters are often
+    # punctuation substitutions, not Markdown. The caller must opt in to that
+    # format; report Markdown retains all existing structural checks.
+    if markdown:
+        for marker in ('|', '[', ']', '*', '_', '~', '`'):
+            if source.count(marker) != result.count(marker):
+                raise OfflineTranslationError(f'Hy-MT2 changed Markdown structure: {marker}')
+        destination_shape = r'\]\(__HYMTPH_\d+__\)|\]\[__HYMTPH_\d+__\]'
+        if Counter(re.findall(destination_shape, source)) != Counter(re.findall(destination_shape, result)):
+            raise OfflineTranslationError('Hy-MT2 changed a Markdown link destination boundary')
     clean = _PLACEHOLDERS.sub('', result)
     if _LETTERS.search(_PLACEHOLDERS.sub('', source)):
         scripts = {'zh': r'[\u3400-\u9fff]', 'en': r'[A-Za-z]', 'ko': r'[\uac00-\ud7af]',
@@ -298,7 +317,7 @@ class HyMTOfflineTranslator:
             _ENGINES[key] = _HyMTEngine(self.model_dir)
         return _ENGINES[key]
 
-    def _translate_part(self, text: str, target: str, source: str | None) -> str:
+    def _translate_part(self, text: str, target: str, source: str | None, *, markdown: bool = True) -> str:
         leading, trailing = text[:len(text) - len(text.lstrip())], text[len(text.rstrip()):]
         core = text.strip()
         detected = source or _detect_source(core)
@@ -306,6 +325,8 @@ class HyMTOfflineTranslator:
             return text
         identity = {'provider': PROVIDER, 'model': MODEL_ID, 'source_language': detected,
                     'target_language': target, 'source_sha256': hashlib.sha256(core.encode()).hexdigest()}
+        if not markdown:
+            identity['text_format'] = 'plain'
         key = hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()
         path = self.cache_dir / key[:2] / f'{key}.json'
         masked, replacements, terms = _mask(core, target)
@@ -314,7 +335,7 @@ class HyMTOfflineTranslator:
             if all(cached.get(name) == value for name, value in identity.items()):
                 value = cached['translation']
                 # Cache stores the validated masked form, independent of source URLs.
-                validate_result(masked, value, detected, target)
+                validate_result(masked, value, detected, target, markdown=markdown)
                 self.stats['cache_hits'] += 1
             else:
                 raise ValueError('Cache identity changed')
@@ -326,8 +347,9 @@ class HyMTOfflineTranslator:
                     self._diagnostic_callback({'model_input': masked, 'raw_translation': value,
                                                'source_language': detected, 'target_language': target,
                                                'controlled_terms': dict(terms)})
-                value = _restore_table_edges(masked, value)
-                validate_result(masked, value, detected, target)
+                if markdown:
+                    value = _restore_table_edges(masked, value)
+                validate_result(masked, value, detected, target, markdown=markdown)
             except OfflineTranslationError:
                 raise
             except Exception as error:
@@ -340,12 +362,12 @@ class HyMTOfflineTranslator:
             value = value.replace(token, original)
         return leading + value.strip() + trailing
 
-    def translate(self, text: str, target: str, source: str | None = None) -> str:
+    def translate(self, text: str, target: str, source: str | None = None, *, markdown: bool = True) -> str:
         target = normalize_language(target)
         source = normalize_language(source) if source else None
         if not text or source == target:
             return text
-        return ''.join(self._translate_part(piece, target, source) for piece in split_sentences(text))
+        return ''.join(self._translate_part(piece, target, source, markdown=markdown) for piece in split_sentences(text))
 
     def translate_many(self, texts: Sequence[str], target: str, source: str | None = None) -> list[str]:
         return [self.translate(text, target, source) for text in texts]

@@ -95,6 +95,34 @@ class FinancialQuantityTests(unittest.TestCase):
             '2026年上半年，营收同比下降8.2%，营业利润增长6%。营业利润率为18.5%，同比提高2.5个百分点。'
             '截至2026年9月15日，现金储备1.2亿美元，债务4500万美元。'), [])
 
+    def test_abbreviated_report_periods_and_ordinal_plan_names(self):
+        for source, translated in [
+            ('3Q26 deliveries', '2026年第三季度交付量'),
+            ('a 4Q26 catalyst', '2026年第四季度催化剂'),
+            ('2Q26 recovery in 2Q', '2026年第二季度及第二季度复苏'),
+            ('1H26 recurring net profit', '2026年上半年经常性净利润'),
+            ("The Luxury Data Handbook: September '26", '奢侈品数据手册：2026年9月'),
+            ('New 15th Five-Year Healthcare Plan', '新“十五五”医疗规划'),
+            ('New _15th Five~Year” Healthcare Plan', '新“十五五”医疗规划'),
+            ('the 15th Five-Year Plan', '第十五个五年规划'),
+            ('Policy Tracker: Sep 18', '政策跟踪：9月18日'),
+        ]:
+            with self.subTest(source=source):
+                self.assertEqual(quantity_issues(source, translated), [])
+        for source, translated in [
+            ('3Q26', '2026年第二季度'), ('4Q26', '2027年第四季度'),
+            ('4Q26', '第四季度'), ('3Q', '2026年第三季度'),
+            ('26 plants', '2026家工厂'), ('1H26', '2026年下半年'),
+            ("September '26", '2026年10月'),
+            ('15th Five-Year Plan', '“十四五”规划'),
+        ]:
+            with self.subTest(source=source, translated=translated):
+                self.assertTrue(quantity_issues(source, translated))
+        # Plan-specific support must not introduce a new quantity into existing
+        # ordinary ordinal labels, whose localized words do not contain digits.
+        self.assertEqual(quantity_issues('第一段研究报告', '첫 번째 연구 보고서'), [])
+        self.assertEqual(quantity_issues('The first report', '第一份报告'), [])
+
 
 if __name__ == '__main__':
     unittest.main()

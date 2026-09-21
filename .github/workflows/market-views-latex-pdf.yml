@@ -56,7 +56,6 @@ permissions:
   actions: read
 
 env:
-  DEEPSEEK_USAGE_DIR: ${{ github.workspace }}/../deepseek-usage
   PYTHONUNBUFFERED: "1"
   PRIVATE_HANDOFF_ROOT: "_private-workflow-handoff/xhs"
 
@@ -70,6 +69,12 @@ jobs:
     timeout-minutes: 45
 
     steps:
+      - name: Initialize DeepSeek usage ledger
+        shell: bash
+        run: |
+          usage_dir="$(mktemp -d "$RUNNER_TEMP/deepseek-usage.XXXXXX")"
+          usage_dir="$(cd "$usage_dir" && pwd -P)"
+          echo "DEEPSEEK_USAGE_DIR=$usage_dir" >> "$GITHUB_ENV"
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
@@ -77,6 +82,7 @@ jobs:
           fetch-depth: 1
           sparse-checkout: |
             .github/workflows
+            .github/actions
             scripts
             prompts
             requirements.txt
@@ -402,12 +408,12 @@ jobs:
             --markdown "$DEEPSEEK_USAGE_DIR/summary.md" --github-summary
 
       - name: Upload content-free DeepSeek usage
-        if: ${{ always() }}
-        uses: actions/upload-artifact@v4
+        if: ${{ always() && hashFiles('.github/actions/resilient-diagnostic-artifact/action.yml') != '' }}
+        uses: ./.github/actions/resilient-diagnostic-artifact
         with:
           name: deepseek-usage-${{ github.job }}-${{ github.run_id }}-${{ github.run_attempt }}
           path: ${{ env.DEEPSEEK_USAGE_DIR }}
-          if-no-files-found: ignore
+          if-no-files-found: error
           retention-days: 30
 
   notify-failure:

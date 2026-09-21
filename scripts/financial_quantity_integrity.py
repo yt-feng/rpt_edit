@@ -43,6 +43,8 @@ MONTH_NAMES = "January February March April May June July August September Octob
 MONTHS = {name.casefold(): i for i, name in enumerate(MONTH_NAMES, 1)}
 MONTHS.update({name[:3].casefold(): i for i, name in enumerate(MONTH_NAMES, 1)})
 MONTH = "(?:" + "|".join(sorted(MONTHS, key=len, reverse=True)) + r")\.?"
+FIVE_YEAR_PERIOD_RE = re.compile(
+    r"(?<![A-Za-z0-9])(\d+)(?:st|nd|rd|th)\s+Five[~\s-]+Year(?![A-Za-z0-9])", re.IGNORECASE)
 
 
 def _normalized(text: str) -> str:
@@ -87,26 +89,70 @@ def quantities(text: str) -> Counter:
          lambda m: day_key(m[3], MONTHS[m[2].rstrip('.').casefold()], m[1]))
     take(rf"\b({MONTH})\s+(\d{{4}})\b",
          lambda m: ("month", int(m[2]), MONTHS[m[1].rstrip('.').casefold()]))
+    take(rf"\b({MONTH})\s*['’](\d{{2}})\b",
+         lambda m: ("month", 2000 + int(m[2]), MONTHS[m[1].rstrip('.').casefold()]))
     take(r"(?<!\d)(\d{4})[-/](\d{1,2})(?![\d/-])",
          lambda m: ("month", int(m[1]), int(m[2])))
     take(r"(?<!\d)(\d{4})\s*(?:年|년)\s*(\d{1,2})\s*(?:月|월)",
          lambda m: ("month", int(m[1]), int(m[2])))
-    # Period labels commonly appear in financial titles; recognizing them
-    # avoids rejecting a correct Chinese ordinal as a missing Arabic digit.
+    # Reporting periods use both full and abbreviated years. Only a year
+    # explicitly attached to a quarter/half is expanded; ordinary 26 remains 26.
     ordinals = {'一': 1, '二': 2, '三': 3, '四': 4, 'first': 1, 'second': 2, 'third': 3, 'fourth': 4}
-    take(r"(?<!\d)(\d{4})\s*年\s*第?([一二三四1-4])季度",
-         lambda m: ("quarter", int(m[1]), ordinals.get(m[2], int(m[2]) if m[2].isdigit() else 0)))
-    take(r"\bQ([1-4])\s*[,-]?\s*(\d{4})\b", lambda m: ("quarter", int(m[2]), int(m[1])))
-    take(r"\b(\d{4})\s*Q([1-4])\b", lambda m: ("quarter", int(m[1]), int(m[2])))
-    take(r"\b([1-4])Q\s*(\d{4})\b", lambda m: ("quarter", int(m[2]), int(m[1])))
-    take(r"\b(first|second|third|fourth)\s+quarter(?:\s+of)?\s+(\d{4})\b",
-         lambda m: ("quarter", int(m[2]), ordinals[m[1].casefold()]))
-    take(r"\bH([12])\s*(\d{4})\b", lambda m: ("half", int(m[2]), int(m[1])))
-    take(r"\b(\d{4})\s*H([12])\b", lambda m: ("half", int(m[1]), int(m[2])))
-    take(r"\b([12])H\s*(\d{4})\b", lambda m: ("half", int(m[2]), int(m[1])))
-    take(r"\b(first|second)\s+half(?:\s+of)?\s+(\d{4})\b",
-         lambda m: ("half", int(m[2]), ordinals[m[1].casefold()]))
-    take(r"(?<!\d)(\d{4})\s*年\s*([上下])半年", lambda m: ("half", int(m[1]), 1 if m[2] == '上' else 2))
+    year = r"(?:\d{4}|\d{2})"
+    def period_year(value):
+        return int(value) + (2000 if len(value) == 2 else 0)
+    take(rf"(?<!\d)({year})\s*年\s*第?([一二三四1-4])季度",
+         lambda m: ("quarter", period_year(m[1]), ordinals.get(m[2], int(m[2]) if m[2].isdigit() else 0)))
+    take(rf"\bQ([1-4])\s*[,'’\-]?\s*({year})\b", lambda m: ("quarter", period_year(m[2]), int(m[1])))
+    take(rf"\b({year})\s*Q([1-4])\b", lambda m: ("quarter", period_year(m[1]), int(m[2])))
+    take(rf"\b([1-4])Q\s*['’]?\s*({year})\b", lambda m: ("quarter", period_year(m[2]), int(m[1])))
+    take(rf"\b(first|second|third|fourth)\s+quarter(?:\s+of)?\s+({year})\b",
+         lambda m: ("quarter", period_year(m[2]), ordinals[m[1].casefold()]))
+    take(rf"\bH([12])\s*['’]?\s*({year})\b", lambda m: ("half", period_year(m[2]), int(m[1])))
+    take(rf"\b({year})\s*H([12])\b", lambda m: ("half", period_year(m[1]), int(m[2])))
+    take(rf"\b([12])H\s*['’]?\s*({year})\b", lambda m: ("half", period_year(m[2]), int(m[1])))
+    take(rf"\b(first|second)\s+half(?:\s+of)?\s+({year})\b",
+         lambda m: ("half", period_year(m[2]), ordinals[m[1].casefold()]))
+    take(rf"(?<!\d)({year})\s*年\s*([上下])半年", lambda m: ("half", period_year(m[1]), 1 if m[2] == '上' else 2))
+    take(r"\b(?:Q([1-4])|([1-4])Q)\b", lambda m: ("quarter", None, int(m[1] or m[2])))
+    take(r"第?([一二三四1-4])季度",
+         lambda m: ("quarter", None, ordinals.get(m[1], int(m[1]) if m[1].isdigit() else 0)))
+    take(r"\b(first|second|third|fourth)\s+quarter\b", lambda m: ("quarter", None, ordinals[m[1].casefold()]))
+    take(r"\b(?:H([12])|([12])H)\b", lambda m: ("half", None, int(m[1] or m[2])))
+    take(r"([上下])半年", lambda m: ("half", None, 1 if m[1] == '上' else 2))
+    take(r"\b(first|second)\s+half\b", lambda m: ("half", None, ordinals[m[1].casefold()]))
+
+    # A month/day title without a year stays distinct from a dated observation.
+    take(rf"\b({MONTH})\s+(\d{{1,2}})(?:st|nd|rd|th)?\b",
+         lambda m: ("month_day", MONTHS[m[1].rstrip('.').casefold()], int(m[2])))
+    take(r"(?<!\d)(\d{1,2})\s*月\s*(\d{1,2})\s*日",
+         lambda m: ("month_day", int(m[1]), int(m[2])))
+
+    # Five-year-plan ordinals translate to 第十五个五年 or “十五五”. Limit
+    # this equivalence to plan syntax: ordinary labels such as 第一段 also
+    # translate to nonnumeric Korean/Japanese words and are not quantities.
+    digits = dict(zip('零〇一二两三四五六七八九', (0, 0, 1, 2, 2, 3, 4, 5, 6, 7, 8, 9)))
+    def chinese_ordinal(value):
+        if value.isdigit():
+            return int(value)
+        if not any(char in value for char in '十百千'):
+            return int(''.join(str(digits[char]) for char in value))
+        total, current = 0, 0
+        for char in value:
+            if char in digits:
+                current = digits[char]
+            else:
+                total += (current or 1) * {'十': 10, '百': 100, '千': 1000}[char]
+                current = 0
+        return total + current
+    take(FIVE_YEAR_PERIOD_RE.pattern,
+         lambda m: ("five_year_plan", int(m[1])))
+    take(r"第?(\d+|[零〇一二两三四五六七八九十百千]+)(?:个)?五年",
+         lambda m: ("five_year_plan", chinese_ordinal(m[1])))
+    take(r"(?<=[“「『\"'])([一二三四五六七八九十]+)五(?=[”」』\"'])",
+         lambda m: ("five_year_plan", chinese_ordinal(m[1])))
+    take(r"([一二三四五六七八九十]+)五(?=规划|计划|时期|期间)",
+         lambda m: ("five_year_plan", chinese_ordinal(m[1])))
 
     # Currency recognition comes before scaled plain numbers. Keep the unit
     # separate so USD120m can never match an unqualified 120 or CNY120m.

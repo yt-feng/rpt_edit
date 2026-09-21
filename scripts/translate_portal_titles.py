@@ -22,6 +22,10 @@ from offline_translation import MODEL_ID, PROVIDER, OfflineTranslator, _detect_s
 CJK_RE = re.compile(r"[\u3400-\u9fff]")
 TITLE_CACHE_SCHEMA_VERSION = 1
 TITLE_PROMPT_VERSION = "portal-title-zh-v1"
+TITLE_IDENTIFIER_RE = re.compile(
+    r"[（(](?:\d{6}|[A-Z0-9]{1,12}\.[A-Z]{1,4}|[A-Z]{1,10})[）)]"
+    r"|-(?:\d{8}|\d{6})$"
+)
 
 
 def log(message: str) -> None:
@@ -150,10 +154,52 @@ def normalize_translation(value: str) -> str:
     return text
 
 
+def protect_title_identifiers(title: str) -> tuple[str, dict[str, str]]:
+    """Keep ticker symbols and valid filename date suffixes byte-for-byte.
+
+    These identify the document or security, rather than asserting financial
+    quantities. Amounts, comparisons and reporting periods stay in the complete
+    model input and remain subject to the normal quantity validator.
+    """
+    identifiers: dict[str, str] = {}
+    def reserve(match: re.Match) -> str:
+        value = match.group()
+        if value.startswith('-'):
+            digits = value[1:]
+            try:
+                datetime.strptime(digits, '%Y%m%d' if len(digits) == 8 else '%y%m%d')
+            except ValueError:
+                return value
+        index = len(identifiers)
+        token = f'__KC_PH_{index:04d}__'
+        while token in title or token in identifiers:
+            index += 1
+            token = f'__KC_PH_{index:04d}__'
+        identifiers[token] = value
+        return token
+    return TITLE_IDENTIFIER_RE.sub(reserve, title), identifiers
+
+
 def translate_title(title: str, args: argparse.Namespace) -> str:
     if not hasattr(args, "_offline_translator"):
-        args._offline_translator = OfflineTranslator()
-    translated = normalize_translation(args._offline_translator.translate(title, target="zh"))
+        args._offline_title_calls = []
+        kwargs = ({"diagnostic_callback": args._offline_title_calls.append}
+                  if getattr(args, "diagnostics_out", None) else {})
+        args._offline_translator = OfflineTranslator(**kwargs)
+    if hasattr(args, "_offline_title_calls"):
+        args._offline_title_calls.clear()
+    protected, identifiers = protect_title_identifiers(title)
+    try:
+        translated = normalize_translation(args._offline_translator.translate(
+            protected, target="zh", source=_detect_source(title), markdown=False))
+        for token, value in identifiers.items():
+            if translated.count(token) != 1:
+                raise RuntimeError("Offline model changed a protected title identifier")
+            translated = translated.replace(token, value)
+    except Exception as error:
+        if getattr(args, "diagnostics_out", None):
+            error.translation_diagnostics = list(getattr(args, "_offline_title_calls", []))
+        raise
     if not translated:
         raise RuntimeError("Offline model returned an empty title translation")
     return translated
@@ -181,6 +227,8 @@ def main() -> int:
     parser.add_argument("--catalog-path", default="portal_suite/data/catalog.json")
     parser.add_argument("--cache-path", help="Read and atomically checkpoint translated titles in this JSON file.")
     parser.add_argument("--seed-catalog-path", help="Reuse published Chinese titles only for matching unique report IDs and source titles.")
+    parser.add_argument("--diagnostics-out", type=Path,
+                        help="Write rejected source titles and model outputs for an explicit Actions diagnostic artifact.")
     parser.add_argument("--model", default=MODEL_ID, help="Compatibility only; the pinned offline model is always used")
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
     parser.add_argument("--workers", type=int, default=1)
@@ -192,11 +240,20 @@ def main() -> int:
     parser.add_argument("--fail-on-error", action="store_true")
     args = parser.parse_args()
     args.model = MODEL_ID
+    diagnostics = {"model": MODEL_ID, "provider": PROVIDER, "failed_titles": []}
 
     catalog_path = Path(args.catalog_path)
     cache_path = Path(args.cache_path) if args.cache_path else None
     if cache_path is not None and cache_path.resolve() == catalog_path.resolve():
         parser.error("--cache-path must differ from --catalog-path")
+    if args.diagnostics_out is not None:
+        protected_paths = [catalog_path, cache_path]
+        if args.seed_catalog_path:
+            protected_paths.append(Path(args.seed_catalog_path))
+        if any(path is not None and args.diagnostics_out.resolve() == path.resolve() for path in protected_paths):
+            parser.error("--diagnostics-out must differ from the catalog, cache and seed paths")
+        if not args.dry_run:
+            write_json(args.diagnostics_out, diagnostics)
     catalog = load_json(catalog_path, {"schema_version": 1, "items": []})
     cache = load_title_cache(cache_path)
     items = candidate_items(catalog, args.force, args.limit)
@@ -250,6 +307,13 @@ def main() -> int:
                 title_zh = future.result()
             except Exception as exc:  # noqa: BLE001 - retry next scheduled run.
                 failed += len(target_items)
+                diagnostics["failed_titles"].append({
+                    "ids": [str(item.get("id") or "") for item in target_items],
+                    "source": source, "error": str(exc),
+                    "model_calls": getattr(exc, "translation_diagnostics", []),
+                })
+                if args.diagnostics_out is not None and not args.dry_run:
+                    write_json(args.diagnostics_out, diagnostics)
                 for item in target_items:
                     log(f"  [failed] {str(item.get('id') or '')}: {exc}")
             else:
