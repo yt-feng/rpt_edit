@@ -570,8 +570,16 @@ jobs:
             --catalog-path portal_suite/data/catalog.json \
             --cache-path "$RUNNER_TEMP/portal-title-cache/cache-v1.json" \
             --seed-catalog-path "$RUNNER_TEMP/previous-public-catalog.json" \
-            --workers 1 --fail-on-error \
+            --workers 1 \
             --diagnostics-out "$RUNNER_TEMP/title-translation-diagnostics.json"
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          catalog = json.loads(Path("portal_suite/data/catalog.json").read_text(encoding="utf-8"))
+          failed = int((catalog.get("title_translation") or {}).get("last_run_failed") or 0)
+          if failed:
+              print(f"::warning title=Report title translation deferred::{failed} report title(s) retain their original source title; publication continues and missing translations retry on the next run.")
+          PY
 
       - name: Detect Chinese report title checkpoint
         id: title_checkpoint

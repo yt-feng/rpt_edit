@@ -74,6 +74,17 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn("uses: actions/cache/save@v4", self.workflow[save:locale])
         self.assertIn("python3 -B scripts/test_translate_portal_titles.py", self.workflow)
 
+    def test_individual_title_failures_warn_without_blocking_publication(self):
+        start = self.workflow.index('Translate missing report titles')
+        end = self.workflow.index('Detect Chinese report title checkpoint')
+        step = self.workflow[start:end]
+        self.assertNotIn('--fail-on-error', step)
+        self.assertNotIn('continue-on-error', step)
+        self.assertIn('set -euo pipefail', step)
+        self.assertIn('last_run_failed', step)
+        self.assertIn('::warning title=Report title translation deferred::', step)
+        self.assertIn('missing translations retry on the next run', step)
+
     def test_incremental_scope_is_default_and_shared_by_canary_and_full_build(self):
         trigger = self.workflow.split("\npermissions:\n", 1)[0]
         scope_input = trigger.split("      translation_scope:\n", 1)[1]

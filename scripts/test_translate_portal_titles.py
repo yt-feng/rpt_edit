@@ -294,6 +294,29 @@ class TitleCheckpointTests(unittest.TestCase):
         self.assertEqual(provider.call_args.args[0], "Failing report")
         self.assertEqual([row["title_zh"] for row in self.catalog()["items"]], ["已完成报告", "补全报告"])
 
+    def test_default_partial_failure_publishes_original_and_only_retries_missing_translation(self):
+        from build_portal_suite_site import item_display_title
+        original = [{'id': 'ok', 'title': 'Successful report'},
+                    {'id': 'fail', 'title': 'Growth 12.5%', 'available': True}]
+        self.write_catalog(original)
+        with mock.patch.object(titles, 'translate_title', side_effect=[
+                '已完成报告', RuntimeError('Hy-MT2 quantity validation failed')]):
+            self.assertEqual(self.run_main(), 0)
+        catalog = self.catalog()
+        self.assertEqual(catalog['title_translation']['last_run_failed'], 1)
+        self.assertEqual(catalog['title_translation']['last_run_translated'], 1)
+        self.assertEqual(catalog['items'][1], original[1])
+        self.assertEqual(item_display_title(catalog['items'][1]), 'Growth 12.5%')
+        self.assertEqual(catalog['items'][0]['title_zh'], '已完成报告')
+        entries = titles.load_title_cache(self.cache_path)['entries']
+        self.assertEqual(len(entries), 1)
+        self.assertNotIn(titles.title_cache_key('Growth 12.5%', self.model), entries)
+        with mock.patch.object(titles, 'translate_title', return_value='增长12.5%') as provider:
+            self.assertEqual(self.run_main(), 0)
+        provider.assert_called_once()
+        self.assertEqual(provider.call_args.args[0], 'Growth 12.5%')
+        self.assertEqual(self.catalog()['items'][1]['title_zh'], '增长12.5%')
+
     def test_completed_title_is_checkpointed_before_a_later_interruption(self):
         self.write_catalog([{"id": "one", "title": "First report"},
                             {"id": "two", "title": "Second report"}])
