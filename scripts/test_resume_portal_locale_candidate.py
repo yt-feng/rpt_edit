@@ -3,10 +3,10 @@
 from __future__ import annotations
 
 import copy
-import gzip
 import hashlib
 import io
 import json
+import random
 from pathlib import Path
 import tempfile
 import unittest
@@ -15,6 +15,7 @@ from urllib.error import HTTPError
 import zipfile
 
 import publish_static_slot as publisher
+from check_portal_app_budget import check_budget
 import resume_portal_locale_candidate as resume
 import verify_portal_chinese_parity as parity
 import verify_portal_locale_routes as locale_routes
@@ -25,7 +26,11 @@ REPO = "example/repository"
 ORIGIN = "https://portal.example.invalid"
 COMMIT = "1" * 40
 RELEASE = "2" * 32
-PREVIOUS = {"schema_version": 1, "slot": "a", "release_id": "3" * 32, "tree_sha256": "4" * 64}
+APP = b"console.log('Chinese app remains unchanged');"
+PREVIOUS_FILES = {"assets/app.js": {"size": len(APP), "sha256": hashlib.sha256(APP).hexdigest(),
+                                  "content_type": "application/json", "cache_control": "public, max-age=0, must-revalidate"}}
+PREVIOUS = {"schema_version": 1, "slot": "a", "release_id": "3" * 32,
+            "tree_sha256": resume.static_tree_sha256(PREVIOUS_FILES)}
 
 
 def encoded(value):
@@ -70,7 +75,7 @@ class ResumeTests(unittest.TestCase):
         (self.work / "previous-edge-state.json").write_bytes(encoded(PREVIOUS))
         self.r2 = FakeR2()
         files = {name: b"public file" for name in resume.PUBLIC_PATHS}
-        app = b"console.log('Chinese app remains unchanged');"
+        app = APP
         files["assets/app.js"] = app
         for locale in resume.LOCALES:
             for path in ("index.html", "blog/index.html", "blog/new.html", "reports/index.html", "reports/new.html", "charts.html"):
@@ -107,11 +112,16 @@ class ResumeTests(unittest.TestCase):
                          "file_count": len(entries), "total_bytes": sum(row["size"] for row in entries.values()), "files": entries,
                          "runtime_data": {key: runtime[key] for key in ("schema_version", "release_id", "prefix", "tree_sha256")}}
         self.save_manifest()
+        self.previous_manifest = {**PREVIOUS, "file_count": len(PREVIOUS_FILES), "files": copy.deepcopy(PREVIOUS_FILES),
+                                  "total_bytes": len(app)}
+        self.r2.objects[publisher.manifest_key("a")] = {"body": encoded(self.previous_manifest)}
+        self.r2.objects[publisher.slot_prefix("a") + "assets/app.js"] = {
+            "body": app, "metadata": {"sha256": hashlib.sha256(app).hexdigest()}}
         report = parity._with_digest({"schema_version": 1, "kind": parity.VERIFY_KIND, "site_origin": ORIGIN,
                                       "snapshot_digest": "5" * 64, "verified_tree_digest": "6" * 64, "counts": {"files": len(files)}})
-        performance = {"schema_version": 1, "candidate_bytes": len(app), "candidate_gzip_bytes": len(gzip.compress(app, mtime=0)),
-                       "candidate_sha256": hashlib.sha256(app).hexdigest(), "active_compared": True,
-                       "raw_delta_bytes": 0, "gzip_delta_bytes": 0}
+        # Production multilingual reports have this exact absolute-only shape:
+        # passed, limits and no active/delta fields, with active_compared=false.
+        performance = check_budget(app)
         diagnostics = {"locale-preflight-diagnostics.json": encoded({"status": "passed", "preflight_only": True}),
                        "locale-full-diagnostics.json": encoded({"schema_version": 1, "status": "passed", "ready": True}),
                        "chinese-parity.json": encoded(report), "chinese-performance.json": encoded(performance)}
@@ -364,6 +374,142 @@ class ResumeTests(unittest.TestCase):
         self.assertTrue(all(operation in {"head", "get"} for operation, _key in self.r2.operations))
         self.assertIn(("head", publisher.slot_prefix("b") + "blog/historical.html"), self.r2.operations)
         self.assertNotIn(("get", publisher.slot_prefix("b") + "blog/historical.html"), self.r2.operations)
+
+    def test_absolute_only_producer_report_gets_a_fresh_pinned_baseline_comparison_before_bulk_reads(self):
+        result = self.restore()
+        comparison = json.loads((self.work / "chinese-recovery-performance.json").read_bytes())
+        expected = {**check_budget(APP, APP), "baseline_slot": PREVIOUS["slot"],
+                    "baseline_release_id": PREVIOUS["release_id"], "baseline_tree_sha256": PREVIOUS["tree_sha256"],
+                    "source_active_compared": False}
+        self.assertEqual(comparison, expected)
+        self.assertFalse(result["source_performance_active_compared"])
+        self.assertTrue(result["performance_comparison"]["active_compared"])
+        source = self.github.diagnostics["chinese-performance.json"]
+        self.assertEqual((self.work / "chinese-performance.json").read_bytes(), source)
+        reads = self.r2.operations
+        self.assertLess(reads.index(("get", publisher.slot_prefix("a") + "assets/app.js")),
+                        reads.index(("head", publisher.slot_prefix("b") + "blog/historical.html")))
+
+    def test_existing_compared_source_report_still_requires_exact_previous_app_evidence(self):
+        self.github.diagnostics["chinese-performance.json"] = encoded(check_budget(APP, APP))
+        result = self.restore()
+        self.assertTrue(result["source_performance_active_compared"])
+
+    def test_shrinking_candidate_can_compare_against_a_larger_legacy_baseline(self):
+        active = b"legacy bundle" * 60_000
+        self.assertGreater(len(active), 700_000)
+        descriptor = self.previous_manifest["files"]["assets/app.js"]
+        descriptor.update(size=len(active), sha256=hashlib.sha256(active).hexdigest())
+        self.previous_manifest.update(tree_sha256=resume.static_tree_sha256(self.previous_manifest["files"]),
+                                      total_bytes=len(active))
+        previous = {field: self.previous_manifest[field] for field in PREVIOUS}
+        self.r2.objects[publisher.manifest_key("a")] = {"body": encoded(self.previous_manifest)}
+        self.r2.objects[publisher.slot_prefix("a") + "assets/app.js"] = {
+            "body": active, "metadata": {"sha256": descriptor["sha256"]}}
+        (self.work / "previous-edge-state.json").write_bytes(encoded(previous))
+        self.live.return_value = previous
+        result = self.restore(expected_previous_tree=previous["tree_sha256"])
+        self.assertEqual(result["performance_comparison"], check_budget(APP, active))
+        self.assertEqual(result["performance_comparison"]["status"], "passed")
+
+    def test_changed_previous_manifest_at_completion_never_emits_resume_identity(self):
+        original_get = self.r2.get_object
+        count = 0
+        def changed_get(**kwargs):
+            nonlocal count
+            if kwargs["Key"] == publisher.manifest_key("a"):
+                count += 1
+                if count == 2:
+                    changed = {**self.previous_manifest, "release_id": "9" * 32}
+                    return {"Body": io.BytesIO(encoded(changed))}
+            return original_get(**kwargs)
+        with patch.object(self.r2, "get_object", side_effect=changed_get):
+            with self.assertRaisesRegex(resume.ResumeError, "Pinned slot manifest identity"):
+                self.restore()
+        self.assertFalse((self.work / "locale-resume-identity.json").exists())
+
+    def test_pinned_reads_bound_and_close_r2_streams_even_on_failure(self):
+        streams = []
+        original_get = self.r2.get_object
+        def tracked_get(**kwargs):
+            response = original_get(**kwargs)
+            streams.append(response["Body"])
+            return response
+        with patch.object(self.r2, "get_object", side_effect=tracked_get):
+            manifest = resume.read_pinned_manifest(self.r2, "bucket", PREVIOUS)
+            self.assertEqual(resume.read_pinned_app(self.r2, "bucket", manifest), APP)
+        self.assertTrue(all(stream.closed for stream in streams))
+        oversized = io.BytesIO(b"x" * 33)
+        with patch("verify_prepared_static_slot.MAX_COMMITTED_MANIFEST_BYTES", 32), \
+             patch.object(self.r2, "get_object", return_value={"Body": oversized}):
+            with self.assertRaisesRegex(resume.ResumeError, "byte size bound"):
+                resume.read_pinned_manifest(self.r2, "bucket", PREVIOUS)
+        self.assertTrue(oversized.closed)
+        corrupted = io.BytesIO(b"x" * (len(APP) + 1))
+        with patch.object(self.r2, "get_object", return_value={"Body": corrupted}):
+            with self.assertRaisesRegex(resume.ResumeError, "byte size bound"):
+                resume.read_pinned_app(self.r2, "bucket", self.previous_manifest)
+        self.assertTrue(corrupted.closed)
+        manifest = copy.deepcopy(self.previous_manifest)
+        manifest["files"]["assets/app.js"]["size"] = resume.MAX_APP_BUNDLE_BYTES + 1
+        with patch.object(self.r2, "get_object") as getter:
+            with self.assertRaisesRegex(resume.ResumeError, "exceeds its bound"):
+                resume.read_pinned_app(self.r2, "bucket", manifest)
+        getter.assert_not_called()
+
+    def test_source_performance_cannot_claim_pass_with_tampered_candidate_or_comparison(self):
+        original = check_budget(APP)
+        for change in ({"candidate_sha256": "0" * 64}, {"candidate_bytes": 1}, {"status": "failed"},
+                       {"violations": ["absolute loading budget"]}, {"active_compared": None},
+                       {"raw_delta_bytes": 0}, {"limits": {}}, {"active_compared": True}):
+            with self.subTest(change=change):
+                self.github.diagnostics["chinese-performance.json"] = encoded({**original, **change})
+                self.r2.operations.clear()
+                with self.assertRaisesRegex(resume.ResumeError, "Chinese performance"):
+                    self.restore()
+                self.assertFalse(any(key.endswith("/ko/blog/new.html") for _operation, key in self.r2.operations))
+                self.assertFalse((self.work / "locale-resume-identity.json").exists())
+
+    def test_fresh_comparison_rejects_raw_and_gzip_delta_before_bulk_download(self):
+        for candidate in (b"a" * 24_100, random.Random(13).randbytes(6500)):
+            with self.subTest(size=len(candidate)):
+                # Both source checks pass absolute budgets, but not the fresh
+                # comparison to the much smaller committed previous bundle.
+                self.assertEqual(check_budget(candidate)["status"], "passed")
+                descriptor = self.manifest["files"]["assets/app.js"]
+                descriptor.update(size=len(candidate), sha256=hashlib.sha256(candidate).hexdigest())
+                self.r2.objects[publisher.slot_prefix("b") + "assets/app.js"] = {
+                    "body": candidate, "metadata": {"sha256": descriptor["sha256"]}}
+                old_tree = self.tree
+                self.tree = resume.static_tree_sha256(self.manifest["files"])
+                self.manifest.update(tree_sha256=self.tree, total_bytes=sum(row["size"] for row in self.manifest["files"].values()))
+                self.github.logs = self.github.logs.replace(old_tree, self.tree) + "\n" + descriptor["sha256"]
+                self.github.diagnostics["chinese-performance.json"] = encoded(check_budget(candidate))
+                self.save_manifest()
+                self.r2.operations.clear()
+                with self.assertRaisesRegex(resume.ResumeError, "Fresh Chinese performance comparison did not pass.*delta"):
+                    self.restore()
+                self.assertFalse(any(key.endswith("/ko/blog/new.html") for _operation, key in self.r2.operations))
+
+    def test_previous_manifest_identity_tree_and_app_bytes_are_verified_before_bulk_download(self):
+        original = copy.deepcopy(self.r2.objects)
+        for mutation in ("release", "tree", "descriptor", "app"):
+            with self.subTest(mutation=mutation):
+                self.r2.objects = copy.deepcopy(original)
+                manifest = copy.deepcopy(self.previous_manifest)
+                if mutation == "release":
+                    manifest["release_id"] = "9" * 32
+                elif mutation == "tree":
+                    manifest["tree_sha256"] = "9" * 64
+                elif mutation == "descriptor":
+                    manifest["files"]["assets/app.js"]["sha256"] = "9" * 64
+                else:
+                    self.r2.objects[publisher.slot_prefix("a") + "assets/app.js"]["body"] = b"x" * len(APP)
+                self.r2.objects[publisher.manifest_key("a")] = {"body": encoded(manifest)}
+                self.r2.operations.clear()
+                with self.assertRaisesRegex(resume.ResumeError, "Pinned"):
+                    self.restore()
+                self.assertFalse(any(key.endswith("/ko/blog/new.html") for _operation, key in self.r2.operations))
 
     def test_run_requires_same_repo_main_failed_attempt_and_successful_prerequisites(self):
         changes = ({"head_branch": "feature"}, {"head_sha": "9" * 40}, {"conclusion": "success"},
