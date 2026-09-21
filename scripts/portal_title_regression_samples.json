@@ -1,0 +1,78 @@
+{
+  "source_run": 35569523877,
+  "mapping": "Report IDs verified from selected PDF bytes using Dropbox content hashes; titles use portal_suite_catalog.clean_title.",
+  "samples": [
+    {
+      "id": "333c0a260c60dc6254df1a50",
+      "text": "JPM-Shipping subsector：Takeaways from expert seminar on container market： Bullish short~term outlook，but uncertainty remains for longer term-260918",
+      "source_language": "en",
+      "target_language": "zh"
+    },
+    {
+      "id": "b2f9ba775d6da02d67fd61d2",
+      "text": "JPM-China Beauty：Differentiation widens； focus on quality growth and recovery-260918",
+      "source_language": "en",
+      "target_language": "zh"
+    },
+    {
+      "id": "24f510e40d65595ae486026b",
+      "text": "JPM-Hong Kong Equity Strategy Expert Call takeaways on offshore trust taxation and founder~selling risks-260918",
+      "source_language": "en",
+      "target_language": "zh"
+    },
+    {
+      "id": "e40e1c89e55d831d2c83048b",
+      "text": "BARC-Tesla， Inc.（TSLA.US） Decomposing 3Q26 deliveries： FSD and China exports at the core of strength-260918",
+      "source_language": "en",
+      "target_language": "zh"
+    },
+    {
+      "id": "94615dd7f71731931cc59d57",
+      "text": "JPM-China Healthcare New _15th Five~Year” Healthcare Industry Plan Targets Increased FIC Innovation，AI Applications and Global Competitiveness-260918",
+      "source_language": "en",
+      "target_language": "zh"
+    },
+    {
+      "id": "49c578005823b169a31f9473",
+      "text": "Citi-US Economics Weekly：Hawkish Fed will slow non~AI economy-260918",
+      "source_language": "en",
+      "target_language": "zh"
+    },
+    {
+      "id": "812ca4d8582ced834c4447dc",
+      "text": "GS-GLOBAL FX TRADER Dollar Drift-260918",
+      "source_language": "en",
+      "target_language": "zh"
+    },
+    {
+      "id": "9ea38b8e18014e59d15e89f2",
+      "text": "Citi-Weichai Power （2338.HK） Double~checking the GNRC~AMZN deal again； AIDC Gas Engine Ramp more a 4Q26 Catalyst-260918",
+      "source_language": "en",
+      "target_language": "zh"
+    },
+    {
+      "id": "909ea3cc3168366a7c238283",
+      "text": "BofA-Global FX weekly：Raise you a hawk-260918",
+      "source_language": "en",
+      "target_language": "zh"
+    },
+    {
+      "id": "09845158c9d70e2a59447699",
+      "text": "BARC-Soitec（SOIT.PA）Now a photonics company~u g to OW-260918",
+      "source_language": "en",
+      "target_language": "zh"
+    },
+    {
+      "id": "378ffa29b235624d006b237d",
+      "text": "BARC-The Luxury Data Handbook： September '26-260918",
+      "source_language": "en",
+      "target_language": "zh"
+    },
+    {
+      "id": "6da485cae80206ee4a46dfe7",
+      "text": "BofA-Global Emerging Markets Weekly：Don’t hyperventilate about hyperscalers-260918",
+      "source_language": "en",
+      "target_language": "zh"
+    }
+  ]
+}

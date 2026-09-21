@@ -35,13 +35,25 @@ or values.
 
 ## Workflow integration
 
-Set this workflow/job environment variable outside the checkout so that generated
-usage does not enter content commits and survives a checkout reset:
+Initialize a unique ledger directory as the first step of each instrumented job,
+outside the checkout so usage does not enter content commits and survives a
+checkout reset:
 
 ```yaml
-env:
-  DEEPSEEK_USAGE_DIR: ${{ github.workspace }}/../deepseek-usage
+- name: Initialize DeepSeek usage ledger
+  shell: bash
+  run: |
+    usage_dir="$(mktemp -d "$RUNNER_TEMP/deepseek-usage.XXXXXX")"
+    usage_dir="$(cd "$usage_dir" && pwd -P)"
+    echo "DEEPSEEK_USAGE_DIR=$usage_dir" >> "$GITHUB_ENV"
 ```
+
+`GITHUB_ENV` exposes the same absolute directory to later shell steps and to
+`actions/upload-artifact` through `${{ env.DEEPSEEK_USAGE_DIR }}`. Canonicalizing
+the directory removes `.` and `..` segments rejected by the artifact globber;
+`mktemp` also separates jobs and reruns. Do not set `${{ runner.temp }}` in
+workflow/job `env`: the runner context is only available after a runner is
+assigned, such as in step expressions.
 
 Set `DEEPSEEK_USAGE_STAGE` on each paid step to a stable stage such as `selection`,
 `report-notes`, `report-article`, `finalize`, or `market-views`. Stages can contain many distinct
@@ -62,6 +74,12 @@ Upload the directory with an artifact name beginning `deepseek-usage-`, containi
 run ID and run attempt (plus shard ID for matrices). The current workflows retain
 these artifacts for 30 days. If usage cannot be persisted, accounting emits a
 content-free warning and does not retry a paid request solely for logging.
+Production uploads use the local `resilient-diagnostic-artifact` action: one
+retry, followed by an explicit warning if both uploads fail, so telemetry cannot
+block delivery of already generated articles. Sparse checkouts must retain
+`.github/actions`. The regression workflow uses a strict synthetic artifact
+upload/download round trip, excluded from the billing collector, to check path
+compatibility against GitHub's actual artifact service.
 
 ## Daily breakdown and billing comparison
 

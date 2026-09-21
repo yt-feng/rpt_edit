@@ -33,7 +33,55 @@ class TitleCheckpointTests(unittest.TestCase):
             self.assertEqual(titles.translate_title("Report outlook", args), "报告展望")
             titles.translate_title("Another report", args)
         factory.assert_called_once()
-        factory.return_value.translate.assert_called_with("Another report", target="zh")
+        factory.return_value.translate.assert_called_with("Another report", target="zh", markdown=False)
+
+    def test_title_identifiers_are_exact_but_financial_assertion_stays_in_model_context(self):
+        from argparse import Namespace
+        from hymt_offline_translation import OfflineTranslator
+        engine = mock.Mock()
+        engine.translate.return_value = '花旗-示例__KC_PH_0000__2026年第四季度增长12.5%__KC_PH_0001__'
+        translator = OfflineTranslator(cache_dir=self.root / 'memo', engine_factory=lambda *_: engine)
+        source = 'Citi-Example（2338.HK）4Q26 growth 12.5%-260918'
+        result = titles.translate_title(source, Namespace(_offline_translator=translator))
+        self.assertEqual(result, '花旗-示例（2338.HK）2026年第四季度增长12.5%-260918')
+        self.assertEqual(engine.translate.call_args.args[0],
+                         'Citi-Example__KC_PH_0000__4Q26 growth 12.5%__KC_PH_0001__')
+
+    def test_identifier_mask_never_protects_amounts_years_or_invalid_calendar_suffixes(self):
+        source = 'Outlook (2026): earnings -5%, debt USD 120 million, plants (12)-260230'
+        self.assertEqual(titles.protect_title_identifiers(source), (source, {}))
+        protected, identifiers = titles.protect_title_identifiers('Example（002050） FY26 outlook-20260918')
+        self.assertEqual(list(identifiers.values()), ['（002050）', '-20260918'])
+        self.assertIn('FY26', protected)
+
+    def test_rejected_title_model_output_is_available_only_for_explicit_diagnostics(self):
+        from argparse import Namespace
+        from hymt_offline_translation import OfflineTranslator, OfflineTranslationError
+        engine = mock.Mock()
+        engine.translate.return_value = '增长15%'
+        calls = []
+        translator = OfflineTranslator(cache_dir=self.root / 'memo', engine_factory=lambda *_: engine,
+                                       diagnostic_callback=calls.append)
+        args = Namespace(_offline_translator=translator, _offline_title_calls=calls,
+                         diagnostics_out=self.root / 'diagnostics.json')
+        with self.assertRaises(OfflineTranslationError) as caught:
+            titles.translate_title('Growth 12.5%', args)
+        self.assertEqual(caught.exception.translation_diagnostics[0]['raw_translation'], '增长15%')
+        self.assertFalse(list((self.root / 'memo').rglob('*.json')))
+
+    def test_failures_write_resumable_opt_in_diagnostic_artifact(self):
+        self.write_catalog([{'id': 'bad', 'title': 'Growth 12.5%'},
+                            {'id': 'good', 'title': 'Market outlook'}])
+        diagnostics = self.root / 'diagnostics.json'
+        error = RuntimeError('quantity rejected')
+        error.translation_diagnostics = [{'model_input': 'Growth 12.5%', 'raw_translation': '增长15%'}]
+        with mock.patch.object(titles, 'translate_title', side_effect=[error, '市场展望']):
+            self.assertEqual(self.run_main('--diagnostics-out', str(diagnostics), '--fail-on-error'), 1)
+        self.assertEqual(json.loads(diagnostics.read_text())['failed_titles'], [{
+            'ids': ['bad'], 'source': 'Growth 12.5%', 'error': 'quantity rejected',
+            'model_calls': error.translation_diagnostics,
+        }])
+        self.assertEqual(len(titles.load_title_cache(self.cache_path)['entries']), 1)
 
     def write_catalog(self, items, **metadata):
         payload = {"schema_version": 1, "items": items, **metadata}

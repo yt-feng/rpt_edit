@@ -176,6 +176,20 @@ class HyMTTests(unittest.TestCase):
         with self.assertRaisesRegex(h.OfflineTranslationError, 'quantity'):
             translator.translate_markdown('| Cash reserves | USD 120 million |', 'zh', 'en')
 
+    def test_plain_filename_punctuation_is_not_markdown_but_claims_remain_checked(self):
+        translator = self.translator(lambda _: '短期增长12.5%')
+        source = 'Short~term_growth 12.5%'
+        self.assertEqual(translator.translate(source, 'zh', 'en', markdown=False), '短期增长12.5%')
+        self.assertEqual(len(self.engine.calls), 1)
+        # Plain text cache must never bypass validation for a Markdown caller.
+        with self.assertRaisesRegex(h.OfflineTranslationError, 'Markdown structure'):
+            translator.translate(source, 'zh', 'en')
+        self.assertEqual(len(self.engine.calls), 2)
+        with self.assertRaisesRegex(h.OfflineTranslationError, 'quantity'):
+            h.validate_result(source, '短期增长125%', 'en', 'zh', markdown=False)
+        with self.assertRaisesRegex(h.OfflineTranslationError, 'placeholder'):
+            h.validate_result(source + '__KC_PH_0000__', '短期增长12.5%', 'en', 'zh', markdown=False)
+
     def test_no_local_inference(self):
         with mock.patch.dict(os.environ, {'GITHUB_ACTIONS': 'false'}):
             with self.assertRaisesRegex(h.OfflineTranslationError, 'restricted'):

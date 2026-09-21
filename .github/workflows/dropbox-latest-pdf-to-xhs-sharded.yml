@@ -187,8 +187,6 @@ jobs:
 
   select-macro-reports:
     needs: resolve-inputs
-    env:
-      DEEPSEEK_USAGE_DIR: ${{ github.workspace }}/../deepseek-usage
     runs-on: ubuntu-latest
     timeout-minutes: 30
     outputs:
@@ -199,6 +197,12 @@ jobs:
       shard_indices: ${{ steps.shard_matrix.outputs.shard_indices }}
       effective_shard_count: ${{ steps.shard_matrix.outputs.effective_shard_count }}
     steps:
+      - name: Initialize DeepSeek usage ledger
+        shell: bash
+        run: |
+          usage_dir="$(mktemp -d "$RUNNER_TEMP/deepseek-usage.XXXXXX")"
+          usage_dir="$(cd "$usage_dir" && pwd -P)"
+          echo "DEEPSEEK_USAGE_DIR=$usage_dir" >> "$GITHUB_ENV"
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
@@ -301,25 +305,21 @@ jobs:
         run: |
           python scripts/summarize_deepseek_usage.py \
             --input-dir "$DEEPSEEK_USAGE_DIR" \
-            --output "$RUNNER_TEMP/deepseek-usage-summary.json" \
-            --markdown "$RUNNER_TEMP/deepseek-usage-summary.md" \
+            --output "$DEEPSEEK_USAGE_DIR/summary.json" \
+            --markdown "$DEEPSEEK_USAGE_DIR/summary.md" \
             --github-summary
       - name: Upload DeepSeek usage
-        if: ${{ always() }}
-        uses: actions/upload-artifact@v4
+        if: ${{ always() && hashFiles('.github/actions/resilient-diagnostic-artifact/action.yml') != '' }}
+        uses: ./.github/actions/resilient-diagnostic-artifact
         with:
           name: deepseek-usage-${{ github.job }}-selection-${{ github.run_id }}-${{ github.run_attempt }}
-          path: |
-            ${{ env.DEEPSEEK_USAGE_DIR }}
-            ${{ runner.temp }}/deepseek-usage-summary.json
-            ${{ runner.temp }}/deepseek-usage-summary.md
-          if-no-files-found: ignore
+          path: ${{ env.DEEPSEEK_USAGE_DIR }}
+          if-no-files-found: error
           retention-days: 30
 
   process-shard:
     needs: [resolve-inputs, select-macro-reports]
     env:
-      DEEPSEEK_USAGE_DIR: ${{ github.workspace }}/../deepseek-usage
       OUTPUT_DIR: xhs_notes/dropbox/${{ needs.select-macro-reports.outputs.latest_folder }}/shard_${{ matrix.shard_index }}
       GENERATION_OPTIONS_JSON: ${{ toJSON(needs.resolve-inputs.outputs) }}
     runs-on: ubuntu-latest
@@ -330,6 +330,12 @@ jobs:
       matrix:
         shard_index: ${{ fromJson(needs.select-macro-reports.outputs.shard_indices) }}
     steps:
+      - name: Initialize DeepSeek usage ledger
+        shell: bash
+        run: |
+          usage_dir="$(mktemp -d "$RUNNER_TEMP/deepseek-usage.XXXXXX")"
+          usage_dir="$(cd "$usage_dir" && pwd -P)"
+          echo "DEEPSEEK_USAGE_DIR=$usage_dir" >> "$GITHUB_ENV"
       - name: Gate shard
         id: gate
         run: |
@@ -565,19 +571,16 @@ jobs:
         run: |
           python scripts/summarize_deepseek_usage.py \
             --input-dir "$DEEPSEEK_USAGE_DIR" \
-            --output "$RUNNER_TEMP/deepseek-usage-summary.json" \
-            --markdown "$RUNNER_TEMP/deepseek-usage-summary.md" \
+            --output "$DEEPSEEK_USAGE_DIR/summary.json" \
+            --markdown "$DEEPSEEK_USAGE_DIR/summary.md" \
             --github-summary
       - name: Upload DeepSeek usage
-        if: ${{ always() }}
-        uses: actions/upload-artifact@v4
+        if: ${{ always() && hashFiles('.github/actions/resilient-diagnostic-artifact/action.yml') != '' }}
+        uses: ./.github/actions/resilient-diagnostic-artifact
         with:
           name: deepseek-usage-${{ github.job }}-shard-${{ matrix.shard_index }}-${{ github.run_id }}-${{ github.run_attempt }}
-          path: |
-            ${{ env.DEEPSEEK_USAGE_DIR }}
-            ${{ runner.temp }}/deepseek-usage-summary.json
-            ${{ runner.temp }}/deepseek-usage-summary.md
-          if-no-files-found: ignore
+          path: ${{ env.DEEPSEEK_USAGE_DIR }}
+          if-no-files-found: error
           retention-days: 30
 
   package-publish-ready:
@@ -857,9 +860,13 @@ jobs:
         translation_shard_index: ${{ fromJson(needs.plan-portal-translated-reports.outputs.shard_indices) }}
     runs-on: ubuntu-24.04
     timeout-minutes: 360
-    env:
-      DEEPSEEK_USAGE_DIR: ${{ github.workspace }}/../deepseek-usage
     steps:
+      - name: Initialize DeepSeek usage ledger
+        shell: bash
+        run: |
+          usage_dir="$(mktemp -d "$RUNNER_TEMP/deepseek-usage.XXXXXX")"
+          usage_dir="$(cd "$usage_dir" && pwd -P)"
+          echo "DEEPSEEK_USAGE_DIR=$usage_dir" >> "$GITHUB_ENV"
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
@@ -954,19 +961,16 @@ jobs:
         run: |
           python scripts/summarize_deepseek_usage.py \
             --input-dir "$DEEPSEEK_USAGE_DIR" \
-            --output "$RUNNER_TEMP/deepseek-usage-summary.json" \
-            --markdown "$RUNNER_TEMP/deepseek-usage-summary.md" \
+            --output "$DEEPSEEK_USAGE_DIR/summary.json" \
+            --markdown "$DEEPSEEK_USAGE_DIR/summary.md" \
             --github-summary
       - name: Upload DeepSeek usage
-        if: always()
-        uses: actions/upload-artifact@v4
+        if: ${{ always() && hashFiles('.github/actions/resilient-diagnostic-artifact/action.yml') != '' }}
+        uses: ./.github/actions/resilient-diagnostic-artifact
         with:
           name: deepseek-usage-${{ github.job }}-${{ matrix.translation_shard_index }}-${{ github.run_id }}-${{ github.run_attempt }}
-          path: |
-            ${{ env.DEEPSEEK_USAGE_DIR }}
-            ${{ runner.temp }}/deepseek-usage-summary.json
-            ${{ runner.temp }}/deepseek-usage-summary.md
-          if-no-files-found: ignore
+          path: ${{ env.DEEPSEEK_USAGE_DIR }}
+          if-no-files-found: error
           retention-days: 30
 
   build-portal-translated-reports:

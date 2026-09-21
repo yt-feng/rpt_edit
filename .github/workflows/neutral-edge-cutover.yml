@@ -12,6 +12,7 @@ on:
       - Institution latest PDF to WeChat
       - Consulting latest PDF to WeChat
       - ARK Invest feed to WeChat
+      - Recover private WeChat handoff
       - Upload XHS notes to WeChat drafts
       - Portal chart search index
     types: [completed]
@@ -569,7 +570,8 @@ jobs:
             --catalog-path portal_suite/data/catalog.json \
             --cache-path "$RUNNER_TEMP/portal-title-cache/cache-v1.json" \
             --seed-catalog-path "$RUNNER_TEMP/previous-public-catalog.json" \
-            --workers 1 --fail-on-error
+            --workers 1 --fail-on-error \
+            --diagnostics-out "$RUNNER_TEMP/title-translation-diagnostics.json"
 
       - name: Detect Chinese report title checkpoint
         id: title_checkpoint
@@ -972,6 +974,7 @@ jobs:
         with:
           name: neutral-translation-diagnostics-${{ github.run_id }}-${{ github.run_attempt }}
           path: |
+            ${{ runner.temp }}/title-translation-diagnostics.json
             ${{ runner.temp }}/locale-preflight-diagnostics.json
             ${{ runner.temp }}/locale-full-diagnostics*.json
             ${{ runner.temp }}/chinese-parity.json

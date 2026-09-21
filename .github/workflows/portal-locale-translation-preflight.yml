@@ -20,6 +20,7 @@ on:
       - 'scripts/financial_quantity_integrity.py'
       - 'scripts/test_financial_quantity_integrity.py'
       - 'scripts/smoke_hymt_translation.py'
+      - 'scripts/portal_title_regression_samples.json'
       - 'scripts/build_portal_locales.py'
       - 'scripts/translate_portal_titles.py'
       - 'scripts/build_portal_translated_reports.py'

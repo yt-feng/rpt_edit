@@ -184,7 +184,8 @@ def _restore_table_edges(source: str, result: str) -> str:
     return '|' + inner + '|'
 
 
-def validate_result(source: str, result: str, source_language: str, target: str) -> None:
+def validate_result(source: str, result: str, source_language: str, target: str,
+                    *, markdown: bool = True) -> None:
     if not result.strip():
         raise OfflineTranslationError('Empty Hy-MT2 translation')
     if Counter(_PLACEHOLDERS.findall(source)) != Counter(_PLACEHOLDERS.findall(result)):
@@ -193,13 +194,16 @@ def validate_result(source: str, result: str, source_language: str, target: str)
     problems = quantity_issues(source, result, source_language, target)
     if problems:
         raise OfflineTranslationError('Hy-MT2 quantity validation failed: ' + '; '.join(problems))
-    # Structural punctuation, unlike linguistic punctuation, must stay exact.
-    for marker in ('|', '[', ']', '*', '_', '~', '`'):
-        if source.count(marker) != result.count(marker):
-            raise OfflineTranslationError(f'Hy-MT2 changed Markdown structure: {marker}')
-    destination_shape = r'\]\(__HYMTPH_\d+__\)|\]\[__HYMTPH_\d+__\]'
-    if Counter(re.findall(destination_shape, source)) != Counter(re.findall(destination_shape, result)):
-        raise OfflineTranslationError('Hy-MT2 changed a Markdown link destination boundary')
+    # Catalog filenames are plain text: their ~ and _ characters are often
+    # punctuation substitutions, not Markdown. The caller must opt in to that
+    # format; report Markdown retains all existing structural checks.
+    if markdown:
+        for marker in ('|', '[', ']', '*', '_', '~', '`'):
+            if source.count(marker) != result.count(marker):
+                raise OfflineTranslationError(f'Hy-MT2 changed Markdown structure: {marker}')
+        destination_shape = r'\]\(__HYMTPH_\d+__\)|\]\[__HYMTPH_\d+__\]'
+        if Counter(re.findall(destination_shape, source)) != Counter(re.findall(destination_shape, result)):
+            raise OfflineTranslationError('Hy-MT2 changed a Markdown link destination boundary')
     clean = _PLACEHOLDERS.sub('', result)
     if _LETTERS.search(_PLACEHOLDERS.sub('', source)):
         scripts = {'zh': r'[\u3400-\u9fff]', 'en': r'[A-Za-z]', 'ko': r'[\uac00-\ud7af]',
@@ -298,7 +302,7 @@ class HyMTOfflineTranslator:
             _ENGINES[key] = _HyMTEngine(self.model_dir)
         return _ENGINES[key]
 
-    def _translate_part(self, text: str, target: str, source: str | None) -> str:
+    def _translate_part(self, text: str, target: str, source: str | None, *, markdown: bool = True) -> str:
         leading, trailing = text[:len(text) - len(text.lstrip())], text[len(text.rstrip()):]
         core = text.strip()
         detected = source or _detect_source(core)
@@ -306,6 +310,8 @@ class HyMTOfflineTranslator:
             return text
         identity = {'provider': PROVIDER, 'model': MODEL_ID, 'source_language': detected,
                     'target_language': target, 'source_sha256': hashlib.sha256(core.encode()).hexdigest()}
+        if not markdown:
+            identity['text_format'] = 'plain'
         key = hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()
         path = self.cache_dir / key[:2] / f'{key}.json'
         masked, replacements, terms = _mask(core, target)
@@ -314,7 +320,7 @@ class HyMTOfflineTranslator:
             if all(cached.get(name) == value for name, value in identity.items()):
                 value = cached['translation']
                 # Cache stores the validated masked form, independent of source URLs.
-                validate_result(masked, value, detected, target)
+                validate_result(masked, value, detected, target, markdown=markdown)
                 self.stats['cache_hits'] += 1
             else:
                 raise ValueError('Cache identity changed')
@@ -326,8 +332,9 @@ class HyMTOfflineTranslator:
                     self._diagnostic_callback({'model_input': masked, 'raw_translation': value,
                                                'source_language': detected, 'target_language': target,
                                                'controlled_terms': dict(terms)})
-                value = _restore_table_edges(masked, value)
-                validate_result(masked, value, detected, target)
+                if markdown:
+                    value = _restore_table_edges(masked, value)
+                validate_result(masked, value, detected, target, markdown=markdown)
             except OfflineTranslationError:
                 raise
             except Exception as error:
@@ -340,12 +347,12 @@ class HyMTOfflineTranslator:
             value = value.replace(token, original)
         return leading + value.strip() + trailing
 
-    def translate(self, text: str, target: str, source: str | None = None) -> str:
+    def translate(self, text: str, target: str, source: str | None = None, *, markdown: bool = True) -> str:
         target = normalize_language(target)
         source = normalize_language(source) if source else None
         if not text or source == target:
             return text
-        return ''.join(self._translate_part(piece, target, source) for piece in split_sentences(text))
+        return ''.join(self._translate_part(piece, target, source, markdown=markdown) for piece in split_sentences(text))
 
     def translate_many(self, texts: Sequence[str], target: str, source: str | None = None) -> list[str]:
         return [self.translate(text, target, source) for text in texts]
