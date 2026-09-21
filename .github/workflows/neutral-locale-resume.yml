@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       source_run_id:
-        description: "Completed source run with successful upload and static validation"
+        description: "Failed source run: uploaded shadow audit failure or verified rollback after live acceptance failure"
         required: true
         type: string
       source_run_attempt:
@@ -51,7 +51,9 @@ concurrency:
 jobs:
   prepare_release:
     runs-on: ubuntu-22.04
-    timeout-minutes: 20
+    # Restoring and verifying the complete immutable candidate includes thousands
+    # of bounded object reads before shadow acceptance; it does not rerun models.
+    timeout-minutes: 60
     outputs:
       changed: ${{ steps.release_delta.outputs.changed }}
       static_release: ${{ steps.static_upload.outputs.static_release }}
@@ -151,6 +153,7 @@ jobs:
           python3 -B scripts/build_portal_locale_resume_workflow.py --check
           python3 -B scripts/test_portal_locale_resume_workflow.py
           python3 -B scripts/test_resume_portal_locale_candidate.py
+          python3 -B scripts/test_verify_portal_locale_routes.py
           python3 -B scripts/test_verify_prepared_static_slot.py
           python3 -B scripts/test_audit_portal_shadow_preview.py
           node --test workers/edge-static-host/test/index.test.mjs
@@ -294,6 +297,14 @@ jobs:
         id: release_delta
         run: echo 'changed=true' >> "$GITHUB_OUTPUT"
 
+      - name: Validate locale application routes before upload
+        if: steps.operation.outputs.multilingual_enabled == 'true' && steps.locale_build.outputs.ready == 'true'
+        run: |
+          python3 -B scripts/verify_portal_locale_routes.py \
+            --manifest _neutral_site/data/i18n/manifest.json \
+            --local-root _neutral_site --origin "$LIVE_ORIGIN" \
+            --output "$RUNNER_TEMP/prepared-locale-routes.json"
+
       - name: Compute multilingual index policy identity
         id: locale_policy
         if: steps.operation.outputs.multilingual_enabled == 'true' && steps.locale_build.outputs.ready == 'true'
@@ -308,7 +319,8 @@ jobs:
           from pathlib import Path
 
           manifest_path = Path("_neutral_site/data/i18n/manifest.json")
-          manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+          from scripts.portal_locale_manifest import load_locale_manifest
+          manifest = load_locale_manifest(manifest_path)
           index_policy = manifest.get("index_policy")
           if not isinstance(index_policy, dict):
               raise SystemExit("Multilingual manifest has no index policy")
@@ -959,8 +971,13 @@ jobs:
           R2_BUCKET: ${{ secrets.R2_BUCKET }}
         run: |
           python3 -m pip install --disable-pip-version-check "boto3>=1.34,<2"
+          locale_args=()
+          if [ "$PORTAL_MULTILINGUAL_ENABLED" = "true" ]; then
+            locale_args+=(--locale-origin "$LIVE_ORIGIN")
+          fi
           python3 -B scripts/verify_prepared_static_slot.py \
-            --slot "$STATIC_SLOT" --release "$STATIC_RELEASE" --tree "$STATIC_TREE_SHA256"
+            --slot "$STATIC_SLOT" --release "$STATIC_RELEASE" --tree "$STATIC_TREE_SHA256" \
+            "${locale_args[@]}"
 
       - name: Deploy prepared neutral edge release
         id: edge_deploy

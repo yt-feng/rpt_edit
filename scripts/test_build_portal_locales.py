@@ -23,6 +23,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_portal_locales as builder  # noqa: E402
+import portal_locale_manifest  # noqa: E402
 
 
 SITE_URL = "https://portal.example.invalid"
@@ -3139,6 +3140,12 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
         )
         builder.validate_translation_quality("ja", japanese_shared_han, "静的市場調査報告")
 
+    def test_builder_rejects_shared_manifest_bound_before_publishing_manifest(self) -> None:
+        with mock.patch.object(portal_locale_manifest, "MAX_LOCALE_MANIFEST_BYTES", 1024):
+            with self.assertRaisesRegex(builder.TranslationError, "byte size.*outside"):
+                self._build(RecordingTranslator())
+        self.assertFalse((self.site / "data" / "i18n" / "manifest.json").exists())
+
     def test_build_rejects_prefix_plus_source_before_reporting_complete_coverage(self) -> None:
         def disguised_source(
             locale: str,
@@ -3524,6 +3531,34 @@ class MetaKeywordTranslationTests(unittest.TestCase):
             builder.parse_translation_batch(json.dumps({
                 "translations": [{"id": english.key, "text": english.source}],
             }), [english], "ko")
+
+
+class LocaleManifestWriteTests(unittest.TestCase):
+    def test_serialized_manifest_above_previous_live_limit_remains_readable(self) -> None:
+        manifest = {"schema_version": 1, "source_evidence": "原文" * 550_000}
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "manifest.json"
+            builder.write_locale_manifest(path, manifest)
+            self.assertGreater(path.stat().st_size, 3 * 1024 * 1024)
+            self.assertEqual(path.read_bytes(), builder.stable_json_bytes(manifest))
+            self.assertEqual(portal_locale_manifest.load_locale_manifest(path), manifest)
+
+    def test_oversized_or_invalid_schema_never_replaces_previous_manifest(self) -> None:
+        valid = {"schema_version": 1}
+        rejected = (
+            {"schema_version": 1, "padding": "x" * portal_locale_manifest.MAX_LOCALE_MANIFEST_BYTES},
+            {"schema_version": True},
+            {"schema_version": 2},
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "manifest.json"
+            builder.write_locale_manifest(path, valid)
+            prior = path.read_bytes()
+            for manifest in rejected:
+                with self.subTest(schema=manifest["schema_version"], oversized="padding" in manifest):
+                    with self.assertRaises(builder.TranslationError):
+                        builder.write_locale_manifest(path, manifest)
+                    self.assertEqual(path.read_bytes(), prior)
 
 
 if __name__ == "__main__":

@@ -28,7 +28,7 @@ class ResumeWorkflowTests(unittest.TestCase):
             self.assertNotIn(forbidden, preparation)
         self.assertIn('group: portal-production-release', preparation)
         self.assertIn('test "$GITHUB_REF" = "refs/heads/main"', preparation)
-        self.assertIn('timeout-minutes: 20', preparation)
+        self.assertIn('    timeout-minutes: 60', preparation)
 
     def test_source_identity_is_not_replaced_by_recovery_commit(self):
         self.assertIn('candidate_commit: ${{ steps.static_upload.outputs.commit_sha }}', self.recovery)
@@ -37,6 +37,14 @@ class ResumeWorkflowTests(unittest.TestCase):
         self.assertIn('PORTAL_MULTILINGUAL_LIVE_CONFIGURED: "false"', self.recovery)
         self.assertLess(self.recovery.index('Verify committed candidate immediately before cutover'),
                         self.recovery.index('      - name: Deploy prepared neutral edge release'))
+
+    def test_restored_candidate_passes_local_route_gate_before_shadow_or_cutover(self):
+        self.assertIn('python3 -B scripts/test_verify_portal_locale_routes.py', self.recovery)
+        restored = self.recovery.index('Restore verified uploaded candidate without rebuilding or translating')
+        verified = self.recovery.index('Validate locale application routes before upload')
+        policy = self.recovery.index('Compute multilingual index policy identity')
+        self.assertLess(restored, verified)
+        self.assertLess(verified, policy)
 
     def test_embedded_python_and_shell_parse(self):
         for block in re.split(r'(?=^      - name: )', self.recovery, flags=re.M)[1:]:

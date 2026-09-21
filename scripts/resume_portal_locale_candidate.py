@@ -23,7 +23,8 @@ import publish_static_slot as publisher
 from edge_route_cutover import request_status
 import verify_portal_chinese_parity as parity
 from verify_prepared_static_slot import static_tree_sha256
-from portal_locale_manifest import LocaleManifestError, validate_translation_resolution
+from portal_locale_manifest import LocaleManifestError, load_locale_manifest, validate_translation_resolution
+from verify_portal_locale_routes import RouteVerificationError, declared_checks
 
 
 LOCALES = ("ko", "ja", "ar")
@@ -33,6 +34,22 @@ REQUIRED_STEPS = (
     "Validate complete static release",
     "Verify protected Chinese release after locale build",
     "Upload inactive static slot and immutable runtime",
+)
+LIVE_ACCEPTANCE_STEP = "Accept prepared release through the live edge"
+ROLLBACK_STEP = "Roll back failed release or completed rehearsal"
+ROLLBACK_VERIFY_STEP = "Verify exact previous release after rollback"
+OUTCOME_STEP = "Enforce transactional outcome"
+PREPARED_ARTIFACT_STEPS = (
+    "Publish multilingual review identity",
+    "Build public validation artifact",
+    "Upload release validation artifact",
+)
+CUTOVER_PREREQUISITES = (
+    "Download release validation artifact",
+    "Prove live release is unchanged before cutover",
+    "Capture exact edge rollback target",
+    "Verify committed candidate immediately before cutover",
+    "Deploy prepared neutral edge release",
 )
 DIAGNOSTICS = (
     "locale-preflight-diagnostics.json", "locale-full-diagnostics.json",
@@ -152,7 +169,65 @@ def paged_rows(github: Any, path: str, field: str) -> list[dict[str, Any]]:
     raise ResumeError(f"GitHub {field} pagination exceeded its bound")
 
 
-def verify_source_run(github: Any, repository: str, run_id: int, attempt: int, commit: str) -> tuple[dict[str, Any], str, str]:
+def source_steps(job: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    steps = job.get("steps")
+    require(isinstance(steps, list) and bool(steps), "Source job has no step evidence")
+    require(all(isinstance(step, dict) and isinstance(step.get("name"), str) and step["name"]
+                and type(step.get("number")) is int and step["number"] > 0 for step in steps),
+            "Source step identity is invalid")
+    require(len({step["name"] for step in steps}) == len(steps)
+            and len({step["number"] for step in steps}) == len(steps),
+            "Source step identity is ambiguous")
+    return {step["name"]: step for step in steps}
+
+
+def verify_rolled_back_cutover(jobs: list[dict[str, Any]], prepare: dict[str, Any],
+                             prepared_steps: dict[str, dict[str, Any]]) -> dict[str, Any]:
+    require(all(step.get("status") == "completed" and step.get("conclusion") in {"success", "skipped"}
+                for step in prepared_steps.values()), "Successful preparation contains incomplete or failed steps")
+    for name in (*REQUIRED_STEPS, *PREPARED_ARTIFACT_STEPS):
+        require(prepared_steps.get(name, {}).get("conclusion") == "success",
+                f"Source prerequisite did not succeed: {name}")
+    upload_number = prepared_steps[REQUIRED_STEPS[2]]["number"]
+    require(all(prepared_steps[name]["number"] < upload_number for name in REQUIRED_STEPS[:2]),
+            "Source validation did not precede candidate upload")
+    artifact_numbers = [prepared_steps[name]["number"] for name in PREPARED_ARTIFACT_STEPS]
+    require(upload_number < artifact_numbers[0] < artifact_numbers[1] < artifact_numbers[2],
+            "Source validation artifact was not published after candidate upload")
+    selected = [job for job in jobs if job.get("name") == "cutover"]
+    require(len(selected) == 1, "Source must have one failed cutover job")
+    cutover = selected[0]
+    require(cutover.get("status") == "completed" and cutover.get("conclusion") == "failure",
+            "Source cutover must have failed and completed rollback")
+    require(type(cutover.get("id")) is int and cutover["id"] > 0, "Source cutover job identity is invalid")
+    require(all(other is prepare or other is cutover or
+                (other.get("status") == "completed" and other.get("conclusion") in {"skipped", "success"})
+                for other in jobs), "Another source job failed or is incomplete")
+    require(not any(other is not cutover and other.get("conclusion") == "success"
+                    and "cutover" in str(other.get("name", "")) for other in jobs),
+            "Source run already completed another cutover")
+    steps = source_steps(cutover)
+    require(all(step.get("status") == "completed" and step.get("conclusion") in {"success", "skipped", "failure"}
+                for step in steps.values()), "Source cutover has incomplete or cancelled steps")
+    failures = {name for name, step in steps.items() if step.get("conclusion") == "failure"}
+    # The final guard deliberately fails after a failed acceptance, even when
+    # rollback succeeds. No independent failure is permitted alongside it.
+    require(failures == {LIVE_ACCEPTANCE_STEP, OUTCOME_STEP},
+            "Source cutover did not fail only at live acceptance and its outcome guard")
+    for name in (*CUTOVER_PREREQUISITES, ROLLBACK_STEP, ROLLBACK_VERIFY_STEP):
+        require(steps.get(name, {}).get("conclusion") == "success",
+                f"Source cutover prerequisite did not succeed: {name}")
+    ordered_names = (*CUTOVER_PREREQUISITES, LIVE_ACCEPTANCE_STEP, ROLLBACK_STEP, ROLLBACK_VERIFY_STEP, OUTCOME_STEP)
+    numbers = [steps[name]["number"] for name in ordered_names]
+    require(numbers == sorted(numbers), "Source cutover rollback evidence is out of order")
+    require(all(step.get("conclusion") == "success" for step in steps.values()
+                if step["number"] < steps[LIVE_ACCEPTANCE_STEP]["number"]),
+            "Source cutover skipped a pre-deployment prerequisite")
+    return {"source_failure_phase": "live_acceptance_rolled_back", "source_cutover_job_id": cutover["id"],
+            "source_rollback_verified": True}
+
+
+def verify_source_run(github: Any, repository: str, run_id: int, attempt: int, commit: str) -> tuple[dict[str, Any], str, str, dict[str, Any]]:
     require(bool(re.fullmatch(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+", repository)), "GITHUB_REPOSITORY is invalid")
     require(run_id > 0 and attempt > 0, "Source run and attempt must be positive")
     require(bool(SHA40.fullmatch(commit)), "Candidate commit must be a full lowercase SHA")
@@ -171,23 +246,25 @@ def verify_source_run(github: Any, repository: str, run_id: int, attempt: int, c
     selected = [job for job in jobs if job.get("name") == "prepare_release"]
     require(len(selected) == 1, "Source must have one prepare_release job")
     job = selected[0]
-    require(job.get("status") == "completed" and job.get("conclusion") == "failure", "Source preparation must have failed after upload")
-    require(all(other is job or other.get("conclusion") in {"skipped", "success"} for other in jobs), "Another source job failed")
-    require(not any(other is not job and other.get("conclusion") == "success" and "cutover" in str(other.get("name", "")) for other in jobs), "Source run already completed a cutover")
-    steps = job.get("steps")
-    require(isinstance(steps, list), "Source job has no step evidence")
-    by_name = {step.get("name"): step for step in steps}
-    audit = by_name.get(AUDIT_STEP, {})
-    require(audit.get("conclusion") == "failure", "Source did not fail at the shadow HTTP audit")
-    audit_number = audit.get("number")
-    require(isinstance(audit_number, int), "Source audit step number is invalid")
-    for name in REQUIRED_STEPS:
-        step = by_name.get(name, {})
-        require(step.get("conclusion") == "success" and isinstance(step.get("number"), int)
-                and step["number"] < audit_number, f"Source prerequisite did not succeed: {name}")
-    require(all(step.get("conclusion") not in {"failure", "cancelled", "timed_out"}
-                or int(step.get("number", 0)) >= audit_number for step in steps),
-            "Source failed before shadow audit")
+    require(job.get("status") == "completed" and job.get("conclusion") in {"failure", "success"},
+            "Source preparation must have completed before recovery")
+    by_name = source_steps(job)
+    if job["conclusion"] == "success":
+        evidence = verify_rolled_back_cutover(jobs, job, by_name)
+    else:
+        require(all(other is job or other.get("conclusion") in {"skipped", "success"} for other in jobs), "Another source job failed")
+        require(not any(other is not job and other.get("conclusion") == "success" and "cutover" in str(other.get("name", "")) for other in jobs), "Source run already completed a cutover")
+        audit = by_name.get(AUDIT_STEP, {})
+        require(audit.get("conclusion") == "failure", "Source did not fail at the shadow HTTP audit")
+        audit_number = audit["number"]
+        for name in REQUIRED_STEPS:
+            step = by_name.get(name, {})
+            require(step.get("conclusion") == "success" and step["number"] < audit_number,
+                    f"Source prerequisite did not succeed: {name}")
+        require(all(step.get("conclusion") not in {"failure", "cancelled", "timed_out"}
+                    or step["number"] >= audit_number for step in by_name.values()),
+                "Source failed before shadow audit")
+        evidence = {"source_failure_phase": "shadow_http_audit", "source_rollback_verified": False}
     phase("source_logs")
     logs = github.bytes(f"/repos/{repository}/actions/jobs/{int(job['id'])}/logs").decode("utf-8")
     upload_started = by_name[REQUIRED_STEPS[2]].get("started_at", "")
@@ -198,7 +275,7 @@ def verify_source_run(github: Any, repository: str, run_id: int, attempt: int, c
     # cannot satisfy the literal identity assignments below.
     logs = re.sub(r"\x1b\[[0-9;]*m", "", logs)
     logs = re.sub(r"(?m)^\d{4}-\d\d-\d\dT[^ ]+ +", "", logs)
-    return run, logs, identity_logs
+    return run, logs, identity_logs, evidence
 
 
 def log_values(logs: str, names: tuple[str, ...], pattern: str) -> set[str]:
@@ -350,7 +427,10 @@ def download_candidate_files(client: Any, bucket: str, manifest: dict[str, Any],
         write_local(site_dir, relative, body)
         return relative
     downloaded.add(fetch_one("data/i18n/manifest.json"))
-    locale_manifest = decode_json((site_dir / "data/i18n/manifest.json").read_bytes(), "Locale manifest")
+    try:
+        locale_manifest = load_locale_manifest(site_dir / "data/i18n/manifest.json")
+    except LocaleManifestError as error:
+        raise ResumeError(f"Candidate locale manifest is invalid: {error}") from error
     require(locale_manifest.get("quality_gate_version") == 3 and set(locale_manifest.get("locales", [])) == set(LOCALES),
             "Candidate locale coverage is incomplete")
     try:
@@ -361,6 +441,17 @@ def download_candidate_files(client: Any, bucket: str, manifest: dict[str, Any],
             (locale_manifest.get("index_policy") or {}).get("mode") == "incremental-publication-cutoff",
             "Candidate is not an incremental locale release")
     wanted = set(PUBLIC_PATHS)
+    try:
+        routes = declared_checks(locale_manifest) or []
+    except RouteVerificationError as error:
+        raise ResumeError(f"Candidate locale routes are invalid: {error}") from error
+    for route in routes:
+        relative = publisher.safe_relative_path(route["path"])
+        descriptor = files.get(relative)
+        require(isinstance(descriptor, dict) and descriptor.get("size") == route["byte_size"]
+                and descriptor.get("sha256") == route["sha256"],
+                f"Candidate locale route descriptor differs from the committed static manifest: {relative}")
+        wanted.add(relative)
     paths = locale_manifest.get("required_paths")
     require(isinstance(paths, list) and all(isinstance(path, str) for path in paths), "Locale required paths are invalid")
     wanted.update(publisher.safe_relative_path(path) for path in paths)
@@ -426,7 +517,7 @@ def resume_candidate(*, github: Any, client: Any, bucket: str, repository: str, 
             and previous.get("tree_sha256") == expected_previous_tree
             and bool(publisher.SHA256_PATTERN.fullmatch(expected_previous_tree)), "Current captured state differs from the expected previous identity")
     require(slot != previous["slot"], "Cannot resume the active slot")
-    run, logs, identity_logs = verify_source_run(github, repository, run_id, run_attempt, expected_commit)
+    run, logs, identity_logs, source_evidence = verify_source_run(github, repository, run_id, run_attempt, expected_commit)
     verify_logged_identity(identity_logs, slot=slot, release=release, tree=expected_tree, commit=expected_commit, previous=previous)
     phase("live_baseline")
     require(fetch_live(origin) == previous, "Live Edge state changed since baseline capture")
@@ -451,7 +542,7 @@ def resume_candidate(*, github: Any, client: Any, bucket: str, repository: str, 
         "static_prefix": publisher.slot_prefix(slot), "tree_sha256": expected_tree,
         "previous_slot": previous["slot"], "previous_release": previous["release_id"], "previous_tree": previous["tree_sha256"],
         "verified_remote_objects": manifest["file_count"], "downloaded_objects": len(downloaded),
-        "remote_mutations": 0, **diagnostics,
+        "remote_mutations": 0, **source_evidence, **diagnostics,
     }
     write_local(work_dir, "locale-resume-identity.json", publisher.json_bytes(result))
     phase("complete")

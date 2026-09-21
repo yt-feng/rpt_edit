@@ -14,6 +14,9 @@ from unittest import mock
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlsplit
 
+import portal_locale_manifest
+from test_verify_portal_locale_routes import describe, fixture as application_route_fixture
+
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / "scripts" / "audit_portal_shadow_preview.py"
@@ -63,7 +66,7 @@ class FakeOpener:
         self.requests = []
 
     def open(self, request, timeout: int):  # noqa: ANN001, ANN201
-        if timeout != 30:
+        if timeout not in (20, 30):
             raise AssertionError(f"unexpected timeout: {timeout}")
         parsed = urlsplit(request.full_url)
         if f"{parsed.scheme}://{parsed.netloc}" != BASE_URL:
@@ -241,6 +244,27 @@ def replace_json_response(
     )
 
 
+def application_response_fixture() -> tuple[dict, dict[str, FakeResponse | BaseException]]:
+    plan, responses = response_fixture()
+    declarations, application_responses = application_route_fixture()
+    for url, (status, headers, body) in application_responses.items():
+        relative = url.removeprefix(PUBLIC_ORIGIN)
+        responses[relative] = FakeResponse(body, status=status, headers={**protected_headers(), **headers})
+    detail = b"/* locale detail recovery */"
+    declarations["detail_asset"] = describe("assets/locale-detail.js", detail)
+    responses["/assets/locale-detail.js"] = FakeResponse(detail, headers=protected_headers())
+    declarations["lazy_javascript_assets"] = {}
+    for locale, prefix in [("zh-Hans", ""), *((locale, f"{locale}/") for locale in audit.LOCALES)]:
+        body = f"export function initNewsfeedApp() {{ /* {locale} */ }}".encode()
+        row = describe(f"{prefix}assets/newsfeed-app.js", body)
+        declarations["lazy_javascript_assets"][locale] = row
+        responses["/" + row["path"] + "?v=" + row["sha256"][:12]] = FakeResponse(
+            body, headers={**protected_headers(), "Content-Type": "text/javascript; charset=utf-8"},
+        )
+    replace_json_response(responses, "/data/i18n/manifest.json", lambda manifest: manifest.update(declarations))
+    return plan, responses
+
+
 class ShadowPreviewAuditTests(unittest.TestCase):
     def run_audit(
         self,
@@ -267,6 +291,77 @@ class ShadowPreviewAuditTests(unittest.TestCase):
                     expected_tree,
                 )
         return result, opener
+
+    def test_all_declared_application_routes_use_shadow_http_and_public_chinese_links(self) -> None:
+        plan, responses = application_response_fixture()
+        result, opener = self.run_audit(plan, responses)
+        routes = result["application_routes"]
+        self.assertEqual(routes["status"], "passed")
+        self.assertEqual((routes["route_count"], routes["asset_count"], routes["request_count"]), (18, 6, 24))
+        self.assertTrue(all(row["status"] == "passed" for row in routes["checks"]))
+        self.assertTrue(all(request.full_url.startswith(BASE_URL + "/") for request in opener.requests))
+        self.assertEqual(sum("newsfeed-app.js?v=" in request.full_url for request in opener.requests), 4)
+
+    def test_declared_shell_semantics_fail_shadow_even_when_hash_is_correct(self) -> None:
+        for before, after, message in (
+            (b'data-page="report"', b'data-page="not-found"', "wrong page identity"),
+            (b'data-kc-locale-help', b'data-help-removed', "one static locale help strip"),
+            (PUBLIC_ORIGIN.encode(), BASE_URL.encode(), "Chinese equivalent"),
+            (b'noindex,follow', b'index,follow', "remain noindex"),
+        ):
+            with self.subTest(message=message):
+                plan, responses = application_response_fixture()
+                response = responses["/ko/report.html"]
+                assert isinstance(response, FakeResponse)
+                response.body = response.body.replace(before, after)
+                replace_json_response(responses, "/data/i18n/manifest.json", lambda manifest:
+                    manifest["application_routes"]["ko"].update({"report.html": describe("ko/report.html", response.body)}))
+                with self.assertRaisesRegex(audit.AuditError, message):
+                    self.run_audit(plan, responses)
+
+    def test_declared_shell_http_bytes_and_shadow_protection_remain_strict(self) -> None:
+        for mutation, message in (("bytes", "size/SHA-256"), ("language", "Content-Language"), ("robots", "indexing header"), ("status", "HTTP 302")):
+            with self.subTest(mutation=mutation):
+                plan, responses = application_response_fixture()
+                response = responses["/ar/doc.html"]
+                assert isinstance(response, FakeResponse)
+                if mutation == "bytes": response.body += b"changed"
+                if mutation == "language": response.headers["Content-Language"] = "ko"
+                if mutation == "robots": del response.headers["X-Robots-Tag"]
+                if mutation == "status": response.status = 302
+                with self.assertRaisesRegex(audit.AuditError, message):
+                    self.run_audit(plan, responses)
+
+    def test_lazy_asset_mime_is_checked_before_live_acceptance(self) -> None:
+        plan, responses = application_response_fixture()
+        path = next(path for path in responses if path.startswith("/ja/assets/newsfeed-app.js?v="))
+        response = responses[path]
+        assert isinstance(response, FakeResponse)
+        response.headers["Content-Type"] = "text/html"
+        with self.assertRaisesRegex(audit.AuditError, "JavaScript content type"):
+            self.run_audit(plan, responses)
+
+    def test_shadow_accepts_manifest_above_previous_two_mib_live_bound(self) -> None:
+        plan, responses = application_response_fixture()
+        replace_json_response(responses, "/data/i18n/manifest.json", lambda manifest:
+            manifest.update(diagnostic_padding="x" * (3 * 1024 * 1024)))
+        result, _opener = self.run_audit(plan, responses)
+        row = next(row for row in result["checks"] if row["path"] == "/data/i18n/manifest.json")
+        self.assertGreater(row["bytes"], 3 * 1024 * 1024)
+        self.assertEqual(result["application_routes"]["status"], "passed")
+
+    def test_shadow_uses_shared_manifest_bound_and_schema_before_route_requests(self) -> None:
+        plan, responses = application_response_fixture()
+        with mock.patch.object(portal_locale_manifest, "MAX_LOCALE_MANIFEST_BYTES", 1024):
+            with self.assertRaisesRegex(audit.AuditError, "byte size.*outside"):
+                self.run_audit(plan, responses)
+        for schema in (True, 2):
+            with self.subTest(schema=schema):
+                plan, responses = application_response_fixture()
+                replace_json_response(responses, "/data/i18n/manifest.json", lambda manifest:
+                    manifest.update(schema_version=schema))
+                with self.assertRaisesRegex(audit.AuditError, "schema is invalid"):
+                    self.run_audit(plan, responses)
 
     def test_route_for_html_matches_worker_canonicals_for_every_locale(self) -> None:
         cases = (
