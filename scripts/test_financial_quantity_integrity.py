@@ -104,7 +104,7 @@ class FinancialQuantityTests(unittest.TestCase):
             ("The Luxury Data Handbook: September '26", '奢侈品数据手册：2026年9月'),
             ('New 15th Five-Year Healthcare Plan', '新“十五五”医疗规划'),
             ('New _15th Five~Year” Healthcare Plan', '新“十五五”医疗规划'),
-            ('the 15th plan', '第十五个规划'),
+            ('the 15th Five-Year Plan', '第十五个五年规划'),
             ('Policy Tracker: Sep 18', '政策跟踪：9月18日'),
         ]:
             with self.subTest(source=source):
@@ -113,11 +113,15 @@ class FinancialQuantityTests(unittest.TestCase):
             ('3Q26', '2026年第二季度'), ('4Q26', '2027年第四季度'),
             ('4Q26', '第四季度'), ('3Q', '2026年第三季度'),
             ('26 plants', '2026家工厂'), ('1H26', '2026年下半年'),
-            ("September '26", '2026年10月'), ('15th plan', '第十四个规划'),
+            ("September '26", '2026年10月'),
             ('15th Five-Year Plan', '“十四五”规划'),
         ]:
             with self.subTest(source=source, translated=translated):
                 self.assertTrue(quantity_issues(source, translated))
+        # Plan-specific support must not introduce a new quantity into existing
+        # ordinary ordinal labels, whose localized words do not contain digits.
+        self.assertEqual(quantity_issues('第一段研究报告', '첫 번째 연구 보고서'), [])
+        self.assertEqual(quantity_issues('The first report', '第一份报告'), [])
 
 
 if __name__ == '__main__':

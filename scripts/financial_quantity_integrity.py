@@ -126,13 +126,15 @@ def quantities(text: str) -> Counter:
     take(r"(?<!\d)(\d{1,2})\s*月\s*(\d{1,2})\s*日",
          lambda m: ("month_day", int(m[1]), int(m[2])))
 
-    # Ordinal labels such as the 15th Five-Year Plan translate to 第十五 or
-    # 十五五. Restrict Chinese numeral parsing to explicit ordinal/plan syntax,
-    # so ordinary words containing 一 are not mistaken for added quantities.
+    # Five-year-plan ordinals translate to 第十五个五年 or “十五五”. Limit
+    # this equivalence to plan syntax: ordinary labels such as 第一段 also
+    # translate to nonnumeric Korean/Japanese words and are not quantities.
     digits = dict(zip('零〇一二两三四五六七八九', (0, 0, 1, 2, 2, 3, 4, 5, 6, 7, 8, 9)))
     def chinese_ordinal(value):
         if value.isdigit():
             return int(value)
+        if not any(char in value for char in '十百千'):
+            return int(''.join(str(digits[char]) for char in value))
         total, current = 0, 0
         for char in value:
             if char in digits:
@@ -141,10 +143,14 @@ def quantities(text: str) -> Counter:
                 total += (current or 1) * {'十': 10, '百': 100, '千': 1000}[char]
                 current = 0
         return total + current
-    take(r"(?<![A-Za-z0-9])(\d+)(?:st|nd|rd|th)\b", lambda m: ("ordinal", int(m[1])))
-    take(r"第([零〇一二两三四五六七八九十百千\d]+)", lambda m: ("ordinal", chinese_ordinal(m[1])))
-    take(r"([一二三四五六七八九十]+)五(?=[”」』\"'规划计期间])",
-         lambda m: ("ordinal", chinese_ordinal(m[1])))
+    take(r"(?<![A-Za-z0-9])(\d+)(?:st|nd|rd|th)\s+Five[~\s-]+Year\b",
+         lambda m: ("five_year_plan", int(m[1])))
+    take(r"第?(\d+|[零〇一二两三四五六七八九十百千]+)(?:个)?五年",
+         lambda m: ("five_year_plan", chinese_ordinal(m[1])))
+    take(r"(?<=[“「『\"'])([一二三四五六七八九十]+)五(?=[”」』\"'])",
+         lambda m: ("five_year_plan", chinese_ordinal(m[1])))
+    take(r"([一二三四五六七八九十]+)五(?=规划|计划|时期|期间)",
+         lambda m: ("five_year_plan", chinese_ordinal(m[1])))
 
     # Currency recognition comes before scaled plain numbers. Keep the unit
     # separate so USD120m can never match an unqualified 120 or CNY120m.
