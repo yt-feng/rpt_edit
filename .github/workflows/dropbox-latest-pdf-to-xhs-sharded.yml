@@ -790,6 +790,7 @@ jobs:
             --blog-archive-root portal_suite/data/blog_archive
 
       - name: Commit public Blog archive
+        id: commit_blog_archive
         if: ${{ steps.upload_xhs_wechat.outcome == 'success' }}
         run: |
           DATE_FOLDER="${{ needs.select-macro-reports.outputs.latest_folder }}"
@@ -802,6 +803,30 @@ jobs:
           fi
           git commit -m "Archive Blog articles $DATE_FOLDER"
           bash scripts/push_main_with_rebase_retry.sh 5
+
+      - name: Refresh public site after accepted Blog archive
+        if: ${{ steps.upload_xhs_wechat.outcome == 'success' && steps.commit_blog_archive.outcome == 'success' }}
+        uses: actions/github-script@v7
+        env:
+          NEUTRAL_SCHEDULE_ENABLED: ${{ vars.NEUTRAL_SCHEDULE_ENABLED || 'false' }}
+          PORTAL_MULTILINGUAL_ENABLED: ${{ vars.PORTAL_MULTILINGUAL_ENABLED || 'false' }}
+          PORTAL_MULTILINGUAL_LIVE: ${{ vars.PORTAL_MULTILINGUAL_LIVE || 'false' }}
+        with:
+          script: |
+            if (process.env.NEUTRAL_SCHEDULE_ENABLED !== 'true' ||
+                (process.env.PORTAL_MULTILINGUAL_ENABLED === 'true' &&
+                 process.env.PORTAL_MULTILINGUAL_LIVE !== 'true')) {
+              core.info('Automatic public refresh is disabled by the current release settings.');
+              return;
+            }
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'neutral-edge-cutover.yml',
+              ref: 'main',
+              inputs: { operation: 'migrate', translation_scope: 'incremental' },
+            });
+            core.info('Queued incremental public refresh after accepted articles and Blog archive.');
 
       - name: Fail after archiving WeChat upload diagnostics
         if: ${{ steps.upload_xhs_wechat.outcome == 'failure' }}
@@ -1066,6 +1091,7 @@ jobs:
           path: .
 
       - name: Upload Portal translated reports to WeChat drafts
+        id: upload_portal_wechat
         env:
           WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
           WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
@@ -1111,6 +1137,7 @@ jobs:
             --blog-archive-root portal_suite/data/blog_archive
 
       - name: Commit public Blog archive
+        id: commit_blog_archive
         run: |
           DATE_FOLDER="${{ needs.select-macro-reports.outputs.latest_folder }}"
           git config user.name "github-actions[bot]"
@@ -1122,6 +1149,30 @@ jobs:
           fi
           git commit -m "Archive portal translated Blog articles $DATE_FOLDER"
           bash scripts/push_main_with_rebase_retry.sh 5
+
+      - name: Refresh public site after accepted Blog archive
+        if: ${{ steps.upload_portal_wechat.outcome == 'success' && steps.commit_blog_archive.outcome == 'success' }}
+        uses: actions/github-script@v7
+        env:
+          NEUTRAL_SCHEDULE_ENABLED: ${{ vars.NEUTRAL_SCHEDULE_ENABLED || 'false' }}
+          PORTAL_MULTILINGUAL_ENABLED: ${{ vars.PORTAL_MULTILINGUAL_ENABLED || 'false' }}
+          PORTAL_MULTILINGUAL_LIVE: ${{ vars.PORTAL_MULTILINGUAL_LIVE || 'false' }}
+        with:
+          script: |
+            if (process.env.NEUTRAL_SCHEDULE_ENABLED !== 'true' ||
+                (process.env.PORTAL_MULTILINGUAL_ENABLED === 'true' &&
+                 process.env.PORTAL_MULTILINGUAL_LIVE !== 'true')) {
+              core.info('Automatic public refresh is disabled by the current release settings.');
+              return;
+            }
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'neutral-edge-cutover.yml',
+              ref: 'main',
+              inputs: { operation: 'migrate', translation_scope: 'incremental' },
+            });
+            core.info('Queued incremental public refresh after accepted articles and Blog archive.');
 
   trigger-chart-search-index:
     needs: [resolve-inputs, select-macro-reports, process-shard]
