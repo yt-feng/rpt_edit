@@ -46,6 +46,13 @@ class ResumeWorkflowTests(unittest.TestCase):
         self.assertLess(restored, verified)
         self.assertLess(verified, policy)
 
+    def test_fresh_loading_budget_evidence_is_preserved_before_artifact_upload(self):
+        preserve = self.recovery.split('      - name: Preserve uploaded candidate provenance\n', 1)[1]
+        preserve = preserve.split('      - name: Upload release validation artifact\n', 1)[0]
+        self.assertIn('"$RUNNER_TEMP/chinese-recovery-performance.json"', preserve)
+        self.assertIn('_release_validation/candidate/chinese-recovery-performance.json', preserve)
+        self.assertIn('_release_validation/candidate/locale-resume-identity.json', preserve)
+
     def test_embedded_python_and_shell_parse(self):
         for block in re.split(r'(?=^      - name: )', self.recovery, flags=re.M)[1:]:
             if '        run: |\n' not in block:

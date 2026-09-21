@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import argparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
-import gzip
 import hashlib
 import io
 import json
@@ -20,9 +19,12 @@ from urllib.request import HTTPRedirectHandler, Request, build_opener
 import zipfile
 
 import publish_static_slot as publisher
+import check_portal_app_budget as app_budget
 from edge_route_cutover import request_status
 import verify_portal_chinese_parity as parity
-from verify_prepared_static_slot import static_tree_sha256
+from verify_prepared_static_slot import (
+    read_json_object as read_bounded_json_object, read_verified_candidate_body, static_tree_sha256,
+)
 from portal_locale_manifest import LocaleManifestError, load_locale_manifest, validate_translation_resolution
 from verify_portal_locale_routes import RouteVerificationError, declared_checks
 
@@ -63,6 +65,7 @@ PUBLIC_PATHS = frozenset((
 ))
 SHA40 = re.compile(r"[0-9a-f]{40}\Z")
 MAX_API_BYTES = 64 * 1024 * 1024
+MAX_APP_BUNDLE_BYTES = 16 * 1024 * 1024
 READ_RETRY_DELAYS = (2, 5, 10, 20, 30)
 DOWNLOAD_WORKERS = 4
 
@@ -353,6 +356,33 @@ def assert_no_incomplete(client: Any, bucket: str, slot: str) -> None:
     raise ResumeError("Candidate slot has an incomplete marker")
 
 
+def read_pinned_manifest(client: Any, bucket: str, identity: dict[str, Any]) -> dict[str, Any]:
+    """Bind bounded R2 reads to a captured release, never the mutable live URL."""
+    slot = identity["slot"]
+    assert_no_incomplete(client, bucket, slot)
+    try:
+        manifest = publisher.valid_manifest(read_bounded_json_object(client, bucket, publisher.manifest_key(slot)), slot)
+    except (RuntimeError, ValueError, TypeError) as error:
+        raise ResumeError(f"Pinned slot manifest cannot be read: {slot}: {error}") from error
+    require(manifest is not None and all(manifest[field] == identity[field] for field in ("slot", "release_id", "tree_sha256")),
+            f"Pinned slot manifest identity does not match: {slot}")
+    files = manifest["files"]
+    require(bool(files) and static_tree_sha256(files) == identity["tree_sha256"], f"Pinned slot manifest tree digest does not match: {slot}")
+    require(manifest.get("total_bytes") == sum(int(row["size"]) for row in files.values()),
+            f"Pinned slot manifest byte count does not match: {slot}")
+    return manifest
+
+
+def read_pinned_app(client: Any, bucket: str, manifest: dict[str, Any]) -> bytes:
+    descriptor = manifest["files"].get("assets/app.js")
+    require(isinstance(descriptor, dict), "Pinned release is missing its Chinese app")
+    try:
+        return read_verified_candidate_body(client, bucket, publisher.slot_prefix(manifest["slot"]) + "assets/app.js",
+                                            descriptor, maximum=MAX_APP_BUNDLE_BYTES)
+    except (RuntimeError, ValueError, TypeError) as error:
+        raise ResumeError(f"Pinned Chinese app failed verification: {error}") from error
+
+
 def validate_remote_slot(client: Any, bucket: str, slot: str, release: str, tree: str, *, workers: int = 16) -> dict[str, Any]:
     assert_no_incomplete(client, bucket, slot)
     manifest = publisher.valid_manifest(publisher.read_json_object(client, bucket, publisher.manifest_key(slot)), slot)
@@ -474,7 +504,7 @@ def download_candidate_files(client: Any, bucket: str, manifest: dict[str, Any],
     return downloaded
 
 
-def validate_diagnostics(directory: Path, site_dir: Path, logs: str, origin: str) -> dict[str, Any]:
+def validate_diagnostics(directory: Path, app: bytes, logs: str, origin: str, *, active_app: bytes) -> dict[str, Any]:
     values = {name: decode_json((directory / name).read_bytes(), name) for name in DIAGNOSTICS}
     preflight = values["locale-preflight-diagnostics.json"]
     full = values["locale-full-diagnostics.json"]
@@ -489,17 +519,19 @@ def validate_diagnostics(directory: Path, site_dir: Path, logs: str, origin: str
             and bool(publisher.SHA256_PATTERN.fullmatch(str(report.get("verified_tree_digest", "")))), "Source Chinese parity digests are invalid")
     require(report["digest"] in logs and report["verified_tree_digest"] in logs, "Source log does not attest the downloaded parity report")
     performance = values["chinese-performance.json"]
-    app = (site_dir / "assets/app.js").read_bytes()
-    gzipped = gzip.compress(app, compresslevel=9, mtime=0)
-    require(performance.get("schema_version") == 1 and performance.get("candidate_bytes") == len(app)
-            and performance.get("candidate_gzip_bytes") == len(gzipped)
-            and performance.get("candidate_sha256") == hashlib.sha256(app).hexdigest(), "Chinese performance report does not match uploaded app")
-    require(len(app) <= 700_000 and len(gzipped) <= 150_000, "Chinese app exceeds its loading budget")
-    require(performance.get("active_compared") is True and performance.get("raw_delta_bytes", 25000) <= 24000
-            and performance.get("gzip_delta_bytes", 7000) <= 6000, "Chinese performance comparison did not pass")
+    comparison = app_budget.check_budget(app, active_app)
+    # The production multilingual build deliberately uses the absolute-only
+    # producer contract. Preserve that evidence, then independently enforce the
+    # delta budget against the captured previous release during recovery.
+    require(type(performance.get("active_compared")) is bool, "Chinese performance comparison mode is invalid")
+    source_expected = comparison if performance["active_compared"] else app_budget.check_budget(app)
+    require(performance == source_expected, "Chinese performance report does not match uploaded app and its producer contract")
+    require(performance["status"] == "passed", "Source Chinese performance check did not pass")
     require(performance["candidate_sha256"] in logs, "Source log does not attest Chinese performance")
+    require(comparison["status"] == "passed", "Fresh Chinese performance comparison did not pass: " + ", ".join(comparison["violations"]))
     return {"chinese_parity_sha256": hashlib.sha256((directory / "chinese-parity.json").read_bytes()).hexdigest(),
-            "preflight_passed": True, "locale_ready": True, "performance_passed": True}
+            "preflight_passed": True, "locale_ready": True, "performance_passed": True,
+            "performance_comparison": comparison, "source_performance_active_compared": performance["active_compared"]}
 
 
 def resume_candidate(*, github: Any, client: Any, bucket: str, repository: str, run_id: int, run_attempt: int,
@@ -521,18 +553,27 @@ def resume_candidate(*, github: Any, client: Any, bucket: str, repository: str, 
     verify_logged_identity(identity_logs, slot=slot, release=release, tree=expected_tree, commit=expected_commit, previous=previous)
     phase("live_baseline")
     require(fetch_live(origin) == previous, "Live Edge state changed since baseline capture")
+    download_diagnostics(github, repository, run_id, run_attempt, diagnostics_dir)
+    phase("diagnostic_performance_preflight")
+    pinned_candidate = read_pinned_manifest(client, bucket, {"slot": slot, "release_id": release, "tree_sha256": expected_tree})
+    pinned_previous = read_pinned_manifest(client, bucket, previous)
+    diagnostics = validate_diagnostics(diagnostics_dir, read_pinned_app(client, bucket, pinned_candidate), logs, origin,
+                                       active_app=read_pinned_app(client, bucket, pinned_previous))
+    comparison = {**diagnostics["performance_comparison"], "baseline_slot": previous["slot"],
+                  "baseline_release_id": previous["release_id"], "baseline_tree_sha256": previous["tree_sha256"],
+                  "source_active_compared": diagnostics["source_performance_active_compared"]}
+    write_local(work_dir, "chinese-recovery-performance.json", publisher.json_bytes(comparison))
     phase("remote_slot_verification")
     manifest = validate_remote_slot(client, bucket, slot, release, expected_tree, workers=workers)
-    download_diagnostics(github, repository, run_id, run_attempt, diagnostics_dir)
+    require(manifest == pinned_candidate, "Candidate slot manifest changed after performance preflight")
     phase("candidate_file_download")
     downloaded = download_candidate_files(client, bucket, manifest, site_dir, workers=workers)
-    phase("diagnostic_validation")
-    diagnostics = validate_diagnostics(diagnostics_dir, site_dir, logs, origin)
     phase("final_identity_recheck")
     require(fetch_live(origin) == previous, "Live Edge state changed during candidate restore")
     assert_no_incomplete(client, bucket, slot)
     final_manifest = publisher.valid_manifest(publisher.read_json_object(client, bucket, publisher.manifest_key(slot)), slot)
     require(final_manifest == manifest, "Candidate slot manifest changed during restore")
+    require(read_pinned_manifest(client, bucket, previous) == pinned_previous, "Previous slot manifest changed during restore")
     for name in DIAGNOSTICS:
         write_local(work_dir, name, (diagnostics_dir / name).read_bytes())
     result = {

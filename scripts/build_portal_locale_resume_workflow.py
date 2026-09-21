@@ -151,7 +151,9 @@ jobs:
     for name in names:
         if name == 'Upload release validation artifact':
             result += '''      - name: Preserve uploaded candidate provenance
-        run: install -m 0600 "$RUNNER_TEMP/locale-resume-identity.json" _release_validation/candidate/locale-resume-identity.json
+        run: |
+          install -m 0600 "$RUNNER_TEMP/locale-resume-identity.json" _release_validation/candidate/locale-resume-identity.json
+          install -m 0600 "$RUNNER_TEMP/chinese-recovery-performance.json" _release_validation/candidate/chinese-recovery-performance.json
 
 '''
         block = steps[name].replace('steps.operation.outputs.commit_sha', 'steps.static_upload.outputs.commit_sha')

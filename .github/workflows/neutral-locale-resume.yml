@@ -590,7 +590,9 @@ jobs:
           fi
 
       - name: Preserve uploaded candidate provenance
-        run: install -m 0600 "$RUNNER_TEMP/locale-resume-identity.json" _release_validation/candidate/locale-resume-identity.json
+        run: |
+          install -m 0600 "$RUNNER_TEMP/locale-resume-identity.json" _release_validation/candidate/locale-resume-identity.json
+          install -m 0600 "$RUNNER_TEMP/chinese-recovery-performance.json" _release_validation/candidate/chinese-recovery-performance.json
 
       - name: Upload release validation artifact
         if: steps.release_delta.outputs.changed == 'true' && (steps.operation.outputs.multilingual_enabled != 'true' || steps.locale_build.outputs.ready == 'true')
