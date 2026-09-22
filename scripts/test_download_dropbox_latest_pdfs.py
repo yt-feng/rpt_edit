@@ -53,6 +53,20 @@ class DropboxDownloadRetryTests(unittest.TestCase):
 
         self.assertEqual(selected["name"], "20260826")
 
+    def test_expected_date_folder_rejects_stale_latest_selection(self) -> None:
+        selected = {".tag": "folder", "name": "20260826"}
+
+        with self.assertRaisesRegex(RuntimeError, "expected 20260827, selected latest folder 20260826"):
+            downloader.validate_expected_date_folder(selected, "20260827")
+
+    def test_expected_date_folder_accepts_matching_selection(self) -> None:
+        selected = {".tag": "folder", "name": "20260827"}
+
+        self.assertIs(
+            downloader.validate_expected_date_folder(selected, "20260827"),
+            selected,
+        )
+
     def test_missing_requested_date_folder_fails_closed(self) -> None:
         entries = [{".tag": "folder", "name": "20260826"}]
 

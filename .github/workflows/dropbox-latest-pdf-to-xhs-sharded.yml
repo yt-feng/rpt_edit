@@ -126,6 +126,7 @@ jobs:
     outputs:
       dropbox_root: ${{ steps.vars.outputs.dropbox_root }}
       dropbox_date_folder: ${{ steps.vars.outputs.dropbox_date_folder }}
+      expected_dropbox_date_folder: ${{ steps.vars.outputs.expected_dropbox_date_folder }}
       model: ${{ steps.vars.outputs.model }}
       deepseek_base_url: ${{ steps.vars.outputs.deepseek_base_url }}
       mineru_model: ${{ steps.vars.outputs.mineru_model }}
@@ -154,6 +155,11 @@ jobs:
         run: |
           echo "dropbox_root=${{ github.event.inputs.dropbox_root || '/zip_backup' }}" >> "$GITHUB_OUTPUT"
           echo "dropbox_date_folder=${{ github.event.inputs.dropbox_date_folder || '' }}" >> "$GITHUB_OUTPUT"
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            echo "expected_dropbox_date_folder=$(TZ=Asia/Shanghai date +%y%m%d)" >> "$GITHUB_OUTPUT"
+          else
+            echo "expected_dropbox_date_folder=" >> "$GITHUB_OUTPUT"
+          fi
           echo "model=${{ github.event.inputs.model || 'deepseek-flash' }}" >> "$GITHUB_OUTPUT"
           echo "deepseek_base_url=${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}" >> "$GITHUB_OUTPUT"
           echo "mineru_model=${{ github.event.inputs.mineru_model || 'vlm' }}" >> "$GITHUB_OUTPUT"
@@ -179,6 +185,9 @@ jobs:
       - name: Print resolved plan
         run: |
           echo "::notice::Daily schedule is 02:00 Asia/Shanghai, 90 minutes after the usual 00:30 Dropbox readiness time. XHS, Xianyu, podcast copy and podcast audio/video are disabled."
+          if [ -n "${{ steps.vars.outputs.expected_dropbox_date_folder }}" ]; then
+            echo "::notice::Scheduled runs require Dropbox date folder ${{ steps.vars.outputs.expected_dropbox_date_folder }}; stale latest folders fail closed."
+          fi
           echo "::notice::Report selection mode=${{ steps.vars.outputs.report_selection_mode }}. Default all mode keeps stock/company reports for long-tail WeChat search."
           echo "::notice::Default plan processes ALL selected candidates, sharded as 40 x 5 = up to 200 reports."
           echo "::notice::WeChat draft upload defaults to xhs_notes, so successful MinerU report articles can enter drafts without waiting for Portal translated PDFs."
@@ -229,6 +238,7 @@ jobs:
           DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
         run: |
           REQUESTED_DATE="${{ needs.resolve-inputs.outputs.dropbox_date_folder }}"
+          EXPECTED_DATE="${{ needs.resolve-inputs.outputs.expected_dropbox_date_folder }}"
           if [ -n "$REQUESTED_DATE" ]; then
             echo "::notice::Downloading exact Dropbox date folder $REQUESTED_DATE once for report selection."
           else
@@ -237,6 +247,7 @@ jobs:
           python scripts/download_dropbox_latest_pdfs.py \
             --dropbox-root "${{ needs.resolve-inputs.outputs.dropbox_root }}" \
             --date-folder "$REQUESTED_DATE" \
+            --expected-date-folder "$EXPECTED_DATE" \
             --output-dir "_dropbox_latest_pdfs"
       - name: Select reports with DeepSeek
         id: select_macro

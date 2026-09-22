@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Download PDFs from the latest date-named folder under a Dropbox root.
+"""Download PDFs from a date-named folder under a Dropbox root.
 
 Expected Dropbox layout:
 /zip_backup/
@@ -9,8 +9,9 @@ Expected Dropbox layout:
   260513/
     c.pdf
 
-The script selects the latest date-like child folder by numeric name and downloads all PDFs
-inside it recursively into --output-dir.
+The script selects the latest date-like child folder by numeric name unless an exact folder
+is requested, and can fail closed when a scheduled run's expected date is not available.
+All PDFs inside the selected folder are downloaded recursively into --output-dir.
 """
 from __future__ import annotations
 
@@ -126,6 +127,26 @@ def select_date_folder(entries: list[dict[str, Any]], requested: str = "") -> di
     raise RuntimeError(f"Requested Dropbox date folder was not found: {requested}")
 
 
+def validate_expected_date_folder(selected: dict[str, Any], expected: str = "") -> dict[str, Any]:
+    """Reject a stale latest-folder selection when the caller requires a date."""
+    expected = expected.strip()
+    if not expected:
+        return selected
+    if not DATE_FOLDER_RE.fullmatch(expected):
+        raise RuntimeError(
+            f"Expected Dropbox date folder must contain 6 to 8 digits: {expected!r}"
+        )
+    selected_name = str(selected.get("name", ""))
+    if selected_name != expected:
+        raise RuntimeError(
+            "Fresh Dropbox date folder was not available: "
+            f"expected {expected}, selected latest folder {selected_name or '<unknown>'}. "
+            "The scheduled run stopped before processing stale reports; rerun with "
+            "--date-folder once the expected folder is available."
+        )
+    return selected
+
+
 def safe_local_relpath(dropbox_path: str, latest_path: str, fallback_name: str) -> str:
     """Create a safe local relative path while preserving readable filenames when possible."""
     rel = str(dropbox_path).replace(str(latest_path).rstrip("/") + "/", "", 1).lstrip("/")
@@ -222,6 +243,11 @@ def main() -> int:
         default="",
         help="Exact 6-8 digit child folder to download; empty selects the latest folder",
     )
+    parser.add_argument(
+        "--expected-date-folder",
+        default="",
+        help="Require the selected folder to match this date; useful for scheduled runs",
+    )
     parser.add_argument("--output-dir", required=True)
     args = parser.parse_args()
 
@@ -234,6 +260,7 @@ def main() -> int:
         log(f"Listing Dropbox root: {root}")
         root_entries = list_folder(token, root, recursive=False)
         latest = select_date_folder(root_entries, args.date_folder)
+        validate_expected_date_folder(latest, args.expected_date_folder)
         latest_name = latest["name"]
         latest_path = latest.get("path_lower") or latest.get("path_display") or f"{root}/{latest_name}"
         selection_label = "Requested" if args.date_folder else "Latest"
