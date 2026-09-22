@@ -14,6 +14,8 @@ on:
       - "scripts/select_macro_trend_pdfs.py"
       - "scripts/check_completed_shard.py"
       - "scripts/*pdf_to_xhs*"
+      - "scripts/download_dropbox_latest_pdfs.py"
+      - "scripts/test_download_dropbox_latest_pdfs.py"
       - "scripts/finalize_outputs.py"
       - "scripts/postprocess_podcast.py"
       - "scripts/sensitive_content_guard.py"
@@ -40,6 +42,8 @@ on:
       - "scripts/select_macro_trend_pdfs.py"
       - "scripts/check_completed_shard.py"
       - "scripts/*pdf_to_xhs*"
+      - "scripts/download_dropbox_latest_pdfs.py"
+      - "scripts/test_download_dropbox_latest_pdfs.py"
       - "scripts/finalize_outputs.py"
       - "scripts/postprocess_podcast.py"
       - "scripts/sensitive_content_guard.py"
@@ -87,6 +91,7 @@ jobs:
           python scripts/test_wechat_api_verification.py
           python scripts/test_delete_wechat_drafts.py
           python scripts/test_xhs_draft_streaming.py
+          python scripts/test_download_dropbox_latest_pdfs.py
           python scripts/test_verify_existing_wechat_drafts.py
           python scripts/test_sensitive_title_guard.py
           python scripts/test_update_blog_archive_from_wechat_drafts.py

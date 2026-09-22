@@ -121,6 +121,18 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
         self.assertIn('--expected-count "${{ github.event.inputs.expected_shards || \'0\' }}"', download)
         self.assertIn('gh run watch "$MARKET_RUN_ID"', trigger)
 
+    def test_scheduled_daily_flow_rejects_stale_dropbox_folders(self):
+        workflow = UPSTREAM.read_text(encoding="utf-8")
+        self.assertIn(
+            "expected_dropbox_date_folder: ${{ steps.vars.outputs.expected_dropbox_date_folder }}",
+            workflow,
+        )
+        self.assertIn('TZ=Asia/Shanghai date +%y%m%d', workflow)
+        self.assertIn(
+            '--expected-date-folder "$EXPECTED_DATE"',
+            workflow,
+        )
+
     def test_cleanup_retains_inputs_for_failed_or_cancelled_consumers(self):
         cleanup = job(UPSTREAM, "cleanup-private-handoff")
         results = {name: "success" for name in (
