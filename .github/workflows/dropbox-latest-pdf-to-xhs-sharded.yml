@@ -8,7 +8,7 @@ on:
         required: true
         default: "/zip_backup"
       dropbox_date_folder:
-        description: "Optional exact 6-8 digit Dropbox child folder; empty uses the latest"
+        description: "Optional exact report batch in YYMMDD or YYYYMMDD; empty uses latest. Batch date may be the previous Beijing day."
         required: false
         default: ""
       model:
@@ -106,6 +106,7 @@ on:
   schedule:
     # 18:00 UTC = 02:00 Asia/Shanghai. Dropbox reports normally arrive by
     # 00:30, leaving a 90-minute readiness buffer before the long stable run.
+    # Report batch dates may be one calendar day behind the Beijing run date.
     - cron: "0 18 * * *"
 
 permissions:
@@ -186,7 +187,7 @@ jobs:
         run: |
           echo "::notice::Daily schedule is 02:00 Asia/Shanghai, 90 minutes after the usual 00:30 Dropbox readiness time. XHS, Xianyu, podcast copy and podcast audio/video are disabled."
           if [ -n "${{ steps.vars.outputs.expected_dropbox_date_folder }}" ]; then
-            echo "::notice::Scheduled runs require Dropbox date folder ${{ steps.vars.outputs.expected_dropbox_date_folder }}; stale latest folders fail closed."
+            echo "::notice::Scheduled runs require the latest Dropbox batch within one calendar day of Beijing run date ${{ steps.vars.outputs.expected_dropbox_date_folder }}; older or future-dated batches fail closed."
           fi
           echo "::notice::Report selection mode=${{ steps.vars.outputs.report_selection_mode }}. Default all mode keeps stock/company reports for long-tail WeChat search."
           echo "::notice::Default plan processes ALL selected candidates, sharded as 40 x 5 = up to 200 reports."
@@ -248,6 +249,7 @@ jobs:
             --dropbox-root "${{ needs.resolve-inputs.outputs.dropbox_root }}" \
             --date-folder "$REQUESTED_DATE" \
             --expected-date-folder "$EXPECTED_DATE" \
+            --max-folder-age-days 1 \
             --output-dir "_dropbox_latest_pdfs"
       - name: Select reports with DeepSeek
         id: select_macro
