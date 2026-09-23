@@ -62,10 +62,48 @@ class SensitiveTitleGuardTests(unittest.TestCase):
                     hard_blocked_wechat_title_reason(title),
                 )
 
-    def test_hard_title_term_does_not_expand_to_adjacent_currency_topics(self) -> None:
-        self.assertIsNone(
-            hard_blocked_wechat_title_reason("德意志银行：人民币汇率估值的研究观察")
+    def test_hard_title_keywords_match_anywhere_in_title(self) -> None:
+        cases = (
+            ("北京", "forbidden_title_term_beijing"),
+            ("北京消费数据观察", "forbidden_title_term_beijing"),
+            ("高盛：北京消费数据观察", "forbidden_title_term_beijing"),
+            ("城市需求观察：北京", "forbidden_title_term_beijing"),
+            ("北京银行季度业务数据", "forbidden_title_term_beijing"),
+            ("人民币", "forbidden_title_term_rmb"),
+            ("人民币汇率变化观察", "forbidden_title_term_rmb"),
+            ("德意志银行：人民币汇率估值的研究观察", "forbidden_title_term_rmb"),
+            ("高盛：离岸人民币需求数据", "forbidden_title_term_rmb"),
+            ("结算币种为人民币", "forbidden_title_term_rmb"),
+            ("北京与人民币相关数据", "forbidden_title_term_beijing"),
         )
+        for title, reason in cases:
+            with self.subTest(title=title):
+                self.assertEqual(reason, hard_blocked_wechat_title_reason(title))
+
+    def test_hard_title_keywords_do_not_expand_to_unrelated_terms(self) -> None:
+        for title in ("", "   ", "高盛：AI服务器订单增长", "上海消费数据观察",
+                      "数字货币结算数据", "亚洲汇率变化观察", "南京产业数据"):
+            with self.subTest(title=title):
+                self.assertIsNone(hard_blocked_wechat_title_reason(title))
+
+    def test_hard_keywords_cannot_hide_in_source_or_final_title(self) -> None:
+        from push_xhs_notes_to_wechat_drafts import hard_blocked_xhs_title_record
+        from push_portal_translated_to_wechat_drafts import hard_blocked_portal_title_record
+        guards = (
+            (hard_blocked_xhs_title_record, ("raw_title", "source_report_name", "wechat_title")),
+            (hard_blocked_portal_title_record, ("raw_title", "original_title", "source_report_name", "wechat_title")),
+        )
+        for guard, fields in guards:
+            for field in fields:
+                for term, reason in (("北京", "forbidden_title_term_beijing"),
+                                     ("人民币", "forbidden_title_term_rmb")):
+                    with self.subTest(guard=guard.__name__, field=field, term=term):
+                        metadata = {key: "高盛：行业需求数据变化" for key in fields}
+                        metadata[field] = f"高盛：{term}相关数据变化"
+                        record = guard(metadata)
+                        self.assertIsNotNone(record)
+                        self.assertEqual(reason, record["skip_reason"])
+                        self.assertEqual(field, record["matched_title_field"])
 
     def test_nomura_sensitive_report_is_blocked_from_wechat(self) -> None:
         metadata = {
