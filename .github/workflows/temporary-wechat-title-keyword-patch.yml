@@ -87,22 +87,6 @@ jobs:
                               self.assertEqual(field, record["matched_title_field"])
           '''
           replace_once('scripts/test_sensitive_title_guard.py', old_test, new_test)
-
-          replace_once(
-              'scripts/test_xhs_draft_streaming.py',
-              '    def test_all_hard_blocked_titles_create_no_article_or_draft_payload(self) -> None:\n        with tempfile.TemporaryDirectory() as tmp:\n',
-              '    def test_all_hard_blocked_titles_create_no_article_or_draft_payload(self) -> None:\n'
-              '        for title in ("高盛：人民币定价机制出现变化", "高盛：人民币需求数据变化", "高盛：北京消费数据变化"):\n'
-              '            with self.subTest(title=title):\n'
-              '                self._assert_hard_title_creates_no_remote_work(title)\n\n'
-              '    def _assert_hard_title_creates_no_remote_work(self, title: str) -> None:\n'
-              '        with tempfile.TemporaryDirectory() as tmp:\n',
-          )
-          replace_once(
-              'scripts/test_xhs_draft_streaming.py',
-              '                "# 高盛：人民币定价机制出现变化\\n\\n这是一段完整的测试正文。",\n',
-              '                f"# {title}\\n\\n这是一段完整的测试正文。",\n',
-          )
           PY
       - name: Install test dependencies
         run: python -m pip install -r requirements.txt reportlab
@@ -118,6 +102,6 @@ jobs:
           git diff --check
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add scripts/sensitive_content_guard.py scripts/test_sensitive_title_guard.py scripts/test_xhs_draft_streaming.py
+          git add scripts/sensitive_content_guard.py scripts/test_sensitive_title_guard.py
           git commit -m 'fix: hard-block WeChat titles containing 北京 or 人民币'
           git push origin HEAD:refs/heads/fix/wechat-hard-title-keywords-20260923
