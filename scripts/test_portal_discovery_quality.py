@@ -75,6 +75,34 @@ class InstitutionQualityTests(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError, 'protected title identifier'):
             titles.translate_title('BofA-Outlook', Namespace(_offline_translator=translator))
 
+    def test_placeholder_failure_retries_once_with_visible_boundaries(self):
+        translator = mock.Mock()
+        translator.translate.side_effect = [
+            RuntimeError("Hy-MT2 changed, omitted, or duplicated a protected placeholder"),
+            "__KC_PH_0001__-香港股票策略专家访谈要点 __KC_PH_0000__",
+        ]
+        result = titles.translate_title(
+            'JPM-Hong Kong Equity Strategy Expert Call takeaways-260918',
+            Namespace(_offline_translator=translator),
+        )
+        self.assertEqual(result, '摩根大通-香港股票策略专家访谈要点 -260918')
+        self.assertEqual(translator.translate.call_count, 2)
+        self.assertIn('takeaways __KC_PH_0000__', translator.translate.call_args.args[0])
+
+    def test_retry_never_accepts_damaged_output_or_loops(self):
+        translator = mock.Mock()
+        translator.translate.return_value = '没有保留标识符'
+        with self.assertRaisesRegex(RuntimeError, 'protected title identifier'):
+            titles.translate_title('JPM-Outlook-260918', Namespace(_offline_translator=translator))
+        self.assertEqual(translator.translate.call_count, 2)
+
+    def test_quantity_failure_is_not_retried_as_a_placeholder_error(self):
+        translator = mock.Mock()
+        translator.translate.side_effect = RuntimeError('financial quantity mismatch')
+        with self.assertRaisesRegex(RuntimeError, 'financial quantity mismatch'):
+            titles.translate_title('JPM-Growth 12.5%-260918', Namespace(_offline_translator=translator))
+        self.assertEqual(translator.translate.call_count, 1)
+
     def test_existing_catalog_repairs_without_model_request(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / 'catalog.json'

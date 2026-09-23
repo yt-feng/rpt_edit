@@ -214,11 +214,28 @@ def translate_title(title: str, args: argparse.Namespace) -> str:
     from build_portal_suite_site import INSTITUTION_HUBS
     protected = protect_institution_prefix(protected, identifiers, INSTITUTION_HUBS)
     try:
-        translated = normalize_translation(args._offline_translator.translate(
-            protected, target="zh", source=_detect_source(title), markdown=False))
-        for token, value in identifiers.items():
-            if translated.count(token) != 1:
+        def translate_checked(model_input: str) -> str:
+            result = normalize_translation(args._offline_translator.translate(
+                model_input, target="zh", source=_detect_source(title), markdown=False))
+            if any(result.count(token) != 1 for token in identifiers):
                 raise RuntimeError("Offline model changed a protected title identifier")
+            return result
+
+        try:
+            translated = translate_checked(protected)
+        except RuntimeError as error:
+            # Some titles attach a filename sentinel directly to a word. Retry
+            # once with visible token boundaries; never repair model output or
+            # relax the existing placeholder/financial-quantity validators.
+            spaced = re.sub(r"(__KC_PH_[0-9]+__)", r" \1 ", protected)
+            spaced = re.sub(r"\s+", " ", spaced).strip()
+            placeholder_error = any(message in str(error) for message in (
+                "protected placeholder", "protected title identifier",
+            ))
+            if not identifiers or not placeholder_error or spaced == protected:
+                raise
+            translated = translate_checked(spaced)
+        for token, value in identifiers.items():
             translated = translated.replace(token, value)
     except Exception as error:
         if getattr(args, "diagnostics_out", None):
