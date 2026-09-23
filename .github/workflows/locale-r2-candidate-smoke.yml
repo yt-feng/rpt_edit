@@ -1,0 +1,71 @@
+name: Verify real offline locale checkpoint in R2
+on:
+  push:
+    branches: [codex/locale-script-diagnostics-20260923]
+    paths: [.github/workflows/locale-r2-candidate-smoke.yml]
+permissions:
+  contents: read
+concurrency:
+  group: portal-global-locale-prepare
+  cancel-in-progress: false
+jobs:
+  validate:
+    if: github.event.repository.private == false && github.actor == github.repository_owner
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install requests Pillow 'boto3>=1.34,<2' 'opencc-python-reimplemented==0.1.7'
+      - name: Build complete public repository source with the optimized generator
+        run: python -B scripts/prepare_portal_global_locales.py --build-source --output-root "$RUNNER_TEMP/source" --site-url https://kcdesk.com
+      - name: Store and verify immutable source identity through R2
+        id: source
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          set -euo pipefail
+          python -B scripts/portal_global_r2.py push-source --path "$RUNNER_TEMP/source"
+          identity=$(python -c 'import json,os;print(json.load(open(os.environ["RUNNER_TEMP"]+"/public-source-manifest.json"))["source_sha256"])')
+          python -B scripts/portal_global_r2.py pull-source --path "$RUNNER_TEMP/restored-source" --expected-source "$identity"
+      - uses: ./.github/actions/setup-offline-translation
+        with:
+          targets: en
+          retain-audit: false
+      - name: Translate actual public page units with the local model only
+        run: |
+          python -B scripts/prepare_portal_global_locales.py --source-root "$RUNNER_TEMP/restored-source" \
+            --output-root "$RUNNER_TEMP/result/site" --cache "$RUNNER_TEMP/cache.json.gz" \
+            --targets en --site-url https://kcdesk.com --index-start-date 2026-09-23 --budget-seconds 180
+      - name: Persist and restore the actual accepted checkpoint without GitHub artifacts
+        if: always() && steps.source.outcome == 'success'
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          set -euo pipefail
+          test -s "$RUNNER_TEMP/cache.json.gz"
+          python -B scripts/portal_global_r2.py push-checkpoint --path "$RUNNER_TEMP/cache.json.gz" --locale en
+          python -B scripts/portal_global_r2.py pull-checkpoint --path "$RUNNER_TEMP/restored-cache.json.gz" --locale en
+          cmp "$RUNNER_TEMP/cache.json.gz" "$RUNNER_TEMP/restored-cache.json.gz"
+          python -B scripts/portal_global_r2.py push-readiness --path "$RUNNER_TEMP/result/readiness.json" --locale en
+          python - <<'PY'
+          import gzip,json,os,pathlib
+          root=pathlib.Path(os.environ['RUNNER_TEMP'])
+          cache=json.loads(gzip.decompress((root/'restored-cache.json.gz').read_bytes()))
+          result=json.loads((root/'result/readiness.json').read_text())
+          assert result['production_ready'] is False and result['paid_provider_requests']==0
+          summary={'storage':'cloudflare-r2','checkpoint_readback':'byte-identical','accepted_entries':len(cache['locales']['en']),'status':result['status'],'candidate_complete':result['candidate_complete'],'production_ready':False,'paid_provider_requests':0}
+          assert summary['accepted_entries']>0,'No real translations were retained'
+          print(json.dumps(summary))
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as out:out.write('## Real offline checkpoint verified\n```json\n'+json.dumps(summary,indent=2)+'\n```\n')
+          PY
