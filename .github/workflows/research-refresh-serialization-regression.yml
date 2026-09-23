@@ -1,0 +1,36 @@
+name: Research refresh serialization regression
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/portal-research-index-refresh.yml'
+      - '.github/workflows/research-refresh-serialization-regression.yml'
+      - 'scripts/test_research_refresh_concurrency.py'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/portal-research-index-refresh.yml'
+      - '.github/workflows/research-refresh-serialization-regression.yml'
+      - 'scripts/test_research_refresh_concurrency.py'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check serialization and existing index boundaries
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check 'boto3>=1.34,<2'
+          python scripts/test_research_refresh_concurrency.py
+          python scripts/test_report_research_index.py
+          python scripts/test_download_report_research_inputs.py
