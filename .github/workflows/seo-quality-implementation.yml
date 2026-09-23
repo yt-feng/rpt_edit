@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Package public source for isolated review
         run: |
-          git archive --format=zip --output=/tmp/public-source.zip HEAD scripts docs portal_suite/site_src portal_suite/tests portal_suite/locale_assets portal_suite/growth_actions.json workers .github README.md requirements.txt requirements-translation.txt
+          git archive --format=zip --output=/tmp/public-source.zip HEAD scripts docs portal_suite workers .github README.md requirements.txt requirements-translation.txt
       - uses: actions/upload-artifact@v4
         with:
           name: seo-quality-public-source
@@ -46,9 +46,11 @@ jobs:
           test "$(git branch --show-current)" = 'codex/seo-geo-quick-wins-20260923'
           git apply --check .seo-quality.patch
           git apply --index .seo-quality.patch
+          rm .seo-quality.patch
       - name: Run source regression tests
         run: |
           set -euo pipefail
+          python -m pip install --disable-pip-version-check 'requests>=2.31,<3' 'Pillow>=10.1,<12' 'pypdf>=4,<6'
           python -m unittest discover -s scripts -p 'test_portal_discovery_quality.py' -v
           python scripts/test_portal_seo.py
           python scripts/test_portal_blog_build.py
@@ -57,13 +59,13 @@ jobs:
           python scripts/test_wechat_output_contract.py
           python scripts/test_audit_portal_seo_live.py
           python scripts/check_public_identity.py
-          python scripts/check_public_brand.py
+          python scripts/test_check_public_brand.py
           node --test portal_suite/tests/*.test.mjs
           node --test workers/edge-static-host/test/*.test.mjs
       - name: Commit verified implementation and remove temporary bootstrap
         run: |
           set -euo pipefail
-          rm .seo-quality.patch .github/workflows/seo-quality-implementation.yml
+          rm .github/workflows/seo-quality-implementation.yml
           git add -A
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
