@@ -1,0 +1,59 @@
+name: Global public source preparation regression
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/prepare_portal_global_locales.py'
+      - 'scripts/build_portal_locales.py'
+      - 'scripts/build_portal_suite_site.py'
+      - 'scripts/portal_language_registry.py'
+      - '.github/workflows/portal-global-source-regression.yml'
+      - '.github/workflows/portal-global-locale-prepare.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: global-source-regression-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  source:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build public source with no model or provider credentials
+        run: |
+          set -euo pipefail
+          python -m pip install requests Pillow 'opencc-python-reimplemented==0.1.7'
+          python -B scripts/prepare_portal_global_locales.py --build-source \
+            --output-root "$RUNNER_TEMP/source" --site-url https://kcdesk.com
+          python - <<'PY'
+          import json, os, pathlib, sys
+          sys.path.insert(0, 'scripts')
+          from prepare_portal_global_locales import source_identity
+          root = pathlib.Path(os.environ['RUNNER_TEMP'])
+          manifest = json.loads((root / 'public-source-manifest.json').read_text())
+          assert manifest['source_sha256'] == source_identity(root / 'source')
+          assert manifest['production_ready'] is False
+          assert manifest['private_chart_and_hot_overlays'] == 'not_loaded'
+          assert (root / 'source/index.html').is_file()
+          assert (root / 'source/data/catalog.json').is_file()
+          assert not (root / 'source/data/i18n/manifest.json').exists()
+          PY
+      - name: Retain small source-build evidence only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: global-source-build-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/public-source-manifest.json
+          retention-days: 1
+          if-no-files-found: warn
