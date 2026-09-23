@@ -5,6 +5,9 @@ on:
     paths: [.github/workflows/seo-title-placeholder-repair.yml]
 permissions:
   contents: read
+concurrency:
+  group: seo-title-placeholder-repair
+  cancel-in-progress: false
 jobs:
   repair:
     runs-on: ubuntu-latest
@@ -33,7 +36,6 @@ jobs:
                           raise RuntimeError("Offline model changed a protected title identifier")
                       translated = translated.replace(token, value)
           '''
-          old = old.replace('\n          ', '\n')
           new = '''        def translate_checked(model_input: str) -> str:
                       result = normalize_translation(args._offline_translator.translate(
                           model_input, target="zh", source=_detect_source(title), markdown=False))
@@ -58,7 +60,6 @@ jobs:
                   for token, value in identifiers.items():
                       translated = translated.replace(token, value)
           '''
-          new = new.replace('\n          ', '\n')
           assert s.count(old) == 1, 'Unexpected translation source; do not overwrite'
           p.write_text(s.replace(old, new, 1))
           p = Path('scripts/test_portal_discovery_quality.py')
@@ -93,7 +94,6 @@ jobs:
                   self.assertEqual(translator.translate.call_count, 1)
           
           '''
-          tests = tests.replace('\n          ', '\n')
           assert s.count(marker) == 1, 'Unexpected regression source'
           p.write_text(s.replace(marker, tests + marker, 1))
           PY
@@ -101,6 +101,7 @@ jobs:
         env:
           PYTHONDONTWRITEBYTECODE: '1'
         run: |
+          set -euo pipefail
           python -m pip install requests Pillow
           python scripts/test_portal_discovery_quality.py
           python scripts/test_translate_portal_titles.py
