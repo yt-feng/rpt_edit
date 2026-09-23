@@ -1,0 +1,89 @@
+name: Diagnose unresolved locale scripts with local 7B
+on:
+  push:
+    branches: [codex/locale-script-diagnostics-20260923]
+    paths: [.github/workflows/locale-larger-model-probe.yml]
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install requests Pillow 'opencc-python-reimplemented==0.1.7'
+      - uses: ./.github/actions/setup-offline-translation
+        with:
+          targets: kk,mn,ug
+          retain-audit: false
+      - name: Download verified official small quantization to ephemeral disk only
+        run: |
+          python - <<'PY'
+          import hashlib,os,urllib.request
+          from pathlib import Path
+          url='https://huggingface.co/tencent/Hy-MT2-7B-GGUF/resolve/ab8472660ac61fac25f1af43fac2599d52a8a775/Hy-MT2-7B-Q4_K_M.gguf'
+          expected='9f96256500f3fc1ab4d64336b58f52a949a95ad7516b0c229476eef782f9f77b'
+          output=Path(os.environ['RUNNER_TEMP'])/'probe-7b.gguf';digest=hashlib.sha256();total=0
+          with urllib.request.urlopen(url,timeout=180) as response,output.open('wb') as stream:
+              while chunk:=response.read(4*1024*1024):
+                  total+=len(chunk)
+                  assert total <= 5*1024**3,'Unexpected model size'
+                  digest.update(chunk);stream.write(chunk)
+          assert digest.hexdigest()==expected,'Official model checksum differs'
+          print('Pinned public model checksum verified; bytes:',total)
+          PY
+      - name: Run bounded full-sentence and citation comparison
+        run: |
+          python - <<'PY'
+          import json,os,subprocess,sys,time
+          from pathlib import Path
+          sys.path.insert(0,'scripts')
+          import hymt_offline_translation as h
+          import build_portal_locales as b
+          from smoke_portal_global_locales import SAMPLES
+          h.require_actions()
+          root=Path(os.environ['RUNNER_TEMP']);out=root/'seven-b-diagnostics';out.mkdir()
+          port=19081
+          server=subprocess.Popen([os.environ['HYMT_SERVER_BIN'],'--model',str(root/'probe-7b.gguf'),'--alias','hymt-offline','--host','127.0.0.1','--port',str(port),'--gpu-layers','0','--device','none','--threads','4','--threads-batch','4','--ctx-size','8192','--parallel','1','--cache-ram','0','--jinja','--offline'],stdout=(root/'probe-model.log').open('w'),stderr=subprocess.STDOUT)
+          try:
+              for attempt in range(90):
+                  if server.poll() is not None:raise RuntimeError('Verified model runtime exited')
+                  try:h.request_json(port,'/health',timeout=2);break
+                  except Exception:time.sleep(1)
+              else:raise RuntimeError('Model startup did not complete')
+              rows=[]
+              native={'kk':'哈萨克语（西里尔字母，Қазақша）','mn':'蒙古语（西里尔字母，Монгол хэл）','ug':'维吾尔语（阿拉伯字母）'}
+              english={'kk':'Kazakh in Cyrillic script (Қазақша)','mn':'Mongolian in Cyrillic script (Монгол хэл)','ug':'Uyghur'}
+              for code in native:
+                  for mode in ('native','english'):
+                      for kind,source,lang in SAMPLES:
+                          protected,unit=b.unit_for_text(source,'html:text:p');masked,replacements,terms=h._mask(unit.source,code)
+                          prompt=(f'请将以下文本翻译为{native[code]}，注意只需要输出翻译后的结果，不要额外解释。保留全部占位符及Markdown链接的括号，不要翻译占位符。\n\n{masked}' if mode=='native' else f'Translate the following text into {english[code]}. Only output the translation. Preserve placeholders, financial facts and complete Markdown links unchanged.\n\n{masked}')
+                          row={'locale':code,'mode':mode,'kind':kind,'source':source}
+                          try:
+                              reply=h.request_json(port,'/v1/chat/completions',{'model':'hymt-offline','messages':[{'role':'user','content':prompt}],'stream':False,'cache_prompt':False,**h.MANIFEST['sampling']},timeout=240)
+                              choice=reply['choices'][0];value=choice['message'].get('content') or '';row['raw']=value
+                              if choice.get('finish_reason')!='stop':raise ValueError('Incomplete output')
+                              value=h._restore_protected_link_spacing(masked,value);h.validate_result(masked,value,lang,code)
+                              for token,original in replacements.items():value=value.replace(token,original)
+                              b.validate_translation_quality(code,unit,value);row['translation']=protected.restore(value);row['passed']=True
+                          except Exception as error:row['passed']=False;row['error']=str(error)
+                          rows.append(row);(out/'results.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2))
+              print(json.dumps([{k:v for k,v in x.items() if k in ('locale','mode','kind','passed','error')} for x in rows]))
+          finally:
+              server.terminate()
+              try:server.wait(timeout=10)
+              except subprocess.TimeoutExpired:server.kill();server.wait()
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: seven-b-script-comparison
+          path: ${{ runner.temp }}/seven-b-diagnostics/results.json
+          retention-days: 1
