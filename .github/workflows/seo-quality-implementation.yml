@@ -1,0 +1,71 @@
+name: SEO quality implementation
+
+on:
+  push:
+    branches: [codex/seo-geo-quick-wins-20260923]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: seo-quality-implementation
+  cancel-in-progress: false
+
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Package public source for isolated review
+        run: |
+          git archive --format=zip --output=/tmp/public-source.zip HEAD scripts docs portal_suite/site_src portal_suite/tests portal_suite/locale_assets portal_suite/growth_actions.json workers .github README.md requirements.txt requirements-translation.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: seo-quality-public-source
+          path: /tmp/public-source.zip
+          retention-days: 1
+  apply-and-test:
+    if: contains(github.event.head_commit.message, '[apply-seo-patch]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: codex/seo-geo-quick-wins-20260923
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Apply reviewed patch to this branch only
+        run: |
+          set -euo pipefail
+          test "$(git branch --show-current)" = 'codex/seo-geo-quick-wins-20260923'
+          git apply --check .seo-quality.patch
+          git apply --index .seo-quality.patch
+      - name: Run source regression tests
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s scripts -p 'test_portal_discovery_quality.py' -v
+          python scripts/test_portal_seo.py
+          python scripts/test_portal_blog_build.py
+          python scripts/test_translate_portal_titles.py
+          python scripts/test_wechat_article_quality.py
+          python scripts/test_wechat_output_contract.py
+          python scripts/test_audit_portal_seo_live.py
+          python scripts/check_public_identity.py
+          python scripts/check_public_brand.py
+          node --test portal_suite/tests/*.test.mjs
+          node --test workers/edge-static-host/test/*.test.mjs
+      - name: Commit verified implementation and remove temporary bootstrap
+        run: |
+          set -euo pipefail
+          rm .seo-quality.patch .github/workflows/seo-quality-implementation.yml
+          git add -A
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'feat: implement source-grounded SEO discovery and quality improvements'
+          git push origin HEAD:refs/heads/codex/seo-geo-quick-wins-20260923
