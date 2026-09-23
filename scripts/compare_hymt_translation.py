@@ -21,11 +21,10 @@ import subprocess
 import time
 
 
-LANGUAGES = {"zh": "Chinese", "en": "English", "ko": "Korean", "ja": "Japanese", "ar": "Arabic"}
-SCRIPT_PATTERNS = {
-    "zh": r"[\u3400-\u9fff]", "en": r"[A-Za-z]", "ko": r"[\uac00-\ud7af]",
-    "ja": r"[\u3040-\u30ff\u3400-\u9fff]", "ar": r"[\u0600-\u06ff]",
-}
+from portal_language_registry import LANGUAGES as REGISTERED_LANGUAGES, TARGET_SCRIPT_PATTERNS
+
+LANGUAGES = {code: row.language_name for code, row in REGISTERED_LANGUAGES.items()}
+SCRIPT_PATTERNS = TARGET_SCRIPT_PATTERNS
 
 
 def require_actions() -> None:

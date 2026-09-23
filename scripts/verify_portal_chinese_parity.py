@@ -22,6 +22,8 @@ from urllib.parse import urlsplit, urlunsplit
 import xml.etree.ElementTree as ET
 
 
+from portal_language_registry import selected_locales, DEFAULT_LOCALES
+
 SCHEMA_VERSION = 1
 SNAPSHOT_KIND = "portal-chinese-parity-snapshot"
 VERIFY_KIND = "portal-chinese-parity-verification"
@@ -345,7 +347,7 @@ def _localized_url(root_url: str, locale: str, *, origin: str, relative: str) ->
     ):
         raise ParityError(f"invalid zh-Hans hreflang URL: {relative}: {root_url!r}")
     path = parsed.path or "/"
-    if re.match(r"^/(?:ko|ja|ar)(?:/|$)", path, flags=re.I):
+    if re.match(rf"^/(?:{locale_pattern()})(?:/|$)", path, flags=re.I):
         raise ParityError(f"zh-Hans hreflang already has a locale prefix: {relative}")
     localized_path = f"/{locale}/" if path == "/" else f"/{locale}{path}"
     return urlunsplit(("https", expected_origin.netloc, localized_path, parsed.query, ""))
@@ -473,9 +475,9 @@ def _robot_locale_lines(data: bytes, *, relative: str) -> list[tuple[str, str]]:
             continue
         value = match.group(1)
         parsed = urlsplit(value)
-        locale_match = re.fullmatch(r"/sitemap-(ko|ja|ar)\.xml", parsed.path, flags=re.I)
+        locale_match = re.fullmatch(rf"/sitemap-({locale_pattern()})\.xml", parsed.path, flags=re.I)
         if locale_match:
-            found.append((locale_match.group(1).lower(), line))
+            found.append((next(code for code in LOCALES if code.lower() == locale_match.group(1).lower()), line))
     return found
 
 
@@ -526,9 +528,9 @@ def _sitemap_locale_blocks(data: bytes, *, relative: str) -> list[tuple[str, str
             continue
         value = locations[0]
         parsed = urlsplit(value)
-        match = re.fullmatch(r"/sitemap-(ko|ja|ar)\.xml", parsed.path, flags=re.I)
+        match = re.fullmatch(rf"/sitemap-({locale_pattern()})\.xml", parsed.path, flags=re.I)
         if match:
-            found.append((match.group(1).lower(), value))
+            found.append((next(code for code in LOCALES if code.lower() == match.group(1).lower()), value))
     return found
 
 
@@ -547,7 +549,7 @@ def _neutral_sitemap(data: bytes, *, relative: str) -> bytes:
         except UnicodeDecodeError:
             return block
         parsed = urlsplit(location)
-        if re.fullmatch(r"/sitemap-(?:ko|ja|ar)\.xml", parsed.path, flags=re.I):
+        if re.fullmatch(rf"/sitemap-(?:{locale_pattern()})\.xml", parsed.path, flags=re.I):
             return b""
         return block
 
@@ -878,6 +880,22 @@ def _write_json(path: Path, value: dict[str, Any]) -> None:
                 pass
 
 
+def configure_locale_targets(targets) -> None:
+    """Call before snapshot AND verify for an explicit expansion candidate."""
+    global LOCALES, LOCALE_DIRS, LOCALE_SITEMAPS, LOCALE_HREFLANG_RE
+    LOCALES = selected_locales(targets)
+    LOCALE_DIRS = frozenset(LOCALES)
+    LOCALE_SITEMAPS = frozenset(f"sitemap-{code}.xml" for code in LOCALES)
+    pattern = "|".join(re.escape(code) for code in LOCALES).encode("ascii")
+    LOCALE_HREFLANG_RE = re.compile(
+        rb"<link\b(?=[^>]*\brel\s*=\s*([\"'])[^\"']*\balternate\b[^\"']*\1)"
+        rb"(?=[^>]*\bhreflang\s*=\s*([\"'])(?:" + pattern + rb")\2)[^>]*>", re.I)
+
+
+def locale_pattern() -> str:
+    return "|".join(re.escape(code) for code in LOCALES)
+
+
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -887,12 +905,14 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     snapshot.add_argument("--output", required=True)
     snapshot.add_argument("--site-url", default=DEFAULT_SITE_ORIGIN)
     snapshot.add_argument("--active-manifest")
+    snapshot.add_argument("--locales", default=",".join(DEFAULT_LOCALES))
 
     verify = subparsers.add_parser("verify", help="verify Chinese parity after locale generation")
     verify.add_argument("--root", required=True)
     verify.add_argument("--snapshot", required=True)
     verify.add_argument("--output", required=True)
     verify.add_argument("--site-url")
+    verify.add_argument("--locales", default=",".join(DEFAULT_LOCALES))
     verify.add_argument("--locale-build-incomplete", action="store_true",
                         help="require unchanged original bytes; does not qualify a release for publication")
     return parser.parse_args(argv)
@@ -900,6 +920,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
+    configure_locale_targets(args.locales)
     try:
         root = _safe_root(args.root)
         output = _safe_output(args.output, root=root)

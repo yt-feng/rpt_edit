@@ -93,7 +93,8 @@ def verify_candidate_locale_routes(
     client: Any, bucket: str, prefix: str, files: dict[str, dict[str, Any]],
     manifest: dict[str, Any], origin: str,
 ) -> dict[str, Any]:
-    validate_translation_resolution(manifest, locale_routes.LOCALES)
+    from portal_language_registry import manifest_locales
+    validate_translation_resolution(manifest, manifest_locales(manifest))
     declared = locale_routes.declared_checks(manifest)
     allowed = {}
     for row in declared or []:

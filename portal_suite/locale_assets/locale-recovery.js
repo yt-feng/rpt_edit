@@ -2,14 +2,16 @@
   "use strict";
 
   // The static help links remain usable even when this script cannot execute.
-  const match = /^\/(ko|ja|ar)(?:\/|$)/.exec(window.location.pathname);
+  const match = /^\/(zh\-Hant|yue|ko|ja|ar|en|fr|pt|es|tr|ru|th|it|de|vi|ms|id|tl|hi|pl|cs|nl|km|my|fa|gu|ur|te|mr|he|bn|ta|uk|bo|kk|mn|ug)(?:\/|$)/.exec(window.location.pathname);
   if (!match || window.PortalLocaleRecovery) return;
   const locale = match[1];
   const copy = {
     ko: "이 페이지의 일부 내용을 불러오지 못했습니다. 위의 중국어 페이지 링크를 이용해 주세요.",
     ja: "このページの一部を読み込めませんでした。上の中国語ページへのリンクをご利用ください。",
     ar: "تعذر تحميل بعض محتويات هذه الصفحة. يمكنك استخدام رابط الصفحة الصينية أعلاه.",
+    ...Object.fromEntries(Object.entries((window.PortalLocaleConfig || {}).copy || {}).map(([code, row]) => [code, row.error])),
   };
+  if (!copy[locale]) return; // Supported paths without a complete native pack are not active locales.
   const queryKeys = (
     "id q source title title_zh title_cn bank_code bank_name institution industry sector category " +
     "date date_folder start_date end_date page page_size page_range sort kind kind_label " +
@@ -34,7 +36,7 @@
         const target = new URL(link.getAttribute("href"), current);
         // Never copy query data to another host, a locale page, or credentials.
         if (target.origin !== current.origin || target.protocol !== "https:" || target.username || target.password ||
-            /^\/(?:ko|ja|ar)(?:\/|$)/.test(target.pathname)) continue;
+            /^\/(?:zh\-Hant|yue|ko|ja|ar|en|fr|pt|es|tr|ru|th|it|de|vi|ms|id|tl|hi|pl|cs|nl|km|my|fa|gu|ur|te|mr|he|bn|ta|uk|bo|kk|mn|ug)(?:\/|$)/.test(target.pathname)) continue;
         for (const key of queryKeys) {
           if (current.searchParams.has(key)) target.searchParams.set(key, current.searchParams.get(key));
         }
@@ -66,7 +68,7 @@
     errorBox.setAttribute("role", "status");
     errorBox.setAttribute("aria-live", "polite");
     errorBox.setAttribute("lang", locale);
-    errorBox.setAttribute("dir", locale === "ar" ? "rtl" : "ltr");
+    errorBox.setAttribute("dir", ["ar", "fa", "ur", "he", "ug"].includes(locale) ? "rtl" : "ltr");
     errorBox.setAttribute("data-kc-locale-reason", api.reason);
     banner.setAttribute("data-kc-locale-status", "error");
     if (observer) observer.disconnect();

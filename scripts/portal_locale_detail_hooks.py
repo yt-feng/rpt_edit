@@ -4,7 +4,9 @@ from __future__ import annotations
 import json
 import re
 
-LOCALES = ("ko", "ja", "ar")
+from portal_language_registry import MIRROR_CODES, DEFAULT_LOCALES
+
+LOCALES = DEFAULT_LOCALES
 MARKER = "// kc-locale-detail-hooks-v1"
 _COPY = {
     "ko": ("번역을 준비하고 있습니다…", "이 페이지를 불러오지 못했습니다. 위의 중국어 링크를 이용하거나 다시 시도해 주세요.", "다시 시도"),
@@ -39,15 +41,20 @@ def _namespace_cache_key(source: str, name: str, locale: str) -> str:
     return source[:match.start()] + replacement + source[match.end():]
 
 
-def inject_locale_detail_hooks(source: str, asset_name: str, locale: str) -> str:
-    if locale not in LOCALES or asset_name != "app.js" or MARKER in source:
+def inject_locale_detail_hooks(source: str, asset_name: str, locale: str, *, messages: dict | None = None, validate_only: bool = False) -> str:
+    if locale not in MIRROR_CODES or asset_name != "app.js" or MARKER in source:
         return source
     # Small test/non-portal app fixtures do not implement these detail screens.
     if "const CONTENT_LOCALE =" not in source and "async function initReport()" not in source:
         return source
     source = _once(source, "  async function initReport() {", "  async function initReport() {")
     source = _once(source, "  async function initExternalDetail() {", "  async function initExternalDetail() {")
-    pending, failed, retry = (json.dumps(text, ensure_ascii=False) for text in _COPY[locale])
+    copy = tuple(messages[key] for key in ("pending", "failed", "retry")) if messages is not None else _COPY.get(locale)
+    if copy is None:
+        if not validate_only:
+            raise ValueError("Expanded locale detail hooks require translated safety copy")
+        copy = ("pending", "failed", "retry")  # discarded contract-check output only
+    pending, failed, retry = (json.dumps(text, ensure_ascii=False) for text in copy)
     helper = f'''  {MARKER}
   async function requireLocaleDetail(target) {{
     if (target) {{ target.textContent = {pending}; target.setAttribute("role", "status"); }}
@@ -100,7 +107,7 @@ def inject_locale_detail_hooks(source: str, asset_name: str, locale: str) -> str
 
 
 def defer_unverified_report_preview(source: str, locale: str) -> str:
-    if locale not in LOCALES:
+    if locale not in MIRROR_CODES:
         return source
     scripts = re.compile(r"(<script\b[^>]*>)(.*?)(</script\s*>)", re.I | re.S)
     named = re.compile(r'\sid\s*=\s*([\'"])reportPreviewBootstrap\1(?=\s|>)')

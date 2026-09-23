@@ -1,15 +1,16 @@
 (() => {
   "use strict";
 
-  const LOCALES = Object.freeze({
+  const generated = window.PortalLocaleConfig || {};
+  const LOCALES = Object.freeze(generated.languages || {
     "zh-Hans": Object.freeze({ label: "中文", path: "", intlLocale: "zh-CN", direction: "ltr" }),
     ko: Object.freeze({ label: "한국어", path: "ko", intlLocale: "ko-KR", direction: "ltr" }),
     ja: Object.freeze({ label: "日本語", path: "ja", intlLocale: "ja-JP", direction: "ltr" }),
     ar: Object.freeze({ label: "العربية", path: "ar", intlLocale: "ar", direction: "rtl" }),
   });
-  const LOCALIZED = new Set(["ko", "ja", "ar"]);
+  const LOCALIZED = new Set(Object.keys(LOCALES).filter((code) => code !== "zh-Hans"));
   const SHARED_PATH = /^\/(?:api|assets|data|\.well-known)(?:\/|$)|^\/favicon(?:\.|$)/i;
-  const LOCAL_DATA_PATH = /^\/(?:ko|ja|ar)\/data\/course-materials\.json$/i;
+  const LOCAL_DATA_PATH = /^\/(?:zh\-Hant|yue|ko|ja|ar|en|fr|pt|es|tr|ru|th|it|de|vi|ms|id|tl|hi|pl|cs|nl|km|my|fa|gu|ur|te|mr|he|bn|ta|uk|bo|kk|mn|ug)\/data\/course-materials\.json$/i;
   const CATALOG_OVERLAY_FILES = Object.freeze({
     preview: "catalog-preview.json",
     full: "catalog-titles.json",
@@ -28,9 +29,12 @@
 
   function normalizedLocale(value) {
     const text = String(value || "").trim();
-    if (/^ko(?:-|$)/i.test(text)) return "ko";
-    if (/^ja(?:-|$)/i.test(text)) return "ja";
-    if (/^ar(?:-|$)/i.test(text)) return "ar";
+    const exact = Object.keys(LOCALES).find((code) => code.toLowerCase() === text.toLowerCase());
+    if (exact) return exact;
+    if (/^zh-(hant|tw|hk|mo)(?:-|$)/i.test(text)) return LOCALIZED.has("zh-Hant") ? "zh-Hant" : "zh-Hans";
+    const rawBase = text.toLowerCase().split("-")[0];
+    const base = ({fil: "tl", iw: "he"})[rawBase] || rawBase;
+    if (LOCALIZED.has(base)) return base;
     return "zh-Hans";
   }
 
@@ -47,7 +51,7 @@
 
   function rootPathname(pathname) {
     const source = String(pathname || "/");
-    const match = source.match(/^\/(?:ko|ja|ar)(?=\/|$)(.*)$/i);
+    const match = source.match(/^\/(?:zh\-Hant|yue|ko|ja|ar|en|fr|pt|es|tr|ru|th|it|de|vi|ms|id|tl|hi|pl|cs|nl|km|my|fa|gu|ur|te|mr|he|bn|ta|uk|bo|kk|mn|ug)(?=\/|$)(.*)$/i);
     const root = match ? match[1] || "/" : source;
     return root.startsWith("/") ? root : `/${root}`;
   }
@@ -176,7 +180,7 @@
       return "";
     }
     if (url.origin !== window.location.origin) return "";
-    const pathname = url.pathname.replace(/^\/(?:ko|ja|ar)(?=\/data\/)/i, "");
+    const pathname = url.pathname.replace(/^\/(?:zh\-Hant|yue|ko|ja|ar|en|fr|pt|es|tr|ru|th|it|de|vi|ms|id|tl|hi|pl|cs|nl|km|my|fa|gu|ur|te|mr|he|bn|ta|uk|bo|kk|mn|ug)(?=\/data\/)/i, "");
     if (/^\/data\/catalog_preview\.json$/i.test(pathname)) return "preview";
     if (/^\/data\/chart_search_index\.json$/i.test(pathname)) return "charts";
     if (/^\/data\/catalog\.json$/i.test(pathname)) return "full";
@@ -200,7 +204,7 @@
   }
 
   function applyArabicInputDirection(locale, root = document) {
-    if (locale !== "ar" || !root) return;
+    if (!LOCALES[locale] || LOCALES[locale].direction !== "rtl" || !root) return;
     if (isAutoDirectionControl(root)) root.setAttribute("dir", "auto");
     if (typeof root.querySelectorAll !== "function") return;
     root.querySelectorAll('input[type="text"], input[type="search"], textarea').forEach((control) => {
@@ -356,8 +360,8 @@
         requestInput = mapped;
       } else if (input instanceof Request) {
         const url = new URL(input.url, window.location.href);
-        if (!LOCAL_DATA_PATH.test(url.pathname) && /^\/(?:ko|ja|ar)\/data\//i.test(url.pathname)) {
-          url.pathname = url.pathname.replace(/^\/(?:ko|ja|ar)(?=\/data\/)/i, "");
+        if (!LOCAL_DATA_PATH.test(url.pathname) && /^\/(?:zh\-Hant|yue|ko|ja|ar|en|fr|pt|es|tr|ru|th|it|de|vi|ms|id|tl|hi|pl|cs|nl|km|my|fa|gu|ur|te|mr|he|bn|ta|uk|bo|kk|mn|ug)\/data\//i.test(url.pathname)) {
+          url.pathname = url.pathname.replace(/^\/(?:zh\-Hant|yue|ko|ja|ar|en|fr|pt|es|tr|ru|th|it|de|vi|ms|id|tl|hi|pl|cs|nl|km|my|fa|gu|ur|te|mr|he|bn|ta|uk|bo|kk|mn|ug)(?=\/data\/)/i, "");
           requestInput = new Request(url.toString(), input);
         }
       }
@@ -461,7 +465,7 @@
       return;
     }
     if (url.origin !== window.location.origin || SHARED_PATH.test(url.pathname)) return;
-    if (!/^\/(?:ko|ja|ar)(?:\/|$)/i.test(url.pathname)) {
+    if (!/^\/(?:zh\-Hant|yue|ko|ja|ar|en|fr|pt|es|tr|ru|th|it|de|vi|ms|id|tl|hi|pl|cs|nl|km|my|fa|gu|ur|te|mr|he|bn|ta|uk|bo|kk|mn|ug)(?:\/|$)/i.test(url.pathname)) {
       url.pathname = localePathname(url.pathname, locale);
       anchor.href = url.toString();
     }
@@ -518,7 +522,7 @@
   };
 
   function installIndexUi(locale) {
-    const words = INDEX_UI[locale];
+    const words = generated.indexUi && generated.indexUi[locale] || INDEX_UI[locale];
     if (!words || typeof document.getElementById !== "function") return;
     const jobs = [];
     const setText = (node, value) => {
@@ -591,6 +595,7 @@
   }
 
   function switcherLabel(locale) {
+    if (generated.copy && generated.copy[locale] && generated.copy[locale].language) return generated.copy[locale].language;
     if (locale === "ko") return "언어 선택";
     if (locale === "ja") return "言語を選択";
     if (locale === "ar") return "اختيار اللغة";

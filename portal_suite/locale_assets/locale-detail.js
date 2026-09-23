@@ -1,13 +1,17 @@
 (() => {
   "use strict";
-  const match = /^\/(ko|ja|ar)\/(report|doc)\.html$/.exec(window.location.pathname);
+  const match = /^\/(zh\-Hant|yue|ko|ja|ar|en|fr|pt|es|tr|ru|th|it|de|vi|ms|id|tl|hi|pl|cs|nl|km|my|fa|gu|ur|te|mr|he|bn|ta|uk|bo|kk|mn|ug)\/(report|doc)\.html$/.exec(window.location.pathname);
   if (!match || window.PortalLocaleDetail) return;
   const locale = match[1];
-  const copy = {
+  const generatedCopy = (window.PortalLocaleConfig || {}).copy || {};
+  const copy = generatedCopy[locale]
+    ? [generatedCopy[locale].pending, generatedCopy[locale].failed, generatedCopy[locale].retry]
+    : {
     ko: ["번역을 준비하고 있습니다…", "번역을 불러오지 못했습니다. 다시 시도하거나 위의 중국어 링크를 이용해 주세요.", "다시 시도"],
     ja: ["翻訳を準備しています…", "翻訳を読み込めませんでした。再試行するか、上の中国語リンクをご利用ください。", "再試行"],
     ar: ["جارٍ إعداد الترجمة…", "تعذر تحميل الترجمة. أعد المحاولة أو استخدم الرابط الصيني أعلاه.", "إعادة المحاولة"],
   }[locale];
+  if (!copy) return; // A missing native safety pack is not a ready locale.
   const fields = ("title title_cn title_zh display_title institution institution_en institution_cn bank_name industry sector category " +
     "kind_label report_type language description summary author rating filename").split(" ");
   const patterns = {
@@ -36,7 +40,7 @@
     target.textContent = copy[failed ? 1 : 0];
     target.setAttribute("role", "status");
     target.setAttribute("lang", locale);
-    target.setAttribute("dir", locale === "ar" ? "rtl" : "ltr");
+    target.setAttribute("dir", ["ar", "fa", "ur", "he", "ug"].includes(locale) ? "rtl" : "ltr");
     target.setAttribute("data-kc-locale-translation", failed ? "failed" : "pending");
     if (failed && typeof retry === "function") {
       const button = document.createElement("button");

@@ -24,6 +24,7 @@ from typing import Callable, Sequence
 
 from compare_hymt_translation import LANGUAGES, request_json, require_actions, verify_model, file_sha256
 from financial_quantity_integrity import FIVE_YEAR_PERIOD_RE, quantity_issues
+from portal_language_registry import normalize_language as registry_language, TARGET_SCRIPT_PATTERNS
 
 MANIFEST_PATH = Path(__file__).with_name('hymt_translation_model_manifest.json')
 MANIFEST = json.loads(MANIFEST_PATH.read_text(encoding='utf-8'))
@@ -117,11 +118,10 @@ def atomic_json(path: Path, value: object) -> None:
 
 
 def normalize_language(language: str) -> str:
-    code = str(language).lower().replace('_', '-').split('-')[0]
-    code = {'jp': 'ja', 'kr': 'ko', 'cn': 'zh'}.get(code, code)
-    if code not in LANGUAGES:
-        raise OfflineTranslationError(f'Unsupported offline language: {language}')
-    return code
+    try:
+        return registry_language(language)
+    except ValueError as error:
+        raise OfflineTranslationError(str(error)) from error
 
 
 def _detect_source(text: str) -> str:
@@ -224,10 +224,8 @@ def validate_result(source: str, result: str, source_language: str, target: str,
         if Counter(re.findall(destination_shape, source)) != Counter(re.findall(destination_shape, result)):
             raise OfflineTranslationValidationError('Hy-MT2 changed a Markdown link destination boundary')
     clean = _PLACEHOLDERS.sub('', result)
-    if _LETTERS.search(_PLACEHOLDERS.sub('', source)):
-        scripts = {'zh': r'[\u3400-\u9fff]', 'en': r'[A-Za-z]', 'ko': r'[\uac00-\ud7af]',
-                   'ja': r'[\u3040-\u30ff\u3400-\u9fff]', 'ar': r'[\u0600-\u06ff]'}
-        if not re.search(scripts[target], clean):
+    if any(character.isalpha() for character in _PLACEHOLDERS.sub('', source)):
+        if not re.search(TARGET_SCRIPT_PATTERNS[target], clean):
             raise OfflineTranslationValidationError('Hy-MT2 target script missing')
 
 
@@ -345,7 +343,7 @@ class HyMTOfflineTranslator:
         leading, trailing = text[:len(text) - len(text.lstrip())], text[len(text.rstrip()):]
         core = text.strip()
         detected = source or _detect_source(core)
-        if not core or detected == target or not _LETTERS.search(_PLACEHOLDERS.sub('', _OPAQUE.sub('', core))):
+        if not core or detected == target or not any(char.isalpha() for char in _PLACEHOLDERS.sub('', _OPAQUE.sub('', core))):
             return text
         identity, path = self._memo_identity(core, target, detected, markdown=markdown)
         masked, replacements, terms = _mask(core, target)

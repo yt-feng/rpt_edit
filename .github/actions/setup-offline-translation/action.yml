@@ -16,10 +16,14 @@ runs:
         TRANSLATION_TARGETS: ${{ inputs.targets }}
       shell: bash
       run: |
-        if [[ ! "$TRANSLATION_TARGETS" =~ ^(zh|en|ko|ja|ar)(,(zh|en|ko|ja|ar))*$ ]]; then
-          echo "Unsupported translation targets" >&2
-          exit 2
-        fi
+        python - <<'PY'
+        import os, sys
+        sys.path.insert(0, 'scripts')
+        from portal_language_registry import normalize_language
+        targets = [normalize_language(item) for item in os.environ['TRANSLATION_TARGETS'].split(',')]
+        if len(set(targets)) != len(targets):
+            raise SystemExit('Duplicate translation targets')
+        PY
         python - <<'PY'
         import json, os, platform
         from pathlib import Path

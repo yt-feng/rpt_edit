@@ -25,6 +25,9 @@
   justify-content: center;
   gap: 4px;
   max-width: min(92vw, 360px);
+  max-height: min(32vh, 240px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
   padding: 5px;
   border: 1px solid color-mix(in srgb, var(--line, #d8dee8) 88%, transparent);
   border-radius: 10px;

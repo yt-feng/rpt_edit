@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 import concurrent.futures
 from collections import deque
+from contextlib import contextmanager
 from dataclasses import dataclass, replace
 from datetime import date, datetime
 from decimal import Decimal, InvalidOperation, ROUND_FLOOR
@@ -36,6 +37,10 @@ from urllib.parse import parse_qsl, unquote, urlencode, urljoin, urlsplit, urlun
 import xml.etree.ElementTree as ET
 from zoneinfo import ZoneInfo
 
+from portal_language_registry import (
+    LANGUAGES as REGISTERED_LANGUAGES, DEFAULT_LOCALES, MIRROR_CODES, LOCALE_PATTERN,
+    TARGET_SCRIPT_PATTERNS, selected_locales, runtime_languages, UI_SOURCE, INDEX_UI_SOURCE, map_text,
+)
 from portal_lazy_assets import fingerprint_newsfeed_loader
 from portal_locale_history import plan_history_release
 from portal_locale_literals import is_chart_geography_identity_label, is_chart_metric_identity_label, is_japanese_identity_label, is_latin_name_literal, is_machine_asset_reference, is_optical_acronym_label, is_shared_japanese_keyword, is_short_latin_label_translation
@@ -100,7 +105,7 @@ DEEPSEEK_KEY_ENV_NAMES = (
 DEFAULT_BATCH_CHARS = 12_000
 DEFAULT_BATCH_ITEMS = 32
 MAX_UNIT_CHARS = 3_500
-LOCALE_DIRS = frozenset({"ko", "ja", "ar"})
+LOCALE_DIRS = frozenset(MIRROR_CODES)
 SITE_VERIFICATION_HTML_RE = re.compile(
     r"(?:baidu_verify_codeva-[A-Za-z0-9]{10}|google[0-9a-f]{16})\.html"
 )
@@ -253,7 +258,7 @@ OFFICIAL_NAME_CONTEXTS = frozenset({
 # These are identity fields, not prose. Keep this separate from the cache-key
 # namespace above so existing paid translations stay reusable.
 STRUCTURED_NAME_CONTEXTS = frozenset({"jsonld:entity:name", "jsonld:entity:alternateName"})
-NATIVE_LANGUAGE_LABELS = frozenset({"English", "中文", "日本語", "한국어", "العربية"})
+NATIVE_LANGUAGE_LABELS = frozenset(row.native_name for row in REGISTERED_LANGUAGES.values())
 LATIN_PUBLIC_BRAND = "".join(("KC", "Desk"))
 TOKEN_RE = re.compile(
     rf"KC桌面|{re.escape(LATIN_PUBLIC_BRAND)}"
@@ -313,6 +318,27 @@ LOCALES: dict[str, LocaleConfig] = {
     "ja": LocaleConfig("ja", "Japanese", "日本語", "ltr", "ja_JP", "ja-JP"),
     "ar": LocaleConfig("ar", "Arabic", "العربية", "rtl", "ar_AE", "ar"),
 }
+ALL_LOCALES = {
+    code: LocaleConfig(code, row.language_name, row.native_name, row.direction, row.og_locale, row.intl_locale)
+    for code, row in REGISTERED_LANGUAGES.items() if code != "zh"
+}
+_LOCALE_BUILD_LOCK = threading.RLock()
+
+
+@contextmanager
+def locale_selection(targets=None):
+    """Serialize library builds and restore legacy globals even after failure."""
+    global LOCALES
+    codes = selected_locales(targets)
+    with _LOCALE_BUILD_LOCK:
+        previous = LOCALES
+        LOCALES = {code: ALL_LOCALES[code] for code in codes}
+        try:
+            yield codes
+        finally:
+            LOCALES = previous
+
+
 OFFLINE_PROVIDERS = frozenset({"m2m100", "hymt"})
 
 
@@ -940,14 +966,14 @@ def _shared_japanese_keyword(unit: TranslationUnit, translated: str) -> bool:
 
 def validate_translation_quality(locale: str, unit: TranslationUnit, translated: str) -> None:
     """Check missing translation and structural integrity, not linguistic quality."""
-    if locale not in LOCALES:
+    if locale not in ALL_LOCALES:
         raise TranslationError(f"Unsupported translation locale: {locale}")
     text = str(translated or "").strip()
     if not text:
         raise TranslationQualityError(f"{locale}: empty translation for {unit.key}")
     expected = PLACEHOLDER_RE.findall(unit.source)
     actual = PLACEHOLDER_RE.findall(text)
-    optional = set(unit.data_placeholders)
+    optional = set(unit.data_placeholders) if locale in DEFAULT_LOCALES else set()
     if (set(actual) - set(expected)
             or sorted(token for token in actual if token not in optional)
             != sorted(token for token in expected if token not in optional)):
@@ -986,6 +1012,14 @@ def validate_translation_quality(locale: str, unit: TranslationUnit, translated:
         return
     if not CJK_RE.search(source_visible) and len(WORD_RE.findall(source_visible)) < 3:
         return
+    # English is already present in the mixed Chinese/English source. Exact
+    # English identity is valid only when no Chinese or other non-Latin script
+    # remains; this exemption is not shared by other Latin-script languages.
+    if locale == "en" and source_visible and all(
+        not char.isalpha() or re.fullmatch(TARGET_SCRIPT_PATTERNS["en"], char)
+        for char in source_visible
+    ) and source_compact == translated_compact:
+        return
     if source_compact and translated_compact == source_compact:
         raise TranslationQualityError(f"{locale}: unchanged source text for {unit.key}")
     # A real translation may retain a quoted headline, institution name or a
@@ -993,9 +1027,9 @@ def validate_translation_quality(locale: str, unit: TranslationUnit, translated:
     # substring is not, by itself, evidence of an incomplete page.
     if source_compact and source_compact in translated_compact and not re.search(r'["“”「」『』()（）]', translated_visible):
         raise TranslationQualityError(f"{locale}: translation retains complete source text for {unit.key}")
-    target_pattern = {"ko": HANGUL_RE, "ja": re.compile(f"{KANA_RE.pattern}|{CJK_RE.pattern}"), "ar": ARABIC_LETTER_RE}[locale]
+    target_pattern = re.compile(TARGET_SCRIPT_PATTERNS[locale])
     if source_compact and not target_pattern.search(translated_visible):
-        language_label = {"ko": "Hangul", "ja": "Japanese", "ar": "Arabic"}[locale]
+        language_label = {"ko": "Hangul", "ja": "Japanese", "ar": "Arabic"}.get(locale, REGISTERED_LANGUAGES[locale].language_name)
         raise TranslationQualityError(f"{locale}: translation has no {language_label} text for {unit.key}")
 
 
@@ -1088,7 +1122,7 @@ def translated_text(value: str, context: str, locale: str, cache: dict[str, Any]
         if unit is None:
             output.append(protected.restore(protected.canonical))
             continue
-        if context.startswith("javascript:") and PLACEHOLDER_RE.sub("", unit.source).strip() == "Source":
+        if locale in DEFAULT_LOCALES and context.startswith("javascript:") and PLACEHOLDER_RE.sub("", unit.source).strip() == "Source":
             # A fixed source-link label is UI, not an entity name. Some older
             # cache rows translated this English label back into Chinese.
             label = {"ko": "출처", "ja": "出典", "ar": "المصدر"}[locale]
@@ -1485,8 +1519,8 @@ def translate_missing_units(
     run_state.data["identity_seeded_units"] = identity_seeded
     # Seed only exact reviewed inventory text after pruning invalid cache rows.
     # Keep valid paid translations and the ordinary quality/placeholder checks.
-    ja_entries = cache["locales"]["ja"]
-    ar_entries = cache["locales"]["ar"]
+    ja_entries = cache["locales"].get("ja", {})
+    ar_entries = cache["locales"].get("ar", {})
     for key, unit in units.items():
         reviewed = REVIEWED_JA_UI_TRANSLATIONS.get(unit.source)
         if reviewed is None:
@@ -1646,7 +1680,7 @@ def translate_missing_units(
             run_state.check()
             translated_batch: list[str] | None = None
             translate_many = getattr(translator, "translate_many", None)
-            if (not allow_source_fallback and callable(translate_many)
+            if (locale in DEFAULT_LOCALES and not allow_source_fallback and callable(translate_many)
                     and callable(getattr(type(translator), "translate_many", None))):
                 try:
                     translated_batch = translate_many([unit.source for unit in batch], locale)
@@ -2287,7 +2321,7 @@ def is_external_or_special_url(value: str) -> bool:
 
 def strip_locale_prefix(path: str) -> str:
     value = str(path or "/")
-    match = re.match(r"^/(?:ko|ja|ar)(?=/|$)(.*)$", value, flags=re.I)
+    match = re.match(rf"^/(?:{LOCALE_PATTERN})(?=/|$)(.*)$", value, flags=re.I)
     root = match.group(1) if match else value
     return root or "/"
 
@@ -3082,7 +3116,7 @@ ACCOUNT_FORM_COPY = {
 
 
 def render_localized_account_form(value: str, asset_name: str, locale: str) -> str:
-    if asset_name != "app.js":
+    if asset_name != "app.js" or locale not in ACCOUNT_FORM_COPY:
         return value
     return re.sub(
         r'(<label\b[^>]*\bid=["\']accountEmailLabel["\'][^>]*>)[^<]*',
@@ -3832,6 +3866,17 @@ def escape_javascript_literal(value: str, quote: str) -> str:
             output.append(char)
         index += 1
     return "".join(output)
+
+
+def specialize_locale_javascript(source: str, locale: str) -> str:
+    if locale in DEFAULT_LOCALES:
+        return source
+    # Existing application hooks compare lowercase locale values. Include the
+    # canonical and folded script tag without conflating zh-Hant with zh-Hans.
+    codes = list(MIRROR_CODES) + [code.lower() for code in MIRROR_CODES if code.lower() != code]
+    source = source.replace('["ko", "ja", "ar"]', json.dumps(codes))
+    source = re.sub(r"ko\|ja\|ar(?:\|en\|zh-Hant)?", lambda _match: LOCALE_PATTERN, source)
+    return source
 
 
 def render_localized_javascript(source: str, asset_name: str, locale: str, cache: dict[str, Any]) -> str:
@@ -4969,7 +5014,8 @@ def filter_locale_llms_source(
 
 
 LOCALE_RECOVERY_EARLY_BOOTSTRAP = r"""(() => {
-  if (!/^\/(ko|ja|ar)(?:\/|$)/.test(window.location.pathname) || window.PortalLocaleEarly || window.PortalLocaleRecovery) return;
+  if (!/^\/(ko|ja|ar)(?:\/|$)/.test(window.location.pathname) && !window.PortalLocaleEarlyEnabled) return;
+  if (!/^\/(zh\-Hant|yue|ko|ja|ar|en|fr|pt|es|tr|ru|th|it|de|vi|ms|id|tl|hi|pl|cs|nl|km|my|fa|gu|ur|te|mr|he|bn|ta|uk|bo|kk|mn|ug)(?:\/|$)/.test(window.location.pathname) || window.PortalLocaleEarly || window.PortalLocaleRecovery) return;
   let reason = "";
   const remember = (kind) => { if (!reason) reason = kind; };
   const error = (event) => {
@@ -5006,7 +5052,7 @@ def discovery_links(
     else:
         rows = [
             f'\n    <link rel="stylesheet" href="/assets/locale.css?v={asset_version}">',
-            f'\n    <script data-kc-locale-early>{LOCALE_RECOVERY_EARLY_BOOTSTRAP}</script>',
+            f'\n    <script data-kc-locale-early>{"window.PortalLocaleEarlyEnabled=true;" if set(LOCALES) - set(DEFAULT_LOCALES) else ""}{LOCALE_RECOVERY_EARLY_BOOTSTRAP}</script>',
             f'\n    <script defer src="/assets/locale-recovery.js?v={asset_version}"></script>',
             f'\n    <script defer src="/assets/locale-detail.js?v={asset_version}"></script>',
             f'\n    <script src="/assets/locale-runtime.js?v={asset_version}"></script>',
@@ -5045,9 +5091,10 @@ LOCALE_HELP_COPY = {
 }
 
 
-def inject_locale_help(source: str, locale: str, root_path: str, site_url: str) -> str:
+def inject_locale_help(source: str, locale: str, root_path: str, site_url: str, copy: dict | None = None) -> str:
     """Static escape hatch: available even when every application script fails."""
-    equivalent, homepage, account = LOCALE_HELP_COPY[locale]
+    equivalent, homepage, account = (tuple(copy[key] for key in ("equivalent", "homepage", "account"))
+                                     if copy is not None else LOCALE_HELP_COPY[locale])
     home_url = site_url.rstrip("/") + "/"
     page_url = home_url + root_path.lstrip("/")
     markup = (
@@ -5133,7 +5180,7 @@ def root_discovery_eligible(source: str, canonical: str, site_url: str) -> bool:
     parsed, origin = urlsplit(canonical), urlsplit(site_url)
     if (parsed.scheme.lower() != "https" or parsed.netloc.lower() != origin.netloc.lower()
             or not parsed.path.startswith("/") or parsed.fragment
-            or re.match(r"^/(?:ko|ja|ar)(?:/|$)", parsed.path, flags=re.I)):
+            or re.match(rf"^/(?:{LOCALE_PATTERN})(?:/|$)", parsed.path, flags=re.I)):
         return False
     head = re.search(r"<head\b[^>]*>.*?</head\s*>", source, flags=re.I | re.S)
     if not head:
@@ -5200,7 +5247,7 @@ def render_locale_sitemap(
         rows.extend(["  <url>", f"    <loc>{html_escape(loc, quote=True)}</loc>"])
         if lastmods.get(root_url):
             rows.append(f"    <lastmod>{html_escape(lastmods[root_url], quote=True)}</lastmod>")
-        for code in ("zh-Hans", "ko", "ja", "ar"):
+        for code in ("zh-Hans", *LOCALES):
             alternate = absolute_locale_url(root_url, code, site_url)
             rows.append(
                 f'    <xhtml:link rel="alternate" hreflang="{code}" href="{html_escape(alternate, quote=True)}" />'
@@ -5240,7 +5287,8 @@ def update_sitemap_index(root: Path, site_url: str, generated_date: str) -> None
 def update_robots(root: Path, site_url: str) -> None:
     path = root / "robots.txt"
     source = path.read_text(encoding="utf-8") if path.is_file() else ""
-    source = re.sub(r"^Sitemap: .*/sitemap-(?:ko|ja|ar)\.xml\s*$", "", source, flags=re.I | re.M)
+    selected_pattern = "|".join(re.escape(code) for code in LOCALES)
+    source = re.sub(rf"^Sitemap: .*/sitemap-(?:{selected_pattern})\.xml\s*$", "", source, flags=re.I | re.M)
     lines = source.rstrip().splitlines()
     lines.extend(f"Sitemap: {site_url.rstrip('/')}/sitemap-{locale}.xml" for locale in LOCALES)
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -5350,6 +5398,9 @@ def _build_localized_release(
 ) -> dict[str, Any]:
     if translation_scope not in {"release", "month", "incremental"}:
         raise TranslationError("Translation scope must be release, month, or incremental")
+    unselected_trees = [code for code in MIRROR_CODES if code not in LOCALES and (root / code).exists()]
+    if unselected_trees:
+        raise TranslationError("Build a fresh Chinese candidate or include every existing locale; refusing to orphan " + ",".join(unselected_trees))
     incremental = translation_scope == "incremental"
     configured_start_date = parse_index_start_date(index_start_date)
     configured_allowlist = tuple(index_allowlist)
@@ -5365,6 +5416,8 @@ def _build_localized_release(
     if site.scheme != "https" or not site.netloc or site.path not in {"", "/"}:
         raise TranslationError("--site-url must be an HTTPS origin without a path")
     site_url = urlunsplit((site.scheme, site.netloc, "", "", "")).rstrip("/")
+    if set(LOCALES) - set(DEFAULT_LOCALES) and (provider != "hymt" or allow_source_fallback):
+        raise TranslationError("Expanded languages require Hy-MT2 and complete translations; paid/source fallback forbidden")
     if provider not in OFFLINE_PROVIDERS | {"deepseek"}:
         raise TranslationError("Unsupported translation provider")
     if provider == "deepseek" and batch_translator is None:
@@ -5645,6 +5698,12 @@ def _build_localized_release(
     # are not submitted as indexable content simply because a hub URL exists.
     canonicals = [decision.canonical_root for decision in index_plan.values() if decision.indexable]
     eligible_canonicals = frozenset(canonicals)
+    if set(LOCALES) - set(DEFAULT_LOCALES):
+        def collect_ui(value):
+            collect_text_units(value, "locale:ui", units)
+            return value
+        map_text(UI_SOURCE, collect_ui)
+        map_text(INDEX_UI_SOURCE, collect_ui)
     javascript_sources: dict[str, str] = {}
     for asset_name in LOCALIZED_JS_ASSETS:
         path = root / "assets" / asset_name
@@ -5656,7 +5715,7 @@ def _build_localized_release(
         # Keep the raw Chinese asset unchanged; actual injection remains below,
         # after localization and before content-addressed script URLs are made.
         for locale in LOCALES:
-            inject_locale_detail_hooks(javascript_sources[asset_name], asset_name, locale)
+            inject_locale_detail_hooks(javascript_sources[asset_name], asset_name, locale, validate_only=True)
         validate_javascript_translation_coverage(javascript_sources[asset_name], asset_name)
         collect_javascript_units(javascript_sources[asset_name], asset_name, units)
         collect_javascript_units(javascript_sources[asset_name], asset_name, priority_units)
@@ -5713,7 +5772,7 @@ def _build_localized_release(
 
     cache = load_cache(cache_in, model, provider=provider)
     cache["model"] = normalize_deepseek_model_name(model)
-    title_repairs = apply_ja_catalog_title_repairs(cache, units)
+    title_repairs = apply_ja_catalog_title_repairs(cache, units) if "ja" in LOCALES else {"replaced": 0, "seeded": 0}
     if title_repairs["replaced"] or title_repairs["seeded"]:
         log("Applied reviewed Japanese title repairs without provider calls: "
             f"replaced={title_repairs['replaced']} seeded={title_repairs['seeded']}")
@@ -5786,6 +5845,19 @@ def _build_localized_release(
     shutil.copy2(locale_runtime_source, root / "assets" / "locale-runtime.js")
     shutil.copy2(locale_recovery_source, root / "assets" / "locale-recovery.js")
     shutil.copy2(locale_detail_source, root / "assets" / "locale-detail.js")
+    expanded_copy = {}
+    if set(LOCALES) - set(DEFAULT_LOCALES):
+        index_copy = {}
+        for locale in LOCALES:
+            if locale in DEFAULT_LOCALES:
+                continue
+            localize = lambda value, code=locale: translated_text(value, "locale:ui", code, cache)
+            expanded_copy[locale] = map_text(UI_SOURCE, localize)
+            index_copy[locale] = map_text(INDEX_UI_SOURCE, localize)
+        config = {"languages": runtime_languages(LOCALES), "copy": expanded_copy, "indexUi": index_copy}
+        encoded = json.dumps(config, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
+        runtime_path = root / "assets" / "locale-runtime.js"
+        runtime_path.write_text("window.PortalLocaleConfig = " + encoded + ";\n" + runtime_path.read_text(), encoding="utf-8")
     asset_digest = hashlib.sha256(
         (root / "assets" / "locale.css").read_bytes()
         + (root / "assets" / "locale-runtime.js").read_bytes()
@@ -5820,7 +5892,9 @@ def _build_localized_release(
             target = locale_root / "assets" / asset_name
             localized_javascript = render_localized_javascript(source, asset_name, locale, cache)
             validate_localized_javascript_residuals(source, localized_javascript, asset_name, locale, cache)
-            localized_javascript = inject_locale_detail_hooks(localized_javascript, asset_name, locale)
+            localized_javascript = specialize_locale_javascript(localized_javascript, locale)
+            localized_javascript = inject_locale_detail_hooks(
+                localized_javascript, asset_name, locale, messages=expanded_copy.get(locale))
             target.write_text(localized_javascript, encoding="utf-8")
             locale_script_digests[asset_name] = hashlib.sha256(target.read_bytes()).hexdigest()[:12]
         fingerprint_newsfeed_loader(locale_root)
@@ -5850,7 +5924,7 @@ def _build_localized_release(
                 localized_html = force_noindex_follow(localized_html)
             localized_html = localize_report_preview(localized_html, locale)
             localized_html = defer_unverified_report_preview(localized_html, locale)
-            localized_html = inject_locale_help(localized_html, locale, relative.as_posix(), site_url)
+            localized_html = inject_locale_help(localized_html, locale, relative.as_posix(), site_url, expanded_copy.get(locale))
             target.write_text(localized_html, encoding="utf-8")
         if course_source is not None:
             target = locale_root / "data" / "course-materials.json"
@@ -6124,7 +6198,8 @@ def build_localized_release(**kwargs: Any) -> dict[str, Any]:
         limit = 6
     run_state = TranslationRun(kwargs.get("diagnostics_out"), limit, kwargs.get("max_provider_cost_cny"))
     try:
-        result = _build_localized_release(**kwargs, run_state=run_state)
+        with locale_selection(kwargs.pop("locales", None)):
+            result = _build_localized_release(**kwargs, run_state=run_state)
         run_state.data["status"] = "passed"
         run_state.data["ready"] = not kwargs.get("preflight_only", False)
         return result
@@ -6147,6 +6222,8 @@ def build_localized_release(**kwargs: Any) -> dict[str, Any]:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, required=True, help="Built Chinese static release directory")
+    parser.add_argument("--locales", default=",".join(DEFAULT_LOCALES),
+                        help="Explicit complete mirror cohort, or all; default preserves ko,ja,ar")
     parser.add_argument(
         "--site-url",
         required=True,
@@ -6205,6 +6282,7 @@ def main() -> int:
     try:
         build_localized_release(
             root=args.root,
+            locales=selected_locales(args.locales),
             site_url=args.site_url,
             cache_in=args.cache_in,
             cache_out=args.cache_out,

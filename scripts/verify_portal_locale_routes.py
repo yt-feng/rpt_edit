@@ -15,6 +15,7 @@ from typing import Any, Callable
 from urllib.parse import urlsplit
 
 from portal_locale_manifest import MAX_LOCALE_MANIFEST_BYTES, load_locale_manifest
+from portal_language_registry import LANGUAGES as REGISTERED_LANGUAGES, MIRROR_CODES, manifest_locales
 
 LOCALES = {"ko": "ltr", "ja": "ltr", "ar": "rtl"}
 APPLICATION_PAGES = {
@@ -72,13 +73,17 @@ def declared_checks(manifest: dict[str, Any]) -> list[dict[str, Any]] | None:
         raise RouteVerificationError("Locale manifest schema is invalid")
     if "application_routes" not in manifest:
         return None
+    try:
+        locales = manifest_locales(manifest)
+    except ValueError as error:
+        raise RouteVerificationError(str(error)) from error
     groups = manifest["application_routes"]
-    if not isinstance(groups, dict) or set(groups) != set(LOCALES):
-        raise RouteVerificationError("Application routes must contain all three locales")
+    if not isinstance(groups, dict) or set(groups) != set(locales):
+        raise RouteVerificationError("Application routes must contain the exact declared locales")
     checks = []
     declared_names: set[str] | None = None
     legacy_names = set(APPLICATION_PAGES) - {"research.html"}
-    for locale in LOCALES:
+    for locale in locales:
         rows = groups[locale]
         if not isinstance(rows, dict) or set(rows) not in (set(APPLICATION_PAGES), legacy_names):
             raise RouteVerificationError(f"Application routes must contain the exact declared shells: {locale}")
@@ -95,9 +100,9 @@ def declared_checks(manifest: dict[str, Any]) -> list[dict[str, Any]] | None:
         checks.append(descriptor(manifest["detail_asset"], DETAIL_PATH))
     if "lazy_javascript_assets" in manifest:
         lazy = manifest["lazy_javascript_assets"]
-        if not isinstance(lazy, dict) or set(lazy) != {"zh-Hans", *LOCALES}:
+        if not isinstance(lazy, dict) or set(lazy) != {"zh-Hans", *locales}:
             raise RouteVerificationError("Lazy Newsfeed assets must cover Chinese and all three locales")
-        for language, prefix in [("zh-Hans", ""), *((locale, f"{locale}/") for locale in LOCALES)]:
+        for language, prefix in [("zh-Hans", ""), *((locale, f"{locale}/") for locale in locales)]:
             row = descriptor(lazy[language], f"{prefix}assets/newsfeed-app.js")
             checks.append({**row, "lazy_module": True})
     return checks
@@ -197,7 +202,7 @@ def validate_shell(body: bytes, headers: dict[str, str], locale: str, filename: 
         parser.close()
     except (UnicodeError, ValueError) as error:
         raise RouteVerificationError("Application shell is not valid UTF-8 HTML") from error
-    if len(parser.html) != 1 or parser.html[0].get("lang") != locale or parser.html[0].get("dir") != LOCALES[locale]:
+    if len(parser.html) != 1 or parser.html[0].get("lang") != locale or parser.html[0].get("dir") != REGISTERED_LANGUAGES[locale].direction:
         raise RouteVerificationError("Application shell has the wrong HTML language or direction")
     if len(parser.bodies) != 1 or parser.bodies[0].get("data-page") != APPLICATION_PAGES[filename]:
         raise RouteVerificationError("Application shell has the wrong page identity (possibly a 200 Not Found page)")
@@ -293,7 +298,7 @@ def verify_local_locale_routes(manifest: dict[str, Any], origin: str, root: Path
             body = handle.read(MAX_RESPONSE_BYTES + 1)
         headers = {"content-type": "application/javascript" if path.suffix == ".js" else "text/html"}
         locale = relative.split("/", 1)[0]
-        if locale in LOCALES:
+        if locale in MIRROR_CODES:
             headers["content-language"] = locale
         return 200, headers, body
 
