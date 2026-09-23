@@ -17,7 +17,7 @@ import re
 import tarfile
 import tempfile
 from typing import Any
-from portal_language_registry import selected_locales
+from portal_language_registry import selected_locales, preparation_locales
 from offline_translation import MODEL_ID, atomic_json
 
 PREFIX = 'portal-global-locales/v1/'
@@ -39,6 +39,7 @@ def namespace() -> str:
 def object_key(kind: str, locale: str | None = None) -> str:
     if kind == 'source': return PREFIX+'sources/current.tar.gz'
     if kind not in {'checkpoint','candidate','readiness'}: raise ValueError('Unknown R2 handoff kind')
+    if kind == 'candidate': preparation_locales(locale)
     codes=selected_locales(locale)
     if len(codes)!=1 or codes[0]!=locale: raise ValueError('One canonical locale is required')
     suffix={'checkpoint':'cache.json.gz','candidate':'site.tar.gz','readiness':'readiness.json'}[kind]

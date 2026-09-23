@@ -85,6 +85,41 @@ SCRIPT_PATTERNS = {
 TARGET_SCRIPT_PATTERNS = {code: SCRIPT_PATTERNS[row.script] for code, row in LANGUAGES.items()}
 
 
+# Both pinned 1.8B and a separately evaluated official 7B quantization failed
+# the requested scripts. Keep these registered for diagnostics, never silently
+# substitute another script or another language in a publication candidate.
+HELD_LOCALES = {
+    "kk": "Pinned models produced Arabic or mixed-script Kazakh instead of the configured Cyrillic script",
+    "mn": "Pinned models produced traditional Mongolian with spurious numeric characters instead of Cyrillic",
+}
+PREPARATION_LOCALES = tuple(code for code in MIRROR_CODES if code not in HELD_LOCALES)
+PREPARATION_NEW_LOCALES = tuple(code for code in PREPARATION_LOCALES if code not in DEFAULT_LOCALES)
+
+
+def preparation_locales(value: str | Iterable[str] | None = None) -> tuple[str, ...]:
+    """Select an explicit preparation cohort, rejecting any held language."""
+    if value is None or value == "ready-new":
+        return PREPARATION_NEW_LOCALES
+    if value == "ready":
+        return PREPARATION_LOCALES
+    codes = selected_locales(value)
+    blocked = set(codes) & set(HELD_LOCALES)
+    if blocked:
+        raise ValueError("Locale preparation is held pending script qualification: " + ",".join(sorted(blocked)))
+    return codes
+
+
+def google_hreflang_codes(codes: Iterable[str]) -> tuple[str, ...]:
+    """Keep HTML language identity separate from Google's supported alternates.
+
+    Google documents ISO 639-1 language codes plus script variants. Cantonese
+    keeps its own yue URL/HTML identity; it is not mislabeled as Mandarin.
+    https://developers.google.com/search/docs/specialty/international/localized-versions
+    """
+    eligible = {code for code in MIRROR_CODES if len(code) == 2} | {"zh-Hans", "zh-Hant", "x-default"}
+    return tuple(code for code in codes if code in eligible)
+
+
 def normalize_language(value: str) -> str:
     """Keep zh-Hant/yue distinct; normalize known regional aliases, never guess."""
     text = str(value).strip().replace("_", "-").lower()

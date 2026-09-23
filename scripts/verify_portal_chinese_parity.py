@@ -22,7 +22,7 @@ from urllib.parse import urlsplit, urlunsplit
 import xml.etree.ElementTree as ET
 
 
-from portal_language_registry import selected_locales, DEFAULT_LOCALES
+from portal_language_registry import selected_locales, DEFAULT_LOCALES, google_hreflang_codes
 
 SCHEMA_VERSION = 1
 SNAPSHOT_KIND = "portal-chinese-parity-snapshot"
@@ -360,8 +360,20 @@ def _validate_snapshot_head(data: bytes, *, relative: str) -> dict[str, Any]:
     if parser.direct_locale_assets:
         raise ParityError(f"pre-locale HTML directly loads locale assets: {relative}")
     alternates = _alternate_map(parser, relative=relative)
-    if any(locale in alternates for locale in LOCALES):
-        raise ParityError(f"pre-locale HTML already contains locale hreflang links: {relative}")
+    for locale in LOCALES:
+        if locale.lower() not in alternates:
+            continue
+        # The original English legal pages are root documents, not generated
+        # /en mirrors. Preserve their exact self-reference and all body bytes.
+        legal_self_reference = (
+            locale == "en" and relative in {"privacy.html", "terms.html"}
+            and len(parser.canonicals) == 1
+            and alternates["en"] == parser.canonicals[0]
+            and urlsplit(parser.canonicals[0]).path == "/" + relative
+            and re.search(rb'<html\b[^>]*\blang=["\']en["\']', data, re.I)
+        )
+        if not legal_self_reference:
+            raise ParityError(f"pre-locale HTML already contains locale hreflang links: {relative}")
     if len(parser.canonicals) > 1:
         raise ParityError(f"HTML contains duplicate canonical links: {relative}")
     return {
@@ -396,7 +408,9 @@ def _validate_final_head(
     before = baseline.get("alternates")
     if not isinstance(before, dict) or not all(isinstance(k, str) and isinstance(v, str) for k, v in before.items()):
         raise ParityError(f"snapshot HTML alternate metadata is invalid: {relative}")
-    additions_present = {locale for locale in LOCALES if locale in final}
+    eligible = google_hreflang_codes(LOCALES)
+    eligible_keys = {code.lower() for code in eligible}
+    additions_present = eligible_keys & (set(final) - set(before))
     has_cluster_baseline = "zh-hans" in before and "x-default" in before
 
     if not additions_present:
@@ -405,9 +419,9 @@ def _validate_final_head(
         return False
 
     if has_cluster_baseline:
-        if additions_present != set(LOCALES):
+        if additions_present != eligible_keys:
             raise ParityError(f"locale hreflang cluster is incomplete: {relative}")
-        if set(final) != set(before) | set(LOCALES):
+        if set(final) != set(before) | eligible_keys:
             raise ParityError(f"locale hreflang language set changed unexpectedly: {relative}")
         for language, href in before.items():
             if final.get(language) != href:
@@ -417,9 +431,9 @@ def _validate_final_head(
             raise ParityError(f"x-default must remain aligned with zh-Hans: {relative}")
         if baseline.get("canonical") != zh_url:
             raise ParityError(f"zh-Hans hreflang must remain aligned with canonical: {relative}")
-        for locale in LOCALES:
+        for locale in eligible:
             expected = _localized_url(zh_url, locale, origin=origin, relative=relative)
-            if final[locale] != expected:
+            if final[locale.lower()] != expected:
                 raise ParityError(f"incorrect {locale} hreflang URL: {relative}")
         return True
 

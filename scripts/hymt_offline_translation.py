@@ -62,7 +62,7 @@ NATIVE_TARGET_INSTRUCTIONS = {
     'mn': '蒙古语（使用西里尔字母）', 'ug': '维吾尔语（使用阿拉伯字母）',
     'yue': '香港粵語（使用繁體漢字）',
 }
-EXTENDED_ADAPTER_REVISION = 'global-native-target-v3-link-boundaries'
+EXTENDED_ADAPTER_REVISION = 'global-native-target-v4-native-prose'
 _ENGINES: dict[str, object] = {}
 _LOCK = threading.RLock()
 # Finance vocabulary constrains individual concepts, never whole sentences.
@@ -221,7 +221,7 @@ def _restore_protected_link_spacing(source: str, result: str) -> str:
     for left, right in (("(", ")"), ("[", "]")):
         pattern = r"\]" + re.escape(left) + r"(__HYMTPH_\d+__)" + re.escape(right)
         for token in set(re.findall(pattern, source)):
-            spaced = r"\]" + re.escape(left) + r"[ \t]*" + re.escape(token) + r"[ \t]*" + re.escape(right)
+            spaced = r"\][ \t]*" + re.escape(left) + r"[ \t]*" + re.escape(token) + r"[ \t]*" + re.escape(right)
             result = re.sub(spaced, lambda _m: "]" + left + token + right, result)
     return result
 
@@ -325,6 +325,12 @@ class _HyMTEngine:
                   'Each __HYMTPH_...__ is an already translated noun or protected resource; integrate it without rewriting it. '
                   'Preserve Markdown formatting. Do not change financial facts, units, or comparisons. '
                   + financial_glossary(text, target) + '\n' + text)
+        if target in {'mr', 'bo'}:
+            # A single-language instruction avoids the model translating a mixed
+            # Chinese/English instruction as source prose. No sample overrides.
+            native = {'mr': '马拉地语（天城文）', 'bo': '藏语（藏文）'}[target]
+            prompt = (f'请将以下文本翻译为{native}，注意只需要输出翻译后的结果，不要额外解释。'
+                      '保留全部占位符及Markdown链接的括号，不要翻译占位符。\n\n' + text)
         response = request_json(self.port, '/v1/chat/completions', {
             'model': 'hymt-offline', 'messages': [{'role': 'user', 'content': prompt}],
             'stream': False, 'cache_prompt': False, **MANIFEST['sampling'],
@@ -411,7 +417,7 @@ class HyMTOfflineTranslator:
                         value = to_traditional(masked)
                     else:
                         model_input = masked
-                        if target not in {'zh', *DEFAULT_LOCALES}:
+                        if target not in {'zh', 'mr', 'bo', *DEFAULT_LOCALES}:
                             # Explicit boundaries keep adjacent Indic/RTL text from
                             # fusing with reserved tokens. Validate against the original.
                             model_input = _space_protected_tokens(masked, markdown=markdown)

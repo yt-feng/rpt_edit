@@ -16,7 +16,7 @@ import subprocess
 import sys
 from urllib.parse import urlsplit
 
-from portal_language_registry import selected_locales, manifest_locales, MIRROR_CODES
+from portal_language_registry import selected_locales, preparation_locales, manifest_locales, MIRROR_CODES
 from offline_translation import MODEL_ID, atomic_json
 import build_portal_locales as builder
 import verify_portal_chinese_parity as parity
@@ -90,7 +90,7 @@ def build_public_source(output: Path, site_url: str) -> dict:
 
 def prepare(source: Path, output: Path, cache: Path, targets: str, site_url: str,
             cutoff: str, budget: int) -> dict:
-    codes = selected_locales(targets)
+    codes = preparation_locales(targets)
     date.fromisoformat(cutoff)
     if not 30 <= budget <= 1200: raise ValueError('Translation budget must be between 30 and 1200 seconds')
     site_url = public_origin(site_url)
@@ -151,7 +151,7 @@ def main() -> int:
     parser.add_argument('--source-root',type=Path)
     parser.add_argument('--output-root',type=Path,required=True)
     parser.add_argument('--cache',type=Path)
-    parser.add_argument('--targets',default='new')
+    parser.add_argument('--targets',default='ready-new')
     parser.add_argument('--site-url',default='https://kcdesk.com')
     parser.add_argument('--index-start-date',default='2026-09-23')
     parser.add_argument('--budget-seconds',type=int,default=300)

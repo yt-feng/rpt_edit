@@ -84,8 +84,9 @@ class GlobalLocaleTests(unittest.TestCase):
                 self.assertIn(f'dir="{r.LANGUAGES[code].direction}"',html)
                 self.assertIn(f'<link rel="canonical" href="{SITE_URL}/{code}/"',html)
                 links=alternate_links(html)
-                self.assertEqual(set(links),{'zh-Hans','x-default',*r.MIRROR_CODES})
-                self.assertEqual(links[code],f'{SITE_URL}/{code}/')
+                expected = set() if code == 'yue' else set(r.google_hreflang_codes(('zh-Hans','x-default',*r.MIRROR_CODES)))
+                self.assertEqual(set(links),expected)
+                if code != 'yue': self.assertEqual(links[code],f'{SITE_URL}/{code}/')
                 self.assertTrue((case.site/f'sitemap-{code}.xml').is_file())
                 self.assertNotIn('PRIVATE-OBJECT-KEY-MUST-NOT-LEAVE',html)
         for name,data in before.items(): self.assertEqual((case.site/name).read_bytes(),data)
@@ -244,5 +245,34 @@ class GlobalPreparationTests(unittest.TestCase):
         from financial_quantity_integrity import quantity_issues
         self.assertEqual(quantity_issues('收入为1.2亿美元和3亿元人民币。', '收入為1.2億美元和3億元人民幣。'),[])
         self.assertTrue(quantity_issues('收入为1.2亿美元。','收入為1.2萬美元。'))
+
+class HreflangContractTests(unittest.TestCase):
+    def test_google_cluster_excludes_unsupported_identity_without_relabeling_it(self):
+        self.assertEqual(r.google_hreflang_codes(['en','zh-Hant','yue','xx','x-default']),('en','zh-Hant','x-default'))
+        self.assertEqual(r.LANGUAGES['yue'].code,'yue')
+        with b.locale_selection('fr,yue,zh-Hant'):
+            source=b.discovery_links(SITE_URL+'/reports/',SITE_URL,'abc',defer_runtime=True)
+            self.assertNotIn('hreflang="yue"',source)
+            self.assertIn('hreflang="zh-Hant"',source)
+            yue=b.discovery_links(SITE_URL+'/yue/reports/',SITE_URL,'abc',defer_runtime=False)
+            self.assertNotIn('hreflang=',yue)
+            for locale in ('fr','yue','zh-Hant'):
+                xml=b.render_locale_sitemap([SITE_URL+'/reports/'],locale,SITE_URL,{})
+                self.assertIn('/'+locale+'/reports/',xml)
+                self.assertNotIn('hreflang="yue"',xml)
+                if locale=='yue':self.assertNotIn('xhtml:link',xml)
+
+    def test_expanded_chinese_parity_keeps_canonical_language_case_and_no_yue_alias(self):
+        import prepare_portal_global_locales as prep
+        case=fixtures.PortalLocaleBuildTests();case.setUp();self.addCleanup(case.tearDown)
+        for name in ('sitemap-baidu.xml','sitemap-sogou.xml'):
+            (case.site/name).write_bytes((case.site/'sitemap-pages.xml').read_bytes())
+        (case.site/'data/hot_reports.json').write_bytes(case.hot_report_index.read_bytes())
+        with mock.patch('offline_translation.OfflineTranslator',FixtureTranslator):
+            result=prep.prepare(case.site,case.site.parent/'candidate',case.cache,'fr,zh-Hant,yue',SITE_URL,'2026-09-23',60)
+        self.assertTrue(result['candidate_complete'])
+        self.assertFalse(result['production_ready'])
+        self.assertEqual(set(alternate_links((case.site.parent/'candidate/index.html').read_text())),
+                         {'zh-Hans','x-default','fr','zh-Hant'})
 
 if __name__=='__main__': unittest.main()

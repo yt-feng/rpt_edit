@@ -39,7 +39,7 @@ from zoneinfo import ZoneInfo
 
 from portal_language_registry import (
     LANGUAGES as REGISTERED_LANGUAGES, DEFAULT_LOCALES, MIRROR_CODES, LOCALE_PATTERN,
-    TARGET_SCRIPT_PATTERNS, selected_locales, runtime_languages, UI_SOURCE, INDEX_UI_SOURCE, map_text,
+    TARGET_SCRIPT_PATTERNS, selected_locales, runtime_languages, UI_SOURCE, INDEX_UI_SOURCE, map_text, google_hreflang_codes,
 )
 from portal_lazy_assets import fingerprint_newsfeed_loader
 from portal_locale_history import plan_history_release
@@ -5085,6 +5085,11 @@ def discovery_links(
             if hreflangs is not None
             else ("zh-Hans", *LOCALES, "x-default")
         )
+        # yue is a valid content language, not a Google-supported hreflang.
+        # Do not advertise an asymmetric cluster or relabel it as Mandarin.
+        canonical_locale = urlsplit(canonical).path.strip("/").split("/", 1)[0]
+        selected_hreflangs = (() if canonical_locale == "yue"
+                             else google_hreflang_codes(selected_hreflangs))
         for code in selected_hreflangs:
             target_code = "zh-Hans" if code == "x-default" else code
             rows.append(
@@ -5261,14 +5266,12 @@ def render_locale_sitemap(
         rows.extend(["  <url>", f"    <loc>{html_escape(loc, quote=True)}</loc>"])
         if lastmods.get(root_url):
             rows.append(f"    <lastmod>{html_escape(lastmods[root_url], quote=True)}</lastmod>")
-        for code in ("zh-Hans", *LOCALES):
-            alternate = absolute_locale_url(root_url, code, site_url)
+        alternates = () if locale == "yue" else google_hreflang_codes(("zh-Hans", *LOCALES, "x-default"))
+        for code in alternates:
+            alternate = absolute_locale_url(root_url, "zh-Hans" if code == "x-default" else code, site_url)
             rows.append(
                 f'    <xhtml:link rel="alternate" hreflang="{code}" href="{html_escape(alternate, quote=True)}" />'
             )
-        rows.append(
-            f'    <xhtml:link rel="alternate" hreflang="x-default" href="{html_escape(root_url, quote=True)}" />'
-        )
         rows.append("  </url>")
     rows.append("</urlset>")
     return "\n".join(rows) + "\n"
