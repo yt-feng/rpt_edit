@@ -1,0 +1,23 @@
+--- a/.github/workflows/neutral-edge-cutover.yml
++++ b/.github/workflows/neutral-edge-cutover.yml
+@@ -1440,6 +1440,8 @@
+             --build-contract "$RUNNER_TEMP/member-contact-card.jpg" \
+             --build-contract scripts/compare_portal_release_semantics.py \
+             --build-contract scripts/build_portal_suite_site.py \
++            --build-contract scripts/portal_discovery_quality.py \
++            --build-contract portal_suite/discovery_editorial.json \
+             --build-contract portal_suite/data/bbg_show_archive \
+             --build-contract scripts/merge_chart_search_index.py \
+             --build-contract workers/edge-static-host/src/index.js \
+--- a/scripts/test_portal_discovery_quality.py
++++ b/scripts/test_portal_discovery_quality.py
+@@ -293,6 +293,9 @@
+         for filename in ('public-identity-guard.yml', 'neutral-edge-cutover.yml'):
+             text = (ROOT / '.github/workflows' / filename).read_text()
+             self.assertIn('scripts/test_portal_discovery_quality.py', text)
++            if filename == 'neutral-edge-cutover.yml':
++                self.assertIn('--build-contract scripts/portal_discovery_quality.py', text)
++                self.assertIn('--build-contract portal_suite/discovery_editorial.json', text)
+ 
+ 
+ if __name__ == '__main__':
