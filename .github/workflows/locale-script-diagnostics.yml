@@ -1,0 +1,72 @@
+name: Diagnose native-script translation
+on:
+  push:
+    branches: [codex/locale-script-diagnostics-20260923]
+    paths: [.github/workflows/locale-script-diagnostics.yml]
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    if: github.event.repository.private == false
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        targets: ['mr,bo,ug', 'kk,mn,yue']
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install requests Pillow 'opencc-python-reimplemented==0.1.7'
+      - uses: ./.github/actions/setup-offline-translation
+        with:
+          targets: ${{ matrix.targets }}
+          retain-audit: false
+      - name: Compare exact public samples without any release or paid request
+        env:
+          TARGETS: ${{ matrix.targets }}
+        run: |
+          python - <<'PY'
+          import json,os,re,sys
+          from pathlib import Path
+          sys.path.insert(0,'scripts')
+          import hymt_offline_translation as h
+          import build_portal_locales as b
+          from smoke_portal_global_locales import SAMPLES
+          names={'mr':'马拉地语（天城文）','bo':'藏语（藏文）','ug':'维吾尔语（阿拉伯字母）','kk':'哈萨克语（西里尔字母，Қазақша）','mn':'蒙古语（西里尔字母，Монгол хэл）','yue':'香港粵語（繁體中文）'}
+          engnames={'mr':'Marathi','bo':'Tibetan','ug':'Uyghur','kk':'Kazakh in Cyrillic script (Қазақша)','mn':'Mongolian in Cyrillic script (Монгол хэл)','yue':'Cantonese in traditional Chinese characters'}
+          engine=h._HyMTEngine(Path(os.environ['HYMT_MODEL_DIR']))
+          rows=[];output=Path(os.environ['RUNNER_TEMP'])/'script-diagnostics';output.mkdir()
+          for code in os.environ['TARGETS'].split(','):
+              for mode in ('native','simple-english'):
+                  for kind,source,lang in SAMPLES:
+                      protected,unit=b.unit_for_text(source,'html:text:p')
+                      masked,replacements,terms=h._mask(unit.source,code)
+                      prompt=(f'请将以下文本翻译为{names[code]}，注意只需要输出翻译后的结果，不要额外解释。保留全部占位符及Markdown链接的括号，不要翻译占位符。\n\n{masked}' if mode=='native' else f'Translate the following segment into {engnames[code]}, without additional explanation. Keep placeholders and complete Markdown links unchanged.\n\n{masked}')
+                      row={'locale':code,'mode':mode,'kind':kind,'source':source}
+                      try:
+                          response=h.request_json(engine.port,'/v1/chat/completions',{'model':'hymt-offline','messages':[{'role':'user','content':prompt}],'stream':False,'cache_prompt':False,**h.MANIFEST['sampling']},timeout=180)
+                          choice=response['choices'][0];value=choice['message'].get('content') or ''
+                          row['raw']=value
+                          if choice.get('finish_reason')!='stop':raise ValueError('Incomplete model output')
+                          value=h._restore_protected_link_spacing(masked,value)
+                          h.validate_result(masked,value,lang,code,markdown=True)
+                          for token,original in replacements.items():value=value.replace(token,original)
+                          b.validate_translation_quality(code,unit,value)
+                          row['translation']=protected.restore(value);row['passed']=True
+                      except Exception as error:row['passed']=False;row['error']=str(error)
+                      rows.append(row)
+                      (output/'results.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2))
+          print(json.dumps([{k:v for k,v in row.items() if k in ('locale','mode','kind','passed','error')} for row in rows],ensure_ascii=False))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: native-script-${{ strategy.job-index }}
+          path: ${{ runner.temp }}/script-diagnostics/results.json
+          retention-days: 1
