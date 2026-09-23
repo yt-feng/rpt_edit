@@ -35,9 +35,14 @@ jobs:
           python - <<'PYCODE'
           import base64, hashlib, json, pathlib, zlib
           payload = json.loads(pathlib.Path('.seo-quality-patch.json').read_text())
-          patch = zlib.decompress(base64.b64decode(payload['zlib_base64']))
+          names = payload['parts']
+          assert all(pathlib.Path(name).name == name and name.startswith('.seo-quality-patch-') and name.endswith('.txt') for name in names)
+          encoded = ''.join(pathlib.Path(name).read_text().strip() for name in names)
+          patch = zlib.decompress(base64.b64decode(encoded, validate=True))
           assert hashlib.sha256(patch).hexdigest() == payload['sha256'], 'Patch checksum mismatch'
           pathlib.Path('/tmp/seo-quality.patch').write_bytes(patch)
+          for name in names:
+              pathlib.Path(name).unlink()
           PYCODE
           git apply --check /tmp/seo-quality.patch
           git apply --index /tmp/seo-quality.patch
