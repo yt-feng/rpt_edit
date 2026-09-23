@@ -326,5 +326,21 @@ class PublishedCrawlerPolicyTests(unittest.TestCase):
                 self.assertIn('--build-contract portal_suite/discovery_editorial.json', text)
 
 
+class PaginatedTopicIdentityTests(unittest.TestCase):
+    def test_topic_page_titles_and_entity_urls_are_stable(self):
+        definition = builder.TOPIC_HUBS[2]
+        items = [report(f"topic-{index}") for index in range(201)]
+        pages = [builder.render_topic_hub(definition, items, [], BASE, "2026-09-23", page_number=n)
+                 for n in (1, 2, 3)]
+        titles = [re.search(r"<title>(.*?)</title>", page).group(1) for page in pages]
+        self.assertEqual(len(set(titles)), 3)
+        self.assertIn("第 2 页", titles[1])
+        root = BASE + "/" + builder.topic_hub_path(definition)
+        for page in pages:
+            entity = nodes(page)["CollectionPage"]["about"]
+            self.assertEqual(entity["@id"], root + "#topic")
+            self.assertEqual(entity["url"], root)
+
+
 if __name__ == '__main__':
     unittest.main()

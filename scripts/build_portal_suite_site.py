@@ -2401,7 +2401,7 @@ def render_topic_hub(
                     "@id": f"{url_join(base_url, topic_hub_path(definition))}#topic",
                     "name": name,
                     "alternateName": name_zh,
-                    "url": canonical,
+                    "url": url_join(base_url, topic_hub_path(definition)),
                 },
                 "isPartOf": {"@id": f"{url_join(base_url, '/')}#website"},
                 "mainEntity": {"@id": f"{canonical}#reports"},
@@ -2438,7 +2438,7 @@ def render_topic_hub(
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <title>{html_escape(heading)}｜最新研究索引 | {BLOG_PUBLIC_BRAND}</title>
+    <title>{html_escape(heading + page_suffix)}｜最新研究索引 | {BLOG_PUBLIC_BRAND}</title>
     <meta name="description" content="{html_escape(description, quote=True)}">
     <meta name="keywords" content="{html_escape(definition['keywords'], quote=True)}">
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
