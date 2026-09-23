@@ -1,11 +1,11 @@
-name: Global offline locale preflight
+name: Global offline locale cohort preflight
 
 on:
   workflow_dispatch:
     inputs:
       targets:
-        description: Supported language codes, all (37 mirrors), or new (34 additions)
-        default: all
+        description: ready (35 eligible mirrors); all also diagnoses the two held scripts
+        default: ready
         required: true
         type: string
   pull_request:
@@ -53,6 +53,8 @@ jobs:
           set -euo pipefail
           python -m pip install requests Pillow 'opencc-python-reimplemented==0.1.7'
           python -B scripts/test_portal_global_locales.py
+          python -B scripts/test_portal_global_build_support.py
+          python -B scripts/test_portal_global_r2.py
           python -B scripts/test_hymt_offline_translation.py
           python -B scripts/test_portal_offline_locales.py
           python -B scripts/test_verify_portal_chinese_parity.py
@@ -62,10 +64,21 @@ jobs:
       - name: Plan bounded CPU groups
         id: plan
         env:
-          REQUESTED_TARGETS: ${{ inputs.targets || 'all' }}
+          REQUESTED_TARGETS: ${{ inputs.targets || 'ready' }}
         run: |
-          matrix=$(python scripts/portal_language_registry.py --targets "$REQUESTED_TARGETS" --matrix --group-size 6)
-          echo "matrix=$matrix" >> "$GITHUB_OUTPUT"
+          python - <<'PY'
+          import json, os, sys
+          sys.path.insert(0, 'scripts')
+          from portal_language_registry import selected_locales, preparation_locales, HELD_LOCALES
+          value=os.environ['REQUESTED_TARGETS']
+          codes=preparation_locales(value) if value in ('ready','ready-new') else selected_locales(value)
+          matrix={'include':[{'group':i//6,'targets':','.join(codes[i:i+6])} for i in range(0,len(codes),6)]}
+          with open(os.environ['GITHUB_OUTPUT'],'a') as out:out.write('matrix='+json.dumps(matrix)+'\n')
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as out:
+              out.write('## Qualification scope\nActual model checks: '+str(len(codes))+' languages.\n')
+              out.write('Registered but held from preparation/publication: '+json.dumps(HELD_LOCALES)+'\n')
+              out.write('Manual targets=all still tests every registered mirror and fails on rejected outputs.\n')
+          PY
 
   qualify:
     needs: plan

@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       targets:
-        description: all, new, or canonical comma-separated locale codes
+        description: ready-new (32 additions), ready (35 mirrors), or eligible locale codes
         required: true
-        default: new
+        default: ready-new
         type: string
       budget_seconds:
         description: Local CPU seconds per locale, 30 through 1200
@@ -43,15 +43,16 @@ jobs:
       - name: Validate bounded target plan
         id: plan
         env:
-          REQUESTED_TARGETS: ${{ inputs.targets || 'new' }}
+          REQUESTED_TARGETS: ${{ inputs.targets || 'ready-new' }}
           REQUESTED_BUDGET: ${{ inputs.budget_seconds || '300' }}
           EVENT_NAME: ${{ github.event_name }}
         run: |
           python - <<'PYCODE'
           import datetime, json, os, sys
           sys.path.insert(0, 'scripts')
-          from portal_language_registry import selected_locales
-          codes = selected_locales(os.environ['REQUESTED_TARGETS'])
+          from portal_language_registry import preparation_locales, HELD_LOCALES
+          codes = preparation_locales(os.environ['REQUESTED_TARGETS'])
+          print('Languages held pending script qualification:', ','.join(HELD_LOCALES))
           budget = int(os.environ['REQUESTED_BUDGET'])
           assert 30 <= budget <= 1200, 'Unsupported CPU window'
           if os.environ['EVENT_NAME'] == 'schedule':
