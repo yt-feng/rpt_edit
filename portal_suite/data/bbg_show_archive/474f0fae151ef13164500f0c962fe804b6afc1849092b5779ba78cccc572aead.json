@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "474f0fae151ef13164500f0c962fe804b6afc1849092b5779ba78cccc572aead",
+  "slug": "bbg-20260923-474f0fae151ef131",
+  "date": "2026-09-23",
+  "title": "阿里发布AI芯片 对标英伟达",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-09-22/alibaba-unveils-ai-chip-to-compete-with-nvidia-video",
+  "start": 0.0,
+  "end": 90.0,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 9.36,
+      "en": "Alibaba shares are jumping. After the company rolled out, what it says is the most powerful AI chip in China. Let's discuss that and more with Bloomberg tech host Ed Ludlow. Ed,",
+      "zh": "阿里巴巴股价大涨。此前该公司推出了它所称的中国最强AI芯片。我们与彭博科技主播Ed Ludlow来讨论。Ed，"
+    },
+    {
+      "start": 9.36,
+      "end": 21.2,
+      "en": "it is quite the transformation that Alibaba has come on from e-commerce giant to now producing a chip. It says rivals in video. Yeah, and the US ADRs reflect that this is a meaningful breakthrough,",
+      "zh": "阿里巴巴从电商巨头转型到如今生产芯片，变化相当大。它说在视频领域有对手。是的，美国存托凭证反映出这是一个有意义的突破，"
+    },
+    {
+      "start": 21.2,
+      "end": 32.16,
+      "en": "right? So we're talking about the Genwu V900 chip. It's interesting because Alibaba's chip unit T-head has quite, with some regular cadence, put out different generations of chip. This latest one,",
+      "zh": "对吧？我们说的是含光V900芯片。有趣的是，阿里巴巴的芯片部门平头哥一直以一定的节奏推出不同代芯片。最新这款，"
+    },
+    {
+      "start": 32.16,
+      "end": 46.88,
+      "en": "the V900 has about three X, the performance of a chip. They only released three or four months ago. There is no kind of apples or apples comparison of how this generation of accelerator will perform",
+      "zh": "V900的性能大约是三四个月前发布的芯片的三倍。目前还没有同类比较，看这一代加速器将如何表现"
+    },
+    {
+      "start": 46.88,
+      "end": 57.6,
+      "en": "against same video. What in video is or is not allowed to ship to Alibaba and mainland China is still not firm. But the main point, and within the administration, for example, in the United",
+      "zh": "与英伟达相比。英伟达是否被允许向阿里巴巴和中国大陆出货仍不确定。但主要观点是，例如在美国政府内部，"
+    },
+    {
+      "start": 57.6,
+      "end": 66.08,
+      "en": "States and within industry, something that's been acknowledged for quite a long time, we've done reporting on this, is what the Chinese technology companies are really good at is even if at the",
+      "zh": "以及行业内，长期以来公认的一点是，我们对此做过报道，中国科技公司真正擅长的是，即使在"
+    },
+    {
+      "start": 66.08,
+      "end": 77.28,
+      "en": "single chip accelerator level, it's not as strong as, say, Nvidia's Blackwater generation. They are very good at juicing out performance and aggregate in the form of a cluster. So the whole point with",
+      "zh": "单芯片加速器层面不如英伟达的Blackwell代。他们非常擅长在集群形式中榨取和聚合性能。所以V900的关键是"
+    },
+    {
+      "start": 77.28,
+      "end": 88.64,
+      "en": "V900 is that it's designed for training in a cluster of, say, 500,000 chips. And so for Barbar, this is them taking their destiny into their own hands, much the same way that the hyperscalers",
+      "zh": "它专为在约50万芯片的集群中训练而设计。所以对阿里巴巴来说，这是他们掌握自己的命运，就像这个国家的超大规模企业"
+    },
+    {
+      "start": 88.64,
+      "end": 90.0,
+      "en": "in this country have focused on diversifying compute through custom silicon.",
+      "zh": "专注于通过定制芯片实现计算多元化一样。"
+    }
+  ]
+}

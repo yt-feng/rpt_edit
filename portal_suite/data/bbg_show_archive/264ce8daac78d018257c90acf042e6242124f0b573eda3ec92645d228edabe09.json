@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "id": "264ce8daac78d018257c90acf042e6242124f0b573eda3ec92645d228edabe09",
+  "slug": "bbg-20260923-264ce8daac78d018",
+  "date": "2026-09-23",
+  "title": "Meta新应用登顶：亚马逊已切断访问，购物代理还能用吗",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-09-22/meta-s-new-muse-ai-app-tops-charts-draws-strong-reviews-video",
+  "start": 0.0,
+  "end": 88.8,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 8.96,
+      "en": "This app has got a couple of very good use cases to serve as personal agents, which is what they're pitching for.",
+      "zh": "这款应用有几个很好的使用场景，可以作为个人代理，这正是他们宣传的卖点。"
+    },
+    {
+      "start": 8.96,
+      "end": 16.48,
+      "en": "So I'll mention, you know, just if you want discount codes for any brand that you're shopping on the internet,",
+      "zh": "比如，如果你想在网上购物时获得任何品牌的折扣码，"
+    },
+    {
+      "start": 16.48,
+      "end": 25.32,
+      "en": "like you look for discount codes through Google searches and all that, just ask a muse a question, and it will give you the best discount codes.",
+      "zh": "就像你通过谷歌搜索等方式寻找折扣码一样，只需向Muse提问，它就会给你最好的折扣码。"
+    },
+    {
+      "start": 25.32,
+      "end": 31.96,
+      "en": "But do the discount codes work? Because I asked Google the same thing, and Google will give me a whole bunch of discount codes and when you apply it, it says, nope, nope.",
+      "zh": "但这些折扣码能用吗？因为我问过谷歌同样的问题，谷歌会给我一大堆折扣码，但当你应用时，它却说不行，不行。"
+    },
+    {
+      "start": 31.96,
+      "end": 35.12,
+      "en": "It does for the most part. And you bring up a very good point.",
+      "zh": "大部分情况下确实能用。你提出了一个很好的观点。"
+    },
+    {
+      "start": 35.12,
+      "end": 42.24,
+      "en": "So the challenge for this is, in theory, it scrapes all the best information from the internet.",
+      "zh": "所以这里的挑战在于，理论上它会从互联网上抓取所有最好的信息。"
+    },
+    {
+      "start": 42.24,
+      "end": 52.04,
+      "en": "But what if a retailer like Amazon blocks you or it doesn't give you the most up-to-date information, and that's where the agent may not work as desired",
+      "zh": "但如果像亚马逊这样的零售商阻止你，或者不给你最新的信息，那么代理可能就无法按预期工作。"
+    },
+    {
+      "start": 52.04,
+      "end": 60.52,
+      "en": "because it doesn't have that latest information, not because it can't, but because, you know, the retailers who own the inventory",
+      "zh": "因为它没有最新信息，不是因为它不能，而是因为拥有库存的零售商"
+    },
+    {
+      "start": 60.52,
+      "end": 64.36,
+      "en": "don't want it to be integrated, you know, with what they're doing.",
+      "zh": "不希望它被整合到他们正在做的事情中。"
+    },
+    {
+      "start": 64.36,
+      "end": 72.84,
+      "en": "And so in this case, Amazon probably will end up launching their own agent, but I would expect that agent to work in conjunction",
+      "zh": "所以在这种情况下，亚马逊最终可能会推出自己的代理，但我预计那个代理会与"
+    },
+    {
+      "start": 72.84,
+      "end": 83.04,
+      "en": "with what meta is doing because there will be a lot of agent to agent traffic and shopping where the human user is completely gone.",
+      "zh": "Meta的布局，因为未来会有大量代理间流量和购物，人类用户完全不在场。"
+    },
+    {
+      "start": 83.04,
+      "end": 88.8,
+      "en": "It's your agent working with that retailers agent and doing the transaction.",
+      "zh": "你的代理与零售商的代理协作完成交易。"
+    }
+  ]
+}
