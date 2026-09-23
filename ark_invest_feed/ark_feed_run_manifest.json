@@ -1,6 +1,6 @@
 {
   "feed_url": "https://www.ark-invest.com/feed",
-  "date_folder": "260922",
+  "date_folder": "260923",
   "since_days": 1,
   "max_pub_age_days": 120,
   "include_types": [
@@ -9,24 +9,24 @@
     "newsletters",
     "white papers"
   ],
-  "feed_item_count": 1398,
+  "feed_item_count": 1399,
   "selected_count": 1,
   "written": [
     {
       "source": "ark_invest_feed",
       "institution_name": "木头姐ARK",
-      "title": "#526: Why Are Interest Rates And Equities Rising At The Same Time?, & More",
-      "type": "Newsletters",
-      "category": "Newsletters",
-      "source_url": "https://www.ark-invest.com/newsletters/issue-526",
-      "guid": "https://www.ark-invest.com/newsletters/issue-526",
-      "pub_date": "Mon, 21 Sep 2026 20:01:00 GMT",
-      "updated": "2026-09-22T00:03:23.943+00:00",
-      "event_datetime": "2026-09-22T00:03:23.943000+00:00",
-      "feed_key": "9a283a2d8fd00274",
+      "title": "An Investor Letter From Cathie Wood",
+      "type": "Articles",
+      "category": "Market Commentary",
+      "source_url": "https://www.ark-invest.com/articles/market-commentary/investor-letter-cathie-wood",
+      "guid": "https://www.ark-invest.com/articles/market-commentary/investor-letter-cathie-wood",
+      "pub_date": "Tue, 22 Sep 2026 08:01:00 GMT",
+      "updated": "0001-01-01T05:00:00.000+00:00",
+      "event_datetime": "2026-09-22T08:01:00+00:00",
+      "feed_key": "6623d2700eaea58d",
       "source_mineru": "source_mineru.md",
       "note": "note.md",
-      "output_dir": "xhs_notes/ark/260922/0001-ARK_526-Why-Are-Interest-Rates-And-Equities-Rising-At-The-Same-Time-More_9a283a2d8fd00274"
+      "output_dir": "xhs_notes/ark/260923/0001-ARK_An-Investor-Letter-From-Cathie-Wood_6623d2700eaea58d"
     }
   ],
   "status": "ok"
