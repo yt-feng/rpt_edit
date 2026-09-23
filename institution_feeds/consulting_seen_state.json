@@ -1320,6 +1320,58 @@
     "bcg:https://www.bcg.com/publications/2026/india-powering-ai-ambition": {
       "first_seen": "2026-09-21",
       "status": "downloaded"
+    },
+    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/industries/financial%20services/our%20insights/global%20banking%20annual%20review/global-banking-annual-review-2026-precision-with-speed_final.pdf": {
+      "first_seen": "2026-09-23",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/colombia-del-marketing-digital-al-agentic-marketing": {
+      "first_seen": "2026-09-23",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/authorization-gap-ai-agent-governance": {
+      "first_seen": "2026-09-23",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/greater-china-m-and-a-buyouts-rising": {
+      "first_seen": "2026-09-23",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/australia-nz-m-and-a-decade-low": {
+      "first_seen": "2026-09-23",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/india-m-and-a-fewer-deals-bigger-bets": {
+      "first_seen": "2026-09-23",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/japan-group-breakups-unsolicited-bids": {
+      "first_seen": "2026-09-23",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/southeast-asia-rebound-underused": {
+      "first_seen": "2026-09-23",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/south-korea-divestitures-drive-value": {
+      "first_seen": "2026-09-23",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/womens-longevity-health-market-gap": {
+      "first_seen": "2026-09-23",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/m-and-a-recovery-varies-by-region": {
+      "first_seen": "2026-09-23",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/m-and-a-rebounds-recovery-uneven": {
+      "first_seen": "2026-09-23",
+      "status": "duplicate_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/rail-operators-capture-ai-opportunity": {
+      "first_seen": "2026-09-23",
+      "status": "downloaded"
     }
   }
 }
