@@ -28,13 +28,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Preserve public patch transport for checksum diagnostics
-        uses: actions/upload-artifact@v4
-        with:
-          name: seo-patch-transport
-          path: .seo-quality-patch-*.txt
-          include-hidden-files: true
-          retention-days: 1
       - name: Apply reviewed patch to this branch only
         run: |
           set -euo pipefail
@@ -58,13 +51,15 @@ jobs:
           PYCODE
           git apply --check /tmp/seo-quality.patch
           git apply --index /tmp/seo-quality.patch
-          rm .seo-quality-patch.json
+          git apply --check .seo-quality-followup.patch
+          git apply --index .seo-quality-followup.patch
+          rm .seo-quality-patch.json .seo-quality-followup.patch
       - name: Run source regression tests
         env:
           PYTHONDONTWRITEBYTECODE: '1'
         run: |
           set -euo pipefail
-          python -m pip install --disable-pip-version-check 'requests>=2.31,<3' 'Pillow>=10.1,<12' 'pypdf>=4,<6'
+          python -m pip install --disable-pip-version-check 'requests>=2.31,<3' 'Pillow>=10.1,<12' 'pypdf>=4,<6' 'PyMuPDF>=1.24,<2'
           python -m unittest discover -s scripts -p 'test_portal_discovery_quality.py' -v
           python scripts/test_portal_seo.py
           python scripts/test_portal_blog_build.py
