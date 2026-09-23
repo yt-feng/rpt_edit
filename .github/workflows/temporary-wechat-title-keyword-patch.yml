@@ -1,0 +1,126 @@
+name: Temporary WeChat title keyword patch
+
+on:
+  push:
+    branches: [fix/wechat-hard-title-keywords-20260923]
+    paths: [.github/workflows/temporary-wechat-title-keyword-patch.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  patch-and-test:
+    if: github.ref == 'refs/heads/fix/wechat-hard-title-keywords-20260923'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/wechat-hard-title-keywords-20260923
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Apply exact, fail-closed patch
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          def replace_once(path, old, new):
+              p = Path(path)
+              text = p.read_text(encoding='utf-8')
+              if text.count(old) != 1:
+                  raise SystemExit(f'Expected exactly one patch anchor in {path}; refusing to modify it')
+              p.write_text(text.replace(old, new, 1), encoding='utf-8')
+
+          replace_once(
+              'scripts/sensitive_content_guard.py',
+              '        re.compile(r"人民币\\s*定价"),\n    ),\n]\n',
+              '        re.compile(r"人民币\\s*定价"),\n    ),\n'
+              '    # Mandatory title keywords: reject the whole article, not a rewrite.\n'
+              '    # Keep the older pricing reason first for existing diagnostic consumers.\n'
+              '    ("forbidden_title_term_beijing", re.compile(r"北京")),\n'
+              '    ("forbidden_title_term_rmb", re.compile(r"人民币")),\n'
+              ']\n',
+          )
+
+          old_test = '''    def test_hard_title_term_does_not_expand_to_adjacent_currency_topics(self) -> None:
+                  self.assertIsNone(
+                      hard_blocked_wechat_title_reason("德意志银行：人民币汇率估值的研究观察")
+                  )
+          '''
+          # Strip the YAML block indentation from all continuation lines.
+          old_test = old_test.replace('\n        ', '\n')
+          new_test = '''    def test_hard_title_keywords_match_anywhere_in_title(self) -> None:
+                  cases = (
+                      ("北京", "forbidden_title_term_beijing"),
+                      ("北京消费数据观察", "forbidden_title_term_beijing"),
+                      ("高盛：北京消费数据观察", "forbidden_title_term_beijing"),
+                      ("城市需求观察：北京", "forbidden_title_term_beijing"),
+                      ("北京银行季度业务数据", "forbidden_title_term_beijing"),
+                      ("人民币", "forbidden_title_term_rmb"),
+                      ("人民币汇率变化观察", "forbidden_title_term_rmb"),
+                      ("德意志银行：人民币汇率估值的研究观察", "forbidden_title_term_rmb"),
+                      ("高盛：离岸人民币需求数据", "forbidden_title_term_rmb"),
+                      ("结算币种为人民币", "forbidden_title_term_rmb"),
+                      ("北京与人民币相关数据", "forbidden_title_term_beijing"),
+                  )
+                  for title, reason in cases:
+                      with self.subTest(title=title):
+                          self.assertEqual(reason, hard_blocked_wechat_title_reason(title))
+
+              def test_hard_title_keywords_do_not_expand_to_unrelated_terms(self) -> None:
+                  for title in ("", "   ", "高盛：AI服务器订单增长", "上海消费数据观察",
+                                "数字货币结算数据", "亚洲汇率变化观察", "南京产业数据"):
+                      with self.subTest(title=title):
+                          self.assertIsNone(hard_blocked_wechat_title_reason(title))
+
+              def test_hard_keywords_cannot_hide_in_source_or_final_title(self) -> None:
+                  from push_xhs_notes_to_wechat_drafts import hard_blocked_xhs_title_record
+                  fields = ("raw_title", "source_report_name", "wechat_title")
+                  for field in fields:
+                      for term, reason in (("北京", "forbidden_title_term_beijing"),
+                                           ("人民币", "forbidden_title_term_rmb")):
+                          with self.subTest(field=field, term=term):
+                              metadata = {key: "高盛：行业需求数据变化" for key in fields}
+                              metadata[field] = f"高盛：{term}相关数据变化"
+                              record = hard_blocked_xhs_title_record(metadata)
+                              self.assertIsNotNone(record)
+                              self.assertEqual(reason, record["skip_reason"])
+                              self.assertEqual(field, record["matched_title_field"])
+          '''
+          new_test = new_test.replace('\n        ', '\n')
+          replace_once('scripts/test_sensitive_title_guard.py', old_test, new_test)
+
+          replace_once(
+              'scripts/test_xhs_draft_streaming.py',
+              '    def test_all_hard_blocked_titles_create_no_article_or_draft_payload(self) -> None:\n        with tempfile.TemporaryDirectory() as tmp:\n',
+              '    def test_all_hard_blocked_titles_create_no_article_or_draft_payload(self) -> None:\n'
+              '        for title in ("高盛：人民币定价机制出现变化", "高盛：人民币需求数据变化", "高盛：北京消费数据变化"):\n'
+              '            with self.subTest(title=title):\n'
+              '                self._assert_hard_title_creates_no_remote_work(title)\n\n'
+              '    def _assert_hard_title_creates_no_remote_work(self, title: str) -> None:\n'
+              '        with tempfile.TemporaryDirectory() as tmp:\n',
+          )
+          replace_once(
+              'scripts/test_xhs_draft_streaming.py',
+              '                "# 高盛：人民币定价机制出现变化\\n\\n这是一段完整的测试正文。",\n',
+              '                f"# {title}\\n\\n这是一段完整的测试正文。",\n',
+          )
+          PY
+      - name: Install test dependencies
+        run: python -m pip install -r requirements.txt reportlab
+      - name: Run title and publication regressions without production credentials
+        run: |
+          python scripts/test_sensitive_title_guard.py
+          python scripts/test_xhs_draft_streaming.py
+          python scripts/test_wechat_output_contract.py
+          python scripts/test_wechat_editorial_binding.py
+          python scripts/test_update_blog_archive_from_wechat_drafts.py
+      - name: Commit only verified implementation and tests to isolated branch
+        run: |
+          git diff --check
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add scripts/sensitive_content_guard.py scripts/test_sensitive_title_guard.py scripts/test_xhs_draft_streaming.py
+          git commit -m 'fix: hard-block WeChat titles containing 北京 or 人民币'
+          git push origin HEAD:refs/heads/fix/wechat-hard-title-keywords-20260923
