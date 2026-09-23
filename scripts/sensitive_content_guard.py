@@ -258,6 +258,10 @@ WECHAT_HARD_BLOCKED_TITLE_RULES: list[tuple[str, re.Pattern[str]]] = [
         "forbidden_title_term_rmb_pricing",
         re.compile(r"人民币\s*定价"),
     ),
+    # Mandatory title keywords: reject the whole article, not a rewrite.
+    # Keep the older pricing reason first for existing diagnostic consumers.
+    ("forbidden_title_term_beijing", re.compile(r"北京")),
+    ("forbidden_title_term_rmb", re.compile(r"人民币")),
 ]
 
 # Nomura reports need an institution-specific publication gate.  Unlike the

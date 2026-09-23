@@ -255,7 +255,8 @@ class WeChatOutputContractTests(unittest.TestCase):
             "wechat_title": "野村：美元兑人民币中间价模型观察6.7193",
         })
         self.assertIsNotNone(record)
-        self.assertEqual("nomura_sensitive_report", record["skip_reason"])
+        self.assertEqual("forbidden_title_term_rmb", record["skip_reason"])
+        self.assertEqual("wechat_title", record["matched_title_field"])
 
     def test_nomura_usd_cny_fix_model_is_hard_blocked_at_xhs_entrypoint(self) -> None:
         record = hard_blocked_xhs_title_record({
@@ -265,7 +266,8 @@ class WeChatOutputContractTests(unittest.TestCase):
             "wechat_title": "野村：美元兑人民币中间价模型观察6.7193",
         })
         self.assertIsNotNone(record)
-        self.assertEqual("nomura_sensitive_report", record["skip_reason"])
+        self.assertEqual("forbidden_title_term_rmb", record["skip_reason"])
+        self.assertEqual("wechat_title", record["matched_title_field"])
 
     def test_comment_renderer_always_uses_public_label_once(self) -> None:
         legacy = portal_comment_html("**编辑评论：** 结合样本范围理解。")
