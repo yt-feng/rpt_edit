@@ -1,0 +1,39 @@
+name: Request verified discovery release
+
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/portal-discovery-release-request.yml]
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: portal-discovery-release-request
+  cancel-in-progress: false
+
+jobs:
+  request:
+    if: github.actor == github.repository_owner
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Verify merged code and request the existing incremental release
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const verified = '64b1e6e9a080cc248d007b6d1110c8c7bac61348';
+            const comparison = await github.rest.repos.compareCommitsWithBasehead({
+              ...context.repo, basehead: `${verified}...${context.sha}`,
+            });
+            if (!['ahead', 'identical'].includes(comparison.data.status)) {
+              throw new Error('Requested main revision does not contain the verified discovery changes');
+            }
+            await github.rest.actions.createWorkflowDispatch({
+              ...context.repo,
+              workflow_id: 'neutral-edge-cutover.yml',
+              ref: 'main',
+              inputs: {operation: 'migrate', translation_scope: 'incremental'},
+            });
+            core.info('Existing incremental release requested; its validation, locking and rollback gates remain authoritative.');
