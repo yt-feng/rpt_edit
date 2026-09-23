@@ -17,6 +17,26 @@ from pathlib import Path
 from typing import Any
 
 from offline_translation import MODEL_ID, PROVIDER, OfflineTranslator, _detect_source
+from portal_discovery_quality import protect_institution_prefix, repair_institution_prefix
+
+
+def source_safe_title(source: str, translated: str) -> str:
+    from build_portal_suite_site import INSTITUTION_HUBS
+    return repair_institution_prefix(source, translated, INSTITUTION_HUBS)
+
+
+def repair_existing_catalog_titles(catalog: dict[str, Any]) -> int:
+    repaired = 0
+    for item in catalog.get("items", []):
+        if not isinstance(item, dict) or not item.get("title_zh"):
+            continue
+        original = str(item.get("title") or "")
+        current = str(item["title_zh"])
+        corrected = source_safe_title(original, current)
+        if corrected != current:
+            item["title_zh"] = corrected
+            repaired += 1
+    return repaired
 
 
 CJK_RE = re.compile(r"[\u3400-\u9fff]")
@@ -85,6 +105,8 @@ def load_title_cache(path: Path | None) -> dict[str, Any]:
                        for field in ("source", "model", "prompt_version", "title_zh"))
                 or key != title_cache_key(row["source"], row["model"], row["prompt_version"])):
             raise RuntimeError(f"Invalid title translation cache entry: {path}")
+    for row in cache["entries"].values():
+        row["title_zh"] = source_safe_title(row["source"], row["title_zh"])
     legacy_rows = list(cache["entries"].values()) if cache.get("provider") == "deepseek" else []
     for row in legacy_rows:
         if row["prompt_version"] == TITLE_PROMPT_VERSION:
@@ -128,7 +150,7 @@ def seed_title_cache(cache: dict[str, Any], catalog: dict[str, Any], candidates:
             continue
         public_source = public_source_text(source)
         seed = matches[0]
-        translation = str(seed.get("title_zh") or "").strip()
+        translation = source_safe_title(source, str(seed.get("title_zh") or "").strip())
         if (not public_source or public_source != public_source_text(seed.get("title"))
                 or not translation or len(source_translations.get(public_source, set())) != 1):
             continue
@@ -189,6 +211,8 @@ def translate_title(title: str, args: argparse.Namespace) -> str:
     if hasattr(args, "_offline_title_calls"):
         args._offline_title_calls.clear()
     protected, identifiers = protect_title_identifiers(title)
+    from build_portal_suite_site import INSTITUTION_HUBS
+    protected = protect_institution_prefix(protected, identifiers, INSTITUTION_HUBS)
     try:
         translated = normalize_translation(args._offline_translator.translate(
             protected, target="zh", source=_detect_source(title), markdown=False))
@@ -202,7 +226,7 @@ def translate_title(title: str, args: argparse.Namespace) -> str:
         raise
     if not translated:
         raise RuntimeError("Offline model returned an empty title translation")
-    return translated
+    return source_safe_title(title, translated)
 
 
 def candidate_items(catalog: dict[str, Any], force: bool, limit: int) -> list[dict[str, Any]]:
@@ -255,6 +279,9 @@ def main() -> int:
         if not args.dry_run:
             write_json(args.diagnostics_out, diagnostics)
     catalog = load_json(catalog_path, {"schema_version": 1, "items": []})
+    repaired = repair_existing_catalog_titles(catalog)
+    if repaired:
+        log(f"Repaired {repaired} contradictory institution prefixes from original titles.")
     cache = load_title_cache(cache_path)
     items = candidate_items(catalog, args.force, args.limit)
     seeded = 0
@@ -269,6 +296,8 @@ def main() -> int:
     if cache_path is not None and not args.dry_run:
         write_json(cache_path, cache)
     if not items:
+        if repaired and not args.dry_run:
+            write_json(catalog_path, catalog)
         log("No Portal Suite titles need translation.")
         return 0
 
@@ -278,7 +307,7 @@ def main() -> int:
         source = str(item.get("title") or "")
         row = cache["entries"].get(title_cache_key(source, args.model)) if not args.force else None
         if row is not None:
-            item["title_zh"] = row["title_zh"]
+            item["title_zh"] = source_safe_title(source, row["title_zh"])
             cached += 1
         else:
             pending.setdefault(source, []).append(item)
@@ -304,7 +333,7 @@ def main() -> int:
             source = futures[future]
             target_items = pending[source]
             try:
-                title_zh = future.result()
+                title_zh = source_safe_title(source, future.result())
             except Exception as exc:  # noqa: BLE001 - retry next scheduled run.
                 failed += len(target_items)
                 diagnostics["failed_titles"].append({
@@ -340,6 +369,7 @@ def main() -> int:
         "last_run_translated": translated,
         "last_run_cached": cached,
         "last_run_seeded": seeded,
+        "last_run_institution_repairs": repaired,
         "last_run_failed": failed,
     }
 

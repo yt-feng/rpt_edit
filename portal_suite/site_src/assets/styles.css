@@ -8611,3 +8611,11 @@ body.chart-lightbox-open {
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.34);
   }
 }
+
+/* Server-rendered discovery is available to readers without JavaScript. */
+.home-discovery { margin-top: 24px; }
+.home-discovery-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 24px; }
+.home-discovery .seo-report-index { padding-left: 0; }
+.home-discovery li, .report-interpretations li { overflow-wrap: anywhere; }
+.report-interpretations { margin: 24px 0; }
+@media (max-width: 760px) { .home-discovery-grid { grid-template-columns: minmax(0, 1fr); } }

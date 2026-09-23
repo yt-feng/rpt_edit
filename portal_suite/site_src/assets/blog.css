@@ -530,3 +530,6 @@
 .bbg-en{border-left:1px solid var(--border,#d7e2e4);padding-left:28px}
 .bbg-transcript-note{font-size:13px!important;opacity:.7;border-top:1px solid var(--border,#d7e2e4);padding-top:20px}
 @media(max-width:680px){.bbg-module-heading{display:block}.bbg-module-heading>.blog-read-more{display:inline-block;margin-top:12px}.bbg-pair-text{grid-template-columns:1fr;gap:18px}.bbg-en{padding-left:0;border-left:0}.blog-next-step{padding:18px}.bbg-blog-module{padding:20px 0}.bbg-transcript .bbg-pair-text p{font-size:15px}}
+
+.blog-source-card { margin: 24px 0; padding: 20px; border: 1px solid currentColor; border-radius: 12px; overflow-wrap: anywhere; }
+.blog-source-card h2 { margin-top: 0; font-size: 1.1rem; }

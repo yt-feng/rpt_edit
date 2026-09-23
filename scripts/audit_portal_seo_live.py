@@ -231,6 +231,63 @@ def robots_directives(text: str) -> tuple[list[str], bool]:
     return sitemap_urls, wildcard_disallows_root
 
 
+
+def robots_path_allowed(text: str, agent: str, path: str) -> bool:
+    """Evaluate public ASCII paths with group specificity and longest rule wins.
+
+    This audits the published policy; it does not impersonate a verified bot or
+    claim that a CDN will admit requests from that bot's actual IP ranges.
+    """
+    groups: list[tuple[list[str], list[tuple[str, str]]]] = []
+    agents: list[str] = []
+    rules: list[tuple[str, str]] = []
+    saw_directive = False
+    for raw in text.splitlines():
+        line = raw.split("#", 1)[0].strip()
+        if ":" not in line:
+            continue
+        key, value = (part.strip() for part in line.split(":", 1))
+        key = key.lower()
+        if key == "user-agent":
+            if saw_directive:
+                groups.append((agents, rules))
+                agents, rules, saw_directive = [], [], False
+            agents.append(value.lower())
+        elif agents:
+            saw_directive = True
+            if key in {"allow", "disallow"} and value:
+                rules.append((key, value))
+    if agents:
+        groups.append((agents, rules))
+    matched = []
+    for group_agents, group_rules in groups:
+        specificity = max((0 if value == "*" else len(value)
+                           for value in group_agents
+                           if value == "*" or value in agent.lower()), default=-1)
+        if specificity >= 0:
+            matched.append((specificity, group_rules))
+    if not matched:
+        return True
+    best = max(row[0] for row in matched)
+    matching_rules = []
+    for specificity, group_rules in matched:
+        if specificity != best:
+            continue
+        for key, value in group_rules:
+            anchored = value.endswith("$")
+            literal = value[:-1] if anchored else value
+            expression = "^" + re.escape(literal).replace(r"\*", ".*") + ("$" if anchored else "")
+            if re.search(expression, path):
+                matching_rules.append((len(literal.replace("*", "").encode("utf-8")), key == "allow"))
+    return max(matching_rules)[1] if matching_rules else True
+
+
+def is_challenge_response(response: FetchResult) -> bool:
+    if response.headers.get("cf-mitigated", "").lower() == "challenge":
+        return True
+    text = response.body[:8192].decode("utf-8", errors="replace")
+    return bool(re.search(r"<title>\s*(?:Just a moment\.?\.?\.?|Attention Required!.*Cloudflare)\s*</title>", text, re.I))
+
 def cloudflare_managed_robots_search_signal(text: str) -> tuple[bool, str]:
     """Return whether Cloudflare owns the robots block and its wildcard search signal."""
     managed = bool(
@@ -397,6 +454,12 @@ def audit_site(
         advertised_sitemaps, wildcard_block = robots_directives(robots_text)
         robots_managed_by_cloudflare, robots_search_signal = cloudflare_managed_robots_search_signal(robots_text)
         robots_ok = True
+        for agent in ("Googlebot", "Bingbot", "OAI-SearchBot", "PerplexityBot", "Claude-SearchBot"):
+            for public_path in ("/", "/reports/", "/reports/sample.html", "/blog/sample.html"):
+                if not robots_path_allowed(robots_text, agent, public_path):
+                    state.fail("robots", "search_agent_blocked", f"Published robots policy blocks {agent} on a public discovery path", public_path)
+        if is_challenge_response(robots_response):
+            state.fail("robots", "challenge_response", "robots.txt returned a challenge page", "/robots.txt")
         if wildcard_block:
             state.fail("robots", "wildcard_root_blocked", "The wildcard crawler group disallows the site root", "/robots.txt")
         if robots_managed_by_cloudflare and robots_search_signal == "no":
@@ -531,6 +594,9 @@ def audit_site(
             state.fail("sample_http", "document_too_large", "A sampled page exceeded the audit size limit", page_target)
             continue
         sample_metrics["http_200"] += 1
+        if is_challenge_response(page_response):
+            state.fail("sample_http", "challenge_response", "A sampled discovery page returned a browser challenge", page_target)
+            continue
         parser = SeoHtmlParser()
         parser.feed(page_response.body.decode("utf-8", errors="replace"))
         if canonical_identity(page_url) == root_identity:

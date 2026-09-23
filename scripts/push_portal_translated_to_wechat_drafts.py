@@ -12,6 +12,8 @@ optionally submit those drafts for publishing.
 """
 from __future__ import annotations
 
+from portal_discovery_quality import report_source_metadata
+
 import argparse
 import hashlib
 import html
@@ -2828,6 +2830,7 @@ def build_article(
         "digest": digest,
         "institution_name": institution_name,
         "source_report_name": source_report_name,
+        "source_metadata": report_source_metadata(status),
         "translator_name": translator_name,
         "title_decision": title_decision,
         "article": article,
@@ -3267,7 +3270,10 @@ def main() -> int:
         payload_path = output_dir / f"draft_payload_{draft_index:02d}.json"
         # Persist only the public template. The deployment hostname exists
         # solely in the in-memory request sent to WeChat.
-        write_json(payload_path, {"articles": public_articles})
+        write_json(payload_path, {
+            "articles": public_articles,
+            "source_reports": [item.get("source_metadata", {}) for item in group],
+        })
         drafts.append(
             {
                 "draft_index": draft_index,

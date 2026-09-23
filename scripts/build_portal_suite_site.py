@@ -4,6 +4,12 @@
 from __future__ import annotations
 
 from portal_lazy_assets import fingerprint_newsfeed_loader
+from portal_discovery_quality import (
+    ReportSourceIndex, editorial_topic_labels, original_report_names,
+    repair_institution_prefix, research_entities, sentence_excerpt, title_quality_flags,
+)
+from functools import lru_cache
+from collections import Counter
 
 import argparse
 from datetime import date, datetime, timedelta, timezone
@@ -107,7 +113,8 @@ REPORT_DETAIL_SHARD_PREFIX_LENGTH = 2
 BERNSTEIN_PAGE_PATH = "reports/institutions/bernstein/"
 # Bump only when canonical SEO page templates materially change. This is a
 # stable release revision, not the date on which a build happens to run.
-SEO_PAGE_TEMPLATE_REVISION_DATE = "2026-08-30"
+SEO_PAGE_TEMPLATE_REVISION_DATE = "2026-09-23"
+HUB_INDEX_PAGE_SIZE = 100
 SEARCH_INDEX_SHARD_MAX_BYTES = 3 * 1024 * 1024
 BLOG_START_DATE = "2026-07-27"
 BLOG_PUBLIC_BRAND = "KC桌面"
@@ -153,6 +160,10 @@ def public_catalog_item(item: dict[str, Any]) -> dict[str, Any]:
         result["title"] = public_source_text(result["title"], "Untitled report")
     if "filename" in result:
         result["filename"] = public_source_text(result["filename"], "report.pdf")
+    if result.get("title_zh"):
+        result["title_zh"] = repair_institution_prefix(
+            str(result.get("title") or ""), str(result["title_zh"]), INSTITUTION_HUBS,
+        )
     return result
 
 # Mirrors every non-fallback category used by the browser. Together with the
@@ -1302,7 +1313,9 @@ def report_seo_path(report_id: str) -> str:
 
 
 def item_display_title(item: dict[str, Any]) -> str:
-    return compact_space(str(item.get("title_zh") or item.get("title") or item.get("filename") or "研究报告"))
+    original = str(item.get("title") or item.get("filename") or "")
+    title = compact_space(str(item.get("title_zh") or original or "研究报告"))
+    return repair_institution_prefix(original, title, INSTITUTION_HUBS)
 
 
 def item_source_title(item: dict[str, Any]) -> str:
@@ -1437,29 +1450,24 @@ def blog_related_topic_hubs(
     digest: str,
     content_text: str,
 ) -> list[dict[str, str]]:
-    """Return up to four controlled topic hubs ranked by field prominence."""
-    fields = (title, digest, content_text)
-    matches: list[tuple[int, int, dict[str, str]]] = []
-    for rule_index, (label, pattern) in enumerate(SEO_INDUSTRY_RULES):
-        field_index = next(
-            (index for index, value in enumerate(fields) if pattern.search(str(value or ""))),
-            None,
-        )
-        definition = topic_hub_for_label(label)
-        if field_index is not None and definition:
-            matches.append((field_index, rule_index, definition))
-    matches.sort(key=lambda row: (row[0], row[1]))
-    return [definition for _, _, definition in matches[:4]]
+    """Use the article's main subject, not incidental body/footer keywords."""
+    del content_text
+    labels = editorial_topic_labels(title, digest, SEO_INDUSTRY_RULES)
+    return [definition for label in labels if (definition := topic_hub_for_label(label))]
 
 
 def report_browser_title(item: dict[str, Any]) -> str:
     title = item_display_title(item)
-    if not is_bernstein_item(item):
+    definition = institution_hub_for_item(item)
+    if not definition:
         return f"{title} | {BLOG_PUBLIC_BRAND}"
-    topic = re.sub(r"^(?:伯恩斯坦|bernstein)(?:研报|research)?[\s:：·|｜—_-]*", "", title, flags=re.I).strip()
-    if len(topic) > 34:
-        topic = topic[:33].rstrip("，,。；;：: -_") + "…"
-    return f"伯恩斯坦研报：{topic or '最新研究报告'} | {BLOG_PUBLIC_BRAND}"
+    # A known source prefix already provides provenance. Do not repeat it or
+    # cut company names, tickers, reporting periods and research identifiers.
+    from portal_discovery_quality import institution_prefix
+    prefix, _ = institution_prefix(title, INSTITUTION_HUBS)
+    if prefix:
+        return f"{title} | {BLOG_PUBLIC_BRAND}"
+    return f"{definition['name_zh']}研报：{title} | {BLOG_PUBLIC_BRAND}"
 
 
 def item_institution_schema(item: dict[str, Any], base_url: str = SITE_BASE_URL) -> dict[str, Any] | None:
@@ -1661,6 +1669,7 @@ def render_report_seo_page(
     base_url: str,
     generated_date: str,
     related_items: list[dict[str, Any]] | None = None,
+    source_articles: list[dict[str, Any]] | None = None,
 ) -> str:
     report_id = str(item.get("id") or "")
     title = item_display_title(item)
@@ -1730,6 +1739,12 @@ def render_report_seo_page(
         },
         "isAccessibleForFree": False,
     }
+    if source_articles:
+        report_json_ld["subjectOf"] = [
+            {"@type": "BlogPosting", "url": url_join(base_url, f"blog/{article['slug']}.html"),
+             "headline": blog_public_title(str(article.get("title") or ""))}
+            for article in source_articles[:6]
+        ]
     if institution_schema:
         report_json_ld["publisher"] = institution_schema
         report_json_ld["about"].append(institution_schema)
@@ -1861,6 +1876,7 @@ def render_report_seo_page(
         <p class="subtle">{html_escape(description)}</p>
         <h2>核心信息（可引用）</h2>
         <p>{html_escape(citable_summary)}</p>
+        {render_report_article_links(source_articles or [], base_url)}
         <h2>报告信息</h2>
         <p>机构：<a href="{html_escape(institution_href)}">{html_escape(institution)}</a></p>
         <p>行业：<a href="{html_escape(topic_href)}">{html_escape(industry)}</a></p>
@@ -2144,31 +2160,21 @@ def institution_hub_related_articles(
     definition: dict[str, Any],
     blog_articles: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
-    return [
-        article
-        for article in blog_articles
-        if any(normalized_alias_matches(blog_article_text(article), str(alias)) for alias in definition["aliases"])
-    ]
-
+    return [article for article in blog_articles if definition["slug"] in (
+        article["_discovery_institutions"] if "_discovery_institutions" in article else
+        [row["slug"] for row in blog_related_institution_hubs(
+            str(article.get("title") or ""), str(article.get("digest") or ""), "",
+        )]
+    )]
 
 def topic_hub_related_articles(
     definition: dict[str, str],
     blog_articles: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
-    topic_pattern = next(
-        (
-            pattern
-            for label, pattern in SEO_INDUSTRY_RULES
-            if normalize_search_text(label) == normalize_search_text(definition["label"])
-        ),
-        None,
-    )
-    return [
-        article
-        for article in blog_articles
-        if topic_pattern and topic_pattern.search(blog_article_text(article))
-    ]
-
+    return [article for article in blog_articles
+            if definition["label"] in (article["_discovery_topics"] if "_discovery_topics" in article else editorial_topic_labels(
+                str(article.get("title") or ""), str(article.get("digest") or ""), SEO_INDUSTRY_RULES,
+            ))]
 
 def render_institution_hub(
     definition: dict[str, Any],
@@ -2176,13 +2182,20 @@ def render_institution_hub(
     blog_articles: list[dict[str, Any]],
     base_url: str,
     generated_date: str,
+    page_number: int = 1,
+    page_size: int = HUB_INDEX_PAGE_SIZE,
 ) -> str:
-    canonical = url_join(base_url, institution_hub_path(definition))
+    total_pages = page_count(len(institution_items), page_size)
+    page_number = max(1, min(page_number, total_pages))
+    canonical = url_join(base_url, collection_page_path(institution_hub_path(definition), page_number))
+    page_suffix = "" if page_number == 1 else f" · 第 {page_number} 页"
+    pagination = render_collection_pagination(page_number, total_pages, "专题报告分页")
     institution_items = sorted_hub_items(institution_items, generated_date)
-    latest_items = institution_items[:100]
+    start = (page_number - 1) * page_size
+    latest_items = institution_items[start:start + page_size]
     topic_groups = report_aggregation_groups(institution_items, item_industry, minimum_size=1, limit=16)
     related_articles = institution_hub_related_articles(definition, blog_articles)
-    lastmod = hub_page_lastmod(institution_items, related_articles)
+    lastmod = hub_page_lastmod(institution_items, related_articles if page_number == 1 else [])
     is_bernstein = definition["slug"] == "bernstein"
     name = str(definition["name"])
     name_zh = str(definition["name_zh"])
@@ -2238,7 +2251,7 @@ def render_institution_hub(
                 "inLanguage": "zh-Hans",
                 "about": {
                     "@type": "Organization",
-                    "@id": f"{canonical}#organization",
+                    "@id": f"{url_join(base_url, institution_hub_path(definition))}#organization",
                     "name": name,
                     "alternateName": alternate_names,
                 },
@@ -2277,7 +2290,7 @@ def render_institution_hub(
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <title>{html_escape(page_title)}</title>
+    <title>{html_escape(page_title + page_suffix)}</title>
     <meta name="description" content="{html_escape(description, quote=True)}">
     <meta name="keywords" content="{html_escape(','.join([f'{name_zh}研报', f'{name}研报', name, name_zh, *definition['aliases'], '投行研报', '股票研究', '行业研究', '中文研报']), quote=True)}">
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
@@ -2304,7 +2317,7 @@ def render_institution_hub(
     <main class="shell legal-shell">
       <article class="legal-panel">
         <nav aria-label="面包屑"><a href="../../../">首页</a> › <a href="../../">报告索引</a> › <span aria-current="page">{html_escape(name_zh)}研报</span></nav>
-        <h1>{html_escape(heading)}</h1>
+        <h1>{html_escape(heading + page_suffix)}</h1>
         <p>{html_escape(description)}</p>
         <p class="subtle">别名：{html_escape('、'.join(str(alias) for alias in alternate_names))}。篇数与更新时间来自当前公开目录，每次发布自动重算。</p>
         <p><a class="primary-link" href="../../../?q={quote(name_zh)}">检索全部{html_escape(name_zh)}报告</a> <a class="secondary-button" href="../../topics.html">浏览全部机构与主题</a></p>
@@ -2313,9 +2326,11 @@ def render_institution_hub(
         <h2>常见研究主题</h2>
         <ul class="seo-report-index">{"".join(topic_rows)}</ul>
         <h2>最新{html_escape(name_zh)}研报</h2>
-        <p class="subtle">已更新：{html_escape(lastmod)} · 当前共 {len(institution_items)} 篇 · 以下展示最近 {len(latest_items)} 篇。</p>
+        <p class="subtle">已更新：{html_escape(lastmod)} · 当前共 {len(institution_items)} 篇 · 本页展示第 {start + 1 if latest_items else 0}–{start + len(latest_items)} 篇。</p>
+        {pagination}
         <ul class="seo-report-index">{"".join(report_rows)}</ul>
-        {article_block}
+        {pagination}
+        {article_block if page_number == 1 else ""}
       </article>
     </main>
     <footer class="legal-footer"><a href="../../../">首页检索</a><a href="../../">报告索引</a><a href="../../../blog/">Blog</a><a href="../../../about.html">关于{BLOG_PUBLIC_BRAND}</a></footer>
@@ -2342,10 +2357,17 @@ def render_topic_hub(
     blog_articles: list[dict[str, Any]],
     base_url: str,
     generated_date: str,
+    page_number: int = 1,
+    page_size: int = HUB_INDEX_PAGE_SIZE,
 ) -> str:
-    canonical = url_join(base_url, topic_hub_path(definition))
+    total_pages = page_count(len(topic_items), page_size)
+    page_number = max(1, min(page_number, total_pages))
+    canonical = url_join(base_url, collection_page_path(topic_hub_path(definition), page_number))
+    page_suffix = "" if page_number == 1 else f" · 第 {page_number} 页"
+    pagination = render_collection_pagination(page_number, total_pages, "专题报告分页")
     topic_items = sorted_hub_items(topic_items, generated_date)
-    latest_items = topic_items[:100]
+    start = (page_number - 1) * page_size
+    latest_items = topic_items[start:start + page_size]
     name = definition["label"]
     name_zh = definition["name_zh"]
     heading = f"{name_zh}研报（{name}）"
@@ -2361,7 +2383,7 @@ def render_topic_hub(
         for item in latest_items
     ]
     related_articles = topic_hub_related_articles(definition, blog_articles)
-    lastmod = hub_page_lastmod(topic_items, related_articles)
+    lastmod = hub_page_lastmod(topic_items, related_articles if page_number == 1 else [])
     article_block = render_related_article_block(related_articles, base_url, f"{name_zh}相关中文文章")
     json_ld = {
         "@context": "https://schema.org",
@@ -2376,7 +2398,7 @@ def render_topic_hub(
                 "inLanguage": "zh-Hans",
                 "about": {
                     "@type": "Thing",
-                    "@id": f"{canonical}#topic",
+                    "@id": f"{url_join(base_url, topic_hub_path(definition))}#topic",
                     "name": name,
                     "alternateName": name_zh,
                     "url": canonical,
@@ -2443,15 +2465,17 @@ def render_topic_hub(
     <main class="shell legal-shell">
       <article class="legal-panel">
         <nav aria-label="面包屑"><a href="../../../">首页</a> › <a href="../../">报告索引</a> › <span aria-current="page">{html_escape(name_zh)}</span></nav>
-        <h1>{html_escape(heading)}</h1>
+        <h1>{html_escape(heading + page_suffix)}</h1>
         <p>{html_escape(description)}</p>
         <p><a class="primary-link" href="../../../?q={quote(name_zh)}">检索全部{html_escape(name_zh)}报告</a> <a class="secondary-button" href="../../topics.html">浏览全部机构与主题</a></p>
         <h2>元数据索引说明</h2>
         <p>本页仅索引被归类为 {html_escape(name)} 的公开报告标题、机构、收录日期和可用状态。{BLOG_PUBLIC_BRAND}不是底层报告的作者或出版方，引用时请以每篇报告页标明的原始机构与报告信息为准。</p>
         <h2>最新{html_escape(name_zh)}研报</h2>
-        <p class="subtle">已更新：{html_escape(lastmod)} · 当前共 {len(topic_items)} 篇 · 以下展示最近 {len(latest_items)} 篇。</p>
+        <p class="subtle">已更新：{html_escape(lastmod)} · 当前共 {len(topic_items)} 篇 · 本页展示第 {start + 1 if latest_items else 0}–{start + len(latest_items)} 篇。</p>
+        {pagination}
         <ul class="seo-report-index">{"".join(report_rows)}</ul>
-        {article_block}
+        {pagination}
+        {article_block if page_number == 1 else ""}
       </article>
     </main>
     <footer class="legal-footer"><a href="../../../">首页检索</a><a href="../../">报告索引</a><a href="../../../blog/">Blog</a><a href="../../../about.html">关于{BLOG_PUBLIC_BRAND}</a></footer>
@@ -2667,6 +2691,10 @@ def render_about_page(base_url: str, generated_date: str) -> str:
         <p>网站支持简体中文、繁體中文和英文机构名、公司名、ticker。常见检索意图包括金融研报、金融研報、投行研报、投資銀行研報、股票研究、總體經濟研究，以及 investment bank research、equity research 和 macro research。</p>
         <h2>引用与来源边界</h2>
         <p>引用索引信息时，请使用报告静态详情页的 canonical URL，并将底层报告归属于页面标明的原始研究机构。{BLOG_PUBLIC_BRAND}不冒充底层报告的作者或出版方，不编造作者、版权、目标价或投资建议。</p>
+        <h2>翻译、解读与纠错</h2>
+        <p>中文标题在展示时核对原始标题中的来源机构；英文原题保留供核验。收录日期与原报告发布日期分别标注，未确认的发布日期不作推断。</p>
+        <p>中文解读与底层研究报告分别呈现。解读摘要沿用已发布文章内容；KC评论属于本站解读，不代表原机构观点。来源链接以明确的报告标识或唯一匹配的原始报告名称建立，无法唯一匹配时不自动关联。</p>
+        <p>发现标题、来源或数据口径问题，可通过<a href="./?request=support">联系入口提交纠错</a>，并附上文章或报告页面及具体问题。</p>
         <h2>发现方式</h2>
         <p><a href="reports/">浏览金融研报索引</a> · <a href="reports/topics.html">按机构与主题浏览</a> · <a href="blog/">阅读每日研究文章</a> · <a href="charts">检索研报图表</a></p>
         <h2>联系</h2>
@@ -2739,6 +2767,8 @@ def build_related_reports(items: list[dict[str, Any]], limit: int = 6) -> dict[s
         )
         for item in items
     }
+    entities = {id(item): research_entities(" ".join(str(item.get(key) or "")
+                for key in ("title", "title_zh", "filename"))) for item in items}
     sorted_items = sorted(
         items,
         key=lambda item: (facts[id(item)][3], facts[id(item)][2]),
@@ -2750,6 +2780,15 @@ def build_related_reports(items: list[dict[str, Any]], limit: int = 6) -> dict[s
         institution_key, industry_key, _, _, _ = facts[id(item)]
         institution_buckets.setdefault(institution_key, []).append(item)
         industry_buckets.setdefault(industry_key, []).append(item)
+
+    company_buckets: dict[str, list[dict[str, Any]]] = {}
+    fine_buckets: dict[str, list[dict[str, Any]]] = {}
+    for item in sorted_items:
+        companies, fine_topics = entities[id(item)]
+        for key in sorted(companies):
+            company_buckets.setdefault(key, []).append(item)
+        for key in sorted(fine_topics):
+            fine_buckets.setdefault(key, []).append(item)
 
     related: dict[str, list[dict[str, Any]]] = {}
     for item in sorted_items:
@@ -2765,13 +2804,23 @@ def build_related_reports(items: list[dict[str, Any]], limit: int = 6) -> dict[s
             if candidate_id and candidate_id != report_id:
                 candidates[candidate_id] = candidate
 
-        def relation_key(candidate: dict[str, Any]) -> tuple[int, tuple[int, int, str], str]:
+        companies, fine_topics = entities[id(item)]
+        for buckets, keys in ((company_buckets, companies), (fine_buckets, fine_topics)):
+            for key in sorted(keys):
+                for candidate in buckets.get(key, [])[:100]:
+                    candidate_id = str(candidate.get("id") or "")
+                    if candidate_id and candidate_id != report_id:
+                        candidates[candidate_id] = candidate
+
+        def relation_key(candidate: dict[str, Any]) -> tuple:
             candidate_institution, candidate_industry, candidate_date, candidate_lastmod, score = facts[id(candidate)]
             if candidate_institution == institution_key:
                 score += 4
             if candidate_industry == industry_key:
                 score += 3
-            return score, candidate_date, candidate_lastmod
+            candidate_companies, candidate_topics = entities[id(candidate)]
+            return (len(companies & candidate_companies), len(fine_topics & candidate_topics),
+                    score, candidate_date, candidate_lastmod)
 
         related[report_id] = sorted(candidates.values(), key=relation_key, reverse=True)[:limit]
     return related
@@ -2943,8 +2992,7 @@ def blog_public_author(value: str) -> str:
 
 
 def blog_public_digest(value: str) -> str:
-    return compact_space(blog_public_text(value))[:300]
-
+    return sentence_excerpt(blog_public_text(value), 300)
 
 def blog_public_keywords(article: dict[str, Any]) -> list[str]:
     values = [
@@ -2971,15 +3019,15 @@ def blog_public_keywords(article: dict[str, Any]) -> list[str]:
 
 
 def blog_seo_description(value: str) -> str:
-    """Keep descriptions readable while establishing the exact public brand term."""
+    """Use complete source sentences, without manufacturing a clipped ending."""
     digest = blog_public_digest(value)
     brand_sentence = f"本文由{BLOG_PUBLIC_BRAND}整理发布。"
     if BLOG_PUBLIC_BRAND in digest:
-        return digest[:300]
+        return digest
     if not digest:
         return f"{BLOG_PUBLIC_BRAND}每日研究文章与研报存档。"
-    return f"{digest[:260].rstrip('，,。；; ')}。{brand_sentence}"
-
+    prefix = sentence_excerpt(digest, 300 - len(brand_sentence) - 1)
+    return f"{prefix} {brand_sentence}" if prefix else brand_sentence
 
 def blog_public_slug(date_value: date | str, fingerprint: str) -> str:
     published = date_value if isinstance(date_value, date) else datetime.strptime(str(date_value), "%Y-%m-%d").date()
@@ -3238,6 +3286,10 @@ def load_blog_draft_articles(drafts_root: Path, start_date: date) -> list[dict[s
         articles = payload.get("articles") if isinstance(payload, dict) else None
         if not isinstance(articles, list):
             raise ValueError(f"Blog payload must contain an articles list: {payload_path}")
+        source_reports = payload.get("source_reports", [{} for _ in articles])
+        if (not isinstance(source_reports, list) or len(source_reports) != len(articles)
+                or any(not isinstance(row, dict) for row in source_reports)):
+            raise ValueError(f"Blog source metadata must align with articles: {payload_path}")
         try:
             relative_payload = payload_path.relative_to(drafts_root).as_posix()
         except ValueError:
@@ -3246,6 +3298,15 @@ def load_blog_draft_articles(drafts_root: Path, start_date: date) -> list[dict[s
         for article_index, raw_article in enumerate(articles, start=1):
             if not isinstance(raw_article, dict):
                 raise ValueError(f"Blog article {article_index} must be an object: {payload_path}")
+            provenance = source_reports[article_index - 1]
+            source_name = compact_space(str(provenance.get("source_report_name") or ""))
+            source_id = str(provenance.get("source_report_id") or "")
+            if source_name and original_report_names({"source_report_name": source_name}) != [source_name]:
+                raise ValueError(f"Invalid public source name: {payload_path}")
+            if source_id and not re.fullmatch(r"[A-Za-z0-9_-]{1,160}", source_id):
+                raise ValueError(f"Invalid public source ID: {payload_path}")
+            source_fields = {key: value for key, value in
+                             (("source_report_name", source_name), ("source_report_id", source_id)) if value}
             title = compact_space(str(raw_article.get("title") or ""))[:300]
             raw_content_value = raw_article.get("content")
             if raw_content_value is not None and not isinstance(raw_content_value, str):
@@ -3286,6 +3347,7 @@ def load_blog_draft_articles(drafts_root: Path, start_date: date) -> list[dict[s
 
             slug = blog_public_slug(date_value, fingerprint)
             unique[fingerprint] = {
+                **source_fields,
                 "fingerprint": fingerprint,
                 "slug": slug,
                 "legacy_slugs": [blog_legacy_slug(date_value, source, fingerprint)],
@@ -3413,6 +3475,8 @@ def blog_archive_record(article: dict[str, Any]) -> dict[str, Any]:
             if re.fullmatch(r"[a-z0-9_-]{8,160}", str(value))
             and str(value) != str(article.get("slug") or "")
         }),
+        **({"source_report_id": str(article["source_report_id"])} if article.get("source_report_id") else {}),
+        **({"source_report_name": str(article["source_report_name"])} if article.get("source_report_name") else {}),
         "title": str(article.get("title") or ""),
         "author": str(article.get("author") or BLOG_PUBLIC_BRAND),
         "digest": str(article.get("digest") or ""),
@@ -3466,6 +3530,10 @@ def validate_blog_archive_record(data: Any, path: Path, start_date: date) -> dic
         raise ValueError(f"Blog archive contains unsanitized or invalid HTML: {path}")
     if blog_article_fingerprint(title, content) != fingerprint:
         raise ValueError(f"Blog archive fingerprint does not match title/content: {path}")
+    if data.get("source_report_id") and not re.fullmatch(r"[A-Za-z0-9_-]{1,160}", str(data["source_report_id"])):
+        raise ValueError(f"Invalid Blog source report identifier: {path}")
+    if data.get("source_report_name") and original_report_names({"source_report_name": data["source_report_name"]}) != [data["source_report_name"]]:
+        raise ValueError(f"Invalid Blog source report name: {path}")
     raw_origins = data.get("origins")
     if not isinstance(raw_origins, list):
         raise ValueError(f"Blog archive origins must be a list: {path}")
@@ -3479,6 +3547,8 @@ def validate_blog_archive_record(data: Any, path: Path, start_date: date) -> dic
     ):
         raise ValueError(f"Blog archive origins are incomplete: {path}")
     return {
+        **({"source_report_id": str(data["source_report_id"])} if data.get("source_report_id") else {}),
+        **({"source_report_name": str(data["source_report_name"])} if data.get("source_report_name") else {}),
         "fingerprint": fingerprint,
         "slug": expected_slug,
         "legacy_slugs": sorted(legacy_slugs),
@@ -3535,6 +3605,10 @@ def merge_blog_articles(
         if existing is None:
             merged[fingerprint] = dict(draft)
             continue
+        for field in ("source_report_name", "source_report_id"):
+            incoming = draft.get(field)
+            if incoming and not existing.get(field):
+                existing[field] = incoming
         existing["legacy_slugs"] = sorted({
             *[str(value) for value in existing.get("legacy_slugs", []) if value],
             *[str(value) for value in draft.get("legacy_slugs", []) if value],
@@ -3970,6 +4044,10 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
         "isPartOf": {"@type": "Blog", "name": collection_name if article.get("bbg_script") else f"{BLOG_PUBLIC_BRAND} Blog", "url": collection_url},
         "keywords": blog_public_keywords(article),
     }
+    source_card, source_schema = render_blog_source_card(article, base_url)
+    if source_schema:
+        article_schema["citation"] = source_schema
+        article_schema["isBasedOn"] = {"@id": source_schema["@id"]}
     about_entities: list[dict[str, Any]] = []
     for definition in related_institutions:
         if definition["slug"] == "bernstein":
@@ -4092,6 +4170,7 @@ def render_blog_article(article: dict[str, Any], base_url: str) -> str:
           <a class="btn" href="../research.html">开始 AI 研究</a>
           <button type="button" class="account-button" data-auth-open="register" data-auth-placement="blog_article" data-guest-only>免费注册</button>
         </aside>
+        {source_card}
         {related_discovery}
         <div class="blog-article-content">
           {article_content}
@@ -4130,6 +4209,133 @@ def render_blog_legacy_redirect(article: dict[str, Any], base_url: str) -> str:
 """
 
 
+@lru_cache(maxsize=1)
+def discovery_editorial_overrides() -> dict[str, Any]:
+    path = Path(__file__).resolve().parents[1] / "portal_suite" / "discovery_editorial.json"
+    if not path.is_file():
+        return {}
+    data = load_json(path)
+    if data.get("schema_version") != 1 or not isinstance(data.get("articles"), dict):
+        raise ValueError("Invalid discovery editorial overrides")
+    return data["articles"]
+
+
+def prepare_blog_discovery(articles: list[dict[str, Any]], report_items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    source_index = ReportSourceIndex(report_items)
+    overrides = discovery_editorial_overrides()
+    result = []
+    for raw in articles:
+        article = dict(raw)
+        article.pop("_source_report", None)
+        status, report = source_index.resolve(article)
+        article["_source_status"] = status
+        if report is not None:
+            article["_source_report"] = report
+            article["source_report_id"] = str(report["id"])
+        names = original_report_names(article)
+        if len(names) == 1:
+            article["source_report_name"] = public_source_text(names[0])
+        override = overrides.get(str(article.get("slug") or ""), {})
+        body = blog_html_text(str(article.get("content") or ""))
+        previous_title = str(article.get("title") or "")
+        if (override.get("title") and override.get("expected_title") == previous_title
+                and override.get("required_terms")
+                and all(term.casefold() in body.casefold() for term in override["required_terms"])):
+            article["title"] = public_brand_text(override["title"])
+        elif not article.get("bbg_script") and set(title_quality_flags(str(article.get("title") or ""))) & {"unfinished_title", "editorial_fragment"} and len(names) == 1:
+            # A recognizable full original title is safer than an invented repair.
+            article["title"] = public_source_text(strip_extension(names[0]))
+        source_title = str((report or {}).get("title") or (names[0] if len(names) == 1 else ""))
+        article["title"] = repair_institution_prefix(source_title, str(article.get("title") or ""), INSTITUTION_HUBS)
+        if not article.get("bbg_script"):
+            # Presentation-only cleanup. The persisted source title/content and
+            # fingerprint remain untouched, including the old inline heading.
+            if article["title"] != previous_title:
+                escaped_old = re.escape(html_escape(previous_title))
+                content = str(article.get("content") or "")
+                leading, rest = content[:1800], content[1800:]
+                leading = re.sub(r"(<(?:p|h[1-6])\b[^>]*>)\s*" + escaped_old + r"\s*(</(?:p|h[1-6])>)",
+                                 lambda match: match[1] + html_escape(article["title"]) + match[2], leading, count=1)
+                article["content"] = leading + rest
+            digest = compact_space(str(article.get("digest") or ""))
+            digest = re.sub(r"^(?:外资精译|研报精译|每日研报)\s+", "", digest)
+            if previous_title and digest.startswith(previous_title):
+                digest = digest[len(previous_title):].strip()
+            # Historic payload digests were clipped before reaching the builder.
+            # Preserve short phrases; longer prose must end at a real sentence.
+            if len(digest) > 120 and not re.search(r"[。！？.!?][\"'”’）)]*$", digest):
+                digest = sentence_excerpt(digest, min(300, len(digest) - 1))
+            article["digest"] = sentence_excerpt(digest, 300) or f"阅读《{article['title']}》的中文解读及来源信息。"
+        article["_discovery_topics"] = editorial_topic_labels(str(article.get("title") or ""),
+                                                           str(article.get("digest") or ""), SEO_INDUSTRY_RULES)
+        article["_discovery_institutions"] = [row["slug"] for row in blog_related_institution_hubs(
+            str(article.get("title") or ""), str(article.get("digest") or ""), "")]
+        result.append(article)
+    return result
+
+
+def render_blog_source_card(article: dict[str, Any], base_url: str) -> tuple[str, dict[str, Any] | None]:
+    report = article.get("_source_report")
+    if not isinstance(report, dict) or article.get("_source_status") != "matched":
+        if article.get("_source_status") in {"ambiguous", "conflict", "unmatched"}:
+            return ('<aside class="blog-source-card"><h2>来源核对</h2><p>正文保留原始报告名称；尚未与目录中的唯一报告建立关联，请按原始标题核对。</p></aside>', None)
+        return "", None
+    canonical = url_join(base_url, report_seo_path(str(report["id"])))
+    original = item_source_title(report) or item_display_title(report)
+    published = item_published_date(report)
+    date_label = "原报告发布日期" if published else "目录收录日期"
+    date_value = published or date_folder_to_iso(str(report.get("date_folder") or "")) or "待核验"
+    schema = {"@type": "Report", "@id": canonical + "#report", "name": original, "url": canonical}
+    publisher = item_institution_schema(report, base_url)
+    if publisher:
+        schema["publisher"] = publisher
+    if published:
+        schema["datePublished"] = published
+    card = (
+        '<aside class="blog-source-card" aria-label="本篇依据的报告"><h2>本篇依据的报告</h2>'
+        f'<p><a href="{html_escape(canonical, quote=True)}">{html_escape(original)}</a></p>'
+        f'<p>机构：{html_escape(item_institution(report))} · {date_label}：{html_escape(date_value)}</p>'
+        '<p class="subtle">上方摘要和下文属于中文解读；文中 KC评论 为本站评论。原始研究结论、数据口径及使用条件请以来源报告为准。</p>'
+        '</aside>'
+    )
+    return card, schema
+
+
+def render_report_article_links(articles: list[dict[str, Any]], base_url: str) -> str:
+    if not articles:
+        return ""
+    rows = []
+    for article in articles[:6]:
+        canonical = url_join(base_url, f"blog/{article['slug']}.html")
+        digest = blog_public_digest(str(article.get("digest") or ""))
+        rows.append(f'<li><a href="{html_escape(canonical, quote=True)}">{html_escape(blog_public_title(str(article.get("title") or "")))}</a>'
+                    + (f'<p>{html_escape(digest)}</p>' if digest else "") + '</li>')
+    return ('<section class="report-interpretations"><h2>这份报告的中文解读</h2>'
+            '<p class="subtle">以下为已发布解读的摘要，与原报告元数据分别呈现；KC评论不代表原机构观点。</p>'
+            '<ul class="seo-report-index">' + ''.join(rows) + '</ul></section>')
+
+
+def render_home_discovery(items: list[dict[str, Any]], articles: list[dict[str, Any]], base_url: str) -> str:
+    if not items and not articles:
+        return ""
+    latest = sorted(items, key=lambda row: (item_lastmod(row), str(row.get("id") or "")), reverse=True)[:24]
+    recent = sorted((article for article in articles if not article.get("bbg_script")),
+                    key=lambda row: (str(row.get("date") or ""), str(row.get("slug") or "")), reverse=True)[:6]
+    reports = ''.join(f'<li><a href="{html_escape(url_join(base_url, report_seo_path(str(item["id"]))), quote=True)}">'
+                      f'{html_escape(item_display_title(item))}</a><span>{html_escape(item_institution(item))}</span></li>' for item in latest)
+    posts = ''.join(f'<li><a href="{html_escape(url_join(base_url, "blog/" + str(article["slug"]) + ".html"), quote=True)}">'
+                    f'{html_escape(blog_public_title(str(article.get("title") or "")))}</a></li>' for article in recent)
+    institution_links = ' · '.join(f'<a href="{html_escape(url_join(base_url, institution_hub_path(definition)), quote=True)}">{html_escape(definition["name_zh"])}研报</a>'
+                                  for definition, _ in institution_hub_groups(items, "")[:6])
+    return ('<section class="search-panel home-discovery" aria-labelledby="homeDiscoveryTitle">'
+            '<h2 id="homeDiscoveryTitle">最新研报与中文解读</h2>'
+            '<p>以下为最新收录内容；使用上方搜索可检索完整目录。</p>'
+            f'<p>{institution_links} · <a href="reports/topics.html">全部机构与主题</a></p>'
+            '<div class="home-discovery-grid"><div><h3>最新收录报告</h3><ul class="seo-report-index">' + reports + '</ul>'
+            '<a href="reports/">浏览全部报告</a></div><div><h3>最近中文解读</h3><ul class="seo-report-index">' + posts + '</ul>'
+            '<a href="blog/">浏览全部解读</a></div></div></section>')
+
+
 def build_blog(
     output: Path,
     drafts_root: Path,
@@ -4137,6 +4343,7 @@ def build_blog(
     start_date: date,
     archive_root: Path | None = None,
     bbg_archive_root: Path | None = None,
+    catalog: dict[str, Any] | None = None,
 ) -> list[dict[str, Any]]:
     draft_articles = load_blog_draft_articles(drafts_root, start_date)
     if archive_root is None:
@@ -4145,6 +4352,8 @@ def build_blog(
         archived_articles = load_blog_archive(archive_root, start_date)
         articles = merge_blog_articles(archived_articles, draft_articles)
         persist_blog_archive(archive_root, articles, start_date)
+    # Apply display repairs only after the immutable archive has been persisted.
+    articles = prepare_blog_discovery(articles, list((catalog or {}).get("items", [])))
     blog_dir = output / "blog"
     blog_dir.mkdir(parents=True, exist_ok=True)
     bbg_articles = load_bbg_show_articles(bbg_archive_root) if bbg_archive_root else []
@@ -4175,7 +4384,7 @@ def build_seo_outputs(
     blog_articles: list[dict[str, Any]] | None = None,
 ) -> None:
     base_url = base_url.rstrip("/") or SITE_BASE_URL
-    blog_articles = list(blog_articles or [])
+    blog_articles = prepare_blog_discovery(list(blog_articles or []), list(catalog.get("items", [])))
     generated_date = bjt_timestamp_to_date(str(catalog.get("updated_at_bjt") or "")) or ""
     reports_dir = output / "reports"
     reports_dir.mkdir(parents=True, exist_ok=True)
@@ -4184,6 +4393,10 @@ def build_seo_outputs(
         key=lambda item: (item_lastmod(item, generated_date), sort_date_value(str(item.get("date_folder") or ""))),
         reverse=True,
     )
+    articles_by_report: dict[str, list[dict[str, Any]]] = {}
+    for article in blog_articles:
+        if article.get("_source_status") == "matched":
+            articles_by_report.setdefault(str(article["source_report_id"]), []).append(article)
     related_reports = build_related_reports(report_items)
     institution_groups = institution_hub_groups(report_items, generated_date)
     topic_groups = topic_hub_groups(report_items, generated_date)
@@ -4198,7 +4411,7 @@ def build_seo_outputs(
         report_id = str(item.get("id") or "")
         write_text(
             reports_dir / f"{quote(report_id, safe='')}.html",
-            render_report_seo_page(item, base_url, generated_date, related_reports.get(report_id, [])),
+            render_report_seo_page(item, base_url, generated_date, related_reports.get(report_id, []), articles_by_report.get(report_id, [])),
         )
     report_index_pages = page_count(len(report_items), REPORT_INDEX_PAGE_SIZE)
     for page_number in range(1, report_index_pages + 1):
@@ -4215,16 +4428,15 @@ def build_seo_outputs(
             ),
         )
     write_text(reports_dir / "topics.html", render_report_topic_hub(report_items, base_url, generated_date))
-    for definition, group_items in institution_groups:
-        write_text(
-            output / institution_hub_path(definition) / "index.html",
-            render_institution_hub(definition, group_items, blog_articles, base_url, generated_date),
-        )
-    for definition, group_items in topic_groups:
-        write_text(
-            output / topic_hub_path(definition) / "index.html",
-            render_topic_hub(definition, group_items, blog_articles, base_url, generated_date),
-        )
+    for groups, path_for, renderer in (
+        (institution_groups, institution_hub_path, render_institution_hub),
+        (topic_groups, topic_hub_path, render_topic_hub),
+    ):
+        for definition, group_items in groups:
+            for number in range(1, page_count(len(group_items), HUB_INDEX_PAGE_SIZE) + 1):
+                name = "index.html" if number == 1 else f"page-{number}.html"
+                write_text(output / path_for(definition) / name,
+                           renderer(definition, group_items, blog_articles, base_url, generated_date, number))
     write_text(output / "about.html", render_about_page(base_url, generated_date))
 
     report_collection_lastmod = hub_page_lastmod(report_items)
@@ -4284,6 +4496,11 @@ def build_seo_outputs(
         sitemap_url(url_join(base_url, "terms.html"), terms_lastmod, "0.2"),
         sitemap_url(url_join(base_url, "privacy.html"), privacy_lastmod, "0.2"),
     ]
+    for groups, path_for in ((institution_groups, institution_hub_path), (topic_groups, topic_hub_path)):
+        for definition, group_items in groups:
+            for number in range(2, page_count(len(group_items), HUB_INDEX_PAGE_SIZE) + 1):
+                page_rows.append(sitemap_url(url_join(base_url, collection_page_path(path_for(definition), number)),
+                                             hub_page_lastmod(group_items), "0.6"))
     write_urlset(output / "sitemap-pages.xml", page_rows)
 
     sitemap_names = ["sitemap-pages.xml"]
@@ -4429,10 +4646,20 @@ def build_seo_outputs(
         ]),
     )
     write_text(output / "llms-full.txt", render_llms_full(catalog, base_url, blog_articles))
-    enhance_public_landing_pages(output, base_url)
+    counts = Counter(str(article.get("_source_status") or "not_provided") for article in blog_articles)
+    write_json(output / "data" / "discovery_quality.json", {
+        "schema_version": 1, "template_revision": SEO_PAGE_TEMPLATE_REVISION_DATE,
+        "reports": len(report_items), "articles": len(blog_articles), "source_links": dict(sorted(counts.items())),
+        "title_flags": dict(sorted(Counter(flag for article in blog_articles
+            for flag in title_quality_flags(str(article.get("title") or ""))).items())),
+        "notes": "Source linkage is metadata matching, not independent verification of research claims.",
+    })
+    enhance_public_landing_pages(output, base_url, report_items, blog_articles)
 
 
-def enhance_public_landing_pages(output: Path, base_url: str) -> None:
+def enhance_public_landing_pages(output: Path, base_url: str,
+                                 report_items: list[dict[str, Any]] | None = None,
+                                 blog_articles: list[dict[str, Any]] | None = None) -> None:
     """Apply global-Chinese entity signals after private placeholders are materialized."""
     home_path = output / "index.html"
     if home_path.is_file():
@@ -4487,6 +4714,13 @@ def enhance_public_landing_pages(output: Path, base_url: str) -> None:
                 f'<a href="about.html">关于{BLOG_PUBLIC_BRAND}</a>\n      <a href="terms.html">Terms of Service</a>',
                 1,
             )
+        discovery = render_home_discovery(report_items or [], blog_articles or [], base_url)
+        marker = r"<!-- PUBLIC_DISCOVERY_START -->.*?<!-- PUBLIC_DISCOVERY_END -->"
+        block = "<!-- PUBLIC_DISCOVERY_START -->" + discovery + "<!-- PUBLIC_DISCOVERY_END -->"
+        if re.search(marker, home, re.S):
+            home = re.sub(marker, lambda _match: block, home, count=1, flags=re.S)
+        else:
+            home = home.replace("</main>", block + "\n</main>", 1)
         home_path.write_text(home, encoding="utf-8")
 
     charts_path = output / "charts.html"
@@ -4705,7 +4939,7 @@ def main() -> int:
         previous_archive=load_json_default(archive_catalog_path, {"items": []}),
         bank_catalog_root=Path(args.bank_catalog_root),
     )
-    catalog = catalog_with_archive_items(catalog, archive_catalog)
+    catalog = public_catalog(catalog_with_archive_items(catalog, archive_catalog))
     current_search_index = build_search_index(
         catalog=catalog,
         bank_catalog_root=Path(args.bank_catalog_root),
@@ -4755,6 +4989,7 @@ def main() -> int:
         start_date=parse_blog_start_date(args.blog_start_date),
         archive_root=Path(args.blog_archive_root),
         bbg_archive_root=Path(args.bbg_archive_root),
+        catalog=catalog,
     )
     build_seo_outputs(output_dir, catalog, SITE_BASE_URL, blog_articles)
     assert_no_public_mail_client_actions(output_dir)
