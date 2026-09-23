@@ -48,8 +48,6 @@ jobs:
                       hard_blocked_wechat_title_reason("德意志银行：人民币汇率估值的研究观察")
                   )
           '''
-          # Strip the YAML block indentation from all continuation lines.
-          old_test = old_test.replace('\n        ', '\n')
           new_test = '''    def test_hard_title_keywords_match_anywhere_in_title(self) -> None:
                   cases = (
                       ("北京", "forbidden_title_term_beijing"),
@@ -88,7 +86,6 @@ jobs:
                               self.assertEqual(reason, record["skip_reason"])
                               self.assertEqual(field, record["matched_title_field"])
           '''
-          new_test = new_test.replace('\n        ', '\n')
           replace_once('scripts/test_sensitive_title_guard.py', old_test, new_test)
 
           replace_once(
