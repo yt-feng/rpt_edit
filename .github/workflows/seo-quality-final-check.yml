@@ -81,7 +81,9 @@ jobs:
           python scripts/test_build_portal_locales.py
           python scripts/test_neutral_edge_cutover_workflow.py
           python scripts/check_public_identity.py
-          node --test portal_suite/tests/*.test.mjs
+          for test_file in portal_suite/tests/*.test.mjs; do
+            node "$test_file"
+          done
           node --test workers/edge-static-host/test/*.test.mjs
       - name: Commit tested source changes without touching production
         run: |
