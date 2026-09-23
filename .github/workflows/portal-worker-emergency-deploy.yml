@@ -38,6 +38,7 @@ jobs:
             portal_suite/site_src
             portal_suite/tests
             scripts/build_portal_suite_site.py
+            scripts/portal_discovery_quality.py
             scripts/reportify_pdf_grabber.py
             scripts/reportify_result.py
             scripts/upload_reportify_pdf_to_r2.py

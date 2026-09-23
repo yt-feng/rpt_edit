@@ -150,3 +150,15 @@ python scripts/check_public_identity.py
 The identity check intentionally allows the exact Chinese editorial term while
 continuing to reject the private deployment identity, deployment domain, and
 repository association markers.
+
+
+## Discovery provenance sidecar
+
+The report uploaders retain optional original-basename metadata in a parallel
+`source_reports` list in persisted `draft_payload_*.json` templates. It is not
+sent as part of WeChat API article objects. The Blog importer requires exact
+positional alignment, validates the safe name/ID fields and preserves them
+outside the immutable title/content fingerprint. The site builder resolves only
+unique source matches and applies editorial display overrides to copies after
+persistence. See `seo-geo-architecture.md` for matching, reciprocal links,
+archive identity and the unresolved-source contract.

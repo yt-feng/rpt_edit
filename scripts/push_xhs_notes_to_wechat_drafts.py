@@ -2,6 +2,8 @@
 """Push generated xhs_notes WeChat articles into Official Account drafts."""
 from __future__ import annotations
 
+from portal_discovery_quality import report_source_metadata
+
 import argparse
 import json
 import os
@@ -603,6 +605,7 @@ def build_article(
         "digest": digest_from_markdown(markdown),
         "institution_name": institution_name,
         "source_report_name": source_report_name,
+        "source_metadata": report_source_metadata(status),
         "translator_name": translator_name,
         "title_decision": title_decision,
         "article": article,
@@ -1010,7 +1013,10 @@ def main() -> int:
 
         payload_path = output_dir / f"draft_payload_{draft_index:02d}.json"
         # Keep the deployment hostname out of public Blog archive inputs.
-        write_json(payload_path, {"articles": public_articles})
+        write_json(payload_path, {
+            "articles": public_articles,
+            "source_reports": [item.get("source_metadata", {}) for item in group],
+        })
         drafts.append(
             {
                 "draft_index": draft_index,

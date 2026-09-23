@@ -34,7 +34,9 @@ The generated `_neutral_site/` directory is an ephemeral release artifact. Never
 | Search home | `/` | Canonical, `zh-Hans`, WebSite + Organization entity graph |
 | Report collection | `/reports/` | First 200 records, self-canonical |
 | Report collection pages | `/reports/page-N.html` | 200 records per page, self-canonical, crawlable previous/next and numbered links |
-| Institution/topic hub | `/reports/topics.html` | Every institution and topic gets a stable fragment target; each section shows its newest records |
+| Institution/topic directory | `/reports/topics.html` | Stable fragment targets plus links to populated standalone hubs |
+| Institution / topic hub | `/reports/institutions/{slug}/`, `/reports/topics/{slug}/` | 100 reports per page; known institution and topic entities |
+| Hub archive pages | The same hub followed by `page-N.html` | Self-canonical, ordinary previous/next links, sitemap inclusion; no empty hubs |
 | Report metadata | `/reports/{opaque-id}.html` | One canonical page per report, visible source-bounded summary and Report/WebPage/Breadcrumb data |
 | Blog collection | `/blog/` | First 30 posts, self-canonical |
 | Blog collection pages | `/blog/page-N.html` | 30 posts per page, self-canonical, crawlable pagination |
@@ -100,7 +102,67 @@ A Text-only state means the catalog does not currently expose a directly downloa
 
 The behavior is covered at three layers: `scripts/test_portal_seo.py` checks generated static HTML, `portal_suite/tests/report-detail-performance.test.mjs` checks the inline first paint, and `portal_suite/tests/text-only-frontend.test.mjs` checks hydrated behavior, direct search links, and mobile presentation.
 
+## Source quality, editorial display and provenance
+
+`scripts/portal_discovery_quality.py` implements deterministic helpers with no
+network or model calls. Original report titles, catalog institution fields and
+translated source prefixes must agree. The translator protects an explicit
+institution prefix alongside ticker/date identifiers and checks existing
+catalog values and cache entries; the public renderer applies the same
+correction. Only contradictory leading source labels are changed, not mentions
+of another bank in the research topic. Unknown or non-prefixed sources are not
+guessed.
+
+Report browser titles retain companies, tickers and research periods. Display
+repairs for a known archived Blog article live in
+`portal_suite/discovery_editorial.json`, keyed by its existing slug and guarded
+by the exact old title plus source terms. They apply to a copy after archival
+persistence, including an exact duplicate inline heading when present. They do
+not rewrite raw source title/content, fingerprints, slugs or publication dates.
+Over-budget summaries stop at complete sentences. Long legacy clipped digests
+are trimmed to a complete sentence; short descriptive phrases remain valid.
+
+The two report WeChat uploaders persist a parallel `source_reports` sidecar in
+the public draft template. Each row contains only the original report basename
+when supplied by ingestion status. This sidecar is not included in API article
+objects. Archive records optionally retain `source_report_name` and
+`source_report_id`; neither changes fingerprint material. Old archives are not
+bulk-rewritten merely to add inferred provenance.
+
+At build time, reports are indexed by ID and normalized original filename/title.
+Normalization handles punctuation, `.pdf` and a numeric processing prefix only
+before a controlled institution code; dates and other numbers are retained.
+An explicit original-name sidecar takes precedence over the sanitized footer.
+Legacy `Original report` footers are used only when that sidecar is absent.
+Multiple matches, inconsistent IDs or multiple source names produce no link.
+No fuzzy nearest-title match or article-date inference establishes provenance.
+
+A unique match generates a visible source card plus `BlogPosting.citation` and
+`isBasedOn`; the report page links back to at most six corresponding articles
+with `Report.subjectOf`. Existing Blog digests are labeled as Chinese
+interpretation, not copied into `Report.abstract` as purported original report
+conclusions. Unresolved sources remain named in the original footer with a
+visible verification notice. A source link is not a claim of full-text review,
+publication permission, model citation, or search-engine indexing.
+
+Recommendations first consider controlled company/ticker identity and fine
+research topics, using dedicated candidate pools beyond the previous newest-40
+institution pool. Institution and broad industry remain fallback signals.
+Blog topic discovery uses the title first, then digest; incidental full-body or
+footer terms do not establish the main topic. Entity rules and overrides are
+reviewable source files, not generated facts.
+
+The build emits aggregate `data/discovery_quality.json` counts for source-match
+states and remaining title-quality flags. It contains no raw search queries,
+visitor identifiers or private storage paths. Use these counts as a QA baseline;
+match coverage is not a claim that every archived article has a source link.
+
 ## First-paint catalog preview
+
+The home page also includes a visible, static block of up to 24 recent report
+links, six recent research articles and controlled institution entrances. It is
+available to users and crawlers without JavaScript; it does not replace the
+interactive search or change its preview/full-catalog loading contract.
 
 The build writes `data/catalog_preview.json` alongside the full public catalog. Its contract is:
 
@@ -280,3 +342,25 @@ Public source and generated artifacts may contain the KC桌面 brand and neutral
 - Bing Webmaster Tools, [IndexNow](https://www.bing.com/webmasters/help/indexnow-0z209wby)
 - IndexNow, [protocol documentation](https://www.indexnow.org/documentation)
 - OpenAI, [guidance for allowing OpenAI web crawlers](https://help.openai.com/en/articles/20001243-advertiser-guidance-for-allowing-openai-web-crawlers)
+
+
+## Discovery-quality validation and operator boundary
+
+`python -B scripts/test_portal_discovery_quality.py` checks source-prefix repair,
+cache and dry-run behavior, provenance ambiguity, stable archive identity,
+source cards and reverse links, sentence-safe digests, the guarded display
+repair, entity relevance, non-JavaScript discovery, and paginated schema/sitemap
+parity. It runs in public-source pull-request checks and production release
+validation, alongside the existing SEO, Blog and title-translation suites.
+
+The read-only live audit now evaluates published robots rules for Googlebot,
+Bingbot, OAI-SearchBot, PerplexityBot and Claude-SearchBot, including specific
+groups, longest matching paths and allow-on-tie. It flags browser challenges in
+sampled HTML. It does not impersonate verified bot IPs or prove actual crawler
+admission. Training-agent rules and Cloudflare account settings are unchanged.
+
+Search Console ownership, sitemap acceptance, indexed-page counts and real-user
+performance require their respective operator consoles. Source tests and a
+successful release are not substitutes for that evidence. Use the existing
+growth-action ledger only after recording the actual deployment time; do not
+invent a live experiment start from a source commit timestamp.
