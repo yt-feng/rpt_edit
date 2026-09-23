@@ -16,10 +16,6 @@ on:
 permissions:
   contents: read
 
-concurrency:
-  group: portal-production-release
-  cancel-in-progress: false
-
 jobs:
   refresh:
     if: >-
@@ -29,6 +25,11 @@ jobs:
         github.event.workflow_run.conclusion == 'success' &&
         github.event.workflow_run.head_branch == github.event.repository.default_branch &&
         github.event.workflow_run.head_repository.full_name == github.repository))
+    # Evaluate eligibility before acquiring the shared publication lock. A
+    # cancelled/failed upstream release must not evict a pending real release.
+    concurrency:
+      group: portal-production-release
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
@@ -54,6 +55,7 @@ jobs:
           python3 -m pip install --disable-pip-version-check "boto3>=1.34,<2"
           python3 -B scripts/test_report_research_index.py
           python3 -B scripts/test_download_report_research_inputs.py
+          python3 -B scripts/test_research_refresh_concurrency.py
 
       - name: Read active catalog and current text; require checked-out historical text
         env:
