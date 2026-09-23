@@ -39,6 +39,9 @@ runs:
         echo "OFFLINE_TRANSLATION_BACKEND=hymt" >> "$GITHUB_ENV"
         echo "HYMT_TRANSLATION_CACHE=$RUNNER_TEMP/offline-translation-memo" >> "$GITHUB_ENV"
         echo "PORTAL_OFFLINE_TRANSLATION_THREADS=4" >> "$GITHUB_ENV"
+    - name: Install pinned local script converter
+      shell: bash
+      run: python -m pip install --disable-pip-version-check 'opencc-python-reimplemented==0.1.7'
     - name: Restore public model files only
       id: model-cache
       uses: actions/cache/restore@v4

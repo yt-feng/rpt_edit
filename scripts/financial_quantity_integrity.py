@@ -28,14 +28,17 @@ SCALES = {
     "만": 10**4, "천만": 10**7, "백만": 10**6, "억": 10**8,
     "십억": 10**9, "조": 10**12, "مليون": 10**6, "مليار": 10**9, "ألف": 10**3,
 }
+# Orthographic variants retain exactly the same magnitude, never a rounded value.
+SCALES.update({key.replace("万", "萬").replace("亿", "億"): value
+               for key, value in list(SCALES.items()) if "万" in key or "亿" in key})
 SCALE = "(?:" + "|".join(re.escape(value) for value in sorted(SCALES, key=len, reverse=True)) + ")"
 CURRENCIES = {
     "USD": ("USD", "US$", "$", "US dollars", "U.S. dollars", "US dollar", "U.S. dollar", "dollars", "dollar", "美元", "美金", "달러", "دولار أمريكي", "دولار"),
-    "CNY": ("CNY", "RMB", "人民币", "元人民币", "元", "yuan", "renminbi", "Chinese yuan", "Chinese renminbi", "人民币元", "위안"),
-    "EUR": ("EUR", "€", "euros", "euro", "欧元", "유로"),
-    "GBP": ("GBP", "£", "pounds", "pound", "英镑"),
+    "CNY": ("CNY", "RMB", "人民币", "元人民币", "元", "yuan", "renminbi", "Chinese yuan", "Chinese renminbi", "人民币元", "人民幣", "元人民幣", "人民幣元", "위안"),
+    "EUR": ("EUR", "€", "euros", "euro", "欧元", "歐元", "유로"),
+    "GBP": ("GBP", "£", "pounds", "pound", "英镑", "英鎊"),
     "JPY": ("JPY", "日元", "円", "yen"),
-    "HKD": ("HKD", "HK$", "港元", "港币"),
+    "HKD": ("HKD", "HK$", "港元", "港币", "港幣"),
 }
 ALIASES = {alias.casefold(): code for code, aliases in CURRENCIES.items() for alias in aliases}
 CURRENCY = "(?:" + "|".join(re.escape(s) for s in sorted(ALIASES, key=len, reverse=True)) + ")"
@@ -50,6 +53,9 @@ FIVE_YEAR_PERIOD_RE = re.compile(
 def _normalized(text: str) -> str:
     text = unicodedata.normalize("NFKC", text).replace("−", "-").replace("٬", ",").replace("٫", ".")
     text = "".join(str(unicodedata.decimal(c)) if c.isdecimal() else c for c in text)
+    # Hebrew single-letter prepositions use a maqqaf, often typed as ASCII '-'.
+    # Recognize only those bounded prefixes; standalone minus/negative values stay intact.
+    text = re.sub(r"(?<!\w)([בכלמו])-(?=\d)", r"\1 ", text)
     return re.sub(r"__(?:KC_PH|HYMTPH)_\d+__", " ", text)
 
 

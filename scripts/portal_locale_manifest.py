@@ -7,6 +7,8 @@ import json
 from pathlib import Path
 from typing import Any, Iterable
 
+from portal_language_registry import DEFAULT_LOCALES, LANGUAGES
+
 
 MAX_LOCALE_MANIFEST_BYTES = 16 * 1024 * 1024
 
@@ -46,6 +48,8 @@ def load_locale_manifest(path: Path) -> dict[str, Any]:
 
 def validate_translation_resolution(manifest: dict[str, Any], locales: Iterable[str]) -> None:
     expected = set(locales)
+    if not expected or not expected.issubset(LANGUAGES):
+        raise LocaleManifestError("Unknown locale coverage")
 
     def require(condition: bool, detail: str) -> None:
         if not condition:
@@ -87,6 +91,8 @@ def validate_translation_resolution(manifest: dict[str, Any], locales: Iterable[
             "invalid prompt version")
     for locale in expected:
         rows = units[locale]
+        if locale not in DEFAULT_LOCALES:
+            require(rows == {} and counts[locale] == 0, f"source fallback forbidden for expanded locale {locale}")
         require(isinstance(rows, dict), f"invalid source fallback units.{locale}")
         require(count(counts[locale], f"source fallback count.{locale}") == len(rows),
                 f"source fallback count differs for {locale}")

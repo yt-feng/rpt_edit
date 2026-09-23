@@ -233,20 +233,24 @@ def verify_prepared_static_slot(
     manifest = read_prepared_manifest(client, bucket, slot, release, tree)
     files = manifest["files"]
     prefix = slot_prefix(slot)
-    required_paths = REQUIRED_STATIC_PATHS + (
-        REQUIRED_LOCALE_PATHS if "data/i18n/manifest.json" in files else ()
-    )
+    required_paths = REQUIRED_STATIC_PATHS
     locale_manifest = None
+    if "data/i18n/manifest.json" in files:
+        from portal_language_registry import manifest_locales
+        locale_manifest = parse_locale_manifest(read_verified_candidate_body(
+            client, bucket, prefix + "data/i18n/manifest.json", files["data/i18n/manifest.json"],
+            maximum=MAX_LOCALE_MANIFEST_BYTES,
+        ))
+        codes = manifest_locales(locale_manifest)
+        required_paths += ("data/i18n/manifest.json", "assets/locale.css", "assets/locale-runtime.js", *(
+            path for code in codes for path in (f"sitemap-{code}.xml", f"{code}/index.html")
+        ))
     if locale_origin is not None and "data/i18n/manifest.json" not in files:
         raise RuntimeError("Prepared locale manifest is required when locale origin is provided")
     for relative in required_paths:
         if relative not in files or int(files[relative]["size"]) <= 0:
             raise RuntimeError(f"Prepared static manifest lacks a required object: {relative}")
-        if locale_origin is not None and relative == "data/i18n/manifest.json":
-            locale_manifest = parse_locale_manifest(read_verified_candidate_body(
-                client, bucket, prefix + relative, files[relative], maximum=MAX_LOCALE_MANIFEST_BYTES,
-            ))
-        else:
+        if relative != "data/i18n/manifest.json":
             verify_object_body(client, bucket, prefix + relative, files[relative])
 
     locale_report = None

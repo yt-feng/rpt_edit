@@ -25,6 +25,7 @@ import verify_portal_chinese_parity as parity
 from verify_prepared_static_slot import (
     read_json_object as read_bounded_json_object, read_verified_candidate_body, static_tree_sha256,
 )
+from portal_language_registry import manifest_locales
 from portal_locale_manifest import LocaleManifestError, load_locale_manifest, validate_translation_resolution
 from verify_portal_locale_routes import RouteVerificationError, declared_checks
 
@@ -461,16 +462,21 @@ def download_candidate_files(client: Any, bucket: str, manifest: dict[str, Any],
         locale_manifest = load_locale_manifest(site_dir / "data/i18n/manifest.json")
     except LocaleManifestError as error:
         raise ResumeError(f"Candidate locale manifest is invalid: {error}") from error
-    require(locale_manifest.get("quality_gate_version") == 3 and set(locale_manifest.get("locales", [])) == set(LOCALES),
+    try:
+        locales = manifest_locales(locale_manifest)
+    except ValueError as error:
+        raise ResumeError(str(error)) from error
+    require(locale_manifest.get("quality_gate_version") == 3 and "locales" in locale_manifest,
             "Candidate locale coverage is incomplete")
     try:
-        validate_translation_resolution(locale_manifest, LOCALES)
+        validate_translation_resolution(locale_manifest, locales)
     except LocaleManifestError as error:
         raise ResumeError(f"Candidate locale coverage is incomplete: {error}") from error
     require(locale_manifest.get("translation_scope") == "incremental" and
             (locale_manifest.get("index_policy") or {}).get("mode") == "incremental-publication-cutoff",
             "Candidate is not an incremental locale release")
-    wanted = set(PUBLIC_PATHS)
+    wanted = set(PUBLIC_PATHS) - {f"sitemap-{code}.xml" for code in LOCALES}
+    wanted.update(f"sitemap-{code}.xml" for code in locales)
     try:
         routes = declared_checks(locale_manifest) or []
     except RouteVerificationError as error:
@@ -487,7 +493,7 @@ def download_candidate_files(client: Any, bucket: str, manifest: dict[str, Any],
     wanted.update(publisher.safe_relative_path(path) for path in paths)
     expected_count = locale_manifest.get("html_page_count")
     require(isinstance(expected_count, int) and expected_count > 0, "Locale HTML count is invalid")
-    for locale in LOCALES:
+    for locale in locales:
         locale_pages = {relative for relative in files if relative.startswith(locale + "/") and relative.endswith(".html")}
         require(len(locale_pages) == expected_count, f"Locale HTML inventory differs from manifest: {locale}")
         wanted.update(locale_pages)

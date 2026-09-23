@@ -100,6 +100,9 @@
       const translated = overlayFields(await runtime.detailTranslation(item.source, item.id, original.hot_report_generation));
       if (translated) { ready.set(key, translated); return translated; }
     }
+    // Expanded locales are offline-only even when a live API key exists.
+    // A cache miss must never reserve paid translation quota or send a POST.
+    if (!["ko", "ja", "ar"].includes(locale)) throw new Error("Offline translation is not ready");
     const deadline = Date.now() + 25000;
     let result = await request("POST", item, deadline);
     for (let attempt = 0; result.status === "pending" && attempt < 5; attempt++) {

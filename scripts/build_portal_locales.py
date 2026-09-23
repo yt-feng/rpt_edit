@@ -266,7 +266,7 @@ TOKEN_RE = re.compile(
     r"|\$\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\}"
     r"|(?i:<(?:style|script)\b[^>]*>.*?</(?:style|script)\s*>)"
     r"|<[^<>]+>"
-    r"|https?://[^\s<>\"']+"
+    r"|https?://(?:[^\s<>\"'\[\]()，。！？；：]|\([^\s<>\[\]()]*\))+"
     r"|[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}"
     r"|\\(?:u\{[0-9a-fA-F]{1,6}\}|u[0-9a-fA-F]{4}|x[0-9a-fA-F]{2}|.)"
     r"|(?<![A-Za-z0-9_])(?:[0-9]{4,6}\.(?:HK|SH|SZ|SS|BJ)|"
@@ -989,6 +989,14 @@ def validate_translation_quality(locale: str, unit: TranslationUnit, translated:
         raise TranslationQualityError(f"{locale}: empty translation for {unit.key}")
     if unit.context in OFFICIAL_NAME_CONTEXTS or unit.context in STRUCTURED_NAME_CONTEXTS:
         return
+    if locale == "zh-Hant":
+        from portal_chinese_script import to_traditional
+        if to_traditional(translated_visible) != translated_visible:
+            raise TranslationQualityError(f"{locale}: simplified characters remain for {unit.key}")
+        # Shared Han characters are valid only when the complete visible text
+        # equals deterministic conversion, not an arbitrary unchanged-source exemption.
+        if CJK_RE.search(source_visible) and to_traditional(source_visible) == translated_visible:
+            return
     source_compact = _quality_compact(source_visible)
     translated_compact = _quality_compact(translated_visible)
     if _unchanged_latin_name(unit, text):
@@ -1055,6 +1063,10 @@ def _translation_cache_row(unit: TranslationUnit, translated: str) -> dict[str, 
 def _valid_cache_row(locale: str, unit: TranslationUnit, row: Any) -> bool:
     if not isinstance(row, dict) or row.get("source") != unit.source:
         return False
+    if locale not in DEFAULT_LOCALES and row.get("provider") == "hymt":
+        from hymt_offline_translation import EXTENDED_ADAPTER_REVISION
+        if row.get("extended_adapter") != EXTENDED_ADAPTER_REVISION:
+            return False
     translated = row.get("translation")
     if not isinstance(translated, str) or not translated.strip():
         return False
@@ -1651,6 +1663,7 @@ def translate_missing_units(
         # Save valid rows even if a neighbouring row fails the quality gate.
         from offline_translation import (OfflineTranslator, OfflineTranslationError,
                                          OfflineTranslationValidationError, PROVIDER as offline_provider)
+        from hymt_offline_translation import EXTENDED_ADAPTER_REVISION
         translator = OfflineTranslator()
         run_state.data.update(provider=provider, offline_engine=offline_provider, api_cost_cny=0, repair_provider="none", workers=1)
         source_fallbacks: dict[str, dict[str, dict[str, Any]]] = {locale: {} for locale in LOCALES}
@@ -1705,6 +1718,7 @@ def translate_missing_units(
                     validate_translation_quality(locale, unit, translated)
                     cache["locales"][locale][unit.key] = {
                         **_translation_cache_row(unit, translated), "provider": provider, "offline_engine": offline_provider, "model": model,
+                        **({"extended_adapter": EXTENDED_ADAPTER_REVISION} if locale not in DEFAULT_LOCALES else {}),
                     }
                 except (OfflineTranslationValidationError, TranslationQualityError) as error:
                     failed += 1

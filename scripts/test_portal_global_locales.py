@@ -127,4 +127,118 @@ class GlobalLocaleTests(unittest.TestCase):
         self.assertIn('zh-hant',updated)
         self.assertEqual(b.specialize_locale_javascript(source,'ja'),source)
 
+class GlobalSafetyFollowupTests(unittest.TestCase):
+    def test_traditional_conversion_is_exact_and_never_loads_model(self):
+        import tempfile
+        from portal_chinese_script import to_traditional
+        source = '阅读报告：收入增长12.5%，风险降低。'
+        with tempfile.TemporaryDirectory() as directory:
+            translator = o.OfflineTranslator(cache_dir=directory, engine_factory=lambda *_: self.fail('Conversion needs no model'))
+            result = translator.translate(source, 'zh-Hant', 'zh')
+        self.assertEqual(result, to_traditional(source))
+        self.assertIn('閱讀報告', result)
+        self.assertIn('12.5%', result)
+        _, unit = b.unit_for_text('研究方法', 'html:text:p')
+        b.validate_translation_quality('zh-Hant', unit, '研究方法')
+        _, unit = b.unit_for_text('报告分析半导体需求', 'html:text:p')
+        with self.assertRaises(b.TranslationQualityError):
+            b.validate_translation_quality('zh-Hant', unit, '报告解释了半导体需求')
+
+    def test_generic_url_mask_does_not_swallow_markdown_delimiters(self):
+        source = '阅读研究结论与来源：[报告](https://example.org/report.pdf)。'
+        protected, unit = b.unit_for_text(source, 'html:text:p')
+        self.assertIn('](__KC_PH_', unit.source)
+        self.assertTrue(unit.source.endswith('__)。'))
+        self.assertEqual(protected.restore(unit.source), source)
+
+    def test_unknown_script_cannot_be_an_english_identity_copy(self):
+        import tempfile
+        calls = []
+        class Engine:
+            def translate(self, text, source, target):
+                calls.append(text)
+                return 'Research report'
+        with tempfile.TemporaryDirectory() as directory:
+            translator = o.OfflineTranslator(cache_dir=directory, engine_factory=lambda *_: Engine())
+            self.assertEqual(translator.translate('Отчет исследования', 'en'), 'Research report')
+            self.assertEqual(len(calls), 1)
+            self.assertEqual(translator.translate('Research report', 'en'), 'Research report')
+            self.assertEqual(len(calls), 1)
+
+    def test_expanded_source_fallback_is_rejected(self):
+        from portal_locale_manifest import validate_translation_resolution, LocaleManifestError
+        manifest = {'coverage': {'fr': 0.0}, 'source_unit_count': 1, 'prompt_version': 'test',
+                    'translation_entry_count': {'fr': 0}, 'resolved_entry_count': {'fr': 1},
+                    'resolved_coverage': {'fr': 1.0},
+                    'source_fallbacks': {'schema_version': 1, 'counts': {'fr': 1}, 'units': {'fr': {'bad': {}}}}}
+        with self.assertRaisesRegex(LocaleManifestError, 'source fallback forbidden'):
+            validate_translation_resolution(manifest, ['fr'])
+
+    def test_shadow_and_resume_reject_unknown_or_alias_locale_configuration(self):
+        import audit_portal_shadow_preview as audit
+        self.assertEqual(audit.locale_directions({'locales': ['fr','zh-Hant','he']}),
+                         {'fr':'ltr','zh-Hant':'ltr','he':'rtl'})
+        for codes in (['xx'], ['zh-hant'], ['fr','fr']):
+            with self.assertRaises(audit.AuditError): audit.locale_directions({'locales':codes})
+
+class GlobalPreparationTests(unittest.TestCase):
+    def test_complete_candidate_keeps_chinese_bytes_and_does_not_claim_live(self):
+        import prepare_portal_global_locales as prep
+        case = fixtures.PortalLocaleBuildTests(); case.setUp(); self.addCleanup(case.tearDown)
+        for name in ('sitemap-baidu.xml','sitemap-sogou.xml'):
+            (case.site/name).write_bytes((case.site/'sitemap-pages.xml').read_bytes())
+        (case.site/'data/hot_reports.json').write_bytes(case.hot_report_index.read_bytes())
+        before = {p.relative_to(case.site).as_posix():p.read_bytes() for p in case.site.rglob('*') if p.is_file()}
+        with mock.patch('offline_translation.OfflineTranslator',FixtureTranslator), mock.patch('requests.sessions.Session.request',side_effect=AssertionError('Paid request')):
+            result = prep.prepare(case.site,case.site.parent/'candidate',case.cache,'fr',SITE_URL,'2026-09-23',60)
+        self.assertTrue(result['candidate_complete'])
+        self.assertFalse(result['production_ready'])
+        self.assertEqual(result['paid_provider_requests'],0)
+        for name, body in before.items(): self.assertEqual((case.site/name).read_bytes(),body)
+        self.assertEqual(tuple(b.LOCALES),r.DEFAULT_LOCALES)
+
+    def test_candidate_budget_and_source_boundaries_fail_before_translation(self):
+        import tempfile
+        import prepare_portal_global_locales as prep
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory); source = root/'source'; source.mkdir()
+            (source/'index.html').write_text('<html lang="zh-Hans"><body>公开研究</body></html>')
+            with mock.patch('offline_translation.OfflineTranslator',side_effect=AssertionError('Must validate first')):
+                with self.assertRaises(ValueError):
+                    prep.prepare(source,source/'nested',root/'cache','fr',SITE_URL,'2026-09-23',30)
+                with self.assertRaises(ValueError):
+                    prep.prepare(source,root/'output',root/'cache','fr',SITE_URL,'2026-09-23',10000)
+            self.assertTrue((source/'index.html').is_file())
+
+    def test_scheduled_warming_uses_only_standard_public_cpu_and_bounded_cache(self):
+        text = Path(__file__).resolve().parents[1].joinpath('.github/workflows/portal-global-locale-prepare.yml').read_text()
+        self.assertIn('github.event.repository.private == false',text)
+        self.assertIn('max-parallel: 2',text)
+        self.assertIn('8 * 1024 * 1024',text)
+        self.assertNotIn('secrets.',text)
+        self.assertNotIn('self-hosted',text)
+        self.assertNotIn('--allow-source-fallback',text)
+        self.assertNotIn('wrangler',text)
+        self.assertNotIn('createWorkflowDispatch',text)
+
+    def test_hebrew_grammatical_hyphen_is_not_a_negative_rate(self):
+        from financial_quantity_integrity import quantity_issues
+        self.assertEqual(quantity_issues('Growth was 12.5%.', 'הצמיחה הייתה ב-12.5%.'), [])
+        self.assertTrue(quantity_issues('Growth was -12.5%.', 'הצמיחה הייתה ב-12.5%.'))
+        self.assertEqual(quantity_issues('Growth was -12.5%.', 'הצמיחה הייתה -12.5%.'), [])
+
+    def test_low_resource_prompt_and_memo_identity_keep_explicit_scripts(self):
+        engine = object.__new__(o._HyMTEngine); engine.port=1
+        response={'choices':[{'finish_reason':'stop','message':{'content':'研究嘅方法'}}]}
+        with mock.patch.object(o,'request_json',return_value=response) as request:
+            engine.translate('研究的方法','zh','yue')
+        self.assertIn('香港粵語',request.call_args.args[2]['messages'][0]['content'])
+        with self.assertRaises(o.OfflineTranslationValidationError):
+            o.validate_result('研究方法','この報告書方法','zh','yue')
+
+    def test_traditional_financial_quantities_preserve_magnitude_and_currency(self):
+        from financial_quantity_integrity import quantity_issues
+        self.assertEqual(quantity_issues('收入为1.2亿美元和3亿元人民币。', '收入為1.2億美元和3億元人民幣。'),[])
+        self.assertTrue(quantity_issues('收入为1.2亿美元。','收入為1.2萬美元。'))
+
 if __name__=='__main__': unittest.main()

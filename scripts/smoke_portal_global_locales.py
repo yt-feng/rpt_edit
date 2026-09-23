@@ -26,7 +26,8 @@ SAMPLES = (
 def qualify(targets, output: Path, translator=None) -> dict:
     codes=selected_locales(targets)
     # Loading the adapter does not enable any remote paid provider.
-    translator=translator or OfflineTranslator()
+    diagnostics=[]
+    translator=translator or OfflineTranslator(diagnostic_callback=diagnostics.append)
     report={'schema_version':1,'provider':PROVIDER,'model':MODEL_ID,
             'targets':list(codes),'paid_provider_requests':0,'api_cost_cny':0,
             'semantic_review':'pending','production_ready':False,'samples':[],
@@ -37,6 +38,7 @@ def qualify(targets, output: Path, translator=None) -> dict:
             row={'locale':code,'kind':kind,'source':source,
                  'source_sha256':hashlib.sha256(source.encode()).hexdigest()}
             started=time.monotonic()
+            diagnostics.clear()
             try:
                 protected, unit=builder.unit_for_text(source,'html:text:p')
                 translated=translator.translate(unit.source,code,source_language)
@@ -44,11 +46,13 @@ def qualify(targets, output: Path, translator=None) -> dict:
                 row['translation']=protected.restore(translated)
                 problems=quantity_issues(source,row['translation'],source_language,code)
                 if problems: raise ValueError('Restored quantity check: '+'; '.join(problems))
-                if kind=='citation' and 'https://example.org/report.pdf' not in row['translation']:
+                if kind=='citation' and (row['translation'].count('](') != 1 or
+                                         row['translation'].count(')') != source.count(')') or
+                                         '](https://example.org/report.pdf)' not in row['translation']):
                     raise ValueError('Source citation changed')
                 row['status']='structural-checks-passed'
             except Exception as error:
-                passed=False; row.update(status='blocked',error=str(error))
+                passed=False; row.update(status='blocked',error=str(error),diagnostics=list(diagnostics))
             row['seconds']=round(time.monotonic()-started,3)
             report['samples'].append(row)
             atomic_json(output,report)
