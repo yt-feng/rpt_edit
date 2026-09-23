@@ -28,6 +28,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Preserve public patch transport for checksum diagnostics
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-patch-transport
+          path: .seo-quality-patch-*.txt
+          include-hidden-files: true
+          retention-days: 1
       - name: Apply reviewed patch to this branch only
         run: |
           set -euo pipefail
@@ -37,7 +44,12 @@ jobs:
           payload = json.loads(pathlib.Path('.seo-quality-patch.json').read_text())
           names = payload['parts']
           assert all(pathlib.Path(name).name == name and name.startswith('.seo-quality-patch-') and name.endswith('.txt') for name in names)
-          encoded = ''.join(pathlib.Path(name).read_text().strip() for name in names)
+          chunks = {name: pathlib.Path(name).read_text().strip() for name in names}
+          for repair in payload.get('transport_repairs', []):
+              name = repair['file']
+              assert name in chunks and chunks[name].count(repair['before']) == 1
+              chunks[name] = chunks[name].replace(repair['before'], repair['after'], 1)
+          encoded = ''.join(chunks[name] for name in names)
           patch = zlib.decompress(base64.b64decode(encoded, validate=True))
           assert hashlib.sha256(patch).hexdigest() == payload['sha256'], 'Patch checksum mismatch'
           pathlib.Path('/tmp/seo-quality.patch').write_bytes(patch)
