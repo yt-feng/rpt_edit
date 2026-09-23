@@ -25,12 +25,12 @@ jobs:
           python - <<'PY'
           from pathlib import Path
 
-          def replace_once(path, old, new):
+          def replace_once(path, old, new, expected_count=1):
               p = Path(path)
               text = p.read_text(encoding='utf-8')
-              if text.count(old) != 1:
-                  raise SystemExit(f'Expected exactly one patch anchor in {path}; refusing to modify it')
-              p.write_text(text.replace(old, new, 1), encoding='utf-8')
+              if text.count(old) != expected_count:
+                  raise SystemExit(f'Expected {expected_count} patch anchors in {path}; refusing to modify it')
+              p.write_text(text.replace(old, new, expected_count), encoding='utf-8')
 
           replace_once(
               'scripts/sensitive_content_guard.py',
@@ -74,19 +74,33 @@ jobs:
 
               def test_hard_keywords_cannot_hide_in_source_or_final_title(self) -> None:
                   from push_xhs_notes_to_wechat_drafts import hard_blocked_xhs_title_record
-                  fields = ("raw_title", "source_report_name", "wechat_title")
-                  for field in fields:
-                      for term, reason in (("北京", "forbidden_title_term_beijing"),
-                                           ("人民币", "forbidden_title_term_rmb")):
-                          with self.subTest(field=field, term=term):
-                              metadata = {key: "高盛：行业需求数据变化" for key in fields}
-                              metadata[field] = f"高盛：{term}相关数据变化"
-                              record = hard_blocked_xhs_title_record(metadata)
-                              self.assertIsNotNone(record)
-                              self.assertEqual(reason, record["skip_reason"])
-                              self.assertEqual(field, record["matched_title_field"])
+                  from push_portal_translated_to_wechat_drafts import hard_blocked_portal_title_record
+                  guards = (
+                      (hard_blocked_xhs_title_record, ("raw_title", "source_report_name", "wechat_title")),
+                      (hard_blocked_portal_title_record, ("raw_title", "original_title", "source_report_name", "wechat_title")),
+                  )
+                  for guard, fields in guards:
+                      for field in fields:
+                          for term, reason in (("北京", "forbidden_title_term_beijing"),
+                                               ("人民币", "forbidden_title_term_rmb")):
+                              with self.subTest(guard=guard.__name__, field=field, term=term):
+                                  metadata = {key: "高盛：行业需求数据变化" for key in fields}
+                                  metadata[field] = f"高盛：{term}相关数据变化"
+                                  record = guard(metadata)
+                                  self.assertIsNotNone(record)
+                                  self.assertEqual(reason, record["skip_reason"])
+                                  self.assertEqual(field, record["matched_title_field"])
           '''
           replace_once('scripts/test_sensitive_title_guard.py', old_test, new_test)
+
+          old_reason = '''            "wechat_title": "野村：美元兑人民币中间价模型观察6.7193",
+                  })
+                  self.assertIsNotNone(record)
+                  self.assertEqual("nomura_sensitive_report", record["skip_reason"])
+          '''
+          new_reason = old_reason.replace('"nomura_sensitive_report"', '"forbidden_title_term_rmb"')
+          new_reason += '        self.assertEqual("wechat_title", record["matched_title_field"])\n'
+          replace_once('scripts/test_wechat_output_contract.py', old_reason, new_reason, expected_count=2)
           PY
       - name: Install test dependencies
         run: python -m pip install -r requirements.txt reportlab
@@ -102,6 +116,6 @@ jobs:
           git diff --check
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add scripts/sensitive_content_guard.py scripts/test_sensitive_title_guard.py
+          git add scripts/sensitive_content_guard.py scripts/test_sensitive_title_guard.py scripts/test_wechat_output_contract.py
           git commit -m 'fix: hard-block WeChat titles containing 北京 or 人民币'
           git push origin HEAD:refs/heads/fix/wechat-hard-title-keywords-20260923
