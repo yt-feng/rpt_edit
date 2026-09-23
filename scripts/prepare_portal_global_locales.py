@@ -63,13 +63,15 @@ def build_public_source(output: Path, site_url: str) -> dict:
     # Set only the public generator's canonical origin, not any private profile.
     command = [sys.executable, '-B', '-c',
                'import sys; sys.path.insert(0,"scripts"); import build_portal_suite_site as b; '
+               'from portal_global_build_support import cache_metadata_normalization; '
+               'cache_metadata_normalization(b); '
                'b.SITE_BASE_URL=sys.argv.pop(1); raise SystemExit(b.main())', site_url,
                '--site-src','portal_suite/site_src','--output-dir',str(output),
                '--catalog-path',str(scratch/'catalog.json'),
                '--archive-catalog-path',str(scratch/'archive_catalog.json'),
                '--search-index-path',str(scratch/'search_index.json'),
                '--wechat-drafts-root',str(scratch/'no-private-drafts')]
-    subprocess.run(command, cwd=ROOT, check=True, timeout=300)
+    subprocess.run(command, cwd=ROOT, check=True, timeout=900)
     # The separate private chart/Hot overlay is intentionally not retrieved.
     # Explicitly mark this as a public-source candidate, not production parity.
     if not (output/'data/chart_search_index.json').exists():

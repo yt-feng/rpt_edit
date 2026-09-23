@@ -62,7 +62,7 @@ NATIVE_TARGET_INSTRUCTIONS = {
     'mn': '蒙古语（使用西里尔字母）', 'ug': '维吾尔语（使用阿拉伯字母）',
     'yue': '香港粵語（使用繁體漢字）',
 }
-EXTENDED_ADAPTER_REVISION = 'global-native-target-v2'
+EXTENDED_ADAPTER_REVISION = 'global-native-target-v3-link-boundaries'
 _ENGINES: dict[str, object] = {}
 _LOCK = threading.RLock()
 # Finance vocabulary constrains individual concepts, never whole sentences.
@@ -210,6 +210,26 @@ def _restore_table_edges(source: str, result: str) -> str:
     if len(inner.split('|')) != len(source[1:-1].split('|')):
         return result
     return '|' + inner + '|'
+
+
+def _restore_protected_link_spacing(source: str, result: str) -> str:
+    """Canonicalize whitespace around an exact source-owned link token only.
+
+    Destination identity, delimiters and occurrence counts still have to pass
+    validate_result. Never reconstruct missing tokens or change visible text.
+    """
+    for left, right in (("(", ")"), ("[", "]")):
+        pattern = r"\]" + re.escape(left) + r"(__HYMTPH_\d+__)" + re.escape(right)
+        for token in set(re.findall(pattern, source)):
+            spaced = r"\]" + re.escape(left) + r"[ \t]*" + re.escape(token) + r"[ \t]*" + re.escape(right)
+            result = re.sub(spaced, lambda _m: "]" + left + token + right, result)
+    return result
+
+
+def _space_protected_tokens(source: str, *, markdown: bool) -> str:
+    """Keep prose token boundaries explicit without changing link syntax."""
+    result = re.sub(r'(__(?:KC_PH|HYMTPH)_\d+__)', r' \1 ', source)
+    return _restore_protected_link_spacing(source, result) if markdown else result
 
 
 def validate_result(source: str, result: str, source_language: str, target: str,
@@ -394,7 +414,7 @@ class HyMTOfflineTranslator:
                         if target not in {'zh', *DEFAULT_LOCALES}:
                             # Explicit boundaries keep adjacent Indic/RTL text from
                             # fusing with reserved tokens. Validate against the original.
-                            model_input = re.sub(r'(__(?:KC_PH|HYMTPH)_\d+__)', r' \1 ', masked)
+                            model_input = _space_protected_tokens(masked, markdown=markdown)
                         value = self._engine(detected, target).translate(model_input, detected, target)
                         if target == 'zh-Hant':
                             value = to_traditional(value)
@@ -404,6 +424,7 @@ class HyMTOfflineTranslator:
                                                'controlled_terms': dict(terms)})
                 if markdown:
                     value = _restore_table_edges(masked, value)
+                    value = _restore_protected_link_spacing(masked, value)
                 validate_result(masked, value, detected, target, markdown=markdown)
             except OfflineTranslationError:
                 raise
