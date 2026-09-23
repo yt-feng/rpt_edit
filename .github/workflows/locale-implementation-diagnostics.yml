@@ -1,0 +1,44 @@
+name: Locale implementation diagnostics
+on:
+  push:
+    branches: [codex/global-offline-locales-20260923]
+    paths: [.github/workflows/locale-implementation-diagnostics.yml]
+permissions:
+  contents: read
+  actions: read
+jobs:
+  inspect:
+    if: github.event.repository.private == false && github.actor == github.repository_owner
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Export only public source changes against the local reviewed fixture
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/locale-diagnostics
+          git fetch --depth=1 origin f76bb77eb29e30be70b2a9cc38c31821d7894c33
+          git diff --binary f76bb77eb29e30be70b2a9cc38c31821d7894c33 HEAD -- scripts .github workers portal_suite/site_src portal_suite/locale_assets docs > /tmp/locale-diagnostics/public-source.patch
+      - name: Summarize recent runs and failed steps without credentials or source data
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const response = await github.rest.actions.listWorkflowRunsForRepo({...context.repo, per_page: 100});
+            const runs = response.data.workflow_runs.map(r => ({id:r.id, name:r.name, path:r.path, branch:r.head_branch, sha:r.head_sha, created:r.created_at, status:r.status, conclusion:r.conclusion, url:r.html_url}));
+            const newestFailures = new Map();
+            for (const r of runs) if (r.conclusion === 'failure' && !newestFailures.has(r.path)) newestFailures.set(r.path,r);
+            for (const r of [...newestFailures.values()].slice(0,12)) {
+              const {data} = await github.rest.actions.listJobsForWorkflowRun({...context.repo, run_id:r.id, per_page:100});
+              r.failed_jobs = data.jobs.filter(j=>j.conclusion==='failure').map(j=>({id:j.id,name:j.name,steps:j.steps.filter(s=>s.conclusion==='failure').map(s=>s.name)}));
+            }
+            fs.writeFileSync('/tmp/locale-diagnostics/runs.json',JSON.stringify(runs,null,2));
+            await core.summary.addHeading('Recent workflow outcomes').addCodeBlock(JSON.stringify([...newestFailures.values()],null,2),'json').write();
+      - uses: actions/upload-artifact@v4
+        with:
+          name: locale-code-diagnostics
+          path: /tmp/locale-diagnostics
+          retention-days: 1
