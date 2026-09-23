@@ -28,10 +28,11 @@ jobs:
   source:
     if: github.event.repository.private == false && github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 25
     outputs:
       matrix: ${{ steps.plan.outputs.matrix }}
       budget: ${{ steps.plan.outputs.budget }}
+      source_sha256: ${{ steps.store.outputs.source_sha256 }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -63,17 +64,17 @@ jobs:
           PYCODE
       - name: Build isolated Chinese source from public repository inputs
         run: |
-          python -m pip install requests Pillow 'opencc-python-reimplemented==0.1.7'
+          python -m pip install requests Pillow 'boto3>=1.34,<2' 'opencc-python-reimplemented==0.1.7'
           python -B scripts/prepare_portal_global_locales.py --build-source \
             --output-root "$RUNNER_TEMP/global-source" --site-url https://kcdesk.com
-      - name: Package only the public-source preparation tree
-        run: tar -C "$RUNNER_TEMP/global-source" -czf "$RUNNER_TEMP/global-public-source.tar.gz" .
-      - uses: actions/upload-artifact@v4
-        with:
-          name: global-public-source-${{ github.run_attempt }}
-          path: ${{ runner.temp }}/global-public-source.tar.gz
-          retention-days: 1
-          if-no-files-found: error
+      - name: Store public source in Cloudflare R2, not Actions artifacts
+        id: store
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: python -B scripts/portal_global_r2.py push-source --path "$RUNNER_TEMP/global-source"
 
   prepare:
     needs: source
@@ -90,25 +91,24 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: python -m pip install requests Pillow 'opencc-python-reimplemented==0.1.7'
-      - uses: actions/download-artifact@v4
-        with:
-          name: global-public-source-${{ github.run_attempt }}
-          path: ${{ runner.temp }}/source-package
-      - name: Unpack this run's public source
+      - run: python -m pip install requests Pillow 'boto3>=1.34,<2' 'opencc-python-reimplemented==0.1.7'
+      - name: Restore exact source and this locale checkpoint from R2
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+          SOURCE_SHA256: ${{ needs.source.outputs.source_sha256 }}
+          TARGET_LOCALE: ${{ matrix.locale }}
         run: |
-          mkdir -p "$RUNNER_TEMP/global-source"
-          tar -xzf "$RUNNER_TEMP/source-package/global-public-source.tar.gz" -C "$RUNNER_TEMP/global-source"
-      - uses: actions/cache/restore@v4
-        with:
-          path: ${{ runner.temp }}/global-checkpoint/cache.json.gz
-          key: global-locale-v1-${{ matrix.locale }}-${{ hashFiles('scripts/hymt_translation_model_manifest.json', 'scripts/portal_chinese_script.py') }}-${{ github.run_id }}-${{ github.run_attempt }}
-          restore-keys: |
-            global-locale-v1-${{ matrix.locale }}-${{ hashFiles('scripts/hymt_translation_model_manifest.json', 'scripts/portal_chinese_script.py') }}-
+          set -euo pipefail
+          python -B scripts/portal_global_r2.py pull-source --path "$RUNNER_TEMP/global-source" --expected-source "$SOURCE_SHA256"
+          python -B scripts/portal_global_r2.py pull-checkpoint --path "$RUNNER_TEMP/global-checkpoint/cache.json.gz" --locale "$TARGET_LOCALE"
       - uses: ./.github/actions/setup-offline-translation
         with:
           targets: ${{ matrix.locale }}
           audit-suffix: -prepare-${{ matrix.locale }}
+          retain-audit: false
       - name: Translate incremental public candidate with no paid fallback
         env:
           TARGET_LOCALE: ${{ matrix.locale }}
@@ -130,18 +130,32 @@ jobs:
           with open(os.environ['GITHUB_OUTPUT'], 'a') as stream:
               stream.write('available=' + str(valid).lower() + '\n')
           PYCODE
-      - uses: actions/cache/save@v4
+      - name: Persist verified checkpoint and complete candidate only in R2
         if: always() && steps.checkpoint.outputs.available == 'true'
-        with:
-          path: ${{ runner.temp }}/global-checkpoint/cache.json.gz
-          key: global-locale-v1-${{ matrix.locale }}-${{ hashFiles('scripts/hymt_translation_model_manifest.json', 'scripts/portal_chinese_script.py') }}-${{ github.run_id }}-${{ github.run_attempt }}
-      - name: Retain readiness, not a production activation claim
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+          TARGET_LOCALE: ${{ matrix.locale }}
+        run: |
+          set -euo pipefail
+          python -B scripts/portal_global_r2.py push-checkpoint --path "$RUNNER_TEMP/global-checkpoint/cache.json.gz" --locale "$TARGET_LOCALE"
+          if [[ -f "$RUNNER_TEMP/result/readiness.json" ]]; then
+            python -B scripts/portal_global_r2.py push-readiness --path "$RUNNER_TEMP/result/readiness.json" --locale "$TARGET_LOCALE"
+            ready=$(python -c 'import json,sys; print(str(json.load(open(sys.argv[1])).get("candidate_complete",False)).lower())' "$RUNNER_TEMP/result/readiness.json")
+            if [[ "$ready" == 'true' ]]; then
+              python -B scripts/portal_global_r2.py push-candidate --path "$RUNNER_TEMP/result/site" --locale "$TARGET_LOCALE" --readiness "$RUNNER_TEMP/result/readiness.json"
+            fi
+          fi
+      - name: Record truthful progress in the job summary without a stored site artifact
         if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: global-readiness-${{ matrix.locale }}-${{ github.run_attempt }}
-          path: |
-            ${{ runner.temp }}/result/readiness.json
-            ${{ runner.temp }}/result/chinese-parity-before.json
-          retention-days: 3
-          if-no-files-found: warn
+        run: |
+          python - <<'PYCODE'
+          import json, os, pathlib
+          path=pathlib.Path(os.environ['RUNNER_TEMP'])/'result/readiness.json'
+          data=json.loads(path.read_text()) if path.exists() else {'status':'blocked-before-translation','production_ready':False}
+          allowed=('status','targets','candidate_complete','production_ready','paid_provider_requests','stop_reason')
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as out:
+              out.write('## Offline locale preparation (Cloudflare R2)\n```json\n'+json.dumps({k:data[k] for k in allowed if k in data},ensure_ascii=False,indent=2)+'\n```\n')
+          PYCODE

@@ -4,6 +4,9 @@ on:
   pull_request:
     paths:
       - 'scripts/prepare_portal_global_locales.py'
+      - 'scripts/portal_global_build_support.py'
+      - 'scripts/portal_global_r2.py'
+      - 'scripts/test_portal_global_r2.py'
       - 'scripts/build_portal_locales.py'
       - 'scripts/build_portal_suite_site.py'
       - 'scripts/portal_language_registry.py'
@@ -22,7 +25,7 @@ jobs:
   source:
     if: github.event.repository.private == false
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
         with:
@@ -34,6 +37,8 @@ jobs:
         run: |
           set -euo pipefail
           python -m pip install requests Pillow 'opencc-python-reimplemented==0.1.7'
+          python -B scripts/test_portal_global_build_support.py
+          python -B scripts/test_portal_global_r2.py
           python -B scripts/prepare_portal_global_locales.py --build-source \
             --output-root "$RUNNER_TEMP/source" --site-url https://kcdesk.com
           python - <<'PY'

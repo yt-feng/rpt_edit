@@ -24,7 +24,7 @@ from portal_locale_manifest import load_locale_manifest, validate_translation_re
 
 ROOT = Path(__file__).resolve().parents[1]
 MAX_CACHE_BYTES = 8 * 1024 * 1024
-MAX_CANDIDATE_BYTES = 512 * 1024 * 1024
+MAX_CANDIDATE_BYTES = 2 * 1024 * 1024 * 1024
 
 
 def public_origin(value: str) -> str:

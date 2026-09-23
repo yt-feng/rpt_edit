@@ -7,6 +7,9 @@ inputs:
   audit-suffix:
     description: Unique suffix for matrix job provenance artifacts
     default: ''
+  retain-audit:
+    description: Store the small model receipt as an Actions artifact
+    default: 'true'
 runs:
   using: composite
   steps:
@@ -95,6 +98,7 @@ runs:
         path: ${{ runner.temp }}/hymt-runtime/build
         key: hymt-cpu-portable-v2-${{ runner.os }}-${{ runner.arch }}-${{ steps.configure.outputs.runner-image }}-${{ steps.configure.outputs.runtime-revision }}
     - name: Preserve model provenance
+      if: inputs.retain-audit != 'false'
       uses: actions/upload-artifact@v4
       with:
         name: offline-model-audit-${{ github.job }}-${{ github.run_attempt }}${{ inputs.audit-suffix }}
