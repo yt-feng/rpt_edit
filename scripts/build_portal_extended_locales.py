@@ -13,7 +13,9 @@ import re
 import time
 from typing import Protocol
 from compare_hymt_translation import SCRIPT_PATTERNS, require_actions
-from offline_translation import OfflineTranslator, MODEL_ID, PROVIDER, _detect_source
+from offline_translation import (
+    OfflineTranslationValidationError, OfflineTranslator, MODEL_ID, PROVIDER, _detect_source,
+)
 from financial_quantity_integrity import quantity_issues
 from portal_extended_locales import (
     ADDITIONAL, COPY, ORIGIN, ExpansionError, digest, file_for_url, render_document,
@@ -22,6 +24,7 @@ from portal_extended_locales import (
 
 MAX_CHECKPOINT_BYTES = 8 * 1024 * 1024
 CHECKPOINT_VERSION = 'extended-static-v2'
+MAX_QUANTITY_RETRIES = 1
 
 
 def reject_symlinks(path: Path) -> None:
@@ -140,8 +143,21 @@ class Memo:
                 return row['text']
             except ExpansionError: self.rows.pop(key, None)
         if time.monotonic() >= self.deadline: raise TimeoutError('Local translation time budget reached')
-        translated = self.translator.translate(source, target=self.locale, source=language, markdown=markdown)
-        self.calls += 1
+        translated = None
+        for attempt in range(MAX_QUANTITY_RETRIES + 1):
+            try:
+                translated = self.translator.translate(source, target=self.locale, source=language, markdown=markdown)
+                self.calls += 1
+                break
+            except OfflineTranslationValidationError as error:
+                self.calls += 1
+                retry = (attempt < MAX_QUANTITY_RETRIES and 'quantity' in str(error).casefold()
+                         and callable(getattr(self.translator, 'discard_translation', None)))
+                if not retry:
+                    raise
+                self.translator.discard_translation(source, self.locale, language, markdown=markdown)
+        if translated is None:
+            raise ExpansionError('Offline translation returned no result')
         validate_text(source, translated, self.locale, language)
         self.rows[key] = {'source': source, 'language': language, 'text': translated}
         self.save()

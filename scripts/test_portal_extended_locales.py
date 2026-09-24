@@ -12,7 +12,7 @@ from unittest import mock
 import xml.etree.ElementTree as ET
 
 from compare_hymt_translation import LANGUAGES, SCRIPT_PATTERNS
-from hymt_offline_translation import normalize_language, OfflineTranslationError
+from hymt_offline_translation import normalize_language, OfflineTranslationError, OfflineTranslationValidationError
 from portal_extended_locales import *
 from build_portal_extended_locales import build, Memo, validate_text, MODEL_ID
 from assemble_portal_extended_locales import assemble, verified_candidate, head_alternates
@@ -41,6 +41,21 @@ class FakeTranslator:
         if self.fail and self.fail in text: raise RuntimeError('synthetic rejected response')
         if target == 'en': return text
         return 'Texte traduit de référence.'
+
+
+class RetryQuantityTranslator(FakeTranslator):
+    def __init__(self):
+        super().__init__()
+        self.discard_calls = 0
+
+    def translate(self, text, target, source=None, *, markdown=True):
+        self.calls += 1
+        if self.calls == 1:
+            raise OfflineTranslationValidationError('Hy-MT2 quantity validation failed')
+        return text if target == 'en' else 'Texte traduit de référence.'
+
+    def discard_translation(self, text, target, source=None, *, markdown=True):
+        self.discard_calls += 1
 
 
 class LanguageRegistryTests(unittest.TestCase):
@@ -174,6 +189,10 @@ class CandidateTests(BuildFixture, unittest.TestCase):
         result=self.runbuild(budget=-1)
         self.assertEqual(result['status'],'incomplete-candidate');self.assertTrue(result['budget_exhausted'])
         self.assertEqual(result['completed_page_count'],0)
+    def test_quantity_validation_gets_one_bounded_offline_retry(self):
+        fake = RetryQuantityTranslator(); result = self.runbuild(fake=fake)
+        self.assertEqual(result['status'], 'complete-candidate')
+        self.assertEqual(fake.discard_calls, 1)
     def test_resume_reuses_validated_cache_without_calls(self):
         self.runbuild();fake=FakeTranslator();result=self.runbuild(fake=fake,output='second')
         self.assertEqual(result['status'],'complete-candidate');self.assertEqual(fake.calls,0)
