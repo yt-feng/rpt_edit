@@ -194,8 +194,8 @@ class HyMTTests(unittest.TestCase):
 
     def test_numeric_lock_covers_digits_adjacent_to_cjk_units(self):
         masked, replacements, _terms = h._mask('截至2024年9月，收入增长12.5%，投资1.2亿美元。', 'fr')
-        self.assertEqual(masked, '截至__HYMTPH_0001__年__HYMTPH_0002__月，收入增长__HYMTPH_0003__%，投资__HYMTPH_0000__。')
-        self.assertEqual(list(replacements.values()), ['120 millions dollars', '2024', '9', '12.5'])
+        self.assertEqual(masked, '截至__HYMTPH_0001__，收入增长__HYMTPH_0002__%，投资__HYMTPH_0000__。')
+        self.assertEqual(list(replacements.values()), ['120 millions dollars', 'septembre 2024', '12.5'])
 
     def test_cjk_money_atom_is_converted_without_changing_its_magnitude(self):
         masked, replacements, _terms = h._mask('收入42亿元人民币，另有1.2亿美元投资。', 'fr')
@@ -210,6 +210,11 @@ class HyMTTests(unittest.TestCase):
         masked, replacements, _terms = h._mask('JPM-China-260921JPMorgan · 2Q26 · 000660.KS', 'fr')
         self.assertEqual(masked, 'JPM-China-__HYMTPH_0000__ · __HYMTPH_0001__ · __HYMTPH_0002__')
         self.assertEqual(list(replacements.values()), ['260921JPMorgan', '2Q26', '000660.KS'])
+
+    def test_cjk_date_atom_is_localized_without_changing_calendar_value(self):
+        masked, replacements, _terms = h._mask('截至2026年9月24日，数据覆盖2026年9月。', 'fr')
+        self.assertEqual(masked, '截至__HYMTPH_0000__，数据覆盖__HYMTPH_0001__。')
+        self.assertEqual(list(replacements.values()), ['24 septembre 2026', 'septembre 2026'])
 
     def test_plain_filename_punctuation_is_not_markdown_but_claims_remain_checked(self):
         translator = self.translator(lambda _: '短期增长__HYMTPH_0000__%')

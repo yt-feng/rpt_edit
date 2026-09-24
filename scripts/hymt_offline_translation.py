@@ -99,6 +99,13 @@ _LOCALIZED_MONEY_NAMES = {
 _NUMERIC_IDENTIFIER = re.compile(
     r'(?<![A-Za-z0-9_])(?=[A-Za-z0-9_.]*[A-Za-z])(?=[A-Za-z0-9_.]*\d)'
     r'[A-Za-z0-9][A-Za-z0-9_.]*[A-Za-z0-9](?![A-Za-z0-9_])')
+_CJK_DATE_ATOM = re.compile(
+    r'(?<![A-Za-z0-9_])(?P<year>\d{4})年(?P<month>\d{1,2})月'
+    r'(?:(?P<day>\d{1,2})日)?(?![A-Za-z0-9_])')
+_LOCALIZED_MONTHS = {
+    'fr': ('janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'),
+    'pt': ('janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'),
+}
 _ENGINES: dict[str, object] = {}
 _LOCK = threading.RLock()
 # Finance vocabulary constrains individual concepts, never whole sentences.
@@ -214,6 +221,19 @@ def _localized_money(value: Decimal, currency: str, target: str) -> str:
     return f'{rendered} {names[currency]}'
 
 
+def _localized_cjk_date(match: re.Match[str], target: str) -> str:
+    months = _LOCALIZED_MONTHS.get(target)
+    month = int(match['month'])
+    if not months or not 1 <= month <= 12:
+        return match.group()
+    year, day = match['year'], match['day']
+    if day:
+        return (f'{day} {months[month - 1]} {year}' if target == 'fr'
+                else f'{day} de {months[month - 1]} de {year}')
+    return (f'{months[month - 1]} {year}' if target == 'fr'
+            else f'{months[month - 1]} de {year}')
+
+
 def split_sentences(text: str, limit: int = 1800) -> list[str]:
     """Bound context only at sentence ends, never in a financial assertion."""
     parts = []
@@ -262,6 +282,8 @@ def _mask(text: str, target: str) -> tuple[str, dict[str, str], dict[str, str]]:
     # this protects the quantity without pretending to have localized it.
         return reserve(value or match.group(), replacements)
     masked = _CJK_MONEY_ATOM.sub(reserve_cjk_money, masked)
+    masked = _CJK_DATE_ATOM.sub(
+        lambda match: reserve(_localized_cjk_date(match, target), replacements), masked)
     # Report titles contain compact date/provider and ticker identifiers such
     # as 260921JPMorgan, 2Q26 and 000660.KS. Keep those exact source tokens
     # intact; otherwise the quantity gate sees a changed numeric claim.
