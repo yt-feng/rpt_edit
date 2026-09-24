@@ -48,7 +48,7 @@ _QUANTITY_FACT = re.compile(
     r'(?<![A-Za-z0-9_])(?:'
     r'(?:USD|CNY|RMB|HKD|JPY|EUR|GBP|US\$|HK\$|\$|€|£)\s*[+\-−]?\d+(?:[.,]\d+)*'
     r'(?:\s*(?:thousand|million|billion|trillion|mn|mln|bn|bln|tn|万亿|千亿|百亿|十亿|千万|百万|十万|亿元|亿美元|港元|人民币|美元|元))?'
-    r'|[+\-−]?\d+(?:[.,]\d+)*\s*(?:%|％|百分点|個百分點|百分點|亿元|亿美元|港元|人民币|美元|元人民币|元|万亿|千亿|百亿|十亿|千万|百万|十万|亿|万)'
+    r'|[+\-−]?\d+(?:[.,]\d+)*\s*(?:%|％|percentage\s+points?|百分点|個百分點|百分點|亿元|亿美元|港元|人民币|美元|元人民币|元|万亿|千亿|百亿|十亿|千万|百万|十万|亿|万)'
     r'|\d{4}年\d{1,2}月(?:\d{1,2}日)?'
     r'|\d{4}[-/]\d{1,2}(?:[-/]\d{1,2})?'
     r'|\d{1,2}[QH]\d{2,4}|\d{2,4}[QH]\d{1,2}'
@@ -330,6 +330,8 @@ class _HyMTEngine:
         if quality_retry:
             prompt = (f'Quality retry {quality_retry}: the previous draft failed a strict structural or '
                       'financial-integrity check. Use the requested target script for all translatable words. '
+                      'If the input is a short heading, still translate it; do not copy the source verbatim. '
+                      'A short Hindi heading must contain Devanagari letters, not only Latin words or numbers. '
                       'Copy each complete numeric expression, date, percentage, currency and unit exactly '
                       'from the input; do not convert its scale or currency. Preserve every placeholder and '
                       'Markdown delimiter exactly. Output only the corrected translation.\n' + prompt)
@@ -411,12 +413,12 @@ class HyMTOfflineTranslator:
         except (OSError, ValueError, KeyError, TypeError, OfflineTranslationError):
             try:
                 engine = self._engine(detected, target)
-                attempt_count = 2 if isinstance(engine, _HyMTEngine) else 1
-                max_attempts = 3 if isinstance(engine, _HyMTEngine) else 1
+                attempt_count = 3 if isinstance(engine, _HyMTEngine) else 1
+                max_attempts = attempt_count
                 for attempt in range(max_attempts):
                     model_input = masked
                     quantity_retry_replacements: dict[str, str] = {}
-                    if attempt == 2:
+                    if attempt == 2 and isinstance(engine, _HyMTEngine):
                         model_input, quantity_retry_replacements = _mask_quantity_facts(
                             masked, len(replacements) + len(terms))
                     try:
@@ -435,19 +437,20 @@ class HyMTOfflineTranslator:
                         if markdown:
                             value = _restore_table_edges(model_input, value)
                         validate_result(model_input, value, detected, target, markdown=markdown, check_quantities=False)
-                        if quantity_retry_replacements:
-                            # The cache format remains the original masked
-                            # sentence, not the temporary retry input.
-                            value = _restore_terms(value, quantity_retry_replacements)
-                            active_replacements = replacements
-                        cache_value = value
+                        # Validate the materialized result inside the same
+                        # bounded retry loop. Otherwise a quantity-protected
+                        # third response could pass the masked check and only
+                        # fail after the retry budget had already been spent.
+                        cache_value = _restore_terms(value, quantity_retry_replacements)
+                        materialized = _restore_terms(cache_value, terms)
+                        for token, original in replacements.items():
+                            materialized = materialized.replace(token, original)
+                        validate_result(core, materialized, detected, target, markdown=markdown)
+                        value = materialized
+                        active_replacements = replacements
                         fresh_translation = True
                         break
                     except OfflineTranslationValidationError as error:
-                        if (attempt == 1 and 'quantity' in str(error).casefold()
-                                and isinstance(engine, _HyMTEngine)):
-                            attempt_count = 3
-                            continue
                         if attempt + 1 >= attempt_count:
                             raise
             except OfflineTranslationError:

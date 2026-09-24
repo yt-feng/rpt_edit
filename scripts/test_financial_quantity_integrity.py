@@ -40,6 +40,10 @@ class FinancialQuantityTests(unittest.TestCase):
     def test_rates_and_percentage_points_are_distinct(self):
         self.assertEqual(quantity_issues('Margin rose 2.5 percentage points to 18.5%.',
                                        '利润率上升2.5个百分点，达到百分之18.5。'), [])
+        self.assertEqual(quantity_issues('Margin rose 2.5 percentage points.',
+                                       'मार्जिन 2.5 प्रतिशत अंक बढ़ा।'), [])
+        self.assertEqual(quantity_issues('Margin rose 2.5 percentage points.',
+                                       'मार्जिन 2.5 प्रतिशत बिंदु बढ़ा।'), [])
         self.assertTrue(quantity_issues('Margin rose 2.5 percentage points to 18.5%.',
                                        '利润率上升2.5%，达到18.5%。'))
         self.assertEqual(quantity_issues('利润率为23%，收入同比下降4.7%。',

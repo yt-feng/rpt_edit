@@ -14,12 +14,26 @@ class Engine:
         self.calls.append((text, source, target))
         return self.responder(text)
 
+
+class RetryingEngine(h._HyMTEngine):
+    def __init__(self, responder):
+        self.responder = responder
+        self.calls = []
+
+    def translate(self, text, source, target, *, quality_retry=0):
+        self.calls.append((text, source, target, quality_retry))
+        return self.responder(text, quality_retry)
+
 class HyMTTests(unittest.TestCase):
     def setUp(self):
         self.directory = tempfile.TemporaryDirectory()
         self.addCleanup(self.directory.cleanup)
     def translator(self, responder):
         self.engine = Engine(responder)
+        return h.OfflineTranslator(cache_dir=self.directory.name, engine_factory=lambda s,t: self.engine)
+
+    def retrying_translator(self, responder):
+        self.engine = RetryingEngine(responder)
         return h.OfflineTranslator(cache_dir=self.directory.name, engine_factory=lambda s,t: self.engine)
     def test_quantities_and_predicates_remain_in_complete_sentence(self):
         original = 'The operating margin increased by 2.5 percentage points to 18.5%.'
@@ -36,6 +50,29 @@ class HyMTTests(unittest.TestCase):
         with self.assertRaises(h.OfflineTranslationError):
             translator.translate('Cash reserves were USD 120 million.', 'zh', 'en')
         self.assertFalse(list(Path(self.directory.name).rglob('*.json')))
+
+    def test_pinned_engine_retries_target_script_and_materialized_quantities(self):
+        source = 'Margin rose 2.5 percentage points.'
+
+        def respond(text, retry):
+            if retry < 2:
+                return 'The margin rose 2.5 percentage points.'
+            self.assertIn('__HYMTPH_0000__', text)
+            return 'मार्जिन __HYMTPH_0000__ बढ़ा।'
+
+        translator = self.retrying_translator(respond)
+        self.assertEqual(translator.translate(source, 'hi', 'en'), 'मार्जिन 2.5 percentage points बढ़ा।')
+        self.assertEqual([row[3] for row in self.engine.calls], [0, 1, 2])
+
+    def test_pinned_engine_retries_short_heading_with_target_script(self):
+        source = 'Market Outlook'
+
+        def respond(_text, retry):
+            return 'Market Outlook' if retry < 2 else 'बाज़ार परिदृश्य'
+
+        translator = self.retrying_translator(respond)
+        self.assertEqual(translator.translate(source, 'hi', 'en'), 'बाज़ार परिदृश्य')
+        self.assertEqual([row[3] for row in self.engine.calls], [0, 1, 2])
     def test_cache_is_exact_source_target_and_model(self):
         translator = self.translator(lambda _: '收入下降8.2%。')
         source = 'Revenue fell by 8.2%.'
