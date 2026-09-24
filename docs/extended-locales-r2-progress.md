@@ -48,8 +48,7 @@ been accepted or published.
 - Local verification after the recovery fix: extended-locale tests 59/59,
   Hy-MT2 tests 33/33, R2 tests 6/6, hardening tests 10/10, Neutral cutover
   tests 34/34, recovery workflow tests 7/7, and restore/assembly tests 2/2.
-- Candidate run: Actions `36015823873`
-  (`https://github.com/yt-feng/rpt_edit/actions/runs/36015823873`) ran on
+- Candidate run: Actions `36015823873` ran on
   `dc182c5625174b8ed4eb947f77b86e533c209d71`, standard Ubuntu CPU runner,
   pinned Hy-MT2, locale `en`, fixed source generation
   `f334aac3023978818d18a4d28ed16cb2541a7b9b6ea803021f1fcd0502c812aa`, and
