@@ -38,8 +38,19 @@ class Translator(Protocol):
     def translate(self, text: str, target: str, source: str | None = None, *, markdown: bool = True) -> str: ...
 
 
+class TranslationUnitError(Exception):
+    """A validation failure annotated with a bounded document field name."""
+
+    def __init__(self, field: str, error: Exception):
+        super().__init__(str(error))
+        self.field = field
+        self.error = error
+
+
 def safe_failure_code(error: Exception) -> str:
     """Return a bounded diagnostic code without exposing model/source text."""
+    if isinstance(error, TranslationUnitError):
+        error = error.error
     name, message = type(error).__name__, str(error).casefold()
     if name == 'OfflineTranslationValidationError':
         for needle, code in (
@@ -152,21 +163,29 @@ class Memo:
 def translate_document(doc: dict, memo: Memo) -> dict:
     # English UI literals and English report titles get explicit English source
     # context; Chinese prose is not translated via a pivot or paid fallback.
-    def translate(text, *, markdown=False):
+    def translate(text, *, markdown=False, field='unit'):
         if '|' in text:
             # Public source headings/lists use a literal pipe as a title
             # separator (for example, ``title | KC桌面``), not an HTML table.
             # Keep that structural byte outside model inference while each
             # side remains an independently validated translation unit.
-            return '|'.join(translate(part, markdown=markdown) for part in text.split('|'))
-        language = _detect_source(text)
-        return memo.get(text, language, markdown=markdown)
-    return {'title': translate(doc['title']), 'description': translate(doc['description']),
-            'copy': {key: memo.get(value, 'en') for key, value in COPY.items()},
+            return '|'.join(translate(part, markdown=markdown, field=f'{field}.part{index}')
+                            for index, part in enumerate(text.split('|')))
+        try:
+            language = _detect_source(text)
+            return memo.get(text, language, markdown=markdown)
+        except TimeoutError:
+            raise
+        except Exception as error:
+            raise TranslationUnitError(field, error) from error
+    return {'title': translate(doc['title'], field='title'),
+            'description': translate(doc['description'], field='description'),
+            'copy': {key: translate(value, field=f'copy.{key}') for key, value in COPY.items()},
             'blocks': [{'tag': b['tag'], 'text': translate(
-                b['text'], markdown=b['tag'] == 'tr' or '|' in b['text'])}
-                       for b in doc['blocks']],
-            'links': [{'url': row['url'], 'label': translate(row['label'])} for row in doc['links']]}
+                b['text'], markdown=b['tag'] == 'tr' or '|' in b['text'], field=f'block.{index}.{b["tag"]}')}
+                       for index, b in enumerate(doc['blocks'])],
+            'links': [{'url': row['url'], 'label': translate(row['label'], field=f'link.{index}')}
+                      for index, row in enumerate(doc['links'])]}
 
 
 def build(corpus: dict, locale: str, output: Path, checkpoint: Path, translator: Translator,
@@ -193,8 +212,10 @@ def build(corpus: dict, locale: str, output: Path, checkpoint: Path, translator:
         except Exception as error:
             # Persist accepted units and record a bounded error category. Do not
             # emit partial pages or serialize raw model responses to CI logs.
-            failures.append({'url': doc['url'], 'error': type(error).__name__,
-                             'code': safe_failure_code(error)})
+            root_error = error.error if isinstance(error, TranslationUnitError) else error
+            failures.append({'url': doc['url'], 'error': type(root_error).__name__,
+                             'code': safe_failure_code(error),
+                             'field': error.field if isinstance(error, TranslationUnitError) else 'document'})
     memo.save()
     complete_urls = set(translated)
     records = []
