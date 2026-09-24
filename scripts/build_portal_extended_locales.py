@@ -194,6 +194,17 @@ def translate_document(doc: dict, memo: Memo) -> dict:
             # side remains an independently validated translation unit.
             return '|'.join(translate(part, markdown=markdown, field=f'{field}.part{index}')
                             for index, part in enumerate(text.split('|')))
+        if re.search(r'[\u3400-\u9fff]', text) and re.search(r'[，；;]|(?<!\d),(?!\d)', text):
+            # Catalog titles and metadata often pack several numeric claims into
+            # one Chinese clause. Split only at sentence punctuation outside
+            # numeric thousands separators; the punctuation itself stays byte
+            # exact while each claim keeps the normal quality gates.
+            chunks = re.split(r'([，；;]|(?<!\d),(?!\d))', text)
+            return ''.join(
+                chunk if chunk in {'，', '；', ';', ','}
+                else translate(chunk, markdown=markdown, field=f'{field}.clause{index}')
+                for index, chunk in enumerate(chunks) if chunk
+            )
         try:
             language = extended_source_language(text)
             return memo.get(text, language, markdown=markdown)
