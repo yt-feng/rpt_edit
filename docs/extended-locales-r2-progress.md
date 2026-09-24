@@ -24,10 +24,17 @@ HTML and credentials stay out of Git.
   source batch, 1..2400 seconds per locale, and matrix concurrency of two.
 - Local verification: `test_portal_extended_r2.py` 6/6, extended locale tests
   57/57, hardening tests 10/10, Python syntax and both workflow YAML parses pass.
+- Live staging verification: Actions run `36002784789` completed successfully on
+  the branch head `85ab68a06242140967d490d73f768726209422d5`. Its isolated
+  private prefix was `_extended-locales/staging/roundtrip-36002784789-1`; the
+  readback receipt was 79 bytes with SHA-256
+  `ed595ebe90a93c9db028b0a0d06ebf1418f5a32c4236c14bcc6e52ef9557a4ec`.
+  The same run classified the deliberate permission probe as `R2PermissionError`.
+  No secret value or translation payload was printed.
 
 ## Current boundary
 
-The R2 round-trip is implemented but not yet run against the repository's live
-private bucket from Actions. The candidate pipeline is intentionally not a
-publication path. Inactive-tree assembly, extended-locale approval, production
-cutover, live acceptance and rollback remain separate stages.
+The candidate pipeline is intentionally not a publication path. Inactive-tree
+assembly, extended-locale approval, production cutover, live acceptance and
+rollback remain separate stages. The first real 24-page candidate has not yet
+been accepted or published.

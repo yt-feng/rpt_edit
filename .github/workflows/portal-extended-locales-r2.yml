@@ -160,7 +160,7 @@ jobs:
     env:
       SOURCE_GENERATION: ${{ needs.source.outputs.generation }}
       LOCALE: ${{ matrix.locale }}
-      TRANSLATION_SECONDS: ${{ inputs.seconds }}
+      TRANSLATION_SECONDS: ${{ inputs.seconds || '1800' }}
     steps:
       - uses: actions/checkout@v4
         with:
