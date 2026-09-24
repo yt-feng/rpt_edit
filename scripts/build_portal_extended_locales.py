@@ -1,0 +1,174 @@
+#!/usr/bin/env python3
+"""Build independently resumable locale candidates using the pinned CPU model.
+
+A candidate is never indexed here. Only a complete, approved, byte-verified
+candidate can be merged into an inactive site by the companion assembly tool.
+"""
+from __future__ import annotations
+import argparse
+import json
+import os
+from pathlib import Path
+import re
+import time
+from typing import Protocol
+from compare_hymt_translation import SCRIPT_PATTERNS, require_actions
+from offline_translation import OfflineTranslator, MODEL_ID, PROVIDER
+from financial_quantity_integrity import quantity_issues
+from portal_extended_locales import (
+    ADDITIONAL, COPY, ORIGIN, ExpansionError, digest, file_for_url, render_document,
+    select_locales, stable_bytes, validate_corpus,
+)
+
+MAX_CHECKPOINT_BYTES = 8 * 1024 * 1024
+CHECKPOINT_VERSION = 'extended-static-v1'
+
+class Translator(Protocol):
+    def translate(self, text: str, target: str, source: str | None = None, *, markdown: bool = True) -> str: ...
+
+
+def validate_text(source: str, translated: str, locale: str, source_language: str) -> None:
+    if not isinstance(translated, str) or not translated.strip(): raise ExpansionError('Empty translated text')
+    if len(translated) > max(2000, len(source) * 12): raise ExpansionError('Unbounded translation expansion')
+    if re.search(r'__(?:KC_PH_|HYMTPH_)\d+__', translated): raise ExpansionError('Unrestored protected identifier')
+    if quantity_issues(source, translated, source_language, locale): raise ExpansionError('Financial quantity validation failed')
+    if source.count('|') != translated.count('|'): raise ExpansionError('Table column boundaries changed')
+    clean = re.sub(r'https?://\S+|\b[A-Z][A-Z0-9.-]{0,7}\b', '', source).strip()
+    if not any(c.isalpha() for c in clean): return
+    # Source English text can legitimately stay unchanged on /en/. This does
+    # not excuse unchanged Chinese on any additional target-language page.
+    source_is_english = not re.search(r'[\u3400-\u9fff\u3040-\u30ff\uac00-\ud7af\u0600-\u06ff]', source.replace('KC桌面', ''))
+    if locale == 'en' and source_is_english: return
+    source_key = re.sub(r'\W', '', source).casefold()
+    translated_key = re.sub(r'\W', '', translated).casefold()
+    if source_key and source_key in translated_key and len(clean) > 12:
+        raise ExpansionError('Untranslated source text')
+    if not re.search(SCRIPT_PATTERNS[locale], translated): raise ExpansionError('Target script is missing')
+    if re.search(r'[\u3400-\u9fff]', translated) and locale not in {'zh-Hant', 'yue'}:
+        # Names may retain a small parenthetic Han label. Paragraph-sized Han
+        # residue is not accepted as successful localization.
+        if len(re.findall(r'[\u3400-\u9fff]', translated)) > 12: raise ExpansionError('Untranslated Chinese residue')
+
+
+class Memo:
+    def __init__(self, path: Path, locale: str, translator: Translator, deadline: float):
+        self.path, self.locale, self.translator, self.deadline = path, locale, translator, deadline
+        self.rows = {}
+        self.calls = self.hits = 0
+        if path.is_file():
+            if path.stat().st_size > MAX_CHECKPOINT_BYTES: raise ExpansionError('Checkpoint is too large')
+            payload = json.loads(path.read_text())
+            if payload.get('model') == MODEL_ID and payload.get('locale') == locale and payload.get('version') == CHECKPOINT_VERSION:
+                self.rows = payload.get('rows', {})
+                if not isinstance(self.rows, dict): raise ExpansionError('Invalid checkpoint rows')
+
+    def key(self, source: str, language: str) -> str:
+        return digest(stable_bytes([CHECKPOINT_VERSION, MODEL_ID, self.locale, language, source]))
+
+    def get(self, source: str, language: str = 'zh') -> str:
+        if not source.strip(): return source
+        key = self.key(source, language)
+        row = self.rows.get(key)
+        if isinstance(row, dict) and row.get('source') == source and row.get('language') == language:
+            try:
+                validate_text(source, row.get('text'), self.locale, language)
+                self.hits += 1
+                return row['text']
+            except ExpansionError: self.rows.pop(key, None)
+        if time.monotonic() >= self.deadline: raise TimeoutError('Local translation time budget reached')
+        translated = self.translator.translate(source, target=self.locale, source=language, markdown=False)
+        self.calls += 1
+        validate_text(source, translated, self.locale, language)
+        self.rows[key] = {'source': source, 'language': language, 'text': translated}
+        self.save()
+        return translated
+
+    def save(self):
+        raw = stable_bytes({'model': MODEL_ID, 'locale': self.locale, 'version': CHECKPOINT_VERSION, 'rows': self.rows})
+        if len(raw) > MAX_CHECKPOINT_BYTES: raise ExpansionError('Checkpoint exceeds storage budget')
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        temporary = self.path.with_suffix('.tmp')
+        temporary.write_bytes(raw); temporary.replace(self.path)
+
+
+def translate_document(doc: dict, memo: Memo) -> dict:
+    # English UI literals and English report titles get explicit English source
+    # context; Chinese prose is not translated via a pivot or paid fallback.
+    def translate(text):
+        from offline_translation import _detect_source
+        language = _detect_source(text)
+        return memo.get(text, language)
+    return {'title': translate(doc['title']), 'description': translate(doc['description']),
+            'copy': {key: memo.get(value, 'en') for key, value in COPY.items()},
+            'blocks': [{'tag': b['tag'], 'text': translate(b['text'])} for b in doc['blocks']],
+            'links': [{'url': row['url'], 'label': translate(row['label'])} for row in doc['links']]}
+
+
+def build(corpus: dict, locale: str, output: Path, checkpoint: Path, translator: Translator,
+          *, budget_seconds=1800, origin=ORIGIN) -> dict:
+    if locale not in ADDITIONAL: raise ExpansionError('Not an additional locale')
+    docs = validate_corpus(corpus, origin=origin)
+    if output.exists() and any(output.iterdir()): raise ExpansionError('Candidate output must be empty; never overwrite an active release')
+    output.mkdir(parents=True, exist_ok=True)
+    memo = Memo(checkpoint, locale, translator, time.monotonic() + budget_seconds)
+    translated, failures, timed_out = {}, [], False
+    for doc in docs:
+        try: translated[doc['url']] = translate_document(doc, memo)
+        except TimeoutError:
+            timed_out = True; break
+        except Exception as error:
+            # Persist accepted units and record a bounded error category. Do not
+            # emit partial pages or serialize raw model responses to CI logs.
+            failures.append({'url': doc['url'], 'error': type(error).__name__})
+    memo.save()
+    complete_urls = set(translated)
+    records = []
+    for doc in docs:
+        if doc['url'] not in translated: continue
+        relative = Path(locale) / file_for_url(doc['url'], origin=origin)
+        target = output / relative
+        target.parent.mkdir(parents=True, exist_ok=True)
+        page = render_document(doc, translated[doc['url']], locale, complete_urls, origin=origin)
+        target.write_text(page, encoding='utf-8')
+        records.append({'path': relative.as_posix(), 'source_url': doc['url'],
+                        'source_content_sha256': doc['content_sha256'],
+                        'source_html_sha256': doc['source_html_sha256'],
+                        'sha256': digest(target.read_bytes()), 'bytes': target.stat().st_size})
+    complete = len(records) == len(docs) and not failures and not timed_out
+    manifest = {'schema_version': 1, 'locale': locale, 'origin': origin,
+                'provider': PROVIDER, 'model': MODEL_ID, 'paid_provider_requests': 0,
+                'status': 'complete-candidate' if complete else 'incomplete-candidate',
+                'indexable': False, 'semantic_review': 'not-performed',
+                'source_documents_sha256': corpus['documents_sha256'],
+                'source_document_count': len(docs), 'completed_page_count': len(records),
+                'translation_calls_this_run': memo.calls, 'cache_hits': memo.hits,
+                'budget_exhausted': timed_out, 'failures': failures, 'pages': records,
+                'files_sha256': digest(stable_bytes(records))}
+    (output / 'candidate-manifest.json').write_bytes(stable_bytes(manifest))
+    return manifest
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--list-locales', action='store_true')
+    parser.add_argument('--locales', default='all-supported')
+    parser.add_argument('--corpus', type=Path)
+    parser.add_argument('--locale')
+    parser.add_argument('--output', type=Path)
+    parser.add_argument('--checkpoint', type=Path)
+    parser.add_argument('--seconds', type=int, default=1800)
+    args = parser.parse_args()
+    if args.list_locales:
+        print(json.dumps({'locale': list(select_locales(args.locales))})); return 0
+    if not all((args.corpus, args.locale, args.output, args.checkpoint)): parser.error('corpus, locale, output and checkpoint are required')
+    require_actions()
+    if os.environ.get('KC_PUBLIC_REPOSITORY') != 'true': raise ExpansionError('Translation requires an explicitly verified public repository')
+    if not 1 <= args.seconds <= 2400: raise ExpansionError('Time budget must be 1..2400 seconds')
+    if args.corpus.stat().st_size > 32 * 1024 * 1024: raise ExpansionError('Corpus too large')
+    corpus = json.loads(args.corpus.read_text())
+    result = build(corpus, args.locale, args.output, args.checkpoint, OfflineTranslator(), budget_seconds=args.seconds)
+    print(json.dumps({key: result[key] for key in ('locale', 'status', 'source_document_count', 'completed_page_count', 'paid_provider_requests', 'budget_exhausted')}))
+    return 0 if result['status'] == 'complete-candidate' else 75 if result['budget_exhausted'] and not result['failures'] else 1
+
+if __name__ == '__main__':
+    raise SystemExit(main())
