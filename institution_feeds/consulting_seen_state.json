@@ -1372,6 +1372,38 @@
     "bcg:https://www.bcg.com/publications/2026/rail-operators-capture-ai-opportunity": {
       "first_seen": "2026-09-23",
       "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/ai-agents-reshaping-corporate-treasury": {
+      "first_seen": "2026-09-24",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/merchants-turn-payments-into-profit": {
+      "first_seen": "2026-09-24",
+      "status": "duplicate_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/payments-companies-valuation-reset": {
+      "first_seen": "2026-09-24",
+      "status": "duplicate_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/global-payments-market-outlook-2030": {
+      "first_seen": "2026-09-24",
+      "status": "duplicate_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2023/navigating-the-economic-challenges-in-europe": {
+      "first_seen": "2026-09-24",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/chinas-petrochemical-overcapacity-trade": {
+      "first_seen": "2026-09-24",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/ai-m-and-a-no-consolidation-yet": {
+      "first_seen": "2026-09-24",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/how-non-tech-companies-buy-ai": {
+      "first_seen": "2026-09-24",
+      "status": "duplicate_pdf"
     }
   }
 }
