@@ -30,7 +30,10 @@ MANIFEST = json.loads(MANIFEST_PATH.read_text(encoding='utf-8'))
 PROVIDER = 'hymt'
 MODEL = MANIFEST['model']['repository']
 REVISION = MANIFEST['model']['revision']
-MODEL_ID = f"{MODEL}@{REVISION}:Q8_0:natural-sentence-v4-table-structure:{hashlib.sha256(MANIFEST_PATH.read_bytes()).hexdigest()[:16]}"
+# The policy identity is part of every durable checkpoint/cache key.  A
+# bounded quality retry changes the sampling path, so it must not reuse rows
+# created by the previous single-attempt policy.
+MODEL_ID = f"{MODEL}@{REVISION}:Q8_0:natural-sentence-v5-quality-retry:{hashlib.sha256(MANIFEST_PATH.read_bytes()).hexdigest()[:16]}"
 INSTALL_COMMAND = 'Use .github/actions/setup-offline-translation on a Linux GitHub Actions runner'
 # Recognize the complete reserved token even when a filename underscore or
 # Markdown emphasis touches it; those surrounding underscores are punctuation.
@@ -286,7 +289,7 @@ class _HyMTEngine:
                 self.process.wait(timeout=5)
         self.log.close()
 
-    def translate(self, text: str, source: str, target: str) -> str:
+    def translate(self, text: str, source: str, target: str, *, quality_retry: int = 0) -> str:
         prompt = (f'Translate the following text into {LANGUAGES[target]}. '
                   'Note that you should only output the translated result without any additional explanation. '
                   'Preserve all __KC_PH_...__ and __HYMTPH_...__ placeholders exactly, including their order. '
@@ -297,9 +300,20 @@ class _HyMTEngine:
                   'Copy every source digit sequence, date, percentage, currency amount, and numeric unit exactly; '
                   'translate the surrounding words without normalizing, rounding, dropping, or inventing numeric facts. '
                   + financial_glossary(text, target) + '\n' + text)
+        if quality_retry:
+            prompt = (f'Quality retry {quality_retry}: the previous draft failed a strict structural or '
+                      'financial-integrity check. Use the requested target script for all translatable words. '
+                      'Copy each complete numeric expression, date, percentage, currency and unit exactly '
+                      'from the input; do not convert its scale or currency. Preserve every placeholder and '
+                      'Markdown delimiter exactly. Output only the corrected translation.\n' + prompt)
+        sampling = dict(MANIFEST['sampling'])
+        if quality_retry:
+            # Keep the pinned model/runtime and all sampling bounds, while
+            # making the bounded second attempt meaningfully independent.
+            sampling['seed'] = int(sampling.get('seed', 0)) + quality_retry
         response = request_json(self.port, '/v1/chat/completions', {
             'model': 'hymt-offline', 'messages': [{'role': 'user', 'content': prompt}],
-            'stream': False, 'cache_prompt': False, **MANIFEST['sampling'],
+            'stream': False, 'cache_prompt': False, **sampling,
         }, timeout=240)
         choice = response['choices'][0]
         if choice.get('finish_reason') == 'length':
@@ -368,17 +382,31 @@ class HyMTOfflineTranslator:
                 raise ValueError('Cache identity changed')
         except (OSError, ValueError, KeyError, TypeError, OfflineTranslationError):
             try:
-                with _LOCK:
-                    value = self._engine(detected, target).translate(masked, detected, target)
-                if self._diagnostic_callback is not None:
-                    self._diagnostic_callback({'model_input': masked, 'raw_translation': value,
-                                               'source_language': detected, 'target_language': target,
-                                               'controlled_terms': dict(terms)})
-                if markdown:
-                    value = _restore_table_edges(masked, value)
-                validate_result(masked, value, detected, target, markdown=markdown, check_quantities=False)
-                cache_value = value
-                fresh_translation = True
+                engine = self._engine(detected, target)
+                attempt_count = 2 if isinstance(engine, _HyMTEngine) else 1
+                for attempt in range(attempt_count):
+                    try:
+                        with _LOCK:
+                            if isinstance(engine, _HyMTEngine):
+                                value = engine.translate(masked, detected, target, quality_retry=attempt)
+                            else:
+                                # Test doubles and future adapters retain the
+                                # established three-argument contract.
+                                value = engine.translate(masked, detected, target)
+                        if self._diagnostic_callback is not None:
+                            self._diagnostic_callback({'model_input': masked, 'raw_translation': value,
+                                                       'source_language': detected, 'target_language': target,
+                                                       'quality_retry': attempt,
+                                                       'controlled_terms': dict(terms)})
+                        if markdown:
+                            value = _restore_table_edges(masked, value)
+                        validate_result(masked, value, detected, target, markdown=markdown, check_quantities=False)
+                        cache_value = value
+                        fresh_translation = True
+                        break
+                    except OfflineTranslationValidationError:
+                        if attempt + 1 >= attempt_count:
+                            raise
             except OfflineTranslationError:
                 raise
             except Exception as error:
