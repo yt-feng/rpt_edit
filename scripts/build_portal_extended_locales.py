@@ -267,6 +267,7 @@ def main() -> int:
     summary['failure_count'] = len(result.get('failures') or [])
     summary['failure_types'] = sorted({str(row.get('error')) for row in result.get('failures') or []})
     summary['failure_codes'] = sorted({str(row.get('code')) for row in result.get('failures') or []})
+    summary['failure_fields'] = sorted({str(row.get('field')) for row in result.get('failures') or []})
     print(json.dumps(summary))
     return 0 if result['status'] == 'complete-candidate' else 75 if result['budget_exhausted'] and not result['failures'] else 1
 
