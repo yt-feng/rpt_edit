@@ -14,7 +14,9 @@ import xml.etree.ElementTree as ET
 from compare_hymt_translation import LANGUAGES, SCRIPT_PATTERNS
 from hymt_offline_translation import normalize_language, OfflineTranslationError, OfflineTranslationValidationError
 from portal_extended_locales import *
-from build_portal_extended_locales import build, Memo, validate_text, MODEL_ID
+from build_portal_extended_locales import (
+    build, Memo, MODEL_ID, protect_numeric_claims, restore_numeric_claims, validate_text,
+)
 from assemble_portal_extended_locales import assemble, verified_candidate, head_alternates
 from collect_portal_extended_sources import select_urls, read_public
 
@@ -174,6 +176,14 @@ class BuildFixture:
 
 
 class CandidateTests(BuildFixture, unittest.TestCase):
+    def test_numeric_claims_are_protected_and_restored_without_changing_source(self):
+        source = '2026-09-23 revenue grew 12.5% and Q2 2026 sales reached USD 120 million.'
+        masked, claims = protect_numeric_claims(source)
+        self.assertNotIn('2026-09-23', masked)
+        self.assertNotIn('12.5', masked)
+        self.assertNotIn('120', masked)
+        self.assertEqual(restore_numeric_claims(masked, claims), source)
+
     def test_complete_candidate_is_noindex_and_never_deployed(self):
         result=self.runbuild()
         self.assertEqual(result['status'],'complete-candidate');self.assertFalse(result['indexable'])
