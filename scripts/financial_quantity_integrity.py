@@ -78,7 +78,7 @@ SCALES = {
 SCALE = "(?:" + "|".join(re.escape(value) for value in sorted(SCALES, key=len, reverse=True)) + ")"
 CURRENCIES = {
     "USD": ("USD", "US$", "$", "US dollars", "U.S. dollars", "US dollar", "U.S. dollar", "dollars", "dollar", "dólar", "dólares", "dólar americano", "dólares americanos", "dolar", "dolars", "Dollar", "Dollars", "доллар", "доллара", "долларов", "долар", "долари", "доларів", "doları", "dolar", "đô la", "долар أمريكي", "دولار أمريكي", "دولارات", "دولار", "долلار", "डॉलर", "ડોલર", "ডলার", "డాలర్", "டாலர்", "דולר", "دلار", "ドル", "달러", "美元", "美金"),
-    "CNY": ("CNY", "RMB", "人民币", "元人民币", "元", "yuan", "renminbi", "Chinese yuan", "Chinese renminbi", "人民币元", "위안", "юань", "юаней", "юань", "yuanes", "юанів"),
+    "CNY": ("CNY", "RMB", "人民币", "元人民币", "元", "yuan", "yuans", "renminbi", "Chinese yuan", "Chinese renminbi", "人民币元", "위안", "юань", "юаней", "юань", "yuanes", "юанів"),
     "EUR": ("EUR", "€", "euros", "euro", "евро", "euro", "euros", "евро", "еврo", "欧元", "유로"),
     "GBP": ("GBP", "£", "pounds", "pound", "livre", "livres", "libra", "libras", "Pfund", "фунт", "фунтов", "英镑"),
     "JPY": ("JPY", "日元", "円", "yen", "ienes", "iene", "иен", "иены", "иенов", "엔"),
