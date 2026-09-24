@@ -192,6 +192,11 @@ class HyMTTests(unittest.TestCase):
         with self.assertRaisesRegex(h.OfflineTranslationError, 'quantity'):
             translator.translate_markdown('| Cash reserves | USD 120 million |', 'zh', 'en')
 
+    def test_numeric_lock_covers_digits_adjacent_to_cjk_units(self):
+        masked, replacements, _terms = h._mask('截至2024年9月，收入增长12.5%，投资1.2亿美元。', 'fr')
+        self.assertEqual(masked, '截至__HYMTPH_0000__年__HYMTPH_0001__月，收入增长__HYMTPH_0002__%，投资__HYMTPH_0003__亿美元。')
+        self.assertEqual(list(replacements.values()), ['2024', '9', '12.5', '1.2'])
+
     def test_plain_filename_punctuation_is_not_markdown_but_claims_remain_checked(self):
         translator = self.translator(lambda _: '短期增长__HYMTPH_0000__%')
         source = 'Short~term_growth 12.5%'

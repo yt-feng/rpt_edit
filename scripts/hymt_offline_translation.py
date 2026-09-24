@@ -59,8 +59,12 @@ _OPAQUE = re.compile(
 # ordinary decimal/date atoms plus compact quarter/half-year and ordinal
 # forms; units remain visible so the model can translate them naturally.
 _NUMERIC_ATOM = re.compile(
-    r'(?<![\w])(?:[QH]\d+(?![\w])|\d+(?:Q|H)\d+(?![\w])|\d+(?:st|nd|rd|th)(?![\w])'
-    r'|[+\-−]?\d+(?:[.,]\d+)*)(?![\w])', re.IGNORECASE)
+    # Use ASCII word boundaries deliberately. Chinese, Japanese, Arabic and
+    # other scripts commonly attach a date or unit directly to the digits
+    # (for example 2024年9月 or 第15个五年); those digits still need to be
+    # opaque while their surrounding unit remains in model context.
+    r'(?<![A-Za-z0-9_])(?:[QH]\d+(?![A-Za-z0-9_])|\d+(?:Q|H)\d+(?![A-Za-z0-9_])|\d+(?:st|nd|rd|th)(?![A-Za-z0-9_])'
+    r'|[+\-−]?\d+(?:[.,]\d+)*)(?![A-Za-z0-9_])', re.IGNORECASE)
 _ENGINES: dict[str, object] = {}
 _LOCK = threading.RLock()
 # Finance vocabulary constrains individual concepts, never whole sentences.
