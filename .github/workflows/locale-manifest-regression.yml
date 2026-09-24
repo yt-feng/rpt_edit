@@ -1,0 +1,27 @@
+name: Locale manifest regression
+on:
+  pull_request:
+    paths: ['scripts/*locale*', 'scripts/verify_prepared_static_slot.py', '.github/workflows/locale-manifest-regression.yml']
+  push:
+    branches: [main]
+    paths: ['scripts/portal_locale_manifest.py', 'scripts/build_portal_locales.py', 'scripts/test_locale_manifest_compaction.py', '.github/workflows/locale-manifest-regression.yml']
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test bounded manifests and existing acceptance contracts
+        run: |
+          set -euo pipefail
+          python -m pip install 'requests>=2.31,<3' 'Pillow>=10.1,<12'
+          for name in test_locale_manifest_compaction test_portal_locale_manifest test_build_portal_locales test_portal_locale_source_fallback test_verify_prepared_static_slot test_verify_portal_locale_routes test_audit_portal_shadow_preview test_verify_portal_chinese_parity test_resume_portal_locale_candidate; do
+            python -B scripts/$name.py
+          done
