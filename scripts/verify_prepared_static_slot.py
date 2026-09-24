@@ -14,7 +14,9 @@ import json
 from pathlib import PurePosixPath
 import sys
 from typing import Any
+import xml.etree.ElementTree as ET
 
+from portal_extended_locales import select_locales
 from portal_locale_manifest import (
     MAX_LOCALE_MANIFEST_BYTES, parse_locale_manifest, validate_translation_resolution,
 )
@@ -151,6 +153,10 @@ REQUIRED_LOCALE_PATHS = (
     *(f"sitemap-{locale}.xml" for locale in ("ko", "ja", "ar")),
     *(f"{locale}/index.html" for locale in ("ko", "ja", "ar")),
 )
+REQUIRED_EXTENDED_BASE_PATHS = (
+    "data/extended-locales/assembly.json",
+    "sitemap-extended.xml",
+)
 
 
 def static_tree_sha256(files: dict[str, dict[str, Any]]) -> str:
@@ -162,6 +168,61 @@ def static_tree_sha256(files: dict[str, dict[str, Any]]) -> str:
         digest.update(json.dumps(files[relative], sort_keys=True, separators=(",", ":")).encode("utf-8"))
         digest.update(b"\n")
     return digest.hexdigest()
+
+
+def verify_extended_static_tree(
+    client: Any, bucket: str, prefix: str, files: dict[str, dict[str, Any]],
+    *, origin: str | None,
+) -> dict[str, Any] | None:
+    assembly_descriptor = files.get("data/extended-locales/assembly.json")
+    if assembly_descriptor is None:
+        return None
+    assembly = json.loads(read_verified_candidate_body(
+        client, bucket, prefix + "data/extended-locales/assembly.json", assembly_descriptor,
+        maximum=256 * 1024,
+    ).decode("utf-8"))
+    locales = assembly.get("locales")
+    if (
+        assembly.get("status") != "assembled"
+        or not isinstance(locales, list)
+        or not locales
+        or assembly.get("paid_provider_requests") != 0
+        or assembly.get("deployment_performed") is not False
+        or assembly.get("pages_per_locale", 0) <= 0
+    ):
+        raise RuntimeError("Prepared extended assembly receipt is incomplete")
+    approved = select_locales(",".join(locales))
+    index_descriptor = files.get("sitemap-extended.xml")
+    if index_descriptor is None:
+        raise RuntimeError("Prepared extended sitemap index is missing")
+    index_body = read_verified_candidate_body(
+        client, bucket, prefix + "sitemap-extended.xml", index_descriptor, maximum=2 * 1024 * 1024,
+    )
+    index_locations = [str(node.text or "").strip() for node in ET.fromstring(index_body).findall(".//{*}loc")]
+    expected_index = {f"{origin.rstrip('/')}/sitemap-extended-{locale}.xml" for locale in approved} if origin else set()
+    if origin and set(index_locations) != expected_index:
+        raise RuntimeError("Prepared extended sitemap index does not match its assembly receipt")
+    for locale in approved:
+        for relative in (f"{locale}/index.html", f"{locale}/llms.txt", f"sitemap-extended-{locale}.xml"):
+            descriptor = files.get(relative)
+            if descriptor is None:
+                raise RuntimeError(f"Prepared extended object is missing: {relative}")
+            body = read_verified_candidate_body(
+                client, bucket, prefix + relative, descriptor,
+                maximum=4 * 1024 * 1024 if relative.endswith(".html") else 2 * 1024 * 1024,
+            )
+            if relative.endswith(".html") and b"noindex" in body.lower():
+                raise RuntimeError(f"Prepared extended homepage remains noindex: {relative}")
+        sitemap_descriptor = files[f"sitemap-extended-{locale}.xml"]
+        sitemap_body = read_verified_candidate_body(
+            client, bucket, prefix + f"sitemap-extended-{locale}.xml", sitemap_descriptor,
+            maximum=2 * 1024 * 1024,
+        )
+        locations = [str(node.text or "").strip() for node in ET.fromstring(sitemap_body).findall(".//{*}loc")]
+        expected_prefix = f"{origin.rstrip('/')}/{locale}/" if origin else ""
+        if len(locations) != assembly["pages_per_locale"] or (origin and any(not value.startswith(expected_prefix) for value in locations)):
+            raise RuntimeError(f"Prepared extended sitemap is incomplete: {locale}")
+    return {"locales": list(approved), "pages_per_locale": assembly["pages_per_locale"]}
 
 
 def require_complete_slot(client: Any, bucket: str, slot: str) -> None:
@@ -232,9 +293,10 @@ def verify_prepared_static_slot(
     manifest = read_prepared_manifest(client, bucket, slot, release, tree)
     files = manifest["files"]
     prefix = slot_prefix(slot)
+    has_extended = "data/extended-locales/assembly.json" in files
     required_paths = REQUIRED_STATIC_PATHS + (
         REQUIRED_LOCALE_PATHS if "data/i18n/manifest.json" in files else ()
-    )
+    ) + (REQUIRED_EXTENDED_BASE_PATHS if has_extended else ())
     locale_manifest = None
     if locale_origin is not None and "data/i18n/manifest.json" not in files:
         raise RuntimeError("Prepared locale manifest is required when locale origin is provided")
@@ -251,6 +313,7 @@ def verify_prepared_static_slot(
     locale_report = None
     if locale_origin is not None:
         locale_report = verify_candidate_locale_routes(client, bucket, prefix, files, locale_manifest, locale_origin)
+    extended_report = verify_extended_static_tree(client, bucket, prefix, files, origin=locale_origin)
 
     runtime = valid_runtime_manifest(
         read_json_object(client, bucket, runtime_manifest_key(release)), release,
@@ -297,6 +360,9 @@ def verify_prepared_static_slot(
     if locale_report is not None:
         result["locale_routes_status"] = locale_report["status"]
         result["locale_objects_verified"] = locale_report["request_count"]
+    if extended_report is not None:
+        result["extended_locales"] = extended_report["locales"]
+        result["extended_pages_per_locale"] = extended_report["pages_per_locale"]
     return result
 
 
