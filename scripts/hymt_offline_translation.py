@@ -30,7 +30,7 @@ MANIFEST = json.loads(MANIFEST_PATH.read_text(encoding='utf-8'))
 PROVIDER = 'hymt'
 MODEL = MANIFEST['model']['repository']
 REVISION = MANIFEST['model']['revision']
-MODEL_ID = f"{MODEL}@{REVISION}:Q8_0:natural-sentence-v4-table-structure:{hashlib.sha256(MANIFEST_PATH.read_bytes()).hexdigest()[:16]}"
+MODEL_ID = f"{MODEL}@{REVISION}:Q8_0:natural-sentence-v4-table-structure:numeric-lock-v1:{hashlib.sha256(MANIFEST_PATH.read_bytes()).hexdigest()[:16]}"
 INSTALL_COMMAND = 'Use .github/actions/setup-offline-translation on a Linux GitHub Actions runner'
 # Recognize the complete reserved token even when a filename underscore or
 # Markdown emphasis touches it; those surrounding underscores are punctuation.
@@ -53,6 +53,14 @@ _OPAQUE = re.compile(
     r'|(?:https?://|mailto:)(?:[^\s<>\[\]()]|\([^\s<>\[\]()]*\))+'
     r'|&(?:\#\d+|\#x[\da-fA-F]+|[A-Za-z]+);'
     r'|\\.', re.DOTALL)
+# Keep the source numeric atoms inside the model's sentence context, but make
+# the exact digits opaque to a small CPU model.  The caller restores the
+# source spelling and validates the restored result again.  This covers the
+# ordinary decimal/date atoms plus compact quarter/half-year and ordinal
+# forms; units remain visible so the model can translate them naturally.
+_NUMERIC_ATOM = re.compile(
+    r'(?<![\w])(?:[QH]\d+(?![\w])|\d+(?:Q|H)\d+(?![\w])|\d+(?:st|nd|rd|th)(?![\w])'
+    r'|[+\-−]?\d+(?:[.,]\d+)*)(?![\w])', re.IGNORECASE)
 _ENGINES: dict[str, object] = {}
 _LOCK = threading.RLock()
 # Finance vocabulary constrains individual concepts, never whole sentences.
@@ -178,6 +186,11 @@ def _mask(text: str, target: str) -> tuple[str, dict[str, str], dict[str, str]]:
     if target == 'ko':
         for pattern, term, _is_rate in _KOREAN_FINANCIAL_TERMS:
             masked = re.sub(pattern, lambda _match, term=term: reserve(term, terms), masked, flags=re.I)
+    # Do this after opaque resources and controlled terms so digits inside a
+    # protected token are never exposed as a second claim.  The model still
+    # sees surrounding units and predicates, while exact source numbers are
+    # restored only after placeholder and quantity validation.
+    masked = _NUMERIC_ATOM.sub(lambda match: reserve(match.group(), replacements), masked)
     return masked, replacements, terms
 
 
@@ -208,15 +221,16 @@ def _restore_table_edges(source: str, result: str) -> str:
 
 
 def validate_result(source: str, result: str, source_language: str, target: str,
-                    *, markdown: bool = True) -> None:
+                    *, markdown: bool = True, check_quantities: bool = True) -> None:
     if not result.strip():
         raise OfflineTranslationValidationError('Empty Hy-MT2 translation')
     if Counter(_PLACEHOLDERS.findall(source)) != Counter(_PLACEHOLDERS.findall(result)):
         raise OfflineTranslationValidationError('Hy-MT2 changed, omitted, or duplicated a protected placeholder')
     # Korean/Japanese GEO copy is gated on structure and quantities, not wording.
-    problems = quantity_issues(source, result, source_language, target)
-    if problems:
-        raise OfflineTranslationValidationError('Hy-MT2 quantity validation failed: ' + '; '.join(problems))
+    if check_quantities:
+        problems = quantity_issues(source, result, source_language, target)
+        if problems:
+            raise OfflineTranslationValidationError('Hy-MT2 quantity validation failed: ' + '; '.join(problems))
     # Catalog filenames are plain text: their ~ and _ characters are often
     # punctuation substitutions, not Markdown. The caller must opt in to that
     # format; report Markdown retains all existing structural checks.
@@ -291,7 +305,8 @@ class _HyMTEngine:
                   'Preserve all __KC_PH_...__ and __HYMTPH_...__ placeholders exactly, including their order. '
                   'Do not append inferred units or percent signs to placeholders. '
                   'Each __HYMTPH_...__ is an already translated noun or protected resource; integrate it without rewriting it. '
-                  'Preserve Markdown formatting. Do not change financial facts, units, or comparisons. '
+                  'Preserve Markdown formatting. Do not add Markdown table pipes, brackets, backticks, emphasis markers, or other formatting that is not present in the input. '
+                  'Do not change financial facts, units, or comparisons. '
                   'Copy every source digit sequence, date, percentage, currency amount, and numeric unit exactly; '
                   'translate the surrounding words without normalizing, rounding, dropping, or inventing numeric facts. '
                   + financial_glossary(text, target) + '\n' + text)
@@ -353,12 +368,14 @@ class HyMTOfflineTranslator:
             return text
         identity, path = self._memo_identity(core, target, detected, markdown=markdown)
         masked, replacements, terms = _mask(core, target)
+        fresh_translation = False
+        cache_value = None
         try:
             cached = json.loads(path.read_text(encoding='utf-8'))
             if all(cached.get(name) == value for name, value in identity.items()):
                 value = cached['translation']
                 # Cache stores the validated masked form, independent of source URLs.
-                validate_result(masked, value, detected, target, markdown=markdown)
+                validate_result(masked, value, detected, target, markdown=markdown, check_quantities=False)
                 self.stats['cache_hits'] += 1
             else:
                 raise ValueError('Cache identity changed')
@@ -372,17 +389,24 @@ class HyMTOfflineTranslator:
                                                'controlled_terms': dict(terms)})
                 if markdown:
                     value = _restore_table_edges(masked, value)
-                validate_result(masked, value, detected, target, markdown=markdown)
+                validate_result(masked, value, detected, target, markdown=markdown, check_quantities=False)
+                cache_value = value
+                fresh_translation = True
             except OfflineTranslationError:
                 raise
             except Exception as error:
                 raise OfflineTranslationError(f'Hy-MT2 translation failed: {error}') from error
-            atomic_json(path, {**identity, 'translation': value, 'created_at': datetime.now(timezone.utc).isoformat()})
-            self.stats['translated_fragments'] += 1
-            self.stats['batch_requests'] += 1
         value = _restore_terms(value, terms)
         for token, original in replacements.items():
             value = value.replace(token, original)
+        # Validate the materialized response as well as the masked response.
+        # This keeps the standalone translator safe if a caller does not add
+        # the extended-locale builder's outer quantity gate.
+        validate_result(core, value, detected, target, markdown=markdown)
+        if fresh_translation:
+            atomic_json(path, {**identity, 'translation': cache_value, 'created_at': datetime.now(timezone.utc).isoformat()})
+            self.stats['translated_fragments'] += 1
+            self.stats['batch_requests'] += 1
         return leading + value.strip() + trailing
 
     def translate(self, text: str, target: str, source: str | None = None, *, markdown: bool = True) -> str:

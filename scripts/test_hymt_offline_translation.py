@@ -23,21 +23,21 @@ class HyMTTests(unittest.TestCase):
         return h.OfflineTranslator(cache_dir=self.directory.name, engine_factory=lambda s,t: self.engine)
     def test_quantities_and_predicates_remain_in_complete_sentence(self):
         original = 'The operating margin increased by 2.5 percentage points to 18.5%.'
-        translator = self.translator(lambda text: '营业利润率上升2.5个百分点，达到18.5%。')
+        translator = self.translator(lambda text: '营业利润率上升__HYMTPH_0000__个百分点，达到__HYMTPH_0001__%。')
         self.assertIn('18.5%', translator.translate(original, 'zh', 'en'))
-        self.assertEqual(self.engine.calls, [(original, 'en', 'zh')])
+        self.assertEqual(self.engine.calls, [('The operating margin increased by __HYMTPH_0000__ percentage points to __HYMTPH_0001__%.', 'en', 'zh')])
     def test_equivalent_money_and_date_accepted(self):
         source = 'Cash reserves were USD 120 million on September 15, 2026.'
-        translator = self.translator(lambda _: '2026年9月15日，现金储备为1.2亿美元。')
+        translator = self.translator(lambda _: '__HYMTPH_0002__年9月__HYMTPH_0001__日，现金储备为__HYMTPH_0000__百万美元。')
         translator.translate(source, 'zh', 'en')
         self.assertEqual(len(self.engine.calls), 1)
     def test_numeric_damage_is_not_cached(self):
-        translator = self.translator(lambda _: '现金储备为120万美元。')
+        translator = self.translator(lambda _: '现金储备为__HYMTPH_0000__万美元。')
         with self.assertRaises(h.OfflineTranslationError):
             translator.translate('Cash reserves were USD 120 million.', 'zh', 'en')
         self.assertFalse(list(Path(self.directory.name).rglob('*.json')))
     def test_cache_is_exact_source_target_and_model(self):
-        translator = self.translator(lambda _: '收入下降8.2%。')
+        translator = self.translator(lambda _: '收入下降__HYMTPH_0000__%。')
         source = 'Revenue fell by 8.2%.'
         self.assertEqual(translator.translate(source, 'zh'), translator.translate(source, 'zh'))
         self.assertEqual(len(self.engine.calls), 1)
@@ -84,7 +84,7 @@ class HyMTTests(unittest.TestCase):
     def test_korean_wording_diagnostic_does_not_block_runtime_validation(self):
         source = 'Gross margin was 31%.'
         h.validate_result(source, '영업이익률은 31%였습니다.', 'en', 'ko')
-        translator = self.translator(lambda _: '__HYMTPH_0000__ (영업이익률)은 31%입니다.')
+        translator = self.translator(lambda _: '__HYMTPH_0000__ (영업이익률)은 __HYMTPH_0001__%입니다.')
         with mock.patch.object(h, 'validate_financial_terms', side_effect=AssertionError('Optional review must not block release')):
             first = translator.translate(source, 'ko', 'en')
             self.assertEqual(translator.translate(source, 'ko', 'en'), first)
@@ -121,11 +121,11 @@ class HyMTTests(unittest.TestCase):
 
     def test_controlled_nouns_leave_quantities_and_predicates_in_one_model_call(self):
         source = 'Gross margin remained at 31%, while operating profit increased by 7%.'
-        translator = self.translator(lambda _: '__HYMTPH_0000__은 31%를 유지했으며 __HYMTPH_0001__은 7% 증가했습니다.')
+        translator = self.translator(lambda _: '__HYMTPH_0000__은 __HYMTPH_0002__%를 유지했으며 __HYMTPH_0001__은 __HYMTPH_0003__% 증가했습니다.')
         output = translator.translate(source, 'ko', 'en')
         self.assertIn('매출총이익률', output)
         self.assertIn('영업이익', output)
-        self.assertEqual(self.engine.calls[0][0], '__HYMTPH_0000__ remained at 31%, while __HYMTPH_0001__ increased by 7%.')
+        self.assertEqual(self.engine.calls[0][0], '__HYMTPH_0000__ remained at __HYMTPH_0002__%, while __HYMTPH_0001__ increased by __HYMTPH_0003__%.')
         self.assertEqual(len(self.engine.calls), 1)
 
     def test_public_diagnostic_opt_in_retains_rejected_raw_without_caching(self):
@@ -136,7 +136,7 @@ class HyMTTests(unittest.TestCase):
         with self.assertRaises(h.OfflineTranslationError):
             translator.translate('Gross margin was 31%.', 'ko', 'en')
         self.assertEqual(captured[0]['raw_translation'], '잘못된 출력 100%')
-        self.assertEqual(captured[0]['model_input'], '__HYMTPH_0000__ was 31%.')
+        self.assertEqual(captured[0]['model_input'], '__HYMTPH_0000__ was __HYMTPH_0001__%.')
         self.assertFalse(list(Path(self.directory.name).rglob('*.json')))
         self.assertIsNone(h.OfflineTranslator(cache_dir=self.directory.name)._diagnostic_callback)
 
@@ -175,25 +175,25 @@ class HyMTTests(unittest.TestCase):
             translator.translate('See [report](../report.pdf).', 'zh', 'en')
 
     def test_table_edge_pipes_restored_when_columns_and_money_are_intact(self):
-        translator = self.translator(lambda _: '现金储备 | 1.2亿美元')
+        translator = self.translator(lambda _: '现金储备 | __HYMTPH_0000__百万美元')
         source = '| Cash reserves | USD 120 million |'
-        self.assertEqual(translator.translate_markdown(source, 'zh', 'en'), '|现金储备 | 1.2亿美元|')
-        self.assertEqual(self.engine.calls[0][0], source)
+        self.assertEqual(translator.translate_markdown(source, 'zh', 'en'), '|现金储备 | 120百万美元|')
+        self.assertEqual(self.engine.calls[0][0], '| Cash reserves | USD __HYMTPH_0000__ million |')
 
     def test_table_interior_separator_loss_or_added_column_is_rejected(self):
-        for output in ('现金储备 1.2亿美元', '现金储备 | 新增 | 1.2亿美元'):
+        for output in ('现金储备 __HYMTPH_0000__百万美元', '现金储备 | 新增 | __HYMTPH_0000__百万美元'):
             with self.subTest(output=output):
                 translator = self.translator(lambda _, output=output: output)
                 with self.assertRaisesRegex(h.OfflineTranslationError, 'Markdown structure'):
                     translator.translate_markdown('| Cash reserves | USD 120 million |', 'zh', 'en')
 
     def test_table_edges_do_not_hide_quantity_damage(self):
-        translator = self.translator(lambda _: '现金储备 | 120万美元')
+        translator = self.translator(lambda _: '现金储备 | __HYMTPH_0000__万美元')
         with self.assertRaisesRegex(h.OfflineTranslationError, 'quantity'):
             translator.translate_markdown('| Cash reserves | USD 120 million |', 'zh', 'en')
 
     def test_plain_filename_punctuation_is_not_markdown_but_claims_remain_checked(self):
-        translator = self.translator(lambda _: '短期增长12.5%')
+        translator = self.translator(lambda _: '短期增长__HYMTPH_0000__%')
         source = 'Short~term_growth 12.5%'
         self.assertEqual(translator.translate(source, 'zh', 'en', markdown=False), '短期增长12.5%')
         self.assertEqual(len(self.engine.calls), 1)
@@ -224,22 +224,26 @@ class HyMTTests(unittest.TestCase):
         self.assertIn('New ___HYMTPH_0000__” Healthcare Industry Plan Targets Increased __HYMTPH_0001__', model_input)
         self.assertIn('AI Applications and Global Competitiveness', model_input)
 
-    def test_planning_term_ordinal_is_source_derived_and_numeric_claims_are_unmasked(self):
+    def test_planning_term_ordinal_and_numeric_claims_are_locked(self):
         source = 'The 16th Five-Year Plan forecasts revenue growth of 12.5% and USD 120 million investment.'
         masked, _resources, terms = h._mask(source, 'zh')
         self.assertEqual(terms, {'__HYMTPH_0000__': '第16个五年'})
-        self.assertIn('12.5%', masked)
-        self.assertIn('USD 120 million', masked)
+        self.assertIn('__HYMTPH_0001__%', masked)
+        self.assertIn('USD __HYMTPH_0002__ million', masked)
         for output, error in [
             ('第15个五年计划预计收入增长12.5%，投资1.2亿美元。', 'placeholder'),
-            ('__HYMTPH_0000__计划预计收入增长125%，投资1.2亿美元。', 'quantity'),
-            ('__HYMTPH_0000__计划预计收入增长12.5%，投资120万美元。', 'quantity'),
+            ('__HYMTPH_0000__计划预计收入增长__HYMTPH_0001__%，投资__HYMTPH_0002__万美元。', 'quantity'),
         ]:
             with self.subTest(output=output):
                 translator = self.translator(lambda _, output=output: output)
                 with self.assertRaisesRegex(h.OfflineTranslationError, error):
                     translator.translate(source, 'zh', 'en', markdown=False)
-        self.assertFalse(list(Path(self.directory.name).rglob('*.json')))
+        translator = self.translator(lambda _: '__HYMTPH_0000__计划预计收入增长__HYMTPH_0001__%，投资__HYMTPH_0002__百万美元。')
+        output = translator.translate(source, 'zh', 'en', markdown=False)
+        self.assertIn('第16个五年', output)
+        self.assertIn('12.5%', output)
+        self.assertIn('120百万美元', output)
+        self.assertEqual(len(list(Path(self.directory.name).rglob('*.json'))), 1)
 
     def test_controlled_period_next_to_markdown_underscores_keeps_emphasis(self):
         translator = self.translator(lambda _: '___HYMTPH_0000___规划')
@@ -251,7 +255,7 @@ class HyMTTests(unittest.TestCase):
         source = '# Revenue\r\n\r\n' + cash + figure + 'Revenue grew 12.5%.\r\n'
         def respond(text):
             if text.startswith('Cash reserves'):
-                return text.replace('Cash reserves were USD 120 million', '现金储备为120万美元')
+                return '现金储备为__HYMTPH_0001__万美元；参见[source](__HYMTPH_0000__)。'
             if text.startswith('See '):
                 return '参见图表。'
             return text.replace('Revenue grew', '收入增长').replace('Revenue', '收入')
@@ -289,7 +293,7 @@ class HyMTTests(unittest.TestCase):
         self.assertFalse(list(Path(self.directory.name).rglob('*.json')))
 
     def test_diagnostic_write_failure_still_stops_report_fallback(self):
-        translator = self.translator(lambda _: '收入增长125%。')
+        translator = self.translator(lambda _: '收入增长__HYMTPH_0000__')
         def failed_diagnostics(_event):
             raise OSError('diagnostic checkpoint write failed')
         with self.assertRaisesRegex(OSError, 'checkpoint write failed'):
