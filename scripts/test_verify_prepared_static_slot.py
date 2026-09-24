@@ -35,6 +35,10 @@ class PreparedStaticSlotTests(unittest.TestCase):
         paths.update(("alpha.txt", "alpha/z.txt"))
         for relative in sorted(paths - {omit}):
             write(self.root / relative, "fixture: " + relative)
+        # A locale object must now be parseable before its language-specific
+        # mandatory paths can be verified. Negative malformed cases are below.
+        if multilingual and omit != "data/i18n/manifest.json":
+            write(self.root / "data/i18n/manifest.json", json.dumps({"schema_version": 1, "locales": ["ko", "ja", "ar"]}))
         for relative, body in (extra_files or {}).items():
             path = self.root / relative
             path.parent.mkdir(parents=True, exist_ok=True)
@@ -106,6 +110,21 @@ class PreparedStaticSlotTests(unittest.TestCase):
 
     def prepare_locales(self, manifest: dict, files: dict) -> None:
         self.prepare(extra_files={**files, "data/i18n/manifest.json": json.dumps(manifest, ensure_ascii=False).encode()})
+
+    def test_expanded_required_paths_follow_the_committed_locale_list(self) -> None:
+        self.prepare(multilingual=False, extra_files={
+            "data/i18n/manifest.json": b'{"schema_version":1,"locales":["fr"]}',
+            "fr/index.html": b'French home', "sitemap-fr.xml": b'French sitemap',
+            "assets/locale.css": b'/* styles */', "assets/locale-runtime.js": b'/* runtime */',
+        })
+        self.verify()
+        self.assertIn(("get", publisher.slot_prefix(self.slot) + "fr/index.html"), self.client.operations)
+        self.assertNotIn(("get", publisher.slot_prefix(self.slot) + "ko/index.html"), self.client.operations)
+
+    def test_hash_valid_but_unparseable_locale_manifest_is_rejected(self) -> None:
+        self.prepare(extra_files={"data/i18n/manifest.json": b'not JSON'})
+        with self.assertRaisesRegex(ValueError, "valid UTF-8 JSON"):
+            self.verify()
 
     def test_declared_locale_shells_and_assets_use_only_committed_r2_objects(self) -> None:
         manifest, files = self.locale_files()

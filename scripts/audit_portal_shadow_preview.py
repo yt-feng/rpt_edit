@@ -16,6 +16,7 @@ from urllib.parse import quote, unquote, urljoin, urlsplit
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 from xml.etree import ElementTree as ET
 
+from portal_language_registry import LANGUAGES, manifest_locales
 from portal_locale_manifest import LocaleManifestError, parse_locale_manifest, validate_translation_resolution
 from verify_portal_locale_routes import RouteVerificationError, verify_locale_routes
 
@@ -47,6 +48,13 @@ MANIFEST_MAP_GROUPS = (
     "locale_data_files",
 )
 MANIFEST_ROW_GROUPS = ("chart_overlays", "hot_report_overlays")
+
+
+def locale_directions(payload: dict) -> dict[str, str]:
+    try:
+        return {code: LANGUAGES[code].direction for code in manifest_locales(payload)}
+    except ValueError as error:
+        raise AuditError(f"Invalid candidate languages: {error}") from error
 
 
 class AuditError(RuntimeError):
@@ -252,6 +260,8 @@ def build_plan(root: Path) -> dict[str, Any]:
     root = Path(root).resolve()
     if not root.is_dir():
         raise AuditError("Static root is unavailable")
+    manifest_path = root / "data/i18n/manifest.json"
+    locale_config = locale_directions(parse_locale_manifest(manifest_path.read_bytes()) if manifest_path.is_file() else {})
     samples: list[dict[str, Any]] = []
     zsxq_cleanup: dict[str, dict[str, str]] = {}
     zsxq_sources = [
@@ -259,7 +269,7 @@ def build_plan(root: Path) -> dict[str, Any]:
         for path in sorted(root.joinpath("blog").rglob("*.html"))
         if path.is_file() and not path.is_symlink() and b"zsxq.img" in path.read_bytes().lower()
     ]
-    for locale, direction in LOCALES.items():
+    for locale, direction in locale_config.items():
         locale_root = root / locale
         if not locale_root.is_dir() or locale_root.is_symlink():
             raise AuditError(f"Locale root is missing: {locale}")
@@ -313,9 +323,9 @@ def build_plan(root: Path) -> dict[str, Any]:
                 "forbid_zsxq": forbid_zsxq,
             })
 
-    if len(samples) < 18:
+    if len(samples) < len(locale_config) * len(REQUIRED_SAMPLE_KINDS):
         raise AuditError("Shadow review plan is incomplete")
-    return {"schema_version": 1, "samples": samples, "zsxq_cleanup": zsxq_cleanup}
+    return {"schema_version": 1, "locales": list(locale_config), "samples": samples, "zsxq_cleanup": zsxq_cleanup}
 
 
 def expected_sample_path(locale: str, kind: str, path: str) -> bool:
@@ -335,11 +345,12 @@ def expected_sample_path(locale: str, kind: str, path: str) -> bool:
 
 
 def validate_samples(plan: dict[str, Any]) -> list[dict[str, Any]]:
+    locale_config = locale_directions(plan)
     samples = plan.get("samples")
     if (
         plan.get("schema_version") != 1
         or not isinstance(samples, list)
-        or not (len(LOCALES) * len(REQUIRED_SAMPLE_KINDS) <= len(samples) <= len(LOCALES) * 7)
+        or not (len(locale_config) * len(REQUIRED_SAMPLE_KINDS) <= len(samples) <= len(locale_config) * 7)
     ):
         raise AuditError("Shadow review plan is invalid")
     required_seen: set[tuple[str, str]] = set()
@@ -358,7 +369,7 @@ def validate_samples(plan: dict[str, Any]) -> list[dict[str, Any]]:
         validate_preview_path(path, allow_query=False)
         expected_forbid_zsxq = kind.startswith("blog")
         if (
-            LOCALES.get(locale) != direction
+            locale_config.get(locale) != direction
             or kind not in set(REQUIRED_SAMPLE_KINDS) | OPTIONAL_SAMPLE_KINDS
             or not expected_sample_path(locale, kind, path)
             or forbid_zsxq is not expected_forbid_zsxq
@@ -371,13 +382,14 @@ def validate_samples(plan: dict[str, Any]) -> list[dict[str, Any]]:
             raise AuditError(f"Shadow sample identity is duplicated: {path}")
         seen.add(identity)
         paths_seen.add(path)
-    expected = {(locale, kind) for locale in LOCALES for kind in REQUIRED_SAMPLE_KINDS}
+    expected = {(locale, kind) for locale in locale_config for kind in REQUIRED_SAMPLE_KINDS}
     if required_seen != expected:
         raise AuditError("Shadow review plan is incomplete")
     return samples
 
 
 def validate_zsxq_cleanup(plan: dict[str, Any], samples: list[dict[str, Any]]) -> dict[str, dict[str, str]]:
+    locale_config = locale_directions(plan)
     metadata = plan.get("zsxq_cleanup")
     if metadata is None:
         # Older reviewed plans remain usable, but do not claim a source-image
@@ -388,9 +400,9 @@ def validate_zsxq_cleanup(plan: dict[str, Any], samples: list[dict[str, Any]]) -
                 for sample in samples
                 if sample["locale"] == locale and sample["kind"] == "blog-zsxq-clean"
             ), {"status": "not_declared"})
-            for locale in LOCALES
+            for locale in locale_config
         }
-    if not isinstance(metadata, dict) or set(metadata) != set(LOCALES):
+    if not isinstance(metadata, dict) or set(metadata) != set(locale_config):
         raise AuditError("Shadow zsxq cleanup applicability is invalid")
     checked: dict[str, dict[str, str]] = {}
     for locale, row in metadata.items():
@@ -608,17 +620,18 @@ def validate_manifest_row(row: Any, locale: str, label: str) -> tuple[str, int, 
 
 
 def manifest_files(manifest: dict[str, Any]) -> dict[str, tuple[str, int, str]]:
+    locale_config = locale_directions(manifest)
     locales = manifest.get("locales")
     if (
         manifest.get("schema_version") != 1
         or manifest.get("quality_gate_version") != 3
         or not isinstance(locales, list)
-        or len(locales) != len(LOCALES)
-        or set(locales) != set(LOCALES)
+        or len(locales) != len(locale_config)
+        or set(locales) != set(locale_config)
     ):
         raise AuditError("Shadow multilingual manifest is incomplete")
     try:
-        validate_translation_resolution(manifest, LOCALES)
+        validate_translation_resolution(manifest, locale_config)
     except LocaleManifestError as error:
         raise AuditError(f"Shadow multilingual manifest is incomplete: {error}") from error
 
@@ -632,9 +645,9 @@ def manifest_files(manifest: dict[str, Any]) -> dict[str, tuple[str, int, str]]:
 
     for group_name in MANIFEST_MAP_GROUPS:
         group = manifest.get(group_name)
-        if not isinstance(group, dict) or set(group) != set(LOCALES):
+        if not isinstance(group, dict) or set(group) != set(locale_config):
             raise AuditError(f"Shadow multilingual manifest is missing {group_name}")
-        for locale in LOCALES:
+        for locale in locale_config:
             locale_rows = group.get(locale)
             if not isinstance(locale_rows, dict):
                 raise AuditError(f"Shadow multilingual manifest is missing {group_name}.{locale}")
@@ -645,9 +658,9 @@ def manifest_files(manifest: dict[str, Any]) -> dict[str, tuple[str, int, str]]:
 
     for group_name in MANIFEST_ROW_GROUPS:
         group = manifest.get(group_name)
-        if not isinstance(group, dict) or set(group) != set(LOCALES):
+        if not isinstance(group, dict) or set(group) != set(locale_config):
             raise AuditError(f"Shadow multilingual manifest is missing {group_name}")
-        for locale in LOCALES:
+        for locale in locale_config:
             add_row(group.get(locale), locale, f"{group_name}.{locale}")
 
     required_paths = manifest.get("required_paths")
@@ -674,6 +687,7 @@ def audit_preview(
     if not RELEASE_RE.fullmatch(expected_release) or not TREE_RE.fullmatch(expected_tree):
         raise AuditError("Expected shadow release identity is invalid")
     plan = read_json_object(samples_path, "Shadow review plan")
+    locale_config = locale_directions(plan)
     samples = validate_samples(plan)
     zsxq_cleanup = validate_zsxq_cleanup(plan, samples)
 
@@ -703,7 +717,7 @@ def audit_preview(
         path = str(sample.get("path") or "")
         body, headers, elapsed = fetch(opener, base_url, path)
         require_shadow_header(headers, path)
-        if str(headers.get("Content-Language") or "").strip().lower() != locale:
+        if str(headers.get("Content-Language") or "").strip().lower() != locale.lower():
             raise AuditError(f"Shadow locale response has the wrong Content-Language: {path}")
         try:
             text = body.decode("utf-8")
@@ -742,6 +756,8 @@ def audit_preview(
         manifest = parse_locale_manifest(manifest_body)
     except LocaleManifestError as error:
         raise AuditError(str(error)) from error
+    if locale_directions(manifest) != locale_config:
+        raise AuditError("Review plan languages differ from the committed candidate")
     required_files = manifest_files(manifest)
     rows.append({
         "path": "/data/i18n/manifest.json",
@@ -774,11 +790,11 @@ def audit_preview(
         )
         raise AuditError(f"Shadow application routes failed: {failures}")
 
-    for locale in LOCALES:
+    for locale in locale_config:
         sitemap_path = f"/sitemap-{locale}.xml"
         body, headers, elapsed = fetch(opener, base_url, sitemap_path)
         require_shadow_header(headers, sitemap_path)
-        if str(headers.get("Content-Language") or "").strip().lower() != locale:
+        if str(headers.get("Content-Language") or "").strip().lower() != locale.lower():
             raise AuditError(f"Shadow sitemap has the wrong Content-Language: {sitemap_path}")
         validate_locale_sitemap(body, locale, public_origin)
         rows.append({
@@ -791,7 +807,7 @@ def audit_preview(
         feed_path = f"/{locale}/feed.xml"
         body, headers, elapsed = fetch(opener, base_url, feed_path)
         require_shadow_header(headers, feed_path)
-        if str(headers.get("Content-Language") or "").strip().lower() != locale:
+        if str(headers.get("Content-Language") or "").strip().lower() != locale.lower():
             raise AuditError(f"Shadow feed has the wrong Content-Language: {feed_path}")
         validate_locale_feed(body, locale, public_origin)
         rows.append({"path": feed_path, "locale": locale, "bytes": len(body), "milliseconds": round(elapsed * 1000)})
@@ -806,7 +822,7 @@ def audit_preview(
     for path, (locale, expected_bytes, expected_sha256) in sorted(required_files.items()):
         body, headers, elapsed = fetch(opener, base_url, path)
         require_shadow_header(headers, path)
-        if str(headers.get("Content-Language") or "").strip().lower() != locale:
+        if str(headers.get("Content-Language") or "").strip().lower() != locale.lower():
             raise AuditError(f"Shadow locale data has the wrong Content-Language: {path}")
         if len(body) != expected_bytes or hashlib.sha256(body).hexdigest() != expected_sha256:
             raise AuditError(f"Shadow locale data does not match its manifest: {path}")

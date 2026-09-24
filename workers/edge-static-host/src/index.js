@@ -32,9 +32,43 @@ const CACHE_POLICY = Object.freeze({
 const VERSIONABLE_ASSET = /\.(?:avif|css|gif|ico|jpe?g|js|mjs|png|svg|ttf|wasm|webp|woff2?)$/i;
 const CONTENT_HASH = /^[0-9a-f]{8,64}$/i;
 const LOCALE_CONTENT_LANGUAGES = Object.freeze({
-  ko: "ko",
-  ja: "ja",
-  ar: "ar",
+  "ko": "ko",
+  "ja": "ja",
+  "ar": "ar",
+  "en": "en",
+  "zh-Hant": "zh-Hant",
+  "fr": "fr",
+  "pt": "pt",
+  "es": "es",
+  "tr": "tr",
+  "ru": "ru",
+  "th": "th",
+  "it": "it",
+  "de": "de",
+  "vi": "vi",
+  "ms": "ms",
+  "id": "id",
+  "tl": "tl",
+  "hi": "hi",
+  "pl": "pl",
+  "cs": "cs",
+  "nl": "nl",
+  "km": "km",
+  "my": "my",
+  "fa": "fa",
+  "gu": "gu",
+  "ur": "ur",
+  "te": "te",
+  "mr": "mr",
+  "he": "he",
+  "bn": "bn",
+  "ta": "ta",
+  "uk": "uk",
+  "bo": "bo",
+  "kk": "kk",
+  "mn": "mn",
+  "ug": "ug",
+  "yue": "yue"
 });
 const CANONICAL_PATHS = Object.freeze({
   "/index": "/",
@@ -49,7 +83,7 @@ const CANONICAL_PATHS = Object.freeze({
 });
 
 function localePath(pathname) {
-  const match = /^\/(ko|ja|ar)(?=\/|$)/.exec(String(pathname || ""));
+  const match = /^\/(zh\-Hant|yue|ko|ja|ar|en|fr|pt|es|tr|ru|th|it|de|vi|ms|id|tl|hi|pl|cs|nl|km|my|fa|gu|ur|te|mr|he|bn|ta|uk|bo|kk|mn|ug)(?=\/|$)/.exec(String(pathname || ""));
   if (!match) return { prefix: "", pathname: String(pathname || "") };
   const prefix = `/${match[1]}`;
   return {
@@ -68,9 +102,9 @@ function canonicalPath(pathname) {
 function contentLanguage(pathname) {
   const releaseCheck = RELEASE_CHECK_PATH.exec(String(pathname || ""));
   const contentPath = releaseCheck ? `/${releaseCheck[2] || ""}` : pathname;
-  const localizedData = /^\/data\/i18n\/(ko|ja|ar)(?=\/|$)/.exec(contentPath);
+  const localizedData = /^\/data\/i18n\/(zh\-Hant|yue|ko|ja|ar|en|fr|pt|es|tr|ru|th|it|de|vi|ms|id|tl|hi|pl|cs|nl|km|my|fa|gu|ur|te|mr|he|bn|ta|uk|bo|kk|mn|ug)(?=\/|$)/.exec(contentPath);
   if (localizedData) return LOCALE_CONTENT_LANGUAGES[localizedData[1]];
-  const localizedSitemap = /^\/sitemap-(ko|ja|ar)\.xml$/.exec(contentPath);
+  const localizedSitemap = /^\/sitemap-(zh\-Hant|yue|ko|ja|ar|en|fr|pt|es|tr|ru|th|it|de|vi|ms|id|tl|hi|pl|cs|nl|km|my|fa|gu|ur|te|mr|he|bn|ta|uk|bo|kk|mn|ug)\.xml$/.exec(contentPath);
   if (localizedSitemap) return LOCALE_CONTENT_LANGUAGES[localizedSitemap[1]];
   const localized = localePath(contentPath);
   return localized.prefix

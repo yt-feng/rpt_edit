@@ -1,0 +1,117 @@
+name: Global offline locale cohort preflight
+
+on:
+  workflow_dispatch:
+    inputs:
+      targets:
+        description: ready (35 eligible mirrors); all also diagnoses the two held scripts
+        default: ready
+        required: true
+        type: string
+  pull_request:
+    paths:
+      - 'scripts/portal_language_registry.py'
+      - 'scripts/portal_chinese_script.py'
+      - 'scripts/prepare_portal_global_locales.py'
+      - 'scripts/financial_quantity_integrity.py'
+      - 'scripts/portal_locale_manifest.py'
+      - 'scripts/audit_portal_shadow_preview.py'
+      - 'scripts/resume_portal_locale_candidate.py'
+      - 'scripts/smoke_portal_global_locales.py'
+      - 'scripts/test_portal_global_locales.py'
+      - 'scripts/hymt_offline_translation.py'
+      - 'scripts/compare_hymt_translation.py'
+      - 'scripts/build_portal_locales.py'
+      - 'portal_suite/locale_assets/**'
+      - '.github/actions/setup-offline-translation/**'
+      - '.github/workflows/portal-global-locale-preflight.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portal-global-locale-preflight-${{ github.ref }}
+  # Only superseded read-only PR checks may stop; production locks are separate.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  plan:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate language registry and legacy boundaries
+        run: |
+          set -euo pipefail
+          python -m pip install requests Pillow 'opencc-python-reimplemented==0.1.7'
+          python -B scripts/test_portal_global_locales.py
+          python -B scripts/test_portal_global_build_support.py
+          python -B scripts/test_portal_global_r2.py
+          python -B scripts/test_hymt_offline_translation.py
+          python -B scripts/test_portal_offline_locales.py
+          python -B scripts/test_verify_portal_chinese_parity.py
+          node scripts/test_portal_locale_runtime.js
+          node scripts/test_portal_locale_recovery.js
+          node scripts/test_portal_locale_detail.js
+      - name: Plan bounded CPU groups
+        id: plan
+        env:
+          REQUESTED_TARGETS: ${{ inputs.targets || 'ready' }}
+        run: |
+          python - <<'PY'
+          import json, os, sys
+          sys.path.insert(0, 'scripts')
+          from portal_language_registry import selected_locales, preparation_locales, HELD_LOCALES
+          value=os.environ['REQUESTED_TARGETS']
+          codes=preparation_locales(value) if value in ('ready','ready-new') else selected_locales(value)
+          matrix={'include':[{'group':i//6,'targets':','.join(codes[i:i+6])} for i in range(0,len(codes),6)]}
+          with open(os.environ['GITHUB_OUTPUT'],'a') as out:out.write('matrix='+json.dumps(matrix)+'\n')
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as out:
+              out.write('## Qualification scope\nActual model checks: '+str(len(codes))+' languages.\n')
+              out.write('Registered but held from preparation/publication: '+json.dumps(HELD_LOCALES)+'\n')
+              out.write('Manual targets=all still tests every registered mirror and fails on rejected outputs.\n')
+          PY
+
+  qualify:
+    needs: plan
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    # Standard public Linux runners only: never larger/GPU/private runners.
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install requests Pillow 'opencc-python-reimplemented==0.1.7'
+      - uses: ./.github/actions/setup-offline-translation
+        with:
+          targets: ${{ matrix.targets }}
+          audit-suffix: -global-${{ matrix.group }}
+      - name: Qualify real translations without paid repair or source fallback
+        env:
+          TARGETS: ${{ matrix.targets }}
+        run: |
+          python -B scripts/smoke_portal_global_locales.py \
+            --targets "$TARGETS" --output "$RUNNER_TEMP/global-locale/qualification.json"
+      - name: Preserve small public diagnostics including failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: global-locale-qualification-${{ matrix.group }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/global-locale/*.json
+          retention-days: 3
+          if-no-files-found: warn

@@ -22,6 +22,8 @@ from urllib.parse import urlsplit, urlunsplit
 import xml.etree.ElementTree as ET
 
 
+from portal_language_registry import selected_locales, DEFAULT_LOCALES, google_hreflang_codes
+
 SCHEMA_VERSION = 1
 SNAPSHOT_KIND = "portal-chinese-parity-snapshot"
 VERIFY_KIND = "portal-chinese-parity-verification"
@@ -345,7 +347,7 @@ def _localized_url(root_url: str, locale: str, *, origin: str, relative: str) ->
     ):
         raise ParityError(f"invalid zh-Hans hreflang URL: {relative}: {root_url!r}")
     path = parsed.path or "/"
-    if re.match(r"^/(?:ko|ja|ar)(?:/|$)", path, flags=re.I):
+    if re.match(rf"^/(?:{locale_pattern()})(?:/|$)", path, flags=re.I):
         raise ParityError(f"zh-Hans hreflang already has a locale prefix: {relative}")
     localized_path = f"/{locale}/" if path == "/" else f"/{locale}{path}"
     return urlunsplit(("https", expected_origin.netloc, localized_path, parsed.query, ""))
@@ -358,8 +360,20 @@ def _validate_snapshot_head(data: bytes, *, relative: str) -> dict[str, Any]:
     if parser.direct_locale_assets:
         raise ParityError(f"pre-locale HTML directly loads locale assets: {relative}")
     alternates = _alternate_map(parser, relative=relative)
-    if any(locale in alternates for locale in LOCALES):
-        raise ParityError(f"pre-locale HTML already contains locale hreflang links: {relative}")
+    for locale in LOCALES:
+        if locale.lower() not in alternates:
+            continue
+        # The original English legal pages are root documents, not generated
+        # /en mirrors. Preserve their exact self-reference and all body bytes.
+        legal_self_reference = (
+            locale == "en" and relative in {"privacy.html", "terms.html"}
+            and len(parser.canonicals) == 1
+            and alternates["en"] == parser.canonicals[0]
+            and urlsplit(parser.canonicals[0]).path == "/" + relative
+            and re.search(rb'<html\b[^>]*\blang=["\']en["\']', data, re.I)
+        )
+        if not legal_self_reference:
+            raise ParityError(f"pre-locale HTML already contains locale hreflang links: {relative}")
     if len(parser.canonicals) > 1:
         raise ParityError(f"HTML contains duplicate canonical links: {relative}")
     return {
@@ -394,7 +408,9 @@ def _validate_final_head(
     before = baseline.get("alternates")
     if not isinstance(before, dict) or not all(isinstance(k, str) and isinstance(v, str) for k, v in before.items()):
         raise ParityError(f"snapshot HTML alternate metadata is invalid: {relative}")
-    additions_present = {locale for locale in LOCALES if locale in final}
+    eligible = google_hreflang_codes(LOCALES)
+    eligible_keys = {code.lower() for code in eligible}
+    additions_present = eligible_keys & (set(final) - set(before))
     has_cluster_baseline = "zh-hans" in before and "x-default" in before
 
     if not additions_present:
@@ -403,9 +419,9 @@ def _validate_final_head(
         return False
 
     if has_cluster_baseline:
-        if additions_present != set(LOCALES):
+        if additions_present != eligible_keys:
             raise ParityError(f"locale hreflang cluster is incomplete: {relative}")
-        if set(final) != set(before) | set(LOCALES):
+        if set(final) != set(before) | eligible_keys:
             raise ParityError(f"locale hreflang language set changed unexpectedly: {relative}")
         for language, href in before.items():
             if final.get(language) != href:
@@ -415,9 +431,9 @@ def _validate_final_head(
             raise ParityError(f"x-default must remain aligned with zh-Hans: {relative}")
         if baseline.get("canonical") != zh_url:
             raise ParityError(f"zh-Hans hreflang must remain aligned with canonical: {relative}")
-        for locale in LOCALES:
+        for locale in eligible:
             expected = _localized_url(zh_url, locale, origin=origin, relative=relative)
-            if final[locale] != expected:
+            if final[locale.lower()] != expected:
                 raise ParityError(f"incorrect {locale} hreflang URL: {relative}")
         return True
 
@@ -473,9 +489,9 @@ def _robot_locale_lines(data: bytes, *, relative: str) -> list[tuple[str, str]]:
             continue
         value = match.group(1)
         parsed = urlsplit(value)
-        locale_match = re.fullmatch(r"/sitemap-(ko|ja|ar)\.xml", parsed.path, flags=re.I)
+        locale_match = re.fullmatch(rf"/sitemap-({locale_pattern()})\.xml", parsed.path, flags=re.I)
         if locale_match:
-            found.append((locale_match.group(1).lower(), line))
+            found.append((next(code for code in LOCALES if code.lower() == locale_match.group(1).lower()), line))
     return found
 
 
@@ -526,9 +542,9 @@ def _sitemap_locale_blocks(data: bytes, *, relative: str) -> list[tuple[str, str
             continue
         value = locations[0]
         parsed = urlsplit(value)
-        match = re.fullmatch(r"/sitemap-(ko|ja|ar)\.xml", parsed.path, flags=re.I)
+        match = re.fullmatch(rf"/sitemap-({locale_pattern()})\.xml", parsed.path, flags=re.I)
         if match:
-            found.append((match.group(1).lower(), value))
+            found.append((next(code for code in LOCALES if code.lower() == match.group(1).lower()), value))
     return found
 
 
@@ -547,7 +563,7 @@ def _neutral_sitemap(data: bytes, *, relative: str) -> bytes:
         except UnicodeDecodeError:
             return block
         parsed = urlsplit(location)
-        if re.fullmatch(r"/sitemap-(?:ko|ja|ar)\.xml", parsed.path, flags=re.I):
+        if re.fullmatch(rf"/sitemap-(?:{locale_pattern()})\.xml", parsed.path, flags=re.I):
             return b""
         return block
 
@@ -878,6 +894,22 @@ def _write_json(path: Path, value: dict[str, Any]) -> None:
                 pass
 
 
+def configure_locale_targets(targets) -> None:
+    """Call before snapshot AND verify for an explicit expansion candidate."""
+    global LOCALES, LOCALE_DIRS, LOCALE_SITEMAPS, LOCALE_HREFLANG_RE
+    LOCALES = selected_locales(targets)
+    LOCALE_DIRS = frozenset(LOCALES)
+    LOCALE_SITEMAPS = frozenset(f"sitemap-{code}.xml" for code in LOCALES)
+    pattern = "|".join(re.escape(code) for code in LOCALES).encode("ascii")
+    LOCALE_HREFLANG_RE = re.compile(
+        rb"<link\b(?=[^>]*\brel\s*=\s*([\"'])[^\"']*\balternate\b[^\"']*\1)"
+        rb"(?=[^>]*\bhreflang\s*=\s*([\"'])(?:" + pattern + rb")\2)[^>]*>", re.I)
+
+
+def locale_pattern() -> str:
+    return "|".join(re.escape(code) for code in LOCALES)
+
+
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -887,12 +919,14 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     snapshot.add_argument("--output", required=True)
     snapshot.add_argument("--site-url", default=DEFAULT_SITE_ORIGIN)
     snapshot.add_argument("--active-manifest")
+    snapshot.add_argument("--locales", default=",".join(DEFAULT_LOCALES))
 
     verify = subparsers.add_parser("verify", help="verify Chinese parity after locale generation")
     verify.add_argument("--root", required=True)
     verify.add_argument("--snapshot", required=True)
     verify.add_argument("--output", required=True)
     verify.add_argument("--site-url")
+    verify.add_argument("--locales", default=",".join(DEFAULT_LOCALES))
     verify.add_argument("--locale-build-incomplete", action="store_true",
                         help="require unchanged original bytes; does not qualify a release for publication")
     return parser.parse_args(argv)
@@ -900,6 +934,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
+    configure_locale_targets(args.locales)
     try:
         root = _safe_root(args.root)
         output = _safe_output(args.output, root=root)

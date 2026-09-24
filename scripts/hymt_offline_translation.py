@@ -24,6 +24,8 @@ from typing import Callable, Sequence
 
 from compare_hymt_translation import LANGUAGES, request_json, require_actions, verify_model, file_sha256
 from financial_quantity_integrity import FIVE_YEAR_PERIOD_RE, quantity_issues
+from portal_chinese_script import to_traditional
+from portal_language_registry import normalize_language as registry_language, TARGET_SCRIPT_PATTERNS, DEFAULT_LOCALES
 
 MANIFEST_PATH = Path(__file__).with_name('hymt_translation_model_manifest.json')
 MANIFEST = json.loads(MANIFEST_PATH.read_text(encoding='utf-8'))
@@ -53,6 +55,14 @@ _OPAQUE = re.compile(
     r'|(?:https?://|mailto:)(?:[^\s<>\[\]()]|\([^\s<>\[\]()]*\))+'
     r'|&(?:\#\d+|\#x[\da-fA-F]+|[A-Za-z]+);'
     r'|\\.', re.DOTALL)
+# These model-supported low-resource variants need an unambiguous target script.
+# This is a language instruction, not a translation/sample override.
+NATIVE_TARGET_INSTRUCTIONS = {
+    'bo': '藏语（使用藏文）', 'kk': '哈萨克语（使用西里尔字母）',
+    'mn': '蒙古语（使用西里尔字母）', 'ug': '维吾尔语（使用阿拉伯字母）',
+    'yue': '香港粵語（使用繁體漢字）',
+}
+EXTENDED_ADAPTER_REVISION = 'global-native-target-v4-native-prose'
 _ENGINES: dict[str, object] = {}
 _LOCK = threading.RLock()
 # Finance vocabulary constrains individual concepts, never whole sentences.
@@ -117,11 +127,10 @@ def atomic_json(path: Path, value: object) -> None:
 
 
 def normalize_language(language: str) -> str:
-    code = str(language).lower().replace('_', '-').split('-')[0]
-    code = {'jp': 'ja', 'kr': 'ko', 'cn': 'zh'}.get(code, code)
-    if code not in LANGUAGES:
-        raise OfflineTranslationError(f'Unsupported offline language: {language}')
-    return code
+    try:
+        return registry_language(language)
+    except ValueError as error:
+        raise OfflineTranslationError(str(error)) from error
 
 
 def _detect_source(text: str) -> str:
@@ -203,6 +212,26 @@ def _restore_table_edges(source: str, result: str) -> str:
     return '|' + inner + '|'
 
 
+def _restore_protected_link_spacing(source: str, result: str) -> str:
+    """Canonicalize whitespace around an exact source-owned link token only.
+
+    Destination identity, delimiters and occurrence counts still have to pass
+    validate_result. Never reconstruct missing tokens or change visible text.
+    """
+    for left, right in (("(", ")"), ("[", "]")):
+        pattern = r"\]" + re.escape(left) + r"(__HYMTPH_\d+__)" + re.escape(right)
+        for token in set(re.findall(pattern, source)):
+            spaced = r"\][ \t]*" + re.escape(left) + r"[ \t]*" + re.escape(token) + r"[ \t]*" + re.escape(right)
+            result = re.sub(spaced, lambda _m: "]" + left + token + right, result)
+    return result
+
+
+def _space_protected_tokens(source: str, *, markdown: bool) -> str:
+    """Keep prose token boundaries explicit without changing link syntax."""
+    result = re.sub(r'(__(?:KC_PH|HYMTPH)_\d+__)', r' \1 ', source)
+    return _restore_protected_link_spacing(source, result) if markdown else result
+
+
 def validate_result(source: str, result: str, source_language: str, target: str,
                     *, markdown: bool = True) -> None:
     if not result.strip():
@@ -223,11 +252,13 @@ def validate_result(source: str, result: str, source_language: str, target: str,
         destination_shape = r'\]\(__HYMTPH_\d+__\)|\]\[__HYMTPH_\d+__\]'
         if Counter(re.findall(destination_shape, source)) != Counter(re.findall(destination_shape, result)):
             raise OfflineTranslationValidationError('Hy-MT2 changed a Markdown link destination boundary')
+    if target == 'zh-Hant' and to_traditional(result) != result:
+        raise OfflineTranslationValidationError('Traditional Chinese contains unconverted simplified characters')
+    if target in {'zh-Hant', 'yue'} and re.search(r'[\u3040-\u30ff\uac00-\ud7af]', _OPAQUE.sub('',result)):
+        raise OfflineTranslationValidationError('Unexpected Japanese or Korean script in Chinese variant')
     clean = _PLACEHOLDERS.sub('', result)
-    if _LETTERS.search(_PLACEHOLDERS.sub('', source)):
-        scripts = {'zh': r'[\u3400-\u9fff]', 'en': r'[A-Za-z]', 'ko': r'[\uac00-\ud7af]',
-                   'ja': r'[\u3040-\u30ff\u3400-\u9fff]', 'ar': r'[\u0600-\u06ff]'}
-        if not re.search(scripts[target], clean):
+    if any(character.isalpha() for character in _PLACEHOLDERS.sub('', source)):
+        if not re.search(TARGET_SCRIPT_PATTERNS[target], clean):
             raise OfflineTranslationValidationError('Hy-MT2 target script missing')
 
 
@@ -284,13 +315,22 @@ class _HyMTEngine:
         self.log.close()
 
     def translate(self, text: str, source: str, target: str) -> str:
-        prompt = (f'Translate the following text into {LANGUAGES[target]}. '
+        target_instruction = (f'请将以下内容翻译为{NATIVE_TARGET_INSTRUCTIONS[target]}。仅输出译文。 '
+                              if target in NATIVE_TARGET_INSTRUCTIONS
+                              else f'Translate the following text into {LANGUAGES[target]}. ')
+        prompt = (target_instruction +
                   'Note that you should only output the translated result without any additional explanation. '
                   'Preserve all __KC_PH_...__ and __HYMTPH_...__ placeholders exactly, including their order. '
                   'Do not append inferred units or percent signs to placeholders. '
                   'Each __HYMTPH_...__ is an already translated noun or protected resource; integrate it without rewriting it. '
                   'Preserve Markdown formatting. Do not change financial facts, units, or comparisons. '
                   + financial_glossary(text, target) + '\n' + text)
+        if target in {'mr', 'bo'}:
+            # A single-language instruction avoids the model translating a mixed
+            # Chinese/English instruction as source prose. No sample overrides.
+            native = {'mr': '马拉地语（天城文）', 'bo': '藏语（藏文）'}[target]
+            prompt = (f'请将以下文本翻译为{native}，注意只需要输出翻译后的结果，不要额外解释。'
+                      '保留全部占位符及Markdown链接的括号，不要翻译占位符。\n\n' + text)
         response = request_json(self.port, '/v1/chat/completions', {
             'model': 'hymt-offline', 'messages': [{'role': 'user', 'content': prompt}],
             'stream': False, 'cache_prompt': False, **MANIFEST['sampling'],
@@ -328,6 +368,10 @@ class HyMTOfflineTranslator:
                     'target_language': target, 'source_sha256': hashlib.sha256(core.encode()).hexdigest()}
         if not markdown:
             identity['text_format'] = 'plain'
+        if target not in {'zh', *DEFAULT_LOCALES}:
+            identity['extended_adapter'] = EXTENDED_ADAPTER_REVISION
+        if target == 'zh-Hant':
+            identity['script_converter'] = 'opencc-s2t-0.1.7'
         key = hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()
         path = self.cache_dir / key[:2] / f'{key}.json'
         return identity, path
@@ -345,7 +389,14 @@ class HyMTOfflineTranslator:
         leading, trailing = text[:len(text) - len(text.lstrip())], text[len(text.rstrip()):]
         core = text.strip()
         detected = source or _detect_source(core)
-        if not core or detected == target or not _LETTERS.search(_PLACEHOLDERS.sub('', _OPAQUE.sub('', core))):
+        recognized_identity = detected == target
+        if source is None and detected == 'en':
+            # Unknown scripts used to fall into the English default. Do not
+            # silently treat Cyrillic/Indic text as an English identity copy.
+            import unicodedata
+            letters = [char for char in _PLACEHOLDERS.sub('', _OPAQUE.sub('', core)) if char.isalpha()]
+            recognized_identity = recognized_identity and all('LATIN' in unicodedata.name(char, '') for char in letters)
+        if not core or recognized_identity or not any(char.isalpha() for char in _PLACEHOLDERS.sub('', _OPAQUE.sub('', core))):
             return text
         identity, path = self._memo_identity(core, target, detected, markdown=markdown)
         masked, replacements, terms = _mask(core, target)
@@ -361,13 +412,25 @@ class HyMTOfflineTranslator:
         except (OSError, ValueError, KeyError, TypeError, OfflineTranslationError):
             try:
                 with _LOCK:
-                    value = self._engine(detected, target).translate(masked, detected, target)
+                    if target == 'zh-Hant' and detected in {'zh', 'zh-Hant'}:
+                        # Exact script conversion avoids model paraphrases and simplified output.
+                        value = to_traditional(masked)
+                    else:
+                        model_input = masked
+                        if target not in {'zh', 'mr', 'bo', *DEFAULT_LOCALES}:
+                            # Explicit boundaries keep adjacent Indic/RTL text from
+                            # fusing with reserved tokens. Validate against the original.
+                            model_input = _space_protected_tokens(masked, markdown=markdown)
+                        value = self._engine(detected, target).translate(model_input, detected, target)
+                        if target == 'zh-Hant':
+                            value = to_traditional(value)
                 if self._diagnostic_callback is not None:
                     self._diagnostic_callback({'model_input': masked, 'raw_translation': value,
                                                'source_language': detected, 'target_language': target,
                                                'controlled_terms': dict(terms)})
                 if markdown:
                     value = _restore_table_edges(masked, value)
+                    value = _restore_protected_link_spacing(masked, value)
                 validate_result(masked, value, detected, target, markdown=markdown)
             except OfflineTranslationError:
                 raise

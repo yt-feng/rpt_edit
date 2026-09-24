@@ -7,6 +7,9 @@ inputs:
   audit-suffix:
     description: Unique suffix for matrix job provenance artifacts
     default: ''
+  retain-audit:
+    description: Store the small model receipt as an Actions artifact
+    default: 'true'
 runs:
   using: composite
   steps:
@@ -16,10 +19,14 @@ runs:
         TRANSLATION_TARGETS: ${{ inputs.targets }}
       shell: bash
       run: |
-        if [[ ! "$TRANSLATION_TARGETS" =~ ^(zh|en|ko|ja|ar)(,(zh|en|ko|ja|ar))*$ ]]; then
-          echo "Unsupported translation targets" >&2
-          exit 2
-        fi
+        python - <<'PY'
+        import os, sys
+        sys.path.insert(0, 'scripts')
+        from portal_language_registry import normalize_language
+        targets = [normalize_language(item) for item in os.environ['TRANSLATION_TARGETS'].split(',')]
+        if len(set(targets)) != len(targets):
+            raise SystemExit('Duplicate translation targets')
+        PY
         python - <<'PY'
         import json, os, platform
         from pathlib import Path
@@ -35,6 +42,9 @@ runs:
         echo "OFFLINE_TRANSLATION_BACKEND=hymt" >> "$GITHUB_ENV"
         echo "HYMT_TRANSLATION_CACHE=$RUNNER_TEMP/offline-translation-memo" >> "$GITHUB_ENV"
         echo "PORTAL_OFFLINE_TRANSLATION_THREADS=4" >> "$GITHUB_ENV"
+    - name: Install pinned local script converter
+      shell: bash
+      run: python -m pip install --disable-pip-version-check 'opencc-python-reimplemented==0.1.7'
     - name: Restore public model files only
       id: model-cache
       uses: actions/cache/restore@v4
@@ -88,6 +98,7 @@ runs:
         path: ${{ runner.temp }}/hymt-runtime/build
         key: hymt-cpu-portable-v2-${{ runner.os }}-${{ runner.arch }}-${{ steps.configure.outputs.runner-image }}-${{ steps.configure.outputs.runtime-revision }}
     - name: Preserve model provenance
+      if: inputs.retain-audit != 'false'
       uses: actions/upload-artifact@v4
       with:
         name: offline-model-audit-${{ github.job }}-${{ github.run_attempt }}${{ inputs.audit-suffix }}

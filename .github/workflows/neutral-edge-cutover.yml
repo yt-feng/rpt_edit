@@ -1418,6 +1418,10 @@ jobs:
           if [ "$PORTAL_MULTILINGUAL_ENABLED" = "true" ]; then
             locale_contract_args+=(
               --build-contract scripts/build_portal_locales.py
+              --build-contract scripts/portal_language_registry.py
+              --build-contract scripts/portal_chinese_script.py
+              --build-contract scripts/hymt_offline_translation.py
+              --build-contract scripts/financial_quantity_integrity.py
               --build-contract portal_suite/locale_assets/locale.css
               --build-contract portal_suite/locale_assets/locale-runtime.js
               --build-contract _neutral_site/data/i18n/cache-v1.json.gz

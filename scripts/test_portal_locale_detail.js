@@ -13,7 +13,7 @@ const payload = (source = "catalog", id = "ab-report", locale = "ja") => ({
 });
 const response = (status, body) => ({ status, text: async () => JSON.stringify(body) });
 
-function harness({ href = "https://portal.example.invalid/ja/report.html?id=ab-report&password=private&rt=private&title=中文旧标题", replies = [], overlay = null, record = null, fetch = null } = {}) {
+function harness({ href = "https://portal.example.invalid/ja/report.html?id=ab-report&password=private&rt=private&title=中文旧标题", replies = [], overlay = null, record = null, fetch = null, generatedCopy = null } = {}) {
   const requests = [];
   const timers = new Map();
   const events = [];
@@ -31,6 +31,7 @@ function harness({ href = "https://portal.example.invalid/ja/report.html?id=ab-r
   const chineseLink = { href: "https://portal.example.invalid/report.html?id=ab-report" };
   const window = {
     location: new URL(href),
+    PortalLocaleConfig: { copy: generatedCopy || {} },
     PortalLocale: {
       detailTranslation: async () => { overlayReads++; return overlay; },
       readCatalogDetail: async (id, translated) => { assert.equal(id, "ab-report"); assert.ok(translated.title); return record; },
@@ -63,6 +64,15 @@ async function run() {
     const h = harness({ href });
     assert.equal(h.window.PortalLocaleDetail, undefined);
     assert.equal(h.requests.length + h.events.length + h.timers.size, 0);
+  }
+  for (const locale of ["en", "zh-Hant", "fr", "pt", "es", "tr", "ru", "th", "it", "de", "vi", "ms", "id", "tl", "hi", "pl", "cs", "nl", "km", "my", "fa", "gu", "ur", "te", "mr", "he", "bn", "ta", "uk", "bo", "kk", "mn", "ug", "yue"]) {
+    const generatedCopy = { [locale]: { pending: "Loading", failed: "Translation unavailable", retry: "Retry" } };
+    for (const overlay of [null, { title: "Offline cached title" }]) {
+      const h = harness({ href: `https://portal.example.invalid/${locale}/report.html?id=ab-report`, generatedCopy, overlay });
+      assert.equal(await h.window.PortalLocaleDetail.prepare({id: "ab-report"}, h.target), Boolean(overlay));
+      assert.equal(h.requests.length, 0, `${locale}: neither cache misses nor cache hits may call paid translation`);
+      assert.equal(h.target.attributes.dir, ["ar", "fa", "ur", "he", "ug"].includes(locale) ? "rtl" : "ltr");
+    }
   }
   for (const locale of ["ko", "ja", "ar"]) {
     const body = payload("catalog", "ab-report", locale);

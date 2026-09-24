@@ -24,7 +24,9 @@ DEFAULT_BASE_URL = "https://portal.example.invalid"
 DEFAULT_ENDPOINT = "https://api.indexnow.org/indexnow"
 DEFAULT_KEY = "b7c3e9a41d8f52e604a71bc93f2d6e80"
 MAX_URLS_PER_REQUEST = 10_000
-LOCALIZED_LOCALES = ("ko", "ja", "ar")
+from portal_language_registry import MIRROR_CODES, LOCALE_PATTERN, normalize_language
+
+LOCALIZED_LOCALES = MIRROR_CODES
 FINGERPRINT_KEYS = (
     "title",
     "title_zh",
@@ -116,8 +118,8 @@ def url_locale(value: str, base_url: str) -> str | None:
     base_identity = url_identity(base_url.rstrip("/") + "/")
     if not identity or not base_identity or identity[:2] != base_identity[:2]:
         return None
-    match = re.match(r"^/(ko|ja|ar)(?=/|$)", identity[2], flags=re.I)
-    return match.group(1).lower() if match else None
+    match = re.match(rf"^/({LOCALE_PATTERN})(?=/|$)", identity[2], flags=re.I)
+    return normalize_language(match.group(1)) if match else None
 
 
 def localized_variant_url(value: str, base_url: str, locale: str) -> str | None:
@@ -129,7 +131,7 @@ def localized_variant_url(value: str, base_url: str, locale: str) -> str | None:
     if not identity or not base_identity or identity[:2] != base_identity[:2]:
         return None
     parsed = urlsplit(value)
-    root_path = re.sub(r"^/(?:ko|ja|ar)(?=/|$)", "", parsed.path, count=1, flags=re.I)
+    root_path = re.sub(rf"^/(?:{LOCALE_PATTERN})(?=/|$)", "", parsed.path, count=1, flags=re.I)
     if not root_path.startswith("/"):
         root_path = "/" + root_path
     localized_path = f"/{locale}{root_path}"
@@ -143,7 +145,7 @@ def source_variant_url(value: str, base_url: str) -> str | None:
     if not identity or not base_identity or identity[:2] != base_identity[:2]:
         return None
     parsed = urlsplit(value)
-    root_path = re.sub(r"^/(?:ko|ja|ar)(?=/|$)", "", parsed.path, count=1, flags=re.I) or "/"
+    root_path = re.sub(rf"^/(?:{LOCALE_PATTERN})(?=/|$)", "", parsed.path, count=1, flags=re.I) or "/"
     return urlunsplit((parsed.scheme, parsed.netloc, root_path, parsed.query, parsed.fragment))
 
 
@@ -318,7 +320,7 @@ def is_blog_article_url(url: str, base_url: str) -> bool:
     base_identity = url_identity(base_url.rstrip("/") + "/")
     if not identity or not base_identity or identity[:2] != base_identity[:2]:
         return False
-    path = re.sub(r"^/(?:ko|ja|ar)(?=/|$)", "", identity[2], count=1, flags=re.I)
+    path = re.sub(rf"^/(?:{LOCALE_PATTERN})(?=/|$)", "", identity[2], count=1, flags=re.I)
     return bool(re.fullmatch(r"/blog/(?!page-\d+\.html$)[^/]+\.html", path))
 
 
