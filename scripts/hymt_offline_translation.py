@@ -10,7 +10,6 @@ from __future__ import annotations
 import atexit
 from collections import Counter
 from datetime import datetime, timezone
-from decimal import Decimal
 import hashlib
 import json
 import os
@@ -54,62 +53,6 @@ _OPAQUE = re.compile(
     r'|(?:https?://|mailto:)(?:[^\s<>\[\]()]|\([^\s<>\[\]()]*\))+'
     r'|&(?:\#\d+|\#x[\da-fA-F]+|[A-Za-z]+);'
     r'|\\.', re.DOTALL)
-# Keep the source numeric atoms inside the model's sentence context, but make
-# the exact digits opaque to a small CPU model.  The caller restores the
-# source spelling and validates the restored result again.  This covers the
-# ordinary decimal/date atoms plus compact ordinal forms; reporting periods
-# are handled by the identifier pass below so title translation can opt into
-# their localized equivalents.
-_NUMERIC_ATOM = re.compile(
-    # Use ASCII word boundaries deliberately. Chinese, Japanese, Arabic and
-    # other scripts commonly attach a date or unit directly to the digits
-    # (for example 2024年9月 or 第15个五年); those digits still need to be
-    # opaque while their surrounding unit remains in model context.
-    r'(?<![A-Za-z0-9])(?:\d+(?:st|nd|rd|th)(?![A-Za-z0-9])'
-    r'|[+\-−]?\d+(?:[.,]\d+)*)(?![A-Za-z0-9])', re.IGNORECASE)
-# Chinese public pages frequently express money as 42亿元人民币 or 1.2亿美元.
-# Locking only the digits lets a small model translate 42亿 as “42 billion”,
-# changing the magnitude.  Convert that complete source atom to an equivalent
-# target-language literal before the model sees it; the final quantity gate
-# still validates the restored materialized sentence.
-_CJK_MONEY_ATOM = re.compile(
-    r'(?<![A-Za-z0-9_])(?P<number>[+\-−]?\d+(?:[.,]\d+)*)'
-    r'(?P<scale>万亿|千亿|百亿|十亿|千万|百万|十万|亿|万|兆|千|百)'
-    r'(?P<currency>元人民币|人民币|美元|美金|港元|港币|日元|円|英镑|欧元|元)'
-    r'(?![A-Za-z0-9_])')
-_CJK_MONEY_SCALE = {
-    '万亿': Decimal(10) ** 12, '千亿': Decimal(10) ** 11, '百亿': Decimal(10) ** 10,
-    '十亿': Decimal(10) ** 9, '千万': Decimal(10) ** 7, '百万': Decimal(10) ** 6,
-    '十万': Decimal(10) ** 5, '亿': Decimal(10) ** 8, '万': Decimal(10) ** 4,
-    '兆': Decimal(10) ** 12, '千': Decimal(10) ** 3, '百': Decimal(10) ** 2,
-}
-_CJK_MONEY_CURRENCY = {
-    '元人民币': 'CNY', '人民币': 'CNY', '元': 'CNY', '美元': 'USD', '美金': 'USD',
-    '港元': 'HKD', '港币': 'HKD', '日元': 'JPY', '円': 'JPY', '英镑': 'GBP', '欧元': 'EUR',
-}
-_LOCALIZED_MONEY_UNITS = {
-    'en': {3: 'thousand', 6: 'million', 9: 'billion', 12: 'trillion'},
-    'fr': {3: 'milliers', 6: 'millions', 9: 'milliards', 12: 'billions'},
-    'pt': {3: 'milhares', 6: 'milhões', 9: 'bilhões', 12: 'trilhões'},
-}
-_LOCALIZED_MONEY_NAMES = {
-    'en': {'CNY': 'yuan', 'USD': 'dollars', 'HKD': 'Hong Kong dollars', 'JPY': 'yen', 'GBP': 'pounds', 'EUR': 'euros'},
-    'fr': {'CNY': 'yuans', 'USD': 'dollars', 'HKD': 'dollars de Hong Kong', 'JPY': 'yens', 'GBP': 'livres', 'EUR': 'euros'},
-    'pt': {'CNY': 'yuans', 'USD': 'dólares', 'HKD': 'dólares de Hong Kong', 'JPY': 'ienes', 'GBP': 'libras', 'EUR': 'euros'},
-}
-_NUMERIC_IDENTIFIER = re.compile(
-    # Do not allow underscores here: protected placeholders use them, and a
-    # broad identifier match must not swallow adjacent translatable words or
-    # the placeholder itself (for example ``Example__KC_PH_0000__4Q26``).
-    r'(?<![A-Za-z0-9_])(?=[A-Za-z0-9.]*[A-Za-z])(?=[A-Za-z0-9.]*\d)'
-    r'[A-Za-z0-9][A-Za-z0-9.]*[A-Za-z0-9](?![A-Za-z0-9_])')
-_CJK_DATE_ATOM = re.compile(
-    r'(?<![A-Za-z0-9_])(?P<year>\d{4})年(?P<month>\d{1,2})月'
-    r'(?:(?P<day>\d{1,2})日)?(?![A-Za-z0-9_])')
-_LOCALIZED_MONTHS = {
-    'fr': ('janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'),
-    'pt': ('janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'),
-}
 _ENGINES: dict[str, object] = {}
 _LOCK = threading.RLock()
 # Finance vocabulary constrains individual concepts, never whole sentences.
@@ -195,49 +138,6 @@ def _detect_source(text: str) -> str:
     return 'zh' if han and not (len(words) >= 4 and sum(map(len, words)) > han * 2) else 'en'
 
 
-def _decimal_source(value: str) -> Decimal:
-    value = value.replace('−', '-')
-    if ',' in value and '.' not in value:
-        value = value.replace(',', '.')
-    return Decimal(value)
-
-
-def _localized_money(value: Decimal, currency: str, target: str) -> str:
-    """Render an exact CJK money atom in a small, quantity-gate-readable form."""
-    units = _LOCALIZED_MONEY_UNITS.get(target)
-    names = _LOCALIZED_MONEY_NAMES.get(target)
-    if not units or not names:
-        return ''
-    exponent = 0
-    for candidate in (12, 9, 6, 3):
-        if abs(value) >= Decimal(10) ** candidate:
-            exponent = candidate
-            break
-    if exponent:
-        amount = value / (Decimal(10) ** exponent)
-        rendered = format(amount.normalize(), 'f')
-        if target in {'fr', 'pt'}:
-            rendered = rendered.replace('.', ',')
-        return f'{rendered} {units[exponent]} {names[currency]}'
-    rendered = format(value.normalize(), 'f')
-    if target in {'fr', 'pt'}:
-        rendered = rendered.replace('.', ',')
-    return f'{rendered} {names[currency]}'
-
-
-def _localized_cjk_date(match: re.Match[str], target: str) -> str:
-    months = _LOCALIZED_MONTHS.get(target)
-    month = int(match['month'])
-    if not months or not 1 <= month <= 12:
-        return match.group()
-    year, day = match['year'], match['day']
-    if day:
-        return (f'{day} {months[month - 1]} {year}' if target == 'fr'
-                else f'{day} de {months[month - 1]} de {year}')
-    return (f'{months[month - 1]} {year}' if target == 'fr'
-            else f'{months[month - 1]} de {year}')
-
-
 def split_sentences(text: str, limit: int = 1800) -> list[str]:
     """Bound context only at sentence ends, never in a financial assertion."""
     parts = []
@@ -253,7 +153,7 @@ def split_sentences(text: str, limit: int = 1800) -> list[str]:
     return parts
 
 
-def _mask(text: str, target: str, *, preserve_reporting_periods: bool = True) -> tuple[str, dict[str, str], dict[str, str]]:
+def _mask(text: str, target: str) -> tuple[str, dict[str, str], dict[str, str]]:
     replacements: dict[str, str] = {}
     terms: dict[str, str] = {}
     def reserve(value: str, dictionary: dict[str, str]) -> str:
@@ -278,39 +178,6 @@ def _mask(text: str, target: str, *, preserve_reporting_periods: bool = True) ->
     if target == 'ko':
         for pattern, term, _is_rate in _KOREAN_FINANCIAL_TERMS:
             masked = re.sub(pattern, lambda _match, term=term: reserve(term, terms), masked, flags=re.I)
-    def reserve_cjk_money(match: re.Match[str]) -> str:
-        scale = _CJK_MONEY_SCALE[match['scale']]
-        currency = _CJK_MONEY_CURRENCY[match['currency']]
-        value = _localized_money(_decimal_source(match['number']) * scale, currency, target)
-        # Keep exact source spelling for locales without a reviewed rendering;
-    # this protects the quantity without pretending to have localized it.
-        return reserve(value or match.group(), replacements)
-    masked = _CJK_MONEY_ATOM.sub(reserve_cjk_money, masked)
-    masked = _CJK_DATE_ATOM.sub(
-        lambda match: reserve(_localized_cjk_date(match, target), replacements), masked)
-    # Report titles contain compact date/provider and ticker identifiers such
-    # as 260921JPMorgan, 2Q26 and 000660.KS. Keep those exact source tokens
-    # intact; otherwise the quantity gate sees a changed numeric claim.
-    def reserve_numeric(match: re.Match[str]) -> str:
-        # Numeric atoms may touch a title/resource placeholder.  The boundary
-        # regex intentionally permits that adjacency, so skip digits that are
-        # actually inside an existing placeholder before reserving the atom.
-        if re.fullmatch(r'(?:[QH]\d+|\d+[QH]\d+)', match.group(), re.I):
-            # Reporting periods such as 4Q26 are numeric facts, but the
-            # quantity gate understands their equivalent localized forms
-            # (for example 2026年第四季度). Keep them in model context so
-            # titles can translate the period without changing its meaning.
-            return match.group() if not preserve_reporting_periods else reserve(match.group(), replacements)
-        if any(span.start() <= match.start() and match.end() <= span.end()
-               for span in _PLACEHOLDERS.finditer(masked)):
-            return match.group()
-        return reserve(match.group(), replacements)
-    masked = _NUMERIC_IDENTIFIER.sub(reserve_numeric, masked)
-    # Do this after opaque resources and controlled terms so digits inside a
-    # protected token are never exposed as a second claim.  The model still
-    # sees surrounding units and predicates, while exact source numbers are
-    # restored only after placeholder and quantity validation.
-    masked = _NUMERIC_ATOM.sub(reserve_numeric, masked)
     return masked, replacements, terms
 
 
@@ -445,14 +312,12 @@ class _HyMTEngine:
 class HyMTOfflineTranslator:
     def __init__(self, cache_dir: str | Path | None = None, *, model_dir: str | Path | None = None,
                  engine_factory: Callable[[str, str], object] | None = None, batch_size: int = 1,
-                 diagnostic_callback: Callable[[dict], None] | None = None,
-                 preserve_reporting_periods: bool = True):
+                 diagnostic_callback: Callable[[dict], None] | None = None):
         self.cache_dir = Path(cache_dir or os.environ.get('HYMT_TRANSLATION_CACHE') or os.environ.get('PORTAL_OFFLINE_TRANSLATION_CACHE', '.cache/hymt-translation'))
         self.model_dir = Path(model_dir or os.environ.get('HYMT_MODEL_DIR', '.cache/hymt-model'))
         self._engine_factory = engine_factory
         # Explicit opt-in for the fixed public smoke corpus only; never printed or persisted here.
         self._diagnostic_callback = diagnostic_callback
-        self.preserve_reporting_periods = preserve_reporting_periods
         self.model_id = MODEL_ID
         self.stats = {'cache_hits': 0, 'translated_fragments': 0, 'batch_requests': 0}
 
@@ -489,8 +354,7 @@ class HyMTOfflineTranslator:
         if not core or detected == target or not _LETTERS.search(_PLACEHOLDERS.sub('', _OPAQUE.sub('', core))):
             return text
         identity, path = self._memo_identity(core, target, detected, markdown=markdown)
-        masked, replacements, terms = _mask(
-            core, target, preserve_reporting_periods=self.preserve_reporting_periods)
+        masked, replacements, terms = _mask(core, target)
         fresh_translation = False
         cache_value = None
         try:
