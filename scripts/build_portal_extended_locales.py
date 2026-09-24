@@ -56,15 +56,18 @@ def validate_text(source: str, translated: str, locale: str, source_language: st
 
 
 class Memo:
-    def __init__(self, path: Path, locale: str, translator: Translator, deadline: float):
+    def __init__(self, path: Path, locale: str, translator: Translator, deadline: float, *, source_generation: str | None = None):
         reject_symlinks(path)
         self.path, self.locale, self.translator, self.deadline = path, locale, translator, deadline
+        self.source_generation = source_generation
         self.rows = {}
         self.calls = self.hits = 0
         if path.is_file():
             if path.stat().st_size > MAX_CHECKPOINT_BYTES: raise ExpansionError('Checkpoint is too large')
             payload = json.loads(path.read_text())
-            if payload.get('model') == MODEL_ID and payload.get('locale') == locale and payload.get('version') == CHECKPOINT_VERSION:
+            if (payload.get('model') == MODEL_ID and payload.get('locale') == locale
+                and payload.get('version') == CHECKPOINT_VERSION
+                and (source_generation is None or payload.get('source_generation') in {None, source_generation})):
                 self.rows = payload.get('rows', {})
                 if not isinstance(self.rows, dict): raise ExpansionError('Invalid checkpoint rows')
 
@@ -92,7 +95,10 @@ class Memo:
     def save(self):
         reject_symlinks(self.path)
         reject_symlinks(self.path.with_suffix('.tmp'))
-        raw = stable_bytes({'model': MODEL_ID, 'locale': self.locale, 'version': CHECKPOINT_VERSION, 'rows': self.rows})
+        payload = {'model': MODEL_ID, 'locale': self.locale, 'version': CHECKPOINT_VERSION, 'rows': self.rows}
+        if self.source_generation is not None:
+            payload['source_generation'] = self.source_generation
+        raw = stable_bytes(payload)
         if len(raw) > MAX_CHECKPOINT_BYTES: raise ExpansionError('Checkpoint exceeds storage budget')
         self.path.parent.mkdir(parents=True, exist_ok=True)
         temporary = self.path.with_suffix('.tmp')
@@ -122,7 +128,8 @@ def build(corpus: dict, locale: str, output: Path, checkpoint: Path, translator:
     reject_symlinks(checkpoint)
     if output.exists() and any(output.iterdir()): raise ExpansionError('Candidate output must be empty; never overwrite an active release')
     output.mkdir(parents=True, exist_ok=True)
-    memo = Memo(checkpoint, locale, translator, time.monotonic() + budget_seconds)
+    memo = Memo(checkpoint, locale, translator, time.monotonic() + budget_seconds,
+                source_generation=corpus['documents_sha256'])
     translated, failures, timed_out = {}, [], False
     for doc in docs:
         try: translated[doc['url']] = translate_document(doc, memo)
