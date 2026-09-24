@@ -23,6 +23,14 @@ class FinancialQuantityTests(unittest.TestCase):
             with self.subTest(translated=translated):
                 self.assertEqual(quantity_issues(source, translated), [])
 
+    def test_localized_dates_percentages_and_percentage_points_are_equivalent(self):
+        self.assertEqual(quantity_issues(
+            'Revenue grew 12.5% on September 15, 2026.',
+            'A receita cresceu 12,5 por cento em 15 de setembro de 2026.'), [])
+        self.assertEqual(quantity_issues(
+            'Margin rose 2.5 percentage points.',
+            'La marge a augmenté de 2,5 points de pourcentage.'), [])
+
     def test_reject_order_of_magnitude_currency_or_missing_unit(self):
         for translated in ('现金储备为120万美元。', 'Cash reserves were $1.2 billion.',
                            'Cash reserves were EUR 120 million.', 'Cash reserves were 120 million.'):

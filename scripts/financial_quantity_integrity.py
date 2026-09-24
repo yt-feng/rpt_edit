@@ -89,6 +89,34 @@ CURRENCY = "(?:" + "|".join(re.escape(s) for s in sorted(ALIASES, key=len, rever
 MONTH_NAMES = "January February March April May June July August September October November December".split()
 MONTHS = {name.casefold(): i for i, name in enumerate(MONTH_NAMES, 1)}
 MONTHS.update({name[:3].casefold(): i for i, name in enumerate(MONTH_NAMES, 1)})
+# Month names commonly emitted in localized dates.  They are aliases of the
+# same calendar month, not free-form text accepted by the quantity gate.
+MONTHS.update({
+    'janvier':1, 'février':2, 'fevrier':2, 'mars':3, 'avril':4, 'mai':5,
+    'juin':6, 'juillet':7, 'août':8, 'aout':8, 'septembre':9, 'octobre':10,
+    'novembre':11, 'décembre':12, 'decembre':12,
+    'janeiro':1, 'fevereiro':2, 'março':3, 'marco':3, 'abril':4, 'maio':5,
+    'junho':6, 'julho':7, 'agosto':8, 'setembro':9, 'outubro':10,
+    'novembro':11, 'dezembro':12,
+    'enero':1, 'febrero':2, 'marzo':3, 'mayo':5, 'junio':6, 'julio':7,
+    'septiembre':9, 'setiembre':9, 'diciembre':12,
+    'gennaio':1, 'febbraio':2, 'aprile':4, 'maggio':5, 'giugno':6,
+    'luglio':7, 'ottobre':10,
+    'januar':1, 'februar':2, 'mär':3, 'maerz':3, 'märz':3, 'april':4,
+    'juni':6, 'juli':7, 'august':8, 'oktober':10, 'dezember':12,
+    'januari':1, 'februari':2, 'maart':3, 'mei':5, 'augustus':8,
+    'januari':1,
+    'ocak':1, 'şubat':2, 'subat':2, 'nisan':4, 'mayıs':5, 'mayis':5,
+    'haziran':6, 'temmuz':7, 'ağustos':8, 'agustos':8, 'eylül':9, 'eylul':9,
+    'ekim':10, 'kasım':11, 'kasim':11, 'aralık':12, 'aralik':12,
+    'января':1, 'февраля':2, 'марта':3, 'апреля':4, 'мая':5, 'июня':6,
+    'июля':7, 'августа':8, 'сентября':9, 'октября':10, 'ноября':11, 'декабря':12,
+    'січня':1, 'лютого':2, 'березня':3, 'квітня':4, 'травня':5, 'червня':6,
+    'липня':7, 'серпня':8, 'вересня':9, 'жовтня':10, 'листопада':11, 'грудня':12,
+    'जनवरी':1, 'फ़रवरी':2, 'फरवरी':2, 'मार्च':3, 'अप्रैल':4, 'मई':5,
+    'जून':6, 'जुलाई':7, 'अगस्त':8, 'सितंबर':9, 'सितम्बर':9, 'अक्टूबर':10,
+    'नवंबर':11, 'दिसंबर':12,
+})
 MONTH = "(?:" + "|".join(sorted(MONTHS, key=len, reverse=True)) + r")\.?"
 FIVE_YEAR_PERIOD_RE = re.compile(
     r"(?<![A-Za-z0-9])(\d+)(?:st|nd|rd|th)\s+Five[~\s-]+Year(?![A-Za-z0-9])", re.IGNORECASE)
@@ -132,6 +160,8 @@ def quantities(text: str) -> Counter:
          lambda m: day_key(m[1], m[2], m[3]))
     take(rf"\b({MONTH})\s+(\d{{1,2}})(?:st|nd|rd|th)?\s*,?\s*(\d{{4}})\b",
          lambda m: day_key(m[3], MONTHS[m[1].rstrip('.').casefold()], m[2]))
+    take(rf"\b(\d{{1,2}})\s+(?:(?:de|del|of)\s+)?({MONTH})(?:\s+(?:de|del|of))?\s*,?\s*(\d{{4}})\b",
+         lambda m: day_key(m[3], MONTHS[m[2].rstrip('.').casefold()], m[1]))
     take(rf"\b(\d{{1,2}})\s+({MONTH})\s*,?\s*(\d{{4}})\b",
          lambda m: day_key(m[3], MONTHS[m[2].rstrip('.').casefold()], m[1]))
     take(rf"\b({MONTH})\s+(\d{{4}})\b",
@@ -209,11 +239,11 @@ def quantities(text: str) -> Counter:
     # Alphabetic boundaries avoid interpreting the suffix of e.g. "dollars".
     take(rf"(?<![A-Za-z])(?P<currency>{CURRENCY})\s*(?P<number>{NUMBER})\s*(?P<scale>{SCALE})?(?![\dA-Za-z])", money)
     take(rf"(?<![\dA-Za-z])(?P<number>{NUMBER})\s*(?P<scale>{SCALE})?\s*(?:(?:of|de|do|da|dos|das|des|d')\s*)?(?P<currency>{CURRENCY})(?![A-Za-z])", money)
-    take(rf"({NUMBER})\s*(?:basis\s+points?|bps\b|基点|基點)",
+    take(rf"({NUMBER})\s*(?:basis\s+points?|bps\b|基点|基點|points?\s+de\s+base|pontos?[- ]base|puntos?\s+básicos?|punti\s+base|Basispunkte?|procentpunt(?:en)?|punkty\s+procentowe|процентн(?:ых|ых)\s+пункт(?:ов)?|відсотков(?:их|і)\s+пункт(?:ів)?|yüzde\s+puan|điểm\s+cơ\s+bản|pontos?\s+base)",
          lambda m: ("percentage_points", _decimal(m[1]) / 100))
-    take(rf"(?P<number>{NUMBER})\s*(?:percentage\s+points?|percent(?:age)?\s+points?|个百分点|個百分點|パーセントポイント|퍼센트포인트|نقطة\s+مئوية|نقاط\s+مئوية)",
+    take(rf"(?P<number>{NUMBER})\s*(?:percentage\s+points?|percent(?:age)?\s+points?|points?\s+de\s+pourcentage|points?\s+de\s+pourcent|pontos?\s+percentuais?|puntos?\s+porcentuales?|punti\s+percentuali|Prozentpunkte?|procentpunt(?:en)?|punkty\s+procentowe|процентн(?:ых|ых)\s+пункт(?:ов)?|відсотков(?:их|і)\s+пункт(?:ів)?|yüzde\s+puan|điểm\s+phần\s+trăm|个百分点|個百分點|パーセントポイント|퍼센트포인트|نقطة\s+مئوية|نقاط\s+مئوية)",
          lambda m: ("percentage_points", _decimal(m['number'])))
-    take(rf"(?P<number>{NUMBER})\s*(?:%|٪|percent(?:age)?(?![a-z])|per\s+cent(?![a-z])|パーセント|퍼센트|في\s+المائة|في\s+المئة)",
+    take(rf"(?P<number>{NUMBER})\s*(?:%|٪|percent(?:age)?(?![a-z])|per\s+cent(?![a-z])|pour\s*cent|pourcentage|por\s+ciento|por\s+cento|porcent(?:aje|agem|ual)?|per\s+cento|percentuale|Prozent|procent|procenten|procentowy|процент(?:а|ов)?|відсот(?:ок|ка|ків)?|yüzde|phần\s+trăm|persen|peratus|เปอร์เซ็นต์|ភាគរយ|ရာခိုင်နှုန်း|درصد|אחוז(?:ים)?|प्रतिशत|ટકા|শতাংশ|శాతం|சதவீதம்|パーセント|퍼센트|في\s+المائة|في\s+المئة)",
          lambda m: ("percent", _decimal(m['number'])))
     take(rf"百分之\s*({NUMBER})", lambda m: ("percent", _decimal(m[1])))
     take(rf"(?<![\dA-Za-z])({NUMBER})\s*({SCALE})(?![A-Za-z])",
