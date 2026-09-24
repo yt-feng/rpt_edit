@@ -158,7 +158,7 @@ def translate_document(doc: dict, memo: Memo) -> dict:
     return {'title': translate(doc['title']), 'description': translate(doc['description']),
             'copy': {key: memo.get(value, 'en') for key, value in COPY.items()},
             'blocks': [{'tag': b['tag'], 'text': translate(
-                b['text'], markdown=b['tag'] == 'tr')}
+                b['text'], markdown=b['tag'] == 'tr' or '|' in b['text'])}
                        for b in doc['blocks']],
             'links': [{'url': row['url'], 'label': translate(row['label'])} for row in doc['links']]}
 
