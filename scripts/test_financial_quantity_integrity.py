@@ -11,6 +11,18 @@ class FinancialQuantityTests(unittest.TestCase):
         self.assertEqual(quantity_issues('截至2026年9月15日，现金储备为1.2亿美元。',
                                        'As of 15 September 2026, cash reserves were $120 million.'), [])
 
+    def test_common_localized_currency_scales_are_equivalent(self):
+        source = 'Revenue was USD 120 million.'
+        for translated in (
+            'Les revenus étaient de 120 millions de dollars.',
+            'A receita foi de 120 milhões de USD.',
+            'Los ingresos fueron de 120 millones de USD.',
+            'Выручка составила 120 миллионов долларов.',
+            'Die Einnahmen betrugen 120 Millionen USD.',
+        ):
+            with self.subTest(translated=translated):
+                self.assertEqual(quantity_issues(source, translated), [])
+
     def test_reject_order_of_magnitude_currency_or_missing_unit(self):
         for translated in ('现金储备为120万美元。', 'Cash reserves were $1.2 billion.',
                            'Cash reserves were EUR 120 million.', 'Cash reserves were 120 million.'):
