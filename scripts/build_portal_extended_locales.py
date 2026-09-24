@@ -25,7 +25,13 @@ CHECKPOINT_VERSION = 'extended-static-v2'
 
 
 def reject_symlinks(path: Path) -> None:
-    if any(item.is_symlink() for item in (path, *path.parents)):
+    # The temporary directory on macOS is exposed through /var -> /private/var.
+    # Reject the candidate/checkpoint itself and anything below it, while not
+    # treating that normal system alias in an otherwise valid parent path as a
+    # candidate symlink.
+    if path.is_symlink():
+        raise ExpansionError('Symlink paths are forbidden for locale candidates/checkpoints')
+    if path.is_dir() and any(item.is_symlink() for item in path.rglob('*')):
         raise ExpansionError('Symlink paths are forbidden for locale candidates/checkpoints')
 
 class Translator(Protocol):
@@ -130,6 +136,10 @@ def build(corpus: dict, locale: str, output: Path, checkpoint: Path, translator:
     output.mkdir(parents=True, exist_ok=True)
     memo = Memo(checkpoint, locale, translator, time.monotonic() + budget_seconds,
                 source_generation=corpus['documents_sha256'])
+    # Materialize an empty or resumed checkpoint before the first model call.
+    # A runner interruption or first-call failure must still leave a durable,
+    # honest resume point; this contains no fabricated translation rows.
+    memo.save()
     translated, failures, timed_out = {}, [], False
     for doc in docs:
         try: translated[doc['url']] = translate_document(doc, memo)
@@ -186,7 +196,10 @@ def main() -> int:
     if args.corpus.stat().st_size > 32 * 1024 * 1024: raise ExpansionError('Corpus too large')
     corpus = json.loads(args.corpus.read_text())
     result = build(corpus, args.locale, args.output, args.checkpoint, OfflineTranslator(), budget_seconds=args.seconds)
-    print(json.dumps({key: result[key] for key in ('locale', 'status', 'source_document_count', 'completed_page_count', 'paid_provider_requests', 'budget_exhausted')}))
+    summary = {key: result[key] for key in ('locale', 'status', 'source_document_count', 'completed_page_count', 'paid_provider_requests', 'budget_exhausted')}
+    summary['failure_count'] = len(result.get('failures') or [])
+    summary['failure_types'] = sorted({str(row.get('error')) for row in result.get('failures') or []})
+    print(json.dumps(summary))
     return 0 if result['status'] == 'complete-candidate' else 75 if result['budget_exhausted'] and not result['failures'] else 1
 
 if __name__ == '__main__':

@@ -26,6 +26,8 @@ MARKER_END = '<!-- kc-extended-alternates:end -->'
 
 
 def verified_candidate(directory: Path, corpus: dict, *, origin: str = ORIGIN) -> tuple[dict, dict[str, bytes]]:
+    if directory.is_symlink() or not directory.is_dir():
+        raise ExpansionError('Candidate root must be a regular directory')
     path = directory / 'candidate-manifest.json'
     if path.is_symlink() or not path.is_file() or path.stat().st_size > 1024 * 1024:
         raise ExpansionError('Missing/oversized candidate manifest')
@@ -51,7 +53,8 @@ def verified_candidate(directory: Path, corpus: dict, *, origin: str = ORIGIN) -
         relative = Path(manifest['locale']) / file_for_url(doc['url'], origin=origin)
         if record.get('path') != relative.as_posix(): raise ExpansionError('Unsafe candidate output path')
         source = directory / relative
-        if any(p.is_symlink() for p in [source, *source.parents] if p != directory.parent):
+        if any(p.is_symlink() for p in [source, *source.parents]
+               if p == directory or directory in p.parents):
             raise ExpansionError('Candidate symlinks are forbidden')
         if not source.is_file() or source.stat().st_size > 4 * 1024 * 1024:
             raise ExpansionError('Candidate page absent or oversized')

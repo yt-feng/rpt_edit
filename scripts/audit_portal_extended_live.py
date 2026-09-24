@@ -42,7 +42,7 @@ def parse_metadata(body: bytes) -> MetadataParser:
 
 def require_response(session, url: str) -> tuple[dict[str, str], bytes]:
     response = session.get(url, timeout=(10, 60), allow_redirects=False,
-                           headers={'User-Agent': 'KCDesk-extended-locale-live-audit/1.0',
+                           headers={'User-Agent': 'Extended-locale-live-audit/1.0',
                                     'Cache-Control': 'no-cache'})
     if response.status_code != 200:
         raise ExpansionError(f'Live extended route returned HTTP {response.status_code}: {url}')
