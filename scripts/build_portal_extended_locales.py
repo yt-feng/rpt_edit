@@ -25,8 +25,6 @@ from portal_extended_locales import (
 MAX_CHECKPOINT_BYTES = 8 * 1024 * 1024
 CHECKPOINT_VERSION = 'extended-static-v2'
 MAX_QUANTITY_RETRIES = 1
-_NUMERIC_CLAIM = re.compile(
-    r'(?<![\w])(?:\d+(?:Q|H|q|h)\d+|\d{4}(?:[-/]\d{1,2}){1,2}|[+\-−]?\d+(?:[.,]\d+)*)(?![A-Za-z0-9_])')
 
 
 def reject_symlinks(path: Path) -> None:
@@ -89,27 +87,11 @@ def safe_failure_code(error: Exception) -> str:
     }.get(name, 'translation-error')
 
 
-def protect_numeric_claims(text: str) -> tuple[str, dict[str, str]]:
-    """Protect source numeric facts while leaving their surrounding sentence intact."""
-    replacements: dict[str, str] = {}
-    reserved = set(re.findall(r'__(?:KC_PH|HYMTPH)_\d+__', text))
-
-    def replace(match: re.Match[str]) -> str:
-        index = 9000 + len(replacements)
-        token = f'__KC_PH_{index:04d}__'
-        while token in reserved or token in replacements:
-            index += 1
-            token = f'__KC_PH_{index:04d}__'
-        replacements[token] = match.group(0)
-        return token
-
-    return _NUMERIC_CLAIM.sub(replace, text), replacements
-
-
-def restore_numeric_claims(text: str, replacements: dict[str, str]) -> str:
-    for token, original in replacements.items():
-        text = text.replace(token, original)
-    return text
+def extended_source_language(text: str) -> str:
+    """Treat mixed Chinese/English public metadata as Chinese source content."""
+    if re.search(r'[\u3400-\u9fff]', text):
+        return 'zh'
+    return _detect_source(text)
 
 
 def validate_text(source: str, translated: str, locale: str, source_language: str) -> None:
@@ -168,11 +150,10 @@ class Memo:
                 return row['text']
             except ExpansionError: self.rows.pop(key, None)
         if time.monotonic() >= self.deadline: raise TimeoutError('Local translation time budget reached')
-        model_source, numeric_claims = protect_numeric_claims(source)
         translated = None
         for attempt in range(MAX_QUANTITY_RETRIES + 1):
             try:
-                translated = self.translator.translate(model_source, target=self.locale, source=language, markdown=markdown)
+                translated = self.translator.translate(source, target=self.locale, source=language, markdown=markdown)
                 self.calls += 1
                 break
             except OfflineTranslationValidationError as error:
@@ -181,10 +162,9 @@ class Memo:
                          and callable(getattr(self.translator, 'discard_translation', None)))
                 if not retry:
                     raise
-                self.translator.discard_translation(model_source, self.locale, language, markdown=markdown)
+                self.translator.discard_translation(source, self.locale, language, markdown=markdown)
         if translated is None:
             raise ExpansionError('Offline translation returned no result')
-        translated = restore_numeric_claims(translated, numeric_claims)
         validate_text(source, translated, self.locale, language)
         self.rows[key] = {'source': source, 'language': language, 'text': translated}
         self.save()
@@ -215,7 +195,7 @@ def translate_document(doc: dict, memo: Memo) -> dict:
             return '|'.join(translate(part, markdown=markdown, field=f'{field}.part{index}')
                             for index, part in enumerate(text.split('|')))
         try:
-            language = _detect_source(text)
+            language = extended_source_language(text)
             return memo.get(text, language, markdown=markdown)
         except TimeoutError:
             raise
