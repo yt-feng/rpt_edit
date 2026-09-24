@@ -124,7 +124,9 @@ jobs:
             --site-dir _neutral_site --diagnostics-dir "$RUNNER_TEMP/resume-diagnostics" \\
             --work-dir "$RUNNER_TEMP"
 
-      - name: Confirm restored locale readiness
+'''
+    result += steps['Restore approved extended candidates and assemble inactive tree']
+    result += '''      - name: Confirm restored locale readiness
         id: locale_build
         run: echo 'ready=true' >> "$GITHUB_OUTPUT"
 

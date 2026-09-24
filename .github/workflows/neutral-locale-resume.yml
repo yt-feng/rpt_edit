@@ -70,6 +70,12 @@ jobs:
       locale_ready: ${{ steps.locale_build.outputs.ready }}
       multilingual_index_policy_sha256: ${{ steps.locale_policy.outputs.index_policy_sha256 }}
       chinese_parity_sha256: ${{ steps.chinese_parity.outputs.sha256 }}
+      extended_requested: ${{ steps.operation.outputs.extended_requested }}
+      extended_ready: ${{ steps.extended_assembly.outputs.ready }}
+      extended_locales: ${{ steps.extended_assembly.outputs.locales }}
+      extended_source_generation: ${{ steps.extended_assembly.outputs.source_generation }}
+      extended_candidate_ids: ${{ steps.extended_assembly.outputs.candidate_ids }}
+      extended_pages_per_locale: ${{ steps.extended_assembly.outputs.pages_per_locale }}
       shadow_worker_name: ${{ steps.shadow_context.outputs.worker_name }}
       shadow_preview_url: ${{ steps.shadow_identity.outputs.preview_url }}
     steps:
@@ -80,6 +86,9 @@ jobs:
           PORTAL_MULTILINGUAL_CONFIGURED: "true"
           PORTAL_MULTILINGUAL_LIVE_CONFIGURED: "false"
           PORTAL_MULTILINGUAL_INDEX_START_DATE: ${{ vars.PORTAL_MULTILINGUAL_INDEX_START_DATE || '' }}
+          EXTENDED_LOCALES_REQUESTED: ${{ inputs.extended_locales || '' }}
+          EXTENDED_SOURCE_GENERATION: ${{ inputs.extended_source_generation || '' }}
+          EXTENDED_CANDIDATE_IDS: ${{ inputs.extended_candidate_ids || '' }}
         run: |
           set -euo pipefail
           test "$GITHUB_REF" = "refs/heads/main"
@@ -100,6 +109,11 @@ jobs:
           esac
           multilingual_enabled="$PORTAL_MULTILINGUAL_CONFIGURED"
           if [ "$operation" = "locale-shadow" ]; then
+            multilingual_enabled="true"
+          fi
+          extended_requested="false"
+          if [ -n "$EXTENDED_LOCALES_REQUESTED$EXTENDED_SOURCE_GENERATION$EXTENDED_CANDIDATE_IDS" ]; then
+            extended_requested="true"
             multilingual_enabled="true"
           fi
           case "$PORTAL_MULTILINGUAL_LIVE_CONFIGURED" in
@@ -132,6 +146,7 @@ jobs:
           printf 'commit_sha=%s\n' "$GITHUB_SHA" >> "$GITHUB_OUTPUT"
           printf 'multilingual_enabled=%s\n' "$multilingual_enabled" >> "$GITHUB_OUTPUT"
           printf 'multilingual_live=%s\n' "$multilingual_live" >> "$GITHUB_OUTPUT"
+          printf 'extended_requested=%s\n' "$extended_requested" >> "$GITHUB_OUTPUT"
 
       - name: Checkout public source
         uses: actions/checkout@v4
@@ -279,6 +294,56 @@ jobs:
             --expected-previous-release "$EXPECTED_PREVIOUS_RELEASE" --expected-previous-tree "$EXPECTED_PREVIOUS_TREE" \
             --site-dir _neutral_site --diagnostics-dir "$RUNNER_TEMP/resume-diagnostics" \
             --work-dir "$RUNNER_TEMP"
+
+      - name: Restore approved extended candidates and assemble inactive tree
+        id: extended_assembly
+        if: steps.operation.outputs.extended_requested == 'true'
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          EXTENDED_R2_PREFIX: _extended-locales/v1
+          EXTENDED_LOCALES: ${{ inputs.extended_locales || '' }}
+          EXTENDED_SOURCE_GENERATION: ${{ inputs.extended_source_generation || '' }}
+          EXTENDED_CANDIDATE_IDS: ${{ inputs.extended_candidate_ids || '' }}
+        run: |
+          set -euo pipefail
+          evidence="$RUNNER_TEMP/extended-locales-review-identity.json"
+          PYTHONPATH=scripts python3 -B scripts/restore_assemble_portal_extended_r2.py \
+            --root _neutral_site \
+            --prefix "$EXTENDED_R2_PREFIX" \
+            --source-generation "$EXTENDED_SOURCE_GENERATION" \
+            --approved-locales "$EXTENDED_LOCALES" \
+            --candidates "$EXTENDED_CANDIDATE_IDS" \
+            --evidence-out "$evidence"
+          EVIDENCE="$evidence" python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          import os
+          from pathlib import Path
+
+          value = json.loads(Path(os.environ["EVIDENCE"]).read_text(encoding="utf-8"))
+          if value.get("schema_version") != 1 or value.get("paid_provider_requests") != 0:
+              raise SystemExit("Extended assembly evidence is invalid")
+          locales = value.get("locales")
+          candidates = value.get("candidate_ids")
+          if not isinstance(locales, list) or not locales or not isinstance(candidates, dict):
+              raise SystemExit("Extended assembly identity is incomplete")
+          print("ready=true")
+          print("locales=" + ",".join(locales))
+          print("source_generation=" + value["source_generation"])
+          print("candidate_ids=" + ",".join(f"{locale}={candidates[locale]}" for locale in locales))
+          print("pages_per_locale=" + str(value["pages_per_locale"]))
+          PY
+          echo 'PORTAL_EXTENDED_LOCALES_ASSEMBLED=true' >> "$GITHUB_ENV"
+          {
+            echo "## Extended locale inactive-tree assembly"
+            echo
+            echo "- Source generation: \`$(jq -r .source_generation "$evidence")\`"
+            echo "- Approved locales: \`$(jq -r '.locales | join(",")' "$evidence")\`"
+            echo "- Pages per locale: \`$(jq -r .pages_per_locale "$evidence")\`"
+            echo "- R2 candidate ids are recorded in the same-run review identity."
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Confirm restored locale readiness
         id: locale_build
@@ -540,6 +605,8 @@ jobs:
         if: steps.release_delta.outputs.changed == 'true' && (steps.operation.outputs.multilingual_enabled != 'true' || steps.locale_build.outputs.ready == 'true')
         env:
           PORTAL_MULTILINGUAL_ENABLED: ${{ steps.operation.outputs.multilingual_enabled }}
+          EXTENDED_READY: ${{ steps.extended_assembly.outputs.ready || 'false' }}
+          EXTENDED_LOCALES: ${{ steps.extended_assembly.outputs.locales || '' }}
         run: |
           set -euo pipefail
           mkdir -p _release_validation/previous _release_validation/candidate
@@ -579,6 +646,12 @@ jobs:
               _release_validation/candidate/data/i18n/manifest.json
             install -m 0600 "$RUNNER_TEMP/multilingual-review-identity.json" \
               _release_validation/candidate/multilingual-review-identity.json
+            if [ "$EXTENDED_READY" = "true" ]; then
+              install -m 0600 _neutral_site/data/extended-locales/assembly.json \
+                _release_validation/candidate/extended-assembly.json
+              install -m 0600 "$RUNNER_TEMP/extended-locale-review-identity.json" \
+                _release_validation/candidate/extended-locale-review-identity.json
+            fi
             if [ -s "$RUNNER_TEMP/shadow-preview.json" ]; then
               install -m 0600 "$RUNNER_TEMP/shadow-preview.json" \
                 _release_validation/candidate/shadow-preview.json
@@ -757,8 +830,104 @@ jobs:
           print("Same-run multilingual candidate identity approved")
           PY
 
+  extended_locales_approval:
+    needs: prepare_release
+    if: >-
+      ${{
+        needs.prepare_release.result == 'success' &&
+        needs.prepare_release.outputs.extended_requested == 'true' &&
+        needs.prepare_release.outputs.extended_ready == 'true' &&
+        needs.prepare_release.outputs.changed == 'true' &&
+        needs.prepare_release.outputs.operation != 'locale-shadow'
+      }}
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    environment:
+      name: portal-extended-locales-production
+    steps:
+      - name: Download exact extended candidate identity
+        uses: actions/download-artifact@v4
+        with:
+          name: neutral-release-validation-${{ github.run_id }}-${{ github.run_attempt }}
+          path: _release_validation
+
+      - name: Approve exact same-run extended candidate set
+        env:
+          CANDIDATE_OPERATION: ${{ needs.prepare_release.outputs.operation }}
+          CANDIDATE_COMMIT_SHA: ${{ needs.prepare_release.outputs.candidate_commit }}
+          CANDIDATE_STATIC_TREE: ${{ needs.prepare_release.outputs.static_tree }}
+          CANDIDATE_SOURCE_GENERATION: ${{ needs.prepare_release.outputs.extended_source_generation }}
+          CANDIDATE_LOCALES: ${{ needs.prepare_release.outputs.extended_locales }}
+          CANDIDATE_IDS: ${{ needs.prepare_release.outputs.extended_candidate_ids }}
+          CANDIDATE_PAGES_PER_LOCALE: ${{ needs.prepare_release.outputs.extended_pages_per_locale }}
+          PORTAL_EXTENDED_LOCALES_ACTIVATION_APPROVED: ${{ vars.PORTAL_EXTENDED_LOCALES_ACTIVATION_APPROVED || 'false' }}
+          PORTAL_EXTENDED_APPROVED_COMMIT_SHA: ${{ vars.PORTAL_EXTENDED_APPROVED_COMMIT_SHA || '' }}
+          PORTAL_EXTENDED_APPROVED_STATIC_TREE: ${{ vars.PORTAL_EXTENDED_APPROVED_STATIC_TREE || '' }}
+          PORTAL_EXTENDED_APPROVED_SOURCE_GENERATION: ${{ vars.PORTAL_EXTENDED_APPROVED_SOURCE_GENERATION || '' }}
+          PORTAL_EXTENDED_APPROVED_LOCALES: ${{ vars.PORTAL_EXTENDED_APPROVED_LOCALES || '' }}
+          PORTAL_EXTENDED_APPROVED_CANDIDATE_IDS: ${{ vars.PORTAL_EXTENDED_APPROVED_CANDIDATE_IDS || '' }}
+          PORTAL_EXTENDED_APPROVED_PAGES_PER_LOCALE: ${{ vars.PORTAL_EXTENDED_APPROVED_PAGES_PER_LOCALE || '' }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          import re
+
+          identity = json.loads(Path("_release_validation/candidate/extended-locale-review-identity.json").read_text(encoding="utf-8"))
+          actual = {
+              "operation": os.environ["CANDIDATE_OPERATION"],
+              "commit_sha": os.environ["CANDIDATE_COMMIT_SHA"],
+              "static_tree_sha256": os.environ["CANDIDATE_STATIC_TREE"],
+              "source_generation": os.environ["CANDIDATE_SOURCE_GENERATION"],
+              "locales": os.environ["CANDIDATE_LOCALES"],
+              "candidate_ids": os.environ["CANDIDATE_IDS"],
+              "pages_per_locale": os.environ["CANDIDATE_PAGES_PER_LOCALE"],
+          }
+          if identity.get("schema_version") != 1 or any(
+              identity.get(field) != value for field, value in {
+                  "operation": actual["operation"],
+                  "commit_sha": actual["commit_sha"],
+                  "static_tree_sha256": actual["static_tree_sha256"],
+                  "source_generation": actual["source_generation"],
+                  "pages_per_locale": int(actual["pages_per_locale"]),
+              }.items()
+          ) or identity.get("locales") != actual["locales"].split(","):
+              raise SystemExit("Extended review artifact does not match prepare outputs")
+          artifact_ids = identity.get("candidate_ids")
+          expected_ids = dict(item.split("=", 1) for item in actual["candidate_ids"].split(","))
+          if artifact_ids != expected_ids:
+              raise SystemExit("Extended candidate id identity does not match prepare outputs")
+          if re.fullmatch(r"[0-9a-f]{40}", actual["commit_sha"]) is None:
+              raise SystemExit("Extended candidate commit SHA is invalid")
+          for field in ("static_tree_sha256", "source_generation"):
+              if re.fullmatch(r"[0-9a-f]{64}", actual[field]) is None:
+                  raise SystemExit(f"Extended candidate {field} is invalid")
+          if os.environ["PORTAL_EXTENDED_LOCALES_ACTIVATION_APPROVED"] != "true":
+              raise SystemExit("Extended locale environment approval flag is not true")
+          approved = {
+              "commit_sha": os.environ["PORTAL_EXTENDED_APPROVED_COMMIT_SHA"],
+              "static_tree_sha256": os.environ["PORTAL_EXTENDED_APPROVED_STATIC_TREE"],
+              "source_generation": os.environ["PORTAL_EXTENDED_APPROVED_SOURCE_GENERATION"],
+              "locales": os.environ["PORTAL_EXTENDED_APPROVED_LOCALES"],
+              "candidate_ids": os.environ["PORTAL_EXTENDED_APPROVED_CANDIDATE_IDS"],
+              "pages_per_locale": os.environ["PORTAL_EXTENDED_APPROVED_PAGES_PER_LOCALE"],
+          }
+          if approved != {key: actual[key] for key in approved}:
+              mismatched = ", ".join(key for key in approved if approved[key] != actual[key])
+              raise SystemExit(f"Extended locale approval identity mismatch: {mismatched}")
+          with Path(os.environ["GITHUB_STEP_SUMMARY"]).open("a", encoding="utf-8") as summary:
+              summary.write("## Approved extended-locale candidate\n\n")
+              summary.write(f"- Commit SHA: `{actual['commit_sha']}`\n")
+              summary.write(f"- Static tree SHA-256: `{actual['static_tree_sha256']}`\n")
+              summary.write(f"- Source generation: `{actual['source_generation']}`\n")
+              summary.write(f"- Locales/pages: `{actual['locales']}` / `{actual['pages_per_locale']}`\n")
+          print("Same-run extended-locale candidate identity approved")
+          PY
+
   cutover:
-    needs: [prepare_release, multilingual_approval]
+    needs: [prepare_release, multilingual_approval, extended_locales_approval]
     if: >-
       ${{
         always() &&
@@ -773,6 +942,10 @@ jobs:
           needs.prepare_release.outputs.multilingual_enabled != 'true' ||
           needs.prepare_release.outputs.multilingual_live == 'true' ||
           needs.multilingual_approval.result == 'success'
+        ) &&
+        (
+          needs.prepare_release.outputs.extended_requested != 'true' ||
+          needs.extended_locales_approval.result == 'success'
         )
       }}
     runs-on: ubuntu-22.04
@@ -999,6 +1172,7 @@ jobs:
           EDGE_SCRIPT_NAME: svc-04df8d213b73
           EDGE_VERIFY_ATTEMPTS: "6"
           EDGE_VERIFY_CONSECUTIVE: "3"
+          EXTENDED_LOCALES: ${{ needs.prepare_release.outputs.extended_locales || '' }}
         run: |
           set -euo pipefail
           origin="$LIVE_ORIGIN"
@@ -1150,6 +1324,7 @@ jobs:
               test "$deep_status" = "200"
               LOCALE="$locale" \
               SITE_ORIGIN="$origin" \
+              EXTENDED_LOCALES="$EXTENDED_LOCALES" \
               DEEP_URL="$deep_url" \
               DEEP_HTML="$RUNNER_TEMP/public-$locale-deep-after.html" \
                 python3 - <<'PY'
@@ -1205,6 +1380,11 @@ jobs:
           root_url = urlunsplit((origin.scheme, origin.netloc, root_path, "", ""))
           expected_alternates = {"zh-Hans": root_url, "x-default": root_url}
           for language in ("ko", "ja", "ar"):
+              localized_path = f"/{language}" + (root_path if root_path.startswith("/") else "/" + root_path)
+              expected_alternates[language] = urlunsplit(
+                  (origin.scheme, origin.netloc, localized_path, "", "")
+              )
+          for language in (value for value in os.environ.get("EXTENDED_LOCALES", "").split(",") if value):
               localized_path = f"/{language}" + (root_path if root_path.startswith("/") else "/" + root_path)
               expected_alternates[language] = urlunsplit(
                   (origin.scheme, origin.netloc, localized_path, "", "")
@@ -1305,12 +1485,22 @@ jobs:
           print(f"portal_runtime_release={runtime['release_id']} catalog_items={runtime['catalog_item_count']}")
           PY
 
+      - name: Audit extended locale pages after live cutover
+        id: extended_acceptance
+        if: needs.prepare_release.outputs.extended_requested == 'true'
+        run: |
+          set -euo pipefail
+          python3 -B scripts/audit_portal_extended_live.py \
+            --origin "$LIVE_ORIGIN" \
+            --locales "$EXTENDED_LOCALES" \
+            --output "$RUNNER_TEMP/extended-live-audit.json"
+
       - name: Roll back failed release or completed rehearsal
         id: edge_rollback
         if: >-
           ${{ always() &&
               steps.edge_deploy.outcome != 'skipped' &&
-              (steps.release_acceptance.outcome != 'success' || needs.prepare_release.outputs.operation == 'rehearse') }}
+              (steps.release_acceptance.outcome != 'success' || (needs.prepare_release.outputs.extended_requested == 'true' && steps.extended_acceptance.outcome != 'success') || needs.prepare_release.outputs.operation == 'rehearse') }}
         timeout-minutes: 5
         uses: cloudflare/wrangler-action@v4
         with:
@@ -1404,6 +1594,9 @@ jobs:
           set -euo pipefail
           test "${{ steps.edge_deploy.outcome }}" = "success"
           test "${{ steps.release_acceptance.outcome }}" = "success"
+          if [ "$EXTENDED_LOCALES" != "" ]; then
+            test "${{ steps.extended_acceptance.outcome }}" = "success"
+          fi
           if [ "$NEUTRAL_OPERATION" = "rehearse" ]; then
             test "${{ steps.edge_rollback.outcome }}" = "success"
             test "${{ steps.rollback_acceptance.outcome }}" = "success"
