@@ -1,0 +1,45 @@
+name: Locale recovery source inspection
+on:
+  push:
+    branches: [codex/locale-r2-actions-recovery-20260924]
+    paths: [.github/workflows/locale-recovery-inspect.yml]
+permissions:
+  contents: read
+  actions: read
+jobs:
+  inspect:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Summarize recent failed runs without fetching private storage
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const {data} = await github.rest.actions.listWorkflowRunsForRepo({
+              ...context.repo, branch: 'main', status: 'failure', per_page: 12,
+            });
+            const rows = [];
+            for (const r of data.workflow_runs) {
+              const {data: jobs} = await github.rest.actions.listJobsForWorkflowRun({
+                ...context.repo, run_id: r.id, per_page: 100,
+              });
+              rows.push({id:r.id,name:r.name,sha:r.head_sha,created:r.created_at,url:r.html_url,
+                jobs:jobs.jobs.filter(j=>j.conclusion==='failure').map(j=>({id:j.id,name:j.name,
+                failed_steps:j.steps.filter(s=>s.conclusion==='failure').map(s=>s.name)}))});
+            }
+            fs.writeFileSync('recovery-failures.json', JSON.stringify(rows,null,2));
+            core.info(JSON.stringify(rows));
+      - name: Package tracked public source only
+        run: |
+          git archive --format=zip --output=public-source.zip HEAD scripts docs portal_suite workers .github README.md requirements.txt requirements-translation.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: locale-recovery-inspection
+          path: |
+            public-source.zip
+            recovery-failures.json
+          retention-days: 1
