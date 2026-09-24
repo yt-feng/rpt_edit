@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "id": "f219c2b60787d532dbc761c3dfd704c5b2262788f732ab1717602cc392474976",
+  "slug": "bbg-20260924-f219c2b60787d532",
+  "date": "2026-09-24",
+  "title": "AI数据中心散热压力显现 城市热岛效应引关注",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-09-23/ai-data-centers-have-a-heat-problem-video",
+  "start": 0.0,
+  "end": 82.54,
+  "segments": [
+    {
+      "start": 0.08,
+      "end": 5.68,
+      "en": "We do not want a data center in this county.",
+      "zh": "我们不希望本县建数据中心。"
+    },
+    {
+      "start": 5.68,
+      "end": 11.08,
+      "en": "Pushback over the enormous use of resources required by data centers can't be ignored.",
+      "zh": "数据中心资源消耗巨大，引发的反对不容忽视。"
+    },
+    {
+      "start": 11.08,
+      "end": 18.08,
+      "en": "And on top of the widely held concerns, lurks another factor, literally heating things up.",
+      "zh": "除了普遍担忧，还有一个因素在推高温度。"
+    },
+    {
+      "start": 18.08,
+      "end": 28.08,
+      "en": "What many people don't know is that the data centers are releasing massive amounts of heat into the atmosphere, raising local air temperatures in nearby neighborhoods.",
+      "zh": "许多人不知道，数据中心正释放大量热量，推高附近社区的气温。"
+    },
+    {
+      "start": 28.08,
+      "end": 44.01,
+      "en": "What you're seeing in this video is thermal infrared imagery that we took from a Cyrus I data center in Arizona.",
+      "zh": "这段视频是我们在亚利桑那州一个Cyrus I数据中心拍摄的热红外影像。"
+    },
+    {
+      "start": 44.01,
+      "end": 48.01,
+      "en": "It's basically showing just how hot these rooftops can get.",
+      "zh": "它基本展示了这些屋顶能有多热。"
+    },
+    {
+      "start": 48.01,
+      "end": 52.01,
+      "en": "The dark purple represents the lowest temperatures detected.",
+      "zh": "深紫色代表检测到的最低温度。"
+    },
+    {
+      "start": 52.01,
+      "end": 56.01,
+      "en": "The brightest yellows and whites represent the hottest temperatures.",
+      "zh": "最亮的黄色和白色代表最高温度。"
+    },
+    {
+      "start": 56.01,
+      "end": 65.01,
+      "en": "Bloomberg captured this footage to visualize hotspots on this data center, which was one of four studied by Arizona State University researchers.",
+      "zh": "彭博社拍摄这段影像，以可视化该数据中心的热点，它是亚利桑那州立大学研究人员研究的四个数据中心之一。"
+    },
+    {
+      "start": 65.01,
+      "end": 73.54,
+      "en": "For the Cyrus I data center, they found that temperatures were increasing up to four degrees Fahrenheit downwind.",
+      "zh": "对于Cyrus I数据中心，他们发现下风向温度升高了高达4华氏度。"
+    },
+    {
+      "start": 73.54,
+      "end": 79.54,
+      "en": "They also found that heat plumes were extending up to a third of a mile from facility perimeters.",
+      "zh": "他们还发现，热羽流从设施边界向外延伸可达三分之一英里。"
+    },
+    {
+      "start": 79.54,
+      "end": 82.54,
+      "en": "Data centers have been around for decades.",
+      "zh": "数据中心已经存在了几十年。"
+    }
+  ]
+}
