@@ -38,3 +38,36 @@ The candidate pipeline is intentionally not a publication path. Inactive-tree
 assembly, extended-locale approval, production cutover, live acceptance and
 rollback remain separate stages. The first real 24-page candidate has not yet
 been accepted or published.
+
+## 2026-09-24 handoff verification
+
+- Current branch head: `d0ecc1b2` (`fix: regenerate extended locale recovery
+  workflow`). The preceding production-candidate input splitter is
+  `dc182c56`; the recovery workflow generator now includes the R2 extended
+  candidate assembly step and its generated target is exact.
+- Local verification after the recovery fix: extended-locale tests 59/59,
+  Hy-MT2 tests 33/33, R2 tests 6/6, hardening tests 10/10, Neutral cutover
+  tests 34/34, recovery workflow tests 7/7, and restore/assembly tests 2/2.
+- Candidate run: Actions `36015823873`
+  (`https://github.com/yt-feng/rpt_edit/actions/runs/36015823873`) ran on
+  `dc182c5625174b8ed4eb947f77b86e533c209d71`, standard Ubuntu CPU runner,
+  pinned Hy-MT2, locale `en`, fixed source generation
+  `f334aac3023978818d18a4d28ed16cb2541a7b9b6ea803021f1fcd0502c812aa`, and
+  budget `2400` seconds. Source collection and R2 restore succeeded; the
+  build produced `1/24` pages and failed closed on 23 pages with
+  `offline-quantity-validation` and `table-structure-validation`. Paid
+  provider requests were `0`.
+- R2 recovery evidence from that run: checkpoint readback began at 48,041
+  bytes with SHA-256
+  `30a3c8d91302e2585a9911d8aab706211c37c1e70582041e5b0e8aab6e7ffcbc` and
+  the final immutable checkpoint persisted 78,890 bytes with SHA-256
+  `535ba8ace83174e7a0722d15bf74931721a448262083fbda904001fbd52d51e5`.
+  The private candidate receipt is incomplete: candidate
+  `e0202939a30ffd63774511aad7481add6691f48b549350c98d7a3333ce6d016e`,
+  manifest SHA-256
+  `cbb0a720fd2af78cd9b146c225e73e158b07ea6731bd5625473bce97fcee37d0`,
+  `ready=false`; no ready receipt was written.
+- Production state: no inactive-tree assembly, approval, cutover or live
+  sample was run for the new locales. Existing production locales and the
+  existing release path were not changed. PR #180 remains draft until a
+  complete candidate passes all gates.
