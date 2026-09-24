@@ -38,6 +38,41 @@ class Translator(Protocol):
     def translate(self, text: str, target: str, source: str | None = None, *, markdown: bool = True) -> str: ...
 
 
+def safe_failure_code(error: Exception) -> str:
+    """Return a bounded diagnostic code without exposing model/source text."""
+    name, message = type(error).__name__, str(error).casefold()
+    if name == 'OfflineTranslationValidationError':
+        for needle, code in (
+            ('quantity', 'offline-quantity-validation'),
+            ('placeholder', 'offline-placeholder-validation'),
+            ('markdown', 'offline-markdown-validation'),
+            ('target script', 'offline-target-script-validation'),
+            ('empty', 'offline-empty-validation'),
+            ('token limit', 'offline-token-limit'),
+        ):
+            if needle in message:
+                return code
+        return 'offline-validation'
+    if name == 'ExpansionError':
+        for needle, code in (
+            ('financial quantity', 'financial-quantity-validation'),
+            ('table column', 'table-structure-validation'),
+            ('untranslated source', 'untranslated-source-validation'),
+            ('chinese residue', 'chinese-residue-validation'),
+            ('target script', 'target-script-validation'),
+            ('unrestored', 'placeholder-validation'),
+            ('empty translated', 'empty-translation-validation'),
+            ('unbounded', 'translation-size-validation'),
+        ):
+            if needle in message:
+                return code
+        return 'expansion-validation'
+    return {
+        'TimeoutError': 'time-budget',
+        'OfflineTranslationError': 'offline-runtime',
+    }.get(name, 'translation-error')
+
+
 def validate_text(source: str, translated: str, locale: str, source_language: str) -> None:
     if not isinstance(translated, str) or not translated.strip(): raise ExpansionError('Empty translated text')
     if len(translated) > max(2000, len(source) * 12): raise ExpansionError('Unbounded translation expansion')
@@ -148,7 +183,8 @@ def build(corpus: dict, locale: str, output: Path, checkpoint: Path, translator:
         except Exception as error:
             # Persist accepted units and record a bounded error category. Do not
             # emit partial pages or serialize raw model responses to CI logs.
-            failures.append({'url': doc['url'], 'error': type(error).__name__})
+            failures.append({'url': doc['url'], 'error': type(error).__name__,
+                             'code': safe_failure_code(error)})
     memo.save()
     complete_urls = set(translated)
     records = []
@@ -199,6 +235,7 @@ def main() -> int:
     summary = {key: result[key] for key in ('locale', 'status', 'source_document_count', 'completed_page_count', 'paid_provider_requests', 'budget_exhausted')}
     summary['failure_count'] = len(result.get('failures') or [])
     summary['failure_types'] = sorted({str(row.get('error')) for row in result.get('failures') or []})
+    summary['failure_codes'] = sorted({str(row.get('code')) for row in result.get('failures') or []})
     print(json.dumps(summary))
     return 0 if result['status'] == 'complete-candidate' else 75 if result['budget_exhausted'] and not result['failures'] else 1
 
