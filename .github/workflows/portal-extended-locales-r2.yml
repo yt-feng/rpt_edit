@@ -5,6 +5,8 @@ name: Extended locales private R2 pipeline
 run-name: Extended locale R2 ${{ inputs.operation }} (${{ inputs.locales || 'roundtrip' }})
 
 on:
+  push:
+    branches: [codex/extended-locales-r2-20260924]
   workflow_dispatch:
     inputs:
       operation:
@@ -41,7 +43,11 @@ env:
 
 jobs:
   roundtrip:
-    if: inputs.operation == 'roundtrip'
+    if: >-
+      ${{
+        inputs.operation == 'roundtrip' ||
+        (github.event_name == 'push' && contains(github.event.head_commit.message, '[r2-roundtrip]'))
+      }}
     runs-on: ubuntu-22.04
     timeout-minutes: 15
     steps:
@@ -66,7 +72,11 @@ jobs:
             --prefix "$prefix" --run-id "${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
 
   source:
-    if: inputs.operation == 'candidate'
+    if: >-
+      ${{
+        inputs.operation == 'candidate' ||
+        (github.event_name == 'push' && contains(github.event.head_commit.message, '[r2-candidate]'))
+      }}
     runs-on: ubuntu-22.04
     timeout-minutes: 20
     outputs:
