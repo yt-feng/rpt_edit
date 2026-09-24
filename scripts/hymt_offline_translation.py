@@ -96,6 +96,9 @@ _LOCALIZED_MONEY_NAMES = {
     'fr': {'CNY': 'yuans', 'USD': 'dollars', 'HKD': 'dollars de Hong Kong', 'JPY': 'yens', 'GBP': 'livres', 'EUR': 'euros'},
     'pt': {'CNY': 'yuans', 'USD': 'dólares', 'HKD': 'dólares de Hong Kong', 'JPY': 'ienes', 'GBP': 'libras', 'EUR': 'euros'},
 }
+_NUMERIC_IDENTIFIER = re.compile(
+    r'(?<![A-Za-z0-9_])(?=[A-Za-z0-9_.]*[A-Za-z])(?=[A-Za-z0-9_.]*\d)'
+    r'[A-Za-z0-9][A-Za-z0-9_.]*[A-Za-z0-9](?![A-Za-z0-9_])')
 _ENGINES: dict[str, object] = {}
 _LOCK = threading.RLock()
 # Finance vocabulary constrains individual concepts, never whole sentences.
@@ -256,9 +259,13 @@ def _mask(text: str, target: str) -> tuple[str, dict[str, str], dict[str, str]]:
         currency = _CJK_MONEY_CURRENCY[match['currency']]
         value = _localized_money(_decimal_source(match['number']) * scale, currency, target)
         # Keep exact source spelling for locales without a reviewed rendering;
-        # this protects the quantity without pretending to have localized it.
+    # this protects the quantity without pretending to have localized it.
         return reserve(value or match.group(), replacements)
     masked = _CJK_MONEY_ATOM.sub(reserve_cjk_money, masked)
+    # Report titles contain compact date/provider and ticker identifiers such
+    # as 260921JPMorgan, 2Q26 and 000660.KS. Keep those exact source tokens
+    # intact; otherwise the quantity gate sees a changed numeric claim.
+    masked = _NUMERIC_IDENTIFIER.sub(lambda match: reserve(match.group(), replacements), masked)
     # Do this after opaque resources and controlled terms so digits inside a
     # protected token are never exposed as a second claim.  The model still
     # sees surrounding units and predicates, while exact source numbers are

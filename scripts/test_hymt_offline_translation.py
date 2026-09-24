@@ -206,6 +206,11 @@ class HyMTTests(unittest.TestCase):
             'revenus 4,2 milliards yuans, plus 120 millions dollars d’investissement.',
             'zh', 'fr'), [])
 
+    def test_numeric_identifier_lock_covers_compact_report_metadata(self):
+        masked, replacements, _terms = h._mask('JPM-China-260921JPMorgan · 2Q26 · 000660.KS', 'fr')
+        self.assertEqual(masked, 'JPM-China-__HYMTPH_0000__ · __HYMTPH_0001__ · __HYMTPH_0002__')
+        self.assertEqual(list(replacements.values()), ['260921JPMorgan', '2Q26', '000660.KS'])
+
     def test_plain_filename_punctuation_is_not_markdown_but_claims_remain_checked(self):
         translator = self.translator(lambda _: '短期增长__HYMTPH_0000__%')
         source = 'Short~term_growth 12.5%'
