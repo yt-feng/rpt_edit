@@ -1,0 +1,59 @@
+name: Extended locale integration
+on:
+  push:
+    branches: [codex/extended-locales-repair-20260924]
+    paths: [.github/workflows/extension-integration.yml]
+permissions:
+  contents: read
+  actions: read
+jobs:
+  inspect:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Snapshot public source and bounded failure diagnostics
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/extension-review
+          git archive --format=zip --output=/tmp/extension-review/source.zip HEAD scripts .github workers portal_suite README.md requirements.txt requirements-translation.txt
+          python - <<'PY'
+          import json, os, pathlib, urllib.request
+          root = pathlib.Path('/tmp/extension-review')
+          base = 'https://api.github.com/repos/' + os.environ['GITHUB_REPOSITORY']
+          def get(path):
+              request = urllib.request.Request(base + path, headers={'Authorization': 'Bearer ' + os.environ['GH_TOKEN'], 'Accept': 'application/vnd.github+json'})
+              with urllib.request.urlopen(request, timeout=40) as response:
+                  return response.read()
+          runs = json.loads(get('/actions/runs?per_page=100'))['workflow_runs']
+          fields = ('id', 'name', 'path', 'head_branch', 'head_sha', 'event', 'status', 'conclusion', 'created_at', 'updated_at', 'run_attempt')
+          (root / 'runs.json').write_text(json.dumps([{key: row.get(key) for key in fields} for row in runs], indent=2))
+          latest = {}
+          for row in runs:
+              if row['head_branch'] == 'main' and row['status'] == 'completed':
+                  latest.setdefault(row['path'], row)
+          failures = [row for row in latest.values() if row['conclusion'] in ('failure','timed_out','action_required')][:12]
+          summary = []
+          for row in failures:
+              jobs = json.loads(get('/actions/runs/' + str(row['id']) + '/jobs?per_page=100'))['jobs']
+              summary.append({'run': {key: row.get(key) for key in fields}, 'jobs': [{'id': job['id'], 'name': job['name'], 'conclusion': job['conclusion'], 'steps': job.get('steps', [])} for job in jobs]})
+              for job in jobs:
+                  if job['conclusion'] not in ('failure','timed_out'):
+                      continue
+                  try:
+                      log = get('/actions/jobs/' + str(job['id']) + '/logs').decode('utf-8', errors='replace')
+                      (root / ('job-' + str(job['id']) + '.log')).write_text(log)
+                  except Exception as error:
+                      print('Diagnostic log unavailable:', job['id'], type(error).__name__)
+          (root / 'failures.json').write_text(json.dumps(summary, indent=2))
+          print(json.dumps([{key: row.get(key) for key in fields} for row in failures], indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: extension-review
+          path: /tmp/extension-review
+          retention-days: 1
