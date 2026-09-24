@@ -153,6 +153,12 @@ def translate_document(doc: dict, memo: Memo) -> dict:
     # English UI literals and English report titles get explicit English source
     # context; Chinese prose is not translated via a pivot or paid fallback.
     def translate(text, *, markdown=False):
+        if '|' in text:
+            # Public source headings/lists use a literal pipe as a title
+            # separator (for example, ``title | KC桌面``), not an HTML table.
+            # Keep that structural byte outside model inference while each
+            # side remains an independently validated translation unit.
+            return '|'.join(translate(part, markdown=markdown) for part in text.split('|'))
         language = _detect_source(text)
         return memo.get(text, language, markdown=markdown)
     return {'title': translate(doc['title']), 'description': translate(doc['description']),
