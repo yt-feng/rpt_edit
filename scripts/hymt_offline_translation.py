@@ -30,10 +30,11 @@ MANIFEST = json.loads(MANIFEST_PATH.read_text(encoding='utf-8'))
 PROVIDER = 'hymt'
 MODEL = MANIFEST['model']['repository']
 REVISION = MANIFEST['model']['revision']
-# The policy identity is part of every durable checkpoint/cache key.  A
-# bounded quality retry changes the sampling path, so it must not reuse rows
-# created by the previous single-attempt policy.
-MODEL_ID = f"{MODEL}@{REVISION}:Q8_0:natural-sentence-v5-quality-retry:{hashlib.sha256(MANIFEST_PATH.read_bytes()).hexdigest()[:16]}"
+# Keep the durable model identity stable across a quality-policy improvement:
+# rows already accepted by the strict gates remain safe to resume, while rows
+# rejected by the old policy are retried below. The pinned model/runtime and
+# validation contract are unchanged.
+MODEL_ID = f"{MODEL}@{REVISION}:Q8_0:natural-sentence-v4-table-structure:{hashlib.sha256(MANIFEST_PATH.read_bytes()).hexdigest()[:16]}"
 INSTALL_COMMAND = 'Use .github/actions/setup-offline-translation on a Linux GitHub Actions runner'
 # Recognize the complete reserved token even when a filename underscore or
 # Markdown emphasis touches it; those surrounding underscores are punctuation.
