@@ -3936,6 +3936,34 @@
     "worldbank:099348209212613828": {
       "first_seen": "2026-09-22",
       "status": "downloaded"
+    },
+    "imf:a8d3185fabcc4c719c5a1911a54d0551f35f733990a61f31c1219624d08a": {
+      "first_seen": "2026-09-24",
+      "status": "downloaded"
+    },
+    "worldbank:099754209232619673": {
+      "first_seen": "2026-09-24",
+      "status": "downloaded"
+    },
+    "worldbank:099256409232640706": {
+      "first_seen": "2026-09-24",
+      "status": "downloaded"
+    },
+    "worldbank:099327309232698561": {
+      "first_seen": "2026-09-24",
+      "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publ/work1379.htm": {
+      "first_seen": "2026-09-24",
+      "status": "downloaded"
+    },
+    "wef:https://www.weforum.org/publications/chief-economists-outlook-september-2026/": {
+      "first_seen": "2026-09-24",
+      "status": "downloaded"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/blog_23sep26_492_e.htm": {
+      "first_seen": "2026-09-24",
+      "status": "no_pdf"
     }
   }
 }
