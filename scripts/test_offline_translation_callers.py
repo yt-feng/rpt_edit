@@ -89,7 +89,7 @@ class OfflineTranslationCallerTests(unittest.TestCase):
     def test_full_report_partial_source_notice_metadata_and_clean_rerun(self):
         engine = Mock()
         def respond(text, _source, _target):
-            return {'Cash reserves were USD 120 million.': '现金储备为120万美元。',
+            return {'Cash reserves were USD __HYMTPH_0000__ million.': '现金储备为__HYMTPH_0000__万美元。',
                     'Revenue grew.': '收入增长。', 'Growth report': '增长报告'}[text]
         engine.translate.side_effect = respond
         with tempfile.TemporaryDirectory() as tmp:
@@ -132,7 +132,7 @@ class OfflineTranslationCallerTests(unittest.TestCase):
             self.assertTrue(decision['source_retained'])
             self.assertEqual(args._translation_source_fallbacks[0]['phase'], 'title')
             self.assertFalse(list(root.rglob('*.json')))
-            engine.translate.return_value = '收入增长12.5%'
+            engine.translate.return_value = '收入增长__HYMTPH_0000__%'
             with patch.object(reports, 'decide_filename_anchored_title', return_value=('收入增长12.5%', {})):
                 title, decision = reports.wechat_title_from_filename(source, '正文', '', args, editorial=False)
             self.assertEqual(title, '收入增长12.5%')
