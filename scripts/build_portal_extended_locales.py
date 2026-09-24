@@ -13,7 +13,7 @@ import re
 import time
 from typing import Protocol
 from compare_hymt_translation import SCRIPT_PATTERNS, require_actions
-from offline_translation import OfflineTranslator, MODEL_ID, PROVIDER
+from offline_translation import OfflineTranslator, MODEL_ID, PROVIDER, _detect_source
 from financial_quantity_integrity import quantity_issues
 from portal_extended_locales import (
     ADDITIONAL, COPY, ORIGIN, ExpansionError, digest, file_for_url, render_document,
@@ -112,12 +112,15 @@ class Memo:
                 self.rows = payload.get('rows', {})
                 if not isinstance(self.rows, dict): raise ExpansionError('Invalid checkpoint rows')
 
-    def key(self, source: str, language: str) -> str:
-        return digest(stable_bytes([CHECKPOINT_VERSION, MODEL_ID, self.locale, language, source]))
+    def key(self, source: str, language: str, *, markdown: bool = False) -> str:
+        parts = [CHECKPOINT_VERSION, MODEL_ID, self.locale, language, source]
+        if markdown:
+            parts.append('markdown')
+        return digest(stable_bytes(parts))
 
-    def get(self, source: str, language: str = 'zh') -> str:
+    def get(self, source: str, language: str = 'zh', *, markdown: bool = False) -> str:
         if not source.strip(): return source
-        key = self.key(source, language)
+        key = self.key(source, language, markdown=markdown)
         row = self.rows.get(key)
         if isinstance(row, dict) and row.get('source') == source and row.get('language') == language:
             try:
@@ -126,7 +129,7 @@ class Memo:
                 return row['text']
             except ExpansionError: self.rows.pop(key, None)
         if time.monotonic() >= self.deadline: raise TimeoutError('Local translation time budget reached')
-        translated = self.translator.translate(source, target=self.locale, source=language, markdown=False)
+        translated = self.translator.translate(source, target=self.locale, source=language, markdown=markdown)
         self.calls += 1
         validate_text(source, translated, self.locale, language)
         self.rows[key] = {'source': source, 'language': language, 'text': translated}
@@ -149,13 +152,14 @@ class Memo:
 def translate_document(doc: dict, memo: Memo) -> dict:
     # English UI literals and English report titles get explicit English source
     # context; Chinese prose is not translated via a pivot or paid fallback.
-    def translate(text):
-        from offline_translation import _detect_source
+    def translate(text, *, markdown=False):
         language = _detect_source(text)
-        return memo.get(text, language)
+        return memo.get(text, language, markdown=markdown)
     return {'title': translate(doc['title']), 'description': translate(doc['description']),
             'copy': {key: memo.get(value, 'en') for key, value in COPY.items()},
-            'blocks': [{'tag': b['tag'], 'text': translate(b['text'])} for b in doc['blocks']],
+            'blocks': [{'tag': b['tag'], 'text': translate(
+                b['text'], markdown=b['tag'] == 'tr')}
+                       for b in doc['blocks']],
             'links': [{'url': row['url'], 'label': translate(row['label'])} for row in doc['links']]}
 
 
