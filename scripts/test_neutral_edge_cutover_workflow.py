@@ -294,6 +294,13 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertNotIn("ref: main", self.workflow)
         self.assertNotIn('echo "::add-mask::$release_id"', self.workflow)
 
+    def test_cutover_transaction_guard_receives_empty_extended_locale_value(self) -> None:
+        cutover = self.workflow.split("\n  cutover:\n", 1)[1].split("\n    steps:\n", 1)[0]
+        self.assertIn(
+            "EXTENDED_LOCALES: ${{ needs.prepare_release.outputs.extended_locales || '' }}",
+            cutover,
+        )
+
     def test_portal_suite_uses_stable_isolated_node_runner(self) -> None:
         self.assertIn("for test_file in portal_suite/tests/*.test.mjs; do", self.workflow)
         self.assertIn('node "$test_file"', self.workflow)
