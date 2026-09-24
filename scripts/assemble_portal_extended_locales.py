@@ -82,7 +82,16 @@ def head_alternates(source: str, alternates: dict[str, str]) -> str:
     return start + MARKER_START + '\n' + links + '\n' + MARKER_END + sep + tail
 
 
-def assemble(root: Path, corpus: dict, directories: list[Path], approved: tuple[str, ...], *, apply=False, origin=ORIGIN) -> dict:
+def assemble(
+    root: Path,
+    corpus: dict,
+    directories: list[Path],
+    approved: tuple[str, ...],
+    *,
+    apply=False,
+    origin=ORIGIN,
+    existing_locales: tuple[str, ...] = (),
+) -> dict:
     docs = validate_corpus(corpus, origin=origin)
     root = root.resolve()
     if not root.is_dir() or root == Path(root.anchor) or not (root / 'index.html').is_file():
@@ -108,6 +117,8 @@ def assemble(root: Path, corpus: dict, directories: list[Path], approved: tuple[
         if not source.is_file() or source.is_symlink() or digest(source.read_bytes()) != doc['source_html_sha256']:
             raise ExpansionError('Inactive source differs from the reviewed corpus; rebuild against this source generation')
         alternatives = {'zh-Hans': doc['url'], 'x-default': doc['url']}
+        for code in existing_locales:
+            alternatives[HREFLANG.get(code, code)] = locale_url(doc['url'], code, origin=origin)
         # Preserve an existing alternate only when its matching local page is
         # present and correctly self-canonical. Do not invent ko/ja/ar URLs.
         for code, url in doc.get('source_alternates', {}).items():
@@ -125,7 +136,8 @@ def assemble(root: Path, corpus: dict, directories: list[Path], approved: tuple[
         for code in ('ko', 'ja', 'ar'):
             if code in alternatives:
                 p = root / code / relative
-                planned[(Path(code) / relative).as_posix()] = head_alternates(p.read_text(), alternatives).encode()
+                if p.is_file():
+                    planned[(Path(code) / relative).as_posix()] = head_alternates(p.read_text(), alternatives).encode()
         for code in approved:
             key = (Path(code) / relative).as_posix()
             html = payloads[key].decode()

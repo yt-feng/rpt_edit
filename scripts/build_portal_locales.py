@@ -36,6 +36,7 @@ from urllib.parse import parse_qsl, unquote, urlencode, urljoin, urlsplit, urlun
 import xml.etree.ElementTree as ET
 from zoneinfo import ZoneInfo
 
+from compare_hymt_translation import LANGUAGES
 from portal_lazy_assets import fingerprint_newsfeed_loader
 from portal_locale_history import plan_history_release
 from portal_locale_literals import is_chart_geography_identity_label, is_chart_metric_identity_label, is_japanese_identity_label, is_latin_name_literal, is_machine_asset_reference, is_optical_acronym_label, is_shared_japanese_keyword, is_short_latin_label_translation
@@ -100,7 +101,10 @@ DEEPSEEK_KEY_ENV_NAMES = (
 DEFAULT_BATCH_CHARS = 12_000
 DEFAULT_BATCH_ITEMS = 32
 MAX_UNIT_CHARS = 3_500
-LOCALE_DIRS = frozenset({"ko", "ja", "ar"})
+# Extended candidates are assembled into the fresh inactive tree before this
+# established three-locale builder runs. Keep them out of its Chinese source
+# inventory; their own Hy-MT2 pages have already passed their separate gates.
+LOCALE_DIRS = frozenset({"ko", "ja", "ar", *LANGUAGES})
 SITE_VERIFICATION_HTML_RE = re.compile(
     r"(?:baidu_verify_codeva-[A-Za-z0-9]{10}|google[0-9a-f]{16})\.html"
 )
@@ -5151,10 +5155,9 @@ def inject_root_discovery(source: str, canonical: str, site_url: str, asset_vers
     match = re.search(r"</head\s*>", source, flags=re.I)
     if not match:
         raise TranslationError("Generated HTML has no closing head tag")
-    head = remove_existing_locale_discovery(
-        source[:match.start()],
-        hreflangs_to_remove=frozenset(LOCALES),
-    ).rstrip()
+    preserve_extended = os.environ.get("PORTAL_EXTENDED_LOCALES_ASSEMBLED") == "true"
+    remove_codes = frozenset((*LOCALES, "zh-Hans", "x-default")) if preserve_extended else frozenset(LOCALES)
+    head = remove_existing_locale_discovery(source[:match.start()], hreflangs_to_remove=remove_codes).rstrip()
     return head + discovery_links(
         canonical if root_discovery_eligible(source, canonical, site_url) else "",
         site_url,
@@ -5835,8 +5838,16 @@ def _build_localized_release(
             # and keeps the non-blocking deferred load.
             discovery_canonical = localized_canonical if index_plan[path].indexable else ""
             markup = discovery_links(discovery_canonical, site_url, asset_digest, defer_runtime=False)
+            preserve_extended = os.environ.get("PORTAL_EXTENDED_LOCALES_ASSEMBLED") == "true"
+            source_without_discovery = remove_existing_locale_discovery(
+                source,
+                hreflangs_to_remove=(
+                    frozenset((*LOCALES, "zh-Hans", "x-default"))
+                    if preserve_extended else None
+                ),
+            )
             localized_html = render_localized_html(
-                remove_existing_locale_discovery(source),
+                source_without_discovery,
                 locale=locale,
                 cache=cache,
                 site_url=site_url,

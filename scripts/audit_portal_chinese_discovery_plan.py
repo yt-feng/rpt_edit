@@ -14,7 +14,7 @@ def audit(root: Path, site_url: str) -> dict:
     checked = clusters = 0
     for path in sorted(root.rglob("*.html")):
         relative = path.relative_to(root).as_posix()
-        if path.relative_to(root).parts[0] in builder.LOCALES or parity.is_site_verification_html(relative):
+        if path.relative_to(root).parts[0] in builder.LOCALE_DIRS or parity.is_site_verification_html(relative):
             continue
         before = path.read_bytes()
         source = before.decode("utf-8")

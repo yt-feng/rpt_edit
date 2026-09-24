@@ -21,13 +21,17 @@ from typing import Any, Iterable
 from urllib.parse import urlsplit, urlunsplit
 import xml.etree.ElementTree as ET
 
+from compare_hymt_translation import LANGUAGES
+
 
 SCHEMA_VERSION = 1
 SNAPSHOT_KIND = "portal-chinese-parity-snapshot"
 VERIFY_KIND = "portal-chinese-parity-verification"
 DEFAULT_SITE_ORIGIN = "https://portal.example.invalid"
 LOCALES = ("ko", "ja", "ar")
-LOCALE_DIRS = frozenset(LOCALES)
+# All localized trees are outside the Chinese parity inventory. The established
+# builder still owns only LOCALES; extended candidates have their own gates.
+LOCALE_DIRS = frozenset((*LOCALES, *LANGUAGES))
 LOCALE_ASSET_PATHS = frozenset(("assets/locale.css", "assets/locale-runtime.js", "assets/locale-recovery.js", "assets/locale-detail.js"))
 LOCALE_SITEMAPS = frozenset(f"sitemap-{locale}.xml" for locale in LOCALES)
 REQUIRED_PROTECTED_PATHS = frozenset(
