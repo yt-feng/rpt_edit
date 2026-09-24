@@ -1,0 +1,90 @@
+name: Extended locales offline checks
+on:
+  pull_request:
+    paths:
+      - 'scripts/*extended*'
+      - 'scripts/*hymt*'
+      - '.github/actions/setup-offline-translation/action.yml'
+      - 'workers/edge-static-host/**'
+      - '.github/workflows/portal-extended-locales-check.yml'
+  push:
+    branches: [main, codex/extended-locales-r2-20260924]
+    paths:
+      - 'scripts/*extended*'
+      - 'scripts/*hymt*'
+      - '.github/actions/setup-offline-translation/action.yml'
+      - 'workers/edge-static-host/**'
+      - '.github/workflows/portal-extended-locales-check.yml'
+  workflow_dispatch:
+    inputs:
+      run_model_canary:
+        description: Run four bounded public-sample checks on the pinned free CPU model
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: extended-locales-check-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  regression:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'pull_request' && github.event.pull_request.draft == false) ||
+      (github.event_name == 'push' && (github.ref == 'refs/heads/main' || contains(github.event.head_commit.message, '[locale-foundation-ready]')))
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check new modules and unchanged offline translation contracts
+        run: |
+          set -euo pipefail
+          python -m pip install 'requests>=2.31,<3' 'Pillow>=10.1,<12' 'PyYAML>=6,<7'
+          python -B scripts/test_portal_extended_locales.py
+          python -B scripts/test_portal_extended_hardening.py
+          python -B scripts/test_hymt_offline_translation.py
+          python -B scripts/test_compare_hymt_translation.py
+          python -B scripts/test_financial_quantity_integrity.py
+          python -B scripts/test_offline_translation_callers.py
+          python -B scripts/test_portal_offline_locales.py
+          python -B scripts/test_translate_portal_titles.py
+          python -B scripts/check_public_identity.py
+          for test in workers/edge-static-host/test/*.test.mjs; do node --test "$test"; done
+  model-canary:
+    needs: regression
+    if: >-
+      github.event.repository.private == false &&
+      ((github.event_name == 'workflow_dispatch' && inputs.run_model_canary == true) ||
+       (github.event_name == 'push' && contains(github.event.head_commit.message, '[locale-canary]')))
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        locale: [en, fr, hi, zh-Hant]
+    env:
+      KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: ./.github/actions/setup-offline-translation
+        with:
+          targets: ${{ matrix.locale }}
+          persist-audit: 'false'
+      - name: Check public samples without publishing content or storing translation artifacts
+        env:
+          CANARY_LOCALE: ${{ matrix.locale }}
+        run: python -B scripts/smoke_portal_extended_locales.py --locales "$CANARY_LOCALE"
