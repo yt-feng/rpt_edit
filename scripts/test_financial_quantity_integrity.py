@@ -44,6 +44,12 @@ class FinancialQuantityTests(unittest.TestCase):
                                        'मार्जिन 2.5 प्रतिशत अंक बढ़ा।'), [])
         self.assertEqual(quantity_issues('Margin rose 2.5 percentage points.',
                                        'मार्जिन 2.5 प्रतिशत बिंदु बढ़ा।'), [])
+        self.assertEqual(quantity_issues('Increased 25 basis points.',
+                                       '25 आधार अंक बढ़ा।'), [])
+        self.assertEqual(quantity_issues('Revenue was CNY 120 million.',
+                                       'राजस्व 12 करोड़ युआन था।'), [])
+        self.assertEqual(quantity_issues('New 15th Five-Year Plan.',
+                                       'नई 15वीं पंचवर्षीय योजना।'), [])
         self.assertTrue(quantity_issues('Margin rose 2.5 percentage points to 18.5%.',
                                        '利润率上升2.5%，达到18.5%。'))
         self.assertEqual(quantity_issues('利润率为23%，收入同比下降4.7%。',

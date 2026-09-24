@@ -53,7 +53,9 @@ _QUANTITY_FACT = re.compile(
     r'|\d{4}[-/]\d{1,2}(?:[-/]\d{1,2})?'
     r'|\d{1,2}[QH]\d{2,4}|\d{2,4}[QH]\d{1,2}'
     r'|[A-Za-z][A-Za-z0-9._-]*\d[A-Za-z0-9._-]*'
-    r'|\d{2,8}'
+    r'|[+\-−]?\d+(?:st|nd|rd|th)(?![A-Za-z0-9_])'
+    r'|[+\-−]?\d+(?:[.,]\d+)*(?![A-Za-z0-9_])'
+    r'|\d{1,8}'
     r')(?![A-Za-z0-9_])')
 # Financial amounts, dates, percentages, names, and predicates are intentionally
 # absent from opaque-resource masking: splitting those away from the sentence

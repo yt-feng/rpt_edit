@@ -78,11 +78,11 @@ SCALES = {
 SCALE = "(?:" + "|".join(re.escape(value) for value in sorted(SCALES, key=len, reverse=True)) + ")"
 CURRENCIES = {
     "USD": ("USD", "US$", "$", "US dollars", "U.S. dollars", "US dollar", "U.S. dollar", "dollars", "dollar", "dólar", "dólares", "dólar americano", "dólares americanos", "dolar", "dolars", "Dollar", "Dollars", "доллар", "доллара", "долларов", "долар", "долари", "доларів", "doları", "dolar", "đô la", "долар أمريكي", "دولار أمريكي", "دولارات", "دولار", "долلار", "डॉलर", "ડોલર", "ডলার", "డాలర్", "டாலர்", "דולר", "دلار", "ドル", "달러", "美元", "美金"),
-    "CNY": ("CNY", "RMB", "人民币", "元人民币", "元", "yuan", "yuans", "renminbi", "Chinese yuan", "Chinese renminbi", "人民币元", "위안", "юань", "юаней", "юань", "yuanes", "юанів"),
-    "EUR": ("EUR", "€", "euros", "euro", "евро", "euro", "euros", "евро", "еврo", "欧元", "유로"),
-    "GBP": ("GBP", "£", "pounds", "pound", "livre", "livres", "libra", "libras", "Pfund", "фунт", "фунтов", "英镑"),
-    "JPY": ("JPY", "日元", "円", "yen", "ienes", "iene", "иен", "иены", "иенов", "엔"),
-    "HKD": ("HKD", "HK$", "港元", "港币", "Hong Kong dollar", "Hong Kong dollars", "доллар Гонконга"),
+    "CNY": ("CNY", "RMB", "人民币", "元人民币", "元", "yuan", "yuans", "renminbi", "Chinese yuan", "Chinese renminbi", "人民币元", "위안", "юань", "юаней", "юань", "yuanes", "юанів", "युआन", "रॅन्मिन्बी"),
+    "EUR": ("EUR", "€", "euros", "euro", "евро", "euro", "euros", "евро", "еврo", "欧元", "유로", "यूरो"),
+    "GBP": ("GBP", "£", "pounds", "pound", "livre", "livres", "libra", "libras", "Pfund", "фунт", "фунтов", "英镑", "पाउंड"),
+    "JPY": ("JPY", "日元", "円", "yen", "ienes", "iene", "иен", "иены", "иенов", "엔", "येन"),
+    "HKD": ("HKD", "HK$", "港元", "港币", "Hong Kong dollar", "Hong Kong dollars", "доллар Гонконга", "हांगकांग डॉलर"),
 }
 ALIASES = {alias.casefold(): code for code, aliases in CURRENCIES.items() for alias in aliases}
 CURRENCY = "(?:" + "|".join(re.escape(s) for s in sorted(ALIASES, key=len, reverse=True)) + ")"
@@ -230,6 +230,8 @@ def quantities(text: str) -> Counter:
          lambda m: ("five_year_plan", chinese_ordinal(m[1])))
     take(r"([一二三四五六七八九十]+)五(?=规划|计划|时期|期间)",
          lambda m: ("five_year_plan", chinese_ordinal(m[1])))
+    take(r"(?<!\d)(\d+)(?:वीं|वां|वाँ)?\s*पंचवर्षीय",
+         lambda m: ("five_year_plan", int(m[1])))
 
     # Currency recognition comes before scaled plain numbers. Keep the unit
     # separate so USD120m can never match an unqualified 120 or CNY120m.
@@ -239,7 +241,7 @@ def quantities(text: str) -> Counter:
     # Alphabetic boundaries avoid interpreting the suffix of e.g. "dollars".
     take(rf"(?<![A-Za-z])(?P<currency>{CURRENCY})\s*(?P<number>{NUMBER})\s*(?P<scale>{SCALE})?(?![\dA-Za-z])", money)
     take(rf"(?<![\dA-Za-z])(?P<number>{NUMBER})\s*(?P<scale>{SCALE})?\s*(?:(?:of|de|do|da|dos|das|des|d')\s*)?(?P<currency>{CURRENCY})(?![A-Za-z])", money)
-    take(rf"({NUMBER})\s*(?:basis\s+points?|bps\b|基点|基點|points?\s+de\s+base|pontos?[- ]base|puntos?\s+básicos?|punti\s+base|Basispunkte?|procentpunt(?:en)?|punkty\s+procentowe|процентн(?:ых|ых)\s+пункт(?:ов)?|відсотков(?:их|і)\s+пункт(?:ів)?|yüzde\s+puan|điểm\s+cơ\s+bản|pontos?\s+base)",
+    take(rf"({NUMBER})\s*(?:basis\s+points?|bps\b|基点|基點|points?\s+de\s+base|pontos?[- ]base|puntos?\s+básicos?|punti\s+base|Basispunkte?|procentpunt(?:en)?|punkty\s+procentowe|процентн(?:ых|ых)\s+пункт(?:ов)?|відсотков(?:их|і)\s+пункт(?:ів)?|yüzde\s+puan|điểm\s+cơ\s+bản|pontos?\s+base|आधार\s+अंक|बेसिस\s+पॉइंट्स?)",
          lambda m: ("percentage_points", _decimal(m[1]) / 100))
     take(rf"(?P<number>{NUMBER})\s*(?:percentage\s+points?|percent(?:age)?\s+points?|points?\s+de\s+pourcentage|points?\s+de\s+pourcent|pontos?\s+percentuais?|puntos?\s+porcentuales?|punti\s+percentuali|Prozentpunkte?|procentpunt(?:en)?|punkty\s+procentowe|процентн(?:ых|ых)\s+пункт(?:ов)?|відсотков(?:их|і)\s+пункт(?:ів)?|yüzde\s+puan|điểm\s+phần\s+trăm|个百分点|個百分點|パーセントポイント|퍼센트포인트|نقطة\s+مئوية|نقاط\s+مئوية|प्रतिशत\s+(?:अंक|बिंदु))",
          lambda m: ("percentage_points", _decimal(m['number'])))
