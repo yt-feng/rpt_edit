@@ -1,73 +1,66 @@
 # Extended locales R2 progress
 
-This checkpoint is maintained alongside the implementation. It records code and
-verification state only; generated source, translations, checkpoints, candidate
-HTML and credentials stay out of Git.
+This checkpoint records implementation and verification state only. Generated
+source, translations, checkpoints, candidate HTML and credentials stay out of
+Git.
 
-## Stage B — private R2 persistence
+## Committed implementation
 
-- Code commit: `e005d692fe47e5f5c6e3a6ade4e38c151a301aa0`
-- Source identity: the checkpoint now carries the fixed corpus
-  `documents_sha256`; a restored checkpoint is rejected when its locale, model,
-  provider, version or source generation differs.
-- Namespaces: private `sources`, immutable checkpoint objects plus `latest`
-  pointers, and candidate objects under their source generation/locale/candidate
-  digest. A complete candidate alone gets a `candidate-ready.json` receipt.
-- Validation: every put/read verifies bounded byte count and SHA-256 metadata;
-  missing objects, permission failures, transient failures and integrity errors
-  remain distinct. Incomplete candidates have no ready receipt and cannot be
-  restored for assembly.
-- Actions: `.github/workflows/portal-extended-locales-r2.yml` adds a manually
-  dispatched private round-trip and bounded candidate pipeline. It uses the
-  existing `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, and
-  `R2_BUCKET` names, standard Ubuntu runners, the pinned Hy-MT2 action, a 24-page
-  source batch, 1..2400 seconds per locale, and matrix concurrency of two.
-- Local verification: `test_portal_extended_r2.py` 6/6, extended locale tests
-  57/57, hardening tests 10/10, Python syntax and both workflow YAML parses pass.
-- Live staging verification: Actions run `36002784789` completed successfully on
-  the branch head `85ab68a06242140967d490d73f768726209422d5`. Its isolated
-  private prefix was `_extended-locales/staging/roundtrip-36002784789-1`; the
-  readback receipt was 79 bytes with SHA-256
+- Branch: `codex/extended-locales-r2-20260924`
+- Implementation head: `d9cf575de6817ef5afcacd0e60b25470c1cf1261`
+- PR: `#180`, ready for review; the branch contains the R2 persistence layer,
+  resumable per-locale checkpoints, bounded two-at-a-time Actions execution,
+  candidate assembly gates, locale response headers and regression coverage.
+- Production translation remains pinned to the existing Hy-MT2 CPU action. No
+  paid-provider or manual-translation fallback is present.
+- The latest source generation is
+  `f334aac3023978818d18a4d28ed16cb2541a7b9b6ea803021f1fcd0502c812aa`; its
+  restored corpus is 461,257 bytes with SHA-256
+  `36693cde44ad685bef6cdc89e90cd23d64f5ef21975f4f85175452b0ccf53857`.
+
+## Checks passed
+
+- Local suite: `278` tests passed, `1` skipped; `git diff --check` and Python
+  syntax compilation passed.
+- PR #180 audit, regression, locale, workflow and Ubuntu 22.04/24.04 real CPU
+  checks passed at the implementation head.
+- R2 private round-trip Actions run `36002784789` passed on
+  `85ab68a06242140967d490d73f768726209422d5`. Its isolated prefix was
+  `_extended-locales/staging/roundtrip-36002784789-1`; the 79-byte readback
+  receipt SHA-256 was
   `ed595ebe90a93c9db028b0a0d06ebf1418f5a32c4236c14bcc6e52ef9557a4ec`.
-  The same run classified the deliberate permission probe as `R2PermissionError`.
-  No secret value or translation payload was printed.
+  The deliberate permission probe was classified as `R2PermissionError`.
 
-## Current boundary
+## Candidate runs completed, but not publishable
 
-The candidate pipeline is intentionally not a publication path. Inactive-tree
-assembly, extended-locale approval, production cutover, live acceptance and
-rollback remain separate stages. The first real 24-page candidate has not yet
-been accepted or published.
-
-## 2026-09-24 handoff verification
-
-- Implementation head: `d0ecc1b2` (`fix: regenerate extended locale
-  recovery workflow`); documentation-only follow-ups are `c075fbda` and
-  `58c5a681`. The production-candidate input splitter is `dc182c56`;
-  the recovery workflow generator now includes the R2 extended candidate assembly
-  step and its generated target is exact.
-- Local verification after the recovery fix: extended-locale tests 59/59,
-  Hy-MT2 tests 33/33, R2 tests 6/6, hardening tests 10/10, Neutral cutover
-  tests 34/34, recovery workflow tests 7/7, and restore/assembly tests 2/2.
-- Candidate run: Actions `36015823873` ran on
-  `dc182c5625174b8ed4eb947f77b86e533c209d71`, standard Ubuntu CPU runner,
-  pinned Hy-MT2, locale `en`, fixed source generation
-  `f334aac3023978818d18a4d28ed16cb2541a7b9b6ea803021f1fcd0502c812aa`, and
-  budget `2400` seconds. Source collection and R2 restore succeeded; the
-  build produced `1/24` pages and failed closed on 23 pages with
-  `offline-quantity-validation` and `table-structure-validation`. Paid
-  provider requests were `0`.
-- R2 recovery evidence from that run: checkpoint readback began at 48,041
-  bytes with SHA-256
-  `30a3c8d91302e2585a9911d8aab706211c37c1e70582041e5b0e8aab6e7ffcbc` and
-  the final immutable checkpoint persisted 78,890 bytes with SHA-256
-  `535ba8ace83174e7a0722d15bf74931721a448262083fbda904001fbd52d51e5`.
-  The private candidate receipt is incomplete: candidate
-  `e0202939a30ffd63774511aad7481add6691f48b549350c98d7a3333ce6d016e`,
+- `en`, Actions run `36035913434`: `1/24` pages completed, 23 failed closed;
+  candidate `e0202939a30ffd63774511aad7481add6691f48b549350c98d7a3333ce6d016e`,
   manifest SHA-256
-  `cbb0a720fd2af78cd9b146c225e73e158b07ea6731bd5625473bce97fcee37d0`,
-  `ready=false`; no ready receipt was written.
-- Production state: no inactive-tree assembly, approval, cutover or live
-  sample was run for the new locales. Existing production locales and the
-  existing release path were not changed. PR #180 remains draft until a
-  complete candidate passes all gates.
+  `f47511af4d8d849c1acc65758a65b4dfd7fbac2c90b869683f1538b693d81549`,
+  `ready=false`, `paid_provider_requests=0`.
+- `hi`, latest Actions run `36044306006`: `0/24` pages completed, 24 failed
+  closed with `offline-quantity-validation`,
+  `offline-target-script-validation` and `table-structure-validation`.
+  `budget_exhausted=false`, `paid_provider_requests=0`. The resumable
+  checkpoint read/write remained 58,963 bytes with SHA-256
+  `d495e462a04acf1068ccdf0c552053df0d5e7b3e49e04e61bba6c173b6222b28`.
+  The incomplete candidate was
+  `37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570`, with
+  manifest SHA-256
+  `da31b53ecd05b2c3b14b6cb79b7c2d2168efe76ddd5389989b8e4f0ea52b0830`,
+  `ready=false`, `uploaded_object_count=1`.
+- These runs are completed evidence, not successful publication runs. No
+  incomplete candidate receives a ready receipt or enters assembly.
+
+## Production boundary
+
+- Existing production release path was previously verified by successful
+  neutral cutover run `36011627290` on `ceb7eddf9f06bd84359e9440eccd3574c536f1d1`.
+  Live edge state reported release
+  `7fccdbdcb150731382c30397e74ed9a2` and tree SHA
+  `966625402781f142b94d7db608508c0f79de4f0ae463f3eb2cbc9d974aaa113d`.
+- Existing `/`, `/ko/`, `/ja/` and `/ar/` pages were live; `/en/`, `/fr/`,
+  `/pt/` and `/zh-Hant/` remained 404 because they are not approved releases.
+- No new locale has been assembled, approved, switched, indexed or published.
+  Existing Chinese, Korean, Japanese and Arabic behavior, permissions, source
+  checks, publishing locks, approval and rollback paths remain unchanged.
