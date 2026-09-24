@@ -292,6 +292,8 @@ class _HyMTEngine:
                   'Do not append inferred units or percent signs to placeholders. '
                   'Each __HYMTPH_...__ is an already translated noun or protected resource; integrate it without rewriting it. '
                   'Preserve Markdown formatting. Do not change financial facts, units, or comparisons. '
+                  'Copy every source digit sequence, date, percentage, currency amount, and numeric unit exactly; '
+                  'translate the surrounding words without normalizing, rounding, dropping, or inventing numeric facts. '
                   + financial_glossary(text, target) + '\n' + text)
         response = request_json(self.port, '/v1/chat/completions', {
             'model': 'hymt-offline', 'messages': [{'role': 'user', 'content': prompt}],
