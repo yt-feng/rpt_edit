@@ -22,7 +22,7 @@ import threading
 import time
 from typing import Callable, Sequence
 
-from compare_hymt_translation import LANGUAGES, request_json, require_actions, verify_model, file_sha256
+from compare_hymt_translation import LANGUAGES, SCRIPT_PATTERNS, request_json, require_actions, verify_model, file_sha256
 from financial_quantity_integrity import FIVE_YEAR_PERIOD_RE, quantity_issues
 
 MANIFEST_PATH = Path(__file__).with_name('hymt_translation_model_manifest.json')
@@ -35,7 +35,7 @@ INSTALL_COMMAND = 'Use .github/actions/setup-offline-translation on a Linux GitH
 # Recognize the complete reserved token even when a filename underscore or
 # Markdown emphasis touches it; those surrounding underscores are punctuation.
 _PLACEHOLDERS = re.compile(r'__(?:KC_PH_\d+|HYMTPH_\d+)__|__[A-Za-z0-9][A-Za-z0-9_]*?__')
-_LETTERS = re.compile(r'[A-Za-z\u3400-\u9fff\u3040-\u30ff\uac00-\ud7af\u0600-\u06ff]')
+_LETTERS = re.compile(r'[^\W\d_]', re.UNICODE)
 # Financial amounts, dates, percentages, names, and predicates are intentionally
 # absent from opaque-resource masking: splitting those away from the sentence
 # changed financial meaning. Exact five-year period terminology is handled
@@ -117,8 +117,12 @@ def atomic_json(path: Path, value: object) -> None:
 
 
 def normalize_language(language: str) -> str:
-    code = str(language).lower().replace('_', '-').split('-')[0]
-    code = {'jp': 'ja', 'kr': 'ko', 'cn': 'zh'}.get(code, code)
+    value = str(language).strip().lower().replace('_', '-')
+    # Traditional Chinese must retain a distinct target/cache namespace.
+    if value in {'zh-hant', 'zh-tw', 'zh-hk', 'zh-mo'} or value.startswith('zh-hant-'):
+        return 'zh-Hant'
+    code = value.split('-')[0]
+    code = {'jp': 'ja', 'kr': 'ko', 'cn': 'zh', 'fil': 'tl'}.get(code, code)
     if code not in LANGUAGES:
         raise OfflineTranslationError(f'Unsupported offline language: {language}')
     return code
@@ -225,9 +229,7 @@ def validate_result(source: str, result: str, source_language: str, target: str,
             raise OfflineTranslationValidationError('Hy-MT2 changed a Markdown link destination boundary')
     clean = _PLACEHOLDERS.sub('', result)
     if _LETTERS.search(_PLACEHOLDERS.sub('', source)):
-        scripts = {'zh': r'[\u3400-\u9fff]', 'en': r'[A-Za-z]', 'ko': r'[\uac00-\ud7af]',
-                   'ja': r'[\u3040-\u30ff\u3400-\u9fff]', 'ar': r'[\u0600-\u06ff]'}
-        if not re.search(scripts[target], clean):
+        if target not in SCRIPT_PATTERNS or not re.search(SCRIPT_PATTERNS[target], clean):
             raise OfflineTranslationValidationError('Hy-MT2 target script missing')
 
 

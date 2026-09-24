@@ -21,7 +21,12 @@ from portal_extended_locales import (
 )
 
 MAX_CHECKPOINT_BYTES = 8 * 1024 * 1024
-CHECKPOINT_VERSION = 'extended-static-v1'
+CHECKPOINT_VERSION = 'extended-static-v2'
+
+
+def reject_symlinks(path: Path) -> None:
+    if any(item.is_symlink() for item in (path, *path.parents)):
+        raise ExpansionError('Symlink paths are forbidden for locale candidates/checkpoints')
 
 class Translator(Protocol):
     def translate(self, text: str, target: str, source: str | None = None, *, markdown: bool = True) -> str: ...
@@ -38,10 +43,10 @@ def validate_text(source: str, translated: str, locale: str, source_language: st
     # Source English text can legitimately stay unchanged on /en/. This does
     # not excuse unchanged Chinese on any additional target-language page.
     source_is_english = not re.search(r'[\u3400-\u9fff\u3040-\u30ff\uac00-\ud7af\u0600-\u06ff]', source.replace('KC桌面', ''))
-    if locale == 'en' and source_is_english: return
+    same_language = locale == 'en' and source_is_english
     source_key = re.sub(r'\W', '', source).casefold()
     translated_key = re.sub(r'\W', '', translated).casefold()
-    if source_key and source_key in translated_key and len(clean) > 12:
+    if not same_language and source_key and source_key in translated_key and len(clean) > 12:
         raise ExpansionError('Untranslated source text')
     if not re.search(SCRIPT_PATTERNS[locale], translated): raise ExpansionError('Target script is missing')
     if re.search(r'[\u3400-\u9fff]', translated) and locale not in {'zh-Hant', 'yue'}:
@@ -52,6 +57,7 @@ def validate_text(source: str, translated: str, locale: str, source_language: st
 
 class Memo:
     def __init__(self, path: Path, locale: str, translator: Translator, deadline: float):
+        reject_symlinks(path)
         self.path, self.locale, self.translator, self.deadline = path, locale, translator, deadline
         self.rows = {}
         self.calls = self.hits = 0
@@ -84,6 +90,8 @@ class Memo:
         return translated
 
     def save(self):
+        reject_symlinks(self.path)
+        reject_symlinks(self.path.with_suffix('.tmp'))
         raw = stable_bytes({'model': MODEL_ID, 'locale': self.locale, 'version': CHECKPOINT_VERSION, 'rows': self.rows})
         if len(raw) > MAX_CHECKPOINT_BYTES: raise ExpansionError('Checkpoint exceeds storage budget')
         self.path.parent.mkdir(parents=True, exist_ok=True)
@@ -108,6 +116,10 @@ def build(corpus: dict, locale: str, output: Path, checkpoint: Path, translator:
           *, budget_seconds=1800, origin=ORIGIN) -> dict:
     if locale not in ADDITIONAL: raise ExpansionError('Not an additional locale')
     docs = validate_corpus(corpus, origin=origin)
+    if origin + '/' not in {doc['url'] for doc in docs}:
+        raise ExpansionError('A localized homepage source is required')
+    reject_symlinks(output)
+    reject_symlinks(checkpoint)
     if output.exists() and any(output.iterdir()): raise ExpansionError('Candidate output must be empty; never overwrite an active release')
     output.mkdir(parents=True, exist_ok=True)
     memo = Memo(checkpoint, locale, translator, time.monotonic() + budget_seconds)

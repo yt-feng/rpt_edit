@@ -26,7 +26,7 @@ def read_public(session, url: str, *, sitemap=False) -> bytes:
     else: public_url(url)
     maximum = MAX_SITEMAP_BYTES if sitemap else MAX_DOCUMENT_BYTES
     with session.get(url, timeout=(10, 30), stream=True, allow_redirects=False,
-                     headers={'User-Agent': 'KCdesk-public-locale-build/1.0', 'Accept': 'application/xml,text/html'}) as response:
+                     headers={'User-Agent': 'Portal-public-locale-build/1.0', 'Accept': 'application/xml,text/html'}) as response:
         if response.status_code != 200: raise ExpansionError(f'Public source returned HTTP {response.status_code}')
         kind = response.headers.get('Content-Type', '').lower()
         if not any(x in kind for x in (('xml',) if sitemap else ('text/html',))):
@@ -69,7 +69,8 @@ def inventory(session) -> list[str]:
 
 def select_urls(urls: list[str], limit: int) -> list[str]:
     if not 1 <= limit <= 500: raise ExpansionError('max-pages must be 1..500')
-    core = [u for u in urls if urlsplit(u).path in {'/', '/about.html', '/reports/', '/blog/'}]
+    urls = sorted(set(urls))
+    core = [ORIGIN + path for path in ('/', '/reports/', '/blog/', '/about.html') if ORIGIN + path in urls]
     hubs = [u for u in urls if '/institutions/' in u or '/topics/' in u]
     # Date-prefixed Blog paths sort latest first. Report hashes do not encode
     # dates; their stable selection is not mislabeled as "latest reports".
@@ -89,13 +90,18 @@ def collect_local(root: Path, limit: int) -> dict:
     if not root.is_dir() or root == Path(root.anchor): raise ExpansionError('Invalid inactive source root')
     by_url = {}
     for path in root.rglob('*.html'):
-        if path.is_symlink(): continue
+        if any(item.is_symlink() for item in (path, *path.parents)): continue
         relative = path.relative_to(root).as_posix()
         route = '/' + (relative[:-10] if relative.endswith('index.html') else relative)
         try: url = public_url(ORIGIN + route)
         except ExpansionError: continue
         by_url[url] = path
-    docs = [document_from_html(url, by_url[url].read_bytes()) for url in select_urls(sorted(by_url), limit)]
+    docs = []
+    for url in select_urls(sorted(by_url), limit):
+        path = by_url[url]
+        if path.stat().st_size > MAX_DOCUMENT_BYTES:
+            raise ExpansionError('Local source exceeds byte limit')
+        docs.append(document_from_html(url, path.read_bytes()))
     result = make_corpus(docs)
     result['collection'] = {'inventory_count': len(by_url), 'collected_count': len(docs),
                             'scope': 'bounded-inactive-Chinese-tree-not-full-archive'}

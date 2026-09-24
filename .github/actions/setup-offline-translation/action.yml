@@ -4,6 +4,9 @@ inputs:
   targets:
     description: Comma-separated target languages
     default: zh,en
+  persist-audit:
+    description: Store the small public model receipt as an Actions artifact
+    default: 'true'
   audit-suffix:
     description: Unique suffix for matrix job provenance artifacts
     default: ''
@@ -16,20 +19,21 @@ runs:
         TRANSLATION_TARGETS: ${{ inputs.targets }}
       shell: bash
       run: |
-        if [[ ! "$TRANSLATION_TARGETS" =~ ^(zh|en|ko|ja|ar)(,(zh|en|ko|ja|ar))*$ ]]; then
-          echo "Unsupported translation targets" >&2
-          exit 2
-        fi
-        python - <<'PY'
-        import json, os, platform
+        python - <<'PYCODE'
+        import json, os, platform, sys
         from pathlib import Path
+        sys.path.insert(0, 'scripts')
+        from compare_hymt_translation import LANGUAGES
+        targets = os.environ['TRANSLATION_TARGETS'].split(',')
+        if not targets or len(targets) != len(set(targets)) or any(code not in LANGUAGES for code in targets):
+            raise SystemExit('Unsupported or duplicate translation targets')
         manifest = json.loads(Path('scripts/hymt_translation_model_manifest.json').read_text())
         with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
             output.write('runtime-revision=' + manifest['runtime']['revision'] + '\n')
             output.write('model-sha=' + manifest['model']['sha256'] + '\n')
             release = platform.freedesktop_os_release()
             output.write('runner-image=' + release['ID'] + '-' + release['VERSION_ID'] + '\n')
-        PY
+        PYCODE
         echo "HYMT_MODEL_DIR=$RUNNER_TEMP/hymt-model" >> "$GITHUB_ENV"
         echo "HYMT_SERVER_BIN=$RUNNER_TEMP/hymt-runtime/build/bin/llama-server" >> "$GITHUB_ENV"
         echo "OFFLINE_TRANSLATION_BACKEND=hymt" >> "$GITHUB_ENV"
@@ -88,6 +92,7 @@ runs:
         path: ${{ runner.temp }}/hymt-runtime/build
         key: hymt-cpu-portable-v2-${{ runner.os }}-${{ runner.arch }}-${{ steps.configure.outputs.runner-image }}-${{ steps.configure.outputs.runtime-revision }}
     - name: Preserve model provenance
+      if: inputs.persist-audit == 'true'
       uses: actions/upload-artifact@v4
       with:
         name: offline-model-audit-${{ github.job }}-${{ github.run_attempt }}${{ inputs.audit-suffix }}

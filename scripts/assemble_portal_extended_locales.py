@@ -87,6 +87,8 @@ def assemble(root: Path, corpus: dict, directories: list[Path], approved: tuple[
     root = root.resolve()
     if not root.is_dir() or root == Path(root.anchor) or not (root / 'index.html').is_file():
         raise ExpansionError('Require a complete inactive site root')
+    if (root / 'data/extended-locales/assembly.json').exists():
+        raise ExpansionError('Require a fresh inactive tree and the complete approved locale set')
     # Fresh per-locale candidates are added independently, so a failed language
     # does not relabel or overwrite established ko/ja/ar mirrors.
     manifests, payloads = {}, {}

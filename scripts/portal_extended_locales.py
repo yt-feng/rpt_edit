@@ -150,7 +150,7 @@ class PublicParser(HTMLParser):
         if tag not in VOID: self.stack.append((tag, hidden))
         if self.suppressed(): return
         if tag in HTML_BLOCKS:
-            if tag == 'p' and self.capture and self.capture[0] in {'li', 'blockquote'}:
+            if tag == 'p' and self.capture and self.capture[0] in {'li', 'blockquote', 'tr'}:
                 self.capture[1].append(' ')
             else:
                 self.flush(); self.capture = [tag, [], self.in_main]
@@ -255,6 +255,9 @@ def validate_corpus(corpus: dict, *, origin: str = ORIGIN) -> list[dict]:
         raise ExpansionError('Corpus must contain 1..500 public documents')
     if len({doc['url'] for doc in docs}) != len(docs): raise ExpansionError('Duplicate source URL')
     for doc in docs: validate_document(doc, origin=origin)
+    paths = [file_for_url(doc['url'], origin=origin).as_posix() for doc in docs]
+    if len(set(paths)) != len(paths):
+        raise ExpansionError('Source URLs collide on the same output file')
     if corpus.get('documents_sha256') != digest(stable_bytes(docs)):
         raise ExpansionError('Corpus digest mismatch')
     return docs
