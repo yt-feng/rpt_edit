@@ -193,7 +193,7 @@ jobs:
           result="$(PYTHONPATH=scripts python3 -B scripts/portal_extended_r2.py restore-checkpoint \
             --prefix "$EXTENDED_R2_PREFIX" --locale "$LOCALE" --generation "$SOURCE_GENERATION" \
             --output "$RUNNER_TEMP/locale-checkpoint.json")"
-          echo "$result" >> "$GITHUB_STEP_SUMMARY"
+          printf '%s\n' "$result" | tee -a "$GITHUB_STEP_SUMMARY"
           if [[ "$result" == *'"present": true'* ]]; then
             echo "present=true" >> "$GITHUB_OUTPUT"
           else
@@ -228,7 +228,11 @@ jobs:
             "${checkpoint_args[@]}" > "$RUNNER_TEMP/build-result.json"
           code=$?
           set -e
-          cat "$RUNNER_TEMP/build-result.json" >> "$GITHUB_STEP_SUMMARY" || true
+          if [ -s "$RUNNER_TEMP/build-result.json" ]; then
+            tee -a "$GITHUB_STEP_SUMMARY" < "$RUNNER_TEMP/build-result.json"
+          else
+            echo '{"status":"no-build-summary"}' | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
           echo "exit_code=$code" >> "$GITHUB_OUTPUT"
           if [ "$code" != 0 ] && [ "$code" != 75 ]; then
             exit "$code"

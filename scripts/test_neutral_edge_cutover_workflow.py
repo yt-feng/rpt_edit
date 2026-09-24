@@ -273,7 +273,10 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn("  prepare_release:\n", self.workflow)
         self.assertIn("  multilingual_approval:\n", self.workflow)
         self.assertIn("  cutover:\n", self.workflow)
-        self.assertIn("needs: [prepare_release, multilingual_approval]", self.workflow)
+        self.assertIn(
+            "needs: [prepare_release, multilingual_approval, extended_locales_approval]",
+            self.workflow,
+        )
         prepare = self.workflow.index("  prepare_release:\n")
         upload = self.workflow.index("Upload inactive static slot and immutable runtime")
         approval = self.workflow.index("  multilingual_approval:\n")
@@ -894,7 +897,10 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
             cutover_job:
             self.workflow.index("    steps:\n", cutover_job)
         ]
-        self.assertIn("needs: [prepare_release, multilingual_approval]", cutover_header)
+        self.assertIn(
+            "needs: [prepare_release, multilingual_approval, extended_locales_approval]",
+            cutover_header,
+        )
         self.assertIn("always()", cutover_header)
         self.assertIn("needs.prepare_release.result == 'success'", cutover_header)
         self.assertIn("needs.multilingual_approval.result == 'success'", cutover_header)
@@ -962,7 +968,12 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn("Prove live release is unchanged before cutover", self.workflow)
         self.assertIn("cmp _release_validation/previous/edge-state.json", self.workflow)
         self.assertIn("Capture exact edge rollback target", self.workflow)
-        self.assertIn("steps.release_acceptance.outcome != 'success' || needs.prepare_release.outputs.operation == 'rehearse'", self.workflow)
+        self.assertIn("steps.release_acceptance.outcome != 'success'", self.workflow)
+        self.assertIn(
+            "needs.prepare_release.outputs.extended_requested == 'true' && steps.extended_acceptance.outcome != 'success'",
+            self.workflow,
+        )
+        self.assertIn("needs.prepare_release.outputs.operation == 'rehearse'", self.workflow)
         self.assertIn("rollback ${{ env.EDGE_PREVIOUS_VERSION_ID }}", self.workflow)
         self.assertIn("--expect-version \"$EDGE_PREVIOUS_VERSION_ID\"", self.workflow)
         self.assertIn("Verify exact previous release after rollback", self.workflow)
