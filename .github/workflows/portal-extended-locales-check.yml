@@ -1,3 +1,4 @@
+# Foundation integration complete; this workflow never deploys or receives storage credentials.
 name: Extended locales offline checks
 on:
   pull_request:
