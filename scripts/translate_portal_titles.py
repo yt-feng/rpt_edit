@@ -207,6 +207,7 @@ def translate_title(title: str, args: argparse.Namespace) -> str:
         args._offline_title_calls = []
         kwargs = ({"diagnostic_callback": args._offline_title_calls.append}
                   if getattr(args, "diagnostics_out", None) else {})
+        kwargs["preserve_reporting_periods"] = False
         args._offline_translator = OfflineTranslator(**kwargs)
     if hasattr(args, "_offline_title_calls"):
         args._offline_title_calls.clear()

@@ -57,15 +57,16 @@ _OPAQUE = re.compile(
 # Keep the source numeric atoms inside the model's sentence context, but make
 # the exact digits opaque to a small CPU model.  The caller restores the
 # source spelling and validates the restored result again.  This covers the
-# ordinary decimal/date atoms plus compact quarter/half-year and ordinal
-# forms; units remain visible so the model can translate them naturally.
+# ordinary decimal/date atoms plus compact ordinal forms; reporting periods
+# are handled by the identifier pass below so title translation can opt into
+# their localized equivalents.
 _NUMERIC_ATOM = re.compile(
     # Use ASCII word boundaries deliberately. Chinese, Japanese, Arabic and
     # other scripts commonly attach a date or unit directly to the digits
     # (for example 2024年9月 or 第15个五年); those digits still need to be
     # opaque while their surrounding unit remains in model context.
-    r'(?<![A-Za-z0-9_])(?:[QH]\d+(?![A-Za-z0-9_])|\d+(?:Q|H)\d+(?![A-Za-z0-9_])|\d+(?:st|nd|rd|th)(?![A-Za-z0-9_])'
-    r'|[+\-−]?\d+(?:[.,]\d+)*)(?![A-Za-z0-9_])', re.IGNORECASE)
+    r'(?<![A-Za-z0-9])(?:\d+(?:st|nd|rd|th)(?![A-Za-z0-9])'
+    r'|[+\-−]?\d+(?:[.,]\d+)*)(?![A-Za-z0-9])', re.IGNORECASE)
 # Chinese public pages frequently express money as 42亿元人民币 or 1.2亿美元.
 # Locking only the digits lets a small model translate 42亿 as “42 billion”,
 # changing the magnitude.  Convert that complete source atom to an equivalent
@@ -97,8 +98,11 @@ _LOCALIZED_MONEY_NAMES = {
     'pt': {'CNY': 'yuans', 'USD': 'dólares', 'HKD': 'dólares de Hong Kong', 'JPY': 'ienes', 'GBP': 'libras', 'EUR': 'euros'},
 }
 _NUMERIC_IDENTIFIER = re.compile(
-    r'(?<![A-Za-z0-9_])(?=[A-Za-z0-9_.]*[A-Za-z])(?=[A-Za-z0-9_.]*\d)'
-    r'[A-Za-z0-9][A-Za-z0-9_.]*[A-Za-z0-9](?![A-Za-z0-9_])')
+    # Do not allow underscores here: protected placeholders use them, and a
+    # broad identifier match must not swallow adjacent translatable words or
+    # the placeholder itself (for example ``Example__KC_PH_0000__4Q26``).
+    r'(?<![A-Za-z0-9_])(?=[A-Za-z0-9.]*[A-Za-z])(?=[A-Za-z0-9.]*\d)'
+    r'[A-Za-z0-9][A-Za-z0-9.]*[A-Za-z0-9](?![A-Za-z0-9_])')
 _CJK_DATE_ATOM = re.compile(
     r'(?<![A-Za-z0-9_])(?P<year>\d{4})年(?P<month>\d{1,2})月'
     r'(?:(?P<day>\d{1,2})日)?(?![A-Za-z0-9_])')
@@ -249,7 +253,7 @@ def split_sentences(text: str, limit: int = 1800) -> list[str]:
     return parts
 
 
-def _mask(text: str, target: str) -> tuple[str, dict[str, str], dict[str, str]]:
+def _mask(text: str, target: str, *, preserve_reporting_periods: bool = True) -> tuple[str, dict[str, str], dict[str, str]]:
     replacements: dict[str, str] = {}
     terms: dict[str, str] = {}
     def reserve(value: str, dictionary: dict[str, str]) -> str:
@@ -287,12 +291,26 @@ def _mask(text: str, target: str) -> tuple[str, dict[str, str], dict[str, str]]:
     # Report titles contain compact date/provider and ticker identifiers such
     # as 260921JPMorgan, 2Q26 and 000660.KS. Keep those exact source tokens
     # intact; otherwise the quantity gate sees a changed numeric claim.
-    masked = _NUMERIC_IDENTIFIER.sub(lambda match: reserve(match.group(), replacements), masked)
+    def reserve_numeric(match: re.Match[str]) -> str:
+        # Numeric atoms may touch a title/resource placeholder.  The boundary
+        # regex intentionally permits that adjacency, so skip digits that are
+        # actually inside an existing placeholder before reserving the atom.
+        if re.fullmatch(r'(?:[QH]\d+|\d+[QH]\d+)', match.group(), re.I):
+            # Reporting periods such as 4Q26 are numeric facts, but the
+            # quantity gate understands their equivalent localized forms
+            # (for example 2026年第四季度). Keep them in model context so
+            # titles can translate the period without changing its meaning.
+            return match.group() if not preserve_reporting_periods else reserve(match.group(), replacements)
+        if any(span.start() <= match.start() and match.end() <= span.end()
+               for span in _PLACEHOLDERS.finditer(masked)):
+            return match.group()
+        return reserve(match.group(), replacements)
+    masked = _NUMERIC_IDENTIFIER.sub(reserve_numeric, masked)
     # Do this after opaque resources and controlled terms so digits inside a
     # protected token are never exposed as a second claim.  The model still
     # sees surrounding units and predicates, while exact source numbers are
     # restored only after placeholder and quantity validation.
-    masked = _NUMERIC_ATOM.sub(lambda match: reserve(match.group(), replacements), masked)
+    masked = _NUMERIC_ATOM.sub(reserve_numeric, masked)
     return masked, replacements, terms
 
 
@@ -427,12 +445,14 @@ class _HyMTEngine:
 class HyMTOfflineTranslator:
     def __init__(self, cache_dir: str | Path | None = None, *, model_dir: str | Path | None = None,
                  engine_factory: Callable[[str, str], object] | None = None, batch_size: int = 1,
-                 diagnostic_callback: Callable[[dict], None] | None = None):
+                 diagnostic_callback: Callable[[dict], None] | None = None,
+                 preserve_reporting_periods: bool = True):
         self.cache_dir = Path(cache_dir or os.environ.get('HYMT_TRANSLATION_CACHE') or os.environ.get('PORTAL_OFFLINE_TRANSLATION_CACHE', '.cache/hymt-translation'))
         self.model_dir = Path(model_dir or os.environ.get('HYMT_MODEL_DIR', '.cache/hymt-model'))
         self._engine_factory = engine_factory
         # Explicit opt-in for the fixed public smoke corpus only; never printed or persisted here.
         self._diagnostic_callback = diagnostic_callback
+        self.preserve_reporting_periods = preserve_reporting_periods
         self.model_id = MODEL_ID
         self.stats = {'cache_hits': 0, 'translated_fragments': 0, 'batch_requests': 0}
 
@@ -469,7 +489,8 @@ class HyMTOfflineTranslator:
         if not core or detected == target or not _LETTERS.search(_PLACEHOLDERS.sub('', _OPAQUE.sub('', core))):
             return text
         identity, path = self._memo_identity(core, target, detected, markdown=markdown)
-        masked, replacements, terms = _mask(core, target)
+        masked, replacements, terms = _mask(
+            core, target, preserve_reporting_periods=self.preserve_reporting_periods)
         fresh_translation = False
         cache_value = None
         try:

@@ -39,13 +39,14 @@ class TitleCheckpointTests(unittest.TestCase):
         from argparse import Namespace
         from hymt_offline_translation import OfflineTranslator
         engine = mock.Mock()
-        engine.translate.return_value = '__KC_PH_0002__-示例__KC_PH_0000__2026年第四季度增长12.5%__KC_PH_0001__'
-        translator = OfflineTranslator(cache_dir=self.root / 'memo', engine_factory=lambda *_: engine)
+        engine.translate.return_value = '__KC_PH_0002__-示例__KC_PH_0000__2026年第四季度增长__HYMTPH_0000__%__KC_PH_0001__'
+        translator = OfflineTranslator(cache_dir=self.root / 'memo', engine_factory=lambda *_: engine,
+                                       preserve_reporting_periods=False)
         source = 'Citi-Example（2338.HK）4Q26 growth 12.5%-260918'
         result = titles.translate_title(source, Namespace(_offline_translator=translator))
         self.assertEqual(result, '花旗-示例（2338.HK）2026年第四季度增长12.5%-260918')
         self.assertEqual(engine.translate.call_args.args[0],
-                         '__KC_PH_0002__-Example__KC_PH_0000__4Q26 growth 12.5%__KC_PH_0001__')
+                         '__KC_PH_0002__-Example__KC_PH_0000__4Q26 growth __HYMTPH_0000__%__KC_PH_0001__')
 
     def test_mixed_title_keeps_source_language_from_before_identifier_protection(self):
         from argparse import Namespace
