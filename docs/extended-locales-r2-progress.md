@@ -41,11 +41,11 @@ been accepted or published.
 
 ## 2026-09-24 handoff verification
 
-- Current branch head: `c075fbda` (`fix: keep R2 progress free of public
-  identity markers`). The preceding recovery workflow fix is `d0ecc1b2`,
-  and the production-candidate input splitter is `dc182c56`; the recovery
-  workflow generator now includes the R2 extended candidate assembly step and its
-  generated target is exact.
+- Implementation head: `d0ecc1b2` (`fix: regenerate extended locale
+  recovery workflow`); documentation-only follow-ups are `c075fbda` and
+  `58c5a681`. The production-candidate input splitter is `dc182c56`;
+  the recovery workflow generator now includes the R2 extended candidate assembly
+  step and its generated target is exact.
 - Local verification after the recovery fix: extended-locale tests 59/59,
   Hy-MT2 tests 33/33, R2 tests 6/6, hardening tests 10/10, Neutral cutover
   tests 34/34, recovery workflow tests 7/7, and restore/assembly tests 2/2.
