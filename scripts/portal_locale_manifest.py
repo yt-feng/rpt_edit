@@ -9,6 +9,8 @@ from typing import Any, Iterable
 
 
 MAX_LOCALE_MANIFEST_BYTES = 16 * 1024 * 1024
+MAX_EXPANDED_FALLBACK_BYTES = 64 * 1024 * 1024
+MAX_FALLBACK_REFERENCES = 300_000
 
 
 class LocaleManifestError(ValueError):
@@ -28,7 +30,7 @@ def parse_locale_manifest(body: bytes) -> dict[str, Any]:
         raise LocaleManifestError("Locale manifest must be valid UTF-8 JSON") from error
     if not isinstance(manifest, dict) or type(manifest.get("schema_version")) is not int or manifest["schema_version"] != 1:
         raise LocaleManifestError("Locale manifest schema is invalid")
-    return manifest
+    return _expand_fallback_records(manifest)
 
 
 def load_locale_manifest(path: Path) -> dict[str, Any]:
@@ -113,3 +115,80 @@ def validate_translation_resolution(manifest: dict[str, Any], locales: Iterable[
         ratio(coverage[locale], translated_count / source_count if source_count else 1.0,
               f"coverage.{locale}")
         ratio(resolved_coverage[locale], 1.0, f"resolved coverage.{locale}")
+
+
+def _json_bytes(value: Any) -> bytes:
+    return (json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n").encode("utf-8")
+
+
+def _expand_fallback_records(manifest: dict[str, Any]) -> dict[str, Any]:
+    """Decode a lossless intern table without weakening the 16 MiB wire limit."""
+    fallback = manifest.get("source_fallbacks")
+    if not isinstance(fallback, dict) or fallback.get("schema_version") != 2:
+        return manifest
+    records, units = fallback.get("records"), fallback.get("units")
+    if (set(fallback) != {"schema_version", "records", "units", "counts"}
+            or not isinstance(records, list) or len(records) > MAX_FALLBACK_REFERENCES
+            or not isinstance(units, dict) or not units or len(units) > 64):
+        raise LocaleManifestError("Invalid interned source fallback table")
+    if any(not isinstance(row, dict) for row in records):
+        raise LocaleManifestError("Invalid interned source fallback record")
+    sizes = [len(_json_bytes(row)) for row in records]
+    expanded, used, total, references = {}, set(), 0, 0
+    for locale, rows in units.items():
+        if not isinstance(rows, dict):
+            raise LocaleManifestError("Invalid interned source fallback locale")
+        expanded[locale] = {}
+        for key, index in rows.items():
+            if type(index) is not int or not 0 <= index < len(records):
+                raise LocaleManifestError("Invalid interned source fallback reference")
+            total += sizes[index] + len(key.encode("utf-8")) + 8
+            references += 1
+            if total > MAX_EXPANDED_FALLBACK_BYTES or references > MAX_FALLBACK_REFERENCES:
+                raise LocaleManifestError("Expanded source fallback table exceeds safety budget")
+            used.add(index)
+            expanded[locale][key] = dict(records[index])
+    if used != set(range(len(records))):
+        raise LocaleManifestError("Unused interned source fallback record")
+    manifest = dict(manifest)
+    manifest["source_fallbacks"] = {"schema_version": 1, "counts": fallback["counts"], "units": expanded}
+    # Verify the original source hashes, identities, counts and coverage after
+    # resolving references. Compaction never upgrades source text to translation.
+    validate_translation_resolution(manifest, units.keys())
+    return manifest
+
+
+def encode_locale_manifest(manifest: dict[str, Any]) -> bytes:
+    """Keep legacy output when it fits; intern repeated fallback provenance otherwise.
+
+    Every source, reason, context and per-language count round-trips unchanged.
+    No truncation, paid retranslation or larger unbounded fetch is introduced.
+    """
+    body = _json_bytes(manifest)
+    if len(body) <= MAX_LOCALE_MANIFEST_BYTES:
+        parse_locale_manifest(body)
+        return body
+    fallback = manifest.get("source_fallbacks")
+    if not isinstance(fallback, dict) or fallback.get("schema_version") != 1:
+        parse_locale_manifest(body)  # Retain the original explicit size error.
+    units = fallback.get("units")
+    if not isinstance(units, dict):
+        raise LocaleManifestError("Invalid source fallback units")
+    validate_translation_resolution(manifest, units.keys())
+    records, indexes, refs = [], {}, {}
+    for locale in sorted(units):
+        refs[locale] = {}
+        for key, row in sorted(units[locale].items()):
+            identity = _json_bytes(row)
+            if identity not in indexes:
+                indexes[identity] = len(records)
+                records.append(row)
+            refs[locale][key] = indexes[identity]
+    packed = dict(manifest)
+    packed["source_fallbacks"] = {"schema_version": 2, "records": records,
+                                 "units": refs, "counts": fallback["counts"]}
+    body = _json_bytes(packed)
+    decoded = parse_locale_manifest(body)
+    if decoded != manifest:
+        raise LocaleManifestError("Source fallback compaction changed manifest semantics")
+    return body

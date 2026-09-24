@@ -42,7 +42,7 @@ from portal_locale_literals import is_chart_geography_identity_label, is_chart_m
 from portal_locale_scope import deferred_locale_source, restrict_html_to_cohort
 from portal_locale_report_preview import localize_report_preview
 from portal_locale_detail_hooks import defer_unverified_report_preview, inject_locale_detail_hooks
-from portal_locale_manifest import LocaleManifestError, parse_locale_manifest
+from portal_locale_manifest import LocaleManifestError, parse_locale_manifest, encode_locale_manifest
 from repair_portal_ja_catalog_titles import apply_ja_catalog_title_repairs
 
 CACHE_SCHEMA_VERSION = 1
@@ -692,9 +692,8 @@ def stable_json_bytes(value: Any) -> bytes:
 
 
 def write_locale_manifest(path: Path, manifest: dict[str, Any]) -> None:
-    body = stable_json_bytes(manifest)
     try:
-        parse_locale_manifest(body)
+        body = encode_locale_manifest(manifest)
     except LocaleManifestError as error:
         raise TranslationError(str(error)) from error
     path.write_bytes(body)
