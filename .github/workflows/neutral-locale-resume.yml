@@ -961,6 +961,7 @@ jobs:
       NEUTRAL_OPERATION: ${{ needs.prepare_release.outputs.operation }}
       PORTAL_MULTILINGUAL_ENABLED: ${{ needs.prepare_release.outputs.multilingual_enabled }}
       PORTAL_MULTILINGUAL_LIVE: ${{ needs.prepare_release.outputs.multilingual_live }}
+      EXTENDED_LOCALES: ${{ needs.prepare_release.outputs.extended_locales || '' }}
     steps:
       - name: Checkout audited cutover source
         uses: actions/checkout@v4
