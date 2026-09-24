@@ -1,0 +1,279 @@
+# Durable private source/checkpoint/candidate pipeline for the additional locales.
+# This workflow never publishes an incomplete candidate and never uploads
+# generated translations to Actions artifacts or caches.
+name: Extended locales private R2 pipeline
+run-name: Extended locale R2 ${{ inputs.operation }} (${{ inputs.locales || 'roundtrip' }})
+
+on:
+  push:
+    branches: [codex/extended-locales-r2-20260924]
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: "Run a private R2 round-trip or a bounded locale candidate batch"
+        required: true
+        type: choice
+        options: [roundtrip, candidate]
+        default: roundtrip
+      locales:
+        description: "Comma-separated additional locales; each run is capped at 24 pages"
+        required: false
+        type: string
+        default: en
+      source_generation:
+        description: "Existing R2 source generation SHA-256; leave empty only for the first source capture"
+        required: false
+        type: string
+        default: ""
+      seconds:
+        description: "Per-locale Hy-MT2 CPU budget in seconds (1..2400)"
+        required: false
+        type: string
+        default: "1800"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: extended-locales-r2-pipeline
+  cancel-in-progress: false
+
+env:
+  EXTENDED_R2_PREFIX: _extended-locales/v1
+
+jobs:
+  roundtrip:
+    if: >-
+      ${{
+        inputs.operation == 'roundtrip' ||
+        (github.event_name == 'push' && contains(github.event.head_commit.message, '[r2-roundtrip]'))
+      }}
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install private R2 client
+        run: python3 -m pip install --disable-pip-version-check "boto3>=1.34,<2"
+      - name: Verify isolated private R2 read/write/checksum and error classification
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+        run: |
+          set -euo pipefail
+          prefix="_extended-locales/staging/roundtrip-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          PYTHONPATH=scripts python3 -B scripts/portal_extended_r2.py roundtrip \
+            --prefix "$prefix" --run-id "${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+
+  source:
+    if: >-
+      ${{
+        inputs.operation == 'candidate' ||
+        (github.event_name == 'push' && contains(github.event.head_commit.message, '[r2-candidate]'))
+      }}
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    outputs:
+      generation: ${{ steps.source.outputs.generation }}
+      locales_json: ${{ steps.source.outputs.locales_json }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install public collector and private R2 client
+        run: python3 -m pip install --disable-pip-version-check "boto3>=1.34,<2" "requests>=2.31,<3"
+      - name: Capture or restore one immutable 24-page source generation
+        id: source
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          REQUESTED_SOURCE_GENERATION: ${{ inputs.source_generation }}
+          REQUESTED_LOCALES: ${{ inputs.locales }}
+        run: |
+          set -euo pipefail
+          corpus="$RUNNER_TEMP/extended-source-corpus.json"
+          if [ -n "$REQUESTED_SOURCE_GENERATION" ]; then
+            PYTHONPATH=scripts python3 -B scripts/portal_extended_r2.py restore-source \
+              --prefix "$EXTENDED_R2_PREFIX" --generation "$REQUESTED_SOURCE_GENERATION" --output "$corpus"
+          else
+            python3 -B scripts/collect_portal_extended_sources.py --out "$corpus" --max-pages 24
+            CORPUS="$corpus" python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          value = json.loads(Path(os.environ["CORPUS"]).read_text(encoding="utf-8"))
+          collection = value.get("collection") or {}
+          if collection.get("failed"):
+              raise SystemExit("Source collection was incomplete; no partial generation may be persisted")
+          if collection.get("collected_count") != 24:
+              raise SystemExit("The first additional-locale batch must contain exactly 24 source pages")
+          PY
+            PYTHONPATH=scripts python3 -B scripts/portal_extended_r2.py put-source \
+              --prefix "$EXTENDED_R2_PREFIX" --corpus "$corpus"
+          fi
+          CORPUS="$corpus" REQUESTED_LOCALES="$REQUESTED_LOCALES" python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          import os
+          import re
+          from pathlib import Path
+          import sys
+          sys.path.insert(0, "scripts")
+          from portal_extended_locales import select_locales
+          from portal_extended_r2 import source_generation
+          corpus = json.loads(Path(os.environ["CORPUS"]).read_text(encoding="utf-8"))
+          generation = source_generation(corpus)
+          requested = os.environ["REQUESTED_LOCALES"].strip() or "en"
+          locales = list(select_locales(requested))
+          print(f"generation={generation}")
+          print("locales_json=" + json.dumps(locales, separators=(",", ":")))
+          print(f"source_generation={generation}")
+          PY
+      - name: Persist source-generation evidence
+        env:
+          SOURCE_GENERATION: ${{ steps.source.outputs.generation }}
+        run: |
+          set -euo pipefail
+          test -n "$SOURCE_GENERATION"
+          echo "source_generation=$SOURCE_GENERATION" >> "$GITHUB_STEP_SUMMARY"
+
+  locale:
+    needs: source
+    if: needs.source.result == 'success'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 50
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        locale: ${{ fromJSON(needs.source.outputs.locales_json) }}
+    env:
+      SOURCE_GENERATION: ${{ needs.source.outputs.generation }}
+      LOCALE: ${{ matrix.locale }}
+      TRANSLATION_SECONDS: ${{ inputs.seconds || '1800' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install source/R2 client dependencies
+        run: python3 -m pip install --disable-pip-version-check "boto3>=1.34,<2" "requests>=2.31,<3"
+      - name: Restore fixed source generation
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+        run: |
+          set -euo pipefail
+          PYTHONPATH=scripts python3 -B scripts/portal_extended_r2.py restore-source \
+            --prefix "$EXTENDED_R2_PREFIX" --generation "$SOURCE_GENERATION" \
+            --output "$RUNNER_TEMP/extended-source-corpus.json"
+      - name: Restore locale checkpoint from private R2
+        id: checkpoint
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+        run: |
+          set -euo pipefail
+          result="$(PYTHONPATH=scripts python3 -B scripts/portal_extended_r2.py restore-checkpoint \
+            --prefix "$EXTENDED_R2_PREFIX" --locale "$LOCALE" --generation "$SOURCE_GENERATION" \
+            --output "$RUNNER_TEMP/locale-checkpoint.json")"
+          printf '%s\n' "$result" | tee -a "$GITHUB_STEP_SUMMARY"
+          if [[ "$result" == *'"present": true'* ]]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            rm -f "$RUNNER_TEMP/locale-checkpoint.json"
+            echo "present=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Set up pinned Hy-MT2 CPU model without audit artifacts
+        uses: ./.github/actions/setup-offline-translation
+        with:
+          targets: ${{ matrix.locale }}
+          persist-audit: "false"
+      - name: Run bounded locale translation and retain timeout state
+        id: build
+        env:
+          KC_PUBLIC_REPOSITORY: "true"
+        run: |
+          set -u
+          if ! [[ "$TRANSLATION_SECONDS" =~ ^[0-9]+$ ]] || [ "$TRANSLATION_SECONDS" -lt 1 ] || [ "$TRANSLATION_SECONDS" -gt 2400 ]; then
+            echo "Invalid per-locale budget; expected 1..2400 seconds" >&2
+            exit 2
+          fi
+          checkpoint_args=()
+          if [ -s "$RUNNER_TEMP/locale-checkpoint.json" ]; then
+            checkpoint_args+=(--checkpoint "$RUNNER_TEMP/locale-checkpoint.json")
+          else
+            checkpoint_args+=(--checkpoint "$RUNNER_TEMP/locale-checkpoint.json")
+          fi
+          set +e
+          python3 -B scripts/build_portal_extended_locales.py \
+            --corpus "$RUNNER_TEMP/extended-source-corpus.json" --locale "$LOCALE" \
+            --output "$RUNNER_TEMP/extended-candidate" --seconds "$TRANSLATION_SECONDS" \
+            "${checkpoint_args[@]}" > "$RUNNER_TEMP/build-result.json"
+          code=$?
+          set -e
+          if [ -s "$RUNNER_TEMP/build-result.json" ]; then
+            tee -a "$GITHUB_STEP_SUMMARY" < "$RUNNER_TEMP/build-result.json"
+          else
+            echo '{"status":"no-build-summary"}' | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          if [ "$code" != 0 ] && [ "$code" != 75 ]; then
+            exit "$code"
+          fi
+      - name: Persist checkpoint even when the locale budget ended
+        if: always()
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+        run: |
+          set -euo pipefail
+          if [ -s "$RUNNER_TEMP/locale-checkpoint.json" ]; then
+            PYTHONPATH=scripts python3 -B scripts/portal_extended_r2.py put-checkpoint \
+              --prefix "$EXTENDED_R2_PREFIX" --locale "$LOCALE" --generation "$SOURCE_GENERATION" \
+              --input "$RUNNER_TEMP/locale-checkpoint.json"
+          else
+            echo "No checkpoint was produced; refusing to claim resumability" >&2
+            exit 1
+          fi
+      - name: Persist complete or incomplete candidate pages privately
+        if: always()
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+        run: |
+          set -euo pipefail
+          test -s "$RUNNER_TEMP/extended-candidate/candidate-manifest.json"
+          PYTHONPATH=scripts python3 -B scripts/portal_extended_r2.py upload-candidate \
+            --prefix "$EXTENDED_R2_PREFIX" --locale "$LOCALE" --generation "$SOURCE_GENERATION" \
+            --directory "$RUNNER_TEMP/extended-candidate"
+      - name: Mark a budget timeout as incomplete after persistence
+        if: always()
+        run: |
+          set -euo pipefail
+          code="${{ steps.build.outputs.exit_code || '1' }}"
+          if [ "$code" = "75" ]; then
+            echo "Locale $LOCALE checkpointed but incomplete; publication remains blocked." >> "$GITHUB_STEP_SUMMARY"
+            exit 75
+          fi
+          test "$code" = "0"

@@ -22,7 +22,7 @@ import threading
 import time
 from typing import Callable, Sequence
 
-from compare_hymt_translation import LANGUAGES, request_json, require_actions, verify_model, file_sha256
+from compare_hymt_translation import LANGUAGES, SCRIPT_PATTERNS, request_json, require_actions, verify_model, file_sha256
 from financial_quantity_integrity import FIVE_YEAR_PERIOD_RE, quantity_issues
 
 MANIFEST_PATH = Path(__file__).with_name('hymt_translation_model_manifest.json')
@@ -30,12 +30,31 @@ MANIFEST = json.loads(MANIFEST_PATH.read_text(encoding='utf-8'))
 PROVIDER = 'hymt'
 MODEL = MANIFEST['model']['repository']
 REVISION = MANIFEST['model']['revision']
+# Keep the durable model identity stable across a quality-policy improvement:
+# rows already accepted by the strict gates remain safe to resume, while rows
+# rejected by the old policy are retried below. The pinned model/runtime and
+# validation contract are unchanged.
 MODEL_ID = f"{MODEL}@{REVISION}:Q8_0:natural-sentence-v4-table-structure:{hashlib.sha256(MANIFEST_PATH.read_bytes()).hexdigest()[:16]}"
 INSTALL_COMMAND = 'Use .github/actions/setup-offline-translation on a Linux GitHub Actions runner'
 # Recognize the complete reserved token even when a filename underscore or
 # Markdown emphasis touches it; those surrounding underscores are punctuation.
 _PLACEHOLDERS = re.compile(r'__(?:KC_PH_\d+|HYMTPH_\d+)__|__[A-Za-z0-9][A-Za-z0-9_]*?__')
-_LETTERS = re.compile(r'[A-Za-z\u3400-\u9fff\u3040-\u30ff\uac00-\ud7af\u0600-\u06ff]')
+_LETTERS = re.compile(r'[^\W\d_]', re.UNICODE)
+# Used only by the final bounded retry after a quantity validation failure.
+# The complete expression stays visible to the model on the normal path; the
+# retry protects the source fact as one unit so a small CPU model cannot change
+# its scale while still translating the surrounding proposition.
+_QUANTITY_FACT = re.compile(
+    r'(?<![A-Za-z0-9_])(?:'
+    r'(?:USD|CNY|RMB|HKD|JPY|EUR|GBP|US\$|HK\$|\$|€|£)\s*[+\-−]?\d+(?:[.,]\d+)*'
+    r'(?:\s*(?:thousand|million|billion|trillion|mn|mln|bn|bln|tn|万亿|千亿|百亿|十亿|千万|百万|十万|亿元|亿美元|港元|人民币|美元|元))?'
+    r'|[+\-−]?\d+(?:[.,]\d+)*\s*(?:%|％|百分点|個百分點|百分點|亿元|亿美元|港元|人民币|美元|元人民币|元|万亿|千亿|百亿|十亿|千万|百万|十万|亿|万)'
+    r'|\d{4}年\d{1,2}月(?:\d{1,2}日)?'
+    r'|\d{4}[-/]\d{1,2}(?:[-/]\d{1,2})?'
+    r'|\d{1,2}[QH]\d{2,4}|\d{2,4}[QH]\d{1,2}'
+    r'|[A-Za-z][A-Za-z0-9._-]*\d[A-Za-z0-9._-]*'
+    r'|\d{2,8}'
+    r')(?![A-Za-z0-9_])')
 # Financial amounts, dates, percentages, names, and predicates are intentionally
 # absent from opaque-resource masking: splitting those away from the sentence
 # changed financial meaning. Exact five-year period terminology is handled
@@ -117,8 +136,12 @@ def atomic_json(path: Path, value: object) -> None:
 
 
 def normalize_language(language: str) -> str:
-    code = str(language).lower().replace('_', '-').split('-')[0]
-    code = {'jp': 'ja', 'kr': 'ko', 'cn': 'zh'}.get(code, code)
+    value = str(language).strip().lower().replace('_', '-')
+    # Traditional Chinese must retain a distinct target/cache namespace.
+    if value in {'zh-hant', 'zh-tw', 'zh-hk', 'zh-mo'} or value.startswith('zh-hant-'):
+        return 'zh-Hant'
+    code = value.split('-')[0]
+    code = {'jp': 'ja', 'kr': 'ko', 'cn': 'zh', 'fil': 'tl'}.get(code, code)
     if code not in LANGUAGES:
         raise OfflineTranslationError(f'Unsupported offline language: {language}')
     return code
@@ -177,6 +200,17 @@ def _mask(text: str, target: str) -> tuple[str, dict[str, str], dict[str, str]]:
     return masked, replacements, terms
 
 
+def _mask_quantity_facts(text: str, start: int) -> tuple[str, dict[str, str]]:
+    replacements: dict[str, str] = {}
+
+    def reserve(match: re.Match[str]) -> str:
+        token = f'__HYMTPH_{start + len(replacements):04d}__'
+        replacements[token] = match.group()
+        return token
+
+    return _QUANTITY_FACT.sub(reserve, text), replacements
+
+
 def _restore_terms(value: str, terms: dict[str, str]) -> str:
     for token, term in terms.items():
         value = value.replace(token, term)
@@ -204,15 +238,16 @@ def _restore_table_edges(source: str, result: str) -> str:
 
 
 def validate_result(source: str, result: str, source_language: str, target: str,
-                    *, markdown: bool = True) -> None:
+                    *, markdown: bool = True, check_quantities: bool = True) -> None:
     if not result.strip():
         raise OfflineTranslationValidationError('Empty Hy-MT2 translation')
     if Counter(_PLACEHOLDERS.findall(source)) != Counter(_PLACEHOLDERS.findall(result)):
         raise OfflineTranslationValidationError('Hy-MT2 changed, omitted, or duplicated a protected placeholder')
     # Korean/Japanese GEO copy is gated on structure and quantities, not wording.
-    problems = quantity_issues(source, result, source_language, target)
-    if problems:
-        raise OfflineTranslationValidationError('Hy-MT2 quantity validation failed: ' + '; '.join(problems))
+    if check_quantities:
+        problems = quantity_issues(source, result, source_language, target)
+        if problems:
+            raise OfflineTranslationValidationError('Hy-MT2 quantity validation failed: ' + '; '.join(problems))
     # Catalog filenames are plain text: their ~ and _ characters are often
     # punctuation substitutions, not Markdown. The caller must opt in to that
     # format; report Markdown retains all existing structural checks.
@@ -225,9 +260,7 @@ def validate_result(source: str, result: str, source_language: str, target: str,
             raise OfflineTranslationValidationError('Hy-MT2 changed a Markdown link destination boundary')
     clean = _PLACEHOLDERS.sub('', result)
     if _LETTERS.search(_PLACEHOLDERS.sub('', source)):
-        scripts = {'zh': r'[\u3400-\u9fff]', 'en': r'[A-Za-z]', 'ko': r'[\uac00-\ud7af]',
-                   'ja': r'[\u3040-\u30ff\u3400-\u9fff]', 'ar': r'[\u0600-\u06ff]'}
-        if not re.search(scripts[target], clean):
+        if target not in SCRIPT_PATTERNS or not re.search(SCRIPT_PATTERNS[target], clean):
             raise OfflineTranslationValidationError('Hy-MT2 target script missing')
 
 
@@ -283,17 +316,31 @@ class _HyMTEngine:
                 self.process.wait(timeout=5)
         self.log.close()
 
-    def translate(self, text: str, source: str, target: str) -> str:
+    def translate(self, text: str, source: str, target: str, *, quality_retry: int = 0) -> str:
         prompt = (f'Translate the following text into {LANGUAGES[target]}. '
                   'Note that you should only output the translated result without any additional explanation. '
                   'Preserve all __KC_PH_...__ and __HYMTPH_...__ placeholders exactly, including their order. '
                   'Do not append inferred units or percent signs to placeholders. '
                   'Each __HYMTPH_...__ is an already translated noun or protected resource; integrate it without rewriting it. '
-                  'Preserve Markdown formatting. Do not change financial facts, units, or comparisons. '
+                  'Preserve Markdown formatting. Do not add Markdown table pipes, brackets, backticks, emphasis markers, or other formatting that is not present in the input. '
+                  'Do not change financial facts, units, or comparisons. '
+                  'Copy every source digit sequence, date, percentage, currency amount, and numeric unit exactly; '
+                  'translate the surrounding words without normalizing, rounding, dropping, or inventing numeric facts. '
                   + financial_glossary(text, target) + '\n' + text)
+        if quality_retry:
+            prompt = (f'Quality retry {quality_retry}: the previous draft failed a strict structural or '
+                      'financial-integrity check. Use the requested target script for all translatable words. '
+                      'Copy each complete numeric expression, date, percentage, currency and unit exactly '
+                      'from the input; do not convert its scale or currency. Preserve every placeholder and '
+                      'Markdown delimiter exactly. Output only the corrected translation.\n' + prompt)
+        sampling = dict(MANIFEST['sampling'])
+        if quality_retry:
+            # Keep the pinned model/runtime and all sampling bounds, while
+            # making the bounded second attempt meaningfully independent.
+            sampling['seed'] = int(sampling.get('seed', 0)) + quality_retry
         response = request_json(self.port, '/v1/chat/completions', {
             'model': 'hymt-offline', 'messages': [{'role': 'user', 'content': prompt}],
-            'stream': False, 'cache_prompt': False, **MANIFEST['sampling'],
+            'stream': False, 'cache_prompt': False, **sampling,
         }, timeout=240)
         choice = response['choices'][0]
         if choice.get('finish_reason') == 'length':
@@ -349,36 +396,75 @@ class HyMTOfflineTranslator:
             return text
         identity, path = self._memo_identity(core, target, detected, markdown=markdown)
         masked, replacements, terms = _mask(core, target)
+        active_replacements = replacements
+        fresh_translation = False
+        cache_value = None
         try:
             cached = json.loads(path.read_text(encoding='utf-8'))
             if all(cached.get(name) == value for name, value in identity.items()):
                 value = cached['translation']
                 # Cache stores the validated masked form, independent of source URLs.
-                validate_result(masked, value, detected, target, markdown=markdown)
+                validate_result(masked, value, detected, target, markdown=markdown, check_quantities=False)
                 self.stats['cache_hits'] += 1
             else:
                 raise ValueError('Cache identity changed')
         except (OSError, ValueError, KeyError, TypeError, OfflineTranslationError):
             try:
-                with _LOCK:
-                    value = self._engine(detected, target).translate(masked, detected, target)
-                if self._diagnostic_callback is not None:
-                    self._diagnostic_callback({'model_input': masked, 'raw_translation': value,
-                                               'source_language': detected, 'target_language': target,
-                                               'controlled_terms': dict(terms)})
-                if markdown:
-                    value = _restore_table_edges(masked, value)
-                validate_result(masked, value, detected, target, markdown=markdown)
+                engine = self._engine(detected, target)
+                attempt_count = 2 if isinstance(engine, _HyMTEngine) else 1
+                max_attempts = 3 if isinstance(engine, _HyMTEngine) else 1
+                for attempt in range(max_attempts):
+                    model_input = masked
+                    quantity_retry_replacements: dict[str, str] = {}
+                    if attempt == 2:
+                        model_input, quantity_retry_replacements = _mask_quantity_facts(
+                            masked, len(replacements) + len(terms))
+                    try:
+                        with _LOCK:
+                            if isinstance(engine, _HyMTEngine):
+                                value = engine.translate(model_input, detected, target, quality_retry=attempt)
+                            else:
+                                # Test doubles and future adapters retain the
+                                # established three-argument contract.
+                                value = engine.translate(model_input, detected, target)
+                        if self._diagnostic_callback is not None:
+                            self._diagnostic_callback({'model_input': model_input, 'raw_translation': value,
+                                                       'source_language': detected, 'target_language': target,
+                                                       'quality_retry': attempt,
+                                                       'controlled_terms': dict(terms)})
+                        if markdown:
+                            value = _restore_table_edges(model_input, value)
+                        validate_result(model_input, value, detected, target, markdown=markdown, check_quantities=False)
+                        if quantity_retry_replacements:
+                            # The cache format remains the original masked
+                            # sentence, not the temporary retry input.
+                            value = _restore_terms(value, quantity_retry_replacements)
+                            active_replacements = replacements
+                        cache_value = value
+                        fresh_translation = True
+                        break
+                    except OfflineTranslationValidationError as error:
+                        if (attempt == 1 and 'quantity' in str(error).casefold()
+                                and isinstance(engine, _HyMTEngine)):
+                            attempt_count = 3
+                            continue
+                        if attempt + 1 >= attempt_count:
+                            raise
             except OfflineTranslationError:
                 raise
             except Exception as error:
                 raise OfflineTranslationError(f'Hy-MT2 translation failed: {error}') from error
-            atomic_json(path, {**identity, 'translation': value, 'created_at': datetime.now(timezone.utc).isoformat()})
+        value = _restore_terms(value, terms)
+        for token, original in active_replacements.items():
+            value = value.replace(token, original)
+        # Validate the materialized response as well as the masked response.
+        # This keeps the standalone translator safe if a caller does not add
+        # the extended-locale builder's outer quantity gate.
+        validate_result(core, value, detected, target, markdown=markdown)
+        if fresh_translation:
+            atomic_json(path, {**identity, 'translation': cache_value, 'created_at': datetime.now(timezone.utc).isoformat()})
             self.stats['translated_fragments'] += 1
             self.stats['batch_requests'] += 1
-        value = _restore_terms(value, terms)
-        for token, original in replacements.items():
-            value = value.replace(token, original)
         return leading + value.strip() + trailing
 
     def translate(self, text: str, target: str, source: str | None = None, *, markdown: bool = True) -> str:

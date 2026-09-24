@@ -32,9 +32,43 @@ const CACHE_POLICY = Object.freeze({
 const VERSIONABLE_ASSET = /\.(?:avif|css|gif|ico|jpe?g|js|mjs|png|svg|ttf|wasm|webp|woff2?)$/i;
 const CONTENT_HASH = /^[0-9a-f]{8,64}$/i;
 const LOCALE_CONTENT_LANGUAGES = Object.freeze({
-  ko: "ko",
-  ja: "ja",
-  ar: "ar",
+  "en": "en",
+  "fr": "fr",
+  "pt": "pt",
+  "es": "es",
+  "ja": "ja",
+  "tr": "tr",
+  "ru": "ru",
+  "ar": "ar",
+  "ko": "ko",
+  "th": "th",
+  "it": "it",
+  "de": "de",
+  "vi": "vi",
+  "ms": "ms",
+  "id": "id",
+  "tl": "tl",
+  "hi": "hi",
+  "zh-Hant": "zh-Hant",
+  "pl": "pl",
+  "cs": "cs",
+  "nl": "nl",
+  "km": "km",
+  "my": "my",
+  "fa": "fa",
+  "gu": "gu",
+  "ur": "ur",
+  "te": "te",
+  "mr": "mr",
+  "he": "he",
+  "bn": "bn",
+  "ta": "ta",
+  "uk": "uk",
+  "bo": "bo",
+  "kk": "kk",
+  "mn": "mn",
+  "ug": "ug",
+  "yue": "yue"
 });
 const CANONICAL_PATHS = Object.freeze({
   "/index": "/",
@@ -49,8 +83,10 @@ const CANONICAL_PATHS = Object.freeze({
 });
 
 function localePath(pathname) {
-  const match = /^\/(ko|ja|ar)(?=\/|$)/.exec(String(pathname || ""));
-  if (!match) return { prefix: "", pathname: String(pathname || "") };
+  const match = /^\/([^/]+)(?=\/|$)/.exec(String(pathname || ""));
+  if (!match || !Object.hasOwn(LOCALE_CONTENT_LANGUAGES, match[1])) {
+    return { prefix: "", pathname: String(pathname || "") };
+  }
   const prefix = `/${match[1]}`;
   return {
     prefix,
@@ -68,10 +104,14 @@ function canonicalPath(pathname) {
 function contentLanguage(pathname) {
   const releaseCheck = RELEASE_CHECK_PATH.exec(String(pathname || ""));
   const contentPath = releaseCheck ? `/${releaseCheck[2] || ""}` : pathname;
-  const localizedData = /^\/data\/i18n\/(ko|ja|ar)(?=\/|$)/.exec(contentPath);
-  if (localizedData) return LOCALE_CONTENT_LANGUAGES[localizedData[1]];
-  const localizedSitemap = /^\/sitemap-(ko|ja|ar)\.xml$/.exec(contentPath);
-  if (localizedSitemap) return LOCALE_CONTENT_LANGUAGES[localizedSitemap[1]];
+  const localizedData = /^\/data\/i18n\/([^/]+)(?=\/|$)/.exec(contentPath);
+  if (localizedData && Object.hasOwn(LOCALE_CONTENT_LANGUAGES, localizedData[1])) {
+    return LOCALE_CONTENT_LANGUAGES[localizedData[1]];
+  }
+  const localizedSitemap = /^\/sitemap-(?:extended-)?([A-Za-z-]+)\.xml$/.exec(contentPath);
+  if (localizedSitemap && Object.hasOwn(LOCALE_CONTENT_LANGUAGES, localizedSitemap[1])) {
+    return LOCALE_CONTENT_LANGUAGES[localizedSitemap[1]];
+  }
   const localized = localePath(contentPath);
   return localized.prefix
     ? LOCALE_CONTENT_LANGUAGES[localized.prefix.slice(1)]
