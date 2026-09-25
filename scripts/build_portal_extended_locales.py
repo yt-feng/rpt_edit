@@ -19,12 +19,19 @@ from offline_translation import (
 from financial_quantity_integrity import quantity_issues
 from portal_extended_locales import (
     ADDITIONAL, COPY, ORIGIN, ExpansionError, digest, file_for_url, render_document,
-    select_locales, stable_bytes, validate_corpus,
+    select_locales, stable_bytes, validate_corpus, daily_corpus_day,
 )
 
 MAX_CHECKPOINT_BYTES = 8 * 1024 * 1024
 CHECKPOINT_VERSION = 'extended-static-v2'
 SOURCE_FALLBACK_VERSION = 'exact-source-v1'
+MAX_TRANSLATION_SECONDS = 4 * 60 * 60
+
+
+def validate_budget(seconds: int) -> int:
+    if not 1 <= seconds <= MAX_TRANSLATION_SECONDS:
+        raise ExpansionError(f'Time budget must be 1..{MAX_TRANSLATION_SECONDS} seconds')
+    return seconds
 
 
 def reject_symlinks(path: Path) -> None:
@@ -119,7 +126,7 @@ def validate_text(source: str, translated: str, locale: str, source_language: st
 
 class Memo:
     def __init__(self, path: Path, locale: str, translator: Translator, deadline: float, *, source_generation: str | None = None,
-                 allow_source_fallback: bool = False):
+                 allow_source_fallback: bool = False, seed_checkpoint: Path | None = None):
         reject_symlinks(path)
         self.path, self.locale, self.translator, self.deadline = path, locale, translator, deadline
         self.source_generation = source_generation
@@ -129,6 +136,7 @@ class Memo:
         self.fallback_uses = 0
         self.rejected = {}
         self.rows = {}
+        self.seed_rows, self.seed_fallbacks = {}, {}
         self.calls = self.hits = 0
         if path.is_file():
             if path.stat().st_size > MAX_CHECKPOINT_BYTES: raise ExpansionError('Checkpoint is too large')
@@ -140,6 +148,15 @@ class Memo:
                 if not isinstance(self.rows, dict): raise ExpansionError('Invalid checkpoint rows')
                 self.source_fallbacks = payload.get('source_fallbacks', {})
                 if not isinstance(self.source_fallbacks, dict): raise ExpansionError('Invalid source fallback rows')
+        if seed_checkpoint is not None:
+            reject_symlinks(seed_checkpoint)
+            if seed_checkpoint.stat().st_size > MAX_CHECKPOINT_BYTES: raise ExpansionError('Seed checkpoint too large')
+            seed = json.loads(seed_checkpoint.read_text())
+            if seed.get('model') != MODEL_ID or seed.get('locale') != locale or seed.get('version') != CHECKPOINT_VERSION:
+                raise ExpansionError('Seed checkpoint identity mismatch')
+            self.seed_rows, self.seed_fallbacks = seed.get('rows', {}), seed.get('source_fallbacks', {})
+            if not isinstance(self.seed_rows, dict) or not isinstance(self.seed_fallbacks, dict):
+                raise ExpansionError('Invalid seed checkpoint rows')
 
     def key(self, source: str, language: str, *, markdown: bool = False) -> str:
         parts = [CHECKPOINT_VERSION, MODEL_ID, self.locale, language, source]
@@ -150,18 +167,20 @@ class Memo:
     def get(self, source: str, language: str = 'zh', *, markdown: bool = False) -> str:
         if not source.strip(): return source
         key = self.key(source, language, markdown=markdown)
-        row = self.rows.get(key)
+        row = self.rows.get(key, self.seed_rows.get(key))
         if isinstance(row, dict) and row.get('source') == source and row.get('language') == language:
             try:
                 validate_text(source, row.get('text'), self.locale, language)
                 self.hits += 1
+                self.rows[key] = row
                 return row['text']
             except ExpansionError: self.rows.pop(key, None)
-        fallback = self.source_fallbacks.get(key)
+        fallback = self.source_fallbacks.get(key, self.seed_fallbacks.get(key))
         if (self.allow_source_fallback and isinstance(fallback, dict)
             and fallback.get('source') == source and fallback.get('language') == language
             and fallback.get('policy') == SOURCE_FALLBACK_VERSION):
             self.fallback_keys.add(key)
+            self.source_fallbacks[key] = fallback
             self.fallback_uses += 1
             return source
         if key in self.rejected:
@@ -234,17 +253,19 @@ def translate_document(doc: dict, memo: Memo) -> dict:
 
 
 def build(corpus: dict, locale: str, output: Path, checkpoint: Path, translator: Translator,
-          *, budget_seconds=1800, origin=ORIGIN, allow_source_fallback=False) -> dict:
+          *, budget_seconds=MAX_TRANSLATION_SECONDS, origin=ORIGIN, allow_source_fallback=False,
+          seed_checkpoint: Path | None = None) -> dict:
     if locale not in ADDITIONAL: raise ExpansionError('Not an additional locale')
     docs = validate_corpus(corpus, origin=origin)
-    if origin + '/' not in {doc['url'] for doc in docs}:
+    if origin + '/' not in {doc['url'] for doc in docs} and not daily_corpus_day(corpus):
         raise ExpansionError('A localized homepage source is required')
     reject_symlinks(output)
     reject_symlinks(checkpoint)
     if output.exists() and any(output.iterdir()): raise ExpansionError('Candidate output must be empty; never overwrite an active release')
     output.mkdir(parents=True, exist_ok=True)
     memo = Memo(checkpoint, locale, translator, time.monotonic() + budget_seconds,
-                source_generation=corpus['documents_sha256'], allow_source_fallback=allow_source_fallback)
+                source_generation=corpus['documents_sha256'], allow_source_fallback=allow_source_fallback,
+                seed_checkpoint=seed_checkpoint)
     set_deadline = getattr(translator, 'set_deadline', None)
     if callable(set_deadline): set_deadline(memo.deadline)
     # Materialize an empty or resumed checkpoint before the first model call.
@@ -304,7 +325,8 @@ def main() -> int:
     parser.add_argument('--locale')
     parser.add_argument('--output', type=Path)
     parser.add_argument('--checkpoint', type=Path)
-    parser.add_argument('--seconds', type=int, default=1800)
+    parser.add_argument('--seed-checkpoint', type=Path, help='Verified private R2 memo; reuse only exact validated units')
+    parser.add_argument('--seconds', type=int, default=MAX_TRANSLATION_SECONDS)
     parser.add_argument('--allow-source-fallback', action='store_true',
                         help='Keep exact source units on content validation failure, like ko/ja/ar; never keep rejected model output')
     args = parser.parse_args()
@@ -313,12 +335,13 @@ def main() -> int:
     if not all((args.corpus, args.locale, args.output, args.checkpoint)): parser.error('corpus, locale, output and checkpoint are required')
     require_actions()
     if os.environ.get('KC_PUBLIC_REPOSITORY') != 'true': raise ExpansionError('Translation requires an explicitly verified public repository')
-    if not 1 <= args.seconds <= 2400: raise ExpansionError('Time budget must be 1..2400 seconds')
+    validate_budget(args.seconds)
     if args.corpus.stat().st_size > 32 * 1024 * 1024: raise ExpansionError('Corpus too large')
     corpus = json.loads(args.corpus.read_text())
     result = build(corpus, args.locale, args.output, args.checkpoint,
                    OfflineTranslator(validation_attempts=1 if args.allow_source_fallback else 3),
-                   budget_seconds=args.seconds, allow_source_fallback=args.allow_source_fallback)
+                   budget_seconds=args.seconds, allow_source_fallback=args.allow_source_fallback,
+                   seed_checkpoint=args.seed_checkpoint)
     summary = {key: result[key] for key in ('locale', 'status', 'source_document_count', 'completed_page_count', 'paid_provider_requests', 'budget_exhausted')}
     summary['failure_count'] = len(result.get('failures') or [])
     for key in ('translation_policy', 'translation_complete', 'source_fallback_unit_count',

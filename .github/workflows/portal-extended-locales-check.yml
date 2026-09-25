@@ -53,6 +53,7 @@ jobs:
           python -B scripts/test_portal_extended_hardening.py
           python -B scripts/test_portal_extended_source_fallback.py
           python -B scripts/test_portal_extended_r2.py
+          python -B scripts/test_portal_extended_incremental.py
           python -B scripts/test_restore_assemble_portal_extended_r2.py
           python -B scripts/test_hymt_offline_translation.py
           python -B scripts/test_compare_hymt_translation.py

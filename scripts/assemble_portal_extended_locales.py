@@ -14,7 +14,7 @@ import re
 import xml.etree.ElementTree as ET
 from portal_extended_locales import (
     ADDITIONAL, HREFLANG, ORIGIN, ExpansionError, PublicParser, digest, file_for_url,
-    locale_url, select_locales, stable_bytes, validate_corpus,
+    locale_url, select_locales, stable_bytes, validate_corpus, daily_corpus_day,
 )
 from offline_translation import MODEL_ID
 
@@ -69,7 +69,8 @@ def verified_candidate(directory: Path, corpus: dict, *, origin: str = ORIGIN) -
             or parser.content_lang != manifest['locale'] or 'noindex' not in parser.metadata.get('robots', '')):
             raise ExpansionError('Candidate canonical/language/robots mismatch')
         payloads[record['path']] = raw
-    if origin + '/' not in by_url: raise ExpansionError('A localized homepage is required before activation')
+    if origin + '/' not in by_url and not daily_corpus_day(corpus):
+        raise ExpansionError('A localized homepage is required before activation')
     return manifest, payloads
 
 

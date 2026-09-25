@@ -41,8 +41,8 @@ def read_public(session, url: str, *, sitemap=False) -> bytes:
         return b''.join(parts)
 
 
-def inventory(session) -> list[str]:
-    pending, seen, urls = [ORIGIN + '/sitemap.xml'], set(), set()
+def inventory_entries(session) -> dict[str, str]:
+    pending, seen, urls = [ORIGIN + '/sitemap.xml'], set(), {}
     while pending:
         if len(seen) >= MAX_SITEMAPS: raise ExpansionError('Sitemap inventory exceeds the configured traversal limit')
         url = pending.pop(0)
@@ -61,10 +61,17 @@ def inventory(session) -> list[str]:
                 if any(urlsplit(loc).path == f'/sitemap-{code}.xml' for code in ('ko', 'ja', 'ar')): continue
                 if loc not in seen and loc not in pending: pending.append(loc)
             else:
-                try: urls.add(public_url(loc))
+                try:
+                    target = public_url(loc)
+                    lastmod = next((child.text for child in node if child.tag.rsplit('}', 1)[-1] == 'lastmod'), '') or ''
+                    urls[target] = max(urls.get(target, ''), lastmod)
                 except ExpansionError: pass
             if len(urls) > 100000: raise ExpansionError('Public URL inventory too large')
-    return sorted(urls)
+    return dict(sorted(urls.items()))
+
+
+def inventory(session) -> list[str]:
+    return list(inventory_entries(session))
 
 
 def select_urls(urls: list[str], limit: int) -> list[str]:

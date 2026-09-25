@@ -2,9 +2,13 @@
 # This workflow never publishes an incomplete candidate and never uploads
 # generated translations to Actions artifacts or caches.
 name: Extended locales private R2 pipeline
-run-name: Extended locale R2 ${{ inputs.operation }} (${{ inputs.locales || 'roundtrip' }})
+run-name: Extended locale R2 ${{ inputs.operation || 'daily incremental' }} (${{ inputs.locales || vars.PORTAL_EXTENDED_INCREMENTAL_LOCALES || 'fr' }})
 
 on:
+  workflow_run:
+    workflows: [Neutral edge catalog refresh]
+    types: [completed]
+    branches: [main]
   push:
     branches: [codex/extended-locales-r2-20260924]
   workflow_dispatch:
@@ -16,20 +20,20 @@ on:
         options: [roundtrip, candidate]
         default: roundtrip
       locales:
-        description: "Comma-separated additional locales (English excluded: summary-only); capped at 24 pages"
+        description: "Comma-separated additional locales (English excluded: summary-only); up to 24 new detail pages; never fill from history"
         required: false
         type: string
         default: fr
       source_generation:
-        description: "Existing R2 source generation SHA-256; leave empty only for the first source capture"
+        description: "Optional same-day daily source generation; leave empty to select today new/changed content"
         required: false
         type: string
         default: ""
       seconds:
-        description: "Per-locale Hy-MT2 CPU budget in seconds (1..2400)"
+        description: "Per-locale Hy-MT2 CPU budget in seconds (1..14400)"
         required: false
         type: string
-        default: "1800"
+        default: "14400"
       allow_source_fallback:
         description: "Keep exact source units on translation quality failure, matching ko/ja/ar; still require a complete page set"
         required: false
@@ -80,11 +84,15 @@ jobs:
     if: >-
       ${{
         inputs.operation == 'candidate' ||
+        (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' &&
+         github.event.workflow_run.head_branch == github.event.repository.default_branch &&
+         github.event.workflow_run.head_repository.full_name == github.repository) ||
         (github.event_name == 'push' && contains(github.event.head_commit.message, '[r2-candidate]'))
       }}
     runs-on: ubuntu-22.04
     timeout-minutes: 20
     outputs:
+      has_work: ${{ steps.source.outputs.has_work }}
       generation: ${{ steps.source.outputs.generation }}
       locales_json: ${{ steps.source.outputs.locales_json }}
     steps:
@@ -96,7 +104,7 @@ jobs:
           python-version: "3.11"
       - name: Install public collector and private R2 client
         run: python3 -m pip install --disable-pip-version-check "boto3>=1.34,<2" "requests>=2.31,<3"
-      - name: Capture or restore one immutable 24-page source generation
+      - name: Select today new or changed detail pages without historical backfill
         id: source
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
@@ -104,59 +112,33 @@ jobs:
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET: ${{ secrets.R2_BUCKET }}
           REQUESTED_SOURCE_GENERATION: ${{ inputs.source_generation }}
-          REQUESTED_LOCALES: ${{ inputs.locales }}
+          REQUESTED_LOCALES: ${{ inputs.locales || vars.PORTAL_EXTENDED_INCREMENTAL_LOCALES || 'fr' }}
         run: |
           set -euo pipefail
-          corpus="$RUNNER_TEMP/extended-source-corpus.json"
+          source_args=()
           if [ -n "$REQUESTED_SOURCE_GENERATION" ]; then
-            PYTHONPATH=scripts python3 -B scripts/portal_extended_r2.py restore-source \
-              --prefix "$EXTENDED_R2_PREFIX" --generation "$REQUESTED_SOURCE_GENERATION" --output "$corpus"
-          else
-            python3 -B scripts/collect_portal_extended_sources.py --out "$corpus" --max-pages 24
-            CORPUS="$corpus" python3 - <<'PY'
-          import json
-          import os
-          from pathlib import Path
-          value = json.loads(Path(os.environ["CORPUS"]).read_text(encoding="utf-8"))
-          collection = value.get("collection") or {}
-          if collection.get("failed"):
-              raise SystemExit("Source collection was incomplete; no partial generation may be persisted")
-          if collection.get("collected_count") != 24:
-              raise SystemExit("The first additional-locale batch must contain exactly 24 source pages")
-          PY
-            PYTHONPATH=scripts python3 -B scripts/portal_extended_r2.py put-source \
-              --prefix "$EXTENDED_R2_PREFIX" --corpus "$corpus"
+            source_args+=(--generation "$REQUESTED_SOURCE_GENERATION")
           fi
-          CORPUS="$corpus" REQUESTED_LOCALES="$REQUESTED_LOCALES" python3 - <<'PY' >> "$GITHUB_OUTPUT"
-          import json
-          import os
-          import re
-          from pathlib import Path
-          import sys
-          sys.path.insert(0, "scripts")
-          from portal_extended_locales import select_locales
-          from portal_extended_r2 import source_generation
-          corpus = json.loads(Path(os.environ["CORPUS"]).read_text(encoding="utf-8"))
-          generation = source_generation(corpus)
-          requested = os.environ["REQUESTED_LOCALES"].strip() or "fr"
-          locales = list(select_locales(requested))
-          print(f"generation={generation}")
-          print("locales_json=" + json.dumps(locales, separators=(",", ":")))
-          print(f"source_generation={generation}")
-          PY
+          PYTHONPATH=scripts python3 -B scripts/portal_extended_incremental.py prepare \
+            --prefix "$EXTENDED_R2_PREFIX" --locales "$REQUESTED_LOCALES" \
+            --corpus "$RUNNER_TEMP/extended-source-corpus.json" \
+            --github-output "$GITHUB_OUTPUT" "${source_args[@]}" | tee -a "$GITHUB_STEP_SUMMARY"
       - name: Persist source-generation evidence
         env:
           SOURCE_GENERATION: ${{ steps.source.outputs.generation }}
         run: |
           set -euo pipefail
-          test -n "$SOURCE_GENERATION"
+          if [ -z "$SOURCE_GENERATION" ]; then
+            echo "No new content today; no model job or historical backfill." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
           echo "source_generation=$SOURCE_GENERATION" >> "$GITHUB_STEP_SUMMARY"
 
   locale:
     needs: source
-    if: needs.source.result == 'success' && github.event.repository.private == false
+    if: needs.source.result == 'success' && needs.source.outputs.has_work == 'true' && github.event.repository.private == false
     runs-on: ubuntu-22.04
-    timeout-minutes: 50
+    timeout-minutes: 270
     strategy:
       fail-fast: false
       max-parallel: 2
@@ -165,8 +147,8 @@ jobs:
     env:
       SOURCE_GENERATION: ${{ needs.source.outputs.generation }}
       LOCALE: ${{ matrix.locale }}
-      TRANSLATION_SECONDS: ${{ inputs.seconds || '1800' }}
-      ALLOW_SOURCE_FALLBACK: ${{ inputs.allow_source_fallback && 'true' || 'false' }}
+      TRANSLATION_SECONDS: ${{ inputs.seconds || '14400' }}
+      ALLOW_SOURCE_FALLBACK: ${{ (github.event_name != 'workflow_dispatch' || inputs.allow_source_fallback) && 'true' || 'false' }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -206,6 +188,17 @@ jobs:
             rm -f "$RUNNER_TEMP/locale-checkpoint.json"
             echo "present=false" >> "$GITHUB_OUTPUT"
           fi
+      - name: Restore verified incremental unit memo
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+        run: |
+          set -euo pipefail
+          PYTHONPATH=scripts python3 -B scripts/portal_extended_incremental.py restore-seed \
+            --prefix "$EXTENDED_R2_PREFIX" --locale "$LOCALE" \
+            --checkpoint "$RUNNER_TEMP/locale-seed.json" | tee -a "$GITHUB_STEP_SUMMARY"
       - name: Set up pinned Hy-MT2 CPU model without audit artifacts
         uses: ./.github/actions/setup-offline-translation
         with:
@@ -217,18 +210,17 @@ jobs:
           KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
         run: |
           set -u
-          if ! [[ "$TRANSLATION_SECONDS" =~ ^[0-9]+$ ]] || [ "$TRANSLATION_SECONDS" -lt 1 ] || [ "$TRANSLATION_SECONDS" -gt 2400 ]; then
-            echo "Invalid per-locale budget; expected 1..2400 seconds" >&2
+          if ! [[ "$TRANSLATION_SECONDS" =~ ^[0-9]+$ ]] || [ "$TRANSLATION_SECONDS" -lt 1 ] || [ "$TRANSLATION_SECONDS" -gt 14400 ]; then
+            echo "Invalid per-locale budget; expected 1..14400 seconds" >&2
             exit 2
           fi
           checkpoint_args=()
           if [ "$ALLOW_SOURCE_FALLBACK" = "true" ]; then
             checkpoint_args+=(--allow-source-fallback)
           fi
-          if [ -s "$RUNNER_TEMP/locale-checkpoint.json" ]; then
-            checkpoint_args+=(--checkpoint "$RUNNER_TEMP/locale-checkpoint.json")
-          else
-            checkpoint_args+=(--checkpoint "$RUNNER_TEMP/locale-checkpoint.json")
+          checkpoint_args+=(--checkpoint "$RUNNER_TEMP/locale-checkpoint.json")
+          if [ -s "$RUNNER_TEMP/locale-seed.json" ]; then
+            checkpoint_args+=(--seed-checkpoint "$RUNNER_TEMP/locale-seed.json")
           fi
           set +e
           python3 -B scripts/build_portal_extended_locales.py \
@@ -256,9 +248,9 @@ jobs:
         run: |
           set -euo pipefail
           if [ -s "$RUNNER_TEMP/locale-checkpoint.json" ]; then
-            PYTHONPATH=scripts python3 -B scripts/portal_extended_r2.py put-checkpoint \
+            PYTHONPATH=scripts python3 -B scripts/portal_extended_incremental.py checkpoint \
               --prefix "$EXTENDED_R2_PREFIX" --locale "$LOCALE" --generation "$SOURCE_GENERATION" \
-              --input "$RUNNER_TEMP/locale-checkpoint.json"
+              --checkpoint "$RUNNER_TEMP/locale-checkpoint.json"
           else
             echo "No checkpoint was produced; refusing to claim resumability" >&2
             exit 1
@@ -273,8 +265,9 @@ jobs:
         run: |
           set -euo pipefail
           test -s "$RUNNER_TEMP/extended-candidate/candidate-manifest.json"
-          PYTHONPATH=scripts python3 -B scripts/portal_extended_r2.py upload-candidate \
+          PYTHONPATH=scripts python3 -B scripts/portal_extended_incremental.py candidate \
             --prefix "$EXTENDED_R2_PREFIX" --locale "$LOCALE" --generation "$SOURCE_GENERATION" \
+            --corpus "$RUNNER_TEMP/extended-source-corpus.json" \
             --directory "$RUNNER_TEMP/extended-candidate"
       - name: Mark a budget timeout as incomplete after persistence
         if: always()
