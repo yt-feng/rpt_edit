@@ -149,6 +149,10 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
         "token": "BIS",
         "kind": "rss",
         "pdf": "bis_publication",
+        # BIS intermittently serves a 200 response containing a bot/challenge
+        # shell to plain requests. Use the same browser-fingerprint transport as
+        # the other WAF-sensitive sources for landing pages and PDFs.
+        "impersonate": True,
         "feeds": [
             # The current official /rss directory lists this as "Research papers".
             # wppubls, bcbspubls and cgfs_publs were retired in the 2026 redesign.
@@ -861,8 +865,18 @@ def collect_rss_items(cfg: dict[str, Any], session: requests.Session, timeout: i
 
 
 def _derive_pdf_candidates(cfg: dict[str, Any], link: str) -> list[str]:
-    if cfg.get("pdf") in {"swap_htm_pdf", "bis_publication"} and re.search(r"\.html?(?:[?#]|$)", link, re.I):
-        return [re.sub(r"\.html?(\?|#|$)", r".pdf\1", link, flags=re.IGNORECASE)]
+    if cfg.get("pdf") in {"swap_htm_pdf", "bis_publication"}:
+        if re.search(r"\.html?(?:[?#]|$)", link, re.I):
+            return [re.sub(r"\.html?(\?|#|$)", r".pdf\1", link, flags=re.IGNORECASE)]
+        # The 2026 BIS redesign gives working papers, bulletins and FSI insights
+        # stable publication slugs whose primary PDF uses the same path plus
+        # ``.pdf``. Resolve that deterministic URL before fetching the landing
+        # page, which avoids a false "main PDF missing" when BIS returns a 200
+        # challenge shell to a runner.
+        path = urlsplit(link).path.rstrip("/")
+        if re.fullmatch(r"/publications/(?:working-paper|bulletin|fsi-insight)-[a-z0-9][a-z0-9-]*", path, re.I):
+            parts = urlsplit(link)
+            return [parts._replace(path=path + ".pdf").geturl()]
     if cfg.get("pdf") == "direct":
         return [link]
     return []
