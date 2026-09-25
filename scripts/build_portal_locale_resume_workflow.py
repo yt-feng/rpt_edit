@@ -88,6 +88,7 @@ jobs:
       - name: Validate recovery code and shared release gates
         run: |
           python3 -B scripts/build_portal_locale_resume_workflow.py --check
+          python3 -B scripts/test_fetch_release_asset.py
           python3 -B scripts/test_portal_locale_resume_workflow.py
           python3 -B scripts/test_resume_portal_locale_candidate.py
           python3 -B scripts/test_verify_portal_locale_routes.py

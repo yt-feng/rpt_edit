@@ -284,6 +284,7 @@ jobs:
           python3 -B scripts/test_report_research_index.py
           python3 -B scripts/test_download_report_research_inputs.py
           python3 scripts/test_edge_route_cutover.py
+          python3 -B scripts/test_fetch_release_asset.py
           python3 scripts/test_neutral_edge_cutover_workflow.py
           python3 -B scripts/test_portal_locale_resume_workflow.py
           python3 -B scripts/test_resume_portal_locale_candidate.py
@@ -351,18 +352,15 @@ jobs:
         run: |
           set -euo pipefail
           origin="$LIVE_ORIGIN"
-          curl --fail --silent --show-error --max-redirs 0 \
-            --connect-timeout 5 --max-time 20 --header 'Cache-Control: no-cache' \
-            --output "$RUNNER_TEMP/previous-edge-state.json" \
-            "$origin/.well-known/edge-state"
-          curl --fail --silent --show-error --max-redirs 0 \
-            --connect-timeout 5 --max-time 60 --header 'Cache-Control: no-cache' \
-            --output "$RUNNER_TEMP/previous-public-catalog.json" \
-            "$origin/data/catalog.json"
-          curl --fail --silent --show-error --max-redirs 0 \
-            --connect-timeout 5 --max-time 60 --header 'Cache-Control: no-cache' \
-            --output "$RUNNER_TEMP/previous-public-sitemap.xml" \
-            "$origin/sitemap-baidu.xml"
+          python3 -B scripts/fetch_release_asset.py \
+            --url "$origin/.well-known/edge-state" --output "$RUNNER_TEMP/previous-edge-state.json" \
+            --label "previous-edge-state" --max-time 30 --max-total-time 100 --json
+          python3 -B scripts/fetch_release_asset.py \
+            --url "$origin/data/catalog.json" --output "$RUNNER_TEMP/previous-public-catalog.json" \
+            --label "previous-public-catalog" --max-time 180 --max-total-time 420 --json
+          python3 -B scripts/fetch_release_asset.py \
+            --url "$origin/sitemap-baidu.xml" --output "$RUNNER_TEMP/previous-public-sitemap.xml" \
+            --label "previous-public-sitemap" --max-time 30 --max-total-time 100
           python3 - <<'PY'
           import json
           import os
@@ -400,10 +398,10 @@ jobs:
         run: |
           set -euo pipefail
           output="$RUNNER_TEMP/previous-release-semantics.json"
-          status="$(curl --silent --show-error --max-redirs 0 \
-            --connect-timeout 5 --max-time 30 --header 'Cache-Control: no-cache' \
-            --output "$output" --write-out '%{http_code}' \
-            "$LIVE_ORIGIN/.well-known/edge-release/$PREVIOUS_STATIC_RELEASE/data/release-semantics.json")"
+          status="$(python3 -B scripts/fetch_release_asset.py \
+            --url "$LIVE_ORIGIN/.well-known/edge-release/$PREVIOUS_STATIC_RELEASE/data/release-semantics.json" --output "$output" \
+            --label "active-release-semantics" --max-time 60 --max-total-time 150 --json \
+            --allow-missing --write-out-http-code)"
           case "$status" in
             200)
               PYTHONPATH=scripts PREVIOUS_MANIFEST="$output" python3 - <<'PY'
@@ -705,10 +703,10 @@ jobs:
             echo "Using the latest resumable CI translation checkpoint"
             exit 0
           fi
-          status="$(curl --silent --show-error --max-redirs 0 \
-            --connect-timeout 5 --max-time 120 --header 'Cache-Control: no-cache' \
-            --output "$active_cache" --write-out '%{http_code}' \
-            "$LIVE_ORIGIN/.well-known/edge-release/$PREVIOUS_STATIC_RELEASE/data/i18n/cache-v1.json.gz")"
+          status="$(python3 -B scripts/fetch_release_asset.py \
+            --url "$LIVE_ORIGIN/.well-known/edge-release/$PREVIOUS_STATIC_RELEASE/data/i18n/cache-v1.json.gz" --output "$active_cache" \
+            --label "active-locale-cache" --max-time 180 --max-total-time 420 \
+            --allow-missing --write-out-http-code)"
           case "$status" in
             200)
               test -s "$active_cache"
@@ -835,10 +833,10 @@ jobs:
         run: |
           set -euo pipefail
           ledger="$RUNNER_TEMP/active-locale-history.json"
-          status="$(curl --silent --show-error --max-redirs 0 \
-            --connect-timeout 5 --max-time 60 --header 'Cache-Control: no-cache' \
-            --output "$ledger" --write-out '%{http_code}' \
-            "$LIVE_ORIGIN/.well-known/edge-release/$PREVIOUS_STATIC_RELEASE/data/i18n/history-release.json")"
+          status="$(python3 -B scripts/fetch_release_asset.py \
+            --url "$LIVE_ORIGIN/.well-known/edge-release/$PREVIOUS_STATIC_RELEASE/data/i18n/history-release.json" --output "$ledger" \
+            --label "active-locale-history" --max-time 60 --max-total-time 150 --json \
+            --allow-missing --write-out-http-code)"
           case "$status" in
             200) test -s "$ledger" ;;
             404)
@@ -2230,7 +2228,7 @@ jobs:
         )
       }}
     runs-on: ubuntu-22.04
-    timeout-minutes: 65
+    timeout-minutes: 90
     env:
       STATIC_RELEASE: ${{ needs.prepare_release.outputs.static_release }}
       STATIC_SLOT: ${{ needs.prepare_release.outputs.static_slot }}
@@ -2302,7 +2300,7 @@ jobs:
           path: _release_validation
 
       - name: Prove live release is unchanged before cutover
-        timeout-minutes: 5
+        timeout-minutes: 10
         env:
           EDGE_SCRIPT_NAME: svc-04df8d213b73
           EDGE_VERIFY_ATTEMPTS: "3"
@@ -2312,14 +2310,12 @@ jobs:
         run: |
           set -euo pipefail
           origin="$LIVE_ORIGIN"
-          curl --fail --silent --show-error --max-redirs 0 \
-            --connect-timeout 5 --max-time 20 --header 'Cache-Control: no-cache' \
-            --output "$RUNNER_TEMP/live-state-before.json" \
-            "$origin/.well-known/edge-state"
-          curl --fail --silent --show-error --max-redirs 0 \
-            --connect-timeout 5 --max-time 60 --header 'Cache-Control: no-cache' \
-            --output "$RUNNER_TEMP/live-catalog-before.json" \
-            "$origin/data/catalog.json"
+          python3 -B scripts/fetch_release_asset.py \
+            --url "$origin/.well-known/edge-state" --output "$RUNNER_TEMP/live-state-before.json" \
+            --label "live-state-before" --max-time 30 --max-total-time 100 --json
+          python3 -B scripts/fetch_release_asset.py \
+            --url "$origin/data/catalog.json" --output "$RUNNER_TEMP/live-catalog-before.json" \
+            --label "live-catalog-before" --max-time 180 --max-total-time 420 --json
           cmp _release_validation/previous/edge-state.json "$RUNNER_TEMP/live-state-before.json"
           cmp _release_validation/previous/catalog.json "$RUNNER_TEMP/live-catalog-before.json"
           python3 -B scripts/edge_route_cutover.py verify
@@ -2329,10 +2325,9 @@ jobs:
         timeout-minutes: 2
         run: |
           set -euo pipefail
-          curl --fail --silent --show-error --max-redirs 0 \
-            --connect-timeout 5 --max-time 30 --header 'Cache-Control: no-cache' \
-            --output "$RUNNER_TEMP/portal-worker-capabilities.json" \
-            "$LIVE_ORIGIN/api/health"
+          python3 -B scripts/fetch_release_asset.py \
+            --url "$LIVE_ORIGIN/api/health" --output "$RUNNER_TEMP/portal-worker-capabilities.json" \
+            --label "portal-worker-capabilities" --max-time 30 --max-total-time 100 --json
           python3 - <<'PY'
           import json
           import os
@@ -2449,7 +2444,7 @@ jobs:
 
       - name: Accept prepared release through the live edge
         id: release_acceptance
-        timeout-minutes: 18
+        timeout-minutes: 30
         env:
           EDGE_SCRIPT_NAME: svc-04df8d213b73
           EDGE_VERIFY_ATTEMPTS: "6"
@@ -2460,11 +2455,10 @@ jobs:
           origin="$LIVE_ORIGIN"
           accepted=0
           for attempt in $(seq 1 8); do
-            curl --fail --silent --show-error --max-redirs 0 \
-              --connect-timeout 5 --max-time 15 --header 'Cache-Control: no-cache' \
-              --output "$RUNNER_TEMP/live-state-after.json" \
-              "$origin/.well-known/edge-state" || true
-            if STATE_PATH="$RUNNER_TEMP/live-state-after.json" python3 - <<'PY'
+            if python3 -B scripts/fetch_release_asset.py \
+              --url "$origin/.well-known/edge-state" --output "$RUNNER_TEMP/live-state-after.json" \
+              --label "live-state-after" --max-time 15 --max-total-time 20 --attempts 1 --json \
+              && STATE_PATH="$RUNNER_TEMP/live-state-after.json" python3 - <<'PY'
           import json
           import os
           from pathlib import Path
@@ -2487,26 +2481,26 @@ jobs:
           done
           test "$accepted" = 1
           python3 -B scripts/edge_route_cutover.py verify
-          curl --fail --silent --show-error --max-redirs 0 \
-            --connect-timeout 5 --max-time 60 \
-            --output "$RUNNER_TEMP/release-catalog.json" \
-            "$origin/.well-known/edge-release/$STATIC_RELEASE/data/catalog.json"
-          curl --fail --silent --show-error --max-redirs 0 \
-            --connect-timeout 5 --max-time 60 \
-            --output "$RUNNER_TEMP/public-catalog-after.json" \
-            "$origin/data/catalog.json"
-          curl --fail --silent --show-error --max-redirs 0 \
-            --connect-timeout 5 --max-time 60 \
-            --output "$RUNNER_TEMP/public-sitemap-after.xml" \
-            "$origin/sitemap-baidu.xml"
-          curl --fail --silent --show-error --max-redirs 0 \
-            --connect-timeout 5 --max-time 30 \
-            --output "$RUNNER_TEMP/release-semantics-after.json" \
-            "$origin/.well-known/edge-release/$STATIC_RELEASE/data/release-semantics.json"
-          curl --fail --silent --show-error --max-redirs 0 \
-            --connect-timeout 5 --max-time 30 \
-            --output "$RUNNER_TEMP/public-semantics-after.json" \
-            "$origin/data/release-semantics.json"
+          python3 -B scripts/fetch_release_asset.py \
+            --url "$origin/.well-known/edge-release/$STATIC_RELEASE/data/catalog.json" --output "$RUNNER_TEMP/release-catalog.json" \
+            --label "release-catalog" --max-time 180 --max-total-time 420 --json \
+            --expected-file "_release_validation/candidate/catalog.json" --retry-404
+          python3 -B scripts/fetch_release_asset.py \
+            --url "$origin/data/catalog.json" --output "$RUNNER_TEMP/public-catalog-after.json" \
+            --label "public-catalog-after" --max-time 180 --max-total-time 420 --json \
+            --expected-file "_release_validation/candidate/catalog.json" --retry-404
+          python3 -B scripts/fetch_release_asset.py \
+            --url "$origin/sitemap-baidu.xml" --output "$RUNNER_TEMP/public-sitemap-after.xml" \
+            --label "public-sitemap-after" --max-time 30 --max-total-time 100 \
+            --expected-file "_release_validation/candidate/sitemap.xml" --retry-404
+          python3 -B scripts/fetch_release_asset.py \
+            --url "$origin/.well-known/edge-release/$STATIC_RELEASE/data/release-semantics.json" --output "$RUNNER_TEMP/release-semantics-after.json" \
+            --label "release-semantics-after" --max-time 30 --max-total-time 100 --json \
+            --expected-file "_release_validation/candidate/release-semantics.json" --retry-404
+          python3 -B scripts/fetch_release_asset.py \
+            --url "$origin/data/release-semantics.json" --output "$RUNNER_TEMP/public-semantics-after.json" \
+            --label "public-semantics-after" --max-time 30 --max-total-time 100 --json \
+            --expected-file "_release_validation/candidate/release-semantics.json" --retry-404
           cmp _release_validation/candidate/catalog.json "$RUNNER_TEMP/release-catalog.json"
           cmp _release_validation/candidate/catalog.json "$RUNNER_TEMP/public-catalog-after.json"
           cmp _release_validation/candidate/sitemap.xml "$RUNNER_TEMP/public-sitemap-after.xml"
@@ -2518,15 +2512,15 @@ jobs:
               --origin "$origin" \
               --output "$RUNNER_TEMP/live-locale-routes.json"
             for locale in ko ja ar; do
-              curl --fail --silent --show-error --max-redirs 0 \
-                --connect-timeout 5 --max-time 60 --header 'Cache-Control: no-cache' \
-                --dump-header "$RUNNER_TEMP/public-$locale-headers-after.txt" \
-                --output "$RUNNER_TEMP/public-$locale-index-after.html" \
-                "$origin/$locale/"
-              curl --fail --silent --show-error --max-redirs 0 \
-                --connect-timeout 5 --max-time 60 --header 'Cache-Control: no-cache' \
-                --output "$RUNNER_TEMP/public-sitemap-$locale-after.xml" \
-                "$origin/sitemap-$locale.xml"
+              python3 -B scripts/fetch_release_asset.py \
+                --url "$origin/$locale/" --output "$RUNNER_TEMP/public-$locale-index-after.html" \
+                --label "public-$locale-index-after" --max-time 30 --max-total-time 100 \
+                --expected-file "_release_validation/candidate/$locale/index.html" --retry-404 \
+                --dump-header "$RUNNER_TEMP/public-$locale-headers-after.txt"
+              python3 -B scripts/fetch_release_asset.py \
+                --url "$origin/sitemap-$locale.xml" --output "$RUNNER_TEMP/public-sitemap-$locale-after.xml" \
+                --label "public-sitemap-$locale-after" --max-time 30 --max-total-time 100 \
+                --expected-file "_release_validation/candidate/sitemap-$locale.xml" --retry-404
               cmp "_release_validation/candidate/$locale/index.html" \
                 "$RUNNER_TEMP/public-$locale-index-after.html"
               cmp "_release_validation/candidate/sitemap-$locale.xml" \
@@ -2598,11 +2592,9 @@ jobs:
           Path(os.environ["DEEP_URL_FILE"]).write_text(sorted(set(candidates))[0] + "\n", encoding="utf-8")
           PY
               IFS= read -r deep_url < "$RUNNER_TEMP/public-$locale-deep-url.txt"
-              deep_status="$(curl --fail --silent --show-error --max-redirs 0 \
-                --connect-timeout 5 --max-time 60 --header 'Cache-Control: no-cache' \
-                --write-out '%{http_code}' \
-                --output "$RUNNER_TEMP/public-$locale-deep-after.html" \
-                "$deep_url")"
+              deep_status="$(python3 -B scripts/fetch_release_asset.py \
+                --url "$deep_url" --output "$RUNNER_TEMP/public-$locale-deep-after.html" \
+                --label "public-$locale-deep-after" --max-time 30 --max-total-time 100 --retry-404 --write-out-http-code)"
               test "$deep_status" = "200"
               LOCALE="$locale" \
               SITE_ORIGIN="$origin" \
@@ -2715,35 +2707,34 @@ jobs:
               raise SystemExit(f"Deep locale page JSON-LD has no localized inLanguage: {locale}")
           PY
             done
-            curl --fail --silent --show-error --max-redirs 0 \
-              --connect-timeout 5 --max-time 60 --header 'Cache-Control: no-cache' \
-              --output "$RUNNER_TEMP/public-locale-manifest-after.json" \
-              "$origin/data/i18n/manifest.json"
+            python3 -B scripts/fetch_release_asset.py \
+              --url "$origin/data/i18n/manifest.json" --output "$RUNNER_TEMP/public-locale-manifest-after.json" \
+              --label "public-locale-manifest-after" --max-time 180 --max-total-time 420 --json \
+              --expected-file "_release_validation/candidate/data/i18n/manifest.json" --retry-404
             cmp _release_validation/candidate/data/i18n/manifest.json \
               "$RUNNER_TEMP/public-locale-manifest-after.json"
           fi
           public_brand_root="$RUNNER_TEMP/public-brand-after"
           mkdir -p "$public_brand_root/assets"
-          curl --fail --silent --show-error --max-redirs 0 \
-            --connect-timeout 5 --max-time 30 --header 'Cache-Control: no-cache' \
-            --output "$public_brand_root/index.html" "$origin/"
-          curl --fail --silent --show-error --max-redirs 0 \
-            --connect-timeout 5 --max-time 30 --header 'Cache-Control: no-cache' \
-            --output "$public_brand_root/assets/app.js" "$origin/assets/app.js"
-          curl --fail --silent --show-error --max-redirs 0 \
-            --connect-timeout 5 --max-time 30 --header 'Cache-Control: no-cache' \
-            --output "$public_brand_root/assets/app-mark.svg" "$origin/assets/app-mark.svg"
-          curl --fail --silent --show-error --max-redirs 0 \
-            --connect-timeout 5 --max-time 30 --header 'Cache-Control: no-cache' \
-            --output "$public_brand_root/doc.html" "$origin/doc.html"
-          curl --fail --silent --show-error --max-redirs 0 \
-            --connect-timeout 5 --max-time 30 --header 'Cache-Control: no-cache' \
-            --output "$public_brand_root/report.html" "$origin/report.html"
+          python3 -B scripts/fetch_release_asset.py \
+            --url "$origin/" --output "$public_brand_root/index.html" \
+            --label "public-brand-index-html" --max-time 30 --max-total-time 100 --retry-404
+          python3 -B scripts/fetch_release_asset.py \
+            --url "$origin/assets/app.js" --output "$public_brand_root/assets/app.js" \
+            --label "public-brand-app-js" --max-time 30 --max-total-time 100 --retry-404
+          python3 -B scripts/fetch_release_asset.py \
+            --url "$origin/assets/app-mark.svg" --output "$public_brand_root/assets/app-mark.svg" \
+            --label "public-brand-app-mark-svg" --max-time 30 --max-total-time 100 --retry-404
+          python3 -B scripts/fetch_release_asset.py \
+            --url "$origin/doc.html" --output "$public_brand_root/doc.html" \
+            --label "public-brand-doc-html" --max-time 30 --max-total-time 100 --retry-404
+          python3 -B scripts/fetch_release_asset.py \
+            --url "$origin/report.html" --output "$public_brand_root/report.html" \
+            --label "public-brand-report-html" --max-time 30 --max-total-time 100 --retry-404
           python3 -B scripts/check_public_brand.py "$public_brand_root"
-          curl --fail --silent --show-error --max-redirs 0 \
-            --connect-timeout 5 --max-time 30 \
-            --output "$RUNNER_TEMP/runtime-health-after.json" \
-            "$origin/api/health?runtime-data=1"
+          python3 -B scripts/fetch_release_asset.py \
+            --url "$origin/api/health?runtime-data=1" --output "$RUNNER_TEMP/runtime-health-after.json" \
+            --label "runtime-health-after" --max-time 30 --max-total-time 100 --json --retry-404
           python3 - <<'PY'
           import json
           import os
@@ -2795,7 +2786,7 @@ jobs:
       - name: Verify exact previous release after rollback
         id: rollback_acceptance
         if: ${{ always() && steps.edge_rollback.outcome == 'success' }}
-        timeout-minutes: 10
+        timeout-minutes: 15
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID }}
@@ -2807,48 +2798,38 @@ jobs:
             --script-name "$EDGE_PRIVATE_SCRIPT_NAME" \
             --expect-version "$EDGE_PREVIOUS_VERSION_ID"
           origin="$LIVE_ORIGIN"
-          restored=0
-          for attempt in $(seq 1 8); do
-            curl --fail --silent --show-error --max-redirs 0 \
-              --connect-timeout 5 --max-time 15 --header 'Cache-Control: no-cache' \
-              --output "$RUNNER_TEMP/rollback-edge-state.json" \
-              "$origin/.well-known/edge-state" || true
-            curl --fail --silent --show-error --max-redirs 0 \
-              --connect-timeout 5 --max-time 60 --header 'Cache-Control: no-cache' \
-              --output "$RUNNER_TEMP/rollback-public-catalog.json" \
-              "$origin/data/catalog.json" || true
-            if cmp _release_validation/previous/edge-state.json "$RUNNER_TEMP/rollback-edge-state.json" \
-              && cmp _release_validation/previous/catalog.json "$RUNNER_TEMP/rollback-public-catalog.json"
-            then
-              restored=1
-              break
-            fi
-            sleep 3
-          done
-          test "$restored" = 1
+          python3 -B scripts/fetch_release_asset.py \
+            --url "$origin/.well-known/edge-state" --output "$RUNNER_TEMP/rollback-edge-state.json" \
+            --label "rollback-edge-state" --max-time 15 --max-total-time 120 --attempts 8 --json \
+            --expected-file "_release_validation/previous/edge-state.json"
+          python3 -B scripts/fetch_release_asset.py \
+            --url "$origin/data/catalog.json" --output "$RUNNER_TEMP/rollback-public-catalog.json" \
+            --label "rollback-public-catalog" --max-time 180 --max-total-time 420 --json \
+            --expected-file "_release_validation/previous/catalog.json"
+          cmp _release_validation/previous/edge-state.json "$RUNNER_TEMP/rollback-edge-state.json"
+          cmp _release_validation/previous/catalog.json "$RUNNER_TEMP/rollback-public-catalog.json"
           EDGE_SCRIPT_NAME="$EDGE_PRIVATE_SCRIPT_NAME" python3 -B scripts/edge_route_cutover.py verify
           rollback_brand_root="$RUNNER_TEMP/public-brand-rollback"
           mkdir -p "$rollback_brand_root/assets"
-          curl --fail --silent --show-error --max-redirs 0 \
-            --connect-timeout 5 --max-time 30 --header 'Cache-Control: no-cache' \
-            --output "$rollback_brand_root/index.html" "$origin/"
-          curl --fail --silent --show-error --max-redirs 0 \
-            --connect-timeout 5 --max-time 30 --header 'Cache-Control: no-cache' \
-            --output "$rollback_brand_root/assets/app.js" "$origin/assets/app.js"
-          curl --fail --silent --show-error --max-redirs 0 \
-            --connect-timeout 5 --max-time 30 --header 'Cache-Control: no-cache' \
-            --output "$rollback_brand_root/assets/app-mark.svg" "$origin/assets/app-mark.svg"
-          curl --fail --silent --show-error --max-redirs 0 \
-            --connect-timeout 5 --max-time 30 --header 'Cache-Control: no-cache' \
-            --output "$rollback_brand_root/doc.html" "$origin/doc.html"
-          curl --fail --silent --show-error --max-redirs 0 \
-            --connect-timeout 5 --max-time 30 --header 'Cache-Control: no-cache' \
-            --output "$rollback_brand_root/report.html" "$origin/report.html"
+          python3 -B scripts/fetch_release_asset.py \
+            --url "$origin/" --output "$rollback_brand_root/index.html" \
+            --label "rollback-brand-index-html" --max-time 30 --max-total-time 100
+          python3 -B scripts/fetch_release_asset.py \
+            --url "$origin/assets/app.js" --output "$rollback_brand_root/assets/app.js" \
+            --label "rollback-brand-app-js" --max-time 30 --max-total-time 100
+          python3 -B scripts/fetch_release_asset.py \
+            --url "$origin/assets/app-mark.svg" --output "$rollback_brand_root/assets/app-mark.svg" \
+            --label "rollback-brand-app-mark-svg" --max-time 30 --max-total-time 100
+          python3 -B scripts/fetch_release_asset.py \
+            --url "$origin/doc.html" --output "$rollback_brand_root/doc.html" \
+            --label "rollback-brand-doc-html" --max-time 30 --max-total-time 100
+          python3 -B scripts/fetch_release_asset.py \
+            --url "$origin/report.html" --output "$rollback_brand_root/report.html" \
+            --label "rollback-brand-report-html" --max-time 30 --max-total-time 100
           python3 -B scripts/check_public_brand.py "$rollback_brand_root"
-          curl --fail --silent --show-error --max-redirs 0 \
-            --connect-timeout 5 --max-time 30 \
-            --output "$RUNNER_TEMP/runtime-health-rollback.json" \
-            "$origin/api/health?runtime-data=1"
+          python3 -B scripts/fetch_release_asset.py \
+            --url "$origin/api/health?runtime-data=1" --output "$RUNNER_TEMP/runtime-health-rollback.json" \
+            --label "runtime-health-rollback" --max-time 30 --max-total-time 100 --json
           python3 - <<'PY'
           import json
           import os
