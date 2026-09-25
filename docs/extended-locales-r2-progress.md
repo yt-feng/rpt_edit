@@ -4,6 +4,36 @@ This checkpoint records implementation and verification state only. Generated
 source, translations, checkpoints, candidate HTML and credentials stay out of
 Git.
 
+## 2026-09-25 French budget exhaustion and fixed-generation continuation
+
+Run `36076945440` used code SHA
+`8c62f69998acdcaf1ebda703b97e18cc124f2221`. Source restore, checkpoint restore,
+pinned model setup, bounded translation, checkpoint persistence and candidate
+persistence all succeeded. Only the final incomplete-status step failed, with
+exit code 75 after the configured 2400-second budget. This is not a storage or
+English-exclusion error and must not be relabeled a completed candidate.
+
+- French completed pages: **1/24**; failure_count=0, budget_exhausted=true.
+- New model calls: 322; cache hits: 40; exact-source fallback units: 251
+  (271 uses). These are unit-level statistics, not completed-page counts.
+- Restored checkpoint: 81,992 bytes, SHA-256
+  `cba1d08b0c9ef8dd1ec2396874b0ef94e17d86b31c4ff3f68094c34819a3036c`.
+- Saved checkpoint: 181,254 bytes, SHA-256
+  `a25949c64d512c8e7f1422f0f15741b00c18e7e50dfdca06a1fc717511e8c297`.
+- Candidate `9503241e9996397d775c5ea9752b2973f1c1ca2cfe584b8c08a28f86f5de873b`
+  remains private, incomplete, ready=false; manifest SHA-256
+  `d38cd42fba9af9ed8c3cf6aa7195a9538054bc5aaa6b5e80642d8e5e1631d9a0`.
+- Source remains
+  `f334aac3023978818d18a4d28ed16cb2541a7b9b6ea803021f1fcd0502c812aa`.
+
+Latest main checked: `e17250b8` (archive/catalog-only changes since the prior
+check). PR #182 still points at the source above. No translator, model, approval
+or completeness gate change is needed for this outcome. Dispatch one further
+French-only 2400-second batch with the same source and source-fallback policy,
+restoring the durable unit checkpoint; do not restart source collection, expand
+the language set, monitor, auto-repeat or claim publication. Another budget
+exhaustion must remain explicitly incomplete and may require a further resume.
+
 ## 2026-09-25 English summary-only scope correction
 
 The operator excluded English from full reading-page expansion: English remains
