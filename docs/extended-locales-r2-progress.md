@@ -4,6 +4,44 @@ This checkpoint records implementation and verification state only. Generated
 source, translations, checkpoints, candidate HTML and credentials stay out of
 Git.
 
+## 2026-09-25 Four-hour, today-only incremental scope
+
+Implementation commit: `e64a21707d598dfe9898ad738b6ef790349d5c7d`.
+
+The operator superseded the former 40-minute/mixed-24-page batch with up to four
+hours per language and **new content only, no historical backfill**. The current
+workflow defaults to 14400 translation seconds and a 270-minute job limit; the
+30-minute difference covers setup and durable checkpoint/candidate persistence.
+
+Selection now uses the current Asia/Shanghai date and the page's own publication
+date (Article/BlogPosting/NewsArticle/Report). Only detail pages published on that
+date enter the batch. Homepage/About/institution/topic directories and historical
+recommendation lists are not translated. A refreshed sitemap date is not enough
+to admit an old report. Unknown dates are skipped. 24 is a maximum, not a required
+count. No new content means no model job. The launch floor is 2026-09-25.
+
+The new incremental orchestration reuses the existing R2 client and secret names:
+private per-locale daily completion receipts skip unchanged pages; immutable,
+SHA-verified memo snapshots seed exact source/model/locale units across source
+generations. Reused units are validated again and only used rows enter the new
+generation-bound checkpoint. Incomplete candidates never advance completion
+receipts. Later same-day invocations deterministically take the next pending
+up-to-24 pages; previous dates are not revisited.
+
+An automatic workflow_run hook follows successful same-repository/default-branch
+`Neutral edge catalog refresh` runs. It defaults to French; explicit non-English
+expansion uses `PORTAL_EXTENDED_INCREMENTAL_LOCALES`. This becomes active only
+after PR review/merge to main. It creates private noindex candidates, not a live
+release. Fixed-source release integration and approved-page carry-forward remain
+separate, uncompleted publication work.
+
+Cancellation was requested for old run `36085380192`; no terminal-state polling.
+The former mixed-directory source generation will not be resumed. Local checks:
+265 Python tests passed, 1 skipped (PyYAML unavailable); both changed YAML files
+and all 15 shell blocks parsed using Ruby YAML and bash -n. A read-only live
+sitemap sample timed out locally; no networking changes or retries were made,
+so the real today-only page count remains for the dispatched runner to establish.
+
 ## 2026-09-25 French budget exhaustion and fixed-generation continuation
 
 Run `36076945440` used code SHA
