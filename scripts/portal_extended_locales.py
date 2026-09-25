@@ -17,13 +17,16 @@ from compare_hymt_translation import LANGUAGES, SCRIPT_PATTERNS
 
 ORIGIN = 'https://kcdesk.com'
 EXISTING = frozenset({'zh', 'ko', 'ja', 'ar'})
+# English is text-only summary/interpretation: no full reading pages or charts.
+# Keep its model capability and metadata for established summary consumers.
+SUMMARY_ONLY = frozenset({'en'})
 # Native labels are navigation labels, not machine-translation quality claims.
 NATIVE = dict(zip(
     'zh en fr pt es ja tr ru ar ko th it de vi ms id tl hi zh-Hant pl cs nl km my fa gu ur te mr he bn ta uk bo kk mn ug yue'.split(),
     ['简体中文', 'English', 'Français', 'Português', 'Español', '日本語', 'Türkçe', 'Русский', 'العربية', '한국어', 'ไทย', 'Italiano', 'Deutsch', 'Tiếng Việt', 'Bahasa Melayu', 'Bahasa Indonesia', 'Filipino', 'हिन्दी', '繁體中文', 'Polski', 'Čeština', 'Nederlands', 'ខ្មែរ', 'မြန်မာ', 'فارسی', 'ગુજરાતી', 'اردو', 'తెలుగు', 'मराठी', 'עברית', 'বাংলা', 'தமிழ்', 'Українська', 'བོད་སྐད་', 'Қазақша', 'Монгол', 'ئۇيغۇرچە', '粵語'], strict=True))
 RTL = frozenset({'ar', 'fa', 'ur', 'ug', 'he'})
 OG_LOCALES = {'en': 'en_US', 'fr': 'fr_FR', 'pt': 'pt_BR', 'es': 'es_ES', 'tr': 'tr_TR', 'ru': 'ru_RU', 'th': 'th_TH', 'it': 'it_IT', 'de': 'de_DE', 'vi': 'vi_VN', 'ms': 'ms_MY', 'id': 'id_ID', 'tl': 'tl_PH', 'hi': 'hi_IN', 'pl': 'pl_PL', 'cs': 'cs_CZ', 'nl': 'nl_NL', 'km': 'km_KH', 'my': 'my_MM', 'fa': 'fa_IR', 'gu': 'gu_IN', 'ur': 'ur_PK', 'te': 'te_IN', 'mr': 'mr_IN', 'he': 'he_IL', 'bn': 'bn_BD', 'ta': 'ta_IN', 'uk': 'uk_UA', 'bo': 'bo_CN', 'kk': 'kk_KZ', 'mn': 'mn_MN', 'ug': 'ug_CN', 'zh-Hant': 'zh_TW'}
-ADDITIONAL = tuple(code for code in LANGUAGES if code not in EXISTING)
+ADDITIONAL = tuple(code for code in LANGUAGES if code not in EXISTING | SUMMARY_ONLY)
 # Google documents ISO-639-1 plus optional script/region. yue is valid BCP-47
 # but is NOT advertised here as a supported Google hreflang code.
 HREFLANG = {code: code for code in LANGUAGES if code != 'yue'}
@@ -55,7 +58,7 @@ def digest(value: bytes) -> str:
 def select_locales(value: str) -> tuple[str, ...]:
     result = ADDITIONAL if value == 'all-supported' else tuple(value.split(','))
     if not result or len(set(result)) != len(result) or any(code not in ADDITIONAL for code in result):
-        raise ExpansionError('Use all-supported or distinct additional locale codes; existing mirrors are not expansion targets')
+        raise ExpansionError('Use all-supported or distinct additional locale codes; English is summary-only and existing mirrors are not expansion targets')
     return result
 
 

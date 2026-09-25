@@ -16,10 +16,10 @@ on:
         options: [roundtrip, candidate]
         default: roundtrip
       locales:
-        description: "Comma-separated additional locales; each run is capped at 24 pages"
+        description: "Comma-separated additional locales (English excluded: summary-only); capped at 24 pages"
         required: false
         type: string
-        default: en
+        default: fr
       source_generation:
         description: "Existing R2 source generation SHA-256; leave empty only for the first source capture"
         required: false
@@ -138,7 +138,7 @@ jobs:
           from portal_extended_r2 import source_generation
           corpus = json.loads(Path(os.environ["CORPUS"]).read_text(encoding="utf-8"))
           generation = source_generation(corpus)
-          requested = os.environ["REQUESTED_LOCALES"].strip() or "en"
+          requested = os.environ["REQUESTED_LOCALES"].strip() or "fr"
           locales = list(select_locales(requested))
           print(f"generation={generation}")
           print("locales_json=" + json.dumps(locales, separators=(",", ":")))

@@ -16,11 +16,11 @@ from portal_extended_r2 import checkpoint_is_valid
 
 class RejectedQuantity(FakeTranslator):
     def translate(self, text, target, source=None, *, markdown=True):
-        self.calls += 1
         if 'USD10m' in text:
+            self.calls += 1
             # Simulates a completed response rejected by the inner model gate.
             raise OfflineTranslationValidationError('Hy-MT2 quantity validation failed')
-        return text
+        return super().translate(text, target, source, markdown=markdown)
 
 
 class SourceFallbackTests(unittest.TestCase):
@@ -34,7 +34,7 @@ class SourceFallbackTests(unittest.TestCase):
         ])
 
     def run_build(self, translator, *, fallback=True, output='out', budget=30):
-        return build(self.corpus, 'en', self.root/output, self.root/'memo.json', translator,
+        return build(self.corpus, 'fr', self.root/output, self.root/'memo.json', translator,
                      allow_source_fallback=fallback, budget_seconds=budget)
 
     def test_bad_unit_keeps_exact_source_and_later_fields_and_pages_finish(self):
@@ -45,15 +45,15 @@ class SourceFallbackTests(unittest.TestCase):
         self.assertEqual(result['source_fallback_unit_count'], 1)
         self.assertEqual(result['source_fallback_occurrences'], 2)
         self.assertEqual(result['failures'], [])
-        page = (self.root/'out/en/index.html').read_text()
+        page = (self.root/'out/fr/index.html').read_text()
         self.assertIn('Revenue USD10m.', page)
-        self.assertIn('Further research.', page)
+        self.assertIn('Texte traduit de référence.', page)
         self.assertIn('noindex,follow', page)
         verified_candidate(self.root/'out', self.corpus)
         checkpoint = json.loads((self.root/'memo.json').read_text())
         self.assertNotIn('Revenue USD10m.', [row['source'] for row in checkpoint['rows'].values()])
         self.assertEqual(len(checkpoint['source_fallbacks']), 1)
-        checkpoint_is_valid(checkpoint, 'en', self.corpus['documents_sha256'])
+        checkpoint_is_valid(checkpoint, 'fr', self.corpus['documents_sha256'])
 
     def test_resume_reuses_source_fallback_without_new_inference(self):
         self.run_build(RejectedQuantity())
@@ -77,7 +77,7 @@ class SourceFallbackTests(unittest.TestCase):
                 return text.replace('USD10m', 'EUR999m')
         result = self.run_build(Damaged())
         self.assertEqual(result['completed_page_count'], 2)
-        self.assertNotIn('EUR999m', (self.root/'out/en/index.html').read_text())
+        self.assertNotIn('EUR999m', (self.root/'out/fr/index.html').read_text())
         self.assertNotIn('EUR999m', (self.root/'memo.json').read_text())
 
     def test_runtime_failure_and_budget_are_not_content_fallbacks(self):
@@ -100,7 +100,7 @@ class SourceFallbackTests(unittest.TestCase):
                 return text
         sentence = '收入为USD10m，同比增长5%，利润率8%。'
         document = document_from_html(HOME, html(body=f'<h1>Research</h1><p>{sentence}</p>'))
-        memo = Memo(self.root/'memo.json', 'en', Capture(), time.monotonic()+30, allow_source_fallback=True)
+        memo = Memo(self.root/'memo.json', 'fr', Capture(), time.monotonic()+30, allow_source_fallback=True)
         translate_document(document, memo)
         self.assertIn(sentence, calls)
         self.assertNotIn('同比增长5%', calls)
@@ -117,8 +117,8 @@ class ExistingMirrorAssemblyTests(unittest.TestCase):
         (root/'ja').mkdir()
         (root/'ko/index.html').write_bytes(html(HOME+'ko/').replace(b'lang="en"', b'lang="ko"'))
         (root/'ja/index.html').write_bytes(html(HOME+'ja/', extra='<meta name="robots" content="noindex,follow">').replace(b'lang="en"', b'lang="ja"'))
-        assemble(root, fixture.c, [fixture.base/'candidate'], ('en',), apply=True, existing_locales=('ko', 'ja', 'ar'))
-        parser = PublicParser(); parser.feed((root/'en/index.html').read_text()); parser.close()
+        assemble(root, fixture.c, [fixture.base/'candidate'], ('fr',), apply=True, existing_locales=('ko', 'ja', 'ar'))
+        parser = PublicParser(); parser.feed((root/'fr/index.html').read_text()); parser.close()
         self.assertEqual(parser.alternates['ko'], HOME+'ko/')
         self.assertNotIn('ja', parser.alternates)
         self.assertNotIn('ar', parser.alternates)

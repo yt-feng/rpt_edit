@@ -97,38 +97,38 @@ class R2Tests(unittest.TestCase):
         checkpoint = self.root / "checkpoint.json"
         checkpoint.write_text(json.dumps({
             "model": MODEL_ID,
-            "locale": "en",
+            "locale": "fr",
             "version": "extended-static-v2",
             "source_generation": self.generation,
-            "rows": {"row": {"source": "x", "language": "en", "text": "x"}},
+            "rows": {"row": {"source": "x", "language": "fr", "text": "x"}},
         }), encoding="utf-8")
-        saved = self.store.put_checkpoint("en", self.generation, checkpoint)
+        saved = self.store.put_checkpoint("fr", self.generation, checkpoint)
         restored = self.root / "restored.json"
-        result = self.store.restore_checkpoint("en", self.generation, restored)
+        result = self.store.restore_checkpoint("fr", self.generation, restored)
         self.assertTrue(result["present"])
         self.assertEqual(saved["sha256"], result["sha256"])
         self.assertEqual(checkpoint.read_bytes(), restored.read_bytes())
-        missing = self.store.restore_checkpoint("fr", self.generation, self.root / "missing.json")
+        missing = self.store.restore_checkpoint("pt", self.generation, self.root / "missing.json")
         self.assertFalse(missing["present"])
 
     def test_incomplete_candidate_has_no_ready_receipt_and_cannot_restore(self):
         candidate = self.root / "candidate"
-        result = build(self.corpus, "en", candidate, self.root / "memo.json", FakeTranslator(fail="Source based"))
+        result = build(self.corpus, "fr", candidate, self.root / "memo.json", FakeTranslator(fail="Source based"))
         self.assertEqual(result["status"], "incomplete-candidate")
-        uploaded = self.store.upload_candidate(candidate, "en", self.generation)
+        uploaded = self.store.upload_candidate(candidate, "fr", self.generation)
         self.assertFalse(uploaded["ready"])
         with self.assertRaises(R2NotFound):
-            self.store.restore_candidate("en", self.generation, uploaded["candidate_id"], self.root / "restored")
+            self.store.restore_candidate("fr", self.generation, uploaded["candidate_id"], self.root / "restored")
 
     def test_complete_candidate_restore_matches_pages(self):
         candidate = self.root / "candidate"
-        build(self.corpus, "en", candidate, self.root / "memo.json", FakeTranslator())
-        uploaded = self.store.upload_candidate(candidate, "en", self.generation)
+        build(self.corpus, "fr", candidate, self.root / "memo.json", FakeTranslator())
+        uploaded = self.store.upload_candidate(candidate, "fr", self.generation)
         self.assertTrue(uploaded["ready"])
         restored = self.root / "restored"
-        result = self.store.restore_candidate("en", self.generation, uploaded["candidate_id"], restored)
+        result = self.store.restore_candidate("fr", self.generation, uploaded["candidate_id"], restored)
         self.assertEqual(result["completed_page_count"], 2)
-        self.assertEqual((candidate / "en/index.html").read_bytes(), (restored / "en/index.html").read_bytes())
+        self.assertEqual((candidate / "fr/index.html").read_bytes(), (restored / "fr/index.html").read_bytes())
 
     def test_permission_and_integrity_fail_closed(self):
         self.assertEqual(fake_permission_check()["permission_failure"], "R2PermissionError")

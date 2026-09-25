@@ -38,7 +38,7 @@ on:
           - month
         default: incremental
       extended_locales:
-        description: "Explicit additional-locale approval set, for example en or en,fr; empty keeps the current set"
+        description: "Explicit additional-locale approval set, for example fr or fr,pt; English is summary-only; empty keeps the current set"
         required: false
         type: string
         default: ""

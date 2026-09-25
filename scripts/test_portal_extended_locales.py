@@ -59,13 +59,21 @@ class RetryQuantityTranslator(FakeTranslator):
 
 
 class LanguageRegistryTests(unittest.TestCase):
-    def test_38_entries_and_34_additions(self):
-        self.assertEqual(len(LANGUAGES), 38); self.assertEqual(len(ADDITIONAL), 34)
+    def test_38_model_entries_and_33_reading_page_additions(self):
+        self.assertEqual(len(LANGUAGES), 38); self.assertEqual(len(ADDITIONAL), 33)
         self.assertEqual(set(SCRIPT_PATTERNS), set(LANGUAGES))
         self.assertEqual(set(NATIVE), set(LANGUAGES))
 
     def test_all_supported_matrix(self): self.assertEqual(select_locales('all-supported'), ADDITIONAL)
-    def test_subset_preserves_order(self): self.assertEqual(select_locales('fr,en,zh-Hant'), ('fr','en','zh-Hant'))
+    def test_english_summary_capability_is_not_a_full_reading_target(self):
+        self.assertIn('en', LANGUAGES)
+        self.assertEqual(normalize_language('en'), 'en')
+        self.assertNotIn('en', select_locales('all-supported'))
+        for value in ('en', 'fr,en', 'en-US', 'en-GB'):
+            with self.subTest(value=value), self.assertRaises(ExpansionError):
+                select_locales(value)
+        with self.assertRaises(ExpansionError): locale_url(HOME, 'en')
+    def test_subset_preserves_order(self): self.assertEqual(select_locales('fr,pt,zh-Hant'), ('fr','pt','zh-Hant'))
     def test_unknown_codes_fail(self):
         for value in ['xx', '../fr', 'en,fr,en', '', 'en,', 'ko', 'ar', 'zh', 'ALL']:
             with self.subTest(value=value), self.assertRaises(ExpansionError): select_locales(value)
@@ -169,11 +177,26 @@ class BuildFixture:
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory();self.base=Path(self.tmp.name);self.c=corpus()
     def tearDown(self):self.tmp.cleanup()
-    def runbuild(self,locale='en',fake=None,budget=60,output='candidate'):
+    def runbuild(self,locale='fr',fake=None,budget=60,output='candidate'):
         return build(self.c,locale,self.base/output,self.base/f'{locale}.json',fake or FakeTranslator(),budget_seconds=budget)
 
 
 class CandidateTests(BuildFixture, unittest.TestCase):
+    def test_english_full_reading_build_stops_before_inference_or_writes(self):
+        fake = FakeTranslator()
+        with self.assertRaises(ExpansionError): self.runbuild('en', fake=fake)
+        self.assertEqual(fake.calls, 0)
+        self.assertFalse((self.base/'candidate').exists())
+        self.assertFalse((self.base/'en.json').exists())
+
+    def test_old_english_candidate_is_not_eligible_for_publication(self):
+        self.runbuild()
+        path = self.base/'candidate/candidate-manifest.json'
+        manifest = json.loads(path.read_text())
+        manifest['locale'] = 'en'
+        path.write_bytes(stable_bytes(manifest))
+        with self.assertRaises(ExpansionError): verified_candidate(self.base/'candidate', self.c)
+
     def test_mixed_public_metadata_enters_chinese_source_model_path(self):
         self.assertEqual(extended_source_language('UBS · 瑞银 · 2026-09-23'), 'zh')
         self.assertEqual(extended_source_language('Public financial research library.'), 'en')
@@ -183,11 +206,11 @@ class CandidateTests(BuildFixture, unittest.TestCase):
         self.assertEqual(result['status'],'complete-candidate');self.assertFalse(result['indexable'])
         self.assertEqual(result['paid_provider_requests'],0)
         self.assertEqual(result['semantic_review'],'not-performed')
-        self.assertIn('content="noindex,follow"',(self.base/'candidate/en/index.html').read_text())
+        self.assertIn('content="noindex,follow"',(self.base/'candidate/fr/index.html').read_text())
     def test_failure_has_no_partial_page(self):
         result=self.runbuild(fake=FakeTranslator(fail='Source based'))
         self.assertEqual(result['status'],'incomplete-candidate');self.assertEqual(result['completed_page_count'],1)
-        self.assertFalse((self.base/'candidate/en/blog/20260922-test.html').exists())
+        self.assertFalse((self.base/'candidate/fr/blog/20260922-test.html').exists())
         with self.assertRaises(ExpansionError):verified_candidate(self.base/'candidate',self.c)
     def test_budget_checkpoint_is_not_success(self):
         result=self.runbuild(budget=-1)
@@ -201,30 +224,30 @@ class CandidateTests(BuildFixture, unittest.TestCase):
         self.runbuild();fake=FakeTranslator();result=self.runbuild(fake=fake,output='second')
         self.assertEqual(result['status'],'complete-candidate');self.assertEqual(fake.calls,0)
     def test_checkpoint_model_identity_must_match(self):
-        self.runbuild();path=self.base/'en.json';payload=json.loads(path.read_text());payload['model']='wrong';path.write_text(json.dumps(payload))
+        self.runbuild();path=self.base/'fr.json';payload=json.loads(path.read_text());payload['model']='wrong';path.write_text(json.dumps(payload))
         fake=FakeTranslator();self.runbuild(fake=fake,output='second');self.assertGreater(fake.calls,0)
     def test_candidate_root_is_not_overwritten(self):
         self.runbuild()
         with self.assertRaises(ExpansionError):self.runbuild()
     def test_source_links_and_article_schema(self):
-        self.runbuild();text=(self.base/'candidate/en/blog/20260922-test.html').read_text()
-        self.assertIn('"inLanguage": "en"',text);self.assertIn('"datePublished": "2026-09-22"',text)
+        self.runbuild();text=(self.base/'candidate/fr/blog/20260922-test.html').read_text()
+        self.assertIn('"inLanguage": "fr"',text);self.assertIn('"datePublished": "2026-09-22"',text)
         self.assertIn('"isBasedOn"',text);self.assertIn(BLOG,text)
     def test_html_in_translated_text_is_escaped(self):
         doc=self.c['documents'][0]
         from build_portal_extended_locales import translate_document
-        translated=translate_document(doc,Memo(self.base/'memo.json','en',FakeTranslator(),time.monotonic()+60))
+        translated=translate_document(doc,Memo(self.base/'memo.json','fr',FakeTranslator(),time.monotonic()+60))
         translated['blocks'][0]['text']='<img src=x onerror=alert(1)>'
-        text=render_document(doc,translated,'en',{HOME})
+        text=render_document(doc,translated,'fr',{HOME})
         self.assertIn('&lt;img',text);self.assertNotIn('<img src=x',text)
     def test_unknown_link_does_not_become_a_broken_locale_link(self):
         doc=copy.deepcopy(self.c['documents'][0]);doc['links']=[{'url':ORIGIN+'/reports/missing.html','label':'Source'}]
         from build_portal_extended_locales import translate_document
-        trans=translate_document(doc,Memo(self.base/'m.json','en',FakeTranslator(),time.monotonic()+60))
-        text=render_document(doc,trans,'en',{HOME})
-        self.assertIn(ORIGIN+'/reports/missing.html',text);self.assertNotIn(ORIGIN+'/en/reports/missing.html',text)
+        trans=translate_document(doc,Memo(self.base/'m.json','fr',FakeTranslator(),time.monotonic()+60))
+        text=render_document(doc,trans,'fr',{HOME})
+        self.assertIn(ORIGIN+'/reports/missing.html',text);self.assertNotIn(ORIGIN+'/fr/reports/missing.html',text)
     def test_digest_mismatch_blocks_assembly(self):
-        self.runbuild();p=self.base/'candidate/en/index.html';p.write_text(p.read_text()+'changed')
+        self.runbuild();p=self.base/'candidate/fr/index.html';p.write_text(p.read_text()+'changed')
         with self.assertRaises(ExpansionError):verified_candidate(self.base/'candidate',self.c)
     def test_path_traversal_in_manifest_rejected(self):
         self.runbuild();p=self.base/'candidate/candidate-manifest.json';m=json.loads(p.read_text());m['pages'][0]['path']='../evil';m['files_sha256']=digest(stable_bytes(m['pages']));p.write_bytes(stable_bytes(m))
@@ -241,46 +264,56 @@ class AssemblyTests(BuildFixture, unittest.TestCase):
         return root,originals
     def test_dry_run_writes_nothing(self):
         self.runbuild();root,originals=self.staging()
-        result=assemble(root,self.c,[self.base/'candidate'],('en',))
-        self.assertEqual(result['status'],'dry-run');self.assertFalse((root/'en').exists())
+        result=assemble(root,self.c,[self.base/'candidate'],('fr',))
+        self.assertEqual(result['status'],'dry-run');self.assertFalse((root/'fr').exists())
         self.assertEqual((root/'index.html').read_bytes(),originals[HOME])
     def test_approval_is_explicit_and_exact(self):
         self.runbuild();root,_=self.staging()
-        with self.assertRaises(ExpansionError):assemble(root,self.c,[self.base/'candidate'],('fr',),apply=True)
-        self.assertFalse((root/'en').exists())
+        with self.assertRaises(ExpansionError):assemble(root,self.c,[self.base/'candidate'],('pt',),apply=True)
+        self.assertFalse((root/'fr').exists())
     def test_activation_preserves_body_dates_and_training_policy(self):
         self.runbuild();root,originals=self.staging()
-        result=assemble(root,self.c,[self.base/'candidate'],('en',),apply=True)
+        result=assemble(root,self.c,[self.base/'candidate'],('fr',),apply=True)
         self.assertFalse(result['deployment_performed'])
-        self.assertIn('content="index,follow"',(root/'en/index.html').read_text())
+        self.assertIn('content="index,follow"',(root/'fr/index.html').read_text())
         self.assertEqual((root/'index.html').read_text().split('</head>',1)[1],originals[HOME].decode().split('</head>',1)[1])
         self.assertIn('User-agent: GPTBot\nDisallow: /',(root/'robots.txt').read_text())
     def test_reciprocal_alternates_and_sitemap(self):
-        self.runbuild();root,_=self.staging();assemble(root,self.c,[self.base/'candidate'],('en',),apply=True)
+        self.runbuild();root,_=self.staging();assemble(root,self.c,[self.base/'candidate'],('fr',),apply=True)
         parsers=[]
-        for p in [root/'index.html',root/'en/index.html']:
+        for p in [root/'index.html',root/'fr/index.html']:
             parser=PublicParser();parser.feed(p.read_text());parser.close();parsers.append(parser)
         self.assertEqual(parsers[0].alternates,parsers[1].alternates)
-        self.assertEqual(parsers[1].alternates['en'],ORIGIN+'/en/')
+        self.assertEqual(parsers[1].alternates['fr'],ORIGIN+'/fr/')
         self.assertNotIn('ko',parsers[1].alternates)
-        rootxml=ET.fromstring((root/'sitemap-extended-en.xml').read_bytes())
+        rootxml=ET.fromstring((root/'sitemap-extended-fr.xml').read_bytes())
         self.assertEqual(len(rootxml),2)
     def test_stale_generation_is_rejected_before_any_write(self):
         self.runbuild();root,_=self.staging();(root/'index.html').write_text('changed')
-        with self.assertRaises(ExpansionError):assemble(root,self.c,[self.base/'candidate'],('en',),apply=True)
-        self.assertFalse((root/'en').exists())
+        with self.assertRaises(ExpansionError):assemble(root,self.c,[self.base/'candidate'],('fr',),apply=True)
+        self.assertFalse((root/'fr').exists())
     def test_existing_locale_directory_is_not_overwritten(self):
-        self.runbuild();root,_=self.staging();(root/'en').mkdir()
-        with self.assertRaises(ExpansionError):assemble(root,self.c,[self.base/'candidate'],('en',),apply=True)
+        self.runbuild();root,_=self.staging();(root/'fr').mkdir()
+        with self.assertRaises(ExpansionError):assemble(root,self.c,[self.base/'candidate'],('fr',),apply=True)
     def test_two_locales_publish_independently_as_one_validated_group(self):
-        self.runbuild();self.runbuild('fr',output='french');root,_=self.staging()
-        result=assemble(root,self.c,[self.base/'candidate',self.base/'french'],('en','fr'),apply=True)
-        self.assertEqual(result['locales'],['en','fr'])
-        self.assertIn('hreflang="fr"',(root/'en/index.html').read_text())
-        self.assertIn('hreflang="en"',(root/'fr/index.html').read_text())
+        self.runbuild();self.runbuild('pt',output='portuguese');root,_=self.staging()
+        result=assemble(root,self.c,[self.base/'candidate',self.base/'portuguese'],('fr','pt'),apply=True)
+        self.assertEqual(result['locales'],['fr','pt'])
+        self.assertIn('hreflang="pt"',(root/'fr/index.html').read_text())
+        self.assertIn('hreflang="fr"',(root/'pt/index.html').read_text())
 
 
 class CostAndWorkflowTests(unittest.TestCase):
+    def test_extended_workflow_defaults_and_canaries_exclude_english(self):
+        source = (ROOT/'.github/workflows/portal-extended-locales-r2.yml').read_text()
+        self.assertIn('default: fr', source)
+        self.assertIn('strip() or "fr"', source)
+        self.assertNotIn('default: en', source)
+        checks = (ROOT/'.github/workflows/portal-extended-locales-check.yml').read_text()
+        self.assertIn('locale: [fr, pt, hi, zh-Hant]', checks)
+        smoke = (ROOT/'scripts/smoke_portal_extended_locales.py').read_text()
+        self.assertIn("default='fr,pt,hi,zh-Hant'", smoke)
+
     def test_new_workflow_never_receives_provider_credentials(self):
         source=(ROOT/'.github/workflows/portal-extended-locales-check.yml').read_text()
         self.assertNotIn('secrets.',source);self.assertIn('runs-on: ubuntu-24.04',source)

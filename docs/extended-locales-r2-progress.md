@@ -4,6 +4,26 @@ This checkpoint records implementation and verification state only. Generated
 source, translations, checkpoints, candidate HTML and credentials stay out of
 Git.
 
+## 2026-09-25 English summary-only scope correction
+
+The operator excluded English from full reading-page expansion: English remains
+available for text-only summary/interpretation use: no original/full report text,
+no embedded charts and no English Charts entry. This change does not create an
+English summary publisher or modify the Chinese/ko/ja/ar chart surfaces. `ADDITIONAL` now
+contains 33 non-English targets; selection, generation and candidate verification
+reject English, including old English candidates. Workflow defaults and bounded
+model-canary targets now start with French; the model language registry is intact.
+
+Cancellation was requested for English run `36075707981`; its terminal state was
+not polled. The next dispatch is French only, 24 pages, 2400 seconds, restoring the
+existing fixed R2 source/checkpoint with exact-source fallback enabled. No monitor
+or production deployment is requested. Earlier evidence below remains historical.
+
+Local verification of this scope correction: 248 Python tests passed, 1 skipped
+(PyYAML unavailable). Contracts cover explicit/all-supported English exclusion,
+zero-inference/no-output rejection, old English candidate rejection and approval
+rejection before any R2 access, while preserving English model/summary capability.
+
 ## 2026-09-25 architecture and source-fallback correction
 
 The current architecture audit is in `extended-locales-architecture-audit.md`.
@@ -25,7 +45,7 @@ edge-static-host tests passed. Public identity audit and `git diff --check` pass
 No production deployment is claimed. Fixed-source publication integration,
 carry-forward across later batches and deterministic archive cursors remain
 explicitly documented gaps. The requested stop point is dispatching the next
-24-page English candidate (2400 seconds, fixed existing source, source fallback
+24-page French candidate (2400 seconds, fixed existing source, source fallback
 enabled), without watching Actions or installing a monitor.
 
 The remaining sections are earlier checkpoint evidence, not the latest PR status.

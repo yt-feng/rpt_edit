@@ -74,7 +74,7 @@ jobs:
       fail-fast: false
       max-parallel: 2
       matrix:
-        locale: [en, fr, hi, zh-Hant]
+        locale: [fr, pt, hi, zh-Hant]
     env:
       KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
     steps:
