@@ -4,6 +4,32 @@ This checkpoint records implementation and verification state only. Generated
 source, translations, checkpoints, candidate HTML and credentials stay out of
 Git.
 
+## 2026-09-25 architecture and source-fallback correction
+
+The current architecture audit is in `extended-locales-architecture-audit.md`.
+PR #180 and #181 have merged; PR #182 carries the next translation correction.
+Main was refreshed to `681eae64969bfe2c39aa802dc7d4f4e7eadb5424` in the isolated
+`codex/extended-locales-r3-20260925` worktree. The primary dirty checkout was not edited.
+
+Following the operator's explicit acceptance of translation imperfections for
+SEO/GEO, additional locales now support the same exact-source fallback policy
+as ko/ja/ar. Rejected model responses are discarded; accepted translations and
+source-fallback decisions occupy separate checkpoint maps. The candidate
+manifest reports both page completeness and actual translation completeness.
+The outer repeated retry was removed; fallback mode uses one model attempt per
+new unit and reuses decisions on resume. Pipe validation, model request deadlines
+and established-locale URL assembly were repaired without changing providers.
+
+Local verification: 287 Python tests passed, 1 skipped (PyYAML absent); all 27
+edge-static-host tests passed. Public identity audit and `git diff --check` passed.
+No production deployment is claimed. Fixed-source publication integration,
+carry-forward across later batches and deterministic archive cursors remain
+explicitly documented gaps. The requested stop point is dispatching the next
+24-page English candidate (2400 seconds, fixed existing source, source fallback
+enabled), without watching Actions or installing a monitor.
+
+The remaining sections are earlier checkpoint evidence, not the latest PR status.
+
 ## Committed implementation
 
 - Branch: `codex/extended-locales-r2-20260924`
