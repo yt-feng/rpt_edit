@@ -2,6 +2,7 @@
 import os
 from pathlib import Path
 import tempfile
+import time
 import unittest
 from unittest import mock
 import hymt_offline_translation as h
@@ -73,6 +74,34 @@ class HyMTTests(unittest.TestCase):
         translator = self.retrying_translator(respond)
         self.assertEqual(translator.translate(source, 'hi', 'en'), 'बाज़ार परिदृश्य')
         self.assertEqual([row[3] for row in self.engine.calls], [0, 1, 2])
+
+    def test_source_fallback_caller_can_bound_validation_to_one_attempt(self):
+        translator = self.retrying_translator(lambda _text, _retry: '错误金额 USD99m')
+        translator.validation_attempts = 1
+        with self.assertRaises(h.OfflineTranslationValidationError):
+            translator.translate('Revenue USD10m.', 'zh', 'en')
+        self.assertEqual(len(self.engine.calls), 1)
+
+    def test_plain_title_cannot_cache_an_invented_table_pipe(self):
+        translator = self.retrying_translator(lambda _text, retry: '研究 | 摘要' if retry == 0 else '研究摘要')
+        self.assertEqual(translator.translate('Research summary', 'zh', 'en', markdown=False), '研究摘要')
+        self.assertEqual(len(self.engine.calls), 2)
+
+    def test_deadline_is_preserved_as_timeout_for_checkpointing(self):
+        translator = self.translator(lambda _text: self.fail('No model call after deadline'))
+        translator.set_deadline(time.monotonic() - 1)
+        with self.assertRaises(TimeoutError):
+            translator.translate('Research summary', 'zh', 'en')
+        self.assertEqual(self.engine.calls, [])
+
+    def test_model_request_is_bounded_by_remaining_run_budget(self):
+        engine = object.__new__(h._HyMTEngine)
+        engine.port = 1
+        response = {'choices': [{'finish_reason': 'stop', 'message': {'content': '研究摘要'}}]}
+        with mock.patch.object(h, 'request_json', return_value=response) as request:
+            engine.translate('Research summary', 'en', 'zh', deadline=time.monotonic()+5)
+        self.assertGreater(request.call_args.kwargs['timeout'], 0)
+        self.assertLessEqual(request.call_args.kwargs['timeout'], 5)
     def test_cache_is_exact_source_target_and_model(self):
         translator = self.translator(lambda _: '收入下降8.2%。')
         source = 'Revenue fell by 8.2%.'

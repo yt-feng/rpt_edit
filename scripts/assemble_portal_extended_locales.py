@@ -120,11 +120,14 @@ def assemble(
         if not source.is_file() or source.is_symlink() or digest(source.read_bytes()) != doc['source_html_sha256']:
             raise ExpansionError('Inactive source differs from the reviewed corpus; rebuild against this source generation')
         alternatives = {'zh-Hans': doc['url'], 'x-default': doc['url']}
-        for code in existing_locales:
-            alternatives[HREFLANG.get(code, code)] = locale_url(doc['url'], code, origin=origin)
         # Preserve an existing alternate only when its matching local page is
         # present and correctly self-canonical. Do not invent ko/ja/ar URLs.
-        for code, url in doc.get('source_alternates', {}).items():
+        existing_alternates = dict(doc.get('source_alternates', {}))
+        for code in existing_locales:
+            if code not in {'ko', 'ja', 'ar'}:
+                raise ExpansionError('Unknown established locale')
+            existing_alternates[code] = origin + '/' + code + urlsplit_path(doc['url'])
+        for code, url in existing_alternates.items():
             if code in {'zh-Hans', 'x-default'} or code not in {'ko', 'ja', 'ar'}: continue
             expected = origin + '/' + code + urlsplit_path(doc['url'])
             local = root / code / relative

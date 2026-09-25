@@ -51,6 +51,7 @@ jobs:
           python -m pip install 'requests>=2.31,<3' 'Pillow>=10.1,<12' 'PyYAML>=6,<7'
           python -B scripts/test_portal_extended_locales.py
           python -B scripts/test_portal_extended_hardening.py
+          python -B scripts/test_portal_extended_source_fallback.py
           python -B scripts/test_portal_extended_r2.py
           python -B scripts/test_restore_assemble_portal_extended_r2.py
           python -B scripts/test_hymt_offline_translation.py

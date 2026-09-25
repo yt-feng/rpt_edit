@@ -193,9 +193,9 @@ class CandidateTests(BuildFixture, unittest.TestCase):
         result=self.runbuild(budget=-1)
         self.assertEqual(result['status'],'incomplete-candidate');self.assertTrue(result['budget_exhausted'])
         self.assertEqual(result['completed_page_count'],0)
-    def test_quantity_validation_gets_one_bounded_offline_retry(self):
+    def test_builder_does_not_multiply_model_validation_retries(self):
         fake = RetryQuantityTranslator(); result = self.runbuild(fake=fake)
-        self.assertEqual(result['status'], 'complete-candidate')
+        self.assertEqual(result['status'], 'incomplete-candidate')
         self.assertEqual(fake.discard_calls, 1)
     def test_resume_reuses_validated_cache_without_calls(self):
         self.runbuild();fake=FakeTranslator();result=self.runbuild(fake=fake,output='second')

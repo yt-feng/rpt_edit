@@ -24,7 +24,7 @@ from portal_extended_locales import (
 
 MAX_CHECKPOINT_BYTES = 8 * 1024 * 1024
 CHECKPOINT_VERSION = 'extended-static-v2'
-MAX_QUANTITY_RETRIES = 1
+SOURCE_FALLBACK_VERSION = 'exact-source-v1'
 
 
 def reject_symlinks(path: Path) -> None:
@@ -118,10 +118,16 @@ def validate_text(source: str, translated: str, locale: str, source_language: st
 
 
 class Memo:
-    def __init__(self, path: Path, locale: str, translator: Translator, deadline: float, *, source_generation: str | None = None):
+    def __init__(self, path: Path, locale: str, translator: Translator, deadline: float, *, source_generation: str | None = None,
+                 allow_source_fallback: bool = False):
         reject_symlinks(path)
         self.path, self.locale, self.translator, self.deadline = path, locale, translator, deadline
         self.source_generation = source_generation
+        self.allow_source_fallback = allow_source_fallback
+        self.source_fallbacks = {}
+        self.fallback_keys = set()
+        self.fallback_uses = 0
+        self.rejected = {}
         self.rows = {}
         self.calls = self.hits = 0
         if path.is_file():
@@ -132,6 +138,8 @@ class Memo:
                 and (source_generation is None or payload.get('source_generation') in {None, source_generation})):
                 self.rows = payload.get('rows', {})
                 if not isinstance(self.rows, dict): raise ExpansionError('Invalid checkpoint rows')
+                self.source_fallbacks = payload.get('source_fallbacks', {})
+                if not isinstance(self.source_fallbacks, dict): raise ExpansionError('Invalid source fallback rows')
 
     def key(self, source: str, language: str, *, markdown: bool = False) -> str:
         parts = [CHECKPOINT_VERSION, MODEL_ID, self.locale, language, source]
@@ -149,23 +157,35 @@ class Memo:
                 self.hits += 1
                 return row['text']
             except ExpansionError: self.rows.pop(key, None)
+        fallback = self.source_fallbacks.get(key)
+        if (self.allow_source_fallback and isinstance(fallback, dict)
+            and fallback.get('source') == source and fallback.get('language') == language
+            and fallback.get('policy') == SOURCE_FALLBACK_VERSION):
+            self.fallback_keys.add(key)
+            self.fallback_uses += 1
+            return source
+        if key in self.rejected:
+            raise self.rejected[key]
         if time.monotonic() >= self.deadline: raise TimeoutError('Local translation time budget reached')
-        translated = None
-        for attempt in range(MAX_QUANTITY_RETRIES + 1):
-            try:
-                translated = self.translator.translate(source, target=self.locale, source=language, markdown=markdown)
-                self.calls += 1
-                break
-            except OfflineTranslationValidationError as error:
-                self.calls += 1
-                retry = (attempt < MAX_QUANTITY_RETRIES and 'quantity' in str(error).casefold()
-                         and callable(getattr(self.translator, 'discard_translation', None)))
-                if not retry:
-                    raise
-                self.translator.discard_translation(source, self.locale, language, markdown=markdown)
-        if translated is None:
-            raise ExpansionError('Offline translation returned no result')
-        validate_text(source, translated, self.locale, language)
+        try:
+            self.calls += 1
+            translated = self.translator.translate(source, target=self.locale, source=language, markdown=markdown)
+            validate_text(source, translated, self.locale, language)
+        except (OfflineTranslationValidationError, ExpansionError) as error:
+            discard = getattr(self.translator, 'discard_translation', None)
+            if callable(discard): discard(source, self.locale, language, markdown=markdown)
+            if not self.allow_source_fallback:
+                self.rejected[key] = error
+                raise
+            # Match the established ko/ja/ar source-fallback policy. Rejected
+            # model text is never a translation row, nor rendered or persisted.
+            self.source_fallbacks[key] = {'source': source, 'language': language,
+                'policy': SOURCE_FALLBACK_VERSION, 'code': safe_failure_code(error)}
+            self.fallback_keys.add(key)
+            self.fallback_uses += 1
+            self.save()
+            return source
+        self.source_fallbacks.pop(key, None)
         self.rows[key] = {'source': source, 'language': language, 'text': translated}
         self.save()
         return translated
@@ -174,6 +194,8 @@ class Memo:
         reject_symlinks(self.path)
         reject_symlinks(self.path.with_suffix('.tmp'))
         payload = {'model': MODEL_ID, 'locale': self.locale, 'version': CHECKPOINT_VERSION, 'rows': self.rows}
+        if self.source_fallbacks:
+            payload['source_fallbacks'] = self.source_fallbacks
         if self.source_generation is not None:
             payload['source_generation'] = self.source_generation
         raw = stable_bytes(payload)
@@ -194,17 +216,6 @@ def translate_document(doc: dict, memo: Memo) -> dict:
             # side remains an independently validated translation unit.
             return '|'.join(translate(part, markdown=markdown, field=f'{field}.part{index}')
                             for index, part in enumerate(text.split('|')))
-        if re.search(r'[\u3400-\u9fff]', text) and re.search(r'[，；;]|(?<!\d),(?!\d)', text):
-            # Catalog titles and metadata often pack several numeric claims into
-            # one Chinese clause. Split only at sentence punctuation outside
-            # numeric thousands separators; the punctuation itself stays byte
-            # exact while each claim keeps the normal quality gates.
-            chunks = re.split(r'([，；;]|(?<!\d),(?!\d))', text)
-            return ''.join(
-                chunk if chunk in {'，', '；', ';', ','}
-                else translate(chunk, markdown=markdown, field=f'{field}.clause{index}')
-                for index, chunk in enumerate(chunks) if chunk
-            )
         try:
             language = extended_source_language(text)
             return memo.get(text, language, markdown=markdown)
@@ -223,7 +234,7 @@ def translate_document(doc: dict, memo: Memo) -> dict:
 
 
 def build(corpus: dict, locale: str, output: Path, checkpoint: Path, translator: Translator,
-          *, budget_seconds=1800, origin=ORIGIN) -> dict:
+          *, budget_seconds=1800, origin=ORIGIN, allow_source_fallback=False) -> dict:
     if locale not in ADDITIONAL: raise ExpansionError('Not an additional locale')
     docs = validate_corpus(corpus, origin=origin)
     if origin + '/' not in {doc['url'] for doc in docs}:
@@ -233,7 +244,9 @@ def build(corpus: dict, locale: str, output: Path, checkpoint: Path, translator:
     if output.exists() and any(output.iterdir()): raise ExpansionError('Candidate output must be empty; never overwrite an active release')
     output.mkdir(parents=True, exist_ok=True)
     memo = Memo(checkpoint, locale, translator, time.monotonic() + budget_seconds,
-                source_generation=corpus['documents_sha256'])
+                source_generation=corpus['documents_sha256'], allow_source_fallback=allow_source_fallback)
+    set_deadline = getattr(translator, 'set_deadline', None)
+    if callable(set_deadline): set_deadline(memo.deadline)
     # Materialize an empty or resumed checkpoint before the first model call.
     # A runner interruption or first-call failure must still leave a durable,
     # honest resume point; this contains no fabricated translation rows.
@@ -272,6 +285,11 @@ def build(corpus: dict, locale: str, output: Path, checkpoint: Path, translator:
                 'source_documents_sha256': corpus['documents_sha256'],
                 'source_document_count': len(docs), 'completed_page_count': len(records),
                 'translation_calls_this_run': memo.calls, 'cache_hits': memo.hits,
+                'translation_policy': 'validated-units-with-source-fallback' if allow_source_fallback else 'strict',
+                'translation_complete': complete and not memo.fallback_keys,
+                'source_fallback_unit_count': len(memo.fallback_keys),
+                'source_fallback_occurrences': memo.fallback_uses,
+                'source_fallback_codes': sorted({memo.source_fallbacks[key]['code'] for key in memo.fallback_keys}),
                 'budget_exhausted': timed_out, 'failures': failures, 'pages': records,
                 'files_sha256': digest(stable_bytes(records))}
     (output / 'candidate-manifest.json').write_bytes(stable_bytes(manifest))
@@ -287,6 +305,8 @@ def main() -> int:
     parser.add_argument('--output', type=Path)
     parser.add_argument('--checkpoint', type=Path)
     parser.add_argument('--seconds', type=int, default=1800)
+    parser.add_argument('--allow-source-fallback', action='store_true',
+                        help='Keep exact source units on content validation failure, like ko/ja/ar; never keep rejected model output')
     args = parser.parse_args()
     if args.list_locales:
         print(json.dumps({'locale': list(select_locales(args.locales))})); return 0
@@ -296,9 +316,14 @@ def main() -> int:
     if not 1 <= args.seconds <= 2400: raise ExpansionError('Time budget must be 1..2400 seconds')
     if args.corpus.stat().st_size > 32 * 1024 * 1024: raise ExpansionError('Corpus too large')
     corpus = json.loads(args.corpus.read_text())
-    result = build(corpus, args.locale, args.output, args.checkpoint, OfflineTranslator(), budget_seconds=args.seconds)
+    result = build(corpus, args.locale, args.output, args.checkpoint,
+                   OfflineTranslator(validation_attempts=1 if args.allow_source_fallback else 3),
+                   budget_seconds=args.seconds, allow_source_fallback=args.allow_source_fallback)
     summary = {key: result[key] for key in ('locale', 'status', 'source_document_count', 'completed_page_count', 'paid_provider_requests', 'budget_exhausted')}
     summary['failure_count'] = len(result.get('failures') or [])
+    for key in ('translation_policy', 'translation_complete', 'source_fallback_unit_count',
+                'source_fallback_occurrences', 'source_fallback_codes', 'translation_calls_this_run', 'cache_hits'):
+        summary[key] = result[key]
     summary['failure_types'] = sorted({str(row.get('error')) for row in result.get('failures') or []})
     summary['failure_codes'] = sorted({str(row.get('code')) for row in result.get('failures') or []})
     summary['failure_fields'] = sorted({str(row.get('field')) for row in result.get('failures') or []})

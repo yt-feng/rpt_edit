@@ -30,6 +30,11 @@ on:
         required: false
         type: string
         default: "1800"
+      allow_source_fallback:
+        description: "Keep exact source units on translation quality failure, matching ko/ja/ar; still require a complete page set"
+        required: false
+        type: boolean
+        default: true
 
 permissions:
   contents: read
@@ -149,7 +154,7 @@ jobs:
 
   locale:
     needs: source
-    if: needs.source.result == 'success'
+    if: needs.source.result == 'success' && github.event.repository.private == false
     runs-on: ubuntu-22.04
     timeout-minutes: 50
     strategy:
@@ -161,6 +166,7 @@ jobs:
       SOURCE_GENERATION: ${{ needs.source.outputs.generation }}
       LOCALE: ${{ matrix.locale }}
       TRANSLATION_SECONDS: ${{ inputs.seconds || '1800' }}
+      ALLOW_SOURCE_FALLBACK: ${{ inputs.allow_source_fallback && 'true' || 'false' }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -208,7 +214,7 @@ jobs:
       - name: Run bounded locale translation and retain timeout state
         id: build
         env:
-          KC_PUBLIC_REPOSITORY: "true"
+          KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
         run: |
           set -u
           if ! [[ "$TRANSLATION_SECONDS" =~ ^[0-9]+$ ]] || [ "$TRANSLATION_SECONDS" -lt 1 ] || [ "$TRANSLATION_SECONDS" -gt 2400 ]; then
@@ -216,6 +222,9 @@ jobs:
             exit 2
           fi
           checkpoint_args=()
+          if [ "$ALLOW_SOURCE_FALLBACK" = "true" ]; then
+            checkpoint_args+=(--allow-source-fallback)
+          fi
           if [ -s "$RUNNER_TEMP/locale-checkpoint.json" ]; then
             checkpoint_args+=(--checkpoint "$RUNNER_TEMP/locale-checkpoint.json")
           else
