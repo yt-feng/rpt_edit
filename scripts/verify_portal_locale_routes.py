@@ -9,11 +9,12 @@ from html.parser import HTMLParser
 import json
 from pathlib import Path
 import re
-import subprocess
+import tempfile
 import time
 from typing import Any, Callable
 from urllib.parse import urlsplit
 
+import fetch_release_asset as release_fetch
 from portal_locale_manifest import MAX_LOCALE_MANIFEST_BYTES, load_locale_manifest
 
 LOCALES = {"ko": "ltr", "ja": "ltr", "ar": "rtl"}
@@ -30,6 +31,8 @@ DETAIL_PATH = "assets/locale-detail.js"
 MAX_RESPONSE_BYTES = 16 * 1024 * 1024
 MAX_MANIFEST_BYTES = MAX_LOCALE_MANIFEST_BYTES
 TIMEOUT_SECONDS = 20
+ROUTE_TOTAL_SECONDS = 70
+GROUP_TOTAL_SECONDS = 180
 MAX_WORKERS = 4
 VOID_TAGS = frozenset("area base br col embed hr img input link meta param source track wbr".split())
 
@@ -103,36 +106,36 @@ def declared_checks(manifest: dict[str, Any]) -> list[dict[str, Any]] | None:
     return checks
 
 
-def fetch_public(url: str, timeout: int) -> tuple[int, dict[str, str], bytes]:
-    """A normal HTTPS GET, no redirects/retries, with a wall-clock deadline."""
-    try:
-        result = subprocess.run(
-            ["curl", "--silent", "--show-error", "--include", "--suppress-connect-headers",
-             "--connect-timeout", "5", "--max-time", str(timeout), "--max-redirs", "0",
-             "--max-filesize", str(MAX_RESPONSE_BYTES), "--header", "Cache-Control: no-cache",
-             "--write-out", "\nKC_ROUTE_STATUS:%{http_code}", "--", url],
-            capture_output=True, timeout=timeout, check=False,
-        )
-    except (OSError, subprocess.TimeoutExpired) as error:
-        raise RouteVerificationError(f"Public GET did not complete within its deadline: {type(error).__name__}") from error
-    if result.returncode:
-        raise RouteVerificationError(f"Public GET failed: curl exit {result.returncode}")
-    try:
-        raw, status = result.stdout.rsplit(b"\nKC_ROUTE_STATUS:", 1)
-        code = int(status)
+def fetch_public(
+    url: str, timeout: int, *, max_total_time: float = ROUTE_TOTAL_SECONDS,
+    expected_bytes: int | None = None, expect_sha256: str | None = None,
+) -> tuple[int, dict[str, str], bytes]:
+    """Fetch an exact route with compressed, bounded retries and no redirects."""
+    with tempfile.TemporaryDirectory(prefix="locale-route-") as temporary:
+        body_path, header_path = Path(temporary) / "body", Path(temporary) / "headers"
+        try:
+            result = release_fetch.fetch_release_asset(
+                url, body_path, label="locale-route", dump_header=header_path,
+                max_time=timeout, connect_timeout=5, attempts=3,
+                max_total_time=max_total_time, max_bytes=MAX_RESPONSE_BYTES,
+                expected_bytes=expected_bytes, expect_sha256=expect_sha256,
+            )
+        except release_fetch.FetchError as error:
+            if error.http_status and error.http_status != 200:
+                return error.http_status, {}, b""
+            raise RouteVerificationError(f"Public GET failed: {error}") from error
         headers: dict[str, str] = {}
-        while raw.startswith(b"HTTP/"):
-            block, raw = raw.split(b"\r\n\r\n", 1)
-            headers = {}
-            for line in block.decode("iso-8859-1").split("\r\n")[1:]:
-                if ":" in line:
-                    name, value = line.split(":", 1)
-                    headers[name.strip().lower()] = value.strip()
-    except (ValueError, UnicodeError) as error:
-        raise RouteVerificationError("Public GET returned an invalid response envelope") from error
-    if len(raw) > MAX_RESPONSE_BYTES:
-        raise RouteVerificationError("Public GET exceeded the response size bound")
-    return code, headers, raw
+        for line in header_path.read_text(encoding="iso-8859-1").splitlines():
+            if line.startswith("HTTP/"):
+                headers = {}
+            elif ":" in line:
+                name, value = line.split(":", 1)
+                headers[name.strip().lower()] = value.strip()
+        with body_path.open("rb") as handle:
+            raw = handle.read(MAX_RESPONSE_BYTES + 1)
+        if len(raw) > MAX_RESPONSE_BYTES:
+            raise RouteVerificationError("Public GET exceeded the response size bound")
+        return result.http_status, headers, raw
 
 
 class ShellParser(HTMLParser):
@@ -232,7 +235,7 @@ def validate_shell(body: bytes, headers: dict[str, str], locale: str, filename: 
 
 def verify_locale_routes(
     manifest: dict[str, Any], origin: str,
-    *, fetcher: Callable[[str, int], tuple[int, dict[str, str], bytes]] = fetch_public,
+    *, fetcher: Callable[[str, int], tuple[int, dict[str, str], bytes]] | None = None,
     request_origin: str | None = None,
 ) -> dict[str, Any]:
     origin = validate_origin(origin)
@@ -247,8 +250,18 @@ def verify_locale_routes(
     def verify(row: dict[str, Any]) -> dict[str, Any]:
         output = {"path": "/" + row["path"], "status": "failed"}
         try:
+            remaining = GROUP_TOTAL_SECONDS - (time.monotonic() - started)
+            if remaining <= 0:
+                raise RouteVerificationError("Locale route group time budget exhausted")
             suffix = "?v=" + row["sha256"][:12] if row.get("lazy_module") else ""
-            status, headers, body = fetcher(request_origin + output["path"] + suffix, TIMEOUT_SECONDS)
+            url = request_origin + output["path"] + suffix
+            if fetcher is None:
+                status, headers, body = fetch_public(
+                    url, TIMEOUT_SECONDS, max_total_time=min(ROUTE_TOTAL_SECONDS, remaining),
+                    expected_bytes=row["byte_size"], expect_sha256=row["sha256"],
+                )
+            else:
+                status, headers, body = fetcher(url, TIMEOUT_SECONDS)
             output["http_status"] = status
             if status != 200:
                 raise RouteVerificationError(f"Expected HTTP 200 without redirects, got {status}")

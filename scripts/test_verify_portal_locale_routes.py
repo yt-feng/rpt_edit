@@ -49,6 +49,15 @@ def fixture() -> tuple[dict, dict]:
     return manifest, responses
 
 
+def curl_response(command, body, *, status=200, headers=None, returncode=0):
+    Path(command[command.index("--output") + 1]).write_bytes(body)
+    header_text = f"HTTP/2 {status}\r\n" + "".join(
+        f"{key}: {value}\r\n" for key, value in (headers or {}).items()
+    ) + "\r\n"
+    Path(command[command.index("--dump-header") + 1]).write_bytes(header_text.encode("iso-8859-1"))
+    return subprocess.CompletedProcess(command, returncode, f"{status:03d}", "")
+
+
 class PublicLocaleRouteTests(unittest.TestCase):
     def setUp(self):
         self.manifest, self.responses = fixture()
@@ -255,18 +264,100 @@ class PublicLocaleRouteTests(unittest.TestCase):
         self.assertEqual(report["status"], "passed")
         self.assertEqual(maximum, 4)
 
-    def test_fetch_wrapper_has_hard_deadline_no_redirects_and_no_retry(self):
+    def test_fetch_wrapper_preserves_deadline_size_bound_and_headers(self):
         body = b"test"
-        result = subprocess.CompletedProcess([], 0, b"HTTP/2 200\r\nContent-Language: ja\r\n\r\n" + body + b"\nKC_ROUTE_STATUS:200", b"")
-        with patch.object(audit.subprocess, "run", return_value=result) as run:
+
+        def respond(command, **kwargs):
+            return curl_response(command, body, headers={"Content-Language": "ja"})
+
+        with patch.object(audit.release_fetch.subprocess, "run", side_effect=respond) as run:
             self.assertEqual(audit.fetch_public(ORIGIN + "/ja/report.html", 20), (200, {"content-language": "ja"}, body))
         args = run.call_args.args[0]
-        self.assertEqual(args[args.index("--max-time") + 1], "20")
+        self.assertEqual(float(args[args.index("--max-time") + 1]), 20)
         self.assertEqual(args[args.index("--max-redirs") + 1], "0")
+        self.assertEqual(int(args[args.index("--max-filesize") + 1]), audit.MAX_RESPONSE_BYTES)
+        self.assertIn("--compressed", args)
+        self.assertIn("Cache-Control: no-cache", args)
         self.assertNotIn("--location", args)
         self.assertNotIn("--retry", args)
-        self.assertEqual(run.call_args.kwargs["timeout"], 20)
+        self.assertLessEqual(run.call_args.kwargs["timeout"], 25)
         self.assertEqual(run.call_count, 1)
+
+    def test_default_transport_recovers_partial_then_stale_response_without_weakening_hash(self):
+        target = ORIGIN + "/ja/report.html"
+        counts = {}
+        lock = threading.Lock()
+
+        def respond(command, **kwargs):
+            url = command[command.index("--url") + 1]
+            with lock:
+                counts[url] = counts.get(url, 0) + 1
+                attempt = counts[url]
+            status, headers, body = self.responses[url]
+            if url == target and attempt == 1:
+                return curl_response(command, body[:12], headers={"Content-Language": "wrong"}, returncode=28)
+            if url == target and attempt == 2:
+                return curl_response(command, b"!" + body[1:], headers=headers)
+            return curl_response(command, body, status=status, headers=headers)
+
+        with patch.object(audit.release_fetch.subprocess, "run", side_effect=respond), \
+                patch.object(audit.release_fetch.time, "sleep"):
+            report = audit.verify_locale_routes(self.manifest, ORIGIN)
+        self.assertEqual(report["status"], "passed")
+        self.assertEqual(report["request_count"], 19)
+        self.assertEqual(counts.pop(target), 3)
+        self.assertTrue(all(count == 1 for count in counts.values()))
+
+    def test_default_transport_exhausts_mismatched_bytes_and_never_accepts_redirects(self):
+        target = ORIGIN + "/ja/report.html"
+        expected = b"trusted"
+
+        def stale(command, **kwargs):
+            return curl_response(command, b"corrupt")
+
+        with patch.object(audit.release_fetch.subprocess, "run", side_effect=stale) as run, \
+                patch.object(audit.release_fetch.time, "sleep"), \
+                self.assertRaisesRegex(audit.RouteVerificationError, "SHA256 mismatch"):
+            audit.fetch_public(target, 20, expected_bytes=len(expected), expect_sha256=hashlib.sha256(expected).hexdigest())
+        self.assertEqual(run.call_count, 3)
+
+        def redirected(command, **kwargs):
+            return curl_response(command, b"", status=302, headers={"Location": "https://other.invalid/"})
+
+        with patch.object(audit.release_fetch.subprocess, "run", side_effect=redirected) as run:
+            self.assertEqual(audit.fetch_public(target, 20), (302, {}, b""))
+        self.assertEqual(run.call_count, 1)
+
+    def test_group_deadline_prevents_queued_requests_after_budget_is_spent(self):
+        clock = [0.0]
+
+        def slow_fetcher(url, timeout):
+            response = self.fetch(url, timeout)
+            clock[0] += audit.GROUP_TOTAL_SECONDS
+            return response
+
+        with patch.object(audit, "MAX_WORKERS", 1), patch.object(audit.time, "monotonic", side_effect=lambda: clock[0]):
+            report = audit.verify_locale_routes(self.manifest, ORIGIN, fetcher=slow_fetcher)
+        self.assertEqual(report["status"], "failed")
+        self.assertEqual(len(self.calls), 1)
+        self.assertEqual(sum(row.get("error") == "Locale route group time budget exhausted" for row in report["checks"]), 18)
+
+    def test_default_transport_receives_remaining_group_budget_and_trusted_identity(self):
+        calls = []
+
+        def respond(url, timeout, **kwargs):
+            calls.append(kwargs)
+            response = self.responses[url]
+            self.assertEqual(kwargs["expected_bytes"], len(response[2]))
+            self.assertEqual(kwargs["expect_sha256"], hashlib.sha256(response[2]).hexdigest())
+            return response
+
+        with patch.object(audit, "fetch_public", side_effect=respond), \
+                patch.object(audit.time, "monotonic", side_effect=[0.0] + [179.0] * 20):
+            report = audit.verify_locale_routes(self.manifest, ORIGIN)
+        self.assertEqual(report["status"], "passed")
+        self.assertEqual(len(calls), 19)
+        self.assertTrue(all(row["max_total_time"] == 1.0 for row in calls))
 
     def test_cli_writes_report_and_returns_failure_without_real_requests(self):
         with tempfile.TemporaryDirectory() as temporary:
@@ -334,7 +425,7 @@ class PublicLocaleRouteTests(unittest.TestCase):
             manifest.write_text(json.dumps(self.manifest))
             args = ["verify_portal_locale_routes.py", "--manifest", str(manifest), "--origin", ORIGIN,
                     "--local-root", str(root), "--output", str(output)]
-            with patch("sys.argv", args), patch.object(audit.subprocess, "run", side_effect=AssertionError("local validation must not use HTTP")), patch("builtins.print"):
+            with patch("sys.argv", args), patch.object(audit.release_fetch.subprocess, "run", side_effect=AssertionError("local validation must not use HTTP")), patch("builtins.print"):
                 self.assertEqual(audit.main(), 0)
                 self.assertEqual(json.loads(output.read_text())["validation_mode"], "prepared-files")
                 page = root / "ja/report.html"
