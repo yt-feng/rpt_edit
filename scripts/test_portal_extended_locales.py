@@ -306,8 +306,8 @@ class AssemblyTests(BuildFixture, unittest.TestCase):
 class CostAndWorkflowTests(unittest.TestCase):
     def test_extended_workflow_defaults_and_canaries_exclude_english(self):
         source = (ROOT/'.github/workflows/portal-extended-locales-r2.yml').read_text()
-        self.assertIn('default: fr', source)
-        self.assertIn("vars.PORTAL_EXTENDED_INCREMENTAL_LOCALES || 'fr'", source)
+        self.assertIn('default: all-supported', source)
+        self.assertIn("vars.PORTAL_EXTENDED_INCREMENTAL_LOCALES || 'all-supported'", source)
         self.assertNotIn('default: en', source)
         checks = (ROOT/'.github/workflows/portal-extended-locales-check.yml').read_text()
         self.assertIn('locale: [fr, pt, hi, zh-Hant]', checks)

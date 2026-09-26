@@ -8,6 +8,7 @@ on:
       - '.github/actions/setup-offline-translation/action.yml'
       - 'workers/edge-static-host/**'
       - '.github/workflows/portal-extended-locales-check.yml'
+      - '.github/workflows/portal-extended-locales-r2.yml'
   push:
     branches: [main, codex/extended-locales-r2-20260924]
     paths:
@@ -16,6 +17,7 @@ on:
       - '.github/actions/setup-offline-translation/action.yml'
       - 'workers/edge-static-host/**'
       - '.github/workflows/portal-extended-locales-check.yml'
+      - '.github/workflows/portal-extended-locales-r2.yml'
   workflow_dispatch:
     inputs:
       run_model_canary:

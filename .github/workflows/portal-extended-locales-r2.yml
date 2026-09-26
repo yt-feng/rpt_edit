@@ -2,7 +2,7 @@
 # This workflow never publishes an incomplete candidate and never uploads
 # generated translations to Actions artifacts or caches.
 name: Extended locales private R2 pipeline
-run-name: Extended locale R2 ${{ inputs.operation || 'daily incremental' }} (${{ inputs.locales || vars.PORTAL_EXTENDED_INCREMENTAL_LOCALES || 'fr' }})
+run-name: Extended locale R2 ${{ inputs.operation || 'daily incremental' }} (${{ inputs.locales || vars.PORTAL_EXTENDED_INCREMENTAL_LOCALES || 'all-supported' }})
 
 on:
   workflow_run:
@@ -20,10 +20,10 @@ on:
         options: [roundtrip, candidate]
         default: roundtrip
       locales:
-        description: "Comma-separated additional locales (English excluded: summary-only); up to 24 new detail pages; never fill from history"
+        description: "all-supported = 33 non-English locales, or comma-separated subset; English is summary/commentary blog only, no originals/charts; up to 24 new detail pages"
         required: false
         type: string
-        default: fr
+        default: all-supported
       source_generation:
         description: "Optional same-day daily source generation; leave empty to select today new/changed content"
         required: false
@@ -112,7 +112,7 @@ jobs:
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET: ${{ secrets.R2_BUCKET }}
           REQUESTED_SOURCE_GENERATION: ${{ inputs.source_generation }}
-          REQUESTED_LOCALES: ${{ inputs.locales || vars.PORTAL_EXTENDED_INCREMENTAL_LOCALES || 'fr' }}
+          REQUESTED_LOCALES: ${{ inputs.locales || vars.PORTAL_EXTENDED_INCREMENTAL_LOCALES || 'all-supported' }}
         run: |
           set -euo pipefail
           source_args=()

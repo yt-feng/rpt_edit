@@ -14,7 +14,8 @@ R2 完成记录只证明候选内容生成完成，不是审批或上线；待�
 译文校验；未使用的历史单元不并入新检查点。新增摘要/图表政策不变：英文不参与本管线。
 
 自动入口为默认分支 `Neutral edge catalog refresh` 成功事件；当前 PR 合入 main 后才生效，
-默认仅法语，可通过 `PORTAL_EXTENDED_INCREMENTAL_LOCALES` 明确扩展非英语目标。
+2026-09-26 用户授权扩展全部 33 个非英语目标，默认改为 `all-supported`；
+`PORTAL_EXTENDED_INCREMENTAL_LOCALES` 仍可限定子集。所选批次已完成的语言不再进入模型矩阵。
 这不是自动生产切换；已有未激活目录、版本核对、审批和回滚继续保留。
 
 ## 结论

@@ -4,6 +4,43 @@ This checkpoint records implementation and verification state only. Generated
 source, translations, checkpoints, candidate HTML and credentials stay out of
 Git.
 
+## 2026-09-26 All 33 non-English targets requested
+
+The operator authorized expanding beyond the French canary to all 33 additional
+non-English locales. Manual and automatic candidate defaults now use
+`all-supported`; a comma-separated subset remains supported. English is still
+rejected at selection, build and approval: only text-only summary/commentary Blog
+is permitted for a future English publisher, never original/full report text or
+charts. This change does not add or dispatch an English publisher.
+
+Local checks: 226 Python tests passed, 1 skipped (PyYAML unavailable); 65 edge
+host tests passed. Both workflow YAML files and all 15 shell blocks parsed;
+public identity audit passed for 5,916 files, and `git diff --check` passed.
+The 33-locale round trip is synthetic plumbing coverage, not a claim that 33
+real-model jobs or production releases have already completed.
+
+Current main `5d3259476527350afd6b6dfcfafc904876276eac` was merged into the clean
+PR #182 worktree. The primary checkout's unrelated uncommitted work is untouched.
+The source batch remains current-day-only, at most 24 detail pages, shared as one
+immutable R2 generation across the target matrix. Completed locales for that
+batch are excluded rather than restarted for a slower locale. Changed content
+reactivates the affected locales; source/unit checks and incomplete handling are
+unchanged. Concurrency stays two, with at most four hours of model time per locale
+(at most 132 model runner-hours for 33 languages, not four hours total). No paid
+translation, history backfill, generated Git files or translation artifacts.
+
+Verified prerequisite: French run `36086471273` succeeded with 24/24 candidate
+pages, 338 model calls and 102 exact-source fallback units (106 uses), no paid
+requests. Its R2 checkpoint SHA-256 is
+`93b3f4ac71e40bb61a3ec05536bfc8f8ef202a93b2580830732bac430a5cdb6b`;
+candidate `850af59c89b64137fe7022d785ffe34576976f6e2443545ee1835777ef5c2768`
+is ready privately, not live. That historical source is not dispatched again.
+
+Stop point: push reviewed code and dispatch one all-supported current-day
+candidate workflow. Do not wait, monitor, automatically rerun, merge the PR or
+claim publication. The daily hook is not active until normal PR merge; production
+assembly/approval/carry-forward remains separate work.
+
 ## 2026-09-25 Four-hour, today-only incremental scope
 
 Implementation commit: `e64a21707d598dfe9898ad738b6ef790349d5c7d`.

@@ -6,8 +6,8 @@ import unittest
 from unittest import mock
 
 from build_portal_extended_locales import build, validate_budget, MAX_TRANSLATION_SECONDS
-from portal_extended_locales import (DAILY_SCOPE, ExpansionError, daily_corpus_day, digest,
-                                    document_from_html, make_corpus, publication_day, stable_bytes)
+from portal_extended_locales import (ADDITIONAL, DAILY_SCOPE, ExpansionError, daily_corpus_day, digest,
+                                    document_from_html, make_corpus, publication_day, select_locales, stable_bytes)
 from portal_extended_incremental import (collect_today, eligible_url, prepare, read_state, remember_candidate,
                                         remember_checkpoint, restore_seed, state_key, write_state)
 from portal_extended_r2 import R2IntegrityError, R2PermissionError, R2Store
@@ -125,7 +125,50 @@ class IncrementalR2Tests(unittest.TestCase):
     def test_other_language_does_not_inherit_french_completion(self):
         build(self.corpus, 'fr', self.root/'out', self.root/'memo.json', FakeTranslator())
         remember_candidate(self.store, 'fr', self.corpus, self.root/'out')
-        self.assertTrue(prepare(self.store, [self.doc], ('fr','pt'), DAY, self.root/'source.json')['has_work'])
+        result = prepare(self.store, [self.doc], ('fr','pt'), DAY, self.root/'source.json')
+        self.assertTrue(result['has_work'])
+        self.assertEqual(json.loads(result['locales_json']), ['pt'])
+        self.assertEqual(result['requested_locale_count'], 2)
+        self.assertEqual(result['pending_locale_count'], 1)
+
+    def test_all_33_non_english_locales_share_one_fixed_today_batch(self):
+        locales = select_locales('all-supported')
+        self.assertEqual(len(locales), 33)
+        result = prepare(self.store, [self.doc], locales, DAY, self.root/'source.json')
+        self.assertEqual(json.loads(result['locales_json']), list(ADDITIONAL))
+        self.assertEqual(result['pending_locale_count'], 33)
+        self.assertEqual(result['selected_page_count'], 1)
+        self.assertEqual(result['generation'], self.corpus['documents_sha256'])
+        for locale in locales:
+            with self.subTest(locale=locale):
+                # The synthetic translator returns Latin text; use the actual
+                # production fallback policy for non-Latin target scripts. This
+                # checks routing/persistence, not real-model language quality.
+                build(self.corpus, locale, self.root/locale, self.root/(locale+'.json'),
+                      FakeTranslator(), allow_source_fallback=True)
+                saved = remember_candidate(self.store, locale, self.corpus, self.root/locale)
+                self.assertTrue(saved['ready'])
+                page = (self.root/locale/locale/'blog/20260925-new.html').read_text()
+                self.assertIn('noindex,follow', page)
+                self.assertIn('lang="'+locale+'"', page)
+        repeated = prepare(self.store, [self.doc], locales, DAY, self.root/'again.json')
+        self.assertFalse(repeated['has_work'])
+        self.assertEqual(json.loads(repeated['locales_json']), [])
+        self.assertEqual(repeated['pending_locale_count'], 0)
+
+    def test_changed_content_reactivates_all_previously_completed_locales(self):
+        for locale in ('fr', 'pt'):
+            build(self.corpus, locale, self.root/locale, self.root/(locale+'.json'), FakeTranslator())
+            remember_candidate(self.store, locale, self.corpus, self.root/locale)
+        changed = daily_doc(body='<h1>New findings</h1><p>Changed content.</p>')
+        result = prepare(self.store, [changed], ('fr', 'pt'), DAY, self.root/'source.json')
+        self.assertEqual(json.loads(result['locales_json']), ['fr', 'pt'])
+
+    def test_english_and_existing_mirrors_are_rejected_even_on_empty_days(self):
+        for locales in (('en',), ('fr', 'en'), ('ko',), ('ja',), ('ar',), ('zh',), (), ('fr', 'fr')):
+            with self.subTest(locales=locales), self.assertRaises(ExpansionError):
+                prepare(self.store, [], locales, DAY, self.root/'source.json')
+        self.assertFalse(self.client.objects)
 
     def test_changed_generation_reuses_exact_units_only(self):
         build(self.corpus, 'fr', self.root/'first', self.root/'memo.json', FakeTranslator())
@@ -166,6 +209,13 @@ class IncrementalR2Tests(unittest.TestCase):
 
 
 class WorkflowTests(unittest.TestCase):
+    def test_all_supported_is_default_but_english_stays_summary_blog_only(self):
+        source = (ROOT/'.github/workflows/portal-extended-locales-r2.yml').read_text()
+        self.assertIn('default: all-supported', source)
+        self.assertEqual(source.count("vars.PORTAL_EXTENDED_INCREMENTAL_LOCALES || 'all-supported'"), 2)
+        self.assertIn('English is summary/commentary blog only, no originals/charts', source)
+        self.assertNotIn('default: fr', source)
+
     def test_daily_hook_four_hour_budget_and_persistence_margin(self):
         source = (ROOT/'.github/workflows/portal-extended-locales-r2.yml').read_text()
         for required in ('workflows: [Neutral edge catalog refresh]', 'timeout-minutes: 270', 'default: "14400"',

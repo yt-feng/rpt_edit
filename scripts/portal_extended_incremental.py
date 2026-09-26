@@ -89,6 +89,9 @@ def write_state(store: R2Store, kind: str, locale: str, fields: dict, day: str =
 def prepare(store: R2Store, docs: list[dict], locales: tuple[str, ...], day: str, output: Path,
             *, limit=24) -> dict:
     if not 1 <= limit <= 24: raise ExpansionError('Daily batch must be 1..24 detail pages')
+    # Validate even empty days, before any storage access or matrix generation.
+    if select_locales(','.join(locales)) != locales:
+        raise ExpansionError('Expected distinct non-English expansion locales')
     if docs:
         validated = make_corpus(docs)
         if daily_corpus_day(validated) != day: raise ExpansionError('Only today detail pages may enter this batch')
@@ -96,11 +99,18 @@ def prepare(store: R2Store, docs: list[dict], locales: tuple[str, ...], day: str
     if any(not isinstance(rows, dict) for rows in receipts.values()): raise R2IntegrityError('Invalid page receipts')
     pending = [doc for doc in sorted(docs, key=lambda doc: doc['url'])
                if not all(receipts[locale].get(doc['url'], {}).get('content_key') == content_key(doc) for locale in locales)]
+    selected = pending[:limit]
+    # A slower locale must not restart an already completed locale. All remaining
+    # jobs still share the same immutable source; unit memos reuse partial work.
+    active_locales = [locale for locale in locales if any(
+        receipts[locale].get(doc['url'], {}).get('content_key') != content_key(doc) for doc in selected)]
     result = {'day': day, 'scope': DAILY_SCOPE, 'today_page_count': len(docs), 'pending_page_count': len(pending),
               'selected_page_count': min(len(pending), limit), 'remaining_page_count': max(0, len(pending)-limit),
-              'has_work': bool(pending), 'generation': '', 'locales_json': json.dumps(list(locales)), 'paid_provider_requests': 0}
+              'has_work': bool(pending), 'generation': '', 'locales_json': json.dumps(active_locales),
+              'requested_locale_count': len(locales), 'pending_locale_count': len(active_locales),
+              'paid_provider_requests': 0}
     if not pending: return result
-    corpus = make_corpus(pending[:limit])
+    corpus = make_corpus(selected)
     # No varying timestamps/counts in the immutable source object.
     store.put_source(corpus)
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -154,7 +164,7 @@ def main() -> int:
     parser.add_argument('operation', choices=['prepare', 'restore-seed', 'checkpoint', 'candidate'])
     parser.add_argument('--prefix', default=DEFAULT_PREFIX)
     parser.add_argument('--locale', default='fr')
-    parser.add_argument('--locales', default='fr')
+    parser.add_argument('--locales', default='all-supported')
     parser.add_argument('--corpus', type=Path)
     parser.add_argument('--checkpoint', type=Path)
     parser.add_argument('--directory', type=Path)

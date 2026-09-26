@@ -1,6 +1,6 @@
 # Additional locales: local Codex handoff
 
-## Current operator scope (2026-09-25; supersedes historical batch instructions below)
+## Current operator scope (2026-09-26; supersedes historical batch instructions below)
 
 - Translate only newly published public detail pages on the current Asia/Shanghai
   date, starting 2026-09-25. Do not backfill previous dates, the homepage, About,
@@ -15,9 +15,11 @@
   time. Finish early when done; still save timeout checkpoints and keep incomplete
   candidates unpublished. Keep at most two simultaneous languages.
 - English is excluded from full reading pages and Charts; any future English
-  surface is text-only summary/interpretation. There are 33 expansion targets.
+  surface is text-only summary/commentary Blog, never original/full report text.
+  There are 33 non-English expansion targets; all are now requested by default.
 - Follow successful default-branch `Neutral edge catalog refresh` runs to prepare
-  new candidates, defaulting to French until explicitly expanded. The workflow
+  new candidates, defaulting to `all-supported` (33 non-English locales). Completed
+  locales are omitted from the matrix for the selected batch. The workflow
   hook becomes active only after its normal PR review and merge to main.
 - Do not monitor runs. Stop after dispatch. Do not rerun the old mixed-directory
   generation `f334aac3023978818d18a4d28ed16cb2541a7b9b6ea803021f1fcd0502c812aa`.
