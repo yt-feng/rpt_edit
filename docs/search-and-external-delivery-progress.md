@@ -50,3 +50,21 @@ network settings. No production deployment or real authenticated full download
 is claimed by these local contract tests. The user requested no Action monitoring.
 The separately dispatched 33-locale candidate run is `36216968278`, source
 `044d268a6ec79b54b5d70d77f39130e1d6093ef2`; do not poll it.
+
+## CI repair (2026-09-26)
+
+PR #184's Public identity check run `36217287044` failed on source
+`c3627695dccbb0e6807fc1feebc530b22a192aaa` in the recurring-locale regression
+step. The real-JavaScript coverage test still required the removed member-preview
+sentence. The replacement full-text-first hint is inside a template expression;
+the production collector already visits those expressions, but this test only
+scanned outer literals. The test now checks the current hint and recursively
+covers conditional literals in template expressions. No production translation,
+authorization, source validation or publication gate was relaxed.
+
+Local validation after the fix: all 488 tests from the failing locale CI step
+passed, as did 28 search, external-preview and request-coalescing frontend tests;
+`git diff --check` passed. Push this small repair to the existing PR to rerun
+checks on the new source SHA, rather than retrying the obsolete failed SHA.
+Do not duplicate the already dispatched 33-locale run or monitor Actions. This
+repair is not a production deployment or evidence of additional live languages.

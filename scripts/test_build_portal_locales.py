@@ -1923,41 +1923,55 @@ if (mode === "程序枚举") document.getElementById("中文节点");
     def test_real_javascript_covers_all_current_chinese_ternary_literals(self) -> None:
         # UI copy changes the inventory size. Every discovered literal must
         # remain translatable; a fixed historical count is not a coverage rule.
+        def literal_contexts(source: str):
+            for start, end, quote, inner in builder.scan_quoted_javascript(source):
+                yield source, start, end, quote, inner
+                if quote == "`":
+                    # Match the production collector's recursive coverage of
+                    # conditional UI copy inside template expressions.
+                    for is_expression, part in builder.template_literal_parts(inner):
+                        if is_expression:
+                            yield from literal_contexts(part[2:-1])
+
         observed: dict[str, int] = {}
         covered_app_values: set[str] = set()
         for asset_name in builder.LOCALIZED_JS_ASSETS:
             source = (ROOT / "portal_suite" / "site_src" / "assets" / asset_name).read_text(encoding="utf-8")
             count = 0
-            for start, end, quote, inner in builder.scan_quoted_javascript(source):
+            for fragment, start, end, quote, inner in literal_contexts(source):
                 values = (
                     [part for is_expression, part in builder.template_literal_parts(inner) if not is_expression]
                     if quote == "`"
                     else [inner]
                 )
                 for value in values:
-                    after = builder._javascript_trivia_after(source, end)
-                    if not builder.CJK_RE.search(value) or after >= len(source) or source[after] != ":":
+                    after = builder._javascript_trivia_after(fragment, end)
+                    if not builder.CJK_RE.search(value) or after >= len(fragment) or fragment[after] != ":":
                         continue
-                    if builder.javascript_literal_is_object_key(source, start, end):
+                    if builder.javascript_literal_is_object_key(fragment, start, end):
                         continue
                     count += 1
                     self.assertTrue(
                         builder.javascript_literal_needs_translation(
                             value,
-                            source=source,
+                            source=fragment,
                             start=start,
                             end=end,
                         ),
-                        f"{asset_name}:{source.count(chr(10), 0, start) + 1} remains outside translation coverage",
+                        f"{asset_name}: {value!r} remains outside translation coverage",
                     )
                     if asset_name == "app.js":
                         covered_app_values.add(value)
             observed[asset_name] = count
         self.assertGreater(sum(observed.values()), 0, "Real-asset coverage must not pass an empty scan")
         self.assertTrue(
-            {"来源连接已保存", "此类报告普通会员可查看1页预览。", "请先登录后查看1页预览。"}
+            {
+                "来源连接已保存",
+                "登录后按账号权益获取全文；获取失败可查看1页预览并提交表单索取全文。",
+                "请先登录后查看1页预览。",
+            }
             <= covered_app_values,
-            "Source connection and member-preview copy must be included in the current inventory",
+            "Source connection and full-text-first preview fallback copy must be included in the current inventory",
         )
 
     def test_real_javascript_has_no_unclassified_chinese_ui_literals(self) -> None:
