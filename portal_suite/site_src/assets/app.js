@@ -10833,7 +10833,7 @@
     return `
       <section class="account-access" id="accountAccess" hidden>
         <h3>${contactReport ? "会员下载" : externalReport ? "报告访问" : "Account access"}</h3>
-        <p class="subtle" id="accountAccessHint">${contactReport ? "3个月及以上会员可下载全文。" : externalReport ? "登录后可查看1页预览。" : "登录后可查看账号下载权限。"}</p>
+        <p class="subtle" id="accountAccessHint">${contactReport ? "3个月及以上会员可下载全文。" : externalReport ? "登录后按账号权益获取全文；获取失败可查看1页预览并提交表单索取全文。" : "登录后可查看账号下载权限。"}</p>
         <div class="account-access-actions">
           <button class="secondary-button" id="openAccountPanel" type="button">注册 / 登录</button>
           <button class="primary" id="accountDownloadReport" type="button" hidden>账号下载</button>
@@ -10959,8 +10959,8 @@
     function showPreviewOnly(access) {
       accountDownload.hidden = true;
       if (passwordForm) passwordForm.hidden = passwordForm.dataset.explicitDelivery !== "true";
-      hint.textContent = "此类报告普通会员可查看1页预览。";
-      statusTarget("可查看1页预览。预览不是完整报告。");
+      hint.textContent = "当前未取得全文，可查看1页预览并提交表单索取全文。";
+      statusTarget("预览不是完整报告。请在下方提交“索取全文”表单。");
       showExternalPreviewOnlyFallback(document.getElementById("externalDetail"), workerUrl, item, access);
     }
 
@@ -10979,11 +10979,8 @@
       accountDownload.hidden = true;
       openAccount.hidden = false;
       openAccount.textContent = session ? "签到 / 领取" : "注册 / 登录";
-      if (source === EXTERNAL_SOURCE && !isSuperSession(session)) {
-        if (passwordForm) passwordForm.hidden = passwordForm.dataset.explicitDelivery !== "true";
-        hint.textContent = session ? "此类报告普通会员可查看1页预览。" : "登录后可查看此类报告的1页预览。";
-        statusTarget("请使用上方“查看1页预览”。预览不是完整报告。");
-        return;
+      if (source === EXTERNAL_SOURCE && passwordForm) {
+        passwordForm.hidden = !isSuperSession(session) && passwordForm.dataset.explicitDelivery !== "true";
       }
       if (!session) {
         hint.innerHTML = isThreeMonthReport
@@ -11004,11 +11001,17 @@
         const summary = accountRightSummary(access);
         if (access && access.can_download) {
           accountDownload.hidden = false;
-          if (passwordForm) passwordForm.hidden = true;
+          if (passwordForm) passwordForm.hidden = source !== EXTERNAL_SOURCE
+            || passwordForm.dataset.explicitDelivery !== "true";
           hint.textContent = summary ? `当前账号已开通此报告下载权限，${summary}。` : "当前账号已开通此报告下载权限。";
           statusTarget(summary ? `可直接使用账号下载；${summary}。` : "可直接使用账号下载。", "ok");
         } else {
-          if (passwordForm) passwordForm.hidden = false;
+          if (passwordForm) passwordForm.hidden = source === EXTERNAL_SOURCE && !isSuperSession(session)
+            && passwordForm.dataset.explicitDelivery !== "true";
+          if (source === EXTERNAL_SOURCE) {
+            showExternalPreviewOnlyFallback(document.getElementById("externalDetail"), workerUrl, item,
+              { preview_only: true, preview_report_id: item.id });
+          }
           if (isThreeMonthReport) {
             statusTargetHtml(`当前权益未达到 3 个月。${accessContactGuidanceHtml()}`);
           } else {
@@ -11030,10 +11033,6 @@
 
     openAccount.addEventListener("click", () => showAccountModal(workerUrl, context));
     accountDownload.addEventListener("click", async () => {
-      if (source === EXTERNAL_SOURCE && !isSuperSession()) {
-        statusTarget("此类报告普通会员可查看1页预览，请使用上方预览入口。");
-        return;
-      }
       const idleLabel = accountDownload.textContent || "账号下载";
       accountDownload.disabled = true;
       accountDownload.textContent = "准备中…";
@@ -11747,11 +11746,11 @@
     return isAuthorityItem(item) || isReportAItem(item);
   }
 
-  function externalSinglePagePreviewMarkup() {
+  function externalSinglePagePreviewMarkup(hidden = false) {
     return `
-      <section class="unlock-box" id="externalSinglePagePreview">
+      <section class="unlock-box" id="externalSinglePagePreview"${hidden ? " hidden" : ""}>
         <h3>1页预览</h3>
-        <p class="subtle">仅展示报告的1页预览，不是完整报告。</p>
+        <p class="subtle">仅展示报告的1页预览，不是完整报告。如需全文，请填写下方“索取全文”表单。</p>
         <button class="secondary-button" id="externalPreviewOpen" type="button">查看1页预览</button>
         <div id="externalPreviewStatus" class="status-line" aria-live="polite"></div>
         <figure id="externalPreviewFigure" hidden>
@@ -11795,7 +11794,8 @@
 
   function initExternalSinglePagePreview(workerUrl, item, target) {
     const section = target && target.querySelector("#externalSinglePagePreview");
-    if (!workerUrl || !item || !section) return;
+    if (!workerUrl || !item || !section || section.__previewInitialized) return;
+    section.__previewInitialized = true;
     const button = section.querySelector("#externalPreviewOpen");
     const status = section.querySelector("#externalPreviewStatus");
     const figure = section.querySelector("#externalPreviewFigure");
@@ -11832,7 +11832,7 @@
         if (typeof previewImage.decode === "function") await previewImage.decode();
         figure.hidden = false;
         status.className = "status-line ok";
-        status.textContent = "已显示1页预览，不是完整报告。";
+        status.textContent = "已显示1页预览，不是完整报告。需要全文请提交下方“索取全文”表单。";
         button.textContent = "重新加载1页预览";
       } catch (error) {
         releasePreview();
@@ -11852,18 +11852,28 @@
       target.insertAdjacentHTML("afterbegin", externalSinglePagePreviewMarkup());
       initExternalSinglePagePreview(workerUrl, { id }, target);
     }
+    const section = target.querySelector("#externalSinglePagePreview");
+    if (section) section.hidden = false;
+    showExternalRequestFallback(target, workerUrl, { ...item, id, source: EXTERNAL_SOURCE });
     return true;
   }
 
   function showExternalRequestFallback(target, workerUrl, item, message = "") {
     if (!target || !workerUrl || !item || String(item.source || EXTERNAL_SOURCE) !== EXTERNAL_SOURCE) return false;
+    let preview = target.querySelector("#externalSinglePagePreview");
+    if (!preview) {
+      target.insertAdjacentHTML("afterbegin", externalSinglePagePreviewMarkup());
+      initExternalSinglePagePreview(workerUrl, item, target);
+      preview = target.querySelector("#externalSinglePagePreview");
+    }
+    if (preview) preview.hidden = false;
     if (target.querySelector("#externalAbnormalRequest")) return true;
     const box = document.createElement("section");
     box.id = "externalAbnormalRequest";
     box.className = "unlock-box authority-contact-box";
     box.innerHTML = `
-      <h3>提交报告申请</h3>
-      <p class="subtle">${escapeHtml(message || `这份 ${["Report", "ify"].join("")} 报告当前无法直接获取，我们会人工核验并回复。`)}</p>
+      <h3>索取全文</h3>
+      <p class="subtle">${escapeHtml(message || "当前未取得完整报告。预览仅含1页；请提交此表单索取全文，我们会核验并回复。")}</p>
       ${reportRequestMarkup({ ...item, source: EXTERNAL_SOURCE })}
     `;
     target.appendChild(box);
@@ -12540,7 +12550,7 @@
 
     target.innerHTML = `
       ${detailHeader}
-      ${workerUrl ? externalSinglePagePreviewMarkup() : ""}
+      ${workerUrl ? externalSinglePagePreviewMarkup(true) : ""}
       <form class="unlock-box" id="externalDetailForm" data-explicit-delivery="${passwordFromLink ? "true" : "false"}" ${isSuperSession() || passwordFromLink ? "" : "hidden"}>
         <h3>PDF Download</h3>
         <p class="subtle">Enter the report password to download the PDF.</p>
