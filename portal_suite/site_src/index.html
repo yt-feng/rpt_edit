@@ -75,8 +75,9 @@
         </div>
         <label class="search-box search-main">
           <span>Search</span>
-          <input id="searchInput" type="search" autocomplete="off" placeholder="Topic, company, ticker, title, or keyword">
+          <input id="searchInput" type="search" autocomplete="off" aria-describedby="searchHelp" placeholder="输入完整标题、中间短语、公司名或关键词">
         </label>
+        <p class="subtle" id="searchHelp">不用限定关键词个数，可直接粘贴完整标题或中间短语（如 unlock solid）。英文不区分大小写，连字符与空格均可；完整短语优先排列。没有结果时，也请检查日期、机构和 PDF 筛选。</p>
         <div class="search-readiness" id="searchReadiness" role="status" aria-live="polite">
           <span class="search-readiness-dot" aria-hidden="true"></span>
           <span id="searchReadinessText">正在载入最新报告，完整目录会在后台继续补齐…</span>

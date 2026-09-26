@@ -561,6 +561,7 @@
 
   function normalize(value) {
     return localeSearchText(value)
+      .replace(/[\u00ad\u200b-\u200d\ufeff]/gu, "")
       .replace(/[^\p{L}\p{N}]+/gu, " ")
       .replace(/\s+/g, " ")
       .trim();
@@ -573,7 +574,7 @@
   function textMatches(text, query) {
     if (!query) return true;
     if (text.includes(query)) return true;
-    const tokens = query.split(" ").filter(Boolean);
+    const tokens = searchQueryTokens(query);
     return tokens.length > 0 && tokens.every((token) => text.includes(token));
   }
 
@@ -581,10 +582,18 @@
     if (!query) return 0;
     let score = 0;
     if (text.includes(query)) score += 10 * weight;
-    for (const token of query.split(" ").filter(Boolean)) {
+    for (const token of searchQueryTokens(query)) {
       if (text.includes(token)) score += weight;
     }
     return score;
+  }
+
+  function searchQueryTokens(query) {
+    const tokens = [...new Set(query.split(" ").filter(Boolean))];
+    // Pasted titles may omit connective words in catalog/OCR text. Keep every
+    // subject term, number and negation; never turn a short query into match-all.
+    const subject = tokens.filter((token) => !/^(?:a|an|the|to|of|in|on|at|for|and|with|by|from)$/u.test(token));
+    return subject.length >= 2 ? subject : tokens;
   }
 
   async function loadJson(path, options = {}) {
