@@ -288,14 +288,15 @@ async function accessHarness({ source = "external", owner = false, explicitDeliv
   return { ids, previews, entitlementReads: () => entitlementReads, downloads: () => downloads };
 }
 
-test("ordinary source-report members get preview only while owner and other report types keep full action", async () => {
+test("eligible source-report members try full download like owner and other report types", async () => {
   const member = await accessHarness();
-  assert.equal(member.ids.accountDownloadReport.hidden, true);
+  assert.equal(member.ids.accountDownloadReport.hidden, false);
   assert.equal(member.ids.externalDetailForm.hidden, true);
-  assert.match(member.ids.accountAccessHint.textContent, /1页预览/);
+  assert.match(member.ids.accountAccessHint.textContent, /下载权限/);
   await member.ids.accountDownloadReport.listeners.click();
-  assert.equal(member.downloads(), 0);
-  assert.equal(member.entitlementReads(), 0);
+  assert.equal(member.downloads(), 1);
+  assert.equal(member.entitlementReads(), 1);
+  assert.equal(member.previews.length, 0);
   for (const options of [{ owner: true }, { source: "catalog" }, { source: "hot" }]) {
     const h = await accessHarness(options);
     assert.equal(h.ids.accountDownloadReport.hidden, false);
@@ -304,7 +305,7 @@ test("ordinary source-report members get preview only while owner and other repo
   }
   const delivered = await accessHarness({ explicitDelivery: true });
   assert.equal(delivered.ids.externalDetailForm.hidden, false);
-  assert.equal(delivered.ids.accountDownloadReport.hidden, true);
+  assert.equal(delivered.ids.accountDownloadReport.hidden, false);
 });
 
 test("external-origin archived reports switch to a one-page preview after a source-policy denial", async () => {
@@ -322,15 +323,16 @@ test("external-origin archived reports switch to a one-page preview after a sour
 });
 
 test("archived preview uses only the original report id and does not create duplicate preview cards", () => {
-  let existing = false;
-  const inserted = [], initialized = [];
+  let existing = null;
+  const inserted = [], initialized = [], requests = [];
   const target = {
     querySelector: () => existing,
-    insertAdjacentHTML: (position, markup) => { inserted.push({ position, markup }); existing = true; },
+    insertAdjacentHTML: (position, markup) => { inserted.push({ position, markup }); existing = { hidden: true }; },
   };
   const helper = vm.runInNewContext(`(${fn("showExternalPreviewOnlyFallback")})`, {
     EXTERNAL_SOURCE: "external", externalSinglePagePreviewMarkup: () => "one-page markup",
     initExternalSinglePagePreview: (worker, item) => initialized.push({ worker, item }),
+    showExternalRequestFallback: (_target, _worker, item) => requests.push(item),
   });
   const item = { id: "hot:abcdefabcdef1234", source: "hot" };
   assert.equal(helper(target, "https://worker.example.test", item, { preview_only: true }), false);
@@ -338,6 +340,36 @@ test("archived preview uses only the original report id and does not create dupl
   assert.equal(helper(target, "https://worker.example.test", item, { preview_only: true, preview_report_id: "1256239582803005440" }), true);
   assert.equal(inserted.length, 1);
   assert.equal(initialized[0].item.id, "1256239582803005440");
+  assert.equal(existing.hidden, false);
+  assert.equal(requests[0].id, "1256239582803005440");
+  assert.equal(requests[0].source, "external");
+});
+
+test("external detail hides preview initially and fallback includes the full-text request form", () => {
+  const markup = vm.runInNewContext(`(${fn("externalSinglePagePreviewMarkup")})`);
+  assert.match(markup(true), /id="externalSinglePagePreview" hidden/);
+  assert.match(markup(), /索取全文/);
+  assert.match(app, /externalSinglePagePreviewMarkup\(true\)/);
+  const ids = new Map([["#externalSinglePagePreview", { hidden: true }]]);
+  const nodes = [], initialized = [];
+  const context = {
+    EXTERNAL_SOURCE: "external", escapeHtml: (value) => String(value || ""),
+    document: { createElement: () => ({}) },
+    reportRequestMarkup: (item) => `<form data-report-id="${item.id}"></form>`,
+    initReportRequest: (_worker, item) => initialized.push(item),
+  };
+  const fallback = vm.runInNewContext(`(${fn("showExternalRequestFallback")})`, context);
+  const target = { querySelector: (id) => ids.get(id), appendChild: (node) => {
+    ids.set('#'+node.id, node); nodes.push(node);
+  } };
+  const item = { id: "1256239582803005440", title: "Research", source: "external" };
+  assert.equal(fallback(target, "/api", item), true);
+  assert.equal(fallback(target, "/api", item), true);
+  assert.equal(nodes.length, 1);
+  assert.match(nodes[0].innerHTML, /索取全文/);
+  assert.match(nodes[0].innerHTML, /data-report-id="1256239582803005440"/);
+  assert.equal(initialized.length, 1);
+  assert.equal(ids.get("#externalSinglePagePreview").hidden, false);
 });
 
 test("PDF source-policy response retains the original preview id for the UI", async () => {

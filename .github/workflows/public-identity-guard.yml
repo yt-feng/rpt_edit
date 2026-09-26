@@ -62,3 +62,6 @@ jobs:
           for test_file in portal_suite/tests/reportify*.test.mjs; do
             node "$test_file"
           done
+          node portal_suite/tests/search-phrases.test.mjs
+          node portal_suite/tests/home-search-ux.test.mjs
+          node portal_suite/tests/frontend-request-coalescing.test.mjs

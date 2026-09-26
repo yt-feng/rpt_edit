@@ -24538,6 +24538,8 @@ async function externalAccessFailure(request, env, id, state, isAdmin, item = nu
   return jsonResponse(request, env, 503, {
     error: "这份报告当前无法直接获取，请提交报告申请。",
     error_code: code,
+    preview_only: !isAdmin,
+    preview_report_id: id,
     request_required: !isAdmin,
     request_source: "external",
     request_report_id: id,
@@ -24597,27 +24599,16 @@ async function handleExternalPdf(request, env, ctx = null) {
       signedDelivery = false;
     }
   }
-  // Ordinary membership and the shared password authorize only this report's
-  // preview. Preserve explicit administrator-issued, report-bound deliveries.
-  if (!isAdmin && !signedDelivery) {
-    return privateJsonResponse(request, env, 403, {
-      error: "普通会员可查看这份报告的单页预览，完整报告由管理员连接账号后获取。",
-      error_code: "preview_only", preview_only: true, preview_pages: 1,
-      preview_report_id: id,
-      preview_url: `/api/external/preview?id=${encodeURIComponent(id)}`,
-    });
-  }
+  // Eligible members and report-bound deliveries try verified full acquisition
+  // first. A shared site password alone does not grant external-report access.
   const accountDecision = signedDelivery ? { allowed: false } : await accountDownloadDecision(env, request, id, "external");
   const accountAllowed = Boolean(accountDecision.allowed);
-  if (!password && !accountAllowed) {
+  if (!signedDelivery && !accountAllowed) {
     return jsonResponse(request, env, accountDecision.status || 402, {
       error: accountDecision.error || "Please log in, purchase this report, or enter the report password.",
       request_action: accountDecision.request_action || undefined,
       limit_exceeded: Boolean(accountDecision.limit_exceeded),
     });
-  }
-  if (!accountAllowed && !(await sharedReportPasswordMatches(env, id, password))) {
-    return jsonResponse(request, env, 401, { error: "Password is incorrect." });
   }
 
   const reportifySession = await reportifyStoredSession(env);
@@ -24625,7 +24616,12 @@ async function handleExternalPdf(request, env, ctx = null) {
 
   // Source access is checked here; full PDFs are parsed and page-count
   // verified by the acquisition workflow before this Worker serves them.
-  const direct = await externalDirectPdfUrl(id, reportifyToken);
+  let direct;
+  try {
+    direct = await externalDirectPdfUrl(id, reportifyToken);
+  } catch (_error) {
+    return externalAccessFailure(request, env, id, "unavailable", isAdmin);
+  }
   let cachedNeedsValidation = false;
 
   // 2) Already grabbed by the workflow and mirrored to R2.
@@ -24682,6 +24678,8 @@ async function handleExternalPdf(request, env, ctx = null) {
     }
     return jsonResponse(request, env, 503, {
       error: "报告准备失败，请提交报告申请。",
+      preview_only: !isAdmin,
+      preview_report_id: id,
       request_required: !isAdmin,
       request_source: "external",
       request_report_id: id,
@@ -24706,6 +24704,8 @@ async function handleExternalPdf(request, env, ctx = null) {
     }
     return jsonResponse(request, env, 503, {
       error: "文件准备服务暂时不可用，请提交报告申请。",
+      preview_only: !isAdmin,
+      preview_report_id: id,
       request_required: !isAdmin,
       request_source: "external",
       request_report_id: id,
@@ -24752,6 +24752,8 @@ async function handleExternalStatus(request, env) {
     return jsonResponse(request, env, 200, {
       ready: false,
       status: "failed",
+      preview_only: !isAdmin,
+      preview_report_id: id,
       message: invalidCache || stored.status === "ready" ? "报告缓存异常，请提交报告申请。" : "报告准备失败，请提交报告申请。",
       request_required: !isAdmin,
       request_source: "external",
