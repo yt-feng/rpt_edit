@@ -186,7 +186,7 @@ class ResumeTests(unittest.TestCase):
         expected_assets = {"assets/locale-recovery.js", "assets/locale-detail.js", "assets/newsfeed-app.js",
                            *(f"{locale}/assets/newsfeed-app.js" for locale in resume.LOCALES)}
         self.assertTrue(expected_assets.issubset(downloaded))
-        with patch("verify_portal_locale_routes.subprocess.run", side_effect=AssertionError("No live HTTP")):
+        with patch("verify_portal_locale_routes.release_fetch.subprocess.run", side_effect=AssertionError("No live HTTP")):
             report = locale_routes.verify_local_locale_routes(manifest, ORIGIN, self.site)
         self.assertEqual(report["status"], "passed")
         self.assertEqual((report["route_count"], report["asset_count"]), (18, 6))

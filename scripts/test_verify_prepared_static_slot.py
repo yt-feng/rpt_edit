@@ -110,7 +110,7 @@ class PreparedStaticSlotTests(unittest.TestCase):
     def test_declared_locale_shells_and_assets_use_only_committed_r2_objects(self) -> None:
         manifest, files = self.locale_files()
         self.prepare_locales(manifest, files)
-        with patch("verify_portal_locale_routes.subprocess.run", side_effect=AssertionError("No live HTTP allowed")):
+        with patch("verify_portal_locale_routes.release_fetch.subprocess.run", side_effect=AssertionError("No live HTTP allowed")):
             result = self.verify(locale_origin=ORIGIN)
         self.assertEqual(result["locale_routes_status"], "passed")
         self.assertEqual(result["locale_objects_verified"], 24)

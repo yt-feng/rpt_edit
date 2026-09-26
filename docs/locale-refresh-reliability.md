@@ -1,5 +1,31 @@
 # Locale refresh reliability
 
+## Incident: 2026-09-25 — catalog transfer timeout after successful deployment
+
+Run `36102268677` built and uploaded the candidate successfully, then rolled it
+back because acceptance downloaded only 9,976,540 of 12,840,548 catalog bytes
+within a one-shot 60-second request. Rollback verification hit the same timeout
+at 5,608,715 bytes before its outer loop recovered. Earlier manifest-size and
+optional-step conclusion failures were separate defects, fixed in PRs 179 and 181.
+
+Public release reads now share `scripts/fetch_release_asset.py`: request HTTP
+compression, stage each attempt separately, retry transient transport/status and
+stale candidate responses within explicit attempt/time limits, and install only
+a complete accepted response. Candidate and rollback files must match trusted
+artifact bytes; existing comparisons, locale metadata, brand, runtime identity
+and transactional rollback checks remain mandatory. A failed state read cannot
+reuse a previous successful file to pass acceptance. Authentication errors and
+redirects fail immediately. Optional missing manifests keep their explicit 404
+policy. Diagnostics identify the asset, attempt, status, curl outcome and size.
+
+The main refresh and generated no-translation recovery workflow share these
+gates. Regenerate the latter with `build_portal_locale_resume_workflow.generate`
+and verify with `--check`; edit the source workflow, not the generated copy.
+The cutover job reserves 90 minutes, live acceptance 30, and rollback acceptance
+15. Each request also has its own deadline; a step deadline remains the final
+bound when multiple endpoints fail together. Regression tests run in pull-request
+CI before merge and before either production path executes.
+
 ## Follow-up: 2026-09-12 — Arabic source echoes in JSON requests
 
 Run `34670519267` confirmed that primary preflight retries were restored: Arabic

@@ -18,6 +18,43 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.workflow = WORKFLOW.read_text(encoding="utf-8")
 
+    def test_public_release_reads_share_bounded_atomic_transport(self):
+        # Include rollback and baseline reads: the production incident timed out
+        # twice on the same 12.8 MB catalog, on both sides of the transaction.
+        steps = (
+            "Capture exact previous state and public discovery",
+            "Prove live release is unchanged before cutover",
+            "Require live Portal Worker locale search capability",
+            "Accept prepared release through the live edge",
+            "Verify exact previous release after rollback",
+        )
+        for name in steps:
+            step = self.workflow.split("      - name: " + name + "\n", 1)[1]
+            step = step.split("      - name: ", 1)[0]
+            self.assertIn("scripts/fetch_release_asset.py", step, name)
+            self.assertNotIn("curl ", step, name)
+            self.assertIn("--max-total-time", step, name)
+            self.assertNotIn("continue-on-error", step, name)
+        acceptance = self.workflow.split("Accept prepared release through the live edge", 1)[1]
+        acceptance = acceptance.split("Audit extended locale pages after live cutover", 1)[0]
+        self.assertEqual(acceptance.count('--expected-file "_release_validation/candidate/catalog.json"'), 2)
+        self.assertIn('--expected-file "_release_validation/candidate/data/i18n/manifest.json"', acceptance)
+        self.assertIn('if python3 -B scripts/fetch_release_asset.py', acceptance)
+        self.assertIn('&& STATE_PATH=', acceptance)
+        rollback = self.workflow.split("Verify exact previous release after rollback", 1)[1]
+        rollback = rollback.split("Enforce transactional outcome", 1)[0]
+        self.assertIn('--expected-file "_release_validation/previous/catalog.json"', rollback)
+        self.assertIn('--attempts 8', rollback)
+        self.assertNotIn('|| true', rollback)
+
+    def test_transport_regressions_run_before_merge_and_in_both_release_paths(self):
+        for path in (
+            WORKFLOW,
+            ROOT / ".github/workflows/neutral-locale-resume.yml",
+            ROOT / ".github/workflows/public-identity-guard.yml",
+        ):
+            self.assertIn("scripts/test_fetch_release_asset.py", path.read_text(), str(path))
+
     def test_history_release_uses_only_active_ledger_and_fixed_daily_quota(self):
         restore = self.workflow.index("Restore history release ledger from active production only")
         build = self.workflow.index("Build Korean Japanese and Arabic static locales")
@@ -289,7 +326,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertLess(cutover, deploy)
         self.assertIn("--max-workers 16", self.workflow[upload:cutover])
         self.assertIn("timeout-minutes: 150", self.workflow[prepare:cutover])
-        self.assertIn("timeout-minutes: 65", self.workflow[cutover:])
+        self.assertIn("timeout-minutes: 90", self.workflow[cutover:])
         self.assertEqual(self.workflow.count("ref: ${{ github.sha }}"), 2)
         self.assertNotIn("ref: main", self.workflow)
         self.assertNotIn('echo "::add-mask::$release_id"', self.workflow)
@@ -374,7 +411,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
 
         cache = self.workflow[active_cache:base_build]
         checkpoint_guard = cache.index('if [ -s "$cache_path" ]; then')
-        active_download = cache.index('status="$(curl')
+        active_download = cache.index('status="$(python3 -B scripts/fetch_release_asset.py')
         self.assertLess(checkpoint_guard, active_download)
         self.assertIn("Using the latest resumable CI translation checkpoint", cache)
         self.assertIn("exit 0", cache[checkpoint_guard:active_download])
@@ -727,7 +764,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn('relative = parsed.path[len(prefix):].strip("/")', acceptance)
         self.assertIn('if "/" in relative:', acceptance)
         self.assertIn('sorted(set(candidates))[0]', acceptance)
-        self.assertIn("--write-out '%{http_code}'", acceptance)
+        self.assertIn("--write-out-http-code", acceptance)
         self.assertIn('test "$deep_status" = "200"', acceptance)
         self.assertIn('parser.canonicals != [deep_url]', acceptance)
         self.assertIn('parser.meta.get("og:url") != [deep_url]', acceptance)
