@@ -8,6 +8,7 @@ on:
       - '.github/actions/setup-offline-translation/action.yml'
       - 'workers/edge-static-host/**'
       - '.github/workflows/portal-extended-locales-check.yml'
+      - '.github/workflows/portal-extended-locales-r2.yml'
   push:
     branches: [main, codex/extended-locales-r2-20260924]
     paths:
@@ -16,6 +17,7 @@ on:
       - '.github/actions/setup-offline-translation/action.yml'
       - 'workers/edge-static-host/**'
       - '.github/workflows/portal-extended-locales-check.yml'
+      - '.github/workflows/portal-extended-locales-r2.yml'
   workflow_dispatch:
     inputs:
       run_model_canary:
@@ -51,7 +53,9 @@ jobs:
           python -m pip install 'requests>=2.31,<3' 'Pillow>=10.1,<12' 'PyYAML>=6,<7'
           python -B scripts/test_portal_extended_locales.py
           python -B scripts/test_portal_extended_hardening.py
+          python -B scripts/test_portal_extended_source_fallback.py
           python -B scripts/test_portal_extended_r2.py
+          python -B scripts/test_portal_extended_incremental.py
           python -B scripts/test_restore_assemble_portal_extended_r2.py
           python -B scripts/test_hymt_offline_translation.py
           python -B scripts/test_compare_hymt_translation.py
@@ -73,7 +77,7 @@ jobs:
       fail-fast: false
       max-parallel: 2
       matrix:
-        locale: [en, fr, hi, zh-Hant]
+        locale: [fr, pt, hi, zh-Hant]
     env:
       KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
     steps:

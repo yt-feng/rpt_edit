@@ -9,12 +9,22 @@ from restore_assemble_portal_extended_r2 import parse_candidate_specs, restore_a
 
 
 class RestoreAssemblyTests(unittest.TestCase):
+    def test_english_approval_is_rejected_before_storage_access(self):
+        with mock.patch('restore_assemble_portal_extended_r2.R2Store.from_env') as store:
+            with self.assertRaisesRegex(ExpansionError, 'summary-only'):
+                restore_and_assemble(
+                    root=Path('unused'), prefix='_extended-locales/v1',
+                    source_generation='b' * 64, approved_locales='en',
+                    candidate_specs='en=' + 'a' * 64, evidence_out=Path('unused.json'),
+                )
+            store.assert_not_called()
+
     def test_candidate_map_is_explicit_and_exact(self):
         candidate = 'a' * 64
-        locales, mapping = parse_candidate_specs(f'en={candidate}', 'en')
-        self.assertEqual(locales, ('en',))
-        self.assertEqual(mapping, {'en': candidate})
-        for value, approved in [('en=', 'en'), (f'en={candidate},fr={candidate}', 'en'), (f'fr={candidate}', 'en')]:
+        locales, mapping = parse_candidate_specs(f'fr={candidate}', 'fr')
+        self.assertEqual(locales, ('fr',))
+        self.assertEqual(mapping, {'fr': candidate})
+        for value, approved in [('fr=', 'fr'), (f'fr={candidate},pt={candidate}', 'fr'), (f'pt={candidate}', 'fr')]:
             with self.subTest(value=value):
                 with self.assertRaises(ExpansionError):
                     parse_candidate_specs(value, approved)
@@ -32,8 +42,8 @@ class RestoreAssemblyTests(unittest.TestCase):
                         root=root,
                         prefix='_extended-locales/v1',
                         source_generation='b' * 64,
-                        approved_locales='en',
-                        candidate_specs='en=' + 'a' * 64,
+                        approved_locales='fr',
+                        candidate_specs='fr=' + 'a' * 64,
                         evidence_out=evidence,
                     )
             self.assertFalse(evidence.exists())
