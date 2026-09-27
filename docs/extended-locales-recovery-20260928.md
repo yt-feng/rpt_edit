@@ -14,8 +14,9 @@ checkpoints and incomplete candidates successfully; this was not an R2 outage.
   run deadline. Fault injection reproduces that premature stop.
 - Khmer, Burmese, Persian, Gujarati, Hebrew, Marathi, Bengali, Tamil, Mongolian
   and Cantonese reported only `offline-runtime`. Those old logs do not identify
-  the underlying cause. Exact stored-generation replay is required before
-  attributing all ten to transport failures.
+  the underlying cause. Read-only replay narrowed the original Hebrew, Persian
+  and Khmer units to repeatable model HTTP 500 errors. They must not be counted
+  as ordinary transient transport failures.
 - Translation consumed 50.31 aggregate hours. Two concurrent workers took the
   full matrix past a 24-hour cycle. This queueing defect remained even if every
   individual locale stayed inside its four-hour budget.
@@ -37,6 +38,19 @@ All existing quantity, protected-placeholder, Markdown, target-script and
 page-completeness validation remains in place. No rejected model text enters a
 translation cache. A request that recovers still has to pass those gates.
 
+The model request also constrains generation to valid Unicode scalar values,
+including all target scripts, digits, punctuation and layout whitespace. This
+uses the existing pinned runtime's grammar sampler before chat-response parsing;
+it does not delete or replace generated characters. Replacement characters and
+isolated surrogates are rejected in both translator output and resumed memo rows.
+The existing model/runtime pin and accepted checkpoint identity are retained.
+
+A separately selected `diagnose_runtime` probe compares the first unfinished
+source unit against the original unconstrained sampler, writes only bounded
+failure categories and unit hashes, and uses an isolated disposable cache. The
+ordinary builder then runs as a separate constrained process. This establishes
+an original-versus-fixed comparison without publishing either result.
+
 The normal matrix allows up to eight workers: five waves at the 270-minute job
 cap fit within 22.5 hours of execution. Runner queueing and account availability
 can still add wall-clock time. The global candidate lock and production release
@@ -54,11 +68,14 @@ candidate resumes still accept only the current Shanghai calendar day.
   fix. It covers transient recovery, repeated failure, real deadline exhaustion,
   per-attempt remaining budget, exact checkpoint reuse, next-day reuse without
   old-page selection, and quantity rejection after a recovered request.
-- 231 Python tests and 65 edge-static-host Node tests passed locally.
-- Both workflow YAML files and their 16 shell blocks parse; public identity scan
-  passed on 5,917 files.
-- Original twelve-locale read-only replay: Actions run `36335431911`. Its final outcomes
-  must be reviewed before claiming all original locale failures are recovered.
+- 237 Python tests and 65 edge-static-host Node tests passed locally.
+- Both workflow YAML files and their 17 shell blocks parse; public identity scan
+  includes the incident note and diagnostic probe.
+- Original twelve-locale read-only replay `36335431911` was stopped after
+  reproducible 500 failures were identified. Narrow classification replay
+  `36335841329` and the constrained comparison `36336098488` are separate runs.
+  Final per-locale results and tested SHAs belong in the repair PR evidence;
+  dispatch alone is not proof that the original twelve failures are recovered.
 
 ## Unrelated cancelled refreshes
 

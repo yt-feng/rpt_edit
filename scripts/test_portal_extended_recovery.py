@@ -16,6 +16,7 @@ from test_portal_extended_locales import FakeTranslator
 from test_portal_extended_r2 import FakeR2
 from portal_extended_r2 import R2Store
 import portal_extended_incremental as incremental
+from probe_portal_extended_runtime import first_pending, probe
 
 
 class TransportRecoveryTests(unittest.TestCase):
@@ -135,6 +136,29 @@ class TransportRecoveryTests(unittest.TestCase):
         recovered = Memo(checkpoint, 'fr', FakeTranslator(), time.monotonic()+30)
         self.assertNotIn('\ufffd', recovered.get(text, 'en'))
         self.assertEqual(recovered.calls, 1)
+
+    def test_diagnostic_probe_never_updates_checkpoint_or_shared_policy(self):
+        corpus = make_corpus([daily_doc()])
+        checkpoint = self.root/'memo.json'
+        build(corpus, 'fr', self.root/'first', checkpoint, FakeTranslator())
+        complete = checkpoint.read_bytes()
+        self.assertIsNone(first_pending(corpus, 'fr', checkpoint))
+        payload = json.loads(complete)
+        payload['rows'].pop(next(iter(payload['rows'])))
+        checkpoint.write_text(json.dumps(payload))
+        before = checkpoint.read_bytes()
+        grammar = h.UNICODE_TEXT_GRAMMAR
+        class OriginalFailure:
+            def translate(self, *args, **kwargs):
+                self.asserted = h.UNICODE_TEXT_GRAMMAR == ''
+                raise h.OfflineTranslationError('private source must not appear', code='offline-http-500-chat-parser')
+        translator = OriginalFailure()
+        result = probe(corpus, 'fr', checkpoint, translator)
+        self.assertTrue(translator.asserted)
+        self.assertEqual(result['failure_code'], 'offline-http-500-chat-parser')
+        self.assertNotIn('private source', json.dumps(result))
+        self.assertEqual(checkpoint.read_bytes(), before)
+        self.assertEqual(h.UNICODE_TEXT_GRAMMAR, grammar)
 
     def test_generic_timeout_from_adapter_is_a_failed_unit_not_budget_exhaustion(self):
         class Timed(FakeTranslator):

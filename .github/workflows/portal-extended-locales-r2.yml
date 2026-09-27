@@ -39,6 +39,11 @@ on:
         required: false
         type: boolean
         default: true
+      diagnose_runtime:
+        description: "Recovery-test only: compare the first unfinished unit with the original unconstrained sampler"
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -212,6 +217,16 @@ jobs:
         with:
           targets: ${{ matrix.locale }}
           persist-audit: "false"
+      - name: Diagnose original sampler without changing checkpoints or candidates
+        if: inputs.operation == 'recovery-test' && inputs.diagnose_runtime == true
+        env:
+          KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
+        run: |
+          set -euo pipefail
+          python3 -B scripts/probe_portal_extended_runtime.py \
+            --corpus "$RUNNER_TEMP/extended-source-corpus.json" --locale "$LOCALE" \
+            --checkpoint "$RUNNER_TEMP/locale-checkpoint.json" \
+            --cache "$RUNNER_TEMP/unconstrained-diagnostic-cache" | tee -a "$GITHUB_STEP_SUMMARY"
       - name: Run bounded locale translation and retain timeout state
         id: build
         env:
