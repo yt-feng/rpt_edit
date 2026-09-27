@@ -37,6 +37,10 @@ REVISION = MANIFEST['model']['revision']
 # validation contract are unchanged.
 MODEL_ID = f"{MODEL}@{REVISION}:Q8_0:natural-sentence-v4-table-structure:{hashlib.sha256(MANIFEST_PATH.read_bytes()).hexdigest()[:16]}"
 INSTALL_COMMAND = 'Use .github/actions/setup-offline-translation on a Linux GitHub Actions runner'
+# Accept every printable Unicode scalar plus layout whitespace. The pinned
+# runtime's grammar sampler rejects malformed/unfinished UTF-8 token sequences
+# before its chat parser sees them; no replacement or dropped byte is allowed.
+UNICODE_TEXT_GRAMMAR = r'root ::= [\x09\x0A\x0D\x20-\uD7FF\uE000-\U0010FFFF]*'
 # Recognize the complete reserved token even when a filename underscore or
 # Markdown emphasis touches it; those surrounding underscores are punctuation.
 _PLACEHOLDERS = re.compile(r'__(?:KC_PH_\d+|HYMTPH_\d+)__|__[A-Za-z0-9][A-Za-z0-9_]*?__')
@@ -253,6 +257,8 @@ def validate_result(source: str, result: str, source_language: str, target: str,
                     *, markdown: bool = True, check_quantities: bool = True) -> None:
     if not result.strip():
         raise OfflineTranslationValidationError('Empty Hy-MT2 translation')
+    if re.search(r'[\ufffd\ud800-\udfff]', result):
+        raise OfflineTranslationValidationError('Invalid Unicode translation')
     if Counter(_PLACEHOLDERS.findall(source)) != Counter(_PLACEHOLDERS.findall(result)):
         raise OfflineTranslationValidationError('Hy-MT2 changed, omitted, or duplicated a protected placeholder')
     # HTML titles and table cells are plain text too. Validate pipe boundaries
@@ -368,7 +374,7 @@ class _HyMTEngine:
             try:
                 response = request_json(self.port, '/v1/chat/completions', {
                     'model': 'hymt-offline', 'messages': [{'role': 'user', 'content': prompt}],
-                    'stream': False, 'cache_prompt': False, **sampling,
+                    'stream': False, 'cache_prompt': False, 'grammar': UNICODE_TEXT_GRAMMAR, **sampling,
                 }, timeout=timeout)
                 break
             except (OSError, http.client.HTTPException, ModelHTTPError, json.JSONDecodeError) as error:

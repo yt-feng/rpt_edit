@@ -160,13 +160,21 @@ class ModelHTTPError(RuntimeError):
         self.status = status
         # Inspect only for fixed diagnostic categories; never retain or print
         # response bodies, which can include the source prompt or model text.
-        message = body.decode('utf-8', errors='replace').casefold()
+        message = body.decode('utf-8', errors='replace')
+        try:
+            detail = json.loads(message).get('error', {})
+            message = detail.get('message', '') if isinstance(detail, dict) else ''
+        except (ValueError, AttributeError):
+            pass
+        message = str(message).casefold()
         self.category = next((code for terms, code in (
             (('context', 'exceed'), 'context-limit'),
             (('context', 'too long'), 'context-limit'),
             (('context shift', 'disabled'), 'context-limit'),
             (('utf', 'invalid'), 'invalid-utf8'),
-            (('memory',), 'memory'),
+            (('failed to parse input at pos',), 'chat-parser'),
+            (('out of memory',), 'memory'),
+            (('failed to allocate',), 'memory'),
             (('failed to decode',), 'decode'),
             (('slot', 'unavailable'), 'slot-unavailable'),
         ) if all(term in message for term in terms)), '')

@@ -103,11 +103,38 @@ class TransportRecoveryTests(unittest.TestCase):
 
     def test_model_http_diagnostics_never_retain_response_text(self):
         for body, category in ((b'Input exceeds context size: private source', 'context-limit'),
-                               (b'invalid UTF-8 byte at index 30: private model text', 'invalid-utf8')):
+                               (b'invalid UTF-8 byte at index 30: private model text', 'invalid-utf8'),
+                               (b'{"error":{"message":"Failed to parse input at pos 0: private model text"}}', 'chat-parser')):
             error = h.ModelHTTPError(500, body)
             self.assertEqual(error.category, category)
             self.assertNotIn('private', str(error))
             self.assertNotIn('private', repr(vars(error)))
+
+    def test_unicode_is_constrained_before_chat_response_parsing(self):
+        with mock.patch.object(h, 'request_json', return_value=self.response) as request:
+            self.engine.translate('Research', 'en', 'fr')
+        self.assertEqual(request.call_args.args[2]['grammar'], h.UNICODE_TEXT_GRAMMAR)
+        self.assertIn(r'\uD7FF\uE000-\U0010FFFF', h.UNICODE_TEXT_GRAMMAR)
+
+    def test_replacement_characters_and_surrogates_are_rejected_not_sanitized(self):
+        self.translator.validation_attempts = 1
+        for damaged in ('Texte \ufffd traduit.', 'Texte \ud800 traduit.'):
+            response = {'choices': [{'finish_reason': 'stop', 'message': {'content': damaged}}]}
+            with self.subTest(damaged=repr(damaged)), mock.patch.object(h, 'request_json', return_value=response):
+                with self.assertRaisesRegex(h.OfflineTranslationValidationError, 'Unicode'):
+                    self.translator.translate('Research summary', 'fr', 'en')
+        self.assertFalse(list((self.root/'cache').rglob('*.json')))
+
+    def test_corrupted_checkpoint_unicode_is_retranslated(self):
+        from build_portal_extended_locales import Memo
+        checkpoint = self.root/'memo.json'
+        memo = Memo(checkpoint, 'fr', FakeTranslator(), time.monotonic()+30)
+        text = 'Research summary'
+        memo.rows[memo.key(text, 'en')] = {'source': text, 'language': 'en', 'text': 'Texte \ufffd traduit.'}
+        memo.save()
+        recovered = Memo(checkpoint, 'fr', FakeTranslator(), time.monotonic()+30)
+        self.assertNotIn('\ufffd', recovered.get(text, 'en'))
+        self.assertEqual(recovered.calls, 1)
 
     def test_generic_timeout_from_adapter_is_a_failed_unit_not_budget_exhaustion(self):
         class Timed(FakeTranslator):

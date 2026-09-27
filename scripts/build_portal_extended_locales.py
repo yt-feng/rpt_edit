@@ -75,6 +75,7 @@ def safe_failure_code(error: Exception) -> str:
             ('target script', 'offline-target-script-validation'),
             ('empty', 'offline-empty-validation'),
             ('token limit', 'offline-token-limit'),
+            ('unicode', 'offline-unicode-validation'),
         ):
             if needle in message:
                 return code
@@ -108,6 +109,7 @@ def extended_source_language(text: str) -> str:
 
 def validate_text(source: str, translated: str, locale: str, source_language: str) -> None:
     if not isinstance(translated, str) or not translated.strip(): raise ExpansionError('Empty translated text')
+    if re.search(r'[\ufffd\ud800-\udfff]', translated): raise ExpansionError('Invalid Unicode translation')
     if len(translated) > max(2000, len(source) * 12): raise ExpansionError('Unbounded translation expansion')
     if re.search(r'__(?:KC_PH_|HYMTPH_)\d+__', translated): raise ExpansionError('Unrestored protected identifier')
     if quantity_issues(source, translated, source_language, locale): raise ExpansionError('Financial quantity validation failed')
