@@ -371,10 +371,11 @@ class _HyMTEngine:
                     'stream': False, 'cache_prompt': False, **sampling,
                 }, timeout=timeout)
                 break
-            except (OSError, http.client.HTTPException, ModelHTTPError) as error:
+            except (OSError, http.client.HTTPException, ModelHTTPError, json.JSONDecodeError) as error:
                 if deadline is not None and time.monotonic() >= deadline:
                     raise TranslationBudgetExceeded('Local translation time budget reached') from None
                 code = ('offline-request-timeout' if isinstance(error, TimeoutError) else
+                        'offline-response-invalid' if isinstance(error, json.JSONDecodeError) else
                         f'offline-http-{error.status}' if isinstance(error, ModelHTTPError) else
                         'offline-transport')
                 retryable = not isinstance(error, ModelHTTPError) or error.status in {408, 429, 500, 502, 503, 504}

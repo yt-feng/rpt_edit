@@ -93,6 +93,14 @@ class TransportRecoveryTests(unittest.TestCase):
                 self.translator.translate('Revenue USD10m.', 'fr', 'en', markdown=False)
         self.assertFalse(list((self.root/'cache').rglob('*.json')))
 
+    def test_invalid_json_is_classified_and_cannot_be_cached(self):
+        with mock.patch.object(h, 'request_json', side_effect=json.JSONDecodeError('fixture', '', 0)) as request:
+            with self.assertRaises(h.OfflineTranslationError) as caught:
+                self.translator.translate('Research summary', 'fr', 'en')
+        self.assertEqual(caught.exception.code, 'offline-response-invalid')
+        self.assertEqual(request.call_count, 3)
+        self.assertFalse(list((self.root/'cache').rglob('*.json')))
+
     def test_generic_timeout_from_adapter_is_a_failed_unit_not_budget_exhaustion(self):
         class Timed(FakeTranslator):
             def translate(self, *args, **kwargs):

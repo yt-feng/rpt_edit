@@ -57,8 +57,7 @@ candidate resumes still accept only the current Shanghai calendar day.
 - 231 Python tests and 65 edge-static-host Node tests passed locally.
 - Both workflow YAML files and their 16 shell blocks parse; public identity scan
   passed on 5,917 files.
-- Original twelve-locale read-only replay:
-  https://github.com/yt-feng/rpt_edit/actions/runs/36335431911 . Its final outcomes
+- Original twelve-locale read-only replay: Actions run `36335431911`. Its final outcomes
   must be reviewed before claiming all original locale failures are recovered.
 
 ## Unrelated cancelled refreshes
