@@ -101,6 +101,14 @@ class TransportRecoveryTests(unittest.TestCase):
         self.assertEqual(request.call_count, 3)
         self.assertFalse(list((self.root/'cache').rglob('*.json')))
 
+    def test_model_http_diagnostics_never_retain_response_text(self):
+        for body, category in ((b'Input exceeds context size: private source', 'context-limit'),
+                               (b'invalid UTF-8 byte at index 30: private model text', 'invalid-utf8')):
+            error = h.ModelHTTPError(500, body)
+            self.assertEqual(error.category, category)
+            self.assertNotIn('private', str(error))
+            self.assertNotIn('private', repr(vars(error)))
+
     def test_generic_timeout_from_adapter_is_a_failed_unit_not_budget_exhaustion(self):
         class Timed(FakeTranslator):
             def translate(self, *args, **kwargs):

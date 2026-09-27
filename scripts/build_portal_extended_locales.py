@@ -66,7 +66,7 @@ def safe_failure_code(error: Exception) -> str:
     if isinstance(error, TranslationBudgetExceeded): return 'time-budget'
     if isinstance(error, TimeoutError): return 'offline-request-timeout'
     if isinstance(error, OfflineTranslationError) and not isinstance(error, OfflineTranslationValidationError):
-        return error.code if re.fullmatch(r'offline-[a-z-]+|offline-http-[0-9]{3}', error.code) else 'offline-runtime'
+        return error.code if re.fullmatch(r'offline-[a-z-]+|offline-http-[0-9]{3}(?:-[a-z0-9-]+)?', error.code) else 'offline-runtime'
     if name == 'OfflineTranslationValidationError':
         for needle, code in (
             ('quantity', 'offline-quantity-validation'),

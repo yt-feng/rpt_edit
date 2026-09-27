@@ -376,7 +376,7 @@ class _HyMTEngine:
                     raise TranslationBudgetExceeded('Local translation time budget reached') from None
                 code = ('offline-request-timeout' if isinstance(error, TimeoutError) else
                         'offline-response-invalid' if isinstance(error, json.JSONDecodeError) else
-                        f'offline-http-{error.status}' if isinstance(error, ModelHTTPError) else
+                        f'offline-http-{error.status}' + (f'-{error.category}' if error.category else '') if isinstance(error, ModelHTTPError) else
                         'offline-transport')
                 retryable = not isinstance(error, ModelHTTPError) or error.status in {408, 429, 500, 502, 503, 504}
                 if not retryable or attempt == 2:
