@@ -153,6 +153,14 @@ def translation_request(sample: dict, manifest: dict) -> dict:
     }
 
 
+class ModelHTTPError(RuntimeError):
+    """A runner-local model response; keep response text out of diagnostics."""
+
+    def __init__(self, status: int):
+        self.status = status
+        super().__init__(f'llama-server returned HTTP {status}')
+
+
 def request_json(port: int, route: str, payload: dict | None = None, timeout: float = 30) -> dict:
     # http.client connects directly to this runner's own server; no API account
     # or environment-derived provider URL participates in inference.
@@ -164,7 +172,7 @@ def request_json(port: int, route: str, payload: dict | None = None, timeout: fl
         response = connection.getresponse()
         data = response.read()
         if response.status != 200:
-            raise RuntimeError(f"llama-server returned HTTP {response.status}: {data[:1000].decode(errors='replace')}")
+            raise ModelHTTPError(response.status)
         return json.loads(data)
     finally:
         connection.close()

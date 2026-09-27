@@ -14,7 +14,8 @@ import time
 from typing import Protocol
 from compare_hymt_translation import SCRIPT_PATTERNS, require_actions
 from offline_translation import (
-    OfflineTranslationValidationError, OfflineTranslator, MODEL_ID, PROVIDER, _detect_source,
+    OfflineTranslationError, OfflineTranslationValidationError, TranslationBudgetExceeded,
+    OfflineTranslator, MODEL_ID, PROVIDER, _detect_source,
 )
 from financial_quantity_integrity import quantity_issues
 from portal_extended_locales import (
@@ -62,6 +63,10 @@ def safe_failure_code(error: Exception) -> str:
     if isinstance(error, TranslationUnitError):
         error = error.error
     name, message = type(error).__name__, str(error).casefold()
+    if isinstance(error, TranslationBudgetExceeded): return 'time-budget'
+    if isinstance(error, TimeoutError): return 'offline-request-timeout'
+    if isinstance(error, OfflineTranslationError) and not isinstance(error, OfflineTranslationValidationError):
+        return error.code if re.fullmatch(r'offline-[a-z-]+|offline-http-[0-9]{3}', error.code) else 'offline-runtime'
     if name == 'OfflineTranslationValidationError':
         for needle, code in (
             ('quantity', 'offline-quantity-validation'),
@@ -185,7 +190,7 @@ class Memo:
             return source
         if key in self.rejected:
             raise self.rejected[key]
-        if time.monotonic() >= self.deadline: raise TimeoutError('Local translation time budget reached')
+        if time.monotonic() >= self.deadline: raise TranslationBudgetExceeded('Local translation time budget reached')
         try:
             self.calls += 1
             translated = self.translator.translate(source, target=self.locale, source=language, markdown=markdown)
@@ -238,7 +243,7 @@ def translate_document(doc: dict, memo: Memo) -> dict:
         try:
             language = extended_source_language(text)
             return memo.get(text, language, markdown=markdown)
-        except TimeoutError:
+        except TranslationBudgetExceeded:
             raise
         except Exception as error:
             raise TranslationUnitError(field, error) from error
@@ -275,7 +280,7 @@ def build(corpus: dict, locale: str, output: Path, checkpoint: Path, translator:
     translated, failures, timed_out = {}, [], False
     for doc in docs:
         try: translated[doc['url']] = translate_document(doc, memo)
-        except TimeoutError:
+        except TranslationBudgetExceeded:
             timed_out = True; break
         except Exception as error:
             # Persist accepted units and record a bounded error category. Do not

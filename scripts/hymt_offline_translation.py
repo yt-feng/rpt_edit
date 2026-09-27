@@ -11,6 +11,7 @@ import atexit
 from collections import Counter
 from datetime import datetime, timezone
 import hashlib
+import http.client
 import json
 import os
 from pathlib import Path
@@ -22,7 +23,7 @@ import threading
 import time
 from typing import Callable, Sequence
 
-from compare_hymt_translation import LANGUAGES, SCRIPT_PATTERNS, request_json, require_actions, verify_model, file_sha256
+from compare_hymt_translation import LANGUAGES, SCRIPT_PATTERNS, ModelHTTPError, request_json, require_actions, verify_model, file_sha256
 from financial_quantity_integrity import FIVE_YEAR_PERIOD_RE, quantity_issues
 
 MANIFEST_PATH = Path(__file__).with_name('hymt_translation_model_manifest.json')
@@ -120,6 +121,14 @@ def validate_financial_terms(source: str, translated: str, target: str) -> None:
 class OfflineTranslationError(RuntimeError):
     """Missing pinned runtime or an incomplete/structurally invalid translation."""
 
+    def __init__(self, message: str, *, code: str = 'offline-runtime'):
+        super().__init__(message)
+        self.code = code
+
+
+class TranslationBudgetExceeded(TimeoutError):
+    """The whole run's monotonic deadline has elapsed, not one HTTP request."""
+
 
 class OfflineTranslationValidationError(OfflineTranslationError):
     """A completed model response failed content validation, not runtime setup."""
@@ -165,7 +174,8 @@ def split_sentences(text: str, limit: int = 1800) -> list[str]:
     while len(text) > limit:
         candidates = list(re.finditer(r'[。！？](?:\s*)|[.!?](?=\s|$)(?:\s*)', text[:limit + 1]))
         if not candidates:
-            raise OfflineTranslationError('Single sentence exceeds offline context limit; source retained')
+            raise OfflineTranslationError('Single sentence exceeds offline context limit; source retained',
+                                          code='offline-context-limit')
         end = candidates[-1].end()
         parts.append(text[:end])
         text = text[end:]
@@ -347,24 +357,39 @@ class _HyMTEngine:
             # Keep the pinned model/runtime and all sampling bounds, while
             # making the bounded second attempt meaningfully independent.
             sampling['seed'] = int(sampling.get('seed', 0)) + quality_retry
-        timeout = 240 if deadline is None else min(240, deadline - time.monotonic())
-        if timeout <= 0:
-            raise TimeoutError('Local translation time budget reached')
+        # A 240-second socket timeout used to escape as the whole four-hour
+        # budget, abandoning the remaining pages after only minutes. Retry
+        # transient runner-model requests with a larger bounded allowance;
+        # every attempt still obeys the same run deadline and validation gates.
+        for attempt, allowance in enumerate((240, 480, 720)):
+            timeout = allowance if deadline is None else min(allowance, deadline - time.monotonic())
+            if timeout <= 0:
+                raise TranslationBudgetExceeded('Local translation time budget reached')
+            try:
+                response = request_json(self.port, '/v1/chat/completions', {
+                    'model': 'hymt-offline', 'messages': [{'role': 'user', 'content': prompt}],
+                    'stream': False, 'cache_prompt': False, **sampling,
+                }, timeout=timeout)
+                break
+            except (OSError, http.client.HTTPException, ModelHTTPError) as error:
+                if deadline is not None and time.monotonic() >= deadline:
+                    raise TranslationBudgetExceeded('Local translation time budget reached') from None
+                code = ('offline-request-timeout' if isinstance(error, TimeoutError) else
+                        f'offline-http-{error.status}' if isinstance(error, ModelHTTPError) else
+                        'offline-transport')
+                retryable = not isinstance(error, ModelHTTPError) or error.status in {408, 429, 500, 502, 503, 504}
+                if not retryable or attempt == 2:
+                    raise OfflineTranslationError('Pinned model request failed after bounded attempts', code=code) from None
         try:
-            response = request_json(self.port, '/v1/chat/completions', {
-                'model': 'hymt-offline', 'messages': [{'role': 'user', 'content': prompt}],
-                'stream': False, 'cache_prompt': False, **sampling,
-            }, timeout=timeout)
-        except (OSError, RuntimeError):
-            if deadline is not None and time.monotonic() >= deadline:
-                raise TimeoutError('Local translation time budget reached') from None
-            raise
-        choice = response['choices'][0]
+            choice = response['choices'][0]
+            content = choice['message'].get('content') or ''
+        except (IndexError, KeyError, TypeError, AttributeError):
+            raise OfflineTranslationError('Invalid model response envelope', code='offline-response-invalid') from None
         if choice.get('finish_reason') == 'length':
             raise OfflineTranslationValidationError('Hy-MT2 output reached token limit')
         if choice.get('finish_reason') != 'stop':
-            raise OfflineTranslationError('Hy-MT2 output reached token limit or did not finish')
-        return choice['message'].get('content') or ''
+            raise OfflineTranslationError('Hy-MT2 output did not finish', code='offline-model-incomplete')
+        return content
 
 
 class HyMTOfflineTranslator:
@@ -389,7 +414,7 @@ class HyMTOfflineTranslator:
 
     def _check_deadline(self) -> None:
         if self.deadline is not None and time.monotonic() >= self.deadline:
-            raise TimeoutError('Local translation time budget reached')
+            raise TranslationBudgetExceeded('Local translation time budget reached')
 
     def _engine(self, source: str, target: str):
         if self._engine_factory:
