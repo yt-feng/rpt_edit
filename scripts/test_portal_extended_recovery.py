@@ -1,5 +1,7 @@
 """Failure-injection regressions for runner transport and durable daily builds."""
 import json
+import math
+import re
 from pathlib import Path
 import tempfile
 import time
@@ -8,7 +10,7 @@ from unittest import mock
 
 import hymt_offline_translation as h
 from build_portal_extended_locales import build
-from portal_extended_locales import make_corpus
+from portal_extended_locales import ADDITIONAL, make_corpus
 from test_portal_extended_incremental import DAY, daily_doc
 from test_portal_extended_locales import FakeTranslator
 from test_portal_extended_r2 import FakeR2
@@ -137,6 +139,14 @@ class TransportRecoveryTests(unittest.TestCase):
         self.assertEqual(workflow.count("if: always() && inputs.operation != 'recovery-test'"), 2)
         self.assertIn("extended-locales-r2-recovery-{0}", workflow)
         self.assertIn("'r2_writes': 0", workflow)
+
+    def test_full_locale_matrix_execution_capacity_fits_a_daily_window(self):
+        workflow = (Path(__file__).resolve().parent.parent/'.github/workflows/portal-extended-locales-r2.yml').read_text()
+        locale_job = workflow.split('\n  locale:\n', 1)[1]
+        timeout = int(re.search(r'timeout-minutes: (\d+)', locale_job)[1])
+        workers = int(re.search(r'max-parallel:.*\|\| (\d+)', locale_job)[1])
+        self.assertLess(math.ceil(len(ADDITIONAL) / workers) * timeout, 24 * 60)
+        self.assertLessEqual(workers, 8)
 
 
 if __name__ == '__main__':

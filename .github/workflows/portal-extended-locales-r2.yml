@@ -147,7 +147,9 @@ jobs:
     timeout-minutes: 270
     strategy:
       fail-fast: false
-      max-parallel: ${{ inputs.operation == 'recovery-test' && 6 || 2 }}
+      # 33 locales at the 270-minute job cap need five waves (22.5h),
+      # leaving a daily collection window; two workers took over 25h in practice.
+      max-parallel: ${{ inputs.operation == 'recovery-test' && 6 || 8 }}
       matrix:
         locale: ${{ fromJSON(needs.source.outputs.locales_json) }}
     env:
