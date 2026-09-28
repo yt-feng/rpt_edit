@@ -153,6 +153,34 @@ def translation_request(sample: dict, manifest: dict) -> dict:
     }
 
 
+class ModelHTTPError(RuntimeError):
+    """A runner-local model response; keep response text out of diagnostics."""
+
+    def __init__(self, status: int, body: bytes = b''):
+        self.status = status
+        # Inspect only for fixed diagnostic categories; never retain or print
+        # response bodies, which can include the source prompt or model text.
+        message = body.decode('utf-8', errors='replace')
+        try:
+            detail = json.loads(message).get('error', {})
+            message = detail.get('message', '') if isinstance(detail, dict) else ''
+        except (ValueError, AttributeError):
+            pass
+        message = str(message).casefold()
+        self.category = next((code for terms, code in (
+            (('context', 'exceed'), 'context-limit'),
+            (('context', 'too long'), 'context-limit'),
+            (('context shift', 'disabled'), 'context-limit'),
+            (('utf', 'invalid'), 'invalid-utf8'),
+            (('failed to parse input at pos',), 'chat-parser'),
+            (('out of memory',), 'memory'),
+            (('failed to allocate',), 'memory'),
+            (('failed to decode',), 'decode'),
+            (('slot', 'unavailable'), 'slot-unavailable'),
+        ) if all(term in message for term in terms)), '')
+        super().__init__(f'llama-server returned HTTP {status}')
+
+
 def request_json(port: int, route: str, payload: dict | None = None, timeout: float = 30) -> dict:
     # http.client connects directly to this runner's own server; no API account
     # or environment-derived provider URL participates in inference.
@@ -164,7 +192,7 @@ def request_json(port: int, route: str, payload: dict | None = None, timeout: fl
         response = connection.getresponse()
         data = response.read()
         if response.status != 200:
-            raise RuntimeError(f"llama-server returned HTTP {response.status}: {data[:1000].decode(errors='replace')}")
+            raise ModelHTTPError(response.status, data)
         return json.loads(data)
     finally:
         connection.close()

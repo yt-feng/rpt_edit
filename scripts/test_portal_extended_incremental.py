@@ -219,9 +219,9 @@ class WorkflowTests(unittest.TestCase):
     def test_daily_hook_four_hour_budget_and_persistence_margin(self):
         source = (ROOT/'.github/workflows/portal-extended-locales-r2.yml').read_text()
         for required in ('workflows: [Neutral edge catalog refresh]', 'timeout-minutes: 270', 'default: "14400"',
-                         "inputs.seconds || '14400'", '-gt 14400', 'max-parallel: 2',
+                         "inputs.seconds || '14400'", '-gt 14400', "inputs.operation == 'recovery-test' && 6 || 8",
                          "needs.source.outputs.has_work == 'true'", 'cancel-in-progress: false',
-                         'portal_extended_incremental.py prepare', '--seed-checkpoint'):
+                         'prepare_operation=prepare', '--seed-checkpoint'):
             self.assertIn(required, source)
         self.assertNotIn('2400', source)
         self.assertNotIn('actions/upload-artifact', source)

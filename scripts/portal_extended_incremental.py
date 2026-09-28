@@ -161,7 +161,7 @@ def remember_candidate(store: R2Store, locale: str, corpus: dict, directory: Pat
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('operation', choices=['prepare', 'restore-seed', 'checkpoint', 'candidate'])
+    parser.add_argument('operation', choices=['prepare', 'prepare-recovery', 'restore-seed', 'checkpoint', 'candidate'])
     parser.add_argument('--prefix', default=DEFAULT_PREFIX)
     parser.add_argument('--locale', default='fr')
     parser.add_argument('--locales', default='all-supported')
@@ -172,16 +172,22 @@ def main() -> int:
     parser.add_argument('--github-output', type=Path)
     args = parser.parse_args()
     store = R2Store.from_env(args.prefix)
-    if args.operation == 'prepare':
+    if args.operation in {'prepare', 'prepare-recovery'}:
         locales = select_locales(args.locales)
         day = today()
+        recovery = args.operation == 'prepare-recovery'
+        if recovery and not args.generation:
+            raise ExpansionError('Recovery tests require an exact stored source generation')
         if args.generation:
             store.restore_source(args.generation, args.corpus)
             corpus = json.loads(args.corpus.read_text())
             validate_corpus(corpus)
-            if daily_corpus_day(corpus) != day: raise ExpansionError('Refusing to resume a historical or mixed-directory batch')
+            corpus_day = daily_corpus_day(corpus)
+            if not corpus_day or (corpus_day != day and not recovery):
+                raise ExpansionError('Refusing to resume a historical or mixed-directory batch')
             result = {'has_work': True, 'generation': args.generation, 'locales_json': json.dumps(list(locales)),
-                      'day': day, 'selected_page_count': len(corpus['documents'])}
+                      'day': corpus_day, 'selected_page_count': len(corpus['documents']),
+                      'recovery_test_only': recovery}
             if len(corpus['documents']) > 24: raise ExpansionError('Daily batch exceeds 24 pages')
         else:
             with requests.Session() as session:
