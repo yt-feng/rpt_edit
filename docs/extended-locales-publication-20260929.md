@@ -529,6 +529,37 @@ inference or paid calls. The first status query after dispatch failed with a
 GitHub TLS/EOF transport error, so this run's current state is not claimed
 here and must be checked before any approval. Do not dispatch a duplicate run.
 
+## Stage 17: all 33 additional locales live
+
+Production migrate Action `36632312573` ran from reviewed main commit
+`783d8014e1860ad7b959fe436a6d05a3ee099547`. It restored the fixed R2 source
+generation `2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b`
+and the exact 33 approved candidate IDs. Preparation, R2 assembly, static
+release verification, locale route checks and the protected approval gate all
+passed. The assembled receipt records `locale_homepages: true`,
+`paid_provider_requests: 0`, and 24 same-day detail pages for each locale
+(792 detail pages total); historical pages were not backfilled.
+
+The approved identity is commit `783d8014e1860ad7b959fe436a6d05a3ee099547`,
+static tree `671223a7f96b98edd71183645cd1379e979439f7950fe9da3fcbca2e5db3869d`,
+source generation `2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b`,
+and the exact 33-locale candidate map. Protected deployment approval was
+accepted as deployment `6747689499`. Cutover completed in slot `a` as release
+`e789bb64943876ff06f8b3b2321048b9`, with the same verified static tree.
+
+The post-cutover live audit passed all 33 locale homepages, 24 detail URLs per
+locale, two deep samples per locale, HTTP 200 and the expected
+`Content-Language`. The live edge state and extended sitemap independently
+confirm release `e789bb64943876ff06f8b3b2321048b9` and 33 locale entries.
+`https://kcdesk.com/fr/` now returns HTTP 200. English remains excluded from
+this full-reading publication: `/en/` is not published, and English output is
+limited to the approved summary, secondary-analysis and commentary-blog paths;
+English source prose and charts are not included.
+
+Status: submitted — `36632312573`; checks passed — prepare, approval, cutover,
+live audit; in production — release `e789bb64943876ff06f8b3b2321048b9`;
+online accepted — all 33 additional non-English locales.
+
 ## Stage 16: all-33 assembly observed running
 
 The next authoritative query confirmed Action `36613057523` at head
