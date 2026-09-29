@@ -14,6 +14,13 @@ WORKFLOW = ROOT / ".github/workflows/neutral-edge-cutover.yml"
 
 
 class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
+    def test_fresh_cutover_runner_installs_storage_and_live_audit_dependencies(self):
+        for path in (WORKFLOW, ROOT / '.github/workflows/neutral-locale-resume.yml'):
+            step = path.read_text().split('      - name: Verify committed candidate immediately before cutover', 1)[1]
+            step = step.split('      - name: ', 1)[0]
+            self.assertIn('"boto3>=1.34,<2" "requests>=2.31,<3"', step)
+            self.assertIn('scripts/verify_prepared_static_slot.py', step)
+
     @classmethod
     def setUpClass(cls) -> None:
         cls.workflow = WORKFLOW.read_text(encoding="utf-8")

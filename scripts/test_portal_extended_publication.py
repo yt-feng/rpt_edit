@@ -224,7 +224,7 @@ class PublicationTests(unittest.TestCase):
             page = self.root/relative
             return mock.Mock(status_code=200 if page.is_file() else 404,
                 headers={'Content-Language':'fr'}, content=page.read_bytes() if page.is_file() else b'')
-        with mock.patch('audit_portal_extended_live.requests.Session') as session:
+        with mock.patch('requests.Session') as session:
             session.return_value.get.side_effect = response
             report = audit(ORIGIN, 'fr')
             self.assertEqual(report['status'], 'passed')

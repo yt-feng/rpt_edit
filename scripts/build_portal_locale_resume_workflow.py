@@ -21,7 +21,7 @@ on:
   workflow_dispatch:
     inputs:
       source_run_id:
-        description: "Failed source run: uploaded shadow audit failure or verified rollback after live acceptance failure"
+        description: "Failed prepared run: shadow audit, pre-deployment guard, or verified rollback after live acceptance"
         required: true
         type: string
       source_run_attempt:

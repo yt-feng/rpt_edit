@@ -9,8 +9,6 @@ from pathlib import Path
 from urllib.parse import urlsplit
 import xml.etree.ElementTree as ET
 
-import requests
-
 from portal_extended_locales import ExpansionError, direction, select_locales
 
 
@@ -60,6 +58,10 @@ def check_page(body: bytes, url: str, locale: str) -> None:
 
 
 def audit(origin: str, locales: str) -> dict:
+    # Pure metadata validation is also used by the R2-only pre-cutover guard.
+    # Keep the HTTP client scoped to the actual network audit.
+    import requests
+
     parsed = urlsplit(origin.rstrip('/'))
     if parsed.scheme != 'https' or not parsed.netloc or parsed.path not in {'', '/'}:
         raise ExpansionError('Live origin must be a bare HTTPS origin')

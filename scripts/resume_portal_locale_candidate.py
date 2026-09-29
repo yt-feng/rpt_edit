@@ -184,8 +184,8 @@ def source_steps(job: dict[str, Any]) -> dict[str, dict[str, Any]]:
     return {step["name"]: step for step in steps}
 
 
-def verify_rolled_back_cutover(jobs: list[dict[str, Any]], prepare: dict[str, Any],
-                             prepared_steps: dict[str, dict[str, Any]]) -> dict[str, Any]:
+def verify_failed_cutover(jobs: list[dict[str, Any]], prepare: dict[str, Any],
+                          prepared_steps: dict[str, dict[str, Any]]) -> dict[str, Any]:
     require(all(step.get("status") == "completed" and step.get("conclusion") in {"success", "skipped"}
                 for step in prepared_steps.values()), "Successful preparation contains incomplete or failed steps")
     for name in (*REQUIRED_STEPS, *PREPARED_ARTIFACT_STEPS):
@@ -201,7 +201,7 @@ def verify_rolled_back_cutover(jobs: list[dict[str, Any]], prepare: dict[str, An
     require(len(selected) == 1, "Source must have one failed cutover job")
     cutover = selected[0]
     require(cutover.get("status") == "completed" and cutover.get("conclusion") == "failure",
-            "Source cutover must have failed and completed rollback")
+            "Source cutover must have completed with a recoverable failure")
     require(type(cutover.get("id")) is int and cutover["id"] > 0, "Source cutover job identity is invalid")
     require(all(other is prepare or other is cutover or
                 (other.get("status") == "completed" and other.get("conclusion") in {"skipped", "success"})
@@ -213,6 +213,28 @@ def verify_rolled_back_cutover(jobs: list[dict[str, Any]], prepare: dict[str, An
     require(all(step.get("status") == "completed" and step.get("conclusion") in {"success", "skipped", "failure"}
                 for step in steps.values()), "Source cutover has incomplete or cancelled steps")
     failures = {name for name, step in steps.items() if step.get("conclusion") == "failure"}
+    guard = "Verify committed candidate immediately before cutover"
+    if failures == {guard, OUTCOME_STEP}:
+        # A runner/import failure here has not deployed anything. Reuse only the
+        # immutable prepared bytes, after proving every deployment/rollback step
+        # was skipped. Recovery still verifies every object and the live baseline
+        # and requires fresh exact-version approval; the failed guard is rerun.
+        for name in CUTOVER_PREREQUISITES[:3]:
+            require(steps.get(name, {}).get('conclusion') == 'success',
+                    f'Source pre-deployment prerequisite did not succeed: {name}')
+        skipped = ('Deploy prepared neutral edge release', LIVE_ACCEPTANCE_STEP,
+                   'Audit extended locale pages after live cutover', ROLLBACK_STEP, ROLLBACK_VERIFY_STEP)
+        for name in skipped:
+            require(steps.get(name, {}).get('conclusion') == 'skipped',
+                    f'Pre-deployment recovery requires a skipped step: {name}')
+        ordered = (*CUTOVER_PREREQUISITES[:3], guard, *skipped, OUTCOME_STEP)
+        numbers = [steps[name]['number'] for name in ordered]
+        require(numbers == sorted(numbers), 'Source pre-deployment evidence is out of order')
+        require(all(step.get('conclusion') == 'success' for step in steps.values()
+                    if step['number'] < steps[guard]['number']),
+                'Source skipped a pre-deployment prerequisite')
+        return {'source_failure_phase': 'pre_deployment_guard', 'source_cutover_job_id': cutover['id'],
+                'source_rollback_verified': False, 'source_deployment_performed': False}
     # The final guard deliberately fails after a failed acceptance, even when
     # rollback succeeds. No independent failure is permitted alongside it.
     require(failures == {LIVE_ACCEPTANCE_STEP, OUTCOME_STEP},
@@ -253,7 +275,7 @@ def verify_source_run(github: Any, repository: str, run_id: int, attempt: int, c
             "Source preparation must have completed before recovery")
     by_name = source_steps(job)
     if job["conclusion"] == "success":
-        evidence = verify_rolled_back_cutover(jobs, job, by_name)
+        evidence = verify_failed_cutover(jobs, job, by_name)
     else:
         require(all(other is job or other.get("conclusion") in {"skipped", "success"} for other in jobs), "Another source job failed")
         require(not any(other is not job and other.get("conclusion") == "success" and "cutover" in str(other.get("name", "")) for other in jobs), "Source run already completed a cutover")

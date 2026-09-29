@@ -289,3 +289,35 @@ Local verification: 82 tests passed across handoff, incremental, restore,
 publication and production-workflow contracts; generated recovery equality and
 public identity scan (6,043 files) passed. The changes and progress are local
 only at this checkpoint: no PR, CI result or deployment is claimed for them.
+
+## Stage 9: actual pre-cutover dependency failure repaired
+
+French run `36567911713` failed in cutover job `109527645722` before deployment:
+`Verify committed candidate immediately before cutover` imported the live-audit
+module, which imported `requests`, but the fresh cutover runner installed only
+`boto3`. The exact error was `ModuleNotFoundError: No module named 'requests'`.
+Prepare and exact-version approval succeeded; deployment, acceptance and
+rollback were skipped. This is not a translation or R2-content failure.
+
+Both production and generated recovery now install the HTTP dependency for
+live acceptance. The audit imports its HTTP client only within the network
+audit, so pure metadata/R2 validation has no incidental HTTP import requirement.
+An isolated `python -S` CLI regression catches dependence on globally installed
+packages; workflow tests verify both clean cutover jobs install their actual
+dependencies. These 61 tests and generated recovery equality passed locally.
+
+Recovery now also recognizes a strictly proven pre-deployment guard failure:
+completed successful preparation and uploaded evidence; only the guard/outcome
+failed; all deployment, live audit and rollback steps explicitly skipped; all
+earlier prerequisites passed in order. It still checks the complete committed
+R2 tree and unchanged live/previous identities, re-runs the guard, and requires
+fresh exact-version approvals. Corruption, ambiguous/missing execution evidence,
+changed active state and unexpected deployment remain rejected. All 45 recovery
+tests pass, including negative cases for each required step.
+
+Another automatic refresh `36594682025` was using the same known-broken main
+revision. It was confirmed still at additive catalog refresh with inactive
+upload pending; cancellation was requested before it could overwrite the French
+prepared slot. It must not be blindly retried on the old SHA. French recovery
+inputs are slot `b`, release `1bc786207f6ca80787f5eff84bd2787d`, tree and previous
+release identities from Stage 6. Recovery itself must reverify they remain exact.
