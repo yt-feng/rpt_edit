@@ -38,6 +38,14 @@ class ResumeWorkflowTests(unittest.TestCase):
         self.assertLess(self.recovery.index('Verify committed candidate immediately before cutover'),
                         self.recovery.index('      - name: Deploy prepared neutral edge release'))
 
+    def test_extended_recovery_preserves_bytes_and_requires_fresh_approval(self):
+        preparation = self.recovery.split('\n  shadow_review_hold:\n')[0]
+        self.assertNotIn('restore_assemble_portal_extended_r2.py', preparation)
+        self.assertIn("restored_identity(Path('_neutral_site'))", preparation)
+        self.assertIn('extended_requested: ${{ steps.extended_assembly.outputs.ready }}', preparation)
+        self.assertIn('Configure required reviewers before extended activation', preparation)
+        self.assertIn('name: Publish extended locale review identity', preparation)
+
     def test_restored_candidate_passes_local_route_gate_before_shadow_or_cutover(self):
         self.assertIn('python3 -B scripts/test_verify_portal_locale_routes.py', self.recovery)
         restored = self.recovery.index('Restore verified uploaded candidate without rebuilding or translating')

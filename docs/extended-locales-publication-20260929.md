@@ -72,3 +72,19 @@ local tests are not deployment.
   of the operator; no approval rule or activation flag has been changed yet.
 
 No new language is claimed live by this checkpoint.
+
+## Stage 3: release recovery parity
+
+The first publication-integration CI (`36565103623`, source `3e22ffd1`)
+failed the generated-recovery workflow equality test, not translation/R2 tests.
+Regenerated recovery from the current release gates and fixed the related
+immutable-candidate path: recovery verifies/downloads the extended ledger and
+objects, derives their original identity without assembly or inference, and
+requires a fresh exact-set environment approval before switching. Extended live
+acceptance and rollback remain identical to the ordinary production workflow.
+122 targeted Python regressions pass, including identity preservation, rejected
+corruption/incomplete ledgers, and generated shell/Python parsing.
+
+Current main `29a693066f418adf4e654c60ab5d33fa05bfca8c` was merged normally.
+Durable resume `36565145888` has completed `km`; `my` and `fa` were running at
+this check, with the remaining nine queued. This is not a publication claim.

@@ -8,6 +8,7 @@ from unittest import mock
 from build_portal_extended_locales import build
 from portal_extended_locales import ORIGIN, ExpansionError, file_for_url, make_corpus, PublicParser
 from portal_extended_publication import compose, checked_batches, read_active_batches
+from restore_assemble_portal_extended_r2 import restored_identity
 from audit_portal_extended_live import audit
 from portal_extended_r2 import R2Store, R2IntegrityError
 from test_portal_extended_r2 import FakeR2
@@ -104,6 +105,25 @@ class PublicationTests(unittest.TestCase):
         with self.assertRaises(Exception):
             self.publish([batch])
         self.assertFalse((self.root/'fr').exists())
+
+    def test_restored_uploaded_release_preserves_identity_without_writes(self):
+        batches = [self.candidate(), self.candidate('pt')]
+        original = self.publish(batches)
+        before = {p: p.read_bytes() for p in self.root.rglob('*') if p.is_file()}
+        recovered = restored_identity(self.root)
+        for key in ('locales', 'candidate_ids', 'source_generation', 'page_counts', 'pages_per_locale'):
+            self.assertEqual(recovered[key], original[key])
+        self.assertEqual(before, {p: p.read_bytes() for p in self.root.rglob('*') if p.is_file()})
+
+    def test_restored_identity_rejects_incomplete_or_mismatched_ledger(self):
+        self.assertFalse(restored_identity(self.root)['ready'])
+        self.publish([self.candidate()])
+        path = self.root/'data/extended-locales/assembly.json'
+        valid = json.loads(path.read_text())
+        for changes in ({'status':'incomplete'}, {'locales':['en']}, {'page_counts':{'fr':0}}):
+            path.write_text(json.dumps({**valid, **changes}))
+            with self.assertRaises(ExpansionError):
+                restored_identity(self.root)
 
     def test_active_ledger_is_loaded_only_from_pinned_verified_production(self):
         identity = {'slot': 'a', 'release_id': 'release', 'tree_sha256': 'a'*64}

@@ -17,6 +17,36 @@ from offline_translation import MODEL_ID, PROVIDER
 from portal_extended_locales import ExpansionError, select_locales, stable_bytes
 from portal_extended_r2 import HEX64, R2Store, safe_part
 from portal_extended_publication import compose, read_active_batches
+from portal_extended_publication import LEDGER, checked_batches
+
+
+def restored_identity(root: Path) -> dict:
+    """Recover review identity only from an already SHA-verified uploaded tree.
+
+    The caller must restore via resume_portal_locale_candidate, which verifies
+    the committed static manifest and extended page inventory. Never recompose
+    or infer translations when recovering an immutable uploaded release.
+    """
+    path = root / LEDGER
+    if not path.is_file():
+        return {'schema_version': 1, 'ready': False, 'paid_provider_requests': 0}
+    value = json.loads(path.read_text())
+    if value.get('schema_version') != 2 or value.get('status') != 'assembled':
+        raise ExpansionError('Restored extended ledger is not a complete publication')
+    batches = checked_batches(value['batches'])
+    candidates = {}
+    for batch in batches:
+        candidates.update(batch['candidates'])
+    locales = value['locales']
+    if not batches or set(locales) != set(candidates) or value.get('paid_provider_requests') != 0:
+        raise ExpansionError('Restored extended approval identities are incomplete')
+    counts = value['page_counts']
+    if set(counts) != set(locales) or any(type(n) is not int or n < 1 for n in counts.values()):
+        raise ExpansionError('Restored extended page counts are invalid')
+    return {'schema_version': 1, 'ready': True, 'locales': locales,
+            'source_generation': batches[-1]['generation'], 'candidate_ids': candidates,
+            'pages_per_locale': min(counts.values()), 'page_counts': counts,
+            'model': MODEL_ID, 'provider': PROVIDER, 'paid_provider_requests': 0}
 
 
 def parse_candidate_specs(value: str, approved_locales: str) -> tuple[tuple[str, ...], dict[str, str]]:

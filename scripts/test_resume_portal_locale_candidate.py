@@ -144,6 +144,23 @@ class ResumeTests(unittest.TestCase):
     def save_manifest(self):
         self.r2.objects[publisher.manifest_key("b")] = {"body": encoded(self.manifest)}
 
+    def test_download_extended_release_verifies_before_preserving_its_exact_objects(self):
+        extra = {'data/extended-locales/assembly.json': b'{}', 'sitemap-extended.xml': b'index',
+                 'sitemap-extended-fr.xml': b'sitemap', 'fr/llms.txt': b'links', 'fr/blog/new.html': b'approved page'}
+        for name, body in extra.items():
+            sha = hashlib.sha256(body).hexdigest()
+            self.manifest['files'][name] = {'size':len(body), 'sha256':sha}
+            self.r2.objects[publisher.slot_prefix('b')+name] = {'body':body, 'metadata':{'sha256':sha}}
+        with patch('verify_prepared_static_slot.verify_extended_static_tree', return_value={'locales':['fr']}) as verify:
+            downloaded = resume.download_candidate_files(self.r2, 'bucket', self.manifest, self.site, workers=1)
+            verify.assert_called_once()
+            self.assertTrue(set(extra).issubset(downloaded))
+            for name, body in extra.items():
+                self.assertEqual((self.site/name).read_bytes(), body)
+        with patch('verify_prepared_static_slot.verify_extended_static_tree', side_effect=RuntimeError('checksum mismatch')):
+            with self.assertRaisesRegex(RuntimeError, 'checksum mismatch'):
+                resume.download_candidate_files(self.r2, 'bucket', self.manifest, self.site, workers=1)
+
     def prepare_declared_locale_routes(self):
         from test_verify_portal_locale_routes import describe, fixture
 
