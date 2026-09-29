@@ -135,3 +135,26 @@ Environment setup is authorized and complete. After normal connectivity is
 available, check current CI/head and resume through the exact-candidate normal
 merge, first French activation, and remaining-locale activation. Do not repeat
 translation or treat staging success as production success.
+
+## Stage 4: merged release and full-inventory verification
+
+Connectivity returned through the unchanged normal connection. PR #182 passed
+all required checks on `f9e704084b79bd19e6243e7e47b6930b01f23646` and merged as
+`537a206535fb003a959280465f152e8c3a5f74c3`. CPU preflight `36567198787` passed on
+Ubuntu 22.04 and 24.04; regression `36567198878` and identity `36567198738` passed.
+French production activation `36567911713` uses that merge SHA and the original
+exact 24-page candidate map. It is pending the shared release lock held by
+existing ordinary refresh `36565643908`; no duplicate release was launched.
+
+Real R2 staging verification `36567341027` passed for 26 locales / 624 pages
+in 10m30s, with 26 checksum-verified checkpoint restores, no inference, no paid
+requests, and no production writes. The content-free evidence JSON beside this
+file records every locale's page count, candidate ID and restored checkpoint
+digest. This result is not production acceptance. The other seven locales are
+not included in this staging proof, even where their translation has finished.
+
+For the larger 33-locale release, final candidate verification now uses four
+bounded concurrent page reads and a 15-minute step budget. It still validates
+every page's checksum, language, direction, canonical and robots policy, not
+just endpoint samples. A corrupted middle-page regression proves this; the
+81 targeted tests pass and generated recovery retains identical release gates.

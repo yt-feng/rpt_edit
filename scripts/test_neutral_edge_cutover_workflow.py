@@ -1105,6 +1105,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         local_gate = self.workflow.index("Validate locale application routes before upload")
         upload = self.workflow.index("Upload inactive static slot and immutable runtime")
         remote_gate = self.workflow.index("Verify committed candidate immediately before cutover")
+        self.assertIn('timeout-minutes: 15', self.workflow[remote_gate:].split('      - name:', 1)[0])
         deployment = self.workflow.index("      - name: Deploy prepared neutral edge release")
         self.assertLess(local_gate, upload)
         self.assertLess(remote_gate, deployment)

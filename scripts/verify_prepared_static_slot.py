@@ -9,6 +9,7 @@ the approval wait, while holding the shared production-release concurrency lock.
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 import hashlib
 import json
 from pathlib import PurePosixPath
@@ -237,10 +238,15 @@ def verify_extended_static_tree(
             actual_paths = {path for path in files if path.startswith(locale+'/') and path.endswith('.html')}
             if expected_paths != actual_paths:
                 raise RuntimeError(f"Prepared extended page set differs from its sitemap: {locale}")
-            for url in locations:
+            def verify_page(url):
                 path = localized_path(url)
                 body = read_verified_candidate_body(client, bucket, prefix+path, files[path], maximum=4*1024*1024)
                 check_page(body, url, locale)
+            # Read every page, not a sample. Bound both connections and buffered
+            # bodies while avoiding 33*24 sequential HEAD/GET round trips.
+            with ThreadPoolExecutor(max_workers=4) as pool:
+                for _ in pool.map(verify_page, locations):
+                    pass
     return {"locales": list(approved), "pages_per_locale": assembly["pages_per_locale"]}
 
 
