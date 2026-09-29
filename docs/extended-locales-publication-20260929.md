@@ -433,3 +433,12 @@ All 103 targeted tests passed: production workflow 38, recovery workflow 8,
 handoff 10, delegated review 9, incremental 21, restore assembly 3 and publication
 14. Generated recovery equality also passed. Repository policy remains disabled;
 neither credential acceptance nor unattended daily publication is yet proven.
+
+PR #190 now contains the daily publication implementation. Four additional
+credential-free orchestration tests exercise the whole delegated-review entry
+point: exact variables are persisted/read back before the normal review POST,
+a mismatched artifact cannot write approval variables, a denied reviewer cannot
+write or bypass the environment, and a mismatched variable readback cannot
+submit approval. All 13 delegated-review tests pass (107 targeted tests total).
+These mocked API tests do not establish real credential permissions. Recovery
+`36608521165` has reached the original candidate restore step and remains live.

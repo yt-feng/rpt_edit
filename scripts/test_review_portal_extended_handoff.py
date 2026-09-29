@@ -1,11 +1,21 @@
 """Credential-free delegated approval boundary tests; never submit real reviews."""
 import copy
+from contextlib import chdir
+import json
+import os
 from pathlib import Path
+import tempfile
 import unittest
+from unittest.mock import MagicMock, patch
 
 from offline_translation import MODEL_ID, PROVIDER
 from portal_extended_locales import ExpansionError
 from review_portal_extended_handoff import producer_is_valid, review_identity
+import review_portal_extended_handoff as reviewer
+from portal_extended_locales import make_corpus
+from portal_extended_r2 import R2Store
+from test_portal_extended_incremental import daily_doc
+from test_portal_extended_r2 import FakeR2
 
 
 class DailyReviewTests(unittest.TestCase):
@@ -111,6 +121,99 @@ class DailyReviewTests(unittest.TestCase):
         self.assertIn('name: portal-extended-locales-production', approval)
         self.assertIn('Extended locale approval identity mismatch', approval)
         self.assertNotIn('extended_daily_review:', (root/'.github/workflows/neutral-locale-resume.yml').read_text())
+
+    def run_delegated_review(self, *, can_approve=True, bad_identity=False, bad_readback=False):
+        """Exercise the complete orchestration without credentials or network."""
+        store = R2Store(FakeR2(), 'private', '_extended-locales/staging/review')
+        corpus = make_corpus([daily_doc()])
+        store.put_source(corpus)
+        generation = corpus['documents_sha256']
+        receipt, assembly, identity = map(copy.deepcopy, (self.receipt, self.assembly, self.identity))
+        receipt['batch']['generation'] = generation
+        assembly['batches'][-1]['generation'] = generation
+        identity['source_generation'] = generation
+        if bad_identity:
+            identity['static_tree_sha256'] = '9'*64
+        previous = {'release_id': 'previous-release', 'tree_sha256': 'a'*64}
+        self.api_calls, self.saved_variables, self.review_objects = [], {}, store.client.objects
+        env_path = 'repos/example/repo/environments/'+reviewer.ENVIRONMENT
+        pending_path = 'repos/example/repo/actions/runs/456/pending_deployments'
+        producer_path = 'repos/example/repo/actions/runs/123/attempts/1'
+
+        def api(path, payload=None, method=None):
+            self.api_calls.append((path, method, payload))
+            if path == producer_path:
+                return self.run
+            if path == producer_path+'/jobs?per_page=100':
+                return {'total_count': len(self.jobs), 'jobs': self.jobs}
+            if path == env_path:
+                return {'id': 789, 'name': reviewer.ENVIRONMENT,
+                        'protection_rules': [{'type': 'required_reviewers', 'reviewers': [{'id': 42}]}]}
+            if path == pending_path:
+                if method == 'POST':
+                    self.assertTrue(can_approve)
+                    self.assertEqual(payload['environment_ids'], [789])
+                    self.assertEqual(payload['state'], 'approved')
+                    self.assertEqual(len(self.saved_variables), 7)
+                    self.assertTrue(any('/publication-approvals/' in key for key in store.client.objects))
+                    return [{'id': 999}]
+                return [{'environment': {'id': 789}, 'current_user_can_approve': can_approve}]
+            if path == env_path+'/variables?per_page=100':
+                return {'total_count': len(self.saved_variables), 'variables': [
+                    {'name': name, 'value': '' if bad_readback else value}
+                    for name, value in self.saved_variables.items()]}
+            if path.startswith(env_path+'/variables') and method in ('POST', 'PATCH'):
+                self.saved_variables[payload['name']] = payload['value']
+                return None
+            self.fail('Unexpected API call: '+path)
+
+        session = MagicMock()
+        response = session.__enter__.return_value.get.return_value
+        response.status_code, response.content = 200, json.dumps(previous).encode()
+        response.json.return_value = previous
+        environment = {'GITHUB_ACTIONS': 'true', 'GITHUB_REF': 'refs/heads/main',
+                       'GITHUB_EVENT_NAME': 'workflow_dispatch', 'GITHUB_REPOSITORY': 'example/repo',
+                       'GITHUB_RUN_ID': '456', 'GITHUB_SHA': '1'*40, 'GH_TOKEN': 'test-only-not-a-credential',
+                       'EXTENDED_HANDOFF': 'a'*64, 'ENABLED_LOCALES': 'fr',
+                       'CANDIDATE_IDS': self.expected['candidate_specs'], 'CANDIDATE_LOCALES': 'fr,pt',
+                       'CANDIDATE_STATIC_TREE': '2'*64, 'CANDIDATE_PAGES_PER_LOCALE': '1'}
+        with tempfile.TemporaryDirectory() as temporary, chdir(temporary):
+            files = {'previous/edge-state.json': previous, 'candidate/extended-assembly.json': assembly,
+                     'candidate/extended-locale-review-identity.json': identity}
+            for name, value in files.items():
+                path = Path('_release_validation')/name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(json.dumps(value))
+            with patch.dict(os.environ, environment, clear=True), \
+                 patch.object(reviewer.R2Store, 'from_env', return_value=store), \
+                 patch.object(reviewer, 'read_handoff', return_value=receipt), \
+                 patch.object(reviewer, 'read_active_batches', return_value=self.active), \
+                 patch.object(reviewer.requests, 'Session', return_value=session), \
+                 patch.object(reviewer, 'api', side_effect=api), patch('builtins.print'):
+                reviewer.main()
+
+    def test_orchestrator_persists_and_reads_back_exact_identity_before_normal_approval(self):
+        self.run_delegated_review()
+        reviews = [row for row in self.api_calls if row[0].endswith('/pending_deployments') and row[1] == 'POST']
+        self.assertEqual(len(reviews), 1)
+        self.assertEqual(self.saved_variables['PORTAL_EXTENDED_APPROVED_LOCALES'], 'fr,pt')
+
+    def test_orchestrator_mismatched_artifact_never_writes_approval_variables(self):
+        with self.assertRaises(ExpansionError):
+            self.run_delegated_review(bad_identity=True)
+        self.assertFalse(any(method for _path, method, _payload in self.api_calls))
+
+    def test_orchestrator_denied_reviewer_never_writes_or_bypasses_environment(self):
+        with self.assertRaises(ExpansionError):
+            self.run_delegated_review(can_approve=False)
+        self.assertFalse(any(method for _path, method, _payload in self.api_calls))
+
+    def test_orchestrator_variable_readback_mismatch_never_submits_approval(self):
+        with self.assertRaises(ExpansionError):
+            self.run_delegated_review(bad_readback=True)
+        self.assertFalse(any(path.endswith('/pending_deployments') and method == 'POST'
+                             for path, method, _payload in self.api_calls))
+        self.assertFalse(any('/publication-approvals/' in key for key in self.review_objects))
 
 
 if __name__ == '__main__':
