@@ -219,3 +219,31 @@ Daily run `36576367899` has passed source collection and started its 33-locale
 matrix with two concurrent jobs. Its completion and publication are unverified.
 The planned daily candidate-to-publication handoff has not been implemented;
 do not mistake an announced next step for committed functionality.
+
+## Stage 6: French review artifact verified; approval setup partially saved
+
+After normal connectivity resumed, the unchanged waiting run `36567911713`
+and successful prepare job were reverified. Same-run validation artifact
+`11043421830` downloaded successfully and its exact identity was inspected:
+
+- Commit: `537a206535fb003a959280465f152e8c3a5f74c3`.
+- Static tree: `d3674a2b873f54f6d2f247c9f37b2a47bcc8d784ca17ee48259a67e925efa00a`.
+- Locale/page count: `fr`, 24.
+- Source generation and French candidate equal the Stage 1/3 fixed identities.
+- Provider `hymt`, pinned Hy-MT2 model, zero paid calls.
+- Assembly complete; checkpoint digest equals the Stage 3 French digest;
+  replay used zero inference and reproduced the same replayed candidate.
+- Captured previous production: slot `a`, release
+  `43609ac6ff5766859cf5e165672429f9`, tree
+  `4c4a0558ae6e0e29b3dd2cc2a7054ad5c78c0304af3ff6a72fa49b1cd3b3dce0`.
+
+The protected environment was confirmed pending for this run with current-user
+approval permitted. Setting `PORTAL_EXTENDED_APPROVED_COMMIT_SHA` and
+`PORTAL_EXTENDED_APPROVED_STATIC_TREE` succeeded. Setting
+`PORTAL_EXTENDED_APPROVED_SOURCE_GENERATION` then failed during GitHub CLI
+repository lookup with `net/http: TLS handshake timeout`. The shell stopped
+immediately: the remaining identity variables and final activation flag were
+not written, and the pending-deployment approval POST was not executed. No
+network changes or alternate transport were attempted. Recheck current state
+and finish the exact same-run identity setup before normal approval; do not
+assume the partial environment setup constitutes approval or deployment.
