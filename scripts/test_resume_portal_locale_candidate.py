@@ -259,6 +259,53 @@ class ResumeTests(unittest.TestCase):
         self.assertTrue((self.site / "ko/blog/new.html").is_file())
         self.assertTrue(all(operation in {"head", "get"} for operation, _key in self.r2.operations))
 
+    def use_pre_deployment_failure(self):
+        self.use_rolled_back_source()
+        steps = self.github.jobs[1]['steps']
+        for step in steps:
+            if step['name'] == 'Verify committed candidate immediately before cutover':
+                step['conclusion'] = 'failure'
+            elif step['number'] > 4 and step['name'] != resume.OUTCOME_STEP:
+                step['conclusion'] = 'skipped'
+        steps.insert(6, {'name': 'Audit extended locale pages after live cutover',
+                         'status': 'completed', 'conclusion': 'skipped'})
+        for number, step in enumerate(steps, 1):
+            step['number'] = number
+
+    def test_pre_deployment_failure_restores_without_translation_or_remote_writes(self):
+        self.use_pre_deployment_failure()
+        result = self.restore()
+        self.assertEqual(result['source_failure_phase'], 'pre_deployment_guard')
+        self.assertFalse(result['source_deployment_performed'])
+        self.assertFalse(result['source_rollback_verified'])
+        self.assertEqual(result['remote_mutations'], 0)
+        self.assertEqual(result['verified_remote_objects'], self.manifest['file_count'])
+        self.assertEqual(self.live.call_count, 2)
+
+    def test_pre_deployment_recovery_rejects_missing_or_ambiguous_execution_evidence(self):
+        self.use_pre_deployment_failure()
+        original = copy.deepcopy(self.github.jobs)
+        for index, step in enumerate(original[1]['steps']):
+            for outcome in ({'success', 'failure', 'skipped', 'cancelled', 'timed_out'} - {step['conclusion']}):
+                with self.subTest(step=step['name'], outcome=outcome):
+                    self.github.jobs = copy.deepcopy(original)
+                    self.github.jobs[1]['steps'][index]['conclusion'] = outcome
+                    with self.assertRaises(resume.ResumeError): self.restore()
+            self.github.jobs = copy.deepcopy(original)
+            del self.github.jobs[1]['steps'][index]
+            with self.assertRaises(resume.ResumeError): self.restore()
+        self.assertEqual(self.r2.operations, [])
+        self.live.assert_not_called()
+
+    def test_pre_deployment_recovery_still_rejects_changed_live_or_candidate_identity(self):
+        self.use_pre_deployment_failure()
+        self.live.return_value = {**PREVIOUS, 'tree_sha256': '9'*64}
+        with self.assertRaisesRegex(resume.ResumeError, 'changed'): self.restore()
+        self.live.return_value = copy.deepcopy(PREVIOUS)
+        self.manifest['files']['index.html']['sha256'] = '0'*64
+        self.save_manifest()
+        with self.assertRaisesRegex(resume.ResumeError, 'tree digest'): self.restore()
+
     def test_rollback_source_rejects_each_missing_or_unsuccessful_gate_before_remote_reads(self):
         self.use_rolled_back_source()
         original = copy.deepcopy(self.github.jobs)

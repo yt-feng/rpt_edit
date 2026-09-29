@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       source_run_id:
-        description: "Failed source run: uploaded shadow audit failure or verified rollback after live acceptance failure"
+        description: "Failed prepared run: shadow audit, pre-deployment guard, or verified rollback after live acceptance"
         required: true
         type: string
       source_run_attempt:
@@ -89,6 +89,7 @@ jobs:
           EXTENDED_LOCALES_REQUESTED: ${{ inputs.extended_locales || '' }}
           EXTENDED_SOURCE_GENERATION: ${{ inputs.extended_source_generation || '' }}
           EXTENDED_CANDIDATE_IDS: ${{ inputs.extended_candidate_ids || '' }}
+          EXTENDED_HANDOFF: ${{ inputs.extended_handoff || '' }}
         run: |
           set -euo pipefail
           test "$GITHUB_REF" = "refs/heads/main"
@@ -112,7 +113,7 @@ jobs:
             multilingual_enabled="true"
           fi
           extended_requested="false"
-          if [ -n "$EXTENDED_LOCALES_REQUESTED$EXTENDED_SOURCE_GENERATION$EXTENDED_CANDIDATE_IDS" ]; then
+          if [ -n "$EXTENDED_LOCALES_REQUESTED$EXTENDED_SOURCE_GENERATION$EXTENDED_CANDIDATE_IDS$EXTENDED_HANDOFF" ]; then
             extended_requested="true"
             multilingual_enabled="true"
           fi
@@ -161,7 +162,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install read-only recovery dependencies
-        run: python3 -m pip install --disable-pip-version-check "boto3>=1.34,<2" "Pillow>=10.1,<12"
+        run: python3 -m pip install --disable-pip-version-check "boto3>=1.34,<2" "Pillow>=10.1,<12" "requests>=2.31,<3"
 
       - name: Validate recovery code and shared release gates
         run: |
@@ -1188,7 +1189,7 @@ jobs:
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET: ${{ secrets.R2_BUCKET }}
         run: |
-          python3 -m pip install --disable-pip-version-check "boto3>=1.34,<2"
+          python3 -m pip install --disable-pip-version-check "boto3>=1.34,<2" "requests>=2.31,<3"
           locale_args=()
           if [ "$PORTAL_MULTILINGUAL_ENABLED" = "true" ]; then
             locale_args+=(--locale-origin "$LIVE_ORIGIN")

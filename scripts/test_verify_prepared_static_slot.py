@@ -8,6 +8,8 @@ import hashlib
 import io
 import json
 from pathlib import Path
+import subprocess
+import sys
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -19,6 +21,12 @@ from test_verify_portal_locale_routes import ORIGIN, describe, fixture as locale
 
 
 class PreparedStaticSlotTests(unittest.TestCase):
+    def test_metadata_and_candidate_guard_import_without_optional_http_packages(self):
+        for script in ('verify_prepared_static_slot.py', 'audit_portal_extended_live.py'):
+            result = subprocess.run([sys.executable, '-S', '-B', str(Path(__file__).with_name(script)), '--help'],
+                                    capture_output=True, text=True)
+            self.assertEqual(result.returncode, 0, result.stderr)
+
     def setUp(self) -> None:
         self.temporary = tempfile.TemporaryDirectory()
         self.addCleanup(self.temporary.cleanup)

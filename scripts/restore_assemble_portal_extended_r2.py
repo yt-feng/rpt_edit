@@ -78,12 +78,18 @@ def restore_and_assemble(
     candidate_specs: str,
     evidence_out: Path,
     active_state: Path | None = None,
+    handoff: str = '',
 ) -> dict:
     requested = bool(approved_locales or candidate_specs or source_generation)
     if requested:
         approved, candidates = parse_candidate_specs(candidate_specs, approved_locales)
         generation = safe_part(source_generation, label='source generation', pattern=HEX64)
     store = R2Store.from_env(prefix)
+    if handoff:
+        from portal_extended_handoff import verify_handoff
+        if not requested:
+            raise ExpansionError('Handoff requires exact release candidate inputs')
+        verify_handoff(store, handoff, generation, candidates)
     identity = json.loads(active_state.read_text()) if active_state else None
     batches = read_active_batches(store, identity)
     if requested:
@@ -118,6 +124,7 @@ def main() -> int:
     parser.add_argument('--approved-locales', default='')
     parser.add_argument('--candidates', default='', help='locale=sha256,locale=sha256')
     parser.add_argument('--active-state', type=Path, help='Pinned active release identity for approved carry-forward')
+    parser.add_argument('--handoff', default='', help='Optional immutable daily publication handoff receipt')
     parser.add_argument('--evidence-out', required=True, type=Path)
     args = parser.parse_args()
     result = restore_and_assemble(
@@ -128,6 +135,7 @@ def main() -> int:
         candidate_specs=args.candidates,
         evidence_out=args.evidence_out,
         active_state=args.active_state,
+        handoff=args.handoff,
     )
     print(json.dumps({
         'source_generation': result['source_generation'],

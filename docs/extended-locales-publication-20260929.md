@@ -158,3 +158,166 @@ bounded concurrent page reads and a 15-minute step budget. It still validates
 every page's checksum, language, direction, canonical and robots policy, not
 just endpoint samples. A corrupted middle-page regression proves this; the
 81 targeted tests pass and generated recovery retains identical release gates.
+
+Follow-up PR #187 contains the bounded full-object checks and evidence, head
+`f6c5f3f5e0ba54454e1c77545fd53ae605b0a45c`. Its regression, identity and locale
+manifest checks passed. API-cost CI `36568821352` failed only downloading its
+just-uploaded synthetic fixture (artifact ID `11032484134` not found); reran
+only that failed synthetic job, with no translation or paid calls. The rerun
+job `109408286699` was confirmed active, but watching that run then returned
+`net/http: TLS handshake timeout`. Its final status and PR merge are unverified;
+the command stopped before attempting the merge.
+
+At the last durable-resume snapshot, `mr,km,fa,gu,ta,my,he,yue,bn` had completed,
+making 30/33 complete candidates with the original 21. `de,mn` were running and
+`kk` remained queued. French production `36567911713` was last confirmed pending
+behind `36565643908`, whose ko/ja/ar build was still active. No production success
+is asserted. Stop only the local read-only watcher on the network failure;
+leave the Actions themselves running. Resume these exact run IDs on the next
+successful normal connection, not duplicate jobs.
+
+Remaining scope still includes verifying all 33 real published detail-page
+sets and the current-day incremental handoff. The merged translation hook
+produces candidates and carry-forward preserves approved pages; this alone
+does not prove that later new candidates are automatically activated. Keep
+that distinction in the completion audit rather than declaring the goal done
+when the initial fixed-generation rollout finishes.
+
+## Stage 5: all candidates complete; French prepared, approval not submitted
+
+PR #187 is merged as `71925539ec0147b1691b62f1d935fe5555393e5b`.
+The local continuation merged that main revision without overwriting changes.
+Durable resume `36565145888` completed successfully, including the final `kk`
+job at `2026-09-29T14:05:39Z`. Together with the original 21 locales, all 33
+non-English candidates now have 24 complete pages in private R2. These are the
+explicitly authorized already-started September 26 generation, not a claim of
+33 live locales or new historical discovery.
+
+Staging publication check `36569579402` passed for `mr,bn,ta,mn,yue` (120 pages,
+zero inference and production writes). Check `36580358485`, dispatched on main,
+passed for `de,kk`; together with `36567341027`, all 33 candidate locale sets
+have passed the real isolated publication check. The already-started log read
+returned successfully; the final seven exact candidate/checkpoint identities
+are saved in `extended-locales-publication-evidence-remaining-20260929.json`.
+
+French production run `36567911713`, pinned to
+`537a206535fb003a959280465f152e8c3a5f74c3`, has completed `prepare_release`
+successfully and is waiting at `extended_locales_approval`. The pending
+environment is `portal-extended-locales-production`, id `23015803292`, with
+required reviewer `yt-feng` and `current_user_can_approve=true`. The operator
+delegated this approval operation; no additional permission question is needed.
+Same-run validation artifact `11043421830` is named
+`neutral-release-validation-36567911713-1`, size 11,872,186 bytes, and is bound
+to that exact run and commit. The artifact download failed with
+`read: connection reset by peer` before the review identity could be read.
+No exact-version approval variables were set and no deployment approval was
+submitted. Per the operator's network rule, no retry, alternate endpoint,
+transport change or network inspection was attempted. Continue from this
+waiting run, not a replacement translation or release.
+
+Daily run `36576367899` has passed source collection and started its 33-locale
+matrix with two concurrent jobs. Its completion and publication are unverified.
+The planned daily candidate-to-publication handoff has not been implemented;
+do not mistake an announced next step for committed functionality.
+
+## Stage 6: French review artifact verified; approval setup partially saved
+
+After normal connectivity resumed, the unchanged waiting run `36567911713`
+and successful prepare job were reverified. Same-run validation artifact
+`11043421830` downloaded successfully and its exact identity was inspected:
+
+- Commit: `537a206535fb003a959280465f152e8c3a5f74c3`.
+- Static tree: `d3674a2b873f54f6d2f247c9f37b2a47bcc8d784ca17ee48259a67e925efa00a`.
+- Locale/page count: `fr`, 24.
+- Source generation and French candidate equal the Stage 1/3 fixed identities.
+- Provider `hymt`, pinned Hy-MT2 model, zero paid calls.
+- Assembly complete; checkpoint digest equals the Stage 3 French digest;
+  replay used zero inference and reproduced the same replayed candidate.
+- Captured previous production: slot `a`, release
+  `43609ac6ff5766859cf5e165672429f9`, tree
+  `4c4a0558ae6e0e29b3dd2cc2a7054ad5c78c0304af3ff6a72fa49b1cd3b3dce0`.
+
+The protected environment was confirmed pending for this run with current-user
+approval permitted. Setting `PORTAL_EXTENDED_APPROVED_COMMIT_SHA` and
+`PORTAL_EXTENDED_APPROVED_STATIC_TREE` succeeded. Setting
+`PORTAL_EXTENDED_APPROVED_SOURCE_GENERATION` then failed during GitHub CLI
+repository lookup with `net/http: TLS handshake timeout`. The shell stopped
+immediately: the remaining identity variables and final activation flag were
+not written, and the pending-deployment approval POST was not executed. No
+network changes or alternate transport were attempted. Recheck current state
+and finish the exact same-run identity setup before normal approval; do not
+assume the partial environment setup constitutes approval or deployment.
+
+## Stage 7: French exact-version approval submitted
+
+The waiting run and protected environment were reverified over the unchanged
+connection. All seven environment variables were written/read back matching
+the Stage 6 identity, including the exact generation, candidate, locale and
+24-page count. The normal pending-deployments review API accepted the delegated
+approval and returned deployment `6738526860` for
+`portal-extended-locales-production`, commit
+`537a206535fb003a959280465f152e8c3a5f74c3`. Required reviewers and version
+checks remain configured. This is approval evidence only: the cutover and
+live-acceptance jobs still have to succeed before French is counted live.
+
+The next authoritative snapshot confirmed `extended_locales_approval=success`
+and `cutover=in_progress` at `Checkout audited cutover source`. The subsequent
+read of this same run failed with GitHub TLS handshake timeout. The Action
+was not restarted; its final cutover/acceptance outcome remains unverified.
+Daily run `36576367899` had completed `fr,pt,es,tr,ru`; `th,it` were running.
+
+## Stage 8: daily candidate handoff implemented locally, not activated
+
+`portal_extended_handoff.py` selects only complete checksum-verified candidates
+for explicitly enabled locales already present in the pinned active R2 ledger.
+It skips incomplete or already-published identities without disguising storage
+permission/corruption failures. The source day comes from the fixed daily
+selection, not the later matrix completion time. It performs no translation,
+historical discovery, approval or activation. A content-free immutable private
+R2 receipt binds producer run/attempt/commit and the exact generation/candidate
+map; the ordinary release assembler verifies the receipt against its inputs.
+
+The daily pipeline's new post-matrix job is restricted to main daily/candidate
+runs and is disabled unless `PORTAL_EXTENDED_AUTO_PUBLISH_LOCALES` is explicitly
+configured. Historical publication-resume and read-only recovery/staging runs
+cannot trigger it. It dispatches the normal serialized release workflow; the
+protected exact-version approval remains required. No automatic reviewer has
+been implemented, so this handoff alone does not establish unattended daily
+publication. The new repository policy variable has not been configured.
+
+Local verification: 82 tests passed across handoff, incremental, restore,
+publication and production-workflow contracts; generated recovery equality and
+public identity scan (6,043 files) passed. The changes and progress are local
+only at this checkpoint: no PR, CI result or deployment is claimed for them.
+
+## Stage 9: actual pre-cutover dependency failure repaired
+
+French run `36567911713` failed in cutover job `109527645722` before deployment:
+`Verify committed candidate immediately before cutover` imported the live-audit
+module, which imported `requests`, but the fresh cutover runner installed only
+`boto3`. The exact error was `ModuleNotFoundError: No module named 'requests'`.
+Prepare and exact-version approval succeeded; deployment, acceptance and
+rollback were skipped. This is not a translation or R2-content failure.
+
+Both production and generated recovery now install the HTTP dependency for
+live acceptance. The audit imports its HTTP client only within the network
+audit, so pure metadata/R2 validation has no incidental HTTP import requirement.
+An isolated `python -S` CLI regression catches dependence on globally installed
+packages; workflow tests verify both clean cutover jobs install their actual
+dependencies. These 61 tests and generated recovery equality passed locally.
+
+Recovery now also recognizes a strictly proven pre-deployment guard failure:
+completed successful preparation and uploaded evidence; only the guard/outcome
+failed; all deployment, live audit and rollback steps explicitly skipped; all
+earlier prerequisites passed in order. It still checks the complete committed
+R2 tree and unchanged live/previous identities, re-runs the guard, and requires
+fresh exact-version approvals. Corruption, ambiguous/missing execution evidence,
+changed active state and unexpected deployment remain rejected. All 45 recovery
+tests pass, including negative cases for each required step.
+
+Another automatic refresh `36594682025` was using the same known-broken main
+revision. It was confirmed still at additive catalog refresh with inactive
+upload pending; cancellation was requested before it could overwrite the French
+prepared slot. It must not be blindly retried on the old SHA. French recovery
+inputs are slot `b`, release `1bc786207f6ca80787f5eff84bd2787d`, tree and previous
+release identities from Stage 6. Recovery itself must reverify they remain exact.
