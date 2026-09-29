@@ -88,3 +88,14 @@ corruption/incomplete ledgers, and generated shell/Python parsing.
 Current main `29a693066f418adf4e654c60ab5d33fa05bfca8c` was merged normally.
 Durable resume `36565145888` has completed `km`; `my` and `fa` were running at
 this check, with the remaining nine queued. This is not a publication claim.
+
+The follow-up `publication-check` operation verifies complete R2 receipts and
+replays their exact checkpoints against the current public source HTML. All
+writes go to a unique `_extended-locales/staging/publication-RUN-ATTEMPT` prefix;
+it cannot write the production candidate namespace, publish a static slot, or
+invoke inference. Snapshot URLs are limited to the stored source pages and
+their existing ko/ja/ar counterparts. No generated content becomes an Actions
+artifact. This check is independent of, and cannot substitute for, production
+approval and acceptance. A new full committed-object regression also caught and
+fixed validation of localized sitemap paths: validate the source route after
+the declared locale prefix, rather than rejecting the locale prefix itself.

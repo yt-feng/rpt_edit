@@ -9,6 +9,7 @@ from build_portal_extended_locales import build
 from portal_extended_locales import ORIGIN, ExpansionError, file_for_url, make_corpus, PublicParser
 from portal_extended_publication import compose, checked_batches, read_active_batches
 from restore_assemble_portal_extended_r2 import restored_identity
+from check_portal_extended_publication import StagingReplayStore, completed_candidates, snapshot_public
 from audit_portal_extended_live import audit
 from portal_extended_r2 import R2Store, R2IntegrityError
 from test_portal_extended_r2 import FakeR2
@@ -124,6 +125,60 @@ class PublicationTests(unittest.TestCase):
             path.write_text(json.dumps({**valid, **changes}))
             with self.assertRaises(ExpansionError):
                 restored_identity(self.root)
+
+    def test_committed_extended_paths_are_validated_as_locale_plus_public_source(self):
+        from test_publish_static_slot import FakeR2 as SlotClient
+        from publish_static_slot import build_inventory, upload_extra_args
+        from verify_prepared_static_slot import verify_extended_static_tree
+        self.publish([self.candidate()])
+        paths, files, _tree, _size = build_inventory(self.root)
+        client = SlotClient()
+        for name, path in paths.items():
+            client.upload_file(str(path), 'bucket', 'slot/'+name, ExtraArgs=upload_extra_args(files[name]))
+        result = verify_extended_static_tree(client, 'bucket', 'slot/', files, origin=ORIGIN)
+        self.assertEqual(result['locales'], ['fr'])
+        entry = client.objects['slot/fr/blog/20260925-new.html']
+        entry['body'] = b'x' * len(entry['body'])
+        with self.assertRaisesRegex(RuntimeError, 'content differs'):
+            verify_extended_static_tree(client, 'bucket', 'slot/', files, origin=ORIGIN)
+
+    def test_publication_check_writes_only_staging_and_requires_complete_receipts(self):
+        from portal_extended_incremental import remember_candidate
+        batch = self.candidate()
+        corpus = make_corpus([daily_doc()])
+        with self.assertRaisesRegex(ExpansionError, 'receipt is absent'):
+            completed_candidates(self.store, corpus, ('fr',))
+        remember_candidate(self.store, 'fr', corpus, self.base/'1/candidate')
+        self.assertEqual(completed_candidates(self.store, corpus, ('fr',)), batch)
+        original = copy.deepcopy(self.store.client.objects)
+        staging = R2Store(self.store.client, self.store.bucket, '_extended-locales/staging/publication-123-1')
+        work = self.base/'staging-check'; work.mkdir()
+        result = compose(self.root, StagingReplayStore(self.store, staging), [batch], work)
+        self.assertEqual(result['replays'][0]['translation_calls'], 0)
+        for key, value in original.items():
+            self.assertEqual(self.store.client.objects[key], value)
+        self.assertTrue(all(key.startswith(staging.prefix+'/') for key in self.store.client.objects.keys()-original.keys()))
+        with self.assertRaises(ExpansionError):
+            StagingReplayStore(self.store, self.store)
+
+    def test_publication_snapshot_is_bounded_to_exact_source_and_legacy_routes(self):
+        corpus = make_corpus([daily_doc()])
+        seen = []
+        def response(url, **kwargs):
+            seen.append(url)
+            self.assertFalse(kwargs['allow_redirects'])
+            result = mock.MagicMock()
+            result.status_code = 404 if '/ko/' in url else 200
+            result.iter_content.return_value = iter([b'public snapshot'])
+            result.__enter__.return_value = result
+            return result
+        session = mock.Mock(); session.get.side_effect = response
+        count = snapshot_public(session, self.root, corpus)
+        self.assertEqual(count, 6)
+        self.assertEqual(len(seen), 7)
+        self.assertEqual((self.root/'robots.txt').read_bytes(), b'public snapshot')
+        self.assertFalse((self.root/'ko/blog/20260925-new.html').exists())
+        self.assertTrue((self.root/'ja/blog/20260925-new.html').exists())
 
     def test_active_ledger_is_loaded_only_from_pinned_verified_production(self):
         identity = {'slot': 'a', 'release_id': 'release', 'tree_sha256': 'a'*64}

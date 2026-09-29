@@ -228,12 +228,17 @@ def verify_extended_static_tree(
         if len(locations) != count or len(set(locations)) != count or (origin and any(not value.startswith(expected_prefix) for value in locations)):
             raise RuntimeError(f"Prepared extended sitemap is incomplete: {locale}")
         if origin:
-            expected_paths = {file_for_url(url, origin=origin.rstrip('/')).as_posix() for url in locations}
+            def localized_path(url):
+                # Validate the source route after stripping the already checked
+                # locale prefix; file_for_url intentionally rejects locale URLs.
+                source = origin.rstrip('/') + '/' + url[len(expected_prefix):]
+                return locale + '/' + file_for_url(source, origin=origin.rstrip('/')).as_posix()
+            expected_paths = {localized_path(url) for url in locations}
             actual_paths = {path for path in files if path.startswith(locale+'/') and path.endswith('.html')}
             if expected_paths != actual_paths:
                 raise RuntimeError(f"Prepared extended page set differs from its sitemap: {locale}")
             for url in locations:
-                path = file_for_url(url, origin=origin.rstrip('/')).as_posix()
+                path = localized_path(url)
                 body = read_verified_candidate_body(client, bucket, prefix+path, files[path], maximum=4*1024*1024)
                 check_page(body, url, locale)
     return {"locales": list(approved), "pages_per_locale": assembly["pages_per_locale"]}
