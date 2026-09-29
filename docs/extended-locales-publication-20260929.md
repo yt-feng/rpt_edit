@@ -182,3 +182,40 @@ produces candidates and carry-forward preserves approved pages; this alone
 does not prove that later new candidates are automatically activated. Keep
 that distinction in the completion audit rather than declaring the goal done
 when the initial fixed-generation rollout finishes.
+
+## Stage 5: all candidates complete; French prepared, approval not submitted
+
+PR #187 is merged as `71925539ec0147b1691b62f1d935fe5555393e5b`.
+The local continuation merged that main revision without overwriting changes.
+Durable resume `36565145888` completed successfully, including the final `kk`
+job at `2026-09-29T14:05:39Z`. Together with the original 21 locales, all 33
+non-English candidates now have 24 complete pages in private R2. These are the
+explicitly authorized already-started September 26 generation, not a claim of
+33 live locales or new historical discovery.
+
+Staging publication check `36569579402` passed for `mr,bn,ta,mn,yue` (120 pages,
+zero inference and production writes). Check `36580358485`, dispatched on main,
+passed for `de,kk`; together with `36567341027`, all 33 candidate locale sets
+have passed the real isolated publication check. The already-started log read
+returned successfully; the final seven exact candidate/checkpoint identities
+are saved in `extended-locales-publication-evidence-remaining-20260929.json`.
+
+French production run `36567911713`, pinned to
+`537a206535fb003a959280465f152e8c3a5f74c3`, has completed `prepare_release`
+successfully and is waiting at `extended_locales_approval`. The pending
+environment is `portal-extended-locales-production`, id `23015803292`, with
+required reviewer `yt-feng` and `current_user_can_approve=true`. The operator
+delegated this approval operation; no additional permission question is needed.
+Same-run validation artifact `11043421830` is named
+`neutral-release-validation-36567911713-1`, size 11,872,186 bytes, and is bound
+to that exact run and commit. The artifact download failed with
+`read: connection reset by peer` before the review identity could be read.
+No exact-version approval variables were set and no deployment approval was
+submitted. Per the operator's network rule, no retry, alternate endpoint,
+transport change or network inspection was attempted. Continue from this
+waiting run, not a replacement translation or release.
+
+Daily run `36576367899` has passed source collection and started its 33-locale
+matrix with two concurrent jobs. Its completion and publication are unverified.
+The planned daily candidate-to-publication handoff has not been implemented;
+do not mistake an announced next step for committed functionality.
