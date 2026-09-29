@@ -117,3 +117,21 @@ reproduced the approved bytes. Replayed generation
 under `_extended-locales/staging/publication-36566608873-1`, not deployed.
 The public identity scan rejected the checker's branded HTTP User-Agent; changed
 it to the repository-neutral identifier, preserving the scan unchanged.
+
+## Latest stopping point
+
+Pushed implementation: `b52f1c281a27cefbba1cb8201cb2e5ca5a7874b9` (PR #182).
+The neutral public-identity scan passes locally on 6,039 files; the extended
+Python suite ran 252 tests with one dependency-related skip. The latest PR
+checks were running when observed (public identity `36566979454`, extended
+regression `36566979400`). No merge or production dispatch was performed.
+The last successful durable-resume snapshot had `km,fa,my` complete, in addition
+to the original 21; `gu,he` were active. All completed candidates have 24 pages.
+
+The next GitHub run-status read failed with `net/http: TLS handshake timeout`.
+Per the operator's explicit network rule, stopped external operations without
+retry, transport changes, proxy/network inspection, or a substitute endpoint.
+Environment setup is authorized and complete. After normal connectivity is
+available, check current CI/head and resume through the exact-candidate normal
+merge, first French activation, and remaining-locale activation. Do not repeat
+translation or treat staging success as production success.
