@@ -247,3 +247,15 @@ not written, and the pending-deployment approval POST was not executed. No
 network changes or alternate transport were attempted. Recheck current state
 and finish the exact same-run identity setup before normal approval; do not
 assume the partial environment setup constitutes approval or deployment.
+
+## Stage 7: French exact-version approval submitted
+
+The waiting run and protected environment were reverified over the unchanged
+connection. All seven environment variables were written/read back matching
+the Stage 6 identity, including the exact generation, candidate, locale and
+24-page count. The normal pending-deployments review API accepted the delegated
+approval and returned deployment `6738526860` for
+`portal-extended-locales-production`, commit
+`537a206535fb003a959280465f152e8c3a5f74c3`. Required reviewers and version
+checks remain configured. This is approval evidence only: the cutover and
+live-acceptance jobs still have to succeed before French is counted live.
