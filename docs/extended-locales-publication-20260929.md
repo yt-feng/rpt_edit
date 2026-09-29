@@ -442,3 +442,34 @@ write or bypass the environment, and a mismatched variable readback cannot
 submit approval. All 13 delegated-review tests pass (107 targeted tests total).
 These mocked API tests do not establish real credential permissions. Recovery
 `36608521165` has reached the original candidate restore step and remains live.
+
+## Stage 13: daily publication code merged; original recovery still running
+
+All four required checks on PR #190 head
+`761049d138fc87e6625592fe93aeb41228c5a0f3` passed: extended regression
+`36608950845`, public identity `36608950826`, locale manifest `36608950793`
+and API cost controls `36608950959`. The optional model canary was skipped;
+this change does not alter translation inference. PR #190 merged as
+`e64fabc3a15167d13cb92f76cb22c0d281e96d4c` at 18:02:47 UTC.
+
+Additional local offline regression ran 214 tests with one skip and no failures;
+combined with the 107 targeted checks, this is 320 passing tests and one skip.
+The two daily publication/review policy variables remain disabled until the
+initial locale activation and actual delegated credential have been verified.
+
+Recovery `36608521165` remains in progress in preparation job `109543664680`,
+at `Restore verified uploaded candidate without rebuilding or translating`.
+This authoritative running state is a wait, not a failed or missing process.
+Do not restart it because an observation interval ends. When preparation
+finishes, inspect this run's fresh validation artifact and submit both normal
+protected-environment reviews matching its exact identities; the original
+approval cannot substitute for the fresh recovery reviews. French acceptance
+must precede expansion to the remaining candidate set.
+
+Separately, the current-day run `36576367899` has successful locale jobs for
+`fr,pt,es,tr,ru,th`; `it,de` are translating, with no failed jobs at the last
+snapshot. This proves job completion only, not today's exact page counts or
+publication. It runs an older workflow without automatic handoff, so its final
+stored candidates still need explicit adoption/publication after completion.
+None of these running jobs has been cancelled or restarted. No new locale has
+yet been proven live by this checkpoint.
