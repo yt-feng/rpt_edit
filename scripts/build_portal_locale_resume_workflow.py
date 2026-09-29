@@ -85,7 +85,7 @@ jobs:
     for name in ('Checkout public source', 'Set up Python'):
         result += steps[name]
     result += '''      - name: Install read-only recovery dependencies
-        run: python3 -m pip install --disable-pip-version-check "boto3>=1.34,<2" "Pillow>=10.1,<12"
+        run: python3 -m pip install --disable-pip-version-check "boto3>=1.34,<2" "Pillow>=10.1,<12" "requests>=2.31,<3"
 
       - name: Validate recovery code and shared release gates
         run: |
