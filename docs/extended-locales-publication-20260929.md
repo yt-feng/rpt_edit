@@ -64,12 +64,12 @@ local tests are not deployment.
 - Exercise the newly implemented inactive assembly on the real stored corpus.
 - Preserve exact-source, complete-candidate, protected-Chinese, inactive-object,
   environment approval, atomic switch, acceptance and rollback gates.
-- The repository currently has a protected `portal-multilingual-production`
-  environment. `portal-extended-locales-production` is not yet configured; do not
-  let its first workflow reference silently create an unprotected environment.
-  A preparation preflight now requires an existing required-reviewer rule before
-  an explicit extended release can proceed. Creating this environment was asked
-  of the operator; no approval rule or activation flag has been changed yet.
+- The initial check found only the existing protected multilingual environment.
+  After the operator explicitly delegated environment setup and this release's
+  approval operation, `portal-extended-locales-production` was created at
+  `2026-09-29T12:12:17Z` with required reviewer `yt-feng`, matching the existing
+  environment. The same-run identity variables and deployment review still must
+  be recorded before activation; the gate has not been removed or bypassed.
 
 No new language is claimed live by this checkpoint.
 
@@ -99,3 +99,10 @@ artifact. This check is independent of, and cannot substitute for, production
 approval and acceptance. A new full committed-object regression also caught and
 fixed validation of localized sitemap paths: validate the source route after
 the declared locale prefix, rather than rejecting the locale prefix itself.
+
+Source `4cb023f0038ed7483ec4fe854b87bed86a3db3f9` passed 88 targeted local
+checks and dispatched French staging publication check `36566608873`.
+The added all-33 synthetic composition test passes too: each namespace contains
+an indexable reading page, no invented homepage, no English original namespace,
+and zero inference calls. This is routing/storage coverage, not a claim of
+human-reviewed translation quality or live publication.

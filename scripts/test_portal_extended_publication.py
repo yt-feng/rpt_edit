@@ -6,7 +6,7 @@ import unittest
 from unittest import mock
 
 from build_portal_extended_locales import build
-from portal_extended_locales import ORIGIN, ExpansionError, file_for_url, make_corpus, PublicParser
+from portal_extended_locales import ORIGIN, ExpansionError, file_for_url, make_corpus, PublicParser, select_locales
 from portal_extended_publication import compose, checked_batches, read_active_batches
 from restore_assemble_portal_extended_r2 import restored_identity
 from check_portal_extended_publication import StagingReplayStore, completed_candidates, snapshot_public
@@ -32,7 +32,7 @@ class PublicationTests(unittest.TestCase):
         self.number += 1
         corpus = make_corpus([daily_doc(url)])
         work = self.base/str(self.number); work.mkdir()
-        build(corpus, locale, work/'candidate', work/'checkpoint.json', FakeTranslator())
+        build(corpus, locale, work/'candidate', work/'checkpoint.json', FakeTranslator(), allow_source_fallback=True)
         generation = corpus['documents_sha256']
         self.store.put_source(corpus)
         self.store.put_checkpoint(locale, generation, work/'checkpoint.json')
@@ -63,6 +63,20 @@ class PublicationTests(unittest.TestCase):
         page = (self.root/'fr'/file_for_url(URL)).read_text()
         self.assertIn('index,follow', page)
         self.assertNotIn('noindex', page)
+
+    def test_all_33_namespaces_compose_without_english_or_fabricated_homepages(self):
+        locales = select_locales('all-supported')
+        result = self.publish([self.candidate(locale) for locale in locales])
+        self.assertEqual(len(result['locales']), 33)
+        self.assertEqual(result['page_counts'], dict.fromkeys(locales, 1))
+        self.assertTrue(all(row['translation_calls'] == 0 for row in result['replays']))
+        self.assertFalse((self.root/'en').exists())
+        for locale in locales:
+            parser = PublicParser()
+            parser.feed((self.root/locale/file_for_url(URL)).read_text()); parser.close()
+            self.assertEqual(parser.content_lang, locale)
+            self.assertNotIn('noindex', parser.metadata.get('robots', ''))
+            self.assertFalse((self.root/locale/'index.html').exists())
 
     def test_semantic_change_is_rejected_without_modifying_tree(self):
         batch = self.candidate()
