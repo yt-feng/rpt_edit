@@ -264,6 +264,7 @@ jobs:
             scripts/capture_edge_worker_deployment.py \
             scripts/publish_static_slot.py
           python3 -B scripts/test_compare_portal_release_semantics.py
+          python3 -B scripts/test_verify_public_chart_index.py
           python3 -B scripts/test_build_member_contact_card.py
           python3 -B scripts/test_render_private_config.py
           python3 -B scripts/test_check_public_brand.py
@@ -1932,6 +1933,10 @@ jobs:
           install -m 0600 _neutral_site/data/catalog_preview.json _release_validation/candidate/catalog_preview.json
           install -m 0600 _neutral_site/sitemap-baidu.xml _release_validation/candidate/sitemap.xml
           install -m 0600 _neutral_site/data/release-semantics.json _release_validation/candidate/release-semantics.json
+          python3 -B scripts/verify_public_chart_index.py prepare \
+            --index _neutral_site/data/chart_search_index.json \
+            --semantics _release_validation/candidate/release-semantics.json \
+            --output _release_validation/candidate/chart-index-expected.json
           if [ "$PORTAL_MULTILINGUAL_ENABLED" = "true" ]; then
             mkdir -p \
               _release_validation/candidate/{ko,ja,ar} \
@@ -2303,7 +2308,9 @@ jobs:
         )
       }}
     runs-on: ubuntu-22.04
-    timeout-minutes: 90
+    # Bounded checks, extended audit and complete rollback total 114 minutes;
+    # retain another 21 minutes for setup and evidence upload.
+    timeout-minutes: 135
     env:
       STATIC_RELEASE: ${{ needs.prepare_release.outputs.static_release }}
       STATIC_SLOT: ${{ needs.prepare_release.outputs.static_slot }}
@@ -2519,7 +2526,8 @@ jobs:
 
       - name: Accept prepared release through the live edge
         id: release_acceptance
-        timeout-minutes: 30
+        # Include the two bounded chart-index content checks before acceptance.
+        timeout-minutes: 45
         env:
           EDGE_SCRIPT_NAME: svc-04df8d213b73
           EDGE_VERIFY_ATTEMPTS: "6"
@@ -2581,6 +2589,35 @@ jobs:
           cmp _release_validation/candidate/sitemap.xml "$RUNNER_TEMP/public-sitemap-after.xml"
           cmp _release_validation/candidate/release-semantics.json "$RUNNER_TEMP/release-semantics-after.json"
           cmp _release_validation/candidate/release-semantics.json "$RUNNER_TEMP/public-semantics-after.json"
+          mkdir -p _release_acceptance
+          python3 - <<'PYCHART' > "$RUNNER_TEMP/chart-index-expected.txt"
+          import json
+          from pathlib import Path
+          import sys
+          sys.path.insert(0, "scripts")
+          from verify_public_chart_index import read_receipt, write_report
+          expected = read_receipt(Path("_release_validation/candidate/chart-index-expected.json"))
+          write_report(Path("_release_acceptance/chart-index.json"), {
+              "schema_version": 1, "status": "not_verified", "expected": expected,
+          })
+          print(expected["file_sha256"], expected["byte_size"])
+          PYCHART
+          read -r chart_sha chart_bytes < "$RUNNER_TEMP/chart-index-expected.txt"
+          python3 -B scripts/fetch_release_asset.py \
+            --url "$origin/.well-known/edge-release/$STATIC_RELEASE/data/chart_search_index.json" \
+            --output "$RUNNER_TEMP/release-chart-index-after.json" \
+            --label "release-chart-index-after" --max-time 180 --max-total-time 420 --json \
+            --expect-sha256 "$chart_sha" --expected-bytes "$chart_bytes" --max-bytes 134217728 --retry-404
+          python3 -B scripts/fetch_release_asset.py \
+            --url "$origin/data/chart_search_index.json" --output "$RUNNER_TEMP/public-chart-index-after.json" \
+            --label "public-chart-index-after" --max-time 180 --max-total-time 420 --json \
+            --expect-sha256 "$chart_sha" --expected-bytes "$chart_bytes" --max-bytes 134217728 --retry-404
+          python3 -B scripts/verify_public_chart_index.py verify \
+            --expected _release_validation/candidate/chart-index-expected.json \
+            --semantics _release_validation/candidate/release-semantics.json \
+            --release-index "$RUNNER_TEMP/release-chart-index-after.json" \
+            --public-index "$RUNNER_TEMP/public-chart-index-after.json" \
+            --output _release_acceptance/chart-index.json
           if [ "$PORTAL_MULTILINGUAL_ENABLED" = "true" ]; then
             python3 -B scripts/verify_portal_locale_routes.py \
               --manifest _release_validation/candidate/data/i18n/manifest.json \
@@ -2842,6 +2879,7 @@ jobs:
 
       - name: Audit extended locale pages after live cutover
         id: extended_acceptance
+        timeout-minutes: 15
         if: needs.prepare_release.outputs.extended_ready == 'true'
         run: |
           set -euo pipefail
@@ -2948,6 +2986,17 @@ jobs:
           else
             test "${{ steps.edge_rollback.outcome }}" = "skipped"
           fi
+
+      - name: Preserve public chart acceptance evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: neutral-release-acceptance-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            _release_validation/candidate/chart-index-expected.json
+            _release_acceptance/chart-index.json
+          if-no-files-found: error
+          retention-days: 7
 
   cleanup_multilingual_shadow:
     needs: [prepare_release, shadow_review_hold, multilingual_approval, cutover]

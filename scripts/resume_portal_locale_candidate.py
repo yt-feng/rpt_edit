@@ -71,7 +71,7 @@ MAX_DIAGNOSTICS_EXPANDED_BYTES = 128 * 1024 * 1024
 PUBLIC_PATHS = frozenset((
     "index.html", "feed.xml", "assets/app.js", "assets/styles.css", "assets/locale.css",
     "assets/locale-runtime.js", "data/catalog.json", "data/catalog_preview.json",
-    "data/release-semantics.json", "data/i18n/manifest.json", "sitemap-baidu.xml",
+    "data/release-semantics.json", "data/chart_search_index.json", "data/i18n/manifest.json", "sitemap-baidu.xml",
     *(f"sitemap-{locale}.xml" for locale in LOCALES),
 ))
 SHA40 = re.compile(r"[0-9a-f]{40}\Z")
