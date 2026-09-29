@@ -528,3 +528,16 @@ ko/ja/ar pages while assembling all 33 requested locales; it performs no new
 inference or paid calls. The first status query after dispatch failed with a
 GitHub TLS/EOF transport error, so this run's current state is not claimed
 here and must be checked before any approval. Do not dispatch a duplicate run.
+
+## Stage 16: all-33 assembly observed running
+
+The next authoritative query confirmed Action `36613057523` at head
+`e64fabc3a15167d13cb92f76cb22c0d281e96d4c` was in progress in
+`prepare_release`, specifically `Restore approved extended candidates and
+assemble inactive tree`. This proves the all-33 dispatch reached the real
+assembly step and was not merely queued. A later read encountered another
+GitHub TLS handshake timeout; no conclusion is inferred, and no duplicate
+dispatch, cancellation or network change was made. Resume by reading this
+same run, then use its fresh all-33 identity artifact for the ordinary dual
+protected-environment approval and cutover. No additional translation is
+needed.
