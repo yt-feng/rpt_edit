@@ -128,6 +128,7 @@ jobs:
       generation: ${{ steps.source.outputs.generation }}
       locales_json: ${{ steps.source.outputs.locales_json }}
       day: ${{ steps.source.outputs.day }}
+      requested_locales: ${{ steps.source.outputs.requested_locales }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -355,7 +356,7 @@ jobs:
     needs: [source, locale]
     if: >-
       ${{ always() && !cancelled() && github.ref == 'refs/heads/main' &&
-          needs.source.result == 'success' && needs.source.outputs.has_work == 'true' &&
+          needs.source.result == 'success' &&
           (github.event_name == 'workflow_run' || inputs.operation == 'candidate') &&
           vars.PORTAL_EXTENDED_AUTO_PUBLISH_LOCALES != '' }}
     runs-on: ubuntu-22.04
@@ -381,11 +382,10 @@ jobs:
           R2_BUCKET: ${{ secrets.R2_BUCKET }}
           SOURCE_GENERATION: ${{ needs.source.outputs.generation }}
           SOURCE_DAY: ${{ needs.source.outputs.day }}
-          SOURCE_LOCALES: ${{ needs.source.outputs.locales_json }}
+          SOURCE_LOCALES: ${{ needs.source.outputs.requested_locales }}
           ENABLED_LOCALES: ${{ vars.PORTAL_EXTENDED_AUTO_PUBLISH_LOCALES }}
         run: |
           set -euo pipefail
-          locales="$(printf '%s' "$SOURCE_LOCALES" | jq -er 'join(",")')"
           python3 -B scripts/portal_extended_handoff.py \
             --generation "$SOURCE_GENERATION" --day "$SOURCE_DAY" \
-            --locales "$locales" --enabled-locales "$ENABLED_LOCALES"
+            --locales "$SOURCE_LOCALES" --enabled-locales "$ENABLED_LOCALES"

@@ -410,3 +410,26 @@ or deployment evidence. All 33 original fixed-generation candidates remain
 recorded as 24 pages each (792 total), but no new locale has yet been accepted
 live. No translation rerun, paid call or production activation was performed
 by this local checkpoint.
+
+## Stage 12: bounded diagnostic fix merged; daily delegated-review implementation
+
+Normal GitHub access resumed. Both exact-head checks on
+`6614191300195026d4a9df06aab32bf7786cd1d9` passed. PR #189 merged as
+`9fc6a936a57e21ab3256e90fa813fb77f0c7f914`; new recovery `36608521165` uses
+that merge and the original French source run/candidate identities. The latest
+verified state is preparation in progress, not production activation.
+
+The separate daily delegated-review implementation and same-day receipt drain
+are now being committed for normal review. Required environment reviewers are
+retained; the opt-in policy only permits already-live locales and a verified
+same-day producer receipt. The generated recovery deliberately excludes this
+automatic reviewer and still requires fresh explicit reviews. Both workflows'
+five shared approval, cutover, acceptance, rollback and cleanup job blocks are
+compared byte-for-byte in regression tests. Protected approval jobs still do
+not check out or build code. The separate reviewer checks out the immutable
+workflow commit, as do preparation and cutover.
+
+All 103 targeted tests passed: production workflow 38, recovery workflow 8,
+handoff 10, delegated review 9, incremental 21, restore assembly 3 and publication
+14. Generated recovery equality also passed. Repository policy remains disabled;
+neither credential acceptance nor unattended daily publication is yet proven.

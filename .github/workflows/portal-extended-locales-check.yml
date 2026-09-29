@@ -59,6 +59,7 @@ jobs:
           python -B scripts/test_portal_extended_recovery.py
           python -B scripts/test_portal_extended_publication.py
           python -B scripts/test_portal_extended_handoff.py
+          python -B scripts/test_review_portal_extended_handoff.py
           python -B scripts/test_restore_assemble_portal_extended_r2.py
           python -B scripts/test_hymt_offline_translation.py
           python -B scripts/test_compare_hymt_translation.py

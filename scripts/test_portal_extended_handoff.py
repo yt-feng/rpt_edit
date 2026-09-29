@@ -5,8 +5,8 @@ import tempfile
 import unittest
 
 from build_portal_extended_locales import build
-from portal_extended_handoff import pending_batch, read_handoff, save_handoff, verify_handoff
-from portal_extended_incremental import remember_candidate, write_state
+from portal_extended_handoff import next_ready_batch, pending_batch, read_handoff, save_handoff, verify_handoff
+from portal_extended_incremental import prepare, read_state, remember_candidate, write_state
 from portal_extended_locales import ExpansionError, make_corpus
 from portal_extended_r2 import R2IntegrityError, R2PermissionError, R2Store
 from test_portal_extended_incremental import DAY, daily_doc
@@ -89,6 +89,36 @@ class HandoffTests(unittest.TestCase):
         self.assertIn("github.ref == 'refs/heads/main'", workflow)
         self.assertNotIn('pending_deployments', workflow)
         self.assertNotIn('actions/upload-artifact', workflow)
+        self.assertNotIn('needs.source.outputs.has_work', workflow)
+        self.assertIn('needs.source.outputs.requested_locales', workflow)
+
+    def test_completed_but_unpublished_pages_drain_when_translation_is_noop(self):
+        candidate = self.complete()
+        result = prepare(self.store, self.corpus['documents'], ('fr',), DAY, self.root/'unused.json')
+        self.assertFalse(result['has_work'])
+        batch, corpus = next_ready_batch(self.store, DAY, 'fr', 'fr', self.active, self.root/'drain')
+        self.assertEqual(batch['candidates'], {'fr':candidate})
+        self.assertEqual(corpus, self.corpus)
+        self.assertIsNone(next_ready_batch(self.store, DAY, 'fr', 'fr', self.active+[batch], self.root/'again'))
+
+    def test_partial_runs_keep_complete_receipts_across_exact_generations(self):
+        self.complete('fr')
+        self.active[0]['candidates']['pt'] = 'c'*64
+        self.corpus = make_corpus([daily_doc('https://kcdesk.com/blog/20260925-later.html')])
+        self.complete('pt')
+        first, _corpus = next_ready_batch(self.store, DAY, 'fr,pt', 'fr,pt', self.active, self.root/'one')
+        second, _corpus = next_ready_batch(self.store, DAY, 'fr,pt', 'fr,pt', self.active+[first], self.root/'two')
+        self.assertNotEqual(first['generation'], second['generation'])
+        self.assertEqual(set(first['candidates']) | set(second['candidates']), {'fr','pt'})
+        self.assertIsNone(next_ready_batch(self.store, DAY, 'fr,pt', 'fr,pt', self.active+[first,second], self.root/'three'))
+
+    def test_daily_receipt_drain_never_discovers_or_backfills_other_dates(self):
+        self.complete()
+        self.assertIsNone(next_ready_batch(self.store, '2026-09-26', 'fr', 'fr', self.active, self.root/'tomorrow'))
+        pages = read_state(self.store, 'completed', 'fr', DAY)['pages']
+        write_state(self.store, 'completed', 'fr', {'pages':pages}, '2026-09-26')
+        with self.assertRaisesRegex(ExpansionError, 'outside the selected source day'):
+            next_ready_batch(self.store, '2026-09-26', 'fr', 'fr', self.active, self.root/'wrong')
 
 
 if __name__ == '__main__':
