@@ -1460,6 +1460,18 @@
     "bcg:https://www.bcg.com/publications/2026/carbon-credit-target-prices-tripled": {
       "first_seen": "2026-09-27",
       "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/us-companies-structural-cost-reset": {
+      "first_seen": "2026-09-29",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/eu-companies-financial-stress-by-sector": {
+      "first_seen": "2026-09-29",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/portfolio-strategy-ai-investment-risk": {
+      "first_seen": "2026-09-29",
+      "status": "downloaded"
     }
   }
 }
