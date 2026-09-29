@@ -69,7 +69,7 @@ def snapshot_public(session, root, corpus):
     for path, optional in requested.items():
         url = ORIGIN + path
         with session.get(url, timeout=(10, 30), stream=True, allow_redirects=False,
-                         headers={'User-Agent':'KCDesk-publication-check/1.0'}) as response:
+                         headers={'User-Agent':'Portal-publication-check/1.0'}) as response:
             if optional and response.status_code == 404:
                 continue
             if response.status_code != 200:

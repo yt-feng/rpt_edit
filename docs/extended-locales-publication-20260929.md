@@ -106,3 +106,14 @@ The added all-33 synthetic composition test passes too: each namespace contains
 an indexable reading page, no invented homepage, no English original namespace,
 and zero inference calls. This is routing/storage coverage, not a claim of
 human-reviewed translation quality or live publication.
+
+French real-data staging check `36566608873` succeeded: 24 pages restored from
+candidate `509d97a8ae3b772655b3d602a9eac13d361ffdb1dc8120746ad3f046998a7062`,
+99 public snapshot files, zero inference/paid calls and zero production writes.
+Checkpoint checksum `484bf08c0f8a051dc28f1f6a169bfe871359f4cbbf95d8b0787551dc2b556f2a`
+reproduced the approved bytes. Replayed generation
+`908f95ce1545c940bb1a32138134ff1ba1ff09e2f7215ad82bc87e318e1524fc` and candidate
+`0a3ed2ec2ff50f48fbdf03dc7912c02f5da701cdceb66f7a9042b11416e60196` are isolated
+under `_extended-locales/staging/publication-36566608873-1`, not deployed.
+The public identity scan rejected the checker's branded HTTP User-Agent; changed
+it to the repository-neutral identifier, preserving the scan unchanged.
