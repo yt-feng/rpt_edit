@@ -207,13 +207,32 @@ class TransportRecoveryTests(unittest.TestCase):
         self.assertIn("extended-locales-r2-recovery-{0}", workflow)
         self.assertIn("'r2_writes': 0", workflow)
 
-    def test_full_locale_matrix_execution_capacity_fits_a_daily_window(self):
+    def test_publication_resume_requires_prior_checkpoint_without_collecting_history(self):
+        client = FakeR2()
+        store = R2Store(client, 'private-bucket', '_extended-locales/staging/test')
+        corpus = make_corpus([daily_doc()])
+        store.put_source(corpus)
+        args = ['test', 'prepare-publication', '--generation', corpus['documents_sha256'],
+                '--corpus', str(self.root/'source.json'), '--locales', 'fr']
+        with mock.patch('sys.argv', args), mock.patch.object(incremental, 'today', return_value='2026-09-29'), \
+             mock.patch.object(incremental.R2Store, 'from_env', return_value=store), \
+             mock.patch.object(incremental, 'collect_today', side_effect=AssertionError('No backfill')):
+            with self.assertRaisesRegex(incremental.ExpansionError, 'existing locale checkpoint'):
+                incremental.main()
+            build(corpus, 'fr', self.root/'started', self.root/'started.json', FakeTranslator())
+            store.put_checkpoint('fr', corpus['documents_sha256'], self.root/'started.json')
+            stored = dict(client.objects)
+            self.assertEqual(incremental.main(), 0)
+            self.assertEqual(client.objects, stored)
+
+    def test_full_locale_matrix_keeps_operator_two_worker_budget(self):
         workflow = (Path(__file__).resolve().parent.parent/'.github/workflows/portal-extended-locales-r2.yml').read_text()
         locale_job = workflow.split('\n  locale:\n', 1)[1]
         timeout = int(re.search(r'timeout-minutes: (\d+)', locale_job)[1])
-        workers = int(re.search(r'max-parallel:.*\|\| (\d+)', locale_job)[1])
-        self.assertLess(math.ceil(len(ADDITIONAL) / workers) * timeout, 24 * 60)
-        self.assertLessEqual(workers, 8)
+        workers = int(re.search(r'max-parallel: (\d+)', locale_job)[1])
+        self.assertEqual(workers, 2)
+        self.assertEqual(timeout, 270)
+        self.assertIn('publication-resume', workflow)
 
 
 if __name__ == '__main__':

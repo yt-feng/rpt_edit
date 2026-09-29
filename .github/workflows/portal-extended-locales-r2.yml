@@ -17,7 +17,7 @@ on:
         description: "R2 round-trip, daily candidate, or read-only replay of an exact failed generation"
         required: true
         type: choice
-        options: [roundtrip, candidate, recovery-test]
+        options: [roundtrip, candidate, recovery-test, publication-resume]
         default: roundtrip
       locales:
         description: "all-supported = 33 non-English locales, or comma-separated subset; English is summary/commentary blog only, no originals/charts; up to 24 new detail pages"
@@ -88,7 +88,7 @@ jobs:
   source:
     if: >-
       ${{
-        inputs.operation == 'candidate' || inputs.operation == 'recovery-test' ||
+        inputs.operation == 'candidate' || inputs.operation == 'recovery-test' || inputs.operation == 'publication-resume' ||
         (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' &&
          github.event.workflow_run.head_branch == github.event.repository.default_branch &&
          github.event.workflow_run.head_repository.full_name == github.repository) ||
@@ -130,6 +130,10 @@ jobs:
             test -n "$REQUESTED_SOURCE_GENERATION"
             prepare_operation=prepare-recovery
           fi
+          if [ "$REQUESTED_OPERATION" = "publication-resume" ]; then
+            test -n "$REQUESTED_SOURCE_GENERATION"
+            prepare_operation=prepare-publication
+          fi
           PYTHONPATH=scripts python3 -B scripts/portal_extended_incremental.py "$prepare_operation" \
             --prefix "$EXTENDED_R2_PREFIX" --locales "$REQUESTED_LOCALES" \
             --corpus "$RUNNER_TEMP/extended-source-corpus.json" \
@@ -152,9 +156,8 @@ jobs:
     timeout-minutes: 270
     strategy:
       fail-fast: false
-      # 33 locales at the 270-minute job cap need five waves (22.5h),
-      # leaving a daily collection window; two workers took over 25h in practice.
-      max-parallel: ${{ inputs.operation == 'recovery-test' && 6 || 8 }}
+      # Retain the operator's two-worker production bound, including resumes.
+      max-parallel: 2
       matrix:
         locale: ${{ fromJSON(needs.source.outputs.locales_json) }}
     env:

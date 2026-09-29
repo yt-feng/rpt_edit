@@ -161,7 +161,7 @@ def remember_candidate(store: R2Store, locale: str, corpus: dict, directory: Pat
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('operation', choices=['prepare', 'prepare-recovery', 'restore-seed', 'checkpoint', 'candidate'])
+    parser.add_argument('operation', choices=['prepare', 'prepare-recovery', 'prepare-publication', 'restore-seed', 'checkpoint', 'candidate'])
     parser.add_argument('--prefix', default=DEFAULT_PREFIX)
     parser.add_argument('--locale', default='fr')
     parser.add_argument('--locales', default='all-supported')
@@ -172,19 +172,28 @@ def main() -> int:
     parser.add_argument('--github-output', type=Path)
     args = parser.parse_args()
     store = R2Store.from_env(args.prefix)
-    if args.operation in {'prepare', 'prepare-recovery'}:
+    if args.operation in {'prepare', 'prepare-recovery', 'prepare-publication'}:
         locales = select_locales(args.locales)
         day = today()
         recovery = args.operation == 'prepare-recovery'
-        if recovery and not args.generation:
-            raise ExpansionError('Recovery tests require an exact stored source generation')
+        publication = args.operation == 'prepare-publication'
+        if (recovery or publication) and not args.generation:
+            raise ExpansionError('Recovery/publication requires an exact stored source generation')
         if args.generation:
             store.restore_source(args.generation, args.corpus)
             corpus = json.loads(args.corpus.read_text())
             validate_corpus(corpus)
             corpus_day = daily_corpus_day(corpus)
-            if not corpus_day or (corpus_day != day and not recovery):
+            if not corpus_day or (corpus_day != day and not (recovery or publication)):
                 raise ExpansionError('Refusing to resume a historical or mixed-directory batch')
+            if publication:
+                # Explicitly finish an already-started reviewed batch; never
+                # discover/backfill old URLs or fabricate an empty checkpoint.
+                for locale in locales:
+                    restored = store.restore_checkpoint(locale, args.generation,
+                                                        args.corpus.parent / f'publication-{locale}.json')
+                    if not restored.get('present'):
+                        raise ExpansionError('Publication resume requires an existing locale checkpoint')
             result = {'has_work': True, 'generation': args.generation, 'locales_json': json.dumps(list(locales)),
                       'day': corpus_day, 'selected_page_count': len(corpus['documents']),
                       'recovery_test_only': recovery}
