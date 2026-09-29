@@ -321,3 +321,55 @@ upload pending; cancellation was requested before it could overwrite the French
 prepared slot. It must not be blindly retried on the old SHA. French recovery
 inputs are slot `b`, release `1bc786207f6ca80787f5eff84bd2787d`, tree and previous
 release identities from Stage 6. Recovery itself must reverify they remain exact.
+
+PR #188 contains the recovery/dependency fix and disabled-by-default daily
+handoff. It is attached to this task. Head
+`66872c5f87fea35ff4832ebaff5a76a912dccb15` passed all four CI checks;
+follow-up `2998cd19650a99692dfcdcc49e7b9e89b8a57830` also installs `requests`
+in recovery preparation for the extended identity reader, with a regression
+covering that fresh job. Generated recovery equality and 46 related local
+workflow tests passed for the follow-up.
+
+At the latest verified check on `2998cd19`, regression `36605645254`, API-cost
+test `36605645447` and locale-manifest test `36605645494` passed; public identity
+audit `36605645519` was pending. The read-only PR watcher then exited with
+`net/http: TLS handshake timeout`. PR #188 has not been merged by this session,
+and no recovery workflow has been dispatched. Do not merge using the old
+head's green status: recheck all checks on the exact latest head.
+
+Real source job evidence was passed through the new recovery classifier and
+returned `pre_deployment_guard`, cutover job `109527645722`,
+`source_deployment_performed=false`. Cancellation of `36594682025` was separately
+confirmed completed with inactive upload skipped. Its cancellation is not an
+inference from the cancellation request alone. Leave current CI and translations
+running; the remaining publication work is blocked on ordinary GitHub access,
+not additional operator approval or translation regeneration.
+
+## Stage 10: dependency fix merged; bounded diagnostic transport repair
+
+PR #188 passed every check on `2998cd19650a99692dfcdcc49e7b9e89b8a57830`
+and merged as `3cb1bc5cba49e549e36f3f5eb988b857520dd37b`. Recovery run
+`36606486246` used this reviewed merge and the unchanged original French
+candidate. It passed the real source-run identity, pre-deployment failure
+classification and live-baseline checks, then failed before any deployment at
+diagnostic archive extraction: `Diagnostic archive entry is duplicate or oversized`.
+
+The original diagnostic artifact `11041163695` was inspected without applying
+its contents. It has six distinct entries. The required full/preflight JSON
+sizes are 33,522,356 and 33,610,563 bytes (compressed 13,842,607 and 13,853,985),
+respectively; Chinese parity/performance are 1,046/318 bytes. Thus the old 16 MiB
+per-entry reader limit rejects valid full-catalog accounting, not duplicate
+entries or failed translation validation.
+
+The targeted repair preserves every diagnostic byte and all readiness, parity,
+performance, manifest and source identity checks. Only the two full-catalog
+diagnostic types have a 64 MiB expanded allowance, with a new 128 MiB aggregate
+expanded bound; small diagnostic types retain their original limit. Reads are
+bounded and exact-length checked, and duplicates, unsafe paths, symlinks,
+per-file/aggregate overflow and unready payloads remain rejected. A real
+over-16-MiB synthetic diagnostic passes intact, and the same large diagnostic
+with `ready=false` still fails. All 47 recovery and 23 final-guard tests passed.
+
+Delegated daily-review work is separately uncommitted on the current local
+branch. It is not part of this targeted diagnostic repair and must not be
+described as CI-validated, enabled or deployed.
