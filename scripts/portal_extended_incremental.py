@@ -208,6 +208,7 @@ def main() -> int:
                 for key in ('has_work', 'generation', 'locales_json', 'day'):
                     value = str(result[key]).lower() if isinstance(result[key], bool) else result[key]
                     stream.write(f'{key}={value}\n')
+                stream.write('requested_locales='+','.join(locales)+'\n')
     else:
         if select_locales(args.locale) != (args.locale,): raise ExpansionError('Expected one locale')
         if args.operation == 'restore-seed': result = restore_seed(store, args.locale, args.checkpoint)

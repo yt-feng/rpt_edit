@@ -18,8 +18,16 @@ class ResumeWorkflowTests(unittest.TestCase):
         self.assertEqual(self.recovery, generate(self.source))
 
     def test_deployment_and_rollback_jobs_are_identical(self):
-        separator = '\n  shadow_review_hold:\n'
-        self.assertEqual(self.source.split(separator)[1], self.recovery.split(separator)[1])
+        def jobs(text):
+            return dict(re.findall(r'^  ([a-z_]+):\n(.*?)(?=^  [a-z_]+:\n|\Z)',
+                                   text.split('\njobs:\n', 1)[1], re.M | re.S))
+        source, recovery = jobs(self.source), jobs(self.recovery)
+        shared = {'shadow_review_hold', 'multilingual_approval', 'extended_locales_approval',
+                  'cutover', 'cleanup_multilingual_shadow'}
+        self.assertEqual(set(source), shared | {'prepare_release', 'extended_daily_review'})
+        self.assertEqual(set(recovery), shared | {'prepare_release'})
+        for job in shared:
+            self.assertEqual(source[job], recovery[job], job)
 
     def test_no_rebuild_translation_upload_or_schedule(self):
         preparation = self.recovery.split('\n  shadow_review_hold:\n')[0]

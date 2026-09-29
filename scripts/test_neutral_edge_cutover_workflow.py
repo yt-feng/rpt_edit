@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import subprocess
+import re
 import sys
 import tempfile
 import textwrap
@@ -337,7 +338,10 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn("--max-workers 16", self.workflow[upload:cutover])
         self.assertIn("timeout-minutes: 150", self.workflow[prepare:cutover])
         self.assertIn("timeout-minutes: 90", self.workflow[cutover:])
-        self.assertEqual(self.workflow.count("ref: ${{ github.sha }}"), 2)
+        self.assertEqual(self.workflow.count("ref: ${{ github.sha }}"), 3)
+        for job in ('prepare_release', 'extended_daily_review', 'cutover'):
+            block = re.search(r'^  '+job+r':\n(.*?)(?=^  [a-z_]+:\n|\Z)', self.workflow, re.M | re.S)[1]
+            self.assertEqual(block.count("ref: ${{ github.sha }}"), 1, job)
         self.assertNotIn("ref: main", self.workflow)
         self.assertNotIn('echo "::add-mask::$release_id"', self.workflow)
 
@@ -912,7 +916,10 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         artifact_upload_step = self.workflow[artifact_upload:approval_job]
         self.assertIn("retention-days: 7", artifact_upload_step)
 
-        approval = self.workflow[approval_job:cutover_job]
+        # Inspect only the protected approval job, not adjacent jobs that may
+        # execute reviewed main code to submit a delegated daily review.
+        approval = re.search(r'^  multilingual_approval:\n(.*?)(?=^  [a-z_]+:\n|\Z)',
+                             self.workflow, re.M | re.S)[1]
         self.assertIn("needs: prepare_release", approval)
         self.assertIn("needs.prepare_release.outputs.operation != 'locale-shadow'", approval)
         self.assertIn("needs.prepare_release.outputs.multilingual_enabled == 'true'", approval)
