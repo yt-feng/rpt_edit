@@ -1144,6 +1144,7 @@ jobs:
             IFS=',' read -r -a extended_locale_values <<< "$EXTENDED_LOCALES"
             for locale in "${extended_locale_values[@]}"; do
               required_paths+=(
+                "$locale/index.html"
                 "$locale/llms.txt"
                 "sitemap-extended-$locale.xml"
               )
@@ -1465,11 +1466,12 @@ jobs:
               raise SystemExit("Extended sitemap index does not match the approved locale set")
           for locale in locales:
               locale_root = root / locale
-              pages = sorted(locale_root.rglob("*.html"))
+              homepage = locale_root / "index.html"
+              pages = sorted(page for page in locale_root.rglob("*.html") if page != homepage)
               expected_count = assembly.get("page_counts", {}).get(locale, assembly["pages_per_locale"])
-              if not pages or len(pages) != expected_count:
+              if not homepage.is_file() or not pages or len(pages) != expected_count:
                   raise SystemExit(f"Extended page count is invalid for {locale}")
-              for page in pages:
+              for page in [homepage, *pages]:
                   parser = PublicParser()
                   parser.feed(page.read_text(encoding="utf-8"))
                   parser.close()

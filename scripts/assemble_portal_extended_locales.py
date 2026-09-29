@@ -13,8 +13,9 @@ from pathlib import Path
 import re
 import xml.etree.ElementTree as ET
 from portal_extended_locales import (
-    ADDITIONAL, HREFLANG, ORIGIN, ExpansionError, PublicParser, digest, file_for_url,
-    locale_url, select_locales, stable_bytes, validate_corpus, daily_corpus_day,
+    ADDITIONAL, HREFLANG, NATIVE, OG_LOCALES, ORIGIN, ExpansionError, PublicParser,
+    digest, direction, file_for_url, locale_url, select_locales, stable_bytes,
+    validate_corpus, daily_corpus_day,
 )
 from offline_translation import MODEL_ID
 
@@ -86,6 +87,85 @@ def head_alternates(source: str, alternates: dict[str, str]) -> str:
     return start + MARKER_START + '\n' + links + '\n' + MARKER_END + sep + tail
 
 
+def locale_homepage(locale: str, pages: list[tuple[str, bytes]], *, origin: str = ORIGIN) -> bytes:
+    """Build a real locale entry page from already approved detail pages.
+
+    The extended candidates intentionally contain detail pages only.  The
+    public release still needs a stable ``/<locale>/`` route, so this page is
+    a deterministic index of those exact localized details.  It does not copy
+    source prose, source charts, or English-only content and it never accepts
+    ``en`` as an expansion locale.
+    """
+    if locale not in ADDITIONAL:
+        raise ExpansionError('Locale homepage is limited to additional non-English locales')
+    if not pages:
+        raise ExpansionError('Locale homepage requires at least one detail page')
+    items = []
+    for url, raw in sorted(pages):
+        parser = PublicParser()
+        parser.feed(raw.decode('utf-8'))
+        parser.close()
+        canonical = locale_url(url, locale, origin=origin)
+        if (parser.canonical != canonical or parser.content_lang != locale
+                or 'noindex' in parser.metadata.get('robots', '').lower()):
+            raise ExpansionError('Locale homepage source contains an unpublished detail page')
+        title = ''.join(parser.title).strip() or canonical
+        items.append(
+            '<li><a href="{}">{}</a></li>'.format(
+                escape(canonical, quote=True), escape(title),
+            )
+        )
+    label = escape(NATIVE[locale])
+    canonical = escape(origin.rstrip('/') + '/' + locale + '/', quote=True)
+    og_locale = escape(OG_LOCALES.get(locale, locale), quote=True)
+    return (f'''<!doctype html>
+<html lang="{escape(locale, quote=True)}" dir="{escape(direction(locale), quote=True)}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KC桌面 — {label}</title>
+<meta name="description" content="KC桌面 — {label}">
+<meta name="robots" content="index,follow">
+<meta property="og:locale" content="{og_locale}">
+<link rel="canonical" href="{canonical}">
+</head>
+<body>
+<main>
+<h1>KC桌面 — {label}</h1>
+<ul>
+{''.join(items)}
+</ul>
+</main>
+</body>
+</html>
+''').encode('utf-8')
+
+
+def locale_home_alternates(
+    root: Path, locales: tuple[str, ...], *, existing_locales: tuple[str, ...] = (), origin: str = ORIGIN,
+) -> dict[str, str]:
+    """Return only verified locale-home alternate URLs for the shared head."""
+    alternates = {'zh-Hans': origin.rstrip('/') + '/', 'x-default': origin.rstrip('/') + '/'}
+    for locale in existing_locales:
+        if locale not in {'ko', 'ja', 'ar'}:
+            raise ExpansionError('Unknown established locale')
+        path = root / locale / 'index.html'
+        if not path.is_file() or path.is_symlink():
+            continue
+        parser = PublicParser()
+        parser.feed(path.read_text())
+        parser.close()
+        canonical = origin.rstrip('/') + '/' + locale + '/'
+        if (parser.canonical == canonical and parser.content_lang == locale
+                and 'noindex' not in parser.metadata.get('robots', '').lower()):
+            alternates[locale] = canonical
+    for locale in locales:
+        if locale not in ADDITIONAL:
+            raise ExpansionError('Locale homepage alternates contain a non-expansion locale')
+        alternates[locale] = origin.rstrip('/') + '/' + locale + '/'
+    return alternates
+
+
 def assemble(
     root: Path,
     corpus: dict,
@@ -152,6 +232,22 @@ def assemble(
             if html.count(needle) != 1: raise ExpansionError('Missing candidate robots guard')
             html = html.replace(needle, '<meta name="robots" content="index,follow">', 1)
             planned[key] = (head_alternates(html, alternatives) if code in HREFLANG else html).encode()
+    for code in approved:
+        planned[(Path(code) / 'index.html').as_posix()] = locale_homepage(
+            code,
+            [(doc['url'], planned[(Path(code) / file_for_url(doc['url'])).as_posix()])
+             for doc in docs],
+            origin=origin,
+        )
+    home_alternates = locale_home_alternates(
+        root, approved, existing_locales=existing_locales, origin=origin,
+    )
+    if 'index.html' not in planned:
+        planned['index.html'] = (root / 'index.html').read_bytes()
+    planned['index.html'] = head_alternates(planned['index.html'].decode(), home_alternates).encode()
+    for code in approved:
+        key = (Path(code) / 'index.html').as_posix()
+        planned[key] = head_alternates(planned[key].decode(), home_alternates).encode()
     sitemap_index = ET.Element(f'{{{NS}}}sitemapindex')
     for code in approved:
         xml = ET.Element(f'{{{NS}}}urlset')

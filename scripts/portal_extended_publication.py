@@ -11,7 +11,10 @@ import json
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
-from assemble_portal_extended_locales import assemble, head_alternates, verified_candidate, NS, XHTML
+from assemble_portal_extended_locales import (
+    assemble, head_alternates, locale_home_alternates, locale_homepage,
+    verified_candidate, NS, XHTML,
+)
 from build_portal_extended_locales import build
 from offline_translation import OfflineTranslationError
 from portal_extended_incremental import content_key
@@ -165,6 +168,10 @@ def compose(root: Path, store, batches: list[dict], workspace: Path) -> dict:
                 'pages': len(current_docs), 'translation_calls': 0})
     planned, clusters = {}, {}
     locales = tuple(locale for locale in select_locales('all-supported') if any(k[0] == locale for k in pages))
+    home_alternates = locale_home_alternates(
+        root, locales, existing_locales=('ko', 'ja', 'ar'), origin=ORIGIN,
+    )
+    planned['index.html'] = head_alternates((root/'index.html').read_text(), home_alternates).encode()
     for url in sorted(sources):
         relative = file_for_url(url)
         cluster = {'zh-Hans': url, 'x-default': url}
@@ -196,6 +203,12 @@ def compose(root: Path, store, batches: list[dict], workspace: Path) -> dict:
     for locale in locales:
         urls = sorted(url for code, url in pages if code == locale)
         counts[locale] = len(urls)
+        planned[f'{locale}/index.html'] = locale_homepage(
+            locale, [(url, pages[locale, url]) for url in urls], origin=ORIGIN,
+        )
+        planned[f'{locale}/index.html'] = head_alternates(
+            planned[f'{locale}/index.html'].decode(), home_alternates,
+        ).encode()
         xml = ET.Element(f'{{{NS}}}urlset')
         for url in urls:
             node = ET.SubElement(xml, f'{{{NS}}}url')
@@ -225,7 +238,7 @@ def compose(root: Path, store, batches: list[dict], workspace: Path) -> dict:
         'batches': batches, 'page_counts': counts, 'pages_per_locale': min(counts.values()),
         'source_urls_by_locale': {locale: sorted(url for code, url in pages if code == locale) for locale in locales},
         'replays': replays, 'paid_provider_requests': 0, 'deployment_performed': False,
-        'detail_only': True}
+        'detail_only': True, 'locale_homepages': True}
     planned[LEDGER] = stable_bytes(receipt)
     if len(planned[LEDGER]) > 1024 * 1024:
         raise ExpansionError('Extended approval ledger exceeds its storage bound')

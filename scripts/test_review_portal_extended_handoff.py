@@ -25,6 +25,7 @@ class DailyReviewTests(unittest.TestCase):
         self.receipt = {'producer':{'run_id':'123', 'attempt':'1', 'sha':'f'*40},
                         'batch':self.batch, 'source_day':'2026-09-25', 'pages_per_locale':1}
         self.assembly = {'schema_version':2, 'status':'assembled', 'detail_only':True,
+                         'locale_homepages':True,
                          'batches':self.active+[self.batch], 'locales':['fr','pt'],
                          'page_counts':{'fr':2, 'pt':1}, 'paid_provider_requests':0}
         ids = {'fr':'e'*64, 'pt':'c'*64}
@@ -77,7 +78,7 @@ class DailyReviewTests(unittest.TestCase):
 
     def test_incomplete_assembly_counts_and_candidate_spec_mismatch_are_rejected(self):
         original = copy.deepcopy(self.assembly)
-        for change in ({'status':'incomplete'}, {'detail_only':False}, {'paid_provider_requests':1},
+        for change in ({'status':'incomplete'}, {'detail_only':False}, {'locale_homepages':False}, {'paid_provider_requests':1},
                        {'page_counts':{'fr':0,'pt':1}}, {'page_counts':{'fr':2}},
                        {'page_counts':{'fr':True,'pt':1}}, {'locales':['fr']}):
             self.assembly = {**original, **change}

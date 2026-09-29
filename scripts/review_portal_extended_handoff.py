@@ -79,8 +79,9 @@ def review_identity(receipt, identity, assembly, active, enabled, expected):
     require(checked_batches(assembly.get('batches')) == checked_batches(active + [batch]),
             'Prepared batch ledger differs from active approvals and exact handoff')
     require(assembly.get('schema_version') == 2 and assembly.get('status') == 'assembled'
-            and assembly.get('paid_provider_requests') == 0 and assembly.get('detail_only') is True,
-            'Prepared assembly is not complete detail-only offline output')
+            and assembly.get('paid_provider_requests') == 0 and assembly.get('detail_only') is True
+            and assembly.get('locale_homepages') is True,
+            'Prepared assembly is not complete detail-only offline output with locale homepages')
     actual = {'schema_version': 1, 'operation': 'migrate', 'commit_sha': expected['commit_sha'],
               'static_tree_sha256': expected['static_tree_sha256'], 'source_generation': batch['generation'],
               'pages_per_locale': int(expected['pages_per_locale']),

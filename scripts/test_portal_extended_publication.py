@@ -56,7 +56,11 @@ class PublicationTests(unittest.TestCase):
         self.assertEqual(result['replays'][0]['translation_calls'], 0)
         self.assertNotEqual(result['replays'][0]['source_generation'], batch['generation'])
         self.assertEqual(source.read_bytes().split(b'<body>')[1], before)
-        self.assertFalse((self.root/'fr/index.html').exists())
+        self.assertTrue((self.root/'fr/index.html').is_file())
+        homepage = (self.root/'fr/index.html').read_text()
+        self.assertIn('lang="fr"', homepage)
+        self.assertIn('/fr/blog/20260925-new.html', homepage)
+        self.assertNotIn('noindex', homepage)
         self.assertIn('Disallow: /', (self.root/'robots.txt').read_text())
         self.assertIn('sitemap-extended.xml', (self.root/'sitemap.xml').read_text())
         self.assertIn('sitemap-pages.xml', (self.root/'sitemap.xml').read_text())
@@ -64,7 +68,7 @@ class PublicationTests(unittest.TestCase):
         self.assertIn('index,follow', page)
         self.assertNotIn('noindex', page)
 
-    def test_all_33_namespaces_compose_without_english_or_fabricated_homepages(self):
+    def test_all_33_namespaces_compose_without_english_and_with_real_homepages(self):
         locales = select_locales('all-supported')
         result = self.publish([self.candidate(locale) for locale in locales])
         self.assertEqual(len(result['locales']), 33)
@@ -76,7 +80,10 @@ class PublicationTests(unittest.TestCase):
             parser.feed((self.root/locale/file_for_url(URL)).read_text()); parser.close()
             self.assertEqual(parser.content_lang, locale)
             self.assertNotIn('noindex', parser.metadata.get('robots', ''))
-            self.assertFalse((self.root/locale/'index.html').exists())
+            homepage = self.root/locale/'index.html'
+            self.assertTrue(homepage.is_file())
+            self.assertIn(f'lang="{locale}"', homepage.read_text())
+        self.assertNotIn('/en/', '\n'.join(str(path) for path in self.root.rglob('*')))
 
     def test_semantic_change_is_rejected_without_modifying_tree(self):
         batch = self.candidate()
@@ -215,21 +222,23 @@ class PublicationTests(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError, 'checksum'):
                 read_active_batches(self.store, identity)
 
-    def test_live_detail_only_audit_checks_real_urls_without_requesting_homepage(self):
+    def test_live_audit_checks_real_homepage_and_detail_urls(self):
         self.publish([self.candidate()])
         seen = []
         def response(url, **kwargs):
             seen.append(url)
             relative = url.removeprefix(ORIGIN+'/')
+            if relative.endswith('/'):
+                relative += 'index.html'
             page = self.root/relative
             return mock.Mock(status_code=200 if page.is_file() else 404,
-                headers={'Content-Language':'fr'}, content=page.read_bytes() if page.is_file() else b'')
+                headers={'Content-Language':'fr', 'X-Robots-Tag':''}, content=page.read_bytes() if page.is_file() else b'')
         with mock.patch('requests.Session') as session:
             session.return_value.get.side_effect = response
             report = audit(ORIGIN, 'fr')
             self.assertEqual(report['status'], 'passed')
             self.assertEqual(report['reports'][0]['pages'], 1)
-            self.assertNotIn(ORIGIN+'/fr/', seen)
+            self.assertIn(ORIGIN+'/fr/', seen)
 
     def test_release_workflow_assembles_after_legacy_parity_and_preserves_approval(self):
         root = Path(__file__).resolve().parents[1]
