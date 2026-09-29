@@ -649,6 +649,33 @@ class ResumeTests(unittest.TestCase):
         with self.assertRaisesRegex(resume.ResumeError, "not ready"):
             self.restore()
 
+    def test_full_catalog_diagnostics_over_legacy_16_mib_are_preserved_and_checked(self):
+        value = {'schema_version': 1, 'status': 'passed', 'ready': True,
+                 'diagnostic_padding': 'x' * (16 * 1024 * 1024)}
+        body = encoded(value)
+        self.assertGreater(len(body), 16 * 1024 * 1024)
+        self.github.diagnostics['locale-full-diagnostics.json'] = body
+        result = self.restore()
+        self.assertEqual(result['remote_mutations'], 0)
+        self.assertEqual((self.diag/'locale-full-diagnostics.json').read_bytes(), body)
+        value['ready'] = False
+        self.github.diagnostics['locale-full-diagnostics.json'] = encoded(value)
+        resume.download_diagnostics(self.github, REPO, 321, 1, self.diag)
+        with self.assertRaisesRegex(resume.ResumeError, 'not ready'):
+            resume.validate_diagnostics(self.diag, APP, self.github.logs, ORIGIN, active_app=APP)
+
+    def test_expanded_diagnostics_still_reject_duplicates_per_file_and_total_overflow(self):
+        self.github.archive_extra = {'copy/locale-full-diagnostics.json': encoded({'ready':True})}
+        with self.assertRaisesRegex(resume.ResumeError, 'duplicate'):
+            resume.download_diagnostics(self.github, REPO, 321, 1, self.diag)
+        self.github.archive_extra = {}
+        with patch.dict(resume.DIAGNOSTIC_MAX_BYTES, {'locale-full-diagnostics.json': 1}):
+            with self.assertRaisesRegex(resume.ResumeError, 'expanded byte bound'):
+                resume.download_diagnostics(self.github, REPO, 321, 1, self.diag)
+        with patch.object(resume, 'MAX_DIAGNOSTICS_EXPANDED_BYTES', 1):
+            with self.assertRaisesRegex(resume.ResumeError, 'total expanded'):
+                resume.download_diagnostics(self.github, REPO, 321, 1, self.diag)
+
     def test_live_change_during_restore_does_not_emit_resume_identity(self):
         self.live.side_effect = [PREVIOUS, {**PREVIOUS, "release_id": "9" * 32}]
         with self.assertRaisesRegex(resume.ResumeError, "during candidate restore"):

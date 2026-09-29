@@ -344,3 +344,32 @@ confirmed completed with inactive upload skipped. Its cancellation is not an
 inference from the cancellation request alone. Leave current CI and translations
 running; the remaining publication work is blocked on ordinary GitHub access,
 not additional operator approval or translation regeneration.
+
+## Stage 10: dependency fix merged; bounded diagnostic transport repair
+
+PR #188 passed every check on `2998cd19650a99692dfcdcc49e7b9e89b8a57830`
+and merged as `3cb1bc5cba49e549e36f3f5eb988b857520dd37b`. Recovery run
+`36606486246` used this reviewed merge and the unchanged original French
+candidate. It passed the real source-run identity, pre-deployment failure
+classification and live-baseline checks, then failed before any deployment at
+diagnostic archive extraction: `Diagnostic archive entry is duplicate or oversized`.
+
+The original diagnostic artifact `11041163695` was inspected without applying
+its contents. It has six distinct entries. The required full/preflight JSON
+sizes are 33,522,356 and 33,610,563 bytes (compressed 13,842,607 and 13,853,985),
+respectively; Chinese parity/performance are 1,046/318 bytes. Thus the old 16 MiB
+per-entry reader limit rejects valid full-catalog accounting, not duplicate
+entries or failed translation validation.
+
+The targeted repair preserves every diagnostic byte and all readiness, parity,
+performance, manifest and source identity checks. Only the two full-catalog
+diagnostic types have a 64 MiB expanded allowance, with a new 128 MiB aggregate
+expanded bound; small diagnostic types retain their original limit. Reads are
+bounded and exact-length checked, and duplicates, unsafe paths, symlinks,
+per-file/aggregate overflow and unready payloads remain rejected. A real
+over-16-MiB synthetic diagnostic passes intact, and the same large diagnostic
+with `ready=false` still fails. All 47 recovery and 23 final-guard tests passed.
+
+Delegated daily-review work is separately uncommitted on the current local
+branch. It is not part of this targeted diagnostic repair and must not be
+described as CI-validated, enabled or deployed.

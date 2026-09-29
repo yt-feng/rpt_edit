@@ -57,6 +57,17 @@ DIAGNOSTICS = (
     "locale-preflight-diagnostics.json", "locale-full-diagnostics.json",
     "chinese-parity.json", "chinese-performance.json",
 )
+# Real per-locale diagnostics include detailed accounting for the complete
+# existing catalog (about 32 MiB each in run 36567911713). They are not small
+# approval receipts. Keep the complete JSON and all semantic checks, while
+# bounding both each expanded member and total expanded diagnostic bytes.
+DIAGNOSTIC_MAX_BYTES = {
+    'locale-preflight-diagnostics.json': 64 * 1024 * 1024,
+    'locale-full-diagnostics.json': 64 * 1024 * 1024,
+    'chinese-parity.json': 16 * 1024 * 1024,
+    'chinese-performance.json': 16 * 1024 * 1024,
+}
+MAX_DIAGNOSTICS_EXPANDED_BYTES = 128 * 1024 * 1024
 PUBLIC_PATHS = frozenset((
     "index.html", "feed.xml", "assets/app.js", "assets/styles.css", "assets/locale.css",
     "assets/locale-runtime.js", "data/catalog.json", "data/catalog_preview.json",
@@ -336,6 +347,7 @@ def download_diagnostics(github: Any, repository: str, run_id: int, attempt: int
     phase("diagnostic_artifact_download")
     data = github.bytes(f"/repos/{repository}/actions/artifacts/{int(artifact['id'])}/zip")
     required: dict[str, bytes] = {}
+    expanded_bytes = 0
     try:
         with zipfile.ZipFile(io.BytesIO(data)) as archive:
             for item in archive.infolist():
@@ -346,8 +358,18 @@ def download_diagnostics(github: Any, repository: str, run_id: int, attempt: int
                 name = Path(item.filename).name
                 if name not in DIAGNOSTICS:
                     continue
-                require(name not in required and 0 < item.file_size <= 16 * 1024 * 1024, "Diagnostic archive entry is duplicate or oversized")
-                required[name] = archive.read(item)
+                require(name not in required, f'Diagnostic archive contains duplicate required entry: {name}')
+                maximum = DIAGNOSTIC_MAX_BYTES[name]
+                require(0 < item.file_size <= maximum,
+                        f'Diagnostic archive entry exceeds expanded byte bound: {name} bytes={item.file_size} limit={maximum}')
+                expanded_bytes += item.file_size
+                require(expanded_bytes <= MAX_DIAGNOSTICS_EXPANDED_BYTES,
+                        'Diagnostic archive exceeds total expanded byte bound')
+                with archive.open(item) as stream:
+                    body = stream.read(maximum + 1)
+                require(len(body) == item.file_size and len(body) <= maximum,
+                        f'Diagnostic archive entry length differs: {name}')
+                required[name] = body
     except (zipfile.BadZipFile, ValueError) as error:
         raise ResumeError("Source diagnostics archive is invalid") from error
     require(set(required) == set(DIAGNOSTICS), "Source diagnostics artifact is incomplete")
