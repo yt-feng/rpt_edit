@@ -321,3 +321,26 @@ upload pending; cancellation was requested before it could overwrite the French
 prepared slot. It must not be blindly retried on the old SHA. French recovery
 inputs are slot `b`, release `1bc786207f6ca80787f5eff84bd2787d`, tree and previous
 release identities from Stage 6. Recovery itself must reverify they remain exact.
+
+PR #188 now contains the recovery/dependency fix and disabled-by-default daily
+handoff: `https://github.com/yt-feng/rpt_edit/pull/188`. It is attached to this
+task. Head `66872c5f87fea35ff4832ebaff5a76a912dccb15` passed all four CI checks;
+follow-up `2998cd19650a99692dfcdcc49e7b9e89b8a57830` also installs `requests`
+in recovery preparation for the extended identity reader, with a regression
+covering that fresh job. Generated recovery equality and 46 related local
+workflow tests passed for the follow-up.
+
+At the latest verified check on `2998cd19`, regression `36605645254`, API-cost
+test `36605645447` and locale-manifest test `36605645494` passed; public identity
+audit `36605645519` was pending. The read-only PR watcher then exited with
+`net/http: TLS handshake timeout`. PR #188 has not been merged by this session,
+and no recovery workflow has been dispatched. Do not merge using the old
+head's green status: recheck all checks on the exact latest head.
+
+Real source job evidence was passed through the new recovery classifier and
+returned `pre_deployment_guard`, cutover job `109527645722`,
+`source_deployment_performed=false`. Cancellation of `36594682025` was separately
+confirmed completed with inactive upload skipped. Its cancellation is not an
+inference from the cancellation request alone. Leave current CI and translations
+running; the remaining publication work is blocked on ordinary GitHub access,
+not additional operator approval or translation regeneration.
