@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audit real published detail routes; never invent missing locale homepages."""
+"""Audit real published locale homepages and detail routes."""
 from __future__ import annotations
 
 import argparse
@@ -71,6 +71,13 @@ def audit(origin: str, locales: str) -> dict:
     session.trust_env = False
     reports = []
     for locale in selected:
+        homepage_url = f'{origin}/{locale}/'
+        homepage_headers, homepage_body = require_response(session, homepage_url)
+        if homepage_headers.get('Content-Language', '').strip().lower() != locale.lower():
+            raise ExpansionError(f'Live locale homepage Content-Language is invalid for {locale}')
+        if 'noindex' in homepage_headers.get('X-Robots-Tag', '').lower():
+            raise ExpansionError(f'Live locale homepage HTTP robots policy is noindex for {locale}')
+        check_page(homepage_body, homepage_url, locale)
         sitemap_url = f'{origin}/sitemap-extended-{locale}.xml'
         _sitemap_headers, sitemap_body = require_response(session, sitemap_url)
         tree = ET.fromstring(sitemap_body)
@@ -86,7 +93,8 @@ def audit(origin: str, locales: str) -> dict:
             if 'noindex' in headers.get('X-Robots-Tag', '').lower():
                 raise ExpansionError(f'Live detail HTTP robots policy is noindex for {locale}')
             check_page(body, url, locale)
-        reports.append({'locale': locale, 'pages': len(locations),
+        reports.append({'locale': locale, 'homepage_url': homepage_url, 'homepage_status': 200,
+                        'pages': len(locations),
                         'deep_samples': samples, 'deep_status': 200,
                         'content_language': locale})
     return {'schema_version': 1, 'origin': origin, 'locales': list(selected), 'reports': reports,

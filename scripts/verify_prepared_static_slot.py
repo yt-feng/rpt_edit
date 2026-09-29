@@ -190,6 +190,7 @@ def verify_extended_static_tree(
         or not locales
         or assembly.get("paid_provider_requests") != 0
         or assembly.get("deployment_performed") is not False
+        or assembly.get("locale_homepages") is not True
         or assembly.get("pages_per_locale", 0) <= 0
     ):
         raise RuntimeError("Prepared extended assembly receipt is incomplete")
@@ -205,9 +206,7 @@ def verify_extended_static_tree(
     if origin and set(index_locations) != expected_index:
         raise RuntimeError("Prepared extended sitemap index does not match its assembly receipt")
     for locale in approved:
-        required = [f"{locale}/llms.txt", f"sitemap-extended-{locale}.xml"]
-        if not assembly.get("detail_only"):
-            required.append(f"{locale}/index.html")
+        required = [f"{locale}/llms.txt", f"sitemap-extended-{locale}.xml", f"{locale}/index.html"]
         for relative in required:
             descriptor = files.get(relative)
             if descriptor is None:
@@ -218,6 +217,8 @@ def verify_extended_static_tree(
             )
             if relative.endswith(".html") and b"noindex" in body.lower():
                 raise RuntimeError(f"Prepared extended homepage remains noindex: {relative}")
+            if relative == f"{locale}/index.html" and origin:
+                check_page(body, f"{origin.rstrip('/')}/{locale}/", locale)
         sitemap_descriptor = files[f"sitemap-extended-{locale}.xml"]
         sitemap_body = read_verified_candidate_body(
             client, bucket, prefix + f"sitemap-extended-{locale}.xml", sitemap_descriptor,
@@ -235,7 +236,8 @@ def verify_extended_static_tree(
                 source = origin.rstrip('/') + '/' + url[len(expected_prefix):]
                 return locale + '/' + file_for_url(source, origin=origin.rstrip('/')).as_posix()
             expected_paths = {localized_path(url) for url in locations}
-            actual_paths = {path for path in files if path.startswith(locale+'/') and path.endswith('.html')}
+            actual_paths = {path for path in files if path.startswith(locale+'/') and path.endswith('.html')
+                            and path != f"{locale}/index.html"}
             if expected_paths != actual_paths:
                 raise RuntimeError(f"Prepared extended page set differs from its sitemap: {locale}")
             def verify_page(url):

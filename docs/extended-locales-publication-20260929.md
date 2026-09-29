@@ -442,3 +442,102 @@ write or bypass the environment, and a mismatched variable readback cannot
 submit approval. All 13 delegated-review tests pass (107 targeted tests total).
 These mocked API tests do not establish real credential permissions. Recovery
 `36608521165` has reached the original candidate restore step and remains live.
+
+## Stage 13: daily publication code merged; original recovery still running
+
+All four required checks on PR #190 head
+`761049d138fc87e6625592fe93aeb41228c5a0f3` passed: extended regression
+`36608950845`, public identity `36608950826`, locale manifest `36608950793`
+and API cost controls `36608950959`. The optional model canary was skipped;
+this change does not alter translation inference. PR #190 merged as
+`e64fabc3a15167d13cb92f76cb22c0d281e96d4c` at 18:02:47 UTC.
+
+Additional local offline regression ran 214 tests with one skip and no failures;
+combined with the 107 targeted checks, this is 320 passing tests and one skip.
+The two daily publication/review policy variables remain disabled until the
+initial locale activation and actual delegated credential have been verified.
+
+Recovery `36608521165` remains in progress in preparation job `109543664680`,
+at `Restore verified uploaded candidate without rebuilding or translating`.
+This authoritative running state is a wait, not a failed or missing process.
+Do not restart it because an observation interval ends. When preparation
+finishes, inspect this run's fresh validation artifact and submit both normal
+protected-environment reviews matching its exact identities; the original
+approval cannot substitute for the fresh recovery reviews. French acceptance
+must precede expansion to the remaining candidate set.
+
+Separately, the current-day run `36576367899` has successful locale jobs for
+`fr,pt,es,tr,ru,th`; `it,de` are translating, with no failed jobs at the last
+snapshot. This proves job completion only, not today's exact page counts or
+publication. It runs an older workflow without automatic handoff, so its final
+stored candidates still need explicit adoption/publication after completion.
+None of these running jobs has been cancelled or restarted. No new locale has
+yet been proven live by this checkpoint.
+
+## Stage 14: French recovery and shadow passed; both fresh reviews submitted
+
+Recovery `36608521165` preparation job `109543664680` succeeded on reviewed
+workflow commit `9fc6a936a57e21ab3256e90fa813fb77f0c7f914`. Its own validation
+artifact was downloaded and compared to the original source-run artifact. Both
+legacy and extended review identities are exactly equal, retaining source commit
+`537a206535fb003a959280465f152e8c3a5f74c3`, slot `b`, release
+`1bc786207f6ca80787f5eff84bd2787d` and tree
+`d3674a2b873f54f6d2f247c9f37b2a47bcc8d784ca17ee48259a67e925efa00a`.
+
+Fresh R2 evidence reports 32,606 remote objects verified and 9,766 objects
+downloaded, zero remote mutations, all readiness/performance/preflight checks
+passed, and the strictly proven original pre-deployment failure. Previous
+production remains the captured slot `a` release/tree from Stage 6. The Chinese
+application is byte-identical to that previous version. Shadow verification
+passed 18 page samples and 24 application-route checks, plus the existing
+manifest's 783 declared data files (33,550,281 bytes) and six assets.
+
+French assembly still contains exactly 24 pages, candidate and generation from
+Stage 3, zero paid requests and zero replay inference. Checkpoint checksum
+`484bf08c0f8a051dc28f1f6a169bfe871359f4cbbf95d8b0787551dc2b556f2a`
+reproduced replay candidate
+`0a3ed2ec2ff50f48fbdf03dc7912c02f5da701cdceb66f7a9042b11416e60196`.
+
+Both protected environments still require reviewers and allowed the delegated
+owner to approve. Their exact version variables were saved as needed and all
+were read back successfully. The normal pending-deployments API accepted fresh
+reviews for this recovery: legacy deployment `6742216746` and extended deployment
+`6742216736`. No reviewer rule was removed or bypassed. This is approval and
+recovery evidence, not a production activation claim; cutover and live acceptance
+remain required before extending to the other locales.
+
+## Stage 15: French live; all-33 carry-forward publication dispatched
+
+Recovery `36608521165` completed successfully. The cutover log records the
+prepared slot `b`, release `1bc786207f6ca80787f5eff84bd2787d` and tree
+`d3674a2b873f54f6d2f247c9f37b2a47bcc8d784ca17ee48259a67e925efa00a`. Its live
+acceptance passed the existing Korean, Japanese and Arabic index/sitemap/deep
+checks, the unchanged Chinese runtime/manifest and brand checks, and the
+extended audit. The extended live audit passed `fr`, 24 pages, two deep sample
+URLs and HTTP 200 with `Content-Language: fr`; the exact published sitemap
+contains 24 French URLs with reciprocal zh-Hans/x-default/ko/ja/ar/fr links.
+Cleanup also succeeded. French is therefore the first additional locale
+verified live: 24 pages, production version release `1bc786207f6ca80787f5eff84bd2787d`.
+
+The all-33 carry-forward release was dispatched from reviewed main commit
+`e64fabc3a15167d13cb92f76cb22c0d281e96d4c` as Action `36613057523`. Inputs bind
+the fixed generation `2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b`
+and all 33 exact candidate IDs from the two publication evidence files. The
+composer will carry forward the live French batch and preserve existing
+ko/ja/ar pages while assembling all 33 requested locales; it performs no new
+inference or paid calls. The first status query after dispatch failed with a
+GitHub TLS/EOF transport error, so this run's current state is not claimed
+here and must be checked before any approval. Do not dispatch a duplicate run.
+
+## Stage 16: all-33 assembly observed running
+
+The next authoritative query confirmed Action `36613057523` at head
+`e64fabc3a15167d13cb92f76cb22c0d281e96d4c` was in progress in
+`prepare_release`, specifically `Restore approved extended candidates and
+assemble inactive tree`. This proves the all-33 dispatch reached the real
+assembly step and was not merely queued. A later read encountered another
+GitHub TLS handshake timeout; no conclusion is inferred, and no duplicate
+dispatch, cancellation or network change was made. Resume by reading this
+same run, then use its fresh all-33 identity artifact for the ordinary dual
+protected-environment approval and cutover. No additional translation is
+needed.
