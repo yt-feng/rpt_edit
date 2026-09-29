@@ -373,3 +373,40 @@ with `ready=false` still fails. All 47 recovery and 23 final-guard tests passed.
 Delegated daily-review work is separately uncommitted on the current local
 branch. It is not part of this targeted diagnostic repair and must not be
 described as CI-validated, enabled or deployed.
+
+## Stage 11: exact repair PR saved; external operations stopped on transport error
+
+PR #189 contains the diagnostic reader repair. Initial head
+`2f6895ceebf688c35cdc395d8647055018075604` passed regression run
+`36607392162`; its public identity audit found a repository URL in the preceding
+progress note. The note now uses the plain PR number, without changing the
+scanner. Latest pushed repair head is
+`6614191300195026d4a9df06aab32bf7786cd1d9`. Its audit `36607700432` and test
+`36607700438` were pending at the last observed snapshot.
+
+The PR check watcher then failed with `net/http: TLS handshake timeout`.
+The fail-fast shell stopped before merging PR #189 or dispatching another
+recovery. No network settings, remote URLs, transport options or alternate
+endpoints were changed. Do not infer completion from pending checks. Resume by
+checking that exact PR head through the normal connection, merging only after
+the checks pass, then dispatching a new recovery using the original French
+candidate identities; do not rerun the old recovery source revision.
+
+Separate local daily-publication work now verifies a private handoff against
+the original public main producer, its source day, the exact prepared identity,
+the pinned active ledger and unchanged production before submitting a normal
+protected-environment review through the existing delegated credential. It
+cannot approve a first-time locale, a recovery run, an unconfigured locale or
+an incomplete candidate. Same-day completed receipts can also drain across
+partial source generations, including when translation itself is a no-op.
+These changes remain uncommitted and neither automatic-publication policy
+variable has been enabled; no live delegated-credential test is claimed.
+
+After the transport failure, local-only verification passed 104 tests: handoff
+10, delegated review 9, daily incremental 21, restore assembly 3, publication
+14 and recovery 47. Generated recovery equality, the unchanged public identity
+scanner (6,045 paths) and whitespace checks also passed. This is not remote CI
+or deployment evidence. All 33 original fixed-generation candidates remain
+recorded as 24 pages each (792 total), but no new locale has yet been accepted
+live. No translation rerun, paid call or production activation was performed
+by this local checkpoint.
