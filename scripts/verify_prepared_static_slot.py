@@ -16,7 +16,8 @@ import sys
 from typing import Any
 import xml.etree.ElementTree as ET
 
-from portal_extended_locales import select_locales
+from portal_extended_locales import select_locales, file_for_url
+from audit_portal_extended_live import check_page
 from portal_locale_manifest import (
     MAX_LOCALE_MANIFEST_BYTES, parse_locale_manifest, validate_translation_resolution,
 )
@@ -179,7 +180,7 @@ def verify_extended_static_tree(
         return None
     assembly = json.loads(read_verified_candidate_body(
         client, bucket, prefix + "data/extended-locales/assembly.json", assembly_descriptor,
-        maximum=256 * 1024,
+        maximum=1024 * 1024,
     ).decode("utf-8"))
     locales = assembly.get("locales")
     if (
@@ -203,7 +204,10 @@ def verify_extended_static_tree(
     if origin and set(index_locations) != expected_index:
         raise RuntimeError("Prepared extended sitemap index does not match its assembly receipt")
     for locale in approved:
-        for relative in (f"{locale}/index.html", f"{locale}/llms.txt", f"sitemap-extended-{locale}.xml"):
+        required = [f"{locale}/llms.txt", f"sitemap-extended-{locale}.xml"]
+        if not assembly.get("detail_only"):
+            required.append(f"{locale}/index.html")
+        for relative in required:
             descriptor = files.get(relative)
             if descriptor is None:
                 raise RuntimeError(f"Prepared extended object is missing: {relative}")
@@ -220,8 +224,23 @@ def verify_extended_static_tree(
         )
         locations = [str(node.text or "").strip() for node in ET.fromstring(sitemap_body).findall(".//{*}loc")]
         expected_prefix = f"{origin.rstrip('/')}/{locale}/" if origin else ""
-        if len(locations) != assembly["pages_per_locale"] or (origin and any(not value.startswith(expected_prefix) for value in locations)):
+        count = assembly.get("page_counts", {}).get(locale, assembly["pages_per_locale"])
+        if len(locations) != count or len(set(locations)) != count or (origin and any(not value.startswith(expected_prefix) for value in locations)):
             raise RuntimeError(f"Prepared extended sitemap is incomplete: {locale}")
+        if origin:
+            def localized_path(url):
+                # Validate the source route after stripping the already checked
+                # locale prefix; file_for_url intentionally rejects locale URLs.
+                source = origin.rstrip('/') + '/' + url[len(expected_prefix):]
+                return locale + '/' + file_for_url(source, origin=origin.rstrip('/')).as_posix()
+            expected_paths = {localized_path(url) for url in locations}
+            actual_paths = {path for path in files if path.startswith(locale+'/') and path.endswith('.html')}
+            if expected_paths != actual_paths:
+                raise RuntimeError(f"Prepared extended page set differs from its sitemap: {locale}")
+            for url in locations:
+                path = localized_path(url)
+                body = read_verified_candidate_body(client, bucket, prefix+path, files[path], maximum=4*1024*1024)
+                check_page(body, url, locale)
     return {"locales": list(approved), "pages_per_locale": assembly["pages_per_locale"]}
 
 

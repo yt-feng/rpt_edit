@@ -37,7 +37,7 @@ class HardeningTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             with self.assertRaises(ExpansionError):
-                build(make_corpus([corpus()['documents'][1]]), 'en', root/'out', root/'memo.json', FakeTranslator())
+                build(make_corpus([corpus()['documents'][1]]), 'fr', root/'out', root/'memo.json', FakeTranslator())
             self.assertFalse((root/'out').exists())
 
     def test_symlink_checkpoint_is_rejected_without_overwrite(self):
@@ -45,14 +45,14 @@ class HardeningTests(unittest.TestCase):
             root = Path(tmp); target = root/'protected.json'; target.write_text('unchanged')
             link = root/'memo.json'; link.symlink_to(target)
             with self.assertRaises(ExpansionError):
-                build(corpus(), 'en', root/'out', link, FakeTranslator())
+                build(corpus(), 'fr', root/'out', link, FakeTranslator())
             self.assertEqual(target.read_text(), 'unchanged')
 
     def test_symlink_candidate_directory_is_rejected(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp); (root/'protected').mkdir(); (root/'out').symlink_to(root/'protected', target_is_directory=True)
             with self.assertRaises(ExpansionError):
-                build(corpus(), 'en', root/'out', root/'memo.json', FakeTranslator())
+                build(corpus(), 'fr', root/'out', root/'memo.json', FakeTranslator())
             self.assertFalse(list((root/'protected').iterdir()))
 
     def test_homepage_has_priority_even_in_unsorted_inventory(self):
@@ -70,8 +70,8 @@ class HardeningTests(unittest.TestCase):
             fixture.runbuild(); root, _ = fixture.staging()
             p=root/'data/extended-locales/assembly.json';p.parent.mkdir(parents=True);p.write_text('{}')
             with self.assertRaisesRegex(ExpansionError,'fresh inactive tree'):
-                assemble(root,fixture.c,[fixture.base/'candidate'],('en',),apply=True)
-            self.assertFalse((root/'en').exists())
+                assemble(root,fixture.c,[fixture.base/'candidate'],('fr',),apply=True)
+            self.assertFalse((root/'fr').exists())
         finally: fixture.tearDown()
 
 if __name__ == '__main__':

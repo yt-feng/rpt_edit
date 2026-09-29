@@ -1,5 +1,31 @@
 # Additional locales: local Codex handoff
 
+## Current operator scope (2026-09-26; supersedes historical batch instructions below)
+
+- Translate only newly published public detail pages on the current Asia/Shanghai
+  date, starting 2026-09-25. Do not backfill previous dates, the homepage, About,
+  institution/topic directories or historical related lists. A sitemap lastmod
+  alone is not publication evidence; verify the page's own Article/Report date.
+- 24 means **at most 24 website detail pages per batch**, not PDF pages and not
+  a target to fill. Empty today-only selections skip inference. Completed-content
+  receipts in private R2 advance later same-day batches without translating them
+  again. Unknown publication dates remain excluded, not guessed.
+- The operator increased per-language translation budget to **14400 seconds
+  (four hours)**. Workflow job timeout is 270 minutes, leaving setup/persistence
+  time. Finish early when done; still save timeout checkpoints and keep incomplete
+  candidates unpublished. Keep at most two simultaneous languages.
+- English is excluded from full reading pages and Charts; any future English
+  surface is text-only summary/commentary Blog, never original/full report text.
+  There are 33 non-English expansion targets; all are now requested by default.
+- Follow successful default-branch `Neutral edge catalog refresh` runs to prepare
+  new candidates, defaulting to `all-supported` (33 non-English locales). Completed
+  locales are omitted from the matrix for the selected batch. The workflow
+  hook becomes active only after its normal PR review and merge to main.
+- Do not monitor runs. Stop after dispatch. Do not rerun the old mixed-directory
+  generation `f334aac3023978818d18a4d28ed16cb2541a7b9b6ea803021f1fcd0502c812aa`.
+- Publication integration/approved-page carry-forward remains separate work;
+  automatic translation does not bypass approval, activate pages or imply live.
+
 ## Objective and boundaries
 
 Finish the additional public reading-page locales for KC桌面, building on draft PR #180 and the separately merged manifest-size repair in PR #179. The established Chinese and ko/ja/ar application pages, authentication, report URLs, document access rules and crawler-training policy must remain intact.

@@ -471,6 +471,14 @@ def download_candidate_files(client: Any, bucket: str, manifest: dict[str, Any],
             (locale_manifest.get("index_policy") or {}).get("mode") == "incremental-publication-cutoff",
             "Candidate is not an incremental locale release")
     wanted = set(PUBLIC_PATHS)
+    if 'data/extended-locales/assembly.json' in files:
+        from verify_prepared_static_slot import verify_extended_static_tree
+        from portal_extended_locales import ORIGIN
+        extended = verify_extended_static_tree(client, bucket, prefix, files, origin=ORIGIN)
+        wanted.update(('data/extended-locales/assembly.json', 'sitemap-extended.xml'))
+        for locale in extended['locales']:
+            wanted.add(f'sitemap-extended-{locale}.xml')
+            wanted.update(relative for relative in files if relative.startswith(locale + '/'))
     try:
         routes = declared_checks(locale_manifest) or []
     except RouteVerificationError as error:

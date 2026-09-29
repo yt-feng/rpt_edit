@@ -11,6 +11,7 @@ import atexit
 from collections import Counter
 from datetime import datetime, timezone
 import hashlib
+import http.client
 import json
 import os
 from pathlib import Path
@@ -22,7 +23,7 @@ import threading
 import time
 from typing import Callable, Sequence
 
-from compare_hymt_translation import LANGUAGES, SCRIPT_PATTERNS, request_json, require_actions, verify_model, file_sha256
+from compare_hymt_translation import LANGUAGES, SCRIPT_PATTERNS, ModelHTTPError, request_json, require_actions, verify_model, file_sha256
 from financial_quantity_integrity import FIVE_YEAR_PERIOD_RE, quantity_issues
 
 MANIFEST_PATH = Path(__file__).with_name('hymt_translation_model_manifest.json')
@@ -36,6 +37,10 @@ REVISION = MANIFEST['model']['revision']
 # validation contract are unchanged.
 MODEL_ID = f"{MODEL}@{REVISION}:Q8_0:natural-sentence-v4-table-structure:{hashlib.sha256(MANIFEST_PATH.read_bytes()).hexdigest()[:16]}"
 INSTALL_COMMAND = 'Use .github/actions/setup-offline-translation on a Linux GitHub Actions runner'
+# Accept every printable Unicode scalar plus layout whitespace. The pinned
+# runtime's grammar sampler rejects malformed/unfinished UTF-8 token sequences
+# before its chat parser sees them; no replacement or dropped byte is allowed.
+UNICODE_TEXT_GRAMMAR = r'root ::= [\x09\x0A\x0D\x20-\uD7FF\uE000-\U0010FFFF]*'
 # Recognize the complete reserved token even when a filename underscore or
 # Markdown emphasis touches it; those surrounding underscores are punctuation.
 _PLACEHOLDERS = re.compile(r'__(?:KC_PH_\d+|HYMTPH_\d+)__|__[A-Za-z0-9][A-Za-z0-9_]*?__')
@@ -48,12 +53,14 @@ _QUANTITY_FACT = re.compile(
     r'(?<![A-Za-z0-9_])(?:'
     r'(?:USD|CNY|RMB|HKD|JPY|EUR|GBP|US\$|HK\$|\$|€|£)\s*[+\-−]?\d+(?:[.,]\d+)*'
     r'(?:\s*(?:thousand|million|billion|trillion|mn|mln|bn|bln|tn|万亿|千亿|百亿|十亿|千万|百万|十万|亿元|亿美元|港元|人民币|美元|元))?'
-    r'|[+\-−]?\d+(?:[.,]\d+)*\s*(?:%|％|百分点|個百分點|百分點|亿元|亿美元|港元|人民币|美元|元人民币|元|万亿|千亿|百亿|十亿|千万|百万|十万|亿|万)'
+    r'|[+\-−]?\d+(?:[.,]\d+)*\s*(?:%|％|percentage\s+points?|百分点|個百分點|百分點|亿元|亿美元|港元|人民币|美元|元人民币|元|万亿|千亿|百亿|十亿|千万|百万|十万|亿|万)'
     r'|\d{4}年\d{1,2}月(?:\d{1,2}日)?'
     r'|\d{4}[-/]\d{1,2}(?:[-/]\d{1,2})?'
     r'|\d{1,2}[QH]\d{2,4}|\d{2,4}[QH]\d{1,2}'
     r'|[A-Za-z][A-Za-z0-9._-]*\d[A-Za-z0-9._-]*'
-    r'|\d{2,8}'
+    r'|[+\-−]?\d+(?:st|nd|rd|th)(?![A-Za-z0-9_])'
+    r'|[+\-−]?\d+(?:[.,]\d+)*(?![A-Za-z0-9_])'
+    r'|\d{1,8}'
     r')(?![A-Za-z0-9_])')
 # Financial amounts, dates, percentages, names, and predicates are intentionally
 # absent from opaque-resource masking: splitting those away from the sentence
@@ -118,6 +125,14 @@ def validate_financial_terms(source: str, translated: str, target: str) -> None:
 class OfflineTranslationError(RuntimeError):
     """Missing pinned runtime or an incomplete/structurally invalid translation."""
 
+    def __init__(self, message: str, *, code: str = 'offline-runtime'):
+        super().__init__(message)
+        self.code = code
+
+
+class TranslationBudgetExceeded(TimeoutError):
+    """The whole run's monotonic deadline has elapsed, not one HTTP request."""
+
 
 class OfflineTranslationValidationError(OfflineTranslationError):
     """A completed model response failed content validation, not runtime setup."""
@@ -163,7 +178,8 @@ def split_sentences(text: str, limit: int = 1800) -> list[str]:
     while len(text) > limit:
         candidates = list(re.finditer(r'[。！？](?:\s*)|[.!?](?=\s|$)(?:\s*)', text[:limit + 1]))
         if not candidates:
-            raise OfflineTranslationError('Single sentence exceeds offline context limit; source retained')
+            raise OfflineTranslationError('Single sentence exceeds offline context limit; source retained',
+                                          code='offline-context-limit')
         end = candidates[-1].end()
         parts.append(text[:end])
         text = text[end:]
@@ -241,8 +257,14 @@ def validate_result(source: str, result: str, source_language: str, target: str,
                     *, markdown: bool = True, check_quantities: bool = True) -> None:
     if not result.strip():
         raise OfflineTranslationValidationError('Empty Hy-MT2 translation')
+    if re.search(r'[\ufffd\ud800-\udfff]', result):
+        raise OfflineTranslationValidationError('Invalid Unicode translation')
     if Counter(_PLACEHOLDERS.findall(source)) != Counter(_PLACEHOLDERS.findall(result)):
         raise OfflineTranslationValidationError('Hy-MT2 changed, omitted, or duplicated a protected placeholder')
+    # HTML titles and table cells are plain text too. Validate pipe boundaries
+    # inside the model retry/cache boundary, not only in the page builder.
+    if source.count('|') != result.count('|'):
+        raise OfflineTranslationValidationError('Hy-MT2 changed Markdown structure: |')
     # Korean/Japanese GEO copy is gated on structure and quantities, not wording.
     if check_quantities:
         problems = quantity_issues(source, result, source_language, target)
@@ -316,7 +338,8 @@ class _HyMTEngine:
                 self.process.wait(timeout=5)
         self.log.close()
 
-    def translate(self, text: str, source: str, target: str, *, quality_retry: int = 0) -> str:
+    def translate(self, text: str, source: str, target: str, *, quality_retry: int = 0,
+                  deadline: float | None = None) -> str:
         prompt = (f'Translate the following text into {LANGUAGES[target]}. '
                   'Note that you should only output the translated result without any additional explanation. '
                   'Preserve all __KC_PH_...__ and __HYMTPH_...__ placeholders exactly, including their order. '
@@ -330,6 +353,8 @@ class _HyMTEngine:
         if quality_retry:
             prompt = (f'Quality retry {quality_retry}: the previous draft failed a strict structural or '
                       'financial-integrity check. Use the requested target script for all translatable words. '
+                      'If the input is a short heading, still translate it; do not copy the source verbatim. '
+                      + ('A short Hindi heading must contain Devanagari letters, not only Latin words or numbers. ' if target == 'hi' else '') +
                       'Copy each complete numeric expression, date, percentage, currency and unit exactly '
                       'from the input; do not convert its scale or currency. Preserve every placeholder and '
                       'Markdown delimiter exactly. Output only the corrected translation.\n' + prompt)
@@ -338,29 +363,65 @@ class _HyMTEngine:
             # Keep the pinned model/runtime and all sampling bounds, while
             # making the bounded second attempt meaningfully independent.
             sampling['seed'] = int(sampling.get('seed', 0)) + quality_retry
-        response = request_json(self.port, '/v1/chat/completions', {
-            'model': 'hymt-offline', 'messages': [{'role': 'user', 'content': prompt}],
-            'stream': False, 'cache_prompt': False, **sampling,
-        }, timeout=240)
-        choice = response['choices'][0]
+        # A 240-second socket timeout used to escape as the whole four-hour
+        # budget, abandoning the remaining pages after only minutes. Retry
+        # transient runner-model requests with a larger bounded allowance;
+        # every attempt still obeys the same run deadline and validation gates.
+        for attempt, allowance in enumerate((240, 480, 720)):
+            timeout = allowance if deadline is None else min(allowance, deadline - time.monotonic())
+            if timeout <= 0:
+                raise TranslationBudgetExceeded('Local translation time budget reached')
+            try:
+                response = request_json(self.port, '/v1/chat/completions', {
+                    'model': 'hymt-offline', 'messages': [{'role': 'user', 'content': prompt}],
+                    'stream': False, 'cache_prompt': False, 'grammar': UNICODE_TEXT_GRAMMAR, **sampling,
+                }, timeout=timeout)
+                break
+            except (OSError, http.client.HTTPException, ModelHTTPError, json.JSONDecodeError) as error:
+                if deadline is not None and time.monotonic() >= deadline:
+                    raise TranslationBudgetExceeded('Local translation time budget reached') from None
+                code = ('offline-request-timeout' if isinstance(error, TimeoutError) else
+                        'offline-response-invalid' if isinstance(error, json.JSONDecodeError) else
+                        f'offline-http-{error.status}' + (f'-{error.category}' if error.category else '') if isinstance(error, ModelHTTPError) else
+                        'offline-transport')
+                retryable = not isinstance(error, ModelHTTPError) or error.status in {408, 429, 500, 502, 503, 504}
+                if not retryable or attempt == 2:
+                    raise OfflineTranslationError('Pinned model request failed after bounded attempts', code=code) from None
+        try:
+            choice = response['choices'][0]
+            content = choice['message'].get('content') or ''
+        except (IndexError, KeyError, TypeError, AttributeError):
+            raise OfflineTranslationError('Invalid model response envelope', code='offline-response-invalid') from None
         if choice.get('finish_reason') == 'length':
             raise OfflineTranslationValidationError('Hy-MT2 output reached token limit')
         if choice.get('finish_reason') != 'stop':
-            raise OfflineTranslationError('Hy-MT2 output reached token limit or did not finish')
-        return choice['message'].get('content') or ''
+            raise OfflineTranslationError('Hy-MT2 output did not finish', code='offline-model-incomplete')
+        return content
 
 
 class HyMTOfflineTranslator:
     def __init__(self, cache_dir: str | Path | None = None, *, model_dir: str | Path | None = None,
                  engine_factory: Callable[[str, str], object] | None = None, batch_size: int = 1,
-                 diagnostic_callback: Callable[[dict], None] | None = None):
+                 diagnostic_callback: Callable[[dict], None] | None = None,
+                 validation_attempts: int = 3):
         self.cache_dir = Path(cache_dir or os.environ.get('HYMT_TRANSLATION_CACHE') or os.environ.get('PORTAL_OFFLINE_TRANSLATION_CACHE', '.cache/hymt-translation'))
         self.model_dir = Path(model_dir or os.environ.get('HYMT_MODEL_DIR', '.cache/hymt-model'))
         self._engine_factory = engine_factory
         # Explicit opt-in for the fixed public smoke corpus only; never printed or persisted here.
         self._diagnostic_callback = diagnostic_callback
+        if validation_attempts not in {1, 2, 3}:
+            raise ValueError('validation_attempts must be 1..3')
+        self.validation_attempts = validation_attempts
+        self.deadline = None
         self.model_id = MODEL_ID
         self.stats = {'cache_hits': 0, 'translated_fragments': 0, 'batch_requests': 0}
+
+    def set_deadline(self, deadline: float) -> None:
+        self.deadline = deadline
+
+    def _check_deadline(self) -> None:
+        if self.deadline is not None and time.monotonic() >= self.deadline:
+            raise TranslationBudgetExceeded('Local translation time budget reached')
 
     def _engine(self, source: str, target: str):
         if self._engine_factory:
@@ -410,19 +471,22 @@ class HyMTOfflineTranslator:
                 raise ValueError('Cache identity changed')
         except (OSError, ValueError, KeyError, TypeError, OfflineTranslationError):
             try:
+                self._check_deadline()
                 engine = self._engine(detected, target)
-                attempt_count = 2 if isinstance(engine, _HyMTEngine) else 1
-                max_attempts = 3 if isinstance(engine, _HyMTEngine) else 1
+                attempt_count = self.validation_attempts if isinstance(engine, _HyMTEngine) else 1
+                max_attempts = attempt_count
                 for attempt in range(max_attempts):
+                    self._check_deadline()
                     model_input = masked
                     quantity_retry_replacements: dict[str, str] = {}
-                    if attempt == 2:
+                    if attempt == 2 and isinstance(engine, _HyMTEngine):
                         model_input, quantity_retry_replacements = _mask_quantity_facts(
                             masked, len(replacements) + len(terms))
                     try:
                         with _LOCK:
                             if isinstance(engine, _HyMTEngine):
-                                value = engine.translate(model_input, detected, target, quality_retry=attempt)
+                                budget = {'deadline': self.deadline} if self.deadline is not None else {}
+                                value = engine.translate(model_input, detected, target, quality_retry=attempt, **budget)
                             else:
                                 # Test doubles and future adapters retain the
                                 # established three-argument contract.
@@ -435,22 +499,25 @@ class HyMTOfflineTranslator:
                         if markdown:
                             value = _restore_table_edges(model_input, value)
                         validate_result(model_input, value, detected, target, markdown=markdown, check_quantities=False)
-                        if quantity_retry_replacements:
-                            # The cache format remains the original masked
-                            # sentence, not the temporary retry input.
-                            value = _restore_terms(value, quantity_retry_replacements)
-                            active_replacements = replacements
-                        cache_value = value
+                        # Validate the materialized result inside the same
+                        # bounded retry loop. Otherwise a quantity-protected
+                        # third response could pass the masked check and only
+                        # fail after the retry budget had already been spent.
+                        cache_value = _restore_terms(value, quantity_retry_replacements)
+                        materialized = _restore_terms(cache_value, terms)
+                        for token, original in replacements.items():
+                            materialized = materialized.replace(token, original)
+                        validate_result(core, materialized, detected, target, markdown=markdown)
+                        value = materialized
+                        active_replacements = replacements
                         fresh_translation = True
                         break
                     except OfflineTranslationValidationError as error:
-                        if (attempt == 1 and 'quantity' in str(error).casefold()
-                                and isinstance(engine, _HyMTEngine)):
-                            attempt_count = 3
-                            continue
                         if attempt + 1 >= attempt_count:
                             raise
             except OfflineTranslationError:
+                raise
+            except TimeoutError:
                 raise
             except Exception as error:
                 raise OfflineTranslationError(f'Hy-MT2 translation failed: {error}') from error

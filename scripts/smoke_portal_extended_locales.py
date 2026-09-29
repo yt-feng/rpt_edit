@@ -21,7 +21,7 @@ SAMPLES = (
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument('--locales', default='en,fr,hi,zh-Hant')
+    parser.add_argument('--locales', default='fr,pt,hi,zh-Hant')
     args = parser.parse_args()
     locales = select_locales(args.locales)
     require_actions()

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audit activated extended-locale homepage and one deep page per locale."""
+"""Audit real published detail routes; never invent missing locale homepages."""
 from __future__ import annotations
 
 import argparse
@@ -69,26 +69,23 @@ def audit(origin: str, locales: str) -> dict:
     session.trust_env = False
     reports = []
     for locale in selected:
-        homepage_url = f'{origin}/{locale}/'
-        headers, homepage = require_response(session, homepage_url)
-        expected_language = headers.get('Content-Language', '').strip().lower()
-        if expected_language != locale.lower():
-            raise ExpansionError(f'Live Content-Language is invalid for {locale}: {expected_language}')
-        check_page(homepage, homepage_url, locale)
         sitemap_url = f'{origin}/sitemap-extended-{locale}.xml'
         _sitemap_headers, sitemap_body = require_response(session, sitemap_url)
         tree = ET.fromstring(sitemap_body)
         locations = [str(node.text or '').strip() for node in tree.findall('.//{*}loc')]
         prefix = f'{origin}/{locale}/'
-        if not locations or any(not value.startswith(prefix) for value in locations):
+        if not locations or len(set(locations)) != len(locations) or any(not value.startswith(prefix) for value in locations):
             raise ExpansionError(f'Live extended sitemap contains an invalid URL: {locale}')
-        deep_url = sorted(value for value in set(locations) if value.rstrip('/') != homepage_url.rstrip('/'))[0]
-        deep_headers, deep_body = require_response(session, deep_url)
-        if deep_headers.get('Content-Language', '').strip().lower() != locale.lower():
-            raise ExpansionError(f'Live deep Content-Language is invalid for {locale}')
-        check_page(deep_body, deep_url, locale)
-        reports.append({'locale': locale, 'pages': len(locations), 'homepage': homepage_url,
-                        'deep_sample': deep_url, 'homepage_status': 200, 'deep_status': 200,
+        samples = sorted(set((sorted(locations)[0], sorted(locations)[-1])))
+        for url in samples:
+            headers, body = require_response(session, url)
+            if headers.get('Content-Language', '').strip().lower() != locale.lower():
+                raise ExpansionError(f'Live detail Content-Language is invalid for {locale}')
+            if 'noindex' in headers.get('X-Robots-Tag', '').lower():
+                raise ExpansionError(f'Live detail HTTP robots policy is noindex for {locale}')
+            check_page(body, url, locale)
+        reports.append({'locale': locale, 'pages': len(locations),
+                        'deep_samples': samples, 'deep_status': 200,
                         'content_language': locale})
     return {'schema_version': 1, 'origin': origin, 'locales': list(selected), 'reports': reports,
             'status': 'passed'}

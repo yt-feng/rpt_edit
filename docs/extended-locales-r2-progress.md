@@ -4,6 +4,157 @@ This checkpoint records implementation and verification state only. Generated
 source, translations, checkpoints, candidate HTML and credentials stay out of
 Git.
 
+## 2026-09-26 All 33 non-English targets requested
+
+The operator authorized expanding beyond the French canary to all 33 additional
+non-English locales. Manual and automatic candidate defaults now use
+`all-supported`; a comma-separated subset remains supported. English is still
+rejected at selection, build and approval: only text-only summary/commentary Blog
+is permitted for a future English publisher, never original/full report text or
+charts. This change does not add or dispatch an English publisher.
+
+Local checks: 226 Python tests passed, 1 skipped (PyYAML unavailable); 65 edge
+host tests passed. Both workflow YAML files and all 15 shell blocks parsed;
+public identity audit passed for 5,916 files, and `git diff --check` passed.
+The 33-locale round trip is synthetic plumbing coverage, not a claim that 33
+real-model jobs or production releases have already completed.
+
+Current main `5d3259476527350afd6b6dfcfafc904876276eac` was merged into the clean
+PR #182 worktree. The primary checkout's unrelated uncommitted work is untouched.
+The source batch remains current-day-only, at most 24 detail pages, shared as one
+immutable R2 generation across the target matrix. Completed locales for that
+batch are excluded rather than restarted for a slower locale. Changed content
+reactivates the affected locales; source/unit checks and incomplete handling are
+unchanged. Concurrency stays two, with at most four hours of model time per locale
+(at most 132 model runner-hours for 33 languages, not four hours total). No paid
+translation, history backfill, generated Git files or translation artifacts.
+
+Verified prerequisite: French run `36086471273` succeeded with 24/24 candidate
+pages, 338 model calls and 102 exact-source fallback units (106 uses), no paid
+requests. Its R2 checkpoint SHA-256 is
+`93b3f4ac71e40bb61a3ec05536bfc8f8ef202a93b2580830732bac430a5cdb6b`;
+candidate `850af59c89b64137fe7022d785ffe34576976f6e2443545ee1835777ef5c2768`
+is ready privately, not live. That historical source is not dispatched again.
+
+Stop point: push reviewed code and dispatch one all-supported current-day
+candidate workflow. Do not wait, monitor, automatically rerun, merge the PR or
+claim publication. The daily hook is not active until normal PR merge; production
+assembly/approval/carry-forward remains separate work.
+
+## 2026-09-25 Four-hour, today-only incremental scope
+
+Implementation commit: `e64a21707d598dfe9898ad738b6ef790349d5c7d`.
+
+The operator superseded the former 40-minute/mixed-24-page batch with up to four
+hours per language and **new content only, no historical backfill**. The current
+workflow defaults to 14400 translation seconds and a 270-minute job limit; the
+30-minute difference covers setup and durable checkpoint/candidate persistence.
+
+Selection now uses the current Asia/Shanghai date and the page's own publication
+date (Article/BlogPosting/NewsArticle/Report). Only detail pages published on that
+date enter the batch. Homepage/About/institution/topic directories and historical
+recommendation lists are not translated. A refreshed sitemap date is not enough
+to admit an old report. Unknown dates are skipped. 24 is a maximum, not a required
+count. No new content means no model job. The launch floor is 2026-09-25.
+
+The new incremental orchestration reuses the existing R2 client and secret names:
+private per-locale daily completion receipts skip unchanged pages; immutable,
+SHA-verified memo snapshots seed exact source/model/locale units across source
+generations. Reused units are validated again and only used rows enter the new
+generation-bound checkpoint. Incomplete candidates never advance completion
+receipts. Later same-day invocations deterministically take the next pending
+up-to-24 pages; previous dates are not revisited.
+
+An automatic workflow_run hook follows successful same-repository/default-branch
+`Neutral edge catalog refresh` runs. It defaults to French; explicit non-English
+expansion uses `PORTAL_EXTENDED_INCREMENTAL_LOCALES`. This becomes active only
+after PR review/merge to main. It creates private noindex candidates, not a live
+release. Fixed-source release integration and approved-page carry-forward remain
+separate, uncompleted publication work.
+
+Cancellation was requested for old run `36085380192`; no terminal-state polling.
+The former mixed-directory source generation will not be resumed. Local checks:
+265 Python tests passed, 1 skipped (PyYAML unavailable); both changed YAML files
+and all 15 shell blocks parsed using Ruby YAML and bash -n. A read-only live
+sitemap sample timed out locally; no networking changes or retries were made,
+so the real today-only page count remains for the dispatched runner to establish.
+
+## 2026-09-25 French budget exhaustion and fixed-generation continuation
+
+Run `36076945440` used code SHA
+`8c62f69998acdcaf1ebda703b97e18cc124f2221`. Source restore, checkpoint restore,
+pinned model setup, bounded translation, checkpoint persistence and candidate
+persistence all succeeded. Only the final incomplete-status step failed, with
+exit code 75 after the configured 2400-second budget. This is not a storage or
+English-exclusion error and must not be relabeled a completed candidate.
+
+- French completed pages: **1/24**; failure_count=0, budget_exhausted=true.
+- New model calls: 322; cache hits: 40; exact-source fallback units: 251
+  (271 uses). These are unit-level statistics, not completed-page counts.
+- Restored checkpoint: 81,992 bytes, SHA-256
+  `cba1d08b0c9ef8dd1ec2396874b0ef94e17d86b31c4ff3f68094c34819a3036c`.
+- Saved checkpoint: 181,254 bytes, SHA-256
+  `a25949c64d512c8e7f1422f0f15741b00c18e7e50dfdca06a1fc717511e8c297`.
+- Candidate `9503241e9996397d775c5ea9752b2973f1c1ca2cfe584b8c08a28f86f5de873b`
+  remains private, incomplete, ready=false; manifest SHA-256
+  `d38cd42fba9af9ed8c3cf6aa7195a9538054bc5aaa6b5e80642d8e5e1631d9a0`.
+- Source remains
+  `f334aac3023978818d18a4d28ed16cb2541a7b9b6ea803021f1fcd0502c812aa`.
+
+Latest main checked: `e17250b8` (archive/catalog-only changes since the prior
+check). PR #182 still points at the source above. No translator, model, approval
+or completeness gate change is needed for this outcome. Dispatch one further
+French-only 2400-second batch with the same source and source-fallback policy,
+restoring the durable unit checkpoint; do not restart source collection, expand
+the language set, monitor, auto-repeat or claim publication. Another budget
+exhaustion must remain explicitly incomplete and may require a further resume.
+
+## 2026-09-25 English summary-only scope correction
+
+The operator excluded English from full reading-page expansion: English remains
+available for text-only summary/interpretation use: no original/full report text,
+no embedded charts and no English Charts entry. This change does not create an
+English summary publisher or modify the Chinese/ko/ja/ar chart surfaces. `ADDITIONAL` now
+contains 33 non-English targets; selection, generation and candidate verification
+reject English, including old English candidates. Workflow defaults and bounded
+model-canary targets now start with French; the model language registry is intact.
+
+Cancellation was requested for English run `36075707981`; its terminal state was
+not polled. The next dispatch is French only, 24 pages, 2400 seconds, restoring the
+existing fixed R2 source/checkpoint with exact-source fallback enabled. No monitor
+or production deployment is requested. Earlier evidence below remains historical.
+
+Local verification of this scope correction: 248 Python tests passed, 1 skipped
+(PyYAML unavailable). Contracts cover explicit/all-supported English exclusion,
+zero-inference/no-output rejection, old English candidate rejection and approval
+rejection before any R2 access, while preserving English model/summary capability.
+
+## 2026-09-25 architecture and source-fallback correction
+
+The current architecture audit is in `extended-locales-architecture-audit.md`.
+PR #180 and #181 have merged; PR #182 carries the next translation correction.
+Main was refreshed to `681eae64969bfe2c39aa802dc7d4f4e7eadb5424` in the isolated
+`codex/extended-locales-r3-20260925` worktree. The primary dirty checkout was not edited.
+
+Following the operator's explicit acceptance of translation imperfections for
+SEO/GEO, additional locales now support the same exact-source fallback policy
+as ko/ja/ar. Rejected model responses are discarded; accepted translations and
+source-fallback decisions occupy separate checkpoint maps. The candidate
+manifest reports both page completeness and actual translation completeness.
+The outer repeated retry was removed; fallback mode uses one model attempt per
+new unit and reuses decisions on resume. Pipe validation, model request deadlines
+and established-locale URL assembly were repaired without changing providers.
+
+Local verification: 287 Python tests passed, 1 skipped (PyYAML absent); all 27
+edge-static-host tests passed. Public identity audit and `git diff --check` passed.
+No production deployment is claimed. Fixed-source publication integration,
+carry-forward across later batches and deterministic archive cursors remain
+explicitly documented gaps. The requested stop point is dispatching the next
+24-page French candidate (2400 seconds, fixed existing source, source fallback
+enabled), without watching Actions or installing a monitor.
+
+The remaining sections are earlier checkpoint evidence, not the latest PR status.
+
 ## Committed implementation
 
 - Branch: `codex/extended-locales-r2-20260924`

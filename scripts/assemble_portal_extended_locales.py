@@ -14,7 +14,7 @@ import re
 import xml.etree.ElementTree as ET
 from portal_extended_locales import (
     ADDITIONAL, HREFLANG, ORIGIN, ExpansionError, PublicParser, digest, file_for_url,
-    locale_url, select_locales, stable_bytes, validate_corpus,
+    locale_url, select_locales, stable_bytes, validate_corpus, daily_corpus_day,
 )
 from offline_translation import MODEL_ID
 
@@ -69,7 +69,8 @@ def verified_candidate(directory: Path, corpus: dict, *, origin: str = ORIGIN) -
             or parser.content_lang != manifest['locale'] or 'noindex' not in parser.metadata.get('robots', '')):
             raise ExpansionError('Candidate canonical/language/robots mismatch')
         payloads[record['path']] = raw
-    if origin + '/' not in by_url: raise ExpansionError('A localized homepage is required before activation')
+    if origin + '/' not in by_url and not daily_corpus_day(corpus):
+        raise ExpansionError('A localized homepage is required before activation')
     return manifest, payloads
 
 
@@ -120,11 +121,14 @@ def assemble(
         if not source.is_file() or source.is_symlink() or digest(source.read_bytes()) != doc['source_html_sha256']:
             raise ExpansionError('Inactive source differs from the reviewed corpus; rebuild against this source generation')
         alternatives = {'zh-Hans': doc['url'], 'x-default': doc['url']}
-        for code in existing_locales:
-            alternatives[HREFLANG.get(code, code)] = locale_url(doc['url'], code, origin=origin)
         # Preserve an existing alternate only when its matching local page is
         # present and correctly self-canonical. Do not invent ko/ja/ar URLs.
-        for code, url in doc.get('source_alternates', {}).items():
+        existing_alternates = dict(doc.get('source_alternates', {}))
+        for code in existing_locales:
+            if code not in {'ko', 'ja', 'ar'}:
+                raise ExpansionError('Unknown established locale')
+            existing_alternates[code] = origin + '/' + code + urlsplit_path(doc['url'])
+        for code, url in existing_alternates.items():
             if code in {'zh-Hans', 'x-default'} or code not in {'ko', 'ja', 'ar'}: continue
             expected = origin + '/' + code + urlsplit_path(doc['url'])
             local = root / code / relative

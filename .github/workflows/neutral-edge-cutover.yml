@@ -38,7 +38,7 @@ on:
           - month
         default: incremental
       extended_locales:
-        description: "Explicit additional-locale approval set, for example en or en,fr; empty keeps the current set"
+        description: "Explicit additional-locale approval set, for example fr or fr,pt; English is summary-only; empty keeps the current set"
         required: false
         type: string
         default: ""
@@ -62,6 +62,9 @@ concurrency:
 
 jobs:
   prepare_release:
+    permissions:
+      contents: read
+      actions: read
     if: >-
       ${{
         github.event_name == 'workflow_dispatch' ||
@@ -184,6 +187,16 @@ jobs:
           ref: ${{ github.sha }}
           fetch-depth: 1
           persist-credentials: false
+
+      - name: Require configured extended production approval environment
+        if: steps.operation.outputs.extended_requested == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh api "repos/$GITHUB_REPOSITORY/environments/portal-extended-locales-production" \
+            --jq '.protection_rules | any(.type == "required_reviewers" and (.reviewers | length > 0))' \
+            | python3 -c 'import sys; assert sys.stdin.read().strip() == "true", "Configure required reviewers before extended activation"'
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -745,55 +758,6 @@ jobs:
             --catalog portal_suite/data/catalog.json \
             --chart-output _neutral_site/data/chart_search_index.json
 
-      - name: Restore approved extended candidates and assemble inactive tree
-        id: extended_assembly
-        if: steps.operation.outputs.extended_requested == 'true'
-        env:
-          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
-          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
-          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-          R2_BUCKET: ${{ secrets.R2_BUCKET }}
-          EXTENDED_R2_PREFIX: _extended-locales/v1
-          EXTENDED_LOCALES: ${{ inputs.extended_locales || '' }}
-          EXTENDED_SOURCE_GENERATION: ${{ inputs.extended_source_generation || '' }}
-          EXTENDED_CANDIDATE_IDS: ${{ inputs.extended_candidate_ids || '' }}
-        run: |
-          set -euo pipefail
-          evidence="$RUNNER_TEMP/extended-locales-review-identity.json"
-          PYTHONPATH=scripts python3 -B scripts/restore_assemble_portal_extended_r2.py \
-            --root _neutral_site \
-            --prefix "$EXTENDED_R2_PREFIX" \
-            --source-generation "$EXTENDED_SOURCE_GENERATION" \
-            --approved-locales "$EXTENDED_LOCALES" \
-            --candidates "$EXTENDED_CANDIDATE_IDS" \
-            --evidence-out "$evidence"
-          EVIDENCE="$evidence" python3 - <<'PY' >> "$GITHUB_OUTPUT"
-          import json
-          import os
-          from pathlib import Path
-
-          value = json.loads(Path(os.environ["EVIDENCE"]).read_text(encoding="utf-8"))
-          if value.get("schema_version") != 1 or value.get("paid_provider_requests") != 0:
-              raise SystemExit("Extended assembly evidence is invalid")
-          locales = value.get("locales")
-          candidates = value.get("candidate_ids")
-          if not isinstance(locales, list) or not locales or not isinstance(candidates, dict):
-              raise SystemExit("Extended assembly identity is incomplete")
-          print("ready=true")
-          print("locales=" + ",".join(locales))
-          print("source_generation=" + value["source_generation"])
-          print("candidate_ids=" + ",".join(f"{locale}={candidates[locale]}" for locale in locales))
-          print("pages_per_locale=" + str(value["pages_per_locale"]))
-          PY
-          echo 'PORTAL_EXTENDED_LOCALES_ASSEMBLED=true' >> "$GITHUB_ENV"
-          {
-            echo "## Extended locale inactive-tree assembly"
-            echo
-            echo "- Source generation: \`$(jq -r .source_generation "$evidence")\`"
-            echo "- Approved locales: \`$(jq -r '.locales | join(",")' "$evidence")\`"
-            echo "- Pages per locale: \`$(jq -r .pages_per_locale "$evidence")\`"
-            echo "- R2 candidate ids are recorded in the same-run review identity."
-          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Snapshot protected Chinese release before locale build
         id: chinese_snapshot
@@ -1024,6 +988,62 @@ jobs:
           print(f"sha256={hashlib.sha256(report.read_bytes()).hexdigest()}")
           PY
 
+      - name: Restore approved extended candidates and assemble inactive tree
+        id: extended_assembly
+        if: steps.operation.outputs.multilingual_enabled == 'true' && steps.locale_build.outputs.ready == 'true'
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          EXTENDED_R2_PREFIX: _extended-locales/v1
+          EXTENDED_LOCALES: ${{ inputs.extended_locales || '' }}
+          EXTENDED_SOURCE_GENERATION: ${{ inputs.extended_source_generation || '' }}
+          EXTENDED_CANDIDATE_IDS: ${{ inputs.extended_candidate_ids || '' }}
+        run: |
+          set -euo pipefail
+          evidence="$RUNNER_TEMP/extended-locales-review-identity.json"
+          PYTHONPATH=scripts python3 -B scripts/restore_assemble_portal_extended_r2.py \
+            --root _neutral_site \
+            --active-state "$RUNNER_TEMP/previous-edge-state.json" \
+            --prefix "$EXTENDED_R2_PREFIX" \
+            --source-generation "$EXTENDED_SOURCE_GENERATION" \
+            --approved-locales "$EXTENDED_LOCALES" \
+            --candidates "$EXTENDED_CANDIDATE_IDS" \
+            --evidence-out "$evidence"
+          EVIDENCE="$evidence" python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          import os
+          from pathlib import Path
+
+          value = json.loads(Path(os.environ["EVIDENCE"]).read_text(encoding="utf-8"))
+          if value.get("schema_version") != 1 or value.get("paid_provider_requests") != 0:
+              raise SystemExit("Extended assembly evidence is invalid")
+          if value.get("ready") is False:
+              print("ready=false")
+              raise SystemExit(0)
+          locales = value.get("locales")
+          candidates = value.get("candidate_ids")
+          if not isinstance(locales, list) or not locales or not isinstance(candidates, dict):
+              raise SystemExit("Extended assembly identity is incomplete")
+          print("ready=true")
+          print("locales=" + ",".join(locales))
+          print("source_generation=" + value["source_generation"])
+          print("candidate_ids=" + ",".join(f"{locale}={candidates[locale]}" for locale in locales))
+          print("pages_per_locale=" + str(value["pages_per_locale"]))
+          PY
+          if [ "$(jq -r .ready "$evidence")" = "true" ]; then
+            echo 'PORTAL_EXTENDED_LOCALES_ASSEMBLED=true' >> "$GITHUB_ENV"
+          fi
+          {
+            echo "## Extended locale inactive-tree assembly"
+            echo
+            echo "- Source generation: \`$(jq -r .source_generation "$evidence")\`"
+            echo "- Approved locales: \`$(jq -r '.locales | join(",")' "$evidence")\`"
+            echo "- Pages per locale: \`$(jq -r .pages_per_locale "$evidence")\`"
+            echo "- R2 candidate ids are recorded in the same-run review identity."
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: Summarize multilingual translation outcome
         if: always() && steps.operation.outputs.multilingual_enabled == 'true'
         env:
@@ -1116,7 +1136,6 @@ jobs:
             IFS=',' read -r -a extended_locale_values <<< "$EXTENDED_LOCALES"
             for locale in "${extended_locale_values[@]}"; do
               required_paths+=(
-                "$locale/index.html"
                 "$locale/llms.txt"
                 "sitemap-extended-$locale.xml"
               )
@@ -1439,7 +1458,8 @@ jobs:
           for locale in locales:
               locale_root = root / locale
               pages = sorted(locale_root.rglob("*.html"))
-              if not pages or len(pages) != assembly["pages_per_locale"]:
+              expected_count = assembly.get("page_counts", {}).get(locale, assembly["pages_per_locale"])
+              if not pages or len(pages) != expected_count:
                   raise SystemExit(f"Extended page count is invalid for {locale}")
               for page in pages:
                   parser = PublicParser()
@@ -1458,7 +1478,7 @@ jobs:
               sitemap = ET.parse(root / f"sitemap-extended-{locale}.xml").getroot()
               locations = [str(node.text or "").strip() for node in sitemap.findall(".//{*}loc")]
               prefix = f"{origin}/{locale}/"
-              if len(locations) != assembly["pages_per_locale"] or any(not value.startswith(prefix) for value in locations):
+              if len(locations) != expected_count or len(set(locations)) != expected_count or any(not value.startswith(prefix) for value in locations):
                   raise SystemExit(f"Extended sitemap is incomplete for {locale}")
           print("extended_locales=" + ",".join(locales))
           print("extended_pages_per_locale=" + str(assembly["pages_per_locale"]))
@@ -1577,6 +1597,7 @@ jobs:
           if [ -n "$EXTENDED_LOCALES" ]; then
             locale_contract_args+=(
               --build-contract scripts/restore_assemble_portal_extended_r2.py
+              --build-contract scripts/portal_extended_publication.py
               --build-contract scripts/assemble_portal_extended_locales.py
               --build-contract _neutral_site/data/extended-locales/assembly.json
               --build-contract _neutral_site/sitemap-extended.xml
@@ -2658,9 +2679,16 @@ jobs:
               expected_alternates[language] = urlunsplit(
                   (origin.scheme, origin.netloc, localized_path, "", "")
               )
-          for language in (value for value in os.environ.get("EXTENDED_LOCALES", "").split(",") if value):
+          import sys
+          sys.path.insert(0, "scripts")
+          from portal_extended_locales import HREFLANG
+          extended_path = Path("_release_validation/candidate/extended-assembly.json")
+          extended_sources = json.loads(extended_path.read_text()).get("source_urls_by_locale", {}) if extended_path.is_file() else {}
+          for language, sources in extended_sources.items():
+              if language not in HREFLANG or root_url not in sources:
+                  continue
               localized_path = f"/{language}" + (root_path if root_path.startswith("/") else "/" + root_path)
-              expected_alternates[language] = urlunsplit(
+              expected_alternates[HREFLANG[language]] = urlunsplit(
                   (origin.scheme, origin.netloc, localized_path, "", "")
               )
 
@@ -2760,7 +2788,7 @@ jobs:
 
       - name: Audit extended locale pages after live cutover
         id: extended_acceptance
-        if: needs.prepare_release.outputs.extended_requested == 'true'
+        if: needs.prepare_release.outputs.extended_ready == 'true'
         run: |
           set -euo pipefail
           python3 -B scripts/audit_portal_extended_live.py \
@@ -2773,7 +2801,7 @@ jobs:
         if: >-
           ${{ always() &&
               steps.edge_deploy.outcome != 'skipped' &&
-              (steps.release_acceptance.outcome != 'success' || (needs.prepare_release.outputs.extended_requested == 'true' && steps.extended_acceptance.outcome != 'success') || needs.prepare_release.outputs.operation == 'rehearse') }}
+              (steps.release_acceptance.outcome != 'success' || (needs.prepare_release.outputs.extended_ready == 'true' && steps.extended_acceptance.outcome != 'success') || needs.prepare_release.outputs.operation == 'rehearse') }}
         timeout-minutes: 5
         uses: cloudflare/wrangler-action@v4
         with:

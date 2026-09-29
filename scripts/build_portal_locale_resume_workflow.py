@@ -73,6 +73,8 @@ jobs:
     outputs = prepare.split('    outputs:\n', 1)[1].split('    steps:\n', 1)[0]
     outputs = outputs.replace('steps.runtime_context.outputs.static_release', 'steps.static_upload.outputs.static_release')
     outputs = outputs.replace('steps.operation.outputs.commit_sha', 'steps.static_upload.outputs.commit_sha')
+    # A recovered extended release always needs fresh exact-candidate approval.
+    outputs = outputs.replace('steps.operation.outputs.extended_requested', 'steps.extended_assembly.outputs.ready')
     result = header + '    outputs:\n' + outputs + '    steps:\n'
     operation = steps['Require reviewed main operation']
     operation = operation.replace('${{ inputs.operation }}', 'migrate')
@@ -126,7 +128,32 @@ jobs:
             --work-dir "$RUNNER_TEMP"
 
 '''
-    result += steps['Restore approved extended candidates and assemble inactive tree']
+    result += '''      - name: Recover extended identity without modifying uploaded candidate
+        id: extended_assembly
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          PYTHONPATH=scripts python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os
+          from pathlib import Path
+          from restore_assemble_portal_extended_r2 import restored_identity
+          value = restored_identity(Path('_neutral_site'))
+          Path(os.environ['RUNNER_TEMP'], 'extended-locales-review-identity.json').write_text(json.dumps(value))
+          print('ready=' + str(value['ready']).lower())
+          if value['ready']:
+              print('locales=' + ','.join(value['locales']))
+              print('source_generation=' + value['source_generation'])
+              print('candidate_ids=' + ','.join(f"{code}={value['candidate_ids'][code]}" for code in value['locales']))
+              print('pages_per_locale=' + str(value['pages_per_locale']))
+          PY
+          if [ "$(jq -r .ready "$RUNNER_TEMP/extended-locales-review-identity.json")" = "true" ]; then
+            gh api "repos/$GITHUB_REPOSITORY/environments/portal-extended-locales-production" \\
+              --jq 'any(.protection_rules[]; .type == "required_reviewers" and (.reviewers | length > 0))' \\
+              | python3 -c 'import sys; assert sys.stdin.read().strip() == "true", "Configure required reviewers before extended activation"'
+          fi
+
+'''
     result += '''      - name: Confirm restored locale readiness
         id: locale_build
         run: echo 'ready=true' >> "$GITHUB_OUTPUT"
@@ -150,6 +177,7 @@ jobs:
              'Validate multilingual shadow sample plan before upload',
              'Prepare isolated multilingual shadow worker', 'Deploy isolated multilingual shadow worker',
              'Verify isolated multilingual shadow worker', 'Publish multilingual review identity',
+             'Publish extended locale review identity',
              'Build public validation artifact', 'Upload release validation artifact')
     for name in names:
         if name == 'Upload release validation artifact':

@@ -4,6 +4,7 @@ This module deliberately leaves the established ko/ja/ar application mirrors,
 private document APIs, memberships and production transaction workflow alone.
 """
 from __future__ import annotations
+from datetime import date, datetime
 import hashlib
 import json
 import re
@@ -12,18 +13,22 @@ from html import escape, unescape
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urljoin, urlsplit, urlunsplit
+from zoneinfo import ZoneInfo
 
 from compare_hymt_translation import LANGUAGES, SCRIPT_PATTERNS
 
 ORIGIN = 'https://kcdesk.com'
 EXISTING = frozenset({'zh', 'ko', 'ja', 'ar'})
+# English is text-only summary/interpretation: no full reading pages or charts.
+# Keep its model capability and metadata for established summary consumers.
+SUMMARY_ONLY = frozenset({'en'})
 # Native labels are navigation labels, not machine-translation quality claims.
 NATIVE = dict(zip(
     'zh en fr pt es ja tr ru ar ko th it de vi ms id tl hi zh-Hant pl cs nl km my fa gu ur te mr he bn ta uk bo kk mn ug yue'.split(),
     ['简体中文', 'English', 'Français', 'Português', 'Español', '日本語', 'Türkçe', 'Русский', 'العربية', '한국어', 'ไทย', 'Italiano', 'Deutsch', 'Tiếng Việt', 'Bahasa Melayu', 'Bahasa Indonesia', 'Filipino', 'हिन्दी', '繁體中文', 'Polski', 'Čeština', 'Nederlands', 'ខ្មែរ', 'မြန်မာ', 'فارسی', 'ગુજરાતી', 'اردو', 'తెలుగు', 'मराठी', 'עברית', 'বাংলা', 'தமிழ்', 'Українська', 'བོད་སྐད་', 'Қазақша', 'Монгол', 'ئۇيغۇرچە', '粵語'], strict=True))
 RTL = frozenset({'ar', 'fa', 'ur', 'ug', 'he'})
 OG_LOCALES = {'en': 'en_US', 'fr': 'fr_FR', 'pt': 'pt_BR', 'es': 'es_ES', 'tr': 'tr_TR', 'ru': 'ru_RU', 'th': 'th_TH', 'it': 'it_IT', 'de': 'de_DE', 'vi': 'vi_VN', 'ms': 'ms_MY', 'id': 'id_ID', 'tl': 'tl_PH', 'hi': 'hi_IN', 'pl': 'pl_PL', 'cs': 'cs_CZ', 'nl': 'nl_NL', 'km': 'km_KH', 'my': 'my_MM', 'fa': 'fa_IR', 'gu': 'gu_IN', 'ur': 'ur_PK', 'te': 'te_IN', 'mr': 'mr_IN', 'he': 'he_IL', 'bn': 'bn_BD', 'ta': 'ta_IN', 'uk': 'uk_UA', 'bo': 'bo_CN', 'kk': 'kk_KZ', 'mn': 'mn_MN', 'ug': 'ug_CN', 'zh-Hant': 'zh_TW'}
-ADDITIONAL = tuple(code for code in LANGUAGES if code not in EXISTING)
+ADDITIONAL = tuple(code for code in LANGUAGES if code not in EXISTING | SUMMARY_ONLY)
 # Google documents ISO-639-1 plus optional script/region. yue is valid BCP-47
 # but is NOT advertised here as a supported Google hreflang code.
 HREFLANG = {code: code for code in LANGUAGES if code != 'yue'}
@@ -39,6 +44,8 @@ DROP_TAGS = frozenset({'script', 'style', 'nav', 'footer', 'form', 'button', 'no
 VOID = frozenset('area base br col embed hr img input link meta param source track wbr'.split())
 MAX_DOCUMENT_BYTES = 2 * 1024 * 1024
 SCHEMA = 1
+INCREMENTAL_START = '2026-09-25'
+DAILY_SCOPE = 'daily-new-content-v1'
 
 class ExpansionError(ValueError):
     pass
@@ -52,10 +59,39 @@ def digest(value: bytes) -> str:
     return hashlib.sha256(value).hexdigest()
 
 
+def publication_day(value: str) -> str:
+    """Reject unknown/invalid dates; timestamp dates follow the site's timezone."""
+    try:
+        if re.fullmatch(r'\d{4}-\d{2}-\d{2}', value):
+            return date.fromisoformat(value).isoformat()
+        stamp = datetime.fromisoformat(value.replace('Z', '+00:00'))
+        if stamp.tzinfo is None: return ''
+        return stamp.astimezone(ZoneInfo('Asia/Shanghai')).date().isoformat()
+    except (ValueError, TypeError):
+        return ''
+
+
+def daily_document(doc: dict, day: str) -> bool:
+    path = urlsplit(doc['url']).path
+    detail = (re.fullmatch(r'/blog/\d{8}-[A-Za-z0-9_.-]+\.html', path)
+              or re.fullmatch(r'/reports/[A-Za-z0-9_-]+\.html', path))
+    return bool(detail and path not in {'/reports/index.html', '/reports/topics.html'}
+                and day >= INCREMENTAL_START and publication_day(doc.get('datePublished', '')) == day)
+
+
+def daily_corpus_day(corpus: dict) -> str:
+    """Only authenticated-by-digest daily detail sources may omit an old homepage."""
+    days = {doc.get('selection_day', '') for doc in corpus['documents']}
+    if len(days) != 1: return ''
+    day = next(iter(days))
+    return day if day and all(doc.get('selection_scope') == DAILY_SCOPE and daily_document(doc, day)
+                             for doc in corpus['documents']) else ''
+
+
 def select_locales(value: str) -> tuple[str, ...]:
     result = ADDITIONAL if value == 'all-supported' else tuple(value.split(','))
     if not result or len(set(result)) != len(result) or any(code not in ADDITIONAL for code in result):
-        raise ExpansionError('Use all-supported or distinct additional locale codes; existing mirrors are not expansion targets')
+        raise ExpansionError('Use all-supported or distinct additional locale codes; English is summary-only and existing mirrors are not expansion targets')
     return result
 
 
@@ -101,8 +137,9 @@ class PublicParser(HTMLParser):
     Charts stay on the source page. Public headings, paragraphs, table rows and
     source-link labels survive. No login forms or embedded account data survive.
     """
-    def __init__(self):
+    def __init__(self, *, exclude_related=False):
         super().__init__(convert_charrefs=True)
+        self.exclude_related = exclude_related
         self.stack = []
         self.capture = None
         self.blocks = []
@@ -147,6 +184,8 @@ class PublicParser(HTMLParser):
             self.flush(); self.has_main = self.in_main = True; self.main_level = len(self.stack)
         hidden = ('hidden' in values or values.get('aria-hidden') == 'true'
                   or bool(re.search(r'display\s*:\s*none|visibility\s*:\s*hidden', values.get('style') or '', re.I)))
+        if self.exclude_related and any('related' in cls for cls in (values.get('class') or '').split()):
+            hidden = True
         if tag not in VOID: self.stack.append((tag, hidden))
         if self.suppressed(): return
         if tag in HTML_BLOCKS:
@@ -195,14 +234,14 @@ def walk_ld(value):
         for item in value: yield from walk_ld(item)
 
 
-def document_from_html(url: str, body: bytes, *, origin: str = ORIGIN) -> dict:
+def document_from_html(url: str, body: bytes, *, origin: str = ORIGIN, exclude_related=False) -> dict:
     url = public_url(url, origin=origin)
     if not body or len(body) > MAX_DOCUMENT_BYTES:
         raise ExpansionError('Empty or oversized public HTML')
     source = body.decode('utf-8', errors='strict')
     if re.search(r'cf-chl-|challenge-platform|<title>Just a moment', source, re.I):
         raise ExpansionError('Challenge page is not translatable content')
-    parsed = PublicParser(); parsed.feed(source); parsed.close()
+    parsed = PublicParser(exclude_related=exclude_related); parsed.feed(source); parsed.close()
     if parsed.canonical and public_url(parsed.canonical, origin=origin, base=url) != url:
         raise ExpansionError('Requested page is not its own canonical')
     if 'noindex' in parsed.metadata.get('robots', '').lower():
@@ -220,7 +259,7 @@ def document_from_html(url: str, body: bytes, *, origin: str = ORIGIN) -> dict:
     # Read dates from the page's own Article node, never a related article.
     published = modified = ''
     own = [node for value in parsed.jsonld for node in walk_ld(value)
-           if node.get('@type') in ('Article', 'BlogPosting', 'NewsArticle')
+           if node.get('@type') in ('Article', 'BlogPosting', 'NewsArticle', 'Report')
            and (node.get('url') == url or str(node.get('@id', '')).split('#')[0] == url
                 or node.get('mainEntityOfPage') == url)]
     if len(own) == 1:
@@ -322,7 +361,7 @@ def render_document(doc: dict, translated: dict, locale: str, urls: set[str], *,
 <meta property="og:url" content="{escape(canonical, quote=True)}">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">{jsonld}</script><style>{STYLE}</style></head>
-<body><header><nav><a href="{origin}">KC桌面</a><a href="{origin}/{locale}/">{escape(copy['home'])}</a><span>{NATIVE[locale]}</span></nav></header>
+<body><header><nav><a href="{origin}">KC桌面</a><a href="{origin + '/' + locale + '/' if origin + '/' in urls else origin + '/'}">{escape(copy['home'])}</a><span>{NATIVE[locale]}</span></nav></header>
 <main><h1>{escape(title)}</h1><aside class="notice"><strong>{escape(copy['machine'])}</strong><p>{escape(copy['source_note'])}</p><a href="{escape(source, quote=True)}" lang="{escape(doc['source_language'], quote=True)}">{escape(copy['source'])}</a></aside>
 {''.join(blocks)}
 <section><h2>{escape(copy['links'])}</h2><ul>{''.join(related)}</ul></section></main>
