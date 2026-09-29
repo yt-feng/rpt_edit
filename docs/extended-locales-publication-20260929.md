@@ -473,3 +473,35 @@ publication. It runs an older workflow without automatic handoff, so its final
 stored candidates still need explicit adoption/publication after completion.
 None of these running jobs has been cancelled or restarted. No new locale has
 yet been proven live by this checkpoint.
+
+## Stage 14: French recovery and shadow passed; both fresh reviews submitted
+
+Recovery `36608521165` preparation job `109543664680` succeeded on reviewed
+workflow commit `9fc6a936a57e21ab3256e90fa813fb77f0c7f914`. Its own validation
+artifact was downloaded and compared to the original source-run artifact. Both
+legacy and extended review identities are exactly equal, retaining source commit
+`537a206535fb003a959280465f152e8c3a5f74c3`, slot `b`, release
+`1bc786207f6ca80787f5eff84bd2787d` and tree
+`d3674a2b873f54f6d2f247c9f37b2a47bcc8d784ca17ee48259a67e925efa00a`.
+
+Fresh R2 evidence reports 32,606 remote objects verified and 9,766 objects
+downloaded, zero remote mutations, all readiness/performance/preflight checks
+passed, and the strictly proven original pre-deployment failure. Previous
+production remains the captured slot `a` release/tree from Stage 6. The Chinese
+application is byte-identical to that previous version. Shadow verification
+passed 18 page samples and 24 application-route checks, plus the existing
+manifest's 783 declared data files (33,550,281 bytes) and six assets.
+
+French assembly still contains exactly 24 pages, candidate and generation from
+Stage 3, zero paid requests and zero replay inference. Checkpoint checksum
+`484bf08c0f8a051dc28f1f6a169bfe871359f4cbbf95d8b0787551dc2b556f2a`
+reproduced replay candidate
+`0a3ed2ec2ff50f48fbdf03dc7912c02f5da701cdceb66f7a9042b11416e60196`.
+
+Both protected environments still require reviewers and allowed the delegated
+owner to approve. Their exact version variables were saved as needed and all
+were read back successfully. The normal pending-deployments API accepted fresh
+reviews for this recovery: legacy deployment `6742216746` and extended deployment
+`6742216736`. No reviewer rule was removed or bypassed. This is approval and
+recovery evidence, not a production activation claim; cutover and live acceptance
+remain required before extending to the other locales.
