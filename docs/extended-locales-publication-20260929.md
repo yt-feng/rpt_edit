@@ -322,9 +322,9 @@ prepared slot. It must not be blindly retried on the old SHA. French recovery
 inputs are slot `b`, release `1bc786207f6ca80787f5eff84bd2787d`, tree and previous
 release identities from Stage 6. Recovery itself must reverify they remain exact.
 
-PR #188 now contains the recovery/dependency fix and disabled-by-default daily
-handoff: `https://github.com/yt-feng/rpt_edit/pull/188`. It is attached to this
-task. Head `66872c5f87fea35ff4832ebaff5a76a912dccb15` passed all four CI checks;
+PR #188 contains the recovery/dependency fix and disabled-by-default daily
+handoff. It is attached to this task. Head
+`66872c5f87fea35ff4832ebaff5a76a912dccb15` passed all four CI checks;
 follow-up `2998cd19650a99692dfcdcc49e7b9e89b8a57830` also installs `requests`
 in recovery preparation for the extended identity reader, with a regression
 covering that fresh job. Generated recovery equality and 46 related local
