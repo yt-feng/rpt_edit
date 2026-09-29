@@ -144,6 +144,48 @@ class ResumeTests(unittest.TestCase):
     def save_manifest(self):
         self.r2.objects[publisher.manifest_key("b")] = {"body": encoded(self.manifest)}
 
+    def test_old_candidate_restores_chart_index_for_new_public_acceptance_gate(self):
+        from compare_portal_release_semantics import COMPONENT_KEYS, digest, stable_value
+        from verify_public_chart_index import main as chart_gate
+
+        chart_path = "data/chart_search_index.json"
+        index = {"schema_version": 1, "report_count": 1, "item_count": 1, "reports": [
+            {"report_id": "original-report", "chart_count": 1, "charts": [
+                {"image_id": "a" * 64, "description": "unchanged original chart"}]}]}
+        components = dict.fromkeys(COMPONENT_KEYS, "0" * 64)
+        components["chart_search_index"] = digest(stable_value(index))
+        semantics = {"schema_version": 1, "normalizer_version": 1, "components": components,
+                     "semantic_sha256": digest(components)}
+        for relative, value in ((chart_path, index), ("data/release-semantics.json", semantics)):
+            body = encoded(value)
+            descriptor = {**self.manifest["files"][relative], "size": len(body),
+                          "sha256": hashlib.sha256(body).hexdigest()}
+            self.manifest["files"][relative] = descriptor
+            self.r2.objects[publisher.slot_prefix("b") + relative] = {
+                "body": body, "metadata": {"sha256": descriptor["sha256"]}}
+        self.r2.operations.clear()
+        downloaded = resume.download_candidate_files(self.r2, "bucket", self.manifest, self.site, workers=1)
+        self.assertIn(chart_path, downloaded)
+        self.assertIn(("get", publisher.slot_prefix("b") + chart_path), self.r2.operations)
+        self.assertEqual((self.site / chart_path).read_bytes(), encoded(index))
+        self.assertTrue(all(operation == "get" for operation, _key in self.r2.operations))
+        receipt = self.work / "chart-expected.json"
+        self.assertEqual(chart_gate(["prepare", "--index", str(self.site / chart_path),
+                                    "--semantics", str(self.site / "data/release-semantics.json"),
+                                    "--output", str(receipt)]), 0)
+        self.assertEqual(json.loads(receipt.read_text())["item_count"], 1)
+
+    def test_resumed_chart_index_cannot_be_missing_or_differ_from_committed_hash(self):
+        relative = "data/chart_search_index.json"
+        key = publisher.slot_prefix("b") + relative
+        self.r2.objects[key]["body"] = b"altered file"
+        with self.assertRaisesRegex(resume.ResumeError, "downloaded file differs from manifest"):
+            resume.download_candidate_files(self.r2, "bucket", self.manifest, self.site, workers=1)
+        self.assertFalse((self.site / relative).exists())
+        self.manifest["files"].pop(relative)
+        with self.assertRaisesRegex(resume.ResumeError, "missing an audit or public artifact file"):
+            resume.download_candidate_files(self.r2, "bucket", self.manifest, self.site, workers=1)
+
     def test_download_extended_release_verifies_before_preserving_its_exact_objects(self):
         extra = {'data/extended-locales/assembly.json': b'{}', 'sitemap-extended.xml': b'index',
                  'sitemap-extended-fr.xml': b'sitemap', 'fr/llms.txt': b'links', 'fr/blog/new.html': b'approved page'}

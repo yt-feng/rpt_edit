@@ -25,6 +25,33 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         setup = recovery.split('      - name: Install read-only recovery dependencies', 1)[1].split('      - name: ', 1)[0]
         self.assertIn('"requests>=2.31,<3"', setup)
 
+    def test_chart_public_content_is_bound_to_candidate_and_transactional_acceptance(self):
+        prepare = self.workflow.split("Build public validation artifact", 1)[1].split(
+            "Upload release validation artifact", 1)[0]
+        self.assertIn("scripts/verify_public_chart_index.py prepare", prepare)
+        self.assertIn("--index _neutral_site/data/chart_search_index.json", prepare)
+        self.assertIn("--output _release_validation/candidate/chart-index-expected.json", prepare)
+        acceptance = self.workflow.split("Accept prepared release through the live edge", 1)[1].split(
+            "Audit extended locale pages after live cutover", 1)[0]
+        self.assertIn("$origin/.well-known/edge-release/$STATIC_RELEASE/data/chart_search_index.json", acceptance)
+        self.assertIn("$origin/data/chart_search_index.json", acceptance)
+        self.assertEqual(acceptance.count('--expect-sha256 "$chart_sha" --expected-bytes "$chart_bytes"'), 2)
+        self.assertIn("scripts/verify_public_chart_index.py verify", acceptance)
+        self.assertIn("--output _release_acceptance/chart-index.json", acceptance)
+        self.assertNotIn("continue-on-error", acceptance)
+        self.assertIn("steps.release_acceptance.outcome != 'success'", self.workflow)
+        evidence = self.workflow.split("Preserve public chart acceptance evidence", 1)[1].split(
+            "cleanup_multilingual_shadow:", 1)[0]
+        self.assertIn("if: always()", evidence)
+        self.assertIn("neutral-release-acceptance-${{ github.run_id }}-${{ github.run_attempt }}", evidence)
+        self.assertIn("_release_validation/candidate/chart-index-expected.json", evidence)
+        self.assertIn("_release_acceptance/chart-index.json", evidence)
+        self.assertNotIn("public-chart-index-after.json", evidence)
+        for path in (WORKFLOW, ROOT / ".github/workflows/public-identity-guard.yml",
+                     ROOT / ".github/workflows/neutral-locale-resume.yml"):
+            self.assertIn("scripts/test_verify_public_chart_index.py", path.read_text())
+
+
     @classmethod
     def setUpClass(cls) -> None:
         cls.workflow = WORKFLOW.read_text(encoding="utf-8")
@@ -337,7 +364,14 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertLess(cutover, deploy)
         self.assertIn("--max-workers 16", self.workflow[upload:cutover])
         self.assertIn("timeout-minutes: 150", self.workflow[prepare:cutover])
-        self.assertIn("timeout-minutes: 90", self.workflow[cutover:])
+        transaction = self.workflow[cutover:].split("  cleanup_multilingual_shadow:", 1)[0]
+        job_timeout = int(re.search(r"^    timeout-minutes: (\d+)$", transaction, re.M)[1])
+        step_timeouts = [int(value) for value in re.findall(r"^        timeout-minutes: (\d+)$", transaction, re.M)]
+        self.assertGreaterEqual(job_timeout, sum(step_timeouts) + 20)
+        extended = transaction.split("Audit extended locale pages after live cutover", 1)[1].split(
+            "Roll back failed release or completed rehearsal", 1)[0]
+        self.assertIn("timeout-minutes: 15", extended)
+        self.assertIn("timeout-minutes: 135", transaction)
         self.assertEqual(self.workflow.count("ref: ${{ github.sha }}"), 3)
         for job in ('prepare_release', 'extended_daily_review', 'cutover'):
             block = re.search(r'^  '+job+r':\n(.*?)(?=^  [a-z_]+:\n|\Z)', self.workflow, re.M | re.S)[1]
