@@ -52,6 +52,11 @@ on:
         required: false
         type: string
         default: ""
+      extended_handoff:
+        description: "Optional immutable private R2 receipt for the daily candidate handoff; does not bypass approval"
+        required: false
+        type: string
+        default: ""
 
 permissions:
   contents: read
@@ -122,6 +127,7 @@ jobs:
           EXTENDED_LOCALES_REQUESTED: ${{ inputs.extended_locales || '' }}
           EXTENDED_SOURCE_GENERATION: ${{ inputs.extended_source_generation || '' }}
           EXTENDED_CANDIDATE_IDS: ${{ inputs.extended_candidate_ids || '' }}
+          EXTENDED_HANDOFF: ${{ inputs.extended_handoff || '' }}
         run: |
           set -euo pipefail
           test "$GITHUB_REF" = "refs/heads/main"
@@ -145,7 +151,7 @@ jobs:
             multilingual_enabled="true"
           fi
           extended_requested="false"
-          if [ -n "$EXTENDED_LOCALES_REQUESTED$EXTENDED_SOURCE_GENERATION$EXTENDED_CANDIDATE_IDS" ]; then
+          if [ -n "$EXTENDED_LOCALES_REQUESTED$EXTENDED_SOURCE_GENERATION$EXTENDED_CANDIDATE_IDS$EXTENDED_HANDOFF" ]; then
             extended_requested="true"
             multilingual_enabled="true"
           fi
@@ -1000,6 +1006,7 @@ jobs:
           EXTENDED_LOCALES: ${{ inputs.extended_locales || '' }}
           EXTENDED_SOURCE_GENERATION: ${{ inputs.extended_source_generation || '' }}
           EXTENDED_CANDIDATE_IDS: ${{ inputs.extended_candidate_ids || '' }}
+          EXTENDED_HANDOFF: ${{ inputs.extended_handoff || '' }}
         run: |
           set -euo pipefail
           evidence="$RUNNER_TEMP/extended-locales-review-identity.json"
@@ -1010,6 +1017,7 @@ jobs:
             --source-generation "$EXTENDED_SOURCE_GENERATION" \
             --approved-locales "$EXTENDED_LOCALES" \
             --candidates "$EXTENDED_CANDIDATE_IDS" \
+            --handoff "$EXTENDED_HANDOFF" \
             --evidence-out "$evidence"
           EVIDENCE="$evidence" python3 - <<'PY' >> "$GITHUB_OUTPUT"
           import json

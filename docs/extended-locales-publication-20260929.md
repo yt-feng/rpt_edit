@@ -259,3 +259,33 @@ approval and returned deployment `6738526860` for
 `537a206535fb003a959280465f152e8c3a5f74c3`. Required reviewers and version
 checks remain configured. This is approval evidence only: the cutover and
 live-acceptance jobs still have to succeed before French is counted live.
+
+The next authoritative snapshot confirmed `extended_locales_approval=success`
+and `cutover=in_progress` at `Checkout audited cutover source`. The subsequent
+read of this same run failed with GitHub TLS handshake timeout. The Action
+was not restarted; its final cutover/acceptance outcome remains unverified.
+Daily run `36576367899` had completed `fr,pt,es,tr,ru`; `th,it` were running.
+
+## Stage 8: daily candidate handoff implemented locally, not activated
+
+`portal_extended_handoff.py` selects only complete checksum-verified candidates
+for explicitly enabled locales already present in the pinned active R2 ledger.
+It skips incomplete or already-published identities without disguising storage
+permission/corruption failures. The source day comes from the fixed daily
+selection, not the later matrix completion time. It performs no translation,
+historical discovery, approval or activation. A content-free immutable private
+R2 receipt binds producer run/attempt/commit and the exact generation/candidate
+map; the ordinary release assembler verifies the receipt against its inputs.
+
+The daily pipeline's new post-matrix job is restricted to main daily/candidate
+runs and is disabled unless `PORTAL_EXTENDED_AUTO_PUBLISH_LOCALES` is explicitly
+configured. Historical publication-resume and read-only recovery/staging runs
+cannot trigger it. It dispatches the normal serialized release workflow; the
+protected exact-version approval remains required. No automatic reviewer has
+been implemented, so this handoff alone does not establish unattended daily
+publication. The new repository policy variable has not been configured.
+
+Local verification: 82 tests passed across handoff, incremental, restore,
+publication and production-workflow contracts; generated recovery equality and
+public identity scan (6,043 files) passed. The changes and progress are local
+only at this checkpoint: no PR, CI result or deployment is claimed for them.

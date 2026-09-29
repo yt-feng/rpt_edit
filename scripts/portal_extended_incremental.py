@@ -205,7 +205,7 @@ def main() -> int:
             result = prepare(store, docs, locales, day, args.corpus)
         if args.github_output:
             with args.github_output.open('a') as stream:
-                for key in ('has_work', 'generation', 'locales_json'):
+                for key in ('has_work', 'generation', 'locales_json', 'day'):
                     value = str(result[key]).lower() if isinstance(result[key], bool) else result[key]
                     stream.write(f'{key}={value}\n')
     else:

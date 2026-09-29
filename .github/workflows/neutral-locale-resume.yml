@@ -89,6 +89,7 @@ jobs:
           EXTENDED_LOCALES_REQUESTED: ${{ inputs.extended_locales || '' }}
           EXTENDED_SOURCE_GENERATION: ${{ inputs.extended_source_generation || '' }}
           EXTENDED_CANDIDATE_IDS: ${{ inputs.extended_candidate_ids || '' }}
+          EXTENDED_HANDOFF: ${{ inputs.extended_handoff || '' }}
         run: |
           set -euo pipefail
           test "$GITHUB_REF" = "refs/heads/main"
@@ -112,7 +113,7 @@ jobs:
             multilingual_enabled="true"
           fi
           extended_requested="false"
-          if [ -n "$EXTENDED_LOCALES_REQUESTED$EXTENDED_SOURCE_GENERATION$EXTENDED_CANDIDATE_IDS" ]; then
+          if [ -n "$EXTENDED_LOCALES_REQUESTED$EXTENDED_SOURCE_GENERATION$EXTENDED_CANDIDATE_IDS$EXTENDED_HANDOFF" ]; then
             extended_requested="true"
             multilingual_enabled="true"
           fi
