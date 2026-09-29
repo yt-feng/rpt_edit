@@ -100,9 +100,10 @@ class VisionConfigurationError(RuntimeError):
 class RetryableVisionError(RuntimeError):
     """A service-wide or transport failure that must never quarantine an image."""
 
-    def __init__(self, message: str, *, reason: str = "other") -> None:
+    def __init__(self, message: str, *, reason: str = "other", diagnostic: dict | None = None) -> None:
         super().__init__(message)
         self.reason = reason if reason in RETRYABLE_REASON_CODES else "other"
+        self.diagnostic = safe_model_diagnostic(diagnostic)
 
 
 class StableImageError(RuntimeError):
@@ -140,6 +141,58 @@ def retryable_reason_code(exc: BaseException) -> str:
         return "other"
     reason = str(getattr(exc, "reason", "other"))
     return reason if reason in RETRYABLE_REASON_CODES else "other"
+
+
+def safe_model_diagnostic(value: Any) -> dict[str, Any]:
+    """Keep only bounded structural facts, never content, error text or URLs."""
+    if not isinstance(value, dict):
+        return {}
+    result = {}
+    allowed = {
+        "finish_reason": {"stop", "length", "content_filter", "tool_calls", "function_call", "missing", "other"},
+        "content_type": {"string", "text_blocks", "null", "other"},
+        "parse_failure": {"syntax", "shape_or_empty", "malformed_message"},
+    }
+    for key, choices in allowed.items():
+        item = value.get(key)
+        if isinstance(item, str) and item in choices:
+            result[key] = item
+    for key in ("content_chars", "content_blocks", "json_error_pos", "json_error_input_chars"):
+        item = value.get(key)
+        if type(item) is int and 0 <= item <= 100_000_000:
+            result[key] = item
+    digest = value.get("content_sha256")
+    if isinstance(digest, str) and re.fullmatch(r"[0-9a-f]{64}", digest):
+        result["content_sha256"] = digest
+    return result
+
+
+def model_failure_diagnostic(choice: Any, content: Any, error: BaseException | None = None) -> dict[str, Any]:
+    finish = choice.get("finish_reason") if isinstance(choice, dict) else None
+    if finish is None:
+        finish = "missing"
+    elif not isinstance(finish, str) or finish not in {"stop", "length", "content_filter", "tool_calls", "function_call"}:
+        finish = "other"
+    # The missing-object wrapper retains the decoder cause, including the point
+    # where a truncated response stopped. Never persist the decoder's input text.
+    decoder_error = error if isinstance(error, json.JSONDecodeError) else getattr(error, "__cause__", None)
+    result = {
+        "finish_reason": finish,
+        "content_type": "string" if isinstance(content, str) else "text_blocks" if isinstance(content, list) else "null" if content is None else "other",
+        "parse_failure": "syntax" if isinstance(decoder_error, json.JSONDecodeError) else "shape_or_empty" if error is not None else "malformed_message",
+    }
+    if isinstance(content, str):
+        text = content
+    elif isinstance(content, list):
+        result["content_blocks"] = len(content)
+        text = "".join(part["text"] for part in content if isinstance(part, dict) and part.get("type") == "text" and isinstance(part.get("text"), str))
+    else:
+        text = None
+    if text is not None:
+        result.update(content_chars=len(text), content_sha256=hashlib.sha256(text.encode("utf-8", errors="surrogatepass")).hexdigest())
+    if isinstance(decoder_error, json.JSONDecodeError):
+        result.update(json_error_pos=decoder_error.pos, json_error_input_chars=len(decoder_error.doc))
+    return safe_model_diagnostic(result)
 
 
 def transport_reason_code(exc: requests.RequestException) -> str:
@@ -418,20 +471,24 @@ def validate_api_base(value: str) -> str:
 
 def parse_model_json(value: Any) -> dict[str, Any]:
     if isinstance(value, list):
-        value = "".join(
-            clean_text(part.get("text"), 20_000)
-            for part in value
-            if isinstance(part, dict) and part.get("type") == "text"
-        )
-    text = str(value or "").strip()
+        if any(not isinstance(part, dict) or part.get("type") != "text"
+               or not isinstance(part.get("text"), str) for part in value):
+            raise RuntimeError("Vision response has unsupported content blocks")
+        # Reassemble the JSON envelope exactly. Cleaning/truncating each block
+        # can corrupt otherwise valid JSON and alter string values at the seams.
+        # Field length limits belong to normalize_analysis after JSON decoding.
+        value = "".join(part["text"] for part in value)
+    if not isinstance(value, str):
+        raise RuntimeError("Vision response content must be text")
+    text = value.strip()
     text = JSON_FENCE_RE.sub("", text).strip()
     try:
         payload = json.loads(text)
-    except json.JSONDecodeError:
+    except json.JSONDecodeError as exc:
         start = text.find("{")
         end = text.rfind("}")
         if start < 0 or end <= start:
-            raise RuntimeError("Vision response did not contain JSON")
+            raise RuntimeError("Vision response did not contain JSON") from exc
         payload = json.loads(text[start : end + 1])
     if not isinstance(payload, dict):
         raise RuntimeError("Vision response JSON must be an object")
@@ -669,6 +726,7 @@ class VisionClient:
                                 last_error = RetryableVisionError(
                                     "Vision model content was not valid JSON",
                                     reason="model_json",
+                                    diagnostic=model_failure_diagnostic(choice, None),
                                 )
                             else:
                                 content = message.get("content")
@@ -678,6 +736,7 @@ class VisionClient:
                                     last_error = RetryableVisionError(
                                         "Vision model content was not valid JSON",
                                         reason="model_json",
+                                        diagnostic=model_failure_diagnostic(choice, content, exc),
                                     )
                                     last_error.__cause__ = exc
 
@@ -989,6 +1048,9 @@ def build_index(
                     "next_retry_at": (datetime.now(BEIJING) + timedelta(hours=delay_hours)).isoformat(timespec="seconds"),
                     "updated_at_bjt": now_iso(),
                 }
+                diagnostic = safe_model_diagnostic(getattr(exc, "diagnostic", None))
+                if diagnostic:
+                    state_items[candidate.image_sha256]["failure_diagnostic"] = diagnostic
                 atomic_write_json(state_path, state)
                 if is_stable_image_error:
                     consecutive_transient_failures = 0

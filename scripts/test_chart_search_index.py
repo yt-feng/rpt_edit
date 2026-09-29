@@ -2061,5 +2061,117 @@ class ChartSearchIndexTests(unittest.TestCase):
         self.assertLess(cleanup_flag, publish_command)
 
 
+class ModelJsonRecoveryTests(unittest.TestCase):
+    def test_text_blocks_preserve_long_json(self) -> None:
+        payload = sample_analysis()
+        payload.update(description="private " + "x" * 21_000)
+        text = json.dumps(payload)
+        blocks = [{"type": "text", "text": text}]
+        self.assertEqual(chart.parse_model_json(blocks), payload)
+        self.assertEqual(chart.parse_model_json(blocks), chart.parse_model_json(text))
+        self.assertEqual(chart.normalize_analysis(chart.parse_model_json(blocks)),
+                         chart.normalize_analysis(payload))
+
+    def test_text_block_seams_preserve_whitespace_quotes_and_escapes(self) -> None:
+        payload = {"title": ' first  second "quoted" \\path\t中文 '}
+        text = json.dumps(payload, ensure_ascii=False)
+        # Every possible seam covers quoted whitespace, escaped quotes, a
+        # backslash escape, and the JSON envelope itself.
+        for split in range(len(text) + 1):
+            with self.subTest(split=split):
+                blocks = [{"type": "text", "text": text[:split]},
+                          {"type": "text", "text": text[split:]}]
+                self.assertEqual(chart.parse_model_json(blocks), chart.parse_model_json(text))
+                self.assertEqual(chart.parse_model_json(blocks), payload)
+
+    def test_invalid_block_shapes_and_incomplete_json_remain_errors(self) -> None:
+        for value in ([{"type": "text", "text": '{"is_chart":'}],
+                      [{"type": "image_url", "text": "{}"}],
+                      [{"type": "text", "text": "{}"}, {"type": "image_url", "text": "private"}],
+                      [{"type": "text", "text": 1}],
+                      [{"type": "text", "text": '{"title":"raw\x00control"}'}],
+                      None, {}, []):
+            with self.subTest(value=value), self.assertRaises((ValueError, RuntimeError)):
+                chart.parse_model_json(value)
+
+    def test_failed_response_metadata_is_exact_and_has_no_private_text(self) -> None:
+        private = '{"title":"private-sentinel", "description": invalid}'
+        with tempfile.TemporaryDirectory() as temp:
+            path = Path(temp)/"image.png"
+            write_image(path)
+            client = chart.VisionClient(api_base="https://vision.example.invalid/v1", api_key="private-key",
+                                        model="fixture", timeout=5, retries=1, retry_backoff=.1, min_interval=0)
+            response = Mock(status_code=200, headers={})
+            response.json.return_value = {"choices": [{"finish_reason": "length", "message": {"content": private}}]}
+            client.session = Mock()
+            client.session.post.return_value = response
+            with self.assertRaises(chart.RetryableVisionError) as caught:
+                client.analyze(path)
+        diagnostic = caught.exception.diagnostic
+        self.assertEqual(chart.retryable_reason_code(caught.exception), "model_json")
+        self.assertEqual(diagnostic["finish_reason"], "length")
+        self.assertEqual(diagnostic["content_type"], "string")
+        self.assertEqual(diagnostic["parse_failure"], "syntax")
+        self.assertEqual(diagnostic["content_chars"], len(private))
+        self.assertEqual(diagnostic["content_sha256"], hashlib.sha256(private.encode()).hexdigest())
+        self.assertLess(diagnostic["json_error_pos"], diagnostic["json_error_input_chars"])
+        self.assertNotIn("private", json.dumps(diagnostic))
+
+    def test_truncated_json_keeps_decoder_point_and_safe_finish_reason(self) -> None:
+        text = '{"title":"unfinished'
+        try:
+            chart.parse_model_json(text)
+        except RuntimeError as error:
+            diagnostic = chart.model_failure_diagnostic(
+                {"finish_reason": "private-provider-detail"},
+                [{"type": "text", "text": text}], error,
+            )
+        else:
+            self.fail("truncated model JSON must fail")
+        self.assertEqual(diagnostic["finish_reason"], "other")
+        self.assertEqual(diagnostic["content_type"], "text_blocks")
+        self.assertEqual(diagnostic["content_blocks"], 1)
+        self.assertEqual(diagnostic["parse_failure"], "syntax")
+        self.assertEqual(diagnostic["json_error_input_chars"], len(text))
+        self.assertLess(diagnostic["json_error_pos"], len(text))
+        self.assertNotIn("private", json.dumps(diagnostic))
+
+    def test_diagnostic_allowlist_rejects_unbounded_or_wrong_typed_values(self) -> None:
+        self.assertEqual(chart.safe_model_diagnostic({
+            "finish_reason": ["stop"], "content_type": "private",
+            "parse_failure": "private", "content_sha256": "private",
+            "content_chars": True, "content_blocks": 100_000_001,
+            "json_error_pos": -1, "json_error_input_chars": 1.0,
+            "content": "private", "error": "private",
+        }), {})
+
+    def test_private_state_keeps_safe_diagnostics_and_success_clears_them(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            workspace=Path(temp)
+            write_report(workspace/"260928", "a", "Report")
+            candidates=chart.discover_candidates(workspace/"260928", {}, date_folder="260928")
+            state={"schema_version":1,"items":{}}
+            def fail(_):
+                error=chart.RetryableVisionError("private-sentinel", reason="model_json")
+                # Persistence must sanitize too, even if a caller mutates the object.
+                error.diagnostic={"finish_reason":"stop", "content_chars":22, "content_sha256":"a"*64,
+                                  "provider_url":"private-sentinel", "json_error_pos":-1}
+                raise error
+            args=dict(state=state, previous_index={"schema_version":1,"reports":[]},
+                      state_path=workspace/"state.json",asset_output_dir=workspace/"images", max_model_calls=1,
+                      retry_errors_now=True)
+            for run in ("day1", "day2", "day3"):
+                index, summary=chart.build_index(candidates, analyze=fail, attempt_run_id=run, **args)
+                self.assertEqual(summary["retryable_count"],1)
+                self.assertEqual(summary["quarantined_count"],0)
+            record=state["items"][candidates[0].image_sha256]
+            self.assertEqual(record["failure_diagnostic"],{"finish_reason":"stop","content_chars":22,"content_sha256":"a"*64})
+            self.assertNotIn("private-sentinel",json.dumps({"state":state,"index":index,"summary":summary}))
+            self.assertNotIn("failure_diagnostic",json.dumps(index))
+            chart.build_index(candidates,analyze=lambda _:sample_analysis(),attempt_run_id="day4",**args)
+            self.assertEqual(state["items"][candidates[0].image_sha256]["status"],"ok")
+            self.assertNotIn("failure_diagnostic",state["items"][candidates[0].image_sha256])
+
+
 if __name__ == "__main__":
     unittest.main()
