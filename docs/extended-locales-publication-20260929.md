@@ -158,3 +158,27 @@ bounded concurrent page reads and a 15-minute step budget. It still validates
 every page's checksum, language, direction, canonical and robots policy, not
 just endpoint samples. A corrupted middle-page regression proves this; the
 81 targeted tests pass and generated recovery retains identical release gates.
+
+Follow-up PR #187 contains the bounded full-object checks and evidence, head
+`f6c5f3f5e0ba54454e1c77545fd53ae605b0a45c`. Its regression, identity and locale
+manifest checks passed. API-cost CI `36568821352` failed only downloading its
+just-uploaded synthetic fixture (artifact ID `11032484134` not found); reran
+only that failed synthetic job, with no translation or paid calls. The rerun
+job `109408286699` was confirmed active, but watching that run then returned
+`net/http: TLS handshake timeout`. Its final status and PR merge are unverified;
+the command stopped before attempting the merge.
+
+At the last durable-resume snapshot, `mr,km,fa,gu,ta,my,he,yue,bn` had completed,
+making 30/33 complete candidates with the original 21. `de,mn` were running and
+`kk` remained queued. French production `36567911713` was last confirmed pending
+behind `36565643908`, whose ko/ja/ar build was still active. No production success
+is asserted. Stop only the local read-only watcher on the network failure;
+leave the Actions themselves running. Resume these exact run IDs on the next
+successful normal connection, not duplicate jobs.
+
+Remaining scope still includes verifying all 33 real published detail-page
+sets and the current-day incremental handoff. The merged translation hook
+produces candidates and carry-forward preserves approved pages; this alone
+does not prove that later new candidates are automatically activated. Keep
+that distinction in the completion audit rather than declaring the goal done
+when the initial fixed-generation rollout finishes.
