@@ -144,14 +144,22 @@ class PublicationTests(unittest.TestCase):
         from test_publish_static_slot import FakeR2 as SlotClient
         from publish_static_slot import build_inventory, upload_extra_args
         from verify_prepared_static_slot import verify_extended_static_tree
-        self.publish([self.candidate()])
+        self.publish([self.candidate(), self.candidate(url=ORIGIN+'/blog/20260925-other.html'),
+                      self.candidate(url=ORIGIN+'/blog/20260925-z-final.html')])
         paths, files, _tree, _size = build_inventory(self.root)
         client = SlotClient()
         for name, path in paths.items():
             client.upload_file(str(path), 'bucket', 'slot/'+name, ExtraArgs=upload_extra_args(files[name]))
-        result = verify_extended_static_tree(client, 'bucket', 'slot/', files, origin=ORIGIN)
+        from concurrent.futures import ThreadPoolExecutor
+        with mock.patch('verify_prepared_static_slot.ThreadPoolExecutor', wraps=ThreadPoolExecutor) as executor:
+            result = verify_extended_static_tree(client, 'bucket', 'slot/', files, origin=ORIGIN)
+            executor.assert_called_once_with(max_workers=4)
         self.assertEqual(result['locales'], ['fr'])
-        entry = client.objects['slot/fr/blog/20260925-new.html']
+        for name in ('new', 'other', 'z-final'):
+            self.assertIn(('get', f'slot/fr/blog/20260925-{name}.html'), client.operations)
+        # A corrupt middle page must fail too, even when both endpoint samples
+        # are valid. Full pre-cutover verification is never reduced to samples.
+        entry = client.objects['slot/fr/blog/20260925-other.html']
         entry['body'] = b'x' * len(entry['body'])
         with self.assertRaisesRegex(RuntimeError, 'content differs'):
             verify_extended_static_tree(client, 'bucket', 'slot/', files, origin=ORIGIN)
