@@ -33,6 +33,8 @@ class RestoreAssemblyTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary) / 'root'
             root.mkdir()
+            (root/'index.html').write_text('<html><head></head></html>')
+            (root/'robots.txt').write_text('User-agent: *\n')
             evidence = Path(temporary) / 'evidence.json'
             fake = mock.Mock()
             fake.restore_source.side_effect = RuntimeError('R2 permission denied')

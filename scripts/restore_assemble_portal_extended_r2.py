@@ -11,13 +11,12 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
-import re
 import tempfile
 
-from assemble_portal_extended_locales import assemble
 from offline_translation import MODEL_ID, PROVIDER
 from portal_extended_locales import ExpansionError, select_locales, stable_bytes
 from portal_extended_r2 import HEX64, R2Store, safe_part
+from portal_extended_publication import compose, read_active_batches
 
 
 def parse_candidate_specs(value: str, approved_locales: str) -> tuple[tuple[str, ...], dict[str, str]]:
@@ -48,33 +47,28 @@ def restore_and_assemble(
     approved_locales: str,
     candidate_specs: str,
     evidence_out: Path,
+    active_state: Path | None = None,
 ) -> dict:
-    approved, candidates = parse_candidate_specs(candidate_specs, approved_locales)
-    generation = safe_part(source_generation, label='source generation', pattern=HEX64)
+    requested = bool(approved_locales or candidate_specs or source_generation)
+    if requested:
+        approved, candidates = parse_candidate_specs(candidate_specs, approved_locales)
+        generation = safe_part(source_generation, label='source generation', pattern=HEX64)
     store = R2Store.from_env(prefix)
+    identity = json.loads(active_state.read_text()) if active_state else None
+    batches = read_active_batches(store, identity)
+    if requested:
+        batches.append({'generation': generation, 'candidates': candidates})
     with tempfile.TemporaryDirectory(prefix='extended-r2-restore-') as temporary:
         workspace = Path(temporary)
-        corpus_path = workspace / 'source-corpus.json'
-        source_result = store.restore_source(generation, corpus_path)
-        corpus = json.loads(corpus_path.read_text(encoding='utf-8'))
-        candidate_dirs = []
-        restore_results = []
-        for locale in approved:
-            directory = workspace / 'candidates' / locale
-            restore_results.append(store.restore_candidate(locale, generation, candidates[locale], directory))
-            candidate_dirs.append(directory)
-        result = assemble(
-            root, corpus, candidate_dirs, approved, apply=True,
-            existing_locales=('ko', 'ja', 'ar'),
-        )
+        result = compose(root, store, batches, workspace)
         evidence = {
             'schema_version': 1,
-            'source_generation': generation,
-            'source_restore': source_result,
-            'locales': list(approved),
-            'candidate_ids': candidates,
-            'candidate_restores': restore_results,
-            'pages_per_locale': result['pages_per_locale'],
+            'ready': result['ready'],
+            'source_generation': result.get('source_generation', ''),
+            'locales': result['locales'],
+            'candidate_ids': result.get('candidate_ids', {}),
+            'pages_per_locale': result.get('pages_per_locale', 0),
+            'page_counts': result.get('page_counts', {}),
             'assembly': result,
             'model': MODEL_ID,
             'provider': PROVIDER,
@@ -90,9 +84,10 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument('--root', required=True, type=Path)
     parser.add_argument('--prefix', default='_extended-locales/v1')
-    parser.add_argument('--source-generation', required=True)
-    parser.add_argument('--approved-locales', required=True)
-    parser.add_argument('--candidates', required=True, help='locale=sha256,locale=sha256')
+    parser.add_argument('--source-generation', default='')
+    parser.add_argument('--approved-locales', default='')
+    parser.add_argument('--candidates', default='', help='locale=sha256,locale=sha256')
+    parser.add_argument('--active-state', type=Path, help='Pinned active release identity for approved carry-forward')
     parser.add_argument('--evidence-out', required=True, type=Path)
     args = parser.parse_args()
     result = restore_and_assemble(
@@ -102,6 +97,7 @@ def main() -> int:
         approved_locales=args.approved_locales,
         candidate_specs=args.candidates,
         evidence_out=args.evidence_out,
+        active_state=args.active_state,
     )
     print(json.dumps({
         'source_generation': result['source_generation'],

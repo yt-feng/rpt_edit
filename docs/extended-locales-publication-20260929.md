@@ -26,16 +26,49 @@ The other 21 locales already have complete R2 candidates from `36216968278`.
 Read-only recovery `36336380713` proved 24/24 for the twelve above, but wrote
 neither checkpoints nor candidates. It is not durable-completion evidence.
 
+## Stage 2: inactive publication integration
+
+The publication composer reads carry-forward approvals only from the captured
+active release's checksum-verified R2 manifest and assembly ledger. Each new
+locale also requires an explicit immutable generation/candidate map. It restores
+the complete original candidate and checkpoint and reproduces the approved HTML
+byte-for-byte with a cache-only translator. Cache misses are errors, not invented
+translations or newly accepted source fallbacks.
+
+After verifying unchanged source content (including links, dates, quantities and
+metadata), it renders against the final inactive HTML. The new exact generation,
+checkpoint and complete candidate are persisted privately; the unchanged raw
+source-HTML SHA assembler verifies that new generation. No inference is used by
+publication and no source SHA check is removed. Changed source content requires
+a newly reviewed candidate rather than being silently reused.
+
+Assembly now follows the established ko/ja/ar build and Chinese parity check.
+It preserves their bodies and existing application assets, adds only coherent
+per-page alternates, and merges approved batches across languages and dates.
+The root sitemap retains its entries and adds the extended sitemap; robots
+retains crawler policy and adds one sitemap line. Detailed page counts are kept
+per locale. No fake language homepage is generated. Remote validation checks the
+full declared detail-page set; live audit samples actual sitemap URLs. Acceptance
+and rollback cover inherited pages as well as explicitly requested additions.
+
+Local validation before dispatch: 304 Python tests passed, one skipped because
+PyYAML is unavailable; 65 edge-host Node tests passed. The three changed workflows
+parse with Ruby YAML and all 69 shell blocks pass `bash -n`. Public identity scan
+passed on 6,035 files. Further runner and production evidence remains required;
+local tests are not deployment.
+
 ## Publication gates still to satisfy
 
-- Assemble against the exact final inactive Chinese source bytes, with existing
-  ko/ja/ar alternates preserved after their build.
-- Carry forward approved language pages and sitemap/hreflang across refreshes.
-- Detail-only source batches must not require or invent language homepages.
+- Complete the twelve-locale durable resume, then obtain the exact candidate IDs.
+- Pass PR checks on the new source revision and use the normal reviewed merge.
+- Exercise the newly implemented inactive assembly on the real stored corpus.
 - Preserve exact-source, complete-candidate, protected-Chinese, inactive-object,
   environment approval, atomic switch, acceptance and rollback gates.
 - The repository currently has a protected `portal-multilingual-production`
   environment. `portal-extended-locales-production` is not yet configured; do not
   let its first workflow reference silently create an unprotected environment.
+  A preparation preflight now requires an existing required-reviewer rule before
+  an explicit extended release can proceed. Creating this environment was asked
+  of the operator; no approval rule or activation flag has been changed yet.
 
 No new language is claimed live by this checkpoint.

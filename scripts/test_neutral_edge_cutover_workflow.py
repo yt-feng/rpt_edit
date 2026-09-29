@@ -1014,7 +1014,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn("Capture exact edge rollback target", self.workflow)
         self.assertIn("steps.release_acceptance.outcome != 'success'", self.workflow)
         self.assertIn(
-            "needs.prepare_release.outputs.extended_requested == 'true' && steps.extended_acceptance.outcome != 'success'",
+            "needs.prepare_release.outputs.extended_ready == 'true' && steps.extended_acceptance.outcome != 'success'",
             self.workflow,
         )
         self.assertIn("needs.prepare_release.outputs.operation == 'rehearse'", self.workflow)
