@@ -505,3 +505,26 @@ reviews for this recovery: legacy deployment `6742216746` and extended deploymen
 `6742216736`. No reviewer rule was removed or bypassed. This is approval and
 recovery evidence, not a production activation claim; cutover and live acceptance
 remain required before extending to the other locales.
+
+## Stage 15: French live; all-33 carry-forward publication dispatched
+
+Recovery `36608521165` completed successfully. The cutover log records the
+prepared slot `b`, release `1bc786207f6ca80787f5eff84bd2787d` and tree
+`d3674a2b873f54f6d2f247c9f37b2a47bcc8d784ca17ee48259a67e925efa00a`. Its live
+acceptance passed the existing Korean, Japanese and Arabic index/sitemap/deep
+checks, the unchanged Chinese runtime/manifest and brand checks, and the
+extended audit. The extended live audit passed `fr`, 24 pages, two deep sample
+URLs and HTTP 200 with `Content-Language: fr`; the exact published sitemap
+contains 24 French URLs with reciprocal zh-Hans/x-default/ko/ja/ar/fr links.
+Cleanup also succeeded. French is therefore the first additional locale
+verified live: 24 pages, production version release `1bc786207f6ca80787f5eff84bd2787d`.
+
+The all-33 carry-forward release was dispatched from reviewed main commit
+`e64fabc3a15167d13cb92f76cb22c0d281e96d4c` as Action `36613057523`. Inputs bind
+the fixed generation `2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b`
+and all 33 exact candidate IDs from the two publication evidence files. The
+composer will carry forward the live French batch and preserve existing
+ko/ja/ar pages while assembling all 33 requested locales; it performs no new
+inference or paid calls. The first status query after dispatch failed with a
+GitHub TLS/EOF transport error, so this run's current state is not claimed
+here and must be checked before any approval. Do not dispatch a duplicate run.
