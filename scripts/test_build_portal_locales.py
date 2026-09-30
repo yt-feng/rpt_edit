@@ -543,6 +543,67 @@ class PortalLocaleBuildTests(unittest.TestCase):
         self.assertEqual(report["counts"]["html"], 3)
         self.assertEqual(report["counts"]["hreflang_clusters"], 2)
 
+    def _assert_failed_build_preserves_chinese(self, failure_target, failure):
+        import verify_portal_chinese_parity as parity
+
+        for name in ("sitemap-baidu.xml", "sitemap-sogou.xml"):
+            (self.site / name).write_bytes((self.site / "sitemap-pages.xml").read_bytes())
+        snapshot_path = self.temporary_root / "chinese-before.json"
+        snapshot_path.write_text(json.dumps(parity.create_snapshot(
+            root=self.site, site_origin=SITE_URL,
+        )), encoding="utf-8")
+        with mock.patch.object(builder, failure_target, side_effect=failure):
+            with self.assertRaises((builder.TranslationError, OSError)):
+                self._build(RecordingTranslator())
+        report = parity.verify_snapshot(root=self.site, snapshot_path=snapshot_path,
+                                        locale_build_complete=False)
+        self.assertEqual(report["verification_mode"], "incomplete-build-original-bytes")
+        self.assertFalse(report["publishable"])
+
+    def test_late_manifest_failure_preserves_all_chinese_original_bytes(self) -> None:
+        self._assert_failed_build_preserves_chinese(
+            "write_locale_manifest", builder.TranslationError("manifest capacity exceeded"))
+
+    def test_render_failure_preserves_all_chinese_original_bytes(self) -> None:
+        self._assert_failed_build_preserves_chinese(
+            "render_locale_sitemap", builder.TranslationError("locale rendering failed"))
+
+    def test_final_discovery_failure_rolls_back_html_sitemap_and_robots(self) -> None:
+        def partial_robots_write(root, site_url):
+            (root / "robots.txt").write_text("partial write", encoding="utf-8")
+            raise OSError("failed after writing robots")
+
+        self._assert_failed_build_preserves_chinese("update_robots", partial_robots_write)
+
+    def test_capacity_failure_precedes_rendering_and_asset_writes(self) -> None:
+        before = {path.relative_to(self.site): path.read_bytes()
+                  for path in self.site.rglob("*") if path.is_file()}
+        with mock.patch.object(builder, "encode_locale_manifest", side_effect=portal_locale_manifest.LocaleManifestError(
+                "Expanded source fallback table exceeds safety budget")):
+            with self.assertRaisesRegex(builder.TranslationError, "before rendering"):
+                self._build(RecordingTranslator())
+        after = {path.relative_to(self.site): path.read_bytes()
+                 for path in self.site.rglob("*") if path.is_file()}
+        self.assertEqual(after, before)
+
+    def test_discovery_rollback_restores_newlines_and_removes_new_files(self) -> None:
+        (self.site / "robots.txt").unlink()
+        page = self.site / "index.html"
+        original = page.read_bytes().replace(b"\n", b"\r\n")
+        page.write_bytes(original)
+        sitemap = (self.site / "sitemap.xml").read_bytes()
+
+        def fail_after_new_robots(root, site_url):
+            (root / "robots.txt").write_text("created then interrupted", encoding="utf-8")
+            raise KeyboardInterrupt()
+
+        with mock.patch.object(builder, "update_robots", side_effect=fail_after_new_robots):
+            with self.assertRaises(KeyboardInterrupt):
+                builder.commit_chinese_discovery(self.site, {page: "changed"}, SITE_URL, "2026-09-30")
+        self.assertEqual(page.read_bytes(), original)
+        self.assertEqual((self.site / "sitemap.xml").read_bytes(), sitemap)
+        self.assertFalse((self.site / "robots.txt").exists())
+
     def test_bbg_bilingual_pages_stay_chinese_and_locale_links_return_to_root(self) -> None:
         blog = self.site / "blog"
         blog.mkdir(exist_ok=True)

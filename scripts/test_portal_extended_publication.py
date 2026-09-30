@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+import xml.etree.ElementTree as ET
 from unittest import mock
 
 from build_portal_extended_locales import build
@@ -62,7 +63,8 @@ class PublicationTests(unittest.TestCase):
         self.assertIn('/fr/blog/20260925-new.html', homepage)
         self.assertNotIn('noindex', homepage)
         self.assertIn('Disallow: /', (self.root/'robots.txt').read_text())
-        self.assertIn('sitemap-extended.xml', (self.root/'sitemap.xml').read_text())
+        self.assertNotIn('sitemap-extended.xml', (self.root/'sitemap.xml').read_text())
+        self.assertIn('sitemap-extended-fr.xml', (self.root/'sitemap.xml').read_text())
         self.assertIn('sitemap-pages.xml', (self.root/'sitemap.xml').read_text())
         page = (self.root/'fr'/file_for_url(URL)).read_text()
         self.assertIn('index,follow', page)
@@ -75,6 +77,14 @@ class PublicationTests(unittest.TestCase):
         self.assertEqual(result['page_counts'], dict.fromkeys(locales, 1))
         self.assertTrue(all(row['translation_calls'] == 0 for row in result['replays']))
         self.assertFalse((self.root/'en').exists())
+        sitemap = ET.fromstring((self.root/'sitemap.xml').read_bytes())
+        locations = [node.text for node in sitemap.findall('{*}sitemap/{*}loc')]
+        self.assertEqual(len(locations), len(set(locations)))
+        self.assertEqual(set(locations), {ORIGIN+'/sitemap-pages.xml'} | {
+            ORIGIN+f'/sitemap-extended-{locale}.xml' for locale in locales})
+        for locale in locales:
+            shard = ET.fromstring((self.root/f'sitemap-extended-{locale}.xml').read_bytes())
+            self.assertEqual(shard.tag.rsplit('}', 1)[-1], 'urlset')
         for locale in locales:
             parser = PublicParser()
             parser.feed((self.root/locale/file_for_url(URL)).read_text()); parser.close()
@@ -107,6 +117,25 @@ class PublicationTests(unittest.TestCase):
         sitemap = (self.root/'sitemap-extended-fr.xml').read_text()
         self.assertIn('20260925-new.html', sitemap)
         self.assertIn('20260925-other.html', sitemap)
+
+    def test_legacy_nested_sitemap_is_repaired_without_losing_base_metadata(self):
+        batch = self.candidate()
+        path = self.root/'sitemap.xml'
+        path.write_text(path.read_text().replace('</sitemapindex>',
+            '<sitemap><loc>'+ORIGIN+'/sitemap-extended.xml</loc></sitemap>'
+            '<sitemap><loc>'+ORIGIN+'/sitemap-extended-fr.xml</loc></sitemap>'
+            '<sitemap><loc>'+ORIGIN+'/sitemap-extended-fr.xml</loc></sitemap>'
+            '<sitemap><loc>'+ORIGIN+'/sitemap-extended-pt.xml</loc></sitemap>'
+            '</sitemapindex>').replace('sitemap-pages.xml</loc>',
+            'sitemap-pages.xml</loc><lastmod>2026-09-30</lastmod>'))
+        self.publish([batch])
+        root = ET.fromstring(path.read_bytes())
+        self.assertEqual([node.text for node in root.findall('{*}sitemap/{*}loc')],
+            [ORIGIN+'/sitemap-pages.xml', ORIGIN+'/sitemap-extended-fr.xml'])
+        self.assertEqual(root.find('{*}sitemap/{*}lastmod').text, '2026-09-30')
+        # Robots can advertise an independent index; root indexes stay flat.
+        self.assertIn('Sitemap: '+ORIGIN+'/sitemap-extended.xml',
+            (self.root/'robots.txt').read_text())
 
     def test_checkpoint_cannot_change_approved_translation(self):
         batch = self.candidate()

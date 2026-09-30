@@ -830,6 +830,19 @@ class ShadowPreviewAuditTests(unittest.TestCase):
         with self.assertRaisesRegex(audit.AuditError, "crosses locale boundaries"):
             audit.manifest_files(manifest)
 
+    def test_compressed_source_manifest_passes_shadow_acceptance(self) -> None:
+        from test_portal_locale_manifest import with_source_fallback, compress_source_fallback
+
+        plan, responses = response_fixture()
+        response = responses['/data/i18n/manifest.json']
+        payload = compress_source_fallback(with_source_fallback(json.loads(response.body)))
+        response.body = json.dumps(payload).encode()
+        self.run_audit(plan, responses)
+        payload['coverage']['ko'] = 1.0
+        response.body = json.dumps(payload).encode()
+        with self.assertRaisesRegex(audit.AuditError, 'coverage.ko'):
+            self.run_audit(plan, responses)
+
     def test_verifies_manifest_data_size_and_digest(self) -> None:
         plan, responses = response_fixture()
         response = responses["/data/i18n/ja/charts.json"]

@@ -7,6 +7,7 @@ import hashlib
 import unittest
 
 from portal_locale_manifest import LocaleManifestError, validate_translation_resolution
+from portal_locale_manifest import _compress_fallback_records
 
 
 LOCALES = ("ko", "ja", "ar")
@@ -41,6 +42,22 @@ def with_source_fallback(manifest: dict) -> dict:
         },
     })
     return manifest
+
+
+def compress_source_fallback(manifest: dict) -> dict:
+    """Small schema-3 fixture for each existing release reader's integration test."""
+    result = copy.deepcopy(manifest)
+    fallback = result['source_fallbacks']
+    records, units = [], {}
+    for locale, rows in fallback['units'].items():
+        units[locale] = {}
+        for key, row in rows.items():
+            units[locale][key] = len(records)
+            records.append(row)
+    result['source_fallbacks'] = _compress_fallback_records({
+        'schema_version': 2, 'records': records, 'units': units, 'counts': fallback['counts'],
+    })
+    return result
 
 
 class LocaleManifestTests(unittest.TestCase):

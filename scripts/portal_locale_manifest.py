@@ -2,10 +2,13 @@
 
 from __future__ import annotations
 
+import base64
+import binascii
 import hashlib
 import json
 from pathlib import Path
 from typing import Any, Iterable
+import zlib
 
 
 MAX_LOCALE_MANIFEST_BYTES = 16 * 1024 * 1024
@@ -124,6 +127,9 @@ def _json_bytes(value: Any) -> bytes:
 def _expand_fallback_records(manifest: dict[str, Any]) -> dict[str, Any]:
     """Decode a lossless intern table without weakening the 16 MiB wire limit."""
     fallback = manifest.get("source_fallbacks")
+    if isinstance(fallback, dict) and fallback.get("schema_version") == 3:
+        fallback = _decompress_fallback_records(fallback)
+        manifest = dict(manifest, source_fallbacks=fallback)
     if not isinstance(fallback, dict) or fallback.get("schema_version") != 2:
         return manifest
     records, units = fallback.get("records"), fallback.get("units")
@@ -145,7 +151,11 @@ def _expand_fallback_records(manifest: dict[str, Any]) -> dict[str, Any]:
             total += sizes[index] + len(key.encode("utf-8")) + 8
             references += 1
             if total > MAX_EXPANDED_FALLBACK_BYTES or references > MAX_FALLBACK_REFERENCES:
-                raise LocaleManifestError("Expanded source fallback table exceeds safety budget")
+                raise LocaleManifestError(
+                    "Expanded source fallback table exceeds safety budget: "
+                    f"bytes={total}/{MAX_EXPANDED_FALLBACK_BYTES}, "
+                    f"references={references}/{MAX_FALLBACK_REFERENCES}"
+                )
             used.add(index)
             expanded[locale][key] = dict(records[index])
     if used != set(range(len(records))):
@@ -158,8 +168,77 @@ def _expand_fallback_records(manifest: dict[str, Any]) -> dict[str, Any]:
     return manifest
 
 
+def _decompress_fallback_records(fallback: dict[str, Any]) -> dict[str, Any]:
+    """Read one bounded stream; recover the shared keys before validating records."""
+    if (set(fallback) != {"schema_version", "encoding", "byte_size", "sha256", "data"}
+            or type(fallback["schema_version"]) is not int
+            or fallback["encoding"] != "zlib-base64"
+            or type(fallback["byte_size"]) is not int
+            or not 0 < fallback["byte_size"] <= MAX_EXPANDED_FALLBACK_BYTES
+            or not isinstance(fallback["sha256"], str)
+            or not isinstance(fallback["data"], str)):
+        raise LocaleManifestError("Invalid compressed source fallback table")
+    try:
+        compressed = base64.b64decode(fallback["data"], validate=True)
+        stream = zlib.decompressobj()
+        # Never call unbounded decompress/flush, even for a false declared size.
+        body = stream.decompress(compressed, fallback["byte_size"] + 1)
+    except (ValueError, binascii.Error, zlib.error) as error:
+        raise LocaleManifestError("Invalid compressed source fallback data") from error
+    if (len(body) != fallback["byte_size"] or not stream.eof
+            or stream.unconsumed_tail or stream.unused_data):
+        raise LocaleManifestError("Compressed source fallback size or stream differs")
+    if hashlib.sha256(body).hexdigest() != fallback["sha256"]:
+        raise LocaleManifestError("Compressed source fallback hash differs")
+    try:
+        table = json.loads(body.decode("utf-8"))
+    except (ValueError, UnicodeError, RecursionError) as error:
+        raise LocaleManifestError("Compressed source fallback must contain UTF-8 JSON") from error
+    if (not isinstance(table, dict) or set(table) != {"keys", "records", "units", "counts"}
+            or not isinstance(table["keys"], list) or len(table["keys"]) > MAX_FALLBACK_REFERENCES
+            or any(not isinstance(key, str) for key in table["keys"])
+            or len(set(table["keys"])) != len(table["keys"])
+            or not isinstance(table["units"], dict) or not 0 < len(table["units"]) <= 64):
+        raise LocaleManifestError("Compressed source fallback must contain an intern table")
+    keys, units, used, references = table["keys"], {}, set(), 0
+    for locale, rows in table["units"].items():
+        if not isinstance(rows, list):
+            raise LocaleManifestError("Invalid compressed source fallback locale")
+        references += len(rows)
+        if references > MAX_FALLBACK_REFERENCES:
+            raise LocaleManifestError("Expanded source fallback table exceeds safety budget")
+        units[locale] = {}
+        for row in rows:
+            if (not isinstance(row, list) or len(row) != 2 or type(row[0]) is not int
+                    or not 0 <= row[0] < len(keys) or keys[row[0]] in units[locale]):
+                raise LocaleManifestError("Invalid compressed source fallback key reference")
+            used.add(row[0])
+            units[locale][keys[row[0]]] = row[1]
+    if used != set(range(len(keys))):
+        raise LocaleManifestError("Unused compressed source fallback key")
+    return {"schema_version": 2, "records": table["records"],
+            "counts": table["counts"], "units": units}
+
+
+def _compress_fallback_records(fallback: dict[str, Any]) -> dict[str, Any]:
+    # The same source identity appears in every locale. Store it once before
+    # compression, rather than relying on zlib's limited sliding dictionary.
+    keys = sorted({key for rows in fallback["units"].values() for key in rows})
+    indexes = {key: index for index, key in enumerate(keys)}
+    table = _json_bytes({
+        "keys": keys, "records": fallback["records"], "counts": fallback["counts"],
+        "units": {locale: [[indexes[key], index] for key, index in sorted(rows.items())]
+                  for locale, rows in sorted(fallback["units"].items())},
+    })
+    if len(table) > MAX_EXPANDED_FALLBACK_BYTES:
+        raise LocaleManifestError("Expanded source fallback table exceeds safety budget")
+    return {"schema_version": 3, "encoding": "zlib-base64", "byte_size": len(table),
+            "sha256": hashlib.sha256(table).hexdigest(),
+            "data": base64.b64encode(zlib.compress(table, level=9)).decode("ascii")}
+
+
 def encode_locale_manifest(manifest: dict[str, Any]) -> bytes:
-    """Keep legacy output when it fits; intern repeated fallback provenance otherwise.
+    """Keep legacy output when it fits; losslessly pack fallback provenance otherwise.
 
     Every source, reason, context and per-language count round-trips unchanged.
     No truncation, paid retranslation or larger unbounded fetch is introduced.
@@ -188,6 +267,13 @@ def encode_locale_manifest(manifest: dict[str, Any]) -> bytes:
     packed["source_fallbacks"] = {"schema_version": 2, "records": records,
                                  "units": refs, "counts": fallback["counts"]}
     body = _json_bytes(packed)
+    if len(body) > MAX_LOCALE_MANIFEST_BYTES:
+        # Whole-row interning alone stops helping as new sources and distinct
+        # language provenance accumulate. Compress only the intern table; all
+        # route descriptors and coverage remain ordinary readable JSON.
+        _expand_fallback_records(packed)
+        packed["source_fallbacks"] = _compress_fallback_records(packed["source_fallbacks"])
+        body = _json_bytes(packed)
     decoded = parse_locale_manifest(body)
     if decoded != manifest:
         raise LocaleManifestError("Source fallback compaction changed manifest semantics")

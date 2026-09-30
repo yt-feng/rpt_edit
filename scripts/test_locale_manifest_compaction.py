@@ -1,8 +1,10 @@
 """Lossless bounded manifest encoding for the production size regression."""
+import base64
 import copy
 import hashlib
 import json
 import unittest
+import zlib
 from unittest.mock import patch
 import portal_locale_manifest as codec
 from test_portal_locale_manifest import with_source_fallback, LOCALES
@@ -70,6 +72,88 @@ class CompactionTests(unittest.TestCase):
         with patch.object(codec, 'MAX_LOCALE_MANIFEST_BYTES', 128):
             with self.assertRaisesRegex(codec.LocaleManifestError, 'byte size'):
                 codec.encode_locale_manifest({'schema_version': 1, 'padding': 'a' * 200})
+
+    def compressed(self):
+        original, raw = self.packed()
+        value = json.loads(raw)
+        value['source_fallbacks'] = codec._compress_fallback_records(value['source_fallbacks'])
+        return original, value
+
+    def replace_compressed_table(self, value, table):
+        body = codec._json_bytes(table)
+        value['source_fallbacks'].update(byte_size=len(body), sha256=hashlib.sha256(body).hexdigest(),
+                                       data=base64.b64encode(zlib.compress(body)).decode('ascii'))
+
+    def test_compressed_roundtrip_still_validates_source_provenance(self):
+        original, value = self.compressed()
+        self.assertEqual(codec.parse_locale_manifest(codec._json_bytes(value)), original)
+        table = json.loads(zlib.decompress(base64.b64decode(value['source_fallbacks']['data'])))
+        table['records'][0]['source'] = 'Altered source 45%'
+        self.replace_compressed_table(value, table)
+        with self.assertRaisesRegex(codec.LocaleManifestError, 'hash differs'):
+            codec.parse_locale_manifest(codec._json_bytes(value))
+
+    def test_compressed_encoding_size_digest_and_stream_are_strict(self):
+        _, original = self.compressed()
+        for field, bad in [('byte_size', True), ('byte_size', 0), ('byte_size', codec.MAX_EXPANDED_FALLBACK_BYTES + 1),
+                           ('encoding', 'gzip'), ('data', '!not base64!'), ('sha256', '0' * 64)]:
+            value = copy.deepcopy(original); value['source_fallbacks'][field] = bad
+            with self.subTest(field=field, bad=bad), self.assertRaises(codec.LocaleManifestError):
+                codec.parse_locale_manifest(codec._json_bytes(value))
+        zipped = base64.b64decode(original['source_fallbacks']['data'])
+        for bad in (zipped[:-1], zipped + b'junk', zipped + zipped, zlib.compress(b'x' * 10000)):
+            value = copy.deepcopy(original)
+            value['source_fallbacks']['data'] = base64.b64encode(bad).decode('ascii')
+            with self.subTest(size=len(bad)), self.assertRaises(codec.LocaleManifestError):
+                codec.parse_locale_manifest(codec._json_bytes(value))
+        with patch.object(codec, 'MAX_EXPANDED_FALLBACK_BYTES', 1):
+            with self.assertRaises(codec.LocaleManifestError):
+                codec.parse_locale_manifest(codec._json_bytes(original))
+
+    def test_compressed_shared_keys_cannot_hide_duplicate_or_missing_units(self):
+        _, original = self.compressed()
+        table = json.loads(zlib.decompress(base64.b64decode(original['source_fallbacks']['data'])))
+        mutations = [lambda t: t['keys'].append(t['keys'][0]),
+                     lambda t: t['keys'].append('0' * 64),
+                     lambda t: t['units']['ko'].append(t['units']['ko'][0]),
+                     lambda t: t['units']['ko'][0].__setitem__(0, True),
+                     lambda t: t['units']['ko'][0].__setitem__(0, 99),
+                     lambda t: t['units']['ko'][0].__setitem__(1, True),
+                     lambda t: t.update(schema_version=3)]
+        for mutate in mutations:
+            value, bad = copy.deepcopy(original), copy.deepcopy(table)
+            mutate(bad); self.replace_compressed_table(value, bad)
+            with self.assertRaises(codec.LocaleManifestError):
+                codec.parse_locale_manifest(codec._json_bytes(value))
+        value = copy.deepcopy(original); value['coverage']['ko'] = 1.0
+        with self.assertRaises(codec.LocaleManifestError):
+            codec.parse_locale_manifest(codec._json_bytes(value))
+
+    def test_regression_growing_distinct_provenance_exceeds_intern_only_capacity(self):
+        value = self.fixture()
+        count = 32000
+        value['source_unit_count'] = count
+        for locale in LOCALES:
+            rows = {}
+            for index in range(count):
+                source = f'{index} ' + '原始研究指标与时间范围必须保留。' * 6
+                key = hashlib.sha256(f"{value['prompt_version']}\0copy\0{source}".encode()).hexdigest()
+                rows[key] = {'source': source, 'source_sha256': hashlib.sha256(source.encode()).hexdigest(),
+                             'context': 'html:text:p', 'translation_class': 'copy',
+                             'reason': 'translation_time_budget'}
+            value['source_fallbacks']['units'][locale] = rows
+            value['source_fallbacks']['counts'][locale] = count
+            value['translation_entry_count'][locale] = 0
+            value['resolved_entry_count'][locale] = count
+            value['coverage'][locale] = 0.0
+        raw = codec.encode_locale_manifest(value)
+        packed = json.loads(raw)
+        self.assertEqual(packed['source_fallbacks']['schema_version'], 3)
+        self.assertLess(len(raw), codec.MAX_LOCALE_MANIFEST_BYTES)
+        self.assertEqual(codec.parse_locale_manifest(raw), value)
+        with patch.object(codec, 'MAX_EXPANDED_FALLBACK_BYTES', 32 * 1024 * 1024):
+            with self.assertRaisesRegex(codec.LocaleManifestError, 'safety budget'):
+                codec.encode_locale_manifest(value)
 
     def test_regression_40042_fallback_rows_fit_without_truncation(self):
         value = self.fixture()
