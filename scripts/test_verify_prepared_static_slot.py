@@ -126,6 +126,18 @@ class PreparedStaticSlotTests(unittest.TestCase):
         for path in files:
             self.assertIn(("get", publisher.slot_prefix(self.slot) + path), self.client.operations)
 
+    def test_compressed_source_manifest_passes_the_committed_route_contract(self) -> None:
+        from test_portal_locale_manifest import with_source_fallback, compress_source_fallback
+
+        manifest, files = self.locale_files()
+        manifest = compress_source_fallback(with_source_fallback(manifest))
+        self.prepare_locales(manifest, files)
+        self.assertEqual(self.verify(locale_origin=ORIGIN)["locale_objects_verified"], 24)
+        manifest['coverage']['ko'] = 1.0
+        self.prepare_locales(manifest, files)
+        with self.assertRaisesRegex(ValueError, 'coverage.ko'):
+            self.verify(locale_origin=ORIGIN)
+
     def test_three_megabyte_source_fallback_manifest_passes_the_same_route_contract(self) -> None:
         manifest, files = self.locale_files()
         rows = {}

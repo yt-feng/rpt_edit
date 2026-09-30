@@ -29,6 +29,7 @@ from pathlib import Path
 import re
 import shutil
 import sys
+import tempfile
 import threading
 import time
 from typing import Any, Callable, Iterable, Iterator
@@ -5248,6 +5249,34 @@ def update_robots(root: Path, site_url: str) -> None:
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def commit_chinese_discovery(
+    root: Path, updates: dict[Path, str], site_url: str, generated_date: str,
+) -> None:
+    """Commit discovery only after locale validation; restore exact originals on failure."""
+    # Keep potentially large HTML backups on disk and outside the release tree.
+    # Copy bytes, not decoded text, so rollback also preserves original newlines.
+    targets = [*updates, root / "sitemap.xml", root / "robots.txt"]
+    with tempfile.TemporaryDirectory(prefix="portal-chinese-discovery-") as temporary:
+        backups = {}
+        for index, path in enumerate(targets):
+            backup = Path(temporary) / str(index) if path.exists() else None
+            if backup is not None:
+                shutil.copy2(path, backup)
+            backups[path] = backup
+        try:
+            for path, source in updates.items():
+                path.write_text(source, encoding="utf-8")
+            update_sitemap_index(root, site_url, generated_date)
+            update_robots(root, site_url)
+        except BaseException:
+            for path, backup in backups.items():
+                if backup is None:
+                    path.unlink(missing_ok=True)
+                else:
+                    shutil.copy2(backup, path)
+            raise
+
+
 def copy_locale_assets(root: Path, locale: str) -> None:
     source = root / "assets"
     target = root / locale / "assets"
@@ -5772,6 +5801,33 @@ def _build_localized_release(
         resolved_translation_counts[locale] = len(resolved)
         resolved_entry_counts[locale] = len(resolved | retained)
 
+    resolution_manifest = {
+        "schema_version": 1,
+        "prompt_version": PROMPT_VERSION,
+        "source_unit_count": len(units),
+        "translation_entry_count": resolved_translation_counts,
+        "resolved_entry_count": resolved_entry_counts,
+        "resolved_coverage": {
+            locale: (resolved_entry_counts[locale] / len(units) if units else 1.0)
+            for locale in LOCALES
+        },
+        "source_fallbacks": {
+            "schema_version": 1,
+            "units": cache.get("_source_fallbacks", {locale: {} for locale in LOCALES}),
+            "counts": {locale: len(cache.get("_source_fallbacks", {}).get(locale, {})) for locale in LOCALES},
+        },
+        "coverage": {
+            locale: (resolved_translation_counts[locale] / len(units) if units else 1.0)
+            for locale in LOCALES
+        },
+    }
+    try:
+        # Reject an over-capacity provenance inventory before rendering or
+        # touching release files. The final manifest is checked again below.
+        encode_locale_manifest(resolution_manifest)
+    except LocaleManifestError as error:
+        raise TranslationError(f"Locale source accounting failed before rendering: {error}") from error
+
     locale_css_source = assets_root / "locale.css"
     locale_runtime_source = assets_root / "locale-runtime.js"
     locale_recovery_source = assets_root / "locale-recovery.js"
@@ -5795,21 +5851,14 @@ def _build_localized_release(
         + (root / "assets" / "locale-detail.js").read_bytes()
     ).hexdigest()[:12]
 
-    body_snapshots = {
-        path: source[source.lower().find("<body"):]
-        for path, source in original_html.items()
-        if "<body" in source.lower()
-    }
+    chinese_discovery_updates = {}
     for path, source in original_html.items():
         discovery_canonical = canonical_by_path[path] if index_plan[path].indexable else ""
-        path.write_text(
-            inject_root_discovery(source, discovery_canonical, site_url, asset_digest),
-            encoding="utf-8",
-        )
-    for path, body in body_snapshots.items():
-        updated = path.read_text(encoding="utf-8")
-        if updated[updated.lower().find("<body"):] != body:
+        updated = inject_root_discovery(source, discovery_canonical, site_url, asset_digest)
+        body_start = source.lower().find("<body")
+        if body_start >= 0 and updated[updated.lower().find("<body"):] != source[body_start:]:
             raise TranslationError(f"Chinese body changed while adding locale discovery: {path.relative_to(root)}")
+        chinese_discovery_updates[path] = updated
 
     for locale in LOCALES:
         locale_root = root / locale
@@ -5983,16 +6032,12 @@ def _build_localized_release(
             render_locale_sitemap(canonicals, locale, site_url, lastmods),
             encoding="utf-8",
         )
-    update_sitemap_index(root, site_url, generated_date)
-    update_robots(root, site_url)
     write_cache(cache_out, cache)
 
     manifest = {
-        "schema_version": 1,
-        "prompt_version": PROMPT_VERSION,
+        **resolution_manifest,
         "quality_gate_version": QUALITY_GATE_VERSION,
         "model": cache["model"],
-        "source_unit_count": len(units),
         "source_character_count": sum(len(unit.source) for unit in units.values()),
         "translation_scope": translation_scope,
         "html_page_count": len(localized_html_sources),
@@ -6042,21 +6087,6 @@ def _build_localized_release(
                 for row in locale_files.values()
             ]
         ),
-        "translation_entry_count": resolved_translation_counts,
-        "resolved_entry_count": resolved_entry_counts,
-        "resolved_coverage": {
-            locale: (resolved_entry_counts[locale] / len(units) if units else 1.0)
-            for locale in LOCALES
-        },
-        "source_fallbacks": {
-            "schema_version": 1,
-            "units": cache.get("_source_fallbacks", {locale: {} for locale in LOCALES}),
-            "counts": {locale: len(cache.get("_source_fallbacks", {}).get(locale, {})) for locale in LOCALES},
-        },
-        "coverage": {
-            locale: (resolved_translation_counts[locale] / len(units) if units else 1.0)
-            for locale in LOCALES
-        },
         "locales": list(LOCALES),
     }
     def route_descriptor(relative: str) -> dict[str, Any]:
@@ -6108,6 +6138,7 @@ def _build_localized_release(
         }
         write_locale_manifest(manifest_path, manifest)
         (manifest_path.parent / "history-release.json").write_bytes(stable_json_bytes(history_plan))
+    commit_chinese_discovery(root, chinese_discovery_updates, site_url, generated_date)
     log(
         f"Localized release complete: pages={len(localized_html_sources)} units={len(units)} "
         f"catalog={len(catalog.get('items', []))} locales={','.join(LOCALES)}"

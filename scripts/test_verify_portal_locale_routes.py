@@ -63,6 +63,15 @@ class PublicLocaleRouteTests(unittest.TestCase):
         self.manifest, self.responses = fixture()
         self.calls = []
 
+    def test_compressed_source_manifest_loads_through_public_reader(self):
+        from test_portal_locale_manifest import with_source_fallback, compress_source_fallback
+
+        manifest = with_source_fallback(self.manifest)
+        with tempfile.TemporaryDirectory() as temporary:
+            path = Path(temporary) / 'manifest.json'
+            path.write_text(json.dumps(compress_source_fallback(manifest)), encoding='utf-8')
+            self.assertEqual(load_locale_manifest(path), manifest)
+
     def fetch(self, url, timeout):
         self.calls.append((url, timeout))
         self.assertIn(url, self.responses, "Only declared exact public routes may be fetched")
