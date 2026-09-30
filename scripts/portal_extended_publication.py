@@ -229,11 +229,21 @@ def compose(root: Path, store, batches: list[dict], workspace: Path) -> dict:
     sitemap_root = ET.fromstring(sitemap)
     if sitemap_root.tag != f'{{{NS}}}sitemapindex':
         raise ExpansionError('Existing root sitemap is not an index')
-    if ORIGIN+'/sitemap-extended.xml' not in [node.text for node in sitemap_root.findall('.//{*}loc')]:
-        sitemap = sitemap.replace('</sitemapindex>', '<sitemap><loc>'+ORIGIN+'/sitemap-extended.xml</loc></sitemap></sitemapindex>')
-        if ORIGIN+'/sitemap-extended.xml' not in sitemap:
-            raise ExpansionError('Cannot extend root sitemap without changing existing entries')
-    planned['sitemap.xml'] = sitemap.encode()
+    # Each child of the root index must be a URL-set sitemap. Keep the
+    # standalone extended index advertised in robots, but do not nest it here.
+    # Replace this publication's namespace to repair older nested indexes and
+    # remove stale/duplicate locale entries when approved batches change.
+    for child in list(sitemap_root):
+        location = child.find(f'{{{NS}}}loc')
+        if location is not None and (
+            location.text == ORIGIN+'/sitemap-extended.xml'
+            or str(location.text).startswith(ORIGIN+'/sitemap-extended-')
+        ):
+            sitemap_root.remove(child)
+    for locale in locales:
+        child = ET.SubElement(sitemap_root, f'{{{NS}}}sitemap')
+        ET.SubElement(child, f'{{{NS}}}loc').text = ORIGIN+f'/sitemap-extended-{locale}.xml'
+    planned['sitemap.xml'] = ET.tostring(sitemap_root, encoding='utf-8', xml_declaration=True)
     receipt = {'schema_version': 2, 'status': 'assembled', 'locales': list(locales),
         'batches': batches, 'page_counts': counts, 'pages_per_locale': min(counts.values()),
         'source_urls_by_locale': {locale: sorted(url for code, url in pages if code == locale) for locale in locales},
