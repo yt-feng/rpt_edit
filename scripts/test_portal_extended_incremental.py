@@ -9,7 +9,7 @@ from build_portal_extended_locales import build, validate_budget, MAX_TRANSLATIO
 from portal_extended_locales import (ADDITIONAL, DAILY_SCOPE, ExpansionError, daily_corpus_day, digest,
                                     document_from_html, make_corpus, publication_day, select_locales, stable_bytes)
 from portal_extended_incremental import (collect_today, eligible_url, prepare, read_state, remember_candidate,
-                                        remember_checkpoint, restore_seed, state_key, write_state)
+                                        remember_checkpoint, restore_seed, state_key, write_state, include_english_matrix, main)
 from portal_extended_r2 import R2IntegrityError, R2PermissionError, R2Store
 from test_portal_extended_r2 import FakeR2
 from test_portal_extended_locales import FakeTranslator, ORIGIN, html
@@ -227,6 +227,84 @@ class WorkflowTests(unittest.TestCase):
             self.assertIn(required, source)
         self.assertNotIn('2400', source)
         self.assertNotIn('actions/upload-artifact', source)
+
+    def test_english_shares_two_cpu_limit_and_has_no_original_fallback_or_publication_shortcut(self):
+        source = (ROOT/'.github/workflows/portal-extended-locales-r2.yml').read_text()
+        self.assertEqual(source.count('max-parallel: 2'), 1)
+        for required in ('--include-english', "[ \"$GITHUB_REF\" = \"refs/heads/main\" ]",
+                         "matrix.locale == 'en' && '_english-commentary/v1'", 'english_admission:',
+                         'english_pending_count:', 'scripts/portal_english_pipeline.py restore-source',
+                         'scripts/portal_english_pipeline.py restore-seed', 'scripts/portal_english_pipeline.py checkpoint',
+                         'scripts/portal_english_pipeline.py candidate', 'scripts/portal_english_pipeline.py staging-probe',
+                         'scripts/portal_english_pipeline.py followup', 'scripts/portal_english_commentary.py',
+                         '[ "$LOCALE" != "en" ] && [ "$ALLOW_SOURCE_FALLBACK" = "true" ]',
+                         "steps.frontier.outputs.continue == 'true' || steps.english_frontier.outputs.continue == 'true'"):
+            self.assertIn(required, source)
+        self.assertNotIn('actions/upload-artifact', source)
+
+
+class EnglishMatrixTests(unittest.TestCase):
+    def setUp(self):
+        self.client = FakeR2(); self.store = R2Store(self.client, 'private-bucket')
+        self.result = {'has_work': True, 'generation': 'a'*64, 'day': DAY,
+                       'locales_json': '["fr", "pt"]', 'requested_locale_count': 33,
+                       'locale_jobs_json': json.dumps([{'locale': 'fr', 'generation': 'a'*64, 'day': DAY},
+                                                     {'locale': 'pt', 'generation': 'a'*64, 'day': DAY}])}
+        self.english = {'job': {'locale': 'en', 'generation': 'b'*64, 'day': '2026-10-01'},
+                        'admission': 'c'*64, 'pending_count': 25, 'selected_pages': 24}
+
+    def test_one_separate_english_generation_does_not_change_non_english_approval_scope(self):
+        with mock.patch('portal_english_pipeline.prepare_queued', return_value=self.english) as prepare:
+            result = include_english_matrix(self.store, self.result)
+        jobs = json.loads(result['locale_jobs_json'])
+        self.assertEqual([row['locale'] for row in jobs], ['en', 'fr', 'pt'])
+        self.assertEqual(jobs[0], self.english['job'])
+        for key in ('locales_json', 'generation', 'day', 'requested_locale_count'):
+            self.assertEqual(result[key], self.result[key])
+        self.assertEqual(result['english_pending_count'], '25')
+        english_store, source_store = prepare.call_args.args
+        self.assertEqual(english_store.prefix, '_english-commentary/v1'); self.assertIs(source_store, self.store)
+        self.assertNotIn('english_admission', self.result)
+
+    def test_english_only_day_does_not_fabricate_a_non_english_generation(self):
+        empty = {**self.result, 'has_work': False, 'generation': '', 'locale_jobs_json': '[]', 'locales_json': '[]'}
+        with mock.patch('portal_english_pipeline.prepare_queued', return_value=self.english):
+            result = include_english_matrix(self.store, empty)
+        self.assertTrue(result['has_work']); self.assertEqual(result['generation'], '')
+        self.assertEqual(json.loads(result['locale_jobs_json']), [self.english['job']])
+        self.assertEqual(result['locales_json'], '[]')
+
+    def test_empty_english_queue_or_permission_failure_preserves_all_other_languages(self):
+        for problem in [None, R2PermissionError('forbidden'), ExpansionError('invalid source')]:
+            value = {'job': None, 'admission': '', 'pending_count': 0, 'selected_pages': 0}
+            with mock.patch('portal_english_pipeline.prepare_queued', side_effect=problem, return_value=value):
+                result = include_english_matrix(self.store, self.result)
+            self.assertEqual(result['locale_jobs_json'], self.result['locale_jobs_json'])
+            self.assertTrue(result['has_work']); self.assertEqual(result['english_admission'], '')
+            self.assertEqual(result['english_prepare_incomplete'], problem is not None)
+
+    def test_custom_staging_namespace_never_selects_production_english(self):
+        isolated = R2Store(self.client, 'private-bucket', '_extended-locales/staging/matrix')
+        with mock.patch('portal_english_pipeline.prepare_queued', return_value=self.english) as prepare:
+            include_english_matrix(isolated, self.result)
+        self.assertEqual(prepare.call_args.args[0].prefix, isolated.prefix+'/english-commentary')
+
+    def test_duplicate_english_job_fails(self):
+        result = {**self.result, 'locale_jobs_json': json.dumps([self.english['job']])}
+        with mock.patch('portal_english_pipeline.prepare_queued', return_value=self.english), self.assertRaises(ExpansionError):
+            include_english_matrix(self.store, result)
+
+    def test_english_cli_is_not_an_explicit_historical_or_feature_branch_backdoor(self):
+        reviewed = {'GITHUB_ACTIONS': 'true', 'GITHUB_REF': 'refs/heads/main', 'KC_PUBLIC_REPOSITORY': 'true'}
+        for args, environment in [(['prepare-recovery'], reviewed), (['prepare-publication'], reviewed),
+                                  (['prepare', '--generation', 'a'*64], reviewed), (['prepare'], {}),
+                                  (['prepare'], {**reviewed, 'GITHUB_REF': 'refs/heads/feature'}),
+                                  (['prepare'], {**reviewed, 'KC_PUBLIC_REPOSITORY': 'false'})]:
+            with self.subTest(args=args, environment=environment), mock.patch.dict('os.environ', environment, clear=True), \
+                 mock.patch('sys.argv', ['incremental', *args, '--include-english']), \
+                 mock.patch.object(R2Store, 'from_env') as connect:
+                with self.assertRaises(ExpansionError): main()
+                connect.assert_not_called()
 
 
 if __name__ == '__main__': unittest.main()
