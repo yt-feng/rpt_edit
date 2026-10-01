@@ -285,7 +285,9 @@ def freeze_editorial(store, docs, day, producer, source_admission):
         require(publication_day(entry['day']) == entry['day'] and entry['day'] not in seen
                 and isinstance(entry['receipt'], str) and HEX64.fullmatch(entry['receipt']), 'English queue entry differs')
         seen.add(entry['day'])
-    retained = [entry for entry in queue['entries'] if entry['day'] != day]
+    from portal_english_pipeline import completed_day_is_durable
+    retained = [entry for entry in queue['entries'] if entry['day'] != day
+                and not completed_day_is_durable(store, entry)]
     require(len(retained) < 32, 'Unfinished English admission days exceed bound; nothing discarded')
     saved = put_source(store, source)
     receipt = {'schema_version': 1, 'policy': POLICY, 'scope': SCOPE, 'day': day,
@@ -401,6 +403,7 @@ def main():
     require_actions(); require(os.environ.get('KC_PUBLIC_REPOSITORY') == 'true', 'English production translation requires public Actions')
     if args.staging_prefix:
         print(json.dumps(staging_probe(R2Store.from_env(args.staging_prefix)), sort_keys=True)); return 0
+    require(os.environ.get('GITHUB_REF') == 'refs/heads/main', 'English production inference requires reviewed main')
     require(all((args.corpus, args.output, args.checkpoint)), 'English corpus/output/checkpoint required')
     require(args.corpus.stat().st_size <= MAX_SOURCE_BYTES, 'English corpus too large')
     result = build(json.loads(args.corpus.read_text()), args.output, args.checkpoint,

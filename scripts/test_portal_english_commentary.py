@@ -9,7 +9,7 @@ from unittest import mock
 from build_portal_extended_locales import Memo
 from offline_translation import TranslationBudgetExceeded
 from portal_english_commentary import (POLICY, build, extract_editorial, freeze_editorial, make_source, put_source,
-                                      read_source, staging_probe, validate_source)
+                                      read_source, staging_probe, validate_source, main as english_main)
 from portal_extended_locales import ExpansionError, ORIGIN, digest, stable_bytes
 from portal_extended_r2 import R2IntegrityError, R2PermissionError, R2Store
 from test_portal_extended_r2 import FakeR2
@@ -179,6 +179,15 @@ class EnglishEditorialTests(unittest.TestCase):
         self.assertEqual(result['ready_candidates'], 0); self.assertFalse(result['deployed'])
         self.assertTrue(all('/sources/' in key or '/checkpoints/' in key for key in self.client.objects))
         with self.assertRaises(Exception): staging_probe(R2Store(self.client, 'private', '_english-commentary/v1'))
+
+    def test_feature_branch_cannot_start_production_english_model(self):
+        # Test the CLI boundary, never instantiate or execute a real translator.
+        environment = {'KC_PUBLIC_REPOSITORY': 'true', 'GITHUB_REF': 'refs/heads/feature'}
+        with mock.patch.dict('os.environ', environment, clear=True), \
+             mock.patch('sys.argv', ['english']), mock.patch('portal_english_commentary.require_actions'), \
+             mock.patch('portal_english_commentary.OfflineTranslator') as translator:
+            with self.assertRaises(ExpansionError): english_main()
+            translator.assert_not_called()
 
     def test_frozen_source_receipt_is_bound_to_original_admission_and_has_no_ready_or_active_pointer(self):
         producer = {'run_id': '123', 'attempt': '1', 'sha': 'b'*40, 'repository': 'example/repo', 'workflow': WORKFLOW}

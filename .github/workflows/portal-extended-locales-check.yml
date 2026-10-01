@@ -6,6 +6,7 @@ on:
       - 'scripts/*extended*'
       - 'scripts/*english_commentary*'
       - 'scripts/*english_ui*'
+      - 'scripts/*english_pipeline*'
       - 'portal_suite/locale_assets/english-commentary.*'
       - 'portal_suite/site_src/assets/app.js'
       - 'portal_suite/locale_assets/extended-locales.*'
@@ -24,6 +25,7 @@ on:
       - 'scripts/*extended*'
       - 'scripts/*english_commentary*'
       - 'scripts/*english_ui*'
+      - 'scripts/*english_pipeline*'
       - 'portal_suite/locale_assets/english-commentary.*'
       - 'portal_suite/site_src/assets/app.js'
       - 'portal_suite/locale_assets/extended-locales.*'
@@ -76,6 +78,7 @@ jobs:
           python -B scripts/test_portal_extended_incremental.py
           python -B scripts/test_portal_extended_daily_queue.py
           python -B scripts/test_portal_english_commentary.py
+          python -B scripts/test_portal_english_pipeline.py
           python -B scripts/test_portal_english_ui.py
           node --test scripts/test_portal_english_ui.js
           python -B scripts/test_portal_extended_recovery.py
