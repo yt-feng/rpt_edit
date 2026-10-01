@@ -13,6 +13,7 @@ import json
 import os
 from pathlib import Path
 import re
+import tempfile
 import time
 from urllib.parse import urlsplit
 
@@ -346,6 +347,14 @@ def build(source, output, checkpoint, translator, *, seconds=14400, seed_checkpo
         except Exception as error:
             failures.append({'id': doc['id'], 'code': safe_failure_code(error)})
     memo.save()
+    # Public candidate files contain only projected previews, never private body
+    # JSON. Even complete candidates remain noindex until normal approval.
+    if items:
+        from portal_english_ui import detail, homepage
+        public = output/'public'/'en'; (public/'blog').mkdir(parents=True, exist_ok=True)
+        for item in items:
+            (public/'blog'/f'{item["id"]}.html').write_bytes(detail(item))
+        (public/'index.html').write_bytes(homepage(items))
     result = {'schema_version': 1, 'policy': POLICY, 'locale': 'en', 'scope': SCOPE, 'day': source['day'],
               'provider': PROVIDER, 'model': MODEL_ID, 'paid_provider_requests': 0,
               'generation': source['generation'], 'source_document_count': len(docs),
@@ -368,7 +377,17 @@ def staging_probe(store):
     source = make_source([doc], day)
     saved = put_source(store, source)
     require(read_source(store, source['generation']) == source, 'English staging source restore differs')
+    with tempfile.TemporaryDirectory() as temporary:
+        checkpoint, restored = Path(temporary)/'checkpoint.json', Path(temporary)/'restored.json'
+        # Empty English memo only: no synthetic/production translation output.
+        memo = Memo(checkpoint, 'en', None, time.monotonic()+5, source_generation=source['generation'])
+        memo.save()
+        written = store.put_checkpoint('en', source['generation'], checkpoint)
+        recovered = store.restore_checkpoint('en', source['generation'], restored)
+        require(recovered['present'] and written['sha256'] == recovered['sha256']
+                and restored.read_bytes() == checkpoint.read_bytes(), 'English staging checkpoint restore differs')
     return {'staging_only': True, 'english_editorial_restore': 'passed', **saved,
+            'english_checkpoint_restore': 'passed', 'checkpoint_sha256': written['sha256'],
             'ready_candidates': 0, 'translation_calls': 0, 'paid_provider_requests': 0, 'deployed': False}
 
 

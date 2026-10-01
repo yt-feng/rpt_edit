@@ -5,6 +5,9 @@ on:
     paths:
       - 'scripts/*extended*'
       - 'scripts/*english_commentary*'
+      - 'scripts/*english_ui*'
+      - 'portal_suite/locale_assets/english-commentary.*'
+      - 'portal_suite/site_src/assets/app.js'
       - 'portal_suite/locale_assets/extended-locales.*'
       - 'scripts/*hymt*'
       - '.github/actions/setup-offline-translation/action.yml'
@@ -20,6 +23,9 @@ on:
     paths:
       - 'scripts/*extended*'
       - 'scripts/*english_commentary*'
+      - 'scripts/*english_ui*'
+      - 'portal_suite/locale_assets/english-commentary.*'
+      - 'portal_suite/site_src/assets/app.js'
       - 'portal_suite/locale_assets/extended-locales.*'
       - 'scripts/*hymt*'
       - '.github/actions/setup-offline-translation/action.yml'
@@ -70,6 +76,8 @@ jobs:
           python -B scripts/test_portal_extended_incremental.py
           python -B scripts/test_portal_extended_daily_queue.py
           python -B scripts/test_portal_english_commentary.py
+          python -B scripts/test_portal_english_ui.py
+          node --test scripts/test_portal_english_ui.js
           python -B scripts/test_portal_extended_recovery.py
           python -B scripts/test_portal_extended_publication.py
           python -B scripts/test_portal_extended_ui.py

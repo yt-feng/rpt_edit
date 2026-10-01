@@ -175,8 +175,9 @@ class EnglishEditorialTests(unittest.TestCase):
     def test_staging_probe_never_infers_or_creates_ready_ledger(self):
         result = staging_probe(self.store)
         self.assertEqual(result['english_editorial_restore'], 'passed'); self.assertEqual(result['translation_calls'], 0)
+        self.assertEqual(result['english_checkpoint_restore'], 'passed')
         self.assertEqual(result['ready_candidates'], 0); self.assertFalse(result['deployed'])
-        self.assertTrue(all('/sources/' in key for key in self.client.objects))
+        self.assertTrue(all('/sources/' in key or '/checkpoints/' in key for key in self.client.objects))
         with self.assertRaises(Exception): staging_probe(R2Store(self.client, 'private', '_english-commentary/v1'))
 
     def test_frozen_source_receipt_is_bound_to_original_admission_and_has_no_ready_or_active_pointer(self):

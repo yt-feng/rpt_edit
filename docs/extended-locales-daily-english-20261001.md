@@ -188,3 +188,32 @@ or corrupt metadata fails before quota or body access; rollback selects the old
 ledger. This is implemented and locally tested, not yet a published English
 release. CPU matrix/cursor, preview frontend and normal publication integration
 remain required before `/en/` can be activated.
+
+Implementation commits: editorial capture/strict CPU builder `651134ab`,
+site-release-bound ledger access `9c87b918`.
+
+## English public-preview and membership UI checkpoint
+
+English candidates now separate `public/en/` HTML from `private/bodies/` JSON.
+Only ID/title/date/preview are projected into HTML, cards, metadata and JSON-LD.
+They use the same portal/Blog styles and search/date/sort/24-row pagination, but
+no report/chart/original scope or source-document link. Even a complete candidate
+is noindex and not a production release. No full commentary is serialized into
+public files. The English route boots only the existing account/membership UI,
+not the original report catalog or newsfeed.
+
+The explicit Read action uses the existing account token with the private
+no-store API. Anonymous users open the normal login; allowance exhaustion shows
+the existing website membership request form. Authorized prose is inserted with
+textContent, never HTML. Logout, account changes, tab hiding and pagehide clear
+private text and abort/invalidate outstanding reads. There is no body cache or
+automatic prefetch/free-quota consumption. The actual gateway enforces the three
+distinct lifetime free reads, membership, rereads and bounded R2 concurrency.
+
+Local checks: English source/builder 17; English public HTML 6; English client
+DOM/auth/paywall 8; English gateway + version authority 23. These are synthetic
+and local contract checks, not real-model semantic review or live acceptance.
+The zero-inference private staging probe also restores the English checkpoint
+and verifies its source-generation binding and checksum. The CPU matrix/cursor,
+candidate persistence/approval and transactional publication integration still
+remain to be connected; English is not online yet.
