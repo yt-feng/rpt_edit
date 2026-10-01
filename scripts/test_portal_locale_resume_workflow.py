@@ -23,8 +23,8 @@ class ResumeWorkflowTests(unittest.TestCase):
                                    text.split('\njobs:\n', 1)[1], re.M | re.S))
         source, recovery = jobs(self.source), jobs(self.recovery)
         shared = {'shadow_review_hold', 'multilingual_approval', 'extended_locales_approval',
-                  'cutover', 'cleanup_multilingual_shadow'}
-        self.assertEqual(set(source), shared | {'prepare_release', 'extended_daily_review'})
+                  'english_approval', 'cutover', 'cleanup_multilingual_shadow'}
+        self.assertEqual(set(source), shared | {'prepare_release', 'extended_daily_review', 'english_daily_review'})
         self.assertEqual(set(recovery), shared | {'prepare_release'})
         for job in shared:
             self.assertEqual(source[job], recovery[job], job)
@@ -61,6 +61,17 @@ class ResumeWorkflowTests(unittest.TestCase):
         policy = self.recovery.index('Compute multilingual index policy identity')
         self.assertLess(restored, verified)
         self.assertLess(verified, policy)
+
+    def test_english_recovery_keeps_exact_uploaded_bytes_and_requires_fresh_protected_approval(self):
+        preparation = self.recovery.split('\n  shadow_review_hold:\n')[0]
+        self.assertIn('scripts/portal_english_publication.py recover', preparation)
+        self.assertNotIn('scripts/portal_english_publication.py assemble', preparation)
+        self.assertIn('english_requested: ${{ steps.english_assembly.outputs.ready }}', preparation)
+        self.assertIn('CANDIDATE_COMMIT_SHA: ${{ steps.static_upload.outputs.commit_sha }}', preparation)
+        self.assertIn('ENGLISH_HANDOFF: ${{ steps.english_assembly.outputs.handoff }}', preparation)
+        self.assertIn('Configure required reviewers before English recovery', preparation)
+        self.assertNotIn('english_daily_review:', self.recovery)
+        self.assertIn('needs.english_approval.result == \'success\'', self.recovery)
 
     def test_fresh_loading_budget_evidence_is_preserved_before_artifact_upload(self):
         preserve = self.recovery.split('      - name: Preserve uploaded candidate provenance\n', 1)[1]

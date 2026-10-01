@@ -203,6 +203,23 @@ class ResumeTests(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError, 'checksum mismatch'):
                 resume.download_candidate_files(self.r2, 'bucket', self.manifest, self.site, workers=1)
 
+    def test_download_english_recovery_preserves_only_the_verified_public_previews_and_assets(self):
+        extra = {'data/english-commentary/assembly.json': b'{}', 'sitemap-en.xml': b'sitemap',
+                 'en/index.html': b'preview home', 'en/blog/20261001-0000000000000001.html': b'preview',
+                 'assets/english-commentary.js': b'text-only client', 'assets/english-commentary.css': b'style',
+                 'assets/extended-locales.js': b'shared search', 'assets/extended-locales.css': b'shared style'}
+        for name, body in extra.items():
+            sha = hashlib.sha256(body).hexdigest(); self.manifest['files'][name] = {'size': len(body), 'sha256': sha}
+            self.r2.objects[publisher.slot_prefix('b')+name] = {'body': body, 'metadata': {'sha256': sha}}
+        public = {name: {} for name in extra if name.startswith('en/') or name == 'sitemap-en.xml'}
+        with patch('portal_english_publication.read_static_assembly', return_value={'public_files': public}) as verify:
+            downloaded = resume.download_candidate_files(self.r2, 'bucket', self.manifest, self.site, workers=1)
+            verify.assert_called_once(); self.assertTrue(set(extra).issubset(downloaded))
+            for name, body in extra.items(): self.assertEqual((self.site/name).read_bytes(), body)
+        with patch('portal_english_publication.read_static_assembly', side_effect=RuntimeError('checksum mismatch')):
+            with self.assertRaisesRegex(RuntimeError, 'checksum mismatch'):
+                resume.download_candidate_files(self.r2, 'bucket', self.manifest, self.site, workers=1)
+
     def prepare_declared_locale_routes(self):
         from test_verify_portal_locale_routes import describe, fixture
 
@@ -323,6 +340,40 @@ class ResumeTests(unittest.TestCase):
         self.assertEqual(result['remote_mutations'], 0)
         self.assertEqual(result['verified_remote_objects'], self.manifest['file_count'])
         self.assertEqual(self.live.call_count, 2)
+
+    def use_english_cutover_failure(self, *, bind_failure=False):
+        self.use_rolled_back_source(); steps = self.github.jobs[1]['steps']
+        for step in steps:
+            if step['name'] == resume.LIVE_ACCEPTANCE_STEP: step['conclusion'] = 'success'
+        steps.insert(4, {'name': resume.ENGLISH_BIND_STEP, 'status': 'completed', 'conclusion': 'failure' if bind_failure else 'success'})
+        steps.insert(7, {'name': 'Audit extended locale pages after live cutover', 'status': 'completed', 'conclusion': 'skipped'})
+        steps.insert(8, {'name': resume.ENGLISH_AUDIT_STEP, 'status': 'completed', 'conclusion': 'skipped' if bind_failure else 'failure'})
+        steps.insert(11, {'name': resume.ENGLISH_ROLLBACK_STEP, 'status': 'completed', 'conclusion': 'skipped' if bind_failure else 'success'})
+        if bind_failure:
+            for step in steps[5:]:
+                if step['name'] != resume.OUTCOME_STEP: step['conclusion'] = 'skipped'
+        for number, step in enumerate(steps, 1): step['number'] = number
+
+    def test_english_bind_failure_recovers_immutable_candidate_before_any_deployment(self):
+        self.use_english_cutover_failure(bind_failure=True); result = self.restore()
+        self.assertFalse(result['source_deployment_performed']); self.assertFalse(result['source_rollback_verified'])
+        self.assertEqual(result['remote_mutations'], 0)
+
+    def test_english_acceptance_failure_recovers_only_after_verified_english_rollback(self):
+        self.use_english_cutover_failure(); result = self.restore()
+        self.assertEqual(result['source_failure_phase'], 'english_acceptance_rolled_back')
+        self.assertTrue(result['source_rollback_verified']); self.assertEqual(result['remote_mutations'], 0)
+        original = copy.deepcopy(self.github.jobs)
+        for name in (resume.ENGLISH_BIND_STEP, resume.LIVE_ACCEPTANCE_STEP, resume.ENGLISH_ROLLBACK_STEP):
+            for outcome in ('skipped', 'failure', 'cancelled'):
+                self.github.jobs = copy.deepcopy(original)
+                next(step for step in self.github.jobs[1]['steps'] if step['name'] == name)['conclusion'] = outcome
+                with self.subTest(name=name, outcome=outcome), self.assertRaises(resume.ResumeError): self.restore()
+        for name in (resume.ENGLISH_BIND_STEP, resume.ENGLISH_AUDIT_STEP, resume.ENGLISH_ROLLBACK_STEP,
+                     'Deploy prepared neutral edge release', resume.ROLLBACK_VERIFY_STEP):
+            self.github.jobs = copy.deepcopy(original)
+            next(step for step in self.github.jobs[1]['steps'] if step['name'] == name)['number'] = 999
+            with self.subTest(order=name), self.assertRaises(resume.ResumeError): self.restore()
 
     def test_pre_deployment_recovery_rejects_missing_or_ambiguous_execution_evidence(self):
         self.use_pre_deployment_failure()
