@@ -70,6 +70,23 @@ def save_handoff(store, batch, *, day, pages, producer):
         raise ExpansionError('Invalid handoff page count')
     value = {'schema_version': 1, 'producer': producer, 'source_day': day,
              'pages_per_locale': pages, 'batch': batch, 'paid_provider_requests': 0}
+    from portal_extended_continuation import checkpoint_evidence, queue, read_origin
+    origin = read_origin(store, batch['generation'])
+    if origin:
+        if origin['source_day'] != day or not set(batch['candidates']) <= set(origin['locales']):
+            raise ExpansionError('Handoff does not match its registered original source')
+        value['source_origin_sha256'] = digest(stable_bytes(origin))
+        checkpoints = {}
+        for locale, candidate in batch['candidates'].items():
+            row = queue(store, locale).get(batch['generation'], {})
+            snapshot = row.get('snapshot', {})
+            if row.get('status') != 'complete' or snapshot.get('candidate_id') != candidate:
+                raise ExpansionError('Handoff requires an exact complete registered outcome')
+            checksum = snapshot.get('checkpoint_sha256')
+            if not checkpoint_evidence(store, locale, batch['generation'], checksum):
+                raise ExpansionError('Complete handoff lacks its immutable checkpoint')
+            checkpoints[locale] = checksum
+        value['continuation_checkpoints'] = checkpoints
     raw = stable_bytes(value)
     identity = digest(raw)
     key = store.key('publication-handoffs', identity, 'receipt.json')
@@ -147,6 +164,34 @@ def next_ready_batch(store, day, requested, enabled, active, workspace):
     return None
 
 
+def next_registered_batch(store, requested, enabled, active, workspace):
+    """Drain only explicitly registered generations, including cross-day results."""
+    from portal_extended_continuation import acknowledge_published, queue, tracked_generations
+    locales = select_locales(requested)
+    active = checked_batches(active)
+    acknowledge_published(store, locales, active)
+    allowed = set(select_locales(enabled)) if enabled else set()
+    live = {locale for row in active for locale in row['candidates']}
+    for (_day, generation), ready_locales in sorted(tracked_generations(store, locales).items()):
+        selected = sorted(ready_locales & allowed & live)
+        if not selected:
+            continue
+        source = workspace/(generation+'.json')
+        store.restore_source(generation, source)
+        corpus = json.loads(source.read_bytes())
+        candidates = {}
+        for locale in selected:
+            snapshot = queue(store, locale)[generation]['snapshot']
+            directory = workspace/generation/locale
+            store.restore_candidate(locale, generation, snapshot['candidate_id'], directory)
+            verified_candidate(directory, corpus)
+            if digest((directory/'candidate-manifest.json').read_bytes()) != snapshot['manifest_sha256']:
+                raise ExpansionError('Completed continuation manifest differs from exact outcome')
+            candidates[locale] = snapshot['candidate_id']
+        return {'generation': generation, 'candidates': candidates}, corpus
+    return None
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--generation', default='')
@@ -171,12 +216,14 @@ def main():
             if len(response.content) > 65536:
                 raise ExpansionError('Active release identity exceeds bound')
             active = read_active_batches(store, response.json())
-        ready = next_ready_batch(store, args.day, args.locales, args.enabled_locales, active, workspace)
+        ready = next_registered_batch(store, args.locales, args.enabled_locales, active, workspace)
+        if ready is None:
+            ready = next_ready_batch(store, args.day, args.locales, args.enabled_locales, active, workspace)
         if ready is None:
             print(json.dumps({'dispatched': False, 'reason': 'No new complete already-approved locale candidates'}))
             return
         batch, corpus = ready
-        receipt = save_handoff(store, batch, day=args.day, pages=len(corpus['documents']), producer={
+        receipt = save_handoff(store, batch, day=daily_corpus_day(corpus), pages=len(corpus['documents']), producer={
             'run_id': os.environ['GITHUB_RUN_ID'], 'attempt': os.environ['GITHUB_RUN_ATTEMPT'],
             'sha': os.environ['GITHUB_SHA']})
         subprocess.run(['gh', 'workflow', 'run', 'neutral-edge-cutover.yml', '--repo', os.environ['GITHUB_REPOSITORY'],

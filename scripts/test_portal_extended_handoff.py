@@ -80,11 +80,12 @@ class HandoffTests(unittest.TestCase):
         self.store._put(key, json.dumps(value).encode(), metadata={'kind':'test'})
         with self.assertRaisesRegex(ExpansionError, 'checksum'): read_handoff(self.store, receipt)
 
-    def test_publication_handoff_cannot_approve_or_dispatch_historical_recovery(self):
+    def test_publication_handoff_accepts_proved_continuation_but_not_readonly_recovery(self):
         root = Path(__file__).resolve().parents[1]
         workflow = (root/'.github/workflows/portal-extended-locales-r2.yml').read_text().split('  publication_handoff:', 1)[1]
         self.assertIn("inputs.operation == 'candidate'", workflow)
-        self.assertNotIn("inputs.operation == 'publication-resume'", workflow)
+        self.assertIn("inputs.operation == 'publication-resume'", workflow)
+        self.assertNotIn("inputs.operation == 'recovery-test'", workflow)
         self.assertIn('vars.PORTAL_EXTENDED_AUTO_PUBLISH_LOCALES', workflow)
         self.assertIn("github.ref == 'refs/heads/main'", workflow)
         self.assertNotIn('pending_deployments', workflow)

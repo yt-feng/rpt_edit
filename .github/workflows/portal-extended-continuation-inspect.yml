@@ -1,0 +1,62 @@
+name: Inspect exact extended locale continuation
+on:
+  workflow_dispatch:
+    inputs:
+      generation:
+        description: Exact existing source generation
+        required: true
+        type: string
+      locale:
+        description: Exact existing locale
+        required: true
+        type: string
+      checkpoint_sha:
+        description: Immutable existing checkpoint SHA256
+        required: true
+        type: string
+      candidate_id:
+        description: Exact existing complete or incomplete candidate ID
+        required: true
+        type: string
+permissions:
+  contents: read
+# Entirely read-only, so this never waits for or replaces the translation queue.
+concurrency:
+  group: extended-locale-inspection-${{ github.run_id }}
+  cancel-in-progress: false
+jobs:
+  inspect:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -m pip install --disable-pip-version-check 'boto3>=1.34,<2' 'requests>=2.31,<3'
+      - name: Read exact private objects and emit only hashes and counts
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          SOURCE_GENERATION: ${{ inputs.generation }}
+          LOCALE: ${{ inputs.locale }}
+          CHECKPOINT_SHA: ${{ inputs.checkpoint_sha }}
+          CANDIDATE_ID: ${{ inputs.candidate_id }}
+        run: |
+          set -euo pipefail
+          python3 -B scripts/inspect_portal_extended_continuation.py \
+            --generation "$SOURCE_GENERATION" --locale "$LOCALE" \
+            --checkpoint-sha "$CHECKPOINT_SHA" --candidate-id "$CANDIDATE_ID" \
+            --output "$RUNNER_TEMP/private-continuation-inspection"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: continuation-inspection-${{ github.run_id }}
+          # Public repository: NEVER upload the private corpus/checkpoint/pages.
+          path: ${{ runner.temp }}/private-continuation-inspection/inspection.json
+          if-no-files-found: error
+          retention-days: 7

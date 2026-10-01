@@ -48,8 +48,20 @@ def api(path, payload=None, method=None):
     return json.loads(result.stdout) if result.stdout.strip() else None
 
 
-def producer_is_valid(receipt, run, jobs, repository):
+def producer_is_valid(receipt, run, jobs, repository, *, origin=None, original_run=None, original_jobs=None):
     producer = receipt['producer']
+    if receipt.get('source_origin_sha256'):
+        from portal_extended_continuation import verify_origin_run
+        require(isinstance(origin, dict) and digest(stable_bytes(origin)) == receipt['source_origin_sha256']
+                and origin['generation'] == receipt['batch']['generation']
+                and origin['source_day'] == receipt['source_day']
+                and set(receipt['batch']['candidates']) <= set(origin['locales']),
+                'Historical continuation lacks its exact original source receipt')
+        require(isinstance(receipt.get('continuation_checkpoints'), dict)
+                and set(receipt['continuation_checkpoints']) == set(receipt['batch']['candidates'])
+                and all(re.fullmatch(r'[0-9a-f]{64}', str(value)) for value in receipt['continuation_checkpoints'].values()),
+                'Continuation checkpoint inventory is invalid')
+        verify_origin_run(origin, original_run or {}, original_jobs or [], repository)
     require(run.get('id') == int(producer['run_id']) and run.get('run_attempt') == int(producer['attempt'])
             and run.get('head_sha') == producer['sha'], 'Producer run identity mismatch')
     require(run.get('status') == 'completed' and run.get('conclusion') in ('success', 'failure')
@@ -63,7 +75,7 @@ def producer_is_valid(receipt, run, jobs, repository):
         selected = [row for row in jobs if row.get('name') == name]
         require(len(selected) == 1 and selected[0].get('conclusion') == 'success'
                 and selected[0].get('status') == 'completed', f'Producer {name} did not complete')
-        if name == 'source':
+        if name == 'source' and not receipt.get('source_origin_sha256'):
             require(receipt['source_day'] in {publication_day(selected[0].get(key, ''))
                     for key in ('started_at', 'completed_at')}, 'Historical source cannot receive automatic daily approval')
 
@@ -129,7 +141,23 @@ def main():
     producer_path = f'repos/{repository}/actions/runs/{producer["run_id"]}/attempts/{producer["attempt"]}'
     jobs = api(producer_path+'/jobs?per_page=100')
     require(jobs.get('total_count', 101) <= 100, 'Producer jobs exceed verification bound')
-    producer_is_valid(receipt, api(producer_path), jobs['jobs'], repository)
+    origin = original_run = original_jobs = None
+    if receipt.get('source_origin_sha256'):
+        from portal_extended_continuation import checkpoint_evidence, read_origin
+        origin = read_origin(store, receipt['batch']['generation'])
+        require(origin is not None, 'Continuation source origin is missing')
+        original = origin['producer']
+        original_path = f'repos/{repository}/actions/runs/{original["run_id"]}/attempts/{original["attempt"]}'
+        original_response = api(original_path+'/jobs?per_page=100')
+        require(original_response.get('total_count', 101) <= 100
+                and len(original_response.get('jobs', [])) == original_response['total_count'],
+                'Original producer job inventory is incomplete')
+        original_jobs, original_run = original_response['jobs'], api(original_path)
+    producer_is_valid(receipt, api(producer_path), jobs['jobs'], repository,
+                      origin=origin, original_run=original_run, original_jobs=original_jobs)
+    for locale, checksum in receipt.get('continuation_checkpoints', {}).items():
+        require(bool(checkpoint_evidence(store, locale, receipt['batch']['generation'], checksum)),
+                'Continuation checkpoint has no resolved units')
     with tempfile.TemporaryDirectory(prefix='daily-review-') as temporary:
         corpus_path = Path(temporary)/'source.json'
         store.restore_source(receipt['batch']['generation'], corpus_path)
