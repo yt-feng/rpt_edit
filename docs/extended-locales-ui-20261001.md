@@ -86,3 +86,42 @@ resolved source SHA matches that merge. Dispatch returned the run URL; the
 immediate receipt showed `pending` behind the existing release lock. No
 post-dispatch monitoring or live UI acceptance was performed. The active
 production version recorded above remains the last verified baseline.
+
+## Completed production acceptance, 2026-10-01
+
+After the later user continuation, Action `36830465900` was verified completed
+successfully on the reviewed merge SHA above. Approved R2 restore, immediate
+pre-cutover committed-tree verification, deployment, live acceptance, extended
+page audit and transactional outcome all passed. Cutover completed at
+11:11:38 UTC. No run was cancelled or restarted during this acceptance pass.
+
+Current public edge state is slot `a`, release
+`05b97d1fc4a394a836e68e393da3a3be`, tree
+`5ed5c084172bd65fdd61fab84afbc65ce62ffd57f470e854c71dd1dfa16bf855`.
+The public receipt declares `portal-shared-v1`, retains all 33 locales with
+24 pages each (792), and records 33 verified checkpoint replays with zero
+additional translation calls and zero paid-provider requests. This is retained
+approved content, not evidence that later daily articles are fully translated.
+
+A separate live audit using `--locales all-supported --require-standard-ui`
+passed all 33 homepages, their sitemaps, 66 detail samples and the seven shared
+assets. Browser acceptance passed French desktop/mobile home and article,
+Persian RTL mobile home and article, real language-switch navigation, local
+search/empty/clear, source-title phrase search and the existing account modal.
+The full catalog loaded 14639 reports; `Space Exploration` returned 18 reports
+with real root `/report.html` URLs. Desktop 1280px and mobile 390px checks had
+no horizontal page overflow. No credentials were submitted. The temporary
+viewport override was reset and the temporary tab closed.
+
+English remains excluded: `/en/` returned HTTP 404 and no English alternate
+was present on the tested Persian home. The future text-only summary and
+secondary-commentary contract remains unchanged; no original English report
+text or charts are introduced. Source-label UI fallback is still present, as
+described above; this release completes shared layout/function integration,
+not full UI-string translation or authenticated delivery acceptance.
+
+Content-free hashes, all per-locale counts, checkpoint replay identities and
+live URL/sample results are in
+[extended-locales-ui-evidence-20261001.json](extended-locales-ui-evidence-20261001.json).
+The implementation is merged and deployed; this acceptance record is a
+separate documentation-only checkpoint.

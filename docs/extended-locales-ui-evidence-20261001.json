@@ -1,0 +1,917 @@
+{
+  "schema_version": 1,
+  "verified_at_utc": "2026-10-01 20:03:43 UTC",
+  "implementation_sha": "8b7e7419908a7b2f530b726ff9a473ba1cadd993",
+  "deployed_source_sha": "1b8bd957443fc915d5d9a8ad2da30aa8eebe5d09",
+  "pull_request": "https://github.com/yt-feng/rpt_edit/pull/195",
+  "production_action": {
+    "id": 36830465900,
+    "url": "https://github.com/yt-feng/rpt_edit/actions/runs/36830465900",
+    "status": "completed",
+    "conclusion": "success",
+    "restore_approved_candidates": "success",
+    "committed_candidate_verification": "success",
+    "live_acceptance": "success",
+    "extended_live_audit": "success",
+    "transactional_outcome": "success",
+    "cutover_completed_at_utc": "2026-10-01T11:11:38Z"
+  },
+  "regression_actions": {
+    "extended": 36830215728,
+    "public_identity_and_release_guards": 36830215701,
+    "locale_manifest": 36830215889,
+    "api_cost_controls": 36830215628
+  },
+  "production_state": {
+    "schema_version": 1,
+    "slot": "a",
+    "release_id": "05b97d1fc4a394a836e68e393da3a3be",
+    "tree_sha256": "5ed5c084172bd65fdd61fab84afbc65ce62ffd57f470e854c71dd1dfa16bf855"
+  },
+  "r2_restore": {
+    "receipt_url": "https://kcdesk.com/data/extended-locales/assembly.json",
+    "ui_version": "portal-shared-v1",
+    "locale_count": 33,
+    "page_counts": {
+      "bn": 24,
+      "bo": 24,
+      "cs": 24,
+      "de": 24,
+      "es": 24,
+      "fa": 24,
+      "fr": 24,
+      "gu": 24,
+      "he": 24,
+      "hi": 24,
+      "id": 24,
+      "it": 24,
+      "kk": 24,
+      "km": 24,
+      "mn": 24,
+      "mr": 24,
+      "ms": 24,
+      "my": 24,
+      "nl": 24,
+      "pl": 24,
+      "pt": 24,
+      "ru": 24,
+      "ta": 24,
+      "te": 24,
+      "th": 24,
+      "tl": 24,
+      "tr": 24,
+      "ug": 24,
+      "uk": 24,
+      "ur": 24,
+      "vi": 24,
+      "yue": 24,
+      "zh-Hant": 24
+    },
+    "total_pages": 792,
+    "replay_count": 33,
+    "translation_calls": 0,
+    "paid_provider_requests": 0,
+    "replays": [
+      {
+        "approved_candidate": "56cb54e27ac0bf0baa38116f1ac58a19289b0f9dba2e197ef3d8f8d77d6d80bf",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "16a0b385487f3c0c28c25424cf86a4e6ea9fe9d8419fdd0e66c56f3bdb54bb75",
+        "checkpoint_sha256": "9b464d767d78ff05f221e0616dd5c40da969556baf1c6a57a3e905a599e14ef6",
+        "locale": "bn",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "02e84cc130c40f8fc200f440ec49f51b54122d52f669bfe7f8c850c360f2c736",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "c080a0a655b90752b67700cf0c4fb4ab707880a6c08da1818f51d91f572bcc23",
+        "checkpoint_sha256": "7745066337fd3926435d4510bf41cf6a9e65900e03daade2da8d5c23af7a6470",
+        "locale": "bo",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "805c81eaafff8ef25a6ca909c5c6919dab114b65de487303bb1ac0574f0c7bdd",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "a4fc730a573e381a6b2c329c1d204b6bdb750b8da04e4ada4679c4b86e68d50f",
+        "checkpoint_sha256": "46569dd3956b1e2d829c16b66c1ccd554d78d4f45b1910ee25edccd3e2816e99",
+        "locale": "cs",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "b6be7b87cea5f0b680d1601663dad9122e1a65b52de6b253ba824368365634ea",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "786fbdc44e0a5d5b3693650adbab8a7bc6526d73f3d5b4b0fd0600acb2012a1c",
+        "checkpoint_sha256": "06b2ca50b33bc7c9327a823d09b925b99bbf6c71fdc195b8aa6bcf103eaa502f",
+        "locale": "de",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "9208eae614ea3503150f8e518be1c915708b718f018e7642f983a121c88893f0",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "ed1a952a85685921298bb2471c395e84ee6b64b9c58c0edd77703f4eeddf3821",
+        "checkpoint_sha256": "1a6e5777b594eeb27dba43a9ad49852f53cf146af900a1dd17673d9a81c18297",
+        "locale": "es",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "9b9db7ade623d901392c862bd0d73138a0428329e762bf1a86febb480e230b88",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "7a6573bcdd1ea5b24a185a2e4a1ec28ae5e9e2009a844c517d8318502e488fb8",
+        "checkpoint_sha256": "dc53a4e08244f21962184ddb6ae769a0d4557feed215580307e32c87aba17d69",
+        "locale": "fa",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "509d97a8ae3b772655b3d602a9eac13d361ffdb1dc8120746ad3f046998a7062",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "69ef0d5a1666264ceb009c3ef4dc635061cbfdb155ccaa16df8f63a12c2255dd",
+        "checkpoint_sha256": "484bf08c0f8a051dc28f1f6a169bfe871359f4cbbf95d8b0787551dc2b556f2a",
+        "locale": "fr",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "45819f3302f997beef7c7db9bc29b58d9e46384bff6adc19bb35b8144f35bbb0",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "18c3beba5b5a34c94f012a080e71b0410306c4b8ac514b634cae1d654652ff7d",
+        "checkpoint_sha256": "26fdd079bdb09403195528a07e392f42f4e4166fa3943e317a556d2743d64b2e",
+        "locale": "gu",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "90d0f623ca44aa654f0ae314c62731a69e6307059b6f651d00a33a2828446a14",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "500c0bd9e53194d841c8165561d99ce14a3b7524d6fe7e37f7f693f18626269d",
+        "checkpoint_sha256": "d84d79b311fd7dd1e4f6aae57561b77415eeb9a3711bbfb6b1230fbcd34a6058",
+        "locale": "he",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "e7b09c5b45ce194f468518ecf01baeb7c32c8b8f7d951dfb6e3d9bdc236cb5c2",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "e3e285cfe0b71dd5e4691ee6d48df013c6bc722dd692a6a93e4145bde7b6cce0",
+        "checkpoint_sha256": "4cbe69f4e5d8929caadd1f1ff69042d7835184354c3eda945268bd44d0033875",
+        "locale": "hi",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "921d962ea7d10bd7f9e68757265e7dd5bd10c48a8a2c25026639d4d53e426a8d",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "828bde995aca7285f5dfd6332c1216f7ebf9d3a2bbee4b21e25396cc5f083618",
+        "checkpoint_sha256": "38f153b2c8bd4a83a282dd4c72f7c2f134d0873bf6161065c653c6b8d82c8c65",
+        "locale": "id",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "656489cfb21b3e92b695b05023e9493720231c399fd66df15b4c08262df3bf26",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "df5eafcd27588aad88c5a8d3c1b3d903e7189d159bee86e85b4f431a1503f5a5",
+        "checkpoint_sha256": "19184655ecaa5481248bfc2e99502b1716895946cd04918411d56ea49cfb50ea",
+        "locale": "it",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "200ade3197a13965365a11673149e7258ecd94ed0fba35268b564a477fc69af5",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "51fdc150efa38fd8c4e766e556d76ebacfc8ebf005cc021868b3c4ec7a573422",
+        "checkpoint_sha256": "523fdcf656bb33b805c25714eafbe5116de5056e1c8068025c98aba3da4ede7e",
+        "locale": "kk",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "b273781f8299c53216f3bd2a555e36df90f0c740918be358f930828749e02d5a",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "82ebd65a37e3f954d074e532fa0b0f6a58c205a3075f624de295ca1ddf0bed4e",
+        "checkpoint_sha256": "7c30c57103dd728739d3839bb471393455f77993af6105596ac9a17dfce1bae8",
+        "locale": "km",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "8f31f7b3c5131220137c1031dee60ace671396339802fc47a2de6d9465e472c9",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "04bc06035490656cfc6fd4fc55cf9816ddb9d717d9191745ef9c13c108c7724b",
+        "checkpoint_sha256": "e1939da5a3526decf96ef1f7b6ff67b3b222821c03081296ca6a75c14d5f439f",
+        "locale": "mn",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "6b16dc60dce5b73dd9b23d840a97828175153f42d4d36d29f12e5c36e3632921",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "2558476995527e00789a06095d7c055c12f115dd4b6a29fb6381115d9cc2966c",
+        "checkpoint_sha256": "7e0a1f454b35000a16a279704b2c0fb9574ea74c670d5b1a0368b555090dcf17",
+        "locale": "mr",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "738615558b29f0a3c8df86ced7a393f5ccee01713ed881e33e7cf21e18f3d83d",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "d86a1f7817adb02594f26b0846b02ed1a79013c76f6cad3beda6bf7d36758e64",
+        "checkpoint_sha256": "13e31bc50baed2e74e2c76444e3c31b99473342fc3760d3d9c2e2585e73999bb",
+        "locale": "ms",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "24c4b720703dddc438e19249c5db08a49af0ef9810796717278ab7461568ac24",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "581ca7234a3473eba58f53dd8d135816dfb41b26511550dc3a543d88c1302dbc",
+        "checkpoint_sha256": "86c243786f8c4a89d86b5101fa638dee92c7d3242478ebb89804313ab937258d",
+        "locale": "my",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "b216a7c4fac29296ed49af432b59b2ceecae6b2436e6f9d39efc362488be5fee",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "9d84e46a31e894d6cfaf513639d69d67ced4bc8a5412cbed05818b8ac8986d62",
+        "checkpoint_sha256": "d17bd6fc5b6a4cc39d7cb22d70ab3b51a7dfa7f712638c6aaf9229852849b9d5",
+        "locale": "nl",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "3a6a2d3da69a44ced304263b6ef60f5ac0c2023748023056b8726ad95eb5affb",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "2c756903007593a35d82a5bceea07d53f24bbc09359f486fa5f0b5cc68025d5f",
+        "checkpoint_sha256": "9336473a744a25324d9a3d179b68b21ea117c4854c6d710e50b24381efedc03b",
+        "locale": "pl",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "e8f4e271def80b738e343d5cd5eb522cb5f802a5a66fbd41feac60abd7413a79",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "d1533a2259de0f55912988f27f1b46dec324148350d54c411796f0c790128211",
+        "checkpoint_sha256": "5f6c9b7eb29a20f6ab37edfea2b8cc50cc85b083785a1474d9d033920249e5bd",
+        "locale": "pt",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "c257443d8968aae4fbfad476d49ad843d041ec16aae9080fdb61cce2c6576198",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "56b4e054735918865f9a785c7a352f201440d3c9885d5269ae53142c312dc4fb",
+        "checkpoint_sha256": "be653344f726513b5647d0e9b30d2f1a2a2212722a7d1605aa33270d61cd0a00",
+        "locale": "ru",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "0d7e9848d22761114633095cba1dcf3bcb3f967ea1ae790471b8cbf9329b883c",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "40865078676a27b6d110e5d678b0e68de2fd70ce80efba6adcb6b47f0dba5995",
+        "checkpoint_sha256": "2e761135d5c774d15ed4ee80653377ef56772a8369889ca0d5a244042f4d00df",
+        "locale": "ta",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "7378fa4dd2975b8dd90a003a93316ae848c4beef5ce3dc98e5f1a20f841e5196",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "c3e307bd7d7d34143fb5197972801467fea8940a401af965863bd5c931645a60",
+        "checkpoint_sha256": "f44f0613b819b822656af5582da6222ebdb8100d4dedf3e6bd821817c620c974",
+        "locale": "te",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "cd33a4f87491a29e7fd914d6f061c091fb52c74d0b786658fa6981c028ef3dbc",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "779552501c2050cce4f3f37ee6b2b6c2e10723f4cca699c6e0ac048995a70f62",
+        "checkpoint_sha256": "3c6b581451a545b8ae910a38c2e1a81c182d78e12e3e5ce15ba29801f0754752",
+        "locale": "th",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "66e7915915bc33e55ba879ed57113bd980eb1fb01c44547d41926356d681bc9b",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "d5ae517b2f4f3985c9cc0f43280d9f648d7d7ea1d40c56bb4fe8e6d089980109",
+        "checkpoint_sha256": "1f82d5993d001ee1dc3ce15b1b735eab5f558d3a70f64d6a6e429e125fc69149",
+        "locale": "tl",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "f2b5c6802aaa116814225b67ca362900b2b49ffe2832784fd13ec00038c76058",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "d69a38a62af275cc31033792e7f5c5978b7e007eaa9ec9e192a694a7ac132a78",
+        "checkpoint_sha256": "aa15e91b2649534871b3bf8ff730e00c70c5534dc3e93206700a12dbc21321e4",
+        "locale": "tr",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "273221af98f3d58df0945f758d3d63b6e29afdeab39fd777b6a8fcb0961ba10e",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "cca73d60413b6dff5be218f31bfba061739fb1572652716fd324f838716612f2",
+        "checkpoint_sha256": "39354e72d850ad0b8cc4319d7601ad2077a87ccdf4024bff9a2726eddbc1f66c",
+        "locale": "ug",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "b9e79cdd70f18adfaa4ca5c3a3c7f5dca18883e594057021d3296fd6e531918b",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "96ba5fbbca6ed3b3e5030cf6f48819c3bfdee614298ce5c9d1892d87edf8e270",
+        "checkpoint_sha256": "dca0e7547ecf2f49005c93ed1ca7577dc39063a2f5c11fa710e6d3671e6116ba",
+        "locale": "uk",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "995cd1531c105d8a23b9ed16bfa7848d20e95d0392f7d58b501439d2af7f2582",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "7d8263a928517a581f5fcb72952f767eb8f4aeea6fe75023cfc46e9a579aa4a4",
+        "checkpoint_sha256": "979406ee2249d52a524eb899cef4b29d1dd9bdcd47018d25d06e9e26ca05c677",
+        "locale": "ur",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "f24e5b88fba685a78a7f9ad6eb755196e4c38fef8fb922bc9910f3a4f3e12f7a",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "71370ac83bd9d6fb02ae65b627cff70af55b0354f91f2965ab823b9248806b58",
+        "checkpoint_sha256": "adae3fa7d7806173624a97cdbce2fdf02fbeb146df6edb52cd29562fd0bd50d9",
+        "locale": "vi",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "06b1b6be9479920ae968abcf38f8d310a8f38f69a21abc74bb26304c1d10962e",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "28926bfabf4ca4f17c2e234cbace2012aead9f9045b466a76691d4f10b25a20a",
+        "checkpoint_sha256": "e2312ef567cf94348aed02f0cc0230de3888c6c14d7ab8bbe27b0a78d23ec89b",
+        "locale": "yue",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      },
+      {
+        "approved_candidate": "95c6317826728729ff40ed34c969cf1eedba7680eee35e96879ef1321afefb49",
+        "approved_generation": "2b9081823e32528f402348f968d0771468dab06ea116b1a293fdf90a6621718b",
+        "candidate_id": "81864e58c2ae71d14ecf05a1bd3b40f5b375641fc118f25af6fac9b6d01fa44e",
+        "checkpoint_sha256": "55bd2f45b0ec552023cec2db306517b8d4422ac284e024d89ad8e7b30d3121c1",
+        "locale": "zh-Hant",
+        "pages": 24,
+        "source_generation": "02efbd698aa4d8cc9eaf32df8b30301515a6c87c3745e1777725cf3ef8e26ec6",
+        "translation_calls": 0
+      }
+    ]
+  },
+  "live_audit": {
+    "locales": [
+      "fr",
+      "pt",
+      "es",
+      "tr",
+      "ru",
+      "th",
+      "it",
+      "de",
+      "vi",
+      "ms",
+      "id",
+      "tl",
+      "hi",
+      "zh-Hant",
+      "pl",
+      "cs",
+      "nl",
+      "km",
+      "my",
+      "fa",
+      "gu",
+      "ur",
+      "te",
+      "mr",
+      "he",
+      "bn",
+      "ta",
+      "uk",
+      "bo",
+      "kk",
+      "mn",
+      "ug",
+      "yue"
+    ],
+    "origin": "https://kcdesk.com",
+    "reports": [
+      {
+        "content_language": "fr",
+        "deep_samples": [
+          "https://kcdesk.com/fr/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/fr/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/fr/",
+        "locale": "fr",
+        "pages": 24
+      },
+      {
+        "content_language": "pt",
+        "deep_samples": [
+          "https://kcdesk.com/pt/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/pt/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/pt/",
+        "locale": "pt",
+        "pages": 24
+      },
+      {
+        "content_language": "es",
+        "deep_samples": [
+          "https://kcdesk.com/es/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/es/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/es/",
+        "locale": "es",
+        "pages": 24
+      },
+      {
+        "content_language": "tr",
+        "deep_samples": [
+          "https://kcdesk.com/tr/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/tr/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/tr/",
+        "locale": "tr",
+        "pages": 24
+      },
+      {
+        "content_language": "ru",
+        "deep_samples": [
+          "https://kcdesk.com/ru/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/ru/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/ru/",
+        "locale": "ru",
+        "pages": 24
+      },
+      {
+        "content_language": "th",
+        "deep_samples": [
+          "https://kcdesk.com/th/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/th/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/th/",
+        "locale": "th",
+        "pages": 24
+      },
+      {
+        "content_language": "it",
+        "deep_samples": [
+          "https://kcdesk.com/it/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/it/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/it/",
+        "locale": "it",
+        "pages": 24
+      },
+      {
+        "content_language": "de",
+        "deep_samples": [
+          "https://kcdesk.com/de/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/de/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/de/",
+        "locale": "de",
+        "pages": 24
+      },
+      {
+        "content_language": "vi",
+        "deep_samples": [
+          "https://kcdesk.com/vi/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/vi/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/vi/",
+        "locale": "vi",
+        "pages": 24
+      },
+      {
+        "content_language": "ms",
+        "deep_samples": [
+          "https://kcdesk.com/ms/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/ms/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/ms/",
+        "locale": "ms",
+        "pages": 24
+      },
+      {
+        "content_language": "id",
+        "deep_samples": [
+          "https://kcdesk.com/id/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/id/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/id/",
+        "locale": "id",
+        "pages": 24
+      },
+      {
+        "content_language": "tl",
+        "deep_samples": [
+          "https://kcdesk.com/tl/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/tl/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/tl/",
+        "locale": "tl",
+        "pages": 24
+      },
+      {
+        "content_language": "hi",
+        "deep_samples": [
+          "https://kcdesk.com/hi/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/hi/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/hi/",
+        "locale": "hi",
+        "pages": 24
+      },
+      {
+        "content_language": "zh-Hant",
+        "deep_samples": [
+          "https://kcdesk.com/zh-Hant/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/zh-Hant/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/zh-Hant/",
+        "locale": "zh-Hant",
+        "pages": 24
+      },
+      {
+        "content_language": "pl",
+        "deep_samples": [
+          "https://kcdesk.com/pl/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/pl/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/pl/",
+        "locale": "pl",
+        "pages": 24
+      },
+      {
+        "content_language": "cs",
+        "deep_samples": [
+          "https://kcdesk.com/cs/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/cs/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/cs/",
+        "locale": "cs",
+        "pages": 24
+      },
+      {
+        "content_language": "nl",
+        "deep_samples": [
+          "https://kcdesk.com/nl/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/nl/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/nl/",
+        "locale": "nl",
+        "pages": 24
+      },
+      {
+        "content_language": "km",
+        "deep_samples": [
+          "https://kcdesk.com/km/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/km/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/km/",
+        "locale": "km",
+        "pages": 24
+      },
+      {
+        "content_language": "my",
+        "deep_samples": [
+          "https://kcdesk.com/my/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/my/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/my/",
+        "locale": "my",
+        "pages": 24
+      },
+      {
+        "content_language": "fa",
+        "deep_samples": [
+          "https://kcdesk.com/fa/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/fa/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/fa/",
+        "locale": "fa",
+        "pages": 24
+      },
+      {
+        "content_language": "gu",
+        "deep_samples": [
+          "https://kcdesk.com/gu/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/gu/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/gu/",
+        "locale": "gu",
+        "pages": 24
+      },
+      {
+        "content_language": "ur",
+        "deep_samples": [
+          "https://kcdesk.com/ur/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/ur/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/ur/",
+        "locale": "ur",
+        "pages": 24
+      },
+      {
+        "content_language": "te",
+        "deep_samples": [
+          "https://kcdesk.com/te/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/te/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/te/",
+        "locale": "te",
+        "pages": 24
+      },
+      {
+        "content_language": "mr",
+        "deep_samples": [
+          "https://kcdesk.com/mr/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/mr/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/mr/",
+        "locale": "mr",
+        "pages": 24
+      },
+      {
+        "content_language": "he",
+        "deep_samples": [
+          "https://kcdesk.com/he/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/he/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/he/",
+        "locale": "he",
+        "pages": 24
+      },
+      {
+        "content_language": "bn",
+        "deep_samples": [
+          "https://kcdesk.com/bn/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/bn/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/bn/",
+        "locale": "bn",
+        "pages": 24
+      },
+      {
+        "content_language": "ta",
+        "deep_samples": [
+          "https://kcdesk.com/ta/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/ta/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/ta/",
+        "locale": "ta",
+        "pages": 24
+      },
+      {
+        "content_language": "uk",
+        "deep_samples": [
+          "https://kcdesk.com/uk/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/uk/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/uk/",
+        "locale": "uk",
+        "pages": 24
+      },
+      {
+        "content_language": "bo",
+        "deep_samples": [
+          "https://kcdesk.com/bo/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/bo/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/bo/",
+        "locale": "bo",
+        "pages": 24
+      },
+      {
+        "content_language": "kk",
+        "deep_samples": [
+          "https://kcdesk.com/kk/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/kk/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/kk/",
+        "locale": "kk",
+        "pages": 24
+      },
+      {
+        "content_language": "mn",
+        "deep_samples": [
+          "https://kcdesk.com/mn/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/mn/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/mn/",
+        "locale": "mn",
+        "pages": 24
+      },
+      {
+        "content_language": "ug",
+        "deep_samples": [
+          "https://kcdesk.com/ug/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/ug/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/ug/",
+        "locale": "ug",
+        "pages": 24
+      },
+      {
+        "content_language": "yue",
+        "deep_samples": [
+          "https://kcdesk.com/yue/blog/20260926-028c0053b1376e7e.html",
+          "https://kcdesk.com/yue/blog/20260926-1fc3b9558f3e62b9.html"
+        ],
+        "deep_status": 200,
+        "homepage_status": 200,
+        "homepage_url": "https://kcdesk.com/yue/",
+        "locale": "yue",
+        "pages": 24
+      }
+    ],
+    "schema_version": 1,
+    "status": "passed"
+  },
+  "browser_acceptance": {
+    "tool": "supported in-app browser",
+    "status": "passed",
+    "french_home": {
+      "url": "https://kcdesk.com/fr/",
+      "desktop_width": 1280,
+      "mobile_width": 390,
+      "horizontal_overflow": false,
+      "locale_cards": 24,
+      "catalog_reports_loaded": 14639
+    },
+    "french_locale_search": {
+      "query": "potentiel",
+      "matches": 2,
+      "empty_query_matches": 0,
+      "clear_restored": 24
+    },
+    "source_title_search": {
+      "query": "Space Exploration",
+      "scope": "Title only",
+      "matches": 18,
+      "report_routes": "/report.html"
+    },
+    "account_modal": {
+      "opened": true,
+      "credentials_submitted": false
+    },
+    "french_article": {
+      "url": "https://kcdesk.com/fr/blog/20260926-028c0053b1376e7e.html",
+      "lang": "fr",
+      "shared_article_classes": true,
+      "self_canonical": true,
+      "mobile_width": 390,
+      "horizontal_overflow": false
+    },
+    "persian_article": {
+      "url": "https://kcdesk.com/fa/blog/20260926-028c0053b1376e7e.html",
+      "lang": "fa",
+      "dir": "rtl",
+      "self_canonical": true,
+      "mobile_width": 390,
+      "horizontal_overflow": false,
+      "language_menu_navigation": "passed"
+    },
+    "persian_home": {
+      "url": "https://kcdesk.com/fa/",
+      "lang": "fa",
+      "dir": "rtl",
+      "mobile_width": 390,
+      "horizontal_overflow": false,
+      "locale_cards": 24,
+      "search_control": true,
+      "account_control": true,
+      "catalog_reports_loaded": 14639,
+      "english_alternate": false
+    },
+    "temporary_viewport_reset": true,
+    "temporary_tab_closed": true
+  },
+  "english": {
+    "homepage_url": "https://kcdesk.com/en/",
+    "http_status": 404,
+    "excluded_from_new_renderer": true,
+    "future_contract": "Text-only summaries and secondary analysis/commentary; no original report text or charts."
+  },
+  "scope_notes": [
+    "Presentation and route integration only. Previously approved translations retained byte-reproducibly before presentation.",
+    "UI controls and source catalog labels retain source-language fallback where no approved UI translations exist. Not all fields are translated.",
+    "792 pages are the retained approved batch, not a claim that all new daily content is translated.",
+    "No authenticated report delivery, payment or third-party recipient test was performed.",
+    "No translated prose, generated HTML or credentials are included in this evidence file."
+  ]
+}
