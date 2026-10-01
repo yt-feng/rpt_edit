@@ -118,3 +118,28 @@ English preview HTML remains the SEO surface.
 A live receipt refresh in this pass hit a DNS-resolution timeout. No local
 network state was inspected or changed. The preceding verified production
 baseline remains evidence; this failed check is not current live acceptance.
+
+## Review and runtime dispatch checkpoint
+
+PR [#196](https://github.com/yt-feng/rpt_edit/pull/196) is open, not merged.
+Implementation checkpoints: gateway `5face1c2e6f74bf58de77076b77d76a564163765`,
+daily queue `1be22201461f008961f5d8c55476cb31bfd71512`, and staging-lock isolation
+`460f6b62379d61864698355b16e44acd78907f6f`.
+
+Credential-free CI on that source started as extended regression `36924368147`,
+public identity `36924367976`, and API cost controls `36924367909`; all were
+running at the immediate receipt, not yet accepted as passing.
+
+Private R2 roundtrip/staging Action
+[36924379228](https://github.com/yt-feng/rpt_edit/actions/runs/36924379228)
+was dispatched from `codex/extended-locales-daily-english-20261001` with
+`operation=roundtrip`. It performs zero model inference and cannot activate
+pages. Dispatch returned its run URL; no post-dispatch monitoring was performed.
+Actual private R2 results and CI conclusions remain open. No new production
+cutover was dispatched and no English page is claimed live by this checkpoint.
+
+Next required implementation remains the English editorial-only source
+extraction, pinned Hy-MT2 candidate builder, preview/paywall frontend and
+version-bound private-body publication/rollback integration. Then obtain
+normal PR/CI/staging evidence and prove daily/live access outcomes. The full
+33-locale daily-update plus English product objective is not complete.
