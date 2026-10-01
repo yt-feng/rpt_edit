@@ -34,7 +34,7 @@ def eligible_url(url: str, lastmod: str, day: str) -> bool:
                 and publication_day(lastmod) == day)
 
 
-def collect_today(session, day: str) -> list[dict]:
+def collect_today(session, day: str, *, on_source=None) -> list[dict]:
     if publication_day(day) != day or day < INCREMENTAL_START:
         raise ExpansionError('Daily collection date precedes incremental launch or is invalid')
     entries = inventory_entries(session)
@@ -43,8 +43,11 @@ def collect_today(session, day: str) -> list[dict]:
     docs = []
     for url in urls:
         # A sitemap lastmod is a fetch hint, NOT proof that an old article is new.
-        doc = document_from_html(url, read_public(session, url), exclude_related=True)
+        raw = read_public(session, url)
+        doc = document_from_html(url, raw, exclude_related=True)
         if not daily_document(doc, day): continue
+        if on_source is not None:
+            on_source(doc, raw)
         docs.append(doc)
     admitted_urls = {doc['url'] for doc in docs}
     for doc in docs:

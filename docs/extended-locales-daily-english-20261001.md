@@ -121,7 +121,7 @@ baseline remains evidence; this failed check is not current live acceptance.
 
 ## Review and runtime dispatch checkpoint
 
-PR [#196](https://github.com/yt-feng/rpt_edit/pull/196) is open, not merged.
+PR #196 is open, not merged.
 Implementation checkpoints: gateway `5face1c2e6f74bf58de77076b77d76a564163765`,
 daily queue `1be22201461f008961f5d8c55476cb31bfd71512`, and staging-lock isolation
 `460f6b62379d61864698355b16e44acd78907f6f`.
@@ -131,7 +131,7 @@ public identity `36924367976`, and API cost controls `36924367909`; all were
 running at the immediate receipt, not yet accepted as passing.
 
 Private R2 roundtrip/staging Action
-[36924379228](https://github.com/yt-feng/rpt_edit/actions/runs/36924379228)
+`36924379228`
 was dispatched from `codex/extended-locales-daily-english-20261001` with
 `operation=roundtrip`. It performs zero model inference and cannot activate
 pages. Dispatch returned its run URL; no post-dispatch monitoring was performed.
@@ -152,3 +152,39 @@ installed only boto3. The existing storage roundtrip step succeeded; the new
 admission/recovery probe has not passed. Install requests in this isolated job
 and assert its dependency list in the workflow regression. This correction does
 not change storage validation, candidate approval, translation or production.
+
+Corrected dependency commit: `40e3670e`.
+The new isolated run is `36925028114`,
+dispatched on the corrected branch. This entry records dispatch, not a passing
+result, and does not claim a production update.
+
+## English editorial capture and CPU candidate checkpoint
+
+The current public Chinese Blog mixes translated report prose and explicitly
+marked `KC评论` sections. `portal_english_commentary.py` now accepts only those
+marked sections inside a same-day, own-canonical, KC-authored Chinese BlogPosting.
+It rejects original/report routes, BBG scripts, unmarked body paragraphs, source
+cards, report digests, charts, quotations/embeds and hidden content. Missing or
+unsafe comments do not authorize whole-page fallback. The source admission
+collector projects the English input from the same fetched bytes, with no second
+crawl and no historical discovery; it saves immutable private R2 editorial
+sources and provenance-bound admission receipts. English-only capture failures
+remain explicitly incomplete without stalling the 33 non-English consumers.
+
+The new candidate builder uses the existing pinned Hy-MT2 `OfflineTranslator`
+and validated Memo, <=24 pages and <=14400 seconds per batch, but never enables
+source-language fallback for English. Timeouts retain accepted checkpoint units
+and cannot be complete candidates. Only our translated KC comments enter private
+body JSON. Preview is a complete sentence of that commentary, not the original
+report digest. No candidate or generated content is added to Git or Actions
+artifacts/cache. The isolated roundtrip workflow adds a zero-inference English
+source-restoration probe. Local editorial/source/CPU contracts: 17 passed.
+
+The full-read API now selects an approved, checksum-bound English ledger through
+the SAME active static-site release authority as the catalog. Private immutable
+`ledgers/<sha>.json` and `releases/<site-release>/manifest.json` replace the
+previous foundation's independent `active.json`. Missing/unapproved/cross-release
+or corrupt metadata fails before quota or body access; rollback selects the old
+ledger. This is implemented and locally tested, not yet a published English
+release. CPU matrix/cursor, preview frontend and normal publication integration
+remain required before `/en/` can be activated.

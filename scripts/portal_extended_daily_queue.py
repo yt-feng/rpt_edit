@@ -14,6 +14,7 @@ from pathlib import Path
 import re
 import tempfile
 import time
+from urllib.parse import urlsplit
 
 import requests
 
@@ -22,7 +23,7 @@ from portal_extended_locales import (ADDITIONAL, DAILY_SCOPE, ExpansionError, da
                                      INCREMENTAL_START, digest, make_corpus, publication_day, select_locales,
                                      stable_bytes, validate_corpus)
 from portal_extended_r2 import (DEFAULT_PREFIX, HEX64, MAX_SOURCE_BYTES,
-                               R2IntegrityError, R2NotFound, R2Store, require_staging_prefix, safe_part)
+                               R2IntegrityError, R2NotFound, R2Store, R2StoreError, require_staging_prefix, safe_part)
 
 POLICY = 'daily-source-admission-v1'
 WORKFLOW = '.github/workflows/portal-extended-locales-source.yml'
@@ -316,9 +317,38 @@ def main():
     producer = {'run_id': os.environ['GITHUB_RUN_ID'], 'attempt': os.environ['GITHUB_RUN_ATTEMPT'],
                 'sha': os.environ['GITHUB_SHA'], 'repository': os.environ['GITHUB_REPOSITORY'], 'workflow': WORKFLOW}
     day = today()
+    # Read each current public page only once. English gets an explicit editorial
+    # projection of those SAME bytes, never the generic translated report body.
+    from portal_english_commentary import PREFIX as ENGLISH_PREFIX, extract_editorial, freeze_editorial
+    english_docs, english_skipped = [], []
+    def editorial_sink(doc, raw):
+        if not re.fullmatch(r'/blog/\d{8}-[a-f0-9]{16}\.html', urlsplit(doc['url']).path):
+            return
+        try:
+            editorial = extract_editorial(doc['url'], raw, day)
+        except (ExpansionError, UnicodeError, ValueError, TypeError):
+            english_skipped.append('unsafe-editorial-source')
+            return
+        if editorial is not None:
+            english_docs.append(editorial)
+        else:
+            english_skipped.append('no-explicit-kc-comment')
     with requests.Session() as session:
-        docs = collect_today(session, day)
+        docs = collect_today(session, day, on_source=editorial_sink)
     result = admit(store, docs, day, producer)
+    if result['admitted']:
+        # A custom staging namespace never causes writes to production English.
+        prefix = ENGLISH_PREFIX if args.prefix == DEFAULT_PREFIX else store.prefix + '/english-commentary'
+        try:
+            result['english_editorial'] = freeze_editorial(R2Store(store.client, store.bucket, prefix),
+                                                          english_docs, day, producer, result['admission'])
+        except (ExpansionError, R2StoreError):
+            # Do not stall all 33 non-English consumers for an English-only
+            # persistence failure. No English receipt is claimed complete.
+            result['english_editorial'] = {'admitted': False, 'capture_incomplete': True, 'day': day,
+                                          'code': 'english-private-capture-failed'}
+        result['english_editorial']['excluded_page_count'] = len(english_skipped)
+        result['english_editorial']['exclusion_codes'] = sorted(set(english_skipped))
     print(json.dumps(result, sort_keys=True))
 
 

@@ -122,6 +122,17 @@ jobs:
           set -euo pipefail
           python3 -B scripts/portal_extended_daily_queue.py --operation staging-probe \
             --prefix "_extended-locales/staging/queue-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Verify English editorial-only source restoration without inference or publication
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
+        run: |
+          set -euo pipefail
+          python3 -B scripts/portal_english_commentary.py \
+            --staging-prefix "_extended-locales/staging/english-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" | tee -a "$GITHUB_STEP_SUMMARY"
 
   source:
     if: >-
