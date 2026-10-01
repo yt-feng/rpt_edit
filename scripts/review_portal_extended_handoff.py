@@ -48,20 +48,41 @@ def api(path, payload=None, method=None):
     return json.loads(result.stdout) if result.stdout.strip() else None
 
 
-def producer_is_valid(receipt, run, jobs, repository, *, origin=None, original_run=None, original_jobs=None):
+def admission_is_valid(admitted, run, jobs, repository):
+    """Verify the original fast capture, not the day a slow consumer starts."""
+    from portal_extended_daily_queue import checked_producer
+    producer = checked_producer(admitted['producer'])
+    require(producer['repository'] == repository and run.get('id') == int(producer['run_id'])
+            and run.get('run_attempt') == int(producer['attempt']) and run.get('head_sha') == producer['sha'],
+            'Source-admission run identity mismatch')
+    require(run.get('status') == 'completed' and run.get('conclusion') == 'success'
+            and run.get('head_branch') == 'main' and run.get('path') == producer['workflow']
+            and run.get('event') in ('workflow_run', 'workflow_dispatch'),
+            'Source admission is not a completed reviewed-main capture')
+    require(all((run.get(key) or {}).get('full_name') == repository for key in ('repository', 'head_repository'))
+            and (run.get('repository') or {}).get('private') is False, 'Source-admission repository differs')
+    selected = [job for job in jobs if job.get('name') == 'source_snapshot']
+    require(len(selected) == 1 and selected[0].get('status') == 'completed' and selected[0].get('conclusion') == 'success',
+            'Source-day capture did not complete')
+    require(admitted['day'] in {publication_day(selected[0].get(key, '')) for key in ('started_at', 'completed_at')},
+            'Admission cannot discover historical source pages')
+    return admitted
+
+
+def producer_is_valid(receipt, run, jobs, repository, admitted=None, *, origin=None, original_run=None, original_jobs=None):
     producer = receipt['producer']
     if receipt.get('source_origin_sha256'):
-        from portal_extended_continuation import verify_origin_run
+        from portal_extended_continuation import origin_allows_locale, verify_origin_run
         require(isinstance(origin, dict) and digest(stable_bytes(origin)) == receipt['source_origin_sha256']
                 and origin['generation'] == receipt['batch']['generation']
                 and origin['source_day'] == receipt['source_day']
-                and set(receipt['batch']['candidates']) <= set(origin['locales']),
+                and all(origin_allows_locale(origin, locale) for locale in receipt['batch']['candidates']),
                 'Historical continuation lacks its exact original source receipt')
         require(isinstance(receipt.get('continuation_checkpoints'), dict)
                 and set(receipt['continuation_checkpoints']) == set(receipt['batch']['candidates'])
                 and all(re.fullmatch(r'[0-9a-f]{64}', str(value)) for value in receipt['continuation_checkpoints'].values()),
                 'Continuation checkpoint inventory is invalid')
-        verify_origin_run(origin, original_run or {}, original_jobs or [], repository)
+        verify_origin_run(origin, original_run or {}, original_jobs or [], repository, admitted=admitted)
     require(run.get('id') == int(producer['run_id']) and run.get('run_attempt') == int(producer['attempt'])
             and run.get('head_sha') == producer['sha'], 'Producer run identity mismatch')
     require(run.get('status') == 'completed' and run.get('conclusion') in ('success', 'failure')
@@ -76,8 +97,11 @@ def producer_is_valid(receipt, run, jobs, repository, *, origin=None, original_r
         require(len(selected) == 1 and selected[0].get('conclusion') == 'success'
                 and selected[0].get('status') == 'completed', f'Producer {name} did not complete')
         if name == 'source' and not receipt.get('source_origin_sha256'):
-            require(receipt['source_day'] in {publication_day(selected[0].get(key, ''))
-                    for key in ('started_at', 'completed_at')}, 'Historical source cannot receive automatic daily approval')
+            source_days = {publication_day(selected[0].get(key, '')) for key in ('started_at', 'completed_at')}
+            frozen = (admitted is not None and admitted['day'] == receipt['source_day']
+                      and admitted['admission'] == receipt.get('source_admission'))
+            require(receipt['source_day'] in source_days or frozen,
+                    'Historical source cannot receive automatic daily approval')
 
 
 def review_identity(receipt, identity, assembly, active, enabled, expected):
@@ -141,6 +165,17 @@ def main():
     producer_path = f'repos/{repository}/actions/runs/{producer["run_id"]}/attempts/{producer["attempt"]}'
     jobs = api(producer_path+'/jobs?per_page=100')
     require(jobs.get('total_count', 101) <= 100, 'Producer jobs exceed verification bound')
+    admitted = None
+    if receipt.get('source_admission'):
+        from portal_extended_daily_queue import batch_admission
+        admitted = batch_admission(store, receipt['batch']['generation'])
+        require(admitted is not None and admitted['admission'] == receipt['source_admission'],
+                'Handoff admission differs from its checksum-verified inventory')
+        capture = admitted['producer']
+        capture_path = f'repos/{repository}/actions/runs/{capture["run_id"]}/attempts/{capture["attempt"]}'
+        capture_jobs = api(capture_path + '/jobs?per_page=100')
+        require(capture_jobs.get('total_count', 101) <= 100, 'Source capture jobs exceed verification bound')
+        admission_is_valid(admitted, api(capture_path), capture_jobs['jobs'], repository)
     origin = original_run = original_jobs = None
     if receipt.get('source_origin_sha256'):
         from portal_extended_continuation import checkpoint_evidence, read_origin
@@ -153,7 +188,7 @@ def main():
                 and len(original_response.get('jobs', [])) == original_response['total_count'],
                 'Original producer job inventory is incomplete')
         original_jobs, original_run = original_response['jobs'], api(original_path)
-    producer_is_valid(receipt, api(producer_path), jobs['jobs'], repository,
+    producer_is_valid(receipt, api(producer_path), jobs['jobs'], repository, admitted,
                       origin=origin, original_run=original_run, original_jobs=original_jobs)
     for locale, checksum in receipt.get('continuation_checkpoints', {}).items():
         require(bool(checkpoint_evidence(store, locale, receipt['batch']['generation'], checksum)),

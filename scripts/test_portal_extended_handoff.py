@@ -82,7 +82,7 @@ class HandoffTests(unittest.TestCase):
 
     def test_publication_handoff_accepts_proved_continuation_but_not_readonly_recovery(self):
         root = Path(__file__).resolve().parents[1]
-        workflow = (root/'.github/workflows/portal-extended-locales-r2.yml').read_text().split('  publication_handoff:', 1)[1]
+        workflow = (root/'.github/workflows/portal-extended-locales-r2.yml').read_text().split('  publication_handoff:', 1)[1].split('  continue_admitted_batches:', 1)[0]
         self.assertIn("inputs.operation == 'candidate'", workflow)
         self.assertIn("inputs.operation == 'publication-resume'", workflow)
         self.assertNotIn("inputs.operation == 'recovery-test'", workflow)

@@ -6,6 +6,7 @@ objects survive removal of acknowledged queue entries.
 """
 from __future__ import annotations
 import json
+import os
 from pathlib import Path
 import re
 from portal_extended_locales import (ExpansionError, daily_corpus_day, digest,
@@ -23,6 +24,26 @@ def producer_identity(value):
         or any(not re.fullmatch(r'[1-9][0-9]*', str(value.get(k, ''))) for k in ('run_id', 'attempt'))):
         raise ExpansionError('Invalid continuation producer identity')
     return {key: str(value[key]) for key in ('run_id', 'attempt', 'sha')}
+
+
+def action_owner():
+    """The source claim is valid for one exact Actions attempt, never a rerun."""
+    if os.environ.get('GITHUB_ACTIONS') != 'true':
+        return None  # Pure local callers/tests have no Actions identity.
+    return producer_identity({'run_id': os.environ.get('GITHUB_RUN_ID'),
+        'attempt': os.environ.get('GITHUB_RUN_ATTEMPT'), 'sha': os.environ.get('GITHUB_SHA')})
+
+
+def require_active_owner(store, locale, generation, *, owner=None):
+    row = queue(store, locale).get(generation)
+    if row is None:
+        return  # Existing unregistered paths are unchanged.
+    if row['status'] not in {'started', 'claimed'}:
+        raise ExpansionError('Locale retry requires a new source-job claim; refusing unbounded implicit replay')
+    expected = producer_identity(row.get('owner'))
+    current = producer_identity(owner) if owner is not None else action_owner()
+    if current is not None and current != expected:
+        raise ExpansionError('Locale retry requires a new source-job claim for this exact Actions attempt')
 
 
 def origin_key(store, generation):
@@ -50,7 +71,18 @@ def read_origin(store, generation):
         or daily_corpus_day(corpus) != value.get('source_day') or not daily_corpus_day(corpus)
         or len(docs) != value.get('pages') or not 1 <= len(docs) <= 24):
         raise ExpansionError('Generation origin differs from immutable daily source')
+    if value.get('source_admission'):
+        from portal_extended_daily_queue import batch_admission
+        admitted = batch_admission(store, generation)
+        if not admitted or admitted['admission'] != value['source_admission'] or admitted['day'] != value['source_day']:
+            raise ExpansionError('Continuation source admission differs from immutable batch')
     return value
+
+
+def origin_allows_locale(origin, locale):
+    # An admitted source is explicitly shared by the 33 independent cursors.
+    # Its first consumers are provenance, not a claim that later ones are ready.
+    return locale in origin['locales'] or bool(origin.get('source_admission')) and select_locales(locale) == (locale,)
 
 
 def queue(store, locale):
@@ -87,8 +119,12 @@ def register(store, corpus, locales, producer):
     old = read_origin(store, generation)
     value = {'schema_version': 1, 'generation': generation, 'source_day': daily_corpus_day(corpus),
         'source_sha256': digest(source_raw), 'pages': len(docs), 'locales': list(locales), 'producer': producer}
+    from portal_extended_daily_queue import batch_admission
+    admitted = batch_admission(store, generation)
+    if admitted is not None:
+        value['source_admission'] = admitted['admission']
     if old:
-        if not set(locales) <= set(old['locales']):
+        if not all(origin_allows_locale(old, locale) for locale in locales):
             raise ExpansionError('Cannot extend a previously registered generation locale inventory')
         value = old
     # Validate all queue capacity before the first write; never evict an old job.
@@ -102,7 +138,7 @@ def register(store, corpus, locales, producer):
             raise ExpansionError('Generation origin did not persist')
     for locale, rows in queues.items():
         if generation not in rows:
-            rows[generation] = {'status': 'started', 'continuations': 0}
+            rows[generation] = {'status': 'started', 'continuations': 0, 'owner': producer}
             save_queue(store, locale, rows)
     return value
 
@@ -150,7 +186,7 @@ def candidate_evidence(store, locale, generation, candidate, checksum=''):
         raise ExpansionError('Continuation candidate checksum mismatch')
     manifest = partial_manifest_is_valid(json.loads(raw), locale, generation)
     origin = read_origin(store, generation)
-    if (not origin or locale not in origin['locales'] or manifest['files_sha256'] != candidate
+    if (not origin or not origin_allows_locale(origin, locale) or manifest['files_sha256'] != candidate
         or manifest.get('source_document_count') != origin['pages']
         or not isinstance(manifest.get('failures'), list) or type(manifest.get('budget_exhausted')) is not bool):
         raise ExpansionError('Continuation candidate inventory or outcome is invalid')
@@ -162,7 +198,7 @@ def candidate_evidence(store, locale, generation, candidate, checksum=''):
     return manifest, digest(raw)
 
 
-def record_result(store, locale, corpus, result, *, checkpoint_sha=None):
+def record_result(store, locale, corpus, result, *, checkpoint_sha=None, owner=None):
     """Called after checkpoint and candidate persistence, including exit 75."""
     from portal_extended_incremental import read_state
     generation = corpus['documents_sha256']
@@ -170,8 +206,7 @@ def record_result(store, locale, corpus, result, *, checkpoint_sha=None):
     previous = rows.get(generation)
     if previous is None:
         return  # Legacy unregistered callers keep their existing behavior.
-    if previous['status'] not in {'started', 'claimed'}:
-        raise ExpansionError('Continuation result has no active source-job claim')
+    require_active_owner(store, locale, generation, owner=owner)
     pointer = read_state(store, 'memo', locale)
     checksum = checkpoint_sha or (pointer.get('sha256') if pointer.get('generation') == generation else None)
     keys = checkpoint_evidence(store, locale, generation, checksum)
@@ -213,7 +248,66 @@ def record_result(store, locale, corpus, result, *, checkpoint_sha=None):
         raise ExpansionError(reason)
 
 
-def pending(store, locales, output, *, generation=None):
+def validate_snapshot(store, locale, generation, row):
+    snapshot = row.get('snapshot')
+    if (not isinstance(snapshot, dict) or any(not HEX64.fullmatch(str(snapshot.get(key, '')))
+        for key in ('candidate_id', 'manifest_sha256', 'checkpoint_sha256'))):
+        raise ExpansionError('Continuation snapshot is missing or malformed')
+    manifest, _ = candidate_evidence(store, locale, generation,
+        snapshot.get('candidate_id'), snapshot.get('manifest_sha256'))
+    keys = checkpoint_evidence(store, locale, generation, snapshot.get('checkpoint_sha256'))
+    if (type(snapshot.get('resolved_units')) is not int or len(keys) != snapshot['resolved_units']
+        or type(snapshot.get('completed_pages')) is not int
+        or manifest['completed_page_count'] != snapshot['completed_pages']):
+        raise ExpansionError('Continuation snapshot counts differ from persisted evidence')
+    if row['status'] == 'complete' and manifest['status'] != 'complete-candidate':
+        raise ExpansionError('Completed continuation has no complete candidate')
+    if row['status'] in {'incomplete', 'claimed'} and (
+        not keys or manifest['status'] != 'incomplete-candidate'
+        or not manifest['budget_exhausted'] or manifest['failures']):
+        raise ExpansionError('Pending continuation proof is inconsistent')
+    return manifest, keys
+
+
+def partition_stopped_locales(store, locales):
+    """Keep known stopped cursors visible while healthy locales can advance.
+
+    Storage, origin/hash, or schema failures still propagate; only recognized
+    lifecycle stops are isolated. A separate workflow job reports them as failure.
+    """
+    eligible, stopped = [], []
+    for locale in locales:
+        blocked = []
+        for generation, row in queue(store, locale).items():
+            origin = read_origin(store, generation)
+            if not origin or not origin_allows_locale(origin, locale):
+                raise ExpansionError('Registered cursor has no valid original source')
+            if row['status'] != 'started':
+                validate_snapshot(store, locale, generation, row)
+            if row['status'] in {'started', 'claimed'}:
+                producer_identity(row.get('owner'))
+            reason = ''
+            if row['status'] in {'started', 'claimed'}:
+                reason = 'Missing completed checkpoint outcome; diagnosis required'
+            elif row['status'] == 'blocked':
+                reason = row.get('reason')
+                if not isinstance(reason, str) or not reason or len(reason) > 500:
+                    raise ExpansionError('Stopped continuation diagnostic is malformed')
+            elif row['status'] == 'incomplete' and row['continuations'] >= MAX_CONTINUATIONS:
+                reason = 'Continuation bound reached; diagnosis required'
+            if reason:
+                blocked.append({'locale': locale, 'generation': generation, 'source_day': origin['source_day'],
+                                'status': row['status'], 'continuations': row['continuations'],
+                                'reason': reason, 'model_calls': 0})
+        if blocked:
+            first = sorted(blocked, key=lambda row: (row['source_day'], row['generation']))[0]
+            stopped.append({**first, 'stopped_generation_count': len(blocked)})
+        else:
+            eligible.append(locale)
+    return tuple(eligible), stopped
+
+
+def pending(store, locales, output, *, generation=None, producer=None):
     """Select and claim one already-started generation before any daily collection."""
     groups = {}
     all_queues = {locale: queue(store, locale) for locale in locales}
@@ -224,7 +318,7 @@ def pending(store, locales, output, *, generation=None):
             if row['status'] == 'complete':
                 continue
             origin = read_origin(store, current)
-            if not origin or locale not in origin['locales']:
+            if not origin or not origin_allows_locale(origin, locale):
                 raise ExpansionError('Pending generation lacks its original source proof')
             if row['status'] != 'incomplete':
                 raise ExpansionError(f'Continuation stopped for {locale}/{current}: '+row.get('reason', 'missing completed checkpoint outcome'))
@@ -240,11 +334,13 @@ def pending(store, locales, output, *, generation=None):
     if not groups:
         return None
     (day, selected), active = sorted(groups.items())[0]
+    owner = producer_identity(producer) if producer is not None else action_owner()
     # All validation precedes claims. Restore original bytes; no collect_today.
     store.restore_source(selected, output)
     for locale in active:
         rows = all_queues[locale]
-        rows[selected] = {**rows[selected], 'status': 'claimed', 'continuations': rows[selected]['continuations'] + 1}
+        rows[selected] = {**rows[selected], 'status': 'claimed', 'continuations': rows[selected]['continuations'] + 1,
+                          'owner': owner or read_origin(store, selected)['producer']}
         save_queue(store, locale, rows)
     return {'has_work': True, 'generation': selected, 'locales_json': json.dumps(active), 'day': day,
         'selected_page_count': read_origin(store, selected)['pages'], 'continuation': True,
@@ -254,6 +350,7 @@ def pending(store, locales, output, *, generation=None):
 def restore_claimed_checkpoint(store, locale, generation, output):
     """A continuation must use the exact claimed immutable snapshot, not latest."""
     row = queue(store, locale).get(generation)
+    require_active_owner(store, locale, generation)
     if row and row['status'] == 'claimed':
         checksum = row['snapshot']['checkpoint_sha256']
         checkpoint_evidence(store, locale, generation, checksum)
@@ -272,7 +369,7 @@ def tracked_generations(store, locales):
         for generation, row in queue(store, locale).items():
             if row['status'] == 'complete':
                 origin = read_origin(store, generation)
-                if not origin or locale not in origin['locales']:
+                if not origin or not origin_allows_locale(origin, locale):
                     raise ExpansionError('Completed generation lacks original source proof')
                 generations.setdefault((origin['source_day'], generation), set()).add(locale)
     return generations
@@ -289,7 +386,7 @@ def acknowledge_published(store, locales, active):
             save_queue(store, locale, keep)
 
 
-def verify_origin_run(origin, run, jobs, repository):
+def verify_origin_run(origin, run, jobs, repository, *, admitted=None):
     """A historical corpus is admissible only as a proved original daily run."""
     from portal_extended_locales import publication_day
     producer = producer_identity(origin['producer'])
@@ -302,8 +399,10 @@ def verify_origin_run(origin, run, jobs, repository):
         or (run.get('repository') or {}).get('private') is not False):
         raise ExpansionError('Original daily producer identity is not verified')
     source = [row for row in jobs if row.get('name') == 'source']
+    frozen = (admitted is not None and origin.get('source_admission') == admitted.get('admission')
+              and origin['source_day'] == admitted.get('day'))
     if (len(source) != 1 or source[0].get('status') != 'completed' or source[0].get('conclusion') != 'success'
-        or origin['source_day'] not in {publication_day(source[0].get(k, '')) for k in ('started_at', 'completed_at')}):
+        or (not frozen and origin['source_day'] not in {publication_day(source[0].get(k, '')) for k in ('started_at', 'completed_at')})):
         raise ExpansionError('Original source job does not prove the daily source date')
 
 
@@ -343,4 +442,4 @@ def adopt_existing(store, corpus, locales, evidence, repository, api):
     # Every locale and GitHub origin has been verified before any private writes.
     register(store, corpus, locales, producer)
     for locale, proof in validated.items():
-        record_result(store, locale, corpus, proof, checkpoint_sha=proof['checkpoint_sha256'])
+        record_result(store, locale, corpus, proof, checkpoint_sha=proof['checkpoint_sha256'], owner=producer)

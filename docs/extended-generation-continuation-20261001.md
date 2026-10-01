@@ -30,7 +30,10 @@ coverage and must add resolved units or complete pages unless it finishes.
 No progress, an unknown/interrupted outcome, a non-budget failure, corrupt proof,
 or exhausted continuation count stops with a diagnostic. Exit 75 remains a
 failed/incomplete job, never a successful candidate. Retrying only a locale job
-without a new source-job claim stops before model setup.
+without a new source-job claim stops before model setup. Started and claimed
+entries bind the exact source Actions run, attempt and commit. A rerun with a
+new attempt cannot reuse that claim or write its checkpoint/candidate; it must
+return through source selection, which diagnoses interrupted claims.
 
 There are at most 64 outstanding generations per locale. A full queue rejects
 new registration; it does not evict history. Complete output remains queued
@@ -52,9 +55,31 @@ required reviewer, release acceptance and rollback checks remain in force.
 
 For a registered handoff the reviewer independently reads the immutable origin
 and checkpoint objects, then verifies the original GitHub run/attempt/commit and
-successful original `source` job on that Shanghai date. The current producer
+successful original `source` job on that Shanghai date. For source batches
+created from the durable daily-admission queue, the reviewer additionally
+verifies the original admission workflow and its successful same-day
+`source_snapshot` job. That exact admission permits the consumer source job to
+start on a later day; a legacy origin without admission retains the same-day
+requirement. The current producer
 still needs successful `source` and `publication_handoff` jobs. A historical
 handoff without this proof continues to fail the old date check.
+
+## Independent admitted locale cursors
+
+The daily source-admission queue and English reading product remain unchanged.
+Once no resumable generation is selected, each eligible locale receives its own
+admitted batch generation (at most 24 pages). Different generations are carried
+in separate matrix rows, never merged into one corpus. A later locale may use
+an already registered admitted generation without declaring any other locale
+ready. Admitted origin receipts bind the immutable full-day admission and batch.
+
+Known interrupted, non-progressing or exhausted cursors are excluded from the
+model matrix and reported by a separate failing diagnostic job. They remain in
+storage, with zero model calls scheduled. Healthy cursors still advance, and the
+diagnostic job is not a dependency of their protected handoff. Corrupt source,
+checkpoint, candidate or lifecycle schema still fails the source job. The
+progress-based daily followup retains the complete requested-locale frontier,
+including diagnosed locales, so neither progress nor completion is fabricated.
 
 ## Existing generation from before queue registration
 

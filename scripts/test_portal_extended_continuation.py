@@ -337,6 +337,177 @@ class ContinuationTests(unittest.TestCase):
         self.assertNotIn('setup_hymt', inspection)
         self.assertNotIn('actions: write', inspection)
 
+    def prepare_main(self, locales='fr,pt'):
+        from contextlib import redirect_stdout
+        import io
+        output = self.root/'merge-outputs.txt'
+        args = ['test', 'prepare', '--locales', locales, '--corpus', str(self.root/'merge-source.json'),
+                '--github-output', str(output)]
+        with patch.dict(os.environ, ENV), patch('sys.argv', args), \
+             patch.object(incremental.R2Store, 'from_env', return_value=self.store), \
+             patch.object(incremental, 'today', return_value='2026-10-02'), \
+             patch.object(incremental.requests, 'Session', side_effect=AssertionError('No collection')), \
+             redirect_stdout(io.StringIO()) as stdout:
+            self.assertEqual(incremental.main(), 0)
+        return json.loads(stdout.getvalue())
+
+    def admitted_docs(self, count=26):
+        from portal_extended_daily_queue import admit, WORKFLOW
+        docs = [daily_doc(ORIGIN+f'/blog/20260925-{index:03}.html') for index in range(count)]
+        admission = admit(self.store, docs, DAY, {**PRODUCER, 'repository':'example/repo', 'workflow':WORKFLOW})
+        return docs, admission
+
+    def mark_pages_complete(self, locale, docs):
+        incremental.write_state(self.store, 'completed', locale, {'pages': {doc['url']: {
+            'content_key': incremental.content_key(doc), 'generation': 'b'*64, 'candidate_id': 'c'*64}
+            for doc in docs}}, DAY)
+
+    def test_admitted_cold_start_keeps_each_independent_cursor_generation(self):
+        from portal_extended_daily_queue import read_corpus
+        docs, saved = self.admitted_docs()
+        self.mark_pages_complete('fr', docs[:24])
+        result = self.prepare_main()
+        jobs = {job['locale']: job for job in json.loads(result['locale_jobs_json'])}
+        self.assertEqual(result['generation'], '')
+        self.assertNotEqual(jobs['fr']['generation'], jobs['pt']['generation'])
+        for locale, expected in (('fr', 2), ('pt', 24)):
+            generation = jobs[locale]['generation']
+            self.assertEqual(len(read_corpus(self.store, generation)['documents']), expected)
+            self.assertEqual(set(queue(self.store, locale)), {generation})
+            self.assertEqual(queue(self.store, locale)[generation]['status'], 'started')
+            self.assertEqual(read_origin(self.store, generation)['source_admission'], saved['admission'])
+        self.assertEqual(json.loads(result['pending_counts_json']), {'fr': 2, 'pt': 26})
+
+    def test_later_locale_can_first_consume_same_admitted_generation_without_claiming_ready(self):
+        from portal_extended_daily_queue import prepare_queued, read_corpus
+        self.admitted_docs(2)
+        selected = prepare_queued(self.store, ('fr',))
+        generation = selected['generation']; corpus = read_corpus(self.store, generation)
+        first = register(self.store, corpus, ('fr',), PRODUCER)
+        next_producer = {**PRODUCER, 'run_id':'124'}
+        self.assertEqual(register(self.store, corpus, ('pt',), next_producer), first)
+        self.assertEqual(queue(self.store, 'pt')[generation], {'status':'started','continuations':0,'owner':next_producer})
+        self.assertEqual(read_origin(self.store, generation)['locales'], ['fr'])
+        self.assertFalse(any('/ready.json' in key for key in self.store.client.objects))
+
+    def test_admitted_cross_day_origin_requires_exact_admission_and_capture_proof(self):
+        from portal_extended_daily_queue import prepare_queued, read_corpus, batch_admission, WORKFLOW
+        from review_portal_extended_handoff import admission_is_valid
+        self.admitted_docs(2)
+        selected = prepare_queued(self.store, ('fr',)); generation = selected['generation']
+        register(self.store, read_corpus(self.store, generation), ('fr',), PRODUCER)
+        origin = read_origin(self.store, generation); admitted = batch_admission(self.store, generation)
+        late_jobs = [{**self.jobs[0], 'started_at':'2026-10-02T01:00:00Z', 'completed_at':'2026-10-02T01:01:00Z'}]
+        capture_run = {**self.run, 'path':WORKFLOW, 'conclusion':'success'}
+        capture_jobs = [{**self.jobs[0], 'name':'source_snapshot'}]
+        admission_is_valid(admitted, capture_run, capture_jobs, 'example/repo')
+        verify_origin_run(origin, self.run, late_jobs, 'example/repo', admitted=admitted)
+        for bad in (None, {**admitted,'admission':'e'*64}, {**admitted,'day':'2026-09-24'}):
+            with self.assertRaises(ExpansionError):
+                verify_origin_run(origin, self.run, late_jobs, 'example/repo', admitted=bad)
+        for bad_run in ({**capture_run,'head_sha':'f'*40}, {**capture_run,'run_attempt':2}):
+            with self.assertRaises(ExpansionError): admission_is_valid(admitted,bad_run,capture_jobs,'example/repo')
+        with self.assertRaises(ExpansionError):
+            admission_is_valid(admitted,capture_run,[{**capture_jobs[0], 'started_at':'2026-10-02T01:00:00Z',
+                'completed_at':'2026-10-02T01:01:00Z'}],'example/repo')
+
+    def test_real_pending_original_source_precedes_newer_admission_without_changing_it(self):
+        from portal_extended_daily_queue import admit, read_queue, WORKFLOW
+        self.partial(); original = stable_bytes(self.corpus)
+        newer = [daily_doc(ORIGIN+'/blog/20260926-new.html', day='2026-09-26')]
+        admit(self.store, newer, '2026-09-26', {**PRODUCER,'repository':'example/repo','workflow':WORKFLOW})
+        before = copy.deepcopy(read_queue(self.store))
+        result = self.prepare_main('fr')
+        self.assertEqual(json.loads(result['locale_jobs_json']), [{'locale':'fr','generation':self.gen,'day':DAY}])
+        self.assertEqual((self.root/'merge-source.json').read_bytes(), original)
+        self.assertEqual(read_queue(self.store), before)
+        self.assertEqual(queue(self.store, 'fr')[self.gen]['continuations'], 1)
+
+    def test_blocked_or_exhausted_neighbor_keeps_healthy_admitted_cursor_and_diagnostic(self):
+        from portal_extended_continuation import partition_stopped_locales
+        self.partial(locale='pt')
+        docs, saved = self.admitted_docs(); self.mark_pages_complete('fr', docs[:24])
+        base = queue(self.store, 'pt')
+        for status, count in (('blocked', 1), ('incomplete', MAX_CONTINUATIONS), ('claimed', 1)):
+            with self.subTest(status=status):
+                # Reset only synthetic healthy locale state between independent scenarios.
+                save_queue(self.store, 'fr', {})
+                rows = copy.deepcopy(base)
+                rows[self.gen].update(status=status, continuations=count, reason='Synthetic stopped outcome')
+                if status == 'claimed': rows[self.gen]['owner'] = PRODUCER
+                save_queue(self.store, 'pt', rows)
+                before = copy.deepcopy(queue(self.store, 'pt'))
+                result = self.prepare_main()
+                jobs = json.loads(result['locale_jobs_json'])
+                self.assertEqual([row['locale'] for row in jobs], ['fr'])
+                self.assertEqual(read_origin(self.store, jobs[0]['generation'])['pages'], 2)
+                diagnostic = json.loads(result['stopped_locales_json'])
+                self.assertEqual(len(diagnostic), 1)
+                self.assertEqual((diagnostic[0]['locale'], diagnostic[0]['model_calls']), ('pt',0))
+                self.assertEqual(queue(self.store, 'pt'), before)
+                self.assertEqual(json.loads(result['pending_counts_json']), {'fr':2,'pt':26})
+
+    def test_stopped_but_corrupt_checkpoint_is_fatal_not_an_isolated_diagnostic(self):
+        proof = self.partial(locale='pt')
+        rows = queue(self.store, 'pt'); rows[self.gen]['status'] = 'blocked'; save_queue(self.store, 'pt', rows)
+        self.admitted_docs()
+        key = self.store.checkpoint_object_key('pt', self.gen, proof['checkpoint_sha256'])
+        self.store.client.objects[key]['body'] = b'broken'
+        before = copy.deepcopy(self.store.client.objects)
+        with self.assertRaises((ExpansionError, R2IntegrityError)): self.prepare_main()
+        self.assertEqual(self.store.client.objects, before)
+        self.assertFalse((self.root/'merge-outputs.txt').exists())
+
+    def test_all_stopped_cursors_report_without_collection_or_model_jobs(self):
+        register(self.store, self.corpus, ('fr',), PRODUCER)
+        before = copy.deepcopy(self.store.client.objects)
+        result = self.prepare_main('fr')
+        self.assertFalse(result['has_work'])
+        self.assertEqual(json.loads(result['locale_jobs_json']), [])
+        self.assertEqual(json.loads(result['stopped_locales_json'])[0]['status'], 'started')
+        self.assertEqual(self.store.client.objects, before)
+
+    def test_interrupted_claim_or_started_job_cannot_replay_another_actions_attempt(self):
+        original_root = self.root
+        for claimed in (False, True):
+            with self.subTest(claimed=claimed):
+                self.root = original_root/str(claimed); self.root.mkdir()
+                save_queue(self.store, 'fr', {})
+                self.partial()
+                if claimed:
+                    with patch.dict(os.environ, ENV): pending(self.store, ('fr',), self.root/'owner-source.json')
+                    current = ENV
+                else:
+                    rows = queue(self.store, 'fr'); rows[self.gen] = {'status':'started','continuations':0,'owner':PRODUCER}
+                    save_queue(self.store, 'fr', rows)
+                    current = {**ENV,'GITHUB_RUN_ID':PRODUCER['run_id'],'GITHUB_SHA':PRODUCER['sha']}
+                with patch.dict(os.environ, current):
+                    restore_claimed_checkpoint(self.store, 'fr', self.gen, self.root/'valid-owner.json')
+                before = copy.deepcopy(self.store.client.objects)
+                for changed in ({'GITHUB_RUN_ATTEMPT':'2'}, {'GITHUB_RUN_ID':'999'}, {'GITHUB_SHA':'f'*40}):
+                    with patch.dict(os.environ, {**current,**changed}):
+                        with self.assertRaisesRegex(ExpansionError, 'exact Actions attempt'):
+                            restore_claimed_checkpoint(self.store, 'fr', self.gen, self.root/'invalid-owner.json')
+                        with self.assertRaisesRegex(ExpansionError, 'exact Actions attempt'):
+                            incremental.remember_checkpoint(self.store, 'fr', self.gen, self.root/'fr-checkpoint.json')
+                        with self.assertRaisesRegex(ExpansionError, 'exact Actions attempt'):
+                            incremental.remember_candidate(self.store, 'fr', self.corpus, self.root/'fr-partial')
+                    self.assertEqual(self.store.client.objects, before)
+                self.assertFalse((self.root/'invalid-owner.json').exists())
+                self.assertEqual(queue(self.store, 'fr')[self.gen]['continuations'], int(claimed))
+
+    def test_diagnostic_failure_has_no_dependency_edge_into_healthy_publication(self):
+        workflow = (Path(__file__).resolve().parents[1]/'.github/workflows/portal-extended-locales-r2.yml').read_text()
+        diagnostic = workflow.split('\n  continuation_diagnostics:',1)[1].split('\n  locale:',1)[0]
+        self.assertIn('raise SystemExit(', diagnostic)
+        self.assertIn('permissions: {}', diagnostic)
+        import re
+        for job in ('locale','publication_handoff','continue_admitted_batches'):
+            section = re.split(r'\n  [a-z_]+:', workflow.split('\n  '+job+':',1)[1], maxsplit=1)[0]
+            self.assertNotIn('continuation_diagnostics', section)
+        self.assertIn('needs: [source, locale]', workflow)
+        self.assertIn('needs: [source, locale, publication_handoff]', workflow)
+
 
 if __name__ == '__main__':
     unittest.main()

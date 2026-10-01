@@ -123,7 +123,8 @@ class DailyReviewTests(unittest.TestCase):
         self.assertIn('Extended locale approval identity mismatch', approval)
         self.assertNotIn('extended_daily_review:', (root/'.github/workflows/neutral-locale-resume.yml').read_text())
 
-    def run_delegated_review(self, *, can_approve=True, bad_identity=False, bad_readback=False):
+    def run_delegated_review(self, *, can_approve=True, bad_identity=False, bad_readback=False,
+                             frozen=False, bad_capture=False):
         """Exercise the complete orchestration without credentials or network."""
         store = R2Store(FakeR2(), 'private', '_extended-locales/staging/review')
         corpus = make_corpus([daily_doc()])
@@ -133,6 +134,21 @@ class DailyReviewTests(unittest.TestCase):
         receipt['batch']['generation'] = generation
         assembly['batches'][-1]['generation'] = generation
         identity['source_generation'] = generation
+        capture_path = None
+        capture_run, capture_jobs = None, None
+        consumer_jobs = copy.deepcopy(self.jobs)
+        if frozen:
+            from portal_extended_daily_queue import WORKFLOW, admit, prepare_queued
+            admission = admit(store, corpus['documents'], '2026-09-25',
+                {'run_id':'321','attempt':'1','sha':'a'*40,'repository':'example/repo','workflow':WORKFLOW})
+            prepare_queued(store, ('fr',))
+            receipt['source_admission'] = admission['admission']
+            consumer_jobs[0].update(started_at='2026-09-26T01:00:00Z', completed_at='2026-09-26T01:10:00Z')
+            capture_path = 'repos/example/repo/actions/runs/321/attempts/1'
+            capture_run = {**self.run, 'id':321, 'head_sha':'a'*40, 'path':WORKFLOW,
+                           'conclusion':'failure' if bad_capture else 'success'}
+            capture_jobs = [{'name':'source_snapshot','status':'completed','conclusion':'success',
+                             'started_at':'2026-09-25T01:00:00Z','completed_at':'2026-09-25T01:10:00Z'}]
         if bad_identity:
             identity['static_tree_sha256'] = '9'*64
         previous = {'release_id': 'previous-release', 'tree_sha256': 'a'*64}
@@ -146,7 +162,11 @@ class DailyReviewTests(unittest.TestCase):
             if path == producer_path:
                 return self.run
             if path == producer_path+'/jobs?per_page=100':
-                return {'total_count': len(self.jobs), 'jobs': self.jobs}
+                return {'total_count': len(consumer_jobs), 'jobs': consumer_jobs}
+            if capture_path and path == capture_path:
+                return capture_run
+            if capture_path and path == capture_path+'/jobs?per_page=100':
+                return {'total_count': len(capture_jobs), 'jobs': capture_jobs}
             if path == env_path:
                 return {'id': 789, 'name': reviewer.ENVIRONMENT,
                         'protection_rules': [{'type': 'required_reviewers', 'reviewers': [{'id': 42}]}]}
@@ -198,6 +218,15 @@ class DailyReviewTests(unittest.TestCase):
         reviews = [row for row in self.api_calls if row[0].endswith('/pending_deployments') and row[1] == 'POST']
         self.assertEqual(len(reviews), 1)
         self.assertEqual(self.saved_variables['PORTAL_EXTENDED_APPROVED_LOCALES'], 'fr,pt')
+
+    def test_frozen_queue_orchestrator_verifies_original_capture_before_normal_approval(self):
+        self.run_delegated_review(frozen=True)
+        self.assertTrue(any('/runs/321/attempts/1' in path for path, _method, _value in self.api_calls))
+        self.assertEqual(len([row for row in self.api_calls if row[0].endswith('/pending_deployments') and row[1] == 'POST']), 1)
+
+    def test_failed_original_capture_cannot_receive_delegated_approval(self):
+        with self.assertRaises(ExpansionError): self.run_delegated_review(frozen=True, bad_capture=True)
+        self.assertFalse(any(method for _path, method, _payload in self.api_calls))
 
     def test_orchestrator_mismatched_artifact_never_writes_approval_variables(self):
         with self.assertRaises(ExpansionError):

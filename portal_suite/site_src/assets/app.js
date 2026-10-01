@@ -13873,7 +13873,15 @@
     initNewsfeedNav();
   }
 
-  const boot = page === "research"
+  async function initEnglishCommentaryAccount() {
+    // English previews must never boot the report catalog, original document
+    // browser or chart UI. Reuse only established authentication/membership UI.
+    initAccountGate("/api");
+  }
+
+  const boot = page === "english-commentary"
+    ? initEnglishCommentaryAccount
+    : page === "research"
     ? initResearch
     : page === "blog-article"
       ? initContentAccount
