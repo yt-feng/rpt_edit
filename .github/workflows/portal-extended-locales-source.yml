@@ -1,0 +1,41 @@
+# Fast source admission is intentionally independent of the slow CPU matrix lock.
+# It captures new same-day pages in private R2, never runs models or publishes.
+name: Extended locale source admission
+on:
+  workflow_run:
+    workflows: [Neutral edge catalog refresh]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: extended-locales-source-admission
+  cancel-in-progress: false
+jobs:
+  source_snapshot:
+    if: >-
+      ${{ github.event.repository.private == false && github.ref == 'refs/heads/main' &&
+          (github.event_name == 'workflow_dispatch' ||
+           (github.event.workflow_run.conclusion == 'success' &&
+            github.event.workflow_run.head_branch == github.event.repository.default_branch &&
+            github.event.workflow_run.head_repository.full_name == github.repository)) }}
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install bounded collector and private R2 client
+        run: python3 -m pip install --disable-pip-version-check 'boto3>=1.34,<2' 'requests>=2.31,<3'
+      - name: Freeze the current source day before the locale CPU queue
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
+        run: python3 -B scripts/portal_extended_daily_queue.py | tee -a "$GITHUB_STEP_SUMMARY"

@@ -4,22 +4,38 @@ on:
   pull_request:
     paths:
       - 'scripts/*extended*'
+      - 'scripts/*english_commentary*'
+      - 'scripts/*english_ui*'
+      - 'portal_suite/locale_assets/english-commentary.*'
+      - 'portal_suite/site_src/assets/app.js'
       - 'portal_suite/locale_assets/extended-locales.*'
       - 'scripts/*hymt*'
       - '.github/actions/setup-offline-translation/action.yml'
       - 'workers/edge-static-host/**'
+      - 'workers/portal-suite-worker/src/english-commentary.js'
+      - 'workers/portal-suite-worker/src/index.js'
+      - 'portal_suite/tests/english-commentary*.mjs'
       - '.github/workflows/portal-extended-locales-check.yml'
       - '.github/workflows/portal-extended-locales-r2.yml'
+      - '.github/workflows/portal-extended-locales-source.yml'
   push:
     branches: [main, codex/extended-locales-r2-20260924]
     paths:
       - 'scripts/*extended*'
+      - 'scripts/*english_commentary*'
+      - 'scripts/*english_ui*'
+      - 'portal_suite/locale_assets/english-commentary.*'
+      - 'portal_suite/site_src/assets/app.js'
       - 'portal_suite/locale_assets/extended-locales.*'
       - 'scripts/*hymt*'
       - '.github/actions/setup-offline-translation/action.yml'
       - 'workers/edge-static-host/**'
+      - 'workers/portal-suite-worker/src/english-commentary.js'
+      - 'workers/portal-suite-worker/src/index.js'
+      - 'portal_suite/tests/english-commentary*.mjs'
       - '.github/workflows/portal-extended-locales-check.yml'
       - '.github/workflows/portal-extended-locales-r2.yml'
+      - '.github/workflows/portal-extended-locales-source.yml'
   workflow_dispatch:
     inputs:
       run_model_canary:
@@ -58,10 +74,15 @@ jobs:
           python -B scripts/test_portal_extended_source_fallback.py
           python -B scripts/test_portal_extended_r2.py
           python -B scripts/test_portal_extended_incremental.py
+          python -B scripts/test_portal_extended_daily_queue.py
+          python -B scripts/test_portal_english_commentary.py
+          python -B scripts/test_portal_english_ui.py
+          node --test scripts/test_portal_english_ui.js
           python -B scripts/test_portal_extended_recovery.py
           python -B scripts/test_portal_extended_publication.py
           python -B scripts/test_portal_extended_ui.py
           node --test scripts/test_portal_extended_ui.js
+          node --test portal_suite/tests/english-commentary.test.mjs
           python -B scripts/test_portal_extended_handoff.py
           python -B scripts/test_review_portal_extended_handoff.py
           python -B scripts/test_restore_assemble_portal_extended_r2.py

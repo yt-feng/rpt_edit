@@ -48,7 +48,28 @@ def api(path, payload=None, method=None):
     return json.loads(result.stdout) if result.stdout.strip() else None
 
 
-def producer_is_valid(receipt, run, jobs, repository):
+def admission_is_valid(admitted, run, jobs, repository):
+    """Verify the original fast capture, not the day a slow consumer starts."""
+    from portal_extended_daily_queue import checked_producer
+    producer = checked_producer(admitted['producer'])
+    require(producer['repository'] == repository and run.get('id') == int(producer['run_id'])
+            and run.get('run_attempt') == int(producer['attempt']) and run.get('head_sha') == producer['sha'],
+            'Source-admission run identity mismatch')
+    require(run.get('status') == 'completed' and run.get('conclusion') == 'success'
+            and run.get('head_branch') == 'main' and run.get('path') == producer['workflow']
+            and run.get('event') in ('workflow_run', 'workflow_dispatch'),
+            'Source admission is not a completed reviewed-main capture')
+    require(all((run.get(key) or {}).get('full_name') == repository for key in ('repository', 'head_repository'))
+            and (run.get('repository') or {}).get('private') is False, 'Source-admission repository differs')
+    selected = [job for job in jobs if job.get('name') == 'source_snapshot']
+    require(len(selected) == 1 and selected[0].get('status') == 'completed' and selected[0].get('conclusion') == 'success',
+            'Source-day capture did not complete')
+    require(admitted['day'] in {publication_day(selected[0].get(key, '')) for key in ('started_at', 'completed_at')},
+            'Admission cannot discover historical source pages')
+    return admitted
+
+
+def producer_is_valid(receipt, run, jobs, repository, admitted=None):
     producer = receipt['producer']
     require(run.get('id') == int(producer['run_id']) and run.get('run_attempt') == int(producer['attempt'])
             and run.get('head_sha') == producer['sha'], 'Producer run identity mismatch')
@@ -64,8 +85,11 @@ def producer_is_valid(receipt, run, jobs, repository):
         require(len(selected) == 1 and selected[0].get('conclusion') == 'success'
                 and selected[0].get('status') == 'completed', f'Producer {name} did not complete')
         if name == 'source':
-            require(receipt['source_day'] in {publication_day(selected[0].get(key, ''))
-                    for key in ('started_at', 'completed_at')}, 'Historical source cannot receive automatic daily approval')
+            source_days = {publication_day(selected[0].get(key, '')) for key in ('started_at', 'completed_at')}
+            frozen = (admitted is not None and admitted['day'] == receipt['source_day']
+                      and admitted['admission'] == receipt.get('source_admission'))
+            require(receipt['source_day'] in source_days or frozen,
+                    'Historical source cannot receive automatic daily approval')
 
 
 def review_identity(receipt, identity, assembly, active, enabled, expected):
@@ -129,7 +153,18 @@ def main():
     producer_path = f'repos/{repository}/actions/runs/{producer["run_id"]}/attempts/{producer["attempt"]}'
     jobs = api(producer_path+'/jobs?per_page=100')
     require(jobs.get('total_count', 101) <= 100, 'Producer jobs exceed verification bound')
-    producer_is_valid(receipt, api(producer_path), jobs['jobs'], repository)
+    admitted = None
+    if receipt.get('source_admission'):
+        from portal_extended_daily_queue import batch_admission
+        admitted = batch_admission(store, receipt['batch']['generation'])
+        require(admitted is not None and admitted['admission'] == receipt['source_admission'],
+                'Handoff admission differs from its checksum-verified inventory')
+        capture = admitted['producer']
+        capture_path = f'repos/{repository}/actions/runs/{capture["run_id"]}/attempts/{capture["attempt"]}'
+        capture_jobs = api(capture_path + '/jobs?per_page=100')
+        require(capture_jobs.get('total_count', 101) <= 100, 'Source capture jobs exceed verification bound')
+        admission_is_valid(admitted, api(capture_path), capture_jobs['jobs'], repository)
+    producer_is_valid(receipt, api(producer_path), jobs['jobs'], repository, admitted)
     with tempfile.TemporaryDirectory(prefix='daily-review-') as temporary:
         corpus_path = Path(temporary)/'source.json'
         store.restore_source(receipt['batch']['generation'], corpus_path)

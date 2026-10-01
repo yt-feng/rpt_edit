@@ -1,0 +1,6 @@
+/* Same portal/Blog shell; English is a separate text-only commentary product. */
+.english-commentary-page .english-read-gate { margin: 24px 0; padding: 20px; border: 1px solid var(--line); border-radius: 8px; }
+.english-commentary-page #englishFullCommentary { margin-top: 24px; }
+.english-commentary-page .english-read-gate button { margin: 0 12px 8px 0; }
+.english-commentary-page [hidden] { display: none !important; }
+@media (max-width: 760px) { .english-commentary-page .english-read-gate { padding: 16px; } }

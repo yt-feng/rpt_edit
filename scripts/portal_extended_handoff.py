@@ -70,6 +70,12 @@ def save_handoff(store, batch, *, day, pages, producer):
         raise ExpansionError('Invalid handoff page count')
     value = {'schema_version': 1, 'producer': producer, 'source_day': day,
              'pages_per_locale': pages, 'batch': batch, 'paid_provider_requests': 0}
+    from portal_extended_daily_queue import batch_admission
+    admitted = batch_admission(store, batch['generation'])
+    if admitted is not None:
+        if admitted['day'] != day:
+            raise ExpansionError('Handoff source admission day differs')
+        value['source_admission'] = admitted['admission']
     raw = stable_bytes(value)
     identity = digest(raw)
     key = store.key('publication-handoffs', identity, 'receipt.json')
