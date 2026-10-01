@@ -8,6 +8,9 @@ on:
       - 'scripts/*hymt*'
       - '.github/actions/setup-offline-translation/action.yml'
       - 'workers/edge-static-host/**'
+      - 'workers/portal-suite-worker/src/english-commentary.js'
+      - 'workers/portal-suite-worker/src/index.js'
+      - 'portal_suite/tests/english-commentary*.mjs'
       - '.github/workflows/portal-extended-locales-check.yml'
       - '.github/workflows/portal-extended-locales-r2.yml'
   push:
@@ -18,6 +21,9 @@ on:
       - 'scripts/*hymt*'
       - '.github/actions/setup-offline-translation/action.yml'
       - 'workers/edge-static-host/**'
+      - 'workers/portal-suite-worker/src/english-commentary.js'
+      - 'workers/portal-suite-worker/src/index.js'
+      - 'portal_suite/tests/english-commentary*.mjs'
       - '.github/workflows/portal-extended-locales-check.yml'
       - '.github/workflows/portal-extended-locales-r2.yml'
   workflow_dispatch:
@@ -62,6 +68,7 @@ jobs:
           python -B scripts/test_portal_extended_publication.py
           python -B scripts/test_portal_extended_ui.py
           node --test scripts/test_portal_extended_ui.js
+          node --test portal_suite/tests/english-commentary.test.mjs
           python -B scripts/test_portal_extended_handoff.py
           python -B scripts/test_review_portal_extended_handoff.py
           python -B scripts/test_restore_assemble_portal_extended_r2.py

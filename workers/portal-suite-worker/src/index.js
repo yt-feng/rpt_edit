@@ -26128,6 +26128,15 @@ export default {
       return new Response(null, { status: 204, headers: corsHeaders(request, env) });
     }
 
+    if (pathname === "/english/commentary" || pathname === "/english/commentary/read") {
+      const { handleEnglishCommentary } = await import("./english-commentary.js");
+      return handleEnglishCommentary(request, env, {
+        respond: privateJsonResponse,
+        currentUser: currentUserFromRequest,
+        membership: async (runtime, user) => (await marketViewMembershipAccessForUser(runtime, user)).can_download === true,
+      });
+    }
+
     if (pathname === "/locale/report-detail") {
       const { handleLocaleReportDetail } = await import("./locale-report-detail.js");
       return handleLocaleReportDetail(request, env, ctx, {
