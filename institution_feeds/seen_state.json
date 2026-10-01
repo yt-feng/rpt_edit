@@ -4144,6 +4144,26 @@
     "wto:https://www.wto.org/english/news_e/news26_e/agri_24sep26_497_e.htm": {
       "first_seen": "2026-09-30",
       "status": "no_pdf"
+    },
+    "imf:efba065e597d0a315f89dab931e021c88df54104d4f08a157cbb9daa2d14": {
+      "first_seen": "2026-10-01",
+      "status": "downloaded"
+    },
+    "imf:d2b9dca3aa6004d84f4239278a77ec67deb7f53e0ee4420ec9e3a1d4ed37": {
+      "first_seen": "2026-10-01",
+      "status": "downloaded"
+    },
+    "worldbank:099209509302635901": {
+      "first_seen": "2026-10-01",
+      "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publications/core-principles-effective-deposit-insurance-systems-executive-summary": {
+      "first_seen": "2026-10-01",
+      "status": "downloaded"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/envir_28sep26_501_e.htm": {
+      "first_seen": "2026-10-01",
+      "status": "no_pdf"
     }
   }
 }
