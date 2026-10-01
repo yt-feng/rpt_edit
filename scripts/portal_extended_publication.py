@@ -12,7 +12,7 @@ from pathlib import Path
 import xml.etree.ElementTree as ET
 
 from assemble_portal_extended_locales import (
-    assemble, head_alternates, locale_home_alternates, locale_homepage,
+    assemble, head_alternates, locale_home_alternates,
     verified_candidate, NS, XHTML,
 )
 from build_portal_extended_locales import build
@@ -24,6 +24,7 @@ from portal_extended_locales import (
     stable_bytes, validate_corpus,
 )
 from portal_extended_r2 import HEX64, safe_part
+from portal_extended_ui import UI_VERSION, standard_detail, standard_homepage, ui_assets
 
 LEDGER = 'data/extended-locales/assembly.json'
 
@@ -158,7 +159,7 @@ def compose(root: Path, store, batches: list[dict], workspace: Path) -> dict:
             # The existing exact source-HTML SHA and complete-candidate gates
             # operate on the freshly rendered generation without exceptions.
             assemble(staging, current, [directory], (locale,), apply=True,
-                     existing_locales=('ko', 'ja', 'ar'))
+                     existing_locales=('ko', 'ja', 'ar'), presentation=False)
             for doc in current_docs:
                 pages[locale, doc['url']] = (staging/locale/file_for_url(doc['url'])).read_bytes()
             candidate_ids[locale] = candidate_id
@@ -196,15 +197,17 @@ def compose(root: Path, store, batches: list[dict], workspace: Path) -> dict:
             planned[(Path(locale)/relative).as_posix()] = head_alternates(html, cluster).encode()
         for locale in locales:
             if (locale, url) in pages:
-                html = pages[locale, url].decode()
+                html = standard_detail(pages[locale, url], locale, url, alternates=cluster).decode()
                 planned[(Path(locale)/relative).as_posix()] = (head_alternates(html, cluster) if locale in HREFLANG else html).encode()
     index = ET.Element(f'{{{NS}}}sitemapindex')
     counts = {}
     for locale in locales:
         urls = sorted(url for code, url in pages if code == locale)
         counts[locale] = len(urls)
-        planned[f'{locale}/index.html'] = locale_homepage(
+        planned[f'{locale}/index.html'] = standard_homepage(
             locale, [(url, pages[locale, url]) for url in urls], origin=ORIGIN,
+            alternates=home_alternates,
+            portal_home=(root/'index.html').read_text(),
         )
         planned[f'{locale}/index.html'] = head_alternates(
             planned[f'{locale}/index.html'].decode(), home_alternates,
@@ -248,7 +251,8 @@ def compose(root: Path, store, batches: list[dict], workspace: Path) -> dict:
         'batches': batches, 'page_counts': counts, 'pages_per_locale': min(counts.values()),
         'source_urls_by_locale': {locale: sorted(url for code, url in pages if code == locale) for locale in locales},
         'replays': replays, 'paid_provider_requests': 0, 'deployment_performed': False,
-        'detail_only': True, 'locale_homepages': True}
+        'detail_only': True, 'locale_homepages': True, 'ui_version': UI_VERSION}
+    planned.update(ui_assets())
     planned[LEDGER] = stable_bytes(receipt)
     if len(planned[LEDGER]) > 1024 * 1024:
         raise ExpansionError('Extended approval ledger exceeds its storage bound')

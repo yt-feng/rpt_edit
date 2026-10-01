@@ -11061,7 +11061,10 @@
   }
 
   function reportPageUrl(id, options = {}) {
-    const url = new URL("report.html", window.location.href);
+    // Extended reading locales share the source catalog; they do not publish
+    // their own authenticated report application. Established locales keep it.
+    const sourceCatalog = typeof document !== "undefined" && document.body?.dataset.extendedUi;
+    const url = new URL(sourceCatalog ? "/report.html" : "report.html", window.location.href);
     url.searchParams.set("id", id);
     if (options.password) url.searchParams.set("password", options.password);
     const preview = options.password ? null : reportPreviewItem(options.preview);
@@ -11161,7 +11164,8 @@
 
   function externalPageUrl(item, password, options = {}) {
     item = publicDocItem(item) || {};
-    const url = new URL("doc.html", window.location.href);
+    const sourceCatalog = typeof document !== "undefined" && document.body?.dataset.extendedUi;
+    const url = new URL(sourceCatalog ? "/doc.html" : "doc.html", window.location.href);
     url.searchParams.set("id", item.id);
     if (password) url.searchParams.set("password", password);
     if (password) return url.toString();

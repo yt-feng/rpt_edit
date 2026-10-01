@@ -24,7 +24,17 @@ class PublicationTests(unittest.TestCase):
         self.base = Path(temporary.name)
         self.store = R2Store(FakeR2(), 'private-bucket', '_extended-locales/staging/publication')
         self.root = self.base/'site'; self.root.mkdir()
-        (self.root/'index.html').write_text('<html><head></head><body>Home</body></html>')
+        assets = self.root/'assets'; assets.mkdir()
+        # A production tree carries these established shared assets before
+        # extended composition. Model that contract instead of an HTML-only tree.
+        repository = Path(__file__).resolve().parent.parent
+        for name in ('styles.css', 'blog.css', 'app.js', 'contact.js'):
+            (assets/name).write_bytes((repository/'portal_suite/site_src/assets'/name).read_bytes())
+        (assets/'locale.css').write_bytes((repository/'portal_suite/locale_assets/locale.css').read_bytes())
+        # Exact source main/controls used by the established locale mirrors.
+        homepage = (repository/'portal_suite/site_src/index.html').read_text()
+        homepage = homepage.replace('<body data-page="index" data-analytics-auto="manual">', '<body>')
+        (self.root/'index.html').write_text(homepage)
         (self.root/'robots.txt').write_text('User-agent: GPTBot\nDisallow: /\n')
         (self.root/'sitemap.xml').write_text('<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><sitemap><loc>'+ORIGIN+'/sitemap-pages.xml</loc></sitemap></sitemapindex>')
         self.number = 0
@@ -193,6 +203,15 @@ class PublicationTests(unittest.TestCase):
         self.assertEqual(result['locales'], ['fr'])
         for name in ('new', 'other', 'z-final'):
             self.assertIn(('get', f'slot/fr/blog/20260925-{name}.html'), client.operations)
+        without_ui = {name: item for name, item in files.items() if name != 'assets/extended-locales.css'}
+        with self.assertRaisesRegex(RuntimeError, 'UI asset is missing'):
+            verify_extended_static_tree(client, 'bucket', 'slot/', without_ui, origin=ORIGIN)
+        asset = client.objects['slot/assets/extended-locales.js']
+        original = asset['body']
+        asset['body'] = b'x' * len(original)
+        with self.assertRaisesRegex(RuntimeError, 'content differs'):
+            verify_extended_static_tree(client, 'bucket', 'slot/', files, origin=ORIGIN)
+        asset['body'] = original
         # A corrupt middle page must fail too, even when both endpoint samples
         # are valid. Full pre-cutover verification is never reduced to samples.
         entry = client.objects['slot/fr/blog/20260925-other.html']
@@ -261,13 +280,17 @@ class PublicationTests(unittest.TestCase):
                 relative += 'index.html'
             page = self.root/relative
             return mock.Mock(status_code=200 if page.is_file() else 404,
-                headers={'Content-Language':'fr', 'X-Robots-Tag':''}, content=page.read_bytes() if page.is_file() else b'')
+                headers={'Content-Language':'fr', 'X-Robots-Tag':'', 'Content-Type':'text/css' if relative.endswith('.css') else 'text/html'}, content=page.read_bytes() if page.is_file() else b'')
         with mock.patch('requests.Session') as session:
             session.return_value.get.side_effect = response
-            report = audit(ORIGIN, 'fr')
+            report = audit(ORIGIN, 'fr', require_standard_ui=True)
             self.assertEqual(report['status'], 'passed')
             self.assertEqual(report['reports'][0]['pages'], 1)
             self.assertIn(ORIGIN+'/fr/', seen)
+            self.assertIn(ORIGIN+'/assets/extended-locales.css', seen)
+            (self.root/'assets/extended-locales.css').unlink()
+            with self.assertRaisesRegex(ExpansionError, 'HTTP 404'):
+                audit(ORIGIN, 'fr', require_standard_ui=True)
 
     def test_release_workflow_assembles_after_legacy_parity_and_preserves_approval(self):
         root = Path(__file__).resolve().parents[1]
