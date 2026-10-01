@@ -199,16 +199,25 @@ def main() -> int:
                       'recovery_test_only': recovery}
             if len(corpus['documents']) > 24: raise ExpansionError('Daily batch exceeds 24 pages')
         else:
-            with requests.Session() as session:
-                # Use normal runner networking; no local proxy or network changes.
-                docs = collect_today(session, day)
-            result = prepare(store, docs, locales, day, args.corpus)
+            from portal_extended_daily_queue import read_queue, prepare_queued
+            if read_queue(store):
+                result = prepare_queued(store, locales)
+            else:
+                with requests.Session() as session:
+                    # Transitional/manual runs retain today-only collection.
+                    docs = collect_today(session, day)
+                result = prepare(store, docs, locales, day, args.corpus)
+        if 'locale_jobs_json' not in result:
+            result['locale_jobs_json'] = json.dumps([{'locale': locale, 'generation': result['generation'], 'day': result['day']}
+                for locale in json.loads(result['locales_json'])])
         if args.github_output:
             with args.github_output.open('a') as stream:
-                for key in ('has_work', 'generation', 'locales_json', 'day'):
+                for key in ('has_work', 'generation', 'locales_json', 'locale_jobs_json', 'day'):
                     value = str(result[key]).lower() if isinstance(result[key], bool) else result[key]
                     stream.write(f'{key}={value}\n')
                 stream.write('requested_locales='+','.join(locales)+'\n')
+                for key in ('source_admission', 'pending_counts_json'):
+                    stream.write(key + '=' + result.get(key, '') + '\n')
     else:
         if select_locales(args.locale) != (args.locale,): raise ExpansionError('Expected one locale')
         if args.operation == 'restore-seed': result = restore_seed(store, args.locale, args.checkpoint)

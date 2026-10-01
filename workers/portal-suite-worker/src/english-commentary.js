@@ -133,7 +133,11 @@ export async function consumeEnglishRead(bucket, userId, articleId) {
 }
 
 export async function handleEnglishCommentary(request, env, adapters) {
-  const respond = (status, value) => adapters.respond(request, env, status, value);
+  const respond = (status, value) => {
+    const response = adapters.respond(request, env, status, value);
+    response.headers.set("X-Robots-Tag", "noindex, nofollow");
+    return response;
+  };
   const url = new URL(request.url);
   const full = url.pathname.endsWith("/english/commentary/read");
   if (request.method !== (full ? "POST" : "GET")) return respond(405, { error: "method_not_allowed" });
@@ -169,6 +173,7 @@ export async function handleEnglishCommentary(request, env, adapters) {
     // Existing website membership authority is reused. Storage/auth failures
     // must not silently become free access, and report trial quotas are untouched.
     const member = await adapters.membership(env, user);
+    requireValue(typeof member === "boolean");
     const stored = await readObject(bucket, `${ENGLISH_PREFIX}/bodies/${item.body_sha256}.json`, 512 * 1024);
     requireValue(stored && await sha256(stored.raw) === item.body_sha256);
     const body = validateEnglishBody(stored.value, item);

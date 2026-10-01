@@ -6,7 +6,7 @@ run-name: Extended locale R2 ${{ inputs.operation || 'daily incremental' }} (${{
 
 on:
   workflow_run:
-    workflows: [Neutral edge catalog refresh]
+    workflows: [Extended locale source admission]
     types: [completed]
     branches: [main]
   push:
@@ -111,6 +111,17 @@ jobs:
           prefix="_extended-locales/staging/roundtrip-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
           PYTHONPATH=scripts python3 -B scripts/portal_extended_r2.py roundtrip \
             --prefix "$prefix" --run-id "${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+      - name: Verify admitted source and checkpoint recovery in isolated private staging
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
+        run: |
+          set -euo pipefail
+          python3 -B scripts/portal_extended_daily_queue.py --operation staging-probe \
+            --prefix "_extended-locales/staging/queue-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" | tee -a "$GITHUB_STEP_SUMMARY"
 
   source:
     if: >-
@@ -127,8 +138,11 @@ jobs:
       has_work: ${{ steps.source.outputs.has_work }}
       generation: ${{ steps.source.outputs.generation }}
       locales_json: ${{ steps.source.outputs.locales_json }}
+      locale_jobs_json: ${{ steps.source.outputs.locale_jobs_json }}
       day: ${{ steps.source.outputs.day }}
       requested_locales: ${{ steps.source.outputs.requested_locales }}
+      source_admission: ${{ steps.source.outputs.source_admission }}
+      pending_counts_json: ${{ steps.source.outputs.pending_counts_json }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -179,6 +193,7 @@ jobs:
           echo "source_generation=$SOURCE_GENERATION" >> "$GITHUB_STEP_SUMMARY"
 
   locale:
+    name: locale (${{ matrix.locale }})
     needs: source
     if: needs.source.result == 'success' && needs.source.outputs.has_work == 'true' && github.event.repository.private == false
     runs-on: ubuntu-22.04
@@ -188,9 +203,9 @@ jobs:
       # Retain the operator's two-worker production bound, including resumes.
       max-parallel: 2
       matrix:
-        locale: ${{ fromJSON(needs.source.outputs.locales_json) }}
+        include: ${{ fromJSON(needs.source.outputs.locale_jobs_json) }}
     env:
-      SOURCE_GENERATION: ${{ needs.source.outputs.generation }}
+      SOURCE_GENERATION: ${{ matrix.generation }}
       LOCALE: ${{ matrix.locale }}
       TRANSLATION_SECONDS: ${{ inputs.seconds || '14400' }}
       ALLOW_SOURCE_FALLBACK: ${{ (github.event_name != 'workflow_dispatch' || inputs.allow_source_fallback) && 'true' || 'false' }}
@@ -389,3 +404,47 @@ jobs:
           python3 -B scripts/portal_extended_handoff.py \
             --generation "$SOURCE_GENERATION" --day "$SOURCE_DAY" \
             --locales "$SOURCE_LOCALES" --enabled-locales "$ENABLED_LOCALES"
+
+  continue_admitted_batches:
+    needs: [source, locale, publication_handoff]
+    if: >-
+      ${{ always() && !cancelled() && github.ref == 'refs/heads/main' &&
+          needs.source.result == 'success' && needs.source.outputs.has_work == 'true' &&
+          needs.source.outputs.source_admission != '' &&
+          (github.event_name == 'workflow_run' || inputs.operation == 'candidate') }}
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install private frontier reader
+        run: python3 -m pip install --disable-pip-version-check 'boto3>=1.34,<2' 'requests>=2.31,<3'
+      - name: Continue only after durable progress, never loop on an unchanged failure
+        id: frontier
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
+          SOURCE_ADMISSION: ${{ needs.source.outputs.source_admission }}
+          SOURCE_LOCALES: ${{ needs.source.outputs.requested_locales }}
+          BEFORE_COUNTS: ${{ needs.source.outputs.pending_counts_json }}
+        run: |
+          set -euo pipefail
+          python3 -B scripts/portal_extended_daily_queue.py --operation followup \
+            --admission "$SOURCE_ADMISSION" --locales "$SOURCE_LOCALES" \
+            --before "$BEFORE_COUNTS" --github-output "$GITHUB_OUTPUT" | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Dispatch the next bounded per-language cursors
+        if: steps.frontier.outputs.continue == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_LOCALES: ${{ needs.source.outputs.requested_locales }}
+        run: gh workflow run portal-extended-locales-r2.yml --repo "$GITHUB_REPOSITORY" --ref main -f operation=candidate -f locales="$SOURCE_LOCALES"

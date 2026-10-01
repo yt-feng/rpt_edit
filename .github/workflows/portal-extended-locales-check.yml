@@ -13,6 +13,7 @@ on:
       - 'portal_suite/tests/english-commentary*.mjs'
       - '.github/workflows/portal-extended-locales-check.yml'
       - '.github/workflows/portal-extended-locales-r2.yml'
+      - '.github/workflows/portal-extended-locales-source.yml'
   push:
     branches: [main, codex/extended-locales-r2-20260924]
     paths:
@@ -26,6 +27,7 @@ on:
       - 'portal_suite/tests/english-commentary*.mjs'
       - '.github/workflows/portal-extended-locales-check.yml'
       - '.github/workflows/portal-extended-locales-r2.yml'
+      - '.github/workflows/portal-extended-locales-source.yml'
   workflow_dispatch:
     inputs:
       run_model_canary:
@@ -64,6 +66,7 @@ jobs:
           python -B scripts/test_portal_extended_source_fallback.py
           python -B scripts/test_portal_extended_r2.py
           python -B scripts/test_portal_extended_incremental.py
+          python -B scripts/test_portal_extended_daily_queue.py
           python -B scripts/test_portal_extended_recovery.py
           python -B scripts/test_portal_extended_publication.py
           python -B scripts/test_portal_extended_ui.py
