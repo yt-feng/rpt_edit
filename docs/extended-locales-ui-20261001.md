@@ -71,3 +71,18 @@ existing checksum-verified active approval ledger supplies the retained pages.
 Do not rerun original article generation, model batches or paid providers.
 Stop after dispatch; do not monitor. Live UI acceptance remains the Action's
 transactional gate and must not be claimed from local tests or dispatch alone.
+
+## Dispatch checkpoint, 07:27 UTC
+
+PR #195 passed extended regression `36830215728`, public identity and release
+guards `36830215701`, locale manifest regression `36830215889`, and API cost
+controls `36830215628`. The optional model canary was skipped because this
+presentation change needs no new inference.
+
+PR #195 merged as `1b8bd957443fc915d5d9a8ad2da30aa8eebe5d09`.
+Production Action `36830465900` was dispatched with `operation=migrate`,
+`translation_scope=incremental`, and no new extended candidate inputs. Its
+resolved source SHA matches that merge. Dispatch returned the run URL; the
+immediate receipt showed `pending` behind the existing release lock. No
+post-dispatch monitoring or live UI acceptance was performed. The active
+production version recorded above remains the last verified baseline.
