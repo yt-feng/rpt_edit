@@ -26133,6 +26133,7 @@ export default {
       return handleEnglishCommentary(request, env, {
         respond: privateJsonResponse,
         currentUser: currentUserFromRequest,
+        activeRelease: activeRuntimeDataRelease,
         membership: async (runtime, user) => (await marketViewMembershipAccessForUser(runtime, user)).can_download === true,
       });
     }

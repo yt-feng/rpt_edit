@@ -8,6 +8,16 @@ import worker from "../../workers/portal-suite-worker/src/index.js";
 
 if (!globalThis.crypto) globalThis.crypto = webcrypto;
 const hash = (raw) => createHash("sha256").update(raw).digest("hex");
+const siteRelease = "c".repeat(32);
+
+function seedRelease(bucket, ledger, release = siteRelease) {
+  const raw = JSON.stringify(ledger), ledger_sha256 = hash(raw);
+  bucket.seed(`${prefix}/ledgers/${ledger_sha256}.json`, raw);
+  bucket.seed(`${prefix}/releases/${release}/manifest.json`, {
+    schema_version: 1, policy, status: "approved", site_release: release, ledger_sha256,
+  });
+  return ledger_sha256;
+}
 const id = (index = 1) => `20261001-${index.toString(16).padStart(16, "0")}`;
 
 class MemoryR2 {
@@ -45,10 +55,11 @@ function fixture() {
     items.push({ id: articleId, title, preview, datePublished, editorial_sha256, body_sha256 });
   }
   const ledger = { schema_version: 1, policy, locale: "en", status: "approved", release_id: "b".repeat(64), items };
-  bucket.seed(`${prefix}/active.json`, ledger);
+  seedRelease(bucket, ledger);
   const adapters = {
     respond: (_request, _env, status, value) => new Response(JSON.stringify(value), { status }),
     currentUser: async () => ({ id: "account-1" }), membership: async () => false,
+    activeRelease: async () => siteRelease,
   };
   return { bucket, ledger, adapters, env: { REPORT_BUCKET: bucket } };
 }
@@ -66,7 +77,7 @@ test("public preview exposes no private body, keys, original fields or charts", 
   const value = await response.json();
   assert.equal(response.status, 200); assert.equal(value.free_reads, 3);
   for (const forbidden of ["blocks", "body_sha256", "editorial_sha256", "report", "charts", "original_text"]) assert.equal(Object.hasOwn(value, forbidden), false);
-  assert.equal(state.bucket.reads.length, 1); assert.equal(state.bucket.writes.length, 0);
+  assert.equal(state.bucket.reads.length, 2); assert.equal(state.bucket.writes.length, 0);
 });
 
 test("public list is paginated previews only", async () => {
@@ -80,7 +91,7 @@ test("anonymous or disabled readers cannot fetch private text or consume quota",
   for (const currentUser of [async () => { throw new Error("login required"); }, async () => ({ id: "account-1", disabled: true })]) {
     const state = fixture(); state.adapters.currentUser = currentUser;
     const result = await read(state); assert.equal(result.status, 401);
-    assert.equal(state.bucket.reads.length, 1); assert.equal(state.bucket.writes.length, 0);
+    assert.equal(state.bucket.reads.length, 2); assert.equal(state.bucket.writes.length, 0);
   }
 });
 
@@ -172,9 +183,47 @@ test("contention is bounded and malformed quota cannot reset the allowance", asy
 
 test("actual Worker routes retain authentication, private headers and existing membership authority", async () => {
   const state = fixture();
-  const response = await worker.fetch(new Request("https://example.invalid/api/english/commentary/read", { method: "POST", body: JSON.stringify({ id: id() }) }), state.env, {});
-  assert.equal(response.status, 401); assert.match(response.headers.get("cache-control"), /private, no-store/);
-  assert.equal(state.bucket.writes.length, 0);
+  state.env.STATIC_DATA_STATE_URL = "https://english-runtime-test.invalid/.well-known/edge-state";
+  const previousFetch = globalThis.fetch;
+  globalThis.fetch = async (url) => {
+    assert.equal(String(url), state.env.STATIC_DATA_STATE_URL + "?runtime-data=1");
+    return new Response(JSON.stringify({ schema_version: 1, slot: "a", release_id: siteRelease }));
+  };
+  try {
+    const response = await worker.fetch(new Request("https://example.invalid/api/english/commentary/read", { method: "POST", body: JSON.stringify({ id: id() }) }), state.env, {});
+    assert.equal(response.status, 401); assert.match(response.headers.get("cache-control"), /private, no-store/);
+    assert.equal(state.bucket.writes.length, 0);
+  } finally { globalThis.fetch = previousFetch; }
   const source = await readFile(new URL("../../workers/portal-suite-worker/src/index.js", import.meta.url), "utf8");
   assert.match(source, /currentUser: currentUserFromRequest/); assert.match(source, /await marketViewMembershipAccessForUser\(runtime, user\)/);
+  assert.match(source, /activeRelease: activeRuntimeDataRelease/);
+});
+
+test("English release selection follows active site cutover and rollback without a mutable fallback", async () => {
+  const state = fixture(), secondRelease = "d".repeat(32);
+  const secondLedger = { ...state.ledger, release_id: "e".repeat(64), items: [state.ledger.items[4]] };
+  seedRelease(state.bucket, secondLedger, secondRelease);
+  const get = () => handleEnglishCommentary(new Request("https://example.invalid/api/english/commentary?id=" + id(1)), state.env, state.adapters);
+  assert.equal((await get()).status, 200);
+  state.adapters.activeRelease = async () => secondRelease;
+  assert.equal((await get()).status, 404);
+  assert.equal((await read(state, id(1))).status, 404); assert.equal(state.bucket.writes.length, 0);
+  state.adapters.activeRelease = async () => siteRelease;
+  assert.equal((await get()).status, 200);
+  assert.equal(state.bucket.reads.some((key) => key.endsWith("/active.json")), false);
+});
+
+test("missing active state, unapproved or cross-release manifest and ledger checksum fail closed before quota", async () => {
+  for (const active of ["", "../../private", null]) {
+    const state = fixture(); state.adapters.activeRelease = async () => active;
+    assert.equal((await read(state)).status, 503); assert.equal(state.bucket.writes.length, 0);
+  }
+  for (const changes of [{ status: "candidate" }, { site_release: "f".repeat(32) }, { original_text: "SECRET" }]) {
+    const state = fixture(), key = `${prefix}/releases/${siteRelease}/manifest.json`;
+    state.bucket.seed(key, { ...JSON.parse(state.bucket.data.get(key).raw), ...changes });
+    assert.equal((await read(state)).status, 503); assert.equal(state.bucket.writes.length, 0);
+  }
+  const state = fixture(), sha = seedRelease(state.bucket, state.ledger);
+  state.bucket.seed(`${prefix}/ledgers/${sha}.json`, { ...state.ledger, items: [] });
+  assert.equal((await read(state)).status, 503); assert.equal(state.bucket.writes.length, 0);
 });

@@ -5,6 +5,7 @@ export const ENGLISH_FREE_READS = 3;
 export const ENGLISH_PREFIX = "_english-commentary/v1";
 const ID = /^\d{8}-[a-f0-9]{16}$/;
 const HASH = /^[a-f0-9]{64}$/;
+const SITE_RELEASE = /^[a-f0-9]{32}$/;
 const BLOCK_TAGS = new Set(["h2", "h3", "h4", "p", "li"]);
 const PRIVATE = { contentType: "application/json; charset=utf-8", cacheControl: "private, no-store" };
 
@@ -99,9 +100,20 @@ export function validateEnglishBody(value, item) {
   return value;
 }
 
-async function approvedLedger(bucket) {
-  const record = await readObject(bucket, `${ENGLISH_PREFIX}/active.json`, 2 * 1024 * 1024);
-  return record ? validateEnglishLedger(record.value) : null;
+async function approvedLedger(bucket, release) {
+  requireValue(typeof release === "string" && SITE_RELEASE.test(release));
+  // Select with the SAME active static release as catalog/membership runtime.
+  // A slot rollback restores its English ledger too; there is no independent
+  // mutable active.json fallback and no cross-release private body selection.
+  const descriptor = await readObject(bucket, `${ENGLISH_PREFIX}/releases/${release}/manifest.json`, 4096);
+  if (!descriptor) return null;
+  const manifest = descriptor.value;
+  exactKeys(manifest, ["schema_version", "policy", "status", "site_release", "ledger_sha256"]);
+  requireValue(manifest.schema_version === 1 && manifest.policy === ENGLISH_COMMENTARY_POLICY
+    && manifest.status === "approved" && manifest.site_release === release && HASH.test(manifest.ledger_sha256));
+  const record = await readObject(bucket, `${ENGLISH_PREFIX}/ledgers/${manifest.ledger_sha256}.json`, 2 * 1024 * 1024);
+  requireValue(record && await sha256(record.raw) === manifest.ledger_sha256);
+  return validateEnglishLedger(record.value);
 }
 
 function validateQuota(value, identity) {
@@ -144,7 +156,8 @@ export async function handleEnglishCommentary(request, env, adapters) {
   try {
     const bucket = env.REPORT_BUCKET;
     if (!bucket) return respond(503, { error: "commentary_temporarily_unavailable" });
-    const ledger = await approvedLedger(bucket);
+    requireValue(typeof adapters.activeRelease === "function");
+    const ledger = await approvedLedger(bucket, await adapters.activeRelease(env));
     if (!ledger) return respond(404, { error: "commentary_not_published" });
     if (!full) {
       const id = url.searchParams.get("id");
