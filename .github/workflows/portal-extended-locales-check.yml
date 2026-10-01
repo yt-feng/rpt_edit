@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'scripts/*extended*'
+      - 'portal_suite/locale_assets/extended-locales.*'
       - 'scripts/*hymt*'
       - '.github/actions/setup-offline-translation/action.yml'
       - 'workers/edge-static-host/**'
@@ -13,6 +14,7 @@ on:
     branches: [main, codex/extended-locales-r2-20260924]
     paths:
       - 'scripts/*extended*'
+      - 'portal_suite/locale_assets/extended-locales.*'
       - 'scripts/*hymt*'
       - '.github/actions/setup-offline-translation/action.yml'
       - 'workers/edge-static-host/**'
@@ -58,6 +60,8 @@ jobs:
           python -B scripts/test_portal_extended_incremental.py
           python -B scripts/test_portal_extended_recovery.py
           python -B scripts/test_portal_extended_publication.py
+          python -B scripts/test_portal_extended_ui.py
+          node --test scripts/test_portal_extended_ui.js
           python -B scripts/test_portal_extended_handoff.py
           python -B scripts/test_review_portal_extended_handoff.py
           python -B scripts/test_restore_assemble_portal_extended_r2.py

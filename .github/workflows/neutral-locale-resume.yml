@@ -1575,7 +1575,15 @@ jobs:
         if: needs.prepare_release.outputs.extended_ready == 'true'
         run: |
           set -euo pipefail
+          ui_args=()
+          # Old exact-version recovery retains its original renderer. Fresh
+          # composed releases declare and must pass the shared presentation gate.
+          ui_version="$(python3 -c 'import json,sys; sys.path.insert(0,"scripts"); from portal_extended_ui import UI_VERSION; value=json.load(open("_release_validation/candidate/extended-assembly.json")).get("ui_version", ""); assert value in ("", UI_VERSION), "Unsupported presentation version"; print(value)')"
+          if [ -n "$ui_version" ]; then
+            ui_args+=(--require-standard-ui)
+          fi
           python3 -B scripts/audit_portal_extended_live.py \
+            "${ui_args[@]}" \
             --origin "$LIVE_ORIGIN" \
             --locales "$EXTENDED_LOCALES" \
             --output "$RUNNER_TEMP/extended-live-audit.json"

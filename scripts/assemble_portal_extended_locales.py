@@ -18,6 +18,7 @@ from portal_extended_locales import (
     validate_corpus, daily_corpus_day,
 )
 from offline_translation import MODEL_ID
+from portal_extended_ui import UI_VERSION, standard_detail, standard_homepage, ui_assets
 
 NS = 'http://www.sitemaps.org/schemas/sitemap/0.9'
 XHTML = 'http://www.w3.org/1999/xhtml'
@@ -175,6 +176,7 @@ def assemble(
     apply=False,
     origin=ORIGIN,
     existing_locales: tuple[str, ...] = (),
+    presentation: bool = True,
 ) -> dict:
     docs = validate_corpus(corpus, origin=origin)
     root = root.resolve()
@@ -232,16 +234,29 @@ def assemble(
             if html.count(needle) != 1: raise ExpansionError('Missing candidate robots guard')
             html = html.replace(needle, '<meta name="robots" content="index,follow">', 1)
             planned[key] = (head_alternates(html, alternatives) if code in HREFLANG else html).encode()
-    for code in approved:
-        planned[(Path(code) / 'index.html').as_posix()] = locale_homepage(
-            code,
-            [(doc['url'], planned[(Path(code) / file_for_url(doc['url'])).as_posix()])
-             for doc in docs],
-            origin=origin,
-        )
     home_alternates = locale_home_alternates(
         root, approved, existing_locales=existing_locales, origin=origin,
     )
+    for code in approved:
+        detail_pages = [(doc['url'], planned[(Path(code) / file_for_url(doc['url'], origin=origin)).as_posix()])
+                        for doc in docs]
+        planned[(Path(code) / 'index.html').as_posix()] = locale_homepage(
+            code,
+            detail_pages,
+            origin=origin,
+        )
+        if presentation:
+            planned[f'{code}/index.html'] = standard_homepage(code,
+                detail_pages,
+                origin=origin, alternates=home_alternates)
+            for doc in docs:
+                key = (Path(code) / file_for_url(doc['url'], origin=origin)).as_posix()
+                # Preserve a localized source homepage in old non-daily fixtures.
+                if key != f'{code}/index.html':
+                    planned[key] = standard_detail(planned[key], code, doc['url'], origin=origin,
+                                                   alternates=all_alternates[doc['url']])
+    if presentation:
+        planned.update(ui_assets())
     if 'index.html' not in planned:
         planned['index.html'] = (root / 'index.html').read_bytes()
     planned['index.html'] = head_alternates(planned['index.html'].decode(), home_alternates).encode()
@@ -273,6 +288,8 @@ def assemble(
               'source_documents_sha256': corpus['documents_sha256'],
               'pages_per_locale': len(docs), 'planned_files': len(planned),
               'paid_provider_requests': 0, 'deployment_performed': False}
+    if presentation:
+        result['ui_version'] = UI_VERSION
     planned['data/extended-locales/assembly.json'] = stable_bytes(result)
     # No write until every candidate, every original and every generated file
     # has been verified. This directory must still go through the normal slot

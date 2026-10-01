@@ -19,6 +19,7 @@ import xml.etree.ElementTree as ET
 
 from portal_extended_locales import select_locales, file_for_url
 from audit_portal_extended_live import check_page
+from portal_extended_ui import UI_VERSION
 from portal_locale_manifest import (
     MAX_LOCALE_MANIFEST_BYTES, parse_locale_manifest, validate_translation_resolution,
 )
@@ -195,6 +196,15 @@ def verify_extended_static_tree(
     ):
         raise RuntimeError("Prepared extended assembly receipt is incomplete")
     approved = select_locales(",".join(locales))
+    standard_ui = assembly.get('ui_version') == UI_VERSION
+    if assembly.get('ui_version') and not standard_ui:
+        raise RuntimeError('Unknown extended UI version')
+    if standard_ui:
+        for name in ('styles.css', 'blog.css', 'locale.css', 'extended-locales.css', 'extended-locales.js', 'app.js', 'contact.js'):
+            path = 'assets/' + name
+            if path not in files:
+                raise RuntimeError(f'Prepared extended UI asset is missing: {path}')
+            read_verified_candidate_body(client, bucket, prefix+path, files[path], maximum=4*1024*1024)
     index_descriptor = files.get("sitemap-extended.xml")
     if index_descriptor is None:
         raise RuntimeError("Prepared extended sitemap index is missing")
@@ -218,7 +228,7 @@ def verify_extended_static_tree(
             if relative.endswith(".html") and b"noindex" in body.lower():
                 raise RuntimeError(f"Prepared extended homepage remains noindex: {relative}")
             if relative == f"{locale}/index.html" and origin:
-                check_page(body, f"{origin.rstrip('/')}/{locale}/", locale)
+                check_page(body, f"{origin.rstrip('/')}/{locale}/", locale, require_standard_ui=standard_ui)
         sitemap_descriptor = files[f"sitemap-extended-{locale}.xml"]
         sitemap_body = read_verified_candidate_body(
             client, bucket, prefix + f"sitemap-extended-{locale}.xml", sitemap_descriptor,
@@ -243,7 +253,7 @@ def verify_extended_static_tree(
             def verify_page(url):
                 path = localized_path(url)
                 body = read_verified_candidate_body(client, bucket, prefix+path, files[path], maximum=4*1024*1024)
-                check_page(body, url, locale)
+                check_page(body, url, locale, require_standard_ui=standard_ui)
             # Read every page, not a sample. Bound both connections and buffered
             # bodies while avoiding 33*24 sequential HEAD/GET round trips.
             with ThreadPoolExecutor(max_workers=4) as pool:
