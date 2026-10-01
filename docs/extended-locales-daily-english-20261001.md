@@ -143,3 +143,12 @@ extraction, pinned Hy-MT2 candidate builder, preview/paywall frontend and
 version-bound private-body publication/rollback integration. Then obtain
 normal PR/CI/staging evidence and prove daily/live access outcomes. The full
 33-locale daily-update plus English product objective is not complete.
+
+## Staging dependency correction
+
+Run `36924379228` completed with failure before the new queue probe could access
+R2: `portal_extended_daily_queue.py` imported `requests`, but the roundtrip job
+installed only boto3. The existing storage roundtrip step succeeded; the new
+admission/recovery probe has not passed. Install requests in this isolated job
+and assert its dependency list in the workflow regression. This correction does
+not change storage validation, candidate approval, translation or production.

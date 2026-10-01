@@ -99,7 +99,7 @@ jobs:
         with:
           python-version: "3.11"
       - name: Install private R2 client
-        run: python3 -m pip install --disable-pip-version-check "boto3>=1.34,<2"
+        run: python3 -m pip install --disable-pip-version-check "boto3>=1.34,<2" "requests>=2.31,<3"
       - name: Verify isolated private R2 read/write/checksum and error classification
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}

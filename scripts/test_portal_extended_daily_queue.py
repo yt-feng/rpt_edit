@@ -200,6 +200,8 @@ class SourceProvenanceTests(unittest.TestCase):
         self.assertNotIn('actions/cache', source)
         self.assertIn("inputs.operation == 'roundtrip' && format('extended-locales-r2-staging-{0}'", consumer)
         self.assertIn("|| 'extended-locales-r2-pipeline'", consumer)
+        roundtrip = consumer.split('\n  roundtrip:', 1)[1].split('\n  source:', 1)[0]
+        self.assertIn('"boto3>=1.34,<2" "requests>=2.31,<3"', roundtrip)
 
 
 if __name__ == '__main__': unittest.main()
