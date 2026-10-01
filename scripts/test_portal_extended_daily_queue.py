@@ -11,6 +11,7 @@ from portal_extended_daily_queue import (WORKFLOW, admit, batch_admission, follo
 from portal_extended_incremental import content_key, write_state
 from portal_extended_locales import ADDITIONAL, ExpansionError, make_corpus, stable_bytes
 from portal_extended_r2 import R2IntegrityError, R2PermissionError, R2Store
+from portal_extended_r2 import R2StoreError
 from test_portal_extended_incremental import DAY, ORIGIN, daily_doc
 from test_portal_extended_r2 import FakeR2
 from review_portal_extended_handoff import admission_is_valid, producer_is_valid
@@ -156,7 +157,7 @@ class SourceQueueTests(unittest.TestCase):
         self.assertEqual(result['ready_candidates'], 0); self.assertFalse(result['deployed'])
         self.assertEqual(result['checkpoint_restore'], 'passed')
         self.assertFalse(any('/candidate-ready.json' in key for key in self.client.objects))
-        with self.assertRaises(Exception): staging_probe(R2Store(self.client, 'private', '_extended-locales/v1'))
+        with self.assertRaises(R2StoreError): staging_probe(R2Store(self.client, 'private', '_extended-locales/v1'))
 
 
 class SourceProvenanceTests(unittest.TestCase):
@@ -197,6 +198,8 @@ class SourceProvenanceTests(unittest.TestCase):
             self.assertIn(text, consumer)
         self.assertNotIn('actions/upload-artifact', source+consumer)
         self.assertNotIn('actions/cache', source)
+        self.assertIn("inputs.operation == 'roundtrip' && format('extended-locales-r2-staging-{0}'", consumer)
+        self.assertIn("|| 'extended-locales-r2-pipeline'", consumer)
 
 
 if __name__ == '__main__': unittest.main()

@@ -49,7 +49,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: ${{ inputs.operation == 'publication-check' && format('extended-locales-publication-check-{0}', github.ref) || inputs.operation == 'recovery-test' && format('extended-locales-r2-recovery-{0}', github.ref) || 'extended-locales-r2-pipeline' }}
+  group: ${{ inputs.operation == 'roundtrip' && format('extended-locales-r2-staging-{0}', github.ref) || inputs.operation == 'publication-check' && format('extended-locales-publication-check-{0}', github.ref) || inputs.operation == 'recovery-test' && format('extended-locales-r2-recovery-{0}', github.ref) || 'extended-locales-r2-pipeline' }}
   cancel-in-progress: false
 
 env:
