@@ -217,3 +217,29 @@ The zero-inference private staging probe also restores the English checkpoint
 and verifies its source-generation binding and checksum. The CPU matrix/cursor,
 candidate persistence/approval and transactional publication integration still
 remain to be connected; English is not online yet.
+
+Preview/search/auth UI commit: `05d92c4d2ab3d12e8edee2eab409edcf841395ec`.
+English-focused local contracts total 47 (17 source/build, 6 public HTML,
+8 frontend DOM/auth/paywall, 16 gateway); existing runtime authority 7,
+membership request/frontend 12, daily queue 16, incremental 21, reviewer 15,
+R2 6, financial quantity 13 and shared presentation 8 also passed.
+Public identity passed on 6224 files, JS syntax and changed YAML syntax passed.
+No browser/live English acceptance or actual English model run is claimed.
+
+## Verified pre-English R2 staging result
+
+One bounded result inspection while implementing the next stage confirmed run
+`36925028114` completed successfully on source
+`40e3670e541a4b9e9119e83be09ecf3b25acff29`.
+The queue/admission probe at `2026-10-01T20:55:54.8822124Z` reported:
+
+- source generation: `2e7480a2fab64e8f431b87f41d09655d25c6b05aedbfb963fa7cbde7548d9e0d`;
+- checkpoint checksum: `f7c97533eb7d3b8872450b011fd82da7a11d7320c08da1c6b7aa45c217e2aff9`;
+- source restore, checkpoint restore, batch admission and independent cursor
+  simulation: passed;
+- ready candidates 0, translation calls 0, deployed false.
+
+This was the dependency-corrected non-English queue probe. The newly added
+English editorial/checkpoint probe still needs its own runtime evidence. PR #196
+remains open, with base `1c1c704f2eb678dce59e83967553e03b1df053e0` at the latest
+read. No merge or production activation was performed in this stage.
