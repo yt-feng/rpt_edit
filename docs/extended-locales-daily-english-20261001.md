@@ -1,5 +1,81 @@
 # Daily reading locales and English editorial access
 
+## Current checkpoint: reviewed foundation merged; English CPU stage submitted
+
+PR #196 was merged through the normal passing-check flow at
+`2026-10-01T21:22:05Z`; main merge commit is
+`a5c851494cf6100b1792806bae29df1092d3e185`.
+Its head was `7db183a750b41e43979c39f98db4e0dc1d5523fe`.
+The main source-admission hook and the 33 independent daily cursors are now
+merged. This activates the code path, not a claim that today's translations have
+all completed or reached production. Existing approved pages remain intact.
+
+One bounded result inspection confirmed these completed checks on that head:
+
+- offline regression `36926892315`: success;
+- API cost controls `36926892309`: success;
+- public identity `36926892350`: success;
+- dispatched credential-free regression `36926924838`: success;
+- isolated private R2 staging `36926954981`: success.
+
+The English staging result at `2026-10-01T21:12:13.3915043Z` restored editorial
+source generation
+`b0ab22c6138f275704edfc27e5fee9ca80187197dccc6181e2dbcc3fabde165c`
+and English checkpoint checksum
+`047e8ee6657c345a233ea85f8d2f1b35d8e6608c78fdf59010d8a2012eee00b6`.
+Editorial source SHA-256 was
+`dbc729da4c3f8ec73e68e7751357a9bbcbb4c914c291b186e1a9b67e46c54cc8`.
+Source/checkpoint restoration passed; ready candidates 0, translation calls 0,
+paid-provider requests 0 and deployed false. It was synthetic storage evidence,
+not a locally produced or approved English translation.
+
+The next isolated branch is `codex/english-commentary-cpu-release-20261001`.
+CPU/persistence implementation commit:
+`2fdd95e86cc53c5c715edb0fae9c869a8c62330f`.
+English now joins the SAME max-parallel-2 CPU matrix; its own private source
+generation, completion cursor and checkpoint namespace are independent of the
+33 non-English locales. English inference requires reviewed main/public Linux
+Actions and the existing fixed Hy-MT2 runtime. Source fallback is never enabled.
+No English translation failure changes the non-English approval locale set or
+prevents otherwise-ready non-English candidates entering the existing release
+handoff.
+
+Candidate readback verifies original capture producer/day/HTML hashes, exact
+admitted editorial subset, model identity, private body quantity/script checks,
+all object checksums and preview-only public HTML before writing READY.
+Timeouts persist incomplete candidates and immutable memo snapshots, leave
+the cursor unfinished and never create READY. An unchanged failure cannot
+self-dispatch indefinitely. Complete candidates remain noindex and unpublished.
+
+Before marking English work complete, the ready candidate is durably retained
+in a separate private pending-publication queue. Finished source days can then
+leave the bounded translation queue without deleting their sources, checkpoints
+or unpublished candidates. A completed day without that verified durable work
+cannot be dropped. Seed recovery follows the content-addressed checkpoint
+snapshot, not a mutable per-generation latest pointer.
+
+Local targeted contracts: English source/build 18, English pipeline 21, daily
+incremental 28 and source queue 16 passed (83 total). Broader offline, financial
+quantity, carry-forward/approval/restore and existing locale regressions passed.
+JavaScript preview/auth/gateway/edge suites: 92 passed. Public identity passed
+on 6226 files. Changed YAML was parsed with Ruby; one optional local PyYAML test
+was skipped because that dependency is absent, while Linux CI installs it.
+
+The expanded staging operation now checks same-capture source admission,
+immutable empty-checkpoint recovery, timeout cursor recovery and refusal to
+restore an incomplete candidate, with zero inference and zero ready candidates.
+It still needs a new Actions result on this CPU-stage commit.
+
+English is NOT online. Normal protected publication still must assemble safe
+previews, preserve previously approved English batches, populate the private
+ledger/body release manifest selected by the active site version, and bind its
+approval/cutover/rollback to the exact prepared tree. No production approval,
+release manifest or original-report English page is fabricated by this stage.
+The dirty primary checkout and the last accepted production version are untouched.
+
+The sections below retain earlier implementation checkpoints; their old open-PR
+or running-workflow statements are historical, not fresh runtime status.
+
 ## Reconciled baseline
 
 Work continues from reviewed main `1c1c704f2eb678dce59e83967553e03b1df053e0`
@@ -8,7 +84,7 @@ All 33 non-English locale roots already use `portal-shared-v1`; the preceding
 production acceptance retained 24 approved articles per locale (792 total).
 That does not prove daily-new-content coverage.
 
-Current daily producer `36801745121` is still working, not stopped: completed
+At the pre-merge snapshot, daily producer `36801745121` was still working: completed
 locale jobs exist, two CPU jobs are active, and the remaining matrix jobs are
 queued under the two-worker limit. One Khmer job failed; failure diagnosis and
 durable recovery remain open. Refresh-triggered run `36907095539` is pending
@@ -34,7 +110,7 @@ The source-day queue and independent bounded cursors are implemented below.
 Actual staging recovery and automatic production updates still require runtime
 evidence; configuration and local tests alone do not prove those outcomes.
 
-## Daily queue implementation, not yet merged
+## Daily queue implementation (subsequently merged in PR #196)
 
 The fast `Extended locale source admission` workflow follows successful source
 refreshes independently of the slow CPU matrix lock. It admits only the current
@@ -121,7 +197,7 @@ baseline remains evidence; this failed check is not current live acceptance.
 
 ## Review and runtime dispatch checkpoint
 
-PR #196 is open, not merged.
+At this earlier checkpoint, PR #196 was open, not merged.
 Implementation checkpoints: gateway `5face1c2e6f74bf58de77076b77d76a564163765`,
 daily queue `1be22201461f008961f5d8c55476cb31bfd71512`, and staging-lock isolation
 `460f6b62379d61864698355b16e44acd78907f6f`.
@@ -240,6 +316,7 @@ The queue/admission probe at `2026-10-01T20:55:54.8822124Z` reported:
 - ready candidates 0, translation calls 0, deployed false.
 
 This was the dependency-corrected non-English queue probe. The newly added
-English editorial/checkpoint probe still needs its own runtime evidence. PR #196
-remains open, with base `1c1c704f2eb678dce59e83967553e03b1df053e0` at the latest
-read. No merge or production activation was performed in this stage.
+English editorial/checkpoint probe needed its own runtime evidence at that
+checkpoint; it subsequently passed as recorded above. PR #196 was then open,
+with base `1c1c704f2eb678dce59e83967553e03b1df053e0`. Its subsequent merge is
+recorded at the top; no English production activation is claimed.
