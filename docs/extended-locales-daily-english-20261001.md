@@ -1,5 +1,37 @@
 # Daily reading locales and English editorial access
 
+## Latest bounded inspection: publication review pending; GitHub connection stopped
+
+On the next continuation, the initial GitHub reads succeeded. PR #199 was
+OPEN/UNSTABLE at exact head `f3d297f001567baef0bd82cc0f9e67bf54215122`, base
+`8f0591de260c17b2c51b5e15909a6fe9e9ab9d5e`. Its API cost control check
+`36932015952` had succeeded; offline regression `36932015946`, locale manifest
+`36932015880` and public identity `36932015913` were still in progress.
+Publication-branch R2 staging `36932057105` was in progress at that exact PR
+head. Main incremental run `36932060676` was pending at the exact base above.
+These are bounded snapshots, not monitoring, and are not terminal results.
+
+The original main CPU run `36801745121` still had real active job handles:
+`locale (bn)` job `110177656037`, and `locale (ta)` job `110177655990`.
+Of its 33 locale jobs, 24 had succeeded, one Khmer job had failed with the
+previously confirmed timeout, two were running and six were queued
+(`uk,bo,kk,mn,ug,yue`). Job success is not a count of approved/live new pages;
+per-page R2 candidate evidence and new-day production coverage were not read in
+this continuation. Existing checkpoints and running jobs were not canceled.
+An initial listing showed release run `36893120105` had succeeded on main
+`1c1c704f2eb678dce59e83967553e03b1df053e0`; its exact activated release/tree
+and live page counts were not inspected here.
+
+A subsequent exact merge-gate read failed with `connect: no route to host`.
+The chained command stopped before any additional API call. In compliance with
+the operator instructions, ALL GitHub/Git network operations stopped: no
+transport/remote changes, proxy/DNS/route inspection or alternate connection
+path was attempted. No PR merge, publication opt-in change, new dispatch or
+production activation occurred in this continuation. English remains unaccepted
+for production. Resume from verified current GitHub state on a later user turn;
+do not assume any of these formerly running handles has finished or restart one
+merely because observation failed. This evidence record is saved locally only.
+
 ## Current checkpoint: English CPU merged; publication and recovery ready for review
 
 PR #198 passed regression, API cost controls and public identity and was merged
