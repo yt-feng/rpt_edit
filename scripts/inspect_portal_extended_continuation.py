@@ -59,14 +59,99 @@ def inspect(store, generation, locale, checkpoint_sha, candidate_id, output):
     return result
 
 
+def inspect_english(store, source_store, generation, checkpoint_sha, candidate_id, output):
+    """Inspect one immutable private English failure without translating or writing R2."""
+    from build_portal_extended_locales import Memo, extended_source_language, reject_symlinks, safe_failure_code, validate_text
+    from portal_english_commentary import failure_code_counts, preview_text, require, text
+    from portal_english_pipeline import MAX_MANIFEST, batch_admission, verify_manifest
+    for value, label in ((generation, 'generation'), (checkpoint_sha, 'checkpoint sha'), (candidate_id, 'candidate')):
+        safe_part(value, label=label, pattern=HEX64)
+    reject_symlinks(output)
+    require(not output.exists(), 'Inspection output must be a new directory')
+    proof, admission, source = batch_admission(store, source_store, generation)
+    checkpoint_raw = store._get(store.checkpoint_object_key('en', generation, checkpoint_sha), maximum=MAX_CHECKPOINT_BYTES)
+    require(digest(checkpoint_raw) == checkpoint_sha, 'Immutable English checkpoint checksum mismatch')
+    checkpoint = json.loads(checkpoint_raw)
+    checkpoint_is_valid(checkpoint, 'en', generation)
+    fields = {'model', 'locale', 'version', 'rows', 'source_generation'}
+    require(set(checkpoint) in (fields, fields | {'source_fallbacks'})
+            and checkpoint.get('source_generation') == generation and checkpoint.get('source_fallbacks', {}) == {},
+            'English checkpoint requires exact source and no source fallback')
+    memo = object.__new__(Memo); memo.locale = 'en'
+    for key, row in checkpoint['rows'].items():
+        require(isinstance(row, dict) and set(row) == {'source', 'language', 'text'}
+                and all(isinstance(row[field], str) for field in row)
+                and key == memo.key(row['source'], row['language']), 'Invalid English checkpoint unit identity')
+    manifest_raw = store._get(store.key('candidates', generation, candidate_id, 'candidate-manifest.json'), maximum=MAX_MANIFEST)
+    require(digest(manifest_raw) == candidate_id, 'Immutable English candidate checksum mismatch')
+    manifest = verify_manifest(json.loads(manifest_raw), source)
+    counts = failure_code_counts(manifest['failures'])
+    failed = {row['id']: row['code'] for row in manifest['failures']}
+    diagnostics = []
+    for doc in source['documents']:
+        if doc['id'] not in failed:
+            continue
+        units = [('title', doc['title'])] + [('block', row['text']) for row in doc['blocks']]
+        cached_blocks = []; checks = []
+        for field, original in units:
+            language = extended_source_language(original)
+            row = checkpoint['rows'].get(memo.key(original, language))
+            check = {'field': field, 'source_sha256': digest(original.encode()),
+                     'source_characters': len(original), 'cached': row is not None}
+            if row is not None:
+                translated = row['text']; check['cached_characters'] = len(translated)
+                try:
+                    validate_text(original, translated, 'en', language)
+                    text(translated, 500 if field == 'title' else 12000, english=True)
+                    check['validation'] = 'passed'
+                except ExpansionError as error:
+                    # Fixed categories only; source/translation/error messages remain private.
+                    check['validation'] = {
+                        'Empty/oversized English editorial text': 'english-text-size',
+                        'Non-English source fallback is forbidden': 'english-source-residue',
+                        'Embedded/original asset reference is forbidden': 'english-asset-reference',
+                        'Original report field is forbidden': 'english-original-field',
+                    }.get(str(error), safe_failure_code(error))
+                if field == 'block': cached_blocks.append({'text': translated})
+            checks.append(check)
+        preview_check = 'missing-cached-blocks'
+        if len(cached_blocks) == len(doc['blocks']):
+            try:
+                preview_text(cached_blocks); preview_check = 'passed'
+            except ExpansionError:
+                preview_check = 'english-preview-validation'
+        diagnostics.append({'document_sha256': digest(doc['id'].encode()), 'code': failed[doc['id']],
+                            'units': checks, 'preview_validation': preview_check})
+    result = {'schema_version': 1, 'read_only': True, 'locale': 'en', 'generation': generation,
+        'source_day': source['day'], 'source_sha256': digest(stable_bytes(source)),
+        'source_admission': admission['source_admission'], 'english_admission': proof['admission'],
+        'source_document_count': len(source['documents']), 'checkpoint_sha256': checkpoint_sha,
+        'checkpoint_rows': len(checkpoint['rows']), 'candidate_id': candidate_id,
+        'manifest_sha256': digest(manifest_raw), 'status': manifest['status'],
+        'budget_exhausted': manifest['budget_exhausted'], 'completed_page_count': manifest['completed_page_count'],
+        'failure_code_counts': counts, 'failed_documents': diagnostics,
+        'production_writes': 0, 'model_calls': 0, 'paid_provider_requests': 0}
+    output.mkdir(parents=True)
+    (output/'inspection.json').write_bytes(stable_bytes(result))
+    return result
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--prefix', default=DEFAULT_PREFIX)
+    parser.add_argument('--prefix')
+    parser.add_argument('--source-prefix', default=DEFAULT_PREFIX)
     for option in ('generation', 'locale', 'checkpoint-sha', 'candidate-id'):
         parser.add_argument('--'+option, required=True)
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
-    print(json.dumps(inspect(R2Store.from_env(args.prefix), args.generation, args.locale,
+    if args.locale == 'en':
+        from portal_english_commentary import PREFIX
+        store = R2Store.from_env(args.prefix or PREFIX)
+        result = inspect_english(store, R2Store(store.client, store.bucket, args.source_prefix),
+            args.generation, args.checkpoint_sha, args.candidate_id, args.output)
+        print(json.dumps(result, sort_keys=True))
+        return
+    print(json.dumps(inspect(R2Store.from_env(args.prefix or DEFAULT_PREFIX), args.generation, args.locale,
         args.checkpoint_sha, args.candidate_id, args.output), sort_keys=True))
 
 

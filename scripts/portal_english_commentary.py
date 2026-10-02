@@ -7,6 +7,7 @@ Generated bodies, sources and checkpoints remain private R2 build inputs.
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 from dataclasses import dataclass, field
 from html.parser import HTMLParser
 import json
@@ -318,6 +319,35 @@ def preview_text(blocks):
     return text(sentence, 640, english=True)
 
 
+PUBLIC_FAILURE_CODES = frozenset({
+    'time-budget', 'offline-request-timeout', 'offline-runtime', 'offline-context-limit',
+    'offline-response-invalid', 'offline-model-incomplete', 'offline-transport',
+    'offline-quantity-validation', 'offline-placeholder-validation', 'offline-markdown-validation',
+    'offline-target-script-validation', 'offline-empty-validation', 'offline-token-limit',
+    'offline-unicode-validation', 'offline-validation', 'financial-quantity-validation',
+    'table-structure-validation', 'untranslated-source-validation', 'chinese-residue-validation',
+    'target-script-validation', 'placeholder-validation', 'empty-translation-validation',
+    'translation-size-validation', 'expansion-validation', 'translation-error',
+})
+
+
+def failure_code_counts(failures):
+    """Expose enumerated diagnostics, never exception text or document content."""
+    require(isinstance(failures, list) and len(failures) <= 24, 'Invalid English failure inventory')
+    counts = Counter(); seen = set()
+    for row in failures:
+        exact(row, ['id', 'code'])
+        identifier, code = row['id'], row['code']
+        require(isinstance(identifier, str) and ID.fullmatch(identifier) and identifier not in seen,
+                'Invalid English failure identity')
+        seen.add(identifier)
+        require(isinstance(code, str) and (code in PUBLIC_FAILURE_CODES or re.fullmatch(
+            r'offline-http-[1-5][0-9]{2}(?:-(?:context-limit|invalid-utf8|chat-parser|memory|decode|slot-unavailable))?', code)),
+            'Unrecognized English failure code')
+        counts[code] += 1
+    return dict(sorted(counts.items()))
+
+
 def build(source, output, checkpoint, translator, *, seconds=14400, seed_checkpoint=None):
     docs = validate_source(source)
     require(1 <= len(docs) <= 24, 'English CPU batch must be 1..24 new editorial pages')
@@ -408,8 +438,10 @@ def main():
     require(args.corpus.stat().st_size <= MAX_SOURCE_BYTES, 'English corpus too large')
     result = build(json.loads(args.corpus.read_text()), args.output, args.checkpoint,
                    OfflineTranslator(validation_attempts=3), seconds=args.seconds, seed_checkpoint=args.seed_checkpoint)
-    print(json.dumps({k: result[k] for k in ('status', 'source_document_count', 'completed_page_count',
-                                          'budget_exhausted', 'translation_calls', 'cache_hits', 'paid_provider_requests')}))
+    summary = {k: result[k] for k in ('status', 'source_document_count', 'completed_page_count',
+                                    'budget_exhausted', 'translation_calls', 'cache_hits', 'paid_provider_requests')}
+    summary['failure_code_counts'] = failure_code_counts(result['failures'])
+    print(json.dumps(summary))
     return 0 if result['status'] == 'complete-candidate' else 75 if result['budget_exhausted'] else 1
 
 
