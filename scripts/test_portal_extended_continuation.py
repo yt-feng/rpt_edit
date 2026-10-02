@@ -5,7 +5,7 @@ import os
 from pathlib import Path
 import tempfile
 import unittest
-from unittest.mock import patch
+from unittest.mock import MagicMock, Mock, patch
 
 from build_portal_extended_locales import build
 from offline_translation import TranslationBudgetExceeded
@@ -210,6 +210,69 @@ class ContinuationTests(unittest.TestCase):
         self.store.client.objects[key]['body'] = b'changed'
         with self.assertRaises(R2IntegrityError):
             next_registered_batch(self.store, 'fr', 'fr', self.active, self.root/'corrupt')
+
+    def test_handoff_drains_original_continuation_before_refreshed_admitted_source(self):
+        import portal_extended_handoff as handoff
+        from portal_extended_daily_queue import admit, prepare_queued, WORKFLOW
+        from test_portal_extended_source_refresh import proof
+        self.partial(); original_result = self.finish()
+        origin_before = copy.deepcopy(read_origin(self.store, self.gen))
+        original_batch = {'generation': self.gen,
+                          'candidates': {'fr': original_result['candidate_id']}}
+        newer_day = '2026-09-26'
+        newer = [daily_doc(ORIGIN+'/blog/20260926-refresh.html', day=newer_day)]
+        corpus = make_corpus(newer)
+        admission = admit(self.store, newer, newer_day,
+            {**PRODUCER, 'repository': 'example/repo', 'workflow': WORKFLOW},
+            refresh=proof(newer, capture='2026-10-02'))
+        prepared = prepare_queued(self.store, ('fr',))
+        self.assertEqual(prepared['generation'], corpus['documents_sha256'])
+        build(corpus, 'fr', self.root/'refreshed', self.root/'refreshed.json', FakeTranslator())
+        refreshed = incremental.remember_candidate(self.store, 'fr', corpus, self.root/'refreshed')
+        refreshed_batch = {'generation': corpus['documents_sha256'],
+                           'candidates': {'fr': refreshed['candidate_id']}}
+        self.assertIsNone(read_origin(self.store, corpus['documents_sha256']))
+        pending_before = handoff.read_publication_batches(self.store)
+        args = ['handoff', '--day', '2026-10-02', '--locales', 'fr', '--enabled-locales', 'fr']
+        response = Mock(content=b'{}')
+        response.json.return_value = {}
+        session = MagicMock()
+        session.__enter__.return_value = session
+        session.get.return_value = response
+        with patch.dict(os.environ, ENV), patch('sys.argv', args), \
+             patch.object(handoff.R2Store, 'from_env', return_value=self.store), \
+             patch.object(handoff.requests, 'Session', return_value=session), \
+             patch.object(handoff, 'read_active_batches', return_value=self.active) as active, \
+             patch.object(handoff.subprocess, 'run') as dispatch, \
+             patch.object(handoff, 'next_ready_refresh', wraps=handoff.next_ready_refresh) as refresh:
+            # Unknown original evidence must block, never select a newer corpus.
+            origin_key = self.store.key('incremental', 'generation-origins', self.gen, 'receipt.json')
+            original_object = copy.deepcopy(self.store.client.objects[origin_key])
+            self.store.client.objects[origin_key]['body'] = b'corrupt'
+            with self.assertRaises((R2IntegrityError, ValueError)):
+                handoff.main()
+            dispatch.assert_not_called(); refresh.assert_not_called()
+            self.store.client.objects[origin_key] = original_object
+            handoff.main()
+            refresh.assert_not_called()
+            command = dispatch.call_args.args[0]
+            receipt = read_handoff(self.store, next(value.split('=', 1)[1] for value in command
+                                                  if value.startswith('extended_handoff=')))
+            self.assertEqual(receipt['batch'], original_batch)
+            self.assertEqual(receipt['source_origin_sha256'], digest(stable_bytes(origin_before)))
+            self.assertEqual(handoff.read_publication_batches(self.store), pending_before)
+            active.return_value = self.active + [original_batch]
+            handoff.main()
+            self.assertEqual((dispatch.call_count, refresh.call_count), (2, 1))
+            command = dispatch.call_args.args[0]
+            receipt = read_handoff(self.store, next(value.split('=', 1)[1] for value in command
+                                                  if value.startswith('extended_handoff=')))
+            self.assertEqual(receipt['batch'], refreshed_batch)
+            self.assertEqual(receipt['source_admission'], admission['admission'])
+            self.assertEqual(receipt['source_day'], newer_day)
+        self.assertEqual(queue(self.store, 'fr'), {})
+        self.assertEqual(read_origin(self.store, self.gen), origin_before)
+        self.assertEqual(handoff.read_publication_batches(self.store), pending_before)
 
     def test_public_inspection_is_read_only_and_summary_excludes_private_units(self):
         proof = self.partial(registered=False)

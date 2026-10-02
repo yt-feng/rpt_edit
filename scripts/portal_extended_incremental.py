@@ -35,10 +35,10 @@ def eligible_url(url: str, lastmod: str, day: str) -> bool:
                 and publication_day(lastmod) == day)
 
 
-def collect_today(session, day: str, *, on_source=None) -> list[dict]:
+def collect_today(session, day: str, *, on_source=None, entries=None) -> list[dict]:
     if publication_day(day) != day or day < INCREMENTAL_START:
         raise ExpansionError('Daily collection date precedes incremental launch or is invalid')
-    entries = inventory_entries(session)
+    entries = inventory_entries(session) if entries is None else entries
     urls = sorted(url for url, modified in entries.items() if eligible_url(url, modified, day))
     if len(urls) > 500: raise ExpansionError('Today inventory exceeds 500 detail pages; explicit partitioning required')
     docs = []

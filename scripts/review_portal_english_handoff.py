@@ -83,7 +83,11 @@ def main():
     handoff_id = os.environ['ENGLISH_HANDOFF']
     with tempfile.TemporaryDirectory(prefix='english-exact-review-') as temporary:
         receipt, admission = verify_handoff(store, original, handoff_id, Path(temporary)/'candidate')
-    for producer, verifier, value in [(admission['producer'], admission_is_valid, admission),
+    from portal_extended_daily_queue import read_admission as read_original_admission
+    capture = read_original_admission(original, admission['source_admission'])
+    require(capture['producer'] == admission['producer'] and capture['day'] == admission['day'],
+            'English capture differs from original source refresh')
+    for producer, verifier, value in [(capture['producer'], admission_is_valid, capture),
                                       (receipt['producer'], producer_is_valid, receipt)]:
         path = f'repos/{repository}/actions/runs/{producer["run_id"]}/attempts/{producer["attempt"]}'
         jobs = api(path+'/jobs?per_page=100'); require(jobs.get('total_count', 101) <= 100, 'English producer jobs exceed bound')
