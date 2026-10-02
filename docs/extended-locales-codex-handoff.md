@@ -1,5 +1,18 @@
 # Additional locales: local Codex handoff
 
+## Source-following correction (2026-10-02)
+
+The operator reaffirmed that the 33 new locales must follow source refreshes
+like ko/ja/ar. For automatic admission, select the **newest published source
+day**, not the date on which a queued runner happens to start. Capture the
+stable active release and source inventory as private, checksum-verified R2
+evidence. Keep each article's own publication date; never rewrite dates or walk
+backward through older days to fill a batch. Previously admitted unfinished
+work and complete-but-unpublished batches remain resumable across midnight.
+The same capture feeds English only its explicit KC secondary-comment sections.
+All original page/quantity/source/approval checks and the two-CPU, 24-page,
+four-hour limits remain. See `extended-locales-source-refresh-20261002.md`.
+
 ## Current operator scope (2026-09-26; supersedes historical batch instructions below)
 
 - Translate only newly published public detail pages on the current Asia/Shanghai
