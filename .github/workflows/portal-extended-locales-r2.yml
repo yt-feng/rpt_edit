@@ -29,6 +29,11 @@ on:
         required: false
         type: string
         default: ""
+      continuation_evidence:
+        description: "Publication-resume only: exact pre-ledger producer and locale checkpoint/candidate JSON; never resets registered work"
+        required: false
+        type: string
+        default: ""
       seconds:
         description: "Per-locale Hy-MT2 CPU budget in seconds (1..14400)"
         required: false
@@ -146,6 +151,9 @@ jobs:
             --prefix "_extended-locales/staging/english-pipeline-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" | tee -a "$GITHUB_STEP_SUMMARY"
 
   source:
+    permissions:
+      contents: read
+      actions: read
     if: >-
       ${{
         inputs.operation == 'candidate' || inputs.operation == 'recovery-test' || inputs.operation == 'publication-resume' ||
@@ -165,6 +173,7 @@ jobs:
       requested_locales: ${{ steps.source.outputs.requested_locales }}
       source_admission: ${{ steps.source.outputs.source_admission }}
       pending_counts_json: ${{ steps.source.outputs.pending_counts_json }}
+      stopped_locales_json: ${{ steps.source.outputs.stopped_locales_json }}
       english_admission: ${{ steps.source.outputs.english_admission }}
       english_pending_count: ${{ steps.source.outputs.english_pending_count }}
     steps:
@@ -176,7 +185,7 @@ jobs:
           python-version: "3.11"
       - name: Install public collector and private R2 client
         run: python3 -m pip install --disable-pip-version-check "boto3>=1.34,<2" "requests>=2.31,<3"
-      - name: Select today new or changed detail pages without historical backfill
+      - name: Continue registered original generations before selecting today new detail pages
         id: source
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
@@ -186,12 +195,17 @@ jobs:
           REQUESTED_SOURCE_GENERATION: ${{ inputs.source_generation }}
           REQUESTED_LOCALES: ${{ inputs.locales || vars.PORTAL_EXTENDED_INCREMENTAL_LOCALES || 'all-supported' }}
           REQUESTED_OPERATION: ${{ inputs.operation }}
+          CONTINUATION_EVIDENCE: ${{ inputs.continuation_evidence }}
+          GH_TOKEN: ${{ github.token }}
           KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
         run: |
           set -euo pipefail
           source_args=()
           if [ -n "$REQUESTED_SOURCE_GENERATION" ]; then
             source_args+=(--generation "$REQUESTED_SOURCE_GENERATION")
+          fi
+          if [ -n "$CONTINUATION_EVIDENCE" ]; then
+            source_args+=(--continuation-evidence "$CONTINUATION_EVIDENCE")
           fi
           prepare_operation=prepare
           if [ "$REQUESTED_OPERATION" = "recovery-test" ]; then
@@ -219,6 +233,26 @@ jobs:
             exit 0
           fi
           echo "source_generation=$SOURCE_GENERATION" >> "$GITHUB_STEP_SUMMARY"
+
+  continuation_diagnostics:
+    needs: source
+    if: >-
+      ${{ needs.source.result == 'success' && needs.source.outputs.stopped_locales_json != '' &&
+          needs.source.outputs.stopped_locales_json != '[]' }}
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+    permissions: {}
+    steps:
+      - name: Report stopped locale cursors without blocking healthy candidate publication
+        env:
+          STOPPED_LOCALES: ${{ needs.source.outputs.stopped_locales_json }}
+        run: |
+          python3 - <<'PYCODE'
+          import json, os
+          for row in json.loads(os.environ['STOPPED_LOCALES']):
+              print(json.dumps(row, sort_keys=True))
+          raise SystemExit('Stopped locale cursors require diagnosis; no model calls were scheduled for them')
+          PYCODE
 
   locale:
     name: locale (${{ matrix.locale }})
@@ -272,11 +306,18 @@ jobs:
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          REQUESTED_OPERATION: ${{ inputs.operation }}
         run: |
           set -euo pipefail
-          result="$(PYTHONPATH=scripts python3 -B scripts/portal_extended_r2.py restore-checkpoint \
-            --prefix "$EXTENDED_R2_PREFIX" --locale "$LOCALE" --generation "$SOURCE_GENERATION" \
-            --output "$RUNNER_TEMP/locale-checkpoint.json")"
+          if [ "$LOCALE" = "en" ] || [ "$REQUESTED_OPERATION" = "recovery-test" ]; then
+            # English keeps its separate checkpoint lifecycle; read-only
+            # diagnostics never claim additional-locale production progress.
+            restore_args=(scripts/portal_extended_r2.py restore-checkpoint --output "$RUNNER_TEMP/locale-checkpoint.json")
+          else
+            restore_args=(scripts/portal_extended_incremental.py restore-checkpoint --checkpoint "$RUNNER_TEMP/locale-checkpoint.json")
+          fi
+          result="$(PYTHONPATH=scripts python3 -B "${restore_args[@]}" \
+            --prefix "$EXTENDED_R2_PREFIX" --locale "$LOCALE" --generation "$SOURCE_GENERATION")"
           printf '%s\n' "$result" | tee -a "$GITHUB_STEP_SUMMARY"
           if [[ "$result" == *'"present": true'* ]]; then
             echo "present=true" >> "$GITHUB_OUTPUT"
@@ -431,7 +472,7 @@ jobs:
     if: >-
       ${{ always() && !cancelled() && github.ref == 'refs/heads/main' &&
           needs.source.result == 'success' &&
-          (github.event_name == 'workflow_run' || inputs.operation == 'candidate') &&
+          (github.event_name == 'workflow_run' || inputs.operation == 'candidate' || inputs.operation == 'publication-resume') &&
           vars.PORTAL_EXTENDED_AUTO_PUBLISH_LOCALES != '' }}
     runs-on: ubuntu-22.04
     timeout-minutes: 20

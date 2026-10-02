@@ -80,8 +80,20 @@ def admission_is_valid(admitted, run, jobs, repository):
     return admitted
 
 
-def producer_is_valid(receipt, run, jobs, repository, admitted=None):
+def producer_is_valid(receipt, run, jobs, repository, admitted=None, *, origin=None, original_run=None, original_jobs=None):
     producer = receipt['producer']
+    if receipt.get('source_origin_sha256'):
+        from portal_extended_continuation import origin_allows_locale, verify_origin_run
+        require(isinstance(origin, dict) and digest(stable_bytes(origin)) == receipt['source_origin_sha256']
+                and origin['generation'] == receipt['batch']['generation']
+                and origin['source_day'] == receipt['source_day']
+                and all(origin_allows_locale(origin, locale) for locale in receipt['batch']['candidates']),
+                'Historical continuation lacks its exact original source receipt')
+        require(isinstance(receipt.get('continuation_checkpoints'), dict)
+                and set(receipt['continuation_checkpoints']) == set(receipt['batch']['candidates'])
+                and all(re.fullmatch(r'[0-9a-f]{64}', str(value)) for value in receipt['continuation_checkpoints'].values()),
+                'Continuation checkpoint inventory is invalid')
+        verify_origin_run(origin, original_run or {}, original_jobs or [], repository, admitted=admitted)
     require(run.get('id') == int(producer['run_id']) and run.get('run_attempt') == int(producer['attempt'])
             and run.get('head_sha') == producer['sha'], 'Producer run identity mismatch')
     require(run.get('status') == 'completed' and run.get('conclusion') in ('success', 'failure')
@@ -95,7 +107,7 @@ def producer_is_valid(receipt, run, jobs, repository, admitted=None):
         selected = [row for row in jobs if row.get('name') == name]
         require(len(selected) == 1 and selected[0].get('conclusion') == 'success'
                 and selected[0].get('status') == 'completed', f'Producer {name} did not complete')
-        if name == 'source':
+        if name == 'source' and not receipt.get('source_origin_sha256'):
             source_days = {publication_day(selected[0].get(key, '')) for key in ('started_at', 'completed_at')}
             frozen = (admitted is not None and admitted['day'] == receipt['source_day']
                       and admitted['admission'] == receipt.get('source_admission'))
@@ -175,7 +187,23 @@ def main():
         capture_jobs = api(capture_path + '/jobs?per_page=100')
         require(capture_jobs.get('total_count', 101) <= 100, 'Source capture jobs exceed verification bound')
         admission_is_valid(admitted, api(capture_path), capture_jobs['jobs'], repository)
-    producer_is_valid(receipt, api(producer_path), jobs['jobs'], repository, admitted)
+    origin = original_run = original_jobs = None
+    if receipt.get('source_origin_sha256'):
+        from portal_extended_continuation import checkpoint_evidence, read_origin
+        origin = read_origin(store, receipt['batch']['generation'])
+        require(origin is not None, 'Continuation source origin is missing')
+        original = origin['producer']
+        original_path = f'repos/{repository}/actions/runs/{original["run_id"]}/attempts/{original["attempt"]}'
+        original_response = api(original_path+'/jobs?per_page=100')
+        require(original_response.get('total_count', 101) <= 100
+                and len(original_response.get('jobs', [])) == original_response['total_count'],
+                'Original producer job inventory is incomplete')
+        original_jobs, original_run = original_response['jobs'], api(original_path)
+    producer_is_valid(receipt, api(producer_path), jobs['jobs'], repository, admitted,
+                      origin=origin, original_run=original_run, original_jobs=original_jobs)
+    for locale, checksum in receipt.get('continuation_checkpoints', {}).items():
+        require(bool(checkpoint_evidence(store, locale, receipt['batch']['generation'], checksum)),
+                'Continuation checkpoint has no resolved units')
     with tempfile.TemporaryDirectory(prefix='daily-review-') as temporary:
         corpus_path = Path(temporary)/'source.json'
         store.restore_source(receipt['batch']['generation'], corpus_path)

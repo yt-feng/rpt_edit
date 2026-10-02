@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Today-only private translation candidates; never activate or backfill history."""
+"""Continue registered daily candidates before selecting today; never discover history."""
 from __future__ import annotations
 import argparse
 import json
@@ -141,6 +141,8 @@ def restore_seed(store: R2Store, locale: str, output: Path) -> dict:
 
 
 def remember_checkpoint(store: R2Store, locale: str, generation: str, checkpoint: Path) -> dict:
+    from portal_extended_continuation import require_active_owner
+    require_active_owner(store, locale, generation)
     result = store.put_checkpoint(locale, generation, checkpoint)
     write_state(store, 'memo', locale, {'generation': generation, 'sha256': result['sha256']})
     return result
@@ -151,9 +153,13 @@ def remember_candidate(store: R2Store, locale: str, corpus: dict, directory: Pat
     day = daily_corpus_day(corpus)
     if not day: raise ExpansionError('Only new daily content may update incremental receipts')
     generation = corpus['documents_sha256']
+    from portal_extended_continuation import require_active_owner
+    require_active_owner(store, locale, generation)
     manifest = json.loads((directory/'candidate-manifest.json').read_text())
     if manifest.get('status') == 'complete-candidate': verified_candidate(directory, corpus)
     result = store.upload_candidate(directory, locale, generation)
+    from portal_extended_continuation import record_result
+    record_result(store, locale, corpus, result)
     if not result['ready']: return result
     pages = read_state(store, 'completed', locale, day).get('pages', {})
     if not isinstance(pages, dict): raise R2IntegrityError('Invalid page receipts')
@@ -190,7 +196,7 @@ def include_english_matrix(store, result):
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('operation', choices=['prepare', 'prepare-recovery', 'prepare-publication', 'restore-seed', 'checkpoint', 'candidate'])
+    parser.add_argument('operation', choices=['prepare', 'prepare-recovery', 'prepare-publication', 'restore-seed', 'restore-checkpoint', 'checkpoint', 'candidate'])
     parser.add_argument('--prefix', default=DEFAULT_PREFIX)
     parser.add_argument('--locale', default='fr')
     parser.add_argument('--locales', default='all-supported')
@@ -199,6 +205,7 @@ def main() -> int:
     parser.add_argument('--directory', type=Path)
     parser.add_argument('--generation')
     parser.add_argument('--github-output', type=Path)
+    parser.add_argument('--continuation-evidence', default='')
     parser.add_argument('--include-english', action='store_true', help='Add separately admitted KC comments to the existing CPU matrix')
     args = parser.parse_args()
     if args.include_english and (args.operation != 'prepare' or args.generation):
@@ -208,56 +215,139 @@ def main() -> int:
         raise ExpansionError('English daily inclusion requires reviewed main public Actions')
     store = R2Store.from_env(args.prefix)
     if args.operation in {'prepare', 'prepare-recovery', 'prepare-publication'}:
-        locales = select_locales(args.locales)
+        requested_locales = locales = select_locales(args.locales)
         day = today()
         recovery = args.operation == 'prepare-recovery'
         publication = args.operation == 'prepare-publication'
         if (recovery or publication) and not args.generation:
             raise ExpansionError('Recovery/publication requires an exact stored source generation')
-        if args.generation:
+        from portal_extended_continuation import (adopt_existing, pending, queue, read_origin, register)
+        producer = None
+        if os.environ.get('GITHUB_ACTIONS') == 'true' and os.environ.get('GITHUB_REF') == 'refs/heads/main':
+            producer = {'run_id': os.environ['GITHUB_RUN_ID'], 'attempt': os.environ['GITHUB_RUN_ATTEMPT'],
+                        'sha': os.environ['GITHUB_SHA']}
+        if args.continuation_evidence and not publication:
+            raise ExpansionError('Existing-generation adoption is only allowed by explicit publication-resume')
+        stopped = []
+        if producer and not recovery:
+            from portal_extended_continuation import partition_stopped_locales
+            locales, stopped = partition_stopped_locales(store, locales)
+        if not locales:
+            result = {'has_work': False, 'generation': '', 'locales_json': '[]', 'day': day}
+        elif args.generation:
             store.restore_source(args.generation, args.corpus)
             corpus = json.loads(args.corpus.read_text())
             validate_corpus(corpus)
             corpus_day = daily_corpus_day(corpus)
             if not corpus_day or (corpus_day != day and not (recovery or publication)):
                 raise ExpansionError('Refusing to resume a historical or mixed-directory batch')
-            if publication:
-                # Explicitly finish an already-started reviewed batch; never
-                # discover/backfill old URLs or fabricate an empty checkpoint.
-                for locale in locales:
-                    restored = store.restore_checkpoint(locale, args.generation,
-                                                        args.corpus.parent / f'publication-{locale}.json')
-                    if not restored.get('present'):
-                        raise ExpansionError('Publication resume requires an existing locale checkpoint')
+            if len(corpus['documents']) > 24: raise ExpansionError('Daily batch exceeds 24 pages')
             result = {'has_work': True, 'generation': args.generation, 'locales_json': json.dumps(list(locales)),
                       'day': corpus_day, 'selected_page_count': len(corpus['documents']),
                       'recovery_test_only': recovery}
-            if len(corpus['documents']) > 24: raise ExpansionError('Daily batch exceeds 24 pages')
+            if publication:
+                if not producer:
+                    raise ExpansionError('Publication continuation runs only on reviewed main Actions')
+                if args.continuation_evidence:
+                    from review_portal_extended_handoff import api
+                    adopt_existing(store, corpus, locales, json.loads(args.continuation_evidence),
+                                   os.environ['GITHUB_REPOSITORY'], api)
+                origin = read_origin(store, args.generation)
+                if not origin or any(args.generation not in queue(store, locale) for locale in locales):
+                    raise ExpansionError('Publication resume requires a registered original generation and existing checkpoint outcome')
+                result = pending(store, locales, args.corpus, generation=args.generation)
+                if result is None:
+                    result = {'has_work': False, 'generation': args.generation, 'locales_json': '[]',
+                              'day': corpus_day, 'continuation': True}
+            elif not recovery and producer:
+                # Manual same-day candidates must obey the same existing queue.
+                existing = pending(store, locales, args.corpus, generation=args.generation)
+                if existing:
+                    result = existing
+                else:
+                    # An explicit generation is immutable: never let per-page
+                    # receipts silently select a different sub-corpus here.
+                    active = []
+                    for locale in locales:
+                        row = queue(store, locale).get(args.generation, {})
+                        if row.get('status') == 'complete':
+                            continue
+                        pages = read_state(store, 'completed', locale, corpus_day).get('pages', {})
+                        if not isinstance(pages, dict):
+                            raise R2IntegrityError('Invalid page receipts')
+                        if any(not isinstance(pages.get(doc['url']), dict)
+                               or pages[doc['url']].get('content_key') != content_key(doc) for doc in corpus['documents']):
+                            active.append(locale)
+                    result.update(has_work=bool(active), locales_json=json.dumps(active))
+                    if active:
+                        register(store, corpus, tuple(active), producer)
         else:
-            from portal_extended_daily_queue import read_queue, prepare_queued
-            if read_queue(store):
-                result = prepare_queued(store, locales)
-            else:
-                with requests.Session() as session:
-                    # Transitional/manual runs retain today-only collection.
-                    docs = collect_today(session, day)
-                result = prepare(store, docs, locales, day, args.corpus)
+            result = pending(store, locales, args.corpus) if producer else None
+            if result is None:
+                from portal_extended_daily_queue import read_queue, prepare_queued, read_corpus
+                if read_queue(store):
+                    result = prepare_queued(store, locales)
+                    if result['has_work'] and producer:
+                        # Independent admitted locale cursors may use different
+                        # immutable corpora. Register each exact group separately.
+                        groups = {}
+                        for job in json.loads(result['locale_jobs_json']):
+                            groups.setdefault(job['generation'], []).append(job['locale'])
+                        from portal_extended_continuation import MAX_PENDING_GENERATIONS
+                        for generation, selected in groups.items():
+                            if any(generation not in queue(store, locale) and len(queue(store, locale)) >= MAX_PENDING_GENERATIONS
+                                   for locale in selected):
+                                raise ExpansionError('Continuation queue is full; no independent locale was registered')
+                        for generation, selected in groups.items():
+                            register(store, read_corpus(store, generation), tuple(selected), producer)
+                else:
+                    with requests.Session() as session:
+                        # Transitional/manual runs retain today-only collection.
+                        docs = collect_today(session, day)
+                    result = prepare(store, docs, locales, day, args.corpus)
+                    if result['has_work'] and producer:
+                        register(store, json.loads(args.corpus.read_text()),
+                                 tuple(json.loads(result['locales_json'])), producer)
         if 'locale_jobs_json' not in result:
             result['locale_jobs_json'] = json.dumps([{'locale': locale, 'generation': result['generation'], 'day': result['day']}
                 for locale in json.loads(result['locales_json'])])
+
+        # Retain the admitted source's complete per-locale frontier for upstream
+        # progress-driven followup, including diagnosed (never inferred) cursors.
+        if not result.get('source_admission') and result.get('generation'):
+            origin = read_origin(store, result['generation'])
+            if origin and origin.get('source_admission'):
+                result['source_admission'] = origin['source_admission']
+        if result.get('source_admission'):
+            from portal_extended_daily_queue import read_admission, read_corpus, pending_docs
+            admitted = read_admission(store, result['source_admission'])
+            full = read_corpus(store, admitted['generation'])
+            result['pending_counts_json'] = json.dumps({locale: len(pending_docs(store, full['documents'], locale, admitted['day']))
+                                                       for locale in requested_locales})
+        result['stopped_locales_json'] = json.dumps(stopped)
         if args.include_english:
             result = include_english_matrix(store, result)
         if args.github_output:
             with args.github_output.open('a') as stream:
-                for key in ('has_work', 'generation', 'locales_json', 'locale_jobs_json', 'day'):
+                for key in ('has_work', 'generation', 'locales_json', 'locale_jobs_json', 'day', 'stopped_locales_json'):
                     value = str(result[key]).lower() if isinstance(result[key], bool) else result[key]
                     stream.write(f'{key}={value}\n')
-                stream.write('requested_locales='+','.join(locales)+'\n')
+                stream.write('requested_locales='+','.join(requested_locales)+'\n')
                 for key in ('source_admission', 'pending_counts_json', 'english_admission', 'english_pending_count'):
                     stream.write(key + '=' + result.get(key, '') + '\n')
+
     else:
         if select_locales(args.locale) != (args.locale,): raise ExpansionError('Expected one locale')
+        if args.operation != 'restore-seed':
+            from portal_extended_continuation import read_origin
+            if read_origin(store, args.generation) and not (
+                os.environ.get('GITHUB_ACTIONS') == 'true' and os.environ.get('GITHUB_REF') == 'refs/heads/main'
+            ):
+                raise ExpansionError('Registered generation continuation requires reviewed main Actions')
         if args.operation == 'restore-seed': result = restore_seed(store, args.locale, args.checkpoint)
+        elif args.operation == 'restore-checkpoint':
+            from portal_extended_continuation import restore_claimed_checkpoint
+            result = restore_claimed_checkpoint(store, args.locale, args.generation, args.checkpoint)
         elif args.operation == 'checkpoint': result = remember_checkpoint(store, args.locale, args.generation, args.checkpoint)
         else:
             corpus = json.loads(args.corpus.read_text())

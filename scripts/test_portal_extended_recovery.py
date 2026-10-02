@@ -214,15 +214,18 @@ class TransportRecoveryTests(unittest.TestCase):
         store.put_source(corpus)
         args = ['test', 'prepare-publication', '--generation', corpus['documents_sha256'],
                 '--corpus', str(self.root/'source.json'), '--locales', 'fr']
-        with mock.patch('sys.argv', args), mock.patch.object(incremental, 'today', return_value='2026-09-29'), \
+        with mock.patch.dict(incremental.os.environ, {'GITHUB_ACTIONS':'true', 'GITHUB_REF':'refs/heads/main',
+                'GITHUB_RUN_ID':'123', 'GITHUB_RUN_ATTEMPT':'1', 'GITHUB_SHA':'a'*40}), \
+             mock.patch('sys.argv', args), mock.patch.object(incremental, 'today', return_value='2026-09-29'), \
              mock.patch.object(incremental.R2Store, 'from_env', return_value=store), \
              mock.patch.object(incremental, 'collect_today', side_effect=AssertionError('No backfill')):
-            with self.assertRaisesRegex(incremental.ExpansionError, 'existing locale checkpoint'):
+            with self.assertRaisesRegex(incremental.ExpansionError, 'registered original generation'):
                 incremental.main()
             build(corpus, 'fr', self.root/'started', self.root/'started.json', FakeTranslator())
             store.put_checkpoint('fr', corpus['documents_sha256'], self.root/'started.json')
             stored = dict(client.objects)
-            self.assertEqual(incremental.main(), 0)
+            with self.assertRaisesRegex(incremental.ExpansionError, 'registered original generation'):
+                incremental.main()
             self.assertEqual(client.objects, stored)
 
     def test_full_locale_matrix_keeps_operator_two_worker_budget(self):
