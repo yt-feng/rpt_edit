@@ -349,7 +349,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn("  multilingual_approval:\n", self.workflow)
         self.assertIn("  cutover:\n", self.workflow)
         self.assertIn(
-            "needs: [prepare_release, multilingual_approval, extended_locales_approval]",
+            "needs: [prepare_release, multilingual_approval, extended_locales_approval, english_approval]",
             self.workflow,
         )
         prepare = self.workflow.index("  prepare_release:\n")
@@ -371,9 +371,9 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         extended = transaction.split("Audit extended locale pages after live cutover", 1)[1].split(
             "Roll back failed release or completed rehearsal", 1)[0]
         self.assertIn("timeout-minutes: 15", extended)
-        self.assertIn("timeout-minutes: 135", transaction)
-        self.assertEqual(self.workflow.count("ref: ${{ github.sha }}"), 3)
-        for job in ('prepare_release', 'extended_daily_review', 'cutover'):
+        self.assertIn("timeout-minutes: 165", transaction)
+        self.assertEqual(self.workflow.count("ref: ${{ github.sha }}"), 5)
+        for job in ('prepare_release', 'extended_daily_review', 'english_daily_review', 'english_approval', 'cutover'):
             block = re.search(r'^  '+job+r':\n(.*?)(?=^  [a-z_]+:\n|\Z)', self.workflow, re.M | re.S)[1]
             self.assertEqual(block.count("ref: ${{ github.sha }}"), 1, job)
         self.assertNotIn("ref: main", self.workflow)
@@ -993,7 +993,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
             self.workflow.index("    steps:\n", cutover_job)
         ]
         self.assertIn(
-            "needs: [prepare_release, multilingual_approval, extended_locales_approval]",
+            "needs: [prepare_release, multilingual_approval, extended_locales_approval, english_approval]",
             cutover_header,
         )
         self.assertIn("always()", cutover_header)

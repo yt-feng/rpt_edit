@@ -1,6 +1,79 @@
 # Daily reading locales and English editorial access
 
-## Current checkpoint: reviewed foundation merged; English CPU stage submitted
+## Current checkpoint: English CPU merged; publication and recovery ready for review
+
+PR #198 passed regression, API cost controls and public identity and was merged
+normally at `2026-10-01T21:51:52Z`. Main merge commit:
+`8f0591de260c17b2c51b5e15909a6fe9e9ab9d5e`; reviewed CPU head:
+`cc4d0e0e81e989d531ede7d582a5f7c0d0314428`.
+The isolated publication branch has implementation commit
+`c0d76c42b111d475fa2040593f4c0f1c2aa553d9` and a normal merge of this main
+baseline, `a93ecd53bf84fe92b9ae0c7dfe7197d04c7d96f3`.
+
+One bounded merge-gate check confirmed R2 staging run `36929230502` succeeded
+on the reviewed CPU head. Its new English same-capture/incomplete-candidate
+probe at `2026-10-01T21:32:34.0346865Z` recovered source generation
+`21ed924ede84a9305da72831c7c2d9262aec4e6987cfc75f3d8ed25d99b93fc7`
+and immutable checkpoint
+`0d7eba10d545e3f8d7a2ba6187a1ac22cbda069429013128c77dc797aefd9974`.
+Same-capture restoration, immutable checkpoint restoration, timeout cursor
+restoration and incomplete-candidate refusal all passed. Ready candidates 0,
+translation calls 0, paid-provider requests 0 and deployed false. This is
+isolated synthetic storage evidence, NOT an English production translation.
+The earlier source/checkpoint and 33-locale cursor probes also passed.
+API Worker deployment `36929237340` succeeded on foundation main
+`a5c851494cf6100b1792806bae29df1092d3e185`. This is an API deployment result,
+not English-page publication or live authenticated reading acceptance.
+Source-admission run `36929217861` succeeded on that same foundation; its
+success alone does not establish a newly translated or published page count.
+
+Publication is now implemented in `portal_english_publication.py`, with a
+separate complete-candidate handoff and exact required-reviewer integration:
+
+- Reconstruct every body from the immutable admitted KC editorial source and
+  verified Hy-MT2 candidate. The full body stays in private R2; only title,
+  preview and date reach public HTML/JSON-LD. No report originals, charts,
+  documents, source digest or full-body JS state is copied to English pages.
+- Retain ALL previously approved English batches and rerender safe previews
+  without inference. New KC commentary must still match the current inactive
+  Chinese source section. Empty days create neither fictitious pages nor a
+  navigation link. Non-English sitemap/hreflang and training policy stay intact.
+- Bind the exact private ledger to the 32-hex active site release only AFTER
+  the existing required environment approval, exact SHA/tree/handoff checks
+  and committed-slot verification. Carry-forward may reuse an unchanged
+  approved ledger, but cannot admit new unapproved content.
+- Verify public English bytes, language headers, API/static ledger identity and
+  anonymous full-read denial after cutover. Rollback restores the corresponding
+  previous site-selected ledger, including the pre-English 404 state.
+- Regenerate the original recovery workflow through its generator. Recovery
+  keeps the uploaded static bytes and original candidate commit, restores the
+  complete R2 evidence and requires fresh protected approval; no models or
+  public uploads. English pre-deployment failures and verified English rollback
+  now have bounded recovery classifications; missing/order-invalid proof fails.
+- English joins the SAME two-worker CPU queue. New publication opt-ins
+  `PORTAL_ENGLISH_AUTO_PUBLISH` and `PORTAL_ENGLISH_AUTO_REVIEW` remain disabled
+  until the publication code itself passes normal review/merge. Existing
+  required reviewers are never removed or bypassed.
+
+Local validation: 663 Portal tests (662 passed, one optional PyYAML-dependent
+test skipped locally; Linux CI installs PyYAML), 52 exact candidate-restoration
+tests, 39 cutover-workflow tests, 24 committed-slot tests, 13 quantity-integrity
+tests, 39 offline model/runtime tests, 7 translation-comparison tests, 16 offline
+caller tests and 92 JavaScript gateway/UI/edge tests passed. English publication
+23 and generated recovery-workflow 9 are included in the Portal suite. All four
+changed workflows parse with Ruby YAML; generated recovery matches its current
+production gates. Public identity passed on 6230 files. Legacy translation
+tests use mocks/synthetic fixtures, not real paid or production model calls.
+
+English is still NOT online. Real complete CPU commentary, protected publication
+on reviewed main and live signed-in allowance/member acceptance remain required.
+The last accepted 33-language baseline has 24 approved details each (792 total);
+that historical baseline is not proof of today's coverage. This checkpoint has
+not inspected or claimed new completed-page counts. The dirty primary checkout
+is untouched. Dispatch receipts are reported separately; no Actions monitoring
+or workflow cancellation is part of this stage.
+
+## Earlier checkpoint: reviewed foundation merged; English CPU stage submitted
 
 PR #196 was merged through the normal passing-check flow at
 `2026-10-01T21:22:05Z`; main merge commit is

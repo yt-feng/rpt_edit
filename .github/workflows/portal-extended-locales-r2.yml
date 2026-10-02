@@ -464,6 +464,37 @@ jobs:
             --generation "$SOURCE_GENERATION" --day "$SOURCE_DAY" \
             --locales "$SOURCE_LOCALES" --enabled-locales "$ENABLED_LOCALES"
 
+  english_publication_handoff:
+    needs: [source, locale]
+    if: >-
+      ${{ always() && !cancelled() && github.ref == 'refs/heads/main' &&
+          needs.source.result == 'success' && vars.PORTAL_ENGLISH_AUTO_PUBLISH == 'true' &&
+          (github.event_name == 'workflow_run' || inputs.operation == 'candidate') }}
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install private English candidate readers
+        run: python3 -m pip install --disable-pip-version-check 'boto3>=1.34,<2' 'requests>=2.31,<3'
+      - name: Hand off only complete KC commentary candidates without approving or activating
+        env:
+          GH_TOKEN: ${{ github.token }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
+          KC_ENGLISH_AUTO_PUBLISH: ${{ vars.PORTAL_ENGLISH_AUTO_PUBLISH }}
+        run: python3 -B scripts/portal_english_handoff.py
+
   continue_admitted_batches:
     needs: [source, locale, publication_handoff]
     if: >-
