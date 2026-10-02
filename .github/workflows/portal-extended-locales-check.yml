@@ -91,6 +91,7 @@ jobs:
           python -B scripts/test_portal_extended_r2.py
           python -B scripts/test_portal_extended_incremental.py
           python -B scripts/test_portal_extended_daily_queue.py
+          python -B scripts/test_portal_extended_source_refresh.py
           python -B scripts/test_portal_english_commentary.py
           python -B scripts/test_portal_english_pipeline.py
           python -B scripts/test_portal_english_publication.py

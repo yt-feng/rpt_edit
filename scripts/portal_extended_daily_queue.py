@@ -92,12 +92,20 @@ def read_admission(store, identity):
     if digest(raw) != identity:
         raise R2IntegrityError('Source-admission checksum differs')
     value = json.loads(raw)
-    if (not isinstance(value, dict) or set(value) != {'schema_version', 'policy', 'scope', 'day', 'generation', 'pages', 'producer'}
-        or value['schema_version'] != 1 or value['policy'] != POLICY or value['scope'] != DAILY_SCOPE
+    from portal_extended_source_refresh import POLICY as REFRESH_POLICY, read_proof
+    base = {'schema_version', 'policy', 'scope', 'day', 'generation', 'pages', 'producer'}
+    modern = isinstance(value, dict) and value.get('schema_version') == 2
+    if (not isinstance(value, dict) or set(value) != (base | {'capture_day', 'refresh'} if modern else base)
+        or value['schema_version'] != (2 if modern else 1)
+        or value['policy'] != (REFRESH_POLICY if modern else POLICY) or value['scope'] != DAILY_SCOPE
         or publication_day(value['day']) != value['day'] or type(value['pages']) is not int or not 1 <= value['pages'] <= 500):
         raise R2IntegrityError('Invalid source-admission scope')
     safe_part(value['generation'], label='inventory generation', pattern=HEX64)
     checked_producer(value['producer'])
+    if modern:
+        proof = read_proof(store, value['refresh'], read_corpus(store, value['generation']))
+        if proof['day'] != value['day'] or proof['capture_day'] != value['capture_day']:
+            raise R2IntegrityError('Source refresh capture date differs from admission')
     return value
 
 
@@ -132,7 +140,7 @@ def pending_docs(store, docs, locale, day):
             or rows[doc['url']].get('content_key') != content_key(doc)]
 
 
-def admit(store, docs, day, producer):
+def admit(store, docs, day, producer, *, refresh=None):
     checked_producer(producer)
     if publication_day(day) != day or day < INCREMENTAL_START:
         raise ExpansionError('Invalid admission day')
@@ -142,6 +150,8 @@ def admit(store, docs, day, producer):
     if daily_corpus_day(corpus) != day:
         raise ExpansionError('Admission accepts only new pages from its own source day')
     entries = read_queue(store)
+    if refresh is not None and entries and day < max(entry['day'] for entry in entries):
+        raise ExpansionError('Newest source day moved backwards; no historical batch was admitted')
     retained = []
     for entry in entries:
         if entry['day'] == day:
@@ -154,6 +164,10 @@ def admit(store, docs, day, producer):
     store.put_source(corpus)
     receipt = {'schema_version': 1, 'policy': POLICY, 'scope': DAILY_SCOPE, 'day': day,
                'generation': corpus['documents_sha256'], 'pages': len(docs), 'producer': producer}
+    if refresh is not None:
+        from portal_extended_source_refresh import POLICY as REFRESH_POLICY, save_proof
+        receipt.update(schema_version=2, policy=REFRESH_POLICY, capture_day=refresh['capture_day'],
+                       refresh=save_proof(store, refresh, corpus))
     identity = digest(stable_bytes(receipt))
     immutable_record(store, store.key('source-admissions', identity, 'receipt.json'), receipt, kind='source-admission')
     # Last pointer only after the complete immutable corpus and admission verify.
@@ -210,6 +224,10 @@ def prepare_queued(store, locales, *, limit=24):
                 immutable_record(store, store.key('batch-admissions', generation, 'receipt.json'),
                     {'schema_version': 1, 'policy': POLICY, 'generation': generation, 'admission': entry['admission']},
                     kind='batch-admission')
+            # The serialized source job is the only queue writer. Concurrent
+            # locale workers only persist their own ready/completion receipts.
+            from portal_extended_handoff import queue_publication_batch
+            queue_publication_batch(store, generation, entry['day'])
             jobs.append({'locale': locale, 'generation': generation, 'day': entry['day']})
             counts[locale] = {'selected': min(limit, len(docs)), 'remaining': max(0, len(docs)-limit)}
         generations = {job['generation'] for job in jobs}
@@ -244,9 +262,12 @@ def followup_needed(store, identity, locales, before):
 def staging_probe(store):
     """Real private storage I/O with synthetic data and zero model calls."""
     from build_portal_extended_locales import Memo
+    from datetime import date, timedelta
     from portal_extended_locales import ORIGIN, document_from_html
+    from portal_extended_source_refresh import POLICY as REFRESH_POLICY
     require_staging_prefix(store.prefix)
-    day = today()
+    capture_day = today()
+    day = max(INCREMENTAL_START, (date.fromisoformat(capture_day) - timedelta(days=1)).isoformat())
     url = ORIGIN + '/blog/' + day.replace('-', '') + '-0000000000000001.html'
     schema = json.dumps({'@type': 'BlogPosting', 'url': url, 'datePublished': day, 'dateModified': day})
     body = ('<html lang="zh-Hans"><head><link rel="canonical" href="' + url
@@ -255,8 +276,13 @@ def staging_probe(store):
     doc = document_from_html(url, body)
     doc.update(selection_scope=DAILY_SCOPE, selection_day=day)
     doc['content_sha256'] = digest(stable_bytes({key: value for key, value in doc.items() if key != 'content_sha256'}))
+    refresh = {'schema_version': 1, 'policy': REFRESH_POLICY, 'capture_day': capture_day, 'day': day,
+               'release': {'slot': 'a', 'release_id': '0'*32, 'tree_sha256': '0'*64},
+               'inventory': {url: day}}
     admitted = admit(store, [doc], day, {'run_id':'1','attempt':'1','sha':'0'*40,
-                                     'repository':'synthetic/staging','workflow':WORKFLOW})
+                                     'repository':'synthetic/staging','workflow':WORKFLOW}, refresh=refresh)
+    if read_admission(store, admitted['admission'])['capture_day'] != capture_day:
+        raise R2IntegrityError('Staging source-refresh capture proof differs')
     prepared = prepare_queued(store, ('fr', 'pt'))
     generation = prepared['generation']
     if batch_admission(store, generation)['admission'] != admitted['admission']:
@@ -283,6 +309,7 @@ def staging_probe(store):
     if json.loads(resumed['locales_json']) != ['pt']:
         raise R2IntegrityError('Staging independent cursor restore differs')
     return {'staging_only': True, 'source_restore': 'passed', 'checkpoint_restore': 'passed',
+            'source_refresh_proof_restore': 'passed', 'capture_day': capture_day, 'source_day': day,
             'batch_admission': 'passed', 'independent_cursor_simulation': 'passed',
             'source_generation': generation, 'checkpoint_sha256': written['sha256'],
             'ready_candidates': 0, 'translation_calls': 0, 'deployed': False}
@@ -316,7 +343,7 @@ def main():
         return
     producer = {'run_id': os.environ['GITHUB_RUN_ID'], 'attempt': os.environ['GITHUB_RUN_ATTEMPT'],
                 'sha': os.environ['GITHUB_SHA'], 'repository': os.environ['GITHUB_REPOSITORY'], 'workflow': WORKFLOW}
-    day = today()
+    capture_day = today()
     # Read each current public page only once. English gets an explicit editorial
     # projection of those SAME bytes, never the generic translated report body.
     from portal_english_commentary import PREFIX as ENGLISH_PREFIX, extract_editorial, freeze_editorial
@@ -325,7 +352,7 @@ def main():
         if not re.fullmatch(r'/blog/\d{8}-[a-f0-9]{16}\.html', urlsplit(doc['url']).path):
             return
         try:
-            editorial = extract_editorial(doc['url'], raw, day)
+            editorial = extract_editorial(doc['url'], raw, publication_day(doc['datePublished']))
         except (ExpansionError, UnicodeError, ValueError, TypeError):
             english_skipped.append('unsafe-editorial-source')
             return
@@ -334,8 +361,11 @@ def main():
         else:
             english_skipped.append('no-explicit-kc-comment')
     with requests.Session() as session:
-        docs = collect_today(session, day, on_source=editorial_sink)
-    result = admit(store, docs, day, producer)
+        from portal_extended_source_refresh import collect_refresh
+        day, docs, refresh = collect_refresh(session, capture_day, on_source=editorial_sink)
+    result = admit(store, docs, day or capture_day, producer, refresh=refresh if docs else None)
+    result.update(capture_day=capture_day, source_day=day,
+                  selection_policy=refresh['policy'], source_release=refresh['release']['release_id'])
     if result['admitted']:
         # A custom staging namespace never causes writes to production English.
         prefix = ENGLISH_PREFIX if args.prefix == DEFAULT_PREFIX else store.prefix + '/english-commentary'

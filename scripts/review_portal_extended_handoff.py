@@ -64,7 +64,18 @@ def admission_is_valid(admitted, run, jobs, repository):
     selected = [job for job in jobs if job.get('name') == 'source_snapshot']
     require(len(selected) == 1 and selected[0].get('status') == 'completed' and selected[0].get('conclusion') == 'success',
             'Source-day capture did not complete')
-    require(admitted['day'] in {publication_day(selected[0].get(key, '')) for key in ('started_at', 'completed_at')},
+    capture_day = admitted['day']
+    if admitted.get('schema_version') == 2:
+        from portal_extended_source_refresh import POLICY as REFRESH_POLICY
+        require(admitted.get('policy') == REFRESH_POLICY
+                and re.fullmatch(r'[a-f0-9]{64}', admitted.get('refresh', '')) is not None
+                and publication_day(admitted.get('capture_day', '')) == admitted.get('capture_day')
+                and admitted['day'] <= admitted['capture_day'], 'Source refresh proof identity differs')
+        # read_admission already verifies the private immutable live inventory,
+        # latest source day, captured release and exact corpus; the GitHub job
+        # must still match its real capture day, repository, attempt and SHA.
+        capture_day = admitted['capture_day']
+    require(capture_day in {publication_day(selected[0].get(key, '')) for key in ('started_at', 'completed_at')},
             'Admission cannot discover historical source pages')
     return admitted
 

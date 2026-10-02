@@ -209,7 +209,9 @@ class EnglishEditorialTests(unittest.TestCase):
              mock.patch('sys.argv', ['queue', '--prefix', self.store.prefix]), \
              mock.patch('portal_extended_daily_queue.today', return_value=DAY), \
              mock.patch('portal_extended_daily_queue.R2Store.from_env', return_value=self.store), \
-             mock.patch('portal_extended_incremental.inventory_entries', return_value={URL: DAY}), \
+             mock.patch('portal_extended_source_refresh.read_release', return_value={
+                 'slot':'a', 'release_id':'a'*32, 'tree_sha256':'b'*64}), \
+             mock.patch('portal_extended_source_refresh.inventory_entries', return_value={URL: DAY}), \
              mock.patch('portal_extended_incremental.read_public', return_value=page()) as fetch, \
              mock.patch('builtins.print') as printed:
             admit_main()
@@ -227,7 +229,9 @@ class EnglishEditorialTests(unittest.TestCase):
              mock.patch('sys.argv', ['queue', '--prefix', self.store.prefix]), \
              mock.patch('portal_extended_daily_queue.today', return_value=DAY), \
              mock.patch('portal_extended_daily_queue.R2Store.from_env', return_value=self.store), \
-             mock.patch('portal_extended_incremental.inventory_entries', return_value={URL: DAY}), \
+             mock.patch('portal_extended_source_refresh.read_release', return_value={
+                 'slot':'a', 'release_id':'a'*32, 'tree_sha256':'b'*64}), \
+             mock.patch('portal_extended_source_refresh.inventory_entries', return_value={URL: DAY}), \
              mock.patch('portal_extended_incremental.read_public', return_value=page()), \
              mock.patch('portal_english_commentary.freeze_editorial', side_effect=R2PermissionError('denied')), \
              mock.patch('builtins.print') as printed:
