@@ -13,7 +13,7 @@ from portal_extended_locales import ExpansionError, digest, make_corpus, stable_
 from portal_extended_r2 import R2Store, R2IntegrityError
 import portal_extended_incremental as incremental
 from portal_extended_continuation import (MAX_CONTINUATIONS, MAX_PENDING_GENERATIONS, adopt_existing,
-    acknowledge_published, pending, queue, read_origin, register, restore_claimed_checkpoint,
+    acknowledge_published, action_owner, pending, queue, read_origin, register, restore_claimed_checkpoint,
     save_queue, verify_origin_run)
 from portal_extended_handoff import next_registered_batch, read_handoff, save_handoff
 from review_portal_extended_handoff import producer_is_valid
@@ -36,6 +36,13 @@ class StopAtLastUnit(FakeTranslator):
 
 class ContinuationTests(unittest.TestCase):
     def setUp(self):
+        # Model the original producer explicitly. A real CI runner's identity
+        # must not leak into these synthetic checkpoints, and ownership checks
+        # must stay enabled in both local and Actions test executions.
+        environment = patch.dict(os.environ, {**ENV,
+            'GITHUB_RUN_ID': PRODUCER['run_id'],
+            'GITHUB_RUN_ATTEMPT': PRODUCER['attempt'], 'GITHUB_SHA': PRODUCER['sha']})
+        environment.start(); self.addCleanup(environment.stop)
         tmp = tempfile.TemporaryDirectory(); self.addCleanup(tmp.cleanup)
         self.root = Path(tmp.name)
         self.store = R2Store(FakeR2(), 'private', '_extended-locales/staging/continuation')
@@ -52,6 +59,10 @@ class ContinuationTests(unittest.TestCase):
         self.jobs = [{'name': 'source', 'status': 'completed', 'conclusion': 'success',
             'started_at': DAY+'T01:00:00Z', 'completed_at': DAY+'T01:10:00Z'},
             {'name': 'locale (fr)', 'status': 'completed', 'conclusion': 'failure'}]
+
+    def test_fixture_keeps_original_actions_ownership_checks_enabled(self):
+        self.assertEqual(os.environ['GITHUB_ACTIONS'], 'true')
+        self.assertEqual(action_owner(), PRODUCER)
 
     def partial(self, *, registered=True, locale='fr'):
         if registered:
