@@ -24,6 +24,7 @@ on:
       - '.github/workflows/portal-extended-locales-check.yml'
       - '.github/workflows/portal-extended-locales-r2.yml'
       - '.github/workflows/portal-extended-continuation-inspect.yml'
+      - '.github/workflows/portal-extended-recovery-intent.yml'
       - '.github/workflows/portal-extended-locales-source.yml'
       - '.github/workflows/neutral-edge-cutover.yml'
       - '.github/workflows/neutral-locale-resume.yml'
@@ -51,6 +52,7 @@ on:
       - '.github/workflows/portal-extended-locales-check.yml'
       - '.github/workflows/portal-extended-locales-r2.yml'
       - '.github/workflows/portal-extended-continuation-inspect.yml'
+      - '.github/workflows/portal-extended-recovery-intent.yml'
       - '.github/workflows/portal-extended-locales-source.yml'
       - '.github/workflows/neutral-edge-cutover.yml'
       - '.github/workflows/neutral-locale-resume.yml'
@@ -93,6 +95,7 @@ jobs:
           python -B scripts/test_portal_extended_r2.py
           python -B scripts/test_portal_extended_incremental.py
           python -B scripts/test_portal_extended_continuation.py
+          python -B scripts/test_portal_extended_recovery_intent.py
           python -B scripts/test_portal_extended_daily_queue.py
           python -B scripts/test_portal_extended_source_refresh.py
           python -B scripts/test_portal_english_commentary.py

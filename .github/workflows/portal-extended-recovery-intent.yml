@@ -1,0 +1,53 @@
+name: Register explicit legacy locale recovery intent
+on:
+  workflow_dispatch:
+    inputs:
+      generation:
+        description: Exact original frozen source generation
+        type: string
+        required: true
+      evidence:
+        description: Exact original producer and locale checkpoint/candidate/manifest hashes as JSON
+        type: string
+        required: true
+permissions:
+  contents: read
+  actions: read
+# Sole index writer; independent of the CPU pipeline, with no continuation writes.
+concurrency:
+  group: extended-legacy-recovery-intent-registration
+  cancel-in-progress: false
+jobs:
+  register:
+    if: github.ref == 'refs/heads/main' && github.event.repository.private == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 -m pip install --disable-pip-version-check 'boto3>=1.34,<2' 'requests>=2.31,<3'
+      - name: Validate exact original evidence and register private intent
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          GH_TOKEN: ${{ github.token }}
+          KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
+          SOURCE_GENERATION: ${{ inputs.generation }}
+          CONTINUATION_EVIDENCE: ${{ inputs.evidence }}
+        run: |
+          set -euo pipefail
+          python3 -B scripts/portal_extended_recovery_intent.py \
+            --generation "$SOURCE_GENERATION" --evidence "$CONTINUATION_EVIDENCE" \
+            --output "$RUNNER_TEMP/legacy-intent-summary.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: legacy-intent-${{ github.run_id }}
+          path: ${{ runner.temp }}/legacy-intent-summary.json
+          if-no-files-found: error
+          retention-days: 7
