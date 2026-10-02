@@ -25,6 +25,48 @@ from portal_extended_publication import checked_batches, read_active_batches
 from portal_extended_r2 import DEFAULT_PREFIX, HEX64, R2NotFound, R2Store, safe_part
 
 
+def read_publication_batches(store):
+    """Publication work survives source-day cursor pruning and runner midnight."""
+    key = store.key('incremental', 'pending-publications', 'queue.json')
+    try:
+        value = json.loads(store._get(key, maximum=128 * 1024))
+    except R2NotFound:
+        return []
+    if (not isinstance(value, dict) or set(value) != {'schema_version', 'entries'}
+            or value['schema_version'] != 1 or not isinstance(value['entries'], list)
+            or len(value['entries']) > 500):
+        raise ExpansionError('Invalid pending locale publication queue')
+    seen = set()
+    for row in value['entries']:
+        if (not isinstance(row, dict) or set(row) != {'day', 'generation'}
+                or publication_day(row['day']) != row['day']):
+            raise ExpansionError('Invalid pending locale publication day')
+        generation = safe_part(row['generation'], label='pending generation', pattern=HEX64)
+        if generation in seen:
+            raise ExpansionError('Duplicate pending locale generation')
+        seen.add(generation)
+    return value['entries']
+
+
+def queue_publication_batch(store, generation, day):
+    from portal_extended_daily_queue import batch_admission, write_verified
+    # Legacy explicit/manual batches keep their existing publication workflow.
+    # Only provenance-verified admitted sources enter automatic cross-day work.
+    admitted = batch_admission(store, generation)
+    if admitted is None:
+        return
+    if admitted['day'] != day:
+        raise ExpansionError('Pending publication day differs from frozen source')
+    entries = read_publication_batches(store)
+    row = {'day': day, 'generation': generation}
+    if row not in entries:
+        if len(entries) >= 500:
+            raise ExpansionError('Pending locale publication queue exceeds bound')
+        entries.append(row)
+        write_verified(store, store.key('incremental', 'pending-publications', 'queue.json'),
+                       {'schema_version': 1, 'entries': entries}, kind='pending-locale-publication')
+
+
 def pending_batch(store, corpus, requested, enabled, active_batches, workspace):
     docs = validate_corpus(corpus)
     day = daily_corpus_day(corpus)
@@ -108,7 +150,7 @@ def verify_handoff(store, identity, generation, candidates):
     return value
 
 
-def next_ready_batch(store, day, requested, enabled, active, workspace):
+def next_ready_batch(store, day, requested, enabled, active, workspace, *, admitted_only=False):
     """Drain today's durable completed receipts even after inference is a no-op.
 
     A failed/partial matrix or head-only refresh must not orphan a locale that
@@ -141,6 +183,13 @@ def next_ready_batch(store, day, requested, enabled, active, workspace):
     if len(groups) > 500:
         raise ExpansionError('Daily handoff generation inventory exceeds bound')
     for generation, locales in sorted(groups.items()):
+        if admitted_only:
+            from portal_extended_daily_queue import batch_admission
+            admitted = batch_admission(store, generation)
+            if admitted is None:
+                continue
+            if admitted['day'] != day:
+                raise ExpansionError('Pending candidate admission date differs')
         path = workspace/(generation+'.json')
         store.restore_source(generation, path)
         corpus = json.loads(path.read_text())
@@ -150,6 +199,27 @@ def next_ready_batch(store, day, requested, enabled, active, workspace):
                               active, workspace/generation)
         if batch['candidates']:
             return batch, corpus
+    return None
+
+
+def next_ready_refresh(store, day, requested, enabled, active, workspace):
+    from portal_extended_daily_queue import read_queue
+    if publication_day(day) != day:
+        raise ExpansionError('Invalid selected publication day')
+    # These dates come exclusively from private admitted/ready receipts, never
+    # a historical public crawl. Complete but unpublished days stay drainable.
+    days = {day} | {entry['day'] for entry in read_queue(store)}
+    for row in read_publication_batches(store):
+        from portal_extended_daily_queue import batch_admission
+        admitted = batch_admission(store, row['generation'])
+        if admitted is None or admitted['day'] != row['day']:
+            raise ExpansionError('Pending publication lost its source admission')
+        days.add(row['day'])
+    for selected in sorted(days, reverse=True):
+        ready = next_ready_batch(store, selected, requested, enabled, active, workspace/selected,
+                                 admitted_only=selected != day)
+        if ready is not None:
+            return ready
     return None
 
 
@@ -177,12 +247,12 @@ def main():
             if len(response.content) > 65536:
                 raise ExpansionError('Active release identity exceeds bound')
             active = read_active_batches(store, response.json())
-        ready = next_ready_batch(store, args.day, args.locales, args.enabled_locales, active, workspace)
+        ready = next_ready_refresh(store, args.day, args.locales, args.enabled_locales, active, workspace)
         if ready is None:
             print(json.dumps({'dispatched': False, 'reason': 'No new complete already-approved locale candidates'}))
             return
         batch, corpus = ready
-        receipt = save_handoff(store, batch, day=args.day, pages=len(corpus['documents']), producer={
+        receipt = save_handoff(store, batch, day=daily_corpus_day(corpus), pages=len(corpus['documents']), producer={
             'run_id': os.environ['GITHUB_RUN_ID'], 'attempt': os.environ['GITHUB_RUN_ATTEMPT'],
             'sha': os.environ['GITHUB_SHA']})
         subprocess.run(['gh', 'workflow', 'run', 'neutral-edge-cutover.yml', '--repo', os.environ['GITHUB_REPOSITORY'],
