@@ -390,7 +390,7 @@ jobs:
           cache: "pip"
       - name: Install private checkpoint dependency
         if: ${{ steps.gate.outputs.run == 'true' }}
-        run: python -m pip install boto3
+        run: python -m pip install "boto3>=1.37.32,<2"
       - name: Restore source-matched private generation checkpoint
         id: generation_checkpoint
         if: ${{ steps.gate.outputs.run == 'true' }}
@@ -441,6 +441,12 @@ jobs:
       - name: Generate shard outputs
         if: ${{ steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
         env:
+          MINERU_LEDGER_BACKEND: r2
+          MINERU_CHECKPOINT_SCOPE: dropbox
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
           MINER_U: ${{ secrets.MINER_U }}
           MINER_U_2: ${{ secrets.MINER_U_2 }}
           MINER_U_3: ${{ secrets.MINER_U_3 }}
