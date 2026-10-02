@@ -41,6 +41,9 @@ LIVE_ACCEPTANCE_STEP = "Accept prepared release through the live edge"
 ROLLBACK_STEP = "Roll back failed release or completed rehearsal"
 ROLLBACK_VERIFY_STEP = "Verify exact previous release after rollback"
 OUTCOME_STEP = "Enforce transactional outcome"
+ENGLISH_BIND_STEP = "Bind the exact prepared English version after protected approval"
+ENGLISH_AUDIT_STEP = "Audit live English previews, private access boundary and version binding"
+ENGLISH_ROLLBACK_STEP = "Verify English returned to the exact previous site version after rollback"
 PREPARED_ARTIFACT_STEPS = (
     "Publish multilingual review identity",
     "Build public validation artifact",
@@ -225,6 +228,8 @@ def verify_failed_cutover(jobs: list[dict[str, Any]], prepare: dict[str, Any],
                 for step in steps.values()), "Source cutover has incomplete or cancelled steps")
     failures = {name for name, step in steps.items() if step.get("conclusion") == "failure"}
     guard = "Verify committed candidate immediately before cutover"
+    if failures == {ENGLISH_BIND_STEP, OUTCOME_STEP}:
+        guard = ENGLISH_BIND_STEP
     if failures == {guard, OUTCOME_STEP}:
         # A runner/import failure here has not deployed anything. Reuse only the
         # immutable prepared bytes, after proving every deployment/rollback step
@@ -235,6 +240,11 @@ def verify_failed_cutover(jobs: list[dict[str, Any]], prepare: dict[str, Any],
                     f'Source pre-deployment prerequisite did not succeed: {name}')
         skipped = ('Deploy prepared neutral edge release', LIVE_ACCEPTANCE_STEP,
                    'Audit extended locale pages after live cutover', ROLLBACK_STEP, ROLLBACK_VERIFY_STEP)
+        if ENGLISH_BIND_STEP in steps and guard != ENGLISH_BIND_STEP: skipped = (ENGLISH_BIND_STEP, *skipped)
+        if ENGLISH_AUDIT_STEP in steps:
+            position = skipped.index(ROLLBACK_STEP)
+            skipped = (*skipped[:position], ENGLISH_AUDIT_STEP, *skipped[position:])
+        if ENGLISH_ROLLBACK_STEP in steps: skipped = (*skipped, ENGLISH_ROLLBACK_STEP)
         for name in skipped:
             require(steps.get(name, {}).get('conclusion') == 'skipped',
                     f'Pre-deployment recovery requires a skipped step: {name}')
@@ -248,18 +258,37 @@ def verify_failed_cutover(jobs: list[dict[str, Any]], prepare: dict[str, Any],
                 'source_rollback_verified': False, 'source_deployment_performed': False}
     # The final guard deliberately fails after a failed acceptance, even when
     # rollback succeeds. No independent failure is permitted alongside it.
-    require(failures == {LIVE_ACCEPTANCE_STEP, OUTCOME_STEP},
+    acceptance = ENGLISH_AUDIT_STEP if failures == {ENGLISH_AUDIT_STEP, OUTCOME_STEP} else LIVE_ACCEPTANCE_STEP
+    require(failures == {acceptance, OUTCOME_STEP},
             "Source cutover did not fail only at live acceptance and its outcome guard")
+    if acceptance == ENGLISH_AUDIT_STEP:
+        for name in (ENGLISH_BIND_STEP, LIVE_ACCEPTANCE_STEP, ENGLISH_ROLLBACK_STEP):
+            require(steps.get(name, {}).get('conclusion') == 'success', 'English recovery lacks exact bind/live/rollback evidence')
+        require(steps.get('Audit extended locale pages after live cutover', {}).get('conclusion') in {'success', 'skipped'},
+                'English failure also has incomplete extended acceptance')
+    elif ENGLISH_BIND_STEP in steps:
+        enabled = steps[ENGLISH_BIND_STEP]['conclusion'] == 'success'
+        require(steps[ENGLISH_BIND_STEP]['conclusion'] in {'success', 'skipped'} and
+                steps.get(ENGLISH_AUDIT_STEP, {}).get('conclusion') == 'skipped' and
+                steps.get(ENGLISH_ROLLBACK_STEP, {}).get('conclusion') == ('success' if enabled else 'skipped'),
+                'English recovery lacks exact previous-version rollback evidence')
     for name in (*CUTOVER_PREREQUISITES, ROLLBACK_STEP, ROLLBACK_VERIFY_STEP):
         require(steps.get(name, {}).get("conclusion") == "success",
                 f"Source cutover prerequisite did not succeed: {name}")
     ordered_names = (*CUTOVER_PREREQUISITES, LIVE_ACCEPTANCE_STEP, ROLLBACK_STEP, ROLLBACK_VERIFY_STEP, OUTCOME_STEP)
+    if ENGLISH_BIND_STEP in steps:
+        ordered_names = (*CUTOVER_PREREQUISITES[:4], ENGLISH_BIND_STEP, CUTOVER_PREREQUISITES[4],
+                         LIVE_ACCEPTANCE_STEP, ENGLISH_AUDIT_STEP, ROLLBACK_STEP, ROLLBACK_VERIFY_STEP,
+                         ENGLISH_ROLLBACK_STEP, OUTCOME_STEP)
+        if acceptance == ENGLISH_AUDIT_STEP:
+            require(steps[LIVE_ACCEPTANCE_STEP]['number'] < steps['Audit extended locale pages after live cutover']['number']
+                    < steps[ENGLISH_AUDIT_STEP]['number'], 'Source English/extended acceptance evidence is out of order')
     numbers = [steps[name]["number"] for name in ordered_names]
     require(numbers == sorted(numbers), "Source cutover rollback evidence is out of order")
     require(all(step.get("conclusion") == "success" for step in steps.values()
                 if step["number"] < steps[LIVE_ACCEPTANCE_STEP]["number"]),
             "Source cutover skipped a pre-deployment prerequisite")
-    return {"source_failure_phase": "live_acceptance_rolled_back", "source_cutover_job_id": cutover["id"],
+    return {"source_failure_phase": "english_acceptance_rolled_back" if acceptance == ENGLISH_AUDIT_STEP else "live_acceptance_rolled_back", "source_cutover_job_id": cutover["id"],
             "source_rollback_verified": True}
 
 
@@ -515,6 +544,16 @@ def download_candidate_files(client: Any, bucket: str, manifest: dict[str, Any],
             (locale_manifest.get("index_policy") or {}).get("mode") == "incremental-publication-cutoff",
             "Candidate is not an incremental locale release")
     wanted = set(PUBLIC_PATHS)
+    if 'data/english-commentary/assembly.json' in files or any(relative.startswith('en/') for relative in files):
+        from portal_english_commentary import PREFIX
+        from portal_english_publication import ASSEMBLY, read_static_assembly
+        from portal_extended_r2 import R2Store
+        english = read_static_assembly(R2Store(client, bucket, PREFIX),
+                    {key: manifest[key] for key in ('slot', 'release_id', 'tree_sha256')})
+        require(english is not None, 'English recovery has untracked public pages')
+        wanted.update((ASSEMBLY, *english['public_files']))
+        wanted.update(relative for relative in files if relative.startswith('assets/english-commentary.') or
+                      relative in {'assets/extended-locales.js', 'assets/extended-locales.css'})
     if 'data/extended-locales/assembly.json' in files:
         from verify_prepared_static_slot import verify_extended_static_tree
         from portal_extended_locales import ORIGIN

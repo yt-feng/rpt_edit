@@ -337,13 +337,15 @@ class ContinuationTests(unittest.TestCase):
         self.assertNotIn('setup_hymt', inspection)
         self.assertNotIn('actions: write', inspection)
 
-    def prepare_main(self, locales='fr,pt'):
+    def prepare_main(self, locales='fr,pt', *, include_english=False):
         from contextlib import redirect_stdout
         import io
         output = self.root/'merge-outputs.txt'
         args = ['test', 'prepare', '--locales', locales, '--corpus', str(self.root/'merge-source.json'),
                 '--github-output', str(output)]
-        with patch.dict(os.environ, ENV), patch('sys.argv', args), \
+        if include_english:
+            args.append('--include-english')
+        with patch.dict(os.environ, {**ENV, 'KC_PUBLIC_REPOSITORY': 'true'}), patch('sys.argv', args), \
              patch.object(incremental.R2Store, 'from_env', return_value=self.store), \
              patch.object(incremental, 'today', return_value='2026-10-02'), \
              patch.object(incremental.requests, 'Session', side_effect=AssertionError('No collection')), \
@@ -507,6 +509,83 @@ class ContinuationTests(unittest.TestCase):
             self.assertNotIn('continuation_diagnostics', section)
         self.assertIn('needs: [source, locale]', workflow)
         self.assertIn('needs: [source, locale, publication_handoff]', workflow)
+
+
+    def test_pending_continuation_keeps_english_admission_and_original_approval_scope(self):
+        self.partial()
+        original = stable_bytes(self.corpus)
+        english = {'job': {'locale': 'en', 'generation': 'e'*64, 'day': '2026-10-01'},
+                   'admission': 'f'*64, 'pending_count': 25, 'selected_pages': 24}
+        with patch('portal_english_pipeline.prepare_queued', return_value=english):
+            result = self.prepare_main('fr', include_english=True)
+        self.assertEqual(json.loads(result['locale_jobs_json']), [english['job'],
+            {'locale': 'fr', 'generation': self.gen, 'day': DAY}])
+        self.assertEqual(json.loads(result['locales_json']), ['fr'])
+        self.assertEqual((self.root/'merge-source.json').read_bytes(), original)
+        self.assertEqual(queue(self.store, 'fr')[self.gen]['continuations'], 1)
+        self.assertFalse(any('/continuations/en/' in key for key in self.store.client.objects))
+        outputs = dict(line.split('=', 1) for line in (self.root/'merge-outputs.txt').read_text().splitlines())
+        self.assertEqual(outputs['requested_locales'], 'fr')
+        self.assertEqual(outputs['english_admission'], english['admission'])
+        self.assertEqual(outputs['english_pending_count'], '25')
+        self.assertEqual(json.loads(outputs['stopped_locales_json']), [])
+
+    def test_english_can_advance_when_all_additional_locales_require_diagnosis(self):
+        register(self.store, self.corpus, ('fr',), PRODUCER)
+        before = copy.deepcopy(self.store.client.objects)
+        english = {'job': {'locale': 'en', 'generation': 'e'*64, 'day': '2026-10-01'},
+                   'admission': 'f'*64, 'pending_count': 2, 'selected_pages': 2}
+        with patch('portal_english_pipeline.prepare_queued', return_value=english):
+            result = self.prepare_main('fr', include_english=True)
+        self.assertTrue(result['has_work'])
+        self.assertEqual(json.loads(result['locale_jobs_json']), [english['job']])
+        self.assertEqual(result['generation'], '')
+        self.assertEqual(json.loads(result['locales_json']), [])
+        self.assertEqual(json.loads(result['stopped_locales_json'])[0]['status'], 'started')
+        self.assertEqual(self.store.client.objects, before)
+        outputs = dict(line.split('=', 1) for line in (self.root/'merge-outputs.txt').read_text().splitlines())
+        self.assertEqual(outputs['requested_locales'], 'fr')
+        self.assertEqual(outputs['english_admission'], english['admission'])
+
+    def test_workflow_executes_correct_checkpoint_route_for_english_continuation_and_diagnostics(self):
+        import subprocess
+        import textwrap
+        workflow = (Path(__file__).resolve().parents[1]/'.github/workflows/portal-extended-locales-r2.yml').read_text()
+        section = workflow.split('      - name: Restore locale checkpoint from private R2\n', 1)[1]
+        section = section.split('      - name:', 1)[0]
+        script = textwrap.dedent(section.split('        run: |\n', 1)[1])
+        # Run the actual workflow branch with shell builtins and a fake Python
+        # command. An empty PATH rules out R2, models, or any external executable.
+        commands = r'''python3() {
+  printf '%s\n' "$@" > "$TRACE_FILE"
+  printf '%s\n' '{"present": true}'
+}
+tee() { while IFS= read -r line; do printf '%s\n' "$line"; done; }
+'''
+        cases = [('en', 'candidate', 'portal_extended_r2.py', '--output'),
+                 ('en', '', 'portal_extended_r2.py', '--output'),
+                 ('fr', 'candidate', 'portal_extended_incremental.py', '--checkpoint'),
+                 ('km', 'publication-resume', 'portal_extended_incremental.py', '--checkpoint'),
+                 ('en', 'recovery-test', 'portal_extended_r2.py', '--output'),
+                 ('fr', 'recovery-test', 'portal_extended_r2.py', '--output')]
+        for index, (locale, operation, expected, output_flag) in enumerate(cases):
+            with self.subTest(locale=locale, operation=operation):
+                trace = self.root/f'route-{index}.txt'
+                output = self.root/f'route-{index}-outputs.txt'
+                environment = {'PATH': '', 'LOCALE': locale, 'REQUESTED_OPERATION': operation,
+                    'SOURCE_GENERATION': 'd'*64,
+                    'EXTENDED_R2_PREFIX': '_english-commentary/v1' if locale == 'en' else '_extended-locales/v1',
+                    'RUNNER_TEMP': str(self.root), 'TRACE_FILE': str(trace),
+                    'GITHUB_OUTPUT': str(output), 'GITHUB_STEP_SUMMARY': str(self.root/'summary')}
+                run = subprocess.run(['/bin/bash', '--noprofile', '--norc'], input=commands+script,
+                                     env=environment, text=True, capture_output=True, check=False)
+                self.assertEqual(run.returncode, 0, run.stderr)
+                arguments = trace.read_text().splitlines()
+                self.assertEqual(arguments[:3], ['-B', 'scripts/'+expected, 'restore-checkpoint'])
+                self.assertEqual(arguments[arguments.index('--locale')+1], locale)
+                self.assertEqual(arguments[arguments.index('--prefix')+1], environment['EXTENDED_R2_PREFIX'])
+                self.assertIn(output_flag, arguments)
+                self.assertEqual(output.read_text(), 'present=true\n')
 
 
 if __name__ == '__main__':

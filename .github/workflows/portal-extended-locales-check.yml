@@ -6,6 +6,12 @@ on:
       - 'scripts/*extended*'
       - 'scripts/*english_commentary*'
       - 'scripts/*english_ui*'
+      - 'scripts/*english_pipeline*'
+      - 'scripts/*english_publication*'
+      - 'scripts/*english_handoff*'
+      - 'scripts/build_portal_locale_resume_workflow.py'
+      - 'scripts/*resume_portal_locale_candidate*'
+      - 'scripts/test_portal_locale_resume_workflow.py'
       - 'portal_suite/locale_assets/english-commentary.*'
       - 'portal_suite/site_src/assets/app.js'
       - 'portal_suite/locale_assets/extended-locales.*'
@@ -19,12 +25,20 @@ on:
       - '.github/workflows/portal-extended-locales-r2.yml'
       - '.github/workflows/portal-extended-continuation-inspect.yml'
       - '.github/workflows/portal-extended-locales-source.yml'
+      - '.github/workflows/neutral-edge-cutover.yml'
+      - '.github/workflows/neutral-locale-resume.yml'
   push:
     branches: [main, codex/extended-locales-r2-20260924]
     paths:
       - 'scripts/*extended*'
       - 'scripts/*english_commentary*'
       - 'scripts/*english_ui*'
+      - 'scripts/*english_pipeline*'
+      - 'scripts/*english_publication*'
+      - 'scripts/*english_handoff*'
+      - 'scripts/build_portal_locale_resume_workflow.py'
+      - 'scripts/*resume_portal_locale_candidate*'
+      - 'scripts/test_portal_locale_resume_workflow.py'
       - 'portal_suite/locale_assets/english-commentary.*'
       - 'portal_suite/site_src/assets/app.js'
       - 'portal_suite/locale_assets/extended-locales.*'
@@ -38,6 +52,8 @@ on:
       - '.github/workflows/portal-extended-locales-r2.yml'
       - '.github/workflows/portal-extended-continuation-inspect.yml'
       - '.github/workflows/portal-extended-locales-source.yml'
+      - '.github/workflows/neutral-edge-cutover.yml'
+      - '.github/workflows/neutral-locale-resume.yml'
   workflow_dispatch:
     inputs:
       run_model_canary:
@@ -79,6 +95,13 @@ jobs:
           python -B scripts/test_portal_extended_continuation.py
           python -B scripts/test_portal_extended_daily_queue.py
           python -B scripts/test_portal_english_commentary.py
+          python -B scripts/test_portal_english_pipeline.py
+          python -B scripts/test_portal_english_publication.py
+          python -B scripts/test_neutral_edge_cutover_workflow.py
+          python -B scripts/build_portal_locale_resume_workflow.py --check
+          python -B scripts/test_portal_locale_resume_workflow.py
+          python -B scripts/test_resume_portal_locale_candidate.py
+          python -B scripts/test_verify_prepared_static_slot.py
           python -B scripts/test_portal_english_ui.py
           node --test scripts/test_portal_english_ui.js
           python -B scripts/test_portal_extended_recovery.py

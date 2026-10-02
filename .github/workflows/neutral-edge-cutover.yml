@@ -57,6 +57,11 @@ on:
         required: false
         type: string
         default: ""
+      english_handoff:
+        description: "Exact private KC secondary-commentary handoff; previews only, no original reports/charts; requires versioned approval"
+        required: false
+        type: string
+        default: ""
 
 permissions:
   contents: read
@@ -109,6 +114,11 @@ jobs:
       multilingual_index_policy_sha256: ${{ steps.locale_policy.outputs.index_policy_sha256 }}
       chinese_parity_sha256: ${{ steps.chinese_parity.outputs.sha256 }}
       extended_requested: ${{ steps.operation.outputs.extended_requested }}
+      english_requested: ${{ steps.operation.outputs.english_requested }}
+      english_ready: ${{ steps.english_assembly.outputs.ready }}
+      english_ledger: ${{ steps.english_assembly.outputs.ledger_sha256 }}
+      english_pages: ${{ steps.english_assembly.outputs.page_count }}
+      english_handoff: ${{ steps.english_assembly.outputs.handoff }}
       extended_ready: ${{ steps.extended_assembly.outputs.ready }}
       extended_locales: ${{ steps.extended_assembly.outputs.locales }}
       extended_source_generation: ${{ steps.extended_assembly.outputs.source_generation }}
@@ -121,6 +131,7 @@ jobs:
         id: operation
         env:
           REQUESTED_OPERATION: ${{ inputs.operation }}
+          REQUESTED_TRANSLATION_SCOPE: ${{ inputs.translation_scope }}
           PORTAL_MULTILINGUAL_CONFIGURED: ${{ vars.PORTAL_MULTILINGUAL_ENABLED || 'false' }}
           PORTAL_MULTILINGUAL_LIVE_CONFIGURED: ${{ vars.PORTAL_MULTILINGUAL_LIVE || 'false' }}
           PORTAL_MULTILINGUAL_INDEX_START_DATE: ${{ vars.PORTAL_MULTILINGUAL_INDEX_START_DATE || '' }}
@@ -128,6 +139,7 @@ jobs:
           EXTENDED_SOURCE_GENERATION: ${{ inputs.extended_source_generation || '' }}
           EXTENDED_CANDIDATE_IDS: ${{ inputs.extended_candidate_ids || '' }}
           EXTENDED_HANDOFF: ${{ inputs.extended_handoff || '' }}
+          ENGLISH_HANDOFF: ${{ inputs.english_handoff || '' }}
         run: |
           set -euo pipefail
           test "$GITHUB_REF" = "refs/heads/main"
@@ -153,6 +165,14 @@ jobs:
           extended_requested="false"
           if [ -n "$EXTENDED_LOCALES_REQUESTED$EXTENDED_SOURCE_GENERATION$EXTENDED_CANDIDATE_IDS$EXTENDED_HANDOFF" ]; then
             extended_requested="true"
+            multilingual_enabled="true"
+          fi
+          english_requested="false"
+          if [ -n "$ENGLISH_HANDOFF" ]; then
+            test "$GITHUB_EVENT_NAME" = "workflow_dispatch"
+            test "$operation" = "migrate"
+            test "$REQUESTED_TRANSLATION_SCOPE" = "incremental"
+            english_requested="true"
             multilingual_enabled="true"
           fi
           case "$PORTAL_MULTILINGUAL_LIVE_CONFIGURED" in
@@ -186,6 +206,7 @@ jobs:
           printf 'multilingual_enabled=%s\n' "$multilingual_enabled" >> "$GITHUB_OUTPUT"
           printf 'multilingual_live=%s\n' "$multilingual_live" >> "$GITHUB_OUTPUT"
           printf 'extended_requested=%s\n' "$extended_requested" >> "$GITHUB_OUTPUT"
+          printf 'english_requested=%s\n' "$english_requested" >> "$GITHUB_OUTPUT"
 
       - name: Checkout public source
         uses: actions/checkout@v4
@@ -195,7 +216,7 @@ jobs:
           persist-credentials: false
 
       - name: Require configured extended production approval environment
-        if: steps.operation.outputs.extended_requested == 'true'
+        if: steps.operation.outputs.extended_requested == 'true' || steps.operation.outputs.english_requested == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -308,6 +329,7 @@ jobs:
           python3 scripts/test_neutral_edge_cutover_workflow.py
           python3 -B scripts/test_portal_locale_resume_workflow.py
           python3 -B scripts/test_resume_portal_locale_candidate.py
+          python3 -B scripts/test_portal_english_publication.py
           python3 -B scripts/test_verify_prepared_static_slot.py
           node scripts/test_portal_locale_runtime.js
           node scripts/test_portal_locale_recovery.js
@@ -1573,12 +1595,30 @@ jobs:
           print(f"multilingual_index_policy_sha256={digest}")
           PY
 
+      - name: Assemble preview-only English and retain the approved active English version
+        id: english_assembly
+        if: steps.operation.outputs.multilingual_enabled != 'true' || steps.locale_build.outputs.ready == 'true'
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
+          ENGLISH_HANDOFF: ${{ inputs.english_handoff || '' }}
+        run: |
+          set -euo pipefail
+          python3 -B scripts/portal_english_publication.py assemble \
+            --root _neutral_site --active-state "$RUNNER_TEMP/previous-edge-state.json" \
+            --handoff "$ENGLISH_HANDOFF" --github-output "$GITHUB_OUTPUT" \
+            --evidence-out "$RUNNER_TEMP/english-assembly-evidence.json"
+
       - name: Detect meaningful public release changes
         id: release_delta
         if: steps.operation.outputs.multilingual_enabled != 'true' || steps.locale_build.outputs.ready == 'true'
         env:
           PORTAL_MULTILINGUAL_ENABLED: ${{ steps.operation.outputs.multilingual_enabled }}
           EXTENDED_LOCALES: ${{ steps.extended_assembly.outputs.locales || '' }}
+          ENGLISH_READY: ${{ steps.english_assembly.outputs.ready || 'false' }}
         run: |
           set -euo pipefail
           previous_args=()
@@ -1620,6 +1660,16 @@ jobs:
             for locale in "${extended_locale_values[@]}"; do
               locale_contract_args+=(--build-contract "_neutral_site/sitemap-extended-$locale.xml")
             done
+          fi
+          if [ "$ENGLISH_READY" = "true" ]; then
+            locale_contract_args+=(
+              --build-contract scripts/portal_english_publication.py
+              --build-contract scripts/portal_english_ui.py
+              --build-contract portal_suite/locale_assets/english-commentary.js
+              --build-contract portal_suite/locale_assets/english-commentary.css
+              --build-contract _neutral_site/data/english-commentary/assembly.json
+              --build-contract _neutral_site/sitemap-en.xml
+            )
           fi
           python3 -B scripts/compare_portal_release_semantics.py \
             --current-catalog _neutral_site/data/catalog.json \
@@ -1920,12 +1970,32 @@ jobs:
               summary.write(f"- Locales/pages: `{','.join(actual['locales'])}` / `{actual['pages_per_locale']}`\n")
           PY
 
+      - name: Publish metadata-only English exact-version review identity
+        if: steps.release_delta.outputs.changed == 'true' && steps.operation.outputs.english_requested == 'true' && steps.english_assembly.outputs.ready == 'true'
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
+          ENGLISH_HANDOFF: ${{ inputs.english_handoff }}
+          CANDIDATE_COMMIT_SHA: ${{ steps.operation.outputs.commit_sha }}
+          ENGLISH_SLOT: ${{ steps.static_upload.outputs.static_slot }}
+          ENGLISH_TREE: ${{ steps.static_upload.outputs.tree_sha256 }}
+        run: |
+          set -euo pipefail
+          python3 -B scripts/portal_english_publication.py identity \
+            --active-state "$RUNNER_TEMP/previous-edge-state.json" \
+            --slot "$ENGLISH_SLOT" --release "$STATIC_RELEASE" --tree "$ENGLISH_TREE" \
+            --handoff "$ENGLISH_HANDOFF" --evidence-out "$RUNNER_TEMP/english-review-identity.json"
+
       - name: Build public validation artifact
         if: steps.release_delta.outputs.changed == 'true' && (steps.operation.outputs.multilingual_enabled != 'true' || steps.locale_build.outputs.ready == 'true')
         env:
           PORTAL_MULTILINGUAL_ENABLED: ${{ steps.operation.outputs.multilingual_enabled }}
           EXTENDED_READY: ${{ steps.extended_assembly.outputs.ready || 'false' }}
           EXTENDED_LOCALES: ${{ steps.extended_assembly.outputs.locales || '' }}
+          ENGLISH_REQUESTED: ${{ steps.operation.outputs.english_requested || 'false' }}
         run: |
           set -euo pipefail
           mkdir -p _release_validation/previous _release_validation/candidate
@@ -1940,6 +2010,11 @@ jobs:
             --index _neutral_site/data/chart_search_index.json \
             --semantics _release_validation/candidate/release-semantics.json \
             --output _release_validation/candidate/chart-index-expected.json
+          if [ "$ENGLISH_REQUESTED" = "true" ]; then
+            # Only hashes/IDs/counts: no English HTML, bodies, sources or memo.
+            install -m 0600 "$RUNNER_TEMP/english-review-identity.json" \
+              _release_validation/candidate/english-review-identity.json
+          fi
           if [ "$PORTAL_MULTILINGUAL_ENABLED" = "true" ]; then
             mkdir -p \
               _release_validation/candidate/{ko,ja,ar} \
@@ -2288,8 +2363,99 @@ jobs:
           print("Same-run extended-locale candidate identity approved")
           PY
 
+  english_daily_review:
+    needs: prepare_release
+    if: >-
+      ${{ needs.prepare_release.result == 'success' && needs.prepare_release.outputs.changed == 'true' &&
+          needs.prepare_release.outputs.english_requested == 'true' && needs.prepare_release.outputs.english_ready == 'true' &&
+          github.ref == 'refs/heads/main' && github.event_name == 'workflow_dispatch' &&
+          inputs.operation == 'migrate' && inputs.translation_scope == 'incremental' && inputs.english_handoff != '' &&
+          vars.PORTAL_ENGLISH_AUTO_REVIEW == 'true' }}
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install English delegated review readers
+        run: python3 -m pip install --disable-pip-version-check 'boto3>=1.34,<2' 'requests>=2.31,<3'
+      - uses: actions/download-artifact@v4
+        with:
+          name: neutral-release-validation-${{ github.run_id }}-${{ github.run_attempt }}
+          path: _release_validation
+      - name: Review KC commentary through the existing configured required-reviewer identity
+        env:
+          GH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          KC_ENGLISH_AUTO_REVIEW: ${{ vars.PORTAL_ENGLISH_AUTO_REVIEW }}
+          ENGLISH_HANDOFF: ${{ inputs.english_handoff }}
+          CANDIDATE_SLOT: ${{ needs.prepare_release.outputs.static_slot }}
+          CANDIDATE_RELEASE: ${{ needs.prepare_release.outputs.static_release }}
+          CANDIDATE_STATIC_TREE: ${{ needs.prepare_release.outputs.static_tree }}
+        run: python3 -B scripts/review_portal_english_handoff.py
+
+  english_approval:
+    needs: prepare_release
+    if: >-
+      ${{ needs.prepare_release.result == 'success' && needs.prepare_release.outputs.changed == 'true' &&
+          needs.prepare_release.outputs.english_requested == 'true' && needs.prepare_release.outputs.english_ready == 'true' }}
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    environment:
+      name: portal-extended-locales-production
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install exact English approval readers
+        run: python3 -m pip install --disable-pip-version-check 'boto3>=1.34,<2' 'requests>=2.31,<3'
+      - uses: actions/download-artifact@v4
+        with:
+          name: neutral-release-validation-${{ github.run_id }}-${{ github.run_attempt }}
+          path: _release_validation
+      - name: Approve exact same-run English tree and private ledger
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
+          CANDIDATE_COMMIT_SHA: ${{ needs.prepare_release.outputs.candidate_commit }}
+          CANDIDATE_ENGLISH_PAGES: ${{ needs.prepare_release.outputs.english_pages }}
+          PORTAL_ENGLISH_COMMENTARY_ACTIVATION_APPROVED: ${{ vars.PORTAL_ENGLISH_COMMENTARY_ACTIVATION_APPROVED || 'false' }}
+          PORTAL_ENGLISH_APPROVED_COMMIT_SHA: ${{ vars.PORTAL_ENGLISH_APPROVED_COMMIT_SHA || '' }}
+          PORTAL_ENGLISH_APPROVED_STATIC_TREE: ${{ vars.PORTAL_ENGLISH_APPROVED_STATIC_TREE || '' }}
+          PORTAL_ENGLISH_APPROVED_SITE_RELEASE: ${{ vars.PORTAL_ENGLISH_APPROVED_SITE_RELEASE || '' }}
+          PORTAL_ENGLISH_APPROVED_LEDGER: ${{ vars.PORTAL_ENGLISH_APPROVED_LEDGER || '' }}
+          PORTAL_ENGLISH_APPROVED_HANDOFF: ${{ vars.PORTAL_ENGLISH_APPROVED_HANDOFF || '' }}
+          ENGLISH_HANDOFF: ${{ needs.prepare_release.outputs.english_handoff }}
+          ENGLISH_TREE: ${{ needs.prepare_release.outputs.static_tree }}
+          ENGLISH_RELEASE: ${{ needs.prepare_release.outputs.static_release }}
+          ENGLISH_LEDGER: ${{ needs.prepare_release.outputs.english_ledger }}
+        run: |
+          set -euo pipefail
+          python3 -B scripts/portal_english_publication.py approve \
+            --active-state _release_validation/previous/edge-state.json \
+            --identity _release_validation/candidate/english-review-identity.json \
+            --handoff "$ENGLISH_HANDOFF" --tree "$ENGLISH_TREE" --release "$ENGLISH_RELEASE" \
+            --approved-ledger "$ENGLISH_LEDGER"
+
   cutover:
-    needs: [prepare_release, multilingual_approval, extended_locales_approval]
+    needs: [prepare_release, multilingual_approval, extended_locales_approval, english_approval]
     if: >-
       ${{
         always() &&
@@ -2308,12 +2474,16 @@ jobs:
         (
           needs.prepare_release.outputs.extended_requested != 'true' ||
           needs.extended_locales_approval.result == 'success'
+        ) &&
+        (
+          needs.prepare_release.outputs.english_requested != 'true' ||
+          needs.english_approval.result == 'success'
         )
       }}
     runs-on: ubuntu-22.04
-    # Bounded checks, extended audit and complete rollback total 114 minutes;
-    # retain another 21 minutes for setup and evidence upload.
-    timeout-minutes: 135
+    # Retain existing checks/rollback budgets plus 30 minutes for bounded
+    # private English verification, preflight, live audit and rollback audit.
+    timeout-minutes: 165
     env:
       STATIC_RELEASE: ${{ needs.prepare_release.outputs.static_release }}
       STATIC_SLOT: ${{ needs.prepare_release.outputs.static_slot }}
@@ -2326,6 +2496,7 @@ jobs:
       PORTAL_MULTILINGUAL_ENABLED: ${{ needs.prepare_release.outputs.multilingual_enabled }}
       PORTAL_MULTILINGUAL_LIVE: ${{ needs.prepare_release.outputs.multilingual_live }}
       EXTENDED_LOCALES: ${{ needs.prepare_release.outputs.extended_locales || '' }}
+      ENGLISH_READY: ${{ needs.prepare_release.outputs.english_ready || 'false' }}
     steps:
       - name: Checkout audited cutover source
         uses: actions/checkout@v4
@@ -2515,6 +2686,31 @@ jobs:
           python3 -B scripts/verify_prepared_static_slot.py \
             --slot "$STATIC_SLOT" --release "$STATIC_RELEASE" --tree "$STATIC_TREE_SHA256" \
             "${locale_args[@]}"
+
+      - name: Bind the exact prepared English version after protected approval
+        if: needs.prepare_release.outputs.english_ready == 'true'
+        timeout-minutes: 15
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
+          KC_ENGLISH_APPROVAL_VERIFIED: ${{ needs.english_approval.result == 'success' && 'true' || 'false' }}
+          ENGLISH_REQUESTED: ${{ needs.prepare_release.outputs.english_requested }}
+          ENGLISH_LEDGER: ${{ needs.prepare_release.outputs.english_ledger }}
+        run: |
+          set -euo pipefail
+          python3 -B scripts/portal_english_publication.py preflight \
+            --active-state _release_validation/previous/edge-state.json
+          approval_args=()
+          if [ "$ENGLISH_REQUESTED" = "true" ]; then
+            approval_args+=(--approved-ledger "$ENGLISH_LEDGER")
+          fi
+          python3 -B scripts/portal_english_publication.py bind \
+            --active-state _release_validation/previous/edge-state.json \
+            --slot "$STATIC_SLOT" --release "$STATIC_RELEASE" --tree "$STATIC_TREE_SHA256" \
+            "${approval_args[@]}"
 
       - name: Deploy prepared neutral edge release
         id: edge_deploy
@@ -2899,12 +3095,29 @@ jobs:
             --locales "$EXTENDED_LOCALES" \
             --output "$RUNNER_TEMP/extended-live-audit.json"
 
+      - name: Audit live English previews, private access boundary and version binding
+        id: english_acceptance
+        if: needs.prepare_release.outputs.english_ready == 'true'
+        timeout-minutes: 5
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
+        run: |
+          set -euo pipefail
+          python3 -B scripts/portal_english_publication.py audit \
+            --active-state _release_validation/previous/edge-state.json \
+            --slot "$STATIC_SLOT" --release "$STATIC_RELEASE" --tree "$STATIC_TREE_SHA256" \
+            --evidence-out "$RUNNER_TEMP/english-live-audit.json"
+
       - name: Roll back failed release or completed rehearsal
         id: edge_rollback
         if: >-
           ${{ always() &&
               steps.edge_deploy.outcome != 'skipped' &&
-              (steps.release_acceptance.outcome != 'success' || (needs.prepare_release.outputs.extended_ready == 'true' && steps.extended_acceptance.outcome != 'success') || needs.prepare_release.outputs.operation == 'rehearse') }}
+              (steps.release_acceptance.outcome != 'success' || (needs.prepare_release.outputs.extended_ready == 'true' && steps.extended_acceptance.outcome != 'success') || (needs.prepare_release.outputs.english_ready == 'true' && steps.english_acceptance.outcome != 'success') || needs.prepare_release.outputs.operation == 'rehearse') }}
         timeout-minutes: 5
         uses: cloudflare/wrangler-action@v4
         with:
@@ -2982,6 +3195,23 @@ jobs:
           print(f"portal_runtime_restored={runtime['release_id']} catalog_items={runtime['catalog_item_count']}")
           PY
 
+      - name: Verify English returned to the exact previous site version after rollback
+        id: english_rollback_acceptance
+        if: always() && steps.edge_rollback.outcome == 'success' && needs.prepare_release.outputs.english_ready == 'true'
+        timeout-minutes: 5
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
+        run: |
+          set -euo pipefail
+          python3 -B scripts/portal_english_publication.py audit \
+            --active-state _release_validation/previous/edge-state.json \
+            --candidate-state _release_validation/previous/edge-state.json \
+            --evidence-out "$RUNNER_TEMP/english-rollback-audit.json"
+
       - name: Enforce transactional outcome
         if: always()
         run: |
@@ -2990,6 +3220,12 @@ jobs:
           test "${{ steps.release_acceptance.outcome }}" = "success"
           if [ "$EXTENDED_LOCALES" != "" ]; then
             test "${{ steps.extended_acceptance.outcome }}" = "success"
+          fi
+          if [ "$ENGLISH_READY" = "true" ]; then
+            test "${{ steps.english_acceptance.outcome }}" = "success"
+            if [ "${{ steps.edge_rollback.outcome }}" = "success" ]; then
+              test "${{ steps.english_rollback_acceptance.outcome }}" = "success"
+            fi
           fi
           if [ "$NEUTRAL_OPERATION" = "rehearse" ]; then
             test "${{ steps.edge_rollback.outcome }}" = "success"

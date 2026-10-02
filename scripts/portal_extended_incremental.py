@@ -18,7 +18,7 @@ from portal_extended_locales import (
     validate_corpus,
 )
 from portal_extended_r2 import (R2Store, R2NotFound, R2IntegrityError, HEX64, MODEL_ID, DEFAULT_PREFIX,
-                               checkpoint_is_valid, MAX_CHECKPOINT_BYTES)
+                               R2StoreError, checkpoint_is_valid, MAX_CHECKPOINT_BYTES)
 from assemble_portal_extended_locales import verified_candidate
 
 
@@ -169,6 +169,31 @@ def remember_candidate(store: R2Store, locale: str, corpus: dict, directory: Pat
     return result
 
 
+def include_english_matrix(store, result):
+    """One English editorial job in the SAME two-CPU matrix, not a third runner."""
+    from portal_english_commentary import PREFIX
+    from portal_english_pipeline import prepare_queued
+    prefix = PREFIX if store.prefix == DEFAULT_PREFIX else store.prefix+'/english-commentary'
+    result = dict(result)
+    result.update(english_admission='', english_pending_count='0', english_prepare_incomplete=False)
+    try:
+        english = prepare_queued(R2Store(store.client, store.bucket, prefix), store)
+    except (ExpansionError, R2StoreError):
+        result['english_prepare_incomplete'] = True
+        result['english_prepare_code'] = 'english-admission-unavailable'
+        return result
+    if english['job'] is not None:
+        # The non-English approval list/source day retain their exact meaning.
+        # Each matrix row already owns its separate source generation/day.
+        jobs = json.loads(result['locale_jobs_json'])
+        if any(row['locale'] == 'en' for row in jobs): raise ExpansionError('Duplicate English matrix row')
+        result['locale_jobs_json'] = json.dumps([english['job']] + jobs)
+        result['has_work'] = True
+        result['english_admission'] = english['admission']
+        result['english_pending_count'] = str(english['pending_count'])
+    return result
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('operation', choices=['prepare', 'prepare-recovery', 'prepare-publication', 'restore-seed', 'restore-checkpoint', 'checkpoint', 'candidate'])
@@ -181,7 +206,13 @@ def main() -> int:
     parser.add_argument('--generation')
     parser.add_argument('--github-output', type=Path)
     parser.add_argument('--continuation-evidence', default='')
+    parser.add_argument('--include-english', action='store_true', help='Add separately admitted KC comments to the existing CPU matrix')
     args = parser.parse_args()
+    if args.include_english and (args.operation != 'prepare' or args.generation):
+        raise ExpansionError('English inclusion is only for normal admitted daily cursors, not explicit/recovery generations')
+    if args.include_english and (os.environ.get('GITHUB_ACTIONS') != 'true'
+        or os.environ.get('GITHUB_REF') != 'refs/heads/main' or os.environ.get('KC_PUBLIC_REPOSITORY') != 'true'):
+        raise ExpansionError('English daily inclusion requires reviewed main public Actions')
     store = R2Store.from_env(args.prefix)
     if args.operation in {'prepare', 'prepare-recovery', 'prepare-publication'}:
         requested_locales = locales = select_locales(args.locales)
@@ -294,13 +325,15 @@ def main() -> int:
             result['pending_counts_json'] = json.dumps({locale: len(pending_docs(store, full['documents'], locale, admitted['day']))
                                                        for locale in requested_locales})
         result['stopped_locales_json'] = json.dumps(stopped)
+        if args.include_english:
+            result = include_english_matrix(store, result)
         if args.github_output:
             with args.github_output.open('a') as stream:
                 for key in ('has_work', 'generation', 'locales_json', 'locale_jobs_json', 'day', 'stopped_locales_json'):
                     value = str(result[key]).lower() if isinstance(result[key], bool) else result[key]
                     stream.write(f'{key}={value}\n')
                 stream.write('requested_locales='+','.join(requested_locales)+'\n')
-                for key in ('source_admission', 'pending_counts_json'):
+                for key in ('source_admission', 'pending_counts_json', 'english_admission', 'english_pending_count'):
                     stream.write(key + '=' + result.get(key, '') + '\n')
 
     else:
