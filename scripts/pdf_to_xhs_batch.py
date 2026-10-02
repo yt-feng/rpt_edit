@@ -1032,10 +1032,12 @@ def main() -> int:
         (output_dir / "mineru_attempts_summary.json").write_text(
             json.dumps(task_summary, ensure_ascii=False, indent=2), encoding="utf-8")
         log("MinerU durable task summary: " + json.dumps(task_summary, sort_keys=True))
-        if task_summary["pending"] or task_summary["failed"]:
+        if (task_summary.get("ready_for_generation") is not True
+                or task_summary["pending"] or task_summary["failed"]):
             # No paid generation or downstream publication on partial extraction.
             log("Extraction incomplete; saved tasks retained for exact-source recovery.")
-            return 2 if task_summary["failed"] else 75
+            original_failed = any(batch["failed"] for batch in task_summary.get("original_batches", []))
+            return 2 if task_summary["failed"] or original_failed else 75
 
         summary: list[dict[str, Any]] = []
         successful_reports = 0

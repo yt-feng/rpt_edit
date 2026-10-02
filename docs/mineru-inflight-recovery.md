@@ -25,7 +25,9 @@ inputs. No pending, failed, interrupted, or ambiguous task expires into permissi
 to POST again. An unavailable original credential blocks recovery.
 
 R2 conditional writes use `IfNoneMatch='*'` for new objects and `IfMatch=ETag` for
-updates. Every write requires exact durable readback. If an acknowledgement is
+updates. Every write requires exact canonical JSON byte readback, preserving
+JSON types (a boolean cannot replace an integer). Schema versions require integer
+type. If an acknowledgement is
 lost, the code reads back once and continues only when the exact intended object
 is present; it never retries that write or provider submission. Corrupt, truncated,
 wrong-scope, conflicting, and unknown-state checkpoints stop before new work.
@@ -35,9 +37,12 @@ The SDK model is checked before private-store access. Workflow installs require
 Provider polling retains the existing time/no-progress budgets. Missing or
 nonterminal selected results produce exit 75; terminal provider errors produce
 exit 2. Neither permits paid generation or publication. The wrapper cannot turn
-partial successes into exit 0. A complete provider batch requires terminal rows
-for every admitted ID, with exact requested IDs and a result URL for completed
-rows. Downstream source, chart, semantic and publication checks still apply.
+partial successes into exit 0. A usable provider batch requires completed rows and source result URLs for
+every originally admitted ID. Resuming a completed subset cannot hide pending,
+missing, or failed neighbours. Summaries distinguish selected counts from each
+original batch inventory and expose `ready_for_generation`; incomplete batches
+retain diagnostic counts but release no result rows to generation. Terminal
+failures anywhere in an original batch block every selected subset. Downstream source, chart, semantic and publication checks still apply.
 
 Interrupted claiming, an unknown POST outcome, accepted-but-incomplete uploads,
 or an expired provider result require investigation of the saved batch. Do not

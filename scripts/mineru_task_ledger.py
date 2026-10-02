@@ -29,6 +29,15 @@ def encoded(value):
     return json.dumps(value, sort_keys=True, separators=(',', ':'), ensure_ascii=False).encode()
 
 
+def exact_json(left, right):
+    # Python considers True == 1 and 1 == 1.0; source and state bindings must not.
+    return encoded(left) == encoded(right)
+
+
+def schema_v1(value):
+    return isinstance(value, dict) and type(value.get('schema')) is int and value['schema'] == 1
+
+
 def digest(value):
     return hashlib.sha256(value).hexdigest()
 
@@ -66,6 +75,8 @@ def decode(raw):
         raise LedgerError('Malformed task checkpoint') from error
     if not isinstance(value, dict):
         raise LedgerError('Malformed task checkpoint object')
+    if 'schema' in value and type(value['schema']) is not int:
+        raise LedgerError('Task checkpoint schema must be an integer')
     return value
 
 
@@ -143,11 +154,11 @@ class R2Store:
             # A lost ACK can mean the conditional write succeeded. Read only;
             # never replay a write or infer that an absent read authorizes POST.
             stored, version = self.get(key)
-            if stored == value and version:
+            if exact_json(stored, value) and version:
                 return version
             raise LedgerError('Private checkpoint write outcome unresolved; no new submission') from None
         stored, version = self.get(key)
-        if stored != value or not version:
+        if not exact_json(stored, value) or not version:
             raise LedgerError('Private checkpoint durable readback mismatch; no new submission')
         return version
 
@@ -212,6 +223,10 @@ class Ledger:
         validate_scope(scope)
         if endpoint != 'https://mineru.net':
             raise LedgerError('Unexpected extraction provider endpoint')
+        if (not isinstance(options, dict) or set(options) != {'model', 'language', 'ocr'}
+                or not all(isinstance(options.get(key), str) and options[key] for key in ('model', 'language'))
+                or type(options.get('ocr')) is not bool):
+            raise LedgerError('Invalid exact extraction options')
         self.store, self.provider, self.scope, self.endpoint, self.options = store, provider, scope, endpoint, options
         self.tokens = {token_fingerprint(token): token for _, token in tokens}
         if not self.tokens:
@@ -232,8 +247,8 @@ class Ledger:
         if not key.startswith('batches/'):
             raise LedgerError('Invalid batch reference')
         row, version = self.store.get(key)
-        if (not isinstance(row, dict) or row.get('schema') != 1 or row.get('scope') != self.scope
-                or row.get('endpoint') != self.endpoint or row.get('options') != self.options
+        if (not schema_v1(row) or row.get('scope') != self.scope
+                or row.get('endpoint') != self.endpoint or not exact_json(row.get('options'), self.options)
                 or row.get('key') != key or row.get('token_identity') not in self.tokens
                 or not isinstance(row.get('files'), list) or not 1 <= len(row['files']) <= 5):
             raise LedgerError('Stored task scope, source, options or token identity mismatch')
@@ -247,7 +262,7 @@ class Ledger:
             validate_source(item['source'])
             body = {k: v for k, v in item.items() if k != 'id'}
             if (item.get('id') != digest(encoded(body)) or item.get('scope') != self.scope
-                    or item.get('endpoint') != self.endpoint or item.get('options') != self.options):
+                    or item.get('endpoint') != self.endpoint or not exact_json(item.get('options'), self.options)):
                 raise LedgerError('Stored source binding is malformed')
         if len({item['id'] for item in row['files']}) != len(row['files']):
             raise LedgerError('Stored task has duplicate source identities')
@@ -290,7 +305,7 @@ class Ledger:
         if batch['state'] not in {'accepted', 'uploaded', 'terminal'} or not isinstance(batch.get('batch_id'), str):
             raise LedgerError('Unrecognized saved task state')
         bound = {item['id']: item for item in batch['files']}
-        if any(bound.get(item['id']) != item for item in requested):
+        if any(not exact_json(bound.get(item['id']), item) for item in requested):
             raise LedgerError('Requested PDF does not match accepted task bytes and scope')
         token = self.tokens[batch['token_identity']]
         begun = self.clock()
@@ -330,7 +345,14 @@ class Ledger:
             if remaining > 0:
                 self.sleep(min(interval, remaining))
         wanted = {item['id'] for item in requested}
-        return {i: r for i, r in last.items() if i in wanted}
+        completed = sum(str(row['state']).lower() in DONE for row in last.values())
+        failed = sum(str(row['state']).lower() in FAILED for row in last.values())
+        original_batch = {'key': key, 'admitted': len(bound), 'observed': len(last),
+                          'completed': completed, 'failed': failed,
+                          'pending': len(bound) - completed - failed,
+                          'missing': len(bound) - len(last)}
+        original_batch['all_succeeded'] = completed == len(bound)
+        return {i: r for i, r in last.items() if i in wanted}, original_batch
 
     def run(self, paths_and_sources, *, timeout, interval=15, queue_budget=600):
         if not 1 <= len(paths_and_sources) <= 5 or timeout <= 0 or interval <= 0:
@@ -345,14 +367,14 @@ class Ledger:
             if reference is None:
                 fresh.append(item)
                 continue
-            if not isinstance(reference, dict) or reference.get('schema') != 1 or reference.get('binding') != item or not isinstance(reference.get('batch_key'), str):
+            if not schema_v1(reference) or not exact_json(reference.get('binding'), item) or not isinstance(reference.get('batch_key'), str):
                 raise LedgerError('Source claim binding mismatch')
             groups.setdefault(reference['batch_key'], []).append(item)
         # Validate every existing task before any new provider mutation.
         for key, requested in groups.items():
             batch, _ = self._read_batch(key)
             bound = {item['id']: item for item in batch['files']}
-            if any(bound.get(item['id']) != item for item in requested):
+            if any(not exact_json(bound.get(item['id']), item) for item in requested):
                 raise LedgerError('Requested PDF does not match accepted task bytes and scope')
             if batch.get('state') not in {'accepted', 'uploaded', 'terminal'} or not batch.get('batch_id'):
                 raise LedgerError('Ambiguous existing task blocks new submissions')
@@ -360,8 +382,11 @@ class Ledger:
         if fresh:
             groups[self._create(fresh, paths, deadline)] = fresh
         observed = {}
+        original_batches = []
         for key, requested in groups.items():
-            observed.update(self._poll(key, requested, deadline, interval, queue_budget))
+            selected_rows, original_batch = self._poll(key, requested, deadline, interval, queue_budget)
+            observed.update(selected_rows)
+            original_batches.append(original_batch)
         for item in items:
             raw = Path(paths[item['id']]).read_bytes()
             if len(raw) != item['size'] or digest(raw) != item['sha256']:
@@ -369,8 +394,14 @@ class Ledger:
         successes = [(Path(paths[i]), row) for i, row in observed.items() if str(row['state']).lower() in DONE]
         failed = sum(str(row['state']).lower() in FAILED for row in observed.values())
         pending = len(items) - len(successes) - failed
-        return successes, {'requested': len(items), 'completed': len(successes), 'failed': failed,
-                           'pending': pending, 'batch_keys': list(groups), 'provider_posts': int(bool(fresh))}
+        ready = not pending and not failed and all(batch['all_succeeded'] for batch in original_batches)
+        # Completed selected counts remain diagnostic, but partial original batches
+        # never release result rows to downstream generation, even after regrouping.
+        return (successes if ready else []), {
+            'requested': len(items), 'completed': len(successes), 'failed': failed,
+            'pending': pending, 'batch_keys': list(groups), 'provider_posts': int(bool(fresh)),
+            'original_batches': original_batches, 'ready_for_generation': ready,
+        }
 
 
 def from_environment(output_dir, http, endpoint, options, tokens):
@@ -398,7 +429,7 @@ def input_sources(pdfs, input_dir, source_map=None):
     if source_map:
         value = decode(Path(source_map).read_bytes())
         entries = value.get('files')
-        if value.get('schema') != 1 or not isinstance(entries, dict):
+        if not schema_v1(value) or not isinstance(entries, dict):
             raise LedgerError('Malformed stable source map')
         if set(entries) != {Path(pdf).relative_to(root).as_posix() for pdf in pdfs}:
             raise LedgerError('Stable source map does not exactly cover selected PDFs')

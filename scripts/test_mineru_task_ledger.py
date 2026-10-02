@@ -88,6 +88,86 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual({p for p, _ in rows}, {p for p, _ in self.inputs[::2]})
         self.assertEqual(summary['provider_posts'], 0)
         self.assertEqual(len(self.provider.posts), 1)
+    def subset_with_original_states(self, states):
+        self.run_task()
+        self.provider.custom_rows = lambda items: [
+            {'data_id':item['id'],'state':state,
+             **({'full_zip_url':'https://results.invalid/exact'} if state == 'done' else {})}
+            for item,state in zip(items,states)]
+        begun=self.clock.now
+        result=self.run_task(self.inputs[:1])
+        self.assertLessEqual(self.clock.now-begun,20)
+        self.assertEqual(len(self.provider.posts),1)
+        return result
+    def test_completed_subset_is_blocked_by_original_pending_neighbors(self):
+        rows,summary=self.subset_with_original_states(['done']+['pending']*4)
+        self.assertEqual(rows,[])
+        self.assertEqual((summary['requested'],summary['completed'],summary['pending'],summary['failed']),(1,1,0,0))
+        self.assertFalse(summary['ready_for_generation'])
+        original=summary['original_batches'][0]
+        self.assertEqual((original['admitted'],original['observed'],original['completed'],original['pending'],original['missing']),(5,5,1,4,0))
+    def test_completed_subset_is_blocked_by_truncated_original_inventory(self):
+        rows,summary=self.subset_with_original_states(['done'])
+        self.assertEqual(rows,[])
+        self.assertEqual((summary['completed'],summary['pending']),(1,0))
+        self.assertFalse(summary['ready_for_generation'])
+        original=summary['original_batches'][0]
+        self.assertEqual((original['admitted'],original['observed'],original['pending'],original['missing']),(5,1,4,4))
+    def test_completed_subset_is_blocked_by_original_terminal_failed_neighbor(self):
+        rows,summary=self.subset_with_original_states(['done','failed','done','done','done'])
+        self.assertEqual(rows,[])
+        self.assertEqual((summary['completed'],summary['failed'],summary['pending']),(1,0,0))
+        self.assertFalse(summary['ready_for_generation'])
+        original=summary['original_batches'][0]
+        self.assertEqual((original['admitted'],original['completed'],original['failed'],original['pending'],original['missing']),(5,4,1,0,0))
+        rows_again,summary_again=self.run_task(self.inputs[:1])
+        self.assertEqual(rows_again,[])
+        self.assertFalse(summary_again['ready_for_generation'])
+        self.assertEqual(len(self.provider.posts),1)
+    def test_completed_original_inventory_releases_only_requested_subset(self):
+        rows,summary=self.subset_with_original_states(['done']*5)
+        self.assertEqual([path for path,row in rows],[self.inputs[0][0]])
+        self.assertTrue(summary['ready_for_generation'])
+        original=summary['original_batches'][0]
+        self.assertEqual((original['admitted'],original['completed'],original['failed'],original['pending'],original['missing']),(5,5,0,0,0))
+        self.assertTrue(original['all_succeeded'])
+    def test_actual_cli_enforces_original_inventory_for_completed_subset(self):
+        import pdf_to_xhs_batch as cli
+        self.run_task()
+        # Failed is last, because it correctly persists a terminal original batch.
+        for states,expected in [(['done']+['pending']*4,75),(['done'],75),(['done']*5,0)]:
+            with self.subTest(states=states):
+                self.provider.custom_rows=lambda items:[{'data_id':item['id'],'state':state,
+                    **({'full_zip_url':'https://results.invalid/exact'} if state=='done' else {})}
+                    for item,state in zip(items,states)]
+                argv=['pdf','--input-dir',str(self.root),'--output-dir',str(self.root/'out'),
+                      '--poll-timeout','20','--poll-interval','2','--mineru-no-progress-timeout','4']
+                with patch.object(sys,'argv',argv),patch.dict(os.environ,{'MINER_U':TOKENS[0][1]}), \
+                    patch.object(cli,'find_pdfs',return_value=[self.inputs[0][0]]), \
+                    patch.object(cli,'input_sources',return_value=self.inputs[:1]), \
+                    patch.object(cli,'from_environment',return_value=self.ledger()), \
+                    patch.object(cli,'process_pdf',return_value={'wechat_article':'wechat_article.md'}) as generate:
+                    self.assertEqual(cli.main(),expected)
+                    self.assertEqual(generate.call_count,1 if expected==0 else 0)
+                self.assertEqual(len(self.provider.posts),1)
+        self.provider.custom_rows=lambda items:[{'data_id':item['id'],'state':'failed' if i==1 else 'done',
+            **({} if i==1 else {'full_zip_url':'https://results.invalid/exact'})} for i,item in enumerate(items)]
+        with patch.object(sys,'argv',argv),patch.dict(os.environ,{'MINER_U':TOKENS[0][1]}), \
+            patch.object(cli,'find_pdfs',return_value=[self.inputs[0][0]]), \
+            patch.object(cli,'input_sources',return_value=self.inputs[:1]), \
+            patch.object(cli,'from_environment',return_value=self.ledger()),patch.object(cli,'process_pdf') as generate:
+            self.assertEqual(cli.main(),2)
+            generate.assert_not_called()
+        self.assertEqual(len(self.provider.posts),1)
+    def test_schema_boolean_and_float_cannot_resume_integer_schema(self):
+        self.run_task()
+        for folder in ('sources','batches'):
+            path=next((self.root/'ledger'/folder).glob('*.json'));original=path.read_bytes()
+            for bad_schema in (True,1.0):
+                value=json.loads(original);value['schema']=bad_schema;path.write_bytes(m.encoded(value))
+                with self.assertRaises(m.LedgerError):self.run_task()
+            path.write_bytes(original)
+        self.assertEqual(len(self.provider.posts),1)
     def test_only_new_sources_submitted_when_regrouped(self):
         self.run_task(self.inputs[:2]); self.run_task(self.inputs[1:])
         self.assertEqual([len(row[0]) for row in self.provider.posts], [2, 3])
@@ -109,7 +189,9 @@ class LedgerTests(unittest.TestCase):
     def test_truncated_rows_never_mean_complete(self):
         self.provider.custom_rows = lambda items: [{'data_id': items[0]['id'], 'state':'done', 'full_zip_url':'https://result.invalid'}]
         rows, summary = self.run_task()
-        self.assertEqual((len(rows),summary['pending']), (1,4))
+        self.assertEqual((len(rows),summary['completed'],summary['pending']), (0,1,4))
+        self.assertFalse(summary['ready_for_generation'])
+        self.assertEqual(summary['original_batches'][0]['missing'],4)
         self.assertEqual(len(self.provider.posts), 1)
     def test_terminal_batch_cannot_regress_or_truncate(self):
         self.provider.mode = 'done'; self.run_task()
@@ -307,6 +389,28 @@ class StoreAndIntegrationTests(unittest.TestCase):
             version=store.put(key,{'exact':'claim'})
         self.assertEqual(store.get(key),({'exact':'claim'},version))
         self.assertEqual(len(calls),1)
+    def test_r2_exact_readback_rejects_json_numeric_coercion_with_and_without_ack(self):
+        for lost_ack in (False,True):
+            for variant in ('schema_bool','schema_float','nested_bool','nested_float','nested_boolean_int'):
+                with self.subTest(lost_ack=lost_ack,variant=variant):
+                    client=FakeR2();store=m.R2Store('daily',client=client,bucket='private')
+                    actual=client.put_object;writes=[]
+                    value={'schema':1,'nested':{'count':1,'enabled':True}}
+                    def altered(**kwargs):
+                        writes.append(kwargs)
+                        changed=json.loads(kwargs['Body'])
+                        if variant=='schema_bool':changed['schema']=True
+                        elif variant=='schema_float':changed['schema']=1.0
+                        elif variant=='nested_bool':changed['nested']['count']=True
+                        elif variant=='nested_float':changed['nested']['count']=1.0
+                        else:changed['nested']['enabled']=1
+                        raw=m.encoded(changed)
+                        answer=actual(**dict(kwargs,Body=raw,Metadata={'sha256':m.digest(raw)}))
+                        if lost_ack:raise TimeoutError('lost acknowledgement')
+                        return answer
+                    with patch.object(client,'put_object',side_effect=altered),self.assertRaises(m.LedgerError):
+                        store.put('batches/'+'a'*32,value)
+                    self.assertEqual(len(writes),1)
     def test_r2_unknown_write_without_matching_readback_blocks(self):
         client=FakeR2();store=m.R2Store('daily',client=client,bucket='private');key='sources/'+'b'*64
         with patch.object(client,'put_object',side_effect=TimeoutError('unknown')) as put:
