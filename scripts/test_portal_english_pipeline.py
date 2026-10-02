@@ -54,6 +54,112 @@ class EnglishPipelineTests(unittest.TestCase):
         result = build(source, directory, checkpoint, SyntheticTranslator())
         return prepared, source, directory, checkpoint, result
 
+    def failed_inspection_fixture(self):
+        self.admit()
+        prepared = prepare_queued(self.store, self.original)
+        _, _, source = batch_admission(self.store, self.original, prepared['job']['generation'])
+        directory = self.root/'failed-candidate'; checkpoint = self.root/'failed-checkpoint.json'
+        translator = SyntheticTranslator()
+        original = translator.translate
+        translator.translate = lambda value, *a, **kw: 'A' * 600 if value == TITLE else original(value, *a, **kw)
+        manifest = build(source, directory, checkpoint, translator)
+        self.assertEqual(manifest['status'], 'incomplete-candidate')
+        saved_checkpoint = remember_checkpoint(self.store, source['generation'], checkpoint)
+        candidate = persist_candidate(self.store, self.original, source, directory, CPU_PRODUCER)
+        return source, saved_checkpoint, candidate, manifest
+
+    def test_exact_failed_english_inspection_is_read_only_and_excludes_private_text(self):
+        from inspect_portal_extended_continuation import inspect_english
+        source, checkpoint, candidate, _ = self.failed_inspection_fixture()
+        before = copy.deepcopy(self.client.objects)
+        result = inspect_english(self.store, self.original, source['generation'], checkpoint['sha256'],
+                                 candidate['candidate_id'], self.root/'inspection')
+        self.assertEqual(self.client.objects, before)
+        self.assertEqual(result['failure_code_counts'], {'expansion-validation': 1})
+        self.assertEqual(result['failed_documents'][0]['units'][0]['validation'], 'english-text-size')
+        self.assertEqual(result['failed_documents'][0]['units'][0]['cached_characters'], 600)
+        self.assertEqual((result['production_writes'], result['model_calls'], result['paid_provider_requests']), (0, 0, 0))
+        public = (self.root/'inspection/inspection.json').read_text()
+        for private in (TITLE, COMMENT, 'A' * 600, source['documents'][0]['id'], source['documents'][0]['source_url']):
+            self.assertNotIn(private, public)
+        self.assertEqual([path.name for path in (self.root/'inspection').iterdir()], ['inspection.json'])
+
+    def test_english_inspection_rejects_unknown_error_kind_without_printing_it(self):
+        from inspect_portal_extended_continuation import inspect_english
+        source, checkpoint, candidate, manifest = self.failed_inspection_fixture()
+        manifest['failures'][0]['code'] = 'private-commentary-disguised-as-error'
+        raw = stable_bytes(manifest); candidate_id = digest(raw)
+        self.store._put(self.store.key('candidates', source['generation'], candidate_id, 'candidate-manifest.json'),
+                        raw, metadata={'kind': 'synthetic-contaminated-manifest'})
+        before = copy.deepcopy(self.client.objects)
+        with self.assertRaisesRegex(ExpansionError, '^Unrecognized English failure code$'):
+            inspect_english(self.store, self.original, source['generation'], checkpoint['sha256'], candidate_id,
+                            self.root/'rejected')
+        self.assertFalse((self.root/'rejected').exists()); self.assertEqual(self.client.objects, before)
+
+    def test_english_inspection_rejects_corrupt_checkpoint_candidate_and_admission(self):
+        from inspect_portal_extended_continuation import inspect_english
+        source, checkpoint, candidate, _ = self.failed_inspection_fixture()
+        keys = [self.store.checkpoint_object_key('en', source['generation'], checkpoint['sha256']),
+                self.store.key('candidates', source['generation'], candidate['candidate_id'], 'candidate-manifest.json'),
+                self.store.key('batch-admissions', source['generation'], 'receipt.json')]
+        for number, key in enumerate(keys):
+            with self.subTest(key=number):
+                original = copy.deepcopy(self.client.objects[key])
+                self.client.objects[key]['body'] = b'{}'
+                before = copy.deepcopy(self.client.objects)
+                with self.assertRaises((ExpansionError, R2IntegrityError)):
+                    inspect_english(self.store, self.original, source['generation'], checkpoint['sha256'],
+                                    candidate['candidate_id'], self.root/f'corrupt-{number}')
+                self.assertEqual(self.client.objects, before)
+                self.assertFalse((self.root/f'corrupt-{number}').exists())
+                self.client.objects[key] = original
+
+    def test_english_inspection_cli_selects_separate_namespace_and_preserves_storage(self):
+        import inspect_portal_extended_continuation as inspection
+        source, checkpoint, candidate, _ = self.failed_inspection_fixture()
+        args = ['inspect', '--locale', 'en', '--generation', source['generation'],
+                '--checkpoint-sha', checkpoint['sha256'], '--candidate-id', candidate['candidate_id'],
+                '--prefix', self.store.prefix, '--source-prefix', self.original.prefix,
+                '--output', str(self.root/'cli-inspection')]
+        before = copy.deepcopy(self.client.objects)
+        with mock.patch('sys.argv', args), mock.patch.object(inspection.R2Store, 'from_env', return_value=self.store) as make_store, \
+             mock.patch('builtins.print') as printed:
+            inspection.main()
+        make_store.assert_called_once_with(self.store.prefix)
+        self.assertEqual(json.loads(printed.call_args.args[0])['locale'], 'en')
+        self.assertEqual(self.client.objects, before)
+
+    def test_english_failure_counts_are_enumerated_and_never_copy_unknown_text(self):
+        from portal_english_commentary import failure_code_counts
+        identifier = DAY.replace('-', '')+'-'+('a'*16)
+        self.assertEqual(failure_code_counts([{'id': identifier, 'code': 'offline-http-503-memory'}]),
+                         {'offline-http-503-memory': 1})
+        for failures in ([{'id': identifier, 'code': 'PRIVATE RAW ERROR'}],
+                         [{'id': identifier, 'code': 'offline-http-503-private-comment'}],
+                         [{'id': identifier, 'code': 'expansion-validation', 'text': COMMENT}],
+                         [{'id': identifier, 'code': 'expansion-validation'}] * 2):
+            with self.subTest(case=failures), self.assertRaises(ExpansionError):
+                failure_code_counts(failures)
+
+    def test_failed_english_cli_reports_codes_and_preserves_nonzero_exit(self):
+        import portal_english_commentary as english
+        source, checkpoint, candidate, manifest = self.failed_inspection_fixture()
+        corpus = self.root/'cli-source.json'; corpus.write_bytes(stable_bytes(source))
+        args = ['english', '--corpus', str(corpus), '--output', str(self.root/'cli-candidate'),
+                '--checkpoint', str(self.root/'failed-checkpoint.json')]
+        environment = {'GITHUB_ACTIONS': 'true', 'RUNNER_OS': 'Linux',
+                       'GITHUB_REF': 'refs/heads/main', 'KC_PUBLIC_REPOSITORY': 'true'}
+        with mock.patch.dict('os.environ', environment), mock.patch('sys.argv', args), \
+             mock.patch.object(english, 'OfflineTranslator', return_value=SyntheticTranslator()), \
+             mock.patch('builtins.print') as printed:
+            self.assertEqual(english.main(), 1)
+        summary = json.loads(printed.call_args.args[0])
+        self.assertEqual(summary['status'], 'incomplete-candidate')
+        self.assertEqual(summary['failure_code_counts'], {'expansion-validation': 1})
+        self.assertFalse(summary['budget_exhausted'])
+        self.assertNotIn(TITLE, printed.call_args.args[0]); self.assertNotIn(COMMENT, printed.call_args.args[0])
+
     def test_empty_queue_never_crawls_history_or_sets_up_a_model(self):
         self.assertIsNone(prepare_queued(self.store, self.original)['job'])
         self.assertEqual(self.client.objects, {})
