@@ -1,0 +1,55 @@
+name: Inspect durable MinerU terminal failures
+on:
+  pull_request:
+    paths:
+      - .github/workflows/mineru-durable-inspect.yml
+      - scripts/inspect_durable_mineru.py
+      - scripts/test_inspect_durable_mineru.py
+  workflow_dispatch:
+    inputs:
+      request:
+        description: Exact original run and accepted ledger keys; GET only
+        type: string
+        required: true
+permissions:
+  contents: read
+jobs:
+  test:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -B -m unittest discover -s scripts -p 'test_inspect_durable_mineru.py'
+  inspect:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -m pip install 'boto3>=1.37.32,<2'
+      - name: Inspect exact saved tasks and preserve independent private receipt
+        env:
+          INSPECTION_REQUEST: ${{ inputs.request }}
+          MINER_U: ${{ secrets.MINER_U }}
+          MINER_U_2: ${{ secrets.MINER_U_2 }}
+          MINER_U_3: ${{ secrets.MINER_U_3 }}
+          MINER_U_4: ${{ secrets.MINER_U_4 }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: python3 -B scripts/inspect_durable_mineru.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mineru-durable-summary-${{ github.run_id }}
+          path: ${{ runner.temp }}/mineru-durable-summary.json
+          if-no-files-found: error
+          retention-days: 14
