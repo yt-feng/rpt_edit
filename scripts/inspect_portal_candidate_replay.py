@@ -32,6 +32,20 @@ class InspectionError(ValueError):
         self.code = code
 
 
+class PhaseError(ValueError):
+    def __init__(self, stage, error):
+        super().__init__('inspection-failed')
+        self.stage = stage
+        self.error_type = type(error).__name__
+
+
+def phase(stage, function, *args, **kwargs):
+    try:
+        return function(*args, **kwargs)
+    except Exception as error:
+        raise PhaseError(stage, error) from error
+
+
 class VisibleText(HTMLParser):
     def __init__(self):
         super().__init__()
@@ -73,16 +87,16 @@ def validated_corpus(path):
 
 def compare(store, batch, locale, work):
     work.mkdir()
-    store.restore_source(batch['generation'], work/'corpus.json')
-    corpus = validated_corpus(work/'corpus.json')
-    store.restore_candidate(locale, batch['generation'], batch['candidates'][locale], work/'approved')
-    approved, _ = verified_candidate(work/'approved', corpus)
-    restored = store.restore_checkpoint(locale, batch['generation'], work/'seed.json')
+    phase('candidate-source-read', store.restore_source, batch['generation'], work/'corpus.json')
+    corpus = phase('candidate-source-validation', validated_corpus, work/'corpus.json')
+    phase('candidate-read', store.restore_candidate, locale, batch['generation'], batch['candidates'][locale], work/'approved')
+    approved, _ = phase('candidate-validation', verified_candidate, work/'approved', corpus)
+    restored = phase('checkpoint-read', store.restore_checkpoint, locale, batch['generation'], work/'seed.json')
     if not restored.get('present'):
         return {'locale': locale, 'generation': batch['generation'], 'candidate': batch['candidates'][locale],
                 'checkpoint_present': False, 'matches': False, 'failure_codes': {'checkpoint-absent': 1}}
     seed = json.loads((work/'seed.json').read_bytes())
-    replay = build(corpus, locale, work/'replay', work/'replay.json', CacheOnly(),
+    replay = phase('candidate-replay', build, corpus, locale, work/'replay', work/'replay.json', CacheOnly(),
                    allow_source_fallback=True, seed_checkpoint=work/'seed.json')
     rejected, total = [], 0
     for key, row in seed['rows'].items():
@@ -121,7 +135,7 @@ def compare(store, batch, locale, work):
 def read_identity():
     with requests.get(ORIGIN+'/.well-known/edge-state', timeout=(10, 30), allow_redirects=False, stream=True) as response:
         response.raise_for_status()
-        raw = response.raw.read(MAX_STATE_BYTES + 1)
+        raw = response.raw.read(MAX_STATE_BYTES + 1, decode_content=True)
         if len(raw) > MAX_STATE_BYTES: raise InspectionError('oversized-state')
         value = json.loads(raw)
     if not isinstance(value, dict): raise InspectionError('invalid-state')
@@ -132,7 +146,7 @@ def inspect(store, target, expected_release, identity):
     # Refuse a stale deployment identity before reading any private source.
     if identity.get('release_id') != expected_release:
         raise InspectionError('active-release-changed')
-    batches = checked_batches(read_active_batches(store, identity) + [target])
+    batches = checked_batches(phase('active-ledger-read', read_active_batches, store, identity) + [target])
     if len(batches) > MAX_BATCHES: raise InspectionError('too-many-batches')
     owners = {}
     with tempfile.TemporaryDirectory() as tmp:
@@ -140,8 +154,8 @@ def inspect(store, target, expected_release, identity):
         corpora = []
         for index, batch in enumerate(batches):
             path = root/f'source-{index}.json'
-            store.restore_source(batch['generation'], path)
-            corpus = validated_corpus(path)
+            phase('owner-source-read', store.restore_source, batch['generation'], path)
+            corpus = phase('owner-source-validation', validated_corpus, path)
             corpora.append(corpus)
             for locale in batch['candidates']:
                 for doc in corpus['documents']: owners[locale, doc['url']] = index
@@ -165,13 +179,17 @@ def main():
     try:
         target = checked_batches([{'generation': args.generation, 'candidates': {args.locale: args.candidate}}])[0]
         if re.fullmatch(r'[0-9a-f]{32}', args.active_release) is None: raise InspectionError('invalid-release')
-        identity = read_identity()
+        identity = phase('active-identity-read', read_identity)
         # Identity is checked before initializing the private storage client.
         if identity.get('release_id') != args.active_release: raise InspectionError('active-release-changed')
-        result = inspect(R2Store.from_env('_extended-locales/v1'), target, args.active_release, identity)
+        store = phase('storage-configuration', R2Store.from_env, '_extended-locales/v1')
+        result = inspect(store, target, args.active_release, identity)
     except Exception as error:
         code = error.code if isinstance(error, InspectionError) else 'storage-integrity' if isinstance(error, R2StoreError) else 'inspection-failed'
-        print(json.dumps({'status': 'failed', 'code': code, 'production_writes': 0, 'inference_calls': 0}, sort_keys=True))
+        error_type = error.error_type if isinstance(error, PhaseError) else type(error).__name__
+        if re.fullmatch(r'[A-Za-z][A-Za-z0-9_]{0,79}', error_type) is None: error_type = 'Exception'
+        print(json.dumps({'status': 'failed', 'code': code, 'stage': getattr(error, 'stage', 'input-or-summary'),
+                          'error_type': error_type, 'production_writes': 0, 'inference_calls': 0}, sort_keys=True))
         return 1
     print(json.dumps(result, sort_keys=True))
     return 0

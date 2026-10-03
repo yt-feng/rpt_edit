@@ -1,6 +1,8 @@
 """Offline, real candidate/checkpoint diagnostic contracts; no provider calls."""
 import contextlib
 import io
+import gzip
+from urllib3.response import HTTPResponse
 import json
 from pathlib import Path
 import tempfile
@@ -132,6 +134,24 @@ class InspectorTests(unittest.TestCase):
             self.assertEqual(inspector.main(), 1)
         self.assertEqual(json.loads(output.getvalue())['code'], 'inspection-failed')
         self.assertNotIn('secret', output.getvalue()); self.assertNotIn('https', output.getvalue())
+
+    def test_gzip_state_is_decoded_before_bounded_json_parse(self):
+        identity = {'release_id': 'a'*32, 'slot': 'a', 'tree_sha256': 'b'*64}
+        response = mock.MagicMock(); response.__enter__.return_value = response
+        response.raw = HTTPResponse(body=io.BytesIO(gzip.compress(json.dumps(identity).encode())),
+                                    headers={'Content-Encoding': 'gzip'}, preload_content=False)
+        with mock.patch.object(inspector.requests, 'get', return_value=response):
+            self.assertEqual(inspector.read_identity(), identity)
+
+    def test_phase_error_exposes_only_fixed_stage_and_exception_class(self):
+        args = ['inspect', '--generation', 'a'*64, '--locale', 'fr', '--candidate', 'b'*64, '--active-release', 'a'*32]
+        with mock.patch('sys.argv', args), mock.patch.object(inspector, 'read_identity', side_effect=UnicodeDecodeError('utf-8', b'private', 0, 1, 'secret')), \
+             contextlib.redirect_stdout(io.StringIO()) as output:
+            self.assertEqual(inspector.main(), 1)
+        result = json.loads(output.getvalue())
+        self.assertEqual(result['stage'], 'active-identity-read')
+        self.assertEqual(result['error_type'], 'UnicodeDecodeError')
+        self.assertNotIn('secret', output.getvalue()); self.assertNotIn('private', output.getvalue())
 
     def test_state_read_uses_fixed_endpoint_no_redirect_and_size_bound(self):
         response = mock.MagicMock()
