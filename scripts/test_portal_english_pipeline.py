@@ -68,6 +68,28 @@ class EnglishPipelineTests(unittest.TestCase):
         candidate = persist_candidate(self.store, self.original, source, directory, CPU_PRODUCER)
         return source, saved_checkpoint, candidate, manifest
 
+    def test_exact_english_recovery_reads_original_batch_without_mutation(self):
+        from portal_english_pipeline import prepare_exact
+        source, checkpoint, candidate, _ = self.failed_inspection_fixture()
+        before = copy.deepcopy(self.client.objects)
+        result = prepare_exact(self.store, self.original, source['generation'])
+        self.assertEqual(self.client.objects, before)
+        self.assertEqual(result['generation'], source['generation'])
+        self.assertEqual(json.loads(result['locale_jobs_json']), [{'locale': 'en',
+            'generation': source['generation'], 'day': source['day']}])
+        self.assertEqual(result['source_writes'], 0)
+        self.assertEqual(result['source_admission'], '')
+        with self.assertRaises((ExpansionError, R2NotFound)):
+            prepare_exact(self.store, self.original, 'f'*64)
+
+    def test_exact_english_recovery_keeps_existing_cpu_and_publication_bounds(self):
+        workflow = (Path(__file__).resolve().parents[1]/'.github/workflows/portal-extended-locales-r2.yml').read_text()
+        self.assertIn("'extended-locales-r2-pipeline'", workflow)
+        self.assertIn('max-parallel: 2', workflow)
+        self.assertIn('cancel-in-progress: false', workflow)
+        self.assertIn('scripts/portal_english_pipeline.py prepare-exact', workflow)
+        self.assertIn("vars.PORTAL_ENGLISH_AUTO_PUBLISH == 'true'", workflow)
+
     def test_exact_failed_english_inspection_is_read_only_and_excludes_private_text(self):
         from inspect_portal_extended_continuation import inspect_english
         source, checkpoint, candidate, _ = self.failed_inspection_fixture()

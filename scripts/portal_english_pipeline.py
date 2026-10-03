@@ -228,6 +228,18 @@ def prepare_queued(store, source_store, *, limit=24):
     return {'job': None, 'admission': '', 'pending_count': 0, 'selected_pages': 0}
 
 
+def prepare_exact(store, source_store, generation):
+    """Read-only recovery of one already admitted English batch, with no recapture."""
+    proof, admitted, source = batch_admission(store, source_store, generation)
+    return {'has_work': True, 'generation': generation, 'day': source['day'],
+            'locales_json': '["en"]', 'requested_locales': '', 'stopped_locales_json': '[]',
+            'locale_jobs_json': json.dumps([{'locale': 'en', 'generation': generation, 'day': source['day']}]),
+            'source_admission': '', 'english_admission': proof['admission'],
+            'english_pending_count': str(len(pending_docs(store, read_source(store, admitted['generation'])))),
+            'selected_page_count': len(source['documents']), 'recovery_exact_batch': True,
+            'source_writes': 0, 'paid_provider_requests': 0}
+
+
 def batch_admission(store, source_store, generation):
     hash_value(generation)
     proof = read_json(store, store.key('batch-admissions', generation, 'receipt.json'))
@@ -497,7 +509,7 @@ def staging_probe(store):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('operation', choices=['prepare', 'restore-source', 'restore-seed', 'checkpoint', 'candidate', 'followup', 'staging-probe'])
+    parser.add_argument('operation', choices=['prepare', 'prepare-exact', 'restore-source', 'restore-seed', 'checkpoint', 'candidate', 'followup', 'staging-probe'])
     parser.add_argument('--prefix', default=PREFIX); parser.add_argument('--source-prefix', default=DEFAULT_PREFIX)
     parser.add_argument('--generation'); parser.add_argument('--corpus', type=Path); parser.add_argument('--checkpoint', type=Path)
     parser.add_argument('--directory', type=Path); parser.add_argument('--admission'); parser.add_argument('--before', type=int)
@@ -515,6 +527,17 @@ def main():
     source_store = R2Store(store.client, store.bucket, args.source_prefix)
     if args.operation == 'prepare':
         result = prepare_queued(store, source_store)
+    elif args.operation == 'prepare-exact':
+        require(os.environ.get('GITHUB_EVENT_NAME') == 'workflow_dispatch'
+                and os.environ.get('GITHUB_WORKFLOW_REF') == os.environ.get('GITHUB_REPOSITORY', '') +
+                    '/.github/workflows/portal-extended-locales-r2.yml@refs/heads/main',
+                'Exact English recovery requires the serialized reviewed CPU workflow')
+        require(args.generation is not None)
+        result = prepare_exact(store, source_store, args.generation)
+        if args.github_output:
+            with args.github_output.open('a') as stream:
+                for key, value in result.items():
+                    stream.write(key+'='+str(value).lower()+'\n' if isinstance(value, bool) else key+'='+str(value)+'\n')
     elif args.operation == 'restore-source':
         _, _, source = batch_admission(store, source_store, args.generation)
         require(args.corpus is not None); reject_symlinks(args.corpus)
