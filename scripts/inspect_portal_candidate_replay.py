@@ -12,6 +12,7 @@ import json
 from pathlib import Path
 import re
 import tempfile
+import unicodedata
 
 import requests
 
@@ -20,10 +21,13 @@ from build_portal_extended_locales import build, validate_text, safe_failure_cod
 from portal_extended_locales import ORIGIN, daily_corpus_day, digest, validate_corpus
 from portal_extended_publication import CacheOnly, checked_batches, read_active_batches
 from portal_extended_r2 import R2Store, R2StoreError
+from financial_quantity_integrity import quantities
 
 MAX_BATCHES = 36
 MAX_DOCUMENTS = 24
 MAX_STATE_BYTES = 65536
+# Fixed Gregorian calendar names from the local ICU 78.3 bn month table.
+BN_MONTH_ALIASES = (('জানুয়ারি',), ('ফেব্রুয়ারি',), ('মার্চ',), ('এপ্রিল',), ('মে',), ('জুন',), ('জুলাই',), ('আগস্ট',), ('সেপ্টেম্বর',), ('অক্টোবর',), ('নভেম্বর',), ('ডিসেম্বর',))
 
 
 class InspectionError(ValueError):
@@ -85,6 +89,32 @@ def validated_corpus(path):
     return corpus
 
 
+def quantity_signature(source, translated, locale):
+    before, after = quantities(source), quantities(translated)
+    if any(key[0] == 'month' and key[1] is None for key in before.keys() | after.keys()):
+        before, after = quantities(source, bare_months=True), quantities(translated, bare_months=True)
+    missing, added = before - after, after - before
+    result = {'missing_kinds': dict(Counter({kind: sum(n for key, n in missing.items() if key[0] == kind)
+                                          for kind in {k[0] for k in missing}})),
+              'added_kinds': dict(Counter({kind: sum(n for key, n in added.items() if key[0] == kind)
+                                          for kind in {k[0] for k in added}}))}
+    if locale == 'bn':
+        normalized = unicodedata.normalize('NFKC', translated).casefold()
+        matched = Counter()
+        for index, aliases in enumerate(BN_MONTH_ALIASES, 1):
+            pattern = '(?:' + '|'.join(re.escape(unicodedata.normalize('NFKC', name).casefold()) for name in aliases) + ')'
+            # Combining marks are part of Bengali words; ASCII boundaries
+            # alone would also match a calendar name inside another token.
+            for match in re.finditer(pattern, normalized):
+                left = normalized[match.start()-1] if match.start() else ''
+                right = normalized[match.end()] if match.end() < len(normalized) else ''
+                word = lambda c: bool(c) and (c.isalnum() or unicodedata.category(c).startswith('M') or c == '_')
+                if not word(left) and not word(right): matched[('month', None, index)] += 1
+        result['calendar_alias_occurrences'] = sum(matched.values())
+        result['language_scoped_month_repair_matches'] = bool(matched) and before == after + matched
+    return result
+
+
 def compare(store, batch, locale, work):
     work.mkdir()
     phase('candidate-source-read', store.restore_source, batch['generation'], work/'corpus.json')
@@ -105,7 +135,10 @@ def compare(store, batch, locale, work):
         except Exception as error:
             total += 1
             if len(rejected) < 30:
-                rejected.append({'unit_sha256': digest(str(key).encode()), 'code': safe_failure_code(error)})
+                diagnostic = {'unit_sha256': digest(str(key).encode()), 'code': safe_failure_code(error)}
+                if diagnostic['code'] == 'financial-quantity-validation':
+                    diagnostic['quantity_signature'] = quantity_signature(row['source'], row['text'], locale)
+                rejected.append(diagnostic)
     before = {r['path']: r for r in approved['pages']}
     after = {r['path']: r for r in replay['pages']}
     differences = []

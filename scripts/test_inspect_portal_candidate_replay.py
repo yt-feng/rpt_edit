@@ -25,6 +25,24 @@ class InspectorTests(unittest.TestCase):
     def compare(self):
         return inspector.compare(self.store, self.batch, 'fr', self.base/'inspect')
 
+    def test_missing_quantity_category_is_reported_without_values(self):
+        result = inspector.quantity_signature('Revenue USD120m.', 'Revenue USD999m.', 'fr')
+        self.assertEqual(result['missing_kinds'], {'currency': 1})
+        self.assertEqual(result['added_kinds'], {'currency': 1})
+        self.assertNotIn('120', json.dumps(result)); self.assertNotIn('999', json.dumps(result))
+
+    def test_bn_month_signature_proves_exact_calendar_equivalence_only(self):
+        september = inspector.BN_MONTH_ALIASES[8][0]
+        result = inspector.quantity_signature('9月研究报告', september+' গবেষণা প্রতিবেদন', 'bn')
+        self.assertEqual(result['missing_kinds'], {'month': 1})
+        self.assertEqual(result['added_kinds'], {})
+        self.assertTrue(result['language_scoped_month_repair_matches'])
+        self.assertNotIn(september, json.dumps(result))
+        october = inspector.BN_MONTH_ALIASES[9][0]
+        self.assertFalse(inspector.quantity_signature('9月', october, 'bn')['language_scoped_month_repair_matches'])
+        self.assertFalse(inspector.quantity_signature('9月 90%', september+' 80%', 'bn')['language_scoped_month_repair_matches'])
+        self.assertFalse(inspector.quantity_signature('9月', september+'ে', 'bn')['language_scoped_month_repair_matches'])
+
     def test_exact_candidate_replays_without_writes_or_inference(self):
         before = {key: dict(value) for key, value in self.store.client.objects.items()}
         result = self.compare()
