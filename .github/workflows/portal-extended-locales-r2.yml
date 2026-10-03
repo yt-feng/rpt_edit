@@ -17,7 +17,7 @@ on:
         description: "R2 round-trip, daily candidate, or read-only replay of an exact failed generation"
         required: true
         type: choice
-        options: [roundtrip, candidate, recovery-test, publication-resume, publication-check, english-resume]
+        options: [roundtrip, candidate, recovery-test, publication-resume, publication-check, english-resume, checkpoint-repair]
         default: roundtrip
       locales:
         description: "all-supported = 33 non-English locales, or comma-separated subset; English is summary/commentary blog only, no originals/charts; up to 24 new detail pages"
@@ -30,7 +30,7 @@ on:
         type: string
         default: ""
       continuation_evidence:
-        description: "Publication-resume only: exact pre-ledger producer and locale checkpoint/candidate JSON; never resets registered work"
+        description: "Publication-resume exact producer/proofs; checkpoint-repair exact intent and sorted rejected unit hashes; never resets registered work"
         required: false
         type: string
         default: ""
@@ -156,7 +156,7 @@ jobs:
       actions: read
     if: >-
       ${{
-        inputs.operation == 'candidate' || inputs.operation == 'recovery-test' || inputs.operation == 'publication-resume' || inputs.operation == 'english-resume' ||
+        inputs.operation == 'candidate' || inputs.operation == 'recovery-test' || inputs.operation == 'publication-resume' || inputs.operation == 'english-resume' || inputs.operation == 'checkpoint-repair' ||
         (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' &&
          github.event.workflow_run.head_branch == github.event.repository.default_branch &&
          github.event.workflow_run.head_repository.full_name == github.repository) ||
@@ -200,6 +200,12 @@ jobs:
           KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
         run: |
           set -euo pipefail
+          if [ "$REQUESTED_OPERATION" = "checkpoint-repair" ]; then
+            python3 -B scripts/repair_portal_extended_checkpoint.py prepare \
+              --generation "$REQUESTED_SOURCE_GENERATION" --locale "$REQUESTED_LOCALES" \
+              --request "$CONTINUATION_EVIDENCE" --github-output "$GITHUB_OUTPUT"
+            exit 0
+          fi
           if [ "$REQUESTED_OPERATION" = "english-resume" ]; then
             test -n "$REQUESTED_SOURCE_GENERATION"
             python3 -B scripts/portal_english_pipeline.py prepare-exact \
@@ -289,6 +295,7 @@ jobs:
       - name: Install source/R2 client dependencies
         run: python3 -m pip install --disable-pip-version-check "boto3>=1.34,<2" "requests>=2.31,<3"
       - name: Restore fixed source generation
+        if: inputs.operation != 'checkpoint-repair'
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -313,8 +320,17 @@ jobs:
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET: ${{ secrets.R2_BUCKET }}
           REQUESTED_OPERATION: ${{ inputs.operation }}
+          REPAIR_EVIDENCE: ${{ inputs.continuation_evidence }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
+          if [ "$REQUESTED_OPERATION" = "checkpoint-repair" ]; then
+            python3 -B scripts/repair_portal_extended_checkpoint.py restore \
+              --generation "$SOURCE_GENERATION" --locale "$LOCALE" --request "$REPAIR_EVIDENCE" \
+              --checkpoint "$RUNNER_TEMP/locale-checkpoint.json" --corpus "$RUNNER_TEMP/extended-source-corpus.json"
+            echo "present=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           if [ "$LOCALE" = "en" ] || [ "$REQUESTED_OPERATION" = "recovery-test" ]; then
             # English keeps its separate checkpoint lifecycle; read-only
             # diagnostics never claim additional-locale production progress.
@@ -332,6 +348,7 @@ jobs:
             echo "present=false" >> "$GITHUB_OUTPUT"
           fi
       - name: Restore verified incremental unit memo
+        if: inputs.operation != 'checkpoint-repair'
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -366,6 +383,13 @@ jobs:
         id: build
         env:
           KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
+          REQUESTED_OPERATION: ${{ inputs.operation }}
+          REPAIR_EVIDENCE: ${{ inputs.continuation_evidence }}
+          GH_TOKEN: ${{ github.token }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
         run: |
           set -u
           if ! [[ "$TRANSLATION_SECONDS" =~ ^[0-9]+$ ]] || [ "$TRANSLATION_SECONDS" -lt 1 ] || [ "$TRANSLATION_SECONDS" -gt 14400 ]; then
@@ -381,7 +405,12 @@ jobs:
             checkpoint_args+=(--seed-checkpoint "$RUNNER_TEMP/locale-seed.json")
           fi
           set +e
-          if [ "$LOCALE" = "en" ]; then
+          if [ "$REQUESTED_OPERATION" = "checkpoint-repair" ]; then
+            python3 -B scripts/repair_portal_extended_checkpoint.py build \
+              --generation "$SOURCE_GENERATION" --locale "$LOCALE" --request "$REPAIR_EVIDENCE" \
+              --checkpoint "$RUNNER_TEMP/locale-checkpoint.json" --output "$RUNNER_TEMP/extended-candidate" \
+              --seconds "$TRANSLATION_SECONDS" > "$RUNNER_TEMP/build-result.json"
+          elif [ "$LOCALE" = "en" ]; then
             python3 -B scripts/portal_english_commentary.py \
               --corpus "$RUNNER_TEMP/extended-source-corpus.json" \
               --output "$RUNNER_TEMP/extended-candidate" --seconds "$TRANSLATION_SECONDS" \
@@ -404,7 +433,7 @@ jobs:
             exit "$code"
           fi
       - name: Persist checkpoint even when the locale budget ended
-        if: always() && inputs.operation != 'recovery-test'
+        if: always() && inputs.operation != 'recovery-test' && inputs.operation != 'checkpoint-repair'
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -426,7 +455,7 @@ jobs:
             exit 1
           fi
       - name: Persist complete or incomplete candidate pages privately
-        if: always() && inputs.operation != 'recovery-test'
+        if: always() && inputs.operation != 'recovery-test' && inputs.operation != 'checkpoint-repair'
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -445,6 +474,20 @@ jobs:
               --corpus "$RUNNER_TEMP/extended-source-corpus.json" \
               --directory "$RUNNER_TEMP/extended-candidate"
           fi
+      - name: Validate exact repaired units and complete candidate before original-intent adoption
+        if: inputs.operation == 'checkpoint-repair' && steps.build.outputs.exit_code == '0'
+        env:
+          KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          REPAIR_EVIDENCE: ${{ inputs.continuation_evidence }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 -B scripts/repair_portal_extended_checkpoint.py persist \
+            --generation "$SOURCE_GENERATION" --locale "$LOCALE" --request "$REPAIR_EVIDENCE" \
+            --checkpoint "$RUNNER_TEMP/locale-checkpoint.json" --output "$RUNNER_TEMP/extended-candidate"
       - name: Verify recovery result without uploading or marking pages complete
         if: always() && inputs.operation == 'recovery-test'
         run: |
@@ -478,7 +521,7 @@ jobs:
     if: >-
       ${{ always() && !cancelled() && github.ref == 'refs/heads/main' &&
           needs.source.result == 'success' &&
-          (github.event_name == 'workflow_run' || inputs.operation == 'candidate' || inputs.operation == 'publication-resume') &&
+          (github.event_name == 'workflow_run' || inputs.operation == 'candidate' || inputs.operation == 'publication-resume' || inputs.operation == 'checkpoint-repair') &&
           vars.PORTAL_EXTENDED_AUTO_PUBLISH_LOCALES != '' }}
     runs-on: ubuntu-22.04
     timeout-minutes: 20
