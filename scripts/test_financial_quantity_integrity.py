@@ -122,7 +122,8 @@ class FinancialQuantityTests(unittest.TestCase):
                                    ('众议院概率超九成、参议院刚过六成', 'House probability above 90%, Senate just above 60%'),
                                    ('九成五', '95%'), ('共和党在9月才开始', 'Republicans only began in September'),
                                    ('百威亚太3Q26前瞻', 'Budweiser Asia Pacific 3Q26 preview'),
-                                   ('2026年3月', 'March 2026')]:
+                                   ('2026年3月', 'March 2026'), ('9月', 'en septembre'),
+                                   ('9月', 'im September'), ('9月', 'tháng 9')]:
             with self.subTest(source=source):
                 self.assertEqual(quantity_issues(source, translated), [])
         for source, translated in [('50个基点', '50 percentage points'), ('九成', '9%'),
@@ -131,6 +132,9 @@ class FinancialQuantityTests(unittest.TestCase):
             with self.subTest(source=source):
                 self.assertTrue(quantity_issues(source, translated))
         self.assertEqual(quantity_issues('未来可能前进', 'It may march forward'), [])
+        self.assertEqual(quantity_issues('一成不变', 'unchanging'), [])
+        self.assertEqual(quantity_issues('一成不變', 'unchanging'), [])
+        self.assertTrue(quantity_issues('9月', 'en octobre'))
 
     def test_natural_financial_paragraph(self):
         self.assertEqual(quantity_issues(

@@ -139,7 +139,7 @@ def _decimal(value: str) -> Decimal:
     return Decimal(value)
 
 
-def quantities(text: str) -> Counter:
+def quantities(text: str, *, bare_months: bool = False) -> Counter:
     text = _normalized(text)
     found = Counter()
 
@@ -205,14 +205,13 @@ def quantities(text: str) -> Counter:
     take(r"(?<!\d)(\d{1,2})\s*月\s*(\d{1,2})\s*日",
          lambda m: ("month_day", int(m[1]), int(m[2])))
 
-    # Calendar month names in prose carry the same source month as “9月”.
-    # Titlecase unambiguous month names avoid turning the modal “may” or the
-    # verb “march” into a newly invented date. May/March require date context.
+    # A numeric month is explicit in Chinese and Vietnamese. Name-only month
+    # aliases are considered only when either side proves this date category;
+    # ordinary “may” and “march” prose must not introduce calendar quantities.
     take(r"(?<!\d)(1[0-2]|[1-9])\s*月(?!\s*\d)", lambda m: ("month", None, int(m[1])))
-    take(r"\b(?-i:January|February|April|June|July|August|September|October|November|December)\b",
-         lambda m: ("month", None, MONTHS[m[0].casefold()]))
-    take(r"\b(?:in|by|during|since|before|after|until|through|for)\s+(May|March)\b",
-         lambda m: ("month", None, MONTHS[m[1].casefold()]))
+    take(r"\btháng\s+(1[0-2]|[1-9])(?!\d)", lambda m: ("month", None, int(m[1])))
+    if bare_months:
+        take(rf"(?<!\w)({MONTH})(?!\w)", lambda m: ("month", None, MONTHS[m[1].rstrip('.').casefold()]))
 
     # Five-year-plan ordinals translate to 第十五个五年 or “十五五”. Limit
     # this equivalence to plan syntax: ordinary labels such as 第一段 also
@@ -245,7 +244,7 @@ def quantities(text: str) -> Counter:
     # In Chinese financial prose “九成” and “六成” are explicit tenths,
     # equivalent to 90% and 60%, not unquantified words. Preserve fractional
     # tenths (“九成五” = 95%) and reject changed or omitted rates as usual.
-    take(r"(?<![零〇一二两三四五六七八九十\d])([一二两三四五六七八九十])成([零〇一二两三四五六七八九])?",
+    take(r"(?<![零〇一二两三四五六七八九十\d])([一二两三四五六七八九十])成([零〇一二两三四五六七八九])?(?!不变|不變)",
          lambda m: ("percent", Decimal((10 if m[1] == '十' else digits[m[1]]) * 10 +
                                         (digits[m[2]] if m[2] else 0))))
 
@@ -272,6 +271,8 @@ def quantities(text: str) -> Counter:
 
 def quantity_issues(source: str, translated: str, source_language: str = "", target_language: str = "") -> list[str]:
     before, after = quantities(source), quantities(translated)
+    if any(key[0] == "month" and key[1] is None for key in before.keys() | after.keys()):
+        before, after = quantities(source, bare_months=True), quantities(translated, bare_months=True)
     issues = []
     if any(key[0] == 'invalid_date' for key in before.keys() | after.keys()):
         issues.append("invalid_calendar_date")
