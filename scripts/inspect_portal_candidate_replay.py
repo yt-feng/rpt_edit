@@ -12,6 +12,7 @@ import json
 from pathlib import Path
 import re
 import tempfile
+import unicodedata
 
 import requests
 
@@ -20,10 +21,14 @@ from build_portal_extended_locales import build, validate_text, safe_failure_cod
 from portal_extended_locales import ORIGIN, daily_corpus_day, digest, validate_corpus
 from portal_extended_publication import CacheOnly, checked_batches, read_active_batches
 from portal_extended_r2 import R2Store, R2StoreError
+from financial_quantity_integrity import quantities
 
 MAX_BATCHES = 36
 MAX_DOCUMENTS = 24
 MAX_STATE_BYTES = 65536
+CALENDAR_MONTH_ALIASES = json.loads((Path(__file__).parent/'portal_extended_calendar_months.json').read_text(encoding='utf-8'))['languages']
+BN_MONTH_ALIASES = CALENDAR_MONTH_ALIASES['bn']
+MAX_CACHE_AUDITS = 128
 
 
 class InspectionError(ValueError):
@@ -85,6 +90,32 @@ def validated_corpus(path):
     return corpus
 
 
+def quantity_signature(source, translated, locale):
+    before, after = quantities(source), quantities(translated)
+    if any(key[0] == 'month' and key[1] is None for key in before.keys() | after.keys()):
+        before, after = quantities(source, bare_months=True), quantities(translated, bare_months=True)
+    missing, added = before - after, after - before
+    result = {'missing_kinds': dict(Counter({kind: sum(n for key, n in missing.items() if key[0] == kind)
+                                          for kind in {k[0] for k in missing}})),
+              'added_kinds': dict(Counter({kind: sum(n for key, n in added.items() if key[0] == kind)
+                                          for kind in {k[0] for k in added}}))}
+    if locale in CALENDAR_MONTH_ALIASES:
+        normalized = unicodedata.normalize('NFKC', translated).casefold()
+        matched = Counter()
+        for index, aliases in enumerate(CALENDAR_MONTH_ALIASES[locale], 1):
+            pattern = '(?:' + '|'.join(re.escape(unicodedata.normalize('NFKC', name).casefold()) for name in aliases) + ')'
+            # Combining marks are part of Bengali words; ASCII boundaries
+            # alone would also match a calendar name inside another token.
+            for match in re.finditer(pattern, normalized):
+                left = normalized[match.start()-1] if match.start() else ''
+                right = normalized[match.end()] if match.end() < len(normalized) else ''
+                word = lambda c: bool(c) and (c.isalnum() or unicodedata.category(c).startswith('M') or c == '_')
+                if not word(left) and not word(right): matched[('month', None, index)] += 1
+        result['calendar_alias_occurrences'] = sum(matched.values())
+        result['language_scoped_month_repair_matches'] = bool(matched) and before == after + matched
+    return result
+
+
 def compare(store, batch, locale, work):
     work.mkdir()
     phase('candidate-source-read', store.restore_source, batch['generation'], work/'corpus.json')
@@ -105,7 +136,10 @@ def compare(store, batch, locale, work):
         except Exception as error:
             total += 1
             if len(rejected) < 30:
-                rejected.append({'unit_sha256': digest(str(key).encode()), 'code': safe_failure_code(error)})
+                diagnostic = {'unit_sha256': digest(str(key).encode()), 'code': safe_failure_code(error)}
+                if diagnostic['code'] == 'financial-quantity-validation':
+                    diagnostic['quantity_signature'] = quantity_signature(row['source'], row['text'], locale)
+                rejected.append(diagnostic)
     before = {r['path']: r for r in approved['pages']}
     after = {r['path']: r for r in replay['pages']}
     differences = []
@@ -130,6 +164,30 @@ def compare(store, batch, locale, work):
             'replayed_fallbacks': replay.get('source_fallback_unit_count'),
             'checkpoint_rows': len(seed['rows']), 'replayed_cache_hits': replay['cache_hits'],
             'rejected_rows': rejected, 'rejected_rows_total': total, 'changed_pages': differences[:MAX_DOCUMENTS]}
+
+
+def audit_cached_rows(store, batches, corpora, owners, root):
+    results = []
+    for index, (batch, corpus) in enumerate(zip(batches, corpora, strict=True)):
+        for locale in batch['candidates']:
+            if not any(owners[locale, doc['url']] == index for doc in corpus['documents']): continue
+            if len(results) >= MAX_CACHE_AUDITS: raise InspectionError('too-many-cache-audits')
+            path = root/f'audit-{index}-{locale}.json'
+            restored = phase('cache-audit-read', store.restore_checkpoint, locale, batch['generation'], path)
+            if not restored.get('present'):
+                results.append({'batch_index': index, 'locale': locale, 'checkpoint_present': False}); continue
+            payload = json.loads(path.read_bytes()); signatures = []
+            rejected = Counter()
+            for row in payload['rows'].values():
+                try: validate_text(row['source'], row['text'], locale, row['language'])
+                except Exception as error:
+                    code = safe_failure_code(error); rejected[code] += 1
+                    if code == 'financial-quantity-validation' and len(signatures) < 30:
+                        signatures.append(quantity_signature(row['source'], row['text'], locale))
+            results.append({'batch_index': index, 'locale': locale, 'generation': batch['generation'],
+                            'checkpoint_sha256': restored['sha256'], 'cached_rows': len(payload['rows']),
+                            'rejected_codes': dict(rejected), 'quantity_signatures': signatures})
+    return results
 
 
 def read_identity():
@@ -168,7 +226,8 @@ def inspect(store, target, expected_release, identity):
                 result['target_candidate'] = batch == target and locale in target['candidates']
                 results.append(result)
                 if not result['matches']:
-                    return {'status': 'mismatch', 'production_writes': 0, 'inference_calls': 0, 'results': results}
+                    return {'status': 'mismatch', 'production_writes': 0, 'inference_calls': 0, 'results': results,
+                            'carry_forward_cache_audit': audit_cached_rows(store, batches, corpora, owners, root)}
         return {'status': 'all-matched', 'production_writes': 0, 'inference_calls': 0, 'results': results}
 
 

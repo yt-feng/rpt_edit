@@ -25,6 +25,24 @@ class InspectorTests(unittest.TestCase):
     def compare(self):
         return inspector.compare(self.store, self.batch, 'fr', self.base/'inspect')
 
+    def test_missing_quantity_category_is_reported_without_values(self):
+        result = inspector.quantity_signature('Revenue USD120m.', 'Revenue USD999m.', 'fr')
+        self.assertEqual(result['missing_kinds'], {'currency': 1})
+        self.assertEqual(result['added_kinds'], {'currency': 1})
+        self.assertNotIn('120', json.dumps(result)); self.assertNotIn('999', json.dumps(result))
+
+    def test_bn_month_signature_proves_exact_calendar_equivalence_only(self):
+        september = inspector.BN_MONTH_ALIASES[8][0]
+        result = inspector.quantity_signature('9月研究报告', september+' গবেষণা প্রতিবেদন', 'bn')
+        self.assertEqual(result['missing_kinds'], {'month': 1})
+        self.assertEqual(result['added_kinds'], {})
+        self.assertTrue(result['language_scoped_month_repair_matches'])
+        self.assertNotIn(september, json.dumps(result))
+        october = inspector.BN_MONTH_ALIASES[9][0]
+        self.assertFalse(inspector.quantity_signature('9月', october, 'bn')['language_scoped_month_repair_matches'])
+        self.assertFalse(inspector.quantity_signature('9月 90%', september+' 80%', 'bn')['language_scoped_month_repair_matches'])
+        self.assertFalse(inspector.quantity_signature('9月', september+'ে', 'bn')['language_scoped_month_repair_matches'])
+
     def test_exact_candidate_replays_without_writes_or_inference(self):
         before = {key: dict(value) for key, value in self.store.client.objects.items()}
         result = self.compare()
@@ -102,6 +120,27 @@ class InspectorTests(unittest.TestCase):
         self.assertEqual(compare.call_count, 1)
         self.assertEqual(compare.call_args.args[1], target)
         self.assertEqual(result['results'][0]['batch_index'], 1)
+
+    def test_all_remaining_active_cache_audit_is_read_only_and_private(self):
+        target = self.fixture.candidate('pt')
+        self.mutate_checkpoint('Valeur privée 99999%.')
+        before = {key: dict(value) for key, value in self.store.client.objects.items()}
+        with mock.patch.object(inspector, 'read_active_batches', return_value=[self.batch]):
+            result = inspector.inspect(self.store, target, 'a'*32, {'release_id': 'a'*32})
+        audit = result['carry_forward_cache_audit']
+        self.assertEqual([row['locale'] for row in audit], ['fr', 'pt'])
+        self.assertEqual(audit[0]['rejected_codes']['financial-quantity-validation'], 1)
+        self.assertEqual(audit[1]['rejected_codes'], {})
+        self.assertEqual(before, self.store.client.objects)
+        self.assertNotIn('99999', json.dumps(result)); self.assertNotIn('Valeur privée', json.dumps(result))
+
+    def test_checkpoint_audit_count_is_bounded(self):
+        target = self.fixture.candidate('pt')
+        self.mutate_checkpoint('Autre traduction valide.')
+        with mock.patch.object(inspector, 'read_active_batches', return_value=[self.batch]), \
+             mock.patch.object(inspector, 'MAX_CACHE_AUDITS', 1):
+            with self.assertRaisesRegex(inspector.InspectionError, 'too-many-cache-audits'):
+                inspector.inspect(self.store, target, 'a'*32, {'release_id': 'a'*32})
 
     def test_batch_bound_precedes_corpus_restoration(self):
         rows = [{'generation': f'{i:064x}', 'candidates': {'fr': 'c'*64}} for i in range(37)]
