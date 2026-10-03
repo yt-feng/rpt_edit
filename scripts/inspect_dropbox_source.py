@@ -2,6 +2,7 @@
 from __future__ import annotations
 import argparse
 import json
+import re
 from pathlib import Path
 from download_dropbox_latest_pdfs import (dropbox_access_token, list_folder,
     parse_date_folder, recent_date_folder_names, select_date_folder, validate_expected_date_folder)
@@ -13,6 +14,21 @@ def inspect(token, root, expected, *, reader=list_folder):
     result = {'schema_version': 1, 'read_only': True, 'source_root': root,
               'expected_date_folder': expected, 'available_date_folders': names,
               'report_body_downloads': 0, 'source_writes': 0, 'latest_folders': []}
+    root_files = [r for r in entries if r.get('.tag') == 'file']
+    root_modified = [r['server_modified'] for r in root_files if r.get('server_modified')]
+    result['root_file_count'] = len(root_files)
+    result['newest_root_file_modified'] = max(root_modified) if root_modified else None
+    archives = []
+    for row in root_files:
+        match = re.fullmatch(r'([0-9]{6}|[0-9]{8})\.(?:zip|tar\.gz)', row.get('name', ''), re.I)
+        if match:
+            try:
+                day = parse_date_folder(match[1])
+            except RuntimeError:
+                continue
+            archives.append({'date': day.isoformat(), 'bytes': row.get('size', 0),
+                             'server_modified': row.get('server_modified')})
+    result['root_date_archives'] = sorted(archives, key=lambda row: row['date'], reverse=True)[:10]
     for name in names[:3]:
         folder = select_date_folder(entries, name)
         path = folder.get('path_lower') or folder.get('path_display') or root.rstrip('/')+'/'+name
