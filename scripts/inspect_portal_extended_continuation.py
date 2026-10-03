@@ -14,6 +14,11 @@ def quantity_diagnostics(checkpoint):
     failed = []
     total = 0
     for key, row in checkpoint['rows'].items():
+        if not isinstance(key, str) or not HEX64.fullmatch(key):
+            raise ExpansionError('Invalid diagnostic checkpoint unit identity')
+        if (not isinstance(row, dict) or not isinstance(row.get('source'), str)
+            or not isinstance(row.get('text'), str)):
+            raise ExpansionError('Invalid diagnostic checkpoint text fields')
         source, translated = row['source'], row['text']
         if not quantity_issues(source, translated):
             continue
@@ -25,12 +30,19 @@ def quantity_diagnostics(checkpoint):
         if bare_months:
             before, after = quantities(source, bare_months=True), quantities(translated, bare_months=True)
         def signature(counter):
-            return sorted([{'kind': k[0], 'values': [str(v) if v is not None else None for v in k[1:]],
-                            'count': n} for k, n in counter.items()], key=lambda item: json.dumps(item, sort_keys=True))
+            rows = []; truncated = len(counter) > 64
+            for k, n in list(counter.items())[:64]:
+                values = [str(v) if v is not None else None for v in k[1:]]
+                value_truncated = any(v is not None and len(v) > 128 for v in values)
+                truncated = truncated or value_truncated
+                rows.append({'kind': k[0], 'values': [v[:128] if v is not None else None for v in values],
+                             'count': n, 'value_truncated': value_truncated})
+            return {'rows': rows, 'total_rows': len(counter), 'truncated': truncated}
         failed.append({'unit_sha256': key, 'source_sha256': digest(source.encode()),
                        'translated_sha256': digest(translated.encode()),
                        'source_quantities': signature(before), 'translated_quantities': signature(after)})
-    return {'failed_unit_count': total, 'reported_units': failed, 'maximum_reported_units': 20}
+    return {'failed_unit_count': total, 'reported_units': failed, 'maximum_reported_units': 20,
+            'maximum_quantity_rows_per_side': 64, 'maximum_value_characters': 128}
 
 
 def inspect(store, generation, locale, checkpoint_sha, candidate_id, output):
