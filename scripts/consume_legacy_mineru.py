@@ -40,6 +40,7 @@ MAX_FILES = 2000
 MAX_MARKDOWN = 8 * 1024 * 1024
 MAX_JOB_MEMBERS = 5
 WORKFLOW = '.github/workflows/consulting-latest-pdf-to-wechat.yml'
+REPOSITORY = os.environ.get('GITHUB_REPOSITORY', 'example/report-repository')
 SHA = re.compile(r'[a-f0-9]{64}')
 UUID = re.compile(r'[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}')
 DECIMAL_ID = re.compile(r'[1-9][0-9]{0,19}')
@@ -116,7 +117,7 @@ def original_group(log_bytes, manifest_bytes, context):
             'execution_source_sha', 'job_log_sha256', 'manifest_sha256', 'inspection_receipt_sha256'}
     if (not isinstance(context, dict) or set(context) != keys
             or type(context['schema_version']) is not int or context['schema_version'] != 1
-            or context['repository'] != 'yt-feng/rpt_edit' or context['workflow_path'] != WORKFLOW
+            or context['repository'] != REPOSITORY or context['workflow_path'] != WORKFLOW
             or any(not isinstance(context[k], str) or not DECIMAL_ID.fullmatch(context[k]) for k in ('run_id', 'job_id'))
             or not isinstance(context['execution_source_sha'], str)
             or not re.fullmatch(r'[a-f0-9]{40}', context['execution_source_sha'])
@@ -530,7 +531,7 @@ def verify_materialized_output(root, receipt_bytes):
     if (not isinstance(context, dict) or set(context) != {'schema_version', 'repository', 'workflow_path', 'run_id', 'job_id',
             'execution_source_sha', 'job_log_sha256', 'manifest_sha256', 'inspection_receipt_sha256'}
             or type(context['schema_version']) is not int or context['schema_version'] != 1
-            or context['repository'] != 'yt-feng/rpt_edit' or context['workflow_path'] != WORKFLOW
+            or context['repository'] != REPOSITORY or context['workflow_path'] != WORKFLOW
             or any(not isinstance(context[k], str) or not DECIMAL_ID.fullmatch(context[k]) for k in ('run_id', 'job_id'))
             or not isinstance(context['execution_source_sha'], str) or not re.fullmatch(r'[a-f0-9]{40}', context['execution_source_sha'])
             or any(not isinstance(context[k], str) or not SHA.fullmatch(context[k])
@@ -637,9 +638,9 @@ def main():
         parser.add_argument('--' + name, type=Path, required=True)
     args = parser.parse_args()
     if (os.environ.get('GITHUB_ACTIONS') != 'true' or os.environ.get('GITHUB_REF') != 'refs/heads/main'
-            or os.environ.get('GITHUB_REPOSITORY') != 'yt-feng/rpt_edit'
+            or os.environ.get('GITHUB_REPOSITORY') != REPOSITORY
             or os.environ.get('GITHUB_EVENT_NAME') != 'workflow_dispatch'
-            or os.environ.get('GITHUB_WORKFLOW_REF') != 'yt-feng/rpt_edit/.github/workflows/mineru-legacy-consume.yml@refs/heads/main'):
+            or os.environ.get('GITHUB_WORKFLOW_REF') != REPOSITORY+'/.github/workflows/mineru-legacy-consume.yml@refs/heads/main'):
         print(json.dumps({'status': 'legacy-consumption-rejected', 'provider_posts': 0,
                           'paid_requests': 0, 'new_submissions': 0}))
         return 2

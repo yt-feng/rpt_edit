@@ -23,7 +23,7 @@ from inspect_legacy_mineru import canonical
 from persist_legacy_mineru_inspection import PREFIX as INSPECTION_PREFIX, single_attempt_store
 from portal_extended_r2 import R2NotFound, R2Store, R2TransportError
 
-REPOSITORY = 'yt-feng/rpt_edit'
+REPOSITORY = consumer.REPOSITORY
 WORKFLOW = '.github/workflows/mineru-legacy-consume.yml'
 PREFIX = '_workflow-cache/mineru-legacy-outputs/v1'
 MAX_ARTIFACT = 16 * 1024 * 1024

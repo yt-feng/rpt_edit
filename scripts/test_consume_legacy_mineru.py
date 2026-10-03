@@ -62,7 +62,7 @@ def fixture(states=None):
     manifest = canonical({'date': '261003', 'downloaded_count': 5,
                           'downloaded': [{'local_filename': name, 'bytes': 12345} for name in names]})
     receipt_raw = canonical(receipt)
-    context = {'schema_version': 1, 'repository': 'yt-feng/rpt_edit', 'workflow_path': c.WORKFLOW,
+    context = {'schema_version': 1, 'repository': c.REPOSITORY, 'workflow_path': c.WORKFLOW,
         'run_id': '37085542495', 'job_id': '111094944115', 'execution_source_sha': 'b' * 40,
         'job_log_sha256': c.digest(log), 'manifest_sha256': c.digest(manifest),
         'inspection_receipt_sha256': c.digest(receipt_raw)}
@@ -351,7 +351,7 @@ class MaterializerTests(unittest.TestCase):
             files += ['--objects-root', str(objects), '--output', str(root / 'source')]
             output = io.StringIO()
             environment = {'GITHUB_ACTIONS': 'true', 'GITHUB_REF': 'refs/heads/main',
-                           'GITHUB_REPOSITORY': 'yt-feng/rpt_edit', 'GITHUB_EVENT_NAME': 'workflow_dispatch', 'GITHUB_WORKFLOW_REF':'yt-feng/rpt_edit/.github/workflows/mineru-legacy-consume.yml@refs/heads/main'}
+                           'GITHUB_REPOSITORY': c.REPOSITORY, 'GITHUB_EVENT_NAME': 'workflow_dispatch', 'GITHUB_WORKFLOW_REF':c.REPOSITORY+'/.github/workflows/mineru-legacy-consume.yml@refs/heads/main'}
             with patch.dict('os.environ', environment), patch('sys.argv', ['consumer', *files]), patch.object(c, 'materialize', side_effect=OSError('private-token https://private.example/?signed=secret')) as materialize, redirect_stdout(output):
                 self.assertEqual(c.main(), 2)
             materialize.assert_called_once()
