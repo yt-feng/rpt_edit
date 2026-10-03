@@ -1,0 +1,90 @@
+name: Inspect accepted legacy MinerU batches
+run-name: Read-only legacy MinerU terminal-state inspection
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/mineru-legacy-inspect.yml
+      - scripts/inspect_legacy_mineru.py
+      - scripts/test_inspect_legacy_mineru.py
+      - scripts/persist_legacy_mineru_inspection.py
+      - scripts/test_persist_legacy_mineru_inspection.py
+  workflow_dispatch:
+    inputs:
+      request:
+        description: Exact original run/job/batch/credential-slot membership JSON; GET only
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mineru-legacy-inspection-${{ github.run_id }}
+  cancel-in-progress: false
+
+jobs:
+  offline-contract:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -B -m unittest discover -s scripts -p 'test_*legacy_mineru*.py'
+
+  inspect:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && github.event.repository.private == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -m pip install --disable-pip-version-check 'boto3>=1.37.32,<2'
+      - name: Materialize the exact request without shell interpolation
+        env:
+          LEGACY_REQUEST: ${{ inputs.request }}
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          raw = os.environ['LEGACY_REQUEST'].encode()
+          if len(raw) > 65536: raise SystemExit('Legacy request is too large')
+          json.loads(raw)
+          (Path(os.environ['RUNNER_TEMP'])/'legacy-mineru-request.json').write_bytes(raw)
+          PY
+      - name: GET each original accepted batch once using its original credential slot
+        env:
+          MINER_U: ${{ secrets.MINER_U }}
+          MINER_U_2: ${{ secrets.MINER_U_2 }}
+          MINER_U_3: ${{ secrets.MINER_U_3 }}
+          MINER_U_4: ${{ secrets.MINER_U_4 }}
+        run: |
+          python3 -B scripts/inspect_legacy_mineru.py \
+            --input "$RUNNER_TEMP/legacy-mineru-request.json" \
+            --public-summary "$RUNNER_TEMP/legacy-mineru-summary.json" \
+            --private-result "$RUNNER_TEMP/legacy-mineru-private.json" --timeout 20
+      - name: Preserve exact provider metadata in an independent private receipt
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python3 -B scripts/persist_legacy_mineru_inspection.py \
+            --public-summary "$RUNNER_TEMP/legacy-mineru-summary.json" \
+            --private-result "$RUNNER_TEMP/legacy-mineru-private.json"
+      - name: Preserve only public hashes counts and state categories
+        uses: actions/upload-artifact@v4
+        with:
+          name: legacy-mineru-state-inspection-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/legacy-mineru-summary.json
+          if-no-files-found: error
+          retention-days: 14
