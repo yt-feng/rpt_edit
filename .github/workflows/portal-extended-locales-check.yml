@@ -98,6 +98,7 @@ jobs:
           python -B scripts/test_portal_extended_incremental.py
           python -B scripts/test_portal_extended_continuation.py
           python -B scripts/test_portal_extended_recovery_intent.py
+          python -B scripts/test_repair_portal_extended_checkpoint.py
           python -B scripts/test_portal_extended_daily_queue.py
           python -B scripts/test_portal_extended_source_refresh.py
           python -B scripts/test_portal_english_commentary.py

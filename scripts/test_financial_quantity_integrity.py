@@ -4,6 +4,13 @@ from financial_quantity_integrity import quantity_issues
 
 
 class FinancialQuantityTests(unittest.TestCase):
+    def test_singular_basis_point_abbreviation_is_exact_and_does_not_match_words(self):
+        self.assertEqual(quantity_issues('收益率上升50个基点。', 'Yield rose 50 bp.'), [])
+        self.assertEqual(quantity_issues('收益率上升50个基点。', 'Yield rose 50 bps.'), [])
+        self.assertTrue(quantity_issues('收益率上升50个基点。', 'Yield rose 50 bpm.'))
+        self.assertTrue(quantity_issues('收益率上升50个基点。', 'Yield rose 50%.' ))
+        self.assertTrue(quantity_issues('收益率上升50个基点。', 'Yield rose 50 percentage points.'))
+
     def test_equivalent_currency_scale_and_dates(self):
         self.assertEqual(quantity_issues(
             'Cash reserves were USD 120 million and debt was USD 45 million on September 15, 2026.',
