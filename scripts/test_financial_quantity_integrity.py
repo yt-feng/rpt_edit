@@ -133,6 +133,7 @@ class FinancialQuantityTests(unittest.TestCase):
                 self.assertTrue(quantity_issues(source, translated))
         self.assertEqual(quantity_issues('未来可能前进', 'It may march forward'), [])
         self.assertEqual(quantity_issues('9月可能上涨', 'It may rise in September'), [])
+        self.assertEqual(quantity_issues('9月可能', 'September may'), [])
         self.assertEqual(quantity_issues('9月继续推进', 'March forward in September'), [])
         self.assertEqual(quantity_issues('5月', 'May'), [])
         self.assertEqual(quantity_issues('3月', 'in March'), [])

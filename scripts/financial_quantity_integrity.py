@@ -141,6 +141,7 @@ def _decimal(value: str) -> Decimal:
 
 def quantities(text: str, *, bare_months: bool = False) -> Counter:
     text = _normalized(text)
+    original_month_only = text.strip().casefold() in {"may", "march"}
     found = Counter()
 
     def take(pattern: str, key) -> None:
@@ -220,7 +221,7 @@ def quantities(text: str, *, bare_months: bool = False) -> Counter:
              lambda m: ("month", None, MONTHS[m[1].rstrip('.').casefold()]))
         take(r"\b(?:in|by|during|since|before|after|until|through|for|month\s+of)\s+(May|March)\b",
              lambda m: ("month", None, MONTHS[m[1].casefold()]))
-        if text.strip().casefold() in {'may', 'march'}:
+        if original_month_only:
             take(r"\b(May|March)\b", lambda m: ("month", None, MONTHS[m[1].casefold()]))
 
     # Five-year-plan ordinals translate to 第十五个五年 or “十五五”. Limit
