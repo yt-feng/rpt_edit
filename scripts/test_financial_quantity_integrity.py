@@ -141,6 +141,18 @@ class FinancialQuantityTests(unittest.TestCase):
         self.assertEqual(quantity_issues('一成不變', 'unchanging'), [])
         self.assertTrue(quantity_issues('9月', 'en octobre'))
 
+    def test_khmer_basis_points_preserve_exact_scale_and_unit(self):
+        for source, translated in [('增加50个基点', 'កើនឡើង 50 ចំណុចមូលដ្ឋាន'),
+                                   ('增加7个基点', 'កើនឡើង 7 ពិន្ទុមូលដ្ឋាន'),
+                                   ('增加60个基点', 'កើនឡើង ៦០ ចំណុចមូលដ្ឋាន')]:
+            with self.subTest(translated=translated):
+                self.assertEqual(quantity_issues(source, translated, 'zh', 'km'), [])
+        for damaged in ('កើនឡើង 50', 'កើនឡើង 5 ចំណុចមូលដ្ឋាន',
+                        'កើនឡើង 50 ភាគរយ', 'កើនឡើង 50 ចំណុចភាគរយ',
+                        'កើនឡើង 50 ចំណុចមូលដ្ឋាន 50 ចំណុចមូលដ្ឋាន'):
+            with self.subTest(damaged=damaged):
+                self.assertTrue(quantity_issues('增加50个基点', damaged, 'zh', 'km'))
+
     def test_natural_financial_paragraph(self):
         self.assertEqual(quantity_issues(
             'In the first half of 2026, revenue declined by 8.2% year on year, while operating profit increased by 6%. '
