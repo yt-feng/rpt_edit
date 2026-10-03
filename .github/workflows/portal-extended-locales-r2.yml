@@ -17,7 +17,7 @@ on:
         description: "R2 round-trip, daily candidate, or read-only replay of an exact failed generation"
         required: true
         type: choice
-        options: [roundtrip, candidate, recovery-test, publication-resume, publication-check]
+        options: [roundtrip, candidate, recovery-test, publication-resume, publication-check, english-resume]
         default: roundtrip
       locales:
         description: "all-supported = 33 non-English locales, or comma-separated subset; English is summary/commentary blog only, no originals/charts; up to 24 new detail pages"
@@ -156,7 +156,7 @@ jobs:
       actions: read
     if: >-
       ${{
-        inputs.operation == 'candidate' || inputs.operation == 'recovery-test' || inputs.operation == 'publication-resume' ||
+        inputs.operation == 'candidate' || inputs.operation == 'recovery-test' || inputs.operation == 'publication-resume' || inputs.operation == 'english-resume' ||
         (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' &&
          github.event.workflow_run.head_branch == github.event.repository.default_branch &&
          github.event.workflow_run.head_repository.full_name == github.repository) ||
@@ -200,6 +200,12 @@ jobs:
           KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
         run: |
           set -euo pipefail
+          if [ "$REQUESTED_OPERATION" = "english-resume" ]; then
+            test -n "$REQUESTED_SOURCE_GENERATION"
+            python3 -B scripts/portal_english_pipeline.py prepare-exact \
+              --generation "$REQUESTED_SOURCE_GENERATION" --github-output "$GITHUB_OUTPUT"
+            exit 0
+          fi
           source_args=()
           if [ -n "$REQUESTED_SOURCE_GENERATION" ]; then
             source_args+=(--generation "$REQUESTED_SOURCE_GENERATION")
@@ -510,7 +516,7 @@ jobs:
     if: >-
       ${{ always() && !cancelled() && github.ref == 'refs/heads/main' &&
           needs.source.result == 'success' && vars.PORTAL_ENGLISH_AUTO_PUBLISH == 'true' &&
-          (github.event_name == 'workflow_run' || inputs.operation == 'candidate') }}
+          (github.event_name == 'workflow_run' || inputs.operation == 'candidate' || inputs.operation == 'english-resume') }}
     runs-on: ubuntu-22.04
     timeout-minutes: 15
     permissions:
@@ -542,7 +548,7 @@ jobs:
       ${{ always() && !cancelled() && github.ref == 'refs/heads/main' &&
           needs.source.result == 'success' && needs.source.outputs.has_work == 'true' &&
           (needs.source.outputs.source_admission != '' || needs.source.outputs.english_admission != '') &&
-          (github.event_name == 'workflow_run' || inputs.operation == 'candidate') }}
+          (github.event_name == 'workflow_run' || inputs.operation == 'candidate' || inputs.operation == 'english-resume') }}
     runs-on: ubuntu-22.04
     timeout-minutes: 10
     permissions:
