@@ -10,6 +10,11 @@ name: Consulting latest PDF to WeChat
 on:
   workflow_dispatch:
     inputs:
+      legacy_recovery_request:
+        description: "Optional exact authenticated private legacy-output request; restores original date/source, never fetches or submits MinerU"
+        required: false
+        type: string
+        default: ""
       institutions:
         description: "Comma list of consulting sources (mckinsey,bcg). Bain is Cloudflare-blocked."
         required: true
@@ -108,8 +113,31 @@ jobs:
 
       - name: Fetch latest consulting PDFs
         id: fetch
+        env:
+          LEGACY_RECOVERY_REQUEST: ${{ inputs.legacy_recovery_request }}
+          GITHUB_TOKEN: ${{ github.token }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
         run: |
           set -o pipefail
+          if [ -n "$LEGACY_RECOVERY_REQUEST" ]; then
+            python scripts/recover_legacy_mineru_cloud.py restore-output \
+              --request "$LEGACY_RECOVERY_REQUEST" --output "$RUNNER_TEMP/legacy_original_source" \
+              --github-output "$GITHUB_OUTPUT"
+            python - <<'PY'
+          import json, os, shutil
+          from pathlib import Path
+          source = Path(os.environ['RUNNER_TEMP'])/'legacy_original_source'
+          receipt = json.loads((source/'_legacy_output_receipt.json').read_bytes())
+          destination = Path('xhs_notes/consulting')/receipt['date_folder']
+          if destination.exists(): raise SystemExit('Original legacy destination already exists')
+          destination.parent.mkdir(parents=True, exist_ok=True)
+          shutil.move(str(source), str(destination))
+          PY
+            exit 0
+          fi
           DATE="$(TZ=Asia/Shanghai date +%y%m%d)"
           echo "date_folder=$DATE" >> "$GITHUB_OUTPUT"
           python scripts/fetch_institution_latest_pdfs.py \
@@ -123,7 +151,7 @@ jobs:
             2>&1 | tee consulting_fetch_progress.log
 
       - name: Extract MinerU source and original images without paid copy
-        if: ${{ steps.fetch.outputs.pdf_count != '0' }}
+        if: ${{ steps.fetch.outputs.pdf_count != '0' && inputs.legacy_recovery_request == '' }}
         env:
           MINERU_LEDGER_BACKEND: r2
           MINERU_CHECKPOINT_SCOPE: consulting
@@ -180,9 +208,20 @@ jobs:
           DEEPSEEK_USAGE_STAGE: report-article
           DEEPSEEK_API_KEY_BACKUP: ""
           DEEPSEEK_BASE_URL: "https://api.deepseek.com"
+          LEGACY_RECOVERY_REQUEST: ${{ inputs.legacy_recovery_request }}
         run: |
           set -o pipefail
           DATE="${{ steps.fetch.outputs.date_folder }}"
+          if [ -n "$LEGACY_RECOVERY_REQUEST" ]; then
+            python - <<'PY'
+          import os, sys
+          from pathlib import Path
+          sys.path.insert(0, 'scripts')
+          from consume_legacy_mineru import verify_materialized_output
+          root = Path('xhs_notes/consulting')/'${{ steps.fetch.outputs.date_folder }}'
+          verify_materialized_output(root, (root/'_legacy_output_receipt.json').read_bytes())
+          PY
+          fi
           if [ "${{ github.event.inputs.force_reprocess || 'false' }}" = "true" ]; then
             rm -rf "portal_translated_reports/consulting/$DATE"
           fi
@@ -207,6 +246,7 @@ jobs:
             --directory "$RUNNER_TEMP/report-translation-cache"
 
       - name: Commit PDF link archive and seen state
+        if: inputs.legacy_recovery_request == ''
         run: |
           bash scripts/commit_output_dir.sh "institution_feeds" "Update consulting PDF link archive" 8
 
