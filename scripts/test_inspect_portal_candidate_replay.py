@@ -121,6 +121,27 @@ class InspectorTests(unittest.TestCase):
         self.assertEqual(compare.call_args.args[1], target)
         self.assertEqual(result['results'][0]['batch_index'], 1)
 
+    def test_all_remaining_active_cache_audit_is_read_only_and_private(self):
+        target = self.fixture.candidate('pt')
+        self.mutate_checkpoint('Valeur privée 99999%.')
+        before = {key: dict(value) for key, value in self.store.client.objects.items()}
+        with mock.patch.object(inspector, 'read_active_batches', return_value=[self.batch]):
+            result = inspector.inspect(self.store, target, 'a'*32, {'release_id': 'a'*32})
+        audit = result['carry_forward_cache_audit']
+        self.assertEqual([row['locale'] for row in audit], ['fr', 'pt'])
+        self.assertEqual(audit[0]['rejected_codes']['financial-quantity-validation'], 1)
+        self.assertEqual(audit[1]['rejected_codes'], {})
+        self.assertEqual(before, self.store.client.objects)
+        self.assertNotIn('99999', json.dumps(result)); self.assertNotIn('Valeur privée', json.dumps(result))
+
+    def test_checkpoint_audit_count_is_bounded(self):
+        target = self.fixture.candidate('pt')
+        self.mutate_checkpoint('Autre traduction valide.')
+        with mock.patch.object(inspector, 'read_active_batches', return_value=[self.batch]), \
+             mock.patch.object(inspector, 'MAX_CACHE_AUDITS', 1):
+            with self.assertRaisesRegex(inspector.InspectionError, 'too-many-cache-audits'):
+                inspector.inspect(self.store, target, 'a'*32, {'release_id': 'a'*32})
+
     def test_batch_bound_precedes_corpus_restoration(self):
         rows = [{'generation': f'{i:064x}', 'candidates': {'fr': 'c'*64}} for i in range(37)]
         with mock.patch.object(inspector, 'read_active_batches', return_value=rows), \
