@@ -286,6 +286,22 @@ class ContinuationTests(unittest.TestCase):
         with self.assertRaisesRegex(ExpansionError, 'new directory'):
             inspect(self.store, self.gen, 'fr', proof['checkpoint_sha256'], proof['candidate_id'], self.root/'inspection')
 
+    def test_quantity_inspection_emits_bounded_signatures_without_text(self):
+        from inspect_portal_extended_continuation import quantity_diagnostics
+        rows = {str(number): {'source': 'Private source rose 50 basis points.',
+                              'text': 'Private translated wording rose 50 percentage points.'}
+                for number in range(25)}
+        before = copy.deepcopy(rows)
+        result = quantity_diagnostics({'rows': rows})
+        self.assertEqual(rows, before)
+        self.assertEqual(result['failed_unit_count'], 25)
+        self.assertEqual(len(result['reported_units']), 20)
+        first = result['reported_units'][0]
+        self.assertEqual(first['source_quantities'], [{'kind': 'percentage_points', 'values': ['0.5'], 'count': 1}])
+        self.assertEqual(first['translated_quantities'], [{'kind': 'percentage_points', 'values': ['50'], 'count': 1}])
+        self.assertNotIn('Private', json.dumps(result))
+        self.assertEqual(quantity_diagnostics({'rows': {'valid': {'source': '9月', 'text': 'en septembre'}}})['failed_unit_count'], 0)
+
     def test_exact_preledger_adoption_is_bounded_and_cannot_reset_counters(self):
         proof = self.partial(registered=False)
         evidence = {'producer': PRODUCER, 'locales': {'fr': proof}}
