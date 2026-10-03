@@ -4,6 +4,8 @@ on:
   pull_request:
     paths:
       - 'scripts/*extended*'
+      - 'scripts/*portal_candidate_replay*'
+      - '.github/workflows/portal-candidate-replay-inspect.yml'
       - 'scripts/*english_commentary*'
       - 'scripts/*english_ui*'
       - 'scripts/*english_pipeline*'
@@ -33,6 +35,8 @@ on:
     branches: [main, codex/extended-locales-r2-20260924]
     paths:
       - 'scripts/*extended*'
+      - 'scripts/*portal_candidate_replay*'
+      - '.github/workflows/portal-candidate-replay-inspect.yml'
       - 'scripts/*english_commentary*'
       - 'scripts/*english_ui*'
       - 'scripts/*english_pipeline*'
@@ -112,6 +116,7 @@ jobs:
           node --test scripts/test_portal_english_ui.js
           python -B scripts/test_portal_extended_recovery.py
           python -B scripts/test_portal_extended_publication.py
+          python -B scripts/test_inspect_portal_candidate_replay.py
           python -B scripts/test_portal_extended_ui.py
           node --test scripts/test_portal_extended_ui.js
           node --test portal_suite/tests/english-commentary.test.mjs
