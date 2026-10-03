@@ -1,8 +1,12 @@
 import copy
 import json
+import os
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import Mock, patch
+
+import portal_extended_handoff as handoff
 
 from build_portal_extended_locales import build
 from portal_extended_handoff import next_ready_batch, pending_batch, read_handoff, save_handoff, verify_handoff
@@ -90,7 +94,9 @@ class HandoffTests(unittest.TestCase):
         self.assertIn("github.ref == 'refs/heads/main'", workflow)
         self.assertNotIn('pending_deployments', workflow)
         self.assertNotIn('actions/upload-artifact', workflow)
-        self.assertNotIn('needs.source.outputs.has_work', workflow)
+        self.assertIn("inputs.operation != 'checkpoint-repair'", workflow)
+        self.assertIn("needs.source.outputs.has_work == 'true' && needs.locale.result == 'success'", workflow)
+        self.assertIn("needs.source.outputs.has_work == 'false' && needs.locale.result == 'skipped'", workflow)
         self.assertIn('needs.source.outputs.requested_locales', workflow)
 
     def test_completed_but_unpublished_pages_drain_when_translation_is_noop(self):
@@ -120,6 +126,70 @@ class HandoffTests(unittest.TestCase):
         write_state(self.store, 'completed', 'fr', {'pages':pages}, '2026-09-26')
         with self.assertRaisesRegex(ExpansionError, 'outside the selected source day'):
             next_ready_batch(self.store, '2026-09-26', 'fr', 'fr', self.active, self.root/'wrong')
+
+
+class ExactRepairHandoffTests(unittest.TestCase):
+    from test_portal_extended_continuation import ContinuationTests as Fixtures
+    setUp = Fixtures.setUp
+    partial = Fixtures.partial
+    finish = Fixtures.finish
+
+    def argv(self, has_work, locale_result, generation=None):
+        return ['handoff', '--generation', generation or self.gen, '--day', DAY,
+                '--locales', 'fr', '--enabled-locales', 'fr', '--operation', 'checkpoint-repair',
+                '--source-has-work', has_work, '--locale-result', locale_result]
+
+    def test_failed_cancelled_missing_or_unproved_repair_stops_before_storage_or_dispatch(self):
+        # The completed queue can contain an older perfectly valid result;
+        # a failed repair must never drain it or even initialize R2.
+        self.partial(); self.finish()
+        for pair in [('true','failure'), ('true','cancelled'), ('true','skipped'),
+                     ('false','failure'), ('false','success'), ('',''), ('False','skipped')]:
+            with self.subTest(pair=pair), patch('sys.argv', self.argv(*pair)), \
+                 patch.object(handoff.R2Store, 'from_env') as store, \
+                 patch.object(handoff.requests, 'Session') as session, \
+                 patch.object(handoff.subprocess, 'run') as dispatch:
+                with self.assertRaisesRegex(ExpansionError, 'cannot hand off'):
+                    handoff.main()
+                store.assert_not_called(); session.assert_not_called(); dispatch.assert_not_called()
+
+    def test_prepared_no_cpu_resume_dispatches_only_exact_registered_complete_generation(self):
+        self.partial(); result = self.finish()
+        response = Mock(content=b'{}'); response.json.return_value = {}
+        session = Mock(); session.get.return_value = response
+        with patch('sys.argv', self.argv('false', 'skipped')), \
+             patch.object(handoff.R2Store, 'from_env', return_value=self.store), \
+             patch.object(handoff.requests, 'Session') as factory, \
+             patch.object(handoff, 'read_active_batches', return_value=self.active), \
+             patch.object(handoff, 'next_ready_refresh', side_effect=AssertionError('repair drained legacy ready')), \
+             patch.object(handoff.subprocess, 'run') as dispatch:
+            factory.return_value.__enter__.return_value = session
+            handoff.main()
+        command = dispatch.call_args.args[0]
+        self.assertIn('extended_source_generation='+self.gen, command)
+        self.assertIn('extended_candidate_ids=fr='+result['candidate_id'], command)
+        self.assertEqual(dispatch.call_count, 1)
+
+    def test_exact_generation_filter_ignores_old_complete_and_never_falls_back(self):
+        self.partial(); result = self.finish()
+        inventory = {(DAY, '0'*64): {'fr'}, (DAY, self.gen): {'fr'}}
+        with patch('portal_extended_continuation.tracked_generations', return_value=inventory):
+            batch, _ = handoff.next_registered_batch(self.store, 'fr', 'fr', self.active,
+                self.root/'exact', generation=self.gen)
+            self.assertEqual(batch, {'generation':self.gen, 'candidates':{'fr':result['candidate_id']}})
+        response = Mock(content=b'{}'); response.json.return_value = {}
+        session = Mock(); session.get.return_value = response
+        # A successful producer with no exact registered complete result also
+        # cannot select a pre-ledger result from the legacy completed receipts.
+        with patch('sys.argv', self.argv('true', 'success')), \
+             patch.object(handoff.R2Store, 'from_env', return_value=self.store), \
+             patch.object(handoff.requests, 'Session') as factory, \
+             patch.object(handoff, 'read_active_batches', return_value=self.active), \
+             patch('portal_extended_continuation.tracked_generations', return_value={(DAY, '0'*64): {'fr'}}), \
+             patch.object(handoff, 'next_ready_refresh', side_effect=AssertionError('wrong generation fallback')), \
+             patch.object(handoff.subprocess, 'run') as dispatch:
+            factory.return_value.__enter__.return_value = session
+            handoff.main(); dispatch.assert_not_called()
 
 
 if __name__ == '__main__':

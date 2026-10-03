@@ -522,6 +522,9 @@ jobs:
       ${{ always() && !cancelled() && github.ref == 'refs/heads/main' &&
           needs.source.result == 'success' &&
           (github.event_name == 'workflow_run' || inputs.operation == 'candidate' || inputs.operation == 'publication-resume' || inputs.operation == 'checkpoint-repair') &&
+          (inputs.operation != 'checkpoint-repair' ||
+           (needs.source.outputs.has_work == 'true' && needs.locale.result == 'success') ||
+           (needs.source.outputs.has_work == 'false' && needs.locale.result == 'skipped')) &&
           vars.PORTAL_EXTENDED_AUTO_PUBLISH_LOCALES != '' }}
     runs-on: ubuntu-22.04
     timeout-minutes: 20
@@ -548,11 +551,16 @@ jobs:
           SOURCE_DAY: ${{ needs.source.outputs.day }}
           SOURCE_LOCALES: ${{ needs.source.outputs.requested_locales }}
           ENABLED_LOCALES: ${{ vars.PORTAL_EXTENDED_AUTO_PUBLISH_LOCALES }}
+          HANDOFF_OPERATION: ${{ inputs.operation || 'candidate' }}
+          SOURCE_HAS_WORK: ${{ needs.source.outputs.has_work }}
+          LOCALE_RESULT: ${{ needs.locale.result }}
         run: |
           set -euo pipefail
           python3 -B scripts/portal_extended_handoff.py \
             --generation "$SOURCE_GENERATION" --day "$SOURCE_DAY" \
-            --locales "$SOURCE_LOCALES" --enabled-locales "$ENABLED_LOCALES"
+            --locales "$SOURCE_LOCALES" --enabled-locales "$ENABLED_LOCALES" \
+            --operation "$HANDOFF_OPERATION" --source-has-work "$SOURCE_HAS_WORK" \
+            --locale-result "$LOCALE_RESULT"
 
   english_publication_handoff:
     needs: [source, locale]
