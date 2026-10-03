@@ -7,6 +7,7 @@ import xml.etree.ElementTree as ET
 from unittest import mock
 
 from build_portal_extended_locales import build
+from portal_approved_quantity_contract import CONTRACT_ID, PARSER_SHA256, quantity_issues as frozen_quantity_issues
 from portal_extended_locales import ORIGIN, ExpansionError, file_for_url, make_corpus, PublicParser, select_locales
 from portal_extended_publication import compose, checked_batches, read_active_batches
 from restore_assemble_portal_extended_r2 import restored_identity
@@ -55,6 +56,118 @@ class PublicationTests(unittest.TestCase):
     def publish(self, batches):
         workspace = Path(tempfile.mkdtemp(dir=self.base))
         return compose(self.root, self.store, batches, workspace)
+
+    def legacy_bn_candidate(self, *, current_rule=False):
+        body = '<h1>Research</h1><p>政策利率上升'+('九成' if current_rule else '25个基点')+'。</p>'
+        corpus = make_corpus([daily_doc(body=body)])
+        self.number += 1
+        work = self.base/str(self.number); work.mkdir()
+        class Bengali:
+            def translate(self, text, *args, **kwargs):
+                return ('নীতিগত হার ৯০% বৃদ্ধি।' if '九成' in text else
+                        'নীতিগত সুদের হার ২৫ বেসিস পয়েন্ট বেড়েছে।' if '25个基点' in text else 'গবেষণা তথ্য ও বিশ্লেষণ।')
+        result = build(corpus, 'bn', work/'candidate', work/'checkpoint.json', Bengali(),
+                       allow_source_fallback=True, quantity_validator=None if current_rule else frozen_quantity_issues)
+        self.assertEqual(result['status'], 'complete-candidate')
+        generation = corpus['documents_sha256']
+        self.store.put_source(corpus); self.store.put_checkpoint('bn', generation, work/'checkpoint.json')
+        saved = self.store.upload_candidate(work/'candidate', 'bn', generation)
+        target = self.root/file_for_url(URL); target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(raw_page(body=body))
+        return {'generation': generation, 'candidates': {'bn': saved['candidate_id']}}
+
+    def publish_frozen(self, batch):
+        identity = {'slot': 'a', 'release_id': 'a'*32, 'tree_sha256': 'b'*64}
+        workspace = Path(tempfile.mkdtemp(dir=self.base))
+        with mock.patch('portal_extended_publication.read_active_batches', return_value=[batch]) as reader:
+            result = compose(self.root, self.store, [batch], workspace, active_identity=identity)
+        reader.assert_called_once_with(self.store, identity)
+        return result
+
+    def test_authenticated_legacy_bn_candidate_replays_exact_bytes_without_calls(self):
+        batch = self.legacy_bn_candidate()
+        result = self.publish_frozen(batch)
+        self.assertTrue(result['ready']); self.assertEqual(result['page_counts'], {'bn': 1})
+        self.assertEqual(result['replays'][0]['translation_calls'], 0)
+        self.assertEqual(result['replays'][0]['quantity_contract'], CONTRACT_ID)
+        self.assertEqual(result['replays'][0]['quantity_parser_sha256'], PARSER_SHA256)
+        self.assertIn('২৫ বেসিস পয়েন্ট', (self.root/'bn'/file_for_url(URL)).read_text())
+
+    def test_current_rule_approved_candidate_stays_publishable_after_becoming_active(self):
+        batch = self.legacy_bn_candidate(current_rule=True)
+        result = self.publish_frozen(batch)
+        self.assertTrue(result['ready'])
+        self.assertEqual(result['replays'][0]['quantity_contract'], 'current')
+        self.assertEqual(result['replays'][0]['translation_calls'], 0)
+        self.assertIn('৯০%', (self.root/'bn'/file_for_url(URL)).read_text())
+
+    def test_unapproved_incoming_candidate_keeps_current_numeric_gate(self):
+        batch = self.legacy_bn_candidate()
+        with self.assertRaisesRegex(ExpansionError, 'approved candidate bytes'): self.publish([batch])
+        self.assertFalse((self.root/'bn').exists())
+
+    def test_incoming_cannot_forge_an_active_approval_quantity_contract(self):
+        active = self.candidate('fr', url=ORIGIN+'/blog/20260925-active.html')
+        incoming = self.legacy_bn_candidate()
+        incoming['quantity_contract'] = CONTRACT_ID
+        identity = {'slot': 'a', 'release_id': 'a'*32, 'tree_sha256': 'b'*64}
+        with mock.patch('portal_extended_publication.read_active_batches', return_value=[active]):
+            with self.assertRaisesRegex(ExpansionError, 'approved candidate bytes'):
+                compose(self.root, self.store, [active, incoming], Path(tempfile.mkdtemp(dir=self.base)), active_identity=identity)
+        self.assertFalse((self.root/'bn').exists())
+
+    def test_candidate_integrity_failure_is_not_a_parser_fallback(self):
+        batch = self.legacy_bn_candidate()
+        with mock.patch.object(self.store, 'restore_candidate', side_effect=R2IntegrityError('Candidate bytes differ')), \
+             mock.patch('portal_extended_publication.prove_approved_baseline') as proof:
+            with self.assertRaisesRegex(R2IntegrityError, 'Candidate bytes differ'): self.publish_frozen(batch)
+            proof.assert_not_called()
+
+    def test_frozen_approval_rejects_changed_real_number_and_changed_words(self):
+        for text in ('নীতিগত সুদের হার ২৬ বেসিস পয়েন্ট বেড়েছে।', 'ভিন্ন অনুমোদন ২৫ বেসিস পয়েন্ট।'):
+            with self.subTest(text=text):
+                batch = self.legacy_bn_candidate()
+                path = self.base/'poisoned.json'; self.store.restore_checkpoint('bn', batch['generation'], path)
+                seed = json.loads(path.read_bytes())
+                row = next(row for row in seed['rows'].values() if '25个基点' in row['source']); row['text'] = text
+                path.write_text(json.dumps(seed)); self.store.put_checkpoint('bn', batch['generation'], path)
+                with self.assertRaisesRegex(ExpansionError, 'approved candidate bytes'): self.publish_frozen(batch)
+                self.assertFalse((self.root/'bn').exists())
+
+    def test_current_replay_seed_contains_only_units_proved_against_approved_html(self):
+        batch = self.legacy_bn_candidate()
+        path = self.base/'extra.json'; self.store.restore_checkpoint('bn', batch['generation'], path)
+        seed = json.loads(path.read_bytes())
+        seed['rows']['f'*64] = {'source': 'Unapproved extra source.', 'language': 'en', 'text': 'নতুন অগ্রহণযোগ্য লেখা।'}
+        seed.setdefault('source_fallbacks', {})['e'*64] = {'source': 'Unapproved fallback.', 'language': 'en',
+            'policy': 'exact-source-v1', 'code': 'financial-quantity-validation'}
+        path.write_text(json.dumps(seed)); self.store.put_checkpoint('bn', batch['generation'], path)
+        with mock.patch('portal_extended_publication.build', wraps=build) as builder:
+            self.publish_frozen(batch)
+        used_seed = json.loads(next(call for call in builder.call_args_list if call.args[2].name == 'current').kwargs['seed_checkpoint'].read_bytes())
+        self.assertNotIn('f'*64, used_seed['rows'])
+        self.assertNotIn('e'*64, used_seed.get('source_fallbacks', {}))
+        self.assertTrue(all('Unapproved extra' not in row['source'] for row in used_seed['rows'].values()))
+
+    def test_frozen_content_change_is_rejected_even_with_extra_latest_units(self):
+        batch = self.legacy_bn_candidate()
+        checkpoint = self.base/'changed-extra.json'
+        self.store.restore_checkpoint('bn', batch['generation'], checkpoint)
+        seed = json.loads(checkpoint.read_bytes())
+        seed['rows']['f'*64] = {'source': '政策利率上升26个基点。', 'language': 'zh',
+                               'text': 'নীতিগত সুদের হার ২৬ বেসিস পয়েন্ট বেড়েছে।'}
+        checkpoint.write_text(json.dumps(seed)); self.store.put_checkpoint('bn', batch['generation'], checkpoint)
+        path = self.root/file_for_url(URL); path.write_bytes(path.read_bytes().replace('25个基点'.encode(), '26个基点'.encode()))
+        with self.assertRaisesRegex(ExpansionError, 'source content changed'): self.publish_frozen(batch)
+        self.assertFalse((self.root/'bn').exists())
+
+    def test_frozen_contract_requires_authenticated_active_ledger_and_exact_prefix(self):
+        batch = self.legacy_bn_candidate()
+        with mock.patch('portal_extended_publication.read_active_batches', side_effect=RuntimeError('Pinned identity differs')):
+            with self.assertRaisesRegex(RuntimeError, 'Pinned identity'): compose(self.root,self.store,[batch],self.base/'missing',active_identity={'slot':'a'})
+        other = {'generation': 'c'*64, 'candidates': {'bn': 'd'*64}}
+        with mock.patch('portal_extended_publication.read_active_batches', return_value=[other]):
+            with self.assertRaisesRegex(ExpansionError, 'retained exactly'): compose(self.root,self.store,[batch],self.base/'missing',active_identity={'slot':'a'})
 
     def test_head_only_change_replays_exact_units_and_rechecks_current_html(self):
         batch = self.candidate()
