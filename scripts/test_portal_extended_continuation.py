@@ -286,6 +286,34 @@ class ContinuationTests(unittest.TestCase):
         with self.assertRaisesRegex(ExpansionError, 'new directory'):
             inspect(self.store, self.gen, 'fr', proof['checkpoint_sha256'], proof['candidate_id'], self.root/'inspection')
 
+    def test_quantity_inspection_emits_bounded_signatures_without_text(self):
+        from inspect_portal_extended_continuation import quantity_diagnostics
+        rows = {digest(str(number).encode()): {'source': 'Private source rose 50 basis points.',
+                              'text': 'Private translated wording rose 50 percentage points.'}
+                for number in range(25)}
+        before = copy.deepcopy(rows)
+        result = quantity_diagnostics({'rows': rows})
+        self.assertEqual(rows, before)
+        self.assertEqual(result['failed_unit_count'], 25)
+        self.assertEqual(len(result['reported_units']), 20)
+        first = result['reported_units'][0]
+        self.assertEqual(first['source_quantities'], {'rows': [{'kind': 'percentage_points', 'values': ['0.5'], 'count': 1,
+                                                             'value_truncated': False}], 'total_rows': 1, 'truncated': False})
+        self.assertEqual(first['translated_quantities']['rows'][0]['values'], ['50'])
+        self.assertNotIn('Private', json.dumps(result))
+        self.assertEqual(quantity_diagnostics({'rows': {digest(b'valid'): {'source': '9月', 'text': 'en septembre'}}})['failed_unit_count'], 0)
+        with self.assertRaisesRegex(ExpansionError, 'unit identity'):
+            quantity_diagnostics({'rows': {'private-key': {'source': '9月', 'text': 'May'}}})
+        huge = '9' * 500
+        crowded = ' '.join([huge] + [str(n) for n in range(1, 80)])
+        bounded = quantity_diagnostics({'rows': {digest(b'bounded'): {'source': crowded, 'text': '0'}}})['reported_units'][0]
+        side = bounded['source_quantities']
+        self.assertEqual(side['total_rows'], 80)
+        self.assertEqual(len(side['rows']), 64)
+        self.assertTrue(side['truncated'])
+        self.assertEqual(len(side['rows'][0]['values'][0]), 128)
+        self.assertTrue(side['rows'][0]['value_truncated'])
+
     def test_exact_preledger_adoption_is_bounded_and_cannot_reset_counters(self):
         proof = self.partial(registered=False)
         evidence = {'producer': PRODUCER, 'locales': {'fr': proof}}

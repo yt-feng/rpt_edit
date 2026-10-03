@@ -8,6 +8,43 @@ from portal_extended_r2 import (DEFAULT_PREFIX, HEX64, MAX_CHECKPOINT_BYTES,
     MAX_CANDIDATE_MANIFEST_BYTES, R2Store, checkpoint_is_valid, partial_manifest_is_valid, safe_part)
 
 
+def quantity_diagnostics(checkpoint):
+    """Bounded numeric signatures only; never emit either checkpoint text."""
+    from financial_quantity_integrity import quantities, quantity_issues
+    failed = []
+    total = 0
+    for key, row in checkpoint['rows'].items():
+        if not isinstance(key, str) or not HEX64.fullmatch(key):
+            raise ExpansionError('Invalid diagnostic checkpoint unit identity')
+        if (not isinstance(row, dict) or not isinstance(row.get('source'), str)
+            or not isinstance(row.get('text'), str)):
+            raise ExpansionError('Invalid diagnostic checkpoint text fields')
+        source, translated = row['source'], row['text']
+        if not quantity_issues(source, translated):
+            continue
+        total += 1
+        if len(failed) >= 20:
+            continue
+        before, after = quantities(source), quantities(translated)
+        bare_months = any(k[0] == 'month' and k[1] is None for k in before.keys() | after.keys())
+        if bare_months:
+            before, after = quantities(source, bare_months=True), quantities(translated, bare_months=True)
+        def signature(counter):
+            rows = []; truncated = len(counter) > 64
+            for k, n in list(counter.items())[:64]:
+                values = [str(v) if v is not None else None for v in k[1:]]
+                value_truncated = any(v is not None and len(v) > 128 for v in values)
+                truncated = truncated or value_truncated
+                rows.append({'kind': k[0], 'values': [v[:128] if v is not None else None for v in values],
+                             'count': n, 'value_truncated': value_truncated})
+            return {'rows': rows, 'total_rows': len(counter), 'truncated': truncated}
+        failed.append({'unit_sha256': key, 'source_sha256': digest(source.encode()),
+                       'translated_sha256': digest(translated.encode()),
+                       'source_quantities': signature(before), 'translated_quantities': signature(after)})
+    return {'failed_unit_count': total, 'reported_units': failed, 'maximum_reported_units': 20,
+            'maximum_quantity_rows_per_side': 64, 'maximum_value_characters': 128}
+
+
 def inspect(store, generation, locale, checkpoint_sha, candidate_id, output):
     for value, label in ((generation, 'generation'), (checkpoint_sha, 'checkpoint sha'), (candidate_id, 'candidate')):
         safe_part(value, label=label, pattern=HEX64)
@@ -53,6 +90,7 @@ def inspect(store, generation, locale, checkpoint_sha, candidate_id, output):
         'failure_count': len(manifest.get('failures', [])), 'completed_page_count': len(completed),
         'remaining_source_urls': sorted(source_urls - set(completed)),
         'next_pending_unit': pending_summary, 'checkpoint_policy': 'validated-units-with-source-fallback',
+        'quantity_diagnostics': quantity_diagnostics(checkpoint),
         'paid_provider_requests': 0,
         'production_writes': 0, 'model_calls': 0}
     (output/'inspection.json').write_bytes(stable_bytes(result))
