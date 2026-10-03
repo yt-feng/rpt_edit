@@ -102,7 +102,7 @@ jobs:
         run: |
           pip install -r requirements.txt
           pip install reportlab
-          python -m pip install boto3
+          python -m pip install "boto3>=1.37.32,<2"
 
       - name: Test institution PDF resolver
         run: python scripts/test_fetch_institution_latest_pdfs.py
@@ -135,6 +135,12 @@ jobs:
       - name: Extract MinerU source and original images without paid copy
         if: ${{ steps.fetch.outputs.pdf_count != '0' }}
         env:
+          MINERU_LEDGER_BACKEND: r2
+          MINERU_CHECKPOINT_SCOPE: institution
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
           MINER_U: ${{ secrets.MINER_U }}
           MINER_U_2: ${{ secrets.MINER_U_2 }}
           MINER_U_3: ${{ secrets.MINER_U_3 }}

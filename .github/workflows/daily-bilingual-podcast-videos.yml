@@ -96,7 +96,7 @@ jobs:
           sudo apt-get install -y --no-install-recommends ffmpeg fonts-noto-cjk fonts-arphic-ukai fonts-wqy-microhei fonts-wqy-zenhei
 
       - name: Install Python dependencies
-        run: pip install -r requirements.txt
+        run: pip install -r requirements.txt "boto3>=1.37.32,<2"
 
       - name: Download latest Dropbox PDFs
         id: dropbox
@@ -139,6 +139,12 @@ jobs:
 
       - name: Convert selected PDFs to notes and chart assets
         env:
+          MINERU_LEDGER_BACKEND: r2
+          MINERU_CHECKPOINT_SCOPE: bilingual-podcast
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
           MINER_U: ${{ secrets.MINER_U }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_REPORT_NOTES_API_KEY }}
           DEEPSEEK_BASE_URL: ${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}

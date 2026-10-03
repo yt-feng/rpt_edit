@@ -406,13 +406,11 @@ def verify_origin_run(origin, run, jobs, repository, *, admitted=None):
         raise ExpansionError('Original source job does not prove the daily source date')
 
 
-def adopt_existing(store, corpus, locales, evidence, repository, api):
-    """One explicit migration of exact pre-ledger objects; no listing/backfill."""
+def validate_existing(store, corpus, locales, evidence, repository, api):
+    """Read-only verification of exact pre-ledger objects; no listing/backfill."""
     import tempfile
     from inspect_portal_extended_continuation import inspect
     generation = corpus['documents_sha256']
-    if read_origin(store, generation) is not None:
-        raise ExpansionError('Generation is already registered; adoption cannot reset continuation limits')
     if not isinstance(evidence, dict) or set(evidence) != {'producer', 'locales'}:
         raise ExpansionError('Invalid exact existing-generation evidence')
     producer = producer_identity(evidence['producer'])
@@ -439,6 +437,14 @@ def adopt_existing(store, corpus, locales, evidence, repository, api):
                 or summary['failure_count'] != 0 or not checkpoint_evidence(store, locale, generation, proof['checkpoint_sha256'])):
                 raise ExpansionError('Existing generation is not a proved checkpointed budget continuation')
             validated[locale] = proof
+    return producer, validated
+
+
+def adopt_existing(store, corpus, locales, evidence, repository, api):
+    """One explicit migration of exact pre-ledger objects; no listing/backfill."""
+    if read_origin(store, corpus['documents_sha256']) is not None:
+        raise ExpansionError('Generation is already registered; adoption cannot reset continuation limits')
+    producer, validated = validate_existing(store, corpus, locales, evidence, repository, api)
     # Every locale and GitHub origin has been verified before any private writes.
     register(store, corpus, locales, producer)
     for locale, proof in validated.items():

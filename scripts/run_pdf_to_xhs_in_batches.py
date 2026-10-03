@@ -13,6 +13,7 @@ to MinerU again.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -134,7 +135,7 @@ def copy_batch_to_temp(batch: list[PDFRecord], tmp_input: Path) -> list[dict[str
     return copied
 
 
-def build_child_command(args: argparse.Namespace, tmp_input: Path) -> list[str]:
+def build_child_command(args: argparse.Namespace, tmp_input: Path, source_map: Path | None = None) -> list[str]:
     cmd = [
         sys.executable,
         "scripts/pdf_to_xhs_batch.py",
@@ -160,6 +161,8 @@ def build_child_command(args: argparse.Namespace, tmp_input: Path) -> list[str]:
         "--mineru-no-progress-timeout", str(args.mineru_no_progress_timeout),
         "--watermark", args.watermark,
     ]
+    if source_map is not None:
+        cmd.extend(["--mineru-source-map", str(source_map)])
     if not args.wechat_title_refine:
         cmd.append("--no-wechat-title-refine")
     if args.chart_source_only:
@@ -176,7 +179,21 @@ def run_batch(batch_index: int, batch: list[PDFRecord], args: argparse.Namespace
         tmp_input = Path(tmp) / "pdfs"
         copied = copy_batch_to_temp(batch, tmp_input)
         log(f"Running batch {batch_index}: {len(batch)} PDFs")
-        cmd = build_child_command(args, tmp_input)
+        root = Path(args.input_dir).resolve()
+        bindings = {}
+        for item in copied:
+            source = Path(item["source"])
+            if source.is_symlink() or root not in source.resolve().parents:
+                raise RuntimeError("PDF escapes frozen input directory")
+            target = Path(item["batch_file"])
+            raw = target.read_bytes()
+            if raw != source.read_bytes():
+                raise RuntimeError("PDF changed while freezing batch input")
+            bindings[target.name] = {"source": source.relative_to(root).as_posix(),
+                "size": len(raw), "sha256": hashlib.sha256(raw).hexdigest()}
+        source_map = Path(tmp) / "mineru-source-map.json"
+        source_map.write_text(json.dumps({"schema": 1, "files": bindings}), encoding="utf-8")
+        cmd = build_child_command(args, tmp_input, source_map)
         result = subprocess.run(cmd, text=True)
         return {
             "batch_index": batch_index,
@@ -288,7 +305,9 @@ def main() -> int:
         write_empty_summary(output_dir, input_dir, args, total_pdf_count=len(all_pdfs), skipped=skipped_existing)
         return 0
 
-    batch_size = max(1, int(args.batch_size))
+    batch_size = int(args.batch_size)
+    if not 1 <= batch_size <= 5:
+        raise ValueError("MinerU batch_size must remain between one and five")
     continue_on_error = str(args.continue_on_batch_error).lower() in {"1", "true", "yes", "y", "on"}
     log(
         f"Found {len(all_pdfs)} total PDFs; shard {args.shard_index}/{args.shard_count} "
@@ -345,10 +364,8 @@ def main() -> int:
     })
     if failures:
         log(f"Completed with {failures} failed batch(es). See {output_dir / 'batch_run_summary.json'}")
-        if generated_report_count == 0:
-            log("No publish-ready report directories were generated; treating this shard as failed.")
-            return 2
-        return 0 if continue_on_error else 2
+        # Continuing independent batches never converts incomplete extraction to green.
+        return 75 if all(item.get("returncode") in (0, 75) for item in summary) else 2
     log(f"All batches completed successfully. Generated {generated_report_count} report directories.")
     return 0
 

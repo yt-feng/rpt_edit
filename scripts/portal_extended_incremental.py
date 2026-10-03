@@ -228,6 +228,10 @@ def main() -> int:
                         'sha': os.environ['GITHUB_SHA']}
         if args.continuation_evidence and not publication:
             raise ExpansionError('Existing-generation adoption is only allowed by explicit publication-resume')
+        if producer and args.operation == 'prepare' and not args.generation:
+            from portal_extended_recovery_intent import consume_one
+            from review_portal_extended_handoff import api
+            consume_one(store, locales, os.environ['GITHUB_REPOSITORY'], api)
         stopped = []
         if producer and not recovery:
             from portal_extended_continuation import partition_stopped_locales
