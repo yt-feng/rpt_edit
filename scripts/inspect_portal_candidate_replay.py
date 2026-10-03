@@ -26,8 +26,9 @@ from financial_quantity_integrity import quantities
 MAX_BATCHES = 36
 MAX_DOCUMENTS = 24
 MAX_STATE_BYTES = 65536
-# Fixed Gregorian calendar names from the local ICU 78.3 bn month table.
-BN_MONTH_ALIASES = (('জানুয়ারি',), ('ফেব্রুয়ারি',), ('মার্চ',), ('এপ্রিল',), ('মে',), ('জুন',), ('জুলাই',), ('আগস্ট',), ('সেপ্টেম্বর',), ('অক্টোবর',), ('নভেম্বর',), ('ডিসেম্বর',))
+CALENDAR_MONTH_ALIASES = json.loads((Path(__file__).parent/'portal_extended_calendar_months.json').read_text(encoding='utf-8'))['languages']
+BN_MONTH_ALIASES = CALENDAR_MONTH_ALIASES['bn']
+MAX_CACHE_AUDITS = 128
 
 
 class InspectionError(ValueError):
@@ -98,10 +99,10 @@ def quantity_signature(source, translated, locale):
                                           for kind in {k[0] for k in missing}})),
               'added_kinds': dict(Counter({kind: sum(n for key, n in added.items() if key[0] == kind)
                                           for kind in {k[0] for k in added}}))}
-    if locale == 'bn':
+    if locale in CALENDAR_MONTH_ALIASES:
         normalized = unicodedata.normalize('NFKC', translated).casefold()
         matched = Counter()
-        for index, aliases in enumerate(BN_MONTH_ALIASES, 1):
+        for index, aliases in enumerate(CALENDAR_MONTH_ALIASES[locale], 1):
             pattern = '(?:' + '|'.join(re.escape(unicodedata.normalize('NFKC', name).casefold()) for name in aliases) + ')'
             # Combining marks are part of Bengali words; ASCII boundaries
             # alone would also match a calendar name inside another token.
@@ -165,6 +166,30 @@ def compare(store, batch, locale, work):
             'rejected_rows': rejected, 'rejected_rows_total': total, 'changed_pages': differences[:MAX_DOCUMENTS]}
 
 
+def audit_cached_rows(store, batches, corpora, owners, root):
+    results = []
+    for index, (batch, corpus) in enumerate(zip(batches, corpora, strict=True)):
+        for locale in batch['candidates']:
+            if not any(owners[locale, doc['url']] == index for doc in corpus['documents']): continue
+            if len(results) >= MAX_CACHE_AUDITS: raise InspectionError('too-many-cache-audits')
+            path = root/f'audit-{index}-{locale}.json'
+            restored = phase('cache-audit-read', store.restore_checkpoint, locale, batch['generation'], path)
+            if not restored.get('present'):
+                results.append({'batch_index': index, 'locale': locale, 'checkpoint_present': False}); continue
+            payload = json.loads(path.read_bytes()); signatures = []
+            rejected = Counter()
+            for row in payload['rows'].values():
+                try: validate_text(row['source'], row['text'], locale, row['language'])
+                except Exception as error:
+                    code = safe_failure_code(error); rejected[code] += 1
+                    if code == 'financial-quantity-validation' and len(signatures) < 30:
+                        signatures.append(quantity_signature(row['source'], row['text'], locale))
+            results.append({'batch_index': index, 'locale': locale, 'generation': batch['generation'],
+                            'checkpoint_sha256': restored['sha256'], 'cached_rows': len(payload['rows']),
+                            'rejected_codes': dict(rejected), 'quantity_signatures': signatures})
+    return results
+
+
 def read_identity():
     with requests.get(ORIGIN+'/.well-known/edge-state', timeout=(10, 30), allow_redirects=False, stream=True) as response:
         response.raise_for_status()
@@ -201,7 +226,8 @@ def inspect(store, target, expected_release, identity):
                 result['target_candidate'] = batch == target and locale in target['candidates']
                 results.append(result)
                 if not result['matches']:
-                    return {'status': 'mismatch', 'production_writes': 0, 'inference_calls': 0, 'results': results}
+                    return {'status': 'mismatch', 'production_writes': 0, 'inference_calls': 0, 'results': results,
+                            'carry_forward_cache_audit': audit_cached_rows(store, batches, corpora, owners, root)}
         return {'status': 'all-matched', 'production_writes': 0, 'inference_calls': 0, 'results': results}
 
 
