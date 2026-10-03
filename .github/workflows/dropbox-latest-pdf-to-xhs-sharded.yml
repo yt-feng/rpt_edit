@@ -156,7 +156,7 @@ jobs:
         run: |
           echo "dropbox_root=${{ github.event.inputs.dropbox_root || '/zip_backup' }}" >> "$GITHUB_OUTPUT"
           echo "dropbox_date_folder=${{ github.event.inputs.dropbox_date_folder || '' }}" >> "$GITHUB_OUTPUT"
-          if [ "${{ github.event_name }}" = "schedule" ]; then
+          if [ "${{ github.event_name }}" = "schedule" ] || [ -z "${{ github.event.inputs.dropbox_date_folder }}" ]; then
             echo "expected_dropbox_date_folder=$(TZ=Asia/Shanghai date +%y%m%d)" >> "$GITHUB_OUTPUT"
           else
             echo "expected_dropbox_date_folder=" >> "$GITHUB_OUTPUT"
@@ -187,7 +187,7 @@ jobs:
         run: |
           echo "::notice::Daily schedule is 02:00 Asia/Shanghai, 90 minutes after the usual 00:30 Dropbox readiness time. XHS, Xianyu, podcast copy and podcast audio/video are disabled."
           if [ -n "${{ steps.vars.outputs.expected_dropbox_date_folder }}" ]; then
-            echo "::notice::Scheduled runs require the latest Dropbox batch within one calendar day of Beijing run date ${{ steps.vars.outputs.expected_dropbox_date_folder }}; older or future-dated batches fail closed."
+            echo "::notice::Latest-source runs require the latest Dropbox batch within one calendar day of Beijing run date ${{ steps.vars.outputs.expected_dropbox_date_folder }}; older or future-dated batches fail closed."
           fi
           echo "::notice::Report selection mode=${{ steps.vars.outputs.report_selection_mode }}. Default all mode keeps stock/company reports for long-tail WeChat search."
           echo "::notice::Default plan processes ALL selected candidates, sharded as 40 x 5 = up to 200 reports."

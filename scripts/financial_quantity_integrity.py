@@ -182,12 +182,12 @@ def quantities(text: str) -> Counter:
          lambda m: ("quarter", period_year(m[1]), ordinals.get(m[2], int(m[2]) if m[2].isdigit() else 0)))
     take(rf"\bQ([1-4])\s*[,'’\-]?\s*({year})\b", lambda m: ("quarter", period_year(m[2]), int(m[1])))
     take(rf"\b({year})\s*Q([1-4])\b", lambda m: ("quarter", period_year(m[1]), int(m[2])))
-    take(rf"\b([1-4])Q\s*['’]?\s*({year})\b", lambda m: ("quarter", period_year(m[2]), int(m[1])))
+    take(rf"(?<![A-Za-z0-9])([1-4])Q\s*['’]?\s*({year})(?![A-Za-z0-9])", lambda m: ("quarter", period_year(m[2]), int(m[1])))
     take(rf"\b(first|second|third|fourth)\s+quarter(?:\s+of)?\s+({year})\b",
          lambda m: ("quarter", period_year(m[2]), ordinals[m[1].casefold()]))
     take(rf"\bH([12])\s*['’]?\s*({year})\b", lambda m: ("half", period_year(m[2]), int(m[1])))
     take(rf"\b({year})\s*H([12])\b", lambda m: ("half", period_year(m[1]), int(m[2])))
-    take(rf"\b([12])H\s*['’]?\s*({year})\b", lambda m: ("half", period_year(m[2]), int(m[1])))
+    take(rf"(?<![A-Za-z0-9])([12])H\s*['’]?\s*({year})(?![A-Za-z0-9])", lambda m: ("half", period_year(m[2]), int(m[1])))
     take(rf"\b(first|second)\s+half(?:\s+of)?\s+({year})\b",
          lambda m: ("half", period_year(m[2]), ordinals[m[1].casefold()]))
     take(rf"(?<!\d)({year})\s*年\s*([上下])半年", lambda m: ("half", period_year(m[1]), 1 if m[2] == '上' else 2))
@@ -204,6 +204,15 @@ def quantities(text: str) -> Counter:
          lambda m: ("month_day", MONTHS[m[1].rstrip('.').casefold()], int(m[2])))
     take(r"(?<!\d)(\d{1,2})\s*月\s*(\d{1,2})\s*日",
          lambda m: ("month_day", int(m[1]), int(m[2])))
+
+    # Calendar month names in prose carry the same source month as “9月”.
+    # Titlecase unambiguous month names avoid turning the modal “may” or the
+    # verb “march” into a newly invented date. May/March require date context.
+    take(r"(?<!\d)(1[0-2]|[1-9])\s*月(?!\s*\d)", lambda m: ("month", None, int(m[1])))
+    take(r"\b(?-i:January|February|April|June|July|August|September|October|November|December)\b",
+         lambda m: ("month", None, MONTHS[m[0].casefold()]))
+    take(r"\b(?:in|by|during|since|before|after|until|through|for)\s+(May|March)\b",
+         lambda m: ("month", None, MONTHS[m[1].casefold()]))
 
     # Five-year-plan ordinals translate to 第十五个五年 or “十五五”. Limit
     # this equivalence to plan syntax: ordinary labels such as 第一段 also
@@ -233,6 +242,13 @@ def quantities(text: str) -> Counter:
     take(r"(?<!\d)(\d+)(?:वीं|वां|वाँ)?\s*पंचवर्षीय",
          lambda m: ("five_year_plan", int(m[1])))
 
+    # In Chinese financial prose “九成” and “六成” are explicit tenths,
+    # equivalent to 90% and 60%, not unquantified words. Preserve fractional
+    # tenths (“九成五” = 95%) and reject changed or omitted rates as usual.
+    take(r"(?<![零〇一二两三四五六七八九十\d])([一二两三四五六七八九十])成([零〇一二两三四五六七八九])?",
+         lambda m: ("percent", Decimal((10 if m[1] == '十' else digits[m[1]]) * 10 +
+                                        (digits[m[2]] if m[2] else 0))))
+
     # Currency recognition comes before scaled plain numbers. Keep the unit
     # separate so USD120m can never match an unqualified 120 or CNY120m.
     def money(m):
@@ -241,7 +257,7 @@ def quantities(text: str) -> Counter:
     # Alphabetic boundaries avoid interpreting the suffix of e.g. "dollars".
     take(rf"(?<![A-Za-z])(?P<currency>{CURRENCY})\s*(?P<number>{NUMBER})\s*(?P<scale>{SCALE})?(?![\dA-Za-z])", money)
     take(rf"(?<![\dA-Za-z])(?P<number>{NUMBER})\s*(?P<scale>{SCALE})?\s*(?:(?:of|de|do|da|dos|das|des|d')\s*)?(?P<currency>{CURRENCY})(?![A-Za-z])", money)
-    take(rf"({NUMBER})\s*(?:basis\s+points?|bps\b|基点|基點|points?\s+de\s+base|pontos?[- ]base|puntos?\s+básicos?|punti\s+base|Basispunkte?|procentpunt(?:en)?|punkty\s+procentowe|процентн(?:ых|ых)\s+пункт(?:ов)?|відсотков(?:их|і)\s+пункт(?:ів)?|yüzde\s+puan|điểm\s+cơ\s+bản|pontos?\s+base|आधार\s+अंक|बेसिस\s+पॉइंट्स?)",
+    take(rf"({NUMBER})\s*(?:basis\s+points?|bps\b|(?:个)?基点|(?:個)?基點|points?\s+de\s+base|pontos?[- ]base|puntos?\s+básicos?|punti\s+base|Basispunkte?|procentpunt(?:en)?|punkty\s+procentowe|процентн(?:ых|ых)\s+пункт(?:ов)?|відсотков(?:их|і)\s+пункт(?:ів)?|yüzde\s+puan|điểm\s+cơ\s+bản|pontos?\s+base|आधार\s+अंक|बेसिस\s+पॉइंट्स?)",
          lambda m: ("percentage_points", _decimal(m[1]) / 100))
     take(rf"(?P<number>{NUMBER})\s*(?:percentage\s+points?|percent(?:age)?\s+points?|points?\s+de\s+pourcentage|points?\s+de\s+pourcent|pontos?\s+percentuais?|puntos?\s+porcentuales?|punti\s+percentuali|Prozentpunkte?|procentpunt(?:en)?|punkty\s+procentowe|процентн(?:ых|ых)\s+пункт(?:ов)?|відсотков(?:их|і)\s+пункт(?:ів)?|yüzde\s+puan|điểm\s+phần\s+trăm|个百分点|個百分點|パーセントポイント|퍼센트포인트|نقطة\s+مئوية|نقاط\s+مئوية|प्रतिशत\s+(?:अंक|बिंदु))",
          lambda m: ("percentage_points", _decimal(m['number'])))

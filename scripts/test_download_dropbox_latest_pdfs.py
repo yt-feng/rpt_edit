@@ -425,7 +425,7 @@ class DropboxWorkflowContractTests(unittest.TestCase):
 
     def test_schedule_reference_and_actual_batch_identity_are_preserved(self) -> None:
         workflow = self.workflow()
-        self.assertIn('if [ "${{ github.event_name }}" = "schedule" ]; then', workflow)
+        self.assertIn('if [ "${{ github.event_name }}" = "schedule" ] || [ -z "${{ github.event.inputs.dropbox_date_folder }}" ]; then', workflow)
         self.assertIn('TZ=Asia/Shanghai date +%y%m%d', workflow)
         self.assertIn('echo "expected_dropbox_date_folder=" >> "$GITHUB_OUTPUT"', workflow)
         self.assertIn('latest_folder: ${{ steps.dropbox.outputs.latest_folder }}', workflow)

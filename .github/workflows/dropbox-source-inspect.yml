@@ -1,0 +1,35 @@
+name: Inspect Dropbox source metadata
+on:
+  workflow_dispatch:
+    inputs:
+      dropbox_root:
+        description: Existing workflow source root
+        default: /zip_backup
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  inspect:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -m pip install 'requests>=2.31,<3'
+      - name: Inspect date folders and update times without report downloads
+        env:
+          DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
+          DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
+          DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
+          SOURCE_ROOT: ${{ inputs.dropbox_root }}
+        run: |
+          set -euo pipefail
+          python3 -B scripts/inspect_dropbox_source.py --root "$SOURCE_ROOT" \
+            --expected-date "$(TZ=Asia/Shanghai date +%y%m%d)" \
+            --output "$RUNNER_TEMP/dropbox-metadata.json"

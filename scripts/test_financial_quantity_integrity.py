@@ -117,6 +117,21 @@ class FinancialQuantityTests(unittest.TestCase):
         self.assertTrue(quantity_issues('2H2026', '2026年上半年'))
         self.assertTrue(quantity_issues('2026-09', '2026年10月'))
 
+    def test_exact_chinese_blog_units_and_adjacent_periods(self):
+        for source, translated in [('上行了50个基点', 'rose 50 basis points'),
+                                   ('众议院概率超九成、参议院刚过六成', 'House probability above 90%, Senate just above 60%'),
+                                   ('九成五', '95%'), ('共和党在9月才开始', 'Republicans only began in September'),
+                                   ('百威亚太3Q26前瞻', 'Budweiser Asia Pacific 3Q26 preview'),
+                                   ('2026年3月', 'March 2026')]:
+            with self.subTest(source=source):
+                self.assertEqual(quantity_issues(source, translated), [])
+        for source, translated in [('50个基点', '50 percentage points'), ('九成', '9%'),
+                                   ('六成', '90%'), ('九成五', '90%'), ('9月', 'October'),
+                                   ('3Q26前瞻', '4Q26 preview'), ('3Q26前瞻', '3Q27 preview')]:
+            with self.subTest(source=source):
+                self.assertTrue(quantity_issues(source, translated))
+        self.assertEqual(quantity_issues('未来可能前进', 'It may march forward'), [])
+
     def test_natural_financial_paragraph(self):
         self.assertEqual(quantity_issues(
             'In the first half of 2026, revenue declined by 8.2% year on year, while operating profit increased by 6%. '
