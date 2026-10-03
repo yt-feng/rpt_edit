@@ -3,9 +3,41 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
+import re
+import unicodedata
 from portal_extended_locales import ExpansionError, daily_corpus_day, digest, stable_bytes, validate_corpus
 from portal_extended_r2 import (DEFAULT_PREFIX, HEX64, MAX_CHECKPOINT_BYTES,
     MAX_CANDIDATE_MANIFEST_BYTES, R2Store, checkpoint_is_valid, partial_manifest_is_valid, safe_part)
+
+
+def unit_alias_signals(text):
+    """Only fixed unit-name booleans/counts, never surrounding private wording."""
+    from financial_quantity_integrity import NUMBER
+    aliases = {'khmer_score_base': 'ពិន្ទុមូលដ្ឋាន', 'khmer_point_base': 'ចំណុចមូលដ្ឋាន',
+               'khmer_score_core': 'ពិន្ទុគោល', 'khmer_point_core': 'ចំណុចគោល',
+               'khmer_base_score': 'មូលដ្ឋានពិន្ទុ', 'khmer_base_point': 'មូលដ្ឋានចំណុច',
+               'khmer_core_score': 'គោលពិន្ទុ', 'khmer_core_point': 'គោលចំណុច',
+               'english_basis_point': 'basis point', 'english_bp': 'bp', 'english_bps': 'bps'}
+    result = {}
+    for normalization in ('NFC', 'NFKC'):
+        value = unicodedata.normalize(normalization, text)
+        value = re.sub('[\u200b\u200c\u200d\u2060\ufeff]', '', value)
+        value = ''.join(str(unicodedata.decimal(c)) if c.isdecimal() else c for c in value)
+        for compact in (False, True):
+            selected = re.sub(r'\s+', '', value) if compact else value
+            signals = {}
+            for name, alias in aliases.items():
+                literal = unicodedata.normalize(normalization, alias)
+                literal = re.sub(r'\s+', '', literal) if compact else literal
+                pattern = re.escape(literal)
+                if name.startswith('english_'):
+                    # bp must never match inside bps or an unrelated word.
+                    pattern = r'(?<![A-Za-z])'+pattern+(r's?' if name == 'english_basis_point' else '')+r'(?![A-Za-z])'
+                signals[name] = {'present': bool(re.search(pattern, selected, re.IGNORECASE)),
+                    'number_before_count': len(re.findall(rf'{NUMBER}\s*{pattern}', selected, re.IGNORECASE)),
+                    'number_after_count': len(re.findall(rf'{pattern}\s*{NUMBER}', selected, re.IGNORECASE))}
+            result[normalization.lower()+('_compact' if compact else '_no_invisible')] = signals
+    return result
 
 
 def quantity_diagnostics(checkpoint):
@@ -40,7 +72,8 @@ def quantity_diagnostics(checkpoint):
             return {'rows': rows, 'total_rows': len(counter), 'truncated': truncated}
         failed.append({'unit_sha256': key, 'source_sha256': digest(source.encode()),
                        'translated_sha256': digest(translated.encode()),
-                       'source_quantities': signature(before), 'translated_quantities': signature(after)})
+                       'source_quantities': signature(before), 'translated_quantities': signature(after),
+                       'translated_unit_alias_signals': unit_alias_signals(translated)})
     return {'failed_unit_count': total, 'reported_units': failed, 'maximum_reported_units': 20,
             'maximum_quantity_rows_per_side': 64, 'maximum_value_characters': 128}
 

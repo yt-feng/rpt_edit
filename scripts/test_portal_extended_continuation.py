@@ -314,6 +314,20 @@ class ContinuationTests(unittest.TestCase):
         self.assertEqual(len(side['rows'][0]['values'][0]), 128)
         self.assertTrue(side['rows'][0]['value_truncated'])
 
+    def test_unit_alias_signals_normalize_invisible_separators_digits_and_word_order(self):
+        from inspect_portal_extended_continuation import unit_alias_signals
+        result = unit_alias_signals('Private ៥០ ចំណុច\u200bមូលដ្ឋាន; ពិន្ទុគោល ៧; 60 bps; 3 BPSPrivate')
+        normalized = result['nfkc_no_invisible']
+        self.assertTrue(normalized['khmer_point_base']['present'])
+        self.assertEqual(normalized['khmer_point_base']['number_before_count'], 1)
+        self.assertEqual(normalized['khmer_score_core']['number_after_count'], 1)
+        self.assertEqual(normalized['english_bps']['number_before_count'], 1)
+        self.assertFalse(normalized['english_bp']['present'])
+        compact = unit_alias_signals('50 ចំ ណុច មូល ដ្ឋាន')['nfc_compact']
+        self.assertEqual(compact['khmer_point_base']['number_before_count'], 1)
+        self.assertNotIn('Private', json.dumps(result))
+        self.assertNotIn('មូលដ្ឋាន', json.dumps(result))
+
     def test_exact_preledger_adoption_is_bounded_and_cannot_reset_counters(self):
         proof = self.partial(registered=False)
         evidence = {'producer': PRODUCER, 'locales': {'fr': proof}}
