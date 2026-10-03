@@ -1,0 +1,61 @@
+name: Recover authenticated complete legacy MinerU output
+run-name: Recover original consulting source-only results without MinerU submissions
+on:
+  pull_request:
+    paths:
+      - .github/workflows/mineru-legacy-consume.yml
+      - .github/workflows/consulting-latest-pdf-to-wechat.yml
+      - scripts/consume_legacy_mineru.py
+      - scripts/test_consume_legacy_mineru.py
+      - scripts/recover_legacy_mineru_cloud.py
+      - scripts/test_recover_legacy_mineru_cloud.py
+  workflow_dispatch:
+    inputs:
+      request:
+        description: Exact original run/job/artifact digest and private GET-only inspection identity JSON
+        required: true
+        type: string
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: mineru-legacy-source-recovery
+  cancel-in-progress: false
+jobs:
+  offline-contract:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -m pip install --disable-pip-version-check -r requirements.txt
+      - run: python3 -B -m unittest discover -s scripts -p 'test_*legacy_mineru*.py'
+  recover:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && github.event.repository.private == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -m pip install --disable-pip-version-check -r requirements.txt 'boto3>=1.37.32,<2'
+      - name: Authenticate original job and complete retry set before one GET per selected result
+        env:
+          LEGACY_REQUEST: ${{ inputs.request }}
+          GITHUB_TOKEN: ${{ github.token }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          set -euo pipefail
+          python3 -B scripts/recover_legacy_mineru_cloud.py recover \
+            --request "$LEGACY_REQUEST" --output "$RUNNER_TEMP/original_source" \
+            --github-output "$GITHUB_OUTPUT" | tee -a "$GITHUB_STEP_SUMMARY"
