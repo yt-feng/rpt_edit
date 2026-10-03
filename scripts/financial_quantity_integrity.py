@@ -211,7 +211,17 @@ def quantities(text: str, *, bare_months: bool = False) -> Counter:
     take(r"(?<!\d)(1[0-2]|[1-9])\s*月(?!\s*\d)", lambda m: ("month", None, int(m[1])))
     take(r"\btháng\s+(1[0-2]|[1-9])(?!\d)", lambda m: ("month", None, int(m[1])))
     if bare_months:
-        take(rf"(?<!\w)({MONTH})(?!\w)", lambda m: ("month", None, MONTHS[m[1].rstrip('.').casefold()]))
+        # These English aliases are also a modal and a verb. Require explicit
+        # date context or a whole month-only unit instead of consuming them
+        # merely because another date occurs elsewhere in the paragraph.
+        other_months = '(?:' + '|'.join(re.escape(name) for name in sorted(MONTHS, key=len, reverse=True)
+                                        if name not in {'may', 'march'}) + r')\.?'
+        take(rf"(?<!\w)({other_months})(?!\w)",
+             lambda m: ("month", None, MONTHS[m[1].rstrip('.').casefold()]))
+        take(r"\b(?:in|by|during|since|before|after|until|through|for|month\s+of)\s+(May|March)\b",
+             lambda m: ("month", None, MONTHS[m[1].casefold()]))
+        if text.strip().casefold() in {'may', 'march'}:
+            take(r"\b(May|March)\b", lambda m: ("month", None, MONTHS[m[1].casefold()]))
 
     # Five-year-plan ordinals translate to 第十五个五年 or “十五五”. Limit
     # this equivalence to plan syntax: ordinary labels such as 第一段 also
