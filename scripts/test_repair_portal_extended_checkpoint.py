@@ -73,6 +73,40 @@ class RepairTests(unittest.TestCase):
             with self.subTest(value=value),self.assertRaisesRegex(repair.TargetedRepairError,'original quality'):
                 repair.ProtectedBasisPointTranslator(Base(),{'50个基点'}).translate('50个基点',target='fr',source='zh')
 
+    def test_fixed_failure_diagnostic_keeps_gate_and_unit_without_source_or_error_text(self):
+        source='私人报告内容：收益率上升50个基点。'
+        class Base:
+            def translate(self,*a,**kw):
+                raise repair.OfflineTranslationValidationError('Hy-MT2 quantity validation failed: private secret 999')
+        protected=repair.ProtectedBasisPointTranslator(Base(),{source})
+        with self.assertRaises(repair.TargetedRepairError) as caught:
+            protected.translate(source,target='fr',source='zh',markdown=False)
+        diagnostic=caught.exception.diagnostic
+        self.assertEqual(diagnostic['gate_code'],'offline-quantity-validation')
+        self.assertEqual(diagnostic['stage'],'model-validation')
+        self.assertEqual(diagnostic['unit_sha256'],repair.unit_key('fr',{'source':source,'language':'zh'}))
+        self.assertNotIn('私人报告',json.dumps(diagnostic,ensure_ascii=False))
+        self.assertNotIn('private secret',json.dumps(diagnostic))
+        self.assertIsNone(protected.current)
+
+    def test_model_signals_are_bounded_and_do_not_contain_private_model_text(self):
+        source='收益率上升50个基点，利润率9%。'
+        class Base:
+            def translate(self,text,**kw):
+                for n in range(10):
+                    protected.observe_model({'model_input':text,'raw_translation':'Private model draft 10%',
+                                             'quality_retry':n%3})
+                return 'Le taux a augmenté sans unité.'
+        protected=repair.ProtectedBasisPointTranslator(Base(),{source})
+        with self.assertRaises(repair.TargetedRepairError):
+            protected.translate(source,target='fr',source='zh')
+        row=protected.failures[0]
+        self.assertEqual(row['gate_code'],'placeholder-validation')
+        self.assertEqual((len(row['model_attempts']),row['model_signals_total'],row['model_signals_truncated']),(3,10,True))
+        self.assertEqual(row['model_attempts'][0]['missing_basis_point_placeholders'],1)
+        self.assertNotIn('Private model draft',json.dumps(row))
+        self.assertNotIn(source,json.dumps(row,ensure_ascii=False))
+
     def test_preserved_rows_and_fallbacks_are_byte_bound_and_new_source_cannot_be_swapped(self):
         identity,old=self.checkpoint();new=copy.deepcopy(old)
         new['rows'][identity]['text']='Le rendement monte de 50 bps.'
@@ -219,6 +253,86 @@ class RepairTests(unittest.TestCase):
         with self.assertRaisesRegex(ExpansionError,'attempt bound'):
             repair.prepare(self.store,self.gen,'fr',requested,'example/repo',api,{**owner,'attempt':'4'})
         self.assertEqual(before,self.store.client.objects);self.assertIsNone(read_origin(self.store,self.gen))
+
+    def test_seven_exact_units_resume_six_private_cache_rows_and_one_cpu_unit(self):
+        sources = [f'收益率上升{n}个基点。' for n in range(10, 80, 10)]
+        numbers = {text: repair.BP.search(text)[1] for text in sources}
+        self.corpus = make_corpus([daily_doc(body='<h1>Research note</h1>' + ''.join('<p>'+s+'</p>' for s in sources))])
+        self.gen = self.corpus['documents_sha256']
+        class Good(FakeTranslator):
+            def translate(base, text, **kw):
+                if text in numbers: return 'Le rendement monte de '+numbers[text]+' bps.'
+                return super().translate(text, **kw)
+        original_checkpoint = self.root/'seven-original.json'
+        initial = build(self.corpus, 'fr', self.root/'seven-original-candidate', original_checkpoint, Good(), allow_source_fallback=True)
+        self.assertEqual(initial['status'], 'complete-candidate')
+        old = json.loads(original_checkpoint.read_bytes())
+        for row in old['rows'].values():
+            if row['source'] in numbers: row['text'] = 'Le rendement monte de '+numbers[row['source']]+'.'
+        units = repair.validate_units(old, 'fr', self.gen)
+        self.assertEqual(len(units), 7)
+        requested = {'intent':'a'*64, 'units':units}
+        owner = {'run_id':'456', 'attempt':'1', 'sha':'b'*40}
+        value = {'source_sha256':digest(stable_bytes(self.corpus)), 'evidence':{'producer':PRODUCER}}
+        def api(path):
+            return {'id':456, 'run_attempt':1, 'head_sha':owner['sha'], 'status':'completed',
+                'conclusion':'failure', 'path':repair.WORKFLOW, 'head_branch':'main',
+                'event':'workflow_dispatch', 'repository':{'full_name':'example/repo'},
+                'head_repository':{'full_name':'example/repo'}}
+        with patch.object(repair, 'load', return_value=(value,self.corpus,old)):
+            repair.prepare(self.store,self.gen,'fr',requested,'example/repo',api,owner)
+        def restored(path):
+            clone=copy.deepcopy(old)
+            for identity in units: del clone['rows'][identity]
+            path.write_bytes(stable_bytes(clone))
+        class First(FakeTranslator):
+            targeted_calls=0
+            def translate(base,text,**kw):
+                if '__HYMTPH_9000__' in text:
+                    base.targeted_calls+=1
+                    if base.targeted_calls==7: return 'Le rendement omet son nombre.'
+                    return 'Le rendement monte de __HYMTPH_9000__.'
+                raise AssertionError('an unaffected original unit invoked CPU')
+        first=First()
+        protected=repair.ProtectedBasisPointTranslator(first,set(sources))
+        wrapped=repair.PrivateUnitTranslator(protected,self.store,requested,self.gen,'fr',owner)
+        first_checkpoint=self.root/'seven-first.json'; restored(first_checkpoint)
+        failed=build(self.corpus,'fr',self.root/'seven-first-candidate',first_checkpoint,wrapped,allow_source_fallback=True)
+        self.assertEqual(failed['status'],'incomplete-candidate')
+        self.assertEqual(first.targeted_calls,7)
+        partial=json.loads(first_checkpoint.read_bytes())
+        successful=set(units)&set(partial['rows']); self.assertEqual(len(successful),6)
+        remaining=(set(units)-successful).pop()
+        self.assertNotIn(remaining,partial.get('source_fallbacks',{}))
+        self.assertIsNone(repair.read_optional(self.store,repair.repair_key(self.store,requested,'units',remaining+'.json')))
+        before={identity:self.store._get(repair.repair_key(self.store,requested,'units',identity+'.json'),maximum=65536) for identity in successful}
+        next_owner={**owner,'attempt':'2'}
+        with patch.object(repair,'load',return_value=(value,self.corpus,old)):
+            repair.prepare(self.store,self.gen,'fr',requested,'example/repo',api,next_owner)
+        class Last(FakeTranslator):
+            targeted_calls=0
+            def translate(base,text,**kw):
+                base.targeted_calls+=1
+                if base.targeted_calls!=1 or '__HYMTPH_9000__' not in text:
+                    raise AssertionError('the six validated units or preserved rows were redone')
+                return 'Le rendement monte de __HYMTPH_9000__.'
+        last=Last()
+        resumed=repair.PrivateUnitTranslator(repair.ProtectedBasisPointTranslator(last,set(sources)),self.store,requested,self.gen,'fr',next_owner)
+        final_checkpoint=self.root/'seven-final.json'; restored(final_checkpoint)
+        complete=build(self.corpus,'fr',self.root/'seven-final-candidate',final_checkpoint,resumed,allow_source_fallback=True)
+        self.assertEqual(complete['status'],'complete-candidate')
+        self.assertEqual(last.targeted_calls,1); self.assertEqual(resumed.cache_hits,6)
+        self.assertEqual(set(resumed.cache_unit_ids),successful); self.assertEqual(resumed.new_unit_ids,[remaining])
+        for identity,raw in before.items():
+            self.assertEqual(raw,self.store._get(repair.repair_key(self.store,requested,'units',identity+'.json'),maximum=65536))
+        final=json.loads(final_checkpoint.read_bytes())
+        self.assertFalse(set(units)&set(final.get('source_fallbacks',{})))
+        evidence=repair.preserve(old,final,'fr',self.gen,units,allowed_new_units=repair.required_units(self.corpus,'fr'))
+        untouched={k:v for k,v in old['rows'].items() if k not in units}
+        self.assertEqual({k:final['rows'][k] for k in untouched},untouched)
+        self.assertEqual(evidence['unchanged_rows_sha256'],digest(stable_bytes(untouched)))
+        self.assertEqual(evidence['unchanged_translation_rows'],len(untouched))
+        self.assertEqual(len(evidence['repaired_units']),7)
 
     def test_selected_translation_failure_cannot_become_an_ordinary_source_fallback(self):
         requested,old=self.financial_original();clone=copy.deepcopy(old)

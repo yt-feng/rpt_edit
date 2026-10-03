@@ -219,7 +219,7 @@ def next_ready_batch(store, day, requested, enabled, active, workspace, *, admit
     return None
 
 
-def next_registered_batch(store, requested, enabled, active, workspace):
+def next_registered_batch(store, requested, enabled, active, workspace, *, generation=None):
     """Drain only explicitly registered generations, including cross-day results."""
     from portal_extended_continuation import acknowledge_published, queue, tracked_generations
     locales = select_locales(requested)
@@ -227,23 +227,27 @@ def next_registered_batch(store, requested, enabled, active, workspace):
     acknowledge_published(store, locales, active)
     allowed = set(select_locales(enabled)) if enabled else set()
     live = {locale for row in active for locale in row['candidates']}
-    for (_day, generation), ready_locales in sorted(tracked_generations(store, locales).items()):
+    if generation is not None:
+        safe_part(generation, label='repair handoff generation', pattern=HEX64)
+    for (_day, ready_generation), ready_locales in sorted(tracked_generations(store, locales).items()):
+        if generation is not None and ready_generation != generation:
+            continue
         selected = sorted(ready_locales & allowed & live)
         if not selected:
             continue
-        source = workspace/(generation+'.json')
-        store.restore_source(generation, source)
+        source = workspace/(ready_generation+'.json')
+        store.restore_source(ready_generation, source)
         corpus = json.loads(source.read_bytes())
         candidates = {}
         for locale in selected:
-            snapshot = queue(store, locale)[generation]['snapshot']
-            directory = workspace/generation/locale
-            store.restore_candidate(locale, generation, snapshot['candidate_id'], directory)
+            snapshot = queue(store, locale)[ready_generation]['snapshot']
+            directory = workspace/ready_generation/locale
+            store.restore_candidate(locale, ready_generation, snapshot['candidate_id'], directory)
             verified_candidate(directory, corpus)
             if digest((directory/'candidate-manifest.json').read_bytes()) != snapshot['manifest_sha256']:
                 raise ExpansionError('Completed continuation manifest differs from exact outcome')
             candidates[locale] = snapshot['candidate_id']
-        return {'generation': generation, 'candidates': candidates}, corpus
+        return {'generation': ready_generation, 'candidates': candidates}, corpus
     return None
 
 
@@ -268,15 +272,35 @@ def next_ready_refresh(store, day, requested, enabled, active, workspace):
     return None
 
 
+def repair_handoff_generation(operation, generation, source_has_work, locale_result):
+    """A repair can publish only its successful exact registered outcome.
+
+    A validated prepared repair finishes its durable tail in the source job
+    without running a locale job. Ordinary daily partial matrices keep their
+    existing drain behavior.
+    """
+    if operation != 'checkpoint-repair':
+        return None
+    safe_part(generation, label='repair handoff generation', pattern=HEX64)
+    if (source_has_work, locale_result) not in {('true', 'success'), ('false', 'skipped')}:
+        raise ExpansionError('Failed or unproved checkpoint repair cannot hand off publication')
+    return generation
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--generation', default='')
     parser.add_argument('--day', required=True)
     parser.add_argument('--locales', required=True)
     parser.add_argument('--enabled-locales', required=True)
+    parser.add_argument('--operation', default='candidate')
+    parser.add_argument('--source-has-work', default='')
+    parser.add_argument('--locale-result', default='')
     args = parser.parse_args()
     if os.environ.get('GITHUB_ACTIONS') != 'true' or os.environ.get('GITHUB_REF') != 'refs/heads/main':
         raise ExpansionError('Automatic handoff runs only on reviewed main in Actions')
+    repair_generation = repair_handoff_generation(args.operation, args.generation,
+                                                 args.source_has_work, args.locale_result)
     store = R2Store.from_env(DEFAULT_PREFIX)
     with tempfile.TemporaryDirectory(prefix='extended-handoff-') as temporary:
         workspace = Path(temporary)
@@ -292,8 +316,9 @@ def main():
             if len(response.content) > 65536:
                 raise ExpansionError('Active release identity exceeds bound')
             active = read_active_batches(store, response.json())
-        ready = next_registered_batch(store, args.locales, args.enabled_locales, active, workspace)
-        if ready is None:
+        ready = next_registered_batch(store, args.locales, args.enabled_locales, active, workspace,
+                                      generation=repair_generation)
+        if ready is None and repair_generation is None:
             ready = next_ready_refresh(store, args.day, args.locales, args.enabled_locales, active, workspace)
         if ready is None:
             print(json.dumps({'dispatched': False, 'reason': 'No new complete already-approved locale candidates'}))

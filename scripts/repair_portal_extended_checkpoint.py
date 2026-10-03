@@ -230,11 +230,41 @@ def preserve(old, new, locale, generation, units, *, allowed_new_units=None):
 
 
 class TargetedRepairError(RuntimeError):
-    pass
+    def __init__(self, diagnostic):
+        super().__init__('Targeted basis-point repair failed its original quality gate')
+        self.diagnostic = diagnostic
 
 
 class ProtectedBasisPointTranslator:
-    def __init__(self, base, sources): self.base, self.sources = base, sources
+    def __init__(self, base, sources):
+        self.base, self.sources = base, sources
+        self.failures = []
+        self.current = None
+        self.model_signals = []
+        self.model_signal_count = 0
+    def observe_model(self, value):
+        """Only fixed counts/hashes leave the opt-in model callback."""
+        if self.current is None:
+            return
+        raw = value.get('raw_translation')
+        model_input = value.get('model_input')
+        attempt = value.get('quality_retry')
+        if (not isinstance(raw, str) or not isinstance(model_input, str)
+            or type(attempt) is not int or not 0 <= attempt <= 2):
+            return
+        self.model_signal_count += 1
+        if len(self.model_signals) >= 3:
+            return
+        terms = self.current['terms']
+        from inspect_portal_extended_continuation import quantity_diagnostics
+        quantities = quantity_diagnostics({'rows': {self.current['unit_sha256']:
+            {'source': model_input, 'text': raw}}})
+        self.model_signals.append({'quality_retry': attempt,
+            'model_input_sha256': digest(model_input.encode()), 'translated_sha256': digest(raw.encode()),
+            'translated_characters': len(raw),
+            'missing_basis_point_placeholders': sum(raw.count(token) == 0 for token in terms),
+            'duplicate_basis_point_placeholders': sum(raw.count(token) > 1 for token in terms),
+            'quantity_diagnostics': quantities})
     def set_deadline(self, value):
         method = getattr(self.base, 'set_deadline', None)
         if callable(method): method(value)
@@ -245,17 +275,38 @@ class ProtectedBasisPointTranslator:
             token = f'__HYMTPH_{9000+len(terms):04d}__'; terms[token] = match[1]+' bps'; return token
         masked = BP.sub(protect, text)
         if not terms or len(terms)>64: raise ExpansionError('Repair basis-point protection is outside its bound')
+        diagnostic = {'unit_sha256': unit_key(target, {'source':text, 'language':source}, markdown),
+            'source_sha256': digest(text.encode()), 'source_characters':len(text),
+            'protected_basis_point_count':len(terms)}
+        self.current = {**diagnostic, 'terms':terms}; self.model_signals = []; self.model_signal_count = 0
+        stage = 'model-validation'
         try:
             translated = self.base.translate(masked,target=target,source=source,markdown=markdown)
+            stage = 'basis-point-placeholder'
+            diagnostic['missing_basis_point_placeholders'] = sum(translated.count(token)==0 for token in terms)
+            diagnostic['duplicate_basis_point_placeholders'] = sum(translated.count(token)>1 for token in terms)
             for token, value in terms.items():
                 if translated.count(token)!=1: raise ExpansionError('Repair changed protected basis-point placeholder')
                 translated = translated.replace(token,value)
+            stage = 'original-quality'
             validate_text(text, translated, target, source)
             return translated
-        except (ExpansionError, OfflineTranslationValidationError):
+        except (ExpansionError, OfflineTranslationValidationError) as error:
             # A selected failed row must become a validated translation. It
             # cannot be silently converted into the ordinary source fallback.
-            raise TargetedRepairError('Targeted basis-point repair failed its original quality gate') from None
+            from build_portal_extended_locales import safe_failure_code
+            diagnostic.update({'stage':stage,
+                'gate_code':'placeholder-validation' if stage == 'basis-point-placeholder' else safe_failure_code(error),
+                'model_attempts':self.model_signals, 'model_signals_total':self.model_signal_count,
+                'model_signals_truncated':self.model_signal_count>len(self.model_signals)})
+            if stage == 'original-quality':
+                from inspect_portal_extended_continuation import quantity_diagnostics
+                diagnostic['restored_quantity_diagnostics'] = quantity_diagnostics({'rows':
+                    {diagnostic['unit_sha256']:{'source':text, 'text':translated}}})
+            if len(self.failures)<20:self.failures.append(diagnostic)
+            raise TargetedRepairError(diagnostic) from None
+        finally:
+            self.current = None
 
 
 class PrivateUnitTranslator:
@@ -263,6 +314,8 @@ class PrivateUnitTranslator:
     def __init__(self,base,store,repair,generation,locale,owner):
         self.base,self.store,self.repair,self.generation,self.locale,self.owner=base,store,repair,generation,locale,owner
         self.cache_hits=0
+        self.cache_unit_ids=[]
+        self.new_unit_ids=[]
     def set_deadline(self,value):self.base.set_deadline(value)
     def translate(self,text,*,target,source,markdown=True):
         identity=unit_key(target,{'source':text,'language':source},markdown)
@@ -277,13 +330,16 @@ class PrivateUnitTranslator:
                 or producer_identity(value['producer']) not in attempts(self.store,self.repair)):
                 raise ExpansionError('Private repaired unit differs from exact source identity')
             validate_text(text,value['row']['text'],target,source)
-            self.cache_hits+=1;return value['row']['text']
+            self.cache_hits+=1
+            if identity not in self.cache_unit_ids and len(self.cache_unit_ids)<500:self.cache_unit_ids.append(identity)
+            return value['row']['text']
         translated=self.base.translate(text,target=target,source=source,markdown=markdown)
         validate_text(text,translated,target,source)
         value={'schema_version':1,'policy':POLICY,'request_sha256':digest(stable_bytes(self.repair)),
                'generation':self.generation,'locale':target,'unit_sha256':identity,'markdown':markdown,
                'producer':self.owner,'row':{'source':text,'language':source,'text':translated}}
         immutable_record(self.store,name,value,kind='validated-private-repaired-unit')
+        if identity not in self.new_unit_ids and len(self.new_unit_ids)<500:self.new_unit_ids.append(identity)
         return translated
 
 
@@ -379,16 +435,21 @@ def main():
         print(json.dumps({'present':True,'removed_rejected_units':len(repair['units']),'unchanged_rows':len(cloned['rows'])}));return 0
     if args.operation=='build':
         from offline_translation import OfflineTranslator
-        translator=OfflineTranslator()
-        protected=ProtectedBasisPointTranslator(translator,{old['rows'][k]['source'] for k in repair['units']})
+        protected=ProtectedBasisPointTranslator(None,{old['rows'][k]['source'] for k in repair['units']})
+        translator=OfflineTranslator(diagnostic_callback=protected.observe_model)
+        protected.base=translator
         wrapped=PrivateUnitTranslator(protected,store,repair,args.generation,args.locale,owner)
         result=build(corpus,args.locale,args.output,args.checkpoint,wrapped,budget_seconds=args.seconds,allow_source_fallback=True)
         result['repair_private_unit_cache_hits']=wrapped.cache_hits
         result['free_cpu_translation_fragments']=translator.stats['batch_requests']
+        result['repair_cached_unit_sha256']=wrapped.cache_unit_ids
+        result['repair_new_validated_unit_sha256']=wrapped.new_unit_ids
+        result['repair_unit_failures']=protected.failures
         (args.output/'candidate-manifest.json').write_bytes(stable_bytes(result))
         print(json.dumps({k:result[k] for k in ('status','source_document_count','completed_page_count',
             'translation_calls_this_run','cache_hits','paid_provider_requests','budget_exhausted','failures',
-            'repair_private_unit_cache_hits','free_cpu_translation_fragments')},sort_keys=True))
+            'repair_private_unit_cache_hits','free_cpu_translation_fragments','repair_cached_unit_sha256',
+            'repair_new_validated_unit_sha256','repair_unit_failures')},sort_keys=True))
         return 0 if result['status']=='complete-candidate' else 75
     if args.checkpoint.stat().st_size>MAX_CHECKPOINT_BYTES:raise ExpansionError('Repair checkpoint exceeds bound')
     new=json.loads(args.checkpoint.read_bytes());evidence=preserve(old,new,args.locale,args.generation,repair['units'],
