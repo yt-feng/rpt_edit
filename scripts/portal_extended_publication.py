@@ -25,6 +25,7 @@ from portal_extended_locales import (
 )
 from portal_extended_r2 import HEX64, safe_part
 from portal_extended_ui import UI_VERSION, standard_detail, standard_homepage, ui_assets
+from portal_approved_quantity_contract import CONTRACT_ID, PARSER_SHA256, bindings, quantity_issues as approved_quantity_issues
 
 LEDGER = 'data/extended-locales/assembly.json'
 
@@ -86,8 +87,39 @@ def checked_batches(batches: list[dict]) -> list[dict]:
     return result
 
 
-def compose(root: Path, store, batches: list[dict], workspace: Path) -> dict:
+def prove_approved_baseline(corpus, locale, work, seed, approved_manifest, *, allow_frozen=False, require_match=True):
+    """Try today's gate first; only authenticated active bytes may use v1.
+
+    Both attempts are isolated and read-only. A validator is selected only when
+    every page reproduces the complete approved file inventory with zero cache
+    misses. The returned checkpoint contains only these demonstrated units.
+    """
+    policies = [('current', None, None)]
+    if allow_frozen: policies.append((CONTRACT_ID, approved_quantity_issues, PARSER_SHA256))
+    attempts = []
+    for index, (contract, validator, parser_sha) in enumerate(policies):
+        checkpoint = work/f'baseline-{index}.json'
+        replay = build(corpus, locale, work/f'baseline-{index}', checkpoint, CacheOnly(),
+                       allow_source_fallback=True, seed_checkpoint=seed, quantity_validator=validator)
+        matches = (replay['status'] == 'complete-candidate' and replay['translation_calls_this_run'] == 0
+                   and replay['files_sha256'] == approved_manifest['files_sha256'])
+        attempts.append({'contract': contract, 'parser_sha256': parser_sha, 'matches': matches,
+                         'status': replay['status'], 'cache_miss_attempts': replay['translation_calls_this_run'],
+                         'files_sha256': replay['files_sha256']})
+        proof = {'manifest': replay, 'checkpoint': checkpoint, 'quantity_validator': validator,
+                 'quantity_contract': contract, 'quantity_parser_sha256': parser_sha,
+                 'matches': matches, 'attempts': attempts}
+        if matches: return proof
+    if require_match: raise ExpansionError('Checkpoint does not reproduce the approved candidate bytes')
+    return proof
+
+
+def compose(root: Path, store, batches: list[dict], workspace: Path, *, active_identity: dict | None = None) -> dict:
     batches = checked_batches(batches)
+    active = checked_batches(read_active_batches(store, active_identity)) if active_identity is not None else []
+    if batches[:len(active)] != active:
+        raise ExpansionError('Authenticated active approval batches must be retained exactly')
+    active_approvals = bindings(active)
     if not batches:
         return {'ready': False, 'locales': [], 'paid_provider_requests': 0}
     if not (root/'index.html').is_file() or not (root/'robots.txt').is_file() or (root/LEDGER).exists():
@@ -117,24 +149,24 @@ def compose(root: Path, store, batches: list[dict], workspace: Path) -> dict:
             original_dir = work/'approved'
             store.restore_candidate(locale, row['generation'], candidate_id, original_dir)
             approved_manifest, _approved_files = verified_candidate(original_dir, corpus)
+            frozen = (row['generation'], locale, candidate_id) in active_approvals
             seed = work/'seed.json'
             restored = store.restore_checkpoint(locale, row['generation'], seed)
             if not restored.get('present'):
                 raise ExpansionError('Approved checkpoint is absent')
             # Prove the checkpoint reproduces the actual approved HTML, not
             # merely a new plausible translation with the same model name.
-            original_replay = build(corpus, locale, work/'baseline', work/'baseline.json',
-                CacheOnly(), allow_source_fallback=True, seed_checkpoint=seed)
-            if (original_replay['status'] != 'complete-candidate'
-                or original_replay['translation_calls_this_run'] != 0
-                or original_replay['files_sha256'] != approved_manifest['files_sha256']):
-                raise ExpansionError('Checkpoint does not reproduce the approved candidate bytes')
+            proof = prove_approved_baseline(corpus, locale, work, seed, approved_manifest, allow_frozen=frozen)
+            validator = proof['quantity_validator']
+            # Extra or newer latest-cache rows never enter current-source
+            # replay; this seed only contains units proven against approval.
+            approved_seed = proof['checkpoint']
             current_docs = [current_document(root, doc) for doc in docs]
             current = make_corpus(current_docs)
             directory = work/'current'
             checkpoint = work/'current.json'
             replay = build(current, locale, directory, checkpoint, CacheOnly(),
-                allow_source_fallback=True, seed_checkpoint=seed)
+                allow_source_fallback=True, seed_checkpoint=approved_seed, quantity_validator=validator)
             if replay['status'] != 'complete-candidate' or replay['translation_calls_this_run'] != 0:
                 raise ExpansionError('Current-source replay requires unapproved translation units')
             generation = current['documents_sha256']
@@ -165,7 +197,8 @@ def compose(root: Path, store, batches: list[dict], workspace: Path) -> dict:
             candidate_ids[locale] = candidate_id
             replays.append({'locale': locale, 'approved_generation': row['generation'],
                 'approved_candidate': candidate_id, 'source_generation': generation,
-                'candidate_id': saved['candidate_id'], 'checkpoint_sha256': restored['sha256'],
+                'candidate_id': saved['candidate_id'], 'quantity_contract': proof['quantity_contract'],
+                'quantity_parser_sha256': proof['quantity_parser_sha256'], 'checkpoint_sha256': restored['sha256'],
                 'pages': len(current_docs), 'translation_calls': 0})
     planned, clusters = {}, {}
     locales = tuple(locale for locale in select_locales('all-supported') if any(k[0] == locale for k in pages))

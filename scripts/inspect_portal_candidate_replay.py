@@ -19,9 +19,10 @@ import requests
 from assemble_portal_extended_locales import verified_candidate
 from build_portal_extended_locales import build, validate_text, safe_failure_code
 from portal_extended_locales import ORIGIN, daily_corpus_day, digest, validate_corpus
-from portal_extended_publication import CacheOnly, checked_batches, read_active_batches
+from portal_extended_publication import CacheOnly, checked_batches, read_active_batches, prove_approved_baseline
 from portal_extended_r2 import R2Store, R2StoreError
 from financial_quantity_integrity import quantities
+from portal_approved_quantity_contract import CONTRACT_ID, PARSER_SHA256, bindings, quantity_issues as approved_quantity_issues
 
 MAX_BATCHES = 36
 MAX_DOCUMENTS = 24
@@ -95,7 +96,8 @@ def quantity_signature(source, translated, locale):
     if any(key[0] == 'month' and key[1] is None for key in before.keys() | after.keys()):
         before, after = quantities(source, bare_months=True), quantities(translated, bare_months=True)
     missing, added = before - after, after - before
-    result = {'missing_kinds': dict(Counter({kind: sum(n for key, n in missing.items() if key[0] == kind)
+    result = {'approved_parser_v1_matches': not approved_quantity_issues(source, translated, '', locale),
+              'missing_kinds': dict(Counter({kind: sum(n for key, n in missing.items() if key[0] == kind)
                                           for kind in {k[0] for k in missing}})),
               'added_kinds': dict(Counter({kind: sum(n for key, n in added.items() if key[0] == kind)
                                           for kind in {k[0] for k in added}}))}
@@ -116,7 +118,7 @@ def quantity_signature(source, translated, locale):
     return result
 
 
-def compare(store, batch, locale, work):
+def compare(store, batch, locale, work, *, frozen_approval=False):
     work.mkdir()
     phase('candidate-source-read', store.restore_source, batch['generation'], work/'corpus.json')
     corpus = phase('candidate-source-validation', validated_corpus, work/'corpus.json')
@@ -127,8 +129,10 @@ def compare(store, batch, locale, work):
         return {'locale': locale, 'generation': batch['generation'], 'candidate': batch['candidates'][locale],
                 'checkpoint_present': False, 'matches': False, 'failure_codes': {'checkpoint-absent': 1}}
     seed = json.loads((work/'seed.json').read_bytes())
-    replay = phase('candidate-replay', build, corpus, locale, work/'replay', work/'replay.json', CacheOnly(),
-                   allow_source_fallback=True, seed_checkpoint=work/'seed.json')
+    proof = phase('candidate-replay', prove_approved_baseline, corpus, locale, work,
+                  work/'seed.json', approved, allow_frozen=frozen_approval, require_match=False)
+    replay = proof['manifest']
+    replay_dir = proof['checkpoint'].with_suffix('')
     rejected, total = [], 0
     for key, row in seed['rows'].items():
         try:
@@ -152,9 +156,11 @@ def compare(store, batch, locale, work):
                           'replay_sha256': b.get('sha256') if b else None,
                           'descriptor_only': bool(a and b and a['sha256'] == b['sha256'])}
             if a: difference['approved_shape'] = html_shape(work/'approved'/path)
-            if b: difference['replay_shape'] = html_shape(work/'replay'/path)
+            if b: difference['replay_shape'] = html_shape(replay_dir/path)
             differences.append(difference)
     return {'locale': locale, 'generation': batch['generation'], 'candidate': batch['candidates'][locale],
+            'quantity_contract': proof['quantity_contract'],
+            'quantity_parser_sha256': proof['quantity_parser_sha256'], 'baseline_attempts': proof['attempts'],
             'checkpoint_sha256': restored['sha256'], 'matches': replay['status'] == 'complete-candidate'
                 and replay['translation_calls_this_run'] == 0 and replay['files_sha256'] == approved['files_sha256'],
             'status': replay['status'], 'approved_pages': len(before), 'replayed_pages': len(after),
@@ -204,7 +210,9 @@ def inspect(store, target, expected_release, identity):
     # Refuse a stale deployment identity before reading any private source.
     if identity.get('release_id') != expected_release:
         raise InspectionError('active-release-changed')
-    batches = checked_batches(phase('active-ledger-read', read_active_batches, store, identity) + [target])
+    active = checked_batches(phase('active-ledger-read', read_active_batches, store, identity))
+    active_approvals = bindings(active)
+    batches = checked_batches(active + [target])
     if len(batches) > MAX_BATCHES: raise InspectionError('too-many-batches')
     owners = {}
     with tempfile.TemporaryDirectory() as tmp:
@@ -221,14 +229,16 @@ def inspect(store, target, expected_release, identity):
         for index, (batch, corpus) in enumerate(zip(batches, corpora, strict=True)):
             for locale in batch['candidates']:
                 if not any(owners[locale, d['url']] == index for d in corpus['documents']): continue
-                result = compare(store, batch, locale, root/f'{index}-{locale}')
+                result = compare(store, batch, locale, root/f'{index}-{locale}',
+                                 frozen_approval=(batch['generation'], locale, batch['candidates'][locale]) in active_approvals)
                 result['batch_index'] = index
                 result['target_candidate'] = batch == target and locale in target['candidates']
                 results.append(result)
                 if not result['matches']:
                     return {'status': 'mismatch', 'production_writes': 0, 'inference_calls': 0, 'results': results,
                             'carry_forward_cache_audit': audit_cached_rows(store, batches, corpora, owners, root)}
-        return {'status': 'all-matched', 'production_writes': 0, 'inference_calls': 0, 'results': results}
+        return {'status': 'all-matched', 'production_writes': 0, 'inference_calls': 0, 'results': results,
+                'carry_forward_cache_audit': audit_cached_rows(store, batches, corpora, owners, root)}
 
 
 def main():

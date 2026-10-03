@@ -43,6 +43,18 @@ class InspectorTests(unittest.TestCase):
         self.assertFalse(inspector.quantity_signature('9月 90%', september+' 80%', 'bn')['language_scoped_month_repair_matches'])
         self.assertFalse(inspector.quantity_signature('9月', september+'ে', 'bn')['language_scoped_month_repair_matches'])
 
+    def test_inspector_records_current_first_and_actual_frozen_contract_selection(self):
+        old = self.fixture.legacy_bn_candidate()
+        result = inspector.compare(self.store, old, 'bn', self.base/'legacy-inspect', frozen_approval=True)
+        self.assertTrue(result['matches'])
+        self.assertEqual(result['quantity_contract'], inspector.CONTRACT_ID)
+        self.assertEqual([a['contract'] for a in result['baseline_attempts']], ['current', inspector.CONTRACT_ID])
+        self.assertFalse(result['baseline_attempts'][0]['matches']); self.assertTrue(result['baseline_attempts'][1]['matches'])
+        new = self.fixture.legacy_bn_candidate(current_rule=True)
+        result = inspector.compare(self.store, new, 'bn', self.base/'new-inspect', frozen_approval=True)
+        self.assertTrue(result['matches']); self.assertEqual(result['quantity_contract'], 'current')
+        self.assertEqual(len(result['baseline_attempts']), 1)
+
     def test_exact_candidate_replays_without_writes_or_inference(self):
         before = {key: dict(value) for key, value in self.store.client.objects.items()}
         result = self.compare()

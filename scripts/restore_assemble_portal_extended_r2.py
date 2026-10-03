@@ -96,7 +96,7 @@ def restore_and_assemble(
         batches.append({'generation': generation, 'candidates': candidates})
     with tempfile.TemporaryDirectory(prefix='extended-r2-restore-') as temporary:
         workspace = Path(temporary)
-        result = compose(root, store, batches, workspace)
+        result = compose(root, store, batches, workspace, active_identity=identity)
         evidence = {
             'schema_version': 1,
             'ready': result['ready'],

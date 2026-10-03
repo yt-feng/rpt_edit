@@ -107,12 +107,13 @@ def extended_source_language(text: str) -> str:
     return _detect_source(text)
 
 
-def validate_text(source: str, translated: str, locale: str, source_language: str) -> None:
+def validate_text(source: str, translated: str, locale: str, source_language: str, *, quantity_validator=None) -> None:
     if not isinstance(translated, str) or not translated.strip(): raise ExpansionError('Empty translated text')
     if re.search(r'[\ufffd\ud800-\udfff]', translated): raise ExpansionError('Invalid Unicode translation')
     if len(translated) > max(2000, len(source) * 12): raise ExpansionError('Unbounded translation expansion')
     if re.search(r'__(?:KC_PH_|HYMTPH_)\d+__', translated): raise ExpansionError('Unrestored protected identifier')
-    if quantity_issues(source, translated, source_language, locale): raise ExpansionError('Financial quantity validation failed')
+    validator = quantity_issues if quantity_validator is None else quantity_validator
+    if validator(source, translated, source_language, locale): raise ExpansionError('Financial quantity validation failed')
     if source.count('|') != translated.count('|'): raise ExpansionError('Table column boundaries changed')
     clean = re.sub(r'https?://\S+|\b[A-Z][A-Z0-9.-]{0,7}\b', '', source).strip()
     if not any(c.isalpha() for c in clean): return
@@ -133,9 +134,10 @@ def validate_text(source: str, translated: str, locale: str, source_language: st
 
 class Memo:
     def __init__(self, path: Path, locale: str, translator: Translator, deadline: float, *, source_generation: str | None = None,
-                 allow_source_fallback: bool = False, seed_checkpoint: Path | None = None):
+                 allow_source_fallback: bool = False, seed_checkpoint: Path | None = None, quantity_validator=None):
         reject_symlinks(path)
         self.path, self.locale, self.translator, self.deadline = path, locale, translator, deadline
+        self.quantity_validator = quantity_validator
         self.source_generation = source_generation
         self.allow_source_fallback = allow_source_fallback
         self.source_fallbacks = {}
@@ -177,7 +179,7 @@ class Memo:
         row = self.rows.get(key, self.seed_rows.get(key))
         if isinstance(row, dict) and row.get('source') == source and row.get('language') == language:
             try:
-                validate_text(source, row.get('text'), self.locale, language)
+                validate_text(source, row.get('text'), self.locale, language, quantity_validator=self.quantity_validator)
                 self.hits += 1
                 self.rows[key] = row
                 return row['text']
@@ -196,7 +198,7 @@ class Memo:
         try:
             self.calls += 1
             translated = self.translator.translate(source, target=self.locale, source=language, markdown=markdown)
-            validate_text(source, translated, self.locale, language)
+            validate_text(source, translated, self.locale, language, quantity_validator=self.quantity_validator)
         except (OfflineTranslationValidationError, ExpansionError) as error:
             discard = getattr(self.translator, 'discard_translation', None)
             if callable(discard): discard(source, self.locale, language, markdown=markdown)
@@ -261,7 +263,7 @@ def translate_document(doc: dict, memo: Memo) -> dict:
 
 def build(corpus: dict, locale: str, output: Path, checkpoint: Path, translator: Translator,
           *, budget_seconds=MAX_TRANSLATION_SECONDS, origin=ORIGIN, allow_source_fallback=False,
-          seed_checkpoint: Path | None = None) -> dict:
+          seed_checkpoint: Path | None = None, quantity_validator=None) -> dict:
     if locale not in ADDITIONAL: raise ExpansionError('Not an additional locale')
     docs = validate_corpus(corpus, origin=origin)
     if origin + '/' not in {doc['url'] for doc in docs} and not daily_corpus_day(corpus):
@@ -272,7 +274,7 @@ def build(corpus: dict, locale: str, output: Path, checkpoint: Path, translator:
     output.mkdir(parents=True, exist_ok=True)
     memo = Memo(checkpoint, locale, translator, time.monotonic() + budget_seconds,
                 source_generation=corpus['documents_sha256'], allow_source_fallback=allow_source_fallback,
-                seed_checkpoint=seed_checkpoint)
+                seed_checkpoint=seed_checkpoint, quantity_validator=quantity_validator)
     set_deadline = getattr(translator, 'set_deadline', None)
     if callable(set_deadline): set_deadline(memo.deadline)
     # Materialize an empty or resumed checkpoint before the first model call.
