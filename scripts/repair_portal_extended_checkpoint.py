@@ -235,6 +235,18 @@ class TargetedRepairError(RuntimeError):
         self.diagnostic = diagnostic
 
 
+def numeric_diagnostic(identity, source_text, translated):
+    # The model callback precedes validation. Malformed model text must still
+    # reach the unchanged validation/retry loop, not fail inside diagnostics.
+    from inspect_portal_extended_continuation import quantity_diagnostics
+    if any(re.search(r'[\ufffd\ud800-\udfff]',value) for value in (source_text,translated)):
+        return {'available':False, 'code':'diagnostic-text-invalid'}
+    try:
+        return quantity_diagnostics({'rows': {identity:{'source':source_text, 'text':translated}}})
+    except (ExpansionError, UnicodeError, ValueError, ArithmeticError):
+        return {'available':False, 'code':'diagnostic-text-invalid'}
+
+
 class ProtectedBasisPointTranslator:
     def __init__(self, base, sources):
         self.base, self.sources = base, sources
@@ -255,12 +267,13 @@ class ProtectedBasisPointTranslator:
         self.model_signal_count += 1
         if len(self.model_signals) >= 3:
             return
-        terms = self.current['terms']
-        from inspect_portal_extended_continuation import quantity_diagnostics
-        quantities = quantity_diagnostics({'rows': {self.current['unit_sha256']:
-            {'source': model_input, 'text': raw}}})
+        # Hy-MT callbacks describe one split fragment, so tokens belonging to
+        # other fragments are not missing from this raw fragment.
+        terms = {token for token in self.current['terms'] if token in model_input}
+        quantities = numeric_diagnostic(self.current['unit_sha256'], model_input, raw)
         self.model_signals.append({'quality_retry': attempt,
-            'model_input_sha256': digest(model_input.encode()), 'translated_sha256': digest(raw.encode()),
+            'model_input_sha256': digest(model_input.encode('utf-8',errors='surrogatepass')),
+            'translated_sha256': digest(raw.encode('utf-8',errors='surrogatepass')),
             'translated_characters': len(raw),
             'missing_basis_point_placeholders': sum(raw.count(token) == 0 for token in terms),
             'duplicate_basis_point_placeholders': sum(raw.count(token) > 1 for token in terms),
@@ -300,9 +313,7 @@ class ProtectedBasisPointTranslator:
                 'model_attempts':self.model_signals, 'model_signals_total':self.model_signal_count,
                 'model_signals_truncated':self.model_signal_count>len(self.model_signals)})
             if stage == 'original-quality':
-                from inspect_portal_extended_continuation import quantity_diagnostics
-                diagnostic['restored_quantity_diagnostics'] = quantity_diagnostics({'rows':
-                    {diagnostic['unit_sha256']:{'source':text, 'text':translated}}})
+                diagnostic['restored_quantity_diagnostics'] = numeric_diagnostic(diagnostic['unit_sha256'],text,translated)
             if len(self.failures)<20:self.failures.append(diagnostic)
             raise TargetedRepairError(diagnostic) from None
         finally:

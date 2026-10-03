@@ -107,6 +107,37 @@ class RepairTests(unittest.TestCase):
         self.assertNotIn('Private model draft',json.dumps(row))
         self.assertNotIn(source,json.dumps(row,ensure_ascii=False))
 
+    def test_malformed_model_text_diagnostic_cannot_replace_the_original_validation_failure(self):
+        source='收益率上升50个基点。'
+        class Base:
+            def translate(self,text,**kw):
+                protected.observe_model({'model_input':text,'raw_translation':'\ud800', 'quality_retry':0})
+                raise repair.OfflineTranslationValidationError('Invalid Unicode translation')
+        protected=repair.ProtectedBasisPointTranslator(Base(),{source})
+        with self.assertRaises(repair.TargetedRepairError):
+            protected.translate(source,target='fr',source='zh')
+        diagnostic=protected.failures[0]
+        self.assertEqual(diagnostic['gate_code'],'offline-unicode-validation')
+        self.assertEqual(diagnostic['model_attempts'][0]['quantity_diagnostics'],
+                         {'available':False,'code':'diagnostic-text-invalid'})
+        with patch('inspect_portal_extended_continuation.quantity_diagnostics',side_effect=ValueError('private invalid text')):
+            self.assertEqual(repair.numeric_diagnostic('a'*64,source,'bad'),
+                             {'available':False,'code':'diagnostic-text-invalid'})
+
+    def test_split_model_signal_counts_only_placeholders_in_that_fragment(self):
+        source='收益率上升50个基点，另一收益率下降20个基点。'
+        class Base:
+            def translate(self,text,**kw):
+                protected.observe_model({'model_input':'__HYMTPH_9000__',
+                    'raw_translation':'Le taux __HYMTPH_9000__.','quality_retry':0})
+                return 'Le taux monte de __HYMTPH_9000__, autre baisse de __HYMTPH_9001__.'
+        protected=repair.ProtectedBasisPointTranslator(Base(),{source})
+        result=protected.translate(source,target='fr',source='zh')
+        self.assertIn('50 bps',result);self.assertIn('20 bps',result)
+        signal=protected.model_signals[0]
+        self.assertEqual(signal['missing_basis_point_placeholders'],0)
+        self.assertEqual(signal['duplicate_basis_point_placeholders'],0)
+
     def test_preserved_rows_and_fallbacks_are_byte_bound_and_new_source_cannot_be_swapped(self):
         identity,old=self.checkpoint();new=copy.deepcopy(old)
         new['rows'][identity]['text']='Le rendement monte de 50 bps.'
