@@ -98,6 +98,37 @@ class NativeMarketSourcesTests(unittest.TestCase):
             return native.extract_sources(self.input, self.manifest, self.output, expected,
                                           enable_ocr=enable_ocr, source_context=source_context)
 
+    def append_sparse_page(self, name: str, text: str, *, chinese: bool = False) -> None:
+        path = self.input / name
+        changed = self.root / "with-sparse-page.pdf"
+        with fitz.open(path) as document:
+            page = document.new_page(width=792, height=612)
+            page.insert_textbox(fitz.Rect(150, 230, 650, 450), text, fontsize=26,
+                                fontname="china-s" if chinese else "helv", align=1)
+            document.save(changed)
+        path.write_bytes(changed.read_bytes())
+        self.update_hash(name)
+
+    def audited_sparse_fixture(self, page, source_name, number):
+        """Mock engine reads only; bind actual PDF geometry, pixels and receipt."""
+        import ocr_numeric_evidence as numeric
+        primary = page.get_text("text", sort=True).strip()
+        words = page.get_text("words", sort=True)
+        second = [{"bbox": [value * 450 / 72 for value in word[:4]], "text": word[4],
+                   "block": word[5], "line": word[6]} for word in words]
+        crops = {index: [{"method": f"source-crop-psm-{psm}", "dpi": 600,
+                          "literal": mention["literal"], "field_count": 1,
+                          "input_pixel_sha256": "b" * 64} for psm in (6, 11)]
+                 for index, mention in enumerate(numeric.numeric_mentions(primary))}
+        with patch.object(numeric, "_read_tesseract", return_value=second), patch.object(numeric, "_crop_reads", return_value=crops):
+            audit = numeric.audit_numeric_evidence(page, primary, primary_words=words,
+                                                  language=native.OCR_LANGUAGES, tesseract_command="fixture-engine")
+        return audit["safe_text"], {"engine": "tesseract-via-pymupdf", "pymupdf_version": fitz.VersionBind,
+                                    "languages": native.OCR_LANGUAGES, "dpi": native.PAGE_DPI, "full_page": True,
+                                    "traineddata": [{"language": language, "filename": f"{language}.traineddata", "sha256": "a" * 64}
+                                                    for language in native.OCR_LANGUAGES.split("+")],
+                                    "numeric_evidence": audit["evidence"]}
+
     def test_readability_rejects_opaque_native_streams_even_above_the_old_threshold(self) -> None:
         opaque = "f6BvX2LkZ9QwR4N8jH3PsY7MdW5GtV1C0UaEoIiSxAzTnRpK9mH6L4zBq"
         self.assertGreater(native.meaningful_characters(opaque), native.MIN_PAGE_CHARACTERS)
@@ -129,6 +160,117 @@ class NativeMarketSourcesTests(unittest.TestCase):
         self.assertEqual(native.page_readability(text)["characters"], 0)
         with self.assertRaisesRegex(native.SourceValidationError, "insufficient readable"):
             native.require_readable_page(text, "unreadable.pdf", 1)
+
+    def test_sparse_structural_ocr_is_explicit_and_preserves_regular_readability(self) -> None:
+        for text, structure in (("Disclosure Appendix\nResearch\n49", "sparse_ocr_english"),
+                                ("Research\nJordan Evans", "sparse_ocr_english"),
+                                ("Section\nTaylor Morgan", "sparse_ocr_english"),
+                                ("信息披露附录\n二零二六年十月", "sparse_ocr_chinese"),
+                                ("风险披露\n20261004", "sparse_ocr_chinese")):
+            with self.subTest(text=text):
+                self.assertFalse(native.page_readability(text)["accepted"])
+                with self.assertRaises(native.SourceValidationError):
+                    native.require_readable_page(text, "divider.pdf", 1)
+                evidence = native.page_readability(text, allow_sparse_ocr=True)
+                self.assertTrue(evidence["accepted"])
+                self.assertEqual(evidence["subtype"], native.SPARSE_OCR_SUBTYPE)
+                self.assertEqual(evidence["structure"], structure)
+        self.assertEqual(native.page_readability(REPORT_TEXT),
+                         native.page_readability(REPORT_TEXT, allow_sparse_ocr=True),
+                         "Previously accepted native/OCR receipts must retain exact evidence")
+
+    def test_sparse_ocr_rejects_noise_empty_opaque_and_annotation_only_pages(self) -> None:
+        cases = ("", "Disclosure", "Disclosure Appendix", "qxzv rtyk jhgf 0123",
+                 "1234 5678 9012 3456", "Disclosure Appendix Research\ufffd",
+                 "Disclosure Appendix Research\ue000",
+                 "f6BvX2LkZ9QwR4N8jH3PsY7MdW5GtV1C0UaEoIiSxAzTnRpK9mH6L4zBq",
+                 "[数值待核对:n0001] [漏识数值待核对:s0001]",
+                 "Appendix Research [数值待核对:n0001] [数值待核对:n0002]")
+        for text in cases:
+            with self.subTest(text=text), self.assertRaises(native.SourceValidationError):
+                native.require_readable_page(text, "noise.pdf", 1, allow_sparse_ocr=True)
+        self.assertEqual(native.page_readability("风险披露 [数值待核对:n0001]", allow_sparse_ocr=True)["characters"], 4)
+
+    def test_sparse_native_divider_still_requires_ocr_and_transferred_consumer_rechecks_subtype(self) -> None:
+        self.select("divider.pdf")
+        self.append_sparse_page("divider.pdf", "Disclosure Appendix\nResearch\n49")
+        with patch.object(native, "_ocr_page", side_effect=AssertionError("Disabled OCR must not be called")):
+            with self.assertRaisesRegex(native.SourceValidationError, "OCR is disabled"):
+                self.extract()
+        with patch.object(native, "_ocr_page", side_effect=self.audited_sparse_fixture) as ocr:
+            receipt = self.extract(enable_ocr=True)
+        self.assertEqual(ocr.call_count, 1)
+        report = receipt["reports"][0]
+        page = report["pages"][1]
+        self.assertEqual(page["extraction_method"], "ocr")
+        self.assertFalse(page["native_readability"]["accepted"])
+        self.assertFalse(page["text_readability"]["accepted"])
+        self.assertEqual(page["recognized_readability"]["subtype"], native.SPARSE_OCR_SUBTYPE)
+        self.assertEqual(page["ocr"]["numeric_evidence"]["source_num_count"], 1)
+        with fitz.open(self.input / "divider.pdf") as source:
+            expected = source[1].get_pixmap(dpi=300, colorspace=fitz.csRGB, alpha=False)
+            self.assertEqual(page["original_page"]["pixel_sha256"], hashlib.sha256(expected.samples).hexdigest())
+        shutil.rmtree(self.input)
+        with patch.object(native, "_ocr_page", side_effect=AssertionError("Consumer must not rerun OCR")):
+            self.assertEqual(native.validate_sources(self.output, self.manifest, 1), receipt)
+        receipt_path = self.output / native.RECEIPT_NAME
+        for mutation in ("subtype", "minimum", "native", "numeric_missing"):
+            tampered = copy.deepcopy(receipt)
+            page = tampered["reports"][0]["pages"][1]
+            if mutation == "subtype":
+                page["recognized_readability"].pop("subtype")
+            elif mutation == "minimum":
+                page["recognized_readability"]["minimum_characters"] = 1
+            elif mutation == "native":
+                page["extraction_method"] = "native"
+                page["ocr"] = None
+            else:
+                page["ocr"].pop("numeric_evidence")
+            receipt_path.write_text(json.dumps(tampered))
+            with self.subTest(mutation=mutation), self.assertRaises(native.SourceValidationError):
+                native.validate_sources(self.output, self.manifest, 1)
+
+    def test_sparse_structural_ocr_does_not_relax_the_complete_report_floor(self) -> None:
+        self.select("short-report.pdf")
+        path = self.input / "short-report.pdf"
+        path.unlink()
+        with fitz.open() as document:
+            page = document.new_page()
+            page.insert_text((45, 50), "Disclosure Appendix Research", fontsize=20)
+            document.save(path)
+        self.update_hash("short-report.pdf")
+        with patch.object(native, "_ocr_page", side_effect=self.audited_sparse_fixture):
+            with self.assertRaisesRegex(native.SourceValidationError, "insufficient text for a report summary"):
+                self.extract(enable_ocr=True)
+        self.assertFalse(self.output.exists())
+
+    def test_ocr_readability_rejection_is_not_relabelled_as_missing_language_models(self) -> None:
+        models = self.root / "fixture-tessdata"
+        models.mkdir()
+        for language in native.OCR_LANGUAGES.split("+"):
+            (models / f"{language}.traineddata").write_bytes(b"fixture model identity")
+        with fitz.open() as document:
+            page = document.new_page()
+            page.insert_text((45, 50), "Too short", fontsize=20)
+            with patch.object(fitz, "get_tessdata", return_value=str(models)), \
+                    patch.object(fitz.Page, "get_textpage_ocr", return_value=page.get_textpage()):
+                with self.assertRaisesRegex(native.SourceValidationError, "insufficient readable page text") as failure:
+                    native._ocr_page(page, "unreadable.pdf", 1)
+                self.assertNotIn("Tesseract data", str(failure.exception))
+            with patch.object(fitz, "get_tessdata", return_value=str(models)), \
+                    patch.object(fitz.Page, "get_textpage_ocr", side_effect=RuntimeError("engine failed")):
+                with self.assertRaisesRegex(native.SourceValidationError, "Runner OCR failed") as failure:
+                    native._ocr_page(page, "unreadable.pdf", 1)
+                self.assertIsInstance(failure.exception.__cause__, RuntimeError)
+            readable = document.new_page()
+            readable.insert_text((45, 50), "Disclosure Appendix Research", fontsize=20)
+            with patch.object(fitz, "get_tessdata", return_value=str(models)), \
+                    patch.object(fitz.Page, "get_textpage_ocr", return_value=readable.get_textpage()), \
+                    patch("ocr_numeric_evidence.audit_numeric_evidence",
+                          side_effect=native.SourceValidationError("source numeric positions differ")):
+                with self.assertRaisesRegex(native.SourceValidationError, "source numeric positions differ") as failure:
+                    native._ocr_page(readable, "unreadable.pdf", 2)
+                self.assertNotIn("Tesseract data", str(failure.exception))
 
     def test_sparse_scanned_table_keeps_complete_source_when_one_numeric_field_is_masked(self) -> None:
         import ocr_numeric_evidence as numeric
@@ -543,6 +685,41 @@ class NativeMarketSourcesTests(unittest.TestCase):
             if Path(row["process_local_path"]).name == name:
                 row["content_sha256"] = hashlib.sha256((self.input / name).read_bytes()).hexdigest()
         self.manifest.write_text(json.dumps(rows), encoding="utf-8")
+
+    @unittest.skipUnless(HAS_OCR_DATA, "Local eng and chi_sim Tesseract language data are unavailable")
+    def test_actual_cloud_ocr_short_english_divider_retains_full_page_and_numeric_proof(self) -> None:
+        self.select("short-divider.pdf")
+        self.append_sparse_page("short-divider.pdf", "Disclosure Appendix\nResearch\n49")
+        with patch.dict(os.environ, {"TESSDATA_PREFIX": str(TESSDATA)}):
+            receipt = self.extract(enable_ocr=True)
+        report = receipt["reports"][0]
+        page = report["pages"][1]
+        self.assertEqual(page["extraction_method"], "ocr")
+        self.assertEqual(page["recognized_readability"]["subtype"], native.SPARSE_OCR_SUBTYPE)
+        self.assertEqual(page["recognized_readability"]["structure"], "sparse_ocr_english")
+        self.assertLess(page["recognized_text_characters"], native.MIN_PAGE_CHARACTERS)
+        self.assertIn("Disclosure", page["ocr"]["numeric_evidence"]["primary_text"])
+        self.assertEqual(page["ocr"]["input_pixel_sha256"], page["original_page"]["pixel_sha256"])
+        self.assertEqual(page["original_page"]["dpi"], 300)
+        self.assertGreaterEqual(page["ocr"]["numeric_evidence"]["source_num_count"], 1)
+        self.assertGreaterEqual(report["recognized_text_characters"], native.MIN_REPORT_CHARACTERS)
+        shutil.rmtree(self.input)
+        self.assertEqual(native.validate_sources(self.output, self.manifest, 1), receipt)
+
+    @unittest.skipUnless(HAS_OCR_DATA, "Local eng and chi_sim Tesseract language data are unavailable")
+    def test_actual_cloud_ocr_short_chinese_divider_retains_recognized_language(self) -> None:
+        self.select("short-chinese-divider.pdf")
+        self.append_sparse_page("short-chinese-divider.pdf", "信息披露附录\n二零二六年十月", chinese=True)
+        with patch.dict(os.environ, {"TESSDATA_PREFIX": str(TESSDATA)}):
+            receipt = self.extract(enable_ocr=True)
+        page = receipt["reports"][0]["pages"][1]
+        self.assertEqual(page["extraction_method"], "ocr")
+        self.assertEqual(page["recognized_readability"]["subtype"], native.SPARSE_OCR_SUBTYPE)
+        self.assertEqual(page["recognized_readability"]["structure"], "sparse_ocr_chinese")
+        self.assertGreaterEqual(page["recognized_readability"]["han_characters"], 4)
+        self.assertLess(page["recognized_text_characters"], native.MIN_PAGE_CHARACTERS)
+        shutil.rmtree(self.input)
+        self.assertEqual(native.validate_sources(self.output, self.manifest, 1), receipt)
 
     @unittest.skipUnless(HAS_OCR_DATA, "Local eng and chi_sim Tesseract language data are unavailable")
     def test_actual_full_page_ocr_retains_image_provenance_and_validates_without_originals(self) -> None:

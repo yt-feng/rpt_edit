@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import copy
 import hashlib
+import io
 import json
 from pathlib import Path
 import subprocess
@@ -42,6 +43,29 @@ def fixture(literal="4.8", box=None):
             "expected_literal": literal, "expected_bbox": box or [529, 102, 543, 114]}
 
 
+def unresolved_percent_receipt():
+    value = receipt()
+    evidence = value["reports"][0]["pages"][0]["ocr"]["numeric_evidence"]
+    box = [140, 246, 164, 258]
+    evidence.update({
+        "source_dpi": 300, "source_num_count": 1, "verified_count": 0, "corrected_count": 0,
+        "unresolved_count": 1, "secondary_only_count": 0, "observed_num_count": 1,
+        "second_page_fields": [{"literal": "17%", "bbox": box},
+                               {"literal": "PRIVATE PROSE https://private.invalid", "bbox": [10, 10, 20, 20]}],
+        "records": [{"id": "n0001", "literal": "17%", "safe_literal": "[数值待核对:n0001]",
+                     "status": "unresolved", "reason": "percent_not_visible", "bbox": box,
+                     "source_pixel_bbox": [550, 1000, 720, 1100],
+                     "reads": [{"method": "second-page-psm-3", "dpi": 450, "literal": "17%", "bbox": box,
+                                "input_pixel_sha256": "f" * 64},
+                               {"method": "source-crop-psm-6", "dpi": 600, "literal": "17%", "field_count": 1},
+                               {"method": "source-crop-psm-11", "dpi": 600, "literal": "17%", "field_count": 1}],
+                     "pixel_punctuation": {"width": 170, "height": 100, "threshold": 160,
+                                           "pixel_sha256": "f" * 64, "components": [{"bbox": [1, 2, 3, 4], "area": 4}],
+                                           "decimal_marks": [], "minus_marks": [], "percent_marks": [],
+                                           "parentheses_marks": []}}]})
+    return value
+
+
 class NumericAuditTests(unittest.TestCase):
     def summarize(self, value=None, checks=None):
         return audit.summarize_verified_receipt(value or receipt(), "e" * 64, checks or [])
@@ -78,6 +102,163 @@ class NumericAuditTests(unittest.TestCase):
     def test_unresolved_field_never_passes_fixture(self):
         result = self.summarize(checks=[fixture("1250.88", [349, 102, 376, 114])])
         self.assertEqual(result["fixtures"][0]["category"], "field_unresolved")
+        self.assertFalse(result["success"])
+
+    def test_failed_percent_fixture_reports_numeric_evidence_without_admitting_it(self):
+        result = self.summarize(unresolved_percent_receipt(), [fixture("17%", [139, 245, 165, 259])])
+        check = result["fixtures"][0]
+        self.assertFalse(result["success"])
+        self.assertEqual(check["category"], "field_unresolved")
+        diagnostic = check["numeric_diagnostics"]
+        self.assertEqual(diagnostic["source_dpi"], 300)
+        self.assertEqual(diagnostic["positional_record_count"], 1)
+        row = diagnostic["records"][0]
+        self.assertEqual(row["primary_literal"], "17%")
+        self.assertEqual(row["reason"], "percent_not_visible")
+        self.assertNotIn("admitted_literal", row)
+        self.assertEqual([read["literal"] for read in row["reads"]], ["17%"] * 3)
+        self.assertEqual(row["pixel_punctuation"]["percent_marks"], {"present": False, "count": 0})
+        self.assertEqual(row["pixel_punctuation"]["component_count"], 1)
+        self.assertEqual(row["source_pixel_bbox"], [550, 1000, 720, 1100])
+        self.assertEqual(row["second_page_at_record"]["candidate_count"], 1)
+        self.assertNotIn("PRIVATE", json.dumps(result))
+        self.assertNotIn("数值待核对", json.dumps(result))
+
+    def test_positioned_read_conflict_reports_null_and_multiple_candidates(self):
+        value = unresolved_percent_receipt()
+        evidence = value["reports"][0]["pages"][0]["ocr"]["numeric_evidence"]
+        row = evidence["records"][0]
+        row["reason"] = "positioned_reads_disagree"
+        row["reads"][0]["literal"] = None
+        row["reads"][1].update({"literal": None, "field_count": 2})
+        evidence["second_page_fields"].append({"literal": "7%", "bbox": [142, 246, 164, 258]})
+        result = self.summarize(value, [fixture("17%", [139, 245, 165, 259])])
+        diagnostic = result["fixtures"][0]["numeric_diagnostics"]["records"][0]
+        self.assertEqual(diagnostic["reason"], "positioned_reads_disagree")
+        self.assertIsNone(diagnostic["reads"][0]["literal"])
+        self.assertEqual(diagnostic["reads"][1]["field_count"], 2)
+        self.assertEqual(diagnostic["second_page_at_record"]["candidate_count"], 2)
+        self.assertEqual([row["literal"] for row in diagnostic["second_page_at_record"]["candidates"]], ["17%", "7%"])
+        self.assertFalse(result["success"])
+
+    def test_second_page_lookup_uses_record_position_independently_of_fixture_box(self):
+        value = unresolved_percent_receipt()
+        evidence = value["reports"][0]["pages"][0]["ocr"]["numeric_evidence"]
+        evidence["second_page_fields"].append({"literal": "25", "bbox": [166, 246, 175, 258]})
+        result = self.summarize(value, [fixture("17%", [139, 245, 180, 259])])
+        diagnostic = result["fixtures"][0]["numeric_diagnostics"]
+        self.assertEqual(diagnostic["second_page_at_fixture"]["candidate_count"], 2)
+        self.assertEqual(diagnostic["records"][0]["second_page_at_record"]["candidate_count"], 1)
+
+    def test_successful_fixture_has_no_failure_diagnostics(self):
+        result = self.summarize(checks=[fixture()])
+        self.assertNotIn("numeric_diagnostics", result["fixtures"][0])
+
+    def test_mismatch_reports_only_already_admitted_numeric_literal(self):
+        result = self.summarize(checks=[fixture("48")])
+        row = result["fixtures"][0]["numeric_diagnostics"]["records"][0]
+        self.assertEqual(row["status"], "corrected")
+        self.assertEqual(row["admitted_literal"], "4.8")
+        self.assertFalse(result["success"])
+
+    def test_diagnostic_projection_discards_prose_urls_unknown_fields_and_invalid_scalars(self):
+        value = unresolved_percent_receipt()
+        evidence = value["reports"][0]["pages"][0]["ocr"]["numeric_evidence"]
+        private = "PRIVATE REPORT https://private.invalid signed credentials"
+        evidence["runtime"] = {"language": private}
+        row = evidence["records"][0]
+        row.update({"id": private, "reason": private, "literal": private, "safe_literal": private,
+                    "source_pixel_bbox": [0, 0, float("inf"), 10], "unknown": private})
+        row["reads"] = [{"method": "second-page-psm-3", "dpi": True, "literal": private,
+                         "bbox": [0, 0, float("nan"), 10], "field_count": -1,
+                         "input_pixel_sha256": private, "raw_text": private},
+                        {"method": {"private": private}, "literal": "17%"},
+                        {"method": private, "literal": "17%"}]
+        row["pixel_punctuation"].update({"width": True, "height": -1, "threshold": 1000,
+                                         "pixel_sha256": private, "percent_marks": [[private]],
+                                         "components": [{"raw_text": private}], "unknown": private})
+        evidence["second_page_fields"] = [{"literal": private, "bbox": row["bbox"], "raw_text": private},
+                                           {"literal": "17%", "bbox": [0, 0, 10 ** 400, 10]}]
+        result = self.summarize(value, [fixture("17%", [139, 245, 165, 259])])
+        diagnostic = result["fixtures"][0]["numeric_diagnostics"]["records"][0]
+        for key in ("id", "reason", "source_pixel_bbox", "admitted_literal"):
+            self.assertNotIn(key, diagnostic)
+        self.assertIsNone(diagnostic["primary_literal"])
+        self.assertEqual(diagnostic["reads"], [{"method": "second-page-psm-3", "literal": None}])
+        self.assertNotIn("percent_marks", diagnostic["pixel_punctuation"])
+        self.assertNotIn("PRIVATE", json.dumps(result, allow_nan=False))
+        self.assertNotIn("credentials", json.dumps(result))
+        self.assertFalse(result["success"])
+
+    def test_numeric_diagnostic_literals_have_strict_bounded_grammar(self):
+        for literal in ("17%", "(3.1)%", "-4.8", "−4.8", "$ 1,250.88", "25 bps", "12x"):
+            self.assertEqual(audit._diagnostic_number(literal), literal)
+        for literal in (None, 17, "17% PRIVATE", "https://private.invalid", "[数值待核对:n0001]",
+                        "1" * 65, "17\n%", "17\t%", "17\x00%"):
+            self.assertIsNone(audit._diagnostic_number(literal))
+
+    def test_unhashable_read_methods_are_discarded_without_an_exception(self):
+        for method in ([], ["second-page-psm-3"], {}, {"private": "PRIVATE REPORT"}):
+            self.assertIsNone(audit._diagnostic_read({"method": method, "literal": "17%", "dpi": 450}))
+
+    def test_failure_diagnostics_leave_the_private_receipt_unchanged(self):
+        value = unresolved_percent_receipt()
+        before = json.dumps(value, sort_keys=True)
+        self.summarize(value, [fixture("17%", [139, 245, 165, 259])])
+        self.assertEqual(json.dumps(value, sort_keys=True), before)
+
+    def test_secondary_page_candidate_never_promotes_a_missing_primary_position(self):
+        result = self.summarize(unresolved_percent_receipt(), [fixture("17%", [10, 10, 20, 20])])
+        row = result["fixtures"][0]
+        self.assertEqual(row["category"], "position_missing")
+        self.assertEqual(row["numeric_diagnostics"]["positional_record_count"], 0)
+        self.assertEqual(row["numeric_diagnostics"]["second_page_at_fixture"]["candidate_count"], 1)
+        self.assertIsNone(row["numeric_diagnostics"]["second_page_at_fixture"]["candidates"][0]["literal"])
+        self.assertFalse(result["success"])
+
+    def test_failed_fixture_cli_writes_diagnostics_but_logs_counts_only_and_keeps_exit_three(self):
+        summary = self.summarize(unresolved_percent_receipt(), [fixture("17%", [139, 245, 165, 259])])
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = root / "sources"
+            source.mkdir()
+            destination = root / "summary.json"
+            stdout = io.StringIO()
+            with mock.patch.object(sys, "argv", ["audit", "--source-dir", str(source), "--expected-reports", "1",
+                                                "--summary", str(destination)]), \
+                    mock.patch.object(audit, "audit_sources", return_value=summary) as audited, \
+                    mock.patch.object(sys, "stdout", stdout):
+                code = audit.main()
+            self.assertEqual(code, 3)
+            audited.assert_called_once()
+            stored = json.loads(destination.read_text())
+            self.assertEqual(stored["fixtures"][0]["numeric_diagnostics"]["records"][0]["reason"], "percent_not_visible")
+            self.assertNotIn("percent_not_visible", stdout.getvalue())
+            self.assertNotIn("17%", stdout.getvalue())
+            self.assertNotIn("PRIVATE", destination.read_text())
+            self.assertEqual(list(source.iterdir()), [])
+
+    def test_diagnostics_are_bounded_and_explicitly_mark_truncation(self):
+        value = unresolved_percent_receipt()
+        evidence = value["reports"][0]["pages"][0]["ocr"]["numeric_evidence"]
+        row = evidence["records"][0]
+        row["reads"] *= 4
+        row["pixel_punctuation"]["percent_marks"] = [[1, 2, 3, 4]] * (audit.DIAGNOSTIC_MARK_LIMIT + 1)
+        evidence["records"] = [copy.deepcopy(row) for _ in range(audit.DIAGNOSTIC_RECORD_LIMIT + 1)]
+        evidence.update({"source_num_count": len(evidence["records"]), "unresolved_count": len(evidence["records"]),
+                         "observed_num_count": len(evidence["records"])})
+        evidence["second_page_fields"] = [{"literal": "17%", "bbox": row["bbox"]}] * (audit.DIAGNOSTIC_SCAN_LIMIT + 1)
+        result = self.summarize(value, [fixture("17%", [139, 245, 165, 259])])
+        diagnostic = result["fixtures"][0]["numeric_diagnostics"]
+        self.assertEqual(len(diagnostic["records"]), audit.DIAGNOSTIC_RECORD_LIMIT)
+        self.assertTrue(diagnostic["records_truncated"])
+        self.assertTrue(diagnostic["records"][0]["reads_truncated"])
+        self.assertEqual(len(diagnostic["records"][0]["reads"]), audit.DIAGNOSTIC_READ_LIMIT)
+        self.assertNotIn("percent_marks", diagnostic["records"][0]["pixel_punctuation"])
+        self.assertTrue(diagnostic["second_page_at_fixture"]["scan_truncated"])
+        self.assertTrue(diagnostic["second_page_at_fixture"]["candidates_truncated"])
+        self.assertEqual(len(diagnostic["second_page_at_fixture"]["candidates"]), audit.DIAGNOSTIC_RECORD_LIMIT)
+        self.assertLessEqual(len(json.dumps(diagnostic, ensure_ascii=False).encode()), audit.DIAGNOSTIC_BYTE_LIMIT)
         self.assertFalse(result["success"])
 
     def test_source_hash_must_match(self):

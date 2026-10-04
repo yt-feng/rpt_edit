@@ -5,12 +5,14 @@ The audit reuses the production source validator before summarizing coverage.
 It publishes hashes, page numbers, counters and optional explicitly supplied
 numeric fixture matches. It never publishes report names, source prose, image
 bytes, download URLs, bucket names or credentials, and makes no network calls.
+Failed fixtures include only bounded, allowlisted numeric recognition evidence.
 """
 from __future__ import annotations
 
 import argparse
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
 import re
@@ -26,6 +28,20 @@ SCHEMA = 1
 SHA = re.compile(r"[a-f0-9]{64}")
 COUNT_KEYS = ("source_num_count", "verified_count", "corrected_count", "unresolved_count",
               "secondary_only_count", "observed_num_count")
+DIAGNOSTIC_RECORD_LIMIT = 8
+DIAGNOSTIC_READ_LIMIT = 3
+DIAGNOSTIC_SCAN_LIMIT = 10_000
+DIAGNOSTIC_MARK_LIMIT = 4096
+DIAGNOSTIC_BYTE_LIMIT = 32_768
+DIAGNOSTIC_STATUSES = {"verified", "corrected", "unresolved"}
+DIAGNOSTIC_REASONS = {
+    "source_position_unresolved", "positioned_reads_disagree", "decimal_not_visible",
+    "visible_decimal_omitted", "visible_minus_omitted", "visible_negative_parentheses_omitted",
+    "minus_not_visible", "negative_parentheses_not_visible", "percent_not_visible",
+    "visible_percent_omitted", "three_positioned_reads_and_source_marks", "not_present_in_primary_transcript",
+}
+DIAGNOSTIC_METHODS = {"second-page-psm-3", "source-crop-psm-6", "source-crop-psm-11"}
+DIAGNOSTIC_MARKS = ("decimal_marks", "minus_marks", "percent_marks", "parentheses_marks")
 
 
 class AuditError(ValueError):
@@ -88,6 +104,117 @@ def _counts(page: dict[str, Any]) -> dict[str, int]:
     return counts
 
 
+def _diagnostic_number(value: Any) -> str | None:
+    # Numeric OCR candidates remain untrusted data, even after receipt hashing.
+    # Do not copy arbitrary strings or pending markers to this public summary.
+    if (isinstance(value, str) and 0 < len(value) <= 64
+            and re.fullmatch(r"[0-9.,+\-−–()$€£¥% bBpPsSxX]+", value)
+            and NUMERIC.fullmatch(value)):
+        return value
+    return None
+
+
+def _diagnostic_bbox(value: Any) -> list[int | float] | None:
+    if (isinstance(value, list) and len(value) == 4
+            and all(type(item) in (int, float) and 0 <= item <= 100_000 and math.isfinite(item) for item in value)
+            and value[2] > value[0] and value[3] > value[1]):
+        return list(value)
+    return None
+
+
+def _diagnostic_witness(value: Any) -> dict[str, Any]:
+    if not isinstance(value, dict):
+        return {}
+    output = {}
+    for key in ("width", "height"):
+        if type(value.get(key)) is int and 1 <= value[key] <= 100_000:
+            output[key] = value[key]
+    if type(value.get("threshold")) is int and 0 <= value["threshold"] <= 255:
+        output["threshold"] = value["threshold"]
+    if isinstance(value.get("pixel_sha256"), str) and SHA.fullmatch(value["pixel_sha256"]):
+        output["pixel_sha256"] = value["pixel_sha256"]
+    components = value.get("components")
+    if isinstance(components, list) and len(components) <= DIAGNOSTIC_MARK_LIMIT:
+        output["component_count"] = len(components)
+    for key in DIAGNOSTIC_MARKS:
+        marks = value.get(key)
+        if (isinstance(marks, list) and len(marks) <= DIAGNOSTIC_MARK_LIMIT
+                and all(_diagnostic_bbox(box) is not None for box in marks)):
+            output[key] = {"present": bool(marks), "count": len(marks)}
+    return output
+
+
+def _diagnostic_read(value: Any) -> dict[str, Any] | None:
+    if (not isinstance(value, dict) or not isinstance(value.get("method"), str)
+            or value["method"] not in DIAGNOSTIC_METHODS):
+        return None
+    output = {"method": value["method"], "literal": _diagnostic_number(value.get("literal"))}
+    if type(value.get("dpi")) is int and value["dpi"] in {300, 450, 600}:
+        output["dpi"] = value["dpi"]
+    box = _diagnostic_bbox(value.get("bbox"))
+    if box is not None:
+        output["bbox"] = box
+    if type(value.get("field_count")) is int and 0 <= value["field_count"] <= 2500:
+        output["field_count"] = value["field_count"]
+    if isinstance(value.get("input_pixel_sha256"), str) and SHA.fullmatch(value["input_pixel_sha256"]):
+        output["input_pixel_sha256"] = value["input_pixel_sha256"]
+    return output
+
+
+def _diagnostic_candidates(evidence: dict[str, Any], box: list[int | float], overlap: float) -> dict[str, Any]:
+    fields = evidence.get("second_page_fields")
+    if not isinstance(fields, list):
+        return {"candidate_count": 0, "candidates": [], "scan_truncated": False, "candidates_truncated": False}
+    hits = []
+    for field in fields[:DIAGNOSTIC_SCAN_LIMIT]:
+        if not isinstance(field, dict):
+            continue
+        position = _diagnostic_bbox(field.get("bbox"))
+        if position is not None and _overlap(box, position) >= overlap:
+            hits.append({"bbox": position, "literal": _diagnostic_number(field.get("literal"))})
+    return {"candidate_count": len(hits), "candidates": hits[:DIAGNOSTIC_RECORD_LIMIT],
+            "scan_truncated": len(fields) > DIAGNOSTIC_SCAN_LIMIT,
+            "candidates_truncated": len(hits) > DIAGNOSTIC_RECORD_LIMIT}
+
+
+def _fixture_diagnostics(evidence: dict[str, Any], hits: list[dict[str, Any]],
+                         check: dict[str, Any]) -> dict[str, Any]:
+    """Project only bounded numeric evidence; never participate in acceptance."""
+    output = {"positional_record_count": len(hits), "records_truncated": len(hits) > DIAGNOSTIC_RECORD_LIMIT,
+              "records": [], "second_page_at_fixture": _diagnostic_candidates(
+                  evidence, check["expected_bbox"], check.get("min_overlap", 0.55))}
+    if type(evidence.get("source_dpi")) is int and evidence["source_dpi"] in {300, 450, 600}:
+        output["source_dpi"] = evidence["source_dpi"]
+    for record in hits[:DIAGNOSTIC_RECORD_LIMIT]:
+        row = {"primary_literal": _diagnostic_number(record.get("literal"))}
+        if isinstance(record.get("id"), str) and re.fullmatch(r"[ns][0-9]{4}", record["id"]):
+            row["id"] = record["id"]
+        if isinstance(record.get("status"), str) and record["status"] in DIAGNOSTIC_STATUSES:
+            row["status"] = record["status"]
+            if record["status"] in {"verified", "corrected"}:
+                row["admitted_literal"] = _diagnostic_number(record.get("safe_literal"))
+        if isinstance(record.get("reason"), str) and record["reason"] in DIAGNOSTIC_REASONS:
+            row["reason"] = record["reason"]
+        for key in ("bbox", "source_pixel_bbox"):
+            position = _diagnostic_bbox(record.get(key))
+            if position is not None:
+                row[key] = position
+        if "bbox" in row:
+            # Mirror the numeric auditor's exact 0.55 source-position lookup.
+            # The fixture's wider box may contain a different candidate set.
+            row["second_page_at_record"] = _diagnostic_candidates(evidence, row["bbox"], 0.55)
+        reads = record.get("reads")
+        if isinstance(reads, list):
+            row["reads"] = [safe for value in reads[:DIAGNOSTIC_READ_LIMIT]
+                            if (safe := _diagnostic_read(value)) is not None]
+            row["reads_truncated"] = len(reads) > DIAGNOSTIC_READ_LIMIT
+        row["pixel_punctuation"] = _diagnostic_witness(record.get("pixel_punctuation"))
+        output["records"].append(row)
+    if len(json.dumps(output, ensure_ascii=False, allow_nan=False).encode("utf-8")) > DIAGNOSTIC_BYTE_LIMIT:
+        raise AuditError("numeric_diagnostic_size_exceeded")
+    return output
+
+
 def _fixture_matches(receipt: dict[str, Any], checks: list[dict[str, Any]]) -> list[dict[str, Any]]:
     output = []
     # Duplicate file aliases preserve source coverage but cannot make one
@@ -131,6 +258,8 @@ def _fixture_matches(receipt: dict[str, Any], checks: list[dict[str, Any]]) -> l
             result["category"] = "value_mismatch"
         else:
             result["category"] = "position_missing"
+        if not result["matched"]:
+            result["numeric_diagnostics"] = _fixture_diagnostics(evidence, hits, check)
         output.append(result)
     return output
 

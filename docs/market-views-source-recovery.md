@@ -316,10 +316,10 @@ original page and numeric evidence for review:
 
 | Bank date | Source-only run | Bound original scope | Recorded state |
 | --- | --- | --- | --- |
-| `261001` | `37232969584` | Producer `36932674491`; 63 files, 62 unique contents | In progress |
-| `261002` | `37233084607` | Fresh exact Dropbox listing; 50 files; original source run explicitly empty | In progress |
+| `261001` | `37232969584` | Producer `36932674491`; 63 files, 62 unique contents | Failed at report ordinal 10, page 9; no complete handoff |
+| `261002` | `37233084607` | Fresh exact Dropbox listing; 50 files; original source run explicitly empty | Failed at report ordinal 6, page 5; no complete handoff |
 | `261003` | `37231899669` | Producer `37159099752`; 54 files, 1,029 pages | Failed during complete-source extraction; no complete handoff |
-| `261004` | `37233077480` | Producer `37232504334`; 4 unique files, date and `content_sha256` verified | Source contract passed; private R2 handoff saved; numeric quality review pending |
+| `261004` | `37233077480` | Producer `37232504334`; 4 unique files, date and `content_sha256` verified | Source contract passed; private R2 handoff saved; consumer numeric fixture rejected |
 
 October 4 source-only extraction completed successfully with all 4 originals
 and 4 unique contents: 109 pages, including 82 native-text pages, 27 OCR pages
@@ -329,20 +329,29 @@ fixture acceptance. The receipt observed 1,775 numeric mentions: 1,334 primary
 mentions (354 verified, 8 corrected, 972 unresolved) plus 441 secondary mentions.
 In total 1,413 remained unconfirmed and excluded from usable numeric claims.
 Successful source coverage is therefore separate from numeric quality approval.
-Prepared PR 229 adds consumer readiness and a known-field fixture audit,
+Merged PR 229 adds consumer readiness and a known-field fixture audit,
 including the visual `17%` field, before model synthesis. Its two focused test
-suites passed 12 and 17 tests, respectively. The guard is not yet deployed and
-runtime fixture acceptance remains pending. No October 4 PDF or live delivery
-is claimed from this source-only run.
+suites passed 12 and 17 tests, respectively. PRs 228 and 229 are merged on main
+at the recorded `0ead65e` state. Real October 4 consumer run `37235097133`
+stopped with **`field_unresolved`** for the visual `17%` field; this was a numeric
+fixture failure, not a fixture-input format rejection. It made zero model calls
+and generated zero PDFs. The guard has now run against the real handoff, but
+numeric quality and October 4 PDF/live delivery remain unaccepted.
 
 October 3 run `37231899669` failed at 2026-10-04 20:55:55 UTC in “Extract and
 verify the complete original source batch”, reporting a generic
 `SourceValidationError` for report ordinal 24, page 49. The cause remains under
-investigation against that exact source page. Earlier reports had already used
+investigation against that exact source page. Visual inspection identified a
+short disclosure-appendix divider. Earlier reports had already used
 OCR successfully; this generic error does not establish missing Tesseract
 models. The run produced no complete R2 source archive and reached neither the
-complete-source auditor nor golden-fixture acceptance. Only the October 1 and
-October 2 source-only runs remain in progress.
+complete-source auditor nor golden-fixture acceptance. October 1 source run
+`37232969584` also failed at report ordinal 10, page 9; that original page is a
+short Q&A divider. October 2 run `37233084607` failed at report ordinal 6, page 5;
+its original page type has not yet been inspected. All three complete-source
+extractions failed; none has a complete R2 handoff. A narrow short-structure OCR
+fix is prepared, but its actual cloud OCR acceptance remains pending. The
+October 2 failure is not assumed to have the same cause.
 
 Recovery is complete only after the
 matching cloud source and retrieval gates, exact dated PDF, original figures,
@@ -359,4 +368,5 @@ OCR extraction. Five real numeric golden fixtures are available for cloud
 quality checks, but the failed October 3 run did not reach their acceptance.
 Complete actual-report extraction and review remain outstanding.
 Verified private handoff, missing dated PDF delivery and daily OCR switch
-enablement remain acceptance steps; daily OCR backup is not yet enabled.
+enablement remain acceptance steps; `MARKET_VIEWS_OCR_BACKUP_ENABLED` remains
+false and no restored dated PDF/live delivery is claimed.
