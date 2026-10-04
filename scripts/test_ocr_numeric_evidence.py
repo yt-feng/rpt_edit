@@ -317,11 +317,48 @@ class NumericUnitTests(unittest.TestCase):
         malformed = {"schema": 1, "record_id": private, "psm": True, "size_matches": private,
                      "field_bbox": [0, 0, float("inf"), 10], "actual_clip_bbox": [0, 0, 100001, 10],
                      "actual_pixel_size": [True, 10], "expected_pixel_size": [10, 100001],
-                     "dpi": private, "field_count": 2501, "pymupdf_version": private, "private": private}
+                     "dpi": private, "field_count": 2501, "pymupdf_version": private, "private": private,
+                     "field_count_kind": {"PRIVATE": private}, "field_count_above_bound": private,
+                     "field_count_capped_count": 2501}
         self.assertEqual(numeric.safe_numeric_geometry_diagnostics(malformed), {"schema": 1})
         for value in (None, private, [], {"schema": True}, {"schema": 2}):
             self.assertIsNone(numeric.safe_numeric_geometry_diagnostics(value))
         self.assertIsNone(numeric.safe_geometry_diagnostics(ValueError(private)))
+
+    def test_invalid_crop_field_count_diagnostic_distinguishes_type_and_bound_without_raw_value(self):
+        result, _ = self._audit()
+        evidence = copy.deepcopy(result["evidence"])
+        record = evidence["records"][0]
+        clip = numeric._ocr_crop_clip(record["bbox"], evidence["page_size_points"])
+        for read in record["reads"][1:]:
+            read.update(crop_policy=numeric.OCR_CROP_POLICY, source_clip_bbox=clip,
+                        crop_pixel_size=numeric._ocr_crop_pixel_size(clip))
+        for value, kind, cap, above in ((None, "null", None, False), (True, "boolean", None, False),
+                                      ("PRIVATE 9000", "other", None, False), (-1, "integer", 0, False),
+                                      (2501, "integer", 2500, True), (10 ** 100, "integer", 2500, True),
+                                      ("missing", "missing", None, False)):
+            changed = copy.deepcopy(evidence)
+            read = changed["records"][0]["reads"][2]
+            if value == "missing":
+                read.pop("field_count")
+            else:
+                read["field_count"] = value
+            sign_evidence(changed)
+            with self.subTest(kind=kind, cap=cap), self.assertRaises(numeric.NumericEvidenceError) as failure:
+                numeric.validate_numeric_evidence(result["safe_text"], changed, changed["input_pixel_sha256"])
+            diagnostic = numeric.safe_geometry_diagnostics(failure.exception)
+            self.assertEqual(diagnostic["field_count_kind"], kind)
+            self.assertIs(diagnostic["field_count_above_bound"], above)
+            self.assertFalse(diagnostic["field_count_valid"])
+            self.assertTrue(diagnostic["clip_matches"])
+            self.assertTrue(diagnostic["size_matches"])
+            self.assertNotIn("field_count", diagnostic)
+            if cap is None:
+                self.assertNotIn("field_count_capped_count", diagnostic)
+            else:
+                self.assertEqual(diagnostic["field_count_capped_count"], cap)
+            self.assertNotIn("PRIVATE", json.dumps(diagnostic))
+            self.assertEqual(numeric.safe_geometry_diagnostics(diagnostic), diagnostic)
 
     def test_tight_reads_cannot_overrule_wide_witness_for_an_omitted_minus_or_percent(self):
         for original, primary in (("-3%", "3%"), ("3%", "3")):

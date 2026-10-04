@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import contextlib
 import copy
+from datetime import timedelta
 import hashlib
 import io
 import json
@@ -370,6 +371,205 @@ class FieldProbeTests(unittest.TestCase):
                     self.call()
                 self.assertEqual(ocr.call_count, 0)
 
+    def make_archive_context(self):
+        import archive_market_views_originals as archive
+        from mineru_task_ledger import encoded, digest
+        self.metadata.write_text(json.dumps({"id": 12345, "path": archive.WORKFLOW, "status": "completed",
+            "conclusion": "success", "event": "workflow_dispatch", "head_branch": "main", "head_sha": "a" * 40,
+            "repository": {"full_name": "owner/repo"}, "html_url": "https://PRIVATE.invalid"}))
+        raw, bindings, _ = archive.checked_inputs(self.originals, len(self.rows), "261004")
+        created = archive.now_utc()
+        self.archive_receipt = self.originals / archive.RECEIPT
+        self.archive_receipt.write_bytes(encoded({"schema_version": 1, "kind": archive.KIND, "source_ready": False,
+            "source_context": archive.context("12345", "261004", "a" * 40), "report_count": len(self.rows),
+            "manifest_sha256": digest(raw), "original_inventory": bindings, "archive_sha256": "c" * 64,
+            "archive_bytes": 100, "created_at_utc": created.isoformat(),
+            "expires_at_utc": (created + timedelta(days=7)).isoformat(),
+            "expiry_policy": "restore-disabled-after-7-days", "physical_deletion_guaranteed": False}))
+        self.page_checks = self.root / "page-checks.json"
+        self.page_checks.write_text(json.dumps({"schema": 1, "pages": [{"source_ordinal": 1, "page": 1}]}))
+
+    def call_pages(self):
+        with mock.patch("socket.create_connection", side_effect=AssertionError("No network")):
+            return probe.probe_pages(self.originals, self.manifest, self.page_checks, self.metadata,
+                date_folder="261004", source_run_id="12345", expected_articles=len(self.rows),
+                source_kind="original-archive", repository="owner/repo")
+
+    def raw_fixture(self, page):
+        return page.get_text("text", sort=True).strip(), page.get_text("words", sort=True), "fixture-models"
+
+    def test_archive_producer_requires_exact_completed_manual_main_repository(self):
+        self.make_archive_context()
+        good = json.loads(self.metadata.read_text())
+        self.assertEqual(probe.verify_producer(self.metadata, "12345", source_kind="original-archive",
+                                              repository="owner/repo"), "a" * 40)
+        with self.assertRaisesRegex(probe.ProbeError, "original_daily_producer_not_verified"):
+            probe.verify_producer(self.metadata, "12345")
+        for change in ({"event": "push"}, {"status": "in_progress"}, {"conclusion": "cancelled"},
+                       {"repository": {"full_name": "other/repo"}}, {"head_branch": "other"}, {"id": 9}):
+            self.metadata.write_text(json.dumps({**good, **change}))
+            with self.subTest(change=change), self.assertRaises(probe.ProbeError):
+                self.call_pages()
+
+    def test_archive_numeric_fixtures_keep_the_production_expected_value_gate(self):
+        self.make_archive_context()
+        with mock.patch.object(probe.native, "_ocr_page", side_effect=self.ocr_fixture):
+            result = probe.probe_fields(self.originals, self.manifest, self.fixtures, self.metadata,
+                date_folder="261004", source_run_id="12345", expected_articles=1,
+                source_kind="original-archive", repository="owner/repo")
+        self.assertTrue(result["success"])
+        self.assertEqual(result["source_kind"], "original-archive")
+        self.checks[0]["expected_literal"] = "49"
+        self.fixtures.write_text(json.dumps({"schema": 1, "checks": self.checks}))
+        with mock.patch.object(probe.native, "_ocr_page", side_effect=self.ocr_fixture):
+            result = probe.probe_fields(self.originals, self.manifest, self.fixtures, self.metadata,
+                date_folder="261004", source_run_id="12345", expected_articles=1,
+                source_kind="original-archive", repository="owner/repo")
+        self.assertFalse(result["success"])
+        self.assertEqual(result["fixtures"][0]["category"], "value_mismatch")
+
+    def test_page_selectors_are_bounded_and_cannot_carry_golden_values_or_prose(self):
+        self.make_archive_context()
+        for request in ({"schema": 1, "pages": [{"source_ordinal": True, "page": 1}]},
+                        {"schema": 1, "pages": [{"source_ordinal": 1, "page": 0}]},
+                        {"schema": 1, "pages": [{"source_ordinal": 1, "page": 1, "expected_literal": "48"}]},
+                        {"schema": 1, "pages": [{"source_ordinal": 1, "page": 1}] * 2},
+                        {"schema": 1, "pages": [{"source_ordinal": 1, "page": n} for n in range(1, 10)]}):
+            self.page_checks.write_text(json.dumps(request))
+            with self.subTest(request=request), mock.patch.object(probe, "_raw_page_ocr") as engine:
+                with self.assertRaises(probe.ProbeError):
+                    self.call_pages()
+                engine.assert_not_called()
+
+    def test_archive_receipt_date_count_hash_source_and_expiry_checked_before_ocr(self):
+        self.make_archive_context()
+        good = json.loads(self.archive_receipt.read_text())
+        for change in ({"source_ready": True}, {"report_count": 2}, {"manifest_sha256": "f" * 64},
+                       {"source_context": {**good["source_context"], "original_source_run_id": "888"}},
+                       {"source_context": {**good["source_context"], "date_folder": "261003"}},
+                       {"expires_at_utc": good["created_at_utc"]}):
+            self.archive_receipt.write_text(json.dumps({**good, **change}))
+            with self.subTest(change=change), mock.patch.object(probe, "_raw_page_ocr") as engine:
+                with self.assertRaisesRegex(probe.ProbeError, "original_archive_receipt_not_verified"):
+                    self.call_pages()
+                engine.assert_not_called()
+
+    def test_all_originals_checked_before_an_ordinal_page_probe(self):
+        alias = self.originals / "PRIVATE-UNPROBED.pdf"
+        shutil.copyfile(self.originals / "PRIVATE-REPORT-TITLE.pdf", alias)
+        self.rows.append({**self.rows[0], "process_local_path": f"/selected/{alias.name}"})
+        self.manifest.write_text(json.dumps(self.rows))
+        self.make_archive_context()
+        alias.write_bytes(alias.read_bytes() + b" changed")
+        with mock.patch.object(probe, "_raw_page_ocr") as engine:
+            with self.assertRaisesRegex(probe.ProbeError, "original_hash_mismatch"):
+                self.call_pages()
+            engine.assert_not_called()
+
+    def test_invalid_ordinal_and_page_reject_before_ocr(self):
+        self.make_archive_context()
+        for ordinal, page in ((2, 1), (1, 2)):
+            self.page_checks.write_text(json.dumps({"schema": 1, "pages": [{"source_ordinal": ordinal, "page": page}]}))
+            with self.subTest(ordinal=ordinal, page=page), mock.patch.object(probe, "_raw_page_ocr") as engine:
+                with self.assertRaises(probe.ProbeError):
+                    self.call_pages()
+                engine.assert_not_called()
+
+    def test_unreadable_raw_ocr_has_real_counts_and_reason_without_private_text(self):
+        self.make_archive_context()
+        opaque = "A" * 120 + "\nPRIVATE"
+        with mock.patch.object(probe, "_raw_page_ocr", return_value=(opaque, [], "private-models")), \
+             mock.patch.object(probe, "audit_numeric_evidence") as numeric_audit:
+            result = self.call_pages()
+        numeric_audit.assert_not_called()
+        page = result["pages"][0]
+        self.assertEqual(page["ocr_readability"]["reason"], "opaque_ascii_runs")
+        self.assertEqual(page["ocr_readability"]["long_ascii_characters"], 120)
+        self.assertFalse(page["ocr_readability"]["accepted"])
+        self.assertEqual(page["category"], "ocr_readability_rejected")
+        self.assertFalse(result["success"])
+        self.assertTrue(result["diagnostic_complete"])
+        self.assertEqual(result["fixture_acceptance"], "not_requested")
+        for private in ("PRIVATE", "private-models", opaque, "https://", "primary_text"):
+            self.assertNotIn(private, json.dumps(result))
+        for key in ("model_call_count", "provider_post_count", "pdf_count", "r2_source_admission_count"):
+            self.assertEqual(result[key], 0)
+        self.assertFalse(result["production_acceptance"])
+        self.assertFalse(result["complete_source_handoff"])
+
+    def test_page_numeric_failure_preserves_only_category_and_safe_geometry(self):
+        self.make_archive_context()
+        error = numeric.NumericEvidenceError("Numeric crop geometry differs from its positioned source field",
+            diagnostics={"schema": 1, "size_matches": False, "actual_pixel_size": [12, 8], "private": "PRIVATE"})
+        with mock.patch.object(probe, "_raw_page_ocr", side_effect=self.raw_fixture), \
+             mock.patch.object(probe, "audit_numeric_evidence", side_effect=error):
+            result = self.call_pages()
+        page = result["pages"][0]
+        self.assertEqual(page["category"], "numeric_crop_geometry_mismatch")
+        self.assertEqual(page["geometry_diagnostics"]["actual_pixel_size"], [12, 8])
+        self.assertNotIn("PRIVATE", json.dumps(result))
+
+    def test_readable_page_reuses_numeric_consumer_and_publishes_only_totals(self):
+        self.make_archive_context()
+        def numerical(page, primary, **kwargs):
+            safe, ocr = self.ocr_fixture(page, "field-probe", 1)
+            return {"safe_text": safe, "evidence": ocr["numeric_evidence"]}
+        with mock.patch.object(probe, "_raw_page_ocr", side_effect=self.raw_fixture), \
+             mock.patch.object(probe, "audit_numeric_evidence", side_effect=numerical):
+            result = self.call_pages()
+        self.assertTrue(result["success"])
+        self.assertEqual(result["pages"][0]["category"], "page_checks_completed")
+        self.assertEqual(result["pages"][0]["numeric_counts"]["source_num_count"], 1)
+        self.assertEqual(result["pages"][0]["numeric_counts"]["verified_count"], 1)
+        for private in ("PRIVATE", '"literal"', "primary_text", "https://", "safe_text"):
+            self.assertNotIn(private, json.dumps(result))
+        self.assertEqual(result["fixture_acceptance"], "not_requested")
+
+    def test_page_cli_preserves_diagnostic_failures_without_claiming_acceptance(self):
+        self.make_archive_context()
+        common = ["--input-dir", str(self.originals), "--manifest", str(self.manifest),
+                  "--page-checks", str(self.page_checks), "--producer-metadata", str(self.metadata),
+                  "--source-run-id", "12345", "--date-folder", "261004", "--expected-articles", "1",
+                  "--summary", str(self.summary), "--source-kind", "original-archive", "--repository", "owner/repo"]
+        with mock.patch.object(probe, "_raw_page_ocr", side_effect=probe.ProbeError("ocr_engine_failed")), \
+             contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+            self.assertEqual(probe.main(common), 3)
+        result = json.loads(self.summary.read_text())
+        self.assertTrue(result["diagnostic_complete"])
+        self.assertFalse(result["success"])
+        self.assertEqual(result["pages"][0]["category"], "ocr_engine_failed")
+        self.assertFalse(result["production_acceptance"])
+        with mock.patch.object(probe, "_raw_page_ocr") as engine, contextlib.redirect_stdout(io.StringIO()):
+            self.assertEqual(probe.main(common + ["--fixtures", str(self.fixtures)]), 2)
+            engine.assert_not_called()
+        self.assertEqual(json.loads(self.summary.read_text())["category"], "exactly_one_probe_request_required")
+
+    def test_page_probe_rechecks_archive_receipt_and_every_input_after_engine(self):
+        self.make_archive_context()
+        original = self.archive_receipt.read_bytes()
+        def changed(page, image):
+            self.archive_receipt.write_bytes(original + b" ")
+            return {"category": "page_checks_completed"}
+        with mock.patch.object(probe, "_diagnose_page", side_effect=changed), self.assertRaisesRegex(probe.ProbeError, "probe_inputs_changed"):
+            self.call_pages()
+
+    def test_page_selector_cannot_bypass_daily_golden_requirement(self):
+        self.make_archive_context()
+        with self.assertRaisesRegex(probe.ProbeError, "page_diagnostics_require_original_archive"):
+            probe.probe_pages(self.originals, self.manifest, self.page_checks, self.metadata,
+                date_folder="261004", source_run_id="12345", expected_articles=1, source_kind="daily", repository="owner/repo")
+
+    @unittest.skipUnless(HAS_OCR, "Actual Tesseract CLI and eng+chi_sim models unavailable")
+    def test_actual_cloud_archive_page_probe_publishes_counts_only(self):
+        self.make_archive_context()
+        with mock.patch.dict(os.environ, {"TESSDATA_PREFIX": str(TESSDATA)}):
+            result = self.call_pages()
+        self.assertTrue(result["diagnostic_complete"])
+        self.assertIn("ocr_readability", result["pages"][0])
+        self.assertEqual(result["fixture_acceptance"], "not_requested")
+        self.assertFalse(result["production_acceptance"])
+        self.assertNotIn("PRIVATE", json.dumps(result))
+
     @unittest.skipUnless(HAS_OCR, "Actual Tesseract CLI and eng+chi_sim models unavailable")
     def test_actual_cloud_ocr_field_probe_without_full_source_or_model_calls(self):
         with mock.patch.dict(os.environ, {"TESSDATA_PREFIX": str(TESSDATA)}):
@@ -396,11 +596,27 @@ class FieldProbeWorkflowTests(unittest.TestCase):
         self.assertIn("selected-macro-pdfs-${{ inputs.source_run_id }}", text)
         self.assertIn("if: ${{ always() }}", text)
         self.assertIn("path: ${{ runner.temp }}/market-views-ocr-field-probe.json", text)
-        for forbidden in ("private_workflow_handoff", "R2_ACCESS", "MINERU", "build_market_views", "upload-dir", "workflow run"):
+        for forbidden in ("private_workflow_handoff", "MINERU", "build_market_views", "upload-dir", "workflow run"):
             self.assertNotIn(forbidden, text)
         regression = (root / ".github/workflows/wechat-pipeline-regression.yml").read_text()
         self.assertIn("python scripts/test_probe_market_views_ocr_fields.py", regression)
         self.assertEqual(regression.count('      - ".github/workflows/market-views-ocr-field-probe.yml"'), 2)
+
+    def test_archive_opt_in_reads_only_restores_private_originals_and_never_admits_sources(self):
+        root = Path(__file__).resolve().parents[1]
+        text = (root / ".github/workflows/market-views-ocr-field-probe.yml").read_text()
+        self.assertIn("default: daily", text)
+        self.assertIn("if: ${{ inputs.source_kind == 'daily' }}", text)
+        self.assertIn("if: ${{ inputs.source_kind == 'original-archive' }}", text)
+        self.assertIn("scripts/archive_market_views_originals.py restore", text)
+        self.assertIn('--destination "$RUNNER_TEMP/market-views-originals"', text)
+        self.assertIn("probe.read_page_checks", text)
+        self.assertIn('REQUEST_ARGS=(--page-checks', text)
+        self.assertNotIn("archive_market_views_originals.py upload", text)
+        self.assertNotIn("put_object", text)
+        self.assertNotIn("delete_object", text)
+        self.assertEqual(text.count("actions/upload-artifact@v4"), 1)
+        self.assertIn("path: ${{ runner.temp }}/market-views-ocr-field-probe.json", text)
 
 
 if __name__ == "__main__":

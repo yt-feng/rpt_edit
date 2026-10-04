@@ -519,3 +519,17 @@ application restore; it does not claim physical deletion or delete older data.
 complete-source/model/PDF gates, and cannot pass native source readiness. It
 provides cloud investigation material for an OCR failure without admitting an
 incomplete source batch or repeating preceding reports' OCR.
+
+The cloud field probe keeps exact Daily golden-fixture validation as its default.
+An explicit `original-archive` mode may restore a complete immutable originals
+archive from an authenticated native producer and inspect at most eight selected
+pages. Page diagnostics publish only bounded readability and numeric counters,
+safe categories, original hashes and page numbers. No-golden diagnostics are
+labelled `fixture_acceptance=not_requested`; they never admit sources or claim
+production acceptance. Repeated validation covers the entire archived batch,
+including every unprobed original, before and after inspection.
+
+The first safe October 3 crop diagnostic (`37241002063`) confirms matching clip
+coordinates and 78-by-128-pixel dimensions; only the field-count validation
+failed. Further bounded type/overflow diagnostics distinguish that cause
+without changing the numeric admission rules.
