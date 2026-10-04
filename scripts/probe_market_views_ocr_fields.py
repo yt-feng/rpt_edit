@@ -25,7 +25,7 @@ import fitz
 
 import audit_market_views_ocr_receipt as audit
 import extract_native_market_sources as native
-from ocr_numeric_evidence import MAX_IMAGE_PIXELS, SECOND_DPI, NumericEvidenceError, validate_numeric_evidence
+from ocr_numeric_evidence import MAX_IMAGE_PIXELS, SECOND_DPI, NumericEvidenceError, validate_numeric_evidence, safe_geometry_diagnostics
 
 
 DAILY_WORKFLOW = ".github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml"
@@ -37,12 +37,21 @@ MAX_REPORT_PAGES = 10_000
 class ProbeError(ValueError):
     """Only fixed, public-safe category codes cross the CLI boundary."""
 
+    def __init__(self, category, *, geometry_diagnostics=None):
+        super().__init__(category)
+        self.geometry_diagnostics = safe_geometry_diagnostics(geometry_diagnostics)
 
-def failure_summary(category: str) -> dict[str, Any]:
-    return {"schema": 1, "page_probe_only": True, "complete_source_handoff": False,
+
+def failure_summary(category: str, geometry_diagnostics=None) -> dict[str, Any]:
+    result = {"schema": 1, "page_probe_only": True, "complete_source_handoff": False,
             "production_acceptance": False, "success": False, "category": category,
             "provider_post_count": 0, "model_call_count": 0, "pdf_count": 0,
             "r2_source_admission_count": 0}
+    if category == "numeric_crop_geometry_mismatch":
+        safe = safe_geometry_diagnostics(geometry_diagnostics)
+        if safe:
+            result["geometry_diagnostics"] = safe
+    return result
 
 
 def positive_count(value: str) -> int:
@@ -225,10 +234,11 @@ def probe_fields(input_dir: Path, manifest: Path, fixtures: Path, producer_metad
                     category = getattr(exc, "category", None)
                     allowed = native.NUMERIC_FAILURE_CATEGORIES | {"ocr_language_data_unavailable", "ocr_engine_failed"}
                     if isinstance(category, str) and category in allowed:
-                        raise ProbeError(category) from None
+                        raise ProbeError(category, geometry_diagnostics=safe_geometry_diagnostics(exc)) from None
                     raise ProbeError("page_ocr_or_numeric_validation_failed") from None
                 except NumericEvidenceError as exc:
-                    raise ProbeError(native._numeric_failure_category(exc)) from None
+                    raise ProbeError(native._numeric_failure_category(exc),
+                                     geometry_diagnostics=safe_geometry_diagnostics(exc)) from None
                 except Exception as exc:
                     raise ProbeError("page_ocr_or_numeric_validation_failed") from exc
                 reports[sha]["pages"][number - 1] = {"extraction_method": "ocr", "ocr": ocr}
@@ -274,7 +284,7 @@ def main(argv: list[str] | None = None) -> int:
                                expected_articles=positive_count(args.expected_articles))
         exit_code = 0 if summary["success"] else 3
     except ProbeError as exc:
-        summary, exit_code = failure_summary(str(exc)), 2
+        summary, exit_code = failure_summary(str(exc), exc.geometry_diagnostics), 2
     except Exception:
         summary, exit_code = failure_summary("probe_failed"), 2
     try:

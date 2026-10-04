@@ -1,0 +1,58 @@
+name: Inspect dated Market Views live delivery
+run-name: Read-only Market Views live acceptance ${{ inputs.dates }}
+on:
+  pull_request:
+    paths:
+      - .github/workflows/market-views-live-inspect.yml
+      - scripts/inspect_market_views_live.py
+      - scripts/test_inspect_market_views_live.py
+  workflow_dispatch:
+    inputs:
+      dates:
+        description: One to four exact YYMMDD dates separated by commas
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  contract:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -B scripts/test_inspect_market_views_live.py
+  inspect:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: scripts
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -m pip install --retries 0 --disable-pip-version-check 'boto3>=1.37.32,<2'
+      - name: Verify full private PDF pair and public list with strict TLS
+        env:
+          DATES: ${{ inputs.dates }}
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET || 'portal-suite-pdfs' }}
+        run: python3 -B scripts/inspect_market_views_live.py --dates "$DATES" --output "$RUNNER_TEMP/market-views-live-inspection.json"
+      - name: Preserve content-free live inspection
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: market-views-live-inspection-${{ github.run_id }}
+          path: ${{ runner.temp }}/market-views-live-inspection.json
+          if-no-files-found: warn
+          retention-days: 7

@@ -282,8 +282,46 @@ class NumericUnitTests(unittest.TestCase):
                 else:
                     read["field_count"] = 2
                 sign_evidence(changed)
-                with self.subTest(mutation=mutation), self.assertRaises(numeric.NumericEvidenceError):
+                with self.subTest(mutation=mutation), self.assertRaises(numeric.NumericEvidenceError) as failure:
                     numeric.validate_numeric_evidence(result["safe_text"], changed, changed["input_pixel_sha256"], image_path=path)
+                if mutation in {"clip", "size", "policy", "partial"}:
+                    diagnostic = failure.exception.diagnostics
+                    self.assertEqual(diagnostic["record_id"], "n0001")
+                    self.assertEqual(diagnostic["expected_clip_bbox"], clip)
+                    self.assertEqual(diagnostic["expected_pixel_size"], numeric._ocr_crop_pixel_size(clip))
+                    key = {"clip": "clip_matches", "size": "size_matches", "policy": "policy_matches", "partial": "clip_valid"}[mutation]
+                    self.assertIs(diagnostic[key], False)
+
+    def test_crop_failure_diagnostics_are_a_pure_bounded_geometry_whitelist(self):
+        private = "PRIVATE https://private.invalid signed token source words"
+        source = {"schema": 1, "record_id": "n0008", "psm": 6, "field_bbox": [10.1, 20.2, 30.3, 40.4],
+                  "page_bounds": [0, 0, 612, 776.5689697], "expected_clip_bbox": [9, 19, 31, 41],
+                  "actual_clip_bbox": [9, 19, 31, 41], "expected_pixel_size": [185, 185],
+                  "actual_pixel_size": [184, 185], "size_matches": False, "dpi": 600, "field_count": 1,
+                  "pymupdf_version": "1.28.2",
+                  "source_name": private, "literal": private, "url": private, "unknown": private}
+        before = copy.deepcopy(source)
+        error = numeric.NumericEvidenceError("Numeric crop geometry differs from its positioned source field", diagnostics=source)
+        self.assertEqual(source, before)
+        self.assertEqual(error.diagnostics["actual_pixel_size"], [184, 185])
+        self.assertIs(error.diagnostics["size_matches"], False)
+        self.assertEqual(error.diagnostics["pymupdf_version"], "1.28.2")
+        self.assertEqual(numeric.safe_geometry_diagnostics(error), error.diagnostics)
+        forwarded = ValueError(private)
+        forwarded.geometry_diagnostics = error.diagnostics
+        self.assertEqual(numeric.safe_geometry_diagnostics(forwarded), error.diagnostics)
+        self.assertEqual(numeric.safe_geometry_diagnostics(error.diagnostics), error.diagnostics)
+        self.assertNotIn("PRIVATE", json.dumps(error.diagnostics, allow_nan=False))
+        error.diagnostics["field_bbox"][0] = 12
+        self.assertEqual(source, before)
+        malformed = {"schema": 1, "record_id": private, "psm": True, "size_matches": private,
+                     "field_bbox": [0, 0, float("inf"), 10], "actual_clip_bbox": [0, 0, 100001, 10],
+                     "actual_pixel_size": [True, 10], "expected_pixel_size": [10, 100001],
+                     "dpi": private, "field_count": 2501, "pymupdf_version": private, "private": private}
+        self.assertEqual(numeric.safe_numeric_geometry_diagnostics(malformed), {"schema": 1})
+        for value in (None, private, [], {"schema": True}, {"schema": 2}):
+            self.assertIsNone(numeric.safe_numeric_geometry_diagnostics(value))
+        self.assertIsNone(numeric.safe_geometry_diagnostics(ValueError(private)))
 
     def test_tight_reads_cannot_overrule_wide_witness_for_an_omitted_minus_or_percent(self):
         for original, primary in (("-3%", "3%"), ("3%", "3")):

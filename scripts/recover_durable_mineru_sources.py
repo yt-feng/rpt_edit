@@ -22,7 +22,7 @@ from consume_legacy_mineru import (ConsumerError, NetworkStop, chart_assets,
 from mineru_task_ledger import (DONE, FAILED, Ledger, LedgerError, Provider, R2Store,
                                digest, encoded, exact_json, schema_v1)
 from mineru_terminal_recovery import TerminalRecovery, task_identity
-from mineru_result_cache import ResultCache
+from mineru_result_cache import ResultCache, identity as result_identity
 from smoke_mineru_api import NoRedirectHTTP, credentials
 
 WORKFLOW = '.github/workflows/market-views-mineru-recovery.yml'
@@ -452,7 +452,7 @@ def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_repor
     complete = False
     try:
         with tempfile.TemporaryDirectory(prefix='mineru-source-results-') as cache_dir:
-            cache, root_for_id, resolved, posts, tasks = {}, {}, {}, 0, []
+            cache, deferred, root_for_id, resolved, posts, tasks = {}, {}, {}, {}, 0, []
             source_bindings = {item['id']: item for item in (ledger.bind(path, source) for path, source in pairs)}
             def verify_done(path, row):
                 if str(row.get('state', '')).lower() not in DONE:
@@ -462,12 +462,32 @@ def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_repor
                     reject('result_unknown_source')
                 url = row.get('full_zip_url'); valid_url(url)
                 cache_key = (source_id, url)
+                lineage = row.get('_recovery_lineage')
+                deferred_key = result_identity(source_bindings[source_id], lineage)
+                # A result already diagnosed in this attempt needs no second
+                # GET when TerminalRecovery returns its same successful row.
+                if deferred_key in deferred:
+                    if not exact_json(deferred[deferred_key], lineage):
+                        reject('deferred_result_lineage_changed')
+                    return
                 if cache_key not in cache:
-                    lineage = row.get('_recovery_lineage')
                     payload = result_cache.get(source_bindings[source_id], lineage) if result_cache is not None else None
                     cache_hit = payload is not None
                     if not cache_hit:
-                        payload = downloader(url)
+                        try:
+                            payload = downloader(url)
+                        except NetworkStop as error:
+                            child = (isinstance(lineage, dict) and type(lineage.get('child_ordinal')) is int
+                                     and lineage['child_ordinal'] in {1, 2}
+                                     and lineage.get('parent_batch_key') == root_for_id.get(source_id)
+                                     and lineage.get('batch_key') != lineage.get('parent_batch_key'))
+                            if (not child or len(error.args) != 1 or type(error.args[0]) is not str
+                                    or error.args[0] != 'tls_certificate_expired'):
+                                raise
+                            # Validate complete accepted source/task identity;
+                            # no ZIP bytes or completed source receipt is created.
+                            deferred[deferred_key] = dict(lineage)
+                            return
                     folder = Path(cache_dir) / str(len(cache))
                     markdown = safe_unzip(payload, folder / 'raw')
                     if result_cache is not None and not cache_hit:
@@ -519,6 +539,10 @@ def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_repor
                 if group_pairs is not fresh[-1]:
                     ledger.sleep(10)  # At most five fresh files per ten seconds.
             assert_inputs(ledger, pairs, bindings)
+            # Deferral permits only other bounded parser work. Even one absent
+            # child ZIP forbids every complete-source handoff and downstream PDF.
+            if deferred:
+                reject('ledger_child_result_tls_certificate_expired')
             if len(resolved) != expected_reports:
                 reject('complete_source_gate')
             reports = []

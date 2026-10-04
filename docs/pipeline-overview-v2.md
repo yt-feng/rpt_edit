@@ -214,10 +214,19 @@ PR 232's actual cloud cache canary `37238317495` verified all 54 October 3
 originals and their accepted task groups before retrieving one 7,848,078-byte
 ZIP with the fixed leaf identity and two historical chain checks. Complete ZIP,
 private authentication receipt and standard R2 cache readback passed with
-zero parsing POSTs. Bulk completed-result caching and the 18 failed parses are
-separate remaining steps. Full extraction,
-source review and dated PDF/live delivery are not yet accepted;
-`MARKET_VIEWS_OCR_BACKUP_ENABLED` remains false. The detailed source-only status is maintained in
+zero parsing POSTs. Bulk run `37238421286` subsequently cached all 36 original
+DONE results (182,020,443 bytes); child cache runs `37239513878` and
+`37240060718` verified the first two accepted recovery results. The other failed
+parses remain a separate recovery step. Normal current-PKI result downloads
+still fail on the provider's expired leaf certificate; this manual identity
+authentication expires at the fixed October 4 UTC cutoff.
+
+October 4 complete cloud OCR source producer `37238241161` passed all four
+originals and the real numeric fixture. Consumer `37239371856` archived the
+private PDF and committed its 14-page public-safe counterpart, with all nine
+source-page images visually checked. One caption pagination defect is being
+corrected and live portal acceptance is pending. October 1-3 full backfill remains
+in progress; `MARKET_VIEWS_OCR_BACKUP_ENABLED` remains false. The detailed source-only status is maintained in
 [Market Views source recovery](market-views-source-recovery.md).
 
 ## Main Workflow Groups
