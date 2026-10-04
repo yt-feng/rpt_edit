@@ -1,6 +1,96 @@
 # Daily reading locales and English editorial access
 
-## Current checkpoint: English CPU merged; publication and recovery ready for review
+## Current checkpoint (2026-10-02): publication merged and daily opt-ins enabled
+
+On the operator's next request, normal GitHub CLI authentication and API reads
+worked again without ANY network/proxy/VPN/DNS/route/transport change. The prior
+connection failure was this machine's API access, not evidence of a GitHub
+outage. The subsequent state below supersedes the historical connection stop.
+
+PR #199 passed all four checks on exact head
+`f3d297f001567baef0bd82cc0f9e67bf54215122`: offline regression `36932015946`,
+locale manifest `36932015880`, public identity `36932015913` and API cost control
+`36932015952`. Real private R2 staging `36932057105` also passed at that exact
+head. PR #199 was normally merged at `2026-10-02T06:31:34Z`; main merge commit
+`d0864b6af369bd0ee43626f8be8d9532750be8a3`. Other main updates, including the
+existing dated bank catalog commits, were preserved during the local merge.
+The dirty primary checkout remains untouched.
+
+After merge, the following repository variables were set and read back:
+
+- `PORTAL_ENGLISH_AUTO_PUBLISH=true`
+- `PORTAL_ENGLISH_AUTO_REVIEW=true`
+
+All three existing extended-locale daily variables still read
+`all-supported`, `all-supported`, and `true`. The original
+`portal-extended-locales-production` environment still requires reviewer
+`yt-feng`, with no protection rules removed. These opt-ins permit only the
+reviewed handoff/required-reviewer code; they do not approve an arbitrary ledger
+or activate an incomplete page. English remains public preview-only, with
+authenticated secondary commentary using the existing three-distinct-lifetime
+free-read/member authority. No originals, charts or document downloads.
+
+Staging `36932057105` restored English generation
+`21ed924ede84a9305da72831c7c2d9262aec4e6987cfc75f3d8ed25d99b93fc7`
+and checkpoint
+`0d7eba10d545e3f8d7a2ba6187a1ac22cbda069429013128c77dc797aefd9974`.
+Same-capture/immutable-checkpoint/timeout-cursor recovery and incomplete
+candidate refusal passed. Ready candidates 0, translation calls 0, paid
+provider requests 0, deployed false. This is synthetic storage evidence, not
+an English production translation. Existing source/cursor recovery also passed.
+Local reruns after the main merge: English publication 23, source/day queue 16
+and delegated non-English review 15 passed; generated recovery matched its
+current production gates.
+
+One bounded runtime inspection showed original producer `36801745121` had
+31 successful non-English locale jobs, the known Khmer timeout, and a live
+Cantonese job `110177657098`. Per-page new-day candidate counts and publication
+were NOT inferred from these job results. No live job was canceled or restarted.
+Formerly pending manual run `36932060676` is authoritatively canceled;
+newer source-triggered run `36960198775` was pending on
+`3d94aee85e2221ee7a8b8daad4779664e2693031`. A fresh source admission on reviewed
+main is the next dispatch, which automatically hands current immutable sources
+to the same max-two, four-hour-per-locale CPU queue. It never reruns original
+article generation, introduces paid translation or discovers historical URLs.
+Dispatch receipts are reported separately; no Actions monitoring is requested.
+
+English production pages are NOT yet verified live. Actual complete CPU
+commentary, protected release activation and signed-in free/member acceptance
+remain required; today's 33-locale coverage remains a runtime acceptance item.
+
+## Historical bounded inspection: publication review pending; GitHub connection stopped
+
+On the next continuation, the initial GitHub reads succeeded. PR #199 was
+OPEN/UNSTABLE at exact head `f3d297f001567baef0bd82cc0f9e67bf54215122`, base
+`8f0591de260c17b2c51b5e15909a6fe9e9ab9d5e`. Its API cost control check
+`36932015952` had succeeded; offline regression `36932015946`, locale manifest
+`36932015880` and public identity `36932015913` were still in progress.
+Publication-branch R2 staging `36932057105` was in progress at that exact PR
+head. Main incremental run `36932060676` was pending at the exact base above.
+These are bounded snapshots, not monitoring, and are not terminal results.
+
+The original main CPU run `36801745121` still had real active job handles:
+`locale (bn)` job `110177656037`, and `locale (ta)` job `110177655990`.
+Of its 33 locale jobs, 24 had succeeded, one Khmer job had failed with the
+previously confirmed timeout, two were running and six were queued
+(`uk,bo,kk,mn,ug,yue`). Job success is not a count of approved/live new pages;
+per-page R2 candidate evidence and new-day production coverage were not read in
+this continuation. Existing checkpoints and running jobs were not canceled.
+An initial listing showed release run `36893120105` had succeeded on main
+`1c1c704f2eb678dce59e83967553e03b1df053e0`; its exact activated release/tree
+and live page counts were not inspected here.
+
+A subsequent exact merge-gate read failed with `connect: no route to host`.
+The chained command stopped before any additional API call. In compliance with
+the operator instructions, ALL GitHub/Git network operations stopped: no
+transport/remote changes, proxy/DNS/route inspection or alternate connection
+path was attempted. No PR merge, publication opt-in change, new dispatch or
+production activation occurred in this continuation. English remains unaccepted
+for production. Resume from verified current GitHub state on a later user turn;
+do not assume any of these formerly running handles has finished or restart one
+merely because observation failed. This evidence record is saved locally only.
+
+## Earlier checkpoint: English CPU merged; publication and recovery ready for review
 
 PR #198 passed regression, API cost controls and public identity and was merged
 normally at `2026-10-01T21:51:52Z`. Main merge commit:
