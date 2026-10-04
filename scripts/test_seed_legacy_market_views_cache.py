@@ -310,7 +310,7 @@ class WorkflowContractTests(unittest.TestCase):
     def test_legacy_opt_in_remains_exact_manual_main_separate_from_durable_jobs(self):
         path = Path(__file__).resolve().parents[1] / '.github/workflows/mineru-result-cache-seed.yml'
         text = path.read_text()
-        self.assertIn("options: ['durable', 'legacy-daily']", text)
+        self.assertIn("options: ['durable', 'legacy-daily', 'original-archive']", text)
         self.assertIn('default: durable', text)
         self.assertIn("github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'", text)
         self.assertEqual(text.count("if: ${{ inputs.source_kind == 'durable' }}"), 3)

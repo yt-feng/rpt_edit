@@ -1,0 +1,137 @@
+name: Admit complete fresh Market Views originals into durable MinerU roots
+run-name: Fresh MinerU intake ${{ inputs.date_folder }} from archive ${{ inputs.archive_run_id }}
+on:
+  pull_request:
+    paths:
+      - .github/workflows/market-views-fresh-mineru-intake.yml
+      - scripts/intake_fresh_market_views_sources.py
+      - scripts/test_intake_fresh_market_views_sources.py
+  workflow_dispatch:
+    inputs:
+      archive_run_id:
+        description: Exact completed main original-only archive producer
+        required: true
+        type: string
+      date_folder:
+        description: Exact original Dropbox source date, YYMMDD
+        required: true
+        type: string
+      expected_articles:
+        description: Complete original PDF count; this workflow admits parsing tasks and does not build PDFs
+        required: true
+        type: string
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: fresh-mineru-intake-${{ inputs.date_folder }}
+  cancel-in-progress: false
+jobs:
+  offline-contract:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -m pip install requests Pillow PyMuPDF
+      - run: python3 -B scripts/test_intake_fresh_market_views_sources.py
+  intake:
+    if: ${{ github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: scripts
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Initialize intake-only diagnostic
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          Path(os.environ['RUNNER_TEMP'], 'mineru-fresh-intake-summary.json').write_text(json.dumps({
+              'schema_version': 1, 'success': False, 'category': 'prerequisites_incomplete',
+              'task_intake_only': True, 'source_ready': False, 'complete_source_handoff': False,
+              'production_acceptance': False, 'model_calls': 0, 'pdf_count': 0,
+          }) + '\n')
+          PY
+      - name: Install source preservation and durable intake dependencies
+        run: python3 -m pip install --retries 0 --disable-pip-version-check requests Pillow PyMuPDF 'boto3>=1.37.32,<2'
+      - name: Authenticate exact completed private original archive producer
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ARCHIVE_RUN_ID: ${{ inputs.archive_run_id }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+        run: |
+          python3 - <<'PY'
+          import os, re, subprocess, sys
+          from pathlib import Path
+          sys.path.insert(0, 'scripts')
+          import archive_market_views_originals as archive
+          from recover_durable_mineru_sources import decode
+          try:
+              run = os.environ['ARCHIVE_RUN_ID']
+              if not archive.RUN.fullmatch(run) or not re.fullmatch(r'[1-9][0-9]{0,3}', os.environ['EXPECTED_ARTICLES']):
+                  raise ValueError('request')
+              archive.exact_date(os.environ['DATE_FOLDER'])
+              response = subprocess.run(['gh', 'api', f"repos/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{run}"],
+                  capture_output=True, timeout=30, check=False)
+              if response.returncode or len(response.stdout) > 1_000_000:
+                  raise ValueError('producer')
+              producer = decode(response.stdout)
+              archive.check_restore_producer(producer, run, os.environ['GITHUB_REPOSITORY'], producer['head_sha'])
+              Path(os.environ['RUNNER_TEMP'], 'fresh-intake-archive-producer.json').write_bytes(response.stdout)
+          except Exception:
+              raise SystemExit('Fresh intake original archive verification rejected.')
+          PY
+      - name: Restore all exact archived original bytes using only R2 reads
+        env:
+          ARCHIVE_RUN_ID: ${{ inputs.archive_run_id }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          ARCHIVE_EXECUTION_SHA="$(python3 -c 'import json,os; from pathlib import Path; print(json.loads(Path(os.environ["RUNNER_TEMP"], "fresh-intake-archive-producer.json").read_text())["head_sha"])')"
+          python3 -B scripts/archive_market_views_originals.py restore \
+            --destination "$RUNNER_TEMP/fresh-intake-originals" \
+            --run-id "$ARCHIVE_RUN_ID" --date-folder "$DATE_FOLDER" --execution-sha "$ARCHIVE_EXECUTION_SHA" \
+            --expected-reports "$EXPECTED_ARTICLES" \
+            --producer-json "$RUNNER_TEMP/fresh-intake-archive-producer.json" --repository "$GITHUB_REPOSITORY"
+      - name: Reserve every original before admitting each fresh root at most once
+        env:
+          ARCHIVE_RUN_ID: ${{ inputs.archive_run_id }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+          MINER_U: ${{ secrets.MINER_U }}
+          MINER_U_2: ${{ secrets.MINER_U_2 }}
+          MINER_U_3: ${{ secrets.MINER_U_3 }}
+          MINER_U_4: ${{ secrets.MINER_U_4 }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python3 -B scripts/intake_fresh_market_views_sources.py \
+            --input-dir "$RUNNER_TEMP/fresh-intake-originals" \
+            --producer-json "$RUNNER_TEMP/fresh-intake-archive-producer.json" \
+            --archive-run-id "$ARCHIVE_RUN_ID" --date-folder "$DATE_FOLDER" --expected-reports "$EXPECTED_ARTICLES" \
+            --summary "$RUNNER_TEMP/mineru-fresh-intake-summary.json"
+      - name: Preserve only sanitized intake state
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: mineru-fresh-intake-${{ github.run_id }}
+          path: ${{ runner.temp }}/mineru-fresh-intake-summary.json
+          if-no-files-found: warn
+          retention-days: 7

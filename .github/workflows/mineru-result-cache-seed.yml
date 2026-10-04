@@ -6,16 +6,20 @@ on:
       - .github/workflows/mineru-result-cache-seed.yml
       - scripts/seed_legacy_market_views_cache.py
       - scripts/test_seed_legacy_market_views_cache.py
+      - scripts/seed_mineru_result_cache.py
+      - scripts/test_seed_mineru_result_cache.py
+      - scripts/intake_fresh_market_views_sources.py
+      - scripts/test_intake_fresh_market_views_sources.py
   workflow_dispatch:
     inputs:
       source_kind:
-        description: Durable canonical tasks by default; explicit legacy Daily accepted tasks use a separate cache
+        description: Durable tasks by default; legacy Daily or complete fresh archive intake require explicit opt-in
         required: true
         type: choice
-        options: ['durable', 'legacy-daily']
+        options: ['durable', 'legacy-daily', 'original-archive']
         default: durable
       source_run_id:
-        description: Exact completed original Daily run on main; no fresh or recovery task submission
+        description: Exact completed original Daily or original-archive producer run on main; no submissions
         required: true
         type: string
       date_folder:
@@ -72,6 +76,7 @@ jobs:
       - run: python3 -m pip install --disable-pip-version-check requests certifi 'urllib3>=2.2,<3' Pillow PyMuPDF
       - run: python3 -B scripts/test_seed_legacy_market_views_cache.py
       - run: python3 -B scripts/test_seed_mineru_result_cache.py
+      - run: python3 -B scripts/test_intake_fresh_market_views_sources.py
   seed:
     if: ${{ github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
@@ -97,7 +102,7 @@ jobs:
           PY
       - name: Install isolated cache and certificate authentication dependencies
         run: python3 -m pip install --retries 0 --disable-pip-version-check requests certifi 'urllib3>=2.2,<3' Pillow PyMuPDF 'boto3>=1.37.32,<2'
-      - name: Require an explicit legacy opt-in without mixing recovery authorizations
+      - name: Require an explicit source opt-in without mixing recovery authorizations
         env:
           SOURCE_KIND: ${{ inputs.source_kind }}
           RECOVERY_RUN_ID: ${{ inputs.recovery_run_id }}
@@ -108,14 +113,90 @@ jobs:
           python3 - <<'PY'
           import json, os
           kind = os.environ['SOURCE_KIND']
-          if kind not in {'durable', 'legacy-daily'}:
+          if kind not in {'durable', 'legacy-daily', 'original-archive'}:
               raise SystemExit('Cache source-kind validation rejected.')
           if kind == 'legacy-daily' and (os.environ['RECOVERY_RUN_ID'] or os.environ['EXPECTED_MANIFEST_SHA256']
                                         or json.loads(os.environ['ALLOWED_ERROR_HASHES']) != []):
               raise SystemExit('Legacy tasks cannot mix durable child authorization.')
           if kind == 'durable' and os.environ['LEGACY_ARTIFACT_ID']:
               raise SystemExit('Durable tasks cannot use a legacy artifact override.')
+          if kind == 'original-archive' and (os.environ['LEGACY_ARTIFACT_ID'] or os.environ['RECOVERY_RUN_ID']
+                                             or os.environ['EXPECTED_MANIFEST_SHA256']
+                                             or json.loads(os.environ['ALLOWED_ERROR_HASHES']) != []):
+              raise SystemExit('Archive roots cannot mix legacy or child authorization.')
           PY
+      - name: Authenticate completed original archive producer before GET-only restore
+        if: ${{ inputs.source_kind == 'original-archive' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+        run: |
+          python3 - <<'PY'
+          import json, os, re, subprocess, sys
+          from pathlib import Path
+          sys.path.insert(0, 'scripts')
+          from archive_market_views_originals import check_restore_producer, context
+          from mineru_pinned_result_transport import require_before_cutoff, require_cloud_manual
+          try:
+              require_cloud_manual()
+              require_before_cutoff()
+              run = os.environ['SOURCE_RUN_ID']
+              if not re.fullmatch(r'[1-9][0-9]{0,19}', run) or not re.fullmatch(r'[1-9][0-9]{0,3}', os.environ['EXPECTED_ARTICLES']):
+                  raise ValueError('source_input')
+              response = subprocess.run(['gh', 'api', f"repos/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{run}"],
+                                        capture_output=True, text=True, timeout=30, check=False)
+              if response.returncode or len(response.stdout.encode()) > 1_000_000:
+                  raise ValueError('producer_unavailable')
+              producer = json.loads(response.stdout)
+              sha = producer.get('head_sha')
+              check_restore_producer(producer, run, os.environ['GITHUB_REPOSITORY'], sha)
+              context(run, os.environ['DATE_FOLDER'], sha, '')
+              Path(os.environ['RUNNER_TEMP'], 'mineru-cache-archive-producer.json').write_text(response.stdout)
+              Path(os.environ['RUNNER_TEMP'], 'mineru-cache-archive-sha.txt').write_text(sha)
+          except Exception:
+              raise SystemExit('Cache-only archive producer validation rejected.')
+          PY
+      - name: Restore complete original archive with GET-only exact receipt and PDF hashes
+        if: ${{ inputs.source_kind == 'original-archive' }}
+        env:
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          ARCHIVE_SHA="$(cat "$RUNNER_TEMP/mineru-cache-archive-sha.txt")"
+          python3 -B scripts/archive_market_views_originals.py restore \
+            --run-id "$SOURCE_RUN_ID" --date-folder "$DATE_FOLDER" --execution-sha "$ARCHIVE_SHA" \
+            --expected-reports "$EXPECTED_ARTICLES" --repository "$GITHUB_REPOSITORY" \
+            --producer-json "$RUNNER_TEMP/mineru-cache-archive-producer.json" \
+            --destination "$RUNNER_TEMP/mineru-cache-archive-originals"
+      - name: Read complete immutable intake roots and seed archive results without submission
+        if: ${{ inputs.source_kind == 'original-archive' }}
+        env:
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+          MAX_RESULTS: ${{ inputs.max_results }}
+          MINER_U: ${{ secrets.MINER_U }}
+          MINER_U_2: ${{ secrets.MINER_U_2 }}
+          MINER_U_3: ${{ secrets.MINER_U_3 }}
+          MINER_U_4: ${{ secrets.MINER_U_4 }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python3 -B scripts/seed_mineru_result_cache.py --source-kind original-archive \
+            --input-dir "$RUNNER_TEMP/mineru-cache-archive-originals" \
+            --producer-json "$RUNNER_TEMP/mineru-cache-archive-producer.json" \
+            --source-run-id "$SOURCE_RUN_ID" --date-folder "$DATE_FOLDER" \
+            --expected-reports "$EXPECTED_ARTICLES" --max-results "$MAX_RESULTS" \
+            --summary "$RUNNER_TEMP/mineru-result-cache-seed-summary.json"
       - name: Authenticate exact completed original Daily producer before source download
         if: ${{ inputs.source_kind == 'durable' }}
         env:
