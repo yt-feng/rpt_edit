@@ -14,7 +14,8 @@ import re
 import sys
 
 from inspect_legacy_mineru import ENDPOINT, get_once, valid_uuid
-from mineru_task_ledger import DONE, FAILED, Ledger, R2Store, digest, encoded
+from mineru_task_ledger import DONE, FAILED, Ledger, R2Store, digest, encoded, exact_json
+from mineru_terminal_recovery import TerminalRecovery, task_identity
 from mineru_result_cache import ResultCache, MAX_RECEIPT, identity, validate_zip
 from mineru_pinned_result_transport import (AUTH_MODE, PinnedResultTransport, PinnedTransportError,
                                            prepare_authentication, require_before_cutoff, require_cloud_manual,
@@ -24,6 +25,8 @@ from recover_durable_mineru_sources import (MANIFEST, OPTIONS, check_producer, d
 from smoke_mineru_api import credentials
 
 AUTH_PREFIX = '_workflow-cache/mineru-result-auth/v1/dropbox'
+RECOVERY_WORKFLOW = '.github/workflows/market-views-mineru-recovery.yml'
+RECOVERY_NAME = 'Recover Market Views from exact MinerU tasks'
 SAFE_ERRORS = {
     'canonical_ledger_writes_forbidden', 'accepted_batch_get_rejected', 'accepted_batch_get_invalid',
     'provider_posts_forbidden', 'provider_uploads_forbidden', 'complete_terminal_task_required',
@@ -37,6 +40,9 @@ SAFE_ERRORS = {
     'authentication_preflight_failed', 'prepared_authentication_required', 'result_http_rejected',
     'result_content_encoding_rejected', 'result_size_rejected', 'result_read_budget_exhausted',
     'result_body_invalid', 'result_body_incomplete', 'pinned_result_transport_failed', 'no_done_results',
+    'child_authorization_invalid', 'expected_manifest_mismatch', 'recovery_producer_invalid',
+    'completed_recovery_producer_required', 'accepted_child_required', 'accepted_child_proof_mismatch',
+    'accepted_child_snapshot_changed', 'accepted_child_task_duplicate', 'no_authorized_child_done_results',
 }
 
 
@@ -113,8 +119,114 @@ def write_authentication(cache, binding, lineage, payload, authentication):
     return digest(raw)
 
 
+def child_authorization(recovery_run_id, allowed_error_hashes, expected_manifest_sha256):
+    if (not isinstance(recovery_run_id, str) or not isinstance(allowed_error_hashes, (list, tuple))
+            or len(allowed_error_hashes) > 256
+            or any(not isinstance(value, str) or not re.fullmatch(r'[a-f0-9]{64}', value)
+                   for value in allowed_error_hashes)
+            or len(set(allowed_error_hashes)) != len(allowed_error_hashes)
+            or not isinstance(expected_manifest_sha256, str)
+            or expected_manifest_sha256 and not re.fullmatch(r'[a-f0-9]{64}', expected_manifest_sha256)):
+        raise SeedError('child_authorization_invalid')
+    if recovery_run_id:
+        if not re.fullmatch(r'[1-9][0-9]{0,19}', recovery_run_id) or not allowed_error_hashes or not expected_manifest_sha256:
+            raise SeedError('child_authorization_invalid')
+    elif allowed_error_hashes:
+        raise SeedError('child_authorization_invalid')
+    return bool(recovery_run_id)
+
+
+def check_recovery_producer(value, run_id, repository):
+    if (not isinstance(value, dict) or type(value.get('id')) is not int or value['id'] != int(run_id)
+            or value.get('path') != RECOVERY_WORKFLOW or value.get('name') != RECOVERY_NAME
+            or value.get('event') != 'workflow_dispatch'
+            or value.get('head_branch') != 'main' or value.get('repository', {}).get('full_name') != repository
+            or not re.fullmatch(r'[a-f0-9]{40}', str(value.get('head_sha', '')))):
+        raise SeedError('recovery_producer_invalid')
+    if value.get('status') != 'completed' or value.get('conclusion') not in {'success', 'failure'}:
+        raise SeedError('completed_recovery_producer_required')
+    return value['head_sha']
+
+
+def assert_task_snapshots(ledger, snapshots):
+    for key, expected in snapshots:
+        current, _ = ledger.store.get(key)
+        if current is None or encoded(current) != expected:
+            raise SeedError('accepted_child_snapshot_changed')
+
+
+def accepted_child_results(ledger, groups, original_rows, recovery_run_id, error_hashes, manifest_sha, cutoff_check):
+    """Inspect an existing complete controller chain; never run its mutation path."""
+    terminal = TerminalRecovery(ledger, allowed_error_hashes=error_hashes)
+    done, snapshots, failed, observed, groups_selected = [], [], 0, 0, 0
+    task_keys = {root['key'] for root, _ in groups}
+    batch_ids = {root['batch_id'] for root, _ in groups}
+    for root, _ in groups:
+        cutoff_check()
+        controller_key, control, _ = terminal._read_control(root)
+        if control is None:
+            continue
+        snapshots.append((controller_key, encoded(control)))
+        snapshots.append((root['key'], encoded(root)))
+        entries = control['children']
+        if any(entry['authorization']['manifest_sha256'] != manifest_sha for entry in entries):
+            raise SeedError('child_authorization_invalid')
+        # Other producers' controllers are not selected as this run's output.
+        # Their structure/policy still passed _read_control above.
+        if not any(entry['authorization']['run_id'] == recovery_run_id for entry in entries):
+            continue
+        groups_selected += 1
+        predecessor, rows = root, original_rows[root['key']]
+        resolved = {source_id for source_id, row in rows.items() if str(row['state']).lower() in DONE}
+        for entry in entries:
+            cutoff_check()
+            if entry['authorization']['manifest_sha256'] != manifest_sha:
+                raise SeedError('child_authorization_invalid')
+            if (entry['proof']['value']['task_identity_sha256'] != task_identity(predecessor)
+                    or not exact_json(terminal._proof(predecessor, rows), entry['proof'])):
+                raise SeedError('accepted_child_proof_mismatch')
+            child, _ = terminal._child(root, controller_key, entry, create=False)
+            if (child is None or child['state'] not in {'accepted', 'uploaded', 'terminal'}
+                    or not valid_uuid(child.get('batch_id'))):
+                raise SeedError('accepted_child_required')
+            if child['key'] in task_keys or child['batch_id'] in batch_ids:
+                raise SeedError('accepted_child_task_duplicate')
+            task_keys.add(child['key'])
+            batch_ids.add(child['batch_id'])
+            snapshots.append((child['key'], encoded(child)))
+            # TerminalRecovery._poll persists child state. Use the Ledger
+            # primitive explicitly with persistence disabled instead.
+            rows, counts = ledger._poll(child['key'], child['files'], ledger.clock() + 60, 1, 0,
+                                        persist_terminal=False)
+            if counts['missing'] or counts['pending'] or len(rows) != len(child['files']):
+                raise SeedError('complete_terminal_task_required')
+            belongs = entry['authorization']['run_id'] == recovery_run_id
+            for binding in child['files']:
+                row = rows[binding['id']]
+                if str(row['state']).lower() in FAILED:
+                    failed += int(belongs)
+                    continue
+                if binding['id'] in resolved:
+                    raise SeedError('accepted_child_task_duplicate')
+                resolved.add(binding['id'])
+                fixed_result_uri(row['full_zip_url'])
+                lineage = {'batch_id': child['batch_id'], 'batch_key': child['key'],
+                           'parent_batch_key': root['key'], 'child_ordinal': entry['ordinal'], 'data_id': binding['id']}
+                identity(binding, lineage)
+                if belongs:
+                    done.append((binding, lineage, row['full_zip_url']))
+            observed += int(belongs) * len(child['files'])
+            predecessor = child
+    if not done:
+        raise SeedError('no_authorized_child_done_results')
+    assert_task_snapshots(ledger, snapshots)
+    return done, snapshots, {'authorized_child_members': observed, 'authorized_child_failed': failed,
+                             'authorized_child_done': len(done), 'selected_parent_groups': groups_selected}
+
+
 def seed_results(ledger, input_dir, manifest, expected_reports, date_folder, source_run_id, cache, *,
-                 max_results=1, transport_factory=None, cutoff_check=require_before_cutoff):
+                 max_results=1, transport_factory=None, cutoff_check=require_before_cutoff,
+                 recovery_run_id='', allowed_error_hashes=(), expected_manifest_sha256=''):
     if ledger.scope != 'dropbox' or ledger.options != OPTIONS or not isinstance(ledger.provider, SingleGetProvider):
         raise SeedError('read_only_original_dropbox_required')
     if not isinstance(ledger.store, ReadOnlyStore):
@@ -122,14 +234,17 @@ def seed_results(ledger, input_dir, manifest, expected_reports, date_folder, sou
     if type(max_results) is not int or max_results not in (0, 1):
         raise SeedError('result_limit_invalid')
     cutoff_check()
+    child_mode = child_authorization(recovery_run_id, allowed_error_hashes, expected_manifest_sha256)
     raw, bindings, pairs = frozen_inputs(input_dir, manifest, expected_reports, date_folder)
+    if expected_manifest_sha256 and digest(raw) != expected_manifest_sha256:
+        raise SeedError('expected_manifest_mismatch')
     rows = decode(raw)
     if any(PurePosixPath(row['dropbox_path']).parts[:3] != ('/', 'zip_backup', date_folder) for row in rows):
         raise SeedError('exact_original_date_required')
     groups, fresh = original_groups(ledger, pairs, source_run_id=source_run_id, allow_fresh=False)
     if fresh or not groups:
         raise SeedError('accepted_original_tasks_required')
-    done, failed = [], 0
+    done, failed, original_rows = [], 0, {}
     # Every GET is single-attempt and read-only. Missing/nonterminal members
     # reject the whole preflight before a single ZIP connection is attempted.
     for batch, _ in groups:
@@ -138,6 +253,7 @@ def seed_results(ledger, input_dir, manifest, expected_reports, date_folder, sou
                                        persist_terminal=False)
         if counts['missing'] or counts['pending'] or len(results) != len(batch['files']):
             raise SeedError('complete_terminal_task_required')
+        original_rows[batch['key']] = results
         for binding in batch['files']:
             row = results[binding['id']]
             if str(row['state']).lower() in FAILED:
@@ -152,23 +268,32 @@ def seed_results(ledger, input_dir, manifest, expected_reports, date_folder, sou
             done.append((binding, lineage, row['full_zip_url']))
     if len(done) + failed != expected_reports:
         raise SeedError('complete_original_membership_required')
-    if not done:
+    original_done = len(done)
+    if not done and not child_mode:
         raise SeedError('no_done_results')
     if Path(manifest).read_bytes() != raw:
         raise SeedError('original_manifest_changed')
     assert_inputs(ledger, pairs, bindings)
+    snapshots, child_counts = [], {}
+    if child_mode:
+        done, snapshots, child_counts = accepted_child_results(
+            ledger, groups, original_rows, recovery_run_id, allowed_error_hashes, digest(raw), cutoff_check)
     selected = done if max_results == 0 else done[:max_results]
     summary = {'schema_version': 1, 'status': 'cache_seed_only', 'complete_source_handoff': False,
                'production_acceptance': False, 'pipeline_restored': False,
                'requested_auth_mode': AUTH_MODE, 'pki_verified_now': False,
-               'original_members_verified': expected_reports, 'completed_members': len(done),
+               'original_members_verified': expected_reports, 'completed_members': original_done,
                'failed_members': failed, 'selected_results': len(selected), 'cached_results': 0,
-               'existing_cache_hits': 0, 'new_result_downloads': 0, 'provider_gets': len(groups),
+               'existing_cache_hits': 0, 'new_result_downloads': 0, 'provider_gets': len(ledger.provider.seen),
                'provider_posts': 0, 'canonical_ledger_writes': 0, 'model_calls': 0, 'pdf_count': 0,
                'manifest_sha256': digest(raw), 'results': []}
+    summary.update(child_counts)
+    summary['selection_mode'] = 'accepted_children' if child_mode else 'originals'
+    summary['accepted_child_authorization_checked'] = child_mode
     transport = None
     for binding, lineage, url in selected:
         cutoff_check()
+        assert_task_snapshots(ledger, snapshots)
         payload = cache.get(binding, lineage)
         hit = payload is not None
         auth_sha = None
@@ -182,9 +307,11 @@ def seed_results(ledger, input_dir, manifest, expected_reports, date_folder, sou
             if Path(manifest).read_bytes() != raw:
                 raise SeedError('original_manifest_changed')
             assert_inputs(ledger, pairs, bindings)
+            assert_task_snapshots(ledger, snapshots)
             cutoff_check()
             auth_sha = write_authentication(cache, binding, lineage, payload, transport.authentication)
             cutoff_check()
+            assert_task_snapshots(ledger, snapshots)
             cache.put(binding, lineage, payload)
             summary['new_result_downloads'] += 1
         else:
@@ -195,7 +322,8 @@ def seed_results(ledger, input_dir, manifest, expected_reports, date_folder, sou
         summary['results'].append({'identity_sha256': identity(binding, lineage), 'zip_sha256': digest(payload),
                                    'zip_bytes': len(payload), 'authentication_receipt_sha256': auth_sha,
                                    'auth_mode': 'existing_verified_cache' if hit else AUTH_MODE})
-    summary['all_done_results_cached'] = len(selected) == len(done) == summary['cached_results']
+    summary['all_done_results_cached'] = not child_mode and len(selected) == len(done) == summary['cached_results']
+    summary['all_authorized_child_done_results_cached'] = child_mode and len(selected) == len(done) == summary['cached_results']
     summary['result_gets'] = transport.result_gets if transport is not None else 0
     summary['authentication'] = transport.authentication if transport is not None else None
     summary['success'] = summary['cached_results'] == len(selected)
@@ -210,6 +338,10 @@ def main(argv=None):
     parser.add_argument('--date-folder', required=True)
     parser.add_argument('--expected-reports', type=int, required=True)
     parser.add_argument('--max-results', choices=('1', 'all'), default='1')
+    parser.add_argument('--recovery-run-id', default='')
+    parser.add_argument('--allowed-error-hashes', default='[]')
+    parser.add_argument('--expected-manifest-sha256', default='')
+    parser.add_argument('--recovery-producer-json', type=Path)
     parser.add_argument('--summary', type=Path, required=True)
     args = parser.parse_args(argv)
     summary = {'schema_version': 1, 'success': False, 'category': 'seed_failed', 'provider_posts': 0,
@@ -226,6 +358,16 @@ def main(argv=None):
         check_producer(producer, args.source_run_id, os.environ.get('GITHUB_REPOSITORY', ''))
         if producer.get('status') != 'completed' or producer.get('conclusion') not in {'success', 'failure'}:
             raise SeedError('completed_original_producer_required')
+        error_hashes = decode(args.allowed_error_hashes.encode())
+        child_mode = child_authorization(args.recovery_run_id, error_hashes, args.expected_manifest_sha256)
+        if child_mode:
+            if (args.recovery_producer_json is None or args.recovery_producer_json.is_symlink()
+                    or not args.recovery_producer_json.is_file()):
+                raise SeedError('recovery_producer_invalid')
+            check_recovery_producer(decode(args.recovery_producer_json.read_bytes()), args.recovery_run_id,
+                                    os.environ.get('GITHUB_REPOSITORY', ''))
+        elif args.recovery_producer_json is not None:
+            raise SeedError('child_authorization_invalid')
         import boto3
         from botocore.config import Config
         from private_workflow_handoff import require_env
@@ -241,7 +383,10 @@ def main(argv=None):
         cache = ResultCache(CutoffCacheClient(client, require_before_cutoff), bucket)
         summary = seed_results(ledger, args.input_dir, args.input_dir / MANIFEST, args.expected_reports,
                                args.date_folder, args.source_run_id, cache,
-                               max_results=0 if args.max_results == 'all' else 1)
+                               max_results=0 if args.max_results == 'all' else 1,
+                               recovery_run_id=args.recovery_run_id, allowed_error_hashes=error_hashes,
+                               expected_manifest_sha256=args.expected_manifest_sha256)
+        summary['authorized_recovery_producer_verified'] = child_mode
         code = 0 if summary['success'] else 3
     except Exception as error:
         # Nested source/provider validators may contain private report names.

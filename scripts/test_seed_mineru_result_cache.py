@@ -12,6 +12,7 @@ import zipfile
 import mineru_task_ledger as ledger_module
 import mineru_pinned_result_transport as pinned
 import seed_mineru_result_cache as seed
+from mineru_terminal_recovery import TerminalRecovery, failure_hash, task_identity
 from mineru_result_cache import ResultCache
 from test_mineru_result_cache import MemoryR2, result_zip
 from test_mineru_pinned_result_transport import authentication
@@ -79,6 +80,38 @@ class SeedTests(unittest.TestCase):
                 patch.object(ledger_module.Ledger, 'run', side_effect=AssertionError('No submission path')):
             return seed.seed_results(self.ledger, self.originals, self.manifest, 3, '261003', '12345', self.cache,
                                      transport_factory=self.factory, cutoff_check=lambda: None, **kwargs)
+
+    def child_fixture(self, *, ordinal_two=False, prior_run_id='67890'):
+        root = self.store.get('batches/' + '1' * 32)[0]
+        root_rows = {row['data_id']: row for row in self.responses[root['batch_id']]['data']['extract_result']}
+        error_hash = failure_hash(root_rows[self.bindings[1]['id']])
+        terminal = TerminalRecovery(self.ledger, allowed_error_hashes=[error_hash])
+        manifest_sha = ledger_module.digest(self.manifest.read_bytes())
+        control_key = 'recoveries/' + '1' * 32
+        entries = []
+        predecessor, rows = root, root_rows
+        for ordinal in range(1, 3 if ordinal_two else 2):
+            key = 'batches/' + str(ordinal + 2) * 32
+            entry = {'key': key, 'ordinal': ordinal, 'file_ids': [self.bindings[1]['id']],
+                     'initial_token_identity': root['token_identity'], 'proof': terminal._proof(predecessor, rows),
+                     'authorization': {'run_id': prior_run_id if ordinal == 1 else '67890',
+                                       'manifest_sha256': manifest_sha}}
+            entries.append(entry)
+            child = terminal._child_row(root, control_key, entry)
+            child.update(state='accepted', batch_id=str(uuid.UUID(f'00000000-0000-4000-8000-{ordinal + 2:012d}')))
+            self.store.put(key, child)
+            state = 'failed' if ordinal_two and ordinal == 1 else 'done'
+            child_rows = [{'data_id': self.bindings[1]['id'], 'state': state,
+                           'err_msg': root_rows[self.bindings[1]['id']]['err_msg'],
+                           'full_zip_url': 'https://' + pinned.HOST + '/PRIVATE-child.zip?signature=PRIVATE'}]
+            self.responses[child['batch_id']] = {'code': 0, 'data': {'batch_id': child['batch_id'],
+                                                                   'extract_result': child_rows}}
+            predecessor, rows = child, {row['data_id']: row for row in child_rows}
+        control = {'schema': 1, 'policy': terminal.policy, 'root_key': root['key'],
+                   'root_identity_sha256': task_identity(root), 'children': entries}
+        self.store.put(control_key, control)
+        return {'recovery_run_id': '67890', 'allowed_error_hashes': [error_hash],
+                'expected_manifest_sha256': manifest_sha}, control_key, entries[-1]['key']
 
     def test_canary_checks_all_original_batches_before_one_result_and_preserves_failed_sources(self):
         def create():
@@ -297,6 +330,137 @@ class SeedTests(unittest.TestCase):
             self.run_seed()
         self.assertEqual(len(self.r2.objects), 1)
 
+    def test_accepted_child_canary_checks_all_parents_and_child_without_any_task_state_write(self):
+        kwargs, _, child_key = self.child_fixture()
+        before = {path.name: path.read_bytes() for path in self.store.root.rglob('*.json')}
+        with patch.object(TerminalRecovery, 'run', side_effect=AssertionError('No recovery submission')):
+            summary = self.run_seed(**kwargs)
+        self.assertEqual(len(self.gets), 3)
+        self.assertEqual(self.transport.call_count, 1)
+        self.assertEqual(summary['selection_mode'], 'accepted_children')
+        self.assertEqual(summary['authorized_child_done'], 1)
+        self.assertEqual(summary['completed_members'], 2)
+        self.assertFalse(summary['all_done_results_cached'])
+        self.assertTrue(summary['all_authorized_child_done_results_cached'])
+        self.assertFalse(summary['complete_source_handoff'])
+        receipts = [json.loads(value['Body']) for key, value in self.r2.objects.items()
+                    if key.startswith(seed.AUTH_PREFIX)]
+        self.assertEqual(receipts[0]['lineage']['batch_key'], child_key)
+        self.assertEqual(receipts[0]['lineage']['child_ordinal'], 1)
+        self.assertEqual(receipts[0]['lineage']['parent_batch_key'], 'batches/' + '1' * 32)
+        self.assertEqual(before, {path.name: path.read_bytes() for path in self.store.root.rglob('*.json')})
+        self.assertNotIn('PRIVATE', json.dumps(summary))
+
+    def test_second_child_proves_prior_child_from_an_earlier_authorized_manifest_run(self):
+        kwargs, _, child_key = self.child_fixture(ordinal_two=True, prior_run_id='67889')
+        summary = self.run_seed(max_results=0, **kwargs)
+        self.assertEqual(len(self.gets), 4)
+        self.assertEqual(summary['authorized_child_members'], 1)
+        self.assertEqual(summary['authorized_child_done'], 1)
+        receipts = [json.loads(value['Body']) for key, value in self.r2.objects.items()
+                    if key.startswith(seed.AUTH_PREFIX)]
+        self.assertEqual(receipts[0]['lineage']['child_ordinal'], 2)
+        self.assertEqual(receipts[0]['lineage']['batch_key'], child_key)
+
+    def test_child_mode_manifest_and_failure_hash_are_distinct_and_checked_before_any_zip(self):
+        kwargs, _, _ = self.child_fixture()
+        kwargs['expected_manifest_sha256'] = kwargs['allowed_error_hashes'][0]
+        with self.assertRaisesRegex(seed.SeedError, 'expected_manifest_mismatch'):
+            self.run_seed(**kwargs)
+        self.assertEqual(self.gets, [])
+        self.factory.assert_not_called()
+
+    def test_child_auth_options_reject_partial_wrong_typed_or_duplicate_hashes(self):
+        for values in (('67890', [], 'a' * 64), ('', ['b' * 64], ''),
+                       ('67890', ['b' * 64] * 2, 'a' * 64), ('67890', ['PRIVATE'], 'a' * 64),
+                       ('67890', {}, 'a' * 64), ('0', ['b' * 64], 'a' * 64)):
+            with self.subTest(values=values), self.assertRaises(seed.SeedError):
+                seed.child_authorization(*values)
+
+    def test_wrong_policy_root_proof_or_child_parent_prevents_any_result_request(self):
+        kwargs, control_key, child_key = self.child_fixture()
+        original_control, _ = self.store.get(control_key)
+        original_child, _ = self.store.get(child_key)
+        mutations = [
+            lambda control, child: control['policy']['allowed_error_hashes'].append('a' * 64),
+            lambda control, child: control.update(root_identity_sha256='a' * 64),
+            lambda control, child: control['children'][0]['proof']['value'].update(task_identity_sha256='a' * 64),
+            lambda control, child: child['recovery_parent'].update(proof_sha256='a' * 64),
+            lambda control, child: child.update(state='submitting'),
+            lambda control, child: control['children'][0]['authorization'].update(manifest_sha256='a' * 64),
+            lambda control, child: control['children'][0]['authorization'].update(run_id='99999'),
+        ]
+        for mutation in mutations:
+            control, child = copy.deepcopy(original_control), copy.deepcopy(original_child)
+            mutation(control, child)
+            # Keep the mutated proof internally hashed; the fresh identity check
+            # must still detect it independently of the self-hash.
+            control['children'][0]['proof']['sha256'] = ledger_module.digest(
+                ledger_module.encoded(control['children'][0]['proof']['value']))
+            for key, value in ((control_key, control), (child_key, child)):
+                _, etag = self.store.get(key)
+                self.store.put(key, value, etag)
+            self.provider.seen.clear()
+            with self.subTest(mutation=mutation), self.assertRaises((ValueError, ledger_module.LedgerError)):
+                self.run_seed(**kwargs)
+            self.factory.assert_not_called()
+            self.assertEqual(self.r2.puts, [])
+
+    def test_child_truncated_or_pending_rows_never_trigger_zip_or_terminal_write(self):
+        kwargs, _, child_key = self.child_fixture()
+        child = self.store.get(child_key)[0]
+        for rows in ([], [{'data_id': self.bindings[1]['id'], 'state': 'pending'}]):
+            self.responses[child['batch_id']]['data']['extract_result'] = rows
+            self.provider.seen.clear()
+            with self.assertRaises((ValueError, ledger_module.LedgerError)):
+                self.run_seed(**kwargs)
+            self.factory.assert_not_called()
+            self.assertEqual(self.r2.puts, [])
+
+    def test_changed_fresh_failure_or_child_snapshot_blocks_cache_publication(self):
+        kwargs, control_key, _ = self.child_fixture()
+        root_batch = list(self.responses)[0]
+        failed_row = self.responses[root_batch]['data']['extract_result'][1]
+        original_error = failed_row['err_msg']
+        failed_row['err_msg'] = 'PRIVATE changed fresh error'
+        with self.assertRaises((ValueError, ledger_module.LedgerError)):
+            self.run_seed(**kwargs)
+        self.factory.assert_not_called()
+        failed_row['err_msg'] = original_error
+        self.provider.seen.clear()
+        def mutate_controller(url):
+            control, etag = self.store.get(control_key)
+            control['children'][0]['authorization']['run_id'] = '99999'
+            self.store.put(control_key, control, etag)
+            return self.payload
+        self.transport.side_effect = mutate_controller
+        with self.assertRaisesRegex(seed.SeedError, 'accepted_child_snapshot_changed'):
+            self.run_seed(**kwargs)
+        self.assertEqual(self.r2.puts, [])
+
+    def test_existing_child_cache_is_reused_without_new_zip_or_auth_receipt(self):
+        kwargs, _, _ = self.child_fixture()
+        self.run_seed(**kwargs)
+        before = copy.deepcopy(self.r2.objects)
+        self.provider.seen.clear()
+        self.transport.reset_mock()
+        self.factory.reset_mock()
+        summary = self.run_seed(**kwargs)
+        self.assertEqual(summary['existing_cache_hits'], 1)
+        self.transport.assert_not_called()
+        self.factory.assert_not_called()
+        self.assertEqual(self.r2.objects, before)
+
+    def test_authenticated_child_producer_is_exact_manual_main_workflow_even_if_later_failed(self):
+        producer = {'id': 67890, 'path': seed.RECOVERY_WORKFLOW, 'name': seed.RECOVERY_NAME, 'event': 'workflow_dispatch',
+                    'head_branch': 'main', 'head_sha': 'a' * 40, 'repository': {'full_name': 'owner/repo'},
+                    'status': 'completed', 'conclusion': 'failure'}
+        self.assertEqual(seed.check_recovery_producer(producer, '67890', 'owner/repo'), 'a' * 40)
+        for change in ({'id': 67891}, {'path': 'PRIVATE.yml'}, {'name': 'Other recovery'}, {'event': 'push'}, {'head_branch': 'PRIVATE'},
+                       {'head_sha': 'short'}, {'status': 'in_progress'}, {'conclusion': 'cancelled'}):
+            with self.subTest(change=change), self.assertRaises(seed.SeedError):
+                seed.check_recovery_producer({**producer, **change}, '67890', 'owner/repo')
+
 
 class WorkflowContractTests(unittest.TestCase):
     def test_manual_main_only_no_post_scope_and_dependency_contract(self):
@@ -312,7 +476,12 @@ class WorkflowContractTests(unittest.TestCase):
         self.assertIn('scripts/seed_mineru_result_cache.py', text)
         self.assertIn('mineru-result-cache-seed-summary.json', text)
         self.assertIn('if: ${{ always() }}', text)
-        for forbidden in ('allow_fresh', 'allowed_error', 'TerminalRecovery', 'ledger.run', 'build_market_views',
+        self.assertIn('recovery_run_id:', text)
+        self.assertIn('allowed_error_hashes:', text)
+        self.assertIn('expected_manifest_sha256:', text)
+        self.assertIn('decode(os.environ[\'ALLOWED_ERROR_HASHES\'].encode())', text)
+        self.assertIn('--allowed-error-hashes "$ALLOWED_ERROR_HASHES"', text)
+        for forbidden in ('allow_fresh', 'allowed_error_codes:', 'TerminalRecovery', 'ledger.run', 'build_market_views',
                           'workflow run', 'verify=False', 'DROPBOX_REFRESH_TOKEN'):
             self.assertNotIn(forbidden, text)
         ci = (root / '.github/workflows/market-views-mineru-recovery.yml').read_text()

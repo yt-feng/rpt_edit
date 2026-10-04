@@ -21,6 +21,21 @@ on:
         type: choice
         options: ['1', 'all']
         default: '1'
+      recovery_run_id:
+        description: Optional exact completed manual recovery producer whose already accepted children will be cached
+        required: false
+        type: string
+        default: ''
+      allowed_error_hashes:
+        description: Explicitly reviewed provider failure-message SHA256 hashes as a JSON array; required for child mode
+        required: false
+        type: string
+        default: '[]'
+      expected_manifest_sha256:
+        description: Expected complete original PDF artifact manifest hash; required for child mode
+        required: false
+        type: string
+        default: ''
 permissions:
   contents: read
   actions: read
@@ -59,6 +74,9 @@ jobs:
           SOURCE_RUN_ID: ${{ inputs.source_run_id }}
           DATE_FOLDER: ${{ inputs.date_folder }}
           EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+          RECOVERY_RUN_ID: ${{ inputs.recovery_run_id }}
+          ALLOWED_ERROR_HASHES: ${{ inputs.allowed_error_hashes }}
+          EXPECTED_MANIFEST_SHA256: ${{ inputs.expected_manifest_sha256 }}
         run: |
           python3 - <<'PY'
           import json, os, re, subprocess, sys
@@ -66,6 +84,7 @@ jobs:
           sys.path.insert(0, 'scripts')
           from mineru_pinned_result_transport import require_before_cutoff, require_cloud_manual
           from recover_durable_mineru_sources import check_producer, exact_date
+          from seed_mineru_result_cache import child_authorization, check_recovery_producer, decode
           try:
               require_cloud_manual()
               require_before_cutoff()
@@ -75,6 +94,8 @@ jobs:
               exact_date(os.environ['DATE_FOLDER'])
               if not re.fullmatch(r'[1-9][0-9]{0,3}', os.environ['EXPECTED_ARTICLES']):
                   raise ValueError('source_count')
+              child_mode = child_authorization(os.environ['RECOVERY_RUN_ID'],
+                  decode(os.environ['ALLOWED_ERROR_HASHES'].encode()), os.environ['EXPECTED_MANIFEST_SHA256'])
               response = subprocess.run(['gh', 'api', f"repos/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{run}"],
                                         capture_output=True, text=True, timeout=30, check=False)
               if response.returncode or len(response.stdout.encode()) > 1_000_000:
@@ -84,6 +105,14 @@ jobs:
               if producer.get('status') != 'completed' or producer.get('conclusion') not in {'success', 'failure'}:
                   raise ValueError('producer_not_completed')
               Path(os.environ['RUNNER_TEMP'], 'mineru-cache-original-producer.json').write_text(response.stdout)
+              if child_mode:
+                  recovery_run = os.environ['RECOVERY_RUN_ID']
+                  response = subprocess.run(['gh', 'api', f"repos/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{recovery_run}"],
+                                            capture_output=True, text=True, timeout=30, check=False)
+                  if response.returncode or len(response.stdout.encode()) > 1_000_000:
+                      raise ValueError('recovery_producer_unavailable')
+                  check_recovery_producer(decode(response.stdout.encode()), recovery_run, os.environ['GITHUB_REPOSITORY'])
+                  Path(os.environ['RUNNER_TEMP'], 'mineru-cache-recovery-producer.json').write_text(response.stdout)
           except Exception:
               raise SystemExit('Cache-only original producer validation rejected.')
           PY
@@ -101,6 +130,9 @@ jobs:
           DATE_FOLDER: ${{ inputs.date_folder }}
           EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
           MAX_RESULTS: ${{ inputs.max_results }}
+          RECOVERY_RUN_ID: ${{ inputs.recovery_run_id }}
+          ALLOWED_ERROR_HASHES: ${{ inputs.allowed_error_hashes }}
+          EXPECTED_MANIFEST_SHA256: ${{ inputs.expected_manifest_sha256 }}
           MINER_U: ${{ secrets.MINER_U }}
           MINER_U_2: ${{ secrets.MINER_U_2 }}
           MINER_U_3: ${{ secrets.MINER_U_3 }}
@@ -110,11 +142,17 @@ jobs:
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
         run: |
+          EXTRA_ARGS=()
+          if [ -n "$RECOVERY_RUN_ID" ]; then
+            EXTRA_ARGS+=(--recovery-producer-json "$RUNNER_TEMP/mineru-cache-recovery-producer.json")
+          fi
           python3 -B scripts/seed_mineru_result_cache.py \
             --input-dir _selected_macro_pdfs \
             --producer-json "$RUNNER_TEMP/mineru-cache-original-producer.json" \
             --source-run-id "$SOURCE_RUN_ID" --date-folder "$DATE_FOLDER" \
             --expected-reports "$EXPECTED_ARTICLES" --max-results "$MAX_RESULTS" \
+            --recovery-run-id "$RECOVERY_RUN_ID" --allowed-error-hashes "$ALLOWED_ERROR_HASHES" \
+            --expected-manifest-sha256 "$EXPECTED_MANIFEST_SHA256" "${EXTRA_ARGS[@]}" \
             --summary "$RUNNER_TEMP/mineru-result-cache-seed-summary.json"
       - name: Preserve sanitized cache-only authentication diagnostic
         if: ${{ always() }}
