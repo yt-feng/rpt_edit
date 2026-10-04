@@ -43,6 +43,8 @@ SAFE_ERRORS = {
     'child_authorization_invalid', 'expected_manifest_mismatch', 'recovery_producer_invalid',
     'completed_recovery_producer_required', 'accepted_child_required', 'accepted_child_proof_mismatch',
     'accepted_child_snapshot_changed', 'accepted_child_task_duplicate', 'no_authorized_child_done_results',
+    'archive_source_options_invalid', 'archive_intake_authority_required', 'archive_intake_authority_invalid',
+    'archive_intake_roots_invalid', 'archive_originals_changed',
 }
 
 
@@ -228,7 +230,7 @@ def accepted_child_results(ledger, groups, original_rows, recovery_run_id, error
 
 def seed_results(ledger, input_dir, manifest, expected_reports, date_folder, source_run_id, cache, *,
                  max_results=1, transport_factory=None, cutoff_check=require_before_cutoff,
-                 recovery_run_id='', allowed_error_hashes=(), expected_manifest_sha256=''):
+                 recovery_run_id='', allowed_error_hashes=(), expected_manifest_sha256='', source_check=None):
     if ledger.scope != 'dropbox' or ledger.options != OPTIONS or not isinstance(ledger.provider, SingleGetProvider):
         raise SeedError('read_only_original_dropbox_required')
     if not isinstance(ledger.store, ReadOnlyStore):
@@ -236,6 +238,8 @@ def seed_results(ledger, input_dir, manifest, expected_reports, date_folder, sou
     if type(max_results) is not int or max_results not in (0, 1):
         raise SeedError('result_limit_invalid')
     cutoff_check()
+    if source_check is not None:
+        source_check()
     child_mode = child_authorization(recovery_run_id, allowed_error_hashes, expected_manifest_sha256)
     raw, bindings, pairs = frozen_inputs(input_dir, manifest, expected_reports, date_folder)
     if expected_manifest_sha256 and digest(raw) != expected_manifest_sha256:
@@ -251,6 +255,8 @@ def seed_results(ledger, input_dir, manifest, expected_reports, date_folder, sou
     # reject the whole preflight before a single ZIP connection is attempted.
     for batch, _ in groups:
         cutoff_check()
+        if source_check is not None:
+            source_check()
         results, counts = ledger._poll(batch['key'], batch['files'], ledger.clock() + 60, 1, 0,
                                        persist_terminal=False)
         if counts['missing'] or counts['pending'] or len(results) != len(batch['files']):
@@ -295,6 +301,8 @@ def seed_results(ledger, input_dir, manifest, expected_reports, date_folder, sou
     transport = None
     for binding, lineage, url in selected:
         cutoff_check()
+        if source_check is not None:
+            source_check()
         assert_task_snapshots(ledger, snapshots)
         payload = cache.get(binding, lineage)
         hit = payload is not None
@@ -311,9 +319,13 @@ def seed_results(ledger, input_dir, manifest, expected_reports, date_folder, sou
             assert_inputs(ledger, pairs, bindings)
             assert_task_snapshots(ledger, snapshots)
             cutoff_check()
+            if source_check is not None:
+                source_check()
             auth_sha = write_authentication(cache, binding, lineage, payload, transport.authentication)
             cutoff_check()
             assert_task_snapshots(ledger, snapshots)
+            if source_check is not None:
+                source_check()
             cache.put(binding, lineage, payload)
             summary['new_result_downloads'] += 1
         else:
@@ -332,11 +344,63 @@ def seed_results(ledger, input_dir, manifest, expected_reports, date_folder, sou
     return summary
 
 
+def seed_archive_results(ledger, authority_store, input_dir, producer, expected_reports, date_folder,
+                         archive_run_id, repository, cache, *, max_results=1, transport_factory=None,
+                         cutoff_check=require_before_cutoff):
+    """GET-only seeding of roots authorized by one complete fresh archive intake."""
+    import intake_fresh_market_views_sources as intake
+    cutoff_check()
+    if not isinstance(ledger.store, ReadOnlyStore) or not isinstance(ledger.provider, SingleGetProvider):
+        raise SeedError('read_only_ledger_required')
+    original, raw, pairs = intake.verified_archive(input_dir, producer, archive_run_id, repository,
+                                                 expected_reports, date_folder)
+    bindings = [ledger.bind(path, name) for path, name in pairs]
+    authority_id = intake._identity(original, ledger)
+    authority = authority_store.get(authority_id)
+    if authority is None:
+        raise SeedError('archive_intake_authority_required')
+    try:
+        intake._check_authority(authority, original, bindings, ledger)
+        intake._check_existing(ledger, authority, bindings)
+    except (ValueError, TypeError, KeyError):
+        raise SeedError('archive_intake_authority_invalid')
+    groups, fresh = original_groups(ledger, pairs, source_run_id='', allow_fresh=False)
+    if (fresh or len(groups) != len(authority['batches'])
+            or [row['key'] for row, _ in groups] != [entry['key'] for entry in authority['batches']]
+            or any(row['state'] not in {'accepted', 'uploaded', 'terminal'}
+                   or [binding['id'] for binding in row['files']] != entry['file_ids']
+                   for (row, _), entry in zip(groups, authority['batches']))):
+        raise SeedError('archive_intake_roots_invalid')
+    snapshots = [(row['key'], encoded(row)) for row, _ in groups]
+    snapshots += [('sources/' + binding['id'], encoded(ledger.store.get('sources/' + binding['id'])[0]))
+                  for binding in bindings]
+
+    def check_source():
+        current, current_raw, _ = intake.verified_archive(input_dir, producer, archive_run_id, repository,
+                                                         expected_reports, date_folder)
+        if (not exact_json(current, original) or current_raw != raw
+                or not exact_json(authority_store.get(authority_id), authority)):
+            raise SeedError('archive_originals_changed')
+        assert_task_snapshots(ledger, snapshots)
+
+    summary = seed_results(ledger, input_dir, Path(input_dir) / MANIFEST, expected_reports, date_folder, '', cache,
+                          max_results=max_results, transport_factory=transport_factory, cutoff_check=cutoff_check,
+                          source_check=check_source)
+    check_source()
+    summary.update(source_kind='original-archive', archive_run_id=archive_run_id,
+                   archive_receipt_sha256=original['archive_receipt_sha256'],
+                   intake_authority_identity_sha256=authority_id,
+                   intake_authority_sha256=digest(encoded(authority)),
+                   accepted_intake_authority_checked=True)
+    return summary
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--input-dir', type=Path, required=True)
     parser.add_argument('--producer-json', type=Path, required=True)
     parser.add_argument('--source-run-id', required=True)
+    parser.add_argument('--source-kind', choices=('daily', 'original-archive'), default='daily')
     parser.add_argument('--date-folder', required=True)
     parser.add_argument('--expected-reports', type=int, required=True)
     parser.add_argument('--max-results', choices=('1', 'all'), default='1')
@@ -357,11 +421,21 @@ def main(argv=None):
         if args.producer_json.is_symlink() or not args.producer_json.is_file():
             raise SeedError('original_producer_invalid')
         producer = decode(args.producer_json.read_bytes())
-        check_producer(producer, args.source_run_id, os.environ.get('GITHUB_REPOSITORY', ''))
-        if producer.get('status') != 'completed' or producer.get('conclusion') not in {'success', 'failure'}:
-            raise SeedError('completed_original_producer_required')
         error_hashes = decode(args.allowed_error_hashes.encode())
-        child_mode = child_authorization(args.recovery_run_id, error_hashes, args.expected_manifest_sha256)
+        archive_mode = args.source_kind == 'original-archive'
+        if archive_mode:
+            if (args.recovery_run_id or error_hashes != [] or args.expected_manifest_sha256
+                    or args.recovery_producer_json is not None):
+                raise SeedError('archive_source_options_invalid')
+            from intake_fresh_market_views_sources import verified_archive
+            verified_archive(args.input_dir, producer, args.source_run_id, os.environ.get('GITHUB_REPOSITORY', ''),
+                             args.expected_reports, args.date_folder)
+            child_mode = False
+        else:
+            check_producer(producer, args.source_run_id, os.environ.get('GITHUB_REPOSITORY', ''))
+            if producer.get('status') != 'completed' or producer.get('conclusion') not in {'success', 'failure'}:
+                raise SeedError('completed_original_producer_required')
+            child_mode = child_authorization(args.recovery_run_id, error_hashes, args.expected_manifest_sha256)
         if child_mode:
             if (args.recovery_producer_json is None or args.recovery_producer_json.is_symlink()
                     or not args.recovery_producer_json.is_file()):
@@ -383,11 +457,17 @@ def main(argv=None):
         ledger = Ledger(store, SingleGetProvider(), 'dropbox', 'https://mineru.net', OPTIONS,
                         credentials(os.environ), sleep=stop_polling)
         cache = ResultCache(CutoffCacheClient(client, require_before_cutoff), bucket)
-        summary = seed_results(ledger, args.input_dir, args.input_dir / MANIFEST, args.expected_reports,
-                               args.date_folder, args.source_run_id, cache,
-                               max_results=0 if args.max_results == 'all' else 1,
-                               recovery_run_id=args.recovery_run_id, allowed_error_hashes=error_hashes,
-                               expected_manifest_sha256=args.expected_manifest_sha256)
+        if archive_mode:
+            from intake_fresh_market_views_sources import AuthorityStore
+            summary = seed_archive_results(ledger, AuthorityStore(client, bucket), args.input_dir, producer,
+                args.expected_reports, args.date_folder, args.source_run_id, os.environ.get('GITHUB_REPOSITORY', ''),
+                cache, max_results=0 if args.max_results == 'all' else 1)
+        else:
+            summary = seed_results(ledger, args.input_dir, args.input_dir / MANIFEST, args.expected_reports,
+                                   args.date_folder, args.source_run_id, cache,
+                                   max_results=0 if args.max_results == 'all' else 1,
+                                   recovery_run_id=args.recovery_run_id, allowed_error_hashes=error_hashes,
+                                   expected_manifest_sha256=args.expected_manifest_sha256)
         summary['authorized_recovery_producer_verified'] = child_mode
         code = 0 if summary['success'] else 3
     except Exception as error:

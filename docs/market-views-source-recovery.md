@@ -614,3 +614,23 @@ archived the complete source; its PDF consumer is `37242405117`. October 4
 primary recovery `37242512036` likewise validated all four sources; its PDF
 consumer is `37242538572`. Those primary PDF consumers require separate final
 publication and live acceptance.
+
+### Complete fresh intake before result retrieval
+
+For a genuinely missed source date, `market-views-fresh-mineru-intake.yml`
+restores an exact immutable original-only archive. It verifies every original
+and creates a complete immutable intake authority, all planned canonical roots
+and all original claims before the first parsing POST. It then accepts each
+planned root at most once, without polling or downloading results. Accepted or
+submitting roots cannot be submitted again; ambiguous submissions stop. A
+later explicit resume can admit only the same authority's remaining planned
+roots. The existing mixed-claims rejection in ordinary recovery is unchanged.
+
+The manual cache workflow's explicit `source_kind=original-archive` authenticates
+the same complete archive, immutable intake authority and every accepted root
+before performing fresh GET-only terminal membership checks. Only then may it
+cache DONE ZIPs, rechecking the unchanged source authority before each retrieval
+and write. This route submits no task, changes no ledger and admits no partial
+source. Its canonical identities retain the empty original Daily producer ID;
+the native archive producer is a distinct, authenticated byte source. Ordinary
+recovery starts only after all roots and claims have been accepted.

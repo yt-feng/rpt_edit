@@ -1,5 +1,6 @@
 """Offline full-original, zero-POST, partial-cache and immutable-provenance checks."""
 import copy
+from datetime import timedelta
 import io
 import json
 from pathlib import Path
@@ -12,6 +13,8 @@ import zipfile
 import mineru_task_ledger as ledger_module
 import mineru_pinned_result_transport as pinned
 import seed_mineru_result_cache as seed
+import archive_market_views_originals as archive_module
+import intake_fresh_market_views_sources as intake
 from mineru_terminal_recovery import TerminalRecovery, failure_hash, task_identity
 from mineru_result_cache import ResultCache
 from test_mineru_result_cache import MemoryR2, result_zip
@@ -112,6 +115,137 @@ class SeedTests(unittest.TestCase):
         self.store.put(control_key, control)
         return {'recovery_run_id': '67890', 'allowed_error_hashes': [error_hash],
                 'expected_manifest_sha256': manifest_sha}, control_key, entries[-1]['key']
+
+    def archive_fixture(self):
+        producer = {'id': 54321, 'path': archive_module.WORKFLOW, 'event': 'workflow_dispatch',
+                    'head_branch': 'main', 'head_sha': 'a' * 40, 'status': 'completed', 'conclusion': 'success',
+                    'repository': {'full_name': 'owner/repo'}}
+        raw, inventory, _ = archive_module.checked_inputs(self.originals, 3, '261003')
+        now = archive_module.now_utc()
+        receipt = {'schema_version': 1, 'kind': archive_module.KIND, 'source_ready': False,
+                   'source_context': archive_module.context('54321', '261003', 'a' * 40), 'report_count': 3,
+                   'manifest_sha256': ledger_module.digest(raw), 'original_inventory': inventory,
+                   'archive_sha256': 'b' * 64, 'archive_bytes': 100, 'created_at_utc': now.isoformat(),
+                   'expires_at_utc': (now + timedelta(days=7)).isoformat(),
+                   'expiry_policy': 'restore-disabled-after-7-days', 'physical_deletion_guaranteed': False}
+        (self.originals / archive_module.RECEIPT).write_bytes(ledger_module.encoded(receipt))
+        root, version = self.store.get('batches/' + '1' * 32)
+        old_rows = [row for response in self.responses.values() for row in response['data']['extract_result']]
+        root['files'] = self.bindings
+        self.store.put(root['key'], root, version)
+        for binding in self.bindings:
+            _, version = self.store.get('sources/' + binding['id'])
+            self.store.put('sources/' + binding['id'], {'schema': 1, 'binding': binding, 'batch_key': root['key']}, version)
+        self.responses[root['batch_id']]['data']['extract_result'] = old_rows
+        original, _, _ = intake.verified_archive(self.originals, producer, '54321', 'owner/repo', 3, '261003')
+        authority = {'schema_version': 1, 'policy': intake.POLICY, 'source_ready': False,
+                     'complete_source_handoff': False, 'original': original,
+                     'initial_intake': {'run_id': '98765', 'execution_sha': 'c' * 40, 'workflow_path': intake.WORKFLOW},
+                     'source_bindings': self.bindings,
+                     'batches': [{'key': root['key'], 'file_ids': [binding['id'] for binding in self.bindings],
+                                  'initial_token_identity': root['token_identity']}]}
+        authority_store = intake.AuthorityStore(self.r2, 'PRIVATE-BUCKET')
+        authority_id = intake._identity(original, self.ledger)
+        authority_store.create(authority_id, authority)
+        return producer, authority_store, authority_id, root['key']
+
+    def archive_seed(self, fixture, **kwargs):
+        producer, authority_store, _, _ = fixture
+        with patch('socket.create_connection', side_effect=AssertionError('No network')):
+            return seed.seed_archive_results(self.ledger, authority_store, self.originals, producer,
+                3, '261003', '54321', 'owner/repo', self.cache,
+                transport_factory=self.factory, cutoff_check=lambda: None, **kwargs)
+
+    def test_archive_roots_require_exact_immutable_full_intake_authority_and_no_canonical_writes(self):
+        fixture = self.archive_fixture()
+        before = {str(path): path.read_bytes() for path in self.store.root.rglob('*.json')}
+        with patch.object(fixture[1], 'create', side_effect=AssertionError('No authority PUT')):
+            result = self.archive_seed(fixture, max_results=0)
+        self.assertEqual(result['source_kind'], 'original-archive')
+        self.assertEqual(result['archive_run_id'], '54321')
+        self.assertTrue(result['accepted_intake_authority_checked'])
+        self.assertEqual(result['original_members_verified'], 3)
+        self.assertEqual(result['cached_results'], 2)
+        self.assertEqual(result['provider_posts'], 0)
+        self.assertEqual(result['canonical_ledger_writes'], 0)
+        self.assertEqual(len(self.gets), 1)
+        self.assertFalse(result['production_acceptance'])
+        self.assertFalse(result['complete_source_handoff'])
+        self.assertNotIn('PRIVATE', json.dumps(result))
+        self.assertEqual(before, {str(path): path.read_bytes() for path in self.store.root.rglob('*.json')})
+
+    def test_archive_missing_wrong_controller_or_unaccepted_root_blocks_all_api_and_zip_reads(self):
+        fixture = self.archive_fixture()
+        original = fixture[1].get(fixture[2])
+        for value in (None, {**original, 'source_ready': True}):
+            with patch.object(fixture[1], 'get', return_value=value), self.assertRaises(seed.SeedError):
+                self.archive_seed(fixture)
+        row, version = self.store.get(fixture[3])
+        row.update(state='submitting', batch_id=None, submission_attempt={'PRIVATE': True})
+        self.store.put(fixture[3], row, version)
+        with self.assertRaises(ValueError):
+            self.archive_seed(fixture)
+        self.assertEqual(self.gets, [])
+        self.factory.assert_not_called()
+        self.assertEqual(len(self.r2.puts), 1)
+
+    def test_archive_receipt_change_during_zip_read_blocks_auth_and_cache_publication(self):
+        fixture = self.archive_fixture()
+        def mutate(url):
+            path = self.originals / archive_module.RECEIPT
+            value = json.loads(path.read_bytes()); value['archive_sha256'] = 'd' * 64
+            path.write_bytes(ledger_module.encoded(value))
+            return self.payload
+        self.transport.side_effect = mutate
+        with self.assertRaisesRegex(seed.SeedError, 'archive_originals_changed'):
+            self.archive_seed(fixture)
+        self.assertEqual(len(self.r2.puts), 1)
+
+    def test_archive_authority_or_claim_change_during_zip_read_blocks_cache_publication(self):
+        fixture = self.archive_fixture()
+        def mutate(url):
+            reference, version = self.store.get('sources/' + self.bindings[0]['id'])
+            reference['batch_key'] = 'batches/' + 'f' * 32
+            self.store.put('sources/' + self.bindings[0]['id'], reference, version)
+            return self.payload
+        self.transport.side_effect = mutate
+        with self.assertRaisesRegex(seed.SeedError, 'accepted_child_snapshot_changed'):
+            self.archive_seed(fixture)
+        self.assertEqual(len(self.r2.puts), 1)
+
+    def test_archive_bad_producer_original_bytes_and_receipt_expiry_precede_authority_get(self):
+        fixture = self.archive_fixture()
+        producer, store, _, _ = fixture
+        with patch.object(store, 'get', side_effect=AssertionError('No authority access')):
+            with self.assertRaises(intake.IntakeError):
+                self.archive_seed(({**producer, 'event': 'push'}, *fixture[1:]))
+            original = self.originals / 'PRIVATE-0.pdf'; raw = original.read_bytes()
+            original.write_bytes(b'%PDF-1.7 changed')
+            with self.assertRaises(intake.IntakeError):
+                self.archive_seed(fixture)
+            original.write_bytes(raw)
+            receipt = self.originals / archive_module.RECEIPT
+            value = json.loads(receipt.read_bytes())
+            value['created_at_utc'] = (archive_module.now_utc() - timedelta(days=8)).isoformat()
+            value['expires_at_utc'] = (archive_module.now_utc() - timedelta(days=1)).isoformat()
+            receipt.write_bytes(ledger_module.encoded(value))
+            with self.assertRaises(intake.IntakeError):
+                self.archive_seed(fixture)
+        self.assertEqual(self.gets, [])
+
+    def test_archive_cli_rejects_child_authorization_before_any_client_task_or_cache(self):
+        fixture = self.archive_fixture()
+        producer_path = self.root / 'producer.json'; producer_path.write_bytes(ledger_module.encoded(fixture[0]))
+        output = self.root / 'summary.json'
+        args = ['--input-dir', str(self.originals), '--producer-json', str(producer_path),
+                '--source-kind', 'original-archive', '--source-run-id', '54321', '--date-folder', '261003',
+                '--expected-reports', '3', '--recovery-run-id', '98765', '--summary', str(output)]
+        with patch.object(seed, 'require_cloud_manual'), patch.object(seed, 'require_before_cutoff'), \
+                patch.object(seed, 'seed_archive_results', side_effect=AssertionError('No archive access')), \
+                patch('builtins.print'):
+            self.assertEqual(seed.main(args), 2)
+        self.assertEqual(json.loads(output.read_bytes())['category'], 'archive_source_options_invalid')
+        self.assertNotIn('PRIVATE', output.read_text())
 
     def test_canary_checks_all_original_batches_before_one_result_and_preserves_failed_sources(self):
         def create():
@@ -468,6 +602,24 @@ class SeedTests(unittest.TestCase):
 
 
 class WorkflowContractTests(unittest.TestCase):
+    def test_archive_opt_in_keeps_daily_and_legacy_separate_and_restores_before_readonly_seed(self):
+        text = (Path(__file__).resolve().parents[1] / '.github/workflows/mineru-result-cache-seed.yml').read_text()
+        self.assertIn("options: ['durable', 'legacy-daily', 'original-archive']", text)
+        self.assertIn('default: durable', text)
+        self.assertIn('check_restore_producer(producer, run', text)
+        self.assertIn("context(run, os.environ['DATE_FOLDER'], sha, '')", text)
+        self.assertIn('--source-kind original-archive', text)
+        self.assertLess(text.index('check_restore_producer(producer, run'),
+                        text.index('scripts/archive_market_views_originals.py restore'))
+        self.assertLess(text.index('scripts/archive_market_views_originals.py restore'),
+                        text.index('--source-kind original-archive'))
+        self.assertIn('Archive roots cannot mix legacy or child authorization.', text)
+        self.assertIn('--destination "$RUNNER_TEMP/mineru-cache-archive-originals"', text)
+        self.assertIn("if: ${{ inputs.source_kind == 'durable' }}", text)
+        self.assertIn("if: ${{ inputs.source_kind == 'legacy-daily' }}", text)
+        self.assertIn('- scripts/intake_fresh_market_views_sources.py', text)
+        self.assertIn('python3 -B scripts/test_intake_fresh_market_views_sources.py', text)
+
     def test_manual_main_only_no_post_scope_and_dependency_contract(self):
         root = Path(__file__).resolve().parents[1]
         text = (root / '.github/workflows/mineru-result-cache-seed.yml').read_text()
