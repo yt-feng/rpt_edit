@@ -364,6 +364,32 @@ class RecoveryTests(unittest.TestCase):
              patch('sys.stderr', new_callable=io.StringIO) as stderr:
             self.assertEqual(r.main(), 2)
             self.assertIn('reviewed_main_workflow_required', stderr.getvalue())
+
+    def test_cached_originals_then_child_network_failure_is_classified_and_accepted_child_retained(self):
+        cache = ResultCache(MemoryR2(), 'private-test')
+        self.provider.plans['root-1'] = ['done', 'failed', 'done']
+        for root in self.originals:
+            for offset, binding in enumerate(root['files']):
+                if root['batch_id'] == 'root-1' and offset == 1:
+                    continue
+                lineage = {'batch_id': root['batch_id'], 'batch_key': root['key'],
+                           'parent_batch_key': root['key'], 'data_id': binding['id'], 'child_ordinal': 0}
+                cache.put(binding, lineage, result_zip())
+        downloads = []
+        def unavailable_child(url):
+            downloads.append(url)
+            raise NetworkStop('tls_certificate_expired')
+        with self.assertRaises(m.LedgerError) as stopped:
+            self.recover(result_cache=cache, downloader=unavailable_child)
+        self.assertEqual(r.safe_ledger_error_category(stopped.exception), 'ledger_child_result_tls_certificate_expired')
+        self.assertEqual(len(self.provider.posts), 1)
+        self.assertEqual(len(downloads), 1)
+        self.assertIn('child-1', downloads[0])
+        controller = self.store.get('recoveries/' + '1' * 32)[0]
+        child = self.store.get(controller['children'][0]['key'])[0]
+        self.assertEqual(child['state'], 'terminal')
+        self.assertEqual(child['batch_id'], 'child-1')
+        self.assertFalse((self.output / r.RECEIPT).exists())
     def test_workflow_dispatch_fixes_private_handoff_and_waits_before_cleanup(self):
         workflow = Path(__file__).resolve().parents[1] / '.github/workflows/market-views-mineru-recovery.yml'
         text = workflow.read_text()
@@ -374,6 +400,71 @@ class RecoveryTests(unittest.TestCase):
         self.assertLess(text.index('gh run watch'), text.index('delete-prefix'))
         self.assertNotIn('continue-on-error', text)
         self.assertNotIn('upload-artifact', text)
+
+
+class SafeDiagnosticTests(unittest.TestCase):
+    def test_exact_fixed_messages_and_wrapped_error_classes_have_only_safe_categories(self):
+        for message, category in r.LEDGER_ERROR_CATEGORIES.items():
+            with self.subTest(category=category):
+                self.assertEqual(r.safe_ledger_error_category(m.LedgerError(message)), 'ledger_' + category)
+        for name, category in r.WRAPPED_RECOVERY_CATEGORIES.items():
+            message = 'Terminal recovery stopped; saved tasks retained (' + name + ')'
+            with self.subTest(name=name):
+                self.assertEqual(r.safe_ledger_error_category(m.LedgerError(message)), 'ledger_' + category)
+
+    def test_unknown_private_or_malformed_error_arguments_never_escape(self):
+        messages = ['PRIVATE report.pdf https://PRIVATE.invalid?token=PRIVATE',
+                    'Stored task scope, source, options or token identity mismatch\nPRIVATE',
+                    'Terminal recovery stopped; saved tasks retained (PRIVATE_SECRET)',
+                    'MinerU request rejected or malformed: HTTP 403 PRIVATE', 'PRIVATE' * 1000,
+                    {'PRIVATE': 'secret'}, ['PRIVATE'], None]
+        for message in messages:
+            with self.subTest(kind=type(message).__name__):
+                self.assertEqual(r.safe_ledger_error_category(m.LedgerError(message)), 'ledger_error')
+        self.assertEqual(r.safe_ledger_error_category(m.LedgerError('PRIVATE', 'secret')), 'ledger_error')
+        self.assertEqual(r.safe_ledger_error_category(ValueError('PRIVATE')), 'ledger_error')
+
+    def test_wrapped_network_context_admits_only_exact_fixed_tls_category(self):
+        message = 'Terminal recovery stopped; saved tasks retained (NetworkStop)'
+        class PrivateArgument:
+            def __eq__(self, other):
+                raise AssertionError('Untrusted argument comparison must not execute')
+            def __str__(self):
+                raise AssertionError('Untrusted argument rendering must not execute')
+        for context, expected in ((NetworkStop('tls_certificate_expired'), 'ledger_child_result_tls_certificate_expired'),
+                                  (NetworkStop('network_stop'), 'ledger_child_result_network_stop'),
+                                  (NetworkStop('tls_certificate_expired PRIVATE'), 'ledger_child_result_network_stop'),
+                                  (NetworkStop(PrivateArgument()), 'ledger_child_result_network_stop'),
+                                  (NetworkStop(['tls_certificate_expired']), 'ledger_child_result_network_stop'),
+                                  (NetworkStop({'PRIVATE': 'secret'}), 'ledger_child_result_network_stop'),
+                                  (ValueError('tls_certificate_expired'), 'ledger_child_result_network_stop')):
+            error = m.LedgerError(message)
+            error.__context__ = context
+            self.assertEqual(r.safe_ledger_error_category(error), expected)
+
+    def test_status_templates_are_strict_and_do_not_publish_provider_text(self):
+        self.assertEqual(r.safe_ledger_error_category(m.LedgerError('MinerU response is not valid JSON: HTTP 403')),
+                         'ledger_provider_response_json_invalid')
+        self.assertEqual(r.safe_ledger_error_category(m.LedgerError('MinerU request rejected or malformed: HTTP 429')),
+                         'ledger_provider_request_rejected')
+        self.assertEqual(r.safe_ledger_error_category(m.LedgerError('MinerU upload did not complete: HTTP 503')),
+                         'ledger_provider_upload_rejected')
+        for invalid in ('-1', '2000', '999', 'PRIVATE'):
+            self.assertEqual(r.safe_ledger_error_category(m.LedgerError(
+                'MinerU request rejected or malformed: HTTP ' + invalid)), 'ledger_error')
+
+    def test_real_cli_catches_known_and_unknown_ledger_error_without_private_text(self):
+        for message, expected in (('Terminal recovery stopped; saved tasks retained (NetworkStop)',
+                                   'ledger_child_result_network_stop'),
+                                  ('PRIVATE source.pdf https://PRIVATE.invalid?token=PRIVATE', 'ledger_error')):
+            with patch('sys.argv', ['recover', 'validate', '--output-dir', 'PRIVATE', '--expected-reports', '1',
+                                    '--date-folder', '261003']), \
+                    patch.object(r, 'validate_sources', side_effect=m.LedgerError(message)), \
+                    patch('socket.create_connection', side_effect=AssertionError('Offline tests')), \
+                    patch('sys.stderr', new_callable=io.StringIO) as stderr:
+                self.assertEqual(r.main(), 2)
+            self.assertEqual(stderr.getvalue(), 'MinerU source recovery stopped: ' + expected + '\n')
+            self.assertNotIn('PRIVATE', stderr.getvalue())
 
 
 if __name__ == '__main__':

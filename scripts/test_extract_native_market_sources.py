@@ -273,6 +273,84 @@ class NativeMarketSourcesTests(unittest.TestCase):
                     native._ocr_page(readable, "unreadable.pdf", 2)
                 self.assertNotIn("Tesseract data", str(failure.exception))
 
+    def test_numeric_failure_categories_preserve_exact_known_cause_without_private_exception_text(self) -> None:
+        from ocr_numeric_evidence import NumericEvidenceError
+        models = self.root / "numeric-fixture-tessdata"
+        models.mkdir()
+        for language in native.OCR_LANGUAGES.split("+"):
+            (models / f"{language}.traineddata").write_bytes(b"fixture model identity")
+        cases = (
+            ("Numeric crop geometry is invalid", "numeric_crop_geometry_invalid"),
+            ("Numeric crop geometry differs from its positioned source field", "numeric_crop_geometry_mismatch"),
+            ("Numeric evidence original image size mismatch", "numeric_original_image_size_mismatch"),
+            ("Tesseract CLI is required for numeric verification", "numeric_tesseract_cli_missing"),
+            ("PRIVATE source text https://private.example/signed?token=PRIVATE", "numeric_evidence_invalid"),
+        )
+        with fitz.open() as document:
+            page = document.new_page()
+            page.insert_text((45, 50), "Disclosure Appendix Research", fontsize=20)
+            for message, category in cases:
+                error = NumericEvidenceError(message)
+                with self.subTest(category=category), \
+                        patch.object(fitz, "get_tessdata", return_value=str(models)), \
+                        patch.object(fitz.Page, "get_textpage_ocr", return_value=page.get_textpage()), \
+                        patch("ocr_numeric_evidence.audit_numeric_evidence", side_effect=error):
+                    with self.assertRaises(native.SourceValidationError) as failure:
+                        native._ocr_page(page, "PRIVATE-source.pdf", 9)
+                    self.assertEqual(failure.exception.category, category)
+                    self.assertIs(failure.exception.__cause__, error)
+                    self.assertIn(category, str(failure.exception))
+                    for private in ("PRIVATE", "https://", "eng and chi_sim", "data and numeric audit"):
+                        self.assertNotIn(private, str(failure.exception))
+
+    def test_numeric_explicit_category_must_be_in_the_fixed_whitelist(self) -> None:
+        from ocr_numeric_evidence import NumericEvidenceError
+        error = NumericEvidenceError("PRIVATE exception body")
+        error.category = "numeric_crop_geometry_mismatch"
+        self.assertEqual(native._numeric_failure_category(error), "numeric_crop_geometry_mismatch")
+        for category in ("PRIVATE-token", "https://private.example", ["numeric_crop_geometry_mismatch"], None):
+            error.category = category
+            self.assertEqual(native._numeric_failure_category(error), "numeric_evidence_invalid")
+
+    def test_numeric_failure_survives_complete_extraction_and_never_publishes_partial_receipt(self) -> None:
+        from ocr_numeric_evidence import NumericEvidenceError
+        self.select("numeric-rejection.pdf")
+        self.append_sparse_page("numeric-rejection.pdf", "Disclosure Appendix\nResearch\n49")
+        models = self.root / "extraction-fixture-tessdata"
+        models.mkdir()
+        for language in native.OCR_LANGUAGES.split("+"):
+            (models / f"{language}.traineddata").write_bytes(b"fixture model identity")
+        error = NumericEvidenceError("Numeric crop reads differ from their common source pixels")
+        with patch.object(fitz, "get_tessdata", return_value=str(models)), \
+                patch.object(fitz.Page, "get_textpage_ocr", lambda page, **kwargs: page.get_textpage()), \
+                patch("ocr_numeric_evidence.audit_numeric_evidence", side_effect=error):
+            with self.assertRaises(native.SourceValidationError) as failure:
+                self.extract(enable_ocr=True)
+        self.assertEqual(failure.exception.category, "numeric_crop_pixels_mismatch")
+        self.assertIs(failure.exception.__cause__, error)
+        self.assertFalse(self.output.exists())
+        self.assertTrue((self.input / "numeric-rejection.pdf").is_file())
+
+    def test_model_discovery_and_primary_engine_failures_have_distinct_safe_categories(self) -> None:
+        with fitz.open() as document:
+            page = document.new_page()
+            with patch.object(fitz, "get_tessdata", side_effect=RuntimeError("PRIVATE model path")):
+                with self.assertRaises(native.SourceValidationError) as failure:
+                    native._ocr_page(page, "PRIVATE-source.pdf", 1)
+                self.assertEqual(failure.exception.category, "ocr_language_data_unavailable")
+                self.assertNotIn("PRIVATE", str(failure.exception))
+            models = self.root / "engine-fixture-tessdata"
+            models.mkdir()
+            for language in native.OCR_LANGUAGES.split("+"):
+                (models / f"{language}.traineddata").write_bytes(b"fixture model identity")
+            with patch.object(fitz, "get_tessdata", return_value=str(models)), \
+                    patch.object(fitz.Page, "get_textpage_ocr", side_effect=RuntimeError("PRIVATE engine detail")):
+                with self.assertRaises(native.SourceValidationError) as failure:
+                    native._ocr_page(page, "PRIVATE-source.pdf", 1)
+                self.assertEqual(failure.exception.category, "ocr_engine_failed")
+                self.assertNotIn("dependencies", str(failure.exception))
+                self.assertNotIn("PRIVATE", str(failure.exception))
+
     def test_sparse_scanned_table_keeps_complete_source_when_one_numeric_field_is_masked(self) -> None:
         import ocr_numeric_evidence as numeric
         self.select("sparse-table.pdf")
