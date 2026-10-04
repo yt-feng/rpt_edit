@@ -1,13 +1,16 @@
 # Automation Pipeline Overview
 
-This document is a high-level overview of the repository's automation system.
+This document is the architecture map for the repository's automation system.
+Production PDF parsing uses the **MinerU API from GitHub Actions**. Actions also
+run generation, private R2 handoff, PDF rendering and publication. The scheduled
+pipeline does not depend on a user's computer being awake or running a local job.
 
 ## Purpose
 
 The repository automates a document-processing pipeline:
 
 1. Collect PDF inputs from source locations.
-2. Extract text, tables, and figures.
+2. Extract text, tables, and figures through MinerU.
 3. Generate structured drafts and derivative assets.
 4. Package review-ready outputs.
 5. Build optional summary, media, and search artifacts.
@@ -15,15 +18,63 @@ The repository automates a document-processing pipeline:
 
 ## High-Level Flow
 
-```text
-PDF sources
-  -> extraction service
-  -> structured source text and figures
-  -> generation service
-  -> draft variants and normalized assets
-  -> review packages / summaries / media artifacts
-  -> optional static index + protected file gateway
+```mermaid
+flowchart TD
+  A["Dropbox and other PDF sources"] --> B["GitHub Actions: select and bind exact PDF batch"]
+  B --> C["MinerU API: durable submission and original-task polling"]
+  C --> D["Retrieve completed result ZIPs; verify complete source text and figures"]
+  D --> E["Actions: generate and validate report articles"]
+  E --> F["Private R2: complete report shard handoff"]
+  F --> G["Actions: Market Views synthesis and PDF rendering"]
+  G --> H["Verify exact dated PDF and original figures"]
+  H --> I["Private R2 archive and public-safe PDF commit to main"]
+  I --> J["Live catalogue and dated download acceptance"]
+  B -. "Cloud backup only; retained original PDF artifact" .-> K["Actions native-text backup: deployed, limited to readable text on every page"]
+  K -. "Complete manifest and receipt required; current image-page batches rejected" .-> L["Separate private R2 market-source handoff"]
+  L -. "Verified backup input only" .-> G
 ```
+
+The solid path is the primary architecture. The dashed path is a cloud backup
+for Market Views, not a replacement for MinerU or a way to mark failed report
+generation successful. Its deployed native-only parser cannot recover a batch
+containing textless image pages. Local OCR changes were saved as an experimental
+patch and have not been deployed; no OCR recovery is claimed. See
+[Market Views source recovery](market-views-source-recovery.md) for the backup
+limits and incident evidence.
+
+## MinerU recovery and acceptance
+
+The primary daily workflow is
+[`dropbox-latest-pdf-to-xhs-sharded.yml`](../.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml).
+It keeps exact source bindings and accepted MinerU task identities in a durable
+private R2 ledger. A new submission may move to the next configured credential
+only after an explicit authentication rejection without any acceptance
+acknowledgement. Accepted tasks always keep their original credential and batch
+ID. Timeouts, failed parsing, polling errors and ambiguous acknowledgements do
+not authorize another submission. The detailed contract is in
+[MinerU in-flight recovery](mineru-inflight-recovery.md).
+
+These acceptance layers are separate:
+
+| Layer | Required evidence |
+| --- | --- |
+| MinerU completion | Every originally admitted PDF has a successful terminal row and result URL; a successful subset is insufficient. |
+| Result retrieval | Completed result ZIPs download and yield usable source text and figures; provider `done` alone does not prove this. |
+| Complete report handoff | Exact selected source coverage and valid report outputs are present in the private R2 shard handoff. |
+| Market Views PDF | The bank issue date, complete report coverage, original figure rendering and exact PDF checks pass. |
+| Archive and public output | The exact PDF is privately archived and the validated public-safe PDF is committed. |
+| User-visible delivery | The dated live catalogue entry and its actual PDF download are verified. |
+
+Read-only diagnostics use privately preserved original provider responses
+instead of assigning a cause from public counts. The cloud diagnostic entry is
+[`mineru-api-diagnostics.yml`](../.github/workflows/mineru-api-diagnostics.yml);
+its safe summary separates historical task errors, current authentication, and
+result-download TLS/HEAD or optional four-byte ZIP probes. The probe results must
+be read before asserting current API health; a ZIP prefix is not a complete
+download. The existing durable-task inspector and private response receipts are
+documented in
+[MinerU in-flight recovery](mineru-inflight-recovery.md). A green diagnostic job,
+a credential page, or a sibling workflow is not PDF delivery evidence.
 
 ## Main Workflow Groups
 
