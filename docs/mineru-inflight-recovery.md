@@ -175,6 +175,14 @@ authentication and parsing are therefore verified for the smoke task, while
 result delivery remains blocked. Never turn this download failure into another
 submission or disable TLS validation; an accepted smoke rerun reuses its task.
 
+[`mineru-result-tls-probe.yml`](../.github/workflows/mineru-result-tls-probe.yml)
+compares the system CA store with Requests using the current certifi bundle on
+GitHub Actions. Each independent client makes one strict HTTPS HEAD request to
+the fixed public result-CDN root, without credentials, redirects, retries or body
+reads. An HTTP error status still proves that TLS completed; it does not verify a
+result ZIP. The sanitized report distinguishes a trust-store difference from two
+clients failing validation. This diagnostic changes no task, URL or network setting.
+
 Protocol references checked for this implementation:
 
 - [Cloudflare R2 S3 compatibility](https://developers.cloudflare.com/r2/api/s3/api/)
