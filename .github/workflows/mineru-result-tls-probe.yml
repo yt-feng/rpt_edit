@@ -1,5 +1,5 @@
 name: Compare strict MinerU result TLS clients
-run-name: Compare system CA and certifi at the public MinerU result CDN
+run-name: Compare strict clients and public TLS certificate chains at the MinerU result CDN
 on:
   pull_request:
     paths:
@@ -34,9 +34,9 @@ jobs:
         with:
           python-version: '3.11'
       - run: python3 -m pip install --disable-pip-version-check --retries 0 requests certifi
-      - name: Independently HEAD the fixed public CDN root with two strict clients
+      - name: Compare two strict HEAD clients and two independent strict TLS handshakes
         run: python3 -B scripts/probe_mineru_result_tls.py
-      - name: Preserve only sanitized trust comparison
+      - name: Preserve only sanitized trust comparison and public chain metadata
         if: always()
         uses: actions/upload-artifact@v4
         with:

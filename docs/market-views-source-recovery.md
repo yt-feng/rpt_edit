@@ -116,6 +116,14 @@ reported only when the platform supplies a valid `cf-placement` response header;
 a requested region does not prove execution there. Every probe retains one
 provider HEAD, zero result ZIP downloads, zero parsing submissions and cleanup.
 
+The independent `mineru-result-tls-probe.yml` also records two strict public-host
+OpenSSL handshakes: default negotiation and a TLS 1.2 RSA diagnostic. Each makes
+one TLS connection and no HTTP request. The bounded peer-provided certificate
+chain records public subjects, issuers, validity dates and fingerprints plus
+verification code/depth. This is distinct from a constructed trusted chain and
+from complete ZIP validation. The parameters apply only to that manual cloud
+diagnostic; production TLS configuration is unchanged.
+
 The bank source date owns the Market Views issue. Auxiliary sources use the
 latest usable date on or before that bank date; a future auxiliary date cannot
 rename or suppress the bank issue. Private handoff run IDs and report/shard
@@ -260,6 +268,16 @@ ZIP and does not establish runner or Cloudflare retrieval success. These
 different observations require testing a legitimate cloud retrieval path rather
 than describing every CDN edge as expired. Regional Cloudflare probes are
 available for that test; region selection alone is not success evidence.
+
+Readiness-verified regional run `37231111280` used `gcp:asia-east1` and the
+platform reported `cf-placement: remote-TPE`; its single strict HEAD received
+HTTP 526. Run `37231384448` used `azure:southeastasia` with
+`cf-placement: remote-SIN` and also received HTTP 526. Both temporary Workers
+were deleted successfully, with zero ZIP downloads, provider POSTs or R2 writes.
+Thus the tested Taipei and Singapore cloud routes have not provided a valid
+upstream ZIP for an R2 mirror. The cloud certificate-chain diagnostic can now
+identify which public certificate the runner actually received without
+weakening verification or changing the official hostname.
 
 Saved Dropbox inventory from 2026-10-03 22:34 UTC contained 63 PDFs for `261001`,
 4 for `261002` and 54 for `261003`. Those counts describe original inputs, not
