@@ -44,6 +44,24 @@ membership. Polling failures, timeouts, parsing failures, conflicting
 acknowledgements and ambiguous submissions do not authorize resubmission.
 Changing a key cannot fix a shared result-download certificate.
 
+The explicit cloud recovery entry is
+[`market-views-mineru-recovery.yml`](../.github/workflows/market-views-mineru-recovery.yml).
+It verifies the exact original artifact, manifest, PDF bytes and original task
+membership. Every completed original ZIP must be retrieved before retrying a
+failed member. A reviewed failure code or exact message hash authorizes at most
+two durable child attempts; only failed members are submitted. Original task and
+source records retain their original identity and credential. Ambiguous
+submissions and pending children block further submissions. Recovery releases
+sources only after every original member is covered by a successful original or
+child result. Its separate private receipt binds the complete source inventory,
+result files, lineage, recovery run and executing commit before PDF synthesis.
+
+The one-page cloud smoke test
+[`mineru-api-smoke.yml`](../.github/workflows/mineru-api-smoke.yml) exercises a new
+synthetic PDF through parsing and complete ZIP download, then verifies fixed text
+and numeric evidence. It has an independent task scope and a per-run immutable
+source guard; rerunning an accepted or ambiguous task cannot create another parse.
+
 Use cloud read-only diagnostics to distinguish current credential/API health,
 task state and result retrieval. The diagnostic entry is **Diagnose MinerU API
 and saved results**
@@ -53,8 +71,8 @@ credential, and checks result-host TLS/HEAD responses plus an optional four-byte
 ZIP prefix. Its safe summary separates `historical_tasks`, `authentication` and
 `result_download`; a prefix probe explicitly reports `full_zip_verified=false`.
 It submits no parsing task, changes no canonical claim and sends no email.
-Whole-service API health remains to be established by cloud probes, and a
-successful small download probe does not establish complete ZIP retrieval.
+Authentication, new parsing and result delivery require separate cloud probes;
+a successful small download probe does not establish complete ZIP retrieval.
 
 The existing
 [`mineru-durable-inspect.yml`](../.github/workflows/mineru-durable-inspect.yml)
@@ -88,7 +106,8 @@ Bernstein page with zero native text. This deployed backup has not restored thos
 issues. Numbered source captions select original full-page
 images; uncaptioned visuals are not inferred or redrawn.
 
-An experimental local OCR extension was saved as a patch. It has not been
+The OCR extension is preserved in a versioned
+[experimental backup patch](experiments/market-views-ocr-fallback-20261004.md). It has not been
 deployed and is not part of the active architecture. Its local tests do not prove
 cloud recovery or publication. Backup extensions must retain the exact complete
 source inventory and normal PDF acceptance gates before they can be used.
@@ -116,6 +135,21 @@ Four configured MinerU key slots were loaded in the saved run. The token page
 was observed in Chrome on 2026-10-04 with four valid tokens and one older token
 expired on October 2. That view does not establish which credentials the
 historical tasks used, or that every API endpoint and result host is healthy.
+
+Cloud diagnostic run `37211677994` verified all four configured key slots through
+authenticated task lookup on 2026-10-04. The retained 18 failures were classified
+from actual provider messages as `provider_internal`, with no supplied error code.
+The first retained completed ZIP's host still failed certificate validation as
+expired; no result GET or new task POST followed that failure.
+
+Cloud smoke run `37212761333`
+accepted and completed one newly uploaded synthetic PDF on 2026-10-04. Its
+result download then failed with `tls_certificate_expired`, with zero downloaded
+bytes and `complete_zip_verified=false`. This directly establishes current
+authentication, upload and parsing success for that task. It also reproduces the
+result-delivery blocker independently of the historical failures. The smoke task
+is retained durably; rerunning the same run reuses its accepted task instead of
+submitting another PDF. Complete dated Market Views delivery is still unverified.
 
 Saved Dropbox inventory from 2026-10-03 22:34 UTC contained 63 PDFs for `261001`,
 4 for `261002` and 54 for `261003`. Those counts describe original inputs, not

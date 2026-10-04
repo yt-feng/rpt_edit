@@ -1,5 +1,30 @@
 # MinerU in-flight recovery
 
+## Explicit terminal-failure recovery
+
+[`market-views-mineru-recovery.yml`](../.github/workflows/market-views-mineru-recovery.yml)
+runs only as a reviewed `main` dispatch. It freezes the complete original PDF
+manifest and bytes, rebuilds the original batch membership from source claims,
+and retrieves every successful original ZIP before admitting a retry.
+`TerminalRecovery` preserves the original source pointers and task records while
+an independent private controller reserves at most two child tasks containing
+only verified failed members. The allowed error codes or exact message hashes
+and manifest hash stay fixed across reruns. Pending or ambiguous children never
+authorize another child.
+
+Conditional-store conflicts cannot grant ownership by reading back identical
+content. Each submission intent has its own nonce, so two runners cannot mistake
+the same saved state for their own successful claim. Explicit authentication
+rejections may move the same child to another key; accepted tasks retain their
+accepted key. Every successful descendant is bound back to its original PDF,
+task and data ID, and all original members must be resolved before generation.
+
+The source-only receipt binds the original producer, recovery producer and both
+execution commits, exact source inventory, ZIP hashes, markdown, images and task
+lineage. The PDF consumer verifies the recovery producer workflow and commit
+before accepting that receipt. Completed source recovery, PDF archive, public
+commit and the dated live catalogue/download still require separate acceptance.
+
 MinerU API parsing remains the production architecture. GitHub Actions runs the
 client, stores its durable ledger in private R2, retrieves provider results and
 continues to the existing generation and publishing gates. This recovery does
@@ -136,6 +161,19 @@ The saved public diagnosis is only `other_provider_failure`; the 18 failures'
 specific cause has not been established. The canonical ledger records task state,
 not the full result rows, so the independent private receipt is the relevant
 evidence source.
+
+The later 2026-10-04 read-only diagnostic run
+`37211677994`
+verified authentication for all four configured key slots and classified the
+retained failure messages as `provider_internal`, without a supplied error code.
+That classification does not establish the provider's underlying cause.
+Cloud smoke run
+`37212761333`
+then accepted and completed one new PDF. Its full ZIP download failed certificate
+validation at the provider result CDN. No ZIP bytes were retrieved. Current
+authentication and parsing are therefore verified for the smoke task, while
+result delivery remains blocked. Never turn this download failure into another
+submission or disable TLS validation; an accepted smoke rerun reuses its task.
 
 Protocol references checked for this implementation:
 

@@ -171,6 +171,34 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
         self.assertLess(recovery.index('gh run watch "$MARKET_RUN_ID"'),
                         recovery.index('name: Delete consumed native source handoff'))
 
+    def test_mineru_recovery_receipt_precedes_source_resolution_and_synthesis(self):
+        market = MARKET.read_text()
+        receipt = market.index("- name: Verify complete MinerU recovery source receipt")
+        resolve = market.index("- name: Resolve and validate primary bank source")
+        build = market.index("- name: Build market views data and LaTeX source")
+        self.assertLess(receipt, resolve)
+        self.assertLess(resolve, build)
+        block = market[receipt:resolve]
+        self.assertIn("recover_durable_mineru_sources.py validate", block)
+        self.assertIn('--expected-reports "$EXPECTED_ARTICLES"', block)
+        self.assertIn('--date-folder "$EXPECTED_BANK_DATE"', block)
+        self.assertIn('PRIVATE_MINERU_SOURCES_ROOT: "_private-workflow-handoff/mineru-market-sources"', market)
+
+    def test_mineru_recovery_input_requires_complete_explicit_handoff(self):
+        step = MARKET.read_text().split("- name: Validate private input source", 1)[1].split("\n      - name:", 1)[0]
+        command = textwrap.dedent(step.split("        run: |\n", 1)[1])
+        environment = {**os.environ, "SOURCE_HANDOFF_RUN_ID": "37211677994",
+                       "SOURCE_ARTIFACT_RUN_ID": "", "EXPECTED_BANK_DATE": "261003",
+                       "SOURCE_HANDOFF_KIND": "mineru-recovery", "EXPECTED_SHARDS": "1", "EXPECTED_ARTICLES": "54"}
+        valid = subprocess.run(["bash", "-e", "-o", "pipefail", "-c", command],
+                               env=environment, capture_output=True, text=True)
+        self.assertEqual(valid.returncode, 0, valid.stderr)
+        for missing in ({"SOURCE_HANDOFF_RUN_ID": ""}, {"EXPECTED_SHARDS": "0"}, {"EXPECTED_ARTICLES": "0"}):
+            rejected = subprocess.run(["bash", "-e", "-o", "pipefail", "-c", command],
+                                      env={**environment, **missing}, capture_output=True, text=True)
+            self.assertNotEqual(rejected.returncode, 0)
+            self.assertIn("Source recovery requires", rejected.stderr)
+
     def test_actual_private_input_validation_rejects_shell_metacharacters_in_run_ids(self):
         step = MARKET.read_text().split("- name: Validate private input source", 1)[1].split("\n      - name:", 1)[0]
         command = textwrap.dedent(step.split("        run: |\n", 1)[1])
