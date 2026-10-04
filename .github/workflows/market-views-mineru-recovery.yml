@@ -12,6 +12,11 @@ on:
       - scripts/test_mineru_result_cache.py
       - scripts/pdf_to_xhs_batch.py
       - scripts/test_mineru_daily_result_cache.py
+      - .github/workflows/mineru-result-cache-seed.yml
+      - scripts/seed_mineru_result_cache.py
+      - scripts/test_seed_mineru_result_cache.py
+      - scripts/mineru_pinned_result_transport.py
+      - scripts/test_mineru_pinned_result_transport.py
   workflow_dispatch:
     inputs:
       source_run_id:
@@ -65,6 +70,8 @@ jobs:
       - run: python3 -B scripts/test_recover_durable_mineru_sources.py
       - run: python3 -B scripts/test_mineru_result_cache.py
       - run: python3 -B scripts/test_mineru_daily_result_cache.py
+      - run: python3 -B scripts/test_mineru_pinned_result_transport.py
+      - run: python3 -B scripts/test_seed_mineru_result_cache.py
   recover:
     if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest

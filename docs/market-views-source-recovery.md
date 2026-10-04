@@ -124,6 +124,31 @@ verification code/depth. This is distinct from a constructed trusted chain and
 from complete ZIP validation. The parameters apply only to that manual cloud
 diagnostic; production TLS configuration is unchanged.
 
+The separate manual-only
+[`mineru-result-cache-seed.yml`](../.github/workflows/mineru-result-cache-seed.yml)
+can retrieve completed original tasks with a fixed, previously observed leaf
+certificate identity. This cloud recovery is limited to
+`cdn-mineru.openxlab.org.cn`, SHA-256
+`12137420c572ee3fde42af27309c8f36efdfc4d07e76dcba801ddf6bc308aeb3`,
+and the fixed cutoff `2026-10-04T23:59:59Z`. It first verifies the exact leaf and
+peer chain against system and certifi roots at the last instant before that
+leaf's expiry, including server purpose and hostname. This is historical chain
+verification plus exact-leaf authentication; it is explicitly **not current PKI
+verification**. The dedicated connection asserts the same leaf before HTTP,
+rejects redirects and other origins, and checks the cutoff before connections,
+body reads and private R2 writes. Normal daily HTTPS verification is unchanged.
+
+Before downloading any ZIP, the seeder verifies the full original Daily
+artifact, every PDF hash/date binding and all accepted original task members
+through read-only provider lookups. It makes no parsing submission or canonical
+ledger write. The default one-result canary validates the complete ZIP, stores a
+separate immutable authentication receipt and the existing immutable result
+cache, and reads both back. The `all` option covers completed original results;
+failed members remain failures and still require the bounded recovery path.
+The cache-only summary cannot establish a complete handoff or restored PDF.
+The new transport requires cloud canary validation before it is reported as
+working, and it cannot extend its own cutoff.
+
 The bank source date owns the Market Views issue. Auxiliary sources use the
 latest usable date on or before that bank date; a future auxiliary date cannot
 rename or suppress the bank issue. Private handoff run IDs and report/shard
