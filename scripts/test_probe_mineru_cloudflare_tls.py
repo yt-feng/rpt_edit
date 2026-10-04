@@ -29,6 +29,8 @@ BODY = {
     "zip_downloads": 0, "provider_posts": 0, "category": "https_response_received",
     "upstream_http_status": 403, "colo": "CDG", "elapsed_ms": 12,
 }
+READY_BODY = {"schema_version": 1, "category": "ready", "worker_version": "tls-probe-v2",
+              "request_count": 0, "provider_posts": 0, "zip_downloads": 0}
 
 
 class Response:
@@ -54,7 +56,8 @@ def absent():
 
 
 def sequence(body=None):
-    return [ok({"subdomain": "existing-account"}), absent(), ok(), ok(), Response(body=body or BODY), ok()]
+    return [ok({"subdomain": "existing-account"}), absent(), ok(), ok({"enabled": True, "previews_enabled": False}),
+            Response(body=READY_BODY), Response(body=body or BODY), ok()]
 
 
 class Session:
@@ -73,8 +76,10 @@ class Session:
 class LifecycleTests(unittest.TestCase):
     def run_with(self, results, env=None):
         session = Session(results)
-        with patch.object(probe.secrets, "token_hex", side_effect=["0123abcd", "e" * 64]):
+        with patch.object(probe.secrets, "token_hex", side_effect=["0123abcd", "e" * 64]), \
+                patch.object(probe.time, "sleep") as sleep:
             result = probe.run_probe(env or dict(ENV), session)
+        self.sleep_calls = sleep.call_args_list
         return result, session
 
     def test_complete_probe_deletes_only_created_worker(self):
@@ -82,8 +87,12 @@ class LifecycleTests(unittest.TestCase):
         self.assertEqual(result["category"], "https_response_received")
         self.assertTrue(result["worker_deleted"])
         self.assertEqual(result["cloudflare_api_calls"], 5)
-        self.assertEqual(result["worker_calls"], 1)
-        self.assertEqual([call[0] for call in session.calls], ["GET", "GET", "PUT", "POST", "GET", "DELETE"])
+        self.assertEqual(result["worker_calls"], 2)
+        self.assertEqual(result["readiness_call_count"], 1)
+        self.assertEqual(result["readiness_status"], "ready")
+        self.assertEqual(result["readiness_http_statuses"], [200])
+        self.assertEqual(result["probe_call_count"], 1)
+        self.assertEqual([call[0] for call in session.calls], ["GET", "GET", "PUT", "POST", "GET", "GET", "DELETE"])
         script = "/workers/scripts/mineru-result-tls-probe-123456-1-0123abcd"
         self.assertTrue(session.calls[-1][1].endswith(script))
         self.assertNotIn("preserved_worker_name_sha256", result)
@@ -94,8 +103,8 @@ class LifecycleTests(unittest.TestCase):
             self.assertTrue(url.startswith("https://"))
             self.assertIs(options["verify"], True)
             self.assertIs(options["allow_redirects"], False)
-            self.assertEqual(options["timeout"], (5, 20))
-        self.assertEqual(len(session.calls), 6)
+            self.assertEqual(options["timeout"], (3, 5) if url.endswith("/ready") else (5, 20))
+        self.assertEqual(len(session.calls), 7)
 
     def test_upload_is_module_with_only_one_ephemeral_secret(self):
         result, session = self.run_with(sequence())
@@ -165,6 +174,79 @@ class LifecycleTests(unittest.TestCase):
         self.assertNotIn("secret account data", json.dumps(result))
         self.assertEqual(session.calls[-1][0], "DELETE")
 
+    def test_invalid_subdomain_enable_ack_stops_before_readiness(self):
+        rows = sequence()
+        rows[3] = ok({"enabled": False})
+        result, session = self.run_with(rows[:4] + [ok()])
+        self.assertEqual(result["category"], "invalid_enable_acknowledgement")
+        self.assertEqual(result["worker_calls"], 0)
+        self.assertTrue(result["worker_deleted"])
+        self.assertEqual(session.calls[-1][0], "DELETE")
+
+    def test_readiness_404_propagation_polled_without_origin_probe(self):
+        rows = sequence()
+        result, session = self.run_with(rows[:4] + [Response(404, {}), Response(404, {})] + rows[4:])
+        self.assertEqual(result["category"], "https_response_received")
+        self.assertEqual(result["readiness_call_count"], 3)
+        self.assertEqual(result["readiness_http_statuses"], [404, 404, 200])
+        self.assertEqual(result["readiness_status"], "ready")
+        self.assertEqual(result["readiness_wait_seconds"], 10)
+        self.assertEqual([call.args for call in self.sleep_calls], [(5,), (5,)])
+        self.assertEqual(sum(url.endswith("/probe") for _, url, _ in session.calls), 1)
+        self.assertEqual(result["worker_calls"], 4)
+        self.assertTrue(result["worker_deleted"])
+
+    def test_readiness_404_timeout_bounded_and_no_probe(self):
+        rows = sequence()
+        result, session = self.run_with(rows[:4] + [Response(404, {}) for _ in range(7)] + [ok()])
+        self.assertEqual(result["category"], "readiness_propagation_timeout")
+        self.assertEqual(result["readiness_status"], "propagation_timeout")
+        self.assertEqual(result["readiness_call_count"], 7)
+        self.assertEqual(result["readiness_wait_seconds"], 30)
+        self.assertEqual(len(self.sleep_calls), 6)
+        self.assertEqual(result["probe_call_count"], 0)
+        self.assertFalse(any(url.endswith("/probe") for _, url, _ in session.calls))
+        self.assertTrue(result["worker_deleted"])
+
+    def test_readiness_network_failures_not_retried(self):
+        for error, category in [(requests.Timeout("private"), "request_timeout"),
+                                (requests.ConnectionError("private"), "request_failed"),
+                                (requests.exceptions.SSLError("private"), "tls_verification_failed")]:
+            with self.subTest(category=category):
+                rows = sequence()
+                result, session = self.run_with(rows[:4] + [error, ok()])
+                self.assertEqual(result["category"], category)
+                self.assertEqual(result["readiness_status"], category)
+                self.assertEqual(result["readiness_call_count"], 1)
+                self.assertEqual(result["probe_call_count"], 0)
+                self.assertEqual(self.sleep_calls, [])
+                self.assertTrue(result["worker_deleted"])
+                self.assertFalse(any(url.endswith("/probe") for _, url, _ in session.calls))
+                self.assertNotIn("private", json.dumps(result))
+
+    def test_readiness_non_404_not_polled(self):
+        for status in [401, 429, 500, 526, 302]:
+            with self.subTest(status=status):
+                rows = sequence()
+                result, _ = self.run_with(rows[:4] + [Response(status, {}), ok()])
+                self.assertEqual(result["category"], "readiness_http_rejected")
+                self.assertEqual(result["readiness_http_statuses"], [status])
+                self.assertEqual(result["readiness_call_count"], 1)
+                self.assertEqual(result["probe_call_count"], 0)
+                self.assertEqual(self.sleep_calls, [])
+                self.assertTrue(result["worker_deleted"])
+
+    def test_readiness_requires_exact_zero_upstream_authenticated_marker(self):
+        for body in [{"category": "ready"}, {**READY_BODY, "request_count": 1},
+                     {**READY_BODY, "schema_version": True}, {**READY_BODY, "secret": "private"}]:
+            with self.subTest(body=body):
+                rows = sequence()
+                result, _ = self.run_with(rows[:4] + [Response(body=body), ok()])
+                self.assertEqual(result["category"], "invalid_readiness_summary")
+                self.assertEqual(result["probe_call_count"], 0)
+                self.assertTrue(result["worker_deleted"])
+                self.assertNotIn("private", json.dumps(result))
+
     def test_526_summary_is_not_reported_as_download_success(self):
         result, _ = self.run_with(sequence({**BODY, "upstream_http_status": 526, "category": "tls_invalid_certificate"}))
         self.assertEqual(result["category"], "tls_invalid_certificate")
@@ -184,7 +266,7 @@ class LifecycleTests(unittest.TestCase):
 
     def test_probe_endpoint_tls_error_is_sanitized_and_cleans_up(self):
         rows = sequence()
-        rows[4] = requests.exceptions.SSLError("secret-url-token")
+        rows[5] = requests.exceptions.SSLError("secret-url-token")
         result, _ = self.run_with(rows)
         self.assertEqual(result["category"], "tls_verification_failed")
         self.assertTrue(result["worker_deleted"])
@@ -192,7 +274,7 @@ class LifecycleTests(unittest.TestCase):
 
     def test_worker_http_error_cleans_up(self):
         rows = sequence()
-        rows[4] = Response(404, {"secret": "upstream URL"})
+        rows[5] = Response(404, {"secret": "upstream URL"})
         result, _ = self.run_with(rows)
         self.assertEqual(result["category"], "worker_http_rejected")
         self.assertTrue(result["worker_deleted"])
@@ -206,7 +288,7 @@ class LifecycleTests(unittest.TestCase):
         self.assertFalse(result["worker_deleted"])
         self.assertEqual(result["cleanup_category"], "request_failed")
         self.assertEqual(len(result["preserved_worker_name_sha256"]), 64)
-        self.assertEqual(len(session.calls), 6)
+        self.assertEqual(len(session.calls), 7)
         self.assertNotIn("private API URL", json.dumps(result))
         self.assertNotIn("mineru-result-tls-probe-123456", json.dumps(result))
 
@@ -224,14 +306,14 @@ class LifecycleTests(unittest.TestCase):
 
     def test_response_limit_still_cleans_up(self):
         rows = sequence()
-        rows[4] = Response(raw=b"x" * (probe.MAX_RESPONSE_BYTES + 1))
+        rows[5] = Response(raw=b"x" * (probe.MAX_RESPONSE_BYTES + 1))
         result, _ = self.run_with(rows)
         self.assertEqual(result["category"], "response_too_large")
         self.assertTrue(result["worker_deleted"])
 
     def test_invalid_json_still_cleans_up(self):
         rows = sequence()
-        rows[4] = Response(raw=b"not JSON secret")
+        rows[5] = Response(raw=b"not JSON secret")
         result, _ = self.run_with(rows)
         self.assertEqual(result["category"], "invalid_response")
         self.assertTrue(result["worker_deleted"])
@@ -319,6 +401,20 @@ process.stdout.write(JSON.stringify({status: response.status, body: await respon
     def test_worker_non_tls_5xx_is_indeterminate(self):
         result = self.call_worker(upstream_status=530)
         self.assertEqual(result["body"]["category"], "upstream_http_error")
+
+    def test_worker_readiness_has_no_origin_request(self):
+        result = self.call_worker(path="/ready")
+        self.assertEqual(result["status"], 200)
+        self.assertEqual(result["body"], READY_BODY)
+        self.assertEqual(result["calls"], [])
+
+    def test_worker_readiness_requires_auth_and_no_parameters(self):
+        result = self.call_worker(path="/ready", token="b" * 64)
+        self.assertEqual(result["status"], 401)
+        self.assertEqual(result["calls"], [])
+        result = self.call_worker(path="/ready?url=https://example.com")
+        self.assertEqual(result["status"], 404)
+        self.assertEqual(result["calls"], [])
 
 
 if __name__ == "__main__":

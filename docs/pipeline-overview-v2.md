@@ -106,6 +106,13 @@ workflows inspect the exact October 1-3 private R2 caches and test one fixed CDN
 HEAD from a temporary authenticated Cloudflare Worker; neither alone proves a
 complete result ZIP or final PDF has been restored.
 
+Read-only R2 inventory run `37219229168` found no objects in the exact October
+1-3 generation-cache/original-handoff prefixes and no canonical final PDF/item
+pairs. The first temporary-Worker run returned a deployment HTTP 404 before
+producing CDN evidence; authenticated, provider-free readiness checks distinguish
+that stage from the subsequent single CDN request. Missing PDF delivery remains
+open.
+
 ## Main Workflow Groups
 
 | Group | Role |

@@ -188,6 +188,22 @@ reported `tls_certificate_expired`, with no HTTP response or body bytes. This
 rules out a failure confined to the older system trust store; it does not prove
 that every CDN edge serves the same certificate or restore any dated issue.
 
+PR 222 merged the complete-ZIP result cache and the cloud R2/Cloudflare
+diagnostics at commit `4c7ae7abc53cb25f977491b5c9ae44a8af5658a6`. Read-only R2
+inventory run `37219229168` completed successfully on 2026-10-04 17:06 UTC. For
+each of `261001`, `261002` and `261003`, the exact generation-cache and original
+producer-handoff prefixes had zero objects, with complete listings; canonical
+final PDF/item objects were also absent. This is evidence for those configured
+paths, not a bucket-wide assertion. Existing ledger task metadata cannot replace
+the missing source material.
+
+The first temporary-Worker run `37219241529` created and enabled the isolated
+Worker, but its immediate `/probe` request returned HTTP 404. The run then deleted
+the Worker successfully. No MinerU result response or ZIP was verified. Worker
+deployment propagation must be distinguished from an upstream CDN failure; the
+probe now checks an authenticated `/ready` endpoint that makes no provider
+request, allowing only bounded deployment-404 waits before its single CDN HEAD.
+
 Saved Dropbox inventory from 2026-10-03 22:34 UTC contained 63 PDFs for `261001`,
 4 for `261002` and 54 for `261003`. Those counts describe original inputs, not
 generated or published Market Views issues. Recovery is complete only after the
