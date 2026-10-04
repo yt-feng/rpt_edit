@@ -8,6 +8,7 @@ import json
 import os
 from pathlib import Path
 import shutil
+import subprocess
 import tempfile
 import unittest
 from unittest import mock
@@ -52,6 +53,40 @@ class NumericUnitTests(unittest.TestCase):
         self.assertEqual(len(rows), 1)
         self.assertEqual(rows[0]["normalized"], "-3.1%")
         self.assertEqual(rows[0]["bbox"], [0, 0, 38, 10])
+
+    def _parse_real_tsv_shape(self, rows):
+        header = "level\tpage_num\tblock_num\tpar_num\tline_num\tword_num\tleft\ttop\twidth\theight\tconf\ttext\n"
+        output = (header + "".join("\t".join(str(value) for value in row) + "\n" for row in rows)).encode()
+        with mock.patch.object(numeric.subprocess, "run", return_value=subprocess.CompletedProcess([], 0, output, b"")):
+            return numeric._read_tesseract(Image.new("RGB", (140, 110), "white"),
+                                           language="eng", tessdata=None, command="unused", psm=3, dpi=300)
+
+    def test_tsv_paragraphs_with_same_line_number_never_merge(self):
+        words = self._parse_real_tsv_shape([
+            [5, 1, 1, 1, 1, 1, 10, 10, 5, 10, 90, "-"],
+            [5, 1, 1, 1, 1, 2, 18, 10, 20, 10, 90, "3.1"],
+            [5, 1, 1, 2, 1, 1, 14, 60, 20, 10, 90, "8.4"],
+        ])
+        self.assertEqual([word["paragraph"] for word in words], [1, 1, 2])
+        mentions = numeric._word_mentions(words)
+        self.assertEqual([row["normalized"] for row in mentions], ["-3.1", "8.4"])
+        self.assertEqual([row["bbox"] for row in mentions], [[10, 10, 38, 20], [14, 60, 34, 70]])
+
+    def test_tsv_negative_percent_and_adjacent_columns_keep_rows(self):
+        words = self._parse_real_tsv_shape([
+            [5, 1, 1, 1, 1, 1, 10, 10, 5, 10, 90, "-"],
+            [5, 1, 1, 1, 1, 2, 18, 10, 20, 10, 90, "3.1"],
+            [5, 1, 1, 1, 1, 3, 41, 10, 8, 10, 90, "%"],
+            [5, 1, 1, 1, 1, 4, 80, 10, 20, 10, 90, "8.4"],
+            [5, 1, 1, 2, 1, 1, 10, 60, 5, 10, 90, "-"],
+            [5, 1, 1, 2, 1, 2, 18, 60, 20, 10, 90, "2.7"],
+            [5, 1, 1, 2, 1, 3, 41, 60, 8, 10, 90, "%"],
+            [5, 1, 1, 2, 1, 4, 80, 60, 20, 10, 90, "4.8"],
+        ])
+        mentions = numeric._word_mentions(words)
+        self.assertEqual([row["normalized"] for row in mentions], ["-3.1%", "8.4", "-2.7%", "4.8"])
+        self.assertEqual([row["bbox"] for row in mentions], [[10, 10, 49, 20], [80, 10, 100, 20],
+                                                             [10, 60, 49, 70], [80, 60, 100, 70]])
 
     def test_many_to_one_alignment_is_not_guessed(self):
         primary = numeric.numeric_mentions("4.8 7.5")

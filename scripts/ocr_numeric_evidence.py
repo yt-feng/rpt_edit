@@ -85,7 +85,7 @@ def _image(pixmap: fitz.Pixmap) -> Image.Image:
 
 def _word_mentions(words: Iterable[Any]) -> list[dict[str, Any]]:
     """Keep numerical positions, including signs split into separate OCR words."""
-    lines: dict[tuple[int, int], list[dict[str, Any]]] = {}
+    lines: dict[tuple[int, int, int], list[dict[str, Any]]] = {}
     for item in words:
         if isinstance(item, dict):
             word = item
@@ -94,13 +94,15 @@ def _word_mentions(words: Iterable[Any]) -> list[dict[str, Any]]:
                 raise NumericEvidenceError("OCR word is missing its source position")
             word = {"bbox": [float(v) for v in item[:4]], "text": str(item[4]),
                     "block": int(item[5]) if len(item) > 5 else 0,
+                    "paragraph": 0,
                     "line": int(item[6]) if len(item) > 6 else 0}
         box = word.get("bbox")
         if not isinstance(box, list) or len(box) != 4 or not all(isinstance(v, (int, float)) and math.isfinite(v) for v in box):
             raise NumericEvidenceError("OCR word position is invalid")
         if box[2] <= box[0] or box[3] <= box[1] or not isinstance(word.get("text"), str):
             raise NumericEvidenceError("OCR word position or text is invalid")
-        lines.setdefault((int(word.get("block", 0)), int(word.get("line", 0))), []).append(word)
+        lines.setdefault((int(word.get("block", 0)), int(word.get("paragraph", 0)),
+                          int(word.get("line", 0))), []).append(word)
     mentions = []
     # PyMuPDF's sorted text and words share this geometric order. The occurrence
     # alignment below still refuses many-to-one changes rather than guessing.
@@ -173,7 +175,8 @@ def _read_tesseract(image: Image.Image, *, language: str, tessdata: str | None,
             if width <= 0 or height <= 0 or min(left, top) < 0 or left + width > image.width or top + height > image.height:
                 raise NumericEvidenceError("Numeric verification OCR returned invalid coordinates")
             words.append({"bbox": [left, top, left + width, top + height], "text": row["text"],
-                          "block": int(row["block_num"]), "line": int(row["line_num"])})
+                          "block": int(row["block_num"]), "paragraph": int(row["par_num"]),
+                          "line": int(row["line_num"])})
         return words
     except (UnicodeError, KeyError, TypeError, ValueError) as exc:
         raise NumericEvidenceError("Numeric verification OCR returned invalid TSV") from exc
