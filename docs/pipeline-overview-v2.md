@@ -114,14 +114,26 @@ that stage from the subsequent single CDN request. Missing PDF delivery remains
 open.
 
 The subsequent readiness-verified Cloudflare run `37229206987` at 2026-10-04
-19:42 UTC made one strict HTTPS HEAD from LAX and received HTTP 526
+19:42 UTC made one strict HTTPS HEAD and received HTTP 526
 (`tls_invalid_certificate`), then deleted its temporary Worker. Attempt 2 of
 smoke run `37212761333` resumed the existing completed task with zero new POSTs
 and again retrieved zero bytes due to an expired certificate. Result delivery
 through Cloudflare is therefore still blocked in this probe; no ZIP mirror or
-dated PDF recovery is claimed. Provider support needs to restore a valid
-official HTTPS result path. Our R2 storage and task metadata cannot substitute
-for the missing completed-result bytes.
+dated PDF recovery is claimed. LAX recorded request ingress; execution placement
+was not independently observed in that run. Attempt 3 of the same smoke at
+19:57 UTC again retained the completed task, made zero parsing POSTs and failed
+result retrieval with zero bytes. A separate read-only public TLS handshake
+observed a valid September 17–December 16 certificate chain for the same
+hostname, so the failure is not established for every possible CDN path.
+
+The temporary-Worker probe now supports explicit Asian region hints through the
+[Cloudflare placement API](https://developers.cloudflare.com/workers/configuration/placement/).
+It preserves strict HTTPS and the official hostname. A valid platform
+`cf-placement` response header is required to report actual execution location;
+an input hint is not location evidence. A successful probe would still need a
+complete ZIP download and source validation before a private R2 mirror could
+restore processing. R2 storage and task metadata cannot substitute for the
+missing completed-result bytes.
 
 ## Main Workflow Groups
 

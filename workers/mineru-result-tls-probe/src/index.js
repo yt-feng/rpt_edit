@@ -48,7 +48,8 @@ export default {
     const started = Date.now();
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), TIMEOUT_MS);
-    const colo = /^[A-Z]{3}$/.test(request.cf?.colo || "") ? request.cf.colo : "unknown";
+    // request.cf.colo identifies ingress. Placement may run this handler elsewhere.
+    const ingressColo = /^[A-Z]{3}$/.test(request.cf?.colo || "") ? request.cf.colo : "unknown";
     const result = {
       schema_version: 1,
       provider_host: "cdn-mineru.openxlab.org.cn",
@@ -59,7 +60,7 @@ export default {
       provider_posts: 0,
       category: "fetch_failed",
       upstream_http_status: null,
-      colo,
+      request_ingress_colo: ingressColo,
       elapsed_ms: 0,
     };
     try {
