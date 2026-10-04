@@ -25,7 +25,7 @@ jobs:
 
       - name: Check Market Views trigger and private handoff lifecycle
         run: |
-          python3 -m pip install --disable-pip-version-check "requests>=2.31,<3"
+          python3 -m pip install --disable-pip-version-check "requests>=2.31,<3" PyMuPDF Pillow
           python3 -B scripts/test_market_views_workflow_contract.py
           python3 -B scripts/test_private_workflow_handoff.py
 
