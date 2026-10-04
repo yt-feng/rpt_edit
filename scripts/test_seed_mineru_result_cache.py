@@ -244,8 +244,67 @@ class SeedTests(unittest.TestCase):
                 patch.object(seed, 'seed_archive_results', side_effect=AssertionError('No archive access')), \
                 patch('builtins.print'):
             self.assertEqual(seed.main(args), 2)
-        self.assertEqual(json.loads(output.read_bytes())['category'], 'archive_source_options_invalid')
+        self.assertEqual(json.loads(output.read_bytes())['category'], 'child_authorization_invalid')
         self.assertNotIn('PRIVATE', output.read_text())
+
+    def test_archive_child_mode_proves_entire_intake_before_current_run_only_cache_without_writes(self):
+        fixture = self.archive_fixture()
+        kwargs, _, child_key = self.child_fixture()
+        before = {str(path): path.read_bytes() for path in self.store.root.rglob('*.json')}
+        with patch.object(TerminalRecovery, 'run', side_effect=AssertionError('No POST path')):
+            result = self.archive_seed(fixture, max_results=0, **kwargs)
+        self.assertEqual(result['source_kind'], 'original-archive')
+        self.assertTrue(result['accepted_intake_authority_checked'])
+        self.assertTrue(result['accepted_child_authorization_checked'])
+        self.assertEqual(result['selection_mode'], 'accepted_children')
+        self.assertEqual(result['cached_results'], 1)
+        self.assertEqual(result['original_members_verified'], 3)
+        self.assertEqual(result['provider_gets'], 2)
+        self.assertEqual(result['provider_posts'], 0)
+        self.assertEqual(result['canonical_ledger_writes'], 0)
+        self.assertTrue(result['all_authorized_child_done_results_cached'])
+        self.assertFalse(result['complete_source_handoff'])
+        receipts = [json.loads(value['Body']) for key, value in self.r2.objects.items() if key.startswith(seed.AUTH_PREFIX)]
+        self.assertEqual(receipts[0]['lineage']['batch_key'], child_key)
+        self.assertEqual(receipts[0]['lineage']['child_ordinal'], 1)
+        self.assertEqual(before, {str(path): path.read_bytes() for path in self.store.root.rglob('*.json')})
+        self.assertNotIn('PRIVATE', json.dumps(result))
+
+    def test_archive_child_second_ordinal_uses_previous_run_only_as_proof(self):
+        fixture = self.archive_fixture()
+        kwargs, _, child_key = self.child_fixture(ordinal_two=True, prior_run_id='67889')
+        result = self.archive_seed(fixture, max_results=0, **kwargs)
+        self.assertEqual(result['provider_gets'], 3)
+        self.assertEqual(result['cached_results'], 1)
+        receipts = [json.loads(value['Body']) for key, value in self.r2.objects.items() if key.startswith(seed.AUTH_PREFIX)]
+        self.assertEqual(receipts[0]['lineage']['child_ordinal'], 2)
+        self.assertEqual(receipts[0]['lineage']['batch_key'], child_key)
+
+    def test_archive_child_requires_manifest_full_intake_and_identified_terminal_members_before_zip(self):
+        fixture = self.archive_fixture()
+        kwargs, _, child_key = self.child_fixture()
+        with self.assertRaisesRegex(seed.SeedError, 'expected_manifest_mismatch'):
+            self.archive_seed(fixture, **{**kwargs, 'expected_manifest_sha256': 'd' * 64})
+        self.assertEqual(self.gets, [])
+        child = self.store.get(child_key)[0]
+        self.responses[child['batch_id']]['data']['extract_result'] = []
+        with self.assertRaises(ValueError):
+            self.archive_seed(fixture, **kwargs)
+        self.factory.assert_not_called()
+        self.assertEqual(len(self.r2.puts), 1)
+
+    def test_archive_child_changed_live_failure_and_wrong_requested_run_never_cache_or_union(self):
+        fixture = self.archive_fixture()
+        kwargs, _, _ = self.child_fixture()
+        root = self.store.get(fixture[3])[0]
+        failed = self.responses[root['batch_id']]['data']['extract_result'][1]
+        old_error = failed['err_msg']; failed['err_msg'] = 'PRIVATE changed live provider proof'
+        with self.assertRaises((ValueError, ledger_module.LedgerError)): self.archive_seed(fixture, **kwargs)
+        failed['err_msg'] = old_error; self.provider.seen.clear()
+        with self.assertRaisesRegex(seed.SeedError, 'no_authorized_child_done_results'):
+            self.archive_seed(fixture, **{**kwargs, 'recovery_run_id': '99999'})
+        self.factory.assert_not_called()
+        self.assertEqual(len(self.r2.puts), 1)
 
     def test_canary_checks_all_original_batches_before_one_result_and_preserves_failed_sources(self):
         def create():
@@ -613,7 +672,12 @@ class WorkflowContractTests(unittest.TestCase):
                         text.index('scripts/archive_market_views_originals.py restore'))
         self.assertLess(text.index('scripts/archive_market_views_originals.py restore'),
                         text.index('--source-kind original-archive'))
-        self.assertIn('Archive roots cannot mix legacy or child authorization.', text)
+        self.assertIn('Archive tasks cannot use a legacy artifact override.', text)
+        archive_block = text.split('Authenticate completed original archive producer')[1].split('Authenticate exact completed original Daily producer')[0]
+        self.assertIn('child_authorization(os.environ[\'RECOVERY_RUN_ID\']', archive_block)
+        self.assertIn('check_recovery_producer(json.loads(response.stdout)', archive_block)
+        self.assertIn('--recovery-producer-json', archive_block)
+        self.assertIn('--expected-manifest-sha256 "$EXPECTED_MANIFEST_SHA256"', archive_block)
         self.assertIn('--destination "$RUNNER_TEMP/mineru-cache-archive-originals"', text)
         self.assertIn("if: ${{ inputs.source_kind == 'durable' }}", text)
         self.assertIn("if: ${{ inputs.source_kind == 'legacy-daily' }}", text)
