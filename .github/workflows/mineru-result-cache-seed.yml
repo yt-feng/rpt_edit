@@ -120,10 +120,8 @@ jobs:
               raise SystemExit('Legacy tasks cannot mix durable child authorization.')
           if kind == 'durable' and os.environ['LEGACY_ARTIFACT_ID']:
               raise SystemExit('Durable tasks cannot use a legacy artifact override.')
-          if kind == 'original-archive' and (os.environ['LEGACY_ARTIFACT_ID'] or os.environ['RECOVERY_RUN_ID']
-                                             or os.environ['EXPECTED_MANIFEST_SHA256']
-                                             or json.loads(os.environ['ALLOWED_ERROR_HASHES']) != []):
-              raise SystemExit('Archive roots cannot mix legacy or child authorization.')
+          if kind == 'original-archive' and os.environ['LEGACY_ARTIFACT_ID']:
+              raise SystemExit('Archive tasks cannot use a legacy artifact override.')
           PY
       - name: Authenticate completed original archive producer before GET-only restore
         if: ${{ inputs.source_kind == 'original-archive' }}
@@ -132,6 +130,9 @@ jobs:
           SOURCE_RUN_ID: ${{ inputs.source_run_id }}
           DATE_FOLDER: ${{ inputs.date_folder }}
           EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+          RECOVERY_RUN_ID: ${{ inputs.recovery_run_id }}
+          ALLOWED_ERROR_HASHES: ${{ inputs.allowed_error_hashes }}
+          EXPECTED_MANIFEST_SHA256: ${{ inputs.expected_manifest_sha256 }}
         run: |
           python3 - <<'PY'
           import json, os, re, subprocess, sys
@@ -139,6 +140,7 @@ jobs:
           sys.path.insert(0, 'scripts')
           from archive_market_views_originals import check_restore_producer, context
           from mineru_pinned_result_transport import require_before_cutoff, require_cloud_manual
+          from seed_mineru_result_cache import child_authorization, check_recovery_producer
           try:
               require_cloud_manual()
               require_before_cutoff()
@@ -153,8 +155,20 @@ jobs:
               sha = producer.get('head_sha')
               check_restore_producer(producer, run, os.environ['GITHUB_REPOSITORY'], sha)
               context(run, os.environ['DATE_FOLDER'], sha, '')
+              child_mode = child_authorization(os.environ['RECOVERY_RUN_ID'],
+                  json.loads(os.environ['ALLOWED_ERROR_HASHES']), os.environ['EXPECTED_MANIFEST_SHA256'])
+              if not child_mode and os.environ['EXPECTED_MANIFEST_SHA256']:
+                  raise ValueError('archive_child_authorization')
               Path(os.environ['RUNNER_TEMP'], 'mineru-cache-archive-producer.json').write_text(response.stdout)
               Path(os.environ['RUNNER_TEMP'], 'mineru-cache-archive-sha.txt').write_text(sha)
+              if child_mode:
+                  recovery_run = os.environ['RECOVERY_RUN_ID']
+                  response = subprocess.run(['gh', 'api', f"repos/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{recovery_run}"],
+                                            capture_output=True, text=True, timeout=30, check=False)
+                  if response.returncode or len(response.stdout.encode()) > 1_000_000:
+                      raise ValueError('recovery_producer_unavailable')
+                  check_recovery_producer(json.loads(response.stdout), recovery_run, os.environ['GITHUB_REPOSITORY'], os.environ['DATE_FOLDER'])
+                  Path(os.environ['RUNNER_TEMP'], 'mineru-cache-recovery-producer.json').write_text(response.stdout)
           except Exception:
               raise SystemExit('Cache-only archive producer validation rejected.')
           PY
@@ -182,6 +196,9 @@ jobs:
           DATE_FOLDER: ${{ inputs.date_folder }}
           EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
           MAX_RESULTS: ${{ inputs.max_results }}
+          RECOVERY_RUN_ID: ${{ inputs.recovery_run_id }}
+          ALLOWED_ERROR_HASHES: ${{ inputs.allowed_error_hashes }}
+          EXPECTED_MANIFEST_SHA256: ${{ inputs.expected_manifest_sha256 }}
           MINER_U: ${{ secrets.MINER_U }}
           MINER_U_2: ${{ secrets.MINER_U_2 }}
           MINER_U_3: ${{ secrets.MINER_U_3 }}
@@ -191,11 +208,17 @@ jobs:
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
         run: |
+          EXTRA_ARGS=()
+          if [ -n "$RECOVERY_RUN_ID" ]; then
+            EXTRA_ARGS+=(--recovery-producer-json "$RUNNER_TEMP/mineru-cache-recovery-producer.json")
+          fi
           python3 -B scripts/seed_mineru_result_cache.py --source-kind original-archive \
             --input-dir "$RUNNER_TEMP/mineru-cache-archive-originals" \
             --producer-json "$RUNNER_TEMP/mineru-cache-archive-producer.json" \
             --source-run-id "$SOURCE_RUN_ID" --date-folder "$DATE_FOLDER" \
             --expected-reports "$EXPECTED_ARTICLES" --max-results "$MAX_RESULTS" \
+            --recovery-run-id "$RECOVERY_RUN_ID" --allowed-error-hashes "$ALLOWED_ERROR_HASHES" \
+            --expected-manifest-sha256 "$EXPECTED_MANIFEST_SHA256" "${EXTRA_ARGS[@]}" \
             --summary "$RUNNER_TEMP/mineru-result-cache-seed-summary.json"
       - name: Authenticate exact completed original Daily producer before source download
         if: ${{ inputs.source_kind == 'durable' }}

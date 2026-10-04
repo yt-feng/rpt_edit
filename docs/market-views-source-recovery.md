@@ -686,3 +686,19 @@ remain unchanged. Existing readable default and source-flow paths retain their
 original receipt shape. Cloud diagnostics expose only bounded candidate counts
 and reasons. Real affected report pages and a complete backup batch must pass
 before enabling the daily OCR backup switch.
+
+### Archive-backed accepted recovery results
+
+The manual cache workflow can now select results from an exact completed recovery
+run for an archive-backed fresh intake. It authenticates the original archive,
+unchanged intake authority, all original roots and claims, exact manifest and
+completed main-branch recovery producer before reading accepted child results.
+Only children accepted by that run are selected; an earlier failed child is
+proof for a later ordinal, not a source of mixed output. All live terminal
+membership and authorized failure proofs must match before any ZIP retrieval.
+
+This cache route performs no POST or canonical ledger write. It preserves the
+empty original Daily producer ID and records the archive and recovery producers
+separately. The fixed manual transport cutoff is unchanged. Workflow dispatch
+inputs are not claimed as proven by the GitHub run metadata; canonical source,
+manifest and controller records provide the binding.

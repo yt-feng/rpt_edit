@@ -346,14 +346,20 @@ def seed_results(ledger, input_dir, manifest, expected_reports, date_folder, sou
 
 def seed_archive_results(ledger, authority_store, input_dir, producer, expected_reports, date_folder,
                          archive_run_id, repository, cache, *, max_results=1, transport_factory=None,
-                         cutoff_check=require_before_cutoff):
+                         cutoff_check=require_before_cutoff, recovery_run_id='', allowed_error_hashes=(),
+                         expected_manifest_sha256=''):
     """GET-only seeding of roots authorized by one complete fresh archive intake."""
     import intake_fresh_market_views_sources as intake
     cutoff_check()
+    child_mode = child_authorization(recovery_run_id, allowed_error_hashes, expected_manifest_sha256)
+    if not child_mode and expected_manifest_sha256:
+        raise SeedError('archive_source_options_invalid')
     if not isinstance(ledger.store, ReadOnlyStore) or not isinstance(ledger.provider, SingleGetProvider):
         raise SeedError('read_only_ledger_required')
     original, raw, pairs = intake.verified_archive(input_dir, producer, archive_run_id, repository,
                                                  expected_reports, date_folder)
+    if child_mode and digest(raw) != expected_manifest_sha256:
+        raise SeedError('expected_manifest_mismatch')
     bindings = [ledger.bind(path, name) for path, name in pairs]
     authority_id = intake._identity(original, ledger)
     authority = authority_store.get(authority_id)
@@ -385,9 +391,12 @@ def seed_archive_results(ledger, authority_store, input_dir, producer, expected_
 
     summary = seed_results(ledger, input_dir, Path(input_dir) / MANIFEST, expected_reports, date_folder, '', cache,
                           max_results=max_results, transport_factory=transport_factory, cutoff_check=cutoff_check,
-                          source_check=check_source)
+                          source_check=check_source, recovery_run_id=recovery_run_id,
+                          allowed_error_hashes=allowed_error_hashes, expected_manifest_sha256=expected_manifest_sha256)
     check_source()
     summary.update(source_kind='original-archive', archive_run_id=archive_run_id,
+                   canonical_original_source_run_id='',
+                   authorized_child_recovery_run_id=recovery_run_id if child_mode else '',
                    archive_receipt_sha256=original['archive_receipt_sha256'],
                    intake_authority_identity_sha256=authority_id,
                    intake_authority_sha256=digest(encoded(authority)),
@@ -424,13 +433,12 @@ def main(argv=None):
         error_hashes = decode(args.allowed_error_hashes.encode())
         archive_mode = args.source_kind == 'original-archive'
         if archive_mode:
-            if (args.recovery_run_id or error_hashes != [] or args.expected_manifest_sha256
-                    or args.recovery_producer_json is not None):
+            child_mode = child_authorization(args.recovery_run_id, error_hashes, args.expected_manifest_sha256)
+            if not child_mode and (args.expected_manifest_sha256 or args.recovery_producer_json is not None):
                 raise SeedError('archive_source_options_invalid')
             from intake_fresh_market_views_sources import verified_archive
             verified_archive(args.input_dir, producer, args.source_run_id, os.environ.get('GITHUB_REPOSITORY', ''),
                              args.expected_reports, args.date_folder)
-            child_mode = False
         else:
             check_producer(producer, args.source_run_id, os.environ.get('GITHUB_REPOSITORY', ''))
             if producer.get('status') != 'completed' or producer.get('conclusion') not in {'success', 'failure'}:
@@ -461,7 +469,9 @@ def main(argv=None):
             from intake_fresh_market_views_sources import AuthorityStore
             summary = seed_archive_results(ledger, AuthorityStore(client, bucket), args.input_dir, producer,
                 args.expected_reports, args.date_folder, args.source_run_id, os.environ.get('GITHUB_REPOSITORY', ''),
-                cache, max_results=0 if args.max_results == 'all' else 1)
+                cache, max_results=0 if args.max_results == 'all' else 1,
+                recovery_run_id=args.recovery_run_id, allowed_error_hashes=error_hashes,
+                expected_manifest_sha256=args.expected_manifest_sha256)
         else:
             summary = seed_results(ledger, args.input_dir, args.input_dir / MANIFEST, args.expected_reports,
                                    args.date_folder, args.source_run_id, cache,
