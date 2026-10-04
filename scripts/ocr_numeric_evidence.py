@@ -79,6 +79,12 @@ def safe_numeric_geometry_diagnostics(value: Any) -> dict[str, Any] | None:
     for key in ("dpi", "field_count"):
         if type(value.get(key)) is int and 0 <= value[key] <= 2500:
             output[key] = value[key]
+    if isinstance(value.get("field_count_kind"), str) and value["field_count_kind"] in {"missing", "null", "boolean", "integer", "other"}:
+        output["field_count_kind"] = value["field_count_kind"]
+    if type(value.get("field_count_above_bound")) is bool:
+        output["field_count_above_bound"] = value["field_count_above_bound"]
+    if type(value.get("field_count_capped_count")) is int and 0 <= value["field_count_capped_count"] <= MAX_FIELDS:
+        output["field_count_capped_count"] = value["field_count_capped_count"]
     version = value.get("pymupdf_version")
     if isinstance(version, str) and len(version) <= 32 and re.fullmatch(r"[0-9]+\.[0-9]+\.[0-9]+", version):
         output["pymupdf_version"] = version
@@ -590,6 +596,9 @@ def validate_numeric_evidence(safe_text: str, evidence: dict[str, Any], image_pi
         expected_size = _ocr_crop_pixel_size(expected)
         for read in reads[1:]:
             clip, size = read.get("source_clip_bbox"), read.get("crop_pixel_size")
+            field_count = read.get("field_count")
+            count_kind = ("missing" if "field_count" not in read else "null" if field_count is None else
+                          "boolean" if type(field_count) is bool else "integer" if type(field_count) is int else "other")
             checks = {
                 "policy_matches": read.get("crop_policy") == OCR_CROP_POLICY,
                 "dpi_matches": type(read.get("dpi")) is int and read["dpi"] == CROP_DPI,
@@ -610,6 +619,9 @@ def validate_numeric_evidence(safe_text: str, evidence: dict[str, Any], image_pi
                     "expected_clip_bbox": expected, "actual_clip_bbox": clip,
                     "expected_pixel_size": expected_size, "actual_pixel_size": size,
                     "dpi": read.get("dpi"), "field_count": read.get("field_count"),
+                    "field_count_kind": count_kind,
+                    "field_count_above_bound": type(field_count) is int and field_count > MAX_FIELDS,
+                    "field_count_capped_count": max(0, min(MAX_FIELDS, field_count)) if type(field_count) is int else None,
                     "pymupdf_version": fitz.VersionBind, **checks,
                 })
             if record.get("status") in {"verified", "corrected"} and read["field_count"] != 1:
