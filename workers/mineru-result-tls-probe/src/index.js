@@ -28,11 +28,22 @@ async function authorized(request, expected) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
-    if (request.method !== "GET" || url.pathname !== "/probe" || url.search) {
+    if (request.method !== "GET" || !["/ready", "/probe"].includes(url.pathname) || url.search) {
       return json({ category: "not_found" }, 404);
     }
     if (!await authorized(request, env.PROBE_TOKEN)) {
       return json({ category: "unauthorized" }, 401);
+    }
+    // Readiness proves this authenticated handler has propagated, without an origin request.
+    if (url.pathname === "/ready") {
+      return json({
+        schema_version: 1,
+        category: "ready",
+        worker_version: "tls-probe-v2",
+        request_count: 0,
+        provider_posts: 0,
+        zip_downloads: 0,
+      });
     }
     const started = Date.now();
     const controller = new AbortController();

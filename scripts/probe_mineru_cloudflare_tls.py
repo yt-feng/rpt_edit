@@ -18,6 +18,7 @@ import os
 from pathlib import Path
 import re
 import secrets
+import time
 from typing import Any
 
 import requests
@@ -32,6 +33,8 @@ PROBE_CATEGORIES = frozenset({
     "upstream_http_error",
 })
 MAX_RESPONSE_BYTES = 262144
+READINESS_ATTEMPTS = 7
+READINESS_INTERVAL_SECONDS = 5
 
 
 class ProbeFailure(Exception):
@@ -121,6 +124,9 @@ def run_probe(env: dict[str, str], session: Any = None) -> dict:
         "provider_posts": 0, "zip_downloads": 0, "r2_writes": 0,
         "worker_created": False, "worker_deleted": False,
         "cloudflare_api_calls": 0, "worker_calls": 0,
+        "readiness_call_count": 0, "readiness_status": "not_started",
+        "readiness_http_statuses": [], "readiness_wait_seconds": 0,
+        "probe_call_count": 0,
         "cloudflare_api_methods": {"GET": 0, "PUT": 0, "POST": 0, "DELETE": 0},
         "cleanup_category": "not_needed",
     }
@@ -142,7 +148,8 @@ def run_probe(env: dict[str, str], session: Any = None) -> dict:
             session = requests.Session()
             session.mount("https://", HTTPAdapter(max_retries=0))
 
-        def request(method: str, url: str, stage: str, *, api: bool = True, **kwargs):
+        def request(method: str, url: str, stage: str, *, api: bool = True,
+                    timeout: tuple[int, int] = (5, 20), **kwargs):
             summary["stage"] = stage
             if api:
                 summary["cloudflare_api_calls"] += 1
@@ -150,9 +157,13 @@ def run_probe(env: dict[str, str], session: Any = None) -> dict:
                 headers = {"Authorization": f"Bearer {token}"}
             else:
                 summary["worker_calls"] += 1
+                if stage == "worker_readiness":
+                    summary["readiness_call_count"] += 1
+                elif stage == "worker_probe":
+                    summary["probe_call_count"] += 1
                 headers = {"Authorization": f"Bearer {probe_token}"}
             try:
-                return session.request(method, url, headers=headers, timeout=(5, 20),
+                return session.request(method, url, headers=headers, timeout=timeout,
                                        allow_redirects=False, verify=True, stream=True, **kwargs)
             except requests.exceptions.SSLError:
                 raise ProbeFailure(stage, "tls_verification_failed") from None
@@ -200,10 +211,38 @@ def run_probe(env: dict[str, str], session: Any = None) -> dict:
         })
         created = True
         summary["worker_created"] = True
-        api("POST", script_path + "/subdomain", "enable_temporary_worker", json={
+        enabled_result = api("POST", script_path + "/subdomain", "enable_temporary_worker", json={
             "enabled": True, "previews_enabled": False,
         })
-        response = request("GET", f"https://{worker_name}.{subdomain}.workers.dev/probe",
+        if not isinstance(enabled_result, dict) or enabled_result.get("enabled") is not True:
+            raise ProbeFailure("enable_temporary_worker", "invalid_enable_acknowledgement")
+        worker_origin = f"https://{worker_name}.{subdomain}.workers.dev"
+        ready_body = {"schema_version": 1, "category": "ready", "worker_version": "tls-probe-v2",
+                      "request_count": 0, "provider_posts": 0, "zip_downloads": 0}
+        summary["readiness_status"] = "waiting"
+        for attempt_index in range(READINESS_ATTEMPTS):
+            response = request("GET", worker_origin + "/ready", "worker_readiness",
+                               api=False, timeout=(3, 5))
+            try:
+                summary["readiness_http_statuses"].append(response.status_code)
+                if response.status_code == 200:
+                    payload = _object(response, "worker_readiness")
+                    if payload != ready_body or any(type(payload[key]) is not type(value)
+                                                   for key, value in ready_body.items()):
+                        raise ProbeFailure("worker_readiness", "invalid_readiness_summary")
+                    summary["readiness_status"] = "ready"
+                    break
+                if response.status_code != 404:
+                    raise ProbeFailure("worker_readiness", "readiness_http_rejected", response.status_code)
+            finally:
+                response.close()
+            if attempt_index + 1 == READINESS_ATTEMPTS:
+                summary["readiness_status"] = "propagation_timeout"
+                raise ProbeFailure("worker_readiness", "readiness_propagation_timeout", 404)
+            # Only application deployment 404s are polled; transport/TLS failures stop above.
+            time.sleep(READINESS_INTERVAL_SECONDS)
+            summary["readiness_wait_seconds"] += READINESS_INTERVAL_SECONDS
+        response = request("GET", worker_origin + "/probe",
                            "worker_probe", api=False)
         try:
             if response.status_code != 200:
@@ -215,6 +254,8 @@ def run_probe(env: dict[str, str], session: Any = None) -> dict:
         summary["stage"] = "complete"
     except ProbeFailure as error:
         summary.update(category=error.category, stage=error.stage)
+        if error.stage == "worker_readiness" and summary["readiness_status"] != "propagation_timeout":
+            summary["readiness_status"] = error.category
         if error.status is not None:
             summary["http_status"] = error.status
         if error.codes:
