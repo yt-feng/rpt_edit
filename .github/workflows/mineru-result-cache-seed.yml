@@ -1,8 +1,19 @@
 name: Manually cache accepted MinerU ZIPs with short-lived exact-leaf authentication
 run-name: Seed accepted MinerU results ${{ inputs.date_folder }} (${{ inputs.max_results }})
 on:
+  pull_request:
+    paths:
+      - .github/workflows/mineru-result-cache-seed.yml
+      - scripts/seed_legacy_market_views_cache.py
+      - scripts/test_seed_legacy_market_views_cache.py
   workflow_dispatch:
     inputs:
+      source_kind:
+        description: Durable canonical tasks by default; explicit legacy Daily accepted tasks use a separate cache
+        required: true
+        type: choice
+        options: ['durable', 'legacy-daily']
+        default: durable
       source_run_id:
         description: Exact completed original Daily run on main; no fresh or recovery task submission
         required: true
@@ -36,6 +47,11 @@ on:
         required: false
         type: string
         default: ''
+      legacy_artifact_id:
+        description: Optional exact original selected-PDF artifact ID for legacy Daily mode only
+        required: false
+        type: string
+        default: ''
 permissions:
   contents: read
   actions: read
@@ -43,6 +59,19 @@ concurrency:
   group: mineru-result-cache-seed-${{ inputs.source_run_id }}-${{ inputs.date_folder }}
   cancel-in-progress: false
 jobs:
+  offline-contract:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -m pip install --disable-pip-version-check requests certifi 'urllib3>=2.2,<3' Pillow PyMuPDF
+      - run: python3 -B scripts/test_seed_legacy_market_views_cache.py
+      - run: python3 -B scripts/test_seed_mineru_result_cache.py
   seed:
     if: ${{ github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
@@ -68,7 +97,27 @@ jobs:
           PY
       - name: Install isolated cache and certificate authentication dependencies
         run: python3 -m pip install --retries 0 --disable-pip-version-check requests certifi 'urllib3>=2.2,<3' Pillow PyMuPDF 'boto3>=1.37.32,<2'
+      - name: Require an explicit legacy opt-in without mixing recovery authorizations
+        env:
+          SOURCE_KIND: ${{ inputs.source_kind }}
+          RECOVERY_RUN_ID: ${{ inputs.recovery_run_id }}
+          ALLOWED_ERROR_HASHES: ${{ inputs.allowed_error_hashes }}
+          EXPECTED_MANIFEST_SHA256: ${{ inputs.expected_manifest_sha256 }}
+          LEGACY_ARTIFACT_ID: ${{ inputs.legacy_artifact_id }}
+        run: |
+          python3 - <<'PY'
+          import json, os
+          kind = os.environ['SOURCE_KIND']
+          if kind not in {'durable', 'legacy-daily'}:
+              raise SystemExit('Cache source-kind validation rejected.')
+          if kind == 'legacy-daily' and (os.environ['RECOVERY_RUN_ID'] or os.environ['EXPECTED_MANIFEST_SHA256']
+                                        or json.loads(os.environ['ALLOWED_ERROR_HASHES']) != []):
+              raise SystemExit('Legacy tasks cannot mix durable child authorization.')
+          if kind == 'durable' and os.environ['LEGACY_ARTIFACT_ID']:
+              raise SystemExit('Durable tasks cannot use a legacy artifact override.')
+          PY
       - name: Authenticate exact completed original Daily producer before source download
+        if: ${{ inputs.source_kind == 'durable' }}
         env:
           GH_TOKEN: ${{ github.token }}
           SOURCE_RUN_ID: ${{ inputs.source_run_id }}
@@ -117,6 +166,7 @@ jobs:
               raise SystemExit('Cache-only original producer validation rejected.')
           PY
       - name: Download the exact complete original Daily PDF artifact
+        if: ${{ inputs.source_kind == 'durable' }}
         uses: actions/download-artifact@v4
         with:
           github-token: ${{ github.token }}
@@ -125,6 +175,7 @@ jobs:
           name: selected-macro-pdfs-${{ inputs.source_run_id }}
           path: _selected_macro_pdfs
       - name: Read accepted tasks and seed fully verified done ZIPs without new parsing submissions
+        if: ${{ inputs.source_kind == 'durable' }}
         env:
           SOURCE_RUN_ID: ${{ inputs.source_run_id }}
           DATE_FOLDER: ${{ inputs.date_folder }}
@@ -153,6 +204,29 @@ jobs:
             --expected-reports "$EXPECTED_ARTICLES" --max-results "$MAX_RESULTS" \
             --recovery-run-id "$RECOVERY_RUN_ID" --allowed-error-hashes "$ALLOWED_ERROR_HASHES" \
             --expected-manifest-sha256 "$EXPECTED_MANIFEST_SHA256" "${EXTRA_ARGS[@]}" \
+            --summary "$RUNNER_TEMP/mineru-result-cache-seed-summary.json"
+      - name: Authenticate whole legacy Daily originals and every accepted retry before cache-only result reads
+        if: ${{ inputs.source_kind == 'legacy-daily' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+          MAX_RESULTS: ${{ inputs.max_results }}
+          LEGACY_ARTIFACT_ID: ${{ inputs.legacy_artifact_id }}
+          MINER_U: ${{ secrets.MINER_U }}
+          MINER_U_2: ${{ secrets.MINER_U_2 }}
+          MINER_U_3: ${{ secrets.MINER_U_3 }}
+          MINER_U_4: ${{ secrets.MINER_U_4 }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python3 -B scripts/seed_legacy_market_views_cache.py \
+            --source-run-id "$SOURCE_RUN_ID" --date-folder "$DATE_FOLDER" \
+            --expected-reports "$EXPECTED_ARTICLES" --max-results "$MAX_RESULTS" \
+            --artifact-id "$LEGACY_ARTIFACT_ID" \
             --summary "$RUNNER_TEMP/mineru-result-cache-seed-summary.json"
       - name: Preserve sanitized cache-only authentication diagnostic
         if: ${{ always() }}

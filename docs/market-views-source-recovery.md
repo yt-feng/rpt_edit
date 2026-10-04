@@ -533,3 +533,32 @@ The first safe October 3 crop diagnostic (`37241002063`) confirms matching clip
 coordinates and 78-by-128-pixel dimensions; only the field-count validation
 failed. Further bounded type/overflow diagnostics distinguish that cause
 without changing the numeric admission rules.
+
+### Authenticated legacy Daily result cache
+
+An explicit `source_kind=legacy-daily` in the manual cache workflow handles
+historical Daily producers separately from canonical durable tasks. Before any
+result retrieval it authenticates the exact producer, the complete original
+artifact and its GitHub digest, every original PDF hash, all shard job logs,
+the reviewed historical source-code hashes and every accepted retry's fresh
+terminal membership. A group must have one complete DONE task; successful
+members from different retries cannot be combined.
+
+The legacy provider's copied-filename data IDs remain unchanged in independent
+private R2 proof, authentication and result-cache namespaces. This route makes
+no parsing POST, canonical task admission, model call or PDF publication. The
+fixed exact-leaf identity policy and its original UTC cutoff remain unchanged.
+Immutable authority and authentication receipts and full ZIPs require complete
+R2 readback. Source admission and dated PDF delivery require separate complete
+consumer validation.
+
+Read-only cloud inspection `37241467409` identified all 52 accepted October 1
+tasks. The latest task for each of 13 original groups contains all 63 members
+in DONE state. The original script's five-minute wait and token resubmissions
+therefore did not establish that those PDFs had failed to parse. This inspection
+alone proves neither original PDF bytes nor cache or PDF delivery.
+
+October 3 child cache run `37241908963` verified and cached 15 additional
+authorized DONE members without parsing POSTs. October 4 original cache
+`37241582462` verified its three original DONE results. Full recovery and PDF
+acceptance remain separate from these cache receipts.
