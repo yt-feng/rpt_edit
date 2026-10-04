@@ -21,7 +21,7 @@ import tempfile
 from typing import Any
 
 from extract_native_market_sources import MANIFEST_NAME, RECEIPT_NAME, validate_sources
-from ocr_numeric_evidence import normalize_number, NUMERIC, _overlap
+from ocr_numeric_evidence import normalize_number, NUMERIC, _overlap, OCR_CROP_POLICY, MAX_IMAGE_PIXELS
 
 
 SCHEMA = 1
@@ -158,6 +158,13 @@ def _diagnostic_read(value: Any) -> dict[str, Any] | None:
         output["field_count"] = value["field_count"]
     if isinstance(value.get("input_pixel_sha256"), str) and SHA.fullmatch(value["input_pixel_sha256"]):
         output["input_pixel_sha256"] = value["input_pixel_sha256"]
+    clip, size = _diagnostic_bbox(value.get("source_clip_bbox")), value.get("crop_pixel_size")
+    if (value["method"] in {"source-crop-psm-6", "source-crop-psm-11"}
+            and value.get("crop_policy") == OCR_CROP_POLICY and clip is not None
+            and isinstance(size, list) and len(size) == 2
+            and all(type(item) is int and 1 <= item <= 100_000 for item in size)
+            and size[0] * size[1] <= MAX_IMAGE_PIXELS):
+        output.update(crop_policy=OCR_CROP_POLICY, source_clip_bbox=clip, crop_pixel_size=list(size))
     return output
 
 

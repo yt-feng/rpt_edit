@@ -37,6 +37,7 @@ SOURCE_DPI = 300
 SECOND_DPI = 450
 CROP_DPI = 600
 CROP_BATCH = 48
+OCR_CROP_POLICY = "isolated-numeric-crop-v1"
 MAX_FIELDS = 2500
 MAX_IMAGE_PIXELS = 80_000_000
 NUMERIC = re.compile(
@@ -209,6 +210,33 @@ def _pixel_box(box: list[float], image: Image.Image, page_size: list[float], *, 
             min(image.width, math.ceil((box[2] + padding) * sx)), min(image.height, math.ceil((box[3] + padding) * sy))]
 
 
+def _ocr_crop_clip(box: list[float], page_size: list[float]) -> list[float]:
+    """Isolate a positioned field for OCR without copying adjoining prose.
+
+    The wider 300dpi punctuation witness is deliberately separate: it still
+    detects a sign or percent mark omitted from the positioned word. Such a
+    field must remain unresolved if this tight read cannot reproduce the mark.
+    """
+    if (not isinstance(box, list) or len(box) != 4
+            or not isinstance(page_size, list) or len(page_size) != 2
+            or any(type(value) not in (int, float) or not math.isfinite(value) for value in box + page_size)
+            or box[2] <= box[0] or box[3] <= box[1] or min(page_size) <= 0):
+        raise NumericEvidenceError("Numeric crop geometry is invalid")
+    height = box[3] - box[1]
+    horizontal = min(1.5, max(0.75, height * 0.12))
+    vertical = min(1.0, max(0.5, height * 0.06))
+    clip = [max(0.0, box[0] - horizontal), max(0.0, box[1] - vertical),
+            min(page_size[0], box[2] + horizontal), min(page_size[1], box[3] + vertical)]
+    if clip[2] <= clip[0] or clip[3] <= clip[1]:
+        raise NumericEvidenceError("Numeric crop is outside the source page")
+    return [round(value, 4) for value in clip]
+
+
+def _ocr_crop_pixel_size(clip: list[float]) -> list[int]:
+    bounds = (fitz.Rect(clip) * fitz.Matrix(CROP_DPI / 72, CROP_DPI / 72)).irect
+    return [bounds.width, bounds.height]
+
+
 def pixel_punctuation(image: Image.Image) -> dict[str, Any]:
     """Record connected ink marks, independently of recognized characters."""
     grayscale = image.convert("L")
@@ -318,34 +346,35 @@ def _crop_reads(page: fitz.Page, positioned: dict[int, dict[str, Any]], *, langu
     for offset in range(0, len(items), CROP_BATCH):
         crops = []
         for index, row in items[offset:offset + CROP_BATCH]:
-            padding = _field_padding(row["bbox"])
-            clip = fitz.Rect(row["bbox"]) + (-padding, -padding, padding, padding)
-            clip &= page.rect
-            crop = _image(page.get_pixmap(dpi=CROP_DPI, clip=clip, colorspace=fitz.csRGB, alpha=False))
-            crops.append((index, crop))
+            clip = _ocr_crop_clip(row["bbox"], [float(page.rect.width), float(page.rect.height)])
+            crop = _image(page.get_pixmap(dpi=CROP_DPI, clip=fitz.Rect(clip), colorspace=fitz.csRGB, alpha=False))
+            crops.append((index, crop, clip))
         if not crops:
             continue
         # Isolated fields are placed on separate rows, retaining all source
         # symbols. This batches expensive engine startup without merging table
         # columns or changing their number-to-position correspondence.
-        mosaic = Image.new("RGB", (max(crop.width for _, crop in crops) + 48,
-                                   sum(crop.height + 48 for _, crop in crops) + 24), "white")
+        mosaic = Image.new("RGB", (max(crop.width for _, crop, _ in crops) + 48,
+                                   sum(crop.height + 48 for _, crop, _ in crops) + 24), "white")
         locations = []
         top = 24
-        for index, crop in crops:
+        for index, crop, clip in crops:
             mosaic.paste(crop, (24, top))
-            locations.append((index, [24, top, 24 + crop.width, top + crop.height], crop))
+            locations.append((index, [24, top, 24 + crop.width, top + crop.height], crop, clip, _sha(crop.tobytes())))
             top += crop.height + 48
         for psm in (6, 11):
             words = _read_tesseract(mosaic, language=language, tessdata=tessdata, command=command,
                                     psm=psm, dpi=CROP_DPI)
             numbers = _word_mentions(words)
-            for index, box, crop in locations:
+            for index, box, crop, clip, crop_hash in locations:
                 hits = [row for row in numbers if _overlap(box, row["bbox"]) >= 0.95]
                 result.setdefault(index, []).append({"method": f"source-crop-psm-{psm}", "dpi": CROP_DPI,
                                                       "literal": hits[0]["literal"] if len(hits) == 1 else None,
                                                       "field_count": len(hits),
-                                                      "input_pixel_sha256": _sha(crop.tobytes())})
+                                                      "input_pixel_sha256": crop_hash,
+                                                      "crop_policy": OCR_CROP_POLICY,
+                                                      "source_clip_bbox": clip,
+                                                      "crop_pixel_size": [crop.width, crop.height]})
     return result
 
 
@@ -497,6 +526,32 @@ def validate_numeric_evidence(safe_text: str, evidence: dict[str, Any], image_pi
                                          or box != _pixel_box(point_box, source_image, evidence["page_size_points"])
                                          or pixel_punctuation(source_image.crop(tuple(box))) != witness):
             raise NumericEvidenceError("Numeric evidence source punctuation mismatch")
+    def validate_ocr_crop_reads(record):
+        reads = record.get("reads")
+        metadata = {"crop_policy", "source_clip_bbox", "crop_pixel_size"}
+        if not isinstance(reads, list) or not any(isinstance(read, dict) and metadata.intersection(read) for read in reads):
+            # Immutable old R2 receipts used the original wider crops and did
+            # not record this geometry. Keep their existing acceptance gate.
+            return
+        if (len(reads) != 3 or any(not isinstance(read, dict) for read in reads)
+                or [read.get("method") for read in reads] != ["second-page-psm-3", "source-crop-psm-6", "source-crop-psm-11"]):
+            raise NumericEvidenceError("Numeric crop evidence has insufficient positioned reads")
+        expected = _ocr_crop_clip(record.get("bbox"), evidence.get("page_size_points"))
+        expected_size = _ocr_crop_pixel_size(expected)
+        for read in reads[1:]:
+            clip, size = read.get("source_clip_bbox"), read.get("crop_pixel_size")
+            if (read.get("crop_policy") != OCR_CROP_POLICY or type(read.get("dpi")) is not int or read["dpi"] != CROP_DPI
+                    or not isinstance(clip, list) or len(clip) != 4
+                    or any(type(value) not in (int, float) or not math.isfinite(value) for value in clip) or clip != expected
+                    or not isinstance(size, list) or len(size) != 2 or any(type(value) is not int for value in size) or size != expected_size
+                    or type(read.get("field_count")) is not int or not 0 <= read["field_count"] <= MAX_FIELDS
+                    or not isinstance(read.get("input_pixel_sha256"), str)
+                    or not re.fullmatch(r"[a-f0-9]{64}", read["input_pixel_sha256"])):
+                raise NumericEvidenceError("Numeric crop geometry differs from its positioned source field")
+            if record.get("status") in {"verified", "corrected"} and read["field_count"] != 1:
+                raise NumericEvidenceError("Numeric crop borrowed multiple source fields")
+        if reads[1]["input_pixel_sha256"] != reads[2]["input_pixel_sha256"]:
+            raise NumericEvidenceError("Numeric crop reads differ from their common source pixels")
     counts = {"verified": 0, "corrected": 0, "unresolved": 0}
     for index, (record, mention) in enumerate(zip(records, mentions)):
         if not isinstance(record, dict) or any(record.get(key) != value for key, value in mention.items()) or record.get("id") != f"n{index + 1:04d}":
@@ -508,6 +563,7 @@ def validate_numeric_evidence(safe_text: str, evidence: dict[str, Any], image_pi
         box, witness, reads = record.get("source_pixel_bbox"), record.get("pixel_punctuation"), record.get("reads")
         if record.get("bbox") is not None:
             validate_crop(record)
+        validate_ocr_crop_reads(record)
         if status == "unresolved":
             if record["safe_literal"] != _replacement(index):
                 raise NumericEvidenceError("An unverified numeric field entered the summary")

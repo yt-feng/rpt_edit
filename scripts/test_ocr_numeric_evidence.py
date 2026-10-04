@@ -93,6 +93,76 @@ class NumericUnitTests(unittest.TestCase):
         positioned = numeric._word_mentions([(0, 0, 50, 10, "4875", 0, 0, 0)])
         self.assertEqual(numeric._align_mentions(primary, positioned), {})
 
+    def test_tight_crop_keeps_field_pixels_and_excludes_adjacent_prose_ink(self):
+        with fitz.open() as document:
+            page = document.new_page(width=250, height=130)
+            box = [100.0, 60.0, 120.0, 70.0]
+            for ink in ([100, 60, 112, 70], [95, 60, 98, 70], [100, 55, 120, 57]):
+                page.draw_rect(fitz.Rect(ink), color=None, fill=(0, 0, 0))
+            clip = numeric._ocr_crop_clip(box, [250.0, 130.0])
+            tight = numeric._image(page.get_pixmap(dpi=600, clip=fitz.Rect(clip), colorspace=fitz.csRGB, alpha=False))
+            pad = numeric._field_padding(box)
+            wide = numeric._image(page.get_pixmap(dpi=600, clip=fitz.Rect(box) + (-pad, -pad, pad, pad),
+                                                  colorspace=fitz.csRGB, alpha=False))
+            self.assertEqual(len(numeric.pixel_punctuation(tight)["components"]), 1)
+            self.assertEqual(len(numeric.pixel_punctuation(wide)["components"]), 3)
+            self.assertEqual(list(tight.size), numeric._ocr_crop_pixel_size(clip))
+            self.assertGreater(clip[0], 98)
+            self.assertGreater(clip[1], 57)
+            self.assertLessEqual(clip[0], box[0])
+            self.assertGreaterEqual(clip[2], box[2])
+            # This is the existing consumer witness, not the OCR crop policy.
+            source = numeric._image(page.get_pixmap(dpi=300, colorspace=fitz.csRGB, alpha=False))
+            self.assertEqual(numeric._pixel_box(box, source, [250, 130]), [389, 223, 528, 319])
+
+    def test_tight_crop_clips_at_page_edges_and_rejects_invalid_geometry(self):
+        clip = numeric._ocr_crop_clip([0, 0, 2, 3], [10, 10])
+        self.assertEqual(clip[:2], [0, 0])
+        clip = numeric._ocr_crop_clip([8, 8, 10, 10], [10, 10])
+        self.assertEqual(clip[2:], [10, 10])
+        for box in ([2, 2, 1, 3], [float("nan"), 0, 2, 3], [20, 20, 22, 23], [True, 0, 2, 3]):
+            with self.subTest(box=box), self.assertRaises(numeric.NumericEvidenceError):
+                numeric._ocr_crop_clip(box, [10, 10])
+
+    def test_crop_reads_record_the_actual_source_clip_and_same_pixels_for_both_modes(self):
+        with fitz.open() as document:
+            page = document.new_page(width=250, height=130)
+            page.insert_text((40, 55), "4.8", fontsize=18)
+            box = list(page.get_text("words")[0][:4])
+            clip = numeric._ocr_crop_clip(box, [250.0, 130.0])
+            expected = numeric._image(page.get_pixmap(dpi=600, clip=fitz.Rect(clip), colorspace=fitz.csRGB, alpha=False))
+
+            def engine(mosaic, **options):
+                self.assertEqual(options["dpi"], 600)
+                self.assertEqual(mosaic.crop((24, 24, 24 + expected.width, 24 + expected.height)).tobytes(), expected.tobytes())
+                return [{"bbox": [24, 24, 24 + expected.width, 24 + expected.height], "text": "4.8", "block": 1, "line": 1}]
+
+            with mock.patch.object(numeric, "_read_tesseract", side_effect=engine) as engine_mock:
+                reads = numeric._crop_reads(page, {0: {"bbox": box}}, language="eng", tessdata=None, command="unused")[0]
+            self.assertEqual(engine_mock.call_count, 2)
+            for read in reads:
+                self.assertEqual(read["literal"], "4.8")
+                self.assertEqual(read["field_count"], 1)
+                self.assertEqual(read["crop_policy"], numeric.OCR_CROP_POLICY)
+                self.assertEqual(read["source_clip_bbox"], clip)
+                self.assertEqual(read["crop_pixel_size"], list(expected.size))
+                self.assertEqual(read["input_pixel_sha256"], numeric._sha(expected.tobytes()))
+
+            def page_and_crop_engine(image, **options):
+                if options["dpi"] == 450:
+                    return [{"bbox": [value * 450 / 72 for value in box], "text": "4.8", "block": 1, "line": 1}]
+                return engine(image, **options)
+
+            with mock.patch.object(numeric, "_read_tesseract", side_effect=page_and_crop_engine):
+                result = numeric.audit_numeric_evidence(page, "4.8", primary_words=page.get_text("words"),
+                                                       language="eng", tesseract_command="unused")
+            self.assertEqual(result["evidence"]["verified_count"], 1)
+            with tempfile.TemporaryDirectory() as directory:
+                image_path = Path(directory) / "source.png"
+                page.get_pixmap(dpi=300, colorspace=fitz.csRGB, alpha=False).save(str(image_path))
+                numeric.validate_numeric_evidence(result["safe_text"], result["evidence"],
+                                                  result["evidence"]["input_pixel_sha256"], image_path=image_path)
+
     def test_source_pixel_decimal_is_independent_of_engine_confidence(self):
         image = Image.new("RGB", (90, 55), "white")
         draw = ImageDraw.Draw(image)
@@ -180,6 +250,66 @@ class NumericUnitTests(unittest.TestCase):
         self.assertEqual(result["safe_text"], "[数值待核对:n0001]")
         self.assertEqual(result["evidence"]["unresolved_count"], 1)
         self.assertEqual(result["evidence"]["primary_text"], "4.8")
+
+    def test_tight_crop_metadata_is_rechecked_without_breaking_legacy_receipts(self):
+        result, image = self._audit()
+        legacy = copy.deepcopy(result["evidence"])
+        numeric.validate_numeric_evidence(result["safe_text"], legacy, legacy["input_pixel_sha256"])
+        evidence = copy.deepcopy(legacy)
+        record = evidence["records"][0]
+        clip = numeric._ocr_crop_clip(record["bbox"], evidence["page_size_points"])
+        for read in record["reads"][1:]:
+            read.update(crop_policy=numeric.OCR_CROP_POLICY, source_clip_bbox=clip,
+                        crop_pixel_size=numeric._ocr_crop_pixel_size(clip))
+        sign_evidence(evidence)
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "original.png"
+            image.save(str(path))
+            numeric.validate_numeric_evidence(result["safe_text"], evidence, evidence["input_pixel_sha256"], image_path=path)
+            for mutation in ("clip", "size", "policy", "different_pixels", "partial", "multiple_fields"):
+                changed = copy.deepcopy(evidence)
+                read = changed["records"][0]["reads"][1]
+                if mutation == "clip":
+                    read["source_clip_bbox"][0] -= 1
+                elif mutation == "size":
+                    read["crop_pixel_size"][0] += 1
+                elif mutation == "policy":
+                    read["crop_policy"] = "other-crop"
+                elif mutation == "different_pixels":
+                    read["input_pixel_sha256"] = "c" * 64
+                elif mutation == "partial":
+                    changed["records"][0]["reads"][2].pop("source_clip_bbox")
+                else:
+                    read["field_count"] = 2
+                sign_evidence(changed)
+                with self.subTest(mutation=mutation), self.assertRaises(numeric.NumericEvidenceError):
+                    numeric.validate_numeric_evidence(result["safe_text"], changed, changed["input_pixel_sha256"], image_path=path)
+
+    def test_tight_reads_cannot_overrule_wide_witness_for_an_omitted_minus_or_percent(self):
+        for original, primary in (("-3%", "3%"), ("3%", "3")):
+            with self.subTest(original=original), fitz.open() as document:
+                page = document.new_page(width=250, height=130)
+                page.insert_text((100, 55), original, fontsize=10)
+                box = list(page.get_text("words")[0][:4])
+                if original.startswith("-"):
+                    box[0] += fitz.get_text_length("-", fontsize=10)
+                else:
+                    box[2] -= fitz.get_text_length("%", fontsize=10)
+                box = [round(value, 4) for value in box]
+                clip = numeric._ocr_crop_clip(box, [250.0, 130.0])
+                reads = [{"method": f"source-crop-psm-{psm}", "dpi": 600, "literal": primary, "field_count": 1,
+                          "input_pixel_sha256": "b" * 64, "crop_policy": numeric.OCR_CROP_POLICY,
+                          "source_clip_bbox": clip, "crop_pixel_size": numeric._ocr_crop_pixel_size(clip)} for psm in (6, 11)]
+                second = [{"bbox": [value * 450 / 72 for value in box], "text": primary, "block": 1, "line": 1}]
+                word = tuple(box + [primary, 0, 0, 0])
+                with mock.patch.object(numeric, "_read_tesseract", return_value=second), \
+                        mock.patch.object(numeric, "_crop_reads", return_value={0: reads}):
+                    result = numeric.audit_numeric_evidence(page, primary, primary_words=[word], language="eng", tesseract_command="unused")
+                self.assertEqual(result["evidence"]["verified_count"], 0)
+                self.assertEqual(result["evidence"]["unresolved_count"], 1)
+                self.assertEqual(result["evidence"]["records"][0]["reason"],
+                                 "visible_minus_omitted" if original.startswith("-") else "visible_percent_omitted")
+                self.assertEqual(result["safe_text"], "[数值待核对:n0001]")
 
     def test_transcript_change_rejected(self):
         result, _ = self._audit()
@@ -382,6 +512,31 @@ class NumericRealScanTests(unittest.TestCase):
         self.assertTrue(any(numeric.normalize_number(field["literal"]) == "4.8" for field in result["evidence"]["secondary_only_fields"]))
         self.assertIn("[漏识数值待核对:s0001]", result["safe_text"])
         document.close()
+
+    def test_dense_scanned_prose_numeric_crop_excludes_neighboring_words(self):
+        with fitz.open() as vector:
+            page = vector.new_page(width=360, height=130)
+            for y, text in ((58, "BROAD SOURCE CONTEXT FOR THE REPORT"),
+                            (70, "Operating 17% leverage improved"),
+                            (82, "CURRENT QUARTERLY OPERATING VALUES")):
+                page.insert_text((20, y), text, fontsize=10)
+            raster = page.get_pixmap(dpi=300, colorspace=fitz.csRGB, alpha=False).tobytes("png")
+        with fitz.open() as document:
+            page = document.new_page(width=360, height=130)
+            page.insert_image(page.rect, stream=raster)
+            self.assertEqual(page.get_text("text"), "")
+            text, words = self._first_read(page)
+            self.assertIn("17%", text, "The regression requires a correct positioned first read")
+            result = numeric.audit_numeric_evidence(page, text, primary_words=words, language="eng", tessdata=self.tessdata)
+            fields = [record for record in result["evidence"]["records"] if record["literal"] == "17%"]
+            self.assertEqual(len(fields), 1)
+            field = fields[0]
+            self.assertEqual(field["status"], "verified")
+            self.assertEqual([numeric.normalize_number(read["literal"]) for read in field["reads"]], ["17%"] * 3)
+            self.assertTrue(field["pixel_punctuation"]["percent_marks"])
+            self.assertEqual([read["crop_policy"] for read in field["reads"][1:]], [numeric.OCR_CROP_POLICY] * 2)
+            self.assertLess(field["reads"][1]["source_clip_bbox"][3] - field["reads"][1]["source_clip_bbox"][1],
+                            (field["bbox"][3] - field["bbox"][1]) + 2 * numeric._field_padding(field["bbox"]))
 
 
 if __name__ == "__main__":
