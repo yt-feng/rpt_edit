@@ -505,3 +505,17 @@ The exact October 3 semicap first-page OCR probe reports
 positions, pixel dimensions, strict check booleans, record ID and renderer
 version so a subsequent cloud probe can identify the mismatch without exposing
 report prose, names, tokens or URLs. No numeric acceptance tolerance was relaxed.
+
+Manual native recovery preserves the complete original PDF inventory in a
+separate private originals archive before extraction. Exact date, count,
+manifest and every PDF hash are verified both before packing and independently
+inside the sealed payload before its first R2 write. The entire decoded tar,
+including PAX/GNU headers, is bounded. Immutable archive and receipt writes are
+confirmed by full readback. Restoring requires the exact completed main/manual
+native producer and receipt context, with no R2 writes. Seven-day expiry disables
+application restore; it does not claim physical deletion or delete older data.
+
+`archive_originals_only=true` requires `generate_pdf=false`, skips OCR and all
+complete-source/model/PDF gates, and cannot pass native source readiness. It
+provides cloud investigation material for an OCR failure without admitting an
+incomplete source batch or repeating preceding reports' OCR.
