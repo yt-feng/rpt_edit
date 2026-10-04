@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import base64
+from contextlib import contextmanager
 import io
 import json
 import math
@@ -46,6 +47,24 @@ class QAError(ValueError):
 
 def fail(category):
     raise QAError(category)
+
+
+@contextmanager
+def _silent_mupdf():
+    """Suppress C-level document diagnostics for the complete PDF lifetime."""
+    old_errors = fitz.TOOLS.mupdf_display_errors()
+    old_warnings = fitz.TOOLS.mupdf_display_warnings()
+    try:
+        fitz.TOOLS.mupdf_display_errors(False)
+        fitz.TOOLS.mupdf_display_warnings(False)
+        yield
+    finally:
+        # Python stream redirection cannot catch MuPDF's native diagnostics.
+        # Restore both global switches on success and every failure path.
+        try:
+            fitz.TOOLS.mupdf_display_errors(old_errors)
+        finally:
+            fitz.TOOLS.mupdf_display_warnings(old_warnings)
 
 
 def require_cloud_main(env):
@@ -178,7 +197,7 @@ def export_page(source, producer, *, archive_run_id, repository, expected_report
     if source_sha != inventory[source_ordinal - 1]['content_sha256']:
         fail('visual_qa_originals_invalid')
     try:
-        with fitz.open(stream=original, filetype='pdf') as document:
+        with _silent_mupdf(), fitz.open(stream=original, filetype='pdf') as document:
             if document.needs_pass or not 1 <= page_number <= document.page_count <= 10000:
                 fail('visual_qa_page_invalid')
             source_page = document[page_number - 1]
