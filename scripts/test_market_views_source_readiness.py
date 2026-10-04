@@ -10,12 +10,13 @@ from market_views_source_readiness import SOURCE_GATES, SourceReadinessError, re
 WORKFLOWS = Path(__file__).resolve().parents[1] / '.github/workflows'
 MANUAL = '.github/workflows/market-views-native-recovery.yml'
 DAILY = '.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml'
+LEGACY = '.github/workflows/market-views-legacy-recovery.yml'
 SHA = 'c' * 40
 
 
 def evidence(workflow=MANUAL, *, status='in_progress', conclusion=None):
     producer = {'id': 12345, 'head_branch': 'main', 'head_sha': SHA, 'path': workflow,
-                'status': status, 'conclusion': conclusion}
+                'status': status, 'conclusion': conclusion, 'event': 'workflow_dispatch'}
     job_name, gates = SOURCE_GATES[workflow]
     steps = [{'name': name, 'number': number, 'status': 'completed', 'conclusion': 'success'}
              for number, name in enumerate(gates, start=3)]
@@ -28,6 +29,32 @@ def evidence(workflow=MANUAL, *, status='in_progress', conclusion=None):
 
 
 class ReadinessTests(unittest.TestCase):
+    def test_legacy_sources_require_all_complete_materialization_archive_and_readback_gates(self):
+        producer, jobs = evidence(LEGACY)
+        self.assertTrue(require_source_readiness(producer, jobs)['ready'])
+        for index in range(3):
+            for conclusion in ('failure', 'skipped', 'cancelled'):
+                changed = copy.deepcopy(jobs); changed['jobs'][0]['steps'][index]['conclusion'] = conclusion
+                with self.subTest(index=index, conclusion=conclusion), self.assertRaises(SourceReadinessError):
+                    require_source_readiness(producer, changed)
+
+    def test_legacy_producer_must_be_exact_manual_main_and_can_wait_for_consumer(self):
+        producer, jobs = evidence(LEGACY)
+        for event in ('schedule', 'pull_request', 'workflow_run', None):
+            with self.subTest(event=event), self.assertRaisesRegex(SourceReadinessError, '^invalid_legacy_source_producer$'):
+                require_source_readiness({**producer, 'event': event}, jobs)
+        self.assertTrue(require_source_readiness(producer, jobs)['ready'])
+        producer['status'] = 'completed'; producer['conclusion'] = 'failure'
+        self.assertTrue(require_source_readiness(producer, jobs)['ready'])
+
+    def test_legacy_readback_gate_must_bind_exact_producer_sha_and_order(self):
+        producer, jobs = evidence(LEGACY)
+        jobs['jobs'][0]['head_sha'] = 'e' * 40
+        with self.assertRaises(SourceReadinessError): require_source_readiness(producer, jobs)
+        jobs['jobs'][0]['head_sha'] = SHA
+        jobs['jobs'][0]['steps'][-1]['number'] = 1
+        with self.assertRaises(SourceReadinessError): require_source_readiness(producer, jobs)
+
     def test_manual_producer_waiting_for_this_consumer_does_not_circularly_wait(self):
         producer, jobs = evidence()
         report = require_source_readiness(producer, jobs)
