@@ -702,3 +702,10 @@ empty original Daily producer ID and records the archive and recovery producers
 separately. The fixed manual transport cutoff is unchanged. Workflow dispatch
 inputs are not claimed as proven by the GitHub run metadata; canonical source,
 manifest and controller records provide the binding.
+
+Immutable task snapshot checks use at most eight concurrent independent R2 GETs.
+Every original snapshot still receives one complete comparison, all worker
+results are consumed and workers joined before any ZIP request or cache write.
+A changed or unreadable record rejects the operation with the same fixed
+category. Submission, result downloads, cache writes and cutoff checks remain
+serial and unchanged.

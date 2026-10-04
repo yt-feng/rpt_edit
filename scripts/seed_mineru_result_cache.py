@@ -7,6 +7,7 @@ Cache seeding is not a complete source handoff or a restored PDF pipeline.
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 import json
 import os
 from pathlib import Path, PurePosixPath
@@ -153,10 +154,22 @@ def check_recovery_producer(value, run_id, repository, date_folder):
 
 
 def assert_task_snapshots(ledger, snapshots):
-    for key, expected in snapshots:
-        current, _ = ledger.store.get(key)
-        if current is None or encoded(current) != expected:
-            raise SeedError('accepted_child_snapshot_changed')
+    def verify(snapshot):
+        key, expected = snapshot
+        try:
+            current, _ = ledger.store.get(key)
+            return current is not None and encoded(current) == expected
+        except Exception:
+            # Provider/store messages can contain private source information.
+            return False
+    if not snapshots:
+        return
+    # Each independent read happens exactly once. Consume every result and
+    # join every worker before admitting a subsequent ZIP connection or PUT.
+    with ThreadPoolExecutor(max_workers=min(8, len(snapshots))) as executor:
+        results = list(executor.map(verify, snapshots))
+    if not all(results):
+        raise SeedError('accepted_child_snapshot_changed')
 
 
 def accepted_child_results(ledger, groups, original_rows, recovery_run_id, error_hashes, manifest_sha, cutoff_check):

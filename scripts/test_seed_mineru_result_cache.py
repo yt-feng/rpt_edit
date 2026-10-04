@@ -5,6 +5,8 @@ import io
 import json
 from pathlib import Path
 import tempfile
+import threading
+import time
 import unittest
 from unittest.mock import Mock, patch
 import uuid
@@ -466,6 +468,61 @@ class SeedTests(unittest.TestCase):
             with self.assertRaises(seed.SeedError):
                 call('PRIVATE')
         self.assertEqual(self.gets, [])
+
+    def test_snapshot_reads_are_bounded_joined_and_exactly_once_per_object(self):
+        lock = threading.Lock()
+        active = maximum = finished = 0
+        calls = []
+        value = {'schema': 1}
+        snapshots = [('objects/' + str(index), ledger_module.encoded(value)) for index in range(24)]
+        def get(key):
+            nonlocal active, maximum, finished
+            with lock:
+                calls.append(key); active += 1; maximum = max(maximum, active)
+            time.sleep(0.005)
+            with lock:
+                active -= 1; finished += 1
+            return value, 'fixed'
+        with patch.object(self.ledger.store, 'get', side_effect=get):
+            seed.assert_task_snapshots(self.ledger, snapshots)
+        self.assertEqual(sorted(calls), sorted(key for key, _ in snapshots))
+        self.assertEqual(len(set(calls)), 24)
+        self.assertEqual(finished, 24); self.assertEqual(active, 0)
+        self.assertGreater(maximum, 1); self.assertLessEqual(maximum, 8)
+
+    def test_any_snapshot_failure_joins_all_reads_and_prevents_following_zip(self):
+        value = {'schema': 1}
+        snapshots = [('objects/' + str(index), ledger_module.encoded(value)) for index in range(24)]
+        for wrong in (0, 12, 23):
+            calls = []
+            lock = threading.Lock()
+            def get(key):
+                with lock: calls.append(key)
+                if key == 'objects/' + str(wrong):
+                    if wrong == 12: raise RuntimeError('PRIVATE source store failure')
+                    return {'changed': True}, 'fixed'
+                return value, 'fixed'
+            with self.subTest(wrong=wrong), patch.object(self.ledger.store, 'get', side_effect=get), \
+                    self.assertRaisesRegex(seed.SeedError, '^accepted_child_snapshot_changed$'):
+                seed.assert_task_snapshots(self.ledger, snapshots)
+                self.transport('never-download')
+            self.assertEqual(sorted(calls), sorted(key for key, _ in snapshots))
+            self.transport.assert_not_called()
+
+    def test_failed_archive_snapshot_blocks_zip_and_publication_after_parallel_complete_reads(self):
+        fixture = self.archive_fixture()
+        original_get = self.ledger.store.get
+        bad_key = 'sources/' + self.bindings[-1]['id']
+        def get(key):
+            value, tag = original_get(key)
+            if key == bad_key and self.gets:
+                value = {'PRIVATE': 'changed source claim'}
+            return value, tag
+        with patch.object(self.ledger.store, 'get', side_effect=get), \
+                self.assertRaisesRegex(seed.SeedError, '^accepted_child_snapshot_changed$'):
+            self.archive_seed(fixture)
+        self.factory.assert_not_called()
+        self.assertEqual(len(self.r2.puts), 1)
 
     def test_provider_reads_are_single_attempt_and_batch_and_complete_membership_bound(self):
         batch = list(self.responses)[0]
