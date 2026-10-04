@@ -651,3 +651,31 @@ bounded PNG decoding and reconstruct that canvas; they do not claim to have
 reopened the original PDF. Default reads and existing receipts remain
 compatible. Real failed-report fixtures and complete-source cloud runs are
 separate acceptance steps.
+
+Read-only `market-views-original-page-qa.yml` authenticates and restores a
+complete private original archive, then exports only the explicitly selected
+original page for visual review. An exact bounded RSA recipient certificate is
+validated before source reads. The page PDF, PNG and hash receipt are encrypted
+with an AES-256 CMS envelope; only ciphertext and safe hashes are Actions
+artifacts. It performs no OCR, model call, task submission, ledger write or R2
+source admission. The reviewer's temporary decryption key is not a production
+pipeline dependency.
+
+### One full-page alternate recognition after unreadable default OCR
+
+When both default OCR text orders fail the unchanged language policy, the cloud
+backup may recognize the complete original RGB page once with fixed 300-dpi
+Tesseract PSM 11. It preserves every returned TSV word and its geometry, records
+both rejected default transcripts and binds the alternate engine, configuration,
+models and full-page pixels. Engine or model errors stop; numeric failures do
+not authorize another recognition. An unreadable alternate still rejects the
+page. No page region is omitted or accepted by a reduced language threshold.
+
+The transferred consumer rebuilds the selected transcript from the complete
+word list, recomputes the default rejections and selected acceptance, verifies
+the original-page pixel identity and replays every primary numeric position.
+Independent 450-dpi and both 600-dpi numeric reads and punctuation witnesses
+remain unchanged. Existing readable default and source-flow paths retain their
+original receipt shape. Cloud diagnostics expose only bounded candidate counts
+and reasons. Real affected report pages and a complete backup batch must pass
+before enabling the daily OCR backup switch.

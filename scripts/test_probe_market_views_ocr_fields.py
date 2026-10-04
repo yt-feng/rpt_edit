@@ -533,6 +533,70 @@ class FieldProbeTests(unittest.TestCase):
         self.assertNotIn(source_flow, json.dumps(diagnostic))
         self.assertNotIn(joined, json.dumps(diagnostic))
 
+    def test_raw_probe_uses_the_shared_primary_recognition_before_the_numeric_stage(self):
+        primary = "Research market outlook shows economic conditions with growth analysis"
+        words = [{"bbox": [2, 3, 10, 14], "text": "Research", "block": 0, "paragraph": 0, "line": 0}]
+        diagnostic = {"selection": "full-page-psm11", "recognition_attempted": True,
+                      "sorted_readability": probe._readability_projection("A" * 120),
+                      "source_flow_readability": probe._readability_projection("A" * 120),
+                      "source_flow_same_glyphs": True,
+                      "alternate_readability": probe._readability_projection(primary)}
+        with mock.patch.object(probe.native, "_recognize_ocr_page",
+                               return_value=(primary, words, "private-models", {"recognition": {"raw": "PRIVATE"}}, diagnostic)) as recognize, \
+                mock.patch.object(probe, "audit_numeric_evidence") as audit:
+            result = probe._raw_page_ocr(object())
+        self.assertEqual(result, (primary, words, "private-models", diagnostic))
+        self.assertEqual(recognize.call_count, 1)
+        self.assertTrue(recognize.call_args.kwargs["allow_rejected"])
+        audit.assert_not_called()
+
+    def test_rejected_source_flow_and_alternate_counts_are_independent_without_private_payloads(self):
+        self.make_archive_context()
+        primary = "A" * 120
+        flow = "B" * 150
+        layout = {"selection": "rejected", "recognition_attempted": True, "source_flow_same_glyphs": False,
+                  "sorted_readability": {**probe._readability_projection(primary), "raw": "PRIVATE"},
+                  "source_flow_readability": {**probe._readability_projection(flow), "words": "PRIVATE"},
+                  "alternate_readability": {**probe._readability_projection(primary), "image": "PRIVATE"},
+                  "recognition": {"primary_words": ["PRIVATE"]}, "private_text": "PRIVATE"}
+        with mock.patch.object(probe, "_raw_page_ocr", return_value=(primary, [], "private-models", layout)), \
+                mock.patch.object(probe, "audit_numeric_evidence") as audit:
+            result = self.call_pages()
+        counts = result["pages"][0]["ocr_layout"]
+        self.assertEqual(counts["sorted_readability"]["long_ascii_characters"], 120)
+        self.assertEqual(counts["source_flow_readability"]["long_ascii_characters"], 150)
+        self.assertEqual(counts["alternate_readability"]["long_ascii_characters"], 120)
+        self.assertTrue(counts["recognition_attempted"])
+        self.assertFalse(counts["source_flow_same_glyphs"])
+        self.assertEqual(result["pages"][0]["category"], "ocr_readability_rejected")
+        audit.assert_not_called()
+        self.assertFalse(result["success"])
+        self.assertFalse(result["production_acceptance"])
+        for value in ("PRIVATE", "private-models", primary, flow, "primary_words", "https://"):
+            self.assertNotIn(value, json.dumps(result))
+
+    def test_alternate_readable_probe_still_uses_numeric_consumer_and_no_acceptance_shortcut(self):
+        self.make_archive_context()
+        primary = "Research market outlook shows economic conditions with growth analysis"
+        layout = {"selection": "full-page-psm11", "recognition_attempted": True,
+                  "sorted_readability": probe._readability_projection("A" * 120),
+                  "source_flow_readability": probe._readability_projection("B" * 150),
+                  "alternate_readability": probe._readability_projection(primary)}
+        evidence = {"source_num_count": 0, "verified_count": 0, "corrected_count": 0,
+                    "unresolved_count": 0, "secondary_only_count": 0, "observed_num_count": 0}
+        with mock.patch.object(probe, "_raw_page_ocr", return_value=(primary, [], "models", layout)), \
+                mock.patch.object(probe, "audit_numeric_evidence", return_value={"safe_text": primary, "evidence": evidence}) as audit, \
+                mock.patch.object(probe, "validate_numeric_evidence") as validate:
+            result = self.call_pages()
+        self.assertEqual(audit.call_count, 1)
+        self.assertEqual(validate.call_count, 1)
+        self.assertEqual(result["pages"][0]["ocr_layout"]["selection"], "full-page-psm11")
+        self.assertEqual(result["pages"][0]["category"], "page_checks_completed")
+        self.assertTrue(result["success"])
+        self.assertFalse(result["production_acceptance"])
+        self.assertFalse(result["complete_source_handoff"])
+        self.assertEqual(result["fixture_acceptance"], "not_requested")
+
     def test_page_layout_projection_has_both_counts_without_copying_private_keys(self):
         self.make_archive_context()
         primary = "Research market outlook shows economic conditions with growth analysis"
