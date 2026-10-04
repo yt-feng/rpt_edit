@@ -119,6 +119,7 @@ jobs:
           python scripts/test_portal_translation_shards.py
           python scripts/test_replay_report_translation_shards.py
           python scripts/test_private_workflow_handoff.py
+          python scripts/test_archive_market_views_originals.py
           python scripts/test_recover_private_wechat_handoff.py
           python scripts/test_market_views_workflow_contract.py
           python scripts/test_market_views_source_dates.py

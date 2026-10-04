@@ -173,7 +173,7 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
         for step_name in ("Generate and wait for the exact Market Views PDF",
                           "Delete consumed native source handoff after the PDF succeeds"):
             block = recovery.split(f"- name: {step_name}", 1)[1].split("\n      - name:", 1)[0]
-            self.assertIn("if: ${{ inputs.generate_pdf }}", block)
+            self.assertIn("if: ${{ inputs.generate_pdf && !inputs.archive_originals_only }}", block)
         daily = job(UPSTREAM, "recover-market-sources")
         self.assertIn("ENABLE_OCR: ${{ vars.MARKET_VIEWS_OCR_BACKUP_ENABLED || 'false' }}", daily)
         self.assertIn("OCR_ARGS+=(--enable-ocr)", daily)
