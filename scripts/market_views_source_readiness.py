@@ -1,4 +1,4 @@
-"""Offline verification of the producer steps admitting native PDF sources.
+"""Offline verification of native PDF and exact legacy Daily source producers.
 
 Inputs are captured GitHub run metadata and one complete `filter=latest` jobs
 page. This module performs no network requests and reads no source contents.
@@ -9,6 +9,12 @@ import re
 
 MAX_JOBS = 100
 SOURCE_GATES = {
+    '.github/workflows/market-views-legacy-recovery.yml': (
+        'recover',
+        ('Authenticate and materialize all exact legacy Market Views sources',
+         'Archive complete legacy sources in private R2',
+         'Verify the archived complete legacy source handoff'),
+    ),
     '.github/workflows/market-views-native-recovery.yml': (
         'recover',
         ('Extract and verify the complete original source batch',
@@ -46,6 +52,8 @@ def require_source_readiness(producer, jobs_page):
     _require(type(run_id) is int and run_id > 0 and producer.get('head_branch') == 'main'
              and isinstance(sha, str) and re.fullmatch(r'[a-f0-9]{40}', sha) is not None
              and isinstance(workflow, str) and workflow in SOURCE_GATES, 'invalid_source_producer')
+    if workflow == '.github/workflows/market-views-legacy-recovery.yml':
+        _require(producer.get('event') == 'workflow_dispatch', 'invalid_legacy_source_producer')
     _require(isinstance(jobs_page, dict), 'invalid_jobs_response')
     count, jobs = jobs_page.get('total_count'), jobs_page.get('jobs')
     _require(type(count) is int and 0 <= count <= MAX_JOBS and isinstance(jobs, list)

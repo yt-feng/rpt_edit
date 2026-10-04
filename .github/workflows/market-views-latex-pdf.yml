@@ -18,10 +18,10 @@ on:
         required: false
         default: ""
       source_handoff_kind:
-        description: "Private source: xhs, validated original-PDF backup, or MinerU recovery"
+        description: "Private source: xhs, validated original-PDF backup, MinerU recovery, or complete accepted legacy Daily tasks"
         required: true
         type: choice
-        options: [xhs, native-pdf, mineru-recovery]
+        options: [xhs, native-pdf, mineru-recovery, legacy-daily]
         default: xhs
       native_quality_fixture_json:
         description: "Optional numeric value and page-position acceptance fixtures for native PDF sources"
@@ -70,6 +70,7 @@ env:
   PRIVATE_HANDOFF_ROOT: "_private-workflow-handoff/xhs"
   PRIVATE_MARKET_SOURCES_ROOT: "_private-workflow-handoff/market-sources"
   PRIVATE_MINERU_SOURCES_ROOT: "_private-workflow-handoff/mineru-market-sources"
+  PRIVATE_LEGACY_SOURCES_ROOT: "_private-workflow-handoff/legacy-market-sources"
 
 concurrency:
   group: market-views-daily-pdf
@@ -131,7 +132,7 @@ jobs:
           done
           case "$SOURCE_HANDOFF_KIND" in
             xhs) ;;
-            native-pdf|mineru-recovery)
+            native-pdf|mineru-recovery|legacy-daily)
               if [ -z "$SOURCE_HANDOFF_RUN_ID" ] || [ "$EXPECTED_SHARDS" != "1" ] || ! [[ "$EXPECTED_ARTICLES" =~ ^[1-9][0-9]*$ ]]; then
                 echo "Source recovery requires its original run, one validated shard and an exact report count." >&2
                 exit 1
@@ -191,6 +192,8 @@ jobs:
             SOURCE_PREFIX="$PRIVATE_MARKET_SOURCES_ROOT"
           elif [ "$SOURCE_HANDOFF_KIND" = "mineru-recovery" ]; then
             SOURCE_PREFIX="$PRIVATE_MINERU_SOURCES_ROOT"
+          elif [ "$SOURCE_HANDOFF_KIND" = "legacy-daily" ]; then
+            SOURCE_PREFIX="$PRIVATE_LEGACY_SOURCES_ROOT"
           fi
           python scripts/private_workflow_handoff.py download-shards \
             --prefix "$SOURCE_PREFIX/$SOURCE_HANDOFF_RUN_ID/$EXPECTED_BANK_DATE" \
@@ -297,6 +300,52 @@ jobs:
             --date-folder "$EXPECTED_BANK_DATE" \
             --expected-recovery-run-id "$SOURCE_HANDOFF_RUN_ID" \
             --expected-execution-sha "$SOURCE_EXECUTION_SHA"
+
+      - name: Verify complete accepted legacy Daily source receipt
+        if: ${{ inputs.source_handoff_kind == 'legacy-daily' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_HANDOFF_RUN_ID: ${{ inputs.source_handoff_run_id }}
+          EXPECTED_BANK_DATE: ${{ inputs.expected_bank_date }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+        run: |
+          python - <<'PY'
+          import json, os, re, subprocess, sys
+          from pathlib import Path
+          sys.path.insert(0, 'scripts')
+          from market_views_source_readiness import require_source_readiness
+          from recover_legacy_market_views_sources import validate_sources, WORKFLOW, RECEIPT
+          from seed_legacy_market_views_cache import verify_producer
+          source_run, date, expected = (os.environ[key] for key in ('SOURCE_HANDOFF_RUN_ID', 'EXPECTED_BANK_DATE', 'EXPECTED_ARTICLES'))
+          if not re.fullmatch(r'[1-9][0-9]*', source_run) or not re.fullmatch(r'[0-9]{6}', date) or not re.fullmatch(r'[1-9][0-9]*', expected):
+              raise SystemExit('Legacy source requires an exact run, date and complete count.')
+          def get(endpoint):
+              result = subprocess.run(['gh', 'api', f"repos/{os.environ['GITHUB_REPOSITORY']}/{endpoint}"],
+                  capture_output=True, text=True, check=False, timeout=30)
+              if result.returncode or len(result.stdout.encode()) > 1_000_000:
+                  raise SystemExit('Legacy source producer metadata unavailable.')
+              return json.loads(result.stdout)
+          producer = get(f'actions/runs/{source_run}')
+          if (producer.get('id') != int(source_run) or producer.get('path') != WORKFLOW
+                  or producer.get('event') != 'workflow_dispatch' or producer.get('head_branch') != 'main'
+                  or producer.get('repository', {}).get('full_name') != os.environ['GITHUB_REPOSITORY']
+                  or producer.get('head_repository', {}).get('full_name') != os.environ['GITHUB_REPOSITORY']
+                  or not re.fullmatch(r'[a-f0-9]{40}', str(producer.get('head_sha', '')))):
+              raise SystemExit('Legacy source producer does not match the exact manual main workflow.')
+          jobs = get(f'actions/runs/{source_run}/jobs?filter=latest&per_page=100')
+          require_source_readiness(producer, jobs)
+          root = Path('xhs_notes/dropbox') / date / 'shard_0'
+          receipt = validate_sources(root, int(expected), date, expected_producer_run_id=source_run,
+                                     expected_execution_sha=producer['head_sha'])
+          original_run = receipt['source_context']['original_source_run_id']
+          original = get(f'actions/runs/{original_run}')
+          original_sha = verify_producer(original, original_run, os.environ['GITHUB_REPOSITORY'])
+          if original_sha != receipt['source_context']['original_execution_sha']:
+              raise SystemExit('Legacy original producer execution SHA differs.')
+          print(json.dumps({'legacy_complete_source_validated': True, 'report_count': receipt['report_count'],
+                            'unique_content_count': receipt['unique_content_count'], 'provider_posts': 0,
+                            'canonical_task_admission': False}, sort_keys=True))
+          PY
 
       - name: Resolve and validate primary bank source
         env:

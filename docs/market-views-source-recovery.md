@@ -586,3 +586,31 @@ the 78-by-128 crop matches its expected geometry, but its PSM-11 field count is
 an integer above the existing 2,500-field bound. The geometry label alone must
 not be interpreted as a coordinate or pixel-dimension error; the bound remains
 unchanged pending a producer-side investigation.
+
+### Complete legacy sources and PDF consumption
+
+`market-views-legacy-recovery.yml` authenticates the complete original Daily
+artifact and all accepted tasks again, then reads every selected result from
+the independent verified private cache. It never directly downloads provider
+results, submits tasks or changes the canonical ledger. All original aliases
+remain in the source receipt; byte-identical originals are summarized once.
+Missing aliases, incomplete caches or changed task bindings reject the batch.
+
+The complete source is archived under the dedicated legacy handoff prefix.
+Its full R2 readback and exact manual/main producer, execution SHA, date and
+count must pass before the existing PDF workflow accepts `legacy-daily`.
+Native and durable source gates remain in place. Legacy receipts explicitly
+retain `canonical_task_admission=false` and do not claim proof of the bytes
+historically uploaded to the provider. Full original artifact authentication
+and result membership are separate, recorded evidence.
+
+October 4 backup PDF consumer `37241008754` completed its rebuild: the sanitized
+PDF has 15 pages and nine original-page images, all visually verified with
+captions on the same pages. Live inspection `37241582682` verified the private
+PDF and index in full, matched the dated public catalogue entry and checked the
+anonymous membership gate. Customer-authenticated download remains unchecked.
+October 3 primary recovery `37242315004` has validated all 54 sources and
+archived the complete source; its PDF consumer is `37242405117`. October 4
+primary recovery `37242512036` likewise validated all four sources; its PDF
+consumer is `37242538572`. Those primary PDF consumers require separate final
+publication and live acceptance.

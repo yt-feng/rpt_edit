@@ -1,0 +1,134 @@
+name: Recover complete Market Views from accepted legacy Daily tasks
+run-name: Recover legacy Market Views ${{ inputs.date_folder }} from run ${{ inputs.source_run_id }}
+on:
+  pull_request:
+    paths:
+      - .github/workflows/market-views-legacy-recovery.yml
+      - .github/workflows/market-views-latex-pdf.yml
+      - scripts/recover_legacy_market_views_sources.py
+      - scripts/test_recover_legacy_market_views_sources.py
+      - scripts/market_views_source_readiness.py
+      - scripts/test_market_views_source_readiness.py
+      - scripts/build_market_views_pdf.py
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Exact completed original Daily run whose entire accepted legacy task set is cached
+        required: true
+        type: string
+      date_folder:
+        description: Exact original Dropbox date, YYMMDD
+        required: true
+        type: string
+      expected_articles:
+        description: Exact complete original file count, including duplicate aliases
+        required: true
+        type: string
+      artifact_id:
+        description: Optional exact original selected-PDF artifact ID
+        required: false
+        type: string
+        default: ''
+      generate_pdf:
+        description: Generate the PDF only after a complete private source archive passes readback validation
+        required: true
+        type: boolean
+        default: true
+permissions:
+  contents: read
+  actions: write
+concurrency:
+  group: market-views-legacy-recovery-${{ inputs.source_run_id }}-${{ inputs.date_folder }}
+  cancel-in-progress: false
+jobs:
+  offline-contract:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -m pip install --disable-pip-version-check requests certifi 'urllib3>=2.2,<3' Pillow PyMuPDF
+      - run: python3 -B scripts/test_recover_legacy_market_views_sources.py
+      - run: python3 -B scripts/test_market_views_source_readiness.py
+      - run: python3 -B scripts/test_market_views_workflow_contract.py
+  recover:
+    if: ${{ github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: scripts
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install exact source-cache and private handoff dependencies
+        run: python3 -m pip install --disable-pip-version-check requests certifi 'urllib3>=2.2,<3' Pillow PyMuPDF 'boto3>=1.37.32,<2'
+      - name: Authenticate and materialize all exact legacy Market Views sources
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+          ARTIFACT_ID: ${{ inputs.artifact_id }}
+          MINER_U: ${{ secrets.MINER_U }}
+          MINER_U_2: ${{ secrets.MINER_U_2 }}
+          MINER_U_3: ${{ secrets.MINER_U_3 }}
+          MINER_U_4: ${{ secrets.MINER_U_4 }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python3 -B scripts/recover_legacy_market_views_sources.py recover \
+            --source-run-id "$SOURCE_RUN_ID" --date-folder "$DATE_FOLDER" \
+            --expected-reports "$EXPECTED_ARTICLES" --artifact-id "$ARTIFACT_ID" \
+            --output-dir _legacy_market_sources/shard_0
+      - name: Archive complete legacy sources in private R2
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+        run: |
+          python3 -B scripts/private_workflow_handoff.py upload-dir \
+            --source _legacy_market_sources/shard_0 \
+            --key "_private-workflow-handoff/legacy-market-sources/$GITHUB_RUN_ID/$DATE_FOLDER/shard_0.tar.gz"
+      - name: Verify the archived complete legacy source handoff
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+        run: |
+          python3 -B scripts/private_workflow_handoff.py download-dir \
+            --key "_private-workflow-handoff/legacy-market-sources/$GITHUB_RUN_ID/$DATE_FOLDER/shard_0.tar.gz" \
+            --destination "$RUNNER_TEMP/legacy-source-readback"
+          python3 -B scripts/recover_legacy_market_views_sources.py validate \
+            --output-dir "$RUNNER_TEMP/legacy-source-readback" \
+            --date-folder "$DATE_FOLDER" --expected-reports "$EXPECTED_ARTICLES" \
+            --expected-producer-run-id "$GITHUB_RUN_ID" --expected-execution-sha "$GITHUB_SHA"
+      - name: Generate and wait for the exact Market Views PDF
+        if: ${{ inputs.generate_pdf }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+        run: |
+          RUN_URL="$(gh workflow run market-views-latex-pdf.yml --repo "$GITHUB_REPOSITORY" --ref main \
+            -f date_folder="$DATE_FOLDER" -f expected_bank_date="$DATE_FOLDER" \
+            -f source_handoff_run_id="$GITHUB_RUN_ID" -f source_handoff_kind=legacy-daily \
+            -f expected_shards=1 -f expected_articles="$EXPECTED_ARTICLES" \
+            -f force_rebuild=true -f compile_latex=false)"
+          MARKET_RUN_ID="${RUN_URL##*/}"
+          [[ "$MARKET_RUN_ID" =~ ^[1-9][0-9]*$ ]]
+          echo "Complete legacy source PDF consumer: $RUN_URL" >> "$GITHUB_STEP_SUMMARY"
+          gh run watch "$MARKET_RUN_ID" --repo "$GITHUB_REPOSITORY" --compact --exit-status --interval 15

@@ -231,16 +231,25 @@ def source_date_dirs(root: Path, extra_roots: list[Path], date_folder: str) -> t
 def unique_original_report_dirs(report_dirs: list[Path]) -> tuple[list[Path], dict[str, list[dict[str, str]]]]:
     """Validate all originals, then summarize byte-identical aliases once."""
     native_roots = {path.parent for path in report_dirs if (path / "source_native_pdf.md").is_file()}
+    legacy_roots = {path.parent for path in report_dirs if (path.parent / "legacy-source-receipt.json").is_file()}
     aliases: dict[str, list[dict[str, str]]] = {}
     omitted: set[Path] = set()
     selected = set(report_dirs)
-    for root in sorted(native_roots):
-        from extract_native_market_sources import validate_sources
-        raw = json.loads((root / "source_receipt.json").read_text(encoding="utf-8"))
-        expected = raw.get("expected_reports")
-        if type(expected) is not int or expected <= 0:
-            raise RuntimeError(f"Original PDF source has an invalid inventory: {root}")
-        receipt = validate_sources(root, root / "selected_to_process_manifest.json", expected)
+    for root in sorted(native_roots | legacy_roots):
+        if root in legacy_roots:
+            from recover_legacy_market_views_sources import validate_sources
+            raw = json.loads((root / "legacy-source-receipt.json").read_text(encoding="utf-8"))
+            expected = raw.get("report_count")
+            if type(expected) is not int or expected <= 0:
+                raise RuntimeError(f"Legacy original source has an invalid inventory: {root}")
+            receipt = validate_sources(root, expected, raw.get("source_context", {}).get("date_folder"))
+        else:
+            from extract_native_market_sources import validate_sources
+            raw = json.loads((root / "source_receipt.json").read_text(encoding="utf-8"))
+            expected = raw.get("expected_reports")
+            if type(expected) is not int or expected <= 0:
+                raise RuntimeError(f"Original PDF source has an invalid inventory: {root}")
+            receipt = validate_sources(root, root / "selected_to_process_manifest.json", expected)
         inventory = {root / source["directory"] for source in receipt["reports"]}
         if inventory != {path for path in selected if path.parent == root}:
             raise RuntimeError(f"Original PDF summaries require the complete validated report inventory: {root}")
