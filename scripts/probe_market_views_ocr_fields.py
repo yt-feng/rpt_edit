@@ -25,7 +25,7 @@ import fitz
 
 import audit_market_views_ocr_receipt as audit
 import extract_native_market_sources as native
-from ocr_numeric_evidence import MAX_IMAGE_PIXELS, SECOND_DPI, validate_numeric_evidence
+from ocr_numeric_evidence import MAX_IMAGE_PIXELS, SECOND_DPI, NumericEvidenceError, validate_numeric_evidence
 
 
 DAILY_WORKFLOW = ".github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml"
@@ -221,6 +221,14 @@ def probe_fields(input_dir: Path, manifest: Path, fixtures: Path, producer_metad
                                                  allow_sparse_ocr=True)
                     validate_numeric_evidence(safe_text, ocr.get("numeric_evidence"), pixel_sha,
                                               image_path=image_path)
+                except native.SourceValidationError as exc:
+                    category = getattr(exc, "category", None)
+                    allowed = native.NUMERIC_FAILURE_CATEGORIES | {"ocr_language_data_unavailable", "ocr_engine_failed"}
+                    if isinstance(category, str) and category in allowed:
+                        raise ProbeError(category) from None
+                    raise ProbeError("page_ocr_or_numeric_validation_failed") from None
+                except NumericEvidenceError as exc:
+                    raise ProbeError(native._numeric_failure_category(exc)) from None
                 except Exception as exc:
                     raise ProbeError("page_ocr_or_numeric_validation_failed") from exc
                 reports[sha]["pages"][number - 1] = {"extraction_method": "ocr", "ocr": ocr}

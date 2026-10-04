@@ -154,6 +154,22 @@ class FieldProbeTests(unittest.TestCase):
         self.assertEqual(result["model_call_count"], 0)
         self.assertEqual(result["r2_source_admission_count"], 0)
 
+    def test_known_page_numeric_failure_preserves_only_fixed_category(self):
+        error = probe.native.SourceValidationError("PRIVATE source and engine details", category="numeric_crop_geometry_mismatch")
+        with mock.patch.object(probe.native, "_ocr_page", side_effect=error):
+            self.assertEqual(self.cli(), 2)
+        summary = json.loads(self.summary.read_text())
+        self.assertEqual(summary["category"], "numeric_crop_geometry_mismatch")
+        self.assertNotIn("PRIVATE", json.dumps(summary))
+
+    def test_unknown_page_error_category_cannot_enter_public_diagnostic(self):
+        error = probe.native.SourceValidationError("PRIVATE details", category="PRIVATE source URL")
+        with mock.patch.object(probe.native, "_ocr_page", side_effect=error):
+            self.assertEqual(self.cli(), 2)
+        summary = json.loads(self.summary.read_text())
+        self.assertEqual(summary["category"], "page_ocr_or_numeric_validation_failed")
+        self.assertNotIn("PRIVATE", json.dumps(summary))
+
     def test_wrong_date_and_count_are_rejected_before_any_ocr(self):
         self.assert_rejected_before_ocr("manifest_count_or_binding_invalid", expected=2)
         self.rows[0]["dropbox_path"] = "/zip_backup/261003/261004/PRIVATE-REPORT-TITLE.pdf"

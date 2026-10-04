@@ -35,6 +35,113 @@ HASH = re.compile(r'[a-f0-9]{64}')
 RUN = re.compile(r'[1-9][0-9]{0,19}')
 MAX_RECEIPT = 16 * 1024 * 1024
 
+# Exact upstream messages only: no arbitrary provider, URL, source or storage
+# exception text is ever copied to public diagnostics. Unknowns stay generic.
+LEDGER_ERROR_CATEGORIES = {
+    'Stored task scope, source, options or token identity mismatch': 'stored_task_identity_mismatch',
+    'Stored source binding is malformed': 'stored_source_binding_invalid',
+    'Stored task has duplicate source identities': 'stored_task_duplicate_sources',
+    'No MinerU token identities available': 'credentials_missing',
+    'All configured MinerU credentials were definitively rejected; saved batch is auth_rejected': 'credentials_rejected',
+    'Accepted task refers to a definitively rejected credential': 'accepted_task_credential_rejected',
+    'Stored authentication rejection history is malformed': 'credential_rejection_history_invalid',
+    'Stored authentication rejection state is inconsistent': 'credential_rejection_state_invalid',
+    'Interrupted or ambiguous submission; inspect saved task, never resubmit': 'saved_submission_ambiguous',
+    'Ambiguous existing task blocks new submissions': 'saved_task_ambiguous',
+    'Unrecognized saved task state': 'saved_task_state_invalid',
+    'Requested PDF does not match accepted task bytes and scope': 'accepted_source_binding_mismatch',
+    'Source claim binding mismatch': 'source_claim_binding_mismatch',
+    'Source bytes changed after task admission': 'source_bytes_changed',
+    'Source bytes changed during polling; results cannot be reused': 'source_bytes_changed',
+    'Original source bytes changed before task submission': 'source_bytes_changed',
+    'Original source bytes changed during terminal recovery': 'source_bytes_changed',
+    'Task attempt time budget exhausted; saved task retained': 'task_budget_exhausted',
+    'Malformed MinerU result rows': 'provider_result_rows_invalid',
+    'Unknown or duplicate result source identity': 'provider_result_membership_invalid',
+    'Unknown MinerU result state': 'provider_result_state_invalid',
+    'Completed MinerU row lacks source result URL': 'provider_result_url_missing',
+    'Previously terminal batch returned truncated or nonterminal results': 'terminal_result_membership_changed',
+    'Ledger compare-and-swap conflict; no new submission': 'checkpoint_write_conflict',
+    'Private checkpoint write outcome unresolved; no new submission': 'checkpoint_write_unresolved',
+    'Private checkpoint durable readback mismatch; no new submission': 'checkpoint_readback_mismatch',
+    'Private task checkpoint size, digest or version mismatch': 'checkpoint_binding_mismatch',
+    'Task checkpoint size is invalid': 'checkpoint_size_invalid',
+    'Task checkpoint exceeds size bound': 'checkpoint_size_invalid',
+    'Malformed task checkpoint': 'checkpoint_json_invalid',
+    'Malformed task checkpoint object': 'checkpoint_json_invalid',
+    'Task checkpoint schema must be an integer': 'checkpoint_schema_invalid',
+    'Terminal failure is not explicitly authorized for recovery': 'failure_not_authorized',
+    'Only a complete freshly verified terminal task authorizes a recovery child': 'predecessor_not_complete',
+    'Stored terminal recovery controller does not match its original task or fixed policy': 'recovery_controller_mismatch',
+    'Stored terminal recovery child reservation is malformed': 'recovery_child_reservation_invalid',
+    'Stored recovery children refer to different original manifests': 'recovery_manifest_mismatch',
+    'Stored terminal recovery proof is malformed': 'recovery_proof_invalid',
+    'Stored terminal recovery proof omits original members': 'recovery_proof_membership_invalid',
+    'Stored terminal recovery proof has invalid member bindings': 'recovery_proof_membership_invalid',
+    'Stored failure proof is not explicitly authorized': 'stored_failure_not_authorized',
+    'Stored successful member has invalid failure evidence': 'recovery_success_proof_invalid',
+    'Stored child inventory differs from its failed original members': 'recovery_child_inventory_mismatch',
+    'Recovery child does not match its durable parent reservation': 'recovery_child_parent_mismatch',
+    'Recovery child credential changed without its original definitive rejection': 'recovery_child_credential_mismatch',
+    'Terminal recovery child limit reached; saved tasks retained': 'recovery_child_limit_exhausted',
+    'Recovery authorization differs from the frozen original manifest': 'recovery_manifest_mismatch',
+    'Fresh terminal membership differs from the saved recovery reservation': 'fresh_failure_membership_mismatch',
+    'Fresh terminal failure proof differs from the saved recovery reservation': 'fresh_failure_proof_mismatch',
+    'Ambiguous recovery child blocks new submissions; saved task retained': 'recovery_child_submission_ambiguous',
+    'Unrecognized recovery child state': 'recovery_child_state_invalid',
+    'Recovery returned duplicate successful source coverage': 'recovery_duplicate_sources',
+    'MinerU GET transport outcome unknown; saved task retained': 'provider_get_transport_unknown',
+    'MinerU POST transport outcome unknown; saved task retained': 'provider_post_transport_unknown',
+    'MinerU PUT transport outcome unknown; saved task retained': 'provider_upload_transport_unknown',
+    'MinerU get transport outcome unknown; saved task retained': 'provider_get_transport_unknown',
+    'MinerU post transport outcome unknown; saved task retained': 'provider_post_transport_unknown',
+    'MinerU put transport outcome unknown; saved task retained': 'provider_upload_transport_unknown',
+    'MinerU submission acknowledgement is incomplete': 'provider_submission_ack_incomplete',
+}
+WRAPPED_RECOVERY_CATEGORIES = {
+    'NetworkStop': 'child_result_network_stop',
+    'ConsumerError': 'child_result_validation_failed',
+    'ResultCacheError': 'child_result_cache_failed',
+    'TimeoutError': 'terminal_recovery_timeout',
+    'OSError': 'terminal_recovery_os_error',
+    'KeyError': 'terminal_recovery_key_invalid',
+    'ValueError': 'terminal_recovery_value_invalid',
+    'TypeError': 'terminal_recovery_type_invalid',
+    'ClientError': 'terminal_recovery_storage_failed',
+}
+
+
+def safe_ledger_error_category(error):
+    if not isinstance(error, LedgerError) or len(error.args) != 1 or type(error.args[0]) is not str:
+        return 'ledger_error'
+    message = error.args[0]
+    if len(message) > 256:
+        return 'ledger_error'
+    if message in LEDGER_ERROR_CATEGORIES:
+        return 'ledger_' + LEDGER_ERROR_CATEGORIES[message]
+    for exception_name, category in WRAPPED_RECOVERY_CATEGORIES.items():
+        if message == 'Terminal recovery stopped; saved tasks retained (' + exception_name + ')':
+            # `raise ... from None` suppresses traceback display but retains
+            # this immediate exception context. Accept only its fixed TLS
+            # category, never arbitrary nested text or a rendered traceback.
+            context = error.__context__
+            if (exception_name == 'NetworkStop' and isinstance(context, NetworkStop)
+                    and len(context.args) == 1 and type(context.args[0]) is str
+                    and context.args[0] == 'tls_certificate_expired'):
+                return 'ledger_child_result_tls_certificate_expired'
+            return 'ledger_' + category
+    # Only a numeric HTTP status in one of these exact provider templates is
+    # recognized; it is not necessary to expose that status or the raw message.
+    templates = {
+        r'MinerU response is not valid JSON: HTTP [1-5][0-9]{2}': 'provider_response_json_invalid',
+        r'MinerU request rejected or malformed: HTTP [1-5][0-9]{2}': 'provider_request_rejected',
+        r'MinerU upload did not complete: HTTP [1-5][0-9]{2}': 'provider_upload_rejected',
+    }
+    for pattern, category in templates.items():
+        if re.fullmatch(pattern, message):
+            return 'ledger_' + category
+    return 'ledger_error'
+
 
 class RecoveryError(ValueError):
     """Fixed public categories only; private provider rows never escape."""
@@ -512,7 +619,8 @@ def main():
                 recovery_execution_sha=env.get('GITHUB_SHA', ''),
                 allowed_error_codes=codes, allowed_error_hashes=hashes, result_cache=ResultCache(client, bucket))
     except (RecoveryError, LedgerError, ConsumerError, OSError, ValueError, KeyError, TypeError) as error:
-        category = str(error) if isinstance(error, (RecoveryError, NetworkStop)) else type(error).__name__
+        category = (safe_ledger_error_category(error) if isinstance(error, LedgerError)
+                    else str(error) if isinstance(error, (RecoveryError, NetworkStop)) else type(error).__name__)
         print('MinerU source recovery stopped: ' + category, file=sys.stderr)
         return 2
     except Exception as error:

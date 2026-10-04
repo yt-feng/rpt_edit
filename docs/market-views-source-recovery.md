@@ -430,8 +430,28 @@ of 7,848,078 bytes. Full ZIP checks, the separate immutable authentication
 receipt and standard private R2 cache readback all passed. It made one result
 GET, zero parsing POSTs and zero canonical task writes. Authentication was the
 fixed exact leaf plus two historical chain/hostname checks, explicitly not
-current PKI verification. Bulk original-result cache run `37238421286` is a
-separate step; the 18 failed members still require approved bounded recovery.
+current PKI verification. Bulk original-result cache run `37238421286` then
+verified and cached all 36 completed originals, totaling 182,020,443 ZIP bytes:
+35 new downloads and one existing cache hit, zero parsing POSTs and zero
+canonical task writes. The 18 failed members still require approved bounded
+recovery. Recovery `37238694906` stopped with a generic `LedgerError`; that type
+alone cannot establish which stage failed, because the durable child verifier
+wraps nested failures. Child canary `37238922606` was rejected before source,
+API or result retrieval by an incorrect static workflow-name check. Actual
+GitHub metadata uses the expanded `Recover MinerU Market Views 261003` run-name;
+exact date-bound metadata validation fixes that check.
+
+October 4 complete-source rerun `37238241161` passed all 4 originals and 109
+pages (82 native, 27 OCR), private R2 handoff, source contract and actual `17%`
+fixture. Confirmed primary numeric mentions increased from 362 to 649;
+1,126 of 1,775 observed mentions remain unconfirmed and excluded from usable
+numeric claims. PDF consumer `37239371856` is a separate delivery step. October
+3 rerun `37238269283` stopped at report ordinal 9, page 1 with
+`NumericEvidenceError`; the earlier dependency wording did not identify its
+cause. Fixed-category diagnostics distinguish unavailable language models,
+OCR execution, numeric geometry/pixel/field validation and durable task/result
+failures. Unknown exception text is never copied to public diagnostics; an
+isolated actual-page probe is required before changing the numeric gate.
 
 Recovery is complete only after the
 matching cloud source and retrieval gates, exact dated PDF, original figures,

@@ -52,6 +52,70 @@ EXHIBIT_CAPTION = re.compile(
 class SourceValidationError(ValueError):
     """The complete source contract is not satisfied."""
 
+    def __init__(self, message: str, *, category: str | None = None):
+        super().__init__(message)
+        self.category = category
+
+
+# Only these exact engine messages may become public diagnostic categories.
+# Unknown exception text can contain source text, paths or signed URLs.
+NUMERIC_FAILURE_MESSAGES = {
+    "Numeric audit requires RGB source rendering": "numeric_rgb_required",
+    "Numeric audit source image exceeds the pixel bound": "numeric_source_pixel_bound",
+    "OCR word is missing its source position": "numeric_word_position_missing",
+    "OCR word position is invalid": "numeric_word_position_invalid",
+    "OCR word position or text is invalid": "numeric_word_text_invalid",
+    "Numeric OCR image exceeds the pixel bound": "numeric_ocr_pixel_bound",
+    "Numeric verification OCR did not complete": "numeric_ocr_incomplete",
+    "Numeric verification OCR failed": "numeric_ocr_failed",
+    "Numeric verification OCR returned invalid coordinates": "numeric_ocr_coordinates_invalid",
+    "Numeric verification OCR returned invalid TSV": "numeric_ocr_tsv_invalid",
+    "Numeric crop geometry is invalid": "numeric_crop_geometry_invalid",
+    "Numeric crop is outside the source page": "numeric_crop_outside_page",
+    "Numeric audit text or language is invalid": "numeric_text_language_invalid",
+    "Numeric source page exceeds the field bound": "numeric_field_bound",
+    "Tesseract CLI is required for numeric verification": "numeric_tesseract_cli_missing",
+    "Numeric evidence schema is invalid": "numeric_schema_invalid",
+    "Numeric evidence digest mismatch": "numeric_digest_mismatch",
+    "Numeric evidence original transcript mismatch": "numeric_original_transcript_mismatch",
+    "Numeric evidence is not bound to the source page": "numeric_source_binding_mismatch",
+    "Numeric evidence summary transcript mismatch": "numeric_summary_transcript_mismatch",
+    "Numeric evidence omitted source fields": "numeric_source_fields_missing",
+    "Numeric evidence original image is unavailable": "numeric_original_image_missing",
+    "Numeric evidence original pixels mismatch": "numeric_original_pixels_mismatch",
+    "Numeric evidence original image size mismatch": "numeric_original_image_size_mismatch",
+    "Numeric evidence source position is invalid": "numeric_source_position_invalid",
+    "Numeric evidence field pixels are invalid": "numeric_field_pixels_invalid",
+    "Numeric evidence source punctuation mismatch": "numeric_punctuation_mismatch",
+    "Numeric crop evidence has insufficient positioned reads": "numeric_crop_reads_insufficient",
+    "Numeric crop geometry differs from its positioned source field": "numeric_crop_geometry_mismatch",
+    "Numeric crop borrowed multiple source fields": "numeric_crop_multiple_fields",
+    "Numeric crop reads differ from their common source pixels": "numeric_crop_pixels_mismatch",
+    "Numeric evidence field mapping mismatch": "numeric_field_mapping_mismatch",
+    "Numeric evidence field decision is invalid": "numeric_field_decision_invalid",
+    "An unverified numeric field entered the summary": "numeric_unverified_summary_field",
+    "Numeric evidence has insufficient positioned reads": "numeric_reads_insufficient",
+    "Numeric evidence read is invalid": "numeric_read_invalid",
+    "Numeric evidence admitted a conflicting field": "numeric_conflicting_field",
+    "Numeric evidence correction classification mismatch": "numeric_correction_mismatch",
+    "Numeric evidence borrowed another table field": "numeric_borrowed_table_field",
+    "Numeric evidence field totals mismatch": "numeric_field_totals_mismatch",
+    "Numeric evidence secondary inventory mismatch": "numeric_secondary_inventory_mismatch",
+    "Numeric evidence secondary field is invalid": "numeric_secondary_field_invalid",
+    "Numeric evidence secondary position is invalid": "numeric_secondary_position_invalid",
+    "Numeric evidence omitted secondary-only fields": "numeric_secondary_fields_missing",
+    "Numeric evidence secondary decision is invalid": "numeric_secondary_decision_invalid",
+    "Numeric evidence cannot reproduce the summary transcript": "numeric_summary_reconstruction_mismatch",
+}
+NUMERIC_FAILURE_CATEGORIES = frozenset(NUMERIC_FAILURE_MESSAGES.values()) | {"numeric_evidence_invalid"}
+
+
+def _numeric_failure_category(error: Exception) -> str:
+    category = getattr(error, "category", None)
+    if isinstance(category, str) and category in NUMERIC_FAILURE_CATEGORIES:
+        return category
+    return NUMERIC_FAILURE_MESSAGES.get(str(error), "numeric_evidence_invalid")
+
 
 def sha256_bytes(raw: bytes) -> str:
     return hashlib.sha256(raw).hexdigest()
@@ -239,27 +303,43 @@ def _ocr_page(page: fitz.Page, source_name: str, number: int) -> tuple[str, dict
                 raise FileNotFoundError(model.name)
             models.append({"language": language, "filename": model.name,
                            "sha256": sha256_bytes(model.read_bytes())})
+    except Exception as exc:
+        raise SourceValidationError(
+            f"Runner OCR dependencies unavailable at page {number}: ocr_language_data_unavailable",
+            category="ocr_language_data_unavailable",
+        ) from exc
+    try:
         textpage = page.get_textpage_ocr(language=OCR_LANGUAGES, dpi=PAGE_DPI,
                                        full=True, tessdata=str(tessdata))
         text = page.get_text("text", textpage=textpage, sort=True).strip()
-        # Route truly unreadable pages to a rejected batch before any numeric
-        # masking could make the result appear like readable Chinese text.
-        require_readable_page(text, source_name, number, allow_sparse_ocr=True)
-        from ocr_numeric_evidence import audit_numeric_evidence
+    except Exception as exc:
+        raise SourceValidationError(f"Runner OCR failed at page {number}: ocr_engine_failed",
+                                    category="ocr_engine_failed") from exc
+    # Reject unreadable raw transcripts before masking can invent apparent
+    # language. This source-contract check is not a missing-engine diagnosis.
+    require_readable_page(text, source_name, number, allow_sparse_ocr=True)
+    try:
+        from ocr_numeric_evidence import NumericEvidenceError, audit_numeric_evidence
+    except ImportError as exc:
+        raise SourceValidationError(f"Runner OCR support unavailable at page {number}: ocr_numeric_support_missing",
+                                    category="ocr_numeric_support_missing") from exc
+    try:
         audit = audit_numeric_evidence(
             page, text, language=OCR_LANGUAGES, tessdata=str(tessdata),
             primary_words=page.get_text("words", textpage=textpage, sort=True),
         )
         text = audit["safe_text"]
+    except NumericEvidenceError as exc:
+        category = _numeric_failure_category(exc)
+        raise SourceValidationError(f"Runner OCR numeric evidence rejected at page {number}: {category}",
+                                    category=category) from exc
     except SourceValidationError:
         # A readable-language/source-contract rejection is not a missing model
         # or engine failure. Preserve its actual cause for bounded recovery.
         raise
     except Exception as exc:
-        raise SourceValidationError(
-            f"Runner OCR failed for {source_name} page {number}: {type(exc).__name__}; "
-            "eng and chi_sim Tesseract data and numeric audit support must be available"
-        ) from exc
+        raise SourceValidationError(f"Runner OCR numeric audit failed at page {number}: numeric_audit_failed",
+                                    category="numeric_audit_failed") from exc
     return text, {"engine": "tesseract-via-pymupdf", "pymupdf_version": fitz.VersionBind,
                   "languages": OCR_LANGUAGES, "dpi": PAGE_DPI, "full_page": True,
                   "traineddata": models, "numeric_evidence": audit["evidence"]}
