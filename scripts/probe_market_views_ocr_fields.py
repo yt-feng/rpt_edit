@@ -364,34 +364,15 @@ def _readability_projection(text: str, *, allow_sparse_ocr: bool = False) -> dic
 def _raw_page_ocr(page: fitz.Page) -> tuple[str, list[Any], str, dict[str, Any]]:
     """Use the production full-page engine parameters without admitting sources."""
     try:
-        tessdata = Path(fitz.get_tessdata())
-        if not all((tessdata / f"{language}.traineddata").is_file() for language in native.OCR_LANGUAGES.split("+")):
-            raise ValueError("models")
-    except Exception:
-        raise ProbeError("ocr_language_data_unavailable") from None
-    try:
-        textpage = page.get_textpage_ocr(language=native.OCR_LANGUAGES, dpi=native.PAGE_DPI,
-                                       full=True, tessdata=str(tessdata))
-        sorted_text = page.get_text("text", textpage=textpage, sort=True).strip()
-    except Exception:
-        raise ProbeError("ocr_engine_failed") from None
-    selection = "geometric-sorted"
-    try:
-        primary, selected_sort, _ = native._select_ocr_text_layout(page, textpage, sorted_text, "page-probe", 1)
-        if not selected_sort:
-            selection = "source-flow"
+        primary, words, tessdata, _, diagnostic = native._recognize_ocr_page(page, "page-probe", 1,
+                                                                           allow_rejected=True)
     except native.SourceValidationError as exc:
-        if getattr(exc, "category", None) == "ocr_engine_failed":
-            raise ProbeError("ocr_engine_failed") from None
-        # Preserve the real rejected default's counts. This instrument does
-        # not turn a rejected layout into an admitted source transcript.
-        primary, selected_sort, selection = sorted_text, True, "rejected"
-    try:
-        words = page.get_text("words", textpage=textpage, sort=selected_sort)
+        category = getattr(exc, "category", None)
+        raise ProbeError(category if category in {"ocr_language_data_unavailable", "ocr_engine_failed"}
+                         else "ocr_engine_failed") from None
     except Exception:
         raise ProbeError("ocr_engine_failed") from None
-    layout = {"selection": selection, "sorted_readability": _readability_projection(sorted_text, allow_sparse_ocr=True)}
-    return primary, words, str(tessdata), layout
+    return primary, words, tessdata, diagnostic
 
 
 def _diagnose_page(page: fitz.Page, image_path: Path) -> dict[str, Any]:
@@ -403,10 +384,16 @@ def _diagnose_page(page: fitz.Page, image_path: Path) -> dict[str, Any]:
             primary, words, tessdata, layout = _raw_page_ocr(page)
             result["ocr_readability"] = _readability_projection(primary, allow_sparse_ocr=True)
             if (isinstance(layout, dict) and isinstance(layout.get("selection"), str)
-                    and layout["selection"] in {"geometric-sorted", "source-flow", "rejected"}):
+                    and layout["selection"] in {"geometric-sorted", "source-flow", "full-page-psm11", "rejected"}):
                 result["ocr_layout"] = {"selection": layout["selection"],
                     "sorted_readability": _safe_readability(layout.get("sorted_readability")),
                     "selected_readability": dict(result["ocr_readability"])}
+                for key in ("source_flow_readability", "alternate_readability"):
+                    if key in layout:
+                        result["ocr_layout"][key] = _safe_readability(layout[key])
+                for key in ("source_flow_same_glyphs", "recognition_attempted"):
+                    if type(layout.get(key)) is bool:
+                        result["ocr_layout"][key] = layout[key]
             if not result["ocr_readability"].get("accepted"):
                 result["category"] = "ocr_readability_rejected"
                 return result

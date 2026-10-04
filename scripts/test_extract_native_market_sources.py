@@ -5,6 +5,7 @@ from __future__ import annotations
 import copy
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
 import shutil
@@ -155,6 +156,293 @@ class NativeMarketSourcesTests(unittest.TestCase):
         for language in native.OCR_LANGUAGES.split("+"):
             (models / f"{language}.traineddata").write_bytes(b"fixture model identity")
         return models
+
+    @staticmethod
+    def raster_words(page, dpi):
+        pixmap = page.get_pixmap(dpi=dpi, colorspace=fitz.csRGB, alpha=False)
+        return [{"text": word[4], "bbox": [math.floor(word[0] * pixmap.width / page.rect.width),
+                                            math.floor(word[1] * pixmap.height / page.rect.height),
+                                            math.ceil(word[2] * pixmap.width / page.rect.width),
+                                            math.ceil(word[3] * pixmap.height / page.rect.height)],
+                 "block": word[5], "paragraph": 0, "line": word[6]}
+                for word in page.get_text("words", sort=True)]
+
+    def make_alternate_receipt(self, *, conflicting_crop=False, numeric_error=None):
+        """Mock only recognition reads; exercise real pixels, audit and transfer."""
+        import ocr_numeric_evidence as numeric
+        self.select("alternate.pdf")
+        path = self.input / "alternate.pdf"
+        replacement = self.root / "alternate-with-scan.pdf"
+        with fitz.open() as vector:
+            visible = vector.new_page(width=595.2, height=842.4)
+            visible.insert_text((45, 60), "Research revenue margin growth performance analysis outlook", fontsize=14)
+            visible.insert_text((45, 120), "Revenue 4.8 Growth 4.8", fontsize=20)
+            words300, words450 = self.raster_words(visible, 300), self.raster_words(visible, 450)
+            raster = visible.get_pixmap(dpi=300, colorspace=fitz.csRGB, alpha=False)
+            page_size = [float(visible.rect.width), float(visible.rect.height)]
+        with fitz.open(path) as document:
+            scanned = document.new_page(width=page_size[0], height=page_size[1])
+            scanned.insert_image(scanned.rect, pixmap=raster)
+            document.save(replacement)
+        path.write_bytes(replacement.read_bytes())
+        self.update_hash("alternate.pdf")
+        primary, positioned_words = native._alternate_words(words300, [raster.width, raster.height], page_size)
+        positioned = numeric._align_mentions(numeric.numeric_mentions(primary), numeric._word_mentions(positioned_words))
+        calls, textpage = [], object()
+        original_get_text = fitz.Page.get_text
+
+        def primary_read(page, kind, *args, **options):
+            if options.get("textpage") is textpage:
+                return "A" * 120 if kind == "text" else []
+            return original_get_text(page, kind, *args, **options)
+
+        def engine_read(image, **options):
+            calls.append((options["psm"], options["dpi"]))
+            if options["dpi"] == 300:
+                self.assertEqual(numeric._sha(image.tobytes()), native.sha256_bytes(raster.samples))
+                return copy.deepcopy(words300)
+            if options["dpi"] == 450:
+                return copy.deepcopy(words450)
+            rows, top = [], 24
+            for index, field in positioned.items():
+                size = numeric._ocr_crop_pixel_size(numeric._ocr_crop_clip(field["bbox"], page_size))
+                rows.append({"text": "7.5" if conflicting_crop and options["psm"] == 11 else "4.8",
+                             "bbox": [25, top + 1, 24 + size[0] - 1, top + size[1] - 1],
+                             "block": index, "paragraph": 0, "line": 0})
+                top += size[1] + 48
+            return rows
+
+        with patch.object(fitz, "get_tessdata", return_value=str(self.fixture_models())), \
+                patch.object(fitz.Page, "get_textpage_ocr", return_value=textpage) as engine, \
+                patch.object(fitz.Page, "get_text", primary_read), \
+                patch.object(native, "_tesseract_version", return_value="5.3.0"), \
+                patch.object(native.shutil, "which", return_value="fixture-engine"), \
+                patch.object(numeric, "_read_tesseract", side_effect=engine_read), \
+                patch.object(numeric, "audit_numeric_evidence", wraps=numeric.audit_numeric_evidence,
+                             side_effect=numeric_error) as audit:
+            receipt = self.extract(enable_ocr=True)
+        self.assertEqual(engine.call_count, 1)
+        self.assertEqual(audit.call_count, 1)
+        self.assertEqual(calls, [(11, 300), (3, 450), (6, 600), (11, 600)])
+        return receipt
+
+    def test_alternate_tsv_rebuild_uses_numeric_line_order_and_exact_raster_geometry(self):
+        import ocr_numeric_evidence as numeric
+        words = [
+            {"bbox": [70, 80, 110, 95], "text": "4.8", "block": 0, "paragraph": 2, "line": 1},
+            {"bbox": [70, 10, 110, 25], "text": "4.8", "block": 0, "paragraph": 1, "line": 1},
+            {"bbox": [5, 10, 40, 25], "text": "Revenue", "block": 0, "paragraph": 1, "line": 1},
+            {"bbox": [5, 80, 40, 95], "text": "Margin", "block": 0, "paragraph": 2, "line": 1},
+        ]
+        text, positioned = native._alternate_words(words, [201, 301], [48.1, 72.1])
+        self.assertEqual(text, "Revenue 4.8\nMargin 4.8")
+        aligned = numeric._align_mentions(numeric.numeric_mentions(text), numeric._word_mentions(positioned))
+        self.assertLess(aligned[0]["bbox"][1], aligned[1]["bbox"][1])
+        self.assertAlmostEqual(positioned[0]["bbox"][0], 70 * 48.1 / 201)
+        for change in ("boolean", "outside", "negative", "extra", "line", "whitespace", "empty"):
+            invalid = copy.deepcopy(words)
+            if change == "boolean": invalid[0]["bbox"][0] = True
+            elif change == "outside": invalid[0]["bbox"][2] = 202
+            elif change == "negative": invalid[0]["bbox"][0] = -1
+            elif change == "extra": invalid[0]["private"] = "PRIVATE"
+            elif change == "line": invalid[0]["paragraph"] = False
+            elif change == "whitespace": invalid[0]["text"] = "4.8\n7.5"
+            else: invalid[0]["text"] = ""
+            with self.subTest(change=change), self.assertRaises(native.SourceValidationError):
+                native._alternate_words(invalid, [201, 301], [48.1, 72.1])
+
+    def test_alternate_recognition_full_extraction_retains_three_numeric_reads_and_source_pixels(self):
+        receipt = self.make_alternate_receipt()
+        report = receipt["reports"][0]
+        page = report["pages"][1]
+        record, evidence = page["ocr"]["recognition"], page["ocr"]["numeric_evidence"]
+        self.assertFalse(record["default_sorted_readability"]["accepted"])
+        self.assertFalse(record["default_source_flow_readability"]["accepted"])
+        self.assertTrue(record["selected_readability"]["accepted"])
+        self.assertEqual(evidence["verified_count"], 2)
+        self.assertEqual(evidence["unresolved_count"], 0)
+        self.assertEqual(record["input_pixel_sha256"], page["original_page"]["pixel_sha256"])
+        self.assertEqual(record["input_pixel_sha256"], evidence["input_pixel_sha256"])
+        self.assertEqual([[read["method"] for read in field["reads"]] for field in evidence["records"]],
+                         [["second-page-psm-3", "source-crop-psm-6", "source-crop-psm-11"]] * 2)
+        self.assertNotEqual(evidence["records"][0]["bbox"], evidence["records"][1]["bbox"])
+        status = json.loads((self.output / report["status"]["path"]).read_bytes())
+        self.assertEqual(status["ocr_recognition_bindings"], [{"page": 2, **page["recognition_selection"]}])
+        shutil.rmtree(self.input)
+        with patch.object(native, "_recognize_ocr_page", side_effect=AssertionError("Consumer cannot re-recognize")):
+            self.assertEqual(native.validate_sources(self.output, self.manifest, 1), receipt)
+
+    def test_alternate_recognition_numeric_conflict_remains_masked_without_another_primary(self):
+        receipt = self.make_alternate_receipt(conflicting_crop=True)
+        evidence = receipt["reports"][0]["pages"][1]["ocr"]["numeric_evidence"]
+        self.assertEqual(evidence["unresolved_count"], 2)
+        self.assertEqual(evidence["verified_count"], 0)
+        self.assertEqual([row["safe_literal"] for row in evidence["records"]],
+                         ["[数值待核对:n0001]", "[数值待核对:n0002]"])
+        shutil.rmtree(self.input)
+        self.assertEqual(native.validate_sources(self.output, self.manifest, 1), receipt)
+
+    def test_alternate_recognition_consumer_rejects_missing_changed_and_covert_proof(self):
+        receipt = self.make_alternate_receipt()
+        receipt_path = self.output / native.RECEIPT_NAME
+        for change in ("record_missing", "indicator_missing", "both_missing", "schema", "config", "pixels",
+                       "selected_hash", "extra", "model", "word_type", "default_readable", "flow_readable"):
+            tampered = copy.deepcopy(receipt)
+            page = tampered["reports"][0]["pages"][1]
+            record = page["ocr"]["recognition"]
+            if change in {"record_missing", "both_missing"}: page["ocr"].pop("recognition")
+            if change in {"indicator_missing", "both_missing"}: page.pop("recognition_selection")
+            elif change == "schema": record["schema"] = True
+            elif change == "config": record["psm"] = 6
+            elif change == "pixels": record["input_pixel_sha256"] = "0" * 64
+            elif change == "selected_hash": record["selected_text_sha256"] = "0" * 64
+            elif change == "extra": record["private"] = "PRIVATE"
+            elif change == "model": record["traineddata"][0]["sha256"] = "0" * 64
+            elif change == "word_type": record["primary_words"][0]["block"] = False
+            elif change in {"default_readable", "flow_readable"}:
+                key = "default_sorted_text" if change == "default_readable" else "default_source_flow_text"
+                record[key] = REPORT_TEXT
+                record[key + "_sha256"] = native.sha256_bytes(REPORT_TEXT.encode())
+                record[key.replace("text", "readability")] = native.page_readability(REPORT_TEXT, allow_sparse_ocr=True)
+            receipt_path.write_text(json.dumps(tampered))
+            with self.subTest(change=change), self.assertRaises(native.SourceValidationError):
+                native.validate_sources(self.output, self.manifest, 1)
+        tampered = copy.deepcopy(receipt)
+        page = tampered["reports"][0]["pages"][1]
+        page["ocr"].pop("recognition")
+        page.pop("recognition_selection")
+        page["ocr"]["engine"] = "tesseract-via-pymupdf"
+        receipt_path.write_text(json.dumps(tampered))
+        with self.assertRaisesRegex(native.SourceValidationError, "recognition bindings"):
+            native.validate_sources(self.output, self.manifest, 1)
+
+    def test_alternate_word_position_replay_rejects_resigned_repeated_value_geometry(self):
+        receipt = self.make_alternate_receipt()
+        report, page = receipt["reports"][0], receipt["reports"][0]["pages"][1]
+        word = next(row for row in page["ocr"]["recognition"]["primary_words"] if row["text"] == "4.8")
+        word["bbox"][0] += 2
+        word["bbox"][2] += 2
+        page["recognition_selection"]["recognition_sha256"] = native.sha256_bytes(native.canonical_bytes(page["ocr"]["recognition"]))
+        status_path = self.output / report["status"]["path"]
+        status = json.loads(status_path.read_bytes())
+        status["ocr_recognition_bindings"] = [{"page": 2, **page["recognition_selection"]}]
+        native.write_json(status_path, status)
+        report["status"] = native.file_record(status_path, self.output)
+        (self.output / native.RECEIPT_NAME).write_text(json.dumps(receipt))
+        with self.assertRaisesRegex(native.SourceValidationError, "complete source proof"):
+            native.validate_sources(self.output, self.manifest, 1)
+
+    def test_alternate_recognition_numeric_failure_never_publishes_partial_receipt(self):
+        from ocr_numeric_evidence import NumericEvidenceError
+        with self.assertRaises(native.SourceValidationError) as failure:
+            self.make_alternate_receipt(numeric_error=NumericEvidenceError("Numeric evidence field mapping mismatch"))
+        self.assertEqual(failure.exception.category, "numeric_field_mapping_mismatch")
+        self.assertFalse(self.output.exists())
+        self.assertEqual(list(self.root.glob(".sources-native-*")), [])
+
+    def test_alternate_primary_runs_once_only_after_two_readability_rejections(self):
+        import ocr_numeric_evidence as numeric
+        with fitz.open() as document:
+            page = document.new_page(width=612, height=792)
+            page.insert_text((45, 60), "Research market outlook shows economic conditions with growth analysis", fontsize=14)
+            alternate = self.raster_words(page, 300)
+            textpage, opaque = object(), "A" * 120
+            with patch.object(fitz, "get_tessdata", return_value=str(self.fixture_models())), \
+                    patch.object(fitz.Page, "get_textpage_ocr", return_value=textpage) as first_engine, \
+                    patch.object(fitz.Page, "get_text", return_value=opaque), \
+                    patch.object(native, "_tesseract_version", return_value="5.3.0"), \
+                    patch.object(native.shutil, "which", return_value="fixture-engine"), \
+                    patch.object(numeric, "_read_tesseract", return_value=alternate) as alternate_engine, \
+                    patch.object(numeric, "audit_numeric_evidence", return_value={"safe_text": "safe", "evidence": {}}) as audit:
+                _, provenance = native._ocr_page(page, "unreadable.pdf", 1)
+            self.assertEqual(first_engine.call_count, 1)
+            self.assertEqual(alternate_engine.call_count, 1)
+            self.assertEqual(alternate_engine.call_args.kwargs["psm"], 11)
+            self.assertEqual(alternate_engine.call_args.kwargs["dpi"], 300)
+            self.assertEqual(audit.call_count, 1)
+            self.assertEqual(provenance["recognition"]["selected_text_sha256"], native.sha256_bytes(audit.call_args.args[1].encode()))
+            # A readable source-flow result with different glyphs does not
+            # satisfy the two-failed-language-candidate trigger.
+            healthy = "Research market outlook shows economic conditions with growth analysis"
+            def changed_flow(kind, **options):
+                return (opaque if options["sort"] else healthy) if kind == "text" else []
+            with patch.object(fitz, "get_tessdata", return_value=str(self.fixture_models())), \
+                    patch.object(fitz.Page, "get_textpage_ocr", return_value=textpage), \
+                    patch.object(fitz.Page, "get_text", side_effect=changed_flow), \
+                    patch.object(numeric, "_read_tesseract", side_effect=AssertionError("No alternate after readable flow")) as alternate_engine, \
+                    patch.object(numeric, "audit_numeric_evidence") as audit:
+                with self.assertRaisesRegex(native.SourceValidationError, "opaque_ascii_runs"):
+                    native._ocr_page(page, "unreadable.pdf", 1)
+                alternate_engine.assert_not_called()
+                audit.assert_not_called()
+
+    def test_alternate_empty_opaque_or_invalid_words_do_not_reach_numeric_audit(self):
+        import ocr_numeric_evidence as numeric
+        with fitz.open() as document:
+            page = document.new_page(width=612, height=792)
+            page.draw_rect(fitz.Rect(45, 45, 150, 80), fill=(0, 0, 0))
+            for words, reason in (([], "insufficient readable page text"),
+                                  ([{"bbox": [20, 20, 200, 60], "text": "A" * 120, "block": 1, "paragraph": 1, "line": 1}], "opaque_ascii_runs"),
+                                  ([{"bbox": [-1, 20, 200, 60], "text": "PRIVATE", "block": 1, "paragraph": 1, "line": 1}], "ocr_engine_failed")):
+                with self.subTest(reason=reason), patch.object(fitz, "get_tessdata", return_value=str(self.fixture_models())), \
+                        patch.object(fitz.Page, "get_textpage_ocr", return_value=object()), \
+                        patch.object(fitz.Page, "get_text", return_value="A" * 120), \
+                        patch.object(native, "_tesseract_version", return_value="5.3.0"), \
+                        patch.object(native.shutil, "which", return_value="fixture-engine"), \
+                        patch.object(numeric, "_read_tesseract", return_value=words) as alternate_engine, \
+                        patch.object(numeric, "audit_numeric_evidence") as audit:
+                    with self.assertRaisesRegex(native.SourceValidationError, reason) as failure:
+                        native._ocr_page(page, "unreadable.pdf", 1)
+                    self.assertNotIn("PRIVATE", str(failure.exception))
+                    self.assertEqual(alternate_engine.call_count, 1)
+                    audit.assert_not_called()
+
+    def test_alternate_engine_error_stops_instead_of_trying_other_segmentation_modes(self):
+        import ocr_numeric_evidence as numeric
+        with fitz.open() as document:
+            page = document.new_page()
+            page.draw_rect(fitz.Rect(45, 45, 150, 80), fill=(0, 0, 0))
+            with patch.object(fitz, "get_tessdata", return_value=str(self.fixture_models())), \
+                    patch.object(fitz.Page, "get_textpage_ocr", return_value=object()), \
+                    patch.object(fitz.Page, "get_text", return_value="A" * 120), \
+                    patch.object(native, "_tesseract_version", return_value="5.3.0"), \
+                    patch.object(native.shutil, "which", return_value="fixture-engine"), \
+                    patch.object(numeric, "_read_tesseract", side_effect=RuntimeError("PRIVATE engine exception")) as alternate_engine, \
+                    patch.object(numeric, "audit_numeric_evidence") as audit:
+                with self.assertRaises(native.SourceValidationError) as failure:
+                    native._ocr_page(page, "unreadable.pdf", 1)
+            self.assertEqual(failure.exception.category, "ocr_engine_failed")
+            self.assertNotIn("PRIVATE", str(failure.exception))
+            self.assertEqual(alternate_engine.call_count, 1)
+            audit.assert_not_called()
+
+    @unittest.skipUnless(HAS_OCR_DATA and shutil.which("tesseract"), "Actual Tesseract CLI and eng+chi_sim models unavailable")
+    def test_actual_cloud_alternate_full_page_recognition_keeps_the_complete_consumer_contract(self):
+        import ocr_numeric_evidence as numeric
+        self.select("cloud-alternate.pdf")
+        path = self.input / "cloud-alternate.pdf"
+        path.unlink()
+        make_pdf(path, scanned_page=True)
+        self.update_hash("cloud-alternate.pdf")
+        original = fitz.Page.get_text
+        def rejected_default(page, kind, *args, **options):
+            if kind == "text" and options.get("textpage") is not None:
+                return "A" * 120
+            return original(page, kind, *args, **options)
+        with patch.dict(os.environ, {"TESSDATA_PREFIX": str(TESSDATA)}), \
+                patch.object(fitz.Page, "get_text", rejected_default), \
+                patch.object(numeric, "_read_tesseract", wraps=numeric._read_tesseract) as engine:
+            receipt = self.extract(enable_ocr=True)
+        page = receipt["reports"][0]["pages"][1]
+        self.assertEqual(sum(call.kwargs["dpi"] == 300 for call in engine.call_args_list), 1)
+        self.assertIn((3, 450), [(call.kwargs["psm"], call.kwargs["dpi"]) for call in engine.call_args_list])
+        self.assertEqual(page["ocr"]["recognition"]["psm"], 11)
+        self.assertTrue(page["recognized_readability"]["accepted"])
+        self.assertGreater(len(page["ocr"]["recognition"]["primary_words"]), 10)
+        self.assertEqual(receipt["reports"][0]["pages_covered"], [1, 2])
+        shutil.rmtree(self.input)
+        with patch.object(native, "_recognize_ocr_page", side_effect=AssertionError("Consumer must not run OCR")):
+            self.assertEqual(native.validate_sources(self.output, self.manifest, 1), receipt)
 
     def test_actual_textpage_reordering_can_join_rotated_labels_without_changing_glyphs(self) -> None:
         with fitz.open() as document:
@@ -425,7 +713,10 @@ class NativeMarketSourcesTests(unittest.TestCase):
             page = document.new_page()
             page.insert_text((45, 50), "Too short", fontsize=20)
             with patch.object(fitz, "get_tessdata", return_value=str(models)), \
-                    patch.object(fitz.Page, "get_textpage_ocr", return_value=page.get_textpage()):
+                    patch.object(fitz.Page, "get_textpage_ocr", return_value=page.get_textpage()), \
+                    patch.object(native, "_tesseract_version", return_value="5.3.0"), \
+                    patch.object(native.shutil, "which", return_value="fixture-engine"), \
+                    patch("ocr_numeric_evidence._read_tesseract", return_value=[]):
                 with self.assertRaisesRegex(native.SourceValidationError, "insufficient readable page text") as failure:
                     native._ocr_page(page, "unreadable.pdf", 1)
                 self.assertNotIn("Tesseract data", str(failure.exception))
