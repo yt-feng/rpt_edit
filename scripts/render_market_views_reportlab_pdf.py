@@ -53,6 +53,17 @@ Participation in this community, payment of any membership fee, or communication
 
 ROUNDUP_SOURCE_ORDER = ["bank_research", "consulting", "institution"]
 EXTERNAL_SOURCE_GROUPS = {"institution", "consulting"}
+
+
+def original_source_coverage_sentence(reports: dict[str, dict[str, Any]]) -> str:
+    """Describe retained original bindings without double counting summaries."""
+    aliases = sum(len(report.get("source_aliases") or []) for report in reports.values())
+    if not aliases:
+        return ""
+    return (
+        f"原文件共 {len(reports) + aliases} 份，覆盖 {len(reports)} 份独立研究内容；"
+        f"{aliases} 份同内容原文件保留来源绑定，正文只计一次。"
+    )
 SOURCE_GROUP_LABELS = {
     "bank_research": "投行/券商",
     "consulting": "战略咨询",
@@ -789,6 +800,9 @@ def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
         ),
         styles["PortalBody"],
     ))
+    original_coverage = original_source_coverage_sentence(reports)
+    if original_coverage:
+        story.append(Paragraph(clean_text(original_coverage), styles["PortalBody"]))
     bank_counts: dict[str, int] = {}
     for report in reports.values():
         if report_source_group(report) != "bank_research":

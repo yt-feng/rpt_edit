@@ -158,8 +158,164 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
         self.assertLess(receipt, resolve)
         self.assertLess(resolve, build)
         block = market[receipt:resolve]
-        self.assertIn("extract_native_market_sources.py validate", block)
-        self.assertIn('--expected-reports "${{ inputs.expected_articles }}"', block)
+        self.assertIn("'scripts/extract_native_market_sources.py', 'validate'", block)
+        self.assertIn("'--expected-reports', expected", block)
+        self.assertIn("'--producer-run-id', source_run", block)
+        self.assertIn("'--execution-sha', producer['head_sha']", block)
+
+    def test_cloud_ocr_is_staged_and_source_only_review_keeps_the_private_handoff(self):
+        recovery = (WORKFLOWS / "market-views-native-recovery.yml").read_text()
+        self.assertRegex(recovery, r"(?s)enable_ocr:.*?default: false")
+        self.assertRegex(recovery, r"(?s)generate_pdf:.*?default: true")
+        for step_name in ("Generate and wait for the exact Market Views PDF",
+                          "Delete consumed native source handoff after the PDF succeeds"):
+            block = recovery.split(f"- name: {step_name}", 1)[1].split("\n      - name:", 1)[0]
+            self.assertIn("if: ${{ inputs.generate_pdf }}", block)
+        daily = job(UPSTREAM, "recover-market-sources")
+        self.assertIn("ENABLE_OCR: ${{ vars.MARKET_VIEWS_OCR_BACKUP_ENABLED || 'false' }}", daily)
+        self.assertIn("OCR_ARGS+=(--enable-ocr)", daily)
+        self.assertIn('"${OCR_ARGS[@]}"', daily)
+        self.assertIn('--producer-run-id "$GITHUB_RUN_ID"', daily)
+        self.assertIn('--original-source-run-id "$GITHUB_RUN_ID"', daily)
+        for workflow in (daily, recovery, (WORKFLOWS / "wechat-pipeline-regression.yml").read_text()):
+            self.assertIn("tesseract-ocr-eng tesseract-ocr-chi-sim", workflow)
+            self.assertIn('test -f "$TESSDATA_DIR/eng.traineddata"', workflow)
+            self.assertIn('test -f "$TESSDATA_DIR/chi_sim.traineddata"', workflow)
+        regression = (WORKFLOWS / "wechat-pipeline-regression.yml").read_text()
+        self.assertIn('REQUIRE_MARKET_VIEWS_OCR_TESTS: "1"', regression)
+        self.assertIn('python scripts/test_ocr_numeric_evidence.py', regression)
+        self.assertIn('python scripts/test_audit_market_views_ocr_receipt.py', regression)
+        self.assertIn('PyMuPDF Pillow', daily)
+        self.assertIn('PyMuPDF Pillow requests', recovery)
+        market = MARKET.read_text()
+        dependency = market.index('- name: Install private handoff dependency')
+        receipt = market.index('- name: Verify complete native PDF source receipt')
+        self.assertLess(dependency, receipt)
+        self.assertIn('boto3 requests PyMuPDF Pillow', market[dependency:receipt])
+        audit = recovery.index('- name: Audit complete cloud OCR numeric evidence')
+        archive = recovery.index('- name: Archive verified native sources in private R2')
+        consumer = recovery.index('- name: Generate and wait for the exact Market Views PDF')
+        self.assertLess(archive, audit)
+        self.assertLess(audit, consumer)
+        self.assertIn('--source-dir _native_market_sources/shard_0', recovery[audit:consumer])
+        self.assertIn('path: ${{ runner.temp }}/market-views-ocr-audit.json', recovery[audit:consumer])
+        self.assertIn('QUALITY_FIXTURE_JSON: ${{ inputs.quality_fixture_json }}', recovery)
+        self.assertIn("raw = os.environ['QUALITY_FIXTURE_JSON']", recovery[audit:consumer])
+        self.assertIn('FIXTURE_ARGS+=(--fixtures "$RUNNER_TEMP/market-views-ocr-fixtures.json")', recovery[audit:consumer])
+        self.assertNotIn('continue-on-error:', recovery[audit:consumer])
+
+    def test_actual_native_consumer_accepts_failed_original_and_rejects_wrong_producer_context(self):
+        import hashlib
+        import json
+        from extract_native_market_sources import extract_sources
+        from test_extract_native_market_sources import make_pdf
+
+        step = MARKET.read_text().split("- name: Verify complete native PDF source receipt", 1)[1].split("\n      - name:", 1)[0]
+        command = textwrap.dedent(step.split("        run: |\n", 1)[1])
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            (root / "scripts").symlink_to(WORKFLOWS.parents[1] / "scripts", target_is_directory=True)
+            originals = root / "originals"
+            originals.mkdir()
+            pdf = originals / "source.pdf"
+            make_pdf(pdf)
+            manifest = root / "manifest.json"
+            manifest.write_text(json.dumps([{
+                "process_local_path": str(pdf), "dropbox_path": "/zip_backup/261003/source.pdf",
+                "content_sha256": hashlib.sha256(pdf.read_bytes()).hexdigest(),
+            }]))
+            sources = root / "xhs_notes/dropbox/261003/shard_0"
+            context = {"date_folder": "261003", "producer_run_id": "37214015946",
+                       "execution_sha": "c" * 40, "original_source_run_id": "37159099752"}
+            extract_sources(originals, manifest, sources, 1, source_context=context)
+            binaries = root / "bin"
+            binaries.mkdir()
+            (binaries / "python").symlink_to(sys.executable)
+            gh = binaries / "gh"
+            gh.write_text(f"#!{sys.executable}\n" + textwrap.dedent('''\
+                import json
+                import os
+                import sys
+                run_id = sys.argv[-1].split('/')[-1]
+                producer = run_id == '37214015946'
+                print(json.dumps({
+                    'id': int(run_id), 'head_branch': os.environ.get('FAKE_BRANCH', 'main'),
+                    'head_sha': os.environ.get('FAKE_SHA', 'c' * 40),
+                    'path': os.environ.get('FAKE_PRODUCER_PATH', '.github/workflows/market-views-native-recovery.yml') if producer else '.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml',
+                    'status': 'in_progress' if producer else os.environ.get('FAKE_ORIGINAL_STATUS', 'completed'),
+                    'conclusion': None if producer else os.environ.get('FAKE_ORIGINAL_CONCLUSION', 'failure'),
+                }))
+            '''))
+            gh.chmod(0o755)
+            environment = {**os.environ, "PATH": str(binaries) + os.pathsep + os.environ["PATH"],
+                           "GITHUB_REPOSITORY": "example/project", "SOURCE_HANDOFF_RUN_ID": context["producer_run_id"],
+                           "EXPECTED_BANK_DATE": "261003", "EXPECTED_ARTICLES": "1"}
+            def run(values):
+                return subprocess.run(["bash", "-e", "-o", "pipefail", "-c", command], cwd=root,
+                                      env={**environment, **values}, capture_output=True, text=True)
+            accepted = run({})
+            self.assertEqual(accepted.returncode, 0, accepted.stderr)
+            for invalid in ({"FAKE_BRANCH": "feature"}, {"FAKE_SHA": "d" * 40},
+                            {"FAKE_PRODUCER_PATH": ".github/workflows/another.yml"},
+                            {"FAKE_ORIGINAL_STATUS": "in_progress"}, {"FAKE_ORIGINAL_CONCLUSION": "cancelled"}):
+                with self.subTest(invalid=invalid):
+                    rejected = run(invalid)
+                    self.assertNotEqual(rejected.returncode, 0, rejected.stdout)
+            rejected = run({"FAKE_PRODUCER_PATH": ".github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml"})
+            self.assertNotEqual(rejected.returncode, 0)
+            self.assertIn("own selected original run", rejected.stderr)
+
+    def test_actual_cloud_audit_reads_fixture_json_as_data_and_fails_unmatched_fields(self):
+        import hashlib
+        import json
+        from extract_native_market_sources import extract_sources
+        from test_extract_native_market_sources import make_pdf
+
+        workflow = (WORKFLOWS / "market-views-native-recovery.yml").read_text()
+        step = workflow.split("- name: Audit complete cloud OCR numeric evidence", 1)[1].split("\n      - name:", 1)[0]
+        command = textwrap.dedent(step.split("        run: |\n", 1)[1])
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            (root / "scripts").symlink_to(WORKFLOWS.parents[1] / "scripts", target_is_directory=True)
+            originals = root / "originals"
+            originals.mkdir()
+            pdf = originals / "source.pdf"
+            make_pdf(pdf)
+            manifest = root / "manifest.json"
+            manifest.write_text(json.dumps([{
+                "process_local_path": str(pdf), "dropbox_path": "/zip_backup/261003/source.pdf",
+                "content_sha256": hashlib.sha256(pdf.read_bytes()).hexdigest(),
+            }]))
+            source_dir = root / "_native_market_sources/shard_0"
+            context = {"date_folder": "261003", "producer_run_id": "37214015946",
+                       "execution_sha": "c" * 40, "original_source_run_id": "37159099752"}
+            extract_sources(originals, manifest, source_dir, 1, source_context=context)
+            binaries = root / "bin"
+            binaries.mkdir()
+            (binaries / "python").symlink_to(sys.executable)
+            runtime = root / "runtime"
+            runtime.mkdir()
+            environment = {**os.environ, "PATH": str(binaries) + os.pathsep + os.environ["PATH"],
+                           "RUNNER_TEMP": str(runtime), "EXPECTED_ARTICLES": "1", "DATE_FOLDER": "261003",
+                           "GITHUB_RUN_ID": context["producer_run_id"], "GITHUB_SHA": context["execution_sha"],
+                           "SOURCE_RUN_ID": context["original_source_run_id"], "QUALITY_FIXTURE_JSON": ""}
+            def run(fixture):
+                return subprocess.run(["bash", "-e", "-o", "pipefail", "-c", command], cwd=root,
+                                      env={**environment, "QUALITY_FIXTURE_JSON": fixture}, capture_output=True, text=True)
+            accepted = run("")
+            self.assertEqual(accepted.returncode, 0, accepted.stderr)
+            summary_path = runtime / "market-views-ocr-audit.json"
+            self.assertEqual(json.loads(summary_path.read_text())["fixture_acceptance"], "not_requested")
+            check = {"id": "known_value", "source_pdf_sha256": "a" * 64, "page": 2,
+                     "expected_literal": "4.8", "expected_bbox": [10, 10, 20, 20]}
+            rejected = run(json.dumps({"schema": 1, "checks": [check]}))
+            self.assertEqual(rejected.returncode, 3, rejected.stderr)
+            self.assertEqual(json.loads(summary_path.read_text())["fixture_acceptance"], "failed")
+            sentinel = root / "should-not-exist"
+            rejected = run(json.dumps({"schema": 1, "checks": [{**check, "id": f"$(touch {sentinel})"}]}))
+            self.assertEqual(rejected.returncode, 2)
+            self.assertFalse(sentinel.exists())
+            self.assertTrue((source_dir / "source_receipt.json").is_file())
 
     def test_native_archive_is_released_only_after_its_pdf_consumer_succeeds(self):
         cleanup = job(UPSTREAM, "cleanup-market-source-recovery")

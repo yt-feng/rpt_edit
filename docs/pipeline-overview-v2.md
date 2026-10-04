@@ -32,16 +32,21 @@ flowchart TD
   G --> H["Verify exact dated PDF and original figures"]
   H --> I["Private R2 archive and public-safe PDF commit to main"]
   I --> J["Live catalogue and dated download acceptance"]
-  B -. "Cloud backup only; retained original PDF artifact" .-> K["Actions native-text backup: deployed, limited to readable text on every page"]
-  K -. "Complete manifest and receipt required; current image-page batches rejected" .-> L["Separate private R2 market-source handoff"]
+  B -. "Cloud backup only; retained original PDF artifact" .-> K["Actions original-PDF backup: readable native text and explicitly enabled cloud OCR"]
+  K -. "Complete source context, page and numeric receipts" .-> L["Separate private R2 market-source handoff"]
   L -. "Verified backup input only" .-> G
 ```
 
 The solid path is the primary architecture. The dashed path is a cloud backup
 for Market Views, not a replacement for MinerU or a way to mark failed report
-generation successful. Its deployed native-only parser cannot recover a batch
-containing textless image pages. The OCR cloud-backup extension is saved as a
-versioned experimental patch and has not been deployed; no OCR recovery is claimed. See
+generation successful. OCR is an explicit cloud opt-in: manual recovery uses
+`enable_ocr=true`; daily fallback uses `MARKET_VIEWS_OCR_BACKUP_ENABLED=true`.
+Both default to disabled. Actions installs Tesseract English and Simplified
+Chinese models; the user's computer supplies no production OCR service.
+The retained original experiment is archived separately; the current extension
+adds readable-language gates and independent numeric checks. Code, CI, full
+real-report quality review, automatic enablement and dated PDF delivery remain
+separate rollout steps. See
 [Market Views source recovery](market-views-source-recovery.md) for the backup
 limits and incident evidence.
 
@@ -91,8 +96,10 @@ documented in
 a credential page, or a sibling workflow is not PDF delivery evidence. The
 [one-page cloud smoke test](../.github/workflows/mineru-api-smoke.yml) verifies
 new parsing and complete ZIP content separately. The retained OCR experiment is
-[versioned here](experiments/market-views-ocr-fallback-20261004.md) and remains
-undeployed.
+[versioned here](experiments/market-views-ocr-fallback-20261004.md). The opt-in
+cloud implementation requires real OCR regressions with unavailable models
+treated as failure, followed by complete real-source validation and normal
+publication checks before enabling the daily switch.
 
 The 2026-10-04 cloud smoke run
 `37212761333`

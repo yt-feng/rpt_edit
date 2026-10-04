@@ -12,6 +12,7 @@ on:
       - "scripts/*private_workflow_handoff*"
       - "scripts/*market_views*"
       - "scripts/*native_market_sources*"
+      - "scripts/*ocr_numeric_evidence*"
       - ".github/workflows/market-views-latex-pdf.yml"
       - ".github/workflows/market-views-native-recovery.yml"
       - "scripts/build_portal_translated_reports.py"
@@ -50,6 +51,7 @@ on:
       - "scripts/*private_workflow_handoff*"
       - "scripts/*market_views*"
       - "scripts/*native_market_sources*"
+      - "scripts/*ocr_numeric_evidence*"
       - ".github/workflows/market-views-latex-pdf.yml"
       - ".github/workflows/market-views-native-recovery.yml"
       - "scripts/build_portal_translated_reports.py"
@@ -84,14 +86,25 @@ permissions:
 jobs:
   regression:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
+    env:
+      REQUIRE_MARKET_VIEWS_OCR_TESTS: "1"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
       - name: Install test dependencies
-        run: python -m pip install -r requirements.txt reportlab "boto3>=1.37.32,<2"
+        run: python -m pip install -r requirements.txt reportlab pypdf "boto3>=1.37.32,<2"
+      - name: Install real cloud OCR regression dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends tesseract-ocr tesseract-ocr-eng tesseract-ocr-chi-sim
+          TESSDATA_DIR="$(tesseract --list-langs 2>/dev/null | sed -n '1s/.*"\(.*\)".*/\1/p')"
+          test -n "$TESSDATA_DIR"
+          test -f "$TESSDATA_DIR/eng.traineddata"
+          test -f "$TESSDATA_DIR/chi_sim.traineddata"
+          echo "TESSDATA_PREFIX=$TESSDATA_DIR" >> "$GITHUB_ENV"
       - name: Test source discovery, draft verification and static publication
         run: |
           python scripts/test_fetch_institution_latest_pdfs.py
@@ -107,7 +120,11 @@ jobs:
           python scripts/test_recover_private_wechat_handoff.py
           python scripts/test_market_views_workflow_contract.py
           python scripts/test_market_views_source_dates.py
+          python scripts/test_market_views_figures.py
+          python scripts/test_render_market_views_figures.py
           python scripts/test_extract_native_market_sources.py
+          python scripts/test_ocr_numeric_evidence.py
+          python scripts/test_audit_market_views_ocr_receipt.py
           python scripts/test_post_blog_refresh.py
           python scripts/test_check_completed_shard.py
           python scripts/test_wechat_output_contract.py

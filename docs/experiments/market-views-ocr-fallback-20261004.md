@@ -1,6 +1,8 @@
 # Archived Market Views OCR fallback experiment
 
-Status: preserved for future cloud fallback development; **not applied or deployed**.
+Archive status: preserved and unchanged. The original patch has not been deployed
+as written; current cloud fallback development selectively reused source ideas
+and added stronger validation, cloud dependencies and rollout controls.
 The production architecture remains **MinerU API + GitHub Actions**. This archive
 does not introduce a dependency on the user's computer.
 
@@ -8,7 +10,7 @@ does not introduce a dependency on the user's computer.
 against commit `b45c436515be3ecbea7c75dba4cd19deed9095db`. The temporary patch had
 disappeared; this copy was recovered by replaying the original fourteen recorded
 file edits, in timestamp order, in an isolated directory. Production source files
-were not changed. The patch contains source code only, without PDF bytes,
+were not changed when this archive was recovered. The patch contains source code only, without PDF bytes,
 credentials, provider responses, or signed result URLs.
 
 The experiment adds a schema-2 source receipt, readable native text with full-page
@@ -36,3 +38,22 @@ private archive, and public catalogue entry. Keep MinerU as the primary route an
 document the actual fallback deployment state in `docs/pipeline-overview-v2.md`.
 
 Patch SHA-256: `bae288911461600b80459c40df9c57f71b4963a8c4cf62bb4f5aa98c1258729d`.
+
+## Current cloud implementation and acceptance
+
+The current extension in `scripts/extract_native_market_sources.py` keeps the
+original patch separate and adds explicit OCR switches, full cloud source context,
+readable-language checks and consumer verification. `scripts/ocr_numeric_evidence.py`
+compares positioned numeric reads and original punctuation pixels, retaining
+uncertain fields as explicit markers. `scripts/audit_market_views_ocr_receipt.py`
+can emit sanitized coverage and numeric/value-position fixture acceptance after
+checking the complete private source contract. Raw text and page images remain
+private.
+
+The manual recovery can run with `enable_ocr=true` and `generate_pdf=false` to
+review the complete private source handoff without model calls. Real Tesseract
+regressions are mandatory in cloud CI; missing language models fail instead of
+producing a skipped green check. Daily backup remains off unless
+`MARKET_VIEWS_OCR_BACKUP_ENABLED=true` is set after full real-report, PDF and
+publication acceptance. This development record does not establish that any
+missing October issue has been delivered.

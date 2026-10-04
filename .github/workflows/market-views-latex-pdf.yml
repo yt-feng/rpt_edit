@@ -164,7 +164,7 @@ jobs:
             --expected-reports "${{ github.event.inputs.expected_articles || '0' }}"
 
       - name: Install private handoff dependency
-        run: python -m pip install boto3 requests PyMuPDF
+        run: python -m pip install boto3 requests PyMuPDF Pillow
 
       - name: Download bank inputs from private R2
         if: ${{ github.event.inputs.source_handoff_run_id != '' }}
@@ -195,11 +195,56 @@ jobs:
 
       - name: Verify complete native PDF source receipt
         if: ${{ inputs.source_handoff_kind == 'native-pdf' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_HANDOFF_RUN_ID: ${{ inputs.source_handoff_run_id }}
+          EXPECTED_BANK_DATE: ${{ inputs.expected_bank_date }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
         run: |
-          python scripts/extract_native_market_sources.py validate \
-            --output-dir "xhs_notes/dropbox/${{ inputs.expected_bank_date }}/shard_0" \
-            --manifest "xhs_notes/dropbox/${{ inputs.expected_bank_date }}/shard_0/selected_to_process_manifest.json" \
-            --expected-reports "${{ inputs.expected_articles }}"
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          import re
+          import subprocess
+          import sys
+          source_run = os.environ['SOURCE_HANDOFF_RUN_ID']
+          date = os.environ['EXPECTED_BANK_DATE']
+          expected = os.environ['EXPECTED_ARTICLES']
+          if not re.fullmatch(r'[1-9][0-9]*', source_run) or not re.fullmatch(r'[0-9]{6}', date) or not re.fullmatch(r'[1-9][0-9]*', expected):
+              raise SystemExit('Native source consumer requires exact run, date and count.')
+          def read_run(run_id):
+              result = subprocess.run(['gh', 'api', f"repos/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{run_id}"],
+                                      check=True, capture_output=True, text=True)
+              metadata = json.loads(result.stdout)
+              if metadata.get('id') != int(run_id) or metadata.get('head_branch') != 'main' or not re.fullmatch(r'[a-f0-9]{40}', str(metadata.get('head_sha', ''))):
+                  raise SystemExit('Native source producer run or execution SHA differs.')
+              return metadata
+          producer = read_run(source_run)
+          daily_path = '.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml'
+          if producer.get('path') not in {daily_path, '.github/workflows/market-views-native-recovery.yml'}:
+              raise SystemExit('Native source producer workflow differs.')
+          root = Path('xhs_notes/dropbox') / date / 'shard_0'
+          receipt = json.loads((root / 'source_receipt.json').read_text())
+          context = receipt.get('source_context')
+          if not isinstance(context, dict):
+              raise SystemExit('Native source receipt lacks its frozen cloud producer context.')
+          original = context.get('original_source_run_id')
+          if not isinstance(original, str) or (original and not re.fullmatch(r'[1-9][0-9]*', original)):
+              raise SystemExit('Native original source run is invalid.')
+          if producer['path'] == daily_path:
+              if original != source_run:
+                  raise SystemExit('Daily native source must bind its own selected original run.')
+          elif original:
+              original_run = read_run(original)
+              if original_run.get('path') != daily_path or original_run.get('status') != 'completed' or original_run.get('conclusion') not in {'success', 'failure'}:
+                  raise SystemExit('Native recovery original Daily source differs or is not terminal.')
+          subprocess.run([sys.executable, 'scripts/extract_native_market_sources.py', 'validate',
+                          '--output-dir', str(root), '--manifest', str(root / 'selected_to_process_manifest.json'),
+                          '--expected-reports', expected, '--date-folder', date,
+                          '--producer-run-id', source_run, '--execution-sha', producer['head_sha'],
+                          '--original-source-run-id', original], check=True)
+          PY
 
       - name: Verify complete MinerU recovery source receipt
         if: ${{ inputs.source_handoff_kind == 'mineru-recovery' }}

@@ -3,7 +3,7 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 import unittest
 
-from build_market_views_pdf import require_primary_report_dirs, source_date_dirs, report_digest, report_extract
+from build_market_views_pdf import require_primary_report_dirs, source_date_dirs, report_digest, report_extract, unique_original_report_dirs, source_inventory_counts
 
 
 class SourceDateDirsTest(unittest.TestCase):
@@ -117,6 +117,150 @@ class SourceDateDirsTest(unittest.TestCase):
         self.assertEqual(require_primary_report_dirs(self.bank / "261003"), [report])
         self.assertIn("growth and inflation", report_digest(report, 2200)["digest"])
         self.assertIn("growth and inflation", report_extract(report, 2200))
+
+    def test_ocr_pending_markers_survive_cleaning_and_actual_bank_prompt_composition(self) -> None:
+        import argparse
+        import json
+        from unittest.mock import patch
+        import build_market_views_pdf as market
+
+        report = self.bank / "261003" / "shard_0" / "report-a"
+        report.mkdir(parents=True)
+        marker = "[数值待核对:n0001]"
+        page_marker = "[数值待核对:p2n3]"
+        (report / "source_native_pdf.md").write_text(
+            "# Revenue outlook\n\n"
+            f"Revenue increased from {marker}% to 22% and remains subject to exact numerical verification.\n\n"
+            f"The operating margin reported as {page_marker}% is another numerical field awaiting source verification.\n\n"
+            "Demand remains supported by product launches and greater customer engagement across the sector.\n\n"
+            "Management sees stable operating conditions with capacity improving across its distribution footprint."
+        )
+        digest = report_digest(report, 2200)
+        extract = report_extract(report, 2200)
+        self.assertTrue(digest["has_pending_numeric_values"])
+        for text in (digest["digest"], extract):
+            self.assertIn(marker, text)
+            self.assertIn(page_marker, text)
+        args = argparse.Namespace(per_report_prompt_chars=2200, figures_per_bank_section=4)
+        reports = [{"id": "R001", "title": digest["title"], "digest": digest["digest"],
+                    "extract": extract, "institution_name": "JPM", "source_group": "bank_research",
+                    "has_pending_numeric_values": True}]
+        prompts = []
+        def model(prompt, _args, label, _path):
+            prompts.append((label, prompt))
+            return {"categories": [{"heading": "Demand outlook", "report_ids": ["R001"]}]} if label == "bank category plan" else {}
+        with patch.object(market, "request_model_json", side_effect=model):
+            roundup = market.generate_bank_roundup(reports, [], args, Path(self.temp_dir.name), True)
+        self.assertEqual(len(prompts), 2)
+        for _, prompt in prompts:
+            self.assertIn(market.OCR_NUMBER_POLICY, prompt)
+        self.assertIn(marker, prompts[1][1])
+        self.assertIn(page_marker, prompts[1][1])
+        self.assertIn(market.OCR_NUMBER_POLICY, market.build_prompt(reports, [], args))
+        self.assertIn(market.OCR_NUMBER_POLICY, market.supporting_roundup_prompt("institution", reports, [], args))
+        fallback = json.dumps(roundup, ensure_ascii=False)
+        self.assertIn("Demand remains supported", fallback)
+        self.assertNotIn("Revenue increased from", fallback)
+        self.assertNotIn("operating margin reported", fallback)
+        self.assertNotIn("22%", fallback)
+        self.assertEqual(roundup["sections"][0]["bank_views"][0]["report_ids"], ["R001"])
+
+    def test_ocr_marker_truncation_drops_a_whole_quantitative_statement(self) -> None:
+        from build_market_views_pdf import trim_text, clean_markdown_for_extract, signal_sentences, first_signal
+        marker = "[数值待核对:n0001]"
+        statement = f"Revenue increased from {marker}% to 22% and the long quantitative comparison remains unverified."
+        text = "Independent qualitative demand evidence remains intact.\n" + statement + "\nOperating conditions remain stable and readable."
+        for size in (40, 80, 120):
+            trimmed = trim_text(text, size)
+            if "Revenue increased" in trimmed or "22%" in trimmed:
+                self.assertIn(statement, trimmed)
+                self.assertIn(marker, trimmed)
+            self.assertNotIn("数值待核对:n0001", trimmed.replace(marker, ""))
+        self.assertEqual(clean_markdown_for_extract(f"[{marker}](https://source.example.invalid)"), marker)
+        self.assertNotIn("22%", " ".join(signal_sentences(statement + "\n\nA independently supported qualitative conclusion remains available.")))
+        self.assertNotIn("22%", first_signal(statement + "\n\nAn independently supported qualitative conclusion remains available."))
+
+    def test_system_prompt_applies_numeric_marker_contract_to_the_actual_model_request(self) -> None:
+        import argparse
+        import os
+        from unittest.mock import Mock, patch
+        import build_market_views_pdf as market
+        response = Mock(status_code=200)
+        response.json.return_value = {"choices": [{"message": {"content": "{}"}}]}
+        args = argparse.Namespace(deepseek_base_url="https://api.deepseek.com", model="deepseek-flash")
+        with patch.dict(os.environ, {"DEEPSEEK_API_KEY": "offline-test-key"}), \
+                patch.object(market, "request_with_retry", return_value=response) as request:
+            self.assertEqual(market.call_deepseek("Source contains [数值待核对:n0001].", args, "offline"), "{}")
+        messages = request.call_args.kwargs["payload"]["messages"]
+        self.assertIn(market.OCR_NUMBER_POLICY, messages[0]["content"])
+        self.assertIn("[数值待核对:n0001]", messages[1]["content"])
+
+    def test_byte_identical_original_aliases_are_all_verified_then_summarized_once(self) -> None:
+        import hashlib
+        import json
+        from extract_native_market_sources import extract_sources, SourceValidationError
+        from test_extract_native_market_sources import make_pdf
+
+        originals = Path(self.temp_dir.name) / "originals"
+        originals.mkdir()
+        first = originals / "research-a.pdf"
+        alias = originals / "research-a-copy.pdf"
+        make_pdf(first, chart=True)
+        alias.write_bytes(first.read_bytes())
+        manifest = Path(self.temp_dir.name) / "manifest.json"
+        manifest.write_text(json.dumps([
+            {"process_local_path": str(path), "content_sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
+            for path in (first, alias)
+        ]))
+        sources = self.bank / "261001" / "shard_0"
+        receipt = extract_sources(originals, manifest, sources, 2)
+        dirs = require_primary_report_dirs(self.bank / "261001")
+        self.assertEqual(len(dirs), 2, "Input coverage still includes both selected files")
+        unique, aliases = unique_original_report_dirs(dirs)
+        self.assertEqual(len(unique), 1)
+        self.assertEqual(aliases[str(unique[0])][0]["source_pdf"], alias.name)
+        self.assertEqual(receipt["report_count"], 2)
+        self.assertEqual(receipt["unique_content_count"], 1)
+        counts = source_inventory_counts([{
+            "source_group": "bank_research", "source_aliases": aliases[str(unique[0])],
+        }])
+        self.assertEqual(counts, {
+            "original_source_count": 2, "summarized_content_count": 1, "duplicate_alias_count": 1,
+            "bank_original_source_count": 2, "bank_summarized_content_count": 1, "bank_duplicate_alias_count": 1,
+        })
+        copied_alias = sources / receipt["reports"][1]["markdown"]["path"]
+        copied_alias.unlink()
+        with self.assertRaises(SourceValidationError):
+            unique_original_report_dirs(dirs)
+
+    def test_native_summary_rejects_a_subset_even_without_duplicate_aliases(self) -> None:
+        import hashlib
+        import json
+        from extract_native_market_sources import extract_sources
+        from test_extract_native_market_sources import make_pdf
+
+        originals = Path(self.temp_dir.name) / "originals"
+        originals.mkdir()
+        first = originals / "research-a.pdf"
+        second = originals / "research-b.pdf"
+        make_pdf(first, chart=True)
+        make_pdf(second, chart=False)
+        manifest = Path(self.temp_dir.name) / "manifest.json"
+        manifest.write_text(json.dumps([
+            {"process_local_path": str(path), "content_sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
+            for path in (first, second)
+        ]))
+        sources = self.bank / "261001" / "shard_0"
+        extract_sources(originals, manifest, sources, 2)
+        dirs = require_primary_report_dirs(self.bank / "261001")
+        self.assertEqual(len(unique_original_report_dirs(dirs)[0]), 2)
+        with self.assertRaisesRegex(RuntimeError, "complete validated report inventory"):
+            unique_original_report_dirs(dirs[:1])
+
+    def test_mineru_sources_remain_separate_without_original_pdf_alias_receipts(self) -> None:
+        first = self.make_report(self.bank, "261001")
+        second = self.make_report(self.institutions, "261001")
+        self.assertEqual(unique_original_report_dirs([first, second]), ([first, second], {}))
 
     def test_primary_bank_date_must_contain_parsed_report_outputs(self) -> None:
         (self.bank / "260720").mkdir(parents=True)

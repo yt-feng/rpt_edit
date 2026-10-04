@@ -23,8 +23,8 @@ flowchart TD
   E --> F["Actions: Market Views synthesis and PDF"]
   F --> G["Exact PDF, original figures, private archive, public-safe commit"]
   G --> H["Verify dated live catalogue entry and PDF download"]
-  A -. "Retained cloud original-PDF backup" .-> I["Native-only backup: deployed; every page must have readable text"]
-  I -. "Complete source receipt; image-page batches currently rejected" .-> J["Separate private R2 backup handoff"]
+  A -. "Retained cloud original-PDF backup" .-> I["Actions backup: readable native text; opt-in cloud OCR for other pages"]
+  I -. "Complete source, original-page and numeric evidence" .-> J["Separate private R2 backup handoff"]
   J -. "Verified backup only" .-> F
 ```
 
@@ -124,29 +124,48 @@ counts are validated before materialization.
 ## Retained cloud backup and its current limits
 
 The original-PDF branch is a backup for Market Views. Its deployed implementation
-uses only native PDF text and original exhibit pages, makes no MinerU submission
-and runs on GitHub Actions. It preserves the failed report-notes conclusion;
+uses readable native PDF text, original exhibit pages and explicitly enabled
+cloud OCR for otherwise unsupported pages. It makes no MinerU submission and
+runs on GitHub Actions. It preserves the failed report-notes conclusion;
 WeChat and translation keep their normal completion gates. It is not the primary
 parser and does not depend on local OCR or a user's computer.
 
-The native-only backup verifies every original filename and SHA-256 against the
-selected manifest. Every page must have at least 40 readable text characters and
-each report at least 600. Textless image pages, scanned pages, encrypted or
-damaged PDFs, duplicate-content originals under different names, incomplete
-inventory and mismatched bytes reject the whole batch. The first cloud backup
-attempts rejected `261001` for duplicate contents and `261002`/`261003` for a
-Bernstein page with zero native text. This deployed backup has not restored those
-issues. Numbered source captions select original full-page
-images; uncaptioned visuals are not inferred or redrawn.
+The original backup rejected `261001` for duplicate contents and
+`261002`/`261003` for a scanned page with zero native text. The opt-in extension
+retains every exact filename and SHA-256 binding while extracting and summarizing
+identical PDF contents once. It checks readable language and table structure,
+rather than admitting opaque strings solely by character count. Encrypted or
+damaged PDFs, incomplete inventory and mismatched bytes still reject the batch.
+Unsupported pages require `--enable-ocr`; full-page Tesseract OCR uses
+`eng+chi_sim` at 300 dpi, retaining the original page image, raw transcript,
+page coordinates, model hashes and rendering provenance. An all-white page is
+accepted only with empty native text and pixel evidence.
 
-The OCR extension is preserved in a versioned
-[experimental backup patch](experiments/market-views-ocr-fallback-20261004.md). It has not been
-deployed and is not part of the active architecture. Its local tests do not prove
-cloud recovery or publication. Backup extensions must retain the exact complete
-source inventory and normal PDF acceptance gates before they can be used.
+Independent full-page and cropped numeric reads compare source positions and
+actual decimal, minus, percent and negative-parenthesis pixels. Confirmed values
+can enter source summaries; conflicting or omitted fields remain explicit
+`[数值待核对:...]` markers with private evidence. The model must not guess or
+calculate with those fields. This evidence is checked again by the PDF consumer.
+The schema-2 receipt also binds the date, producer run, executing commit and
+original Daily source run before synthesis or an existing-PDF skip. Report
+coverage distinguishes all original file aliases from unique-content summaries.
+Numbered source captions select original full-page images; uncaptioned visuals
+are not inferred or redrawn.
+
+The old eight-file experiment remains preserved as an immutable
+[experimental backup patch](experiments/market-views-ocr-fallback-20261004.md).
+The current implementation adds cloud dependencies and stronger gates. Local
+tests do not establish cloud recovery or publication; real OCR regression
+dependencies are mandatory in CI, and full actual-report quality review is
+required before enabling daily OCR backup.
 
 [`market-views-native-recovery.yml`](../.github/workflows/market-views-native-recovery.yml)
-accepts an exact `date_folder` and `expected_articles`. `source_run_id` reuses the
+accepts an exact `date_folder` and `expected_articles`, with `enable_ocr=false`
+and `generate_pdf=true` defaults. `generate_pdf=false` performs complete source
+validation and private R2 handoff without synthesis or model calls, retaining
+the handoff for quality review. Daily OCR fallback uses the separate repository
+variable `MARKET_VIEWS_OCR_BACKUP_ENABLED`; absent or false leaves OCR disabled.
+`source_run_id` reuses the
 original Daily report artifact; with no source run ID it downloads that exact
 Dropbox date and binds a fresh manifest. It does not classify or submit those
 PDFs to MinerU. A complete source receipt is checked before synthesis or an
@@ -249,3 +268,11 @@ matching cloud source and retrieval gates, exact dated PDF, original figures,
 private archive, public-safe commit and live catalogue/download are verified.
 Neither the retained native backup nor the saved OCR experiment establishes
 that delivery has been restored.
+
+Current real-source admission review checked all 54 original PDFs from producer
+`37159099752`: each hash matched its original manifest, with 54 unique contents
+and 1,029 pages. The stronger language gate classified 798 pages as readable,
+21 opaque-string pages and 210 pages with insufficient native text. Approximately
+231 pages therefore require cloud OCR. This inventory audit is not a successful
+OCR extraction. Actual cloud extraction, numeric fixture review, private handoff,
+missing dated PDF delivery and daily switch enablement remain acceptance steps.

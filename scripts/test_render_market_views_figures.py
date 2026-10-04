@@ -93,6 +93,24 @@ class RenderMarketViewsFigureTests(unittest.TestCase):
             self.assertEqual(stats["rendered_figure_ids"], ["F001"])
             self.assertGreater(output.stat().st_size, 1024)
 
+    def test_rendered_pdf_retains_original_file_coverage_without_duplicate_summaries(self) -> None:
+        from pypdf import PdfReader
+        with tempfile.TemporaryDirectory() as temp_dir:
+            summary_dir, output = self.make_summary(Path(temp_dir))
+            inputs = json.loads((summary_dir / "report_inputs.json").read_text())
+            inputs[0]["source_aliases"] = [
+                {"source_pdf": "alias-a.pdf", "content_sha256": "a" * 64, "path": "source/alias-a"},
+                {"source_pdf": "alias-b.pdf", "content_sha256": "a" * 64, "path": "source/alias-b"},
+            ]
+            write_json(summary_dir / "report_inputs.json", inputs)
+            build_pdf(summary_dir, output)
+            text = "\n".join(page.extract_text() for page in PdfReader(output).pages)
+            self.assertIn("原文件共 3 份", text)
+            self.assertIn("覆盖 1 份独立研究内容", text)
+            self.assertIn("2 份同内容原文件保留来源绑定", text)
+            stats = json.loads((summary_dir / "market_views_render_stats.json").read_text())
+            self.assertEqual(stats["rendered_figure_count"], 1)
+
     def test_rejects_selected_figure_that_cannot_be_rendered(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             summary_dir, output = self.make_summary(Path(temp_dir), broken_figure=True)
