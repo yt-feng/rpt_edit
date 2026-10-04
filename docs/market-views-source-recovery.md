@@ -149,6 +149,16 @@ The cache-only summary cannot establish a complete handoff or restored PDF.
 The new transport requires cloud canary validation before it is reported as
 working, and it cannot extend its own cutoff.
 
+Optional accepted-child mode supplies three independent inputs: the exact
+completed manual recovery run ID, reviewed provider failure-message hashes,
+and the expected complete original manifest hash. It verifies the recovery's
+main-branch workflow identity, existing controller policy and each fresh
+predecessor result/proof before selecting that run's already accepted completed
+children. Earlier children can prove an ordinal-2 predecessor but cannot become
+the selected run's output. Every child lookup disables terminal persistence;
+the seeder never creates a child, retries a parse or changes a canonical record.
+Child ZIPs use the same production cache lineage and fixed authentication cutoff.
+
 The bank source date owns the Market Views issue. Auxiliary sources use the
 latest usable date on or before that bank date; a future auxiliary date cannot
 rename or suppress the bank issue. Private handoff run IDs and report/shard
@@ -401,8 +411,27 @@ original and 450dpi field reads were `17%`; the two 600dpi crop reads were
 pixel witness was present. The numeric reader now isolates the 600dpi OCR crop
 and records its clip, policy and pixel size. The independent, wider 300dpi
 punctuation witness and requirement for three agreeing positioned reads remain
-in place, and existing immutable receipts remain compatible. Actual fixture
-acceptance and a rebuilt complete source remain separate pending checks.
+in place, and existing immutable receipts remain compatible. PR 231 merged at
+`6fd7ae49d239f53bb5678ea4f07f0d518cf29fe8`; mandatory cloud regression
+`37237898234` passed the source, numeric and real-pixel probe suites. Actual
+field probe `37238121375` then verified the October 4 `17%` field against its
+original page pixels. Probe `37238128801` verified all five October 3 table
+fixtures, including `(3.1)%`, `4.8` and the three decimal EPS values. Both
+verified their complete original inventories before recognizing those pages;
+neither is a full source handoff. Complete-source reruns remain separate:
+`37238241161` for October 4, `37238269283` for October 3, `37238287811` for
+October 1, and fresh 50-file October 2 run `37238318559`.
+
+PR 232 merged the fixed-policy manual cache seeder at
+`955ff9f6cc3ed2342d9f810873c559717424fa1e`. Actual cloud canary `37238317495`
+verified all 54 October 3 originals and all 11 accepted original groups
+(36 completed members and 18 failed members), then retrieved one complete ZIP
+of 7,848,078 bytes. Full ZIP checks, the separate immutable authentication
+receipt and standard private R2 cache readback all passed. It made one result
+GET, zero parsing POSTs and zero canonical task writes. Authentication was the
+fixed exact leaf plus two historical chain/hostname checks, explicitly not
+current PKI verification. Bulk original-result cache run `37238421286` is a
+separate step; the 18 failed members still require approved bounded recovery.
 
 Recovery is complete only after the
 matching cloud source and retrieval gates, exact dated PDF, original figures,
@@ -415,9 +444,9 @@ Current real-source admission review checked all 54 original PDFs from producer
 and 1,029 pages. The stronger language gate classified 798 pages as readable,
 21 opaque-string pages and 210 pages with insufficient native text. Approximately
 231 pages therefore require cloud OCR. This inventory audit is not a successful
-OCR extraction. Five real numeric golden fixtures are available for cloud
-quality checks, but the failed October 3 run did not reach their acceptance.
-Complete actual-report extraction and review remain outstanding.
+OCR extraction. The failed October 3 full run did not reach fixture acceptance;
+the later isolated actual-page probe passed those five fixtures. Complete
+actual-report extraction and review remain outstanding.
 Verified private handoff, missing dated PDF delivery and daily OCR switch
 enablement remain acceptance steps; `MARKET_VIEWS_OCR_BACKUP_ENABLED` remains
 false and no restored dated PDF/live delivery is claimed.

@@ -206,7 +206,16 @@ after whole-batch validation, but always marks its output as probe-only with
 no complete source handoff or production acceptance.
 Roughly 231 October 3 pages require OCR, with five real
 numeric golden fixtures available for cloud quality checks; the failed run did
-not reach their acceptance. Full extraction,
+not reach their acceptance. PR 231's isolated crop fix then passed mandatory
+cloud regression `37237898234`; real-page probes `37238121375` and
+`37238128801` accepted the October 4 `17%` field and all five October 3 table
+fixtures, respectively. These are page diagnostics, not full handoffs.
+PR 232's actual cloud cache canary `37238317495` verified all 54 October 3
+originals and their accepted task groups before retrieving one 7,848,078-byte
+ZIP with the fixed leaf identity and two historical chain checks. Complete ZIP,
+private authentication receipt and standard R2 cache readback passed with
+zero parsing POSTs. Bulk completed-result caching and the 18 failed parses are
+separate remaining steps. Full extraction,
 source review and dated PDF/live delivery are not yet accepted;
 `MARKET_VIEWS_OCR_BACKUP_ENABLED` remains false. The detailed source-only status is maintained in
 [Market Views source recovery](market-views-source-recovery.md).
