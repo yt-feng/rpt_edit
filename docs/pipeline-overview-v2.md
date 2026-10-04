@@ -167,8 +167,11 @@ reason for that difference is not established. Source-only recovery now binds
 `261001` to `36932674491` (63 files/62 unique; recovery `37232969584`), `261002`
 to the fresh 50-file listing (empty original source run; `37233084607`),
 `261003` to `37159099752` (54 files/1,029 pages; `37231899669`), and `261004`
-to verified producer `37232504334` (4 unique files; `37233077480`). October 1
-and October 2 recovery remain in progress. October 3 run `37231899669` failed at
+to verified producer `37232504334` (4 unique files; `37233077480`). October 1–3
+complete-source recovery all failed: report ordinal 10/page 9 for October 1,
+6/page 5 for October 2, and 24/page 49 for October 3. The inspected October 1
+and October 3 pages are short Q&A and disclosure-appendix dividers; October 2's
+page type remains uninspected. October 3 run `37231899669` failed at
 20:55:55 UTC during complete-source extraction, with a generic
 `SourceValidationError` at report ordinal 24, page 49; its cause is under
 investigation. Earlier successful OCR does not support attributing that message
@@ -177,15 +180,19 @@ golden-fixture acceptance was reached for that run. October 4 extraction and its
 source-contract audit succeeded: 109 pages (82 native, 27 OCR, no blank), with
 the complete handoff saved privately in R2. Its fixture acceptance was
 `not_requested`; 1,413 of 1,775 numeric mentions remained unconfirmed. Numeric
-quality approval remains pending. Prepared PR 229 adds consumer readiness and
-known-field fixture checks before synthesis, with focused suites of 12 and 17
-tests passing; deployment and runtime acceptance remain pending. This source-only success
-does not establish a generated PDF or live delivery.
+quality approval remains pending. PRs 228 and 229 are merged on main at the
+recorded `0ead65e` state. PR 229's consumer readiness and known-field fixture
+checks passed focused suites of 12 and 17 tests. Real consumer `37235097133`
+then stopped before synthesis on **`field_unresolved`** for the visual `17%`
+field, rather than a fixture-input format error. Zero model calls and zero PDFs
+were produced. The guard ran against the actual handoff; numerical acceptance
+and live delivery remain pending. A narrow short-structure OCR fix is prepared
+for the source failure class, with actual cloud OCR acceptance still pending.
 Roughly 231 October 3 pages require OCR, with five real
 numeric golden fixtures available for cloud quality checks; the failed run did
 not reach their acceptance. Full extraction,
-source review, dated PDF/live delivery and daily OCR enablement are not yet
-accepted. The detailed source-only status is maintained in
+source review and dated PDF/live delivery are not yet accepted;
+`MARKET_VIEWS_OCR_BACKUP_ENABLED` remains false. The detailed source-only status is maintained in
 [Market Views source recovery](market-views-source-recovery.md).
 
 ## Main Workflow Groups

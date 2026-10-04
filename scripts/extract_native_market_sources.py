@@ -31,10 +31,12 @@ RECEIPT_NAME = "source_receipt.json"
 MARKDOWN_NAME = "source_native_pdf.md"
 MIN_PAGE_CHARACTERS = 40
 MIN_TABLE_CHARACTERS = 24
+MIN_SPARSE_OCR_CHARACTERS = 12
 MIN_REPORT_CHARACTERS = 600
 PAGE_DPI = 300
 OCR_LANGUAGES = "eng+chi_sim"
 READABILITY_POLICY = "lexical-and-table-v2"
+SPARSE_OCR_SUBTYPE = "sparse-structural-ocr-v1"
 LATIN_WORD = re.compile(r"[A-Za-z]+(?:['’][A-Za-z]+)*")
 LONG_ASCII_RUN = re.compile(r"[A-Za-z0-9]{25,}")
 NUMBER_TOKEN = re.compile(r"(?<![A-Za-z0-9])[-+]?\d+(?:[.,]\d+)*(?:%|bps)?(?![A-Za-z0-9])")
@@ -104,7 +106,7 @@ def _is_han(character: str) -> bool:
             or 0xF900 <= number <= 0xFAFF or 0x20000 <= number <= 0x3134F)
 
 
-def page_readability(text: str) -> dict[str, Any]:
+def page_readability(text: str, *, allow_sparse_ocr: bool = False) -> dict[str, Any]:
     """Check language and table structure, rather than counting opaque glyphs.
 
     This is an extraction routing gate, not an assertion of OCR accuracy.
@@ -144,16 +146,38 @@ def page_readability(text: str) -> dict[str, Any]:
               "invalid_unicode" if bad / max(1, len(text)) > 0.02 else
               "opaque_ascii_runs" if long_ascii / max(1, count) > 0.25 else
               "missing_language_or_table_structure" if not (chinese or english or table) else "readable")
-    return {"policy": READABILITY_POLICY, "accepted": reason == "readable", "reason": reason,
+    assessment = {"policy": READABILITY_POLICY, "accepted": reason == "readable", "reason": reason,
             "characters": count, "minimum_characters": minimum, "invalid_unicode_characters": bad,
             "han_characters": han_count, "latin_characters": latin_count,
             "plausible_words": len(words), "distinct_plausible_words": distinct_words,
             "plausible_word_characters": word_characters, "long_ascii_characters": long_ascii,
             "numeric_tokens": numbers, "structure": "chinese" if chinese else "english" if english else "table" if table else None}
+    # Short section/divider pages still require complete OCR first. This branch
+    # never relaxes the native gate, replaces regular evidence, or counts audit
+    # annotations as source language. Preserve the original page and numeric
+    # evidence even when its only prose is a heading, speaker and page footer.
+    sparse_english = (distinct_words >= 3 and word_characters >= 12
+                      and word_characters / max(1, latin_count) >= 0.75)
+    han_frequencies: dict[str, int] = {}
+    for character in text:
+        if _is_han(character):
+            han_frequencies[character] = han_frequencies.get(character, 0) + 1
+    sparse_chinese = (han_count >= 4 and len(han_frequencies) >= 3
+                      and max(han_frequencies.values(), default=0) / max(1, han_count) <= 0.6
+                      and han_count / max(1, han_count + latin_count) >= 0.6)
+    if (allow_sparse_ocr and reason == "insufficient_characters"
+            and count >= MIN_SPARSE_OCR_CHARACTERS and bad == 0 and long_ascii == 0
+            and (sparse_english or sparse_chinese)):
+        assessment.update(accepted=True, reason="readable_sparse_structural_ocr",
+                          minimum_characters=MIN_SPARSE_OCR_CHARACTERS,
+                          subtype=SPARSE_OCR_SUBTYPE,
+                          structure="sparse_ocr_chinese" if sparse_chinese else "sparse_ocr_english")
+    return assessment
 
 
-def require_readable_page(text: str, source_name: str, page_number: int) -> int:
-    assessment = page_readability(text)
+def require_readable_page(text: str, source_name: str, page_number: int, *,
+                          allow_sparse_ocr: bool = False) -> int:
+    assessment = page_readability(text, allow_sparse_ocr=allow_sparse_ocr)
     count = assessment["characters"]
     if assessment["reason"] == "insufficient_characters":
         raise SourceValidationError(
@@ -220,13 +244,17 @@ def _ocr_page(page: fitz.Page, source_name: str, number: int) -> tuple[str, dict
         text = page.get_text("text", textpage=textpage, sort=True).strip()
         # Route truly unreadable pages to a rejected batch before any numeric
         # masking could make the result appear like readable Chinese text.
-        require_readable_page(text, source_name, number)
+        require_readable_page(text, source_name, number, allow_sparse_ocr=True)
         from ocr_numeric_evidence import audit_numeric_evidence
         audit = audit_numeric_evidence(
             page, text, language=OCR_LANGUAGES, tessdata=str(tessdata),
             primary_words=page.get_text("words", textpage=textpage, sort=True),
         )
         text = audit["safe_text"]
+    except SourceValidationError:
+        # A readable-language/source-contract rejection is not a missing model
+        # or engine failure. Preserve its actual cause for bounded recovery.
+        raise
     except Exception as exc:
         raise SourceValidationError(
             f"Runner OCR failed for {source_name} page {number}: {type(exc).__name__}; "
@@ -284,11 +312,12 @@ def _extract_report(pdf: Path, binding: dict[str, str], root: Path, index: int,
                         # language, before uncertain values are annotated.
                         # Numeric evidence separately rebuilds safe text and
                         # checks source positions and pixels in the consumer.
-                        require_readable_page(recognized_text, pdf.name, page_number)
+                        require_readable_page(recognized_text, pdf.name, page_number, allow_sparse_ocr=True)
                         characters = meaningful_characters(text)
                         method = "ocr"
                 total_characters += characters
-                recognized_characters = page_readability(recognized_text)["characters"]
+                recognized_readability = page_readability(recognized_text, allow_sparse_ocr=method == "ocr")
+                recognized_characters = recognized_readability["characters"]
                 recognized_total += recognized_characters
                 captions = [match.group(1).strip() for line in text.splitlines()
                             if (match := EXHIBIT_CAPTION.fullmatch(line))]
@@ -309,7 +338,7 @@ def _extract_report(pdf: Path, binding: dict[str, str], root: Path, index: int,
                     "text_characters": characters, "text_sha256": sha256_bytes(text.encode("utf-8")),
                     "text_readability": page_readability(text),
                     "recognized_text_characters": recognized_characters,
-                    "recognized_readability": page_readability(recognized_text),
+                    "recognized_readability": recognized_readability,
                     "markdown_text_begin": text_begin, "markdown_text_end": text_end,
                 }
                 if method != "native" or captions:
@@ -738,7 +767,8 @@ def _validate_sources_v2(output_dir: Path, manifest: Path, expected_reports: int
                 blank_count += 1
             else:
                 recognized_text = _ocr_primary_text(page.get("ocr")) if method == "ocr" else text
-                require_readable_page(recognized_text, binding["source_pdf"], number)
+                require_readable_page(recognized_text, binding["source_pdf"], number,
+                                      allow_sparse_ocr=method == "ocr")
                 if page.get("blank_proof") is not None:
                     raise SourceValidationError("Readable page cannot claim blank-page provenance")
                 if method == "native":
@@ -777,10 +807,11 @@ def _validate_sources_v2(output_dir: Path, manifest: Path, expected_reports: int
                     ocr_count += 1
                 if image is not None and image["sample_count"] == image["white_sample_count"]:
                     raise SourceValidationError("A fully white page cannot contain recognized report text")
-            recognized_characters = page_readability(recognized_text)["characters"]
+            recognized_readability = page_readability(recognized_text, allow_sparse_ocr=method == "ocr")
+            recognized_characters = recognized_readability["characters"]
             if (page.get("recognized_text_characters") != recognized_characters
                     or type(page.get("recognized_text_characters")) is not int
-                    or page.get("recognized_readability") != page_readability(recognized_text)):
+                    or page.get("recognized_readability") != recognized_readability):
                 raise SourceValidationError("Receipt recognized language evidence differs from the bound source transcript")
             if method != "native" and f"](pages/source_page_{number:04d}.png)" not in markdown_text:
                 raise SourceValidationError("Markdown omits the OCR or blank original page image")
