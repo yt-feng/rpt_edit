@@ -1,6 +1,7 @@
 # Draft provider report: completed API task cannot retrieve its result
 
-Status: prepared for review; not submitted.
+Status: prepared for review; not submitted. Submission permission has been
+requested and no approval has been received.
 
 Suggested destination: the official MinerU support channel or upstream issue tracker.
 
@@ -57,6 +58,14 @@ verification with code 10 at depth 0. Both received the same leaf:
 - SHA-256: `12137420c572ee3fde42af27309c8f36efdfc4d07e76dcba801ddf6bc308aeb3`.
 - The supplied intermediate remains valid through 2027-11-02; the failure is
   the expired website leaf certificate, not an expired intermediate.
+
+An independent GitHub-hosted **macOS ARM64** runner reproduced the failure at
+2026-10-04 20:53 UTC in run `37233771704`. System CA and certifi HEAD clients
+both failed strict certificate validation without an HTTP response or body
+bytes. Default and TLS 1.2 RSA handshakes received the same leaf SHA-256 above
+and the same peer-provided chain, again reporting code 10 at depth 0. The tested
+cloud result-download failure therefore also occurs on this runner OS. This
+diagnostic downloaded no ZIP and made no new parsing submission.
 
 Separately, a strict public-host handshake observed a different valid Let's
 Encrypt YR1 leaf for the same hostname, valid 2026-09-17 through 2026-12-16,
