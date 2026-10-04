@@ -22,10 +22,11 @@ The repository automates a document-processing pipeline:
 flowchart TD
   A["Dropbox and other PDF sources"] --> B["GitHub Actions: select and bind exact PDF batch"]
   B --> C["MinerU API: durable submission and original-task polling"]
-  C --> D["Retrieve completed result ZIPs; verify complete source text and figures"]
+  C --> D["Retrieve completed result ZIPs from private R2 cache or MinerU HTTPS"]
   C --> M["Explicit cloud recovery: verified transient failure, at most two failed-member child tasks"]
   M --> D
-  D --> E["Actions: generate and validate report articles"]
+  D --> N["Verify full ZIP and source/task binding; immediately persist complete ZIP in private R2"]
+  N --> E["Actions: generate and validate report articles"]
   E --> F["Private R2: complete report shard handoff"]
   F --> G["Actions: Market Views synthesis and PDF rendering"]
   G --> H["Verify exact dated PDF and original figures"]
@@ -58,6 +59,15 @@ the original records and permits bounded child tasks only for freshly verified,
 specifically approved terminal failures. The detailed contract is in
 [MinerU in-flight recovery](mineru-inflight-recovery.md).
 
+The daily Dropbox path and explicit source recovery share an immutable private
+R2 cache of complete MinerU result ZIPs. Each cache entry binds the exact original
+PDF bytes, source name, parser options and accepted task lineage; temporary
+signed URLs are not cache identities. A successful download is validated and
+persisted before report generation, so later failures and runner termination
+do not discard it. Cache reuse still requires current provider polling and the
+complete original-batch gate. An absent cache may use strict HTTPS; corrupt or
+unverifiable stored objects stop processing rather than silently falling back.
+
 These acceptance layers are separate:
 
 | Layer | Required evidence |
@@ -88,7 +98,13 @@ The 2026-10-04 cloud smoke run
 `37212761333`
 completed parsing of one new PDF but could not download its result because the
 provider CDN certificate was expired. Authentication and parsing succeeded;
-result delivery and the missing dated issues remain incomplete.
+result delivery and the missing dated issues remain incomplete. Run
+`37217880580` subsequently observed an expired certificate using both the runner
+system CA store and Requests with certifi `2026.07.22`. This is a result-CDN
+delivery problem, not evidence of rejected API credentials. Separate cloud
+workflows inspect the exact October 1-3 private R2 caches and test one fixed CDN
+HEAD from a temporary authenticated Cloudflare Worker; neither alone proves a
+complete result ZIP or final PDF has been restored.
 
 ## Main Workflow Groups
 

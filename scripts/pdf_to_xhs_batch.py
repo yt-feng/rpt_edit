@@ -8,6 +8,7 @@ import os
 import re
 import shutil
 import sys
+import tempfile
 import zipfile
 from io import BytesIO
 from pathlib import Path
@@ -46,7 +47,9 @@ from wechat_article_quality import (
 )
 from deepseek_http import deepseek_api_keys_from_env, request_with_key_fallback
 from wechat_editorial_binding import bind_generated_article
-from mineru_task_ledger import from_environment, input_sources
+from mineru_task_ledger import R2Store, digest, exact_json, from_environment, input_sources, schema_v1
+from mineru_result_cache import ResultCache, ResultCacheError
+from consume_legacy_mineru import ConsumerError, NetworkStop, download_once, safe_unzip, valid_url
 
 MINERU_BASE_URL = "https://mineru.net"
 IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp", ".bmp"}
@@ -128,6 +131,59 @@ def download_and_unzip(url: str, result_dir: Path) -> None:
     response.raise_for_status()
     with zipfile.ZipFile(BytesIO(response.content)) as zf:
         zf.extractall(result_dir)
+
+
+def result_cache_contexts(ledger, sources, results):
+    """Read original claims only, after the durable full-batch completion gate."""
+    if not isinstance(ledger.store, R2Store) or ledger.scope != 'dropbox':
+        return None, {}
+    cache = ResultCache.single_attempt(ledger.store.client, ledger.store.bucket)
+    contexts = {}
+    for path, source in sources:
+        binding = ledger.bind(path, source)
+        claim, _ = ledger.store.get('sources/' + binding['id'])
+        if (not schema_v1(claim) or not exact_json(claim.get('binding'), binding)
+                or not isinstance(claim.get('batch_key'), str)):
+            raise ResultCacheError('cache_original_claim')
+        batch, _ = ledger._read_batch(claim['batch_key'])
+        if ('recovery_parent' in batch or batch['state'] not in {'accepted', 'uploaded', 'terminal'}
+                or not batch.get('batch_id')
+                or sum(exact_json(item, binding) for item in batch['files']) != 1
+                or not isinstance(results.get(Path(path)), dict)
+                or results[Path(path)].get('data_id') != binding['id']):
+            raise ResultCacheError('cache_original_task')
+        lineage = {'batch_id': batch['batch_id'], 'batch_key': batch['key'],
+                   'parent_batch_key': batch['key'], 'data_id': binding['id'], 'child_ordinal': 0}
+        contexts[Path(path).resolve()] = (binding, lineage)
+    return cache, contexts
+
+
+def download_cached_result(pdf_path, row, raw_dir, cache, contexts):
+    context = contexts.get(Path(pdf_path).resolve())
+    if not isinstance(context, tuple) or len(context) != 2:
+        raise ResultCacheError('cache_source_context')
+    binding, lineage = context
+    raw = Path(pdf_path).read_bytes()
+    if (len(raw) != binding['size'] or digest(raw) != binding['sha256']
+            or row.get('data_id') != binding['id']):
+        raise ResultCacheError('cache_source_changed')
+    valid_url(row['full_zip_url'])
+    payload = cache.get(binding, lineage)
+    cache_hit = payload is not None
+    if not cache_hit:
+        payload = download_once(row['full_zip_url'])
+    # Never merge a new extraction into an old raw directory. Validate and
+    # persist the complete archive before releasing text to paid generation.
+    with tempfile.TemporaryDirectory(prefix='.mineru-result-', dir=raw_dir.parent) as temporary:
+        stage = Path(temporary) / 'raw'
+        safe_unzip(payload, stage)
+        if not cache_hit:
+            cache.put(binding, lineage, payload)
+        if raw_dir.is_symlink():
+            raise ResultCacheError('cache_raw_symlink')
+        if raw_dir.exists():
+            shutil.rmtree(raw_dir)
+        stage.replace(raw_dir)
 
 
 def find_markdown(result_dir: Path) -> Path | None:
@@ -823,7 +879,12 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
     raw_dir = item_dir / "mineru_raw"
     assets_dir = item_dir / "assets"
     item_dir.mkdir(parents=True, exist_ok=True)
-    download_and_unzip(result_row["full_zip_url"], raw_dir)
+    result_cache = getattr(args, '_mineru_result_cache', None)
+    if result_cache is None:
+        download_and_unzip(result_row["full_zip_url"], raw_dir)
+    else:
+        download_cached_result(pdf_path, result_row, raw_dir, result_cache,
+                               getattr(args, '_mineru_result_contexts', {}))
     markdown_path = find_markdown(raw_dir)
     if not markdown_path:
         if chart_source_only:
@@ -1023,8 +1084,9 @@ def main() -> int:
             "model": args.mineru_model, "language": args.language,
             "ocr": args.ocr.lower() == "true",
         }, mineru_tokens)
+        sources = input_sources(pdfs, input_dir, args.mineru_source_map)
         results, task_summary = ledger.run(
-            input_sources(pdfs, input_dir, args.mineru_source_map),
+            sources,
             timeout=args.poll_timeout, interval=args.poll_interval,
             queue_budget=args.mineru_no_progress_timeout,
         )
@@ -1038,6 +1100,8 @@ def main() -> int:
             log("Extraction incomplete; saved tasks retained for exact-source recovery.")
             original_failed = any(batch["failed"] for batch in task_summary.get("original_batches", []))
             return 2 if task_summary["failed"] or original_failed else 75
+
+        args._mineru_result_cache, args._mineru_result_contexts = result_cache_contexts(ledger, sources, successful_rows)
 
         summary: list[dict[str, Any]] = []
         successful_reports = 0
@@ -1060,7 +1124,11 @@ def main() -> int:
                     json.dumps(status, ensure_ascii=False, indent=2),
                     encoding="utf-8",
                 )
-                log(f"Report generation failed for {pdf_path.name}; continuing with the next PDF: {exc}")
+                log(f"Report generation failed for {pdf_path.name}: {exc}")
+                if args._mineru_result_cache is not None and isinstance(exc, (ResultCacheError, NetworkStop, ConsumerError)):
+                    # No retries, CDN fallback or later paid generation after a
+                    # failed private cache read or strict result download.
+                    return 2
             summary.append(status)
             if not status.get("error"):
                 if args.chart_source_only and status.get("chart_source_only") is True:

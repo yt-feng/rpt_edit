@@ -8,6 +8,10 @@ on:
       - scripts/test_recover_durable_mineru_sources.py
       - scripts/mineru_terminal_recovery.py
       - scripts/test_mineru_terminal_recovery.py
+      - scripts/mineru_result_cache.py
+      - scripts/test_mineru_result_cache.py
+      - scripts/pdf_to_xhs_batch.py
+      - scripts/test_mineru_daily_result_cache.py
   workflow_dispatch:
     inputs:
       source_run_id:
@@ -59,6 +63,8 @@ jobs:
         run: python3 -m pip install --retries 0 --disable-pip-version-check requests Pillow PyMuPDF
       - run: python3 -B scripts/test_mineru_terminal_recovery.py
       - run: python3 -B scripts/test_recover_durable_mineru_sources.py
+      - run: python3 -B scripts/test_mineru_result_cache.py
+      - run: python3 -B scripts/test_mineru_daily_result_cache.py
   recover:
     if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest

@@ -112,6 +112,19 @@ the private R2 handoff to Market Views. PDF rendering, original-figure checks,
 private archive, public-safe commit, and live catalogue/download acceptance are
 later independent steps; none is implied by a successful poll.
 
+`mineru_result_cache.py` persists complete validated ZIPs under
+`_workflow-cache/mineru-results/v1/dropbox/` immediately after retrieval, before
+paid generation. Both the daily Dropbox parser and source recovery use it.
+Receipts bind the full original PDF identity and original/child task lineage,
+plus ZIP byte length and SHA-256. URLs are neither cache keys nor receipt data.
+Retrieval verifies receipt metadata, binding, full ZIP bytes, CRC and Markdown;
+only a missing receipt (HTTP 404) permits a new strict HTTPS download. Conditional
+immutable writes are single-attempt and require exact readback. Other existing
+ledger clients and non-Dropbox processing routes retain their prior behavior.
+Cache hits do not replace current task GETs or bypass complete-batch admission.
+An R2 store without previously retrieved bytes cannot repair a provider CDN
+certificate or manufacture the missing result.
+
 Interrupted claiming, an unknown POST outcome, accepted-but-incomplete uploads,
 or an expired provider result require investigation of the saved batch. Do not
 delete claims or change credentials to make them retry. Historical logs alone

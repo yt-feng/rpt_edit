@@ -13,6 +13,8 @@ import zipfile
 import mineru_task_ledger as m
 import recover_durable_mineru_sources as r
 from consume_legacy_mineru import NetworkStop
+from mineru_result_cache import ResultCache, ResultCacheError
+from test_mineru_result_cache import MemoryR2
 
 
 def result_zip():
@@ -109,6 +111,80 @@ class RecoveryTests(unittest.TestCase):
         self.assertEqual(len(self.validate()['reports']), 7)
         self.assertFalse(list(self.output.rglob('*.zip')))
         self.assertFalse(list(self.output.rglob('mineru_raw')))
+    def test_persistent_cache_hit_survives_changed_signed_urls_and_broken_cdn(self):
+        cache = ResultCache(MemoryR2(), 'private-test')
+        before = {str(path.relative_to(self.store.root)): path.read_bytes() for path in self.store.root.rglob('*.json')}
+        self.recover(result_cache=cache)
+        __import__('shutil').rmtree(self.output)
+        original = self.provider.poll
+        def different_signature(batch_id, token, timeout):
+            values = original(batch_id, token, timeout)
+            for value in values:
+                if 'full_zip_url' in value: value['full_zip_url'] += '?Expires=999&Signature=changed'
+            return values
+        self.provider.poll = different_signature
+        def broken(url): raise NetworkStop('tls_certificate_expired')
+        polls = len(self.provider.polls)
+        receipt = self.recover(result_cache=cache, downloader=broken)
+        self.assertEqual((receipt['report_count'], receipt['provider_posts']), (7, 0))
+        self.assertGreater(len(self.provider.polls), polls)
+        self.assertEqual(len(self.downloads), 7)
+        self.assertEqual(before, {str(path.relative_to(self.store.root)): path.read_bytes() for path in self.store.root.rglob('*.json')})
+        self.validate()
+    def test_first_verified_zip_is_retained_when_next_cdn_download_fails(self):
+        r2 = MemoryR2(); cache = ResultCache(r2, 'private-test')
+        attempts = []
+        def partial(url):
+            attempts.append(url)
+            if len(attempts) == 2: raise NetworkStop('tls_certificate_expired')
+            return result_zip()
+        with self.assertRaises(NetworkStop): self.recover(result_cache=cache, downloader=partial)
+        self.assertFalse(self.output.exists()); self.assertEqual(self.provider.posts, [])
+        self.assertEqual(len(r2.objects), 2)
+        first = attempts[0]
+        rerun_downloads = []
+        def restored(url):
+            if url == first: self.fail('Already verified source must not use CDN again')
+            rerun_downloads.append(url); return result_zip()
+        receipt = self.recover(result_cache=cache, downloader=restored)
+        self.assertEqual(len(rerun_downloads), 6)
+        self.assertEqual((receipt['report_count'], receipt['provider_posts']), (7, 0))
+        self.validate()
+    def test_cached_bytes_never_admit_truncated_original_provider_membership(self):
+        cache = ResultCache(MemoryR2(), 'private-test'); self.recover(result_cache=cache)
+        __import__('shutil').rmtree(self.output)
+        self.provider.plans['root-2'] = ['done']
+        with self.assertRaises((r.RecoveryError, m.LedgerError)):
+            self.recover(result_cache=cache, timeout=0.01)
+        self.assertEqual(self.provider.posts, []); self.assertFalse(self.output.exists())
+    def test_corrupt_cache_never_falls_back_to_cdn_or_recovery_post(self):
+        r2 = MemoryR2(); cache = ResultCache(r2, 'private-test'); self.recover(result_cache=cache)
+        __import__('shutil').rmtree(self.output)
+        first_binding = self.originals[0]['files'][0]
+        lineage = r.TerminalRecovery._lineage({'data_id': first_binding['id']}, self.originals[0], self.originals[0], 0)['_recovery_lineage']
+        from mineru_result_cache import identity
+        key = cache.receipt_key(identity(first_binding, lineage))
+        r2.objects[key]['Body'] += b'tampered'
+        def no_download(url): self.fail('Corrupt cache must stop, not download again')
+        with self.assertRaises(ResultCacheError): self.recover(result_cache=cache, downloader=no_download)
+        self.assertEqual(self.provider.posts, []); self.assertFalse(self.output.exists())
+    def test_failed_members_only_children_can_populate_distinct_cache_entries(self):
+        cache = ResultCache(MemoryR2(), 'private-test')
+        self.provider.plans['root-1'] = ['done', 'failed', 'done']
+        receipt = self.recover(result_cache=cache)
+        self.assertEqual(receipt['provider_posts'], 1)
+        self.assertEqual(len(cache.client.objects), 14)
+        __import__('shutil').rmtree(self.output)
+        def broken(url): raise NetworkStop('tls_certificate_expired')
+        receipt = self.recover(result_cache=cache, downloader=broken)
+        self.assertEqual(receipt['provider_posts'], 0)
+        self.assertEqual(len(self.provider.posts), 1); self.validate()
+    def test_fresh_result_lineage_is_bound_before_persistent_cache_write(self):
+        __import__('shutil').rmtree(self.store.root / 'sources')
+        cache = ResultCache(MemoryR2(), 'private-test')
+        receipt = self.recover(result_cache=cache, source_run_id='', allow_fresh=True)
+        self.assertEqual((receipt['report_count'], receipt['provider_posts']), (7, 2))
+        self.assertEqual(len(cache.client.objects), 14); self.validate()
     def test_failed_members_only_are_recovered_after_all_original_gets_and_zip_downloads(self):
         self.provider.plans['root-1'] = ['done', 'failed', 'done']
         self.provider.plans['root-2'] = ['done', 'done', 'failed', 'done']

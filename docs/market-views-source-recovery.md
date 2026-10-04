@@ -17,8 +17,9 @@ computer is not a production dependency. The repository architecture map is
 flowchart TD
   A["Actions: select exact dated original PDFs"] --> B["MinerU API and durable R2 task ledger"]
   B --> C["All original task members completed"]
-  C --> D["Retrieve result ZIPs and validate source text/figures"]
-  D --> E["Generate complete report articles and private R2 shards"]
+  C --> D["Resolve exact result ZIP from private R2 cache or MinerU HTTPS"]
+  D --> K["Validate complete ZIP and persist verified bytes in private R2"]
+  K --> E["Generate complete report articles and private R2 shards"]
   E --> F["Actions: Market Views synthesis and PDF"]
   F --> G["Exact PDF, original figures, private archive, public-safe commit"]
   G --> H["Verify dated live catalogue entry and PDF download"]
@@ -47,7 +48,7 @@ Changing a key cannot fix a shared result-download certificate.
 The explicit cloud recovery entry is
 [`market-views-mineru-recovery.yml`](../.github/workflows/market-views-mineru-recovery.yml).
 It verifies the exact original artifact, manifest, PDF bytes and original task
-membership. Every completed original ZIP must be retrieved before retrying a
+membership. Every completed original ZIP must be retrieved and verified before retrying a
 failed member. A reviewed failure code or exact message hash authorizes at most
 two durable child attempts; only failed members are submitted. Original task and
 source records retain their original identity and credential. Ambiguous
@@ -82,6 +83,29 @@ inspection identity are documented in
 [MinerU in-flight recovery](mineru-inflight-recovery.md).
 Public failure counts and message hashes do not establish a provider error's
 cause.
+
+## Private R2 result persistence
+
+The private result cache in `scripts/mineru_result_cache.py` is shared by the
+R2-backed Dropbox parser and the exact-task recovery path. Its immutable identity
+binds the frozen PDF bytes, source options and original or recovery-child task.
+It does not use a signed result URL as the identity. A successful complete ZIP is
+validated, saved with its SHA-256 and read back immediately, before article or PDF
+generation. A later report failure therefore retains the earlier source result.
+Reruns still verify current provider task membership and the complete original
+batch; a matching cache hit supplies the ZIP without another CDN download.
+Corrupt or mismatched cache evidence stops processing rather than substituting
+another source. Raw ZIPs remain private and outside public handoff artifacts.
+
+R2 is also checked for existing source-generation checkpoints and exact final
+PDFs through `market-views-r2-cache-inspect.yml`. A checkpoint identity and archive
+hash are not by themselves proof that it matches the current original batch;
+complete source bindings must be verified before reuse. The independent
+`mineru-cloudflare-tls-probe.yml` creates an authenticated temporary Worker to
+make one strict HTTPS HEAD request to the public MinerU result CDN. It does not
+download a ZIP or mirror it into R2. A valid HTTP response identifies another
+potential cloud retrieval path; invalid-certificate or fetch failure still
+requires further resolution before any missing source can enter R2.
 
 The bank source date owns the Market Views issue. Auxiliary sources use the
 latest usable date on or before that bank date; a future auxiliary date cannot
@@ -150,6 +174,19 @@ authentication, upload and parsing success for that task. It also reproduces the
 result-delivery blocker independently of the historical failures. The smoke task
 is retained durably; rerunning the same run reuses its accepted task instead of
 submitting another PDF. Complete dated Market Views delivery is still unverified.
+
+The deployed exact-source recovery was exercised in run `37214015946` using the
+54 selected originals from Daily producer `37159099752`. Its source recovery
+step stopped with `tls_certificate_expired` before reaching child submission or
+PDF generation. The bounded recovery code was merged in PR 220; the original
+36 completed results therefore still require valid result delivery.
+
+PR 221 was merged after ordinary GitHub access resumed. Cloud comparison run
+`37217880580` at 2026-10-04 16:45 UTC independently checked the public result-CDN
+root using the system CA store and certifi `2026.07.22`. Both strict clients
+reported `tls_certificate_expired`, with no HTTP response or body bytes. This
+rules out a failure confined to the older system trust store; it does not prove
+that every CDN edge serves the same certificate or restore any dated issue.
 
 Saved Dropbox inventory from 2026-10-03 22:34 UTC contained 63 PDFs for `261001`,
 4 for `261002` and 54 for `261003`. Those counts describe original inputs, not
