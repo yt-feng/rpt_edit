@@ -676,10 +676,14 @@ def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
             image = image_flowable(image_path, max_width=15.2 * cm, max_height=8.2 * cm)
             if not image:
                 continue
-            story.append(Spacer(1, 0.12 * cm))
-            story.append(image)
             caption = f"{figure.get('label', 'Figure')} - {str(figure.get('context', ''))}"
-            story.append(Paragraph(clean_text(caption), styles["PortalCaption"]))
+            # A full original page can fit at the bottom while its wrapped
+            # caption cannot. Move the whole exhibit to the next page instead.
+            story.append(KeepTogether([
+                Spacer(1, 0.12 * cm),
+                image,
+                Paragraph(clean_text(caption), styles["PortalCaption"]),
+            ]))
             if str(raw_figure_id) not in rendered_figure_ids:
                 rendered_figure_ids.append(str(raw_figure_id))
             rendered += 1

@@ -9,6 +9,7 @@ import unittest
 from pathlib import Path
 
 from PIL import Image
+import fitz
 
 from render_market_views_reportlab_pdf import build_pdf
 
@@ -117,6 +118,58 @@ class RenderMarketViewsFigureTests(unittest.TestCase):
 
             with self.assertRaisesRegex(RuntimeError, "not rendered"):
                 build_pdf(summary_dir, output)
+
+    def test_portrait_original_pages_keep_wrapped_captions_on_the_same_page(self) -> None:
+        """Three 1224x1584 originals can fit while the last caption cannot."""
+        with tempfile.TemporaryDirectory() as temp_dir:
+            summary_dir, output = self.make_summary(Path(temp_dir))
+            figures = []
+            for index in range(1, 5):
+                relative = f"figures/portrait_{index}.png"
+                Image.new("RGB", (1224, 1584), (index * 40, 70, 110)).save(summary_dir / relative)
+                figures.append({
+                    "figure_id": f"F{index:03d}", "report_id": "R001", "figure_type": "source_exhibit",
+                    "label": f"Source-page-{index}", "latex_path": relative,
+                    "context": ("Original report evidence" if index != 3 else
+                                "MHCV industry is on an upcycle since H2FY26, with demand holding intact; "
+                                "CV operators are passing through price hikes relatively faster; "
+                                "original tables and source footnotes remain available for review."),
+                })
+            write_json(summary_dir / "figure_candidates.json", figures)
+            summary = json.loads((summary_dir / "market_views_structured.json").read_text())
+            section = summary["bank_roundup"]["sections"][0]
+            section["figure_ids"] = [row["figure_id"] for row in figures]
+            section["bank_views"][0]["view"] = (
+                "Revenue margins and financing conditions change across the cycle. " * 44
+            )
+            write_json(summary_dir / "market_views_structured.json", summary)
+            build_pdf(summary_dir, output)
+            with fitz.open(output) as document:
+                seen = []
+                image_count = 0
+                for page in document:
+                    images = page.get_image_info()
+                    image_count += len(images)
+                    for block in page.get_text("blocks"):
+                        if block[6] != 0 or "Source-page-" not in block[4]:
+                            continue
+                        label = next(row["label"] for row in figures if row["label"] in block[4])
+                        seen.append(label)
+                        preceding = [fitz.Rect(row["bbox"]) for row in images
+                                     if 0 <= block[1] - row["bbox"][3] < 8]
+                        self.assertEqual(len(preceding), 1, f"{label} must immediately follow its full image on the same page")
+                        self.assertTrue(page.rect.contains(preceding[0]))
+                        self.assertTrue(page.rect.contains(fitz.Rect(block[:4])))
+                        self.assertLess(block[3], page.rect.height - 42,
+                                        "Caption must not overlap the footer")
+                        if label == "Source-page-3":
+                            tail = page.search_for("original tables and source footnotes remain available for review.")
+                            self.assertTrue(tail, "The complete wrapped caption stays with its original page image")
+                            self.assertGreater(tail[-1].y1, block[3], "Exercise a caption that wraps beyond its first line")
+                self.assertEqual(sorted(seen), sorted(row["label"] for row in figures))
+                self.assertEqual(image_count, 5, "All four originals and the existing ending image remain")
+            stats = json.loads((summary_dir / "market_views_render_stats.json").read_text())
+            self.assertEqual(stats["rendered_figure_ids"], ["F001", "F002", "F003", "F004"])
 
 
 if __name__ == "__main__":

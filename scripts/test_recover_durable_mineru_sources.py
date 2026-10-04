@@ -378,10 +378,10 @@ class RecoveryTests(unittest.TestCase):
         downloads = []
         def unavailable_child(url):
             downloads.append(url)
-            raise NetworkStop('tls_certificate_expired')
+            raise NetworkStop('network_stop')
         with self.assertRaises(m.LedgerError) as stopped:
             self.recover(result_cache=cache, downloader=unavailable_child)
-        self.assertEqual(r.safe_ledger_error_category(stopped.exception), 'ledger_child_result_tls_certificate_expired')
+        self.assertEqual(r.safe_ledger_error_category(stopped.exception), 'ledger_child_result_network_stop')
         self.assertEqual(len(self.provider.posts), 1)
         self.assertEqual(len(downloads), 1)
         self.assertIn('child-1', downloads[0])
@@ -390,6 +390,83 @@ class RecoveryTests(unittest.TestCase):
         self.assertEqual(child['state'], 'terminal')
         self.assertEqual(child['batch_id'], 'child-1')
         self.assertFalse((self.output / r.RECEIPT).exists())
+
+    def cached_failed_parents(self):
+        cache = ResultCache(MemoryR2(), 'private-test')
+        self.provider.plans['root-1'] = ['done', 'failed', 'done']
+        self.provider.plans['root-2'] = ['failed', 'done', 'done', 'done']
+        for root in self.originals:
+            states = self.provider.plans[root['batch_id']]
+            for binding, state in zip(root['files'], states):
+                if state == 'failed':
+                    continue
+                lineage = {'batch_id': root['batch_id'], 'batch_key': root['key'],
+                           'parent_batch_key': root['key'], 'data_id': binding['id'], 'child_ordinal': 0}
+                cache.put(binding, lineage, result_zip())
+        return cache
+
+    def test_exact_expired_done_child_zip_is_deferred_across_groups_but_no_handoff_is_admitted(self):
+        cache = self.cached_failed_parents()
+        downloads = []
+        def expired(url):
+            downloads.append(url)
+            raise NetworkStop('tls_certificate_expired')
+        with self.assertRaisesRegex(r.RecoveryError, '^ledger_child_result_tls_certificate_expired$'):
+            self.recover(result_cache=cache, downloader=expired)
+        self.assertEqual(len(self.provider.posts), 2)
+        self.assertEqual(len(downloads), 2)
+        for root in self.originals:
+            controller = self.store.get('recoveries/' + root['key'].split('/')[1])[0]
+            self.assertEqual(len(controller['children']), 1)
+            child = self.store.get(controller['children'][0]['key'])[0]
+            self.assertEqual(child['state'], 'terminal')
+        self.assertFalse(self.output.exists())
+        self.assertFalse(list(self.root.glob('.mineru-market-source-*')))
+        # An unchanged rerun polls the same accepted children, with no new POST.
+        with self.assertRaisesRegex(r.RecoveryError, 'ledger_child_result_tls_certificate_expired'):
+            self.recover(result_cache=cache, downloader=expired)
+        self.assertEqual(len(self.provider.posts), 2)
+        self.assertEqual(len(downloads), 4)
+
+    def test_non_expiry_child_failure_stops_before_another_original_group_can_post(self):
+        for error in (NetworkStop('network_stop'), NetworkStop('tls_certificate_expired PRIVATE'),
+                      ValueError('PRIVATE unknown download failure')):
+            cache = self.cached_failed_parents()
+            with self.subTest(kind=type(error).__name__), self.assertRaises(m.LedgerError):
+                self.recover(result_cache=cache, downloader=lambda url: (_ for _ in ()).throw(error))
+            self.assertEqual(len(self.provider.posts), 1)
+            self.assertIsNone(self.store.get('recoveries/' + '2' * 32)[0])
+            self.assertFalse(self.output.exists())
+
+    def test_original_expiry_is_immediate_and_cannot_authorize_child_submission(self):
+        cache = self.cached_failed_parents()
+        # Only cached originals can pass. Removing one original's cache must
+        # stop in the original verification phase, before any recovery POST.
+        cache.client.objects.clear()
+        with self.assertRaises(NetworkStop):
+            self.recover(result_cache=cache, downloader=lambda url: (_ for _ in ()).throw(
+                NetworkStop('tls_certificate_expired')))
+        self.assertEqual(self.provider.posts, [])
+        self.assertFalse(self.output.exists())
+
+    def test_source_handoff_requires_all_deferred_child_bytes_on_later_cache_reuse(self):
+        cache = self.cached_failed_parents()
+        with self.assertRaises(r.RecoveryError):
+            self.recover(result_cache=cache, downloader=lambda url: (_ for _ in ()).throw(
+                NetworkStop('tls_certificate_expired')))
+        for root in self.originals:
+            controller = self.store.get('recoveries/' + root['key'].split('/')[1])[0]
+            child = self.store.get(controller['children'][0]['key'])[0]
+            for binding in child['files']:
+                lineage = {'batch_id': child['batch_id'], 'batch_key': child['key'],
+                           'parent_batch_key': root['key'], 'data_id': binding['id'], 'child_ordinal': 1}
+                cache.put(binding, lineage, result_zip())
+        def forbidden(url):
+            raise AssertionError('All originals and accepted children must use the exact cache')
+        receipt = self.recover(result_cache=cache, downloader=forbidden)
+        self.assertEqual(receipt['report_count'], 7)
+        self.assertEqual(len(self.provider.posts), 2)
+        self.validate()
     def test_workflow_dispatch_fixes_private_handoff_and_waits_before_cleanup(self):
         workflow = Path(__file__).resolve().parents[1] / '.github/workflows/market-views-mineru-recovery.yml'
         text = workflow.read_text()

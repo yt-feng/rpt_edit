@@ -48,8 +48,58 @@ NUMERIC = re.compile(
 )
 
 
+GEOMETRY_FLAGS = (
+    "policy_matches", "dpi_matches", "clip_valid", "clip_matches", "size_valid", "size_matches",
+    "field_count_valid", "input_hash_valid",
+)
+
+
+def safe_numeric_geometry_diagnostics(value: Any) -> dict[str, Any] | None:
+    """Project crop failures without copying source words or engine output."""
+    if not isinstance(value, dict) or type(value.get("schema")) is not int or value["schema"] != 1:
+        return None
+    output: dict[str, Any] = {"schema": 1}
+    if isinstance(value.get("record_id"), str) and re.fullmatch(r"n[0-9]{4}", value["record_id"]):
+        output["record_id"] = value["record_id"]
+    if type(value.get("psm")) is int and value["psm"] in {6, 11}:
+        output["psm"] = value["psm"]
+    for key in GEOMETRY_FLAGS:
+        if type(value.get(key)) is bool:
+            output[key] = value[key]
+    for key in ("field_bbox", "page_bounds", "expected_clip_bbox", "actual_clip_bbox"):
+        box = value.get(key)
+        if (isinstance(box, list) and len(box) == 4
+                and all(type(item) in (int, float) and math.isfinite(item) and 0 <= item <= 100_000 for item in box)
+                and box[2] > box[0] and box[3] > box[1]):
+            output[key] = list(box)
+    for key in ("expected_pixel_size", "actual_pixel_size"):
+        size = value.get(key)
+        if isinstance(size, list) and len(size) == 2 and all(type(item) is int and 0 <= item <= 100_000 for item in size):
+            output[key] = list(size)
+    for key in ("dpi", "field_count"):
+        if type(value.get(key)) is int and 0 <= value[key] <= 2500:
+            output[key] = value[key]
+    version = value.get("pymupdf_version")
+    if isinstance(version, str) and len(version) <= 32 and re.fullmatch(r"[0-9]+\.[0-9]+\.[0-9]+", version):
+        output["pymupdf_version"] = version
+    return output
+
+
 class NumericEvidenceError(ValueError):
     """Numeric source evidence is incomplete, inconsistent or unavailable."""
+
+    def __init__(self, message: str, *, diagnostics: dict[str, Any] | None = None):
+        super().__init__(message)
+        self.diagnostics = safe_numeric_geometry_diagnostics(diagnostics)
+
+
+def safe_geometry_diagnostics(error_or_value: Any) -> dict[str, Any] | None:
+    """Reproject module errors or a forwarded public-safe geometry object."""
+    if isinstance(error_or_value, NumericEvidenceError):
+        error_or_value = error_or_value.diagnostics
+    elif isinstance(error_or_value, BaseException):
+        error_or_value = getattr(error_or_value, "geometry_diagnostics", None)
+    return safe_numeric_geometry_diagnostics(error_or_value)
 
 
 def _sha(raw: bytes) -> str:
@@ -540,14 +590,28 @@ def validate_numeric_evidence(safe_text: str, evidence: dict[str, Any], image_pi
         expected_size = _ocr_crop_pixel_size(expected)
         for read in reads[1:]:
             clip, size = read.get("source_clip_bbox"), read.get("crop_pixel_size")
-            if (read.get("crop_policy") != OCR_CROP_POLICY or type(read.get("dpi")) is not int or read["dpi"] != CROP_DPI
-                    or not isinstance(clip, list) or len(clip) != 4
-                    or any(type(value) not in (int, float) or not math.isfinite(value) for value in clip) or clip != expected
-                    or not isinstance(size, list) or len(size) != 2 or any(type(value) is not int for value in size) or size != expected_size
-                    or type(read.get("field_count")) is not int or not 0 <= read["field_count"] <= MAX_FIELDS
-                    or not isinstance(read.get("input_pixel_sha256"), str)
-                    or not re.fullmatch(r"[a-f0-9]{64}", read["input_pixel_sha256"])):
-                raise NumericEvidenceError("Numeric crop geometry differs from its positioned source field")
+            checks = {
+                "policy_matches": read.get("crop_policy") == OCR_CROP_POLICY,
+                "dpi_matches": type(read.get("dpi")) is int and read["dpi"] == CROP_DPI,
+                "clip_valid": (isinstance(clip, list) and len(clip) == 4
+                               and all(type(value) in (int, float) and math.isfinite(value) for value in clip)),
+                "clip_matches": clip == expected,
+                "size_valid": isinstance(size, list) and len(size) == 2 and all(type(value) is int for value in size),
+                "size_matches": size == expected_size,
+                "field_count_valid": type(read.get("field_count")) is int and 0 <= read["field_count"] <= MAX_FIELDS,
+                "input_hash_valid": (isinstance(read.get("input_pixel_sha256"), str)
+                                     and re.fullmatch(r"[a-f0-9]{64}", read["input_pixel_sha256"]) is not None),
+            }
+            if not all(checks.values()):
+                raise NumericEvidenceError("Numeric crop geometry differs from its positioned source field", diagnostics={
+                    "schema": 1, "record_id": record.get("id"),
+                    "psm": 6 if read.get("method") == "source-crop-psm-6" else 11,
+                    "field_bbox": record.get("bbox"), "page_bounds": [0, 0, *evidence["page_size_points"]],
+                    "expected_clip_bbox": expected, "actual_clip_bbox": clip,
+                    "expected_pixel_size": expected_size, "actual_pixel_size": size,
+                    "dpi": read.get("dpi"), "field_count": read.get("field_count"),
+                    "pymupdf_version": fitz.VersionBind, **checks,
+                })
             if record.get("status") in {"verified", "corrected"} and read["field_count"] != 1:
                 raise NumericEvidenceError("Numeric crop borrowed multiple source fields")
         if reads[1]["input_pixel_sha256"] != reads[2]["input_pixel_sha256"]:

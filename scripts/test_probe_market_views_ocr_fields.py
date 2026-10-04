@@ -170,6 +170,23 @@ class FieldProbeTests(unittest.TestCase):
         self.assertEqual(summary["category"], "page_ocr_or_numeric_validation_failed")
         self.assertNotIn("PRIVATE", json.dumps(summary))
 
+    def test_geometry_failure_forwards_only_bounded_position_diagnostics(self):
+        diagnostic = {"schema": 1, "record_id": "n0001", "psm": 6,
+                      "size_matches": False,
+                      "expected_pixel_size": [120, 40], "actual_pixel_size": [121, 40],
+                      "private_source_name": "PRIVATE", "url": "https://PRIVATE.invalid"}
+        error = probe.native.SourceValidationError("PRIVATE source", category="numeric_crop_geometry_mismatch",
+                                                   geometry_diagnostics=diagnostic)
+        with mock.patch.object(probe.native, "_ocr_page", side_effect=error):
+            self.assertEqual(self.cli(), 2)
+        summary = json.loads(self.summary.read_text())
+        self.assertEqual(summary["geometry_diagnostics"]["actual_pixel_size"], [121, 40])
+        self.assertNotIn("PRIVATE", json.dumps(summary))
+
+    def test_other_failure_categories_cannot_smuggle_geometry_payload(self):
+        result = probe.failure_summary("ocr_engine_failed", {"schema": 1, "psm": 6})
+        self.assertNotIn("geometry_diagnostics", result)
+
     def test_wrong_date_and_count_are_rejected_before_any_ocr(self):
         self.assert_rejected_before_ocr("manifest_count_or_binding_invalid", expected=2)
         self.rows[0]["dropbox_path"] = "/zip_backup/261003/261004/PRIVATE-REPORT-TITLE.pdf"

@@ -331,6 +331,28 @@ class NativeMarketSourcesTests(unittest.TestCase):
         self.assertFalse(self.output.exists())
         self.assertTrue((self.input / "numeric-rejection.pdf").is_file())
 
+    def test_numeric_geometry_diagnostics_survive_source_error_without_private_prose(self) -> None:
+        from ocr_numeric_evidence import NumericEvidenceError
+        self.select("numeric-geometry.pdf")
+        self.append_sparse_page("numeric-geometry.pdf", "Disclosure Appendix\nResearch\n49")
+        models = self.root / "geometry-fixture-tessdata"
+        models.mkdir()
+        for language in native.OCR_LANGUAGES.split("+"):
+            (models / f"{language}.traineddata").write_bytes(b"fixture model identity")
+        error = NumericEvidenceError("Numeric crop geometry differs from its positioned source field",
+            diagnostics={"schema": 1, "psm": 6, "size_matches": False,
+                         "expected_pixel_size": [120, 40], "actual_pixel_size": [121, 40],
+                         "private_source_name": "PRIVATE"})
+        with patch.object(fitz, "get_tessdata", return_value=str(models)), \
+                patch.object(fitz.Page, "get_textpage_ocr", lambda page, **kwargs: page.get_textpage()), \
+                patch("ocr_numeric_evidence.audit_numeric_evidence", side_effect=error):
+            with self.assertRaises(native.SourceValidationError) as failure:
+                self.extract(enable_ocr=True)
+        self.assertEqual(failure.exception.geometry_diagnostics["actual_pixel_size"], [121, 40])
+        self.assertFalse(failure.exception.geometry_diagnostics["size_matches"])
+        self.assertNotIn("PRIVATE", json.dumps(failure.exception.geometry_diagnostics))
+        self.assertFalse(self.output.exists())
+
     def test_model_discovery_and_primary_engine_failures_have_distinct_safe_categories(self) -> None:
         with fitz.open() as document:
             page = document.new_page()

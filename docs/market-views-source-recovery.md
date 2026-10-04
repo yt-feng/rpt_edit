@@ -470,3 +470,38 @@ actual-report extraction and review remain outstanding.
 Verified private handoff, missing dated PDF delivery and daily OCR switch
 enablement remain acceptance steps; `MARKET_VIEWS_OCR_BACKUP_ENABLED` remains
 false and no restored dated PDF/live delivery is claimed.
+## 2026-10-04 cloud delivery follow-through
+
+The original October 3 result ZIP cache is complete: 36 original DONE results
+were fully downloaded, validated and reread from private R2. Two already
+accepted recovery-child results were subsequently cached with the same bounded
+manual certificate identity policy. This does not prove normal current-PKI
+download recovery, nor does it admit an incomplete source batch.
+
+During manual recovery only, a terminal accepted child whose sole result
+download failure is the exact `tls_certificate_expired` category may be retained
+while the remaining authorized original groups continue. Other network errors,
+original-result failures, unknown errors, and ZIP/cache/ledger validation errors
+still stop immediately. An outstanding child ZIP prevents all complete-source
+receipts and downstream model/PDF generation. A later run consumes verified R2
+cache entries and reuses accepted child tasks without duplicate submissions.
+
+The October 4 cloud OCR producer `37238241161` passed the complete four-original
+source contract and the real 17-percent numeric fixture. PDF consumer
+`37239371856` archived a private PDF and committed its public-safe counterpart
+to main. The public file has 14 pages and nine source-page images; visual QA
+found one caption separated from its image, addressed by grouping each image and
+caption as one pagination unit. Rebuilding and live delivery remain separate
+acceptance steps.
+
+The read-only live inspection workflow verifies requested dates' private PDF
+bytes and index metadata in full, compares the public KCDesk list, and confirms
+the anonymous membership gate. It never claims that a customer-authenticated
+download was tested. The original/private and sanitized/public PDF hashes are
+distinct identities and are not assumed interchangeable.
+
+The exact October 3 semicap first-page OCR probe reports
+`numeric_crop_geometry_mismatch`. Bounded geometry diagnostics preserve only
+positions, pixel dimensions, strict check booleans, record ID and renderer
+version so a subsequent cloud probe can identify the mismatch without exposing
+report prose, names, tokens or URLs. No numeric acceptance tolerance was relaxed.

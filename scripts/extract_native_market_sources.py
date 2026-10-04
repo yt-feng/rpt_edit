@@ -52,9 +52,10 @@ EXHIBIT_CAPTION = re.compile(
 class SourceValidationError(ValueError):
     """The complete source contract is not satisfied."""
 
-    def __init__(self, message: str, *, category: str | None = None):
+    def __init__(self, message: str, *, category: str | None = None, geometry_diagnostics=None):
         super().__init__(message)
         self.category = category
+        self.geometry_diagnostics = geometry_diagnostics
 
 
 # Only these exact engine messages may become public diagnostic categories.
@@ -319,7 +320,7 @@ def _ocr_page(page: fitz.Page, source_name: str, number: int) -> tuple[str, dict
     # language. This source-contract check is not a missing-engine diagnosis.
     require_readable_page(text, source_name, number, allow_sparse_ocr=True)
     try:
-        from ocr_numeric_evidence import NumericEvidenceError, audit_numeric_evidence
+        from ocr_numeric_evidence import NumericEvidenceError, audit_numeric_evidence, safe_geometry_diagnostics
     except ImportError as exc:
         raise SourceValidationError(f"Runner OCR support unavailable at page {number}: ocr_numeric_support_missing",
                                     category="ocr_numeric_support_missing") from exc
@@ -332,7 +333,7 @@ def _ocr_page(page: fitz.Page, source_name: str, number: int) -> tuple[str, dict
     except NumericEvidenceError as exc:
         category = _numeric_failure_category(exc)
         raise SourceValidationError(f"Runner OCR numeric evidence rejected at page {number}: {category}",
-                                    category=category) from exc
+                                    category=category, geometry_diagnostics=safe_geometry_diagnostics(exc)) from exc
     except SourceValidationError:
         # A readable-language/source-contract rejection is not a missing model
         # or engine failure. Preserve its actual cause for bounded recovery.
