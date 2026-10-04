@@ -23,6 +23,8 @@ flowchart TD
   A["Dropbox and other PDF sources"] --> B["GitHub Actions: select and bind exact PDF batch"]
   B --> C["MinerU API: durable submission and original-task polling"]
   C --> D["Retrieve completed result ZIPs; verify complete source text and figures"]
+  C --> M["Explicit cloud recovery: verified transient failure, at most two failed-member child tasks"]
+  M --> D
   D --> E["Actions: generate and validate report articles"]
   E --> F["Private R2: complete report shard handoff"]
   F --> G["Actions: Market Views synthesis and PDF rendering"]
@@ -37,8 +39,8 @@ flowchart TD
 The solid path is the primary architecture. The dashed path is a cloud backup
 for Market Views, not a replacement for MinerU or a way to mark failed report
 generation successful. Its deployed native-only parser cannot recover a batch
-containing textless image pages. Local OCR changes were saved as an experimental
-patch and have not been deployed; no OCR recovery is claimed. See
+containing textless image pages. The OCR cloud-backup extension is saved as a
+versioned experimental patch and has not been deployed; no OCR recovery is claimed. See
 [Market Views source recovery](market-views-source-recovery.md) for the backup
 limits and incident evidence.
 
@@ -51,7 +53,9 @@ private R2 ledger. A new submission may move to the next configured credential
 only after an explicit authentication rejection without any acceptance
 acknowledgement. Accepted tasks always keep their original credential and batch
 ID. Timeouts, failed parsing, polling errors and ambiguous acknowledgements do
-not authorize another submission. The detailed contract is in
+not by themselves authorize another submission. Explicit cloud recovery retains
+the original records and permits bounded child tasks only for freshly verified,
+specifically approved terminal failures. The detailed contract is in
 [MinerU in-flight recovery](mineru-inflight-recovery.md).
 
 These acceptance layers are separate:
@@ -74,7 +78,17 @@ be read before asserting current API health; a ZIP prefix is not a complete
 download. The existing durable-task inspector and private response receipts are
 documented in
 [MinerU in-flight recovery](mineru-inflight-recovery.md). A green diagnostic job,
-a credential page, or a sibling workflow is not PDF delivery evidence.
+a credential page, or a sibling workflow is not PDF delivery evidence. The
+[one-page cloud smoke test](../.github/workflows/mineru-api-smoke.yml) verifies
+new parsing and complete ZIP content separately. The retained OCR experiment is
+[versioned here](experiments/market-views-ocr-fallback-20261004.md) and remains
+undeployed.
+
+The 2026-10-04 cloud smoke run
+`37212761333`
+completed parsing of one new PDF but could not download its result because the
+provider CDN certificate was expired. Authentication and parsing succeeded;
+result delivery and the missing dated issues remain incomplete.
 
 ## Main Workflow Groups
 

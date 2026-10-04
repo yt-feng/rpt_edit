@@ -18,10 +18,10 @@ on:
         required: false
         default: ""
       source_handoff_kind:
-        description: "Private source: xhs or validated native-pdf recovery"
+        description: "Private source: xhs, validated original-PDF backup, or MinerU recovery"
         required: true
         type: choice
-        options: [xhs, native-pdf]
+        options: [xhs, native-pdf, mineru-recovery]
         default: xhs
       source_artifact_run_id:
         description: "Historical Actions run containing final-dropbox-macro-shard artifacts"
@@ -65,6 +65,7 @@ env:
   PYTHONUNBUFFERED: "1"
   PRIVATE_HANDOFF_ROOT: "_private-workflow-handoff/xhs"
   PRIVATE_MARKET_SOURCES_ROOT: "_private-workflow-handoff/market-sources"
+  PRIVATE_MINERU_SOURCES_ROOT: "_private-workflow-handoff/mineru-market-sources"
 
 concurrency:
   group: market-views-daily-pdf
@@ -126,9 +127,9 @@ jobs:
           done
           case "$SOURCE_HANDOFF_KIND" in
             xhs) ;;
-            native-pdf)
+            native-pdf|mineru-recovery)
               if [ -z "$SOURCE_HANDOFF_RUN_ID" ] || [ "$EXPECTED_SHARDS" != "1" ] || ! [[ "$EXPECTED_ARTICLES" =~ ^[1-9][0-9]*$ ]]; then
-                echo "Native PDF recovery requires its original run, one validated shard and an exact report count." >&2
+                echo "Source recovery requires its original run, one validated shard and an exact report count." >&2
                 exit 1
               fi ;;
             *) echo "Unsupported source handoff kind." >&2; exit 1 ;;
@@ -184,6 +185,8 @@ jobs:
           SOURCE_PREFIX="$PRIVATE_HANDOFF_ROOT"
           if [ "$SOURCE_HANDOFF_KIND" = "native-pdf" ]; then
             SOURCE_PREFIX="$PRIVATE_MARKET_SOURCES_ROOT"
+          elif [ "$SOURCE_HANDOFF_KIND" = "mineru-recovery" ]; then
+            SOURCE_PREFIX="$PRIVATE_MINERU_SOURCES_ROOT"
           fi
           python scripts/private_workflow_handoff.py download-shards \
             --prefix "$SOURCE_PREFIX/$SOURCE_HANDOFF_RUN_ID/$EXPECTED_BANK_DATE" \
@@ -197,6 +200,24 @@ jobs:
             --output-dir "xhs_notes/dropbox/${{ inputs.expected_bank_date }}/shard_0" \
             --manifest "xhs_notes/dropbox/${{ inputs.expected_bank_date }}/shard_0/selected_to_process_manifest.json" \
             --expected-reports "${{ inputs.expected_articles }}"
+
+      - name: Verify complete MinerU recovery source receipt
+        if: ${{ inputs.source_handoff_kind == 'mineru-recovery' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_HANDOFF_RUN_ID: ${{ inputs.source_handoff_run_id }}
+          EXPECTED_BANK_DATE: ${{ inputs.expected_bank_date }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+        run: |
+          SOURCE_EXECUTION_SHA="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$SOURCE_HANDOFF_RUN_ID" \
+            --jq 'if .path == ".github/workflows/market-views-mineru-recovery.yml" and .head_branch == "main" then .head_sha else error("MinerU recovery producer differs") end')"
+          [[ "$SOURCE_EXECUTION_SHA" =~ ^[a-f0-9]{40}$ ]]
+          python scripts/recover_durable_mineru_sources.py validate \
+            --output-dir "xhs_notes/dropbox/$EXPECTED_BANK_DATE/shard_0" \
+            --expected-reports "$EXPECTED_ARTICLES" \
+            --date-folder "$EXPECTED_BANK_DATE" \
+            --expected-recovery-run-id "$SOURCE_HANDOFF_RUN_ID" \
+            --expected-execution-sha "$SOURCE_EXECUTION_SHA"
 
       - name: Resolve and validate primary bank source
         env:

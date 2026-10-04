@@ -1,0 +1,194 @@
+name: Recover Market Views from exact MinerU tasks
+run-name: Recover MinerU Market Views ${{ inputs.date_folder }}
+on:
+  pull_request:
+    paths:
+      - .github/workflows/market-views-mineru-recovery.yml
+      - scripts/recover_durable_mineru_sources.py
+      - scripts/test_recover_durable_mineru_sources.py
+      - scripts/mineru_terminal_recovery.py
+      - scripts/test_mineru_terminal_recovery.py
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Original Daily report run; empty only for a genuinely missed source date
+        required: false
+        type: string
+        default: ''
+      date_folder:
+        description: Exact Dropbox source date, YYMMDD
+        required: true
+        type: string
+      expected_articles:
+        description: Exact complete original PDF count
+        required: true
+        type: string
+      allow_fresh:
+        description: Admit fresh tasks only if source_run_id is empty and all original claims are absent
+        required: false
+        type: boolean
+        default: false
+      allowed_error_codes:
+        description: Explicitly reviewed terminal failure codes as a JSON string array
+        required: false
+        type: string
+        default: '[]'
+      allowed_error_hashes:
+        description: Explicitly reviewed terminal failure message hashes as a JSON string array
+        required: false
+        type: string
+        default: '[]'
+permissions:
+  contents: read
+  actions: write
+concurrency:
+  group: market-views-mineru-recovery-${{ inputs.date_folder || github.run_id }}
+  cancel-in-progress: false
+jobs:
+  contract:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install real source image regression dependencies
+        run: python3 -m pip install --retries 0 --disable-pip-version-check requests Pillow PyMuPDF
+      - run: python3 -B scripts/test_mineru_terminal_recovery.py
+      - run: python3 -B scripts/test_recover_durable_mineru_sources.py
+  recover:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: scripts
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Authenticate exact original producer and recovery request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+          ALLOW_FRESH: ${{ inputs.allow_fresh }}
+        run: |
+          [[ "$DATE_FOLDER" =~ ^[0-9]{6}$ ]]
+          [[ "$EXPECTED_ARTICLES" =~ ^[1-9][0-9]*$ ]]
+          if [ -n "$SOURCE_RUN_ID" ]; then
+            [[ "$SOURCE_RUN_ID" =~ ^[1-9][0-9]*$ ]]
+            test "$ALLOW_FRESH" != true
+            gh api "repos/$GITHUB_REPOSITORY/actions/runs/$SOURCE_RUN_ID" > "$RUNNER_TEMP/mineru-original-producer.json"
+            python - <<'PY'
+          import json, os, sys
+          from pathlib import Path
+          sys.path.insert(0, 'scripts')
+          from recover_durable_mineru_sources import check_producer
+          check_producer(json.loads(Path(os.environ['RUNNER_TEMP'], 'mineru-original-producer.json').read_text()),
+                         os.environ['SOURCE_RUN_ID'], os.environ['GITHUB_REPOSITORY'])
+          PY
+          fi
+      - name: Install private recovery and source image dependencies
+        run: python3 -m pip install --retries 0 --disable-pip-version-check requests Pillow PyMuPDF 'boto3>=1.37.32,<2'
+      - name: Download complete exact original selected PDF artifact
+        if: inputs.source_run_id != ''
+        uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.source_run_id }}
+          name: selected-macro-pdfs-${{ inputs.source_run_id }}
+          path: _selected_macro_pdfs
+      - name: Download exact Dropbox batch for a source date without a producer
+        if: inputs.source_run_id == ''
+        env:
+          DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
+          DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
+          DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+        run: |
+          python scripts/download_dropbox_latest_pdfs.py \
+            --dropbox-root /zip_backup --date-folder "$DATE_FOLDER" \
+            --expected-date-folder "$DATE_FOLDER" --max-folder-age-days 0 \
+            --output-dir _dropbox_originals
+          python - <<'PY'
+          import json, sys
+          from pathlib import Path
+          sys.path.insert(0, 'scripts')
+          from select_macro_trend_pdfs import copy_selected
+          rows = json.loads(Path('_dropbox_originals/dropbox_manifest.json').read_text())['files']
+          selected = copy_selected(rows, Path('_selected_macro_pdfs'), len(rows))
+          Path('_selected_macro_pdfs/selected_to_process_manifest.json').write_text(json.dumps(selected))
+          PY
+      - name: Recover complete source-only MinerU batch with durable lineage
+        env:
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+          ALLOW_FRESH: ${{ inputs.allow_fresh }}
+          ALLOWED_ERROR_CODES: ${{ inputs.allowed_error_codes }}
+          ALLOWED_ERROR_HASHES: ${{ inputs.allowed_error_hashes }}
+          MINER_U: ${{ secrets.MINER_U }}
+          MINER_U_2: ${{ secrets.MINER_U_2 }}
+          MINER_U_3: ${{ secrets.MINER_U_3 }}
+          MINER_U_4: ${{ secrets.MINER_U_4 }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          EXTRA_ARGS=()
+          if [ -n "$SOURCE_RUN_ID" ]; then
+            EXTRA_ARGS+=(--source-run-id "$SOURCE_RUN_ID" --producer-json "$RUNNER_TEMP/mineru-original-producer.json")
+          fi
+          if [ "$ALLOW_FRESH" = true ]; then
+            EXTRA_ARGS+=(--allow-fresh)
+          fi
+          python scripts/recover_durable_mineru_sources.py recover \
+            --input-dir _selected_macro_pdfs --output-dir _mineru_market_sources/shard_0 \
+            --expected-reports "$EXPECTED_ARTICLES" --date-folder "$DATE_FOLDER" \
+            --allowed-error-codes "$ALLOWED_ERROR_CODES" \
+            --allowed-error-hashes "$ALLOWED_ERROR_HASHES" "${EXTRA_ARGS[@]}"
+      - name: Archive complete verified sources in private R2
+        env:
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python scripts/private_workflow_handoff.py upload-dir \
+            --source _mineru_market_sources/shard_0 \
+            --key "_private-workflow-handoff/mineru-market-sources/$GITHUB_RUN_ID/$DATE_FOLDER/shard_0.tar.gz"
+      - name: Generate and wait for exact dated Market Views PDF
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+        run: |
+          RUN_URL="$(gh workflow run market-views-latex-pdf.yml \
+            --repo "$GITHUB_REPOSITORY" --ref main \
+            -f date_folder="$DATE_FOLDER" -f expected_bank_date="$DATE_FOLDER" \
+            -f source_handoff_run_id="$GITHUB_RUN_ID" -f source_handoff_kind=mineru-recovery \
+            -f expected_shards=1 -f expected_articles="$EXPECTED_ARTICLES" \
+            -f force_rebuild=true -f compile_latex=false)"
+          MARKET_RUN_ID="${RUN_URL##*/}"
+          [[ "$MARKET_RUN_ID" =~ ^[1-9][0-9]*$ ]]
+          echo "Market Views recovery: $RUN_URL" >> "$GITHUB_STEP_SUMMARY"
+          gh run watch "$MARKET_RUN_ID" --repo "$GITHUB_REPOSITORY" --compact --exit-status --interval 15
+      - name: Delete consumed private source handoff after PDF succeeds
+        env:
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python scripts/private_workflow_handoff.py delete-prefix \
+            --prefix "_private-workflow-handoff/mineru-market-sources/$GITHUB_RUN_ID/$DATE_FOLDER"

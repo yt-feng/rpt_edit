@@ -1,0 +1,1104 @@
+diff --git a/.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml b/.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml
+index 6bd94ec..6c35ecb 100644
+--- a/.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml
++++ b/.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml
+@@ -685,7 +685,14 @@ jobs:
+         with:
+           python-version: "3.11"
+       - name: Install native source and handoff dependencies
+-        run: python -m pip install PyMuPDF "boto3>=1.37.32,<2"
++        run: |
++          python -m pip install PyMuPDF "boto3>=1.37.32,<2"
++          sudo apt-get update
++          sudo apt-get install -y --no-install-recommends tesseract-ocr tesseract-ocr-eng tesseract-ocr-chi-sim
++          TESSDATA_DIR="$(tesseract --list-langs 2>/dev/null | sed -n '1s/.*"\(.*\)".*/\1/p')"
++          test -f "$TESSDATA_DIR/eng.traineddata"
++          test -f "$TESSDATA_DIR/chi_sim.traineddata"
++          echo "TESSDATA_PREFIX=$TESSDATA_DIR" >> "$GITHUB_ENV"
+       - name: Download exact selected original PDFs
+         uses: actions/download-artifact@v4
+         with:
+diff --git a/.github/workflows/market-views-native-recovery.yml b/.github/workflows/market-views-native-recovery.yml
+index f2b50df..0ec1255 100644
+--- a/.github/workflows/market-views-native-recovery.yml
++++ b/.github/workflows/market-views-native-recovery.yml
+@@ -49,7 +49,14 @@ jobs:
+             test "$SOURCE_WORKFLOW" = '.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml'
+           fi
+       - name: Install native extraction and private handoff dependencies
+-        run: python -m pip install PyMuPDF requests "boto3>=1.37.32,<2"
++        run: |
++          python -m pip install PyMuPDF requests "boto3>=1.37.32,<2"
++          sudo apt-get update
++          sudo apt-get install -y --no-install-recommends tesseract-ocr tesseract-ocr-eng tesseract-ocr-chi-sim
++          TESSDATA_DIR="$(tesseract --list-langs 2>/dev/null | sed -n '1s/.*"\(.*\)".*/\1/p')"
++          test -f "$TESSDATA_DIR/eng.traineddata"
++          test -f "$TESSDATA_DIR/chi_sim.traineddata"
++          echo "TESSDATA_PREFIX=$TESSDATA_DIR" >> "$GITHUB_ENV"
+       - name: Download original selected PDFs without repeating extraction requests
+         if: ${{ inputs.source_run_id != '' }}
+         uses: actions/download-artifact@v4
+diff --git a/.github/workflows/wechat-pipeline-regression.yml b/.github/workflows/wechat-pipeline-regression.yml
+index a19a99d..3e700a7 100644
+--- a/.github/workflows/wechat-pipeline-regression.yml
++++ b/.github/workflows/wechat-pipeline-regression.yml
+@@ -92,6 +92,14 @@ jobs:
+           python-version: "3.11"
+       - name: Install test dependencies
+         run: python -m pip install -r requirements.txt reportlab "boto3>=1.37.32,<2"
++      - name: Install real OCR test models
++        run: |
++          sudo apt-get update
++          sudo apt-get install -y --no-install-recommends tesseract-ocr tesseract-ocr-eng tesseract-ocr-chi-sim
++          TESSDATA_DIR="$(tesseract --list-langs 2>/dev/null | sed -n '1s/.*"\(.*\)".*/\1/p')"
++          test -f "$TESSDATA_DIR/eng.traineddata"
++          test -f "$TESSDATA_DIR/chi_sim.traineddata"
++          echo "TESSDATA_PREFIX=$TESSDATA_DIR" >> "$GITHUB_ENV"
+       - name: Test source discovery, draft verification and static publication
+         run: |
+           python scripts/test_fetch_institution_latest_pdfs.py
+@@ -108,6 +116,7 @@ jobs:
+           python scripts/test_market_views_workflow_contract.py
+           python scripts/test_market_views_source_dates.py
+           python scripts/test_extract_native_market_sources.py
++          python scripts/test_market_views_figures.py
+           python scripts/test_post_blog_refresh.py
+           python scripts/test_check_completed_shard.py
+           python scripts/test_wechat_output_contract.py
+diff --git a/docs/market-views-source-recovery.md b/docs/market-views-source-recovery.md
+index 662809c..1804372 100644
+--- a/docs/market-views-source-recovery.md
++++ b/docs/market-views-source-recovery.md
+@@ -4,12 +4,16 @@ The public catalogue was verified on 2026-10-04 with `market-view:260930` as its
+ 
+ The durable MinerU client previously selected one configured credential per shard without falling through to another credential on explicit authentication rejection. It now permits the next credential only after HTTP 401 or the provider's explicit invalid/expired-token codes, without any acceptance acknowledgement. [MinerU's API documentation](https://mineru.net/apiManage/docs) identifies `A0202` as an invalid token and `A0211` as an expired token. It records each rejection before proceeding and retains the exact original batch and byte bindings. Accepted tasks, polling failures, timeouts, conflicting acknowledgements and other ambiguous submission outcomes never authorize another submission. Switching credentials cannot repair a shared result download certificate.
+ 
+-Market Views now has an independent recovery branch after a failed report-notes job. It reuses the selected original PDF artifact, verifies every filename and SHA-256 against the original selection manifest, and extracts native text plus original exhibit pages. It uploads a complete source receipt to a separate private R2 prefix and dispatches the exact bank issue date. The report-notes job retains its failure, and WeChat/translation retain their existing completion gates. Native temporary sources are deleted only after Market Views succeeds; failed or cancelled PDF consumers retain their inputs.
++Market Views now has an independent recovery branch after a failed report-notes job. It reuses the selected original PDF artifact, verifies every filename and SHA-256 against the original selection manifest, and extracts readable native text or local Tesseract OCR plus original exhibit pages. It uploads a complete source receipt to a separate private R2 prefix and dispatches the exact bank issue date. The report-notes job retains its failure, and WeChat/translation retain their existing completion gates. Temporary sources are deleted only after Market Views succeeds; failed or cancelled PDF consumers retain their inputs.
+ 
+ The consumer verifies transferred markdown, status, original page coverage and figure hashes before synthesis or the existing-PDF skip. Auxiliary sources use the latest usable date on or before the bank issue; a future auxiliary date cannot rename or suppress the new bank issue.
+ 
+-Native recovery performs no OCR or MinerU submission. Every page must have at least 40 readable text characters and each report at least 600. Scanned, textless, encrypted, damaged, incomplete or mismatched originals reject the whole batch. Numbered exhibit captions select original full-page images; uncaptioned visuals are not inferred or redrawn.
++Recovery makes no MinerU submission or model call during source extraction. Pages with unreadable or insufficient native text use full-page local OCR at 300dpi with English and Simplified Chinese language data. The schema-2 receipt distinguishes native and OCR text, retains the original image for each OCR page, and records its pixels, source PDF hash, page number, OCR settings and trained-data hashes. Each nonblank page still requires at least 40 readable characters and each report at least 600. A blank page is accepted only when its text layer is empty and every RGB sample in its retained 300dpi rendering is white; no replacement text is invented. Encrypted, damaged, unreadable, incomplete or mismatched originals reject the whole batch. Numbered exhibit captions select original full-page images; other page images remain provenance and are not presented as charts. The consumer also accepts existing schema-1 native-only receipts.
++
++Different filenames with identical PDF bytes are source aliases. Every original file remains mandatory in the manifest, extraction and transferred receipt. The receipt records the first identical original as the canonical report and validates every alias against it. Synthesis validates the entire batch again, summarizes each unique PDF once, and retains the alias inventory. The workflow's expected count checks original file bindings; the PDF's report count reflects unique content.
+ 
+ For missed dates, dispatch **Recover Market Views from original PDFs** (`market-views-native-recovery.yml`) with `date_folder` and the exact `expected_articles`. Supply `source_run_id` to reuse an original Daily report artifact; leave it empty to download that exact Dropbox batch and bind a fresh manifest without classifying or submitting it to MinerU. The recovery waits for PDF archive/public commit success before cleaning its source prefix.
+ 
+-Saved Dropbox inventory from 2026-10-03 22:34 UTC contained 63 PDFs for `261001`, 4 for `261002`, and 54 for `261003`. These are recovery assertions, not evidence that those PDFs have been generated or published. The 2026-10-04 local investigation stopped GitHub requests after Actions log downloads returned `TLS handshake timeout`; the patch and recovery jobs require remote verification before delivery can be considered restored.
++Saved Dropbox inventory from 2026-10-03 22:34 UTC contained 63 PDFs for `261001`, 4 for `261002`, and 54 for `261003`. The `261003` producer run `37159099752` also selected 54 originals. These are recovery assertions, not evidence that those PDFs have been generated or published.
++
++The first real recovery runs exposed source cases absent from the initial native-only fixtures: `261001` contained identical PDFs under different names, while Bernstein reports for `261002` and `261003` had a page with zero native text. Recovery now records aliases and handles missing text through local OCR or verified blank-page evidence. Acceptance still requires the exact PDF, complete unique report coverage, successful private archive/public-safe commit, and its dated entry in the live catalogue.
+diff --git a/scripts/build_market_views_pdf.py b/scripts/build_market_views_pdf.py
+index 94270ea..c3deaf4 100644
+--- a/scripts/build_market_views_pdf.py
++++ b/scripts/build_market_views_pdf.py
+@@ -206,6 +206,39 @@ def source_date_dirs(root: Path, extra_roots: list[Path], date_folder: str) -> t
+     return report_date, date_dirs
+ 
+ 
++def unique_original_report_dirs(report_dirs: list[Path]) -> tuple[list[Path], dict[str, list[dict[str, str]]]]:
++    """Validate all originals, then summarize byte-identical aliases once."""
++    native_roots = {path.parent for path in report_dirs if (path / "source_native_pdf.md").is_file()}
++    aliases: dict[str, list[dict[str, str]]] = {}
++    omitted: set[Path] = set()
++    selected = set(report_dirs)
++    for root in sorted(native_roots):
++        from extract_native_market_sources import validate_sources
++        raw = json.loads((root / "source_receipt.json").read_text(encoding="utf-8"))
++        expected = raw.get("expected_reports")
++        if type(expected) is not int or expected <= 0:
++            raise RuntimeError(f"Original PDF source has an invalid inventory: {root}")
++        receipt = validate_sources(root, root / "selected_to_process_manifest.json", expected)
++        for source in receipt["reports"]:
++            duplicate = source.get("duplicate_of")
++            if not duplicate:
++                continue
++            source_dir = root / source["directory"]
++            canonical_dir = root / duplicate
++            if source_dir not in selected or canonical_dir not in selected:
++                raise RuntimeError(f"Original PDF aliases require their complete canonical inventory: {root}")
++            omitted.add(source_dir)
++            aliases.setdefault(str(canonical_dir), []).append({
++                "source_pdf": source["source_pdf"],
++                "content_sha256": source["content_sha256"],
++                "path": str(source_dir),
++            })
++        log(f"Verified original PDF bindings={receipt['report_count']}; "
++            f"unique contents={receipt.get('unique_content_count', receipt['report_count'])}; "
++            f"duplicate aliases={sum(bool(item.get('duplicate_of')) for item in receipt['reports'])}.")
++    return [path for path in report_dirs if path not in omitted], aliases
++
++
+ def report_title(report_dir: Path) -> str:
+     for filename in ["wechat_article.md", "note.md", "source_native_pdf.md"]:
+         path = report_dir / filename
+@@ -437,7 +470,7 @@ def extract_exhibit_figures(report_dir: Path, report_id: str, title: str, max_pe
+         receipt = json.loads((report_dir.parent / "source_receipt.json").read_text(encoding="utf-8"))
+         source = next((item for item in receipt.get("reports", [])
+                        if item.get("directory") == report_dir.name), None)
+-        if receipt.get("complete") is not True or not source or source.get("source_method") != "native-pdf":
++        if receipt.get("complete") is not True or not source or source.get("source_method") not in {"native-pdf", "original-pdf"}:
+             raise RuntimeError(f"Native PDF figure source lacks a complete receipt: {report_dir}")
+         native_figures = [{
+             "report_id": report_id,
+@@ -1894,6 +1927,7 @@ def main() -> int:
+             )
+         log(f"Using {len(source_dirs)} report directories from {source_dir}")
+         report_dirs.extend(source_dirs)
++    report_dirs, source_aliases = unique_original_report_dirs(report_dirs)
+     if args.max_reports > 0:
+         report_dirs = report_dirs[: args.max_reports]
+     if not report_dirs:
+@@ -1919,6 +1953,7 @@ def main() -> int:
+             "source_label": source_group_label(source_group),
+             "institution_name": institution_name,
+             "source_date_folder": report_date_from_path(report_dir),
++            "source_aliases": source_aliases.get(str(report_dir), []),
+             "digest": digest["digest"],
+             "extract": report_extract(report_dir, args.per_report_extract_chars),
+         })
+diff --git a/scripts/extract_native_market_sources.py b/scripts/extract_native_market_sources.py
+index 171aa90..d3dcc46 100644
+--- a/scripts/extract_native_market_sources.py
++++ b/scripts/extract_native_market_sources.py
+@@ -1,33 +1,37 @@
+ #!/usr/bin/env python3
+ """Extract a complete, manifest-bound Market Views source batch from local PDFs.
+ 
+-This fallback uses the original PDF text layer and original exhibit pages only.
+-It performs no OCR, provider submission, network request or article generation.
+-Every page must have readable native text; one unsupported report rejects the
+-whole batch. The consumer can validate the transferred receipt without PDFs.
++This fallback prefers readable native text, then uses local Tesseract OCR via
++PyMuPDF. It makes no provider submission, network request or model call. Every
++original and page remains bound to the complete manifest, including duplicate
++file aliases and provably white pages. Transferred receipts need no originals.
+ """
+ from __future__ import annotations
+ 
+ import argparse
++import copy
+ import hashlib
+ import json
+ import os
+ from pathlib import Path, PurePosixPath
+ import re
++import shutil
+ import sys
+ import tempfile
+ import unicodedata
+-from typing import Any
++from typing import Any, Callable
+ 
+ import fitz
+ 
+ 
+-SCHEMA = 1
++SCHEMA = 2
+ MANIFEST_NAME = "selected_to_process_manifest.json"
+ RECEIPT_NAME = "source_receipt.json"
+ MARKDOWN_NAME = "source_native_pdf.md"
+ MIN_PAGE_CHARACTERS = 40
+ MIN_REPORT_CHARACTERS = 600
++PAGE_DPI = 300
++OCR_LANGUAGES = "eng+chi_sim"
+ EXHIBIT_CAPTION = re.compile(
+     r"^\s*((?:Figure|Fig\.?|Chart|Table|Exhibit)\s+\d+[A-Za-z]?\b"
+     r"[\s:：.\-–—]+\S.{2,}|(?:图表|图|表)\s*\d+[\s:：.\-–—]*\S.{2,})\s*$",
+@@ -79,8 +83,6 @@ def read_manifest(path: Path, expected_reports: int) -> tuple[bytes, list[dict[s
+         bindings.append({"source_pdf": name, "content_sha256": digest})
+     if len({row["source_pdf"] for row in bindings}) != len(bindings):
+         raise SourceValidationError("Manifest contains duplicate PDF basenames")
+-    if len({row["content_sha256"] for row in bindings}) != len(bindings):
+-        raise SourceValidationError("Manifest contains duplicate PDF contents")
+     return raw, bindings
+ 
+ 
+@@ -92,14 +94,13 @@ def require_readable_page(text: str, source_name: str, page_number: int) -> int:
+     count = meaningful_characters(text)
+     if count < MIN_PAGE_CHARACTERS:
+         raise SourceValidationError(
+-            f"{source_name} page {page_number} has insufficient native text ({count} characters); "
+-            "scanned or textless pages require extraction outside this fallback"
++            f"{source_name} page {page_number} has insufficient readable page text ({count} characters)"
+         )
+     bad = sum(character == "\ufffd" or unicodedata.category(character) in {"Co", "Cs", "Cn"}
+               or (unicodedata.category(character) == "Cc" and character not in "\n\r\t")
+               for character in text)
+     if bad / max(1, len(text)) > 0.02:
+-        raise SourceValidationError(f"{source_name} page {page_number} has an unreadable PDF text layer")
++        raise SourceValidationError(f"{source_name} page {page_number} has unreadable extracted text")
+     return count
+ 
+ 
+@@ -108,6 +109,37 @@ def file_record(path: Path, root: Path) -> dict[str, Any]:
+     return {"path": path.relative_to(root).as_posix(), "sha256": sha256_bytes(raw), "size_bytes": len(raw)}
+ 
+ 
++def _pixel_record(pixmap: fitz.Pixmap) -> dict[str, Any]:
++    samples = pixmap.samples
++    return {"width": pixmap.width, "height": pixmap.height, "channels": pixmap.n,
++            "alpha": bool(pixmap.alpha), "pixel_sha256": sha256_bytes(samples),
++            "sample_count": len(samples), "white_sample_count": samples.count(255)}
++
++
++def _ocr_page(page: fitz.Page, source_name: str, number: int) -> tuple[str, dict[str, Any]]:
++    """Use only local language data; record exactly which data and settings ran."""
++    try:
++        tessdata = Path(fitz.get_tessdata())
++        models = []
++        for language in OCR_LANGUAGES.split("+"):
++            model = tessdata / f"{language}.traineddata"
++            if not model.is_file():
++                raise FileNotFoundError(model.name)
++            models.append({"language": language, "filename": model.name,
++                           "sha256": sha256_bytes(model.read_bytes())})
++        textpage = page.get_textpage_ocr(language=OCR_LANGUAGES, dpi=PAGE_DPI,
++                                       full=True, tessdata=str(tessdata))
++        text = page.get_text("text", textpage=textpage, sort=True).strip()
++    except Exception as exc:
++        raise SourceValidationError(
++            f"Local OCR failed for {source_name} page {number}: {type(exc).__name__}; "
++            "local eng and chi_sim Tesseract data must be available"
++        ) from exc
++    return text, {"engine": "tesseract-via-pymupdf", "pymupdf_version": fitz.VersionBind,
++                  "languages": OCR_LANGUAGES, "dpi": PAGE_DPI, "full_page": True,
++                  "traineddata": models}
++
++
+ def _extract_report(pdf: Path, binding: dict[str, str], root: Path, index: int) -> dict[str, Any]:
+     raw = pdf.read_bytes()
+     if sha256_bytes(raw) != binding["content_sha256"]:
+@@ -117,10 +149,11 @@ def _extract_report(pdf: Path, binding: dict[str, str], root: Path, index: int)
+     directory = root / f"report_{index:04d}_{binding['content_sha256'][:12]}"
+     directory.mkdir()
+     markdown = (f"# {Path(binding['source_pdf']).stem}\n\n"
+-                "原文来源：原始 PDF 的可读文本层。以下逐页保留原文；图像为原报告页面。\n\n")
++                "原始 PDF 逐页来源。优先使用可读文本层；图片页使用本地 Tesseract OCR，"
++                "并保留原页图以核对识别文字。确认为全白的页明确记录，不补写原文。\n\n")
+     assets: list[dict[str, Any]] = []
+     page_records: list[dict[str, Any]] = []
+-    total_characters = 0
++    total_characters = native_total = 0
+     try:
+         with fitz.open(stream=raw, filetype="pdf") as document:
+             if document.is_encrypted or document.needs_pass:
+@@ -130,21 +163,58 @@ def _extract_report(pdf: Path, binding: dict[str, str], root: Path, index: int)
+             for page_index in range(document.page_count):
+                 page = document.load_page(page_index)
+                 page_number = page_index + 1
+-                text = page.get_text("text", sort=True).strip()
+-                characters = require_readable_page(text, pdf.name, page_number)
++                native_text = page.get_text("text", sort=True).strip()
++                native_characters = meaningful_characters(native_text)
++                native_total += native_characters
++                text, method, pixmap, ocr = native_text, "native", None, None
++                try:
++                    characters = require_readable_page(native_text, pdf.name, page_number)
++                except SourceValidationError:
++                    pixmap = page.get_pixmap(dpi=PAGE_DPI, colorspace=fitz.csRGB, alpha=False)
++                    pixels = _pixel_record(pixmap)
++                    if not native_text and pixels["white_sample_count"] == pixels["sample_count"]:
++                        text, characters, method = "", 0, "blank"
++                    else:
++                        text, ocr = _ocr_page(page, pdf.name, page_number)
++                        characters = require_readable_page(text, pdf.name, page_number)
++                        method = "ocr"
+                 total_characters += characters
+                 captions = [match.group(1).strip() for line in text.splitlines()
+                             if (match := EXHIBIT_CAPTION.fullmatch(line))]
+                 markdown += f"## 原报告第 {page_number} 页\n\n"
++                markdown += {"native": "提取方式：原 PDF 可读文本层。\n\n",
++                             "ocr": "提取方式：整页本地 Tesseract OCR。请以保留的原页图核对识别文字。\n\n",
++                             "blank": "原页在 300dpi RGB 白底渲染中全部像素为白色，且原文本层为空；本页无原文。\n\n"}[method]
+                 text_begin = len(markdown.encode("utf-8"))
+                 markdown += text
+                 text_end = len(markdown.encode("utf-8"))
+                 markdown += "\n\n"
+                 page_record: dict[str, Any] = {
+-                    "page": page_number, "native_text_characters": characters,
+-                    "native_text_sha256": sha256_bytes(text.encode("utf-8")),
++                    "page": page_number, "extraction_method": method,
++                    "source_pdf_sha256": binding["content_sha256"],
++                    "native_text": native_text, "native_text_characters": native_characters,
++                    "native_text_sha256": sha256_bytes(native_text.encode("utf-8")),
++                    "text_characters": characters, "text_sha256": sha256_bytes(text.encode("utf-8")),
+                     "markdown_text_begin": text_begin, "markdown_text_end": text_end,
+                 }
++                if method != "native" or captions:
++                    if pixmap is None:
++                        pixmap = page.get_pixmap(dpi=PAGE_DPI, colorspace=fitz.csRGB, alpha=False)
++                    page_image = directory / "pages" / f"source_page_{page_number:04d}.png"
++                    page_image.parent.mkdir(exist_ok=True)
++                    pixmap.save(str(page_image))
++                    page_record["original_page"] = {
++                        **file_record(page_image, root), **_pixel_record(pixmap),
++                        "source_pdf_sha256": binding["content_sha256"], "source_page": page_number,
++                        "dpi": PAGE_DPI, "pymupdf_version": fitz.VersionBind,
++                    }
++                    if method != "native":
++                        markdown += f"![原报告第 {page_number} 页核对原图](pages/{page_image.name})\n\n"
++                if method == "ocr":
++                    page_record["ocr"] = {**ocr, "input_pixel_sha256": page_record["original_page"]["pixel_sha256"]}
++                elif method == "blank":
++                    page_record["blank_proof"] = {"criterion": "all-rgb-samples-255",
++                                                 "ocr_attempted": False}
+                 # Caption lines identify an exhibit page. The pixels are always
+                 # the actual full original page; no inferred chart is redrawn.
+                 if captions:
+@@ -171,21 +241,51 @@ def _extract_report(pdf: Path, binding: dict[str, str], root: Path, index: int)
+     markdown_path = directory / MARKDOWN_NAME
+     markdown_path.write_text(markdown, encoding="utf-8")
+     status = {
+-        "source_method": "native-pdf", **binding, "source_markdown": MARKDOWN_NAME,
++        "source_method": "original-pdf", "receipt_schema": SCHEMA, **binding,
++        "extraction_policy": "native-then-local-ocr", "duplicate_of": None,
++        "source_markdown": MARKDOWN_NAME,
+         "page_count": len(page_records), "pages_covered": list(range(1, len(page_records) + 1)),
+-        "native_text_characters": total_characters,
++        "text_characters": total_characters, "native_text_characters": native_total,
++        "ocr_page_count": sum(page["extraction_method"] == "ocr" for page in page_records),
++        "blank_page_count": sum(page["extraction_method"] == "blank" for page in page_records),
+         "images": [str(PurePosixPath(asset["path"]).relative_to(directory.name)) for asset in assets],
+     }
+     write_json(directory / "status.json", status)
+     return {
+-        **binding, "directory": directory.name, "source_method": "native-pdf",
++        **binding, "directory": directory.name, "source_method": "original-pdf", "duplicate_of": None,
+         "page_count": len(page_records), "pages_covered": status["pages_covered"],
+-        "native_text_characters": total_characters, "pages": page_records,
++        "text_characters": total_characters, "native_text_characters": native_total,
++        "ocr_page_count": status["ocr_page_count"], "blank_page_count": status["blank_page_count"],
++        "pages": page_records,
+         "markdown": file_record(markdown_path, root),
+         "status": file_record(directory / "status.json", root), "assets": assets,
+     }
+ 
+ 
++def _clone_report(pdf: Path, binding: dict[str, str], root: Path, index: int, canonical: dict[str, Any]) -> dict[str, Any]:
++    """Retain each exact alias binding while reusing extraction of identical bytes."""
++    if sha256_bytes(pdf.read_bytes()) != binding["content_sha256"]:
++        raise SourceValidationError(f"Original PDF hash mismatch: {pdf.name}")
++    directory = f"report_{index:04d}_{binding['content_sha256'][:12]}"
++    shutil.copytree(root / canonical["directory"], root / directory)
++    report = copy.deepcopy(canonical)
++    report.update(binding)
++    report["directory"], report["duplicate_of"] = directory, canonical["directory"]
++    for record in [report["markdown"], report["status"], *report["assets"],
++                   *(page["original_page"] for page in report["pages"] if page.get("original_page"))]:
++        record["path"] = directory + record["path"][len(canonical["directory"]):]
++    for page in report["pages"]:
++        if page.get("asset_path"):
++            page["asset_path"] = directory + page["asset_path"][len(canonical["directory"]):]
++    status_path = root / report["status"]["path"]
++    status = json.loads(status_path.read_bytes())
++    status.update(binding)
++    status["duplicate_of"] = canonical["directory"]
++    write_json(status_path, status)
++    report["status"] = file_record(status_path, root)
++    return report
++
++
+ def _original_inventory(input_dir: Path) -> dict[str, Path]:
+     if input_dir.is_symlink() or not input_dir.is_dir():
+         raise SourceValidationError("input_dir must be a regular directory of original PDFs")
+@@ -201,7 +301,8 @@ def _original_inventory(input_dir: Path) -> dict[str, Path]:
+     return originals
+ 
+ 
+-def extract_sources(input_dir: Path, manifest: Path, output_dir: Path, expected_reports: int) -> dict[str, Any]:
++def extract_sources(input_dir: Path, manifest: Path, output_dir: Path, expected_reports: int,
++                    progress: Callable[[dict[str, Any]], None] | None = None) -> dict[str, Any]:
+     input_dir, manifest, output_dir = Path(input_dir), Path(manifest), Path(output_dir)
+     raw_manifest, bindings = read_manifest(manifest, expected_reports)
+     originals = _original_inventory(input_dir)
+@@ -221,8 +322,15 @@ def extract_sources(input_dir: Path, manifest: Path, output_dir: Path, expected_
+     with tempfile.TemporaryDirectory(prefix=f".{output_dir.name}-native-", dir=output_dir.parent) as temporary:
+         staging = Path(temporary) / "batch"
+         staging.mkdir()
+-        reports = [_extract_report(originals[binding["source_pdf"]], binding, staging, index)
+-                   for index, binding in enumerate(bindings, 1)]
++        reports, canonical = [], {}
++        for index, binding in enumerate(bindings, 1):
++            prior = canonical.get(binding["content_sha256"])
++            report = (_clone_report(originals[binding["source_pdf"]], binding, staging, index, prior)
++                      if prior else _extract_report(originals[binding["source_pdf"]], binding, staging, index))
++            reports.append(report)
++            canonical.setdefault(binding["content_sha256"], report)
++            if progress:
++                progress(report)
+         final_originals = _original_inventory(input_dir)
+         if set(final_originals) != wanted or manifest.read_bytes() != raw_manifest:
+             raise SourceValidationError("Original batch inventory or manifest changed during extraction")
+@@ -231,7 +339,8 @@ def extract_sources(input_dir: Path, manifest: Path, output_dir: Path, expected_
+             raise SourceValidationError("Original batch bytes changed during extraction")
+         (staging / MANIFEST_NAME).write_bytes(raw_manifest)
+         receipt = {
+-            "schema": SCHEMA, "source_method": "native-pdf", "complete": True,
++            "schema": SCHEMA, "source_method": "original-pdf", "complete": True,
++            "extraction_policy": "native-then-local-ocr", "unique_content_count": len(canonical),
+             "expected_reports": expected_reports, "report_count": len(reports),
+             "manifest_sha256": sha256_bytes(canonical_bytes(bindings)),
+             "manifest_file": file_record(staging / MANIFEST_NAME, staging), "reports": reports,
+@@ -264,12 +373,14 @@ def _verified_file(root: Path, record: Any) -> Path:
+     return path
+ 
+ 
+-def validate_sources(output_dir: Path, manifest: Path, expected_reports: int) -> dict[str, Any]:
++def _validate_sources_v1(output_dir: Path, manifest: Path, expected_reports: int) -> dict[str, Any]:
+     """Validate the complete transferred batch against its selected source manifest."""
+     output_dir = Path(output_dir)
+     if output_dir.is_symlink() or not output_dir.is_dir():
+         raise SourceValidationError("Source output must be a regular directory")
+     _, bindings = read_manifest(Path(manifest), expected_reports)
++    if len({binding["content_sha256"] for binding in bindings}) != len(bindings):
++        raise SourceValidationError("Schema 1 cannot represent duplicate PDF contents")
+     receipt_path = output_dir / RECEIPT_NAME
+     if receipt_path.is_symlink() or not receipt_path.is_file():
+         raise SourceValidationError("Complete source receipt is missing")
+@@ -277,7 +388,7 @@ def validate_sources(output_dir: Path, manifest: Path, expected_reports: int) ->
+         receipt = json.loads(receipt_path.read_bytes())
+     except (UnicodeError, json.JSONDecodeError) as exc:
+         raise SourceValidationError("Complete source receipt is invalid JSON") from exc
+-    if not isinstance(receipt, dict) or type(receipt.get("schema")) is not int or receipt.get("schema") != SCHEMA:
++    if not isinstance(receipt, dict) or type(receipt.get("schema")) is not int or receipt.get("schema") != 1:
+         raise SourceValidationError("Source receipt schema is unsupported")
+     if (receipt.get("source_method") != "native-pdf" or receipt.get("complete") is not True
+             or type(receipt.get("expected_reports")) is not int or type(receipt.get("report_count")) is not int
+@@ -391,6 +502,227 @@ def validate_sources(output_dir: Path, manifest: Path, expected_reports: int) ->
+     return receipt
+ 
+ 
++def _validate_page_image(root: Path, record: dict[str, Any], binding: dict[str, str], number: int) -> Path:
++    path = _verified_file(root, record)
++    if (record.get("source_pdf_sha256") != binding["content_sha256"]
++            or type(record.get("source_page")) is not int or record["source_page"] != number
++            or type(record.get("dpi")) is not int or record["dpi"] != PAGE_DPI
++            or not isinstance(record.get("pymupdf_version"), str) or not record["pymupdf_version"]):
++        raise SourceValidationError("Original page image lacks source PDF and rendering provenance")
++    try:
++        pixmap = fitz.Pixmap(str(path))
++        pixels = _pixel_record(pixmap)
++    except Exception as exc:
++        raise SourceValidationError("Original page image is not readable") from exc
++    if (pixmap.n != 3 or pixmap.alpha or any(record.get(key) != value for key, value in pixels.items())
++            or any(type(record.get(key)) is not int for key in ("width", "height", "channels", "sample_count", "white_sample_count"))
++            or record.get("alpha") is not False):
++        raise SourceValidationError("Original page pixels disagree with their provenance")
++    return path
++
++
++def _validate_sources_v2(output_dir: Path, manifest: Path, expected_reports: int) -> dict[str, Any]:
++    root = Path(output_dir)
++    if root.is_symlink() or not root.is_dir():
++        raise SourceValidationError("Source output must be a regular directory")
++    _, bindings = read_manifest(Path(manifest), expected_reports)
++    receipt_path = root / RECEIPT_NAME
++    if receipt_path.is_symlink() or not receipt_path.is_file():
++        raise SourceValidationError("Complete source receipt is missing")
++    receipt = json.loads(receipt_path.read_bytes())
++    unique_count = len({binding["content_sha256"] for binding in bindings})
++    if (receipt.get("schema") != 2 or receipt.get("source_method") != "original-pdf"
++            or receipt.get("complete") is not True
++            or receipt.get("extraction_policy") != "native-then-local-ocr"
++            or any(type(receipt.get(key)) is not int for key in ("expected_reports", "report_count", "unique_content_count"))
++            or receipt.get("expected_reports") != expected_reports or receipt.get("report_count") != expected_reports
++            or receipt.get("unique_content_count") != unique_count
++            or receipt.get("manifest_sha256") != sha256_bytes(canonical_bytes(bindings))):
++        raise SourceValidationError("Source receipt is incomplete or does not match the selected manifest")
++    local_manifest = _verified_file(root, receipt.get("manifest_file"))
++    if local_manifest != root / MANIFEST_NAME or read_manifest(local_manifest, expected_reports)[1] != bindings:
++        raise SourceValidationError("Transferred source manifest differs from the expected source manifest")
++    reports = receipt.get("reports")
++    if not isinstance(reports, list) or len(reports) != expected_reports:
++        raise SourceValidationError("Receipt is missing expected report coverage")
++    inventory, canonical = {RECEIPT_NAME, MANIFEST_NAME}, {}
++    for index, (report, binding) in enumerate(zip(reports, bindings), 1):
++        if not isinstance(report, dict) or any(report.get(key) != value for key, value in binding.items()):
++            raise SourceValidationError("Receipt report is not bound to the exact selected original PDF")
++        directory = f"report_{index:04d}_{binding['content_sha256'][:12]}"
++        prior = canonical.get(binding["content_sha256"])
++        expected_duplicate = prior["directory"] if prior else None
++        count, pages, assets = report.get("page_count"), report.get("pages"), report.get("assets")
++        if (report.get("directory") != directory or report.get("source_method") != "original-pdf"
++                or "duplicate_of" not in report or report["duplicate_of"] != expected_duplicate
++                or type(count) is not int or count <= 0
++                or report.get("pages_covered") != list(range(1, count + 1))
++                or not isinstance(pages, list) or len(pages) != count or not isinstance(assets, list)):
++            raise SourceValidationError("Receipt has incomplete page coverage or invalid duplicate source binding")
++        records = [report.get("markdown"), report.get("status"), *assets]
++        for page in pages:
++            if isinstance(page, dict) and page.get("original_page") is not None:
++                records.append(page["original_page"])
++        for record in records:
++            path = _verified_file(root, record)
++            relative = path.relative_to(root).as_posix()
++            if not relative.startswith(directory + "/") or relative in inventory:
++                raise SourceValidationError("Receipt contains a duplicate or misplaced report file")
++            inventory.add(relative)
++        if report["markdown"]["path"] != f"{directory}/{MARKDOWN_NAME}" or report["status"]["path"] != f"{directory}/status.json":
++            raise SourceValidationError("Receipt does not identify the original source files")
++        markdown_raw = (root / report["markdown"]["path"]).read_bytes()
++        markdown_text = markdown_raw.decode("utf-8")
++        previous_end = text_total = native_total = ocr_count = blank_count = 0
++        page_texts = []
++        for number, page in enumerate(pages, 1):
++            if (not isinstance(page, dict) or type(page.get("page")) is not int or page["page"] != number
++                    or page.get("source_pdf_sha256") != binding["content_sha256"]
++                    or page.get("extraction_method") not in {"native", "ocr", "blank"}
++                    or not isinstance(page.get("native_text"), str)
++                    or type(page.get("native_text_characters")) is not int
++                    or page["native_text_characters"] != meaningful_characters(page["native_text"])
++                    or page.get("native_text_sha256") != sha256_bytes(page["native_text"].encode("utf-8"))
++                    or type(page.get("text_characters")) is not int):
++                raise SourceValidationError("Receipt contains an unreadable or missing original page")
++            if f"## 原报告第 {number} 页" not in markdown_text:
++                raise SourceValidationError("Original markdown is missing original page sections")
++            begin, end = page.get("markdown_text_begin"), page.get("markdown_text_end")
++            if (type(begin) is not int or type(end) is not int
++                    or not previous_end <= begin <= end <= len(markdown_raw)):
++                raise SourceValidationError("Receipt has invalid original page text bounds")
++            page_raw = markdown_raw[begin:end]
++            text = page_raw.decode("utf-8")
++            if (sha256_bytes(page_raw) != page.get("text_sha256")
++                    or meaningful_characters(text) != page["text_characters"]):
++                raise SourceValidationError("Receipt original page text differs from transferred markdown")
++            method, image = page["extraction_method"], page.get("original_page")
++            if image is not None:
++                image_path = _validate_page_image(root, image, binding, number)
++                if image_path != root / directory / "pages" / f"source_page_{number:04d}.png":
++                    raise SourceValidationError("Original page image is misplaced")
++            if method == "blank":
++                if (text or page["native_text"] or image is None
++                        or image["sample_count"] != image["white_sample_count"]
++                        or page.get("blank_proof") != {"criterion": "all-rgb-samples-255", "ocr_attempted": False}
++                        or page.get("ocr") is not None or page.get("asset_path")):
++                    raise SourceValidationError("Blank page lacks a provably white original page")
++                blank_count += 1
++            else:
++                require_readable_page(text, binding["source_pdf"], number)
++                if page.get("blank_proof") is not None:
++                    raise SourceValidationError("Readable page cannot claim blank-page provenance")
++                if method == "native":
++                    if text != page["native_text"] or page.get("ocr") is not None:
++                        raise SourceValidationError("Native page text or provenance is inconsistent")
++                else:
++                    ocr = page.get("ocr")
++                    if (image is None or not isinstance(ocr, dict)
++                            or ocr.get("engine") != "tesseract-via-pymupdf"
++                            or not isinstance(ocr.get("pymupdf_version"), str) or not ocr["pymupdf_version"]
++                            or ocr.get("languages") != OCR_LANGUAGES or ocr.get("full_page") is not True
++                            or type(ocr.get("dpi")) is not int or ocr["dpi"] != PAGE_DPI
++                            or ocr.get("input_pixel_sha256") != image["pixel_sha256"]):
++                        raise SourceValidationError("OCR page lacks exact local OCR provenance")
++                    models = ocr.get("traineddata")
++                    if (not isinstance(models, list) or len(models) != len(OCR_LANGUAGES.split("+"))
++                            or any(not isinstance(model, dict) or model.get("language") != language
++                                   or model.get("filename") != f"{language}.traineddata"
++                                   or not re.fullmatch(r"[a-f0-9]{64}", str(model.get("sha256") or ""))
++                                   for model, language in zip(models, OCR_LANGUAGES.split("+")))):
++                        raise SourceValidationError("OCR language data provenance is incomplete")
++                    # OCR is authorized only when the native page fails the native gate.
++                    try:
++                        require_readable_page(page["native_text"], binding["source_pdf"], number)
++                    except SourceValidationError:
++                        pass
++                    else:
++                        raise SourceValidationError("OCR replaced a supported native text page")
++                    ocr_count += 1
++                if image is not None and image["sample_count"] == image["white_sample_count"]:
++                    raise SourceValidationError("A fully white page cannot contain recognized report text")
++            if method != "native" and f"](pages/source_page_{number:04d}.png)" not in markdown_text:
++                raise SourceValidationError("Markdown omits the OCR or blank original page image")
++            page_texts.append(text)
++            previous_end = end
++            text_total += page["text_characters"]
++            native_total += page["native_text_characters"]
++        totals = {"text_characters": text_total, "native_text_characters": native_total,
++                  "ocr_page_count": ocr_count, "blank_page_count": blank_count}
++        if text_total < MIN_REPORT_CHARACTERS or any(type(report.get(key)) is not int or report[key] != value for key, value in totals.items()):
++            raise SourceValidationError("Receipt has insufficient original report text or incorrect extraction totals")
++        status = json.loads((root / report["status"]["path"]).read_bytes())
++        expected_status = {"source_method": "original-pdf", "receipt_schema": 2, **binding,
++                           "source_markdown": MARKDOWN_NAME, "extraction_policy": "native-then-local-ocr",
++                           "duplicate_of": expected_duplicate, "page_count": count,
++                           "pages_covered": report["pages_covered"], **totals}
++        if not isinstance(status, dict) or any(status.get(key) != value for key, value in expected_status.items()):
++            raise SourceValidationError("Original source status disagrees with source receipt")
++        asset_pages, expected_assets = set(), []
++        for asset_index, asset in enumerate(assets, 1):
++            page_number = asset.get("source_page")
++            path = f"{directory}/assets/source_image_{asset_index}.png"
++            if (asset.get("path") != path or type(page_number) is not int or not 1 <= page_number <= count
++                    or page_number in asset_pages or pages[page_number - 1].get("asset_path") != path
++                    or pages[page_number - 1].get("original_page") is None):
++                raise SourceValidationError("Original exhibit asset lacks an exact original page binding")
++            captions = [match.group(1).strip() for line in page_texts[page_number - 1].splitlines()
++                        if (match := EXHIBIT_CAPTION.fullmatch(line))]
++            if not captions or asset.get("description") != " / ".join(captions):
++                raise SourceValidationError("Original exhibit asset lacks a source caption")
++            asset_pages.add(page_number)
++            expected_assets.append(f"assets/source_image_{asset_index}.png")
++            if f"]({expected_assets[-1]})" not in markdown_text:
++                raise SourceValidationError("Original source markdown omits a bound exhibit page")
++        if status.get("images") != expected_assets or {page["page"] for page in pages if page.get("asset_path")} != asset_pages:
++            raise SourceValidationError("Original source images disagree with source receipt")
++        if prior:
++            fields = ("page_count", "pages_covered", "text_characters", "native_text_characters", "ocr_page_count", "blank_page_count")
++            if any(report[key] != prior[key] for key in fields):
++                raise SourceValidationError("Duplicate source extraction differs from canonical content")
++            def content_pages(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
++                result = copy.deepcopy(rows)
++                for page in result:
++                    page.pop("asset_path", None)
++                    if page.get("original_page"):
++                        page["original_page"].pop("path", None)
++                return result
++            if content_pages(pages) != content_pages(prior["pages"]) or report["markdown"]["sha256"] != prior["markdown"]["sha256"]:
++                raise SourceValidationError("Duplicate source page text or pixels differ from canonical content")
++            alias_assets = [{key: value for key, value in asset.items() if key != "path"} for asset in assets]
++            canonical_assets = [{key: value for key, value in asset.items() if key != "path"} for asset in prior["assets"]]
++            if alias_assets != canonical_assets:
++                raise SourceValidationError("Duplicate source exhibit pixels differ from canonical content")
++        canonical.setdefault(binding["content_sha256"], report)
++    actual_files = set()
++    for path in root.rglob("*"):
++        if path.is_symlink():
++            raise SourceValidationError("Transferred source directory contains symbolic links")
++        if path.is_file():
++            actual_files.add(path.relative_to(root).as_posix())
++    if actual_files != inventory:
++        raise SourceValidationError("Transferred source inventory contains missing or unreceipted files")
++    return receipt
++
++
++def validate_sources(output_dir: Path, manifest: Path, expected_reports: int) -> dict[str, Any]:
++    """Validate schema 1 native receipts or schema 2 native/local-OCR receipts."""
++    path = Path(output_dir) / RECEIPT_NAME
++    if path.is_symlink() or not path.is_file():
++        raise SourceValidationError("Complete source receipt is missing")
++    try:
++        receipt = json.loads(path.read_bytes())
++        if not isinstance(receipt, dict) or type(receipt.get("schema")) is not int:
++            raise SourceValidationError("Source receipt schema is unsupported")
++        if receipt["schema"] == 1:
++            return _validate_sources_v1(output_dir, manifest, expected_reports)
++        if receipt["schema"] == 2:
++            return _validate_sources_v2(output_dir, manifest, expected_reports)
++    except (UnicodeError, json.JSONDecodeError) as exc:
++        raise SourceValidationError("Complete source receipt or status is invalid JSON or UTF-8") from exc
++    raise SourceValidationError("Source receipt schema is unsupported")
++
++
+ def main() -> int:
+     parser = argparse.ArgumentParser(description=__doc__)
+     parser.add_argument("command", nargs="?", choices=("extract", "validate"), default="extract")
+@@ -404,12 +736,20 @@ def main() -> int:
+     try:
+         receipt = (validate_sources(args.output_dir, args.manifest, args.expected_reports)
+                    if args.command == "validate" else
+-                   extract_sources(args.input_dir, args.manifest, args.output_dir, args.expected_reports))
++                   extract_sources(args.input_dir, args.manifest, args.output_dir, args.expected_reports,
++                                   progress=lambda report: print(
++                                       f"Original PDF source materialized: {report['source_pdf']}; "
++                                       f"pages={report['page_count']}, OCR={report['ocr_page_count']}, "
++                                       f"blank={report['blank_page_count']}, duplicate_of={report['duplicate_of']}",
++                                       flush=True)))
+     except (OSError, SourceValidationError) as exc:
+-        print(f"Native Market Views source rejected: {exc}", file=sys.stderr)
++        print(f"Original PDF Market Views source rejected: {exc}", file=sys.stderr)
+         return 2
+-    print(f"Native Market Views source {args.command} complete: reports={receipt['report_count']}, "
++    print(f"Original PDF Market Views source {args.command} complete: reports={receipt['report_count']}, "
++          f"unique_contents={receipt.get('unique_content_count', receipt['report_count'])}, "
+           f"pages={sum(report['page_count'] for report in receipt['reports'])}, "
++          f"ocr_pages={sum(report.get('ocr_page_count', 0) for report in receipt['reports'])}, "
++          f"blank_pages={sum(report.get('blank_page_count', 0) for report in receipt['reports'])}, "
+           f"exhibit_pages={sum(len(report['assets']) for report in receipt['reports'])}")
+     return 0
+ 
+diff --git a/scripts/test_extract_native_market_sources.py b/scripts/test_extract_native_market_sources.py
+index 3fd0882..32257a2 100644
+--- a/scripts/test_extract_native_market_sources.py
++++ b/scripts/test_extract_native_market_sources.py
+@@ -5,6 +5,7 @@ from __future__ import annotations
+ import copy
+ import hashlib
+ import json
++import os
+ from pathlib import Path
+ import shutil
+ import sys
+@@ -24,6 +25,9 @@ REPORT_TEXT = (
+     "Portfolio observations compare valuation and cash flow trends across reporting periods. "
+     "This paragraph is native selectable report text and retains the original evidence. "
+ ) * 3
++TESSDATA = Path(os.getenv("TESSDATA_PREFIX", "/tmp/market-views-tessdata"))
++HAS_OCR_DATA = all((TESSDATA / f"{language}.traineddata").is_file()
++                   for language in native.OCR_LANGUAGES.split("+"))
+ 
+ 
+ def make_pdf(path: Path, *, chart: bool = False, scanned_page: bool = False, short: bool = False) -> None:
+@@ -66,8 +70,8 @@ class NativeMarketSourcesTests(unittest.TestCase):
+         for index, name in enumerate(names):
+             path = self.input / name
+             make_pdf(path, chart=chart and index == 0)
+-            # Distinct metadata prevents identical report contents from being
+-            # silently counted as separate originals in multi-report fixtures.
++            # Most fixtures represent distinct sources; duplicate byte aliases
++            # have separate tests proving that every original binding remains.
+             with fitz.open(path) as document:
+                 document.set_metadata({"title": name})
+                 document.saveIncr()
+@@ -100,6 +104,14 @@ class NativeMarketSourcesTests(unittest.TestCase):
+         self.assertIn("Investment research examines", text)
+         self.assertIn("assets/source_image_1.png", text)
+         self.assertEqual(receipt["reports"][1]["assets"], [])
++        self.assertEqual(receipt["source_method"], "original-pdf")
++        self.assertEqual(receipt["schema"], 2)
++        self.assertIsNone(first["duplicate_of"])
++        self.assertEqual(first["pages"][0]["extraction_method"], "native")
++        self.assertNotIn("original_page", first["pages"][0])
++        self.assertIn("original_page", first["pages"][1])
++        with patch.object(native, "_ocr_page", side_effect=AssertionError("Native pages need no OCR")):
++            native.validate_sources(self.output, self.manifest, 2)
+ 
+     def test_transferred_batch_validates_without_original_pdfs(self) -> None:
+         self.select("one.pdf", chart=True)
+@@ -132,9 +144,9 @@ class NativeMarketSourcesTests(unittest.TestCase):
+                     self.extract()
+                 self.assertFalse(self.output.exists())
+ 
+-    def test_manifest_requires_verified_unique_complete_bindings(self) -> None:
++    def test_manifest_requires_verified_unique_names_and_complete_bindings(self) -> None:
+         original = self.select("one.pdf")
+-        for mutation in ("missing_hash", "bad_hash", "duplicate_name", "duplicate_bytes", "count"):
++        for mutation in ("missing_hash", "bad_hash", "duplicate_name", "count"):
+             rows = copy.deepcopy(original)
+             if mutation == "missing_hash":
+                 rows[0].pop("content_sha256")
+@@ -142,10 +154,8 @@ class NativeMarketSourcesTests(unittest.TestCase):
+                 rows[0]["content_sha256"] = "invalid"
+             elif mutation == "duplicate_name":
+                 rows.append(copy.deepcopy(rows[0]))
+-            elif mutation == "duplicate_bytes":
+-                rows.append({**rows[0], "process_local_path": "/selected/other.pdf"})
+             self.manifest.write_text(json.dumps(rows), encoding="utf-8")
+-            expected = 2 if mutation in {"duplicate_name", "duplicate_bytes", "count"} else 1
++            expected = 2 if mutation in {"duplicate_name", "count"} else 1
+             with self.subTest(mutation=mutation), self.assertRaises(native.SourceValidationError):
+                 self.extract(expected)
+             self.assertFalse(self.output.exists())
+@@ -163,8 +173,9 @@ class NativeMarketSourcesTests(unittest.TestCase):
+                 rows = json.loads(self.manifest.read_text())
+                 rows[1]["content_sha256"] = hashlib.sha256(path.read_bytes()).hexdigest()
+                 self.manifest.write_text(json.dumps(rows), encoding="utf-8")
+-                with self.assertRaises(native.SourceValidationError):
+-                    self.extract(2)
++                with patch.object(native, "_ocr_page", side_effect=native.SourceValidationError("OCR cannot read this page")):
++                    with self.assertRaises(native.SourceValidationError):
++                        self.extract(2)
+                 self.assertFalse(self.output.exists(), "Even the earlier readable report must not become a published batch")
+                 self.assertEqual(list(self.root.glob(".sources-native-*")), [])
+ 
+@@ -231,7 +242,7 @@ class NativeMarketSourcesTests(unittest.TestCase):
+             receipt = json.loads(original)
+             report = receipt["reports"][0]
+             if mutation == "page_text":
+-                report["pages"][0]["native_text_sha256"] = "a" * 64
++                report["pages"][0]["text_sha256"] = "a" * 64
+             elif mutation == "asset_page":
+                 report["assets"][0]["source_page"] = 1
+             else:
+@@ -285,6 +296,234 @@ class NativeMarketSourcesTests(unittest.TestCase):
+                 self.extract(2)
+         self.assertFalse(self.output.exists())
+ 
++    def update_hash(self, name: str) -> None:
++        rows = json.loads(self.manifest.read_text())
++        for row in rows:
++            if Path(row["process_local_path"]).name == name:
++                row["content_sha256"] = hashlib.sha256((self.input / name).read_bytes()).hexdigest()
++        self.manifest.write_text(json.dumps(rows), encoding="utf-8")
++
++    @unittest.skipUnless(HAS_OCR_DATA, "Local eng and chi_sim Tesseract language data are unavailable")
++    def test_actual_full_page_ocr_retains_image_provenance_and_validates_without_originals(self) -> None:
++        self.select("scanned.pdf")
++        path = self.input / "scanned.pdf"
++        path.unlink()
++        make_pdf(path, scanned_page=True)
++        self.update_hash("scanned.pdf")
++        with patch.dict(os.environ, {"TESSDATA_PREFIX": str(TESSDATA)}):
++            receipt = self.extract()
++        report = receipt["reports"][0]
++        page = report["pages"][1]
++        self.assertEqual(page["extraction_method"], "ocr")
++        self.assertEqual(page["native_text"], "")
++        self.assertEqual(page["native_text_characters"], 0)
++        self.assertGreater(page["text_characters"], 600)
++        self.assertEqual(report["ocr_page_count"], 1)
++        self.assertEqual(page["ocr"]["languages"], "eng+chi_sim")
++        self.assertTrue(page["ocr"]["full_page"])
++        self.assertEqual(page["ocr"]["input_pixel_sha256"], page["original_page"]["pixel_sha256"])
++        self.assertEqual(report["assets"], [], "A scanned text page is not a chart")
++        markdown = (self.output / report["markdown"]["path"]).read_text()
++        self.assertIn("Investment research examines", markdown)
++        self.assertIn("pages/source_page_0002.png", markdown)
++        shutil.rmtree(self.input)
++        with patch.object(native, "_ocr_page", side_effect=AssertionError("Consumer must not rerun OCR")):
++            self.assertEqual(native.validate_sources(self.output, self.output / native.MANIFEST_NAME, 1), receipt)
++
++    def test_provably_white_page_is_preserved_without_fabricated_text_or_ocr(self) -> None:
++        self.select("blank.pdf")
++        path = self.input / "blank.pdf"
++        changed = self.root / "with-blank.pdf"
++        with fitz.open(path) as document:
++            document.new_page()
++            document.save(changed)
++        path.write_bytes(changed.read_bytes())
++        self.update_hash("blank.pdf")
++        with patch.object(native, "_ocr_page", side_effect=AssertionError("White pixels do not need OCR")):
++            receipt = self.extract()
++        report = receipt["reports"][0]
++        page = report["pages"][1]
++        self.assertEqual(page["extraction_method"], "blank")
++        self.assertEqual(page["text_characters"], 0)
++        self.assertEqual(page["markdown_text_begin"], page["markdown_text_end"])
++        self.assertEqual(page["text_sha256"], hashlib.sha256(b"").hexdigest())
++        self.assertEqual(page["original_page"]["white_sample_count"], page["original_page"]["sample_count"])
++        self.assertEqual(report["blank_page_count"], 1)
++        self.assertEqual(report["assets"], [])
++        self.assertEqual(native.validate_sources(self.output, self.manifest, 1), receipt)
++
++    def test_nonwhite_page_with_failed_or_empty_ocr_cannot_claim_blank(self) -> None:
++        self.select("unreadable.pdf")
++        path = self.input / "unreadable.pdf"
++        changed = self.root / "nonwhite.pdf"
++        with fitz.open(path) as document:
++            page = document.new_page()
++            page.draw_rect(fitz.Rect(60, 100, 300, 400), fill=(0, 0, 0))
++            document.save(changed)
++        path.write_bytes(changed.read_bytes())
++        self.update_hash("unreadable.pdf")
++        for effect in (native.SourceValidationError("OCR failed"), ("", {}), ("Too short", {})):
++            kwargs = {"side_effect": effect} if isinstance(effect, Exception) else {"return_value": effect}
++            with self.subTest(effect=str(effect)), patch.object(native, "_ocr_page", **kwargs):
++                with self.assertRaises(native.SourceValidationError):
++                    self.extract()
++                self.assertFalse(self.output.exists())
++
++    def test_duplicate_aliases_keep_all_originals_and_canonical_extraction(self) -> None:
++        rows = self.select("canonical.pdf", chart=True)
++        shutil.copyfile(self.input / "canonical.pdf", self.input / "alias.pdf")
++        rows.append({**rows[0], "process_local_path": "/selected/alias.pdf"})
++        self.manifest.write_text(json.dumps(rows))
++        with patch.object(native, "_extract_report", wraps=native._extract_report) as extraction:
++            receipt = self.extract(2)
++        self.assertEqual(extraction.call_count, 1)
++        self.assertEqual(receipt["report_count"], 2)
++        self.assertEqual(receipt["unique_content_count"], 1)
++        first, alias = receipt["reports"]
++        self.assertEqual(alias["duplicate_of"], first["directory"])
++        self.assertEqual(alias["source_pdf"], "alias.pdf")
++        self.assertEqual(alias["markdown"]["sha256"], first["markdown"]["sha256"])
++        self.assertTrue((self.output / alias["markdown"]["path"]).is_file())
++        self.assertEqual(native.validate_sources(self.output, self.manifest, 2), receipt)
++
++    def test_duplicate_alias_missing_original_or_wrong_bytes_rejects_complete_batch(self) -> None:
++        rows = self.select("canonical.pdf")
++        rows.append({**rows[0], "process_local_path": "/selected/alias.pdf"})
++        self.manifest.write_text(json.dumps(rows))
++        with self.assertRaisesRegex(native.SourceValidationError, "inventory"):
++            self.extract(2)
++        make_pdf(self.input / "alias.pdf", short=True)
++        with self.assertRaisesRegex(native.SourceValidationError, "hash mismatch"):
++            self.extract(2)
++        self.assertFalse(self.output.exists())
++
++    def test_receipt_rejects_wrong_duplicate_target_count_and_missing_alias(self) -> None:
++        rows = self.select("canonical.pdf")
++        shutil.copyfile(self.input / "canonical.pdf", self.input / "alias.pdf")
++        rows.append({**rows[0], "process_local_path": "/selected/alias.pdf"})
++        self.manifest.write_text(json.dumps(rows))
++        self.extract(2)
++        receipt_path = self.output / native.RECEIPT_NAME
++        original = receipt_path.read_bytes()
++        for mutation in ("target", "count", "alias"):
++            receipt = json.loads(original)
++            if mutation == "target":
++                receipt["reports"][1]["duplicate_of"] = None
++            elif mutation == "count":
++                receipt["unique_content_count"] = 2
++            else:
++                receipt["reports"].pop()
++            receipt_path.write_text(json.dumps(receipt))
++            with self.subTest(mutation=mutation), self.assertRaises(native.SourceValidationError):
++                native.validate_sources(self.output, self.manifest, 2)
++
++    @unittest.skipUnless(HAS_OCR_DATA, "Local eng and chi_sim Tesseract language data are unavailable")
++    def test_ocr_provenance_pixels_text_and_language_models_cannot_be_forged(self) -> None:
++        self.select("scanned.pdf")
++        path = self.input / "scanned.pdf"
++        path.unlink()
++        make_pdf(path, scanned_page=True)
++        self.update_hash("scanned.pdf")
++        with patch.dict(os.environ, {"TESSDATA_PREFIX": str(TESSDATA)}):
++            self.extract()
++        receipt_path = self.output / native.RECEIPT_NAME
++        original = receipt_path.read_bytes()
++        for mutation in ("engine", "pixels", "model", "text", "method"):
++            receipt = json.loads(original)
++            page = receipt["reports"][0]["pages"][1]
++            if mutation == "engine":
++                page["ocr"]["engine"] = "unknown"
++            elif mutation == "pixels":
++                page["original_page"]["pixel_sha256"] = "a" * 64
++            elif mutation == "model":
++                page["ocr"]["traineddata"] = []
++            elif mutation == "text":
++                page["text_sha256"] = "a" * 64
++            else:
++                page["extraction_method"] = "native"
++            receipt_path.write_text(json.dumps(receipt))
++            with self.subTest(mutation=mutation), self.assertRaises(native.SourceValidationError):
++                native.validate_sources(self.output, self.manifest, 1)
++
++    def test_schema_one_existing_native_receipt_remains_valid(self) -> None:
++        self.select("native.pdf")
++        receipt = self.extract()
++        receipt = {key: receipt[key] for key in ("schema", "source_method", "complete", "expected_reports", "report_count", "manifest_sha256", "manifest_file", "reports")}
++        receipt.update(schema=1, source_method="native-pdf")
++        report = receipt["reports"][0]
++        report = {key: report[key] for key in ("source_pdf", "content_sha256", "directory", "source_method", "page_count", "pages_covered", "native_text_characters", "pages", "markdown", "status", "assets")}
++        receipt["reports"][0] = report
++        report["source_method"] = "native-pdf"
++        report["pages"] = [{key: page[key] for key in ("page", "native_text_characters", "native_text_sha256", "markdown_text_begin", "markdown_text_end")}
++                           for page in report["pages"]]
++        status_path = self.output / report["status"]["path"]
++        status = json.loads(status_path.read_bytes())
++        status = {key: status[key] for key in ("source_method", "source_pdf", "content_sha256", "source_markdown", "page_count", "pages_covered", "native_text_characters", "images")}
++        status["source_method"] = "native-pdf"
++        status_path.write_text(json.dumps(status))
++        report["status"] = native.file_record(status_path, self.output)
++        (self.output / native.RECEIPT_NAME).write_text(json.dumps(receipt))
++        self.assertEqual(native.validate_sources(self.output, self.manifest, 1), receipt)
++
++    def test_blank_image_pixel_evidence_and_whole_blank_report_are_rejected(self) -> None:
++        self.select("blank.pdf")
++        path = self.input / "blank.pdf"
++        changed = self.root / "white-pages.pdf"
++        with fitz.open(path) as document:
++            document.new_page()
++            document.save(changed)
++        path.write_bytes(changed.read_bytes())
++        self.update_hash("blank.pdf")
++        receipt = self.extract()
++        page = receipt["reports"][0]["pages"][1]
++        image_path = self.output / page["original_page"]["path"]
++        with fitz.open() as document:
++            original = document.new_page()
++            original.draw_rect(original.rect, fill=(0, 0, 0))
++            pixmap = original.get_pixmap(dpi=native.PAGE_DPI, colorspace=fitz.csRGB, alpha=False)
++            pixmap.save(str(image_path))
++            page["original_page"].update({**native.file_record(image_path, self.output), **native._pixel_record(pixmap)})
++        (self.output / native.RECEIPT_NAME).write_text(json.dumps(receipt))
++        with self.assertRaisesRegex(native.SourceValidationError, "provably white"):
++            native.validate_sources(self.output, self.manifest, 1)
++        shutil.rmtree(self.output)
++        with fitz.open() as document:
++            document.new_page()
++            document.save(path)
++        self.update_hash("blank.pdf")
++        with self.assertRaisesRegex(native.SourceValidationError, "insufficient text for a report summary"):
++            self.extract()
++        self.assertFalse(self.output.exists())
++
++    @unittest.skipUnless(HAS_OCR_DATA, "Local eng and chi_sim Tesseract language data are unavailable")
++    def test_duplicate_scanned_alias_reuses_one_ocr_and_requires_both_originals(self) -> None:
++        self.select("canonical.pdf")
++        path = self.input / "canonical.pdf"
++        path.unlink()
++        make_pdf(path, scanned_page=True)
++        self.update_hash("canonical.pdf")
++        rows = json.loads(self.manifest.read_text())
++        shutil.copyfile(path, self.input / "alias.pdf")
++        rows.append({**rows[0], "process_local_path": "/selected/alias.pdf"})
++        self.manifest.write_text(json.dumps(rows))
++        with patch.dict(os.environ, {"TESSDATA_PREFIX": str(TESSDATA)}), patch.object(native, "_ocr_page", wraps=native._ocr_page) as ocr:
++            receipt = self.extract(2)
++        self.assertEqual(ocr.call_count, 1)
++        self.assertEqual(receipt["unique_content_count"], 1)
++        self.assertEqual([report["ocr_page_count"] for report in receipt["reports"]], [1, 1])
++        self.assertEqual(native.validate_sources(self.output, self.manifest, 2), receipt)
++
++    def test_schema_one_cannot_reinterpret_duplicate_bytes_without_alias_contract(self) -> None:
++        rows = self.select("canonical.pdf")
++        shutil.copyfile(self.input / "canonical.pdf", self.input / "alias.pdf")
++        rows.append({**rows[0], "process_local_path": "/selected/alias.pdf"})
++        self.manifest.write_text(json.dumps(rows))
++        receipt = self.extract(2)
++        receipt.update(schema=1, source_method="native-pdf")
++        (self.output / native.RECEIPT_NAME).write_text(json.dumps(receipt))
++        with self.assertRaisesRegex(native.SourceValidationError, "Schema 1 cannot represent duplicate PDF contents"):
++            native.validate_sources(self.output, self.manifest, 2)
++
+ 
+ if __name__ == "__main__":
+     unittest.main(verbosity=2)
+diff --git a/scripts/test_market_views_source_dates.py b/scripts/test_market_views_source_dates.py
+index 2c03d2e..35ad8fe 100644
+--- a/scripts/test_market_views_source_dates.py
++++ b/scripts/test_market_views_source_dates.py
+@@ -3,7 +3,7 @@ from pathlib import Path
+ from tempfile import TemporaryDirectory
+ import unittest
+ 
+-from build_market_views_pdf import require_primary_report_dirs, source_date_dirs, report_digest, report_extract
++from build_market_views_pdf import require_primary_report_dirs, source_date_dirs, report_digest, report_extract, unique_original_report_dirs
+ 
+ 
+ class SourceDateDirsTest(unittest.TestCase):
+@@ -118,6 +118,42 @@ class SourceDateDirsTest(unittest.TestCase):
+         self.assertIn("growth and inflation", report_digest(report, 2200)["digest"])
+         self.assertIn("growth and inflation", report_extract(report, 2200))
+ 
++    def test_byte_identical_original_aliases_are_all_verified_then_summarized_once(self) -> None:
++        import hashlib
++        import json
++        from extract_native_market_sources import extract_sources, SourceValidationError
++        from test_extract_native_market_sources import make_pdf
++
++        originals = Path(self.temp_dir.name) / "originals"
++        originals.mkdir()
++        first = originals / "research-a.pdf"
++        alias = originals / "research-a-copy.pdf"
++        make_pdf(first, chart=True)
++        alias.write_bytes(first.read_bytes())
++        manifest = Path(self.temp_dir.name) / "manifest.json"
++        manifest.write_text(json.dumps([
++            {"process_local_path": str(path), "content_sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
++            for path in (first, alias)
++        ]))
++        sources = self.bank / "261001" / "shard_0"
++        receipt = extract_sources(originals, manifest, sources, 2)
++        dirs = require_primary_report_dirs(self.bank / "261001")
++        self.assertEqual(len(dirs), 2, "Input coverage still includes both selected files")
++        unique, aliases = unique_original_report_dirs(dirs)
++        self.assertEqual(len(unique), 1)
++        self.assertEqual(aliases[str(unique[0])][0]["source_pdf"], alias.name)
++        self.assertEqual(receipt["report_count"], 2)
++        self.assertEqual(receipt["unique_content_count"], 1)
++        copied_alias = sources / receipt["reports"][1]["markdown"]["path"]
++        copied_alias.unlink()
++        with self.assertRaises(SourceValidationError):
++            unique_original_report_dirs(dirs)
++
++    def test_mineru_sources_remain_separate_without_original_pdf_alias_receipts(self) -> None:
++        first = self.make_report(self.bank, "261001")
++        second = self.make_report(self.institutions, "261001")
++        self.assertEqual(unique_original_report_dirs([first, second]), ([first, second], {}))
++
+     def test_primary_bank_date_must_contain_parsed_report_outputs(self) -> None:
+         (self.bank / "260720").mkdir(parents=True)
+         self.make_dates(self.institutions, "260720")

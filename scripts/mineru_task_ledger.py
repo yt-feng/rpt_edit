@@ -76,7 +76,7 @@ def validate_source(source):
 
 
 def validate_key(key):
-    if not isinstance(key, str) or not re.fullmatch(r'(sources/[a-f0-9]{64}|batches/[a-f0-9]{32})', key):
+    if not isinstance(key, str) or not re.fullmatch(r'(sources/[a-f0-9]{64}|(?:batches|recoveries)/[a-f0-9]{32})', key):
         raise LedgerError('Invalid ledger key')
 
 
@@ -164,7 +164,13 @@ class R2Store:
         try:
             self.client.put_object(Bucket=self.bucket, Key=self.prefix + key + '.json',
                 Body=raw, ContentType='application/json', Metadata={'sha256': digest(raw)}, **condition)
-        except Exception:
+        except Exception as error:
+            code = str(getattr(error, 'response', {}).get('Error', {}).get('Code', ''))
+            status = getattr(error, 'response', {}).get('ResponseMetadata', {}).get('HTTPStatusCode')
+            if code in {'PreconditionFailed', 'ConditionalRequestConflict', '412', '409'} or status in {409, 412}:
+                # A definite failed condition belongs to another writer, even
+                # if its resulting bytes happen to match this write exactly.
+                raise LedgerError('Ledger compare-and-swap conflict; no new submission') from None
             # A lost ACK can mean the conditional write succeeded. Read only;
             # never replay a write or infer that an absent read authorizes POST.
             stored, version = self.get(key)
@@ -361,7 +367,12 @@ class Ledger:
                 raise LedgerError('Original source bytes changed before task submission')
         rejections = row.setdefault('auth_rejections', [])
         rejected = {entry['token_identity'] for entry in rejections}
-        for identity, token in self.tokens.items():
+        identities = list(self.tokens)
+        if row['token_identity'] in identities:
+            identities.remove(row['token_identity'])
+            identities.insert(0, row['token_identity'])
+        for identity in identities:
+            token = self.tokens[identity]
             if identity in rejected:
                 continue
             remaining = self._remaining(deadline)
@@ -371,7 +382,8 @@ class Ledger:
                     raise LedgerError('Original source bytes changed before task submission')
             # A crash or unrecognized response after this durable write stays
             # submitting. It never becomes permission to try the next key.
-            row.update(state='submitting', token_identity=identity, batch_id=None)
+            row.update(state='submitting', token_identity=identity, batch_id=None,
+                       submission_attempt=uuid.uuid4().hex)
             version = self.store.put(key, row, version)
             self.submission_posts += 1
             try:
@@ -395,7 +407,7 @@ class Ledger:
         row['state'] = 'uploaded'
         self.store.put(key, row, version)
 
-    def _poll(self, key, requested, deadline, interval, queue_budget):
+    def _poll(self, key, requested, deadline, interval, queue_budget, *, persist_terminal=True):
         batch, version = self._read_batch(key)
         if batch['state'] in {'claiming', 'submitting'}:
             raise LedgerError('Interrupted or ambiguous submission; inspect saved task, never resubmit')
@@ -430,7 +442,7 @@ class Ledger:
                 last_states = states
             # Every admitted file must have a terminal row before batch completion.
             if len(seen) == len(bound) and all(str(r['state']).lower() in DONE | FAILED for r in seen.values()):
-                if batch['state'] != 'terminal':
+                if persist_terminal and batch['state'] != 'terminal':
                     batch['state'] = 'terminal'
                     self.store.put(key, batch, version)
                 break
