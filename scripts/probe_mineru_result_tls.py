@@ -39,6 +39,16 @@ def cloud_manual_execution_allowed(env=None):
             and env.get('GITHUB_WORKFLOW_REF') == expected)
 
 
+def cloud_runner_metadata(env=None):
+    """Record allowlisted cloud-provided facts separately from the image choice."""
+    env = os.environ if env is None else env
+    allowed = {'runner_os': ('RUNNER_OS', {'Linux', 'Windows', 'macOS'}),
+               'runner_arch': ('RUNNER_ARCH', {'X86', 'X64', 'ARM', 'ARM64'}),
+               'requested_image': ('MINERU_PROBE_RUNNER_IMAGE', {'ubuntu-latest', 'macos-latest'})}
+    return {name: env.get(variable) if env.get(variable) in choices else None
+            for name, (variable, choices) in allowed.items()}
+
+
 def bounded_process_output(completed):
     """Raw process output stays in memory and is never included in the report."""
     parts = [completed.stdout or b'', completed.stderr or b'']
@@ -306,6 +316,7 @@ def main(argv=None):
         code = 2
     else:
         report = compare()
+        report['cloud_runner'] = cloud_runner_metadata()
         report['handshake_evidence'] = capture_handshake_evidence()
         report['exit_status_basis'] = 'head_trust_comparison'
         code = 0 if report['comparison'] == 'both_verified' else 1

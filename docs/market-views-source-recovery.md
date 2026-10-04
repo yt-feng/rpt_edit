@@ -138,8 +138,8 @@ runs on GitHub Actions. It preserves the failed report-notes conclusion;
 WeChat and translation keep their normal completion gates. It is not the primary
 parser and does not depend on local OCR or a user's computer.
 
-The original backup rejected `261001` for duplicate contents and
-`261002`/`261003` for a scanned page with zero native text. The opt-in extension
+The original backup rejected duplicate contents and scanned pages with zero
+native text. The opt-in extension
 retains every exact filename and SHA-256 binding while extracting and summarizing
 identical PDF contents once. It checks readable language and table structure,
 rather than admitting opaque strings solely by character count. Encrypted or
@@ -275,13 +275,42 @@ HTTP 526. Run `37231384448` used `azure:southeastasia` with
 `cf-placement: remote-SIN` and also received HTTP 526. Both temporary Workers
 were deleted successfully, with zero ZIP downloads, provider POSTs or R2 writes.
 Thus the tested Taipei and Singapore cloud routes have not provided a valid
-upstream ZIP for an R2 mirror. The cloud certificate-chain diagnostic can now
-identify which public certificate the runner actually received without
-weakening verification or changing the official hostname.
+upstream ZIP for an R2 mirror.
 
-Saved Dropbox inventory from 2026-10-03 22:34 UTC contained 63 PDFs for `261001`,
-4 for `261002` and 54 for `261003`. Those counts describe original inputs, not
-generated or published Market Views issues. Recovery is complete only after the
+Runner certificate-chain diagnostic `37232259586` on 2026-10-04 received the same
+`*.openxlab.org.cn` leaf issued by RapidSSL TLS RSA CA G1 in both default and
+TLS 1.2 RSA handshakes. It expired at **2026-10-02 23:59:59 UTC**; both handshakes
+reported verification code 10 at depth 0, identifying the expired website leaf.
+The independently observed valid Let's Encrypt chain on another connection does
+not verify runner ZIP retrieval. These diagnostics downloaded no complete ZIP.
+For the primary MinerU chain, verified upstream ZIP bytes must be retrieved
+before R2 persistence can supply the missing source.
+
+The earlier 2026-10-03 22:34 UTC inventory note recorded `261002=4`; that count
+was not independently revalidated and is superseded by the complete current
+Dropbox listing and successful download of **50 PDFs** in `261002`. This does not
+establish why the earlier count differed or that it belonged to another date.
+Fresh recovery preserves Daily's default `selection_mode=all` scope; it must not
+truncate the current batch to fit the earlier count. Run `37232193875` correctly
+stopped before OCR because its expected count was still 4.
+
+Original October 2 Daily run `37067138754` stopped at source intake: it expected
+`261003`, found latest folder `261001`, and rejected age 2 against allowed ages
+0–1. It downloaded no original October 2 batch and reached no MinerU parsing;
+that run cannot supply an original-PDF recovery artifact for `261002`.
+
+Current cloud source-only recovery runs are recorded separately from PDF
+publication. They use `generate_pdf=false`; a successful handoff retains
+original page and numeric evidence for review:
+
+| Bank date | Source-only run | Bound original scope | Recorded state |
+| --- | --- | --- | --- |
+| `261001` | `37232969584` | Producer `36932674491`; 63 files, 62 unique contents | In progress |
+| `261002` | `37233084607` | Fresh exact Dropbox listing; 50 files; original source run explicitly empty | In progress |
+| `261003` | `37231899669` | Producer `37159099752`; 54 files, 1,029 pages | In progress |
+| `261004` | `37233077480` | Producer `37232504334`; 4 unique files, date and `content_sha256` verified | In progress |
+
+Recovery is complete only after the
 matching cloud source and retrieval gates, exact dated PDF, original figures,
 private archive, public-safe commit and live catalogue/download are verified.
 Neither the retained native backup nor the saved OCR experiment establishes
@@ -292,5 +321,7 @@ Current real-source admission review checked all 54 original PDFs from producer
 and 1,029 pages. The stronger language gate classified 798 pages as readable,
 21 opaque-string pages and 210 pages with insufficient native text. Approximately
 231 pages therefore require cloud OCR. This inventory audit is not a successful
-OCR extraction. Actual cloud extraction, numeric fixture review, private handoff,
-missing dated PDF delivery and daily switch enablement remain acceptance steps.
+OCR extraction. Five real numeric golden fixtures accompany the cloud quality
+checks; the complete actual-report extraction and review remain in progress.
+Verified private handoff, missing dated PDF delivery and daily OCR switch
+enablement remain acceptance steps; daily OCR backup is not yet enabled.

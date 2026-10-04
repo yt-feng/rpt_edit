@@ -54,6 +54,8 @@ limits and incident evidence.
 
 The primary daily workflow is
 [`dropbox-latest-pdf-to-xhs-sharded.yml`](../.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml).
+Its default report selection mode is `all`, with no user-requested total cap;
+fresh exact-date recovery preserves that complete source scope.
 It keeps exact source bindings and accepted MinerU task identities in a durable
 private R2 ledger. A new submission may move to the next configured credential
 only after an explicit authentication rejection without any acceptance
@@ -145,11 +147,27 @@ missing completed-result bytes.
 Regional runs `37231111280` and `37231384448` subsequently proved execution in
 TPE and SIN through platform headers and each received HTTP 526. Both temporary
 Workers were deleted; neither downloaded a ZIP or wrote source bytes to R2.
-The manual runner TLS comparison now also captures the bounded public
-peer-provided chain under default and TLS 1.2 RSA diagnostic handshakes. This
-records certificate identity, validity and verification failure depth; it makes
-no HTTP request and changes no production TLS configuration. A valid complete
-official result download still remains the primary recovery acceptance step.
+Runner diagnostic `37232259586` then received the same RapidSSL-issued
+`*.openxlab.org.cn` leaf under default and TLS 1.2 RSA handshakes. That leaf
+expired at 2026-10-02 23:59:59 UTC; both reported verification code 10 at depth 0.
+The valid Let's Encrypt chain seen on another connection does not prove a cloud
+ZIP download. Complete verified result bytes are still required before an R2
+mirror can restore the primary source path.
+
+October 2 Daily run `37067138754` stopped before downloading or parsing: its
+expected folder was `261003`, latest was `261001`, and age 2 exceeded the allowed
+0–1 days. The earlier `261002=4` inventory note remains unverified and is
+superseded for current recovery by the complete 50-file Dropbox listing; the
+reason for that difference is not established. Source-only recovery now binds
+`261001` to `36932674491` (63 files/62 unique; recovery `37232969584`), `261002`
+to the fresh 50-file listing (empty original source run; `37233084607`),
+`261003` to `37159099752` (54 files/1,029 pages; `37231899669`), and `261004`
+to verified producer `37232504334` (4 unique files; `37233077480`). These recovery
+runs remain in progress. Roughly 231 October 3 pages require OCR, with five real
+numeric golden fixtures supporting cloud quality checks. Full extraction,
+source review, dated PDF/live delivery and daily OCR enablement are not yet
+accepted. The detailed source-only status is maintained in
+[Market Views source recovery](market-views-source-recovery.md).
 
 ## Main Workflow Groups
 

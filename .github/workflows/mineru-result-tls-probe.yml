@@ -7,6 +7,15 @@ on:
       - scripts/probe_mineru_result_tls.py
       - scripts/test_probe_mineru_result_tls.py
   workflow_dispatch:
+    inputs:
+      runner_image:
+        description: Cloud diagnostic runner image
+        type: choice
+        required: true
+        default: ubuntu-latest
+        options:
+          - ubuntu-latest
+          - macos-latest
 permissions:
   contents: read
 jobs:
@@ -24,7 +33,8 @@ jobs:
       - run: python3 -B scripts/test_probe_mineru_result_tls.py
   probe:
     if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
+    # Keep the mapping closed even if a dispatch value bypasses the choice UI.
+    runs-on: ${{ inputs.runner_image == 'macos-latest' && 'macos-latest' || 'ubuntu-latest' }}
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
@@ -35,6 +45,8 @@ jobs:
           python-version: '3.11'
       - run: python3 -m pip install --disable-pip-version-check --retries 0 requests certifi
       - name: Compare two strict HEAD clients and two independent strict TLS handshakes
+        env:
+          MINERU_PROBE_RUNNER_IMAGE: ${{ inputs.runner_image || 'ubuntu-latest' }}
         run: python3 -B scripts/probe_mineru_result_tls.py
       - name: Preserve only sanitized trust comparison and public chain metadata
         if: always()
