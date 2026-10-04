@@ -186,8 +186,13 @@ checks passed focused suites of 12 and 17 tests. Real consumer `37235097133`
 then stopped before synthesis on **`field_unresolved`** for the visual `17%`
 field, rather than a fixture-input format error. Zero model calls and zero PDFs
 were produced. The guard ran against the actual handoff; numerical acceptance
-and live delivery remain pending. A narrow short-structure OCR fix is prepared
-for the source failure class, with actual cloud OCR acceptance still pending.
+and live delivery remain pending. PR 230 merged the narrow short-structure OCR
+fix at `2bebbacb`; cloud regression `37236018141` passed all 43 source tests,
+including six real OCR cases, plus 32 receipt-audit tests. It adds bounded
+numeric-only failed-fixture diagnostics without changing field acceptance.
+The manual OCR field probe can recognize explicitly selected original pages
+after whole-batch validation, but always marks its output as probe-only with
+no complete source handoff or production acceptance.
 Roughly 231 October 3 pages require OCR, with five real
 numeric golden fixtures available for cloud quality checks; the failed run did
 not reach their acceptance. Full extraction,

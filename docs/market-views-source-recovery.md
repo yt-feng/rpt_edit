@@ -293,6 +293,10 @@ RapidSSL leaf and peer chain as the earlier runner, with leaf SHA-256
 `12137420c572ee3fde42af27309c8f36efdfc4d07e76dcba801ddf6bc308aeb3` and code 10
 at depth 0. Neither system CA nor certifi retrieved an HTTP response or ZIP bytes.
 Changing the cloud runner OS therefore did not restore the tested download path.
+The same accepted synthetic task was checked again in smoke attempt 4 at
+2026-10-04 21:28 UTC: authentication and parsing still passed, no new task was
+submitted, and strict result retrieval again failed with
+`tls_certificate_expired`, zero downloaded bytes and no verified ZIP.
 The [provider incident draft](experiments/mineru-result-download-incident-20261004.md)
 is prepared but remains unsubmitted; submission permission has been requested
 and no approval has been received.
@@ -349,9 +353,22 @@ complete-source auditor nor golden-fixture acceptance. October 1 source run
 `37232969584` also failed at report ordinal 10, page 9; that original page is a
 short Q&A divider. October 2 run `37233084607` failed at report ordinal 6, page 5;
 its original page type has not yet been inspected. All three complete-source
-extractions failed; none has a complete R2 handoff. A narrow short-structure OCR
-fix is prepared, but its actual cloud OCR acceptance remains pending. The
-October 2 failure is not assumed to have the same cause.
+extractions failed; none has a complete R2 handoff. PR 230 merged the narrow
+short-structure OCR fix at `2bebbacb`, with all 43 source tests (including six
+actual cloud OCR cases) and 32 receipt-audit tests passing in cloud regression
+`37236018141`. It also adds bounded numeric-only evidence for rejected fixtures.
+This tests the failure class; it does not claim that the failed complete source
+batches have been rebuilt. The October 2 failure is not assumed to have the same
+cause.
+
+The manual `market-views-ocr-field-probe.yml` workflow verifies a complete,
+exact-date original Daily artifact and all original hashes before recognizing
+only explicitly requested fixture pages. It uses the production field matcher
+and emits sanitized numeric diagnostics. Its output always declares
+`page_probe_only=true`, `complete_source_handoff=false`, and
+`production_acceptance=false`; it cannot admit a partial source, invoke a model,
+publish a PDF or provide a consumer handoff. This probe supports fast actual
+field diagnosis before another complete-source run.
 
 Recovery is complete only after the
 matching cloud source and retrieval gates, exact dated PDF, original figures,

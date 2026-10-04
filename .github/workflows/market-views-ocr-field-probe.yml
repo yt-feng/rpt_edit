@@ -1,0 +1,131 @@
+name: Probe original Market Views OCR numeric fields
+run-name: Market Views OCR field probe ${{ inputs.date_folder }}
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Completed original Daily run on main containing selected-macro-pdfs
+        required: true
+        type: string
+      date_folder:
+        description: Exact original Dropbox date, YYMMDD
+        required: true
+        type: string
+      expected_articles:
+        description: Exact original PDF file count, including duplicate aliases
+        required: true
+        type: string
+      fixture_json:
+        description: Schema-1 numeric checks with ID, source SHA, page, expected literal and point bbox
+        required: true
+        type: string
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: market-views-ocr-field-probe-${{ inputs.source_run_id }}-${{ inputs.date_folder }}
+  cancel-in-progress: false
+jobs:
+  probe:
+    if: ${{ github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          sparse-checkout: scripts
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Initialize sanitized probe-only diagnostic
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          Path(os.environ['RUNNER_TEMP'], 'market-views-ocr-field-probe.json').write_text(json.dumps({
+              'schema': 1, 'success': False, 'category': 'prerequisites_incomplete',
+              'page_probe_only': True, 'complete_source_handoff': False, 'production_acceptance': False,
+              'provider_post_count': 0, 'model_call_count': 0, 'pdf_count': 0, 'r2_source_admission_count': 0,
+          }) + '\n', encoding='utf-8')
+          PY
+      - name: Install actual cloud OCR engines and language models
+        run: |
+          python -m pip install PyMuPDF Pillow
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends tesseract-ocr tesseract-ocr-eng tesseract-ocr-chi-sim
+          TESSDATA_DIR="$(tesseract --list-langs 2>/dev/null | sed -n '1s/.*"\(.*\)".*/\1/p')"
+          test -n "$TESSDATA_DIR"
+          test -f "$TESSDATA_DIR/eng.traineddata"
+          test -f "$TESSDATA_DIR/chi_sim.traineddata"
+          echo "TESSDATA_PREFIX=$TESSDATA_DIR" >> "$GITHUB_ENV"
+      - name: Validate bounded fixtures and exact original Daily producer
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+          FIXTURE_JSON: ${{ inputs.fixture_json }}
+        run: |
+          python - <<'PY'
+          import os, subprocess, sys
+          from pathlib import Path
+          sys.path.insert(0, 'scripts')
+          import probe_market_views_ocr_fields as probe
+          from audit_market_views_ocr_receipt import write_summary
+          temporary = Path(os.environ['RUNNER_TEMP'])
+          summary = temporary / 'market-views-ocr-field-probe.json'
+          try:
+              probe.validate_inputs(os.environ['DATE_FOLDER'], os.environ['SOURCE_RUN_ID'],
+                                    probe.positive_count(os.environ['EXPECTED_ARTICLES']))
+              raw = os.environ['FIXTURE_JSON']
+              if len(raw.encode('utf-8')) > probe.FIXTURE_BYTE_LIMIT:
+                  raise probe.ProbeError('fixture_input_size_exceeded')
+              fixtures = temporary / 'market-views-ocr-field-fixtures.json'
+              fixtures.write_text(raw, encoding='utf-8')
+              probe.read_checks(fixtures)
+              response = subprocess.run(['gh', 'api', f"repos/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{os.environ['SOURCE_RUN_ID']}"],
+                                        text=True, capture_output=True, check=False, timeout=60)
+              if response.returncode != 0:
+                  raise probe.ProbeError('original_daily_metadata_unavailable')
+              metadata = temporary / 'market-views-original-daily.json'
+              metadata.write_text(response.stdout, encoding='utf-8')
+              probe.verify_producer(metadata, os.environ['SOURCE_RUN_ID'])
+          except probe.ProbeError as exc:
+              write_summary(summary, probe.failure_summary(str(exc)), source_dir=Path('_selected_macro_pdfs'))
+              raise SystemExit('OCR field probe prerequisite validation rejected.')
+          except Exception:
+              write_summary(summary, probe.failure_summary('producer_metadata_failed'), source_dir=Path('_selected_macro_pdfs'))
+              raise SystemExit('OCR field probe producer verification failed.')
+          PY
+      - name: Download exact original Daily selected-PDF artifact
+        uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.source_run_id }}
+          name: selected-macro-pdfs-${{ inputs.source_run_id }}
+          path: _selected_macro_pdfs
+      - name: Probe only requested original pages and numeric fields
+        env:
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+        run: |
+          python scripts/probe_market_views_ocr_fields.py \
+            --input-dir _selected_macro_pdfs \
+            --manifest _selected_macro_pdfs/selected_to_process_manifest.json \
+            --fixtures "$RUNNER_TEMP/market-views-ocr-field-fixtures.json" \
+            --producer-metadata "$RUNNER_TEMP/market-views-original-daily.json" \
+            --source-run-id "$SOURCE_RUN_ID" \
+            --date-folder "$DATE_FOLDER" \
+            --expected-articles "$EXPECTED_ARTICLES" \
+            --summary "$RUNNER_TEMP/market-views-ocr-field-probe.json"
+      - name: Preserve only sanitized probe diagnostics
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: market-views-ocr-field-probe-${{ github.run_id }}
+          path: ${{ runner.temp }}/market-views-ocr-field-probe.json
+          if-no-files-found: warn
+          retention-days: 7
