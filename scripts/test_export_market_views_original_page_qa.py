@@ -6,6 +6,7 @@ import json
 import os
 from pathlib import Path
 import subprocess
+import sys
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -152,6 +153,68 @@ class QATests(unittest.TestCase):
             return result
         with patch.object(qa, 'encrypt_payload', side_effect=mutate), self.assertRaises(qa.QAError): self.export()
         self.assertFalse((self.root / 'encrypted').exists())
+
+    def test_native_mupdf_diagnostics_never_expose_valid_original_content_and_switches_restore(self):
+        path = self.source / 'PRIVATE-0.pdf'
+        # A complete, hash-authenticated PDF can contain unknown operators.
+        # Their native C diagnostics bypass Python redirect_stdout/stderr.
+        with fitz.open(stream=path.read_bytes(), filetype='pdf') as document:
+            xref = document[1].get_contents()[0]
+            document.update_stream(xref, document.xref_stream(xref) + b'\nq PRIVATE_SYNTHETIC_OPERATOR Q\n')
+            path.write_bytes(document.tobytes())
+        self.rows[0]['content_sha256'] = digest(path.read_bytes())
+        (self.source / archive.MANIFEST).write_bytes(encoded(self.rows))
+        raw, inventory, _ = archive.checked_inputs(self.source, 2, '261002')
+        self.receipt.update(manifest_sha256=digest(raw), original_inventory=inventory)
+        (self.source / archive.RECEIPT).write_bytes(encoded(self.receipt))
+        program = r'''
+import json, sys
+from pathlib import Path
+from unittest.mock import patch
+sys.path.insert(0, sys.argv[1])
+import fitz
+import export_market_views_original_page_qa as qa
+source, cert, output = map(Path, sys.argv[2:5])
+producer = {'id':12345, 'head_sha':'a'*40, 'path':qa.archive.WORKFLOW, 'head_branch':'main',
+ 'event':'workflow_dispatch','status':'completed','conclusion':'success','repository':{'full_name':'owner/repo'}}
+for desired in (True, False):
+ for failure in (False, True):
+  fitz.TOOLS.mupdf_display_errors(desired); fitz.TOOLS.mupdf_display_warnings(desired)
+  arguments = dict(archive_run_id='12345', repository='owner/repo', expected_reports=2, date_folder='261002',
+   source_ordinal=1, page_number=2, recipient_pem=cert.read_text(),
+   output_dir=output / ('case-%s-%s' % (desired, failure)))
+  render = fitz.Page.get_pixmap
+  def render_then_fail(page, *args, **kwargs):
+   render(page, *args, **kwargs)
+   raise RuntimeError('PRIVATE_SYNTHETIC_OPERATOR')
+  try:
+   if failure:
+    with patch.object(fitz.Page, 'get_pixmap', side_effect=render_then_fail, autospec=True):
+     qa.export_page(source, producer, **arguments)
+   else:
+    qa.export_page(source, producer, **arguments)
+   assert not failure
+  except qa.QAError as error:
+   assert failure and str(error)=='visual_qa_page_invalid'
+  assert fitz.TOOLS.mupdf_display_errors() is desired
+  assert fitz.TOOLS.mupdf_display_warnings() is desired
+print('native_diagnostics_suppressed_and_states_restored')
+'''
+        result = subprocess.run([sys.executable, '-B', '-c', program, str(Path(qa.__file__).parent),
+            str(self.source), str(self.cert), str(self.root / 'subprocess-encrypted')],
+            capture_output=True, timeout=120, check=False)
+        self.assertEqual(result.returncode, 0)
+        self.assertNotIn(b'PRIVATE_SYNTHETIC_OPERATOR', result.stdout)
+        self.assertNotIn(b'PRIVATE_SYNTHETIC_OPERATOR', result.stderr)
+        self.assertIn(b'native_diagnostics_suppressed_and_states_restored', result.stdout)
+
+    def test_mupdf_diagnostic_switches_restore_when_document_open_fails(self):
+        old_errors = fitz.TOOLS.mupdf_display_errors()
+        old_warnings = fitz.TOOLS.mupdf_display_warnings()
+        with patch.object(qa.fitz, 'open', side_effect=RuntimeError('PRIVATE')), self.assertRaises(qa.QAError):
+            self.export()
+        self.assertEqual(fitz.TOOLS.mupdf_display_errors(), old_errors)
+        self.assertEqual(fitz.TOOLS.mupdf_display_warnings(), old_warnings)
 
     def test_r2_client_explicitly_prohibits_mutation(self):
         class Client:

@@ -661,6 +661,13 @@ artifacts. It performs no OCR, model call, task submission, ledger write or R2
 source admission. The reviewer's temporary decryption key is not a production
 pipeline dependency.
 
+Original-page QA disables MuPDF's native error and warning channels during all
+PDF open, render, page-copy, serialization and close operations, restoring the
+prior settings on success or exception. Python stream redirection alone does
+not suppress those native diagnostics. A real subprocess regression with a
+valid original containing an unknown content-stream operator confirms that no
+original operator token reaches workflow stdout or stderr.
+
 ### One full-page alternate recognition after unreadable default OCR
 
 When both default OCR text orders fail the unchanged language policy, the cloud
