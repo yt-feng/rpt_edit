@@ -142,6 +142,15 @@ complete ZIP download and source validation before a private R2 mirror could
 restore processing. R2 storage and task metadata cannot substitute for the
 missing completed-result bytes.
 
+Regional runs `37231111280` and `37231384448` subsequently proved execution in
+TPE and SIN through platform headers and each received HTTP 526. Both temporary
+Workers were deleted; neither downloaded a ZIP or wrote source bytes to R2.
+The manual runner TLS comparison now also captures the bounded public
+peer-provided chain under default and TLS 1.2 RSA diagnostic handshakes. This
+records certificate identity, validity and verification failure depth; it makes
+no HTTP request and changes no production TLS configuration. A valid complete
+official result download still remains the primary recovery acceptance step.
+
 ## Main Workflow Groups
 
 | Group | Role |
