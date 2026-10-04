@@ -139,6 +139,177 @@ class NativeMarketSourcesTests(unittest.TestCase):
                 native.require_readable_page(text, "encoded.pdf", 1)
         self.assertEqual(native.page_readability(opaque)["reason"], "opaque_ascii_runs")
 
+    @staticmethod
+    def rotated_label_page(document):
+        page = document.new_page(width=612, height=792)
+        page.insert_text((50, 50), "Robot shipment value by destination research monthly trade statistics", fontsize=11)
+        for index in range(30):
+            # Overlapping rotated word boxes cause get_sorted_text to insert
+            # no separating whitespace, independently of OCR recognition.
+            page.insert_text((80 + index * 9, 240), str(201001 + index), fontsize=10, rotate=90)
+        return page
+
+    def fixture_models(self):
+        models = self.root / "layout-fixture-models"
+        models.mkdir(exist_ok=True)
+        for language in native.OCR_LANGUAGES.split("+"):
+            (models / f"{language}.traineddata").write_bytes(b"fixture model identity")
+        return models
+
+    def test_actual_textpage_reordering_can_join_rotated_labels_without_changing_glyphs(self) -> None:
+        with fitz.open() as document:
+            page = self.rotated_label_page(document)
+            textpage = page.get_textpage()
+            sorted_text = page.get_text("text", textpage=textpage, sort=True).strip()
+            source_flow = page.get_text("text", textpage=textpage, sort=False).strip()
+            self.assertEqual(native.page_readability(sorted_text)["reason"], "opaque_ascii_runs")
+            with self.assertRaises(native.SourceValidationError):
+                native.require_readable_page(sorted_text, "layout.pdf", 1)
+            selected, selected_sort, layout = native._select_ocr_text_layout(page, textpage, sorted_text, "layout.pdf", 1)
+        self.assertEqual(selected, source_flow)
+        self.assertFalse(selected_sort)
+        self.assertTrue(native._same_recognized_glyphs(sorted_text, source_flow))
+        self.assertEqual(layout, native._text_layout_record(sorted_text, source_flow))
+        self.assertFalse(layout["sorted_readability"]["accepted"])
+        self.assertTrue(layout["selected_readability"]["accepted"])
+        self.assertEqual(layout["sorted_readability"]["numeric_tokens"], 1)
+        self.assertEqual(layout["selected_readability"]["numeric_tokens"], 30)
+
+    def test_default_readable_ocr_layout_never_reads_an_alternative_or_adds_metadata(self) -> None:
+        with fitz.open() as document:
+            page = document.new_page()
+            page.insert_text((45, 50), "Disclosure Appendix Research", fontsize=20)
+            primary = page.get_text("text", sort=True).strip()
+            words = page.get_text("words", sort=True)
+            textpage = page.get_textpage()
+            with patch.object(fitz, "get_tessdata", return_value=str(self.fixture_models())), \
+                    patch.object(fitz.Page, "get_textpage_ocr", return_value=textpage) as engine, \
+                    patch.object(fitz.Page, "get_text", wraps=page.get_text) as reads, \
+                    patch("ocr_numeric_evidence.audit_numeric_evidence", return_value={"safe_text": primary, "evidence": {}}) as audit:
+                text, provenance = native._ocr_page(page, "layout.pdf", 1)
+        self.assertEqual(text, primary)
+        self.assertEqual(engine.call_count, 1)
+        self.assertEqual(audit.call_count, 1)
+        self.assertEqual(audit.call_args.kwargs["primary_words"], words)
+        self.assertTrue(all(call.kwargs["sort"] for call in reads.call_args_list))
+        self.assertEqual(set(provenance), {"engine", "pymupdf_version", "languages", "dpi", "full_page", "traineddata", "numeric_evidence"})
+
+    def test_source_flow_cannot_replace_glyphs_signs_punctuation_or_unreadable_text(self) -> None:
+        with fitz.open() as document:
+            page = self.rotated_label_page(document)
+            textpage = page.get_textpage()
+            sorted_text = page.get_text("text", textpage=textpage, sort=True).strip()
+            flow = page.get_text("text", textpage=textpage, sort=False).strip()
+            candidates = (flow.replace("201001", "201002", 1), flow + "-", flow + "%", flow + ".", sorted_text, "")
+            for candidate in candidates:
+                with self.subTest(shape=native.page_readability(candidate)), \
+                        patch.object(fitz.Page, "get_text", return_value=candidate), \
+                        patch("ocr_numeric_evidence.audit_numeric_evidence", side_effect=AssertionError("Rejected layout must not reach numeric audit")) as audit:
+                    with self.assertRaisesRegex(native.SourceValidationError, "opaque_ascii_runs"):
+                        native._select_ocr_text_layout(page, textpage, sorted_text, "layout.pdf", 1)
+                    audit.assert_not_called()
+        self.assertTrue(native._same_recognized_glyphs("A-4.8%\n B", "B\tA-4.8%"))
+        self.assertFalse(native._same_recognized_glyphs("A-4.8%", "A4.8%"))
+
+    def make_layout_receipt(self):
+        import ocr_numeric_evidence as numeric
+        self.select("layout.pdf")
+        path = self.input / "layout.pdf"
+        with fitz.open(path) as document:
+            self.rotated_label_page(document)
+            document.saveIncr()
+        self.update_hash("layout.pdf")
+        models = self.fixture_models()
+        # Only the engine reads are mocked. Real TextPage ordering, page
+        # geometry, source pixels, numeric decisions and consumer checks run.
+        with patch.object(fitz, "get_tessdata", return_value=str(models)), \
+                patch.object(fitz.Page, "get_textpage_ocr", autospec=True, side_effect=lambda page, **kwargs: page.get_textpage()) as engine, \
+                patch.object(numeric, "_read_tesseract", return_value=[]), \
+                patch.object(numeric, "_crop_reads", return_value={}), \
+                patch.object(numeric.shutil, "which", return_value="fixture-engine"), \
+                patch.object(numeric, "audit_numeric_evidence", wraps=numeric.audit_numeric_evidence) as audit:
+            receipt = self.extract(enable_ocr=True)
+        self.assertEqual(engine.call_count, 1)
+        self.assertEqual(audit.call_count, 1)
+        self.assertEqual(audit.call_args.args[1], receipt["reports"][0]["pages"][1]["ocr"]["numeric_evidence"]["primary_text"])
+        self.assertEqual(len(audit.call_args.kwargs["primary_words"]), 39)
+        with fitz.open(path) as document:
+            self.assertEqual(audit.call_args.kwargs["primary_words"], document[1].get_text("words", sort=False))
+        return receipt
+
+    def test_source_flow_full_extraction_retains_exact_numeric_proof_and_transfer_without_ocr(self) -> None:
+        receipt = self.make_layout_receipt()
+        report = receipt["reports"][0]
+        page = report["pages"][1]
+        evidence = page["ocr"]["numeric_evidence"]
+        self.assertEqual(evidence["source_num_count"], 30)
+        self.assertEqual(evidence["unresolved_count"], 30)
+        self.assertEqual(evidence["verified_count"] + evidence["corrected_count"], 0)
+        self.assertNotIn("201001", (self.output / report["markdown"]["path"]).read_text())
+        self.assertEqual(page["recognized_readability"], page["ocr"]["text_layout"]["selected_readability"])
+        status = json.loads((self.output / report["status"]["path"]).read_bytes())
+        self.assertEqual(status["ocr_text_layout_bindings"], [{"page": 2, **page["text_layout_selection"]}])
+        shutil.rmtree(self.input)
+        with patch.object(native, "_ocr_page", side_effect=AssertionError("Consumer must not run OCR")):
+            self.assertEqual(native.validate_sources(self.output, self.manifest, 1), receipt)
+
+    def test_source_flow_consumer_rejects_removed_or_falsified_optional_layout_proof(self) -> None:
+        receipt = self.make_layout_receipt()
+        receipt_path = self.output / native.RECEIPT_NAME
+        for change in ("layout_missing", "indicator_missing", "both_missing", "binding_hash", "schema", "sorted_readability", "typed_readability", "glyph", "selected_hash"):
+            tampered = copy.deepcopy(receipt)
+            page = tampered["reports"][0]["pages"][1]
+            layout = page["ocr"]["text_layout"]
+            if change in {"layout_missing", "both_missing"}:
+                page["ocr"].pop("text_layout")
+            if change in {"indicator_missing", "both_missing"}:
+                page.pop("text_layout_selection")
+            elif change == "binding_hash":
+                page["text_layout_selection"]["text_layout_sha256"] = "0" * 64
+            elif change == "schema":
+                layout["schema"] = True
+            elif change == "sorted_readability":
+                layout["sorted_readability"]["accepted"] = True
+            elif change == "typed_readability":
+                layout["sorted_readability"]["invalid_unicode_characters"] = False
+                page["text_layout_selection"]["text_layout_sha256"] = native.sha256_bytes(native.canonical_bytes(layout))
+            elif change == "glyph":
+                primary = page["ocr"]["numeric_evidence"]["primary_text"]
+                page["ocr"]["text_layout"] = native._text_layout_record(layout["sorted_text"] + "-", primary)
+                page["text_layout_selection"]["text_layout_sha256"] = native.sha256_bytes(native.canonical_bytes(page["ocr"]["text_layout"]))
+            elif change == "selected_hash":
+                layout["selected_text_sha256"] = "0" * 64
+            receipt_path.write_text(json.dumps(tampered))
+            with self.subTest(change=change), self.assertRaisesRegex(native.SourceValidationError, "text layout"):
+                native.validate_sources(self.output, self.manifest, 1)
+        tampered = copy.deepcopy(receipt)
+        report = tampered["reports"][0]
+        status_path = self.output / report["status"]["path"]
+        status = json.loads(status_path.read_bytes())
+        status.pop("ocr_text_layout_bindings")
+        native.write_json(status_path, status)
+        report["status"] = native.file_record(status_path, self.output)
+        receipt_path.write_text(json.dumps(tampered))
+        with self.assertRaisesRegex(native.SourceValidationError, "text layout bindings"):
+            native.validate_sources(self.output, self.manifest, 1)
+
+    def test_source_flow_still_rejects_numeric_audit_failure_before_any_receipt(self) -> None:
+        from ocr_numeric_evidence import NumericEvidenceError
+        self.select("layout.pdf")
+        path = self.input / "layout.pdf"
+        with fitz.open(path) as document:
+            self.rotated_label_page(document)
+            document.saveIncr()
+        self.update_hash("layout.pdf")
+        with patch.object(fitz, "get_tessdata", return_value=str(self.fixture_models())), \
+                patch.object(fitz.Page, "get_textpage_ocr", lambda page, **kwargs: page.get_textpage()), \
+                patch("ocr_numeric_evidence.audit_numeric_evidence", side_effect=NumericEvidenceError("Numeric evidence field mapping mismatch")) as audit:
+            with self.assertRaises(native.SourceValidationError) as failure:
+                self.extract(enable_ocr=True)
+        self.assertEqual(audit.call_count, 1)
+        self.assertEqual(failure.exception.category, "numeric_field_mapping_mismatch")
+        self.assertFalse(self.output.exists())
+
     def test_readability_accepts_real_prose_chinese_and_short_financial_table_labels(self) -> None:
         examples = {
             "English": REPORT_TEXT,

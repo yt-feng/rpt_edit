@@ -562,3 +562,27 @@ October 3 child cache run `37241908963` verified and cached 15 additional
 authorized DONE members without parsing POSTs. October 4 original cache
 `37241582462` verified its three original DONE results. Full recovery and PDF
 acceptance remain separate from these cache receipts.
+
+### Preserve recognized glyphs when geometric OCR order joins labels
+
+The native cloud backup keeps geometric text order as its default. Only when
+that transcript fails the existing readability policy may it read source-flow
+order from the same OCR TextPage. Both transcripts must contain exactly the
+same non-whitespace characters, including every sign, punctuation mark and
+repeated character, and the alternative must pass the unchanged readability
+gate. Positioned words use the same selected order. Recognition and complete
+numeric auditing are not skipped or repeated to manufacture readable prose.
+
+Optional layout provenance binds both readability results, transcript hashes
+and the selection into page metadata and the already hashed report status.
+Transferred consumers recompute those bindings and reject deletion or mutation.
+Default readable pages and existing immutable receipts retain their original
+shape. Safe page diagnostics report both sorted and selected readability counts
+without exporting recognized text. Actual failed-report pages and complete
+source batches still require separate cloud acceptance.
+
+Cloud diagnostic `37241773243` isolated the October 3 first-page rejection:
+the 78-by-128 crop matches its expected geometry, but its PSM-11 field count is
+an integer above the existing 2,500-field bound. The geometry label alone must
+not be interpreted as a coordinate or pixel-dimension error; the bound remains
+unchanged pending a producer-side investigation.

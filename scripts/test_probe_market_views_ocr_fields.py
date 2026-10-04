@@ -396,7 +396,9 @@ class FieldProbeTests(unittest.TestCase):
                 source_kind="original-archive", repository="owner/repo")
 
     def raw_fixture(self, page):
-        return page.get_text("text", sort=True).strip(), page.get_text("words", sort=True), "fixture-models"
+        primary = page.get_text("text", sort=True).strip()
+        return primary, page.get_text("words", sort=True), "fixture-models", {
+            "selection": "geometric-sorted", "sorted_readability": probe._readability_projection(primary, allow_sparse_ocr=True)}
 
     def test_archive_producer_requires_exact_completed_manual_main_repository(self):
         self.make_archive_context()
@@ -478,7 +480,8 @@ class FieldProbeTests(unittest.TestCase):
     def test_unreadable_raw_ocr_has_real_counts_and_reason_without_private_text(self):
         self.make_archive_context()
         opaque = "A" * 120 + "\nPRIVATE"
-        with mock.patch.object(probe, "_raw_page_ocr", return_value=(opaque, [], "private-models")), \
+        with mock.patch.object(probe, "_raw_page_ocr", return_value=(opaque, [], "private-models", {
+            "selection": "rejected", "sorted_readability": probe._readability_projection(opaque, allow_sparse_ocr=True)})), \
              mock.patch.object(probe, "audit_numeric_evidence") as numeric_audit:
             result = self.call_pages()
         numeric_audit.assert_not_called()
@@ -496,6 +499,56 @@ class FieldProbeTests(unittest.TestCase):
             self.assertEqual(result[key], 0)
         self.assertFalse(result["production_acceptance"])
         self.assertFalse(result["complete_source_handoff"])
+
+    def test_raw_probe_reuses_production_layout_and_same_textpage_words_once(self):
+        source_flow = "Research market outlook shows economic conditions with growth analysis"
+        joined = source_flow.replace(" ", "")
+        class Page:
+            def __init__(self):
+                self.textpage = object()
+                self.ocr_count = 0
+                self.word_sorts = []
+            def get_textpage_ocr(self, **options):
+                self.ocr_count += 1
+                return self.textpage
+            def get_text(self, kind, *, textpage, sort):
+                if textpage is not self.textpage:
+                    raise AssertionError("Different OCR result")
+                if kind == "words":
+                    self.word_sorts.append(sort)
+                    return []
+                return joined if sort else source_flow
+        page = Page()
+        models = self.root / "models"
+        models.mkdir()
+        for language in probe.native.OCR_LANGUAGES.split("+"):
+            (models / f"{language}.traineddata").write_bytes(b"fixture")
+        with mock.patch.object(probe.fitz, "get_tessdata", return_value=str(models)):
+            primary, _, _, diagnostic = probe._raw_page_ocr(page)
+        self.assertEqual(primary, source_flow)
+        self.assertEqual(page.ocr_count, 1)
+        self.assertEqual(page.word_sorts, [False])
+        self.assertEqual(diagnostic["selection"], "source-flow")
+        self.assertEqual(diagnostic["sorted_readability"]["reason"], "opaque_ascii_runs")
+        self.assertNotIn(source_flow, json.dumps(diagnostic))
+        self.assertNotIn(joined, json.dumps(diagnostic))
+
+    def test_page_layout_projection_has_both_counts_without_copying_private_keys(self):
+        self.make_archive_context()
+        primary = "Research market outlook shows economic conditions with growth analysis"
+        sorted_counts = probe._readability_projection(primary.replace(" ", ""), allow_sparse_ocr=True)
+        layout = {"selection": "source-flow", "sorted_readability": {**sorted_counts, "raw": "PRIVATE"},
+                  "private_text": primary}
+        error = numeric.NumericEvidenceError("Numeric crop geometry differs from its positioned source field")
+        with mock.patch.object(probe, "_raw_page_ocr", return_value=(primary, [], "models", layout)), \
+             mock.patch.object(probe, "audit_numeric_evidence", side_effect=error):
+            result = self.call_pages()
+        projected = result["pages"][0]["ocr_layout"]
+        self.assertEqual(projected["selection"], "source-flow")
+        self.assertFalse(projected["sorted_readability"]["accepted"])
+        self.assertTrue(projected["selected_readability"]["accepted"])
+        self.assertNotIn("PRIVATE", json.dumps(result))
+        self.assertNotIn(primary, json.dumps(result))
 
     def test_page_numeric_failure_preserves_only_category_and_safe_geometry(self):
         self.make_archive_context()
