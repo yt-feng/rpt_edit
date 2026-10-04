@@ -111,7 +111,7 @@ jobs:
                                             capture_output=True, text=True, timeout=30, check=False)
                   if response.returncode or len(response.stdout.encode()) > 1_000_000:
                       raise ValueError('recovery_producer_unavailable')
-                  check_recovery_producer(decode(response.stdout.encode()), recovery_run, os.environ['GITHUB_REPOSITORY'])
+                  check_recovery_producer(decode(response.stdout.encode()), recovery_run, os.environ['GITHUB_REPOSITORY'], os.environ['DATE_FOLDER'])
                   Path(os.environ['RUNNER_TEMP'], 'mineru-cache-recovery-producer.json').write_text(response.stdout)
           except Exception:
               raise SystemExit('Cache-only original producer validation rejected.')

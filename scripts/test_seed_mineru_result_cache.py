@@ -452,14 +452,19 @@ class SeedTests(unittest.TestCase):
         self.assertEqual(self.r2.objects, before)
 
     def test_authenticated_child_producer_is_exact_manual_main_workflow_even_if_later_failed(self):
-        producer = {'id': 67890, 'path': seed.RECOVERY_WORKFLOW, 'name': seed.RECOVERY_NAME, 'event': 'workflow_dispatch',
+        # GitHub's actual run API returns the expanded run-name in name.
+        producer = {'id': 67890, 'path': seed.RECOVERY_WORKFLOW, 'name': 'Recover MinerU Market Views 261003', 'event': 'workflow_dispatch',
                     'head_branch': 'main', 'head_sha': 'a' * 40, 'repository': {'full_name': 'owner/repo'},
                     'status': 'completed', 'conclusion': 'failure'}
-        self.assertEqual(seed.check_recovery_producer(producer, '67890', 'owner/repo'), 'a' * 40)
+        self.assertEqual(seed.check_recovery_producer(producer, '67890', 'owner/repo', '261003'), 'a' * 40)
         for change in ({'id': 67891}, {'path': 'PRIVATE.yml'}, {'name': 'Other recovery'}, {'event': 'push'}, {'head_branch': 'PRIVATE'},
-                       {'head_sha': 'short'}, {'status': 'in_progress'}, {'conclusion': 'cancelled'}):
+                       {'head_sha': 'short'}, {'status': 'in_progress'}, {'conclusion': 'cancelled'},
+                       {'name': 'Recover Market Views from exact MinerU tasks'},
+                       {'name': 'Recover MinerU Market Views 261004'}):
             with self.subTest(change=change), self.assertRaises(seed.SeedError):
-                seed.check_recovery_producer({**producer, **change}, '67890', 'owner/repo')
+                seed.check_recovery_producer({**producer, **change}, '67890', 'owner/repo', '261003')
+        with self.assertRaises(seed.SeedError):
+            seed.check_recovery_producer(producer, '67890', 'owner/repo', '261004')
 
 
 class WorkflowContractTests(unittest.TestCase):
