@@ -345,18 +345,23 @@ def probe_fields(input_dir: Path, manifest: Path, fixtures: Path, producer_metad
     return summary
 
 
-def _readability_projection(text: str, *, allow_sparse_ocr: bool = False) -> dict[str, Any]:
-    value = native.page_readability(text, allow_sparse_ocr=allow_sparse_ocr)
+def _safe_readability(value: Any) -> dict[str, Any]:
+    if not isinstance(value, dict):
+        return {}
     output = {key: value[key] for key in READABILITY_COUNTS
               if type(value.get(key)) is int and 0 <= value[key] <= 10_000_000}
     if type(value.get("accepted")) is bool:
         output["accepted"] = value["accepted"]
-    if value.get("reason") in READABILITY_REASONS:
+    if isinstance(value.get("reason"), str) and value["reason"] in READABILITY_REASONS:
         output["reason"] = value["reason"]
     return output
 
 
-def _raw_page_ocr(page: fitz.Page) -> tuple[str, list[Any], str]:
+def _readability_projection(text: str, *, allow_sparse_ocr: bool = False) -> dict[str, Any]:
+    return _safe_readability(native.page_readability(text, allow_sparse_ocr=allow_sparse_ocr))
+
+
+def _raw_page_ocr(page: fitz.Page) -> tuple[str, list[Any], str, dict[str, Any]]:
     """Use the production full-page engine parameters without admitting sources."""
     try:
         tessdata = Path(fitz.get_tessdata())
@@ -367,11 +372,26 @@ def _raw_page_ocr(page: fitz.Page) -> tuple[str, list[Any], str]:
     try:
         textpage = page.get_textpage_ocr(language=native.OCR_LANGUAGES, dpi=native.PAGE_DPI,
                                        full=True, tessdata=str(tessdata))
-        primary = page.get_text("text", textpage=textpage, sort=True).strip()
-        words = page.get_text("words", textpage=textpage, sort=True)
+        sorted_text = page.get_text("text", textpage=textpage, sort=True).strip()
     except Exception:
         raise ProbeError("ocr_engine_failed") from None
-    return primary, words, str(tessdata)
+    selection = "geometric-sorted"
+    try:
+        primary, selected_sort, _ = native._select_ocr_text_layout(page, textpage, sorted_text, "page-probe", 1)
+        if not selected_sort:
+            selection = "source-flow"
+    except native.SourceValidationError as exc:
+        if getattr(exc, "category", None) == "ocr_engine_failed":
+            raise ProbeError("ocr_engine_failed") from None
+        # Preserve the real rejected default's counts. This instrument does
+        # not turn a rejected layout into an admitted source transcript.
+        primary, selected_sort, selection = sorted_text, True, "rejected"
+    try:
+        words = page.get_text("words", textpage=textpage, sort=selected_sort)
+    except Exception:
+        raise ProbeError("ocr_engine_failed") from None
+    layout = {"selection": selection, "sorted_readability": _readability_projection(sorted_text, allow_sparse_ocr=True)}
+    return primary, words, str(tessdata), layout
 
 
 def _diagnose_page(page: fitz.Page, image_path: Path) -> dict[str, Any]:
@@ -380,8 +400,13 @@ def _diagnose_page(page: fitz.Page, image_path: Path) -> dict[str, Any]:
               "ocr_attempted": True, "numeric_audit_performed": False}
     try:
         with open(os.devnull, "w") as silent, contextlib.redirect_stdout(silent), contextlib.redirect_stderr(silent):
-            primary, words, tessdata = _raw_page_ocr(page)
+            primary, words, tessdata, layout = _raw_page_ocr(page)
             result["ocr_readability"] = _readability_projection(primary, allow_sparse_ocr=True)
+            if (isinstance(layout, dict) and isinstance(layout.get("selection"), str)
+                    and layout["selection"] in {"geometric-sorted", "source-flow", "rejected"}):
+                result["ocr_layout"] = {"selection": layout["selection"],
+                    "sorted_readability": _safe_readability(layout.get("sorted_readability")),
+                    "selected_readability": dict(result["ocr_readability"])}
             if not result["ocr_readability"].get("accepted"):
                 result["category"] = "ocr_readability_rejected"
                 return result

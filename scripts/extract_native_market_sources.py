@@ -9,6 +9,7 @@ file aliases and provably white pages. Transferred receipts need no originals.
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 import copy
 from datetime import datetime
 import hashlib
@@ -37,6 +38,7 @@ PAGE_DPI = 300
 OCR_LANGUAGES = "eng+chi_sim"
 READABILITY_POLICY = "lexical-and-table-v2"
 SPARSE_OCR_SUBTYPE = "sparse-structural-ocr-v1"
+OCR_TEXT_LAYOUT_POLICY = "same-textpage-source-flow-v1"
 LATIN_WORD = re.compile(r"[A-Za-z]+(?:['’][A-Za-z]+)*")
 LONG_ASCII_RUN = re.compile(r"[A-Za-z0-9]{25,}")
 NUMBER_TOKEN = re.compile(r"(?<![A-Za-z0-9])[-+]?\d+(?:[.,]\d+)*(?:%|bps)?(?![A-Za-z0-9])")
@@ -264,6 +266,62 @@ def _ocr_primary_text(ocr: Any) -> str:
     return primary
 
 
+def _same_recognized_glyphs(first: str, second: str) -> bool:
+    # Preserve punctuation, signs, case and every repeated character. Only
+    # whitespace and order may differ between reads of one OCR TextPage.
+    return (Counter(character for character in first if not character.isspace())
+            == Counter(character for character in second if not character.isspace()))
+
+
+def _text_layout_record(sorted_text: str, source_flow_text: str) -> dict[str, Any]:
+    return {"schema": 1, "policy": OCR_TEXT_LAYOUT_POLICY, "selection": "source-flow",
+            "sorted_text": sorted_text,
+            "sorted_text_sha256": sha256_bytes(sorted_text.encode("utf-8")),
+            "sorted_readability": page_readability(sorted_text, allow_sparse_ocr=True),
+            "selected_text_sha256": sha256_bytes(source_flow_text.encode("utf-8")),
+            "selected_readability": page_readability(source_flow_text, allow_sparse_ocr=True)}
+
+
+def _select_ocr_text_layout(page: fitz.Page, textpage: fitz.TextPage, sorted_text: str,
+                            source_name: str, number: int) -> tuple[str, bool, dict[str, Any] | None]:
+    if page_readability(sorted_text, allow_sparse_ocr=True)["accepted"]:
+        return sorted_text, True, None
+    try:
+        source_flow_text = page.get_text("text", textpage=textpage, sort=False).strip()
+    except Exception as exc:
+        raise SourceValidationError(f"Runner OCR text layout failed at page {number}: ocr_engine_failed",
+                                    category="ocr_engine_failed") from exc
+    if (_same_recognized_glyphs(sorted_text, source_flow_text)
+            and page_readability(source_flow_text, allow_sparse_ocr=True)["accepted"]):
+        return source_flow_text, False, _text_layout_record(sorted_text, source_flow_text)
+    # Neither a changed recognition nor a still-unreadable source-flow read
+    # can replace the failed default. Keep the original rejection reason.
+    require_readable_page(sorted_text, source_name, number, allow_sparse_ocr=True)
+    raise AssertionError("Unreadable OCR layout unexpectedly passed")
+
+
+def _validate_ocr_text_layout(page: dict[str, Any], recognized_text: str) -> dict[str, Any] | None:
+    ocr = page.get("ocr")
+    layout = ocr.get("text_layout") if isinstance(ocr, dict) else None
+    indicator_present = "text_layout_selection" in page
+    layout_present = isinstance(ocr, dict) and "text_layout" in ocr
+    if not indicator_present and not layout_present:
+        return None  # Existing immutable schema-2 receipts used sorted text.
+    sorted_text = layout.get("sorted_text") if isinstance(layout, dict) else None
+    expected = _text_layout_record(sorted_text, recognized_text) if isinstance(sorted_text, str) else None
+    binding = {"policy": OCR_TEXT_LAYOUT_POLICY, "selection": "source-flow",
+               "text_layout_sha256": sha256_bytes(canonical_bytes(layout))} if isinstance(layout, dict) else None
+    if (page.get("extraction_method") != "ocr" or not isinstance(layout, dict)
+            or type(layout.get("schema")) is not int
+            or canonical_bytes(layout) != canonical_bytes(expected)
+            or page.get("text_layout_selection") != binding
+            or layout["sorted_readability"]["accepted"]
+            or not layout["selected_readability"]["accepted"]
+            or not _same_recognized_glyphs(sorted_text, recognized_text)):
+        raise SourceValidationError("OCR text layout selection differs from its recognized source transcript")
+    return {"page": page["page"], **binding}
+
+
 def _source_context(value: Any) -> dict[str, str]:
     required = {"date_folder", "producer_run_id", "execution_sha", "original_source_run_id"}
     if not isinstance(value, dict) or set(value) != required or any(not isinstance(item, str) for item in value.values()):
@@ -316,8 +374,13 @@ def _ocr_page(page: fitz.Page, source_name: str, number: int) -> tuple[str, dict
     except Exception as exc:
         raise SourceValidationError(f"Runner OCR failed at page {number}: ocr_engine_failed",
                                     category="ocr_engine_failed") from exc
-    # Reject unreadable raw transcripts before masking can invent apparent
-    # language. This source-contract check is not a missing-engine diagnosis.
+    # The default geometric reading order may concatenate overlapping rotated
+    # words. The alternative reuses this exact OCR TextPage, never another OCR
+    # pass, and must retain every non-whitespace glyph and the existing gate.
+    text, selected_sort, text_layout = _select_ocr_text_layout(
+        page, textpage, text, source_name, number,
+    )
+    # Reject unreadable raw transcripts before numeric masking.
     require_readable_page(text, source_name, number, allow_sparse_ocr=True)
     try:
         from ocr_numeric_evidence import NumericEvidenceError, audit_numeric_evidence, safe_geometry_diagnostics
@@ -327,7 +390,7 @@ def _ocr_page(page: fitz.Page, source_name: str, number: int) -> tuple[str, dict
     try:
         audit = audit_numeric_evidence(
             page, text, language=OCR_LANGUAGES, tessdata=str(tessdata),
-            primary_words=page.get_text("words", textpage=textpage, sort=True),
+            primary_words=page.get_text("words", textpage=textpage, sort=selected_sort),
         )
         text = audit["safe_text"]
     except NumericEvidenceError as exc:
@@ -341,9 +404,12 @@ def _ocr_page(page: fitz.Page, source_name: str, number: int) -> tuple[str, dict
     except Exception as exc:
         raise SourceValidationError(f"Runner OCR numeric audit failed at page {number}: numeric_audit_failed",
                                     category="numeric_audit_failed") from exc
-    return text, {"engine": "tesseract-via-pymupdf", "pymupdf_version": fitz.VersionBind,
+    provenance = {"engine": "tesseract-via-pymupdf", "pymupdf_version": fitz.VersionBind,
                   "languages": OCR_LANGUAGES, "dpi": PAGE_DPI, "full_page": True,
                   "traineddata": models, "numeric_evidence": audit["evidence"]}
+    if text_layout is not None:
+        provenance["text_layout"] = text_layout
+    return text, provenance
 
 
 def _extract_report(pdf: Path, binding: dict[str, str], root: Path, index: int,
@@ -437,6 +503,11 @@ def _extract_report(pdf: Path, binding: dict[str, str], root: Path, index: int,
                         markdown += f"![原报告第 {page_number} 页核对原图](pages/{page_image.name})\n\n"
                 if method == "ocr":
                     page_record["ocr"] = {**ocr, "input_pixel_sha256": page_record["original_page"]["pixel_sha256"]}
+                    if "text_layout" in ocr:
+                        page_record["text_layout_selection"] = {
+                            "policy": OCR_TEXT_LAYOUT_POLICY, "selection": "source-flow",
+                            "text_layout_sha256": sha256_bytes(canonical_bytes(ocr["text_layout"])),
+                        }
                 elif method == "blank":
                     page_record["blank_proof"] = {"criterion": "all-rgb-samples-255",
                                                  "ocr_attempted": False}
@@ -476,6 +547,16 @@ def _extract_report(pdf: Path, binding: dict[str, str], root: Path, index: int,
         "blank_page_count": sum(page["extraction_method"] == "blank" for page in page_records),
         "images": [str(PurePosixPath(asset["path"]).relative_to(directory.name)) for asset in assets],
     }
+    layout_bindings = []
+    for page_record in page_records:
+        primary = _ocr_primary_text(page_record["ocr"]) if page_record["extraction_method"] == "ocr" else ""
+        layout_binding = _validate_ocr_text_layout(page_record, primary)
+        if layout_binding is not None:
+            layout_bindings.append(layout_binding)
+    if layout_bindings:
+        # This immutable file's receipt hash also binds the optional page
+        # metadata: deleting both layout fields cannot pose as an old receipt.
+        status["ocr_text_layout_bindings"] = layout_bindings
     write_json(directory / "status.json", status)
     return {
         **binding, "directory": directory.name, "source_method": "original-pdf", "duplicate_of": None,
@@ -808,7 +889,7 @@ def _validate_sources_v2(output_dir: Path, manifest: Path, expected_reports: int
         markdown_raw = (root / report["markdown"]["path"]).read_bytes()
         markdown_text = markdown_raw.decode("utf-8")
         previous_end = text_total = native_total = recognized_total = ocr_count = blank_count = 0
-        page_texts = []
+        page_texts, layout_bindings = [], []
         for number, page in enumerate(pages, 1):
             if (not isinstance(page, dict) or type(page.get("page")) is not int or page["page"] != number
                     or page.get("source_pdf_sha256") != binding["content_sha256"]
@@ -888,6 +969,9 @@ def _validate_sources_v2(output_dir: Path, manifest: Path, expected_reports: int
                     ocr_count += 1
                 if image is not None and image["sample_count"] == image["white_sample_count"]:
                     raise SourceValidationError("A fully white page cannot contain recognized report text")
+            layout_binding = _validate_ocr_text_layout(page, recognized_text)
+            if layout_binding is not None:
+                layout_bindings.append(layout_binding)
             recognized_readability = page_readability(recognized_text, allow_sparse_ocr=method == "ocr")
             recognized_characters = recognized_readability["characters"]
             if (page.get("recognized_text_characters") != recognized_characters
@@ -913,6 +997,9 @@ def _validate_sources_v2(output_dir: Path, manifest: Path, expected_reports: int
                            "pages_covered": report["pages_covered"], **totals}
         if not isinstance(status, dict) or any(status.get(key) != value for key, value in expected_status.items()):
             raise SourceValidationError("Original source status disagrees with source receipt")
+        if ((layout_bindings or "ocr_text_layout_bindings" in status)
+                and canonical_bytes(status.get("ocr_text_layout_bindings")) != canonical_bytes(layout_bindings)):
+            raise SourceValidationError("Original source status disagrees with OCR text layout bindings")
         asset_pages, expected_assets = set(), []
         for asset_index, asset in enumerate(assets, 1):
             page_number = asset.get("source_page")
