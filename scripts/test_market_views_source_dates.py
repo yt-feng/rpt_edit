@@ -180,6 +180,26 @@ class SourceDateDirsTest(unittest.TestCase):
         self.assertNotIn("22%", " ".join(signal_sentences(statement + "\n\nA independently supported qualitative conclusion remains available.")))
         self.assertNotIn("22%", first_signal(statement + "\n\nAn independently supported qualitative conclusion remains available."))
 
+    def test_omitted_numeric_fields_keep_uncertainty_through_the_digest_and_fallback(self) -> None:
+        import build_market_views_pdf as market
+        report = self.bank / "261003" / "shard_0" / "report-missing-field"
+        report.mkdir(parents=True)
+        marker = "[漏识数值待核对:s0001]"
+        statement = f"Revenue changed from {marker}% to 22% but the first read missed that field."
+        qualitative = "Demand remains supported by independently documented changes in customer engagement."
+        (report / "source_native_pdf.md").write_text("# Demand outlook\n\n" + statement + "\n\n" + qualitative)
+        digest = market.report_digest(report, 2200)
+        self.assertTrue(digest["has_pending_numeric_values"])
+        self.assertIn(marker, digest["digest"])
+        self.assertIn(marker, market.report_extract(report, 2200))
+        self.assertNotIn("22%", " ".join(market.signal_sentences(statement + "\n\n" + qualitative)))
+        self.assertNotIn("22%", market.first_signal(statement + "\n\n" + qualitative))
+        for size in (40, 80, 120):
+            trimmed = market.trim_text(qualitative + "\n" + statement + "\n" + qualitative, size)
+            if "22%" in trimmed or "Revenue changed" in trimmed:
+                self.assertIn(statement, trimmed)
+            self.assertNotIn("漏识数值待核对:s0001", trimmed.replace(marker, ""))
+
     def test_system_prompt_applies_numeric_marker_contract_to_the_actual_model_request(self) -> None:
         import argparse
         import os
