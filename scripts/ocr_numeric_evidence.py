@@ -13,6 +13,8 @@ against ground-truth scans and inspected without trusting an engine score.
 """
 from __future__ import annotations
 
+import base64
+import binascii
 import csv
 import difflib
 import hashlib
@@ -38,6 +40,9 @@ SECOND_DPI = 450
 CROP_DPI = 600
 CROP_BATCH = 48
 OCR_CROP_POLICY = "isolated-numeric-crop-v1"
+OVERFLOW_RECOVERY_POLICY = "isolated-overflow-crop-v1"
+ISOLATED_PADDING = 24
+MAX_RECOVERY_PNG_BYTES = 16_000_000
 MAX_FIELDS = 2500
 MAX_IMAGE_PIXELS = 80_000_000
 NUMERIC = re.compile(
@@ -395,6 +400,141 @@ def _punctuation_reason(literal: str, witness: dict[str, Any]) -> str | None:
     return None
 
 
+def _source_crop_hits(numbers: list[dict[str, Any]], source_box: list[float]) -> tuple[list[dict[str, Any]], bool]:
+    """Reject boxes spanning other mosaic rows; never truncate a crop count.
+
+    The old minimum-area overlap can be 1 for a huge candidate containing a
+    tiny crop. At least 95% of a candidate's own area must also lie inside its
+    source crop. Count the old positional candidates up to the overflow trigger
+    so pathological OCR still gets one bounded, isolated source-pixel read.
+    """
+    hits, candidate_count = [], 0
+    for row in numbers:
+        box = row["bbox"]
+        if _overlap(source_box, box) < 0.95:
+            continue
+        candidate_count += 1
+        if candidate_count > MAX_FIELDS:
+            return [], True
+        intersection = (max(0.0, min(source_box[2], box[2]) - max(source_box[0], box[0]))
+                        * max(0.0, min(source_box[3], box[3]) - max(source_box[1], box[1])))
+        candidate_area = max(0.01, (box[2] - box[0]) * (box[3] - box[1]))
+        if intersection / candidate_area >= 0.95:
+            hits.append(row)
+    return hits, False
+
+
+def _isolated_canvas(crop: Image.Image) -> Image.Image:
+    if (crop.width + 2 * ISOLATED_PADDING) * (crop.height + 2 * ISOLATED_PADDING) > MAX_IMAGE_PIXELS:
+        raise NumericEvidenceError("Numeric OCR image exceeds the pixel bound")
+    canvas = Image.new("RGB", (crop.width + 2 * ISOLATED_PADDING, crop.height + 2 * ISOLATED_PADDING), "white")
+    canvas.paste(crop, (ISOLATED_PADDING, ISOLATED_PADDING))
+    return canvas
+
+
+def _overflow_recovery_metadata(crop: Image.Image, canvas: Image.Image, psm: int) -> str:
+    buffer = io.BytesIO()
+    crop.save(buffer, format="PNG")
+    raw = buffer.getvalue()
+    if len(raw) > MAX_RECOVERY_PNG_BYTES:
+        raise NumericEvidenceError("Numeric OCR image exceeds the pixel bound")
+    value = {"schema": 1, "policy": OVERFLOW_RECOVERY_POLICY, "trigger": "mosaic-field-count-overflow",
+             "mosaic_field_count_lower_bound": MAX_FIELDS + 1, "psm": psm,
+             "padding_pixels": ISOLATED_PADDING,
+             "crop_pixel_sha256": _sha(crop.tobytes()), "crop_png_base64": base64.b64encode(raw).decode("ascii"),
+             "isolated_canvas_size": list(canvas.size), "isolated_canvas_pixel_sha256": _sha(canvas.tobytes()),
+             "isolated_source_bbox": [ISOLATED_PADDING, ISOLATED_PADDING,
+                                       ISOLATED_PADDING + crop.width, ISOLATED_PADDING + crop.height]}
+    # Keep the raw canonical metadata available for strict duplicate-key
+    # checking even when a legacy caller has already decoded the outer receipt.
+    return _canonical(value).decode("utf-8")
+
+
+def _validate_overflow_recovery(read: dict[str, Any], expected_size: list[int]) -> None:
+    if "crop_read_recovery" not in read:
+        return
+    raw_metadata = read["crop_read_recovery"]
+    def invalid():
+        raise NumericEvidenceError("Numeric crop reads differ from their common source pixels")
+    def unique_pairs(pairs):
+        value = {}
+        for key, item in pairs:
+            if key in value:
+                invalid()
+            value[key] = item
+        return value
+    if (not isinstance(raw_metadata, str)
+            or len(raw_metadata) > ((MAX_RECOVERY_PNG_BYTES + 2) // 3) * 4 + 4096):
+        invalid()
+    try:
+        value = json.loads(raw_metadata, object_pairs_hook=unique_pairs,
+                           parse_constant=lambda _: invalid())
+        keys = {"schema", "policy", "trigger", "mosaic_field_count_lower_bound", "psm", "padding_pixels",
+                "crop_pixel_sha256", "crop_png_base64", "isolated_canvas_size",
+                "isolated_canvas_pixel_sha256", "isolated_source_bbox"}
+        if not isinstance(value, dict) or set(value) != keys:
+            invalid()
+        encoded = value["crop_png_base64"]
+        if not isinstance(encoded, str) or len(encoded) > ((MAX_RECOVERY_PNG_BYTES + 2) // 3) * 4:
+            invalid()
+        raw = base64.b64decode(encoded, validate=True)
+        if (not 1 <= len(raw) <= MAX_RECOVERY_PNG_BYTES
+                or base64.b64encode(raw).decode("ascii") != encoded
+                or not raw.startswith(b"\x89PNG\r\n\x1a\n")):
+            invalid()
+        # Reject ancillary/covert chunks and trailing bytes. Bounds and format
+        # are checked before Pillow expands any compressed source pixels.
+        cursor, chunks = 8, []
+        while cursor < len(raw):
+            if cursor + 12 > len(raw):
+                invalid()
+            length = int.from_bytes(raw[cursor:cursor + 4], "big")
+            end = cursor + 12 + length
+            kind = raw[cursor + 4:cursor + 8]
+            if (end > len(raw) or kind not in {b"IHDR", b"IDAT", b"IEND"}
+                    or binascii.crc32(raw[cursor + 4:end - 4]) & 0xffffffff
+                    != int.from_bytes(raw[end - 4:end], "big")):
+                invalid()
+            if kind == b"IHDR" and (length != 13 or raw[cursor + 16:cursor + 21] != b"\x08\x02\x00\x00\x00"):
+                invalid()
+            if kind == b"IEND" and length != 0:
+                invalid()
+            chunks.append(kind)
+            cursor = end
+        if (not chunks or chunks[0] != b"IHDR" or chunks[-1] != b"IEND"
+                or chunks.count(b"IHDR") != 1 or chunks.count(b"IEND") != 1 or b"IDAT" not in chunks):
+            invalid()
+        header_size = [int.from_bytes(raw[16:20], "big"), int.from_bytes(raw[20:24], "big")]
+        if header_size != expected_size or min(header_size) <= 0 or header_size[0] * header_size[1] > MAX_IMAGE_PIXELS:
+            invalid()
+        with Image.open(io.BytesIO(raw)) as image:
+            if (image.format != "PNG" or image.mode != "RGB" or list(image.size) != expected_size
+                    or image.width * image.height > MAX_IMAGE_PIXELS or image.info
+                    or getattr(image, "n_frames", 1) != 1):
+                invalid()
+            image.load()
+            crop = image.copy()
+        canvas = _isolated_canvas(crop)
+        if canvas.width * canvas.height > MAX_IMAGE_PIXELS:
+            invalid()
+        expected = {"schema": 1, "policy": OVERFLOW_RECOVERY_POLICY, "trigger": "mosaic-field-count-overflow",
+                    "mosaic_field_count_lower_bound": MAX_FIELDS + 1,
+                    "psm": 6 if read.get("method") == "source-crop-psm-6" else 11,
+                    "padding_pixels": ISOLATED_PADDING,
+                    "crop_pixel_sha256": _sha(crop.tobytes()), "crop_png_base64": encoded,
+                    "isolated_canvas_size": list(canvas.size),
+                    "isolated_canvas_pixel_sha256": _sha(canvas.tobytes()),
+                    "isolated_source_bbox": [ISOLATED_PADDING, ISOLATED_PADDING,
+                                              ISOLATED_PADDING + crop.width, ISOLATED_PADDING + crop.height]}
+        if (_canonical(value).decode("utf-8") != raw_metadata or _canonical(value) != _canonical(expected)
+                or value["crop_pixel_sha256"] != read.get("input_pixel_sha256")):
+            invalid()
+    except NumericEvidenceError:
+        raise
+    except (ValueError, TypeError, KeyError, OSError, OverflowError, Image.DecompressionBombError) as exc:
+        raise NumericEvidenceError("Numeric crop reads differ from their common source pixels") from exc
+
+
 def _crop_reads(page: fitz.Page, positioned: dict[int, dict[str, Any]], *, language: str,
                 tessdata: str | None, command: str) -> dict[int, list[dict[str, Any]]]:
     result = {}
@@ -423,14 +563,28 @@ def _crop_reads(page: fitz.Page, positioned: dict[int, dict[str, Any]], *, langu
                                     psm=psm, dpi=CROP_DPI)
             numbers = _word_mentions(words)
             for index, box, crop, clip, crop_hash in locations:
-                hits = [row for row in numbers if _overlap(box, row["bbox"]) >= 0.95]
-                result.setdefault(index, []).append({"method": f"source-crop-psm-{psm}", "dpi": CROP_DPI,
+                hits, overflow = _source_crop_hits(numbers, box)
+                recovery = None
+                if overflow:
+                    canvas = _isolated_canvas(crop)
+                    isolated_words = _read_tesseract(canvas, language=language, tessdata=tessdata, command=command,
+                                                     psm=psm, dpi=CROP_DPI)
+                    isolated_box = [ISOLATED_PADDING, ISOLATED_PADDING,
+                                    ISOLATED_PADDING + crop.width, ISOLATED_PADDING + crop.height]
+                    hits, still_overflow = _source_crop_hits(_word_mentions(isolated_words), isolated_box)
+                    if still_overflow:
+                        raise NumericEvidenceError("Numeric source page exceeds the field bound")
+                    recovery = _overflow_recovery_metadata(crop, canvas, psm)
+                read = {"method": f"source-crop-psm-{psm}", "dpi": CROP_DPI,
                                                       "literal": hits[0]["literal"] if len(hits) == 1 else None,
                                                       "field_count": len(hits),
                                                       "input_pixel_sha256": crop_hash,
                                                       "crop_policy": OCR_CROP_POLICY,
                                                       "source_clip_bbox": clip,
-                                                      "crop_pixel_size": [crop.width, crop.height]})
+                                                      "crop_pixel_size": [crop.width, crop.height]}
+                if recovery is not None:
+                    read["crop_read_recovery"] = recovery
+                result.setdefault(index, []).append(read)
     return result
 
 
@@ -624,6 +778,7 @@ def validate_numeric_evidence(safe_text: str, evidence: dict[str, Any], image_pi
                     "field_count_capped_count": max(0, min(MAX_FIELDS, field_count)) if type(field_count) is int else None,
                     "pymupdf_version": fitz.VersionBind, **checks,
                 })
+            _validate_overflow_recovery(read, expected_size)
             if record.get("status") in {"verified", "corrected"} and read["field_count"] != 1:
                 raise NumericEvidenceError("Numeric crop borrowed multiple source fields")
         if reads[1]["input_pixel_sha256"] != reads[2]["input_pixel_sha256"]:

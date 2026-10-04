@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import copy
+import base64
+import binascii
 import hashlib
 import json
 import os
@@ -162,6 +164,193 @@ class NumericUnitTests(unittest.TestCase):
                 page.get_pixmap(dpi=300, colorspace=fitz.csRGB, alpha=False).save(str(image_path))
                 numeric.validate_numeric_evidence(result["safe_text"], result["evidence"],
                                                   result["evidence"]["input_pixel_sha256"], image_path=image_path)
+
+    def test_spanning_mosaic_word_cannot_borrow_numbers_from_other_crop_rows(self):
+        with fitz.open() as document:
+            page = document.new_page(width=250, height=160)
+            page.insert_text((40, 55), "4.8", fontsize=18)
+            page.insert_text((40, 110), "7.5", fontsize=18)
+            words = page.get_text("words")
+            positioned = {index: {"bbox": list(word[:4])} for index, word in enumerate(words)}
+            def giant_candidate(image, **options):
+                return [{"bbox": [0, 0, image.width, image.height], "text": "4.8", "block": 1, "line": 1}]
+            with mock.patch.object(numeric, "_read_tesseract", side_effect=giant_candidate) as engine:
+                reads = numeric._crop_reads(page, positioned, language="eng", tessdata=None, command="unused")
+            self.assertEqual(engine.call_count, 2)
+            for field in reads.values():
+                self.assertTrue(all(read["literal"] is None and read["field_count"] == 0 for read in field))
+                self.assertTrue(all("crop_read_recovery" not in read for read in field))
+        tiny, giant = [24, 24, 102, 152], [0, 0, 126, 1000]
+        self.assertEqual(numeric._overlap(tiny, giant), 1)
+        self.assertEqual(numeric._source_crop_hits([{"bbox": giant, "literal": "0"}], tiny), ([], False))
+
+    def overflow_fixture(self, *, isolated_literals=("4.8",), persistent_overflow=False):
+        with fitz.open() as document:
+            page = document.new_page(width=250, height=130)
+            page.insert_text((40, 55), "4.8", fontsize=18)
+            words = page.get_text("words")
+            box = list(words[0][:4])
+            clip = numeric._ocr_crop_clip(box, [250.0, 130.0])
+            crop = numeric._image(page.get_pixmap(dpi=600, clip=fitz.Rect(clip), colorspace=fitz.csRGB, alpha=False))
+            isolated_height = crop.height + 2 * numeric.ISOLATED_PADDING
+            def engine(image, **options):
+                if options["dpi"] == 450:
+                    return [{"bbox": [value * 450 / 72 for value in box], "text": "4.8", "block": 1, "line": 1}]
+                self.assertEqual(options["dpi"], 600)
+                self.assertEqual(image.crop((24, 24, crop.width + 24, crop.height + 24)).tobytes(), crop.tobytes())
+                if options["psm"] == 11 and (image.height != isolated_height or persistent_overflow):
+                    return [{"bbox": [24, 24, crop.width + 24, crop.height + 24],
+                             "text": "4.8", "block": index + 1, "line": 1}
+                            for index in range(numeric.MAX_FIELDS + 1)]
+                literals = isolated_literals if options["psm"] == 11 else ("4.8",)
+                return [{"bbox": [24, 24, crop.width + 24, crop.height + 24],
+                         "text": literal, "block": index + 1, "line": 1}
+                        for index, literal in enumerate(literals)]
+            with mock.patch.object(numeric, "_read_tesseract", side_effect=engine) as calls:
+                result = numeric.audit_numeric_evidence(page, "4.8", primary_words=words,
+                                                       language="eng", tesseract_command="unused")
+            image = numeric._image(page.get_pixmap(dpi=300, colorspace=fitz.csRGB, alpha=False))
+        return result, image, calls.call_args_list
+
+    def test_overflow_recovers_once_with_same_psm_pixels_and_three_independent_reads(self):
+        result, source_image, calls = self.overflow_fixture()
+        record = result["evidence"]["records"][0]
+        self.assertEqual([call.kwargs["psm"] for call in calls], [3, 6, 11, 11])
+        self.assertEqual([call.kwargs["dpi"] for call in calls], [450, 600, 600, 600])
+        self.assertEqual(result["safe_text"], "4.8")
+        self.assertEqual(result["evidence"]["verified_count"], 1)
+        self.assertEqual(len(record["reads"]), 3)
+        self.assertNotIn("crop_read_recovery", record["reads"][1])
+        recovered = record["reads"][2]
+        metadata = json.loads(recovered["crop_read_recovery"])
+        self.assertEqual(recovered["field_count"], 1)
+        self.assertEqual(metadata["mosaic_field_count_lower_bound"], numeric.MAX_FIELDS + 1)
+        self.assertEqual(metadata["crop_pixel_sha256"], record["reads"][1]["input_pixel_sha256"])
+        self.assertEqual(metadata["padding_pixels"], 24)
+        self.assertEqual(metadata["isolated_canvas_size"], [value + 48 for value in recovered["crop_pixel_size"]])
+        with tempfile.TemporaryDirectory() as directory:
+            image_path = Path(directory) / "source.png"
+            source_image.save(image_path)
+            numeric.validate_numeric_evidence(result["safe_text"], result["evidence"],
+                                              result["evidence"]["input_pixel_sha256"], image_path=image_path)
+        import audit_market_views_ocr_receipt as public_audit
+        projected = json.dumps(public_audit._diagnostic_read(recovered))
+        self.assertNotIn("crop_read_recovery", projected)
+        self.assertNotIn(metadata["crop_png_base64"], projected)
+
+    def test_isolated_overflow_still_exits_at_the_unchanged_field_bound(self):
+        with self.assertRaisesRegex(numeric.NumericEvidenceError, "exceeds the field bound"):
+            self.overflow_fixture(persistent_overflow=True)
+        self.assertEqual(numeric.MAX_FIELDS, 2500)
+
+    def test_recovered_empty_ambiguous_or_conflicting_read_stays_unresolved(self):
+        for literals, count in (((), 0), (("4.8", "7.5"), 2), (("7.5",), 1)):
+            with self.subTest(count=count, literals=literals):
+                result, _, calls = self.overflow_fixture(isolated_literals=literals)
+                record = result["evidence"]["records"][0]
+                self.assertEqual(len(calls), 4)
+                self.assertEqual(record["reads"][2]["field_count"], count)
+                if count != 1:
+                    self.assertIsNone(record["reads"][2]["literal"])
+                self.assertEqual(record["status"], "unresolved")
+                self.assertEqual(result["safe_text"], "[数值待核对:n0001]")
+                numeric.validate_numeric_evidence(result["safe_text"], result["evidence"], result["evidence"]["input_pixel_sha256"])
+
+    def test_one_overflowing_crop_does_not_reread_its_unaffected_neighbour(self):
+        with fitz.open() as document:
+            page = document.new_page(width=250, height=160)
+            page.insert_text((40, 55), "4.8", fontsize=18)
+            page.insert_text((40, 110), "7.5", fontsize=18)
+            boxes = [list(word[:4]) for word in page.get_text("words")]
+            crops = [numeric._image(page.get_pixmap(dpi=600, clip=fitz.Rect(numeric._ocr_crop_clip(box, [250, 160])),
+                                                  colorspace=fitz.csRGB, alpha=False)) for box in boxes]
+            def engine(image, **options):
+                isolated = image.height == crops[0].height + 48
+                first = {"bbox": [24, 24, crops[0].width + 24, crops[0].height + 24], "text": "4.8", "block": 1, "line": 1}
+                if isolated:
+                    self.assertEqual(options["psm"], 11)
+                    return [first]
+                top = 24 + crops[0].height + 48
+                second = {"bbox": [24, top, crops[1].width + 24, top + crops[1].height], "text": "7.5", "block": 9999, "line": 1}
+                if options["psm"] == 6:
+                    return [first, second]
+                return [{**first, "block": index + 1} for index in range(numeric.MAX_FIELDS + 1)] + [second]
+            with mock.patch.object(numeric, "_read_tesseract", side_effect=engine) as calls:
+                reads = numeric._crop_reads(page, {index: {"bbox": box} for index, box in enumerate(boxes)},
+                                            language="eng", tessdata=None, command="unused")
+        self.assertEqual(calls.call_count, 3)
+        self.assertIn("crop_read_recovery", reads[0][1])
+        self.assertNotIn("crop_read_recovery", reads[1][1])
+        self.assertEqual([read["literal"] for read in reads[1]], ["7.5", "7.5"])
+
+    def test_actual_incident_tiny_crop_geometry_is_preserved_during_isolation(self):
+        with fitz.open() as document:
+            page = document.new_page(width=612, height=776.5689697265625)
+            box = [424.08, 116.16, 430.3044, 129.8537]
+            page.draw_rect(fitz.Rect(box), color=None, fill=(0, 0, 0))
+            def engine(image, **options):
+                field = {"bbox": [24, 24, 102, 152], "text": "0", "block": 1, "line": 1}
+                if options["psm"] == 11 and image.height != 176:
+                    return [{**field, "block": index + 1} for index in range(numeric.MAX_FIELDS + 1)]
+                self.assertEqual(image.crop((24, 24, 102, 152)).size, (78, 128))
+                return [field]
+            with mock.patch.object(numeric, "_read_tesseract", side_effect=engine):
+                reads = numeric._crop_reads(page, {0: {"bbox": box}}, language="eng", tessdata=None, command="unused")[0]
+        for read in reads:
+            self.assertEqual(read["crop_pixel_size"], [78, 128])
+        metadata = json.loads(reads[1]["crop_read_recovery"])
+        self.assertEqual(metadata["isolated_canvas_size"], [126, 176])
+        numeric._validate_overflow_recovery(reads[1], [78, 128])
+
+    def test_recovery_receipt_rejects_typed_metadata_duplicate_keys_hashes_and_covert_fields(self):
+        result, _, _ = self.overflow_fixture()
+        for change in ("duplicate", "extra", "boolean", "crop_hash", "canvas_hash", "size", "padding", "lower_bound", "bad_png", "bound"):
+            evidence = copy.deepcopy(result["evidence"])
+            read = evidence["records"][0]["reads"][2]
+            value = json.loads(read["crop_read_recovery"])
+            if change == "duplicate":
+                read["crop_read_recovery"] = read["crop_read_recovery"].replace('"schema":1', '"schema":1,"schema":1')
+            else:
+                if change == "extra": value["PRIVATE"] = "PRIVATE"
+                elif change == "boolean": value["schema"] = True
+                elif change == "crop_hash": value["crop_pixel_sha256"] = "0" * 64
+                elif change == "canvas_hash": value["isolated_canvas_pixel_sha256"] = "0" * 64
+                elif change == "size": value["isolated_canvas_size"][0] += 1
+                elif change == "padding": value["padding_pixels"] = 25
+                elif change == "lower_bound": value["mosaic_field_count_lower_bound"] = 2500
+                elif change == "bad_png": value["crop_png_base64"] = base64.b64encode(b"PRIVATE").decode()
+                elif change == "bound": read["field_count"] = numeric.MAX_FIELDS + 1
+                read["crop_read_recovery"] = numeric._canonical(value).decode()
+            sign_evidence(evidence)
+            with self.subTest(change=change), self.assertRaises(numeric.NumericEvidenceError):
+                numeric.validate_numeric_evidence(result["safe_text"], evidence, evidence["input_pixel_sha256"])
+
+    def test_recovery_png_dimensions_pixels_and_chunks_are_checked_before_expansion(self):
+        result, _, _ = self.overflow_fixture()
+        original = result["evidence"]["records"][0]["reads"][2]
+        value = json.loads(original["crop_read_recovery"])
+        raw = base64.b64decode(value["crop_png_base64"])
+        for change in ("header", "ancillary", "trailing", "crc"):
+            mutated = bytearray(raw)
+            if change == "header":
+                mutated[16:24] = (100_000).to_bytes(4, "big") * 2
+                mutated[29:33] = (binascii.crc32(mutated[12:29]) & 0xffffffff).to_bytes(4, "big")
+            elif change == "ancillary":
+                payload = b"PRIVATE"
+                chunk = len(payload).to_bytes(4, "big") + b"tEXt" + payload + (binascii.crc32(b"tEXt" + payload) & 0xffffffff).to_bytes(4, "big")
+                mutated[33:33] = chunk
+            elif change == "trailing": mutated += b"PRIVATE"
+            else: mutated[29] ^= 1
+            read = copy.deepcopy(original)
+            metadata = dict(value, crop_png_base64=base64.b64encode(mutated).decode())
+            read["crop_read_recovery"] = numeric._canonical(metadata).decode()
+            with self.subTest(change=change), mock.patch.object(numeric.Image, "open", side_effect=AssertionError("Malformed PNG must be rejected before decompression")), \
+                    self.assertRaises(numeric.NumericEvidenceError):
+                numeric._validate_overflow_recovery(read, read["crop_pixel_size"])
+        with mock.patch.object(numeric, "MAX_IMAGE_PIXELS", 1), \
+                mock.patch.object(numeric.Image, "open", side_effect=AssertionError("Pixel bound must be checked before decompression")), \
+                self.assertRaises(numeric.NumericEvidenceError):
+            numeric._validate_overflow_recovery(original, original["crop_pixel_size"])
 
     def test_source_pixel_decimal_is_independent_of_engine_confidence(self):
         image = Image.new("RGB", (90, 55), "white")
