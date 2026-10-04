@@ -651,3 +651,12 @@ bounded PNG decoding and reconstruct that canvas; they do not claim to have
 reopened the original PDF. Default reads and existing receipts remain
 compatible. Real failed-report fixtures and complete-source cloud runs are
 separate acceptance steps.
+
+Read-only `market-views-original-page-qa.yml` authenticates and restores a
+complete private original archive, then exports only the explicitly selected
+original page for visual review. An exact bounded RSA recipient certificate is
+validated before source reads. The page PDF, PNG and hash receipt are encrypted
+with an AES-256 CMS envelope; only ciphertext and safe hashes are Actions
+artifacts. It performs no OCR, model call, task submission, ledger write or R2
+source admission. The reviewer's temporary decryption key is not a production
+pipeline dependency.

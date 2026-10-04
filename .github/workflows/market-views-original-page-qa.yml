@@ -1,0 +1,131 @@
+name: Export one encrypted original page for read-only visual QA
+run-name: Encrypted original page QA ${{ inputs.date_folder }} ordinal ${{ inputs.source_ordinal }} page ${{ inputs.page }}
+on:
+  pull_request:
+    paths:
+      - .github/workflows/market-views-original-page-qa.yml
+      - scripts/export_market_views_original_page_qa.py
+      - scripts/test_export_market_views_original_page_qa.py
+  workflow_dispatch:
+    inputs:
+      archive_run_id:
+        description: Exact completed main original archive producer
+        required: true
+        type: string
+      date_folder:
+        description: Exact original Dropbox date, YYMMDD
+        required: true
+        type: string
+      expected_articles:
+        description: Exact complete original archive file count
+        required: true
+        type: string
+      source_ordinal:
+        description: One-based original manifest ordinal to inspect
+        required: true
+        type: string
+      page:
+        description: One-based original page to render
+        required: true
+        type: string
+      original_source_run_id:
+        description: Exact upstream Daily source run if present in archive receipt; empty for fresh archives
+        required: false
+        default: ''
+        type: string
+      recipient_cert_pem:
+        description: One PEM X509 RSA recipient certificate, at least 3072 bits
+        required: true
+        type: string
+permissions:
+  contents: read
+  actions: read
+jobs:
+  offline-contract:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -m pip install --disable-pip-version-check requests Pillow PyMuPDF
+      - run: python3 -B scripts/test_export_market_views_original_page_qa.py
+  visual-qa:
+    if: ${{ github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: scripts
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install original render and read-only archive dependencies
+        run: python3 -m pip install --retries 0 --disable-pip-version-check requests Pillow PyMuPDF 'boto3>=1.37.32,<2'
+      - name: Authenticate exact completed archive producer
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ARCHIVE_RUN_ID: ${{ inputs.archive_run_id }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+          ORIGINAL_SOURCE_RUN_ID: ${{ inputs.original_source_run_id }}
+          RECIPIENT_CERT_PEM: ${{ inputs.recipient_cert_pem }}
+        run: |
+          python3 - <<'PY'
+          import json, os, re, subprocess, sys
+          from pathlib import Path
+          sys.path.insert(0, 'scripts')
+          import archive_market_views_originals as archive
+          from export_market_views_original_page_qa import checked_recipient, require_cloud_main
+          try:
+              require_cloud_main(os.environ)
+              checked_recipient(os.environ['RECIPIENT_CERT_PEM'])
+              run = os.environ['ARCHIVE_RUN_ID']
+              if not archive.RUN.fullmatch(run) or not re.fullmatch(r'[1-9][0-9]{0,3}', os.environ['EXPECTED_ARTICLES']):
+                  raise ValueError('request')
+              response = subprocess.run(['gh', 'api', f"repos/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{run}"],
+                                        capture_output=True, timeout=30, check=False)
+              if response.returncode or len(response.stdout) > 1_000_000:
+                  raise ValueError('producer')
+              producer = json.loads(response.stdout)
+              sha = producer.get('head_sha')
+              archive.context(run, os.environ['DATE_FOLDER'], sha, os.environ['ORIGINAL_SOURCE_RUN_ID'])
+              archive.check_restore_producer(producer, run, os.environ['GITHUB_REPOSITORY'], sha)
+              Path(os.environ['RUNNER_TEMP'], 'visual-qa-archive-producer.json').write_bytes(response.stdout)
+          except Exception:
+              raise SystemExit('Encrypted visual QA producer validation rejected.')
+          PY
+      - name: Restore complete original inventory and encrypt only the specified page
+        env:
+          ARCHIVE_RUN_ID: ${{ inputs.archive_run_id }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+          SOURCE_ORDINAL: ${{ inputs.source_ordinal }}
+          SOURCE_PAGE: ${{ inputs.page }}
+          ORIGINAL_SOURCE_RUN_ID: ${{ inputs.original_source_run_id }}
+          RECIPIENT_CERT_PEM: ${{ inputs.recipient_cert_pem }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python3 -B scripts/export_market_views_original_page_qa.py \
+            --producer-json "$RUNNER_TEMP/visual-qa-archive-producer.json" \
+            --archive-run-id "$ARCHIVE_RUN_ID" --date-folder "$DATE_FOLDER" \
+            --expected-reports "$EXPECTED_ARTICLES" --source-ordinal "$SOURCE_ORDINAL" --page "$SOURCE_PAGE" \
+            --original-source-run-id "$ORIGINAL_SOURCE_RUN_ID" \
+            --output-dir "$RUNNER_TEMP/encrypted-original-page-qa"
+      - name: Preserve only encrypted page and sanitized hashes
+        uses: actions/upload-artifact@v4
+        with:
+          name: encrypted-original-page-qa-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/encrypted-original-page-qa/original-page.cms
+            ${{ runner.temp }}/encrypted-original-page-qa/visual-qa-summary.json
+          if-no-files-found: error
+          retention-days: 1
