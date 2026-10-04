@@ -1,0 +1,53 @@
+name: Inspect Market Views incident R2 caches
+run-name: Read-only R2 inventory for Market Views October 1-3
+on:
+  pull_request:
+    paths:
+      - .github/workflows/market-views-r2-cache-inspect.yml
+      - scripts/inspect_market_views_r2_cache.py
+      - scripts/test_inspect_market_views_r2_cache.py
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: market-views-r2-cache-inspect-${{ github.run_id }}
+  cancel-in-progress: false
+jobs:
+  contract:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -B scripts/test_inspect_market_views_r2_cache.py
+  inspect:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -m pip install --disable-pip-version-check --retries 0 'boto3>=1.37.32,<2'
+      - name: Inspect fixed private dates without modifying stored objects
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: python3 -B scripts/inspect_market_views_r2_cache.py --output "$RUNNER_TEMP/market-views-r2-cache-inventory.json"
+      - name: Preserve sanitized counts and hashes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: market-views-r2-cache-inventory-${{ github.run_id }}
+          path: ${{ runner.temp }}/market-views-r2-cache-inventory.json
+          if-no-files-found: warn
+          retention-days: 14

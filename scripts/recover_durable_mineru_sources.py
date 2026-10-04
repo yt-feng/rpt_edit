@@ -22,6 +22,7 @@ from consume_legacy_mineru import (ConsumerError, NetworkStop, chart_assets,
 from mineru_task_ledger import (DONE, FAILED, Ledger, LedgerError, Provider, R2Store,
                                digest, encoded, exact_json, schema_v1)
 from mineru_terminal_recovery import TerminalRecovery, task_identity
+from mineru_result_cache import ResultCache
 from smoke_mineru_api import NoRedirectHTTP, credentials
 
 WORKFLOW = '.github/workflows/market-views-mineru-recovery.yml'
@@ -324,7 +325,7 @@ def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_repor
                     source_run_id='', allow_fresh=False, recovery_run_id, source_execution_sha,
                     recovery_execution_sha=None,
                     allowed_error_codes=(), allowed_error_hashes=(), downloader=download_once,
-                    asset_writer=chart_assets, timeout=1800, interval=15, queue_budget=300):
+                    asset_writer=chart_assets, timeout=1800, interval=15, queue_budget=300, result_cache=None):
     if ledger.scope != 'dropbox' or not exact_json(ledger.options, OPTIONS):
         reject('ledger_scope_options')
     if (not RUN.fullmatch(str(recovery_run_id)) or (source_run_id and not RUN.fullmatch(str(source_run_id)))
@@ -345,19 +346,25 @@ def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_repor
     try:
         with tempfile.TemporaryDirectory(prefix='mineru-source-results-') as cache_dir:
             cache, root_for_id, resolved, posts, tasks = {}, {}, {}, 0, []
-            allowed_ids = {ledger.bind(path, source)['id'] for path, source in pairs}
+            source_bindings = {item['id']: item for item in (ledger.bind(path, source) for path, source in pairs)}
             def verify_done(path, row):
                 if str(row.get('state', '')).lower() not in DONE:
                     return
                 source_id = row.get('data_id')
-                if source_id not in allowed_ids:
+                if source_id not in source_bindings:
                     reject('result_unknown_source')
                 url = row.get('full_zip_url'); valid_url(url)
                 cache_key = (source_id, url)
                 if cache_key not in cache:
-                    payload = downloader(url)
+                    lineage = row.get('_recovery_lineage')
+                    payload = result_cache.get(source_bindings[source_id], lineage) if result_cache is not None else None
+                    cache_hit = payload is not None
+                    if not cache_hit:
+                        payload = downloader(url)
                     folder = Path(cache_dir) / str(len(cache))
                     markdown = safe_unzip(payload, folder / 'raw')
+                    if result_cache is not None and not cache_hit:
+                        result_cache.put(source_bindings[source_id], lineage, payload)
                     cache[cache_key] = (folder / 'raw', markdown, digest(payload))
             def record_task(batch):
                 tasks.append({'key': batch['key'], 'task_identity_sha256': task_identity(batch),
@@ -375,11 +382,11 @@ def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_repor
                 if (summary['missing'] or summary['pending'] or len(rows) != len(batch['files'])):
                     reject('original_task_incomplete')
                 terminal._proof(batch, rows)  # Validate every original failure before any child POST.
-                preflight.append(rows)
+                preflight.append((batch, rows))
                 record_task(batch)
-            for rows in preflight:
+            for batch, rows in preflight:
                 for row in rows.values():
-                    verify_done(None, row)
+                    verify_done(None, terminal._lineage(row, batch, batch, 0))
             assert_inputs(ledger, pairs, bindings)
             for batch, group_pairs in groups:
                 rows, summary = terminal.run(group_pairs,
@@ -398,9 +405,9 @@ def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_repor
                     reject('fresh_task_incomplete')
                 batch, _ = ledger._read_batch(summary['batch_keys'][0]); record_task(batch)
                 for path, row in rows:
-                    verify_done(path, row)
                     row['_recovery_lineage'] = {'batch_key': batch['key'], 'batch_id': batch['batch_id'],
                         'parent_batch_key': batch['key'], 'child_ordinal': 0, 'data_id': row['data_id']}
+                    verify_done(path, row)
                     resolved[row['data_id']] = row
                 if group_pairs is not fresh[-1]:
                     ledger.sleep(10)  # At most five fresh files per ten seconds.
@@ -495,14 +502,15 @@ def main():
                 aws_access_key_id=require_env('R2_ACCESS_KEY_ID'), aws_secret_access_key=require_env('R2_SECRET_ACCESS_KEY'),
                 region_name='auto', config=Config(connect_timeout=20, read_timeout=30,
                                                 retries={'total_max_attempts': 1, 'mode': 'standard'}))
-            store = R2Store('dropbox', client=client, bucket=require_env('R2_BUCKET'))
+            bucket = require_env('R2_BUCKET')
+            store = R2Store('dropbox', client=client, bucket=bucket)
             ledger = Ledger(store, Provider(NoRedirectHTTP(requests.request), 'https://mineru.net'), 'dropbox',
                             'https://mineru.net', OPTIONS, credentials(env))
             receipt = recover_sources(ledger, args.input_dir, Path(args.input_dir) / MANIFEST,
                 args.output_dir, args.expected_reports, args.date_folder, source_run_id=args.source_run_id,
                 allow_fresh=args.allow_fresh, recovery_run_id=env.get('GITHUB_RUN_ID', ''), source_execution_sha=sha,
                 recovery_execution_sha=env.get('GITHUB_SHA', ''),
-                allowed_error_codes=codes, allowed_error_hashes=hashes)
+                allowed_error_codes=codes, allowed_error_hashes=hashes, result_cache=ResultCache(client, bucket))
     except (RecoveryError, LedgerError, ConsumerError, OSError, ValueError, KeyError, TypeError) as error:
         category = str(error) if isinstance(error, (RecoveryError, NetworkStop)) else type(error).__name__
         print('MinerU source recovery stopped: ' + category, file=sys.stderr)
