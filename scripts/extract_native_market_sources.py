@@ -158,7 +158,13 @@ def page_readability(text: str, *, allow_sparse_ocr: bool = False) -> dict[str, 
     # evidence even when its only prose is a heading, speaker and page footer.
     sparse_english = (distinct_words >= 3 and word_characters >= 12
                       and word_characters / max(1, latin_count) >= 0.75)
-    sparse_chinese = han_count >= 4 and han_count / max(1, han_count + latin_count) >= 0.6
+    han_frequencies: dict[str, int] = {}
+    for character in text:
+        if _is_han(character):
+            han_frequencies[character] = han_frequencies.get(character, 0) + 1
+    sparse_chinese = (han_count >= 4 and len(han_frequencies) >= 3
+                      and max(han_frequencies.values(), default=0) / max(1, han_count) <= 0.6
+                      and han_count / max(1, han_count + latin_count) >= 0.6)
     if (allow_sparse_ocr and reason == "insufficient_characters"
             and count >= MIN_SPARSE_OCR_CHARACTERS and bad == 0 and long_ascii == 0
             and (sparse_english or sparse_chinese)):

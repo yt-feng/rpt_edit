@@ -181,6 +181,7 @@ class NativeMarketSourcesTests(unittest.TestCase):
 
     def test_sparse_ocr_rejects_noise_empty_opaque_and_annotation_only_pages(self) -> None:
         cases = ("", "Disclosure", "Disclosure Appendix", "qxzv rtyk jhgf 0123",
+                 "的" * 12, "甲" * 12, "甲乙" * 6, "的的的的的的的的的的甲乙",
                  "1234 5678 9012 3456", "Disclosure Appendix Research\ufffd",
                  "Disclosure Appendix Research\ue000",
                  "f6BvX2LkZ9QwR4N8jH3PsY7MdW5GtV1C0UaEoIiSxAzTnRpK9mH6L4zBq",
