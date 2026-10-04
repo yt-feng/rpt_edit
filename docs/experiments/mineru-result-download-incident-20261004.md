@@ -47,8 +47,7 @@ Evidence runs in the public repository automation:
   Workers were deleted. No ZIP, provider submission or R2 write occurred.
 
 The cloud runner's exact public certificate chain was captured at
-2026-10-04 20:29 UTC in run
-[`37232259586`](https://github.com/yt-feng/rpt_edit/actions/runs/37232259586).
+2026-10-04 20:29 UTC in run `37232259586`.
 Both default negotiation and a separate TLS 1.2 RSA handshake failed strict
 verification with code 10 at depth 0. Both received the same leaf:
 
