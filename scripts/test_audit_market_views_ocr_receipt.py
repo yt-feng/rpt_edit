@@ -141,6 +141,44 @@ class NumericAuditTests(unittest.TestCase):
         self.assertEqual([row["literal"] for row in diagnostic["second_page_at_record"]["candidates"]], ["17%", "7%"])
         self.assertFalse(result["success"])
 
+    def test_new_crop_geometry_is_sanitized_without_changing_unresolved_acceptance(self):
+        value = unresolved_percent_receipt()
+        row = value["reports"][0]["pages"][0]["ocr"]["numeric_evidence"]["records"][0]
+        metadata = {"crop_policy": audit.OCR_CROP_POLICY,
+                    "source_clip_bbox": [140.4, 249.4, 160.7, 260.0], "crop_pixel_size": [170, 89]}
+        for read in row["reads"][1:]:
+            read.update(copy.deepcopy(metadata))
+        before = copy.deepcopy(value)
+        result = self.summarize(value, [fixture("17%", [139, 245, 165, 259])])
+        diagnostic = result["fixtures"][0]["numeric_diagnostics"]["records"][0]
+        self.assertFalse(result["success"])
+        self.assertEqual(result["fixtures"][0]["category"], "field_unresolved")
+        self.assertNotIn("crop_policy", diagnostic["reads"][0])
+        for read in diagnostic["reads"][1:]:
+            for key, expected in metadata.items():
+                self.assertEqual(read[key], expected)
+        self.assertEqual(value, before)
+        self.assertNotIn("PRIVATE", json.dumps(result))
+
+    def test_crop_diagnostic_metadata_is_all_or_nothing_and_rejects_unbounded_or_private_values(self):
+        base = {"method": "source-crop-psm-6", "dpi": 600, "literal": "17%", "field_count": 1,
+                "crop_policy": audit.OCR_CROP_POLICY, "source_clip_bbox": [140, 249, 161, 260],
+                "crop_pixel_size": [175, 93]}
+        cases = [{"crop_policy": "PRIVATE https://private.invalid"}, {"crop_policy": []},
+                 {"source_clip_bbox": [0, 0, float("nan"), 10]}, {"source_clip_bbox": [0, 0, 100001, 10]},
+                 {"source_clip_bbox": None}, {"crop_pixel_size": [True, 90]}, {"crop_pixel_size": [0, 90]},
+                 {"crop_pixel_size": [-1, 90]}, {"crop_pixel_size": [100000, 100000]},
+                 {"crop_pixel_size": ["PRIVATE", 90]}, {"crop_pixel_size": None},
+                 {"method": "second-page-psm-3"}]
+        for mutation in cases:
+            read = copy.deepcopy(base)
+            read.update(mutation)
+            projected = audit._diagnostic_read(read)
+            with self.subTest(mutation=mutation):
+                for key in ("crop_policy", "source_clip_bbox", "crop_pixel_size"):
+                    self.assertNotIn(key, projected)
+                self.assertNotIn("PRIVATE", json.dumps(projected, allow_nan=False))
+
     def test_second_page_lookup_uses_record_position_independently_of_fixture_box(self):
         value = unresolved_percent_receipt()
         evidence = value["reports"][0]["pages"][0]["ocr"]["numeric_evidence"]

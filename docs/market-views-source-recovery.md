@@ -370,6 +370,15 @@ and emits sanitized numeric diagnostics. Its output always declares
 publish a PDF or provide a consumer handoff. This probe supports fast actual
 field diagnosis before another complete-source run.
 
+Real R2 diagnostic run `37236412568` isolated the October 4 rejection: the
+original and 450dpi field reads were `17%`; the two 600dpi crop reads were
+`317%` and `17%`. The wide crop included neighboring glyphs, while the percent
+pixel witness was present. The numeric reader now isolates the 600dpi OCR crop
+and records its clip, policy and pixel size. The independent, wider 300dpi
+punctuation witness and requirement for three agreeing positioned reads remain
+in place, and existing immutable receipts remain compatible. Actual fixture
+acceptance and a rebuilt complete source remain separate pending checks.
+
 Recovery is complete only after the
 matching cloud source and retrieval gates, exact dated PDF, original figures,
 private archive, public-safe commit and live catalogue/download are verified.
