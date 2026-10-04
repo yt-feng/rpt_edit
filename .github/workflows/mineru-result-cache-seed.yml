@@ -1,0 +1,126 @@
+name: Manually cache accepted MinerU ZIPs with short-lived exact-leaf authentication
+run-name: Seed accepted MinerU results ${{ inputs.date_folder }} (${{ inputs.max_results }})
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Exact completed original Daily run on main; no fresh or recovery task submission
+        required: true
+        type: string
+      date_folder:
+        description: Exact original Dropbox source date, YYMMDD
+        required: true
+        type: string
+      expected_articles:
+        description: Exact complete original file count, including failed parses
+        required: true
+        type: string
+      max_results:
+        description: Cache one done-result canary or all done results after complete original validation
+        required: true
+        type: choice
+        options: ['1', 'all']
+        default: '1'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: mineru-result-cache-seed-${{ inputs.source_run_id }}-${{ inputs.date_folder }}
+  cancel-in-progress: false
+jobs:
+  seed:
+    if: ${{ github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: scripts
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Initialize cache-only diagnostic
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          Path(os.environ['RUNNER_TEMP'], 'mineru-result-cache-seed-summary.json').write_text(json.dumps({
+              'schema_version': 1, 'success': False, 'category': 'prerequisites_incomplete',
+              'complete_source_handoff': False, 'production_acceptance': False, 'pipeline_restored': False,
+              'provider_posts': 0, 'model_calls': 0, 'pdf_count': 0,
+          }) + '\n')
+          PY
+      - name: Install isolated cache and certificate authentication dependencies
+        run: python3 -m pip install --retries 0 --disable-pip-version-check requests certifi 'urllib3>=2.2,<3' Pillow PyMuPDF 'boto3>=1.37.32,<2'
+      - name: Authenticate exact completed original Daily producer before source download
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+        run: |
+          python3 - <<'PY'
+          import json, os, re, subprocess, sys
+          from pathlib import Path
+          sys.path.insert(0, 'scripts')
+          from mineru_pinned_result_transport import require_before_cutoff, require_cloud_manual
+          from recover_durable_mineru_sources import check_producer, exact_date
+          try:
+              require_cloud_manual()
+              require_before_cutoff()
+              run = os.environ['SOURCE_RUN_ID']
+              if not re.fullmatch(r'[1-9][0-9]{0,19}', run):
+                  raise ValueError('source_run')
+              exact_date(os.environ['DATE_FOLDER'])
+              if not re.fullmatch(r'[1-9][0-9]{0,3}', os.environ['EXPECTED_ARTICLES']):
+                  raise ValueError('source_count')
+              response = subprocess.run(['gh', 'api', f"repos/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{run}"],
+                                        capture_output=True, text=True, timeout=30, check=False)
+              if response.returncode or len(response.stdout.encode()) > 1_000_000:
+                  raise ValueError('producer_unavailable')
+              producer = json.loads(response.stdout)
+              check_producer(producer, run, os.environ['GITHUB_REPOSITORY'])
+              if producer.get('status') != 'completed' or producer.get('conclusion') not in {'success', 'failure'}:
+                  raise ValueError('producer_not_completed')
+              Path(os.environ['RUNNER_TEMP'], 'mineru-cache-original-producer.json').write_text(response.stdout)
+          except Exception:
+              raise SystemExit('Cache-only original producer validation rejected.')
+          PY
+      - name: Download the exact complete original Daily PDF artifact
+        uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.source_run_id }}
+          name: selected-macro-pdfs-${{ inputs.source_run_id }}
+          path: _selected_macro_pdfs
+      - name: Read accepted tasks and seed fully verified done ZIPs without new parsing submissions
+        env:
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+          MAX_RESULTS: ${{ inputs.max_results }}
+          MINER_U: ${{ secrets.MINER_U }}
+          MINER_U_2: ${{ secrets.MINER_U_2 }}
+          MINER_U_3: ${{ secrets.MINER_U_3 }}
+          MINER_U_4: ${{ secrets.MINER_U_4 }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python3 -B scripts/seed_mineru_result_cache.py \
+            --input-dir _selected_macro_pdfs \
+            --producer-json "$RUNNER_TEMP/mineru-cache-original-producer.json" \
+            --source-run-id "$SOURCE_RUN_ID" --date-folder "$DATE_FOLDER" \
+            --expected-reports "$EXPECTED_ARTICLES" --max-results "$MAX_RESULTS" \
+            --summary "$RUNNER_TEMP/mineru-result-cache-seed-summary.json"
+      - name: Preserve sanitized cache-only authentication diagnostic
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: mineru-result-cache-seed-${{ github.run_id }}
+          path: ${{ runner.temp }}/mineru-result-cache-seed-summary.json
+          if-no-files-found: warn
+          retention-days: 7

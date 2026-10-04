@@ -75,6 +75,17 @@ do not discard it. Cache reuse still requires current provider polling and the
 complete original-batch gate. An absent cache may use strict HTTPS; corrupt or
 unverifiable stored objects stop processing rather than silently falling back.
 
+The separate manual cloud `mineru-result-cache-seed.yml` verifies the complete
+original Daily artifact and accepted task inventory before caching completed
+original ZIPs. It submits no new parses. Its temporary transport authenticates
+only the documented exact CDN leaf fingerprint, verifies the historical chain
+and hostname, and stops at the fixed `2026-10-04T23:59:59Z` cutoff. It records
+`pki_verified_now=false` in a separate immutable private authentication receipt;
+normal daily PKI verification is unchanged. The default one-ZIP canary must pass
+full ZIP checks and R2 readback before bulk seeding. Failed parses, complete
+handoff and actual dated PDF delivery remain separate gates; see
+[source recovery](market-views-source-recovery.md) for the exact policy.
+
 These acceptance layers are separate:
 
 | Layer | Required evidence |
