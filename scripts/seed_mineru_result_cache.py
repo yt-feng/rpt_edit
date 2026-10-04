@@ -26,7 +26,7 @@ from smoke_mineru_api import credentials
 
 AUTH_PREFIX = '_workflow-cache/mineru-result-auth/v1/dropbox'
 RECOVERY_WORKFLOW = '.github/workflows/market-views-mineru-recovery.yml'
-RECOVERY_NAME = 'Recover Market Views from exact MinerU tasks'
+RECOVERY_RUN_NAME_PREFIX = 'Recover MinerU Market Views '
 SAFE_ERRORS = {
     'canonical_ledger_writes_forbidden', 'accepted_batch_get_rejected', 'accepted_batch_get_invalid',
     'provider_posts_forbidden', 'provider_uploads_forbidden', 'complete_terminal_task_required',
@@ -136,9 +136,11 @@ def child_authorization(recovery_run_id, allowed_error_hashes, expected_manifest
     return bool(recovery_run_id)
 
 
-def check_recovery_producer(value, run_id, repository):
+def check_recovery_producer(value, run_id, repository, date_folder):
     if (not isinstance(value, dict) or type(value.get('id')) is not int or value['id'] != int(run_id)
-            or value.get('path') != RECOVERY_WORKFLOW or value.get('name') != RECOVERY_NAME
+            or not isinstance(date_folder, str) or not re.fullmatch(r'[0-9]{6}', date_folder)
+            or value.get('path') != RECOVERY_WORKFLOW
+            or value.get('name') != RECOVERY_RUN_NAME_PREFIX + date_folder
             or value.get('event') != 'workflow_dispatch'
             or value.get('head_branch') != 'main' or value.get('repository', {}).get('full_name') != repository
             or not re.fullmatch(r'[a-f0-9]{40}', str(value.get('head_sha', '')))):
@@ -365,7 +367,7 @@ def main(argv=None):
                     or not args.recovery_producer_json.is_file()):
                 raise SeedError('recovery_producer_invalid')
             check_recovery_producer(decode(args.recovery_producer_json.read_bytes()), args.recovery_run_id,
-                                    os.environ.get('GITHUB_REPOSITORY', ''))
+                                    os.environ.get('GITHUB_REPOSITORY', ''), args.date_folder)
         elif args.recovery_producer_json is not None:
             raise SeedError('child_authorization_invalid')
         import boto3
