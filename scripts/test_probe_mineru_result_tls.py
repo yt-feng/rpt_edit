@@ -5,6 +5,7 @@ import base64
 import hashlib
 import json
 from pathlib import Path
+import re
 import ssl
 import subprocess
 import tempfile
@@ -201,6 +202,36 @@ class ProbeTests(unittest.TestCase):
                 self.assertFalse(report['result_zip_verified'])
                 self.assertTrue(all(item['category'] == 'cloud_execution_required' for item in report['probes']))
 
+    def test_actual_runner_metadata_is_sanitized_and_never_derived_from_choice(self):
+        for runner_os, runner_arch in (('Linux', 'X64'), ('macOS', 'ARM64')):
+            with self.subTest(runner_os=runner_os):
+                env = {'RUNNER_OS': runner_os, 'RUNNER_ARCH': runner_arch,
+                       'MINERU_PROBE_RUNNER_IMAGE': 'macos-latest'}
+                self.assertEqual(p.cloud_runner_metadata(env),
+                                 {'runner_os': runner_os, 'runner_arch': runner_arch, 'requested_image': 'macos-latest'})
+        # A requested image alone proves no executed OS or architecture.
+        self.assertEqual(p.cloud_runner_metadata({'MINERU_PROBE_RUNNER_IMAGE': 'macos-latest'}),
+                         {'runner_os': None, 'runner_arch': None, 'requested_image': 'macos-latest'})
+        invalid = {'RUNNER_OS': 'PRIVATE hostname', 'RUNNER_ARCH': 'PRIVATE hardware',
+                   'MINERU_PROBE_RUNNER_IMAGE': 'PRIVATE self-hosted label'}
+        self.assertEqual(p.cloud_runner_metadata(invalid),
+                         {'runner_os': None, 'runner_arch': None, 'requested_image': None})
+
+    def test_mac_cloud_cli_keeps_strict_head_exit_policy_and_records_actual_runner(self):
+        env = dict(CLOUD_ENV, RUNNER_OS='macOS', RUNNER_ARCH='ARM64', MINERU_PROBE_RUNNER_IMAGE='macos-latest')
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / 'report.json'
+            report = {'comparison': 'neither_verified', 'probes': [], 'result_zip_verified': False}
+            evidence = {'probes': [{'category': 'openssl_unavailable', 'tls_verified': False}], 'result_zip_verified': False}
+            with patch.dict(p.os.environ, env), patch.object(p, 'compare', return_value=report), \
+                    patch.object(p, 'capture_handshake_evidence', return_value=evidence), redirect_stdout(io.StringIO()):
+                self.assertEqual(p.main(['--output', str(path)]), 1)
+            saved = json.loads(path.read_text())
+            self.assertEqual(saved['cloud_runner'], {'runner_os': 'macOS', 'runner_arch': 'ARM64', 'requested_image': 'macos-latest'})
+            self.assertFalse(saved['result_zip_verified'])
+            self.assertEqual(saved['comparison'], 'neither_verified')
+            self.assertEqual(saved['handshake_evidence'], evidence)
+
     def test_two_fixed_strict_handshakes_keep_complete_ordered_peer_chain(self):
         leaf, leaf_hash = public_pem('leaf')
         intermediate, intermediate_hash = public_pem('intermediate')
@@ -338,6 +369,30 @@ class ProbeTests(unittest.TestCase):
         self.assertNotIn('secrets.', workflow)
         self.assertNotIn('workflow_call:', workflow)
         self.assertIn('two independent strict TLS handshakes', workflow)
+
+    def test_runner_choice_contract_is_closed_default_ubuntu_and_manual_main_only(self):
+        workflow = (Path(__file__).resolve().parents[1] / '.github/workflows/mineru-result-tls-probe.yml').read_text()
+        dispatch = re.search(r'^  workflow_dispatch:\n(?P<body>(?:^    .*\n|^      .*\n|^        .*\n|^          .*\n)+)',
+                             workflow, re.MULTILINE).group('body')
+        self.assertIn('runner_image:', dispatch)
+        self.assertIn('type: choice', dispatch)
+        self.assertIn('default: ubuntu-latest', dispatch)
+        self.assertEqual(re.findall(r'^          - (\S+)\s*$', dispatch, re.MULTILINE),
+                         ['ubuntu-latest', 'macos-latest'])
+        contract, probe = workflow.split('  contract:\n', 1)[1].split('  probe:\n', 1)
+        self.assertIn("if: github.event_name == 'pull_request'", contract)
+        self.assertIn('    runs-on: ubuntu-latest\n', contract)
+        self.assertNotIn('runner_image', contract)
+        self.assertIn("if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'", probe)
+        expression = re.search(r'^    runs-on: (.+)$', probe, re.MULTILINE).group(1)
+        mapped = re.fullmatch(r"\$\{\{ inputs\.runner_image == '([^']+)' && '([^']+)' \|\| '([^']+)' \}\}", expression)
+        self.assertIsNotNone(mapped, 'Runner mapping must be closed; never interpolate an arbitrary runner label')
+        chosen, matched, fallback = mapped.groups()
+        self.assertEqual((chosen, matched, fallback), ('macos-latest', 'macos-latest', 'ubuntu-latest'))
+        for input_value, expected in (('', 'ubuntu-latest'), ('ubuntu-latest', 'ubuntu-latest'),
+                                      ('macos-latest', 'macos-latest'), ('self-hosted', 'ubuntu-latest')):
+            self.assertEqual(matched if input_value == chosen else fallback, expected)
+        self.assertIn("MINERU_PROBE_RUNNER_IMAGE: ${{ inputs.runner_image || 'ubuntu-latest' }}", probe)
 
 
 if __name__ == '__main__':
