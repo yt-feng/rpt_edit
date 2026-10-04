@@ -668,10 +668,51 @@ jobs:
           if-no-files-found: error
           retention-days: 2
 
+  recover-market-sources:
+    # Completed original PDF artifacts remain usable when MinerU extraction,
+    # its result CDN, or report-copy generation fails. This branch never makes
+    # another MinerU submission or changes the notes job's failure state.
+    needs: [resolve-inputs, select-macro-reports, process-shard]
+    if: ${{ always() && !cancelled() && needs.select-macro-reports.result == 'success' && needs.process-shard.result == 'failure' && needs.select-macro-reports.outputs.selected_count != '0' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          sparse-checkout: scripts
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install native source and handoff dependencies
+        run: python -m pip install PyMuPDF "boto3>=1.37.32,<2"
+      - name: Download exact selected original PDFs
+        uses: actions/download-artifact@v4
+        with:
+          name: selected-macro-pdfs-${{ github.run_id }}
+          path: _selected_macro_pdfs
+      - name: Extract and verify every original report for Market Views
+        run: |
+          python scripts/extract_native_market_sources.py \
+            --input-dir _selected_macro_pdfs \
+            --manifest _selected_macro_pdfs/selected_to_process_manifest.json \
+            --output-dir _native_market_sources/shard_0 \
+            --expected-reports "${{ needs.select-macro-reports.outputs.selected_count }}"
+      - name: Save complete native sources to private R2
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python scripts/private_workflow_handoff.py upload-dir \
+            --source _native_market_sources/shard_0 \
+            --key "_private-workflow-handoff/market-sources/${{ github.run_id }}/${{ needs.select-macro-reports.outputs.latest_folder }}/shard_0.tar.gz"
+
   trigger-market-views:
     # PDF synthesis consumes the complete R2 shards directly, not the ZIP artifact.
-    needs: [resolve-inputs, select-macro-reports, process-shard]
-    if: ${{ !cancelled() && needs.process-shard.result == 'success' && needs.select-macro-reports.outputs.selected_count != '0' }}
+    needs: [resolve-inputs, select-macro-reports, process-shard, recover-market-sources]
+    if: ${{ always() && !cancelled() && (needs.process-shard.result == 'success' || needs.recover-market-sources.result == 'success') && needs.select-macro-reports.outputs.selected_count != '0' }}
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
@@ -680,17 +721,26 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           DATE_FOLDER: ${{ needs.select-macro-reports.outputs.latest_folder }}
           EXPECTED_SHARDS: ${{ needs.select-macro-reports.outputs.effective_shard_count }}
+          RECOVERY_RESULT: ${{ needs.recover-market-sources.result }}
+          EXPECTED_ARTICLES: ${{ needs.select-macro-reports.outputs.selected_count }}
           MODEL: ${{ needs.resolve-inputs.outputs.model }}
           DEEPSEEK_BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
         run: |
+          SOURCE_KIND=xhs
+          if [ "$RECOVERY_RESULT" = "success" ]; then
+            SOURCE_KIND=native-pdf
+            EXPECTED_SHARDS=1
+          fi
           echo "::notice::All bank-report shards for $DATE_FOLDER are in private R2. Dispatching the matching Market Views issue now."
           RUN_URL="$(gh workflow run market-views-latex-pdf.yml \
             --repo "$GITHUB_REPOSITORY" \
             --ref main \
-            -f date_folder=latest \
+            -f date_folder="$DATE_FOLDER" \
             -f expected_bank_date="$DATE_FOLDER" \
             -f source_handoff_run_id="${{ github.run_id }}" \
+            -f source_handoff_kind="$SOURCE_KIND" \
             -f expected_shards="$EXPECTED_SHARDS" \
+            -f expected_articles="$EXPECTED_ARTICLES" \
             -f model="$MODEL" \
             -f deepseek_base_url="$DEEPSEEK_BASE_URL" \
             -f compile_latex=false)"
@@ -1230,11 +1280,39 @@ jobs:
           echo "::notice::Waiting for chart-index run $CHART_RUN_ID."
           gh run watch "$CHART_RUN_ID" --repo "$GITHUB_REPOSITORY" --compact --exit-status --interval 15
 
+  cleanup-market-source-recovery:
+    # Native sources have only one consumer; a successful PDF can release them
+    # even while the independent report-notes failure remains visible.
+    needs: [select-macro-reports, recover-market-sources, trigger-market-views]
+    if: ${{ always() && !cancelled() && needs.recover-market-sources.result == 'success' && needs.trigger-market-views.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          sparse-checkout: scripts/private_workflow_handoff.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install boto3
+      - name: Delete consumed native recovery sources
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+          DATE_FOLDER: ${{ needs.select-macro-reports.outputs.latest_folder }}
+        run: |
+          python scripts/private_workflow_handoff.py delete-prefix \
+            --prefix "_private-workflow-handoff/market-sources/${{ github.run_id }}/$DATE_FOLDER"
+
   cleanup-private-handoff:
     needs:
       - resolve-inputs
       - select-macro-reports
       - package-publish-ready
+      - recover-market-sources
       - trigger-market-views
       - trigger-chart-search-index
       - push-xhs-notes-wechat-drafts
@@ -1278,6 +1356,7 @@ jobs:
       - select-macro-reports
       - process-shard
       - package-publish-ready
+      - recover-market-sources
       - trigger-market-views
       - trigger-chart-search-index
       - push-xhs-notes-wechat-drafts
@@ -1286,6 +1365,7 @@ jobs:
       - build-portal-translated-reports
       - push-portal-translated-wechat-drafts
       - cleanup-private-handoff
+      - cleanup-market-source-recovery
     if: ${{ always() && (contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled')) }}
     uses: ./.github/workflows/portal-ops-alert.yml
     with:
@@ -1295,6 +1375,7 @@ jobs:
         select=${{ needs.select-macro-reports.result }},
         shards=${{ needs.process-shard.result }},
         package=${{ needs.package-publish-ready.result }},
+        market_source_recovery=${{ needs.recover-market-sources.result }},
         market_views=${{ needs.trigger-market-views.result }},
         chart_search=${{ needs.trigger-chart-search-index.result }},
         wechat=${{ needs.push-xhs-notes-wechat-drafts.result }},

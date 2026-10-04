@@ -1,0 +1,145 @@
+name: Recover Market Views from original PDFs
+run-name: Recover Market Views ${{ inputs.date_folder }} from run ${{ inputs.source_run_id }}
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Original Daily report run; leave empty to download the exact Dropbox batch
+        required: false
+        type: string
+        default: ''
+      date_folder:
+        description: Exact original Dropbox source date, YYMMDD
+        required: true
+        type: string
+      expected_articles:
+        description: Exact original selected PDF count
+        required: true
+        type: string
+permissions:
+  contents: read
+  actions: write
+concurrency:
+  group: market-views-native-recovery-${{ inputs.date_folder }}
+  cancel-in-progress: false
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          sparse-checkout: scripts
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check exact original run and recovery date
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+        run: |
+          [[ "$DATE_FOLDER" =~ ^[0-9]{6}$ ]]
+          [[ "$EXPECTED_ARTICLES" =~ ^[1-9][0-9]*$ ]]
+          if [ -n "$SOURCE_RUN_ID" ]; then
+            [[ "$SOURCE_RUN_ID" =~ ^[1-9][0-9]*$ ]]
+            SOURCE_WORKFLOW="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$SOURCE_RUN_ID" --jq '.path')"
+            test "$SOURCE_WORKFLOW" = '.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml'
+          fi
+      - name: Install native extraction and private handoff dependencies
+        run: python -m pip install PyMuPDF requests "boto3>=1.37.32,<2"
+      - name: Download original selected PDFs without repeating extraction requests
+        if: ${{ inputs.source_run_id != '' }}
+        uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.source_run_id }}
+          name: selected-macro-pdfs-${{ inputs.source_run_id }}
+          path: _selected_macro_pdfs
+      - name: Download the exact original Dropbox batch for a missed source date
+        if: ${{ inputs.source_run_id == '' }}
+        env:
+          DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
+          DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
+          DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+        run: |
+          python scripts/download_dropbox_latest_pdfs.py \
+            --dropbox-root /zip_backup \
+            --date-folder "$DATE_FOLDER" \
+            --expected-date-folder "$DATE_FOLDER" \
+            --max-folder-age-days 0 \
+            --output-dir _dropbox_originals
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          import sys
+          sys.path.insert(0, 'scripts')
+          from select_macro_trend_pdfs import copy_selected
+          rows = json.loads(Path('_dropbox_originals/dropbox_manifest.json').read_text())['files']
+          selected = copy_selected(rows, Path('_selected_macro_pdfs'), len(rows))
+          Path('_selected_macro_pdfs/selected_to_process_manifest.json').write_text(json.dumps(selected))
+          PY
+      - name: Verify that every selected original belongs to the requested date
+        env:
+          DATE_FOLDER: ${{ inputs.date_folder }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path, PurePosixPath
+          rows = json.loads(Path('_selected_macro_pdfs/selected_to_process_manifest.json').read_text())
+          expected = os.environ['DATE_FOLDER']
+          if not rows or any(expected not in PurePosixPath(str(row.get('dropbox_path', ''))).parts for row in rows):
+              raise SystemExit('Selected original manifest does not match the requested Dropbox date.')
+          PY
+      - name: Extract and verify the complete original source batch
+        run: |
+          python scripts/extract_native_market_sources.py \
+            --input-dir _selected_macro_pdfs \
+            --manifest _selected_macro_pdfs/selected_to_process_manifest.json \
+            --output-dir _native_market_sources/shard_0 \
+            --expected-reports "${{ inputs.expected_articles }}"
+      - name: Archive verified native sources in private R2
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python scripts/private_workflow_handoff.py upload-dir \
+            --source _native_market_sources/shard_0 \
+            --key "_private-workflow-handoff/market-sources/${{ github.run_id }}/${{ inputs.date_folder }}/shard_0.tar.gz"
+      - name: Generate and wait for the exact Market Views PDF
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+        run: |
+          RUN_URL="$(gh workflow run market-views-latex-pdf.yml \
+            --repo "$GITHUB_REPOSITORY" --ref main \
+            -f date_folder="$DATE_FOLDER" \
+            -f expected_bank_date="$DATE_FOLDER" \
+            -f source_handoff_run_id="${{ github.run_id }}" \
+            -f source_handoff_kind=native-pdf \
+            -f expected_shards=1 \
+            -f expected_articles="$EXPECTED_ARTICLES" \
+            -f force_rebuild=true \
+            -f compile_latex=false)"
+          MARKET_RUN_ID="${RUN_URL##*/}"
+          [[ "$MARKET_RUN_ID" =~ ^[1-9][0-9]*$ ]]
+          echo "Market Views recovery: $RUN_URL" >> "$GITHUB_STEP_SUMMARY"
+          gh run watch "$MARKET_RUN_ID" --repo "$GITHUB_REPOSITORY" --compact --exit-status --interval 15
+      - name: Delete consumed native source handoff after the PDF succeeds
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+        run: |
+          python scripts/private_workflow_handoff.py delete-prefix \
+            --prefix "_private-workflow-handoff/market-sources/${{ github.run_id }}/$DATE_FOLDER"

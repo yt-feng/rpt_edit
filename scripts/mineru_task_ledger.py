@@ -19,10 +19,24 @@ DONE = {'done', 'success', 'completed'}
 FAILED = {'failed', 'fail', 'error'}
 ACTIVE = {'pending', 'waiting-file', 'running', 'converting'}
 MAX_CHECKPOINT_BYTES = 64 * 1024
+# MinerU's official error-code table: https://mineru.net/apiManage/docs
+# A0211 is expired authentication; A0202 is an invalid token.
+AUTH_REJECTION_CODES = {'A0211', 'A0202'}
 
 
 class LedgerError(RuntimeError):
     pass
+
+
+class DefinitiveAuthRejection(LedgerError):
+    """The provider explicitly refused authentication before accepting a task."""
+    def __init__(self, code, http_status):
+        if (not isinstance(code, str) or type(http_status) is not int
+                or not 200 <= http_status < 500 or http_status == 429
+                or (code not in AUTH_REJECTION_CODES and not (code == 'HTTP401' and http_status == 401))):
+            raise LedgerError('Invalid definitive authentication rejection')
+        self.code, self.http_status = code, http_status
+        super().__init__(f'MinerU authentication definitively rejected: {code}, HTTP {http_status}')
 
 
 def encoded(value):
@@ -178,9 +192,37 @@ class Provider:
 
     @staticmethod
     def parse(response):
-        data = response.json()
+        status = response.status_code
+        try:
+            data = response.json()
+        except Exception:
+            if status == 401:
+                raise DefinitiveAuthRejection('HTTP401', 401) from None
+            raise LedgerError(f'MinerU response is not valid JSON: HTTP {status}') from None
+        code = None
+        if isinstance(data, dict):
+            code = data.get('code')
+            if code is None:
+                code = data.get('msgCode')
+            if code is None:
+                code = data.get('msg_code')
+        normalized = code.strip().upper() if isinstance(code, str) else ''
+        # Even an auth-shaped reply cannot authorize another POST if it also
+        # contains an acceptance acknowledgement. Leave the saved intent
+        # ambiguous rather than infer that the first task was rejected.
+        body = data.get('data') if isinstance(data, dict) else None
+        acknowledgement = any(
+            isinstance(candidate, dict) and any(key in candidate for key in ('batch_id', 'file_urls'))
+            for candidate in (data, body)
+        )
+        auth_rejection = (type(status) is int and 200 <= status < 500 and status != 429
+                          and (normalized in AUTH_REJECTION_CODES or status == 401))
+        if auth_rejection:
+            if acknowledgement:
+                raise LedgerError('MinerU authentication rejection conflicts with a submission acknowledgement')
+            raise DefinitiveAuthRejection(normalized if normalized in AUTH_REJECTION_CODES else 'HTTP401', status)
         if (response.status_code >= 400 or not isinstance(data, dict)
-                or data.get('code') not in (None, 0, '0') or not isinstance(data.get('data'), dict)):
+                or code not in (None, 0, '0') or not isinstance(data.get('data'), dict)):
             # Do not retain arbitrary provider error bodies, URLs or tokens.
             raise LedgerError(f'MinerU request rejected or malformed: HTTP {response.status_code}')
         return data['data']
@@ -192,8 +234,8 @@ class Provider:
     def request(self, method, *args, **kwargs):
         try:
             return getattr(self.http, method)(*args, **kwargs)
-        except Exception as error:
-            raise LedgerError(f'MinerU {method} transport outcome unknown; saved task retained') from error
+        except Exception:
+            raise LedgerError(f'MinerU {method} transport outcome unknown; saved task retained') from None
 
     def submit(self, items, options, token, timeout):
         files = [{'name': item['source'].rsplit('/', 1)[-1], 'data_id': item['id'],
@@ -232,6 +274,7 @@ class Ledger:
         if not self.tokens:
             raise LedgerError('No MinerU token identities available')
         self.clock, self.sleep = clock, sleep
+        self.submission_posts = 0
 
     def bind(self, path, source):
         validate_source(source)
@@ -249,9 +292,28 @@ class Ledger:
         row, version = self.store.get(key)
         if (not schema_v1(row) or row.get('scope') != self.scope
                 or row.get('endpoint') != self.endpoint or not exact_json(row.get('options'), self.options)
-                or row.get('key') != key or row.get('token_identity') not in self.tokens
+                or row.get('key') != key
+                or not re.fullmatch(r'[a-f0-9]{64}', str(row.get('token_identity') or ''))
+                or (row.get('state') != 'auth_rejected' and row.get('token_identity') not in self.tokens)
                 or not isinstance(row.get('files'), list) or not 1 <= len(row['files']) <= 5):
             raise LedgerError('Stored task scope, source, options or token identity mismatch')
+        rejections = row.get('auth_rejections', [])
+        if not isinstance(rejections, list):
+            raise LedgerError('Stored authentication rejection history is malformed')
+        rejected_tokens = set()
+        for rejection in rejections:
+            if (not isinstance(rejection, dict) or set(rejection) != {'token_identity', 'code', 'http_status'}
+                    or not re.fullmatch(r'[a-f0-9]{64}', str(rejection.get('token_identity') or ''))
+                    or rejection['token_identity'] in rejected_tokens):
+                raise LedgerError('Stored authentication rejection history is malformed')
+            DefinitiveAuthRejection(rejection['code'], rejection['http_status'])
+            rejected_tokens.add(rejection['token_identity'])
+        if row.get('state') == 'auth_rejected':
+            if (not rejections or row.get('batch_id') is not None
+                    or row['token_identity'] != rejections[-1]['token_identity']):
+                raise LedgerError('Stored authentication rejection state is inconsistent')
+        elif row.get('state') in {'accepted', 'uploaded', 'terminal'} and row['token_identity'] in rejected_tokens:
+            raise LedgerError('Accepted task refers to a definitively rejected credential')
         for item in row['files']:
             if not isinstance(item, dict):
                 raise LedgerError('Stored source binding is malformed')
@@ -283,12 +345,48 @@ class Ledger:
         for item in items:
             # A competing claim or interruption cannot authorize another POST.
             self.store.put('sources/' + item['id'], {'schema': 1, 'binding': item, 'batch_key': key})
-        row['state'] = 'submitting'
-        version = self.store.put(key, row, version)
-        token = self.tokens[row['token_identity']]
-        batch_id, urls = self.provider.submit(items, self.options, token, self._remaining(deadline))
-        row.update(state='accepted', batch_id=batch_id)
-        version = self.store.put(key, row, version)  # Before any upload or poll.
+        self._submit_claimed(row, version, paths, deadline)
+        return key
+
+    def _submit_claimed(self, row, version, paths, deadline):
+        """Try another key only after durable, definitive pre-acceptance rejection."""
+        items, key = row['files'], row['key']
+        if row.get('state') not in {'claiming', 'auth_rejected'} or row.get('batch_id') is not None:
+            raise LedgerError('Only unaccepted or definitively auth-rejected claims may be submitted')
+        if set(paths).intersection(item['id'] for item in items) != {item['id'] for item in items}:
+            raise LedgerError('Authentication-rejected batch requires its complete original source inventory')
+        for item in items:
+            raw = Path(paths[item['id']]).read_bytes()
+            if len(raw) != item['size'] or digest(raw) != item['sha256']:
+                raise LedgerError('Original source bytes changed before task submission')
+        rejections = row.setdefault('auth_rejections', [])
+        rejected = {entry['token_identity'] for entry in rejections}
+        for identity, token in self.tokens.items():
+            if identity in rejected:
+                continue
+            remaining = self._remaining(deadline)
+            for item in items:
+                raw = Path(paths[item['id']]).read_bytes()
+                if len(raw) != item['size'] or digest(raw) != item['sha256']:
+                    raise LedgerError('Original source bytes changed before task submission')
+            # A crash or unrecognized response after this durable write stays
+            # submitting. It never becomes permission to try the next key.
+            row.update(state='submitting', token_identity=identity, batch_id=None)
+            version = self.store.put(key, row, version)
+            self.submission_posts += 1
+            try:
+                batch_id, urls = self.provider.submit(items, self.options, token, remaining)
+            except DefinitiveAuthRejection as error:
+                rejections.append({'token_identity': identity, 'code': error.code, 'http_status': error.http_status})
+                rejected.add(identity)
+                row['state'] = 'auth_rejected'
+                version = self.store.put(key, row, version)
+                continue
+            row.update(state='accepted', batch_id=batch_id)
+            version = self.store.put(key, row, version)  # Before any upload or poll.
+            break
+        else:
+            raise LedgerError('All configured MinerU credentials were definitively rejected; saved batch is auth_rejected')
         for item, url in zip(items, urls):
             raw = Path(paths[item['id']]).read_bytes()
             if len(raw) != item['size'] or digest(raw) != item['sha256']:
@@ -296,7 +394,6 @@ class Ledger:
             self.provider.upload(url, raw, self._remaining(deadline))
         row['state'] = 'uploaded'
         self.store.put(key, row, version)
-        return key
 
     def _poll(self, key, requested, deadline, interval, queue_budget):
         batch, version = self._read_batch(key)
@@ -360,6 +457,7 @@ class Ledger:
         items = [self.bind(path, source) for path, source in paths_and_sources]
         if len({item['id'] for item in items}) != len(items):
             raise LedgerError('Duplicate input source identity')
+        self.submission_posts = 0
         paths = {item['id']: path for item, (path, _) in zip(items, paths_and_sources)}
         groups, fresh = {}, []
         for item in items:
@@ -371,14 +469,22 @@ class Ledger:
                 raise LedgerError('Source claim binding mismatch')
             groups.setdefault(reference['batch_key'], []).append(item)
         # Validate every existing task before any new provider mutation.
+        rejected_batches = []
         for key, requested in groups.items():
-            batch, _ = self._read_batch(key)
+            batch, version = self._read_batch(key)
             bound = {item['id']: item for item in batch['files']}
             if any(not exact_json(bound.get(item['id']), item) for item in requested):
                 raise LedgerError('Requested PDF does not match accepted task bytes and scope')
-            if batch.get('state') not in {'accepted', 'uploaded', 'terminal'} or not batch.get('batch_id'):
+            if batch.get('state') == 'auth_rejected':
+                if ({item['id'] for item in requested} != set(bound)
+                        or {item['id'] for item in items} != set(bound)):
+                    raise LedgerError('Authentication-rejected batch requires only its complete original source inventory')
+                rejected_batches.append((batch, version))
+            elif batch.get('state') not in {'accepted', 'uploaded', 'terminal'} or not batch.get('batch_id'):
                 raise LedgerError('Ambiguous existing task blocks new submissions')
         deadline = self.clock() + timeout
+        for batch, version in rejected_batches:
+            self._submit_claimed(batch, version, paths, deadline)
         if fresh:
             groups[self._create(fresh, paths, deadline)] = fresh
         observed = {}
@@ -399,7 +505,7 @@ class Ledger:
         # never release result rows to downstream generation, even after regrouping.
         return (successes if ready else []), {
             'requested': len(items), 'completed': len(successes), 'failed': failed,
-            'pending': pending, 'batch_keys': list(groups), 'provider_posts': int(bool(fresh)),
+            'pending': pending, 'batch_keys': list(groups), 'provider_posts': self.submission_posts,
             'original_batches': original_batches, 'ready_for_generation': ready,
         }
 
