@@ -107,6 +107,15 @@ download a ZIP or mirror it into R2. A valid HTTP response identifies another
 potential cloud retrieval path; invalid-certificate or fetch failure still
 requires further resolution before any missing source can enter R2.
 
+The manual probe accepts `default`, `gcp:asia-east1` or `azure:southeastasia`
+placement for its newly created temporary Worker. Region hints use Cloudflare's
+[documented placement API](https://developers.cloudflare.com/workers/configuration/placement/)
+without changing the official result hostname or HTTPS verification. The
+incoming request's `request.cf.colo` records ingress only. Execution location is
+reported only when the platform supplies a valid `cf-placement` response header;
+a requested region does not prove execution there. Every probe retains one
+provider HEAD, zero result ZIP downloads, zero parsing submissions and cleanup.
+
 The bank source date owns the Market Views issue. Auxiliary sources use the
 latest usable date on or before that bank date; a future auxiliary date cannot
 rename or suppress the bank issue. Private handoff run IDs and report/shard
@@ -207,8 +216,9 @@ request, allowing only bounded deployment-404 waits before its single CDN HEAD.
 PR 223 merged the readiness check at
 `d0138a57a32e4722eb65c57914434647d1d52ee6`. Cloudflare run `37229206987` on
 2026-10-04 19:42 UTC received readiness HTTP 404 then HTTP 200 after five seconds.
-Its authenticated handler then made exactly one strict HTTPS HEAD from the LAX
-edge to the official CDN root and received HTTP 526 (`tls_invalid_certificate`).
+Its authenticated handler then made exactly one strict HTTPS HEAD to the official
+CDN root and received HTTP 526 (`tls_invalid_certificate`). The recorded LAX
+value identifies request ingress; that run did not separately prove execution location.
 The temporary Worker was successfully deleted. Zero ZIP downloads, provider
 POSTs and R2 writes occurred. This is CDN evidence, unlike the earlier deployment
 404, and does not establish the certificate state of every possible CDN edge.
@@ -221,6 +231,16 @@ Cloudflare-to-R2 mirror has no verified upstream delivery path in these probes.
 The new ZIP cache prevents loss of future successful downloads but does not
 restore currently absent source bytes. A valid official result download path is
 still required before the missing dated PDFs can be built.
+
+Attempt 3 of the same smoke run at 2026-10-04 19:57 UTC retained the existing
+completed task, made zero parsing POSTs and again stopped at download with
+`tls_certificate_expired` and zero bytes. Separately, a read-only TLS handshake
+to the same official hostname observed a valid Let's Encrypt YR1 chain with leaf
+validity 2026-09-17 through 2026-12-16. That handshake did not retrieve a result
+ZIP and does not establish runner or Cloudflare retrieval success. These
+different observations require testing a legitimate cloud retrieval path rather
+than describing every CDN edge as expired. Regional Cloudflare probes are
+available for that test; region selection alone is not success evidence.
 
 Saved Dropbox inventory from 2026-10-03 22:34 UTC contained 63 PDFs for `261001`,
 4 for `261002` and 54 for `261003`. Those counts describe original inputs, not

@@ -6,6 +6,8 @@ https://developers.cloudflare.com/workers/configuration/multipart-upload-metadat
 https://developers.cloudflare.com/api/resources/workers/subresources/subdomains/
 https://developers.cloudflare.com/api/resources/workers/subresources/scripts/subresources/subdomain/
 https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-526/
+https://developers.cloudflare.com/workers/configuration/placement/
+https://developers.cloudflare.com/api/resources/workers/subresources/scripts/methods/update/
 
 This is a connectivity diagnostic, not a result download or an R2 mirror.
 """
@@ -35,6 +37,7 @@ PROBE_CATEGORIES = frozenset({
 MAX_RESPONSE_BYTES = 262144
 READINESS_ATTEMPTS = 7
 READINESS_INTERVAL_SECONDS = 5
+PLACEMENT_REGIONS = frozenset({"default", "gcp:asia-east1", "azure:southeastasia"})
 
 
 class ProbeFailure(Exception):
@@ -90,17 +93,34 @@ def _validate_probe(payload: dict) -> dict:
     if ((expected_category is not None and category != expected_category)
             or (expected_category is None and category not in {"fetch_failed", "fetch_timeout"})):
         raise ProbeFailure("worker_probe", "invalid_probe_summary")
-    colo = payload.get("colo")
+    colo = payload.get("request_ingress_colo")
     elapsed = payload.get("elapsed_ms")
     if not isinstance(colo, str) or not re.fullmatch(r"[A-Z]{3}|unknown", colo):
         raise ProbeFailure("worker_probe", "invalid_probe_summary")
     if type(elapsed) is not int or not 0 <= elapsed <= 60000:
         raise ProbeFailure("worker_probe", "invalid_probe_summary")
     return {**expected, "category": category, "upstream_http_status": status,
-            "colo": colo, "elapsed_ms": elapsed}
+            "request_ingress_colo": colo, "elapsed_ms": elapsed}
 
 
-def _configuration(env: dict[str, str]) -> tuple[str, str, str, str, str]:
+def _placement_evidence(response: Any) -> dict[str, Any]:
+    """Only a platform placement response header can identify execution here.
+
+    A requested region and request.cf.colo do not prove Worker execution placement.
+    Absence is expected to remain possible because Cloudflare documents this header
+    as provisional. Never infer a location from the requested hint in that case.
+    """
+    raw = getattr(response, "headers", {}).get("cf-placement")
+    match = re.fullmatch(r"(remote|local)-([A-Z]{3})", raw) if isinstance(raw, str) else None
+    return {
+        "execution_location_evidence": "platform_response_header" if match else
+                                       "not_observed" if raw is None else "invalid_platform_header",
+        "cf_placement": match.group(0) if match else None,
+        "worker_execution_colo": match.group(2) if match else None,
+    }
+
+
+def _configuration(env: dict[str, str]) -> tuple[str, str, str, str, str, str]:
     repository = env.get("GITHUB_REPOSITORY", "")
     workflow_ref = repository + "/.github/workflows/mineru-cloudflare-tls-probe.yml@refs/heads/main"
     if (env.get("GITHUB_ACTIONS") != "true" or env.get("GITHUB_EVENT_NAME") != "workflow_dispatch"
@@ -110,11 +130,12 @@ def _configuration(env: dict[str, str]) -> tuple[str, str, str, str, str]:
         raise ProbeFailure("configuration", "main_manual_action_required")
     account, token = env.get("CLOUDFLARE_ACCOUNT_ID", ""), env.get("CLOUDFLARE_API_TOKEN", "")
     run_id, attempt, sha = env.get("GITHUB_RUN_ID", ""), env.get("GITHUB_RUN_ATTEMPT", ""), env.get("GITHUB_SHA", "")
+    placement = env.get("MINERU_PROBE_PLACEMENT_REGION", "default")
     if (not re.fullmatch(r"[a-f0-9]{32}", account) or not token.strip() or len(token) > 1024
             or not re.fullmatch(r"[0-9]{1,20}", run_id) or not re.fullmatch(r"[0-9]{1,5}", attempt)
-            or not re.fullmatch(r"[a-f0-9]{40}", sha)):
+            or not re.fullmatch(r"[a-f0-9]{40}", sha) or placement not in PLACEMENT_REGIONS):
         raise ProbeFailure("configuration", "invalid_action_configuration")
-    return account, token, run_id, attempt, sha
+    return account, token, run_id, attempt, sha, placement
 
 
 def run_probe(env: dict[str, str], session: Any = None) -> dict:
@@ -129,6 +150,9 @@ def run_probe(env: dict[str, str], session: Any = None) -> dict:
         "probe_call_count": 0,
         "cloudflare_api_methods": {"GET": 0, "PUT": 0, "POST": 0, "DELETE": 0},
         "cleanup_category": "not_needed",
+        "requested_placement_region": None,
+        "execution_location_evidence": "not_observed",
+        "cf_placement": None, "worker_execution_colo": None,
     }
     worker_name = None
     creation_attempted = False
@@ -136,7 +160,8 @@ def run_probe(env: dict[str, str], session: Any = None) -> dict:
     own_session = session is None
     account = token = None
     try:
-        account, token, run_id, attempt, sha = _configuration(env)
+        account, token, run_id, attempt, sha, placement = _configuration(env)
+        summary["requested_placement_region"] = placement
         summary["execution_sha"] = sha
         summary["run_id"] = run_id
         summary["run_attempt"] = attempt
@@ -204,6 +229,10 @@ def run_probe(env: dict[str, str], session: Any = None) -> dict:
             "logpush": False,
             "observability": {"enabled": False},
         }
+        if placement != "default":
+            # Region hints avoid host-based placement's additional origin probes.
+            # This changes only the freshly named temporary Worker.
+            metadata["placement"] = {"region": placement}
         creation_attempted = True
         api("PUT", script_path, "create_temporary_worker", files={
             "metadata": (None, json.dumps(metadata), "application/json"),
@@ -248,6 +277,7 @@ def run_probe(env: dict[str, str], session: Any = None) -> dict:
             if response.status_code != 200:
                 raise ProbeFailure("worker_probe", "worker_http_rejected", response.status_code)
             summary["probe"] = _validate_probe(_object(response, "worker_probe"))
+            summary.update(_placement_evidence(response))
         finally:
             response.close()
         summary["category"] = summary["probe"]["category"]

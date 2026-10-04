@@ -27,17 +27,18 @@ BODY = {
     "schema_version": 1, "provider_host": "cdn-mineru.openxlab.org.cn",
     "request_method": "HEAD", "request_count": 1, "redirects_followed": 0,
     "zip_downloads": 0, "provider_posts": 0, "category": "https_response_received",
-    "upstream_http_status": 403, "colo": "CDG", "elapsed_ms": 12,
+    "upstream_http_status": 403, "request_ingress_colo": "CDG", "elapsed_ms": 12,
 }
 READY_BODY = {"schema_version": 1, "category": "ready", "worker_version": "tls-probe-v2",
               "request_count": 0, "provider_posts": 0, "zip_downloads": 0}
 
 
 class Response:
-    def __init__(self, status=200, body=None, raw=None):
+    def __init__(self, status=200, body=None, raw=None, headers=None):
         self.status_code = status
         self.data = raw if raw is not None else json.dumps(body).encode()
         self.closed = False
+        self.headers = headers or {}
 
     def iter_content(self, chunk_size):
         for start in range(0, len(self.data), chunk_size):
@@ -114,11 +115,49 @@ class LifecycleTests(unittest.TestCase):
         self.assertIn("no_cots_on_external_fetch", metadata["compatibility_flags"])
         self.assertIn("global_fetch_strictly_public", metadata["compatibility_flags"])
         self.assertFalse(metadata["observability"]["enabled"])
+        self.assertNotIn("placement", metadata, "Default behavior must remain unchanged")
         self.assertEqual(session.calls[3][2]["json"], {"enabled": True, "previews_enabled": False})
         encoded = json.dumps(result)
         self.assertNotIn(ENV["CLOUDFLARE_API_TOKEN"], encoded)
         self.assertNotIn("e" * 64, encoded)
         self.assertNotIn("existing-account", encoded)
+
+    def test_asia_hints_only_modify_the_new_worker_placement_metadata(self):
+        for region in ("gcp:asia-east1", "azure:southeastasia"):
+            with self.subTest(region=region):
+                result, session = self.run_with(sequence(), {**ENV, "MINERU_PROBE_PLACEMENT_REGION": region})
+                metadata = json.loads(session.calls[2][2]["files"]["metadata"][1])
+                self.assertEqual(metadata["placement"], {"region": region})
+                self.assertEqual(result["requested_placement_region"], region)
+                self.assertEqual(result["execution_location_evidence"], "not_observed")
+                self.assertIsNone(result["worker_execution_colo"])
+                self.assertEqual(result["probe_call_count"], 1)
+                self.assertEqual(result["zip_downloads"], 0)
+                self.assertTrue(result["worker_deleted"])
+                self.assertEqual([call[0] for call in session.calls], ["GET", "GET", "PUT", "POST", "GET", "GET", "DELETE"])
+
+    def test_platform_placement_header_disambiguates_execution_from_ingress(self):
+        for header, executed in (("remote-TPE", "TPE"), ("local-HKG", "HKG")):
+            with self.subTest(header=header):
+                rows = sequence()
+                rows[5] = Response(body={**BODY, "request_ingress_colo": "LAX"}, headers={"cf-placement": header})
+                result, _ = self.run_with(rows, {**ENV, "MINERU_PROBE_PLACEMENT_REGION": "gcp:asia-east1"})
+                self.assertEqual(result["requested_placement_region"], "gcp:asia-east1")
+                self.assertEqual(result["probe"]["request_ingress_colo"], "LAX")
+                self.assertEqual(result["execution_location_evidence"], "platform_response_header")
+                self.assertEqual(result["cf_placement"], header)
+                self.assertEqual(result["worker_execution_colo"], executed)
+
+    def test_malformed_placement_headers_are_sanitized_and_never_prove_a_location(self):
+        for header in ("remote-private-secret", "targeted-SIN", "remote-SIN,local-LAX", "", 123):
+            with self.subTest(header=header):
+                rows = sequence()
+                rows[5] = Response(body=BODY, headers={"cf-placement": header})
+                result, _ = self.run_with(rows)
+                self.assertEqual(result["execution_location_evidence"], "invalid_platform_header")
+                self.assertIsNone(result["cf_placement"])
+                self.assertIsNone(result["worker_execution_colo"])
+                self.assertNotIn("private-secret", json.dumps(result))
 
     def test_main_manual_only_is_runtime_enforced(self):
         for key, value in [("GITHUB_ACTIONS", "false"), ("GITHUB_EVENT_NAME", "pull_request"),
@@ -133,7 +172,10 @@ class LifecycleTests(unittest.TestCase):
 
     def test_invalid_config_never_calls_api(self):
         for key, value in [("CLOUDFLARE_ACCOUNT_ID", "bad/path"), ("CLOUDFLARE_API_TOKEN", ""),
-                           ("GITHUB_RUN_ID", "../../production"), ("GITHUB_RUN_ATTEMPT", ""), ("GITHUB_SHA", "short")]:
+                           ("GITHUB_RUN_ID", "../../production"), ("GITHUB_RUN_ATTEMPT", ""), ("GITHUB_SHA", "short"),
+                           ("MINERU_PROBE_PLACEMENT_REGION", "smart"),
+                           ("MINERU_PROBE_PLACEMENT_REGION", "https://arbitrary.example"),
+                           ("MINERU_PROBE_PLACEMENT_REGION", "gcp:us-west1")]:
             with self.subTest(key=key):
                 result, session = self.run_with([], {**ENV, key: value})
                 self.assertEqual(result["category"], "invalid_action_configuration")
@@ -294,7 +336,7 @@ class LifecycleTests(unittest.TestCase):
 
     def test_invalid_probe_or_extra_fields_never_escape(self):
         for body in [{**BODY, "request_count": 2}, {**BODY, "upstream_http_status": 526},
-                     {**BODY, "schema_version": True}, {**BODY, "colo": "secret-string"},
+                     {**BODY, "schema_version": True}, {**BODY, "request_ingress_colo": "secret-string"},
                      {**BODY, "elapsed_ms": -1}]:
             with self.subTest(body=body):
                 result, _ = self.run_with(sequence(body))
@@ -326,6 +368,9 @@ class LifecycleTests(unittest.TestCase):
         self.assertNotIn("schedule:", workflow)
         self.assertNotIn("R2_BUCKET_NAME", workflow)
         self.assertNotIn("R2_SECRET_ACCESS_KEY", workflow)
+        self.assertIn("default: 'default'", workflow)
+        self.assertIn("- 'gcp:asia-east1'", workflow)
+        self.assertIn("- 'azure:southeastasia'", workflow)
 
 
 class WorkerHandlerTests(unittest.TestCase):
@@ -369,6 +414,8 @@ process.stdout.write(JSON.stringify({status: response.status, body: await respon
                                              "redirect": "manual", "cache": "no-store"}])
         self.assertEqual(result["body"]["category"], "https_response_received")
         self.assertEqual(result["body"]["zip_downloads"], 0)
+        self.assertEqual(result["body"]["request_ingress_colo"], "CDG")
+        self.assertNotIn("worker_execution_colo", result["body"])
 
     def test_worker_absent_or_wrong_secret_denies_without_fetch(self):
         for overrides in [{"env_token": None}, {"token": None}, {"token": "b" * 64}, {"token": "short"}]:
