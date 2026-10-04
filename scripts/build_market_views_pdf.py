@@ -11,6 +11,7 @@ install for the normal path.
 from __future__ import annotations
 
 import argparse
+from bisect import bisect_left, bisect_right
 import hashlib
 import json
 import os
@@ -55,6 +56,15 @@ SOURCE_GROUP_LABELS = {
     "consulting": "战略咨询",
     "institution": "智库/国际机构",
 }
+PENDING_OCR_NUMBER_RE = re.compile(r"\[(?:漏识)?数值待核对:[^\]\r\n]{1,80}\]")
+OCR_NUMBER_POLICY = (
+    "OCR 数值核对约束：输入中的 [数值待核对:...] 和 [漏识数值待核对:...] 是尚未确认字段的原始占位标记，"
+    "必须完整保留在输入与引用中，标记编号只是定位信息，不是数值。"
+    "禁止补写、猜测或根据邻近文字、图表推算这些字段；禁止利用它们计算、比较或得出定量结论。"
+    "只使用已确认的数值和能独立成立的定性内容。可以整条省略依赖待核对字段的量化结论；"
+    "保留相关判断时必须说明数值待核对，不能删除标记后拼接邻近数字成为确定数值。"
+    "需要核对的原页图仍保留为来源证据。"
+)
 DISCLAIMER_TEXT = """This community is a paid learning and information-sharing community created for general educational purposes only. The membership fee is charged solely for access to community discussions, educational content, organization, and operational costs. It is not an advisory fee, management fee, performance fee, brokerage fee, or compensation for personalized financial, investment, legal, tax, or professional advice.
 
 I participate and share information solely as an individual and for educational discussion among community members. I am not acting as a financial adviser, investment adviser, broker, dealer, portfolio manager, legal adviser, tax adviser, accountant, fiduciary, or any other licensed professional adviser. Nothing shared in this community constitutes, and should not be interpreted as, financial advice, investment advice, legal advice, tax advice, a recommendation, solicitation, offer, endorsement, instruction, or guarantee to buy, sell, hold, short, trade, or invest in any security, cryptocurrency, fund, derivative, strategy, or other financial product.
@@ -91,7 +101,19 @@ def trim_text(text: str, max_chars: int) -> str:
         return text
     head = int(max_chars * 0.72)
     tail = int(max_chars * 0.2)
-    return text[:head] + "\n\n[... middle omitted ...]\n\n" + text[-tail:]
+    tail_start = len(text) - tail
+    # Dropping a whole marked statement is safe; cutting away its uncertainty
+    # marker while retaining a neighbouring number can create a false claim.
+    boundaries = [0] + [match.end() for match in re.finditer(
+        r"\n|(?<=[。！？!?；;])\s*|(?<=[.!?])\s+", text)] + [len(text)]
+    for marker in PENDING_OCR_NUMBER_RE.finditer(text):
+        start = boundaries[bisect_right(boundaries, marker.start()) - 1]
+        end = boundaries[bisect_left(boundaries, marker.end())]
+        if start < head < end:
+            head = start
+        if start < tail_start < end:
+            tail_start = end
+    return text[:head] + "\n\n[... middle omitted ...]\n\n" + text[tail_start:]
 
 
 def latest_date_dir(root: Path) -> Path:
@@ -206,6 +228,57 @@ def source_date_dirs(root: Path, extra_roots: list[Path], date_folder: str) -> t
     return report_date, date_dirs
 
 
+def unique_original_report_dirs(report_dirs: list[Path]) -> tuple[list[Path], dict[str, list[dict[str, str]]]]:
+    """Validate all originals, then summarize byte-identical aliases once."""
+    native_roots = {path.parent for path in report_dirs if (path / "source_native_pdf.md").is_file()}
+    aliases: dict[str, list[dict[str, str]]] = {}
+    omitted: set[Path] = set()
+    selected = set(report_dirs)
+    for root in sorted(native_roots):
+        from extract_native_market_sources import validate_sources
+        raw = json.loads((root / "source_receipt.json").read_text(encoding="utf-8"))
+        expected = raw.get("expected_reports")
+        if type(expected) is not int or expected <= 0:
+            raise RuntimeError(f"Original PDF source has an invalid inventory: {root}")
+        receipt = validate_sources(root, root / "selected_to_process_manifest.json", expected)
+        inventory = {root / source["directory"] for source in receipt["reports"]}
+        if inventory != {path for path in selected if path.parent == root}:
+            raise RuntimeError(f"Original PDF summaries require the complete validated report inventory: {root}")
+        for source in receipt["reports"]:
+            duplicate = source.get("duplicate_of")
+            if not duplicate:
+                continue
+            source_dir = root / source["directory"]
+            canonical_dir = root / duplicate
+            if source_dir not in selected or canonical_dir not in selected:
+                raise RuntimeError(f"Original PDF aliases require their complete canonical inventory: {root}")
+            omitted.add(source_dir)
+            aliases.setdefault(str(canonical_dir), []).append({
+                "source_pdf": source["source_pdf"],
+                "content_sha256": source["content_sha256"],
+                "path": str(source_dir),
+            })
+        log(f"Verified original PDF bindings={receipt['report_count']}; "
+            f"unique contents={receipt.get('unique_content_count', receipt['report_count'])}; "
+            f"duplicate aliases={sum(bool(item.get('duplicate_of')) for item in receipt['reports'])}.")
+    return [path for path in report_dirs if path not in omitted], aliases
+
+
+def source_inventory_counts(reports: list[dict[str, Any]]) -> dict[str, int]:
+    """Retain every original binding while counting each summarized content once."""
+    aliases = sum(len(report.get("source_aliases") or []) for report in reports)
+    bank = [report for report in reports if report.get("source_group") == "bank_research"]
+    bank_aliases = sum(len(report.get("source_aliases") or []) for report in bank)
+    return {
+        "original_source_count": len(reports) + aliases,
+        "summarized_content_count": len(reports),
+        "duplicate_alias_count": aliases,
+        "bank_original_source_count": len(bank) + bank_aliases,
+        "bank_summarized_content_count": len(bank),
+        "bank_duplicate_alias_count": bank_aliases,
+    }
+
+
 def report_title(report_dir: Path) -> str:
     for filename in ["wechat_article.md", "note.md", "source_native_pdf.md"]:
         path = report_dir / filename
@@ -264,16 +337,24 @@ def infer_source_name(report_dir: Path, title: str, status: dict[str, Any]) -> s
 def report_digest(report_dir: Path, max_chars: int) -> dict[str, Any]:
     title = report_title(report_dir)
     pieces = []
+    has_pending = False
     for filename in ["wechat_article.md", "note.md", "source_mineru.md", "source_native_pdf.md"]:
         path = report_dir / filename
         if path.exists():
             text = path.read_text(encoding="utf-8", errors="ignore")
+            has_pending = has_pending or bool(PENDING_OCR_NUMBER_RE.search(text))
             pieces.append(f"[{filename}]\n{trim_text(text, max_chars // 2)}")
     digest = trim_text("\n\n".join(pieces), max_chars)
-    return {"title": title, "digest": sanitize_text(digest)}
+    return {"title": title, "digest": sanitize_text(digest), "has_pending_numeric_values": has_pending}
 
 
 def clean_markdown_for_extract(text: str) -> str:
+    markers: dict[str, str] = {}
+    def protect_marker(match: re.Match) -> str:
+        token = f"OCRPENDINGMARKER_{len(markers):x}_END"
+        markers[token] = match.group()
+        return token
+    text = PENDING_OCR_NUMBER_RE.sub(protect_marker, text or "")
     text = IMAGE_RE.sub(" ", text or "")
     text = re.sub(r"\[([^\]]+)\]\([^\)]+\)", r"\1", text)
     text = HTML_TAG_RE.sub(" ", text)
@@ -295,7 +376,10 @@ def clean_markdown_for_extract(text: str) -> str:
     text = "\n".join(cleaned_lines)
     text = re.sub(r"\n{3,}", "\n\n", text)
     text = re.sub(r"[ \t]{2,}", " ", text)
-    return sanitize_text(text).strip()
+    text = sanitize_text(text).strip()
+    for token, marker in markers.items():
+        text = text.replace(token, marker)
+    return text
 
 
 def report_extract(report_dir: Path, max_chars: int) -> str:
@@ -437,14 +521,14 @@ def extract_exhibit_figures(report_dir: Path, report_id: str, title: str, max_pe
         receipt = json.loads((report_dir.parent / "source_receipt.json").read_text(encoding="utf-8"))
         source = next((item for item in receipt.get("reports", [])
                        if item.get("directory") == report_dir.name), None)
-        if receipt.get("complete") is not True or not source or source.get("source_method") != "native-pdf":
+        if receipt.get("complete") is not True or not source or source.get("source_method") not in {"native-pdf", "original-pdf"}:
             raise RuntimeError(f"Native PDF figure source lacks a complete receipt: {report_dir}")
         native_figures = [{
             "report_id": report_id,
             "report_title": title,
             "source_path": str(report_dir.parent / asset["path"]),
             "label": f"原报告第 {asset['source_page']} 页",
-            "context": sanitize_text(asset["description"])[:260],
+            "context": trim_text(sanitize_text(asset["description"]), 260),
             "figure_type": "source_exhibit",
             "selection_source": "native_pdf_page",
             "source_page": asset["source_page"],
@@ -639,6 +723,7 @@ def call_deepseek(prompt: str, args: argparse.Namespace, label: str) -> str:
                     "content": (
                         "你是面向全球机构投资者的资深研究编辑。严格执行报告 ID 覆盖要求，"
                         "保留关键数据、方向、分歧与边际变化。只输出合法 JSON，不要输出 Markdown 代码块。"
+                        + OCR_NUMBER_POLICY
                     ),
                 },
                 {"role": "user", "content": prompt},
@@ -681,6 +766,8 @@ def build_prompt(reports: list[dict[str, Any]], figures: list[dict[str, Any]], a
 6. 投行常用 GS、JPM、MS、BofA、Citi、UBS、DB、NOM 等缩写。
 7. 不给投资建议，不写买卖评级，不输出纯文字的逐篇摘录。
 8. 当投行输入很多时允许形成 40-70 页，不设 20 页上限。
+
+{OCR_NUMBER_POLICY}
 
 本次输入：{len(reports)} 篇报告、{len(figures)} 张清洁图表候选。
 来源数量：{json.dumps(source_counts, ensure_ascii=False)}
@@ -754,6 +841,8 @@ def first_signal(text: str, max_chars: int = 110) -> str:
     for para in re.split(r"\n{2,}", cleaned):
         para = normalize_space(para)
         if len(para) < 28:
+            continue
+        if PENDING_OCR_NUMBER_RE.search(para):
             continue
         para = re.sub(r"^\[[^\]]+\]\s*", "", para)
         sentence = re.split(r"(?<=[。.!?！？])\s+", para)[0]
@@ -865,6 +954,8 @@ def signal_sentences(text: str, limit: int = 3, max_chars: int = 180) -> list[st
         sentence = normalize_space(re.sub(r"^#+\s*", "", candidate))
         if len(sentence) < 24 or sentence.startswith("!") or sentence.startswith("["):
             continue
+        if PENDING_OCR_NUMBER_RE.search(sentence):
+            continue
         if sentence in signals:
             continue
         if len(sentence) > max_chars:
@@ -956,6 +1047,8 @@ def bank_plan_prompt(reports: list[dict[str, Any]]) -> str:
 4. 避免一个笼统的“其他”吞掉大量报告；相关性弱时拆成更清楚的行业或市场类别。
 5. 只做目录规划，不写摘要，不引用文件名。
 
+{OCR_NUMBER_POLICY}
+
 输出 JSON：
 {{"categories":[{{"heading":"主题名称","report_ids":["R001","R002"]}}]}}
 
@@ -1007,6 +1100,8 @@ def bank_section_prompt(
             "bank": bank_alias(report),
             "title": report.get("title") or "",
             "digest": trim_text(report.get("digest") or "", args.per_report_prompt_chars),
+            "has_pending_numeric_values": bool(report.get("has_pending_numeric_values") or
+                                               PENDING_OCR_NUMBER_RE.search(report.get("digest") or "")),
         }
         for report in reports
     ]
@@ -1028,6 +1123,8 @@ def bank_section_prompt(
 6. 从候选中选择最多 {getattr(args, 'figures_per_bank_section', 4)} 张真正支撑观点的原始报告图；优先来自不同报告。没有合适图可以少选，禁止编造 figure_id。
 7. 不写买卖评级，不写逐篇报告标题，不输出文件名，不做纯翻译堆叠。
 8. references 必须列出本栏目全部输入 ID，供程序校验，但这些 ID 不会在 PDF 正文显示。
+
+{OCR_NUMBER_POLICY}
 
 输出 JSON：
 {{"heading":"可优化的栏目标题","thesis":"本栏目的核心判断","consensus":["共识1"],"divergences":["分歧1"],"bank_views":[{{"bank":"JPM","view":"整合后的机构判断","data_points":["关键数字"],"marginal_change":"边际变化","report_ids":["R001"]}}],"data_points":["跨报告关键数字"],"figure_ids":["F001"],"references":{json.dumps(report_ids, ensure_ascii=False)}}}
@@ -1452,6 +1549,8 @@ def supporting_roundup_prompt(
 3. 这是辅助信号，只写对宏观、产业、企业战略或资产叙事有帮助的部分，不做逐篇翻译。
 4. 每个 theme 最多选 2 张原始报告图表，不要输出文件名。
 
+{OCR_NUMBER_POLICY}
+
 输出 JSON：
 {{"source_group":"{source_group}","title":"{label}","summary":"本板块摘要","themes":[{{"heading":"主题","thesis":"核心含义","bullets":["要点"],"figure_ids":["F001"],"references":["R001"]}}]}}
 
@@ -1797,6 +1896,7 @@ def render_latex(summary: dict[str, Any], reports_by_id: dict[str, dict[str, Any
     if summary.get("closing"):
         lines += [r"\section{结语}", latex_escape(summary.get("closing"))]
     source_counts = {group: sum(1 for report in reports_by_id.values() if report.get("source_group") == group) for group in ROUNDUP_SOURCE_ORDER}
+    inventory = source_inventory_counts(list(reports_by_id.values()))
     bank_counts: dict[str, int] = {}
     for report in reports_by_id.values():
         if report.get("source_group") != "bank_research":
@@ -1812,6 +1912,11 @@ def render_latex(summary: dict[str, Any], reports_by_id: dict[str, dict[str, Any
         r"\section{Disclaimer}",
         r"{\scriptsize\color{refgray}",
     ]
+    if inventory["duplicate_alias_count"]:
+        lines.insert(-2, latex_escape(
+            f"原文件共 {inventory['original_source_count']} 份，覆盖 {inventory['summarized_content_count']} 份独立研究内容；"
+            f"{inventory['duplicate_alias_count']} 份同内容原文件保留来源绑定，正文只计一次。"
+        ) + r"\par")
     for para in DISCLAIMER_TEXT.split("\n\n"):
         lines.append(latex_escape(para) + r"\par")
     lines += [
@@ -1894,6 +1999,7 @@ def main() -> int:
             )
         log(f"Using {len(source_dirs)} report directories from {source_dir}")
         report_dirs.extend(source_dirs)
+    report_dirs, source_aliases = unique_original_report_dirs(report_dirs)
     if args.max_reports > 0:
         report_dirs = report_dirs[: args.max_reports]
     if not report_dirs:
@@ -1919,7 +2025,9 @@ def main() -> int:
             "source_label": source_group_label(source_group),
             "institution_name": institution_name,
             "source_date_folder": report_date_from_path(report_dir),
+            "source_aliases": source_aliases.get(str(report_dir), []),
             "digest": digest["digest"],
+            "has_pending_numeric_values": digest["has_pending_numeric_values"],
             "extract": report_extract(report_dir, args.per_report_extract_chars),
         })
         retained_handoff_images = handoff_source_images(report_dir)
@@ -1954,6 +2062,7 @@ def main() -> int:
     summary = build_market_summary(reports, figures, args, out_dir)
     summary = json.loads(sanitize_text(json.dumps(summary, ensure_ascii=False)))
     coverage = summary.get("coverage") or {}
+    summary["source_inventory"] = source_inventory_counts(reports)
     if coverage.get("bank_content_covered") != coverage.get("bank_reports"):
         raise RuntimeError(
             "Bank content coverage validation failed: "

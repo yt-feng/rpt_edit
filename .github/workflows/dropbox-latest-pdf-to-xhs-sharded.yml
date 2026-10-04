@@ -675,7 +675,7 @@ jobs:
     needs: [resolve-inputs, select-macro-reports, process-shard]
     if: ${{ always() && !cancelled() && needs.select-macro-reports.result == 'success' && needs.process-shard.result == 'failure' && needs.select-macro-reports.outputs.selected_count != '0' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
         with:
@@ -685,19 +685,53 @@ jobs:
         with:
           python-version: "3.11"
       - name: Install native source and handoff dependencies
-        run: python -m pip install PyMuPDF "boto3>=1.37.32,<2"
+        run: python -m pip install PyMuPDF Pillow "boto3>=1.37.32,<2"
+      - name: Install enabled cloud OCR backup
+        if: ${{ vars.MARKET_VIEWS_OCR_BACKUP_ENABLED == 'true' }}
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends tesseract-ocr tesseract-ocr-eng tesseract-ocr-chi-sim
+          TESSDATA_DIR="$(tesseract --list-langs 2>/dev/null | sed -n '1s/.*"\(.*\)".*/\1/p')"
+          test -n "$TESSDATA_DIR"
+          test -f "$TESSDATA_DIR/eng.traineddata"
+          test -f "$TESSDATA_DIR/chi_sim.traineddata"
+          echo "TESSDATA_PREFIX=$TESSDATA_DIR" >> "$GITHUB_ENV"
       - name: Download exact selected original PDFs
         uses: actions/download-artifact@v4
         with:
           name: selected-macro-pdfs-${{ github.run_id }}
           path: _selected_macro_pdfs
       - name: Extract and verify every original report for Market Views
+        env:
+          ENABLE_OCR: ${{ vars.MARKET_VIEWS_OCR_BACKUP_ENABLED || 'false' }}
+          DATE_FOLDER: ${{ needs.select-macro-reports.outputs.latest_folder }}
         run: |
+          OCR_ARGS=()
+          if [ "$ENABLE_OCR" = "true" ]; then OCR_ARGS+=(--enable-ocr); fi
           python scripts/extract_native_market_sources.py \
             --input-dir _selected_macro_pdfs \
             --manifest _selected_macro_pdfs/selected_to_process_manifest.json \
             --output-dir _native_market_sources/shard_0 \
-            --expected-reports "${{ needs.select-macro-reports.outputs.selected_count }}"
+            --expected-reports "${{ needs.select-macro-reports.outputs.selected_count }}" \
+            --date-folder "$DATE_FOLDER" \
+            --producer-run-id "$GITHUB_RUN_ID" \
+            --execution-sha "$GITHUB_SHA" \
+            --original-source-run-id "$GITHUB_RUN_ID" \
+            "${OCR_ARGS[@]}"
+          python scripts/extract_native_market_sources.py validate \
+            --manifest _native_market_sources/shard_0/selected_to_process_manifest.json \
+            --output-dir _native_market_sources/shard_0 \
+            --expected-reports "${{ needs.select-macro-reports.outputs.selected_count }}" \
+            --date-folder "$DATE_FOLDER" \
+            --producer-run-id "$GITHUB_RUN_ID" \
+            --execution-sha "$GITHUB_SHA" \
+            --original-source-run-id "$GITHUB_RUN_ID"
+      - name: Audit complete cloud OCR backup evidence
+        run: |
+          python scripts/audit_market_views_ocr_receipt.py \
+            --source-dir _native_market_sources/shard_0 \
+            --expected-reports "${{ needs.select-macro-reports.outputs.selected_count }}" \
+            --summary "$RUNNER_TEMP/market-views-ocr-audit.json"
       - name: Save complete native sources to private R2
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
