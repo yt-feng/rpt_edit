@@ -35,7 +35,9 @@ function harness({ signedIn = true, admin = false, previewImage = assetUrl, asse
     isSuperAccount: (user) => Boolean(user.admin), publicUser: (user) => ({ admin: user.admin }),
     accessErrorStatus: () => 401,
     corsHeaders: () => ({}), privateJsonResponse: json, jsonResponse: json,
-    accountDownloadDecision: async () => { calls.push("quota-decision"); return { allowed: true }; },
+    accountDownloadDecision: async () => { calls.push("quota-decision"); return {
+      allowed: signedIn && (admin || membership), status: signedIn ? 402 : 401,
+    }; },
     finalizeAccountDownloadDecision: async (_env, _request, decision) => { finalizations.push(decision); return { ok: true }; },
     derivedPasswordMatches: async (_env, id, password) => password === `signed:${id}`,
     sharedReportPasswordMatches: async (_env, id, password) => password === `signed:${id}` || password === "shared",
@@ -242,18 +244,34 @@ test("connection status is super-only, never returns a token, and expires saved 
   }
 });
 
-test("ordinary member cannot read a validated full cache or dispatch a grab, including with a shared password", async () => {
+test("non-entitled users cannot read a full cache or dispatch a grab even with a shared password", async () => {
   for (const password of ["", "shared", "signed:another-report"]) {
-    const h = harness();
+    const h = harness({ membership: false });
     const response = await h.context.handleExternalPdf(fullRequest(reportId, password), h.env);
-    assert.equal(response.status, 403);
+    assert.equal(response.status, 402);
     const data = await response.json();
-    assert.equal(data.preview_only, true);
-    assert.equal(data.preview_report_id, reportId);
-    assert.equal(h.calls.length, 0);
+    assert.equal(data.preview_only, undefined, "membership denial is not an acquisition failure");
+    assert.deepEqual(h.calls, ["quota-decision"]);
     assert.equal(h.bodyReads.length, 0);
     assert.equal(h.finalizations.length, 0);
   }
+});
+
+test("eligible ordinary member receives the verified full cache and quota is finalized once", async () => {
+  const h = harness();
+  const response = await h.context.handleExternalPdf(fullRequest(), h.env);
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("Content-Type"), "application/pdf");
+  assert.equal(h.bodyReads.length, 1);
+  assert.equal(h.finalizations.length, 1);
+  assert.equal(h.calls[0], "quota-decision");
+});
+
+test("anonymous full download is denied before any source or PDF read", async () => {
+  const h = harness({ signedIn: false });
+  assert.equal((await h.context.handleExternalPdf(fullRequest(), h.env)).status, 401);
+  assert.deepEqual(h.calls, ["quota-decision"]);
+  assert.deepEqual(h.bodyReads, []);
 });
 
 test("super account and explicit report-bound delivery retain full access", async () => {
