@@ -306,8 +306,238 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(self.clock.now-begun,3)
         self.assertTrue(all(call[2] <= 20 for call in self.provider.polls))
 
+    def http_provider(self, replies):
+        """Use the production response parser and ledger with an offline HTTP boundary."""
+        http = unittest.mock.Mock()
+        http.post.side_effect = replies
+        http.put.return_value = unittest.mock.Mock(status_code=200)
+        def result(*args, **kwargs):
+            response = unittest.mock.Mock(status_code=200)
+            files = http.post.call_args.kwargs['json']['files']
+            response.json.return_value = {'code': 0, 'data': {'extract_result': [
+                {'data_id': row['data_id'], 'state': 'done', 'full_zip_url': 'https://results.invalid/exact'}
+                for row in files]}}
+            return response
+        http.get.side_effect = result
+        self.provider = m.Provider(http, 'https://mineru.net')
+        return http
+
+    @staticmethod
+    def response(status=200, **payload):
+        response = unittest.mock.Mock(status_code=status)
+        response.json.return_value = payload
+        return response
+
+    def accepted_response(self, count=5):
+        return self.response(code=0, data={'batch_id': 'accepted', 'file_urls': ['https://upload.invalid/exact'] * count})
+
+    def saved_batch(self):
+        paths = list((self.root / 'ledger/batches').glob('*.json'))
+        self.assertEqual(len(paths), 1)
+        return json.loads(paths[0].read_bytes())
+
+    def test_expired_first_key_uses_healthy_second_before_any_task_acceptance(self):
+        replies = [self.response(msgCode='A0211', message='private-test-token'), self.accepted_response()]
+        http = self.http_provider(replies)
+        attempts = []
+        def post(*args, **kwargs):
+            row = self.saved_batch()
+            attempts.append(copy.deepcopy(row))
+            identity = m.token_fingerprint(kwargs['headers']['Authorization'].removeprefix('Bearer '))
+            self.assertEqual((row['state'], row['token_identity'], row['batch_id']), ('submitting', identity, None))
+            return replies[len(attempts) - 1]
+        http.post.side_effect = post
+        rows, summary = self.run_task()
+        self.assertEqual((len(rows), summary['provider_posts'], http.post.call_count, http.put.call_count), (5, 2, 2, 5))
+        self.assertEqual(attempts[0]['auth_rejections'], [])
+        self.assertEqual(attempts[1]['auth_rejections'], [{
+            'token_identity': m.token_fingerprint(TOKENS[0][1]), 'code': 'A0211', 'http_status': 200}])
+        self.assertEqual(attempts[0]['key'], attempts[1]['key'])
+        self.assertEqual(attempts[0]['files'], attempts[1]['files'])
+        self.assertEqual(http.post.call_args_list[0].kwargs['json'], http.post.call_args_list[1].kwargs['json'])
+        self.assertEqual(self.saved_batch()['token_identity'], m.token_fingerprint(TOKENS[1][1]))
+        self.run_task(tokens=list(reversed(TOKENS)))
+        self.assertEqual(http.post.call_count, 2)
+        self.assertTrue(all(call.kwargs['headers']['Authorization'] == 'Bearer ' + TOKENS[1][1]
+                            for call in http.get.call_args_list))
+        raw = b'\n'.join(path.read_bytes() for path in (self.root/'ledger').rglob('*.json'))
+        for _, token in TOKENS:
+            self.assertNotIn(token.encode(), raw)
+
+    def test_explicit_invalid_key_and_http401_can_switch_before_acceptance(self):
+        http = self.http_provider([self.response(403, code='A0202'), self.accepted_response()])
+        _, summary = self.run_task()
+        self.assertEqual((summary['provider_posts'], http.post.call_count), (2, 2))
+        self.assertEqual(self.saved_batch()['auth_rejections'][0]['code'], 'A0202')
+
+    def test_all_auth_rejections_keep_exact_claim_and_resume_only_with_new_healthy_key(self):
+        http = self.http_provider([self.response(code='A0211'), self.response(code='A0202')])
+        with self.assertRaisesRegex(m.LedgerError, 'saved batch is auth_rejected'):
+            self.run_task()
+        rejected = self.saved_batch()
+        claims = {path.name: path.read_bytes() for path in (self.root/'ledger/sources').glob('*.json')}
+        self.assertEqual((rejected['state'], rejected['batch_id']), ('auth_rejected', None))
+        self.assertEqual(len(rejected['auth_rejections']), 2)
+        with self.assertRaisesRegex(m.LedgerError, 'auth_rejected'):
+            self.run_task()
+        self.assertEqual(http.post.call_count, 2, 'Definitively rejected unchanged keys are not posted again')
+        replacement = [('MINER_U_3', 'new-healthy-test-token')]
+        http.post.side_effect = [self.accepted_response()]
+        rows, summary = self.run_task(tokens=replacement)
+        accepted = self.saved_batch()
+        self.assertEqual((len(rows), summary['provider_posts'], http.post.call_count), (5, 1, 3))
+        self.assertEqual((accepted['key'], accepted['files']), (rejected['key'], rejected['files']))
+        self.assertEqual(accepted['token_identity'], m.token_fingerprint(replacement[0][1]))
+        self.assertEqual(claims, {path.name: path.read_bytes() for path in (self.root/'ledger/sources').glob('*.json')})
+        with self.assertRaisesRegex(m.LedgerError, 'token identity mismatch'):
+            self.run_task(tokens=TOKENS)
+        self.assertEqual(http.post.call_count, 3, 'Accepted work requires the actual accepted credential')
+
+    def test_auth_rejected_batch_cannot_resume_subset_or_add_new_source(self):
+        http = self.http_provider([self.response(code='A0211'), self.response(code='A0202')])
+        with self.assertRaises(m.LedgerError):
+            self.run_task(self.inputs[:2])
+        for requested in (self.inputs[:1], self.inputs[:3]):
+            with self.assertRaisesRegex(m.LedgerError, 'complete original source inventory'):
+                self.run_task(requested, tokens=[('new', 'new-healthy-test-token')])
+        self.assertEqual(http.post.call_count, 2)
+        self.assertEqual(self.saved_batch()['state'], 'auth_rejected')
+
+    def test_new_bytes_cannot_be_bound_to_rejected_task_for_recovery(self):
+        http = self.http_provider([self.response(code='A0211'), self.response(code='A0202')])
+        with self.assertRaises(m.LedgerError):
+            self.run_task(self.inputs[:1])
+        key = self.saved_batch()['key']
+        self.inputs[0][0].write_bytes(b'changed original bytes')
+        changed = self.ledger().bind(*self.inputs[0])
+        self.store.put('sources/' + changed['id'], {'schema': 1, 'binding': changed, 'batch_key': key})
+        with self.assertRaisesRegex(m.LedgerError, 'does not match accepted task bytes'):
+            self.run_task(self.inputs[:1], tokens=[('new', 'new-healthy-test-token')])
+        self.assertEqual(http.post.call_count, 2)
+
+    def test_semantic_transport_server_or_ambiguous_ack_never_switch_keys(self):
+        cases = [
+            self.response(403, code='permission_denied'),
+            self.response(500, code='A0211'),
+            self.response(429, code='A0202'),
+            self.response(code='A9999'),
+            TimeoutError('transport secret-key'), EOFError('unknown acknowledgement'),
+            self.response(code=0, data={'batch_id': 'accepted', 'file_urls': []}),
+            self.response(401, code='A0211', data={'batch_id': 'accepted', 'file_urls': ['https://upload.invalid']}),
+            self.response(code='A0202', batch_id='accepted'),
+        ]
+        for index, response in enumerate(cases):
+            with self.subTest(case=index):
+                store = m.FileStore(self.root / f'blocked-{index}')
+                http = self.http_provider([response, self.accepted_response(1)])
+                with self.assertRaises(m.LedgerError):
+                    self.run_task(self.inputs[:1], store=store)
+                with self.assertRaisesRegex(m.LedgerError, 'Ambiguous'):
+                    self.run_task(self.inputs[:1], store=store)
+                self.assertEqual(http.post.call_count, 1)
+                self.assertEqual(http.put.call_count, 0)
+                self.assertEqual(json.loads(next((self.root/f'blocked-{index}/batches').glob('*.json')).read_bytes())['state'], 'submitting')
+
+    def test_auth_failure_during_poll_never_switches_or_resubmits_accepted_task(self):
+        http = self.http_provider([self.accepted_response()])
+        http.get.side_effect = None
+        http.get.return_value = self.response(401, code='A0211')
+        for _ in range(2):
+            with self.assertRaises(m.DefinitiveAuthRejection):
+                self.run_task()
+        self.assertEqual(http.post.call_count, 1)
+        self.assertEqual(self.saved_batch()['state'], 'uploaded')
+        self.assertEqual(self.saved_batch()['token_identity'], m.token_fingerprint(TOKENS[0][1]))
+        self.assertTrue(all(call.kwargs['headers']['Authorization'] == 'Bearer ' + TOKENS[0][1]
+                            for call in http.get.call_args_list))
+
+    def test_rejection_must_be_durable_before_another_key_is_attempted(self):
+        http = self.http_provider([self.response(code='A0211'), self.accepted_response()])
+        original_put = self.store.put
+        def fail_rejection(key, value, previous=None):
+            if value.get('state') == 'auth_rejected':
+                raise OSError('checkpoint unavailable')
+            return original_put(key, value, previous)
+        with patch.object(self.store, 'put', side_effect=fail_rejection), self.assertRaises(OSError):
+            self.run_task()
+        with self.assertRaisesRegex(m.LedgerError, 'Ambiguous'):
+            self.run_task()
+        self.assertEqual(http.post.call_count, 1)
+        self.assertEqual(self.saved_batch()['state'], 'submitting')
+
+    def test_next_credential_identity_must_be_durable_before_its_post(self):
+        http = self.http_provider([self.response(code='A0211'), self.accepted_response()])
+        original_put = self.store.put
+        def fail_identity(key, value, previous=None):
+            if value.get('state') == 'submitting' and value.get('token_identity') == m.token_fingerprint(TOKENS[1][1]):
+                raise OSError('identity checkpoint unavailable')
+            return original_put(key, value, previous)
+        with patch.object(self.store, 'put', side_effect=fail_identity), self.assertRaises(OSError):
+            self.run_task()
+        self.assertEqual((http.post.call_count, self.saved_batch()['state']), (1, 'auth_rejected'))
+        rows, summary = self.run_task()
+        self.assertEqual((len(rows), summary['provider_posts'], http.post.call_count), (5, 1, 2))
+
+    def test_source_bytes_are_rechecked_before_fallback_post(self):
+        http = self.http_provider([])
+        def expired(*args, **kwargs):
+            self.inputs[0][0].write_bytes(b'changed after auth rejection')
+            return self.response(code='A0211')
+        http.post.side_effect = expired
+        with self.assertRaisesRegex(m.LedgerError, 'bytes changed before task submission'):
+            self.run_task()
+        self.assertEqual(http.post.call_count, 1)
+        self.assertEqual(self.saved_batch()['state'], 'auth_rejected')
+
+    def test_malformed_auth_rejection_history_cannot_authorize_recovery(self):
+        http = self.http_provider([self.response(code='A0211'), self.response(code='A0202')])
+        with self.assertRaises(m.LedgerError):
+            self.run_task()
+        path = next((self.root/'ledger/batches').glob('*.json'))
+        original = path.read_bytes()
+        for change in (
+            lambda row: row.update(auth_rejections=[]),
+            lambda row: row.update(batch_id='possibly accepted'),
+            lambda row: row['auth_rejections'][0].update(code='server_error'),
+            lambda row: row['auth_rejections'][0].update(code=['A0211']),
+            lambda row: row['auth_rejections'][0].update(http_status=500),
+            lambda row: row.update(token_identity='a' * 64),
+        ):
+            row = json.loads(original); change(row); path.write_bytes(m.encoded(row))
+            with self.assertRaises(m.LedgerError):
+                self.run_task(tokens=[('new', 'new-healthy-test-token')])
+            self.assertEqual(http.post.call_count, 2)
+        path.write_bytes(original)
+
 
 class ProviderContractTests(unittest.TestCase):
+    def test_only_definitive_auth_replies_have_typed_sanitized_rejection(self):
+        for status, payload, expected in (
+            (200, {'code': 'A0211', 'message': 'raw-secret-token'}, 'A0211'),
+            (403, {'msgCode': 'A0202'}, 'A0202'),
+            (200, {'msg_code': 'a0211'}, 'A0211'),
+            (401, {'code': 'other', 'message': 'raw-secret-token'}, 'HTTP401'),
+        ):
+            response = unittest.mock.Mock(status_code=status); response.json.return_value = payload
+            with self.subTest(status=status, payload=payload), self.assertRaises(m.DefinitiveAuthRejection) as caught:
+                m.Provider.parse(response)
+            self.assertEqual((caught.exception.code, caught.exception.http_status), (expected, status))
+            self.assertNotIn('raw-secret-token', str(caught.exception))
+        response = unittest.mock.Mock(status_code=401)
+        response.json.side_effect = ValueError('raw-secret-token')
+        with self.assertRaises(m.DefinitiveAuthRejection) as caught:
+            m.Provider.parse(response)
+        self.assertEqual(caught.exception.code, 'HTTP401')
+        self.assertNotIn('raw-secret-token', str(caught.exception))
+
+    def test_invalid_json_outcome_is_sanitized_and_never_definitive_auth_except401(self):
+        response = unittest.mock.Mock(status_code=200)
+        response.json.side_effect = ValueError('raw-secret-token signed-url')
+        with self.assertRaises(m.LedgerError) as caught:
+            m.Provider.parse(response)
+        self.assertNotIsInstance(caught.exception, m.DefinitiveAuthRejection)
+        self.assertNotIn('raw-secret-token', str(caught.exception))
+
     def test_native_payload_and_exact_poll_identity_preserve_batching(self):
         http=unittest.mock.Mock()
         response=unittest.mock.Mock(status_code=200)

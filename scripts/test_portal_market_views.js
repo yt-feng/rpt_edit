@@ -155,7 +155,7 @@ const reader = { email: "reader@example.com" };
   assert.doesNotMatch(workflow, /actions\/upload-artifact/, "paid PDFs must not be exposed as Actions artifacts");
   assert.match(workflow, /prepare_public_market_view_pdf\.py/, "the public copy must remove the private ending page");
   assert.match(workflow, /force_rebuild:[\s\S]*?type: boolean[\s\S]*?default: false/, "same-date rebuilds must require an explicit opt-in");
-  assert.match(workflow, /main already contains a valid public Market Views PDF[\s\S]*?SHOULD_BUILD=false/, "a valid same-date main PDF must make reruns idempotent");
+  assert.match(workflow, /should_build = os\.environ\["FORCE_REBUILD"\] == "true" or not valid_existing[\s\S]*?"SHOULD_BUILD": str\(should_build\)\.lower\(\)/, "a valid same-date main PDF must make reruns idempotent");
   assert.match(workflow, /Archive exact Market Views PDF in private R2\n\s*if: \$\{\{ env\.SHOULD_BUILD != 'false' \}\}/, "an idempotent rerun must not replace the private R2 original with the public copy");
   assert.match(
     workflow,

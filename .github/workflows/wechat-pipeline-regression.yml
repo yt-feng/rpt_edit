@@ -10,6 +10,10 @@ on:
       - "scripts/*portal_translation_shards*"
       - "scripts/*replay_report_translation_shards*"
       - "scripts/*private_workflow_handoff*"
+      - "scripts/*market_views*"
+      - "scripts/*native_market_sources*"
+      - ".github/workflows/market-views-latex-pdf.yml"
+      - ".github/workflows/market-views-native-recovery.yml"
       - "scripts/build_portal_translated_reports.py"
       - "scripts/select_macro_trend_pdfs.py"
       - "scripts/check_completed_shard.py"
@@ -44,6 +48,10 @@ on:
       - "scripts/*portal_translation_shards*"
       - "scripts/*replay_report_translation_shards*"
       - "scripts/*private_workflow_handoff*"
+      - "scripts/*market_views*"
+      - "scripts/*native_market_sources*"
+      - ".github/workflows/market-views-latex-pdf.yml"
+      - ".github/workflows/market-views-native-recovery.yml"
       - "scripts/build_portal_translated_reports.py"
       - "scripts/select_macro_trend_pdfs.py"
       - "scripts/check_completed_shard.py"
@@ -98,6 +106,8 @@ jobs:
           python scripts/test_private_workflow_handoff.py
           python scripts/test_recover_private_wechat_handoff.py
           python scripts/test_market_views_workflow_contract.py
+          python scripts/test_market_views_source_dates.py
+          python scripts/test_extract_native_market_sources.py
           python scripts/test_post_blog_refresh.py
           python scripts/test_check_completed_shard.py
           python scripts/test_wechat_output_contract.py

@@ -17,6 +17,7 @@ import os
 import re
 import shutil
 import subprocess
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
@@ -42,7 +43,7 @@ IMAGE_RE = re.compile(r"!\[[^\]]*\]\(([^\)]+)\)")
 HANDOFF_SOURCE_IMAGE_RE = re.compile(r"^source_image_(\d+)$", re.I)
 PDF_IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp", ".bmp", ".gif", ".tif", ".tiff"}
 DATE_DIR_RE = re.compile(r"^\d{6,8}$")
-REPORT_MARKER_FILES = ("source_mineru.md", "wechat_article.md", "note.md")
+REPORT_MARKER_FILES = ("source_mineru.md", "source_native_pdf.md", "wechat_article.md", "note.md")
 EMAIL_RE = re.compile(r"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}", re.I)
 PHONE_RE = re.compile(r"(?:\+?\d[\d\s().-]{7,}\d)")
 HTML_TAG_RE = re.compile(r"<[^>]+>")
@@ -108,6 +109,12 @@ def date_dir_names(root: Path) -> set[str]:
     return {p.name for p in root.iterdir() if p.is_dir() and DATE_DIR_RE.match(p.name)}
 
 
+def source_date_key(name: str) -> datetime:
+    if len(name) not in (6, 8) or not name.isdigit():
+        raise ValueError(f"Invalid source date: {name}")
+    return datetime.strptime(name, "%y%m%d" if len(name) == 6 else "%Y%m%d")
+
+
 def latest_date_name(roots: list[Path]) -> str:
     names: set[str] = set()
     for root in roots:
@@ -154,7 +161,7 @@ def latest_existing_date_dir(root: Path) -> Path | None:
     candidates = [p for p in root.iterdir() if p.is_dir() and DATE_DIR_RE.match(p.name)]
     if not candidates:
         return None
-    return max(candidates, key=lambda p: int(p.name))
+    return max(candidates, key=lambda p: source_date_key(p.name))
 
 
 def shard_dirs(date_dir: Path) -> list[Path]:
@@ -171,29 +178,36 @@ def report_date_from_path(report_dir: Path) -> str:
 
 
 def source_date_dirs(root: Path, extra_roots: list[Path], date_folder: str) -> tuple[str, list[Path]]:
-    roots = [root, *extra_roots]
     if date_folder != "latest":
-        if not DATE_DIR_RE.match(date_folder):
+        try:
+            source_date_key(date_folder)
+        except ValueError:
             raise RuntimeError(f"Invalid primary bank date folder: {date_folder}")
         report_date = date_folder
-        return report_date, [source_root / report_date for source_root in roots]
+        primary_dir = root / report_date
+    else:
+        primary_dir = latest_existing_date_dir(root)
+        if primary_dir is None:
+            raise RuntimeError(f"No date-named folders found under primary bank source root: {root}")
+        report_date = primary_dir.name
 
-    primary_dir = latest_existing_date_dir(root)
-    if primary_dir is None:
-        raise RuntimeError(f"No date-named folders found under primary bank source root: {root}")
-    report_date = latest_date_name(roots)
-    date_dirs: list[Path] = []
-    for source_root in roots:
-        latest_dir = latest_existing_date_dir(source_root)
-        if latest_dir is None:
-            log(f"Source root has no date folders, skipping: {source_root}")
+    # The bank handoff owns the issue date. An auxiliary source must never
+    # move a completed bank batch into a different issue or a future PDF.
+    date_dirs = [primary_dir]
+    for source_root in extra_roots:
+        candidates = [
+            source_root / name for name in date_dir_names(source_root)
+            if source_date_key(name) <= source_date_key(report_date) and find_report_dirs(source_root / name)
+        ]
+        if not candidates:
+            log(f"No usable auxiliary source on or before {report_date}, skipping: {source_root}")
             continue
-        date_dirs.append(latest_dir)
+        date_dirs.append(max(candidates, key=lambda path: source_date_key(path.name)))
     return report_date, date_dirs
 
 
 def report_title(report_dir: Path) -> str:
-    for filename in ["wechat_article.md", "note.md"]:
+    for filename in ["wechat_article.md", "note.md", "source_native_pdf.md"]:
         path = report_dir / filename
         if not path.exists():
             continue
@@ -250,7 +264,7 @@ def infer_source_name(report_dir: Path, title: str, status: dict[str, Any]) -> s
 def report_digest(report_dir: Path, max_chars: int) -> dict[str, Any]:
     title = report_title(report_dir)
     pieces = []
-    for filename in ["wechat_article.md", "note.md", "source_mineru.md"]:
+    for filename in ["wechat_article.md", "note.md", "source_mineru.md", "source_native_pdf.md"]:
         path = report_dir / filename
         if path.exists():
             text = path.read_text(encoding="utf-8", errors="ignore")
@@ -287,7 +301,7 @@ def clean_markdown_for_extract(text: str) -> str:
 def report_extract(report_dir: Path, max_chars: int) -> str:
     """Keep a readable per-report appendix excerpt outside the LLM summary."""
     blocks: list[str] = []
-    for filename in ["wechat_article.md", "note.md", "source_mineru.md"]:
+    for filename in ["wechat_article.md", "note.md", "source_mineru.md", "source_native_pdf.md"]:
         path = report_dir / filename
         if not path.exists():
             continue
@@ -415,6 +429,27 @@ def clean_exhibit_context(raw_context: str, fallback_label: str) -> str | None:
 
 def extract_exhibit_figures(report_dir: Path, report_id: str, title: str, max_per_report: int) -> list[dict[str, Any]]:
     md_path = report_dir / "source_mineru.md"
+    if not md_path.exists():
+        md_path = report_dir / "source_native_pdf.md"
+    if md_path.name == "source_native_pdf.md" and md_path.exists():
+        # The transferred native receipt binds each image to an exact original
+        # page and caption, including Chart/Table captions outside EXHIBIT_RE.
+        receipt = json.loads((report_dir.parent / "source_receipt.json").read_text(encoding="utf-8"))
+        source = next((item for item in receipt.get("reports", [])
+                       if item.get("directory") == report_dir.name), None)
+        if receipt.get("complete") is not True or not source or source.get("source_method") != "native-pdf":
+            raise RuntimeError(f"Native PDF figure source lacks a complete receipt: {report_dir}")
+        native_figures = [{
+            "report_id": report_id,
+            "report_title": title,
+            "source_path": str(report_dir.parent / asset["path"]),
+            "label": f"原报告第 {asset['source_page']} 页",
+            "context": sanitize_text(asset["description"])[:260],
+            "figure_type": "source_exhibit",
+            "selection_source": "native_pdf_page",
+            "source_page": asset["source_page"],
+        } for asset in source["assets"]]
+        return native_figures[:max_per_report] if max_per_report > 0 else native_figures
     lines = md_path.read_text(encoding="utf-8", errors="ignore").splitlines() if md_path.exists() else []
     figures: list[dict[str, Any]] = []
     seen_paths: set[str] = set()

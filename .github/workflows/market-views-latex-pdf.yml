@@ -17,6 +17,12 @@ on:
         description: "Private report handoff run id supplied by Daily report articles and translations"
         required: false
         default: ""
+      source_handoff_kind:
+        description: "Private source: xhs or validated native-pdf recovery"
+        required: true
+        type: choice
+        options: [xhs, native-pdf]
+        default: xhs
       source_artifact_run_id:
         description: "Historical Actions run containing final-dropbox-macro-shard artifacts"
         required: false
@@ -58,6 +64,7 @@ permissions:
 env:
   PYTHONUNBUFFERED: "1"
   PRIVATE_HANDOFF_ROOT: "_private-workflow-handoff/xhs"
+  PRIVATE_MARKET_SOURCES_ROOT: "_private-workflow-handoff/market-sources"
 
 concurrency:
   group: market-views-daily-pdf
@@ -101,7 +108,31 @@ jobs:
           SOURCE_HANDOFF_RUN_ID: ${{ github.event.inputs.source_handoff_run_id }}
           SOURCE_ARTIFACT_RUN_ID: ${{ github.event.inputs.source_artifact_run_id }}
           EXPECTED_BANK_DATE: ${{ github.event.inputs.expected_bank_date }}
+          SOURCE_HANDOFF_KIND: ${{ inputs.source_handoff_kind || 'xhs' }}
+          EXPECTED_SHARDS: ${{ inputs.expected_shards || '0' }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles || '0' }}
         run: |
+          for SOURCE_ID in "$SOURCE_HANDOFF_RUN_ID" "$SOURCE_ARTIFACT_RUN_ID"; do
+            if [ -n "$SOURCE_ID" ] && ! [[ "$SOURCE_ID" =~ ^[1-9][0-9]*$ ]]; then
+              echo "Private input run ids must be positive integers." >&2
+              exit 1
+            fi
+          done
+          for EXPECTED_COUNT in "$EXPECTED_SHARDS" "$EXPECTED_ARTICLES"; do
+            if ! [[ "$EXPECTED_COUNT" =~ ^[0-9]+$ ]]; then
+              echo "Expected input counts must be nonnegative integers." >&2
+              exit 1
+            fi
+          done
+          case "$SOURCE_HANDOFF_KIND" in
+            xhs) ;;
+            native-pdf)
+              if [ -z "$SOURCE_HANDOFF_RUN_ID" ] || [ "$EXPECTED_SHARDS" != "1" ] || ! [[ "$EXPECTED_ARTICLES" =~ ^[1-9][0-9]*$ ]]; then
+                echo "Native PDF recovery requires its original run, one validated shard and an exact report count." >&2
+                exit 1
+              fi ;;
+            *) echo "Unsupported source handoff kind." >&2; exit 1 ;;
+          esac
           if [ -n "$SOURCE_HANDOFF_RUN_ID" ] && [ -n "$SOURCE_ARTIFACT_RUN_ID" ]; then
             echo "source_handoff_run_id and source_artifact_run_id are mutually exclusive." >&2
             exit 1
@@ -132,7 +163,7 @@ jobs:
             --expected-reports "${{ github.event.inputs.expected_articles || '0' }}"
 
       - name: Install private handoff dependency
-        run: python -m pip install boto3
+        run: python -m pip install boto3 requests PyMuPDF
 
       - name: Download bank inputs from private R2
         if: ${{ github.event.inputs.source_handoff_run_id != '' }}
@@ -141,85 +172,76 @@ jobs:
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+          SOURCE_HANDOFF_KIND: ${{ inputs.source_handoff_kind || 'xhs' }}
+          SOURCE_HANDOFF_RUN_ID: ${{ inputs.source_handoff_run_id }}
+          EXPECTED_BANK_DATE: ${{ inputs.expected_bank_date }}
+          EXPECTED_SHARDS: ${{ inputs.expected_shards || '0' }}
         run: |
-          EXPECTED_BANK_DATE="${{ github.event.inputs.expected_bank_date }}"
           if ! printf '%s\n' "$EXPECTED_BANK_DATE" | grep -Eq '^[0-9]{6,8}$'; then
             echo "A valid expected_bank_date is required with source_handoff_run_id." >&2
             exit 1
           fi
+          SOURCE_PREFIX="$PRIVATE_HANDOFF_ROOT"
+          if [ "$SOURCE_HANDOFF_KIND" = "native-pdf" ]; then
+            SOURCE_PREFIX="$PRIVATE_MARKET_SOURCES_ROOT"
+          fi
           python scripts/private_workflow_handoff.py download-shards \
-            --prefix "$PRIVATE_HANDOFF_ROOT/${{ github.event.inputs.source_handoff_run_id }}/$EXPECTED_BANK_DATE" \
+            --prefix "$SOURCE_PREFIX/$SOURCE_HANDOFF_RUN_ID/$EXPECTED_BANK_DATE" \
             --destination "xhs_notes/dropbox/$EXPECTED_BANK_DATE" \
-            --expected-count "${{ github.event.inputs.expected_shards || '0' }}"
+            --expected-count "$EXPECTED_SHARDS"
+
+      - name: Verify complete native PDF source receipt
+        if: ${{ inputs.source_handoff_kind == 'native-pdf' }}
+        run: |
+          python scripts/extract_native_market_sources.py validate \
+            --output-dir "xhs_notes/dropbox/${{ inputs.expected_bank_date }}/shard_0" \
+            --manifest "xhs_notes/dropbox/${{ inputs.expected_bank_date }}/shard_0/selected_to_process_manifest.json" \
+            --expected-reports "${{ inputs.expected_articles }}"
 
       - name: Resolve and validate primary bank source
         env:
           REQUESTED_DATE_FOLDER: ${{ github.event.inputs.date_folder || 'latest' }}
           EXPECTED_BANK_DATE: ${{ github.event.inputs.expected_bank_date || '' }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles || '0' }}
           FORCE_REBUILD: ${{ github.event.inputs.force_rebuild || 'false' }}
         run: |
-          BUILD_DATE_FOLDER="$REQUESTED_DATE_FOLDER"
-          PRIMARY_DATE_FOLDER="$REQUESTED_DATE_FOLDER"
-          if [ "$PRIMARY_DATE_FOLDER" = "latest" ]; then
-            PRIMARY_DATE_FOLDER="$(find xhs_notes/dropbox -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | grep -E '^[0-9]{6,8}$' | sort -n | tail -1)"
-          fi
-          if ! printf '%s\n' "$PRIMARY_DATE_FOLDER" | grep -Eq '^[0-9]{6,8}$'; then
-            echo "Invalid or missing primary bank date folder: $PRIMARY_DATE_FOLDER" >&2
-            exit 1
-          fi
-          if [ -n "$EXPECTED_BANK_DATE" ] && [ "$PRIMARY_DATE_FOLDER" != "$EXPECTED_BANK_DATE" ]; then
-            echo "Upstream completed bank date $EXPECTED_BANK_DATE, but latest committed bank date is $PRIMARY_DATE_FOLDER." >&2
-            exit 1
-          fi
+          python - <<'PYTHON'
+          import os
+          import sys
+          from pathlib import Path
+          sys.path.insert(0, "scripts")
+          from build_market_views_pdf import source_date_dirs, require_primary_report_dirs, find_report_dirs
 
-          PRIMARY_DIR="xhs_notes/dropbox/$PRIMARY_DATE_FOLDER"
-          if [ ! -d "$PRIMARY_DIR" ]; then
-            echo "Primary bank source folder does not exist: $PRIMARY_DIR" >&2
-            exit 1
-          fi
-          REPORT_COUNT="$(find "$PRIMARY_DIR" -type f \( -name source_mineru.md -o -name wechat_article.md -o -name note.md \) -printf '%h\n' | sort -u | wc -l | tr -d ' ')"
-          if [ "$REPORT_COUNT" -eq 0 ]; then
-            echo "Primary bank source has no parsed report folders: $PRIMARY_DIR" >&2
-            exit 1
-          fi
-
-          SOURCE_DIRS=()
-          if [ "$BUILD_DATE_FOLDER" = "latest" ]; then
-            for SOURCE_ROOT in xhs_notes/dropbox xhs_notes/institutions xhs_notes/consulting; do
-              LATEST_SOURCE_DATE="$(find "$SOURCE_ROOT" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | grep -E '^[0-9]{6,8}$' | sort -n | tail -1)"
-              if [ -n "$LATEST_SOURCE_DATE" ]; then
-                SOURCE_DIRS+=("$SOURCE_ROOT/$LATEST_SOURCE_DATE")
-              fi
-            done
-          else
-            for SOURCE_ROOT in xhs_notes/dropbox xhs_notes/institutions xhs_notes/consulting; do
-              if [ -d "$SOURCE_ROOT/$BUILD_DATE_FOLDER" ]; then
-                SOURCE_DIRS+=("$SOURCE_ROOT/$BUILD_DATE_FOLDER")
-              fi
-            done
-          fi
-          EXPECTED_DATE_FOLDER="$(printf '%s\n' "${SOURCE_DIRS[@]}" | awk -F/ '{print $NF}' | sort -n | tail -1)"
-
-          CURRENT_INPUTS_FILE="$RUNNER_TEMP/market_views_current_inputs.txt"
-          find "${SOURCE_DIRS[@]}" -type f \( -name source_mineru.md -o -name wechat_article.md -o -name note.md \) -printf '%h\n' | sort -u > "$CURRENT_INPUTS_FILE"
-          CURRENT_INPUT_COUNT="$(wc -l < "$CURRENT_INPUTS_FILE" | tr -d ' ')"
-          MINERU_SOURCE_IMAGE_COUNT="$(find "${SOURCE_DIRS[@]}" -type f -path '*/assets/source_image_*' | wc -l | tr -d ' ')"
-          echo "::notice::Primary bank date=$PRIMARY_DATE_FOLDER, expected issue date=$EXPECTED_DATE_FOLDER, parsed bank reports=$REPORT_COUNT, current inputs=$CURRENT_INPUT_COUNT, retained MinerU source images=$MINERU_SOURCE_IMAGE_COUNT."
-          echo "BUILD_DATE_FOLDER=$BUILD_DATE_FOLDER" >> "$GITHUB_ENV"
-          echo "EXPECTED_DATE_FOLDER=$EXPECTED_DATE_FOLDER" >> "$GITHUB_ENV"
-          echo "DATE_FOLDER=$EXPECTED_DATE_FOLDER" >> "$GITHUB_ENV"
-          echo "MINERU_SOURCE_IMAGE_COUNT=$MINERU_SOURCE_IMAGE_COUNT" >> "$GITHUB_ENV"
-
-          EXISTING_PDF="market_view_summaries/$EXPECTED_DATE_FOLDER/market_views_$EXPECTED_DATE_FOLDER.pdf"
-          if [ "$FORCE_REBUILD" != "true" ] && \
-             [ -f "$EXISTING_PDF" ] && \
-             [ "$(stat -c '%s' "$EXISTING_PDF")" -gt 1024 ] && \
-             [ "$(head -c 5 "$EXISTING_PDF")" = '%PDF-' ]; then
-            echo "::notice::main already contains a valid public Market Views PDF for $EXPECTED_DATE_FOLDER; skipping an idempotent rerun."
-            echo "SHOULD_BUILD=false" >> "$GITHUB_ENV"
-          else
-            echo "SHOULD_BUILD=true" >> "$GITHUB_ENV"
-          fi
+          root = Path("xhs_notes/dropbox")
+          requested = os.environ["REQUESTED_DATE_FOLDER"]
+          expected = os.environ["EXPECTED_BANK_DATE"]
+          issue_date, source_dirs = source_date_dirs(
+              root, [Path("xhs_notes/institutions"), Path("xhs_notes/consulting")], requested
+          )
+          if expected and issue_date != expected:
+              raise SystemExit(f"Completed bank date {expected} does not match issue date {issue_date}.")
+          bank_reports = require_primary_report_dirs(source_dirs[0])
+          expected_articles = int(os.environ["EXPECTED_ARTICLES"])
+          if expected_articles and len(bank_reports) != expected_articles:
+              raise SystemExit(f"Expected {expected_articles} bank reports, received {len(bank_reports)}.")
+          image_count = sum(len(list(path.glob("assets/source_image_*")))
+                            for source_dir in source_dirs for path in find_report_dirs(source_dir))
+          pdf = Path(f"market_view_summaries/{issue_date}/market_views_{issue_date}.pdf")
+          valid_existing = (pdf.is_file() and pdf.stat().st_size > 1024
+                            and pdf.open("rb").read(5) == b"%PDF-")
+          should_build = os.environ["FORCE_REBUILD"] == "true" or not valid_existing
+          with open(os.environ["GITHUB_ENV"], "a", encoding="utf-8") as env:
+              for key, value in {
+                  "BUILD_DATE_FOLDER": issue_date,
+                  "EXPECTED_DATE_FOLDER": issue_date,
+                  "DATE_FOLDER": issue_date,
+                  "MINERU_SOURCE_IMAGE_COUNT": image_count,
+                  "SHOULD_BUILD": str(should_build).lower(),
+              }.items():
+                  env.write(f"{key}={value}\n")
+          print(f"::notice::Bank date and issue={issue_date}; bank reports={len(bank_reports)}; "
+                f"retained source images={image_count}; should_build={should_build}.")
+          PYTHON
 
       - name: Install and test private R2 archiver
         run: |
