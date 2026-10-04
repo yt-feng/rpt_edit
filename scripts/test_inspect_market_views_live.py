@@ -51,6 +51,13 @@ class LiveInspectionTests(unittest.TestCase):
         with self.assertRaises(live.InspectionError):
             live.NoRedirect().redirect_request(None, None, None, None, None, None)
 
+    def test_invalid_configured_origin_cannot_send_a_request(self):
+        for origin in ("", "http://example.invalid", "https://user:secret@example.invalid", "https://example.invalid/path"):
+            with self.subTest(origin=origin), patch.dict(live.os.environ, {"PORTAL_SITE_URL": origin}), \
+                    patch.object(live.urllib.request, "build_opener") as opener, self.assertRaises(live.InspectionError):
+                live.get_public("/api/market-views")
+            opener.assert_not_called()
+
 
 if __name__ == "__main__":
     unittest.main()

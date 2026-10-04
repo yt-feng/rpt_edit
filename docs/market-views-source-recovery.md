@@ -495,7 +495,7 @@ caption as one pagination unit. Rebuilding and live delivery remain separate
 acceptance steps.
 
 The read-only live inspection workflow verifies requested dates' private PDF
-bytes and index metadata in full, compares the public KCDesk list, and confirms
+bytes and index metadata in full, compares the public portal list, and confirms
 the anonymous membership gate. It never claims that a customer-authenticated
 download was tested. The original/private and sanitized/public PDF hashes are
 distinct identities and are not assumed interchangeable.

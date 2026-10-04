@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Read-only cloud acceptance of dated private PDFs and KCDesk's public list.
+"""Read-only cloud acceptance of dated private PDFs and the portal's public list.
 
 Does not authenticate a customer, publish, generate, or change stored objects.
 The anonymous download check confirms the membership gate, not a paid download.
@@ -10,13 +10,11 @@ import os
 from pathlib import Path
 import urllib.error
 import urllib.request
+from urllib.parse import urlsplit
 
 from upload_market_view_to_r2 import (
     build_r2_client, parse_issue_date, validate_existing_private_pair,
 )
-
-ORIGIN = "https://kcdesk.com"
-
 
 class InspectionError(ValueError):
     pass
@@ -28,10 +26,15 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
 
 
 def get_public(path, *, max_bytes=1_000_000):
+    origin = os.environ.get("PORTAL_SITE_URL", "").strip().rstrip("/")
+    parsed = urlsplit(origin)
+    if (parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password
+            or parsed.path or parsed.query or parsed.fragment or parsed.port not in (None, 443)):
+        raise InspectionError("configured_https_origin_required")
     opener = urllib.request.build_opener(NoRedirect())
     try:
-        response = opener.open(urllib.request.Request(ORIGIN + path,
-            headers={"Accept": "application/json", "User-Agent": "KCDesk-MarketViews-Acceptance/1"}), timeout=30)
+        response = opener.open(urllib.request.Request(origin + path,
+            headers={"Accept": "application/json", "User-Agent": "MarketViews-Acceptance/1"}), timeout=30)
     except urllib.error.HTTPError as error:
         response = error
     with response:

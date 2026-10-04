@@ -225,7 +225,7 @@ October 4 complete cloud OCR source producer `37238241161` passed all four
 originals and the real numeric fixture. Consumer `37239371856` archived the
 private PDF and committed its 14-page public-safe counterpart, with all nine
 source-page images visually checked. One caption pagination defect is being
-corrected and live KCDesk acceptance is pending. October 1-3 full backfill remains
+corrected and live portal acceptance is pending. October 1-3 full backfill remains
 in progress; `MARKET_VIEWS_OCR_BACKUP_ENABLED` remains false. The detailed source-only status is maintained in
 [Market Views source recovery](market-views-source-recovery.md).
 

@@ -42,6 +42,7 @@ jobs:
       - name: Verify full private PDF pair and public list with strict TLS
         env:
           DATES: ${{ inputs.dates }}
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
