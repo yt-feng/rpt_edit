@@ -634,3 +634,20 @@ and write. This route submits no task, changes no ledger and admits no partial
 source. Its canonical identities retain the empty original Daily producer ID;
 the native archive producer is a distinct, authenticated byte source. Ordinary
 recovery starts only after all roots and claims have been accepted.
+
+### Bounded isolated recovery for crop OCR overflow
+
+Numeric crop reads now require a candidate's own bounding box to be contained
+in its source crop, rejecting large mosaic boxes borrowed across rows. Only
+when a crop's original positional count exceeds the unchanged 2,500-field
+bound may that exact 600-dpi crop be read once more, with the same PSM and a
+fixed white border. Continued overflow rejects the page; zero, multiple or
+conflicting reads remain unconfirmed. The independent full-page read, both crop
+PSMs and punctuation pixel witnesses retain their original acceptance rules.
+
+Private, canonical recovery metadata binds the original lossless RGB crop,
+isolated canvas, geometry, hashes and overflow lower bound. Consumers validate
+bounded PNG decoding and reconstruct that canvas; they do not claim to have
+reopened the original PDF. Default reads and existing receipts remain
+compatible. Real failed-report fixtures and complete-source cloud runs are
+separate acceptance steps.
