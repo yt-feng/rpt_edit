@@ -23,6 +23,10 @@ on:
         type: choice
         options: [xhs, native-pdf, mineru-recovery]
         default: xhs
+      native_quality_fixture_json:
+        description: "Optional numeric value and page-position acceptance fixtures for native PDF sources"
+        required: false
+        default: ""
       source_artifact_run_id:
         description: "Historical Actions run containing final-dropbox-macro-shard artifacts"
         required: false
@@ -200,6 +204,7 @@ jobs:
           SOURCE_HANDOFF_RUN_ID: ${{ inputs.source_handoff_run_id }}
           EXPECTED_BANK_DATE: ${{ inputs.expected_bank_date }}
           EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+          NATIVE_QUALITY_FIXTURE_JSON: ${{ inputs.native_quality_fixture_json || '' }}
         run: |
           python - <<'PY'
           import json
@@ -208,6 +213,8 @@ jobs:
           import re
           import subprocess
           import sys
+          sys.path.insert(0, 'scripts')
+          from market_views_source_readiness import require_source_readiness
           source_run = os.environ['SOURCE_HANDOFF_RUN_ID']
           date = os.environ['EXPECTED_BANK_DATE']
           expected = os.environ['EXPECTED_ARTICLES']
@@ -224,6 +231,10 @@ jobs:
           daily_path = '.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml'
           if producer.get('path') not in {daily_path, '.github/workflows/market-views-native-recovery.yml'}:
               raise SystemExit('Native source producer workflow differs.')
+          jobs_result = subprocess.run(['gh', 'api',
+              f"repos/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{source_run}/jobs?filter=latest&per_page=100"],
+              check=True, capture_output=True, text=True, timeout=30)
+          require_source_readiness(producer, json.loads(jobs_result.stdout))
           root = Path('xhs_notes/dropbox') / date / 'shard_0'
           receipt = json.loads((root / 'source_receipt.json').read_text())
           context = receipt.get('source_context')
@@ -244,7 +255,30 @@ jobs:
                           '--expected-reports', expected, '--date-folder', date,
                           '--producer-run-id', source_run, '--execution-sha', producer['head_sha'],
                           '--original-source-run-id', original], check=True)
+          fixture_args = []
+          raw_fixture = os.environ.get('NATIVE_QUALITY_FIXTURE_JSON', '')
+          if raw_fixture:
+              if len(raw_fixture.encode('utf-8')) > 65536:
+                  raise SystemExit('Native numeric fixture input is too large.')
+              fixture_path = Path(os.environ['RUNNER_TEMP']) / 'market-views-native-quality-fixtures.json'
+              fixture_path.write_text(raw_fixture, encoding='utf-8')
+              fixture_args = ['--fixtures', str(fixture_path)]
+          subprocess.run([sys.executable, 'scripts/audit_market_views_ocr_receipt.py',
+                          '--source-dir', str(root), '--expected-reports', expected,
+                          '--date-folder', date, '--producer-run-id', source_run,
+                          '--execution-sha', producer['head_sha'], '--original-source-run-id', original,
+                          '--summary', str(Path(os.environ['RUNNER_TEMP']) / 'market-views-native-source-audit.json'),
+                          *fixture_args], check=True)
           PY
+
+      - name: Preserve sanitized native source numeric audit
+        if: ${{ always() && inputs.source_handoff_kind == 'native-pdf' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: market-views-native-source-audit-${{ github.run_id }}
+          path: ${{ runner.temp }}/market-views-native-source-audit.json
+          if-no-files-found: warn
+          retention-days: 7
 
       - name: Verify complete MinerU recovery source receipt
         if: ${{ inputs.source_handoff_kind == 'mineru-recovery' }}

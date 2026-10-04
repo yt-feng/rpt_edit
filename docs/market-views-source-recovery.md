@@ -286,6 +286,17 @@ not verify runner ZIP retrieval. These diagnostics downloaded no complete ZIP.
 For the primary MinerU chain, verified upstream ZIP bytes must be retrieved
 before R2 persistence can supply the missing source.
 
+PR 228 merged at `f7c5a0097b86a37670c54b91c2988bd8b2557deb`. The independent
+GitHub-hosted macOS ARM64 diagnostic `37233771704` at 2026-10-04 20:53 UTC also
+failed strict validation. Default and TLS 1.2 RSA handshakes received the same
+RapidSSL leaf and peer chain as the earlier runner, with leaf SHA-256
+`12137420c572ee3fde42af27309c8f36efdfc4d07e76dcba801ddf6bc308aeb3` and code 10
+at depth 0. Neither system CA nor certifi retrieved an HTTP response or ZIP bytes.
+Changing the cloud runner OS therefore did not restore the tested download path.
+The [provider incident draft](experiments/mineru-result-download-incident-20261004.md)
+is prepared but remains unsubmitted; submission permission has been requested
+and no approval has been received.
+
 The earlier 2026-10-03 22:34 UTC inventory note recorded `261002=4`; that count
 was not independently revalidated and is superseded by the complete current
 Dropbox listing and successful download of **50 PDFs** in `261002`. This does not
@@ -307,8 +318,31 @@ original page and numeric evidence for review:
 | --- | --- | --- | --- |
 | `261001` | `37232969584` | Producer `36932674491`; 63 files, 62 unique contents | In progress |
 | `261002` | `37233084607` | Fresh exact Dropbox listing; 50 files; original source run explicitly empty | In progress |
-| `261003` | `37231899669` | Producer `37159099752`; 54 files, 1,029 pages | In progress |
-| `261004` | `37233077480` | Producer `37232504334`; 4 unique files, date and `content_sha256` verified | In progress |
+| `261003` | `37231899669` | Producer `37159099752`; 54 files, 1,029 pages | Failed during complete-source extraction; no complete handoff |
+| `261004` | `37233077480` | Producer `37232504334`; 4 unique files, date and `content_sha256` verified | Source contract passed; private R2 handoff saved; numeric quality review pending |
+
+October 4 source-only extraction completed successfully with all 4 originals
+and 4 unique contents: 109 pages, including 82 native-text pages, 27 OCR pages
+and no blank pages. Its source-contract audit passed, but
+`fixture_acceptance=not_requested` means this run did not establish visual numeric
+fixture acceptance. The receipt observed 1,775 numeric mentions: 1,334 primary
+mentions (354 verified, 8 corrected, 972 unresolved) plus 441 secondary mentions.
+In total 1,413 remained unconfirmed and excluded from usable numeric claims.
+Successful source coverage is therefore separate from numeric quality approval.
+Prepared PR 229 adds consumer readiness and a known-field fixture audit,
+including the visual `17%` field, before model synthesis. Its two focused test
+suites passed 12 and 17 tests, respectively. The guard is not yet deployed and
+runtime fixture acceptance remains pending. No October 4 PDF or live delivery
+is claimed from this source-only run.
+
+October 3 run `37231899669` failed at 2026-10-04 20:55:55 UTC in “Extract and
+verify the complete original source batch”, reporting a generic
+`SourceValidationError` for report ordinal 24, page 49. The cause remains under
+investigation against that exact source page. Earlier reports had already used
+OCR successfully; this generic error does not establish missing Tesseract
+models. The run produced no complete R2 source archive and reached neither the
+complete-source auditor nor golden-fixture acceptance. Only the October 1 and
+October 2 source-only runs remain in progress.
 
 Recovery is complete only after the
 matching cloud source and retrieval gates, exact dated PDF, original figures,
@@ -321,7 +355,8 @@ Current real-source admission review checked all 54 original PDFs from producer
 and 1,029 pages. The stronger language gate classified 798 pages as readable,
 21 opaque-string pages and 210 pages with insufficient native text. Approximately
 231 pages therefore require cloud OCR. This inventory audit is not a successful
-OCR extraction. Five real numeric golden fixtures accompany the cloud quality
-checks; the complete actual-report extraction and review remain in progress.
+OCR extraction. Five real numeric golden fixtures are available for cloud
+quality checks, but the failed October 3 run did not reach their acceptance.
+Complete actual-report extraction and review remain outstanding.
 Verified private handoff, missing dated PDF delivery and daily OCR switch
 enablement remain acceptance steps; daily OCR backup is not yet enabled.

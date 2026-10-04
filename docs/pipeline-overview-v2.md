@@ -153,6 +153,11 @@ expired at 2026-10-02 23:59:59 UTC; both reported verification code 10 at depth 
 The valid Let's Encrypt chain seen on another connection does not prove a cloud
 ZIP download. Complete verified result bytes are still required before an R2
 mirror can restore the primary source path.
+After PR 228 merged at `f7c5a0097b86a37670c54b91c2988bd8b2557deb`, GitHub-hosted
+macOS ARM64 diagnostic `37233771704` at 20:53 UTC reproduced the same RapidSSL
+leaf and peer chain, October 2 expiry, and depth-0/code-10 failure under both
+handshakes. It downloaded no ZIP. The prepared provider report remains
+unsubmitted while submission permission is unanswered.
 
 October 2 Daily run `37067138754` stopped before downloading or parsing: its
 expected folder was `261003`, latest was `261001`, and age 2 exceeded the allowed
@@ -162,9 +167,23 @@ reason for that difference is not established. Source-only recovery now binds
 `261001` to `36932674491` (63 files/62 unique; recovery `37232969584`), `261002`
 to the fresh 50-file listing (empty original source run; `37233084607`),
 `261003` to `37159099752` (54 files/1,029 pages; `37231899669`), and `261004`
-to verified producer `37232504334` (4 unique files; `37233077480`). These recovery
-runs remain in progress. Roughly 231 October 3 pages require OCR, with five real
-numeric golden fixtures supporting cloud quality checks. Full extraction,
+to verified producer `37232504334` (4 unique files; `37233077480`). October 1
+and October 2 recovery remain in progress. October 3 run `37231899669` failed at
+20:55:55 UTC during complete-source extraction, with a generic
+`SourceValidationError` at report ordinal 24, page 49; its cause is under
+investigation. Earlier successful OCR does not support attributing that message
+to absent models. No complete R2 handoff, source-auditor acceptance or
+golden-fixture acceptance was reached for that run. October 4 extraction and its
+source-contract audit succeeded: 109 pages (82 native, 27 OCR, no blank), with
+the complete handoff saved privately in R2. Its fixture acceptance was
+`not_requested`; 1,413 of 1,775 numeric mentions remained unconfirmed. Numeric
+quality approval remains pending. Prepared PR 229 adds consumer readiness and
+known-field fixture checks before synthesis, with focused suites of 12 and 17
+tests passing; deployment and runtime acceptance remain pending. This source-only success
+does not establish a generated PDF or live delivery.
+Roughly 231 October 3 pages require OCR, with five real
+numeric golden fixtures available for cloud quality checks; the failed run did
+not reach their acceptance. Full extraction,
 source review, dated PDF/live delivery and daily OCR enablement are not yet
 accepted. The detailed source-only status is maintained in
 [Market Views source recovery](market-views-source-recovery.md).

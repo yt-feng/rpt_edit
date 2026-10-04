@@ -162,6 +162,9 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
         self.assertIn("'--expected-reports', expected", block)
         self.assertIn("'--producer-run-id', source_run", block)
         self.assertIn("'--execution-sha', producer['head_sha']", block)
+        self.assertIn('/jobs?filter=latest&per_page=100', block)
+        self.assertIn('require_source_readiness(producer, json.loads(jobs_result.stdout))', block)
+        self.assertIn("'scripts/audit_market_views_ocr_receipt.py'", block)
 
     def test_cloud_ocr_is_staged_and_source_only_review_keeps_the_private_handoff(self):
         recovery = (WORKFLOWS / "market-views-native-recovery.yml").read_text()
@@ -236,34 +239,76 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
                 import json
                 import os
                 import sys
-                run_id = sys.argv[-1].split('/')[-1]
+                endpoint = sys.argv[-1]
+                if '/jobs?' in endpoint:
+                    sys.path.insert(0, 'scripts')
+                    from market_views_source_readiness import SOURCE_GATES
+                    path = os.environ.get('FAKE_PRODUCER_PATH', '.github/workflows/market-views-native-recovery.yml')
+                    name, gates = SOURCE_GATES[path]
+                    steps = [{'name': title, 'number': number, 'status': 'completed', 'conclusion': 'success'}
+                             for number, title in enumerate(gates, start=3)]
+                    for step in steps:
+                        if step['name'].startswith('Audit complete'):
+                            step['status'] = os.environ.get('FAKE_AUDIT_STATUS', 'completed')
+                            step['conclusion'] = os.environ.get('FAKE_AUDIT_CONCLUSION', 'success')
+                    print(json.dumps({'total_count': 1, 'jobs': [{
+                        'id': 67890, 'name': name, 'run_id': int(os.environ.get('FAKE_JOB_RUN_ID', '37214015946')),
+                        'head_sha': os.environ.get('FAKE_JOB_SHA', os.environ.get('FAKE_SHA', 'c' * 40)),
+                        'status': os.environ.get('FAKE_PRODUCER_STATUS', 'in_progress'),
+                        'conclusion': os.environ.get('FAKE_PRODUCER_CONCLUSION'), 'steps': steps,
+                    }]}))
+                    raise SystemExit(0)
+                run_id = endpoint.split('/')[-1]
                 producer = run_id == '37214015946'
                 print(json.dumps({
                     'id': int(run_id), 'head_branch': os.environ.get('FAKE_BRANCH', 'main'),
                     'head_sha': os.environ.get('FAKE_SHA', 'c' * 40),
                     'path': os.environ.get('FAKE_PRODUCER_PATH', '.github/workflows/market-views-native-recovery.yml') if producer else '.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml',
-                    'status': 'in_progress' if producer else os.environ.get('FAKE_ORIGINAL_STATUS', 'completed'),
-                    'conclusion': None if producer else os.environ.get('FAKE_ORIGINAL_CONCLUSION', 'failure'),
+                    'status': os.environ.get('FAKE_PRODUCER_STATUS', 'in_progress') if producer else os.environ.get('FAKE_ORIGINAL_STATUS', 'completed'),
+                    'conclusion': os.environ.get('FAKE_PRODUCER_CONCLUSION') if producer else os.environ.get('FAKE_ORIGINAL_CONCLUSION', 'failure'),
                 }))
             '''))
             gh.chmod(0o755)
+            runtime = root / 'runtime'
+            runtime.mkdir()
             environment = {**os.environ, "PATH": str(binaries) + os.pathsep + os.environ["PATH"],
                            "GITHUB_REPOSITORY": "example/project", "SOURCE_HANDOFF_RUN_ID": context["producer_run_id"],
-                           "EXPECTED_BANK_DATE": "261003", "EXPECTED_ARTICLES": "1"}
+                           "EXPECTED_BANK_DATE": "261003", "EXPECTED_ARTICLES": "1", "RUNNER_TEMP": str(runtime),
+                           "NATIVE_QUALITY_FIXTURE_JSON": ''}
             def run(values):
                 return subprocess.run(["bash", "-e", "-o", "pipefail", "-c", command], cwd=root,
                                       env={**environment, **values}, capture_output=True, text=True)
             accepted = run({})
             self.assertEqual(accepted.returncode, 0, accepted.stderr)
+            accepted = run({'FAKE_PRODUCER_STATUS': 'completed', 'FAKE_PRODUCER_CONCLUSION': 'failure'})
+            self.assertEqual(accepted.returncode, 0, accepted.stderr)
             for invalid in ({"FAKE_BRANCH": "feature"}, {"FAKE_SHA": "d" * 40},
                             {"FAKE_PRODUCER_PATH": ".github/workflows/another.yml"},
-                            {"FAKE_ORIGINAL_STATUS": "in_progress"}, {"FAKE_ORIGINAL_CONCLUSION": "cancelled"}):
+                            {"FAKE_ORIGINAL_STATUS": "in_progress"}, {"FAKE_ORIGINAL_CONCLUSION": "cancelled"},
+                            {"FAKE_AUDIT_CONCLUSION": "failure"}, {"FAKE_AUDIT_CONCLUSION": "skipped"},
+                            {"FAKE_AUDIT_STATUS": "in_progress"}, {"FAKE_JOB_SHA": "d" * 40},
+                            {"FAKE_JOB_RUN_ID": "37214015947"}):
                 with self.subTest(invalid=invalid):
                     rejected = run(invalid)
                     self.assertNotEqual(rejected.returncode, 0, rejected.stdout)
             rejected = run({"FAKE_PRODUCER_PATH": ".github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml"})
             self.assertNotEqual(rejected.returncode, 0)
             self.assertIn("own selected original run", rejected.stderr)
+            real_fixture = {"schema": 1, "checks": [{
+                "id": "real_17pct", "source_pdf_sha256": "55519fd3388cfecc3bd12854d64bfd8368c6b683c365512fbcff49581e2c5fa5",
+                "page": 1, "expected_literal": "17%", "expected_bbox": [139, 245, 165, 259],
+            }]}
+            encoded_fixture = json.dumps(real_fixture)
+            rejected = run({'NATIVE_QUALITY_FIXTURE_JSON': encoded_fixture})
+            self.assertNotEqual(rejected.returncode, 0)
+            self.assertEqual((runtime / 'market-views-native-quality-fixtures.json').read_text(), encoded_fixture)
+            audit = json.loads((runtime / 'market-views-native-source-audit.json').read_text())
+            self.assertEqual(audit['fixture_acceptance'], 'failed')
+            injection = json.dumps({"schema": 1, "checks": [{**real_fixture['checks'][0],
+                "expected_literal": "$(touch SHELL_EXECUTED)"}]})
+            rejected = run({'NATIVE_QUALITY_FIXTURE_JSON': injection})
+            self.assertNotEqual(rejected.returncode, 0)
+            self.assertFalse((root / 'SHELL_EXECUTED').exists())
 
     def test_actual_cloud_audit_reads_fixture_json_as_data_and_fails_unmatched_fields(self):
         import hashlib
