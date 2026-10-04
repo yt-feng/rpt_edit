@@ -204,6 +204,24 @@ deployment propagation must be distinguished from an upstream CDN failure; the
 probe now checks an authenticated `/ready` endpoint that makes no provider
 request, allowing only bounded deployment-404 waits before its single CDN HEAD.
 
+PR 223 merged the readiness check at
+`d0138a57a32e4722eb65c57914434647d1d52ee6`. Cloudflare run `37229206987` on
+2026-10-04 19:42 UTC received readiness HTTP 404 then HTTP 200 after five seconds.
+Its authenticated handler then made exactly one strict HTTPS HEAD from the LAX
+edge to the official CDN root and received HTTP 526 (`tls_invalid_certificate`).
+The temporary Worker was successfully deleted. Zero ZIP downloads, provider
+POSTs and R2 writes occurred. This is CDN evidence, unlike the earlier deployment
+404, and does not establish the certificate state of every possible CDN edge.
+
+Attempt 2 of smoke run `37212761333` at the same time resumed the existing
+completed one-page task with zero provider POSTs. Authentication was accepted
+and the task still had one completed result; result retrieval again stopped with
+`tls_certificate_expired`, zero ZIP bytes and no marker verification. Thus a
+Cloudflare-to-R2 mirror has no verified upstream delivery path in these probes.
+The new ZIP cache prevents loss of future successful downloads but does not
+restore currently absent source bytes. A valid official result download path is
+still required before the missing dated PDFs can be built.
+
 Saved Dropbox inventory from 2026-10-03 22:34 UTC contained 63 PDFs for `261001`,
 4 for `261002` and 54 for `261003`. Those counts describe original inputs, not
 generated or published Market Views issues. Recovery is complete only after the

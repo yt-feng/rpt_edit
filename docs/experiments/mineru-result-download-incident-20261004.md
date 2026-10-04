@@ -26,9 +26,24 @@ included in this report.
 An independent GitHub Actions comparison at 2026-10-04 16:45 UTC used the system
 CA store and certifi 2026.07.22. Both strict clients reported
 `tls_certificate_expired`; neither received an HTTP response or body bytes.
-This rules out a failure confined to the system trust store. A separate
-Cloudflare-edge probe is being prepared to check whether another edge can reach
-a valid server chain.
+This rules out a failure confined to the system trust store.
+
+A separate authenticated temporary Cloudflare Worker at 2026-10-04 19:42 UTC
+verified its own deployment readiness, then made exactly one strict HTTPS HEAD
+to the CDN root from LAX. It received HTTP 526 (`tls_invalid_certificate`); the
+Worker was subsequently deleted. No ZIP or document contents were requested by
+that probe. A contemporaneous rerun of the existing completed synthetic task
+made zero new parsing submissions and again failed its result download with
+`tls_certificate_expired`, retrieving zero bytes.
+
+Evidence runs in the public repository automation:
+
+- New synthetic task and same-task rerun: `37212761333`, attempts 1 and 2.
+- System CA / certifi comparison: `37217880580`.
+- Readiness-verified Cloudflare HEAD: `37229206987`.
+
+Cloudflare documents external Worker subrequests as requiring valid origin TLS:
+https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-526/
 
 Could you check the certificate chain served by the official result CDN, or
 provide a documented, valid HTTPS alternative for retrieving completed tasks?
