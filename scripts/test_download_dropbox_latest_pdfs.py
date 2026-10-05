@@ -428,7 +428,14 @@ class DropboxWorkflowContractTests(unittest.TestCase):
         self.assertIn('if [ "${{ github.event_name }}" = "schedule" ] || [ -z "${{ github.event.inputs.dropbox_date_folder }}" ]; then', workflow)
         self.assertIn('TZ=Asia/Shanghai date +%y%m%d', workflow)
         self.assertIn('echo "expected_dropbox_date_folder=" >> "$GITHUB_OUTPUT"', workflow)
-        self.assertIn('latest_folder: ${{ steps.dropbox.outputs.latest_folder }}', workflow)
+        # Both paths preserve the actual source batch date, rather than using
+        # the current schedule's expected date for publication identity.
+        self.assertIn('latest_folder: ${{ steps.replay.outputs.latest_folder || steps.dropbox.outputs.latest_folder }}', workflow)
+        download_step = workflow.split("      - name: Download PDFs from latest Dropbox date folder\n", 1)[1].split("      - name:", 1)[0]
+        self.assertIn("needs.resolve-inputs.outputs.replay_source_run_id == ''", download_step)
+        replay_step = workflow.split("      - name: Verify every frozen original byte and replay provenance\n", 1)[1].split("      - name:", 1)[0]
+        self.assertIn("needs.resolve-inputs.outputs.replay_source_run_id != ''", replay_step)
+        self.assertIn("REPLAY_DATE: ${{ needs.resolve-inputs.outputs.dropbox_date_folder }}", replay_step)
         self.assertIn('OUTPUT_DIR: xhs_notes/dropbox/${{ needs.select-macro-reports.outputs.latest_folder }}', workflow)
 
 
