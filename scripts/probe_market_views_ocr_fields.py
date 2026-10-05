@@ -38,7 +38,7 @@ MAX_POSITION_WORDS = 20_000
 MAX_POSITION_TEXT_BYTES = 1_000_000
 OPAQUE_POSITION_STATUSES = {"mapped", "text_order_mismatch", "word_geometry_unavailable",
                             "word_geometry_invalid", "word_bound_exceeded", "word_boundary_mismatch",
-                            "page_geometry_unavailable", "input_bound_exceeded"}
+                            "duplicate_position_ambiguous", "page_geometry_unavailable", "input_bound_exceeded"}
 OPAQUE_CANDIDATES = {"geometric-sorted", "source-flow", "full-page-psm11"}
 READABILITY_COUNTS = ("characters", "minimum_characters", "invalid_unicode_characters", "han_characters",
                       "latin_characters", "plausible_words", "distinct_plausible_words", "plausible_word_characters",
@@ -398,6 +398,7 @@ def _opaque_run_positions(text: Any, words: Any, rect: Any) -> dict[str, Any]:
     # Each run is already contiguous ASCII. Offsets count all other source
     # glyphs too, so punctuation/order changes cannot borrow a nearby word.
     positions, previous, offset, total, characters = [], 0, 0, 0, 0
+    seen_runs, duplicate_runs = set(), False
     for match in native.LONG_ASCII_RUN.finditer(text):
         offset += sum(not character.isspace() for character in text[previous:match.start()])
         length = match.end() - match.start()
@@ -407,6 +408,9 @@ def _opaque_run_positions(text: Any, words: Any, rect: Any) -> dict[str, Any]:
         previous = match.end()
         total += 1
         characters += length
+        value = match.group()
+        duplicate_runs = duplicate_runs or value in seen_runs
+        seen_runs.add(value)
     result.update(counts_available=True, run_count=total, long_ascii_characters=characters,
                   returned_run_count=len(positions), truncated=total > len(positions))
     bounds = _page_bounds(rect)
@@ -443,6 +447,11 @@ def _opaque_run_positions(text: Any, words: Any, rect: Any) -> dict[str, Any]:
                     or start < end < finish and target[end].isascii() and target[end].isalnum()
                     for begin, end, _ in positions for start, finish, _ in spans):
                 status = "word_boundary_mismatch"
+            # Exact duplicate runs can swap whole word groups without changing
+            # the flattened glyphs or boundaries. This diagnostic has no proof
+            # of their individual occurrence, so retain counts without boxes.
+            if status == "mapped" and duplicate_runs:
+                status = "duplicate_position_ambiguous"
     result["status"] = status
     for index, (begin, end, length) in enumerate(positions, 1):
         covering = [box for start, finish, box in spans if start < end and finish > begin] if status == "mapped" else []

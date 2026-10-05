@@ -557,14 +557,27 @@ class FieldProbeTests(unittest.TestCase):
         self.assertNotIn("Robot", json.dumps(result))
 
     def test_duplicate_long_runs_use_character_offsets_and_never_collapse_source_positions(self):
-        text = "Q" * 30 + "\n" + "Q" * 30
-        words = [(10, 10, 90, 20, "Q" * 30), (10, 60, 90, 70, "Q" * 30)]
+        text = "Q" * 30 + "\n" + "Q" * 31
+        words = [(10, 10, 90, 20, "Q" * 30), (10, 60, 90, 70, "Q" * 31)]
         result = probe._opaque_run_positions(text, words, [0, 0, 200, 200])
         self.assertEqual(result["run_count"], 2)
         self.assertEqual(result["mapped_run_count"], 2)
         self.assertEqual([row["bbox"] for row in result["runs"]], [[10, 10, 90, 20], [10, 60, 90, 70]])
-        self.assertEqual([row["characters"] for row in result["runs"]], [30, 30])
+        self.assertEqual([row["characters"] for row in result["runs"]], [30, 31])
         self.assertNotIn("Q" * 30, json.dumps(result))
+
+    def test_identical_long_run_occurrences_cannot_claim_individual_source_positions(self):
+        text = "A" * 25 + "\n" + "A" * 25
+        words = [(10, 60, 90, 70, "A" * 25), (10, 10, 90, 20, "A" * 25)]
+        for candidates in (words, list(reversed(words))):
+            result = probe._opaque_run_positions(text, candidates, [0, 0, 200, 200])
+            self.assertEqual(result["status"], "duplicate_position_ambiguous")
+            self.assertEqual(result["run_count"], 2)
+            self.assertEqual(result["long_ascii_characters"], 50)
+            self.assertEqual(result["mapped_run_count"], 0)
+            self.assertTrue(all(row["bbox"] is None and row["source_word_count"] == 0 for row in result["runs"]))
+            self.assertIsNotNone(probe._safe_opaque_positions(result, [0, 0, 200, 200]))
+            self.assertNotIn("A" * 25, json.dumps(result))
 
     def test_wrong_character_order_or_ambiguous_duplicate_boundaries_cannot_guess_a_box(self):
         cases = [("A" * 25 + " " + "B" * 25,
@@ -597,8 +610,8 @@ class FieldProbeTests(unittest.TestCase):
 
     def test_opaque_position_limits_report_truncation_and_missing_counts_explicitly(self):
         count = probe.MAX_OPAQUE_RUNS + 3
-        text = "\n".join("A" * 25 for _ in range(count))
-        words = [(10, index * 2 + 1, 90, index * 2 + 2, "A" * 25) for index in range(count)]
+        text = "\n".join(f"{index:025d}" for index in range(count))
+        words = [(10, index * 2 + 1, 90, index * 2 + 2, f"{index:025d}") for index in range(count)]
         result = probe._opaque_run_positions(text, words, [0, 0, 100, count * 2 + 10])
         self.assertEqual(result["run_count"], count)
         self.assertEqual(result["long_ascii_characters"], count * 25)
