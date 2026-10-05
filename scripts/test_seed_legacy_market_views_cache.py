@@ -2,6 +2,7 @@
 import base64
 import copy
 from contextlib import redirect_stdout
+from datetime import datetime
 import io
 import json
 from pathlib import Path
@@ -151,6 +152,82 @@ class LegacyTests(unittest.TestCase):
         receipts = [json.loads(value['Body']) for key, value in self.r2.objects.items() if key.endswith('/receipt.json')]
         self.assertTrue(all(receipt['binding']['data_id'].startswith('000') for receipt in receipts))
         self.assertTrue(all(receipt['binding']['data_id'] != receipt['binding']['content_sha256'] for receipt in receipts))
+
+    def seed_prior_window(self):
+        prior_cutoff = '2026-10-04T23:59:59+00:00'
+        self.transport.authentication = authentication() | {'cutoff_utc': prior_cutoff}
+        with patch.object(pinned, 'CUTOFF', datetime.fromisoformat(prior_cutoff)):
+            authority, manifest, _ = self.authenticate()
+            summary, _ = self.seed(authority, manifest, maximum=0)
+        self.assertEqual(summary['cached_results'], 6)
+        return authority, manifest
+
+    def test_complete_prior_window_legacy_cache_is_readable_without_rewrite_or_download(self):
+        authority, manifest = self.seed_prior_window()
+        self.assertEqual(pinned.CUTOFF.isoformat(), '2026-10-05T23:59:59+00:00')
+        before, puts = copy.deepcopy(self.r2.objects), list(self.r2.puts)
+        with patch.object(seed, 'ORIGINAL_CODE', self.hashes):
+            for key, stored in before.items():
+                if key.endswith('/receipt.json'):
+                    self.assertEqual(self.cache.get(json.loads(stored['Body'])['binding']), self.payload)
+        self.assertEqual(self.r2.puts, puts)
+        self.gets.clear(); self.transport.reset_mock()
+        summary, _ = self.seed(authority, manifest, maximum=0)
+        self.assertEqual(summary['existing_cache_hits'], 6)
+        self.assertTrue(summary['all_original_results_cached'])
+        self.transport.assert_not_called()
+        self.assertEqual(self.r2.objects, before)
+        # A fresh full terminal check may preserve the identical immutable
+        # proof again. Existing auth, ZIP and result receipts have no PUT.
+        self.assertEqual(len(self.r2.puts) - len(puts), 1)
+        self.assertTrue(self.r2.puts[-1]['Key'].startswith(seed.PROOF_PREFIX))
+
+    def test_new_legacy_put_rejects_prior_window_auth_before_any_mutation(self):
+        self.seed_prior_window()
+        auth = next(json.loads(value['Body']) for key, value in self.r2.objects.items()
+                    if '/auth-' in key)
+        before, puts = copy.deepcopy(self.r2.objects), list(self.r2.puts)
+        with self.assertRaisesRegex(pinned.PinnedTransportError, '^prepared_authentication_required$'):
+            self.cache.put(auth['binding'], self.payload, auth['authentication'], auth['terminal_proof_sha256'])
+        self.assertEqual(self.r2.objects, before)
+        self.assertEqual(self.r2.puts, puts)
+
+    def test_partial_prior_auth_remains_immutable_conflict_in_current_window(self):
+        self.seed_prior_window()
+        receipt_key = next(key for key in self.r2.objects if key.endswith('/receipt.json'))
+        receipt = json.loads(self.r2.objects[receipt_key]['Body'])
+        auth_key = f'{seed.PREFIX}/{receipt["identity_sha256"]}/auth-{receipt["zip_sha256"]}.json'
+        auth = json.loads(self.r2.objects[auth_key]['Body'])
+        del self.r2.objects[receipt_key]
+        del self.r2.objects[receipt['blob_key']]
+        before, puts = copy.deepcopy(self.r2.objects), len(self.r2.puts)
+        with self.assertRaisesRegex(ValueError, '^cache_write_conflict$'):
+            self.cache.put(auth['binding'], self.payload, authentication(), auth['terminal_proof_sha256'])
+        self.assertEqual(self.r2.objects, before)
+        self.assertEqual(len(self.r2.puts) - puts, 1)
+        self.assertEqual(self.r2.puts[-1]['Key'], auth_key)
+
+    def test_stored_legacy_auth_bad_window_or_fields_are_rejected_even_with_rebound_hashes(self):
+        self.seed_prior_window()
+        receipt_key = next(key for key in self.r2.objects if key.endswith('/receipt.json'))
+        original = copy.deepcopy(self.r2.objects)
+        receipt = json.loads(original[receipt_key]['Body'])
+        auth_key = f'{seed.PREFIX}/{receipt["identity_sha256"]}/auth-{receipt["zip_sha256"]}.json'
+        for change in ({'cutoff_utc': '2026-10-03T23:59:59+00:00'},
+                       {'cutoff_utc': '2026-10-06T23:59:59+00:00'},
+                       {'cutoff_utc': True}, {'url': 'https://PRIVATE'},
+                       {'historical_ca_checks': True}):
+            self.r2.objects = copy.deepcopy(original)
+            auth = json.loads(self.r2.objects[auth_key]['Body'])
+            auth['authentication'].update(change)
+            self.r2.objects[auth_key]['Body'] = seed.canonical(auth)
+            self.r2.objects[auth_key]['Metadata']['sha256'] = seed.digest(self.r2.objects[auth_key]['Body'])
+            rebound = dict(receipt, authentication_receipt_sha256=self.r2.objects[auth_key]['Metadata']['sha256'])
+            self.r2.objects[receipt_key]['Body'] = seed.canonical(rebound)
+            self.r2.objects[receipt_key]['Metadata']['sha256'] = seed.digest(self.r2.objects[receipt_key]['Body'])
+            with self.subTest(change=change), patch.object(seed, 'ORIGINAL_CODE', self.hashes), self.assertRaisesRegex(
+                    pinned.PinnedTransportError, '^prepared_authentication_required$'):
+                self.cache.get(receipt['binding'])
 
     def test_signed_url_refresh_does_not_change_cache_identity(self):
         authority, manifest, _ = self.authenticate(); self.seed(authority, manifest)

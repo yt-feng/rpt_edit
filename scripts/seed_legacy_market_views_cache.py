@@ -23,7 +23,8 @@ import consume_legacy_mineru as consumer
 import inspect_legacy_mineru as inspect
 from mineru_result_cache import ResultCache, MAX_RECEIPT, validate_zip
 from mineru_pinned_result_transport import (PinnedResultTransport, prepare_authentication,
-    require_before_cutoff, require_cloud_manual, verified_authentication, fixed_result_uri, PinnedTransportError)
+    require_before_cutoff, require_cloud_manual, verified_authentication, verified_stored_authentication,
+    fixed_result_uri, PinnedTransportError)
 from recover_durable_mineru_sources import MANIFEST, PRODUCER, frozen_inputs, exact_date, digest, decode
 from recover_legacy_mineru_cloud import Github
 from seed_mineru_result_cache import CutoffCacheClient, SAFE_ERRORS as PIN_SAFE_ERRORS
@@ -385,7 +386,7 @@ class LegacyResultCache(ResultCache):
                 or value.get('canonical_task_admission') is not False
                 or not isinstance(value.get('terminal_proof_sha256'), str) or not HASH.fullmatch(value['terminal_proof_sha256'])):
             fail('legacy_auth_receipt')
-        verified_authentication(value['authentication'])
+        verified_stored_authentication(value['authentication'])
         proof = self._read(f'{PROOF_PREFIX}/{value["terminal_proof_sha256"]}.json',
                            maximum=MAX_PROOF, content_type='application/json',
                            identity_sha=value['terminal_proof_sha256'])
