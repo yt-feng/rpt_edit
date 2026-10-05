@@ -21,7 +21,7 @@ on:
         description: "Private source: xhs, validated original-PDF backup, MinerU recovery, or complete accepted legacy Daily tasks"
         required: true
         type: choice
-        options: [xhs, native-pdf, mineru-recovery, legacy-daily]
+        options: [xhs, native-pdf, mineru-recovery, legacy-daily, source-pages]
         default: xhs
       native_quality_fixture_json:
         description: "Optional numeric value and page-position acceptance fixtures for native PDF sources"
@@ -80,6 +80,7 @@ env:
   PRIVATE_MARKET_SOURCES_ROOT: "_private-workflow-handoff/market-sources"
   PRIVATE_MINERU_SOURCES_ROOT: "_private-workflow-handoff/mineru-market-sources"
   PRIVATE_LEGACY_SOURCES_ROOT: "_private-workflow-handoff/legacy-market-sources"
+  PRIVATE_PREVIEW_SOURCES_ROOT: "_private-workflow-handoff/market-preview-sources"
 
 concurrency:
   group: ${{ inputs.acceptance_only == true && format('market-views-acceptance-{0}', github.run_id) || 'market-views-daily-pdf' }}
@@ -141,7 +142,7 @@ jobs:
           done
           case "$SOURCE_HANDOFF_KIND" in
             xhs) ;;
-            native-pdf|mineru-recovery|legacy-daily)
+            native-pdf|mineru-recovery|legacy-daily|source-pages)
               if [ -z "$SOURCE_HANDOFF_RUN_ID" ] || [ "$EXPECTED_SHARDS" != "1" ] || ! [[ "$EXPECTED_ARTICLES" =~ ^[1-9][0-9]*$ ]]; then
                 echo "Source recovery requires its original run, one validated shard and an exact report count." >&2
                 exit 1
@@ -178,7 +179,7 @@ jobs:
             --expected-reports "${{ github.event.inputs.expected_articles || '0' }}"
 
       - name: Install private handoff dependency
-        run: python -m pip install boto3 requests PyMuPDF Pillow
+        run: python -m pip install boto3 requests PyMuPDF Pillow pypdf reportlab
 
       - name: Download bank inputs from private R2
         if: ${{ github.event.inputs.source_handoff_run_id != '' }}
@@ -203,11 +204,57 @@ jobs:
             SOURCE_PREFIX="$PRIVATE_MINERU_SOURCES_ROOT"
           elif [ "$SOURCE_HANDOFF_KIND" = "legacy-daily" ]; then
             SOURCE_PREFIX="$PRIVATE_LEGACY_SOURCES_ROOT"
+          elif [ "$SOURCE_HANDOFF_KIND" = "source-pages" ]; then
+            SOURCE_PREFIX="$PRIVATE_PREVIEW_SOURCES_ROOT"
           fi
           python scripts/private_workflow_handoff.py download-shards \
             --prefix "$SOURCE_PREFIX/$SOURCE_HANDOFF_RUN_ID/$EXPECTED_BANK_DATE" \
             --destination "xhs_notes/dropbox/$EXPECTED_BANK_DATE" \
             --expected-count "$EXPECTED_SHARDS"
+
+      - name: Verify and render the exact bounded original-page edition
+        if: ${{ inputs.source_handoff_kind == 'source-pages' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_RUN_ID: ${{ inputs.source_handoff_run_id }}
+          ACCEPTANCE_ONLY: ${{ inputs.acceptance_only }}
+          SOURCE_DATE: ${{ inputs.expected_bank_date }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET || 'portal-suite-pdfs' }}
+        run: |
+          python - <<'PY'
+          import json, os, subprocess, sys
+          from pathlib import Path
+          sys.path.insert(0, 'scripts')
+          from daily_market_source_status import require_preview_producer
+          from market_views_source_preview import render, validate
+          from upload_market_view_to_r2 import private_publication_complete
+          repo, run_id, date = os.environ['GITHUB_REPOSITORY'], os.environ['SOURCE_RUN_ID'], os.environ['SOURCE_DATE']
+          def get(path):
+              return json.loads(subprocess.check_output(['gh', 'api', f'repos/{repo}/{path}'], text=True))
+          producer = get(f'actions/runs/{run_id}')
+          sha = require_preview_producer(producer, get(f'actions/runs/{run_id}/jobs?filter=latest&per_page=100'), run_id, repo)
+          root = Path('xhs_notes/dropbox') / date / 'shard_0'
+          pdf = Path('market_view_summaries') / date / f'market_views_{date}.pdf'
+          expected = int(os.environ['EXPECTED_ARTICLES'])
+          validate(root, expected, date=date, run_id=run_id, sha=sha)
+          # Never replace a complete existing edition merely because parsing
+          # failed on a repeat Daily invocation for the same source date.
+          from market_views_source_preview import readable_pdf, degraded_pdf
+          reuse = (os.environ.get('ACCEPTANCE_ONLY') != 'true'
+                   and readable_pdf(pdf) and private_publication_complete(date,
+                       expected_edition='source-pages' if degraded_pdf(pdf) else 'standard'))
+          edition = 'source-pages' if not reuse or degraded_pdf(pdf) else 'standard'
+          backup_notice = ('source-pages-reused' if reuse else 'source-pages') if edition == 'source-pages' else ''
+          result = ({'status': 'existing-publication-reused'} if reuse else
+                    render(root, pdf, expected, date=date, run_id=run_id, sha=sha))
+          with open(os.environ['GITHUB_ENV'], 'a') as target:
+              target.write(f'DATE_FOLDER={date}\nEXPECTED_DATE_FOLDER={date}\nSHOULD_BUILD={str(not reuse).lower()}\nMARKET_EDITION={edition}\nBACKUP_NOTICE={backup_notice}\n')
+          print(json.dumps(result))
+          PY
 
       - name: Verify complete native PDF source receipt
         if: ${{ inputs.source_handoff_kind == 'native-pdf' }}
@@ -372,12 +419,14 @@ jobs:
           PY
 
       - name: Resolve and validate primary bank source
+        if: ${{ inputs.source_handoff_kind != 'source-pages' }}
         env:
           REQUESTED_DATE_FOLDER: ${{ github.event.inputs.date_folder || 'latest' }}
           EXPECTED_BANK_DATE: ${{ github.event.inputs.expected_bank_date || '' }}
           EXPECTED_ARTICLES: ${{ inputs.expected_articles || '0' }}
           FORCE_REBUILD: ${{ github.event.inputs.force_rebuild || 'false' }}
           ACCEPTANCE_ONLY: ${{ inputs.acceptance_only }}
+          SOURCE_HANDOFF_KIND: ${{ inputs.source_handoff_kind }}
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
@@ -390,6 +439,7 @@ jobs:
           sys.path.insert(0, "scripts")
           from build_market_views_pdf import source_date_dirs, require_primary_report_dirs, find_report_dirs
           from upload_market_view_to_r2 import private_publication_complete
+          from market_views_source_preview import degraded_pdf
 
           root = Path("xhs_notes/dropbox")
           requested = os.environ["REQUESTED_DATE_FOLDER"]
@@ -408,12 +458,15 @@ jobs:
           pdf = Path(f"market_view_summaries/{issue_date}/market_views_{issue_date}.pdf")
           valid_existing = (pdf.is_file() and pdf.stat().st_size > 1024
                             and pdf.open("rb").read(5) == b"%PDF-")
+          # A recovered primary path must upgrade a previously published
+          # source-page edition instead of treating it as the normal summary.
+          valid_existing = valid_existing and not degraded_pdf(pdf)
           should_build = (os.environ["FORCE_REBUILD"] == "true"
                           or os.environ.get("ACCEPTANCE_ONLY", "") == "true" or not valid_existing)
           if not should_build:
               # The checked-out PDF is public-safe. Repair missing private
               # publication only by rebuilding from the verified full sources.
-              should_build = not private_publication_complete(issue_date)
+              should_build = not private_publication_complete(issue_date, expected_edition="standard")
           with open(os.environ["GITHUB_ENV"], "a", encoding="utf-8") as env:
               for key, value in {
                   "BUILD_DATE_FOLDER": issue_date,
@@ -421,6 +474,8 @@ jobs:
                   "DATE_FOLDER": issue_date,
                   "MINERU_SOURCE_IMAGE_COUNT": image_count,
                   "SHOULD_BUILD": str(should_build).lower(),
+                  "MARKET_EDITION": "standard",
+                  "BACKUP_NOTICE": "native-pdf" if should_build and os.environ.get("SOURCE_HANDOFF_KIND") == "native-pdf" else "",
               }.items():
                   env.write(f"{key}={value}\n")
           print(f"::notice::Bank date and issue={issue_date}; bank reports={len(bank_reports)}; "
@@ -433,7 +488,7 @@ jobs:
           python scripts/test_private_workflow_handoff.py
 
       - name: Install Python dependencies
-        if: ${{ env.SHOULD_BUILD != 'false' }}
+        if: ${{ env.SHOULD_BUILD != 'false' && inputs.source_handoff_kind != 'source-pages' }}
         run: |
           pip install -r requirements.txt
           pip install reportlab pillow pypdf
@@ -461,13 +516,13 @@ jobs:
           sudo apt-get install -y --no-install-recommends texlive-xetex texlive-latex-recommended texlive-lang-chinese fonts-noto-cjk
 
       - name: Materialize private publishing image
-        if: ${{ env.SHOULD_BUILD != 'false' }}
+        if: ${{ env.SHOULD_BUILD != 'false' && inputs.source_handoff_kind != 'source-pages' }}
         env:
           PORTAL_PRIVATE_PUBLISH_ASSET_KEY: ${{ secrets.PORTAL_PRIVATE_PUBLISH_ASSET_KEY }}
         run: bash scripts/materialize_private_social_asset.sh prompts
 
       - name: Build market views data and LaTeX source
-        if: ${{ env.SHOULD_BUILD != 'false' }}
+        if: ${{ env.SHOULD_BUILD != 'false' && inputs.source_handoff_kind != 'source-pages' }}
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_MARKET_VIEWS_API_KEY }}
           DEEPSEEK_USAGE_STAGE: market-views
@@ -509,7 +564,7 @@ jobs:
           echo "DATE_FOLDER=$RESOLVED_DATE_FOLDER" >> "$GITHUB_ENV"
 
       - name: Render fast PDF without LaTeX install
-        if: ${{ env.SHOULD_BUILD != 'false' }}
+        if: ${{ env.SHOULD_BUILD != 'false' && inputs.source_handoff_kind != 'source-pages' }}
         run: |
           set -o pipefail
           echo "::notice::Rendering market_views_<date>.pdf with ReportLab."
@@ -544,17 +599,20 @@ jobs:
       - name: Verify PDF exists before upload and commit
         if: ${{ env.SHOULD_BUILD != 'false' }}
         run: |
-          PDF_PATH="market_view_summaries/$DATE_FOLDER/market_views_$DATE_FOLDER.pdf"
-          if [ ! -f "$PDF_PATH" ]; then
-            echo "Expected PDF was not rendered: $PDF_PATH" >&2
-            exit 1
-          fi
-          PDF_BYTES="$(stat -c '%s' "$PDF_PATH")"
-          if [ "$PDF_BYTES" -le 1024 ]; then
-            echo "Expected PDF is too small: $PDF_PATH ($PDF_BYTES bytes)" >&2
-            exit 1
-          fi
-          echo "::notice::Verified exact Market Views PDF: $PDF_PATH ($PDF_BYTES bytes)."
+          python - <<'PY'
+          import os, sys
+          from pathlib import Path
+          sys.path.insert(0, 'scripts')
+          from market_views_source_preview import readable_pdf, digest
+          date = os.environ['DATE_FOLDER']
+          path = Path('market_view_summaries') / date / f'market_views_{date}.pdf'
+          if not readable_pdf(path):
+              raise SystemExit('Expected actual PDF did not open and render completely.')
+          sha = digest(path)
+          with open(os.environ['GITHUB_ENV'], 'a') as target:
+              target.write(f'PRIVATE_PDF_SHA256={sha}\n')
+          print(f'::notice::Verified actual PDF: {len(path.read_bytes())} bytes; SHA-256 {sha}.')
+          PY
 
       - name: Archive exact Market Views PDF in private R2
         if: ${{ env.SHOULD_BUILD != 'false' && inputs.acceptance_only != true }}
@@ -572,7 +630,7 @@ jobs:
           echo "::notice::Archiving the exact $EXPECTED_DATE_FOLDER Market Views PDF in private R2."
           python scripts/upload_market_view_to_r2.py \
             --date "$EXPECTED_DATE_FOLDER" \
-            --pdf "$PDF_PATH"
+            --pdf "$PDF_PATH" --edition "${MARKET_EDITION:-standard}"
 
       - name: Prepare public-safe Market Views PDF
         id: public_pdf
@@ -605,6 +663,41 @@ jobs:
             8 \
             true \
             true
+
+      - name: Verify the completed private publication receipt
+        if: ${{ env.SHOULD_BUILD != 'false' && inputs.acceptance_only != true }}
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET || 'portal-suite-pdfs' }}
+        run: |
+          python - <<'PY'
+          import os, sys
+          sys.path.insert(0, 'scripts')
+          from upload_market_view_to_r2 import private_publication_complete
+          if not private_publication_complete(os.environ['EXPECTED_DATE_FOLDER'], expected_sha256=os.environ['PRIVATE_PDF_SHA256']):
+              raise SystemExit('Market Views private publication did not verify after upload.')
+          print('Verified actual Market Views PDF and publication receipt in private R2.')
+          PY
+
+      - name: Send deduplicated backup exception notice
+        if: ${{ env.BACKUP_NOTICE != '' && inputs.acceptance_only != true }}
+        continue-on-error: true
+        env:
+          OPS_ALERT_SIGNING_KEY: ${{ secrets.OPS_ALERT_SIGNING_KEY || secrets.PASSWORD_SECRET }}
+          PORTAL_WORKER_URL: ${{ secrets.PORTAL_WORKER_URL }}
+        run: |
+          case "$BACKUP_NOTICE" in
+            source-pages) DETAIL='已验证并发布原报告限页来源版（解析服务异常），仅覆盖目录中标记的来源页。' ;;
+            source-pages-reused) DETAIL='已验证并复用现有备用来源版，未重新生成正常摘要。' ;;
+            native-pdf) DETAIL='MinerU 主路未完成；已通过严格原生文字或OCR校验并发布备用解析生成的日报。' ;;
+            *) echo 'Unknown backup notice category' >&2; exit 1 ;;
+          esac
+          python scripts/send_portal_ops_alert.py \
+            --subject 'Market Views 解析例外及交付结果' \
+            --text "$DETAIL 批次：$DATE_FOLDER。原始完成任务未重复提交。详情：$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \
+            --dedupe-key "market-views-source-edition:$DATE_FOLDER" --dedupe-hours 24 --severity warning
 
       - name: Preserve public-safe acceptance PDF
         if: ${{ inputs.acceptance_only == true && env.SHOULD_BUILD != 'false' && steps.public_pdf.conclusion == 'success' }}

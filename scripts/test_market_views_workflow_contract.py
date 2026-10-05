@@ -50,7 +50,7 @@ def job(path, name):
     ).group(1)
 
 
-def gate(block, results, *, selected="64", cancelled=False, plan=None):
+def gate(block, results, *, selected="64", cancelled=False, plan=None, primary_ready=None):
     expression = re.search(r"(?s)\bif:.*?\$\{\{(.*?)\}\}", block).group(1)
     expression = expression.replace("needs.*.result", repr(list(results.values())))
     expression = re.sub(
@@ -59,6 +59,9 @@ def gate(block, results, *, selected="64", cancelled=False, plan=None):
     expression = expression.replace(
         "needs.select-macro-reports.outputs.selected_count", repr(selected)
     )
+    if primary_ready is None:
+        primary_ready = {"success": "true", "failure": "false"}.get(results.get("process-shard"), "")
+    expression = expression.replace("needs.source-outcome.outputs.primary_ready", repr(primary_ready))
     options = {
         "wechat_draft_upload": "true", "wechat_draft_source": "xhs_notes",
         "translated_report_count": "3",
@@ -248,11 +251,63 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
         results["recover-market-sources"] = "success"
         self.assertTrue(gate(trigger, results))
         self.assertFalse(gate(job(UPSTREAM, "push-xhs-notes-wechat-drafts"), results))
-        self.assertIn('SOURCE_KIND=native-pdf', trigger)
+        self.assertIn('SOURCE_KIND="$RECOVERY_KIND"', trigger)
         self.assertIn('-f source_handoff_kind="$SOURCE_KIND"', trigger)
         self.assertIn('-f expected_articles="$EXPECTED_ARTICLES"', trigger)
         self.assertIn('-f date_folder="$DATE_FOLDER"', trigger)
         self.assertNotIn('-f date_folder=latest', trigger)
+
+    def test_continue_on_error_uses_observed_shard_outcomes_and_requires_real_delivery(self):
+        self.assertIn('continue-on-error: true', job(UPSTREAM, 'process-shard'))
+        recovered = {'select-macro-reports': 'success', 'process-shard': 'success'}
+        self.assertTrue(gate(job(UPSTREAM, 'recover-market-sources'), recovered, primary_ready='false'))
+        self.assertFalse(gate(job(UPSTREAM, 'trigger-market-views'), recovered, primary_ready='false'))
+        self.assertFalse(gate(job(UPSTREAM, 'push-xhs-notes-wechat-drafts'), recovered, primary_ready='false'))
+        self.assertTrue(gate(job(UPSTREAM, 'trigger-market-views'),
+                             {**recovered, 'recover-market-sources': 'success'}, primary_ready='false'))
+        final = job(UPSTREAM, 'validate-market-delivery')
+        self.assertIn('test "$DELIVERY_RESULT" = success', final)
+        self.assertIn('needs.trigger-market-views.result', final)
+        self.assertIn('validate-market-delivery', job(UPSTREAM, 'notify-failure'))
+        recovery = job(UPSTREAM, 'recover-market-sources')
+        self.assertIn('market_views_source_preview.py prepare', recovery)
+        self.assertIn('source_kind=source-pages', recovery)
+        self.assertNotIn('--mineru-retries', recovery)
+
+    def test_actual_delivery_gate_distinguishes_provider_recovery_noop_and_real_failure(self):
+        block = job(UPSTREAM, 'validate-market-delivery')
+        program = textwrap.dedent(block.split('        run: |\n', 1)[1])
+        base = {'SELECTION_RESULT': 'success', 'SOURCE_STATUS': 'success', 'DELIVERY_RESULT': 'success',
+                'PRIMARY_READY': 'false', 'PROVIDER_ONLY': 'true', 'NO_WORK': 'false', 'SELECTED_COUNT': '4'}
+        cases = [({}, 0), ({'PRIMARY_READY': 'true', 'PROVIDER_ONLY': 'false'}, 0),
+                 ({'PROVIDER_ONLY': 'false'}, 1), ({'DELIVERY_RESULT': 'failure'}, 1),
+                 ({'SOURCE_STATUS': 'failure'}, 1), ({'SELECTION_RESULT': 'failure'}, 1),
+                 ({'NO_WORK': 'true', 'SELECTED_COUNT': '0', 'DELIVERY_RESULT': 'skipped'}, 0),
+                 ({'NO_WORK': 'false', 'SELECTED_COUNT': '0', 'DELIVERY_RESULT': 'skipped'}, 1)]
+        for changed, expected in cases:
+            result = subprocess.run(['bash', '-e', '-c', program], env={**os.environ, **base, **changed},
+                                    capture_output=True, text=True)
+            self.assertEqual(bool(result.returncode), bool(expected), (changed, result.stderr))
+            if changed.get('NO_WORK') == 'true':
+                self.assertIn('no PDF was generated or claimed', result.stdout)
+        proof = job(UPSTREAM, 'process-shard').split('- name: Confirm provider-only source degradation', 1)[1].split('\n      - name:', 1)[0]
+        self.assertNotIn('continue-on-error', proof, 'REST proof conclusion must reflect a failed proof')
+        generate = job(UPSTREAM, 'process-shard').split('- name: Generate shard outputs', 1)[1].split('\n      - name:', 1)[0]
+        self.assertLess(generate.index('rm -f -- "$OUTPUT_DIR/batch_run_summary.json"'),
+                        generate.index('python scripts/run_pdf_to_xhs_in_batches.py'))
+
+    def test_exception_mail_follows_successful_backup_publication_and_exact_private_sha(self):
+        market = MARKET.read_text()
+        step = market.split('- name: Send deduplicated backup exception notice', 1)[1].split('\n      - name:', 1)[0]
+        self.assertIn("env.BACKUP_NOTICE != ''", step)
+        self.assertNotIn('failure()', step)
+        self.assertIn('native-pdf)', step)
+        self.assertIn('source-pages-reused)', step)
+        self.assertIn('--dedupe-hours 24', step)
+        self.assertLess(market.index('- name: Verify the completed private publication receipt'),
+                        market.index('- name: Send deduplicated backup exception notice'))
+        self.assertIn("expected_sha256=os.environ['PRIVATE_PDF_SHA256']", market)
+        self.assertLess(market.index('PRIVATE_PDF_SHA256={sha}'), market.index('- name: Prepare public-safe Market Views PDF'))
 
     def test_native_receipt_is_checked_before_idempotency_or_paid_synthesis(self):
         market = MARKET.read_text()
@@ -564,11 +619,13 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
             values = dict(line.split("=", 1) for line in env_file.read_text().splitlines())
             self.assertEqual(values["SHOULD_BUILD"], "false")
             environment["FORCE_REBUILD"] = "true"
+            environment["SOURCE_HANDOFF_KIND"] = "native-pdf"
             env_file.write_text("")
             result = run_actual_market_resolver(root, environment, client)
             self.assertEqual(result.returncode, 0, result.stderr)
             values = dict(line.split("=", 1) for line in env_file.read_text().splitlines())
             self.assertEqual(values["SHOULD_BUILD"], "true")
+            self.assertEqual(values["BACKUP_NOTICE"], "native-pdf")
             # Acceptance must rebuild an already published issue while still
             # checking the real complete source count before synthesis.
             environment["FORCE_REBUILD"] = "false"

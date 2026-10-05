@@ -237,6 +237,8 @@ def validate_existing_private_pair(
 def private_publication_complete(
     date_value: str,
     *,
+    expected_sha256: str | None = None,
+    expected_edition: str | None = None,
     client: Any | None = None,
     bucket: str | None = None,
 ) -> bool:
@@ -258,7 +260,7 @@ def private_publication_complete(
     if not pdf_exists or not item_exists:
         return False
     try:
-        validate_existing_private_pair(
+        item = validate_existing_private_pair(
             resolved_client, resolved_bucket, pdf_key=pdf_key, item_key=item_key,
             pdf_head=pdf_head, item_head=item_head, issue_date=issue_date,
             date_key=date_key, filename=f"market_views_{date_key}.pdf",
@@ -272,7 +274,9 @@ def private_publication_complete(
         if _r2_response_is_missing(exc):
             return False
         raise
-    return True
+    if expected_edition is not None and item.get("edition", "standard") != expected_edition:
+        raise RuntimeError("Private and public Market Views editions disagree; refusing ambiguous reuse")
+    return expected_sha256 is None or item["sha256"] == expected_sha256
 
 
 def archive_private_variant(
@@ -331,10 +335,16 @@ def upload_market_view(
     bucket: str | None = None,
     updated_at: str | None = None,
     if_absent: bool = False,
+    edition: str = "standard",
 ) -> dict[str, Any]:
     """Upload and verify the PDF, then publish its metadata item."""
     issue_date, date_key = parse_issue_date(date_value)
+    if edition not in {"standard", "source-pages"}:
+        raise ValueError("Unknown Market Views edition")
     path = Path(pdf_path).expanduser()
+    if edition == "source-pages":
+        from market_views_source_preview import verify_pdf
+        verify_pdf(path)
     resolved_bucket = (bucket or os.getenv("R2_BUCKET", "").strip() or DEFAULT_BUCKET).strip()
     if not resolved_bucket:
         raise RuntimeError("R2 bucket name is empty")
@@ -427,6 +437,9 @@ def upload_market_view(
         "updated_at": timestamp,
         "uploaded_at": timestamp,
     }
+    if edition == "source-pages":
+        item.update(edition="source-pages", quality_status="degraded",
+                    title=f"Market Views 备用来源版（解析服务异常） · {issue_date.isoformat()}")
     item_body = (json.dumps(item, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n").encode(
         "utf-8"
     )
@@ -445,6 +458,7 @@ def main() -> int:
     parser.add_argument("--date", required=True, help="Issue date in YYMMDD or YYYYMMDD form.")
     parser.add_argument("--pdf", required=True, help="Path to market_views_<date>.pdf.")
     parser.add_argument("--bucket", default="", help="Optional R2 bucket override.")
+    parser.add_argument("--edition", choices=("standard", "source-pages"), default="standard")
     parser.add_argument(
         "--if-absent",
         action="store_true",
@@ -461,6 +475,7 @@ def main() -> int:
             args.date,
             bucket=args.bucket or None,
             if_absent=args.if_absent,
+            edition=args.edition,
         )
     except (FileNotFoundError, RuntimeError, ValueError) as exc:
         raise SystemExit(str(exc)) from exc

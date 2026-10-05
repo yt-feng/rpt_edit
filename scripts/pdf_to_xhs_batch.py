@@ -47,7 +47,7 @@ from wechat_article_quality import (
 )
 from deepseek_http import deepseek_api_keys_from_env, request_with_key_fallback
 from wechat_editorial_binding import bind_generated_article
-from mineru_task_ledger import R2Store, digest, exact_json, from_environment, input_sources, schema_v1
+from mineru_task_ledger import R2Store, digest, exact_json, from_environment, input_sources, schema_v1, LedgerError, DefinitiveAuthRejection
 from mineru_result_cache import ResultCache, ResultCacheError
 from mineru_daily_result_cache import persist_authentication
 from mineru_daily_result_transport import download_result
@@ -1101,8 +1101,30 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--mineru-retries", type=int, default=1, help="Compatibility option; accepted or ambiguous tasks are never resubmitted.")
     parser.add_argument("--mineru-no-progress-timeout", type=int, default=600, help="End this poll attempt after no state progress; retain the accepted task for the next run.")
     parser.add_argument("--mineru-source-map", help="Exact local source bindings supplied by the batch wrapper.")
+    parser.add_argument("--provider-outcome-path", help=argparse.SUPPRESS)
     parser.add_argument("--watermark", default=XHS_WATERMARK)
     return parser
+
+
+def record_provider_outcome(args, category):
+    path = getattr(args, "provider_outcome_path", None)
+    if path:
+        Path(path).write_text(json.dumps({"schema": 1, "category": category}), encoding="utf-8")
+
+
+def recoverable_provider_error(error):
+    if isinstance(error, DefinitiveAuthRejection):
+        return True
+    if isinstance(error, NetworkStop):
+        return str(error) in {"network_stop", "tls_certificate_expired"}
+    if isinstance(error, LedgerError):
+        return (str(error) in {
+            "All configured MinerU credentials were definitively rejected; saved batch is auth_rejected",
+            "Task attempt time budget exhausted; saved task retained",
+            "MinerU GET transport outcome unknown; saved task retained",
+            "MinerU POST transport outcome unknown; saved task retained",
+        } or re.fullmatch(r"MinerU (?:request rejected or malformed|upload did not complete|response is not valid JSON): HTTP (?:401|402|403|408|429|5[0-9]{2})", str(error)) is not None)
+    return False
 
 
 def main() -> int:
@@ -1110,6 +1132,7 @@ def main() -> int:
     try:
         mineru_tokens = mineru_tokens_from_env()
         if not mineru_tokens:
+            record_provider_outcome(args, "mineru_unavailable")
             raise RuntimeError("Missing MinerU token. Please add repo secret MINER_U.")
         input_dir = Path(args.input_dir).resolve()
         output_dir = Path(args.output_dir).resolve()
@@ -1137,6 +1160,7 @@ def main() -> int:
             # No paid generation or downstream publication on partial extraction.
             log("Extraction incomplete; saved tasks retained for exact-source recovery.")
             original_failed = any(batch["failed"] for batch in task_summary.get("original_batches", []))
+            record_provider_outcome(args, "mineru_unavailable")
             return 2 if task_summary["failed"] or original_failed else 75
 
         args._mineru_result_cache, args._mineru_result_contexts = result_cache_contexts(ledger, sources, successful_rows)
@@ -1166,6 +1190,8 @@ def main() -> int:
                 if args._mineru_result_cache is not None and isinstance(exc, (ResultCacheError, NetworkStop, ConsumerError)):
                     # No retries, CDN fallback or later paid generation after a
                     # failed private cache read or strict result download.
+                    if recoverable_provider_error(exc) and not any(item.get("error") for item in summary):
+                        record_provider_outcome(args, "mineru_unavailable")
                     return 2
             summary.append(status)
             if not status.get("error"):
@@ -1177,6 +1203,8 @@ def main() -> int:
         log(f"Done. Results written to {output_dir}; successful_reports={successful_reports}.")
         return 0 if successful_reports == len(pdfs) else 2
     except Exception as exc:
+        if recoverable_provider_error(exc):
+            record_provider_outcome(args, "mineru_unavailable")
         print(f"ERROR: {exc}", file=sys.stderr)
         return 2
 

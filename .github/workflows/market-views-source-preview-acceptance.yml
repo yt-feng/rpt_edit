@@ -1,0 +1,82 @@
+name: Market Views original-page fallback acceptance
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Completed main Daily run with retained selected-macro-pdfs artifact
+        required: true
+        default: '37232504334'
+      date_folder:
+        description: Original source date with an existing production PDF to preserve
+        required: true
+        default: '261004'
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: market-source-preview-acceptance-${{ github.run_id }}
+  cancel-in-progress: false
+
+jobs:
+  frozen-source-acceptance:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install offline renderer and private object client
+        run: python -m pip install -r requirements.txt pypdf reportlab boto3
+      - name: Verify frozen original producer and upload gate
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          SOURCE_DATE: ${{ inputs.date_folder }}
+        run: |
+          python - <<'PY'
+          import json, os, re, subprocess, sys
+          sys.path.insert(0, 'scripts')
+          from accept_market_source_preview import verify_frozen_daily
+          run_id, date, repo = os.environ['SOURCE_RUN_ID'], os.environ['SOURCE_DATE'], os.environ['GITHUB_REPOSITORY']
+          if not re.fullmatch('[1-9][0-9]*', run_id) or not re.fullmatch('[0-9]{6}', date):
+              raise SystemExit('Invalid frozen source input')
+          def get(path):
+              return json.loads(subprocess.check_output(['gh', 'api', f'repos/{repo}/{path}'], text=True))
+          sha = verify_frozen_daily(get(f'actions/runs/{run_id}'),
+              get(f'actions/runs/{run_id}/jobs?filter=latest&per_page=100'), run_id, repo)
+          with open(os.environ['GITHUB_ENV'], 'a') as target:
+              target.write(f'SOURCE_SHA={sha}\nSOURCE_RUN_ID={run_id}\nSOURCE_DATE={date}\n')
+          PY
+      - name: Download only frozen original selection
+        uses: actions/download-artifact@v4
+        with:
+          name: selected-macro-pdfs-${{ inputs.source_run_id }}
+          run-id: ${{ inputs.source_run_id }}
+          github-token: ${{ github.token }}
+          path: _frozen_originals
+      - name: Inject provider failure and prove real errors remain fatal
+        run: python scripts/test_market_views_source_preview.py ProviderClassificationTests DailyOutcomeTests
+      - name: Render real frozen pages and verify isolated private upload
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET || 'portal-suite-pdfs' }}
+        run: |
+          python scripts/accept_market_source_preview.py \
+            --input-dir _frozen_originals --output-dir _preview_acceptance \
+            --date "$SOURCE_DATE" --source-run-id "$SOURCE_RUN_ID" --source-sha "$SOURCE_SHA"
+      - name: Preserve public-safe PDF and content-free acceptance receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: market-source-preview-acceptance-${{ github.run_id }}
+          path: |
+            _preview_acceptance/*.public.pdf
+            _preview_acceptance/acceptance.json
+          if-no-files-found: error
+          retention-days: 1

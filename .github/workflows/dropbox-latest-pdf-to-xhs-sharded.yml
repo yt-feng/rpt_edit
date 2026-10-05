@@ -332,6 +332,9 @@ jobs:
 
   process-shard:
     needs: [resolve-inputs, select-macro-reports]
+    # The final delivery gate accepts a verified, labelled source edition when
+    # parsing is unavailable. Actual matrix step failures remain inspectable.
+    continue-on-error: true
     env:
       OUTPUT_DIR: xhs_notes/dropbox/${{ needs.select-macro-reports.outputs.latest_folder }}/shard_${{ matrix.shard_index }}
       GENERATION_OPTIONS_JSON: ${{ toJSON(needs.resolve-inputs.outputs) }}
@@ -439,6 +442,7 @@ jobs:
           name: selected-macro-pdfs-${{ github.run_id }}
           path: _selected_macro_pdfs
       - name: Generate shard outputs
+        id: generate
         if: ${{ steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
         env:
           MINERU_LEDGER_BACKEND: r2
@@ -466,6 +470,8 @@ jobs:
             SKIP_EXISTING="false"
           fi
           mkdir -p "$OUTPUT_DIR"
+          # A restored prior attempt's provider failure cannot attest this attempt.
+          rm -f -- "$OUTPUT_DIR/batch_run_summary.json"
           cp "_selected_macro_pdfs/macro_classification_all.json" "$OUTPUT_DIR/macro_classification_all.json" || true
           cp "_selected_macro_pdfs/selected_macro_candidates.json" "$OUTPUT_DIR/selected_macro_candidates.json" || true
           cp "_selected_macro_pdfs/selected_to_process_manifest.json" "$OUTPUT_DIR/selected_to_process_manifest.json" || true
@@ -492,6 +498,18 @@ jobs:
             --length 1000 \
             --wechat-length "${{ needs.resolve-inputs.outputs.wechat_length }}" \
             --community-cta "${{ needs.resolve-inputs.outputs.community_cta }}" 2>&1 | tee "$OUTPUT_DIR/generate_progress.log"
+      - name: Confirm provider-only source degradation
+        if: ${{ always() && steps.generate.outcome == 'failure' }}
+        run: |
+          python - <<'PY'
+          import json, os, sys
+          from pathlib import Path
+          sys.path.insert(0, 'scripts')
+          from daily_market_source_status import require_provider_only_failure
+          summary = json.loads((Path(os.environ['OUTPUT_DIR']) / 'batch_run_summary.json').read_text())
+          count = require_provider_only_failure(summary)
+          print(f'::warning::{count} MinerU failure(s); completed tasks retained. Backup PDF may proceed.')
+          PY
       - name: Attach original images without additional copy generation
         if: ${{ steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
         env:
@@ -602,11 +620,38 @@ jobs:
           if-no-files-found: error
           retention-days: 30
 
+  source-outcome:
+    needs: [select-macro-reports, process-shard]
+    if: ${{ always() && !cancelled() && needs.select-macro-reports.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      primary_ready: ${{ steps.status.outputs.primary_ready }}
+      degraded_shards: ${{ steps.status.outputs.degraded_shards }}
+      provider_only: ${{ steps.status.outputs.provider_only }}
+      no_work: ${{ steps.status.outputs.no_work }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: scripts/daily_market_source_status.py
+          sparse-checkout-cone-mode: false
+      - name: Read actual shard outcomes and exact handoff gates
+        id: status
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPECTED_SHARDS: ${{ needs.select-macro-reports.outputs.effective_shard_count }}
+          SELECTED_COUNT: ${{ needs.select-macro-reports.outputs.selected_count }}
+        run: |
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/jobs?filter=latest&per_page=100" > "$RUNNER_TEMP/daily-jobs.json"
+          python3 scripts/daily_market_source_status.py \
+            --jobs "$RUNNER_TEMP/daily-jobs.json" --expected-shards "$EXPECTED_SHARDS" --selected-count "$SELECTED_COUNT" \
+            --run-id "$GITHUB_RUN_ID" --execution-sha "$GITHUB_SHA" >> "$GITHUB_OUTPUT"
+
   package-publish-ready:
     # ZIP packaging and direct R2 consumers are sibling branches. Only actual
     # artifact consumers should depend on packaging; all must finish before cleanup.
-    needs: [resolve-inputs, select-macro-reports, process-shard]
-    if: ${{ !cancelled() && needs.process-shard.result == 'success' }}
+    needs: [resolve-inputs, select-macro-reports, process-shard, source-outcome]
+    if: ${{ !cancelled() && needs.process-shard.result == 'success' && needs.source-outcome.outputs.primary_ready == 'true' }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -672,10 +717,12 @@ jobs:
     # Completed original PDF artifacts remain usable when MinerU extraction,
     # its result CDN, or report-copy generation fails. This branch never makes
     # another MinerU submission or changes the notes job's failure state.
-    needs: [resolve-inputs, select-macro-reports, process-shard]
-    if: ${{ always() && !cancelled() && needs.select-macro-reports.result == 'success' && needs.process-shard.result == 'failure' && needs.select-macro-reports.outputs.selected_count != '0' }}
+    needs: [resolve-inputs, select-macro-reports, process-shard, source-outcome]
+    if: ${{ always() && !cancelled() && needs.select-macro-reports.result == 'success' && needs.source-outcome.outputs.primary_ready == 'false' && needs.select-macro-reports.outputs.selected_count != '0' }}
     runs-on: ubuntu-latest
     timeout-minutes: 120
+    outputs:
+      source_kind: ${{ steps.source-kind.outputs.source_kind }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -687,6 +734,7 @@ jobs:
       - name: Install native source and handoff dependencies
         run: python -m pip install PyMuPDF Pillow "boto3>=1.37.32,<2"
       - name: Install enabled cloud OCR backup
+        continue-on-error: true
         if: ${{ vars.MARKET_VIEWS_OCR_BACKUP_ENABLED == 'true' }}
         run: |
           sudo apt-get update
@@ -702,6 +750,8 @@ jobs:
           name: selected-macro-pdfs-${{ github.run_id }}
           path: _selected_macro_pdfs
       - name: Extract and verify every original report for Market Views
+        id: native-extract
+        continue-on-error: true
         env:
           ENABLE_OCR: ${{ vars.MARKET_VIEWS_OCR_BACKUP_ENABLED || 'false' }}
           DATE_FOLDER: ${{ needs.select-macro-reports.outputs.latest_folder }}
@@ -727,12 +777,16 @@ jobs:
             --execution-sha "$GITHUB_SHA" \
             --original-source-run-id "$GITHUB_RUN_ID"
       - name: Audit complete cloud OCR backup evidence
+        id: native-audit
+        if: ${{ steps.native-extract.outcome == 'success' }}
+        continue-on-error: true
         run: |
           python scripts/audit_market_views_ocr_receipt.py \
             --source-dir _native_market_sources/shard_0 \
             --expected-reports "${{ needs.select-macro-reports.outputs.selected_count }}" \
             --summary "$RUNNER_TEMP/market-views-ocr-audit.json"
       - name: Save complete native sources to private R2
+        if: ${{ steps.native-audit.outcome == 'success' }}
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -743,10 +797,45 @@ jobs:
             --source _native_market_sources/shard_0 \
             --key "_private-workflow-handoff/market-sources/${{ github.run_id }}/${{ needs.select-macro-reports.outputs.latest_folder }}/shard_0.tar.gz"
 
+      - name: Prepare bounded original-page edition
+        if: ${{ steps.native-extract.outcome != 'success' || steps.native-audit.outcome != 'success' }}
+        env:
+          DATE_FOLDER: ${{ needs.select-macro-reports.outputs.latest_folder }}
+          EXPECTED_ARTICLES: ${{ needs.select-macro-reports.outputs.selected_count }}
+        run: |
+          python scripts/market_views_source_preview.py prepare \
+            --input-dir _selected_macro_pdfs --manifest _selected_macro_pdfs/selected_to_process_manifest.json \
+            --source-dir _market_preview_sources/shard_0 --expected-reports "$EXPECTED_ARTICLES" \
+            --date "$DATE_FOLDER" --producer-run-id "$GITHUB_RUN_ID" --execution-sha "$GITHUB_SHA"
+
+      - name: Save bounded original-page edition to private R2
+        if: ${{ steps.native-extract.outcome != 'success' || steps.native-audit.outcome != 'success' }}
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python scripts/private_workflow_handoff.py upload-dir \
+            --source _market_preview_sources/shard_0 \
+            --key "_private-workflow-handoff/market-preview-sources/${{ github.run_id }}/${{ needs.select-macro-reports.outputs.latest_folder }}/shard_0.tar.gz"
+
+      - name: Select the verified source edition
+        id: source-kind
+        env:
+          NATIVE_AUDIT: ${{ steps.native-audit.outcome }}
+        run: |
+          if [ "$NATIVE_AUDIT" = success ]; then
+            echo "source_kind=native-pdf" >> "$GITHUB_OUTPUT"
+          else
+            echo "source_kind=source-pages" >> "$GITHUB_OUTPUT"
+            echo "::warning::Structured degraded outcome: original-page edition; parsing and OCR synthesis are unavailable."
+          fi
+
   trigger-market-views:
     # PDF synthesis consumes the complete R2 shards directly, not the ZIP artifact.
-    needs: [resolve-inputs, select-macro-reports, process-shard, recover-market-sources]
-    if: ${{ always() && !cancelled() && (needs.process-shard.result == 'success' || needs.recover-market-sources.result == 'success') && needs.select-macro-reports.outputs.selected_count != '0' }}
+    needs: [resolve-inputs, select-macro-reports, process-shard, recover-market-sources, source-outcome]
+    if: ${{ always() && !cancelled() && (needs.source-outcome.outputs.primary_ready == 'true' || needs.recover-market-sources.result == 'success') && needs.select-macro-reports.outputs.selected_count != '0' }}
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
@@ -756,13 +845,14 @@ jobs:
           DATE_FOLDER: ${{ needs.select-macro-reports.outputs.latest_folder }}
           EXPECTED_SHARDS: ${{ needs.select-macro-reports.outputs.effective_shard_count }}
           RECOVERY_RESULT: ${{ needs.recover-market-sources.result }}
+          RECOVERY_KIND: ${{ needs.recover-market-sources.outputs.source_kind }}
           EXPECTED_ARTICLES: ${{ needs.select-macro-reports.outputs.selected_count }}
           MODEL: ${{ needs.resolve-inputs.outputs.model }}
           DEEPSEEK_BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
         run: |
           SOURCE_KIND=xhs
           if [ "$RECOVERY_RESULT" = "success" ]; then
-            SOURCE_KIND=native-pdf
+            SOURCE_KIND="$RECOVERY_KIND"
             EXPECTED_SHARDS=1
           fi
           echo "::notice::All bank-report shards for $DATE_FOLDER are in private R2. Dispatching the matching Market Views issue now."
@@ -786,9 +876,42 @@ jobs:
           echo "::notice::Waiting for Market Views run $MARKET_RUN_ID."
           gh run watch "$MARKET_RUN_ID" --repo "$GITHUB_REPOSITORY" --compact --exit-status --interval 15
 
+  validate-market-delivery:
+    needs: [resolve-inputs, select-macro-reports, source-outcome, recover-market-sources, trigger-market-views]
+    if: ${{ always() && !cancelled() && needs.resolve-inputs.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Require the actual PDF publication to finish
+        env:
+          SELECTION_RESULT: ${{ needs.select-macro-reports.result }}
+          DELIVERY_RESULT: ${{ needs.trigger-market-views.result }}
+          PRIMARY_READY: ${{ needs.source-outcome.outputs.primary_ready }}
+          SOURCE_STATUS: ${{ needs.source-outcome.result }}
+          PROVIDER_ONLY: ${{ needs.source-outcome.outputs.provider_only }}
+          NO_WORK: ${{ needs.source-outcome.outputs.no_work }}
+          SELECTED_COUNT: ${{ needs.select-macro-reports.outputs.selected_count }}
+        run: |
+          test "$SELECTION_RESULT" = success
+          test "$SOURCE_STATUS" = success
+          if [ "$SELECTED_COUNT" = 0 ] && [ "$NO_WORK" = true ]; then
+            test "$DELIVERY_RESULT" = skipped
+            echo "::notice::No new selected sources; no PDF was generated or claimed by this run."
+            exit 0
+          fi
+          test "$SELECTED_COUNT" -gt 0
+          test "$DELIVERY_RESULT" = success
+          if [ "$PRIMARY_READY" != true ] && [ "$PROVIDER_ONLY" != true ]; then
+            echo "Non-provider pipeline failure remains unresolved; backup delivery cannot hide it." >&2
+            exit 1
+          fi
+          if [ "$PRIMARY_READY" != true ]; then
+            echo "::warning::Market Views delivered through the verified backup. Report notes and derivative outputs remain deferred."
+          fi
+
   push-xhs-notes-wechat-drafts:
-    needs: [resolve-inputs, select-macro-reports, process-shard]
-    if: ${{ !cancelled() && needs.process-shard.result == 'success' && needs.resolve-inputs.outputs.wechat_draft_upload == 'true' && needs.resolve-inputs.outputs.wechat_draft_source == 'xhs_notes' }}
+    needs: [resolve-inputs, select-macro-reports, process-shard, source-outcome]
+    if: ${{ !cancelled() && needs.process-shard.result == 'success' && needs.source-outcome.outputs.primary_ready == 'true' && needs.resolve-inputs.outputs.wechat_draft_upload == 'true' && needs.resolve-inputs.outputs.wechat_draft_source == 'xhs_notes' }}
     runs-on: [self-hosted, wechat-draft]
     timeout-minutes: 180
     steps:
@@ -938,8 +1061,8 @@ jobs:
           exit 1
 
   plan-portal-translated-reports:
-    needs: [resolve-inputs, select-macro-reports, process-shard]
-    if: ${{ !cancelled() && needs.process-shard.result == 'success' && needs.resolve-inputs.outputs.translated_report_count != '0' }}
+    needs: [resolve-inputs, select-macro-reports, process-shard, source-outcome]
+    if: ${{ !cancelled() && needs.process-shard.result == 'success' && needs.source-outcome.outputs.primary_ready == 'true' && needs.resolve-inputs.outputs.translated_report_count != '0' }}
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     outputs:
@@ -1102,8 +1225,8 @@ jobs:
           retention-days: 30
 
   build-portal-translated-reports:
-    needs: [resolve-inputs, select-macro-reports, process-shard, plan-portal-translated-reports, translate-report-shard]
-    if: ${{ !cancelled() && needs.process-shard.result == 'success' && needs.translate-report-shard.result == 'success' && needs.resolve-inputs.outputs.translated_report_count != '0' }}
+    needs: [resolve-inputs, select-macro-reports, process-shard, plan-portal-translated-reports, translate-report-shard, source-outcome]
+    if: ${{ !cancelled() && needs.process-shard.result == 'success' && needs.source-outcome.outputs.primary_ready == 'true' && needs.translate-report-shard.result == 'success' && needs.resolve-inputs.outputs.translated_report_count != '0' }}
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     env:
@@ -1278,10 +1401,10 @@ jobs:
             core.info('Queued incremental public refresh after accepted articles and Blog archive.');
 
   trigger-chart-search-index:
-    needs: [resolve-inputs, select-macro-reports, process-shard]
+    needs: [resolve-inputs, select-macro-reports, process-shard, source-outcome]
     if: >-
       ${{
-        !cancelled() && needs.process-shard.result == 'success' &&
+        !cancelled() && needs.process-shard.result == 'success' && needs.source-outcome.outputs.primary_ready == 'true' &&
         needs.select-macro-reports.outputs.selected_count != '0' &&
         vars.CHART_SEARCH_ENABLED == 'true'
       }}
@@ -1330,16 +1453,22 @@ jobs:
         with:
           python-version: "3.11"
       - run: python -m pip install boto3
-      - name: Delete consumed native recovery sources
+      - name: Delete consumed recovery sources
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
           DATE_FOLDER: ${{ needs.select-macro-reports.outputs.latest_folder }}
+          SOURCE_KIND: ${{ needs.recover-market-sources.outputs.source_kind }}
         run: |
+          case "$SOURCE_KIND" in
+            native-pdf) SOURCE_PREFIX=market-sources ;;
+            source-pages) SOURCE_PREFIX=market-preview-sources ;;
+            *) echo "Unknown recovery source kind" >&2; exit 1 ;;
+          esac
           python scripts/private_workflow_handoff.py delete-prefix \
-            --prefix "_private-workflow-handoff/market-sources/${{ github.run_id }}/$DATE_FOLDER"
+            --prefix "_private-workflow-handoff/$SOURCE_PREFIX/${{ github.run_id }}/$DATE_FOLDER"
 
   cleanup-private-handoff:
     needs:
@@ -1386,6 +1515,8 @@ jobs:
 
   notify-failure:
     needs:
+      - source-outcome
+      - validate-market-delivery
       - resolve-inputs
       - select-macro-reports
       - process-shard
@@ -1408,6 +1539,8 @@ jobs:
         resolve=${{ needs.resolve-inputs.result }},
         select=${{ needs.select-macro-reports.result }},
         shards=${{ needs.process-shard.result }},
+        source_outcome=${{ needs.source-outcome.result }},
+        delivery_gate=${{ needs.validate-market-delivery.result }},
         package=${{ needs.package-publish-ready.result }},
         market_source_recovery=${{ needs.recover-market-sources.result }},
         market_views=${{ needs.trigger-market-views.result }},

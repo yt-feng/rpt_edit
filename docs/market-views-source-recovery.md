@@ -263,6 +263,35 @@ read back at 16:06 UTC on October 5 after complete October 2–4 source and PDF
 acceptance. October 1 special-page acceptance remains open; the full-source and
 numeric gates still reject any batch that does not pass.
 
+### Bounded original-page edition when structured extraction is unavailable
+
+The Daily workflow keeps MinerU and its validated private cache as the primary
+path. Failed matrix work is inspected by `source-outcome`; job-level error
+tolerance never admits an incomplete notes handoff to drafts, translations or
+chart indexing. Complete native/OCR receipts remain the first backup. If those
+gates fail, the selected original PDF artifact can produce a separate
+`source-pages` handoff without OCR, model calls or another MinerU submission.
+
+This edition is labelled **Market Views 备用来源版（解析服务异常）** on its cover,
+every source page and the private catalogue item. It contains a source directory
+with original PDF SHA-256 and original page positions, plus at most two full-page
+images per report, 120 source pages and 64 MiB of JPEG images in total. Selection
+looks only at the first 20 pages, preferring nonblank pages with native market
+keywords; scanned reports use their original page order. These are partial source
+excerpts, not verified summaries or a claim of complete report coverage. Every
+omitted source remains recorded in the directory. An entirely blank/unreadable
+batch, changed source hash or failed output validation remains a failure.
+
+The consumer validates the exact main Daily producer, successful preview upload
+gates and receipt/image hashes before rendering. It opens and rasterizes the
+actual resulting PDF, archives it privately, publishes the safe copy and reads
+back the private PDF/metadata pair. Only completion of that downstream job lets
+`validate-market-delivery` accept a degraded Daily delivery. Existing complete
+same-date publications are retained; recovered primary processing upgrades an
+earlier source edition. Failed parsing records and successful MinerU cache entries
+are unchanged. A deduplicated 24-hour exception email uses the existing operations
+mail Worker; an email failure does not invalidate an already verified PDF.
+
 [`market-views-native-recovery.yml`](../.github/workflows/market-views-native-recovery.yml)
 accepts an exact `date_folder` and `expected_articles`, with `enable_ocr=false`
 and `generate_pdf=true` defaults. `generate_pdf=false` performs complete source
@@ -1202,3 +1231,29 @@ public-safe PDF is uploaded as a member original. R2 authorization, TLS,
 timeout, unreadable lengths and short reads still fail without triggering
 synthesis. Force and acceptance-only semantics and private-before-public
 publication order are preserved.
+
+
+#### Bounded source edition acceptance and honest Daily status
+
+A failed matrix is eligible for successful degraded delivery only when each failed
+batch recorded a known MinerU failure and the only failed job step was generation.
+Checkout, source binding, private checkpoint/cache integrity, model quality,
+installation and handoff failures remain failures even if an independent backup
+PDF was delivered. A zero selected-source inventory is an explicit no-op and does
+not claim a new PDF. Both native/OCR delivery and source-page delivery send a
+24-hour deduplicated exception notice after successful publication; reusing an
+existing standard publication does not send a backup-published notice. A private
+and public edition mismatch fails instead of silently reclassifying the issue.
+New PDFs must open and render all pages before upload; the final private readback
+checks the exact SHA-256 recorded before public identity removal.
+
+For a no-provider production-cloud rehearsal, dispatch the manual-only
+`market-views-source-preview-acceptance.yml` on `main` with
+`source_run_id=37232504334` and `date_folder=261004`. It verifies the historical
+Daily selection/upload gates, reads the retained original selection, runs failure
+classification injections, generates a real labelled PDF and public-safe copy,
+and uploads/reads back only an isolated run/attempt-specific private object. It
+verifies the existing production issue before and after, then deletes that exact
+temporary object. It has no MinerU/DeepSeek secrets and does not overwrite, commit
+or email a production issue. A successful rehearsal is distinct from the next
+scheduled Daily run and its downstream publication.
