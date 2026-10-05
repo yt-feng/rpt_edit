@@ -76,8 +76,8 @@ class AuthenticationTests(unittest.TestCase):
     def test_public_fixed_identity_and_deadline_cannot_be_runtime_options(self):
         self.assertEqual(p.LEAF_SHA256, '12137420c572ee3fde42af27309c8f36efdfc4d07e76dcba801ddf6bc308aeb3')
         self.assertEqual(p.HOST, 'cdn-mineru.openxlab.org.cn')
-        self.assertEqual(p.CUTOFF.isoformat(), '2026-10-04T23:59:59+00:00')
-        self.assertEqual(p.CUTOFF - p.LEAF_EXPIRY, timedelta(hours=48))
+        self.assertEqual(p.CUTOFF.isoformat(), '2026-10-05T23:59:59+00:00')
+        self.assertEqual(p.CUTOFF - p.LEAF_EXPIRY, timedelta(hours=72))
 
     def test_one_strict_no_http_handshake_then_two_offline_chain_and_san_checks(self):
         leaf_hash, runner, calls = self.setup_runner()
@@ -148,9 +148,45 @@ class AuthenticationTests(unittest.TestCase):
     def test_authentication_has_a_strict_numeric_and_hash_whitelist(self):
         for change in ({'url': 'https://PRIVATE'}, {'pki_verified_now': True}, {'historical_ca_checks': True},
                        {'peer_chain_sha256': [p.LEAF_SHA256, 'PRIVATE']}, {'leaf_sha256': 'a' * 64},
-                       {'cutoff_utc': '2026-10-05T23:59:59+00:00'}):
+                       {'cutoff_utc': '2026-10-06T23:59:59+00:00'}):
             with self.subTest(change=change), self.assertRaises(p.PinnedTransportError):
                 p.verified_authentication(authentication() | change)
+
+    def test_stored_authentication_accepts_only_fixed_prior_and_current_windows(self):
+        current = authentication()
+        prior = current | {'cutoff_utc': '2026-10-04T23:59:59+00:00'}
+        for value in (current, prior):
+            validated = p.verified_stored_authentication(value)
+            self.assertEqual(validated, value)
+            self.assertIsNot(validated['peer_chain_sha256'], value['peer_chain_sha256'])
+        with self.assertRaisesRegex(p.PinnedTransportError, '^prepared_authentication_required$'):
+            p.verified_authentication(prior)
+        factory = Mock()
+        with self.assertRaisesRegex(p.PinnedTransportError, '^prepared_authentication_required$'):
+            p.PinnedResultTransport(prior, now=lambda: NOW, pool_factory=factory)
+        factory.assert_not_called()
+        for cutoff in ('2026-10-03T23:59:59+00:00', '2026-10-06T23:59:59+00:00',
+                       '2026-10-04T23:59:59Z', True, [], {}):
+            with self.subTest(cutoff=cutoff), self.assertRaisesRegex(p.PinnedTransportError, '^prepared_authentication_required$'):
+                p.verified_stored_authentication(current | {'cutoff_utc': cutoff})
+
+    def test_stored_and_current_authentication_share_every_other_strict_field(self):
+        changes = ({'url': 'https://PRIVATE'}, {'auth_mode': 'other'}, {'pki_verified_now': 0},
+                   {'historical_chain_verified': 1}, {'historical_ca_checks': True},
+                   {'leaf_sha256': 'a' * 64}, {'leaf_not_after_utc': p.CUTOFF.isoformat()},
+                   {'preflight_tls_connections': True}, {'preflight_http_requests': False},
+                   {'peer_chain_sha256': [p.LEAF_SHA256, 'PRIVATE']},
+                   {'peer_chain_sha256': [p.LEAF_SHA256]},
+                   {'peer_chain_sha256': [p.LEAF_SHA256] * 9})
+        for cutoff in (p.CUTOFF.isoformat(), '2026-10-04T23:59:59+00:00'):
+            value = authentication() | {'cutoff_utc': cutoff}
+            for change in changes:
+                with self.subTest(cutoff=cutoff, change=change), self.assertRaisesRegex(p.PinnedTransportError, '^prepared_authentication_required$'):
+                    p.verified_stored_authentication(value | change)
+            for key in p.AUTH_KEYS:
+                incomplete = dict(value); incomplete.pop(key)
+                with self.subTest(missing=key), self.assertRaisesRegex(p.PinnedTransportError, '^prepared_authentication_required$'):
+                    p.verified_stored_authentication(incomplete)
 
 
 class DownloadTests(unittest.TestCase):
