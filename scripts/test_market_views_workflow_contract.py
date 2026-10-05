@@ -50,7 +50,7 @@ def job(path, name):
     ).group(1)
 
 
-def gate(block, results, *, selected="64", cancelled=False, plan=None, primary_ready=None):
+def gate(block, results, *, selected="64", cancelled=False, plan=None, primary_ready=None, provider_only="false"):
     expression = re.search(r"(?s)\bif:.*?\$\{\{(.*?)\}\}", block).group(1)
     expression = expression.replace("needs.*.result", repr(list(results.values())))
     expression = re.sub(
@@ -62,9 +62,10 @@ def gate(block, results, *, selected="64", cancelled=False, plan=None, primary_r
     if primary_ready is None:
         primary_ready = {"success": "true", "failure": "false"}.get(results.get("process-shard"), "")
     expression = expression.replace("needs.source-outcome.outputs.primary_ready", repr(primary_ready))
+    expression = expression.replace("needs.source-outcome.outputs.provider_only", repr(provider_only))
     options = {
         "wechat_draft_upload": "true", "wechat_draft_source": "xhs_notes",
-        "translated_report_count": "3",
+        "translated_report_count": "3", "replay_source_run_id": "",
         **(plan or {}),
     }
     expression = re.sub(
@@ -285,6 +286,14 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
             self.assertIn(f'timeout-minutes: {timeout}', block)
             if name != 'Prepare bounded original-page edition':
                 self.assertIn('continue-on-error: true', block)
+
+    def test_frozen_replay_cannot_recover_when_accepted_task_binding_was_not_proven(self):
+        results = {'resolve-inputs': 'success', 'select-macro-reports': 'success', 'process-shard': 'success'}
+        recovery = job(UPSTREAM, 'recover-market-sources')
+        for proven in ('false', 'true'):
+            self.assertEqual(gate(recovery, results, primary_ready='false', provider_only=proven,
+                                  plan={'replay_source_run_id': '123'}), proven == 'true')
+        self.assertTrue(gate(recovery, results, primary_ready='false'))
 
     def test_actual_delivery_gate_distinguishes_provider_recovery_noop_and_real_failure(self):
         block = job(UPSTREAM, 'validate-market-delivery')

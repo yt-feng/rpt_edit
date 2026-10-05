@@ -11,6 +11,10 @@ on:
         description: "Optional exact report batch in YYMMDD or YYYYMMDD; empty uses latest. Batch date may be the previous Beijing day."
         required: false
         default: ""
+      replay_source_run_id:
+        description: "Manual only: replay an exact prior Daily original artifact; forbids new MinerU submissions and requires force/WeChat off, translations 0"
+        required: false
+        default: ""
       model:
         description: "DeepSeek model for report classification and content generation"
         required: true
@@ -125,6 +129,8 @@ jobs:
   resolve-inputs:
     runs-on: ubuntu-latest
     outputs:
+      replay_source_run_id: ${{ steps.vars.outputs.replay_source_run_id }}
+      forbid_new_submissions: ${{ steps.vars.outputs.forbid_new_submissions }}
       dropbox_root: ${{ steps.vars.outputs.dropbox_root }}
       dropbox_date_folder: ${{ steps.vars.outputs.dropbox_date_folder }}
       expected_dropbox_date_folder: ${{ steps.vars.outputs.expected_dropbox_date_folder }}
@@ -153,7 +159,29 @@ jobs:
     steps:
       - name: Resolve workflow inputs
         id: vars
+        env:
+          REPLAY_SOURCE_RUN_ID: ${{ github.event.inputs.replay_source_run_id }}
+          REPLAY_DATE: ${{ github.event.inputs.dropbox_date_folder }}
+          REPLAY_FORCE: ${{ github.event.inputs.force_reprocess }}
+          REPLAY_WECHAT: ${{ github.event.inputs.wechat_draft_upload }}
+          REPLAY_TRANSLATIONS: ${{ github.event.inputs.translated_report_count }}
+          REPLAY_LIMIT: ${{ github.event.inputs.max_total_reports }}
         run: |
+          FORBID_NEW_SUBMISSIONS=0
+          if [ -n "$REPLAY_SOURCE_RUN_ID" ]; then
+            test "$GITHUB_EVENT_NAME" = workflow_dispatch
+            test "$GITHUB_REF" = refs/heads/main
+            [[ "$REPLAY_SOURCE_RUN_ID" =~ ^[1-9][0-9]*$ ]] || exit 1
+            case "$REPLAY_DATE" in *[!0-9]*|'') exit 1 ;; esac
+            case "${#REPLAY_DATE}" in 6|8) ;; *) exit 1 ;; esac
+            test "$REPLAY_FORCE" = false
+            test "$REPLAY_WECHAT" = false
+            test "$REPLAY_TRANSLATIONS" = 0
+            test "$REPLAY_LIMIT" = 0
+            FORBID_NEW_SUBMISSIONS=1
+          fi
+          echo "replay_source_run_id=$REPLAY_SOURCE_RUN_ID" >> "$GITHUB_OUTPUT"
+          echo "forbid_new_submissions=$FORBID_NEW_SUBMISSIONS" >> "$GITHUB_OUTPUT"
           echo "dropbox_root=${{ github.event.inputs.dropbox_root || '/zip_backup' }}" >> "$GITHUB_OUTPUT"
           echo "dropbox_date_folder=${{ github.event.inputs.dropbox_date_folder || '' }}" >> "$GITHUB_OUTPUT"
           if [ "${{ github.event_name }}" = "schedule" ] || [ -z "${{ github.event.inputs.dropbox_date_folder }}" ]; then
@@ -200,10 +228,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     outputs:
-      latest_folder: ${{ steps.dropbox.outputs.latest_folder }}
-      pdf_count: ${{ steps.dropbox.outputs.pdf_count }}
-      macro_candidate_count: ${{ steps.select_macro.outputs.candidate_count }}
-      selected_count: ${{ steps.select_macro.outputs.process_count }}
+      latest_folder: ${{ steps.replay.outputs.latest_folder || steps.dropbox.outputs.latest_folder }}
+      pdf_count: ${{ steps.replay.outputs.pdf_count || steps.dropbox.outputs.pdf_count }}
+      macro_candidate_count: ${{ steps.replay.outputs.candidate_count || steps.select_macro.outputs.candidate_count }}
+      selected_count: ${{ steps.replay.outputs.process_count || steps.select_macro.outputs.process_count }}
       shard_indices: ${{ steps.shard_matrix.outputs.shard_indices }}
       effective_shard_count: ${{ steps.shard_matrix.outputs.effective_shard_count }}
     steps:
@@ -232,6 +260,7 @@ jobs:
       - name: Test Dropbox download retries
         run: python scripts/test_download_dropbox_latest_pdfs.py
       - name: Download PDFs from latest Dropbox date folder
+        if: ${{ needs.resolve-inputs.outputs.replay_source_run_id == '' }}
         id: dropbox
         env:
           DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
@@ -251,7 +280,31 @@ jobs:
             --expected-date-folder "$EXPECTED_DATE" \
             --max-folder-age-days 1 \
             --output-dir "_dropbox_latest_pdfs"
+      - name: Authenticate exact frozen Daily source
+        if: ${{ needs.resolve-inputs.outputs.replay_source_run_id != '' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPLAY_SOURCE_RUN_ID: ${{ needs.resolve-inputs.outputs.replay_source_run_id }}
+          REPLAY_DATE: ${{ needs.resolve-inputs.outputs.dropbox_date_folder }}
+        run: python scripts/replay_daily_sources.py origin
+      - name: Download frozen selected original PDFs
+        if: ${{ needs.resolve-inputs.outputs.replay_source_run_id != '' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: selected-macro-pdfs-${{ needs.resolve-inputs.outputs.replay_source_run_id }}
+          run-id: ${{ needs.resolve-inputs.outputs.replay_source_run_id }}
+          github-token: ${{ github.token }}
+          path: _selected_macro_pdfs
+      - name: Verify every frozen original byte and replay provenance
+        id: replay
+        if: ${{ needs.resolve-inputs.outputs.replay_source_run_id != '' }}
+        env:
+          REPLAY_SOURCE_RUN_ID: ${{ needs.resolve-inputs.outputs.replay_source_run_id }}
+          REPLAY_DATE: ${{ needs.resolve-inputs.outputs.dropbox_date_folder }}
+          REPLAY_ROOT: ${{ needs.resolve-inputs.outputs.dropbox_root }}
+        run: python scripts/replay_daily_sources.py selection
       - name: Select reports with DeepSeek
+        if: ${{ needs.resolve-inputs.outputs.replay_source_run_id == '' }}
         id: select_macro
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_SELECTION_API_KEY }}
@@ -274,12 +327,12 @@ jobs:
           cp "macro_selection_progress.log" "_selected_macro_pdfs/macro_selection_progress.log"
       - name: Print selection result
         run: |
-          echo "::notice::Latest Dropbox folder=${{ steps.dropbox.outputs.latest_folder }}, pdf_count=${{ steps.dropbox.outputs.pdf_count }}."
-          echo "::notice::Report candidates=${{ steps.select_macro.outputs.candidate_count }}, selected=${{ steps.select_macro.outputs.process_count }}."
+          echo "::notice::Latest Dropbox folder=${{ steps.replay.outputs.latest_folder || steps.dropbox.outputs.latest_folder }}, pdf_count=${{ steps.replay.outputs.pdf_count || steps.dropbox.outputs.pdf_count }}."
+          echo "::notice::Report candidates=${{ steps.replay.outputs.candidate_count || steps.select_macro.outputs.candidate_count }}, selected=${{ steps.replay.outputs.process_count || steps.select_macro.outputs.process_count }}."
       - name: Compute shard matrix
         id: shard_matrix
         env:
-          SELECTED_COUNT: ${{ steps.select_macro.outputs.process_count }}
+          SELECTED_COUNT: ${{ steps.replay.outputs.process_count || steps.select_macro.outputs.process_count }}
           SHARD_COUNT: ${{ needs.resolve-inputs.outputs.shard_count }}
           REPORTS_PER_SHARD: ${{ needs.resolve-inputs.outputs.reports_per_shard }}
         run: |
@@ -338,6 +391,7 @@ jobs:
     env:
       OUTPUT_DIR: xhs_notes/dropbox/${{ needs.select-macro-reports.outputs.latest_folder }}/shard_${{ matrix.shard_index }}
       GENERATION_OPTIONS_JSON: ${{ toJSON(needs.resolve-inputs.outputs) }}
+      MINERU_FORBID_NEW_SUBMISSIONS: ${{ needs.resolve-inputs.outputs.forbid_new_submissions }}
     runs-on: ubuntu-latest
     timeout-minutes: 90
     strategy:
@@ -718,7 +772,7 @@ jobs:
     # its result CDN, or report-copy generation fails. This branch never makes
     # another MinerU submission or changes the notes job's failure state.
     needs: [resolve-inputs, select-macro-reports, process-shard, source-outcome]
-    if: ${{ always() && !cancelled() && needs.select-macro-reports.result == 'success' && needs.source-outcome.outputs.primary_ready == 'false' && needs.select-macro-reports.outputs.selected_count != '0' }}
+    if: ${{ always() && !cancelled() && needs.select-macro-reports.result == 'success' && needs.source-outcome.outputs.primary_ready == 'false' && needs.select-macro-reports.outputs.selected_count != '0' && (needs.resolve-inputs.outputs.replay_source_run_id == '' || needs.source-outcome.outputs.provider_only == 'true') }}
     runs-on: ubuntu-latest
     timeout-minutes: 120
     outputs:

@@ -69,6 +69,57 @@ class LedgerTests(unittest.TestCase):
     def rewrite_batch(self, change):
         path = next((self.root / 'ledger/batches').glob('*.json'))
         value = json.loads(path.read_text()); change(value); path.write_bytes(m.encoded(value))
+    def test_replay_missing_or_changed_source_stops_before_any_new_claim_or_post(self):
+        self.run_task(self.inputs[:2])
+        before = {str(p.relative_to(self.root)): p.read_bytes() for p in (self.root/'ledger').rglob('*.json')}
+        for inputs in (self.inputs, [(self.inputs[0][0], 'renamed/source.pdf')]):
+            with self.subTest(inputs=inputs), self.assertRaisesRegex(m.LedgerError, 'new submissions forbidden'):
+                self.run_task(inputs, forbid_new_submissions=True)
+            self.assertEqual(len(self.provider.posts), 1)
+            self.assertEqual(before, {str(p.relative_to(self.root)): p.read_bytes() for p in (self.root/'ledger').rglob('*.json')})
+
+    def test_replay_accepted_terminal_failure_is_real_get_with_zero_posts(self):
+        self.run_task()
+        self.provider.mode = 'failed'
+        rows, summary = self.run_task(forbid_new_submissions=True)
+        self.assertEqual(rows, [])
+        self.assertEqual((summary['failed'], summary['provider_posts']), (5, 0))
+        self.assertFalse(summary['ready_for_generation'])
+        self.assertEqual(len(self.provider.posts), 1)
+        self.assertTrue(self.provider.polls)
+
+    def test_replay_no_credentials_cannot_forge_provider_failure_before_binding_proof(self):
+        import pdf_to_xhs_batch as cli
+        output = self.root / 'replay-outcome.json'
+        argv = ['replay', '--input-dir', str(self.root), '--output-dir', str(self.root/'out'),
+                '--provider-outcome-path', str(output)]
+        with patch.object(sys, 'argv', argv), patch.object(cli, 'mineru_tokens_from_env', return_value=[]), \
+                patch.dict(os.environ, {'MINERU_FORBID_NEW_SUBMISSIONS': '1'}), patch('sys.stderr', new_callable=io.StringIO):
+            self.assertEqual(cli.main(), 2)
+        self.assertFalse(output.exists())
+
+    def test_replay_definitively_auth_rejected_claim_cannot_try_another_credential(self):
+        self.run_task()
+        def rejected(value):
+            value.update(state='auth_rejected', batch_id=None, auth_rejections=[
+                {'token_identity': value['token_identity'], 'code': 'HTTP401', 'http_status': 401}])
+        self.rewrite_batch(rejected)
+        before = {str(p): p.read_bytes() for p in (self.root/'ledger').rglob('*.json')}
+        with self.assertRaisesRegex(m.LedgerError, 'new submissions forbidden'):
+            self.run_task(forbid_new_submissions=True)
+        self.assertEqual(len(self.provider.posts), 1)
+        self.assertEqual(before, {str(p): p.read_bytes() for p in (self.root/'ledger').rglob('*.json')})
+
+    def test_replay_policy_is_passed_from_cloud_environment_and_invalid_values_fail(self):
+        environment = {'MINERU_LEDGER_BACKEND': 'local', 'MINERU_CHECKPOINT_SCOPE': 'daily',
+                       'MINERU_FORBID_NEW_SUBMISSIONS': '1'}
+        with patch.dict(os.environ, environment, clear=True):
+            ledger = m.from_environment(self.root, object(), 'https://mineru.net', OPTIONS, TOKENS)
+            self.assertTrue(ledger.forbid_new_submissions)
+        environment['MINERU_FORBID_NEW_SUBMISSIONS'] = 'sometimes'
+        with patch.dict(os.environ, environment, clear=True), self.assertRaisesRegex(m.LedgerError, 'policy'):
+            m.from_environment(self.root, object(), 'https://mineru.net', OPTIONS, TOKENS)
+
     def test_five_pdfs_one_post_and_original_token_survives_days_and_rotation(self):
         for day in range(4):
             self.clock.now += 86400

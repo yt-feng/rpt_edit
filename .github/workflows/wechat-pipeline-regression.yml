@@ -12,6 +12,7 @@ on:
       - "scripts/*private_workflow_handoff*"
       - "scripts/*market_views*"
       - "scripts/daily_market_source_status.py"
+      - "scripts/*replay_daily_sources*"
       - "scripts/accept_market_source_preview.py"
       - ".github/workflows/market-views-source-preview-acceptance.yml"
       - "scripts/*native_market_sources*"
@@ -61,6 +62,7 @@ on:
       - "scripts/*private_workflow_handoff*"
       - "scripts/*market_views*"
       - "scripts/daily_market_source_status.py"
+      - "scripts/*replay_daily_sources*"
       - "scripts/accept_market_source_preview.py"
       - ".github/workflows/market-views-source-preview-acceptance.yml"
       - "scripts/*native_market_sources*"
@@ -141,6 +143,7 @@ jobs:
           python scripts/test_recover_private_wechat_handoff.py
           python scripts/test_market_views_workflow_contract.py
           python scripts/test_market_views_source_preview.py
+          python scripts/test_replay_daily_sources.py
           python scripts/test_market_views_source_dates.py
           python scripts/test_market_views_figures.py
           python scripts/test_mineru_figure_sources.py
