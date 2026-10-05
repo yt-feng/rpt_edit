@@ -99,7 +99,10 @@ def chart_boundary_case(*, real_size=False):
              for w in page.get_text("words")]
     y, font, xs, box = ((158, 10, (70, 150, 230), [60, 150, 270, 160]) if real_size
                         else (125, 6, (70, 115, 160), [50, 120, 190, 127]))
-    baseline = 118 if real_size else 100
+    # The larger fixture's expanded axis band starts at 120 pt. Keep the
+    # baseline inside that band so the cloud test actually exercises source
+    # pixel separation, with a white gap before the dates starting at 122 pt.
+    baseline = 120 if real_size else 100
     page.draw_line((box[0], baseline), (box[2], baseline), color=(.85, .85, .85), width=.5)
     page.insert_text((box[0] - 2, baseline), "0", fontsize=7)
     for x, literal in zip(xs, ("2010/01", "2018/07", "2026/07")):
@@ -377,6 +380,32 @@ class RotatedAxisTests(unittest.TestCase):
                 proof["regions"][0]["top_separation"][field] = value
             with self.subTest(field=field), self.assertRaises(ValueError):
                 self.replay(page, recovery, proof)
+
+    def test_real_engine_fixture_contains_baseline_gap_and_complete_dates_before_ocr(self):
+        """Keep the actual-engine fixture's pixel geometry testable without OCR."""
+        document, page, candidates = chart_boundary_case(real_size=True)
+        self.addCleanup(document.close)
+        pix = page.get_pixmap(dpi=300, colorspace=fitz.csRGB, alpha=False)
+        image = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
+        region, = axis._select_regions(candidates, [400, 650], list(image.size), source_image=image)
+        separation = region["top_separation"]
+        self.assertIsNotNone(separation["separator_row"])
+        self.assertIsNotNone(separation["white_gap"])
+        self.assertGreaterEqual(separation["separator_row"], region["seed_pixel_box"][1])
+        self.assertLess(separation["separator_row"], separation["white_gap"][0])
+        self.assertLess(separation["white_gap"][0], separation["selected_top"])
+        self.assertLess(separation["selected_top"], separation["white_gap"][1])
+        zero_index = next(i for i, word in enumerate(candidates["source-flow"]["words"]) if word["text"] == "0")
+        self.assertNotIn(zero_index, region["source_word_indices"])
+        dates = [word for word in page.get_text("words") if axis.DATE.fullmatch(word[4])]
+        self.assertEqual({word[4] for word in dates}, {"2010/01", "2018/07", "2026/07"})
+        left, top, right, bottom = region["source_pixel_box"]
+        for word in dates:
+            with self.subTest(date=word[4]):
+                self.assertLess(left, word[0] * image.width / page.rect.width)
+                self.assertLess(top, word[1] * image.height / page.rect.height)
+                self.assertGreater(right, word[2] * image.width / page.rect.width)
+                self.assertGreater(bottom, word[3] * image.height / page.rect.height)
 
     def test_gray_baseline_sparse_antialias_and_unclear_gap_or_axis_crossing(self):
         image = Image.new("RGB", (240, 160), "white")
