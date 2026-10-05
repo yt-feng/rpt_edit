@@ -18,7 +18,7 @@ import ocr_numeric_evidence as numeric
 MODELS = [{"language": "eng", "filename": "eng.traineddata", "sha256": "a" * 64}]
 
 
-def synthetic_case(regions=1, *, reader=None, clock=None, multiline=False, repeated_axes=False):
+def synthetic_case(regions=1, *, reader=None, clock=None, multiline=False, repeated_axes=False, diagnostics=None):
     document = fitz.open()
     page = document.new_page(width=400, height=650)
     if multiline:
@@ -57,7 +57,7 @@ def synthetic_case(regions=1, *, reader=None, clock=None, multiline=False, repea
         return date_words(image.size)
     result = axis.recover_rotated_axes(page, candidates, language="eng", tessdata=None,
                 tesseract_command="unused", tesseract_version="5.3.0", traineddata=MODELS,
-                reader=engine, clock=clock)
+                reader=engine, clock=clock, diagnostics=diagnostics)
     return document, page, candidates, result, calls
 
 
@@ -141,6 +141,57 @@ class RotatedAxisTests(unittest.TestCase):
         for retained in result["proof"]["ledger"]["retained"]:
             old = candidates["source-flow"]["text"][retained["old_begin"]:retained["old_end"]]
             self.assertEqual(old, result["primary_text"][retained["new_begin"]:retained["new_end"]])
+
+    def test_rejected_recovery_exposes_only_bounded_stage_geometry_and_counts(self):
+        diagnostics = {}
+        doc, _, _, result, calls = synthetic_case(diagnostics=diagnostics,
+            reader=lambda image, call, options: date_words(image.size, ("private", "source", "prose")))
+        self.addCleanup(doc.close)
+        self.assertIsNone(result)
+        self.assertEqual(len(calls), 2)
+        self.assertEqual(diagnostics["stage"], "region_recognition")
+        self.assertEqual(diagnostics["reason"], "no_valid_direction")
+        self.assertEqual(diagnostics["reads"], [
+            {"angle": angle, "words": 3, "date_words": 0, "accepted": False} for angle in (90, 270)])
+        self.assertEqual(axis.safe_rotated_axis_diagnostics({**diagnostics, "url": "PRIVATE"}), diagnostics)
+        self.assertNotIn("private", str(diagnostics))
+        for key, value in (("stage", []), ("reason", "PRIVATE"), ("region", True),
+                           ("planned_region_count", 5), ("source_pixel_box", [1, 2, 1, 4]), ("reads", [])):
+            with self.subTest(key=key):
+                self.assertIsNone(axis.safe_rotated_axis_diagnostics({**diagnostics, key: value}))
+        doc, page, candidates, _, _ = synthetic_case()
+        self.addCleanup(doc.close)
+        candidates.pop("geometric-sorted")
+        reader = mock.Mock(side_effect=AssertionError("No recognition"))
+        self.assertIsNone(axis.recover_rotated_axes(page, candidates, language="eng", tessdata=None,
+            tesseract_command="unused", tesseract_version="5.3.0", traineddata=MODELS,
+            reader=reader, diagnostics=diagnostics))
+        self.assertEqual(diagnostics, {"schema": 1, "stage": "candidate_validation", "reason": "invalid_candidate_evidence"})
+        reader.assert_not_called()
+
+    def test_planning_rejection_reports_exact_guard_and_conflicting_geometry_without_words(self):
+        document, page, candidates, _, _ = synthetic_case()
+        self.addCleanup(document.close)
+        body = {"bbox": [70, 110, 80, 117], "text": "PrivateBody", "block": 99, "paragraph": 0, "line": 0}
+        for candidate in candidates.values():
+            candidate["words"].append(copy.deepcopy(body))
+            candidate["text"] += "\n" + body["text"]
+        candidates["full-page-psm11"]["text"] = axis._region_text(candidates["full-page-psm11"]["words"])[0]
+        diagnostics, reader = {}, mock.Mock(side_effect=AssertionError("No recognition"))
+        self.assertIsNone(axis.recover_rotated_axes(page, candidates, language="eng", tessdata=None,
+            tesseract_command="unused", tesseract_version="5.3.0", traineddata=MODELS,
+            reader=reader, diagnostics=diagnostics))
+        self.assertEqual(diagnostics["stage"], "region_planning")
+        self.assertEqual(diagnostics["reason"], "horizontal_word_intersection")
+        self.assertEqual(diagnostics["source_word_box"], body["bbox"])
+        self.assertEqual(len(diagnostics["source_pixel_box"]), 4)
+        self.assertNotIn("PrivateBody", str(diagnostics))
+        reader.assert_not_called()
+        candidates["source-flow"]["words"][0]["bbox"] = [-1, 0, 20, 30]
+        self.assertIsNone(axis.recover_rotated_axes(page, candidates, language="eng", tessdata=None,
+            tesseract_command="unused", tesseract_version="5.3.0", traineddata=MODELS,
+            reader=reader, diagnostics=diagnostics))
+        self.assertEqual(diagnostics["reason"], "source-flow_words")
 
     def test_max_four_regions_eight_reads_and_shared_remaining_subprocess_budget(self):
         doc, page, _, result, calls = synthetic_case(4)
