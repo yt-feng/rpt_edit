@@ -458,6 +458,54 @@ class RotatedAxisTests(unittest.TestCase):
                 self.assertGreater(right, word[2] * image.width / page.rect.width)
                 self.assertGreater(bottom, word[3] * image.height / page.rect.height)
 
+    def test_fractional_horizontal_word_edge_aligns_one_blank_pixel_and_preserves_zero(self):
+        document, page, candidates = chart_boundary_case()
+        self.addCleanup(document.close)
+        pix = page.get_pixmap(dpi=300, colorspace=fitz.csRGB, alpha=False)
+        image = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
+        original, = axis._select_regions(candidates, [400, 650], list(image.size), source_image=image)
+        top = original["source_pixel_box"][1]
+        for candidate in candidates.values():
+            next(word for word in candidate["words"] if word["text"] == "0")["bbox"][3] = (top + .1373) * 650 / image.height
+        calls = []
+        def reader(image, **options):
+            calls.append(options)
+            return date_words(image.size, ("bad", "bad", "bad")) if len(calls) == 1 else date_words(image.size)
+        recovery = axis.recover_rotated_axes(page, candidates, language="eng", tessdata=None,
+            tesseract_command="unused", tesseract_version="5.3.0", traineddata=MODELS, reader=reader)
+        self.assertIsNotNone(recovery)
+        region = recovery["proof"]["regions"][0]
+        self.assertEqual(region["source_pixel_box"][1], top + 1)
+        self.assertEqual(region["top_separation"]["selected_top"], top + 1)
+        self.assertGreaterEqual(region["top_separation"]["white_gap"][1] - top - 1, 2)
+        zero_index = next(i for i, word in enumerate(candidates["source-flow"]["words"]) if word["text"] == "0")
+        self.assertNotIn(zero_index, region["source_word_indices"])
+        self.assertNotIn(zero_index, [edit["word_index"] for edit in recovery["proof"]["ledger"]["edits"]])
+        self.assertEqual(recovery["primary_text"].split().count("0"), 1)
+        self.assertEqual(region["source_crop_sha256"], axis._hash(image.crop(tuple(region["source_pixel_box"])).tobytes()))
+        engine, numeric_calls = numeric_engine(page, recovery)
+        with mock.patch.object(numeric, "_read_tesseract", side_effect=engine):
+            audited = numeric.audit_numeric_evidence(page, recovery["primary_text"], language="eng",
+                tesseract_command="unused", rotated_axis_proof=recovery["proof"])
+        zero = next(row for row in audited["evidence"]["records"] if row["literal"] == "0")
+        self.assertEqual(zero["bbox"], [round(value, 4) for value in candidates["source-flow"]["words"][zero_index]["bbox"]])
+        self.assertEqual(len(zero["reads"]), 3)
+        self.assertEqual(zero["status"], "verified")
+        self.assertEqual(numeric_calls, [(450, 3), (600, 6), (600, 11)])
+        self.replay(page, recovery)
+        changed = copy.deepcopy(recovery["proof"])
+        changed["regions"][0]["top_separation"]["selected_top"] -= 1
+        with self.assertRaises(ValueError):
+            self.replay(page, recovery, changed)
+        ink = image.copy()
+        ink.putpixel((original["seed_pixel_box"][0] + 10, top), (235, 235, 235))
+        with self.assertRaisesRegex(axis.RotatedAxisError, '^rotated_axis_not_eligible$'):
+            axis._select_regions(candidates, [400, 650], list(ink.size), source_image=ink)
+        for candidate in candidates.values():
+            next(word for word in candidate["words"] if word["text"] == "0")["bbox"][3] = (top + 1.01) * 650 / image.height
+        with self.assertRaisesRegex(axis.RotatedAxisError, '^rotated_axis_not_eligible$'):
+            axis._select_regions(candidates, [400, 650], list(image.size), source_image=image)
+
     def test_gray_baseline_sparse_antialias_and_unclear_gap_or_axis_crossing(self):
         image = Image.new("RGB", (240, 160), "white")
         draw = ImageDraw.Draw(image)

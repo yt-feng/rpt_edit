@@ -380,6 +380,26 @@ def _select_regions(candidates, page_size, image_size, source_image=None):
         earliest = min(math.floor(base["words"][i]["bbox"][1] * image_size[1] / page_size[1]) for i in ids)
         pixel_box, separation = _separate_chart_top(source_image, pixel_box, earliest,
                                                    glyph_height * image_size[1] / page_size[1])
+        # OCR word boxes use fractional points while a crop starts at an
+        # integer pixel. A retained horizontal word may therefore extend by
+        # less than one pixel into the chosen blank row. Align to its ceiling
+        # only inside the proven white gap; genuine body/axis overlap still
+        # fails the unchanged whole-word checks below.
+        if separation["white_gap"] is not None:
+            top = pixel_box[1]
+            scale_x, scale_y = image_size[0] / page_size[0], image_size[1] / page_size[1]
+            edges = [math.ceil(word["bbox"][3] * scale_y) for word in base["words"]
+                     if not _axis_word(word, glyph_height)
+                     and word["bbox"][0] * scale_x < pixel_box[2]
+                     and word["bbox"][2] * scale_x > pixel_box[0]
+                     and word["bbox"][1] * scale_y < top < word["bbox"][3] * scale_y <= top + 1]
+            aligned_top = max(edges, default=top)
+            blank_rows = separation["row_dark_counts"][top - separation["scan_rows"][0]:aligned_top - separation["scan_rows"][0]]
+            if (aligned_top > top and aligned_top <= earliest
+                    and aligned_top <= separation["white_gap"][1] - 2
+                    and len(blank_rows) == aligned_top - top and not any(blank_rows)):
+                pixel_box[1] = aligned_top
+                separation["selected_top"] = aligned_top
         profile = _ink_profile(source_image, image_size, pixel_box[1::2],
                                max(1, math.ceil(2 * glyph_height * image_size[0] / page_size[0])))
         pixel_box = _grow_columns(pixel_box, profile)
