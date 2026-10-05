@@ -221,13 +221,22 @@ parses remain a separate recovery step. Normal current-PKI result downloads
 still fail on the provider's expired leaf certificate; this manual identity
 authentication expires at the fixed October 4 UTC cutoff.
 
-October 4 complete cloud OCR source producer `37238241161` passed all four
-originals and the real numeric fixture. Consumer `37239371856` archived the
-private PDF and committed its 14-page public-safe counterpart, with all nine
-source-page images visually checked. One caption pagination defect is being
-corrected and live portal acceptance is pending. October 1-3 full backfill remains
-in progress; `MARKET_VIEWS_OCR_BACKUP_ENABLED` remains false. The detailed source-only status is maintained in
-[Market Views source recovery](market-views-source-recovery.md).
+October 1, 3 and 4 primary PDFs have now been generated from complete MinerU
+results, with private R2 PDF/index readbacks and dated catalogue entries
+verified by live inspection `37243817037`. October 1 preserved all 63 source
+aliases (62 unique contents); October 3 covered 54 originals and October 4
+covered four. October 2 intake accepted all 50 originals: 42 DONE result ZIPs
+are cached; the remaining eight guarded retries completed parsing and await
+result retrieval. The provider's shared result certificate still fails strict
+TLS checks. GitHub authorization and MinerU task APIs are working.
+
+Current October 4 cloud OCR source producer `37244394621` passed all four
+originals and 109 pages (82 native, 27 OCR). Real field probes confirmed the
+October 4 `17%` and October 2 `31%` fixtures. The PDF consumer now supports a
+complete cloud acceptance build without replacing the recovered live primary
+PDF. Daily `MARKET_VIEWS_OCR_BACKUP_ENABLED` remains false until this final
+consumer acceptance passes. The detailed state and architecture are maintained
+in [Market Views source recovery](market-views-source-recovery.md).
 
 ## Main Workflow Groups
 

@@ -61,6 +61,11 @@ on:
         required: true
         type: boolean
         default: false
+      acceptance_only:
+        description: "Build and validate the complete PDF, then retain only its public-safe one-day artifact"
+        required: true
+        type: boolean
+        default: false
 permissions:
   contents: write
   actions: read
@@ -275,7 +280,7 @@ jobs:
           PY
 
       - name: Preserve sanitized native source numeric audit
-        if: ${{ always() && inputs.source_handoff_kind == 'native-pdf' }}
+        if: ${{ always() && inputs.source_handoff_kind == 'native-pdf' && inputs.acceptance_only != true }}
         uses: actions/upload-artifact@v4
         with:
           name: market-views-native-source-audit-${{ github.run_id }}
@@ -353,6 +358,7 @@ jobs:
           EXPECTED_BANK_DATE: ${{ github.event.inputs.expected_bank_date || '' }}
           EXPECTED_ARTICLES: ${{ inputs.expected_articles || '0' }}
           FORCE_REBUILD: ${{ github.event.inputs.force_rebuild || 'false' }}
+          ACCEPTANCE_ONLY: ${{ inputs.acceptance_only }}
         run: |
           python - <<'PYTHON'
           import os
@@ -378,7 +384,8 @@ jobs:
           pdf = Path(f"market_view_summaries/{issue_date}/market_views_{issue_date}.pdf")
           valid_existing = (pdf.is_file() and pdf.stat().st_size > 1024
                             and pdf.open("rb").read(5) == b"%PDF-")
-          should_build = os.environ["FORCE_REBUILD"] == "true" or not valid_existing
+          should_build = (os.environ["FORCE_REBUILD"] == "true"
+                          or os.environ.get("ACCEPTANCE_ONLY", "") == "true" or not valid_existing)
           with open(os.environ["GITHUB_ENV"], "a", encoding="utf-8") as env:
               for key, value in {
                   "BUILD_DATE_FOLDER": issue_date,
@@ -522,7 +529,7 @@ jobs:
           echo "::notice::Verified exact Market Views PDF: $PDF_PATH ($PDF_BYTES bytes)."
 
       - name: Archive exact Market Views PDF in private R2
-        if: ${{ env.SHOULD_BUILD != 'false' }}
+        if: ${{ env.SHOULD_BUILD != 'false' && inputs.acceptance_only != true }}
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -540,6 +547,7 @@ jobs:
             --pdf "$PDF_PATH"
 
       - name: Prepare public-safe Market Views PDF
+        id: public_pdf
         if: ${{ env.SHOULD_BUILD != 'false' }}
         run: |
           PDF_PATH="market_view_summaries/$DATE_FOLDER/market_views_$DATE_FOLDER.pdf"
@@ -549,8 +557,8 @@ jobs:
             --output "$PUBLIC_PDF"
           mv -- "$PUBLIC_PDF" "$PDF_PATH"
 
-          # The original private PDF is already archived. Restore the tracked
-          # neutral placeholder before scanning the public working tree.
+          # Restore the tracked neutral placeholder before scanning the public
+          # working tree, including a private acceptance build.
           git restore --source=HEAD --worktree -- prompts/zsxq_img.jpg
 
           # Stage only for the identity guard. The commit helper refreshes the
@@ -560,7 +568,7 @@ jobs:
           git reset -- "$PDF_PATH"
 
       - name: Commit public-safe Market Views PDF to main
-        if: ${{ env.SHOULD_BUILD != 'false' }}
+        if: ${{ env.SHOULD_BUILD != 'false' && inputs.acceptance_only != true }}
         run: |
           PDF_PATH="market_view_summaries/$DATE_FOLDER/market_views_$DATE_FOLDER.pdf"
           bash scripts/commit_output_dir.sh \
@@ -569,6 +577,15 @@ jobs:
             8 \
             true \
             true
+
+      - name: Preserve public-safe acceptance PDF
+        if: ${{ inputs.acceptance_only == true && env.SHOULD_BUILD != 'false' && steps.public_pdf.conclusion == 'success' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: market-views-acceptance-${{ env.DATE_FOLDER }}-${{ github.run_id }}
+          path: market_view_summaries/${{ env.DATE_FOLDER }}/market_views_${{ env.DATE_FOLDER }}.pdf
+          if-no-files-found: error
+          retention-days: 1
 
       - name: Summarize observed DeepSeek usage
         if: ${{ always() && hashFiles('scripts/summarize_deepseek_usage.py') != '' }}
@@ -579,7 +596,7 @@ jobs:
             --markdown "$DEEPSEEK_USAGE_DIR/summary.md" --github-summary
 
       - name: Upload content-free DeepSeek usage
-        if: ${{ always() && hashFiles('.github/actions/resilient-diagnostic-artifact/action.yml') != '' }}
+        if: ${{ always() && inputs.acceptance_only != true && hashFiles('.github/actions/resilient-diagnostic-artifact/action.yml') != '' }}
         uses: ./.github/actions/resilient-diagnostic-artifact
         with:
           name: deepseek-usage-${{ github.job }}-${{ github.run_id }}-${{ github.run_attempt }}

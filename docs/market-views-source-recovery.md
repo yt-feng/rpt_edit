@@ -717,3 +717,15 @@ ambiguous, changed-order or invalid geometry remains explicitly unlocated.
 The output contains fixed categories, coordinates and counts, never OCR words
 or source names. It reuses the existing recognition result and does not change
 readability, numeric checks or production source admission.
+
+### Complete cloud PDF acceptance without live publication
+
+The PDF consumer's explicit `acceptance_only=true` mode rebuilds the complete
+selected source even when a valid dated live PDF already exists. Source
+producer/receipt checks, numeric fixtures, model synthesis, rendering, public
+sanitization and identity validation all run normally. It skips the live R2
+PDF/catalogue archive and main-branch commit, retaining only the successfully
+validated public-safe PDF as a one-day Actions artifact. Source originals,
+Markdown, logs and audit/usage JSON are not artifacts in this mode. Its default
+false preserves the publishing route. An acceptance artifact is evidence of
+PDF construction, not a new live publication.
