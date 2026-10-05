@@ -324,7 +324,7 @@ class WorkflowTests(unittest.TestCase):
         self.assertIn("original_sha != receipt['source_context']['original_execution_sha']", block)
         self.assertLess(end, consumer.index('- name: Build market views data and LaTeX source'))
         self.assertIn('PRIVATE_LEGACY_SOURCES_ROOT', consumer)
-        self.assertIn('options: [xhs, native-pdf, mineru-recovery, legacy-daily]', consumer)
+        self.assertIn('options: [xhs, native-pdf, mineru-recovery, legacy-daily, source-pages]', consumer)
 
 
 if __name__ == '__main__':

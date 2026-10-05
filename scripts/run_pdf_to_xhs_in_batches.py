@@ -194,13 +194,21 @@ def run_batch(batch_index: int, batch: list[PDFRecord], args: argparse.Namespace
         source_map = Path(tmp) / "mineru-source-map.json"
         source_map.write_text(json.dumps({"schema": 1, "files": bindings}), encoding="utf-8")
         cmd = build_child_command(args, tmp_input, source_map)
+        outcome_path = Path(tmp) / "provider-outcome.json"
+        cmd.extend(["--provider-outcome-path", str(outcome_path)])
         result = subprocess.run(cmd, text=True)
+        provider_category = ""
+        if outcome_path.is_file():
+            outcome = json.loads(outcome_path.read_text())
+            if outcome == {"schema": 1, "category": "mineru_unavailable"}:
+                provider_category = "mineru_unavailable"
         return {
             "batch_index": batch_index,
             "pdf_count": len(batch),
             "files": copied,
             "returncode": result.returncode,
             "status": "ok" if result.returncode == 0 else "failed",
+            "provider_failure_category": provider_category,
         }
 
 
