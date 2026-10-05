@@ -236,8 +236,13 @@ October 4 `17%` and October 2 `31%` fixtures. A local, not-yet-deployed PDF
 consumer change adds complete cloud acceptance builds without replacing the
 recovered live primary PDF. A separate locally tested bounded rotated-date
 route retains complete source and geometry proof; its new rotated values remain
-masked until independently confirmed. Actual affected-page and complete-batch
-cloud acceptance remain pending. Daily `MARKET_VIEWS_OCR_BACKUP_ENABLED`
+masked until independently confirmed. Original-page QA found chart baselines
+and horizontal scale zero mixed into proposed date bands; a local follow-up
+uses bounded original-pixel white gaps and retains complete word and numeric
+checks. Geometry-only local replays are not OCR acceptance. A new real
+Tesseract regression is mandatory in Linux CI and remains unexecuted there.
+Actual affected-page and complete-batch cloud acceptance remain pending.
+Daily `MARKET_VIEWS_OCR_BACKUP_ENABLED`
 remains false until those checks and the final PDF consumer acceptance pass.
 The detailed state and architecture are maintained
 in [Market Views source recovery](market-views-source-recovery.md).

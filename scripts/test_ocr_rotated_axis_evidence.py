@@ -1,12 +1,16 @@
 """Pure pixels/mock recognition contracts; no local OCR or network required."""
 import copy
+import hashlib
+import os
 from pathlib import Path
+import shutil
+import sys
 import tempfile
 import unittest
 from unittest import mock
 
 import fitz
-from PIL import Image
+from PIL import Image, ImageDraw
 
 import ocr_rotated_axis_evidence as axis
 import ocr_numeric_evidence as numeric
@@ -14,7 +18,7 @@ import ocr_numeric_evidence as numeric
 MODELS = [{"language": "eng", "filename": "eng.traineddata", "sha256": "a" * 64}]
 
 
-def synthetic_case(regions=1, *, reader=None, clock=None, multiline=False):
+def synthetic_case(regions=1, *, reader=None, clock=None, multiline=False, repeated_axes=False):
     document = fitz.open()
     page = document.new_page(width=400, height=650)
     if multiline:
@@ -29,7 +33,7 @@ def synthetic_case(regions=1, *, reader=None, clock=None, multiline=False):
              for w in page.get_text("words")]
     for i in range(regions):
         y = 120 + i * 100
-        words.append({"bbox": [50, y, 190, y + 7], "text": chr(65 + i) * 85,
+        words.append({"bbox": [50, y, 190, y + 7], "text": ("A" if repeated_axes else chr(65 + i)) * 85,
                       "block": i + 10, "paragraph": 0, "line": 0})
         for x, literal in zip((70, 115, 160), ("2020/01", "2021/02", "2022/03")):
             page.insert_text((x, y + 5), literal, fontsize=6, rotate=90)
@@ -84,6 +88,30 @@ def numeric_engine(page, result):
             top += crop.height + 48
         return words
     return read, calls
+
+
+def chart_boundary_case(*, real_size=False):
+    """Source pixels contain a baseline/zero above complete vertical dates."""
+    document = fitz.open()
+    page = document.new_page(width=400, height=650)
+    page.insert_text((20, 30), "Reliable revenue supply demand outlook recovery remains steady 25,000 35,000", fontsize=8)
+    words = [{"bbox": list(w[:4]), "text": w[4], "block": w[5], "paragraph": 0, "line": w[6]}
+             for w in page.get_text("words")]
+    y, font, xs, box = ((158, 10, (70, 150, 230), [60, 150, 270, 160]) if real_size
+                        else (125, 6, (70, 115, 160), [50, 120, 190, 127]))
+    baseline = 118 if real_size else 100
+    page.draw_line((box[0], baseline), (box[2], baseline), color=(.85, .85, .85), width=.5)
+    page.insert_text((box[0] - 2, baseline), "0", fontsize=7)
+    for x, literal in zip(xs, ("2010/01", "2018/07", "2026/07")):
+        page.insert_text((x, y), literal, fontsize=font, rotate=90)
+    words.append({"bbox": [box[0] - 2, baseline - 6, box[0] + 2, baseline + .2], "text": "0",
+                  "block": 9, "paragraph": 0, "line": 0})
+    words.append({"bbox": box, "text": "A" * 85, "block": 10, "paragraph": 0, "line": 0})
+    words.sort(key=lambda w: (w["bbox"][1], w["bbox"][0]))
+    candidates = {label: {"text": "\n".join(w["text"] for w in words), "words": copy.deepcopy(words)}
+                  for label in axis.LABELS}
+    candidates["full-page-psm11"]["text"] = axis._region_text(words)[0]
+    return document, page, candidates
 
 
 class RotatedAxisTests(unittest.TestCase):
@@ -214,6 +242,8 @@ class RotatedAxisTests(unittest.TestCase):
             lambda p: p["candidates"]["full-page-psm11"]["words"][0].__setitem__("text", "changed"),
             lambda p: p["candidates"]["full-page-psm11"].__setitem__("text", p["candidates"]["full-page-psm11"]["text"].replace(" ", "")),
             lambda p: p["regions"][0]["ink_profile"]["dark_counts"].__setitem__(0, 1),
+            lambda p: p["regions"][0]["top_separation"].__setitem__("selected_top", True),
+            lambda p: p["regions"][0]["top_separation"].__setitem__("threshold", 220),
             lambda p: p["candidates"]["geometric-sorted"]["words"].__setitem__(0,
                 [*p["candidates"]["geometric-sorted"]["words"][0]["bbox"],
                  p["candidates"]["geometric-sorted"]["words"][0]["text"], 0, 0, {"covert": "extra"}]),
@@ -224,15 +254,12 @@ class RotatedAxisTests(unittest.TestCase):
             with self.subTest(mutation=mutation), self.assertRaises(ValueError):
                 self.replay(page, result, proof)
 
-    def test_duplicate_run_wrong_word_order_body_and_edges_are_not_eligible(self):
+    def test_wrong_word_order_body_and_edges_are_not_eligible(self):
         doc, page, candidates, result, _ = synthetic_case()
         self.addCleanup(doc.close)
-        for kind in ("duplicate", "order", "body", "edge"):
+        for kind in ("order", "body", "edge"):
             changed = copy.deepcopy(candidates)
             for value in changed.values():
-                if kind == "duplicate":
-                    word = copy.deepcopy(value["words"][-1]); word["bbox"] = [210, 120, 350, 127]
-                    value["words"].append(word); value["text"] += "\n" + word["text"]
                 if kind == "order": value["words"].reverse()
                 if kind == "body":
                     word = {"bbox": [80, 110, 120, 117], "text": "Body", "block": 99, "paragraph": 0, "line": 0}
@@ -243,6 +270,25 @@ class RotatedAxisTests(unittest.TestCase):
                 actual = axis.recover_rotated_axes(page, changed, language="eng", tessdata=None,
                     tesseract_command="unused", tesseract_version="5.3.0", traineddata=MODELS, reader=reader)
                 self.assertIsNone(actual); reader.assert_not_called()
+
+    def test_repeated_axis_noise_has_exact_global_positions_and_swapped_indices_are_rejected(self):
+        document, page, candidates, result, _ = synthetic_case(2, repeated_axes=True)
+        self.addCleanup(document.close)
+        self.assertIsNotNone(result)
+        self.assertEqual(len(result["proof"]["regions"]), 2)
+        runs = list(axis.LONG.finditer(candidates["source-flow"]["text"]))
+        self.assertEqual(runs[0].group(), runs[1].group())
+        self.assertNotEqual(runs[0].span(), runs[1].span())
+        self.replay(page, result)
+        changed = copy.deepcopy(result["proof"])
+        a, b = changed["regions"]
+        a["source_word_indices"], b["source_word_indices"] = b["source_word_indices"], a["source_word_indices"]
+        with self.assertRaises(ValueError):
+            self.replay(page, result, changed)
+        changed = copy.deepcopy(result["proof"])
+        changed["ledger"]["edits"][0]["word_index"] = result["proof"]["regions"][1]["source_word_indices"][0]
+        with self.assertRaises(ValueError):
+            self.replay(page, result, changed)
 
     def test_glued_glyph_identical_words_are_rejected_without_guessing_boundaries(self):
         text = "Abcd" * 30
@@ -283,6 +329,105 @@ class RotatedAxisTests(unittest.TestCase):
         with self.assertRaisesRegex(axis.RotatedAxisError, '^rotated_axis_not_eligible$'):
             axis._select_regions(candidates, [400, 650], list(image.size), source_image=image)
 
+    def test_chart_baseline_zero_stays_in_original_transcript_and_three_read_numeric_path(self):
+        document, page, candidates = chart_boundary_case()
+        self.addCleanup(document.close)
+        page.insert_text((95, 99), "Caption", fontsize=3)
+        caption = {"bbox": [95, 96, 109, 100.2], "text": "Caption", "block": 8, "paragraph": 0, "line": 0}
+        for value in candidates.values():
+            value["words"].append(copy.deepcopy(caption))
+            value["words"].sort(key=lambda w: (w["bbox"][1], w["bbox"][0]))
+            value["text"] = "\n".join(w["text"] for w in value["words"])
+        candidates["full-page-psm11"]["text"] = axis._region_text(candidates["full-page-psm11"]["words"])[0]
+        calls = []
+        def reader(image, **options):
+            calls.append(options)
+            return date_words(image.size) if len(calls) == 2 else [{"bbox": [3, 3, 15, 15], "text": "garbage",
+                "block": 0, "paragraph": 0, "line": 0}]
+        recovery = axis.recover_rotated_axes(page, candidates, language="eng", tessdata=None,
+            tesseract_command="unused", tesseract_version="5.3.0", traineddata=MODELS, reader=reader)
+        self.assertIsNotNone(recovery)
+        region = recovery["proof"]["regions"][0]
+        separated = region["top_separation"]
+        self.assertGreater(separated["selected_top"], region["seed_pixel_box"][1])
+        self.assertIsNotNone(separated["white_gap"])
+        zero_index = next(i for i, w in enumerate(candidates["source-flow"]["words"]) if w["text"] == "0")
+        self.assertNotIn(zero_index, region["source_word_indices"])
+        self.assertNotIn(zero_index, [edit["word_index"] for edit in recovery["proof"]["ledger"]["edits"]])
+        self.assertEqual(recovery["primary_text"].split().count("0"), 1)
+        caption_index = next(i for i, w in enumerate(candidates["source-flow"]["words"]) if w["text"] == "Caption")
+        self.assertNotIn(caption_index, region["source_word_indices"])
+        self.assertEqual(recovery["primary_text"].split().count("Caption"), 1)
+        engine, numeric_calls = numeric_engine(page, recovery)
+        with mock.patch.object(numeric, "_read_tesseract", side_effect=engine):
+            audited = numeric.audit_numeric_evidence(page, recovery["primary_text"], language="eng",
+                tesseract_command="unused", rotated_axis_proof=recovery["proof"])
+        zero = next(r for r in audited["evidence"]["records"] if r["literal"] == "0")
+        self.assertEqual(zero["bbox"], candidates["source-flow"]["words"][zero_index]["bbox"])
+        self.assertEqual(zero["status"], "verified")
+        self.assertEqual(len(zero["reads"]), 3)
+        self.assertEqual(numeric_calls, [(450, 3), (600, 6), (600, 11)])
+        self.assertTrue(all(r["status"] == "unresolved" and r["bbox"] is None for r in
+            audited["evidence"]["records"] if "rotated_axis" in r))
+        for field, value in (("row_dark_counts", 1), ("selected_top", True), ("minimum_gap", True)):
+            proof = copy.deepcopy(recovery["proof"])
+            if isinstance(proof["regions"][0]["top_separation"][field], list):
+                proof["regions"][0]["top_separation"][field][0] = value
+            else:
+                proof["regions"][0]["top_separation"][field] = value
+            with self.subTest(field=field), self.assertRaises(ValueError):
+                self.replay(page, recovery, proof)
+
+    def test_gray_baseline_sparse_antialias_and_unclear_gap_or_axis_crossing(self):
+        image = Image.new("RGB", (240, 160), "white")
+        draw = ImageDraw.Draw(image)
+        draw.line((10, 22, 209, 22), fill=(235, 235, 235))
+        draw.rectangle((10, 21, 14, 27), fill="black")
+        for x in (40, 90, 140):
+            draw.rectangle((x, 38, x + 5, 110), fill="black")
+        image.putpixel((80, 32), (235, 235, 235))
+        box, proof = axis._separate_chart_top(image, [10, 20, 210, 140], 70, 30)
+        self.assertEqual(proof["white_gap"], [28, 38])
+        self.assertEqual(box[1], 33)
+        self.assertGreaterEqual(38 - box[1], 2)
+        crossing, record = axis._separate_chart_top(image, [10, 20, 210, 140], 30, 30)
+        self.assertEqual(crossing, [10, 20, 210, 140])
+        self.assertIsNone(record["white_gap"])
+        short_gap = image.copy()
+        for x in (40, 90, 140):
+            ImageDraw.Draw(short_gap).rectangle((x, 32, x + 5, 110), fill="black")
+        unchanged, record = axis._separate_chart_top(short_gap, [10, 20, 210, 140], 70, 30)
+        self.assertEqual(unchanged, [10, 20, 210, 140])
+        self.assertIsNone(record["white_gap"])
+        no_line = Image.new("RGB", image.size, "white")
+        ImageDraw.Draw(no_line).rectangle((40, 27, 45, 110), fill="black")
+        unchanged, record = axis._separate_chart_top(no_line, [10, 20, 210, 140], 70, 30)
+        self.assertEqual(unchanged, [10, 20, 210, 140])
+        self.assertIsNone(record["white_gap"])
+        for kind in ("axis-crosses", "body-below", "zero-below"):
+            document, page, candidates = chart_boundary_case()
+            try:
+                word = {"bbox": [100, 99, 104, 120], "text": "2020/01", "block": 30, "paragraph": 0, "line": 0}
+                if kind == "body-below": word.update(bbox=[90, 107, 120, 112], text="Body")
+                if kind == "zero-below": word.update(bbox=[90, 107, 96, 112], text="0")
+                for value in candidates.values():
+                    value["words"].append(copy.deepcopy(word)); value["text"] += "\n" + word["text"]
+                pix = page.get_pixmap(dpi=300, colorspace=fitz.csRGB, alpha=False)
+                image = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
+                with self.subTest(kind=kind), self.assertRaisesRegex(axis.RotatedAxisError, '^rotated_axis_not_eligible$'):
+                    axis._select_regions(candidates, [400, 650], list(image.size), source_image=image)
+            finally:
+                document.close()
+        document, page, candidates = chart_boundary_case()
+        try:
+            pix = page.get_pixmap(dpi=300, colorspace=fitz.csRGB, alpha=False)
+            image = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
+            ImageDraw.Draw(image).rectangle((195, 415, 805, 460), fill=(235, 235, 235))
+            with self.assertRaisesRegex(axis.RotatedAxisError, '^rotated_axis_not_eligible$'):
+                axis._select_regions(candidates, [400, 650], list(image.size), source_image=image)
+        finally:
+            document.close()
+
     def test_long_run_seed_planning_bound_precedes_any_recognition(self):
         doc, page, candidates, _, _ = synthetic_case()
         self.addCleanup(doc.close)
@@ -317,6 +462,59 @@ class RotatedAxisTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             axis.replay_rotated_axis_proof(result["proof"], result["primary_text"],
                 input_pixel_sha256=result["proof"]["input_pixel_sha256"], page_size_points=[400.0, 650.0])
+
+
+class RotatedAxisCloudTests(unittest.TestCase):
+    def setUp(self):
+        # This actual-engine contract runs on Linux CI only. macOS checks use
+        # pure source pixels/mocks and never invoke the user's local OCR.
+        required = os.environ.get("REQUIRE_MARKET_VIEWS_OCR_TESTS") == "1"
+        if not sys.platform.startswith("linux"):
+            if required:
+                self.fail("Required rotated-axis OCR acceptance must run in Linux CI")
+            self.skipTest("Real rotated-axis OCR is cloud-only")
+        self.command = shutil.which("tesseract")
+        try:
+            self.tessdata = str(Path(os.environ.get("TESSDATA_PREFIX") or fitz.get_tessdata()))
+            self.models = [{"language": language, "filename": language + ".traineddata",
+                "sha256": hashlib.sha256((Path(self.tessdata) / (language + ".traineddata")).read_bytes()).hexdigest()}
+                for language in ("eng", "chi_sim")]
+            if not self.command:
+                raise ValueError("missing CLI")
+        except Exception:
+            if required:
+                self.fail("Cloud rotated-axis acceptance requires Tesseract plus eng and chi_sim models")
+            self.skipTest("Real cloud OCR dependencies unavailable")
+
+    def test_real_tesseract_vertical_year_month_baseline_zero_and_unresolved_axes(self):
+        import extract_native_market_sources as native
+        document, page, candidates = chart_boundary_case(real_size=True)
+        self.addCleanup(document.close)
+        recovery = axis.recover_rotated_axes(page, candidates, language="eng+chi_sim", tessdata=self.tessdata,
+            tesseract_command=self.command, tesseract_version=native._tesseract_version(self.command, 1),
+            traineddata=self.models)
+        self.assertIsNotNone(recovery, "The real engine must recover complete date-axis labels")
+        selected = recovery["proof"]["regions"][0]
+        read = next(r for r in selected["reads"] if r["angle"] == selected["selected_angle"])
+        labels = axis._region_text(read["words"])[0].splitlines()
+        self.assertGreaterEqual(len(labels), 3)
+        self.assertTrue(all(axis.DATE.fullmatch(label) for label in labels))
+        self.assertEqual(set(labels), {"2010/01", "2018/07", "2026/07"})
+        self.assertIsNotNone(selected["top_separation"]["white_gap"])
+        self.assertEqual(recovery["primary_text"].split().count("0"), 1)
+        audited = numeric.audit_numeric_evidence(page, recovery["primary_text"], primary_words=recovery["primary_words"],
+            language="eng+chi_sim", tessdata=self.tessdata, tesseract_command=self.command,
+            rotated_axis_proof=recovery["proof"])
+        zero = next(r for r in audited["evidence"]["records"] if r["literal"] == "0")
+        self.assertEqual(zero["bbox"], next(w["bbox"] for w in candidates["source-flow"]["words"] if w["text"] == "0"))
+        self.assertEqual(len(zero["reads"]), 3)
+        axes = [r for r in audited["evidence"]["records"] if "rotated_axis" in r]
+        self.assertGreaterEqual(len(axes), 6)
+        self.assertTrue(all(r["status"] == "unresolved" and r["bbox"] is None and r["reads"] == [] for r in axes))
+        pix = page.get_pixmap(dpi=300, colorspace=fitz.csRGB, alpha=False)
+        image = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
+        numeric.validate_numeric_evidence(audited["safe_text"], audited["evidence"], axis._hash(image.tobytes()),
+            source_image=image, rotated_axis_proof=recovery["proof"])
 
 
 if __name__ == "__main__":

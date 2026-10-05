@@ -185,14 +185,77 @@ def _grow_columns(box, profile):
         if counts[cursor]:
             last = cursor; right = max(right, cursor + 1)
         cursor += 1
-    return [left, box[1], right, box[3]]
+    # Keep source white margin at the terminal labels. A crop stopping at
+    # the last dark column would otherwise look clipped to region admission.
+    return [left - 3, box[1], right + 3, box[3]]
+
+
+def _axis_word(word, glyph_height):
+    box = word["bbox"]
+    return (LONG.search(word["text"]) is not None or
+            (re.fullmatch(r"[0-9/.,+\-()]+", word["text"]) is not None
+             and box[3] - box[1] >= 1.2 * glyph_height
+             and box[3] - box[1] >= 1.5 * (box[2] - box[0])))
+
+
+def _separate_chart_top(image, pixel_box, earliest_axis_top, glyph_height_pixels):
+    """Separate a chart baseline only at a bounded source-pixel near-white gap.
+
+    Read only the upper third of the bounded proposed axis band. A long
+    horizontal stroke must precede the first full-width near-white gap. One
+    isolated gray pixel per row is retained as noise in the recorded profile.
+    The new
+    boundary cannot cut any known axis word. Horizontal scale/body words are
+    checked afterwards and remain outside the replacement ledger.
+    """
+    left, top, right, bottom = pixel_box
+    scan_end = top + max(1, (bottom - top) // 3)
+    minimum_gap = max(6, math.ceil(glyph_height_pixels * .15))
+    counts, longest = [], []
+    if image is not None:
+        gray = image.crop((left, top, right, scan_end)).convert("L")
+        pixels = gray.tobytes()
+        for row in range(gray.height):
+            values = pixels[row * gray.width:(row + 1) * gray.width]
+            counts.append(sum(value < 245 for value in values))
+            run = best = 0
+            for value in values:
+                run = run + 1 if value < 245 else 0
+                best = max(best, run)
+            longest.append(best)
+    profile = {"policy": "chart-baseline-white-gap-v1", "input_pixel_box": list(pixel_box),
+               "scan_rows": [top, scan_end], "threshold": 245, "maximum_gap_row_ink": 1, "minimum_gap": minimum_gap,
+               "row_dark_counts": counts, "row_longest_dark_runs": longest,
+               "separator_row": None, "white_gap": None, "selected_top": top}
+    baselines = [top + i for i, run in enumerate(longest) if run >= math.ceil((right - left) * .6)]
+    if not baselines:
+        return list(pixel_box), profile
+    separator = baselines[-1]
+    cursor = separator + 1
+    while cursor < scan_end:
+        if counts[cursor - top] > 1:
+            cursor += 1
+            continue
+        begin = cursor
+        while cursor < scan_end and counts[cursor - top] <= 1:
+            cursor += 1
+        # Require pixels below the entire gap, rather than accepting a gap
+        # cut by the scan boundary. Keep at least two white pixels above ink.
+        if cursor - begin >= minimum_gap and cursor < scan_end:
+            chosen = begin + (cursor - begin) // 2
+            if (begin - separator <= math.ceil(glyph_height_pixels)
+                    and cursor - chosen >= 2 and chosen <= earliest_axis_top):
+                profile.update(separator_row=separator, white_gap=[begin, cursor], selected_top=chosen)
+                return [left, chosen, right, bottom], profile
+            break
+    return list(pixel_box), profile
 
 
 def _select_regions(candidates, page_size, image_size, source_image=None):
     base = candidates["source-flow"]
     spans = _spans(base["text"], base["words"])
     runs = list(LONG.finditer(base["text"]))
-    if not runs or len(runs) > MAX_SEEDS or len({m.group() for m in runs}) != len(runs):
+    if not runs or len(runs) > MAX_SEEDS:
         raise RotatedAxisError("rotated_axis_not_eligible")
     targets = []
     for run in runs:
@@ -229,24 +292,13 @@ def _select_regions(candidates, page_size, image_size, source_image=None):
             grew = False
             for word in base["words"]:
                 wb = word["bbox"]
-                is_axis = (LONG.search(word["text"]) is not None or
-                           (re.fullmatch(r"[0-9/.,+\-()]+", word["text"]) is not None
-                            and wb[3] - wb[1] >= 1.2 * glyph_height
-                            and wb[3] - wb[1] >= 1.5 * (wb[2] - wb[0])))
                 gap = max(0, wb[0] - box[2], box[0] - wb[2])
-                if is_axis and gap <= 2 * glyph_height and min(wb[3], box[3]) > max(wb[1], box[1]):
+                if _axis_word(word, glyph_height) and gap <= 2 * glyph_height and min(wb[3], box[3]) > max(wb[1], box[1]):
                     expanded = _union([box, wb])
                     if expanded != box:
                         box = expanded; grew = True
-        ids = {i for i, word in enumerate(base["words"]) if _intersects(word["bbox"], box)}
-        # Include whole original words. Any prose encountered is a refusal,
-        # not text that may be erased to improve the language score.
-        for i in ids:
-            word = base["words"][i]
-            wb = word["bbox"]
-            if (not LONG.search(word["text"]) and (not re.fullmatch(r"[0-9/.,+\-()]+", word["text"])
-                    or wb[3] - wb[1] < 1.2 * glyph_height or wb[3] - wb[1] < 1.5 * (wb[2] - wb[0]))):
-                raise RotatedAxisError("rotated_axis_not_eligible")
+        ids = {i for i, word in enumerate(base["words"])
+               if _axis_word(word, glyph_height) and _intersects(word["bbox"], box)}
         if ids & assigned:
             raise RotatedAxisError("rotated_axis_not_eligible")
         assigned |= ids
@@ -261,6 +313,9 @@ def _select_regions(candidates, page_size, image_size, source_image=None):
                      math.ceil(box[2] * image_size[0] / page_size[0]),
                      math.ceil(box[3] * image_size[1] / page_size[1])]
         seed_box = list(pixel_box)
+        earliest = min(math.floor(base["words"][i]["bbox"][1] * image_size[1] / page_size[1]) for i in ids)
+        pixel_box, separation = _separate_chart_top(source_image, pixel_box, earliest,
+                                                   glyph_height * image_size[1] / page_size[1])
         profile = _ink_profile(source_image, image_size, pixel_box[1::2],
                                max(1, math.ceil(2 * glyph_height * image_size[0] / page_size[0])))
         pixel_box = _grow_columns(pixel_box, profile)
@@ -269,12 +324,12 @@ def _select_regions(candidates, page_size, image_size, source_image=None):
         grown = [pixel_box[0] * page_size[0] / image_size[0], pixel_box[1] * page_size[1] / image_size[1],
                  pixel_box[2] * page_size[0] / image_size[0], pixel_box[3] * page_size[1] / image_size[1]]
         all_ids = {i for i, word in enumerate(base["words"]) if _intersects(word["bbox"], grown)}
-        if len(all_ids) > MAX_REGION_WORDS or any(i not in ids and i in assigned for i in all_ids):
+        if (not ids <= all_ids or len(all_ids) > MAX_REGION_WORDS
+                or any(i not in ids and i in assigned for i in all_ids)):
             raise RotatedAxisError("rotated_axis_not_eligible")
         for i in all_ids:
             word = base["words"][i]; wb = word["bbox"]
-            if (not LONG.search(word["text"]) and (not re.fullmatch(r"[0-9/.,+\-()]+", word["text"])
-                    or wb[3] - wb[1] < 1.2 * glyph_height or wb[3] - wb[1] < 1.5 * (wb[2] - wb[0]))):
+            if not _axis_word(word, glyph_height):
                 raise RotatedAxisError("rotated_axis_not_eligible")
             if not (grown[0] <= wb[0] and grown[1] <= wb[1] and wb[2] <= grown[2] and wb[3] <= grown[3]):
                 raise RotatedAxisError("rotated_axis_not_eligible")
@@ -284,7 +339,7 @@ def _select_regions(candidates, page_size, image_size, source_image=None):
         if (pixel_box[2] - pixel_box[0]) * (pixel_box[3] - pixel_box[1]) > image_size[0] * image_size[1] * .04:
             raise RotatedAxisError("rotated_axis_not_eligible")
         regions.append({"id": len(regions) + 1, "seed_pixel_box": seed_box, "source_pixel_box": pixel_box,
-                        "source_word_indices": sorted(all_ids), "ink_profile": profile})
+                        "source_word_indices": sorted(all_ids), "top_separation": separation, "ink_profile": profile})
     if sum((r["source_pixel_box"][2] - r["source_pixel_box"][0]) *
            (r["source_pixel_box"][3] - r["source_pixel_box"][1]) for r in regions) > image_size[0] * image_size[1] * .12:
         raise RotatedAxisError("rotated_axis_not_eligible")

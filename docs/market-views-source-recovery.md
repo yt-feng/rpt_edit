@@ -741,6 +741,28 @@ reads total, with a shared 180-second budget and a 30-second per-read limit.
 Only one unambiguous direction containing complete date words is eligible;
 prose, clipped words, partial dates and ambiguous directions reject the page.
 
+Original-PDF visual QA of October 1 source ordinal 23 page 3 confirms four
+bottom-to-top axes with full `YYYY/MM` labels. A fresh 300-dpi render of the
+verified original is 2550 by 3234 pixels. The older 980 by 1242 PNG is a reduced
+preview and must not be described as a full-resolution OCR proof. Replaying
+the retained opaque-run positions against the fresh render found that the
+proposed bands also included the chart baseline and horizontal scale zero.
+That extra content can correctly cause the date-only reader to reject a band.
+
+The local follow-up separates an axis band from a chart baseline only when
+the original pixels contain a bounded, sufficiently wide white gap. Complete
+word containment, body collisions, region boundaries and pixel margins still
+apply, and the consumer recomputes the selection from the original RGB image.
+Horizontal zero and all other text outside the replacement spans remain in
+the original transcript and their existing numeric checks. Identical opaque
+strings on separate axes are allowed only through their exact original word
+indices and global spans; exchanging those positions still rejects the proof.
+
+The retained diagnostic omits the full word list. Its geometry-only replay uses
+explicit synthetic placeholders for the known positions and performs no OCR,
+source admission or numeric acceptance. Real affected-page recognition remains
+an independent cloud acceptance requirement.
+
 Private provenance preserves all three rejected transcripts, every original
 word, original pixels, crop and rotated hashes, affine mappings and the exact
 replacement ledger. The consumer reconstructs the selection from these inputs
@@ -750,14 +772,27 @@ remain unconfirmed and are masked; this route does not authorize their use as
 verified numbers. Both real-field and ordinal probes forward the same private
 proof without including transcripts or proof contents in public diagnostics.
 
-The current integrated offline regression ran 230 tests: 217 passed and 13
-require actual cloud OCR. Independent root checks passed the 131-test source,
-numeric and axis group (11 cloud-only skips), 52 audit/workflow tests, and the
-53-test probe group (two cloud-only skips). These are local implementation
-checks, not cloud deployment or real-source acceptance. The affected October 1
-chart page, complete backup batches and PDF consumer still require cloud
+The updated integrated offline regression ran 234 tests: 220 passed and 14
+require actual cloud OCR. The axis module includes a Linux-only actual
+Tesseract regression with the production `eng+chi_sim` models, real model
+hashes, vertical `YYYY/MM` labels and adjacent scale zero. It does not mock
+the region reader or independent numeric reads. The regression workflow's
+required-OCR flag makes missing CLI/models a failure; macOS skips this case
+without executing local OCR. This new real-engine test has not yet run in CI.
+
+Independent source review passed 26 targeted cases with one cloud-only skip.
+The original source, auditor, probe and legacy groups passed in the integrated
+run. These are local implementation checks, not cloud deployment or real-source
+acceptance. The affected October 1 chart page, complete backup batches and
+PDF consumer still require cloud
 acceptance before enabling the daily backup switch. MinerU remains the primary
 parser and GitHub Actions remains the production execution environment.
+
+The October 5 boundary follow-up and complete-PDF acceptance mode are still
+local changes. A GitHub GraphQL request failed with a TLS handshake timeout;
+remote Git/GitHub operations stopped under the user's network-failure rule.
+No CI result, deployment or new complete-source acceptance is inferred from
+the offline checks, and the daily backup switch remains disabled.
 
 ### Primary PDF visual acceptance and retained figure defects
 
