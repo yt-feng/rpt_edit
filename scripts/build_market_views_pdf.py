@@ -83,6 +83,10 @@ def log(message: str) -> None:
 
 
 def latex_escape(text: str) -> str:
+    # Display-only counterpart of the ReportLab escape path. Keep raw markers
+    # in source evidence, structured summaries and every model/audit input.
+    text = re.sub(r"\[(?:数值待核对:n|漏识数值待核对:s)[0-9]{4,}\]",
+                  "（该数值待核对）", str(text or ""))
     text = sanitize_text(str(text or ""))
     replacements = {
         "\\": r"\textbackslash{}", "&": r"\&", "%": r"\%", "$": r"\$", "#": r"\#",

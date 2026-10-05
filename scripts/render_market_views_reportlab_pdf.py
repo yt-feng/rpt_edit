@@ -118,7 +118,11 @@ def register_cjk_font() -> str:
 
 
 def clean_text(value: Any) -> str:
-    text = re.sub(r"\s+", " ", str(value or "")).strip()
+    # Only the final display loses field IDs; source/audit/model inputs retain
+    # the exact marker. A visible phrase prevents neighbouring digits joining.
+    text = re.sub(r"\[(?:数值待核对:n|漏识数值待核对:s)[0-9]{4,}\]",
+                  "（该数值待核对）", str(value or ""))
+    text = re.sub(r"\s+", " ", text).strip()
     return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
