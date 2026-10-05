@@ -806,10 +806,23 @@ seeded by the existing opaque runs. It assigns a cross-chart source word once,
 using all original non-white pixels across the complete set of bands; any
 baseline exception must identify the actual long gray separator stroke and
 its proved white gap. A successful rotated direction must contain complete
-date words in separate non-overlapping rows whose boxes cover every non-white
-crop pixel, with no box dilation. Original candidates, word indices, support
-hashes and replacement spans remain in the ledger, and the consumer recomputes
-the complete pixel/support/coverage proof. A short token, thin box or missing
+date words in separate non-overlapping rows. Original boxes remain unchanged.
+Successful exact-box and one-pixel component proofs keep their existing shape.
+For trimmed glyph edges, a connected component must have all dark core pixels
+in one original word box, and every outside pixel must reach that box within
+two strictly darker steps, each closer to the box. Other-word contact, longer
+tails and dark-core overhang still reject.
+
+Completely isolated near-white micro-components are never called dates. They
+receive a separate untranscribed ledger containing original positions, gray
+values and pixel hashes: each component has at most two pixels, all values
+are 240–244, and all share one uniquely nearest original date box within four
+pixels. Their combined size is at most 0.05% of the band’s ink and 16 pixels,
+whichever is smaller. Every pixel below the unchanged 245 threshold must
+belong either to a proved glyph component or this bounded untranscribed ledger.
+The ledger cannot supply numeric confirmation or invented text. Original
+candidates, word indices, support hashes and replacement spans remain, and
+the consumer recomputes the complete pixel/support/coverage proof. A short token, thin box or missing
 alternate read alone never authorizes deletion. The actual affected-page cloud
 acceptance remains pending; a geometric replay is not recognition acceptance.
 
@@ -997,21 +1010,27 @@ Current independent backup acceptance and enablement are recorded below.
 The primary architecture remains Dropbox → GitHub Actions → MinerU API →
 private R2 → Market Views PDF → member portal. Cloud OCR is a retained automatic
 backup; production execution does not depend on local QA or a local computer.
-The provider's strict result-CDN probe `37336151221` still reported an expired
-certificate at 15:52 UTC, independently of successful task API authentication
-and GitHub access. Daily TLS verification has not been relaxed.
+The provider's final strict result-CDN probe `37347310154` still reported an
+expired certificate at 17:18 UTC, independently of successful task API
+authentication and GitHub access. Daily TLS verification has not been relaxed.
 
 Complete primary recovery `37284033767` and PDF consumer `37284226601`
-succeeded for all 50 October 2 originals. Live inspection `37285056164`
-verified October 1–4 full private PDF hashes and index records against the
-public dated list; the website lists all four dates. An actual authenticated
-member-browser download of `market_views_261002.pdf` then matched the private
-R2 receipt exactly: 54 pages, 3,619,892 bytes, SHA-256
-`dc902a24cae3672e7f5292a600048436b5805b3a111403aea48269262394acd3`.
-The separate public-safe PDF has 53 pages after sanitization. These are distinct
-versions; public-safe page counts or hashes must not be compared with the
-member original. Authenticated downloads of the other dates are not established
-by this October 2 check.
+succeeded for all 50 October 2 originals. Fresh live inspection `37343103500`
+verified the latest October 1–4 full private PDF hashes and index records
+against the public dated list, and anonymous download requests returned HTTP
+401. Actual authenticated member-browser downloads matched the private R2
+receipts for both October 2 and the rebuilt October 3 PDF:
+
+| Member original | Pages | Bytes | SHA-256 |
+| --- | --- | --- | --- |
+| October 2 | 54 | 3,619,892 | `dc902a24cae3672e7f5292a600048436b5805b3a111403aea48269262394acd3` |
+| October 3 | 46 | 30,252,678 | `7a1b9af4609923b1bddd3a1560aac13381b3c95a50c568a4ef878b8011649f0c` |
+
+The October 3 download is bound to PDF run `37341517817` and the fresh live
+inspection. October 1 and 4 have not had this authenticated browser-download
+acceptance. The separate October 2 public-safe PDF has 53 pages after
+sanitization; its page count or hash must not be compared with the member
+original.
 
 After PR 252, October 4 primary source rebuild `37297655439` and PDF
 `37297840175`, and October 1 legacy source rebuild `37297927956` and child PDF
@@ -1019,8 +1038,8 @@ After PR 252, October 4 primary source rebuild `37297655439` and PDF
 checks at 16:30:59 UTC and the private R2 handoff at 16:31:38. PDF child
 `37341517817` succeeded at 16:42:21 on `ce16fb2a`, and the parent completed
 successfully at 16:42:30. The public-safe PDF was committed at `615d5602`.
-The earlier live inspection does not establish visual acceptance of every
-newly rebuilt figure; refreshed live inspection and member download are separate.
+The fresh live inspection and October 3 authenticated download above verified
+this latest publication against its full private PDF receipt.
 
 PR 254 merged at `ce16fb2a` at 16:22 UTC after CI `37339774011` passed actual
 OCR and renderer checks in 3 minutes 45 seconds. Final ReportLab and LaTeX
@@ -1072,6 +1091,29 @@ unchanged; geometric local replay alone is not OCR acceptance.
 Private probe `37340394718` kept its original failed exit and retained two
 private files whose hashes, source binding and model provenance were verified.
 They show multiple short horizontal OCR word boxes crossing date-axis regions.
-A general full-ink coverage correction is being developed from original pixels
-and complete word ledgers. The page is not yet repaired; private diagnostic
-retention supplies evidence only and cannot be consumed as a complete source.
+PR 255 merged at `8e984e74` after actual Ubuntu OCR CI `37345360545`
+passed. Real-page probe `37346104127` then passed the four-band planner and
+unique complete-date direction but rejected source-pixel coverage in the first
+band. Verified private evidence contains 31,487 non-white pixels: 444 outside
+word boxes have direct one-pixel support, 21 have a strictly darker two-step
+path into a unique original box, and eight near-white pixels are isolated.
+Those isolated pixels cannot be called recognized dates; the follow-up
+retains an explicit untranscribed ledger. Pixel replay accounts for all
+31,487 pixels as 31,479 glyph pixels plus eight untranscribed pixels; it
+performs no OCR and does not replace fresh cloud acceptance. The integrated
+suite has 213 tests: 198 passed locally, with 15 real-engine cases reserved
+for Ubuntu CI. The opt-in private probe now collects all already-planned
+regions within the existing eight-read/180-second budget after a first
+rejection, preserves that rejection and never emits a partial success proof.
+Default production still stops at its first rejected region. Affected-page
+and full-batch acceptance remain open. Private diagnostics are not complete source handoffs.
+
+PR 256 merged at `1da60820` at 17:19 UTC. All four required CI checks passed
+on `693b31f5`, including actual workflow-resolver regressions. Same-date reruns
+skip only when the repository PDF exists and the private member PDF/catalogue
+pair passes complete hash, byte length, date and metadata validation. Explicit
+absence or content inconsistency rebuilds from the verified full source; no
+public-safe PDF is uploaded as a member original. R2 authorization, TLS,
+timeout, unreadable lengths and short reads still fail without triggering
+synthesis. Force and acceptance-only semantics and private-before-public
+publication order are preserved.

@@ -123,16 +123,23 @@ Current delivery and fallback state, verified on October 5:
 October 1–4 primary PDFs were generated from complete MinerU results and appear
 in the live catalogue: 63 original aliases (62 unique contents), 50 originals,
 54 originals and four originals respectively. October 2 source recovery
-`37284033767` and PDF `37284226601` succeeded; live inspection `37285056164`
-matched full private PDF hashes and index records with all four dated public
-entries. A later actual member-browser download of `market_views_261002.pdf`
-matched its private R2 receipt exactly: 54 pages, 3,619,892 bytes, SHA-256
-`dc902a24cae3672e7f5292a600048436b5805b3a111403aea48269262394acd3`.
-The 53-page public-safe PDF is a separately sanitized version; its page count
-and hash must not be used to check the member original.
+`37284033767` and PDF `37284226601` succeeded. Fresh live inspection
+`37343103500` matched the latest full private PDF hashes and index records
+with all four dated public entries, and anonymous download requests returned
+HTTP 401. Actual authenticated member-browser downloads also matched the
+private R2 receipts for October 2 and the rebuilt October 3 PDF:
+
+| Member original | Pages | Bytes | SHA-256 |
+| --- | --- | --- | --- |
+| October 2 | 54 | 3,619,892 | `dc902a24cae3672e7f5292a600048436b5805b3a111403aea48269262394acd3` |
+| October 3 | 46 | 30,252,678 | `7a1b9af4609923b1bddd3a1560aac13381b3c95a50c568a4ef878b8011649f0c` |
+
+October 1 and 4 have not had this authenticated browser-download acceptance.
+The October 2 53-page public-safe PDF is a separately sanitized version; its
+page count and hash must not be used to check the member original.
 
 MinerU task authentication and parsing have succeeded, while strict result-CDN
-TLS probe `37336151221` still reported an expired certificate at 15:52 UTC.
+TLS probe `37347310154` still reported an expired certificate at 17:18 UTC.
 The result-download connection is separate from GitHub authorization and the
 MinerU task API. Strict Cloudflare probes also rejected that certificate; R2
 can retain verified result bytes but cannot supply a ZIP not yet retrieved.
@@ -153,8 +160,8 @@ and child PDF `37298965236`, succeeded. October 3 rebuild `37340380301`
 passed all 54 source checks at 16:30:59 UTC and private R2 handoff at 16:31:38.
 Its PDF child `37341517817` succeeded at 16:42:21 on `ce16fb2a`; the parent
 completed at 16:42:30, with public-safe PDF commit `615d5602`.
-Earlier live checks do not verify these newer rendered figures; local QA
-remains a development check only.
+The fresh live inspection and October 3 member download above verified this
+latest publication. Local QA remains a development check only.
 
 PR 254 merged at `ce16fb2a` at 16:22 UTC after CI `37339774011` passed actual
 OCR and renderer checks in 3 minutes 45 seconds. Final ReportLab/LaTeX output
@@ -195,8 +202,25 @@ numeric gates remain strict; new rotated values remain masked until confirmed.
 Private diagnostic probe `37340394718` retained its original failed exit and
 saved two verified private evidence files with source, pixel and model bindings.
 They confirm multiple short horizontal OCR word boxes cross date-axis regions.
-A general original-pixel coverage repair is in progress; these diagnostic
-files are not a complete source handoff or evidence that the page is repaired.
+PR 255 merged at `8e984e74` after actual Ubuntu OCR CI `37345360545`
+passed. Real-page probe `37346104127` then passed the four-band planner and
+unique complete-date direction, but its source-pixel check rejected light
+glyph edges and eight isolated near-white pixels. Follow-up coverage work
+retains these pixels explicitly instead of inventing date text: glyph edges
+need at most two strictly darker steps into their original box; isolated
+near-white components have a separate bounded untranscribed ledger and never
+confirm numbers. The consumer recomputes the complete pixel accounting.
+Affected-page and complete-batch acceptance remain open; diagnostic files are not complete
+source handoffs.
+PR 256 merged at `1da60820` after all four required CI checks passed. A
+same-date repository PDF now permits a skip only when the private member PDF
+and catalogue item pass full-byte hash, size, date and metadata checks.
+Missing or inconsistent private objects rebuild from the verified complete
+source; the public-safe repository PDF is never reused as the member original.
+TLS, authorization, timeout and incomplete-read errors still fail rather than
+being interpreted as absence. This corrects interrupted-publication retries
+without changing explicit force or acceptance-only behavior.
+
 The detailed contracts and historical evidence are maintained in
 [Market Views source recovery](market-views-source-recovery.md).
 
