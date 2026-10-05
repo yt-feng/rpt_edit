@@ -33,6 +33,13 @@ FIXTURE_BYTE_LIMIT = 65_536
 MANIFEST_BYTE_LIMIT = 16_000_000
 MAX_REPORT_PAGES = 10_000
 MAX_DIAGNOSTIC_PAGES = 8
+MAX_OPAQUE_RUNS = 512
+MAX_POSITION_WORDS = 20_000
+MAX_POSITION_TEXT_BYTES = 1_000_000
+OPAQUE_POSITION_STATUSES = {"mapped", "text_order_mismatch", "word_geometry_unavailable",
+                            "word_geometry_invalid", "word_bound_exceeded", "word_boundary_mismatch",
+                            "page_geometry_unavailable", "input_bound_exceeded"}
+OPAQUE_CANDIDATES = {"geometric-sorted", "source-flow", "full-page-psm11"}
 READABILITY_COUNTS = ("characters", "minimum_characters", "invalid_unicode_characters", "han_characters",
                       "latin_characters", "plausible_words", "distinct_plausible_words", "plausible_word_characters",
                       "long_ascii_characters", "numeric_tokens")
@@ -361,10 +368,161 @@ def _readability_projection(text: str, *, allow_sparse_ocr: bool = False) -> dic
     return _safe_readability(native.page_readability(text, allow_sparse_ocr=allow_sparse_ocr))
 
 
+def _finite_coordinate(value: Any) -> bool:
+    if type(value) not in (int, float):
+        return False
+    try:
+        return math.isfinite(value)
+    except OverflowError:
+        return False
+
+
+def _page_bounds(rect: Any) -> list[float] | None:
+    try:
+        values = list(rect)
+        if (len(values) != 4 or any(not _finite_coordinate(value) for value in values)
+                or values[2] <= values[0] or values[3] <= values[1]):
+            return None
+        return values
+    except (TypeError, ValueError):
+        return None
+
+
+def _opaque_run_positions(text: Any, words: Any, rect: Any) -> dict[str, Any]:
+    """Map exact non-whitespace character offsets, never search duplicate words."""
+    result = {"status": "input_bound_exceeded", "counts_available": False, "run_count": 0,
+              "long_ascii_characters": 0, "returned_run_count": 0, "mapped_run_count": 0,
+              "truncated": True, "runs": []}
+    if not isinstance(text, str) or len(text.encode("utf-8")) > MAX_POSITION_TEXT_BYTES:
+        return result
+    # Each run is already contiguous ASCII. Offsets count all other source
+    # glyphs too, so punctuation/order changes cannot borrow a nearby word.
+    positions, previous, offset, total, characters = [], 0, 0, 0, 0
+    for match in native.LONG_ASCII_RUN.finditer(text):
+        offset += sum(not character.isspace() for character in text[previous:match.start()])
+        length = match.end() - match.start()
+        if len(positions) < MAX_OPAQUE_RUNS:
+            positions.append((offset, offset + length, length))
+        offset += length
+        previous = match.end()
+        total += 1
+        characters += length
+    result.update(counts_available=True, run_count=total, long_ascii_characters=characters,
+                  returned_run_count=len(positions), truncated=total > len(positions))
+    bounds = _page_bounds(rect)
+    status = "page_geometry_unavailable" if bounds is None else "word_geometry_unavailable"
+    if isinstance(words, (list, tuple)) and len(words) > MAX_POSITION_WORDS:
+        status = "word_bound_exceeded"
+    spans, parts, size, stream_bytes = [], [], 0, 0
+    if bounds is not None and isinstance(words, (list, tuple)) and len(words) <= MAX_POSITION_WORDS:
+        status = "word_geometry_invalid"
+        for word in words:
+            box, value = (word.get("bbox"), word.get("text")) if isinstance(word, dict) else (
+                (list(word[:4]), word[4]) if isinstance(word, (list, tuple)) and len(word) >= 5 else (None, None))
+            if (not isinstance(box, list) or len(box) != 4
+                    or any(not _finite_coordinate(number) for number in box)
+                    or not bounds[0] <= box[0] < box[2] <= bounds[2]
+                    or not bounds[1] <= box[1] < box[3] <= bounds[3]
+                    or not isinstance(value, str) or not value):
+                break
+            stream_bytes += len(value.encode("utf-8"))
+            if stream_bytes > MAX_POSITION_TEXT_BYTES:
+                break
+            glyphs = "".join(character for character in value if not character.isspace())
+            spans.append((size, size + len(glyphs), box))
+            parts.append(glyphs)
+            size += len(glyphs)
+        else:
+            target = "".join(character for character in text if not character.isspace())
+            status = "mapped" if "".join(parts) == target else "text_order_mismatch"
+            # Repeated identical glyphs can conceal a moved word boundary.
+            # A run may cover many whole OCR words, or part of one word next
+            # to punctuation, but cannot invent a break inside its ASCII run.
+            if status == "mapped" and any(
+                    start < begin < finish and target[begin - 1].isascii() and target[begin - 1].isalnum()
+                    or start < end < finish and target[end].isascii() and target[end].isalnum()
+                    for begin, end, _ in positions for start, finish, _ in spans):
+                status = "word_boundary_mismatch"
+    result["status"] = status
+    for index, (begin, end, length) in enumerate(positions, 1):
+        covering = [box for start, finish, box in spans if start < end and finish > begin] if status == "mapped" else []
+        box = ([min(box[0] for box in covering), min(box[1] for box in covering),
+                max(box[2] for box in covering), max(box[3] for box in covering)] if covering else None)
+        result["runs"].append({"run": index, "characters": length,
+                               "bbox": [min(bounds[axis % 2 + 2], max(bounds[axis % 2], round(number, 4)))
+                                        for axis, number in enumerate(box)] if box is not None else None,
+                               "source_word_count": len(covering)})
+    result["mapped_run_count"] = sum(run["bbox"] is not None for run in result["runs"])
+    return result
+
+
+def _safe_opaque_positions(value: Any, rect: Any) -> dict[str, Any] | None:
+    """Project only bounded typed coordinates/counts; never copy engine text."""
+    bounds = _page_bounds(rect)
+    if (not isinstance(value, dict) or not isinstance(value.get("status"), str)
+            or value["status"] not in OPAQUE_POSITION_STATUSES
+            or any(type(value.get(key)) is not bool for key in ("counts_available", "truncated"))
+            or any(type(value.get(key)) is not int or not 0 <= value[key] <= MAX_POSITION_TEXT_BYTES
+                   for key in ("run_count", "long_ascii_characters", "returned_run_count", "mapped_run_count"))
+            or not isinstance(value.get("runs"), list) or len(value["runs"]) > MAX_OPAQUE_RUNS
+            or value["returned_run_count"] != len(value["runs"])
+            or value["run_count"] < len(value["runs"])):
+        return None
+    runs = []
+    for index, run in enumerate(value["runs"], 1):
+        if (not isinstance(run, dict) or type(run.get("run")) is not int or run["run"] != index
+                or type(run.get("characters")) is not int or not 25 <= run["characters"] <= MAX_POSITION_TEXT_BYTES
+                or type(run.get("source_word_count")) is not int or not 0 <= run["source_word_count"] <= MAX_POSITION_WORDS):
+            return None
+        box = run.get("bbox")
+        if box is not None:
+            if (bounds is None or not isinstance(box, list) or len(box) != 4
+                    or any(not _finite_coordinate(number) for number in box)
+                    or not bounds[0] <= box[0] < box[2] <= bounds[2]
+                    or not bounds[1] <= box[1] < box[3] <= bounds[3] or run["source_word_count"] < 1):
+                return None
+        elif run["source_word_count"] != 0:
+            return None
+        runs.append({"run": index, "characters": run["characters"], "bbox": box,
+                     "source_word_count": run["source_word_count"]})
+    if (value["mapped_run_count"] != sum(run["bbox"] is not None for run in runs)
+            or sum(run["characters"] for run in runs) > value["long_ascii_characters"]
+            or value["counts_available"] and value["truncated"] != (value["run_count"] > len(runs))):
+        return None
+    if (value["status"] == "mapped" and value["mapped_run_count"] != len(runs)
+            or value["status"] != "mapped" and value["mapped_run_count"] != 0
+            or not value["counts_available"] and (value["status"] != "input_bound_exceeded"
+                or value["run_count"] or value["long_ascii_characters"] or runs or not value["truncated"])):
+        return None
+    return {**{key: value[key] for key in ("status", "counts_available", "run_count", "long_ascii_characters",
+                                         "returned_run_count", "mapped_run_count", "truncated")}, "runs": runs}
+
+
+class _ObservedOCRPage:
+    """Expose the same page; retain the one existing OCR TextPage privately."""
+    def __init__(self, page):
+        self.page, self.textpage, self.texts = page, None, {}
+
+    def __getattr__(self, name):
+        return getattr(self.page, name)
+
+    def get_textpage_ocr(self, **options):
+        self.textpage = self.page.get_textpage_ocr(**options)
+        return self.textpage
+
+    def get_text(self, kind, *args, **options):
+        value = self.page.get_text(kind, *args, **options)
+        if (kind == "text" and options.get("textpage") is self.textpage
+                and type(options.get("sort")) is bool and isinstance(value, str)):
+            self.texts[options["sort"]] = value.strip()
+        return value
+
+
 def _raw_page_ocr(page: fitz.Page) -> tuple[str, list[Any], str, dict[str, Any]]:
     """Use the production full-page engine parameters without admitting sources."""
+    observed = _ObservedOCRPage(page)
     try:
-        primary, words, tessdata, _, diagnostic = native._recognize_ocr_page(page, "page-probe", 1,
+        primary, words, tessdata, _, diagnostic = native._recognize_ocr_page(observed, "page-probe", 1,
                                                                            allow_rejected=True)
     except native.SourceValidationError as exc:
         category = getattr(exc, "category", None)
@@ -372,6 +530,20 @@ def _raw_page_ocr(page: fitz.Page) -> tuple[str, list[Any], str, dict[str, Any]]
                          else "ocr_engine_failed") from None
     except Exception:
         raise ProbeError("ocr_engine_failed") from None
+    opaque = {}
+    rect = getattr(page, "rect", None)
+    for sort, label, assessment in ((True, "geometric-sorted", "sorted_readability"),
+                                    (False, "source-flow", "source_flow_readability")):
+        if sort in observed.texts and diagnostic.get(assessment, {}).get("accepted") is False:
+            try:
+                positioned = page.get_text("words", textpage=observed.textpage, sort=sort) if _page_bounds(rect) else None
+            except Exception:
+                positioned = None
+            opaque[label] = _opaque_run_positions(observed.texts[sort], positioned, rect)
+    if diagnostic.get("alternate_readability", {}).get("accepted") is False:
+        opaque["full-page-psm11"] = _opaque_run_positions(primary, words, rect)
+    if opaque:
+        diagnostic = {**diagnostic, "opaque_runs": opaque}
     return primary, words, tessdata, diagnostic
 
 
@@ -394,6 +566,10 @@ def _diagnose_page(page: fitz.Page, image_path: Path) -> dict[str, Any]:
                 for key in ("source_flow_same_glyphs", "recognition_attempted"):
                     if type(layout.get(key)) is bool:
                         result["ocr_layout"][key] = layout[key]
+                if isinstance(layout.get("opaque_runs"), dict):
+                    projected = {candidate: _safe_opaque_positions(value, page.rect)
+                                 for candidate, value in layout["opaque_runs"].items() if candidate in OPAQUE_CANDIDATES}
+                    result["ocr_layout"]["opaque_runs"] = {key: value for key, value in projected.items() if value is not None}
             if not result["ocr_readability"].get("accepted"):
                 result["category"] = "ocr_readability_rejected"
                 return result

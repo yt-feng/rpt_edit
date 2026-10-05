@@ -709,3 +709,11 @@ results are consumed and workers joined before any ZIP request or cache write.
 A changed or unreadable record rejects the operation with the same fixed
 category. Submission, result downloads, cache writes and cutoff checks remain
 serial and unchanged.
+
+Rejected OCR page diagnostics now report bounded long-ASCII-run lengths and
+source-page regions for each failed text candidate. Regions are mapped only
+when the complete non-whitespace character stream and word boundaries agree;
+ambiguous, changed-order or invalid geometry remains explicitly unlocated.
+The output contains fixed categories, coordinates and counts, never OCR words
+or source names. It reuses the existing recognition result and does not change
+readability, numeric checks or production source admission.

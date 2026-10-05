@@ -533,6 +533,165 @@ class FieldProbeTests(unittest.TestCase):
         self.assertNotIn(source_flow, json.dumps(diagnostic))
         self.assertNotIn(joined, json.dumps(diagnostic))
 
+    def test_real_textpage_glued_rotated_labels_map_to_all_covering_source_words(self):
+        with fitz.open() as document:
+            page = document.new_page(width=612, height=792)
+            page.insert_text((50, 50), "Robot shipment value by destination research monthly trade statistics", fontsize=11)
+            for index in range(30):
+                page.insert_text((80 + index * 9, 240), str(201001 + index), fontsize=10, rotate=90)
+            textpage = page.get_textpage()
+            text = page.get_text("text", textpage=textpage, sort=True).strip()
+            words = page.get_text("words", textpage=textpage, sort=True)
+            result = probe._opaque_run_positions(text, words, page.rect)
+            source_boxes = [word[:4] for word in words if word[4].isdigit()]
+            self.assertEqual(result["status"], "mapped")
+            self.assertEqual(result["long_ascii_characters"], 180)
+            self.assertEqual(result["mapped_run_count"], 1)
+            self.assertEqual(result["runs"][0]["source_word_count"], 30)
+            expected = [min(box[0] for box in source_boxes), min(box[1] for box in source_boxes),
+                        max(box[2] for box in source_boxes), max(box[3] for box in source_boxes)]
+            self.assertEqual(result["runs"][0]["bbox"], [round(value, 4) for value in expected])
+            flow = page.get_text("text", textpage=textpage, sort=False).strip()
+            self.assertEqual(probe._opaque_run_positions(flow, page.get_text("words", textpage=textpage, sort=False), page.rect)["run_count"], 0)
+        self.assertNotIn("201001", json.dumps(result))
+        self.assertNotIn("Robot", json.dumps(result))
+
+    def test_duplicate_long_runs_use_character_offsets_and_never_collapse_source_positions(self):
+        text = "Q" * 30 + "\n" + "Q" * 30
+        words = [(10, 10, 90, 20, "Q" * 30), (10, 60, 90, 70, "Q" * 30)]
+        result = probe._opaque_run_positions(text, words, [0, 0, 200, 200])
+        self.assertEqual(result["run_count"], 2)
+        self.assertEqual(result["mapped_run_count"], 2)
+        self.assertEqual([row["bbox"] for row in result["runs"]], [[10, 10, 90, 20], [10, 60, 90, 70]])
+        self.assertEqual([row["characters"] for row in result["runs"]], [30, 30])
+        self.assertNotIn("Q" * 30, json.dumps(result))
+
+    def test_wrong_character_order_or_ambiguous_duplicate_boundaries_cannot_guess_a_box(self):
+        cases = [("A" * 25 + " " + "B" * 25,
+                  [(10, 10, 90, 20, "B" * 25), (10, 60, 90, 70, "A" * 25)], "text_order_mismatch"),
+                 ("A" * 30 + " " + "A" * 31,
+                  [(10, 10, 90, 20, "A" * 31), (10, 60, 90, 70, "A" * 30)], "word_boundary_mismatch")]
+        for text, words, reason in cases:
+            with self.subTest(reason=reason):
+                result = probe._opaque_run_positions(text, words, [0, 0, 200, 200])
+                self.assertEqual(result["status"], reason)
+                self.assertEqual(result["mapped_run_count"], 0)
+                self.assertTrue(all(row["bbox"] is None for row in result["runs"]))
+                self.assertEqual(result["returned_run_count"], 2)
+                self.assertIsNotNone(probe._safe_opaque_positions(result, [0, 0, 200, 200]))
+
+    def test_opaque_position_geometry_is_bounded_typed_and_cannot_be_clamped_into_a_fake_page(self):
+        text = "A" * 30
+        for box in ([True, 10, 90, 20], [-1, 10, 90, 20], [10, 10, 201, 20],
+                    [10, float("nan"), 90, 20], [90, 10, 10, 20], [10, 10, 90, float("inf")],
+                    [10, 10, 10 ** 1000, 20]):
+            with self.subTest(box=box):
+                result = probe._opaque_run_positions(text, [{"bbox": box, "text": text, "secret": "PRIVATE"}], [0, 0, 200, 200])
+                self.assertEqual(result["status"], "word_geometry_invalid")
+                self.assertIsNone(result["runs"][0]["bbox"])
+                self.assertNotIn("PRIVATE", json.dumps(result))
+        self.assertIsNone(probe._page_bounds([0, 0, 10 ** 1000, 200]))
+        rect = [0, 0, 200.123456, 300.654321]
+        result = probe._opaque_run_positions(text, [(0, 10, rect[2], 20, text)], rect)
+        self.assertIsNotNone(probe._safe_opaque_positions(result, rect), "Rounded edge coordinates must remain inside the real page")
+
+    def test_opaque_position_limits_report_truncation_and_missing_counts_explicitly(self):
+        count = probe.MAX_OPAQUE_RUNS + 3
+        text = "\n".join("A" * 25 for _ in range(count))
+        words = [(10, index * 2 + 1, 90, index * 2 + 2, "A" * 25) for index in range(count)]
+        result = probe._opaque_run_positions(text, words, [0, 0, 100, count * 2 + 10])
+        self.assertEqual(result["run_count"], count)
+        self.assertEqual(result["long_ascii_characters"], count * 25)
+        self.assertEqual(len(result["runs"]), probe.MAX_OPAQUE_RUNS)
+        self.assertTrue(result["truncated"])
+        self.assertEqual(result["mapped_run_count"], probe.MAX_OPAQUE_RUNS)
+        self.assertIsNotNone(probe._safe_opaque_positions(result, [0, 0, 100, count * 2 + 10]))
+        result = probe._opaque_run_positions("A" * 25, [words[0]] * (probe.MAX_POSITION_WORDS + 1), [0, 0, 100, 100])
+        self.assertEqual(result["status"], "word_bound_exceeded")
+        self.assertIsNone(result["runs"][0]["bbox"])
+        result = probe._opaque_run_positions("A" * (probe.MAX_POSITION_TEXT_BYTES + 1), [], [0, 0, 100, 100])
+        self.assertEqual(result["status"], "input_bound_exceeded")
+        self.assertFalse(result["counts_available"])
+        self.assertEqual(result["runs"], [])
+        self.assertIsNotNone(probe._safe_opaque_positions(result, [0, 0, 100, 100]))
+
+    def test_all_rejected_recognition_candidates_get_positions_from_one_default_textpage(self):
+        class Page:
+            rect = fitz.Rect(0, 0, 200, 200)
+            def __init__(self):
+                self.textpage, self.ocr_count, self.word_sorts = object(), 0, []
+            def get_textpage_ocr(self, **options):
+                self.ocr_count += 1
+                return self.textpage
+            def get_text(self, kind, *, textpage, sort):
+                self.assert_same(textpage)
+                text = "A" * 30 if sort else "B" * 35
+                if kind == "words":
+                    self.word_sorts.append(sort)
+                    y = 10 if sort else 60
+                    return [(10, y, 90, y + 10, text)]
+                return text
+            def assert_same(self, textpage):
+                if textpage is not self.textpage: raise AssertionError("A new OCR TextPage was used")
+        page = Page()
+        primary = "C" * 40
+        def recognize(observed, *args, **options):
+            textpage = observed.get_textpage_ocr()
+            sorted_text = observed.get_text("text", textpage=textpage, sort=True)
+            flow = observed.get_text("text", textpage=textpage, sort=False)
+            return primary, [{"bbox": [10, 120, 90, 130], "text": primary}], "private-models", {}, {
+                "selection": "rejected", "recognition_attempted": True,
+                "sorted_readability": probe._readability_projection(sorted_text),
+                "source_flow_readability": probe._readability_projection(flow),
+                "alternate_readability": probe._readability_projection(primary)}
+        with mock.patch.object(probe.native, "_recognize_ocr_page", side_effect=recognize):
+            _, _, _, layout = probe._raw_page_ocr(page)
+        self.assertEqual(page.ocr_count, 1)
+        self.assertEqual(page.word_sorts, [True, False])
+        self.assertEqual(set(layout["opaque_runs"]), probe.OPAQUE_CANDIDATES)
+        self.assertEqual([layout["opaque_runs"][key]["runs"][0]["characters"]
+                          for key in ("geometric-sorted", "source-flow", "full-page-psm11")], [30, 35, 40])
+        self.assertNotIn(primary, json.dumps(layout))
+        self.assertNotIn("private-models", json.dumps(layout))
+
+    def test_opaque_public_projection_rejects_bad_types_duplicate_indices_and_private_keys(self):
+        self.make_archive_context()
+        primary = "A" * 30
+        rect = [0, 0, 612, 792]
+        positions = probe._opaque_run_positions(primary, [(10, 10, 90, 20, primary)], rect)
+        for change in ("count_bool", "box_bool", "nan", "ordinal", "oversize", "status", "status_list",
+                       "status_dict", "huge_coordinate", "mapped"):
+            invalid = copy.deepcopy(positions)
+            if change == "count_bool": invalid["run_count"] = True
+            elif change == "box_bool": invalid["runs"][0]["bbox"][0] = False
+            elif change == "nan": invalid["runs"][0]["bbox"][0] = float("nan")
+            elif change == "ordinal": invalid["runs"][0]["run"] = 2
+            elif change == "oversize": invalid["runs"] *= probe.MAX_OPAQUE_RUNS + 1
+            elif change == "status": invalid["status"] = "PRIVATE"
+            elif change == "status_list": invalid["status"] = ["mapped"]
+            elif change == "status_dict": invalid["status"] = {"private": "PRIVATE"}
+            elif change == "huge_coordinate": invalid["runs"][0]["bbox"][0] = 10 ** 1000
+            else: invalid["mapped_run_count"] = 0
+            with self.subTest(change=change):
+                self.assertIsNone(probe._safe_opaque_positions(invalid, rect))
+        positions["raw"] = primary
+        positions["runs"][0]["text"] = "PRIVATE"
+        layout = {"selection": "rejected", "sorted_readability": probe._readability_projection(primary),
+                  "opaque_runs": {"geometric-sorted": positions, "PRIVATE_SOURCE": positions}}
+        with mock.patch.object(probe, "_raw_page_ocr", return_value=(primary, [], "PRIVATE-models", layout)), \
+                mock.patch.object(probe, "audit_numeric_evidence") as audit:
+            result = self.call_pages()
+        projected = result["pages"][0]["ocr_layout"]["opaque_runs"]
+        self.assertEqual(set(projected), {"geometric-sorted"})
+        self.assertEqual(projected["geometric-sorted"]["runs"][0]["characters"], 30)
+        self.assertEqual(result["pages"][0]["category"], "ocr_readability_rejected")
+        self.assertFalse(result["success"])
+        self.assertFalse(result["production_acceptance"])
+        self.assertFalse(result["complete_source_handoff"])
+        audit.assert_not_called()
+        self.assertNotIn("PRIVATE", json.dumps(result))
+        self.assertNotIn(primary, json.dumps(result))
+
     def test_raw_probe_uses_the_shared_primary_recognition_before_the_numeric_stage(self):
         primary = "Research market outlook shows economic conditions with growth analysis"
         words = [{"bbox": [2, 3, 10, 14], "text": "Research", "block": 0, "paragraph": 0, "line": 0}]
