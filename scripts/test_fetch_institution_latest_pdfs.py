@@ -55,7 +55,7 @@ class BISRedesignTests(unittest.TestCase):
         self.assertEqual(items[0]["source_url"], self.REPORT_URL)
         self.assertEqual(items[0]["guid"], "https://www.bis.org/publ/work1376.htm")
         self.assertEqual(items[0]["date"], "2026-09-07T00:00:00Z")
-        self.assertEqual(items[0]["pdf_candidates"], [])
+        self.assertEqual(items[0]["pdf_candidates"], [self.REPORT_URL + ".pdf"])
         self.assertEqual(items[0]["scrape_url"], self.REPORT_URL)
         self.assertEqual(items[2]["pdf_candidates"], ["https://www.bis.org/bcbs/publ/d600.pdf"])
         self.assertEqual(items[3]["pdf_candidates"], ["https://www.bis.org/fsi/publ/insights77.pdf"])
@@ -103,6 +103,16 @@ class BISRedesignTests(unittest.TestCase):
         self.assertEqual(fetcher._derive_pdf_candidates(cfg, page_url + "?download=1"), ["https://www.bis.org/publ/work1376.pdf?download=1"])
         page = '<a href="work1376.pdf">Full paper</a><a href="work1375.pdf">Previous paper</a>'
         self.assertEqual(fetcher.scrape_pdf_candidates(page, page_url), ["https://www.bis.org/publ/work1376.pdf"])
+
+    def test_modern_non_pdf_publication_uses_same_path_pdf(self) -> None:
+        cfg = fetcher.INSTITUTIONS["bis"]
+        modern_url = "https://www.bis.org/publications/bulletin-134-supervisory-screening"
+        self.assertEqual(fetcher._derive_pdf_candidates(cfg, modern_url), [modern_url + ".pdf"])
+
+    def test_quarterly_review_does_not_guess_same_path_pdf(self) -> None:
+        cfg = fetcher.INSTITUTIONS["bis"]
+        quarterly_url = "https://www.bis.org/publications/qr-202609"
+        self.assertEqual(fetcher._derive_pdf_candidates(cfg, quarterly_url), [])
 
     def test_known_series_keep_existing_seen_state_keys(self) -> None:
         for modern, old in (
