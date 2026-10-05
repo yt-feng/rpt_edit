@@ -833,7 +833,24 @@ class RotatedAxisCloudTests(unittest.TestCase):
         recovery = axis.recover_rotated_axes(page, candidates, language="eng+chi_sim", tessdata=self.tessdata,
             tesseract_command=self.command, tesseract_version=native._tesseract_version(self.command, 1),
             traineddata=self.models, diagnostics=diagnostics, private_trace=trace)
-        self.assertIsNotNone(recovery, f"Real fragmented date bands must recover: {diagnostics}")
+        if recovery is None:
+            # This fixture is generated above from anonymous constants. Keep
+            # its already-produced engine boxes in failure output so a cloud
+            # boundary mismatch can be reproduced without another OCR call.
+            details = []
+            for region in trace["regions"]:
+                crop = image.crop(tuple(region["source_pixel_box"]))
+                for read in region["reads"]:
+                    rotated = crop.transpose(Image.Transpose.ROTATE_90 if read["angle"] == 90 else Image.Transpose.ROTATE_270)
+                    ink = rotated.convert("L").point(lambda value: 255 if value < 245 else 0)
+                    covered = Image.new("L", rotated.size)
+                    for word in read["words"]:
+                        x0, y0, x1, y1 = word["bbox"]
+                        ImageDraw.Draw(covered).rectangle((x0, y0, x1 - 1, y1 - 1), fill=255)
+                    missing = axis.ImageChops.subtract(ink, covered)
+                    details.append({"region": region["id"], "angle": read["angle"], "words": read["words"],
+                        "uncovered_pixels": missing.histogram()[255], "uncovered_bbox": missing.getbbox()})
+            self.fail(f"Real fragmented date bands must recover: {diagnostics}; anonymous_fixture_reads={details}")
         self.assertEqual(len(recovery["proof"]["regions"]), 2)
         self.assertEqual(recovery["primary_text"].split().count("0"), 2)
         self.assertNotIn("fragment", recovery["primary_text"])
