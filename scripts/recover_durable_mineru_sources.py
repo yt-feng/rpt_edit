@@ -19,7 +19,7 @@ import tempfile
 
 from consume_legacy_mineru import (ConsumerError, NetworkStop, chart_assets,
                                  download_once, figure_source_status, safe_unzip, valid_url)
-from mineru_figure_sources import FigureSourceError, validate_figure_sources
+from mineru_figure_sources import ERRORS as FIGURE_ERROR_CATEGORIES, FigureSourceError, validate_figure_sources
 from mineru_task_ledger import (DONE, FAILED, Ledger, LedgerError, Provider, R2Store,
                                digest, encoded, exact_json, schema_v1)
 from mineru_terminal_recovery import TerminalRecovery, task_identity
@@ -657,8 +657,12 @@ def main():
                 recovery_execution_sha=env.get('GITHUB_SHA', ''),
                 allowed_error_codes=codes, allowed_error_hashes=hashes, result_cache=ResultCache(client, bucket))
     except (RecoveryError, LedgerError, ConsumerError, OSError, ValueError, KeyError, TypeError) as error:
-        category = (safe_ledger_error_category(error) if isinstance(error, LedgerError)
-                    else str(error) if isinstance(error, (RecoveryError, NetworkStop)) else type(error).__name__)
+        if isinstance(error, FigureSourceError):
+            candidate = getattr(error, 'category', None)
+            category = candidate if type(candidate) is str and candidate in FIGURE_ERROR_CATEGORIES else 'figure_proof_invalid'
+        else:
+            category = (safe_ledger_error_category(error) if isinstance(error, LedgerError)
+                        else str(error) if isinstance(error, (RecoveryError, NetworkStop)) else type(error).__name__)
         print('MinerU source recovery stopped: ' + category, file=sys.stderr)
         return 2
     except Exception as error:

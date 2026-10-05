@@ -198,6 +198,25 @@ class SourceTests(unittest.TestCase):
         self.assertEqual(code, 2); self.assertNotIn('PRIVATE', output.getvalue())
         self.assertEqual(json.loads(output.getvalue())['category'], 'source_failed')
 
+    def test_cli_reports_only_allowlisted_figure_failure_category(self):
+        cases = [(source.FigureSourceError(category), category) for category in sorted(source.FIGURE_ERROR_CATEGORIES)]
+        private = 'PRIVATE source.pdf https://PRIVATE.invalid?token=PRIVATE'
+        cases.append((source.FigureSourceError(private), 'figure_proof_invalid'))
+        corrupted = source.FigureSourceError('figure_metadata_invalid')
+        corrupted.category, corrupted.args = private, (private,)
+        cases.append((corrupted, 'figure_proof_invalid'))
+        for error, expected in cases:
+            output = io.StringIO()
+            with self.subTest(category=expected), \
+                    patch.object(source, 'validate_sources', side_effect=error), redirect_stdout(output):
+                code = source.main(['validate', '--output-dir', str(self.destination),
+                                    '--date-folder', '261001', '--expected-reports', '6'])
+            self.assertEqual(code, 2)
+            self.assertNotIn('PRIVATE', output.getvalue())
+            result = json.loads(output.getvalue())
+            self.assertEqual(result, {'success': False, 'category': expected,
+                                     'provider_posts': 0, 'canonical_task_admission': False})
+
     def test_real_pdf_workflow_step_accepts_exact_receipt_and_blocks_failed_readback_before_validation(self):
         root = Path(__file__).resolve().parents[1]
         workflow = (root / '.github/workflows/market-views-latex-pdf.yml').read_text()

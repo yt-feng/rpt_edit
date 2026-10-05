@@ -82,7 +82,7 @@ env:
   PRIVATE_LEGACY_SOURCES_ROOT: "_private-workflow-handoff/legacy-market-sources"
 
 concurrency:
-  group: market-views-daily-pdf
+  group: ${{ inputs.acceptance_only == true && format('market-views-acceptance-{0}', github.run_id) || 'market-views-daily-pdf' }}
   cancel-in-progress: false
 
 jobs:
