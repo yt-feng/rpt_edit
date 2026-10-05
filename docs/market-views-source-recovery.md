@@ -710,19 +710,19 @@ A changed or unreadable record rejects the operation with the same fixed
 category. Submission, result downloads, cache writes and cutoff checks remain
 serial and unchanged.
 
-### Proposed explicit second manual recovery window
+### Second fixed manual recovery window
 
 The original fixed window ended at 2026-10-04T23:59:59Z while the October 2
-failed-member recovery was still running. A separate reviewed change proposes
-one additional fixed day, ending 2026-10-05T23:59:59Z. This proposal is pending
-explicit user authorization and must not be deployed or used before approval.
+failed-member recovery was still running. The reviewed follow-up allows
+one additional fixed day, ending 2026-10-05T23:59:59Z. The user instructed the
+repair to continue after the pending window and connection retry were explained.
 It preserves the exact same leaf, host, historical system/certifi chain checks,
 current intermediate checks, complete-source/task proofs and GET-only cache
 route. Daily TLS stays strict. Old authenticated R2 cache bytes remain reusable;
 this window only governs new manual result retrieval and cache writes. The
 transport cannot extend the new cutoff itself.
 
-The proposed second window preserves complete legacy caches with a separate
+The second window preserves complete legacy caches with a separate
 stored-authentication validator. It accepts only the original fixed October 4
 cutoff or the explicitly deployed current cutoff, retaining every other strict
 field, fingerprint and chain condition. Only reads of already bound immutable
@@ -732,3 +732,11 @@ A partial previous authentication object without a complete cache cannot be
 overwritten: it remains an explicit immutable-write conflict. Cross-window
 fixtures verify complete old bytes are reused without new result retrieval or
 cache writes.
+
+Rejected OCR page diagnostics now report bounded long-ASCII-run lengths and
+source-page regions for each failed text candidate. Regions are mapped only
+when the complete non-whitespace character stream and word boundaries agree;
+ambiguous, changed-order or invalid geometry remains explicitly unlocated.
+The output contains fixed categories, coordinates and counts, never OCR words
+or source names. It reuses the existing recognition result and does not change
+readability, numeric checks or production source admission.
