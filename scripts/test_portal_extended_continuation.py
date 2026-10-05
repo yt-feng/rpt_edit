@@ -328,6 +328,23 @@ class ContinuationTests(unittest.TestCase):
         self.assertNotIn('Private', json.dumps(result))
         self.assertNotIn('មូលដ្ឋាន', json.dumps(result))
 
+    def test_source_protection_signals_report_bp_boundary_and_existing_opaque_masks_without_text(self):
+        from inspect_portal_extended_continuation import source_unit_protection_signals
+        text=r'Private phrase 171bp后，下降50个基点，符号\%，25bpsunexpected不属于单位。'
+        value=source_unit_protection_signals(text)
+        self.assertEqual(value['numeric_ascii_bp']['rows'],
+            [{'number':'171','value_truncated':False,'unit':'bp','tight_non_ascii_word':True}])
+        self.assertEqual(value['current_repair_bp_count'],1)
+        self.assertEqual(value['adapter_retained_basis_point_count'],1)
+        self.assertEqual(value['adapter_escaped_character_count'],1)
+        self.assertNotIn('Private phrase',json.dumps(value))
+        self.assertNotIn('符号',json.dumps(value,ensure_ascii=False))
+        bounded=source_unit_protection_signals(' '.join(str(n)+'bp后' for n in range(25)))['numeric_ascii_bp']
+        self.assertEqual((len(bounded['rows']),bounded['total_rows'],bounded['truncated']),(20,25,True))
+        huge=source_unit_protection_signals('9'*500+'bp后')['numeric_ascii_bp']
+        self.assertEqual(len(huge['rows'][0]['number']),128)
+        self.assertTrue(huge['rows'][0]['value_truncated']);self.assertTrue(huge['truncated'])
+
     def test_exact_preledger_adoption_is_bounded_and_cannot_reset_counters(self):
         proof = self.partial(registered=False)
         evidence = {'producer': PRODUCER, 'locales': {'fr': proof}}

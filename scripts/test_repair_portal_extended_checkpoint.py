@@ -138,6 +138,22 @@ class RepairTests(unittest.TestCase):
         self.assertEqual(signal['missing_basis_point_placeholders'],0)
         self.assertEqual(signal['duplicate_basis_point_placeholders'],0)
 
+    def test_all_placeholder_inventory_catches_missing_internal_token_when_basis_tokens_are_complete(self):
+        source='收益率上升50个基点，另一收益率下降20个基点。'
+        class Base:
+            def translate(self,text,**kw):
+                protected.observe_model({'model_input':text+' __HYMTPH_0000__',
+                    'raw_translation':'Le taux __HYMTPH_9000__ __HYMTPH_9001__.','quality_retry':2})
+                raise repair.OfflineTranslationValidationError('Hy-MT2 changed a protected placeholder')
+        protected=repair.ProtectedBasisPointTranslator(Base(),{source})
+        with self.assertRaises(repair.TargetedRepairError):protected.translate(source,target='fr',source='zh')
+        row=protected.failures[0]['model_attempts'][0]
+        self.assertEqual(row['missing_basis_point_placeholders'],0)
+        self.assertEqual(row['all_placeholders']['missing_count'],1)
+        self.assertEqual(row['all_placeholders']['missing_other_count'],1)
+        self.assertEqual(row['all_placeholders']['expected_count'],3)
+        self.assertNotIn('__HYMTPH_0000__',json.dumps(row))
+
     def test_preserved_rows_and_fallbacks_are_byte_bound_and_new_source_cannot_be_swapped(self):
         identity,old=self.checkpoint();new=copy.deepcopy(old)
         new['rows'][identity]['text']='Le rendement monte de 50 bps.'
