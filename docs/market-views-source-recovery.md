@@ -1257,3 +1257,8 @@ verifies the existing production issue before and after, then deletes that exact
 temporary object. It has no MinerU/DeepSeek secrets and does not overwrite, commit
 or email a production issue. A successful rehearsal is distinct from the next
 scheduled Daily run and its downstream publication.
+
+The recovery job reserves its final fallback budget: optional OCR installation is
+limited to 5 minutes, strict extraction/validation to 20 minutes and receipt audit
+to 10 minutes, within the 120-minute job. Original-page preparation has its own
+15-minute limit; strict-attempt timeout is eligible for the subsequent page path.

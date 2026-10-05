@@ -734,6 +734,7 @@ jobs:
       - name: Install native source and handoff dependencies
         run: python -m pip install PyMuPDF Pillow "boto3>=1.37.32,<2"
       - name: Install enabled cloud OCR backup
+        timeout-minutes: 5
         continue-on-error: true
         if: ${{ vars.MARKET_VIEWS_OCR_BACKUP_ENABLED == 'true' }}
         run: |
@@ -750,6 +751,7 @@ jobs:
           name: selected-macro-pdfs-${{ github.run_id }}
           path: _selected_macro_pdfs
       - name: Extract and verify every original report for Market Views
+        timeout-minutes: 20
         id: native-extract
         continue-on-error: true
         env:
@@ -777,6 +779,7 @@ jobs:
             --execution-sha "$GITHUB_SHA" \
             --original-source-run-id "$GITHUB_RUN_ID"
       - name: Audit complete cloud OCR backup evidence
+        timeout-minutes: 10
         id: native-audit
         if: ${{ steps.native-extract.outcome == 'success' }}
         continue-on-error: true
@@ -798,6 +801,7 @@ jobs:
             --key "_private-workflow-handoff/market-sources/${{ github.run_id }}/${{ needs.select-macro-reports.outputs.latest_folder }}/shard_0.tar.gz"
 
       - name: Prepare bounded original-page edition
+        timeout-minutes: 15
         if: ${{ steps.native-extract.outcome != 'success' || steps.native-audit.outcome != 'success' }}
         env:
           DATE_FOLDER: ${{ needs.select-macro-reports.outputs.latest_folder }}

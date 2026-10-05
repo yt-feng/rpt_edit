@@ -274,6 +274,18 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
         self.assertIn('source_kind=source-pages', recovery)
         self.assertNotIn('--mineru-retries', recovery)
 
+    def test_strict_backup_attempts_leave_budget_for_the_source_page_fallback(self):
+        recovery = job(UPSTREAM, 'recover-market-sources')
+        self.assertIn('timeout-minutes: 120', recovery)
+        for name, timeout in [('Install enabled cloud OCR backup', 5),
+                              ('Extract and verify every original report for Market Views', 20),
+                              ('Audit complete cloud OCR backup evidence', 10),
+                              ('Prepare bounded original-page edition', 15)]:
+            block = recovery.split('- name: ' + name, 1)[1].split('\n      - name:', 1)[0]
+            self.assertIn(f'timeout-minutes: {timeout}', block)
+            if name != 'Prepare bounded original-page edition':
+                self.assertIn('continue-on-error: true', block)
+
     def test_actual_delivery_gate_distinguishes_provider_recovery_noop_and_real_failure(self):
         block = job(UPSTREAM, 'validate-market-delivery')
         program = textwrap.dedent(block.split('        run: |\n', 1)[1])
