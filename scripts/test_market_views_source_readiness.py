@@ -189,8 +189,9 @@ class ReadinessTests(unittest.TestCase):
         block = workflow[start:resolve]
         self.assertIn('/jobs?filter=latest&per_page=100', block)
         self.assertNotIn('--paginate', block)
-        self.assertIn('require_source_readiness(producer, json.loads(jobs_result.stdout))', block)
-        self.assertLess(block.index('require_source_readiness(producer, json.loads'),
+        self.assertIn('require_source_readiness(producer, source_jobs)', block)
+        self.assertIn('source_jobs = json.loads(jobs_result.stdout)', block)
+        self.assertLess(block.index('require_source_readiness(producer, source_jobs)'),
                         block.index("'scripts/extract_native_market_sources.py', 'validate'"))
         self.assertLess(resolve, build)
         self.assertNotIn('scripts/test_market_views_source_readiness.py', block)

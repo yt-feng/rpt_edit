@@ -9,7 +9,9 @@ import subprocess
 import sys
 import tempfile
 import unittest
+import weakref
 from pathlib import Path
+from unittest.mock import patch
 
 import fitz
 from PIL import Image
@@ -217,6 +219,82 @@ print('tls_cache_authority_import_ready')
         self.assertEqual(value["pages"], [])
         self.assertEqual((fixture.report / fixture.selection["images"][0]).read_bytes(), original_bytes)
         self.assertEqual(len(fixture.validate()), 1)
+
+    def test_table_equation_serialization_preserves_exact_formula_and_source_proof(self):
+        body = "<table><tr><td><eq>x_1</eq></td><td>27</td><td><eq>y^2</eq></td></tr></table>"
+        fixture = self.fixture(visuals=[visual(0, [35, 100, 350, 360], body=body)])
+        content_body = body.replace("<eq>", " $").replace("</eq>", "$ ")
+        fixture.content[0]["table_body"] = content_body
+        fixture.write_metadata()
+        content_hash = digest((fixture.raw / "content_list.json").read_bytes())
+        middle_hash = digest((fixture.raw / "middle.json").read_bytes())
+        fixture.create()
+        fixture.status()
+        proof = fixture.proof()
+        self.assertEqual(proof["metadata"]["records"][0]["body_text"], content_body)
+        self.assertEqual(proof["provider_json_sha256"],
+                         {"content_list": content_hash, "middle": middle_hash})
+        self.assertEqual(proof["assets"][0]["mode"], "authenticated_original_crop")
+        import shutil
+        shutil.rmtree(fixture.raw)
+        self.assertEqual(len(fixture.validate()), 1)
+
+    def test_equation_wrapper_compatibility_does_not_clean_or_change_table_content(self):
+        middle = "<table><tr><td><eq>x_1</eq></td><td>27</td></tr></table>"
+        valid = middle.replace("<eq>", " $").replace("</eq>", "$ ")
+        for changed in (valid.replace("x_1", "x_2"), valid.replace(">27<", ">28<"),
+                        valid.replace("<td>", "<th>", 1), valid.replace(" $", "$", 1)):
+            with self.subTest(changed=changed):
+                fixture = self.fixture(visuals=[visual(0, [35, 100, 350, 360], body=middle)])
+                fixture.content[0]["table_body"] = changed
+                fixture.write_metadata()
+                with self.assertRaisesRegex(figures.FigureSourceError, "figure_metadata_invalid"):
+                    fixture.create()
+                self.assertFalse((fixture.report / figures.SIDECAR).exists())
+        for malformed in ("<eq>x", "x</eq>", "<eq>x</eq></eq>", "<eq><eq>x</eq></eq>"):
+            self.assertFalse(figures._table_html_matches(" $x$ ", malformed))
+
+    def test_page_carriers_are_streamed_and_replayed_without_retaining_all_page_pixels(self):
+        fixture = self.fixture(pages=3, visuals=[visual(pi, [35, 100, 185, 260], page_idx=pi)
+                                               for pi in (2, 0, 1)])
+        live_renders, live_carriers = [], []
+        actual_render, actual_image = figures._render, figures._image
+
+        def render(page):
+            image = actual_render(page)
+            live_renders.append(weakref.ref(image))
+            self.assertLessEqual(sum(ref() is not None for ref in live_renders), 2)
+            return image
+
+        def decode(data, *, png=False):
+            image = actual_image(data, png=png)
+            if png and image.size == (1667, 2084):
+                live_carriers.append(weakref.ref(image))
+                self.assertLessEqual(sum(ref() is not None for ref in live_carriers), 1)
+            return image
+
+        with patch.object(figures, "_render", side_effect=render), patch.object(figures, "_image", side_effect=decode):
+            fixture.create()
+            fixture.status()
+            self.assertEqual(len(fixture.proof()["pages"]), 3)
+            self.assertEqual(len(fixture.validate()), 3)
+        self.assertEqual(sum(ref() is not None for ref in live_renders), 0)
+        self.assertEqual(sum(ref() is not None for ref in live_carriers), 0)
+
+    def test_streamed_page_work_remains_bounded_in_producer_and_replay(self):
+        fixture = self.fixture(pages=2, visuals=[visual(pi, [35, 100, 185, 260], page_idx=pi)
+                                               for pi in range(2)])
+        one_page = 1667 * 2084
+        with patch.object(figures, "MAX_CARRIED_PAGE_PIXELS", one_page):
+            with self.assertRaisesRegex(figures.FigureSourceError, "figure_page_budget_exceeded"):
+                fixture.create()
+        self.assertFalse((fixture.report / figures.SIDECAR).exists())
+        complete = self.fixture(pages=2, visuals=[visual(pi, [35, 100, 185, 260], page_idx=pi)
+                                                for pi in range(2)])
+        complete.create()
+        with patch.object(figures, "MAX_CARRIED_PAGE_PIXELS", one_page):
+            with self.assertRaisesRegex(figures.FigureSourceError, "figure_page_budget_exceeded"):
+                complete.validate()
 
     def test_all_legal_records_audited_and_zero_images_is_valid(self):
         body = "<table><tr><td>Important disclosures. Analyst compensation. Legal/compliance. " + "Explanation. " * 30 + "</td></tr></table>"

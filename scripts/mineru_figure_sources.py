@@ -29,13 +29,16 @@ MAX_IMAGE_BYTES = 64 * 1024 * 1024
 MAX_PIXELS = 80_000_000
 MAX_DIMENSION = 20000
 MAX_TEXT = 100000
-MAX_CARRIED_PAGE_PIXELS = 240_000_000
+# Carriers are streamed to disk and replayed one page at a time. This aggregate
+# bounds a long report's work without treating 31 ordinary 300-dpi pages as a
+# source mismatch. Per-page dimensions/pixels remain independently bounded.
+MAX_CARRIED_PAGE_PIXELS = 1_000_000_000
 MAX_PROVIDER_BYTES = 512 * 1024 * 1024
 MARGIN_PIXELS = 3
 KINDS = {"table", "chart", "image"}
 ERRORS = {"figure_metadata_invalid", "figure_metadata_ambiguous",
           "figure_source_binding_mismatch", "figure_source_pixels_mismatch",
-          "figure_asset_mismatch", "figure_proof_invalid"}
+          "figure_asset_mismatch", "figure_proof_invalid", "figure_page_budget_exceeded"}
 
 
 class FigureSourceError(ValueError):
@@ -192,6 +195,27 @@ def _block_text(block):
     return _text("\n".join(result))
 
 
+def _table_html_matches(content_html, middle_html):
+    """Allow only MinerU's exact inline-equation serialization difference.
+
+    The hybrid content list emits `` $...$ `` where middle JSON retains
+    ``<eq>...</eq>``. Every formula character, table cell and other HTML byte
+    must remain identical. Unbalanced or nested equation wrappers reject.
+    """
+    if content_html == middle_html:
+        return True
+    parts = middle_html.split("<eq>")
+    if len(parts) == 1 or "</eq>" in parts[0]:
+        return False
+    converted = [parts[0]]
+    for part in parts[1:]:
+        equation, closing, tail = part.partition("</eq>")
+        if not closing or "</eq>" in tail:
+            return False
+        converted.extend((" $", equation, "$ ", tail))
+    return content_html == "".join(converted)
+
+
 def _metadata_files(root):
     contents, middles = [], []
     paths = list(root.rglob("*"))
@@ -313,7 +337,8 @@ def _normalise(content, middle):
         captions = [_text(v) for v in captions]
         notes = [_text(v) for v in notes]
         body_text = _text(item.get("table_body", "") if kind == "table" else item.get("content", ""))
-        if kind == "table" and parent["refs"] and parent["refs"][0]["html"] != body_text:
+        if (kind == "table" and parent["refs"]
+                and not _table_html_matches(body_text, parent["refs"][0]["html"])):
             _fail()
         records.append({"index": index, "kind": kind, "page_idx": pi, "ref": ref,
                         "content_bbox": box, "body_bbox": parent["body_bbox"],
@@ -573,6 +598,17 @@ def _save(image, path):
     return {"sha256": _sha(path.read_bytes()), "rgb_sha256": _rgb_hash(image), "pixel_size": list(image.size)}
 
 
+def _read_carried_page(report, page):
+    data = _regular(report / page["path"], report)
+    if _sha(data) != page["sha256"]:
+        _fail("figure_source_pixels_mismatch")
+    image = _image(data, png=True)
+    if _canonical({"pixel_size": list(image.size), "rgb_sha256": _rgb_hash(image)}) != _canonical(
+            {key: page[key] for key in ("pixel_size", "rgb_sha256")}):
+        _fail("figure_source_pixels_mismatch")
+    return image
+
+
 def create_figure_sources(result_dir: Path, assets_dir: Path, *, original_pdf_sha256: str | None,
                           markdown_sha256: str, auth_original_pdf: Path | None = None,
                           max_images: int = 100):
@@ -635,7 +671,7 @@ def _create(result_dir, assets_dir, found, original_sha, markdown_sha, original,
         if sum(len(p["data"]) for p in provider.values()) > MAX_PROVIDER_BYTES:
             _fail()
     # All inventory/ref checks happen before any asset or evidence write.
-    pages, page_images = [], {}
+    pages, carried_pixels = [], 0
     original_bytes = None
     embedded_bytes = None
     if original is not None:
@@ -664,27 +700,35 @@ def _create(result_dir, assets_dir, found, original_sha, markdown_sha, original,
                 image, other = _render(actual), _render(supplied)
                 if image.size != other.size or image.tobytes() != other.tobytes():
                     _fail("figure_source_pixels_mismatch")
-                if sum(p.width * p.height for p in page_images.values()) + image.width * image.height > MAX_CARRIED_PAGE_PIXELS:
-                    _fail("figure_source_pixels_mismatch")
-                page_images[pi] = image
-                pages.append({"page_idx": pi, "path": f"figure_source_evidence/pages/page_{pi + 1:04}.png",
-                              "provider_size": integer_size, "geometry": geometry,
-                              "dpi": 300, "pixel_size": list(image.size), "rgb_sha256": _rgb_hash(image)})
+                carried_pixels += image.width * image.height
+                if carried_pixels > MAX_CARRIED_PAGE_PIXELS:
+                    _fail("figure_page_budget_exceeded")
+                page = {"page_idx": pi, "path": f"figure_source_evidence/pages/page_{pi + 1:04}.png",
+                        "provider_size": integer_size, "geometry": geometry, "dpi": 300}
+                page.update(_save(image, report / page["path"]))
+                pages.append(page)
+                image.close()
+                other.close()
+                del image, other
     for item in provider.values():
         target = report / item["path"]
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_bytes(item["data"])
-    for page in pages:
-        page["sha256"] = _save(page_images[page["page_idx"]], report / page["path"])["sha256"]
     assets, copied = [], []
+    image, image_page = None, None
     for record, decision in zip(metadata["records"], decisions):
         if not decision["selected"]:
             continue
         source_info = provider[record["ref"]]
         ordinal = len(assets) + 1
         if original is not None:
-            image = page_images[record["page_idx"]]
             page_record = next(p for p in pages if p["page_idx"] == record["page_idx"])
+            if image_page != record["page_idx"]:
+                if image is not None:
+                    image.close()
+                    del image
+                image = _read_carried_page(report, page_record)
+                image_page = record["page_idx"]
             crop = _crop(record, metadata["records"], page_record["geometry"]["rect"][2:], list(image.size))
             asset_path = assets_dir / f"source_image_{ordinal:02}.png"
             pixel = image.crop(crop["pixel_box"])
@@ -699,6 +743,8 @@ def _create(result_dir, assets_dir, found, original_sha, markdown_sha, original,
                        "page_idx": record["page_idx"], "provider_image_sha256": source_info["sha256"],
                        "mode": mode, "crop": crop, **binding})
         copied.append((source_info["original_path"], asset_path))
+    if image is not None:
+        image.close()
     payload = {"schema": 1, "policy": POLICY,
                "authority": "trusted-producer-and-outer-receipt",
                "original_pdf_sha256": original_sha,
@@ -820,7 +866,7 @@ def _validate(report, original_sha, markdown_sha, images):
             _fail("figure_asset_mismatch")
     if sum((report / p["path"]).stat().st_size for p in providers.values()) > MAX_PROVIDER_BYTES:
         _fail()
-    page_images = {}
+    carried_pixels = 0
     expected_pages = sorted({r["page_idx"] for r, d in zip(metadata["records"], decisions) if d["selected"]}) if auth else []
     if not isinstance(value["pages"], list) or [p.get("page_idx") for p in value["pages"]] != expected_pages:
         _fail()
@@ -841,20 +887,20 @@ def _validate(report, original_sha, markdown_sha, images):
         rect_size = [geometry["rect"][2], geometry["rect"][3]]
         if any(abs(a - b) >= 1.1 for a, b in zip(page["provider_size"], rect_size)):
             _fail()
-        data = _regular(report / page["path"], report)
-        im = _image(data, png=True)
+        im = _read_carried_page(report, page)
         # MuPDF may round the two raster endpoints separately; here rect starts0.
         if list(im.size) != [math.ceil(s * 300 / 72) for s in rect_size]:
             _fail("figure_source_pixels_mismatch")
-        if _canonical({"sha256": _sha(data), "rgb_sha256": _rgb_hash(im), "pixel_size": list(im.size)}) != _canonical({k: page[k] for k in ("sha256", "rgb_sha256", "pixel_size")}):
-            _fail("figure_source_pixels_mismatch")
-        page_images[pi] = im
-        if sum(p.width * p.height for p in page_images.values()) > MAX_CARRIED_PAGE_PIXELS:
-            _fail("figure_source_pixels_mismatch")
+        carried_pixels += im.width * im.height
+        if carried_pixels > MAX_CARRIED_PAGE_PIXELS:
+            _fail("figure_page_budget_exceeded")
+        im.close()
+        del im
     selected = [(r, d) for r, d in zip(metadata["records"], decisions) if d["selected"]]
     if not isinstance(value["assets"], list) or len(value["assets"]) != len(selected) or [a.get("path") for a in value["assets"]] != images:
         _fail("figure_source_binding_mismatch")
     result = {}
+    page_image, image_page = None, None
     for ordinal, ((record, _), asset) in enumerate(zip(selected, value["assets"]), 1):
         _keys(asset, {"index", "ref", "path", "page_idx", "provider_image_sha256", "mode", "crop", "sha256", "rgb_sha256", "pixel_size"})
         if (type(asset["index"]) is not int or asset["index"] != record["index"] or type(asset["page_idx"]) is not int
@@ -867,8 +913,13 @@ def _validate(report, original_sha, markdown_sha, images):
         data = _regular(report / asset["path"], report)
         im = _image(data, png=auth)
         if auth:
-            page_image = page_images[record["page_idx"]]
             page_record = next(p for p in value["pages"] if p["page_idx"] == record["page_idx"])
+            if image_page != record["page_idx"]:
+                if page_image is not None:
+                    page_image.close()
+                    del page_image
+                page_image = _read_carried_page(report, page_record)
+                image_page = record["page_idx"]
             crop = _crop(record, metadata["records"], page_record["geometry"]["rect"][2:], list(page_image.size))
             if asset["mode"] != "authenticated_original_crop" or _canonical(crop) != _canonical(asset["crop"]):
                 _fail("figure_proof_invalid")
@@ -880,4 +931,6 @@ def _validate(report, original_sha, markdown_sha, images):
         if _canonical({"sha256": _sha(data), "rgb_sha256": _rgb_hash(im), "pixel_size": list(im.size)}) != _canonical({k: asset[k] for k in ("sha256", "rgb_sha256", "pixel_size")}):
             _fail("figure_asset_mismatch")
         result[record["ref"]] = asset["path"]
+    if page_image is not None:
+        page_image.close()
     return result

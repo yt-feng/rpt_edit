@@ -26,7 +26,7 @@ import fitz
 import audit_market_views_ocr_receipt as audit
 import extract_native_market_sources as native
 from ocr_numeric_evidence import MAX_IMAGE_PIXELS, SECOND_DPI, NumericEvidenceError, audit_numeric_evidence, validate_numeric_evidence, safe_geometry_diagnostics
-from ocr_rotated_axis_evidence import RotatedAxisError
+from ocr_rotated_axis_evidence import RotatedAxisError, safe_rotated_axis_diagnostics
 
 
 DAILY_WORKFLOW = ".github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml"
@@ -83,12 +83,13 @@ def _rotated_axis_arguments(provenance, *, selected_route=False):
 class ProbeError(ValueError):
     """Only fixed, public-safe category codes cross the CLI boundary."""
 
-    def __init__(self, category, *, geometry_diagnostics=None):
+    def __init__(self, category, *, geometry_diagnostics=None, rotated_axis_diagnostics=None):
         super().__init__(category)
         self.geometry_diagnostics = safe_geometry_diagnostics(geometry_diagnostics)
+        self.rotated_axis_diagnostics = safe_rotated_axis_diagnostics(rotated_axis_diagnostics)
 
 
-def failure_summary(category: str, geometry_diagnostics=None) -> dict[str, Any]:
+def failure_summary(category: str, geometry_diagnostics=None, rotated_axis_diagnostics=None) -> dict[str, Any]:
     result = {"schema": 1, "page_probe_only": True, "complete_source_handoff": False,
             "production_acceptance": False, "success": False, "category": category,
             "provider_post_count": 0, "model_call_count": 0, "pdf_count": 0,
@@ -97,6 +98,9 @@ def failure_summary(category: str, geometry_diagnostics=None) -> dict[str, Any]:
         safe = safe_geometry_diagnostics(geometry_diagnostics)
         if safe:
             result["geometry_diagnostics"] = safe
+    rotated = safe_rotated_axis_diagnostics(rotated_axis_diagnostics)
+    if rotated:
+        result["rotated_axis_diagnostics"] = rotated
     return result
 
 
@@ -346,8 +350,10 @@ def probe_fields(input_dir: Path, manifest: Path, fixtures: Path, producer_metad
                 except native.SourceValidationError as exc:
                     category = getattr(exc, "category", None)
                     if isinstance(category, str) and category in OCR_FAILURE_CATEGORIES:
-                        raise ProbeError(category, geometry_diagnostics=safe_geometry_diagnostics(exc)) from None
-                    raise ProbeError("page_ocr_or_numeric_validation_failed") from None
+                        raise ProbeError(category, geometry_diagnostics=safe_geometry_diagnostics(exc),
+                                         rotated_axis_diagnostics=exc.rotated_axis_diagnostics) from None
+                    raise ProbeError("page_ocr_or_numeric_validation_failed",
+                                     rotated_axis_diagnostics=exc.rotated_axis_diagnostics) from None
                 except NumericEvidenceError as exc:
                     raise ProbeError(native._numeric_failure_category(exc),
                                      geometry_diagnostics=safe_geometry_diagnostics(exc)) from None
@@ -621,6 +627,9 @@ def _diagnose_page(page: fitz.Page, image_path: Path) -> dict[str, Any]:
                 for key in ("source_flow_same_glyphs", "recognition_attempted", "rotated_axis_attempted"):
                     if type(layout.get(key)) is bool:
                         result["ocr_layout"][key] = layout[key]
+                rotated = safe_rotated_axis_diagnostics(layout.get("rotated_axis_diagnostics"))
+                if rotated:
+                    result["ocr_layout"]["rotated_axis_diagnostics"] = rotated
                 if isinstance(layout.get("opaque_runs"), dict):
                     projected = {candidate: _safe_opaque_positions(value, page.rect)
                                  for candidate, value in layout["opaque_runs"].items() if candidate in OPAQUE_CANDIDATES}
@@ -743,7 +752,7 @@ def main(argv: list[str] | None = None) -> int:
                                    repository=args.repository, original_source_run_id=args.original_source_run_id)
         exit_code = 0 if summary["success"] else 3
     except ProbeError as exc:
-        summary, exit_code = failure_summary(str(exc), exc.geometry_diagnostics), 2
+        summary, exit_code = failure_summary(str(exc), exc.geometry_diagnostics, exc.rotated_axis_diagnostics), 2
     except Exception:
         summary, exit_code = failure_summary("probe_failed"), 2
     try:

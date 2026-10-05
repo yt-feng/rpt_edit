@@ -42,9 +42,65 @@ HASH = re.compile(r"[a-f0-9]{64}")
 class RotatedAxisError(ValueError):
     """Fixed categories only; callers must never publish source text."""
 
+    def __init__(self, message, *, guard=None, source_pixel_box=None, source_word_box=None):
+        super().__init__(message)
+        self.guard = guard
+        self.source_pixel_box = source_pixel_box
+        self.source_word_box = source_word_box
 
-def _fail():
-    raise RotatedAxisError("rotated_axis_proof_invalid")
+
+DIAGNOSTIC_STAGES = {"candidate_validation", "region_planning", "region_recognition", "composed_readability"}
+DIAGNOSTIC_REASONS = {"invalid_candidate_evidence", "not_eligible", "no_valid_direction", "ambiguous_directions",
+    "page_readability_rejected", "seed_count", "region_count", "expansion_bound", "word_assignment",
+    "region_geometry", "grown_word_membership", "horizontal_word_intersection", "partial_word_intersection",
+    "crop_bounds", "crop_area", "total_crop_area", "overlapping_regions", "geometric-sorted_words",
+    "source-flow_words", "full-page-psm11_words", "geometric-sorted_glyphs", "source-flow_glyphs",
+    "full-page-psm11_glyphs", "candidate_readability", "candidate_same_glyphs", "cli_transcript_order",
+    "source_transcript_spans"}
+
+
+def safe_rotated_axis_diagnostics(value):
+    """Only fixed stages and bounded pixel/count data may leave private OCR."""
+    if (not isinstance(value, dict) or type(value.get("schema")) is not int or value["schema"] != 1
+            or not isinstance(value.get("stage"), str) or not isinstance(value.get("reason"), str)
+            or value.get("stage") not in DIAGNOSTIC_STAGES or value.get("reason") not in DIAGNOSTIC_REASONS):
+        return None
+    result = {key: value[key] for key in ("schema", "stage", "reason")}
+    for key in ("region", "planned_region_count"):
+        if key in value:
+            if type(value[key]) is not int or not 1 <= value[key] <= MAX_REGIONS:
+                return None
+            result[key] = value[key]
+    for key in ("source_pixel_box", "source_word_box"):
+        if key in value:
+            box = value[key]
+            if (not isinstance(box, list) or len(box) != 4
+                    or any(not _number(v) or not 0 <= v <= MAX_PIXELS or (key == "source_pixel_box" and type(v) is not int) for v in box)
+                    or box[0] >= box[2] or box[1] >= box[3]):
+                return None
+            result[key] = list(box)
+    if "reads" in value:
+        if not isinstance(value["reads"], list) or len(value["reads"]) != 2:
+            return None
+        result["reads"] = []
+        for read, angle in zip(value["reads"], (90, 270)):
+            if (not isinstance(read, dict) or type(read.get("angle")) is not int or read["angle"] != angle
+                    or type(read.get("accepted")) is not bool
+                    or any(type(read.get(key)) is not int or not 0 <= read[key] <= MAX_WORDS for key in ("words", "date_words"))
+                    or read["date_words"] > read["words"]):
+                return None
+            result["reads"].append({key: read[key] for key in ("angle", "words", "date_words", "accepted")})
+    return result
+
+
+def _record_diagnostic(diagnostics, stage, reason, **values):
+    if diagnostics is not None:
+        diagnostics.clear()
+        diagnostics.update(safe_rotated_axis_diagnostics({"schema": 1, "stage": stage, "reason": reason, **values}) or {})
+
+
+def _fail(guard=None):
+    raise RotatedAxisError("rotated_axis_proof_invalid", guard=guard)
 
 
 def _canonical(value):
@@ -138,18 +194,22 @@ def _candidates(values, size):
         text = value["text"]
         if not isinstance(text, str) or len(text.encode()) > MAX_TEXT_BYTES:
             _fail()
-        result[key] = {"text": text, "words": _words(value["words"], size)}
+        try:
+            result[key] = {"text": text, "words": _words(value["words"], size)}
+        except RotatedAxisError as exc:
+            exc.guard = key + "_words"
+            raise
         glyphs = Counter(c for c in text if not c.isspace())
         if glyphs != Counter(c for word in result[key]["words"] for c in word["text"]):
-            _fail()
+            _fail(key + "_glyphs")
         if _readability(text)["reason"] != "opaque_ascii_runs":
-            raise RotatedAxisError("rotated_axis_not_eligible")
+            raise RotatedAxisError("rotated_axis_not_eligible", guard="candidate_readability")
     if sorted(c for c in result[LABELS[0]]["text"] if not c.isspace()) != sorted(
             c for c in result[LABELS[1]]["text"] if not c.isspace()):
-        _fail()
+        _fail("candidate_same_glyphs")
     prior_cli_text = _region_text(result["full-page-psm11"]["words"])[0]
     if prior_cli_text != result["full-page-psm11"]["text"]:
-        _fail()
+        _fail("cli_transcript_order")
     return result
 
 
@@ -253,10 +313,14 @@ def _separate_chart_top(image, pixel_box, earliest_axis_top, glyph_height_pixels
 
 def _select_regions(candidates, page_size, image_size, source_image=None):
     base = candidates["source-flow"]
-    spans = _spans(base["text"], base["words"])
+    try:
+        spans = _spans(base["text"], base["words"])
+    except RotatedAxisError as exc:
+        exc.guard = "source_transcript_spans"
+        raise
     runs = list(LONG.finditer(base["text"]))
     if not runs or len(runs) > MAX_SEEDS:
-        raise RotatedAxisError("rotated_axis_not_eligible")
+        raise RotatedAxisError("rotated_axis_not_eligible", guard="seed_count")
     targets = []
     for run in runs:
         ids = [i for i, (start, end) in enumerate(spans) if start < run.end() and end > run.start()]
@@ -276,7 +340,7 @@ def _select_regions(candidates, page_size, image_size, source_image=None):
             if changed:
                 break
     if not 1 <= len(clusters) <= MAX_REGIONS:
-        raise RotatedAxisError("rotated_axis_not_eligible")
+        raise RotatedAxisError("rotated_axis_not_eligible", guard="region_count")
     regions, assigned = [], set()
     glyph_height = statistics.median(b[3] - b[1] for b in targets)
     for box in sorted(clusters, key=lambda b: (b[1], b[0])):
@@ -288,7 +352,7 @@ def _select_regions(candidates, page_size, image_size, source_image=None):
         while grew:
             passes += 1
             if passes > MAX_EXPANSION_PASSES:
-                raise RotatedAxisError("rotated_axis_not_eligible")
+                raise RotatedAxisError("rotated_axis_not_eligible", guard="expansion_bound")
             grew = False
             for word in base["words"]:
                 wb = word["bbox"]
@@ -300,14 +364,14 @@ def _select_regions(candidates, page_size, image_size, source_image=None):
         ids = {i for i, word in enumerate(base["words"])
                if _axis_word(word, glyph_height) and _intersects(word["bbox"], box)}
         if ids & assigned:
-            raise RotatedAxisError("rotated_axis_not_eligible")
+            raise RotatedAxisError("rotated_axis_not_eligible", guard="word_assignment")
         assigned |= ids
         box = _union([box, *[base["words"][i]["bbox"] for i in ids]])
         w, h = box[2] - box[0], box[3] - box[1]
         if (not ids or len(ids) > MAX_REGION_WORDS or min(box) <= 0 or box[2] >= page_size[0] or box[3] >= page_size[1]
                 or w < 4 * h or h > page_size[1] * .08 or w < page_size[0] * .08
                 or w * h > page_size[0] * page_size[1] * .04):
-            raise RotatedAxisError("rotated_axis_not_eligible")
+            raise RotatedAxisError("rotated_axis_not_eligible", guard="region_geometry")
         pixel_box = [math.floor(box[0] * image_size[0] / page_size[0]),
                      math.floor(box[1] * image_size[1] / page_size[1]),
                      math.ceil(box[2] * image_size[0] / page_size[0]),
@@ -326,26 +390,28 @@ def _select_regions(candidates, page_size, image_size, source_image=None):
         all_ids = {i for i, word in enumerate(base["words"]) if _intersects(word["bbox"], grown)}
         if (not ids <= all_ids or len(all_ids) > MAX_REGION_WORDS
                 or any(i not in ids and i in assigned for i in all_ids)):
-            raise RotatedAxisError("rotated_axis_not_eligible")
+            raise RotatedAxisError("rotated_axis_not_eligible", guard="grown_word_membership")
         for i in all_ids:
             word = base["words"][i]; wb = word["bbox"]
             if not _axis_word(word, glyph_height):
-                raise RotatedAxisError("rotated_axis_not_eligible")
+                raise RotatedAxisError("rotated_axis_not_eligible", guard="horizontal_word_intersection",
+                                       source_pixel_box=pixel_box, source_word_box=wb)
             if not (grown[0] <= wb[0] and grown[1] <= wb[1] and wb[2] <= grown[2] and wb[3] <= grown[3]):
-                raise RotatedAxisError("rotated_axis_not_eligible")
+                raise RotatedAxisError("rotated_axis_not_eligible", guard="partial_word_intersection",
+                                       source_pixel_box=pixel_box, source_word_box=wb)
         assigned |= all_ids
         if min(pixel_box) < 2 or pixel_box[2] > image_size[0] - 2 or pixel_box[3] > image_size[1] - 2:
-            raise RotatedAxisError("rotated_axis_not_eligible")
+            raise RotatedAxisError("rotated_axis_not_eligible", guard="crop_bounds")
         if (pixel_box[2] - pixel_box[0]) * (pixel_box[3] - pixel_box[1]) > image_size[0] * image_size[1] * .04:
-            raise RotatedAxisError("rotated_axis_not_eligible")
+            raise RotatedAxisError("rotated_axis_not_eligible", guard="crop_area")
         regions.append({"id": len(regions) + 1, "seed_pixel_box": seed_box, "source_pixel_box": pixel_box,
                         "source_word_indices": sorted(all_ids), "top_separation": separation, "ink_profile": profile})
     if sum((r["source_pixel_box"][2] - r["source_pixel_box"][0]) *
            (r["source_pixel_box"][3] - r["source_pixel_box"][1]) for r in regions) > image_size[0] * image_size[1] * .12:
-        raise RotatedAxisError("rotated_axis_not_eligible")
+        raise RotatedAxisError("rotated_axis_not_eligible", guard="total_crop_area")
     for i, a in enumerate(regions):
         if any(_intersects(a["source_pixel_box"], b["source_pixel_box"]) for b in regions[i + 1:]):
-            raise RotatedAxisError("rotated_axis_not_eligible")
+            raise RotatedAxisError("rotated_axis_not_eligible", guard="overlapping_regions")
     return regions
 
 
@@ -442,7 +508,7 @@ def _compose(candidates, regions):
 
 
 def recover_rotated_axes(page, candidates, *, language, tessdata, tesseract_command,
-                         tesseract_version, traineddata, reader=None, clock=None):
+                         tesseract_version, traineddata, reader=None, clock=None, diagnostics=None):
     from ocr_numeric_evidence import _read_tesseract
     reader, clock = reader or _read_tesseract, clock or time.monotonic
     started = clock()
@@ -452,8 +518,14 @@ def recover_rotated_axes(page, candidates, *, language, tessdata, tesseract_comm
     _size(list(image.size), integer=True)
     try:
         candidates = _candidates(candidates, size)
+    except RotatedAxisError as exc:
+        _record_diagnostic(diagnostics, "candidate_validation", exc.guard or "invalid_candidate_evidence")
+        return None
+    try:
         plans = _select_regions(candidates, size, list(image.size), source_image=image)
     except RotatedAxisError as exc:
+        geometry = {key: getattr(exc, key) for key in ("source_pixel_box", "source_word_box") if getattr(exc, key) is not None}
+        _record_diagnostic(diagnostics, "region_planning", exc.guard or "not_eligible", **geometry)
         return None  # Preserve the original page rejection for ineligible input.
     runtime = _runtime(language, tesseract_version, traineddata)
     regions = []
@@ -476,11 +548,18 @@ def recover_rotated_axes(page, candidates, *, language, tessdata, tesseract_comm
                 "words": words})
         accepted = [r for r in region["reads"] if _region_text(r["words"], r["image_size"])[2]]
         if len(accepted) != 1:
+            _record_diagnostic(diagnostics, "region_recognition",
+                "no_valid_direction" if not accepted else "ambiguous_directions", region=plan["id"],
+                planned_region_count=len(plans), source_pixel_box=plan["source_pixel_box"],
+                reads=[{"angle": r["angle"], "words": len(r["words"]),
+                        "date_words": sum(bool(DATE.fullmatch(w["text"])) for w in r["words"]),
+                        "accepted": _region_text(r["words"], r["image_size"])[2]} for r in region["reads"]])
             return None  # Both valid directions are ambiguous, including equal dates.
         region["selected_angle"] = accepted[0]["angle"]
         regions.append(region)
     text, ledger, _ = _compose(candidates, regions)
     if not _readability(text)["accepted"]:
+        _record_diagnostic(diagnostics, "composed_readability", "page_readability_rejected", planned_region_count=len(plans))
         return None
     proof = {"schema": 1, "policy": POLICY, "input_pixel_sha256": _hash(image.tobytes()),
              "page_size_points": size, "source_image_size": list(image.size), "runtime": runtime,

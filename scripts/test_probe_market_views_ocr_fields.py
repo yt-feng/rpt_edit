@@ -342,6 +342,34 @@ class FieldProbeTests(unittest.TestCase):
         result = probe.failure_summary("ocr_engine_failed", {"schema": 1, "psm": 6})
         self.assertNotIn("geometry_diagnostics", result)
 
+    def test_rotated_failure_stage_reaches_fixture_summary_without_private_payload(self):
+        diagnostic = {"schema": 1, "stage": "region_planning", "reason": "horizontal_word_intersection",
+                      "source_pixel_box": [100, 200, 700, 280], "source_word_box": [26.1, 49.2, 28.3, 50.4],
+                      "private_source_name": "PRIVATE", "words": [{"text": "PRIVATE"}]}
+        error = probe.native.SourceValidationError("PRIVATE source", rotated_axis_diagnostics=diagnostic)
+        with mock.patch.object(probe.native, "_ocr_page", side_effect=error):
+            self.assertEqual(self.cli(), 2)
+        summary = json.loads(self.summary.read_text())
+        self.assertEqual(summary["category"], "page_ocr_or_numeric_validation_failed")
+        self.assertEqual(summary["rotated_axis_diagnostics"], probe.safe_rotated_axis_diagnostics(diagnostic))
+        self.assertNotIn("PRIVATE", json.dumps(summary))
+
+    def test_rotated_failure_stage_reaches_ordinal_summary_before_numeric_audit(self):
+        self.make_archive_context()
+        opaque = "A" * 120
+        diagnostic = {"schema": 1, "stage": "candidate_validation", "reason": "invalid_candidate_evidence",
+                      "private_source_name": "PRIVATE"}
+        with mock.patch.object(probe, "_raw_page_ocr", return_value=(opaque, [], "private-models", {
+                "selection": "rejected", "rotated_axis_attempted": True, "rotated_axis_diagnostics": diagnostic,
+                "sorted_readability": probe._readability_projection(opaque, allow_sparse_ocr=True)})), \
+                mock.patch.object(probe, "audit_numeric_evidence") as audit:
+            summary = self.call_pages()
+        self.assertEqual(summary["pages"][0]["category"], "ocr_readability_rejected")
+        self.assertEqual(summary["pages"][0]["ocr_layout"]["rotated_axis_diagnostics"],
+                         probe.safe_rotated_axis_diagnostics(diagnostic))
+        self.assertNotIn("PRIVATE", json.dumps(summary))
+        audit.assert_not_called()
+
     def test_wrong_date_and_count_are_rejected_before_any_ocr(self):
         self.assert_rejected_before_ocr("manifest_count_or_binding_invalid", expected=2)
         self.rows[0]["dropbox_path"] = "/zip_backup/261003/261004/PRIVATE-REPORT-TITLE.pdf"

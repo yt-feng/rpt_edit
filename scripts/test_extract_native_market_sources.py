@@ -562,6 +562,32 @@ class NativeMarketSourcesTests(unittest.TestCase):
                     self.assertEqual(full_page.call_count, 1)
                     audit.assert_not_called()
 
+    def test_rotated_rejection_retains_stage_diagnostic_without_starting_numeric_audit(self):
+        import ocr_numeric_evidence as numeric
+        import ocr_rotated_axis_evidence as axis
+        diagnostic = {"schema": 1, "stage": "region_planning", "reason": "horizontal_word_intersection"}
+        def reject(*args, **kwargs):
+            kwargs["diagnostics"].update(diagnostic)
+            return None
+        with fitz.open() as document:
+            page = document.new_page(width=400, height=650)
+            words = [{"bbox": [20, 20, 200, 60], "text": "A" * 120, "block": 1, "paragraph": 1, "line": 1}]
+            with patch.object(fitz, "get_tessdata", return_value=str(self.fixture_models())), \
+                    patch.object(fitz.Page, "get_textpage_ocr", return_value=object()), \
+                    patch.object(fitz.Page, "get_text", return_value="A" * 120), \
+                    patch.object(native, "_tesseract_version", return_value="5.3.0"), \
+                    patch.object(native.shutil, "which", return_value="fixture-engine"), \
+                    patch.object(numeric, "_read_tesseract", return_value=words), \
+                    patch.object(axis, "recover_rotated_axes", side_effect=reject), \
+                    patch.object(numeric, "audit_numeric_evidence") as audit:
+                with self.assertRaises(native.SourceValidationError) as failure:
+                    native._ocr_page(page, "private-source.pdf", 1)
+                self.assertEqual(failure.exception.rotated_axis_diagnostics, diagnostic)
+                _, _, _, _, layout = native._recognize_ocr_page(page, "private-source.pdf", 1, allow_rejected=True)
+                self.assertEqual(layout["rotated_axis_diagnostics"], diagnostic)
+                self.assertTrue(layout["rotated_axis_attempted"])
+                audit.assert_not_called()
+
     def test_alternate_primary_runs_once_only_after_two_readability_rejections(self):
         import ocr_numeric_evidence as numeric
         with fitz.open() as document:

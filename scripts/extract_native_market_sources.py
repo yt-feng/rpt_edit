@@ -61,10 +61,12 @@ EXHIBIT_CAPTION = re.compile(
 class SourceValidationError(ValueError):
     """The complete source contract is not satisfied."""
 
-    def __init__(self, message: str, *, category: str | None = None, geometry_diagnostics=None):
+    def __init__(self, message: str, *, category: str | None = None, geometry_diagnostics=None,
+                 rotated_axis_diagnostics=None):
         super().__init__(message)
         self.category = category
         self.geometry_diagnostics = geometry_diagnostics
+        self.rotated_axis_diagnostics = rotated_axis_diagnostics
 
 
 # Only these exact engine messages may become public diagnostic categories.
@@ -597,6 +599,7 @@ def _recognize_ocr_page(page: fitz.Page, source_name: str, number: int, *,
                for value in assessments):
             try:
                 from ocr_rotated_axis_evidence import RotatedAxisError, recover_rotated_axes
+                axis_diagnostics = {}
                 try:
                     rotated = recover_rotated_axes(page, {
                         "geometric-sorted": {"text": sorted_text,
@@ -605,7 +608,8 @@ def _recognize_ocr_page(page: fitz.Page, source_name: str, number: int, *,
                             "words": page.get_text("words", textpage=textpage, sort=False)},
                         "full-page-psm11": {"text": text, "words": primary_words},
                     }, language=OCR_LANGUAGES, tessdata=str(tessdata), tesseract_command=command,
-                       tesseract_version=version, traineddata=models, reader=_read_tesseract)
+                       tesseract_version=version, traineddata=models, reader=_read_tesseract,
+                       diagnostics=axis_diagnostics)
                 except RotatedAxisError as exc:
                     category = str(exc) if str(exc) in ROTATED_AXIS_FAILURE_CATEGORIES else "rotated_axis_proof_invalid"
                     raise SourceValidationError(f"Runner OCR axis recovery rejected at page {number}: {category}",
@@ -619,6 +623,8 @@ def _recognize_ocr_page(page: fitz.Page, source_name: str, number: int, *,
                                       rotated_axis_readability=page_readability(text, allow_sparse_ocr=True))
                 else:
                     diagnostic["rotated_axis_attempted"] = True
+                    if axis_diagnostics:
+                        diagnostic["rotated_axis_diagnostics"] = axis_diagnostics
             except SourceValidationError:
                 raise
             except Exception as exc:
@@ -637,7 +643,11 @@ def _recognize_ocr_page(page: fitz.Page, source_name: str, number: int, *,
         if text_layout is not None:
             provenance["text_layout"] = text_layout
     if not allow_rejected:
-        require_readable_page(text, source_name, number, allow_sparse_ocr=True)
+        try:
+            require_readable_page(text, source_name, number, allow_sparse_ocr=True)
+        except SourceValidationError as exc:
+            exc.rotated_axis_diagnostics = diagnostic.get("rotated_axis_diagnostics")
+            raise
     return text, primary_words, str(tessdata), provenance, diagnostic
 
 
