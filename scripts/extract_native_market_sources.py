@@ -531,7 +531,8 @@ def _tesseract_version(command: str, number: int) -> str:
 
 
 def _recognize_ocr_page(page: fitz.Page, source_name: str, number: int, *,
-                        allow_rejected: bool = False) -> tuple[str, list[Any], str, dict[str, Any], dict[str, Any]]:
+                        allow_rejected: bool = False,
+                        private_region_trace: dict[str, Any] | None = None) -> tuple[str, list[Any], str, dict[str, Any], dict[str, Any]]:
     """Choose one primary recognition; numeric failures never retry this stage."""
     try:
         tessdata = Path(fitz.get_tessdata())
@@ -601,15 +602,26 @@ def _recognize_ocr_page(page: fitz.Page, source_name: str, number: int, *,
                 from ocr_rotated_axis_evidence import RotatedAxisError, recover_rotated_axes
                 axis_diagnostics = {}
                 try:
-                    rotated = recover_rotated_axes(page, {
+                    axis_candidates = {
                         "geometric-sorted": {"text": sorted_text,
                             "words": page.get_text("words", textpage=textpage, sort=True)},
                         "source-flow": {"text": candidates["source_flow_text"],
                             "words": page.get_text("words", textpage=textpage, sort=False)},
                         "full-page-psm11": {"text": text, "words": primary_words},
-                    }, language=OCR_LANGUAGES, tessdata=str(tessdata), tesseract_command=command,
+                    }
+                    trace_arguments = {}
+                    if type(private_region_trace) is dict:
+                        # Probe-only sink: preserve prior candidates even if a
+                        # later regional read raises. Never add this to source
+                        # provenance, diagnostics or complete-source receipts.
+                        trace = {}
+                        private_region_trace.update(candidates=axis_candidates, provenance=dict(provenance),
+                                                    diagnostic=dict(diagnostic), region_trace=trace)
+                        trace_arguments["private_trace"] = trace
+                    rotated = recover_rotated_axes(page, axis_candidates,
+                       language=OCR_LANGUAGES, tessdata=str(tessdata), tesseract_command=command,
                        tesseract_version=version, traineddata=models, reader=_read_tesseract,
-                       diagnostics=axis_diagnostics)
+                       diagnostics=axis_diagnostics, **trace_arguments)
                 except RotatedAxisError as exc:
                     category = str(exc) if str(exc) in ROTATED_AXIS_FAILURE_CATEGORIES else "rotated_axis_proof_invalid"
                     raise SourceValidationError(f"Runner OCR axis recovery rejected at page {number}: {category}",

@@ -576,8 +576,10 @@ def _raw_page_ocr(page: fitz.Page, *, private_evidence=None) -> tuple[str, list[
     """Use the production full-page engine parameters without admitting sources."""
     observed = _ObservedOCRPage(page)
     try:
+        trace_arguments = ({"private_region_trace": private_evidence}
+                           if private_evidence is not None else {})
         primary, words, tessdata, provenance, diagnostic = native._recognize_ocr_page(observed, "page-probe", 1,
-                                                                           allow_rejected=True)
+                                                                           allow_rejected=True, **trace_arguments)
     except native.SourceValidationError as exc:
         category = getattr(exc, "category", None)
         raise ProbeError(category if isinstance(category, str) and category in OCR_FAILURE_CATEGORIES
@@ -597,7 +599,10 @@ def _raw_page_ocr(page: fitz.Page, *, private_evidence=None) -> tuple[str, list[
                 candidates["full-page-psm11"] = {"text": primary, "words": words}
             private_evidence.update(candidates=candidates, provenance=provenance, diagnostic=dict(diagnostic))
         except Exception:
-            private_evidence.clear()
+            # Keep any native snapshot and completed regional reads already
+            # retained before a later failure; the private writer still bounds
+            # and validates the complete payload before writing either file.
+            pass
     _rotated_axis_arguments(provenance, selected_route=diagnostic.get("selection") == "rotated-axis")
     opaque = {}
     rect = getattr(page, "rect", None)

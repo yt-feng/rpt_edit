@@ -753,6 +753,12 @@ sanitized summary. They contain no complete-source receipt or manifest and
 cannot enter the PDF source-consumption contract. Failed page checks retain
 their original nonzero exit; retention failure is reported as unavailable and
 never promotes the page to accepted source material.
+The same opt-in private payload can retain regional plans and each completed
+rotated read, including attempts followed by rejection or timeout. It reuses
+the existing reader calls and keeps the preceding whole-page candidates and
+model provenance. The trace defaults to `None`, is excluded from production
+source receipts and public summaries, and remains subject to the existing
+single-page, two-file and private-payload size limits.
 
 ### Complete cloud PDF acceptance without live publication
 
@@ -793,6 +799,19 @@ Horizontal zero and all other text outside the replacement spans remain in
 the original transcript and their existing numeric checks. Identical opaque
 strings on separate axes are allowed only through their exact original word
 indices and global spans; exchanging those positions still rejects the proof.
+
+The fragment-support extension first preserves the earlier strict planner.
+Only a word-membership rejection may attempt independently separated bands
+seeded by the existing opaque runs. It assigns a cross-chart source word once,
+using all original non-white pixels across the complete set of bands; any
+baseline exception must identify the actual long gray separator stroke and
+its proved white gap. A successful rotated direction must contain complete
+date words in separate non-overlapping rows whose boxes cover every non-white
+crop pixel, with no box dilation. Original candidates, word indices, support
+hashes and replacement spans remain in the ledger, and the consumer recomputes
+the complete pixel/support/coverage proof. A short token, thin box or missing
+alternate read alone never authorizes deletion. The actual affected-page cloud
+acceptance remains pending; a geometric replay is not recognition acceptance.
 
 The retained diagnostic omits the full word list. Its geometry-only replay uses
 explicit synthetic placeholders for the known positions and performs no OCR,
@@ -996,9 +1015,19 @@ by this October 2 check.
 
 After PR 252, October 4 primary source rebuild `37297655439` and PDF
 `37297840175`, and October 1 legacy source rebuild `37297927956` and child PDF
-`37298965236`, succeeded. October 3 figure rebuild acceptance remains open.
+`37298965236`, succeeded. October 3 rebuild `37340380301` passed all 54 source
+checks at 16:30:59 UTC and the private R2 handoff at 16:31:38. PDF child
+`37341517817` succeeded at 16:42:21 on `ce16fb2a`, and the parent completed
+successfully at 16:42:30. The public-safe PDF was committed at `615d5602`.
 The earlier live inspection does not establish visual acceptance of every
-newly rebuilt figure.
+newly rebuilt figure; refreshed live inspection and member download are separate.
+
+PR 254 merged at `ce16fb2a` at 16:22 UTC after CI `37339774011` passed actual
+OCR and renderer checks in 3 minutes 45 seconds. Final ReportLab and LaTeX
+display now replaces only complete internal numeric-pending field markers with
+the explicit Chinese pending-value message. Original IDs remain in inputs,
+receipts and structured data; the value remains unresolved. Confirmed values
+and original figure pixels are unchanged.
 
 | Complete cloud backup | Source evidence | Successful acceptance-only PDF |
 | --- | --- | --- |
@@ -1040,3 +1069,9 @@ That affected page and the complete 63-alias/62-unique batch need further cloud
 acceptance. The switch does not bypass this rejection or claim all dates are
 covered. Complete-source, readability and independent numeric gates remain
 unchanged; geometric local replay alone is not OCR acceptance.
+Private probe `37340394718` kept its original failed exit and retained two
+private files whose hashes, source binding and model provenance were verified.
+They show multiple short horizontal OCR word boxes crossing date-axis regions.
+A general full-ink coverage correction is being developed from original pixels
+and complete word ledgers. The page is not yet repaired; private diagnostic
+retention supplies evidence only and cannot be consumed as a complete source.

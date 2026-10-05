@@ -117,7 +117,269 @@ def chart_boundary_case(*, real_size=False):
     return document, page, candidates
 
 
+def fragmented_axis_case():
+    """Two real rendered charts, with invented whole-page OCR fragments."""
+    document = fitz.open()
+    page = document.new_page(width=700, height=650)
+    page.insert_text((20, 30), "Reliable revenue supply demand outlook recovery remains steady 25,000 35,000", fontsize=8)
+    words = [{"bbox": list(w[:4]), "text": w[4], "block": w[5], "paragraph": 0, "line": w[6]}
+             for w in page.get_text("words")]
+    for i, shift in enumerate((0, 300)):
+        page.draw_line((60 + shift, 120), (270 + shift, 120), color=(.85, .85, .85), width=.5)
+        page.insert_text((55 + shift, 120), "0", fontsize=7)
+        for x, literal in zip((70, 150, 230), ("2010/01", "2018/07", "2026/07")):
+            page.insert_text((x + shift, 158), literal, fontsize=10, rotate=90)
+        words.append({"bbox": [54 + shift, 110, 59 + shift, 120], "text": "0", "block": 8 + i, "paragraph": 0, "line": 0})
+        words.append({"bbox": [60 + shift, 150, 270 + shift, 160], "text": chr(65 + i) * 85,
+                      "block": 10 + i, "paragraph": 0, "line": 0})
+    def candidates():
+        ordered = sorted(words, key=lambda w: (w["bbox"][1], w["bbox"][0]))
+        result = {label: {"text": "\n".join(w["text"] for w in ordered), "words": copy.deepcopy(ordered)} for label in axis.LABELS}
+        result["full-page-psm11"]["text"] = axis._region_text(ordered)[0]
+        return result
+    pix = page.get_pixmap(dpi=300, colorspace=fitz.csRGB, alpha=False)
+    image = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
+    plans = axis._select_regions(candidates(), [700, 650], list(image.size), image)
+    left, right = plans
+    x0, y0 = left["source_pixel_box"][:2]
+    x1, y1 = right["source_pixel_box"][2:]
+    def word(box, text, block):
+        return {"bbox": [v * (700, 650)[i % 2] / image.size[i % 2] for i, v in enumerate(box)],
+                "text": text, "block": block, "paragraph": 0, "line": 0}
+    # One erroneous OCR word spans both complete date bands and their blank
+    # inter-chart gap. Its source support must be assigned exactly once.
+    words.append(word([x0 + 4, y0 + 4, x1 - 4, y1 - 4], "fragment", 20))
+    separator = left["top_separation"]["separator_row"]
+    # Start in the blank interval between the retained scale zero and line.
+    # The fragment includes the line and dates, never the zero's edge pixels.
+    words.append(word([int(60 * image.width / 700) - 4, separator + .125, x0 + 70, y1 - 4], "slice", 21))
+    return document, page, candidates(), image
+
+
+def source_date_reader(page, plans):
+    """Mock only recognition: obtain exact anonymous date glyph pixels."""
+    pix = page.get_pixmap(dpi=300, colorspace=fitz.csRGB, alpha=False)
+    source = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
+    calls = []
+    def read(image, **options):
+        call = len(calls); calls.append(options)
+        if call % 2 == 0:
+            return [{"bbox": [3, 3, 15, 15], "text": "garbage", "block": 0, "paragraph": 0, "line": 0}]
+        plan = plans[call // 2]
+        matrix, inverse = axis._transform(plan["source_pixel_box"], 270)
+        result = []
+        for original in page.get_text("words"):
+            if not axis.DATE.fullmatch(original[4]):
+                continue
+            box = axis._pixel_word_box({"bbox": list(original[:4])}, [page.rect.width, page.rect.height], list(source.size))
+            if not axis._intersects(box, plan["source_pixel_box"]):
+                continue
+            crop = source.crop(tuple(box)).convert("L").point(lambda value: 255 if value < 245 else 0)
+            ink = crop.getbbox()
+            tight = [box[0] + ink[0], box[1] + ink[1], box[0] + ink[2], box[1] + ink[3]]
+            points = [axis._point(point, inverse) for point in ((tight[0], tight[1]), (tight[2], tight[3]))]
+            rotated = [min(p[0] for p in points), min(p[1] for p in points), max(p[0] for p in points), max(p[1] for p in points)]
+            result.append({"bbox": rotated, "text": original[4], "block": 1, "paragraph": 0, "line": len(result) + 1})
+        return result
+    return read, calls
+
+
 class RotatedAxisTests(unittest.TestCase):
+    def fragment_recovery(self, *, observed_edge=False):
+        document, page, candidates, image = fragmented_axis_case()
+        self.addCleanup(document.close)
+        plans = axis._select_regions(candidates, [700, 650], list(image.size), image)
+        reader, calls = source_date_reader(page, plans)
+        if observed_edge:
+            exact_reader = reader
+            def reader(image, **options):
+                words = exact_reader(image, **options)
+                if len(calls) == 2:
+                    # Actual Ubuntu Tesseract boxes for this anonymous page:
+                    # run 37344057107 / head 135ee633, 70 light edge pixels.
+                    for word, box in zip(words, ([25, 30, 165, 61], [25, 363, 173, 394], [25, 696, 173, 727])):
+                        word["bbox"] = box
+                return words
+        trace = {}
+        result = axis.recover_rotated_axes(page, candidates, language="eng", tessdata=None,
+            tesseract_command="unused", tesseract_version="5.3.0", traineddata=MODELS,
+            reader=reader, private_trace=trace)
+        return page, candidates, image, result, calls, trace
+
+    def test_observed_cloud_word_edges_preserve_all_245_pixels_without_changing_boxes(self):
+        _, _, image, result, calls, _ = self.fragment_recovery(observed_edge=True)
+        self.assertIsNotNone(result)
+        self.assertEqual(len(calls), 4)
+        coverage = result["proof"]["regions"][0]["date_pixel_coverage"]
+        self.assertEqual(coverage["policy"], "complete-date-source-ink-components-v1")
+        self.assertEqual(coverage["threshold"], 245)
+        self.assertEqual([row["bbox"] for row in coverage["words"]],
+                         [[25, 30, 165, 61], [25, 363, 173, 394], [25, 696, 173, 727]])
+        self.assertEqual(sum(row["fringe_pixels"] for row in coverage["component_support"]["components"]), 70)
+        self.assertEqual(coverage["pixels"], sum(row["pixels"] for row in coverage["words"]))
+        self.assertEqual(coverage["pixels"], sum(row["pixels"] for row in coverage["component_support"]["components"]))
+        axis.replay_rotated_axis_proof(result["proof"], result["primary_text"],
+            input_pixel_sha256=axis._hash(image.tobytes()), page_size_points=[700.0, 650.0], source_image=image)
+        for field, value in (("fringe_pixels", 0), ("word_index", 2), ("pixel_support_sha256", "a" * 64)):
+            proof = copy.deepcopy(result["proof"])
+            component = next(row for row in proof["regions"][0]["date_pixel_coverage"]["component_support"]["components"] if row["fringe_pixels"])
+            component[field] = value
+            with self.subTest(field=field), self.assertRaises(axis.RotatedAxisError):
+                axis.replay_rotated_axis_proof(proof, result["primary_text"], input_pixel_sha256=axis._hash(image.tobytes()),
+                    page_size_points=[700.0, 650.0], source_image=image)
+        # Successful original zero-edge proofs retain their original payload.
+        self.assertEqual(result["proof"]["regions"][1]["date_pixel_coverage"]["policy"], "complete-date-source-ink-v1")
+        self.assertNotIn("component_support", result["proof"]["regions"][1]["date_pixel_coverage"])
+
+    def test_component_edges_reject_detached_gray_marks_dark_core_tails_and_other_words(self):
+        words = [{"bbox": [10, y, 40, y + 10], "text": literal, "block": 1, "paragraph": 0, "line": i}
+                 for i, (y, literal) in enumerate(zip((10, 40, 70), ("2020/01", "2021/02", "2022/03")))]
+        image = Image.new("RGB", (60, 100), "white")
+        for word in words:
+            y = word["bbox"][1]
+            ImageDraw.Draw(image).rectangle((15, y, 25, y + 8), fill="black")
+        image.putpixel((20, 9), (187, 187, 187))
+        def coverage(source, read_words):
+            return axis._date_pixel_coverage(source.transpose(Image.Transpose.ROTATE_90), {"angle": 270, "words": read_words})
+        self.assertEqual(sum(row["fringe_pixels"] for row in coverage(image, words)["component_support"]["components"]), 1)
+        for kind in ("dark-core", "two-pixel-tail", "detached-gray", "no-core", "gray-chain", "other-word"):
+            changed, changed_words = image.copy(), copy.deepcopy(words)
+            if kind == "dark-core": changed.putpixel((20, 9), (95, 95, 95))
+            elif kind == "two-pixel-tail": changed.putpixel((20, 8), (230, 230, 230))
+            elif kind == "detached-gray": changed.putpixel((35, 9), (187, 187, 187))
+            elif kind == "no-core":
+                changed.putpixel((35, 10), (187, 187, 187)); changed.putpixel((35, 9), (230, 230, 230))
+            elif kind == "gray-chain":
+                ImageDraw.Draw(changed).line((26, 10, 38, 10), fill=(187, 187, 187))
+                changed.putpixel((38, 9), (180, 180, 180))
+            else:
+                changed_words[1]["bbox"] = [10, 21, 40, 50]
+                changed.putpixel((20, 19), (0, 0, 0)); changed.putpixel((20, 20), (187, 187, 187))
+            with self.subTest(kind=kind), self.assertRaises(axis.RotatedAxisError):
+                coverage(changed, changed_words)
+
+    def test_fragmented_cross_chart_words_have_unique_pixel_closed_ledger_and_date_coverage(self):
+        page, candidates, image, result, calls, trace = self.fragment_recovery()
+        self.assertIsNotNone(result)
+        self.assertEqual(len(calls), 4)
+        self.assertEqual(trace["stage"], "complete")
+        regions = result["proof"]["regions"]
+        self.assertEqual(len(regions), 2)
+        assigned = [index for region in regions for index in region["source_word_indices"]]
+        self.assertEqual(len(assigned), len(set(assigned)))
+        cross = next(i for i, word in enumerate(candidates["source-flow"]["words"]) if word["text"] == "fragment")
+        support = next(row for region in regions for row in region["fragment_support"] if row["word_index"] == cross)
+        self.assertEqual([row["region_id"] for row in support["support"]], [1, 2])
+        self.assertEqual(sum(edit["word_index"] == cross for edit in result["proof"]["ledger"]["edits"]), 1)
+        self.assertTrue(any(row["separator_support"] for region in regions for row in region["fragment_support"]))
+        self.assertEqual(result["primary_text"].split().count("0"), 2)
+        self.assertNotIn("fragment", result["primary_text"])
+        for region in regions:
+            coverage = region["date_pixel_coverage"]
+            self.assertGreater(coverage["pixels"], 0)
+            self.assertEqual(coverage["pixels"], sum(word["pixels"] for word in coverage["words"]))
+        derived = axis.replay_rotated_axis_proof(result["proof"], result["primary_text"],
+            input_pixel_sha256=axis._hash(image.tobytes()), page_size_points=[700.0, 650.0], source_image=image)
+        self.assertEqual(len(derived["rotated_mentions"]), 12)
+        self.assertEqual([row["literal"] for row in derived["positioned"].values()], ["25,000", "35,000", "0", "0"])
+
+    def test_fragment_proof_recomputes_support_baseline_pixels_coverage_and_unique_word_ownership(self):
+        page, candidates, image, result, _, _ = self.fragment_recovery()
+        self.assertIsNotNone(result)
+        mutations = (
+            lambda p: p["regions"][0]["fragment_support"][0]["support"][0].__setitem__("pixels", 0),
+            lambda p: p["regions"][0]["fragment_separator_run"].__setitem__(0, 0),
+            lambda p: p["regions"][0]["fragment_support"][0].__setitem__("separator_support", []),
+            lambda p: p["regions"][0]["fragment_support"].pop(),
+            lambda p: p["regions"][1]["source_word_indices"].append(p["regions"][0]["source_word_indices"][0]),
+            lambda p: p["regions"][0]["date_pixel_coverage"].__setitem__("threshold", 96),
+            lambda p: p["regions"][0]["date_pixel_coverage"]["words"][0].__setitem__("pixels", 0),
+        )
+        for mutate in mutations:
+            proof = copy.deepcopy(result["proof"]); mutate(proof)
+            with self.subTest(mutate=mutate), self.assertRaises(ValueError):
+                axis.replay_rotated_axis_proof(proof, result["primary_text"], input_pixel_sha256=axis._hash(image.tobytes()),
+                    page_size_points=[700.0, 650.0], source_image=image)
+
+    def test_fragment_ownership_refuses_uncovered_gray_body_ink_and_cross_boundary_strokes(self):
+        document, page, candidates, image = fragmented_axis_case()
+        self.addCleanup(document.close)
+        plans = axis._select_regions(candidates, [700, 650], list(image.size), image)
+        cross = next(word for word in candidates["source-flow"]["words"] if word["text"] == "fragment")
+        box = axis._pixel_word_box(cross, [700, 650], list(image.size))
+        between = (plans[0]["source_pixel_box"][2] + plans[1]["source_pixel_box"][0]) // 2
+        for gray in (0, 187, 244):
+            changed = image.copy()
+            changed.putpixel((between, box[1] + 5), (gray, gray, gray))
+            with self.subTest(gray=gray), self.assertRaises(axis.RotatedAxisError):
+                axis._select_fragment_regions(candidates, [700, 650], list(image.size), changed)
+        changed = image.copy()
+        separator = plans[0]["top_separation"]["separator_row"]
+        # An equal-gray pixel on a different row is not the proved baseline.
+        changed.putpixel((plans[0]["source_pixel_box"][0] + 20, separator + 2), (187, 187, 187))
+        with self.assertRaises(axis.RotatedAxisError):
+            axis._select_fragment_regions(candidates, [700, 650], list(image.size), changed)
+        changed = image.copy()
+        isolated_x = plans[0]["fragment_separator_run"][0] - 2
+        self.assertLess(isolated_x, plans[0]["fragment_separator_run"][0])
+        self.assertGreaterEqual(image.convert("L").getpixel((isolated_x, separator)), 245)
+        # Same row and same gray still do not make an isolated point part of
+        # the actual contiguous baseline detected from the source pixels.
+        changed.putpixel((isolated_x, separator), (187, 187, 187))
+        with self.assertRaises(axis.RotatedAxisError):
+            axis._select_fragment_regions(candidates, [700, 650], list(image.size), changed)
+
+    def test_fragment_date_coverage_refuses_missing_ink_overlapping_words_and_large_boxes(self):
+        _, _, image, result, _, _ = self.fragment_recovery()
+        self.assertIsNotNone(result)
+        region = result["proof"]["regions"][0]
+        crop = image.crop(tuple(region["source_pixel_box"]))
+        read = next(r for r in region["reads"] if r["angle"] == region["selected_angle"])
+        for kind in ("missing", "overlap", "large"):
+            changed = copy.deepcopy(read)
+            if kind == "missing": changed["words"][0]["bbox"][0] += 3
+            elif kind == "overlap": changed["words"][1]["bbox"] = list(changed["words"][0]["bbox"])
+            else: changed["words"][0]["bbox"] = [2, 2, read["image_size"][0] - 2, read["image_size"][1] - 2]
+            with self.subTest(kind=kind), self.assertRaises(axis.RotatedAxisError):
+                axis._date_pixel_coverage(crop, changed)
+        changed_crop = crop.copy()
+        changed_crop.putpixel((2, 2), (187, 187, 187))
+        with self.assertRaises(axis.RotatedAxisError):
+            axis._date_pixel_coverage(changed_crop, read)
+
+    def test_private_trace_keeps_completed_reads_on_rejection_without_an_extra_engine_call(self):
+        document, page, candidates, image = fragmented_axis_case()
+        self.addCleanup(document.close)
+        trace, diagnostics, calls = {}, {}, []
+        def reader(image, **options):
+            calls.append(options)
+            return date_words(image.size) if len(calls) % 2 == 0 else date_words(image.size, ("bad", "bad", "bad"))
+        result = axis.recover_rotated_axes(page, candidates, language="eng", tessdata=None,
+            tesseract_command="unused", tesseract_version="5.3.0", traineddata=MODELS,
+            reader=reader, private_trace=trace, diagnostics=diagnostics)
+        self.assertIsNone(result)
+        self.assertEqual(len(calls), 2)
+        self.assertEqual(trace["stage"], "region_recognition")
+        self.assertEqual(len(trace["plans"]), 2)
+        self.assertEqual(len(trace["regions"][0]["reads"]), 2)
+        self.assertEqual(diagnostics["reason"], "uncovered_source_ink")
+        self.assertNotIn("words", str(diagnostics))
+        self.assertNotIn("private_trace", trace)
+        timed_trace, calls = {}, []
+        with self.assertRaisesRegex(axis.RotatedAxisError, '^rotated_axis_time_budget_exhausted$'):
+            axis.recover_rotated_axes(page, candidates, language="eng", tessdata=None,
+                tesseract_command="unused", tesseract_version="5.3.0", traineddata=MODELS,
+                reader=reader, private_trace=timed_trace, clock=iter((0, 0, 180)).__next__)
+        self.assertEqual(len(calls), 1)
+        self.assertEqual(len(timed_trace["regions"][0]["reads"]), 1)
+        for malformed_trace in (None, {}):
+            with self.subTest(private=malformed_trace is not None), self.assertRaisesRegex(
+                    axis.RotatedAxisError, '^rotated_axis_time_budget_exhausted$'):
+                axis.recover_rotated_axes(page, candidates, language="eng", tessdata=None,
+                    tesseract_command="unused", tesseract_version="5.3.0", traineddata=MODELS,
+                    reader=lambda *args, **kwargs: "malformed", private_trace=malformed_trace,
+                    clock=iter((0, 0, 180)).__next__)
+
     def replay(self, page, result, proof=None, text=None):
         pix = page.get_pixmap(dpi=300, colorspace=fitz.csRGB, alpha=False)
         image = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
@@ -504,7 +766,12 @@ class RotatedAxisTests(unittest.TestCase):
         for candidate in candidates.values():
             next(word for word in candidate["words"] if word["text"] == "0")["bbox"][3] = (top + 1.01) * 650 / image.height
         with self.assertRaisesRegex(axis.RotatedAxisError, '^rotated_axis_not_eligible$'):
-            axis._select_regions(candidates, [400, 650], list(image.size), source_image=image)
+            axis._select_axis_regions(candidates, [400, 650], list(image.size), source_image=image)
+        # Larger box padding can be retained only through the separate pixel
+        # ownership proof; it cannot bypass the strict word-boundary path.
+        fallback, = axis._select_regions(candidates, [400, 650], list(image.size), source_image=image)
+        self.assertIn("fragment_support", fallback)
+        self.assertNotIn(zero_index, fallback["source_word_indices"])
 
     def test_gray_baseline_sparse_antialias_and_unclear_gap_or_axis_crossing(self):
         image = Image.new("RGB", (240, 160), "white")
@@ -543,7 +810,13 @@ class RotatedAxisTests(unittest.TestCase):
                 pix = page.get_pixmap(dpi=300, colorspace=fitz.csRGB, alpha=False)
                 image = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
                 with self.subTest(kind=kind), self.assertRaisesRegex(axis.RotatedAxisError, '^rotated_axis_not_eligible$'):
-                    axis._select_regions(candidates, [400, 650], list(image.size), source_image=image)
+                    axis._select_axis_regions(candidates, [400, 650], list(image.size), source_image=image)
+                # A candidate-only box cannot prove what pixels it contains.
+                # The new route must still reject incomplete date evidence.
+                rejected = axis.recover_rotated_axes(page, candidates, language="eng", tessdata=None,
+                    tesseract_command="unused", tesseract_version="5.3.0", traineddata=MODELS,
+                    reader=lambda image, **options: date_words(image.size, ("Body", "0", "2020/01")))
+                self.assertIsNone(rejected)
             finally:
                 document.close()
         document, page, candidates = chart_boundary_case()
@@ -613,6 +886,47 @@ class RotatedAxisCloudTests(unittest.TestCase):
             if required:
                 self.fail("Cloud rotated-axis acceptance requires Tesseract plus eng and chi_sim models")
             self.skipTest("Real cloud OCR dependencies unavailable")
+
+    def test_real_tesseract_fragmented_cross_chart_word_requires_complete_source_ink(self):
+        import extract_native_market_sources as native
+        document, page, candidates, image = fragmented_axis_case()
+        self.addCleanup(document.close)
+        diagnostics, trace = {}, {}
+        recovery = axis.recover_rotated_axes(page, candidates, language="eng+chi_sim", tessdata=self.tessdata,
+            tesseract_command=self.command, tesseract_version=native._tesseract_version(self.command, 1),
+            traineddata=self.models, diagnostics=diagnostics, private_trace=trace)
+        if recovery is None:
+            # This fixture is generated above from anonymous constants. Keep
+            # its already-produced engine boxes in failure output so a cloud
+            # boundary mismatch can be reproduced without another OCR call.
+            details = []
+            for region in trace["regions"]:
+                crop = image.crop(tuple(region["source_pixel_box"]))
+                for read in region["reads"]:
+                    rotated = crop.transpose(Image.Transpose.ROTATE_90 if read["angle"] == 90 else Image.Transpose.ROTATE_270)
+                    ink = rotated.convert("L").point(lambda value: 255 if value < 245 else 0)
+                    covered = Image.new("L", rotated.size)
+                    for word in read["words"]:
+                        x0, y0, x1, y1 = word["bbox"]
+                        ImageDraw.Draw(covered).rectangle((x0, y0, x1 - 1, y1 - 1), fill=255)
+                    missing = axis.ImageChops.subtract(ink, covered)
+                    details.append({"region": region["id"], "angle": read["angle"], "words": read["words"],
+                        "input_pixel_sha256": read["input_pixel_sha256"],
+                        "uncovered_pixels": missing.histogram()[255], "uncovered_bbox": missing.getbbox()})
+            self.fail(f"Real fragmented date bands must recover: {diagnostics}; anonymous_fixture_reads={details}")
+        self.assertEqual(len(recovery["proof"]["regions"]), 2)
+        self.assertEqual(recovery["primary_text"].split().count("0"), 2)
+        self.assertNotIn("fragment", recovery["primary_text"])
+        for region in recovery["proof"]["regions"]:
+            read = next(row for row in region["reads"] if row["angle"] == region["selected_angle"])
+            self.assertEqual({word["text"] for word in read["words"]}, {"2010/01", "2018/07", "2026/07"})
+            self.assertEqual(region["date_pixel_coverage"]["pixels"], sum(
+                word["pixels"] for word in region["date_pixel_coverage"]["words"]))
+        derived = axis.replay_rotated_axis_proof(recovery["proof"], recovery["primary_text"],
+            input_pixel_sha256=axis._hash(image.tobytes()), page_size_points=[700.0, 650.0], source_image=image,
+            language="eng+chi_sim", traineddata=self.models)
+        self.assertEqual(len(derived["rotated_mentions"]), 12)
+        self.assertTrue(all(row["literal"] in {"25,000", "35,000", "0"} for row in derived["positioned"].values()))
 
     def test_real_tesseract_vertical_year_month_baseline_zero_and_unresolved_axes(self):
         import extract_native_market_sources as native
