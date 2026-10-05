@@ -148,12 +148,24 @@ def send_groups(reports, *, worker, signing_key, mailer=send_alert):
     return results
 
 
+def send_activation_test(*, worker, signing_key, mailer=send_alert):
+    result = mailer(worker_base_url=worker, signing_key=signing_key,
+        subject='API 监测已启用（邮件通道测试）',
+        text=('这是一封手动触发的启用测试邮件，不代表供应商发生故障。\n'
+              'TikHub 与各阶段 DeepSeek 密钥、余额检查已接入每小时任务。正常时静默；'
+              '密钥异常、余额不足或监测结果无法取得时，复用此邮件通道提醒。'
+              '相同问题24小时内去重，问题升级单独提醒。'),
+        dedupe_key='provider-health:activation-test', severity='info', dedupe_hours=24, attempts=1)
+    return {'sent': result.get('sent') is True, 'deduplicated': result.get('deduplicated') is True}
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--local-report', type=Path, required=True)
     parser.add_argument('--consumer', action='append', default=[])
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--dry-run', action='store_true')
+    parser.add_argument('--send-test-email', action='store_true')
     args = parser.parse_args()
     now = utc_now()
     local = json.loads(args.local_report.read_text())
@@ -173,8 +185,12 @@ def main():
                                 'status': 'report_unavailable', 'signals': ['report_unavailable']} ]})
     results = [] if args.dry_run else send_groups(reports,
         worker=os.environ.get('PORTAL_WORKER_URL', ''), signing_key=os.environ.get('OPS_ALERT_SIGNING_KEY', ''))
+    test_email = None
+    if args.send_test_email and not args.dry_run:
+        test_email = send_activation_test(worker=os.environ.get('PORTAL_WORKER_URL', ''),
+                                         signing_key=os.environ.get('OPS_ALERT_SIGNING_KEY', ''))
     summary = {'schema_version': 1, 'reports': len(reports), 'issues': len(incident_groups(reports)),
-               'consumer_report_unavailable': unavailable, 'emails': results, 'dry_run': args.dry_run}
+               'consumer_report_unavailable': unavailable, 'emails': results, 'test_email': test_email, 'dry_run': args.dry_run}
     args.output.write_text(json.dumps(summary, sort_keys=True, indent=2) + '\n')
     print(json.dumps(summary, sort_keys=True))
     return 0

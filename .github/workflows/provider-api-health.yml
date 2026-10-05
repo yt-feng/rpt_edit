@@ -9,6 +9,10 @@ on:
         description: Check account health and report access without sending email
         type: boolean
         default: false
+      send_test_email:
+        description: Send one clearly labelled activation test email (manual only)
+        type: boolean
+        default: false
   pull_request:
     paths:
       - 'scripts/provider_health_monitor.py'
@@ -90,6 +94,7 @@ jobs:
           OPS_ALERT_SIGNING_KEY: ${{ secrets.OPS_ALERT_SIGNING_KEY || secrets.PASSWORD_SECRET }}
           PORTAL_WORKER_URL: ${{ secrets.PORTAL_WORKER_URL }}
           DRY_RUN: ${{ inputs.dry_run || false }}
+          SEND_TEST_EMAIL: ${{ github.event_name == 'workflow_dispatch' && inputs.send_test_email || false }}
         run: |
           set -euo pipefail
           args=()
@@ -98,6 +103,7 @@ jobs:
             if [[ -n "$repository" ]]; then args+=(--consumer "$repository"); fi
           done
           if [[ "$DRY_RUN" == true ]]; then args+=(--dry-run); fi
+          if [[ "$SEND_TEST_EMAIL" == true ]]; then args+=(--send-test-email); fi
           python3 -B scripts/notify_provider_health.py \
             --local-report "$RUNNER_TEMP/provider-health-report.json" \
             --output "$RUNNER_TEMP/provider-health-mail-summary.json" "${args[@]}"
@@ -110,6 +116,8 @@ jobs:
           with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as out:
               out.write(f"Provider health: {result['reports']} reports, {result['issues']} actionable groups.\n")
               out.write(f"Consumer reports unavailable: {len(result['consumer_report_unavailable'])}.\n")
+              if result['test_email']:
+                  out.write(f"Activation test email: {result['test_email']}\n")
               for item in result['emails']:
                   out.write(f"{item['repository']} {item['provider']}: sent={item['sent']}, deduplicated={item['deduplicated']}\n")
           PY

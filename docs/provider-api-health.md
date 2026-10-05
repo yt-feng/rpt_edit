@@ -36,6 +36,9 @@ Manual dispatch with `dry_run=true` validates probing and cross-repository acces
 without email. A normal dispatch sends only real actionable findings, with the same
 deduplication as scheduled runs. Workflow summaries distinguish mail acceptance and
 deduplication; they do not prove inbox delivery.
+Manual `send_test_email=true` sends one explicitly labelled activation test, with
+its own 24-hour dedupe key. It defaults to false, is ignored in dry runs, and cannot
+be enabled by the schedule.
 
 Contracts: [DeepSeek balance API](https://api-docs.deepseek.com/api/get-user-balance/)
 and [TikHub user API](https://github.com/TikHub/TikHub-API-Java-SDK/blob/main/docs/TikHubUserApiApi.md).

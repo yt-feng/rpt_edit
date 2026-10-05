@@ -8,7 +8,7 @@ import urllib.error
 import zipfile
 
 from provider_health_monitor import classify, probe, thresholds, validate_report, NoRedirect
-from notify_provider_health import GitHubReader, read_consumer, incident_groups, send_groups, ReportUnavailable
+from notify_provider_health import GitHubReader, read_consumer, incident_groups, send_groups, send_activation_test, ReportUnavailable
 
 NOW = datetime(2026, 10, 5, 12, tzinfo=timezone.utc)
 LIMITS = thresholds({})
@@ -128,6 +128,16 @@ class Reader:
 
 
 class AggregationTests(unittest.TestCase):
+    def test_activation_mail_is_explicit_and_uses_its_own_dedupe_key(self):
+        calls = []
+        result = send_activation_test(worker='https://example.invalid', signing_key='x',
+                                     mailer=lambda **kwargs: calls.append(kwargs) or {'sent': True})
+        self.assertTrue(result['sent'])
+        self.assertEqual(calls[0]['severity'], 'info')
+        self.assertEqual(calls[0]['dedupe_key'], 'provider-health:activation-test')
+        self.assertIn('测试', calls[0]['subject'])
+        self.assertIn('不代表供应商发生故障', calls[0]['text'])
+
     def test_archive_redirect_strips_auth_and_rejects_unknown_hosts(self):
         for location, accepted in [('https://objects.example.blob.core.windows.net/object?sig=opaque', True),
                                     ('https://evil.invalid/object', False),
